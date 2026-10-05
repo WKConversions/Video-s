@@ -1,4 +1,4 @@
-# ClearScaler — "Your market, worked for you" (40 s, silent)
+# ClearScaler — "Your market, worked for you" (33.5 s with voice-over; 40 s silent cut)
 
 A silent product film for ClearScaler's GTM platform (clearscaler.com), in their dark style, for the site and LinkedIn.
 Built with the senior-motion-designer skill: site harvest → reference read (Karl's attached film) → brief, thesis, plan →
@@ -7,6 +7,7 @@ Remotion build → art-director pass (six independent reviews, then a second rou
 ## What is here
 | Path | What |
 |---|---|
+| `deliver/clearscaler-gtm-vo-33s.mp4` | The voice-over version: 1920×1080, 30 fps, 33.5 s, H.264 yuv420p BT.709, AAC 48 kHz. The picture is retimed to the recorded ElevenLabs read (`vo/`), with a 3.2 s pause cut in after "weekday" for the 8% beat. Captions sit on the spoken word times (`film/src/captions.json`). The music is an original 120 BPM bed (`sound/bed.wav`), with 42 effects on the picture's moves (`sound/cues.json`), mixed to −15.6 LUFS, peak −1.5 dB. QC: 100% moving, no shake, 4 pops (all designed: the counter rollover, the first send landing, the 10:00 pill flight, a caption exit), 20/21 phrases new (the one-word "is" holds 0.9 s), and the longest voice without a new visual is 0.9 s. |
 | `deliver/clearscaler-gtm-40s.mp4` | The film: 1920×1080, 30 fps, 40.00 s, H.264 yuv420p, BT.709 TV range, no audio (silent by brief). |
 | `storyboard/index.html` | The storyboard page: the film, direction, a frame per phrase rendered from the project, notes, revision log, open questions. |
 | `storyboard/plan.md`, `brief.md`, `thesis.md` | The production plan (every caption and visual event), the brief, the thesis with its allowed patterns. |
