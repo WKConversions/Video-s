@@ -79,7 +79,7 @@ export const Arrow: React.FC<{ x: number; y: number; s: number; color?: string; 
 
 /** An odometer digit with a narrow mask (the kit's Digit fades 14 % top and bottom, which clips large glyphs). */
 export const OdoDigit: React.FC<{ v: number; size: number; width?: number }> = ({ v, size, width = 0.62 }) => (
-  <div style={{ width: size * width, height: size, overflow: "hidden", position: "relative", WebkitMaskImage: "linear-gradient(180deg, transparent 0%, #000 5%, #000 95%, transparent 100%)" }}>
+  <div style={{ width: size * width, height: size, overflow: "hidden", position: "relative", WebkitMaskImage: "linear-gradient(180deg, transparent 0%, #000 9%, #000 91%, transparent 100%)" }}>
     <div style={{ position: "absolute", left: 0, top: -v * size }}>{Array.from({ length: 22 }, (_, i) => <div key={i} style={{ height: size, lineHeight: `${size}px`, textAlign: "center" }}>{i % 10}</div>)}</div>
   </div>
 );

@@ -79,3 +79,32 @@ Robin on screen: 2.6–10.1 s (stretch one), in the photo 19.4–21.0, 21.0–30
 3. The end card: the button press without a cursor (the K.B v3 approved sign-off); the thesis line about a cursor is withdrawn.
 4. B7: the four areas as a vertical list the square steps down (one travelling period, passed words dimming), not a horizontal rail (collides with Robin at readable sizes) and not a dial pill.
 5. Rejected from every concept: the "business" square held at hand height, the stroke-drawn plan, the flips, the dial pill with filler years, the 7-drum odometer, the slab push, small logos held under changing words, a third identical rise of the same wall.
+
+## Art-director pass, round 1 (five independent reviews, then judgement): revision log
+
+| Scene | Before | After | Why |
+|---|---|---|---|
+| B6 "a hundred automations" | the counter rolled 25→100 on "hundred" while the label still read "client projects" for ~15 frames | the label rolls "client projects" → "automations" in the same gesture as the counter, on "hundred"; only the "+" lands on "automations" | a false claim on screen for half a second (critical, all four lenses) |
+| B5 €2M | a two-line caption at 36/30 px (7/6 px on a phone) | one line, the site's wording verbatim, 44 px in the sky tint | the only qualifier of the €2M claim must survive the phone (legibility) |
+| B8 end card | contact lines at 34 px grey, the second inside the bottom safe margin; pill 520×96 with a 36 px label | lines at 40 px, email in ink, LinkedIn in the site's blue, last baseline above y 980; pill 640×112, 44 px label; LET'S TALK. moved up 20 px | the "how" of the invitation is what the viewer must take away (legibility) |
+| B2, B3, B7, B8 periods | 46/40 px squares overlapping the last glyph by 6–30 px, hanging below the baseline | 34 px (display) and 24 px (statements/areas), 0.2 em clear of the last glyph, bottom on the baseline, measured from the rendered width | the site's proportion; at 390 px the overlap read as a blob (brand, legibility) |
+| B4–B5 "in 2024", "eighteen months later" | the tile at 460 px the largest thing; 2024 and 18 at 150 px; the ticks and rail running through the digits' feet | on "in" the tile steps aside and shrinks to 300 px; 2024 and 18 at 200 px, "months" at 64 px ink; the rail at y 780 with the ticks 40 px under the baseline; the rail only draws on "eighteen" (B4 = tile + year, two things) | the line's subject the largest thing; nothing colliding (legibility, brand, story) |
+| B7 "on strategy … and capital" | a vertical column of four words with a stepping period: the same structure as B3 mirrored | the four areas take the 2×2 cells the logos just left, near Robin; the square steps through the cells as each word's period, passed words at 55 % | two beats, one layout family (brand, story); the areas inherit the proof's grid instead of restating B3 |
+| B7 "I advise founders" | four logos in a hairlined 2×2 table 400 px from Robin, Tale Forge at 87 px | no hairlines; the 2×2 gathered at his shoulder line (x 300–1220); Tale Forge at 206 px tall, ClearScaler's name at 56 px | a "trusted by" table that could sit in any SaaS video (story); two logos unreadable on a phone (legibility) |
+| B1 hook | 2.6 s of squares alone; Robin rose on "behind" | the first three squares stack, Robin rises on "strong" (in by 1.3 s), the last three stack behind his shoulder; the whole stack settles 6 px as the top course lands | a face in the sound-off viewer's two-second window; "behind it" still true on the word (story, judge 1) |
+| B8 "if you're building something" | the second block landed beside the first: a stable pair | it lands on top: a thin 1×2 tower; Robin's four squares brace it into the wall on "structure" | "needs structure" shown by the picture (story) |
+| B3 → B4 "co-founded" | the three periods gathered across the live type while it blurred | the words slide right and blur out first; the periods gather 4 frames later | a square crossing live type (legibility) |
+| B4–B6 shadows | tile and card shadows at 3–4× the site's alpha | the site's card shadow on the tile; a soft 0.2 shadow on the photo card | the site's own depth (brand) |
+| whole film | the haze a step bluer than the page it will embed in | the canvas white for its upper 40 %, the haze confined to the lower right and behind Robin | matches the hero's 58/24 white/haze share (brand) |
+| B5–B6 header | the K.B mark 29 px inside the top safe margin | moved to y 100 | safe area (legibility) |
+| B5 €2M | the 2 rolled 0→1→2 as an odometer: "€1M" on screen for ~6 frames | the 2 rises out of a blur with the € and the M | a false number, even for six frames (own QC) |
+| B1–B5 the light | the soft disc followed the tile after Robin left; not in the thesis | behind Robin only; named in the thesis | a glow the thesis never asked for (truth) |
+| B6 counter | integer count: whole-digit jumps as squares landed | a continuous count, the odometer digits rolling | a pop per landing (own QC) |
+| transitions | the field and the returning canvas grew on ARRIVE from one frame, the tile's colour switched at once, the haze rect appeared 24 px larger than the card and above it | both grow on an ease-in-out over 0.6 s; the tile's colour interpolates; the haze rect starts at the card's exact box, behind the card, and stays as the canvas | read as cuts and pops in handoff_check (own QC) |
+
+Decisions kept against findings (for Karl):
+- B3 as the site's own stacked statement (People. Process. Technology.) with the periods leaving his wall: the story lens wanted a face disc, a 01-02-03 process and tool logos; three pictures in 3.7 s is the busy K.B v3 problem, the judge panel rejected that runner-up, and the statement is his brand's own form (thesis).
+- The 2×3 wall as a grid, not a running bond: a 2-wide bond needs half-squares that are not his mark; the vertical stack reads as building up, and the settle on the top course keeps it from reading as a logo.
+- The logos in their own colours (Tale Forge gold, ClearScaler mark): asset-strategy rule, third-party logos appear as the client's site presents them.
+- The navy field flat, not the contact section's gradient: a large gradient under the breathing camera bands.
+- The navy held for 6.7 s through the proof (one judge preferred contracting it after €2M): open question for Karl.

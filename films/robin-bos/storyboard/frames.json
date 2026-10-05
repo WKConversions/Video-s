@@ -33,18 +33,18 @@
     {
      "frame": 36,
      "time": "1.20",
-     "phrase": "a business is only as strong",
+     "phrase": "as strong",
      "words": "none",
-     "shows": "The wall building: squares rising from the bottom edge, one every 7\u201310 frames, a soft tick each.",
-     "moves": "Each square rises 700 px on ARRIVE with blur, 14 f."
+     "shows": "Robin rising from the bottom edge in front of the first three squares.",
+     "moves": "Robin rises 980 px in 19 f, ARRIVE, blurred; the squares keep stacking."
     },
     {
      "frame": 66,
      "time": "2.20",
      "phrase": "as the structure",
      "words": "none",
-     "shows": "The 2\u00d73 wall complete, alone on the canvas.",
-     "moves": "The last square lands; the shadow widens.",
+     "shows": "Robin in; the last squares stacking behind his shoulder.",
+     "moves": "The top course lands; the whole stack settles 6 px.",
      "transition": "The wall: Robin rises in front of it."
     },
     {
@@ -52,8 +52,8 @@
      "time": "3.00",
      "phrase": "behind it",
      "words": "none",
-     "shows": "Robin's cut-out has risen from the bottom edge in front of the wall; its left column disappears behind his shoulder.",
-     "moves": "Robin rises 980 px in 18 f, ARRIVE, blurred on the fast frames; the light brightens behind him.",
+     "shows": "The 2\u00d73 wall complete behind his shoulder.",
+     "moves": "The light; the breath.",
      "transition": "Robin: his name lands beside him."
     }
    ]
@@ -68,10 +68,10 @@
     {
      "frame": 108,
      "time": "3.60",
-     "phrase": "I'm Robin",
-     "words": "ROBIN",
-     "shows": "ROBIN rising out of a blur at 160 px bold beside him.",
-     "moves": "The word rises 32 % of its height, 8 f."
+     "phrase": "I'm",
+     "words": "none",
+     "shows": "Robin landed in front of the wall, the name about to rise.",
+     "moves": "The light brightens behind his face."
     },
     {
      "frame": 129,
@@ -163,8 +163,8 @@
      "time": "12.10",
      "phrase": "in 2024",
      "words": "2024",
-     "shows": "The tile at left; a hairline rail; 2024 rolled in digit by digit.",
-     "moves": "The rail draws 12 f; each digit rolls 10 f on its word.",
+     "shows": "The tile stepped aside to 300 px; 2024 at 200 px rolled in digit by digit.",
+     "moves": "Each digit rolls 10\u201314 f on its word.",
      "transition": "The rail extends and lays the months."
     }
    ]
@@ -181,7 +181,7 @@
      "time": "13.40",
      "phrase": "eighteen months later",
      "words": "2024 \u00b7 18 months",
-     "shows": "18 sky ticks on the rail; the counter at 18; 2024 dimmed.",
+     "shows": "18 sky ticks on the rail under the numbers; the counter at 18 months; 2024 dimmed.",
      "moves": "The rail extends 20 f; a tick lands per frame; the digits roll in step.",
      "transition": "The tile grows into the field."
     },
@@ -197,7 +197,7 @@
      "frame": 462,
      "time": "15.40",
      "phrase": "euro valuation",
-     "words": "\u20ac2M \u00b7 K.B Consultancy valuation reached within 18 months. \u00b7 Company-reported, following its first funding round.",
+     "words": "\u20ac2M \u00b7 Company-reported, following its first funding round.",
      "shows": "The ticks as the underline of \u20ac2M; the caption in two lines.",
      "moves": "18 ticks travel to the underline 12 f MOVE; the caption rises 8 f.",
      "transition": "\u20ac2M shrinks to a header beside the mark."
@@ -224,7 +224,7 @@
      "time": "18.50",
      "phrase": "a hundred automations",
      "words": "\u20ac2M \u00b7 100+ automations",
-     "shows": "Every square split into 2\u00d72: a hundred in the same block; the counter at 100+; the label rolling.",
+     "shows": "Every square split into 2\u00d72: a hundred in the same block; the counter and the label rolled together on 'hundred'; the + landing on 'automations'.",
      "moves": "25 splits in one 8 f gesture; the counter rolls 25\u2192100; the + lands."
     },
     {
@@ -266,8 +266,8 @@
      "time": "21.90",
      "phrase": "I advise founders",
      "words": "WKConversions \u00b7 Top Jobs Abroad \u00b7 ClearScaler \u00b7 Tale Forge",
-     "shows": "Robin at the right; the four real logos in a 2\u00d72 on hairlines at the left.",
-     "moves": "Logos slide in from the left edge 3 f apart, 12 f each; hairlines draw.",
+     "shows": "Robin at the right; the four real logos in a loose 2\u00d72 gathered at his shoulder line.",
+     "moves": "Logos slide in from the left edge 3 f apart, 12 f each.",
      "transition": "The logos sink; a square from his shoulder."
     },
     {
@@ -275,7 +275,7 @@
      "time": "22.60",
      "phrase": "on strategy",
      "words": "Strategy.",
-     "shows": "Strategy. with the square as its period; the last logo sinking.",
+     "shows": "Strategy. in the top-left cell the logos left, the square as its period.",
      "moves": "The square travels from behind his shoulder 14 f MOVE; the word rises 8 f."
     },
     {
@@ -283,7 +283,7 @@
      "time": "23.50",
      "phrase": "leadership",
      "words": "Strategy Leadership.",
-     "shows": "The square stepped down to Leadership.; Strategy dimmed.",
+     "shows": "The square stepped to Leadership. in the top-right cell; Strategy at 55 %.",
      "moves": "The step 10 f MOVE; the dim 8 f."
     },
     {
@@ -291,7 +291,7 @@
      "time": "24.20",
      "phrase": "growth",
      "words": "+ Growth.",
-     "shows": "Three areas; the square on Growth.",
+     "shows": "Growth. in the bottom-left cell.",
      "moves": "The step."
     },
     {
@@ -299,7 +299,7 @@
      "time": "25.00",
      "phrase": "and capital",
      "words": "+ Capital.",
-     "shows": "The four areas in a column beside him; Capital in blue.",
+     "shows": "The four areas in the 2\u00d72 beside him; Capital in blue.",
      "moves": "The step; the breath easing toward rest.",
      "transition": "The words blur out; the square drops to become the first block."
     }
@@ -325,15 +325,15 @@
      "time": "26.50",
      "phrase": "something",
      "words": "none",
-     "shows": "Two blocks: the viewer's first course.",
-     "moves": "The second block rises 12 f ARRIVE."
+     "shows": "The second block has landed on the first: a thin tower.",
+     "moves": "It drops from above 12 f ARRIVE."
     },
     {
      "frame": 813,
      "time": "27.10",
      "phrase": "that needs structure",
      "words": "none",
-     "shows": "Four squares sliding out from behind Robin's shoulder completing the 2\u00d73 wall.",
+     "shows": "Four squares sliding out from behind Robin's shoulder bracing the tower into the 2\u00d73 wall.",
      "moves": "Four travels 12 f MOVE, 3 f apart, blurred; the breath settles to rest.",
      "transition": "The wall's top-left square becomes the period of TALK."
     },
@@ -357,7 +357,7 @@
      "frame": 885,
      "time": "29.50",
      "phrase": "(end card)",
-     "words": "+ robin@kruslockbosconsultancy.com \u00b7 linkedin.com/in/robindanielbos",
+     "words": "+ robin@kruslockbosconsultancy.com \u00b7 linkedin.com/in/robindanielbos (40 px)",
      "shows": "The end card: the invitation, the pressed button, the two lines, the wall, Robin.",
      "moves": "The press (3 f dip, 6 f return) at 29.2; one slow push to the end."
     },
@@ -382,7 +382,53 @@
   "25 projects and 100+ automations are K.B's own figures (kruslockbosconsultancy.com); shown as units, since 14 client logos \u2260 25.",
   "Voice: Piper en_US-ryan-high scratch voice, timing only. The real recording retimes the picture: every move is keyed on a word label."
  ],
- "revisions": [],
+ "revisions": [
+  [
+   "B6 \"a hundred automations\": counter 25\u2192100 on \"hundred\" over the label \"client projects\"",
+   "label rolls with the counter; only the + lands on \"automations\"",
+   "a false claim for half a second"
+  ],
+  [
+   "B5 \u20ac2M: two-line caption at 36/30 px; the 2 rolled through 1",
+   "one verbatim line at 44 px; the 2 rises with \u20ac and M",
+   "phone legibility; a false number for six frames"
+  ],
+  [
+   "B8 end card: 34 px grey contact lines in the bottom margin",
+   "40 px ink/blue lines above y 980; pill 640\u00d7112",
+   "the \"how\" must be readable"
+  ],
+  [
+   "periods: 46/40 px squares over the last glyph",
+   "34/24 px, 0.2 em clear, bottom on the baseline",
+   "the site's proportion, no collisions"
+  ],
+  [
+   "B4\u2013B5: tile largest; ticks through the digits",
+   "tile steps aside to 300 px; 2024/18 at 200 px; ticks 40 px under",
+   "the subject the largest thing"
+  ],
+  [
+   "B7: a column with a stepping period (B3 mirrored); a hairlined logo table",
+   "the areas take the logos' 2\u00d72 cells near Robin; no hairlines; bigger logos",
+   "one layout family in two beats; a trusted-by table"
+  ],
+  [
+   "B1: 2.6 s without Robin",
+   "Robin rises on \"strong\"; the last three squares stack behind him",
+   "a face in the two-second window"
+  ],
+  [
+   "B8: the second block beside the first",
+   "it lands on top: a thin tower braced into the wall",
+   "\"needs structure\" as a picture"
+  ],
+  [
+   "transitions: field/canvas reveals from one frame; tile colour switch; the haze rect over the card",
+   "ease-in-out reveals; interpolated colour; the rect behind the card from its exact box",
+   "cuts and pops in the QC"
+  ]
+ ],
  "assets": [
   "None: every asset comes from Robin's site, the K.B site and his public post (assets/assets.md)."
  ],
