@@ -54,16 +54,16 @@ export const CrmCard: React.FC<{ g: number; step: number; tick: number; w?: numb
       <div style={{ height: 1, background: C.line2, margin: "18px 0 22px" }} />
       <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
         <div style={{ width: 64, height: 64, borderRadius: "50%", background: C.tBlue[2], display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: 28, color: C.blueDeep }}>A</div>
-        <div style={{ flex: 1 }}>
+        <div style={{ flex: 1, minWidth: 0 }}>
           <div style={{ fontSize: 34, fontWeight: 700, letterSpacing: "-0.01em" }}>Anna</div>
-          <div style={{ fontSize: 24, color: C.muted, marginTop: 2 }}>Building firm · Tampere</div>
+          <div style={{ fontSize: 23, color: C.muted, marginTop: 2, whiteSpace: "nowrap" }}>Building firm · Tampere</div>
         </div>
-        <div style={{ position: "relative", height: h, minWidth: 330, overflow: "hidden", borderRadius: 999, background: step >= 1.5 ? C.inkStrong : C.tBlue[1],
-          boxShadow: `inset 0 0 0 1.5px ${step >= 1.5 ? C.inkStrong : rgba(C.blue, 0.3)}` }}>
+        <div style={{ position: "relative", height: h, minWidth: 310, flex: "none", overflow: "hidden", borderRadius: 999, background: step >= 0.5 ? C.blue : C.tBlue[1],
+          boxShadow: `inset 0 0 0 1.5px ${step >= 0.5 ? C.blue : rgba(C.blue, 0.3)}` }}>
           <div style={{ transform: `translateY(${-step * h}px)` }}>
             {CRM_STEPS.map((s, i) => (
               <div key={s} style={{ height: h, display: "flex", alignItems: "center", justifyContent: "center", gap: 10, fontSize: 25, fontWeight: 700, padding: "0 22px",
-                color: i === 2 ? "#fff" : C.blueDeep, whiteSpace: "nowrap" }}>
+                color: i >= 1 ? "#fff" : C.blueDeep, whiteSpace: "nowrap" }}>
                 {i === 2 && <Icon name="calendar" size={24} color="#fff" stroke={1.8} />}{s}
               </div>
             ))}
@@ -82,7 +82,8 @@ export const CrmCard: React.FC<{ g: number; step: number; tick: number; w?: numb
 /** The site's own counter (AI-at-work card footer): "Meetings booked this week", rolling 7 → 8 like an odometer. */
 export const Counter: React.FC<{ g: number; v: number; size?: number; style?: React.CSSProperties }> = ({ g, v, size = 120, style }) => (
   <div style={{ position: "absolute", padding: "26px 34px 28px", background: C.paper, borderRadius: R.card, boxShadow: `${SHADOW.float}, ${SHADOW.edge}`, fontFamily: F.ui, color: C.ink, ...style }}>
-    <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 24, color: C.muted, fontWeight: 600 }}><LiveDot g={g} size={12} />Meetings booked this week</div>
+    <div style={{ display: "flex", alignItems: "center", gap: 12, fontSize: 24, color: C.muted, fontWeight: 600, whiteSpace: "nowrap" }}><LiveDot g={g} size={12} />Meetings booked this week
+      <span style={{ marginLeft: 14, fontSize: 19, padding: "4px 12px", borderRadius: 999, background: C.paper2, boxShadow: `inset 0 0 0 1px ${C.line}` }}>Example</span></div>
     <div style={{ display: "flex", fontFamily: F.display, fontWeight: 600, fontSize: size, letterSpacing: "-0.045em", lineHeight: 1, marginTop: 14, color: C.ink }}>
       <Digit v={v} size={size} width={0.66} />
     </div>

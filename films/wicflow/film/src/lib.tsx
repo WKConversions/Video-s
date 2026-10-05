@@ -36,8 +36,9 @@ export const SHADOW = {
 export const R = { card: 24, inner: 16, pill: 999 };
 export const lerp = (a: number, b: number, k: number) => a + (b - a) * k;
 export const clamp01 = (t: number) => Math.min(1, Math.max(0, t));
+/** Mixes two #RRGGBB colours; returns #RRGGBB, so a mix can be mixed again. */
 export const mix = (a: string, b: string, k: number) => {
   const pa = [1, 3, 5].map((i) => parseInt(a.slice(i, i + 2), 16)), pb = [1, 3, 5].map((i) => parseInt(b.slice(i, i + 2), 16));
-  return `rgb(${pa.map((v, i) => Math.round(lerp(v, pb[i], clamp01(k)))).join(",")})`;
+  return "#" + pa.map((v, i) => Math.round(lerp(v, pb[i], clamp01(k))).toString(16).padStart(2, "0")).join("");
 };
 export const rgba = (hex: string, o: number) => `rgba(${[1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)).join(",")},${o})`;

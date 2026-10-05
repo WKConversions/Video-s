@@ -40,7 +40,7 @@ export const Line: React.FC<{ g: number; words: W[]; x: number; y: number; size:
     lineHeight: 1, letterSpacing: `${ls}em`, ...style }}>
     {words.map((w, i) => {
       const k = T.k(g, w.at, 0.42);
-      const o = out ? T.k(g, off(out, i * 0.035), outDur, DEPART) : 0;
+      const o = out ? T.k(g, out, outDur, DEPART) : 0;
       const m = w.mark ? T.k(g, w.mark, 0.32, MOVE) : 0;
       return (
         <span key={i} style={{ position: "relative", isolation: "isolate", display: "inline-block", opacity: Math.min(1, k * 1.7) * (1 - o),

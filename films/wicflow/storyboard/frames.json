@@ -1,0 +1,103 @@
+{
+ "title": "Wicflow Brand Film",
+ "eyebrow": "Wicflow · 37.5 s · 16:9 · voice-over, music, effects",
+ "headline": "AI that moves your <em>business forward.</em>",
+ "subtitle": "A bright, spiced-up take on the concept of the Cartesian and ClearScaler films: one isometric map of your business and its market, in Wicflow's own white, ink and service tints. The site's live-AI blue dot leaves the assistant's chat box, runs the system Wicflow builds, finds Anna's company, writes, follows up, updates the CRM, connects the tools your team uses, runs one pilot, scales it, and comes home. The business grows a floor for each tint, and the dot becomes the full stop of wicflow.com.",
+ "film": "film.mp4",
+ "poster": "frames/f0905.jpg",
+ "direction": {
+  "Purpose": "Show what Wicflow does in 37 seconds, for the site's hero or about section and LinkedIn; it must read with the sound off too.",
+  "Audience": "Owners and sales or marketing leads of growing companies in the Nordics. Not technical.",
+  "Format": "16:9, 1920×1080, 30 fps, 37.5 s. ElevenLabs voice (Christina, energetic commercial), force-aligned word by word. Music and 66 effects mixed to −15 LUFS.",
+  "Core message": "AI that doesn't just assist but moves the business: built systems that find prospects, write, follow up and update the CRM, on the tools you already use. One pilot, measured, then scaled.",
+  "Thesis": "Wicflow puts AI to work across your whole business, shown on one bright map of your business and its market.",
+  "Art direction": "Karl's references set the concept (one isometric world, a status chip top left, captions bottom left, paths travelling the world, a scale-out, a calm logo end). The composition is our own: a loop of track round the business and five stations (market, CRM, tools, team, desk).",
+  "Brand": "wicflow.com measured: white paper, ink #17171B, the three service tints (blue, sage, sand) as station plates and pale washes, the live-AI blue #1769C2 only for the AI. Space Grotesk and Manrope. The traced W mark.",
+  "Motion": "Precise and energetic: expo-out arrivals, A1 whips for the dot between stations, A2 drop-throughs for the caption slots, small pops (8% or less) only on pills and badges. The camera only breathes. Final render with 8-sample motion blur.",
+  "Transitions": "Out of an object (cards grow out of the roof, drawer, plot and desk; colour fields grow out of their station), object becomes the next thing (cards fold into the dot, replies flip into Meeting booked, the tints lift into the floors, the dot becomes the full stop), and before and after on the same objects.",
+  "Sound": "\"It's Love\" by Michael Ramir C. (Mixkit, free licence), 110 BPM, fitted so the drums enter on \"From finding…\", the full section lands on \"Less manual work\" and the last chord on the end card. The effects are soft and in key, placed on each move's speed graph."
+ },
+ "beats": [
+  {"id": "B1", "time": "0.0–4.9 s", "title": "The hook", "caption": "What if AI didn't just assist your team, moved your business forward?", "key": ["AI", "forward?"],
+   "idea": "The AI is the site's own live dot. It lands on your business, sits beside the team as a small chat assistant (how most companies use AI), then 'assist' is struck, the bubble folds into the dot, and the dot draws a bold blue route that pulls the business forward while the market rises ahead.",
+   "frames": [
+    {"frame": 12, "shows": "Your business rises on its blue plate; the dot lands on the roof", "moves": "B8 drop with one small bounce, a ripple"},
+    {"frame": 50, "shows": "\"How can I help?\": the AI as an assistant beside your team", "moves": "the bubble unfolds out of the dot"},
+    {"frame": 86, "shows": "'assist' struck; the bubble folds back into the dot", "moves": "strike on 'but', DEPART fold"},
+    {"frame": 118, "shows": "The dot draws the route forward; the business slides along it", "moves": "long S, 0.85 s, blue ribbon with the site's halo"},
+    {"frame": 140, "shows": "The market rises ahead in a wave", "moves": "wave travelling away from the business"}]},
+  {"id": "B2", "time": "5.3–10.4 s", "title": "What Wicflow builds", "caption": "Wicflow builds practical AI systems. For sales, marketing, and everyday work.", "key": ["systems.", "sales,", "marketing,", "everyday", "work."],
+   "idea": "The track is laid round the business in twelve segments and the dot runs it once, lighting the demo's four steps (find, write, follow up, update); then the loop is live. On each item of the list the dot whips to a station, which gets its tint, an action and an upright label.",
+   "frames": [
+    {"frame": 178, "shows": "The track is laid out of the business's edge", "moves": "B13 stepper, segments drop in"},
+    {"frame": 214, "shows": "The dot runs the loop, lighting find / write / follow up / update; the AI at work pill drops in", "moves": "B11 lap, pops on each step"},
+    {"frame": 245, "shows": "For sales: the CRM cabinet rises on its sage plate, 'Your CRM'", "moves": "A1 whip, cut on the fastest frame"},
+    {"frame": 262, "shows": "Marketing: a blue wave across the market's tops, 'Your market'", "moves": "A1 whip, stepped wave"},
+    {"frame": 295, "shows": "Everyday work: the desk and its sheets, sand plate, 'Your team'", "moves": "A1 whip, sheets land one by one"}]},
+  {"id": "B3", "time": "10.8–14.1 s", "title": "Find and write", "caption": "Finding the right prospects, writing personalized outreach.", "key": ["prospects,", "personalized"],
+   "idea": "The site's own demo, on the map. A pale blue wash grows out of the market; a lens sweeps it and two rings lock onto one company, which turns AI blue: Building firm · 40 staff · Tampere. The message to Anna grows out of the roof and types; the personal parts turn blue; the team approves it; the card folds into the dot, which carries it to her.",
+   "frames": [
+    {"frame": 345, "shows": "The lens sweeps the market on the pale blue wash", "moves": "B17 sweep, non-fits settle"},
+    {"frame": 362, "shows": "Locked on: Found a company that fits · Building firm · 40 staff · Tampere", "moves": "target rings close, the chip grows into its card"},
+    {"frame": 395, "shows": "\"Hi Anna, I saw you're hiring two salespeople…\", Anna and the reason marked", "moves": "the card grows out of the roof; A6 type-on"},
+    {"frame": 410, "shows": "Approved by your team", "moves": "the black pill pops"},
+    {"frame": 425, "shows": "The message travels to Anna's company", "moves": "the card folds into the dot; one long S"}]},
+  {"id": "B4", "time": "14.4–17.6 s", "title": "Follow up, update the CRM", "caption": "Automating follow-ups, keeping your CRM updated.", "key": ["follow-ups,", "updated."],
+   "idea": "No reply yet: a timer runs, and a Follow-up goes by itself. Anna replies with the site's own line. The reply runs to the CRM; the record grows out of the drawer and its status rolls from New contact to Interested prospect, updated automatically.",
+   "frames": [
+    {"frame": 450, "shows": "The Follow-up pill rides the second dot, sent by itself", "moves": "timer arc, then long S"},
+    {"frame": 470, "shows": "Anna replied: \"Sounds useful. Thursday at 10?\"", "moves": "the bubble rises out of her company"},
+    {"frame": 505, "shows": "Your CRM: Anna · Building firm · Tampere", "moves": "the record grows out of the drawer"},
+    {"frame": 522, "shows": "Status rolls to Interested prospect, updated automatically", "moves": "A2 roll in the pill, check"}]},
+  {"id": "B5", "time": "18.1–21.1 s", "title": "Connected", "caption": "Everything connects with the tools your team uses.", "key": ["connects", "tools"],
+   "idea": "Every dashed link from the business to its stations turns into a solid blue link in one sweep, a pulse along each. The site's own panel of fifteen tools grows out of the tool plot row by row; the team's own tools pop above the people.",
+   "frames": [
+    {"frame": 562, "shows": "The links turn solid blue, out from the business", "moves": "B11 sweep, pulses"},
+    {"frame": 600, "shows": "Connected to your existing workflows: the site's 15 tools", "moves": "the card grows out of the plot, rows rise"},
+    {"frame": 622, "shows": "The team's own Gmail, HubSpot and Slack; the dot runs through Gmail and HubSpot", "moves": "pops in a row over the people"}]},
+  {"id": "B6", "time": "21.5–25.9 s", "title": "Pilot, measure, scale", "caption": "Start with one focused pilot. Measure the results. Scale what works.", "key": ["pilot.", "Measure", "Scale"],
+   "idea": "The map steps back to one route and one company; a dashed pilot plot is drawn round it. The site's counter grows out of it and rolls 7 to 8 (labelled Example, as on the site). Then the plot is stamped onto six new companies across the map, each with its dot.",
+   "frames": [
+    {"frame": 672, "shows": "One focused pilot: one route, one company, the Pilot pill", "moves": "the map dims; the plot draws"},
+    {"frame": 720, "shows": "Meetings booked this week 7 → 8, Example", "moves": "odometer roll, check"},
+    {"frame": 762, "shows": "Scale: the pilot stamped across the map", "moves": "cascade outward, tops flash blue"}]},
+  {"id": "B7", "time": "26.4–30.3 s", "title": "The outcome", "caption": "Less manual work. More conversations. More customers.", "key": ["Less", "More"],
+   "idea": "A sand wash grows out of the desk and the services page's own chain of repeated work rises out of it; the AI ticks each step off. Replies rise out of the new companies, flip into the site's Meeting booked badges, and the one full live-AI-blue field grows out of the last of them, with the Meeting booked card at the centre.",
+   "frames": [
+    {"frame": 815, "shows": "Repeated work: Research, Prepare a follow-up, Update your CRM, ticked off", "moves": "the card grows out of the desk"},
+    {"frame": 860, "shows": "More conversations: replies across the map", "moves": "pops in a wave"},
+    {"frame": 905, "shows": "More customers: the blue field, Meeting booked at the centre", "moves": "the field grows out of the farthest booking; layout to a grid"}]},
+  {"id": "B8", "time": "30.7–35.0 s", "title": "Growth that lasts", "caption": "Wicflow helps turn AI into real business growth that lasts.", "key": ["AI", "growth"],
+   "idea": "Everything gathers back into the business. The three tint plates park round its foot and each lifts in as a floor (sand, sage, blue), the dot riding the roof; the OG card's pale-blue circle grows behind it. On 'lasts' a sundial ring appears and the shadow turns.",
+   "frames": [
+    {"frame": 935, "shows": "The field, the card and the badges gather into the roof", "moves": "MOVE into the roof; the world sinks under the field"},
+    {"frame": 965, "shows": "The three tints park round the business", "moves": "they slide in from their stations"},
+    {"frame": 1003, "shows": "Floors grow out of the tints; the business grows", "moves": "three soft steps, element scale 1 → 1.3"},
+    {"frame": 1042, "shows": "That lasts: the sundial and the turning shadow", "moves": "the shadow sweeps 120°"}]},
+  {"id": "End", "time": "35.0–37.5 s", "title": "The end card", "caption": "wicflow.com", "key": [],
+   "idea": "The calmest moment: the building folds down, the dot glides off the roof and becomes the full stop of wicflow.com, the wordmark opens out of it, the W wipes in, then the site's own line and its black AI analysis pill.",
+   "frames": [
+    {"frame": 1075, "shows": "The dot becomes the full stop; the wordmark opens out of it", "moves": "B2 glide, feathered masks"},
+    {"frame": 1110, "shows": "wicflow.com · An AI partner that runs your sales and marketing. · AI analysis", "moves": "still"}]}
+ ],
+ "revisions": [
+  ["Three concepts (bright world, ribbon, spiced kinetic), judged on Karl-fit, clarity and buildability", "The bright world (8/10) as the spine, with the spiced concept's whips, rolls and 'Approved' pill grafted in", "Closest to the references, readable in a second, buildable at polish in one session"],
+  ["Pale radial halos, 16 separate track plates, 15 loose logo badges; the busy check measured a median of 12 things on screen", "Crisp tint plates under each station, one continuous track, the site's own tools panel; median 5 things on screen", "Karl's 'too busy' lesson (K.B): fewer, bigger things"],
+  ["Colour stayed near-white for most of the film (under 2% saturated)", "Station plates in the strongest tint stop, a blue track as the AI runs it, the found company and copies in AI blue, one full blue field", "'Use their business bright colors… spice it up'"],
+  ["'For sales, marketing, everyday work' were three similar blooms", "Each station gets an action and an upright label on its word", "Each item must read in a second"],
+  ["'Everything connects' was a background colour change", "Long blue links from the business to every station, a pulse along each", "Show the verb, not a colour"],
+  ["Washes and the blue field swept the frame in 2–3 frames with hard edges", "Feathered fields that grow out of their object over 0.6–0.8 s", "The biggest frame jumps in the film"],
+  ["Cards popped in at full size; the message card shrank away from the dot", "Every card grows out of its object; the dot holds while the card folds into it, then one long S", "Every change is a move"],
+  ["Captions left word by word and overlapped the next line", "Old line leaves as one block, gone before the next first word", "Two lines of type never overlap"],
+  ["The building faded through, X-ray style, before the end card", "It folds down solid; the disc centres on the lockup", "The growth shouldn't dissolve on 'lasts'"],
+  ["'Wicflow helps' had no caption; the mark sat in a caption next to 'Wicflow'", "The last line opens on 'Wicflow helps…'; the mark appears only in the lockup", "Brand on its line; no lockup the brand doesn't use"],
+  ["The counter 7 → 8 had no label", "'Example', as the site's demo is", "Truth: the only number is illustrative"]
+ ],
+ "open": [
+  "The full stop of wicflow.com arrives as the AI's blue dot and eases to ink for the hold. Keep it blue as a brand moment, or ink as the site's wordmark is?",
+  "The W mark is traced from the site's 384 px PNG. Ask Wicflow for the original vector before publishing.",
+  "The CRM record pairs two of the site's illustrative statuses (New contact → Interested prospect). Wicflow may prefer one verbatim row.",
+  "Music: 'It's Love' (Mixkit) is the pick. 'Motivating Mornings' (punchier) and an original composed bed are fitted too (sound/music, sound/bed_composed.wav) if Karl's ear prefers one.",
+  "The site shows the 15 tool logos the same way; check that Wicflow is fine with them in a film."
+ ]
+}

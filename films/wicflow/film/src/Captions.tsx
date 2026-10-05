@@ -3,9 +3,8 @@
 // list is spoken ("for sales / marketing / everyday work", "pilot / measure / scale", "less / more / more").
 import React from "react";
 import { T } from "./clock";
-import { C, F, clamp01 } from "./lib";
+import { C, F } from "./lib";
 import { DEPART, EASE, Line, W, stepper } from "./kinetic";
-import { MARK_D } from "./mark";
 
 const X = 110, Y1 = 852, Y2 = 934, SIZE = 66;
 
@@ -38,29 +37,23 @@ export const Captions: React.FC<{ g: number; onBlue: number }> = ({ g, onBlue })
   const els: React.ReactNode[] = [];
   const line = (key: string, words: W[], y: number, out: string, from: string, until: string) => {
     if (t < T.s(from) - 0.05 || t > T.s(until) + 0.5) return;
-    els.push(<Line key={key} g={g} words={words} x={X} y={y} size={SIZE} weight={600} color={ink} out={out} outDur={0.3} />);
+    els.push(<Line key={key} g={g} words={words} x={X} y={y} size={SIZE} weight={600} color={ink} out={out} outDur={0.2} />);
   };
   // P1–P3
   line("c1a", [{ t: "What", at: "w:what" }, { t: "if", at: "w:if" }, { t: "AI", at: "w:ai", accent: true }], Y1, "capOut1", "w:what", "capOut1");
   line("c1b", [{ t: "didn't", at: "w:didnt" }, { t: "just", at: "w:just" }, { t: "assist", at: "w:assist", strike: "strike" }, { t: "your", at: "w:your" }, { t: "team,", at: "w:team" }], Y2, "fwd-0.3", "w:didnt", "fwd");
   line("c1c", [{ t: "moved", at: "w:moved" }, { t: "your", at: "w:your2" }, { t: "business", at: "w:business" }, { t: "forward?", at: "w:forward", accent: true, under: "w:forward+0.1" }], Y2, "capOut1", "w:moved", "capOut1");
-  // P4–P5: the mark sits in the line before "Wicflow"
-  if (t > T.s("w:wicflow") - 0.2 && t < T.s("capOut2") + 0.5) {
-    const mk = T.k(g, "w:wicflow-0.1", 0.4) * (1 - T.k(g, "capOut2", 0.3, DEPART));
-    els.push(<svg key="mk" viewBox="43 43 298 194" width={92} height={60} style={{ position: "absolute", left: X, top: Y1 + 4, opacity: clamp01(mk * 1.5), transform: `translateY(${(1 - mk) * 20}px)`, filter: mk < 1 ? `blur(${(1 - mk) * 8}px)` : undefined }}>
-      <path d={MARK_D} fill={ink === "#FFFFFF" ? "#fff" : C.inkStrong} fillRule="evenodd" /></svg>);
-  }
-  if (t > T.s("w:wicflow") - 0.2 && t < T.s("capOut2") + 0.5)
-    els.push(<Line key="c2a" g={g} words={[{ t: "Wicflow", at: "w:wicflow" }, { t: "builds", at: "w:builds" }]} x={X + 112} y={Y1} size={SIZE} weight={600} color={ink} out="capOut2" />);
+  // P4–P5
+  line("c2a", [{ t: "Wicflow", at: "w:wicflow" }, { t: "builds", at: "w:builds" }], Y1, "capOut2", "w:wicflow", "capOut2");
   line("c2b", [{ t: "practical", at: "w:practical" }, { t: "AI", at: "w:ai2" }, { t: "systems.", at: "w:systems", accent: true, under: "w:systems+0.15" }], Y2, "capOut2", "w:practical", "capOut2");
   // P6–P8: one slot rolls through the list
   if (t > T.s("w:for") - 0.1 && t < T.s("capOut3") + 0.5) {
-    const o = 1 - T.k(g, "capOut3", 0.3, DEPART);
-    const inU = T.k(g, "w:for", 0.3);
+    const o = 1 - T.k(g, "capOut3", 0.2, DEPART);
+    const inU = 1;
     els.push(
       <div key="c3" style={{ opacity: Math.min(inU * 1.6, 1) * o, transform: `translateY(${(1 - inU) * 20 - (1 - o) * 20}px)`, filter: inU < 1 || o < 1 ? `blur(${(1 - Math.min(inU, o)) * 8}px)` : undefined }}>
         <Slot g={g} y={Y2 - 4} steps={["w:marketing-0.1", "w:everyday-0.12"]} lines={[
-          <span key="a" style={{ ...typo, color: ink }}>For <S color={acc}>sales,</S></span>,
+          <span key="a" style={{ ...typo, color: ink, position: "relative", display: "block", height: SIZE }}><Line g={g} words={[{ t: "For", at: "w:for" }, { t: "sales,", at: "w:sales", accent: true }]} x={0} y={0} size={SIZE} weight={600} color={ink} /></span>,
           <span key="b" style={{ ...typo, color: ink }}><S color={acc}>marketing,</S></span>,
           <span key="c" style={{ ...typo, color: ink }}>and <S color={acc}>everyday work.</S></span>,
         ]} />
@@ -78,12 +71,12 @@ export const Captions: React.FC<{ g: number; onBlue: number }> = ({ g, onBlue })
   line("c6b", [{ t: "with", at: "w:with" }, { t: "the", at: "w:the2" }, { t: "tools", at: "w:tools", accent: true }, { t: "your", at: "w:your4" }, { t: "team", at: "w:team2" }, { t: "uses.", at: "w:uses" }], Y2, "capOut6", "w:with", "capOut6");
   // P15–P17: one slot drops through
   if (t > T.s("w:start") - 0.1 && t < T.s("capOut7") + 0.5) {
-    const o = 1 - T.k(g, "capOut7", 0.3, DEPART);
-    const inU = T.k(g, "w:start", 0.3);
+    const o = 1 - T.k(g, "capOut7", 0.2, DEPART);
+    const inU = 1;
     els.push(
       <div key="c7" style={{ opacity: Math.min(inU * 1.6, 1) * o, transform: `translateY(${(1 - inU) * 20 - (1 - o) * 20}px)`, filter: inU < 1 || o < 1 ? `blur(${(1 - Math.min(inU, o)) * 8}px)` : undefined }}>
         <Slot g={g} y={Y2 - 4} steps={["w:measure-0.12", "w:scale-0.12"]} lines={[
-          <span key="a" style={{ ...typo, color: ink }}>Start with one focused <S color={acc} under={T.k(g, "w:pilot", 0.3)}>pilot.</S></span>,
+          <span key="a" style={{ ...typo, color: ink, position: "relative", display: "block", height: SIZE, width: 1200 }}><Line g={g} words={[{ t: "Start", at: "w:start" }, { t: "with", at: "w:with2" }, { t: "one", at: "w:one" }, { t: "focused", at: "w:focused" }, { t: "pilot.", at: "w:pilot", accent: true, under: "w:pilot+0.1" }]} x={0} y={0} size={SIZE} weight={600} color={ink} /></span>,
           <span key="b" style={{ ...typo, color: ink }}><S color={acc}>Measure</S> the results.</span>,
           <span key="c" style={{ ...typo, color: ink }}><S color={acc}>Scale</S> what works.</span>,
         ]} />
@@ -92,12 +85,12 @@ export const Captions: React.FC<{ g: number; onBlue: number }> = ({ g, onBlue })
   }
   // P18–P20: less / more / more (white on the blue field)
   if (t > T.s("w:less") - 0.1 && t < T.s("capOut8") + 0.5) {
-    const o = 1 - T.k(g, "capOut8", 0.3, DEPART);
-    const inU = T.k(g, "w:less", 0.3);
+    const o = 1 - T.k(g, "capOut8", 0.2, DEPART);
+    const inU = 1;
     els.push(
       <div key="c8" style={{ opacity: Math.min(inU * 1.6, 1) * o, transform: `translateY(${(1 - inU) * 20 - (1 - o) * 20}px)`, filter: inU < 1 || o < 1 ? `blur(${(1 - Math.min(inU, o)) * 8}px)` : undefined }}>
         <Slot g={g} y={Y2 - 4} steps={["w:more-0.1", "w:more2-0.1"]} lines={[
-          <span key="a" style={{ ...typo, color: ink }}><S color={acc}>Less</S> <S strike={T.k(g, "w:manual+0.1", 0.3)}>manual</S> work.</span>,
+          <span key="a" style={{ ...typo, color: ink, position: "relative", display: "block", height: SIZE, width: 1200 }}><Line g={g} words={[{ t: "Less", at: "w:less", accent: true }, { t: "manual", at: "w:manual", strike: "w:manual+0.1" }, { t: "work.", at: "w:work2" }]} x={0} y={0} size={SIZE} weight={600} color={ink} /></span>,
           <span key="b" style={{ ...typo, color: ink }}><S color={acc}>More</S> conversations.</span>,
           <span key="c" style={{ ...typo, color: ink }}><S color={acc}>More</S> customers.</span>,
         ]} />
@@ -105,8 +98,8 @@ export const Captions: React.FC<{ g: number; onBlue: number }> = ({ g, onBlue })
     );
   }
   // P21–P23
-  line("c9a", [{ t: "Turn", at: "w:turn" }, { t: "AI", at: "w:ai3", accent: true }, { t: "into", at: "w:into" }, { t: "real", at: "w:real" }, { t: "business", at: "w:business2" }, { t: "growth", at: "w:growth", accent: true }], Y1, "out", "w:turn", "out");
-  line("c9b", [{ t: "that", at: "w:that" }, { t: "lasts.", at: "w:lasts", under: "w:lasts+0.1" }], Y2, "out", "w:that", "out");
+  line("c9a", [{ t: "Wicflow", at: "w:wicflow2" }, { t: "helps", at: "w:helps" }, { t: "turn", at: "w:turn" }, { t: "AI", at: "w:ai3", accent: true }, { t: "into", at: "w:into" }], Y1, "out", "w:wicflow2", "out");
+  line("c9b", [{ t: "real", at: "w:real" }, { t: "business", at: "w:business2" }, { t: "growth", at: "w:growth", accent: true }, { t: "that", at: "w:that" }, { t: "lasts.", at: "w:lasts", under: "w:lasts+0.1" }], Y2, "out", "w:real", "out");
   return <>{els}</>;
 };
 export { EASE };

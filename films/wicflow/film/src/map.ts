@@ -96,11 +96,11 @@ export const part = (r: Route, u0: number, u1: number): [number, number][] => {
 const ac: [number, number] = [(ANNA.x0 + ANNA.x1) / 2, (ANNA.y0 + ANNA.y1) / 2];
 export const ANNA_C = ac;
 // the outreach: out of the business's back edge, across the loop, along the street to Anna's door
-export const TO_ANNA = route([[0, -100], [0, -390], [ANNA.x1 + 18, -390], [ANNA.x1 + 18, ac[1]], [ANNA.x1, ac[1]]]);
+export const TO_ANNA = route([[-95, -95], [ANNA.x1 + 4, ANNA.y1 + 4]]);
 // the reply into the CRM: from Anna's door along the street to the cabinet's front
-export const ANNA_TO_CRM = route([[ANNA.x1, ac[1]], [ANNA.x1 + 18, ac[1]], [ANNA.x1 + 18, -420], [40, -420], [40, CRM.y1]]);
+export const ANNA_TO_CRM = route([[ANNA.x1 + 4, ANNA.y1 + 4], [40, CRM.y1 + 10]]);
 // the business moving forward in the hook: from its first spot (front left) to home
-export const BIZ_START: [number, number] = [-60, 300];
+export const BIZ_START: [number, number] = [-200, 360];
 
 // The pilot, scaled: eight more companies across the map (screen-placed: left, front, back, right), stamped with the
 // pilot's plot on "scale". The first six reply (P19) and book (P20).
@@ -108,7 +108,7 @@ const sp = (X: number, Y: number): [number, number] => {
   const a = (X - 1010) / (1.08 * Math.SQRT1_2), b = (Y - 610) / (1.08 * 0.56 * Math.SQRT1_2);
   return [(a + b) / 2, (b - a) / 2];
 };
-export const FAR: Co[] = [[470, 430], [400, 650], [720, 800], [1090, 955], [1320, 95], [1690, 215], [1810, 400], [300, 470]].map(([X, Y], i) => {
+export const FAR: Co[] = [[560, 470], [370, 610], [880, 765], [1310, 215], [1650, 300], [1560, 660]].map(([X, Y], i) => {
   const [cx, cy] = sp(X, Y);
   const w = 64 + 12 * hash(i, 3, 3), d = 64 + 12 * hash(i, 3, 4);
   return { id: `f${i}`, x0: cx - w / 2, y0: cy - d / 2, x1: cx + w / 2, y1: cy + d / 2, h: 24 + 26 * hash(i, 3, 6), fit: 1, n: 100 + i };

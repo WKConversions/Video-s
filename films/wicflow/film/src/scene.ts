@@ -19,7 +19,7 @@ export const bizOffset = (g: number): [number, number] => {
 };
 export const bizRise = (g: number) => k(g, "bizUp", 0.42);
 export const FLOOR = 64;
-export const floors = (g: number) => k(g, "f1", 0.32) + k(g, "f2", 0.32) + k(g, "f3", 0.32);
+export const floors = (g: number) => k(g, "f1", 0.42, EASE.soft) + k(g, "f2", 0.42, EASE.soft) + k(g, "f3", 0.42, EASE.soft);
 export const bizH = (g: number) => BIZ.h * bizRise(g) + FLOOR * floors(g);
 export const bizRoof = (g: number): [number, number, number] => { const [ox, oy] = bizOffset(g); return [ox, oy, bizH(g)]; };
 /** The business grows as an element (never the camera): 1 → 1.3 with its floors, about its own footprint. */
@@ -41,7 +41,7 @@ export const dim = (g: number) => 0.68 * (k(g, "dim", 0.4, MOVE) - k(g, "scale",
 /** Everything but the business sinks away under the blue field (it is hidden then; nothing moves on screen). */
 export const gone = (g: number) => sinkAll(g);
 /** On "Wicflow helps" the world sinks back into the paper in a wave from the edges inward (the field has just left). */
-export const sinkAll = (g: number) => k(g, "gather+0.35", 0.55, DEPART);
+export const sinkAll = (g: number) => k(g, "gather-0.3", 0.45, MOVE);
 
 // ---------- the dot (the live AI) ----------
 export type Dot = { x: number; y: number; z: number; o: number; r: number };
@@ -51,7 +51,7 @@ const loopAt = (u: number): [number, number, number] => { const [x, y] = loopPoi
 const crmFront: [number, number, number] = [40, CRM.y1 + 20, 0];
 const marketMid: [number, number, number] = [-456, -456, 70];
 const deskTop: [number, number, number] = [-285, 285, 60];
-const annaDoor: [number, number, number] = [ANNA.x1 + 6, (ANNA.y0 + ANNA.y1) / 2, 0];
+const annaDoor: [number, number, number] = [ANNA.x1 + 4, ANNA.y1 + 4, 0];
 const lerp3 = (a: [number, number, number], b: [number, number, number], t: number, arc = 0): [number, number, number] =>
   [lerp(a[0], b[0], t), lerp(a[1], b[1], t), lerp(a[2], b[2], t) + arc * Math.sin(Math.PI * t)];
 
@@ -104,10 +104,11 @@ export const dot = (g: number): Dot => {
   } else if (t < at("send")) {                                 // locks on, then comes home to the roof for the writing
     const lockP: [number, number, number] = [(ANNA.x0 + ANNA.x1) / 2, (ANNA.y0 + ANNA.y1) / 2, ANNA.h * 1.4 + 30];
     p = t < at("home1") ? lerp3([annaDoor[0] - 40, annaDoor[1], 30], lockP, ARRIVE(clamp01((t - at("lock")) / 0.25))) : lerp3(lockP, bizRoof(g), EASE.longS(clamp01((t - at("home1")) / 0.5)), 80);
-  } else if (t < at("toCrm")) {                                // P10: carries the message to Anna (B2, 0.5 s), waits at her door
-    const u = EASE.longS(clamp01((t - at("send")) / 0.5));
-    if (u < 0.12) p = lerp3(bizRoof(g), [0, -100, 0], u / 0.12);
-    else { const [x, y] = along(TO_ANNA, (u - 0.12) / 0.88); p = [x, y, 0]; }
+  } else if (t < at("toCrm")) {                                // P10: holds while the card folds into it, then one long S to Anna
+    const u = EASE.longS(clamp01((t - at("send") - 0.24) / 0.5));
+    if (u <= 0) p = bizRoof(g);
+    else if (u < 0.15) p = lerp3(bizRoof(g), [-95, -95, 0], u / 0.15);
+    else { const [x, y] = along(TO_ANNA, (u - 0.15) / 0.85); p = [x, y, 0]; }
   } else if (t < at("drawerIn")) {                             // P12: the reply folds into it; it carries it to the CRM
     const u = EASE.longS(clamp01((t - at("toCrm")) / 0.5));
     const [x, y] = along(ANNA_TO_CRM, u); p = [x, y, 0];
