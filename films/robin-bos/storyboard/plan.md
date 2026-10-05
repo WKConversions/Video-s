@@ -161,6 +161,7 @@ The first final encode (8-sample blur) measured: moving 95 %, longest still 0.47
 | risers | the first visible frame of a rising square sat at 66 % opacity | a 0.15 s linear fade in time, independent of the ease | no switch-on frame (pop review) |
 | B5 the field | the tile's navy crossed to the field's navy over the last quarter of the growth: a chroma step in the encode | over the whole growth | no step (pop review) |
 | B8 the button | the period grew into the pill on an ease-in-out, the label fading in through the fastest frames (a smear) | ARRIVE (fast while still a dot), the fill over the whole morph, the label on the slow tail | the plan's own spec (pop review) |
+| the motion blur | @remotion/motion-blur's CameraMotionBlur adds its samples with plus-lighter at 1/N opacity: every colour rounded to a multiple of N (the canvas white 252 → 255, the sky 237,244,251 → 240,240,255: a lavender light; the grain gone) and the sample count ramping over the first 8 frames (the tint swing the pop review found at 0.2–0.27 s) | a running-mean blur: sample i composited at opacity 1/(i+1) over the ones before, so the result is the exact average (±1 level) from frame 0 | the brand's colours as measured; frame 1 equals frame 10 |
 
 Open after round 3 (for Karl):
 - The scorers' first change, structural: rebuild B7 "today I advise founders" as one object (the team card shrinking onto a rail, the logos lined up at one cap height in ink, the four areas as captions on that rail) instead of the logo cluster and the 2×2 word cells. A new round; not done here.
