@@ -1,0 +1,273 @@
+https://www.clearscaler.com/results
+
+ClearScaler results, every number traceable
+Skip to content
+Product
+GTM Engine
+Outbound, built and run for you
+Paid Acquisition
+Meta, Google and LinkedIn, tracked to revenue
+Conversion
+Pages that turn visits into booked calls
+Leads
+Demo workspace
+Quillmoor Group
+Meeting booked
+Brightwick Systems
+Replied
+Oakvane Lines
+In outreach
+The GTM app
+Leads, inbox and meetings in one place
+Not ready to talk?
+Free distribution plan
+Who it's for
+Recruitment agencies
+BD is whoever has a spare hour
+Marketing & creative agencies
+New business is nobody's job
+Logistics & freight companies
+Sales is relationships plus RFQs
+B2B SaaS companies
+Founder-led sales has stalled
+B2B companies
+Sales depends on the founder
+Results
+Company
+About
+The two of us, and how we got here
+Blog
+Notes on what we build
+Contact
+Email, WhatsApp or book a call
+Client loginBook a call
+Every number, traceable.
+Every figure links to its source. Clients are named only where they said yes.
+Book a call
+Five results from four engagements.
+Clients who agreed to be named
+“Since the start of our collaboration we have seen a significant improvement in both the quality and quantity of our leads.”
+Rasmus Redin
+, CEO · Top Jobs Abroad
+Real · named with permission
+Paid acquisition→
+€3.20
+–
+to
+€4.50
+1Cost per application, each
+Measure
+Ad spend over applications
+Window
+Six months
+Source
+Google and Meta ad accounts
+cost per application, each
+Top Jobs Abroad · Paid · Six months
+300
+300
++
+applications for under €1,200 in total spend2Applications for under €1,200
+Window
+Six months
+Source
+Google and Meta ad accounts
+3
+x
+→
+5
+x
+3Return as ad spend rose sixfold
+Measure
+Revenue over ad spend
+Window
+Seven months
+Source
+Google Ads data and client revenue reports
+Month 1
+Month 7
+Return on ad spend, while spend rose sixfold.
+Real · anonymised
+Paid acquisition→
+Conversion→
+Fix the page, then buy the traffic.
+A travel logistics business in the UAE · Seven months
+6
+6
+x
+Monthly ad spend, $3k to $20k4Monthly ad spend, $3k to $20k
+Window
+Seven months
+Source
+Google Ads data
+$15k
+→
+$100k
+$100k
+Monthly revenue in seven months5Monthly revenue in seven months
+Window
+Seven months
+Source
+Client revenue reports
+~90
+~90
+%
+New customers from paid6New customers from paid
+Window
+Seven months
+Source
+Client revenue reports
++20
++20
+%
+Conversion on traffic already paid for7Conversion on traffic already paid for
+Window
+After our page review
+Source
+Client analytics
+01 · Measure
+Tracking rebuilt first.
+02 · Page
+Page fixed from our review.
+03 · Budget
+Then spend went up.
+How we did it
+That is unusual. Efficiency normally decays as budget rises and most accounts accept it as physics.
+The real problem sat underneath: conversion tracking was counting actions that carried no value, and the bidding was trained on them. The algorithm was finding more of the wrong customer, efficiently.
+Three things had to be true before any budget moved. The measurement was rebuilt first, the audience narrowed to travellers arriving in the UAE, and the client's team changed the landing page after our review.
+A conversion improvement applies to every visitor from every channel, forever, including the ones you have not bought yet. A budget increase applies only to the visitors it buys, and it stops the day you stop paying.
+Which is why order matters. If your page converts at one percent and you double the budget, you have bought twice as many people who leave. The only number that moved was the cost.
+The other results
+Real · anonymised
+Outbound→
+8
+8
+%
+8Reply rate, first month of sending
+Measure
+Replies over 300 contacts
+Window
+12 Aug to 12 Sep 2026
+Source
+Campaign report
+reply rate from 300 hand-picked contacts
+A B2B services company · First month of sending
+Reply rate
+Open rate9Open rate, first month of sending
+Measure
+Opens over 1,200 emails
+Window
+12 Aug to 12 Sep 2026
+Source
+Campaign report
+55
+%
+BuiltDedicated domains, warmed mailboxes and a verified list built to a tight buyer profile.
+ChangedHand-picked contacts on a four-step sequence, not a bought list.
+ResultFirst-month replies that showed which buyers and which offer landed.
+How we did it
+That did not come from clever copy. It came from the work before the copy: dedicated sending domains, warmed mailboxes, and a verified list built to a tight buyer profile rather than bought in bulk.
+Three hundred hand-picked contacts on a four-step sequence is not a volume play, it is phase one, and it is deliberately expensive. What it buys is a readable result: which buyers replied, which angle landed, which offer produced meetings rather than polite answers.
+The winners then get templatised, the research and drafting get automated, and volume goes up on the version that earned it.
+Real · anonymised
+Conversion→
+57
+→
+to
+99
+99
+10Mobile performance score
+Measure
+Score out of 100
+Window
+Before and after the rebuild
+Source
+Lighthouse mobile reports
+mobile score, rebuilt around booking
+A premium brand in Dubai · Rebuild, then two weeks
+Before
+After
+BuiltA rebuilt site, with booking treated as the design brief.
+ChangedThe mobile page stopped losing visitors before it finished loading.
+ResultThe owner reported new customers arriving with a different expectation of the business.
+BookingThe design brief
+Extra ad budgetNone
+How we did it
+The kind of place where walking in is most of the pitch. Except almost every customer met a phone screen first, on a street, deciding where to go.
+On a mobile connection a score of 57 means people left before the page finished deciding what to show them. No bounce report tells you those visitors existed. They were gone before the analytics had anything to record.
+Within two weeks of launch the owner reported that new customers were arriving with a different expectation of the business. Same room, same team, same prices. The site had been arguing against the business, and losing.
+1 / 2
+Sources
+As of 25 September 2026
+1
+Cost per application, each.
+Ad spend over applications. Six months. Google and Meta ad accounts.
+↩
+2
+Applications for under €1,200.
+Six months. Google and Meta ad accounts.
+↩
+3
+Return as ad spend rose sixfold.
+Revenue over ad spend. Seven months. Google Ads data and client revenue reports.
+↩
+4
+Monthly ad spend, $3k to $20k.
+Seven months. Google Ads data.
+↩
+5
+Monthly revenue in seven months.
+Seven months. Client revenue reports.
+↩
+6
+New customers from paid.
+Seven months. Client revenue reports.
+↩
+7
+Conversion on traffic already paid for.
+After our page review. Client analytics.
+↩
+8
+Reply rate, first month of sending.
+Replies over 300 contacts. 12 Aug to 12 Sep 2026. Campaign report.
+↩
+9
+Open rate, first month of sending.
+Opens over 1,200 emails. 12 Aug to 12 Sep 2026. Campaign report.
+↩
+10
+Mobile performance score.
+Score out of 100. Before and after the rebuild. Lighthouse mobile reports.
+↩
+Be seen.
+Be chosen.
+Your numbers, next.
+Book a callGet your free distribution plan
+30 minutes · no pitch
+We fix distribution for B2B companies.
+Book a callMálaga, Spain · Europe and the UAE
+What we do
+GTM Engine
+Paid Acquisition
+Conversion
+Free distribution plan
+Who it's for
+Recruitment agencies
+Marketing & creative agencies
+Logistics & freight companies
+B2B SaaS companies
+B2B companies
+Company
+Results
+About
+Blog
+Contact
+Client login
+Elsewhere
+LinkedIn
+Instagram
+WhatsApp
+magnus@clearscaler.com
+© 2026
+ClearScaler
+PrivacyCookiesCookie settingsPause animations

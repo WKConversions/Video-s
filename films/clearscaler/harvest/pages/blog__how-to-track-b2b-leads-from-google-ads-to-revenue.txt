@@ -1,0 +1,166 @@
+https://www.clearscaler.com/blog/how-to-track-b2b-leads-from-google-ads-to-revenue
+
+Track B2B Leads From Google Ads to Revenue | ClearScaler
+Skip to content
+Product
+GTM Engine
+Outbound, built and run for you
+Paid Acquisition
+Meta, Google and LinkedIn, tracked to revenue
+Conversion
+Pages that turn visits into booked calls
+Leads
+Demo workspace
+Quillmoor Group
+Meeting booked
+Brightwick Systems
+Replied
+Oakvane Lines
+In outreach
+The GTM app
+Leads, inbox and meetings in one place
+Not ready to talk?
+Free distribution plan
+Who it's for
+Recruitment agencies
+BD is whoever has a spare hour
+Marketing & creative agencies
+New business is nobody's job
+Logistics & freight companies
+Sales is relationships plus RFQs
+B2B SaaS companies
+Founder-led sales has stalled
+B2B companies
+Sales depends on the founder
+Results
+Company
+About
+The two of us, and how we got here
+Blog
+Notes on what we build
+Contact
+Email, WhatsApp or book a call
+Client loginBook a call
+Blog
+Paid acquisition
+How to track B2B leads from Google Ads to revenue
+Magnus Motzfeldt-BergeCo-founder, ClearScaler
+24 July 2026 ·
+5 min read
+On this pageWhy most B2B Google Ads reporting is misleading
+The fix: feed revenue back to Google
+Track the full funnel, not one event
+What we have learned running paid B2B
+A simple checklist to wire it up
+Common questions
+On this page
+Why most B2B Google Ads reporting is misleading
+The fix: feed revenue back to Google
+Track the full funnel, not one event
+What we have learned running paid B2B
+A simple checklist to wire it up
+Common questions
+If you want to track B2B leads from Google Ads to revenue, the core move is to stop counting form fills and start feeding closed deals back into Google. Most B2B accounts optimise toward the cheapest form submission, which is exactly the wrong target, because the algorithm then gets very good at finding people who fill in forms and never buy. The fix is offline conversion tracking: telling Google which leads actually became pipeline and revenue, so it optimises for money instead of clicks.
+Here is why the default reporting lies, and the practical way to wire ad spend to real revenue.
+Why most B2B Google Ads reporting is misleading
+The problem is structural. B2B sales cycles commonly run from 30 days to over a year, so a click today might not become revenue for six months (GROAS (opens in a new tab)
+↗
+). Google's algorithm needs conversion signals to optimise, but if the only signal it gets is "form submitted," it optimises for that.
+And form fills are a terrible proxy for revenue. Around 73% of B2B leads are not sales-ready when they come in (GROAS (opens in a new tab)
+↗
+). Optimise for form fills and you train Google to deliver more not-sales-ready leads. The reporting looks great, the cost per lead drops, and the pipeline stays empty. That disconnect is the whole problem.
+The fix: feed revenue back to Google
+The solution is to close the loop. Instead of the conversion event being "form submitted," you send Google the outcomes that happen later in your CRM: this lead became an MQL, this one became an opportunity, this one closed for this amount. Now the algorithm optimises toward the stages that correlate with revenue.
+There are two main ways to do this, and in 2026 one is clearly preferred.
+Enhanced Conversions for Leads (the recommended path)
+Enhanced Conversions for Leads is Google's recommended approach. It works by adding a second match key on top of the GCLID, using hashed first-party data from your form (email, phone). When the GCLID survives the journey, Google uses it; when it does not, the hashed email can still make the match (NAV43 (opens in a new tab)
+↗
+).
+That redundancy matters because GCLIDs get lost (cookie clearing, long cycles, cross-device). First-party data matching via hashed email and phone, alongside GCLIDs, delivers a median 10% increase in tracked conversions compared with standard offline imports (Heeet (opens in a new tab)
+↗
+).
+Classic GCLID offline conversion import
+The older method captures the GCLID on form submission, stores it against the lead in your CRM, and uploads the conversion back to Google when the lead hits a chosen stage. It still works and is well understood, but it depends entirely on the GCLID surviving, which is why Enhanced Conversions for Leads is now the better default.
+One deadline to note: the June 15, 2026 API change for offline conversions is real (Cometly (opens in a new tab)
+↗
+). If your setup relies on an older import method, check it before then.
+Track the full funnel, not one event
+The single biggest upgrade is to stop sending Google one conversion and start sending it stages. Create conversion actions for MQL, SQL, Opportunity, and Closed-Won, then optimise toward the latest stage that still hits roughly 30 to 50 conversions per month, which Google's bidding needs to learn (GROAS (opens in a new tab)
+↗
+).
+For most B2B accounts that means optimising for SQL or Opportunity rather than Closed-Won, simply because there is not enough closed-won volume each month for the algorithm to learn from. You still import closed-won and revenue for reporting, but you bid on the deepest stage with enough data.
+The mechanism: capture the GCLID and hashed contact data at form fill, pass it into your CRM, stamp each stage change, and export those stage events (with deal value at the end) back to Google.
+What we have learned running paid B2B
+The lesson that keeps repeating: what you optimise for is what you get. When the target is cheap form fills, you get cheap, junk leads. When the target is qualified pipeline, the same budget produces fewer but far better leads.
+On a paid recruitment funnel for Top Jobs Abroad we got cost per qualified CV down to around 5 euros, and the reason was not clever bidding. It was measuring the qualified outcome and feeding it back, then tightening targeting and message against it week after week. This is the core of how we run paid acquisition: tracked to revenue, not impressions.
+A simple checklist to wire it up
+Capture GCLID and hashed email/phone on every form.
+Store them against the lead in your CRM.
+Define conversion actions per funnel stage: MQL, SQL, Opportunity, Closed-Won.
+Set up Enhanced Conversions for Leads as the primary match method.
+Export stage changes (and final deal value) back to Google Ads.
+Bid toward the deepest stage that gets 30 to 50 conversions a month.
+Review which campaigns produce pipeline, not just leads, and reallocate.
+Common questions
+How do I connect Google Ads to actual revenue?
+Use offline conversion tracking. Capture the GCLID and hashed contact data at form fill, store it in your CRM, and upload the lead's later stages and deal value back to Google. That lets the algorithm optimise toward revenue instead of form fills.
+What is the difference between Enhanced Conversions for Leads and standard offline imports?
+Enhanced Conversions for Leads adds a hashed-email match key on top of the GCLID, so conversions still match when the GCLID is lost. It is Google's recommended path and delivers around a median 10% lift in tracked conversions over standard imports.
+Should I optimise Google Ads for closed-won revenue?
+Ideally, but only if you get enough closed deals per month (roughly 30 to 50) for the algorithm to learn. Most B2B accounts optimise for SQL or Opportunity instead and import closed-won mainly for reporting.
+Why are my Google Ads leads low quality?
+Usually because the account is optimised for form fills. Since about 73% of B2B leads are not sales-ready, optimising for submissions trains Google to find more unqualified leads. Feed qualified stages back instead.
+Want your paid spend tracked to pipeline instead of vanity metrics? That is exactly how we run paid acquisition. Book a free intro call and we will show you where your budget is actually going.
+Want your ad spend tracked to revenue?
+Book a callGet your free distribution plan
+Magnus Motzfeldt-Berge
+Co-founder, ClearScaler
+Started on the phone in Oslo, selling telecoms and then advertising to small businesses.
+LinkedIn (opens in a new tab)
+↗
+About us
+Want your ad spend tracked to revenue?
+Meta, Google and LinkedIn, built to reach buyers who are ready and judged on booked calls, not clicks.
+Book a callGet your free distribution plan
+30 minutes with Magnus or Kian
+Keep reading. More on paid acquisition.
+All articlesRSS
+Paid acquisition
+How to lower cost per qualified lead in B2B
+19 Aug 2026 ·
+6 min read
+Paid acquisition
+LinkedIn Ads for B2B SaaS: why last-click lies about your results
+7 Aug 2026 ·
+6 min read
+Paid acquisition
+Google Ads offline conversion tracking in 2026: feed revenue back so Smart Bidding chases pipeline
+13 Jul 2026 ·
+7 min read
+We fix distribution for B2B companies.
+Book a callMálaga, Spain · Europe and the UAE
+What we do
+GTM Engine
+Paid Acquisition
+Conversion
+Free distribution plan
+Who it's for
+Recruitment agencies
+Marketing & creative agencies
+Logistics & freight companies
+B2B SaaS companies
+B2B companies
+Company
+Results
+About
+Blog
+Contact
+Client login
+Elsewhere
+LinkedIn
+Instagram
+WhatsApp
+magnus@clearscaler.com
+© 2026
+ClearScaler
+PrivacyCookiesCookie settingsPause animations

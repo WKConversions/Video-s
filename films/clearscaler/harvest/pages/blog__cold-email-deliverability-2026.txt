@@ -1,0 +1,161 @@
+https://www.clearscaler.com/blog/cold-email-deliverability-2026
+
+Cold Email Deliverability 2026: The Sender Rules | ClearScaler
+Skip to content
+Product
+GTM Engine
+Outbound, built and run for you
+Paid Acquisition
+Meta, Google and LinkedIn, tracked to revenue
+Conversion
+Pages that turn visits into booked calls
+Leads
+Demo workspace
+Quillmoor Group
+Meeting booked
+Brightwick Systems
+Replied
+Oakvane Lines
+In outreach
+The GTM app
+Leads, inbox and meetings in one place
+Not ready to talk?
+Free distribution plan
+Who it's for
+Recruitment agencies
+BD is whoever has a spare hour
+Marketing & creative agencies
+New business is nobody's job
+Logistics & freight companies
+Sales is relationships plus RFQs
+B2B SaaS companies
+Founder-led sales has stalled
+B2B companies
+Sales depends on the founder
+Results
+Company
+About
+The two of us, and how we got here
+Blog
+Notes on what we build
+Contact
+Email, WhatsApp or book a call
+Client loginBook a call
+Blog
+Deliverability
+Cold email deliverability 2026: what changed and how to keep domains healthy
+Cold email deliverability 2026 rewards compliant senders with 89% inbox placement. Here is what Gmail, Yahoo, and Microsoft now enforce.
+Magnus Motzfeldt-BergeCo-founder, ClearScaler
+8 July 2026 ·
+6 min read
+On this pageWhat actually changed with Gmail, Yahoo, and Microsoft
+Authentication is the price of entry: SPF, DKIM, DMARC
+Spam-rate discipline is the number that gets you banned
+List hygiene is where most programs quietly rot
+The B2B nuance everyone gets wrong
+Why inbox placement is a 3x to 7x moat
+Common questions
+On this page
+What actually changed with Gmail, Yahoo, and Microsoft
+Authentication is the price of entry: SPF, DKIM, DMARC
+Spam-rate discipline is the number that gets you banned
+List hygiene is where most programs quietly rot
+The B2B nuance everyone gets wrong
+Why inbox placement is a 3x to 7x moat
+Common questions
+Inbox placement is now the single largest lever in outbound, and most teams are losing on it without knowing. Cold email deliverability in 2026 splits senders into two groups: the ones who authenticate and stay clean, and the ones whose mail quietly lands in spam. The gap between them is not small. Compliant senders average 89% inbox placement in 2026, while non-compliant senders see 22 to 34 percent of their mail routed to spam, a 3x to 7x penalty (Revnu, 2026).
+We run outbound for a living, and the change over the past two years has been stark. The same copy, the same list, the same offer will convert wildly differently depending on whether your infrastructure passes the checks the mailbox providers now enforce. Deliverability stopped being a technical footnote. It is the moat.
+What actually changed with Gmail, Yahoo, and Microsoft
+The mailbox providers formalized what used to be informal. Gmail and Yahoo led with bulk-sender requirements, and Microsoft followed with its own enforcement on consumer Outlook and Hotmail domains. The core demands are consistent across all three: authenticate your mail, make it easy to unsubscribe, and keep your spam complaints low.
+Google defines a "bulk sender" as any domain sending more than 5,000 messages per day to Gmail addresses (MarTech, 2026). Cross that line and you are expected to have DMARC in place. The good news for anyone starting out is that a DMARC policy of p=none is an acceptable starting point, progressing to quarantine and then reject as you mature (MarTech, 2026).
+The part people miss is that enforcement is not a warning system anymore. It is a gate. Miss the requirements and your mail does not get a stern email, it gets filtered.
+Authentication is the price of entry: SPF, DKIM, DMARC
+If you take one thing from this post, take this: SPF, DKIM, and DMARC are not optional and they are not "nice to have." They are the price of admission to the inbox in 2026.
+Here is how we think about each:
+SPF
+SPF tells receiving servers which IP addresses are allowed to send on behalf of your domain. It is a single DNS record. Get it wrong, or forget to include a sending platform, and legitimate mail fails the check. We audit SPF every time we add a new tool to a client's stack, because one stray sending source can undo the whole record.
+DKIM
+DKIM cryptographically signs your mail so the receiver can confirm it was not tampered with in transit. Each sending platform generates its own key that you publish in DNS. Missing DKIM is one of the most common reasons cold mail from otherwise-legitimate senders gets buried.
+DMARC
+DMARC ties SPF and DKIM together and tells receivers what to do when a message fails. Start at p=none to monitor, read your aggregate reports, then tighten to quarantine and reject once you have confirmed all your legitimate sources pass. We have seen domains sit at p=none for months because nobody read the reports. That is a wasted policy.
+Authentication does not guarantee the inbox. It qualifies you to compete for it. Everything after this section is about the competing.
+Spam-rate discipline is the number that gets you banned
+You can authenticate perfectly and still get filtered if your recipients mark you as spam. This is the metric we watch most closely, because it is the one with a hard cliff.
+The working line for Gmail is a spam complaint rate below 0.10 percent. At or above 0.30 percent, your domain becomes ineligible for Google's delivery mitigation until it stays under 0.30 percent for seven consecutive days (MarTech / PowerDMARC, 2026). Read that again: not seven days from when you notice, seven consecutive days of clean sending after the damage is already done.
+To put that in practice, 0.30 percent is three complaints per thousand delivered messages. On a real outbound program that volume of complaints is easy to hit if your targeting is loose or your list is stale. We treat 0.10 percent as the ceiling, not the target, and we pull campaigns the moment complaints trend up.
+My rule for the team is blunt: one bad send that spikes complaints costs more than a month of careful ones. You cannot outrun a reputation hit with volume.
+List hygiene is where most programs quietly rot
+Spam complaints and bounces are downstream of your list. If you are emailing dead addresses, spam traps, and people who never fit your profile, no amount of authentication saves you.
+We verify every list before it sends, remove catch-all and risky addresses, and suppress anyone who has bounced or complained. We also cap how many new domains we introduce at once and warm them properly rather than blasting from cold infrastructure. This is unglamorous work, and it is exactly what separates programs that scale from programs that flame out in a quarter.
+If you are building this muscle in-house, our writeup on the cold outreach automation stack covers the tooling we use to keep verification and warmup running without manual babysitting.
+The B2B nuance everyone gets wrong
+Here is the exemption that matters for B2B senders and that most people misread. Sending to Google Workspace business inboxes is exempt from the personal-Gmail bulk-sender rules (MarTech / Google, 2026). If your prospects are all on company domains running Workspace, you are not technically bound by the 5,000-per-day consumer thresholds.
+Do not celebrate yet. The same authentication hygiene still decides whether you land in the inbox (MarTech / Google, 2026). Workspace admins and their spam filters use the same signals: SPF, DKIM, DMARC, complaint rates, and domain reputation. The exemption gets you out of one specific rulebook. It does not exempt you from the physics of deliverability.
+In practice we run the same playbook whether we are hitting personal Gmail or Workspace. Authenticate fully, keep complaints under 0.10 percent, verify the list, warm the domains. The exemption is a technicality, not a strategy.
+Why inbox placement is a 3x to 7x moat
+Let me connect the stats to the money. If compliant senders hit 89% inbox placement and non-compliant senders lose 22 to 34 percent to spam (Revnu, 2026), the compliant sender is putting three to seven times more mail in front of humans from the identical list.
+That compounds. More inbox placement means more opens, more replies, more meetings, and a better sender reputation that reinforces the placement. The gap widens over time. Two competitors with the same offer and the same total addressable market will produce completely different pipeline numbers based on infrastructure alone.
+This is why we treat deliverability as a growth channel, not IT overhead. The teams winning outbound in 2026 are not the ones with the cleverest subject lines. They are the ones whose mail arrives.
+Common questions
+What is a good inbox placement rate for cold email in 2026?
+Compliant senders average 89% inbox placement in 2026, so that is the benchmark to aim for (Revnu, 2026). Non-compliant senders lose 22 to 34 percent of their mail to spam, a 3x to 7x penalty, so anything below the high-80s means your authentication or list hygiene needs work.
+What spam complaint rate will get my domain filtered?
+Keep Gmail spam complaints below 0.10 percent as your working line. At or above 0.30 percent your domain becomes ineligible for Google's delivery mitigation until it stays under 0.30 percent for seven consecutive days (MarTech / PowerDMARC, 2026).
+Do the Gmail bulk-sender rules apply to B2B outreach?
+Sending to Google Workspace business inboxes is exempt from the personal-Gmail bulk-sender rules (MarTech / Google, 2026). But the same authentication hygiene, SPF, DKIM, DMARC, and low complaint rates, still decides whether your mail lands, so you should follow it regardless.
+Is DMARC required, and what policy should I start with?
+Google expects DMARC from bulk senders, defined as those sending more than 5,000 messages per day to Gmail (MarTech, 2026). A policy of p=none is an acceptable start, and you progress to quarantine and then reject as you confirm your legitimate mail passes.
+Deliverability is the boring work that decides whether everything else in your outbound program matters. If you want a straight read on where your domains and list stand, grab a free GTM plan and we will map the gaps, or book a call and we will walk through your setup together.
+Want this built and run for you?
+Get your free distribution planBook a call
+Magnus Motzfeldt-Berge
+Co-founder, ClearScaler
+Started on the phone in Oslo, selling telecoms and then advertising to small businesses.
+LinkedIn (opens in a new tab)
+↗
+About us
+Want this built and run for you?
+We find your B2B buyers, reach them by email, one person at a time, and book the meetings into your calendar.
+Get your free distribution planBook a call
+30 minutes with Magnus or Kian
+Keep reading. More from the blog.
+All articlesRSS
+Deliverability
+Cold email domain setup: SPF, DKIM, and DMARC done right
+14 Aug 2026 ·
+6 min read
+Deliverability
+Instantly vs Smartlead: which wins in 2026
+31 Jul 2026 ·
+6 min read
+GTM engineering
+B2B lead scoring that works without the over-engineering
+28 Aug 2026 ·
+6 min read
+We fix distribution for B2B companies.
+Book a callMálaga, Spain · Europe and the UAE
+What we do
+GTM Engine
+Paid Acquisition
+Conversion
+Free distribution plan
+Who it's for
+Recruitment agencies
+Marketing & creative agencies
+Logistics & freight companies
+B2B SaaS companies
+B2B companies
+Company
+Results
+About
+Blog
+Contact
+Client login
+Elsewhere
+LinkedIn
+Instagram
+WhatsApp
+magnus@clearscaler.com
+© 2026
+ClearScaler
+PrivacyCookiesCookie settingsPause animations

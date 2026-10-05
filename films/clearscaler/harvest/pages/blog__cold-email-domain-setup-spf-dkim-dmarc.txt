@@ -1,0 +1,179 @@
+https://www.clearscaler.com/blog/cold-email-domain-setup-spf-dkim-dmarc
+
+Cold Email Domain Setup: SPF, DKIM, DMARC | ClearScaler
+Skip to content
+Product
+GTM Engine
+Outbound, built and run for you
+Paid Acquisition
+Meta, Google and LinkedIn, tracked to revenue
+Conversion
+Pages that turn visits into booked calls
+Leads
+Demo workspace
+Quillmoor Group
+Meeting booked
+Brightwick Systems
+Replied
+Oakvane Lines
+In outreach
+The GTM app
+Leads, inbox and meetings in one place
+Not ready to talk?
+Free distribution plan
+Who it's for
+Recruitment agencies
+BD is whoever has a spare hour
+Marketing & creative agencies
+New business is nobody's job
+Logistics & freight companies
+Sales is relationships plus RFQs
+B2B SaaS companies
+Founder-led sales has stalled
+B2B companies
+Sales depends on the founder
+Results
+Company
+About
+The two of us, and how we got here
+Blog
+Notes on what we build
+Contact
+Email, WhatsApp or book a call
+Client loginBook a call
+Blog
+Deliverability
+Cold email domain setup: SPF, DKIM, and DMARC done right
+Magnus Motzfeldt-BergeCo-founder, ClearScaler
+14 August 2026 ·
+6 min read
+On this pageWhy you never send cold email from your primary domain
+The DNS records that decide everything
+Warmup: earn the reputation before you spend it
+Sending limits and the metrics that get you shut off
+My end-to-end setup checklist
+Common questions
+On this page
+Why you never send cold email from your primary domain
+The DNS records that decide everything
+Warmup: earn the reputation before you spend it
+Sending limits and the metrics that get you shut off
+My end-to-end setup checklist
+Common questions
+Cold email domain setup is the single most decisive thing you can get right before you write a word of copy, because compliant authentication and clean sending infrastructure are what put you in the inbox instead of the spam folder. I have watched genuinely good campaigns die on bad plumbing, and I have watched mediocre copy still book meetings because the domain setup was solid. The unglamorous work wins here. This guide is the checklist I actually use when I stand up sending infrastructure from scratch: secondary domains, how many inboxes and domains you need, the SPF, DKIM, and DMARC records that matter, warmup, and how hard you can push each inbox before you get burned.
+Why you never send cold email from your primary domain
+Rule one: your main company domain sends invoices, contracts, and password resets. It never sends cold outreach. If a cold campaign torches your reputation, you do not want that fire spreading to the domain your business runs on.
+Instead you buy secondary sending domains. These are close variants of your brand, usually a .com, .co, or getbrand/trybrand style pattern, that exist only to send outbound. If one gets flagged, you rotate it out and your primary domain never feels it. Think of them as disposable by design.
+Here is my quotable line: I treat every cold email domain as a burner I hope I never have to burn.
+How many domains and inboxes do I actually need?
+Work backwards from your monthly send volume. The math I use is deliberately conservative:
+2 to 3 inboxes per domain. More than that starts to look like a spam farm to the mailbox providers.
+Roughly 30 to 40 emails per inbox per day once fully warmed. I do not push past this, and I explain why below.
+So one domain with 3 inboxes gives you around 90 to 120 sends a day, or roughly 2,000 to 2,600 a month.
+If you need to reach 500 new prospects a week, you need enough domains and inboxes to cover that at 30 to 40 per inbox, not by cranking one inbox to 200. Spread the load. Redundancy is the point, not efficiency.
+The DNS records that decide everything
+Three records do the heavy lifting: SPF, DKIM, and DMARC. Mailbox providers use them to answer one question, "is this sender who they claim to be?" Get any one wrong and you are gambling with the spam folder.
+SPF: who is allowed to send
+SPF (Sender Policy Framework) is a TXT record on your sending domain listing which servers are authorized to send on its behalf. Conceptually it looks like:
+v=spf1 include:_spf.yoursendingprovider.com ~all
+Copy
+Two things I check every time. First, only include the providers you actually send through. Second, watch the 10 DNS lookup limit. Chaining too many include statements silently breaks SPF, and a broken SPF record is worse than a strict one.
+DKIM: proof the message was not tampered with
+DKIM (DomainKeys Identified Mail) adds a cryptographic signature to every message using a private key, and publishes the matching public key as a TXT record at a selector subdomain, for example selector._domainkey.yoursendingdomain.com. Your sending platform generates the key pair. Your job is to publish the public half exactly as given, no truncation, no extra spaces. A single mangled character means DKIM fails and your authentication story falls apart.
+DMARC: the policy that ties it together
+DMARC (Domain-based Message Authentication, Reporting and Conformance) tells receiving servers what to do when SPF or DKIM fails, and where to send reports. A starter record looks like:
+v=DMARC1; p=none; rua=mailto:dmarc@yoursendingdomain.com
+Copy
+DMARC is now expected for bulk senders. In 2026 the guidance is clear that p=none is an acceptable starting point, but you should progress toward quarantine or reject as you build confidence (MarTech / redsift, 2026). I start every new domain at p=none with reporting on, read the reports for a couple of weeks, then tighten the policy. Starting at reject on day one is how you accidentally block your own legitimate mail.
+For the deeper mechanics of alignment and reputation, I go into more detail in our guide on cold email deliverability 2026.
+Warmup: earn the reputation before you spend it
+A brand new domain has no sending history, which to a mailbox provider is indistinguishable from a threat. Warmup is how you build a track record before you send a single real prospect anything.
+The mechanics are simple even if the patience is hard:
+Turn on automated warmup the moment inboxes are created. Warmup tools exchange low volumes of email that get opened and marked important, simulating real engagement.
+Wait 3 to 4 weeks minimum before you send real campaigns. There is no shortcut here. I have never regretted waiting longer.
+Ramp gradually. Start real sends at a trickle, maybe 10 to 15 a day per inbox, and climb toward your 30 to 40 ceiling over one to two weeks.
+Keep warmup running in the background even after launch. It cushions your reputation on the days you send heavier.
+Skipping warmup is the most common self-inflicted wound I see. The domain looks fine, the records validate, and then the first campaign lands in spam because the domain has zero history.
+Sending limits and the metrics that get you shut off
+Once you are live, discipline on volume and complaints is what keeps you alive.
+Hold your daily limits
+I keep each fully warmed inbox at 30 to 40 sends per day. Could a warmed inbox technically send more? Sometimes. But the goal is a durable domain, not a record-breaking Tuesday. Consistency reads as human. Spikes read as a bot.
+Watch your spam complaint rate like a hawk
+This is the number that will end you fastest. Keep spam complaints below 0.10%. At 0.30% or above, a domain becomes ineligible for Gmail delivery mitigation for 7 days even after you fix the underlying problem (PowerDMARC, 2026). That is a full week of dead sending, which for most outbound programs is catastrophic. Low complaints come from tight targeting and an easy opt out, not from clever copy.
+The payoff for doing this right
+None of this is busywork. Senders with compliant authentication and clean hygiene see roughly 89% inbox placement, versus just 22 to 34% landing in spam for non-compliant senders (Revnu, 2026). That gap is the entire game. The difference between a campaign that works and one that quietly vanishes is almost always infrastructure, not messaging.
+My end-to-end setup checklist
+Here is the sequence I run, in order, for every new sending operation:
+Buy secondary sending domains, never the primary.
+Create 2 to 3 inboxes per domain, real human names.
+Set up SPF, DKIM, and DMARC on each domain, validating every record.
+Start DMARC at p=none with reporting, plan to tighten later.
+Turn on warmup immediately and leave it running.
+Wait 3 to 4 weeks before any real send.
+Ramp real volume gradually toward 30 to 40 per inbox per day.
+Monitor spam complaints daily, keep them under 0.10%.
+Rotate any domain that starts degrading, protect the pool.
+Once the plumbing is solid, the rest of your stack has something to stand on. If you want to see how this fits into the broader tooling, our cold outreach automation stack walks through the layers that sit on top.
+Common questions
+How many sending domains do I need for cold email?
+Enough to cover your target volume at 30 to 40 emails per inbox per day, with 2 to 3 inboxes per domain. Do the math from your weekly prospect goal and add a spare domain for rotation. For most early programs that is 2 to 4 domains, not one overloaded domain pushed to its limit.
+Can I skip warmup if my DNS records are perfect?
+No. Perfect SPF, DKIM, and DMARC prove identity, but they do not create sending history. A brand new domain with flawless records and no warmup still looks suspicious because it has no track record. Warmup and authentication solve two different problems, and you need both.
+What DMARC policy should a new cold email domain use?
+Start at p=none with reporting turned on. That is the accepted 2026 starting point for bulk senders, and it lets you read failure reports without blocking legitimate mail (MarTech / redsift, 2026). After a couple of weeks of clean reports, move to quarantine, then reject.
+What spam complaint rate is too high?
+Keep it under 0.10%. At 0.30% or above you lose Gmail delivery mitigation eligibility for 7 days even after fixing the cause (PowerDMARC, 2026). Treat anything creeping toward 0.10% as an early warning to tighten targeting.
+If you would rather have this whole stack stood up and monitored for you instead of managing DNS records and warmup schedules yourself, book a call and we will handle the plumbing.
+Want this built and run for you?
+Get your free distribution planBook a call
+Magnus Motzfeldt-Berge
+Co-founder, ClearScaler
+Started on the phone in Oslo, selling telecoms and then advertising to small businesses.
+LinkedIn (opens in a new tab)
+↗
+About us
+Want this built and run for you?
+We find your B2B buyers, reach them by email, one person at a time, and book the meetings into your calendar.
+Get your free distribution planBook a call
+30 minutes with Magnus or Kian
+Keep reading. More from the blog.
+All articlesRSS
+Deliverability
+Instantly vs Smartlead: which wins in 2026
+31 Jul 2026 ·
+6 min read
+Deliverability
+Cold email deliverability 2026: what changed and how to keep domains healthy
+8 Jul 2026 ·
+6 min read
+GTM engineering
+B2B lead scoring that works without the over-engineering
+28 Aug 2026 ·
+6 min read
+We fix distribution for B2B companies.
+Book a callMálaga, Spain · Europe and the UAE
+What we do
+GTM Engine
+Paid Acquisition
+Conversion
+Free distribution plan
+Who it's for
+Recruitment agencies
+Marketing & creative agencies
+Logistics & freight companies
+B2B SaaS companies
+B2B companies
+Company
+Results
+About
+Blog
+Contact
+Client login
+Elsewhere
+LinkedIn
+Instagram
+WhatsApp
+magnus@clearscaler.com
+© 2026
+ClearScaler
+PrivacyCookiesCookie settingsPause animations

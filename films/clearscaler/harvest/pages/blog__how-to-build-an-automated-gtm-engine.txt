@@ -1,0 +1,181 @@
+https://www.clearscaler.com/blog/how-to-build-an-automated-gtm-engine
+
+How to Build an Automated GTM Engine (Clay + n8n) | ClearScaler
+Skip to content
+Product
+GTM Engine
+Outbound, built and run for you
+Paid Acquisition
+Meta, Google and LinkedIn, tracked to revenue
+Conversion
+Pages that turn visits into booked calls
+Leads
+Demo workspace
+Quillmoor Group
+Meeting booked
+Brightwick Systems
+Replied
+Oakvane Lines
+In outreach
+The GTM app
+Leads, inbox and meetings in one place
+Not ready to talk?
+Free distribution plan
+Who it's for
+Recruitment agencies
+BD is whoever has a spare hour
+Marketing & creative agencies
+New business is nobody's job
+Logistics & freight companies
+Sales is relationships plus RFQs
+B2B SaaS companies
+Founder-led sales has stalled
+B2B companies
+Sales depends on the founder
+Results
+Company
+About
+The two of us, and how we got here
+Blog
+Notes on what we build
+Contact
+Email, WhatsApp or book a call
+Client loginBook a call
+Blog
+GTM engineering
+How to build an automated GTM engine with Clay and n8n
+Magnus Motzfeldt-BergeCo-founder, ClearScaler
+3 August 2026 ·
+5 min read
+On this pageThe four parts of a GTM engine
+Step 1: Pick one signal, not ten
+Step 2: Enrich with a waterfall, not one provider
+Step 3: Personalise per row with AI
+Step 4: Orchestrate with n8n
+Step 5: Send and protect deliverability
+What we have learned building these
+What it costs to run
+Common questions
+On this page
+The four parts of a GTM engine
+Step 1: Pick one signal, not ten
+Step 2: Enrich with a waterfall, not one provider
+Step 3: Personalise per row with AI
+Step 4: Orchestrate with n8n
+Step 5: Send and protect deliverability
+What we have learned building these
+What it costs to run
+Common questions
+If you want to build an automated GTM engine, the trick is to stop thinking about tools and start thinking about a pipeline: a signal comes in, data gets attached to it, a relevant message gets written, and it goes out the door without anyone copy-pasting. Everything below is the architecture we actually wire up for clients, using Clay for data, n8n for orchestration, and Instantly for sending. No theory, just the build order.
+The reason this matters now: job postings for the GTM engineer role grew 340% year over year, with a median salary around $127,500 (Bloomberry (opens in a new tab)
+↗
+). Most companies cannot hire that fast, so they build the system instead. Here is how.
+The four parts of a GTM engine
+Every working engine I have built has the same four stages. Get them in this order and the rest is plumbing.
+Signal: the trigger that says an account is worth contacting now.
+Enrichment: turning a thin record into a full, accurate contact.
+Personalisation: a first line and angle that references something true.
+Sequencing and measurement: sending across channels and tracking what lands.
+Skip the signal and you are just doing spray-and-pray with extra steps. Start there.
+Step 1: Pick one signal, not ten
+A signal is a reason to reach out today. New funding, a fresh VP hire, a job posting that hints at the problem you solve, a competitor mention, new tech detected on a site. Pick one. The most common mistake I see is teams trying to monitor every signal at once and shipping nothing.
+In practice you feed that signal into Clay as a table. Clay pulls in rows from a source (an Apollo search, a LinkedIn list, a job board scrape, an event webhook) and each row becomes one account or person to work.
+Step 2: Enrich with a waterfall, not one provider
+This is where most outbound quietly fails. Single-source enrichment typically leaves 40 to 60 percent of qualified prospects unreachable (Amplemarket (opens in a new tab)
+↗
+). A waterfall queries providers in sequence until it finds a verified email, and it moves coverage dramatically: Clay reports email find rates climbing from around 40% to 78% with the waterfall approach (Warmly (opens in a new tab)
+↗
+).
+Inside Clay you stack providers (Apollo, LeadMagic, Findymail, Hunter, and others, 150+ are integrated under one subscription) so when the first cannot find an email, the next one tries. Aim for three to five providers in the chain. Past seven, you add cost and complexity for almost no extra coverage. We go deeper on this in our data enrichment waterfall guide.
+Step 3: Personalise per row with AI
+Once the row has a real person, a real company, and verified contact details, Clay runs an AI prompt on each row to draft a relevant opening. Not "I loved your post" filler. Something tied to the signal: the funding round, the new hire, the specific role they are hiring for.
+The discipline here is to feed the AI real variables (the signal, the company, a scraped detail) and keep the output short. A genuinely relevant first line beats a clever template every time. This is the step that used to be impossible to do at volume by hand, and it is now a single workflow.
+Step 4: Orchestrate with n8n
+Clay is brilliant at building data. It is not where you want long-running, conditional, multi-tool logic to live. That is n8n's job.
+n8n is the orchestration layer that ties the stack together: it can listen for a Clay webhook, route the lead based on score, push it into your CRM, kick off the Instantly sequence, wait for a reply, and branch on the outcome. Clay's own guidance is to pair it "with n8n or Make for complex multi-step orchestration across your full GTM stack" (Clay docs ecosystem (opens in a new tab)
+↗
+). We self-host n8n for clients who want control and lower cost at scale. If you are weighing the orchestrator itself, see n8n vs Make vs Zapier.
+A typical n8n flow for one of our engines:
+Trigger: new enriched row from Clay (webhook).
+Filter: drop anything below a fit score.
+Branch: high-intent signals go to a fast, manual-review sequence; the rest go automated.
+Action: create or update the contact in the CRM.
+Action: enrol in the right Instantly campaign.
+Listener: on reply, notify the rep and pause automation.
+Step 5: Send and protect deliverability
+Instantly (or Lemlist) does the sending. But in 2026 the sending tool is the easy part. The hard part is landing in the inbox at all. Google, Yahoo, and Microsoft now enforce sender rules: spam complaints must stay under 0.3% and bounces under 2%, and SPF, DKIM, and DMARC are all required (PowerDMARC (opens in a new tab)
+↗
+). Google escalated enforcement in November 2025 from temporary delays to permanent rejections (Scaledmail (opens in a new tab)
+↗
+).
+Practically, that means dedicated sending domains, warmed inboxes, verified emails (which the waterfall already gives you, keeping bounces low), and conservative volume per inbox. An engine that sends beautifully personalised mail into the spam folder is worth nothing.
+What we have learned building these
+Two hard-won lessons. First, the targeting is the engine, not the tools. On a paid funnel for Top Jobs Abroad we got cost per qualified CV to around 5 euros by tightening who we targeted and what we said, not by adding software. The same compounding applies here: a measurable system beats a bigger one pointed at the wrong people.
+Second, build the smallest version that produces a meeting before you scale anything. One signal, one enrichment waterfall, one sequence, end to end. Most teams buy five tools before they have a single working flow. Ship the small one, measure it, then widen.
+What it costs to run
+Be realistic about budget. Clay sits roughly between $149 and $800 per month depending on plan, and most active outbound teams land on the Growth tier around $495 (Warmly (opens in a new tab)
+↗
+). Add credit top-ups, a sender like Instantly, and Sales Navigator, and a working engine is a real line item, but a fraction of a $127,500 hire. For how the full budget breaks down, see how much GTM engineering costs.
+Common questions
+Do I need n8n if I already have Clay?
+For a simple one-signal flow, no, Clay can push straight to a sender. The moment you need conditional routing, CRM sync, reply handling, or multiple tools talking to each other, n8n (or Make) saves you from brittle workarounds.
+How long does it take to build a GTM engine?
+A focused, single-signal engine can be live in a few weeks. The first version rarely performs perfectly. The advantage of a system is that you can measure and improve targeting, copy, and timing quickly, so it compounds.
+Can I build this without coding?
+Mostly yes. Clay and n8n are low-code. You will still benefit from someone who thinks in pipelines and data, which is exactly why the GTM engineer role exists.
+What breaks first when scaling?
+Deliverability and data quality, almost always. As volume rises, weak enrichment shows up as bounces and weak personalisation shows up as low reply rates. Fix the waterfall and the sending infrastructure before you turn up volume.
+Want this engine built around your ICP instead of from scratch? This is exactly what we do in our GTM engineering work. Get a free GTM plan and we will map the first signal and flow to build.
+Want this built and run for you?
+Get your free distribution planBook a call
+Magnus Motzfeldt-Berge
+Co-founder, ClearScaler
+Started on the phone in Oslo, selling telecoms and then advertising to small businesses.
+LinkedIn (opens in a new tab)
+↗
+About us
+Want this built and run for you?
+We find your B2B buyers, reach them by email, one person at a time, and book the meetings into your calendar.
+Get your free distribution planBook a call
+30 minutes with Magnus or Kian
+Keep reading. More on GTM engineering.
+All articlesRSS
+GTM engineering
+B2B lead scoring that works without the over-engineering
+28 Aug 2026 ·
+6 min read
+GTM engineering
+GTM engineering agency: what a good one actually does
+24 Aug 2026 ·
+6 min read
+GTM engineering
+The GTM stack 2026: the consolidated setup we actually run
+12 Aug 2026 ·
+6 min read
+We fix distribution for B2B companies.
+Book a callMálaga, Spain · Europe and the UAE
+What we do
+GTM Engine
+Paid Acquisition
+Conversion
+Free distribution plan
+Who it's for
+Recruitment agencies
+Marketing & creative agencies
+Logistics & freight companies
+B2B SaaS companies
+B2B companies
+Company
+Results
+About
+Blog
+Contact
+Client login
+Elsewhere
+LinkedIn
+Instagram
+WhatsApp
+magnus@clearscaler.com
+© 2026
+ClearScaler
+PrivacyCookiesCookie settingsPause animations

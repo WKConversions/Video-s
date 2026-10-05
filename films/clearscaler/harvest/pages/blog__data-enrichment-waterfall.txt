@@ -1,0 +1,173 @@
+https://www.clearscaler.com/blog/data-enrichment-waterfall
+
+Data Enrichment Waterfall: The 2026 Guide | ClearScaler
+Skip to content
+Product
+GTM Engine
+Outbound, built and run for you
+Paid Acquisition
+Meta, Google and LinkedIn, tracked to revenue
+Conversion
+Pages that turn visits into booked calls
+Leads
+Demo workspace
+Quillmoor Group
+Meeting booked
+Brightwick Systems
+Replied
+Oakvane Lines
+In outreach
+The GTM app
+Leads, inbox and meetings in one place
+Not ready to talk?
+Free distribution plan
+Who it's for
+Recruitment agencies
+BD is whoever has a spare hour
+Marketing & creative agencies
+New business is nobody's job
+Logistics & freight companies
+Sales is relationships plus RFQs
+B2B SaaS companies
+Founder-led sales has stalled
+B2B companies
+Sales depends on the founder
+Results
+Company
+About
+The two of us, and how we got here
+Blog
+Notes on what we build
+Contact
+Email, WhatsApp or book a call
+Client loginBook a call
+Blog
+GTM engineering
+Data enrichment waterfall: why one provider is never enough
+A data enrichment waterfall queries providers in sequence until it finds a verified contact. Here is how it works and why it beats single-source data.
+Magnus Motzfeldt-BergeCo-founder, ClearScaler
+20 July 2026 ·
+4 min read
+On this pageWhat a data enrichment waterfall actually does
+The numbers: why it beats single-source
+How many providers do you actually need?
+Building one: the practical path
+Why verification is the part people skip
+Where the waterfall fits in a GTM engine
+Common questions
+On this page
+What a data enrichment waterfall actually does
+The numbers: why it beats single-source
+How many providers do you actually need?
+Building one: the practical path
+Why verification is the part people skip
+Where the waterfall fits in a GTM engine
+Common questions
+A data enrichment waterfall is a method that queries several data providers in sequence until it finds verified contact information. If Provider A returns nothing, it asks Provider B, then Provider C, and so on. The reason this exists is simple: no single provider has good data on everyone, so relying on one quietly throws away a large chunk of your list.
+How large? Single-source enrichment typically leaves 40 to 60 percent of qualified prospects unreachable (Amplemarket (opens in a new tab)
+↗
+). A waterfall is how you claw most of that back. Here is how it works and how to build one that actually pays off.
+What a data enrichment waterfall actually does
+Think of it as a fallback chain. You start with something thin, usually a name and company domain, or a LinkedIn URL, and you want to turn it into a complete, verified record: the right email, direct dial, role, company size, tech stack.
+The waterfall runs your providers one after another. The first one tries to find a verified email. If it fails, the next one tries, and the chain continues until one succeeds or you run out of providers. You only pay deeper into the chain when earlier, cheaper providers come up empty, so coverage goes up without paying every provider for every row.
+The order matters. As one guide puts it, "the order matters and can influence both coverage and accuracy" (Findymail (opens in a new tab)
+↗
+). Put your highest-accuracy, best-value providers first.
+The numbers: why it beats single-source
+This is not a marginal improvement. A worked example from the research: a single-source result might yield 620 verified emails from a list (62% coverage), while a three-provider waterfall yields 905 verified emails (90.5% coverage). That is 285 more reachable contacts from the exact same input, a 46% improvement (Findymail (opens in a new tab)
+↗
+).
+Clay reports the same pattern from the other direction: stacking providers moves email find rates from around 40% to 78% (Warmly (opens in a new tab)
+↗
+). Whichever number you trust, the conclusion is identical. Single-source enrichment is leaving roughly a third to a half of your addressable market on the table.
+How many providers do you actually need?
+More is not better past a point. The consensus is three to five providers (BetterContact (opens in a new tab)
+↗
+). The logic: with fewer than three you are not really exploiting the cascade, and past about seven you add cost and complexity while providers four and five find far less than the first three already did.
+So the practical rule is: three to five providers, best one first, and review hit rates per provider every so often to reorder or swap.
+Building one: the practical path
+You can hand-roll a waterfall with API calls, but in practice almost everyone builds it inside Clay, which integrates 150+ data providers (Apollo, LeadMagic, Findymail, Clearbit, Hunter, Datagma, Lusha, BuiltWith and more) under one subscription (Warmly (opens in a new tab)
+↗
+). That means you configure the chain once instead of managing a dozen vendor contracts.
+A typical build:
+Input: a table of rows, each with at least a name and company domain or a LinkedIn URL.
+Stage 1: your most accurate provider for that segment runs first.
+Fallback stages: Clay only calls the next provider on rows where the previous one failed.
+Verification: a final email-verification step so bounces stay low (which matters more than ever, see deliverability below).
+Output: verified records pushed to your sequencer or CRM.
+Modern waterfalls run in real time, with a single lead generally taking one to five seconds to enrich depending on chain length (Findymail (opens in a new tab)
+↗
+). In 2026 this has shifted from one-time CSV uploads to continuous, real-time enrichment wired straight into outbound workflows.
+Why verification is the part people skip
+Coverage is only half the job. The other half is making sure those emails are valid, because in 2026 bounce rates can sink your whole sending operation. Google, Yahoo, and Microsoft now require bounces to stay under 2% and spam complaints under 0.3% (PowerDMARC (opens in a new tab)
+↗
+). A waterfall that finds more emails but does not verify them can actively hurt you by pushing bounce rates up.
+So treat verification as the last stage of the waterfall, not an afterthought. Found-and-verified is the only metric that counts.
+Where the waterfall fits in a GTM engine
+Enrichment is the second stage of a full outbound system: signal, then enrichment, then personalisation, then sending. The waterfall is what makes the personalisation stage possible, because you cannot write a relevant line to a contact you cannot reach. We cover the whole build in how to build an automated GTM engine, and the tooling debate behind it in Clay vs Apollo.
+A pattern from our own builds: the wins compound from data quality and targeting, not from adding tools. A clean, well-verified waterfall feeding a tight ICP outperforms a sprawling stack pointed at a vague list, every time.
+Common questions
+What is a data enrichment waterfall in simple terms?
+It is querying multiple data providers one after another until one returns verified contact info. The first provider that succeeds wins, so you get the coverage of many sources without paying every source for every contact.
+How much better is a waterfall than one provider?
+Significantly. Worked examples show coverage rising from around 62% with a single source to over 90% with a three-provider waterfall, roughly a 46% lift in reachable contacts (Findymail (opens in a new tab)
+↗
+).
+How many enrichment providers should I use?
+Three to five. Fewer underuses the cascade; more than about seven adds cost and complexity for little extra coverage.
+Does the order of providers matter?
+Yes. Provider order affects both coverage and accuracy. Put your most accurate, best-value provider first and let weaker or pricier ones act as fallbacks.
+Want a verified, high-coverage data pipeline built around your ideal customer? It is core to our GTM engineering work. Get a free GTM plan and we will map the stack to your ICP.
+Want this built and run for you?
+Get your free distribution planBook a call
+Magnus Motzfeldt-Berge
+Co-founder, ClearScaler
+Started on the phone in Oslo, selling telecoms and then advertising to small businesses.
+LinkedIn (opens in a new tab)
+↗
+About us
+Want this built and run for you?
+We find your B2B buyers, reach them by email, one person at a time, and book the meetings into your calendar.
+Get your free distribution planBook a call
+30 minutes with Magnus or Kian
+Keep reading. More on GTM engineering.
+All articlesRSS
+GTM engineering
+B2B lead scoring that works without the over-engineering
+28 Aug 2026 ·
+6 min read
+GTM engineering
+GTM engineering agency: what a good one actually does
+24 Aug 2026 ·
+6 min read
+GTM engineering
+The GTM stack 2026: the consolidated setup we actually run
+12 Aug 2026 ·
+6 min read
+We fix distribution for B2B companies.
+Book a callMálaga, Spain · Europe and the UAE
+What we do
+GTM Engine
+Paid Acquisition
+Conversion
+Free distribution plan
+Who it's for
+Recruitment agencies
+Marketing & creative agencies
+Logistics & freight companies
+B2B SaaS companies
+B2B companies
+Company
+Results
+About
+Blog
+Contact
+Client login
+Elsewhere
+LinkedIn
+Instagram
+WhatsApp
+magnus@clearscaler.com
+© 2026
+ClearScaler
+PrivacyCookiesCookie settingsPause animations

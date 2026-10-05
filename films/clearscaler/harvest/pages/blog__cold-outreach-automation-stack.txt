@@ -1,0 +1,170 @@
+https://www.clearscaler.com/blog/cold-outreach-automation-stack
+
+Cold Outreach Automation Stack (2026 Guide) | ClearScaler
+Skip to content
+Product
+GTM Engine
+Outbound, built and run for you
+Paid Acquisition
+Meta, Google and LinkedIn, tracked to revenue
+Conversion
+Pages that turn visits into booked calls
+Leads
+Demo workspace
+Quillmoor Group
+Meeting booked
+Brightwick Systems
+Replied
+Oakvane Lines
+In outreach
+The GTM app
+Leads, inbox and meetings in one place
+Not ready to talk?
+Free distribution plan
+Who it's for
+Recruitment agencies
+BD is whoever has a spare hour
+Marketing & creative agencies
+New business is nobody's job
+Logistics & freight companies
+Sales is relationships plus RFQs
+B2B SaaS companies
+Founder-led sales has stalled
+B2B companies
+Sales depends on the founder
+Results
+Company
+About
+The two of us, and how we got here
+Blog
+Notes on what we build
+Contact
+Email, WhatsApp or book a call
+Client loginBook a call
+Blog
+Outbound
+The cold outreach automation stack that still works in 2026
+Magnus Motzfeldt-BergeCo-founder, ClearScaler
+29 July 2026 ·
+5 min read
+On this pageThe four layers of the stack
+Layer 1: Data and sourcing (Apollo)
+Layer 2: Enrichment (Clay)
+Layer 3: Orchestration (n8n)
+Layer 4: Sending and warmup (Instantly or Lemlist)
+How the layers connect
+What we have learned running these
+Common questions
+On this page
+The four layers of the stack
+Layer 1: Data and sourcing (Apollo)
+Layer 2: Enrichment (Clay)
+Layer 3: Orchestration (n8n)
+Layer 4: Sending and warmup (Instantly or Lemlist)
+How the layers connect
+What we have learned running these
+Common questions
+A cold outreach automation stack is the set of connected tools that finds prospects, enriches them, personalises a message, and sends it without a person doing each step by hand. In 2026 the stack most working teams run is some combination of Apollo, Clay, n8n, and Instantly or Lemlist. But the tools are the easy part. The reason most stacks fail now is deliverability, not features, so I will be blunt about that throughout.
+Here is the stack we actually build, what each piece does, how they connect, and the inbox rules that will sink you if you ignore them.
+The four layers of the stack
+Strip away brand names and a cold outreach automation stack is four layers. Get them in this order.
+Data and sourcing: who to contact (Apollo, lists, scrapes).
+Enrichment: turning thin records into verified, complete ones (Clay).
+Orchestration: the logic that connects everything (n8n or Make).
+Sending and warmup: getting the message to the inbox (Instantly or Lemlist).
+Most broken stacks are missing layer two or layer four. They source and send, but skip real enrichment and skip deliverability, then wonder why reply rates are flat.
+Layer 1: Data and sourcing (Apollo)
+Apollo is the practical default for raw sourcing: a large B2B database, filters to build lists, and built-in sequencing if you want it. For a lot of teams it is the cheapest way to get a first list of accounts and contacts that match a basic ICP.
+The limit is that you are mostly working with Apollo's own data, which is fine for common segments and weaker for unusual ICPs or signal-based plays. So treat Apollo as one input, not the whole brain. We compare it directly in Clay vs Apollo.
+Layer 2: Enrichment (Clay)
+This is the layer that decides whether the rest works. Clay takes thin records and runs them through a data enrichment waterfall: several providers in sequence until a verified email is found. That moves coverage from the 40 to 60 percent you get single-source up toward 90 percent, and Clay reports find rates climbing from around 40% to 78% with the waterfall (Warmly (opens in a new tab)
+↗
+).
+Clay also runs AI on each row to draft a relevant first line tied to a real detail or signal. That combination, verified data plus per-row personalisation, is what separates a 2026 stack from a 2019 one. The full mechanics are in our data enrichment waterfall guide.
+Layer 3: Orchestration (n8n)
+Once data and personalisation exist, something has to move leads between tools, apply logic, and react to events. That is n8n. It listens for a new enriched lead, scores it, routes high-intent ones to a manual-review track and the rest to automation, syncs the CRM, enrols the lead in a sequence, and pauses automation when someone replies.
+Clay's own guidance is to pair it "with n8n or Make for complex multi-step orchestration across your full GTM stack" (Clay ecosystem (opens in a new tab)
+↗
+). For self-hosted, complex, cost-sensitive setups we reach for n8n; the trade-offs are in n8n vs Make vs Zapier.
+Layer 4: Sending and warmup (Instantly or Lemlist)
+The sender is the last layer and, in 2026, the riskiest. The feature differences between Instantly and Lemlist matter less than getting deliverability right, because the best stack in the world is worthless in the spam folder.
+The non-negotiables, straight from the mailbox providers:
+Authentication. SPF, DKIM, and DMARC are all required for reliable placement across Gmail, Yahoo, and Microsoft. An SPF record alone is no longer enough (PowerDMARC (opens in a new tab)
+↗
+).
+Complaint and bounce thresholds. Keep spam complaints under 0.3% and bounces under 2% (Good Men Project (opens in a new tab)
+↗
+). This is exactly why layer two must verify emails.
+Enforcement is real now. Google moved from temporary delays to permanent rejections in November 2025 (Scaledmail (opens in a new tab)
+↗
+).
+In practice that means dedicated sending domains (not your main domain), warmed inboxes, low daily volume per inbox, verified lists, and clean unsubscribe handling. Tools like Instantly include warmup for exactly this reason.
+How the layers connect
+The flow end to end: Apollo (or a scrape) drops accounts into Clay. Clay enriches with a waterfall, verifies emails, and writes a personalised line per row. n8n picks up each finished row, scores and routes it, syncs the CRM, and enrols it in Instantly. Instantly sends from warmed, authenticated domains and reports replies back to n8n, which alerts a human and pauses automation.
+That is the whole machine. Four layers, one pipeline. We assemble it end to end in how to build an automated GTM engine.
+What we have learned running these
+The stack is not where the wins come from. Targeting is. On a paid funnel for Top Jobs Abroad we drove cost per qualified CV to around 5 euros by tightening who we targeted and what we said, not by buying more tools. The same is true of cold outreach: a tight ICP and a real reason to reach out beat a bigger stack pointed at a vague list.
+And start small. One source, one waterfall, one warmed sending domain, one sequence. Prove it books meetings, then scale volume, never the other way around.
+Common questions
+What is the best cold outreach automation stack in 2026?
+For most B2B teams: Apollo or a scrape for sourcing, Clay for enrichment and per-row personalisation, n8n for orchestration, and Instantly or Lemlist for warmed, authenticated sending. The exact tools matter less than wiring them together and protecting deliverability.
+Do I need all four layers?
+To start, you can run a thin version (a sourcing tool plus a sender). But skipping enrichment and deliverability is why most stacks underperform. Those two layers are what make outreach land in 2026.
+What is the biggest reason cold outreach fails now?
+Deliverability. With Gmail, Yahoo, and Microsoft enforcing authentication, complaint, and bounce rules, mail that is not properly set up gets filtered or permanently rejected, no matter how good the copy is.
+How much should I send per inbox?
+Keep volume conservative per inbox and spread sending across multiple warmed inboxes and domains. Trying to push high volume through a single inbox is the fastest way to trip spam filters.
+Want a cold outreach stack built and tuned for your ICP, deliverability included? It is part of our GTM engineering work. Get a free GTM plan and we will map the stack to your motion.
+Want this built and run for you?
+Get your free distribution planBook a call
+Magnus Motzfeldt-Berge
+Co-founder, ClearScaler
+Started on the phone in Oslo, selling telecoms and then advertising to small businesses.
+LinkedIn (opens in a new tab)
+↗
+About us
+Want this built and run for you?
+We find your B2B buyers, reach them by email, one person at a time, and book the meetings into your calendar.
+Get your free distribution planBook a call
+30 minutes with Magnus or Kian
+Keep reading. More on outbound.
+All articlesRSS
+Outbound
+How to write cold emails that get replies in 2026
+26 Aug 2026 ·
+6 min read
+Outbound
+The best LinkedIn automation tools in 2026 (a practitioner's take)
+21 Aug 2026 ·
+6 min read
+Outbound
+Signal-based selling: how to build the motion in 2026
+27 Jul 2026 ·
+6 min read
+We fix distribution for B2B companies.
+Book a callMálaga, Spain · Europe and the UAE
+What we do
+GTM Engine
+Paid Acquisition
+Conversion
+Free distribution plan
+Who it's for
+Recruitment agencies
+Marketing & creative agencies
+Logistics & freight companies
+B2B SaaS companies
+B2B companies
+Company
+Results
+About
+Blog
+Contact
+Client login
+Elsewhere
+LinkedIn
+Instagram
+WhatsApp
+magnus@clearscaler.com
+© 2026
+ClearScaler
+PrivacyCookiesCookie settingsPause animations

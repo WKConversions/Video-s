@@ -1,0 +1,171 @@
+https://www.clearscaler.com/blog/how-to-write-cold-emails-that-get-replies
+
+How to Write Cold Emails That Get Replies | ClearScaler
+Skip to content
+Product
+GTM Engine
+Outbound, built and run for you
+Paid Acquisition
+Meta, Google and LinkedIn, tracked to revenue
+Conversion
+Pages that turn visits into booked calls
+Leads
+Demo workspace
+Quillmoor Group
+Meeting booked
+Brightwick Systems
+Replied
+Oakvane Lines
+In outreach
+The GTM app
+Leads, inbox and meetings in one place
+Not ready to talk?
+Free distribution plan
+Who it's for
+Recruitment agencies
+BD is whoever has a spare hour
+Marketing & creative agencies
+New business is nobody's job
+Logistics & freight companies
+Sales is relationships plus RFQs
+B2B SaaS companies
+Founder-led sales has stalled
+B2B companies
+Sales depends on the founder
+Results
+Company
+About
+The two of us, and how we got here
+Blog
+Notes on what we build
+Contact
+Email, WhatsApp or book a call
+Client loginBook a call
+Blog
+Outbound
+How to write cold emails that get replies in 2026
+Magnus Motzfeldt-BergeCo-founder, ClearScaler
+26 August 2026 ·
+6 min read
+On this pageWhy most cold email dies
+The structure that works in 2026
+Personalisation at scale versus spray
+The deliverability floor
+Before and after example
+Common questions
+On this page
+Why most cold email dies
+The structure that works in 2026
+Personalisation at scale versus spray
+The deliverability floor
+Before and after example
+Common questions
+If you want to know how to write cold emails that get replies, start here: relevance beats everything, and almost nothing else matters until you fix it. Most cold email fails because it is generic, all about the sender, and triggered by nothing the recipient actually did. The fix is not a cleverer subject line. It is a real signal, one clear ask, and a message short enough to read on a phone in five seconds.
+I have written and torn apart thousands of these. The pattern is boringly consistent. The emails that work sound like a person who noticed something specific. The ones that die sound like a template that found an email address.
+Why most cold email dies
+Three failure modes account for the vast majority of ignored emails.
+First, it is generic. The same paragraph goes to 5,000 people, so it reads like it was written for nobody. Generic cold email averages a 3.43% reply rate, while signal-based, relevant outbound gets 15 to 25% (Factors.ai, 2026). That gap is not a rounding error. It is the difference between a channel that works and one that quietly wastes your quarter.
+Second, it is all about you. Your feature list, your funding round, your award. The recipient does not care yet, because you have not given them a reason to. Cold email is not the place to pitch. It is the place to earn a reply.
+Third, there is no signal. Nothing prompted the email except the fact that the person exists in a database. No trigger, no context, no reason this landed today instead of never.
+The best cold email I ever sent was two sentences long and referenced something the recipient had done that week. The worst was a beautifully written paragraph about us.
+The structure that works in 2026
+Good cold email in 2026 is not a formula you can fake. But it does have a shape.
+Lead with relevance from a real signal
+Open with something true about them, tied to a signal you actually observed. A new hire, a job posting, a product launch, a shift in their pricing page, a comment they made publicly. The signal proves you are not spraying. It also earns you the next sentence.
+A signal is not "I saw you are the VP of Sales." That is a field, not a signal. A signal is "you posted three SDR roles last month," which implies something about pipeline pressure you can speak to.
+Make one clear ask
+One email, one ask. Not a call and a demo and a resource and a LinkedIn connect. Pick the smallest reasonable next step and ask for exactly that. Confused readers do not reply, they archive.
+Keep it short
+If it does not fit on a phone screen without scrolling, it is too long. Short is not just polite, it signals confidence. You do not need three paragraphs to justify one relevant question.
+Personalisation at scale versus spray
+Here is where most teams get it wrong in both directions.
+One camp hand-writes every email and sends forty a day. Lovely emails, no volume, no pipeline. The other camp buys a list and blasts the same template at 10,000 people, then wonders why the channel is "dead." Neither works.
+The move is personalisation at scale, which means the relevance is systematic, not artisanal. You define the signals that matter, you enrich leads against those signals, and you draft against the signal, not against a blank page. AI handles first-touch drafting and research at scale, but the winning variable is the signal or relevance, not volume (Smartlead / Factors.ai, 2026). Read that twice, because the whole industry keeps optimising the wrong lever. More sends will not save a message with no reason to exist.
+The practical version: segment tightly, one signal per segment, one angle per signal. AI drafts the first pass and does the research legwork. A human keeps the judgement. If you want the tooling side of this, we broke it down in our cold outreach automation stack.
+The deliverability floor
+None of this matters if the email lands in spam. Deliverability is the floor, and it is non-negotiable.
+Personalisation only works on top of deliverability. Compliant senders hit around 89% inbox placement, versus 22 to 34% routed to spam (Revnu, 2026). If two thirds of your sends never reach a human, your reply rate is a fiction. You are optimising copy that nobody sees.
+Before you touch copy, get the fundamentals right: authenticated domains (SPF, DKIM, DMARC), warmed inboxes, sane sending volume per mailbox, clean verified lists, and no spammy links or attachments in the first touch. We go deep on this in our guide to cold email deliverability 2026. Treat it as prerequisite reading, not an afterthought.
+My rule: if you cannot prove your inbox placement, you do not have a copy problem, you have a plumbing problem. Fix the plumbing first.
+Before and after example
+Here is the same outreach, written badly and then written well. Placeholders only.
+Before (generic, all about the sender):
+Subject
+Partnership opportunity
+Hi [First Name],
+I hope this email finds you well. My name is [Rep Name] and I work at [Vendor Co], the leading platform for revenue teams. We help companies like yours increase efficiency, drive growth, and unlock value across the entire sales cycle.
+I would love to hop on a 30-minute call to walk you through our full suite of features and explore how we can help [Target Co] achieve its goals this year. Are you free Tuesday or Thursday?
+Best,
+[Rep Name]
+That email has no signal, no relevance, and three asks disguised as one. It is about the vendor from the first line.
+After (signal-led, one ask, short):
+Subject
+your 3 open SDR roles
+Hi [First Name],
+Saw [Target Co] posted three SDR openings this month. Usually that means pipeline targets went up faster than headcount can catch.
+We help teams in that spot book meetings without adding reps first. One question: is ramp time your bottleneck, or is it top-of-funnel volume?
+[Rep Name]
+The second one references a real signal (the job posts), makes one low-friction ask (a single question), and respects the reader's time. It is not clever. It is relevant. That is the whole game.
+Common questions
+How long should a cold email be?
+Short enough to read on a phone without scrolling, usually 50 to 90 words. The goal of the first touch is a reply, not a sale, so cut everything that does not serve the one ask. If you are explaining your feature set, you have already lost.
+What reply rate should I expect?
+Generic sends average around 3.43%, while signal-based, relevant outbound reaches 15 to 25% (Factors.ai, 2026). If you are stuck near the low end, the problem is almost always relevance or deliverability, not your subject line. Fix the signal and the plumbing before you A/B test wording.
+Does AI-written cold email still work in 2026?
+Yes, when it is pointed at the right variable. AI handles first-touch drafting and research at scale, but the winning variable is the signal or relevance, not volume (Smartlead / Factors.ai, 2026). Use AI to research and draft against a real signal. Do not use it to send more of the same generic message.
+Why do my emails go to spam?
+Usually a deliverability floor problem, not a copy problem. Compliant senders hit around 89% inbox placement versus 22 to 34% routed to spam (Revnu, 2026). Check your domain authentication, inbox warmup, sending volume, and list hygiene before you rewrite a single line.
+Relevance from a real signal, one clear ask, kept short, sitting on top of solid deliverability. Get those four right and cold email stops being a numbers game and starts being a conversation. If you want a second set of eyes on your outbound, book a call and we will pull it apart with you.
+Want this built and run for you?
+Get your free distribution planBook a call
+Magnus Motzfeldt-Berge
+Co-founder, ClearScaler
+Started on the phone in Oslo, selling telecoms and then advertising to small businesses.
+LinkedIn (opens in a new tab)
+↗
+About us
+Want this built and run for you?
+We find your B2B buyers, reach them by email, one person at a time, and book the meetings into your calendar.
+Get your free distribution planBook a call
+30 minutes with Magnus or Kian
+Keep reading. More on outbound.
+All articlesRSS
+Outbound
+The best LinkedIn automation tools in 2026 (a practitioner's take)
+21 Aug 2026 ·
+6 min read
+Outbound
+The cold outreach automation stack that still works in 2026
+29 Jul 2026 ·
+5 min read
+Outbound
+Signal-based selling: how to build the motion in 2026
+27 Jul 2026 ·
+6 min read
+We fix distribution for B2B companies.
+Book a callMálaga, Spain · Europe and the UAE
+What we do
+GTM Engine
+Paid Acquisition
+Conversion
+Free distribution plan
+Who it's for
+Recruitment agencies
+Marketing & creative agencies
+Logistics & freight companies
+B2B SaaS companies
+B2B companies
+Company
+Results
+About
+Blog
+Contact
+Client login
+Elsewhere
+LinkedIn
+Instagram
+WhatsApp
+magnus@clearscaler.com
+© 2026
+ClearScaler
+PrivacyCookiesCookie settingsPause animations

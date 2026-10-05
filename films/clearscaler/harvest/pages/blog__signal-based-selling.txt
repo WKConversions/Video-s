@@ -1,0 +1,161 @@
+https://www.clearscaler.com/blog/signal-based-selling
+
+Signal-Based Selling: Build the Motion in 2026 | ClearScaler
+Skip to content
+Product
+GTM Engine
+Outbound, built and run for you
+Paid Acquisition
+Meta, Google and LinkedIn, tracked to revenue
+Conversion
+Pages that turn visits into booked calls
+Leads
+Demo workspace
+Quillmoor Group
+Meeting booked
+Brightwick Systems
+Replied
+Oakvane Lines
+In outreach
+The GTM app
+Leads, inbox and meetings in one place
+Not ready to talk?
+Free distribution plan
+Who it's for
+Recruitment agencies
+BD is whoever has a spare hour
+Marketing & creative agencies
+New business is nobody's job
+Logistics & freight companies
+Sales is relationships plus RFQs
+B2B SaaS companies
+Founder-led sales has stalled
+B2B companies
+Sales depends on the founder
+Results
+Company
+About
+The two of us, and how we got here
+Blog
+Notes on what we build
+Contact
+Email, WhatsApp or book a call
+Client loginBook a call
+Blog
+Outbound
+Signal-based selling: how to build the motion in 2026
+Signal-based selling triggers enrichment and personalised outreach off real buying signals instead of spraying a static list. Here is how to wire it.
+Magnus Motzfeldt-BergeCo-founder, ClearScaler
+27 July 2026 ·
+6 min read
+On this pageWhy signal-based selling beats the static list
+What actually counts as a good signal
+The architecture: signal to enrichment to sequence
+Orchestration is the part people skip
+How to start without boiling the ocean
+Common questions
+On this page
+Why signal-based selling beats the static list
+What actually counts as a good signal
+The architecture: signal to enrichment to sequence
+Orchestration is the part people skip
+How to start without boiling the ocean
+Common questions
+Signal-based selling means you outreach because something just happened, not because a name landed on a list six weeks ago. That is the whole bottom line. A prospect changed jobs, their company raised a round, they installed a competitor's tool, or three people from their team hit your pricing page. Each of those is a signal, and each one is a reason to enrich the record and send something specific while the moment is still warm. This is the motion that is replacing cold outbound in 2026, because unified data plus AI workflows plus smart LinkedIn automation make the whole thing faster and more accurate (Factors.ai, 2026).
+I have built these systems for a living, so I will skip the manifesto and show you the architecture. If you want the broader context first, here is what is GTM engineering and how it differs from buying more seats.
+Why signal-based selling beats the static list
+The math is not close. Generic cold email sits around a 3.43% reply rate, while signal-based outbound lands somewhere between 15% and 25% (Factors.ai, 2026). Same senders, same domains, same product. The only variable that changed is timing and relevance.
+That gap exists because a static list assumes everyone is equally ready to buy on the day you happened to export them. They are not. Most of your list is asleep. Signals tell you which accounts just woke up, and a message that references a real event ("saw you just closed your Series B") reads as attention rather than spam.
+My opinion, plainly: cold outbound is not dead, it is just undifferentiated. Signals are how you differentiate at scale without hiring an army of SDRs to do manual research.
+What actually counts as a good signal
+Not every data point deserves an email. A good signal has three properties. It is recent, it is specific to a buying context, and it plausibly connects to a problem you solve. If it fails any of those, it is noise.
+The signals worth wiring first
+Job changes. A new VP of Sales or Head of RevOps in their first 90 days is buying tools and rebuilding process. This is the highest-intent signal I know of.
+Funding rounds. Fresh capital means budget and a mandate to grow. Pair the round size with the stated use of funds when the press release gives it to you.
+Tech installs and removals. A company that just added or dropped a tool in your category is actively evaluating. Removals are underrated. Someone churning off a competitor is a warm conversation.
+Website intent. Repeat visits to pricing, docs, or a specific feature page from the same account. First-party intent beats third-party intent bought from a vendor every time.
+Hiring signals. A company posting for roles you enable (say, three RevOps openings) is telling you where they are investing. The job description is a free copy of their pain.
+The signals I ignore
+Anniversaries, generic "engaged with your post" pings, and most third-party intent that cannot name the account. If I cannot write a first line that a human would find accurate and non-creepy, the signal is not usable.
+The architecture: signal to enrichment to sequence
+Here is the pipeline I build. It is three stages, and the discipline is keeping them separate so each one can be debugged on its own.
+Stage one: capture the signal
+Signals arrive from different places. LinkedIn for job changes, funding databases and news for rounds, install-detection tools for tech stack, your own analytics for website intent, job boards for hiring. Each source pushes into one place, usually a webhook into a workflow tool or a row in a warehouse table. The goal is a single stream of "account X did thing Y at time Z" events, normalised into one schema regardless of where they came from.
+Do not let each tool run its own outreach. That is how a prospect gets three uncoordinated emails in a day. One stream, one brain.
+Stage two: enrich on trigger, not in bulk
+This is where most teams get it backwards. They enrich a giant list up front, the data rots, and half of it is wrong by send time. Enrich when the signal fires instead. The event names the account, and only then do you spend credits pulling the contact, verifying the email, and layering firmographics.
+Because you are enriching a trickle instead of a flood, you can afford to do it properly and cascade across providers rather than betting on one. That cascade is the data enrichment waterfall, and it is the difference between 60% and 95% coverage on the records that actually matter.
+The output of this stage is a fully enriched, verified contact with the triggering signal attached as context. That context is the raw material for personalisation.
+Stage three: route into the right sequence
+An enriched record with a signal should drop into a sequence built for that signal. A job-change contact gets a "congrats on the new role" opener. A funding contact gets an angle about scaling the function you support. A tech-removal contact gets a migration-friendly message. The signal decides the sequence, and the enriched fields fill the variables.
+The first line does the heavy lifting. Reference the signal accurately, connect it to a problem, and get out of the way. Everything after line one is the same qualification you always run.
+Orchestration is the part people skip
+Building the three stages is the easy half. The hard half is keeping them in sync once a human replies, because a signal-based motion runs across email, LinkedIn, and your CRM at the same time. Orchestration keeps shared state across those tools, so a LinkedIn reply pauses the email sequence, a booked meeting updates the CRM, and a bounce feeds list hygiene (Factors.ai, 2026).
+Without that shared state you get the nightmare scenario: someone replies "sounds great, let's talk" on LinkedIn and your email sequence keeps firing "just following up" for another week. That one mistake undoes all the goodwill the signal bought you. The orchestration layer is not a nice-to-have. It is the thing that makes the motion feel human at volume.
+If I had to put a stake in the ground: the enrichment waterfall wins you the reply, but orchestration is what stops you from embarrassing yourself after it. Teams obsess over the first and neglect the second, and it shows in their reply threads.
+How to start without boiling the ocean
+Pick one signal. Just one. Job changes are my usual recommendation because the source is clean and the intent is high. Wire that single signal end to end: capture, enrich on trigger, one dedicated sequence, and basic orchestration that pauses on reply. Prove it converts, then add the next signal on top of the same plumbing.
+The mistake is trying to plug in six signals at launch. You cannot debug six pipelines at once, and you will not know which signal is carrying the results. Ship one, measure it, layer the rest.
+Common questions
+What is signal-based selling?
+Signal-based selling is outbound triggered by a real event, such as a job change, funding round, tech install, website intent, or hiring activity, that enriches the record and sends a personalised message instead of blasting a static list. The trigger, not the calendar, decides when you reach out.
+How much better are the reply rates?
+Signal-based outbound gets 15% to 25% reply rates versus 3.43% for generic cold email (Factors.ai, 2026). The lift comes from timing and relevance, not from new senders or a new product.
+What is the best signal to start with?
+Job changes. The data source is clean, a new leader in their first 90 days is actively buying and rebuilding, and it gives you an accurate, non-creepy first line. Prove one signal end to end before adding more.
+Do I need to replace my current CRM and tools?
+No. Signal-based selling is an orchestration layer over the tools you already run. The work is connecting signal sources, enrichment, and sequences so they share state, not ripping anything out.
+If you want a map of which signals your market throws off and how to wire the pipeline, grab a free GTM plan and we will sketch the architecture against your actual motion.
+Want this built and run for you?
+Get your free distribution planBook a call
+Magnus Motzfeldt-Berge
+Co-founder, ClearScaler
+Started on the phone in Oslo, selling telecoms and then advertising to small businesses.
+LinkedIn (opens in a new tab)
+↗
+About us
+Want this built and run for you?
+We find your B2B buyers, reach them by email, one person at a time, and book the meetings into your calendar.
+Get your free distribution planBook a call
+30 minutes with Magnus or Kian
+Keep reading. More on outbound.
+All articlesRSS
+Outbound
+How to write cold emails that get replies in 2026
+26 Aug 2026 ·
+6 min read
+Outbound
+The best LinkedIn automation tools in 2026 (a practitioner's take)
+21 Aug 2026 ·
+6 min read
+Outbound
+The cold outreach automation stack that still works in 2026
+29 Jul 2026 ·
+5 min read
+We fix distribution for B2B companies.
+Book a callMálaga, Spain · Europe and the UAE
+What we do
+GTM Engine
+Paid Acquisition
+Conversion
+Free distribution plan
+Who it's for
+Recruitment agencies
+Marketing & creative agencies
+Logistics & freight companies
+B2B SaaS companies
+B2B companies
+Company
+Results
+About
+Blog
+Contact
+Client login
+Elsewhere
+LinkedIn
+Instagram
+WhatsApp
+magnus@clearscaler.com
+© 2026
+ClearScaler
+PrivacyCookiesCookie settingsPause animations

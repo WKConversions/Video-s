@@ -1,0 +1,1110 @@
+{
+ "measurement": {
+  "method": "k-means in CIELAB, median pixel per cluster",
+  "k": 8
+ },
+ "images": {
+  "assets/site/home-dark-hero.png": {
+   "palette": [
+    {
+     "hex": "#07080C",
+     "share": 0.8996,
+     "lab": [
+      2.22,
+      0.31,
+      -1.65
+     ]
+    },
+    {
+     "hex": "#18181A",
+     "share": 0.0357,
+     "lab": [
+      8.32,
+      0.53,
+      -1.41
+     ]
+    },
+    {
+     "hex": "#3B3A3D",
+     "share": 0.0161,
+     "lab": [
+      24.62,
+      1.12,
+      -1.71
+     ]
+    },
+    {
+     "hex": "#EEF0F4",
+     "share": 0.0145,
+     "lab": [
+      94.75,
+      0.06,
+      -2.17
+     ]
+    },
+    {
+     "hex": "#FC7F48",
+     "share": 0.014,
+     "lab": [
+      66.78,
+      43.84,
+      50.81
+     ]
+    },
+    {
+     "hex": "#56575A",
+     "share": 0.011,
+     "lab": [
+      36.99,
+      0.26,
+      -1.88
+     ]
+    },
+    {
+     "hex": "#9D9EA1",
+     "share": 0.0047,
+     "lab": [
+      65.12,
+      0.23,
+      -1.69
+     ]
+    },
+    {
+     "hex": "#8E4A2D",
+     "share": 0.0043,
+     "lab": [
+      39.49,
+      26.09,
+      30.05
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#07080C",
+    "text": "#EEF0F4",
+    "accent": "#FC7F48"
+   }
+  },
+  "assets/site/gtm-engine-dark-hero.png": {
+   "palette": [
+    {
+     "hex": "#07080C",
+     "share": 0.6942,
+     "lab": [
+      2.22,
+      0.31,
+      -1.65
+     ]
+    },
+    {
+     "hex": "#101012",
+     "share": 0.223,
+     "lab": [
+      4.74,
+      0.4,
+      -1.08
+     ]
+    },
+    {
+     "hex": "#39393C",
+     "share": 0.037,
+     "lab": [
+      24.07,
+      0.7,
+      -1.86
+     ]
+    },
+    {
+     "hex": "#6F7074",
+     "share": 0.0136,
+     "lab": [
+      47.27,
+      0.45,
+      -2.35
+     ]
+    },
+    {
+     "hex": "#FC7F48",
+     "share": 0.0135,
+     "lab": [
+      66.78,
+      43.84,
+      50.81
+     ]
+    },
+    {
+     "hex": "#F0F2F6",
+     "share": 0.009,
+     "lab": [
+      95.45,
+      0.06,
+      -2.17
+     ]
+    },
+    {
+     "hex": "#172E15",
+     "share": 0.0055,
+     "lab": [
+      16.46,
+      -15.44,
+      13.32
+     ]
+    },
+    {
+     "hex": "#7E4129",
+     "share": 0.0042,
+     "lab": [
+      34.75,
+      24.11,
+      26.17
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#07080C",
+    "text": "#F0F2F6",
+    "accent": "#FC7F48"
+   }
+  },
+  "assets/site/results-dark-hero.png": {
+   "palette": [
+    {
+     "hex": "#07080C",
+     "share": 0.9151,
+     "lab": [
+      2.22,
+      0.31,
+      -1.65
+     ]
+    },
+    {
+     "hex": "#252628",
+     "share": 0.0216,
+     "lab": [
+      15.13,
+      0.05,
+      -1.48
+     ]
+    },
+    {
+     "hex": "#494A4D",
+     "share": 0.0192,
+     "lab": [
+      31.46,
+      0.27,
+      -1.93
+     ]
+    },
+    {
+     "hex": "#9B9D9E",
+     "share": 0.0123,
+     "lab": [
+      64.6,
+      -0.52,
+      -0.78
+     ]
+    },
+    {
+     "hex": "#F0F2F6",
+     "share": 0.0121,
+     "lab": [
+      95.45,
+      0.06,
+      -2.17
+     ]
+    },
+    {
+     "hex": "#747578",
+     "share": 0.011,
+     "lab": [
+      49.23,
+      0.14,
+      -1.51
+     ]
+    },
+    {
+     "hex": "#FC7F48",
+     "share": 0.007,
+     "lab": [
+      66.78,
+      43.84,
+      50.81
+     ]
+    },
+    {
+     "hex": "#A25331",
+     "share": 0.0018,
+     "lab": [
+      44.29,
+      29.63,
+      34.07
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#07080C",
+    "text": "#F0F2F6",
+    "accent": "#FC7F48"
+   }
+  },
+  "assets/site/about-dark-hero.png": {
+   "palette": [
+    {
+     "hex": "#07080C",
+     "share": 0.8999,
+     "lab": [
+      2.22,
+      0.31,
+      -1.65
+     ]
+    },
+    {
+     "hex": "#8E8F91",
+     "share": 0.0314,
+     "lab": [
+      59.38,
+      0.03,
+      -1.2
+     ]
+    },
+    {
+     "hex": "#2C2D30",
+     "share": 0.0207,
+     "lab": [
+      18.48,
+      0.3,
+      -2.09
+     ]
+    },
+    {
+     "hex": "#535457",
+     "share": 0.0182,
+     "lab": [
+      35.73,
+      0.26,
+      -1.89
+     ]
+    },
+    {
+     "hex": "#F1F3F7",
+     "share": 0.0149,
+     "lab": [
+      95.8,
+      0.06,
+      -2.16
+     ]
+    },
+    {
+     "hex": "#FC7F48",
+     "share": 0.0075,
+     "lab": [
+      66.78,
+      43.84,
+      50.81
+     ]
+    },
+    {
+     "hex": "#BCBDC1",
+     "share": 0.005,
+     "lab": [
+      76.64,
+      0.41,
+      -2.14
+     ]
+    },
+    {
+     "hex": "#593020",
+     "share": 0.0025,
+     "lab": [
+      24.77,
+      16.92,
+      18.26
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#07080C",
+    "text": "#F1F3F7",
+    "accent": "#FC7F48"
+   }
+  },
+  "assets/logo/favicon-512-dark.png": {
+   "palette": [
+    {
+     "hex": "#07080C",
+     "share": 0.8837,
+     "lab": [
+      2.22,
+      0.31,
+      -1.65
+     ]
+    },
+    {
+     "hex": "#EDEFF3",
+     "share": 0.1092,
+     "lab": [
+      94.4,
+      0.06,
+      -2.17
+     ]
+    },
+    {
+     "hex": "#222327",
+     "share": 0.0014,
+     "lab": [
+      13.76,
+      0.58,
+      -2.83
+     ]
+    },
+    {
+     "hex": "#D5D6DB",
+     "share": 0.0014,
+     "lab": [
+      85.81,
+      0.32,
+      -2.4
+     ]
+    },
+    {
+     "hex": "#616266",
+     "share": 0.0011,
+     "lab": [
+      41.59,
+      0.47,
+      -2.41
+     ]
+    },
+    {
+     "hex": "#B0B2B6",
+     "share": 0.0011,
+     "lab": [
+      72.53,
+      0.07,
+      -2.29
+     ]
+    },
+    {
+     "hex": "#8F9094",
+     "share": 0.0011,
+     "lab": [
+      59.82,
+      0.43,
+      -2.25
+     ]
+    },
+    {
+     "hex": "#45464A",
+     "share": 0.0011,
+     "lab": [
+      29.94,
+      0.3,
+      -2.62
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#07080C",
+    "text": "#EDEFF3",
+    "accent": null
+   }
+  },
+  "assets/logo/clearscaler-logo-on-night.png": {
+   "palette": [
+    {
+     "hex": "#07080C",
+     "share": 0.8827,
+     "lab": [
+      2.22,
+      0.31,
+      -1.65
+     ]
+    },
+    {
+     "hex": "#EDEFF3",
+     "share": 0.0868,
+     "lab": [
+      94.4,
+      0.06,
+      -2.17
+     ]
+    },
+    {
+     "hex": "#DCDEE2",
+     "share": 0.006,
+     "lab": [
+      88.42,
+      0.06,
+      -2.2
+     ]
+    },
+    {
+     "hex": "#232428",
+     "share": 0.0057,
+     "lab": [
+      14.24,
+      0.58,
+      -2.82
+     ]
+    },
+    {
+     "hex": "#BCBDC1",
+     "share": 0.0056,
+     "lab": [
+      76.64,
+      0.41,
+      -2.14
+     ]
+    },
+    {
+     "hex": "#636468",
+     "share": 0.005,
+     "lab": [
+      42.41,
+      0.46,
+      -2.4
+     ]
+    },
+    {
+     "hex": "#8E8F93",
+     "share": 0.0043,
+     "lab": [
+      59.44,
+      0.43,
+      -2.25
+     ]
+    },
+    {
+     "hex": "#404145",
+     "share": 0.0041,
+     "lab": [
+      27.57,
+      0.51,
+      -2.58
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#07080C",
+    "text": "#EDEFF3",
+    "accent": null
+   }
+  }
+ },
+ "palette": [
+  {
+   "hex": "#07080C",
+   "lab": [
+    2.22,
+    0.31,
+    -1.65
+   ]
+  },
+  {
+   "hex": "#18181A",
+   "lab": [
+    8.32,
+    0.53,
+    -1.41
+   ]
+  },
+  {
+   "hex": "#3B3A3D",
+   "lab": [
+    24.62,
+    1.12,
+    -1.71
+   ]
+  },
+  {
+   "hex": "#EEF0F4",
+   "lab": [
+    94.75,
+    0.06,
+    -2.17
+   ]
+  },
+  {
+   "hex": "#FC7F48",
+   "lab": [
+    66.78,
+    43.84,
+    50.81
+   ]
+  },
+  {
+   "hex": "#56575A",
+   "lab": [
+    36.99,
+    0.26,
+    -1.88
+   ]
+  },
+  {
+   "hex": "#9D9EA1",
+   "lab": [
+    65.12,
+    0.23,
+    -1.69
+   ]
+  },
+  {
+   "hex": "#8E4A2D",
+   "lab": [
+    39.49,
+    26.09,
+    30.05
+   ]
+  },
+  {
+   "hex": "#07080C",
+   "lab": [
+    2.22,
+    0.31,
+    -1.65
+   ]
+  },
+  {
+   "hex": "#101012",
+   "lab": [
+    4.74,
+    0.4,
+    -1.08
+   ]
+  },
+  {
+   "hex": "#39393C",
+   "lab": [
+    24.07,
+    0.7,
+    -1.86
+   ]
+  },
+  {
+   "hex": "#6F7074",
+   "lab": [
+    47.27,
+    0.45,
+    -2.35
+   ]
+  },
+  {
+   "hex": "#FC7F48",
+   "lab": [
+    66.78,
+    43.84,
+    50.81
+   ]
+  },
+  {
+   "hex": "#F0F2F6",
+   "lab": [
+    95.45,
+    0.06,
+    -2.17
+   ]
+  },
+  {
+   "hex": "#172E15",
+   "lab": [
+    16.46,
+    -15.44,
+    13.32
+   ]
+  },
+  {
+   "hex": "#7E4129",
+   "lab": [
+    34.75,
+    24.11,
+    26.17
+   ]
+  },
+  {
+   "hex": "#07080C",
+   "lab": [
+    2.22,
+    0.31,
+    -1.65
+   ]
+  },
+  {
+   "hex": "#252628",
+   "lab": [
+    15.13,
+    0.05,
+    -1.48
+   ]
+  },
+  {
+   "hex": "#494A4D",
+   "lab": [
+    31.46,
+    0.27,
+    -1.93
+   ]
+  },
+  {
+   "hex": "#9B9D9E",
+   "lab": [
+    64.6,
+    -0.52,
+    -0.78
+   ]
+  },
+  {
+   "hex": "#F0F2F6",
+   "lab": [
+    95.45,
+    0.06,
+    -2.17
+   ]
+  },
+  {
+   "hex": "#747578",
+   "lab": [
+    49.23,
+    0.14,
+    -1.51
+   ]
+  },
+  {
+   "hex": "#FC7F48",
+   "lab": [
+    66.78,
+    43.84,
+    50.81
+   ]
+  },
+  {
+   "hex": "#07080C",
+   "lab": [
+    2.22,
+    0.31,
+    -1.65
+   ]
+  },
+  {
+   "hex": "#8E8F91",
+   "lab": [
+    59.38,
+    0.03,
+    -1.2
+   ]
+  },
+  {
+   "hex": "#2C2D30",
+   "lab": [
+    18.48,
+    0.3,
+    -2.09
+   ]
+  },
+  {
+   "hex": "#535457",
+   "lab": [
+    35.73,
+    0.26,
+    -1.89
+   ]
+  },
+  {
+   "hex": "#F1F3F7",
+   "lab": [
+    95.8,
+    0.06,
+    -2.16
+   ]
+  },
+  {
+   "hex": "#FC7F48",
+   "lab": [
+    66.78,
+    43.84,
+    50.81
+   ]
+  },
+  {
+   "hex": "#BCBDC1",
+   "lab": [
+    76.64,
+    0.41,
+    -2.14
+   ]
+  },
+  {
+   "hex": "#593020",
+   "lab": [
+    24.77,
+    16.92,
+    18.26
+   ]
+  },
+  {
+   "hex": "#07080C",
+   "lab": [
+    2.22,
+    0.31,
+    -1.65
+   ]
+  },
+  {
+   "hex": "#EDEFF3",
+   "lab": [
+    94.4,
+    0.06,
+    -2.17
+   ]
+  },
+  {
+   "hex": "#07080C",
+   "lab": [
+    2.22,
+    0.31,
+    -1.65
+   ]
+  },
+  {
+   "hex": "#EDEFF3",
+   "lab": [
+    94.4,
+    0.06,
+    -2.17
+   ]
+  },
+  {
+   "hex": "#DCDEE2",
+   "lab": [
+    88.42,
+    0.06,
+    -2.2
+   ]
+  },
+  {
+   "hex": "#232428",
+   "lab": [
+    14.24,
+    0.58,
+    -2.82
+   ]
+  },
+  {
+   "hex": "#BCBDC1",
+   "lab": [
+    76.64,
+    0.41,
+    -2.14
+   ]
+  },
+  {
+   "hex": "#636468",
+   "lab": [
+    42.41,
+    0.46,
+    -2.4
+   ]
+  },
+  {
+   "hex": "#8E8F93",
+   "lab": [
+    59.44,
+    0.43,
+    -2.25
+   ]
+  },
+  {
+   "hex": "#404145",
+   "lab": [
+    27.57,
+    0.51,
+    -2.58
+   ]
+  }
+ ],
+ "client": "ClearScaler (www.clearscaler.com), B2B distribution / GTM Engine; dark theme is the site default",
+ "css": {
+  "_note": "CSS custom properties from the site's inline stylesheet (assets/site/html/site.css); oklch values converted to sRGB hex; alpha colours composited over --cs-night",
+  "--cs-night": "#07080c",
+  "--cs-ink": "#100c08",
+  "--cs-day": "#eceae4",
+  "--cs-orange": "#fc7f48",
+  "--cs-red": "#c00000",
+  "--cs-white": "#edeff3",
+  "dark (.dark)": {
+   "--surface-0 / --night-0": "#07080C (page canvas)",
+   "--surface-1 / --night-1": "oklch(17.5% .004 273) = #101012 (cards, mockup bars, the results band)",
+   "--surface-2 / --night-2": "oklch(21.5% .004 273) = #19191B (chips, URL pill, stat tiles)",
+   "--surface-3 / --night-3": "oklch(26% .004 273) = #232426",
+   "--night-line": "oklch(29% .004 273) = #2B2B2D",
+   "--ink / --night-ink": "#EDEFF3",
+   "--ink-2 / --night-ink-2": "oklch(76% .003 273) = #B0B1B3 (ledes, body, labels)",
+   "--ink-3 / --night-ink-3": "oklch(65% .003 273) = #8E8F91 (mono eyebrows, muted second sentence of H2s, logo wall)",
+   "--rule / --night-rule": "white 12% = #252629 on night (#2D2D2F on surface-1)",
+   "--rule-strong / --night-rule-strong": "white 22% = #3E3E41 on night (hairline loop, outlined buttons and pills)",
+   "--field-border / --night-field-border": "white 36% = #606163",
+   "--brand": "var(--cs-orange) #FC7F48",
+   "--on-brand": "var(--cs-night) #07080C (text on orange)",
+   "--brand-glow": "orange at 22% (= #3D2219 over night); glow gradients use 12% to 18%",
+   "--brand-soft": "oklch(30% .1 42) (≈ #541500, clipped)",
+   "--success": "oklch(74% .15 155) = #4BC680 (Strong fit, Replied, Meeting booked, Sent, REPLIED count)",
+   "--success-soft": "oklch(26% .05 140) = #162A12 (chip backgrounds)",
+   "--danger": "oklch(70% .18 22) = #FA686A",
+   "--danger-soft": "oklch(27% .09 22) = #490D11"
+  },
+  "light (:root)": {
+   "--surface-0": "#ECEAE4",
+   "--surface-1": "#F6F4EF",
+   "--surface-2": "#E3E0D8",
+   "--ink": "#100C08",
+   "--ink-2": "#524C47",
+   "--ink-3": "#655F5B",
+   "--rule": "#D6D0CB",
+   "--rule-strong": "#AAA39D",
+   "--brand": "#C00000 (red in light mode)",
+   "--success": "#0A6D37"
+  },
+  "radii": {
+   "--radius": ".375rem (6px)",
+   "--radius-tag": "6px",
+   "--radius-control": "12px (buttons)",
+   "--radius-pill": "999px",
+   "--radius-window": "20px (mockup browser frame)",
+   "--radius-surface": "28px (quote panel, big cards)",
+   "--mk-r": "14px (mockup cards)"
+  },
+  "durations": {
+   "--dur-1": ".12s",
+   "--dur-2": ".24s",
+   "--dur-3": ".48s",
+   "--dur-4": ".9s",
+   "--dur-5": "1.2s",
+   "--dur-loop": "9s",
+   "--dur-press": "80ms",
+   "--rise": "12px",
+   "--default-transition-duration": ".15s"
+  },
+  "easing": {
+   "--ease-out": "cubic-bezier(.2,.7,.2,1)",
+   "--ease-emphasis": "cubic-bezier(.16,1,.3,1)",
+   "--ease-in-out": "cubic-bezier(.6,0,.2,1)",
+   "--ease-spring": "linear(0, .6 18%, 1.02 38%, .99 60%, 1)",
+   "--mk-ease": "cubic-bezier(.2,.7,.2,1)",
+   "--mk-ease-em": "cubic-bezier(.16,1,.3,1)"
+  },
+  "layout": {
+   "container": "1104px content width (x 168 to 1272 at a 1440 viewport)",
+   "--gutter": "20px / 40px / 48px",
+   "--section-sm": "40px / 48px",
+   "--section-md": "44 to 80px",
+   "--section-lg": "80px / 128px",
+   "nav_height": "72px desktop, fixed, surface-0"
+  },
+  "theme_color_meta": "#07080C dark, #ECEAE4 light; the app resolves to dark for anyone with no stored choice"
+ },
+ "tokens": {
+  "night": "#07080C",
+  "surface1": "#101012",
+  "surface2": "#19191B",
+  "surface3": "#232426",
+  "line": "#2B2B2D",
+  "rule": "#252629",
+  "ruleStrong": "#3E3E41",
+  "fieldBorder": "#606163",
+  "ink": "#EDEFF3",
+  "ink2": "#B0B1B3",
+  "ink3": "#8E8F91",
+  "orange": "#FC7F48",
+  "orangeGlow": "#3D2219",
+  "success": "#4BC680",
+  "successSoft": "#162A12",
+  "danger": "#FA686A"
+ },
+ "accent": "#FC7F48",
+ "contrast": {
+  "#EDEFF3/#07080C": 17.4,
+  "#B0B1B3/#07080C": 9.3,
+  "#8E8F91/#07080C": 6.2,
+  "#FC7F48/#07080C": 7.9,
+  "#07080C/#FC7F48": 7.9,
+  "#EDEFF3/#FC7F48": 2.2,
+  "#EDEFF3/#101012": 16.5,
+  "#B0B1B3/#101012": 8.9,
+  "#8E8F91/#101012": 5.9,
+  "#B0B1B3/#19191B": 8.2,
+  "#EDEFF3/#19191B": 15.2,
+  "#4BC680/#162A12": 7.1,
+  "#4BC680/#07080C": 9.2,
+  "#4BC680/#101012": 8.8,
+  "#FA686A/#07080C": 6.9,
+  "#100C08/#ECEAE4": 16.2,
+  "#C00000/#ECEAE4": 5.4,
+  "rule": "orange carries text on night (7.9:1: the brand word in a headline, stat units, links' underline); text ON orange is always night #07080C (buttons, quote panel), never white (2.2:1 fails). ink-3 #8E8F91 is fine for 12px mono labels (6.2:1). Green #4BC680 is status only (chips, counts, checks) on #162A12 or night."
+ },
+ "type": {
+  "files": "film/public/fonts/outfit-var.woff2 (Outfit Variable, wght axis 500 to 600 only), manrope-var.woff2 + manrope-latin-ext-var.woff2 (Manrope Variable, 200 to 800), geist-mono-var.woff2 (Geist Mono Variable, 400 to 600). Latin subsets; no U+2192 arrow glyph in any of them.",
+  "display": {
+   "family": "Outfit Variable",
+   "weight": 600,
+   "tracking": "-0.045em",
+   "leading": 0.98,
+   "case": "Sentence",
+   "example": "Your distribution, fixed. at 103.68px (h1 extract: 600, -4.6656px) on a 1440 page; the brand word in #FC7F48; clamp(44px, 7.2vw, 104px); split-layout page heroes 72px / 1.02 (-3.24px)"
+  },
+  "h2": {
+   "family": "Outfit Variable",
+   "weight": 560,
+   "tracking": "-0.035em",
+   "leading": 1.04,
+   "size": "clamp(30px, 3.6vw, 52px) = 51.84px at 1440",
+   "example": "Three channels. One loop, run by us. (second sentence in ink-3 #8E8F91)"
+  },
+  "statement": {
+   "family": "Outfit Variable",
+   "weight": 600,
+   "tracking": "-0.05em",
+   "leading": 0.92,
+   "size": "clamp(56px, 10vw, 160px)",
+   "example": "Be seen. / Be chosen. ; Your offer isn't the problem. Your distribution is. (144px)"
+  },
+  "stats": {
+   "family": "Outfit Variable",
+   "weight": 600,
+   "tracking": "-0.05em (xl) / -0.04em (lg)",
+   "leading": 0.9,
+   "numerals": "tabular",
+   "example": "3x → 5x with the x units in orange; 8% with % in orange"
+  },
+  "h3": {
+   "family": "Manrope Variable",
+   "weight": 600,
+   "tracking": "-0.025em",
+   "leading": 1.14,
+   "size": "22 to 30px",
+   "example": "Find and score."
+  },
+  "lede": {
+   "family": "Manrope Variable",
+   "weight": 400,
+   "tracking": "-0.012em",
+   "leading": 1.5,
+   "size": "20px desktop (18 mobile)",
+   "color": "#B0B1B3"
+  },
+  "body": {
+   "family": "Manrope Variable",
+   "weight": 400,
+   "size": "16px",
+   "leading": 1.6,
+   "color": "#B0B1B3"
+  },
+  "button": {
+   "family": "Manrope Variable",
+   "weight": 600,
+   "tracking": "-0.01em",
+   "size": "16px (52px tall) / 15px (44) / 14px (36)",
+   "fill": "#FC7F48",
+   "text": "#07080C",
+   "radius": "12px"
+  },
+  "mono_label": {
+   "family": "Geist Mono Variable",
+   "weight": 500,
+   "tracking": "0.08em",
+   "case": "UPPER",
+   "size": "12px",
+   "color": "#8E8F91",
+   "example": "FIG 0.1 OUTBOUND, WEEKS 1 TO 4, CLIENTS WHO AGREED TO BE NAMED, WHO IT'S FOR"
+  },
+  "mono_mockup_label": {
+   "family": "Geist Mono Variable",
+   "weight": 500,
+   "tracking": "0.06em",
+   "case": "UPPER",
+   "size": "12px",
+   "example": "DRAFT · TOUCH 1, WHY IT SCORED THIS WAY, RESEARCH"
+  },
+  "mono_url": {
+   "family": "Geist Mono Variable",
+   "size": "12px",
+   "color": "#B0B1B3",
+   "example": "gtm.clearscaler.com/leads in a #19191B pill"
+  },
+  "mockup_ui": {
+   "family": "Manrope Variable",
+   "base": "14px / 1.5",
+   "title": "15px 600 -0.01em",
+   "heading": "19px 600 -0.02em (Leads)",
+   "small": "13px ink-2",
+   "micro": "12px ink-3",
+   "chip": "12px 500, padding 2px 9px, pill"
+  },
+  "fallback_note": "Outfit Fallback = Arial Bold with size-adjust 93.76%; Manrope Fallback = Arial 103.57%"
+ },
+ "shapes": {
+  "pill": 999,
+  "button": 12,
+  "window": 20,
+  "surface": 28,
+  "mockup_card": 14,
+  "tag": 6,
+  "mockup_button": 9,
+  "stamp": 9,
+  "signal_card": 10,
+  "stat_tile": 10,
+  "bubble": 14,
+  "borders": "1px rule (white 12%) on cards and dividers; 1px rule-strong (white 22%) for outlined buttons, pills and the hairline loop",
+  "mockup_frame": "browser bar on surface-1: three 9px dots (rule-strong), centred mono URL pill (surface-2), 'Demo workspace' outline pill at right; body on night; 20px radius",
+  "icon_arrow": "16px arrow, shaft M2.5 8h10, head M9 4.5 12.5 8 9 11.5, stroke 1.75, round; icons are Lucide at 1.75 to 2 stroke",
+  "dots": "6px status dots (orange = working / in outreach, green = replied / booked, ring = awaiting approval)"
+ },
+ "shadows": {
+  "--e-float": "0 30px 80px -24px rgba(0,0,0,.6) (dark); light: 0 30px 80px -24px oklch(20% .02 60/.28)",
+  "mockup_frame": "0 0 0 1px rule, 0 30px 80px -32px rgba(0,0,0,.55)",
+  "--e1": "inset 0 1px 0 rgba(255,255,255,.06) (dark)",
+  "product_glow": "0 32px 110px -24px orange at 16% under the tilted hero product frame",
+  "toast": "surface-1 at 82% with backdrop blur 12px, 1px rule-strong border, --e-float"
+ },
+ "easing_on_site": {
+  "default": "cubic-bezier(.2,.7,.2,1) (--ease-out) for reveals, fades, fills",
+  "emphasis": "cubic-bezier(.16,1,.3,1) for slides and entrances (signal chip, stamp swap, tabs)",
+  "in_out": "cubic-bezier(.6,0,.2,1) (typing dots, shimmer)",
+  "spring": "linear(0, .6 18%, 1.02 38%, .99 60%, 1) for chips settling, 'Edited by our team' pill, meeting chip",
+  "durations": ".12s hover · .24s swaps · .48s reveals/toasts · .9s bar fills · 1.2s line draws · 9s per loop lap · 80ms press",
+  "reveal": "opacity 0→1, translateY 12px→0, .48s ease-out",
+  "linear": "the comet and packets travel at constant speed (linear)"
+ },
+ "style": {
+  "mood": "calm, exact, engineered; a quiet dark product site that lets one orange line do the talking; confident without hype ('We don't promise a meeting count.')",
+  "visual_language": "near-black night canvas (#07080C) with faint 64px hairline grids masked to a radial fade; the figure-8 loop as the master motif (logo, hero diagram, FIG icons, blog covers, closer field); huge tight Outfit headlines with one word in orange; second sentence of a heading in grey; Geist Mono uppercase eyebrows ('FIG 0.1 OUTBOUND', 'WEEKS 1 TO 4'); hairline rules and 1px outlined pills; coded product mockups in browser frames labelled 'Demo workspace'; green only for success states",
+  "orange_use": "sparingly: the brand word in a headline, the comet, one lit lobe, stat units, the primary button, an underline; glows are soft radial orange at 12 to 22% behind key moments (loop crossing, results band corner, closer)",
+  "imagery": "no photography except two small founder avatars; no stock, no 3D, no illustration beyond line diagrams; product UI is the hero image",
+  "layout": "1104px column, generous section spacing, left-aligned copy beside a right-hand mockup, sticky step rails (01 Found / 02 Written / 03 Booked)",
+  "voice": "short declarative pairs ending in periods, British spelling, no exclamation marks, no em dashes; numbers always with their measure, window and source"
+ },
+ "effects": "comet on the hairline loop (3 tapered orange dashes, 9s linear laps x3, glow at the crossing); packets riding the 12-station loop (12s laps); word-by-word email typing from ghost text (11ms/char) then strike-through wipe, orange-underlined insert, 'Edited by our team' pill, Approve & send press, 'Approved' stamp, 'Sent from your mailbox'; typing dots then reply bubble then Thursday 10:00 chip; hero product stage tilted (rotateX 10deg) flattening on scroll, new lead row sliding in with an orange wash, score count-up, chip spring-settle, reply card and 'Meeting booked · Thu 10:00' toast rising in; score bars filling; pulsing status dots; logo wall marquee (40s); slope chart wipe; closer field twinkle with one lit orange mark; reveals (fade + 12px rise). Full detail and timings: assets/site/diagrams.md",
+ "measured_note": "scripts/brand_measure.py measure (k-means in CIELAB, k=8) on assets/site/{home,gtm-engine,results,about}-dark-hero.png (1440x900) and assets/logo/{favicon-512-dark,clearscaler-logo-on-night}.png, 2026-10-05. The measured clusters match the CSS tokens: #07080C night, #EDEFF3 to #F1F3F7 ink (antialiasing), #FC7F48 orange, #101012 surface-1, #8E8F91 ink-3, #172E15 success-soft area. Contrast by brand_measure.py contrast.",
+ "logo": {
+  "lockup": "assets/logo/clearscaler-logo.svg (currentColor), -white.svg (#EDEFF3), -ink.svg (#100C08); viewBox 0 0 2854 372; mark 0 to 817.2 stroked 97.2 round, wordmark 1021 to 2854 filled; nav size 20px tall, 11px gap",
+  "mark": "assets/logo/clearscaler-mark*.svg (viewBox 0 0 817.2 372)",
+  "favicon": "assets/logo/favicon.svg: rounded square rx 21.3/100, #07080C with #EDEFF3 mark (dark) or #ECEAE4 with #100C08 (light)",
+  "colour": "the logo is always monochrome: #EDEFF3 on night (the closer's lit orange mark is decoration, not the logo)"
+ },
+ "hex_palette": [
+  "#07080C",
+  "#101012",
+  "#19191B",
+  "#232426",
+  "#2B2B2D",
+  "#252629",
+  "#3E3E41",
+  "#606163",
+  "#EDEFF3",
+  "#B0B1B3",
+  "#8E8F91",
+  "#FC7F48",
+  "#3D2219",
+  "#4BC680",
+  "#162A12",
+  "#FA686A"
+ ]
+}

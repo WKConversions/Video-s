@@ -1,0 +1,13 @@
+[
+  { "id": "offer",    "at": 0.45, "out": 3.15, "lines": ["Most companies don't have", "an offer problem."], "key": ["offer"] },
+  { "id": "reach",    "at": 3.4,  "out": 5.6,  "lines": ["They have a reach problem."], "key": ["reach"] },
+  { "id": "research", "at": 5.9,  "out": 8.5,  "lines": ["ClearScaler researches", "every account."], "key": ["every", "account."] },
+  { "id": "score",    "at": 8.8,  "out": 12.3, "lines": ["Every contact scored", "against your rubric."], "key": ["rubric."] },
+  { "id": "reason",   "at": 12.6, "out": 14.2, "lines": ["With the reason written down."], "key": ["reason"] },
+  { "id": "write",    "at": 14.5, "out": 17.3, "lines": ["Written per person."], "key": ["per", "person."] },
+  { "id": "approve",  "at": 17.6, "out": 19.2, "lines": ["Approved by you."], "key": ["Approved"], "note": "in the early months" },
+  { "id": "one",      "at": 19.4, "out": 22.6, "lines": ["One person at a time."], "key": ["at", "a", "time."] },
+  { "id": "reply",    "at": 22.9, "out": 25.0, "lines": ["Every reply classified."], "key": ["classified."] },
+  { "id": "booked",   "at": 25.3, "out": 27.8, "lines": ["Booked into your calendar."], "key": ["calendar."] },
+  { "id": "week",     "at": 28.2, "out": 30.6, "lines": ["Run for you, every week."], "key": ["every", "week."] }
+]

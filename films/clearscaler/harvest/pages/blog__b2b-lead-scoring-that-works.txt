@@ -1,0 +1,160 @@
+https://www.clearscaler.com/blog/b2b-lead-scoring-that-works
+
+B2B Lead Scoring: A Simple Model That Works | ClearScaler
+Skip to content
+Product
+GTM Engine
+Outbound, built and run for you
+Paid Acquisition
+Meta, Google and LinkedIn, tracked to revenue
+Conversion
+Pages that turn visits into booked calls
+Leads
+Demo workspace
+Quillmoor Group
+Meeting booked
+Brightwick Systems
+Replied
+Oakvane Lines
+In outreach
+The GTM app
+Leads, inbox and meetings in one place
+Not ready to talk?
+Free distribution plan
+Who it's for
+Recruitment agencies
+BD is whoever has a spare hour
+Marketing & creative agencies
+New business is nobody's job
+Logistics & freight companies
+Sales is relationships plus RFQs
+B2B SaaS companies
+Founder-led sales has stalled
+B2B companies
+Sales depends on the founder
+Results
+Company
+About
+The two of us, and how we got here
+Blog
+Notes on what we build
+Contact
+Email, WhatsApp or book a call
+Client loginBook a call
+Blog
+GTM engineering
+B2B lead scoring that works without the over-engineering
+A practical B2B lead scoring approach that combines fit and intent, skips the ML overkill, and routes hot leads to sales fast.
+Magnus Motzfeldt-BergeCo-founder, ClearScaler
+28 August 2026 ·
+6 min read
+On this pageWhat B2B lead scoring actually measures
+Why I am against over-engineered scoring
+Wire the score into routing and ad platforms
+Common questions
+On this page
+What B2B lead scoring actually measures
+Why I am against over-engineered scoring
+Wire the score into routing and ad platforms
+Common questions
+Most teams score leads to look busy, not to close deals. Good B2B lead scoring does one thing: it tells sales which leads to work first, and it does that with a model you can explain on a napkin. I have watched more revenue leak from over-engineered scoring systems than from having no system at all, so this post is my argument for keeping it simple, keeping it honest, and wiring the score into the places where it actually moves money.
+Here is my bias up front. If a rep cannot look at a lead's score and immediately understand why it is high or low, the model is broken. Complexity you cannot explain is complexity you cannot trust.
+What B2B lead scoring actually measures
+Every useful score answers two separate questions, and the mistake is blending them into one number too early.
+Fit is who they are. This is your ICP and firmographics: industry, company size, revenue, tech stack, role, region. Fit does not change based on what the lead did this morning. A 12-person agency is a bad fit for enterprise software whether or not they opened your email.
+Intent is what they are doing. This is signals and behaviour: pricing page visits, repeat sessions, hiring for a relevant role, competitor research, a demo request, funding news. Intent is now a core scoring input in modern GTM stacks, not just a nice-to-have layered on top of firmographic fit (Factors.ai, 2026). If you are only scoring on fit, you are grading a static snapshot and missing the part that tells you when to act.
+The reason to keep them separate is routing. A high-fit, low-intent lead needs nurture. A low-fit, high-intent lead is often a tire-kicker or a student. A high-fit, high-intent lead is the one your best rep calls today. Collapse those into a single "87" and you lose the plot.
+A simple fit-vs-intent model you can ship this week
+Here is a starter model. Two axes, points, a floor.
+Fit points (max 50):
+Target industry: +15
+Company size in range: +15
+Decision-maker title: +15
+Right region: +5
+Intent points (max 50):
+Visited pricing page: +20
+Two or more sessions in 7 days: +10
+Booked or requested a demo: +20
+Then the rule that matters: a lead needs a minimum fit of 30 before intent counts for routing. This one gate stops your reps from chasing excited people who will never buy. I would rather miss a fluke deal than burn a rep's week on fifty of them.
+Grade the buckets:
+Fit 30+ and intent 30+: route to sales now.
+Fit 30+ and intent under 30: nurture with signal-based selling plays.
+Fit under 30: hold, regardless of intent.
+That is the whole model. No machine learning, no data-science hire, no six-week build.
+Why I am against over-engineered scoring
+I have sat in QBRs where someone proudly showed a 40-variable ML scoring model, and nobody in the room could tell me why a specific lead scored what it did. That is not a model. That is a liability with a dashboard.
+ML lead scoring can work, but it earns its place only when you have thousands of clean, labelled closed-won and closed-lost records and a stable ICP. Most B2B teams have neither. They have a few hundred deals, a definition of "ideal customer" that shifted last quarter, and enrichment data with holes in it. Feed that into a model and you get confident nonsense.
+A points model has three advantages the ML crowd underrates. Reps trust it because they can read it. You can change it in an afternoon when your ICP moves. And when it is wrong, you can see exactly which rule was wrong and fix that rule. Explainability is not a consolation prize. It is the feature.
+My rule of thumb: start with points, run it for two quarters, and only reach for ML once you have enough labelled outcomes that a data person can actually validate it against held-out deals. Until then, sophistication is just risk wearing a nice suit.
+Garbage in, garbage score
+A scoring model is only as good as the data underneath it. If your firmographics are stale or your intent signals are noisy, no amount of clever weighting saves you. This is why I treat enrichment as a prerequisite, not a step two. Get your fields filled and verified with a proper data enrichment waterfall before you tune a single point value, because scoring empty fields just launders bad data into a number people trust.
+Wire the score into routing and ad platforms
+A score that lives in a CRM field and does nothing is decoration. The value shows up when the number triggers action in two places.
+Routing
+Routing is the obvious one. High fit plus high intent should auto-assign to a rep with an SLA, not sit in a queue. Signal-triggered outreach is worth the effort here: targeted, signal-based sequences convert far better, in the range of 15 to 25 percent reply, versus 3.43 percent for untargeted lists (Factors.ai, 2026). Your score is what decides who gets the personal, signal-led sequence and who gets the newsletter.
+Ad platforms
+This is the part most teams skip, and it is the highest-leverage move in the list. When you push lead quality or score back to your ad platforms as offline conversions, you let Smart Bidding optimise toward qualified pipeline instead of raw form fills (groas.ai / ClickSambo, 2026). The algorithm starts finding more people who look like your good leads and fewer who look like your junk. Without that feedback loop, you are paying Google and Meta to bring you more of whatever converts a form, which is usually not what converts a deal.
+The closed loop looks like this: ad drives a lead, enrichment fills the fields, the model scores fit and intent, high scores route to sales and also flow back to the ad platform as a conversion signal. Each turn of that loop makes the next batch of leads better. That is the whole point of scoring, and it is why a score that only sits in your CRM is a waste.
+Common questions
+What is the difference between fit and intent in B2B lead scoring?
+Fit is who the lead is: their firmographics and ICP match, which stays stable over time. Intent is what the lead does: pricing visits, demo requests, repeat sessions, and other buying signals. Score them on separate axes so you can route high-fit-high-intent leads to sales immediately and nurture the rest, instead of hiding both inside one confusing number.
+Do I need machine learning for lead scoring?
+Almost certainly not to start. ML scoring only earns its keep once you have thousands of clean, labelled closed-won and closed-lost records and a stable ICP. Most teams have neither, so a transparent points model that reps actually trust will outperform a black box they ignore. Add ML later, once you have outcomes to validate it against.
+How many points should each signal be worth?
+Start rough and adjust. Give demo requests and pricing visits the heaviest intent weight, give core ICP attributes the heaviest fit weight, and set a minimum fit threshold before intent counts for routing. The exact numbers matter less than the gate. Review the weights every quarter against which scored leads actually closed.
+How does lead scoring connect to my ad spend?
+Push your lead scores back to ad platforms as offline conversions. That feedback lets Smart Bidding optimise for qualified pipeline rather than cheap form fills (groas.ai / ClickSambo, 2026), so your ad budget starts finding people who look like your best leads instead of your worst.
+Keep it simple, keep it explainable, and make the score do work in both routing and your ad platforms. If you want a second pair of eyes on how your fit and intent model should be wired end to end, grab a free GTM plan and we will map it against your stack.
+Want this built and run for you?
+Get your free distribution planBook a call
+Magnus Motzfeldt-Berge
+Co-founder, ClearScaler
+Started on the phone in Oslo, selling telecoms and then advertising to small businesses.
+LinkedIn (opens in a new tab)
+↗
+About us
+Want this built and run for you?
+We find your B2B buyers, reach them by email, one person at a time, and book the meetings into your calendar.
+Get your free distribution planBook a call
+30 minutes with Magnus or Kian
+Keep reading. More on GTM engineering.
+All articlesRSS
+GTM engineering
+GTM engineering agency: what a good one actually does
+24 Aug 2026 ·
+6 min read
+GTM engineering
+The GTM stack 2026: the consolidated setup we actually run
+12 Aug 2026 ·
+6 min read
+GTM engineering
+What a Clay agency actually does (and how to pick one)
+10 Aug 2026 ·
+4 min read
+We fix distribution for B2B companies.
+Book a callMálaga, Spain · Europe and the UAE
+What we do
+GTM Engine
+Paid Acquisition
+Conversion
+Free distribution plan
+Who it's for
+Recruitment agencies
+Marketing & creative agencies
+Logistics & freight companies
+B2B SaaS companies
+B2B companies
+Company
+Results
+About
+Blog
+Contact
+Client login
+Elsewhere
+LinkedIn
+Instagram
+WhatsApp
+magnus@clearscaler.com
+© 2026
+ClearScaler
+PrivacyCookiesCookie settingsPause animations
