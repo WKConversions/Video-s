@@ -6,7 +6,7 @@
 import React from "react";
 import { Img, staticFile } from "remotion";
 import { T } from "./clock";
-import { ARRIVE, DEPART, MOVE, Line, Roll, measure, lerp } from "./kinetic";
+import { ARRIVE, DEPART, MOVE, LIN, Line, Roll, measure, lerp } from "./kinetic";
 import { C, SHADOW } from "./lib";
 import { Portrait, Sq, Logo, Text, Rule, OdoDigit, odo } from "./parts";
 
@@ -96,11 +96,11 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
   const field = k(g, "w:two", 0.73, MOVE, 0.5);                    // the tile grows into the navy field
   const fieldOn = g >= F("w:two-0.5") && g < F("w:today") + 20;
   // ---------- B6: the number, the grid, the card ----------
-  const headerK = k(g, "w:twenty3", 0.47, MOVE, 0.42);             // €2M shrinks to a header, clearing the centre before the grid
+  const headerK = k(g, "w:twenty3", 0.7, MOVE, 0.62);              // €2M shrinks to a header, clearing the centre before the grid
   const under = k(g, "w:valuation", 0.4, MOVE, 0.14);              // the ticks become the underline
   const split = k(g, "w:hundred", 0.27, MOVE, 0.15);               // 25 → 100
   const close = k(g, "w:team", 0.27, MOVE, 0.13);                  // the 100 close into one block
-  const cardK = k(g, "w:team", 0.5, MOVE, 0.0);                    // the block grows into the card
+  const cardK = k(g, "w:team", 0.5, MOVE, -0.14);                  // the block grows into the card, once the hundred have closed
   const push = k(g, "w:all", 1.0, MOVE, 0.0);                      // the photo pushes in
   const whiteOut = k(g, "w:today", 0.73, MOVE, 0.35);              // the card's box grows into the canvas
   const whiteGone = whiteOut >= 1;                                 // once the haze covers, the field layers unmount
@@ -113,7 +113,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
   const areaOut = k(g, "w:if", 0.3, DEPART, 0.0);                  // the areas sink with the square as it drops
   const ctaPeriod = periodAt(TYPE2, 500, "TALK", CTA, 700, -0.08, PER.display);
   const btn = { x: 140, y: 740, w: 640, h: 112 };
-  const btnK = T.k(g, 27.9, 0.45, MOVE);                           // right after the period of TALK. lands
+  const btnK = T.k(g, 27.9, 0.5, ARRIVE);                          // right after the period of TALK. lands: grows while still a dot
   const linesK = T.k(g, 28.3, 0.4, ARRIVE);
   const press = Math.sin(cl(T.k(g, 29.1, 0.3, (t) => t)) * Math.PI);
 
@@ -154,13 +154,13 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
             const pos = cell1(c, r);
             const leaves = (c === 1 && r === 0) ? "w:bos-0.45" : (c === 1 && r === 1) ? "w:process-0.1" : (c === 0 && r === 1) ? "w:technology-0.45" : null;
             if (leaves && g >= F(leaves)) return null;              // it has left the wall: drawn by its travel below
-            return <Sq key={`${c}${r}`} name={`w-${c}${r}`} x={pos.x} y={lerp(pos.y + 400, pos.y, p)} s={S} o={cl(p * 2.5)} style={{ filter: p > 0 && p < 0.7 ? `blur(${(1 - p) * 6}px)` : undefined }} />;
+            return <Sq key={`${c}${r}`} name={`w-${c}${r}`} x={pos.x} y={lerp(pos.y + 400, pos.y, p)} s={S} o={T.k(g, at / 30, 0.15, LIN)} style={{ filter: p > 0 && p < 0.7 ? `blur(${(1 - p) * 6}px)` : undefined }} />;
           })}
           {/* the course: two squares rise under the wall on "I build" */}
           {[0, 1].map((c) => {
             const p = k(g, "w:build", 0.47, ARRIVE, 0.3 - c * 0.08);
             const pos = cell1(c, 3);
-            return p > 0 && <Sq key={`c${c}`} name={`w-${c}3`} x={pos.x} y={lerp(pos.y + 220, pos.y, p)} s={S} o={cl(p * 2.5)} style={{ filter: p < 0.7 ? `blur(${(1 - p) * 6}px)` : undefined }} />;
+            return p > 0 && <Sq key={`c${c}`} name={`w-${c}3`} x={pos.x} y={lerp(pos.y + 220, pos.y, p)} s={S} o={k(g, "w:build", 0.15, LIN, 0.3 - c * 0.08)} style={{ filter: p < 0.7 ? `blur(${(1 - p) * 6}px)` : undefined }} />;
           })}
         </div>
       )}
@@ -217,7 +217,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
         const w = lerp(tileS, 2520, field), h = lerp(tileS, 1680, field);
         const cx = lerp(tileX, 960, field), cy = lerp(tileY, 540, field);
         const rad = lerp(tileS * TILE.r, 0, field);
-        const navy = field > 0 ? mixc(C.kb, C.field, (field - 0.75) * 4) : mixc(C.accent, C.kb, tileIn * 1.5);
+        const navy = field > 0 ? mixc(C.kb, C.field, field) : mixc(C.accent, C.kb, tileIn * 1.5);
         const logoS = lerp(tileS, 110, field), logoX = lerp(tileX, 120 + 55, field), logoY = lerp(tileY, 100 + 55, field);
         const wipeK = k(g, "w:kay", 0.4, MOVE, 0.05), wipeB = k(g, "w:bee", 0.4, MOVE, 0.05);
         return (
@@ -276,7 +276,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
           const yRise = (1 - p) * 300;
           const blur = p < 0.7 ? (1 - p) * 6 : 0;
           if (split <= 0) {
-            items.push(<Sq key={idx} x={cx} y={cy + yRise} s={GRID.s} o={cl(p * 2.5)} style={{ filter: blur ? `blur(${blur}px)` : undefined }} />);
+            items.push(<Sq key={idx} x={cx} y={cy + yRise} s={GRID.s} o={k(g, "w:twenty3", 0.15, LIN, 0.0 - idx * 0.05)} style={{ filter: blur ? `blur(${blur}px)` : undefined }} />);
           } else {
             const sp = split * (1 - close);
             const q = lerp(32, 26, sp), d = lerp(16, 19, sp);
@@ -375,7 +375,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       {g >= F("w:something-0.13") && (() => {
         const p = k(g, "w:something", 0.4, ARRIVE, 0.13);
         const c = cell2(0, 1);
-        return <Sq name="v-01" x={c.x} y={lerp(c.y - 500, c.y, p)} s={S} style={{ zIndex: 2, filter: p < 0.7 ? `blur(${(1 - p) * 6}px)` : undefined }} />;
+        return <Sq name="v-01" x={c.x} y={lerp(c.y - 500, c.y, p)} s={S} o={k(g, "w:something", 0.15, LIN, 0.13)} style={{ zIndex: 2, filter: p < 0.7 ? `blur(${(1 - p) * 6}px)` : undefined }} />;
       })()}
       {g >= F("w:talk-0.2") && <Sq name="v-02" x={cell2(0, 2).x} y={cell2(0, 2).y} s={S} style={{ zIndex: 2 }} />}
       {g >= F("w:structure2-0.4") && ([[1, 2], [1, 1], [1, 0], [0, 0]] as [number, number][]).map(([c, r], i) => {
@@ -394,7 +394,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       {g >= F("w:advise") - 14 && <Portrait style={{ zIndex: 3 }} name="robin2" o={cl(robin2In * 4)} x={ROBIN2.x + (1 - robin2In) * 900} y={ROBIN2.y} h={ROBIN2.h} />}
 
       {/* the four areas take the cells the logos leave; the square steps through them as each word's period */}
-      {g >= F("w:strategy") - 10 && g < F("w:building") && (
+      {g >= F("w:strategy") - 10 && areaOut < 1 && (
         <div data-probe="areas" style={{ position: "absolute", zIndex: 3, left: 0, top: 0, opacity: 1 - areaOut, transform: `translateY(${areaOut * 60}px)`, filter: areaOut > 0 ? `blur(${areaOut * 8}px)` : undefined }}>
           {areas.map(([t, at, c, r], i) => {
             const dim = i < 3 ? k(g, areas[i + 1][1], 0.27, MOVE, 0.13) : 0;
@@ -416,9 +416,9 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
         const cx = lerp(ctaPeriod.x, btn.x + btn.w / 2, morph), cy = lerp(ctaPeriod.y, btn.y + btn.h / 2, morph);
         const sc = 1 - press * 0.03;
         return (
-          <div data-probe="button" style={{ position: "absolute", zIndex: 3, left: 0, top: 0, width: w, height: h, borderRadius: lerp(0, 999, morph), background: mixc(C.accent, C.ink, morph * 1.4), transform: `translate(${cx - w / 2}px, ${cy - h / 2}px) scale(${sc})`, display: "flex", alignItems: "center", justifyContent: "space-between", padding: `0 ${h * 0.34}px 0 ${h * 0.4}px`, boxSizing: "border-box", color: C.white, fontFamily: "Manrope", fontWeight: 600, fontSize: 44, letterSpacing: "-0.02em", whiteSpace: "nowrap", overflow: "hidden", boxShadow: `0 12px 40px rgba(14,32,56,${0.18 * morph})`, willChange: "transform" }}>
-            <span style={{ opacity: cl((morph - 0.6) * 2.5) }}>Start a conversation</span>
-            <svg width={34} height={34} viewBox="0 0 24 24" style={{ opacity: cl((morph - 0.6) * 2.5), transform: `translate(${press * 4}px, ${-press * 4}px)` }}><path d="M5 19 19 5M5 5h14v14" fill="none" stroke={C.white} strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" /></svg>
+          <div data-probe="button" style={{ position: "absolute", zIndex: 3, left: 0, top: 0, width: w, height: h, borderRadius: lerp(0, 999, morph), background: mixc(C.accent, C.ink, morph), transform: `translate(${cx - w / 2}px, ${cy - h / 2}px) scale(${sc})`, display: "flex", alignItems: "center", justifyContent: "space-between", padding: `0 ${h * 0.34}px 0 ${h * 0.4}px`, boxSizing: "border-box", color: C.white, fontFamily: "Manrope", fontWeight: 600, fontSize: 44, letterSpacing: "-0.02em", whiteSpace: "nowrap", overflow: "hidden", boxShadow: `0 12px 40px rgba(14,32,56,${0.18 * morph})`, willChange: "transform" }}>
+            <span style={{ opacity: cl((morph - 0.8) * 5) }}>Start a conversation</span>
+            <svg width={34} height={34} viewBox="0 0 24 24" style={{ opacity: cl((morph - 0.8) * 5), transform: `translate(${press * 4}px, ${-press * 4}px)` }}><path d="M5 19 19 5M5 5h14v14" fill="none" stroke={C.white} strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" /></svg>
           </div>
         );
       })()}
@@ -428,8 +428,9 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
           <div style={{ color: C.blue }}>linkedin.com/in/robindanielbos</div>
         </div>
       )}
-          {/* a static grain over everything: the soft light bands in 8-bit video, and a band that creeps reads as a tremor */}
-      <div data-probe="grain" style={{ position: "absolute", zIndex: 6, left: 0, top: 0, width: 1920, height: 1080, opacity: 0.035, pointerEvents: "none", backgroundImage: `url(${staticFile("img/grain.svg")})`, backgroundRepeat: "repeat" }} />
+          {/* a static grain over everything: the soft light bands in 8-bit video, and a band that creeps reads as a tremor.
+          Through Img so every render tab has it from its first frame (a CSS background loads late on a fresh tab). */}
+      <Img data-probe="grain" src={staticFile("img/grain.svg")} style={{ position: "absolute", zIndex: 6, left: 0, top: 0, width: 1920, height: 1080, opacity: 0.035, pointerEvents: "none" }} />
     </>
   );
 };

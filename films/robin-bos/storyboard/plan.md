@@ -154,6 +154,13 @@ The first final encode (8-sample blur) measured: moving 95 %, longest still 0.47
 | B4 K.B | the feathered wipe still showed the period inside one frame (pop 105×) | 0.4 s with a 30 % feather | nothing appears in one frame |
 | the light | a CSS blur of 190 px on an 860 px disc: Chromium rendered its rings differently in the first frames (pop at 0.27 s across the frame) | a radial gradient under the grain | deterministic from frame to frame |
 | B3 statement | "process" measured static by 0.6 % | the statement words rise 0.6 em instead of 0.32; a passed word dims to 55 % as the next arrives (the areas' rule, now one rule) | every phrase gets its visual; one rule for passed words (scorers) |
+| the grain | a CSS background image: a fresh render tab drew its first frames without it (the light banded, the canvas tint swung, frames 0–8) | the grain through Remotion's Img, loaded before any frame | every tab deterministic from its first frame (pop review) |
+| B6 the card | the card mounted at full cover while the hundred squares were still closing (a block snapping on over a half-closed grid at 19.53 s) | the card starts 0.14 s later, once the block has closed | one gesture after the other (pop review, major) |
+| B7 the areas | the layer unmounted at "building" with its fade at 70 % | it stays until the fade ends | nothing vanishes mid-fade (pop review) |
+| B5→B6 header | €2M shrank to the header in 0.47 s: 40 px a frame while scaling, the blur's samples visible as copies | 0.7 s | one smear, not copies (pop review) |
+| risers | the first visible frame of a rising square sat at 66 % opacity | a 0.15 s linear fade in time, independent of the ease | no switch-on frame (pop review) |
+| B5 the field | the tile's navy crossed to the field's navy over the last quarter of the growth: a chroma step in the encode | over the whole growth | no step (pop review) |
+| B8 the button | the period grew into the pill on an ease-in-out, the label fading in through the fastest frames (a smear) | ARRIVE (fast while still a dot), the fill over the whole morph, the label on the slow tail | the plan's own spec (pop review) |
 
 Open after round 3 (for Karl):
 - The scorers' first change, structural: rebuild B7 "today I advise founders" as one object (the team card shrinking onto a rail, the logos lined up at one cap height in ink, the four areas as captions on that rail) instead of the logo cluster and the 2×2 word cells. A new round; not done here.
