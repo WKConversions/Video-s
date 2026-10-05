@@ -39,12 +39,6 @@
    "pitch": 5
   },
   {
-   "id": "gen-tick",
-   "frame": 62,
-   "note": "wall square 6 lands",
-   "pitch": 7
-  },
-  {
    "id": "gen-whoosh-medium",
    "frame": 82,
    "note": "Robin rises in front of the wall (fastest frames)",
@@ -155,7 +149,7 @@
   {
    "id": "gen-impact-soft",
    "frame": 429,
-   "note": "\u20ac2M lands",
+   "note": "€2M lands",
    "db": 0
   },
   {
@@ -167,7 +161,7 @@
   {
    "id": "gen-whoosh-short",
    "frame": 486,
-   "note": "\u20ac2M shrinks to the header",
+   "note": "€2M shrinks to the header",
    "db": -5
   },
   {
@@ -179,24 +173,10 @@
   },
   {
    "id": "gen-tick",
-   "frame": 486,
-   "note": "project squares rising (3)",
-   "db": -5,
-   "pitch": 2
-  },
-  {
-   "id": "gen-tick",
    "frame": 492,
    "note": "project squares rising (5)",
    "db": -5,
    "pitch": 4
-  },
-  {
-   "id": "gen-tick",
-   "frame": 498,
-   "note": "project squares rising (7)",
-   "db": -5,
-   "pitch": 6
   },
   {
    "id": "gen-pop",
@@ -298,18 +278,6 @@
   },
   {
    "id": "gen-tick",
-   "frame": 811,
-   "note": "Robin's square 2 completes the wall",
-   "pitch": 5
-  },
-  {
-   "id": "gen-tick",
-   "frame": 814,
-   "note": "Robin's square 3 completes the wall",
-   "pitch": 7
-  },
-  {
-   "id": "gen-tick",
    "frame": 817,
    "note": "Robin's square 4 completes the wall",
    "pitch": 9
@@ -323,13 +291,13 @@
   },
   {
    "id": "gen-appear",
-   "frame": 846,
+   "frame": 837,
    "note": "the period widens into the button",
    "db": -2
   },
   {
    "id": "gen-success",
-   "frame": 877,
+   "frame": 874,
    "note": "the button is pressed",
    "db": -3
   }

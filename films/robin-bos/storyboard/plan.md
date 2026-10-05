@@ -133,6 +133,29 @@ Decisions kept against the cold-eyes notes (for Karl, see notes.md):
 - The viewer's wall at the end (cold eyes: "a Tetris stack"): the concept's payoff, the thin tower braced into a wall whose top-left square is the period of TALK. Kept.
 - The 5×5 wall of 25 and the 100 small squares (busy peak at 19 s, 35 motions): the proof's one swarm, decided in round 1.
 
+## Final QC and the scorecard, round 3: revision log
+
+The first final encode (8-sample blur) measured: moving 95 %, longest still 0.47 s, median 3 things, 17 of 18 phrases ("process" static by 1 %), −15.1 LUFS, true peak −1.7 dBFS, 20 pops, one SHAKE (the light's banding creeping as it breathed), one LURCH (the count's tens digit). Three fresh scorers (story with the sound off, craft, brand and truth) and a judge scored the storyboard frames 36 of 55 (every lens 3–4; strongest B5, weakest B7). The small changes below went in before the second final; the structural one is an open question for Karl.
+
+| Scene | Before | After | Why |
+|---|---|---|---|
+| B4 K.B | the wordmark wiped in with a hard edge: the period of "K." appeared in one frame (pop 91×) | a soft-edged wipe (a 12 % feather) | nothing appears in one frame |
+| B5 "€" | slid 220 px in 0.4 s: the blur's 8 samples showed as copies | slides 110 px; the final uses 16 samples | a fast move carries blur, not ghosts |
+| B6 the count | the odometer rolled 0 → 25 at 16 a second: a flicker with ghost glyphs (pops 16×, LURCH on the tens digit, BUSY 7 motions) | "25" rises whole on "five" with its label; the squares are the count; 25 → 100 as one roll | every number on screen is his figure; the scorers asked for exactly this |
+| B1 the wall | a 2×3 rectangle with 8 px gutters (f0066): "the Windows logo" to cold eyes and two scorers | a stepped stack of five, 14 px gutters, never a rectangle; the course makes it seven | blocks, not panes |
+| B2 the name | ROBIN BOS left on "build", its period waited alone 0.6 s (f0156, "orphan") | the name stays until its period leaves on "businesses" | the thread never shows a stray |
+| B1, B4, B7 cut-outs | Gaussian blur on Robin's rise, exit and entry | opacity fades only; the camera's motion blur carries the fast frames | a cut-out defocused reads as a transition device (scorers) |
+| B7 the logos | entered from 700 px: blur copies on Tale Forge and ClearScaler | from 260 px, with the fade | dense blur |
+| B3 "process" | the period left the wall 0.45 s before the word: the phrase measured static | it leaves 0.2 s before and lands inside the word | every phrase gets its visual |
+| the light | breathed 8 % in brightness: its banded edge crept in 9 px steps (SHAKE 23.4–24.4 s) | 3 % breath and a static 3.5 % grain over the stage | a band that creeps reads as a tremor; grain breaks banding in 8-bit video |
+| B8 end card | the button at 28.2 s, the contact lines at 28.7 s: the complete card held under half a second | the button at 27.9 s, the lines at 28.3 s, the press at 29.1 s: the complete card holds 1.3 s (the voice ends at 27.9) | the contact lines are the conversion (scorers) |
+| sound | 50 cues: a tick on every landing | 45: no tick for the removed square, two on the grid, two on the end wall | the brief's tone is calm (scorers: density) |
+
+Open after round 3 (for Karl):
+- The scorers' first change, structural: rebuild B7 "today I advise founders" as one object (the team card shrinking onto a rail, the logos lined up at one cap height in ink, the four areas as captions on that rail) instead of the logo cluster and the 2×2 word cells. A new round; not done here.
+- The end card holds 1.3 s, not the 2.5 s the scorers asked for: the voice ends at 27.9 s and the viewer's wall (26.2–27.9 s) is the concept's payoff. Cut the wall build, or accept the hold (the film loops on the site).
+- The wall half behind Robin's shoulder (f0090–f0288) read as a z-order leftover to the scorers; it is the "behind it" picture. Kept; Karl decides.
+
 ## Rules from the judgement pass (applied to the whole film)
 - Every number on screen is one of his figures at every frame: a digit rises whole or rolls in from blank; no odometer passes through 2023, €1M or 00.
 - A number and its label change in the same gesture; a counter never exceeds the units standing on screen.

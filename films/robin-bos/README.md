@@ -30,7 +30,7 @@ npx remotion studio                      # edit in Remotion Studio (composition 
 - `src/lib.tsx`: the brand tokens and the motion curves. `src/kinetic.tsx`: the skill's kit. `src/parts.tsx`, `src/forms.tsx`: the stage's pieces and Robin's rebuilt forms.
 - Draft render (no blur, fast): `npx remotion render Film out/draft.mp4 --props='{"blurSamples":1,"audio":"mix"}'`
 - Final render (8-sample motion blur, chunked so slow text never trembles): from `film/`,
-  `bash scripts/render_chunks.sh Film out/final.mp4 '{"blurSamples":8,"audio":"none"}' 0,212,450,660,900 public/audio/mix.wav`
+  `bash scripts/render_chunks.sh Film out/final.mp4 '{"blurSamples":16,"audio":"none"}' 0,212,450,660,900 public/audio/mix.wav`
 - In a sandbox add `--browser-executable=/opt/pw-browsers/chromium_headless_shell-*/chrome-linux/headless_shell` (render_chunks.sh finds it itself).
 - Test frames: `node scripts/stills.mjs 0,90,420 1 Film` → `out/test/`. Motion probe: `node scripts/motion_probe.mjs out/probe.jsonl && python3 ../scripts/motion_probe.py out/probe.jsonl --style calm`.
 - QC on an encode: `bash ../scripts/qc.sh out/final.mp4 out/qc` and `python3 ../scripts/phrase_check.py check out/final.mp4 src/words.json --sheet out/qc/phrases.png`.

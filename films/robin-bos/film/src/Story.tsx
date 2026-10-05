@@ -14,7 +14,7 @@ const cl = (t: number) => Math.min(1, Math.max(0, t));
 const F = (pos: string) => T.f(pos);
 
 // ---- geometry ----
-const S = 110, GAP = 8, PITCH = S + GAP;                        // the wall's squares
+const S = 110, GAP = 14, PITCH = S + GAP;                        // the wall's squares
 const WALL1 = { x: 880, y: 476 };                                // stretch one: top-left of cell (0,0)
 const cell1 = (c: number, r: number) => ({ x: WALL1.x + c * PITCH + S / 2, y: WALL1.y + r * PITCH + S / 2 });
 const WALL2 = { x: 980, y: 610 };                                // the viewer's wall, stretch two
@@ -52,11 +52,11 @@ const Travel: React.FC<{ g: number; at: string; dur: number; from: [number, numb
 
 export const Story: React.FC<{ g: number }> = ({ g }) => {
   // ---------- stretch one: the wall ----------
-  // the first three squares stack before Robin (a column and its footing, never a lone 2×2); the last two behind his shoulder once he is in
+  // a stepped stack of five, never a rectangle: the first three before Robin, the fourth behind his shoulder once he is in
   const rise1: { c: number; r: number; at: number }[] = [
-    { c: 0, r: 2, at: 1 }, { c: 1, r: 1, at: 12 }, { c: 1, r: 0, at: 23 }, { c: 0, r: 1, at: 40 }, { c: 0, r: 0, at: 52 },
+    { c: 0, r: 2, at: 1 }, { c: 1, r: 1, at: 12 }, { c: 1, r: 0, at: 23 }, { c: 0, r: 1, at: 40 },
   ];
-  const settle = T.k(g, 52 / 30 + 0.5, 0.2, MOVE);                 // the whole stack settles 6 px as the top course lands
+  const settle = T.k(g, 40 / 30 + 0.5, 0.2, MOVE);                 // the whole stack settles 6 px as the last square lands
   const behindK = k(g, "w:behind", 0.5, MOVE, 0.15);
   const tuck = behindK * 150;                                      // on "behind" the wall tucks 150 px further behind his shoulder …
   const fwd = 1 + behindK * 0.03;                                  // … and Robin comes 3% forward, from his feet
@@ -105,9 +105,9 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
   const areaOut = k(g, "w:if", 0.3, DEPART, 0.0);                  // the areas sink with the square as it drops
   const ctaPeriod = periodAt(TYPE2, 500, "TALK", CTA, 700, -0.08, PER.display);
   const btn = { x: 140, y: 740, w: 640, h: 112 };
-  const btnK = T.k(g, 28.2, 0.5, MOVE);
-  const linesK = T.k(g, 28.7, 0.4, ARRIVE);
-  const press = Math.sin(cl(T.k(g, 29.2, 0.3, (t) => t)) * Math.PI);
+  const btnK = T.k(g, 27.9, 0.45, MOVE);                           // right after the period of TALK. lands
+  const linesK = T.k(g, 28.3, 0.4, ARRIVE);
+  const press = Math.sin(cl(T.k(g, 29.1, 0.3, (t) => t)) * Math.PI);
 
   // the stepping square of B7: from Robin's shoulder to each area's period, then down to the viewer's first block
   const stepPos = (): { x: number; y: number; s: number; blur: number } => {
@@ -135,7 +135,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       {/* canvas: the site's haze, white where the page is white */}
       <div data-probe="canvas" style={{ position: "absolute", left: -300, top: -300, width: 2520, height: 1680, background: `linear-gradient(165deg, ${C.canvas} 0%, ${C.canvas} 40%, ${C.haze} 80%, ${C.mist} 100%)` }} />
       {/* the light: the portrait backdrop's sky as one soft disc, behind Robin only */}
-      {!fieldOn && g < F("w:consultancy") + 10 && <Bloom g={g} x={ROBIN1.x + 60 + exitX} y={520} r={430} color={C.sky} k={(0.55 + 0.45 * robin1In) * (1 - robin1Exit) * (0.92 + 0.08 * Math.sin(g / 45))} drift={0} />}
+      {!fieldOn && g < F("w:consultancy") + 10 && <Bloom g={g} x={ROBIN1.x + 60 + exitX} y={520} r={430} color={C.sky} k={(0.55 + 0.45 * robin1In) * (1 - robin1Exit) * (0.97 + 0.03 * Math.sin(g / 45))} drift={0} />}
 
       {/* ---------- stretch one: the wall, its squares, the periods ---------- */}
       {wallVisible && (
@@ -144,8 +144,8 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
           {rise1.map(({ c, r, at }) => {
             const p = T.k(g, at / 30, 0.53, ARRIVE);
             const pos = cell1(c, r);
-            const leaves = (c === 1 && r === 0) ? "w:bos" : (c === 1 && r === 1) ? "w:process" : (c === 0 && r === 1) ? "w:technology" : null;
-            if (leaves && g >= F(`${leaves}-0.45`)) return null;     // it has left the wall: drawn by its travel below
+            const leaves = (c === 1 && r === 0) ? "w:bos-0.45" : (c === 1 && r === 1) ? "w:process-0.2" : (c === 0 && r === 1) ? "w:technology-0.45" : null;
+            if (leaves && g >= F(leaves)) return null;              // it has left the wall: drawn by its travel below
             return <Sq key={`${c}${r}`} name={`w-${c}${r}`} x={pos.x} y={lerp(pos.y + 400, pos.y, p)} s={S} o={cl(p * 2.5)} style={{ filter: p > 0 && p < 0.7 ? `blur(${(1 - p) * 6}px)` : undefined }} />;
           })}
           {/* the course: two squares rise under the wall on "I build" */}
@@ -158,7 +158,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       )}
       {between(g, "w:bos-0.45", "w:businesses-0.02") && <Travel g={g} at="w:bos" dur={0.4} early={0.45} from={[cell1(1, 0).x - 90, cell1(1, 0).y - lift, S]} to={[periodBOS.x, periodBOS.y, PER.display]} name="period" />}
       {between(g, "w:businesses-0.02", "w:founded") && <Travel g={g} at="w:businesses" dur={0.4} early={0.0} from={[periodBOS.x, periodBOS.y, PER.display]} to={[pPeople.x, pPeople.y, PER.state]} name="period" />}
-      {between(g, "w:process-0.45", "w:founded") && <Travel g={g} at="w:process" dur={0.4} early={0.45} from={[cell1(1, 1).x - 90, cell1(1, 1).y - PITCH, S]} to={[pProcess.x, pProcess.y, PER.state]} name="period2" />}
+      {between(g, "w:process-0.2", "w:founded") && <Travel g={g} at="w:process" dur={0.4} early={0.2} from={[cell1(1, 1).x - 90, cell1(1, 1).y - PITCH, S]} to={[pProcess.x, pProcess.y, PER.state]} name="period2" />}
       {between(g, "w:technology-0.45", "w:founded") && <Travel g={g} at="w:technology" dur={0.4} early={0.45} from={[cell1(0, 1).x - 90, cell1(0, 1).y - PITCH, S]} to={[pTech.x, pTech.y, PER.state]} name="period3" />}
       {/* the three periods gather into one square on "co-founded", after the words have gone */}
       {between(g, "w:founded", "w:kay-0.13") && [pPeople, pProcess, pTech].map((p, i) => <Travel key={i} g={g} at="w:founded" dur={0.32} from={[p.x + 120, p.y, PER.state]} to={[gatherPt.x, gatherPt.y, 90]} early={0.0} name={`gather${i}`} />)}
@@ -166,8 +166,8 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       {/* the name and the statement, stretch one */}
       {between(g, "w:robin-0.4", "w:people-0.13") && (
         <div data-probe="name" style={{ position: "absolute", left: 0, top: 0 }}>
-          <Line g={g} words={[{ t: "ROBIN", at: "w:robin-0.13" }]} x={TYPE1} y={330} size={NAME} weight={700} ls={-0.08} out="w:build-0.13" outDur={0.27} />
-          <Line g={g} words={[{ t: "BOS", at: "w:bos-0.13" }]} x={TYPE1} y={560} size={NAME} weight={700} ls={-0.08} out="w:build-0.1" outDur={0.27} />
+          <Line g={g} words={[{ t: "ROBIN", at: "w:robin-0.13" }]} x={TYPE1} y={330} size={NAME} weight={700} ls={-0.08} out="w:businesses-0.32" outDur={0.27} />
+          <Line g={g} words={[{ t: "BOS", at: "w:bos-0.13" }]} x={TYPE1} y={560} size={NAME} weight={700} ls={-0.08} out="w:businesses-0.3" outDur={0.27} />
         </div>
       )}
       {between(g, "w:people-0.4", "w:kay") && (
@@ -201,7 +201,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
 
       {/* Robin, stretch one: rises in front of the wall on "strong", leaves left on "Consultancy" */}
       {g >= F("w:strong") - 24 && g < F("w:consultancy") + 20 && (
-        <Portrait name="robin1" x={ROBIN1.x + exitX} y={ROBIN1.y + (1 - robin1In) * 980} h={ROBIN1.h * fwd} blur={robin1In < 0.75 ? (1 - robin1In) * 6 : robin1Exit > 0 ? robin1Exit * 6 : 0} />
+        <Portrait name="robin1" x={ROBIN1.x + exitX} y={ROBIN1.y + (1 - robin1In) * 980} h={ROBIN1.h * fwd} o={cl(robin1In * 3) * (1 - cl((robin1Exit - 0.6) * 2.5))} />
       )}
 
       {/* the K.B tile: the gathered square turns navy, rounds and takes the real letters; then grows into the field */}
@@ -216,7 +216,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
           <>
             <div data-probe="tile" style={{ position: "absolute", left: 0, top: 0, width: w, height: h, borderRadius: rad, background: navy, transform: `translate(${cx - w / 2}px, ${cy - h / 2}px)`, boxShadow: field < 1 ? SHADOW.card : undefined, willChange: "transform" }} />
             <div data-probe="kb" style={{ position: "absolute", left: 0, top: 0, width: logoS, height: logoS, borderRadius: logoS * TILE.r, overflow: "hidden", transform: `translate(${logoX - logoS / 2}px, ${logoY - logoS / 2}px)`, willChange: "transform", opacity: tileIn }}>
-              <Img src={staticFile("img/kb-consultancy.png")} style={{ width: "100%", height: "100%", display: "block", clipPath: `inset(0 ${(1 - Math.max(wipeK * 0.56, wipeB)) * 100}% 0 0)` }} />
+              <Img src={staticFile("img/kb-consultancy.png")} style={{ width: "100%", height: "100%", display: "block", WebkitMaskImage: `linear-gradient(90deg, #000 ${Math.max(wipeK * 0.56, wipeB) * 112 - 12}%, transparent ${Math.max(wipeK * 0.56, wipeB) * 112}%)`, maskImage: `linear-gradient(90deg, #000 ${Math.max(wipeK * 0.56, wipeB) * 112 - 12}%, transparent ${Math.max(wipeK * 0.56, wipeB) * 112}%)` }} />
             </div>
           </>
         );
@@ -241,7 +241,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
         return (
           <>
             <div data-probe="eur2m" style={{ position: "absolute", left: 0, top: 0, transform: `translate(${x}px, ${y}px)`, display: "flex", fontFamily: "Manrope", fontWeight: 700, fontSize: size, color: C.white, letterSpacing: "-0.05em", lineHeight: 1, willChange: "transform" }}>
-              <span style={{ display: "inline-block", transform: `translateX(${(1 - eK) * -220}px)`, opacity: eO, filter: eK < 1 ? `blur(${(1 - eK) * 8}px)` : undefined }}>€</span>
+              <span style={{ display: "inline-block", transform: `translateX(${(1 - eK) * -110}px)`, opacity: eO, filter: eK < 1 ? `blur(${(1 - eK) * 8}px)` : undefined }}>€</span>
               <span style={{ display: "inline-block", transform: `translateY(${(1 - twoK) * size * 0.32}px)`, opacity: Math.min(1, twoK * 1.7), filter: twoK < 1 ? `blur(${(1 - twoK) * 9}px)` : undefined }}>2</span>
               <span style={{ display: "inline-block", transform: `translateY(${(1 - mK) * size * 0.32}px)`, opacity: Math.min(1, mK * 1.7), filter: mK < 1 ? `blur(${(1 - mK) * 9}px)` : undefined }}>M</span>
             </div>
@@ -258,11 +258,9 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       {g >= F("w:twenty3-0.42") && g < F("w:team") + 10 && (() => {
         if (cardK >= 0.4) return null;
         const items: React.ReactNode[] = [];
-        let landed = 0;
         for (let r = 4; r >= 0; r--) for (let c = 0; c < 5; c++) {
           const idx = (4 - r) * 5 + c;
           const p = k(g, "w:twenty3", 0.4, ARRIVE, 0.0 - idx * 0.05);
-          landed += Math.min(1, p / 0.9);
           if (p <= 0) continue;
           const cx0 = GRID.x + c * gp + GRID.s / 2, cy0 = GRID.y + r * gp + GRID.s / 2;
           const bc = { x: GRID.x + 2 * gp + GRID.s / 2, y: GRID.y + 2 * gp + GRID.s / 2 };
@@ -277,25 +275,20 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
             for (const [dx, dy] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) items.push(<Sq key={`${idx}${dx}${dy}`} x={cx + dx * d} y={cy + dy * d} s={q} />);
           }
         }
-        // the count eases in (no digit flicker at the start), follows the landings, and reaches 25 with the last square
-        const u = cl(landed / 25), ea = 0.3;
-        const count = 25 * (u < ea ? (u * u) / (2 * ea) : u - ea / 2) / (1 - ea / 2);
-        const countIn = k(g, "w:twenty3", 0.25, (t) => t, 0.0);
-        const labelK = k(g, "w:twenty3", 0.3, ARRIVE, -0.25);
+        // the number rises whole on "five" (no count passes through figures that are not his); the squares are the count
+        const n25 = k(g, "w:five", 0.42, ARRIVE, 0.1);
+        const labelK = k(g, "w:five", 0.3, ARRIVE, -0.05);
         const numW = lerp(248, 372, split);
         const plusK = k(g, "w:automations", 0.27, ARRIVE, 0.1);
         const outK = T.k(g, F("w:team") / 30 - 0.2, 0.2, DEPART);
         return (
           <div data-probe="projects" style={{ position: "absolute", left: 0, top: 0 }}>
             {items}
-            <div data-probe="counter" style={{ position: "absolute", left: 0, top: 0, width: 620, whiteSpace: "nowrap", transform: `translate(1080px, 440px)`, opacity: (1 - outK) * cl((headerK - 0.7) * 4) * countIn, filter: outK > 0 ? `blur(${outK * 8}px)` : undefined, fontFamily: "Manrope", color: C.white }}>
+            <div data-probe="counter" style={{ position: "absolute", left: 0, top: 0, width: 620, whiteSpace: "nowrap", transform: `translate(1080px, 440px)`, opacity: (1 - outK) * cl((headerK - 0.7) * 4), filter: outK > 0 ? `blur(${outK * 8}px)` : undefined, fontFamily: "Manrope", color: C.white }}>
               <div style={{ position: "relative", height: 200, fontWeight: 700, fontSize: 200, letterSpacing: "-0.05em", lineHeight: 1 }}>
                 {/* 25 counts up as the squares land; on "hundred" it rolls up and 100 rolls in, the same roll as the label beneath */}
                 <Roll g={g} at="w:hundred-0.15" dur={0.27} h={200} style={{ width: 420 }}
-                  a={<div style={{ display: "flex", alignItems: "flex-end" }}>
-                    <div style={{ width: 124 * cl((count - 9.5) * 1.2), overflow: "hidden" }}><OdoDigit v={odo(count, 2)[0]} size={200} width={0.62} /></div>
-                    <OdoDigit v={odo(count, 2)[1]} size={200} width={0.62} />
-                  </div>}
+                  a={<span style={{ display: "inline-block", opacity: Math.min(1, n25 * 1.7), transform: `translateY(${(1 - n25) * 64}px)`, filter: n25 < 1 ? `blur(${(1 - n25) * 9}px)` : undefined }}>25</span>}
                   b={<span>100</span>} />
                 <span style={{ position: "absolute", left: numW + 6, bottom: 20, fontSize: 120, opacity: plusK, transform: `translateY(${(1 - plusK) * 30}px)`, display: "inline-block" }}>+</span>
               </div>
@@ -333,7 +326,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       })()}
 
       {/* the light, stretch two */}
-      {g >= F("w:advise") - 12 && <Bloom g={g} x={ROBIN2.x - 60} y={520} r={430} color={C.sky} k={cl((g - F("w:advise") + 12) / 20) * 0.9 * (0.92 + 0.08 * Math.sin(g / 45))} drift={0} style={{ zIndex: 2 }} />}
+      {g >= F("w:advise") - 12 && <Bloom g={g} x={ROBIN2.x - 60} y={520} r={430} color={C.sky} k={cl((g - F("w:advise") + 12) / 20) * 0.9 * (0.97 + 0.03 * Math.sin(g / 45))} drift={0} style={{ zIndex: 2 }} />}
 
       {/* the four companies, stretch two: a loose 2×2 gathered at Robin's shoulder, no table */}
       {g >= F("w:founders") - 10 && g < F("w:strategy") + 10 && (() => {
@@ -350,7 +343,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
               const pOut = k(g, "w:strategy", 0.33, DEPART, 0.62 - i * 0.06);
               const cell = cellAt(l.c, l.r);
               const cx = cell.x + CELLS.w / 2, cy = cell.y + CELLS.h / 2;
-              const dx = (1 - pIn) * -700, dy = pOut * 700;
+              const dx = (1 - pIn) * -260, dy = pOut * 700;
               return (
                 <div key={l.src} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${dx}px, ${dy}px)`, opacity: Math.min(1, pIn * 1.5), filter: pIn < 0.7 || pOut > 0 ? `blur(${(1 - pIn) * 6 + pOut * 6}px)` : undefined, willChange: "transform" }}>
                   {l.label ? (
@@ -390,7 +383,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       })}
 
       {/* Robin, stretch two: enters from the right on "advise" and stays */}
-      {g >= F("w:advise") - 14 && <Portrait style={{ zIndex: 3 }} name="robin2" o={cl(robin2In * 4)} x={ROBIN2.x + (1 - robin2In) * 900} y={ROBIN2.y} h={ROBIN2.h} blur={robin2In < 0.75 ? (1 - robin2In) * 6 : 0} />}
+      {g >= F("w:advise") - 14 && <Portrait style={{ zIndex: 3 }} name="robin2" o={cl(robin2In * 4)} x={ROBIN2.x + (1 - robin2In) * 900} y={ROBIN2.y} h={ROBIN2.h} />}
 
       {/* the four areas take the cells the logos leave; the square steps through them as each word's period */}
       {g >= F("w:strategy") - 10 && g < F("w:building") && (
@@ -427,6 +420,8 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
           <div style={{ color: C.blue }}>linkedin.com/in/robindanielbos</div>
         </div>
       )}
+          {/* a static grain over everything: the soft light bands in 8-bit video, and a band that creeps reads as a tremor */}
+      <div data-probe="grain" style={{ position: "absolute", zIndex: 6, left: 0, top: 0, width: 1920, height: 1080, opacity: 0.035, pointerEvents: "none", backgroundImage: `url("data:image/svg+xml;utf8,${encodeURIComponent('<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'320\' height=\'320\'><filter id=\'n\'><feTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'2\' stitchTiles=\'stitch\' seed=\'7\'/><feColorMatrix type=\'saturate\' values=\'0\'/></filter><rect width=\'100%\' height=\'100%\' filter=\'url(#n)\'/></svg>')}")`, backgroundRepeat: "repeat" }} />
     </>
   );
 };
