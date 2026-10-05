@@ -1,0 +1,21 @@
+{
+ "per_node": {
+  "camshaft_exhaust": 12128,
+  "camshaft_intake": 12128,
+  "cylinder_head": 32804,
+  "engine_block": 10836,
+  "engine_front": 5900,
+  "exhaust_manifold": 8720,
+  "fan": 2644,
+  "intake_manifold": 7572,
+  "oil_pan": 688,
+  "radiator": 2080,
+  "valves": 35328,
+  "timing_chain": 10264,
+  "valve_cover": 6182,
+  "vanos_sprocket_exhaust": 9056,
+  "vanos_sprocket_intake": 4592,
+  "vanos_unit": 9128
+ },
+ "total": 170050
+}

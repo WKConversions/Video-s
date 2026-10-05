@@ -1,0 +1,7 @@
+build/body_raw.npz
+build/bp/*.png
+build/cmp/
+build/__pycache__/
+build/parts/__pycache__/
+build/photo_*.png
+film/out/
