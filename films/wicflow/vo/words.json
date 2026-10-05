@@ -1,0 +1,402 @@
+[
+{
+"word": "what",
+"start": 0.09,
+"end": 0.39
+},
+{
+"word": "if",
+"start": 0.4,
+"end": 0.48
+},
+{
+"word": "AI",
+"start": 0.49,
+"end": 0.87
+},
+{
+"word": "didn't",
+"start": 0.88,
+"end": 1.17
+},
+{
+"word": "just",
+"start": 1.18,
+"end": 1.43
+},
+{
+"word": "assist",
+"start": 1.44,
+"end": 2.01
+},
+{
+"word": "your",
+"start": 2.02,
+"end": 2.14
+},
+{
+"word": "team",
+"start": 2.15,
+"end": 2.75
+},
+{
+"word": "but",
+"start": 2.76,
+"end": 2.95
+},
+{
+"word": "actually",
+"start": 2.96,
+"end": 3.44
+},
+{
+"word": "moved",
+"start": 3.45,
+"end": 3.89
+},
+{
+"word": "your",
+"start": 3.9,
+"end": 4.01
+},
+{
+"word": "business",
+"start": 4.02,
+"end": 4.38
+},
+{
+"word": "forward",
+"start": 4.39,
+"end": 4.94
+},
+{
+"word": "Wicflow",
+"start": 5.59,
+"end": 6.01
+},
+{
+"word": "builds",
+"start": 6.02,
+"end": 6.32
+},
+{
+"word": "practical",
+"start": 6.33,
+"end": 6.97
+},
+{
+"word": "AI",
+"start": 6.98,
+"end": 7.29
+},
+{
+"word": "systems",
+"start": 7.3,
+"end": 7.81
+},
+{
+"word": "for",
+"start": 7.82,
+"end": 7.96
+},
+{
+"word": "sales",
+"start": 7.97,
+"end": 8.57
+},
+{
+"word": "marketing",
+"start": 8.58,
+"end": 9.26
+},
+{
+"word": "and",
+"start": 9.27,
+"end": 9.48
+},
+{
+"word": "everyday",
+"start": 9.49,
+"end": 9.96
+},
+{
+"word": "work",
+"start": 9.97,
+"end": 10.37
+},
+{
+"word": "from",
+"start": 10.83,
+"end": 10.99
+},
+{
+"word": "finding",
+"start": 11.0,
+"end": 11.38
+},
+{
+"word": "the",
+"start": 11.39,
+"end": 11.46
+},
+{
+"word": "right",
+"start": 11.47,
+"end": 11.66
+},
+{
+"word": "prospects",
+"start": 11.67,
+"end": 12.36
+},
+{
+"word": "and",
+"start": 12.37,
+"end": 12.52
+},
+{
+"word": "writing",
+"start": 12.53,
+"end": 12.84
+},
+{
+"word": "personalized",
+"start": 12.85,
+"end": 13.53
+},
+{
+"word": "outreach",
+"start": 13.54,
+"end": 14.09
+},
+{
+"word": "to",
+"start": 14.44,
+"end": 14.52
+},
+{
+"word": "automating",
+"start": 14.53,
+"end": 15.07
+},
+{
+"word": "follow-ups",
+"start": 15.08,
+"end": 15.68
+},
+{
+"word": "and",
+"start": 15.69,
+"end": 15.86
+},
+{
+"word": "keeping",
+"start": 15.87,
+"end": 16.21
+},
+{
+"word": "your",
+"start": 16.22,
+"end": 16.34
+},
+{
+"word": "CRM",
+"start": 16.35,
+"end": 16.98
+},
+{
+"word": "updated",
+"start": 16.99,
+"end": 17.58
+},
+{
+"word": "everything",
+"start": 18.09,
+"end": 18.56
+},
+{
+"word": "connects",
+"start": 18.57,
+"end": 18.98
+},
+{
+"word": "with",
+"start": 18.99,
+"end": 19.09
+},
+{
+"word": "the",
+"start": 19.1,
+"end": 19.16
+},
+{
+"word": "tools",
+"start": 19.17,
+"end": 19.54
+},
+{
+"word": "your",
+"start": 19.55,
+"end": 19.65
+},
+{
+"word": "team",
+"start": 19.66,
+"end": 19.97
+},
+{
+"word": "already",
+"start": 19.98,
+"end": 20.44
+},
+{
+"word": "uses",
+"start": 20.45,
+"end": 21.07
+},
+{
+"word": "start",
+"start": 21.52,
+"end": 21.77
+},
+{
+"word": "with",
+"start": 21.78,
+"end": 21.92
+},
+{
+"word": "one",
+"start": 21.93,
+"end": 22.3
+},
+{
+"word": "focused",
+"start": 22.31,
+"end": 22.67
+},
+{
+"word": "pilot",
+"start": 22.68,
+"end": 23.11
+},
+{
+"word": "measure",
+"start": 23.41,
+"end": 23.74
+},
+{
+"word": "the",
+"start": 23.75,
+"end": 23.84
+},
+{
+"word": "results",
+"start": 23.85,
+"end": 24.43
+},
+{
+"word": "and",
+"start": 24.56,
+"end": 24.71
+},
+{
+"word": "scale",
+"start": 24.72,
+"end": 25.22
+},
+{
+"word": "what",
+"start": 25.23,
+"end": 25.35
+},
+{
+"word": "works",
+"start": 25.36,
+"end": 25.91
+},
+{
+"word": "less",
+"start": 26.38,
+"end": 26.67
+},
+{
+"word": "manual",
+"start": 26.68,
+"end": 27.1
+},
+{
+"word": "work",
+"start": 27.11,
+"end": 27.45
+},
+{
+"word": "more",
+"start": 27.68,
+"end": 27.99
+},
+{
+"word": "conversations",
+"start": 28.0,
+"end": 28.94
+},
+{
+"word": "more",
+"start": 29.13,
+"end": 29.5
+},
+{
+"word": "customers",
+"start": 29.51,
+"end": 30.26
+},
+{
+"word": "Wicflow",
+"start": 30.71,
+"end": 31.21
+},
+{
+"word": "helps",
+"start": 31.22,
+"end": 31.5
+},
+{
+"word": "turn",
+"start": 31.51,
+"end": 31.73
+},
+{
+"word": "AI",
+"start": 31.74,
+"end": 32.26
+},
+{
+"word": "into",
+"start": 32.27,
+"end": 32.64
+},
+{
+"word": "real",
+"start": 32.65,
+"end": 33.14
+},
+{
+"word": "business",
+"start": 33.15,
+"end": 33.56
+},
+{
+"word": "growth",
+"start": 33.57,
+"end": 33.88
+},
+{
+"word": "that",
+"start": 33.89,
+"end": 34.16
+},
+{
+"word": "lasts",
+"start": 34.17,
+"end": 34.99
+}
+]

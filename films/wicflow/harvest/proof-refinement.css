@@ -1,0 +1,42 @@
+/* The source mark is 1536x1024, with visible art inside 182,182 to 1354,962.
+   Preserve that aspect ratio; never stretch it into a square. */
+header.nav .brand .mark{position:relative;width:32px;height:22px;overflow:hidden;flex:0 0 32px;mix-blend-mode:normal}
+header.nav .brand .mark img{position:absolute;display:block;width:41.94px;height:27.96px;max-width:none;left:-4.97px;top:-4.97px;object-fit:contain}
+header.nav .brand{display:inline-flex;align-items:center;gap:8px;line-height:1;letter-spacing:-1px;white-space:nowrap}
+.proof-grid.proof-single{display:block;padding:40px 0 100px}
+.workshop-feature{position:relative;overflow:hidden;margin:0;border-radius:24px;aspect-ratio:2/1;background:#deddd2}
+.workshop-feature>img.workshop-proof-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:60% 55%;transform:scale(1.12);transform-origin:60% 40%}
+.proof-stat-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding-top:32px;gap:32px}
+.proof-stat-row .proof-stat{margin:0;display:flex;align-items:flex-start;flex-direction:column;gap:12px}
+.proof-stat-row .proof-stat+ .proof-stat{border-left:1px solid #ccd2c5;padding-left:32px}
+.proof-stat-row .proof-stat strong{font-size:clamp(42px,5vw,66px)}
+.proof-stat-row .proof-stat h3{font-size:15px;line-height:1.5;max-width:220px}
+@media(max-width:899px){
+ header.nav,header.nav.is-floating{height:68px;min-height:68px;padding:12px 16px;gap:12px;justify-content:space-between}
+ header.nav .brand,header.nav.is-floating .brand{font-size:21px;gap:7px;letter-spacing:-1px}
+ header.nav>.button{display:none!important}
+ header.nav .mobile-menu{margin-left:auto;flex-shrink:0}
+ header.nav .mobile-menu summary{font-size:12px;min-height:44px;display:flex;align-items:center;gap:10px}
+ header.nav.is-floating{width:calc(100% - 24px);top:8px;border-radius:16px;box-shadow:0 4px 18px #2026210a;background:#f7f7f5f5;backdrop-filter:blur(12px)}
+ .proof-grid.proof-single{padding:30px 0 65px}
+ .workshop-feature{aspect-ratio:4/3;border-radius:18px}
+ .workshop-feature>img.workshop-proof-photo{transform:scale(1.6);transform-origin:60% 35%;object-position:center}
+ .proof-stat-row{gap:14px;padding-top:24px}
+ .proof-stat-row .proof-stat{gap:9px}.proof-stat-row .proof-stat+.proof-stat{padding-left:14px}
+ .proof-stat-row .proof-stat strong{font-size:38px}.proof-stat-row .proof-stat h3{font-size:11px;line-height:1.5}
+}
+@media(max-width:360px){header.nav .brand,header.nav.is-floating .brand{font-size:19px}.proof-stat-row{gap:10px}.proof-stat-row .proof-stat+.proof-stat{padding-left:10px}.proof-stat-row .proof-stat strong{font-size:32px}.proof-stat-row .proof-stat h3{font-size:10px}}
+/* A compact, responsive tool collection replaces the fictional CRM table. */
+.followup-visual .connections-card{width:100%;max-width:490px;padding:24px;background:#fcfdf9;border:1px solid #fff;border-radius:20px;box-shadow:0 12px 30px #28372c08}
+.connections-card h4{font-size:25px;line-height:1.15;letter-spacing:-.04em;max-width:340px}
+.connections-caption{font-size:12px!important;line-height:1.6;margin:10px 0 18px!important;color:#63705f}
+.connections-flow{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 12px;background:#eaf0e5;border-radius:9px;font-size:10px;margin-bottom:18px}
+.connections-flow span+span:before{content:'→';margin-right:8px;color:#70836a}
+.connections-tools{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.connection-tool{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:66px;padding:9px 3px;background:#fff;border:1px solid #e8ece4;border-radius:10px;text-align:center}
+.connection-tool img{display:block;width:44px;height:27px;max-width:100%;object-fit:contain;color-scheme:light}.connection-tool span{font-size:8px;line-height:1.25;color:#485444}
+@media(max-width:899px){.followup-visual .connections-card{padding:22px;max-width:540px}.connections-card h4{font-size:26px}.connections-tools{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.connection-tool{min-height:69px}.connection-tool span{font-size:10px}.connection-tool img{height:29px;width:55px}.connections-flow{font-size:9px;padding:10px 7px;gap:5px}.connections-flow span+span:before{margin-right:5px}}
+@media(max-width:360px){.followup-visual .connections-card{padding:16px}.connections-card h4{font-size:23px}.connections-flow{font-size:8px}.connection-tool span{font-size:9px}}
+.roadmap-progress{font-size:13px;letter-spacing:.04em;color:#56634f;margin-bottom:24px}.roadmap-form-panel fieldset[hidden]{display:none}.roadmap-form-panel #roadmap-form>.text-link{margin-right:24px}.roadmap-next{border-top:1px solid #c4cebb;padding-top:28px}.roadmap-next h3{font-size:26px;line-height:1.25;margin-bottom:18px}.roadmap-next .closing-actions{gap:18px}.roadmap-next p{font-size:16px}.roadmap-form-panel{min-width:0}#message{scroll-margin-top:130px}.roadmap-form-panel .choice{line-height:1.5}.roadmap-form-panel .choice input{flex-shrink:0}
+/* Keep the next-step control still while each question changes height. */
+#roadmap-form .button,#roadmap-form .button:hover{transform:none;transition:background .2s}

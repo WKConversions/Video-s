@@ -1,0 +1,31 @@
+/* Real people, in the existing site's quiet type and generous spacing. */
+.team-section { padding: 40px 0 100px; }
+.team-intro { display: grid; grid-template-columns: 1.15fr 1fr; gap: 64px; align-items: end; margin-bottom: 36px; }
+.team-intro h2 { max-width: 580px; }
+.team-intro p { max-width: 430px; font-size: 17px; }
+.team-people { list-style: none; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 24px; padding: 0; margin: 0; }
+.team-people li { min-width: 0; }
+.team-people img, .team-monogram { width: 100%; aspect-ratio: 1; height: auto; object-fit: cover; border-radius: 18px; }
+.team-monogram { display: grid; place-items: center; background: #e5ebe4; color: #394d3c; font: 600 clamp(48px,5vw,78px)/1 Space,sans-serif; letter-spacing: -.06em; }
+.team-people h3 { margin-top: 18px; font-size: clamp(17px,1.6vw,22px); line-height: 1.3; letter-spacing: -.03em; }
+.team-people .team-role { margin: 7px 0 0; color: var(--ink); font-size: 14px; font-weight: 700; line-height: 1.5; }
+.team-people .team-bio { margin: 10px 0 0; font-size: 15px; line-height: 1.65; }
+@media(max-width:899px) {
+  .team-section { padding: 25px 0 65px; }
+  .team-intro { grid-template-columns: 1fr; gap: 20px; margin-bottom: 28px; }
+  .team-intro p { font-size: 15px; }
+  .team-people { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 28px 18px; }
+  .team-people h3 { margin-top: 12px; }
+  .team-monogram { font-size: 58px; }
+}
+@media(max-width:360px) { .team-people { column-gap: 12px; } .team-people h3 { font-size: 15px; } }
+
+@media(max-width:599px) {
+  .team-people { grid-template-columns: 1fr; row-gap: 36px; }
+  .team-people li { display: grid; grid-template-columns: 88px minmax(0,1fr); column-gap: 18px; align-content: start; }
+  .team-people img, .team-monogram { grid-column: 1; grid-row: 1 / span 3; border-radius: 12px; }
+  .team-people h3 { grid-column: 2; margin-top: 0; font-size: 19px; }
+  .team-people .team-role { grid-column: 2; margin-top: 5px; font-size: 13px; }
+  .team-people .team-bio { grid-column: 2; margin-top: 8px; font-size: 14px; }
+  .team-monogram { font-size: 36px; }
+}

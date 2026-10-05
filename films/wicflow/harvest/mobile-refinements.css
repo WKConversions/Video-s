@@ -1,0 +1,37 @@
+/* Shared layout fixes across the public page templates; content stays in HTML. */
+:root{--paper:#f7f7f5}body{background:var(--paper)}
+main,section,article,.feature-copy,.story-copy,.booking-panel{min-width:0}
+img,video{max-width:100%}input,select,textarea{max-width:100%;font-size:16px}
+.creative-partner{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:64px;margin:10px auto 105px;padding:32px;border:1px solid #e3e3da;border-radius:24px;background:#f0eee7}
+.creative-partner-image{display:block;border-radius:16px;overflow:hidden}.creative-partner-image img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.creative-partner-copy{padding:12px 20px 12px 0}.partner-eyebrow{font-size:12px;font-weight:700;letter-spacing:.025em;margin-bottom:18px}
+.creative-partner h2{font-size:clamp(30px,3.2vw,46px)}.creative-partner-copy>p:not(.partner-eyebrow){font-size:16px;line-height:1.7;max-width:460px;margin:22px 0}
+.creative-partner .text-link{display:inline-flex;align-items:center;gap:20px;min-height:44px}
+@media(max-width:899px){
+ .creative-partner{gap:28px;padding:24px;margin-bottom:70px}.creative-partner-copy{padding:0}
+ .story-row,.feature{min-width:0}.story-visual,.feature .story-visual{padding:16px;min-height:0}
+ .funnel-demo,.followup-demo,.workshop-demo{padding:20px;max-width:500px}.workshop-demo{transform:none}
+ .visual-heading>span{font-size:21px}.funnel-step{padding:15px;gap:12px}.funnel-step strong{font-size:13px}.funnel-step p{font-size:12px}
+ .followup-row{padding:15px 0;gap:8px}.followup-row>div{min-width:0}.followup-row>span{white-space:normal;max-width:98px;text-align:center}.followup-row strong{font-size:12px}.followup-row small{font-size:11px}
+ .tool-brands{justify-content:flex-start;gap:15px}.tool-brands>span{min-width:48px}.tool-caption{line-height:1.6}
+ .story-copy h3{font-size:clamp(28px,7.3vw,38px)}.story-copy{padding:28px 20px}.story-copy>p{font-size:16px;line-height:1.7}.story-copy .text-link{min-height:44px;display:inline-flex;align-items:center}
+ .migration-main h1{font-size:clamp(32px,8.8vw,46px);line-height:1.12;overflow-wrap:anywhere}.migration-main h2{font-size:clamp(26px,7vw,34px)}
+ .migration-main .hero{padding:20px 0 40px}.migration-main .hero h1{font-size:clamp(32px,8.8vw,46px)}
+ .migration-main .article-header{padding-bottom:12px}.migration-main .article-content{font-size:16px;line-height:1.8}.migration-main pre{padding:16px;overflow-x:auto}
+ .migration-main .article-content blockquote{margin:24px 0;padding-left:16px}.migration-main .article-toc a{display:inline-block;padding:5px 0}
+ .lang-filter-btn,.button,button[type=submit]{min-height:44px}.footer-links{flex-wrap:wrap;gap:8px 20px}.footer-links a{min-height:44px;display:inline-flex;align-items:center}
+ .roadmap-layout,.contact-layout{gap:32px}.roadmap-form-panel{min-width:0}.choice{align-items:flex-start}.choice input{flex:none;width:18px;margin-top:3px}
+}
+@media(max-width:600px){
+ .creative-partner{grid-template-columns:minmax(0,1fr);padding:16px;gap:24px}.creative-partner-copy{padding:0 6px 10px}.creative-partner h2{font-size:34px}
+ .creative-partner-image img{aspect-ratio:16/10}.partner-eyebrow{margin-bottom:13px}
+ .nav,.nav.is-floating{gap:8px;padding-inline:12px}.nav .brand,.nav.is-floating .brand{font-size:18px;gap:5px}.nav .mark{width:27px;flex-shrink:0}
+ .nav>.button,.nav.is-floating>.button{font-size:10px;padding:10px 12px;min-height:44px}.nav .mobile-menu summary{min-height:44px;font-size:11px}
+ .page-opening h1{font-size:clamp(34px,10vw,46px)}.page-opening>p{font-size:16px}
+ .founder-photos{padding-right:32px}.founder-award{width:48%}.founder-award img{height:180px}
+}
+@media(max-width:360px){.nav .brand,.nav.is-floating .brand{font-size:16px}.nav>.button,.nav.is-floating>.button{padding-inline:9px}.funnel-demo,.followup-demo,.workshop-demo{padding:16px}.workshop-top{flex-wrap:wrap}.story-visual,.feature .story-visual{padding:12px}}
+
+@media(max-width:600px){.nav{width:calc(100% - 24px)}.nav>.button{white-space:nowrap;flex-shrink:0}.nav .brand{flex-shrink:0}}
+@media(max-width:360px){.nav,.nav.is-floating{padding-inline:8px;gap:6px}.nav .brand,.nav.is-floating .brand{font-size:15px}.nav .mark{width:24px}.nav>.button,.nav.is-floating>.button{font-size:10px;padding-inline:9px}}
+.service-story .story-row:last-child{margin-bottom:0}

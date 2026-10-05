@@ -1,0 +1,33 @@
+{
+  "client": "Wicflow (wicflow.com)",
+  "measured": "2026-10-05, from the live CSS custom properties and computed styles (harvest/*.css), og-card-en.png and the logo PNG",
+  "colors": {
+    "paper": "#FFFFFF",
+    "paper-2": "#F7F7F9",
+    "paper-3": "#F4F4F7",
+    "ink": "#17171B",
+    "ink-strong": "#0A0A0D",
+    "muted": "#606069",
+    "line": "#D6D6D9",
+    "accent-blue": "#1769C2",
+    "accent-blue-halo": "#1769C21F",
+    "tint-blue": ["#F1F5FB", "#E6EDF7", "#DFE7F3"],
+    "tint-sage": ["#F1F6F1", "#E5EEE6", "#DDE8DE"],
+    "tint-sand": ["#F8F4EC", "#F0E9DC", "#EAE1D1"],
+    "og-circle": "#E3E9F4",
+    "button": {"bg": "#0A0A0D", "fg": "#EEEEF1"}
+  },
+  "usage": {
+    "accent-blue": "the live 'AI at work' dot (with a 4px 12% halo), focus rings, checked states: the colour of the AI working",
+    "tints": "each service panel sits on one soft radial tint: blue (customer acquisition), sage (sales automation / connected tools), sand (team training / AI video)",
+    "ink": "headlines, the logo mark, primary buttons (pill, black)"
+  },
+  "type": {
+    "display": {"family": "Space Grotesk", "weight": 600, "tracking": "-0.045em", "leading": 1.1, "file": "assets/fonts/SpaceGrotesk-SemiBold.woff2", "where": "h1-h4 and the OG card headline"},
+    "wordmark": {"text": "wicflow.com", "family": "native font (SF Pro on Mac); Space Grotesk on the OG card", "weight": 650, "tracking": "-0.045em"},
+    "body": {"family": "Manrope", "weights": [400, 700, 800], "files": ["assets/fonts/Manrope-Regular.woff2", "assets/fonts/Manrope-Bold.woff2", "assets/fonts/Manrope-ExtraBold.woff2"]}
+  },
+  "shape": {"radius-card": 24, "radius-pill": 999, "card-shadow": "soft, large blur, low opacity; hairline #0000001F edges"},
+  "mark": {"file": "assets/logos/wicflow-mark.svg", "source": "assets/logos/wicflow-mark.png (384x256, traced with potrace)", "description": "a W woven from two rounded ribbons; the crossings leave white diamonds (a checker)", "colour": "#0A0A0D on white"},
+  "tagline": "Wicflow helps your cash flow."
+}

@@ -4,3 +4,4 @@ films/*/film/.remotion/
 films/*/film/src/__probe*.tsx
 *.log
 .DS_Store
+films/*/sound/music/find*/
