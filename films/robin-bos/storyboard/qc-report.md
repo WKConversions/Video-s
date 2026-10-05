@@ -32,7 +32,22 @@ Not checked: nothing in the automatic set. By hand only: the mix heard at speed 
 
 ## Pops on the delivered encode
 
-PENDING
+The handoff check flags a frame whose change is several times the change around it. Fresh agents opened every strip of the fourth final (21 flagged), named the object and the word it is keyed to, and gave a verdict; the three bugs and four minor points they found were fixed before the delivered encode (the card snapping on over the half-closed block, the areas unmounting mid-fade, the first frames' tint swing, the €2M header's blur copies, the 66 % first frame of a riser, the field's chroma step, the button's label smeared through the morph). The delivered encode's flags, each one a designed change:
+
+| Moment | What changes | Keyed to | Verdict |
+|---|---|---|---|
+| 0.0–0.5 s | the first two squares rise out of a blur, fading in over 0.15 s, into an otherwise still frame | the wall's rise frames 1 and 12 | designed arrival |
+| 10.8 s | the K.B tile begins its step aside and shrink (an ease-in, under the blur) | "in" − 0.3 s | designed move |
+| 11.5 s, 11.8 s | the year's third and fourth digits rise whole out of a blur | "twenty", "four" | designed arrival |
+| 15.7 s | €2M begins its shrink to the header | "twenty" (25) − 0.62 s | designed move |
+| 16.4 s | "25" rises whole with its label | "five" | designed arrival |
+| 19.8 s | the closed block grows into the card | "team" − 0.14 s | designed growth |
+| 20.7 s, 21.0 s | the returning canvas grows out of the card's box; the card leaves left on its rail under the blur | "today" + 0.35 s, + 0.25 s | designed transition |
+| 21.6 s, 22.1 s | the logos arrive from the left and leave downward | "founders", "strategy" − 0.6 s | designed arrival and departure |
+| 26.8 s | the first bracing square slides out from behind Robin's shoulder | "structure" − 0.4 s | designed move |
+| 27.9 s | the period of TALK. grows into the button (fast while still a dot) | 27.9 s | designed morph |
+| 28.9 s | the type's sub-pixel drift under the end card's slow push | the camera's push after "rest" | nothing discrete |
+
 
 ## Scorecard and the three biggest changes
 
