@@ -6,7 +6,7 @@ Six final encodes were made; each one's measurements drove the next (plan.md, ro
 
 | Check | Tool | Result |
 |---|---|---|
-| Delivery format | ffprobe | 1920×1080, 30.00 fps, 30.000 s, H.264 yuv420p, BT.709, TV range, AAC 48 kHz stereo, about 29 MB (crf 16; the grain costs bitrate) — pass |
+| Delivery format | ffprobe | 1920×1080, 30.00 fps, 30.000 s, H.264 yuv420p, BT.709, TV range, AAC 48 kHz stereo, 15 MB (crf 16) — pass |
 | Loudness | ffmpeg ebur128 | −15.0 LUFS integrated, true peak −1.7 dBFS, LRA 2.3 LU — pass (target −15, under −1.5) |
 | Mix report | sound_mix.py | 45 effects; 41 clear the bed by 3 dB or more; 4 sit 0.4–2.8 dB over it (three ticks, one appear-rise: soft by design); voice at −16 LUFS, bed at −27 |
 | Motion | motion_check | moving in 95 % of frames (target 90+), longest still 0.47 s (target 0.8) — pass |

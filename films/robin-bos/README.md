@@ -18,7 +18,7 @@ script → beat sheet → concept judge panel → production plan → Remotion b
 | `vo/` | The scratch voice (Piper en_US-ryan-high) and its word timings; `film/src/words.json` is the clock. |
 | `sound/` | The cue sheet (`cues.json`), the composed bed (`bed.wav`, brief in `music-brief.json`), the generated effects (`lib/`), the mix sheet. |
 | `scripts/` | The skill's scripts used on this film (QC, probe, phrase check, mixer, music, brand measure…). |
-| `deliver/robin-bos-30s.mp4` | The delivered film: 1920×1080, 30 fps, 30.00 s, H.264 yuv420p BT.709 TV range, AAC 48 kHz (the scratch voice and the composed bed). |
+| `deliver/robin-bos-30s.mp4` | The delivered film: 1920×1080, 30 fps, 30.00 s, H.264 yuv420p BT.709 TV range, AAC 48 kHz, 15 MB (the scratch voice and the composed bed). |
 
 ## The Remotion project (`film/`)
 ```
