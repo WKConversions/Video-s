@@ -56,28 +56,30 @@ export const useCarMaterials = (assets: CarAssets | null, look: Look) => useMemo
   };
 }, [assets, look]);
 
-export const CarBody: React.FC<{ assets: CarAssets; mats: NonNullable<ReturnType<typeof useCarMaterials>>; xray?: boolean }> = ({ assets, mats, xray = true }) => {
+export const CarBody: React.FC<{ assets: CarAssets; mats: NonNullable<ReturnType<typeof useCarMaterials>>; xray?: boolean; sweep?: number }> = ({ assets, mats, xray = true, sweep = 99 }) => {
+  // draw only the layers that can be seen: no paint once the sweep has passed the tail, no x-ray before it starts
+  const paintOn = sweep > -2.5, xrayOn = xray && sweep < 2.3;
   const geo = useMemo(() => firstGeometry(assets.body), [assets]);
   const glassGeo = useMemo(() => firstGeometry(assets.glass), [assets]);
   const lensGeo = useMemo(() => firstGeometry(assets.lens), [assets]);
   return (
     <group name="car_body">
-      <mesh geometry={geo} material={mats.paint} castShadow />
-      <mesh geometry={geo} material={mats.interior} />
-      <mesh geometry={glassGeo} material={mats.glass} renderOrder={2} />
-      <mesh geometry={lensGeo} material={mats.lens} renderOrder={3} />
-      {xray && <mesh geometry={geo} material={mats.xray} renderOrder={5} />}
+      <mesh geometry={geo} material={mats.paint} visible={paintOn} />
+      <mesh geometry={geo} material={mats.interior} visible={paintOn} />
+      <mesh geometry={glassGeo} material={mats.glass} renderOrder={2} visible={paintOn} />
+      <mesh geometry={lensGeo} material={mats.lens} renderOrder={3} visible={paintOn} />
+      {xray && <mesh geometry={geo} material={mats.xray} renderOrder={5} visible={xrayOn} />}
     </group>
   );
 };
 
 /** The bright studio: soft key from above, long strip lights for the reflections on the black paint, a grey cyc. */
-export const Studio: React.FC<{ envLevel?: number }> = ({ envLevel = 1 }) => (
+export const Studio: React.FC<{ envLevel?: number; envRes?: number }> = ({ envLevel = 1, envRes = 256 }) => (
   <>
     <ambientLight intensity={0.35} />
-    <directionalLight position={[-4, 9, 5]} intensity={1.6} castShadow shadow-mapSize={[2048, 2048]} />
+    <directionalLight position={[-4, 9, 5]} intensity={1.6} />
     <directionalLight position={[5, 4, -6]} intensity={0.5} />
-    <Environment resolution={512} frames={1} environmentIntensity={envLevel}>
+    <Environment resolution={envRes} frames={1} environmentIntensity={envLevel}>
       <color attach="background" args={["#2A2E35"]} />
       {/* overhead softbox */}
       <Lightformer form="rect" intensity={3.2} position={[0, 7, 0]} rotation-x={Math.PI / 2} scale={[9, 4, 1]} />

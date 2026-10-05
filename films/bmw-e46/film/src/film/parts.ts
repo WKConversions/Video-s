@@ -58,6 +58,20 @@ export const makeRig = (scenes: THREE.Object3D[]): Rig => {
     if (best.dot(up) > 0) best.negate();
     axis[n] = best;
   });
+  ["propshaft", "halfshaft_left", "halfshaft_right"].forEach((n) => {
+    const node = nodes[n]; if (!node) return;
+    const pts: THREE.Vector3[] = [];
+    node.traverse((o) => {
+      const g = (o as THREE.Mesh).geometry as THREE.BufferGeometry | undefined; if (!g) return;
+      const p = g.attributes.position;
+      for (let i = 0; i < p.count; i += Math.max(1, Math.floor(p.count / 400))) pts.push(new THREE.Vector3().fromBufferAttribute(p, i).applyMatrix4(o.matrixWorld));
+    });
+    if (pts.length < 3) return;
+    const c = pts.reduce((a, b) => a.add(b), new THREE.Vector3()).multiplyScalar(1 / pts.length);
+    let best = new THREE.Vector3(1, 0, 0), bestD = -1;
+    for (const p of pts) { const d = p.distanceTo(c); if (d > bestD) { bestD = d; best = p.clone().sub(c).normalize(); } }
+    axis[n] = best; centre[n] = c;
+  });
   return { root, nodes, rest, centre, axis };
 };
 
@@ -88,6 +102,7 @@ export type RigState = {
   camAngle: number; vanosShift: number; valveLift: Record<string, number>;
   converter: number; planets: number; ring: number; pinion: number; gear: number;
   wheelL: number; wheelR: number; propPulse: number;
+  gbGlass: number; diffGlass: number; coverOff: number;
 };
 
 const FIRING = [1, 5, 3, 6, 2, 4];
@@ -125,7 +140,10 @@ export const rigStateAt = (g: number): RigState => {
   const corner = k(g, "diff+2.8", 0.6, EASE.move);
   const wheelL = ring * (1 - 0.35 * corner), wheelR = ring * (1 + 0.35 * corner);
   const propPulse = k(g, "diff+0.05", 0.75, EASE.move);
-  return { head, vanos, gearbox, diff, camAngle, vanosShift, valveLift, converter, planets, ring, pinion, gear, wheelL, wheelR, propPulse };
+  const gbGlass = k(g, "gearbox+1.1", 0.5, EASE.move) * (1 - k(g, "diff-0.3", 0.4, EASE.move));
+  const diffGlass = k(g, "diff+1.5", 0.5, EASE.move) * (1 - k(g, "outro-0.3", 0.4, EASE.move));
+  const coverOff = k(g, "head+1.25", 0.6, EASE.move) * (1 - k(g, "vanos+3.3", 0.5, EASE.move));
+  return { coverOff, head, vanos, gearbox, diff, camAngle, vanosShift, valveLift, converter, planets, ring, pinion, gear, wheelL, wheelR, propPulse, gbGlass, diffGlass };
 };
 
 export const poseRig = (rig: Rig, st: RigState) => {
@@ -142,14 +160,15 @@ export const poseRig = (rig: Rig, st: RigState) => {
     if (n === "camshaft_intake" || n === "camshaft_exhaust") {
       const piv = rig.centre[n] ? new THREE.Vector3().setFromMatrixPosition(rig.nodes[n].matrixWorld) : undefined;
       setOffset(rig, n, headOff, X, st.camAngle, piv);
-    } else setOffset(rig, n, headOff);
+    } else if (n === "valve_cover") setOffset(rig, n, headOff.clone().add(up.clone().multiplyScalar(0.95 * st.coverOff)));
+    else setOffset(rig, n, headOff);
   });
   ["vanos_unit"].forEach((n) => setOffset(rig, n, vanosOff));
   ["vanos_sprocket_intake", "vanos_sprocket_exhaust"].forEach((n, i) => {
     const o = rig.nodes[n]; if (!o) return;
     const piv = new THREE.Vector3().setFromMatrixPosition(o.matrixWorld);
     const shift = (i === 0 ? 20 : -12.5) * Math.PI / 180 * st.vanosShift;
-    setOffset(rig, n, vanosOff, X, st.camAngle + shift, piv);
+    setOffset(rig, n, headOff, X, st.camAngle + shift, piv);   // the sprockets stay on their camshafts
   });
   // valves open along their axes (lift 9.7 mm, shown x1.6)
   Object.keys(rig.nodes).filter((n) => n.startsWith("valve_c")).forEach((n) => {
@@ -168,6 +187,11 @@ export const poseRig = (rig: Rig, st: RigState) => {
       const piv = rig.nodes[n] ? new THREE.Vector3().setFromMatrixPosition(rig.nodes[n].matrixWorld) : undefined;
       setOffset(rig, n, gbOff, X, n === "torque_converter" ? st.converter : st.planets, piv);
     } else setOffset(rig, n, gbOff);
+  });
+  // the propshaft turns with the pinion; the half-shafts with their wheels
+  ([["propshaft", st.pinion], ["halfshaft_left", -st.wheelL], ["halfshaft_right", -st.wheelR]] as [string, number][]).forEach(([n, a]) => {
+    if (!rig.nodes[n]) return;
+    setOffset(rig, n, new THREE.Vector3(), rig.axis[n] ?? (n === "propshaft" ? X : Z), a, rig.centre[n]);
   });
   const dOff = new THREE.Vector3(-0.30 * st.diff, -0.08 * st.diff, 0);
   DIFF_GROUP.forEach((n) => {

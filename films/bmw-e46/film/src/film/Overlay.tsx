@@ -143,7 +143,7 @@ export const Overlay: React.FC<{ g: number; M: THREE.Matrix4; lift: number; rig:
       {(() => {
         const o = k(g, "vanos+2.0", 0.4) * (1 - k(g, "vanos+3.5", 0.3, EASE.depart));
         if (o < 0.01 || !rig) return null;
-        const off = headUp.clone().multiplyScalar(0.42 * st.head).add(new THREE.Vector3(0.24 * st.vanos + 0.06, 0, 0));
+        const off = headUp.clone().multiplyScalar(0.42 * st.head).add(new THREE.Vector3(0.05, 0, 0));
         const tags: [string, string][] = [["vanos_sprocket_intake", COPY.vanosTags.intake], ["vanos_sprocket_exhaust", COPY.vanosTags.exhaust]];
         return tags.map(([n, label], i) => {
           const c = rig.centre[n]; if (!c) return null;

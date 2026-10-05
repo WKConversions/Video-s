@@ -41,14 +41,14 @@ export const makePaint = (maps: CarMaps, look: Look, opts: { color?: string } = 
   roughnessFactor = mix(roughnessFactor, 0.12, max(max(rg.tailRed, rg.tailInd), max(rg.repeater, rg.reflector)));
   roughnessFactor = mix(roughnessFactor, 0.9, gapK);`)
       .replace("#include <metalnessmap_fragment>", `#include <metalnessmap_fragment>
-  metalnessFactor = mix(metalnessFactor, 0.0, max(rg.black, max(rg.tailRed, rg.tailInd)));
+  metalnessFactor = mix(metalnessFactor, 0.0, max(rg.black, rg.tailRed));
+  metalnessFactor = mix(metalnessFactor, 0.75, rg.tailInd);
   metalnessFactor = mix(metalnessFactor, 1.0, rg.chrome);
   metalnessFactor = mix(metalnessFactor, 0.0, gapK);
   diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.012, 0.012, 0.013), rg.black);
   diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.86, 0.88, 0.91), rg.chrome);
   diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.42, 0.015, 0.02), rg.tailRed);
-  float outerLamp = smoothstep(440.0, 480.0, abs(vObjPos.z * 1000.0));
-  diffuseColor.rgb = mix(diffuseColor.rgb, mix(vec3(0.70, 0.71, 0.73), vec3(0.66, 0.34, 0.07), outerLamp), rg.tailInd);
+  diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.74, 0.75, 0.78), rg.tailInd);
   diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.80, 0.42, 0.04), rg.repeater);
   diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.35, 0.01, 0.015), rg.reflector);
   diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.0), gapK);

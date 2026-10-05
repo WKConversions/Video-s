@@ -36,7 +36,7 @@ Confidence: H = BMW/ZF source, or two independent sources agree. M = one good so
 | maker | The 5HP family was designed and built by ZF's plant in Saarbrücken, Germany. | Gebouwd door ZF in Saarbrücken (Duitsland). | Saarbrücken | M | [S7] (intro sentence; not specific to the 5HP19) |
 | gm-maker | For contrast: the GM 5L40-E / A5S 360R/390R was made by GM Powertrain (Hydramatic) in Strasbourg, France. | (Ter vergelijking) de GM-bak kwam uit Straatsburg. | Strasbourg | H | [S1] p.4, [S2] p.4, [S8] |
 | option | The 5-speed manual was standard. The automatic with Steptronic was an option (as was SMG, a robotised manual). | De automaat was een optie; standaard was een handbak. | option | H | [S5], [S9] |
-| steptronic-history | Steptronic first appeared on the E31 850Ci (10/1994) and was then added to the E38, E39, E46, Z3 and X5. | Steptronic bestaat sinds 1994 (BMW 850Ci). | 1994 | H | [S2] p.18, p.39 |
+| steptronic-history | Steptronic first appeared on the E31 850Ci (10/1994) and was then added to the E38, E39, E46, Z3 and X5. | Steptronic bestaat sinds 1994 (BMW 850Ci). | 1994 | H | [S2] p.19, p.39 |
 
 ### Gears and ratios
 
@@ -71,7 +71,7 @@ Confidence: H = BMW/ZF source, or two independent sources agree. M = one good so
 | overlap | 1-2 shift is helped by a freewheel. 2-3, 3-4 and 4-5 are "overlap shifts": one clutch keeps driving at reduced pressure until the next one has taken over, so drive never stops during a shift. | Tijdens het schakelen blijft de aandrijving gewoon doorgaan. | - | H | [S1] p.39; [S2] p.3 |
 | pump | Oil pump driven at engine speed by the converter hub; 24 cm3 per revolution (up from 16 in the older 5HP18), enough to run a controlled lock-up clutch. | - | 24 cm3/rev | H | [S1] p.38 |
 | valve-body | The hydraulic "shift unit" (valve body) sits in the oil pan under the gearbox. It has 3 on/off solenoid valves and 4 electronic pressure regulators (EDS): two for the shifts, one for modulation pressure, one for the lock-up clutch. | Onderin zit een "hydraulisch brein" met magneetkleppen. | 3 solenoids + 4 EDS | H | [S1] p.35, p.43-45 |
-| sensors | A Hall-effect sensor reads turbine speed through a magnetic ring with 18 pole pairs; an inductive sensor reads output speed. | - | 18 pole pairs | H | [S1] p.48; [S2] p.71 |
+| sensors | A Hall-effect sensor reads turbine speed through a magnetic ring with 18 pole pairs; an inductive sensor reads output speed. | - | 18 pole pairs | H | [S1] p.48; [S2] p.72 |
 
 ### Electronics and driving programs
 
@@ -88,12 +88,13 @@ Confidence: H = BMW/ZF source, or two independent sources agree. M = one good so
 
 | id | fact (EN) | NL (on-screen) | value | conf | source |
 |---|---|---|---|---|---|
-| gate | Selector lever on the centre console: P-R-N-D in the right-hand (automatic) gate. Moving the lever 15° to the left from D into the "M/S" gate switches on the sport program; tapping it to + or - switches to manual mode. Back to the right into D for fully automatic. | P-R-N-D. Pook naar links: sport. Tikken: zelf schakelen. | P R N D + M/S gate | H | [S2] p.18, p.38-41; [S13] p.64 |
-| direction | Up to the 2001 model year, BMW Steptronic levers shift UP when pushed FORWARD (+) and DOWN when pulled BACK (-). From the 2002 model year this was reversed (pull back = up), to match SMG. A 330Ci first registered in April 2001 was built before the change, so: forward = up. | Naar voren = opschakelen (+), naar achteren = terugschakelen (-). | forward = up (+) | H (rule) / M (our car's build date not seen) | [S2] p.18, p.39, p.41; [S6g] (Steptronic shifter part 25 16 1 423 830 from 9/99 to 9/01, new part 25 16 7 515 261 from 9/01) |
-| manual-limits | In manual mode the gearbox still protects itself: it shifts up just before the rev limit, ignores downshifts that would over-rev the engine, kicks down on full throttle, only starts from rest in 1st-3rd gear, and shifts down by itself when coasting to a stop. 1st to 5th gear can be chosen. | Ook "handmatig" beschermt de bak de motor. | M1-M5 | H | [S2] p.40-41; [S13] p.65 |
-| display | The instrument cluster shows the lever position, and M1 to M5 in manual mode (the 2004 manual also shows "SD" for sport). | Teller toont M1 t/m M5. | M1-M5 | M | [S13] p.65 (2004 edition); [S2] p.27 |
+| gate | Selector lever on the centre console: P-R-N-D in the right-hand (automatic) gate. Moving the lever 15° to the left from D into the "M/S" gate switches on the sport program; tapping it to + or - switches to manual mode. Back to the right into D for fully automatic. | P-R-N-D. Pook naar links: sport. Tikken: zelf schakelen. | P R N D + M/S gate | H | [S2] p.19, p.39-42; [S13] p.64 |
+| direction | Up to the 2001 model year, BMW Steptronic levers shift UP when pushed FORWARD (+) and DOWN when pulled BACK (-). From the 2002 model year this was reversed (pull back = up), to match SMG. A 330Ci first registered in April 2001 was built before the change, so: forward = up. | Naar voren = opschakelen (+), naar achteren = terugschakelen (-). | forward = up (+) | H (rule) / M (our car's build date not seen) | [S2] p.19, p.39, p.41-42; [S6g] (Steptronic shifter part 25 16 1 423 830 from 9/99 to 9/01, new part 25 16 7 515 261 from 9/01) |
+| manual-limits | In manual mode the gearbox still protects itself: it shifts up just before the rev limit, ignores downshifts that would over-rev the engine, kicks down on full throttle, only starts from rest in 1st-3rd gear, and shifts down by itself when coasting to a stop. 1st to 5th gear can be chosen. | Ook "handmatig" beschermt de bak de motor. | M1-M5 | H | [S2] p.40, p.42; [S13] p.65 |
+| display | The instrument cluster shows the lever position, and M1 to M5 in manual mode (the 2004 manual also shows "SD" for sport). | Teller toont M1 t/m M5. | M1-M5 | M | [S13] p.65 (2004 edition); [S2] p.71 |
+| gate-label | The gate label next to the lever shows where + and - are. On the free CarSpy photo (a later 330Ci convertible) "-" is at the front and "+" at the back (2002+ pattern). On our 2001 car it should be the other way round: "+" at the front, "-" at the back. | Op onze auto: + vooraan, - achteraan. | - | M (inferred) | [S2] p.41-42; photo commons_e46-330ci-steptronic-selector-gate-LATER-2002plus-pattern_TheCarSpy_CC-BY-2.0.jpg |
 | shiftlock | Shiftlock: with the ignition on, the lever only leaves P or N when the brake pedal is pressed (solenoid on the selector lever). | Rem intrappen om uit P te schakelen. | - | H | [S2] p.33; [S13] p.64 |
-| selector-link | The selector lever connects to the gearbox's selector shaft (left side of the case) by a cable/rod; the gearbox's own position switch tells the EGS P/R/N/D; the M/S gate and +/- switches are separate microswitches in the shifter. | - | - | M | [S2] p.18, p.41; [S6g]; [S1] p.51 |
+| selector-link | The selector lever connects to the gearbox's selector shaft (left side of the case) by a cable/rod; the gearbox's own position switch tells the EGS P/R/N/D; the M/S gate and +/- switches are separate microswitches in the shifter. | - | - | M | [S2] p.19, p.41; [S6g]; [S1] p.51 |
 
 ### Oil, weight, service
 
@@ -184,12 +185,31 @@ All files are in `/home/user/Video-s/films/bmw-e46/assets/ref/gearbox/`.
 | MODELREF-ONLY_bmw-etk_steptronic-shifter-assembly.png | ETK: Steptronic shifter | [S6g] |
 | MODELREF-ONLY_bmw-etk_flexplate-drive-plate-automatic.png | ETK: automatic flywheel/drive plate | [S6j] |
 
-COMMONS_IMAGES_PLACEHOLDER
+### Free to show on screen (Wikimedia Commons; credit the author and licence for CC BY / BY-SA)
+
+| file | subject | author | licence | source |
+|---|---|---|---|---|
+| commons_e46-330ci-steptronic-selector-gate-LATER-2002plus-pattern_TheCarSpy_CC-BY-2.0.jpg | E46 330Ci (convertible, UK) Steptronic lever, wood knob, gate label P-R-N-D with M/S gate. WARNING: this is the later (2002+) pattern with "-" forward and "+" back; our 2001 car has "+" forward. Do not use it to show the shift direction. | The Car Spy | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:BMW_330Ci_Sport_Convertible_-_Flickr_-_The_Car_Spy_(5).jpg |
+| commons_e46-330ci-interior-console-selector-lever-rhd_TheCarSpy_CC-BY-2.0.jpg | E46 330Ci interior (right-hand drive): selector lever on the tunnel between the seats, handbrake behind it | The Car Spy | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:BMW_330Ci_Sport_Convertible_-_Flickr_-_The_Car_Spy_(12).jpg |
+| commons_e46-330ci-instrument-cluster-gear-display-P_TheCarSpy_CC-BY-2.0.jpg | E46 330Ci instrument cluster; the gear display at the bottom right shows "P" | The Car Spy | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:BMW_E46_Instrument_Cluster.jpg |
+| commons_torque-converter-cutaway-model-porsche-museum_BerndB_CC-BY-SA-3.0.jpg | Cut-away torque converter (Porsche Museum), shows impeller/turbine blades | BerndB (assumed; no machine-readable author) | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Torque-converter-cutbox-model.jpg |
+| commons_zf-torque-converter-industrial-bauma2007_Aconcagua_CC-BY-SA-3.0.jpg | ZF torque converter cut-away at a trade fair (industrial/construction type, not the car part) | Aconcagua | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Bauma_2007_ZF_Drehmomentwandler.jpg |
+| commons_torque-converter-cross-section-diagram_ToshinoriBaba_CC-BY-SA-4.0.png | Torque converter cross-section diagram: A impeller, B stator, C turbine, D input, E output, red = oil flow | Toshinori baba | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Torque_converter_a_cross_section.png |
+| commons_torque-converter-exploded-diagram-oil-flow_ToshinoriBaba_CC-BY-SA-4.0.png | Torque converter exploded diagram with oil flow arrows (Japanese caption, letters A-E) | Toshinori baba | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Torque_converter.png |
+| commons_planetary-gear-animation_Laserlicht_CC0.gif | Animated planetary gearset (sun, planets, ring), 500 px, 120 frames | Laserlicht | CC0 | https://commons.wikimedia.org/wiki/File:Planetary_Gear_Animation.gif |
+| commons_epicyclic-gearing-stationary-carrier-animation_Jahobr_CC0.gif | Animated planetary set with the carrier held (sun 24, planets 16, ring 56 teeth), 330 px | Jahobr | CC0 | https://commons.wikimedia.org/wiki/File:Epicyclic_Gearing_Stationary_Carrier.gif |
+| commons_epicyclic-gear-ratios-diagram_Wapcaplet_CC-BY-SA-3.0.png | Diagram: planetary set used as reduction / increase | Wapcaplet | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Epicyclic_gear_ratios.png |
+| commons_ravigneaux-gearset-1st-gear-animation-4speed-generic_Derwald_CC-BY-SA-3.0.gif | Ravigneaux gearset in 1st gear, from a gear simulation program (4-speed example; a software screenshot with a www.ingendi.de mark). Low value for screen. | Ernst Otto Derwald | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Ravigneaux_1.Gang.gif |
+| commons_automatic-transmission-cutaway-generic_Silverxxx_CC-BY-SA-3.0.jpg | Generic cut-away automatic gearbox (not identified, not the 5HP19), 505 px | Silverxxx | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Automatic_transmission_cut.jpg |
+| commons_cardan-joints-intermediate-shaft-3d-generic_Silberwolf_CC-BY-SA-2.5.png | 3D drawing of a shaft with two universal (Cardan) joints, generic | Silberwolf | CC BY-SA 2.5 | https://commons.wikimedia.org/wiki/File:Cardan-joint_intermediate-shaft_3D.png |
+
+Download note: Commons rate-limited the session (HTTP 429). Files were fetched as standard-size thumbnails (960, 500 or 330 px wide); the CarSpy interior photos are full 1600 px.
+
 
 ## Sources
 
 - [S1] BMW Technical Training ST034 "E46 Complete Vehicle - Automatic Transmissions" (A5S 360R GM5 p.3-32; A5S 325Z / 5HP19 p.33-52; application chart p.53), https://archive.org/download/BMWTechnicalTrainingDocuments/ST034%20E46%20Complete%20Vehicle/12%20Automatic%20Transmission%20Internet.pdf
-- [S2] BMW Technical Training ST057 "Electronic Transmission Control Workbook" (1-13-03) (BMW code breakdown p.4, ID tags p.6, Steptronic p.18 and p.38-41, failsafe p.32, AGS p.43-46, TCM table p.53, fluids p.54-55, sensors p.71), https://archive.org/download/BMWTechnicalTrainingDocuments/ST057%20Electronic%20Transmissions/Electronic%20Transmissions%20Workbook%201-13-03.pdf
+- [S2] BMW Technical Training ST057 "Electronic Transmission Control Workbook" (1-13-03) (BMW code breakdown p.4, ID tags p.6, Steptronic p.19 and p.39-42, failsafe p.32, AGS p.43-46, TCM table p.53, fluids p.54-55, sensors p.72), https://archive.org/download/BMWTechnicalTrainingDocuments/ST057%20Electronic%20Transmissions/Electronic%20Transmissions%20Workbook%201-13-03.pdf
 - [S3] BMW Technical Training ST040 "2001 System Diagnosis - 2001 Changes" (E39 525i/530i GM5 until 3/01, then A5S 325Z), https://archive.org/download/BMWTechnicalTrainingDocuments/ST040%202001%20System%20Diagnosis/1%202001%20Changes.pdf
 - [S4] BMW Technical Training ST034 "E46 Models" (330xi/325xi automatic = A5S390R; drive shaft and final drive on the centre line p.23), https://archive.org/download/BMWTechnicalTrainingDocuments/ST034%20E46%20Complete%20Vehicle/1%20models.pdf
 - [S5] BMW AG Presse, "Technische Daten BMW 3er Coupé 320Ci; 325Ci; 330Ci" (28/9/01, valid from 09/2001; automatic values in brackets), http://treffseiten.de/bmw/info/daten_320ci_325ci_330ci_coupe.pdf

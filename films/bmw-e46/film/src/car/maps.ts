@@ -44,8 +44,8 @@ Regions carRegions(vec3 p, vec3 n) {
   float rearEnd = smoothstep(4120.0, 4180.0, s);
   float tail = max((R.r + R.g) * wR, S2.g * wS * rearEnd);
   float split = smoothstep(748.0, 756.0, h);          // the split line at 772 drawing mm = 754 real
-  r.tailRed = tail * split;
-  r.tailInd = tail * (1.0 - split);
+  r.tailRed = tail * (1.0 - split);                    // pre-facelift coupé: red below,
+  r.tailInd = tail * split;                            // the clear indicator / reverse section on top
   r.repeater = S2.b * wS * (1.0 - smoothstep(1500.0, 1600.0, s));
   r.fog = F2.r * wF;
   r.reflector = R.a * wR;

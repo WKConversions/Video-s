@@ -20,6 +20,12 @@ print('field', F.shape, round(time.time() - t0, 1), flush=True)
 v, f, _, _ = measure.marching_cubes(F, level=0.0, spacing=(VOX, VOX, VOX))
 v += np.array([s1[0], y1[0], h1[0]])
 print('mc', len(v), len(f), round(time.time() - t0, 1), flush=True)
+TARGET = int(sys.argv[2]) if len(sys.argv) > 2 else 280000
+if len(f) > TARGET:
+    import fast_simplification
+    v, f = fast_simplification.simplify(v.astype(np.float32), f.astype(np.int32), target_reduction=1 - TARGET / len(f), agg=5)
+    v = v.astype(np.float64)
+    print('decimated', len(v), len(f), round(time.time() - t0, 1), flush=True)
 
 def grad(p, e=2.5):
     s, y, h = p[:, 0], p[:, 1], p[:, 2]
@@ -28,7 +34,7 @@ def grad(p, e=2.5):
                   (car.field(s, y, h + e) - car.field(s, y, h - e))], 1) / (2 * e)
     return g
 
-for it in range(2):  # Newton steps onto the zero level set
+for it in range(3):  # Newton steps onto the zero level set
     g = grad(v); fv = car.field(v[:, 0], v[:, 1], v[:, 2])
     gn = (g ** 2).sum(1, keepdims=True) + 1e-9
     v = v - np.clip(fv[:, None] * g / gn, -VOX * 0.5, VOX * 0.5)

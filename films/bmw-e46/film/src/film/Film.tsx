@@ -49,7 +49,7 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
   const shadowTex = useShadowTex();
 
   // per-part uniforms: one set per beat group, plus one for everything else
-  const U = useMemo(() => ({ rest: makePartU(), head: makePartU(), cams: makePartU(), vanos: makePartU(), gearbox: makePartU(), diff: makePartU(),
+  const U = useMemo(() => ({ rest: makePartU(), head: makePartU(), cams: makePartU(), cover: makePartU(), vanos: makePartU(), gearbox: makePartU(), diff: makePartU(),
     prop: makePartU(), shell: makePartU(), wheels: makePartU(), wheelsR: makePartU() }), []);
 
   const built = useMemo(() => {
@@ -68,7 +68,8 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
     if (rig) {
       const groupOf = (name: string): PartU => {
         if (VANOS_GROUP.includes(name)) return U.vanos;
-        if (name.startsWith("camshaft") || name.startsWith("valve_c") || name.startsWith("spring_")) return U.cams;
+        if (name === "valve_cover") return U.cover;
+        if (name.startsWith("camshaft") || /^valve_c\d/.test(name) || name.startsWith("spring_")) return U.cams;
         if (HEAD_GROUP.includes(name) || name.startsWith("valve")) return U.head;
         if (GEARBOX_GROUP.includes(name)) return U.gearbox;
         if (DIFF_GROUP.includes(name)) return U.diff;
@@ -82,7 +83,17 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
       });
       rig.root.traverse((o) => { if ((o as THREE.Mesh).isMesh && !done.has(o)) { patchTree(o, "mech", S, U.rest, "rest"); done.add(o); } });
     }
-    return { details, wheels, rig };
+    // the cases that turn to glass to show what turns inside them
+    const caseMats = { gearbox: [] as THREE.Material[], diff: [] as THREE.Material[] };
+    if (rig) {
+      ([["gearbox", ["gearbox_case", "bell_housing", "gearbox_pan"]], ["diff", ["diff_housing", "diff_cover"]]] as ["gearbox" | "diff", string[]][]).forEach(([key, names]) => {
+        names.forEach((n) => rig.nodes[n]?.traverse((o) => {
+          const m = (o as THREE.Mesh).material as THREE.Material | undefined;
+          if (m) { m.transparent = true; caseMats[key].push(m); }
+        }));
+      });
+    }
+    return { details, wheels, rig, caseMats };
   }, [assets, internals, S, U]);
 
   // ------------------------------------------------------------------ state for this frame
@@ -99,6 +110,10 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
   const hi = (start: string, end: string) => k(g, start, 0.35, EASE.arrive) * (1 - k(g, end, 0.5, EASE.move));
   U.head.uHi.value = hi("head+0.2", "vanos+0.2");
   U.cams.uHi.value = U.head.uHi.value * 0.18;
+  // the valve cover lifts off the head and fades, so the camshafts and valves show; it comes back with the head
+  U.cover.uHi.value = U.head.uHi.value * 0.55;
+  U.cover.uAlpha.value = 1 - Math.min(1, Math.max(0, (st.coverOff - 0.55) / 0.45));
+  U.cover.uDim.value = Math.max(st.gearbox, st.diff);
   U.cams.uDim.value = Math.max(st.gearbox, st.diff);
   U.vanos.uHi.value = hi("vanos+0.3", "vanos+3.6") + (1 - k(g, "vanos+0.3", 0.3)) * U.head.uHi.value;
   U.gearbox.uHi.value = hi("gearbox+0.3", "diff");
@@ -112,6 +127,12 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
   U.gearbox.uDim.value = Math.max(st.head, st.diff); U.diff.uDim.value = Math.max(st.head, st.gearbox);
   U.prop.uDim.value = Math.max(st.head, st.gearbox) * (1 - U.prop.uHi.value);
   if (built?.rig) poseRig(built.rig, st);
+  if (built) {
+    const glassy = (ms: THREE.Material[], a: number) => ms.forEach((m) => { m.opacity = 1 - 0.78 * a; m.depthWrite = a < 0.05; });
+    glassy(built.caseMats.gearbox, st.gbGlass); glassy(built.caseMats.diff, st.diffGlass);
+  }
+  // the power pulse runs down the propshaft from the gearbox to the differential
+  U.prop.uPulse.value = st.propPulse > 0 && st.propPulse < 1 ? lerp(0.1, -1.3, st.propPulse) : -99;
   if (built) {
     const sp = (name: string, a: number) => { const o = built.wheels.getObjectByName(name); if (o) o.rotation.z = -a; };
     sp("spin_RL", st.wheelL); sp("spin_RR", st.wheelR);
@@ -129,7 +150,7 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
 
   const ready = !!(assets && mats && built);
   const scene = (
-    <ThreeCanvas width={width} height={height} gl={{ antialias: true, preserveDrawingBuffer: true }} shadows>
+    <ThreeCanvas width={width} height={height} gl={{ antialias: true, preserveDrawingBuffer: true }}>
       <Cam g={g} />
       <Studio />
       {/* floor shadow */}
@@ -141,7 +162,7 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
         {ready && (
           <>
             <group position={[0, lift, 0]}>
-              <CarBody assets={assets!} mats={mats!} />
+              <CarBody assets={assets!} mats={mats!} sweep={look.sweep.value} />
               <primitive object={built!.details} />
             </group>
             <primitive object={built!.wheels} />

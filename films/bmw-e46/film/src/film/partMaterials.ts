@@ -10,23 +10,23 @@ export const CLAY = new THREE.Color("#D6D2CA");
 export const STUDIO = new THREE.Color("#EEF0F3");
 
 export type Shared = { uSweep: { value: number }; uCarInv: { value: THREE.Matrix4 }; uXray: { value: number } };
-export type PartU = { uHi: { value: number }; uDim: { value: number }; uAlpha: { value: number } };
+export type PartU = { uHi: { value: number }; uDim: { value: number }; uAlpha: { value: number }; uPulse: { value: number } };
 
 export const makeShared = (): Shared => ({ uSweep: { value: 99 }, uCarInv: { value: new THREE.Matrix4() }, uXray: { value: 0 } });
-export const makePartU = (): PartU => ({ uHi: { value: 0 }, uDim: { value: 0 }, uAlpha: { value: 1 } });
+export const makePartU = (): PartU => ({ uHi: { value: 0 }, uDim: { value: 0 }, uAlpha: { value: 1 }, uPulse: { value: -99 } });
 
 /** kind: "shell" parts vanish with the paint (headlights, plates, mirrors); "mech" parts turn to clay; "tyre" darker clay */
 export const patchPart = (src: THREE.Material, kind: "shell" | "mech" | "tyre", S: Shared, P: PartU, key: string) => {
   const m = (src as THREE.MeshStandardMaterial).clone();
   m.onBeforeCompile = (sh) => {
-    Object.assign(sh.uniforms, { uSweep: S.uSweep, uCarInv: S.uCarInv, uHi: P.uHi, uDim: P.uDim, uAlpha: P.uAlpha,
+    Object.assign(sh.uniforms, { uSweep: S.uSweep, uCarInv: S.uCarInv, uHi: P.uHi, uDim: P.uDim, uAlpha: P.uAlpha, uPulse: P.uPulse,
       uBlue: { value: BLUE }, uClay: { value: kind === "tyre" ? new THREE.Color("#A9ACB2") : CLAY }, uStudio: { value: STUDIO } });
     sh.vertexShader = sh.vertexShader
       .replace("#include <common>", "#include <common>\nuniform mat4 uCarInv; varying vec3 vCar;")
       .replace("#include <worldpos_vertex>", "#include <worldpos_vertex>\nvCar = (uCarInv * modelMatrix * vec4(transformed, 1.0)).xyz;");
     sh.fragmentShader = sh.fragmentShader
       .replace("#include <common>", `#include <common>
-uniform float uSweep; uniform float uHi; uniform float uDim; uniform float uAlpha;
+uniform float uSweep; uniform float uHi; uniform float uDim; uniform float uAlpha; uniform float uPulse;
 uniform vec3 uBlue; uniform vec3 uClay; uniform vec3 uStudio; varying vec3 vCar;
 float hash12(vec2 p) { vec3 p3 = fract(vec3(p.xyx) * .1031); p3 += dot(p3, p3.yzx + 33.33); return fract((p3.x + p3.y) * p3.z); }`)
       .replace("void main() {", `void main() {
@@ -41,7 +41,10 @@ float hash12(vec2 p) { vec3 p3 = fract(vec3(p.xyx) * .1031); p3 += dot(p3, p3.yz
   diffuseColor.rgb = mix(diffuseColor.rgb, uBlue, uHi * 0.88);
   roughnessFactor = mix(roughnessFactor, 0.35, uHi);`}`)
       .replace("#include <emissivemap_fragment>", `#include <emissivemap_fragment>
-  ${kind === "shell" ? "" : "totalEmissiveRadiance += uBlue * 0.32 * uHi;"}`)
+  ${kind === "shell" ? "" : `totalEmissiveRadiance += uBlue * 0.32 * uHi;
+  float pulse = exp(-pow((vCar.x - uPulse) / 0.09, 2.0));
+  diffuseColor.rgb = mix(diffuseColor.rgb, uBlue, pulse * 0.9);
+  totalEmissiveRadiance += uBlue * 0.9 * pulse;`}`)
       .replace("#include <dithering_fragment>", `#include <dithering_fragment>
   ${kind === "shell" ? "" : `
   vec3 nV = normalize(vNormal); float rim = pow(1.0 - abs(nV.z), 2.5);
@@ -61,7 +64,6 @@ export const patchTree = (root: THREE.Object3D, kind: "shell" | "mech" | "tyre" 
     const mats = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
     const patched = mats.map((mm) => patchPart(mm, kd, S, P, `${key}-${kd}-${mm.name}`));
     mesh.material = Array.isArray(mesh.material) ? patched : patched[0];
-    mesh.castShadow = true;
   });
   return P;
 };
