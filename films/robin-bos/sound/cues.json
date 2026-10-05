@@ -1,0 +1,337 @@
+{
+ "fps": 30,
+ "frames": 900,
+ "library": "lib",
+ "vo": {
+  "file": "../film/public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.3,
+  "fade_out": 1.2
+ },
+ "sfx": [
+  {
+   "id": "gen-tick",
+   "frame": 24,
+   "note": "wall square 2 lands",
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick",
+   "frame": 34,
+   "note": "wall square 3 lands",
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 44,
+   "note": "wall square 4 lands",
+   "pitch": 4
+  },
+  {
+   "id": "gen-tick",
+   "frame": 54,
+   "note": "wall square 5 lands",
+   "pitch": 5
+  },
+  {
+   "id": "gen-tick",
+   "frame": 62,
+   "note": "wall square 6 lands",
+   "pitch": 7
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 82,
+   "note": "Robin rises in front of the wall (fastest frames)",
+   "db": -2
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 122,
+   "note": "the wall's square travels to the period of BOS.",
+   "db": -3
+  },
+  {
+   "id": "gen-tick",
+   "frame": 154,
+   "note": "the course: first square lands",
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 157,
+   "note": "the course: second square lands",
+   "pitch": 4
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 186,
+   "note": "a square leaves the wall for the period of people",
+   "db": -4,
+   "pitch": 0
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 204,
+   "note": "a square leaves the wall for the period of process",
+   "db": -4,
+   "pitch": 2
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 230,
+   "note": "a square leaves the wall for the period of technology",
+   "db": -4,
+   "pitch": 4
+  },
+  {
+   "id": "gen-pop",
+   "frame": 275,
+   "note": "the three periods gather into one square",
+   "db": -2
+  },
+  {
+   "id": "gen-appear",
+   "frame": 279,
+   "note": "the square becomes the K.B tile",
+   "db": -1
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 305,
+   "note": "Robin leaves left, the tile takes his place",
+   "db": -2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 341,
+   "note": "2024: digit rolls on twenty",
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick",
+   "frame": 354,
+   "note": "2024: digit rolls on twenty2",
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 365,
+   "note": "2024: digit rolls on four",
+   "pitch": 4
+  },
+  {
+   "id": "gen-tick",
+   "frame": 378,
+   "note": "month tick 1",
+   "db": -4,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick",
+   "frame": 386,
+   "note": "month tick 3",
+   "db": -4,
+   "pitch": 4
+  },
+  {
+   "id": "gen-tick",
+   "frame": 394,
+   "note": "month tick 5",
+   "db": -4,
+   "pitch": 8
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 426,
+   "note": "the tile grows into the navy field",
+   "db": -1
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 429,
+   "note": "\u20ac2M lands",
+   "db": 0
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 452,
+   "note": "the 18 ticks slide into the underline",
+   "db": -4
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 486,
+   "note": "\u20ac2M shrinks to the header",
+   "db": -5
+  },
+  {
+   "id": "gen-tick",
+   "frame": 480,
+   "note": "project squares rising (1)",
+   "db": -5,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick",
+   "frame": 486,
+   "note": "project squares rising (3)",
+   "db": -5,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 492,
+   "note": "project squares rising (5)",
+   "db": -5,
+   "pitch": 4
+  },
+  {
+   "id": "gen-tick",
+   "frame": 498,
+   "note": "project squares rising (7)",
+   "db": -5,
+   "pitch": 6
+  },
+  {
+   "id": "gen-pop",
+   "frame": 545,
+   "note": "the 25 squares split into 100",
+   "db": -1
+  },
+  {
+   "id": "gen-appear",
+   "frame": 590,
+   "note": "the block grows into the team card",
+   "db": -1
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 626,
+   "note": "the canvas returns; the card leaves left",
+   "db": -2
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 630,
+   "note": "Robin enters from the right",
+   "db": -3
+  },
+  {
+   "id": "gen-pop",
+   "frame": 651,
+   "note": "logo 1 lands",
+   "db": -4,
+   "pitch": 0
+  },
+  {
+   "id": "gen-pop",
+   "frame": 654,
+   "note": "logo 2 lands",
+   "db": -4,
+   "pitch": 2
+  },
+  {
+   "id": "gen-pop",
+   "frame": 657,
+   "note": "logo 3 lands",
+   "db": -4,
+   "pitch": 4
+  },
+  {
+   "id": "gen-pop",
+   "frame": 660,
+   "note": "logo 4 lands",
+   "db": -4,
+   "pitch": 7
+  },
+  {
+   "id": "gen-tick",
+   "frame": 678,
+   "note": "the square lands as the period of strategy",
+   "db": -2,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick",
+   "frame": 703,
+   "note": "the square lands as the period of leadership",
+   "db": -2,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 726,
+   "note": "the square lands as the period of growth",
+   "db": -2,
+   "pitch": 4
+  },
+  {
+   "id": "gen-tick",
+   "frame": 747,
+   "note": "the square lands as the period of capital",
+   "db": -2,
+   "pitch": 7
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 783,
+   "note": "the square lands as the viewer's first block",
+   "db": -6
+  },
+  {
+   "id": "gen-tick",
+   "frame": 793,
+   "note": "the second block lands",
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 808,
+   "note": "Robin's square 1 completes the wall",
+   "pitch": 4
+  },
+  {
+   "id": "gen-tick",
+   "frame": 811,
+   "note": "Robin's square 2 completes the wall",
+   "pitch": 5
+  },
+  {
+   "id": "gen-tick",
+   "frame": 814,
+   "note": "Robin's square 3 completes the wall",
+   "pitch": 7
+  },
+  {
+   "id": "gen-tick",
+   "frame": 817,
+   "note": "Robin's square 4 completes the wall",
+   "pitch": 9
+  },
+  {
+   "id": "gen-tick",
+   "frame": 835,
+   "note": "the period of TALK. lands",
+   "db": -2,
+   "pitch": 7
+  },
+  {
+   "id": "gen-appear",
+   "frame": 846,
+   "note": "the period widens into the button",
+   "db": -2
+  },
+  {
+   "id": "gen-success",
+   "frame": 877,
+   "note": "the button is pressed",
+   "db": -3
+  }
+ ]
+}

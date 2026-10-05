@@ -1,48 +1,506 @@
 {
-  "client": "Robin Bos (robin-bos-profile / test.karlvankessel.workers.dev)",
-  "measured": {
-    "method": "scripts/brand_measure.py measure, k-means in CIELAB on 1440px screenshots and the favicon, 2026-10-05",
-    "hero": {"#FCFDFE": 0.585, "#EFF6FC": 0.244, "#D6E6F6": 0.064, "#0E2038": 0.047, "#38507E": 0.029, "#ADB9C5": 0.014, "#5E6E82": 0.009, "#D59476": 0.008},
-    "contact": {"#1B334F": 0.497, "#1F3B58": 0.177, "#142943": 0.152, "#254464": 0.127, "#FFFFFF": 0.022},
-    "favicon_r": {"#FFFFFF": 0.824, "#79B9FF": 0.169},
-    "kb_logo": {"#374E6B": 0.465, "#3C5472": 0.453, "#FFFFFF": 0.078}
+ "measurement": {
+  "method": "k-means in CIELAB, median pixel per cluster",
+  "k": 8
+ },
+ "images": {
+  "shots/robin-hero.png": {
+   "palette": [
+    {
+     "hex": "#FCFDFE",
+     "share": 0.5851,
+     "lab": [
+      99.26,
+      -0.15,
+      -0.6
+     ]
+    },
+    {
+     "hex": "#EFF6FC",
+     "share": 0.244,
+     "lab": [
+      96.53,
+      -1.21,
+      -3.69
+     ]
+    },
+    {
+     "hex": "#D6E6F6",
+     "share": 0.0636,
+     "lab": [
+      90.57,
+      -2.17,
+      -9.57
+     ]
+    },
+    {
+     "hex": "#0E2038",
+     "share": 0.0472,
+     "lab": [
+      12.04,
+      2.05,
+      -17.81
+     ]
+    },
+    {
+     "hex": "#38507E",
+     "share": 0.0291,
+     "lab": [
+      34.16,
+      5.32,
+      -28.82
+     ]
+    },
+    {
+     "hex": "#ADB9C5",
+     "share": 0.0138,
+     "lab": [
+      74.58,
+      -1.72,
+      -7.48
+     ]
+    },
+    {
+     "hex": "#5E6E82",
+     "share": 0.0089,
+     "lab": [
+      45.83,
+      -1.07,
+      -13.01
+     ]
+    },
+    {
+     "hex": "#D59476",
+     "share": 0.0083,
+     "lab": [
+      67.0,
+      20.95,
+      25.69
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#FCFDFE",
+    "text": "#0E2038",
+    "accent": "#D59476"
+   }
   },
-  "css": {
-    "--ink": "#0e2038", "--navy": "#162a43", "--blue": "#79b9ff", "--slate": "#3d4c61", "--muted": "#586b80", "--line": "#d9e3ee", "--pale": "#f3f7fb",
-    "technology_word": "#5078A0", "milestone_number": "#162F4E",
-    "portrait_backdrop": "linear-gradient(150deg,#c8e1fa 0%,#e3edf6 58%,#bbcee4 100%) + radial white highlight at 80% 10%, radius 32px",
-    "contact_section": "background var(--ink) #0e2038 (renders as a navy gradient #1B334F→#142943 with overlays)"
+  "shots/robin-contact.png": {
+   "palette": [
+    {
+     "hex": "#1B334F",
+     "share": 0.4974,
+     "lab": [
+      20.69,
+      0.68,
+      -19.97
+     ]
+    },
+    {
+     "hex": "#1F3B58",
+     "share": 0.1774,
+     "lab": [
+      24.08,
+      -0.43,
+      -20.6
+     ]
+    },
+    {
+     "hex": "#142943",
+     "share": 0.1515,
+     "lab": [
+      16.2,
+      1.37,
+      -18.91
+     ]
+    },
+    {
+     "hex": "#254464",
+     "share": 0.1266,
+     "lab": [
+      27.97,
+      -0.58,
+      -22.25
+     ]
+    },
+    {
+     "hex": "#FFFFFF",
+     "share": 0.0216,
+     "lab": [
+      100.0,
+      0.01,
+      -0.01
+     ]
+    },
+    {
+     "hex": "#54667F",
+     "share": 0.0162,
+     "lab": [
+      42.64,
+      -0.29,
+      -16.12
+     ]
+    },
+    {
+     "hex": "#7E8B9C",
+     "share": 0.0056,
+     "lab": [
+      57.37,
+      -0.93,
+      -10.61
+     ]
+    },
+    {
+     "hex": "#C5CAD1",
+     "share": 0.0037,
+     "lab": [
+      81.13,
+      -0.38,
+      -4.08
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#1B334F",
+    "text": "#FFFFFF",
+    "accent": null
+   }
   },
-  "palette": ["#FCFDFE", "#EFF6FC", "#D6E6F6", "#C8E1FA", "#BBCEE4", "#0E2038", "#162A43", "#1B334F", "#79B9FF", "#5078A0", "#586B80", "#D9E3EE", "#FFFFFF", "#374E6B"],
-  "tokens": {
-    "canvas": "#FCFDFE", "haze": "#EFF6FC", "mist": "#D6E6F6", "sky": "#C8E1FA",
-    "ink": "#0E2038", "navy": "#162A43", "field": "#1B334F",
-    "accent": "#79B9FF", "blue": "#5078A0", "muted": "#586B80", "line": "#D9E3EE", "white": "#FFFFFF",
-    "kb": "#374E6B"
+  "site/assets/favicon-r-192.png": {
+   "palette": [
+    {
+     "hex": "#FFFFFF",
+     "share": 0.8243,
+     "lab": [
+      100.0,
+      0.01,
+      -0.01
+     ]
+    },
+    {
+     "hex": "#79B9FF",
+     "share": 0.1694,
+     "lab": [
+      73.53,
+      -1.24,
+      -40.81
+     ]
+    },
+    {
+     "hex": "#D2E8FF",
+     "share": 0.0013,
+     "lab": [
+      91.1,
+      -2.45,
+      -13.51
+     ]
+    },
+    {
+     "hex": "#A3CFFF",
+     "share": 0.0012,
+     "lab": [
+      81.64,
+      -3.02,
+      -28.11
+     ]
+    },
+    {
+     "hex": "#F3F9FF",
+     "share": 0.0012,
+     "lab": [
+      97.64,
+      -0.88,
+      -3.57
+     ]
+    },
+    {
+     "hex": "#84BEFF",
+     "share": 0.001,
+     "lab": [
+      75.42,
+      -1.56,
+      -37.84
+     ]
+    },
+    {
+     "hex": "#C0DEFF",
+     "share": 0.0009,
+     "lab": [
+      87.29,
+      -2.95,
+      -19.36
+     ]
+    },
+    {
+     "hex": "#8FC5FF",
+     "share": 0.0008,
+     "lab": [
+      77.87,
+      -2.76,
+      -34.0
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#FFFFFF",
+    "text": "#79B9FF",
+    "accent": "#79B9FF"
+   }
+  }
+ },
+ "palette": [
+  {
+   "hex": "#FCFDFE",
+   "lab": [
+    99.26,
+    -0.15,
+    -0.6
+   ]
   },
+  {
+   "hex": "#EFF6FC",
+   "lab": [
+    96.53,
+    -1.21,
+    -3.69
+   ]
+  },
+  {
+   "hex": "#D6E6F6",
+   "lab": [
+    90.57,
+    -2.17,
+    -9.57
+   ]
+  },
+  {
+   "hex": "#0E2038",
+   "lab": [
+    12.04,
+    2.05,
+    -17.81
+   ]
+  },
+  {
+   "hex": "#38507E",
+   "lab": [
+    34.16,
+    5.32,
+    -28.82
+   ]
+  },
+  {
+   "hex": "#ADB9C5",
+   "lab": [
+    74.58,
+    -1.72,
+    -7.48
+   ]
+  },
+  {
+   "hex": "#5E6E82",
+   "lab": [
+    45.83,
+    -1.07,
+    -13.01
+   ]
+  },
+  {
+   "hex": "#D59476",
+   "lab": [
+    67.0,
+    20.95,
+    25.69
+   ]
+  },
+  {
+   "hex": "#1B334F",
+   "lab": [
+    20.69,
+    0.68,
+    -19.97
+   ]
+  },
+  {
+   "hex": "#1F3B58",
+   "lab": [
+    24.08,
+    -0.43,
+    -20.6
+   ]
+  },
+  {
+   "hex": "#142943",
+   "lab": [
+    16.2,
+    1.37,
+    -18.91
+   ]
+  },
+  {
+   "hex": "#254464",
+   "lab": [
+    27.97,
+    -0.58,
+    -22.25
+   ]
+  },
+  {
+   "hex": "#FFFFFF",
+   "lab": [
+    100.0,
+    0.01,
+    -0.01
+   ]
+  },
+  {
+   "hex": "#54667F",
+   "lab": [
+    42.64,
+    -0.29,
+    -16.12
+   ]
+  },
+  {
+   "hex": "#7E8B9C",
+   "lab": [
+    57.37,
+    -0.93,
+    -10.61
+   ]
+  },
+  {
+   "hex": "#C5CAD1",
+   "lab": [
+    81.13,
+    -0.38,
+    -4.08
+   ]
+  },
+  {
+   "hex": "#FFFFFF",
+   "lab": [
+    100.0,
+    0.01,
+    -0.01
+   ]
+  },
+  {
+   "hex": "#79B9FF",
+   "lab": [
+    73.53,
+    -1.24,
+    -40.81
+   ]
+  }
+ ],
+ "client": "Robin Bos (robin-bos-profile / test.karlvankessel.workers.dev)",
+ "css": {
+  "--ink": "#0e2038",
+  "--navy": "#162a43",
+  "--blue": "#79b9ff",
+  "--slate": "#3d4c61",
+  "--muted": "#586b80",
+  "--line": "#d9e3ee",
+  "--pale": "#f3f7fb",
+  "technology_word": "#5078A0",
+  "milestone_number": "#162F4E",
+  "portrait_backdrop": "linear-gradient(150deg,#c8e1fa 0%,#e3edf6 58%,#bbcee4 100%) + radial white highlight at 80% 10%, radius 32px",
+  "contact_section": "background var(--ink) #0e2038 (renders as a navy gradient #1B334F\u2192#142943 with overlays)"
+ },
+ "tokens": {
+  "canvas": "#FCFDFE",
+  "haze": "#EFF6FC",
+  "mist": "#D6E6F6",
+  "sky": "#C8E1FA",
+  "ink": "#0E2038",
+  "navy": "#162A43",
+  "field": "#1B334F",
   "accent": "#79B9FF",
-  "contrast": {
-    "#0E2038/#FFFFFF": 16.4, "#0E2038/#F3F7FB": 15.2, "#79B9FF/#0E2038": 8.0, "#FFFFFF/#0E2038": 16.4, "#586B80/#FFFFFF": 5.5, "#5078A0/#FFFFFF": 4.6,
-    "#79B9FF/#FFFFFF": 2.1,
-    "rule": "the sky accent #79B9FF never carries text on white; on white it is a mark (the square, an underline, a fill); blue text on white uses #5078A0; on the navy field the accent carries text (8.0:1)"
+  "blue": "#5078A0",
+  "muted": "#586B80",
+  "line": "#D9E3EE",
+  "white": "#FFFFFF",
+  "kb": "#374E6B"
+ },
+ "accent": "#79B9FF",
+ "contrast": {
+  "#0E2038/#FFFFFF": 16.4,
+  "#0E2038/#F3F7FB": 15.2,
+  "#79B9FF/#0E2038": 8.0,
+  "#FFFFFF/#0E2038": 16.4,
+  "#586B80/#FFFFFF": 5.5,
+  "#5078A0/#FFFFFF": 4.6,
+  "#79B9FF/#FFFFFF": 2.1,
+  "rule": "the sky accent #79B9FF never carries text on white; on white it is a mark (the square, an underline, a fill); blue text on white uses #5078A0; on the navy field the accent carries text (8.0:1)"
+ },
+ "type": {
+  "family": "Manrope",
+  "files": "public/fonts/manrope-{regular,medium,semibold,bold}.ttf",
+  "display": {
+   "weight": 700,
+   "tracking": "-0.08em",
+   "leading": 1.18,
+   "case": "UPPER",
+   "example": "ROBIN BOS. at 181px on a 1440 page"
   },
-  "type": {
-    "family": "Manrope", "files": "public/fonts/manrope-{regular,medium,semibold,bold}.ttf",
-    "display": {"weight": 700, "tracking": "-0.08em", "leading": 1.18, "case": "UPPER", "example": "ROBIN BOS. at 181px on a 1440 page"},
-    "statement": {"weight": 500, "tracking": "-0.045em", "leading": 1.25, "example": "People. / Process. / Technology. (last word #5078A0)"},
-    "body": {"weight": 400, "color": "#586B80"},
-    "micro": {"weight": 600, "tracking": "0.085em", "case": "UPPER", "color": "#667B92", "example": "CURRENT POSITION"},
-    "numbers": {"weight": 500, "example": "€2M at 59px, #162F4E"}
+  "statement": {
+   "weight": 500,
+   "tracking": "-0.045em",
+   "leading": 1.25,
+   "example": "People. / Process. / Technology. (last word #5078A0)"
   },
-  "shapes": {"pill": 999, "card": 20, "backdrop": 32, "square_dot": "a 6px solid #79B9FF square (the period of BOS., the eyebrow bullet, the period of LET'S TALK.)", "icon_arrow": "arrow-up-right ↗ in a thin stroke"},
-  "shadows": {"card": "0 8px 35px #0e20381a, 0 0 0 1px #0e203807, inset 0 1px 2px #fff", "backdrop": "0 20px 55px #2948650d"},
-  "easing_on_site": "reveal: opacity 0→1, translateY 16px→0, .65s ease; hover .2s; nothing else",
-  "style": {
-    "mood": "calm, premium, direct; a founder's card, not a corporate deck",
-    "visual_language": "huge tight uppercase name, short stacked statements ending in a period, one sky-blue square as punctuation, white→pale-blue haze canvas, thin hairlines, glass pills; one deep-navy section (contact) at the end",
-    "imagery": "one studio cut-out of Robin on a pale blue gradient backdrop; company logos small and monochrome-ish; no stock",
-    "whitespace": "generous; content rests on hairlines and a 1280px grid",
-    "voice": "first person, plain, confident: 'I build businesses around people, process and technology.'"
+  "body": {
+   "weight": 400,
+   "color": "#586B80"
   },
-  "effects": "none beyond scroll reveals and a glass nav; no 3D, no particles, no video"
+  "micro": {
+   "weight": 600,
+   "tracking": "0.085em",
+   "case": "UPPER",
+   "color": "#667B92",
+   "example": "CURRENT POSITION"
+  },
+  "numbers": {
+   "weight": 500,
+   "example": "\u20ac2M at 59px, #162F4E"
+  }
+ },
+ "shapes": {
+  "pill": 999,
+  "card": 20,
+  "backdrop": 32,
+  "square_dot": "a 6px solid #79B9FF square (the period of BOS., the eyebrow bullet, the period of LET'S TALK.)",
+  "icon_arrow": "arrow-up-right \u2197 in a thin stroke"
+ },
+ "shadows": {
+  "card": "0 8px 35px #0e20381a, 0 0 0 1px #0e203807, inset 0 1px 2px #fff",
+  "backdrop": "0 20px 55px #2948650d"
+ },
+ "easing_on_site": "reveal: opacity 0\u21921, translateY 16px\u21920, .65s ease; hover .2s; nothing else",
+ "style": {
+  "mood": "calm, premium, direct; a founder's card, not a corporate deck",
+  "visual_language": "huge tight uppercase name, short stacked statements ending in a period, one sky-blue square as punctuation, white\u2192pale-blue haze canvas, thin hairlines, glass pills; one deep-navy section (contact) at the end",
+  "imagery": "one studio cut-out of Robin on a pale blue gradient backdrop; company logos small and monochrome-ish; no stock",
+  "whitespace": "generous; content rests on hairlines and a 1280px grid",
+  "voice": "first person, plain, confident: 'I build businesses around people, process and technology.'"
+ },
+ "effects": "none beyond scroll reveals and a glass nav; no 3D, no particles, no video",
+ "measured_note": "scripts/brand_measure.py measure, k-means in CIELAB on 1440px screenshots and the favicon, 2026-10-05",
+ "hex_palette": [
+  "#FCFDFE",
+  "#EFF6FC",
+  "#D6E6F6",
+  "#C8E1FA",
+  "#BBCEE4",
+  "#0E2038",
+  "#162A43",
+  "#1B334F",
+  "#79B9FF",
+  "#5078A0",
+  "#586B80",
+  "#D9E3EE",
+  "#FFFFFF",
+  "#374E6B"
+ ]
 }

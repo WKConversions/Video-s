@@ -1,0 +1,405 @@
+{
+ "title": "Robin Bos \u2014 The structure behind it",
+ "subtitle": "30-second business-card film for robin-bos-profile (test.karlvankessel.workers.dev) and LinkedIn \u00b7 storyboard v1, frames rendered from the Remotion project \u00b7 2026-10-05",
+ "direction": {
+  "Purpose": "Who Robin is, what he builds, what he has built; make a founder want to talk to him.",
+  "Audience": "Founders, owners, investors, partners; sound often off; two seconds to decide.",
+  "Format": "16:9 \u00b7 1920\u00d71080 \u00b7 30 fps \u00b7 30 s (voice 0.3\u201327.9 s, end card to 30).",
+  "Core message": "Robin builds the structure behind businesses, and has the proof.",
+  "Tone": "Confident, warm, direct, premium: middle durations, ease-outs, no overshoot, one slow camera breath.",
+  "Style and brand": "Robin's own site, moving: Manrope, ink #0E2038, the sky-blue square #79B9FF as the only accent on white, blue word #5078A0, white\u2192pale-blue haze; one navy field (#1B334F, his contact section) for the valuation and proof.",
+  "Art direction": "One continuous stage. Mixed media decided once: his studio cut-out, one real photo (the \u20ac2M team post), real logos, type, flat shapes. No stock, no icons for nouns, no glow.",
+  "Motion personality": "Precise premium. ARRIVE (.22,1,.36,1) for ~80 % of moves; quick 6\u20138 f, standard 12\u201316 f, slow 24\u201336 f; entrances from outside the frame or out of the previous object with motion blur; nothing pops past its size.",
+  "Transition family": "(1) The square leads: the object becomes the next object, masks grow out of objects. (2) Layout transformation. (3) A slide on a rail, twice (Robin's exit left at 10 s; the card's exit left as Robin returns from the right at 20.7 s). No crossfades, no hard cuts.",
+  "Voice-over and music": "Timed to a scratch synthetic voice (Piper) for the draft; Robin or a VO artist records the approved script and the picture is retimed to the words. Music: a composed calm-optimistic bed (113.5 BPM, D major) with its lift on 'eighteen months later' and its last chord on the end card; 50 soft effects placed on the moves."
+ },
+ "beats": [
+  {
+   "id": "B1",
+   "title": "Hook: the structure",
+   "time": "0.0\u20133.3 s",
+   "vo": "A business is only as strong as the structure behind it.",
+   "idea": "Wordless: six sky squares (his site's own period) rise from the bottom edge and stack into a wall; on 'behind' Robin rises in front of it. The structure is literally behind him.",
+   "frames": [
+    {
+     "frame": 0,
+     "time": "0.00",
+     "phrase": "(before the voice)",
+     "words": "none",
+     "shows": "The haze canvas; one square rests at the wall's bottom-right slot; the light disc drifts.",
+     "moves": "The camera breath; the light.",
+     "transition": "The square: five more stack onto it."
+    },
+    {
+     "frame": 36,
+     "time": "1.20",
+     "phrase": "a business is only as strong",
+     "words": "none",
+     "shows": "The wall building: squares rising from the bottom edge, one every 7\u201310 frames, a soft tick each.",
+     "moves": "Each square rises 700 px on ARRIVE with blur, 14 f."
+    },
+    {
+     "frame": 66,
+     "time": "2.20",
+     "phrase": "as the structure",
+     "words": "none",
+     "shows": "The 2\u00d73 wall complete, alone on the canvas.",
+     "moves": "The last square lands; the shadow widens.",
+     "transition": "The wall: Robin rises in front of it."
+    },
+    {
+     "frame": 90,
+     "time": "3.00",
+     "phrase": "behind it",
+     "words": "none",
+     "shows": "Robin's cut-out has risen from the bottom edge in front of the wall; its left column disappears behind his shoulder.",
+     "moves": "Robin rises 980 px in 18 f, ARRIVE, blurred on the fast frames; the light brightens behind him.",
+     "transition": "Robin: his name lands beside him."
+    }
+   ]
+  },
+  {
+   "id": "B2",
+   "title": "Name",
+   "time": "3.5\u20134.7 s",
+   "vo": "I'm Robin Bos.",
+   "idea": "ROBIN / BOS rise word by word at his right; the wall's top-right square slides out from behind his shoulder and shrinks into the period of BOS.: his site's lockup, built from his structure.",
+   "frames": [
+    {
+     "frame": 108,
+     "time": "3.60",
+     "phrase": "I'm Robin",
+     "words": "ROBIN",
+     "shows": "ROBIN rising out of a blur at 160 px bold beside him.",
+     "moves": "The word rises 32 % of its height, 8 f."
+    },
+    {
+     "frame": 129,
+     "time": "4.30",
+     "phrase": "Bos",
+     "words": "ROBIN BOS.",
+     "shows": "BOS on the second line; the square from the wall has landed as its period.",
+     "moves": "The square travels ~600 px, shrinking 110\u219246 px, 12 f on MOVE with blur.",
+     "transition": "The name blurs out upward; its period stays and becomes the first period of People."
+    }
+   ]
+  },
+  {
+   "id": "B3",
+   "title": "People. Process. Technology.",
+   "time": "4.8\u20138.6 s",
+   "vo": "I build businesses around people, process and technology.",
+   "idea": "On 'build' the wall grows a course behind him (he builds while he says it); then one square at a time leaves the wall to become the period of each word of his site's statement.",
+   "frames": [
+    {
+     "frame": 156,
+     "time": "5.20",
+     "phrase": "I build businesses around",
+     "words": "none",
+     "shows": "The name gone; the wall one course taller; the period square waiting.",
+     "moves": "Two squares rise under the wall and push it up 122 px, 12 f MOVE."
+    },
+    {
+     "frame": 189,
+     "time": "6.30",
+     "phrase": "people",
+     "words": "People.",
+     "shows": "People. with the BOS period as its period.",
+     "moves": "The word rises 8 f; the period glides to it 12 f."
+    },
+    {
+     "frame": 207,
+     "time": "6.90",
+     "phrase": "process",
+     "words": "People. Process.",
+     "shows": "A second square has left the wall for the period of Process.",
+     "moves": "The square travels from behind his shoulder, 12 f MOVE with blur."
+    },
+    {
+     "frame": 234,
+     "time": "7.80",
+     "phrase": "and technology",
+     "words": "People. Process. Technology.",
+     "shows": "The statement complete, Technology in the site's blue; the wall two squares lighter.",
+     "moves": "The third square's travel; the light drifts; the breath peaks.",
+     "transition": "The three periods gather into one square."
+    }
+   ]
+  },
+  {
+   "id": "B4",
+   "title": "K.B Consultancy, 2024",
+   "time": "8.6\u201312.7 s",
+   "vo": "I co-founded K.B Consultancy in 2024.",
+   "idea": "The three periods gather into one square that turns navy, rounds and takes the real K.B letters; Robin leaves left and the tile slides into the spot he stood in. A rail draws out of the tile and 2024 rolls like an odometer.",
+   "frames": [
+    {
+     "frame": 273,
+     "time": "9.10",
+     "phrase": "I co-founded",
+     "words": "none",
+     "shows": "The words blurring out; the three periods sliding together.",
+     "moves": "Three squares gather 10 f MOVE."
+    },
+    {
+     "frame": 288,
+     "time": "9.60",
+     "phrase": "K.B",
+     "words": "K.B (the logo)",
+     "shows": "The gathered square grown to 460 px, navy, rounded; the K wiping in.",
+     "moves": "Colour, radius and size change 8 f; the K wipes 8 f, then .B."
+    },
+    {
+     "frame": 312,
+     "time": "10.40",
+     "phrase": "Consultancy",
+     "words": "K.B",
+     "shows": "Robin sliding out left with the wall remainder; the tile sliding into his place.",
+     "moves": "Robin exits 1300 px in 16 f DEPART, blurred; the tile moves 14 f MOVE.",
+     "transition": "The tile: a rail draws out of its right edge."
+    },
+    {
+     "frame": 363,
+     "time": "12.10",
+     "phrase": "in 2024",
+     "words": "2024",
+     "shows": "The tile at left; a hairline rail; 2024 rolled in digit by digit.",
+     "moves": "The rail draws 12 f; each digit rolls 10 f on its word.",
+     "transition": "The rail extends and lays the months."
+    }
+   ]
+  },
+  {
+   "id": "B5",
+   "title": "\u20ac2M",
+   "time": "12.7\u201316.0 s",
+   "vo": "Eighteen months later: a two-million-euro valuation.",
+   "idea": "The rail lays 18 ticks as a counter rolls 0\u219218 months; then the tile grows into the navy field, \u20ac2M rolls up, and the 18 ticks slide together into its underline, with the site's own caption.",
+   "frames": [
+    {
+     "frame": 402,
+     "time": "13.40",
+     "phrase": "eighteen months later",
+     "words": "2024 \u00b7 18 months",
+     "shows": "18 sky ticks on the rail; the counter at 18; 2024 dimmed.",
+     "moves": "The rail extends 20 f; a tick lands per frame; the digits roll in step.",
+     "transition": "The tile grows into the field."
+    },
+    {
+     "frame": 432,
+     "time": "14.40",
+     "phrase": "a two million",
+     "words": "\u20ac2M",
+     "shows": "The navy field; \u20ac2M at 440 px, the 2 just rolled; the K.B mark top-left; the ticks still on their line.",
+     "moves": "The field grows 14 f out of the tile; \u20ac slides in, the 2 rolls, M rises; one impact."
+    },
+    {
+     "frame": 462,
+     "time": "15.40",
+     "phrase": "euro valuation",
+     "words": "\u20ac2M \u00b7 K.B Consultancy valuation reached within 18 months. \u00b7 Company-reported, following its first funding round.",
+     "shows": "The ticks as the underline of \u20ac2M; the caption in two lines.",
+     "moves": "18 ticks travel to the underline 12 f MOVE; the caption rises 8 f.",
+     "transition": "\u20ac2M shrinks to a header beside the mark."
+    }
+   ]
+  },
+  {
+   "id": "B6",
+   "title": "Proof",
+   "time": "16.1\u201320.8 s",
+   "vo": "Twenty-five client projects. A hundred automations. A team that's all in.",
+   "idea": "25 squares rise under the header with the counter rolling in step; each splits into four for 100+; the hundred close into one block that grows into the real team photo (the \u20ac2M post).",
+   "frames": [
+    {
+     "frame": 501,
+     "time": "16.70",
+     "phrase": "twenty-five client projects",
+     "words": "\u20ac2M \u00b7 25 client projects",
+     "shows": "The 5\u00d75 rising row by row; the counter rolling.",
+     "moves": "A square per frame, 12 f ARRIVE each; the odometer in step."
+    },
+    {
+     "frame": 555,
+     "time": "18.50",
+     "phrase": "a hundred automations",
+     "words": "\u20ac2M \u00b7 100+ automations",
+     "shows": "Every square split into 2\u00d72: a hundred in the same block; the counter at 100+; the label rolling.",
+     "moves": "25 splits in one 8 f gesture; the counter rolls 25\u2192100; the + lands."
+    },
+    {
+     "frame": 597,
+     "time": "19.90",
+     "phrase": "a team that's all in",
+     "words": "\u20ac2M",
+     "shows": "The team photo card grown out of the block: the four of them in M\u00e1laga with the 2M balloons, Robin second from left.",
+     "moves": "The hundred close 8 f; the card grows 14 f ARRIVE; the photo pushes in 6 % over 30 f on 'all'.",
+     "transition": "The card's box grows into the canvas; the card leaves left."
+    }
+   ]
+  },
+  {
+   "id": "B7",
+   "title": "Advice",
+   "time": "20.8\u201325.5 s",
+   "vo": "Today I advise founders on strategy, leadership, growth and capital.",
+   "idea": "The haze returns out of the card; Robin enters from the right; the four companies he advises line up at the left; then one square steps down the four areas as their period, passed words dimming.",
+   "frames": [
+    {
+     "frame": 615,
+     "time": "20.50",
+     "phrase": "(the card)",
+     "words": "\u20ac2M",
+     "shows": "The team card on the field, the push inside it.",
+     "moves": "The push; the breath."
+    },
+    {
+     "frame": 630,
+     "time": "21.00",
+     "phrase": "today",
+     "words": "none",
+     "shows": "The haze canvas has grown out of the card's box; the card leaving left; Robin entering from the right.",
+     "moves": "The canvas grows 14 f; the card exits 16 f DEPART; Robin enters 18 f ARRIVE, blurred."
+    },
+    {
+     "frame": 657,
+     "time": "21.90",
+     "phrase": "I advise founders",
+     "words": "WKConversions \u00b7 Top Jobs Abroad \u00b7 ClearScaler \u00b7 Tale Forge",
+     "shows": "Robin at the right; the four real logos in a 2\u00d72 on hairlines at the left.",
+     "moves": "Logos slide in from the left edge 3 f apart, 12 f each; hairlines draw.",
+     "transition": "The logos sink; a square from his shoulder."
+    },
+    {
+     "frame": 678,
+     "time": "22.60",
+     "phrase": "on strategy",
+     "words": "Strategy.",
+     "shows": "Strategy. with the square as its period; the last logo sinking.",
+     "moves": "The square travels from behind his shoulder 14 f MOVE; the word rises 8 f."
+    },
+    {
+     "frame": 705,
+     "time": "23.50",
+     "phrase": "leadership",
+     "words": "Strategy Leadership.",
+     "shows": "The square stepped down to Leadership.; Strategy dimmed.",
+     "moves": "The step 10 f MOVE; the dim 8 f."
+    },
+    {
+     "frame": 726,
+     "time": "24.20",
+     "phrase": "growth",
+     "words": "+ Growth.",
+     "shows": "Three areas; the square on Growth.",
+     "moves": "The step."
+    },
+    {
+     "frame": 750,
+     "time": "25.00",
+     "phrase": "and capital",
+     "words": "+ Capital.",
+     "shows": "The four areas in a column beside him; Capital in blue.",
+     "moves": "The step; the breath easing toward rest.",
+     "transition": "The words blur out; the square drops to become the first block."
+    }
+   ]
+  },
+  {
+   "id": "B8",
+   "title": "Let's talk",
+   "time": "25.5\u201330 s",
+   "vo": "If you're building something that needs structure, let's talk.",
+   "idea": "The viewer's wall: the square drops as the first block, a second rises from below, Robin supplies the other four from behind his shoulder; LET'S TALK. takes its period from the wall, and the period widens into his site's button.",
+   "frames": [
+    {
+     "frame": 780,
+     "time": "26.00",
+     "phrase": "if you're building something",
+     "words": "none",
+     "shows": "The square, grown to a block, at the bottom between the type column and Robin.",
+     "moves": "It drops 14 f MOVE, growing 46\u2192110 px; the second block rises on 'something'."
+    },
+    {
+     "frame": 795,
+     "time": "26.50",
+     "phrase": "something",
+     "words": "none",
+     "shows": "Two blocks: the viewer's first course.",
+     "moves": "The second block rises 12 f ARRIVE."
+    },
+    {
+     "frame": 813,
+     "time": "27.10",
+     "phrase": "that needs structure",
+     "words": "none",
+     "shows": "Four squares sliding out from behind Robin's shoulder completing the 2\u00d73 wall.",
+     "moves": "Four travels 12 f MOVE, 3 f apart, blurred; the breath settles to rest.",
+     "transition": "The wall's top-left square becomes the period of TALK."
+    },
+    {
+     "frame": 834,
+     "time": "27.80",
+     "phrase": "let's talk",
+     "words": "LET'S TALK.",
+     "shows": "LET'S / TALK. at 190 px with the square as its period; the wall of five beside Robin.",
+     "moves": "Two words rise 8 f each; the square travels 12 f. Nothing else moves."
+    },
+    {
+     "frame": 858,
+     "time": "28.60",
+     "phrase": "(end card)",
+     "words": "LET'S TALK \u00b7 Start a conversation \u2197",
+     "shows": "The period has widened into the ink pill; the contact lines about to rise.",
+     "moves": "The morph 14 f ARRIVE: square \u2192 pill, sky \u2192 ink."
+    },
+    {
+     "frame": 885,
+     "time": "29.50",
+     "phrase": "(end card)",
+     "words": "+ robin@kruslockbosconsultancy.com \u00b7 linkedin.com/in/robindanielbos",
+     "shows": "The end card: the invitation, the pressed button, the two lines, the wall, Robin.",
+     "moves": "The press (3 f dip, 6 f return) at 29.2; one slow push to the end."
+    },
+    {
+     "frame": 899,
+     "time": "29.97",
+     "phrase": "(last frame)",
+     "words": "as above",
+     "shows": "The last frame, still working: the push completes.",
+     "moves": "The camera's push."
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "Script: proposed, written from Robin's own site copy and his \u20ac2M post (first-person and third-person variants in storyboard/notes.md). Every claim is in harvest/facts.md. '\u20ac2M' carries the site's own caption: company-reported, following its first funding round.",
+  "Format assumption: 16:9 at 1920\u00d71080, 30 fps, 30 s (website hero + LinkedIn). The subject stays in the middle 60 % for a later 9:16 recut.",
+  "Look: no intake style was chosen, so the look is Robin's own brand measured from his site (brand.json); bright by default, one navy field for the valuation and proof (6.7 s), grown out of the K.B tile and leaving through the card's box.",
+  "The 2\u00d73 wall is the film's one grounded metaphor: his own square mark stacking as blocks for 'structure'; it reads in a second and returns at the end as the viewer's structure, completed from Robin's shoulder.",
+  "Robin: on screen 2.6\u201310.1 s, in the photo 19.4\u201321.0 s, 21.0\u201330 s (about 18 s). Two entrances (from below, from the right), one exit (left); never scaled or re-placed while on screen.",
+  "The four companies: as his site presents them (WKConversions, Top Jobs Abroad, ClearScaler mark + name, Tale Forge). hirebetter.io is a K.B venture, not an advisory role, and is left out of the advisory beat.",
+  "25 projects and 100+ automations are K.B's own figures (kruslockbosconsultancy.com); shown as units, since 14 client logos \u2260 25.",
+  "Voice: Piper en_US-ryan-high scratch voice, timing only. The real recording retimes the picture: every move is keyed on a word label."
+ ],
+ "revisions": [],
+ "assets": [
+  "None: every asset comes from Robin's site, the K.B site and his public post (assets/assets.md)."
+ ],
+ "tools": [
+  "None needed for the build. For the final: the recorded voice-over (file) and, if Karl has one, a music track."
+ ],
+ "open": [
+  "Script approval (or Robin's edits), and who records it: Robin (first person) or a VO artist (third-person variant).",
+  "Music: keep the composed bed, or is there a track? Effects: 50 soft cues; Karl's ear decides the density.",
+  "The team photo from Robin's \u20ac2M post for 'a team that's all in': fine, or Robin alone?",
+  "The navy field for 6.7 s (valuation + proof) vs contracting back to bright after \u20ac2M (one judge preferred that).",
+  "End card contact: email + LinkedIn (as on his site), or 'Start a conversation' + the page URL?"
+ ],
+ "appendix": {
+  "Beat sheet, arc, art direction": "# Beat sheet, arc and art direction (steps 3\u20135)\n\nTimes are from the scratch voice (film/src/words.json; the picture is retimed when the real voice arrives).\nWord labels are `w:<word>` (repeats numbered: `w:as2`, `w:a2`, `w:twenty2`, `w:structure2`, `w:i2`\u2026; `w:kb` = `w:kay`).\n\n## Beats\n\n| # | Time | VO | Core meaning | Viewer must understand | Imp. | Tone | Nouns | Verbs | Type | Hold | Sets up / pays off |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n| B1 Hook | 0.3\u20133.6 | A business is only as strong as the structure behind it. | A company stands on what holds it up. | \"structure\" is the subject; something is being built behind. | 2 | confident, curious | business, structure | hold up, stand, build behind | Hook / Abstract concept | short | sets up \"structure\" (paid off at B8) and the square as the unit of building |\n| B2 Name | 3.7\u20134.8 | I'm Robin Bos. | This is him. | his face and his name | 1 | direct | Robin | \u2014 | Emotional statement (direct address) | yes, as a working hold | the square becomes the period of his name (callback at B8) |\n| B3 What | 5.0\u20138.8 | I build businesses around people, process and technology. | His method: three things, in that order. | three words, each shown by something real | 1 | confident | people, process, technology | build around | Process / Feature | no | sets up the three periods; \"people\" pays off in B6 (the team) |\n| B4 K.B | 9.0\u201312.9 | I co-founded K.B Consultancy in 2024. | He started a company, recently. | the K.B logo; 2024 | 2 | pride | K.B, 2024 | co-found | Proof / Transition | no | sets up the time jump of B5 |\n| B5 \u20ac2M | 13.3\u201316.4 | Eighteen months later: a two-million-euro valuation. | It worked fast. | 18 months \u2192 \u20ac2M, the number the largest thing | 1 | pride, impact | months, valuation | later (time passes) | Number/data | yes | pays off B4; the film's peak; the navy field |\n| B6 Proof | 16.7\u201321.0 | Twenty-five client projects. A hundred automations. A team that's all in. | The valuation rests on real work and real people. | 25 real projects, 100 automations, the real team | 1 | pride, warmth | projects, automations, team | deliver, build, commit | Proof / Number | no | pays off \"people\" (B3); the squares count (B1) |\n| B7 Advice | 21.3\u201325.5 | Today I advise founders on strategy, leadership, growth and capital. | Now he does it for others, in four areas. | the real companies he's with; four areas as steps | 2 | confident | founders, strategy, leadership, growth, capital | advise | Feature / Process | no | pays off B3's \"process\" with the four areas; sets up the CTA |\n| B8 CTA | 25.8\u201330 | If you're building something that needs structure, let's talk. | The invitation. | LET'S TALK. and how (email / LinkedIn) | 1 | warm, direct | structure, talk | build, talk | CTA | end card to 30 s | pays off B1 (structure) and B2 (the period): the square becomes the button |\n\n## The whole film\n- **Spine:** structure. He builds it (B1\u2013B3), he built it himself and it held (B4\u2013B6), he builds it for others (B7), build yours with him (B8).\n- **Hook:** not a logo: the squares stacking into a structure behind a company as the first line says \"structure behind it\", then Robin steps out as its builder.\n- **Energy curve:** B1 medium (building) \u2192 B2 beat/hold (the face, the name) \u2192 B3 rising (three steps) \u2192 B4 medium (the tile, the year) \u2192 B5 **hit** (the time jump, the number, the navy field) \u2192 B6 fast relay (three proofs, the team) \u2192 B7 steady steps (four areas) \u2192 B8 calm resolution (the end card). The turn is at B5; the calm is B8.\n- **Setups and payoffs:** the square (B1) \u2192 his period (B2) \u2192 three periods (B3) \u2192 the K.B tile (B4) \u2192 25 squares (B6) \u2192 the LET'S TALK period and button (B8). \"Structure\" (B1) returns as the last line's condition (B8). \"People\" (B3) returns as the team (B6) and \"founders\" (B7).\n- **CTA as resolution:** the end card grows out of B8's own words; the square that opened the film is pressed as the button.\n\n## Art direction (step 5)\n- **Thesis and allowed patterns:** storyboard/thesis.md.\n- **Visual world:** Robin's own site, moving. One continuous stage: a white\u2192pale-blue haze canvas (#FCFDFE \u2192 #EFF6FC, the portrait backdrop's #C8E1FA\u2192#BBCEE4 gradient only behind Robin), ink-navy type (#0E2038) in Manrope, the sky-blue square (#79B9FF) as the only accent on white, blue text on white in #5078A0, hairlines #D9E3EE, pills at 999 and cards at 20 px. One navy colour field (#1B334F, his contact section) for the valuation moment, grown out of an object, and one more at the end card? No: the end card stays bright (Karl: bright by default) and takes the navy only as the button. Nothing enters from outside this world: no stock, no icons for nouns, no glass, no glow.\n- **Mixed media, decided once:** photo cut-out (Robin, the site's studio cut-out) + one real photograph (the team with the 2M balloons, from his post) + real logos (SVG/PNG as the sites present them) + type + flat shapes (the square, hairlines, pills). Photos appear as cut-out or inside a shape the stage already has (a rounded card, a disc), never as a full-frame background.\n- **Robin on screen, balanced:** present in B1\u2013B3 (he arrives as the builder and stays while his method builds beside him), absent in B4\u2013B5 (his company and its number take the stage; he is in the team photo in B6), back for B7 (the companies arrange around what he's doing) and B8 (the card). Never two consecutive beats where he merely stands in a new spot: when he's on screen, something is happening to or around him; when he leaves, something he made takes his place.\n- **Motion personality:** precise premium (motion/motion-identity.md). Signature curve ARRIVE `cubic-bezier(.22,1,.36,1)`; depart `cubic-bezier(.55,0,.9,.4)`; move `cubic-bezier(.65,0,.35,1)`. Duration palette: quick 6\u20138 f, standard 12\u201316 f, slow 24\u201336 f; distance scaling per motion/timing.md. Entrance pattern: from outside the frame or out of the previous object, on ARRIVE with motion blur; type rises 32% of its size out of a blur on its spoken word (kinetic `Line`). No overshoot anywhere (clean film), celebration once: the button press at the end.\n- **Camera:** one slow breath for the whole film (`breathe()`: scale 1.02 \u00b1 1.8% over ~21 s, drift \u00b120 px), easing to rest before the sign-off, then one slow push to the end. Never a pan or zoom on a transition.\n- **Transition family (three):** (1) **the square leads** \u2014 the sky-blue square travels from its last role to its next and the next scene forms out of it (mask-out-of-an-object, object becomes the next object); (2) **layout transformation** \u2014 the things on screen rearrange into the next composition (the structure's blocks become the name's baseline, the squares become the project grid, the logos line up into the advisory row); (3) **a slide on a rail** \u2014 a scene leaves along the direction the eye is already moving and the next continues the vector (used twice at most). One hard cut at most, on the fastest frame of a whip (A1), if a transition needs it.\n- **Secondary motion:** a second layer always working: the haze field's light (a soft bloom drifting behind the subject), a hairline drawing, a counter ticking, the team photo's card settling. Never more than 3 separate motions at once (the probe's BUSY), never more than ~5 things on screen.\n- **Sound:** calm-premium palette: a soft swish on the bigger moves, a soft tick per counted square, one impact on \"two-million\", one chime-free success on the button press; music a light optimistic bed composed to the arc (lift at B5, resolve on the end card).\n- **Readable where it plays:** the line's subject the largest thing on screen; headlines \u2265 72 px, anything to read \u2265 40 px, captions (the valuation note, the email) \u2265 32 px; key text 100 px from top/bottom, 80 px from the sides.\n",
+  "Production plan (phrases, variety, continuity, decisions)": "# Production plan: Robin Bos, \"The structure behind it\" (30 s)\n\nSynthesis of the concept round (storyboard/concepts/: three concepts, three judges). The \"builder\" concept won\n(judges 1 and 2: 43 and 42 of 50) and takes these grafts; the art director's decisions on the judges' open\nquestions are at the end. Times from the scratch voice (film/src/words.json); every event lands 3\u20136 frames before\nits word.\n\n## Project direction\nPURPOSE: a business-card film for Robin's site hero and LinkedIn: who he is, what he builds, what he has built, talk to him.\nAUDIENCE: founders, owners, investors, partners; sound often off; two seconds to decide.\nFORMAT: 16:9, 1920\u00d71080, 30 fps. DURATION: 30 s (900 f); voice 0.3\u201327.9 s; end card to 30.\nCORE MESSAGE: Robin builds the structure behind businesses, and has the proof.\nTONE: confident, warm, direct, premium (timing row \"confident and clear\": middle durations, ease-outs, no overshoot).\nSTYLE AND BRAND: Robin's own site (brand.json): Manrope, ink #0E2038, sky square #79B9FF, blue word #5078A0, canvas #FCFDFE\u2192#EFF6FC, hairlines #D9E3EE, pills 999, cards 20; one navy field #1B334F (his contact section).\nART DIRECTION: one continuous stage. Mixed media decided once: his studio cut-out, one real photograph (the \u20ac2M team post), real logos, type, flat shapes. Bright; the navy field for 6.7 s at the peak only.\nMOTION PERSONALITY: precise premium; ARRIVE/DEPART/MOVE; quick 6\u20138, standard 12\u201316, slow 24\u201336 f; entrances from outside the frame or out of the previous object with motion blur; no overshoot; one celebration (the button press).\nCAMERA: one slow breath for the whole film (breathe(): 1.02 \u00b1 1.8 % over ~21 s, drift \u00b1 20 px), at rest from 27.4 s, one slow push to the end. Never a pan or zoom on a transition.\nTRANSITION FAMILY: (1) the square leads: object becomes the next object / mask out of an object; (2) layout transformation; (3) a slide on a rail, used twice (Robin's exit left at 10.1 s; the photo card's exit left with Robin's entrance from the right at 20.7 s). No crossfades, no hard cuts.\nVOICE-OVER AND MUSIC: timed to the scratch voice (Piper); Karl/Robin to record; music: a composed calm-optimistic bed (113.5 BPM, D major) with its lift on \"eighteen months later\" and its last chord on the end card.\n\n## The thread\nThe sky-blue square, his site's period: six squares stack into a wall (B1) \u2192 the wall grows a course while he builds (B3) \u2192 its squares leave as the period of BOS. and the three periods of People. Process. Technology. \u2192 the three periods gather into one square that becomes the K.B tile (B4) \u2192 the tile grows into the navy field (B5) \u2192 25 squares rise under \u20ac2M, split into 100, gather into the team card (B6) \u2192 one square steps down his four areas as their period (B7) \u2192 the viewer's wall: two blocks from below, four from behind Robin's shoulder (B8) \u2192 the period of LET'S TALK. \u2192 the button.\n\n## Stage layout (two stretches with Robin at one size each, never scaled while on screen)\n- Stretch one (2.5\u201310.1 s): Robin centre-left, cut-out at 0.64 (940 px tall), bottom-centre anchor (790, 1080 + 40 crop), head \u2248 (790, 300). The wall stands behind his viewer-right shoulder at x 980\u20131210. Type at x 1260.\n- Stretch two (21.0\u201330 s): Robin right third, cut-out at 0.70 (1030 px tall), anchor (1590, 1080 + 60), his right arm cropped by the frame edge. Type at x 140. The viewer's wall at x 980\u20131220 between them.\n\n## Phrases (the shot list; one visual event each)\n| # | Time | Words | Key | Visual event | On screen | Transition out (object) |\n|---|---|---|---|---|---|---|\n| 1a | 0.00\u20130.38 | (before the voice) | \u2014 | The haze canvas; one 110 px square rests at the wall's bottom-right slot (1100\u20131210, 720\u2013830) with the site's soft shadow; the light disc drifts behind the wall's place. | none | the square: the next five stack onto it |\n| 1b | 0.30\u20132.72 | a business is only as strong as the structure | w:structure (lands 2.16) | Five squares rise from the bottom edge into the 2\u00d73 wall, one every 7 f from w:business\u22124: bottom-left, middle-right, middle-left, top-right, top-left; each a soft tick; the shadow widens as the wall grows. | none | the wall: Robin rises in front of it |\n| 2 | 2.72\u20133.31 | behind | w:behind (lands 2.62) | Robin's cut-out rises from the bottom edge in front of the wall (18 f, ARRIVE, blur), landing at 3.20; the wall's left column disappears behind his shoulder, the right column peeks out: the structure is behind him. | none | Robin: his name lands beside him |\n| 3 | 3.31\u20134.75 | it, I'm Robin Bos | w:bos (lands 3.88) | ROBIN rises out of a blur at (1260, 330), 190 px bold \u22120.08em; BOS at (1260, 560); the wall's top-right square slides out from behind his shoulder, shrinking 110\u219246 px, and lands as the period after BOS. | ROBIN BOS. | the name: it blurs out upward; the period stays |\n| 4a | 4.75\u20136.12 | I build businesses around | w:build (lands 4.70) | The name blurs out (8 f); the wall grows a course: two squares rise from the bottom edge behind him and push the wall up 120 px (12 f MOVE): he builds while he says it. | none | the wall: squares leave it as periods |\n| 4b | 6.12\u20136.72 | people | w:people (lands 6.00) | A square leaves the wall from behind his shoulder (12 f, shrinks to 40 px) and lands as the period of People., which rises at (1260, 300), 104 px medium. | People. | the next square |\n| 5 | 6.72\u20137.34 | process | w:process (lands 6.60) | Second square \u2192 the period of Process. at y 440. | People. Process. | the next square |\n| 6 | 7.34\u20138.63 | and technology | w:technology (lands 7.47) | Third square \u2192 the period of Technology. at y 580 in #5078A0. Working hold: the light drifts, the breath peaks. | People. Process. Technology. | the three periods: they gather |\n| 7a | 8.63\u20139.42 | I co-founded | w:founded (lands 8.83) | The three words blur out leftward (8 f); their three periods slide together into one 90 px square at (1500, 470) (10 f MOVE). | none | the square: it becomes the tile |\n| 7b | 9.42\u201311.03 | K.B Consultancy | w:kay (lands 9.28) | The square turns K.B navy, rounds (radius 22 %) and grows to 460 px (8 f); the real K.B letters wipe in (K on w:kay, .B on w:bee). On w:consultancy (lands 9.95) Robin slides left out of the frame with the wall remainder (16 f DEPART, blur) and the tile slides into the spot he stood in, centre (780, 520). | K.B (the logo) | the tile: the rail draws out of its edge |\n| 8 | 11.03\u201312.69 | in 2024 | w:four (lands 11.83) | A 4 px rail (#BBCEE4) draws rightward from the tile's right edge along y 700 to x 1300 (12 f); above its start, 2024 rolls like an odometer at (1060, 560), 150 px medium #162F4E: 20 on w:twenty, the 2 on w:twenty2, the 4 on w:four. | 2024 | the rail: it extends and lays the months |\n| 9 | 12.69\u201314.01 | eighteen months later | w:eighteen (lands 12.55) | The rail extends to x 1800 (20 f) laying 18 sky ticks (6\u00d728) one per frame with a soft tick each; a counter rolls 0\u219218 in step above the rail's end at (1480, 560), 150 px, with \"months\" (52 px muted) beside it; 2024 dims to 60 %. | 2024 \u00b7 18 months | the tile: it grows into the field |\n| 10a | 14.01\u201314.76 | a two million | w:two (lands 13.95) | The tile's rounded rect grows to cover the frame in 14 f (navy #1B334F); its K.B letters shrink to a 110 px white mark at (120, 90); the rail, 2024 and the counter are covered; the 18 ticks stay above the field. \u20ac2M: the \u20ac slides in from the left, the 2 rolls up once, the M rises; 440 px bold white centred (960, 500); one impact. | \u20ac2M | the ticks: they become the underline |\n| 10b | 14.76\u201315.92 | euro valuation | w:valuation (lands 14.88) | The 18 ticks slide together under \u20ac2M into its underline (12 f MOVE); the site's caption rises under it in two lines: \"K.B Consultancy valuation reached within 18 months.\" (36 px #79B9FF) / \"Company-reported, following its first funding round.\" (30 px #C8E1FA 75 %). | \u20ac2M + caption | \u20ac2M: it shrinks to a header |\n| 11 | 16.11\u201317.95 | twenty-five client projects | w:twenty3 (lands 15.97) | \u20ac2M shrinks to 150 px and moves beside the K.B mark top-left (14 f); the underline and caption blur out. 25 sky squares (64 px, gap 18) rise from the bottom edge into a 5\u00d75 block at (540\u2013940, 400\u2013800), one per frame from 15.97, a tick each, the counter \"25\" rolling in step at (1080, 440), 200 px white; \"client projects\" (52 px) rises under it on w:projects. | \u20ac2M \u00b7 25 client projects | the grid: every square splits |\n| 12 | 17.95\u201319.35 | a hundred automations | w:hundred (lands 17.90) | Every square opens on its centre lines into a 2\u00d72 of 26 px squares in its own footprint (8 f, 1 f stagger per row): 100 in the same block; the counter rolls 25\u2192100; \"+\" lands on w:automations; the label rolls \"client projects\" \u2192 \"automations\". | \u20ac2M \u00b7 100+ automations | the 100 squares: they close into one block |\n| 13 | 19.47\u201320.78 | a team that's all in | w:team (lands 19.40) | The 100 squares close their gaps into one 400 px block (8 f) that grows into a rounded card 1000\u00d7700 at (1060, 540) (14 f ARRIVE) revealing the real photo: the four of them in M\u00e1laga with the 2M balloons; the counter and label blur out. On w:all (lands 19.90) a 24 px white print-frame grows around the card and the photo pushes in 100\u2192106 % over 30 f inside it. | none (\u20ac2M header stays) | the card's frame: it grows into the canvas |\n| 14a | 20.78\u201321.20 | today | w:today (lands 20.65) | The white frame grows outward to fill the screen (14 f): the navy is gone; the photo card slides left out of the frame (16 f DEPART, blur); the haze returns over 20 f. | none | Robin: he enters on the same rail |\n| 14b | 21.20\u201322.18 | I advise founders | w:advise (lands 21.07) / w:founders (lands 21.47) | Robin enters from the right edge (18 f ARRIVE, blur) to the right third, 0.70. On \"founders\" the four companies arrive from the left edge, 3 f apart, into a 2\u00d72 of cells (440\u00d7170, hairline under each): WKConversions, Top Jobs Abroad, ClearScaler (mark + name), Tale Forge; logos \u2265 90 px tall. | the four logos | the logos: they sink as the first area rises |\n| 15 | 22.18\u201323.18 | on strategy | w:strategy (lands 22.22) | The logos sink out of the bottom edge (DEPART, 3 f apart) as a square slides out from behind Robin's shoulder and lands as the period of Strategy., which rises at (140, 300), 96 px medium. | Strategy. | the square: it steps down |\n| 16 | 23.18\u201323.96 | leadership | w:leadership (lands 23.05) | The square steps down (10 f MOVE) to become the period of Leadership. rising at y 440; Strategy. dims to #586B80. | Strategy. Leadership. | the square |\n| 17a | 23.96\u201324.45 | growth | w:growth (lands 23.83) | The square steps to Growth. at y 580; Leadership. dims. | + Growth. | the square |\n| 17b | 24.45\u201325.52 | and capital | w:capital (lands 24.53) | The square steps to Capital. at y 720, in #5078A0; Growth. dims. The four areas stand in a column beside him. | + Capital. | the words: they blur out; the square drops |\n| 18a | 25.52\u201326.57 | if you're building something | w:building (lands 25.65) / w:something (lands 26.03) | The four words blur out (6 f). On \"building\" the square drops to (1100, 975) growing to 110 px: the viewer's first block; on \"something\" a second rises from the bottom edge onto it. | none | the blocks: Robin completes them |\n| 18b | 26.57\u201327.33 | that needs structure | w:structure2 (lands 26.82) | Four squares slide out from behind Robin's shoulder (12 f, 3 f apart, blur) and complete the 2\u00d73 wall at (980\u20131220, 610\u2013960): he supplies the structure. The breath settles to rest. | none | the wall's top square: it becomes the period |\n| 18c | 27.33\u201328.17 | let's talk | w:lets (lands 27.20) / w:talk (lands 27.43) | LET'S rises at (140, 300), 190 px bold; TALK at y 530; the wall's top-left square slides to the period after TALK (46 px). Nothing else moves. | LET'S TALK. | the period: it widens into the button |\n| 19 | 28.17\u201330.00 | (end card) | \u2014 | At 28.2 the period drops 160 px and widens into the ink pill \"Start a conversation \u2197\" (520\u00d796, white label 36 px) (14 f ARRIVE); at 28.7 two lines rise under it: robin@kruslockbosconsultancy.com and linkedin.com/in/robindanielbos (34 px #586B80); at 29.2 the press: the pill dips to 0.97 for 3 f and returns in 6 f, one soft success; no cursor. One slow push 1.00\u21921.03 from 28.2 to 30. | LET'S TALK. \u00b7 the button \u00b7 the two lines | end |\n\nRobin on screen: 2.6\u201310.1 s (stretch one), in the photo 19.4\u201321.0, 21.0\u201330 (stretch two): about 18 s, two entrances (from below; from the right), one exit (left), one photo, never scaled or re-placed while on screen.\n\n## Variety check\n| Beat | Strategy | Structure | Centred | Primary (kind, size) | Count | Cards | Distance | Density | Exit |\n|---|---|---|---|---|---|---|---|---|---|\n| B1 | object transformation (quantity made physical) | wall low-right of centre, empty elsewhere | no | the wall (350 px) | 1 | no | wide | empty | Robin rises in front |\n| B2 | typography + person | figure left, name right | no | Robin (940 px) | 3 | no | medium | medium | blur-out up |\n| B3 | kinetic type + the thread | figure left, stack right | no | the statement (104 px \u00d73) | 3 | no | medium | medium | gather |\n| B4 | logo + counter | tile left-centre, year right | no | the tile (460 px) | 3 | the tile | close | medium | mask (field) |\n| B5 | number filling the frame | centred on the field | yes | \u20ac2M (440 px) | 3 | no | close | one thing | shrink to header |\n| B6 | quantity made physical \u2192 photo | grid left, counter right; then one card | no / yes (card) | the grid, then the photo (1000 px) | 4 \u2192 2 | the photo card | medium | dense \u2192 one thing | frame grows |\n| B7 | real logos \u2192 list with a stepping mark | figure right, logos/list left | no | logos (\u226590 px), then the area words (96 px) | 5 \u2192 5 | no | medium | medium | blur-out |\n| B8 | callback + CTA | figure right, type left, wall between | no | LET'S TALK. (190 px) | 5 | the button | medium-calm | calm | none |\n\n## Continuity (hand-offs)\n1\u21922 the wall stays; Robin rises in front. 2\u21923 Robin stays; the wall's square becomes the period. 3\u21924 the period stays; the wall grows. 4\u21927 squares leave the wall one by one. 7\u21928 the periods gather into the tile; Robin leaves left, the tile takes his place. 8\u21929 the rail extends. 9\u219210 the tile grows into the field; the ticks become the underline. 10\u219211 \u20ac2M shrinks to a header; squares rise. 11\u219212 the squares split. 12\u219213 the squares close into the card. 13\u219214 the card's frame grows into the canvas; the card leaves left; Robin enters right. 14\u219215 the logos sink; the square from his shoulder. 15\u219218 the square steps and drops; the blocks rise; his squares complete the wall. 18\u219219 the wall's square becomes the period and the button.\n\n## Decisions on the judges' open questions\n1. Robin's distance: one size per stretch, no scaling while on screen. Stretch two is a little closer (0.70) because he re-enters; the film's three distances come from the objects (the tile alone, \u20ac2M on the field, the photo card).\n2. The hook: wordless. The structure builds first, Robin rises in front of it on \"behind\", his name explains at 3.9 s. A sound-off viewer sees a structure being built and a man stepping in front of it in the first three seconds. (The alternative, \"A BUSINESS.\" on a plinth, puts the voice on screen before any picture.)\n3. The end card: the button press without a cursor (the K.B v3 approved sign-off); the thesis line about a cursor is withdrawn.\n4. B7: the four areas as a vertical list the square steps down (one travelling period, passed words dimming), not a horizontal rail (collides with Robin at readable sizes) and not a dial pill.\n5. Rejected from every concept: the \"business\" square held at hand height, the stroke-drawn plan, the flips, the dial pill with filler years, the 7-drum odometer, the slab push, small logos held under changing words, a third identical rise of the same wall.\n",
+  "Thesis and allowed patterns": "Thesis: Robin Bos builds the structure behind businesses, and has the proof: his own company K.B, co-founded in 2024 and valued at \u20ac2M eighteen months later, 25 client projects, a team that's all in, and the founders he now advises. The film is built from his own material only: his portrait, his square mark, his words, his companies' logos, his numbers and his team's photo, so a founder watching with the sound off still knows who he is, what he has built and that he wants to talk.\nAllowed patterns: the sky-blue square (his site's own punctuation mark) as the film's thread: it stacks into a structure, becomes the period of \"ROBIN BOS.\", the periods of People. Process. Technology., the K.B tile's corner, one square per client project (25), and the period and button of \"LET'S TALK.\"; one navy colour field (his site's contact section) for the valuation moment; the real team photo from his \u20ac2M post; the real logos of the six companies on his site and the K.B client logos as the K.B site shows them; counters that roll to his real numbers (2024, 18, \u20ac2M, 25, 100+); word-by-word kinetic type on his own lines; a caption \"Company-reported, after K.B's first funding round\" under the valuation; the \"\u2197\" arrow of his site's links; the final button pressed without a cursor; the 18 month-ticks that become the underline of \u20ac2M; the 25 squares that split into 100; the four areas as a list one square steps down; the viewer's own wall completed from Robin's shoulder.\n",
+  "Facts (harvest)": "# Facts: Robin Bos (harvest, 2026-10-05)\n\nEvery claim the film may make, with its source. A figure, name or logo not here doesn't go on screen.\n\nSources:\n- [S] https://test.karlvankessel.workers.dev/ (Robin's business-card site; canonical robin-bos-profile.wkconversions.chatgpt.site), read 2026-10-05\n- [K] https://kruslockbosconsultancy.com/ (K.B Consultancy site), read 2026-10-05\n- [L] https://www.linkedin.com/posts/robindanielbos_2000000-thats-our-valuation-after-finishing-activity-7421460993999962112-Mpcv (Robin's LinkedIn post), public meta/text read 2026-10-05\n- [V] /assets/robin-bos.vcf on [S]\n- [W] web search snippets (secondary; clay.earth, trustpilot). LinkedIn profile itself returned HTTP 999 (blocked): not read.\n\n## Identity\n- Name: Robin Bos (Robin Daniel Bos per LinkedIn URL /in/robindanielbos). [S][L]\n- Title: CEO & Founder, K.B Consultancy, since October 2026. [S]\n- Earlier at K.B: Founder (Jul 2024 \u2013 Jun 2025); Founder & Chief Strategy Officer (CSO) (Jun 2025 \u2013 Oct 2026). [S]\n- Location: M\u00e1laga, Spain. [S][V]\n- Site tagline: \"People. Process. Technology.\" [S]\n- Site line: \"Building the teams, structure and systems that turn business ambition into sustainable growth.\" [S]\n- Profile headline quote: \"A business is only as strong as the structure behind it.\" [S]\n- \"I build businesses around people, process and technology.\" [S]\n- \"As CEO and Founder of K.B Consultancy, I lead company strategy, commercial growth and the development of a team trusted with meaningful responsibility. My focus is on building an organisation that can scale.\" [S]\n- \"My background spans entrepreneurship, international recruitment, executive search and business development. That experience shapes how I advise founders: with a clear commercial perspective, attention to people and a practical understanding of execution.\" [S]\n- Eyebrow: \"BUSINESS STRATEGY & COMPANY LEADERSHIP\". Baseline: COMPANY LEADERSHIP / STRATEGIC ADVISORY / BUSINESS CONSULTING. [S]\n- Footer: \"Robin Bos. CEO. ADVISOR. CONSULTANT.\" [S]\n- Stats: \"8+ years across business & people\"; \"2024 K.B Consultancy founded\". [S]\n- Four areas: Company strategy (positioning, business models, priorities, direction for long-term growth); Leadership & talent (building teams, developing people, a culture of ownership); Commercial growth (strategic partnerships, client relationships, opportunities across markets); Capital & operations (investor conversations, stakeholder alignment, the systems required to scale). [S]\n- Languages (secondary, unverified): Dutch, English, Swedish, Spanish, German, Norwegian. [W] \u2014 not for screen unless verified.\n\n## The milestone\n- \"\u20ac2M \u2014 K.B Consultancy valuation reached within 18 months. Company-reported, following its first funding round.\" [S]\n- LinkedIn post text: \"\u20ac2,000,000. That's our valuation after finishing our first ever fundraising for K.B Consultancy. \u2026 It's not the number that excites me. It's the trust behind it. \u2026 Clients are staying, growing, and pushing us further. Our team? Dialed in, ambitious, and all-in. \u2026 how we're building it and with who: Linus Kruslock, Tom van Greevenbroek, Emma Bauditz \u2026 We're coming in hot.\" 46 comments. [L]\n- Post photo: the four of them in a M\u00e1laga street holding silver \"2M\" balloons (Robin second from left, grey jacket, holding the \"2\"). [L] File: assets/linkedin/team-2m-post.jpg.\n\n## K.B Consultancy\n- \"The Embedded Tech Partner for Growing Businesses\"; \"We build the systems your business runs on, with you\"; \"We're the technical team you don't have to hire yet.\" [K]\n- Founded in 2024. Client projects completed: 25. Automations built and integrated: 100+. Projects delivered across languages: 5+. [K]\n- Process: 01 Diagnose, 02 Build, 03 Run. Services: AI, Agents & Automation; Software Development. [K]\n- Tools they build with (logos on [K]): n8n, Make, Supabase, Next.js, PostgreSQL, TypeScript, Odoo, Claude, Vite, TanStack, Spring Boot, Payload CMS, Datadog, Apollo.io, Zenchef, Expogo, aqqo, Pipedrive, Resend, GetYourGuide. [K]\n- Client logos as [K] presents them: mindmymind, Jongleren.es, Venga Travel, Olea Hospitality, Worldwiders, Abroad Internships, Custom Staffing, hirebetter.io, Tale Forge, Express Revisor, Next Job Abroad, Social Impact Factory, The Dutch Hub, Top Jobs Abroad. [K]\n- Address: C. Bolsa, 3, Distrito Centro, 29015 M\u00e1laga. hello@kruslockbosconsultancy.com. [K]\n- Logo: \"K.B\" white serif (Copperplate) on a navy rounded square (#374E6B measured). [K] Files: assets/kb/kb-logo-512.png; assets/site/kb-consultancy.png (the version on Robin's site).\n\n## Active involvement (as [S] lists them, with the logos [S] shows)\n| Company | Role | Since | Description on [S] |\n|---|---|---|---|\n| K.B Consultancy | CEO & Founder | Oct 2026 | An embedded technology partner for growing businesses. Co-founded in 2024. |\n| WKConversions | Advisor | Oct 2026 | Strategic business advisory. |\n| Top Jobs Abroad | Consultant | Sep 2026 | Business growth consulting. |\n| ClearScaler | Advisor | Jul 2026 | Strategic business advisory. (ClearScaler: a B2B distribution and growth business.) |\n| Tale Forge | Co-owner \u00b7 Advisor | Advisory since Sep 2025 | Interactive storytelling and social development through technology; for children. |\n| hirebetter.io | Co-founder & CSO | \u2014 | A recruitment automation product developed through K.B. A K.B venture. |\nCounts: \"Current roles 5\", \"Full career 22\". [S]\n\n## Career (22 positions, [S])\n- Worldwiders (M\u00e1laga): Growth and Development Manager \u2013 Executive Search (May\u2013Jun 2024); Business & Development Manager (Jan\u2013May 2024).\n- Asian Jobs Worldwide (M\u00e1laga): Business & Development Manager (Jan\u2013May 2024).\n- Multilingual Jobs Worldwide (M\u00e1laga): Business Developer & Specialist Recruiter (Sep 2023\u2013Jan 2024); Business Manager and International Recruiter (Mar\u2013Sep 2023) \u2014 \"Managed a team across two offices\u2026 In the second month, the team set a company record for weekly revenue.\"; International Recruiter (Feb\u2013Sep 2023); Talent Hunter (Sep 2022\u2013Feb 2023).\n- Ung F\u00f6retagsamhet (Stockholm): Marketing and Communication Research Intern (Feb\u2013Jun 2021).\n- Hanze University of Applied Sciences: Student Ambassador (Jul 2019\u2013Jun 2021).\n- Kay Clothes (Sweden / The Netherlands): Founder & CCO (Mar 2019\u2013May 2021).\n- Grand Fastighetsf\u00f6rmedling (Stockholm): Marketing and Brand Management Intern (Feb\u2013Jul 2019).\n- Racktime Benelux (Groningen): Accountmanager (Aug 2018\u2013Jan 2019) \u2014 sales projects involving Huawei, Heineken, Red Bull and Sony.\n- Hotel Theater Figi (Utrecht): Sales Intern (Mar\u2013May 2017).\n- FutureGuest UF (Sweden): Founder (Jun 2015\u2013Apr 2017) \u2014 hotel mystery-shopping business through Junior Achievement Sweden; second in Service of the Year in Skaraborg.\n- Sk\u00f6vde kommun / Lerdala IF: Head Football Coach (2015\u20132016) \u2014 youth team aged 12\u201313; the team won its league in 2016.\n\n## Contact\n- Email robin@kruslockbosconsultancy.com; LinkedIn linkedin.com/in/robindanielbos; phone +31 6 2432 7214 (vCard; not for screen). [S][V]\n- CTA copy on [S]: \"Start a conversation\", \"Connect\", \"Meet Robin\", \"LET'S TALK.\" (with the blue square as its period), \"For advisory, business consulting, partnerships and company-building conversations.\" [S]\n\n## The script's claims, checked\n| Line | Fact |\n|---|---|\n| A business is only as strong as the structure behind it. | [S] profile headline, verbatim |\n| I'm Robin Bos. | [S] |\n| I build businesses around people, process and technology. | [S] verbatim |\n| I co-founded K.B Consultancy in 2024. | [S] \"Co-founded in 2024\"; Founder Jul 2024 |\n| Eighteen months later: a two-million-euro valuation. | [S] \"\u20ac2M \u2026 within 18 months. Company-reported, following its first funding round\"; [L] |\n| Twenty-five client projects. A hundred automations. | [K] 25 client projects completed; 100+ automations built |\n| A team that's all in. | [L] \"Our team? Dialed in, ambitious, and all-in.\" |\n| Today I advise founders on strategy, leadership, growth and capital. | [S] \"how I advise founders\"; the four areas; Advisor roles at WKConversions, ClearScaler, Tale Forge; Consultant at Top Jobs Abroad |\n| If you're building something that needs structure, let's talk. | [S] \"LET'S TALK.\" CTA; the structure line |\n"
+ }
+}

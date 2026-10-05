@@ -76,3 +76,22 @@ export const Arrow: React.FC<{ x: number; y: number; s: number; color?: string; 
     <path d="M5 19 19 5M5 5h14v14" fill="none" stroke={color} strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" pathLength={1} strokeDasharray={`${k} 1`} />
   </svg>
 );
+
+/** An odometer digit with a narrow mask (the kit's Digit fades 14 % top and bottom, which clips large glyphs). */
+export const OdoDigit: React.FC<{ v: number; size: number; width?: number }> = ({ v, size, width = 0.62 }) => (
+  <div style={{ width: size * width, height: size, overflow: "hidden", position: "relative", WebkitMaskImage: "linear-gradient(180deg, transparent 0%, #000 5%, #000 95%, transparent 100%)" }}>
+    <div style={{ position: "absolute", left: 0, top: -v * size }}>{Array.from({ length: 22 }, (_, i) => <div key={i} style={{ height: size, lineHeight: `${size}px`, textAlign: "center" }}>{i % 10}</div>)}</div>
+  </div>
+);
+
+/** Odometer digit values for a continuous count n: each higher digit rolls only while the digit below it passes 9 → 0. */
+export const odo = (n: number, digits: number): number[] => {
+  const out: number[] = [];
+  for (let p = digits - 1; p >= 0; p--) {
+    if (p === 0) { out.push(n % 10); continue; }
+    const base = Math.floor(n / 10 ** p) % 10;
+    const lower = n % 10 ** p;                                   // the lower digits' value, continuous
+    out.push(base + Math.max(0, lower - (10 ** p - 1)));         // rolls to base+1 while the lower block goes 9…9 → 0
+  }
+  return out;
+};
