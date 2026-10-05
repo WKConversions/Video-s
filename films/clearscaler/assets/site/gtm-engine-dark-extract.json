@@ -1,0 +1,226 @@
+{
+  "title": "ClearScaler GTM Engine: be in front of every buyer who fits",
+  "url": "https://www.clearscaler.com/gtm-engine",
+  "vars": {
+    "--cs-night": "#07080c",
+    "--cs-white": "#edeff3",
+    "--cs-orange": "#fc7f48",
+    "--cs-day": "#eceae4",
+    "--cs-ink": "#100c08",
+    "--cs-red": "#c00000",
+    "--night-0": "var(--cs-night)",
+    "--night-1": "oklch(17.5% .004 273)",
+    "--night-2": "oklch(21.5% .004 273)",
+    "--night-3": "oklch(26% .004 273)",
+    "--night-ink": "var(--cs-white)",
+    "--night-ink-2": "oklch(76% .003 273)",
+    "--night-ink-3": "oklch(65% .003 273)",
+    "--night-rule": "oklch(100% 0 0/.12)",
+    "--night-rule-strong": "oklch(100% 0 0/.22)",
+    "--night-line": "oklch(29% .004 273)",
+    "--night-field-border": "oklch(100% 0 0/.36)",
+    "--section-sm": "40px",
+    "--section-md": "56px",
+    "--section-lg": "80px",
+    "--gutter": "20px",
+    "--dur-1": ".12s",
+    "--dur-2": ".24s",
+    "--dur-3": ".48s",
+    "--dur-4": ".9s",
+    "--dur-5": "1.2s",
+    "--dur-loop": "9s",
+    "--dur-press": "80ms",
+    "--rise": "12px",
+    "--radius": ".375rem"
+  },
+  "colors": [
+    [
+      "oklch(1 0 0 / 0.12)",
+      699
+    ],
+    [
+      "rgb(237, 239, 243)",
+      476
+    ],
+    [
+      "oklch(0.76 0.003 273)",
+      123
+    ],
+    [
+      "oklch(0.65 0.003 273)",
+      111
+    ],
+    [
+      "rgb(7, 8, 12)",
+      28
+    ],
+    [
+      "oklch(0.175 0.004 273)",
+      24
+    ],
+    [
+      "oklch(1 0 0 / 0.22)",
+      24
+    ],
+    [
+      "oklch(0.74 0.15 155)",
+      18
+    ],
+    [
+      "oklch(0.215 0.004 273)",
+      14
+    ],
+    [
+      "oklch(0.26 0.05 140)",
+      10
+    ],
+    [
+      "rgb(252, 127, 72)",
+      10
+    ],
+    [
+      "oklch(1 0 0 / 0.36)",
+      2
+    ],
+    [
+      "oklab(0.962234 -0.000396068 -0.00448003 / 0.384)",
+      1
+    ],
+    [
+      "color(srgb 0.0620861 0.0642686 0.0717115 / 0.82)",
+      1
+    ],
+    [
+      "color(srgb 0.027451 0.0313726 0.0470588 / 0.88)",
+      1
+    ],
+    [
+      "color(srgb 0.929412 0.937255 0.952941 / 0.05)",
+      1
+    ]
+  ],
+  "fonts": [
+    [
+      "\"Manrope Variable\", \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
+      652
+    ],
+    [
+      "\"Geist Mono Variable\", \"Geist Mono\", ui-monospace, SFMono-Regular, monospace",
+      43
+    ],
+    [
+      "\"Outfit Variable\", \"Outfit Fallback\", ui-sans-serif, system-ui, sans-serif",
+      16
+    ]
+  ],
+  "eases": [
+    [
+      "cubic-bezier(0.2, 0.7, 0.2, 1)",
+      62
+    ],
+    [
+      "cubic-bezier(0.2, 0.7, 0.2, 1), cubic-bezier(0.2, 0.7, 0.2, 1)",
+      21
+    ],
+    [
+      "cubic-bezier(0.2, 0.7, 0.2, 1), cubic-bezier(0.2, 0.7, 0.2, 1), cubic-bezier(0.2, 0.7, 0.2, 1), cubic-bezier(0.2, 0.7, 0.2, 1), cubic-bezier(0.2, 0.7, 0.2, 1)",
+      5
+    ],
+    [
+      "cubic-bezier(0.2, 0.7, 0.2, 1), linear",
+      3
+    ],
+    [
+      "cubic-bezier(0.2, 0.7, 0.2, 1), ease",
+      2
+    ]
+  ],
+  "h1": {
+    "sel": "h1",
+    "text": "Be in front of every buyer who fits.",
+    "font": "\"Outfit Variable\", \"Outfit Fallback\", ui-sans-serif, system-ui, sans-serif",
+    "size": "72px",
+    "weight": "600",
+    "tracking": "-3.24px",
+    "color": "rgb(237, 239, 243)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px"
+  },
+  "h2": {
+    "sel": "h2",
+    "text": "One loop, run every weekday.",
+    "font": "\"Outfit Variable\", \"Outfit Fallback\", ui-sans-serif, system-ui, sans-serif",
+    "size": "51.84px",
+    "weight": "560",
+    "tracking": "-1.8144px",
+    "color": "rgb(237, 239, 243)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px"
+  },
+  "body": {
+    "sel": "body",
+    "text": "We use analytics to see which pages help, and a B2B tool to see which companies visit. Your choice.\n\nReject\nAccept\nSetti",
+    "font": "\"Manrope Variable\", \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
+    "size": "16px",
+    "weight": "400",
+    "tracking": "normal",
+    "color": "rgb(237, 239, 243)",
+    "bg": "rgb(7, 8, 12)",
+    "radius": "0px"
+  },
+  "button": {
+    "sel": "a[class*=\"btn\" i], button, a[class*=\"button\" i]",
+    "text": "Reject",
+    "font": "\"Manrope Variable\", \"Manrope Fallback\", ui-sans-serif, system-ui, sans-serif",
+    "size": "14px",
+    "weight": "500",
+    "tracking": "normal",
+    "color": "rgb(237, 239, 243)",
+    "bg": "rgb(7, 8, 12)",
+    "radius": "12px"
+  },
+  "logos": [
+    {
+      "type": "svg",
+      "markup": "<svg width=\"43.94\" height=\"20\" viewBox=\"0 0 817.2 372\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\" class=\"block shrink-0\"><path d=\"M768.6 186L767.8 170.8L766.3 160.7L762.8 146L757.7 131.9L753.5 122.9L746.1 110.2L737.6 98.6L728 88.1L717.6 78.8L706.4 70.8L694.8 64.1L682.7 58.6L670.4 54.4L658 51.4L645.6 49.5L629.1 48.6L617 49.1L601.1 51L585.8 54.3L571 58.9L556.7 64.4L543.1 70.8L530 78L514.5 87.8L502.6 96.2L488.4 107.3L474.9 118.9L461.9 130.9L437.1 155.6L387.3 208.8L367.9 228.9L347.6 248.4L326 267L314.6 275.8L302.7 284.2L290.4 292.2L277.4 299.5L263.9 306.1L253.4 310.5L238.9 315.5L227.6 318.6L216.1 321L208.2 322.2L192.1 323.4L175.7 322.9L159.2 320.6L150.9 318.8L142.7 316.3L130.4 311.7L122.4 308L114.6 303.6L103.3 296L92.6 287.2L85.9 280.6L79.6 273.4L71.1 261.8L63.7 249.1L59.5 240.1L56 230.7L51.9 216.2L49.4 201.2L48.6 186L49.4 170.8L50.9 160.7L54.4 146L59.5 131.9L63.7 122.9L71.1 110.2L79.6 98.6L89.2 88.1L99.6 78.8L110.8 70.8L122.4 64.1L134.5 58.6L146.8 54.4L159.2 51.4L171.6 49.5L188.1 48.6L200.2 49.1L216.1 51L231.4 54.3L246.2 58.9L260.5 64.4L274.1 70.8L287.2 78L302.7 87.8L314.6 96.2L328.8 107.3L342.3 118.9L355.3 130.9L380.1 155.6L429.9 208.8L449.3 228.9L469.6 248.4L491.2 267L502.6 275.8L514.5 284.2L526.9 292.2L539.8 299.5L553.3 306.1L563.8 310.5L578.3 315.5L589.6 318.6L601.1 321L609 322.2L625.1 323.4L641.5 322.9L658 320.6L666.3 318.8L674.6 316.3L686.8 311.7L694.8 308L702.6 303.6L713.9 296L724.6 287.2L731.3 280.6L737.6 273.4L746.1 261.8L753.5 249.1L757.7 240.1L761.2 230.7L765.3 216.2L767.8 201.2L768.6 186Z\" stroke=\"currentColor\" stroke-width=\"97.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+    },
+    {
+      "type": "svg",
+      "markup": "<svg width=\"98.55\" height=\"20\" viewBox=\"1021 0 1833 372\" aria-hidden=\"true\" focusable=\"false\" class=\"block\"><path d=\"M1151 316Q1124 316 1100 306Q1076 296 1059 278Q1041 261 1031 237Q1022 213 1022 186Q1022 159 1031 135Q1041 111 1059 94Q1076 76 1100 66Q1123 56 1151 56Q1181 56 1204 66Q1227 76 1245 93L1212 126Q1201 115 1186 108Q1171 102 1151 102Q1134 102 1119 108Q1105 114 1094 125Q1083 136 1077 152Q1072 167 1072 186Q1072 205 1077 220Q1083 236 1094 247Q1105 258 1119 265Q1134 271 1151 271Q1172 271 1188 264Q1203 258 1213 246L1246 279Q1229 296 1205 306Q1182 316 1151 316M1315 312L1268 312L1268 53L1315 53M1432 316Q1405 316 1384 304Q1363 292 1350 272Q1338 252 1338 225Q1338 200 1350 179Q1362 159 1383 147Q1404 135 1429 135Q1454 135 1473 146Q1492 158 1503 177Q1514 197 1514 221Q1514 226 1514 231Q1513 236 1512 242L1385 242Q1387 248 1389 252Q1395 264 1406 270Q1417 276 1432 276Q1445 276 1456 272Q1467 267 1475 258L1502 286Q1490 301 1472 308Q1453 316 1432 316M1385 207L1469 207Q1468 201 1466 196Q1461 185 1451 180Q1442 174 1429 174Q1415 174 1405 180Q1394 187 1389 198Q1387 202 1385 207M1609 316Q1585 316 1566 304Q1547 292 1536 272Q1525 251 1525 226Q1525 200 1536 180Q1547 159 1566 147Q1585 135 1609 135Q1627 135 1642 143Q1652 148 1659 156L1659 139L1705 139L1705 312L1659 312L1659 295Q1652 303 1642 308Q1627 316 1609 316M1617 272Q1637 272 1649 259Q1661 246 1661 225Q1661 212 1656 201Q1650 191 1640 185Q1631 179 1617 179Q1604 179 1594 185Q1585 191 1579 201Q1574 212 1574 225Q1574 239 1579 250Q1585 261 1594 266Q1604 272 1617 272M1787 312L1740 312L1740 139L1787 139L1787 154Q1787 154 1787 154Q1803 135 1832 135Q1844 135 1854 140Q1864 144 1872 153L1843 187Q1839 182 1834 180Q1828 178 1821 178Q1806 178 1796 188Q1787 197 1787 216M1966 316Q1936 316 1914 305Q1893 295 1875 274L1907 242Q1918 257 1933 265Q1948 273 1969 273Q1988 273 1999 265Q2011 258 2011 244Q2011 233 2004 226Q1998 219 1987 214Q1976 209 1964 204Q1951 200 1938 195Q1926 190 1915 182Q1904 173 1898 161Q1891 148 1891 129Q1891 106 1903 90Q1914 73 1933 65Q1952 56 1977 56Q2003 56 2023 66Q2044 76 2057 91L2025 123Q2014 111 2002 105Q1991 100 1976 100Q1959 100 1950 106Q1940 113 1940 125Q1940 135 1946 142Q1953 148 1963 153Q1974 157 1987 162Q1999 166 2012 171Q2025 177 2035 185Q2046 194 2052 207Q2059 221 2059 240Q2059 276 2034 296Q2009 316 1966 316M2165 316Q2139 316 2118 304Q2097 292 2084 272Q2072 251 2072 226Q2072 200 2084 180Q2097 159 2118 147Q2139 135 2165 135Q2186 135 2203 143Q2220 150 2233 164L2203 195Q2196 187 2186 183Q2177 179 2165 179Q2152 179 2142 185Q2132 191 2126 201Q2120 211 2120 225Q2120 239 2126 250Q2132 260 2142 266Q2152 272 2165 272Q2177 272 2187 268Q2196 264 2203 256L2233 286Q2220 301 2203 308Q2186 316 2165 316M2321 316Q2298 316 2279 304Q2260 292 2249 272Q2238 251 2238 226Q2238 200 2249 180Q2260 159 2279 147Q2298 135 2321 135Q2340 135 2355 143Q2364 148 2372 156L2372 139L2418 139L2418 312L2372 312L2372 295Q2364 303 2355 308Q2340 316 2321 316M2330 272Q2350 272 2362 259Q2374 246 2374 225Q2374 212 2368 201Q2363 191 2353 185Q2343 179 2330 179Q2317 179 2307 185Q2297 191 2292 201Q2286 212 2286 225Q2286 239 2292 250Q2297 261 2307 266Q2317 272 2330 272M2499 312L2453 312L2453 53L2499 53M2617 316Q2589 316 2568 304Q2547 292 2535 272Q2522 252 2522 225Q2522 200 2534 179Q2546 159 2567 147Q2588 135 2613 135Q2639 135 2658 146Q2677 158 2688 177Q2699 197 2699 221Q2699 226 2698 231Q2698 236 2696 242L2570 242Q2571 248 2574 252Q2579 264 2591 270Q2602 276 2616 276Q2630 276 2640 272Q2651 267 2659 258L2687 286Q2674 301 2656 308Q2638 316 2617 316M2570 207L2654 207Q2652 201 2650 196Q2645 185 2636 180Q2627 174 2613 174Q2600 174 2589 180Q2579 187 2573 198Q2571 202 2570 207M2768 312L2721 312L2721 139L2768 139L2768 154Q2768 154 2768 154Q2783 135 2812 135Q2825 135 2835 140Q2845 144 2853 153L2824 187Q2820 182 2814 180Q2809 178 2802 178Q2787 178 2777 188Q2768 197 2768 216\" fill=\"currentColor\"></path></svg>"
+    },
+    {
+      "type": "svg",
+      "markup": "<svg width=\"48.33\" height=\"22\" viewBox=\"0 0 817.2 372\" fill=\"none\" aria-hidden=\"true\" focusable=\"false\" class=\"block shrink-0\"><path d=\"M768.6 186L767.8 170.8L766.3 160.7L762.8 146L757.7 131.9L753.5 122.9L746.1 110.2L737.6 98.6L728 88.1L717.6 78.8L706.4 70.8L694.8 64.1L682.7 58.6L670.4 54.4L658 51.4L645.6 49.5L629.1 48.6L617 49.1L601.1 51L585.8 54.3L571 58.9L556.7 64.4L543.1 70.8L530 78L514.5 87.8L502.6 96.2L488.4 107.3L474.9 118.9L461.9 130.9L437.1 155.6L387.3 208.8L367.9 228.9L347.6 248.4L326 267L314.6 275.8L302.7 284.2L290.4 292.2L277.4 299.5L263.9 306.1L253.4 310.5L238.9 315.5L227.6 318.6L216.1 321L208.2 322.2L192.1 323.4L175.7 322.9L159.2 320.6L150.9 318.8L142.7 316.3L130.4 311.7L122.4 308L114.6 303.6L103.3 296L92.6 287.2L85.9 280.6L79.6 273.4L71.1 261.8L63.7 249.1L59.5 240.1L56 230.7L51.9 216.2L49.4 201.2L48.6 186L49.4 170.8L50.9 160.7L54.4 146L59.5 131.9L63.7 122.9L71.1 110.2L79.6 98.6L89.2 88.1L99.6 78.8L110.8 70.8L122.4 64.1L134.5 58.6L146.8 54.4L159.2 51.4L171.6 49.5L188.1 48.6L200.2 49.1L216.1 51L231.4 54.3L246.2 58.9L260.5 64.4L274.1 70.8L287.2 78L302.7 87.8L314.6 96.2L328.8 107.3L342.3 118.9L355.3 130.9L380.1 155.6L429.9 208.8L449.3 228.9L469.6 248.4L491.2 267L502.6 275.8L514.5 284.2L526.9 292.2L539.8 299.5L553.3 306.1L563.8 310.5L578.3 315.5L589.6 318.6L601.1 321L609 322.2L625.1 323.4L641.5 322.9L658 320.6L666.3 318.8L674.6 316.3L686.8 311.7L694.8 308L702.6 303.6L713.9 296L724.6 287.2L731.3 280.6L737.6 273.4L746.1 261.8L753.5 249.1L757.7 240.1L761.2 230.7L765.3 216.2L767.8 201.2L768.6 186Z\" stroke=\"currentColor\" stroke-width=\"97.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"></path></svg>"
+    },
+    {
+      "type": "svg",
+      "markup": "<svg width=\"108.4\" height=\"22\" viewBox=\"1021 0 1833 372\" aria-hidden=\"true\" focusable=\"false\" class=\"block\"><path d=\"M1151 316Q1124 316 1100 306Q1076 296 1059 278Q1041 261 1031 237Q1022 213 1022 186Q1022 159 1031 135Q1041 111 1059 94Q1076 76 1100 66Q1123 56 1151 56Q1181 56 1204 66Q1227 76 1245 93L1212 126Q1201 115 1186 108Q1171 102 1151 102Q1134 102 1119 108Q1105 114 1094 125Q1083 136 1077 152Q1072 167 1072 186Q1072 205 1077 220Q1083 236 1094 247Q1105 258 1119 265Q1134 271 1151 271Q1172 271 1188 264Q1203 258 1213 246L1246 279Q1229 296 1205 306Q1182 316 1151 316M1315 312L1268 312L1268 53L1315 53M1432 316Q1405 316 1384 304Q1363 292 1350 272Q1338 252 1338 225Q1338 200 1350 179Q1362 159 1383 147Q1404 135 1429 135Q1454 135 1473 146Q1492 158 1503 177Q1514 197 1514 221Q1514 226 1514 231Q1513 236 1512 242L1385 242Q1387 248 1389 252Q1395 264 1406 270Q1417 276 1432 276Q1445 276 1456 272Q1467 267 1475 258L1502 286Q1490 301 1472 308Q1453 316 1432 316M1385 207L1469 207Q1468 201 1466 196Q1461 185 1451 180Q1442 174 1429 174Q1415 174 1405 180Q1394 187 1389 198Q1387 202 1385 207M1609 316Q1585 316 1566 304Q1547 292 1536 272Q1525 251 1525 226Q1525 200 1536 180Q1547 159 1566 147Q1585 135 1609 135Q1627 135 1642 143Q1652 148 1659 156L1659 139L1705 139L1705 312L1659 312L1659 295Q1652 303 1642 308Q1627 316 1609 316M1617 272Q1637 272 1649 259Q1661 246 1661 225Q1661 212 1656 201Q1650 191 1640 185Q1631 179 1617 179Q1604 179 1594 185Q1585 191 1579 201Q1574 212 1574 225Q1574 239 1579 250Q1585 261 1594 266Q1604 272 1617 272M1787 312L1740 312L1740 139L1787 139L1787 154Q1787 154 1787 154Q1803 135 1832 135Q1844 135 1854 140Q1864 144 1872 153L1843 187Q1839 182 1834 180Q1828 178 1821 178Q1806 178 1796 188Q1787 197 1787 216M1966 316Q1936 316 1914 305Q1893 295 1875 274L1907 242Q1918 257 1933 265Q1948 273 1969 273Q1988 273 1999 265Q2011 258 2011 244Q2011 233 2004 226Q1998 219 1987 214Q1976 209 1964 204Q1951 200 1938 195Q1926 190 1915 182Q1904 173 1898 161Q1891 148 1891 129Q1891 106 1903 90Q1914 73 1933 65Q1952 56 1977 56Q2003 56 2023 66Q2044 76 2057 91L2025 123Q2014 111 2002 105Q1991 100 1976 100Q1959 100 1950 106Q1940 113 1940 125Q1940 135 1946 142Q1953 148 1963 153Q1974 157 1987 162Q1999 166 2012 171Q2025 177 2035 185Q2046 194 2052 207Q2059 221 2059 240Q2059 276 2034 296Q2009 316 1966 316M2165 316Q2139 316 2118 304Q2097 292 2084 272Q2072 251 2072 226Q2072 200 2084 180Q2097 159 2118 147Q2139 135 2165 135Q2186 135 2203 143Q2220 150 2233 164L2203 195Q2196 187 2186 183Q2177 179 2165 179Q2152 179 2142 185Q2132 191 2126 201Q2120 211 2120 225Q2120 239 2126 250Q2132 260 2142 266Q2152 272 2165 272Q2177 272 2187 268Q2196 264 2203 256L2233 286Q2220 301 2203 308Q2186 316 2165 316M2321 316Q2298 316 2279 304Q2260 292 2249 272Q2238 251 2238 226Q2238 200 2249 180Q2260 159 2279 147Q2298 135 2321 135Q2340 135 2355 143Q2364 148 2372 156L2372 139L2418 139L2418 312L2372 312L2372 295Q2364 303 2355 308Q2340 316 2321 316M2330 272Q2350 272 2362 259Q2374 246 2374 225Q2374 212 2368 201Q2363 191 2353 185Q2343 179 2330 179Q2317 179 2307 185Q2297 191 2292 201Q2286 212 2286 225Q2286 239 2292 250Q2297 261 2307 266Q2317 272 2330 272M2499 312L2453 312L2453 53L2499 53M2617 316Q2589 316 2568 304Q2547 292 2535 272Q2522 252 2522 225Q2522 200 2534 179Q2546 159 2567 147Q2588 135 2613 135Q2639 135 2658 146Q2677 158 2688 177Q2699 197 2699 221Q2699 226 2698 231Q2698 236 2696 242L2570 242Q2571 248 2574 252Q2579 264 2591 270Q2602 276 2616 276Q2630 276 2640 272Q2651 267 2659 258L2687 286Q2674 301 2656 308Q2638 316 2617 316M2570 207L2654 207Q2652 201 2650 196Q2645 185 2636 180Q2627 174 2613 174Q2600 174 2589 180Q2579 187 2573 198Q2571 202 2570 207M2768 312L2721 312L2721 139L2768 139L2768 154Q2768 154 2768 154Q2783 135 2812 135Q2825 135 2835 140Q2845 144 2853 153L2824 187Q2820 182 2814 180Q2809 178 2802 178Q2787 178 2777 188Q2768 197 2768 216\" fill=\"currentColor\"></path></svg>"
+    }
+  ],
+  "icons": [
+    "https://www.clearscaler.com/favicon.svg",
+    "https://www.clearscaler.com/favicon-32.png",
+    "https://www.clearscaler.com/apple-touch-icon.png",
+    "https://www.clearscaler.com/og/gtm-engine.png"
+  ],
+  "images": [],
+  "headings": [
+    "Be in front of every buyer who fits.",
+    "One loop, run every weekday.",
+    "Find and score.",
+    "Write and approve.",
+    "Your name stays safe.",
+    "Reply and book.",
+    "Learn.",
+    "Report.",
+    "The first twelve weeks. From build to scale.",
+    "Engine, hire or agency.",
+    "Be seen.\nBe chosen.",
+    "WHAT WE DO",
+    "WHO IT'S FOR",
+    "COMPANY",
+    "ELSEWHERE"
+  ],
+  "text": "We use analytics to see which pages help, and a B2B tool to see which companies visit. Your choice.\nReject\nAccept\nSettings\nSkip to content\nProduct\nWho it's for\nResults\nCompany\nClient login\nBook a call\nGTM ENGINE\nBe in front of every buyer who fits.\nWe find the buyers, write to each one by email, one person at a time, and handle every answer, inside your own workspace.\nBook a call\nNo SDRs to hire · you own every lead · first sends in week four\nAlready a client? Sign in to your workspace\ngtm.clearscaler.com/leads\nDemo workspace\nLeads\n1,284 leads, from first research to booked meeting.\nProcess waiting leads\nAdd leads\nTOTAL\n1,284\nNEEDS APPROVAL\n38\nIN OUTREACH\n812\nREPLIED\n57\nTable\nPipeline\nNeeds approval\n37\nWaiting for your approval\nBrightwick Systems\nJonas Weber\nStrong fit\n40m ago\nIn outreach\n813\nEmails are going out to these leads\nFernhollow Freight\nSofia Berglund\nStrong fit\n12m ago\nOakvane Lines\nElena Duarte\nStrong fit\n1d ago\nIvelworth Components\nOmar Rios\nStrong fit\n2d ago\nLarkspan Analytics\nLeo Okafor\nBorderline\n1d ago\nReplied\n57\nGot a reply or booked a meeting\nQuillmoor Group\nMarta Vogel\nStrong fit\n1h ago\nBrightwick Systems\nDaniel Halvorsen\nStrong fit\n3h ago\nReply from Marta Vogel · Interested\nHow it runs\nInside\nTwelve weeks\nPricing\nFAQ\nWHAT IT HAS ALREADY PRODUCED\nReal · anonymised\n8\n%\nReply rate, first month of sending1\nOutbound\nB2B SERVICES · REPLIES OVER 300 CONTACTS\nCLIENTS WHO AGREED TO BE NAMED\nOne loop, run every weekday.\nEvery lead takes the same path. Nothing skips a check.\nBE SEEN\nBE CHOSEN\nFind\nResearch\nScore\nHold\nWrite\nCheck\nApprove\nSend\nFollow up\nReply\nBook\nLearn\nINSIDE THE ENGINE\n01\nFind\n02\nWrite\n03\nProtect\n04\nReply\n05\nLearn\n06\nReport\nFind and score.\nEvery account researched, every contact scored against your rubric, with the reason written down.\nWe check whether our own scores predict replies.\ngtm.clearscaler.com/leads\nDemo workspace\nSofia Berglund\nHead of Growth, Fernhollow Freight\nStrong fit\nScore breakdown\nScored 87 out of a possible 135 · qualified\nScore on 0 to 135 scale\nMinimum to contact: 60\nQualified, scored 87, 27 points above the 60-point bar\nStructural fit\n24 / 30\nPain signals\n36 / 50\nTiming signals\n14 / 20\nCommercial pressure\n8 / 20\nBuying committee\n5 / 15\nWHY IT SCORED THIS WAY\nHiring two pricing analysts, and the rates page has not moved since March 2025. The Head of Growth owns carrier sales.\nWebsite watch\nAvailable on request\nRates page · Unchanged since March 2025\nChecked 21 Sep\nWrite and approve.\nOne argument per sequence, written per person, checked before it can send.\nYour name stays safe.\nSeparate sending domains, warmed for four weeks before anything sends.\nReply and book.\nEvery reply classified, an answer drafted, sent from your mailbox in the same thread.\nReplies go out from your real mailbox, in the same thread.\nLearn.\nOffers, subject lines and copy tested on replies and meetings, never on opens.\nWinners are called on replies, with the odds shown.\nReport.\nA Monday summary of what went out, who replied and what got booked.\nThe first twelve weeks. From build to scale.\nWEEKS 1 TO 4\nBuild and warm. Nothing sends yet.\nWEEK 4\nFirst sends.\nReal · Case 01\nWEEKS 4 TO 12\nTest the offer, the subject line and the copy.\nAROUND MONTH THREE\nScale what earned it.\nWe don't promise a meeting count.\nEngine, hire or agency.\nWe report booked meetings against the retainer, and tell you when it isn't working. How each option usually runs; your own setup may differ.\nCompared on\nClearScaler\tDo it yourself\tHire in-house\tAn agency\nChannels\tEmail, written per person\tWhatever there's time for\tWhat your hire knows\tUsually cold email alone\nWho you talk to\tMagnus or Kian, who run it\tYourself\tYour hire, once trained\tAn account manager\nWarm-up\tFour weeks, own domains\tUsually skipped\tUsually skipped\tShared domains\nMessage review\tWritten per person, edited by us\tNone\tSkipped\tA sample, if you ask\nTuned\tWeekly, on results\tBy hand, when there's time\tQuarterly\tIn a monthly report\nWhat you pay for\tOne build fee, one retainer, tools included. Every lead, domain and workflow stays yours.\tTools, data and your hours\tSalary, ramp and tools\tA retainer, plus your tools\nNOT FOR YOU IF\nYou want volume for its own sake.\nYou need pipeline this fortnight.\nNobody on your side can take a sales call.\nYou want a dashboard rather than a decision.\nBEFORE YOU ASK\nWhat does it cost?\nWho writes the emails, and do I approve every send?\nHow long before the first meeting is booked?\nWill this hurt our domain or brand?\nWho owns the data and the domains?\nCan you run just one channel?\nBe seen.\nBe chosen.\nBuilt once. Tuned every week.\nBook a call\nGet your free distribution plan\n30 minutes · no pitch\nSOURCES1 Reply rate, first month of sending (Replies over 300 contacts, 12 Aug to 12 Sep 2026. Campaign report) · As of 25 September 2026\nProduct views use a demo workspace with fictional companies. Client figures are marked Real and link to their source.\nWe fix distribution for B2B companies.\nBook a call\nMálaga, Spain · Europe and the UAE\nWHAT WE DO\nGTM Engine\nPaid Acquisition\nConversion\nFree distribution plan\nWHO IT'S FOR\nRecruitment agencies\nMarketing & creative agencies\nLogistics & freight companies\nB2B SaaS companies\nB2B companies\nCOMPANY\nResults\nAbout\nBlog\nContact\nClient login\nELSEWHERE\nLinkedIn\nInstagram\nWhatsApp\nmagnus@clearscaler.com\n© 2026 ClearScaler\nPrivacy\nCookies\nCookie settings\nPause animations",
+  "htmlClass": "dark"
+}

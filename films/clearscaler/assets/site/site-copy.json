@@ -1,0 +1,313 @@
+{
+ "_source": "www.clearscaler.com JS bundle index-fEDpQcFv.js, 2026-10-05 (copy constants the pages render; twelveWeeks/notForYou long forms are in the bundle, check the page before quoting)",
+ "company": {
+  "name": "ClearScaler",
+  "tagline": "We fix distribution for B2B companies.",
+  "city": "Málaga",
+  "country": "Spain",
+  "email": "magnus@clearscaler.com",
+  "whatsapp": "https://wa.me/4746671367",
+  "whatsappLabel": "+47 466 71 367",
+  "linkedin": "https://www.linkedin.com/company/clearscaler/",
+  "instagram": "https://www.instagram.com/clearscaler/",
+  "bookingUrl": "https://crm.clearscaler.com/book/intro-30",
+  "appSignInUrl": "https://gtm.clearscaler.com/sign-in"
+ },
+ "founders": [
+  {
+   "name": "Magnus",
+   "fullName": "Magnus Motzfeldt-Berge",
+   "role": "Co-founder",
+   "background": "Oslo to Málaga",
+   "photo": "/images/magnus.jpg",
+   "linkedin": "https://www.linkedin.com/in/magnus-motzfeldt-berge-9961b7183/",
+   "bio": [
+    "Started on the phone in Oslo, selling telecoms and then advertising to small businesses. Years of first-line sales, where it became obvious that most companies do not have an offer problem, they have a reach problem.",
+    "Then the operations side: fleet and logistics operations across four countries, finance and operations for a property business, and a COO seat at a scale-up. Moved to Málaga to work in international recruitment, and started ClearScaler out of the thing that kept going wrong in all of them."
+   ]
+  },
+  {
+   "name": "Kian",
+   "fullName": "Kian Khamoushi",
+   "role": "Co-founder",
+   "background": "Gothenburg and Barcelona to Málaga",
+   "photo": "/images/kian.jpg",
+   "linkedin": "https://www.linkedin.com/in/kian-k-27b916199/",
+   "bio": [
+    "Key accounts in automotive through a rapid growth phase, then a year and a half consulting businesses on their paid campaigns, their acquisition and whether the spend was actually producing customers.",
+    "After that fintech, as the founding salesperson for the Nordics, building the territory from nothing and running the full cycle across Sweden, Denmark, Norway and Finland. Same lesson from the ad platform side and the closing side: the marketing and the selling were never talking to each other."
+   ]
+  }
+ ],
+ "results": [
+  {
+   "id": "reply-rate",
+   "figure": "8%",
+   "claimId": "reply-m1",
+   "headline": "reply rate from 300 hand-picked contacts",
+   "client": "A B2B services company",
+   "channel": "Outbound",
+   "window": "First month of sending",
+   "summary": "A 55% open rate and an 8% reply rate in the first month, both well above the industry standard for cold outreach. Roughly one answer for every twelve people contacted.",
+   "detail": [
+    "That did not come from clever copy. It came from the work before the copy: dedicated sending domains, warmed mailboxes, and a verified list built to a tight buyer profile rather than bought in bulk.",
+    "Three hundred hand-picked contacts on a four-step sequence is not a volume play, it is phase one, and it is deliberately expensive. What it buys is a readable result: which buyers replied, which angle landed, which offer produced meetings rather than polite answers.",
+    "The winners then get templatised, the research and drafting get automated, and volume goes up on the version that earned it."
+   ],
+   "metrics": [
+    {
+     "label": "Reply rate",
+     "value": "8%",
+     "claimId": "reply-m1"
+    },
+    {
+     "label": "Open rate",
+     "value": "55%",
+     "claimId": "open-m1"
+    },
+    {
+     "label": "Emails sent",
+     "value": "1,200",
+     "claimId": "sends-m1"
+    },
+    {
+     "label": "People contacted",
+     "value": "300",
+     "claimId": "contacts-m1"
+    }
+   ]
+  },
+  {
+   "id": "spend-6x",
+   "figure": "6x spend",
+   "claimId": "spend-6x",
+   "headline": "with return going up, not down",
+   "client": "A travel logistics business in the UAE",
+   "channel": "Paid acquisition",
+   "window": "Seven months",
+   "summary": "Monthly spend went from $3k to $20k over seven months. Return on ad spend went from 3x to 5x on the way up.",
+   "detail": [
+    "That is unusual. Efficiency normally decays as budget rises and most accounts accept it as physics.",
+    "The real problem sat underneath: conversion tracking was counting actions that carried no value, and the bidding was trained on them. The algorithm was finding more of the wrong customer, efficiently.",
+    "Three things had to be true before any budget moved. The measurement was rebuilt first, the audience narrowed to travellers arriving in the UAE, and the client's team changed the landing page after our review."
+   ],
+   "metrics": [
+    {
+     "label": "Monthly spend",
+     "value": "$3k to $20k",
+     "claimId": "spend-6x"
+    },
+    {
+     "label": "Return on ad spend",
+     "value": "3x to 5x",
+     "claimId": "roas-3-5"
+    },
+    {
+     "label": "Monthly revenue",
+     "value": "$15k to $100k+",
+     "claimId": "revenue-15-100"
+    },
+    {
+     "label": "New customers from paid",
+     "value": "~90%",
+     "claimId": "paid-share-90"
+    }
+   ]
+  },
+  {
+   "id": "mobile-57-99",
+   "figure": "57 to 99",
+   "claimId": "mobile-57-99",
+   "headline": "mobile score, rebuilt around booking",
+   "client": "A premium brand in Dubai",
+   "channel": "Conversion",
+   "window": "Rebuild, then two weeks",
+   "summary": "A site scoring 57 on mobile performance, rebuilt to 99, with booking treated as the design brief rather than a page buried in the navigation.",
+   "detail": [
+    "The kind of place where walking in is most of the pitch. Except almost every customer met a phone screen first, on a street, deciding where to go.",
+    "On a mobile connection a score of 57 means people left before the page finished deciding what to show them. No bounce report tells you those visitors existed. They were gone before the analytics had anything to record.",
+    "Within two weeks of launch the owner reported that new customers were arriving with a different expectation of the business. Same room, same team, same prices. The site had been arguing against the business, and losing."
+   ],
+   "metrics": [
+    {
+     "label": "Mobile performance",
+     "value": "57 to 99",
+     "claimId": "mobile-57-99"
+    },
+    {
+     "label": "Booking",
+     "value": "The design brief"
+    },
+    {
+     "label": "Extra ad budget",
+     "value": "None"
+    },
+    {
+     "label": "Time to perception shift",
+     "value": "Two weeks"
+    }
+   ]
+  },
+  {
+   "id": "cost-per-cv",
+   "figure": "€3.20",
+   "claimId": "cpcv",
+   "headline": "per application",
+   "client": "Top Jobs Abroad",
+   "channel": "Paid acquisition",
+   "window": "Six months",
+   "summary": "300+ applications for under €1,200 in total spend, at €3.20 to €4.50 each.",
+   "detail": [],
+   "metrics": [
+    {
+     "label": "Applications",
+     "value": "300+",
+     "claimId": "applications-300"
+    },
+    {
+     "label": "Total spend",
+     "value": "Under €1,200",
+     "claimId": "applications-300"
+    },
+    {
+     "label": "Cost per application",
+     "value": "€3.20 to €4.50",
+     "claimId": "cpcv"
+    },
+    {
+     "label": "Return",
+     "value": "~10x",
+     "claimId": "return-10x"
+    }
+   ]
+  },
+  {
+   "id": "conversion-lift",
+   "figure": "+20%",
+   "claimId": "conv-20",
+   "headline": "conversion, on traffic already being paid for",
+   "client": "A travel logistics business in the UAE",
+   "channel": "Conversion",
+   "window": "After our page review, changes built by the client's team",
+   "summary": "No extra budget, no new channel, no new creative. The same visitors, meeting a page built to convert them instead of a page that happened to exist.",
+   "detail": [
+    "A conversion improvement applies to every visitor from every channel, forever, including the ones you have not bought yet. A budget increase applies only to the visitors it buys, and it stops the day you stop paying.",
+    "Which is why order matters. If your page converts at one percent and you double the budget, you have bought twice as many people who leave. The only number that moved was the cost."
+   ],
+   "metrics": [
+    {
+     "label": "Conversion lift",
+     "value": "+20%",
+     "claimId": "conv-20"
+    },
+    {
+     "label": "Extra spend",
+     "value": "$0"
+    },
+    {
+     "label": "New creative",
+     "value": "None"
+    },
+    {
+     "label": "Applies to",
+     "value": "Every channel"
+    }
+   ]
+  }
+ ],
+ "phrase": {
+  "phrase": "by email, one person at a time",
+  "short": "Email, written per person"
+ },
+ "lede": "We find your B2B buyers, reach them by email, one person at a time, and book the meetings into your calendar.",
+ "firstSends": {
+  "chip": "First sends in week four",
+  "sentence": "Weeks one to four we build and warm, and nothing sends. The first campaigns go out around week four.",
+  "warmup": "Four weeks, own domains"
+ },
+ "whoWrites": {
+  "answer": "You never have to write anything. Our system drafts, a person on our side edits every message, and in the early months you approve every send before it goes out. That is deliberate: every approval, edit and rejection trains the engine on your market, and as the pattern gets clear your approvals narrow to the exceptions.",
+  "step": "Written per person, edited by us, approved by you in the early months.",
+  "review": "Written per person, edited by us",
+  "stamp": "Approved"
+ },
+ "facts": {
+  "call": "30 minutes",
+  "quiz": "Four quick questions",
+  "quizTime": "About 3 minutes",
+  "channels": "Three channels",
+  "team": "Two people",
+  "reply": "within one working day",
+  "build": "Weeks 1 to 4"
+ },
+ "plan": {
+  "short": "within two working days",
+  "workingDays": 2
+ },
+ "cost": {
+  "answer": "The build fee is scoped on how many sending domains and mailboxes you need, the size of the list and how many channels run. The retainer is one number per month and holds while that setup holds. Nothing is charged per send and there are no tiers. You get both numbers, in writing, before anything is built."
+ },
+ "promise": "Meetings you show up to, not a number we promise.",
+ "twelveWeeks": [
+  {
+   "n": "01",
+   "window": "Weeks 1 to 4",
+   "title": "Build and warm",
+   "desc": "Domains bought and authenticated, mailboxes warmed, ICP and offer defined, targeting and scoring configured, CRM wired up. Nothing sends yet, and that is the point. A cold domain that starts sending on day two burns itself.",
+   "outcome": "Infrastructure that lands in the inbox."
+  },
+  {
+   "n": "02",
+   "window": "Week 4 onward",
+   "title": "Send and test",
+   "desc": "Campaigns go live. We test the offer, the subject line and the copy against each other rather than guessing which one wins. You approve while the engine learns your market, and every approval, rejection and rewrite is data going back in.",
+   "outcome": "Real replies, and a readable signal."
+  },
+  {
+   "n": "03",
+   "window": "Around month three",
+   "title": "Patterns become obvious",
+   "desc": "The data says which offer, which signal and which subject line produce opens and replies, and which segment was wishful thinking. The winners get templatised and volume goes up on the version that earned it.",
+   "outcome": "Targeting you can defend in a sentence."
+  },
+  {
+   "n": "04",
+   "window": "Month six and beyond",
+   "title": "It learns your objections",
+   "desc": "Call transcripts feed back into the engine, so the copy starts pre-empting the objections your buyers actually raise. Replies get warmer rather than just more frequent. A campaign ends and takes its learning with it. An engine keeps it.",
+   "outcome": "A sales system that improves with age."
+  }
+ ],
+ "notForYou": [
+  "You want volume for its own sake. We run small until the replies are readable, and that is slower in month one on purpose.",
+  "You need pipeline this fortnight. Domains and mailboxes need about four weeks of warming before the first campaign is safe to send.",
+  "Nobody on your side can take a sales call. We book qualified meetings, we do not close them for you.",
+  "You want a dashboard rather than a decision. We report qualified conversations and return against the retainer, not impressions."
+ ],
+ "faq": [
+  {
+   "q": "How long before the first meeting is booked?",
+   "a": "Weeks one to four we build and warm, and nothing sends. The first campaigns go out around week four. First replies usually arrive in the first weeks of sending. Anyone promising booked meetings in week one is either sending from a cold domain or sending on somebody else's. Meetings you show up to, not a number we promise."
+  },
+  {
+   "q": "Who writes the emails, and do I approve every send?",
+   "a": "You never have to write anything. Our system drafts, a person on our side edits every message, and in the early months you approve every send before it goes out. That is deliberate: every approval, edit and rejection trains the engine on your market, and as the pattern gets clear your approvals narrow to the exceptions."
+  },
+  {
+   "q": "What does it cost?",
+   "a": "The build fee is scoped on how many sending domains and mailboxes you need, the size of the list and how many channels run. The retainer is one number per month and holds while that setup holds. Nothing is charged per send and there are no tiers. You get both numbers, in writing, before anything is built."
+  },
+  {
+   "q": "Who owns the data and the domains?",
+   "a": "You do. Every lead, every sending domain, every workflow and all the campaign history. If you leave, it leaves with you."
+  },
+  {
+   "q": "Why are some case studies anonymous?",
+   "a": "Because most of what happened is sensitive to the client rather than to us: what they were spending, what was broken, and what it cost them to find out. We keep the part that is ours to publish and drop the part that is theirs. The figures survive anonymisation intact, and they are the only part a reader can actually use."
+  },
+  {
+   "q": "Can you run just one channel?",
+   "a": "Yes, and we will run it properly. Connected, the three compound: outbound replies tell you the real objection in the buyer's own words within weeks, that objection becomes the ad angle, paid tests it at volume in days, and what converts on the page tells both channels which promise is landing."
+  }
+ ]
+}
