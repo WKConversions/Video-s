@@ -43,7 +43,7 @@ export const Line: React.FC<{ g: number; words: W[]; x: number; y: number; size:
       const o = out ? T.k(g, off(out, i * 0.035), outDur, DEPART) : 0;
       const m = w.mark ? T.k(g, w.mark, 0.32, MOVE) : 0;
       return (
-        <span key={i} style={{ position: "relative", isolation: "isolate", display: "inline-block", opacity: Math.min(1, k * 1.7) * (1 - o),
+        <span key={i} style={{ position: "relative", isolation: "isolate", display: "inline-block", willChange: "transform", opacity: Math.min(1, k * 1.7) * (1 - o),
           ...(w.serif ? { fontFamily: KIT.serif, fontStyle: "italic", fontWeight: 400, letterSpacing: "-0.02em" } : {}),
           transform: split ? `translate(${(i - (words.length - 1) / 2) * o * size * 0.9}px, ${(1 - k) * dy * size}px)` : `translateY(${((1 - k) * dy - o * 0.3) * size}px)`, filter: k < 1 || o > 0 ? `blur(${(1 - k) * 9 + o * 9}px)` : undefined,
           color: w.color ?? (w.accent ? KIT.word : color) }}>

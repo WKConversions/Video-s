@@ -109,6 +109,30 @@ Decisions kept against findings (for Karl):
 - The navy field flat, not the contact section's gradient: a large gradient under the breathing camera bands.
 - The navy held for 6.7 s through the proof (one judge preferred contracting it after €2M): open question for Karl.
 
+## Art-director pass, round 2 (cold eyes on the draft-3 frames, and the draft-4 measurements): revision log
+
+Cold eyes (one reader, the 34 frames, no plan): two-second verdict "scroll past"; strongest frame the team photo (f0597), weakest the grid mid-build (f0501); eight notes. The measurements of draft 4: moving 93 %, longest still 0.43 s, median 3 things on screen, 17 of 18 phrases with a new visual ("behind" static), one LURCH (the counter), one SHAKE (Growth), 23 pops.
+
+| Scene | Before | After | Why |
+|---|---|---|---|
+| B1 hook (f0036) | the first four squares stood as a lone 2×2 beside the cut-out | the rise order builds column one and its footing first (three in a column, then an L); the 2×2 never stands alone; the squares rise out of a blur 400 px below, fading in, instead of entering at the frame's bottom edge | cold eyes read a Windows logo and a Canva cut-out in the two-second window (critical); the edge entries were pops (QC) |
+| B1 "behind" | the wall tucked 90 px: measured static (4 % of the frame) | the wall tucks 150 px and Robin comes 3 % forward from his feet | "behind it" needs a depth move that reads; every phrase gets its visual (phrase check) |
+| B4 "2024" + "18" (f0402) | the two numbers jammed into "202418" | the months 95 px further right: a clear gap, half a digit wide | two numbers must never read as one (cold eyes, major) |
+| B5 "€" | the € arrived at a quarter opacity on its first frame (pop 4.3×) | it fades in over 4 frames as it slides | a pop (QC) |
+| B6 the count (f0501) | 25 squares landing one frame apart made the odometer flick one digit per frame (pop 15×, LURCH 1607 px/s); no label until "projects"; a square mid-rise 150 px under the grid | the squares land 0.05 s apart, rising 300 px out of a blur and fading in; the count eases in from zero slope and reaches 25 with the last square; the counter fades in over 0.25 s; the label arrives with the count, on "five" | a roll at one digit per frame is a flicker; a number without its label is a mid-tween (cold eyes, major) |
+| B6 "a hundred" | the odometer rolled 75 digits in 8 frames: "99" → "100" as a pop (12.8×) | 25 rolls up and 100 rolls in, the same roll as the label beneath it; the "+" moves with the number's width | one gesture, no flicker (QC) |
+| B7 Robin two | entered from the right at 150 px per frame (pop 10×) | fades in over his first four frames; the final's motion blur carries the rest | a pop (QC) |
+| B8 LET'S (f0858) | the straight apostrophe jammed against the T at −0.08 em tracking | a typographic apostrophe with a hair space either side | the apostrophe must read as its own glyph (cold eyes, minor) |
+| all Lines | slow text rises stepped whole pixels: SHAKE on "Growth" (2.7 px steps), a "look" on ROBIN BOS | the words on their own compositor layer; the final rendered in four contiguous chunks so each layer's raster history is continuous | regular steps read as a tremor (QC) |
+
+Decisions kept against the cold-eyes notes (for Karl, see notes.md):
+- B3 People. Process. Technology. as the site's own stacked statement (cold eyes: "a bullet reveal, PowerPoint"): kept from round 1; the periods arriving from his wall is the move that a bullet list never has. Karl decides whether a picture replaces it.
+- The four logos in their own colours at his shoulder (cold eyes: "logo soup"): asset-strategy rule, third-party logos as their sites present them; four is the count the facts allow. Karl decides between colour, mono and fewer.
+- The four areas in the proof's 2×2 cells (cold eyes: "the word-list device again"): round 1 already moved them out of B3's column into the grid; the stepping period is the thread. Kept.
+- The K.B tile (cold eyes: "an app icon"): it is his mark as the site renders it (rounded tile, the wordmark). Kept.
+- The viewer's wall at the end (cold eyes: "a Tetris stack"): the concept's payoff, the thin tower braced into a wall whose top-left square is the period of TALK. Kept.
+- The 5×5 wall of 25 and the 100 small squares (busy peak at 19 s, 35 motions): the proof's one swarm, decided in round 1.
+
 ## Rules from the judgement pass (applied to the whole film)
 - Every number on screen is one of his figures at every frame: a digit rises whole or rolls in from blank; no odometer passes through 2023, €1M or 00.
 - A number and its label change in the same gesture; a counter never exceeds the units standing on screen.
@@ -120,3 +144,10 @@ Decisions kept against findings (for Karl):
 - Third-party material appears as the sites present it; every name readable at 390 px.
 - No still over 0.5 s before the end card; the first face inside the two-second window.
 - frames.json describes what renders; the frames, the sheet and the QC come from the same render before review.
+
+Rules from round 2:
+- A counter never rolls faster than one digit per two frames; a number and its label arrive in the same gesture.
+- Nothing enters at the frame's edge: a riser starts inside the frame, out of a blur, fading in over its first 40 %.
+- Two numbers side by side keep at least half a digit of clear space.
+- Blocks never stand as a lone 2×2 with equal gaps (a logo): a wall builds as a column and its footing first.
+- A fast entry of a large object (a cut-out, a type run) carries a 4-frame fade as well as its blur.
