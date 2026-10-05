@@ -492,6 +492,21 @@
    "B8: the complete end card held under half a second",
    "button 27.9 s, lines 28.3 s: holds 1.3 s",
    "the contact lines are the conversion"
+  ],
+  [
+   "B2–B3: the periods left the wall from its pre-tuck position (a 60 px jump)",
+   "they leave from where the wall stands now",
+   "a square never jumps"
+  ],
+  [
+   "the light: a 190 px CSS blur whose rings changed between frames",
+   "a radial gradient under the grain",
+   "deterministic"
+  ],
+  [
+   "B3: passed statement words stayed at full strength",
+   "they dim to 55 % as the next arrives, the areas' rule",
+   "one rule film-wide"
   ]
  ],
  "assets": [

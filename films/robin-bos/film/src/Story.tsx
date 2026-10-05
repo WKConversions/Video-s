@@ -6,12 +6,20 @@
 import React from "react";
 import { Img, staticFile } from "remotion";
 import { T } from "./clock";
-import { ARRIVE, DEPART, MOVE, Line, Bloom, Roll, measure, lerp } from "./kinetic";
+import { ARRIVE, DEPART, MOVE, Line, Roll, measure, lerp } from "./kinetic";
 import { C, SHADOW } from "./lib";
 import { Portrait, Sq, Logo, Text, Rule, OdoDigit, odo } from "./parts";
 
 const cl = (t: number) => Math.min(1, Math.max(0, t));
 const F = (pos: string) => T.f(pos);
+
+/** The light behind Robin: one soft disc as a radial gradient (deterministic; a CSS blur this large renders its rings
+ *  differently from frame to frame). Centred on (x, y), radius r; k scales its presence. */
+const Light: React.FC<{ x: number; y: number; r: number; color: string; k: number; style?: React.CSSProperties }> = ({ x, y, r, color, k, style }) =>
+  k <= 0 ? null : (
+    <div style={{ position: "absolute", left: 0, top: 0, width: 2 * r, height: 2 * r, borderRadius: "50%", background: `radial-gradient(closest-side, ${color} 0%, ${color}cc 30%, ${color}55 62%, transparent 100%)`, opacity: 0.6 * k,
+      transform: `translate(${x - r}px, ${y - r}px) scale(${0.6 + 0.4 * k})`, willChange: "transform", ...style }} />
+  );
 
 // ---- geometry ----
 const S = 110, GAP = 14, PITCH = S + GAP;                        // the wall's squares
@@ -135,7 +143,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       {/* canvas: the site's haze, white where the page is white */}
       <div data-probe="canvas" style={{ position: "absolute", left: -300, top: -300, width: 2520, height: 1680, background: `linear-gradient(165deg, ${C.canvas} 0%, ${C.canvas} 40%, ${C.haze} 80%, ${C.mist} 100%)` }} />
       {/* the light: the portrait backdrop's sky as one soft disc, behind Robin only */}
-      {!fieldOn && g < F("w:consultancy") + 10 && <Bloom g={g} x={ROBIN1.x + 60 + exitX} y={520} r={430} color={C.sky} k={(0.55 + 0.45 * robin1In) * (1 - robin1Exit) * (0.97 + 0.03 * Math.sin(g / 45))} drift={0} />}
+      {!fieldOn && g < F("w:consultancy") + 10 && <Light x={ROBIN1.x + 60 + exitX} y={520} r={470} color={C.sky} k={(0.55 + 0.45 * robin1In) * (1 - robin1Exit) * (0.97 + 0.03 * Math.sin(g / 45))} />}
 
       {/* ---------- stretch one: the wall, its squares, the periods ---------- */}
       {wallVisible && (
@@ -156,10 +164,10 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
           })}
         </div>
       )}
-      {between(g, "w:bos-0.45", "w:businesses-0.02") && <Travel g={g} at="w:bos" dur={0.4} early={0.45} from={[cell1(1, 0).x - 90, cell1(1, 0).y - lift, S]} to={[periodBOS.x, periodBOS.y, PER.display]} name="period" />}
+      {between(g, "w:bos-0.45", "w:businesses-0.02") && <Travel g={g} at="w:bos" dur={0.4} early={0.45} from={[cell1(1, 0).x - tuck, cell1(1, 0).y - lift + settle * 6, S]} to={[periodBOS.x, periodBOS.y, PER.display]} name="period" />}
       {between(g, "w:businesses-0.02", "w:founded") && <Travel g={g} at="w:businesses" dur={0.4} early={0.0} from={[periodBOS.x, periodBOS.y, PER.display]} to={[pPeople.x, pPeople.y, PER.state]} name="period" />}
-      {between(g, "w:process-0.2", "w:founded") && <Travel g={g} at="w:process" dur={0.4} early={0.2} from={[cell1(1, 1).x - 90, cell1(1, 1).y - PITCH, S]} to={[pProcess.x, pProcess.y, PER.state]} name="period2" />}
-      {between(g, "w:technology-0.45", "w:founded") && <Travel g={g} at="w:technology" dur={0.4} early={0.45} from={[cell1(0, 1).x - 90, cell1(0, 1).y - PITCH, S]} to={[pTech.x, pTech.y, PER.state]} name="period3" />}
+      {between(g, "w:process-0.2", "w:founded") && <Travel g={g} at="w:process" dur={0.4} early={0.2} from={[cell1(1, 1).x - tuck, cell1(1, 1).y - PITCH + 6, S]} to={[pProcess.x, pProcess.y, PER.state]} name="period2" />}
+      {between(g, "w:technology-0.45", "w:founded") && <Travel g={g} at="w:technology" dur={0.4} early={0.45} from={[cell1(0, 1).x - tuck, cell1(0, 1).y - PITCH + 6, S]} to={[pTech.x, pTech.y, PER.state]} name="period3" />}
       {/* the three periods gather into one square on "co-founded", after the words have gone */}
       {between(g, "w:founded", "w:kay-0.13") && [pPeople, pProcess, pTech].map((p, i) => <Travel key={i} g={g} at="w:founded" dur={0.32} from={[p.x + 120, p.y, PER.state]} to={[gatherPt.x, gatherPt.y, 90]} early={0.0} name={`gather${i}`} />)}
 
@@ -172,9 +180,9 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       )}
       {between(g, "w:people-0.4", "w:kay") && (
         <div data-probe="statement" style={{ position: "absolute", left: 0, top: 0, transform: `translateX(${stateOut * 120}px)`, opacity: 1 - stateOut, filter: stateOut > 0 ? `blur(${stateOut * 8}px)` : undefined }}>
-          <Line g={g} words={[{ t: "People", at: "w:people-0.13" }]} x={TYPE1} y={stRow(0)} size={STATE} weight={500} />
-          <Line g={g} words={[{ t: "Process", at: "w:process-0.13" }]} x={TYPE1} y={stRow(1)} size={STATE} weight={500} />
-          <Line g={g} words={[{ t: "Technology", at: "w:technology-0.13", color: C.blue }]} x={TYPE1} y={stRow(2)} size={STATE} weight={500} />
+          <Line g={g} words={[{ t: "People", at: "w:people-0.13" }]} x={TYPE1} y={stRow(0)} size={STATE} weight={500} dy={0.6} style={{ opacity: 1 - 0.45 * k(g, "w:process", 0.27, MOVE, 0.13) }} />
+          <Line g={g} words={[{ t: "Process", at: "w:process-0.13" }]} x={TYPE1} y={stRow(1)} size={STATE} weight={500} dy={0.6} style={{ opacity: 1 - 0.45 * k(g, "w:technology", 0.27, MOVE, 0.13) }} />
+          <Line g={g} words={[{ t: "Technology", at: "w:technology-0.13", color: C.blue }]} x={TYPE1} y={stRow(2)} size={STATE} weight={500} dy={0.6} />
         </div>
       )}
 
@@ -211,12 +219,12 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
         const rad = lerp(tileS * TILE.r, 0, field);
         const navy = field > 0 ? mixc(C.kb, C.field, (field - 0.75) * 4) : mixc(C.accent, C.kb, tileIn * 1.5);
         const logoS = lerp(tileS, 110, field), logoX = lerp(tileX, 120 + 55, field), logoY = lerp(tileY, 100 + 55, field);
-        const wipeK = k(g, "w:kay", 0.27, MOVE, 0.0), wipeB = k(g, "w:bee", 0.27, MOVE, 0.0);
+        const wipeK = k(g, "w:kay", 0.4, MOVE, 0.05), wipeB = k(g, "w:bee", 0.4, MOVE, 0.05);
         return (
           <>
             <div data-probe="tile" style={{ position: "absolute", left: 0, top: 0, width: w, height: h, borderRadius: rad, background: navy, transform: `translate(${cx - w / 2}px, ${cy - h / 2}px)`, boxShadow: field < 1 ? SHADOW.card : undefined, willChange: "transform" }} />
             <div data-probe="kb" style={{ position: "absolute", left: 0, top: 0, width: logoS, height: logoS, borderRadius: logoS * TILE.r, overflow: "hidden", transform: `translate(${logoX - logoS / 2}px, ${logoY - logoS / 2}px)`, willChange: "transform", opacity: tileIn }}>
-              <Img src={staticFile("img/kb-consultancy.png")} style={{ width: "100%", height: "100%", display: "block", WebkitMaskImage: `linear-gradient(90deg, #000 ${Math.max(wipeK * 0.56, wipeB) * 112 - 12}%, transparent ${Math.max(wipeK * 0.56, wipeB) * 112}%)`, maskImage: `linear-gradient(90deg, #000 ${Math.max(wipeK * 0.56, wipeB) * 112 - 12}%, transparent ${Math.max(wipeK * 0.56, wipeB) * 112}%)` }} />
+              <Img src={staticFile("img/kb-consultancy.png")} style={{ width: "100%", height: "100%", display: "block", WebkitMaskImage: `linear-gradient(90deg, #000 ${Math.max(wipeK * 0.56, wipeB) * 130 - 30}%, transparent ${Math.max(wipeK * 0.56, wipeB) * 130}%)`, maskImage: `linear-gradient(90deg, #000 ${Math.max(wipeK * 0.56, wipeB) * 130 - 30}%, transparent ${Math.max(wipeK * 0.56, wipeB) * 130}%)` }} />
             </div>
           </>
         );
@@ -326,7 +334,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       })()}
 
       {/* the light, stretch two */}
-      {g >= F("w:advise") - 12 && <Bloom g={g} x={ROBIN2.x - 60} y={520} r={430} color={C.sky} k={cl((g - F("w:advise") + 12) / 20) * 0.9 * (0.97 + 0.03 * Math.sin(g / 45))} drift={0} style={{ zIndex: 2 }} />}
+      {g >= F("w:advise") - 12 && <Light x={ROBIN2.x - 60} y={520} r={470} color={C.sky} k={cl((g - F("w:advise") + 12) / 20) * 0.9 * (0.97 + 0.03 * Math.sin(g / 45))} style={{ zIndex: 2 }} />}
 
       {/* the four companies, stretch two: a loose 2×2 gathered at Robin's shoulder, no table */}
       {g >= F("w:founders") - 10 && g < F("w:strategy") + 10 && (() => {
@@ -421,7 +429,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
         </div>
       )}
           {/* a static grain over everything: the soft light bands in 8-bit video, and a band that creeps reads as a tremor */}
-      <div data-probe="grain" style={{ position: "absolute", zIndex: 6, left: 0, top: 0, width: 1920, height: 1080, opacity: 0.035, pointerEvents: "none", backgroundImage: `url("data:image/svg+xml;utf8,${encodeURIComponent('<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'320\' height=\'320\'><filter id=\'n\'><feTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'2\' stitchTiles=\'stitch\' seed=\'7\'/><feColorMatrix type=\'saturate\' values=\'0\'/></filter><rect width=\'100%\' height=\'100%\' filter=\'url(#n)\'/></svg>')}")`, backgroundRepeat: "repeat" }} />
+      <div data-probe="grain" style={{ position: "absolute", zIndex: 6, left: 0, top: 0, width: 1920, height: 1080, opacity: 0.035, pointerEvents: "none", backgroundImage: `url(${staticFile("img/grain.svg")})`, backgroundRepeat: "repeat" }} />
     </>
   );
 };

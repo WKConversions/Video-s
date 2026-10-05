@@ -150,6 +150,10 @@ The first final encode (8-sample blur) measured: moving 95 %, longest still 0.47
 | the light | breathed 8 % in brightness: its banded edge crept in 9 px steps (SHAKE 23.4–24.4 s) | 3 % breath and a static 3.5 % grain over the stage | a band that creeps reads as a tremor; grain breaks banding in 8-bit video |
 | B8 end card | the button at 28.2 s, the contact lines at 28.7 s: the complete card held under half a second | the button at 27.9 s, the lines at 28.3 s, the press at 29.1 s: the complete card holds 1.3 s (the voice ends at 27.9) | the contact lines are the conversion (scorers) |
 | sound | 50 cues: a tick on every landing | 45: no tick for the removed square, two on the grid, two on the end wall | the brief's tone is calm (scorers: density) |
+| B2–B3 the periods | the three squares left the wall from the pre-tuck position: a 60 px jump on their first frame (pops 11–13× at 3.6, 6.5 and 7.1 s on the second final) | they leave from where the wall stands now (the tuck and the settle included) | a square never jumps |
+| B4 K.B | the feathered wipe still showed the period inside one frame (pop 105×) | 0.4 s with a 30 % feather | nothing appears in one frame |
+| the light | a CSS blur of 190 px on an 860 px disc: Chromium rendered its rings differently in the first frames (pop at 0.27 s across the frame) | a radial gradient under the grain | deterministic from frame to frame |
+| B3 statement | "process" measured static by 0.6 % | the statement words rise 0.6 em instead of 0.32; a passed word dims to 55 % as the next arrives (the areas' rule, now one rule) | every phrase gets its visual; one rule for passed words (scorers) |
 
 Open after round 3 (for Karl):
 - The scorers' first change, structural: rebuild B7 "today I advise founders" as one object (the team card shrinking onto a rail, the logos lined up at one cap height in ink, the four areas as captions on that rail) instead of the logo cluster and the 2×2 word cells. A new round; not done here.
