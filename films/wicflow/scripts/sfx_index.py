@@ -135,4 +135,5 @@ def main():
         sheet(items[k:k + 20], os.path.join(out, f"waves_{k // 20 + 1:02d}.png"))
     print(f"{len(items)} distinct sounds from {sum(len(it['sources']) for it, _ in items)} files -> {out}/index.json, waves_*.png")
 
-main()
+if __name__ == "__main__":      # importable: sfx_synth.py measures its sounds with describe()
+    main()

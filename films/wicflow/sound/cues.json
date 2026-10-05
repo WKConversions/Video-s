@@ -1,0 +1,420 @@
+{
+ "fps": 30,
+ "frames": 1125,
+ "library": "lib",
+ "vo": {
+  "file": "../vo/vo.mp3",
+  "at": 0
+ },
+ "music": {
+  "file": "music/its-love-fit.wav",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.3,
+  "fade_out": 0.5,
+  "note": "It's Love (Michael Ramir C., Mixkit), fitted: lifts at 10.96 and 26.24, final chord 35.03"
+ },
+ "sfx": [
+  {
+   "id": "gen-appear",
+   "frame": 9,
+   "note": "the business rises out of its footprint",
+   "db": -4
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 11,
+   "note": "the AI dot lands on the roof (the dot's plip, the film's motif)",
+   "db": -2
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 46,
+   "note": "the assistant bubble unfolds out of the dot",
+   "db": -5
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 82,
+   "note": "'but': the bubble folds into the dot, 'assist' struck",
+   "db": -4
+  },
+  {
+   "id": "gen-whoosh-soft-medium",
+   "frame": 112,
+   "note": "the dot draws the route forward; the business slides along it (long S, fastest frame)"
+  },
+  {
+   "id": "gen-data-blips",
+   "frame": 129,
+   "note": "the market rises ahead in a wave",
+   "db": -6
+  },
+  {
+   "id": "gen-riser-soft-1s",
+   "frame": 168,
+   "note": "into 'Wicflow'",
+   "db": -4
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 182,
+   "note": "track plate 0 lands (B13)",
+   "db": -5,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 190,
+   "note": "track plate 4 lands (B13)",
+   "db": -5,
+   "pitch": 1
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 198,
+   "note": "track plate 8 lands (B13)",
+   "db": -5,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 207,
+   "note": "track plate 12 lands (B13)",
+   "db": -5,
+   "pitch": 3
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 213,
+   "note": "track plate 15 lands (B13)",
+   "db": -5,
+   "pitch": 4
+  },
+  {
+   "id": "gen-chime-soft",
+   "frame": 216,
+   "note": "the loop lights: the system is live; the chip drops in",
+   "db": -6
+  },
+  {
+   "id": "gen-whoosh-soft-medium",
+   "frame": 236,
+   "note": "A1 whip to the CRM; the cabinet rises (cut on the fastest frame)",
+   "db": -3
+  },
+  {
+   "id": "gen-whoosh-soft-medium",
+   "frame": 253,
+   "note": "A1 whip to the market; blue blooms",
+   "db": -3,
+   "pitch": 2
+  },
+  {
+   "id": "gen-whoosh-soft-medium",
+   "frame": 280,
+   "note": "A1 whip to the desk; sand blooms",
+   "db": -3,
+   "pitch": 4
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 288,
+   "note": "sheets land on the desk",
+   "db": -8,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 292,
+   "note": "sheets land on the desk",
+   "db": -8,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 296,
+   "note": "sheets land on the desk",
+   "db": -8,
+   "pitch": 4
+  },
+  {
+   "id": "gen-data-blips",
+   "frame": 329,
+   "note": "the lens sweeps the market",
+   "db": -5
+  },
+  {
+   "id": "gen-blip",
+   "frame": 355,
+   "note": "the target locks onto Anna's company",
+   "db": -1
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 376,
+   "note": "the message card hinges up out of the roof",
+   "db": -5
+  },
+  {
+   "id": "gen-typing-run",
+   "frame": 376,
+   "note": "the message types",
+   "db": -4
+  },
+  {
+   "id": "gen-click",
+   "frame": 404,
+   "note": "Approved: the team's check",
+   "db": -2
+  },
+  {
+   "id": "gen-send",
+   "frame": 416,
+   "note": "the message folds into the dot and is sent to Anna"
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 436,
+   "note": "the timer arc fills (no reply yet)",
+   "db": -9,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 440,
+   "note": "the timer arc fills (no reply yet)",
+   "db": -9,
+   "pitch": 1
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 445,
+   "note": "the timer arc fills (no reply yet)",
+   "db": -9,
+   "pitch": 2
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 455,
+   "note": "the follow-up leaves by itself",
+   "db": -4,
+   "pitch": 3
+  },
+  {
+   "id": "gen-chime-soft",
+   "frame": 463,
+   "note": "Anna's reply arrives",
+   "db": -2
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 479,
+   "note": "the reply runs to the CRM",
+   "db": -6,
+   "pitch": -2
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 490,
+   "note": "the drawer slides out, the record hinges up",
+   "db": -7,
+   "pitch": -4
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 509,
+   "note": "status rolls to Interested prospect, updated \u2713",
+   "db": -4
+  },
+  {
+   "id": "gen-tap-soft",
+   "frame": 527,
+   "note": "the drawer closes",
+   "db": -6
+  },
+  {
+   "id": "gen-swell-low",
+   "frame": 559,
+   "note": "every spur turns into a blue link",
+   "db": -5
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 579,
+   "note": "tool row 1 rises",
+   "db": -4
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 589,
+   "note": "tool row 2 rises",
+   "db": -4
+  },
+  {
+   "id": "gen-pop-soft-3",
+   "frame": 599,
+   "note": "tool row 3 rises",
+   "db": -4
+  },
+  {
+   "id": "gen-whoosh-soft-medium",
+   "frame": 656,
+   "note": "the map steps back to one pilot",
+   "db": -8,
+   "pitch": -5
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 684,
+   "note": "the dot runs the pilot route",
+   "db": -6
+  },
+  {
+   "id": "gen-appear",
+   "frame": 701,
+   "note": "the counter rises out of the plot",
+   "db": -4
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 716,
+   "note": "7 rolls to 8",
+   "db": -3
+  },
+  {
+   "id": "gen-pop-soft-3",
+   "frame": 721,
+   "note": "the blue check lands",
+   "db": -4
+  },
+  {
+   "id": "gen-data-blips",
+   "frame": 739,
+   "note": "the pilot stamps out across the map (cascade)",
+   "db": -3
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 785,
+   "note": "the Repeated work card rises out of the desk",
+   "db": -5
+  },
+  {
+   "id": "gen-click",
+   "frame": 794,
+   "note": "a step ticked off",
+   "db": -5,
+   "pitch": 0
+  },
+  {
+   "id": "gen-click",
+   "frame": 803,
+   "note": "a step ticked off",
+   "db": -5,
+   "pitch": 2
+  },
+  {
+   "id": "gen-click",
+   "frame": 811,
+   "note": "a step ticked off",
+   "db": -5,
+   "pitch": 4
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 845,
+   "note": "reply bubbles rise",
+   "db": -5
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 850,
+   "note": "reply bubbles rise",
+   "db": -5
+  },
+  {
+   "id": "gen-pop-soft-3",
+   "frame": 856,
+   "note": "reply bubbles rise",
+   "db": -5
+  },
+  {
+   "id": "gen-success-soft",
+   "frame": 881,
+   "note": "bubbles flip into Meeting booked",
+   "db": -3
+  },
+  {
+   "id": "gen-swell-low",
+   "frame": 893,
+   "note": "the AI-blue field fills the frame",
+   "db": -5
+  },
+  {
+   "id": "gen-whoosh-soft-medium",
+   "frame": 929,
+   "note": "the field and the badges gather back into the business",
+   "db": -3,
+   "pitch": -2
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 981,
+   "note": "floor 1 grows out of its tint",
+   "db": -6,
+   "pitch": 0
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 996,
+   "note": "floor 2 grows out of its tint",
+   "db": -6,
+   "pitch": 3
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 1008,
+   "note": "floor 3 grows out of its tint",
+   "db": -6,
+   "pitch": 6
+  },
+  {
+   "id": "gen-whoosh-soft-medium",
+   "frame": 1031,
+   "note": "the shadow sweeps like a sundial",
+   "db": -9,
+   "pitch": -6
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 1064,
+   "note": "the dot glides off the roof",
+   "db": -6
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 1076,
+   "note": "the dot lands as the '.' of wicflow.com (the motif again)",
+   "db": -2
+  },
+  {
+   "id": "gen-impact-logo",
+   "frame": 1076,
+   "note": "the lockup lands",
+   "db": -5
+  },
+  {
+   "id": "gen-sparkle",
+   "frame": 1077,
+   "note": "the W writes itself",
+   "db": -8
+  },
+  {
+   "id": "gen-tap-soft",
+   "frame": 1098,
+   "note": "AI analysis",
+   "db": -6
+  }
+ ]
+}

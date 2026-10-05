@@ -13,6 +13,10 @@
 #   tech-minimal      pulsing pluck, glassy bells, tight kick, no piano (precise products, SaaS)
 #   cinematic-warm    pads, piano, low strings, no drums, slower (emotional, premium)
 #   playful           marimba-like pluck, claps, bouncy bass (consumer, fun)
+# Optional (wicflow, Oct 2026): "mix": {"piano": 0.4, "bells": 0.8, ...} overrides the vibe's instrument levels,
+# and "end_ring": seconds the last chord rings before the file ends (default: to the end, with a 0.5 s fade).
+# The "end" chord is struck (piano, or plucks and a bell when the vibe has no piano), with bass, a soft kick
+# and a pad that swells and decays, so it rings out on the end card rather than being faded under.
 # Needs numpy.
 import json, sys, wave
 import numpy as np
@@ -88,9 +92,11 @@ def kick(vel=1.0):
     n = int(0.45 * SR); t = np.arange(n) / SR; f = 48 + 90 * np.exp(-t / 0.035)
     return np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-t / 0.16) * vel
 
-def noise_hp(n, cut):
+def noise_hp(n, cut, top=10000):
     x = rng.standard_normal(n); X = np.fft.rfft(x); fr = np.fft.rfftfreq(n, 1 / SR)
     X *= 1 / (1 + (cut / np.maximum(fr, 1)) ** 4)
+    X *= 1 / (1 + (fr / top) ** 2)    # and rolled off above 10 kHz: white noise to 24 kHz made the hats, claps and
+                                      # riser hiss (12-20 kHz 8-15 dB over produced library tracks; wicflow, Oct 2026)
     return np.fft.irfft(X, n)
 
 def clap(vel=0.6):
@@ -129,7 +135,7 @@ def reverb(x, length=2.2, wet=0.22):
 def main():
     b = json.load(open(sys.argv[1])); out = sys.argv[2]
     bpm, length = b["bpm"], b["length"]; beat = 60 / bpm; bar = 4 * beat
-    v = VIBES[b.get("vibe", "calm-optimistic")]
+    v = dict(VIBES[b.get("vibe", "calm-optimistic")], **b.get("mix", {}))
     root = 48 + NOTE[b["key"]]                                 # chords around C3–C4
     mode = b.get("mode", "major"); prog = b.get("progression", ["I", "V", "vi", "IV"])
     secs = b["sections"]; nbars = int(np.ceil(length / bar)) + 1
@@ -142,16 +148,29 @@ def main():
     n = int((length + 3) * SR)
     music, drums = np.zeros((n, 2)), np.zeros((n, 2))
     side = np.ones(n)                                          # kick sidechain for pad and bass
+    prev_end = False
     for i in range(nbars):
         t0 = i * bar; e = energy[i]
         if t0 >= length: break
         numeral = prog[i % len(prog)]
         notes, minor = chord_notes(root, mode, numeral)
         if e == "end":
+            if prev_end: continue                              # the chord is struck once, on the first "end" bar
+            prev_end = True
+            ring = min(length - t0, b.get("end_ring", length - t0))
             for k, m in enumerate(notes + [notes[0] + 12]):
-                add(music, piano(hz(m + 12), 3.5, 0.7), t0 + k * 0.02, v["piano"] * 0.5, pan=-0.2 + 0.13 * k)
-                add(music, pad(hz(m), length - t0 + 0.5, v["bright"]), t0, v["pad"] * 0.30)
-            add(drums, kick(0.7), t0, v["kick"] * 0.7)
+                if v["piano"]:
+                    add(music, piano(hz(m + 12), 3.5, 0.75), t0 + k * 0.02, v["piano"] * 0.5, pan=-0.2 + 0.13 * k)
+                else:                                          # no piano: a strummed pluck chord, an octave up
+                    add(music, pluck(hz(m + 24), 0.75), t0 + k * 0.025, v["pluck"] * 0.42, pan=-0.3 + 0.2 * k)
+                add(music, pad(hz(m), max(0.8, ring - 1.2), v["bright"]), t0, v["pad"] * 0.30)
+            if v["bells"]:
+                add(music, bells(hz(notes[0] + 36), 0.5), t0 + 0.06, v["bells"] * 0.35, pan=0.3)
+                add(music, bells(hz(notes[2] + 36), 0.4), t0 + 0.12, v["bells"] * 0.25, pan=-0.3)
+            if v["bass"]:
+                bm = notes[0] - 12 if notes[0] - 12 >= 36 else notes[0]
+                add(music, bass(hz(bm), min(ring, 2.5) * 0.8, 0.8) * np.exp(-np.arange(int((min(ring, 2.5) * 0.8 + 0.05) * SR)) / SR / 0.9), t0, v["bass"] * 0.5)
+            add(drums, kick(0.75), t0, max(v["kick"], 0.4) * 0.75)
             continue
         # pad: whole chord, the whole bar
         for m in notes:
@@ -200,7 +219,7 @@ def main():
     music *= side[:, None] ** 0.8
     mix = reverb(music, 2.4, 0.26) + reverb(drums, 0.8, 0.08)
     mix = mix[: int(length * SR)]
-    fade = int(min(2.5, length * 0.1) * SR); mix[-fade:] *= np.linspace(1, 0, fade)[:, None] ** 1.5
+    fade = int((0.5 if "end" in energy else min(2.5, length * 0.1)) * SR); mix[-fade:] *= np.linspace(1, 0, fade)[:, None] ** 1.5
     mix = np.tanh(mix / (np.abs(mix).max() + 1e-9) * 1.3) * 0.85         # gentle saturation, then a ceiling
     pcm = (mix * 32767).astype("<i2")
     with wave.open(out, "wb") as w:

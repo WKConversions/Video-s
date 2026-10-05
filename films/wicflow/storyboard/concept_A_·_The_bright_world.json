@@ -1,0 +1,282 @@
+{
+ "name": "A \u00b7 The bright world: one blue dot at work",
+ "thesis": "Wicflow puts AI to work across your whole business. The stage is one bright isometric map of your business and its market. On it, the site's live-AI blue dot finds the right company, writes to Anna, follows up, updates the CRM and links the tools you already use. It starts as one pilot and scales, and at the end the three service tints fold up into the floors of a business that has grown.",
+ "allowed_patterns": [
+  "The isometric map as an illustration of the viewer's business and market: blocks carry no names except the black pill tag 'Your business' and the site demo's building firm in Tampere (Anna's block)",
+  "The site's 'AI at work' hero card as the top-left chip, word for word: the five rows (Found a company that fits / Wrote the first message / Your team approved it / Anna replied / Meeting booked) with their subs and times 09:02, 09:03, 09:14, 11:40, 11:41, the pause glyph, and the footer 'Meetings booked this week' 7 \u2192 8. Illustrative, as on the site",
+  "The site's message 'Hi Anna, I saw you're hiring two salespeople\u2026' and reply 'Sounds useful. Thursday at 10?', word for word",
+  "One CRM record for the demo's 'Building firm \u00b7 40 staff \u00b7 Tampere' with the illustrative sales-view statuses 'New contact' \u2192 'Interested prospect'. This puts two of the site's illustrative examples together and must be named in thesis.md",
+  "The live-AI blue #1769C2 dot as the only object that travels and the only accent: its routes, links, check marks, and the key words and underlines in the captions",
+  "The site's three service tints as ground districts (blue = marketing / customer acquisition, sage = sales / sales automation, sand = everyday work / team training). They come back at the end as the three floors of your business",
+  "The 15 tool logos in the site's grid order, logos only, rising row by row",
+  "Three plain geometric ink pawns for 'your team', and a desk with a paper stack for 'manual work'",
+  "An abstract assistant chat bubble (dot avatar and typing dots, no copy) for the 'just assist' before state",
+  "Abstract reply bubbles (dot and two grey lines, no words) for 'more conversations'",
+  "A value-free measure column with an architect's dimension line and a check: no numbers, no axis (missing.md)",
+  "A dashed pilot plot drawn around one route, then stamped onto other blocks for 'scale what works'",
+  "Ground labels 'Sales', 'Marketing', 'Everyday work' laid flat in the iso ground plane (the voice-over's own words)",
+  "A sundial shadow sweeping round the building for 'that lasts'",
+  "The OG card's pale-blue circle #E3E9F4 as the one full colour-field moment and the end card's field",
+  "The blue dot landing as the '.' of 'wicflow.com' on the end card",
+  "Captions are the voice-over's words cut to 6 or fewer a line, key word in blue; the caption slot drops through (A2) and words roll"
+ ],
+ "world": "An isometric map of the viewer's business and its market on white paper. It uses a 2:1 iso projection drawn in SVG from code, with a unit of 64 px and the world centre at screen (1100,540).\n\nGROUND: a rounded slab #F7F7F9 on #FFFFFF paper, with a #D6D6D9 hairline edge and a soft wide shadow under it (ink at 6%, blur 60). The slab's front corner stays above y 880 so the captions stay clear.\n\nBLOCKS: tops #FFFFFF, left faces #F4F4F7 (paper-3), right faces #EBEBEF (paper-3 mixed with 4% ink), edges a #0000001F hairline at 1.5 px.\n\nOBJECTS (each persists and changes):\n- YOUR BUSINESS: front centre, home at screen (1040,640), 2.2\u00d72.2\u00d71.6 units, ink #17171B roof. It carries the site's black pill tag 'Your business' (#0A0A0D / #EEEEF1, Manrope 700 24 px) on a leader.\n- YOUR TEAM: three plain ink pawns on its front-left forecourt, about 28\u00d760 px each, and a small desk carrying a stack of six paper sheets (the manual work).\n- THE MARKET: back left, about 20 low white blocks 0.5\u20131.2 units tall. One of them becomes Anna's building firm in Tampere.\n- THE CRM CABINET: back right, 2\u00d71.2\u00d72.4 units, with its drawers drawn as hairline bands.\n- THE TOOL PLOT: right of the cabinet (screen about 1380\u20131740 \u00d7 420\u2013640). It is empty until the site's 15 tools rise on it as low tiles with upright logo badges.\n- THE LOOP: rounded track plates running from your business past all of these and back. Faint dashed spurs join the loop to the other objects.\n\nDISTRICTS: the site's three service tints as soft radial ground fields, as on its service panels:\n- blue #DFE7F3 \u2192 #E6EDF7 \u2192 #F1F5FB under the market (marketing; the site's customer-acquisition panel)\n- sage #DDE8DE \u2192 #E5EEE6 \u2192 #F1F6F1 under the CRM and the tools (sales; the sales-automation panel)\n- sand #EAE1D1 \u2192 #F0E9DC \u2192 #F8F4EC under the team (everyday work; the team-training panel)\n\nA tinted object takes the tint on its top face and the tint mixed with 6% / 12% ink on its sides.\n\nTHE AI: the blue dot #1769C2 (r 11) with its 12% halo #1769C21F (r 22). Its routes are drawn at 3 px blue and fade to 1.5 px hairlines at 35% behind it.\n\nUI LAYER:\n- The site's 'AI at work' chip, top left at (72,64): white, r 24, #0000001F hairline, soft shadow. It is a 250\u00d756 pill that grows to a 640 px card. Text is Manrope: 700 at 26\u201328 px for titles, 22 px #606069 for subs and times, plus the icon circles and the pause glyph.\n- Captions bottom left at x 110, baselines 902 and 978: Space Grotesk 600, 64 px, \u22120.045em, ink. Each word blur-rises on its spoken word and the key word turns #1769C2.\n\nBRIGHT: white paper, soft tints, ink and one blue. Nothing dark anywhere.",
+ "thread_object": "The live-AI blue dot: the site's own 'AI at work' dot, #1769C2, r 11, with a 12% halo. It is the only thing in the world that travels, and the chip's dot mirrors it. Its path through the film:\n- P1: it drops onto your business.\n- P2: it parks beside the team as an assistant's avatar.\n- P3: it pulls the business forward.\n- P4\u2013P5: it runs the loop the system is built on.\n- P9: it scans the market and locks onto Anna's company.\n- P10: the message card folds into it and it carries the message out.\n- P11: it follows up by itself.\n- P12: the reply folds into it and it carries the reply into the CRM.\n- P13: it pulses the links.\n- P14: it runs through Gmail and HubSpot.\n- P15: it runs the one pilot.\n- P17: it multiplies across the map.\n- P18: the paper sheets fold into it.\n- P21: every copy streams home into your business.\n- P22: it rides up the three floors.\n- P23: it rests on the roof while the shadow turns.\n- End card: it glides off the roof and becomes the '.' in 'wicflow.com'.\n\nPayoff: the thing that did the work all film is, at the end, literally part of Wicflow's address. This is a callback; it reads without explanation.",
+ "colour_plan": "PAPER: white #FFFFFF all film, never dark.\n\nINK #17171B is used only for:\n- your business (its roof and the #0A0A0D / #EEEEF1 tag pill)\n- the team pawns\n- the captions\n- from 'customers' (29.36) on, the roofs of the companies that joined you.\n\nBLUE #1769C2 is used only for the AI: the dot, its routes and links, the chip's dot, check marks, and the caption key words and underlines.\n\nTHE THREE TINTS arrive as fields that grow out of objects:\n- sage out of the CRM cabinet's footprint on 'sales' (7.83)\n- blue out of the market on 'marketing' (8.43)\n- sand from under the team's desk on 'everyday work' (9.35)\n\nHow the tints change through the story:\n- 'connects' (18.42): they widen until their edges meet.\n- 'one' (21.78): they drop to 20%; the pilot plot is sand-1 #F8F4EC with an ink dashed edge.\n- 'scale' (24.57): they relight on the stamping front.\n- 'turn' (31.37): they slide under your business.\n- They fold up as its floors: sand at 32.50, sage at 33.00, blue at 33.42.\n\nONE FULL COLOUR-FIELD MOMENT: the OG card's pale-blue circle #E3E9F4 grows out of the roof on 'growth' (33.42) and stays as the end card's field.\n\nMUTED #606069: chip subs, times and the end line. LINE #D6D6D9: the slab edge and hairlines.\n\nDERIVED SHADES: side faces of tinted objects only (the tint mixed with 6% / 12% ink).",
+ "motion_identity": "PERSONALITY: practical and upbeat. Things are built, rise and connect with decisive, clean moves. Only the dot travels and the camera only breathes. The 'spice' comes from content:\n- blocks rise in waves\n- cards hinge out of roofs and drawers in 3D (rotateX)\n- tint fields bloom as masks\n- type is laid flat on the ground\n- routes draw as comets\n- chip rows and caption slots drop through\n- words roll.\n\nCURVES (30 fps):\n- Signature curve: ARRIVE cubic-bezier(0.22,1,0.36,1), expo-out, on every arrival.\n- DEPART (0.55,0,0.9,0.4) on exits, at about 70% of the entrance's length.\n- B2 long S (MOVE 0.65,0,0.35,1) for the dot's travels, with motion blur on the 4 fastest frames.\n\nDURATION PALETTE:\n\n| Move | Frames |\n|---|---|\n| Pop | 5\u20136 |\n| Quick | 8 |\n| Standard | 12 |\n| Slow | 20\u201324 |\n| Dot travel | 16\u201324 |\n| Caption word | 7, on its spoken word |\n\nENTRANCE PATTERN:\n- out of the ground (blocks, cabinet, tool tiles, floors)\n- out of the object they belong to (cards, tags, bubbles, tint fields, the wordmark out of the dot)\n- for type: a blur-rise word by word, plus A6 type-on for the ground labels and the message.\n\nOVERSHOOT is allowed only on small pops:\n- the dot's single landing bounce at P1 (B8)\n- tool badges and reply bubbles (B5, 8% or less)\n- check badges (A3, small).\n\nBlocks, cards, captions, chip, floors and the logo never overshoot.\n\nCAMERA: one breath for the whole film (B15, \u00b18 px, 4 s period). On top of it, three slow content scales, never on a transition:\n- 1.18 \u2192 1.00 over the hook, 0\u20134.9 s (\u22644.5%/s)\n- \u22128% on the scale-out, 24.6\u201327.6 s (2.7%/s)\n- 0.92 \u2192 1.08 onto the building, 30.9\u201334.2 s (\u22645%/s).\n\nAll of these stay under the K.B limits (25 px/s, 5.3%/s).\n\nHAND-OFFS are speed-matched: A2 drop-through for chip rows and the caption slot, Roll for word swaps, and the cut always on the fastest frame. One graph leads at a time; the others follow (B9).",
+ "transition_family": [
+  "Out of an object: tint fields bloom out of footprints; cards hinge out of the roof and the CRM drawer; bubbles and tags rise out of blocks; the pale-blue circle grows out of the roof; the wordmark opens out of the dot",
+  "Object becomes the next thing: the assistant bubble, the message card, the reply and the paper sheets each fold into the blue dot; the reply bubbles fold into ink roofs (customers); the tint fields fold up into the floors of your business; the dot becomes the '.' of wicflow.com",
+  "Before/after on the same objects: dashed spurs turn solid on 'connects'; the world dims to one pilot and relights as its copies; white roofs turn ink; chip rows and the caption slot drop through (A2); caption words roll (assist \u2192 moved forward, less \u2192 more, conversations \u2192 customers)"
+ ],
+ "phrases": [
+  {
+   "id": "P1",
+   "start": 0.09,
+   "end": 0.87,
+   "key_word": "AI (0.49)",
+   "on_screen_words": "Caption line 1: 'What if AI' ('AI' blue)",
+   "visual_event": "0.00\u20130.40 (f0\u201312): on white paper a hairline footprint draws, and the YOUR BUSINESS block rises out of it at screen (800,700): about 250 px wide, ink roof, ARRIVE 12 f. Three ink pawns (the team) rise on its forecourt 3 f behind (B9). The world container starts at 1.18\u00d7 and settles to 1.00\u00d7 by 4.9 s (B3, \u22644.5%/s); this is the film's only big scale move and it happens during the hook. PRIMARY 0.27\u20130.37 (lands at f11, 4 f before 'AI'): the blue dot (r 11, 12% halo) drops 120 px onto the roof with one small bounce (B8, 10 f). On landing it sends out a single halo ripple (r 22\u219270, fades over 12 f, once only). The caption builds on the spoken words (blur-rise 7 f a word) and 'AI' turns blue.",
+   "grows_out_of": "The paper itself: the business's footprint draws first, the block rises out of it, and the dot drops onto its roof",
+   "sound": "Soft airy riser from 0.0 under the block rise. Glass 'plip' on the dot's landing at 0.37: the dot's two-note bell motif. Music: filtered pluck arpeggio and pad intro."
+  },
+  {
+   "id": "P2",
+   "start": 0.88,
+   "end": 2.75,
+   "key_word": "assist (1.44)",
+   "on_screen_words": "Caption line 2: 'didn't just assist your team' (no colour on 'assist'; it gets struck at P3)",
+   "visual_event": "PRIMARY 1.20\u20131.30 (lands at f39, 4 f before 'assist'): the dot hops off the roof in a short arc (B2, 9 f) to the side of the team. A small assistant chat bubble unfolds out of it (B5 small overshoot, 12 f): white, r 18, hairline, 220\u00d780 px, facing the screen. The dot is its avatar, and three grey typing dots tick three times and stop. It sits small, off to the side: AI that only assists. SECONDARY: caption line 2 builds word by word, 0.88\u20132.15.",
+   "grows_out_of": "The blue dot (the bubble unfolds from it, with the dot as its avatar)",
+   "sound": "Soft pop at 1.30. Three tiny typing ticks. The pluck arpeggio continues."
+  },
+  {
+   "id": "P3",
+   "start": 2.76,
+   "end": 4.94,
+   "key_word": "moved (3.45) / forward (4.39)",
+   "on_screen_words": "A strike through 'assist' on 'but'. Line 2 rolls to 'moved your business forward?' ('forward' blue). World tag: black pill 'Your business'.",
+   "visual_event": "2.62 ('but'): the bubble folds back into the dot (DEPART 8 f) and a hairline strike draws through 'assist' (B11 6 f).\n\nPRIMARY 3.30 (f99, 4 f before 'moved'): the dot drops to the ground in front of the block and draws a blue route forward, up-right along the iso u-axis, 260 px. The business block slides along it with its forecourt and team to its home at screen (1040,640) (B2 long S, 24 f, motion blur on the fastest frames). Its old footprint stays as a dashed outline and fades by 4.2.\n\n3.85: the black pill tag 'Your business' rises out of the roof on a leader, following the block (B9).\n\n4.25 (f127, 4 f before 'forward'): the market rises out of the paper ahead of it. About 20 white blocks come up in a wave travelling away from the business (each ARRIVE 12 f, staggered 1 f per 60 px), and the slab's hairline edge draws along with the wave.\n\nCaption: old line 2 leaves upward at 3.20 (DEPART 8 f); 'moved your business forward?' builds from 3.45.",
+   "grows_out_of": "The dot. The assistant bubble folds back into it, the route grows out of it and pulls the block, and the market rises along the route's direction.",
+   "sound": "Zip on the fold (2.62). Whoosh pitched up with the slide (3.30). A cascade of soft woody ticks, spreading in stereo, as the market rises (4.25\u20134.8). A music riser runs into 5.5."
+  },
+  {
+   "id": "P4",
+   "start": 5.59,
+   "end": 6.32,
+   "key_word": "builds (6.02)",
+   "on_screen_words": "New caption, line 1: 'Wicflow builds' (the previous caption leaves at 5.35)",
+   "visual_event": "PRIMARY 5.88 (f176, 4 f before 'builds'): track plates drop in and snap down one after another from the business's front edge. They are rounded white iso plates, 0.9 unit, with a hairline edge. They form a closed loop: business \u2192 the empty back-right plot \u2192 the back-left market \u2192 the front-left forecourt \u2192 home. There are 14 plates, each an A4 drop-in of 6 f from 30 px above, 2 f apart (B13 rhythm), and the loop closes at 6.35. Faint dashed hairline spurs run from the loop to the empty plots; they turn solid at P13.",
+   "grows_out_of": "Your business's front edge (the plates are laid out of it, continuing the P3 route)",
+   "sound": "A fast run of soft click-clacks, one per plate, kept subtle. Kick and bass enter on 'Wicflow' (5.59): build A."
+  },
+  {
+   "id": "P5",
+   "start": 6.33,
+   "end": 7.81,
+   "key_word": "systems (7.30)",
+   "on_screen_words": "Line 2: 'practical AI systems.' ('systems' blue, with an underline sweep). Chip pill: '\u25cf AI at work'",
+   "visual_event": "6.30: the dot drops onto the track and runs it (B11, 30 f for the loop). Each plate it passes takes a blue edge.\n\nPRIMARY 7.15 (f214, 4 f before 'systems'): the dot closes the loop and the whole loop lights in one sweep (hairline \u2192 3 px blue route, 8 f): the system is live.\n\nSECONDARY 7.15: the site's 'AI at work' pill drops into the top left at (72,64) (ARRIVE 12 f from 40 px above): white, hairline, soft shadow, 250\u00d756 px, a blue dot with 'AI at work' (Manrope 700 26 px) and the pause glyph.\n\nFrom here the dot circles the loop at a calm constant speed (B10, about 120 px/s) as the working hold. The underline under 'systems' sweeps in on B11, 8 f.",
+   "grows_out_of": "The loop of track plates (the dot completes it and the light sweep runs round it). The chip's dot is the same dot.",
+   "sound": "A soft power-on synth swell at 7.15 (the bell motif, second note), plus a light tick as the chip arrives."
+  },
+  {
+   "id": "P6",
+   "start": 7.82,
+   "end": 8.57,
+   "key_word": "sales (7.97)",
+   "on_screen_words": "Ground label 'Sales', lying flat in the iso ground plane (caption holds)",
+   "visual_event": "PRIMARY 7.83 (f235): at the loop's back-right station, the CRM cabinet rises out of the ground (ARRIVE 10 f): a tall block, 2\u00d71.2\u00d72.4 units, with hairline drawer bands. The SAGE field (radial #DDE8DE \u2192 #E5EEE6 \u2192 #F1F6F1 \u2192 transparent, r 3.5 units) blooms out of its footprint as a growing ground ellipse (ARRIVE 14 f). 7.95: 'Sales' types on, lying flat in the ground plane in front of it (Space Grotesk 600, 46 px projected, ink 75%, A6 fast then trickling).",
+   "grows_out_of": "The CRM cabinet's footprint (the cabinet rises, and the sage field blooms out from under it)",
+   "sound": "Bloom swell, note 1, a soft tonal 'whoom' tuned to the music's key."
+  },
+  {
+   "id": "P7",
+   "start": 8.58,
+   "end": 9.26,
+   "key_word": "marketing (8.58)",
+   "on_screen_words": "Ground label 'Marketing', lying flat in the ground plane",
+   "visual_event": "PRIMARY 8.43 (f253): the BLUE field (#DFE7F3 \u2192 #E6EDF7 \u2192 #F1F5FB) blooms out of the market cluster at the back left (ARRIVE 14 f). The ~10 blocks inside it take pale-blue tops in a ripple from the centre (2 f stagger). 'Marketing' types on flat on the ground at the field's front edge (A6).",
+   "grows_out_of": "The market blocks (the field and the ripple start at the cluster's centre block)",
+   "sound": "Bloom swell, note 2, one step up."
+  },
+  {
+   "id": "P8",
+   "start": 9.27,
+   "end": 10.37,
+   "key_word": "everyday (9.49)",
+   "on_screen_words": "Ground label 'Everyday work', lying flat in the ground plane",
+   "visual_event": "PRIMARY 9.35 (f280): the SAND field (#EAE1D1 \u2192 #F0E9DC \u2192 #F8F4EC) blooms out from under the team on the front-left forecourt. A small desk rises beside the pawns and six paper sheets land on it one after another (B13, 2 f apart). This is the manual work, set up for P18. At 9.50 'Everyday work' types on flat on the ground (A6). The three fields now read as three districts on one map, and the dot keeps circling through them.",
+   "grows_out_of": "The team on the forecourt (the sand field blooms from under the pawns and the desk rises beside them)",
+   "sound": "Bloom swell, note 3, which resolves the little three-note phrase. A soft paper riffle as the sheets land."
+  },
+  {
+   "id": "P9",
+   "start": 10.83,
+   "end": 12.36,
+   "key_word": "prospects (11.67)",
+   "on_screen_words": "New caption, line 1: 'Finding the right prospects,' ('prospects' blue). Chip row: \u25ce 'Found a company that fits' / 'Building firm \u00b7 40 staff \u00b7 Tampere' / 09:02",
+   "visual_event": "10.85: the dot leaves the loop into the blue field.\n\n10.95\u201311.45: a lens sweeps across the market (B17, one pass, 15 f): a ring on the ground, r 90 px, 2 px blue with a 12% fill. Blocks it passes that don't fit settle 30% lower (B1 10 f).\n\nPRIMARY 11.52 (f346, 4 f before 'prospects'): two concentric rings close in on one block (the site's target icon, drawn on the ground, B4 spring 10 f). That block rises 40% taller with a blue top edge (ARRIVE 10 f): Anna's company.\n\nSECONDARY 11.55: the chip pill grows into the full 640 px chip card (layout transformation, B1 14 f) and its first row drops in (A2).",
+   "grows_out_of": "The dot (the lens grows out of it as it enters the blue field). The found block rises out of its own footprint, and the chip pill grows into the card.",
+   "sound": "Filtered shimmer for the scan sweep (10.95\u201311.45). Bright short 'ping' on the lock-on (11.52), the bell motif. Light tick as the chip row drops in. Music: full groove from 10.8, ducked under the voice."
+  },
+  {
+   "id": "P10",
+   "start": 12.37,
+   "end": 14.09,
+   "key_word": "personalized (12.85) / outreach (13.54)",
+   "on_screen_words": "Line 2: 'writing personalized outreach.' ('personalized' blue). Card: 'Hi Anna, I saw you're hiring two salespeople\u2026'. Chip rows: \u270e 'Wrote the first message' \u00b7 09:03, then \u2713 'Your team approved it' / 'Sent after a quick check' \u00b7 09:14",
+   "visual_event": "12.40: a message card hinges up out of your business's roof (rotateX 80\u00b0\u21920 from its bottom edge, ARRIVE 14 f). It is white, r 24, soft shadow, 640\u00d7190 px at screen (880\u20131520, 300\u2013490), and the rest of the world dims 15% behind it. The message types in Manrope 34 px (A6: a third in 3 f, the rest over 0.8 s).\n\nPRIMARY 12.70 (f381, 4 f before 'personalized'): a blue underline sweeps under 'Anna' and under 'hiring two salespeople' as they type (B11 6 f each). That is what makes the message personal. The chip row drops through (A2).\n\n13.40 (f402, 4 f before 'outreach'): the nearest pawn's head flicks blue for 8 f and a small \u2713 badge pops on the card's corner (A3 small, 10 f). The chip shows the approval row.\n\n13.55: the card folds down into the dot (DEPART 8 f), and the dot shoots out along a new route to Anna's block (B2 long S, 18 f, comet trail fading to a hairline). It arrives at 14.15.",
+   "grows_out_of": "Your business's roof (the card hinges out of it) and the team (the approval). The card folds into the dot, which draws the outreach route.",
+   "sound": "Soft key ticks, 12.53\u201313.3. A marker swipe on the underline (12.70). A wooden 'tock' on the check (13.40). A send whoosh (13.55), with a small landing tick at Anna's block (14.15)."
+  },
+  {
+   "id": "P11",
+   "start": 14.44,
+   "end": 15.68,
+   "key_word": "follow-ups (15.08)",
+   "on_screen_words": "New caption, line 1: 'Automated follow-ups,' ('follow-ups' blue). Reply bubble: 'Sounds useful. Thursday at 10?'. Chip row: \u21a9 'Anna replied' / '\"Sounds useful. Thursday at 10?\"' / 11:40",
+   "visual_event": "14.45: a blue timer arc fills round Anna's block on the ground (0\u2192360\u00b0, B11 14 f). No reply has come yet.\n\nPRIMARY 14.93 (f448, 4 f before 'follow-ups'): the arc completes, and a second dot launches by itself from your business along the same route, leaving a dashed trail (B2 16 f): the follow-up, sent automatically.\n\n15.30: a reply bubble rises out of Anna's block on a leader (B5 small overshoot, 12 f): white, r 18, Manrope 30 px, placed at about (760\u20131220, 240\u2013320) so it stays clear of the chip.\n\nSECONDARY 15.32: the chip row drops through, and the time digits roll 09:14 \u2192 11:40.",
+   "grows_out_of": "Anna's block (the timer arc on its footprint, then the reply bubble rising out of it). The follow-up dot comes out of your business along the existing route.",
+   "sound": "A short soft whirr as the arc fills. A clean 'message received' blip at 15.30."
+  },
+  {
+   "id": "P12",
+   "start": 15.69,
+   "end": 17.58,
+   "key_word": "CRM (16.35) / updated (16.99)",
+   "on_screen_words": "Line 2: 'your CRM, updated.' ('updated' blue). Record card: 'Building firm \u00b7 40 staff \u00b7 Tampere' with a status pill that rolls 'New contact' \u2192 'Interested prospect'",
+   "visual_event": "15.75: the reply bubble folds into a dot (DEPART 7 f), which runs along the loop to the CRM cabinet in the sage field (B2 16 f).\n\nPRIMARY 16.20 (f486, 4 f before 'CRM'): the cabinet's top drawer slides out (B4 10 f), and a 500\u00d7130 px record card hinges up out of it (ARRIVE 12 f).\n\n16.85 (f506, 4 f before 'updated'): the pill rolls to 'Interested prospect' (A2 drop-through inside the pill, 10 f) and a \u2713 pops beside it (A3 small).\n\n17.30: the card folds back into the drawer and the drawer closes (DEPART 8 f). The drawer keeps a blue edge: updated.",
+   "grows_out_of": "The reply bubble (it folds into the dot), then the CRM cabinet's top drawer (the record slides out of it)",
+   "sound": "A soft drawer slide (16.20). A roll click with a light check (16.85). The drawer closes with a muted thunk (17.3)."
+  },
+  {
+   "id": "P13",
+   "start": 18.09,
+   "end": 18.98,
+   "key_word": "connects (18.57)",
+   "on_screen_words": "New caption, line 1: 'Everything connects' ('connects' blue, with an underline sweep)",
+   "visual_event": "PRIMARY 18.42 (f553, 4 f before 'connects'): every faint dashed spur in the world turns into a solid 2 px blue link in one sweep spreading out from your business. The spurs are business\u2194market, business\u2194CRM, team\u2194loop and CRM\u2194the empty tool plot. Each link animates on B11, staggered 1 f per 50 px of distance; the whole sweep takes 12 f. A single light pulse runs along each link once. At the same time the three tint fields widen about 10% (B1 12 f) until their edges meet: one connected map. This is a before/after on objects that have been on screen since P4.",
+   "grows_out_of": "Your business and the dashed spurs drawn at P4 (the sweep starts at the business and turns them solid)",
+   "sound": "A rising, soft electric shimmer that sweeps left to right with the links (18.42\u201318.8). Music lift at 18.0: bell arpeggio and open hats join, no crash."
+  },
+  {
+   "id": "P14",
+   "start": 18.99,
+   "end": 21.07,
+   "key_word": "tools (19.17)",
+   "on_screen_words": "Line 2: 'with the tools you already use.' The 15 tool logos, with no names.",
+   "visual_event": "PRIMARY 19.02 (f571, 4 f before 'tools'): on the empty plot beside the CRM cabinet (screen about 1380\u20131740 \u00d7 420\u2013640), the site's tool grid rises out of the ground row by row (B13):\n- 19.02: ChatGPT \u00b7 Claude \u00b7 Gemini \u00b7 Copilot \u00b7 Google Workspace\n- 19.52: Microsoft 365 \u00b7 Gmail \u00b7 Outlook \u00b7 Google Sheets \u00b7 Teams\n- 19.85: Slack \u00b7 HubSpot \u00b7 Pipedrive \u00b7 Salesforce \u00b7 n8n\n\nEach tool is a low iso tile carrying an upright, screen-facing white badge (64 px, r 14, hairline, logo 40 px). Each rises with a small overshoot (B5 8%, 12 f, 1 f apart within a row).\n\n20.30 ('already uses'): a blue link draws from the team pawns to the grid (B11 10 f). The dot runs from the grid through Gmail and HubSpot into the CRM cabinet (B4), and each badge it passes takes a blue hairline ring.",
+   "grows_out_of": "The tool plot that the P13 link just reached (the tiles rise out of the ground at the end of that link). The team's link grows out of the pawns.",
+   "sound": "Three soft pops, one per row (not one per tile), each a step higher: 19.02, 19.52, 19.85. A short zip for the team link at 20.30."
+  },
+  {
+   "id": "P15",
+   "start": 21.52,
+   "end": 23.11,
+   "key_word": "one (21.93) / pilot (22.68)",
+   "on_screen_words": "New single-line slot: 'One focused pilot.' ('pilot' blue; the previous caption leaves at 21.25)",
+   "visual_event": "PRIMARY 21.78 (f653, 4 f before 'one'): the whole world recedes to hairlines (B1 12 f). Tints drop to 20%, and links, tools, blocks and the other dots go light grey. Only ONE thing stays: the route from your business to Anna's block, still blue, with its dot.\n\n22.17 ('focused'): a pilot plot draws around Anna's block and the end of its route (B11 14 f): a dashed ink hairline boundary with a #F8F4EC fill. The dashes don't march.\n\n22.55: the dot runs the pilot route once (B2 18 f).\n\nSECONDARY 21.78: the chip steps back to 55% opacity (10 f).",
+   "grows_out_of": "The whole connected map (it recedes around the one surviving route). The plot's boundary grows out of Anna's block's footprint.",
+   "sound": "Breakdown: the drums drop at 21.5 to a single low kick and a filtered pluck. A soft low 'whoomp' with a muffle on the dim (21.78). A pen-draw tick on the boundary (22.17)."
+  },
+  {
+   "id": "P16",
+   "start": 23.41,
+   "end": 24.43,
+   "key_word": "measure (23.41) / results (23.85)",
+   "on_screen_words": "The slot drops through (A2) to 'Measure the results.' ('Measure' blue)",
+   "visual_event": "PRIMARY 23.26 (f698, 4 f before 'measure'): a measure column rises out of the plot's front corner (ARRIVE 14 f): an iso bar 0.8\u00d70.8 units, sage faces, ink hairlines, growing from 0 to 2.2 units. An architect's dimension line, with end ticks and three intermediate ticks, draws up its side at the same time (B11 14 f). It carries no numbers.\n\n23.70 (f711, 4 f before 'results'): a \u2713 hits the column's top (B7 accelerate into an impact, 7 f) and the top face turns blue. Then stillness, no shake.\n\nThe caption slot drops through at the same speed on both sides (6 f + 6 f).",
+   "grows_out_of": "The pilot plot (the column rises out of its front corner)",
+   "sound": "A soft ratchet or ruler tick run as the dimension line draws (23.26\u201323.6). A clean 'tock' on the check impact (23.70). The music filter starts opening."
+  },
+  {
+   "id": "P17",
+   "start": 24.56,
+   "end": 25.91,
+   "key_word": "scale (24.72) / works (25.36)",
+   "on_screen_words": "The slot drops through to 'Scale what works.' ('Scale' blue)",
+   "visual_event": "24.45: the column folds down into the plot (DEPART 7 f).\n\nPRIMARY 24.57 (f737, 4 f before 'scale'): the pilot plot is stamped onto ten more blocks across the market. Each copy is the boundary, a short route and a dot. They appear in a cascade spreading outward from the pilot (B13 stepper, 2 f apart, each ARRIVE 8 f). The world relights on the same front: tints, links and tools come back to full colour. The world container eases back 8% over 24.6\u201327.6 (B3, about 2.7%/s) so the copies fill the map. This is the film's scale-out to many.\n\n25.20 (f756, 'works'): all the copies' dots run one lap together (B11 24 f), then rest, lit, on their plots. They stop moving, so they don't compete with what follows.",
+   "grows_out_of": "The pilot plot (its copies stamp out of it, spreading outward)",
+   "sound": "A stamping cascade of soft clicks spreading left and right in stereo (24.57\u201324.95). The drums return with a snare-roll riser (25.2\u201326.3)."
+  },
+  {
+   "id": "P18",
+   "start": 26.38,
+   "end": 27.45,
+   "key_word": "less (26.38) / manual (26.68)",
+   "on_screen_words": "The slot drops through to 'Less manual work.' ('Less' blue)",
+   "visual_event": "PRIMARY 26.23 (f787, 4 f before 'less'): the paper stack on the team's desk (front left, in the sand field, set up at P8) loses its sheets. The top sheet lifts (ARRIVE 5 f), folds into a blue dot and slides off onto the loop (DEPART 7 f). Four sheets go this way at 6 f intervals (B13), and the stack ends two sheets high by 27.1. The pawns stay where they are, now with nothing piled beside them.",
+   "grows_out_of": "The paper stack on the team's desk (its sheets fold into dots)",
+   "sound": "Three or four paper flicks, each pitched slightly lower (26.23\u201327.1). The peak chorus of the music lands on 'less' (26.4)."
+  },
+  {
+   "id": "P19",
+   "start": 27.68,
+   "end": 28.94,
+   "key_word": "conversations (28.00)",
+   "on_screen_words": "Roll in the slot: 'Less manual work.' \u2192 'More conversations.' ('conversations' blue). Chip: calendar icon 'Meeting booked' / 'Thursday 10:00, in your calendar' / 11:41, with the footer 'Meetings booked this week' 7",
+   "visual_event": "PRIMARY 27.85 (f836, 4 f before 'conversations'): reply bubbles rise out of six of the copied plots' blocks, in a wave spreading out from your business (B5 small overshoot, 12 f, 3 f apart). Each bubble is white, r 16, with the blue dot and two grey text lines and no words.\n\nSECONDARY 28.45: the chip returns to full opacity and drops through to its last row. Its footer then slides out from the card's bottom (B4 10 f).\n\nIn the caption, 'Less' rolls to 'More' and 'manual work.' rolls to 'conversations.' (Roll in one slot, 10 f, speed-matched) on 27.68\u201328.00.",
+   "grows_out_of": "The copied plots' blocks (each bubble rises out of one), and the chip card (the footer slides out of it)",
+   "sound": "Soft bubble pops in a cascade, panned with their positions (27.85\u201328.2). A light slide for the chip footer (28.45)."
+  },
+  {
+   "id": "P20",
+   "start": 29.13,
+   "end": 30.26,
+   "key_word": "customers (29.51)",
+   "on_screen_words": "Roll: 'conversations.' \u2192 'customers.' ('customers' blue). Chip counter 7 \u2192 8",
+   "visual_event": "PRIMARY 29.36 (f881, 4 f before 'customers'): the bubbles fold down into their blocks (DEPART 6 f). Each block's roof then turns from white to ink with a colour wipe from the bubble's point (B11 6 f, 2 f stagger), so they now wear your business's colour. Their links pull solid to your business (B4 8 f). This is a before/after on the same blocks.\n\nSECONDARY 29.40: the chip counter rolls 7 \u2192 8 like an odometer (B4 10 f).",
+   "grows_out_of": "The reply bubbles (they fold into their blocks' roofs)",
+   "sound": "A satisfying soft 'chunk' with a bright chime on the roof flips (29.36). A tiny digit-roll click (29.40)."
+  },
+  {
+   "id": "P21",
+   "start": 30.71,
+   "end": 32.26,
+   "key_word": "turn (31.51) / AI (31.74)",
+   "on_screen_words": "The caption leaves at 30.45. A new line 1 starts building: 'Turn AI into' (on 31.51 / 31.74 / 32.27)",
+   "visual_event": "PRIMARY 30.57 (f917, 4 f before 'Wicflow'): every blue dot in the world streams home along its route into your business (gather in, B2 long S, 24 f), and each route retracts behind its dot. The chip folds back into its pill and slides off the top (DEPART 9 f).\n\n31.00\u201331.40: the market, tools, CRM and customer blocks sink back into the paper in a wave from the edges inward (DEPART 10 f each, 1 f stagger). This is the reverse of the P3 rise.\n\n31.37 (f941, 4 f before 'turn'): the three tint fields slide in under the business and stack beneath its footprint like folded sheets (B2 20 f). One blue dot sits on the roof.\n\nThe world container eases from 0.92 to 1.08, centred on the business, over 30.9\u201334.2 (B3, \u22645%/s).",
+   "grows_out_of": "Every route and dot on the map (they gather into your business), and the tint fields (they slide in under it)",
+   "sound": "A reverse whoosh as the dots gather (30.57\u201331.3). A low soft sweep under the sink (31.0). Music: the final lift starts on 'Wicflow' (30.7) with a pad swell."
+  },
+  {
+   "id": "P22",
+   "start": 32.27,
+   "end": 33.88,
+   "key_word": "growth (33.57)",
+   "on_screen_words": "Line 1 completes: 'Turn AI into real growth' ('growth' blue, with an underline sweep)",
+   "visual_event": "Your business grows floor by floor, each floor folding up out of one tint sheet. There are three steps (B13), each an extrusion of 0\u21920.9 unit on ARRIVE 9 f, with no overshoot:\n- PRIMARY 32.50 (f975, 'real'): the sand floor\n- 33.00 (f990, 'business'): the sage floor\n- 33.42 (f1003, 4 f before 'growth'): the blue floor\n\nThe building rises from 1.6 to 4.3 units. The ink roof and the blue dot ride up on top at each step (B9, 3 f behind).\n\nSECONDARY 33.42: the OG card's pale-blue circle (#E3E9F4) grows out of the roof behind the building (ARRIVE 24 f, r 0\u2192600 px). This is the film's one full colour-field moment.",
+   "grows_out_of": "The three tint fields (each folds up into a floor), and the roof (the circle grows out of it)",
+   "sound": "Three soft block hits, each pitched a step higher (32.50, 33.00, 33.42). The chords step up with them, and a pad swell rises with the circle."
+  },
+  {
+   "id": "P23",
+   "start": 33.89,
+   "end": 34.99,
+   "key_word": "lasts (34.17)",
+   "on_screen_words": "Line 2: 'that lasts.' (a blue underline sweeps under 'lasts')",
+   "visual_event": "PRIMARY 34.02 (f1021, 4 f before 'lasts'): the building holds perfectly still while its long soft shadow sweeps 120\u00b0 round it like a sundial (B3 soft start, long settle, 30 f). The shadow is ink at 9%, a polygon cast on the paper. Time passes; the growth stays. The dot rests on the roof with no pulse. The underline under 'lasts' draws on B11, 10 f.",
+   "grows_out_of": "The building's own shadow",
+   "sound": "An airy time-sweep, a soft reversed shimmer (34.02\u201334.9). The drums thin out from 34.0, and the music lands its final tonic chord at 34.99."
+  }
+ ],
+ "end_card": "35.00\u201337.50 (f1050\u20131125). This is the calmest moment of the film (the K.B lesson): only the logo and the words arrive, and nothing else crosses the screen.\n\n1. 35.00: the captions leave (DEPART upward, 9 f). The building and its shadow fade to paper in place (B1 14 f, no movement). The pale-blue OG circle #E3E9F4 stays as the card's field.\n2. 35.10\u201335.83: the blue dot lifts off the roof and glides about 320 px (B2 long S, 22 f) to become the '.' of 'wicflow.com'.\n3. 35.55: 'wicflow' wipes out leftward from the dot and 'com' wipes out rightward (masks opening out of the dot, ARRIVE 12 f). The type is Space Grotesk 600, 104 px, \u22120.045em, ink #17171B. The dot stays blue with its halo off.\n4. 35.75: the traced W mark (ink #0A0A0D, 150 px wide) rises 24 px into place left of the wordmark with a fade (ARRIVE 15 f).\n5. 36.05: the site's line 'An AI partner that runs your sales and marketing.' builds word by word below the lockup (Manrope 36 px, #606069, 2 f a word).\n6. 36.45: the site's black pill 'AI analysis' (#0A0A0D / #EEEEF1, Manrope 700 28 px) rises in (ARRIVE 12 f).\n\nFrom 36.8 nothing moves (no breathing, no pulse) and the card holds to 37.5. The lockup is centred around (960,500): the film's one centred composition.\n\nSound: the dot's glass 'plip' when it lands as the '.' (35.83), the same motif as P1, now final. A soft whoosh for the wordmark reveal (35.55). The final chord and bell ring out to silence at 37.5.",
+ "music": "TEMPO AND KEY: 120 BPM, 4/4, a bright major key (E major). At 120 BPM the beat grid lines up with the voice's turns: 5.5, 18.0, 21.5, 24.5 and 35.0 all fall on beats.\n\nSTYLE: clean, optimistic tech-pop with a tactile, practical feel. No EDM drops and no sci-fi sound.\n\nINSTRUMENTS:\n- a plucked synth and marimba arpeggio\n- a soft four-on-the-floor kick\n- a muted clap on beats 2 and 4\n- a round sub bass\n- light shaker and 16th hats\n- an airy pad\n- a glass bell that is the AI dot's two-note motif (dot landing 0.37, loop live 7.15, lock-on 11.52, final landing 35.83)\n\nSECTIONS:\n\n| Time (s) | Section | What happens |\n|---|---|---|\n| 0.0\u20135.5 | Intro | Filtered pluck arpeggio and pad. A riser from 4.4 lands into 5.5. |\n| 5.5\u201310.8 | Build A | Kick and bass enter on 'Wicflow builds'. The filter opens through the three blooms, and each bloom swell is tuned to a chord tone (root, 3rd, 5th). |\n| 10.8\u201318.0 | Groove | Full beat without the top layer, hats in 16ths, ducked about \u221210 dB under the voice. |\n| 18.0\u201321.4 | Lift | On 'Everything connects': the bell arpeggio and open hats join, no crash. |\n| 21.4\u201324.6 | Breakdown | On 'one focused pilot': the drums drop to one low kick a bar and a filtered pluck, which is the music's 'focus'. The filter lifts on 'measure'. |\n| 24.6\u201326.3 | Rebuild | On 'scale what works': the snare-roll riser. |\n| 26.3\u201330.6 | Peak chorus | Fullest and brightest. 'less / more / more' land on downbeats. |\n| 30.6\u201335.0 | Final lift | Pad swell; the chords step up with the three floors at 32.5, 33.0 and 33.4; the drums thin out from 34.0. |\n| 35.0\u201337.5 | Resolve | Tonic chord and the bell, no drums, ringing out to silence. |\n\nMIX:\n- The voice stays dominant (about \u221216 LUFS integrated for the film).\n- Music sits about \u221222 to \u221224 dB under the voice, with sidechain ducking.\n- Sound effects sit at \u221220 to \u221228 dB: soft, tactile and in key (paper, wood, glass), placed on the primary events only, never one per tile or per word.",
+ "risks": [
+  "Busy frames at P13\u2013P14 (links plus 15 logos) and P17\u2013P20 (copies, bubbles, chip). Fix: one wave at a time, the copies' dots rest after one lap, chip moves always secondary and small. Run busy_check and motion_probe on the draft.",
+  "The tool logos are only 40 px on billboards, and several are PNGs (claude, gemini, microsoft, pipedrive) that may be soft at that size. Check sharpness. They keep the site's grid order, arrive row by row and carry no names, so they don't read as logo soup.",
+  "Type laid flat in the ground plane ('Sales', 'Marketing', 'Everyday work') may squash under the iso projection. Keep it at an effective cap height of at least 40 px; if it doesn't read, stand the labels upright as billboards.",
+  "The chip repeats world text ('Hi Anna\u2026', 'Thursday at 10?'). If it competes for attention in P10\u2013P11, hide the chip's sub line while the card or bubble is on screen.",
+  "Anna's record rolling 'New contact' \u2192 'Interested prospect' puts two of the site's illustrative examples together. It must be named in thesis.md; the fallback is 'New contact' with its site next step 'Added to your CRM'.",
+  "The blue '.' in 'wicflow.com' changes the wordmark's colour. Flag it to Karl. Fallback: let the dot ease to ink over the final hold.",
+  "The value-free measure column could read as an invented chart. It has no numbers and no axis. Fallback: keep only the dimension line and the \u2713.",
+  "At P3, the business block moving forward could read as 'relocating'. The blue trail and the market rising ahead of it should carry 'forward'. Test the 1-second read with the sound off.",
+  "The sundial shadow on 'lasts' may be too subtle at 9% ink. Test it. Fallback: an ink hairline sweeps up the floor seams and locks them.",
+  "The content scales (1.18\u21921.00 in the hook, \u22128% at the scale-out, +16% onto the building) must stay under 25 px/s and 5.3%/s and never coincide with a transition. Run motion_probe on every build.",
+  "The P6\u2013P8 blooms land 0.6 s apart in three different places (back right, back left, front left). Keep each bloom 12\u201314 f with its label on the bloom so the eye lands once per word.",
+  "Collisions: the reply bubble and the record card against the top-left chip, and the captions against the slab's front corner. Keep the front corner above y 880 and check text overlaps at 2-frame steps.",
+  "Three pawns could read as game pieces. Keep them plain and ink, and use them only where the line is about the team (P1\u2013P3, P10 approval, P14, P18).",
+  "Everything depends on the force-aligned timings. Every landing is 3\u20136 f before its key word; verify with phrase_check (target: 23 of 23 phrases, longest gap without a new visual under 1.7 s)."
+ ]
+}

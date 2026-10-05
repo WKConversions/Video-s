@@ -1,0 +1,276 @@
+{
+ "name": "Wicflow, 'AI at work' (Direction C: Spiced), 37.5 s VO film",
+ "thesis": "Wicflow's AI does the real work that moves a business forward. The film shows it on one bright isometric model of the viewer's business, in Wicflow's white, ink and three service tints: the site's blue 'AI at work' dot finds the right company, writes to Anna, follows up, keeps the CRM updated inside the team's own tools, starts as one pilot, scales across the business, and at the end becomes the business's growth and then the W mark.",
+ "allowed_patterns": [
+  "The isometric town as an illustration of the viewer's business: YOUR BUSINESS as one ink block, three rounded district plates in the site's own service tints (sales = blue, marketing = sand, everyday work = sage), unnamed white blocks as companies on the sales plate, a screen panel with a play triangle (marketing / AI video), a stack of sheets and a calendar tile (everyday tasks)",
+  "The site's live 'AI at work' dot (#1769C2 with its 12% halo) as the AI doing the work: its blue paths, its scan lens, and the film's only full-bleed AI-blue field (P21)",
+  "A status chip top left rebuilt from the site's hero header ('AI at work' \u00b7 wicflow.com), flipping only through the site's own demo states: Found a company that fits \u00b7 09:02, Wrote the first message \u00b7 09:03, Ready for a follow-up \u00b7 Check in, Connected to your existing workflows, Meeting booked \u00b7 Thursday 10:00, in your calendar \u00b7 11:41",
+  "The site's illustrative demo, word for word: Building firm \u00b7 40 staff \u00b7 Tampere; 'Hi Anna, I saw you're hiring two salespeople\u2026'; your team's approval before sending (shown as an ink 'Approved' pill); 'Anna replied \u00b7 11:40 \u00b7 Sounds useful. Thursday at 10?'; Meetings booked this week 7 \u2192 8 (illustrative, as the site shows it)",
+  "The site's illustrative sales view statuses on the demo company: New contact \u2192 Added to your CRM, next step 'Review the fit'",
+  "The site's workflow strip 'Reach out \u2192 Follow up \u2192 Update your CRM' and the 15 tool logos in the site's own 5\u00d73 tile order and tile style (front-facing, never skewed)",
+  "One generic assistant chat bubble ('How can I help?') as the foil for 'didn't just assist'. It is not presented as Wicflow's product",
+  "A pilot block with a black site-button pill 'Pilot', its copies spread across the plates as 'scale' (never counted, no number shown)",
+  "Text-free reply bubbles as 'more conversations' (only Anna's has words) that flip into ink 'Meeting booked' calendar badges (the site's icon, never counted)",
+  "Kinetic type marks, one per phrase: strike (assist, manual), sweep, underline, hand-drawn ring (one), slot rolls. Captions \u22646 words a line, key word in AI blue",
+  "A7 punchy title pop used once, on the giant white 'AI' over the AI-blue field",
+  "The business block growing three floors as 'real business growth' (no chart, no figures)",
+  "The W mark revealed out of the business block's roof; the site's hero line 'An AI partner that runs your sales and marketing.' and its CTA pill 'AI analysis'",
+  "Bright by default (client palette and Karl's standing rule): white paper ground throughout, no dark background"
+ ],
+ "world": "WHAT IT MODELS: the viewer's own business as a small isometric town on white paper, the domain of the film (as Cartesian models a store and ClearScaler a market). At the centre is YOUR BUSINESS: one ink block, 2.5\u00d72.5 units, roof rhombus ~280 px wide, ~90 px tall. Around it are three rounded district plates, the site's radius-24 service panels laid flat in isometric as 14 px slabs, one for each area the VO names. SALES (blue tint, 5\u00d75 u, ~560\u00d7280 px, centre \u2248(1500,690), right-front) holds nine white company blocks in a 3\u00d73 grid, 1\u00d71 u, heights 0.6\u20131.2 u: the market and its prospects. MARKETING (sand tint, 4\u00d74 u, centre \u2248(880,330), back-left) holds an upright white screen panel 160\u00d7110 with an AI-blue play triangle (the site's AI video) and two flat post cards. EVERYDAY WORK (sage tint, 4\u00d74 u, centre \u2248(1500,300), right-back) holds a stack of four sheets and a calendar tile, standing for the repeated tasks. Streets between the plates are travelled by the AI dot, and its paths become 'the system'. Later states of the same stage: a white pilot block that rises in front of your business; its copies on every plate and on new plates in the three tints at the frame edges (scale); and your block growing floors. Nothing is built for one beat and thrown away: the stack, the building firm and your roof each come back. PROJECTION (code, no 3D engine): 2:1 dimetric, screenX = ox + (gx\u2212gy)\u00b7k, screenY = oy + (gx+gy)\u00b7k/2 \u2212 gz\u00b7k, with k = 56 px per unit at town scale. Faces are SVG polygons in painter's order (back-to-front by gx+gy). Logos, cards, tags and type are always front-facing, never skewed. LOOK, HEX ROLES: ground paper #FFFFFF (never dark); paper-2 #F7F7F9 for soft ground shadows under plates; neutral blocks have top #FFFFFF, left face #F4F4F7 (paper-3), right face #D6D6D9 at 55% (\u2248#E8E8EA), and 1.5 px #D6D6D9 edges. Blocks standing on a plate take that plate's tint steps for their sides: blue #F1F5FB/#E6EDF7/#DFE7F3, sand #F8F4EC/#F0E9DC/#EAE1D1, sage #F1F6F1/#E5EEE6/#DDE8DE. Plates have top tint[0], slab edge tint[2] and a hairline in tint[2]. YOUR BUSINESS has top #17171B (ink), sides #0A0A0D (ink-strong) and #606069 hairline edges, the site's black-button language. AI blue #1769C2 is used only for the AI: the dot (22 px core, halo ring 46 px #1769C21F), paths (5 px, round caps, 35% opacity when idle, 100% when live), caption key words and marks, and the one full-bleed field. Muted #606069 is for secondary text. Cards, the chip and tags are #FFFFFF, radius 24 (cards) or 999 (pills), hairline #0000001F, shadow 0 24 60 #17171B14 (the site's soft float). Pills are ink: bg #0A0A0D, text #EEEEF1. Display type is Space Grotesk 600 at \u22120.045em (captions, numbers, card titles); Manrope 400/700 is for UI labels. While a full tint field is up, plates switch to white tops so the town stays readable. COMPOSITION: town centred around (1180,520), keeping clear the chip zone top left (x 110\u2013760, y 70\u2013270) and the caption zone bottom left (x 120\u20131100, y 790\u20131010). Cards unfold into the left-centre (x 360\u20131300, y 300\u2013620) or right (x 880\u20131800) over the town, which dims to 40\u201345%. Only one card is ever open at a time.",
+ "thread_object": "THE AI-AT-WORK DOT: #1769C2, 22 px with its 12% halo, the live dot from Wicflow's own hero card, the site's 'colour of the AI working'. It carries the whole film:\n- P1: it falls onto the roof of your business on 'AI'.\n- P2: it waits as the avatar in an assistant chat bubble ('just assist').\n- P3: the bubble collapses back into it. It runs ahead and draws the blue road your business launches forward on.\n- P4: it lives in the chip from 'Wicflow'.\n- P6\u2013P8: it whips plate to plate, and each arrival blooms that area's tint across the frame.\n- P9: it opens into the scan lens that finds the building firm.\n- P10\u2013P12: the message card collapses into it and it is sent; a second dot follows up by itself; it carries the CRM update home.\n- P13: its trails close into the loop that connects everything.\n- P15: it hops onto the one pilot block.\n- P17: it switches on in every copy.\n- P21: on 'AI' it irises out into the film's only full-bleed AI-blue field.\n- P22: the field folds back into the roof of your business, which grows three floors with the blue roof on top.\n- P23: the roof lifts off, turns ink and becomes the diamond at the heart of the W mark, which grows out of it.\nPAYOFF: the colour of AI at work becomes the roof of your growth, and the roof of your growth becomes the Wicflow mark. A second, smaller thread is YOUR BUSINESS block: it moves forward (P3), everything unfolds from it and folds back into it (P10\u2013P14), everything gathers into it (P21), it grows (P22) and it gives the mark (P23).",
+ "colour_plan": "Colour changes with the story, always through a mask that grows out of an object and never as a crossfade. Soft fields are radial like the site's panels (tint[0] at the object \u2192 tint[2] at the edges). Order:\n1. 0.00\u20137.85 WHITE paper #FFFFFF. Ink block, AI-blue dot and paths, the three plates in their tints from 5.88.\n2. 7.85 BLUE TINT field (#F1F5FB \u2192 #DFE7F3) irises out of the SALES plate at the dot's arrival (whipOut 12f).\n3. 8.45 SAND field (#F8F4EC \u2192 #EAE1D1) irises out of the MARKETING screen panel over the blue.\n4. 9.35 SAGE field (#F1F6F1 \u2192 #DDE8DE) irises out of the EVERYDAY sheet stack. These three are the rhythmic burst of the film, one per spoken area; the caption's slot word rolls on the same frames.\n5. 10.50\u201310.77 the sage field DRAINS back into the sheet stack it came from (reverse iris on whipIn) while the dot whips to the sales plate. White paper returns for the work.\n6. 10.77\u201318.45 WHITE. Blue lives only in the dot, paths, tags, key words and sweeps. Cards are white over the town dimmed to 45%.\n7. 18.45 SAGE field irises out of the junction at your block where the loop closes ('connects'). It is the site's connected-tools panel colour, and the 15 white tool tiles sit on it.\n8. 21.82 a WHITE wash grows out of the PILOT block over the sage (focus on 'one'), then the B16 zoom-through.\n9. 22.27\u201331.60 WHITE (pilot, measure, scale, results). The copies' new plates carry the three tints as a quiet callback. A white wash covers the left of the town under the big result type.\n10. 31.60 FULL-BLEED AI BLUE #1769C2 irises out of the AI dot on your roof. This is the only saturated full field in the film, on 'AI'; the caption and the giant 'AI' are white on it.\n11. 32.16 the blue field CONTRACTS into your roof (iris closing, MOVE 12f). White returns and the roof stays AI blue.\n12. 34.04 the roof turns from AI blue to ink #0A0A0D as it lifts into the W mark.\n13. 35.00\u201337.50 WHITE end card: ink mark, ink wordmark, muted line, black pill.\nNever dark. The only near-black areas are the business block, pills and the mark, all small.",
+ "motion_identity": "PERSONALITY: an energetic premium launch film. Crisp, decisive, optimistic, never jittery. The energy comes from content (things rise, whip, flip, bloom); the camera only breathes. ENERGY CURVE (0\u201310):\n- 0\u20132.7 hook build 4\u21925: small, fast arrivals.\n- 2.7\u20134.9 punch 6: strike, path, launch forward.\n- 4.9\u20135.6 breath 4.\n- 5.6\u20137.8 build 6: the town rises.\n- 7.8\u201310.4 burst 8: three dot whips, three colour fields.\n- 10.4\u201317.6 flow 6\u20137: steady travelling work, one card at a time.\n- 17.6\u201318.1 inhale 5.\n- 18.1\u201321.1 impact/lift 9: loop closes, sage bloom, tool cascade.\n- 21.1\u201322.6 focus 4, then the zoom-through spike 7.\n- 22.6\u201323.4 calm 3: the pilot alone.\n- 23.4\u201325.9 build 5\u21927: tick, then one becomes many.\n- 25.9\u201326.4 inhale 5.\n- 26.4\u201330.3 peak 9: three type hits.\n- 30.3\u201331.5 gather 6.\n- 31.6 the single biggest impact 10: AI-blue flood.\n- 32.2\u201334.9 resolve 6\u21924: growth steps, lock.\n- 35.0\u201337.5 calm 2: end card.\nSIGNATURE CURVE: ARRIVE cubic-bezier(0.22,1,0.36,1), expo-out, for every arrival. DEPART (0.55,0,0.9,0.4) for exits, at 70% of the entrance time. Whips use EASE.whipIn (0.9,0,1,1) into the cut and EASE.whipOut (0,0,0.1,1) out of it, with the shape change on the fastest frame and motion blur on the 4 fastest frames. Parts follow on EASE.lead/EASE.follow (B9, followers 3f behind, never more than 6f).\nDURATION PALETTE (30 fps):\n- pop: 5f in, settling by 10\u201312f\n- quick: 8f\n- standard: 12f\n- deliberate: 20f\n- big content move: 30f\n- whip halves: 7\u201310f\n- zoom-through: 10f + 10f\n- word cascade: 7f a word, on the spoken word times\n- caption exit: 8f\nENTRANCE PATTERN: things rise out of the ground (blocks and plates extrude from height 0); cards and tags unfold out of the block they belong to on a stem and fold back into it; colour fields iris out of the object that owns them; type builds word by word on the force-aligned words (A5: 0.4em rise). Nothing fades up from nowhere and nothing scales from zero.\nSPEED GRAPHS USED:\n- A1: dot whips P6\u2013P9, card\u2192dot send P11\n- A2: chip states, caption slot rolls, CRM pill, 7\u21928, tag roll\n- A5: captions\n- A6: Anna message type-on\n- A7: 'AI', once\n- B2: big content moves (scale-out, gather-in, roof lift)\n- B4: lens\n- B5: small pops\n- B6: launch, hop, follow-up, flood wind-up\n- B7: strikes, stack collapse\n- B9: unfolds\n- B11: paths, loop\n- B13: strip steps, growth floors\n- B15: breath\n- B16: once, P15\n- B17: sweeps, scan\nOVERSHOOT is allowed only on small pops, one \u22485\u201310% overshoot (B5): the dot landing, the chat bubble, the tags, the 15 tool tiles (5%), the 'Approved' and 'Pilot' pills, Anna's bubble, the check and the badges. The one A7 elastic is on the giant 'AI'. Blocks, plates, cards, fields, type lines and the mark never overshoot or bounce. CAMERA: one slow breath for the whole film (B15: \u226410 px drift, 4 s period, plus scale 1.00\u21921.02 per act, always under 25 px/s and 5%/s). No pans, zooms or releases on transitions; the one zoom-through is the pilot block scaling. BUSY RULE: one lead motion at a time, with at most one follower group and one small chip change. Never two cards open, and no more than about 4 separate motions on screen.",
+ "transition_family": [
+  "OUT OF AN OBJECT AND BACK INTO IT (masks and unfolds). Colour fields iris out of the plate, stack, junction, pilot or dot that owns them, and drain back into it (sage \u2192 stack at 10.5, AI blue \u2192 roof at 32.16). Every card (message, CRM, tools, measure) unfolds out of the block it belongs to on a stem and folds back into the same block. No crossfade between layouts anywhere.",
+  "OBJECT BECOMES THE NEXT THING (match transformation and layout transformation). Each one in order: the assistant bubble collapses into the AI dot (P3); the dot's path becomes the road the business moves on (P3); the dot opens into the scan lens (P9); the message card becomes the sent dot (P11); the dot's trails close into the loop (P13); the pilot shrinks back into the town and is copied outward to many (P17); reply bubbles flip into booking badges (P20); everything gathers into your block (P21); the AI-blue field folds into the roof (P22); the roof becomes the heart of the W mark (P23).",
+  "SPEED-MATCHED WHIPS THROUGH CUTS (Karl's Training.aep). A1 dot whips between districts with the colour field blooming on the fastest frame (P6, P7, P8, back at P9). A1 card-to-dot send along the blue line (P11, cut at 14.45). A2 drop-throughs in one spot for the chip states, the caption slot word (sales \u2192 marketing \u2192 everyday work), the work-line rolls (P9\u2013P12), the CRM pill, the tag 'Your team' \u2192 'Your business' and the counter 7 \u2192 8. ONE B16 zoom-through: the pilot block itself scales \u00d74 into the cut on 'focused' (22.27) and the pilot scene grows from 25% (P15)."
+ ],
+ "phrases": [
+  {
+   "id": "P1",
+   "start": 0.09,
+   "end": 0.87,
+   "key_word": "AI",
+   "on_screen_words": "What if AI ('AI' in AI blue, no mark: the dot is its mark)",
+   "visual_event": "0.00\u20130.40 PRIMARY: YOUR BUSINESS, the ink block (roof ~280 px), rises out of the white paper at (950,560) (height 0\u21921, ARRIVE 12f) with its soft shadow; frame 0 already shows it at 10% height with its shadow. 0.24\u20130.37 PRIMARY: the AI-at-work dot (22 px, #1769C2) falls in from above the frame onto the roof (A2-style drop-in: whipIn 6f over 220 px). It lands at 0.37, 4f before 'AI', with one small overshoot squash (B5, 10f), and its 12% halo ripples out once to 120 px and fades (ARRIVE 12f). Caption builds bottom left on the words 0.09 'What', 0.40 'if', 0.49 'AI' (A5 word cascade, Space Grotesk 600 72 px), with 'AI' arriving in blue. The breath starts (B15).",
+   "grows_out_of": "the white paper itself (the block extrudes out of the ground); the dot falls into frame onto the roof",
+   "sound": "Music intro: filtered pluck arp, soft pulse, no kick. SFX: low soft 'appear-rise' under the block (0.00); bright small 'pop' on the dot landing (0.37); faint air shimmer on the halo."
+  },
+  {
+   "id": "P2",
+   "start": 0.88,
+   "end": 2.75,
+   "key_word": "assist",
+   "on_screen_words": "What if AI didn't just assist (same line continues on 'didn't' 0.88, 'just' 1.18, 'assist' 1.44)",
+   "visual_event": "1.27 PRIMARY (5f before 'assist'): a white chat bubble (site card: radius 24, hairline, soft shadow, 300\u00d7110 px, at x 640\u2013940, y 320\u2013430, tail pointing to the block) pops out of the roof (scale 0.85\u21921 plus an 8 px rise, B5 6% overshoot, 10f). It reads 'How can I help?' (Manrope 700, 30 px, ink) with a resting caret. The AI dot hops off the roof into the bubble's left slot as its avatar (B6: 3f dip, 8f arc). This is the AI as a helper waiting to be asked. 2.03 SECONDARY ('team' 2.15): a 'Your team' tag (white pill, Manrope 700 26 px, 40 px hairline stem) rises out of the roof (B9: the stem leads, the tag follows 3f behind, ARRIVE 10f).",
+   "grows_out_of": "the block's roof (the bubble and the tag come out of it); the dot hops from the roof into the bubble",
+   "sound": "SFX: soft rounded 'chat' pop on the bubble (1.27); light tap on the tag (2.03). Music: arp continues, filter opens a little."
+  },
+  {
+   "id": "P3",
+   "start": 2.76,
+   "end": 4.94,
+   "key_word": "forward",
+   "on_screen_words": "Line 1 keeps 'assist' struck through; line 2 builds: 'but moved your business forward?' ('forward' in blue with a pale-blue #DFE7F3 sweep)",
+   "visual_event": "2.63 PRIMARY ('but'): an ink strike (7 px #17171B) slams left\u2192right through 'assist' (B7 impact, 6f). On the same frames the bubble collapses into the AI dot (MOVE 8f, layout transformation) and the dot is free. 3.30 PRIMARY ('moved' 3.45): the dot runs ahead up-right along the street, drawing a 5 px AI-blue path (B11 steady, 14f) to a ground tile ~200 px ahead whose outline lights blue. 3.90 SECONDARY ('business' 4.02): the tag rolls 'Your team' \u2192 'Your business' (A2 drop-through inside the pill, 6+6f). 4.20\u20134.70 PRIMARY ('forward' 4.39): the block winds up (B6: pulls back 6% along the path over 5f), launches up-right along the blue path (10f, motion blur on the 3 fastest frames) and lands on the lit tile at (1120,500) on ARRIVE with no bounce. The tag follows 3f behind (B9). The sweep slides under 'forward' left\u2192right on the same frames and in the same direction (B17, 10f).",
+   "grows_out_of": "the bubble collapses into the dot; the dot's own path becomes the road the business moves forward on",
+   "sound": "SFX: crisp marker 'strike' scratch (2.63); short rising 'swipe' tick for the path (3.30); tight 'whoosh' on the launch (4.25) ending in a soft wooden thud (4.70). Music: 2-beat snare build 4.0\u20135.5 and a reverse swell into 5.59."
+  },
+  {
+   "id": "P4",
+   "start": 5.59,
+   "end": 6.32,
+   "key_word": "builds",
+   "on_screen_words": "Wicflow builds ('Wicflow' in ink. The previous two lines lift 20 px and fade, 5.05\u20135.30)",
+   "visual_event": "5.45 SECONDARY (4f before 'Wicflow'): the status chip drops into the top left (A2 drop-in from 60 px above, whipOut 10f). It is a white pill at (110,86), 430\u00d764: live AI-blue dot with halo \u00b7 'AI at work' (Manrope 700, 26 px) \u00b7 'wicflow.com' (Manrope 400, 22 px, muted #606069). This is the site's own hero header, so the brand is named on its word. 5.80: the 'Your business' tag folds back into the roof (DEPART 6f). 5.88 PRIMARY ('builds' 6.02): the three district plates rise out of the paper around your block (slab 0\u219214 px plus scale 0.92\u21921, ARRIVE 10f, staggered 3f): sales (blue, centre \u22481500,690), marketing (sand, \u2248880,330), everyday work (sage, \u22481500,300).",
+   "grows_out_of": "the ground around your block (the plates extrude from the paper); the chip drops in on the brand word",
+   "sound": "Music: the beat enters at 5.55 (kick, claps, bright plucks). SFX: three soft rising 'build' ticks, one per plate (5.88 / 5.98 / 6.08)."
+  },
+  {
+   "id": "P5",
+   "start": 6.33,
+   "end": 7.81,
+   "key_word": "systems",
+   "on_screen_words": "Wicflow builds practical AI systems ('systems' in blue with a 6 px AI-blue underline)",
+   "visual_event": "6.22\u20137.18 PRIMARY: each plate fills with its working parts in one cascade, plate by plate (B9 follow-through, each piece 8f ARRIVE extruding from its plate, 1.5f stagger). Sales gets nine white company blocks with blue-tint sides in a 3\u00d73 grid. Marketing gets the upright screen panel with an AI-blue play triangle and two flat post cards. Everyday work gets a stack of four sheets and a calendar tile. 7.17 ('systems' 7.30): the last piece lands as the underline draws under 'systems' (ARRIVE 8f), and dashed #D6D6D9 hairline streets appear between your block and the three plates (B11, 10f). The parts now read as one system waiting to be connected.",
+   "grows_out_of": "the three plates (their objects extrude out of them)",
+   "sound": "SFX: soft rising tick run, one tick per beat (not per block), 6.22\u20137.18. Music: groove."
+  },
+  {
+   "id": "P6",
+   "start": 7.82,
+   "end": 8.57,
+   "key_word": "sales",
+   "on_screen_words": "Line 2: 'for sales' (slot word in AI blue)",
+   "visual_event": "7.55\u20137.85 PRIMARY, A1 WHIP: the AI dot leaves your roof and whips along the street to the sales plate (whipIn 9f, \u2248520 px, motion blur). It crosses the plate edge on the fastest frame (7.85, 4f before 'sales'). On that frame the BLUE TINT field irises out of the plate from the dot (radial #F1F5FB \u2192 #DFE7F3, full bleed, circle on whipOut 12f, 7.85\u20138.25), and the dot decelerates onto the centre block at the same speed (whipOut). The dot leaves a 35%-opacity blue trail. The slot word 'sales' drops in on the same cut (A2, 6f). Plates switch to white tops while a tint field is up.",
+   "grows_out_of": "the dot entering the sales plate (the field irises out of that point)",
+   "sound": "SFX: pitched rising whoosh into the cut plus a soft airy 'bloom' swell for the field. Music: pluck accent on the beat."
+  },
+  {
+   "id": "P7",
+   "start": 8.58,
+   "end": 9.26,
+   "key_word": "marketing",
+   "on_screen_words": "Line 2: 'for marketing' (slot rolls sales \u2192 marketing)",
+   "visual_event": "8.24\u20138.45 PRIMARY, A1 WHIP: the dot whips from the sales plate to the marketing plate (whipIn 7f), with the cut on the fastest frame at 8.45. The SAND field (#F8F4EC \u2192 #EAE1D1) irises out of the screen panel over the blue (whipOut 12f), and the play triangle pops (B5, tiny). The slot word rolls 'sales' \u2192 'marketing' (A2 drop-through 6+6f) on the same cut.",
+   "grows_out_of": "the marketing plate's screen panel",
+   "sound": "SFX: second whoosh, pitched a step higher, plus bloom. Music: same."
+  },
+  {
+   "id": "P8",
+   "start": 9.27,
+   "end": 10.37,
+   "key_word": "everyday",
+   "on_screen_words": "Line 2: 'for everyday work' (slot rolls \u2192 everyday work)",
+   "visual_event": "9.12\u20139.35 PRIMARY, A1 WHIP: the dot whips to the everyday plate (whipIn 7f), with the cut at 9.35. The SAGE field (#F1F6F1 \u2192 #DDE8DE) irises out of the sheet stack (whipOut 12f), the top sheet lifts 6 px and settles (B5, tiny), and the slot rolls \u2192 'everyday work'. 9.35\u201310.37 working hold: the dot sits on the stack, the three blue trails now link your block to all three plates, and the breath continues.",
+   "grows_out_of": "the stack of sheets on the everyday plate",
+   "sound": "SFX: third whoosh, highest pitch; a soft paper rustle on the stack. Music: drum fill 10.0\u201310.4."
+  },
+  {
+   "id": "P9",
+   "start": 10.83,
+   "end": 12.36,
+   "key_word": "prospects",
+   "on_screen_words": "Caption replaces (lift and fade): 'Finding the right prospects' ('prospects' in blue)",
+   "visual_event": "10.50\u201310.77 TRANSITION: the dot whips back to the sales plate (A1 whipIn 8f) while the sage field drains back into the sheet stack (reverse iris on the same 8f). White paper returns on the cut at 10.77, and the dot decelerates onto the plate (whipOut 8f). 10.90 PRIMARY ('finding' 11.0): the dot opens into a scan lens (AI-blue ring 170 px, 3 px stroke, 8% fill; B4 spring) that sweeps once across the nine company blocks (B17, 15f). Blocks it passes either sink to half height and fade to 60% (B1 8f, followers) or stay. 11.55 PRIMARY ('prospects' 11.67): three fits rise 0.4 u (ARRIVE 8f). The front one, the building firm, gets a blue-tint roof, and its tag pops on a stem: 'Building firm \u00b7 40 staff \u00b7 Tampere' (white pill, Manrope 700 28 px; B5 8% overshoot, 12f). The lens closes back into a dot on its roof (B4). 11.62 SECONDARY: the chip expands from pill to card (B9, 10f), and its state drops in: 'Found a company that fits' (Space Grotesk 600, 34 px) \u00b7 '09:02' (Manrope 24 px, muted).",
+   "grows_out_of": "the AI dot (it becomes the lens); the sage field drains back into the stack it came from",
+   "sound": "SFX: soft sonar sweep under the lens (10.90\u201311.40); bright 'ding' pop on the tag (11.55); quiet tap on the chip. Music: flow section, hi-hats move to 16ths."
+  },
+  {
+   "id": "P10",
+   "start": 12.37,
+   "end": 14.09,
+   "key_word": "personalized",
+   "on_screen_words": "Caption rolls (A2): 'Writing personalized outreach' ('personalized' in blue)",
+   "visual_event": "12.38 PRIMARY ('writing' 12.53): a message card unfolds out of your ink block on its tether (scale 0.6\u21921 from the roof, ARRIVE 12f). The card is 900\u00d7250, white, radius 24, at x 360\u20131260, y 300\u2013550, and the town dims to 45%. A blue line links the card to the building firm. Top line: 'To Anna \u00b7 Building firm, Tampere' (Manrope 400, 24 px, muted). The body types on (A6: a third in 3f, the rest trickles to 13.35): 'Hi Anna, I saw you're / hiring two salespeople\u2026' (Space Grotesk 600, 46 px, ink), with 'Anna' in AI blue. 12.72 MARK ('personalized' 12.85): a blue-tint sweep slides under 'hiring two salespeople' (B17, 10f): the personal detail. 12.78 SECONDARY: the chip state drops through to 'Wrote the first message \u00b7 09:03'. 13.88 SECONDARY (in the pause): an ink pill 'Approved \u2713' (#0A0A0D / #EEEEF1, Manrope 700 24 px) pops at the card's bottom right (B5, 10f). Your team checks before anything is sent.",
+   "grows_out_of": "your business block (the card unfolds out of its roof); the line types out of its caret",
+   "sound": "SFX: quiet keyboard ticks under the type-on (12.45\u201313.35); soft tap-click on 'Approved' (13.88). Music: flow."
+  },
+  {
+   "id": "P11",
+   "start": 14.44,
+   "end": 15.68,
+   "key_word": "follow-ups",
+   "on_screen_words": "Caption rolls: 'Automating follow-ups' ('follow-ups' in blue)",
+   "visual_event": "14.15\u201314.72 PRIMARY, A1 WHIP (the send): the card squeezes along the blue line toward the building firm and speeds up (whipIn 9f, scaleX 1\u21920.1, blur). On the fastest frame (14.45) it becomes the AI dot, which carries on at the same speed along the line and decelerates into the building firm block (whipOut 9f). The firm's roof flashes blue once. 14.78\u201315.04: a thin blue clock ring closes round the dot on your roof (B11, 8f): time passes, no reply yet. 14.95 PRIMARY ('follow-ups' 15.08): a second dot launches from your roof on its own (B6: 4f wind-up, 10f launch) along the same line. It carries a small pill 'Follow-up' (white, AI-blue text, Manrope 700 22 px, B9 3f behind) and arrives at 15.45. 15.00 SECONDARY: the chip drops through to 'Ready for a follow-up \u00b7 Check in'.",
+   "grows_out_of": "the message card (it becomes the dot that is sent); the follow-up dot comes out of your roof by itself",
+   "sound": "SFX: 'swish-send' whoosh building into the cut at 14.45; light tick-tock on the clock ring; a second, lighter whoosh for the follow-up (14.95)."
+  },
+  {
+   "id": "P12",
+   "start": 15.69,
+   "end": 17.58,
+   "key_word": "CRM",
+   "on_screen_words": "Caption rolls: 'Keeping your CRM updated' ('CRM' in blue)",
+   "visual_event": "15.85\u201316.20 SECONDARY: the follow-up dot travels back along the line into your block (B2, 11f), carrying the information home. 16.22 PRIMARY ('CRM' 16.35): a CRM card unfolds out of your block into the same slot the message card used (ARRIVE 12f, 820\u00d7200). Header 'Your CRM' (Manrope 700, 24 px, muted); one row 'Building firm \u00b7 Tampere' (Space Grotesk 600, 40 px); status pill at the right 'New contact' (#F4F4F7 pill, Manrope 700 26 px). 16.86 PRIMARY ('updated' 16.99): the pill rolls (A2 drop-through, 6+6f) to 'Added to your CRM \u2713' on a blue-tint pill, and a muted line 'Next step: Review the fit' rises under it (B9, 3f behind). 17.42\u201317.72: the card folds back into your block (DEPART 9f).",
+   "grows_out_of": "your business block (the card unfolds from it and folds back into it); the dot carries the data home",
+   "sound": "SFX: soft 'appear' on the card; satisfying mechanical 'tick' on the pill roll (16.86). Music: 1-bar riser and snare roll 17.0\u201318.0 into the lift."
+  },
+  {
+   "id": "P13",
+   "start": 18.09,
+   "end": 18.98,
+   "key_word": "connects",
+   "on_screen_words": "'Everything connects' ('connects' in blue, 6 px AI-blue underline drawn at 18.45)",
+   "visual_event": "17.98 PRIMARY ('Everything'): the 35% blue trails the dot left between the plates (P6\u2013P11) are joined by the last missing segment, everyday plate back to your block, which draws in (B11, 12f). The loop round the town closes. 18.45 PRIMARY ('connects' 18.57): every path snaps to full AI blue (4f), a ripple ring runs out from your block once (12f), and the SAGE field irises out of that junction to full bleed (radial #F1F6F1 \u2192 #DDE8DE, whipOut 14f). The caption underline draws on the same frames. 18.50 SECONDARY: the chip drops through to 'Connected to your existing workflows'.",
+   "grows_out_of": "the dot's own trails (completed by the last segment); the sage field grows out of the junction at your block",
+   "sound": "Music: THE LIFT, full band from 18.0, crash and bass octave on 18.45. SFX: a deep 'connect' impact with a bright click on the loop closure (18.45)."
+  },
+  {
+   "id": "P14",
+   "start": 18.99,
+   "end": 21.07,
+   "key_word": "tools",
+   "on_screen_words": "Line 2: 'with the tools your team uses' ('tools' in blue)",
+   "visual_event": "19.05 PRIMARY ('tools' 19.17): the site's tools card unfolds out of your block on the sage field (ARRIVE 12f; white, radius 24, 900\u00d7540, at x 880\u20131780, y 210\u2013750; the town dims to 40%). Top: the strip 'Reach out \u2192 Follow up \u2192 Update your CRM' (pill row, Manrope 700 26 px). Below: the 15 tool tiles in the site's 5\u00d73 order (ChatGPT, Claude, Gemini, Copilot, Google Workspace / Microsoft 365, Gmail, Outlook, Google Sheets, Teams / Slack, HubSpot, Pipedrive, Salesforce, n8n), each 150\u00d7120 with a 60 px logo and a 20 px name. They cascade in reading order: scale 0.88\u21921 with a 5% B5 overshoot, 8f each, 1.5f stagger, 19.10\u201319.85, as one group. 19.90 PRIMARY ('already uses'): a blue dot steps along the strip, Reach out \u2192 Follow up \u2192 Update your CRM (B13, 5f a step, 4f holds). These are the three steps the film just showed, now running inside your own tools. 21.02\u201321.32: the card folds back into your block (DEPART 9f).",
+   "grows_out_of": "your business block (the card unfolds from it); the strip's steps are the work of P10\u2013P12",
+   "sound": "SFX: one soft rising shimmer for the whole tile cascade (not 15 hits); three light ticks on the strip steps. Music: lift continues; low-pass starts closing at 20.8 into the break."
+  },
+  {
+   "id": "P15",
+   "start": 21.52,
+   "end": 23.11,
+   "key_word": "one",
+   "on_screen_words": "Caption replaces: 'Start with one focused pilot.' ('one' gets a hand-drawn AI-blue ring, 4 px, drawn 21.80\u201322.07)",
+   "visual_event": "21.40 PRIMARY ('Start'): the AI dot hops off your roof onto an empty ground tile in front of your block (B6 hop, 8f), and a small white pilot block rises under it (1.5\u00d71.5 u, ARRIVE 8f). 21.80 PRIMARY ('one' 21.93): focus. The rest of the town fades to 15% (DEPART 8f), a white wash irises out of the pilot block over the sage (whipOut 10f), a thin ink ring draws round its footprint (8f), and the caption ring closes round 'one'. 21.95\u201322.27 THE ZOOM-THROUGH (B16, the only one): the pilot block itself scales \u00d74 around its roof centre on whipIn (10f), with motion blur on the last 3f. Cut on 'focused' (22.27). 22.27\u201322.60: the pilot scene grows from 25% to 100% on whipOut (10f): one white iso plate (radius 24, hairline, soft shadow, 820\u00d7410, centre (1180,620)) holding the pilot block (420 px roof) with the AI dot on top. 22.55 SECONDARY ('pilot' 22.68): a black pill 'Pilot' (site button, Manrope 700 28 px) pops above the block on a hairline stem (B5, 12f). The chip folds back to its compact 'AI at work' pill for the calm section.",
+   "grows_out_of": "the pilot block that rises out of the ground in front of your business (the zoom-through is that block scaling, not the camera)",
+   "sound": "Music: BREAK, kick out, low-pass to ~600 Hz, one sustained chord (21.3\u201323.4). SFX: small hop pop (21.40); deep 'zoom-through' whoosh with a reverse-air swell peaking exactly on the cut (22.27); small pop on the Pilot pill (22.55)."
+  },
+  {
+   "id": "P16",
+   "start": 23.41,
+   "end": 24.43,
+   "key_word": "results",
+   "on_screen_words": "Second caption line under the first, which dims to muted: 'Measure the results.' ('results' in blue)",
+   "visual_event": "23.28 PRIMARY ('measure' 23.41): a measure card rises from the plate's right edge on a hairline stem (B9: the stem leads, the card follows 3f behind, ARRIVE 12f; white, 460\u00d7160, at x 1360\u20131820, y 320\u2013480). It shows 'Meetings booked this week' (Manrope 400, 26 px, muted) and the number '7' (Space Grotesk 600, 88 px, ink). 23.72 PRIMARY ('results' 23.85): the 7 drops through to 8 (A2: the 7 speeds down out of its mask, the cut falls on the fastest frame, and the 8 enters from above at the same speed and settles, 6+6f, blur on the cut frames). A 4 px AI-blue underline sweeps under the 8 (B17, 8f), and the pilot block lifts 0.2 u as a follower (B1, 8f).",
+   "grows_out_of": "the pilot plate (the card rises out of it on a stem)",
+   "sound": "Music: half-time kick returns at 23.4. SFX: soft card appear; crisp mechanical 'tick-roll' plus a small chime on 7\u21928 (23.72)."
+  },
+  {
+   "id": "P17",
+   "start": 24.56,
+   "end": 25.91,
+   "key_word": "scale",
+   "on_screen_words": "Third caption line: 'Scale what works.' ('works' in blue with a pale-blue sweep at 25.22; earlier lines dim)",
+   "visual_event": "24.58 PRIMARY ('scale' 24.72): the measure card folds back into the plate (DEPART 6f). The pilot plate shrinks (element scale 1 \u2192 0.22, B2 long S, 30f, 24.60\u201325.60) back into its slot in front of your ink block. The town does not scale: it rises back in around the pilot at its new 0.75 size, and copies of the pilot (white block plus dot) rise on every plate and on new plates in the three tints at the frame edges (ARRIVE 8f each, staggered outward 2f per ring). One pilot becomes many across sales, marketing and everyday work, with no number shown. 25.22 SECONDARY ('works' 25.36): the AI dots on all the copies switch on in a wave from the centre (opacity plus scale 0.6\u21921, ARRIVE 6f, 1f per ring).",
+   "grows_out_of": "the pilot block (it shrinks back into the town and is copied outward)",
+   "sound": "Music: BUILD, four-on-the-floor from 24.6, riser 24.6\u201326.3. SFX: one rising 'spread' texture under the copies; a soft switch-on click wave at 25.22."
+  },
+  {
+   "id": "P18",
+   "start": 26.38,
+   "end": 27.45,
+   "key_word": "manual",
+   "on_screen_words": "Big type, line 1: 'Less manual work.' ('manual' struck through)",
+   "visual_event": "26.20: the caption stack lifts out (DEPART 8f, staggered 2f), and a soft white wash grows over the left half of the town. 26.28 PRIMARY: 'Less manual work.' builds big at the left (Space Grotesk 600, 96 px, x 120, baseline 640; A5 cascade at 0.08 s a word). 26.55 MARK ('manual' 26.68): an 8 px ink strike slams through 'manual' (B7 impact, 6f), and the word dims to 45%. 26.60 SECONDARY: on the everyday plate the stack of four sheets from P5/P8 collapses into one sheet (B7, 6f) and a blue check pops on it (B5, small). The copies' small stacks follow in one wave outward (2f per ring).",
+   "grows_out_of": "the sheet stack set up in P5 and bloomed in P8 (the manual work) is cleared",
+   "sound": "Music: PEAK starts at 26.38, full band with a stab on 'Less'. SFX: punchy 'strike' slam (26.55); short paper-flatten thump (26.60)."
+  },
+  {
+   "id": "P19",
+   "start": 27.68,
+   "end": 28.94,
+   "key_word": "conversations",
+   "on_screen_words": "Big type, line 2: 'More conversations.' ('conversations' in AI blue)",
+   "visual_event": "27.56 PRIMARY: line 2 builds under line 1 (A5), and line 1 steps up 8 px (B1). 27.86 PRIMARY ('conversations' 28.0): Anna's reply rises out of the building firm block from P9. It is a white bubble 540\u00d7120, radius 24, hairline, with header 'Anna replied \u00b7 11:40' (Manrope 700, 22 px, muted) and text 'Sounds useful. Thursday at 10?' (Space Grotesk 600, 34 px, ink), entering with a B5 6% overshoot over 12f. 28.05\u201328.50 SECONDARY: small text-free reply bubbles (two grey lines each) pop on the copies across the field in one wave outward (B5 small, 8f, 1.5f per ring).",
+   "grows_out_of": "the building firm block found in P9 (Anna replies from it); the copies answer after it",
+   "sound": "Music: stab on 'more' 27.68. SFX: warm 'message received' pop for Anna's bubble; one soft combined cascade sound for the small bubbles."
+  },
+  {
+   "id": "P20",
+   "start": 29.13,
+   "end": 30.26,
+   "key_word": "customers",
+   "on_screen_words": "Big type, line 3: 'More customers.' ('customers' in AI blue with a pale-blue sweep)",
+   "visual_event": "29.03 PRIMARY: line 3 builds (A5). 29.38 PRIMARY ('customers' 29.51): every reply bubble flips edge-on (Flip, 6f each, wave from Anna outward) into an ink calendar badge, the site's 'Meeting booked' icon (ink circle 56 px with a white calendar glyph). Replies become booked meetings. The sweep slides under 'customers' (B17, 10f). 29.75 SECONDARY: the chip expands again and drops in 'Meeting booked \u00b7 Thursday 10:00, in your calendar \u00b7 11:41'.",
+   "grows_out_of": "the reply bubbles of P19 (they flip into the booking badges)",
+   "sound": "Music: stab on 'more' 29.13; the peak bar ends at 30.4. SFX: light card-flip riffle across the wave; 'success' chime on the chip (29.75)."
+  },
+  {
+   "id": "P21",
+   "start": 30.71,
+   "end": 32.26,
+   "key_word": "AI",
+   "on_screen_words": "'Wicflow helps turn' (60 px, x 120, baseline 430, ink, turning white on the blue), then a giant white 'AI' (340 px) below it",
+   "visual_event": "30.52: the big type stack lifts out (DEPART 8f, staggered 2f). 30.62\u201331.30 PRIMARY ('Wicflow helps'): gather-in. The copies, badges and plates slide toward your ink block and fold into its roof (B2 long S, 20f, staggered by distance 1f, each shrinking into the roof) while your block eases to (1260,600) (B1). Your business stands alone with the AI dot on its roof, and the chip folds into its compact pill. 'Wicflow helps turn' builds (A5). 31.40: the dot gathers (B6 wind-up: scale 1\u21920.8, 4f). 31.60 IMPACT ('AI' 31.74): the dot irises out into a FULL-BLEED AI-BLUE field #1769C2 (circle on whipOut 12f), the film's only saturated full field. The lead-in turns white as the field passes under it, and a giant white 'AI' (Space Grotesk 600, 340 px, \u22120.045em, x 120, baseline 760) pops in with the A7 punchy title pop (100 px jump in 3f, \u221210\u00b0 tilt, elastic settle). This is the one A7 in the film.",
+   "grows_out_of": "the AI dot on your roof (the field irises out of it); everything else gathers into your block first",
+   "sound": "Music: GATHER 30.4\u201331.2 (rhythm thins, pull-back swell), a 1-beat DROPOUT 31.20\u201331.60, then the film's biggest HIT at 31.60 with a reverse cymbal into it. SFX: deep 'whoomp' bloom plus sub drop on the flood."
+  },
+  {
+   "id": "P22",
+   "start": 32.27,
+   "end": 33.88,
+   "key_word": "growth",
+   "on_screen_words": "Caption bottom left (ink, back on white): 'into real business growth' ('growth' in blue with a pale-blue sweep at 33.44)",
+   "visual_event": "32.15 PRIMARY ('into' 32.27): the blue field contracts (iris closing on MOVE, 12f) down into the roof of your block, and the giant 'AI' shrinks with it into the roof (scale \u2192 0.04 toward the roof centre, same 12f). The roof is now AI blue: the AI is inside your business. 32.52 / 33.02 / 33.44 PRIMARY ('real' 32.65, 'business' 33.15, 'growth' 33.57): the block grows one floor on each word (B13 stepper: 6f per step, +0.7 u each, a hairline seam per floor), with the blue roof riding up. The sweep slides under 'growth' at 33.44.",
+   "grows_out_of": "the full-bleed blue field (it folds into the block's roof); the block itself grows",
+   "sound": "Music: three rising stabs on the floors, chords moving to the tonic. SFX: three ascending 'build' thunks (32.52, 33.02, 33.44)."
+  },
+  {
+   "id": "P23",
+   "start": 33.89,
+   "end": 34.99,
+   "key_word": "lasts",
+   "on_screen_words": "'that lasts.' ('lasts' in blue with a 6 px underline that draws and holds)",
+   "visual_event": "33.80 PRIMARY ('that'): the three floors fuse into one solid block (seams fade, 8f), and a soft ground shadow settles: the growth locks in. 34.04 PRIMARY ('lasts' 34.17): the roof lifts off the block (B2 long S, 16f, 34.04\u201334.57) to (960,430). It turns from AI blue to ink #0A0A0D and un-squashes from the isometric rhombus to the upright diamond at the W's centre crossing, where its two ribbons cross. The block and the caption fall back (DEPART 10f). 34.55\u201335.02: the W mark irises out of that diamond (circular clip growing from the crossing point, ARRIVE 14f), ink, 230 px wide.",
+   "grows_out_of": "the block's roof (it becomes the heart of the W mark)",
+   "sound": "Music: cadence resolves on the tonic at 34.9. SFX: soft 'lock' click (33.80); airy lift on the roof; warm single chime as the mark completes (35.0)."
+  }
+ ],
+ "end_card": "35.00\u201337.50, the calmest moment of the film, on white #FFFFFF. Only the mark and the words arrive; nothing flies, orbits or travels.\n- 35.00: the W mark (ink #0A0A0D, traced SVG, ~230 px wide), complete from P23, holds. 'wicflow.com' (Space Grotesk 600, 92 px, \u22120.045em, ink) slides out from behind the mark to the right through a mask at the mark's edge (ARRIVE 14f). The lockup re-centres as one unit (B1, 12f) to x 960, y 430, as in the site header.\n- 35.55: the site's hero line builds word by word below, centred (Space Grotesk 600, 44 px, muted #606069, 0.06 s a word, 0.3em rise): 'An AI partner that runs / your sales and marketing.'\n- 36.25: the site's CTA, a black pill 'AI analysis' (#0A0A0D, text #EEEEF1, Manrope 700 30 px, 300\u00d784, radius 999), rises 24 px with a fade (ARRIVE 12f) at y \u2248780.\n- Throughout: one slow push on the whole card (content scale 1.00\u21921.02 over 2.5 s, B3). No dot, no lines, no pulse on the button.\nSound: the tonic pad rings out with one soft bell or pluck on 35.0, reaching silence by 37.5.",
+ "music": "TEMPO AND FEEL: 118\u2013122 BPM, 4/4, bright optimistic electronic pop with a light future-bass colour. Plucked synth arps, warm side-chained pads, claps and finger snaps, a tight punchy kick, a round sub. No vocals or vocal chops, because the VO owns the mids: carve 1\u20134 kHz under the voice and duck the music 6\u20138 dB while she speaks. Audition the candidates already in films/wicflow/sound/music (find-future-bass, find-upbeat, find-technology, find-positive) and fit with scripts/music_fit.py so a downbeat or hit lands at 5.55, 18.45, 26.38 and 31.60. Otherwise compose with scripts/music_make.py.\nSECTIONS:\n- INTRO 0.0\u20135.5: filtered pluck arp and soft pulse, no kick; the filter opens slowly, a 2-beat snare build from 4.0, a reverse swell into 'Wicflow' 5.59.\n- A 5.55\u201310.4: the beat enters (kick, claps, bright plucks). The three dot whips at 7.85 / 8.45 / 9.35 sit on beats with pluck accents; fill 10.0\u201310.4.\n- A2 10.4\u201317.6: FLOW. 16th hats, pads ducked under the demo; 17.0\u201318.0 a one-bar riser and snare roll.\n- LIFT 18.0\u201321.3: full band, bass up an octave, wider pads, crash on the loop closure 18.45 ('connects'); low-pass begins closing at 20.8.\n- BREAK 21.3\u201323.4: kick out, low-pass to about 600 Hz, one sustained chord. The zoom-through whoosh peaks on the cut at 22.27 inside this space.\n- BUILD 23.4\u201326.3: half-time kick from 23.4, four-on-the-floor from 24.6, riser 24.6\u201326.3.\n- PEAK 26.38\u201330.4: the hardest bar, with stabs on 'Less' 26.38, 'more' 27.68 and 'more' 29.13.\n- GATHER 30.4\u201331.2: rhythm thins, pull-back swell.\n- DROPOUT 31.20\u201331.60: one beat of near-silence under the VO.\n- HIT 31.60: the film's biggest impact, reverse cymbal into it, for the AI-blue flood.\n- RESOLVE 32.2\u201335.0: three rising stabs on the floors (32.52 / 33.02 / 33.44), cadence to the tonic at 34.9.\n- OUTRO 35.0\u201337.5: tonic pad and one bell or pluck on the logo, natural ring-out to silence by 37.5.\nMIX: integrated about \u221214 LUFS, VO on top. SFX are sparse and only on the lead moves listed per phrase (one combined sound for any cascade), from sound/lib/sfx (pop, whoosh/swipe, tap, ticker, impact, riser, success/chime, appear-rise), never a sound on every movement.",
+ "risks": [
+  "BUSY: the hot spots are P9 (lens + blocks + tag + chip), P14 (15-tile cascade), P17 (pilot shrink + copies rising + dots), P19 (Anna + bubble wave) and P21 (gather-in of ~30 objects). Keep one lead at a time, followers on B9 within 6f, chip changes always secondary and at a different moment from the lead. Run busy_check.py / motion_probe.py on every build and take things away where the eye can't tell what to watch.",
+  "COLOUR BURST P6\u2013P8: three full-bleed tint irises in 1.5 s could strobe or read as a showreel. Keep the pale tint steps only (never AI blue), let each field grow over the previous one (never back to white in between), switch plates to white tops while a field is up, and check blue key words for contrast on the tints (#1769C2 on #DFE7F3 at 72 px).",
+  "K.B SPIKE LESSON: the whips, the zoom-through, the scale-out and the gather-in are big content moves that could read as camera moves. Only elements move (the dot, a card, the pilot block, copies), the town never pans, every whip builds speed into its cut, and nothing starts at full speed on something already visible. Measure every transition with motion_probe.py and keep the breath under 25 px/s and 5%/s.",
+  "CARD-FILM DRIFT (tell: UI cards): message, CRM, tools and measure cards plus Anna's bubble add up to five panels. Each unfolds out of a world object and folds back, never two at once, always over the dimmed town. If it starts to feel like a deck of cards, cut the CRM card to the pill alone, standing on your block.",
+  "READABILITY: 1080p text minimums are 34 px in bubbles and cards, 26 px in pills, and 60 px logos in tiles (names at 20 px may be too small; drop the names before shrinking the logos). The town's small blocks at k = 56 must stay legible after the 0.75 rescale; the building firm and the sheet stack must be findable again in P18\u2013P19.",
+  "W MARK TRANSITION: the traced SVG is one even-odd compound path, so the roof diamond must be matched to the crossing point at the mark's centre (\u224852.7%, 56.6% of its bounding box). Fallback if the shape match looks wrong: a plain circular iris reveal of the mark from the roof point, without the un-squash. Check the trace against wicflow-mark.png before delivery (missing.md).",
+  "A7 ON 'AI': an elastic, tilted 340 px word risks looking cheap in a premium film. Fallback: an ARRIVE 100 px rise with no tilt and no elastic. Also check the 1-beat music dropout before 31.60 doesn't leave the voice sounding exposed.",
+  "DENSE HOOK: P3 packs strike, bubble collapse, path, tag roll and launch into 2.2 s. Check at 2-frame steps that only one of them leads at a time. If not, drop the tag roll and keep 'Your business' as a static label.",
+  "CLAIMS: pairing the demo company with the sales-view statuses ('Building firm \u00b7 Tampere \u00b7 Added to your CRM') and with 'To Anna' is a light synthesis of two illustrative site demos, so name it in thesis.md. The 7 \u2192 8 counter (P16) comes before Anna's reply (P19) in film order: both are illustrative, so no ordering claim is made. The 'How can I help?' bubble is generic assistant copy used as the foil, not presented as Wicflow. No other numbers or customers appear; 30+/10+/5 are deliberately unused.",
+  "TEXT COLLISIONS: the caption slot rolls (P6\u2013P8), work-line rolls (P9\u2013P12) and stacked lists (P15\u2013P17, P18\u2013P20) must never overlap during their A2 changes. Use a shared mask per slot and check every type change frame by frame.",
+  "SCOPE FOR ONE DEVELOPER: the isometric painter's order with plates, blocks, copies and a growing block, plus the 15 logo assets (mixed svg/png), blur on whips and five card layouts, is a lot. Build the stage as data (grid positions plus heights) and one projection function, reuse kinetic.tsx (whip, zoomThrough, Roll, Typed, Iris, stepper, popElastic, Flip), and render a phrase_check.py sheet on the first draft so every phrase shows a new visual and no gap exceeds 2.5 s."
+ ]
+}

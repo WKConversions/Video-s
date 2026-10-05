@@ -1,0 +1,9 @@
+{
+ "fps": 30,
+ "frames": 1125,
+ "library": "lib",
+ "vo": {"file": "../vo/vo.mp3", "at": 0},
+ "music": {"file": "music/its-love-fit.wav", "at": 0, "duck_db": 6, "fade_in": 0.3, "fade_out": 0.5,
+           "note": "the recommended bed (It's Love, Mixkit), fitted: lifts at 10.96 and 26.24, final chord 35.03"},
+ "sfx": []
+}

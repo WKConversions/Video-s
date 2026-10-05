@@ -1,0 +1,4 @@
+{"bpm": 110, "key": "E", "mode": "major", "length": 37.5, "vibe": "calm-optimistic",
+ "mix": {"swing": 0.0, "kick": 1.0, "hats": 0.5, "clap": 0.4, "bright": 1.15, "bells": 0.0, "pluck": 0.6, "pad": 0.9, "piano": 0.9},
+ "progression": ["I", "V", "vi", "IV", "V", "I", "V", "vi", "IV", "I", "V", "IV", "I", "V", "IV", "V"],
+ "sections": [[0, 0], [2, 1], [5, 2], [11, 1], [12, 3], [14, 2], [16, "end"]]}
