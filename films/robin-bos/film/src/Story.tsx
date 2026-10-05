@@ -46,9 +46,9 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
   // ---------- stretch one: the wall ----------
   // rise order and start frames for the five squares that join the first one (bottom-right is there at frame 0)
   const rise1: { c: number; r: number; at: number }[] = [
-    { c: 0, r: 2, at: 10 }, { c: 1, r: 1, at: 20 }, { c: 0, r: 1, at: 30 }, { c: 1, r: 0, at: 40 }, { c: 0, r: 0, at: 48 },
+    { c: 0, r: 2, at: 1 }, { c: 1, r: 1, at: 13 }, { c: 0, r: 1, at: 25 }, { c: 1, r: 0, at: 37 }, { c: 0, r: 0, at: 49 },
   ];
-  const course = k(g, "w:build", 0.4, MOVE);                      // the wall grows a course on "I build": everything up 122
+  const course = k(g, "w:build", 0.47, MOVE, 0.3);                      // the wall grows a course on "I build": everything up 122
   const lift = course * PITCH;
   const robin1Exit = k(g, "w:consultancy", 0.55, DEPART, 0.15);    // Robin and the wall remainder leave left
   const exitX = -robin1Exit * 1300;
@@ -67,11 +67,12 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
   const tileMove = k(g, "w:consultancy", 0.5, MOVE, 0.15);         // into Robin's place
   const tileX = lerp(gatherPt.x, TILE.x, tileMove), tileY = lerp(gatherPt.y, TILE.y, tileMove);
   const tileS = lerp(90, tileWidth, tileIn);
-  const railK = k(g, "w:in", 0.4, MOVE);                           // the rail draws out of the tile
-  const railExt = k(g, "w:eighteen", 0.7, MOVE, 0.14);             // the rail extends and lays the months
+  const railK = k(g, "w:in", 0.6, MOVE, 0.3);                      // the rail draws out of the tile
+  const railExt = k(g, "w:eighteen", 0.8, MOVE, 0.25);             // the rail extends and lays the months
+  const railMore = k(g, "w:later", 0.8, MOVE, 0.0);                // then it keeps going toward the edge (B11 progress)
   const monthsN = Math.floor(railExt * 18 + 1e-6);
-  const field = k(g, "w:two", 0.47, ARRIVE, 0.14);                 // the tile grows into the navy field
-  const fieldOn = g >= F("w:two-0.14") && g < F("w:today") + 20;
+  const field = k(g, "w:two", 0.53, MOVE, 0.3);                    // the tile grows into the navy field
+  const fieldOn = g >= F("w:two-0.3") && g < F("w:today") + 20;
   // ---------- B6: the number, the grid, the card ----------
   const headerK = k(g, "w:twenty3", 0.47, MOVE, 0.14);             // €2M shrinks to a header
   const under = k(g, "w:valuation", 0.4, MOVE, 0.14);              // the ticks become the underline
@@ -79,9 +80,9 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
   const close = k(g, "w:team", 0.27, MOVE, 0.13);                  // the 100 close into one block
   const cardK = k(g, "w:team", 0.47, ARRIVE, 0.0);                 // the block grows into the card
     const push = k(g, "w:all", 1.0, MOVE, 0.0);                      // the photo pushes in
-  const whiteOut = k(g, "w:today", 0.47, ARRIVE, 0.13);            // the frame grows into the canvas
+  const whiteOut = k(g, "w:today", 0.53, MOVE, 0.25);              // the card's box grows into the canvas
   const whiteFade = whiteOut >= 1 ? 1 : 0;                           // once the haze covers, the field is gone
-  const cardExit = k(g, "w:today", 0.53, DEPART, 0.1);
+  const cardExit = k(g, "w:today", 0.5, DEPART, 0.2);
   // ---------- stretch two ----------
   const robin2In = k(g, "w:advise", 0.6, ARRIVE, 0.4);
   const areaW = (t: string) => measure(t, AREA, 500, -0.045);
@@ -113,7 +114,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
     return { x, y, s: size, blur };
   };
   const step = stepPos();
-  const toPeriod = k(g, "w:talk", 0.4, MOVE, 0.14);               // the wall's top-left square → the period of TALK.
+  const toPeriod = k(g, "w:talk", 0.5, MOVE, 0.2);               // the wall's top-left square → the period of TALK.
   const morph = btnK;                                                // the period → the button
 
   return (
@@ -121,7 +122,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       {/* canvas: the site's haze */}
       <div data-probe="canvas" style={{ position: "absolute", left: -300, top: -300, width: 2520, height: 1680, background: `linear-gradient(160deg, ${C.canvas} 0%, ${C.haze} 70%, ${C.mist} 100%)` }} />
       {/* the light: one soft disc of the backdrop's sky, behind the subject */}
-      {!fieldOn && g < F("w:two") && <Bloom g={g} x={lerp(1100, lerp(700, TILE.x, tileMove), k(g, "w:behind", 0.6, MOVE))} y={lerp(650, 520, k(g, "w:behind", 0.6, MOVE))} r={430} color={C.sky} k={0.8 + 0.2 * k(g, "w:robin", 0.67, MOVE, 0.0) - robin1Exit * 0.3} drift={28} />}
+      {!fieldOn && g < F("w:two-0.3") && <Bloom g={g} x={lerp(1100, lerp(700, TILE.x, tileMove), k(g, "w:behind", 0.7, MOVE, 0.3))} y={lerp(650, 520, k(g, "w:behind", 0.7, MOVE, 0.3))} r={430} color={C.sky} k={0.8 + 0.2 * k(g, "w:robin", 0.67, MOVE, 0.0) - robin1Exit * 0.3} drift={28} />}
       {g >= F("w:advise") - 12 && <Bloom g={g} x={ROBIN2.x - 60} y={520} r={430} color={C.sky} k={cl((g - F("w:advise") + 12) / 20) * 0.9} drift={28} />}
 
       {/* ---------- stretch one: the wall, its squares, the periods ---------- */}
@@ -130,15 +131,15 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
           {/* the first square, there from frame 0 */}
           <Sq name="w-br" x={cell1(1, 2).x} y={cell1(1, 2).y} s={S} />
           {rise1.map(({ c, r, at }) => {
-            const p = T.k(g, at / 30, 0.47, ARRIVE);
+            const p = T.k(g, at / 30, 0.53, ARRIVE);
             const pos = cell1(c, r);
-            const leaves = (c === 1 && r === 0) ? "w:bos" : (c === 0 && r === 0) ? "w:people" : (c === 1 && r === 1) ? "w:process" : (c === 0 && r === 1) ? "w:technology" : null;
+            const leaves = (c === 1 && r === 0) ? "w:bos" : (c === 1 && r === 1) ? "w:process" : (c === 0 && r === 1) ? "w:technology" : null;
             if (leaves && g >= F(`${leaves}-0.13`)) return null;     // it has left the wall: drawn by its travel below
             return <Sq key={`${c}${r}`} name={`w-${c}${r}`} x={pos.x} y={lerp(pos.y + 700, pos.y, p)} s={S} o={p > 0 ? 1 : 0} style={{ filter: p > 0 && p < 0.7 ? `blur(${(1 - p) * 6}px)` : undefined }} />;
           })}
           {/* the course: two squares rise under the wall on "I build" */}
           {[0, 1].map((c) => {
-            const p = k(g, "w:build", 0.4, ARRIVE, 0.1 - c * 0.08);
+            const p = k(g, "w:build", 0.47, ARRIVE, 0.3 - c * 0.08);
             const pos = cell1(c, 3);
             return p > 0 && <Sq key={`c${c}`} name={`w-${c}3`} x={pos.x} y={lerp(pos.y + 500, pos.y, p)} s={S} style={{ filter: p < 0.7 ? `blur(${(1 - p) * 6}px)` : undefined }} />;
           })}
@@ -171,26 +172,26 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       {between(g, "w:in-0.13", "w:two") && (
         <div data-probe="timeline" style={{ position: "absolute", left: 0, top: 0 }}>
           <Rule x={TILE.x + TILE.s / 2} y={698} w={290} k={railK} color={C.skyDeep} thick={4} />
-          {railExt > 0 && <Rule x={TILE.x + TILE.s / 2 + 290} y={698} w={520} k={railExt} color={C.skyDeep} thick={4} />}
+          {railExt > 0 && <Rule x={TILE.x + TILE.s / 2 + 290} y={698} w={520 + 160} k={(railExt * 520 + railMore * 160) / 680} color={C.skyDeep} thick={4} />}
           <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(1060px, 560px)`, opacity: Math.min(1, k(g, "w:twenty", 0.3) * 1.5) * (1 - railExt * 0.4), display: "flex", fontFamily: "Manrope", fontWeight: 500, fontSize: 150, color: C.navy, letterSpacing: "-0.05em", lineHeight: 1 }}>
             <OdoDigit v={2 * k(g, "w:twenty", 0.33, MOVE)} size={150} width={0.62} />
             <OdoDigit v={0} size={150} width={0.62} />
             <OdoDigit v={2 * k(g, "w:twenty2", 0.33, MOVE)} size={150} width={0.62} />
-            <OdoDigit v={4 * k(g, "w:four", 0.33, MOVE)} size={150} width={0.62} />
+            <OdoDigit v={4 * k(g, "w:four", 0.45, MOVE)} size={150} width={0.62} />
           </div>
           {railExt > 0 && (
-            <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(1480px, 560px)`, display: "flex", alignItems: "flex-end", fontFamily: "Manrope", fontWeight: 500, fontSize: 150, color: C.ink, letterSpacing: "-0.05em", lineHeight: 1 }}>
+            <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(1480px, ${560 + (1 - Math.min(1, railExt * 4)) * 30}px)`, opacity: Math.min(1, railExt * 4), display: "flex", alignItems: "flex-end", fontFamily: "Manrope", fontWeight: 500, fontSize: 150, color: C.ink, letterSpacing: "-0.05em", lineHeight: 1 }}>
               <OdoDigit v={odo(railExt * 18, 2)[0]} size={150} width={0.62} />
               <OdoDigit v={odo(railExt * 18, 2)[1]} size={150} width={0.62} />
-              <span style={{ fontSize: 52, color: C.muted, marginLeft: 18, marginBottom: 14, letterSpacing: "-0.02em", opacity: Math.min(1, railExt * 3) }}>months</span>
+              <span style={{ fontSize: 52, color: C.muted, marginLeft: 18, marginBottom: 14, letterSpacing: "-0.02em", opacity: k(g, "w:later", 0.3, ARRIVE, 0.1), display: "inline-block", transform: `translateY(${(1 - k(g, "w:later", 0.3, ARRIVE, 0.1)) * 16}px)` }}>months</span>
             </div>
           )}
         </div>
       )}
 
       {/* Robin, stretch one: rises in front of the wall on "behind", leaves left on "Consultancy" */}
-      {g >= F("w:behind") - 16 && g < F("w:consultancy") + 20 && (() => {
-        const p = k(g, "w:behind", 0.6, ARRIVE, 0.1);
+      {g >= F("w:behind") - 12 && g < F("w:consultancy") + 20 && (() => {
+        const p = k(g, "w:behind", 0.63, ARRIVE, 0.33);
         return <Portrait name="robin1" x={ROBIN1.x + exitX} y={ROBIN1.y + (1 - p) * 980} h={ROBIN1.h} blur={p < 0.75 ? (1 - p) * 6 : robin1Exit > 0 ? robin1Exit * 6 : 0} />;
       })()}
 
@@ -227,8 +228,8 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       })}
 
       {/* €2M on the field, then the header */}
-      {g >= F("w:two-0.14") && g < F("w:today") + 20 && (() => {
-        const eK = k(g, "w:two", 0.4, ARRIVE, 0.14), twoK = k(g, "w:two", 0.33, MOVE, 0.0), mK = k(g, "w:million", 0.3, ARRIVE, 0.13);
+      {g >= F("w:two+0.05") && g < F("w:today") + 24 && (() => {
+        const eK = k(g, "w:two", 0.4, ARRIVE, -0.05), twoK = k(g, "w:two", 0.4, MOVE, -0.1), mK = k(g, "w:million", 0.3, ARRIVE, 0.0);
         const size = lerp(440, 130, headerK);
         const x = lerp(505, 262, headerK), y = lerp(290, 60, headerK);
         const whiteGone = whiteFade >= 1;
@@ -259,7 +260,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
         for (let r = 4; r >= 0; r--) for (let c = 0; c < 5; c++) {
           const idx = (4 - r) * 5 + c;
           const p = k(g, "w:twenty3", 0.4, ARRIVE, 0.14 - idx * 0.033);
-          if (p >= 0.6) landed++;
+          landed += Math.min(1, p / 0.6);
           if (p <= 0) continue;
           // cell centre: closes toward the block's centre on "team"
           const cx0 = GRID.x + c * gp + GRID.s / 2, cy0 = GRID.y + r * gp + GRID.s / 2;
