@@ -51,6 +51,28 @@ def P(s, y, h):
     """drawing (s, y real, h drawing) -> export metres"""
     return np.array([(SC - s) / 1000.0, h * HSCALE / 1000.0, y / 1000.0])
 
+
+def tube(path, radius, sections=14, closed=True):
+    """a smooth tube along a polyline (parallel-transport frames)"""
+    P = np.asarray(path, float)
+    if closed and np.linalg.norm(P[0] - P[-1]) > 1e-6: P = np.vstack([P, P[:1]])
+    T = np.gradient(P, axis=0); T /= np.linalg.norm(T, axis=1, keepdims=True) + 1e-12
+    n0 = np.cross(T[0], [0, 0, 1.0]);
+    if np.linalg.norm(n0) < 1e-3: n0 = np.cross(T[0], [0, 1.0, 0])
+    n0 /= np.linalg.norm(n0); N = [n0]
+    for i in range(1, len(P)):
+        v = N[-1] - np.dot(N[-1], T[i]) * T[i]; v /= np.linalg.norm(v) + 1e-12; N.append(v)
+    N = np.array(N); B = np.cross(T, N)
+    a = np.linspace(0, 2 * np.pi, sections, endpoint=False)
+    ring = np.cos(a)[None, :, None] * N[:, None, :] + np.sin(a)[None, :, None] * B[:, None, :]
+    V = (P[:, None, :] + radius * ring).reshape(-1, 3)
+    F = []
+    for i in range(len(P) - 1):
+        for j in range(sections):
+            a0 = i * sections + j; a1 = i * sections + (j + 1) % sections; b0 = a0 + sections; b1 = a1 + sections
+            F += [[a0, b0, a1], [a1, b0, b1]]
+    m = trimesh.Trimesh(V, F, process=True); m.fix_normals(); return m
+
 # ------------------------------------------------------------------------------------------------ materials
 def mat(name, color, metal=0.0, rough=0.5, emissive=None, alpha=None, tex=None):
     c = list(color) + ([alpha] if alpha is not None else [1.0])
@@ -68,9 +90,9 @@ M = {
     'paint': mat('paint', (0.027, 0.035, 0.05), 0.55, 0.36),
     'mirror': mat('mirror_glass', (0.55, 0.6, 0.66), 1.0, 0.03),
     'lens': mat('lens_glass', (0.85, 0.9, 0.95), 0.0, 0.02, alpha=0.35),
-    'ring': mat('angel_ring', (0.9, 0.95, 1.0), 0.0, 0.3, emissive=(0.55, 0.6, 0.66)),
-    'housing': mat('lamp_housing', (0.42, 0.44, 0.47), 0.9, 0.34),
-    'bowl': mat('reflector', (0.7, 0.72, 0.75), 1.0, 0.16),
+    'ring': mat('angel_ring', (0.8, 0.84, 0.9), 0.3, 0.3, emissive=(0.28, 0.3, 0.34)),
+    'housing': mat('lamp_housing', (0.22, 0.23, 0.25), 0.9, 0.28),
+    'bowl': mat('reflector', (0.48, 0.5, 0.53), 1.0, 0.12),
     'proj': mat('projector_lens', (0.05, 0.06, 0.07), 0.0, 0.03),
     'rubber': mat('rubber', (0.02, 0.02, 0.02), 0.0, 0.8),
     'tip_in': mat('soot', (0.03, 0.03, 0.03), 0.2, 0.9),
@@ -118,12 +140,12 @@ for sgn in (1, -1):
         bowl = trimesh.Trimesh(verts, faces, process=True)
         bowl.apply_translation([0, 0, -0.072])
         place(bowl, o, fwd); parts.append(('headlight_bowls', colored(bowl, M['bowl'])))
-        lensm = trimesh.creation.icosphere(subdivisions=3, radius=0.028)
+        lensm = trimesh.creation.icosphere(subdivisions=3, radius=0.034)
         lensm.apply_scale([1, 1, 0.55]); lensm.apply_translation([0, 0, -0.046])
         place(lensm, o, fwd); parts.append(('headlight_lenses', colored(lensm, M['proj'])))
         core = trimesh.creation.icosphere(subdivisions=2, radius=0.012); core.apply_translation([0, 0, -0.058])
         place(core, o, fwd); parts.append(('headlight_lenses', colored(core, M['chrome'])))
-        ring = trimesh.creation.torus(major_radius=R * 1.04, minor_radius=0.0032, major_sections=64, minor_sections=10)
+        ring = trimesh.creation.torus(major_radius=R * 1.0, minor_radius=0.0026, major_sections=64, minor_sections=10)
         ring.apply_translation([0, 0, -0.040])
         place(ring, o, fwd); parts.append(('angel_eyes', colored(ring, M['ring'])))
     # fog light reflector
@@ -131,8 +153,8 @@ for sgn in (1, -1):
     y = sgn * fy * LS; s0 = front_s(y, fh); o = P(s0, y, fh); n = normal(s0, y, fh)
     dish = trimesh.creation.cylinder(radius=fr / 1000 * 0.95, height=0.012, sections=40)
     dish.apply_translation([0, 0, -0.022]); place(dish, o, n); parts.append(('fog_lights', colored(dish, M['housing'])))
-    bulb = trimesh.creation.icosphere(subdivisions=2, radius=0.010); bulb.apply_translation([0, 0, -0.012])
-    place(bulb, o, n); parts.append(('fog_lights', colored(bulb, M['chrome'])))
+    bulb = trimesh.creation.icosphere(subdivisions=2, radius=0.014); bulb.apply_translation([0, 0, -0.012])
+    place(bulb, o, n); parts.append(('fog_lights', colored(bulb, M['proj'])))
 
 # headlight housing backs: the headlight region of the body, 60 mm in
 d = np.load('build/body_raw.npz'); BV, BN, BF = d['V'], d['N'], d['F']
@@ -158,16 +180,7 @@ for sgn in (1, -1):
         s0 = front_s(y, h)
         if s0 is None: continue
         path.append(P(s0 - 6, y, h))
-    path = np.array(path + [path[0]])
-    # simple tube: chain of capsules
-    segs = []
-    for a, b in zip(path[:-1], path[1:]):
-        L = np.linalg.norm(b - a)
-        if L < 1e-5: continue
-        c = trimesh.creation.cylinder(radius=0.0068, segment=[a, b], sections=10)
-        segs.append(c)
-        segs.append(trimesh.creation.icosphere(subdivisions=1, radius=0.0068).apply_translation(a))
-    parts.append(('kidney_surround', colored(trimesh.util.concatenate(segs), M['chrome'])))
+    parts.append(('kidney_surround', colored(tube(path, 0.0085, 14, True), M['chrome'])))
 
 # ------------------------------------------------------------------------------------------------ mirrors
 def superellipsoid(ax, ay, az, e=0.32, nu=40, nv=28):
@@ -186,15 +199,16 @@ def superellipsoid(ax, ay, az, e=0.32, nu=40, nv=28):
 for sgn in (1, -1):
     # housing (coupe mirror): an aerodynamic shell, wide laterally, rounded nose toward the front, flat glass face
     # toward the rear; centre at s 1690, |y| 902, h 1008 (drawing). Local frame: x fore-aft, y up, z lateral.
-    hs_ = superellipsoid(0.058, 0.060, 0.100, e=0.36)
+    hs_ = superellipsoid(0.056, 0.055, 0.104, e=0.62)
     v = hs_.vertices.copy()
-    v[:, 0] = np.where(v[:, 0] > 0, v[:, 0] * 1.25, v[:, 0] * 0.45)            # long nose, short tail
+    v[:, 0] = np.where(v[:, 0] > 0, v[:, 0] * 1.35, v[:, 0] * 0.42)            # long nose, short tail
     v[:, 1] = v[:, 1] - np.clip(-v[:, 1], 0, None) * 0.0 + np.where(v[:, 1] < 0, 0.0, 0.0)
     # the aerodynamic ridge underneath: pull the underside down a little along the middle
     v[:, 1] = v[:, 1] - 0.010 * np.exp(-(v[:, 0] / 0.03) ** 2) * (v[:, 1] < -0.04)
     # taper toward the inboard end (the arm side)
     zt = (v[:, 2] * sgn + 0.100) / 0.200
-    v[:, 1] = v[:, 1] * (0.82 + 0.18 * np.clip(zt, 0, 1))
+    v[:, 1] = v[:, 1] * (0.72 + 0.28 * np.clip(zt, 0, 1))
+    v[:, 0] = v[:, 0] * (0.80 + 0.20 * np.clip(zt, 0, 1))
     hs_.vertices = v
     gl = trimesh.creation.box(extents=[0.004, 0.092, 0.172]); gl.apply_translation([-0.028, 0, 0])
     T = np.eye(4); c = P(1690, sgn * 900, 1008); T[:3, 3] = c

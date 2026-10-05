@@ -86,8 +86,6 @@ export const Overlay: React.FC<{ g: number; M: THREE.Matrix4; lift: number; rig:
   const aVanos = part("vanos_unit", headUp.clone().multiplyScalar(0.42 * st.head).add(new THREE.Vector3(0.24 * st.vanos, 0, 0)), new THREE.Vector3(1.6, 0.92, 0));
   const aGear = part("gearbox_case", new THREE.Vector3(0, -0.36 * st.gearbox, 0), new THREE.Vector3(0.45, 0.38, 0));
   const aDiff = part("diff_housing", new THREE.Vector3(-0.30 * st.diff, -0.08 * st.diff, 0), new THREE.Vector3(-1.36, 0.33, 0));
-  // the roof gap marker (body beat): at the roof's highest point
-  const roofTop = scr(new THREE.Vector3(-0.45, 1.369 + lift, 0));
 
   const gearOn = k(g, "gearbox+1.4", 0.4) * (1 - k(g, "diff-0.3", 0.3, EASE.depart));
   return (
@@ -108,18 +106,28 @@ export const Overlay: React.FC<{ g: number; M: THREE.Matrix4; lift: number; rig:
 
       {/* body */}
       <Label g={g} b={COPY.body} at={f("body+0.45")} leave={f("lift-0.1")} x={132} y={110} />
-      {ghost.ghostIn > 0.02 && (
-        <div style={{ position: "absolute", left: roofTop.x + 26, top: roofTop.y - 70 - 40 * (1 - ghost.ghostDrop), opacity: ghost.ghostIn,
-          fontFamily: "Barlow", fontWeight: 600, fontSize: 24, color: GREY, letterSpacing: "0.08em", textTransform: "uppercase" }}>
-          {COPY.bodyTags.sedan}
-        </div>
-      )}
-      {ghost.ghostDrop > 0.02 && (
-        <div style={{ position: "absolute", left: roofTop.x + 26, top: roofTop.y - 34, opacity: Math.min(ghost.ghostIn, ghost.ghostDrop),
-          fontFamily: "Barlow", fontWeight: 700, fontSize: 30, color: BLUE }}>
-          {COPY.bodyTags.gap}
-        </div>
-      )}
+      {ghost.ghostIn > 0.02 && (() => {
+        // the two roof lines at s = 2680 mm, where the sedan stands 46 mm above the coupé
+        const X = (2136.5 - 2680) / 1000;
+        const yS = 1.414 - (1.414 - 1.368) * ghost.ghostDrop, yC = 1.368;
+        const pS = scr(new THREE.Vector3(X, yS + lift + 0.006, 0)), pC = scr(new THREE.Vector3(X, yC + lift + 0.006, 0));
+        const endS = scr(new THREE.Vector3((2136.5 - 3700) / 1000, (1.225 - (1.225 - 1.168) * ghost.ghostDrop) + lift, 0));
+        const o = ghost.ghostIn;
+        return (
+          <>
+            <svg width={1920} height={1080} style={{ position: "absolute", inset: 0, opacity: o }}>
+              <line x1={pS.x} y1={pS.y - 14} x2={pS.x} y2={pC.y + 14} stroke={INK} strokeWidth={2} />
+              <line x1={pS.x - 10} y1={pS.y} x2={pS.x + 10} y2={pS.y} stroke={GREY} strokeWidth={2} />
+              <line x1={pC.x - 10} y1={pC.y} x2={pC.x + 10} y2={pC.y} stroke={BLUE} strokeWidth={2} />
+            </svg>
+            <div style={{ position: "absolute", left: pS.x - 100, width: 200, textAlign: "center", top: pS.y - 66, opacity: o,
+              fontFamily: "Barlow", fontWeight: 700, fontSize: 40, color: BLUE }}>{COPY.bodyTags.gap}</div>
+            <div style={{ position: "absolute", left: endS.x - 260, width: 240, textAlign: "right", top: endS.y - 34, opacity: o * (1 - ghost.ghostDrop),
+              fontFamily: "Barlow", fontWeight: 600, fontSize: 26, color: GREY, letterSpacing: "0.08em", textTransform: "uppercase" }}>{COPY.bodyTags.sedan}</div>
+
+          </>
+        );
+      })()}
 
       {/* the parts */}
       <Callout g={g} from={aHead} to={{ x: 760, y: 236 }} at={f("head+0.45")} leave={f("vanos+0.05")} />
@@ -130,6 +138,37 @@ export const Overlay: React.FC<{ g: number; M: THREE.Matrix4; lift: number; rig:
       <Label g={g} b={COPY.gearbox} at={f("gearbox+0.65")} leave={f("diff-0.2")} x={132} y={130} />
       <Callout g={g} from={aDiff} to={{ x: 1160, y: 236 }} at={f("diff+0.75")} leave={f("outro-0.1")} />
       <Label g={g} b={COPY.diff} at={f("diff+0.85")} leave={f("outro-0.15")} x={1788} y={130} align="right" />
+
+      {/* VANOS: the two sprockets turn against their camshafts; each shows its range */}
+      {(() => {
+        const o = k(g, "vanos+2.0", 0.4) * (1 - k(g, "vanos+3.5", 0.3, EASE.depart));
+        if (o < 0.01 || !rig) return null;
+        const off = headUp.clone().multiplyScalar(0.42 * st.head).add(new THREE.Vector3(0.24 * st.vanos + 0.06, 0, 0));
+        const tags: [string, string][] = [["vanos_sprocket_intake", COPY.vanosTags.intake], ["vanos_sprocket_exhaust", COPY.vanosTags.exhaust]];
+        return tags.map(([n, label], i) => {
+          const c = rig.centre[n]; if (!c) return null;
+          const p = scr(c.clone().add(off));
+          return (
+            <div key={n} style={{ position: "absolute", left: p.x + (i === 0 ? -250 : 40), top: p.y - (i === 0 ? 70 : -20), width: 210,
+              textAlign: i === 0 ? "right" : "left", opacity: o, fontFamily: "Barlow", fontWeight: 700, fontSize: 30, color: BLUE }}>{label}</div>
+          );
+        });
+      })()}
+
+      {/* the differential: in a corner the outer wheel turns faster than the inner one */}
+      {(() => {
+        const o = k(g, "diff+2.8", 0.4) * (1 - k(g, "outro-0.2", 0.3, EASE.depart));
+        if (o < 0.01) return null;
+        const pL = scr(new THREE.Vector3(-1.3625, 0.318, -0.85)), pR = scr(new THREE.Vector3(-1.3625, 0.318, 0.85));
+        return (
+          <>
+            <div style={{ position: "absolute", left: pR.x - 120, top: pR.y + 90, width: 240, textAlign: "center", opacity: o,
+              fontFamily: "Barlow", fontWeight: 700, fontSize: 28, color: BLUE }}>{COPY.diffTags.outer}</div>
+            <div style={{ position: "absolute", left: pL.x - 120, top: pL.y - 150, width: 240, textAlign: "center", opacity: o,
+              fontFamily: "Barlow", fontWeight: 600, fontSize: 28, color: SUB }}>{COPY.diffTags.inner}</div>
+          </>
+        );
+      })()}
 
       {/* gear read-out: 1 to 5 stepping */}
       {gearOn > 0.01 && (

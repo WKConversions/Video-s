@@ -54,11 +54,11 @@ R_TYRE = RB + 0.40 * 0.225            # 225/40 R18 -> 0.3186 (outer diameter 637
 ET = 0.035                            # wheel mounting face, 35 mm outboard of the rim centre line
 HUB_FACE = 0.0680                     # front face of the hub pad (concave face: ~44 mm behind the lip)
 PCD_R = 0.060                         # 5 x 120
-LUG_POCKET_R = 0.0118                 # 23.6 mm bolt pocket
+LUG_POCKET_R = 0.0130                 # 26 mm bolt pocket (photo: holes ~27 mm across, rectified hub view)
 LUG_HOLE_R = 0.0076                   # M14 through hole
 LUG_SEAT_A = 0.0460                   # bolt seat (bottom of the pocket)
-BOSS_R = 0.0175                       # metal around each bolt pocket (hub outline reaches 77.5 mm at the lugs)
-HUB_CORE_R = 0.0470                   # central ring between the bosses (the V stems sit on it)
+BOSS_R = 0.0200                       # ~7 mm of metal around each pocket (hub outline reaches 80 mm at the lugs)
+HUB_CORE_R = 0.0490                   # central ring between the bosses (the V stems sit on it)
 CAP_R = 0.0280                        # centre cap ~56 mm (measured in the photo)
 # Spokes (measured on the photo, rectified to a face-on view): 10 spokes, rim ends evenly spaced every 36 deg,
 # radial from r ~ 90 mm outward; each pair curves toward its partner inside r ~ 90 mm and merges into one stem
@@ -268,7 +268,7 @@ def tri_count(obj):
 # ----------------------------------------------------------------------------------------------------------------
 # Tyre 225/40 R18
 # ----------------------------------------------------------------------------------------------------------------
-N_PITCH = 60          # tread pitches around the tyre
+N_PITCH = 52          # tread pitches around the tyre (~38 mm pitch)
 TREAD_DEPTH = 0.0065
 
 
@@ -566,16 +566,22 @@ def build_disc(name, coll, front):
         (ET - ht, hr - ht), (ET - ht, 0.0370),
     ]
     mats = [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
-    V, F, M = revolve(prof, 96, mat_idx=mats)
+    V, F, M = revolve(prof, 80, mat_idx=mats)
     objs.append(new_mesh_obj(name + "_hat", V, F, M, mat_names=("steel_dark", "brake_disc"), smooth_deg=35.0,
                              coll=coll))
     # inner plate
     prof = [(ai + pt, Ri), (ai + pt, R - 0.0010), (ai + pt - 0.0006, R), (ai + 0.0006, R), (ai - 0.0004, R - 0.0012),
             (ai - 0.0004, Ri + 0.0010), (ai, Ri)]
     mats = [0, 0, 1, 1, 1, 0, 0]
-    V, F, M = revolve(prof, 96, mat_idx=mats)
+    V, F, M = revolve(prof, 80, mat_idx=mats)
     objs.append(new_mesh_obj(name + "_inner", V, F, M, mat_names=("steel_dark", "brake_disc"), smooth_deg=35.0,
                              coll=coll))
+    # wheel-hub flange + bearing stub behind the hat (turns with the wheel; closes the view through the centre bore)
+    hb = ET - ht - 0.0003
+    prof = [(hb, 0.0), (hb, 0.0640), (hb - 0.0020, 0.0670), (hb - 0.0090, 0.0670), (hb - 0.0110, 0.0500),
+            (hb - 0.0140, 0.0440), (ai - 0.0400, 0.0440), (ai - 0.0420, 0.0410), (ai - 0.0420, 0.0)]
+    V, F, M = revolve(prof, 48, closed=False)
+    objs.append(new_mesh_obj(name + "_hub", V, F, M, mat_names=("steel_dark",), smooth_deg=35.0, coll=coll))
     # straight radial vanes between the plates (cooling channels open at the inner and outer edge)
     for k in range(d["vanes"]):
         t = (k + 0.5) * TAU / d["vanes"]
@@ -585,59 +591,170 @@ def build_disc(name, coll, front):
     return join(objs, name)
 
 
+def cylinder_dir(p0, p1, rad, n=16):
+    """Closed cylinder between two wheel-local Blender points (any direction)."""
+    p0, p1 = np.asarray(p0, float), np.asarray(p1, float)
+    ax = p1 - p0
+    ax /= np.linalg.norm(ax)
+    u = np.cross(ax, [0.0, 1.0, 0.0] if abs(ax[1]) < 0.9 else [1.0, 0.0, 0.0])
+    u /= np.linalg.norm(u)
+    v = np.cross(ax, u)
+    t = np.arange(n) * TAU / n
+    ring = rad * (np.cos(t)[:, None] * u + np.sin(t)[:, None] * v)
+    return sweep([p0 + ring, p1 + ring])
+
+
+def polar_pt(a, r, th):
+    return np.array([r * math.sin(th), a, r * math.cos(th)])
+
+
+def rrect(a0, a1, r0, r1, rad, nseg=3):
+    """Closed convex (a, r) loop: rectangle with corner radii rad = (a0r0, a1r0, a0r1, a1r1)."""
+    corners = [((a0, r0), (1, 1), rad[0]), ((a1, r0), (-1, 1), rad[1]), ((a1, r1), (-1, -1), rad[3]),
+               ((a0, r1), (1, -1), rad[2])]
+    start = [math.pi, 1.5 * math.pi, 0.0, 0.5 * math.pi]
+    pts = []
+    for ((ca, cr), (sa, sr), rr), t0 in zip(corners, start):
+        oa, orr = ca + sa * rr, cr + sr * rr
+        for k in range(nseg + 1):
+            t = t0 + 0.5 * math.pi * k / nseg
+            pts.append((oa + rr * math.cos(t), orr + rr * math.sin(t)))
+    return pts
+
+
 def build_caliper(name, coll, front):
-    """ATE-style single-piston floating (fist) caliper on its carrier, trailing side of the disc.
-    Built for a LEFT wheel in the wheel-local frame; theta_c = -80 deg puts it behind the axle, a bit above centre."""
+    """ATE single-piston floating (fist) caliper on its carrier, on the trailing (rear) side of the disc, as on the
+    E46 (front: 57 mm piston on the 325x25 disc, rear: 42 mm piston on the 320x22 disc; Brembo/ATE catalogue).
+    Built for a LEFT wheel in the wheel-local frame; theta_c = -80 deg puts it behind the axle, a bit above centre.
+    Housing = one boolean-unioned casting (bridge over the disc edge with an inspection window, outboard fist with
+    the central notch, inboard piston bore, guide-pin ears); separate carrier, pads, guide-pin caps, bleed nipple,
+    hose and the ATE anti-rattle spring on the outboard face."""
     d = DISC[front]
     R, Ri, ao, ai = d["R"], d["Ri"], d["out"], d["inn"]
     tc = math.radians(-80.0 if front else -84.0)
-    pad = 0.0150                          # pad + backing plate thickness
-    span = math.radians(21.0 if front else 19.0)
-    rmid = 0.5 * (R + Ri)
-    objs = []
-    rr0, rr1 = R + 0.0035, R + 0.0225     # bridge over the disc edge
-    a_out1 = ao + pad + 0.0115            # outboard finger face
-    a_in1 = ai - pad - 0.0140             # inboard housing back
-    # bridge
-    V, F = box_arc(a_in1 + 0.006, a_out1, rr0, rr1, tc - span, tc + span, n=8)
-    objs.append(new_mesh_obj("cb", V, F, mat_names=("caliper",), smooth_deg=None, coll=coll))
-    # two outboard fingers
-    for s in (-1, 1):
-        V, F = box_arc(ao + pad, a_out1, Ri + 0.006, rr0 + 0.004, tc + s * span * 0.52 - span * 0.40,
-                       tc + s * span * 0.52 + span * 0.40, n=3)
-        objs.append(new_mesh_obj("cf", V, F, mat_names=("caliper",), smooth_deg=None, coll=coll))
-    # web between the fingers (upper part only, leaves a window onto the pad)
-    V, F = box_arc(ao + pad + 0.003, a_out1, rmid + 0.012, rr0 + 0.004, tc - span * 0.3, tc + span * 0.3, n=2)
-    objs.append(new_mesh_obj("cw", V, F, mat_names=("caliper",), smooth_deg=None, coll=coll))
-    # inboard piston housing: cylinder along the axle centred on the pad (57 mm piston -> ~78 mm housing)
+    pad = 0.0155 if front else 0.0140                # backing plate + lining
+    span = math.radians(21.0 if front else 18.0)     # half-span of the housing (angle)
+    rp = 0.0395 if front else 0.0300                 # piston-bore housing radius (57 / 42 mm piston + walls)
+    rmid = 0.5 * (R + Ri) + 0.002
+    rr0, rr1 = R + 0.0040, R + 0.0215                # bridge, radially over the disc edge
+    a_o0 = ao + pad + 0.0006                         # outboard fist: inner face against the pad
+    a_o1 = a_o0 + (0.0125 if front else 0.0110)      # outboard fist: outer face
+    a_i1 = ai - pad - 0.0006                         # inboard: face against the pad (piston side)
+    a_i0 = a_i1 - (0.0300 if front else 0.0240)      # back of the piston bore
     cx, cz = rmid * math.sin(tc), rmid * math.cos(tc)
-    V, F = cylinder_axial(cx, cz, 0.039 if front else 0.033, a_in1, ai - pad + 0.002, n=28)
-    objs.append(new_mesh_obj("cp", V, F, mat_names=("caliper",), smooth_deg=None, coll=coll))
-    # housing body joining the piston bore to the bridge
-    V, F = box_arc(a_in1, ai - pad + 0.002, rmid - 0.010, rr1, tc - span * 0.62, tc + span * 0.62, n=4)
-    objs.append(new_mesh_obj("ch", V, F, mat_names=("caliper",), smooth_deg=None, coll=coll))
-    # guide-pin bosses (inboard, both ends) and the carrier horns that hold the pads (both ends, over the edge)
+
+    def blk(*args, n=6):
+        V, F = box_arc(*args, n=n)
+        return new_mesh_obj("cpart", V, F, mat_names=("caliper",), smooth_deg=None, coll=coll)
+
+    def cyl(*args, n=32):
+        V, F = cylinder_axial(*args, n=n)
+        return new_mesh_obj("cpart", V, F, mat_names=("caliper",), smooth_deg=None, coll=coll)
+
+    def swept(section, u0, u1, half, n=24):
+        """Sweep a convex (a, r) section(u) around the axle over theta = tc + u * half, u in [u0, u1]."""
+        loops = []
+        for u in np.linspace(u0, u1, n + 1):
+            sec = np.asarray(section(u), float)
+            loops.append(to_xyz(sec[:, 0], sec[:, 1], np.full(len(sec), tc + u * half)))
+        V, F = sweep(loops)
+        return new_mesh_obj("cpart", V, F, mat_names=("caliper",), smooth_deg=None, coll=coll)
+
+    def corner_rise(u, depth, p=3.0):
+        """0 in the middle, rising to `depth` at |u| = 1 with a round (superellipse) corner."""
+        return depth * (1.0 - (1.0 - min(abs(u), 1.0) ** p) ** (1.0 / p))
+
+    fist_bot = Ri + 0.004
+    parts = [
+        # bridge over the disc edge: rounded top edges like the casting
+        swept(lambda u: rrect(a_i1 - 0.010, a_o1, rr0, rr1, (0.002, 0.002, 0.006, 0.008)), -1.0, 1.0, span),
+        # outboard fist: a curved plate over the outboard pad, bottom corners well rounded
+        swept(lambda u: rrect(a_o0, a_o1, fist_bot + corner_rise(u, rr0 - fist_bot - 0.010), rr1 - 0.002,
+                              (0.0015, 0.0040, 0.0015, 0.0040)), -0.96, 0.96, span),
+        # inboard web around the piston bore
+        swept(lambda u: rrect(a_i0 + 0.004, a_i1, rmid - 0.008 + corner_rise(u, 0.030), rr1 - 0.002,
+                              (0.004, 0.0015, 0.004, 0.0015)), -0.72, 0.72, span, n=16),
+        cyl(cx, cz, rp, a_i0, a_i1),                                                          # piston bore
+        cyl(cx, cz, rp * 0.80, a_i0 - 0.006, a_i0 + 0.002),                                   # bore end boss
+    ]
+    ears = []
     for s in (-1, 1):
-        tb = tc + s * (span + math.radians(6.0))
-        bx, bz = (Ri + 0.030) * math.sin(tb), (Ri + 0.030) * math.cos(tb)
-        V, F = cylinder_axial(bx, bz, 0.0105, a_in1 + 0.004, ai - 0.002, n=16)
-        objs.append(new_mesh_obj("cg", V, F, mat_names=("caliper",), smooth_deg=None, coll=coll))
-        th0 = tc + s * span
-        V, F = box_arc(ai - pad - 0.004, ao + pad - 0.002, R - 0.018, R + 0.010,
-                       min(th0, th0 + s * math.radians(7.5)), max(th0, th0 + s * math.radians(7.5)), n=2)
-        objs.append(new_mesh_obj("cc", V, F, mat_names=("caliper",), smooth_deg=None, coll=coll))
-    body = join(objs, name)
-    bevel(body, 0.0018, segments=2, angle=35.0)
-    # pads (backing plate + lining) on both sides of the disc
+        tb = tc + s * (span + math.radians(7.0 if front else 6.0))
+        rb = Ri + 0.036
+        bx, bz = rb * math.sin(tb), rb * math.cos(tb)
+        ears.append((bx, bz))
+        parts.append(cyl(bx, bz, 0.0115 if front else 0.0100, a_i0 + 0.002, a_i1 - 0.003, n=20))   # guide ear
+        lo, hi = sorted((tc + s * span * 0.55, tb))
+        parts.append(blk(a_i0 + 0.004, a_i1 - 0.004, rb - 0.010, rb + 0.012, lo, hi, n=4))         # arm to the ear
+    body = parts[0]
+    others = join(parts[1:], "cal_rest")
+    boolean(body, others, "UNION", self_inter=True)
+    delete(others)
+    # inspection window through the bridge (shows the disc edge and the pad tops) + U notch in the fist
+    nr = 0.0155 if front else 0.0125                 # the window between the two fingers of the fist
+    nz = rmid + 0.001
+    cuts = [blk(ai - pad * 0.55, ao + pad * 0.55, rr0 - 0.003, rr1 + 0.003, tc - span * 0.40, tc + span * 0.40, n=6),
+            cyl(nz * math.sin(tc), nz * math.cos(tc), nr, a_o0 - 0.003, a_o1 + 0.003, n=24),
+            blk(a_o0 - 0.003, a_o1 + 0.003, fist_bot - 0.010, nz, tc - nr / nz, tc + nr / nz, n=2)]
+    cut = join(cuts, "cal_cut")
+    boolean(body, cut, "DIFFERENCE", self_inter=True)
+    delete(cut)
+    bevel(body, 0.0018 if front else 0.0015, segments=1, angle=30.0)
+    set_smooth(body, 32.0)
+    objs = [body]
+
+    # carrier (bare cast iron): inboard U under the pads + horns over the disc edge that hold the outboard pad
+    car = []
+    ext = math.radians(8.0 if front else 7.0)
+    for s in (-1, 1):
+        th0, th1 = sorted((tc + s * (span * 0.86), tc + s * (span * 0.86 + ext)))
+        V, F = box_arc(ai - pad - 0.016, ai - 0.0015, Ri - 0.010, R + 0.008, th0, th1, n=2)        # inboard arm
+        car.append(new_mesh_obj("car", V, F, mat_names=("steel_dark",), smooth_deg=None, coll=coll))
+        V, F = box_arc(ai - pad - 0.004, ao + pad - 0.001, R + 0.0015, R + 0.010, th0, th1, n=2)   # horn over edge
+        car.append(new_mesh_obj("car", V, F, mat_names=("steel_dark",), smooth_deg=None, coll=coll))
+        V, F = box_arc(ao + 0.0015, ao + pad - 0.001, R - 0.016, R + 0.010, th0, th1, n=2)        # outboard tip
+        car.append(new_mesh_obj("car", V, F, mat_names=("steel_dark",), smooth_deg=None, coll=coll))
+    V, F = box_arc(ai - pad - 0.016, ai - pad - 0.001, Ri - 0.012, Ri + 0.002, tc - span * 0.86 - ext,
+                   tc + span * 0.86 + ext, n=10)                                                   # lower bar
+    car.append(new_mesh_obj("car", V, F, mat_names=("steel_dark",), smooth_deg=None, coll=coll))
+    carrier = join(car, name + "_carrier")
+    bevel(carrier, 0.0012, segments=1, angle=35.0)
+    objs.append(carrier)
+
+    # pads: backing plate + lining on both sides of the disc
     pads = []
     for (a0, a1) in ((ao + 0.0004, ao + pad), (ai - pad, ai - 0.0004)):
-        V, F = box_arc(a0, a1, Ri + 0.003, R - 0.002, tc - span * 0.82, tc + span * 0.82, n=6)
+        V, F = box_arc(a0, a1, Ri + 0.004, R - 0.002, tc - span * 0.80, tc + span * 0.80, n=8)
         pads.append(new_mesh_obj("pad", V, F, mat_names=("steel_dark",), smooth_deg=None, coll=coll))
     padobj = join(pads, name + "_pads")
     bevel(padobj, 0.0010, segments=1, angle=35.0)
-    body = join([body, padobj], name)
-    set_smooth(body, 35.0)
-    return body
+    objs.append(padobj)
+
+    # guide-pin dust caps (rubber) on the inboard ends of the ears
+    for (bx, bz) in ears:
+        V, F = cylinder_axial(bx, bz, 0.0080 if front else 0.0070, a_i0 - 0.008, a_i0 + 0.003, n=16)
+        objs.append(new_mesh_obj("gcap", V, F, mat_names=("rubber",), smooth_deg=40.0, coll=coll))
+    # bleed nipple on top of the bore and the brake-hose banjo + hose going inboard
+    top = polar_pt(a_i0 + 0.010, rmid + rp * 0.80, tc + math.radians(4.0))
+    up = polar_pt(a_i0 + 0.010, rmid + rp * 0.80 + 0.016, tc + math.radians(4.0))
+    V, F = cylinder_dir(top, up, 0.0042, n=12)
+    objs.append(new_mesh_obj("bleed", V, F, mat_names=("steel",), smooth_deg=40.0, coll=coll))
+    hb = polar_pt(a_i0 + 0.004, rmid - rp * 0.30, tc - math.radians(9.0))
+    V, F = cylinder_dir(hb, hb + np.array([0.0, -0.016, 0.0]), 0.0075, n=12)
+    objs.append(new_mesh_obj("banjo", V, F, mat_names=("steel",), smooth_deg=40.0, coll=coll))
+    V, F = cylinder_dir(hb + np.array([0.0, -0.014, 0.0]), hb + np.array([0.0, -0.060, 0.020]), 0.0050, n=12)
+    objs.append(new_mesh_obj("hose", V, F, mat_names=("rubber",), smooth_deg=40.0, coll=coll))
+    # ATE anti-rattle spring: a steel strip across the outboard face, hooked behind the carrier horns
+    sp = []
+    V, F = box_arc(a_o1 - 0.0004, a_o1 + 0.0014, rmid - 0.004, rmid + 0.004, tc - span * 0.80, tc + span * 0.80, n=10)
+    sp.append(new_mesh_obj("spr", V, F, mat_names=("steel",), smooth_deg=None, coll=coll))
+    for s in (-1, 1):
+        lo, hi = sorted((tc + s * span * 0.80, tc + s * span * 0.80 - s * math.radians(2.0)))
+        V, F = box_arc(ao + pad * 0.5, a_o1 + 0.0014, rmid - 0.004, rmid + 0.004, lo, hi, n=1)
+        sp.append(new_mesh_obj("spr", V, F, mat_names=("steel",), smooth_deg=None, coll=coll))
+    objs.append(join(sp, name + "_spring"))
+    out = join(objs, name)
+    return out
 
 
 # ----------------------------------------------------------------------------------------------------------------

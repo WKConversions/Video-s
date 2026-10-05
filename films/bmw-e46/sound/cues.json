@@ -1,0 +1,170 @@
+{
+ "fps": 30,
+ "frames": 900,
+ "library": "lib",
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "fade_in": 0.2,
+  "fade_out": 1.2
+ },
+ "sfx": [
+  {
+   "id": "gen-swell",
+   "frame": 27,
+   "db": -3,
+   "note": "the car turning in"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 106,
+   "db": -4,
+   "note": "the turn into the profile"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 146,
+   "db": -4,
+   "note": "in on the roof"
+  },
+  {
+   "id": "gen-ping",
+   "frame": 192,
+   "db": -2,
+   "note": "the sedan line lands: 46 mm"
+  },
+  {
+   "id": "gen-riser-1s",
+   "frame": 236,
+   "note": "into the lift"
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 244,
+   "note": "the body lifts off and turns to glass"
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 273,
+   "db": -3,
+   "note": "the glass body settles"
+  },
+  {
+   "id": "gen-ping",
+   "frame": 286,
+   "note": "cylinder head lights up"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 318,
+   "db": -3,
+   "note": "the head lifts out"
+  },
+  {
+   "id": "gen-ping",
+   "frame": 422,
+   "pitch": 2,
+   "note": "VANOS lights up"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 452,
+   "db": -3,
+   "note": "VANOS slides out"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 476,
+   "note": "the sprockets shift",
+   "db": 4
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 538,
+   "db": 2,
+   "note": "the car rolls onto its side"
+  },
+  {
+   "id": "gen-ping",
+   "frame": 554,
+   "pitch": -2,
+   "note": "gearbox lights up"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 580,
+   "db": 1,
+   "note": "the gearbox drops out"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 609,
+   "pitch": 1,
+   "note": "gear 2",
+   "db": 4
+  },
+  {
+   "id": "gen-tick",
+   "frame": 626,
+   "pitch": 2,
+   "note": "gear 3",
+   "db": 4
+  },
+  {
+   "id": "gen-tick",
+   "frame": 642,
+   "pitch": 3,
+   "note": "gear 4",
+   "db": 4
+  },
+  {
+   "id": "gen-tick",
+   "frame": 658,
+   "pitch": 4,
+   "note": "gear 5",
+   "db": 4
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 674,
+   "db": 2,
+   "note": "the car turns to the rear"
+  },
+  {
+   "id": "gen-whoosh-whip",
+   "frame": 688,
+   "db": 0,
+   "note": "the power pulse runs down the propshaft"
+  },
+  {
+   "id": "gen-ping",
+   "frame": 695,
+   "pitch": -4,
+   "note": "differential lights up"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 722,
+   "db": 1,
+   "note": "the differential moves out"
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 826,
+   "db": -2,
+   "note": "paint returns, the car turns home"
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 838,
+   "db": -4,
+   "note": "the title"
+  },
+  {
+   "id": "gen-impact-deep",
+   "frame": 860,
+   "db": -3,
+   "note": "the car lands"
+  }
+ ]
+}

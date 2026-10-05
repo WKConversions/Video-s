@@ -34,20 +34,20 @@ def studio():
     scene.world = w
     w.use_nodes = True
     bg = w.node_tree.nodes["Background"]
-    bg.inputs["Color"].default_value = (0.32, 0.32, 0.33, 1)    # ambient fill; metals reflect a mid-dark grey
+    # three.js ambientLight(1.1) gives albedo * 1.1 / pi of diffuse light -> a uniform world of ~0.35
+    bg.inputs["Color"].default_value = (0.35, 0.35, 0.36, 1)
     bg.inputs["Strength"].default_value = 1.0
     if "ground" not in bpy.data.objects:
         bpy.ops.mesh.primitive_plane_add(size=40, location=(0, 0, 0))
         g = bpy.context.active_object
         g.name = "ground"
         g.is_shadow_catcher = True
-    # light panels (visible in reflections) - three.js Lightformers, converted to Blender axes (x, -z, y)
+    # the film's Lightformer panels (radiance = three.js intensity -> P = L * pi * area) and its two directional
+    # lights (three.js intensity == Cycles sun strength for diffuse); three.js (x, y, z) -> Blender (x, -z, y)
     for name, loc, rot, size, energy in (
-        ("panel_top", (0.0, -4.0, 6.0), (math.radians(-35), 0, 0), (12.0, 4.0), 1500.0),
-        ("panel_left", (-8.0, -2.0, 2.0), (0, math.radians(-90), 0), (10.0, 4.0), 900.0),
-        ("panel_right", (8.0, 2.0, 1.0), (0, math.radians(90), 0), (8.0, 4.0), 600.0),
-        ("key", (-6.0, -8.0, 10.0), None, (2.0, 2.0), 2500.0),
-        ("rim_light", (8.0, -3.0, 6.0), None, (3.0, 3.0), 900.0),
+        ("panel_top", (0.0, -4.0, 6.0), (math.radians(34), 0, 0), (12.0, 4.0), 2.2 * math.pi * 48.0),
+        ("panel_left", (-8.0, -2.0, 2.0), (0, math.radians(-90), 0), (10.0, 4.0), 1.2 * math.pi * 40.0),
+        ("panel_right", (8.0, 2.0, 1.0), (0, math.radians(90), 0), (8.0, 4.0), 0.8 * math.pi * 32.0),
     ):
         if name in bpy.data.objects:
             continue
@@ -58,10 +58,16 @@ def studio():
         lo = bpy.data.objects.new(name, ld)
         bpy.context.scene.collection.objects.link(lo)
         lo.location = loc
-        if rot is None:
-            lo.rotation_euler = (Vector((0, 0, 0.3)) - Vector(loc)).to_track_quat("-Z", "Y").to_euler()
-        else:
-            lo.rotation_euler = rot
+        lo.rotation_euler = rot
+    for name, frm, strength in (("key", (-6.0, -8.0, 10.0), 2.4), ("fill", (8.0, -6.0, 3.0), 0.9)):
+        if name in bpy.data.objects:
+            continue
+        ld = bpy.data.lights.new(name, "SUN")
+        ld.energy = strength
+        ld.angle = math.radians(4.0)
+        lo = bpy.data.objects.new(name, ld)
+        bpy.context.scene.collection.objects.link(lo)
+        lo.rotation_euler = (Vector(frm)).to_track_quat("Z", "Y").to_euler()
 
 
 def on_white(path):
@@ -110,8 +116,18 @@ def import_body():
         return
     before = set(bpy.data.objects)
     bpy.ops.import_scene.gltf(filepath=BODY_GLB)
+    paint = bpy.data.materials.new("preview_black_paint")
+    paint.use_nodes = True
+    bsdf = paint.node_tree.nodes["Principled BSDF"]
+    bsdf.inputs["Base Color"].default_value = (0.012, 0.012, 0.014, 1)
+    bsdf.inputs["Roughness"].default_value = 0.25
+    if "Coat Weight" in bsdf.inputs:
+        bsdf.inputs["Coat Weight"].default_value = 1.0
     for o in set(bpy.data.objects) - before:
         o["is_body"] = True
+        if o.type == "MESH":            # the body GLB's own material renders white here; black paint for the check
+            for slot in o.material_slots:
+                slot.material = paint
 
 
 def photo_crop(box, size):
@@ -219,6 +235,15 @@ def render_all(views=None):
         loc = FL + Vector((-0.9, -1.6, 0.45))
         camera("cam_brakes", loc, FL, lens=60, res=(800, 700))
         render(os.path.join(PREVIEW_DIR, "wheels_brakes_inside.png"))
+    if want("caliper"):
+        # front-left brake without tyre and rim, from outside and behind: the caliper on the trailing side
+        FL = Vector((1.3625, 0.7355, 0.318))
+        set_visible(lambda o: is_wheel(o) and o.get("corner") == "FL" and o.get("part") in ("brake_disc", "caliper"))
+        tgt = FL + Vector((-0.135, 0.0, 0.025))
+        camera("cam_caliper", tgt + wheel_dir(-18.0, 10.0, outward=1) * 0.75, tgt, lens=55, res=(800, 600))
+        render(os.path.join(PREVIEW_DIR, "wheels_caliper_FL.png"))
+        camera("cam_caliper2", tgt + wheel_dir(-70.0, 25.0, outward=1) * 0.75, tgt, lens=55, res=(800, 600))
+        render(os.path.join(PREVIEW_DIR, "wheels_caliper_FL_rear.png"))
     if want("cut"):
         # caliper/disc seen from outside through a tyre-less rim, rear-right wheel, to check the trailing side
         RR = Vector((-1.3625, -0.739, 0.318))

@@ -14,7 +14,7 @@ import { Overlay } from "./Overlay";
 import { makePartU, makeShared, patchTree, PartU } from "./partMaterials";
 import { DIFF_GROUP, GEARBOX_GROUP, HEAD_GROUP, makeRig, poseRig, Rig, rigStateAt, VANOS_GROUP } from "./parts";
 import roof from "./rooflines.json";
-import { bodyLiftAt, cameraAt, carMatrix, EASE, floatAt, k, lerp, poseAt, sweepAt } from "./timeline";
+import { bodyLiftAt, cameraAt, carMatrix, EASE, floatAt, k, lerp, poseAt, shadowAt, sweepAt, xrayFadeAt } from "./timeline";
 
 export type FilmProps = { blurSamples: number; internals: string[] };
 
@@ -49,7 +49,7 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
   const shadowTex = useShadowTex();
 
   // per-part uniforms: one set per beat group, plus one for everything else
-  const U = useMemo(() => ({ rest: makePartU(), head: makePartU(), vanos: makePartU(), gearbox: makePartU(), diff: makePartU(),
+  const U = useMemo(() => ({ rest: makePartU(), head: makePartU(), cams: makePartU(), vanos: makePartU(), gearbox: makePartU(), diff: makePartU(),
     prop: makePartU(), shell: makePartU(), wheels: makePartU(), wheelsR: makePartU() }), []);
 
   const built = useMemo(() => {
@@ -68,6 +68,7 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
     if (rig) {
       const groupOf = (name: string): PartU => {
         if (VANOS_GROUP.includes(name)) return U.vanos;
+        if (name.startsWith("camshaft") || name.startsWith("valve_c") || name.startsWith("spring_")) return U.cams;
         if (HEAD_GROUP.includes(name) || name.startsWith("valve")) return U.head;
         if (GEARBOX_GROUP.includes(name)) return U.gearbox;
         if (DIFF_GROUP.includes(name)) return U.diff;
@@ -90,12 +91,15 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
   const M = carMatrix(pose, float);
   const lift = bodyLiftAt(g);
   look.sweep.value = sweepAt(g);
+  look.xrayFade.value = xrayFadeAt(g);
   S.uSweep.value = look.sweep.value;
   S.uCarInv.value.copy(M).invert();
   const st = rigStateAt(g);
   // highlights: a pulse in, a steady glow while out
   const hi = (start: string, end: string) => k(g, start, 0.35, EASE.arrive) * (1 - k(g, end, 0.5, EASE.move));
   U.head.uHi.value = hi("head+0.2", "vanos+0.2");
+  U.cams.uHi.value = U.head.uHi.value * 0.18;
+  U.cams.uDim.value = Math.max(st.gearbox, st.diff);
   U.vanos.uHi.value = hi("vanos+0.3", "vanos+3.6") + (1 - k(g, "vanos+0.3", 0.3)) * U.head.uHi.value;
   U.gearbox.uHi.value = hi("gearbox+0.3", "diff");
   U.diff.uHi.value = hi("diff+0.6", "outro");
@@ -129,10 +133,9 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
       <Cam g={g} />
       <Studio />
       {/* floor shadow */}
-      <mesh rotation-x={-Math.PI / 2} position={[M.elements[12], 0.002, M.elements[14]]} rotation-z={pose.yaw * Math.PI / 180}>
+      <mesh rotation-x={-Math.PI / 2} position={[new THREE.Vector3(0, 0, 0).applyMatrix4(M).x, 0.002, new THREE.Vector3(0, 0, 0).applyMatrix4(M).z]} rotation-z={pose.yaw * Math.PI / 180}>
         <planeGeometry args={[5.6, 2.6]} />
-        <meshBasicMaterial map={shadowTex} transparent opacity={0.62 * (1 - Math.min(1, float / 0.25)) * (1 - k(g, "head", 0.6))
-          + 0.62 * k(g, "outro+0.8", 1.0)} depthWrite={false} toneMapped={false} />
+        <meshBasicMaterial map={shadowTex} transparent opacity={0.62 * shadowAt(g, M)} depthWrite={false} toneMapped={false} />
       </mesh>
       <group matrixAutoUpdate={false} matrix={M}>
         {ready && (
@@ -159,6 +162,10 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
   return (
     <AbsoluteFill style={{ background: "radial-gradient(120% 95% at 50% 42%, #FBFBFC 0%, #F1F3F6 55%, #E4E8EE 100%)" }}>
       {blurSamples > 1 ? <CameraMotionBlur samples={blurSamples} shutterAngle={180}>{scene}</CameraMotionBlur> : scene}
+      <AbsoluteFill style={{ pointerEvents: "none", opacity: k(g, "head+0.3", 0.5) * (1 - k(g, "diff+0.2", 0.5)),
+        background: "linear-gradient(90deg, rgba(246,247,249,0.94) 0%, rgba(246,247,249,0.86) 26%, rgba(246,247,249,0) 46%)" }} />
+      <AbsoluteFill style={{ pointerEvents: "none", opacity: k(g, "diff+0.4", 0.5) * (1 - k(g, "outro", 0.5)),
+        background: "linear-gradient(270deg, rgba(246,247,249,0.94) 0%, rgba(246,247,249,0.86) 26%, rgba(246,247,249,0) 46%)" }} />
       <Overlay g={g} M={M} lift={lift} rig={built?.rig ?? null} ghost={{ ghostIn, ghostDrop }} />
     </AbsoluteFill>
   );

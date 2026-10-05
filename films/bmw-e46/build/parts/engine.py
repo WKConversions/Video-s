@@ -32,8 +32,11 @@ ARGS = sys.argv[1:]
 # Key dimensions (metres). Sources in build/parts/engine.md
 # ----------------------------------------------------------------------------------------------
 TILT = 30.0 * D2R          # engine leans 30 deg to the right (exhaust side down)
-X0 = 0.82                  # rear face of the block (bell-housing flange) in car X (SPEC)
-CRANK_Z = 0.42             # crank axis height (SPEC)
+X0 = 0.98                  # rear face of the block (bell-housing flange) in car X. SPEC estimate was 0.82;
+                           # moved forward so the front-axle line (X 1.3625) crosses the engine at cylinder 2/3
+                           # (BMW press top view P90200619 measured, research engine-head.md 'axle-position')
+CRANK_Z = 0.39             # crank axis height above the ground (SPEC 0.42, research 0.36-0.38; 0.39 keeps the
+                           # valve cover under the bonnet after the move forward, oil-pan bottom ~0.135)
 BORE = 0.084
 STROKE = 0.0896
 ROD = 0.135
@@ -60,9 +63,9 @@ BUCKET_R = 0.0165
 BUCKET_H = 0.024
 TAPPET_GAP = 0.004         # bucket crown thickness above the valve tip
 VALVE_FACE_Z = 0.0075      # valve face height above head bottom face (chamber roof at 0.0085)
-SPROCKET_SEC_T = 28        # secondary chain sprockets (exhaust front row + intake)
-SPROCKET_PRI_T = 38        # exhaust primary sprocket (2:1 with the crank sprocket)
-CRANK_SPROCKET_T = 19
+SPROCKET_SEC_T = 26        # secondary chain sprockets (exhaust front row + intake), ~80 mm (photo-scaled)
+SPROCKET_PRI_T = 32        # exhaust primary sprocket, ~97 mm (2:1 with the crank sprocket)
+CRANK_SPROCKET_T = 16
 CHAIN_PITCH = 0.009525     # 3/8 in simplex chain
 
 MAT_DEF = {  # name: (base colour RGBA (linear), metallic, roughness)
@@ -674,7 +677,7 @@ def build_head():
         s_floor = (FLOOR_Z - 0.006 - v["tip"].z) / ax.z
         s_top = -0.0035
         M = T(*v["tip"]) @ align_z(ax)
-        add_tube(db, 0.0196, BUCKET_R + 0.0004, s_top - s_floor, M, seg=16, z0=s_floor, bevel=0.0008)
+        add_tube(db, 0.0196, BUCKET_R + 0.0004, s_top - s_floor, M, seg=12, z0=s_floor, bevel=0.0008)
     # cam bearing saddles (lower halves) with semicircular journal seats
     for bx in BEAR_X:
         xh = bx - HEAD_X0
@@ -701,6 +704,25 @@ def build_head():
     # front chain-tunnel lip + lifting eye (front, intake side)
     add_prism(db, [(0.0, 0.0), (0.05, 0.0), (0.05, 0.035), (0.03, 0.065), (0.012, 0.065), (0.0, 0.035)],
               0.008, T(hx - 0.034, 0.088, RAIL_Z - 0.004) @ Matrix(((0, 0, 1, 0), (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 0, 1))) @ Rz(0) , bevel=0.0015)
+    # front lip of the cam-drive cavity (the VANOS unit seats on it) + the VANOS studs
+    lip_out = vanos_outline(top=VANOS_TOP - 0.001, grow=0.003)
+    add_ring2d(db, lip_out, offset_loop(lip_out, 0.0080), VANOS_FLANGE_X - hx + 0.001, MP, z0=hx - 0.001)
+    for p in vanos_stud_points():
+        add_cyl(det.bm("steel"), 0.0038, 0.024, T(hx, p.x, p.y) @ Ry(math.pi / 2), seg=8, z0=0.0)
+    # manifold studs: exhaust (2 per port, diagonal, as the manifold nuts) and intake (between the ports)
+    stb = det.bm("steel")
+    for ci in range(6):
+        xh = CYL_X[ci] - HEAD_X0
+        for dz in (-0.020, 0.020):
+            q = (xh + (0.024 if dz > 0 else -0.024), EXHAUST_PORT_C.y + 0.002, EXHAUST_PORT_C.z + dz)
+            add_cyl(stb, 0.0038, 0.026, T(*q) @ Rx(math.pi / 2), seg=8, z0=0.0)
+    tang = Vector((0.0, -INTAKE_PORT_DIR.z, INTAKE_PORT_DIR.y))
+    for k in range(7):
+        xh = CYL_X[0] - HEAD_X0 + SPACING / 2 - k * SPACING
+        xh = max(min(xh, hx - 0.018), -hx + 0.018)
+        for sv in (-0.021, 0.021):
+            q = INTAKE_PORT_C + Vector((xh, 0, 0)) + tang * sv - INTAKE_PORT_DIR * 0.002
+            add_cyl(stb, 0.0038, 0.024, T(*q) @ align_z(INTAKE_PORT_DIR), seg=8, z0=0.0)
     detail_obj = det.objects()
 
     # --- bearing caps (alu_machined faces read as separate parts) + bolts
@@ -759,7 +781,7 @@ def build_camshaft(kind):
     add_cyl(bm, 0.0105, 0.012, T(BEAR_X[0] - HEAD_X0 - 0.024, 0, 0) @ rot, seg=6, bevel=0.0008)   # hex
     add_cyl(jm, 0.0160, 0.016, T(HEAD_LEN / 2 + 0.008, 0, 0) @ rot, seg=24, bevel=0.0008)
     # lobes
-    prof = cam_profile(48)
+    prof = cam_profile(40)
     for v in VALVES:
         if v["kind"] != kind:
             continue
@@ -813,7 +835,7 @@ def build_valve(v):
     coils = 4.5
     wire = 0.0019
     rad = 0.0112
-    n = int(coils * 9)
+    n = int(coils * 8)
     path = []
     for i in range(n + 1):
         t = i / n
@@ -906,7 +928,7 @@ CRANK_H = Vector((0.0, 0.0, -HEAD_Z0))      # crank axis in H (y, z)
 def pcd_r(n):
     return CHAIN_PITCH / (2 * math.sin(math.pi / n))
 
-def sprocket_loops(n, ring_w=0.0075, per=10):
+def sprocket_loops(n, ring_w=0.0055, per=10):
     R = pcd_r(n)
     root = R - 0.00335
     tip = CHAIN_PITCH / 2 * (0.58 + 1 / math.tan(math.pi / n))
@@ -926,13 +948,24 @@ def sprocket_loops(n, ring_w=0.0075, per=10):
     inner = [(rin * math.cos(math.atan2(y, x)), rin * math.sin(math.atan2(y, x))) for x, y in outer]
     return outer, inner, R, root, rin
 
-def add_sprocket(bm_teeth, bm_web, n, x_center, thick, Mloc, web_r_in=0.022, web_thick=0.0045, phase=0.0):
+def add_sprocket(bm_teeth, bm_web, n, x_center, thick, Mloc, web_r_in=0.0165, web_thick=0.0045, phase=0.0):
     outer, inner, R, root, rin = sprocket_loops(n)
     # build in local XY (sprocket plane), Z along axis -> map to H x axis
     M = Mloc @ T(x_center, 0, 0) @ Matrix(((0, 0, 1, 0), (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 0, 1))) @ Rz(phase)
     add_ring2d(bm_teeth, outer, inner, thick, M @ Matrix.Rotation(0, 4, "Z"), z0=-thick / 2)
-    # web disc
-    add_tube(bm_web, rin + 0.0008, web_r_in, web_thick, M, seg=48, bevel=0.0006)
+    # web: inner ring, outer ring and three spokes between three kidney slots (makes the sprocket's turn
+    # relative to its camshaft readable when the film shows the VANOS timing shift)
+    r_a, r_d = web_r_in, rin + 0.0008
+    r_b = r_a + (r_d - r_a) * 0.30
+    r_c = r_a + (r_d - r_a) * 0.74
+    add_tube(bm_web, r_b + 0.0004, r_a, web_thick, M, seg=40, bevel=0.0005)
+    add_tube(bm_web, r_d, r_c - 0.0004, web_thick, M, seg=48, bevel=0.0005)
+    for k in range(3):
+        a0 = (k * 120.0 + 38.0) * D2R
+        a1 = a0 + 44.0 * D2R
+        arc_o = [(r_c * math.cos(a0 + (a1 - a0) * i / 6), r_c * math.sin(a0 + (a1 - a0) * i / 6)) for i in range(7)]
+        arc_i = [(r_b * math.cos(a1 - (a1 - a0) * i / 6), r_b * math.sin(a1 - (a1 - a0) * i / 6)) for i in range(7)]
+        add_prism(bm_web, arc_o + arc_i, web_thick * 0.999, M, z0=-web_thick * 0.4995)
     return R
 
 def build_sprocket(kind):
@@ -952,11 +985,11 @@ def build_sprocket(kind):
     # VANOS hub (helical-gear cup) + front flange with 4 bolts + impulse wheel (sensor)
     x_back = HEAD_FRONT + 0.003 - o
     x_front = SEC_X + 0.016 - o
-    add_cyl(hb, 0.0215, x_front - x_back, T((x_back + x_front) / 2, 0, 0) @ rot, seg=32, bevel=0.0012)
-    add_cyl(hb, 0.0300, 0.004, T(SEC_X + 0.0060 - o, 0, 0) @ rot, seg=40, bevel=0.0008)
-    for k in range(4):
-        a = math.pi / 4 + k * math.pi / 2
-        add_cyl(db, 0.0042, 0.004, T(SEC_X + 0.0095 - o, 0.024 * math.cos(a), 0.024 * math.sin(a)) @ rot,
+    add_cyl(hb, 0.0165, x_front - x_back, T((x_back + x_front) / 2, 0, 0) @ rot, seg=32, bevel=0.0012)
+    add_cyl(hb, 0.0205, 0.004, T(SEC_X + 0.0060 - o, 0, 0) @ rot, seg=40, bevel=0.0008)
+    for k in range(3):                     # bolts on the three spokes (between the kidney slots)
+        a = k * 2 * math.pi / 3
+        add_cyl(db, 0.0036, 0.004, T(SEC_X + 0.0042 - o, 0.0245 * math.cos(a), 0.0245 * math.sin(a)) @ rot,
                 seg=6, bevel=0.0005)
     # impulse wheel: thin disc with 4 raised segments (camshaft sensor trigger), behind the secondary row
     iw_x = (SEC_X - 0.0075 if kind == "in" else PRI_X + 0.0072) - o
@@ -1108,85 +1141,150 @@ def offset_loop(loop, d):
         out.append((q.x, q.y))
     return out
 
-def vanos_outline():
+VANOS_TOP = CAM_Z + 0.034          # top edge of the housing (valve-cover seal); the secondary chain runs just above it
+VANOS_BOSS_R = 0.033               # piston-cylinder boss (~66 mm), coaxial with each camshaft
+VANOS_FLANGE_X = HEAD_FRONT + 0.010  # back flange of the housing (seats on the head's front lip)
+VANOS_FLOOR = HEAD_FRONT + 0.034   # front web (pocket floor), in front of the secondary chain
+VANOS_FRONT = HEAD_FRONT + 0.050   # front edge of the rim, ribs and bridge rails
+VANOS_BOSS_X = HEAD_FRONT + 0.074  # front face of the two piston bosses (piston caps)
+
+def vanos_outline(top=VANOS_TOP, grow=0.0, step=0.0065):
+    """Front-view outline (H y, z) of the VANOS housing = cam-drive cavity of the head: encloses the exhaust
+    (primary + secondary) and intake sprockets, flat top at the valve-cover seal, lower oil-gallery bar."""
     pts = []
-    for (cy, cz, r) in ((-CAM_Y, CAM_Z, 0.069), (CAM_Y, CAM_Z, 0.060)):
+    for (cy, r) in ((-CAM_Y, 0.060), (CAM_Y, 0.050)):
         for k in range(48):
             a = 2 * math.pi * k / 48
-            pts.append((cy + r * math.cos(a), cz + r * math.sin(a)))
-    pts += [(-0.098, 0.052), (0.104, 0.050), (0.124, 0.072), (0.124, 0.128)]
+            pts.append((cy + (r + grow) * math.cos(a), CAM_Z + (r + grow) * math.sin(a)))
+    pts += [(-CAM_Y - 0.030 - grow, CAM_Z - 0.080 - grow), (CAM_Y + 0.020 + grow, CAM_Z - 0.080 - grow),
+            (CAM_Y + 0.054 + grow, CAM_Z - 0.036)]
     hull = convex_hull(pts)
-    # resample hull uniformly for a clean ring
+    if top is not None:
+        hull = clip_halfplane(hull, 0.0, -1.0, -top)
+    if _signed_area(hull) < 0:
+        hull = list(reversed(hull))
     P = [Vector(p) for p in hull] + [Vector(hull[0])]
-    res = resample(P, 0.006)[:-1]
+    res = resample(P, step)[:-1]
     return [(p.x, p.y) for p in res]
 
+def vanos_stud_points():
+    """VANOS fastener positions (H y, z) on the flange mid-line: lower half and sides, plus one at the top corner."""
+    loop = offset_loop(vanos_outline(), -0.0040)
+    P = [Vector(p) for p in loop] + [Vector(loop[0])]
+    pts = [p for p in resample(P, 0.046)[:-1] if p.y < CAM_Z + 0.004]
+    pts.append(Vector((-CAM_Y - 0.052, VANOS_TOP - 0.010)))
+    return pts
+
+def add_arc_band(bm, c, r_in, r_out, a0, a1, x0, x1, seg=16):
+    """Closed solid: annular sector around (y, z) = c from angle a0 to a1 (rad, 0 = +y, 90deg = +z), x0..x1."""
+    outer = []
+    inner = []
+    for k in range(seg + 1):
+        a = a0 + (a1 - a0) * k / seg
+        outer.append((c[0] + r_out * math.cos(a), c[1] + r_out * math.sin(a)))
+        inner.append((c[0] + r_in * math.cos(a), c[1] + r_in * math.sin(a)))
+    loop = outer + list(reversed(inner))
+    add_prism(bm, loop, x1 - x0, MP, z0=x0)
+
+def add_rib(bm, p0, p1, w, x0, x1, bevel=0.0008):
+    """Straight cast rib in the (y, z) plane from p0 to p1 (width w), standing from x0 to x1."""
+    p0, p1 = Vector(p0), Vector(p1)
+    d = p1 - p0
+    m = (p0 + p1) / 2
+    add_box(bm, x1 - x0, d.length, w, T((x0 + x1) / 2, m.x, m.y) @ Rx(math.atan2(d.y, d.x)), bevel=bevel, seg=1)
+
 def build_vanos():
-    """VANOS housing, piston-cylinder domes with caps, solenoids, oil feed (H frame; node origin is
-    placed by the caller at the head front face, cam height)."""
+    """M52TU/M54 double-VANOS unit (H frame; the caller puts the node origin on the head front face at cam height).
+    Cast-aluminium housing seen from the front: two round piston bosses coaxial with the camshafts (piston caps
+    with a hex socket), joined by a railed bridge with a cast label pad, radial gussets, a U-shaped hood around the
+    intake boss, a rim that follows the cam-drive cavity, back flange with nuts; exhaust solenoid lying along the
+    lower edge (connector outboard, car right), intake solenoid standing at the intake end, oil feed banjo + line."""
     pc = Piece("vanos")
     ab = pc.bm("alu_cast")
     mb = pc.bm("alu_machined")
     sb = pc.bm("steel")
+    db = pc.bm("steel_dark")
     kb = pc.bm("plastic_black")
-    Mp = Matrix(((0, 0, 1, 0), (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 0, 1)))   # (u,v,w)->(w,u,v): prism along x
+    E = (-CAM_Y, CAM_Z)
+    I = (CAM_Y, CAM_Z)
+    R = VANOS_BOSS_R
     outline = vanos_outline()
-    if _signed_area(outline) < 0:
-        outline = list(reversed(outline))
-    inner = offset_loop(outline, 0.0065)
-    x_rim0, x_rim1 = HEAD_FRONT + 0.0004, HEAD_FRONT + 0.0400
-    add_ring2d(ab, outline, inner, x_rim1 - x_rim0, Mp, z0=x_rim0)
-    x_pl1 = x_rim1 + 0.0105
-    add_prism(ab, outline, x_pl1 - x_rim1 + 0.0004, Mp, z0=x_rim1 - 0.0004, bevel=0.0016, seg=2)
-    # raised gasket lip around the upper half (valve-cover seal face)
-    lip_in = offset_loop(outline, 0.0075)
-    add_ring2d(mb, outline, lip_in, 0.0042, Mp, z0=x_pl1 - 0.0002)
-    # piston-cylinder domes coaxial with the camshafts
-    for (cy, r, h) in ((-CAM_Y, 0.0445, 0.034), (CAM_Y, 0.0415, 0.032)):
-        prof = [(0, 0), (r, 0), (r, h * 0.62), (r - 0.0035, h * 0.86), (r - 0.010, h), (0.0172, h), (0.0172, h + 0.0012),
-                (0, h + 0.0012)]
-        add_lathe(ab, prof, 40, T(x_pl1 - 0.001, cy, CAM_Z) @ Ry(math.pi / 2))
-        # machined piston cap (plug) with an 8 mm hex socket
-        add_cyl(mb, 0.0168, 0.0042, T(x_pl1 + h + 0.0012, cy, CAM_Z) @ Ry(math.pi / 2), seg=32, z0=-0.001,
-                bevel=0.0008)
-        add_cyl(sb, 0.0052, 0.0008, T(x_pl1 + h + 0.0012 + 0.0030, cy, CAM_Z) @ Ry(math.pi / 2), seg=6)
-        # 4 bolts on the dome flange
-        for k in range(4):
-            a = math.pi / 4 + k * math.pi / 2
-            add_cyl(sb, 0.0040, 0.0040, T(x_pl1 + 0.0020, cy + (r + 0.0065) * math.cos(a),
-                                          CAM_Z + (r + 0.0065) * math.sin(a)) @ Ry(math.pi / 2), seg=6, bevel=0.0005)
-    # cast lattice ribs between the domes
-    ribs = [((-0.016, 0.075), (-0.016, 0.178)), ((0.018, 0.075), (0.018, 0.172)),
-            ((-0.016, 0.125), (0.018, 0.125)), ((-0.016, 0.100), (0.018, 0.150)),
-            ((-0.090, 0.064), (0.090, 0.064))]
-    for (a, b) in ribs:
-        a, b = Vector(a), Vector(b)
-        d = b - a
-        M = T(x_pl1 + 0.0055, (a.x + b.x) / 2, (a.y + b.y) / 2) @ Rx(math.atan2(d.y, d.x))
-        add_box(ab, 0.012, d.length, 0.0045, M, bevel=0.0012, seg=1)
-    # perimeter flange bolts (to the head)
-    for p in resample([Vector(q) for q in inner] + [Vector(inner[0])], 0.05)[:-1]:
-        add_cyl(sb, 0.0046, 0.0045, T(x_pl1 + 0.0022, p.x, p.y) @ Ry(math.pi / 2), seg=6, bevel=0.0005)
-    # intake solenoid: vertical (head up) on the intake end
-    sx, sy = HEAD_FRONT + 0.027, 0.113
-    add_cyl(mb, 0.0165, 0.080, T(sx, sy, 0.068), seg=24, z0=0.0, bevel=0.0015)
-    add_cyl(sb, 0.0135, 0.010, T(sx, sy, 0.062), seg=6, bevel=0.001)
-    add_box(kb, 0.024, 0.022, 0.024, T(sx, sy, 0.157), bevel=0.003, seg=2)
-    add_box(ab, 0.030, 0.030, 0.030, T(sx - 0.002, sy - 0.004, 0.050), bevel=0.004, seg=2)    # oil gallery block
-    # exhaust solenoid: horizontal, pointing to the exhaust side under the exhaust dome
-    ex_y0, ex_y1, ez = -0.045, -0.128, 0.040
-    add_cyl(mb, 0.0160, ex_y0 - ex_y1, T(sx, (ex_y0 + ex_y1) / 2, ez) @ Rx(math.pi / 2), seg=24, bevel=0.0015)
-    add_cyl(sb, 0.0135, 0.010, T(sx, ex_y0 - 0.004, ez) @ Rx(math.pi / 2), seg=6, bevel=0.001)
-    add_box(kb, 0.024, 0.022, 0.024, T(sx, ex_y1 - 0.010, ez), bevel=0.003, seg=2)
-    add_box(ab, 0.032, 0.030, 0.026, T(sx - 0.002, -0.038, 0.046), bevel=0.004, seg=2)
-    # oil feed: banjo bolt on the intake end + steel line down to the oil filter housing (front left of block)
-    banjo = Vector((sx + 0.016, 0.100, 0.040))
-    add_cyl(sb, 0.0095, 0.006, T(*banjo) @ Ry(math.pi / 2), seg=6, z0=0.0, bevel=0.0008)
-    add_cyl(sb, 0.0105, 0.012, T(banjo.x - 0.008, banjo.y, banjo.z) @ Ry(math.pi / 2), seg=16)
-    line = catmull([banjo + Vector((-0.008, 0.0, -0.010)), Vector((sx, 0.125, -0.010)),
-                    Vector((HEAD_FRONT - 0.010, 0.165, -0.040)), Vector((HEAD_FRONT - 0.035, 0.190, -0.052))], 6)
+    inner = offset_loop(outline, 0.0050)
+    # back flange (slightly wider than the rim) + rim wall
+    fl_out = vanos_outline(grow=0.009)
+    fl_in = offset_loop(fl_out, 0.0140)
+    add_ring2d(ab, fl_out, fl_in, 0.0055, MP, z0=VANOS_FLANGE_X)
+    add_ring2d(ab, outline, inner, VANOS_FRONT - VANOS_FLANGE_X - 0.004, MP, z0=VANOS_FLANGE_X + 0.004)
+    # front web (pocket floor) + floor of the intake hood
+    add_prism(ab, offset_loop(outline, 0.0035), 0.006, MP, z0=VANOS_FLOOR)
+    hood_pts = [(I[0] + 0.046 * math.cos(2 * math.pi * k / 40), I[1] + 0.046 * math.sin(2 * math.pi * k / 40))
+                for k in range(40)]
+    add_prism(ab, hood_pts, 0.0050, MP, z0=VANOS_FLOOR)      # 1 mm behind the web: no coplanar faces
+    # U-shaped hood around the intake boss (rises above the seal line, in front of the chain)
+    a0 = math.asin((VANOS_TOP - 0.006 - CAM_Z) / 0.050)
+    add_arc_band(ab, I, 0.0450, 0.0500, a0, math.pi - a0, VANOS_FLOOR, VANOS_FRONT + 0.002, seg=20)
+    # bridge: top and bottom rails between the bosses, two cross ribs, cast label pad, bolt boss
+    yb0, yb1 = E[0] + R - 0.004, I[0] - R + 0.004
+    for zr in (CAM_Z + R - 0.0045, CAM_Z - R + 0.0045):
+        add_rib(ab, (yb0, zr), (yb1, zr), 0.0085, VANOS_FLOOR, VANOS_FRONT + 0.003, bevel=0.0015)
+    add_rib(ab, (-0.015, CAM_Z - R + 0.004), (-0.015, CAM_Z + R - 0.004), 0.0050, VANOS_FLOOR, VANOS_FRONT)
+    add_rib(ab, (0.011, CAM_Z - R + 0.004), (-0.015, CAM_Z - 0.002), 0.0050, VANOS_FLOOR, VANOS_FRONT - 0.002)
+    add_box(ab, 0.010, 0.026, 0.015, T(VANOS_FLOOR + 0.008, -0.0005, CAM_Z + 0.013), bevel=0.0012, seg=1)
+    add_box(mb, 0.0015, 0.020, 0.0035, T(VANOS_FLOOR + 0.0136, -0.0005, CAM_Z + 0.0165), bevel=0.0004)
+    add_box(mb, 0.0015, 0.014, 0.0030, T(VANOS_FLOOR + 0.0136, -0.0035, CAM_Z + 0.0095), bevel=0.0004)
+    add_cyl(ab, 0.0072, VANOS_FRONT - VANOS_FLOOR, T(0, 0.016, CAM_Z - 0.010) @ Ry(math.pi / 2), seg=16,
+            z0=VANOS_FLOOR, bevel=0.0010)
+    add_cyl(sb, 0.0060, 0.0055, T(VANOS_FRONT + 0.0027, 0.016, CAM_Z - 0.010) @ Ry(math.pi / 2), seg=6,
+            bevel=0.0007)
+    # radial gussets from the bosses to the rim / hood
+    for (c, angs, r2) in ((E, (152, 200, 248), 0.0565), (I, (0, 62, 118, 300), 0.0465)):
+        for adeg in angs:
+            a = adeg * D2R
+            u = Vector((math.cos(a), math.sin(a)))
+            add_rib(ab, Vector(c) + u * (R - 0.002), Vector(c) + u * r2, 0.0048, VANOS_FLOOR, VANOS_FRONT - 0.003)
+    # the two piston bosses (identical pistons): cylinder, rounded front edge, flat face, raised cap ring
+    BX = VANOS_BOSS_X
+    prof = [(0, VANOS_FLOOR), (R, VANOS_FLOOR), (R, BX - 0.0070), (R - 0.0008, BX - 0.0038),
+            (R - 0.0026, BX - 0.0013), (R - 0.0055, BX), (0.0232, BX), (0.0228, BX + 0.0014),
+            (0.0214, BX + 0.0019), (0.0200, BX + 0.0010), (0.0196, BX), (0, BX)]
+    for c in (E, I):
+        Mc = T(0, c[0], c[1]) @ Ry(math.pi / 2)
+        add_lathe(ab, prof, 48, Mc)
+        # piston cap (plug) with an 8 mm hex socket
+        add_cyl(mb, 0.0192, 0.0024, T(BX + 0.0004, c[0], c[1]) @ Ry(math.pi / 2), seg=40, bevel=0.0006)
+        add_cyl(db, 0.0058, 0.0004, T(BX + 0.0018, c[0], c[1]) @ Ry(math.pi / 2), seg=6)
+    # fasteners: nuts on the flange (studs come from the head)
+    for p in vanos_stud_points():
+        add_cyl(sb, 0.0058, 0.0060, T(VANOS_FLANGE_X + 0.0055 + 0.0030, p.x, p.y) @ Ry(math.pi / 2), seg=6,
+                bevel=0.0007)
+    # lower oil-gallery bar (thicker band along the bottom edge)
+    add_rib(ab, (E[0] - 0.020, CAM_Z - 0.071), (I[0] + 0.022, CAM_Z - 0.071), 0.013, VANOS_FLANGE_X + 0.004,
+            VANOS_FRONT + 0.006, bevel=0.002)
+    # exhaust solenoid: silver body lying along the lower edge, connector outboard (car right)
+    ez, ex = CAM_Z - 0.087, HEAD_FRONT + 0.050
+    ya, yb = E[0] + 0.040, E[0] - 0.080
+    add_box(ab, 0.030, 0.026, 0.020, T(ex - 0.004, E[0] + 0.030, ez + 0.010), bevel=0.003, seg=1)  # seat
+    add_cyl(mb, 0.0150, ya - yb, T(ex, (ya + yb) / 2, ez) @ Rx(math.pi / 2), seg=24, bevel=0.0015)
+    add_cyl(sb, 0.0165, 0.012, T(ex, E[0] + 0.012, ez) @ Rx(math.pi / 2), seg=6, bevel=0.0010)   # hex nut
+    add_cyl(mb, 0.0120, 0.016, T(ex, yb - 0.008, ez) @ Rx(math.pi / 2), seg=20, bevel=0.0010)
+    add_box(kb, 0.024, 0.026, 0.022, T(ex, yb - 0.026, ez + 0.002), bevel=0.003, seg=2)          # connector
+    # intake solenoid: standing at the intake end (connector up), on a seat block with the oil-feed banjo
+    iy, ix = I[0] + 0.071, HEAD_FRONT + 0.030
+    add_box(ab, 0.040, 0.036, 0.034, T(ix + 0.002, I[0] + 0.058, CAM_Z - 0.050), bevel=0.004, seg=2)
+    add_cyl(mb, 0.0140, 0.080, T(ix, iy, CAM_Z - 0.060), seg=24, z0=0.0, bevel=0.0015)
+    add_cyl(sb, 0.0155, 0.010, T(ix, iy, CAM_Z - 0.044), seg=6, bevel=0.0010)
+    add_box(kb, 0.026, 0.024, 0.024, T(ix, iy, CAM_Z + 0.030), bevel=0.003, seg=2)
+    banjo = Vector((ix + 0.022, I[0] + 0.058, CAM_Z - 0.058))
+    add_cyl(sb, 0.0095, 0.007, T(*banjo) @ Ry(math.pi / 2), seg=6, z0=0.0, bevel=0.0008)
+    add_cyl(sb, 0.0105, 0.012, T(banjo.x - 0.006, banjo.y, banjo.z) @ Ry(math.pi / 2), seg=16)
+    line = catmull([banjo + Vector((-0.006, 0.0, -0.011)), Vector((ix + 0.008, I[0] + 0.070, CAM_Z - 0.095)),
+                    Vector((HEAD_FRONT - 0.006, 0.168, -0.040)), Vector((HEAD_FRONT - 0.035, 0.190, -0.052))], 6)
     add_sweep(sb, line, circle_prof(0.0042, 8))
-    return pc.objects()
+    obs = pc.objects()
+    for ob in obs:
+        if ob.name.endswith("alu_cast"):
+            bevel_mod(ob, 0.0011, seg=1, angle=40)
+    return obs
 
 # ----------------------------------------------------------------------------------------------
 # Helpers to convert positions given in the car's (untilted) cross-section into the E frame
@@ -1332,7 +1430,8 @@ def build_oil_pan():
 # raised BMW letters, oil filler cap, coils, hold-down nuts
 # ----------------------------------------------------------------------------------------------
 VC_TOP = RAIL_Z + 0.066
-VC_NOSE_X = 0.403
+VC_NOSE_X = HEAD_FRONT + 0.047     # front of the cover nose: just behind the VANOS rim front
+VC_NOSE_Z = VANOS_TOP + 0.0005     # nose bottom = VANOS top edge (seal face), 0.5 mm gasket gap
 
 def text_mesh(txt, size, extrude, M, mat_piece_bm=None):
     cu = bpy.data.curves.new("txt", "FONT")
@@ -1359,23 +1458,24 @@ def text_mesh(txt, size, extrude, M, mat_piece_bm=None):
 def build_valve_cover():
     pc = Piece("vcover")
     kb = pc.bm("plastic_black")
-    x0, x1 = -0.314, 0.300
+    x0, x1 = -0.314, HEAD_FRONT + 0.002
     # outer shell: rounded box (bottom edges extend below the rail, hidden in the head's top)
     add_box(kb, x1 - x0, 0.226, VC_TOP - RAIL_Z + 0.03, T((x0 + x1) / 2, 0.0, (VC_TOP + RAIL_Z - 0.03) / 2),
             bevel=0.026, seg=4)
     # nose over the VANOS
-    add_box(kb, VC_NOSE_X - 0.26, 0.246, VC_TOP - 0.083, T((VC_NOSE_X + 0.26) / 2, -0.010, (VC_TOP + 0.083) / 2 - 0.004),
-            bevel=0.030, seg=4)
+    nz = VC_NOSE_Z
+    add_box(kb, VC_NOSE_X - 0.26, 0.246, VC_TOP - nz, T((VC_NOSE_X + 0.26) / 2, -0.010, (VC_TOP + nz) / 2),
+            bevel=0.012, seg=3)
     shell = pc.objects()[0]
     inner = Piece("vc_in")
     ib = inner.bm("plastic_black")
     add_box(ib, x1 - x0 - 0.008, 0.218, VC_TOP - RAIL_Z + 0.03, T((x0 + x1) / 2, 0.0, (VC_TOP + RAIL_Z - 0.03) / 2 - 0.004),
             bevel=0.022, seg=2)
-    add_box(ib, VC_NOSE_X - 0.26 - 0.008, 0.238, VC_TOP - 0.083 - 0.004,
-            T((VC_NOSE_X + 0.26) / 2 - 0.004, -0.010, (VC_TOP + 0.083) / 2 - 0.008), bevel=0.026, seg=2)
+    add_box(ib, VC_NOSE_X - 0.26 - 0.008, 0.238, VC_TOP - nz,
+            T((VC_NOSE_X + 0.26) / 2 - 0.004, -0.010, (VC_TOP + nz) / 2 - 0.004), bevel=0.008, seg=2)
     # open the underside: cut everything below the rail plane (main) and below the nose bottom
     add_box(ib, 0.9, 0.5, 0.2, T(0.0, 0.0, RAIL_Z - 0.1))
-    add_box(ib, 0.2, 0.5, 0.2, T(0.36, 0.0, 0.083 - 0.1 + 0.0004))
+    add_box(ib, 0.2, 0.5, 0.2, T(HEAD_FRONT + 0.1, 0.0, nz - 0.1 + 0.0004))
     boolean(shell, inner.objects())
     # gasket flange lip along the rail
     det = Piece("vc_det")
@@ -1457,7 +1557,7 @@ def build_intake():
     # runners
     for ci in range(6):
         path = runner_path(CYL_X[ci])
-        add_sweep(kb, path, rrect_prof(0.046, 0.040, 0.014, 3), up=(1, 0, 0))
+        add_sweep(kb, path, rrect_prof(0.058, 0.040, 0.015, 3), up=(1, 0, 0))
         # injector boss + injector into the runner near the head
         p = path[2] + (wE(CYL_X[ci], -0.030, 0.400) - path[2]).normalized() * 0.010
         inj_top = wE(CYL_X[ci], -0.020, 0.372)
@@ -1720,7 +1820,7 @@ def build_fan():
 # ----------------------------------------------------------------------------------------------
 # RADIATOR + fan shroud (car frame W)
 # ----------------------------------------------------------------------------------------------
-RAD_X = 1.790
+RAD_X = 1.885
 
 def build_radiator(fan_center_w):
     pc = Piece("radiator")
@@ -1889,47 +1989,83 @@ def group_transform(names, M):
         ob = bpy.data.objects[n]
         ob.matrix_world = M @ ob.matrix_world
 
+def _top_name(ob):
+    while ob.parent is not None:
+        ob = ob.parent
+    return ob.name
+
+def _show_only(names):
+    """Hide every mesh/empty whose top-level node is not in `names`; returns the objects it hid."""
+    hidden = []
+    for ob in bpy.data.objects:
+        if ob.type in ("MESH", "EMPTY") and _top_name(ob) not in names and not ob.hide_render:
+            ob.hide_render = True
+            hidden.append(ob)
+    return hidden
+
+def _hide(names):
+    hidden = []
+    for ob in bpy.data.objects:
+        if ob.type in ("MESH", "EMPTY") and _top_name(ob) in names and not ob.hide_render:
+            ob.hide_render = True
+            hidden.append(ob)
+    return hidden
+
+def _unhide(obs):
+    for ob in obs:
+        ob.hide_render = False
+
+HEAD_SET = ["cylinder_head", "camshaft_intake", "camshaft_exhaust", "valves", "vanos_unit",
+            "vanos_sprocket_intake", "vanos_sprocket_exhaust"]
+
 def previews(tag=""):
     setup_studio(samples=20)
     P = lambda n: os.path.join(PREV_DIR, f"engine_{n}{tag}.png")
+    os.makedirs(PREV_DIR, exist_ok=True)
     c = M_E @ Vector((0.33, 0.0, 0.15))
     render(P("front34_left"), c + Vector((1.25, 0.95, 0.75)), c + Vector((0.0, 0.0, 0.05)), lens=45)
     render(P("right_side"), c + Vector((0.25, -1.55, 0.45)), c + Vector((0.0, 0.0, -0.02)), lens=45)
-    render(P("front"), c + Vector((1.8, 0.0, 0.85)), c + Vector((0.0, 0.0, 0.02)), lens=42)
+    h = _hide(["radiator", "fan"])
+    render(P("front"), c + Vector((1.9, 0.35, 0.55)), c + Vector((0.0, 0.0, 0.03)), lens=50)
+    _unhide(h)
     render(P("top"), c + Vector((0.0, 0.0, 1.9)), c, lens=40)
-    # valve cover off: VANOS + cams
-    vc = bpy.data.objects["valve_cover"]
-    vc.hide_render = True
+    # VANOS on the head front, straight on (compare: MODELREF flickr/Beisan front views)
+    vf = M_H @ Vector((HEAD_FRONT, 0, CAM_Z - 0.02))
+    h = _hide(["radiator", "fan", "engine_front"])
+    render(P("vanos_front"), vf + Vector((0.8, 0.0, 0.0)), vf, ortho=0.36)
+    h += _hide(["valve_cover", "intake_manifold"])
     hc = M_H @ Vector((0.22, 0.0, 0.12))
-    render(P("vanos_cover_off"), hc + Vector((0.55, -0.35, 0.40)), hc, lens=50)
-    vu = bpy.data.objects["vanos_unit"]
-    vu.hide_render = True
-    render(P("sprockets_chain"), hc + Vector((0.55, -0.30, 0.25)), hc + Vector((0.0, 0.0, -0.06)), lens=45)
-    vu.hide_render = False
-    vc.hide_render = False
+    render(P("vanos_cover_off"), vf + Vector((0.55, -0.12, 0.34)), vf + Vector((-0.04, 0, 0.02)), lens=50)
+    h += _hide(["vanos_unit"])
+    render(P("sprockets_chain"), vf + Vector((0.8, 0.0, 0.0)), vf, ortho=0.36)
+    _unhide(h)
     # cylinder head lifted out alone, upright (tilt undone), with cams/valves/VANOS
-    head_set = ["cylinder_head", "camshaft_intake", "camshaft_exhaust", "valves", "vanos_unit",
-                "vanos_sprocket_intake", "vanos_sprocket_exhaust"]
-    keep = set(head_set)
-    def _top(o):
-        while o.parent is not None:
-            o = o.parent
-        return o.name
-    hidden = []
-    for ob in bpy.data.objects:
-        if ob.type in ("MESH", "EMPTY") and _top(ob) not in keep:
-            if not ob.hide_render:
-                ob.hide_render = True
-                hidden.append(ob)
+    hidden = _show_only(HEAD_SET)
     lift = T(0, 0, 0.45) @ M_H @ Rx(-TILT) @ M_H.inverted()
-    group_transform(head_set, lift)
+    group_transform(HEAD_SET, lift)
     hc2 = lift @ M_H @ Vector((0.0, 0.0, 0.07))
     render(P("head_lifted"), hc2 + Vector((0.75, -0.75, 0.55)), hc2, lens=45)
-    render(P("head_lifted_bottom"), hc2 + Vector((0.55, 0.65, -0.55)), hc2, lens=45)
+    render(P("head_lifted_front"), hc2 + Vector((0.9, -0.25, 0.25)), hc2 + Vector((0.2, 0, 0)), lens=50)
     render(P("head_lifted_intake"), hc2 + Vector((0.45, 0.95, 0.30)), hc2, lens=45)
-    group_transform(head_set, lift.inverted())
-    for ob in hidden:
-        ob.hide_render = False
+    render(P("head_lifted_bottom"), hc2 + Vector((0.55, 0.65, -0.55)), hc2, lens=45)
+    group_transform(HEAD_SET, lift.inverted())
+    _unhide(hidden)
+    # fit check inside the body shell (ghosted), side view
+    body = os.path.join(ROOT, "film", "public", "models", "body.glb")
+    if os.path.exists(body) and "--no-fit" not in ARGS:
+        before = set(bpy.data.objects)
+        bpy.ops.import_scene.gltf(filepath=body)
+        ghost = bpy.data.materials.new("ghost")
+        ghost.use_nodes = True
+        b = ghost.node_tree.nodes["Principled BSDF"]
+        b.inputs["Base Color"].default_value = (0.3, 0.45, 0.8, 1)
+        b.inputs["Alpha"].default_value = 0.18
+        for ob in set(bpy.data.objects) - before:
+            if ob.type == "MESH":
+                ob.data.materials.clear()
+                ob.data.materials.append(ghost)
+        render(P("in_body_side"), Vector((1.25, -4.0, 0.55)), Vector((1.25, 0, 0.55)), ortho=1.9)
+        render(P("in_body_top"), Vector((1.25, 0.0, 4.0)), Vector((1.25, 0, 0.5)), ortho=2.0)
 
 if __name__ == "__main__":
     nodes = build_all()

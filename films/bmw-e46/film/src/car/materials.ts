@@ -36,16 +36,16 @@ export const makePaint = (maps: CarMaps, look: Look, opts: { color?: string } = 
       .replace("void main() {", `void main() {\n  if (vObjPos.x > uSweep) discard;\n  Regions rg = carRegions(vObjPos, normalize(vObjN));\n  if (rg.glass > 0.5 || rg.head > 0.5 || rg.fog > 0.5) discard;`)
       .replace("#include <roughnessmap_fragment>", `#include <roughnessmap_fragment>
   float gapK = rg.gap;
-  roughnessFactor = mix(roughnessFactor, 0.07, rg.chrome);
   roughnessFactor = mix(roughnessFactor, 0.55, rg.black);
+  roughnessFactor = mix(roughnessFactor, 0.07, rg.chrome);
   roughnessFactor = mix(roughnessFactor, 0.12, max(max(rg.tailRed, rg.tailInd), max(rg.repeater, rg.reflector)));
   roughnessFactor = mix(roughnessFactor, 0.9, gapK);`)
       .replace("#include <metalnessmap_fragment>", `#include <metalnessmap_fragment>
-  metalnessFactor = mix(metalnessFactor, 1.0, rg.chrome);
   metalnessFactor = mix(metalnessFactor, 0.0, max(rg.black, max(rg.tailRed, rg.tailInd)));
+  metalnessFactor = mix(metalnessFactor, 1.0, rg.chrome);
   metalnessFactor = mix(metalnessFactor, 0.0, gapK);
-  diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.86, 0.88, 0.91), rg.chrome);
   diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.012, 0.012, 0.013), rg.black);
+  diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.86, 0.88, 0.91), rg.chrome);
   diffuseColor.rgb = mix(diffuseColor.rgb, vec3(0.42, 0.015, 0.02), rg.tailRed);
   float outerLamp = smoothstep(440.0, 480.0, abs(vObjPos.z * 1000.0));
   diffuseColor.rgb = mix(diffuseColor.rgb, mix(vec3(0.70, 0.71, 0.73), vec3(0.66, 0.34, 0.07), outerLamp), rg.tailInd);
@@ -134,7 +134,7 @@ export const makeXray = (maps: CarMaps, look: Look, opts: { rim?: string; line?:
         float f = pow(1.0 - abs(dot(normalize(vN), normalize(vV))), 2.0);
         float lines = max(max(edge(rg.glass), edge(rg.head)), max(edge(rg.tailRed + rg.tailInd), edge(rg.chrome)));
         lines = max(lines, smoothstep(0.25, 0.75, rg.gap));
-        float a = (0.03 + f * 0.42 + lines * 0.55) * uFade;
+        float a = (0.02 + f * 0.34 + lines * 0.5) * uFade;
         float seam = exp(-pow((vObjPos.x - uSweep) / 0.03, 2.0)) * uSeamK;
         vec3 c = mix(uRim, uLine, clamp(lines, 0.0, 1.0));
         c = mix(c, uSeam, seam);

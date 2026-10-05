@@ -1,0 +1,4 @@
+{"bpm": 109.0909, "key": "E", "mode": "minor", "length": 32.4, "vibe": "tech-minimal",
+ "progression": ["i", "VI", "III", "VII"],
+ "sections": [[0, 1], [5, 2], [11, 3], [13, "end"]],
+ "note": "Bars of 2.2 s. Music time = film time + 1.65 s (the first 1.65 s are trimmed), so the part beats (film 9.35, 13.75, 18.15, 22.55) and the outro (26.95) sit on bar lines 5, 7, 9, 11 and 13."}
