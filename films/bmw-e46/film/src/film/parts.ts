@@ -184,7 +184,8 @@ export const poseRig = (rig: Rig, st: RigState) => {
   const gbOff = new THREE.Vector3(0, -0.36 * st.gearbox, 0);
   GEARBOX_GROUP.forEach((n) => {
     if (n === "torque_converter" || n === "planetary_sets") {
-      const piv = rig.nodes[n] ? new THREE.Vector3().setFromMatrixPosition(rig.nodes[n].matrixWorld) : undefined;
+      // spin about the part's own axis: the bounding-box centre lies on it for anything round
+      const piv = rig.centre[n] ?? (rig.nodes[n] ? new THREE.Vector3().setFromMatrixPosition(rig.nodes[n].matrixWorld) : undefined);
       setOffset(rig, n, gbOff, X, n === "torque_converter" ? st.converter : st.planets, piv);
     } else setOffset(rig, n, gbOff);
   });
@@ -196,7 +197,7 @@ export const poseRig = (rig: Rig, st: RigState) => {
   const dOff = new THREE.Vector3(-0.30 * st.diff, -0.08 * st.diff, 0);
   DIFF_GROUP.forEach((n) => {
     const o = rig.nodes[n]; if (!o) return;
-    const piv = new THREE.Vector3().setFromMatrixPosition(o.matrixWorld);
+    const piv = rig.centre[n] ?? new THREE.Vector3().setFromMatrixPosition(o.matrixWorld);
     if (n === "ring_gear" || n === "spider_gears") setOffset(rig, n, dOff, Z, st.ring, piv);
     else if (n === "pinion") setOffset(rig, n, dOff, X, st.pinion, piv);
     else setOffset(rig, n, dOff);

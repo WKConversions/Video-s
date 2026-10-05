@@ -1,0 +1,20 @@
+{
+ "triangles": {
+  "centre_console": 11340,
+  "dashboard": 16276,
+  "door_card_left": 6492,
+  "door_card_right": 6492,
+  "handbrake": 1100,
+  "instrument_cluster": 4092,
+  "parcel_shelf": 1328,
+  "rear_bench": 53312,
+  "rear_trim_left": 4468,
+  "rear_trim_right": 4468,
+  "seat_driver": 37380,
+  "seat_passenger": 37380,
+  "selector": 1840,
+  "steering_wheel": 10384
+ },
+ "total": 196352,
+ "fit": {}
+}

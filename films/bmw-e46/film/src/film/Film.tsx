@@ -50,7 +50,7 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
 
   // per-part uniforms: one set per beat group, plus one for everything else
   const U = useMemo(() => ({ rest: makePartU(), head: makePartU(), cams: makePartU(), cover: makePartU(), vanos: makePartU(), gearbox: makePartU(), diff: makePartU(),
-    prop: makePartU(), shell: makePartU(), wheels: makePartU(), wheelsR: makePartU() }), []);
+    prop: makePartU(), shell: makePartU(), wheels: makePartU(), wheelsR: makePartU(), cabin: makePartU() }), []);
 
   const built = useMemo(() => {
     if (!assets) return null;
@@ -64,7 +64,11 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
       while (p) { if (/_R[LR]$/.test(p.name)) rear = true; p = p.parent; }
       patchTree(o, isTyre ? "tyre" : "mech", S, rear ? U.wheelsR : U.wheels, isTyre ? "tyre" : "wheel");
     });
-    const rig: Rig | null = internals.length ? makeRig(internals.map((n) => assets.extras[n])) : null;
+    // the interior belongs to the body: it lifts with it and turns to clay behind the sweep like the mechanical parts
+    const cabin = assets.extras.interior ? assets.extras.interior.clone(true) : null;
+    if (cabin) patchTree(cabin, "mech", S, U.cabin, "cabin");
+    const mech = internals.filter((n) => n !== "interior");
+    const rig: Rig | null = mech.length ? makeRig(mech.map((n) => assets.extras[n])) : null;
     if (rig) {
       const groupOf = (name: string): PartU => {
         if (VANOS_GROUP.includes(name)) return U.vanos;
@@ -93,7 +97,7 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
         }));
       });
     }
-    return { details, wheels, rig, caseMats };
+    return { details, wheels, rig, caseMats, cabin };
   }, [assets, internals, S, U]);
 
   // ------------------------------------------------------------------ state for this frame
@@ -126,6 +130,8 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
   U.head.uDim.value = Math.max(st.gearbox, st.diff); U.vanos.uDim.value = U.head.uDim.value;
   U.gearbox.uDim.value = Math.max(st.head, st.diff); U.diff.uDim.value = Math.max(st.head, st.gearbox);
   U.prop.uDim.value = Math.max(st.head, st.gearbox) * (1 - U.prop.uHi.value);
+  // the cabin stays a quiet ghost in the x-ray, quieter still while a part is out
+  U.cabin.uDim.value = 0.55 + 0.45 * out;
   if (built?.rig) poseRig(built.rig, st);
   if (built) {
     const glassy = (ms: THREE.Material[], a: number) => ms.forEach((m) => { m.opacity = 1 - 0.78 * a; m.depthWrite = a < 0.05; });
@@ -164,6 +170,7 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
             <group position={[0, lift, 0]}>
               <CarBody assets={assets!} mats={mats!} sweep={look.sweep.value} />
               <primitive object={built!.details} />
+              {built!.cabin && <primitive object={built!.cabin} />}
             </group>
             <primitive object={built!.wheels} />
             {built!.rig && <primitive object={built!.rig.root} />}
