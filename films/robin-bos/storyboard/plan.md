@@ -108,3 +108,15 @@ Decisions kept against findings (for Karl):
 - The logos in their own colours (Tale Forge gold, ClearScaler mark): asset-strategy rule, third-party logos appear as the client's site presents them.
 - The navy field flat, not the contact section's gradient: a large gradient under the breathing camera bands.
 - The navy held for 6.7 s through the proof (one judge preferred contracting it after €2M): open question for Karl.
+
+## Rules from the judgement pass (applied to the whole film)
+- Every number on screen is one of his figures at every frame: a digit rises whole or rolls in from blank; no odometer passes through 2023, €1M or 00.
+- A number and its label change in the same gesture; a counter never exceeds the units standing on screen.
+- The period square is 34 px after display words and 24 px after statements and areas, its bottom on the baseline, 0.2 em clear of the last glyph's ink; measured from the rendered width, checked on Technology., Leadership., Capital. and BOS.
+- Whatever comes from Robin is drawn behind his cut-out and starts inside his silhouette, already moving.
+- Every object leaves along the vector it arrived on or with the object that replaces it; blur treats the fast frames only and is removed under 1.5 px.
+- The subject of the line is the largest thing on screen while it plays; a logo already named steps aside when the number is spoken.
+- No two beats share a layout family: a figure beside a column of words happens once (B3); the areas inherit the proof's grid.
+- Third-party material appears as the sites present it; every name readable at 390 px.
+- No still over 0.5 s before the end card; the first face inside the two-second window.
+- frames.json describes what renders; the frames, the sheet and the QC come from the same render before review.
