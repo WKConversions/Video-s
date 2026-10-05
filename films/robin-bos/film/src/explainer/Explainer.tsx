@@ -488,15 +488,26 @@ const S6: React.FC<{ g: number }> = ({ g }) => {
 };
 
 // ---------- the stage ----------
-const World: React.FC = () => {
+const World: React.FC<{ blur: boolean }> = ({ blur }) => {
   const g = useCurrentFrame();
   const cam = camera(g);
+  // directional motion blur from the camera's own speed (a 180° shutter ≈ a Gaussian of σ ≈ 0.15 × travel per frame)
+  const prev = camera(Math.max(0, g - 1));
+  const sx = blur ? Math.abs(cam.x - prev.x) * 0.13 : 0, sy = blur ? Math.abs(cam.y - prev.y) * 0.13 : 0;
+  const moving = sx > 0.4 || sy > 0.4;
   const glow = (x: number, y: number, r = 900) => (
     <div style={{ position: "absolute", left: x - r, top: y - r, width: 2 * r, height: 2 * r, borderRadius: "50%", background: `radial-gradient(closest-side, rgba(200,225,250,.55), rgba(200,225,250,0))` }} />
   );
   return (
     <AbsoluteFill style={{ background: BG, overflow: "hidden" }}>
-      <div style={{ position: "absolute", left: 0, top: 0, transformOrigin: "0 0", transform: `translate(960px, 540px) scale(${cam.s}) translate(${-cam.x}px, ${-cam.y}px)` }}>
+      {moving && (
+        <svg width={0} height={0} style={{ position: "absolute" }}>
+          <filter id="camblur" x="-5%" y="-5%" width="110%" height="110%" colorInterpolationFilters="sRGB">
+            <feGaussianBlur stdDeviation={`${sx.toFixed(2)} ${sy.toFixed(2)}`} edgeMode="duplicate" />
+          </filter>
+        </svg>
+      )}
+      <div style={{ position: "absolute", left: 0, top: 0, transformOrigin: "0 0", transform: `translate(960px, 540px) scale(${cam.s}) translate(${-cam.x}px, ${-cam.y}px)`, filter: moving ? "url(#camblur)" : undefined }}>
         <div style={{ position: "absolute", left: -1400, top: -1200, width: 9000, height: 4800, background: BG,
           backgroundImage: "radial-gradient(circle, #D5E0EC 2px, rgba(213,224,236,0) 2.6px)", backgroundSize: "44px 44px" }} />
         {glow(1300, 560)}{glow(3300, 520)}{glow(5100, 560)}{glow(5300, 1840)}{glow(3300, 1820)}{glow(1400, 1860)}
@@ -512,8 +523,8 @@ const World: React.FC = () => {
   );
 };
 
-/** Camera motion blur as a running mean: sample i at opacity 1/(i+1) over the samples before it (exact average). */
-const MotionBlur: React.FC<{ samples: number; children: React.ReactNode }> = ({ samples, children }) => {
+/** (Unused) camera motion blur as a running mean: sample i at opacity 1/(i+1) over the samples before it (exact average). */
+export const MotionBlur: React.FC<{ samples: number; children: React.ReactNode }> = ({ samples, children }) => {
   const f = useCurrentFrame();
   return (
     <AbsoluteFill>
@@ -531,5 +542,6 @@ export const Explainer: React.FC<ExplainerProps> = ({ blurSamples = 1 }) => {
   const [ready, setReady] = useState(false);
   useEffect(() => { fontsReady.then(() => { setReady(true); continueRender(handle); }); }, [handle]);
   if (!ready) return <AbsoluteFill style={{ background: BG }} />;
-  return blurSamples > 1 ? <MotionBlur samples={blurSamples}><World /></MotionBlur> : <World />;
+  // blurSamples > 1: the directional camera blur (one render per frame, no sample copies); the sampled MotionBlur stays available below
+  return blurSamples > 1 ? <World blur /> : <World blur={false} />;
 };

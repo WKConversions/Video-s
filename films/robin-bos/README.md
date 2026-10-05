@@ -41,3 +41,8 @@ npx remotion studio                      # edit in Remotion Studio (composition 
 - Music: composed for this film with `scripts/music_make.py` (royalty-free by construction, "calm-optimistic", 113.5 BPM, D major). Replace with Karl's track via `sound/cues.json` → `music.file`.
 - Sound effects: generated with `scripts/sfx_synth.py` and numpy (royalty-free). No Apple sounds.
 - Scratch voice: Piper TTS (en_US-ryan-high, MIT), for timing only; not for delivery.
+
+## The silent SaaS explainer (`Explainer` composition, the current direction)
+- `film/src/explainer/Explainer.tsx`: one infinite canvas of UI screens (profile → company + 18-month timeline → €2M valuation with his post → results dashboard with 14 client logos → current roles → let's talk). No audio. Every figure from `harvest/facts.md`.
+- Retiming: `PANS` sets the camera moves; `SHIFT` maps the film's frame onto each screen's own clock.
+- Final render (directional camera blur, ~75 s): from `film/`, `bash scripts/render_chunks.sh Explainer out/explainer.mp4 '{"blurSamples":2}' 0,200,400,700,900`, then encode to `deliver/robin-bos-explainer-30s.mp4` (H.264 yuv420p BT.709, no audio track).
