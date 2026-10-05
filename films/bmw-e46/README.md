@@ -34,7 +34,10 @@ npx remotion studio            # composition "Film"; "CarPreview" and "PhotoMatc
 - `src/car/`: the body's materials (black metallic paint, chrome, glass, lenses, x-ray) reading the detail maps.
 - Draft: `npx remotion render Film out/draft.mp4 --gl=angle --props='{"blurSamples":1,"internals":["engine","drivetrain","interior"]}'`
   (in a sandbox add `--browser-executable=/opt/pw-browsers/chromium_headless_shell-*/chrome-linux/headless_shell`).
-- Rebuild the body after changing `build/carfield.py`: `python3 build/build_body.py 7 && python3 build/region_mesh.py && python3 build/details3d.py` (from `films/bmw-e46`).
+- Final: `npx remotion render Film out/seq --sequence --image-format=jpeg --jpeg-quality=94 --gl=angle --props='{"blurSamples":1,"internals":["engine","drivetrain","interior"]}'`,
+  then `bash scripts/encode.sh` (H.264 1080p30 with the mix, and a silent version, into `deliver/`).
+- Rebuild the body after changing `build/carfield.py`: `python3 build/build_body.py 11 2000000 && python3 build/region_mesh.py && python3 build/details3d.py`
+  (from `films/bmw-e46`; an even 11 mm mesh, not decimated: decimation leaves long slivers that break the reflections).
 
 ## Credits
 - Dimensions and shapes: BMW AG technical training ST034 "E46 Complete Vehicle" (dimension drawings; modelling reference).
