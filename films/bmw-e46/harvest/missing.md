@@ -8,7 +8,9 @@
   so the film uses a black metallic with a little blue in the flake.
 - **The wheels' size:** aftermarket 5-twin-spoke anthracite wheels; size not known. Modelled at 18" with 225/40 tyres to
   match the photo's proportions.
-- **Whether the angel-eye rings are a retrofit:** factory rings came with the 2003 facelift. The film keeps them subtle.
-- **The engine's exact tilt:** about 30° to the right per the research (low confidence); it does not change any claim.
+- **The angel-eye headlights** are aftermarket: no E46 had factory corona rings (the 2003 facelift only merged the indicators into the headlight). Modelled because the photo shows them; never captioned as BMW's.
+- **The engine's exact tilt:** it leans to the right; the ~30° used in the model is an estimate and is never captioned.
+- **This car's diff ratio and gearbox:** 3.38 and the ZF 5HP19 are the factory fit for an automatic 330Ci (RDW masses 1540/1965 kg match the automatic). A later swap would not show in RDW; a look at the diff tag and the shifter would settle it.
+- **Paint code:** see above; the film assumes Black Sapphire metallic from the photo's sheen.
 - **Underbody and interior details** are simplified; they are only seen through the x-ray glass.
 - **Music:** none supplied; composed for the film (royalty-free by construction).

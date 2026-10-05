@@ -1,0 +1,221 @@
+{
+ "per_top_node": {
+  "bell_housing": 8544,
+  "planetary_sets": 25996,
+  "diff_cover": 2476,
+  "diff_housing": 6316,
+  "exhaust_system": 7912,
+  "fuel_tank": 4828,
+  "gearbox_case": 15816,
+  "gearbox_crossmember": 1476,
+  "gearbox_pan": 2956,
+  "halfshaft_left": 4020,
+  "halfshaft_right": 4020,
+  "torque_converter": 13080,
+  "output_shaft": 1566,
+  "pinion": 2612,
+  "propshaft": 6556,
+  "propshaft_support": 1508,
+  "ring_gear": 3520,
+  "spider_gears": 5912,
+  "subframe_front": 1748,
+  "subframe_rear": 7884,
+  "suspension_front": 8668,
+  "suspension_rear": 7556
+ },
+ "total": 144970,
+ "clearance": {
+  "bell_housing": {
+   "overlaps": {
+    "engine:cylinder_head": [
+     12,
+     "car X 0.972..0.972 Y 0.534..0.615 Z 0.037..0.176"
+    ],
+    "engine:engine_block": [
+     159,
+     "car X 0.972..0.980 Y 0.244..0.614 Z -0.173..0.182"
+    ]
+   },
+   "verts_outside_shell": 0,
+   "of_sampled": 1458,
+   "outside_below_Y0.16": 0,
+   "outside_box": ""
+  },
+  "diff_cover": {
+   "overlaps": {},
+   "verts_outside_shell": 0,
+   "of_sampled": 427,
+   "outside_below_Y0.16": 0,
+   "outside_box": ""
+  },
+  "diff_housing": {
+   "overlaps": {},
+   "verts_outside_shell": 0,
+   "of_sampled": 1052,
+   "outside_below_Y0.16": 0,
+   "outside_box": ""
+  },
+  "exhaust_system": {
+   "overlaps": {
+    "engine:exhaust_manifold": [
+     1019,
+     "car X 0.812..0.880 Y 0.124..0.206 Z 0.164..0.316"
+    ]
+   },
+   "verts_outside_shell": 63,
+   "of_sampled": 1343,
+   "outside_below_Y0.16": 60,
+   "outside_box": "car X 0.679..0.880 Y 0.123..0.161 |Z| 0.175..0.311"
+  },
+  "fuel_tank": {
+   "overlaps": {},
+   "verts_outside_shell": 0,
+   "of_sampled": 812,
+   "outside_below_Y0.16": 0,
+   "outside_box": ""
+  },
+  "gearbox_case": {
+   "overlaps": {},
+   "verts_outside_shell": 0,
+   "of_sampled": 2665,
+   "outside_below_Y0.16": 0,
+   "outside_box": ""
+  },
+  "gearbox_crossmember": {
+   "overlaps": {},
+   "verts_outside_shell": 0,
+   "of_sampled": 254,
+   "outside_below_Y0.16": 0,
+   "outside_box": ""
+  },
+  "gearbox_pan": {
+   "overlaps": {},
+   "verts_outside_shell": 0,
+   "of_sampled": 516,
+   "outside_below_Y0.16": 0,
+   "outside_box": ""
+  },
+  "halfshaft_left": {
+   "overlaps": {
+    "wheels:wheel_RL": [
+     320,
+     "car X -1.419..-1.306 Y 0.262..0.374 Z -0.756..-0.678"
+    ]
+   },
+   "verts_outside_shell": 190,
+   "of_sampled": 683,
+   "outside_below_Y0.16": 0,
+   "outside_box": "car X -1.430..-1.295 Y 0.250..0.386 |Z| 0.602..0.756"
+  },
+  "halfshaft_right": {
+   "overlaps": {
+    "wheels:wheel_RR": [
+     320,
+     "car X -1.419..-1.306 Y 0.262..0.374 Z 0.678..0.756"
+    ]
+   },
+   "verts_outside_shell": 190,
+   "of_sampled": 683,
+   "outside_below_Y0.16": 0,
+   "outside_box": "car X -1.430..-1.295 Y 0.250..0.386 |Z| 0.602..0.756"
+  },
+  "output_shaft": {
+   "overlaps": {},
+   "verts_outside_shell": 0,
+   "of_sampled": 270,
+   "outside_below_Y0.16": 0,
+   "outside_box": ""
+  },
+  "pinion": {
+   "overlaps": {},
+   "verts_outside_shell": 0,
+   "of_sampled": 437,
+   "outside_below_Y0.16": 0,
+   "outside_box": ""
+  },
+  "planetary_sets": {
+   "overlaps": {},
+   "verts_outside_shell": 0,
+   "of_sampled": 4330,
+   "outside_below_Y0.16": 0,
+   "outside_box": ""
+  },
+  "propshaft": {
+   "overlaps": {},
+   "verts_outside_shell": 0,
+   "of_sampled": 1119,
+   "outside_below_Y0.16": 0,
+   "outside_box": ""
+  },
+  "propshaft_support": {
+   "overlaps": {},
+   "verts_outside_shell": 0,
+   "of_sampled": 255,
+   "outside_below_Y0.16": 0,
+   "outside_box": ""
+  },
+  "ring_gear": {
+   "overlaps": {},
+   "verts_outside_shell": 0,
+   "of_sampled": 616,
+   "outside_below_Y0.16": 0,
+   "outside_box": ""
+  },
+  "spider_gears": {
+   "overlaps": {},
+   "verts_outside_shell": 0,
+   "of_sampled": 1026,
+   "outside_below_Y0.16": 0,
+   "outside_box": ""
+  },
+  "subframe_front": {
+   "overlaps": {},
+   "verts_outside_shell": 0,
+   "of_sampled": 299,
+   "outside_below_Y0.16": 0,
+   "outside_box": ""
+  },
+  "subframe_rear": {
+   "overlaps": {},
+   "verts_outside_shell": 0,
+   "of_sampled": 1326,
+   "outside_below_Y0.16": 0,
+   "outside_box": ""
+  },
+  "suspension_front": {
+   "overlaps": {},
+   "verts_outside_shell": 287,
+   "of_sampled": 1465,
+   "outside_below_Y0.16": 0,
+   "outside_box": "car X 1.264..1.422 Y 0.205..0.601 |Z| 0.600..0.675"
+  },
+  "suspension_rear": {
+   "overlaps": {},
+   "verts_outside_shell": 277,
+   "of_sampled": 1278,
+   "outside_below_Y0.16": 0,
+   "outside_box": "car X -1.535..-1.069 Y 0.198..0.435 |Z| 0.600..0.700"
+  },
+  "torque_converter": {
+   "overlaps": {},
+   "verts_outside_shell": 0,
+   "of_sampled": 2232,
+   "outside_below_Y0.16": 0,
+   "outside_box": ""
+  },
+  "_internal": {
+   "subframe_rear x diff_housing": [
+    70,
+    "car X -1.219..-1.188 Y 0.277..0.287 Z -0.094..0.094"
+   ],
+   "subframe_rear x suspension_rear": [
+    108,
+    "car X -1.482..-1.323 Y 0.300..0.414 Z -0.478..0.478"
+   ],
+   "subframe_front x suspension_front": [
+    180,
+    "car X 1.380..1.405 Y 0.211..0.229 Z -0.432..0.432"
+   ]
+  }
+ }
+}

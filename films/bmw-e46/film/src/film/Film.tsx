@@ -50,7 +50,7 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
 
   // per-part uniforms: one set per beat group, plus one for everything else
   const U = useMemo(() => ({ rest: makePartU(), head: makePartU(), cams: makePartU(), cover: makePartU(), vanos: makePartU(), gearbox: makePartU(), diff: makePartU(),
-    prop: makePartU(), shell: makePartU(), wheels: makePartU(), wheelsR: makePartU(), cabin: makePartU() }), []);
+    prop: makePartU(), shell: makePartU(), wheels: makePartU(), wheelsR: makePartU(), cabin: makePartU(), halfs: makePartU() }), []);
 
   const built = useMemo(() => {
     if (!assets) return null;
@@ -78,6 +78,7 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
         if (GEARBOX_GROUP.includes(name)) return U.gearbox;
         if (DIFF_GROUP.includes(name)) return U.diff;
         if (name === "propshaft") return U.prop;
+        if (name.startsWith("halfshaft")) return U.halfs;
         return U.rest;
       };
       // patch each named subtree with its group's uniforms (deepest names first so children keep their own group)
@@ -90,8 +91,8 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
     // the cases that turn to glass to show what turns inside them
     const caseMats = { gearbox: [] as THREE.Material[], diff: [] as THREE.Material[] };
     if (rig) {
-      ([["gearbox", ["gearbox_case", "bell_housing", "gearbox_pan"]], ["diff", ["diff_housing", "diff_cover"]]] as ["gearbox" | "diff", string[]][]).forEach(([key, names]) => {
-        names.forEach((n) => rig.nodes[n]?.traverse((o) => {
+      ([["gearbox", ["gearbox_case", "bell_housing", "gearbox_pan", "torque_converter_shell"]], ["diff", ["diff_housing", "diff_cover"]]] as ["gearbox" | "diff", string[]][]).forEach(([key, names]) => {
+        names.forEach((n) => (rig.nodes[n] ?? rig.root.getObjectByName(n))?.traverse((o) => {
           const m = (o as THREE.Mesh).material as THREE.Material | undefined;
           if (m) { m.transparent = true; caseMats[key].push(m); }
         }));
@@ -123,13 +124,16 @@ export const Film: React.FC<FilmProps> = ({ blurSamples, internals }) => {
   U.gearbox.uHi.value = hi("gearbox+0.3", "diff");
   U.diff.uHi.value = hi("diff+0.6", "outro");
   U.prop.uHi.value = k(g, "diff", 0.2) * (1 - k(g, "diff+0.9", 0.5));
-  U.wheelsR.uHi.value = 0.55 * k(g, "diff+2.6", 0.5) * (1 - k(g, "outro", 0.5));
+  U.wheelsR.uHi.value = 0.3 * k(g, "diff+2.6", 0.5) * (1 - k(g, "outro", 0.5));
+  // the half-shafts carry the turned drive out to the wheels
+  U.halfs.uHi.value = 0.6 * k(g, "diff+1.7", 0.5) * (1 - k(g, "outro", 0.5));
   // everything else steps back while a part is out
   const out = Math.max(st.head, st.gearbox, st.diff);
   U.rest.uDim.value = out; U.wheels.uDim.value = out; U.wheelsR.uDim.value = st.head + st.gearbox;
   U.head.uDim.value = Math.max(st.gearbox, st.diff); U.vanos.uDim.value = U.head.uDim.value;
   U.gearbox.uDim.value = Math.max(st.head, st.diff); U.diff.uDim.value = Math.max(st.head, st.gearbox);
   U.prop.uDim.value = Math.max(st.head, st.gearbox) * (1 - U.prop.uHi.value);
+  U.halfs.uDim.value = Math.max(st.head, st.gearbox);
   // the cabin stays a quiet ghost in the x-ray, quieter still while a part is out
   U.cabin.uDim.value = 0.55 + 0.45 * out;
   if (built?.rig) poseRig(built.rig, st);

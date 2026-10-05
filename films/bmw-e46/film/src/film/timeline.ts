@@ -48,7 +48,7 @@ export const PTS = {
   roof: [-0.45, 1.25, 0] as [number, number, number],
   head: [1.20, 0.86, 0] as [number, number, number],
   vanos: [1.58, 0.92, 0] as [number, number, number],
-  gearbox: [0.45, 0.38, 0] as [number, number, number],
+  gearbox: [0.62, 0.26, 0] as [number, number, number],
   diff: [-1.36, 0.33, 0] as [number, number, number],
 };
 
@@ -65,10 +65,10 @@ const KEYS: Key[] = [
   { t: 13.176, yaw: -42, pitch: -18, roll: 7, focus: PTS.head, at: [0.86, 0.60, 5.2] },
   { t: 14.75, yaw: -76, pitch: -10, roll: 4, focus: PTS.vanos, at: [0.62, 0.70, 6.05] },
   { t: 17.35, yaw: -84, pitch: -9, roll: 3, focus: PTS.vanos, at: [0.58, 0.70, 6.15] },
-  { t: 19.15, yaw: -28, pitch: 4, roll: -52, focus: PTS.gearbox, at: [0.95, 0.92, 3.9] },
-  { t: 21.95, yaw: -16, pitch: 6, roll: -60, focus: PTS.gearbox, at: [0.9, 0.95, 4.1] },
-  { t: 23.55, yaw: 128, pitch: 6, roll: -22, focus: PTS.diff, at: [-0.85, 0.78, 3.6] },
-  { t: 26.35, yaw: 142, pitch: 5, roll: -18, focus: PTS.diff, at: [-0.9, 0.80, 3.9] },
+  { t: 19.15, yaw: -28, pitch: 4, roll: -52, focus: PTS.gearbox, at: [0.5, 0.66, 5.2] },
+  { t: 21.95, yaw: -16, pitch: 6, roll: -60, focus: PTS.gearbox, at: [0.44, 0.68, 5.45] },
+  { t: 23.55, yaw: 128, pitch: 6, roll: -22, focus: PTS.diff, at: [-0.5, 0.62, 5.0] },
+  { t: 26.35, yaw: 142, pitch: 5, roll: -18, focus: PTS.diff, at: [-0.46, 0.62, 5.25] },
   { t: 28.257, yaw: 300, pitch: 0, roll: 0, focus: PTS.centre, at: [0.1, 0.66, 0.4] },
   { t: 30.0, yaw: 316, pitch: 0, roll: 0, focus: PTS.centre, at: [0.05, 0.62, 0.55] },
 ];

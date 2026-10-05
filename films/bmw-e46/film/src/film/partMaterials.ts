@@ -49,7 +49,7 @@ float hash12(vec2 p) { vec3 p3 = fract(vec3(p.xyx) * .1031); p3 += dot(p3, p3.yz
   ${kind === "shell" ? "" : `
   vec3 nV = normalize(vNormal); float rim = pow(1.0 - abs(nV.z), 2.5);
   gl_FragColor.rgb = mix(gl_FragColor.rgb, vec3(0.55, 0.78, 1.0), rim * uHi * 0.6);
-  gl_FragColor.rgb = mix(gl_FragColor.rgb, uStudio, uDim * 0.62 * xr);`}`);
+  gl_FragColor.rgb = mix(gl_FragColor.rgb, uStudio, uDim * 0.78 * xr);`}`);
   };
   m.customProgramCacheKey = () => `part-${kind}-${key}`;
   return m;

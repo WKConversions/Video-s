@@ -52,38 +52,59 @@ def smax(a, b, k):
 
 # ------------------------------------------------------------------------------------------------ 2D outline SDFs
 class Outline2D:
-    """Exact signed distance to a closed spline outline in (s, h), tabulated on a 2 mm grid."""
+    """Smooth signed distance to a closed outline in (s, h), tabulated on a 2 mm grid.
 
-    def __init__(self, pts, res=2.0, pad=150):
-        c = catmull(pts, n=24)
-        # dense resample for exact distances
+    The control points are joined by a centripetal Catmull-Rom curve, resampled every 0.5 mm along its length and
+    smoothed along the arc (Gaussian, 12 mm), so the curvature is continuous and a reflection runs along the panel
+    without breaks. Distances are exact to that polyline (nearest vertex and its two segments), and the grid is read
+    as an approximating cubic B-spline (C2, no ringing): the normals of the surface are clean to well under 0.1 deg."""
+
+    def __init__(self, pts, res=2.0, pad=150, smooth_mm=12.0):
+        c = catmull(pts, n=160, centripetal=True)
         seg = np.vstack([c, c[:1]])
-        d = np.linalg.norm(np.diff(seg, axis=0), axis=1)
-        dense = []
-        for i in range(len(c)):
-            k = max(1, int(d[i] / 0.5))
-            t = np.linspace(0, 1, k, endpoint=False)[:, None]
-            dense.append(seg[i] + (seg[i + 1] - seg[i]) * t)
-        dense = np.vstack(dense)
+        L = np.concatenate([[0], np.cumsum(np.linalg.norm(np.diff(seg, axis=0), axis=1))])
+        step = 0.5
+        t = np.arange(0, L[-1], step)
+        dense = np.stack([np.interp(t, L, seg[:, 0]), np.interp(t, L, seg[:, 1])], 1)
+        dense = ndi.gaussian_filter1d(dense, smooth_mm / step, axis=0, mode='wrap')
+        self.curve = dense
+        nxt = np.roll(dense, -1, axis=0)
         tree = cKDTree(dense)
-        self.s0, self.h0 = c[:, 0].min() - pad, c[:, 1].min() - pad
-        s1, h1 = c[:, 0].max() + pad, c[:, 1].max() + pad
+        self.s0, self.h0 = dense[:, 0].min() - pad, dense[:, 1].min() - pad
+        s1, h1 = dense[:, 0].max() + pad, dense[:, 1].max() + pad
         self.res = res
         ss = np.arange(self.s0, s1, res)
         hh = np.arange(self.h0, h1, res)
         S, H = np.meshgrid(ss, hh, indexing='ij')
         P = np.stack([S.ravel(), H.ravel()], 1)
-        dist, _ = tree.query(P, workers=-1)
-        inside = Path(c).contains_points(P)
-        self.grid = np.where(inside, -dist, dist).reshape(S.shape).astype(np.float32)
-        # cubic B-spline coefficients: a C2-smooth field, so the shading has no grid bands
-        self.coef = ndi.spline_filter(self.grid.astype(np.float64), order=3, mode='nearest')
+        _, idx = tree.query(P, workers=-1)
+
+        def seg_dist(a, b):
+            ab = b - a
+            u = np.clip(((P - a) * ab).sum(1) / np.maximum((ab * ab).sum(1), 1e-12), 0, 1)
+            return np.linalg.norm(P - (a + ab * u[:, None]), axis=1)
+        prv = np.roll(dense, 1, axis=0)
+        dist = np.minimum(seg_dist(dense[idx], nxt[idx]), seg_dist(prv[idx], dense[idx]))
+        inside = Path(dense).contains_points(P)
+        self.grid = np.where(inside, -dist, dist).reshape(S.shape).astype(np.float64)
+        # the grid values are the B-spline's coefficients (approximating spline): C2-smooth, no overshoot
+        self.coef = self.grid
 
     def __call__(self, s, h):
         si = (np.asarray(s) - self.s0) / self.res
         hi = (np.asarray(h) - self.h0) / self.res
         return ndi.map_coordinates(self.coef, [si.ravel(), hi.ravel()], order=3, mode='nearest',
                                    prefilter=False).reshape(np.shape(s))
+
+
+def smoothed(fn, lo, hi, sigma):
+    """A profile function made C2: sampled every mm over [lo, hi], Gaussian-smoothed (sigma mm), read linearly."""
+    x = np.arange(lo, hi + 1.0, 1.0)
+    y = ndi.gaussian_filter1d(fn(x), sigma, mode='nearest')
+
+    def g(v):
+        return np.interp(np.asarray(v, float), x, y)
+    return g
 
 
 # The lower body: nose, bonnet, the belt line through the cabin, the boot lid, tail and underside.
@@ -148,6 +169,21 @@ WS_WRAP, RW_WRAP = 135.0, 140.0
 
 # crown of the bonnet and boot (mm lower at the side than on the centre line)
 CROWN = pchip([(-100, 40), (300, 52), (700, 58), (1150, 60), (1300, 45), (3800, 45), (4000, 52), (4400, 45)])
+
+
+# every profile is made C2 (the pchip knots would otherwise show as breaks in the reflections on the black paint)
+W_SIDE = smoothed(W_SIDE, -200, 4700, 70)
+W_PLAN = smoothed(W_PLAN, -60, 4530, 18)
+NOSE_BACK = smoothed(NOSE_BACK, 0, 950, 20)
+TAIL_FWD = smoothed(TAIL_FWD, 0, 950, 20)
+H_CREASE = smoothed(H_CREASE, -100, 4700, 80)
+H_LOWLINE = smoothed(H_LOWLINE, 200, 4500, 80)
+HOOD_CREASE = smoothed(HOOD_CREASE, 100, 1250, 60)
+LOW = smoothed(LOW, 100, 700, 20)
+WB = smoothed(WB, 1150, 4100, 60)
+WR = smoothed(WR, 1150, 4100, 60)
+H_BELT = smoothed(H_BELT, 1150, 4100, 60)
+CROWN = smoothed(CROWN, -150, 4500, 60)
 
 
 class Car:

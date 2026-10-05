@@ -41,7 +41,7 @@ SEL_PIVOT = (0.335, 0.505) # Steptronic lever pivot (X, Y), Z = 0
 HB_PIVOT = (0.10, 0.548)   # handbrake lever pivot
 
 MAT_DEF = {  # name: (base colour RGBA (linear), metallic, roughness)
-    "leather_grey":  ((0.135, 0.135, 0.14, 1), 0.0, 0.50),   # seats + door inserts (the car: grey leather)
+    "leather_grey":  ((0.10, 0.10, 0.105, 1), 0.0, 0.50),   # seats + door inserts (the car: grey leather)
     "leather_black": ((0.022, 0.022, 0.024, 1), 0.0, 0.42),  # steering-wheel rim, selector knob/boot, handbrake
     "interior_black": ((0.028, 0.028, 0.030, 1), 0.0, 0.62), # dashboard, door cards, console (grained plastic)
     "plastic_black": ((0.012, 0.012, 0.013, 1), 0.0, 0.40),  # switches, vents, bezels
@@ -628,28 +628,27 @@ def front_seat(P, zc, side):
         ybot = 0.175 + 0.02 * v
         yc = interp([(0, 0.243), (0.3, 0.246), (0.6, 0.262), (0.85, 0.284), (1.0, 0.29)], v)
         bol = 0.048 * smoothstep(0.48, 0.84, abs(s)) * (1 - 0.55 * smoothstep(0.55, 1.0, v))
-        seam = -0.006 * gauss(abs(s), 0.46, 0.05) * (1 - smoothstep(0.85, 1.0, v))   # bolster seam groove
+        seam = -0.007 * gauss(abs(s), 0.46, 0.02) * (1 - smoothstep(0.88, 1.0, v))
         y = lerp(ybot, yc + bol + seam, w)
         return (ox + x, oy + y, zc + s * W / 2)
-    us = [0, 0.03, 0.1, 0.18, 0.24, 0.3, 0.4, 0.5, 0.6, 0.7, 0.76, 0.82, 0.9, 0.97, 1]
-    grid_solid(P.bm("leather_grey", 2), us, [0, 0.04, 0.15, 0.3, 0.45, 0.6, 0.72, 0.84, 0.93, 0.97, 1],
-               [0, 0.35, 0.75, 0.93, 1], cushion)
+    us = [0, 0.04, 0.13, 0.245, 0.27, 0.295, 0.39, 0.5, 0.61, 0.705, 0.73, 0.755, 0.87, 0.96, 1]
+    grid_solid(P.bm("leather_grey", 2), us, [0, 0.05, 0.2, 0.4, 0.6, 0.78, 0.92, 1], [0, 0.5, 0.9, 1], cushion)
 
     def back(u, v, w):
         s = 2 * u - 1
-        W = lerp(0.50, 0.445, smoothstep(0.15, 1.0, v))
+        W = interp([(0, 0.50), (0.45, 0.485), (1.0, 0.43)], v)
         lumb = 0.022 * gauss(v, 0.28, 0.14)
         bol = 0.055 * smoothstep(0.48, 0.84, abs(s)) * (1 - 0.6 * smoothstep(0.55, 1.0, v))
-        seam = -0.006 * gauss(abs(s), 0.46, 0.05) * (1 - smoothstep(0.85, 1.0, v))
-        tf = 0.085 + lumb + bol + seam
-        tr = -0.012 * (1 - s * s)
+        seam = -0.007 * gauss(abs(s), 0.46, 0.02) * (1 - smoothstep(0.85, 1.0, v))
+        tf = (0.085 + lumb + bol + seam) * (1 - 0.2 * smoothstep(0.8, 1.0, v))
+        tr = -0.022 * (1 - s * s) * (0.5 + 0.5 * gauss(v, 0.55, 0.35))
         t = lerp(tr, tf, w)
-        d = v * HB
+        d = v * HB - 0.035 * smoothstep(0.8, 1.0, v) * s * s       # rounded shoulders
         x = R0[0] + d * A[0] + t * N[0]
         y = R0[1] + d * A[1] + t * N[1]
         return (ox + x, oy + y, zc + s * W / 2)
-    grid_solid(P.bm("leather_grey", 2), us, [0, 0.05, 0.15, 0.28, 0.42, 0.56, 0.7, 0.82, 0.92, 0.97, 1],
-               [0, 0.3, 0.7, 0.92, 1], back)
+    grid_solid(P.bm("leather_grey", 2), us, [0, 0.06, 0.2, 0.36, 0.52, 0.68, 0.82, 0.93, 1], [0, 0.5, 0.9, 1],
+               back)
 
     # headrest on two chrome posts (drawing: X -0.44..-0.545, Y 0.98..1.155)
     th = 14 * D2R
@@ -703,13 +702,13 @@ def rear_bench(P):
         z = s * hw
         az = abs(z)
         base = interp([(0, 0.272), (0.3, 0.286), (0.6, 0.306), (0.85, 0.338), (1.0, 0.35)], v)
-        cont = (-0.026 * gauss(az, 0.34, 0.12) + 0.006 * gauss(z, 0, 0.07) + 0.014 * gauss(az, 0.165, 0.045)
-                + 0.024 * smoothstep(0.47, 0.55, az))
+        cont = (-0.034 * gauss(az, 0.34, 0.12) + 0.008 * gauss(z, 0, 0.07) + 0.022 * gauss(az, 0.165, 0.045)
+                + 0.030 * smoothstep(0.47, 0.55, az))
         cont *= 0.35 + 0.65 * smoothstep(0.0, 0.45, v)
         y = lerp(0.185, base + cont, w)
         return (ox + lerp(-0.20, 0.27, v), oy + y, z)
     us = [0, 0.015] + lin(23, 0.04, 0.96) + [0.985, 1]
-    grid_solid(P.bm("leather_grey", 2), us, [0, 0.04, 0.15, 0.3, 0.5, 0.7, 0.85, 0.94, 0.98, 1],
+    grid_solid(P.bm("leather_grey", 1), us, [0, 0.04, 0.15, 0.3, 0.5, 0.7, 0.85, 0.94, 0.98, 1],
                [0, 0.4, 0.85, 1], cushion)
 
     sp, cp = math.sin(REAR_PHI), math.cos(REAR_PHI)
@@ -718,40 +717,40 @@ def rear_bench(P):
 
     def back(u, v, w):
         s = 2 * u - 1
-        hw = 0.555 + 0.06 * smoothstep(0.45, 0.62, v) - 0.04 * smoothstep(0.9, 1.0, v)
+        hw = 0.54 + 0.07 * smoothstep(0.5, 0.66, v) - 0.04 * smoothstep(0.9, 1.0, v)
         z = s * hw
         az = abs(z)
-        front = (-0.024 * gauss(az, 0.34, 0.13) + 0.03 * gauss(az, hw - 0.02, 0.06) + 0.018 * gauss(az, 0.15, 0.045)
+        front = (-0.034 * gauss(az, 0.34, 0.12) + 0.045 * gauss(az, hw - 0.03, 0.06) + 0.032 * gauss(az, 0.155, 0.04)
                  + 0.016 * gauss(v, 0.32, 0.2))
         t = lerp(-0.13, front, w)
         d = v * HB
         return (ox + R0[0] + d * A[0] + t * N[0], oy + R0[1] + d * A[1] + t * N[1], z)
-    grid_solid(P.bm("leather_grey", 2), us, [0, 0.05, 0.15, 0.3, 0.45, 0.55, 0.65, 0.78, 0.9, 0.96, 1],
+    grid_solid(P.bm("leather_grey", 1), us, [0, 0.05, 0.15, 0.3, 0.45, 0.55, 0.65, 0.78, 0.9, 0.96, 1],
                [0, 0.3, 0.8, 1], back)
-    # integrated rear head restraints for the two outboard seats (a headrest per outboard passenger)
-    th = 30 * D2R
+    # rear head restraints for the two outboard seats (sit on the backrest top, in front of the parcel shelf)
+    th = 22 * D2R
     ah, nh = (-math.sin(th), math.cos(th)), (math.cos(th), math.sin(th))
-    top = (R0[0] + HB * A[0] - 0.035 * N[0], R0[1] + HB * A[1] - 0.035 * N[1])
+    hc = (-1.372 - ox, 0.978 - oy)
     for zc in (-0.34, 0.34):
         def head(u, v, w, zc=zc):
             s, q = 2 * u - 1, 2 * v - 1
             Wd = 0.23 * (1 - 0.12 * smoothstep(0.0, 1.0, q))
-            h = 0.045 + q * 0.06
-            t = lerp(-0.040, 0.040 - 0.012 * s * s, w)
-            return (ox + top[0] + h * ah[0] + t * nh[0], oy + top[1] + h * ah[1] + t * nh[1], zc + s * Wd / 2)
+            h = q * 0.07
+            t = lerp(-0.036, 0.036 - 0.010 * s * s, w)
+            return (ox + hc[0] + h * ah[0] + t * nh[0], oy + hc[1] + h * ah[1] + t * nh[1], zc + s * Wd / 2)
         grid_solid(P.bm("leather_grey", 2), edge_params(5, 0.07), edge_params(4, 0.08), [0, 0.15, 0.85, 1], head)
 
 # ==============================================================================================
 # DASHBOARD (loft of side profiles along Z; driver-side cluster recess under the binnacle hood)
 # ==============================================================================================
-DASH_TOP = [(0.868, 0.900), (0.78, 0.915), (0.66, 0.924), (0.55, 0.926), (0.47, 0.921)]
-PROF_DRV = DASH_TOP + [(0.425, 0.906), (0.398, 0.880), (0.386, 0.848), (0.384, 0.818), (0.386, 0.795),
+DASH_TOP = [(0.868, 0.895), (0.78, 0.906), (0.66, 0.912), (0.55, 0.911), (0.47, 0.903)]
+PROF_DRV = DASH_TOP + [(0.425, 0.889), (0.398, 0.866), (0.386, 0.838), (0.384, 0.812), (0.386, 0.792),
                        (0.389, 0.770), (0.398, 0.745), (0.43, 0.68), (0.47, 0.64), (0.53, 0.612), (0.62, 0.60),
                        (0.74, 0.605), (0.82, 0.67), (0.862, 0.80)]
-PROF_PAS = DASH_TOP + [(0.425, 0.906), (0.398, 0.880), (0.386, 0.848), (0.384, 0.818), (0.386, 0.795),
+PROF_PAS = DASH_TOP + [(0.425, 0.889), (0.398, 0.866), (0.386, 0.838), (0.384, 0.812), (0.386, 0.792),
                        (0.389, 0.770), (0.398, 0.745), (0.42, 0.69), (0.45, 0.625), (0.50, 0.578), (0.58, 0.56),
                        (0.70, 0.565), (0.80, 0.62), (0.855, 0.75)]
-PROF_CLU = [(0.868, 0.900), (0.78, 0.915), (0.70, 0.922), (0.62, 0.924), (0.555, 0.918), (0.537, 0.908),
+PROF_CLU = [(0.868, 0.895), (0.78, 0.906), (0.70, 0.911), (0.62, 0.912), (0.555, 0.912), (0.537, 0.906),
             (0.522, 0.888), (0.512, 0.862), (0.505, 0.840), (0.47, 0.827), (0.405, 0.820), (0.396, 0.795),
             (0.398, 0.745)] + PROF_DRV[12:]
 CLU_Z, CLU_HW = -SEAT_Z, 0.215          # binnacle centre (on the steering column) and arch half-width
@@ -770,6 +769,9 @@ def dash_profile(Z):
         cy = sum(p[1] for p in pts) / len(pts)
         k = 1 - 0.10 * e
         pts = [Vector((cx + (p[0] - cx) * k, cy + (p[1] - cy) * k)) for p in pts]
+    # windscreen wrap: the glass corners recede, so the dash top drops toward the ends at the front
+    drop = 0.045 * smoothstep(0.40, DASH_END, abs(Z))
+    pts = [(p[0], p[1] - drop * smoothstep(0.58, 0.87, p[0]) * smoothstep(0.75, 0.88, p[1])) for p in pts]
     # plan curvature: the face sweeps slightly rearward toward the doors
     return [(p[0] - 0.012 * (abs(Z) / DASH_END) ** 2 * smoothstep(0.62, 0.40, p[0]), p[1]) for p in pts]
 
@@ -798,14 +800,19 @@ def build_dashboard():
     add_loft(P.bm("interior_black"), loops)
 
     # binnacle hood: a visor swept along an arch around the cluster (E46: deep hood over four dials)
-    Yc, b_ax = 0.835, 0.158
-    prof = [(0.0, 0.0), (0.012, 0.008), (0.020, 0.04), (0.022, 0.10), (0.015, 0.16), (-0.005, 0.22), (-0.035, 0.28),
-            (-0.075, 0.33), (-0.095, 0.33), (-0.088, 0.15), (-0.045, 0.05), (-0.012, 0.012)]
+    Yc, b_ax = 0.840, 0.124
+    prof = [(0.0, 0.0), (0.010, 0.008), (0.015, 0.04), (0.014, 0.10), (0.004, 0.16), (-0.014, 0.21), (-0.036, 0.26),
+            (-0.066, 0.31), (-0.09, 0.31), (-0.085, 0.15), (-0.045, 0.05), (-0.012, 0.012)]
     loops = []
-    for i in range(41):
-        t = (-12 + 204 * i / 40) * D2R
-        z, y = CLU_Z + CLU_HW * math.cos(t), Yc + b_ax * math.sin(t)
-        nz, ny = math.cos(t) / CLU_HW, math.sin(t) / b_ax
+    ne = 3.0                                  # superellipse arch: flatter top, steeper sides (E46 hood)
+    sgn = lambda x: (x > 0) - (x < 0)
+    for i in range(49):
+        t = (-12 + 204 * i / 48) * D2R
+        c, s_ = math.cos(t), math.sin(t)
+        dz, dy = CLU_HW * sgn(c) * abs(c) ** (2 / ne), b_ax * sgn(s_) * abs(s_) ** (2 / ne)
+        z, y = CLU_Z + dz, Yc + dy
+        nz = sgn(dz) * abs(dz / CLU_HW) ** (ne - 1) / CLU_HW
+        ny = sgn(dy) * abs(dy / b_ax) ** (ne - 1) / b_ax
         L = math.hypot(nz, ny)
         nz, ny = nz / L, ny / L
         lip_x = 0.372
@@ -825,20 +832,20 @@ def build_dashboard():
     # radio: display + preset buttons; climate: two temperature displays + button rows
     add_box(P.bm("trim_titan"), (face_x(0.776) - 0.012, 0.776, 0), (0.006, 0.014, 0.07), bevel=0.001, seg=1)
     for k in range(6):
-        add_box(P.bm("interior_black"), (face_x(0.748) - 0.012, 0.748, -0.075 + 0.03 * k), (0.008, 0.011, 0.022),
-                bevel=0.002, seg=1)
+        add_box(P.bm("interior_black"), (face_x(0.748) - 0.009, 0.748, -0.075 + 0.03 * k), (0.006, 0.009, 0.020),
+                bevel=0.0012, seg=1)
     for zz in (-0.085, 0.085):
         add_cyl(P.bm("trim_titan"), (face_x(0.764) - 0.010, 0.764, zz), (face_x(0.764) - 0.022, 0.764, zz), 0.011,
                 seg=20)
     for k in range(5):
         for row, yy in enumerate((0.700, 0.662)):
-            add_box(P.bm("interior_black"), (face_x(yy) - 0.012, yy, -0.08 + 0.04 * k), (0.008, 0.014, 0.03),
-                    bevel=0.002, seg=1)
+            add_box(P.bm("interior_black"), (face_x(yy) - 0.009, yy, -0.08 + 0.04 * k), (0.006, 0.012, 0.028),
+                    bevel=0.0012, seg=1)
     # centre vents (two, side by side) and the outer vents at the dash ends
-    vent(P, (0.383, 0.871, -0.061), 0.112, 0.062)
-    vent(P, (0.383, 0.871, 0.061), 0.112, 0.062)
+    vent(P, (0.383, 0.857, -0.061), 0.112, 0.058)
+    vent(P, (0.383, 0.857, 0.061), 0.112, 0.058)
     for zs in (-1, 1):
-        vent(P, (0.387, 0.868, zs * 0.615), 0.105, 0.058)
+        vent(P, (0.388, 0.855, zs * 0.615), 0.105, 0.054)
     # trim strip across the passenger side and the centre (above the glovebox / below the vents)
     loops = []
     for z in lin(30, -0.128, DASH_END - 0.03):
@@ -942,7 +949,7 @@ def build_steering_wheel():
         xf = -0.036 - 0.009 * (1 - r2)
         x = lerp(0.028, xf, w)
         return (x, y, z)
-    grid_solid(P.bm("interior_black", 2), edge_params(6, 0.06), edge_params(6, 0.06), [0, 0.5, 0.9, 1], pad, M=M)
+    grid_solid(P.bm("interior_black", 2), edge_params(4, 0.08), edge_params(4, 0.08), [0, 0.6, 1], pad, M=M)
     bm_t, uvl = P.uv("gauges")
     add_disc_uv(bm_t, uvl, M @ Vector((-0.0455, 0, 0.006)), M.to_3x3() @ Vector((-1, 0, 0)),
                 M.to_3x3() @ Vector((0, 0, 1)), 0.0215, "roundel", seg=40, thick=0.002)
@@ -1025,7 +1032,7 @@ def build_console():
         s = 2 * u - 1
         top = 0.664 + 0.006 * (1 - s * s)
         return (lerp(-0.205, -0.495, v), lerp(0.622, top, w), s * 0.093)
-    grid_solid(P.bm("leather_grey", 2), edge_params(5, 0.06), edge_params(5, 0.05), [0, 0.5, 0.88, 1], lid)
+    grid_solid(P.bm("leather_grey", 1), edge_params(5, 0.06), edge_params(5, 0.05), [0, 0.5, 0.88, 1], lid)
     return P
 
 def build_selector():
@@ -1034,17 +1041,17 @@ def build_selector():
     px, py = SEL_PIVOT
     add_cyl(P.bm("steel_dark"), (px, py, 0), (px, CON_TOP + 0.09, 0), 0.0065, seg=12)
     loops = []
-    for j, h in enumerate(lin(9, 0, 1)):
-        Lx = lerp(0.082, 0.034, h ** 0.75)
-        Lz = lerp(0.058, 0.032, h ** 0.75)
-        fold = 0.0035 * math.sin(h * math.pi * 3.5) * (1 - h)
-        y = CON_TOP + 0.009 + h * 0.068
-        loops.append([B(px + dx, y, dz) for (dx, dz) in rrect(Lx + fold, Lz + fold, min(Lx, Lz) * 0.45, 3)])
-    loops.append([B(px + dx * 0.6, CON_TOP + 0.079, dz * 0.6) for (dx, dz) in rrect(0.034, 0.032, 0.015, 3)])
-    add_loft(P.bm("leather_black", 1), loops)
-    y0 = CON_TOP + 0.066
-    prof = [(0, 0), (0.0168, 0), (0.0172, 0.012), (0.0186, 0.032), (0.0207, 0.058), (0.0224, 0.082),
-            (0.0226, 0.096), (0.0212, 0.107), (0.0168, 0.1145), (0.0085, 0.1185), (0, 0.1195)]
+    for j, h in enumerate(lin(25, 0, 1)):
+        Lx = lerp(0.094, 0.034, h ** 0.6)
+        Lz = lerp(0.066, 0.032, h ** 0.6)
+        fold = 0.0055 * abs(math.sin(h * math.pi * 4.5)) * (1 - 0.7 * h)
+        y = CON_TOP + 0.008 + h * 0.062
+        loops.append([B(px + dx, y, dz) for (dx, dz) in rrect(Lx + fold, Lz + fold, min(Lx, Lz) * 0.42, 4)])
+    loops.append([B(px + dx * 0.6, CON_TOP + 0.072, dz * 0.6) for (dx, dz) in rrect(0.034, 0.032, 0.015, 4)])
+    add_loft(P.bm("leather_black"), loops)
+    y0 = CON_TOP + 0.060
+    prof = [(0, 0), (0.0168, 0), (0.0172, 0.010), (0.0186, 0.027), (0.0207, 0.050), (0.0224, 0.071),
+            (0.0226, 0.083), (0.0212, 0.093), (0.0168, 0.0995), (0.0085, 0.1035), (0, 0.1045)]
     add_lathe(P.bm("leather_black"), prof, Matrix.Translation(B(px, y0, 0)), seg=32)
     return P
 
@@ -1088,8 +1095,8 @@ def build_door(P, sg):
         Y = lerp(0.255, 0.885, v)
         zi = door_zi(Y) + 0.012 * (1 - smoothstep(0.0, 0.05, u)) + 0.012 * smoothstep(0.95, 1.0, u)
         return (door_x(u, Y), Y, sg * lerp(zi + 0.03, zi, w))
-    grid_solid(P.bm("interior_black", 1), [0, 0.02] + lin(10, 0.05, 0.95) + [0.98, 1],
-               [0, 0.03, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.78, 0.84, 0.88, 0.92, 0.96, 1], [0, 1], card)
+    grid_solid(P.bm("interior_black", 1), [0, 0.02] + lin(8, 0.05, 0.95) + [0.98, 1],
+               [0, 0.03, 0.12, 0.26, 0.4, 0.55, 0.7, 0.78, 0.84, 0.88, 0.92, 0.96, 1], [0, 1], card)
 
     def insert(u, v, w):
         Y = lerp(0.665, 0.805, v)
@@ -1121,7 +1128,7 @@ def build_door(P, sg):
 
 def rear_zi(Y, u):
     return interp([(0.40, 0.700), (0.55, 0.695), (0.62, 0.690), (0.70, 0.685), (0.80, 0.676), (0.88, 0.672),
-                   (0.92, 0.680), (0.955, 0.700)], Y) - 0.012 * smoothstep(0.5, 1.0, u)
+                   (0.92, 0.676), (0.955, 0.690)], Y) - (0.012 + 0.016 * smoothstep(0.86, 0.95, Y)) * smoothstep(0.5, 1.0, u)
 
 def build_rear_trim(P, sg):
     def ybot(u):
@@ -1414,46 +1421,64 @@ def side_overlay(render_path, ortho, res, cx, cy):
     out[line] = out[line] * 0.15 + np.array([230, 30, 30]) * 0.85
     Image.fromarray(out.astype(np.uint8)).save(render_path.replace(".png", "_drawing.png"))
 
+def _hide(names, flag=True):
+    out = []
+    for o in bpy.data.objects:
+        top = o
+        while top.parent is not None:
+            top = top.parent
+        if o.name in names or top.name in names:
+            o.hide_render = flag
+            out.append(o)
+    return out
+
 def previews():
     os.makedirs(PREV_DIR, exist_ok=True)
     setup_studio()
-    # 1) interior alone, 3/4 from the front-left, and from the rear-right
-    render("front34", B(1.9, 1.9, -2.1), B(-0.35, 0.62, 0.0), lens=38)
-    render("rear34_right", B(-2.6, 1.9, 1.9), B(-0.2, 0.62, 0.0), lens=38)
-    # 2) cockpit (driver's view from the rear seat), selector close-up, rear bench
-    hid = [o for o in bpy.data.objects if o.name in ("seat_driver", "seat_passenger", "seats")]
-    for o in hid:
-        o.hide_render = True
-    render("cockpit", B(-0.55, 1.12, -0.30), B(0.45, 0.80, -0.12), lens=24)
-    render("selector", B(0.02, 0.86, 0.16), B(0.31, 0.63, -0.01), lens=40)
-    for o in hid:
-        o.hide_render = False
-    render("rear_bench", B(0.35, 1.05, 0.0), B(-1.05, 0.62, 0.0), lens=28)
-    # 3) inside the ghosted body: side (with BMW's drawing overlaid), top
-    ghost = ghost_mat()
-    body = import_glb("body", ghost)
-    res = (1200, 600)
-    p = render("in_body_side", B(-0.1, 0.70, -6.0), B(-0.1, 0.70, 0.0), ortho=4.8, res=res, samples=12)
-    side_overlay(p, 4.8, res, -0.1, 0.70)
-    render("in_body_top", B(-0.1, 6.0, 0.0), B(-0.1, 0.0, 0.0), ortho=4.8, res=res, samples=12)
-    render("in_body_front34", B(3.2, 2.4, -3.0), B(-0.2, 0.7, 0.0), lens=40, res=(960, 540), samples=16)
-    # 4) the real look: black body + glass, through the windscreen (cf. build/photo_front.png)
-    paint = car_paint()
-    for ob in body:
-        if ob.type == "MESH":
-            ob.data.materials.clear()
-            ob.data.materials.append(paint)
-    import_glb("glass", glass_mat())
-    import_glb("details")
-    import_glb("wheels")
-    # cut the opaque body away inside the glass outline is not possible here; render the glass region only by
-    # hiding the body skin above the belt line with a boolean-free trick: a clipping box is too costly, so the
-    # body is shown at 35% alpha in this view
-    for ob in body:
-        if ob.type == "MESH":
-            ob.data.materials.clear()
-            ob.data.materials.append(ghost_mat((0.02, 0.02, 0.025, 1), 0.35))
-    render("through_glass", B(5.2, 1.6, -2.4), B(0.0, 0.85, -0.1), lens=50, res=(960, 540), samples=24)
+    want = None
+    for a in ARGS:
+        if a.startswith("--views="):
+            want = set(a.split("=", 1)[1].split(","))
+    ok = lambda n: want is None or n in want
+    if ok("front34"):
+        render("front34", B(1.9, 1.9, -2.1), B(-0.35, 0.62, 0.0), lens=38)
+    if ok("rear34_right"):
+        render("rear34_right", B(-2.6, 1.9, 1.9), B(-0.2, 0.62, 0.0), lens=38)
+    if ok("cockpit"):
+        h = _hide({"seats"})
+        render("cockpit", B(-0.55, 1.12, -0.30), B(0.45, 0.80, -0.12), lens=24)
+        _hide({"seats"}, False)
+    if ok("selector"):
+        h = _hide({"seats"})
+        render("selector", B(-0.02, 0.86, 0.20), B(0.31, 0.65, -0.02), lens=40)
+        _hide({"seats"}, False)
+    if ok("rear_bench"):
+        h = _hide({"seat_driver", "seat_passenger"})
+        render("rear_bench", B(0.25, 1.15, 0.0), B(-1.05, 0.62, 0.0), lens=28)
+        _hide({"seat_driver", "seat_passenger"}, False)
+    if ok("seats"):
+        h = _hide({"dashboard", "door_cards", "centre_console", "selector", "handbrake", "steering_wheel"})
+        render("seats", B(1.2, 1.3, 1.6), B(-0.45, 0.6, 0.0), lens=35)
+        _hide({"dashboard", "door_cards", "centre_console", "selector", "handbrake", "steering_wheel"}, False)
+    if ok("door"):
+        h = _hide({"seats", "centre_console", "selector", "handbrake", "steering_wheel"})
+        render("door", B(0.05, 1.0, 0.45), B(0.05, 0.62, -0.72), lens=26)
+        _hide({"seats", "centre_console", "selector", "handbrake", "steering_wheel"}, False)
+    if ok("side"):
+        h = _hide({"door_cards"})
+        res = (1200, 600)
+        p = render("side", B(-0.1, 0.70, -6.0), B(-0.1, 0.70, 0.0), ortho=4.8, res=res, samples=12)
+        side_overlay(p, 4.8, res, -0.1, 0.70)
+        _hide({"door_cards"}, False)
+    body = []
+    if any(ok(n) for n in ("in_body_top", "in_body_front34", "in_body_rear34")):
+        body = import_glb("body", ghost_mat())
+    if ok("in_body_top"):
+        render("in_body_top", B(-0.1, 6.0, 0.0), B(-0.1, 0.0, 0.0), ortho=4.8, res=(1200, 600), samples=12)
+    if ok("in_body_front34"):
+        render("in_body_front34", B(3.2, 2.4, -3.0), B(-0.2, 0.7, 0.0), lens=40, res=(960, 540), samples=16)
+    if ok("in_body_rear34"):
+        render("in_body_rear34", B(-3.6, 2.2, 2.6), B(-0.3, 0.7, 0.0), lens=40, res=(960, 540), samples=16)
 
 if __name__ == "__main__":
     make_atlas()
@@ -1465,3 +1490,5 @@ if __name__ == "__main__":
     export()
     if "--no-render" not in ARGS:
         previews()
+    sys.stdout.flush()
+    os._exit(0)

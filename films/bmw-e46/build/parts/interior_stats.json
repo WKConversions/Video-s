@@ -1,20 +1,147 @@
 {
  "triangles": {
-  "centre_console": 11340,
-  "dashboard": 16276,
-  "door_card_left": 6492,
-  "door_card_right": 6492,
+  "centre_console": 7884,
+  "dashboard": 17044,
+  "door_card_left": 5628,
+  "door_card_right": 5628,
   "handbrake": 1100,
   "instrument_cluster": 4092,
   "parcel_shelf": 1328,
-  "rear_bench": 53312,
+  "rear_bench": 19376,
   "rear_trim_left": 4468,
   "rear_trim_right": 4468,
-  "seat_driver": 37380,
-  "seat_passenger": 37380,
-  "selector": 1840,
-  "steering_wheel": 10384
+  "seat_driver": 28868,
+  "seat_passenger": 28868,
+  "selector": 1660,
+  "steering_wheel": 7440
  },
- "total": 196352,
- "fit": {}
+ "total": 137852,
+ "fit": {
+  "centre_console": {
+   "min_clearance_mm": 306.9,
+   "worst_at_car_xyz": [
+    -0.214,
+    0.669,
+    0.0
+   ],
+   "n_below_margin": 0
+  },
+  "dashboard": {
+   "min_clearance_mm": 25.7,
+   "worst_at_car_xyz": [
+    0.598,
+    0.899,
+    -0.685
+   ],
+   "n_below_margin": 0
+  },
+  "door_card_left": {
+   "min_clearance_mm": 37.8,
+   "worst_at_car_xyz": [
+    0.593,
+    0.883,
+    -0.724
+   ],
+   "n_below_margin": 0
+  },
+  "door_card_right": {
+   "min_clearance_mm": 37.8,
+   "worst_at_car_xyz": [
+    0.593,
+    0.883,
+    0.724
+   ],
+   "n_below_margin": 0
+  },
+  "handbrake": {
+   "min_clearance_mm": 346.0,
+   "worst_at_car_xyz": [
+    -0.161,
+    0.63,
+    0.0
+   ],
+   "n_below_margin": 0
+  },
+  "instrument_cluster": {
+   "min_clearance_mm": 34.1,
+   "worst_at_car_xyz": [
+    0.53,
+    0.907,
+    -0.557
+   ],
+   "n_below_margin": 0
+  },
+  "parcel_shelf": {
+   "min_clearance_mm": 28.5,
+   "worst_at_car_xyz": [
+    -1.394,
+    0.951,
+    -0.657
+   ],
+   "n_below_margin": 0
+  },
+  "rear_bench": {
+   "min_clearance_mm": 21.9,
+   "worst_at_car_xyz": [
+    -1.291,
+    0.674,
+    -0.579
+   ],
+   "n_below_margin": 0
+  },
+  "rear_trim_left": {
+   "min_clearance_mm": 21.4,
+   "worst_at_car_xyz": [
+    -1.056,
+    0.945,
+    -0.714
+   ],
+   "n_below_margin": 0
+  },
+  "rear_trim_right": {
+   "min_clearance_mm": 21.4,
+   "worst_at_car_xyz": [
+    -1.056,
+    0.945,
+    0.714
+   ],
+   "n_below_margin": 0
+  },
+  "seat_driver": {
+   "min_clearance_mm": 30.5,
+   "worst_at_car_xyz": [
+    -0.432,
+    0.928,
+    -0.564
+   ],
+   "n_below_margin": 0
+  },
+  "seat_passenger": {
+   "min_clearance_mm": 30.5,
+   "worst_at_car_xyz": [
+    -0.432,
+    0.928,
+    0.564
+   ],
+   "n_below_margin": 0
+  },
+  "selector": {
+   "min_clearance_mm": 206.0,
+   "worst_at_car_xyz": [
+    0.335,
+    0.757,
+    -0.0
+   ],
+   "n_below_margin": 0
+  },
+  "steering_wheel": {
+   "min_clearance_mm": 33.5,
+   "worst_at_car_xyz": [
+    0.255,
+    0.911,
+    -0.552
+   ],
+   "n_below_margin": 0
+  }
+ }
 }

@@ -19,15 +19,29 @@ SIDE = [
     (4000, 223), (3750, 212), (3350, 176), (3100, 168), (2000, 166), (1150, 166), (1000, 184), (600, 204), (420, 200),
 ]
 
-def catmull(points, n=12, closed=True):
+def catmull(points, n=12, closed=True, centripetal=False):
+    """Catmull-Rom through the points; centripetal=True uses the centripetal parameterisation (no overshoot or loops
+    where the point spacing changes)."""
     P = np.array(points, float)
     if closed:
         P = np.vstack([P[-1], P, P[0], P[1]])
     out = []
     for i in range(1, len(P) - 2):
         p0, p1, p2, p3 = P[i - 1], P[i], P[i + 1], P[i + 2]
-        # centripetal-ish: uniform is fine at this density
-        for t in np.linspace(0, 1, n, endpoint=False):
-            t2, t3 = t * t, t * t * t
-            out.append(0.5 * ((2 * p1) + (-p0 + p2) * t + (2 * p0 - 5 * p1 + 4 * p2 - p3) * t2 + (-p0 + 3 * p1 - 3 * p2 + p3) * t3))
+        if not centripetal:
+            for t in np.linspace(0, 1, n, endpoint=False):
+                t2, t3 = t * t, t * t * t
+                out.append(0.5 * ((2 * p1) + (-p0 + p2) * t + (2 * p0 - 5 * p1 + 4 * p2 - p3) * t2 + (-p0 + 3 * p1 - 3 * p2 + p3) * t3))
+            continue
+        t0 = 0.0
+        t1 = t0 + max(np.linalg.norm(p1 - p0), 1e-6) ** 0.5
+        t2_ = t1 + max(np.linalg.norm(p2 - p1), 1e-6) ** 0.5
+        t3_ = t2_ + max(np.linalg.norm(p3 - p2), 1e-6) ** 0.5
+        for t in np.linspace(t1, t2_, n, endpoint=False):
+            a1 = (t1 - t) / (t1 - t0) * p0 + (t - t0) / (t1 - t0) * p1
+            a2 = (t2_ - t) / (t2_ - t1) * p1 + (t - t1) / (t2_ - t1) * p2
+            a3 = (t3_ - t) / (t3_ - t2_) * p2 + (t - t2_) / (t3_ - t2_) * p3
+            b1 = (t2_ - t) / (t2_ - t0) * a1 + (t - t0) / (t2_ - t0) * a2
+            b2 = (t3_ - t) / (t3_ - t1) * a2 + (t - t1) / (t3_ - t1) * a3
+            out.append((t2_ - t) / (t2_ - t1) * b1 + (t - t1) / (t2_ - t1) * b2)
     return np.array(out)

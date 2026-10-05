@@ -8,16 +8,17 @@ import fs from "fs";
 import path from "path";
 
 const frames = process.argv[2].split(",").map(Number);
-const inputProps = { blurSamples: Number(process.argv[3] || 1) };
+const inputProps = { blurSamples: Number(process.argv[3] || 1), ...(process.env.PROPS ? JSON.parse(process.env.PROPS) : {}) };
+const outDir = process.env.OUT || "out/test";
 const chromiumOptions = { gl: process.env.GL || "angle" };
 const id = process.argv[4] || "Film";
 const shells = fs.existsSync("/opt/pw-browsers") ? fs.readdirSync("/opt/pw-browsers").filter((d) => d.startsWith("chromium_headless_shell")) : [];
 const browserExecutable = process.env.BROWSER || (shells[0] ? `/opt/pw-browsers/${shells[0]}/chrome-linux/headless_shell` : undefined);
 const serveUrl = await bundle({ entryPoint: path.resolve("src/index.ts") });
 const composition = await selectComposition({ serveUrl, id, inputProps, browserExecutable, chromiumOptions, timeoutInMilliseconds: 300000 });
-fs.mkdirSync("out/test", { recursive: true });
+fs.mkdirSync(outDir, { recursive: true });
 for (const frame of frames) {
-  await renderStill({ serveUrl, composition, frame, inputProps, browserExecutable, chromiumOptions, timeoutInMilliseconds: 300000, output: `out/test/f${String(frame).padStart(4, "0")}.png` });
+  await renderStill({ serveUrl, composition, frame, inputProps, browserExecutable, chromiumOptions, timeoutInMilliseconds: 300000, output: `${outDir}/f${String(frame).padStart(4, "0")}.png` });
   process.stdout.write(`${frame} `);
 }
 console.log("done");

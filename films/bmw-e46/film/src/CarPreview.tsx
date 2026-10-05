@@ -7,6 +7,7 @@ import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
 import * as THREE from "three";
 import { CarBody, Studio, useCarAssets, useCarMaterials } from "./car/Car";
 import { makeLook } from "./car/materials";
+import { MASK_GLSL } from "./car/maps";
 import { DrawWhenReady } from "./useGlb";
 
 // [camera position, look-at, fov]
@@ -33,7 +34,18 @@ const Cam: React.FC<{ v: number }> = ({ v }) => {
   return null;
 };
 
-export const CarPreview: React.FC<{ extras?: string[]; sweep?: number }> = ({ extras = [], sweep = 99 }) => {
+/** debug: the body coloured by its regions (red glass, green head, blue fog) over its normal, to find mask leaks */
+const debugMat = (assets: NonNullable<ReturnType<typeof useCarAssets>["assets"]>) => new THREE.ShaderMaterial({
+  uniforms: { tSide: { value: assets.maps.side }, tSide2: { value: assets.maps.side2 }, tTop: { value: assets.maps.top },
+    tFront: { value: assets.maps.front }, tFront2: { value: assets.maps.front2 }, tRear: { value: assets.maps.rear } },
+  vertexShader: `varying vec3 vP; varying vec3 vN; void main() { vP = position; vN = normal; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+  fragmentShader: `varying vec3 vP; varying vec3 vN; ${MASK_GLSL}
+    void main() { Regions r = carRegions(vP, normalize(vN)); vec3 c = 0.35 + 0.3 * normalize(vN);
+      c = mix(c, vec3(1.0, 0.0, 0.0), step(0.5, r.glass)); c = mix(c, vec3(0.0, 1.0, 0.0), step(0.5, r.head)); c = mix(c, vec3(0.0, 0.0, 1.0), step(0.5, r.fog));
+      gl_FragColor = vec4(c, 1.0); }`,
+});
+
+export const CarPreview: React.FC<{ extras?: string[]; sweep?: number; debug?: boolean }> = ({ extras = [], sweep = 99, debug = false }) => {
   const g = useCurrentFrame();
   const { width, height } = useVideoConfig();
   const { assets, handle } = useCarAssets(extras);
@@ -45,7 +57,8 @@ export const CarPreview: React.FC<{ extras?: string[]; sweep?: number }> = ({ ex
       <ThreeCanvas width={width} height={height} gl={{ antialias: true, preserveDrawingBuffer: true }} shadows>
         <Cam v={g % PVIEWS.length} />
         <Studio />
-        {assets && mats && <CarBody assets={assets} mats={mats} />}
+        {assets && mats && !debug && <CarBody assets={assets} mats={mats} />}
+        {assets && debug && <primitive object={assets.body.clone(true)} onUpdate={(o: THREE.Object3D) => { const m = debugMat(assets); o.traverse((x) => { if ((x as THREE.Mesh).isMesh) (x as THREE.Mesh).material = m; }); }} />}
         {assets && Object.entries(assets.extras).map(([k, s]) => <primitive key={k} object={s} />)}
         <ContactShadows position={[0, 0.001, 0]} opacity={0.55} scale={9} blur={2.2} far={1.5} resolution={512} frames={1} />
         <DrawWhenReady ready={!!(assets && mats)} handle={handle} />
