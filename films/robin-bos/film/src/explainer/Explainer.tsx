@@ -36,12 +36,15 @@ const GREEN = "#2FA86B";
 const O = { s1: [0, 0], s2: [2200, 0], s3: [4400, 0], s4: [4400, 1300], s5: [2200, 1300], s6: [0, 1300] } as const;
 const centre = (o: readonly [number, number]) => ({ x: o[0] + 960, y: o[1] + 540 });
 const PANS = [
-  { a: 120, b: 152, from: centre(O.s1), to: centre(O.s2), dip: 0.12 },
-  { a: 238, b: 292, from: centre(O.s2), to: centre(O.s3), dip: 0.22 },  // tracks the timeline's 18 months
-  { a: 432, b: 464, from: centre(O.s3), to: centre(O.s4), dip: 0.12 },
-  { a: 602, b: 634, from: centre(O.s4), to: centre(O.s5), dip: 0.12 },
-  { a: 752, b: 784, from: centre(O.s5), to: centre(O.s6), dip: 0.12 },
+  { a: 104, b: 132, from: centre(O.s1), to: centre(O.s2), dip: 0.12 },
+  { a: 232, b: 282, from: centre(O.s2), to: centre(O.s3), dip: 0.22 },  // tracks the timeline's 18 months
+  { a: 412, b: 440, from: centre(O.s3), to: centre(O.s4), dip: 0.12 },
+  { a: 560, b: 588, from: centre(O.s4), to: centre(O.s5), dip: 0.12 },
+  { a: 716, b: 744, from: centre(O.s5), to: centre(O.s6), dip: 0.12 },
 ];
+/** Each screen's animation is written on its own clock; this offset maps the film's frame onto it, so a screen's
+ *  content starts entering while the camera is still travelling to it. */
+const SHIFT = { s1: 16, s2: 28, s3: 10, s4: 34, s5: 54, s6: 36 };
 const PUSH = 0.025; // the slow push while a screen holds
 const camera = (g: number) => {
   let pos = centre(O.s1), s = 1;
@@ -154,7 +157,7 @@ const money = (v: number) => "€" + Math.round(v).toLocaleString("en-US");
 
 // ---------- S1: the profile ----------
 const S1: React.FC<{ g: number }> = ({ g }) => {
-  const card = { x: 1040, y: 190, w: 700 };
+  const card = { x: 1040, y: 150, w: 700 };
   const roleY = 368, roleSize = 30;
   const pre = measure("CEO & Founder, ", roleSize, 500, -0.01);
   const linkW = measure("K.B Consultancy", roleSize, 600, -0.01);
@@ -171,7 +174,7 @@ const S1: React.FC<{ g: number }> = ({ g }) => {
         <Words g={g} at={-2} text="Meet Robin Bos" size={124} period style={{ marginTop: 26 }} />
         <Words g={g} at={20} text="He builds businesses around people, process and technology." size={40} weight={500} color={C.muted} stagger={1.2} width={780} lh={1.32} ls={-0.015} style={{ marginTop: 34 }} />
       </div>
-      <Card x={card.x} y={card.y} w={card.w} h={720} style={rise(g, -6, 26, 80, 0.04, 0.25)}>
+      <Card x={card.x} y={card.y} w={card.w} h={790} style={rise(g, -6, 26, 80, 0.04, 0.25)}>
         <div style={{ height: 170, background: `linear-gradient(120deg, ${C.sky} 0%, ${C.haze} 55%, ${C.mist} 100%)` }} />
         <div style={{ position: "absolute", left: 56, top: 70, ...rise(g, -4, 20, 20, 0.1) }}><Avatar size={190} ring={8} /></div>
         <div style={{ position: "absolute", left: 56, top: 286, display: "flex", alignItems: "center", gap: 14, ...rise(g, 2, 18, 24) }}>
@@ -201,14 +204,14 @@ const S1: React.FC<{ g: number }> = ({ g }) => {
           ))}
         </div>
       </Card>
-      {g >= 84 && g < 140 && <Cursor x={cx} y={cy} press={press} o={cl((g - 84) / 6) * (1 - cl((g - 126) / 10))} />}
+      {g >= 84 && g < 136 && <Cursor x={cx} y={cy} press={press} o={cl((g - 84) / 6) * (1 - cl((g - 126) / 10))} />}
       <Ripple g={g} at={112} x={link.x} y={link.y} />
     </Scene>
   );
 };
 
 // ---------- S2: the company + the timeline ----------
-const TL = { y: 930, x0: O.s2[0] + 160, x1: O.s3[0] + 560, a: 196, b: 292 }; // world coordinates
+const TL = { y: 930, x0: O.s2[0] + 160, x1: O.s3[0] + 560, a: 170, b: 282 }; // world coordinates, film frames
 const S2: React.FC<{ g: number }> = ({ g }) => (
   <Scene o={O.s2}>
     <Card x={160} y={190} w={760} h={610} style={rise(g, 132, 26, 70, 0.04, 0.25)}>
@@ -241,7 +244,7 @@ const S2: React.FC<{ g: number }> = ({ g }) => (
     <div style={{ position: "absolute", left: 1030, top: 290 }}>
       <Eyebrow g={g} at={146} text="JULY 2024" />
       <Words g={g} at={150} text="He co-founded K.B Consultancy" size={88} period width={800} style={{ marginTop: 22 }} blue={["K.B", "Consultancy"]} />
-      <Words g={g} at={172} text="The technical team growing businesses don't have to hire yet." size={36} weight={500} color={C.muted} stagger={1.2} width={740} lh={1.32} ls={-0.015} style={{ marginTop: 30 }} />
+      <Words g={g} at={172} text="The technical team you don’t have to hire yet." size={36} weight={500} color={C.muted} stagger={1.2} width={740} lh={1.32} ls={-0.015} style={{ marginTop: 30 }} />
     </div>
   </Scene>
 );
@@ -253,7 +256,7 @@ const Timeline: React.FC<{ g: number }> = ({ g }) => {
   const per = (TL.x1 - TL.x0) / 18;
   const month = Math.max(1, Math.ceil(h * 18 - 1e-6));
   const done = g >= TL.b;
-  const trackIn = cl((g - 186) / 12);
+  const trackIn = cl((g - 158) / 12);
   return (
     <>
       <div style={{ position: "absolute", left: TL.x0, top: TL.y - 2, width: TL.x1 - TL.x0, height: 4, borderRadius: 2, background: C.line, opacity: trackIn }} />
@@ -264,18 +267,18 @@ const Timeline: React.FC<{ g: number }> = ({ g }) => {
         return (
           <React.Fragment key={m}>
             <div style={{ position: "absolute", left: x - 1.5, top: TL.y + 10, width: 3, height: 14, borderRadius: 2, background: passed ? C.accent : C.line, opacity: trackIn }} />
-            {label && <div style={{ position: "absolute", left: x - 100, width: 200, top: TL.y + 34, textAlign: "center", fontFamily: FONT, fontSize: 22, fontWeight: 600, color: passed ? C.blue : C.muted, opacity: trackIn }}>{label}</div>}
+            {label && <div style={{ position: "absolute", left: x - 100, width: 200, top: TL.y + 34, textAlign: "center", fontFamily: FONT, fontSize: 22, fontWeight: 600, color: passed ? C.blue : C.muted, opacity: trackIn * (m === 12 ? cl((g - PANS[1].a) / 8) : 1) }}>{label}</div>}
           </React.Fragment>
         );
       })}
       {/* the start: founded */}
-      <div style={{ position: "absolute", left: TL.x0 - 13, top: TL.y - 13, width: 26, height: 26, borderRadius: "50%", background: C.blue, border: `5px solid ${C.white}`, boxSizing: "border-box", boxShadow: SH.soft, transform: `scale(${k(g, 188, 14)})` }} />
-      <div style={{ position: "absolute", left: TL.x0 - 20, top: TL.y + 36, ...rise(g, 190, 16, 14) }}><Chip text="Founded · Jul 2024" icon="check" style={{ background: C.white, boxShadow: SH.soft }} /></div>
+      <div style={{ position: "absolute", left: TL.x0 - 13, top: TL.y - 13, width: 26, height: 26, borderRadius: "50%", background: C.blue, border: `5px solid ${C.white}`, boxSizing: "border-box", boxShadow: SH.soft, transform: `scale(${k(g, 160, 14)})` }} />
+      <div style={{ position: "absolute", left: TL.x0 - 20, top: TL.y + 36, ...rise(g, 162, 16, 14) }}><Chip text="Founded · Jul 2024" icon="check" style={{ background: C.white, boxShadow: SH.soft }} /></div>
       {/* the head and its month counter */}
       {g >= TL.a && (
         <>
-          <div style={{ position: "absolute", left: hx - 16, top: TL.y - 16, width: 32, height: 32, borderRadius: "50%", background: C.accent, border: `6px solid ${C.white}`, boxSizing: "border-box", boxShadow: "0 0 0 10px rgba(121,185,255,.22)" }} />
-          <div style={{ position: "absolute", left: hx, top: TL.y - 82, transform: "translateX(-50%)", padding: "10px 22px", borderRadius: 999, background: done ? C.blue : C.ink, color: C.white, fontFamily: FONT, fontSize: 26, fontWeight: 700, whiteSpace: "nowrap", fontVariantNumeric: "tabular-nums", opacity: cl((g - TL.a) / 8) }}>
+          <div style={{ position: "absolute", zIndex: 4, left: hx - 16, top: TL.y - 16, width: 32, height: 32, borderRadius: "50%", background: C.accent, border: `6px solid ${C.white}`, boxSizing: "border-box", boxShadow: "0 0 0 10px rgba(121,185,255,.22)" }} />
+          <div style={{ position: "absolute", zIndex: 5, left: hx, top: TL.y - 82, transform: "translateX(-50%)", padding: "10px 22px", borderRadius: 999, background: done ? C.blue : C.ink, color: C.white, fontFamily: FONT, fontSize: 26, fontWeight: 700, whiteSpace: "nowrap", fontVariantNumeric: "tabular-nums", opacity: cl((g - TL.a) / 8) }}>
             {done ? "18 months" : `Month ${month}`}
           </div>
         </>
@@ -286,7 +289,7 @@ const Timeline: React.FC<{ g: number }> = ({ g }) => {
 
 // ---------- S3: the valuation ----------
 const S3: React.FC<{ g: number }> = ({ g }) => {
-  const v = 2_000_000 * outCubic(cl((g - 296) / 42));
+  const v = Math.round((2_000_000 * outCubic(cl((g - 296) / 42))) / 100_000) * 100_000;
   const stem = k(g, 290, 12, MOVE);
   const numSize = Math.floor(150 * Math.min(1, 780 / measure("€2,000,000", 150, 700, -0.045)));
   return (
@@ -320,21 +323,17 @@ const S3: React.FC<{ g: number }> = ({ g }) => {
           <Avatar size={76} />
           <div>
             <div style={{ fontFamily: FONT, fontSize: 30, fontWeight: 700, color: C.ink, letterSpacing: "-0.02em" }}>Robin Bos</div>
-            <div style={{ fontFamily: FONT, fontSize: 22, fontWeight: 500, color: C.muted, marginTop: 2 }}>CEO &amp; Founder, K.B Consultancy</div>
+            <div style={{ fontFamily: FONT, fontSize: 22, fontWeight: 500, color: C.muted, marginTop: 2 }}>Founder, K.B Consultancy</div>
           </div>
         </div>
-        <div style={{ position: "absolute", left: 32, top: 132, width: 636, fontFamily: FONT, fontSize: 28, fontWeight: 500, color: C.ink, lineHeight: 1.38, letterSpacing: "-0.01em" }}>
+        <div style={{ position: "absolute", left: 32, top: 130, width: 636, fontFamily: FONT, fontSize: 31, fontWeight: 500, color: C.ink, lineHeight: 1.36, letterSpacing: "-0.015em" }}>
           <b>€2,000,000.</b> That’s our valuation after finishing our first ever fundraising for K.B Consultancy.
         </div>
-        <div style={{ position: "absolute", left: 32, top: 262, width: 636, height: 470, borderRadius: 20, overflow: "hidden", background: C.haze }}>
+        <div style={{ position: "absolute", left: 32, top: 286, width: 636, height: 440, borderRadius: 20, overflow: "hidden", background: C.haze }}>
           <Img src={staticFile("img/team-2m.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 72%", display: "block", opacity: cl((g - 330) / 14), transform: `scale(${1.12 - 0.12 * k(g, 330, 40)})` }} />
         </div>
-        <div style={{ position: "absolute", left: 32, top: 756, width: 636, fontFamily: FONT, fontSize: 25, fontWeight: 500, fontStyle: "italic", color: C.muted, lineHeight: 1.35, ...rise(g, 350, 18, 12) }}>
+        <div style={{ position: "absolute", left: 32, top: 752, width: 636, fontFamily: FONT, fontSize: 32, fontWeight: 600, fontStyle: "italic", color: C.ink, lineHeight: 1.32, letterSpacing: "-0.015em", ...rise(g, 336, 18, 12) }}>
           “It’s not the number that excites me. It’s the trust behind it.”
-        </div>
-        <div style={{ position: "absolute", left: 32, right: 32, top: 846, display: "flex", gap: 28, alignItems: "center", fontFamily: FONT, fontSize: 22, fontWeight: 600, color: C.muted, ...rise(g, 358, 16, 10) }}>
-          <span style={{ display: "flex", alignItems: "center", gap: 8 }}><Icon n="heart" size={24} color={C.blue} />Celebrated by his network</span>
-          <span style={{ display: "flex", alignItems: "center", gap: 8 }}><Icon n="chat" size={24} color={C.muted} />46 comments</span>
         </div>
       </Card>
     </Scene>
@@ -348,7 +347,7 @@ const S4: React.FC<{ g: number }> = ({ g }) => {
   const kpis: { n: number; suf: string; label: string; icon: keyof typeof ICON; at: number }[] = [
     { n: 25, suf: "", label: "client projects completed", icon: "folder", at: 470 },
     { n: 100, suf: "+", label: "automations built & integrated", icon: "bolt", at: 478 },
-    { n: 5, suf: "+", label: "languages projects delivered in", icon: "globe", at: 486 },
+    { n: 5, suf: "+", label: "languages delivered across projects", icon: "globe", at: 486 },
   ];
   const nav: [string, keyof typeof ICON][] = [["Overview", "grid"], ["Projects", "folder"], ["Automations", "bolt"], ["Clients", "users"], ["Growth", "trend"]];
   return (
@@ -420,14 +419,11 @@ const S5: React.FC<{ g: number }> = ({ g }) => (
       <Words g={g} at={616} text="He advises founders" size={100} period width={820} style={{ marginTop: 22 }} blue={["founders"]} />
       <Words g={g} at={632} text="On strategy, leadership, growth and capital." size={38} weight={500} color={C.muted} stagger={1.5} width={800} lh={1.3} ls={-0.015} style={{ marginTop: 26 }} />
     </div>
-    <div style={{ position: "absolute", left: 140, top: 560, display: "grid", gridTemplateColumns: "repeat(2, 400px)", gap: 20 }}>
-      {AREAS.map(([t, d, ic], i) => (
-        <div key={t} style={{ height: 150, borderRadius: 24, background: C.white, boxShadow: SH.soft, padding: "26px 26px", boxSizing: "border-box", display: "flex", gap: 20, alignItems: "flex-start", ...rise(g, 646 + i * 6, 18, 26, 0.04) }}>
-          <IconChip n={ic} size={60} />
-          <div>
-            <div style={{ fontFamily: FONT, fontSize: 28, fontWeight: 700, color: C.ink, letterSpacing: "-0.02em" }}>{t}</div>
-            <div style={{ fontFamily: FONT, fontSize: 20, fontWeight: 500, color: C.muted, marginTop: 6, lineHeight: 1.3 }}>{d}</div>
-          </div>
+    <div style={{ position: "absolute", left: 140, top: 560, display: "grid", gridTemplateColumns: "repeat(2, 412px)", gap: 16 }}>
+      {AREAS.map(([t, , ic], i) => (
+        <div key={t} style={{ height: 104, borderRadius: 24, background: C.white, boxShadow: SH.soft, padding: "0 20px", boxSizing: "border-box", display: "flex", gap: 16, alignItems: "center", ...rise(g, 646 + i * 6, 18, 26, 0.04) }}>
+          <IconChip n={ic} size={54} />
+          <div style={{ fontFamily: FONT, fontSize: 27, fontWeight: 700, color: C.ink, letterSpacing: "-0.025em", whiteSpace: "nowrap" }}>{t}</div>
         </div>
       ))}
     </div>
@@ -457,35 +453,36 @@ const S5: React.FC<{ g: number }> = ({ g }) => (
 
 // ---------- S6: let's talk ----------
 const S6: React.FC<{ g: number }> = ({ g }) => {
-  const btn = { x: 140, y: 690, w: 560, h: 108 };
+  const btn = { x: 140, y: 640, w: 560, h: 108 };
   const bc = { x: btn.x + btn.w / 2, y: btn.y + btn.h / 2 };
+  const tip = { x: btn.x + btn.w - 58, y: bc.y + 4 };   // on the arrow, clear of the label
   const cur = k(g, 812, 26, MOVE);
-  const cx = lerp(1180, bc.x + 120, cur), cy = lerp(1040, bc.y + 10, cur);
+  const cx = lerp(1180, tip.x, cur), cy = lerp(1040, tip.y, cur);
   const hover = k(g, 834, 8);
   const press = Math.sin(Math.PI * cl((g - 846) / 8));
   return (
     <Scene o={O.s6}>
-      <div style={{ position: "absolute", left: 1440 - 430, top: 560 - 430, width: 860, height: 860, borderRadius: "50%", background: `radial-gradient(closest-side, ${C.sky} 0%, ${C.sky}aa 45%, ${C.haze}00 100%)`, opacity: k(g, 760, 30) }} />
-      <div style={{ position: "absolute", left: 1440 - 365, top: 1080 - 1000, width: 730, height: 1000, ...rise(g, 768, 30, 120, 0, 0.2) }}>
+      <div style={{ position: "absolute", left: 1440 - 430, top: 560 - 430, width: 860, height: 860, borderRadius: "50%", background: `radial-gradient(closest-side, ${C.sky} 0%, ${C.sky}aa 45%, ${C.haze}00 100%)`, opacity: k(g, 744, 30) }} />
+      <div style={{ position: "absolute", left: 1440 - 365, top: 1080 - 1000, width: 730, height: 1000, ...rise(g, 750, 30, 140, 0, 0.05) }}>
         <Img src={staticFile("img/robin-cutout.png")} style={{ width: "100%", height: "100%", display: "block", filter: "drop-shadow(0 30px 40px rgba(14,32,56,.18))" }} />
       </div>
-      <div style={{ position: "absolute", left: 140, top: 230 }}>
+      <div style={{ position: "absolute", left: 140, top: 190 }}>
         <Eyebrow g={g} at={770} text="ROBIN BOS · CEO, ADVISOR, CONSULTANT" />
         <Words g={g} at={774} text="Let’s talk" size={176} period style={{ marginTop: 18 }} />
         <Words g={g} at={790} text="For advisory, business consulting, partnerships and company-building conversations." size={34} weight={500} color={C.muted} stagger={1} width={780} lh={1.35} ls={-0.015} style={{ marginTop: 28 }} />
       </div>
       <div style={{ position: "absolute", left: btn.x, top: btn.y, width: btn.w, height: btn.h, borderRadius: 999, background: hover > 0 ? `rgb(${lerp(14, 27, hover)},${lerp(32, 51, hover)},${lerp(56, 79, hover)})` : C.ink,
         display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 40px 0 46px", boxSizing: "border-box", boxShadow: `0 ${18 + hover * 8}px 40px -14px rgba(14,32,56,${0.45 + hover * 0.1})`,
-        ...rise(g, 800, 20, 30, 0.05), ...(g >= 846 ? { transform: `scale(${1 - press * 0.035})` } : {}) }}>
+        ...rise(g, 788, 20, 30, 0.05), ...(g >= 846 ? { transform: `scale(${1 - press * 0.035})` } : {}) }}>
         <span style={{ fontFamily: FONT, fontSize: 40, fontWeight: 700, color: C.white, letterSpacing: "-0.02em" }}>Start a conversation</span>
         <Icon n="arrow" size={40} color={C.white} stroke={2.4} style={{ transform: `translate(${press * 5}px, ${-press * 5}px)` }} />
       </div>
-      <div style={{ position: "absolute", left: btn.x + 6, top: 850, display: "flex", flexDirection: "column", gap: 14 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 14, fontFamily: FONT, fontSize: 32, fontWeight: 600, color: C.ink, ...rise(g, 808, 18, 14) }}><Icon n="mail" size={32} color={C.blue} />robin@kruslockbosconsultancy.com</div>
-        <div style={{ display: "flex", alignItems: "center", gap: 14, fontFamily: FONT, fontSize: 32, fontWeight: 600, color: C.blue, ...rise(g, 814, 18, 14) }}><Icon n="link" size={32} color={C.blue} />linkedin.com/in/robindanielbos</div>
+      <div style={{ position: "absolute", left: btn.x + 4, top: 798, display: "flex", flexDirection: "column", gap: 16 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 16, fontFamily: FONT, fontSize: 46, fontWeight: 600, color: C.ink, letterSpacing: "-0.02em", ...rise(g, 792, 18, 14) }}><Icon n="mail" size={44} color={C.blue} />robin@kruslockbosconsultancy.com</div>
+        <div style={{ display: "flex", alignItems: "center", gap: 16, fontFamily: FONT, fontSize: 46, fontWeight: 600, color: C.blue, letterSpacing: "-0.02em", ...rise(g, 796, 18, 14) }}><Icon n="link" size={44} color={C.blue} />linkedin.com/in/robindanielbos</div>
       </div>
-      <Ripple g={g} at={846} x={bc.x + 120} y={bc.y + 10} color={C.white} />
-      {g >= 810 && <Cursor x={cx} y={cy} press={press} o={cl((g - 810) / 6)} />}
+      <Ripple g={g} at={846} x={tip.x} y={tip.y} color={C.white} />
+      {g >= 810 && g < 880 && <Cursor x={cx} y={cy} press={press} o={cl((g - 810) / 6) * (1 - cl((g - 862) / 10))} />}
     </Scene>
   );
 };
@@ -503,13 +500,13 @@ const World: React.FC = () => {
         <div style={{ position: "absolute", left: -1400, top: -1200, width: 9000, height: 4800, background: BG,
           backgroundImage: "radial-gradient(circle, #D5E0EC 2px, rgba(213,224,236,0) 2.6px)", backgroundSize: "44px 44px" }} />
         {glow(1300, 560)}{glow(3300, 520)}{glow(5100, 560)}{glow(5300, 1840)}{glow(3300, 1820)}{glow(1400, 1860)}
-        <S1 g={g} />
-        <S2 g={g} />
+        <S1 g={g + SHIFT.s1} />
+        <S2 g={g + SHIFT.s2} />
         <Timeline g={g} />
-        <S3 g={g} />
-        <S4 g={g} />
-        <S5 g={g} />
-        <S6 g={g} />
+        <S3 g={g + SHIFT.s3} />
+        <S4 g={g + SHIFT.s4} />
+        <S5 g={g + SHIFT.s5} />
+        <S6 g={g + SHIFT.s6} />
       </div>
     </AbsoluteFill>
   );
