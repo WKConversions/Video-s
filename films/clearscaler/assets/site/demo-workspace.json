@@ -1,0 +1,390 @@
+{
+ "_source": "https://www.clearscaler.com/assets/index-fEDpQcFv.js (the site's demo-workspace data object, fetched 2026-10-05). Fictional companies: the site labels every product view 'Demo workspace' and says 'Product views use a demo workspace with fictional companies.'",
+ "name": "Wrenmoor Industrial",
+ "initials": "WI",
+ "host": "gtm.clearscaler.com",
+ "leads": [
+  {
+   "company": "Fernhollow Freight",
+   "domain": "fernhollowfreight.com",
+   "name": "Sofia Berglund",
+   "title": "Head of Growth",
+   "status": "Awaiting approval",
+   "fit": "Strong fit",
+   "updated": "12m ago"
+  },
+  {
+   "company": "Quillmoor Group",
+   "domain": "quillmoorgroup.com",
+   "name": "Marta Vogel",
+   "title": "Commercial Director",
+   "status": "Meeting booked",
+   "fit": "Strong fit",
+   "updated": "1h ago"
+  },
+  {
+   "company": "Brightwick Systems",
+   "domain": "brightwicksystems.com",
+   "name": "Daniel Halvorsen",
+   "title": "VP Sales",
+   "status": "Replied",
+   "fit": "Strong fit",
+   "updated": "3h ago"
+  },
+  {
+   "company": "Cobblereach Robotics",
+   "domain": "cobblereach.com",
+   "name": "Hannah Rahman",
+   "title": "Chief Revenue Officer",
+   "status": "Writing email",
+   "fit": "Strong fit",
+   "updated": "just now"
+  },
+  {
+   "company": "Oakvane Lines",
+   "domain": "oakvanelines.com",
+   "name": "Elena Duarte",
+   "title": "Head of Partnerships",
+   "status": "In outreach",
+   "fit": "Strong fit",
+   "updated": "1d ago"
+  },
+  {
+   "company": "Larkspan Analytics",
+   "domain": "larkspananalytics.com",
+   "name": "Leo Okafor",
+   "title": "Head of Marketing",
+   "status": "In outreach",
+   "fit": "Borderline",
+   "updated": "1d ago"
+  },
+  {
+   "company": "Ivelworth Components",
+   "domain": "ivelworth.com",
+   "name": "Omar Rios",
+   "title": "Operations Director",
+   "status": "In outreach",
+   "fit": "Strong fit",
+   "updated": "2d ago"
+  },
+  {
+   "company": "Pellbrook Supply",
+   "domain": "pellbrooksupply.com",
+   "name": "Tom Keller",
+   "title": "Managing Director",
+   "status": "On hold",
+   "fit": "Poor fit",
+   "updated": "3d ago"
+  },
+  {
+   "company": "Oakvane Lines",
+   "domain": "oakvanelines.com",
+   "name": "Priya Nair",
+   "title": "VP Commercial",
+   "status": "Quality check",
+   "fit": "Strong fit",
+   "updated": "4m ago"
+  },
+  {
+   "company": "Brightwick Systems",
+   "domain": "brightwicksystems.com",
+   "name": "Jonas Weber",
+   "title": "Head of Revenue Operations",
+   "status": "Awaiting approval",
+   "fit": "Strong fit",
+   "updated": "40m ago"
+  }
+ ],
+ "buckets": {
+  "total": 1284,
+  "inProgress": 46,
+  "needsApproval": 38,
+  "inOutreach": 812,
+  "replied": 57,
+  "onHold": 331
+ },
+ "analytics": {
+  "window": "Last 30 days",
+  "prevLabel": "previous 30 days",
+  "newLeads": {
+   "cur": 412,
+   "prev": 349
+  },
+  "reached": {
+   "cur": 1860,
+   "prev": 1676
+  },
+  "replies": {
+   "cur": 121,
+   "prev": 111
+  },
+  "meetings": {
+   "cur": 14,
+   "prev": 11
+  },
+  "daily": {
+   "replies": [
+    2,
+    6,
+    3,
+    6,
+    4,
+    1,
+    1,
+    3,
+    7,
+    4,
+    5,
+    3,
+    1,
+    1,
+    4,
+    7,
+    6,
+    6,
+    4,
+    2,
+    1,
+    5,
+    8,
+    6,
+    5,
+    4,
+    2,
+    1,
+    6,
+    7
+   ],
+   "meetings": [
+    0,
+    1,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1
+   ]
+  }
+ },
+ "score": {
+  "lead": 0,
+  "total": 87,
+  "max": 135,
+  "threshold": 60,
+  "layers": [
+   {
+    "label": "Structural fit",
+    "value": 24,
+    "max": 30
+   },
+   {
+    "label": "Pain signals",
+    "value": 36,
+    "max": 50
+   },
+   {
+    "label": "Timing signals",
+    "value": 14,
+    "max": 20
+   },
+   {
+    "label": "Commercial pressure",
+    "value": 8,
+    "max": 20
+   },
+   {
+    "label": "Buying committee",
+    "value": 5,
+    "max": 15
+   }
+  ],
+  "reasoning": "Hiring two pricing analysts, and the rates page has not moved since March 2025. The Head of Growth owns carrier sales."
+ },
+ "watch": {
+  "checked": "2026-09-21",
+  "page": "Rates page",
+  "status": "Unchanged for a long time",
+  "evidence": "Unchanged since March 2025",
+  "hook": "Your rates page still shows last year's lanes",
+  "snapshots": [
+   34,
+   30,
+   26,
+   22,
+   18
+  ],
+  "quiet": 2
+ },
+ "draft": {
+  "to": "sofia.berglund@fernhollowfreight.com",
+  "subject": "Last year's lanes",
+  "body": [
+   "Hi Sofia,",
+   "Your rates page still shows last year's lanes, and you are hiring two pricing analysts to keep quotes moving.",
+   "We help freight teams publish live lane pricing without adding headcount. Worth a short call to see if it fits how Fernhollow quotes today?",
+   "Anna"
+  ],
+  "touches": [
+   {
+    "n": 2,
+    "role": "follow-up"
+   },
+   {
+    "n": 3,
+    "role": "case study"
+   },
+   {
+    "n": 4,
+    "role": "breakup"
+   }
+  ]
+ },
+ "inbox": {
+  "filters": [
+   "All",
+   "Needs reply",
+   "Positive",
+   "Meetings"
+  ],
+  "conversations": [
+   {
+    "lead": 1,
+    "intent": "Interested",
+    "preview": "Good timing. Thursday works.",
+    "when": "1h ago"
+   },
+   {
+    "lead": 2,
+    "intent": "Not now",
+    "preview": "Come back to us in Q1.",
+    "when": "3h ago"
+   },
+   {
+    "lead": 5,
+    "intent": "Out of office",
+    "preview": "Back on Monday.",
+    "when": "1d ago"
+   }
+  ],
+  "thread": {
+   "lead": 1,
+   "sent": {
+    "subject": "A shorter quote cycle",
+    "body": "Hi Marta, noticed Quillmoor is opening two new depots this quarter. Open to a short call on how you quote the new routes?",
+    "when": "Tue 09:12"
+   },
+   "reply": {
+    "body": "Good timing. Thursday works.",
+    "when": "Wed 14:03"
+   },
+   "suggested": "Great, Marta. I will send an invite for Thursday at 10:00. Anything you want us to cover?",
+   "whatsapp": {
+    "preview": "Hi Marta, confirming Thursday at 10:00 with Wrenmoor Industrial. Reply here if anything changes."
+   }
+  }
+ },
+ "experiment": {
+  "name": "Opening line",
+  "meta": "Body prompt · even split · running",
+  "since": "2026-08-24",
+  "arms": [
+   {
+    "label": "Rates page question",
+    "sent": 420,
+    "replied": 33,
+    "meetings": 4,
+    "signal": "Leader"
+   },
+   {
+    "label": "Short plain ask",
+    "sent": 418,
+    "replied": 27,
+    "meetings": 3,
+    "signal": "22% likely to beat the leader"
+   },
+   {
+    "label": "Case study opener",
+    "sent": 412,
+    "replied": 20,
+    "meetings": 2,
+    "signal": "4% likely to beat the leader"
+   }
+  ]
+ },
+ "mailboxes": [
+  {
+   "address": "anna@trywrenmoor.com",
+   "health": 97
+  },
+  {
+   "address": "anna@wrenmoorhq.com",
+   "health": 95
+  },
+  {
+   "address": "anna@getwrenmoor.com",
+   "health": 92
+  }
+ ],
+ "digest": {
+  "date": "Mon 21 Sep",
+  "newLeads": 96,
+  "sent": 438,
+  "replies": 27,
+  "positive": 9,
+  "meetings": 3,
+  "topSource": "hiring signal (2)"
+ },
+ "whatsapp": {
+  "quality": "GREEN",
+  "templates": [
+   {
+    "name": "Meeting confirmation",
+    "category": "Utility",
+    "status": "Approved",
+    "preview": "Hi {{first_name}}, confirming {{day}} at {{time}} with Wrenmoor Industrial. Reply here if anything changes."
+   },
+   {
+    "name": "Reply follow-up",
+    "category": "Utility",
+    "status": "In review at Meta",
+    "preview": ""
+   },
+   {
+    "name": "Depot guide",
+    "category": "Marketing",
+    "status": "Draft",
+    "preview": ""
+   }
+  ]
+ },
+ "moments": {
+  "signal": "Signal · hiring 2 field techs",
+  "reply": {
+   "text": "Good timing. Thursday works."
+  },
+  "booked": "Meeting booked · Thu 10:00"
+ }
+}

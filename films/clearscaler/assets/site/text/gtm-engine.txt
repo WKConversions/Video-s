@@ -1,0 +1,614 @@
+ClearScaler GTM Engine: be in front of every buyer who fits
+Skip to content
+Product
+GTM Engine
+Outbound, built and run for you
+Paid Acquisition
+Meta, Google and LinkedIn, tracked to revenue
+Conversion
+Pages that turn visits into booked calls
+Leads
+Demo workspace
+Quillmoor Group
+Meeting booked
+Brightwick Systems
+Replied
+Oakvane Lines
+In outreach
+The GTM app
+Leads, inbox and meetings in one place
+Not ready to talk?
+Free distribution plan
+Who it's for
+Recruitment agencies
+BD is whoever has a spare hour
+Marketing & creative agencies
+New business is nobody's job
+Logistics & freight companies
+Sales is relationships plus RFQs
+B2B SaaS companies
+Founder-led sales has stalled
+B2B companies
+Sales depends on the founder
+Results
+Company
+About
+The two of us, and how we got here
+Blog
+Notes on what we build
+Contact
+Email, WhatsApp or book a call
+Client login
+Book a call
+GTM Engine
+Be in front of
+every buyer
+who fits.
+We find the buyers, write to each one by email, one person at a time, and handle every answer, inside your own workspace.
+Book a call
+No SDRs to hire · you own every lead · first sends in week four
+Already a client?
+Sign in to your workspace
+gtm.clearscaler.com
+/leads
+Demo workspace
+WI
+Wrenmoor Industrial
+Home
+Leads
+Inbox
+Meetings
+Analytics
+Email outreach
+Campaigns
+Lead sources
+Mailboxes
+Email health
+Verify emails
+Leads
+1,284 leads, from first research to booked meeting.
+Process waiting leads
+Add leads
+Total
+1,284
+In progress
+46
+Needs approval
+38
+In outreach
+812
+Replied
+57
+On hold
+331
+Table
+Pipeline
+In outreach
+812
+Replied
+57
+Needs approval
+38
+In progress
+46
+Being researched, scored, or written right now
+Cobblereach Robotics
+Hannah Rahman
+Strong fit
+just now
+Oakvane Lines
+Priya Nair
+Strong fit
+4m ago
+Needs approval
+38
+Waiting for your approval
+Fernhollow Freight
+Sofia Berglund
+Strong fit
+12m ago
+Brightwick Systems
+Jonas Weber
+Strong fit
+40m ago
+In outreach
+812
+Emails are going out to these leads
+Oakvane Lines
+Elena Duarte
+Strong fit
+1d ago
+Ivelworth Components
+Omar Rios
+Strong fit
+2d ago
+Larkspan Analytics
+Leo Okafor
+Borderline
+1d ago
+Replied
+57
+Got a reply or booked a meeting
+Quillmoor Group
+Marta Vogel
+Strong fit
+1h ago
+Brightwick Systems
+Daniel Halvorsen
+Strong fit
+3h ago
+On hold
+331
+Below your minimum score or needs review. Nothing is sent
+Pellbrook Supply
+Tom Keller
+Poor fit
+3d ago
+Reply from Marta Vogel · Interested
+How it runs
+Inside
+Twelve weeks
+Pricing
+FAQ
+What it has already produced
+Real · anonymised
+8
+8
+%
+Reply rate, first month of sending
+1
+Reply rate, first month of sending
+Measure
+Replies over 300 contacts
+Window
+12 Aug to 12 Sep 2026
+Source
+Campaign report
+Outbound
+B2B services · Replies over 300 contacts
+Clients who agreed to be named
+One loop,
+run every weekday.
+Every lead takes the same path. Nothing skips a check.
+Be seen
+Be chosen
+Find
+Research
+Score
+Hold
+Write
+Check
+Approve
+Send
+Follow up
+Reply
+Book
+Learn
+Be seen
+Find
+Research
+Score
+Hold
+Write
+Check
+Approve
+Be chosen
+Send
+Follow up
+Reply
+Book
+Learn
+Inside the engine
+01
+Find
+02
+Write
+03
+Protect
+04
+Reply
+05
+Learn
+06
+Report
+01
+Find
+02
+Write
+03
+Protect
+04
+Reply
+05
+Learn
+06
+Report
+01
+Find and score.
+Every account researched, every contact scored against your rubric, with the reason written down.
+We check whether our own scores predict replies.
+gtm.clearscaler.com
+/leads
+Demo workspace
+Sofia Berglund
+Head of Growth
+,
+Fernhollow Freight
+Strong fit
+Score breakdown
+Scored
+87
+out of a possible
+135
+· qualified
+Score on 0 to
+135
+scale
+Minimum to contact:
+60
+Qualified, scored
+87
+,
+27
+points above the
+60
+-point bar
+Structural fit
+24
+/
+30
+Pain signals
+36
+/
+50
+Timing signals
+14
+/
+20
+Commercial pressure
+8
+/
+20
+Buying committee
+5
+/
+15
+Why it scored this way
+Hiring two pricing analysts, and the rates page has not moved since March 2025. The Head of Growth owns carrier sales.
+Website watch
+Available on request
+Rates page
+·
+Unchanged since March 2025
+Checked
+21 Sep
+02
+Write and approve.
+One argument per sequence, written per person, checked before it can send.
+gtm.clearscaler.com
+/leads
+Demo workspace
+Research
+Sofia Berglund
+Head of Growth
+,
+Fernhollow Freight
+Strong fit
+Scored 87 of 135
+Job post
+Hiring two pricing analysts
+Website watch
+Rates page unchanged since March 2025
+Why it scored this way
+Hiring two pricing analysts, and the rates page has not moved since March 2025. The Head of Growth owns carrier sales.
+Draft · touch 1
+Edited by our team
+To
+sofia.berglund@fernhollowfreight.com
+Subject
+Last year's lanes
+Hi
+Sofia,
+I
+wanted
+to
+reach
+out
+about
+how
+freight
+teams
+can
+quote
+faster.
+Your rates page still shows last year's lanes, and you are hiring two pricing analysts to keep quotes moving.
+We
+help
+freight
+teams
+publish
+live
+lane
+pricing
+without
+adding
+headcount.
+Worth
+a
+short
+call
+to
+see
+if
+it
+fits
+how
+Fernhollow
+quotes
+today?
+Anna
+This email is waiting for your approval
+Approved
+Approve & send
+Rewrite
+Reject
+Sent from your mailbox
+03
+Your name stays safe.
+Separate sending domains, warmed for four weeks before anything sends.
+gtm.clearscaler.com
+/deliverability
+Demo workspace
+Email health
+How healthy your sending mailboxes are. Healthy mailboxes land in the inbox.
+anna@trywrenmoor.com
+Healthy
+Mailbox health
+97
+/100
+SPF
+DKIM
+DMARC
+anna@wrenmoorhq.com
+Healthy
+Mailbox health
+95
+/100
+SPF
+DKIM
+DMARC
+anna@getwrenmoor.com
+Healthy
+Mailbox health
+92
+/100
+SPF
+DKIM
+DMARC
+04
+Reply and book.
+Every reply classified, an answer drafted, sent from your mailbox in the same thread.
+Replies go out from your real mailbox, in the same thread.
+gtm.clearscaler.com
+/inbox
+Demo workspace
+All
+Needs reply
+Positive
+Meetings
+Marta Vogel
+1h ago
+Good timing. Thursday works.
+Interested
+Daniel Halvorsen
+3h ago
+Come back to us in Q1.
+Not now
+Leo Okafor
+1d ago
+Back on Monday.
+Out of office
+Marta Vogel
+Commercial Director
+,
+Quillmoor Group
+Interested
+Touch 1 ·
+Tue 09:12
+A shorter quote cycle
+Hi Marta, noticed Quillmoor is opening two new depots this quarter. Open to a short call on how you quote the new routes?
+Wed 14:03
+Good timing. Thursday works.
+Suggested reply, edit anything before sending
+Great, Marta. I will send an invite for Thursday at 10:00. Anything you want us to cover?
+Sends from your connected mailbox, threaded into this conversation.
+Send
+05
+Learn.
+Offers, subject lines and copy tested on replies and meetings, never on opens.
+Winners are called on replies, with the odds shown.
+gtm.clearscaler.com
+/experiments
+Demo workspace
+Opening line
+Body prompt · even split · running
+Running since
+2026-08-24
+· measured by who replies and books, not opens
+Arm
+Sent
+Replied
+Reply rate
+Meetings
+Signal
+Rates page question
+420
+33
+7.9
+%
+4
+Leader
+Short plain ask
+418
+27
+6.5
+%
+3
+22% likely to beat the leader
+Case study opener
+412
+20
+4.9
+%
+2
+4% likely to beat the leader
+06
+Report.
+A Monday summary of what went out, who replied and what got booked.
+Email · weekly summary
+Demo workspace
+Mon 21 Sep
+Your weekly outbound summary:
+3
+meetings booked
+Here’s what your engine did over the last 7 days:
+New leads sourced
+96
+Emails sent
+438
+Replies
+27
+Positive replies
+9
+Meetings booked
+3
+Top source
+hiring signal (2)
+Full detail is in your dashboard under Analytics. Nothing for you to do. The engine keeps running.
+The first twelve weeks.
+From build to scale.
+Weeks 1 to 4
+Build and warm. Nothing sends yet.
+Week 4
+First sends.
+Real · Case 01
+Weeks 4 to 12
+Test the offer, the subject line and the copy.
+Around month three
+Scale what earned it.
+We don't promise a meeting count.
+Engine, hire or agency.
+Compare with
+DIY
+In-house
+Agency
+We report booked meetings against the retainer, and tell you when it isn't working. How each option usually runs; your own setup may differ.
+Compared on
+ClearScaler
+Do it yourself
+Hire in-house
+An agency
+Channels
+Email, written per person
+Whatever there's time for
+What your hire knows
+Usually cold email alone
+Who you talk to
+Magnus or Kian, who run it
+Yourself
+Your hire, once trained
+An account manager
+Warm-up
+Four weeks, own domains
+Usually skipped
+Usually skipped
+Shared domains
+Message review
+Written per person, edited by us
+None
+Skipped
+A sample, if you ask
+Tuned
+Weekly, on results
+By hand, when there's time
+Quarterly
+In a monthly report
+What you pay for
+One build fee, one retainer, tools included. Every lead, domain and workflow stays yours.
+Tools, data and your hours
+Salary, ramp and tools
+A retainer, plus your tools
+Not for you if
+You want volume for its own sake.
+You need pipeline this fortnight.
+Nobody on your side can take a sales call.
+You want a dashboard rather than a decision.
+Before you ask
+What does it cost?
+The build fee is scoped on how many sending domains and mailboxes you need, the size of the list and how many channels run. The retainer is one number per month and holds while that setup holds. Nothing is charged per send and there are no tiers. You get both numbers, in writing, before anything is built.
+Who writes the emails, and do I approve every send?
+You never have to write anything. Our system drafts, a person on our side edits every message, and in the early months you approve every send before it goes out. That is deliberate: every approval, edit and rejection trains the engine on your market, and as the pattern gets clear your approvals narrow to the exceptions.
+How long before the first meeting is booked?
+Weeks one to four we build and warm, and nothing sends. The first campaigns go out around week four. First replies usually arrive in the first weeks of sending. Anyone promising booked meetings in week one is either sending from a cold domain or sending on somebody else's. Meetings you show up to, not a number we promise.
+Will this hurt our domain or brand?
+Outreach runs on separate sending domains we register and warm for you. Your main domain is never touched. Copy is written to sound like a person from your team, not a blast, and volume ramps gradually.
+Who owns the data and the domains?
+You do. Every lead, every sending domain, every workflow and all the campaign history. If you leave, it leaves with you.
+Can you run just one channel?
+Yes, and we will run it properly. Connected, the three compound: outbound replies tell you the real objection in the buyer's own words within weeks, that objection becomes the ad angle, paid tests it at volume in days, and what converts on the page tells both channels which promise is landing.
+Be seen.
+Be chosen.
+Built once. Tuned every week.
+Book a call
+Get your free distribution plan
+[img alt=""][img alt=""]
+30 minutes · no pitch
+Sources
+1
+Reply rate, first month of sending
+(
+Replies over 300 contacts,
+12 Aug to 12 Sep 2026
+.
+Campaign report
+)
+· As of
+25 September 2026
+Product views use a demo workspace with fictional companies. Client figures are marked Real and link to their source.
+We fix distribution for B2B companies.
+Book a call
+Málaga
+,
+Spain
+· Europe and the UAE
+What we do
+GTM Engine
+Paid Acquisition
+Conversion
+Free distribution plan
+Who it's for
+Recruitment agencies
+Marketing & creative agencies
+Logistics & freight companies
+B2B SaaS companies
+B2B companies
+Company
+Results
+About
+Blog
+Contact
+Client login
+Elsewhere
+LinkedIn
+Instagram
+WhatsApp
+magnus
+@
+clearscaler.com
+©
+2026
+ClearScaler
+Privacy
+Cookies
+Cookie settings
+Pause animations

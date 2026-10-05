@@ -1,0 +1,483 @@
+{
+ "_source": "https://www.clearscaler.com/assets/claims-Df6JCv7j.js, 2026-10-05. status 'verified' vs 'confirm' is the site's own internal flag; both render on the site.",
+ "asOf": "2026-09-25",
+ "claims": {
+  "reply-m1": {
+   "id": "reply-m1",
+   "value": "8%",
+   "label": "Reply rate, first month of sending",
+   "short": "8% reply rate, first month of sending",
+   "channel": "Outbound",
+   "client": "A B2B services company",
+   "descriptor": "B2B services · Outbound · Month one",
+   "consent": "anonymous",
+   "window": {
+    "from": "2026-08-12",
+    "to": "2026-09-12",
+    "text": "First month of sending"
+   },
+   "denominator": "Replies over 300 contacts",
+   "source": "Campaign report",
+   "asOf": "2026-09-25",
+   "status": "confirm",
+   "tier": "real-anon",
+   "resultId": "reply-rate"
+  },
+  "open-m1": {
+   "id": "open-m1",
+   "value": "55%",
+   "label": "Open rate, first month of sending",
+   "short": "55% open rate, first month of sending",
+   "channel": "Outbound",
+   "client": "A B2B services company",
+   "descriptor": "B2B services · Outbound · Month one",
+   "consent": "anonymous",
+   "window": {
+    "from": "2026-08-12",
+    "to": "2026-09-12",
+    "text": "First month of sending"
+   },
+   "denominator": "Opens over 1,200 emails",
+   "source": "Campaign report",
+   "asOf": "2026-09-25",
+   "status": "verified",
+   "tier": "real-anon",
+   "resultId": "reply-rate"
+  },
+  "contacts-m1": {
+   "id": "contacts-m1",
+   "value": "300",
+   "label": "People contacted",
+   "short": "300 people contacted",
+   "channel": "Outbound",
+   "client": "A B2B services company",
+   "descriptor": "B2B services · Outbound · Month one",
+   "consent": "anonymous",
+   "window": {
+    "from": "2026-08-12",
+    "to": "2026-09-12",
+    "text": "First month of sending"
+   },
+   "source": "Campaign report",
+   "asOf": "2026-09-25",
+   "status": "confirm",
+   "tier": "real-anon",
+   "resultId": "reply-rate"
+  },
+  "sends-m1": {
+   "id": "sends-m1",
+   "value": "1,200",
+   "label": "Emails sent across four steps",
+   "short": "1,200 emails across four steps",
+   "channel": "Outbound",
+   "client": "A B2B services company",
+   "descriptor": "B2B services · Outbound · Month one",
+   "consent": "anonymous",
+   "window": {
+    "from": "2026-08-12",
+    "to": "2026-09-12",
+    "text": "First month of sending"
+   },
+   "source": "Campaign report",
+   "asOf": "2026-09-25",
+   "status": "confirm",
+   "tier": "real-anon",
+   "resultId": "reply-rate"
+  },
+  "roas-3-5": {
+   "id": "roas-3-5",
+   "value": "3x to 5x",
+   "shape": "change",
+   "label": "Return as ad spend rose sixfold",
+   "short": "3x to 5x return as spend rose sixfold",
+   "channel": "Paid acquisition",
+   "client": "A travel logistics business in the UAE",
+   "descriptor": "Travel logistics · UAE · Paid · Seven months",
+   "consent": "anonymous",
+   "window": {
+    "text": "Seven months"
+   },
+   "denominator": "Revenue over ad spend",
+   "source": "Google Ads data and client revenue reports",
+   "asOf": "2026-09-25",
+   "status": "verified",
+   "tier": "real-anon",
+   "resultId": "spend-6x"
+  },
+  "spend-6x": {
+   "id": "spend-6x",
+   "value": "6x",
+   "shape": "change",
+   "label": "Monthly ad spend, $3k to $20k",
+   "short": "Ad spend up sixfold, from $3k to $20k a month",
+   "channel": "Paid acquisition",
+   "client": "A travel logistics business in the UAE",
+   "descriptor": "Travel logistics · UAE · Paid · Seven months",
+   "consent": "anonymous",
+   "window": {
+    "text": "Seven months"
+   },
+   "source": "Google Ads data",
+   "asOf": "2026-09-25",
+   "status": "verified",
+   "tier": "real-anon",
+   "resultId": "spend-6x"
+  },
+  "revenue-15-100": {
+   "id": "revenue-15-100",
+   "value": "$15k → $100k",
+   "shape": "change",
+   "label": "Monthly revenue in seven months",
+   "short": "Monthly revenue from $15k to $100k+ in seven months",
+   "channel": "Paid acquisition",
+   "client": "A travel logistics business in the UAE",
+   "descriptor": "Travel logistics · UAE · Paid · Seven months",
+   "consent": "anonymous",
+   "window": {
+    "text": "Seven months"
+   },
+   "source": "Client revenue reports",
+   "asOf": "2026-09-25",
+   "status": "confirm",
+   "tier": "real-anon",
+   "resultId": "spend-6x"
+  },
+  "paid-share-90": {
+   "id": "paid-share-90",
+   "value": "~90%",
+   "label": "New customers from paid",
+   "short": "About 90% of new customers from paid",
+   "channel": "Paid acquisition",
+   "client": "A travel logistics business in the UAE",
+   "descriptor": "Travel logistics · UAE · Paid · Seven months",
+   "consent": "anonymous",
+   "window": {
+    "text": "Seven months"
+   },
+   "source": "Client revenue reports",
+   "asOf": "2026-09-25",
+   "status": "confirm",
+   "tier": "real-anon",
+   "resultId": "spend-6x"
+  },
+  "cpcv": {
+   "id": "cpcv",
+   "value": "€3.20 to €4.50",
+   "shape": "range",
+   "label": "Cost per application, each",
+   "short": "€3.20 to €4.50 per application",
+   "channel": "Paid acquisition",
+   "client": "Top Jobs Abroad",
+   "descriptor": "Top Jobs Abroad · Paid · Six months",
+   "consent": "named-with-figures",
+   "window": {
+    "text": "Six months"
+   },
+   "denominator": "Ad spend over applications",
+   "source": "Google and Meta ad accounts",
+   "asOf": "2026-09-25",
+   "status": "verified",
+   "tier": "real-named",
+   "resultId": "cost-per-cv"
+  },
+  "applications-300": {
+   "id": "applications-300",
+   "value": "300+",
+   "label": "Applications for under €1,200",
+   "short": "300+ applications for under €1,200 in total spend",
+   "channel": "Paid acquisition",
+   "client": "Top Jobs Abroad",
+   "descriptor": "Top Jobs Abroad · Paid · Six months",
+   "consent": "named-with-figures",
+   "window": {
+    "text": "Six months"
+   },
+   "source": "Google and Meta ad accounts",
+   "asOf": "2026-09-25",
+   "status": "verified",
+   "tier": "real-named",
+   "resultId": "cost-per-cv"
+  },
+  "return-10x": {
+   "id": "return-10x",
+   "value": "~10x",
+   "label": "Return",
+   "short": "~10x return",
+   "channel": "Paid acquisition",
+   "client": "Top Jobs Abroad",
+   "descriptor": "Top Jobs Abroad · Paid · Six months",
+   "consent": "named-with-figures",
+   "window": {
+    "text": "Six months"
+   },
+   "source": "Client figures, basis being confirmed",
+   "asOf": "2026-09-25",
+   "status": "confirm",
+   "tier": "real-named",
+   "resultId": "cost-per-cv"
+  },
+  "mobile-57-99": {
+   "id": "mobile-57-99",
+   "value": "57 to 99",
+   "shape": "change",
+   "label": "Mobile performance score",
+   "short": "Mobile performance score from 57 to 99",
+   "channel": "Conversion",
+   "client": "A premium brand in Dubai",
+   "descriptor": "Premium brand · Dubai · Conversion · Rebuild",
+   "consent": "anonymous",
+   "window": {
+    "text": "Before and after the rebuild"
+   },
+   "denominator": "Score out of 100",
+   "source": "Lighthouse mobile reports",
+   "asOf": "2026-09-25",
+   "status": "verified",
+   "tier": "real-anon",
+   "resultId": "mobile-57-99",
+   "change": true
+  },
+  "conv-20": {
+   "id": "conv-20",
+   "value": "+20%",
+   "label": "Conversion on traffic already paid for",
+   "short": "+20% conversion on traffic already paid for, after our page review",
+   "channel": "Conversion",
+   "client": "A travel logistics business in the UAE",
+   "descriptor": "Travel logistics · UAE · Conversion · Page review",
+   "consent": "anonymous",
+   "window": {
+    "text": "After our page review"
+   },
+   "source": "Client analytics",
+   "asOf": "2026-09-25",
+   "status": "verified",
+   "tier": "real-anon",
+   "resultId": "conversion-lift"
+  },
+  "timeline": {
+   "id": "timeline",
+   "value": "Week four",
+   "label": "First sends",
+   "short": "First sends around week four",
+   "channel": "Company",
+   "client": "ClearScaler",
+   "descriptor": "How every engagement runs",
+   "consent": "named",
+   "window": {
+    "text": "Every engagement"
+   },
+   "source": "Our onboarding process",
+   "asOf": "2026-09-25",
+   "status": "verified",
+   "tier": "real-named"
+  },
+  "plan-sla": {
+   "id": "plan-sla",
+   "value": "Two working days",
+   "label": "Free plan turnaround",
+   "short": "Plan back within two working days",
+   "channel": "Company",
+   "client": "ClearScaler",
+   "descriptor": "Free distribution plan",
+   "consent": "named",
+   "window": {
+    "text": "Every request"
+   },
+   "source": "Tracked in the CRM",
+   "asOf": "2026-09-25",
+   "status": "confirm",
+   "tier": "real-named"
+  },
+  "hire-cost": {
+   "id": "hire-cost",
+   "value": "$5k to $7k /mo",
+   "label": "A sales seat, fully loaded",
+   "short": "$5k to $7k a month for a sales seat",
+   "channel": "Company",
+   "client": "ClearScaler",
+   "descriptor": "Our estimate",
+   "consent": "named",
+   "window": {
+    "text": "Monthly"
+   },
+   "source": "Our estimate, not a market survey",
+   "asOf": "2026-09-25",
+   "status": "verified",
+   "tier": "estimate"
+  }
+ },
+ "clientConsent": [
+  {
+   "client": "Oftet",
+   "level": "named",
+   "assets": [
+    "logo",
+    "name"
+   ],
+   "surfaces": [
+    "logo-band"
+   ]
+  },
+  {
+   "client": "Top Jobs Abroad",
+   "level": "named-with-figures",
+   "assets": [
+    "logo",
+    "name",
+    "figures",
+    "quote"
+   ],
+   "surfaces": [
+    "logo-band",
+    "case-card"
+   ]
+  },
+  {
+   "client": "KB Consultancy",
+   "level": "named",
+   "assets": [
+    "logo",
+    "name"
+   ],
+   "surfaces": [
+    "logo-band",
+    "case-card"
+   ]
+  },
+  {
+   "client": "YouNomad",
+   "level": "named",
+   "assets": [
+    "logo",
+    "name"
+   ],
+   "surfaces": [
+    "logo-band",
+    "case-card"
+   ]
+  },
+  {
+   "client": "bFound",
+   "level": "named",
+   "assets": [
+    "logo",
+    "name"
+   ],
+   "surfaces": [
+    "logo-band"
+   ]
+  },
+  {
+   "client": "Talentify",
+   "level": "named",
+   "assets": [
+    "logo",
+    "name"
+   ],
+   "surfaces": [
+    "logo-band",
+    "case-card"
+   ]
+  },
+  {
+   "client": "Marzelle Sweets",
+   "level": "named",
+   "assets": [
+    "logo",
+    "name"
+   ],
+   "surfaces": [
+    "logo-band"
+   ]
+  },
+  {
+   "client": "WK Conversions",
+   "level": "named",
+   "assets": [
+    "logo",
+    "name"
+   ],
+   "surfaces": [
+    "logo-band"
+   ]
+  },
+  {
+   "client": "Coastal Designs",
+   "level": "named",
+   "assets": [
+    "logo",
+    "name"
+   ],
+   "surfaces": [
+    "logo-band"
+   ]
+  },
+  {
+   "client": "A B2B services company",
+   "level": "anonymous",
+   "assets": [
+    "figures"
+   ],
+   "surfaces": [
+    "case-card",
+    "results"
+   ]
+  },
+  {
+   "client": "A travel logistics business in the UAE",
+   "level": "anonymous",
+   "assets": [
+    "figures"
+   ],
+   "surfaces": [
+    "case-card",
+    "results"
+   ]
+  },
+  {
+   "client": "A premium brand in Dubai",
+   "level": "anonymous",
+   "assets": [
+    "figures"
+   ],
+   "surfaces": [
+    "results"
+   ]
+  },
+  {
+   "client": "An international placement agency",
+   "level": "anonymous",
+   "assets": [
+    "figures"
+   ],
+   "surfaces": [
+    "results"
+   ]
+  },
+  {
+   "client": "A pricing consultancy for AI and SaaS",
+   "level": "anonymous",
+   "assets": [],
+   "surfaces": [
+    "case-card"
+   ]
+  },
+  {
+   "client": "A home services company in Norway",
+   "level": "anonymous",
+   "assets": [],
+   "surfaces": [
+    "case-card"
+   ]
+  },
+  {
+   "client": "A technology company",
+   "level": "anonymous",
+   "assets": [],
+   "surfaces": [
+    "case-card"
+   ]
+  }
+ ]
+}
