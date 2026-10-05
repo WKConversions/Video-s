@@ -152,7 +152,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
           {rise1.map(({ c, r, at }) => {
             const p = T.k(g, at / 30, 0.53, ARRIVE);
             const pos = cell1(c, r);
-            const leaves = (c === 1 && r === 0) ? "w:bos-0.45" : (c === 1 && r === 1) ? "w:process-0.2" : (c === 0 && r === 1) ? "w:technology-0.45" : null;
+            const leaves = (c === 1 && r === 0) ? "w:bos-0.45" : (c === 1 && r === 1) ? "w:process-0.1" : (c === 0 && r === 1) ? "w:technology-0.45" : null;
             if (leaves && g >= F(leaves)) return null;              // it has left the wall: drawn by its travel below
             return <Sq key={`${c}${r}`} name={`w-${c}${r}`} x={pos.x} y={lerp(pos.y + 400, pos.y, p)} s={S} o={cl(p * 2.5)} style={{ filter: p > 0 && p < 0.7 ? `blur(${(1 - p) * 6}px)` : undefined }} />;
           })}
@@ -166,7 +166,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       )}
       {between(g, "w:bos-0.45", "w:businesses-0.02") && <Travel g={g} at="w:bos" dur={0.4} early={0.45} from={[cell1(1, 0).x - tuck, cell1(1, 0).y - lift + settle * 6, S]} to={[periodBOS.x, periodBOS.y, PER.display]} name="period" />}
       {between(g, "w:businesses-0.02", "w:founded") && <Travel g={g} at="w:businesses" dur={0.4} early={0.0} from={[periodBOS.x, periodBOS.y, PER.display]} to={[pPeople.x, pPeople.y, PER.state]} name="period" />}
-      {between(g, "w:process-0.2", "w:founded") && <Travel g={g} at="w:process" dur={0.4} early={0.2} from={[cell1(1, 1).x - tuck, cell1(1, 1).y - PITCH + 6, S]} to={[pProcess.x, pProcess.y, PER.state]} name="period2" />}
+      {between(g, "w:process-0.1", "w:founded") && <Travel g={g} at="w:process" dur={0.4} early={0.1} from={[cell1(1, 1).x - tuck, cell1(1, 1).y - PITCH + 6, S]} to={[pProcess.x, pProcess.y, PER.state]} name="period2" />}
       {between(g, "w:technology-0.45", "w:founded") && <Travel g={g} at="w:technology" dur={0.4} early={0.45} from={[cell1(0, 1).x - tuck, cell1(0, 1).y - PITCH + 6, S]} to={[pTech.x, pTech.y, PER.state]} name="period3" />}
       {/* the three periods gather into one square on "co-founded", after the words have gone */}
       {between(g, "w:founded", "w:kay-0.13") && [pPeople, pProcess, pTech].map((p, i) => <Travel key={i} g={g} at="w:founded" dur={0.32} from={[p.x + 120, p.y, PER.state]} to={[gatherPt.x, gatherPt.y, 90]} early={0.0} name={`gather${i}`} />)}
@@ -181,7 +181,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       {between(g, "w:people-0.4", "w:kay") && (
         <div data-probe="statement" style={{ position: "absolute", left: 0, top: 0, transform: `translateX(${stateOut * 120}px)`, opacity: 1 - stateOut, filter: stateOut > 0 ? `blur(${stateOut * 8}px)` : undefined }}>
           <Line g={g} words={[{ t: "People", at: "w:people-0.13" }]} x={TYPE1} y={stRow(0)} size={STATE} weight={500} dy={0.6} style={{ opacity: 1 - 0.45 * k(g, "w:process", 0.27, MOVE, 0.13) }} />
-          <Line g={g} words={[{ t: "Process", at: "w:process-0.13" }]} x={TYPE1} y={stRow(1)} size={STATE} weight={500} dy={0.6} style={{ opacity: 1 - 0.45 * k(g, "w:technology", 0.27, MOVE, 0.13) }} />
+          <Line g={g} words={[{ t: "Process", at: "w:process-0.03" }]} x={TYPE1} y={stRow(1)} size={STATE} weight={500} dy={0.6} style={{ opacity: 1 - 0.45 * k(g, "w:technology", 0.27, MOVE, 0.13) }} />
           <Line g={g} words={[{ t: "Technology", at: "w:technology-0.13", color: C.blue }]} x={TYPE1} y={stRow(2)} size={STATE} weight={500} dy={0.6} />
         </div>
       )}
