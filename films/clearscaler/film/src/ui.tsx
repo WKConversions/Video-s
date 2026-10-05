@@ -15,12 +15,12 @@ export const mix = (a: string, b: string, k: number) => {
 };
 
 // ---------- captions ----------
-const Words: React.FC<{ g: number; text: string; from: number; keys: string[]; size: number; color?: string }> = ({ g, text, from, keys, size, color = C.ink }) => {
+const Words: React.FC<{ g: number; text: string; from: number; keys: string[]; size: number; color?: string; times?: number[] }> = ({ g, text, from, keys, size, color = C.ink, times }) => {
   const t = g / 30;
   return (
     <div style={{ display: "flex", gap: "0.24em", fontFamily: F.display, fontWeight: 600, fontSize: size, lineHeight: 1.08, letterSpacing: "-0.03em", whiteSpace: "nowrap" }}>
       {text.split(" ").map((w, i) => {
-        const tw = from + i * WORD_STEP;
+        const tw = times ? times[i] : from + i * WORD_STEP;
         const appear = clamp01((t - (tw - 0.1)) / 0.1);
         const bright = ARRIVE(clamp01((t - tw) / 0.22));
         const key = keys.includes(w);
@@ -42,11 +42,12 @@ export const Captions: React.FC<{ g: number }> = ({ g }) => {
         if (t < c.at - 0.2 || t > out + 0.4) return null;
         const o = tk(g, out, 0.24, DEPART);
         let i = 0;
-        const starts = c.lines.map((ln) => { const s = c.at + i * WORD_STEP; i += ln.split(" ").length; return s; });
+        const starts = c.lines.map((ln) => { const s = i; i += ln.split(" ").length; return s; });
+        const tt = (k: number, n: number) => (c.times ? c.times.slice(k, k + n) : Array.from({ length: n }, (_, j) => c.at + (k + j) * WORD_STEP));
         return (
           <div key={c.id} data-probe={`cap-${c.id}`} style={{ position: "absolute", left: 120, bottom: 108, opacity: 1 - o, transform: `translateY(${-16 * o}px)`, willChange: "transform" }}>
-            {c.lines.map((ln, li) => <Words key={li} g={g} text={ln} from={starts[li]} keys={c.key} size={68} />)}
-            {c.sub && <div style={{ marginTop: 6 }}><Words g={g} text={c.sub} from={c.at + i * WORD_STEP} keys={[]} size={46} color={C.ink2} /></div>}
+            {c.lines.map((ln, li) => <Words key={li} g={g} text={ln} from={0} times={tt(starts[li], ln.split(" ").length)} keys={c.key} size={68} />)}
+            {c.sub && <div style={{ marginTop: 6 }}><Words g={g} text={c.sub} from={0} times={tt(i, c.sub.split(" ").length)} keys={[]} size={46} color={C.ink2} /></div>}
           </div>
         );
       })}

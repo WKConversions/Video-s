@@ -1,7 +1,8 @@
 // The film: one continuous stage under one breathing camera (motion/camera.md), with a running-mean motion blur around
-// the camera. Silent by brief: no audio track.
+// the camera; the sound (voice-over, music, effects: sound/cues.json) outside it.
 import React, { useEffect, useState } from "react";
-import { AbsoluteFill, Freeze, continueRender, delayRender, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Freeze, Sequence, continueRender, delayRender, staticFile, useCurrentFrame } from "remotion";
+import { Audio } from "@remotion/media";
 import { fontsReady } from "./fonts";
 import { breathe } from "./kinetic";
 import { C } from "./lib";
@@ -9,7 +10,7 @@ import { Story } from "./Story";
 import { DURATION } from "./clock";
 
 export const FILM_DURATION = DURATION;
-export type FilmProps = { blurSamples: number; audio?: "none" };
+export type FilmProps = { blurSamples: number; audio?: "mix" | "vo" | "none" };
 
 /** Camera motion blur as a running mean (from the Robin Bos film): sample i is composited at opacity 1/(i+1) over the
  *  samples before it, so the result is the exact average. The shutter is 180°: the samples span half a frame back. */
@@ -39,7 +40,7 @@ const Camera: React.FC = () => {
   );
 };
 
-export const Film: React.FC<FilmProps> = ({ blurSamples = 1 }) => {
+export const Film: React.FC<FilmProps> = ({ blurSamples = 1, audio = "mix" }) => {
   const [handle] = useState(() => delayRender("fonts"));
   const [ready, setReady] = useState(false);
   useEffect(() => { fontsReady.then(() => { setReady(true); continueRender(handle); }); }, [handle]);
@@ -47,6 +48,10 @@ export const Film: React.FC<FilmProps> = ({ blurSamples = 1 }) => {
   return (
     <AbsoluteFill style={{ background: C.night }}>
       {blurSamples > 1 ? <MotionBlur samples={blurSamples} shutterAngle={180}><Camera /></MotionBlur> : <Camera />}
+      {/* sound outside the blur wrapper (it renders its children once per sample) */}
+      {audio !== "none" && (
+        <Sequence from={0} layout="none"><Audio src={staticFile(audio === "mix" ? "audio/mix.wav" : "audio/vo.wav")} /></Sequence>
+      )}
     </AbsoluteFill>
   );
 };

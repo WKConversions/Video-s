@@ -1,0 +1,279 @@
+{
+ "fps": 30,
+ "frames": 1005,
+ "library": "lib",
+ "vo": {
+  "file": "../film/public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.2,
+  "fade_out": 1.5
+ },
+ "sfx": [
+  {
+   "id": "gen-swell",
+   "frame": 2,
+   "note": "the comet draws ClearScaler's loop",
+   "db": -4
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 68,
+   "note": "the light contracts to your reach",
+   "db": -5
+  },
+  {
+   "id": "gen-tick",
+   "frame": 70,
+   "note": "one of your own emails, by hand",
+   "db": -9
+  },
+  {
+   "id": "gen-tick",
+   "frame": 79,
+   "note": "one of your own emails, by hand",
+   "db": -9
+  },
+  {
+   "id": "gen-tick",
+   "frame": 88,
+   "note": "one of your own emails, by hand",
+   "db": -9
+  },
+  {
+   "id": "gen-tick",
+   "frame": 97,
+   "note": "one of your own emails, by hand",
+   "db": -9
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 125,
+   "note": "the research scan sweeps the market (mid-move)",
+   "db": -2
+  },
+  {
+   "id": "gen-appear",
+   "frame": 200,
+   "note": "the fits rise, the poor fits sink",
+   "db": -3
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 226,
+   "note": "the score card unfolds from Fernhollow",
+   "db": -4
+  },
+  {
+   "id": "gen-tick",
+   "frame": 234,
+   "note": "a rubric bar fills",
+   "db": -6
+  },
+  {
+   "id": "gen-tick",
+   "frame": 238,
+   "note": "a rubric bar fills",
+   "db": -6,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 241,
+   "note": "a rubric bar fills",
+   "db": -6,
+   "pitch": 4
+  },
+  {
+   "id": "gen-tick",
+   "frame": 245,
+   "note": "a rubric bar fills",
+   "db": -6,
+   "pitch": 5
+  },
+  {
+   "id": "gen-tick",
+   "frame": 248,
+   "note": "a rubric bar fills",
+   "db": -6,
+   "pitch": 7
+  },
+  {
+   "id": "gen-tap",
+   "frame": 270,
+   "note": "the bars join; 87 starts rolling",
+   "db": -4
+  },
+  {
+   "id": "gen-pop",
+   "frame": 280,
+   "note": "reason 1 lands in the card",
+   "db": -4
+  },
+  {
+   "id": "gen-pop",
+   "frame": 294,
+   "note": "reason 2 lands",
+   "db": -4,
+   "pitch": 2
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 318,
+   "note": "the card widens into the draft",
+   "db": -6
+  },
+  {
+   "id": "gen-whoosh-whip",
+   "frame": 348,
+   "note": "the generic line is struck",
+   "db": -8
+  },
+  {
+   "id": "gen-tap",
+   "frame": 401,
+   "note": "the click: Approve & send",
+   "db": 1
+  },
+  {
+   "id": "gen-stamp",
+   "frame": 405,
+   "note": "Approved",
+   "db": -5
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 431,
+   "note": "the draft folds into the email dot",
+   "db": -3
+  },
+  {
+   "id": "gen-pop",
+   "frame": 471,
+   "note": "the email lands at Fernhollow",
+   "db": -2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 477,
+   "note": "the next email leaves",
+   "db": -7
+  },
+  {
+   "id": "gen-tick",
+   "frame": 490,
+   "note": "the next email leaves",
+   "db": -7,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 502,
+   "note": "the next email leaves",
+   "db": -7,
+   "pitch": 4
+  },
+  {
+   "id": "gen-tick",
+   "frame": 515,
+   "note": "the next email leaves",
+   "db": -7,
+   "pitch": 5
+  },
+  {
+   "id": "gen-tick",
+   "frame": 527,
+   "note": "the next email leaves",
+   "db": -7,
+   "pitch": 7
+  },
+  {
+   "id": "gen-tick",
+   "frame": 540,
+   "note": "the next email leaves",
+   "db": -7,
+   "pitch": 9
+  },
+  {
+   "id": "gen-chime",
+   "frame": 534,
+   "note": "a reply: Interested",
+   "db": -3
+  },
+  {
+   "id": "gen-tap",
+   "frame": 542,
+   "note": "a reply: Not now",
+   "db": -7
+  },
+  {
+   "id": "gen-tap",
+   "frame": 550,
+   "note": "a reply: Out of office",
+   "db": -7
+  },
+  {
+   "id": "gen-appear",
+   "frame": 560,
+   "note": "Marta's reply grows out of Quillmoor",
+   "db": -5
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 602,
+   "note": "Thursday at 10:00 flies to the week",
+   "db": -5
+  },
+  {
+   "id": "gen-success",
+   "frame": 609,
+   "note": "Meeting booked"
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 640,
+   "note": "the market pulls back",
+   "db": -4
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 652,
+   "note": "the loop lights: Be seen, Be chosen",
+   "db": -3
+  },
+  {
+   "id": "gen-riser-1s",
+   "frame": 735,
+   "note": "the loop lifts off and becomes the 8 (riser ends on the %)",
+   "db": -4
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 735,
+   "note": "8%",
+   "db": -3
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 813,
+   "note": "the 8 turns into the logo (mid-turn)",
+   "db": -3
+  },
+  {
+   "id": "gen-impact-deep",
+   "frame": 828,
+   "note": "the logo lands",
+   "db": -11
+  },
+  {
+   "id": "gen-tap",
+   "frame": 912,
+   "note": "Book a call",
+   "db": -4
+  }
+ ]
+}

@@ -116,7 +116,7 @@ const EmailParts: React.FC<{ g: number; w: number }> = ({ g, w }) => {
   if (g / 30 < start - 0.05) return null;
   const t = g / 30;
   const row = (at: number) => ({ opacity: fadeIn(g, at, 6), transform: `translateY(${(1 - tk(g, at, 0.4)) * 12}px)` });
-  const typed = Math.floor(clamp01((t - L("generic")) / 0.7) * GENERIC.length);
+  const typed = Math.floor(clamp01((t - L("generic")) / 0.55) * GENERIC.length);
   const strike = tk(g, L("strike"), 0.35, MOVE);
   const dim = tk(g, L("approve"), 0.4);
   const words = PERSONAL.split(" ");
@@ -142,7 +142,7 @@ const EmailParts: React.FC<{ g: number; w: number }> = ({ g, w }) => {
         </div>
         <div style={{ marginTop: 2 }}>
           {words.map((wd, i) => {
-            const at = L("personal") + i * 0.055;
+            const at = L("personal") + i * 0.04;
             const k = tk(g, at, 0.22);
             const u = tk(g, at + 0.12, 0.18, MOVE);
             return (
@@ -390,13 +390,18 @@ export const Finale: React.FC<{ g: number }> = ({ g }) => {
       )}
       <div style={{ position: "absolute", left: 0, right: 0, top: 440, display: "flex", justifyContent: "center", gap: "0.24em", fontFamily: F.display, fontWeight: 600, fontSize: 112, letterSpacing: "-0.045em", lineHeight: 1 }}>
         {line.map((w, i) => {
-          const tw = L("line") + i * 0.16;
+          const tw = [26.82, 26.92, 28.0][i];
           const appear = clamp01((t - tw + 0.1) / 0.1), bright = ARRIVE(clamp01((t - tw) / 0.26));
           return <span key={i} style={{ opacity: appear * lerp(0.3, 1, bright), transform: `translateY(${(1 - appear) * 12}px)`, color: i === 2 ? mix(C.ink, C.orange, bright) : C.ink }}>{w}</span>;
         })}
       </div>
-      <div style={{ position: "absolute", left: 0, right: 0, top: 588, textAlign: "center", opacity: fadeIn(g, L("sub"), 6), transform: `translateY(${(1 - tk(g, L("sub"), 0.5)) * 12}px)`,
-        fontFamily: F.ui, fontWeight: 500, fontSize: 44, color: C.ink2, letterSpacing: "-0.01em" }}>Outbound, built and run for you.</div>
+      <div style={{ position: "absolute", left: 0, right: 0, top: 588, display: "flex", justifyContent: "center", gap: "0.26em", fontFamily: F.ui, fontWeight: 500, fontSize: 44, color: C.ink2, letterSpacing: "-0.01em" }}>
+        {"Outbound, built and run for you.".split(" ").map((w, i) => {
+          const tw = [29.06, 29.87, 30.22, 30.46, 30.77, 31.11][i];
+          const appear = clamp01((t - tw + 0.1) / 0.1), bright = ARRIVE(clamp01((t - tw) / 0.26));
+          return <span key={i} style={{ opacity: appear * lerp(0.3, 1, bright), transform: `translateY(${(1 - appear) * 10}px)`, color: i === 0 ? mix(C.ink2, C.ink, bright) : C.ink2 }}>{w}</span>;
+        })}
+      </div>
       <div style={{ position: "absolute", left: 0, right: 0, top: 690, display: "flex", justifyContent: "center", alignItems: "center", gap: 40 }}>
         <div data-probe="cta" style={{ height: 96, padding: "0 40px 0 44px", borderRadius: 16, background: C.orange, display: "flex", alignItems: "center", gap: 16, opacity: fadeIn(g, L("cta"), 6),
           transform: `translateY(${(1 - cta) * 22}px)`, fontFamily: F.ui, fontWeight: 600, fontSize: 44, color: C.night }}>
