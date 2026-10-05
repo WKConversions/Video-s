@@ -1,0 +1,6 @@
+node_modules/
+films/*/film/out/
+films/*/film/.remotion/
+films/*/film/src/__probe*.tsx
+*.log
+.DS_Store

@@ -1,0 +1,297 @@
+[
+ {
+  "id": "gen-whoosh-short",
+  "file": "sfx/whoosh/gen-whoosh-short.wav",
+  "category": "whoosh",
+  "character": "short, soft pass: a card or a word flying in",
+  "licence": "generated",
+  "sync": 0.26,
+  "transients": [
+   0.26
+  ],
+  "length": 0.95,
+  "lufs": null,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ]
+ },
+ {
+  "id": "gen-whoosh-medium",
+  "file": "sfx/whoosh/gen-whoosh-medium.wav",
+  "category": "whoosh",
+  "character": "medium pass: a camera move, a page pan",
+  "licence": "generated",
+  "sync": 0.5,
+  "transients": [
+   0.5
+  ],
+  "length": 1.3,
+  "lufs": null,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ]
+ },
+ {
+  "id": "gen-whoosh-whip",
+  "file": "sfx/whoosh/gen-whoosh-whip.wav",
+  "category": "whoosh",
+  "character": "fast, bright: a whip pan",
+  "licence": "generated",
+  "sync": 0.17,
+  "transients": [
+   0.17
+  ],
+  "length": 0.85,
+  "lufs": null,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ]
+ },
+ {
+  "id": "gen-whoosh-deep",
+  "file": "sfx/whoosh/gen-whoosh-deep.wav",
+  "category": "whoosh",
+  "character": "slow, low: a big pull-back or zoom",
+  "licence": "generated",
+  "sync": 0.8,
+  "transients": [
+   0.8
+  ],
+  "length": 1.7,
+  "lufs": null,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ]
+ },
+ {
+  "id": "gen-riser-1s",
+  "file": "sfx/riser/gen-riser-1s.wav",
+  "category": "riser",
+  "character": "one second into a reveal",
+  "licence": "generated",
+  "sync": 1.0,
+  "transients": [
+   1.0
+  ],
+  "length": 1.9,
+  "lufs": null,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ]
+ },
+ {
+  "id": "gen-riser-2s",
+  "file": "sfx/riser/gen-riser-2s.wav",
+  "category": "riser",
+  "character": "two seconds of build into a reveal",
+  "licence": "generated",
+  "sync": 2.0,
+  "transients": [
+   2.0
+  ],
+  "length": 2.9,
+  "lufs": null,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ]
+ },
+ {
+  "id": "gen-impact-soft",
+  "file": "sfx/impact/gen-impact-soft.wav",
+  "category": "impact",
+  "character": "soft low thump: a landing, a lock-in",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.0
+  ],
+  "length": 2.2,
+  "lufs": null,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ]
+ },
+ {
+  "id": "gen-impact-deep",
+  "file": "sfx/impact/gen-impact-deep.wav",
+  "category": "impact",
+  "character": "deeper, longer: a logo, the end card",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.0
+  ],
+  "length": 2.8,
+  "lufs": null,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ]
+ },
+ {
+  "id": "gen-stamp",
+  "file": "sfx/impact/gen-stamp.wav",
+  "category": "impact",
+  "character": "thud with a paper slap: a stamp",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.0
+  ],
+  "length": 1.1,
+  "lufs": null,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ]
+ },
+ {
+  "id": "gen-shimmer",
+  "file": "sfx/stinger/gen-shimmer.wav",
+  "category": "stinger",
+  "character": "bright sparkle: a reveal, a brand moment",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.0
+  ],
+  "length": 2.8,
+  "lufs": null,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ]
+ },
+ {
+  "id": "gen-swell",
+  "file": "sfx/swipe/gen-swell.wav",
+  "category": "swipe",
+  "character": "soft air swelling: a slow push, a scene breathing in",
+  "licence": "generated",
+  "sync": 0.9,
+  "transients": [
+   0.9
+  ],
+  "length": 2.6,
+  "lufs": null,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ]
+ },
+ {
+  "id": "gen-tick",
+  "file": "sfx/ticker/gen-tick.wav",
+  "category": "ticker",
+  "character": "generated ticker",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.26
+  ],
+  "length": 0.12,
+  "lufs": null,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "source": "generated (numpy), royalty-free"
+ },
+ {
+  "id": "gen-tap",
+  "file": "sfx/tap/gen-tap.wav",
+  "category": "tap",
+  "character": "generated tap",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.26
+  ],
+  "length": 0.15,
+  "lufs": null,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "source": "generated (numpy), royalty-free"
+ },
+ {
+  "id": "gen-pop",
+  "file": "sfx/pop/gen-pop.wav",
+  "category": "pop",
+  "character": "generated pop",
+  "licence": "generated",
+  "sync": 0.004,
+  "transients": [
+   0.26
+  ],
+  "length": 0.2,
+  "lufs": null,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "source": "generated (numpy), royalty-free"
+ },
+ {
+  "id": "gen-chime",
+  "file": "sfx/chime/gen-chime.wav",
+  "category": "chime",
+  "character": "generated chime",
+  "licence": "generated",
+  "sync": 0.003,
+  "transients": [
+   0.26
+  ],
+  "length": 0.9,
+  "lufs": null,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "source": "generated (numpy), royalty-free"
+ },
+ {
+  "id": "gen-success",
+  "file": "sfx/success/gen-success.wav",
+  "category": "success",
+  "character": "generated success",
+  "licence": "generated",
+  "sync": 0.12,
+  "transients": [
+   0.26
+  ],
+  "length": 0.7,
+  "lufs": null,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "source": "generated (numpy), royalty-free"
+ },
+ {
+  "id": "gen-appear",
+  "file": "sfx/appear-rise/gen-appear.wav",
+  "category": "appear-rise",
+  "character": "generated appear-rise",
+  "licence": "generated",
+  "sync": 0.2,
+  "transients": [
+   0.26
+  ],
+  "length": 0.4,
+  "lufs": null,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "source": "generated (numpy), royalty-free"
+ }
+]

@@ -1,0 +1,48 @@
+{
+  "client": "Robin Bos (robin-bos-profile / test.karlvankessel.workers.dev)",
+  "measured": {
+    "method": "scripts/brand_measure.py measure, k-means in CIELAB on 1440px screenshots and the favicon, 2026-10-05",
+    "hero": {"#FCFDFE": 0.585, "#EFF6FC": 0.244, "#D6E6F6": 0.064, "#0E2038": 0.047, "#38507E": 0.029, "#ADB9C5": 0.014, "#5E6E82": 0.009, "#D59476": 0.008},
+    "contact": {"#1B334F": 0.497, "#1F3B58": 0.177, "#142943": 0.152, "#254464": 0.127, "#FFFFFF": 0.022},
+    "favicon_r": {"#FFFFFF": 0.824, "#79B9FF": 0.169},
+    "kb_logo": {"#374E6B": 0.465, "#3C5472": 0.453, "#FFFFFF": 0.078}
+  },
+  "css": {
+    "--ink": "#0e2038", "--navy": "#162a43", "--blue": "#79b9ff", "--slate": "#3d4c61", "--muted": "#586b80", "--line": "#d9e3ee", "--pale": "#f3f7fb",
+    "technology_word": "#5078A0", "milestone_number": "#162F4E",
+    "portrait_backdrop": "linear-gradient(150deg,#c8e1fa 0%,#e3edf6 58%,#bbcee4 100%) + radial white highlight at 80% 10%, radius 32px",
+    "contact_section": "background var(--ink) #0e2038 (renders as a navy gradient #1B334F→#142943 with overlays)"
+  },
+  "palette": ["#FCFDFE", "#EFF6FC", "#D6E6F6", "#C8E1FA", "#BBCEE4", "#0E2038", "#162A43", "#1B334F", "#79B9FF", "#5078A0", "#586B80", "#D9E3EE", "#FFFFFF", "#374E6B"],
+  "tokens": {
+    "canvas": "#FCFDFE", "haze": "#EFF6FC", "mist": "#D6E6F6", "sky": "#C8E1FA",
+    "ink": "#0E2038", "navy": "#162A43", "field": "#1B334F",
+    "accent": "#79B9FF", "blue": "#5078A0", "muted": "#586B80", "line": "#D9E3EE", "white": "#FFFFFF",
+    "kb": "#374E6B"
+  },
+  "accent": "#79B9FF",
+  "contrast": {
+    "#0E2038/#FFFFFF": 16.4, "#0E2038/#F3F7FB": 15.2, "#79B9FF/#0E2038": 8.0, "#FFFFFF/#0E2038": 16.4, "#586B80/#FFFFFF": 5.5, "#5078A0/#FFFFFF": 4.6,
+    "#79B9FF/#FFFFFF": 2.1,
+    "rule": "the sky accent #79B9FF never carries text on white; on white it is a mark (the square, an underline, a fill); blue text on white uses #5078A0; on the navy field the accent carries text (8.0:1)"
+  },
+  "type": {
+    "family": "Manrope", "files": "public/fonts/manrope-{regular,medium,semibold,bold}.ttf",
+    "display": {"weight": 700, "tracking": "-0.08em", "leading": 1.18, "case": "UPPER", "example": "ROBIN BOS. at 181px on a 1440 page"},
+    "statement": {"weight": 500, "tracking": "-0.045em", "leading": 1.25, "example": "People. / Process. / Technology. (last word #5078A0)"},
+    "body": {"weight": 400, "color": "#586B80"},
+    "micro": {"weight": 600, "tracking": "0.085em", "case": "UPPER", "color": "#667B92", "example": "CURRENT POSITION"},
+    "numbers": {"weight": 500, "example": "€2M at 59px, #162F4E"}
+  },
+  "shapes": {"pill": 999, "card": 20, "backdrop": 32, "square_dot": "a 6px solid #79B9FF square (the period of BOS., the eyebrow bullet, the period of LET'S TALK.)", "icon_arrow": "arrow-up-right ↗ in a thin stroke"},
+  "shadows": {"card": "0 8px 35px #0e20381a, 0 0 0 1px #0e203807, inset 0 1px 2px #fff", "backdrop": "0 20px 55px #2948650d"},
+  "easing_on_site": "reveal: opacity 0→1, translateY 16px→0, .65s ease; hover .2s; nothing else",
+  "style": {
+    "mood": "calm, premium, direct; a founder's card, not a corporate deck",
+    "visual_language": "huge tight uppercase name, short stacked statements ending in a period, one sky-blue square as punctuation, white→pale-blue haze canvas, thin hairlines, glass pills; one deep-navy section (contact) at the end",
+    "imagery": "one studio cut-out of Robin on a pale blue gradient backdrop; company logos small and monochrome-ish; no stock",
+    "whitespace": "generous; content rests on hairlines and a 1280px grid",
+    "voice": "first person, plain, confident: 'I build businesses around people, process and technology.'"
+  },
+  "effects": "none beyond scroll reveals and a glass nav; no 3D, no particles, no video"
+}
