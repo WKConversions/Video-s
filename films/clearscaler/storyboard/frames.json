@@ -1,0 +1,499 @@
+{
+ "title": "ClearScaler GTM Film",
+ "eyebrow": "ClearScaler \u00b7 GTM Engine \u00b7 40 s \u00b7 silent \u00b7 16:9",
+ "headline": "Your market, <em>worked for you.</em>",
+ "subtitle": "A silent product film for ClearScaler's GTM platform, in their dark style. The viewer's market is drawn as one live isometric map, the way Karl's reference draws a store floor, with ClearScaler's own loop on its ground. ClearScaler researches the market, scores it, writes to the accounts that fit one person at a time, and the replies come back as a meeting in the calendar. Then the loop lifts off as the 8 of the real 8% and turns into the logo.",
+ "film": "film.mp4",
+ "poster": "frames/f1002.png",
+ "qc": {},
+ "direction": {
+  "Purpose": "Show what the GTM platform is and does for the viewer, muted, on the site and LinkedIn.",
+  "Audience": "Founders and commercial leads of B2B companies whose sales depend on the founder.",
+  "Format": "16:9, 1920\u00d71080, 30 fps, 40.0 s. Silent by brief: no voice, music or effects. Captions are the narration.",
+  "Core message": "ClearScaler finds the buyers who fit, writes to each one, and books the meetings into your calendar. You approve, and take the calls.",
+  "Thesis": "ClearScaler's GTM Engine works your whole market for you, shown on one dark map of that market.",
+  "Art direction": "From Karl's reference: one dark isometric world that models the domain (the viewer's market as account blocks), actors on paths, a status chip that flips, captions built word by word (grey to white), one accent colour for the product's work. ClearScaler's own motif, the hairline \u221e loop, lies on the ground from the first frame.",
+  "Brand": "ClearScaler's dark site: night #07080C, ink #EDEFF3, orange #FC7F48 for what ClearScaler does, green #4BC680 for replies and meetings (the app's own). Outfit, Manrope, Geist Mono. The logo stays monochrome; the orange comet over it is the site's decoration.",
+  "Motion": "Precise premium: the site's emphasis ease for arrivals, opacity on linear 5-frame ramps, no overshoot. The camera only breathes; the world turns 8\u00b0 over the film; the one pull-back is 18% on a cosine.",
+  "Transitions": "Out of an object (cards unfold from their block and fold back into it); layout transformation (the rubric bars become one score bar, the score card becomes the draft); object becomes the next thing (the draft folds into the orange dot, '10:00' drops into Thursday, the ground loop lifts off as the 8, the 8 turns into the logo).",
+  "Product data": "The site's own demo workspace (fictional companies, labelled 'Demo workspace' on every panel, as on the site). The only real figure is the 8% reply rate, shown with its measure, window, client type, source and 'Real \u00b7 anonymised'."
+ },
+ "beats": [
+  {
+   "id": "B1",
+   "time": "0.0\u20134.5 s",
+   "title": "The problem: distribution",
+   "caption": "Your offer isn't the problem. Your distribution is.",
+   "key": [
+    "offer",
+    "distribution"
+   ],
+   "idea": "The site's own About line. An orange comet draws ClearScaler's \u221e loop on the ground around the viewer's company while the market rises out of the dark. On 'distribution' the light contracts to a small ring: a few grey emails by hand reach the nearest accounts and stop at its edge. The rest of the market stays dark.",
+   "frames": [
+    {
+     "frame": 18,
+     "shows": "The comet drawing the loop around 'Your company'; the line builds",
+     "moves": "The market rises in a wave from the viewer's block"
+    },
+    {
+     "frame": 36,
+     "shows": "The loop drawn; 'offer' lit on your company",
+     "moves": "Your block's top lights; its tag rises"
+    },
+    {
+     "frame": 60,
+     "shows": "The whole market lit around you; the loop settles to a hairline",
+     "moves": "The world turns slowly; the camera breathes"
+    },
+    {
+     "frame": 90,
+     "shows": "'distribution': the light contracts to a ring",
+     "moves": "The ring spreads two streets and stops"
+    },
+    {
+     "frame": 117,
+     "shows": "Your own few emails, by hand, stopping at the ring",
+     "moves": "Grey dots travel to the nearest accounts; the ring's dashes crawl"
+    }
+   ]
+  },
+  {
+   "id": "B2",
+   "time": "4.7\u20137.0 s",
+   "title": "Every account researched",
+   "caption": "ClearScaler researches every account.",
+   "key": [
+    "every",
+    "account."
+   ],
+   "idea": "The ring turns orange and sweeps the whole market while a comet laps the loop; every block it passes fills with rows of data (the research, made physical, as the reference's scans fill its shelves). The GTM app's chip arrives and counts the leads up to the demo's 1,284.",
+   "frames": [
+    {
+     "frame": 138,
+     "shows": "The scan leaving the ring; the chip arrives",
+     "moves": "Scan sweeps outward; the count starts"
+    },
+    {
+     "frame": 162,
+     "shows": "The market researched; the count at 1,284",
+     "moves": "The wave reaches the far blocks"
+    }
+   ]
+  },
+  {
+   "id": "B3",
+   "time": "7.3\u201312.3 s",
+   "title": "Scored, with the reason",
+   "caption": "Every contact scored against your rubric. With the reason written down.",
+   "key": [
+    "rubric.",
+    "reason"
+   ],
+   "idea": "Fits rise with an orange edge; poor fits sink ('On hold \u00b7 nothing is sent', on its block). The score card unfolds from Fernhollow Freight: five rubric rows in the site's colours slide into one bar that crosses the 60-point minimum at 87 / 135. Then the two reasons fly out of the block into the card.",
+   "frames": [
+    {
+     "frame": 192,
+     "shows": "Fits rise with an orange edge",
+     "moves": "The score answers spread outward"
+    },
+    {
+     "frame": 237,
+     "shows": "'On hold \u00b7 nothing is sent', with a leader to its sunk block",
+     "moves": "Poor fits sink and dim"
+    },
+    {
+     "frame": 255,
+     "shows": "The rubric, from Fernhollow's pin",
+     "moves": "The card unfolds; the rows fill"
+    },
+    {
+     "frame": 288,
+     "shows": "The rows clear; the bars join into one",
+     "moves": "Layout transformation onto 0\u2013135"
+    },
+    {
+     "frame": 312,
+     "shows": "87 / 135, past the minimum of 60",
+     "moves": "The total rolls up; the tick grows in"
+    },
+    {
+     "frame": 330,
+     "shows": "The reasons: a job post, a website watch",
+     "moves": "They fly out of the block into the card"
+    }
+   ]
+  },
+  {
+   "id": "B4",
+   "time": "12.6\u201318.9 s",
+   "title": "Written per person, approved by you",
+   "caption": "Written per person. Approved by you, in the early months.",
+   "key": [
+    "per",
+    "person.",
+    "Approved"
+   ],
+   "idea": "The card moves to a close framing and becomes the draft (the reasons dock at its top as sources). The generic line types and is struck through; the personal sentence writes in, underlined as the site marks 'edited by our team'; the ask and 'Anna'. Quality check, then the viewer's one click.",
+   "frames": [
+    {
+     "frame": 354,
+     "shows": "The draft: subject 'Last year's lanes'",
+     "moves": "Reasons move aside then up; the card widens"
+    },
+    {
+     "frame": 390,
+     "shows": "The generic line, struck through",
+     "moves": "A line-through wipes across it"
+    },
+    {
+     "frame": 426,
+     "shows": "The personal sentence, from the two reasons",
+     "moves": "Words rise in; their underline draws"
+    },
+    {
+     "frame": 456,
+     "shows": "The ask and the sign-off; Quality check",
+     "moves": "Rows rise in; the chip flips"
+    },
+    {
+     "frame": 486,
+     "shows": "'This email is waiting for your approval'",
+     "moves": "The approval bar rises; the cursor arrives"
+    },
+    {
+     "frame": 510,
+     "shows": "Approve & send, clicked: Approved, sent from your mailbox",
+     "moves": "The button and the label roll"
+    }
+   ]
+  },
+  {
+   "id": "B5",
+   "time": "18.3\u201322.0 s",
+   "title": "One person at a time",
+   "caption": "One person at a time.",
+   "key": [
+    "at",
+    "a",
+    "time."
+   ],
+   "idea": "The approved draft folds into an orange dot at the viewer's block, and only that dot is orange while it travels the streets to Sofia at Fernhollow (the block lifts as it lands). Then the next ones leave, one after another; Marta Vogel at Quillmoor Group is one of them.",
+   "frames": [
+    {
+     "frame": 531,
+     "shows": "The approved draft closing on its way to your block",
+     "moves": "The card scales toward the route's start, content fading, tinting orange"
+    },
+    {
+     "frame": 555,
+     "shows": "The draft folding into the orange dot",
+     "moves": "Scales into the route's start, tinting orange"
+    },
+    {
+     "frame": 579,
+     "shows": "The one email on its way",
+     "moves": "The fits' orange steps back"
+    },
+    {
+     "frame": 612,
+     "shows": "Sofia Berglund \u00b7 Fernhollow Freight",
+     "moves": "The block lifts as the email lands"
+    },
+    {
+     "frame": 642,
+     "shows": "The next emails, one at a time; Marta Vogel \u00b7 Quillmoor Group",
+     "moves": "A new dot as the previous lands"
+    }
+   ]
+  },
+  {
+   "id": "B6",
+   "time": "22.3\u201327.9 s",
+   "title": "Replies, and the meeting",
+   "caption": "Every reply classified. Booked into your calendar.",
+   "key": [
+    "classified.",
+    "calendar."
+   ],
+   "idea": "Green dots come back along the same streets and are classified on the map: Interested, Not now, Out of office (the demo inbox's own). The chip now holds two leads: Marta on top, Sofia below, still in outreach. Marta's reply grows out of Quillmoor; the answer is drafted; 'Thursday at 10:00' lifts off and lands in the viewer's week.",
+   "frames": [
+    {
+     "frame": 681,
+     "shows": "Replies classified on the map; the chip stacks Marta above Sofia",
+     "moves": "Return routes draw; pins turn green"
+    },
+    {
+     "frame": 705,
+     "shows": "Interested \u00b7 Not now \u00b7 Out of office",
+     "moves": "Tags rise as each reply arrives"
+    },
+    {
+     "frame": 738,
+     "shows": "Marta's reply, out of Quillmoor",
+     "moves": "The card grows out of the block"
+    },
+    {
+     "frame": 768,
+     "shows": "The suggested answer",
+     "moves": "Typed; 'Thursday at 10:00' underlined in green"
+    },
+    {
+     "frame": 792,
+     "shows": "The week unfolds from your block",
+     "moves": "The pill flies to Thursday"
+    },
+    {
+     "frame": 819,
+     "shows": "Meeting booked \u00b7 Thu 10:00 \u00b7 Marta Vogel",
+     "moves": "The pill becomes the meeting; the chip flips"
+    }
+   ]
+  },
+  {
+   "id": "B7",
+   "time": "28.0\u201331.2 s",
+   "title": "One loop",
+   "caption": "One loop, run every weekday.",
+   "key": [
+    "One",
+    "loop,"
+   ],
+   "idea": "The week folds back into the viewer's block; the market pulls back gently and emails go out across it at once (replies from about one in eight). Then the traffic hands over to the loop on the ground: 'Be seen' in orange, 'Be chosen' in green, the site's own diagram.",
+   "frames": [
+    {
+     "frame": 864,
+     "shows": "The engine at scale",
+     "moves": "The world eases back 18%; many routes"
+    },
+    {
+     "frame": 897,
+     "shows": "The loop lights: Be seen, Be chosen",
+     "moves": "Comets run both lobes; the traffic fades"
+    },
+    {
+     "frame": 921,
+     "shows": "Your company at the crossing",
+     "moves": "Working hold"
+    }
+   ]
+  },
+  {
+   "id": "B8",
+   "time": "31.2\u201334.6 s",
+   "title": "Proof",
+   "caption": "",
+   "key": [],
+   "idea": "The market steps back and the loop lifts off the ground, stands upright and becomes the 8 of the film's one real figure: 8% reply rate, first month of sending, with its client type, measure, window and source, labelled Real \u00b7 anonymised.",
+   "frames": [
+    {
+     "frame": 951,
+     "shows": "The loop lifting off the ground",
+     "moves": "Every point glides from the ground to the upright 8"
+    },
+    {
+     "frame": 1002,
+     "shows": "8%, with its source",
+     "moves": "% and label build; the world turns behind"
+    }
+   ]
+  },
+  {
+   "id": "B9",
+   "time": "34.6\u201340.0 s",
+   "title": "Your distribution, fixed.",
+   "caption": "Your distribution, fixed.",
+   "key": [
+    "fixed."
+   ],
+   "idea": "The % and label leave; the 8 turns \u221290\u00b0 into the \u221e and lands white in the logo lockup; one orange comet laps it (the site's decoration); the wordmark slides out; the site's hero line answers the opening; the category; Book a call with Magnus's and Kian's faces.",
+   "frames": [
+    {
+     "frame": 1050,
+     "shows": "The 8 turning into the \u221e",
+     "moves": "Rotate, move and scale into the lockup"
+    },
+    {
+     "frame": 1077,
+     "shows": "ClearScaler, with one comet lap",
+     "moves": "The wordmark slides out from behind the mark"
+    },
+    {
+     "frame": 1101,
+     "shows": "Your distribution, fixed.",
+     "moves": "Word by word; 'fixed.' turns orange"
+    },
+    {
+     "frame": 1134,
+     "shows": "Outbound, built and run for you. \u00b7 Book a call",
+     "moves": "Button rises; faces and line follow"
+    },
+    {
+     "frame": 1188,
+     "shows": "End card",
+     "moves": "One slow push to the last frame"
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "Direction: taken from Karl's attached reference (a dark isometric world that models the domain, a status chip, captions built word by word, one accent for the product's work, a scale-out, stat, logo). Its store, palette, copy and layouts are not copied; the world here is the viewer's market, in ClearScaler's palette and type.",
+  "Karl's standing 'bright by default' is overridden by the brief, which names ClearScaler's dark style (thesis).",
+  "Every caption is ClearScaler's own copy (About, GTM Engine page, home, the logistics page's 'Run for you'): the film's words are theirs.",
+  "Product views are the site's demo workspace with fictional companies; every panel carries 'Demo workspace' as on the site. In the demo, Sofia (whose email we follow) has not replied; the reply and the meeting are Marta's, and the film shows them as two leads in one pipeline.",
+  "The only real number is the 8% reply rate (replies over 300 contacts, 12 Aug to 12 Sep 2026, campaign report, an anonymised B2B services company), as the site publishes it.",
+  "The site's hedges are kept inside the film: 'in the early months' (approval), 'Edited by our team', 'Suggested reply \u00b7 edit anything before sending', 'On hold \u00b7 nothing is sent'. No meeting count is implied.",
+  "The skill's busy check counts every block of the map as a separate thing (median 16); Karl's own reference reads BUSY on the same check (median 7). Clarity was judged by eye and by the reviewers instead: one focal panel at a time, the chip steps back while a card carries the beat.",
+  "The motion probe (element boxes per frame) logged duplicated, out-of-order frames under load in this sandbox; its LURCH lines were traced to those (frames 381 = 383, 384 = 385, 388 = 390). The camera measured within limits (22 px/s, 3.1 %/s). The pixel checks on the encode found no shake."
+ ],
+ "revisions": [
+  [
+   "A uniform field of small grey tiles; the hook had no subject",
+   "Fewer, larger account blocks; the viewer's company is the lit hero block; the light reveals the market, contracts to a ring on 'distribution', opens with the scan",
+   "The map read as texture; the K.B lesson: clear before busy"
+  ],
+  [
+   "Captions 'Most companies don't have an offer problem. / They have a reach problem.'",
+   "'Your offer isn't the problem. / Your distribution is.' (the site's About line)",
+   "The end line 'Your distribution, fixed.' now answers the opening word for word (story review)"
+  ],
+  [
+   "The reach beat held a faint dashed ring for 2 s",
+   "A visible ring, your own few grey emails stopping at its edge, the market beyond in the dark, crawling dashes",
+   "The weakest beat: limited reach rested on the caption alone"
+  ],
+  [
+   "ClearScaler's loop appeared only at 34 s",
+   "The site's hairline \u221e on the ground from frame 0, drawn by an orange comet as the hook, lapped by the scan, lit as 'Be seen / Be chosen', lifted off as the 8, turned into the logo",
+   "Brand review: the master motif was missing; story review: the ending left the world"
+  ],
+  [
+   "UI text at 19\u201330 px; the chip as loud as the cards",
+   "Read text at 36\u201344 px, captions 68 px, cards with fewer rows, the email in a close framing, the chip stepping back while a card leads",
+   "Legibility review (critical): unreadable in an embed or on a phone"
+  ],
+  [
+   "The score number rolled over the fading rubric rows",
+   "Rows clear in 7 frames first; the number rises into its own zone above the bar; bars in the site's colours, joining into the green total",
+   "Text on text for several frames (three reviews)"
+  ],
+  [
+   "The score card crossfaded into the draft",
+   "Score parts leave, the reasons move sideways then up, then the draft builds row by row",
+   "Motion review: a crossfade between layouts"
+  ],
+  [
+   "An orange strike bar and two off-by-one underlines",
+   "The site's own line-through (ink) and the inserted sentence underlined word by word",
+   "Brand and truth reviews: the wrong words were marked"
+  ],
+  [
+   "'Approved by you.' with a small grey 'in the early months'",
+   "'Approved by you, / in the early months.' as one caption",
+   "Truth review: the hedge was dropped in practice"
+  ],
+  [
+   "A green 'Approved'; one button only",
+   "A neutral Approved stamp, as in the app; Rewrite and Reject beside Approve & send; Quality check in the chip",
+   "Brand and truth reviews: green is for replies and meetings; nothing skips a check"
+  ],
+  [
+   "The draft folded into a line that crossed 'Your company' out",
+   "The whole card scales into the route's start and becomes the travelling dot on the same frame; the tag steps aside",
+   "Read as a strike-through (three reviews)"
+  ],
+  [
+   "Several bright emails at once on 'One person at a time.'",
+   "One bright dot at a time; the fits' orange steps back while the first email travels; Fernhollow lifts as it lands",
+   "Legibility and story reviews"
+  ],
+  [
+   "The chip swapped from Sofia to Marta just before the reply",
+   "Marta is tagged when her email lands; the chip stacks Marta (Interested) above Sofia (In outreach)",
+   "Truth review: it could read as Sofia replying"
+  ],
+  [
+   "Reply, suggested answer and calendar crowded the right side",
+   "The reply grows out of Quillmoor (top right) and folds back into it; the week unfolds from your block (left); '10:00' lands exactly on Thursday",
+   "Four panels at once; the pill slid under the calendar"
+  ],
+  [
+   "'Run for you, every week.' with '3 meetings booked'",
+   "'One loop, run every weekday.' with the loop on the ground; no meeting count",
+   "Truth review (critical): it implied a weekly meeting count; the site says it doesn't promise one"
+  ],
+  [
+   "A 50% crash zoom at 28 s (\u2248115 %/s)",
+   "An 18% pull-back on a cosine over 2.9 s (\u22489 %/s)",
+   "Motion review (critical): the film's biggest spike"
+  ],
+  [
+   "The logo mark turned orange",
+   "The mark stays white; one orange comet laps it, the site's decoration",
+   "Brand review (critical): the logo is always monochrome"
+  ],
+  [
+   "The 8% source line: measure and window only, 19 px",
+   "Client type, measure, window and source at 30 px, with 'Real \u00b7 anonymised'",
+   "Truth and legibility reviews"
+  ],
+  [
+   "End card without the category",
+   "'Outbound, built and run for you.' under the hero line; larger button and faces",
+   "Cold eyes: software or agency was unclear"
+  ],
+  [
+   "Proposed and rejected: a camera push-in per act; scoring out of 100",
+   "Kept: the camera only breathes; the score stays out of 135",
+   "Karl's K.B rule; the site's own scale"
+  ],
+  [
+   "Round 2: frame 0 was black (the autoplay poster)",
+   "Frame 0 is a finished picture: the market near you up, the comet already on its way, the first word on screen",
+   "Resolution check: the thumbnail is the first frame"
+  ],
+  [
+   "Round 2: the reasons overflowed their boxes; 'Website watch' flew through 'Job post'",
+   "Boxes size to their text; the second reason rises from below its slot; on 'reason' the score compacts to one row",
+   "Resolution check (new major): overprinting text"
+  ],
+  [
+   "Round 2: the score faded and the card grew empty before the draft",
+   "The score carries up toward the chip's 'Strong fit \u00b7 87 / 135' as the card opens; the draft starts writing at 12.9 s",
+   "Resolution check (new major): every change is a move"
+  ],
+  [
+   "Round 2: the click was a small button",
+   "A 300\u00d796 button with a 36 px label, a 72 px cursor and one orange ring on the click; the body dims behind it",
+   "The click is the line's subject"
+  ],
+  [
+   "Round 2: the week was a mostly empty 15-cell grid",
+   "Wed\u2013Fri \u00d7 10:00\u201311:00, the meeting a 258\u00d7118 tile with '10:00' and 'Marta Vogel'",
+   "The booked meeting is the subject"
+  ],
+  [
+   "Round 2: an orange comet ran over the logo",
+   "The logo stays white; the comet runs on the ground loop behind it, which stays as a ghost to the end",
+   "Brand rule: the logo is monochrome"
+  ],
+  [
+   "Round 2: the end was 9 s of type on near-black",
+   "The market stays at half strength behind a soft scrim, the loop still being run on the ground",
+   "The world the film built stays under the payoff"
+  ]
+ ],
+ "open": [
+  "The 8%: the site publishes it as Real, but ClearScaler's own claims list in the site code marks it 'confirm'. Get their nod before this film is published; without it, the stat beat can be cut and the loop turned straight into the logo.",
+  "Round-2 cold eyes still finds the first 2 s too quiet for a LinkedIn scroll and wanted proof, a face or the reply up front. Kept as the site's own opening line over the market (Karl's reference opens the same way); an alternative cut could open on Marta's 'Good timing. Thursday works.' and the meeting landing, then rewind into the market.",
+  "Round-2 cold eyes asked for a 0\u2013100 score and plainer company names; both are the site's own (scored out of 135; the demo workspace's fictional companies), so they stay unless ClearScaler wants the film to differ from the site.",
+  "The reference video's niche look was translated to ClearScaler's palette; if Karl wants the reference's yellow/blue accent logic instead of ClearScaler's orange/green, that's a token change.",
+  "A 9:16 cut for LinkedIn mobile: the stage keeps the subject inside the middle 60%, but cards would need re-layout.",
+  "Sound: silent by brief. If a version with a bed is wanted later, the cue points are the scan (4.8 s), the click (17.3 s), the meeting (26.75 s), the lift-off (31.2 s) and the logo (35.4 s)."
+ ],
+ "appendix": {
+  "Captions and timing": " 0.35\u2013 2.25 s  Your offer isn't the problem.\n 2.45\u2013 4.45 s  Your distribution is.\n 4.70\u2013 7.00 s  ClearScaler researches / every account.\n 7.30\u201310.30 s  Every contact scored / against your rubric.\n10.60\u201312.30 s  With the reason written down.\n12.60\u201316.90 s  Written per person.\n17.25\u201318.90 s  Approved by you, / in the early months.\n19.20\u201322.00 s  One person at a time.\n22.30\u201324.90 s  Every reply classified.\n25.20\u201327.90 s  Booked into your calendar.\n28.30\u201331.00 s  One loop, / run every weekday.",
+  "Variety check": "B1 spatial (reach ring) \u00b7 wide \u00b7 sparse\nB2 pattern (scan) \u00b7 wide \u00b7 rising\nB3 quantity + UI (score) \u00b7 medium (block + card)\nB4 UI demonstration \u00b7 close (the draft)\nB5 path, one at a time \u00b7 wide\nB6 before/after on the same streets, UI \u00b7 medium\nB7 scale-out, the loop \u00b7 widest\nB8 number filling the frame \u00b7 type\nB9 logo and CTA \u00b7 centred (the one centred scene)\nThree distances, one centred scene, card layouts in two non-adjacent stretches; the primary element changes kind every beat.",
+  "Continuity": "The viewer's block and the loop's crossing persist from 0 s to 31 s. Every card unfolds out of the block it belongs to and folds back into it (Fernhollow, Quillmoor, your block). The draft becomes the dot; the replies come back on the routes the emails took; '10:00' becomes the meeting; the loop becomes the 8; the 8 becomes the logo.",
+  "Reviews": "Round 1: six independent reviews (story, truth, legibility, brand, motion on the draft, cold eyes). Round 2: a fresh cold-eyes viewer and a resolution check of the round-1 findings."
+ }
+}

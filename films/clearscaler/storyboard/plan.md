@@ -3,7 +3,7 @@
 ## Project direction
 - PURPOSE: show what the GTM platform is and does for the viewer, muted, on the site and LinkedIn.
 - AUDIENCE: founders and commercial leads of B2B companies whose sales depend on the founder.
-- FORMAT: 16:9, 1920×1080, 30 fps, 40.0 s (1200 frames). No audio (brief).
+- FORMAT: 16:9, 1920×1080, 30 fps, 40.0 s (1200 frames). No audio (brief). Art direction from Karl's reference (references/reference.md); round-1 review decisions in frames.json → revisions.
 - CORE MESSAGE: ClearScaler finds the buyers who fit, writes to each one, and books the meetings into your calendar; you
   approve and take the calls.
 - TONE: confident, precise, dry; "confident and clear" timing row: middle durations, ease-outs, no overshoot, the camera
@@ -29,27 +29,27 @@
   the orange dot that travels, the reply dot drops into the calendar slot, the 8 turns into the ∞ logo.
 - VOICE-OVER AND MUSIC: none. On-screen captions are the narration, timed for reading (≈3.5 words/s + 0.4 s).
 
-## Phrases (captions) and visual events
-Times in seconds. Every caption is from the site (facts.md) unless marked; key word in **bold** turns orange.
+## Phrases (captions) and visual events (v2, after the art-director pass)
+Times in seconds. Every caption is ClearScaler's own copy (facts.md); key word in **bold** turns orange. Captions build word
+by word at 0.12 s a word, 68 px, bottom left; a hedge rides as the caption's second line.
 
-| # | Time | Caption (bottom left) | Visual events (on the word) | Source |
+| # | Time | Caption | Visual events (on the word) | Source |
 |---|---|---|---|---|
-| 1 | 0.4–3.2 | Most companies don't have an **offer** problem. | 0.0 ground outlines draw out from the front; 0.2–2.2 the market rises block by block in a wave from the front; 1.1 on "offer" the viewer's block lights (warm edge) and its tag "Your company" rises | Magnus, home/about |
-| 2 | 3.4–5.6 | They have a **reach** problem. | 3.8 on "reach" a dashed ring spreads from your block and stops after two streets: only the three nearest blocks catch its light; the market beyond stays dark | Magnus |
-| 3 | 5.9–8.5 | ClearScaler researches **every account.** | 6.0 the ring turns orange and sweeps out across the whole market; every block it passes fills with rows of data dots; 6.3 the chip arrives top left (gtm.clearscaler.com/leads · Demo workspace) and its lead count rolls 0 → 1,284 with the wave | home ("Every account researched") |
-| 4 | 8.8–11.0 | Every contact scored against your **rubric.** | 9.0 the blocks answer the score: fits rise and take an orange top edge, poor fits sink and grey out (On hold, nothing is sent); 10.2 the chip becomes Sofia Berglund · Fernhollow Freight · Scoring; 10.4 Fernhollow's block lifts, a pin rises, the score card unfolds out of it | home, engine |
-| 5 | 10.6–12.4 | (caption 4 holds) | 10.7 five rubric bars fill (Structural fit 24/30, Pain signals 36/50, Timing signals 14/20, Commercial pressure 8/20, Buying committee 5/15); 11.6 they slide end to end into one bar on 0–135 that crosses the 60 tick; 87 rolls up; chip: Scored 87 / 135 · Strong fit | engine demo |
-| 6 | 12.6–14.2 | With the **reason** written down. | 12.8 "Job post · Hiring two pricing analysts" types into the card; 13.4 "Website watch · Rates page unchanged since March 2025" | home, engine demo |
-| 7 | 14.5–17.4 | Written **per person.** | 14.5 the score card turns into the draft (the two signals dock as the email's source); To sofia.berglund@…, Subject Last year's lanes; 15.2 the generic line types; 16.0 an orange strike crosses it; 16.3 the personal sentence writes in, its two signal phrases underlined; chip: Writing email | home, engine demo |
-| 8 | 17.6–19.2 | **Approved** by you. (in the early months) | 17.7 the approval bar rises (This email is waiting for your approval · Approve & send); 18.0 the cursor enters, 18.6 clicks; the button rolls to a green Approved stamp; chip: Awaiting approval → Approved | home |
-| 9 | 19.4–22.6 | One person **at a time.** | 19.3 the draft folds on its centre line into an orange dot at your block; 19.6–20.8 it travels the streets to Fernhollow, whose block takes an orange pin; chip: In outreach · Sent from your mailbox; 21.0–22.5 more dots leave one after another, each to a different block that fits | home hero |
-| 10 | 22.9–25.0 | Every reply **classified.** | 23.0 green dots come back from three blocks; tags rise above them: Interested (Quillmoor Group), Not now (Brightwick Systems), Out of office (Larkspan Analytics); 24.0 the chip becomes Marta Vogel · Quillmoor Group · Interested; Marta's reply rises: "Good timing. Thursday works." | home, engine demo |
-| 11 | 25.3–27.8 | Booked into your **calendar.** | 25.3 the suggested answer writes under the reply (Great, Marta. I will send an invite for Thursday at 10:00.); 26.1 a week (Mon–Fri) unfolds out of your block; 26.7 the green dot drops into Thursday 10:00 and becomes "Meeting booked · Thu 10:00 · Marta Vogel"; chip: Meeting booked · Thu 10:00 | home, engine demo |
-| 12 | 28.2–30.6 | Run for you, **every week.** | 28.0 the week folds back into your block; 28.3–29.9 the market pulls back (world scale 1 → 0.5) and grows at its edges; orange dots leave and green dots come back across it, several at once; the chip turns into the Monday summary (3 meetings booked) | logistics page; engine demo |
-| 13 | 31.0–34.0 | (no caption: the number is the subject) | 30.9 the market dims and sinks back; "8%" builds big at the left, its 8 drawn as the ∞ mark stood upright; "reply rate, first month of sending"; source line "Real · anonymised · Replies over 300 contacts · 12 Aug to 12 Sep 2026" | home, results |
-| 14 | 34.2–40.0 | Your distribution, **fixed.** | 34.2 the % and the label leave; the 8 turns −90° into the ∞ mark, which moves into the lockup; 35.0 the ClearScaler wordmark slides out from behind it; 35.8 the line builds; 36.9 the orange Book a call button rises; 37.2 Magnus's and Kian's avatars and "30 minutes with Magnus or Kian"; one slow push to the end | home hero, CTA |
+| 1 | 0.35–2.1 | Your **offer** isn't the problem. | 0.0 an orange comet draws ClearScaler's ∞ loop on the ground around the viewer's block (the site's hero); the market rises in a wave; 0.47 on "offer" the viewer's block lights and its tag rises; 1.2 the loop settles to a hairline | About page |
+| 2 | 2.45–4.3 | Your **distribution** is. | 2.57 the light contracts to a ring (330 units); 2.8–4.2 five grey emails by hand reach the nearest accounts and stop at its edge; the ring's dashes crawl | About page |
+| 3 | 4.7–7.0 | ClearScaler researches **every account.** | 4.8 the ring turns orange and sweeps the market while a comet laps the loop; blocks fill with data dots; 5.0 the chip arrives, its count rolls to the demo's 1,284 | home |
+| 4 | 7.3–10.3 | Every contact scored against your **rubric.** | 7.5 fits rise with an orange edge, poor fits sink; 8.0 "On hold · nothing is sent" on a sunk block (leader); 8.7 chip: Sofia Berglund · Scoring; 8.9 the card unfolds from Fernhollow's pin; 9.2 five rubric rows fill (site colours); 10.0 rows clear, bars join into one on 0–135 past the 60 tick; 87 rolls up | home, GTM Engine demo |
+| 5 | 10.6–12.3 | With the **reason** written down. | 10.85 "Job post · Hiring two pricing analysts" flies out of the block into the card; 11.35 "Website watch · Rates page unchanged since March 2025" | home, GTM Engine demo |
+| 6 | 12.6–16.9 | Written **per person.** | 12.6 score parts leave; the card widens to the close framing; the reasons move aside then up; 13.2 Subject "Last year's lanes" · Edited by our team; 13.6 the generic line types; 14.4 struck through; 14.7 the personal sentence writes in, underlined; 15.85 the ask and "Anna"; 15.9 chip: Quality check | home, GTM Engine demo |
+| 7 | 17.25–18.9 | **Approved** by you, / in the early months. | 16.4 approval bar (Rewrite · Reject · Approve & send); 16.7 cursor; 17.3 click: the button rolls to a neutral Approved, "Sent from your mailbox" | home (hedge kept) |
+| 8 | 19.2–22.0 | One person **at a time.** | 18.3 the draft scales into the route's start and becomes the orange dot (18.85); the fits' orange steps back; 19.95 Fernhollow lifts as it lands ("Sofia Berglund · Fernhollow Freight"); 20.3 the next emails, one at a time; 20.85 "Marta Vogel · Quillmoor Group" | home hero |
+| 9 | 22.3–24.9 | Every reply **classified.** | 22.2 green dots come back on the same streets; 23.1 chip stacks Marta (Interested) above Sofia (In outreach); tags Interested / Not now / Out of office | home, GTM Engine demo |
+| 10 | 25.2–27.9 | Booked into your **calendar.** | 24.3 Marta's reply grows out of Quillmoor ("Good timing. Thursday works."); 24.9 suggested reply · edit anything before sending; 26.0 the reply folds back, the week unfolds from your block; 26.3 "Thursday at 10:00" flies and lands on the slot; 26.75 Meeting booked · Thu 10:00 | home, GTM Engine demo |
+| 11 | 28.3–31.0 | **One loop,** run every weekday. | 27.9 the week folds into your block; 28.0 the market eases back 18%; emails go out across it, about one in eight replies; 29.4 the loop lights: "Be seen" orange, "Be chosen" green, comets on both lobes | GTM Engine page |
+| 12 | 31.2–34.6 | (none: the number is the subject) | 31.2 the market steps back; the loop lifts off and stands upright as the 8; 32.2 %; 32.5 "reply rate, first month of sending"; 32.8 "Real · anonymised" + client type, measure, window, source | home, results |
+| 13 | 34.6–40.0 | Your distribution, **fixed.** | 34.6 % and label leave; the 8 turns into the white ∞ in the lockup; 35.4 the wordmark slides out, one orange comet laps the mark; 36.0 the line; 36.7 "Outbound, built and run for you."; 37.2 Book a call; 37.5 Magnus and Kian, "30 minutes with Magnus or Kian" | home hero, GTM nav, CTA |
 
-Longest stretch without a new visual: ≈1.2 s (9.9–11.0 is filled by the rubric bars). Thirteen captions, 14 beats.
+Longest stretch without a new visual (measured on the draft): 0.0 s; 11 of 11 phrases bring a new visual.
 
 ## Variety and continuity
 | Beat | Strategy | Primary element | Framing | Density | Exit (what it grows out of / into) |
@@ -68,11 +68,11 @@ Three distances (wide map, medium block + card, close card), one centred scene, 
 stretches, the primary kind changes every beat.
 
 ## Rules for the build
-- Captions: Outfit 600, 60 px, −0.03em, bottom left at x 120, baseline 960; words arrive at 35% ink and brighten to ink
+- Captions: Outfit 600, 68 px, −0.03em, bottom left at x 120, bottom 108; words arrive at 30% ink and brighten over 7 frames, 0.12 s apart; the key word turns orange; a hedge rides as a 46 px ink-2 second line; the outgoing caption leaves before the next builds.
   over 6 frames, 0.13 s apart; the key word turns orange as it brightens; the outgoing caption dims and leaves upward in
   9 frames before the next builds. Two lines never overlap.
-- Chip: top left at (120, 96), 620 px wide; mono URL row 22 px (texture), name 34 px Manrope 600, title 26 px ink-2,
+- Chip: top left (110, 86), 720 px; lowercase URL pill 22 px, "Demo workspace" 24 px, name 40 px, role 28 px, status pill 32 px; it steps back to 62% while a card carries the beat; from 23.1 s it holds two leads.
   status pill 30 px with the app's dot colours (orange dot = working, green = replied/booked, outline = on hold).
-- Cards: night-1 #101012 with the site's float shadow and 1 px rule, radius 14; text ≥ 32 px for anything read.
+- Cards: night-1 #101012 with the site float shadow, radius 20; text read in a card is 32–44 px; every product panel carries "Demo workspace".
 - Nothing bounces; every arrival on the signature curve; exits on DEPART at 70% of the entrance.
 - Every number and name on screen is in facts.md; the chip says "Demo workspace" whenever demo data is visible.

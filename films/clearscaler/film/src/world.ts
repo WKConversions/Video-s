@@ -1,8 +1,10 @@
 // The market map: the viewer's market drawn as an isometric field of accounts (dark blocks), the way Karl's reference
-// draws a store floor. Geometry, projection, the named demo accounts, the street routes the emails travel, and each
-// block's state over time (researched, scored, contacted, replied). Pure functions of the frame.
+// draws a store floor; on its ground, ClearScaler's own loop (the site's figure-8, the logo's curve) with the viewer's
+// company at its crossing. Geometry, projection, the named demo accounts, the street routes the emails travel, and
+// each block's state over time. Pure functions of the frame.
 import { T } from "./clock";
 import { clamp01, lerp } from "./lib";
+import { pointAt } from "./loop";
 
 export const CELL = 175;            // lot pitch, world units
 export const GAP = 64;              // street width
@@ -15,6 +17,7 @@ export const hash = (i: number, j: number, k = 0) => {
   const s = Math.sin(i * 127.1 + j * 311.7 + k * 74.7) * 43758.5453;
   return s - Math.floor(s);
 };
+const cos01 = (u: number) => 0.5 - 0.5 * Math.cos(Math.PI * clamp01(u));
 
 // ---------- the view: projection with the world's own slow orbit ----------
 const K = 0.56;                     // ground foreshortening (sin of the elevation)
@@ -22,11 +25,11 @@ const H = 0.84;                     // height factor (cos of the elevation)
 export type View = { th: number; s: number; fx: number; fy: number; cx: number; cy: number; sink: number };
 export const view = (g: number): View => {
   const t = g / 1200;
-  const th = ((41 + 8 * t) * Math.PI) / 180;                                   // 8° over the film: content, slow
-  const pull = T.k(g, "pull", 1.7, (u) => (u < 0.5 ? 4 * u * u * u : 1 - Math.pow(-2 * u + 2, 3) / 2));
-  const s = lerp(1, 0.5, pull);
-  const sink = T.k(g, "stat", 0.9);                                             // the market steps back for the number
-  return { th, s: s * (1 - 0.06 * sink), fx: XMAX - 680, fy: YMAX - 680, cx: 1200, cy: 470 + 40 * sink, sink };
+  const th = ((41 + 8 * t) * Math.PI) / 180;                                    // 8° over the film: content, slow
+  // the pull-back: a gentle 18% over 2.9 s on a cosine (peak ≈ 9 %/s), never a crash zoom
+  const pull = cos01((g / 30 - T.s("pull")) / 2.9);
+  const sink = cos01((g / 30 - T.s("stat")) / 1.2);                             // the market steps back for the number
+  return { th, s: lerp(1, 0.82, pull) * (1 - 0.06 * sink), fx: XMAX - 680, fy: YMAX - 680, cx: 1200, cy: 470 + 40 * sink, sink };
 };
 export const proj = (v: View, x: number, y: number, z = 0): [number, number] => {
   const dx = x - v.fx, dy = y - v.fy, c = Math.cos(v.th), s = Math.sin(v.th);
@@ -46,10 +49,10 @@ for (let i = I0; i <= I1; i++)
     const w = (CELL - GAP) * (long < 0.2 ? 1 : 0.62 + 0.38 * hash(i, j, 1)), d = (CELL - GAP) * (long > 0.82 ? 1 : 0.62 + 0.38 * hash(i, j, 2));
     const x0 = i * CELL + ((CELL - GAP) - w) * hash(i, j, 3), y0 = j * CELL + ((CELL - GAP) - d) * hash(i, j, 4);
     const r = hash(i, j, 5);
-    lots.push({ id: `${i},${j}`, i, j, x0, y0, x1: x0 + w, y1: y0 + d, h: hash(i, j, 8) < 0.06 ? 80 + 30 * hash(i, j, 6) : 14 + 46 * hash(i, j, 6) ** 1.6, fit: r < 0.42 ? "strong" : r < 0.68 ? "border" : "poor" });
+    lots.push({ id: `${i},${j}`, i, j, x0, y0, x1: x0 + w, y1: y0 + d, h: hash(i, j, 8) < 0.06 ? 80 + 30 * hash(i, j, 6) : 14 + 46 * hash(i, j, 6) ** 1.6,
+      fit: r < 0.42 ? "strong" : r < 0.68 ? "border" : "poor" });
   }
 export const BLOCKS = lots;
-const at = (i: number, j: number) => BLOCKS.find((b) => b.i === i && b.j === j)!;
 const set = (i: number, j: number, p: Partial<Block>) => {
   let b = BLOCKS.find((q) => q.i === i && q.j === j);
   if (!b) { b = { id: `${i},${j}`, i, j, x0: i * CELL + 6, y0: j * CELL + 6, x1: i * CELL + CELL - GAP - 6, y1: j * CELL + CELL - GAP - 6, h: 30, fit: "border" }; BLOCKS.push(b); }
@@ -64,12 +67,23 @@ export const QUILL = set(6, 4, { name: "Quillmoor Group", fit: "strong", h: 48 }
 export const BRIGHT = set(9, 5, { name: "Brightwick Systems", fit: "strong", h: 32 });
 export const LARK = set(5, 8, { name: "Larkspan Analytics", fit: "border", h: 28 });
 export const PELL = set(7, 6, { name: "Pellbrook Supply", fit: "poor", h: 36 });
-// keep the viewer's lot and its neighbours clear of tall blocks so its ring reads
+// keep the viewer's neighbours low so its block and its loop crossing read
 for (const b of BLOCKS) if (b !== YOU && Math.abs(b.i - YOU.i) <= 1 && Math.abs(b.j - YOU.j) <= 1) b.h = Math.min(b.h, 26);
-void at;
 
 export const centre = (b: Block): [number, number] => [(b.x0 + b.x1) / 2, (b.y0 + b.y1) / 2];
 export const dist = (b: Block, o: Block = YOU) => Math.hypot(centre(b)[0] - centre(o)[0], centre(b)[1] - centre(o)[1]);
+
+// ---------- ClearScaler's loop on the ground ----------
+/** The site's loop (loop.ts, 720 units across) laid on the ground, crossing at the viewer's block, its long axis
+ *  running across the screen. LOOP_K world units per loop unit. */
+export const LOOP_K = 1.75;
+export const loopWorld = (lx: number, ly: number): [number, number] => {
+  const [cx, cy] = centre(YOU);
+  const u = (lx - 512) * LOOP_K, w = (ly - 512) * LOOP_K;
+  return [cx + (u + w) * Math.SQRT1_2, cy + (-u + w) * Math.SQRT1_2];
+};
+export const LOOP_N = 320;
+export const LOOP_PTS: { x: number; y: number }[] = Array.from({ length: LOOP_N + 1 }, (_, n) => pointAt(n / LOOP_N));
 
 // ---------- routes along the streets ----------
 export type Route = { pts: [number, number][]; len: number[]; total: number };
@@ -89,15 +103,15 @@ const measureRoute = (pts: [number, number][]): Route => {
   for (let k = 1; k < pts.length; k++) len.push(len[k - 1] + Math.hypot(pts[k][0] - pts[k - 1][0], pts[k][1] - pts[k - 1][1]));
   return { pts, len, total: len[len.length - 1] };
 };
-/** From the viewer's block out along its street, across the grid on the streets, into the target's side. */
+/** From the street beside the viewer's block, across the grid on the streets, into the target's side. */
 export const route = (to: Block, from: Block = YOU): Route => {
   const sx = (i: number) => i * CELL - GAP / 2;           // the vertical street west of column i
   const sy = (j: number) => j * CELL - GAP / 2;           // the horizontal street north of row j
   const [fx] = centre(from), [tx] = centre(to);
-  const streetY = sy(from.j);                              // leave by the north side of the viewer's lot
+  const streetY = sy(from.j);                              // the street north of the viewer's lot (its start)
   const colX = to.i <= from.i ? sx(to.i + 1) : sx(to.i);   // the street beside the target's column, facing the viewer
   const rowY = sy(to.j + 1);                               // the street south of the target
-  const pts: [number, number][] = [[fx, from.y0], [fx, streetY], [colX, streetY], [colX, rowY], [tx, rowY], [tx, to.y1]];
+  const pts: [number, number][] = [[fx, streetY], [colX, streetY], [colX, rowY], [tx, rowY], [tx, to.y1]];
   const clean = pts.filter((p, k) => k === 0 || Math.hypot(p[0] - pts[k - 1][0], p[1] - pts[k - 1][1]) > 1);
   return measureRoute(fillet(clean, 34));
 };
@@ -119,44 +133,50 @@ export const slice = (r: Route, u0: number, u1: number): [number, number][] => {
 };
 
 // ---------- sends: who gets an email, when ----------
-export type Send = { to: Block; at: number; dur: number; back?: { at: number; dur: number; tag?: string; tagTone?: "green" | "grey" } };
+export type Send = { to: Block; at: number; dur: number; back?: { at: number; dur: number } };
 const strongNear = BLOCKS.filter((b) => b.fit === "strong" && !b.name && b.i >= 1 && b.j >= 0 && b.i <= 10 && b.j <= 9 && dist(b) > 350).sort((a, b) => hash(a.i, a.j, 11) - hash(b.i, b.j, 11));
+// one at a time: each email leaves as the one before lands
 export const SENDS: Send[] = [
-  { to: FERN, at: T.s("send"), dur: 1.15 },
-  { to: QUILL, at: T.s("more"), dur: 1.0, back: { at: T.s("replies") + 0.0, dur: 0.95, tag: "Interested", tagTone: "green" } },
-  { to: strongNear[0], at: T.s("more") + 0.28, dur: 0.85 },
-  { to: BRIGHT, at: T.s("more") + 0.56, dur: 0.85, back: { at: T.s("replies") + 0.3, dur: 0.85, tag: "Not now", tagTone: "grey" } },
-  { to: strongNear[1], at: T.s("more") + 0.84, dur: 0.85 },
-  { to: LARK, at: T.s("more") + 1.12, dur: 0.95, back: { at: T.s("replies") + 0.6, dur: 0.9, tag: "Out of office", tagTone: "grey" } },
-  { to: strongNear[2], at: T.s("more") + 1.4, dur: 0.85 },
+  { to: FERN, at: T.s("send"), dur: 1.1 },
+  { to: QUILL, at: T.s("more"), dur: 0.55, back: { at: T.s("replies"), dur: 0.9 } },
+  { to: strongNear[0], at: T.s("more") + 0.42, dur: 0.5 },
+  { to: BRIGHT, at: T.s("more") + 0.84, dur: 0.5, back: { at: T.s("replies") + 0.3, dur: 0.85 } },
+  { to: strongNear[1], at: T.s("more") + 1.26, dur: 0.5 },
+  { to: LARK, at: T.s("more") + 1.68, dur: 0.5, back: { at: T.s("replies") + 0.6, dur: 0.85 } },
+  { to: strongNear[2], at: T.s("more") + 2.1, dur: 0.5 },
 ];
-// the scale-out: many at once across the whole market, out (orange) and back (green)
+// the engine at scale: many at once across the market, out (orange); replies come back from about one in eight
 const far = BLOCKS.filter((b) => b.fit === "strong" && !b.name && dist(b) > 500).sort((a, b) => hash(a.i, a.j, 13) - hash(b.i, b.j, 13));
 export const WAVE: Send[] = Array.from({ length: 16 }, (_, n) => ({
-  to: far[n], at: T.s("pull") + 0.15 + n * 0.13, dur: 1.1 + 0.4 * hash(n, 1, 3),
-  back: n % 3 === 1 ? { at: T.s("pull") + 1.3 + n * 0.09, dur: 1.0 } : undefined,
+  to: far[n], at: T.s("pull") + 0.25 + n * 0.1, dur: 1.0 + 0.4 * hash(n, 1, 3),
+  back: n % 8 === 1 ? { at: T.s("pull") + 1.4 + n * 0.05, dur: 0.9 } : undefined,
 }));
 export const ROUTES = new Map<Block, Route>();
 for (const s of [...SENDS, ...WAVE]) if (!ROUTES.has(s.to)) ROUTES.set(s.to, route(s.to));
+
+// the viewer's own reach before ClearScaler: a few emails by hand, to the nearest accounts, that stop at the ring
+export const REACH_R = 330;
+export const OWN = BLOCKS.filter((b) => b !== YOU && dist(b) > 120 && dist(b) < REACH_R + 60).slice(0, 5);
+for (const b of OWN) if (!ROUTES.has(b)) ROUTES.set(b, route(b));
 
 // ---------- per-block state ----------
 const fpsT = (g: number) => g / 30;
 /** Ring radius around the viewer's block (world units): the reach ring, then the research scan sweeping out. */
 export const ring = (g: number) => {
-  const reach = T.k(g, "reach", 0.9) * 270;
-  const scan = T.k(g, "scan", 2.2, (u) => u * u * (3 - 2 * u)) * 3200;
-  return { r: Math.max(reach, scan), scan: T.k(g, "scan", 0.25), fade: T.k(g, "score+0.6", 0.8) };
+  const reach = T.k(g, "dist", 0.7) * REACH_R;
+  const scan = T.k(g, "scan", 2.1, (u) => u * u * (3 - 2 * u)) * 3400;
+  return { r: Math.max(reach, scan), scan: T.k(g, "scan", 0.25), fade: T.k(g, "score+0.3", 0.8) };
 };
-/** How lit the market is around the viewer: the light reveals the market, contracts to the viewer's reach on "reach",
- *  and opens to everything with the research scan. Returns the lit radius in world units. */
+/** How lit the market is: the light reveals the market, contracts to the viewer's reach on "distribution", and opens
+ *  to everything with the research scan. */
 export const lightR = (g: number) => {
-  const open = T.k(g, "open+0.15", 2.1, (u) => 1 - Math.pow(1 - u, 2)) * 1250;
-  const shrink = T.k(g, "reach", 0.9, (u) => u * u * (3 - 2 * u));
-  return Math.max(lerp(open, 330, shrink), ring(g).r * T.k(g, "scan", 0.01));
+  const open = (0.35 + 0.65 * T.k(g, "open", 1.4, (u) => 1 - Math.pow(1 - u, 2))) * 1250;
+  const shrink = T.k(g, "dist", 0.7, (u) => u * u * (3 - 2 * u));
+  return Math.max(lerp(open, REACH_R, shrink), ring(g).r * T.k(g, "scan", 0.01));
 };
 export const lightOf = (g: number, b: Block) => {
   const r = lightR(g), d = dist(b);
-  const x = clamp01((d - (r - 160)) / 520);
+  const x = clamp01((d - (r - 120)) / 420);
   return 1 - x * x * (3 - 2 * x);
 };
 export const researched = (g: number, b: Block) => clamp01((ring(g).r - dist(b)) / 110) * (T.k(g, "scan", 0.01) > 0 ? 1 : 0);
@@ -166,11 +186,14 @@ export const scored = (g: number, b: Block) => {
   const k = clamp01((fpsT(g) - t0) / 0.5);
   return 1 - Math.pow(1 - k, 3);
 };
+export const blockIntro = (g: number, b: Block) => clamp01((fpsT(g) + 0.45 - (b === YOU ? 0.0 : 0.2) - dist(b, YOU) / 2600) / 0.5);
 export const rise = (g: number, b: Block) => {
   const k = scored(g, b);
   const f = b.fit === "strong" ? 1.28 : b.fit === "poor" ? 0.45 : 1;
-  const intro = clamp01((fpsT(g) - (b === YOU ? 0.05 : 0.35) - dist(b, YOU) / 2400) / 0.5);
-  const up = 1 - Math.pow(1 - intro, 3);
-  return b.h * lerp(1, f, k) * up;
+  const up = 1 - Math.pow(1 - blockIntro(g, b), 3);
+  // Fernhollow lifts a little as the first email lands, then settles
+  const landed = b === FERN ? 22 * clamp01((fpsT(g) - T.s("arrive")) / 0.3) * (1 - clamp01((fpsT(g) - T.s("arrive") - 1.0) / 0.6)) : 0;
+  return b.h * lerp(1, f, k) * up + landed;
 };
-export const blockIntro = (g: number, b: Block) => clamp01((fpsT(g) - (b === YOU ? 0.05 : 0.35) - dist(b, YOU) / 2400) / 0.5);
+/** While the first email travels, the fits' orange steps back so the email is the only orange thing. */
+export const fitQuiet = (g: number) => 0.75 * clamp01(T.k(g, "fold", 0.4) - T.k(g, "more", 0.6));

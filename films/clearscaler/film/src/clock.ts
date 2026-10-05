@@ -5,28 +5,28 @@ import CAPS from "./captions.json";
 
 export const FPS = 30;
 export const DURATION = 1200;
-export const WORD_STEP = 0.14;
-export type Caption = { id: string; at: number; out: number; lines: string[]; key: string[]; note?: string };
+export const WORD_STEP = 0.12;
+export type Caption = { id: string; at: number; out: number; lines: string[]; key: string[]; sub?: string };
 export const CAPTIONS = CAPS as Caption[];
 
 export const BEATS: Record<string, number> = {
-  open: 0, offer: 1.15, reach: 3.82,
-  scan: 6.0, chip: 6.3,
-  score: 9.0, hold: 9.7, sofia: 10.2, card: 10.4, bars: 10.7, merge: 11.6,
-  reason: 12.8, reason2: 13.4,
-  draft: 14.5, generic: 15.2, strike: 16.0, personal: 16.3,
-  approve: 17.7, cursor: 18.0, click: 18.6,
-  fold: 19.2, send: 19.62, arrive: 20.8, more: 21.0,
-  replies: 22.3, marta: 23.6, answer: 25.3, week: 26.1, booked: 26.75,
-  weekOut: 28.0, pull: 28.3, summary: 28.6,
-  stat: 30.9, turn: 34.2, word: 35.0, line: 35.8, cta: 36.9, faces: 37.2, rest: 37.6, end: 40,
+  open: 0, offer: 0.17, dist: 2.57,
+  scan: 4.8, chip: 5.0,
+  score: 7.5, hold: 8.0, sofia: 8.7, card: 8.9, bars: 9.2, merge: 10.0,
+  reason: 10.85, reason2: 11.35,
+  draft: 12.6, subject: 12.9, generic: 13.15, strike: 14.0, personal: 14.3, ask: 15.5, qc: 15.6,
+  approve: 16.4, cursor: 16.7, click: 17.3,
+  fold: 18.3, send: 18.85, arrive: 19.95, more: 20.3,
+  replies: 22.2, marta: 23.1, bubble: 24.3, answer: 24.9,
+  week: 26.0, fly: 26.3, booked: 26.75, weekOut: 27.9,
+  pull: 28.0, loopOn: 29.4, stat: 31.2, turn: 34.6, word: 35.4, line: 36.0, sub: 36.7, cta: 37.2, faces: 37.5, rest: 37.8, end: 40,
 };
 
 const words: Record<string, number> = {};
 const seen: Record<string, number> = {};
 for (const c of CAPTIONS) {
   let i = 0;
-  for (const ln of c.lines) for (const w of ln.split(" ")) {
+  for (const ln of [...c.lines, ...(c.sub ? [c.sub] : [])]) for (const w of ln.split(" ")) {
     const base = "w:" + w.toLowerCase().replace(/[^a-z0-9]/g, "");
     const n = (seen[base] = (seen[base] ?? 0) + 1);
     words[n > 1 ? base + n : base] = +(c.at + i * WORD_STEP).toFixed(3);

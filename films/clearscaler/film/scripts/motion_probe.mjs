@@ -26,7 +26,7 @@ try {
   const composition = await selectComposition({ serveUrl, id: "Probe", inputProps: {}, browserExecutable });
   const lines = [];
   const from = arg("--from", 0), to = arg("--to", composition.durationInFrames - 1);
-  await renderFrames({ serveUrl, composition, inputProps: {}, browserExecutable, imageFormat: "none", frameRange: [from, to], concurrency: 4, logLevel: "error",
+  await renderFrames({ serveUrl, composition, inputProps: {}, browserExecutable, imageFormat: "none", frameRange: [from, to], concurrency: 2, logLevel: "error",
     outputDir: null, onStart: () => {}, onFrameUpdate: () => {},
     onBrowserLog: (l) => { if (l.text.startsWith("PROBE ")) lines.push(l.text.slice(6)); } });
   fs.mkdirSync(path.dirname(out), { recursive: true });
