@@ -1,0 +1,50 @@
+{
+"title": "WKConversions × bFound",
+"eyebrow": "WKConversions × bFound · 39.5 s · 16:9 · voice-over, music, effects",
+"headline": "A great partnership creates more than <em>great work.</em>",
+"subtitle": "A SaaS-style partnership film in the Minimal Gradient SaaS look, built from both brands: WKConversions' blue glowing in from one side, bFound's indigo from the other. Two glass tiles linked by a cable carry the story: the film WKConversions made for bFound, the response it got on LinkedIn, the €1,000 that keeps most businesses out, the lock both partners open together, and the code BFOUND50 typed into the contact form as it is spoken: €400 becomes €200.",
+"film": "film.mp4",
+"poster": "frames/f1110.jpg",
+"music_credit": "Music: \"Ramp It Up\" by Ahjay Stelino, Mixkit (Mixkit Stock Music Free License), fitted to the film.",
+"direction": {
+"Purpose": "Announce the WKConversions × bFound offer: 50% off the €400 startup video with code BFOUND50, for LinkedIn and the two sites; it must read with the sound off.",
+"Audience": "Founders and small businesses who follow bFound and WKConversions and have wanted a motion design video but found it out of reach.",
+"Format": "16:9, 1920×1080, 30 fps, 39.5 s. ElevenLabs voice (Christina, energetic commercial), force-aligned word by word (the code letter by letter); music and 76 effects mixed to −15 LUFS.",
+"Core message": "Because the partnership worked so well, WKConversions and bFound make professional motion design accessible: code BFOUND50 on wkconversions.com/contact, €200 instead of €400.",
+"Look": "Minimal Gradient SaaS: a near-white frame glowing into a mesh gradient (WKConversions blue, bFound indigo, lilac, bFound's cream), frosted-glass tiles and windows, thin cables with travelling pulses, Inter Tight 800 with the key phrase in the blue → indigo gradient, bFound's own logo and Instrument Serif for the ×.",
+"Motion": "Flow: cables draw and carry pulses, tiles arrive with a soft scale-and-fade, content builds (keyframes, counts, typing). The stage floats in gentle 2.5D (a slow drift and tilt that never stops, a push per chapter); background chips and the dot grid travel at their own depths. Median frame motion 4%.",
+"Thread": "The cable between the two tiles: it links them, carries the film to bFound, arches over the response, pulls the lock open with both tiles, feeds the code, and holds the end lockup."
+},
+"beats": [
+ {"id": "P1–P2", "time": "0.0–3.3 s", "title": "A great partnership", "caption": "A great partnership creates more than great work.", "key": ["partnership", "great", "work."],
+  "idea": "WKConversions' tile slides in from the left, bFound's from the right, and a cable links them; on 'more than great work' the work itself (the film WKConversions made for bFound, its own frame) grows out of the link and rings go out from it.",
+  "frames": [{"frame": 30, "shows": "The two tiles, linked.", "moves": "Tiles slide in, the cable draws, a pulse travels."}, {"frame": 80, "shows": "The work grows out of the link.", "moves": "Window grows, rings."}]},
+ {"id": "P3–P4", "time": "3.3–7.4 s", "title": "Made by WKConversions, for bFound", "caption": "Made by WKConversions for bFound.", "key": ["WKConversions", "bFound."],
+  "idea": "The window moves to the maker; a timeline appears and its playhead builds the film (b-mark, Found., the url pill) keyframe by keyframe; on 'for bFound' the finished film travels along the cable into bFound's tile, which takes a check.",
+  "frames": [{"frame": 165, "shows": "The film being made on its timeline.", "moves": "Playhead sweeps, keyframes light."}, {"frame": 205, "shows": "Delivered to bFound.", "moves": "The film travels along the cable."}]},
+ {"id": "P5–P7", "time": "7.4–11.7 s", "title": "The response", "caption": "The response showed us how much impact the right video can make.", "key": [],
+  "idea": "bFound's tile opens into the LinkedIn post by its founder, with the film in it; comments stream in (anonymous: gradient discs and skeleton lines, never a name or face), the reactions climb to 118 and the comments to 45, and the video comes forward and plays.",
+  "frames": [{"frame": 255, "shows": "The post, comments arriving.", "moves": "The post grows out of bFound's tile."}, {"frame": 320, "shows": "118 reactions, 45 comments.", "moves": "Counts climb, reactions float up, the video plays."}]},
+ {"id": "P8–P12", "time": "11.7–19.9 s", "title": "€1,000 per video", "caption": "Inaccessible to many businesses.", "key": [],
+  "idea": "The typical price counts up to €1,000 / video; it rises over a professional motion design video; a glass wall locks it away; six small businesses reach for it and stop at the wall.",
+  "frames": [{"frame": 425, "shows": "€1,000 / video.", "moves": "The price counts the whole phrase long."}, {"frame": 510, "shows": "Locked away.", "moves": "The wall slides in, the lock clicks."}, {"frame": 570, "shows": "Many businesses kept out.", "moves": "Their reach stops at the wall."}]},
+ {"id": "P13–P15", "time": "19.9–24.0 s", "title": "WKConversions × bFound changed that", "caption": "WKConversions × bFound changed that.", "key": ["WKConversions", "bFound"],
+  "idea": "WKConversions' tile comes in, then bFound's; both cables pull on the lock until it opens, the wall falls, and every business connects to the video.",
+  "frames": [{"frame": 655, "shows": "Both tiles on the lock.", "moves": "Pulses flow into the lock."}, {"frame": 705, "shows": "Unlocked: the businesses connect.", "moves": "The wall falls, cables turn solid."}]},
+ {"id": "P16–P18", "time": "24.0–31.2 s", "title": "Code BFOUND50", "caption": "50% off our startup price.", "key": ["50%", "off"],
+  "idea": "Both tiles feed the referral-code field; BFOUND50 is typed letter by letter exactly as it is spoken, and the field takes a check; −50% lands, then €400, the WKConversions startup price.",
+  "frames": [{"frame": 785, "shows": "B-F-O-U-N typed as spoken.", "moves": "Each letter on its spoken letter."}, {"frame": 890, "shows": "−50%, €400 startup price.", "moves": "Badge and price land."}]},
+ {"id": "P19–P21", "time": "31.2–36.7 s", "title": "Claim it on wkconversions.com/contact", "caption": "Claim your video for €200.", "key": ["€200."],
+  "idea": "The contact page opens as the address types itself on the words; the form's referral code already holds BFOUND50; the cursor submits and €400 is struck through as €200 counts down into place.",
+  "frames": [{"frame": 1000, "shows": "wkconversions.com/contact.", "moves": "The address types on the words."}, {"frame": 1085, "shows": "€400 → €200.", "moves": "Strike, count down, submit."}]},
+ {"id": "End", "time": "36.7–39.5 s", "title": "End card", "caption": "Your video for €200 at wkconversions.com/contact", "key": ["€200"],
+  "idea": "The two tiles come back together with the × between them, the code BFOUND50 and where to claim it; the cable keeps pulsing and the stage keeps floating.",
+  "frames": [{"frame": 1160, "shows": "The lockup.", "moves": "Tiles link, pulses travel."}]}
+],
+"revisions": [],
+"open": [
+ "The form on wkconversions.com/contact labels the field \"Referal Code\"; the film spells it \"Referral code\". Fix the form, or should the film match it?",
+ "Music: \"Ramp It Up\" (Mixkit) lands its drop on \"So WKConversions and bFound…\" but its final chord comes 0.8 s before the end card (an accent carries the card). Two fitted alternatives are kept in the session's scratch folder if you'd rather hear something warmer.",
+ "The LinkedIn counts (118 reactions, 45 comments) are as harvested on 6 Oct 2026; they will grow."
+]
+}

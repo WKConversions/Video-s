@@ -399,7 +399,7 @@ export const Headlines: React.FC<{ g: number }> = ({ g }) => (
       [{ t: "A", at: "w:a" }, { t: "great", at: "w:great" }, { t: "partnership", at: "w:partnership", key: true }],
       [{ t: "creates", at: "w:create" }, { t: "more", at: "w:more" }, { t: "than", at: "w:than" }, { t: "great", at: "w:great2", key: true }, { t: "work.", at: "w:work", key: true }],
     ]} />
-    <Headline g={g} x={120} y={130} size={76} out="response-0.3" lines={[
+    <Headline g={g} x={170} y={140} size={76} out="response-0.3" lines={[
       [{ t: "Made", at: "w:after" }, { t: "by", at: "w:after" }, { t: "WKConversions", at: "w:wkconversions", key: true }],
       [{ t: "for", at: "w:for" }, { t: "bFound.", at: "w:bfound", key: true }],
     ]} />
