@@ -1,0 +1,502 @@
+[
+{
+"word": "you",
+"start": 0.0,
+"end": 0.21
+},
+{
+"word": "don't",
+"start": 0.22,
+"end": 0.52
+},
+{
+"word": "have",
+"start": 0.53,
+"end": 1.0
+},
+{
+"word": "what",
+"start": 1.01,
+"end": 1.13
+},
+{
+"word": "makes",
+"start": 1.14,
+"end": 1.36
+},
+{
+"word": "your",
+"start": 1.37,
+"end": 1.46
+},
+{
+"word": "competitors",
+"start": 1.47,
+"end": 2.07
+},
+{
+"word": "stand",
+"start": 2.08,
+"end": 2.43
+},
+{
+"word": "out",
+"start": 2.44,
+"end": 2.77
+},
+{
+"word": "not",
+"start": 3.16,
+"end": 3.38
+},
+{
+"word": "because",
+"start": 3.39,
+"end": 3.65
+},
+{
+"word": "their",
+"start": 3.66,
+"end": 3.82
+},
+{
+"word": "offer",
+"start": 3.83,
+"end": 4.13
+},
+{
+"word": "is",
+"start": 4.14,
+"end": 4.29
+},
+{
+"word": "better",
+"start": 4.3,
+"end": 4.84
+},
+{
+"word": "but",
+"start": 5.16,
+"end": 5.3
+},
+{
+"word": "because",
+"start": 5.31,
+"end": 5.7
+},
+{
+"word": "they",
+"start": 5.71,
+"end": 5.82
+},
+{
+"word": "communicate",
+"start": 5.83,
+"end": 6.63
+},
+{
+"word": "it",
+"start": 6.64,
+"end": 6.73
+},
+{
+"word": "better",
+"start": 6.74,
+"end": 7.18
+},
+{
+"word": "most",
+"start": 7.71,
+"end": 8.03
+},
+{
+"word": "businesses",
+"start": 8.04,
+"end": 8.58
+},
+{
+"word": "lose",
+"start": 8.59,
+"end": 8.96
+},
+{
+"word": "attention",
+"start": 8.97,
+"end": 9.45
+},
+{
+"word": "with",
+"start": 9.46,
+"end": 9.74
+},
+{
+"word": "unclear",
+"start": 9.75,
+"end": 10.12
+},
+{
+"word": "messaging",
+"start": 10.13,
+"end": 10.82
+},
+{
+"word": "forgettable",
+"start": 10.83,
+"end": 11.43
+},
+{
+"word": "visuals",
+"start": 11.44,
+"end": 12.02
+},
+{
+"word": "and",
+"start": 12.28,
+"end": 12.46
+},
+{
+"word": "content",
+"start": 12.47,
+"end": 12.94
+},
+{
+"word": "that",
+"start": 12.95,
+"end": 13.05
+},
+{
+"word": "gives",
+"start": 13.06,
+"end": 13.27
+},
+{
+"word": "people",
+"start": 13.28,
+"end": 13.62
+},
+{
+"word": "no",
+"start": 13.63,
+"end": 14.03
+},
+{
+"word": "reason",
+"start": 14.04,
+"end": 14.35
+},
+{
+"word": "to",
+"start": 14.36,
+"end": 14.42
+},
+{
+"word": "act",
+"start": 14.43,
+"end": 15.0
+},
+{
+"word": "that's",
+"start": 15.49,
+"end": 15.98
+},
+{
+"word": "where",
+"start": 15.99,
+"end": 16.2
+},
+{
+"word": "WKConversions",
+"start": 16.21,
+"end": 17.33
+},
+{
+"word": "comes",
+"start": 17.34,
+"end": 17.61
+},
+{
+"word": "in",
+"start": 17.62,
+"end": 17.89
+},
+{
+"word": "we",
+"start": 18.41,
+"end": 18.58
+},
+{
+"word": "turn",
+"start": 18.59,
+"end": 18.87
+},
+{
+"word": "complex",
+"start": 18.88,
+"end": 19.47
+},
+{
+"word": "offers",
+"start": 19.48,
+"end": 19.92
+},
+{
+"word": "into",
+"start": 19.93,
+"end": 20.18
+},
+{
+"word": "clear",
+"start": 20.19,
+"end": 20.85
+},
+{
+"word": "high-performance",
+"start": 20.86,
+"end": 21.71
+},
+{
+"word": "motion",
+"start": 21.72,
+"end": 22.05
+},
+{
+"word": "design",
+"start": 22.06,
+"end": 22.69
+},
+{
+"word": "built",
+"start": 22.7,
+"end": 22.96
+},
+{
+"word": "to",
+"start": 22.97,
+"end": 23.09
+},
+{
+"word": "attract",
+"start": 23.1,
+"end": 23.52
+},
+{
+"word": "attention",
+"start": 23.53,
+"end": 24.08
+},
+{
+"word": "explain",
+"start": 24.38,
+"end": 24.87
+},
+{
+"word": "value",
+"start": 24.88,
+"end": 25.47
+},
+{
+"word": "and",
+"start": 25.48,
+"end": 25.66
+},
+{
+"word": "drive",
+"start": 25.67,
+"end": 26.03
+},
+{
+"word": "conversion",
+"start": 26.04,
+"end": 26.75
+},
+{
+"word": "we",
+"start": 27.31,
+"end": 27.41
+},
+{
+"word": "start",
+"start": 27.42,
+"end": 27.73
+},
+{
+"word": "with",
+"start": 27.74,
+"end": 27.87
+},
+{
+"word": "your",
+"start": 27.88,
+"end": 27.98
+},
+{
+"word": "goal",
+"start": 27.99,
+"end": 28.48
+},
+{
+"word": "sharpen",
+"start": 28.67,
+"end": 29.09
+},
+{
+"word": "the",
+"start": 29.1,
+"end": 29.16
+},
+{
+"word": "message",
+"start": 29.17,
+"end": 29.69
+},
+{
+"word": "build",
+"start": 30.04,
+"end": 30.26
+},
+{
+"word": "the",
+"start": 30.27,
+"end": 30.36
+},
+{
+"word": "concept",
+"start": 30.37,
+"end": 30.95
+},
+{
+"word": "and",
+"start": 30.96,
+"end": 31.15
+},
+{
+"word": "design",
+"start": 31.16,
+"end": 31.68
+},
+{
+"word": "every",
+"start": 31.69,
+"end": 32.08
+},
+{
+"word": "frame",
+"start": 32.09,
+"end": 32.47
+},
+{
+"word": "with",
+"start": 32.48,
+"end": 32.63
+},
+{
+"word": "purpose",
+"start": 32.64,
+"end": 33.34
+},
+{
+"word": "no",
+"start": 33.74,
+"end": 34.02
+},
+{
+"word": "random",
+"start": 34.03,
+"end": 34.32
+},
+{
+"word": "animations",
+"start": 34.33,
+"end": 35.08
+},
+{
+"word": "no",
+"start": 35.09,
+"end": 35.56
+},
+{
+"word": "visuals",
+"start": 35.57,
+"end": 36.15
+},
+{
+"word": "just",
+"start": 36.16,
+"end": 36.45
+},
+{
+"word": "to",
+"start": 36.46,
+"end": 36.53
+},
+{
+"word": "look",
+"start": 36.54,
+"end": 36.75
+},
+{
+"word": "good",
+"start": 36.76,
+"end": 37.03
+},
+{
+"word": "WKConversions",
+"start": 37.7,
+"end": 39.01
+},
+{
+"word": "creative",
+"start": 39.31,
+"end": 39.88
+},
+{
+"word": "built",
+"start": 39.89,
+"end": 40.31
+},
+{
+"word": "to",
+"start": 40.32,
+"end": 40.4
+},
+{
+"word": "stand",
+"start": 40.41,
+"end": 40.74
+},
+{
+"word": "out",
+"start": 40.75,
+"end": 41.05
+},
+{
+"word": "designed",
+"start": 41.33,
+"end": 41.87
+},
+{
+"word": "to",
+"start": 41.88,
+"end": 41.98
+},
+{
+"word": "move",
+"start": 41.99,
+"end": 42.46
+},
+{
+"word": "built",
+"start": 42.72,
+"end": 43.28
+},
+{
+"word": "to",
+"start": 43.29,
+"end": 43.43
+},
+{
+"word": "convert",
+"start": 43.44,
+"end": 44.19
+}
+]

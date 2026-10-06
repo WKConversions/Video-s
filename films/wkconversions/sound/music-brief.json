@@ -1,0 +1,7 @@
+{"bpm": 132, "key": "D", "mode": "major", "length": 46.9136, "vibe": "tech-minimal",
+ "mix": {"piano": 0.5, "pad": 0.8, "pluck": 0.7, "bells": 0.0, "kick": 1.0, "clap": 0.4, "hats": 0.45, "bass": 1.0, "swing": 0.0, "bright": 1.1},
+ "progression": ["vi", "IV", "I", "V", "vi", "IV", "I", "V", "V",
+                 "vi", "IV", "I", "V", "vi", "IV", "I", "V", "vi", "IV", "I", "V",
+                 "vi", "IV", "I", "V", "I", "I"],
+ "sections": [[0, 0], [4, 1], [9, 2], [15, 3], [19, 1], [21, 3], [25, "end"]],
+ "_film": "rendered 0.9136 s long and trimmed by that much, so bar 0 starts at film -0.91 and bar k at film -0.9136 + k * 1.8182: bar 4 (6.36) pulse, bar 9 (15.45) the turn, bar 15 (26.36) full groove, bar 19 (33.63) breakdown on 'No random animations', bar 21 (37.27) the brand lift in the pause before 'WKConversions' (37.70), bar 25 (44.54) the final D chord after 'convert' (44.19), ringing to 46.0"}

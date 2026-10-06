@@ -1,0 +1,1654 @@
+[
+ {
+  "id": "gen-tick",
+  "file": "sfx/ticker/gen-tick.wav",
+  "category": "ticker",
+  "character": "generated ticker",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.0
+  ],
+  "length": 0.12,
+  "lufs": -25.9,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "source": "generated (numpy), royalty-free",
+  "brightness_hz": 3332,
+  "heard": {
+   "tone": {
+    "soft": 0.11,
+    "warm": 0.32,
+    "premium": 0.19,
+    "playful": 0.7,
+    "subtle": 0.81,
+    "organic": 0.65
+   },
+   "style": {
+    "corporate-tech": 0.66,
+    "calm-premium": -1.01,
+    "playful-social": -0.0,
+    "energetic-startup": 0.31,
+    "cinematic": -0.4,
+    "friendly-human": 0.18,
+    "data-ai": 0.16,
+    "retro-game": 0.21
+   },
+   "heard_as": [
+    "a synth blip",
+    "a glass ping",
+    "a water drop"
+   ]
+  }
+ },
+ {
+  "id": "gen-tap",
+  "file": "sfx/tap/gen-tap.wav",
+  "category": "tap",
+  "character": "generated tap",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.0
+  ],
+  "length": 0.15,
+  "lufs": -23.0,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "source": "generated (numpy), royalty-free",
+  "brightness_hz": 2304,
+  "heard": {
+   "tone": {
+    "soft": 0.14,
+    "warm": 0.57,
+    "premium": 0.32,
+    "playful": 0.84,
+    "subtle": 0.76,
+    "organic": 0.76
+   },
+   "style": {
+    "corporate-tech": 1.27,
+    "calm-premium": -0.92,
+    "playful-social": 0.53,
+    "energetic-startup": 1.3,
+    "cinematic": -0.33,
+    "friendly-human": 0.89,
+    "data-ai": -0.52,
+    "retro-game": 0.2
+   },
+   "heard_as": [
+    "a glass ping",
+    "a synth blip",
+    "a bubbly pop"
+   ]
+  }
+ },
+ {
+  "id": "gen-pop",
+  "file": "sfx/pop/gen-pop.wav",
+  "category": "pop",
+  "character": "generated pop",
+  "licence": "generated",
+  "sync": 0.004,
+  "transients": [
+   0.004
+  ],
+  "length": 0.2,
+  "lufs": -16.4,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "source": "generated (numpy), royalty-free",
+  "brightness_hz": 466,
+  "heard": {
+   "tone": {
+    "soft": 0.7,
+    "warm": 0.76,
+    "premium": 0.08,
+    "playful": 0.97,
+    "subtle": 0.3,
+    "organic": 0.59
+   },
+   "style": {
+    "corporate-tech": -0.33,
+    "calm-premium": -0.82,
+    "playful-social": 2.24,
+    "energetic-startup": 0.9,
+    "cinematic": -0.44,
+    "friendly-human": -0.32,
+    "data-ai": 0.18,
+    "retro-game": 0.79
+   },
+   "heard_as": [
+    "a synth blip",
+    "a bubbly pop",
+    "a laser"
+   ]
+  }
+ },
+ {
+  "id": "gen-chime",
+  "file": "sfx/chime/gen-chime.wav",
+  "category": "chime",
+  "character": "generated chime",
+  "licence": "generated",
+  "sync": 0.003,
+  "transients": [
+   0.003
+  ],
+  "length": 0.9,
+  "lufs": -18.5,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "source": "generated (numpy), royalty-free",
+  "brightness_hz": 1474,
+  "heard": {
+   "tone": {
+    "soft": 0.86,
+    "warm": 0.73,
+    "premium": 0.22,
+    "playful": 0.51,
+    "subtle": 0.78,
+    "organic": 0.7
+   },
+   "style": {
+    "corporate-tech": -0.29,
+    "calm-premium": -0.44,
+    "playful-social": -0.21,
+    "energetic-startup": -0.12,
+    "cinematic": -0.22,
+    "friendly-human": 1.34,
+    "data-ai": -0.51,
+    "retro-game": 0.43
+   },
+   "heard_as": [
+    "a synth blip",
+    "a bell ding",
+    "a pluck"
+   ]
+  }
+ },
+ {
+  "id": "gen-success",
+  "file": "sfx/success/gen-success.wav",
+  "category": "success",
+  "character": "generated success",
+  "licence": "generated",
+  "sync": 0.12,
+  "transients": [
+   0.12
+  ],
+  "length": 0.7,
+  "lufs": -11.5,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "source": "generated (numpy), royalty-free",
+  "brightness_hz": 1247,
+  "heard": {
+   "tone": {
+    "soft": 0.43,
+    "warm": 0.7,
+    "premium": 0.0,
+    "playful": 0.59,
+    "subtle": 0.57,
+    "organic": 0.57
+   },
+   "style": {
+    "corporate-tech": -0.82,
+    "calm-premium": -1.96,
+    "playful-social": 0.34,
+    "energetic-startup": 0.65,
+    "cinematic": -0.8,
+    "friendly-human": 0.68,
+    "data-ai": -0.78,
+    "retro-game": 1.02
+   },
+   "heard_as": [
+    "a synth blip",
+    "a notification chime",
+    "a positive confirmation"
+   ]
+  }
+ },
+ {
+  "id": "gen-appear",
+  "file": "sfx/appear-rise/gen-appear.wav",
+  "category": "appear-rise",
+  "character": "generated appear-rise",
+  "licence": "generated",
+  "sync": 0.2,
+  "transients": [
+   0.03
+  ],
+  "length": 0.4,
+  "lufs": -23.3,
+  "hits": 1,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "source": "generated (numpy), royalty-free",
+  "brightness_hz": 9625,
+  "heard": {
+   "tone": {
+    "soft": 0.0,
+    "warm": 0.0,
+    "premium": 0.05,
+    "playful": 0.81,
+    "subtle": 0.59,
+    "organic": 0.0
+   },
+   "style": {
+    "corporate-tech": 0.56,
+    "calm-premium": 0.03,
+    "playful-social": 2.31,
+    "energetic-startup": 1.61,
+    "cinematic": -0.17,
+    "friendly-human": -0.21,
+    "data-ai": 1.74,
+    "retro-game": 2.32
+   },
+   "heard_as": [
+    "a digital glitch",
+    "a bubbly pop",
+    "a synth blip"
+   ]
+  }
+ },
+ {
+  "id": "gen-whoosh-short",
+  "file": "sfx/whoosh/gen-whoosh-short.wav",
+  "category": "whoosh",
+  "character": "short, soft pass: a card or a word flying in",
+  "licence": "generated",
+  "sync": 0.259,
+  "transients": [
+   0.259
+  ],
+  "length": 0.95,
+  "lufs": -22.7,
+  "hits": 1,
+  "brightness_hz": 2802,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.38,
+    "warm": 0.41,
+    "premium": 0.35,
+    "playful": 0.57,
+    "subtle": 0.7,
+    "organic": 0.38
+   },
+   "style": {
+    "corporate-tech": 1.0,
+    "calm-premium": 0.9,
+    "playful-social": 0.32,
+    "energetic-startup": -0.97,
+    "cinematic": -0.75,
+    "friendly-human": 0.13,
+    "data-ai": 1.06,
+    "retro-game": -0.0
+   },
+   "heard_as": [
+    "a fast whip",
+    "a rising sweep",
+    "a falling sweep"
+   ]
+  }
+ },
+ {
+  "id": "gen-whoosh-medium",
+  "file": "sfx/whoosh/gen-whoosh-medium.wav",
+  "category": "whoosh",
+  "character": "medium pass: a camera move, a page pan",
+  "licence": "generated",
+  "sync": 0.49,
+  "transients": [
+   0.49
+  ],
+  "length": 1.3,
+  "lufs": -21.1,
+  "hits": 1,
+  "brightness_hz": 2316,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.35,
+    "warm": 0.3,
+    "premium": 0.49,
+    "playful": 0.41,
+    "subtle": 0.51,
+    "organic": 0.14
+   },
+   "style": {
+    "corporate-tech": 0.55,
+    "calm-premium": 1.0,
+    "playful-social": 0.18,
+    "energetic-startup": -0.68,
+    "cinematic": -0.17,
+    "friendly-human": 0.16,
+    "data-ai": 0.88,
+    "retro-game": -0.08
+   },
+   "heard_as": [
+    "a fast whip",
+    "a rising sweep",
+    "a whoosh"
+   ]
+  }
+ },
+ {
+  "id": "gen-whoosh-whip",
+  "file": "sfx/whoosh/gen-whoosh-whip.wav",
+  "category": "whoosh",
+  "character": "fast, bright: a whip pan",
+  "licence": "generated",
+  "sync": 0.167,
+  "transients": [
+   0.167
+  ],
+  "length": 0.85,
+  "lufs": -24.1,
+  "hits": 1,
+  "brightness_hz": 4960,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.05,
+    "warm": 0.05,
+    "premium": 0.43,
+    "playful": 0.54,
+    "subtle": 0.68,
+    "organic": 0.05
+   },
+   "style": {
+    "corporate-tech": 1.53,
+    "calm-premium": 0.81,
+    "playful-social": 0.14,
+    "energetic-startup": -1.01,
+    "cinematic": -0.59,
+    "friendly-human": -0.17,
+    "data-ai": 1.71,
+    "retro-game": 0.27
+   },
+   "heard_as": [
+    "a rising sweep",
+    "a fast whip",
+    "a falling sweep"
+   ]
+  }
+ },
+ {
+  "id": "gen-whoosh-deep",
+  "file": "sfx/whoosh/gen-whoosh-deep.wav",
+  "category": "whoosh",
+  "character": "slow, low: a big pull-back or zoom",
+  "licence": "generated",
+  "sync": 0.788,
+  "transients": [
+   0.788
+  ],
+  "length": 1.7,
+  "lufs": -22.8,
+  "hits": 1,
+  "brightness_hz": 1321,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.65,
+    "warm": 0.62,
+    "premium": 0.76,
+    "playful": 0.49,
+    "subtle": 0.24,
+    "organic": 0.22
+   },
+   "style": {
+    "corporate-tech": 0.09,
+    "calm-premium": 1.26,
+    "playful-social": 0.35,
+    "energetic-startup": -0.38,
+    "cinematic": 0.26,
+    "friendly-human": 0.12,
+    "data-ai": 0.68,
+    "retro-game": -0.06
+   },
+   "heard_as": [
+    "a rising sweep",
+    "a fast whip",
+    "a whoosh"
+   ]
+  }
+ },
+ {
+  "id": "gen-riser-1s",
+  "file": "sfx/riser/gen-riser-1s.wav",
+  "category": "riser",
+  "character": "one second into a reveal",
+  "licence": "generated",
+  "sync": 1.0,
+  "transients": [
+   1.0
+  ],
+  "length": 1.9,
+  "lufs": -21.1,
+  "hits": 1,
+  "brightness_hz": 2302,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.03,
+    "warm": 0.08,
+    "premium": 0.7,
+    "playful": 0.14,
+    "subtle": 0.27,
+    "organic": 0.3
+   },
+   "style": {
+    "corporate-tech": 1.62,
+    "calm-premium": 0.93,
+    "playful-social": 0.09,
+    "energetic-startup": 0.26,
+    "cinematic": 1.34,
+    "friendly-human": -0.42,
+    "data-ai": 0.5,
+    "retro-game": -0.02
+   },
+   "heard_as": [
+    "a rising sweep",
+    "a fast whip",
+    "a laser"
+   ]
+  }
+ },
+ {
+  "id": "gen-riser-2s",
+  "file": "sfx/riser/gen-riser-2s.wav",
+  "category": "riser",
+  "character": "two seconds of build into a reveal",
+  "licence": "generated",
+  "sync": 2.0,
+  "transients": [
+   2.0
+  ],
+  "length": 2.9,
+  "lufs": -21.2,
+  "hits": 1,
+  "brightness_hz": 2326,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.08,
+    "warm": 0.11,
+    "premium": 0.59,
+    "playful": 0.35,
+    "subtle": 0.05,
+    "organic": 0.16
+   },
+   "style": {
+    "corporate-tech": 0.47,
+    "calm-premium": 0.5,
+    "playful-social": -0.27,
+    "energetic-startup": 0.74,
+    "cinematic": 1.06,
+    "friendly-human": -0.78,
+    "data-ai": 0.28,
+    "retro-game": 0.52
+   },
+   "heard_as": [
+    "a rising sweep",
+    "a laser",
+    "a fast whip"
+   ]
+  }
+ },
+ {
+  "id": "gen-impact-soft",
+  "file": "sfx/impact/gen-impact-soft.wav",
+  "category": "impact",
+  "character": "soft low thump: a landing, a lock-in",
+  "licence": "generated",
+  "sync": 0.005,
+  "transients": [
+   0.01
+  ],
+  "length": 2.2,
+  "lufs": -20.1,
+  "hits": 1,
+  "brightness_hz": 80,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.84,
+    "warm": 1.0,
+    "premium": 0.97,
+    "playful": 0.05,
+    "subtle": 0.32,
+    "organic": 1.0
+   },
+   "style": {
+    "corporate-tech": -2.0,
+    "calm-premium": -1.32,
+    "playful-social": -2.69,
+    "energetic-startup": -0.62,
+    "cinematic": 0.8,
+    "friendly-human": -1.77,
+    "data-ai": -1.86,
+    "retro-game": -2.47
+   },
+   "heard_as": [
+    "a deep impact",
+    "a stamp",
+    "a soft thud"
+   ]
+  }
+ },
+ {
+  "id": "gen-impact-deep",
+  "file": "sfx/impact/gen-impact-deep.wav",
+  "category": "impact",
+  "character": "deeper, longer: a logo, the end card",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.02
+  ],
+  "length": 2.8,
+  "lufs": -21.8,
+  "hits": 1,
+  "brightness_hz": 93,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.81,
+    "warm": 0.97,
+    "premium": 0.92,
+    "playful": 0.11,
+    "subtle": 0.38,
+    "organic": 0.92
+   },
+   "style": {
+    "corporate-tech": -1.87,
+    "calm-premium": -1.1,
+    "playful-social": -2.38,
+    "energetic-startup": 0.36,
+    "cinematic": 1.4,
+    "friendly-human": -1.5,
+    "data-ai": -1.61,
+    "retro-game": -1.71
+   },
+   "heard_as": [
+    "a deep impact",
+    "a stamp",
+    "a soft thud"
+   ]
+  }
+ },
+ {
+  "id": "gen-stamp",
+  "file": "sfx/impact/gen-stamp.wav",
+  "category": "impact",
+  "character": "thud with a paper slap: a stamp",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.0
+  ],
+  "length": 1.1,
+  "lufs": -20.9,
+  "hits": 1,
+  "brightness_hz": 257,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.78,
+    "warm": 0.92,
+    "premium": 0.89,
+    "playful": 0.22,
+    "subtle": 0.19,
+    "organic": 0.81
+   },
+   "style": {
+    "corporate-tech": -1.87,
+    "calm-premium": -1.2,
+    "playful-social": -1.34,
+    "energetic-startup": 0.03,
+    "cinematic": 1.1,
+    "friendly-human": -1.85,
+    "data-ai": -1.39,
+    "retro-game": -1.89
+   },
+   "heard_as": [
+    "a stamp",
+    "a deep impact",
+    "a fast whip"
+   ]
+  }
+ },
+ {
+  "id": "gen-shimmer",
+  "file": "sfx/stinger/gen-shimmer.wav",
+  "category": "stinger",
+  "character": "bright sparkle: a reveal, a brand moment",
+  "licence": "generated",
+  "sync": 0.035,
+  "transients": [
+   0.045
+  ],
+  "length": 2.8,
+  "lufs": -15.7,
+  "hits": 1,
+  "brightness_hz": 4233,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 1.0,
+    "warm": 0.16,
+    "premium": 0.57,
+    "playful": 0.0,
+    "subtle": 0.95,
+    "organic": 0.41
+   },
+   "style": {
+    "corporate-tech": 0.77,
+    "calm-premium": 0.85,
+    "playful-social": -0.12,
+    "energetic-startup": -0.83,
+    "cinematic": 0.45,
+    "friendly-human": 0.87,
+    "data-ai": 0.39,
+    "retro-game": -0.01
+   },
+   "heard_as": [
+    "a notification chime",
+    "a positive confirmation",
+    "a magical shimmer"
+   ]
+  }
+ },
+ {
+  "id": "gen-swell",
+  "file": "sfx/swipe/gen-swell.wav",
+  "category": "swipe",
+  "character": "soft air swelling: a slow push, a scene breathing in",
+  "licence": "generated",
+  "sync": 0.903,
+  "transients": [
+   0.903
+  ],
+  "length": 2.6,
+  "lufs": -20.3,
+  "hits": 1,
+  "brightness_hz": 4739,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.3,
+    "warm": 0.19,
+    "premium": 0.81,
+    "playful": 0.62,
+    "subtle": 0.16,
+    "organic": 0.08
+   },
+   "style": {
+    "corporate-tech": -0.53,
+    "calm-premium": 0.71,
+    "playful-social": 0.24,
+    "energetic-startup": -0.63,
+    "cinematic": -1.41,
+    "friendly-human": -0.55,
+    "data-ai": 0.94,
+    "retro-game": 0.2
+   },
+   "heard_as": [
+    "a rising sweep",
+    "sparkles",
+    "a fast whip"
+   ]
+  }
+ },
+ {
+  "id": "gen-whoosh-soft-short",
+  "file": "sfx/whoosh/gen-whoosh-soft-short.wav",
+  "category": "whoosh",
+  "character": "soft, short pass (0.3 s): a card or a word arriving; no hiss",
+  "licence": "generated",
+  "sync": 0.177,
+  "transients": [
+   0.177
+  ],
+  "length": 0.82,
+  "lufs": -23.2,
+  "hits": 1,
+  "brightness_hz": 2423,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.54,
+    "warm": 0.43,
+    "premium": 0.51,
+    "playful": 0.27,
+    "subtle": 0.46,
+    "organic": 0.32
+   },
+   "style": {
+    "corporate-tech": 1.16,
+    "calm-premium": 1.69,
+    "playful-social": 0.16,
+    "energetic-startup": -0.39,
+    "cinematic": -0.12,
+    "friendly-human": 0.35,
+    "data-ai": 0.96,
+    "retro-game": 0.17
+   },
+   "heard_as": [
+    "a fast whip",
+    "a rising sweep",
+    "a whoosh"
+   ]
+  }
+ },
+ {
+  "id": "gen-whoosh-soft-medium",
+  "file": "sfx/whoosh/gen-whoosh-soft-medium.wav",
+  "category": "whoosh",
+  "character": "soft whip (0.6 s): a quick camera whip or a panel flying, rounded",
+  "licence": "generated",
+  "sync": 0.33,
+  "transients": [
+   0.33
+  ],
+  "length": 1.1,
+  "lufs": -20.0,
+  "hits": 1,
+  "brightness_hz": 2816,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.19,
+    "warm": 0.14,
+    "premium": 0.54,
+    "playful": 0.16,
+    "subtle": 0.43,
+    "organic": 0.03
+   },
+   "style": {
+    "corporate-tech": 0.66,
+    "calm-premium": 1.22,
+    "playful-social": -0.03,
+    "energetic-startup": -0.52,
+    "cinematic": -0.3,
+    "friendly-human": -0.37,
+    "data-ai": 1.15,
+    "retro-game": 0.0
+   },
+   "heard_as": [
+    "a fast whip",
+    "a rising sweep",
+    "a whoosh"
+   ]
+  }
+ },
+ {
+  "id": "gen-pop-soft-1",
+  "file": "sfx/pop/gen-pop-soft-1.wav",
+  "category": "pop",
+  "character": "soft rounded pop, A5: a tile, badge or pin landing (first of a run)",
+  "licence": "generated",
+  "sync": 0.005,
+  "transients": [
+   0.005
+  ],
+  "length": 0.55,
+  "lufs": -24.3,
+  "hits": 1,
+  "brightness_hz": 842,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.62,
+    "warm": 0.65,
+    "premium": 0.78,
+    "playful": 0.78,
+    "subtle": 0.35,
+    "organic": 0.62
+   },
+   "style": {
+    "corporate-tech": 0.42,
+    "calm-premium": 0.47,
+    "playful-social": 0.96,
+    "energetic-startup": 1.74,
+    "cinematic": 0.85,
+    "friendly-human": 1.08,
+    "data-ai": -0.21,
+    "retro-game": 0.57
+   },
+   "heard_as": [
+    "a synth blip",
+    "a bubbly pop",
+    "a switch toggle"
+   ]
+  }
+ },
+ {
+  "id": "gen-pop-soft-2",
+  "file": "sfx/pop/gen-pop-soft-2.wav",
+  "category": "pop",
+  "character": "soft rounded pop, C#6: the second of a run",
+  "licence": "generated",
+  "sync": 0.005,
+  "transients": [
+   0.005
+  ],
+  "length": 0.55,
+  "lufs": -22.8,
+  "hits": 1,
+  "brightness_hz": 1057,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.41,
+    "warm": 0.59,
+    "premium": 0.68,
+    "playful": 0.68,
+    "subtle": 0.41,
+    "organic": 0.54
+   },
+   "style": {
+    "corporate-tech": -0.05,
+    "calm-premium": 0.17,
+    "playful-social": 0.79,
+    "energetic-startup": 1.53,
+    "cinematic": 0.71,
+    "friendly-human": 1.23,
+    "data-ai": -0.09,
+    "retro-game": 0.66
+   },
+   "heard_as": [
+    "a synth blip",
+    "a water drop",
+    "a pluck"
+   ]
+  }
+ },
+ {
+  "id": "gen-pop-soft-3",
+  "file": "sfx/pop/gen-pop-soft-3.wav",
+  "category": "pop",
+  "character": "soft rounded pop, E6: the third of a run",
+  "licence": "generated",
+  "sync": 0.005,
+  "transients": [
+   0.005
+  ],
+  "length": 0.55,
+  "lufs": -23.6,
+  "hits": 1,
+  "brightness_hz": 1228,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.46,
+    "warm": 0.51,
+    "premium": 0.62,
+    "playful": 0.76,
+    "subtle": 0.49,
+    "organic": 0.51
+   },
+   "style": {
+    "corporate-tech": 0.5,
+    "calm-premium": 0.44,
+    "playful-social": 1.14,
+    "energetic-startup": 1.77,
+    "cinematic": 0.64,
+    "friendly-human": 1.86,
+    "data-ai": 0.2,
+    "retro-game": 1.13
+   },
+   "heard_as": [
+    "a synth blip",
+    "a water drop",
+    "a switch toggle"
+   ]
+  }
+ },
+ {
+  "id": "gen-click",
+  "file": "sfx/tap/gen-click.wav",
+  "category": "tap",
+  "character": "crisp cursor click: the product's UI voice, a button pressed",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.0,
+   0.065
+  ],
+  "length": 0.35,
+  "lufs": -39.9,
+  "hits": 2,
+  "brightness_hz": 8257,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.59,
+    "warm": 0.54,
+    "premium": 0.16,
+    "playful": 0.73,
+    "subtle": 0.92,
+    "organic": 0.73
+   },
+   "style": {
+    "corporate-tech": 0.15,
+    "calm-premium": -0.55,
+    "playful-social": 0.03,
+    "energetic-startup": -1.0,
+    "cinematic": -0.85,
+    "friendly-human": 0.27,
+    "data-ai": -0.54,
+    "retro-game": -0.18
+   },
+   "heard_as": [
+    "a switch toggle",
+    "a camera shutter",
+    "a mouse click"
+   ]
+  }
+ },
+ {
+  "id": "gen-tap-soft",
+  "file": "sfx/tap/gen-tap-soft.wav",
+  "category": "tap",
+  "character": "soft finger tap: a touch on a phone screen, round and muted",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.0
+  ],
+  "length": 0.4,
+  "lufs": -24.6,
+  "hits": 1,
+  "brightness_hz": 518,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.68,
+    "warm": 0.86,
+    "premium": 0.73,
+    "playful": 1.0,
+    "subtle": 0.62,
+    "organic": 0.89
+   },
+   "style": {
+    "corporate-tech": -1.01,
+    "calm-premium": -0.78,
+    "playful-social": -0.33,
+    "energetic-startup": -0.42,
+    "cinematic": 0.11,
+    "friendly-human": -0.61,
+    "data-ai": -1.75,
+    "retro-game": -1.2
+   },
+   "heard_as": [
+    "a bubbly pop",
+    "a switch toggle",
+    "a pluck"
+   ]
+  }
+ },
+ {
+  "id": "gen-tick-soft",
+  "file": "sfx/ticker/gen-tick-soft.wav",
+  "category": "ticker",
+  "character": "soft tick, a 2 ms breath of noise like a quiet clock: a counter step, a stepped list item",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.0
+  ],
+  "length": 0.2,
+  "lufs": -34.3,
+  "hits": 1,
+  "brightness_hz": 0,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.95,
+    "warm": 0.84,
+    "premium": 0.11,
+    "playful": 0.92,
+    "subtle": 0.97,
+    "organic": 0.86
+   },
+   "style": {
+    "corporate-tech": -0.57,
+    "calm-premium": -1.19,
+    "playful-social": -0.62,
+    "energetic-startup": -2.23,
+    "cinematic": -2.39,
+    "friendly-human": -0.08,
+    "data-ai": -1.16,
+    "retro-game": -0.67
+   },
+   "heard_as": [
+    "a switch toggle",
+    "a card flip",
+    "coins"
+   ]
+  }
+ },
+ {
+  "id": "gen-tick-soft-hi",
+  "file": "sfx/ticker/gen-tick-soft-hi.wav",
+  "category": "ticker",
+  "character": "soft tick, brighter: alternate with gen-tick-soft",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.0
+  ],
+  "length": 0.2,
+  "lufs": -37.7,
+  "hits": 1,
+  "brightness_hz": 0,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.92,
+    "warm": 0.81,
+    "premium": 0.14,
+    "playful": 0.89,
+    "subtle": 1.0,
+    "organic": 0.84
+   },
+   "style": {
+    "corporate-tech": -0.81,
+    "calm-premium": -1.3,
+    "playful-social": -0.9,
+    "energetic-startup": -2.53,
+    "cinematic": -2.3,
+    "friendly-human": -0.31,
+    "data-ai": -1.09,
+    "retro-game": -0.81
+   },
+   "heard_as": [
+    "a switch toggle",
+    "coins",
+    "a card flip"
+   ]
+  }
+ },
+ {
+  "id": "gen-typing-run",
+  "file": "sfx/ticker/gen-typing-run.wav",
+  "category": "ticker",
+  "character": "a few laptop keys at a human pace (6 keys in 0.5 s): a type-on's start",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.0,
+   0.105,
+   0.19,
+   0.315,
+   0.39,
+   0.52
+  ],
+  "length": 1.12,
+  "lufs": -25.7,
+  "hits": 6,
+  "brightness_hz": 2438,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.51,
+    "warm": 0.78,
+    "premium": 0.03,
+    "playful": 0.65,
+    "subtle": 0.65,
+    "organic": 0.78
+   },
+   "style": {
+    "corporate-tech": -0.49,
+    "calm-premium": -0.57,
+    "playful-social": -0.06,
+    "energetic-startup": -0.32,
+    "cinematic": 0.83,
+    "friendly-human": -1.73,
+    "data-ai": 0.15,
+    "retro-game": -0.21
+   },
+   "heard_as": [
+    "a fast whip",
+    "a bubbly pop",
+    "a digital glitch"
+   ]
+  }
+ },
+ {
+  "id": "gen-key",
+  "file": "sfx/tap/gen-key.wav",
+  "category": "tap",
+  "character": "one soft laptop key",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.0
+  ],
+  "length": 0.45,
+  "lufs": -27.5,
+  "hits": 1,
+  "brightness_hz": 1288,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.76,
+    "warm": 0.95,
+    "premium": 0.65,
+    "playful": 0.86,
+    "subtle": 0.86,
+    "organic": 0.97
+   },
+   "style": {
+    "corporate-tech": -0.94,
+    "calm-premium": -1.13,
+    "playful-social": -0.37,
+    "energetic-startup": -1.32,
+    "cinematic": -1.67,
+    "friendly-human": -1.45,
+    "data-ai": -1.6,
+    "retro-game": -1.42
+   },
+   "heard_as": [
+    "a bubbly pop",
+    "a card flip",
+    "a stamp"
+   ]
+  }
+ },
+ {
+  "id": "gen-send",
+  "file": "sfx/swipe/gen-send.wav",
+  "category": "swipe",
+  "character": "message sent: an airy rising swoosh, peaks at the send",
+  "licence": "generated",
+  "sync": 0.291,
+  "transients": [
+   0.291
+  ],
+  "length": 0.85,
+  "lufs": -20.8,
+  "hits": 1,
+  "brightness_hz": 3854,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.32,
+    "warm": 0.49,
+    "premium": 0.27,
+    "playful": 0.24,
+    "subtle": 0.54,
+    "organic": 0.43
+   },
+   "style": {
+    "corporate-tech": 1.42,
+    "calm-premium": 1.31,
+    "playful-social": -0.2,
+    "energetic-startup": 0.12,
+    "cinematic": -0.02,
+    "friendly-human": -0.07,
+    "data-ai": 0.62,
+    "retro-game": 0.33
+   },
+   "heard_as": [
+    "a fast whip",
+    "a rising sweep",
+    "a falling sweep"
+   ]
+  }
+ },
+ {
+  "id": "gen-chime-soft",
+  "file": "sfx/chime/gen-chime-soft.wav",
+  "category": "chime",
+  "character": "soft two-note glass-mallet chime (E6 up to A6): a message arriving",
+  "licence": "generated",
+  "sync": 0.005,
+  "transients": [
+   0.035
+  ],
+  "length": 3.4,
+  "lufs": -15.9,
+  "hits": 1,
+  "brightness_hz": 1558,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.73,
+    "warm": 0.35,
+    "premium": 0.41,
+    "playful": 0.46,
+    "subtle": 0.73,
+    "organic": 0.46
+   },
+   "style": {
+    "corporate-tech": -0.08,
+    "calm-premium": -0.85,
+    "playful-social": 0.36,
+    "energetic-startup": -0.03,
+    "cinematic": -0.52,
+    "friendly-human": 1.51,
+    "data-ai": -0.2,
+    "retro-game": 0.43
+   },
+   "heard_as": [
+    "a notification chime",
+    "a positive confirmation",
+    "a pluck"
+   ]
+  }
+ },
+ {
+  "id": "gen-success-soft",
+  "file": "sfx/success/gen-success-soft.wav",
+  "category": "success",
+  "character": "soft success: three rising mallet notes (C#6 E6 A6) over a warm chord; syncs on the first",
+  "licence": "generated",
+  "sync": 0.005,
+  "transients": [
+   0.005
+  ],
+  "length": 3.2,
+  "lufs": -16.2,
+  "hits": 1,
+  "brightness_hz": 1462,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.57,
+    "warm": 0.24,
+    "premium": 0.24,
+    "playful": 0.32,
+    "subtle": 0.11,
+    "organic": 0.49
+   },
+   "style": {
+    "corporate-tech": 0.32,
+    "calm-premium": -0.34,
+    "playful-social": 0.41,
+    "energetic-startup": 0.89,
+    "cinematic": 0.35,
+    "friendly-human": 1.12,
+    "data-ai": -0.12,
+    "retro-game": 0.83
+   },
+   "heard_as": [
+    "a notification chime",
+    "a positive confirmation",
+    "a pluck"
+   ]
+  }
+ },
+ {
+  "id": "gen-riser-soft-1s",
+  "file": "sfx/riser/gen-riser-soft-1s.wav",
+  "category": "riser",
+  "character": "soft riser, 1 s: air climbing into a reveal; sync = the reveal",
+  "licence": "generated",
+  "sync": 1.0,
+  "transients": [
+   1.0
+  ],
+  "length": 1.8,
+  "lufs": -22.0,
+  "hits": 1,
+  "brightness_hz": 2268,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.27,
+    "warm": 0.27,
+    "premium": 0.86,
+    "playful": 0.08,
+    "subtle": 0.08,
+    "organic": 0.35
+   },
+   "style": {
+    "corporate-tech": 0.51,
+    "calm-premium": 1.41,
+    "playful-social": -0.64,
+    "energetic-startup": 0.01,
+    "cinematic": 0.7,
+    "friendly-human": -0.15,
+    "data-ai": 0.22,
+    "retro-game": -0.36
+   },
+   "heard_as": [
+    "a rising sweep",
+    "a fast whip",
+    "a whoosh"
+   ]
+  }
+ },
+ {
+  "id": "gen-riser-soft-2s",
+  "file": "sfx/riser/gen-riser-soft-2s.wav",
+  "category": "riser",
+  "character": "soft riser, 2 s: a longer airy build into a reveal",
+  "licence": "generated",
+  "sync": 2.0,
+  "transients": [
+   2.0
+  ],
+  "length": 2.8,
+  "lufs": -21.0,
+  "hits": 1,
+  "brightness_hz": 2300,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.22,
+    "warm": 0.38,
+    "premium": 0.84,
+    "playful": 0.19,
+    "subtle": 0.03,
+    "organic": 0.24
+   },
+   "style": {
+    "corporate-tech": -0.45,
+    "calm-premium": 0.73,
+    "playful-social": -0.77,
+    "energetic-startup": -0.02,
+    "cinematic": 0.19,
+    "friendly-human": -0.69,
+    "data-ai": -0.24,
+    "retro-game": -0.45
+   },
+   "heard_as": [
+    "a rising sweep",
+    "a fast whip",
+    "a whoosh"
+   ]
+  }
+ },
+ {
+  "id": "gen-impact-logo",
+  "file": "sfx/impact/gen-impact-logo.wav",
+  "category": "impact",
+  "character": "soft deep landing for the logo: sub thump, muffled body, no click",
+  "licence": "generated",
+  "sync": 0.005,
+  "transients": [
+   0.035
+  ],
+  "length": 2.8,
+  "lufs": -20.3,
+  "hits": 1,
+  "brightness_hz": 922,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.89,
+    "warm": 0.89,
+    "premium": 1.0,
+    "playful": 0.03,
+    "subtle": 0.22,
+    "organic": 0.95
+   },
+   "style": {
+    "corporate-tech": -1.09,
+    "calm-premium": -0.96,
+    "playful-social": -1.97,
+    "energetic-startup": -0.13,
+    "cinematic": 0.19,
+    "friendly-human": -2.01,
+    "data-ai": -1.59,
+    "retro-game": -2.25
+   },
+   "heard_as": [
+    "a deep impact",
+    "a stamp",
+    "a deep cinematic whoosh"
+   ]
+  }
+ },
+ {
+  "id": "gen-sparkle",
+  "file": "sfx/stinger/gen-sparkle.wav",
+  "category": "stinger",
+  "character": "soft sparkle: pentatonic glints rising and fading (a brand moment)",
+  "licence": "generated",
+  "sync": 0.005,
+  "transients": [
+   0.045
+  ],
+  "length": 3.8,
+  "lufs": -18.3,
+  "hits": 1,
+  "brightness_hz": 1849,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.97,
+    "warm": 0.22,
+    "premium": 0.46,
+    "playful": 0.3,
+    "subtle": 0.89,
+    "organic": 0.19
+   },
+   "style": {
+    "corporate-tech": 1.0,
+    "calm-premium": 0.9,
+    "playful-social": 0.78,
+    "energetic-startup": 0.58,
+    "cinematic": 1.07,
+    "friendly-human": 1.42,
+    "data-ai": 1.58,
+    "retro-game": 1.17
+   },
+   "heard_as": [
+    "a positive confirmation",
+    "a notification chime",
+    "a magical shimmer"
+   ]
+  }
+ },
+ {
+  "id": "gen-data-blips",
+  "file": "sfx/data/gen-data-blips.wav",
+  "category": "data",
+  "character": "a scan: 7 soft blips 65 ms apart (data found, an AI working)",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.0,
+   0.065,
+   0.13,
+   0.195,
+   0.26,
+   0.325,
+   0.39
+  ],
+  "length": 1.005,
+  "lufs": -17.7,
+  "hits": 7,
+  "brightness_hz": 2138,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.24,
+    "warm": 0.03,
+    "premium": 0.3,
+    "playful": 0.43,
+    "subtle": 0.14,
+    "organic": 0.11
+   },
+   "style": {
+    "corporate-tech": 1.07,
+    "calm-premium": 0.89,
+    "playful-social": 1.39,
+    "energetic-startup": 1.43,
+    "cinematic": -0.07,
+    "friendly-human": 0.72,
+    "data-ai": 1.56,
+    "retro-game": 1.68
+   },
+   "heard_as": [
+    "a positive confirmation",
+    "a notification chime",
+    "a synth blip"
+   ]
+  }
+ },
+ {
+  "id": "gen-blip",
+  "file": "sfx/data/gen-blip.wav",
+  "category": "data",
+  "character": "one soft data blip",
+  "licence": "generated",
+  "sync": 0.0,
+  "transients": [
+   0.0
+  ],
+  "length": 0.42,
+  "lufs": -21.3,
+  "hits": 1,
+  "brightness_hz": 1886,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.16,
+    "warm": 0.46,
+    "premium": 0.38,
+    "playful": 0.95,
+    "subtle": 0.84,
+    "organic": 0.68
+   },
+   "style": {
+    "corporate-tech": -0.29,
+    "calm-premium": -1.04,
+    "playful-social": 0.02,
+    "energetic-startup": -0.78,
+    "cinematic": -1.1,
+    "friendly-human": 1.19,
+    "data-ai": -0.22,
+    "retro-game": 0.43
+   },
+   "heard_as": [
+    "a glass ping",
+    "a switch toggle",
+    "a pluck"
+   ]
+  }
+ },
+ {
+  "id": "gen-swell-low",
+  "file": "sfx/swipe/gen-swell-low.wav",
+  "category": "swipe",
+  "character": "low swell: warm low air and sub breathing up to 1.2 s (a slow push, a scene opening)",
+  "licence": "generated",
+  "sync": 1.151,
+  "transients": [
+   1.151
+  ],
+  "length": 3.2,
+  "lufs": -19.7,
+  "hits": 1,
+  "brightness_hz": 462,
+  "original": [
+   "scripts/sfx_synth.py"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.49,
+    "warm": 0.68,
+    "premium": 0.95,
+    "playful": 0.38,
+    "subtle": 0.0,
+    "organic": 0.27
+   },
+   "style": {
+    "corporate-tech": -2.25,
+    "calm-premium": 1.24,
+    "playful-social": 0.13,
+    "energetic-startup": 0.69,
+    "cinematic": 2.59,
+    "friendly-human": -0.09,
+    "data-ai": 0.51,
+    "retro-game": 0.46
+   },
+   "heard_as": [
+    "a whoosh",
+    "a deep cinematic whoosh",
+    "a rising sweep"
+   ]
+  }
+ }
+]
