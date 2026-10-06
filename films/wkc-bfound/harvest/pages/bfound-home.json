@@ -1,0 +1,568 @@
+{
+ "title": "bFound. | founder branding & digital strategy",
+ "body": {
+  "font": "Inter, ui-sans-serif, system-ui, sans-serif",
+  "size": "16px",
+  "weight": "400",
+  "color": "lab(9.1889 1.9662 -14.4165)",
+  "bg": "lab(99.3977 0.190079 -1.12112)",
+  "ls": "normal"
+ },
+ "h1": {
+  "font": "\"Instrument Serif\", \"Times New Roman\", serif",
+  "size": "96px",
+  "weight": "400",
+  "color": "lab(9.1889 1.9662 -14.4165)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "ls": "-2.4px"
+ },
+ "h2": {
+  "font": "\"Instrument Serif\", \"Times New Roman\", serif",
+  "size": "60px",
+  "weight": "400",
+  "color": "lab(9.1889 1.9662 -14.4165)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "ls": "-1.2px"
+ },
+ "h3": {
+  "font": "\"Instrument Serif\", \"Times New Roman\", serif",
+  "size": "20px",
+  "weight": "400",
+  "color": "lab(9.1889 1.9662 -14.4165)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "ls": "-0.4px"
+ },
+ "p": {
+  "font": "Inter, ui-sans-serif, system-ui, sans-serif",
+  "size": "20px",
+  "weight": "400",
+  "color": "lab(41.8226 0.300184 -11.1407)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "ls": "normal"
+ },
+ "a": {
+  "font": "Inter, ui-sans-serif, system-ui, sans-serif",
+  "size": "16px",
+  "weight": "400",
+  "color": "lab(9.1889 1.9662 -14.4165)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "ls": "normal"
+ },
+ "button": {
+  "font": "Inter, ui-sans-serif, system-ui, sans-serif",
+  "size": "11px",
+  "weight": "500",
+  "color": "lab(98.1843 0.652045 -3.72542)",
+  "bg": "lab(40.4838 6.23226 -37.666)",
+  "ls": "0.275px"
+ },
+ "header": {
+  "font": "Inter, ui-sans-serif, system-ui, sans-serif",
+  "size": "16px",
+  "weight": "400",
+  "color": "lab(9.1889 1.9662 -14.4165)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "ls": "normal"
+ },
+ "nav": {
+  "font": "Inter, ui-sans-serif, system-ui, sans-serif",
+  "size": "16px",
+  "weight": "400",
+  "color": "lab(9.1889 1.9662 -14.4165)",
+  "bg": "oklab(0.994998 0.000511229 -0.002931 / 0.8)",
+  "ls": "normal"
+ },
+ "colors": [
+  [
+   "lab(9.1889 1.9662 -14.4165)",
+   120068573.84365845
+  ],
+  [
+   "rgba(0, 0, 0, 0)",
+   92372481.95012552
+  ],
+  [
+   "lab(99.3977 0.190079 -1.12112)",
+   37044794.968170166
+  ],
+  [
+   "rgb(0, 0, 0)",
+   17668918.873530924
+  ],
+  [
+   "IMG linear-gradient(lab(95.8389 0.166804 -6.79294) 0%, lab(99.3977 0.190079 -1.12112) 100%)",
+   5223307.5
+  ],
+  [
+   "lab(100 0 0)",
+   4589712.40625
+  ],
+  [
+   "lab(97.3691 -2.08575 15.2875)",
+   1928291.5625
+  ],
+  [
+   "IMG linear-gradient(to right bottom, lab(97.3691 -2.08575 15.2875) 0%, lab(95.8389 0.166804 -6.79294) 100%)",
+   1525580
+  ],
+  [
+   "lab(41.8226 0.300184 -11.1407)",
+   1307871.83984375
+  ],
+  [
+   "oklab(0.494995 -0.00367177 -0.10492 / 0.4)",
+   1296000
+  ],
+  [
+   "lab(98.1843 0.652045 -3.72542)",
+   1288546.546875
+  ],
+  [
+   "lab(40.4838 6.23226 -37.666)",
+   1111898.0791015625
+  ],
+  [
+   "oklab(0.999998 -0.00000980496 0.0000234246 / 0.8)",
+   1079504
+  ],
+  [
+   "IMG linear-gradient(135deg, lab(97.3691 -2.08575 15.2875) 0%, lab(96.9426 3.14552 -2.89651) 60%, lab(95.8389 0.166804 -6.79294) 100%)",
+   476303.75
+  ],
+  [
+   "oklab(0.994998 0.000511229 -0.002931 / 0.6)",
+   455249
+  ],
+  [
+   "rgb(255, 255, 255)",
+   407507.60397812724
+  ],
+  [
+   "oklab(0.999998 -0.00000980496 0.0000234246 / 0.9)",
+   366300
+  ],
+  [
+   "lab(95.8389 0.166804 -6.79294)",
+   332800
+  ],
+  [
+   "lab(96.9426 3.14552 -2.89651)",
+   268864
+  ],
+  [
+   "IMG radial-gradient(rgba(72, 94, 157, 0.08) 1px, rgba(0, 0, 0, 0) 1px)",
+   220047.75
+  ],
+  [
+   "oklab(0.219998 -0.00139891 -0.0399687 / 0.85)",
+   143420.90625
+  ],
+  [
+   "oklab(0.999998 -0.00000980496 0.0000234246 / 0.95)",
+   107184.625
+  ],
+  [
+   "oklab(0.494995 -0.00367177 -0.10492 / 0.05)",
+   89056
+  ],
+  [
+   "oklab(0.494995 -0.00367177 -0.10492 / 0.8)",
+   69548.625
+  ],
+  [
+   "rgb(253, 248, 218)",
+   64090.03033900261
+  ],
+  [
+   "oklab(0.984997 0.00172657 -0.00982445 / 0.75)",
+   48571.25
+  ],
+  [
+   "oklab(0.994998 0.000511229 -0.002931 / 0.8)",
+   47459.40625
+  ],
+  [
+   "oklab(0.219998 -0.00139891 -0.0399687 / 0.8)",
+   27572.4375
+  ],
+  [
+   "oklab(0.994998 0.000511229 -0.002931 / 0.9)",
+   16724.609375
+  ],
+  [
+   "oklab(0.999998 -0.00000980496 0.0000234246 / 0.7)",
+   15365.71875
+  ]
+ ],
+ "imgs": [
+  {
+   "tag": "IMG",
+   "src": "https://bfoundconsulting.com/__l5e/assets-v1/5aeb4014-a11a-439e-bf6f-48da15c007bb/bfound-logo.png",
+   "alt": "bfound consulting logo",
+   "cls": "h-6 w-auto md:h-7",
+   "w": 97.921875,
+   "h": 28,
+   "svg": ""
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-menu",
+   "w": 0,
+   "h": 0,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-menu\" aria-hidden=\"true\"><path d=\"M4 5h16\"></path><path d=\"M4 12h16\"></path><path d=\"M4 19h16\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-arrow-up-right h-4 w-4 transition-transform gr",
+   "w": 16,
+   "h": 16,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-up-right h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg>"
+  },
+  {
+   "tag": "IMG",
+   "src": "https://bfoundconsulting.com/emma-480.webp",
+   "alt": "Emma Bauditz — founder of bFound.",
+   "cls": "h-full w-full object-cover",
+   "w": 398,
+   "h": 398,
+   "svg": ""
+  },
+  {
+   "tag": "IMG",
+   "src": "https://bfoundconsulting.com/__l5e/assets-v1/4456d41a-85b9-4d25-93e6-055fc524afbe/favikon-logo.png",
+   "alt": "Favikon creator ranking badge",
+   "cls": "h-5 w-5 translate-y-[1px] object-contain",
+   "w": 20,
+   "h": 20,
+   "svg": ""
+  },
+  {
+   "tag": "IMG",
+   "src": "https://bfoundconsulting.com/__l5e/assets-v1/4456d41a-85b9-4d25-93e6-055fc524afbe/favikon-logo.png",
+   "alt": "Favikon creator ranking badge",
+   "cls": "h-5 w-5 translate-y-[1px] object-contain",
+   "w": 17.96875,
+   "h": 20,
+   "svg": ""
+  },
+  {
+   "tag": "IMG",
+   "src": "https://bfoundconsulting.com/__l5e/assets-v1/7e328c6a-f6c4-4a55-8ee9-46e485f25f9f/founder-robin.png",
+   "alt": "Robin",
+   "cls": "h-12 w-12 rounded-full border-[3px] border-background object",
+   "w": 56,
+   "h": 56,
+   "svg": ""
+  },
+  {
+   "tag": "IMG",
+   "src": "https://bfoundconsulting.com/__l5e/assets-v1/d8607479-22b7-40e9-97c3-4777680bf420/founder-tom.png",
+   "alt": "Tom",
+   "cls": "h-12 w-12 rounded-full border-[3px] border-background object",
+   "w": 56,
+   "h": 56,
+   "svg": ""
+  },
+  {
+   "tag": "IMG",
+   "src": "https://bfoundconsulting.com/__l5e/assets-v1/5befc9a1-2eaa-44b0-a82c-7e4ef42f1ad3/founder-1.png",
+   "alt": "Founder",
+   "cls": "h-12 w-12 rounded-full border-[3px] border-background object",
+   "w": 56,
+   "h": 56,
+   "svg": ""
+  },
+  {
+   "tag": "IMG",
+   "src": "https://bfoundconsulting.com/__l5e/assets-v1/302fba6e-e95b-4116-bc91-3419773aad71/founder-3.png",
+   "alt": "Founder",
+   "cls": "h-12 w-12 rounded-full border-[3px] border-background object",
+   "w": 56,
+   "h": 56,
+   "svg": ""
+  },
+  {
+   "tag": "IMG",
+   "src": "https://bfoundconsulting.com/__l5e/assets-v1/6c4e17db-9d0f-42fd-ae2c-f42b397ba3af/founder-emma.png",
+   "alt": "Emma",
+   "cls": "h-12 w-12 rounded-full border-[3px] border-background object",
+   "w": 56,
+   "h": 56,
+   "svg": ""
+  },
+  {
+   "tag": "IMG",
+   "src": "https://bfoundconsulting.com/__l5e/assets-v1/bafd11ce-288c-4bd5-9fc6-c8f9586f3615/founder-new.png",
+   "alt": "Founder",
+   "cls": "h-12 w-12 rounded-full border-[3px] border-background object",
+   "w": 56,
+   "h": 56,
+   "svg": ""
+  },
+  {
+   "tag": "IMG",
+   "src": "https://bfoundconsulting.com/__l5e/assets-v1/a0787bcd-f159-4167-8e09-f1b96a2ab518/magnus.png",
+   "alt": "Magnus",
+   "cls": "h-12 w-12 rounded-full border-[3px] border-background object",
+   "w": 56,
+   "h": 56,
+   "svg": ""
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-volume2 lucide-volume-2 h-5 w-5",
+   "w": 20,
+   "h": 20,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-volume2 lucide-volume-2 h-5 w-5\" aria-hidden=\"true\"><path d=\"M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z\"></path><path d=\"M16 9a5 5 0 0 1 0 6\"></path><path d=\"M19.364 18.364a9 9 0 0 0 0-12.728\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-target h-5 w-5",
+   "w": 20,
+   "h": 20,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-target h-5 w-5\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><circle cx=\"12\" cy=\"12\" r=\"6\"></circle><circle cx=\"12\" cy=\"12\" r=\"2\"></circle></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-messages-square h-5 w-5",
+   "w": 20,
+   "h": 20,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-messages-square h-5 w-5\" aria-hidden=\"true\"><path d=\"M16 10a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 14.286V4a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z\"></path><path d=\"M20 9a2 2 0 0 1 2 2v10.286a.71.71 0 0 1-1.212.502l-2.202-2.202A2 2 0 0 0 17.172 19H10a2 2 0 0 1-2-2v-1\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-sparkles h-5 w-5",
+   "w": 20,
+   "h": 20,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-sparkles h-5 w-5\" aria-hidden=\"true\"><path d=\"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z\"></path><path d=\"M20 2v4\"></path><path d=\"M22 4h-4\"></path><circle cx=\"4\" cy=\"20\" r=\"2\"></circle></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-shield-check h-5 w-5",
+   "w": 20,
+   "h": 20,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-shield-check h-5 w-5\" aria-hidden=\"true\"><path d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\"></path><path d=\"m9 12 2 2 4-4\"></path></svg>"
+  },
+  {
+   "tag": "IMG",
+   "src": "https://bfoundconsulting.com/__l5e/assets-v1/217ba10d-60ed-4394-bfde-06f592d5744b/socialday-smm-awards-logo.png",
+   "alt": "SocialDay SMM Awards",
+   "cls": "h-16 w-auto shrink-0 rounded-lg bg-white object-contain p-1 ",
+   "w": 80,
+   "h": 80,
+   "svg": ""
+  },
+  {
+   "tag": "IMG",
+   "src": "https://bfoundconsulting.com/__l5e/assets-v1/04722981-ac1f-476f-8104-58d03b30488e/founder-linkedin-playbook.png",
+   "alt": "founder linkedin playbook cover",
+   "cls": "max-h-[180px] w-auto rounded-xl object-contain shadow-soft t",
+   "w": 143.3125,
+   "h": 179.984375,
+   "svg": ""
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary/80\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary/80\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-arrow-up-right h-4 w-4",
+   "w": 16,
+   "h": 16,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-up-right h-4 w-4\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary/80\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary/80\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary/80\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary/80\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary/80\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary/80\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary/80\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-arrow-up-right h-4 w-4",
+   "w": 16,
+   "h": 16,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-up-right h-4 w-4\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg>"
+  },
+  {
+   "tag": "IMG",
+   "src": "https://bfoundconsulting.com/assets/emma-before-gcPCxS2M.jpg",
+   "alt": "Before",
+   "cls": "pointer-events-none absolute inset-0 h-full w-full object-co",
+   "w": 534,
+   "h": 281.3125,
+   "svg": ""
+  },
+  {
+   "tag": "IMG",
+   "src": "https://bfoundconsulting.com/assets/emma-after-DfO0M6fI.jpg",
+   "alt": "After",
+   "cls": "pointer-events-none absolute inset-0 h-full w-full object-co",
+   "w": 534,
+   "h": 281.3125,
+   "svg": ""
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-move-horizontal h-4 w-4",
+   "w": 16,
+   "h": 16,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-move-horizontal h-4 w-4\" aria-hidden=\"true\"><path d=\"m18 8 4 4-4 4\"></path><path d=\"M2 12h20\"></path><path d=\"m6 8-4 4 4 4\"></path></svg>"
+  },
+  {
+   "tag": "IMG",
+   "src": "https://bfoundconsulting.com/assets/kevin-before-CFfJTg90.jpg",
+   "alt": "Before",
+   "cls": "pointer-events-none absolute inset-0 h-full w-full object-co",
+   "w": 534,
+   "h": 277.484375,
+   "svg": ""
+  },
+  {
+   "tag": "IMG",
+   "src": "https://bfoundconsulting.com/assets/kevin-after-HdP02Aw8.jpg",
+   "alt": "After",
+   "cls": "pointer-events-none absolute inset-0 h-full w-full object-co",
+   "w": 534,
+   "h": 277.484375,
+   "svg": ""
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-move-horizontal h-4 w-4",
+   "w": 16,
+   "h": 16,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-move-horizontal h-4 w-4\" aria-hidden=\"true\"><path d=\"m18 8 4 4-4 4\"></path><path d=\"M2 12h20\"></path><path d=\"m6 8-4 4 4 4\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary/80\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary/80\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check mt-0.5 h-3.5 w-3.5 shrink-0 text-primary/80\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>"
+  }
+ ],
+ "fonts": [
+  "Inter, ui-sans-serif, system-ui, sans-serif",
+  "\"Instrument Serif\", \"Times New Roman\", serif",
+  "\"Times New Roman\""
+ ],
+ "links": [
+  "https://bfoundconsulting.com/assets/styles-BUYUV3Eb.css",
+  "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Montserrat:wght@400;600&family=Cinzel:wght@500&family=Lilita+One&family=Nunito:wght@400;600&display=swap"
+ ]
+}

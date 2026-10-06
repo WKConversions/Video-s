@@ -1,0 +1,422 @@
+[
+{
+"word": "a",
+"start": 0.0,
+"end": 0.09
+},
+{
+"word": "great",
+"start": 0.1,
+"end": 0.42
+},
+{
+"word": "partnership",
+"start": 0.43,
+"end": 1.01
+},
+{
+"word": "should",
+"start": 1.02,
+"end": 1.22
+},
+{
+"word": "create",
+"start": 1.23,
+"end": 1.59
+},
+{
+"word": "more",
+"start": 1.6,
+"end": 2.03
+},
+{
+"word": "than",
+"start": 2.04,
+"end": 2.19
+},
+{
+"word": "great",
+"start": 2.2,
+"end": 2.44
+},
+{
+"word": "work",
+"start": 2.45,
+"end": 2.85
+},
+{
+"word": "after",
+"start": 3.37,
+"end": 3.63
+},
+{
+"word": "WKConversions",
+"start": 3.64,
+"end": 4.73
+},
+{
+"word": "created",
+"start": 4.74,
+"end": 5.15
+},
+{
+"word": "a",
+"start": 5.16,
+"end": 5.19
+},
+{
+"word": "motion",
+"start": 5.2,
+"end": 5.65
+},
+{
+"word": "design",
+"start": 5.66,
+"end": 6.01
+},
+{
+"word": "video",
+"start": 6.02,
+"end": 6.33
+},
+{
+"word": "for",
+"start": 6.34,
+"end": 6.47
+},
+{
+"word": "bFound",
+"start": 6.48,
+"end": 7.14
+},
+{
+"word": "the",
+"start": 7.52,
+"end": 7.59
+},
+{
+"word": "response",
+"start": 7.6,
+"end": 8.14
+},
+{
+"word": "showed",
+"start": 8.15,
+"end": 8.39
+},
+{
+"word": "us",
+"start": 8.4,
+"end": 8.52
+},
+{
+"word": "how",
+"start": 8.53,
+"end": 8.82
+},
+{
+"word": "much",
+"start": 8.83,
+"end": 9.05
+},
+{
+"word": "impact",
+"start": 9.06,
+"end": 9.64
+},
+{
+"word": "the",
+"start": 9.65,
+"end": 9.74
+},
+{
+"word": "right",
+"start": 9.75,
+"end": 10.15
+},
+{
+"word": "video",
+"start": 10.16,
+"end": 10.54
+},
+{
+"word": "can",
+"start": 10.55,
+"end": 10.7
+},
+{
+"word": "make",
+"start": 10.71,
+"end": 11.08
+},
+{
+"word": "motion",
+"start": 11.75,
+"end": 12.07
+},
+{
+"word": "designers",
+"start": 12.08,
+"end": 12.57
+},
+{
+"word": "often",
+"start": 12.58,
+"end": 12.94
+},
+{
+"word": "charge",
+"start": 12.95,
+"end": 13.24
+},
+{
+"word": "around",
+"start": 13.25,
+"end": 13.55
+},
+{
+"word": "one",
+"start": 13.56,
+"end": 13.88
+},
+{
+"word": "thousand",
+"start": 13.89,
+"end": 14.25
+},
+{
+"word": "euros",
+"start": 14.26,
+"end": 14.64
+},
+{
+"word": "per",
+"start": 14.65,
+"end": 14.93
+},
+{
+"word": "video",
+"start": 14.94,
+"end": 15.44
+},
+{
+"word": "making",
+"start": 15.78,
+"end": 16.07
+},
+{
+"word": "professional",
+"start": 16.08,
+"end": 16.65
+},
+{
+"word": "motion",
+"start": 16.66,
+"end": 16.98
+},
+{
+"word": "design",
+"start": 16.99,
+"end": 17.38
+},
+{
+"word": "inaccessible",
+"start": 17.39,
+"end": 18.28
+},
+{
+"word": "to",
+"start": 18.29,
+"end": 18.4
+},
+{
+"word": "many",
+"start": 18.41,
+"end": 18.79
+},
+{
+"word": "businesses",
+"start": 18.8,
+"end": 19.5
+},
+{
+"word": "so",
+"start": 19.95,
+"end": 20.31
+},
+{
+"word": "WKConversions",
+"start": 20.32,
+"end": 21.47
+},
+{
+"word": "and",
+"start": 21.48,
+"end": 21.62
+},
+{
+"word": "bFound",
+"start": 21.63,
+"end": 22.23
+},
+{
+"word": "decided",
+"start": 22.24,
+"end": 22.68
+},
+{
+"word": "to",
+"start": 22.69,
+"end": 22.76
+},
+{
+"word": "change",
+"start": 22.77,
+"end": 23.17
+},
+{
+"word": "that",
+"start": 23.18,
+"end": 23.51
+},
+{
+"word": "use",
+"start": 24.02,
+"end": 24.3
+},
+{
+"word": "code",
+"start": 24.31,
+"end": 24.79
+},
+{
+"word": "BFOUND50",
+"start": 24.8,
+"end": 27.19
+},
+{
+"word": "and",
+"start": 27.2,
+"end": 27.41
+},
+{
+"word": "get",
+"start": 27.42,
+"end": 27.56
+},
+{
+"word": "fifty",
+"start": 27.57,
+"end": 28.03
+},
+{
+"word": "percent",
+"start": 28.04,
+"end": 28.4
+},
+{
+"word": "off",
+"start": 28.41,
+"end": 28.67
+},
+{
+"word": "our",
+"start": 28.68,
+"end": 28.81
+},
+{
+"word": "four",
+"start": 28.82,
+"end": 29.17
+},
+{
+"word": "hundred",
+"start": 29.18,
+"end": 29.49
+},
+{
+"word": "euro",
+"start": 29.5,
+"end": 29.78
+},
+{
+"word": "startup",
+"start": 29.79,
+"end": 30.22
+},
+{
+"word": "price",
+"start": 30.23,
+"end": 30.7
+},
+{
+"word": "visit",
+"start": 31.22,
+"end": 31.48
+},
+{
+"word": "WKConversions",
+"start": 31.49,
+"end": 32.57
+},
+{
+"word": "dot",
+"start": 32.58,
+"end": 32.79
+},
+{
+"word": "com",
+"start": 32.8,
+"end": 33.1
+},
+{
+"word": "slash",
+"start": 33.11,
+"end": 33.43
+},
+{
+"word": "contact",
+"start": 33.44,
+"end": 34.14
+},
+{
+"word": "and",
+"start": 34.15,
+"end": 34.32
+},
+{
+"word": "claim",
+"start": 34.33,
+"end": 34.65
+},
+{
+"word": "your",
+"start": 34.66,
+"end": 34.8
+},
+{
+"word": "video",
+"start": 34.81,
+"end": 35.18
+},
+{
+"word": "for",
+"start": 35.19,
+"end": 35.35
+},
+{
+"word": "two",
+"start": 35.36,
+"end": 35.7
+},
+{
+"word": "hundred",
+"start": 35.71,
+"end": 36.02
+},
+{
+"word": "euros",
+"start": 36.03,
+"end": 36.61
+}
+]

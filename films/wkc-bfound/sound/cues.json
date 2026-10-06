@@ -1,0 +1,513 @@
+{
+ "fps": 30,
+ "frames": 1185,
+ "library": "../../wkconversions/sound/lib",
+ "vo": {
+  "file": "../vo/vo.mp3",
+  "at": 0
+ },
+ "music": {
+  "file": "music/ramp-it-up-fit.wav",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.2,
+  "fade_out": 0.8,
+  "note": "Ramp It Up (Ahjay Stelino, Mixkit), fitted: kick and bass at 11.9, drop at 19.95, final chord 36.0"
+ },
+ "sfx": [
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 10,
+   "note": "WKConversions' tile slides in",
+   "db": -7
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 21,
+   "note": "bFound's tile slides in",
+   "db": -7,
+   "pitch": 2
+  },
+  {
+   "id": "gen-swell-low",
+   "frame": 26,
+   "note": "the cable links them",
+   "db": -8
+  },
+  {
+   "id": "gen-appear",
+   "frame": 49,
+   "note": "the work grows out of the link",
+   "db": -5
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 58,
+   "note": "rings: more than great work",
+   "db": -9
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 106,
+   "note": "the window moves to the maker",
+   "db": -8
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 145,
+   "note": "the timeline",
+   "db": -7
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 154,
+   "note": "a keyframe passes",
+   "db": -8,
+   "pitch": 0
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 157,
+   "note": "the b-mark lands",
+   "db": -5
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 161,
+   "note": "a keyframe passes",
+   "db": -8,
+   "pitch": 1
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 165,
+   "note": "a keyframe passes",
+   "db": -8,
+   "pitch": 2
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 167,
+   "note": "Found. slides out",
+   "db": -8
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 172,
+   "note": "a keyframe passes",
+   "db": -8,
+   "pitch": 3
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 176,
+   "note": "a keyframe passes",
+   "db": -8,
+   "pitch": 4
+  },
+  {
+   "id": "gen-pop-soft-3",
+   "frame": 178,
+   "note": "the url pill",
+   "db": -6
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 182,
+   "note": "a keyframe passes",
+   "db": -8,
+   "pitch": 5
+  },
+  {
+   "id": "gen-send",
+   "frame": 199,
+   "note": "the film travels along the cable to bFound",
+   "db": -4
+  },
+  {
+   "id": "gen-success-soft",
+   "frame": 209,
+   "note": "delivered",
+   "db": -5
+  },
+  {
+   "id": "gen-whoosh-soft-medium",
+   "frame": 231,
+   "note": "the post grows out of bFound's tile",
+   "db": -6
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 244,
+   "note": "a comment arrives",
+   "db": -11,
+   "pitch": 0
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 256,
+   "note": "a comment arrives",
+   "db": -11,
+   "pitch": 3
+  },
+  {
+   "id": "gen-pop-soft-3",
+   "frame": 269,
+   "note": "a comment arrives",
+   "db": -11,
+   "pitch": 6
+  },
+  {
+   "id": "gen-data-blips",
+   "frame": 271,
+   "note": "the reactions count up",
+   "db": -8
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 281,
+   "note": "a comment arrives",
+   "db": -11,
+   "pitch": 2
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 294,
+   "note": "a comment arrives",
+   "db": -11,
+   "pitch": 5
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 295,
+   "note": "the video comes forward and plays",
+   "db": -8
+  },
+  {
+   "id": "gen-pop-soft-3",
+   "frame": 307,
+   "note": "a comment arrives",
+   "db": -11,
+   "pitch": 1
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 319,
+   "note": "a comment arrives",
+   "db": -11,
+   "pitch": 4
+  },
+  {
+   "id": "gen-chime-soft",
+   "frame": 320,
+   "note": "the counts land",
+   "db": -7
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 332,
+   "note": "a comment arrives",
+   "db": -11,
+   "pitch": 0
+  },
+  {
+   "id": "gen-pop-soft-3",
+   "frame": 344,
+   "note": "a comment arrives",
+   "db": -11,
+   "pitch": 3
+  },
+  {
+   "id": "gen-appear",
+   "frame": 353,
+   "note": "the price card",
+   "db": -3
+  },
+  {
+   "id": "gen-data-blips",
+   "frame": 364,
+   "note": "the price counts up",
+   "db": -6
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 429,
+   "note": "\u20ac1,000",
+   "db": -4
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 449,
+   "note": "/ video",
+   "db": -7
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 479,
+   "note": "the professional video",
+   "db": -7
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 500,
+   "note": "the wall slides in",
+   "db": -9,
+   "pitch": -4
+  },
+  {
+   "id": "gen-click",
+   "frame": 506,
+   "note": "the lock clicks shut",
+   "db": -2
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 551,
+   "note": "a business",
+   "db": -11,
+   "pitch": 0
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 553,
+   "note": "a business",
+   "db": -11,
+   "pitch": 1
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 555,
+   "note": "a business",
+   "db": -11,
+   "pitch": 2
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 557,
+   "note": "a business",
+   "db": -11,
+   "pitch": 3
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 559,
+   "note": "a business",
+   "db": -11,
+   "pitch": 4
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 561,
+   "note": "a business",
+   "db": -11,
+   "pitch": 5
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 608,
+   "note": "WKConversions comes in",
+   "db": -5
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 654,
+   "note": "bFound comes in",
+   "db": -5,
+   "pitch": 2
+  },
+  {
+   "id": "gen-riser-soft-1s",
+   "frame": 687,
+   "note": "both pull on the lock",
+   "db": -5
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 688,
+   "note": "unlocked",
+   "db": -3
+  },
+  {
+   "id": "gen-success-soft",
+   "frame": 696,
+   "note": "the wall falls",
+   "db": -6
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 700,
+   "note": "a business connects",
+   "db": -11,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 704,
+   "note": "a business connects",
+   "db": -11,
+   "pitch": 1
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 706,
+   "note": "a business connects",
+   "db": -11,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 710,
+   "note": "a business connects",
+   "db": -11,
+   "pitch": 3
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 712,
+   "note": "a business connects",
+   "db": -11,
+   "pitch": 4
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 716,
+   "note": "a business connects",
+   "db": -11,
+   "pitch": 5
+  },
+  {
+   "id": "gen-riser-soft-1s",
+   "frame": 723,
+   "note": "into the code",
+   "db": -1
+  },
+  {
+   "id": "gen-key",
+   "frame": 744,
+   "note": "B typed as it is spoken",
+   "db": -3,
+   "pitch": 0
+  },
+  {
+   "id": "gen-key",
+   "frame": 753,
+   "note": "F typed as it is spoken",
+   "db": -3,
+   "pitch": 1
+  },
+  {
+   "id": "gen-key",
+   "frame": 762,
+   "note": "O typed as it is spoken",
+   "db": -3,
+   "pitch": 2
+  },
+  {
+   "id": "gen-key",
+   "frame": 770,
+   "note": "U typed as it is spoken",
+   "db": -3,
+   "pitch": 0
+  },
+  {
+   "id": "gen-key",
+   "frame": 778,
+   "note": "N typed as it is spoken",
+   "db": -3,
+   "pitch": 1
+  },
+  {
+   "id": "gen-key",
+   "frame": 784,
+   "note": "D typed as it is spoken",
+   "db": -3,
+   "pitch": 2
+  },
+  {
+   "id": "gen-key",
+   "frame": 792,
+   "note": "5 typed as it is spoken",
+   "db": -3,
+   "pitch": 0
+  },
+  {
+   "id": "gen-key",
+   "frame": 805,
+   "note": "0 typed as it is spoken",
+   "db": -3,
+   "pitch": 1
+  },
+  {
+   "id": "gen-success-soft",
+   "frame": 814,
+   "note": "the code checks",
+   "db": -4
+  },
+  {
+   "id": "gen-pop",
+   "frame": 818,
+   "note": "\u221250%",
+   "db": -4
+  },
+  {
+   "id": "gen-appear",
+   "frame": 865,
+   "note": "\u20ac400",
+   "db": -3
+  },
+  {
+   "id": "gen-tap-soft",
+   "frame": 893,
+   "note": "startup price",
+   "db": -9
+  },
+  {
+   "id": "gen-whoosh-soft-medium",
+   "frame": 942,
+   "note": "the contact page opens",
+   "db": -6
+  },
+  {
+   "id": "gen-typing-run",
+   "frame": 945,
+   "note": "the address types",
+   "db": -5
+  },
+  {
+   "id": "gen-click",
+   "frame": 1038,
+   "note": "Submit",
+   "db": -2
+  },
+  {
+   "id": "gen-success",
+   "frame": 1061,
+   "note": "\u20ac400 \u2192 \u20ac200",
+   "db": -4
+  },
+  {
+   "id": "gen-data-blips",
+   "frame": 1063,
+   "note": "the price counts down",
+   "db": -10
+  },
+  {
+   "id": "gen-impact-logo",
+   "frame": 1112,
+   "note": "the lockup",
+   "db": -4
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 1120,
+   "note": "\u00d7",
+   "db": -7
+  },
+  {
+   "id": "gen-sparkle",
+   "frame": 1125,
+   "note": "BFOUND50",
+   "db": -8
+  }
+ ]
+}
