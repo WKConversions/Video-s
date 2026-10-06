@@ -31,6 +31,13 @@ field (BFOUND50 typed letter by letter exactly as it is spoken), flanks the cont
 - Final: `bash scripts/render_chunks.sh Film out/final_master.mp4 '{"blurSamples":8,"audio":"none"}' 0,296,592,888,1185 public/audio/mix.wav`,
   then the TV-range BT.709 encode.
 
+## Quality check (final encode)
+Median frame motion 4.3% (target about 4%), moving in 100% of frames, longest still 0.0 s; 21 of 21 phrases bring a new
+visual; −15.1 LUFS, true peak −1.3 dB. The busy check counts a median of 9 things on screen (references: Cartesian 7,
+ClearScaler 26): the response beat (post, comments, reactions) and the contact page carry the most. The shake check flags four
+spots, all looked at in strips: a cable pulse wrapping round (not a shake) and three ~1 px steps of slowly drifting text and
+the lock, invisible at speed. Reports in `film/out/qc_final/` (not committed).
+
 ## Credits
 - Voice-over: ElevenLabs, "Christina – Energetic Commercial Female", supplied by Karl.
 - Music: "Ramp It Up" by Ahjay Stelino, Mixkit (mixkit.co), Mixkit Stock Music Free License (commercial use, no credit required).

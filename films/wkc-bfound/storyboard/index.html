@@ -1,0 +1,107 @@
+<title>WKConversions × bFound</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@700;800&display=swap">
+<style>
+/* One reading column: the film first, then the direction, then a frame per phrase in a wrapping grid. */
+:root {
+  --paper: #F7F7F8; --surface: #EFF0F2; --ink: #050F19; --muted: #575E68; --line: #E2E3E6;
+  --blue: #1266C9; --tint: #E6F0FD; --sand: #EFF0F2; --sage: #EFF0F2;
+  --display: "Inter Tight", "Inter", system-ui, sans-serif; --body: "Inter", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #050F19; --surface: #0C1A28; --ink: #EEF1F5; --muted: #A3ABB6; --line: #1E2B39;
+  --blue: #6FA9EE; --tint: #10233A; --sand: #0C1A28; --sage: #0C1A28; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #050F19; --surface: #0C1A28; --ink: #EEF1F5; --muted: #A3ABB6; --line: #1E2B39;
+  --blue: #6FA9EE; --tint: #10233A; --sand: #0C1A28; --sage: #0C1A28; color-scheme: dark }
+body { background: var(--paper); color: var(--ink); font: 16px/1.6 var(--body); margin: 0; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; padding-block: 48px 96px; display: grid; gap: 56px; }
+header { display: grid; gap: 14px; }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 10px; }
+.eyebrow::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 5px color-mix(in srgb, var(--blue) 18%, transparent); }
+h1 { font: 800 clamp(36px, 5.6vw, 64px)/1.02 var(--display); letter-spacing: -0.05em; margin: 0; text-wrap: balance; }
+h1 em, .cap em { font-style: normal; color: var(--blue); }
+h2 { font: 800 28px/1.15 var(--display); letter-spacing: -0.04em; margin: 0 0 18px; text-wrap: balance; }
+h3 { font: 700 21px/1.25 var(--display); letter-spacing: -0.03em; margin: 0; }
+.lede { color: var(--muted); max-width: 70ch; margin: 0; }
+video { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; background: var(--surface); display: block; border: 1px solid var(--line); }
+.qc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.qc span { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 5px 13px; font-size: 13.5px; color: var(--muted); }
+.qc b { color: var(--ink); font-weight: 700; font-variant-numeric: tabular-nums; }
+.dir { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+.dir div { background: var(--paper); padding: 16px 18px; min-width: 0; font-size: 15px; }
+.dir b { display: block; font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.beat { display: grid; gap: 16px; padding-top: 28px; border-top: 1px solid var(--line); }
+.beat-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.tc { font-size: 13px; font-weight: 700; color: var(--blue); font-variant-numeric: tabular-nums; }
+.cap { font: 800 24px/1.25 var(--display); letter-spacing: -0.04em; text-wrap: balance; }
+.idea { color: var(--muted); max-width: 82ch; margin: 0; }
+.frames { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 20px; }
+.fr { display: grid; gap: 6px; min-width: 0; align-content: start; }
+.fr img { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); display: block; }
+.fr .t { font-size: 12.5px; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
+.fr .s { font-size: 14.5px; line-height: 1.45; }
+.fr .m { font-size: 13px; color: var(--muted); }
+ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; max-width: 90ch; }
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; min-width: 760px; }
+th, td { text-align: left; vertical-align: top; padding: 11px 14px; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: 0; }
+th { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 700; background: var(--surface); }
+.credits { font-size: 14px; color: var(--muted); max-width: 90ch; display: grid; gap: 6px; }
+a { color: var(--blue); }
+a:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 4px; }
+@media (max-width: 520px) { .wrap { padding-inline: 16px; gap: 40px; } .cap { font-size: 20px; } }
+</style>
+<div class="wrap">
+<header><div class="eyebrow">WKConversions × bFound · 39.5 s · 16:9 · voice-over, music, effects</div><h1>A great partnership should create more than <em>great work.</em></h1><p class="lede">A SaaS-style partnership film in the Minimal Gradient SaaS look, built from both brands: WKConversions&#x27; blue glowing in from one side, bFound&#x27;s indigo from the other. Two glass tiles linked by a cable carry the story: the film WKConversions made for bFound, the response it got on LinkedIn, the €1,000 that keeps most businesses out, the lock both partners open together, and the code BFOUND50 typed into the contact form as it is spoken: €400 becomes €200.</p></header>
+<section><video controls playsinline preload="metadata" poster="frames/f1110.jpg" src="film.mp4"></video>
+<div class="qc"><span><b>21 of 21</b> phrases get a new visual</span><span><b>0.0 s</b> longest voice without one</span><span><b>100%</b> of frames moving</span><span><b>4.3%</b> median frame motion (target about 4%)</span><span><b>median 9</b> things on screen (Cartesian 7, ClearScaler 26)</span><span><b>−15.1 LUFS</b> mix, true peak −1.3 dB</span><span><b>1080p30</b> H.264, BT.709, AAC 48 kHz</span></div>
+</section>
+<section><h2>Direction</h2><div class="dir"><div><b>Purpose</b>Announce the WKConversions × bFound offer: 50% off the €400 startup video with code BFOUND50, for LinkedIn and the two sites; it must read with the sound off.</div><div><b>Audience</b>Founders and small businesses who follow bFound and WKConversions and have wanted a motion design video but found it out of reach.</div><div><b>Format</b>16:9, 1920×1080, 30 fps, 39.5 s. ElevenLabs voice (Christina, energetic commercial), force-aligned word by word (the code letter by letter); music and 78 effects mixed to −15 LUFS.</div><div><b>Core message</b>Because the partnership worked so well, WKConversions and bFound make professional motion design accessible: code BFOUND50 on wkconversions.com/contact, €200 instead of €400.</div><div><b>Look</b>Minimal Gradient SaaS: a near-white frame glowing into a mesh gradient (WKConversions blue, bFound indigo, lilac, bFound&#x27;s cream), frosted-glass tiles and windows, thin cables with travelling pulses, Inter Tight 800 with the key phrase in the blue → indigo gradient, bFound&#x27;s own logo and Instrument Serif for the ×.</div><div><b>Motion</b>Flow: cables draw and carry pulses, tiles arrive with a soft scale-and-fade, content builds (keyframes, counts, typing). The stage floats in gentle 2.5D (a slow drift and tilt that never stops, a push per chapter); background chips and the dot grid travel at their own depths. Median frame motion 4%.</div><div><b>Thread</b>The cable between the two tiles: it links them, carries the film to bFound, arches over the response, pulls the lock open with both tiles, feeds the code, and holds the end lockup.</div></div></section>
+<section><h2>Storyboard</h2><p class="lede" style="margin-bottom:8px">A frame per phrase, taken from the finished film. Times are seconds into the film; the picture leads each spoken word by about four frames.</p>
+<div class="beat"><div class="beat-head"><span class="tc">P1–P2 · 0.0–3.3 s</span><h3>A great partnership</h3></div>
+<div class="cap">A <em>great</em> <em>partnership</em> should create more than <em>great</em> <em>work.</em></div><p class="idea">WKConversions&#x27; tile and bFound&#x27;s part from one point and a cable links them; on &#x27;more than great work&#x27; the work itself (the film WKConversions made for bFound, its own frame) grows out of the link and rings go out from it, below the line.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0030.jpg" alt="The two tiles, linked."><div class="t">1.0 s</div><div class="s">The two tiles, linked.</div><div class="m">The tiles part from one point, the cable draws, a pulse travels.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0080.jpg" alt="The work grows out of the link."><div class="t">2.7 s</div><div class="s">The work grows out of the link.</div><div class="m">Window grows, rings.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">P3–P4 · 3.3–7.4 s</span><h3>Made by WKConversions, for bFound</h3></div>
+<div class="cap">Made by <em>WKConversions</em> for <em>bFound.</em></div><p class="idea">The window moves to the maker; a timeline appears and its playhead builds the film (b-mark, Found., the url pill) keyframe by keyframe; on &#x27;for bFound&#x27; the finished film travels along the cable into bFound&#x27;s tile, which takes a check.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0165.jpg" alt="The film being made on its timeline."><div class="t">5.5 s</div><div class="s">The film being made on its timeline.</div><div class="m">Playhead sweeps, keyframes light.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0205.jpg" alt="Delivered to bFound."><div class="t">6.8 s</div><div class="s">Delivered to bFound.</div><div class="m">The film travels along the cable.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">P5–P7 · 7.4–11.7 s</span><h3>The response</h3></div>
+<div class="cap">The response showed us how much impact the right video can make.</div><p class="idea">bFound&#x27;s tile opens into the LinkedIn post by its founder, with the film in it; comments stream in (anonymous: gradient discs and skeleton lines, never a name or face), the reactions climb to 118 and the comments to 45, and the video comes forward and plays.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0255.jpg" alt="The post, comments arriving."><div class="t">8.5 s</div><div class="s">The post, comments arriving.</div><div class="m">The post grows out of bFound&#x27;s tile.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0320.jpg" alt="118 reactions, 45 comments."><div class="t">10.7 s</div><div class="s">118 reactions, 45 comments.</div><div class="m">Counts climb, reactions float up, the video plays.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">P8–P12 · 11.7–19.9 s</span><h3>€1,000 per video</h3></div>
+<div class="cap">Inaccessible to many businesses.</div><p class="idea">The typical price sharpens into focus as €1,000 / video on the spoken number, over a professional motion design video; the card shrinks onto a glass wall&#x27;s lock, and six small businesses reach for it and stop at the wall.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0425.jpg" alt="€1,000 / video."><div class="t">14.2 s</div><div class="s">€1,000 / video.</div><div class="m">The blurred price sharpens on the spoken number.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0510.jpg" alt="Locked away."><div class="t">17.0 s</div><div class="s">Locked away.</div><div class="m">The wall slides in, the lock clicks.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0570.jpg" alt="Many businesses kept out."><div class="t">19.0 s</div><div class="s">Many businesses kept out.</div><div class="m">Their reach stops at the wall.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">P13–P15 · 19.9–24.0 s</span><h3>WKConversions × bFound changed that</h3></div>
+<div class="cap"><em>WKConversions</em> × <em>bFound</em> decided to change that.</div><p class="idea">WKConversions&#x27; tile comes in, then bFound&#x27;s; both cables pull on the lock, the €1,000 on it is struck, the lock opens, the wall falls and the businesses connect to the video.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0655.jpg" alt="Both tiles on the lock."><div class="t">21.8 s</div><div class="s">Both tiles on the lock.</div><div class="m">Pulses flow into the lock.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0705.jpg" alt="Unlocked: the businesses connect."><div class="t">23.5 s</div><div class="s">Unlocked: the businesses connect.</div><div class="m">The wall falls, cables turn solid.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">P16–P18 · 24.0–31.2 s</span><h3>Code BFOUND50</h3></div>
+<div class="cap"><em>50%</em> <em>off</em> our startup price.</div><p class="idea">Both tiles feed the referral-code field; BFOUND50 is typed letter by letter exactly as it is spoken and the field takes a check; &#x27;50% off our startup price.&#x27; builds word by word, then €400, the WKConversions startup price.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0785.jpg" alt="B-F-O-U-N typed as spoken."><div class="t">26.2 s</div><div class="s">B-F-O-U-N typed as spoken.</div><div class="m">Each letter on its spoken letter.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0890.jpg" alt="50% off our startup price: €400."><div class="t">29.7 s</div><div class="s">50% off our startup price: €400.</div><div class="m">The line builds word by word, the price lands.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">P19–P21 · 31.2–36.7 s</span><h3>Claim it on wkconversions.com/contact</h3></div>
+<div class="cap">Claim your video for <em>€200.</em></div><p class="idea">The code field travels into the contact form as the page opens; wkconversions.com/contact rises big above it on the words; on &#x27;for €200&#x27; a tag grows out of the form: €400 struck, €200 with BFOUND50; then the cursor presses Submit.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f1000.jpg" alt="wkconversions.com/contact."><div class="t">33.3 s</div><div class="s">wkconversions.com/contact.</div><div class="m">The address rises on the words.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f1085.jpg" alt="€400 → €200."><div class="t">36.2 s</div><div class="s">€400 → €200.</div><div class="m">The tag grows, €400 is struck, Submit is pressed.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">End · 36.7–39.5 s</span><h3>End card</h3></div>
+<div class="cap">Your video for <em>€200</em> at wkconversions.com/contact</div><p class="idea">The two tiles part from one point with their names under them (WKConversions, bFound&#x27;s own logo) and an × between them, the cable drawing between them; the code BFOUND50 and where to claim it; the cable keeps pulsing and the stage keeps floating.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f1160.jpg" alt="The lockup."><div class="t">38.7 s</div><div class="s">The lockup.</div><div class="m">Tiles link, pulses travel.</div></div>
+</div></div>
+</section>
+<section><h2>Revision log</h2><div class="tbl"><table><tr><th>Before</th><th>After</th><th>Why</th></tr><tr><td>The camera&#x27;s chapter push snapped back 3% in one frame</td><td>The push eases out over 0.8 s as the next begins</td><td>Review blocker (lurch at every chapter)</td></tr><tr><td>The finished bFound film blinked out and the window sat empty</td><td>It dissolves into its draft and is rebuilt along the timeline across the whole phrase</td><td>Review: one-frame cut, 1.8 s empty</td></tr><tr><td>€1,000 counted up through wrong prices (€200, €400 included)</td><td>€1,000 sharpens into focus on the spoken number, then hangs on the lock and is struck when the partners open it</td><td>Truth and &#x27;changed that&#x27; paid off</td></tr><tr><td>The form&#x27;s price rolled to €200 after Submit</td><td>The form keeps its €400; a €200 tag grows out of the code&#x27;s check, then Submit</td><td>The live form isn&#x27;t known to recalculate; cause before effect</td></tr><tr><td>The spoken address was 16-px text in the bar</td><td>wkconversions.com/contact types itself big above the page, on the words</td><td>Legibility of the CTA</td></tr><tr><td>Tiles flew in from off-screen; the code field cross-faded into the form</td><td>Tiles part from one point and leave by shrinking where they stand; the field travels into the form&#x27;s slot</td><td>Smoothness, carry don&#x27;t duplicate</td></tr><tr><td>The response beat piled up (comments, floaters over the 118)</td><td>Six opaque comments, eight reactions left of the card, counts from the response</td><td>Clear before busy</td></tr><tr><td>End card without the partners&#x27; names, a close-button ×</td><td>WKConversions and the bFound logo under the tiles, a plain ×</td><td>The partnership must read on the last frame</td></tr></table></div></section>
+<section><h2>Open questions</h2><ul><li>The form on wkconversions.com/contact labels the field &quot;Referal Code&quot;; the film spells it &quot;Referral code&quot;. Fix the form, or should the film match it?</li><li>Music: &quot;Ramp It Up&quot; (Mixkit) lands its drop on &quot;So WKConversions and bFound…&quot; but its final chord comes 0.8 s before the end card (an accent carries the card). Two fitted alternatives are kept in the session&#x27;s scratch folder if you&#x27;d rather hear something warmer.</li><li>The LinkedIn counts (118 reactions, 45 comments) are as harvested on 6 Oct 2026; they will grow.</li></ul></section>
+<section class="credits"><h2>Credits</h2><div>Voice: ElevenLabs, Christina (energetic commercial), supplied by Karl. Music: &quot;Ramp It Up&quot; by Ahjay Stelino, Mixkit (Mixkit Stock Music Free License), fitted to the film. Effects: generated for this film.</div><div>Logos, fonts, colours and copy: wkconversions.com and bfoundconsulting.com, as the sites show them; the post as published on LinkedIn by bFound's founder (commenters are never shown). Made with Remotion by WKConversions.</div></section>
+</div>
