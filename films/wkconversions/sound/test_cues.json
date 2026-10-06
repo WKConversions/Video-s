@@ -3,7 +3,7 @@
  "frames": 1380,
  "library": "lib",
  "vo": {"file": "../vo/vo.mp3", "at": 0},
- "music": {"file": "music/composed-fit.wav", "at": 0, "duck_db": 6, "fade_in": 0.3, "fade_out": 0.5,
+ "music": {"file": "music/lets-move-fit.wav", "at": 0, "duck_db": 6, "fade_in": 0.3, "fade_out": 0.5,
            "note": "VO + music test, no effects"},
  "sfx": []
 }
