@@ -14,11 +14,14 @@ export const between = (g: number, a: string, b: string) => sec(g) >= T.s(a) && 
 export { VIEW };
 
 // ---------- the two businesses ----------
-/** Your business: 64 high; it grows a floor when WKConversions comes in, and rises above the city at the sign-off. */
+/** Your business: 72 high; it grows a floor when WKConversions comes in, and rises above the city at the sign-off. */
 export const youH = (g: number) => 72 + 40 * k(g, "comes", 0.7, EASE.soft) + 110 * k(g, "fin", 1.1, EASE.soft) + 95 * k(g, "standout2", 1.0, EASE.soft);
 /** Grey until the sign-off, then the brand blue (the site's accent) from the roof down. */
 export const youBlue = (g: number) => k(g, "fin", 0.9, MOVE);
 export const youEdge = (g: number) => k(g, "comes", 0.45);
+/** The competitor's ink: paper until it is named ("competitors"), ink while it holds the crowd, back to paper as its crowd
+ *  walks over to you. */
+export const compInk = (g: number) => k(g, "compTag", 0.5, MOVE) * (1 - k(g, "attract+0.8", 1.6, EASE.soft));
 /** The competitor stands out first: it rises on "stand out" and lowers with the rest of the city at the sign-off. */
 export const compH = (g: number) => (108 + 66 * k(g, "standout", 0.75, EASE.soft)) * cityScale(g);
 /** Everything but you lowers a little on "built to stand out". */
@@ -47,6 +50,7 @@ export const compRoof = (g: number, lift = 0) => roofAt(g, COMP, lift);
 export type RingEv = { b: Biz; at: string; d: number; col: string; R: number; dur: number; w: number; o: number };
 const INK = "#575E68", BLUE = "#3F8CE8";
 export const RINGS: RingEv[] = [
+  { b: YOU, at: "youTag", d: 0, col: INK, R: 300, dur: 1.2, w: 6, o: 0.25 },
   ...[0, 0.35].map((d) => ({ b: COMP, at: "standout", d, col: INK, R: 330, dur: 1.5, w: 6, o: 0.22 })),
   ...[0, 0.6, 1.2, 1.8].map((d) => ({ b: COMP, at: "comm", d, col: INK, R: 420, dur: 1.8, w: 6, o: 0.2 })),
   ...[0, 0.3].map((d) => ({ b: YOU, at: "comes", d, col: BLUE, R: 380, dur: 1.4, w: 8, o: 0.32 })),
@@ -62,11 +66,12 @@ export const ringState = (g: number, r: RingEv) => {
 
 // ---------- routes: the site's routed blue line, along the streets ----------
 export type Route = { pts: [number, number][]; at: string; dur: number; ease?: (t: number) => number };
-/** "That's where WKConversions": the line comes in along the streets from beyond the frame and ends at your lot. */
-export const TURN_ROUTE: Route = { pts: [[-1650, -550], [-300, -550], [-300, -300], [200, -300], [200, -175]], at: "turn", dur: 1.05, ease: EASE.steady };
-/** "Creative": routes leave your lot along the streets in four directions. */
+/** "That's where WKConversions": the line comes in along the streets from beyond the frame (lower right, clear of the card)
+ *  and ends at your lot's east street. */
+export const TURN_ROUTE: Route = { pts: [[1300, -800], [700, -800], [700, -300], [450, -300], [450, -175]], at: "turn", dur: 1.05, ease: EASE.steady };
+/** "Creative": routes leave your lot along the streets in two directions. */
 export const OUT_ROUTES: Route[] = [
-  { pts: [[450, -300], [1050, -300], [1050, -800], [1800, -800]], at: "creative", dur: 1.2 },
-  { pts: [[450, -50], [450, 700], [950, 700], [950, 1500]], at: "creative+0.12", dur: 1.25 },
+  { pts: [[200, -300], [-300, -300], [-300, -1050], [-1100, -1050]], at: "creative", dur: 1.2 },
+  { pts: [[200, -50], [-300, -50], [-300, 200], [-1300, 200]], at: "creative+0.15", dur: 1.25 },
 ];
 export const routeK = (g: number, r: Route) => k(g, r.at, r.dur, r.ease ?? EASE.steady);

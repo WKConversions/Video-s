@@ -6,7 +6,7 @@ import { View, depth, hash, proj, pts } from "./iso";
 import { Box, groundRing } from "./draw";
 import { BIZ, Biz, CELL, I0, I1, J0, J1, N_PEOPLE, PEOPLE, YOU, centre, walk } from "./map";
 import { CONVERSIONS, twinO, who } from "./crowd";
-import { OUT_ROUTES, RINGS, Route, TURN_ROUTE, VIEW, heightOf, k, ringState, routeK, sec, youBlue, youEdge } from "./scene";
+import { OUT_ROUTES, RINGS, Route, TURN_ROUTE, VIEW, compInk, heightOf, k, ringState, routeK, sec, youBlue, youEdge } from "./scene";
 import { T } from "./clock";
 import { EASE } from "./kinetic";
 
@@ -22,21 +22,23 @@ const sideM = (v: View, x1: number, y1: number, z: number) => {
 /** A business's screen, on the side we see, always playing: grey bars for the city, blue motion for the competitor,
  *  your grey bars until WKConversions comes in, then the brand blue. */
 const Screen: React.FC<{ g: number; v: View; b: Biz; h: number }> = ({ g, v, b, h }) => {
-  if (h < 34) return null;
-  const t = sec(g), Wd = b.y1 - b.y0, hh = Math.min(h - 16, b.role === "biz" ? 26 : 34 + (h - 64) * 0.18);
+  const so = clamp01((h - 30) / 10);
+  if (so <= 0) return null;
+  const t = sec(g), Wd = b.y1 - b.y0, hh = Math.max(10, Math.min(h - 16, b.role === "biz" ? 26 : 34 + (h - 64) * 0.18));
   const ph = hash(b.i, b.j, 21) * 10, sp = 0.6 + hash(b.i, b.j, 22);
   const you = b.role === "you", comp = b.role === "comp";
   const yb = you ? youEdge(g) : 0;
-  const cg = comp ? k(g, "turn", 1.4, EASE.soft) : 0;
-  const bg = comp ? mix("#0C1A28", "#F4F5F7", cg) : you ? mix("#EFF0F2", C.blue, yb) : "#F4F5F7";
-  const bar = comp ? mix("#6FA9EE", "#E1E3E7", cg) : you ? mix("#AEB4BC", "#FFFFFF", yb) : "#E1E3E7";
-  const n = Math.max(2, Math.min(5, Math.floor((hh - 6) / 7)));
-  const fast = (comp && cg < 0.5) || (you && yb > 0.5) ? 2.2 : 1;
+  const ci = comp ? compInk(g) : 0;
+  const bg = comp ? mix("#F4F5F7", "#0C1A28", ci) : you ? mix("#EFF0F2", C.blue, yb) : "#F4F5F7";
+  const bar = comp ? mix("#E1E3E7", "#6FA9EE", ci) : you ? mix("#AEB4BC", "#FFFFFF", yb) : "#E1E3E7";
+  const n = Math.max(1, Math.min(5, Math.floor((hh - 6) / 7)));
+  // the competitor's and (once WKConversions comes in) your screen play faster; the phase stays continuous
+  const pt = you ? t + 1.2 * Math.max(0, t - T.s("comes")) : comp ? t + 1.2 * Math.max(0, Math.min(t, T.s("attract") + 1.6) - T.s("compTag")) : t;
   return (
-    <g transform={sideM(v, b.x1, b.y1, h - 8)}>
+    <g transform={sideM(v, b.x1, b.y1, h - 8)} opacity={so}>
       <rect x={8} y={0} width={Wd - 16} height={hh} rx={3} fill={bg} />
       {Array.from({ length: n }, (_, i) => {
-        const w = 0.25 + 0.65 * (0.5 + 0.5 * Math.sin(t * sp * 2 * fast + ph + i * 1.7));
+        const w = 0.25 + 0.65 * (0.5 + 0.5 * Math.sin(pt * sp * 2 + ph + i * 1.7));
         return <rect key={i} x={16} y={5 + i * 7} width={(Wd - 32) * w} height={4} rx={2} fill={bar} />;
       })}
     </g>
@@ -86,7 +88,10 @@ export const World: React.FC<{ g: number }> = ({ g }) => {
   {
     const m = 26, { x0, y0, x1, y1 } = YOU, mo = k(g, "youTag", 0.5), mb = k(g, "comes", 0.5), mf = 1 - k(g, "fin", 0.5);
     const lot = [proj(v, x0 - m, y0 - m), proj(v, x1 + m, y0 - m), proj(v, x1 + m, y1 + m), proj(v, x0 - m, y1 + m)] as [number, number][];
-    if (mo > 0 && mf > 0) ground.push(<polygon key="lot" points={pts(lot)} fill={rgba(C.blue, 0.08 * mb)} stroke={mb > 0.5 ? C.blue : "#9AA1AB"} strokeWidth={3 * v.s} strokeDasharray={mb > 0.5 ? undefined : `${10 * v.s} ${8 * v.s}`} strokeDashoffset={-t * 40 * v.s} strokeLinejoin="round" opacity={mo * mf} />);
+    if (mo > 0 && mf > 0) {
+      if (mb < 1) ground.push(<polygon key="lot" points={pts(lot)} fill="none" stroke="#9AA1AB" strokeWidth={3 * v.s} strokeDasharray={`${10 * v.s} ${8 * v.s}`} strokeDashoffset={-t * 40 * v.s} strokeLinejoin="round" opacity={mo * mf * (1 - mb)} />);
+      if (mb > 0) ground.push(<polygon key="lotB" points={pts(lot)} fill={rgba(C.blue, 0.08)} stroke={C.blue} strokeWidth={3 * v.s} strokeLinejoin="round" opacity={mo * mf * mb} />);
+    }
   }
   const fade = 1 - k(g, "comes+0.7", 0.8);
   ground.push(<g key="turn" opacity={fade}><RouteLine v={v} r={TURN_ROUTE} u={routeK(g, TURN_ROUTE)} /></g>);
@@ -104,13 +109,13 @@ export const World: React.FC<{ g: number }> = ({ g }) => {
     if (sx < -300 || sx > 2220) continue;
     const you = b.role === "you";
     const tint = b.role === "comp" ? "ink" : "paper";
-    const ye = youEdge(g), cg = b.role === "comp" ? k(g, "turn", 1.4, EASE.soft) : 0;
-    const s = you ? (yb > 0 ? { h, tint: "blue" as const, to: "ai" as const, k: yb } : { h, tint: "grey" as const, to: "blue" as const, k: ye, edge: ye })
-      : cg > 0 ? { h, tint: "ink" as const, to: "paper" as const, k: cg } : { h, tint: tint as "ink" | "paper" };
+    const ye = youEdge(g);
+    const s = you ? (yb > 0 ? { h, tint: "blue" as const, to: "ai" as const, k: yb, edge: 1 - yb } : { h, tint: "grey" as const, to: "blue" as const, k: ye, edge: ye })
+      : b.role === "comp" ? { h, tint: "paper" as const, to: "ink" as const, k: compInk(g) } : { h, tint: tint as "ink" | "paper" };
     items.push({ d: depth(v, (b.x0 + b.x1) / 2, (b.y0 + b.y1) / 2) + 40, n: (
       <g key={b.id}>
         <Box v={v} x0={b.x0} y0={b.y0} x1={b.x1} y1={b.y1} s={s} dark={you ? 0.6 * (1 - youEdge(g)) : 0} />
-        {!(you && yb > 0.5) && <Screen g={g} v={v} b={b} h={h} />}
+        {!(you && yb >= 0.8) && <g opacity={you ? 1 - clamp01((yb - 0.2) / 0.6) : 1}><Screen g={g} v={v} b={b} h={h} /></g>}
         {you && yb > 0 && <YouFace g={g} v={v} h={h} />}
       </g>) });
   }
@@ -150,8 +155,8 @@ export const World: React.FC<{ g: number }> = ({ g }) => {
       </defs>
       {dots}
       {ground}
-      {items.map((it) => it.n)}
       {pops}
+      {items.map((it) => it.n)}
       {nodeO > 0 && (
         <g opacity={nodeO}>
           <circle cx={np[0]} cy={np[1]} r={(16 + 8 * breath) * v.s} fill={rgba(C.blue, 0.16)} />

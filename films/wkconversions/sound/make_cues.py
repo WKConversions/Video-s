@@ -100,7 +100,7 @@ c("gen-impact-logo", L["endcard"] + 0.2, "the mark writes on", -6)
 c("gen-tap-soft", L["endcard"] + 0.8, "Start a project", -8)
 music = sys.argv[1] if len(sys.argv) > 1 else "music/music-fit.wav"
 note = sys.argv[2] if len(sys.argv) > 2 else ""
-doc = {"fps": 30, "frames": 1380, "library": "lib", "vo": {"file": "../vo/vo.mp3", "at": 0},
+doc = {"fps": 30, "frames": 1416, "library": "lib", "vo": {"file": "../vo/vo.mp3", "at": 0},
        "music": {"file": music, "at": 0, "duck_db": 6, "fade_in": 0.2, "fade_out": 0.6, "note": note},
        "sfx": sorted(cues, key=lambda e: e["frame"])}
 json.dump(doc, open("cues.json", "w"), indent=1)

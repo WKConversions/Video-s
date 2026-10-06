@@ -1,5 +1,5 @@
 // The camera: the world's own view (azimuth, scale, focus), never a layer transform. It never stops: a slow orbit
-// the whole film long with eased pushes and pull-backs between keys, through a smooth (Catmull-Rom) curve, so the
+// (12° to 78°, never through the flat 90° view) the whole film long with eased pushes and pull-backs between keys, through a smooth (Catmull-Rom) curve, so the
 // speed changes gently and nothing spikes. Each key aims a world point at a point of the frame.
 import { View, K } from "./iso";
 import { centre, YOU } from "./map";
@@ -15,23 +15,24 @@ const aim = (th: number, s: number, w: [number, number], sx: number, sy: number)
 };
 type Key = [number, number, number, [number, number], number, number];   // t, th, s, world point, screen x, screen y
 const KEYS: Key[] = [
-  [0.0, 11, 1.36, Y, 1430, 525],
-  [3.6, 25, 1.5, Y, 1465, 514],
-  [6.4, 34, 1.44, Y, 1450, 545],
-  [9.0, 41, 1.24, Y, 1380, 620],
-  [11.4, 47, 1.14, Y, 1320, 690],
-  [13.6, 52.5, 1.2, Y, 1320, 740],
-  [15.6, 57.5, 1.3, Y, 1345, 775],
-  [18.6, 65, 1.36, Y, 1385, 800],
-  [22.4, 74.5, 1.36, Y, 1360, 785],
-  [25.2, 81.5, 1.28, Y, 1330, 780],
-  [27.8, 88, 1.34, Y, 1370, 812],
-  [31.2, 96.5, 1.42, Y, 1405, 842],
-  [34.6, 105, 1.45, Y, 1410, 850],
-  [37.0, 111, 1.4, Y, 1350, 830],
-  [40.0, 118.5, 1.2, Y, 1180, 805],
-  [43.0, 126, 1.08, Y, 1040, 785],
-  [46.2, 134, 1.0, Y, 960, 770],
+  [0.0, 12.0, 1.36, Y, 1430, 410],
+  [3.6, 19.5, 1.5, Y, 1465, 440],
+  [6.4, 24.3, 1.44, Y, 1450, 500],
+  [9.0, 28.1, 1.24, Y, 1380, 620],
+  [11.4, 31.3, 1.14, Y, 1330, 640],
+  [13.6, 34.3, 1.2, Y, 1350, 665],
+  [15.6, 37.0, 1.3, Y, 1380, 680],
+  [18.6, 41.0, 1.36, Y, 1410, 700],
+  [22.4, 46.1, 1.36, Y, 1390, 730],
+  [25.2, 49.8, 1.28, Y, 1330, 780],
+  [27.8, 53.3, 1.34, Y, 1370, 812],
+  [31.2, 57.9, 1.42, Y, 1405, 842],
+  [34.6, 62.4, 1.45, Y, 1410, 850],
+  [37.0, 65.7, 1.4, Y, 1350, 830],
+  [40.0, 69.7, 1.2, Y, 1180, 805],
+  [43.0, 73.7, 1.08, Y, 1040, 785],
+  [46.2, 78.0, 1.0, Y, 960, 770],
+  [47.4, 78.8, 0.99, Y, 950, 768],
 ];
 const ROWS = KEYS.map(([t, th, s, w, sx, sy]) => { const f = aim(th, s, w, sx, sy); return [t, th, s, f[0], f[1]]; });
 /** Non-uniform Catmull-Rom through the keys (velocity continuous, never a stop between keys). */

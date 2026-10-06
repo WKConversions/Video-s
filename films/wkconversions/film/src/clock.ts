@@ -4,7 +4,7 @@ import { timeline } from "./timeline";
 import WORDS_JSON from "./words.json";
 
 export const FPS = 30;
-export const DURATION = 1380;                 // 46.0 s: the voice-over (44.2 s) and the end card
+export const DURATION = 1416;                 // 47.2 s: the voice-over (44.2 s) and the end card, held
 type Wd = { word: string; start: number; end: number };
 export const VO = WORDS_JSON as Wd[];
 const words: Record<string, number> = {};
@@ -31,8 +31,8 @@ export const BEATS: Record<string, number> = {
   // P27–P33: the sign-off
   fin: 37.55, creative: 39.16, standout2: 39.8, designed: 41.2, move: 41.75, built3: 42.6, convert: 43.3, endcard: 44.2,
   // captions leave as one block before the next line arrives
-  capOut1: 3.0, capOut2: 7.45, capOut3: 10.66, capOut4: 15.22, capOut5: 18.28, capOut6: 22.52, capOut7: 27.08, capOut8: 33.5,
-  capOut9: 37.42, capOut10: 41.15, capOut11: 44.05,
-  rest: 44.4, end: 46.0,
+  capOut1: 2.82, capOut2: 7.35, capOut3: 10.47, capOut4: 15.13, capOut5: 18.1, capOut6: 22.38, capOut7: 26.95, capOut8: 33.38,
+  capOut9: 37.34, capOut10: 41.0, capOut11: 44.05,
+  rest: 44.4, end: 47.2,
 };
 export const T = timeline(FPS, { ...WORDS, ...BEATS });

@@ -48,7 +48,7 @@ const at = (l: Leg, t: number, k = 0): P2 => {
 const done = (l: Leg, t: number) => cl((t - l.t0) / l.dur);
 
 // ---- who does what (computed once: the plan of every person) ----
-const tG1 = T.s("better2"), tG2 = T.s("attract"), tC = T.s("drive"), tR = T.s("goalHit"), tBack = T.s("fin") - 0.6, tG3 = T.s("move"), tC3 = T.s("convert");
+const tG1 = T.s("better2"), tG2 = T.s("attract"), tC = T.s("drive"), tR = T.s("goalHit"), tBack = T.s("fin") - 0.6, tG3 = T.s("standout2"), tC3 = T.s("convert");
 const C_C = centre(COMP), C_Y = centre(YOU);
 type Plan = { g1?: Leg; g2?: Leg; conv?: number; rel?: number; g3?: Leg; conv3?: number };
 const PLAN: Plan[] = PEOPLE.map((p) => {
@@ -58,13 +58,13 @@ const PLAN: Plan[] = PEOPLE.map((p) => {
   const s1 = walk(p, tG1);
   const d1 = dist(s1, C_C);
   const tA = T.s("standout") + 0.2, sA = walk(p, tA), dA = dist(sA, C_C);
-  if (dA < 420 && hash(k, 1, 77) < 0.8) pl.g1 = leg(tA + dA / 900 + 0.3 * hash(k, 2, 77), sA, p.axis, COMP, k, 1, 110);
-  else if (d1 < 600 && hash(k, 1, 77) < 0.8) pl.g1 = leg(tG1 + d1 / 1100 + 0.25 * hash(k, 2, 77), s1, p.axis, COMP, k, 1, 120);
+  if (dA < 420 && hash(k, 1, 77) < 0.8) { const t0 = tA + dA / 900 + 0.3 * hash(k, 2, 77); pl.g1 = leg(t0, walk(p, t0), p.axis, COMP, k, 1, 110); }
+  else if (d1 < 600 && hash(k, 1, 77) < 0.8) { const t0 = tG1 + d1 / 1100 + 0.25 * hash(k, 2, 77); pl.g1 = leg(t0, walk(p, t0), p.axis, COMP, k, 1, 120); }
   // G2: the competitor's crowd and the people near you walk over to you
   const s2 = walk(p, tG2);
   const d2 = dist(s2, C_Y);
-  if (pl.g1) pl.g2 = leg(tG2 + 0.6 * hash(k, 3, 77), pl.g1.end, pl.g1.endAxis, YOU, k, 2, 200);
-  else if (d2 < 650 && hash(k, 4, 77) < 0.85) pl.g2 = leg(tG2 + d2 / 1100 + 0.2 * hash(k, 5, 77), s2, p.axis, YOU, k, 2, 150);
+  if (pl.g1) { const t0 = tG2 + 0.6 * hash(k, 3, 77); pl.g2 = leg(t0, at(pl.g1, t0, k), pl.g1.endAxis, YOU, k, 2, 280); }
+  else if (d2 < 650 && hash(k, 4, 77) < 0.85) { const t0 = tG2 + d2 / 1100 + 0.2 * hash(k, 5, 77); pl.g2 = leg(t0, walk(p, t0), p.axis, YOU, k, 2, 160); }
   if (pl.g2) {
     const arrive = pl.g2.t0 + pl.g2.dur;
     if (hash(k, 6, 77) < 0.5) pl.conv = Math.max(tC + 1.1 * hash(k, 7, 77), arrive + 0.15);
@@ -74,7 +74,8 @@ const PLAN: Plan[] = PEOPLE.map((p) => {
   const s3 = walk(p, tG3);
   const d3 = dist(s3, C_Y);
   if (d3 < 820 && hash(k, 9, 77) < 0.8) {
-    pl.g3 = leg(tG3 + d3 / 1500 + 0.2 * hash(k, 10, 77), s3, p.axis, YOU, k, 3, 210);
+    const t0 = tG3 + d3 / 1500 + 0.2 * hash(k, 10, 77);
+    pl.g3 = leg(t0, walk(p, t0), p.axis, YOU, k, 3, 240);
     if (hash(k, 11, 77) < 0.45) pl.conv3 = Math.max(tC3 + 0.7 * hash(k, 12, 77), pl.g3.t0 + pl.g3.dur + 0.1);
   }
   return pl;
@@ -93,12 +94,12 @@ export const who = (k: number, t: number): Who => {
     o = 1 - u; pop = t >= tc ? cl((t - tc) / 0.7) : 0;
   };
   if (pl.g3 && t >= pl.g3.t0) {
-    pos = at(pl.g3, t, k); blue = cl((done(pl.g3, t) - 0.55) / 0.45); ink = cl(done(pl.g3, t) * 3);
+    pos = at(pl.g3, t, k); blue = cl(done(pl.g3, t) / 0.35); ink = 0;
     if (pl.conv3 && t >= pl.conv3) goIn(pl.g3.end, pl.conv3);
     return { x: pos[0], y: pos[1], o, blue, r, pop, ink };
   }
   if (pl.g2 && t >= pl.g2.t0 && t < tBack + 1.5) {
-    pos = at(pl.g2, t, k); blue = cl((done(pl.g2, t) - 0.6) / 0.4); ink = pl.g1 ? 1 : cl(done(pl.g2, t) * 3);
+    pos = at(pl.g2, t, k); blue = cl((done(pl.g2, t) - (pl.g1 ? 0.6 : 0.15)) / 0.4); ink = pl.g1 ? 1 : 0;
     if (pl.conv && t >= pl.conv) { goIn(pl.g2.end, pl.conv); if (t >= tBack) { pos = walk(p, t); o = cl((t - tBack) / 0.8); blue = 0; pop = 0; ink = 0; } }
     else if (pl.rel && t >= pl.rel) {
       // released: walks off along its street, fading, while the walker it was fades back in on its own street

@@ -3,7 +3,7 @@
 // card on your roof that carries the story from "content" to the sign-off (P10–P26), then the sign-off badge.
 import React from "react";
 import { T } from "./clock";
-import { ARRIVE, C, DEPART, F, MOVE, clamp01, lerp, rgba } from "./lib";
+import { ARRIVE, C, DEPART, F, MOVE, clamp01, lerp, mix, rgba } from "./lib";
 import { EASE } from "./kinetic";
 import { hash } from "./iso";
 import { BIZ, Biz } from "./map";
@@ -13,15 +13,15 @@ import { Button, Card, Cursor, Icon, Mark, Tag } from "./ui";
 const lin = (u: number) => u;
 /** In on `inAt` (scale 0.15 → 1 on the site's ease, opacity over 4 frames), out on `outAt` (folds back down). */
 export const life = (g: number, inAt: string, outAt?: string, dIn = 0.5, dOut = 0.36) => {
-  const u = k(g, inAt, dIn, lin), e = outAt ? k(g, outAt, dOut, DEPART) : 0;
-  return { s: lerp(0.15, 1, ARRIVE(u)) * (1 - 0.85 * e), o: clamp01((u * dIn * 30) / 4) * (1 - e), on: u > 0 && e < 1 };
+  const u = k(g, inAt, dIn, lin), e = outAt ? k(g, outAt, dOut, DEPART) : 0, eo = outAt ? k(g, outAt, dOut, MOVE) : 0;
+  return { s: lerp(0.15, 1, ARRIVE(u)) * (1 - 0.85 * e), o: clamp01((u * dIn * 30) / 4) * (1 - eo), on: u > 0 && e < 1 };
 };
 
 /** A card floating above an anchor point (a roof), bottom-centre at (ax + dx, ay - lift), with a stem down to the roof. */
-const Float: React.FC<{ ax: number; ay: number; lift: number; dx?: number; w: number; h: number; s: number; o: number; stem?: boolean; children: React.ReactNode; z?: number; blur?: number }> = ({
-  ax, ay, lift, dx = 0, w, h, s, o, stem = true, children, blur = 0 }) => {
+const Float: React.FC<{ ax: number; ay: number; lift: number; dx?: number; w: number; h: number; s: number; o: number; stem?: boolean; children: React.ReactNode; z?: number; blur?: number; top?: number; name: string }> = ({
+  ax, ay, lift, dx = 0, w, h, s, o, stem = true, children, blur = 0, top, name }) => {
   if (o <= 0.001) return null;
-  const bx = ax + dx * s, by = ay - lift * s;
+  const bx = ax + dx * s, by = top === undefined ? ay - lift * s : Math.max(ay - lift * s, top + h * s);
   return (
     <>
       {stem && (
@@ -30,9 +30,10 @@ const Float: React.FC<{ ax: number; ay: number; lift: number; dx?: number; w: nu
           <circle cx={ax} cy={ay} r={5} fill={C.card} stroke={C.txt3} strokeWidth={2} />
         </svg>
       )}
-      <div style={{ position: "absolute", left: bx - w / 2, top: by - h, width: w, height: h, opacity: o, transform: `scale(${s})`, transformOrigin: "50% 100%",
-        filter: blur > 0.05 ? `blur(${blur}px)` : undefined }}>
-        {children}
+      <div data-probe={name} style={{ position: "absolute", left: 0, top: 0, width: w, height: h, opacity: o, transform: `translate3d(${bx - w / 2}px, ${by - h}px, 0)`, willChange: "transform" }}>
+        <div style={{ width: "100%", height: "100%", transform: `scale(${s})`, transformOrigin: "50% 100%", filter: blur > 0.05 ? `blur(${blur}px)` : undefined }}>
+          {children}
+        </div>
       </div>
     </>
   );
@@ -80,10 +81,10 @@ const Tags: React.FC<{ g: number }> = ({ g }) => {
   const ly = (yy + cy) / 2 - 40 - 88 - 42;
   return (
     <>
-      <Float ax={yx} ay={yy} lift={40} w={200} h={64} s={a.s} o={a.o}><div style={{ display: "flex", justifyContent: "center" }}><Tag size={30} dot={C.txt3}>You</Tag></div></Float>
-      <Float ax={cx} ay={cy} lift={40} w={300} h={64} s={b.s} o={b.o}><div style={{ display: "flex", justifyContent: "center" }}><Tag size={30} dot={C.ink}>Competitor</Tag></div></Float>
-      <Float ax={yx} ay={yy} lift={40} w={300} h={176} s={o1.s} o={o1.o}><OfferCard g={g} who="Your" comm={false} /></Float>
-      <Float ax={cx} ay={cy} lift={40} w={300} h={176} s={o2.s} o={o2.o}><OfferCard g={g} who="Their" comm /></Float>
+      <Float name="youTag" ax={yx} ay={yy} lift={40} w={220} h={76} s={a.s} o={a.o}><div style={{ display: "flex", justifyContent: "center" }}><Tag size={36} dot={C.txt3}>You</Tag></div></Float>
+      <Float name="compTag" ax={cx} ay={cy} lift={40} w={300} h={64} s={b.s} o={b.o}><div style={{ display: "flex", justifyContent: "center" }}><Tag size={30} dot={C.ink}>Competitor</Tag></div></Float>
+      <Float name="yourOffer" ax={yx} ay={yy} lift={40} w={300} h={176} s={o1.s} o={o1.o}><OfferCard g={g} who="Your" comm={false} /></Float>
+      <Float name="theirOffer" ax={cx} ay={cy} lift={40} w={300} h={176} s={o2.s} o={o2.o}><OfferCard g={g} who="Their" comm /></Float>
       {eq.o > 0 && (
         <div style={{ position: "absolute", left: (yx + cx) / 2 - 42, top: ly + 4, width: 84, height: 84, borderRadius: "50%", background: C.blue, color: "#fff",
           display: "flex", alignItems: "center", justifyContent: "center", fontFamily: F.display, fontWeight: 800, fontSize: 60, lineHeight: 1,
@@ -95,19 +96,19 @@ const Tags: React.FC<{ g: number }> = ({ g }) => {
 
 // ---------------- P6–P9: most businesses ----------------
 /** The grey cards sit on the nearest business to each of these lots (some lots are empty). */
-const GREY = ([[-3, 0], [-1, -2], [2, 0]] as [number, number][]).map(([i, j]) =>
+const GREY = ([[-3, -1], [-2, 1], [0, -1]] as [number, number][]).map(([i, j]) =>
   BIZ.filter((b) => b.role === "biz").reduce((a, b) => (Math.hypot(b.i - i, b.j - j) < Math.hypot(a.i - i, a.j - j) ? b : a))) as Biz[];
 const GLYPH = "abcdefghijklmnopqrstuvwxyz#%&?*/0123456789";
 const scramble = (n: number, seed: number, g: number) => Array.from({ length: n }, (_, i) => (hash(i, seed, Math.floor(g / 2)) < 0.16 ? " " : GLYPH[Math.floor(hash(i, seed, Math.floor(g / 2) + 1) * GLYPH.length)])).join("");
 const GreyCard: React.FC<{ g: number; i: number }> = ({ g, i }) => {
   const drain = k(g, `lose+${0.06 * i}`, 0.9, MOVE), un = k(g, `unclear+${0.05 * i}`, 0.3), fo = k(g, `forget+${0.04 * i}`, 0.6, MOVE), im = k(g, `visuals+${0.07 * i}`, 0.4, ARRIVE);
   return (
-    <Card radius={18} style={{ left: 0, top: 0, width: 230, height: 146, padding: 16, boxSizing: "border-box", opacity: 1 - 0.55 * fo,
-      boxShadow: fo > 0 ? `inset 0 0 0 2px ${rgba("#AEB4BC", fo)}` : undefined, background: fo > 0 ? `rgba(255,255,255,${1 - 0.6 * fo})` : C.card }}>
+    <Card radius={18} style={{ left: 0, top: 0, width: 230, height: 146, padding: 16, boxSizing: "border-box", opacity: 1 - 0.35 * fo,
+      boxShadow: fo > 0 ? `inset 0 0 0 2px ${rgba("#AEB4BC", fo)}` : undefined, background: fo > 0 ? `rgba(255,255,255,${1 - 0.3 * fo})` : C.card }}>
       <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
         <Icon name="eye" size={20} color={C.txt3} stroke={1.6} />
-        <div style={{ flex: 1, height: 8, borderRadius: 8, background: C.card2, overflow: "hidden" }}>
-          <div style={{ width: `${lerp(68 - 8 * i, 5, drain)}%`, height: "100%", borderRadius: 8, background: drain > 0.6 ? "#C9CED4" : C.txt3 }} />
+        <div style={{ flex: 1, height: 12, borderRadius: 12, background: C.card2, overflow: "hidden" }}>
+          <div style={{ width: `${lerp(68 - 8 * i, 5, drain)}%`, height: "100%", borderRadius: 12, background: mix(C.txt3, "#C9CED4", drain) }} />
         </div>
       </div>
       <div style={{ position: "relative", marginTop: 14, height: 84, display: "flex", gap: 12 }}>
@@ -136,7 +137,7 @@ const GreyCards: React.FC<{ g: number }> = ({ g }) => {
       {GREY.map((b, i) => {
         const [x, y] = roofAt(g, b, 0, v);
         const l = life(g, `most+${0.09 * i}`, `content-${0.25 - 0.05 * i}`, 0.5, 0.36);
-        return <Float key={b.id} ax={x} ay={y} lift={30} w={230} h={146} s={l.s * 1.2} o={l.o}><GreyCard g={g} i={i} /></Float>;
+        return <Float name={`grey${i}`} key={b.id} ax={x} ay={y} lift={30} w={230} h={146} s={l.s * 1.1} o={l.o} top={36}><GreyCard g={g} i={i} /></Float>;
       })}
     </>
   );
@@ -146,8 +147,8 @@ const GreyCards: React.FC<{ g: number }> = ({ g }) => {
 const CW = 640, CH = 420;
 /** A scene inside the card: in on `a`, out on `b` (cross-fades with a small rise and blur). */
 const sceneO = (g: number, a: string, b?: string, dIn = 0.35, dOut = 0.25) => {
-  const i = k(g, a, dIn), o = b ? k(g, b, dOut, DEPART) : 0;
-  return { o: i * (1 - o), y: (1 - i) * 18 - o * 14, blur: (1 - i) * 6 + o * 6, on: i > 0 && o < 1 };
+  const i = k(g, a, dIn), o = b ? k(g, b, dOut, DEPART) : 0, oo = b ? k(g, b, dOut, MOVE) : 0;
+  return { o: i * (1 - oo), y: (1 - i) * 18 - o * 14, blur: (1 - i) * 6 + o * 6, on: i > 0 && o < 1 };
 };
 const Scene: React.FC<{ s: { o: number; y: number; blur: number; on: boolean }; children: React.ReactNode; top?: number }> = ({ s, children, top = 88 }) =>
   !s.on ? null : (
@@ -169,14 +170,14 @@ const Stepper: React.FC<{ g: number }> = ({ g }) => {
   return (
     <div style={{ position: "absolute", left: 30, top: 96, height: 36, display: "flex", alignItems: "center", gap: 5 }}>
       {steps.map((s, i) => {
-        const on = k(g, at[i], 0.35), done = i < 3 ? k(g, at[i + 1], 0.35) : k(g, "purpose", 0.35);
+        const on = k(g, at[i], 0.35, MOVE), done = i < 3 ? k(g, at[i + 1], 0.35, MOVE) : k(g, "purpose", 0.35, MOVE);
         return (
-          <div key={s} style={{ display: "flex", alignItems: "center", gap: 7, padding: "5px 10px 5px 5px", borderRadius: 999, background: on > 0.5 ? C.blueSoft : C.card2 }}>
-            <div style={{ width: 22, height: 22, borderRadius: "50%", background: done > 0.5 ? C.blue : on > 0.5 ? C.card : C.card, boxShadow: `inset 0 0 0 2px ${on > 0.5 ? C.blue : "#C9CED4"}`,
+          <div key={s} style={{ display: "flex", alignItems: "center", gap: 7, padding: "5px 10px 5px 5px", borderRadius: 999, background: mix(C.card2, C.blueSoft, on) }}>
+            <div style={{ width: 22, height: 22, borderRadius: "50%", background: mix(C.card, C.blue, done), boxShadow: `inset 0 0 0 2px ${mix("#C9CED4", C.blue, on)}`,
               display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${1 + 0.18 * Math.sin(Math.PI * on)})` }}>
-              {done > 0.5 && <Icon name="check" size={13} color="#fff" stroke={2.6} />}
+              {done > 0 && <Icon name="check" size={13} color="#fff" stroke={2.6} style={{ opacity: done, transform: `scale(${0.6 + 0.4 * done})` }} />}
             </div>
-            <div style={{ fontSize: 17, fontWeight: 600, color: on > 0.5 ? C.blueInk : C.txt3 }}>{s}</div>
+            <div style={{ fontSize: 17, fontWeight: 600, color: mix(C.txt3, C.blueInk, on) }}>{s}</div>
           </div>
         );
       })}
@@ -205,18 +206,21 @@ const MainCard: React.FC<{ g: number }> = ({ g }) => {
   const l = life(g, "content", "fin", 0.55, 0.5);
   // the process (P20–P23) brings the card forward and a little larger
   const fw = k(g, "goal", 0.9, EASE.soft) * (1 - k(g, "fin-0.3", 0.5, MOVE));
-  const lift = lerp(78, 96, fw), dx = lerp(-270, -350, fw), sc = lerp(1.1, 1.18, fw);
-  const s1 = sceneO(g, "content+0.15", "turn");
-  const sB = sceneO(g, "brand-0.05", "comes", 0.3, 0.4);
+  const lift = lerp(60, 90, fw), dx = lerp(-270, -350, fw), sc = lerp(1.04, 1.16, fw);
+  const s1 = sceneO(g, "content+0.15", "brand-0.3", 0.35, 0.22);
+  const sB = sceneO(g, "brand-0.05", "comes", 0.3, 0.3);
   const head = k(g, "comes", 0.55, MOVE);
-  const sK = sceneO(g, "complex", "motion-0.05");
-  const sM = sceneO(g, "motion", "explain-0.08");
-  const sE = sceneO(g, "explain", "drive-0.05");
-  const sC = sceneO(g, "drive", "goal-0.05");
-  const sG = sceneO(g, "goal", "sharpen-0.05");
-  const sS = sceneO(g, "sharpen", "concept-0.05");
-  const sP = sceneO(g, "concept", "frames-0.05");
-  const sF = sceneO(g, "frames");
+  const sK = sceneO(g, "complex", "motion-0.3", 0.35, 0.22);
+  const sM = sceneO(g, "motion", "explain-0.3", 0.35, 0.22);
+  const sE = sceneO(g, "explain", "drive-0.3", 0.35, 0.22);
+  const sC = sceneO(g, "drive+0.18", "goal-0.35", 0.35, 0.22);
+  const sG = sceneO(g, "goal", "sharpen-0.3", 0.35, 0.22);
+  const sS = sceneO(g, "sharpen", "concept-0.3", 0.35, 0.22);
+  const sP = sceneO(g, "concept-0.05", "frames-0.3", 0.5, 0.22);
+  const sF = sceneO(g, "frames-0.05", undefined, 0.5);
+  // the strip's travel: 160 px/s, slowed to a third while the random shapes are on (they are the loudest motion then)
+  let stripX = 0;
+  for (let f = T.f("frames"); f < g; f++) stripX += (160 / 30) * (1 - (2 / 3) * (k(f, "random", 0.4, MOVE) - k(f, "strike1+0.3", 0.4, MOVE)));
   const stepO = k(g, "goal", 0.4);
   // knot → line → growth curve
   const dr = k(g, "complex", 0.6, EASE.steady), cl1 = k(g, "clear", 0.6, MOVE), gr = k(g, "perf", 0.7, MOVE);
@@ -240,7 +244,7 @@ const MainCard: React.FC<{ g: number }> = ({ g }) => {
   const d1 = k(g, "drive+0.15", 0.6, MOVE), press = Math.sin(Math.PI * k(g, "conv", 0.22, (u) => u)) , rip = k(g, "conv+0.05", 0.6, EASE.whipOut);
   const cur2 = { x: lerp(680, 360, d1), y: lerp(460, 262, d1), o: clamp01((t - T.s("drive") - 0.15) * 6) * (1 - k(g, "goal-0.3", 0.3)) };
   return (
-    <Float ax={ax} ay={ay} lift={lift} dx={dx} w={CW} h={CH} s={l.s * sc} o={l.o}>
+    <Float name="mainCard" ax={ax} ay={ay} lift={lift} dx={dx} w={CW} h={CH} s={l.s * sc} o={l.o}>
       <Card style={{ left: 0, top: 0, width: CW, height: CH }}>
         {/* header: a browser bar, then the wkc mark once WKConversions comes in */}
         <div style={{ position: "absolute", left: 24, right: 24, top: 20, height: 48, display: "flex", alignItems: "center", gap: 10 }}>
@@ -250,9 +254,6 @@ const MainCard: React.FC<{ g: number }> = ({ g }) => {
             <div style={{ position: "absolute", left: 0, top: 4, display: "flex", alignItems: "center", gap: 12, opacity: head, transform: `translateY(${(1 - head) * 10}px)` }}>
               <Mark w={70} id="hdr" />
               <div style={{ fontFamily: F.display, fontWeight: 800, fontSize: 24, letterSpacing: "-0.04em" }}>WKConversions</div>
-              <div style={{ marginLeft: 8, display: "flex", alignItems: "center", gap: 6, fontSize: 15, color: C.blueInk, fontWeight: 600, opacity: k(g, "attract", 0.4) }}>
-                <span style={{ width: 9, height: 9, borderRadius: "50%", background: C.blue, boxShadow: `0 0 0 ${4 + 3 * Math.sin(t * 6)}px ${rgba(C.blue, 0.15)}` }} />Live
-              </div>
             </div>
           )}
         </div>
@@ -278,7 +279,7 @@ const MainCard: React.FC<{ g: number }> = ({ g }) => {
           </div>
         )}
         {/* P12: the site's own line, while WKConversions comes in */}
-        <Scene s={sceneO(g, "comes+0.15", "complex-0.1", 0.4, 0.25)}>
+        <Scene s={sceneO(g, "comes+0.4", "complex-0.3", 0.4, 0.22)}>
           <div style={{ position: "absolute", left: 0, right: 0, top: 70, textAlign: "center", fontFamily: F.display, fontWeight: 800, fontSize: 52, letterSpacing: "-0.05em", lineHeight: 1.04 }}>
             Motion design that<br />makes it <span style={{ color: C.blue, position: "relative" }}>click.
               <span style={{ position: "absolute", left: 0, right: 0, bottom: -4, height: 7, borderRadius: 7, background: C.blue, transformOrigin: "0 50%", transform: `scaleX(${k(g, "comes+0.55", 0.5, MOVE)})` }} /></span>
@@ -288,13 +289,13 @@ const MainCard: React.FC<{ g: number }> = ({ g }) => {
         <Scene s={sK} top={96}>
           <svg width={CW} height={300} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
             {gr > 0 && <path d={pathOf(curve) + ` L560,250 L40,250 Z`} fill={rgba(C.blue, 0.1 * gr)} />}
-            <path d={pathOf(curve)} fill="none" stroke={gr > 0 ? C.blue : cl1 > 0.5 ? C.ink : C.txt2} strokeWidth={cl1 > 0 ? 6 : 4} strokeLinecap="round" strokeLinejoin="round"
+            <path d={pathOf(curve)} fill="none" stroke={mix(mix(C.txt2, C.ink, cl1), C.blue, gr)} strokeWidth={lerp(4, 6, cl1)} strokeLinecap="round" strokeLinejoin="round"
               pathLength={1} strokeDasharray={`${dr} 1`} />
             {gr > 0.6 && (() => { const u = clamp01((gr - 0.6) / 0.4), i = Math.round(lerp(0, N_PTS - 1, EASE.steady(u))), p = curve[i];
               return <><circle cx={p[0]} cy={p[1]} r={14 + 4 * Math.sin(t * 7)} fill={rgba(C.blue, 0.2)} /><circle cx={p[0]} cy={p[1]} r={9} fill="#fff" stroke={C.blue} strokeWidth={4} /></>; })()}
           </svg>
           {bars.map((b, i) => b.ap > 0.01 && (
-            <div key={i} style={{ position: "absolute", left: b.x, top: b.y, width: b.w, height: i === 0 ? 18 : 12, borderRadius: 12, background: b.blue > 0.5 ? C.blue : i === 0 ? "#AEB4BC" : "#D3D7DD",
+            <div key={i} style={{ position: "absolute", left: b.x, top: b.y, width: b.w, height: i === 0 ? 18 : 12, borderRadius: 12, background: i === 0 ? mix("#AEB4BC", C.blue, b.blue) : "#D3D7DD",
               transform: `rotate(${b.r}deg) scale(${b.ap})`, transformOrigin: "0 50%", opacity: Math.min(1, b.ap * 1.5) }} />
           ))}
         </Scene>
@@ -319,23 +320,23 @@ const MainCard: React.FC<{ g: number }> = ({ g }) => {
         {/* P18: explain value */}
         <Scene s={sE} top={96}>
           {["Problem", "Solution", "Value"].map((s, i) => {
-            const a = k(g, `explain+${0.13 * i}`, 0.4, ARRIVE), v = i === 2 ? k(g, "value", 0.35) : 0;
+            const a = k(g, `explain+${0.13 * i}`, 0.4, ARRIVE), v = i === 2 ? k(g, "value", 0.45, MOVE) : 0;
             return (
               <React.Fragment key={s}>
-                <div style={{ position: "absolute", left: 40 + i * 190, top: 40, width: 180, height: 150, borderRadius: 18, background: v > 0.5 ? C.blue : C.card, boxShadow: `inset 0 0 0 2.5px ${v > 0.5 ? C.blue : "#C9CED4"}`, transform: `scale(${a})`, opacity: Math.min(1, a * 1.4),
+                <div style={{ position: "absolute", left: 40 + i * 190, top: 40, width: 180, height: 150, borderRadius: 18, background: mix(C.card, C.blue, v), boxShadow: `inset 0 0 0 2.5px ${mix("#C9CED4", C.blue, v)}`, transform: `scale(${a})`, opacity: Math.min(1, a * 1.4),
                   display: "flex", alignItems: "center", justifyContent: "center" }}>
                   {i === 0 && <Sketch i={2} w={120} h={72} />}
                   {i === 1 && <Sketch i={5} w={120} h={72} c={C.ink} />}
-                  {i === 2 && <Icon name="check" size={70} color={v > 0.5 ? "#fff" : C.txt2} stroke={2.2} />}
+                  {i === 2 && <Icon name="check" size={70} color={mix(C.txt2, "#FFFFFF", v)} stroke={2.2} />}
                 </div>
-                <div style={{ position: "absolute", left: 40 + i * 190, width: 180, top: 202, textAlign: "center", fontSize: 22, fontWeight: 600, color: i === 2 && v > 0.5 ? C.blueInk : C.txt2, opacity: a }}>{s}</div>
+                <div style={{ position: "absolute", left: 40 + i * 190, width: 180, top: 202, textAlign: "center", fontSize: 22, fontWeight: 600, color: i === 2 ? mix(C.txt2, C.blueInk, v) : C.txt2, opacity: a }}>{s}</div>
               </React.Fragment>
             );
           })}
         </Scene>
         {/* P19: drive conversion: the site's own button, clicked */}
         <Scene s={sC} top={96}>
-          <div style={{ position: "absolute", left: 0, right: 0, top: 26, textAlign: "center", fontFamily: F.display, fontWeight: 800, fontSize: 40, letterSpacing: "-0.045em" }}>Ready when you are.</div>
+          <div style={{ position: "absolute", left: 0, right: 0, top: 26, textAlign: "center", fontFamily: F.display, fontWeight: 800, fontSize: 36, letterSpacing: "-0.045em" }}>Ready to make your story <span style={{ color: C.blue }}>click?</span></div>
           <div style={{ position: "absolute", left: 0, right: 0, top: 130, display: "flex", justifyContent: "center" }}>
             <div style={{ position: "relative" }}>
               {rip > 0 && rip < 1 && <div style={{ position: "absolute", left: "50%", top: "50%", width: 360 * rip, height: 360 * rip, marginLeft: -180 * rip, marginTop: -180 * rip, borderRadius: "50%", border: `3px solid ${C.blue}`, opacity: 1 - rip }} />}
@@ -387,17 +388,17 @@ const MainCard: React.FC<{ g: number }> = ({ g }) => {
         <Scene s={sF} top={150}>
           <div style={{ position: "absolute", left: 0, right: 0, top: 24, height: 160, overflow: "hidden", background: C.ink }}>
             {Array.from({ length: 9 }, (_, i) => {
-              const x = ((i * 168 - (t - T.s("frames")) * 160) % (9 * 168) + 9 * 168) % (9 * 168) - 168;
-              const tick = clamp01((t - T.s("every")) * 4) * (x + 75 < 320 ? 1 : 0);
+              const x = ((i * 168 - stripX) % (9 * 168) + 9 * 168) % (9 * 168) - 168;
+              const tick = clamp01((t - T.s("every")) * 4) * ARRIVE(clamp01((320 - (x + 75)) / 36));
               return (
-                <div key={i} style={{ position: "absolute", left: x, top: 22, width: 150, height: 116, borderRadius: 10, background: "#1C2835", overflow: "hidden" }}>
+                <div key={i} style={{ position: "absolute", left: 0, top: 22, width: 150, height: 116, borderRadius: 10, background: "#1C2835", overflow: "hidden", transform: `translate3d(${x}px, 0, 0)` }}>
                   <div style={{ position: "absolute", inset: 10, borderRadius: 6, background: C.card, display: "flex", alignItems: "center", justifyContent: "center" }}><Sketch i={i} w={96} h={58} /></div>
                   {tick > 0 && <div style={{ position: "absolute", right: 6, top: 6, width: 30, height: 30, borderRadius: "50%", background: C.blue, display: "flex", alignItems: "center", justifyContent: "center",
                     transform: `scale(${tick})` }}><Icon name="check" size={18} color="#fff" stroke={2.6} /></div>}
                 </div>
               );
             })}
-            {[0, 1].map((r) => <div key={r} style={{ position: "absolute", left: 0, right: 0, top: r ? 146 : 6, height: 8, backgroundImage: "radial-gradient(circle, #33404E 3px, transparent 3.5px)", backgroundSize: "24px 8px", backgroundPositionX: -(t * 160) % 24 }} />)}
+            {[0, 1].map((r) => <div key={r} style={{ position: "absolute", left: -24, right: -24, top: r ? 146 : 6, height: 8, backgroundImage: "radial-gradient(circle, #33404E 3px, transparent 3.5px)", backgroundSize: "24px 8px", transform: `translate3d(${-(stripX % 24)}px, 0, 0)` }} />)}
             <div style={{ position: "absolute", left: 318, top: 0, bottom: 0, width: 4, background: C.blue, opacity: clamp01((t - T.s("every") + 0.2) * 4) }} />
           </div>
           {(() => { const p = k(g, "purpose", 0.45, ARRIVE);
@@ -413,10 +414,11 @@ const Clutter: React.FC<{ g: number }> = ({ g }) => {
   const t = sec(g);
   if (t < T.s("random") - 0.1 || t > T.s("sweep") + 0.8) return null;
   const [ax, ay] = youRoof(g, 6);
-  const cx = ax - 350 * 1.18, cy = ay - 96 * 1.18 - (CH * 1.18) / 2;      // the card's centre (the process framing)
-  const out1 = k(g, "strike1+0.18", 0.35, DEPART), out2 = k(g, "sweep+0.2", 0.35, DEPART);
+  const cx = ax - 350 * 1.16, cy = ay - 90 * 1.16 - (CH * 1.16) / 2;      // the card's centre (the process framing)
+  const out1 = k(g, "strike1+0.35", 0.35, DEPART), out2 = k(g, "sweep+0.3", 0.35, DEPART);
+  // just outside the card's edges (the card is 755 px wide here), well inside the frame
   const shapes = [
-    { dx: -400, dy: -170, at: "random" }, { dx: 380, dy: -200, at: "random+0.1" }, { dx: -430, dy: 120, at: "random+0.2" }, { dx: 410, dy: 150, at: "random+0.3" },
+    { dx: -470, dy: -130, at: "random" }, { dx: 470, dy: -140, at: "random+0.1" }, { dx: -470, dy: 130, at: "random+0.2" }, { dx: 470, dy: 120, at: "random+0.3" },
   ];
   const decor = [
     { dx: -360, dy: -60, at: "visuals2" }, { dx: 360, dy: -40, at: "visuals2+0.1" }, { dx: -250, dy: 245, at: "visuals2+0.2" }, { dx: 240, dy: -265, at: "visuals2+0.3" }, { dx: 120, dy: 250, at: "just" },
@@ -428,11 +430,11 @@ const Clutter: React.FC<{ g: number }> = ({ g }) => {
         if (a <= 0.01) return null;
         const wob = Math.sin(t * (7 + i * 1.3) + i) * 18, rot = t * (220 + 90 * i) * (i % 2 ? -1 : 1);
         return (
-          <svg key={i} width={90} height={90} viewBox="0 0 90 90" style={{ position: "absolute", left: cx + s.dx - 45 + wob, top: cy + s.dy - 45 + Math.cos(t * 9 + i) * 14, transform: `rotate(${rot}deg) scale(${a})`, overflow: "visible" }}>
-            {i % 4 === 0 && <rect x={15} y={15} width={60} height={60} rx={6} fill="none" stroke={C.txt2} strokeWidth={6} />}
-            {i % 4 === 1 && <path d="M45 8l38 66H7z" fill="none" stroke={C.txt2} strokeWidth={6} strokeLinejoin="round" />}
-            {i % 4 === 2 && <circle cx={45} cy={45} r={32} fill="none" stroke={C.txt2} strokeWidth={6} strokeDasharray="12 10" />}
-            {i % 4 === 3 && <path d="M8 60l14-30 14 30 14-30 14 30 14-30" fill="none" stroke={C.txt2} strokeWidth={6} strokeLinejoin="round" strokeLinecap="round" />}
+          <svg key={i} width={140} height={140} viewBox="0 0 90 90" style={{ position: "absolute", left: cx + s.dx - 70 + wob, top: cy + s.dy - 70 + Math.cos(t * 9 + i) * 14, transform: `rotate(${rot}deg) scale(${a})`, overflow: "visible" }}>
+            {i % 4 === 0 && <rect x={15} y={15} width={60} height={60} rx={6} fill="none" stroke={C.ink} strokeWidth={6} />}
+            {i % 4 === 1 && <path d="M45 8l38 66H7z" fill="none" stroke={C.ink} strokeWidth={6} strokeLinejoin="round" />}
+            {i % 4 === 2 && <circle cx={45} cy={45} r={32} fill="none" stroke={C.ink} strokeWidth={6} strokeDasharray="12 10" />}
+            {i % 4 === 3 && <path d="M8 60l14-30 14 30 14-30 14 30 14-30" fill="none" stroke={C.ink} strokeWidth={6} strokeLinejoin="round" strokeLinecap="round" />}
           </svg>
         );
       })}
@@ -453,7 +455,7 @@ const Clutter: React.FC<{ g: number }> = ({ g }) => {
       {/* the strikes: a blue slash across each random shape, then across each decoration */}
       {shapes.map((s, i) => {
         const sl = k(g, `strike1+${0.04 * i}`, 0.2, MOVE) * (1 - out1);
-        return sl > 0.01 && <div key={`s${i}`} style={{ position: "absolute", left: cx + s.dx - 60, top: cy + s.dy - 6, width: 120, height: 12, transform: "rotate(-35deg)" }}><div style={{ width: 120 * sl, height: 12, borderRadius: 12, background: C.blue }} /></div>;
+        return sl > 0.01 && <div key={`s${i}`} style={{ position: "absolute", left: cx + s.dx - 85, top: cy + s.dy - 7, width: 170, height: 14, transform: "rotate(-35deg)" }}><div style={{ width: 170 * sl, height: 14, borderRadius: 14, background: C.blue }} /></div>;
       })}
       {decor.map((s, i) => {
         const sl = k(g, `sweep+${0.04 * i}`, 0.2, MOVE) * (1 - out2);
@@ -466,13 +468,15 @@ const Clutter: React.FC<{ g: number }> = ({ g }) => {
 // ---------------- P27–P33: the sign-off badge ----------------
 const Badge: React.FC<{ g: number }> = ({ g }) => {
   const [ax, ay] = youRoof(g, 4);
-  const l = life(g, "fin+0.35", "endcard", 0.55, 0.3);
+  const l = life(g, "fin+0.55", "endcard", 0.55, 0.3), handover = sec(g) >= T.s("endcard") ? 0 : 1;
   return (
-    <Float ax={ax} ay={ay} lift={52} w={400} h={90} s={l.s} o={l.o}>
+    <Float name="badge" ax={ax} ay={ay} lift={52} w={400} h={90} s={sec(g) >= T.s("endcard") ? 1 : l.s} o={l.o}>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <div style={{ display: "inline-flex", alignItems: "center", gap: 16, padding: "16px 30px", borderRadius: 999, background: C.card, boxShadow: "0 30px 64px -30px rgba(5,15,25,.40), 0 3px 10px rgba(5,15,25,.06), inset 0 0 0 1px #E2E3E6" }}>
-          <Mark w={86} id="badge" reveal={k(g, "fin+0.45", 0.6, EASE.steady)} />
-          <div style={{ fontFamily: F.display, fontWeight: 800, fontSize: 36, letterSpacing: "-0.05em", color: C.ink }}>WKConversions</div>
+          <div style={{ display: "flex", alignItems: "center", gap: 16, opacity: handover }}>
+            <Mark w={86} id="badge" reveal={k(g, "fin+0.65", 0.6, EASE.steady)} />
+            <div style={{ fontFamily: F.display, fontWeight: 800, fontSize: 36, letterSpacing: "-0.05em", color: C.ink }}>WKConversions</div>
+          </div>
         </div>
       </div>
     </Float>
