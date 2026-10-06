@@ -13,9 +13,9 @@ const camera = (g: number) => {
   while (i < chapters.length - 2 && t >= chapters[i + 1]) i++;
   const u = (t - chapters[i]) / (chapters[i + 1] - chapters[i]);
   const sm = (x: number) => x * x * (3 - 2 * x);
-  // each chapter pushes 3% in; the release back happens over the 0.6 s around the chapter change, eased
-  const rel = Math.min(1, Math.max(0, (t - chapters[i]) / 0.8));
-  const push = 1 + 0.03 * u * sm(rel);
+  // each chapter pushes 3% in; at a chapter change the push eases back out over 0.8 s while the next one begins
+  const rel = sm(Math.min(1, Math.max(0, (t - chapters[i]) / 0.8)));
+  const push = 1 + 0.03 * (u * rel + (i > 0 ? 1 - rel : 0));
   // a slow elliptical drift (about 25 px/s), so every layer is always travelling a little, at its own depth
   return { s: push * (1.02 + 0.008 * Math.sin(t * 0.9)), x: Math.sin(t * 0.58) * 80 + Math.sin(t * 1.1) * 6, y: Math.cos(t * 0.58) * 50,
     ry: Math.sin(t * 0.45) * 3.5, rx: Math.cos(t * 0.38) * 2.2 };
@@ -31,7 +31,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       <Background t={t} warm={warm} cool={cool} />
       <Dots t={t} ox={cam.x * 0.5} oy={cam.y * 0.5} />
       <AbsoluteFill style={{ transform: `translate(${cam.x * 0.6}px, ${cam.y * 0.6}px) scale(${1 + (cam.s - 1) * 0.5})`, transformOrigin: "50% 50%" }}>
-        <Chips t={t} />
+        <Chips t={t} o={1 - 0.6 * (T.k(g, "lock", 0.6) - T.k(g, "field", 0.6)) - 0.6 * T.k(g, "endcard", 0.6)} />
       </AbsoluteFill>
       <AbsoluteFill data-probe="camera" style={{ transform: `perspective(2400px) translate(${cam.x}px, ${cam.y}px) scale(${cam.s}) rotateY(${cam.ry}deg) rotateX(${cam.rx}deg)`, transformOrigin: "50% 50%" }}>
         <Scenes g={g} />

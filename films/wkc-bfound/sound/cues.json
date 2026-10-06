@@ -137,6 +137,12 @@
    "db": -6
   },
   {
+   "id": "gen-data-blips",
+   "frame": 241,
+   "note": "the reactions count up",
+   "db": -8
+  },
+  {
    "id": "gen-pop-soft-1",
    "frame": 244,
    "note": "a comment arrives",
@@ -156,12 +162,6 @@
    "note": "a comment arrives",
    "db": -11,
    "pitch": 6
-  },
-  {
-   "id": "gen-data-blips",
-   "frame": 271,
-   "note": "the reactions count up",
-   "db": -8
   },
   {
    "id": "gen-pop-soft-1",
@@ -224,9 +224,9 @@
    "db": -3
   },
   {
-   "id": "gen-data-blips",
-   "frame": 364,
-   "note": "the price counts up",
+   "id": "gen-shimmer",
+   "frame": 405,
+   "note": "the price comes into focus",
    "db": -6
   },
   {
@@ -253,6 +253,13 @@
    "note": "the wall slides in",
    "db": -9,
    "pitch": -4
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 505,
+   "note": "the price drops onto the lock",
+   "db": -9,
+   "pitch": 3
   },
   {
    "id": "gen-click",
@@ -317,60 +324,66 @@
   },
   {
    "id": "gen-riser-soft-1s",
-   "frame": 687,
+   "frame": 679,
    "note": "both pull on the lock",
    "db": -5
   },
   {
    "id": "gen-impact-soft",
-   "frame": 688,
+   "frame": 681,
    "note": "unlocked",
    "db": -3
   },
   {
+   "id": "gen-whoosh-whip",
+   "frame": 686,
+   "note": "the price is struck",
+   "db": -6
+  },
+  {
    "id": "gen-success-soft",
-   "frame": 696,
+   "frame": 688,
    "note": "the wall falls",
    "db": -6
   },
   {
    "id": "gen-tick-soft-hi",
-   "frame": 700,
+   "frame": 693,
    "note": "a business connects",
    "db": -11,
    "pitch": 0
   },
   {
    "id": "gen-tick-soft-hi",
-   "frame": 704,
+   "frame": 696,
    "note": "a business connects",
    "db": -11,
    "pitch": 1
   },
   {
    "id": "gen-tick-soft-hi",
-   "frame": 706,
+   "frame": 699,
    "note": "a business connects",
    "db": -11,
    "pitch": 2
   },
   {
    "id": "gen-tick-soft-hi",
-   "frame": 710,
+   "frame": 702,
    "note": "a business connects",
    "db": -11,
    "pitch": 3
   },
   {
    "id": "gen-tick-soft-hi",
-   "frame": 712,
+   "frame": 705,
    "note": "a business connects",
    "db": -11,
    "pitch": 4
   },
   {
    "id": "gen-tick-soft-hi",
-   "frame": 716,
+   "frame": 708,
    "note": "a business connects",
    "db": -11,
    "pitch": 5
@@ -445,9 +458,9 @@
   },
   {
    "id": "gen-pop",
-   "frame": 818,
-   "note": "\u221250%",
-   "db": -4
+   "frame": 825,
+   "note": "50% off",
+   "db": -6
   },
   {
    "id": "gen-appear",
@@ -474,22 +487,22 @@
    "db": -5
   },
   {
-   "id": "gen-click",
-   "frame": 1038,
-   "note": "Submit",
-   "db": -2
+   "id": "gen-whoosh-soft-short",
+   "frame": 1066,
+   "note": "the \u20ac200 tag grows out of the code field",
+   "db": -7
   },
   {
    "id": "gen-success",
-   "frame": 1061,
-   "note": "\u20ac400 \u2192 \u20ac200",
+   "frame": 1070,
+   "note": "\u20ac400 struck, \u20ac200 with the code",
    "db": -4
   },
   {
-   "id": "gen-data-blips",
-   "frame": 1063,
-   "note": "the price counts down",
-   "db": -10
+   "id": "gen-click",
+   "frame": 1082,
+   "note": "Submit",
+   "db": -2
   },
   {
    "id": "gen-impact-logo",

@@ -28,9 +28,9 @@ export const BEATS: Record<string, number> = {
   // P8–P12: €1,000 per video, out of reach
   price: 11.62, thousand: 13.43, per: 14.81, pro: 15.65, lock: 16.53, many: 18.16,
   // P13–P15: WKConversions and bFound change that
-  wkc: 19.82, bf: 21.35, change: 22.11, unlock: 22.9,
+  wkc: 19.82, bf: 21.35, change: 22.11, unlock: 22.64,
   // P16–P18: the code
-  field: 23.89, half: 27.07, four: 28.69, startup: 29.66,
+  field: 23.89, half: 27.44, four: 28.69, startup: 29.66,
   // P19–P21: claim it on wkconversions.com/contact
   visit: 31.09, dot: 32.45, claim: 34.02, two: 35.23,
   endcard: 36.75, end: 39.5,

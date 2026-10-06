@@ -43,18 +43,18 @@ export const Grain: React.FC = () => (
 );
 
 /** The ecosystem: small glass chips drifting through the back layer at their own speeds (never bobbing in place). */
-const CHIP_GLYPHS = ["play", "film", "spark", "comment", "chart", "heart", "rocket", "tag"];
-export const Chips: React.FC<{ t: number }> = ({ t }) => (
+const CHIP_GLYPHS = ["play", "film", "spark", "comment", "heart", "tag"];
+export const Chips: React.FC<{ t: number; o?: number }> = ({ t, o = 1 }) => (
   <>
-    {Array.from({ length: 9 }, (_, i) => {
+    {Array.from({ length: 6 }, (_, i) => {
       const h = (n: number) => { const s = Math.sin(i * 127.1 + n * 311.7) * 43758.5453; return s - Math.floor(s); };
-      const size = 84 + 40 * h(1), sp = 40 + 36 * h(2), dir = h(3) < 0.5 ? 1 : -1;
-      const span = 2300, x = ((((h(4) * span + dir * sp * t) % span) + span) % span) - 190, y = 60 + 960 * ((i + 0.5) / 9) + 40 * (h(5) - 0.5) + Math.sin(t * 0.5 + i) * 14;
+      const size = 56 + 28 * h(1), sp = 40 + 36 * h(2), dir = h(3) < 0.5 ? 1 : -1;
+      const span = 2300, x = ((((h(4) * span + dir * sp * t) % span) + span) % span) - 190, y = 60 + 960 * ((i + 0.5) / 6) + 40 * (h(5) - 0.5) + Math.sin(t * 0.5 + i) * 14;
       const g = CHIP_GLYPHS[i % CHIP_GLYPHS.length];
       return (
         <div key={i} style={{ position: "absolute", left: 0, top: 0, width: size, height: size, transform: `translate3d(${x}px, ${y}px, 0) rotate(${(h(6) - 0.5) * 16}deg)`, borderRadius: size * 0.24,
           background: "linear-gradient(160deg, rgba(255,255,255,0.8), rgba(255,255,255,0.45))", boxShadow: "inset 0 0 0 1.5px rgba(255,255,255,0.95), 0 16px 30px -18px rgba(40,50,110,0.35)",
-          display: "flex", alignItems: "center", justifyContent: "center", opacity: 0.85 }}>
+          display: "flex", alignItems: "center", justifyContent: "center", opacity: 0.6 * o, filter: "blur(1.2px)" }}>
           <svg width={size * 0.46} height={size * 0.46} viewBox="0 0 24 24" fill="none" stroke="#8F96D2" strokeWidth={1.9} strokeLinecap="round" strokeLinejoin="round">{CHIP_PATHS[g]}</svg>
         </div>
       );

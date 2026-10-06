@@ -131,7 +131,7 @@ export const GradText: React.FC<{ children: React.ReactNode; style?: React.CSSPr
 );
 
 /** A headline that builds word by word on the spoken words (blur-rise) and leaves as one block. Key words carry the gradient. */
-export type HW = { t: string; at: string | number; key?: boolean; grey?: boolean };
+export type HW = { t: string; at: string | number; key?: boolean; grey?: boolean; brand?: "wkc" | "bf" };
 export const Headline: React.FC<{ g: number; lines: HW[][]; x: number; y: number; size: number; align?: "left" | "center"; out?: string | number; outDur?: number; lh?: number; width?: number }> = ({
   g, lines, x, y, size, align = "left", out, outDur = 0.3, lh = 1.04, width = 1500 }) => {
   const o = out !== undefined ? T.k(g, out, outDur, ARRIVE) : 0;
@@ -145,7 +145,7 @@ export const Headline: React.FC<{ g: number; lines: HW[][]; x: number; y: number
             const k = T.k(g, w.at, 0.45);
             if (k <= 0) return <span key={i} style={{ opacity: 0 }}>{w.t}</span>;
             const inner = w.key ? <GradText>{w.t}</GradText> : w.t;
-            return <span key={i} style={{ display: "inline-block", opacity: Math.min(1, k * 1.6), transform: `translateY(${(1 - k) * 0.3 * size}px)`, filter: k < 1 ? `blur(${(1 - k) * 8}px)` : undefined, color: w.grey ? C.grey : undefined }}>{inner}</span>;
+            return <span key={i} style={{ display: "inline-block", opacity: Math.min(1, k * 1.6), transform: `translateY(${(1 - k) * 0.3 * size}px)`, filter: k < 1 ? `blur(${(1 - k) * 8}px)` : undefined, color: w.grey ? C.grey : w.brand === "wkc" ? C.wkc : w.brand === "bf" ? C.bf : undefined }}>{inner}</span>;
           })}
         </div>
       ))}
@@ -154,7 +154,7 @@ export const Headline: React.FC<{ g: number; lines: HW[][]; x: number; y: number
 };
 
 /** Widely tracked uppercase label (the style's small labels). */
-export const Label: React.FC<{ children: React.ReactNode; size?: number; color?: string; style?: React.CSSProperties }> = ({ children, size = 15, color = C.label, style }) => (
+export const Label: React.FC<{ children: React.ReactNode; size?: number; color?: string; style?: React.CSSProperties }> = ({ children, size = 24, color = "#6366A8", style }) => (
   <div style={{ fontFamily: F.ui, fontSize: size, fontWeight: 600, letterSpacing: "0.32em", textTransform: "uppercase", color, whiteSpace: "nowrap", ...style }}>{children}</div>
 );
 
