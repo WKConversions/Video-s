@@ -1,7 +1,7 @@
 {
  "title": "WKConversions × bFound",
  "eyebrow": "WKConversions × bFound · 39.5 s · 16:9 · voice-over, music, effects",
- "headline": "A great partnership creates more than <em>great work.</em>",
+ "headline": "A great partnership should create more than <em>great work.</em>",
  "subtitle": "A SaaS-style partnership film in the Minimal Gradient SaaS look, built from both brands: WKConversions' blue glowing in from one side, bFound's indigo from the other. Two glass tiles linked by a cable carry the story: the film WKConversions made for bFound, the response it got on LinkedIn, the €1,000 that keeps most businesses out, the lock both partners open together, and the code BFOUND50 typed into the contact form as it is spoken: €400 becomes €200.",
  "film": "film.mp4",
  "poster": "frames/f1110.jpg",
@@ -20,18 +20,18 @@
    "id": "P1–P2",
    "time": "0.0–3.3 s",
    "title": "A great partnership",
-   "caption": "A great partnership creates more than great work.",
+   "caption": "A great partnership should create more than great work.",
    "key": [
     "partnership",
     "great",
     "work."
    ],
-   "idea": "WKConversions' tile slides in from the left, bFound's from the right, and a cable links them; on 'more than great work' the work itself (the film WKConversions made for bFound, its own frame) grows out of the link and rings go out from it.",
+   "idea": "WKConversions' tile and bFound's part from one point and a cable links them; on 'more than great work' the work itself (the film WKConversions made for bFound, its own frame) grows out of the link and rings go out from it, below the line.",
    "frames": [
     {
      "frame": 30,
      "shows": "The two tiles, linked.",
-     "moves": "Tiles slide in, the cable draws, a pulse travels."
+     "moves": "The tiles part from one point, the cable draws, a pulse travels."
     },
     {
      "frame": 80,
@@ -89,12 +89,12 @@
    "title": "€1,000 per video",
    "caption": "Inaccessible to many businesses.",
    "key": [],
-   "idea": "The typical price comes into focus as €1,000 / video while it is spoken; it rises over a professional motion design video and drops onto a glass wall's lock; six small businesses reach for it and stop at the wall.",
+   "idea": "The typical price sharpens into focus as €1,000 / video on the spoken number, over a professional motion design video; the card shrinks onto a glass wall's lock, and six small businesses reach for it and stop at the wall.",
    "frames": [
     {
      "frame": 425,
      "shows": "€1,000 / video.",
-     "moves": "The price counts the whole phrase long."
+     "moves": "The blurred price sharpens on the spoken number."
     },
     {
      "frame": 510,
@@ -112,7 +112,7 @@
    "id": "P13–P15",
    "time": "19.9–24.0 s",
    "title": "WKConversions × bFound changed that",
-   "caption": "WKConversions × bFound changed that.",
+   "caption": "WKConversions × bFound decided to change that.",
    "key": [
     "WKConversions",
     "bFound"
@@ -140,7 +140,7 @@
     "50%",
     "off"
    ],
-   "idea": "Both tiles feed the referral-code field; BFOUND50 is typed letter by letter exactly as it is spoken, and the field takes a check; 50% off our startup price, then €400, the WKConversions startup price.",
+   "idea": "Both tiles feed the referral-code field; BFOUND50 is typed letter by letter exactly as it is spoken and the field takes a check; '50% off our startup price.' builds word by word, then €400, the WKConversions startup price.",
    "frames": [
     {
      "frame": 785,
@@ -149,8 +149,8 @@
     },
     {
      "frame": 890,
-     "shows": "−50%, €400 startup price.",
-     "moves": "Badge and price land."
+     "shows": "50% off our startup price: €400.",
+     "moves": "The line builds word by word, the price lands."
     }
    ]
   },
@@ -162,17 +162,17 @@
    "key": [
     "€200."
    ],
-   "idea": "The code field travels into the contact form as the page opens; wkconversions.com/contact types itself big above it on the words; a tag grows out of the code's check: €400 struck, €200 with BFOUND50; then the cursor submits.",
+   "idea": "The code field travels into the contact form as the page opens; wkconversions.com/contact rises big above it on the words; on 'for €200' a tag grows out of the form: €400 struck, €200 with BFOUND50; then the cursor presses Submit.",
    "frames": [
     {
      "frame": 1000,
      "shows": "wkconversions.com/contact.",
-     "moves": "The address types on the words."
+     "moves": "The address rises on the words."
     },
     {
      "frame": 1085,
      "shows": "€400 → €200.",
-     "moves": "Strike, count down, submit."
+     "moves": "The tag grows, €400 is struck, Submit is pressed."
     }
    ]
   },
@@ -184,7 +184,7 @@
    "key": [
     "€200"
    ],
-   "idea": "The two tiles part from one point with their names under them and the cable drawing between them, the code BFOUND50 and where to claim it; the cable keeps pulsing and the stage keeps floating.",
+   "idea": "The two tiles part from one point with their names under them (WKConversions, bFound's own logo) and an × between them, the cable drawing between them; the code BFOUND50 and where to claim it; the cable keeps pulsing and the stage keeps floating.",
    "frames": [
     {
      "frame": 1160,
