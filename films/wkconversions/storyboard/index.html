@@ -1,0 +1,124 @@
+<title>WKConversions Brand Film</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@700;800&display=swap">
+<style>
+/* One reading column: the film first, then the direction, then a frame per phrase in a wrapping grid. */
+:root {
+  --paper: #F7F7F8; --surface: #EFF0F2; --ink: #050F19; --muted: #575E68; --line: #E2E3E6;
+  --blue: #1266C9; --tint: #E6F0FD; --sand: #EFF0F2; --sage: #EFF0F2;
+  --display: "Inter Tight", "Inter", system-ui, sans-serif; --body: "Inter", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #050F19; --surface: #0C1A28; --ink: #EEF1F5; --muted: #A3ABB6; --line: #1E2B39;
+  --blue: #6FA9EE; --tint: #10233A; --sand: #0C1A28; --sage: #0C1A28; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #050F19; --surface: #0C1A28; --ink: #EEF1F5; --muted: #A3ABB6; --line: #1E2B39;
+  --blue: #6FA9EE; --tint: #10233A; --sand: #0C1A28; --sage: #0C1A28; color-scheme: dark }
+body { background: var(--paper); color: var(--ink); font: 16px/1.6 var(--body); margin: 0; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; padding-block: 48px 96px; display: grid; gap: 56px; }
+header { display: grid; gap: 14px; }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 10px; }
+.eyebrow::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 5px color-mix(in srgb, var(--blue) 18%, transparent); }
+h1 { font: 800 clamp(36px, 5.6vw, 64px)/1.02 var(--display); letter-spacing: -0.05em; margin: 0; text-wrap: balance; }
+h1 em, .cap em { font-style: normal; color: var(--blue); }
+h2 { font: 800 28px/1.15 var(--display); letter-spacing: -0.04em; margin: 0 0 18px; text-wrap: balance; }
+h3 { font: 700 21px/1.25 var(--display); letter-spacing: -0.03em; margin: 0; }
+.lede { color: var(--muted); max-width: 70ch; margin: 0; }
+video { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; background: var(--surface); display: block; border: 1px solid var(--line); }
+.qc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.qc span { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 5px 13px; font-size: 13.5px; color: var(--muted); }
+.qc b { color: var(--ink); font-weight: 700; font-variant-numeric: tabular-nums; }
+.dir { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+.dir div { background: var(--paper); padding: 16px 18px; min-width: 0; font-size: 15px; }
+.dir b { display: block; font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.beat { display: grid; gap: 16px; padding-top: 28px; border-top: 1px solid var(--line); }
+.beat-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.tc { font-size: 13px; font-weight: 700; color: var(--blue); font-variant-numeric: tabular-nums; }
+.cap { font: 800 24px/1.25 var(--display); letter-spacing: -0.04em; text-wrap: balance; }
+.idea { color: var(--muted); max-width: 82ch; margin: 0; }
+.frames { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 20px; }
+.fr { display: grid; gap: 6px; min-width: 0; align-content: start; }
+.fr img { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); display: block; }
+.fr .t { font-size: 12.5px; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
+.fr .s { font-size: 14.5px; line-height: 1.45; }
+.fr .m { font-size: 13px; color: var(--muted); }
+ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; max-width: 90ch; }
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; min-width: 760px; }
+th, td { text-align: left; vertical-align: top; padding: 11px 14px; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: 0; }
+th { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 700; background: var(--surface); }
+.credits { font-size: 14px; color: var(--muted); max-width: 90ch; display: grid; gap: 6px; }
+a { color: var(--blue); }
+a:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 4px; }
+@media (max-width: 520px) { .wrap { padding-inline: 16px; gap: 40px; } .cap { font-size: 20px; } }
+</style>
+<div class="wrap">
+<header><div class="eyebrow">WKConversions · 47.2 s · 16:9 · voice-over, music, effects</div><h1>Creative built to <em>stand out.</em></h1><p class="lede">The isometric concept of the Cartesian and ClearScaler films, made bright in wkconversions.com&#x27;s own paper, ink and accent blue. One living city of businesses on the site&#x27;s dot grid, its streets full of people: the competitor catches their attention, most businesses lose it, and WKConversions&#x27; routed blue line comes in to your lot. One card on your roof carries the work: a tangled offer made clear, motion design that pulls the crowd over, value explained, a Start a project click; then the process, and the random and decorative struck out. Your block rises above the city in the brand blue.</p></header>
+<section><video controls playsinline preload="metadata" poster="frames/f1210.jpg" src="film.mp4"></video>
+<div class="qc"><span><b>33 of 33</b> phrases get a new visual</span><span><b>0.0 s</b> longest voice without one</span><span><b>100%</b> of frames moving</span><span><b>3.6%</b> median frame motion (references 1.8% and 3.1%)</span><span><b>median 8</b> things on screen (Cartesian 7, ClearScaler 26)</span><span><b>−15.2 LUFS</b> mix, peak −1.5 dB</span><span><b>1080p30</b> H.264, BT.709, AAC 48 kHz</span></div>
+</section>
+<section><h2>Direction</h2><div class="dir"><div><b>Purpose</b>WKConversions&#x27; own showreel-style explainer: what the studio does and why it works, for the site&#x27;s hero, LinkedIn and pitches. It reads with the sound off too.</div><div><b>Audience</b>Founders and marketing leads of companies with a complex or technical offer (SaaS, tech, services) who need it understood fast.</div><div><b>Format</b>16:9, 1920×1080, 30 fps, 47.2 s (1416 frames). ElevenLabs voice (Christina, energetic commercial), force-aligned word by word; music and 100 effects mixed to −15 LUFS.</div><div><b>Core message</b>You lose attention not because your offer is worse but because it is communicated worse; WKConversions turns complex offers into clear motion design built to attract attention, explain value and drive conversion.</div><div><b>Look</b>Bright: the site&#x27;s page #F7F7F8 with its dot grid, a pale paper city, ink #050F19, the accent blue #3F8CE8 only on what matters (your lot, the line, your crowd, the CTA). Inter Tight 800 captions bottom left, Inter UI, the site&#x27;s white cards and blue Start a project pill, the handwritten wkc mark.</div><div><b>Motion</b>Never still: one continuous orbit round the city (12° to 78°, never through the flat side-on view), the crowd always walking, screens always playing, a slow swell through the city&#x27;s heights. Median frame motion about 4% (references 1.8% and 3.1%). Cards grow out of roofs on the site&#x27;s ease and fold back into them; no overshoot.</div><div><b>Story</b>Grey is noise, ink is attention caught, blue is yours. The crowd tells the story: it walks to the competitor (ink), drifts past most businesses, then streams over to your lot and turns blue, and some of it goes in (conversion).</div></div></section>
+<section><h2>Storyboard</h2><p class="lede" style="margin-bottom:8px">A frame per phrase, taken from the finished film. Times are seconds into the film; the picture leads each spoken word by about four frames.</p>
+<div class="beat"><div class="beat-head"><span class="tc">P1–P2 · 0.0–3.2 s</span><h3>You and the competitor</h3></div>
+<div class="cap">You don&#x27;t have what makes your competitors <em>stand</em> <em>out.</em></div><p class="idea">The city rises out of the paper. Your grey block (dashed lot, You tag) and the competitor&#x27;s ink block face each other; on &#x27;stand out&#x27; the competitor rises and its crowd starts walking to it, turning ink.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0030.jpg" alt="The city rises; the You tag."><div class="t">1.0 s</div><div class="s">The city rises; the You tag.</div><div class="m">Orbit from 11°, a slow push in.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0075.jpg" alt="The Competitor tag on the ink block."><div class="t">2.5 s</div><div class="s">The Competitor tag on the ink block.</div><div class="m">Tag grows out of the roof.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">P3–P5 · 3.2–7.6 s</span><h3>Same offer, better communication</h3></div>
+<div class="cap">Not because their offer is better, but because they <em>communicate</em> it better.</div><p class="idea">The same Offer card grows out of both roofs, a blue = between them. On &#x27;communicate&#x27; their card turns into playing motion and rings go out; their crowd, already gathering since &#x27;stand out&#x27;, grows on &#x27;it better&#x27;.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0135.jpg" alt="Your offer = their offer."><div class="t">4.5 s</div><div class="s">Your offer = their offer.</div><div class="m">Cards out of the roofs, = lands.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0200.jpg" alt="Their card plays motion; rings into the crowd."><div class="t">6.7 s</div><div class="s">Their card plays motion; rings into the crowd.</div><div class="m">The crowd walks to them.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">P6–P10 · 7.6–15.3 s</span><h3>Most businesses lose attention</h3></div>
+<div class="cap">Most businesses lose attention with unclear messaging, forgettable visuals, and content that gives people no reason to act.</div><p class="idea">The camera steps back over the city; grey cards grow out of three businesses: their attention meters drain, the copy scrambles, the cards fade, every one shows the same placeholder image. Then your own card: a generic page whose Learn more the cursor hovers and leaves.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0290.jpg" alt="Attention meters drain; copy scrambles."><div class="t">9.7 s</div><div class="s">Attention meters drain; copy scrambles.</div><div class="m">Pull back over the city.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0345.jpg" alt="Forgettable: the cards fade to ghosts."><div class="t">11.5 s</div><div class="s">Forgettable: the cards fade to ghosts.</div><div class="m">Placeholder images land.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0420.jpg" alt="Your card; the cursor hovers Learn more and leaves."><div class="t">14.0 s</div><div class="s">Your card; the cursor hovers Learn more and leaves.</div><div class="m">Push toward your lot.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">P11–P12 · 15.3–18.4 s</span><h3>WKConversions comes in</h3></div>
+<div class="cap">That&#x27;s where <em>WKConversions</em> comes in.</div><p class="idea">The site&#x27;s routed blue line comes in along the streets to your lot; the wkc mark writes itself on in your card; on &#x27;comes in&#x27; the node lands on your roof, your block turns light blue and the site&#x27;s own line appears: Motion design that makes it click.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0495.jpg" alt="The mark writes on; the line arrives."><div class="t">16.5 s</div><div class="s">The mark writes on; the line arrives.</div><div class="m">Line draws along the streets.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0540.jpg" alt="Your block turns blue; Motion design that makes it click."><div class="t">18.0 s</div><div class="s">Your block turns blue; Motion design that makes it click.</div><div class="m">Node lands on the roof, rings.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">P13–P16 · 18.4–22.7 s</span><h3>Complex into clear motion design</h3></div>
+<div class="cap">We turn complex offers into <em>clear,</em> high-performance motion <em>design.</em></div><p class="idea">A writhing tangle and jumbled lines (the complex offer) pull straight into one clean line and a neat headline; the line rises into the growth curve; then the card plays motion design.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0580.jpg" alt="The tangle and jumbled lines."><div class="t">19.3 s</div><div class="s">The tangle and jumbled lines.</div><div class="m">The tangle writhes.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0615.jpg" alt="Pulled straight: clear."><div class="t">20.5 s</div><div class="s">Pulled straight: clear.</div><div class="m">Tangle → line.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0640.jpg" alt="The growth curve."><div class="t">21.3 s</div><div class="s">The growth curve.</div><div class="m">Line → rising curve.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0665.jpg" alt="Motion design, playing."><div class="t">22.2 s</div><div class="s">Motion design, playing.</div><div class="m">Shapes bounce, turn and slide.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">P17–P19 · 22.7–27.0 s</span><h3>Attention, value, conversion</h3></div>
+<div class="cap">Built to attract <em>attention,</em> explain <em>value,</em> and drive <em>conversion.</em></div><p class="idea">Blue rings go out from your lot and the competitor&#x27;s crowd streams over, turning blue as it arrives; the competitor fades back into the city. Problem, Solution, Value; Value turns blue. Ready to make your story click? Start a project is clicked, and people go in, a ring for each.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0715.jpg" alt="The crowd streams to you, turning blue."><div class="t">23.8 s</div><div class="s">The crowd streams to you, turning blue.</div><div class="m">Rings from your lot.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0742.jpg" alt="Problem, Solution, Value."><div class="t">24.7 s</div><div class="s">Problem, Solution, Value.</div><div class="m">Frames land in turn.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0785.jpg" alt="Start a project, clicked."><div class="t">26.2 s</div><div class="s">Start a project, clicked.</div><div class="m">Press, ripple, people go in.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">P20–P23 · 27.0–33.5 s</span><h3>The process</h3></div>
+<div class="cap">We start with your <em>goal,</em> <em>sharpen</em> the message, build the <em>concept,</em> and design every frame with <em>purpose.</em></div><p class="idea">The card becomes the process (Goal, Message, Concept, Frames): a dart hits the goal; Your message comes into focus; a storyboard of six frames; a film strip running past a blue playhead, every frame taking its check, Every frame with purpose.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0845.jpg" alt="The goal is hit."><div class="t">28.2 s</div><div class="s">The goal is hit.</div><div class="m">Rings grow, the dart lands.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0880.jpg" alt="Your message comes into focus."><div class="t">29.3 s</div><div class="s">Your message comes into focus.</div><div class="m">Blur to sharp, underline.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0920.jpg" alt="The storyboard."><div class="t">30.7 s</div><div class="s">The storyboard.</div><div class="m">Frames land one by one.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0980.jpg" alt="Every frame with purpose."><div class="t">32.7 s</div><div class="s">Every frame with purpose.</div><div class="m">The strip runs; checks land.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">P24–P26 · 33.5–37.6 s</span><h3>No random, no decoration</h3></div>
+<div class="cap">No random animations. No visuals just to look good.</div><p class="idea">Random grey shapes spin round the card and each gets a blue slash; then stickers, a gradient blob and a Looks good badge pop on, and are slashed away too, leaving the clean card.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f1030.jpg" alt="Random shapes, slashed."><div class="t">34.3 s</div><div class="s">Random shapes, slashed.</div><div class="m">Spinning, then struck.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f1085.jpg" alt="Decoration just to look good."><div class="t">36.2 s</div><div class="s">Decoration just to look good.</div><div class="m">Pops on, then struck.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">P27–P33 · 37.6–44.2 s</span><h3>Creative built to stand out</h3></div>
+<div class="cap"><em>WKConversions.</em> Creative built to <em>stand</em> <em>out.</em> Designed to <em>move.</em> Built to <em>convert.</em></div><p class="idea">The card folds into your roof and your block rises in the brand blue with the WKConversions badge; routes run out of your lot; you rise above the city as it lowers; the wireframe draws round you; the crowd moves to you; floors are built; people go in.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f1150.jpg" alt="Your block rises, blue; the badge."><div class="t">38.3 s</div><div class="s">Your block rises, blue; the badge.</div><div class="m">The camera pulls back round you.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f1225.jpg" alt="Built to stand out."><div class="t">40.8 s</div><div class="s">Built to stand out.</div><div class="m">You rise, the city lowers.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f1300.jpg" alt="Built to convert."><div class="t">43.3 s</div><div class="s">Built to convert.</div><div class="m">Floors drawn, people go in.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">End · 44.2–47.2 s</span><h3>End card</h3></div>
+<div class="cap">WKConversions. Designed to move. Built to <em>convert.</em></div><p class="idea">The site&#x27;s dot-grid page grows out of your roof while the badge&#x27;s mark and name fly to the centre and grow into the lockup; then the line and the site&#x27;s own blue Start a project button. The grid keeps drifting, the lockup keeps pushing in.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f1340.jpg" alt="The badge flies into the lockup."><div class="t">44.7 s</div><div class="s">The badge flies into the lockup.</div><div class="m">Page grows out of your roof.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f1400.jpg" alt="The end card."><div class="t">46.7 s</div><div class="s">The end card.</div><div class="m">Grid drifts, slow push.</div></div>
+</div></div>
+</section>
+<section><h2>Revision log</h2><div class="tbl"><table><tr><th>Before</th><th>After</th><th>Why</th></tr><tr><td>The city in mid-grey blocks (a median of 26 separate things on screen)</td><td>A pale paper city, grey passers-by, ink and blue only for attention caught</td><td>Karl&#x27;s &#x27;nothing busy&#x27;: 26 → 8 things while keeping the motion</td></tr><tr><td>The camera orbited past 90° (the city went flat for 8 s)</td><td>The orbit stays between 12° and 78°</td><td>Review: the isometric look must hold all film long</td></tr><tr><td>Walkers jumped back along their street when a gathering started</td><td>Every walk to a lot starts exactly where the walker is</td><td>Review blocker</td></tr><tr><td>Scenes in the roof card cross-faded on top of each other</td><td>Each scene is gone before the next one lands on its word</td><td>Review blocker: text landed on text</td></tr><tr><td>The competitor faded at &#x27;That&#x27;s where&#x27;</td><td>It inks on its name and fades as its crowd walks over to you</td><td>Review: its crowd circled an unnamed block</td></tr><tr><td>The blue line arrived behind the card; the sign-off crowd arrived in ink, late</td><td>The line comes in from the lower right in front; the sign-off crowd walks in grey to blue by &#x27;convert&#x27;</td><td>Review</td></tr><tr><td>&#x27;Ready when you are.&#x27; and a &#x27;Live&#x27; pill</td><td>The site&#x27;s own &#x27;Ready to make your story click?&#x27;; no Live pill</td><td>No invented copy</td></tr><tr><td>The end card redrew the logo after a blank frame and held 0.5 s</td><td>The badge flies into the lockup; the end card holds 1.2 s longer (47.2 s)</td><td>Review</td></tr></table></div></section>
+<section><h2>Open questions</h2><ul><li>Music: the Mixkit pick has no lift at the sign-off (a riser and impact carry it). An original composed bed with every beat built in is in sound/music/composed-fit.wav if you prefer it.</li><li>Busy vs 4% motion: the crowd that carries the motion is also what the busy check counts (median 8 things; Cartesian 7). Fewer people would calm it and drop the motion toward 3%.</li><li>The competitor is an anonymous ink block. Fine as is, or should it carry a generic name?</li></ul></section>
+<section class="credits"><h2>Credits</h2><div>Voice: ElevenLabs, Christina (energetic commercial), supplied by Karl. Music: &quot;Let&#x27;s Move&quot; by Michael Ramir C., Mixkit (Mixkit Stock Music Free License), fitted to the film. Effects: generated for this film.</div><div>Copy, logo, fonts and colours: wkconversions.com, as the site shows them. Made with Remotion by WKConversions.</div></section>
+</div>
