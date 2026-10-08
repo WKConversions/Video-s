@@ -24,10 +24,20 @@ connections, team channel, monthly plan, Diagnose → Build → Run). People are
 | Not the hero video | Not downloaded, sampled or looked at. |
 | Exactly the reference | Same order of beats and the same kinds of moves (see above); see `storyboard/plan.md` for each shot against the reference beat it mirrors. |
 
+## The review round
+Two independent reviews of the first draft (fidelity to the reference and story; craft, legibility and brand) and a
+cold-eyes pass on the second, plus the automatic checks. What changed and why is in `storyboard/revisions.json` (and on
+the storyboard page): the windows stay whole and still while cards lift out of them (no push-ins), every screen leaves
+before the next arrives, the stage is larger than the frame so the breathing camera never shows its edge, the corner
+mark sits outside the camera, K.B and You meet on "with you", the phone returns with the follow-up email, the team makes
+room for K.B, the monthly plan is lighter, the loop draws from Diagnose, and the end card reads "Talk to K.B" over a cyan
+"Book a Free Discovery Call".
+
 ## What is here
 | Path | What |
 |---|---|
-| `deliver/kb-explainer-58s.mp4` | The film (see the QC table in the storyboard page). |
+| `deliver/kb-explainer-58s.mp4` | The film: 1920×1080, 30 fps, 58.0 s, H.264 yuv420p BT.709 TV range, 8-sample motion blur, AAC 48 kHz, −15.1 LUFS, peak −1.3 dBFS. QC on this encode: 37 of 37 phrases bring a new visual (0.0 s of voice over a held frame); something moves in 99% of frames (longest still 0.2 s); median 1.7% of the frame in motion (the reference: 2.7%); every screen leaves before the next arrives; no visible shake (six flags are very slow creeps stepping a pixel at a time); every pop a designed arrival; as busy as the reference (median 10 things on screen, the reference 11); every frame on palette; every text colour ≥ 5.6:1. |
+| `storyboard/index.html` | The storyboard page (published privately: https://claude.ai/artifact/9pZR1rdLaQSJYkzZevgnnt): the film, the direction, a frame per phrase from the film, notes, open questions, the revision log of the review round, QC. Built by `storyboard/build_page.py` from `frames.json`, `revisions.json`, `qc.json`. |
 | `script.md` | The voice-over script Karl recorded. |
 | `vo/` | The ElevenLabs file and its word timings (`words_full.json`; film time = file time + 1.60 s). |
 | `references/` | The reference film and its contact sheet. |
@@ -49,8 +59,9 @@ npx remotion studio            # composition "Film"
   loop, the end card. `src/ui.tsx`: windows, phone, cursors, pills, toggles, avatars, icons, background shapes.
   `src/lib.tsx`: the brand's tokens. `src/kinetic.tsx`, `src/timeline.ts`: the skill's kit.
 - Draft (no blur): `npx remotion render Film out/draft.mp4 --props='{"blurSamples":1,"audio":"mix"}'`
-- Final (8-sample motion blur, chunked): `bash scripts/render_chunks.sh Film out/final_raw.mp4 '{"blurSamples":8,"audio":"none"}' <chunk starts> public/audio/mix.wav`,
-  then the TV-range BT.709 encode.
+- Final (8-sample motion blur, chunked; about 5 minutes on 4 cores):
+  `bash scripts/render_chunks.sh Film out/final_raw.mp4 '{"blurSamples":8,"audio":"none"}' 0,437,870,1305,1740 public/audio/mix.wav`,
+  then the TV-range BT.709 encode (`ffmpeg … -vf "scale=in_range=full:out_range=tv,format=yuv420p" -colorspace bt709 …`).
 - In this sandbox: `--browser-executable=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell`.
 - Sound after a retime: `python3 ../sound/make_cues.py && python3 ../scripts/sound_mix.py ../sound/cues.json public/audio/mix.wav --sheet ../sound/mix.png`.
 

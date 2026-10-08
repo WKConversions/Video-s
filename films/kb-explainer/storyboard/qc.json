@@ -1,0 +1,97 @@
+{
+ "chips": {
+  "Length": "58.0 s",
+  "Phrases": "37/37 new visual",
+  "Voice over a held frame": "0.0 s",
+  "Motion": "1.7% median (reference 2.7%)",
+  "Moving": "99% of frames",
+  "Loudness": "−15.1 LUFS"
+ },
+ "rows": [
+  [
+   "Every phrase a new visual (phrase_check.py)",
+   "37 of 37; 0.0 s of voice without one",
+   "all; ≤ 2.5 s",
+   true
+  ],
+  [
+   "Frames where something moves; longest still",
+   "99%; 0.20 s",
+   "≥ 90%; ≤ 0.8 s",
+   true
+  ],
+  [
+   "Motion (motion_check.py): share of the frame changing, median frame",
+   "1.7%",
+   "reference 2.7%; Karl asked 5% on the last film (see open questions)",
+   false
+  ],
+  [
+   "Screen changes",
+   "every screen leaves before the next arrives (checked frame by frame at each change)",
+   "no two screens at once",
+   true
+  ],
+  [
+   "Motion probe (camera spikes, lurches, overshoot, flying, busy)",
+   "run on the review-round build: no camera spikes or lurches; one busy stretch (the tool ring landing, 1.4 s); one overshoot flag is the probe confusing two elements (an index shift), not a pop",
+   "none unexplained",
+   true
+  ],
+  [
+   "Shake (jitter_check.py)",
+   "6 flags, all very slow creeps (≤ 2 px in 20 frames) stepping a whole pixel at a time; no tremble",
+   "none visible",
+   true
+  ],
+  [
+   "Pops (handoff_check.py)",
+   "65 flagged, all designed arrivals (windows, cards, chips, words)",
+   "none unexplained",
+   true
+  ],
+  [
+   "Things on screen (busy_check.py)",
+   "median 10; 8 or more 63% of the time",
+   "the reference itself: median 11, 64%",
+   true
+  ],
+  [
+   "Brand (brand_measure.py verify)",
+   "every storyboard frame on palette (off-palette ≤ 0.3%, anti-aliasing of cyan on navy)",
+   "no frame off-brand",
+   true
+  ],
+  [
+   "Contrast, every text colour",
+   "navy on canvas 10.8:1; white on navy 11.5:1; navy on cyan 6.0:1; navy on pale cyan 10.0:1; red on pale red 5.6:1; grey on white 8.0:1",
+   "≥ 4.5:1",
+   true
+  ],
+  [
+   "\"K.B\" only; no URL; no photos; no hero video",
+   "\"Consultancy\" appears nowhere on screen or in the voice; people are initials; checked by three reviews",
+   "Karl",
+   true
+  ],
+  [
+   "Tells (film_tells.py)",
+   "1: \"Acme Studio\" / \"Jordan Smith\", placeholder names in the example intake form",
+   "answered: example data",
+   true
+  ],
+  [
+   "Delivery",
+   "1920×1080, 30 fps, 58.0 s, H.264 yuv420p BT.709 TV range, AAC 48 kHz, 8-sample motion blur",
+   "as planned",
+   true
+  ],
+  [
+   "Loudness and peak",
+   "−15.1 LUFS integrated, −1.3 dBFS peak",
+   "−15 LUFS, ≤ −1 dBFS",
+   true
+  ]
+ ],
+ "note": "Measured on the delivered encode (deliver/kb-explainer-58s.mp4) unless noted. Sound was mixed by measurement: no speakers in the build sandbox, so Karl's ear has the last word."
+}
