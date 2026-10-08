@@ -1,0 +1,6 @@
+# working files that are not part of the film
+harvest/_tmp/
+stock/
+sound/music/*.mp3
+sound/bed-techhouse.wav
+sound/fit-techhouse.png

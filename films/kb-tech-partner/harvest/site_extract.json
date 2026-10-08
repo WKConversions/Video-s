@@ -1,0 +1,299 @@
+{
+  "title": "The Embedded Tech Partner for Growing Businesses | K.B",
+  "url": "https://kruslockbosconsultancy.com/",
+  "vars": {},
+  "colors": [
+    [
+      "rgb(226, 232, 240)",
+      612
+    ],
+    [
+      "rgb(37, 37, 37)",
+      412
+    ],
+    [
+      "rgb(255, 255, 255)",
+      84
+    ],
+    [
+      "rgb(41, 58, 81)",
+      46
+    ],
+    [
+      "rgb(73, 82, 91)",
+      21
+    ],
+    [
+      "rgb(56, 200, 255)",
+      10
+    ],
+    [
+      "rgb(0, 0, 0)",
+      9
+    ],
+    [
+      "rgb(241, 245, 249)",
+      6
+    ],
+    [
+      "rgb(235, 236, 244)",
+      5
+    ],
+    [
+      "oklab(0.344466 -0.0110599 -0.0449579 / 0.85)",
+      4
+    ],
+    [
+      "rgb(247, 247, 247)",
+      3
+    ],
+    [
+      "oklab(0.344466 -0.0110599 -0.0449579 / 0.8)",
+      2
+    ],
+    [
+      "oklab(0.999994 0.0000455678 0.0000200868 / 0.9)",
+      1
+    ],
+    [
+      "oklab(0.344466 -0.0110599 -0.0449579 / 0.6)",
+      1
+    ],
+    [
+      "oklab(0.999994 0.0000455677 0.0000200868 / 0.8)",
+      1
+    ],
+    [
+      "oklab(0.999994 0.0000455678 0.0000200868 / 0.1)",
+      1
+    ]
+  ],
+  "fonts": [
+    [
+      "Montserrat, sans-serif",
+      616
+    ],
+    [
+      "Copperplate, sans-serif",
+      1
+    ]
+  ],
+  "eases": [
+    [
+      "cubic-bezier(0.4, 0, 0.2, 1)",
+      79
+    ],
+    [
+      "ease",
+      42
+    ]
+  ],
+  "h1": {
+    "sel": "h1",
+    "text": "We build the systems your business runs on, with you",
+    "font": "Montserrat, sans-serif",
+    "size": "36px",
+    "weight": "700",
+    "tracking": "normal",
+    "color": "rgb(255, 255, 255)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px"
+  },
+  "h2": {
+    "sel": "h2",
+    "text": "Discover how we help your business grow with automation, AI, and systems",
+    "font": "Montserrat, sans-serif",
+    "size": "48px",
+    "weight": "700",
+    "tracking": "normal",
+    "color": "rgb(37, 37, 37)",
+    "bg": "rgba(0, 0, 0, 0)",
+    "radius": "0px"
+  },
+  "body": {
+    "sel": "body",
+    "text": "K.B\nTech Partner\nHOME\nHOME\nSERVICES\nSERVICES\nCLIENT CASES\nCLIENT CASES\nABOUT US\nABOUT US\nCONTACT\nCONTACT\nWe build the sy",
+    "font": "Montserrat, sans-serif",
+    "size": "20px",
+    "weight": "400",
+    "tracking": "normal",
+    "color": "rgb(37, 37, 37)",
+    "bg": "rgb(247, 247, 247)",
+    "radius": "0px"
+  },
+  "button": {
+    "sel": "a[class*=\"btn\" i], button, a[class*=\"button\" i]",
+    "text": "",
+    "font": "Montserrat, sans-serif",
+    "size": "16px",
+    "weight": "600",
+    "tracking": "normal",
+    "color": "rgb(241, 245, 249)",
+    "bg": "oklab(0.344466 -0.0110599 -0.0449579 / 0.85)",
+    "radius": "3.35544e+07px"
+  },
+  "logos": [
+    {
+      "type": "img",
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fmindmymind-logo.png&w=128&q=75",
+      "alt": "mindmymind logo"
+    },
+    {
+      "type": "img",
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fjongleren-es-logo.png&w=128&q=75",
+      "alt": "Jongleren.es logo"
+    },
+    {
+      "type": "img",
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fvenga-travel-logo.png&w=128&q=75",
+      "alt": "Venga Travel logo"
+    },
+    {
+      "type": "img",
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Folea-hospitality-logo.png&w=128&q=75",
+      "alt": "Olea Hospitality logo"
+    },
+    {
+      "type": "img",
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fworldwiders-logo.png&w=128&q=75",
+      "alt": "Worldwiders logo"
+    },
+    {
+      "type": "img",
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fabroad-internships-logo.png&w=128&q=75",
+      "alt": "Abroad Internships logo"
+    }
+  ],
+  "icons": [
+    "https://kruslockbosconsultancy.com/api/horizontal-media/file/home.png",
+    "https://kruslockbosconsultancy.com/favicon-16x16.png",
+    "https://kruslockbosconsultancy.com/favicon-32x32.png",
+    "https://kruslockbosconsultancy.com/favicon-192x192.png",
+    "https://kruslockbosconsultancy.com/favicon-512x512.png",
+    "https://kruslockbosconsultancy.com/apple-touch-icon.png"
+  ],
+  "images": [
+    {
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fzenchef-app-b2b.png&w=256&q=75",
+      "alt": "Zenchef",
+      "w": 200,
+      "h": 200
+    },
+    {
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fodoo-1.png&w=384&q=75",
+      "alt": "Odoo",
+      "w": 360,
+      "h": 360
+    },
+    {
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Faqqo.png&w=640&q=75",
+      "alt": "Aqqo",
+      "w": 474,
+      "h": 474
+    },
+    {
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fimage-4.png&w=640&q=75",
+      "alt": "Resend",
+      "w": 500,
+      "h": 500
+    },
+    {
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fdatadog-1.webp&w=256&q=75",
+      "alt": "Datadog",
+      "w": 220,
+      "h": 220
+    },
+    {
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fsupabase.png&w=384&q=75",
+      "alt": "Supabase",
+      "w": 375,
+      "h": 375
+    },
+    {
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fpostgresql.png&w=1080&q=75",
+      "alt": "PostgreSQL",
+      "w": 1000,
+      "h": 1000
+    },
+    {
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fexpogo.png&w=640&q=75",
+      "alt": "Expo",
+      "w": 500,
+      "h": 500
+    },
+    {
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fclaude-removebg-preview.png&w=640&q=75",
+      "alt": "Claude",
+      "w": 500,
+      "h": 500
+    },
+    {
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fpayload-cms.png&w=640&q=75",
+      "alt": "Payload CMS",
+      "w": 500,
+      "h": 500
+    },
+    {
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fvite-removebg-preview.png&w=640&q=75",
+      "alt": "Vite",
+      "w": 500,
+      "h": 500
+    },
+    {
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fspringboot.png&w=828&q=75",
+      "alt": "Spring Boot",
+      "w": 768,
+      "h": 768
+    },
+    {
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Ftanstack.png&w=640&q=75",
+      "alt": "Tanstack",
+      "w": 600,
+      "h": 600
+    },
+    {
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Ftypescript.png&w=1080&q=75",
+      "alt": "TypeScript",
+      "w": 920,
+      "h": 920
+    },
+    {
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fnextjs-white.png&w=640&q=75",
+      "alt": "Next.js",
+      "w": 474,
+      "h": 474
+    },
+    {
+      "src": "https://kruslockbosconsultancy.com/_next/image?url=%2Fapi%2Fsquare-media%2Ffile%2Fn8n-logo2.webp&w=640&q=75",
+      "alt": "n8n",
+      "w": 600,
+      "h": 600
+    }
+  ],
+  "headings": [
+    "We build the systems your business runs on, with you",
+    "We build the systems your business runs on, with you",
+    "Discover how we help your business grow with automation, AI, and systems",
+    "Built together, built to be run",
+    "Diagnose",
+    "Build",
+    "Run",
+    "For Startups",
+    "For Established SMEs",
+    "What we have to offer",
+    "AI, Agents & Automation",
+    "Software Development",
+    "We build the systems",
+    "We build them with you",
+    "We stay on",
+    "After we deliver",
+    "Tools we build with",
+    "Our Story in Numbers",
+    "Ready to add your project to our numbers?",
+    "Let's Work Together",
+    "Website Overview",
+    "Services",
+    "Helpful Links"
+  ],
+  "text": "K.B\nTech Partner\nHOME\nHOME\nSERVICES\nSERVICES\nCLIENT CASES\nCLIENT CASES\nABOUT US\nABOUT US\nCONTACT\nCONTACT\nWe build the systems your business runs on, with you\nWe're the technical team you don't have to hire yet. We build your software and automation with you, then stick around to run it.\nBook a Free Discovery Call\nDiscover how we help your business grow with automation, AI, and systems\nWe partner with you to understand your operations, identify inefficiencies, and eliminate friction across your processes and workflows. By combining automation, AI, and strategic consulting, we build smart systems that scale and help your business grow, turning operational complexity into clarity.\nLet's talk about your operations\nBuilt together, built to be run\nWe don't take a spec and disappear. We build alongside your team from day one, so what we deliver actually fits how you work, and we stay on afterward to run and improve it.\n01\nDiagnose\nWe look at how your business actually works today and find where the friction is.\n02\nBuild\nWe design and build the system with your team, in the open, so nothing arrives as a surprise.\n03\nRun\nWe stay on to run, maintain and improve what we built as your business grows.\nFor Startups\nGet the technical team you can't hire yet. We build your first systems so you can focus on the business, not the backend.\nFor Established SMEs\nModernize without building an internal team from scratch. We work alongside the people you already have.\nWhat we have to offer\nAI, Agents & Automation\nCustom AI Agents\nNo-code automation workflows\nMulti-step process pipelines\nCross-platform integrations\nConnecting tools to eliminate manual work\nUse of tools like Make and n8n\nExplore AI, Agents & Automation\nSoftware Development\nResponsive website development\nMobile app development\nCustom business dashboards\nSoftware tailored to your operations\nFast and maintainable solutions\nTools designed for both teams and customers\nExplore Software Development\nNot sure which service fits? Talk to us and we'll map it out.\nWe build the systems\nSoftware, automation and the infrastructure behind them. Whatever your business needs to run smoother, we build it properly.\nWe build them with you\nNo spec thrown over a wall. We work alongside your team so what we build actually fits how you work.\nWe stay on\nWe don't disappear after launch. We keep your systems running, maintained and improved as your business grows.\nAfter we deliver\nWe don't disappear once we ship. Pick how much support you want going forward.\nHosting\nWe keep what we build online and secure.\nManaged hosting for the systems we build\nSSL certificates kept valid\nUptime and monitoring\nSecurity patches for the hosting infrastructure\nMaintenance\nWe keep what we build healthy and up to date.\nEverything in Hosting\nMonitoring and alerts when something breaks\nRegular backups\nDependency and integration updates\nBug fixes and reconnecting APIs when they change\nGrowth\nDedicated time each month to expand what we've built.\nEverything in Maintenance\nA set number of improvement hours each month\nNew features, workflows or integrations added over time\nTalk to us about a plan\nTools we build with\nWe put these to work on every project, from quick automations to full builds.\nOur Story in Numbers\nEvery number tells a part of our story. From our first project to fully integrated automation systems, we've built lasting partnerships and real results. These milestones reflect the progress, people, and projects that keep us moving forward.\nFounded in\n2024\nClient projects completed\n25\nAutomations built and integrated\n100+\nProjects delivered across languages\n5+\nReady to add your project to our numbers?\nWhether you have a clear brief or just a challenge worth solving, we'd love to hear from you.\nLet's talk\nJoin our newsletter\nSubscribe\nI have read and accept the Privacy Policy\nLet's Work Together\nProfessional consultancy services helping businesses achieve their goals through expert guidance and strategic solutions.\nhello@kruslockbosconsultancy.com\n+46 70 314 67 55\nC. Bolsa, 3 Distrito Centro, 29015 Málaga\nCIF: B23910946\nWebsite Overview\nHome\nServices\nClient Cases\nWhat We've Built\nBlogs\nEvents\nAbout Us\nServices\nSoftware Development\nAI, Agents & Automation\nHelpful Links\nCareers\nContact\nPrivacy Policy\n© K.B 2026 - All rights reserved"
+}
