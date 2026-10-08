@@ -33,7 +33,7 @@ cues = [
     *[("gen-pop", F(pos, 0.14), -6, p, "a pair of tiles closes the wall") for pos, p in
       [("close", 0), ("close+0.17", 1), ("w:always-0.04", 2), ("w:always+0.14", 3), ("w:easy-0.06", 5), ("w:easy+0.1", 7)]],
     # the turn
-    ("gen-stamp", F("kb", 0.30), -4, None, "K.B seats in the hole"),
+    ("gen-stamp", F("kb", 0.42), -4, None, "K.B seats in the hole"),
     ("gen-whoosh-deep", F("field", 0.27), -3, None, "the tile grows into the navy field (fastest frame)"),
     ("gen-shimmer", F("field", 0.40), -9, None, "K.B, the brand moment"),
     ("gen-whoosh-medium", F("fold", 0.25), -7, None, "the field folds back into the tile"),

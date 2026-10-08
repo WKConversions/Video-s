@@ -6,7 +6,7 @@
 //   the tools: the floor, the reel, the wall, the three solutions, the treadmill
 // Every move is keyed to a label of src/clock.ts (the voice's words), never to a frame number.
 import React from "react";
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill, Easing } from "remotion";
 import { T } from "./clock";
 import { EASE, Line, W, measure, track } from "./kinetic";
 import { ARRIVE, C, DEPART, F, MOVE, R, SOFT, clamp01, lerp } from "./lib";
@@ -16,15 +16,17 @@ const LONGS = EASE.longS;
 const k = (g: number, pos: string | number, dur: number, ease = ARRIVE) => T.k(g, pos, dur, ease);
 const on = (g: number, a: string, b?: string) => g >= T.f(a) && (b === undefined || g < T.f(b));
 
-const ROW1 = ["make", "n8n", "supabase", "claude", "next", "pipedrive", "odoo", "postgres", "ts", "resend", "vite", "tanstack"];
-const ROW2 = ["odoo", "spring", "payload", "make", "datadog", "next", "apollo", "claude", "zenchef", "supabase", "n8n", "pipedrive"];
+const ROW1 = ["make", "n8n", "supabase", "claude", "next", "pipedrive", "odoo", "postgres", "ts", "resend"];
+const ROW2 = ["vite", "tanstack", "spring", "payload", "datadog", "apollo", "zenchef", "expogo", "aqqo", "gyg"];
+// arrivals from outside the frame: a gentler start than ARRIVE so no frame outruns the motion blur (≤ ~120 px a frame)
+const IN = Easing.bezier(0.3, 0.7, 0.4, 1);
 const REEL = ["claude", "supabase", "pipedrive", "n8n", "odoo", "make", "next", "postgres", "resend", "ts", "vite", "tanstack", "payload", "spring", "datadog", "apollo"];
 
 // ---- the business: x, y, w, h, zoom -------------------------------------------------------------------------------
 const btTrack = (g: number) => track(g, [
-  ["open", 720, -420, 440, 440, 1.5],
-  ["w:should-0.06", 720, -420, 440, 440, 1.5],
-  ["land", 720, 480, 440, 440, 1.5, ARRIVE],
+  ["open", 720, -250, 440, 440, 1.5],
+  ["w:should-0.12", 720, -250, 440, 440, 1.5],
+  ["land", 720, 480, 440, 440, 1.5, IN],
   ["lift", 720, 480, 440, 440, 1.5],
   ["lift+0.62", 720, 345, 510, 510, 1.5, LONGS],
   ["sink", 720, 345, 510, 510, 1.5],
@@ -44,10 +46,10 @@ const btTrack = (g: number) => track(g, [
   ["life+0.3", 1080, 540, 840, 840, 1.5],
   ["life+0.8", 1080, 480, 840, 840, 1.5, ARRIVE],
   ["road", 1080, 480, 840, 840, 1.5],
-  ["road+0.6", 560, 520, 380, 380, 1.5, MOVE],
-  ["ride", 560, 520, 380, 380, 1.5],
-  ["ride+1.0", 1380, 520, 380, 380, 1.5, LONGS],
-  ["gather", 1380, 520, 380, 380, 1.5],
+  ["road+0.6", 590, 510, 440, 440, 1.5, MOVE],
+  ["ride", 590, 510, 440, 440, 1.5],
+  ["ride+1.0", 1350, 510, 440, 440, 1.5, LONGS],
+  ["gather", 1350, 510, 440, 440, 1.5],
   ["gather+0.65", 1280, 540, 620, 620, 1.5, MOVE],
   ["behind0", 1280, 540, 620, 620, 1.5],
   ["behind0+0.66", 1180, 480, 680, 680, 1.5, MOVE],
@@ -67,9 +69,9 @@ const btTrack = (g: number) => track(g, [
 
 // ---- the K.B tile: x, y, w, h, radius, letters ---------------------------------------------------------------------
 const ktTrack = (g: number) => track(g, [
-  ["open", 2320, 420, 220, 220, 16, 220],
-  ["kb", 2320, 420, 220, 220, 16, 220],
-  ["kb+0.45", 1120, 420, 220, 220, 16, 220, ARRIVE],
+  ["open", 2060, 420, 220, 220, 16, 220],
+  ["kb-0.08", 2060, 420, 220, 220, 16, 220],
+  ["kb+0.5", 1120, 420, 220, 220, 16, 220, IN],
   ["field", 1120, 420, 220, 220, 16, 220],
   ["field+0.55", 960, 540, 2000, 1160, 0, 1045, LONGS],
   ["fold", 960, 540, 2000, 1160, 0, 1130],                     // the letters keep growing under the voice
@@ -83,10 +85,10 @@ const ktTrack = (g: number) => track(g, [
   ["bring", -140, 210, 240, 240, 18, 240],
   ["bring+0.55", 516, 240, 240, 240, 18, 240, MOVE],
   ["road", 516, 240, 240, 240, 18, 240],
-  ["road+0.6", 272, 410, 160, 160, 12, 160, MOVE],
-  ["ride", 272, 410, 160, 160, 12, 160],
-  ["ride+1.0", 1092, 410, 160, 160, 12, 160, LONGS],
-  ["gather", 1092, 410, 160, 160, 12, 160],
+  ["road+0.6", 262, 380, 180, 180, 13, 180, MOVE],
+  ["ride", 262, 380, 180, 180, 13, 180],
+  ["ride+1.0", 1022, 380, 180, 180, 13, 180, LONGS],
+  ["gather", 1022, 380, 180, 180, 13, 180],
   ["gather+0.65", 640, 540, 620, 620, 46, 620, MOVE],
   ["behind0", 640, 540, 620, 620, 46, 620],
   ["behind0+0.66", 1180, 480, 640, 640, 47, 640, MOVE],         // hidden behind the business: technology alone
@@ -99,10 +101,10 @@ const ktTrack = (g: number) => track(g, [
   ["w:it2", 1180, 600, 640, 640, 47, 640],
   ["w:it2+0.85", 450, 700, 540, 540, 40, 540, LONGS],
   ["partner", 450, 700, 540, 540, 40, 540],
-  ["partner+0.45", 450, 490, 540, 540, 40, 540, SOFT],         // the right partner rises behind it
-  ["up", 450, 490, 540, 540, 40, 540],
-  ["up+0.75", 450, 350, 540, 540, 40, 540, SOFT],
-  ["rest", 450, 350, 540, 540, 40, 540],
+  ["partner+0.45", 450, 430, 540, 540, 40, 540, SOFT],         // the right partner rises behind it
+  ["up", 450, 430, 540, 540, 40, 540],
+  ["up+0.75", 450, 300, 540, 540, 40, 540, SOFT],
+  ["rest", 450, 300, 540, 540, 40, 540],
   ["rest+0.5", 450, 370, 520, 520, 38, 520, MOVE],
 ]);
 
@@ -143,24 +145,24 @@ const WALL: { c: number; r: number; from: [number, number]; step: number; tool: 
   { c: 0, r: 0, from: [0, 0], step: 0, tool: "", hover: 0 },
   { c: 3, r: 0, from: [0, 0], step: 0, tool: "", hover: 1 },
   { c: 3, r: 2, from: [0, 0], step: 1, tool: "", hover: 2 },
-  { c: 1, r: 0, from: [640, -420], step: 1, tool: "next" },
-  { c: 0, r: 1, from: [-420, 420], step: 2, tool: "odoo" },
-  { c: 3, r: 3, from: [2360, 900], step: 2, tool: "make" },
-  { c: 2, r: 0, from: [880, -420], step: 3, tool: "n8n" },
-  { c: 0, r: 2, from: [-420, 660], step: 3, tool: "postgres" },
-  { c: 1, r: 3, from: [640, 1500], step: 4, tool: "ts" },
-  { c: 2, r: 3, from: [880, 1500], step: 4, tool: "resend" },
-  { c: 0, r: 3, from: [-420, 900], step: 5, tool: "vite" },
+  { c: 1, r: 0, from: [640, -230], step: 1, tool: "next" },
+  { c: 0, r: 1, from: [-230, 420], step: 2, tool: "odoo" },
+  { c: 3, r: 3, from: [2150, 900], step: 2, tool: "make" },
+  { c: 2, r: 0, from: [880, -230], step: 3, tool: "n8n" },
+  { c: 0, r: 2, from: [-230, 660], step: 3, tool: "postgres" },
+  { c: 1, r: 3, from: [640, 1310], step: 4, tool: "ts" },
+  { c: 2, r: 3, from: [880, 1310], step: 4, tool: "resend" },
+  { c: 0, r: 3, from: [-230, 900], step: 5, tool: "vite" },
 ];
 const STEPS = ["close", "close+0.17", "w:always-0.04", "w:always+0.14", "w:easy-0.06", "w:easy+0.1"];
 
 // the three parts of the business K.B finds (K.B's own words for manual work: [C1], [C2]) and the tools they become
 const LAB: Record<number, { label: string; tool: string; at: string; flip: string; back: string }> = {
   1: { label: "Excel files", tool: "make", at: "ring1", flip: "flip", back: "life+0.45" },
-  2: { label: "CRM updates", tool: "n8n", at: "ring2", flip: "flip+0.1", back: "life+0.53" },
-  6: { label: "Follow-ups", tool: "claude", at: "ring2+0.1", flip: "flip+0.2", back: "life+0.61" },
+  3: { label: "Follow-ups", tool: "n8n", at: "ring2", flip: "flip+0.1", back: "life+0.53" },
+  7: { label: "CRM updates", tool: "claude", at: "ring2+0.1", flip: "flip+0.2", back: "life+0.61" },
 };
-const SOL = [1, 2, 6];
+const SOL = [1, 3, 7];
 
 export const Story: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30;
@@ -195,7 +197,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
   });
   const gripOn = on(g, "w:not", "slide+0.4");
   const gripRise = k(g, "w:not", 0.34, SOFT);
-  const gripTurn = k(g, "grip", 0.24, MOVE);
+  const gripTurn = k(g, "grip", 0.36, MOVE);
   const gripOut = k(g, "slide", 0.35, DEPART);
 
   // ---- the reel (finding the right solutions) and the break (where to start?) ----
@@ -242,7 +244,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
   const roadK = k(g, "road+0.15", 0.6, EASE.steady) * (1 - k(g, "gather", 0.5, MOVE));
   const rideK = k(g, "ride", 1.0, LONGS);
   const planK = g < T.f("road") ? 1 : g < T.f("ride") ? 1 - k(g, "road+0.12", 0.42, MOVE) : g < T.f("gather") ? rideK : 1;
-  const ghost = on(g, "road", "gather") ? 0.25 * k(g, "road+0.12", 0.3) : 0;
+  const ghost = on(g, "road", "gather") ? 0.35 * k(g, "road+0.12", 0.3) : 0;
 
   // ---- KT faces: the founders from "side" until the sign-off ----
   const founders = k(g, "side", 0.45, MOVE) * (1 - k(g, "rest", 0.45, MOVE));
@@ -304,7 +306,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       {/* the wall: tiles close round the business in pairs, one hole left; they fade back when K.B arrives */}
       {on(g, "close", "field+0.6") && WALL.map((wt, i) => {
         const [tx, ty] = cell(wt.c, wt.r);
-        const s = k(g, STEPS[wt.step], 0.32, wt.hover !== undefined ? MOVE : ARRIVE);
+        const s = k(g, STEPS[wt.step], wt.hover !== undefined ? 0.34 : 0.42, wt.hover !== undefined ? MOVE : IN);
         const [fx, fy] = wt.hover !== undefined ? HOVER[wt.hover] : wt.from;
         const tool = wt.hover !== undefined ? REEL[breakout[wt.hover]?.i ?? 0] : wt.tool;
         return (
@@ -318,7 +320,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       {/* the three tiles that broke out of the reel, round the business (where to start?) */}
       {on(g, "where", "close") && breakout.map((q, j) => {
         const sx = REEL_X + REEL_TILE / 2, sy = reelY(q.i, fWhere) + REEL_TILE / 2;
-        const m = k(g, `where+${(j * 0.04).toFixed(2)}`, 0.36, LONGS);
+        const m = k(g, `where+${(j * 0.04).toFixed(2)}`, 0.5, MOVE);
         const [hx, hy] = HOVER[hoverOf[j]];
         return (
           <div key={j} data-probe={`hover-${j}`} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${lerp(sx, hx, m) - 110}px, ${lerp(sy, hy, m) - 110}px) scale(${lerp(REEL_TILE / 220, 1, m)})`,
@@ -339,10 +341,10 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
       {/* the road, under the tiles */}
       {roadK > 0 && (
         <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0 }}>
-          <line x1={370} y1={762} x2={lerp(370, 1570, roadK)} y2={762} stroke={C.cyan} strokeWidth={6} strokeLinecap="round" strokeDasharray="16 14" />
-          {g >= T.f("ride") && <line x1={370} y1={762} x2={Math.max(370, Math.min(1570, bx))} y2={762} stroke={C.navy} strokeWidth={8} strokeLinecap="round" />}
-          <circle cx={370} cy={762} r={12} fill={C.navy} opacity={roadK} />
-          <circle cx={1570} cy={762} r={12} fill={g >= T.f("ride+0.9") ? C.navy : C.cyan} opacity={roadK > 0.95 ? 1 : 0} />
+          <line x1={360} y1={790} x2={lerp(360, 1580, roadK)} y2={790} stroke={C.cyan} strokeWidth={6} strokeLinecap="round" strokeDasharray="16 14" />
+          {g >= T.f("ride") && <line x1={360} y1={790} x2={Math.max(360, Math.min(1580, bx))} y2={790} stroke={C.navy} strokeWidth={8} strokeLinecap="round" />}
+          <circle cx={360} cy={790} r={12} fill={C.navy} opacity={roadK} />
+          <circle cx={1580} cy={790} r={12} fill={g >= T.f("ride+0.9") ? C.navy : C.cyan} opacity={roadK > 0.95 ? 1 : 0} />
         </svg>
       )}
 
@@ -356,21 +358,26 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
           lens={g >= T.f("lens") && g < T.f("open3+0.35") ? { x: lensLocal.x, y: lensLocal.y, r: lerp(28, 180, lensK) * (1 - lensBack) + 26 * lensBack, k: lensK * (1 - lensBack) } : undefined} />
       )}
 
-      {/* the flow between the three solutions, and the pulse that brings them to life */}
+      {/* the flow between the three solutions (stopping short of each logo), and the pulse that brings them to life */}
       {on(g, "flow", "life+0.5") && (() => {
-        const ox = bx - bw / 2, oy = by - bh / 2;
+        const ox = bx - bw / 2, oy = by - bh / 2, rl = 0.6 * Math.min(cw, ch) / 2 + 22;
         const pts = SOL.map((i) => pc(i)).map((p) => ({ x: ox + p.x, y: oy + p.y }));
-        const d = `M ${pts[0].x} ${pts[0].y} L ${pts[1].x} ${pts[1].y} L ${pts[2].x} ${pts[2].y}`;
-        const l1 = Math.hypot(pts[1].x - pts[0].x, pts[1].y - pts[0].y), len = l1 + Math.hypot(pts[2].x - pts[1].x, pts[2].y - pts[1].y);
+        const segs = [[pts[0], pts[1]], [pts[1], pts[2]]].map(([a, b]) => {
+          const L = Math.hypot(b.x - a.x, b.y - a.y), ux = (b.x - a.x) / L, uy = (b.y - a.y) / L;
+          return { a: { x: a.x + ux * rl, y: a.y + uy * rl }, b: { x: b.x - ux * rl, y: b.y - uy * rl }, l: Math.max(1, L - 2 * rl) };
+        });
         const draw = k(g, "flow", 0.5, EASE.steady);
-        const pulse = k(g, "life-0.4", 0.4, EASE.steady);
-        const a = pulse * len;
-        const P = a < l1 ? { x: lerp(pts[0].x, pts[1].x, a / l1), y: lerp(pts[0].y, pts[1].y, a / l1) } : { x: lerp(pts[1].x, pts[2].x, (a - l1) / (len - l1)), y: lerp(pts[1].y, pts[2].y, (a - l1) / (len - l1)) };
+        const pulse = k(g, "life-0.4", 0.4, EASE.steady) * (segs[0].l + segs[1].l);
+        const P = pulse < segs[0].l ? { s: segs[0], u: pulse / segs[0].l } : { s: segs[1], u: (pulse - segs[0].l) / segs[1].l };
         return (
           <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0, opacity: 1 - k(g, "life+0.35", 0.1) }}>
-            <path d={d} fill="none" stroke={C.cyan} strokeWidth={7} strokeLinecap="round" strokeDasharray={`${draw * len} ${len}`} opacity={0.35} />
-            <path d={d} fill="none" stroke={C.cyan} strokeWidth={7} strokeLinecap="round" strokeDasharray="2 20" opacity={draw} />
-            {g >= T.f("life-0.4") && pulse < 1 && <circle cx={P.x} cy={P.y} r={16 * clamp01((g - T.f("life-0.4") + 1) / 4)} fill={C.cyan} />}
+            {segs.map((q, i) => {
+              const dk = clamp01(draw * 2 - i);
+              return <line key={i} x1={q.a.x} y1={q.a.y} x2={lerp(q.a.x, q.b.x, dk)} y2={lerp(q.a.y, q.b.y, dk)} stroke={C.cyan} strokeWidth={7} strokeLinecap="round" strokeDasharray="2 20" opacity={dk > 0 ? 1 : 0} />;
+            })}
+            {g >= T.f("life-0.4") && pulse < segs[0].l + segs[1].l && (
+              <circle cx={lerp(P.s.a.x, P.s.b.x, P.u)} cy={lerp(P.s.a.y, P.s.b.y, P.u)} r={16 * clamp01((g - T.f("life-0.4") + 1) / 4)} fill={C.cyan} />
+            )}
           </svg>
         );
       })()}
@@ -381,16 +388,19 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
           transform: `translate(${lerp(pk.x, bx - bw / 2 + 230, dotOut) - 28}px, ${lerp(pk.y, by - bh / 2 + 250, dotOut) - 28}px)` }} />
       )}
       {on(g, "open3+0.3", "ring1+0.2") && (() => {
-        const h = k(g, "ring1-0.12", 0.2, EASE.lead), p1 = pc(1);
+        const p1 = pc(1), tx = bx - bw / 2 + p1.x, ty = by - bh / 2 + p1.y;
+        const drift = clamp01((g - T.f("open3+0.3")) / Math.max(1, T.f("ring1-0.12") - T.f("open3+0.3")));
+        const sx = lerp(bx, lerp(bx, tx, 0.55), drift), sy = lerp(by, lerp(by, ty, 0.55), drift);
+        const h = k(g, "ring1-0.12", 0.24, MOVE);
         return <div data-probe="dot2" style={{ position: "absolute", left: 0, top: 0, width: 52, height: 52, borderRadius: "50%", background: C.cyan, opacity: 1 - k(g, "ring1", 0.15),
-          transform: `translate(${lerp(bx, bx - bw / 2 + p1.x, h) - 26}px, ${lerp(by, by - bh / 2 + p1.y, h) - 26}px)` }} />;
+          transform: `translate(${lerp(sx, tx, h) - 26}px, ${lerp(sy, ty, h) - 26}px)` }} />;
       })()}
       {on(g, "life+0.62", "life+1.1") && (
         <div data-probe="dot3" style={{ position: "absolute", left: 0, top: 0, width: 40, height: 40, borderRadius: "50%", background: C.cyan, opacity: 1 - k(g, "life+1.0", 0.1),
-          transform: `translate(${lerp(bx - bw / 2 + pc(6).x, pk.x, dotHome) - 20}px, ${lerp(by - bh / 2 + pc(6).y, pk.y, dotHome) - 20}px) scale(${lerp(1, 0.6, dotHome)})` }} />
+          transform: `translate(${lerp(bx - bw / 2 + pc(7).x, pk.x, dotHome) - 20}px, ${lerp(by - bh / 2 + pc(7).y, pk.y, dotHome) - 20}px) scale(${lerp(1, 0.6, dotHome)})` }} />
       )}
-      {on(g, "road", "gather+0.4") && <Line g={g} words={[{ t: "Strategy", at: "w:strategy-0.08" }]} x={370} y={800} size={54} weight={700} color={C.navy} out="gather" style={{ willChange: "transform" }} />}
-      {on(g, "ride", "gather+0.4") && <Line g={g} words={[{ t: "Implementation", at: "w:implementation+0.25" }]} x={1570 - measure("Implementation", 54, 700)} y={800} size={54} weight={700} color={C.navy} out="gather" style={{ willChange: "transform" }} />}
+      {on(g, "road", "gather+0.4") && <Line g={g} words={[{ t: "Strategy", at: "w:strategy-0.08" }]} x={360} y={826} size={64} weight={700} color={C.navy} out="gather" style={{ willChange: "transform" }} />}
+      {on(g, "ride", "gather+0.4") && <Line g={g} words={[{ t: "Implementation", at: "w:implementation+0.25" }]} x={1580 - measure("Implementation", 64, 700)} y={826} size={64} weight={700} color={C.navy} out="gather" style={{ willChange: "transform" }} />}
 
       {/* the grip */}
       {gripOn && gripIdx.map((ri, j) => {
@@ -436,7 +446,7 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
             opacity: clamp01(growIn * 1.6) * (1 - growOut), transform: `translateY(${(1 - growIn) * 60 - growOut * 50}px)`, filter: growIn < 1 || growOut > 0 ? `blur(${(1 - growIn) * 10 + growOut * 10}px)` : undefined }}>grow</div>
         </div>
       )}
-      {on(g, "where-0.2", "close+0.4") && <Line g={g} words={whereWords} x={1010} y={92} size={96} weight={700} color={C.ink} out="close" split style={{ willChange: "transform" }} />}
+      {on(g, "where-0.2", "close+0.4") && <Line g={g} words={whereWords} x={1010} y={92} size={96} weight={700} color={C.navy} out="close" split style={{ willChange: "transform" }} />}
       {on(g, "w:tech-0.2", "first+0.3") && <Line g={g} words={partnerWords} x={948 - tpW / 2} y={800} size={TP} weight={800} color={C.navy} out="w:partner+0.61" ls={0.04}
         style={{ fontFamily: F.logo, willChange: "transform" }} />}
       {on(g, "alone-0.1", "drop+0.3") && <Line g={g} words={aloneWords} x={190} y={330} size={210} weight={800} color={C.navy} out="w:it2+0.02" split style={{ willChange: "transform" }} />}
@@ -452,7 +462,9 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
             transformOrigin: "0 50%", transform: `scaleX(${k(g, "rest+0.45", 0.3, MOVE)})` }} />
         </div>
       )}
-      {g >= T.f("rest") && <Line g={g} words={endWords} x={EL.x} y={EL.y} size={EL.size} weight={700} color={C.ink} style={{ willChange: "transform" }} />}
+      {g >= T.f("rest") && <Line g={g} words={endWords} x={EL.x} y={EL.y} size={EL.size} weight={700} color={C.navy} style={{ willChange: "transform" }} />}
+      {g >= T.f("rest+0.2") && <Line g={g} words={[{ t: "K.B", at: "rest+0.2" }, { t: "TECH", at: "rest+0.26" }, { t: "PARTNER", at: "rest+0.32" }]} x={EL.x + 2} y={EL.y - 74} size={40} weight={800} color={C.navy} ls={0.04}
+        style={{ fontFamily: F.logo, willChange: "transform" }} />}
       {g >= T.f("rest+0.7") && (() => {
         const b = k(g, "rest+0.7", 0.5);
         return (

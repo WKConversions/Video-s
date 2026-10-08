@@ -102,9 +102,9 @@ export const Biz: React.FC<{
             opacity: clamp01(ring * 2), transform: `scale(${lerp(1.08, 1, ring)})` }} />
         )}
         {p.label && (p.labelK ?? 0) > 0 && flip < 0.5 && (
-          <div style={{ position: "absolute", left: 30, top: 36, padding: "10px 20px 11px", borderRadius: R.pill, background: C.white, boxShadow: SHADOW.soft,
-            fontFamily: F.sans, fontWeight: 700, fontSize: 36, letterSpacing: "-0.01em", color: C.navy, whiteSpace: "nowrap",
-            opacity: clamp01((p.labelK ?? 0) * 1.6), transform: `translateY(${(1 - (p.labelK ?? 0)) * 26}px)`, filter: (p.labelK ?? 0) < 1 ? `blur(${(1 - (p.labelK ?? 0)) * 6}px)` : undefined }}>
+          <div style={{ position: "absolute", left: cw / 2, top: ch / 2, padding: "14px 30px 15px", borderRadius: R.pill, background: C.white, boxShadow: SHADOW.soft,
+            fontFamily: F.sans, fontWeight: 700, fontSize: 54, letterSpacing: "-0.015em", color: C.navy, whiteSpace: "nowrap",
+            opacity: clamp01((p.labelK ?? 0) * 1.6), transform: `translate(-50%, -50%) translateY(${(1 - (p.labelK ?? 0)) * 30}px)`, filter: (p.labelK ?? 0) < 1 ? `blur(${(1 - (p.labelK ?? 0)) * 6}px)` : undefined }}>
             {p.label}
           </div>
         )}
