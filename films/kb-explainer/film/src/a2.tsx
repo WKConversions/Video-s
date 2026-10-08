@@ -33,7 +33,7 @@ const Audit: React.FC<{ g: number }> = ({ g }) => {
   const listO = k(g, "pick+0.46", 0.25) * (1 - k(g, "first+0.14", 0.22));
   const hl = trk(g, [["pick", 0], ["pick+0.6", 0], ["first-0.06", 2, MOVE]])[0];
   // the dropdown is drawn 1.12× (lifted), about its top centre (448, 392); the cursor aims at the lifted items
-  const cur = trk(g, [["pick", 760, 690, 0], ["pick+0.36", 473, 428, 1, MOVE], ["pick+0.6", 473, 428, 1], ["first-0.06", 428, 657, 1, MOVE], ["board-0.2", 470, 690, 1], ["board", 470, 690, 0]]);
+  const cur = trk(g, [["pick", 760, 690, 0], ["pick+0.36", 473, 428, 1, MOVE], ["pick+0.6", 473, 428, 1], ["first-0.06", 428, 657, 1, MOVE], ["first+0.25", 440, 640, 1], ["first+0.5", 450, 630, 0]]);
   const chosen = k(g, "first+0.1", 0.3);
   const head = k(g, "w:audit-0.14", 0.45);
   return (
@@ -249,7 +249,7 @@ const NodeBody: React.FC<{ g: number; i: number; o?: number }> = ({ g, i, o = 1 
 /** A sweep of light along a connector, and the node it reaches flashing. */
 const sweep = (g: number, at: string | number, dur = 0.26) => k(g, at, dur, MOVE);
 const flash = (g: number, at: string | number) => { const t = (g - T.f(at)) / 15; return t < 0 || t > 1 ? 0 : 1 - t; };
-const RUNS = [0.3, 0.62, 0.94];   // extra runs after "manual", seconds after it
+const RUNS = [0.1];   // one more run after "manual", seconds after it
 const Flow: React.FC<{ g: number }> = ({ g }) => {
   if (g < T.f("flow")) return null;
   const head = k(g, "flow+0.2", 0.45);
@@ -258,7 +258,7 @@ const Flow: React.FC<{ g: number }> = ({ g }) => {
   // the first run (crm, run, manual), then three more runs through all four nodes
   const sweeps: [number, number][] = [[0, T.s("crm") - 0.28], [1, T.s("run") - 0.28], [2, T.s("manual") - 0.28]];
   RUNS.forEach((d) => [0, 1, 2].forEach((i) => sweeps.push([i, T.s("manual") + d + i * 0.1])));
-  const count = +(g >= T.f("run")) + RUNS.filter((d) => g >= T.f(off("manual", d + 0.46))).length;
+  const count = +(g >= T.f("run")) + +(g >= T.f("manual")) + RUNS.filter((d) => g >= T.f(off("manual", d + 0.46))).length;
   const log = [
     { t: "Intake form received", at: "flow+0.5" }, { t: "CRM record updated", at: "crm" }, { t: "Follow-up email sent", at: "run" }, { t: "AI agent drafted a reply", at: "manual" },
   ];
@@ -301,7 +301,7 @@ const Flow: React.FC<{ g: number }> = ({ g }) => {
           <React.Fragment key={t}>
             <Box x={nodeX(i) + NODE.w - 12} y={NODE.y - 8} w={72} h={72} o={Math.min(1, a * 2)} style={{ transform: `translateY(${(1 - a) * -360}px)`, zIndex: 3 }}><ToolTile tool={t} size={72} /></Box>
             {(() => { const n = k(g, off(at, 0.4), 0.3) * (1 - k(g, off(at, 1.7), 0.3)); return n > 0 && (
-              <div style={{ position: "absolute", left: nodeX(i) + NODE.w - 12, top: NODE.y + 36, transform: `translate(-50%, ${(1 - n) * -8}px)`, opacity: n, zIndex: 4 }}>
+              <div style={{ position: "absolute", left: nodeX(i) + NODE.w / 2, top: NODE.y + NODE.h + 12, transform: `translate(-50%, ${(1 - n) * -8}px)`, opacity: n, zIndex: 4 }}>
                 <Pill bg={C.navy} color={C.white} size={20}>{t === "make" ? "Make" : "n8n"}</Pill>
               </div>
             ); })()}
@@ -355,9 +355,10 @@ const EmailPhone: React.FC<{ g: number }> = ({ g }) => {
 export const Main: React.FC<{ g: number }> = ({ g }) => {
   // the window rises a short way into place and stays whole in the frame, clear of the corner mark; it only creeps
   // (≤ 3 % a second), and cards lift out of it for emphasis
-  const W = trk(g, [["audit", 960, 980, 0], ["audit+0.8", 960, 560, 1, IN], ["need", 960, 560, 1], ["need+0.35", 960, 860, 0, OUT]]);
+  const W = trk(g, [["audit+0.1", 960, 980, 0], ["audit+0.9", 960, 560, 1, IN], ["need-0.3", 960, 560, 1], ["need+0.02", 960, 860, 0, OUT]]);
   if (W[2] <= 0) return null;
-  const v = [0, 0, 0.97 * trk(g, [["audit", 1], ["audit+0.8", 1], ["friction", 1.05], ["board", 1.1], ["form", 1.0], ["need", 1.1]])[0]];
+  // one slow growth across the whole act (no reset at each change of body)
+  const v = [0, 0, 0.97 * trk(g, [["audit", 1], ["audit+0.9", 1], ["need", 1.05]])[0]];
   const presence = (d: number) => ({ opacity: k(g, off("board+0.3", d), 0.3) * (1 - k(g, "form", 0.3)), transform: `scale(${0.5 + 0.5 * k(g, off("board+0.3", d), 0.45)})` });
   const running = k(g, "run+0.1", 0.35);
   const right = (

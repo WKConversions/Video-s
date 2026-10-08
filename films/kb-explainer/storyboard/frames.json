@@ -10,11 +10,336 @@
   "Audience": "Founders and managers of startups and SMEs whose work still runs on manual steps.",
   "Format": "16:9, 1920×1080, 30 fps, 58.0 s.",
   "Core message": "K.B builds the software and automation your business runs on, with you: diagnose, build, run, one loop.",
-  "Reference": "The JustCall × HubSpot explainer: logo circles open into an app window, a module switches on, a phone slides in, \"How?\", one window whose body changes while the view pushes into cards, a dropdown pick, a workflow, tools joined up, avatars, a month calendar, an infinity loop, a logo-and-button end card, a brand mark in the corner. Nothing of its artwork, screens or words is used.",
+  "Reference": "The JustCall × HubSpot explainer: logo circles open into an app window, a module switches on, a phone slides in, \"How?\", one window whose body changes while cards lift out of it, a dropdown pick, a workflow, tools joined up, avatars, a month calendar, an infinity loop, a logo-and-button end card, a brand mark in the corner. Nothing of its artwork, screens or words is used.",
   "Style and brand": "K.B's site: canvas #F7F7F7 with soft blobs, white rounded windows with a navy app bar, cyan as the action colour (never text on light), Montserrat; Copperplate only in the K.B logotype.",
-  "Motion": "Precise and calm: arrivals from outside the frame on a gentle curve, MOVE for things already on screen, slow push-ins on every hold (the reference's zoom language), no overshoot. The camera only breathes.",
+  "Motion": "Precise and calm: arrivals on a gentle curve, MOVE for things already on screen, no overshoot. Windows stay whole in the frame and only creep (≤ 3% a second); cards lift out of them for emphasis, as in the reference. The camera only breathes.",
   "Words on screen": "Only \"How?\" and \"Need more?\" as big words (as in the reference); everything else is interface text inside the pictures.",
-  "Sound": "ElevenLabs voice (Christina) at 1.60 s; Mixkit \"Tears of Joy\" cut on its bar grid, the band coming in as the audit window rises after \"How?\", the song's last hit on \"K.B\" and the end card; 137 effects on their moves (clicks, typing, landings, chimes)."
+  "Sound": "ElevenLabs voice (Christina) at 1.60 s; Mixkit \"Tears of Joy\" cut on its bar grid, the band coming in as the audit window rises after \"How?\", the song's last hit on \"K.B\" and the end card; 139 effects on their moves (clicks, typing, landings, chimes)."
  },
- "beats": []
+ "beats": [
+  {
+   "id": "1",
+   "time": "0.0–6.5 s",
+   "title": "K.B builds the software and automation your business runs on, with you.",
+   "frames": [
+    {
+     "t": "0.80",
+     "phrase": "(open)",
+     "words": "",
+     "what": "Two white circles, K.B and \"Your business\", drift in and dock into one lockup."
+    },
+    {
+     "t": "2.60",
+     "phrase": "K.B builds the software",
+     "words": "",
+     "what": "The lockup opens into the business's workspace window; eight module cards land."
+    },
+    {
+     "t": "3.70",
+     "phrase": "and automation",
+     "words": "",
+     "what": "Automations fills with cyan, lifts out of the window and shows a big check."
+    },
+    {
+     "t": "4.90",
+     "phrase": "your business runs on",
+     "words": "",
+     "what": "Every module switches on; the window steps left and a phone slides in running the same workspace."
+    },
+    {
+     "t": "5.90",
+     "phrase": "with you",
+     "words": "",
+     "what": "A large K.B tile drops in from above and \"You\" rises from below; they meet over the workspace."
+    }
+   ]
+  },
+  {
+   "id": "2",
+   "time": "6.5–7.2 s",
+   "title": "How?",
+   "frames": [
+    {
+     "t": "6.80",
+     "phrase": "How?",
+     "words": "How?",
+     "what": "Everything leaves left; \"How?\" rises among small drifting shapes."
+    }
+   ]
+  },
+  {
+   "id": "3",
+   "time": "7.2–14.1 s",
+   "title": "We start with a process audit: how your team works today, where the friction is, and what to improve first.",
+   "frames": [
+    {
+     "t": "8.50",
+     "phrase": "we start with a process audit",
+     "words": "",
+     "what": "The audit window rises; a magnifier passes over the empty steps."
+    },
+    {
+     "t": "10.20",
+     "phrase": "how your team works today",
+     "words": "",
+     "what": "Five steps draw left to right, each with its team: Lead, Intake, Quote, Invoice, Follow-up."
+    },
+    {
+     "t": "11.60",
+     "phrase": "where the friction is",
+     "words": "",
+     "what": "Intake and Follow-up lift out of the window with a red \"Manual\" flag."
+    },
+    {
+     "t": "13.20",
+     "phrase": "and what to improve first",
+     "words": "",
+     "what": "The K.B cursor opens Priority on Intake and picks \"First\"; a \"1\" badge lands."
+    }
+   ]
+  },
+  {
+   "id": "4",
+   "time": "14.2–17.3 s",
+   "title": "Then we build together, in the open.",
+   "frames": [
+    {
+     "t": "15.40",
+     "phrase": "then we build together",
+     "words": "",
+     "what": "The window's body turns into a build board; the K.B and You cursors drag cards into Building."
+    },
+    {
+     "t": "16.80",
+     "phrase": "in the open",
+     "words": "",
+     "what": "The activity strip lifts: what was moved, by whom, \"Shared with your team\", seen by the team."
+    }
+   ]
+  },
+  {
+   "id": "5",
+   "time": "17.3–25.0 s",
+   "title": "Intake forms, follow-ups and CRM updates run on their own, with Make, n8n and AI agents doing the manual work.",
+   "frames": [
+    {
+     "t": "17.90",
+     "phrase": "intake forms",
+     "words": "",
+     "what": "A client intake form lifts out, fills itself and is sent."
+    },
+    {
+     "t": "19.40",
+     "phrase": "follow-ups and CRM updates",
+     "words": "",
+     "what": "The form shrinks into the first node of a workflow; the CRM node updates."
+    },
+    {
+     "t": "20.60",
+     "phrase": "run on their own",
+     "words": "",
+     "what": "The follow-up email arrives on the client's phone; the workflow shows \"Running\"."
+    },
+    {
+     "t": "22.20",
+     "phrase": "with Make, n8n",
+     "words": "Make · n8n",
+     "what": "The Make and n8n tiles land on their nodes, each named for a moment."
+    },
+    {
+     "t": "24.40",
+     "phrase": "and AI agents doing the manual work",
+     "words": "",
+     "what": "An AI agent node (Claude) joins; more runs pass through by themselves."
+    }
+   ]
+  },
+  {
+   "id": "6",
+   "time": "25.2–33.3 s",
+   "title": "Need more? We build custom software: dashboards, websites and mobile apps, tailored to how your team already works.",
+   "frames": [
+    {
+     "t": "25.70",
+     "phrase": "need more?",
+     "words": "Need more?",
+     "what": "The workflow tucks away; \"Need more?\" rises."
+    },
+    {
+     "t": "27.50",
+     "phrase": "we build custom software",
+     "words": "",
+     "what": "A new window builds itself block by block."
+    },
+    {
+     "t": "28.80",
+     "phrase": "dashboards",
+     "words": "Example data",
+     "what": "It becomes a dashboard (labelled as example data): numbers count up, bars grow, a line draws."
+    },
+    {
+     "t": "29.50",
+     "phrase": "websites",
+     "words": "",
+     "what": "A website slides in behind it."
+    },
+    {
+     "t": "31.00",
+     "phrase": "and mobile apps tailored",
+     "words": "",
+     "what": "An app slides in front; its sections are dragged into the team's own order."
+    },
+    {
+     "t": "32.80",
+     "phrase": "works",
+     "words": "",
+     "what": "The order is saved: a check on Today's jobs."
+    }
+   ]
+  },
+  {
+   "id": "7",
+   "time": "33.4–38.1 s",
+   "title": "Every tool you use, connected, so data flows without copy-paste.",
+   "frames": [
+    {
+     "t": "34.40",
+     "phrase": "every tool you use",
+     "words": "",
+     "what": "The screens slide away; the real tools from K.B's site land in a slowly turning ring round \"Your system\"."
+    },
+    {
+     "t": "35.20",
+     "phrase": "connected",
+     "words": "",
+     "what": "Lines draw from every tool to the centre."
+    },
+    {
+     "t": "36.40",
+     "phrase": "so data flows",
+     "words": "",
+     "what": "Dots run along the lines; rings pulse out of the system."
+    },
+    {
+     "t": "37.50",
+     "phrase": "without copy-paste",
+     "words": "Copy · Paste",
+     "what": "Two keys, Copy and Paste, struck out in red."
+    }
+   ]
+  },
+  {
+   "id": "8",
+   "time": "38.1–42.7 s",
+   "title": "We work inside your team, not around it, so you always know what we're doing.",
+   "frames": [
+    {
+     "t": "39.20",
+     "phrase": "we work inside your team",
+     "words": "",
+     "what": "A team channel: the team makes room and K.B takes a seat in the row; 5 members."
+    },
+    {
+     "t": "42.10",
+     "phrase": "you always know what we're doing",
+     "words": "",
+     "what": "K.B's status messages arrive in the channel."
+    }
+   ]
+  },
+  {
+   "id": "9",
+   "time": "42.7–49.7 s",
+   "title": "And after launch, we stay on: hosting, maintenance and new features every month as your business grows.",
+   "frames": [
+    {
+     "t": "43.30",
+     "phrase": "and after launch",
+     "words": "",
+     "what": "\"Go live\" is clicked: Live."
+    },
+    {
+     "t": "44.80",
+     "phrase": "we stay on",
+     "words": "",
+     "what": "A monthly plan opens; \"K.B · on call\" is pinned to the month."
+    },
+    {
+     "t": "46.30",
+     "phrase": "hosting, maintenance",
+     "words": "",
+     "what": "Hosting and Maintenance lines run through every week."
+    },
+    {
+     "t": "47.20",
+     "phrase": "and new features every month",
+     "words": "",
+     "what": "A New feature lands in its day; the month turns."
+    },
+    {
+     "t": "49.30",
+     "phrase": "as your business grows",
+     "words": "",
+     "what": "Month 3: three features shipped."
+    }
+   ]
+  },
+  {
+   "id": "10",
+   "time": "50.0–55.4 s",
+   "title": "Diagnose, build, run: one loop, so your systems keep up with your growth.",
+   "frames": [
+    {
+     "t": "50.30",
+     "phrase": "Diagnose",
+     "words": "Diagnose",
+     "what": "An infinity road draws from Diagnose."
+    },
+    {
+     "t": "51.70",
+     "phrase": "build, run",
+     "words": "Build · Run",
+     "what": "Build and Run light in turn; the dots start running as the road closes."
+    },
+    {
+     "t": "52.80",
+     "phrase": "one loop",
+     "words": "",
+     "what": "All three stations light; the dots run round the loop."
+    },
+    {
+     "t": "54.60",
+     "phrase": "so your systems keep up with your growth",
+     "words": "",
+     "what": "The loop lifts; the stations pulse on \"growth\"."
+    }
+   ]
+  },
+  {
+   "id": "11",
+   "time": "55.4–58.0 s",
+   "title": "Talk to K.B.",
+   "frames": [
+    {
+     "t": "57.00",
+     "phrase": "Talk to K.B.",
+     "words": "Talk to K.B. · Book a Free Discovery Call",
+     "what": "The loop fades; the K.B logo, \"Talk to K.B.\" built word by word, and the site's button in cyan."
+    }
+   ]
+  }
+ ],
+ "notes": [
+  "The voice-over is the script Karl recorded (script.md); nothing was rewritten. \"K.B\" is spoken and shown; \"Consultancy\" never appears.",
+  "Remade after the reference's structure, pacing and kinds of motion; none of its screens, logos, illustrations or wording is used. Every interface is an example built from K.B's own services and words.",
+  "People are initials only (AM, JS, RK, LT, You); K.B is its logo tile. Jordan Smith and Acme Studio are placeholder names in the example form; the dashboard numbers are labelled \"Example data\".",
+  "Tool logos (Pipedrive, Odoo, Supabase, Resend, Make, n8n, Claude, Next.js) are the ones K.B's site shows as tools it builds with.",
+  "No URL on the end card (the domain contains \"consultancy\"); the button is the site's own \"Book a Free Discovery Call\".",
+  "Nothing from the site's hero video (or any of its videos) was downloaded, sampled or used."
+ ],
+ "questions": [
+  "Motion: the median frame moves 2.4% of its area — just under the reference (2.7%) and below the 5% you asked for on the last film. The review round made the moves calmer (no push-ins, cards lift instead, as in the reference). Want it livelier?",
+  "Music: Mixkit \"Tears of Joy\" (no credit needed), cut so its last hit lands on the end card. Keep it, or do you have a track?",
+  "End card: keep it URL-free, or add a domain without \"consultancy\" if K.B has one?"
+ ]
 }

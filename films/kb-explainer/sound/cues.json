@@ -249,6 +249,12 @@
    "note": "the list drops"
   },
   {
+   "id": "gen-whoosh-short",
+   "frame": 259,
+   "db": -9,
+   "note": "the magnifier passes over the process"
+  },
+  {
    "id": "gen-tick",
    "frame": 382,
    "db": -6,
@@ -501,28 +507,14 @@
   },
   {
    "id": "gen-chime",
-   "frame": 740,
+   "frame": 734,
    "db": -10,
    "pitch": 7,
    "note": "another run through"
   },
   {
-   "id": "gen-chime",
-   "frame": 749,
-   "db": -10,
-   "pitch": 9,
-   "note": "another run through"
-  },
-  {
-   "id": "gen-chime",
-   "frame": 759,
-   "db": -10,
-   "pitch": 11,
-   "note": "another run through"
-  },
-  {
    "id": "gen-whoosh-medium",
-   "frame": 755,
+   "frame": 745,
    "db": -6,
    "note": "the workflow tucks away"
   },
@@ -534,7 +526,7 @@
   },
   {
    "id": "gen-whoosh-medium",
-   "frame": 787,
+   "frame": 792,
    "db": -6,
    "note": "a window rises"
   },
@@ -626,9 +618,9 @@
   },
   {
    "id": "gen-whoosh-deep",
-   "frame": 1005,
-   "db": -6,
-   "note": "the screens gather into one system"
+   "frame": 1002,
+   "db": -8,
+   "note": "the screens dissolve into one system"
   },
   {
    "id": "gen-pop",
@@ -724,9 +716,16 @@
   },
   {
    "id": "gen-pop",
-   "frame": 1161,
+   "frame": 1169,
    "db": -8,
-   "note": "a message"
+   "note": "K.B joined #operations"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1193,
+   "db": -7,
+   "pitch": 2,
+   "note": "the team welcomes K.B"
   },
   {
    "id": "gen-whoosh-short",
@@ -742,7 +741,7 @@
   },
   {
    "id": "gen-tick",
-   "frame": 1194,
+   "frame": 1169,
    "db": -5,
    "pitch": 2,
    "note": "5 members"
@@ -777,7 +776,7 @@
   },
   {
    "id": "gen-whoosh-medium",
-   "frame": 1285,
+   "frame": 1283,
    "db": -6,
    "note": "Go live rises"
   },
@@ -795,7 +794,7 @@
   },
   {
    "id": "gen-whoosh-medium",
-   "frame": 1323,
+   "frame": 1329,
    "db": -6,
    "note": "the monthly plan opens"
   },
@@ -873,9 +872,16 @@
   },
   {
    "id": "gen-shimmer",
+   "frame": 1540,
+   "db": -9,
+   "note": "the road closes: the dots run"
+  },
+  {
+   "id": "gen-chime",
    "frame": 1567,
-   "db": -8,
-   "note": "one loop: the dots run"
+   "db": -7,
+   "pitch": 9,
+   "note": "one loop: every station lights"
   },
   {
    "id": "gen-swell",

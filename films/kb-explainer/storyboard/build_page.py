@@ -85,14 +85,14 @@ o.append("</section>")
 o.append('<section><h2>Notes</h2><ul>' + "".join(f"<li>{e(n)}</li>" for n in d["notes"]) + "</ul></section>")
 o.append('<section><h2>Open questions</h2><ul>' + "".join(f"<li>{e(n)}</li>" for n in d["questions"]) + "</ul></section>")
 if rev:
-    o.append('<section><h2>Revision log</h2><p class="lede" style="margin:0 0 12px">From the art-director pass: four independent reviews (story, truth, legibility, brand) and a judgement pass on the draft.</p><div class="tbl"><table><tr><th>Before</th><th>After</th><th>Why</th></tr>'
+    o.append('<section><h2>Revision log</h2><p class="lede" style="margin:0 0 12px">From the review round: two independent reviews of the draft (fidelity to the reference and story; craft, legibility and brand), a cold-eyes pass, and the automatic checks.</p><div class="tbl"><table><tr><th>Before</th><th>After</th><th>Why</th></tr>'
              + "".join(f"<tr><td>{e(r['before'])}</td><td>{e(r['after'])}</td><td>{e(r['why'])}</td></tr>" for r in rev) + "</table></div></section>")
 if qc.get("rows"):
     o.append('<section><h2>Quality check</h2><div class="tbl"><table><tr><th>Check</th><th>Result</th><th>Target</th><th></th></tr>'
              + "".join(f"<tr><td>{e(r[0])}</td><td class=\"n\">{e(r[1])}</td><td>{e(r[2])}</td><td class=\"{'ok' if r[3] else 'no'}\">{'pass' if r[3] else 'look'}</td></tr>" for r in qc["rows"])
              + "</table></div>" + (f'<p class="lede">{e(qc["note"])}</p>' if qc.get("note") else "") + "</section>")
 o.append('<section><h2>Appendix</h2>')
-for name, f in [("Beat sheet and arc", "beats.md"), ("Production plan (phrases, continuity, variety)", "plan.md"), ("Thesis and allowed patterns", "thesis.md"), ("Brief", "brief.md")]:
+for name, f in [("Production plan (every shot against the reference beat it mirrors)", "plan.md"), ("Voice-over script", "../script.md")]:
     t = read(f)
     if t: o.append(f"<details><summary>{e(name)}</summary><pre>{e(t)}</pre></details>")
 o.append("</section></div>")

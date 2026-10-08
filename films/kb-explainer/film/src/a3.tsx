@@ -5,7 +5,7 @@ import React from "react";
 import { T } from "./clock";
 import { EASE, Line, Stroke, Track, measure, off } from "./kinetic";
 import { ARRIVE, C, MOVE, SHADOW, ToolTile, lerp } from "./lib";
-import { IN, OUT } from "./a1";
+import { IN } from "./a1";
 import { Abs, BarTitle, Box, Check, Icon, IconBox, PHONE, Phone, Pill, Skel, U, Win, mix, trk, txt } from "./ui";
 
 const k = (g: number, pos: string | number, dur: number, ease = ARRIVE) => T.k(g, pos, dur, ease);
@@ -155,12 +155,12 @@ const AppScreen: React.FC<{ g: number }> = ({ g }) => {
 
 export const Custom: React.FC<{ g: number }> = ({ g }) => {
   // the window rises a short way into place; at "every tool" the three screens slide off in three directions
-  const gone = k(g, "tools-0.05", 0.4, OUT), rise = k(g, "custom", 0.3);
-  const SW = trk(g, [["custom", 960, 980, 1], ["custom+0.8", 960, 560, 1, IN], ["web", 960, 560, 1.08], ["web+0.6", 690, 610, 0.72, MOVE], ["app", 675, 613, 0.76],
-    ["app+0.6", 640, 620, 0.7, MOVE], ["tools-0.05", 600, 628, 0.77], ["tools+0.35", 0, 680, 0.77, OUT]]);
+  const gone = k(g, "tools-0.1", 0.35, MOVE), rise = k(g, "custom+0.14", 0.3);
+  const SW = trk(g, [["custom+0.14", 960, 980, 1], ["custom+0.94", 960, 560, 1, IN], ["web-0.2", 960, 560, 1.02], ["web+0.7", 690, 610, 0.74, MOVE], ["app", 680, 612, 0.75],
+    ["app+0.6", 640, 620, 0.72, MOVE], ["tools-0.1", 625, 622, 0.73], ["tools+0.25", 605, 622, 0.73]]);
   const WB = trk(g, [["custom", 2400, 430, 0.72], ["web", 2400, 430, 0.72], ["web+0.7", 1240, 430, 0.72, IN], ["app", 1215, 422, 0.75], ["app+0.6", 1170, 420, 0.72, MOVE],
-    ["tools-0.05", 1130, 405, 0.78], ["tools+0.35", 1300, -100, 0.78, OUT]]);
-  const P = trk(g, [["custom", 1560, 1560, 0.84], ["app", 1560, 1560, 0.84], ["app+0.6", 1530, 640, 0.84, IN], ["tools-0.05", 1505, 625, 0.92], ["tools+0.35", 2060, 760, 0.92, OUT]]);
+    ["tools-0.1", 1160, 415, 0.73], ["tools+0.25", 1170, 400, 0.73]]);
+  const P = trk(g, [["custom", 1560, 1560, 0.84], ["app", 1560, 1560, 0.84], ["app+0.6", 1530, 640, 0.84, IN], ["tools-0.1", 1522, 632, 0.86], ["tools+0.25", 1540, 640, 0.86]]);
   return (
     <>
       {g >= T.f("web") && <Box x={WB[0]} y={WB[1]} w={1200} h={760} s={WB[2]} o={1 - gone}>
@@ -181,9 +181,9 @@ let SPIN = 0;   // the ring's slow turn (radians), set each frame by Tools
 const ringPos = (i: number) => { const a = ((22.5 + 45 * i) * Math.PI) / 180 + SPIN; return { x: HUB.x + 610 * Math.cos(a), y: HUB.y + 300 * Math.sin(a), ux: Math.cos(a), uy: Math.sin(a) }; };
 export const Tools: React.FC<{ g: number }> = ({ g }) => {
   SPIN = 0.22 * Math.max(0, g - T.f("tools")) / 30;
-  const hub = k(g, "tools+0.32", 0.55), hubOut = k(g, "team-0.3", 0.4, OUT);
-  const fl = k(g, "flows", 0.4) * (1 - k(g, "team-0.3", 0.3));
-  const keys = k(g, "copy", 0.4), keys2 = k(g, "paste-0.06", 0.4), keysOut = k(g, "paste+0.55", 0.35, OUT);
+  const hub = k(g, "tools+0.32", 0.55), hubOut = k(g, "team-0.58", 0.3, MOVE);
+  const fl = k(g, "flows", 0.4) * (1 - k(g, "team-0.6", 0.25));
+  const keys = k(g, "copy", 0.4), keys2 = k(g, "paste-0.06", 0.4), keysOut = k(g, "paste+0.36", 0.28, MOVE);
   const strikes = [k(g, "paste+0.06", 0.25, MOVE), k(g, "paste+0.18", 0.25, MOVE)];
   return (
     <>
@@ -191,7 +191,7 @@ export const Tools: React.FC<{ g: number }> = ({ g }) => {
         {RING.map((t, i) => {
           const p = ringPos(i), dx = p.x - HUB.x, dy = p.y - HUB.y, d = Math.hypot(dx, dy), ux = dx / d, uy = dy / d;
           const a = { x: p.x - ux * 82, y: p.y - uy * 82 }, b = { x: HUB.x + ux * (HUB.r + 10), y: HUB.y + uy * (HUB.r + 10) };
-          const kk = k(g, off("connect", 0.035 * i), 0.42, EASE.steady) * (1 - k(g, "team-0.3", 0.3));
+          const kk = k(g, off("connect", 0.035 * i), 0.42, EASE.steady) * (1 - k(g, "team-0.6", 0.25));
           if (kk <= 0) return null;
           return (
             <g key={i}>
@@ -209,16 +209,16 @@ export const Tools: React.FC<{ g: number }> = ({ g }) => {
         const u = ((g - T.f("flows")) / 36 + j / 3) % 1;
         return <Box key={j} x={HUB.x} y={HUB.y} w={HUB.r * 2} h={HUB.r * 2} s={1 + 0.5 * u} o={fl * (1 - u) * 0.8} style={{ borderRadius: "50%", border: `5px solid ${C.cyan}`, boxSizing: "border-box" }} />;
       })}
-      <Box x={HUB.x} y={HUB.y} w={HUB.r * 2} h={HUB.r * 2} s={(0.3 + 0.7 * hub) * (1 - 0.6 * hubOut)} o={Math.min(1, hub * 1.5) * (1 - hubOut)}
+      <Box x={HUB.x} y={HUB.y} w={HUB.r * 2} h={HUB.r * 2} s={(0.7 + 0.3 * hub) * (1 - 0.1 * hubOut)} o={Math.min(1, hub * 1.5) * (1 - hubOut)}
         style={{ borderRadius: "50%", background: C.white, boxShadow: SHADOW.card, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10 }}>
         <IconBox name="layers" size={64} bg={C.cyanSoft} />
         <div style={{ ...txt(32, 800), textAlign: "center", lineHeight: 1.1 }}>Your<br />system</div>
       </Box>
       {RING.map((t, i) => {
-        const p = ringPos(i), a = k(g, off("tools+0.3", 0.07 * i), 0.62, IN), o = k(g, off("team-0.4", 0.03 * i), 0.45, OUT);
+        const p = ringPos(i), a = k(g, off("tools+0.3", 0.07 * i), 0.5), o = k(g, off("team-0.58", 0.02 * i), 0.3, MOVE);
         if (a <= 0 || o >= 1) return null;
-        const away = (1 - a) * 760 + o * 520;
-        return <Box key={t} x={p.x + p.ux * away} y={p.y + p.uy * away} w={128} h={128} o={1 - o}><ToolTile tool={t} size={128} /></Box>;
+        const away = (1 - a) * 40;
+        return <Box key={t} x={p.x + p.ux * away} y={p.y + p.uy * away} w={128} h={128} s={(0.7 + 0.3 * a) * (1 - 0.1 * o)} o={Math.min(1, a * 1.5) * (1 - o)}><ToolTile tool={t} size={128} /></Box>;
       })}
       {/* copy-paste: two keys, each struck out in red on "paste", then gone */}
       {keys > 0 && keysOut < 1 && [["Copy", keys, 748], ["Paste", keys2, 972]].map(([t, a, x], j) => (a as number) > 0 && (

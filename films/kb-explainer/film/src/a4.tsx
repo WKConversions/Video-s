@@ -13,7 +13,8 @@ const k = (g: number, pos: string | number, dur: number, ease = ARRIVE) => T.k(g
 // ---- the team channel -----------------------------------------------------------------------------------------------
 const TEAM = [{ t: "AM", bg: C.cyanSoft }, { t: "JS", bg: "#E3E8EF" }, { t: "RK", bg: "#DCE6F2" }, { t: "LT", bg: U.tint }];
 const MSGS = [
-  { who: "AM", t: "Morning, team!", at: "team+0.6" },
+  { who: "", t: "K.B joined #operations", at: "inside+0.55" },
+  { who: "JS", t: "Welcome, K.B!", at: "w:not" },
   { who: "You", t: "How's it going?", at: "ask" },
   { who: "K.B", t: "The intake form is live.", at: "always" },
   { who: "K.B", t: "CRM sync: testing today.", at: "w:know-0.08" },
@@ -53,9 +54,14 @@ const Channel: React.FC<{ g: number }> = ({ g }) => {
       {MSGS.map((m, i) => {
         const a = k(g, m.at, 0.45);
         if (a <= 0) return null;
-        const av = m.who === "K.B" ? <Avatar size={60} kb /> : m.who === "You" ? <Avatar size={60} text="You" bg={C.cyan} /> : <Avatar size={60} text={m.who} bg={TEAM[0].bg} />;
+        if (!m.who) return (
+          <div key={i} style={{ position: "absolute", left: 340, top: 180, opacity: Math.min(1, a * 1.5), display: "flex", alignItems: "center", gap: 12, ...txt(22, 600, C.muted) }}>
+            <Avatar size={34} kb />{m.t}
+          </div>
+        );
+        const av = m.who === "K.B" ? <Avatar size={60} kb /> : m.who === "You" ? <Avatar size={60} text="You" bg={C.cyan} /> : <Avatar size={60} text={m.who} bg={TEAM[1].bg} />;
         return (
-          <div key={i} style={{ position: "absolute", left: 340, top: 182 + i * 102, opacity: Math.min(1, a * 1.5), transform: `translateY(${(1 - a) * 24}px)`, display: "flex", gap: 16, alignItems: "flex-start" }}>
+          <div key={i} style={{ position: "absolute", left: 340, top: 226 + (i - 1) * 94, opacity: Math.min(1, a * 1.5), transform: `translateY(${(1 - a) * 24}px)`, display: "flex", gap: 16, alignItems: "flex-start" }}>
             {av}
             <div style={{ background: C.white, border: `2px solid ${m.who === "K.B" ? C.cyan : U.skel}`, borderRadius: "6px 20px 20px 20px", padding: "10px 22px 12px", boxShadow: "0 8px 20px -16px rgba(41,58,81,0.35)" }}>
               <div style={{ display: "flex", alignItems: "baseline", gap: 12 }}><span style={txt(21, 700)}>{m.who}</span><span style={txt(18, 600, C.muted)}>now</span></div>
@@ -68,10 +74,10 @@ const Channel: React.FC<{ g: number }> = ({ g }) => {
   );
 };
 export const Team: React.FC<{ g: number }> = ({ g }) => {
-  const W = trk(g, [["team", 960, 980, 0], ["team+0.8", 960, 560, 1, IN], ["launch", 960, 560, 1], ["launch+0.35", 960, 860, 0, OUT]]);
+  const W = trk(g, [["team", 960, 980, 0], ["team+0.8", 960, 560, 1, IN], ["launch-0.3", 960, 560, 1], ["launch", 960, 860, 0, OUT]]);
   if (W[2] <= 0) return null;
   return (
-    <Box x={W[0]} y={W[1]} w={1440} h={820} o={W[2]} s={0.97 * (1 + 0.08 * k(g, "team+0.8", 4.0, EASE.steady))}>
+    <Box x={W[0]} y={W[1]} w={1440} h={820} o={W[2]} s={0.97 * (1 + 0.03 * k(g, "team+0.8", 4.0, EASE.steady))}>
       <Win w={1440} h={820} logo={false} title={<BarTitle g={g} text="" at="team+0.3"><Icon name="chat" size={30} color={C.white} />Team channel</BarTitle>}><Channel g={g} /></Win>
     </Box>
   );
@@ -79,7 +85,7 @@ export const Team: React.FC<{ g: number }> = ({ g }) => {
 
 // ---- launch ------------------------------------------------------------------------------------------------------------
 export const Launch: React.FC<{ g: number }> = ({ g }) => {
-  const L = trk(g, [["launch", 960, 900, 0], ["launch+0.7", 960, 560, 1, IN], ["stay", 960, 560, 1], ["stay+0.3", 960, 440, 0, OUT]]);
+  const L = trk(g, [["launch", 960, 900, 0], ["launch+0.6", 960, 560, 1, IN], ["stay-0.1", 960, 560, 1], ["stay+0.2", 960, 440, 0, OUT]]);
   if (L[2] <= 0) return null;
   const live = k(g, "live", 0.3), pulse = Math.min(1, Math.max(0, (g - T.f("live+0.05")) / 18));
   const cur = trk(g, [["launch+0.2", 1300, 900, 0], ["live-0.06", 985, 668, 1, MOVE], ["live+0.5", 1030, 720, 1], ["stay", 1030, 720, 0]]);
@@ -138,13 +144,14 @@ const Grid: React.FC<{ g: number; m: number; fill: boolean }> = ({ g, m, fill })
   );
 };
 const Calendar: React.FC<{ g: number }> = ({ g }) => {
-  const o2 = k(g, "month2", 0.22, OUT), i2 = k(g, "month2+0.18", 0.42), o3 = k(g, "month3", 0.22, OUT), i3 = k(g, "month3+0.18", 0.42);
+  const o2 = k(g, "month2", 0.2, MOVE), i2 = k(g, "month2+0.22", 0.4), o3 = k(g, "month3", 0.2, MOVE), i3 = k(g, "month3+0.22", 0.4);
   const t2 = k(g, "month2", 0.5, MOVE), t3 = k(g, "month3", 0.5, MOVE);
   const shipped = [k(g, "feat+0.3", 0.3), k(g, "month2+0.75", 0.3), k(g, "month3+0.7", 0.3)];
   const n = shipped.filter((v) => v > 0.5).length;
   // the old month leaves before the new one comes in (no doubled grid)
   const mo = [{ x: -260 * o2, o: 1 - o2 }, { x: 260 * (1 - i2) - 260 * o3, o: Math.min(i2, 1 - o3) }, { x: 260 * (1 - i3), o: i3 }];
   const call = k(g, "w:stay", 0.45), hostL = k(g, "hosting", 0.35), mainL = k(g, "maint", 0.35);
+  const ping = (g - T.f("w:stay+0.6")) / 20, ping2 = (g - T.f("w:stay+1.3")) / 20;
   return (
     <>
       <div style={{ position: "absolute", left: 60, top: 26, height: 46, overflow: "hidden" }}>
@@ -154,6 +161,7 @@ const Calendar: React.FC<{ g: number }> = ({ g }) => {
       </div>
       <div style={{ position: "absolute", left: 270, top: 24, opacity: call, transform: `translateY(${(1 - call) * -16}px)`, display: "flex", alignItems: "center", gap: 10, height: 50, padding: "0 18px 0 7px", borderRadius: 25, background: C.cyanSoft }}>
         <Avatar size={38} kb /><span style={txt(22, 700)}>K.B · on call</span>
+        {[ping, ping2].map((p, j) => p > 0 && p < 1 && <div key={j} style={{ position: "absolute", inset: -10 * p, borderRadius: 25 + 10 * p, border: `3px solid ${C.cyan}`, opacity: 1 - p }} />)}
       </div>
       <div style={{ position: "absolute", left: 560, top: 34, display: "flex", gap: 22 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10, opacity: hostL }}><div style={{ width: 30, height: 14, borderRadius: 7, background: HOST }} /><span style={txt(22, 700)}>Hosting</span></div>
@@ -174,10 +182,10 @@ const Calendar: React.FC<{ g: number }> = ({ g }) => {
   );
 };
 export const Plan: React.FC<{ g: number }> = ({ g }) => {
-  const W = trk(g, [["stay+0.15", 960, 980, 0], ["stay+0.9", 960, 560, 1, IN], ["loop-0.18", 960, 560, 1], ["loop+0.12", 960, 860, 0, OUT]]);
-  if (W[2] <= 0 || g < T.f("stay+0.15")) return null;
+  const W = trk(g, [["stay+0.26", 960, 980, 0], ["stay+1.0", 960, 560, 1, IN], ["loop-0.18", 960, 560, 1], ["loop+0.12", 960, 860, 0, OUT]]);
+  if (W[2] <= 0 || g < T.f("stay+0.26")) return null;
   return (
-    <Box x={W[0]} y={W[1]} w={1440} h={820} o={W[2]} s={0.97 * (1 + 0.08 * k(g, "stay+0.9", 5.0, EASE.steady))}>
+    <Box x={W[0]} y={W[1]} w={1440} h={820} o={W[2]} s={0.97 * (1 + 0.03 * k(g, "stay+0.9", 5.0, EASE.steady))}>
       <Win w={1440} h={820} title={<BarTitle g={g} text="" at="stay+0.4"><Icon name="calendar" size={30} color={C.white} />Monthly plan</BarTitle>}
         right={<div style={{ opacity: k(g, "stay+0.6", 0.3) }}><Pill bg={C.white} color={C.navy} size={20} dot={C.cyan}>Live</Pill></div>}>
         <Calendar g={g} />
@@ -249,7 +257,7 @@ export const Loop: React.FC<{ g: number }> = ({ g }) => {
 // ---- the end card -----------------------------------------------------------------------------------------------------
 export const End: React.FC<{ g: number }> = ({ g }) => {
   const a = k(g, "talk+0.1", 0.45), b = k(g, "w:kb2-0.1", 0.5);
-  const words = [{ t: "Talk", at: "w:talk" }, { t: "to", at: "w:to3" }, { t: "K.B.", at: "w:kb2" }];
+  const words = [{ t: "Talk", at: "w:talk" }, { t: "to", at: "w:to3" }, { t: "K.B", at: "w:kb2" }];
   return (
     <>
       <Box x={960} y={330} w={220} h={220} s={0.85 + 0.15 * a} o={a}><KBTile size={220} /></Box>

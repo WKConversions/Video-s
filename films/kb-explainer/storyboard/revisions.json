@@ -1,0 +1,72 @@
+[
+ {
+  "before": "The view pushed into the window (up to 1.45×) on friction, the dropdown, the activity and the intake form, cropping the window at the frame edge and sliding its title bar under the corner mark.",
+  "after": "The window stays whole in the frame, clear of the corner mark, and only creeps (≤ 3% a second); for emphasis a card lifts out of it with a deeper shadow: the two manual steps, the dropdown, the activity strip, the form.",
+  "why": "The reference lifts cards out of a window that stays put; the push-ins read as camera zooms on transitions, which K.B's camera rule forbids (both reviews)."
+ },
+ {
+  "before": "A new body faded in over the old one (\"To do\" over \"Current process\", the form over the board); the months of the plan cross-faded into a doubled grid.",
+  "after": "The old body slides left and is gone in 0.25 s before the new one comes in from the right; the months turn the same way.",
+  "why": "Two screens at once read as a glitch (both reviews)."
+ },
+ {
+  "before": "The camera's breathing drift showed the stage's own edge as hard lines inside the frame.",
+  "after": "The stage is 80 px larger than the frame on every side.",
+  "why": "A rendering bug (craft review)."
+ },
+ {
+  "before": "\"With you\" was two 52 px chips in the title bar; the \"You\" chip covered the B, so it read \"K.E\".",
+  "after": "A large K.B tile drops in from above and a large \"You\" rises from below; they meet over the workspace.",
+  "why": "The line needs a picture, and the brand mark was mangled (both reviews)."
+ },
+ {
+  "before": "Automations got a cyan outline and a small corner check.",
+  "after": "Its card fills with cyan, lifts 1.2×, shows a big check and a small burst; the other modules switch on quietly on \"runs\".",
+  "why": "The reference's module switching on is the opening's key moment (fidelity review)."
+ },
+ {
+  "before": "The process audit opened on an empty window; a cyan gradient swept across it on \"audit\".",
+  "after": "Dashed placeholders for the steps arrive with the window, and a magnifier passes over them on \"audit\", lighting each one.",
+  "why": "The sweep looked like a render glitch; the window looked empty (both reviews)."
+ },
+ {
+  "before": "The phone appeared only twice.",
+  "after": "The client's phone comes back during the workflow and receives the follow-up email (\"Thanks, Jordan! Here's what happens next.\").",
+  "why": "In the reference the phone is a recurring co-star (fidelity review)."
+ },
+ {
+  "before": "The Make and n8n tiles landed without names; the AI agent dropped through \"Runs today\".",
+  "after": "Each tile shows its name for a second as it lands; the AI agent slides in from the right.",
+  "why": "Viewers who don't know the logos missed the spoken names; a collision (both reviews)."
+ },
+ {
+  "before": "\"Copy\" and \"Paste\" were small keys at the top edge, struck by one cyan line that missed \"Paste\".",
+  "after": "Two large keys, each struck out in red on \"paste\", then gone.",
+  "why": "Cyan read as a highlight, not a \"no\" (both reviews)."
+ },
+ {
+  "before": "The K.B avatar slid along the team row, over \"4 members\" and through two people.",
+  "after": "The team makes room, K.B takes the seat, and the count changes to 5 as it lands; the messages fill the channel from the top.",
+  "why": "A collision, and an empty channel (both reviews)."
+ },
+ {
+  "before": "The monthly plan had a solid navy and a solid cyan bar across every week; the New feature chip covered the dates.",
+  "after": "Thin Hosting and Maintenance lines with a legend; the New feature chip sits inside its day, which lights up; \"K.B · on call\" is pinned to the month on \"we stay on\".",
+  "why": "The heaviest frame of the film, and \"we stay on\" showed an empty calendar (both reviews)."
+ },
+ {
+  "before": "The loop drew over the leaving calendar, grew until \"Diagnose\" was clipped, then shrank 82% into the logo.",
+  "after": "The plan leaves first; the road draws from Diagnose to each station before it is named; the loop grows only 3%; it fades before the logo comes in.",
+  "why": "Overlap, clipping, and a zoom on a transition (both reviews)."
+ },
+ {
+  "before": "Green fills (Sent, Live, Running) and green check marks.",
+  "after": "Navy buttons and pills with a cyan dot or a cyan check.",
+  "why": "Off-brand, and white on green failed contrast (craft review)."
+ },
+ {
+  "before": "The end card was the logo and a navy button, arriving 2 s before the end; the shapes kept spinning.",
+  "after": "The logo, \"Talk to K.B.\" built word by word on the voice, and a cyan \"Book a Free Discovery Call\" button; the shapes ease to a stop.",
+  "why": "The reference's button is in the action colour and echoes the spoken line; a calm sign-off (both reviews)."
+ }
+]

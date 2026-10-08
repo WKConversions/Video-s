@@ -21,7 +21,7 @@ const TITLE = "Your business";
 /** The workspace body (1440 × 684): eight module cards; on "automation" the Automations card fills with cyan, lifts
  *  and shows a big check with a small burst (the reference's module switching on); then every module runs. */
 const Workspace: React.FC<{ g: number }> = ({ g }) => {
-  const lift = k(g, "auto", 0.5, MOVE), fill = k(g, "auto+0.08", 0.3, MOVE), dim = k(g, "auto+0.05", 0.4) * (1 - k(g, "runs", 0.45));
+  const lift = k(g, "auto", 0.5, MOVE), fill = k(g, "auto+0.08", 0.3, MOVE), dim = Math.max(k(g, "auto+0.05", 0.4) * (1 - k(g, "runs", 0.45)), 1.3 * k(g, "chips", 0.4));
   const chk = k(g, "auto+0.26", 0.4), burst = Math.min(1, Math.max(0, (g - T.f("auto+0.28")) / 16));
   return (
     <div style={{ position: "absolute", left: 0, top: 0, width: 1440, height: 684 }}>
@@ -34,7 +34,7 @@ const Workspace: React.FC<{ g: number }> = ({ g }) => {
         const on = isAuto ? 1 : k(g, off("runs", 0.05 * i), 0.28, MOVE);
         const s = isAuto ? 1 + 0.2 * lift : 1;
         return (
-          <div key={i} style={{ position: "absolute", left: x, top: y, width: 312, height: 266, opacity: a * (isAuto ? 1 : 1 - 0.5 * dim), zIndex: isAuto ? 2 : 1,
+          <div key={i} style={{ position: "absolute", left: x, top: y, width: 312, height: 266, opacity: a * (1 - 0.5 * Math.min(1, dim) * (isAuto ? k(g, "chips", 0.4) : 1)), zIndex: isAuto ? 2 : 1,
             transform: `translateY(${(1 - a) * 40 + (isAuto ? 14 * lift : 0)}px) scale(${s})`, transformOrigin: "50% 50%" }}>
             {isAuto && burst > 0 && burst < 1 && <>
               <div style={{ position: "absolute", inset: -14 - 40 * burst, borderRadius: 26 + 30 * burst, border: `4px solid ${C.cyan}`, opacity: 1 - burst }} />
@@ -82,8 +82,8 @@ export const Act1: React.FC<{ g: number }> = ({ g }) => {
   const A = trk(g, [["open", 650, 300, 250, 0], ["open+0.5", 800, 385, 290, 1, ARRIVE], ["dock", 800, 385, 290, 1], ["dock+0.55", 960, 540, 440, 1, MOVE], ["grow", 960, 540, 452, 1]]);
   const B = trk(g, [["open", 1320, 830, 230, 0], ["open+0.5", 1125, 700, 290, 1, ARRIVE], ["dock", 1125, 700, 290, 1], ["dock+0.55", 960, 540, 440, 1, MOVE], ["grow", 960, 540, 452, 1]]);
   // the window: centre x, y, w, h, radius, scale, opacity
-  const M = trk(g, [["grow", 960, 540, 452, 452, 226, 1, 1], ["grow+0.75", 960, 560, W1.w, W1.h, 26, 1, 1, MOVE], ["shift", 960, 560, W1.w, W1.h, 26, 1.065, 1],
-    ["shift+0.55", 790, 560, W1.w, W1.h, 26, 0.84, 1, MOVE], ["away", 770, 560, W1.w, W1.h, 26, 0.875, 1], ["away+0.3", 170, 560, W1.w, W1.h, 26, 0.875, 0, OUT]]);
+  const M = trk(g, [["grow", 960, 540, 452, 452, 226, 1, 1], ["grow+0.75", 960, 560, W1.w, W1.h, 26, 1, 1, MOVE], ["shift-0.1", 960, 560, W1.w, W1.h, 26, 1.02, 1],
+    ["shift+0.6", 800, 560, W1.w, W1.h, 26, 0.88, 1, MOVE], ["away", 790, 560, W1.w, W1.h, 26, 0.89, 1], ["away+0.3", 190, 560, W1.w, W1.h, 26, 0.89, 0, OUT]]);
   const chrome = k(g, "grow+0.32", 0.4);
   // the K.B tile and the "Your business" words travel from the circles into the lockup, then into the app bar
   // the K.B tile and the "Your business" words travel from the circles into the lockup, then into the app bar of the

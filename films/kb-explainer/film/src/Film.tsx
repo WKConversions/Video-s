@@ -7,7 +7,7 @@ import { Audio } from "@remotion/media";
 import { fontsReady } from "./fonts";
 import { breathe } from "./kinetic";
 import { C } from "./lib";
-import { Story } from "./Story";
+import { CornerMark, Story } from "./Story";
 import { DURATION } from "./clock";
 
 export const FILM_DURATION = DURATION;
@@ -38,6 +38,7 @@ const Camera: React.FC = () => {
       <AbsoluteFill data-probe="camera" style={{ transform: `translate(${cam.x}px, ${cam.y}px) scale(${cam.s}) perspective(4000px) rotateX(0.01deg)`, transformOrigin: "50% 50%", willChange: "transform" }}>
         <Story g={g} />
       </AbsoluteFill>
+      <CornerMark g={g} />
     </AbsoluteFill>
   );
 };
