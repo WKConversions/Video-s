@@ -124,12 +124,12 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
   const floorTop1 = g < T.f("land") ? lerp(330, 700, k(g, "w:should-0.1", 0.62, MOVE)) : by + bh / 2;   // the business stands on it
   const floorA = g < T.f("where") + 20;
   const floorY = lerp(on(g, "open", "slide") ? floorTop1 : 840, 1250, k(g, "where-0.05", 0.55, DEPART));
-  const off1 = travelled(g, [[0, 150], [45, 150], [T.f("w:hold"), 120], [T.f("sink+0.6"), 70]]);
-  const off2 = travelled(g, [[0, 120], [45, 120], [T.f("w:hold"), 95], [T.f("sink+0.6"), 55]]);
+  const off1 = travelled(g, [[0, 115], [45, 115], [T.f("w:hold"), 95], [T.f("sink+0.6"), 60]]);
+  const off2 = travelled(g, [[0, 90], [45, 90], [T.f("w:hold"), 75], [T.f("sink+0.6"), 45]]);
   const tmA = g >= T.f("floorIn") - 2;
   const tmEdge = lerp(1960, -300, k(g, "floorIn", 0.65, SOFT));
   const tmY = 860 + 400 * k(g, "drop", 0.55, DEPART);
-  const tmOff = 120 * t;
+  const tmOff = 95 * t;
 
   // ---- grip tiles (on "hold": they turn their blank backs over the business's foot) ----
   const gripK = k(g, "grip", 0.32);
@@ -342,8 +342,8 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
           <circle cx={1570} cy={762} r={12} fill={g >= T.f("ride+0.9") ? C.navy : C.cyan} opacity={roadK > 0.95 ? 1 : 0} />
         </svg>
       )}
-      {on(g, "road", "gather+0.4") && <Line g={g} words={[{ t: "Strategy", at: "w:strategy-0.08" }]} x={370} y={800} size={54} weight={700} color={C.navy} out="gather" />}
-      {on(g, "ride", "gather+0.4") && <Line g={g} words={[{ t: "Implementation", at: "w:implementation+0.25" }]} x={1570 - 470} y={800} size={54} weight={700} color={C.navy} out="gather" />}
+      {on(g, "road", "gather+0.4") && <Line g={g} words={[{ t: "Strategy", at: "w:strategy-0.08" }]} x={370} y={800} size={54} weight={700} color={C.navy} out="gather" style={{ willChange: "transform" }} />}
+      {on(g, "ride", "gather+0.4") && <Line g={g} words={[{ t: "Implementation", at: "w:implementation+0.25" }]} x={1570 - 470} y={800} size={54} weight={700} color={C.navy} out="gather" style={{ willChange: "transform" }} />}
 
       {/* the grip: two tiles slide in along the floor and clamp the business's feet, turning their blank backs */}
       {on(g, "grip-0.02", "slide+0.4") && [-1, 1].map((s) => {
@@ -384,10 +384,10 @@ export const Story: React.FC<{ g: number }> = ({ g }) => {
             opacity: clamp01(growIn * 1.6) * (1 - growOut), transform: `translateY(${(1 - growIn) * 60 - growOut * 50}px)`, filter: growIn < 1 || growOut > 0 ? `blur(${(1 - growIn) * 10 + growOut * 10}px)` : undefined }}>grow</div>
         </div>
       )}
-      {on(g, "where-0.2", "close+0.4") && <Line g={g} words={whereWords} x={1010} y={92} size={96} weight={700} color={C.ink} out="close" split />}
-      {on(g, "w:tech-0.2", "first+0.5") && <Line g={g} words={partnerWords} x={578} y={588} size={60} weight={800} color={C.navy} out="first" style={{ fontFamily: F.logo, letterSpacing: "0.02em", flexDirection: "column", gap: 14 }} ls={0.02} />}
-      {on(g, "alone-0.1", "drop+0.3") && <Line g={g} words={aloneWords} x={110} y={330} size={210} weight={800} color={C.navy} out="w:it2+0.02" split />}
-      {g >= T.f("up-0.2") && <Line g={g} words={endWords} x={1060} y={430} size={84} weight={700} color={C.ink} />}
+      {on(g, "where-0.2", "close+0.4") && <Line g={g} words={whereWords} x={1010} y={92} size={96} weight={700} color={C.ink} out="close" split style={{ willChange: "transform" }} />}
+      {on(g, "w:tech-0.2", "first+0.5") && <Line g={g} words={partnerWords} x={578} y={588} size={60} weight={800} color={C.navy} out="first" style={{ fontFamily: F.logo, letterSpacing: "0.02em", flexDirection: "column", gap: 14, willChange: "transform" }} ls={0.02} />}
+      {on(g, "alone-0.1", "drop+0.3") && <Line g={g} words={aloneWords} x={110} y={330} size={210} weight={800} color={C.navy} out="w:it2+0.02" split style={{ willChange: "transform" }} />}
+      {g >= T.f("up-0.2") && <Line g={g} words={endWords} x={1060} y={430} size={84} weight={700} color={C.ink} style={{ willChange: "transform" }} />}
       {g >= T.f("rest+0.55") && (() => {
         const b = k(g, "rest+0.55", 0.5);
         return (

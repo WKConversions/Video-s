@@ -12,7 +12,7 @@ const FOUNDERS = staticFile("img/team/founders.jpg");
  *  picture keeps travelling (≈40–75 px/s at 900 px) inside a frame that holds still. t in seconds. */
 export const footagePan = (t: number, w: number, h: number, zoom: number) => {
   const S = Math.max(w, h) * zoom;
-  const ax = Math.min(0.07 * S, (S - w) / 2 - 2), ay = Math.min(0.06 * S, (S - h) / 2 - 2);
+  const ax = Math.min(0.042 * S, (S - w) / 2 - 2), ay = Math.min(0.036 * S, (S - h) / 2 - 2);
   return { S, fx: (w - S) / 2 + ax * Math.sin((t / 11) * 2 * Math.PI + 0.6), fy: (h - S) / 2 + ay * Math.sin((t / 8.3) * 2 * Math.PI + 1.9) };
 };
 
@@ -150,8 +150,8 @@ export const Biz: React.FC<{
 /** The founders' photo (the site's About photo, Málaga) in a tile, drifting slowly across the three of them. */
 export const Founders: React.FC<{ t: number; w: number; h: number; radius?: number }> = ({ t, w, h, radius = 0.12 }) => {
   const H = h * 1.32, W = H * (2800 / 2100);
-  const x = (w - W) / 2 + Math.min(0.12 * W, (W - w) / 2 - 2) * Math.sin((t / 9.5) * 2 * Math.PI - 0.4);
-  const y = (h - H) / 2 + Math.min(0.06 * H, (H - h) / 2 - 2) * Math.sin((t / 7.1) * 2 * Math.PI + 0.8);
+  const x = (w - W) / 2 + Math.min(0.07 * W, (W - w) / 2 - 2) * Math.sin((t / 9.5) * 2 * Math.PI - 0.4);
+  const y = (h - H) / 2 + Math.min(0.035 * H, (H - h) / 2 - 2) * Math.sin((t / 7.1) * 2 * Math.PI + 0.8);
   return (
     <div style={{ width: w, height: h, borderRadius: Math.min(w, h) * radius, overflow: "hidden", position: "relative", background: C.pale }}>
       <Img src={FOUNDERS} style={{ position: "absolute", left: 0, top: 0, width: W, height: H, transform: `translate(${x}px, ${y}px)`, willChange: "transform" }} />
