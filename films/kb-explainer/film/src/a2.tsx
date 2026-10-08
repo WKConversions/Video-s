@@ -37,6 +37,13 @@ const Audit: React.FC<{ g: number }> = ({ g }) => {
     <Abs x={0} y={0} w={1440} h={704} o={p.o} dy={p.dy}>
       <div style={{ position: "absolute", left: 68, top: 48, ...txt(32, 700) }}>Current process</div>
       <div style={{ position: "absolute", left: 68, top: 96, opacity: k(g, "steps", 0.4), ...txt(22, 600, C.muted) }}>How the work moves today</div>
+      {(() => { const sc = k(g, "w:audit-0.12", 1.0, MOVE), so = Math.min(1, sc * 6, (1 - sc) * 6); return sc > 0 && sc < 1 && (
+        <div style={{ position: "absolute", left: lerp(-200, 1440, sc), top: 150, width: 200, height: 280, opacity: so,
+          background: `linear-gradient(90deg, rgba(56,200,255,0) 0%, rgba(56,200,255,0.28) 80%, ${C.cyan} 100%)`, borderRight: `4px solid ${C.cyan}` }} />
+      ); })()}
+      {STEPS.map((s, i) => { const a = k(g, off("w:audit-0.12", 0.12 + 0.17 * i), 0.3) * (1 - k(g, off("steps", 0.13 * i), 0.3)); return a > 0 && (
+        <div key={i} style={{ position: "absolute", left: stepX(i), top: 180, width: 216, height: 210, borderRadius: 18, border: `3px dashed ${U.skelD}`, boxSizing: "border-box", opacity: a }} />
+      ); })}
       {STEPS.map((s, i) => {
         const a = k(g, off("steps", 0.13 * i), 0.45);
         const flag = FLAGS[i] ? k(g, FLAGS[i], 0.35) : 0;
@@ -304,10 +311,12 @@ export const Main: React.FC<{ g: number }> = ({ g }) => {
   const W = trk(g, [["audit", 960, 1520, 1], ["audit+0.7", 960, 560, 1, IN], ["need", 960, 560, 1], ["need+0.5", 960, 1000, 0, OUT]]);
   if (W[2] <= 0) return null;
   const v = trk(g, [
-    ["audit", 0, 0, 1], ["friction", ...focus(960, 556, 1.02)], ["friction+0.7", ...focus(960, 556, 1.14), MOVE], ["pick", ...focus(960, 556, 1.15)],
-    ["pick+0.7", ...focus(700, 690, 1.34), MOVE], ["board-0.06", ...focus(700, 690, 1.36)], ["board+0.55", 0, 0, 1, MOVE], ["open2", ...focus(960, 560, 1.01)],
-    ["open2+0.7", ...focus(960, 860, 1.3), MOVE], ["form-0.12", ...focus(960, 860, 1.32)], ["form+0.5", 0, 0, 1, MOVE], ["make", ...focus(960, 560, 1.02)],
-    ["make+0.8", ...focus(960, 520, 1.08), MOVE], ["ai", ...focus(1000, 520, 1.09)], ["ai+0.7", ...focus(1080, 520, 1.1), MOVE], ["need", ...focus(1080, 520, 1.11)],
+    // every hold creeps in (the reference's slow push), every change of subject is a MOVE
+    ["audit", 0, 0, 1], ["audit+0.7", 0, 0, 1], ["friction", ...focus(960, 556, 1.1)], ["friction+0.7", ...focus(960, 556, 1.18), MOVE], ["pick", ...focus(960, 556, 1.23)],
+    ["pick+0.7", ...focus(700, 690, 1.36), MOVE], ["board-0.06", ...focus(700, 690, 1.45)], ["board+0.55", 0, 0, 1, MOVE], ["open2", ...focus(960, 600, 1.06)],
+    ["open2+0.7", ...focus(960, 860, 1.3), MOVE], ["form-0.12", ...focus(960, 860, 1.39)], ["form+0.5", ...focus(960, 618, 1.28), MOVE], ["flow", ...focus(960, 618, 1.36)],
+    ["flow+0.6", ...focus(960, 520, 1.05), MOVE], ["make", ...focus(960, 520, 1.12)],
+    ["make+0.8", ...focus(980, 500, 1.15), MOVE], ["ai", ...focus(1000, 500, 1.18)], ["ai+0.7", ...focus(1080, 500, 1.2), MOVE], ["need", ...focus(1080, 500, 1.27)],
   ]);
   const presence = (d: number) => ({ opacity: k(g, off("board+0.3", d), 0.3) * (1 - k(g, "form", 0.3)), transform: `scale(${0.5 + 0.5 * k(g, off("board+0.3", d), 0.45)})` });
   const running = k(g, "run+0.1", 0.35);

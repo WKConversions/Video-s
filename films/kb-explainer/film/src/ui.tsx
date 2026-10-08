@@ -186,7 +186,7 @@ export const Blobs: React.FC<{ g: number }> = ({ g }) => {
     <>
       {B.map((b, i) => (
         <div key={i} style={{ position: "absolute", left: b.x - b.r, top: b.y - b.r, width: 2 * b.r, height: 2 * b.r, borderRadius: "50%", background: "#EEF0F4",
-          transform: `translate(${Math.sin(g / 140 + b.p) * 46}px, ${Math.cos(g / 170 + b.p) * 34}px)` }} />
+          transform: `translate(${Math.sin(g / 100 + b.p) * 70}px, ${Math.cos(g / 120 + b.p) * 50}px)` }} />
       ))}
     </>
   );

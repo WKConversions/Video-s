@@ -76,8 +76,8 @@ export const Act1: React.FC<{ g: number }> = ({ g }) => {
   const A = trk(g, [["open", 650, 300, 250, 0], ["open+0.5", 800, 385, 290, 1, ARRIVE], ["dock", 800, 385, 290, 1], ["dock+0.55", 960, 540, 440, 1, MOVE], ["grow", 960, 540, 452, 1]]);
   const B = trk(g, [["open", 1320, 830, 230, 0], ["open+0.5", 1125, 700, 290, 1, ARRIVE], ["dock", 1125, 700, 290, 1], ["dock+0.55", 960, 540, 440, 1, MOVE], ["grow", 960, 540, 452, 1]]);
   // the window: centre x, y, w, h, radius, scale, opacity
-  const M = trk(g, [["grow", 960, 540, 452, 452, 226, 1, 1], ["grow+0.75", 960, 560, W1.w, W1.h, 26, 1, 1, MOVE], ["shift", 960, 560, W1.w, W1.h, 26, 1, 1],
-    ["shift+0.55", 790, 560, W1.w, W1.h, 26, 0.84, 1, MOVE], ["away", 790, 560, W1.w, W1.h, 26, 0.84, 1], ["away+0.45", 190, 560, W1.w, W1.h, 26, 0.84, 0, OUT]]);
+  const M = trk(g, [["grow", 960, 540, 452, 452, 226, 1, 1], ["grow+0.75", 960, 560, W1.w, W1.h, 26, 1, 1, MOVE], ["shift", 960, 560, W1.w, W1.h, 26, 1.065, 1],
+    ["shift+0.55", 790, 560, W1.w, W1.h, 26, 0.84, 1, MOVE], ["away", 770, 560, W1.w, W1.h, 26, 0.875, 1], ["away+0.45", 170, 560, W1.w, W1.h, 26, 0.875, 0, OUT]]);
   const chrome = k(g, "grow+0.32", 0.4);
   // the K.B tile and the "Your business" words travel from the circles into the lockup, then into the app bar
   // the K.B tile and the "Your business" words travel from the circles into the lockup, then into the app bar of the

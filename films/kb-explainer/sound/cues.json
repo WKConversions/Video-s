@@ -1,0 +1,886 @@
+{
+ "fps": 30,
+ "frames": 1740,
+ "library": "lib",
+ "vo": {
+  "file": "../film/public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.2,
+  "fade_out": 0.8
+ },
+ "sfx": [
+  {
+   "id": "gen-whoosh-short",
+   "frame": 4,
+   "db": -6,
+   "note": "the two circles drift in"
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 34,
+   "db": -9,
+   "note": "they dock into one"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 56,
+   "db": -5,
+   "note": "the circle opens into the window"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 67,
+   "db": -10,
+   "note": "module cards land"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 70,
+   "db": -10,
+   "pitch": 1,
+   "note": "module cards land"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 73,
+   "db": -10,
+   "pitch": 2,
+   "note": "module cards land"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 76,
+   "db": -10,
+   "pitch": 3,
+   "note": "module cards land"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 99,
+   "db": -3,
+   "note": "Automations switches on"
+  },
+  {
+   "id": "gen-success",
+   "frame": 103,
+   "db": -4,
+   "note": "its check"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 131,
+   "db": -7,
+   "pitch": 1,
+   "note": "every module runs"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 133,
+   "db": -7,
+   "pitch": 2,
+   "note": "every module runs"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 134,
+   "db": -7,
+   "note": "every module runs"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 136,
+   "db": -7,
+   "pitch": 1,
+   "note": "every module runs"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 137,
+   "db": -7,
+   "pitch": 2,
+   "note": "every module runs"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 139,
+   "db": -7,
+   "note": "every module runs"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 140,
+   "db": -7,
+   "pitch": 1,
+   "note": "every module runs"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 143,
+   "db": -4,
+   "note": "the phone slides in"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 163,
+   "db": -6,
+   "pitch": 2,
+   "note": "K.B joins"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 166,
+   "db": -6,
+   "pitch": 4,
+   "note": "You join"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 193,
+   "db": -6,
+   "note": "everything leaves left"
+  },
+  {
+   "id": "gen-appear",
+   "frame": 193,
+   "db": -3,
+   "note": "How?"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 220,
+   "db": -5,
+   "note": "the audit window rises (the band comes in)"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 223,
+   "db": -9,
+   "note": "the title types"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 227,
+   "db": -9,
+   "pitch": 1,
+   "note": "the title types"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 230,
+   "db": -9,
+   "note": "the title types"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 234,
+   "db": -9,
+   "pitch": 1,
+   "note": "the title types"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 281,
+   "db": -8,
+   "note": "a step lands"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 285,
+   "db": -8,
+   "pitch": 1,
+   "note": "a step lands"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 289,
+   "db": -8,
+   "pitch": 2,
+   "note": "a step lands"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 293,
+   "db": -8,
+   "pitch": 3,
+   "note": "a step lands"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 296,
+   "db": -8,
+   "pitch": 4,
+   "note": "a step lands"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 329,
+   "db": -9,
+   "note": "the view pushes in"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 336,
+   "db": -2,
+   "pitch": -5,
+   "note": "Manual: Intake"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 344,
+   "db": -2,
+   "pitch": -5,
+   "note": "Manual: Follow-up"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 370,
+   "db": -3,
+   "note": "the priority opens"
+  },
+  {
+   "id": "gen-appear",
+   "frame": 371,
+   "db": -8,
+   "note": "the list drops"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 382,
+   "db": -6,
+   "note": "Later \u2192 Next"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 387,
+   "db": -6,
+   "pitch": 1,
+   "note": "Next \u2192 First"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 392,
+   "db": -2,
+   "pitch": 2,
+   "note": "First"
+  },
+  {
+   "id": "gen-success",
+   "frame": 395,
+   "db": -5,
+   "note": "chosen"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 428,
+   "db": -6,
+   "note": "the view pulls back, the board comes in"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 443,
+   "db": -4,
+   "note": "K.B grabs Intake form"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 453,
+   "db": -9,
+   "note": ""
+  },
+  {
+   "id": "gen-tap",
+   "frame": 464,
+   "db": -3,
+   "pitch": 3,
+   "note": "and drops it in Building"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 453,
+   "db": -4,
+   "pitch": 1,
+   "note": "You grab CRM sync"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 464,
+   "db": -9,
+   "pitch": 1,
+   "note": ""
+  },
+  {
+   "id": "gen-tap",
+   "frame": 474,
+   "db": -3,
+   "pitch": 4,
+   "note": "and drop it"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 489,
+   "db": -8,
+   "note": "the view pushes into the activity"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 488,
+   "db": -5,
+   "pitch": 3,
+   "note": "Shared with your team"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 522,
+   "db": -6,
+   "note": "the form rises"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 518,
+   "db": -10,
+   "note": "typing"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 520,
+   "db": -10,
+   "pitch": 1,
+   "note": "typing"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 522,
+   "db": -10,
+   "pitch": 2,
+   "note": "typing"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 524,
+   "db": -10,
+   "note": "typing"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 524,
+   "db": -10,
+   "note": "typing"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 526,
+   "db": -10,
+   "pitch": 1,
+   "note": "typing"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 528,
+   "db": -10,
+   "pitch": 2,
+   "note": "typing"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 530,
+   "db": -10,
+   "note": "typing"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 532,
+   "db": -10,
+   "note": "typing"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 533,
+   "db": -10,
+   "pitch": 1,
+   "note": "typing"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 535,
+   "db": -10,
+   "pitch": 2,
+   "note": "typing"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 537,
+   "db": -10,
+   "note": "typing"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 541,
+   "db": -2,
+   "note": "Send"
+  },
+  {
+   "id": "gen-success",
+   "frame": 542,
+   "db": -4,
+   "note": "Sent"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 556,
+   "db": -6,
+   "note": "the form folds into the workflow"
+  },
+  {
+   "id": "gen-chime",
+   "frame": 574,
+   "db": -6,
+   "note": "CRM updated"
+  },
+  {
+   "id": "gen-chime",
+   "frame": 600,
+   "db": -6,
+   "pitch": 3,
+   "note": "follow-up sent"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 604,
+   "db": -7,
+   "pitch": 5,
+   "note": "Running"
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 648,
+   "db": -9,
+   "note": "Make lands on its node"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 648,
+   "db": -6,
+   "note": ""
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 669,
+   "db": -9,
+   "note": "n8n lands"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 669,
+   "db": -6,
+   "pitch": 2,
+   "note": ""
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 685,
+   "db": -6,
+   "note": "the AI agent drops in"
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 693,
+   "db": -8,
+   "note": ""
+  },
+  {
+   "id": "gen-chime",
+   "frame": 717,
+   "db": -6,
+   "pitch": 5,
+   "note": "reply drafted"
+  },
+  {
+   "id": "gen-chime",
+   "frame": 740,
+   "db": -10,
+   "pitch": 7,
+   "note": "another run through"
+  },
+  {
+   "id": "gen-chime",
+   "frame": 749,
+   "db": -10,
+   "pitch": 9,
+   "note": "another run through"
+  },
+  {
+   "id": "gen-chime",
+   "frame": 759,
+   "db": -10,
+   "pitch": 11,
+   "note": "another run through"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 755,
+   "db": -6,
+   "note": "the workflow tucks away"
+  },
+  {
+   "id": "gen-appear",
+   "frame": 757,
+   "db": -4,
+   "note": "Need more?"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 787,
+   "db": -6,
+   "note": "a window rises"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 796,
+   "db": -8,
+   "note": "the sidebar"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 804,
+   "db": -8,
+   "pitch": 2,
+   "note": "the header"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 817,
+   "db": -8,
+   "pitch": 4,
+   "note": "the blocks"
+  },
+  {
+   "id": "gen-appear",
+   "frame": 847,
+   "db": -5,
+   "note": "it becomes a dashboard"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 862,
+   "db": -10,
+   "pitch": 2,
+   "note": "the line draws"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 878,
+   "db": -5,
+   "note": "the website slides in"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 901,
+   "db": -5,
+   "pitch": 2,
+   "note": "the app slides in"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 924,
+   "db": -8,
+   "pitch": 3,
+   "note": "its sections reorder"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 936,
+   "db": -6,
+   "pitch": 2,
+   "note": "they settle"
+  },
+  {
+   "id": "gen-success",
+   "frame": 971,
+   "db": -5,
+   "note": "the team's order, saved"
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 1005,
+   "db": -6,
+   "note": "the screens gather into one system"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1012,
+   "db": -10,
+   "note": "a tool lands in the ring"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1014,
+   "db": -10,
+   "pitch": 1,
+   "note": "a tool lands in the ring"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1016,
+   "db": -10,
+   "pitch": 2,
+   "note": "a tool lands in the ring"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1018,
+   "db": -10,
+   "pitch": 3,
+   "note": "a tool lands in the ring"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1020,
+   "db": -10,
+   "pitch": 4,
+   "note": "a tool lands in the ring"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1022,
+   "db": -10,
+   "pitch": 5,
+   "note": "a tool lands in the ring"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1024,
+   "db": -10,
+   "pitch": 6,
+   "note": "a tool lands in the ring"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1026,
+   "db": -10,
+   "pitch": 7,
+   "note": "a tool lands in the ring"
+  },
+  {
+   "id": "gen-appear",
+   "frame": 1046,
+   "db": -5,
+   "note": "connected"
+  },
+  {
+   "id": "gen-swell",
+   "frame": 1085,
+   "db": -8,
+   "note": "data flows"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 1108,
+   "db": -3,
+   "note": "Copy"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 1120,
+   "db": -3,
+   "pitch": 2,
+   "note": "Paste"
+  },
+  {
+   "id": "gen-whoosh-whip",
+   "frame": 1123,
+   "db": -6,
+   "note": "struck out"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 1147,
+   "db": -6,
+   "note": "the team channel rises"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1161,
+   "db": -8,
+   "note": "a message"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 1160,
+   "db": -6,
+   "note": "K.B slides into the team"
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 1169,
+   "db": -9,
+   "note": ""
+  },
+  {
+   "id": "gen-tick",
+   "frame": 1194,
+   "db": -5,
+   "pitch": 2,
+   "note": "5 members"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1217,
+   "db": -6,
+   "pitch": 1,
+   "note": "a message"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1228,
+   "db": -6,
+   "pitch": 3,
+   "note": "a message"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1241,
+   "db": -6,
+   "pitch": 4,
+   "note": "a message"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1256,
+   "db": -6,
+   "pitch": 5,
+   "note": "a message"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 1285,
+   "db": -6,
+   "note": "Go live rises"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 1291,
+   "db": -2,
+   "note": "click"
+  },
+  {
+   "id": "gen-success",
+   "frame": 1292,
+   "db": -2,
+   "note": "Live"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 1323,
+   "db": -6,
+   "note": "the monthly plan opens"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 1373,
+   "db": -7,
+   "note": "Hosting every week"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 1382,
+   "db": -7,
+   "pitch": 3,
+   "note": "Maintenance every week"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1413,
+   "db": -4,
+   "note": "a new feature lands"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 1426,
+   "db": -7,
+   "note": "the next month"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1445,
+   "db": -4,
+   "pitch": 2,
+   "note": "a new feature"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 1461,
+   "db": -7,
+   "pitch": 1,
+   "note": "the next month"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1478,
+   "db": -4,
+   "pitch": 4,
+   "note": "a new feature"
+  },
+  {
+   "id": "gen-riser-1s",
+   "frame": 1524,
+   "db": -9,
+   "note": "the loop draws (ends as it closes)"
+  },
+  {
+   "id": "gen-chime",
+   "frame": 1501,
+   "db": -5,
+   "note": "Diagnose"
+  },
+  {
+   "id": "gen-chime",
+   "frame": 1525,
+   "db": -5,
+   "pitch": 4,
+   "note": "Build"
+  },
+  {
+   "id": "gen-chime",
+   "frame": 1542,
+   "db": -5,
+   "pitch": 7,
+   "note": "Run"
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 1567,
+   "db": -8,
+   "note": "one loop: the dots run"
+  },
+  {
+   "id": "gen-swell",
+   "frame": 1620,
+   "db": -8,
+   "note": "the loop lifts"
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 1666,
+   "db": -6,
+   "note": "the loop gathers into K.B"
+  },
+  {
+   "id": "gen-impact-deep",
+   "frame": 1682,
+   "db": -6,
+   "note": "the logo, with the song's last hit"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1681,
+   "db": -6,
+   "pitch": 2,
+   "note": "the button"
+  }
+ ]
+}

@@ -145,11 +145,11 @@ const AppScreen: React.FC<{ g: number }> = ({ g }) => {
 
 export const Custom: React.FC<{ g: number }> = ({ g }) => {
   const gone = k(g, "tools+0.15", 0.4);
-  const SW = trk(g, [["custom", 960, 1580, 1], ["custom+0.65", 960, 560, 1, IN], ["web", 960, 560, 1.0], ["web+0.6", 690, 610, 0.72, MOVE], ["app", 690, 610, 0.72],
-    ["app+0.6", 640, 620, 0.7, MOVE], ["tools", 640, 620, 0.7], ["tools+0.55", 960, 600, 0.14, MOVE]]);
-  const WB = trk(g, [["custom", 2400, 430, 0.72], ["web", 2400, 430, 0.72], ["web+0.7", 1240, 430, 0.72, IN], ["app", 1240, 430, 0.72], ["app+0.6", 1170, 420, 0.72, MOVE],
-    ["tools", 1170, 420, 0.72], ["tools+0.55", 960, 600, 0.12, MOVE]]);
-  const P = trk(g, [["custom", 1560, 1560, 0.84], ["app", 1560, 1560, 0.84], ["app+0.6", 1530, 640, 0.84, IN], ["tools", 1530, 640, 0.84], ["tools+0.55", 960, 600, 0.12, MOVE]]);
+  const SW = trk(g, [["custom", 960, 1580, 1], ["custom+0.65", 960, 560, 1, IN], ["web", 960, 560, 1.1], ["web+0.6", 690, 610, 0.72, MOVE], ["app", 675, 613, 0.76],
+    ["app+0.6", 640, 620, 0.7, MOVE], ["tools", 600, 628, 0.77], ["tools+0.55", 960, 600, 0.14, MOVE]]);
+  const WB = trk(g, [["custom", 2400, 430, 0.72], ["web", 2400, 430, 0.72], ["web+0.7", 1240, 430, 0.72, IN], ["app", 1215, 422, 0.75], ["app+0.6", 1170, 420, 0.72, MOVE],
+    ["tools", 1130, 405, 0.78], ["tools+0.55", 960, 600, 0.12, MOVE]]);
+  const P = trk(g, [["custom", 1560, 1560, 0.84], ["app", 1560, 1560, 0.84], ["app+0.6", 1530, 640, 0.84, IN], ["tools", 1505, 625, 0.92], ["tools+0.55", 960, 600, 0.12, MOVE]]);
   return (
     <>
       {g >= T.f("web") && <Box x={WB[0]} y={WB[1]} w={1200} h={760} s={WB[2]} o={1 - gone}>
@@ -169,8 +169,10 @@ export const Custom: React.FC<{ g: number }> = ({ g }) => {
 // ---- every tool, connected -------------------------------------------------------------------------------------------
 const RING = ["pipedrive", "odoo", "supabase", "resend", "make", "n8n", "claude", "next"];
 const HUB = { x: 960, y: 600, r: 150 };
-const ringPos = (i: number) => { const a = ((22.5 + 45 * i) * Math.PI) / 180; return { x: HUB.x + 610 * Math.cos(a), y: HUB.y + 300 * Math.sin(a), ux: Math.cos(a), uy: Math.sin(a) }; };
+let SPIN = 0;   // the ring's slow turn (radians), set each frame by Tools
+const ringPos = (i: number) => { const a = ((22.5 + 45 * i) * Math.PI) / 180 + SPIN; return { x: HUB.x + 610 * Math.cos(a), y: HUB.y + 300 * Math.sin(a), ux: Math.cos(a), uy: Math.sin(a) }; };
 export const Tools: React.FC<{ g: number }> = ({ g }) => {
+  SPIN = 0.22 * Math.max(0, g - T.f("tools")) / 30;
   const hub = k(g, "tools+0.25", 0.55), hubOut = k(g, "team", 0.4, OUT);
   const fl = k(g, "flows", 0.4) * (1 - k(g, "team", 0.3));
   const keys = k(g, "copy", 0.4), keys2 = k(g, "paste-0.06", 0.4), keysOut = k(g, "team", 0.3);
@@ -189,12 +191,16 @@ export const Tools: React.FC<{ g: number }> = ({ g }) => {
               {fl > 0 && [0, 1].map((j) => {
                 const u0 = ((g - T.f("flows")) / 34 + j * 0.5 + i * 0.13) % 1, u = i % 2 ? 1 - u0 : u0;
                 const x = lerp(a.x, b.x, u), y = lerp(a.y, b.y, u), o = fl * Math.min(1, u0 * 6, (1 - u0) * 6);
-                return <circle key={j} cx={x} cy={y} r={10} fill={C.cyan} stroke={C.white} strokeWidth={4} opacity={o} />;
+                return <circle key={j} cx={x} cy={y} r={13} fill={C.cyan} stroke={C.white} strokeWidth={5} opacity={o} />;
               })}
             </g>
           );
         })}
       </svg>
+      {fl > 0 && [0, 1, 2].map((j) => {
+        const u = ((g - T.f("flows")) / 36 + j / 3) % 1;
+        return <Box key={j} x={HUB.x} y={HUB.y} w={HUB.r * 2} h={HUB.r * 2} s={1 + 0.5 * u} o={fl * (1 - u) * 0.8} style={{ borderRadius: "50%", border: `5px solid ${C.cyan}`, boxSizing: "border-box" }} />;
+      })}
       <Box x={HUB.x} y={HUB.y} w={HUB.r * 2} h={HUB.r * 2} s={(0.3 + 0.7 * hub) * (1 - 0.6 * hubOut)} o={Math.min(1, hub * 1.5) * (1 - hubOut)}
         style={{ borderRadius: "50%", background: C.white, boxShadow: SHADOW.card, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 10 }}>
         <IconBox name="layers" size={64} bg={C.cyanSoft} />

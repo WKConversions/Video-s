@@ -75,7 +75,7 @@ export const Team: React.FC<{ g: number }> = ({ g }) => {
   const W = trk(g, [["team", 960, 1580, 1], ["team+0.65", 960, 560, 1, IN], ["launch", 960, 560, 1], ["launch+0.5", 960, 1000, 0, OUT]]);
   if (W[2] <= 0) return null;
   return (
-    <Box x={W[0]} y={W[1]} w={1440} h={820} o={W[2]} s={1 + 0.03 * k(g, "team+0.65", 4.2, EASE.steady)}>
+    <Box x={W[0]} y={W[1]} w={1440} h={820} o={W[2]} s={1 + 0.12 * k(g, "team+0.65", 4.2, EASE.steady)}>
       <Win w={1440} h={820} logo={false} title={<BarTitle g={g} text="" at="team+0.3"><Icon name="chat" size={30} color={C.white} />Team channel</BarTitle>}><Channel g={g} /></Win>
     </Box>
   );
@@ -171,7 +171,7 @@ export const Plan: React.FC<{ g: number }> = ({ g }) => {
   if (W[2] <= 0) return null;
   const live = k(g, "stay+0.42", 0.3);
   return (
-    <Box x={W[0]} y={W[1]} w={1440} h={820} o={W[2]} s={1 + 0.035 * k(g, "stay+0.65", 5.4, EASE.steady)}>
+    <Box x={W[0]} y={W[1]} w={1440} h={820} o={W[2]} s={1 + 0.12 * k(g, "stay+0.65", 5.4, EASE.steady)}>
       <Win w={1440} h={820} title={<BarTitle g={g} text="" at="stay+0.3"><Icon name="calendar" size={30} color={C.white} />Monthly plan</BarTitle>}
         right={<div style={{ opacity: live, transform: `scale(${0.7 + 0.3 * live})` }}><Pill bg={U.okSoft} color={U.okInk} size={20} dot={C.ok}>Live</Pill></div>}>
         <Calendar g={g} />
@@ -193,7 +193,7 @@ const STATIONS = [
 const phaseAt = (g: number) => {
   const f0 = T.f("one"), fl = T.f("lift");
   let p = 0;
-  for (let f = f0; f < g; f++) { const u = Math.min(1, Math.max(0, (f - fl) / 24)); p += (1.0 + 0.9 * u * u * (3 - 2 * u)) / 30; }
+  for (let f = f0; f < g; f++) { const u = Math.min(1, Math.max(0, (f - fl) / 24)); p += (1.2 + 1.0 * u * u * (3 - 2 * u)) / 30; }
   return p;
 };
 export const Loop: React.FC<{ g: number }> = ({ g }) => {
@@ -202,15 +202,15 @@ export const Loop: React.FC<{ g: number }> = ({ g }) => {
   const all = k(g, "one", 0.35);
   const ph = g >= T.f("one") ? phaseAt(g) : 0;
   const grow = (() => { const t = (g - T.f("w:growth")) / 18; return t <= 0 || t >= 1 ? 0 : t; })();
-  const s = (1 + 0.05 * lift) * (1 - 0.82 * gather), ty = -36 * lift + (470 - 560 + 36) * gather;
+  const s = (1 + 0.05 * k(g, "loop+0.5", 3.4, EASE.steady) + 0.06 * lift) * (1 - 0.82 * gather), ty = -36 * lift + (470 - 560 + 36) * gather;
   return (
     <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, opacity: 1 - k(g, "talk+0.25", 0.35), transform: `translateY(${ty}px) scale(${s})`, transformOrigin: "960px 560px" }}>
       <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0 }}>
         <path d={LOOP_D} fill="none" stroke={C.navy} strokeWidth={70} strokeLinejoin="round" pathLength={1} strokeDasharray={`${draw} 1`} />
-        {dash > 0 && <path d={LOOP_D} fill="none" stroke={C.white} strokeWidth={5} strokeDasharray="18 26" opacity={0.7 * dash} />}
-        {all > 0 && Array.from({ length: 10 }, (_, j) => {
-          const p = lp(-ph * 1.0 + (j * Math.PI * 2) / 10);
-          return <circle key={j} cx={p.x} cy={p.y} r={13} fill={C.cyan} stroke={C.white} strokeWidth={5} opacity={k(g, off("one", 0.04 * j), 0.3)} />;
+        {dash > 0 && <path d={LOOP_D} fill="none" stroke={C.white} strokeWidth={5} strokeDasharray="18 26" strokeDashoffset={3 * (g - T.f("loop+0.9")) + 1.6 * Math.max(0, g - T.f("lift"))} opacity={0.7 * dash} />}
+        {all > 0 && Array.from({ length: 14 }, (_, j) => {
+          const p = lp(-ph * 1.0 + (j * Math.PI * 2) / 14);
+          return <circle key={j} cx={p.x} cy={p.y} r={17} fill={C.cyan} stroke={C.white} strokeWidth={6} opacity={k(g, off("one", 0.03 * j), 0.3)} />;
         })}
       </svg>
       {STATIONS.map((st, i) => {
