@@ -85,8 +85,11 @@ cues = [
     ("gen-whoosh-short", F("dash", 0.6), -10, 2, "the line draws"),
     ("gen-whoosh-short", F("web", 0.35), -5, None, "the website slides in"),
     ("gen-whoosh-short", F("app", 0.3), -5, 2, "the app slides in"),
-    ("gen-whoosh-short", F("tailor", 0.35), -8, 3, "its sections reorder"),
-    ("gen-tap", F("tailor", 0.75), -6, 2, "they settle"),
+    ("gen-tap", F("tailor", 0.02), -5, None, "Today's jobs is picked up"),
+    ("gen-whoosh-short", F("tailor", 0.35), -9, 3, "and dragged to the top"),
+    ("gen-tap", F("tailor", 0.7), -4, 3, "dropped"),
+    ("gen-tap", F("w:team2-0.1"), -5, 1, "Clients is picked up"),
+    ("gen-tap", F("w:team2+0.58"), -4, 4, "dropped under it"),
     ("gen-success", F("works", 0.06), -5, None, "the team's order, saved"),
     # every tool, connected
     ("gen-whoosh-deep", F("tools", 0.3), -6, None, "the screens gather into one system"),

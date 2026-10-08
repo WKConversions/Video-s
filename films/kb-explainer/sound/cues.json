@@ -585,18 +585,38 @@
    "note": "the app slides in"
   },
   {
+   "id": "gen-tap",
+   "frame": 914,
+   "db": -5,
+   "note": "Today's jobs is picked up"
+  },
+  {
    "id": "gen-whoosh-short",
    "frame": 924,
-   "db": -8,
+   "db": -9,
    "pitch": 3,
-   "note": "its sections reorder"
+   "note": "and dragged to the top"
   },
   {
    "id": "gen-tap",
-   "frame": 936,
-   "db": -6,
-   "pitch": 2,
-   "note": "they settle"
+   "frame": 935,
+   "db": -4,
+   "pitch": 3,
+   "note": "dropped"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 945,
+   "db": -5,
+   "pitch": 1,
+   "note": "Clients is picked up"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 965,
+   "db": -4,
+   "pitch": 4,
+   "note": "dropped under it"
   },
   {
    "id": "gen-success",

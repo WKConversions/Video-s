@@ -3,7 +3,7 @@
 // connected to one system, data flowing between them, copy-paste struck out.
 import React from "react";
 import { T } from "./clock";
-import { EASE, Line, Stroke, measure, off } from "./kinetic";
+import { EASE, Line, Stroke, Track, measure, off } from "./kinetic";
 import { ARRIVE, C, MOVE, SHADOW, ToolTile, lerp } from "./lib";
 import { IN, OUT } from "./a1";
 import { Abs, BarTitle, Box, Check, Icon, IconBox, PHONE, Phone, Pill, Skel, U, Win, mix, trk, txt } from "./ui";
@@ -113,7 +113,15 @@ const Website: React.FC<{ g: number }> = ({ g }) => {
 
 // ---- the app: sections reorder to the team's way of working ------------------------------------------------------------
 const SECTIONS = [{ n: "Today's jobs", i: "calendar" }, { n: "Clients", i: "users" }, { n: "Invoices", i: "receipt" }, { n: "Messages", i: "chat" }];
-const BEFORE = [3, 2, 1, 0];   // slot of each section before "tailored" (Messages first), then its own order
+/** Two drags, the way a team would set its app up: Today's jobs to the top, then Clients under it; the others make
+ *  room. Slots over time for each section; the dragged one lifts and rides a little to the side. */
+const SLOTS: Track[][] = [
+  [["tailor", 3], ["tailor+0.7", 0, MOVE]],
+  [["tailor+0.1", 2], ["tailor+0.6", 3, MOVE], ["w:team2-0.12", 3], ["w:team2+0.58", 1, MOVE]],
+  [["tailor+0.1", 1], ["tailor+0.6", 2, MOVE], ["w:team2-0.02", 2], ["w:team2+0.48", 3, MOVE]],
+  [["tailor+0.1", 0], ["tailor+0.6", 1, MOVE], ["w:team2-0.02", 1], ["w:team2+0.48", 2, MOVE]],
+];
+const DRAGS: [number, string][] = [[0, "tailor"], [1, "w:team2-0.12"]];
 const AppScreen: React.FC<{ g: number }> = ({ g }) => {
   const saved = k(g, "works", 0.35);
   return (
@@ -124,11 +132,12 @@ const AppScreen: React.FC<{ g: number }> = ({ g }) => {
         <Icon name="user" size={26} color={C.navy} />
       </div>
       {SECTIONS.map((s, i) => {
-        const m = k(g, off("tailor", 0.07 * i), 0.7, MOVE);
-        const y = 170 + lerp(BEFORE[i], i, m) * 132, lift = Math.sin(Math.PI * m) * (BEFORE[i] !== i ? 1 : 0);
+        const slot = trk(g, SLOTS[i])[0];
+        const drag = DRAGS.find((d) => d[0] === i);
+        const lift = drag ? Math.sin(Math.PI * Math.min(1, Math.max(0, (g - T.f(drag[1])) / 21))) : 0;
         const hi = i === 0 ? saved : 0;
         return (
-          <div key={i} style={{ position: "absolute", left: 16, top: y, width: PHONE.w - 58, height: 116, zIndex: lift > 0 ? 3 : 1, transform: `scale(${1 + 0.04 * lift})` }}>
+          <div key={i} style={{ position: "absolute", left: 16 + 18 * lift, top: 170 + slot * 132, width: PHONE.w - 58, height: 116, zIndex: lift > 0 ? 3 : 1, transform: `scale(${1 + 0.04 * lift})` }}>
             <div style={{ position: "absolute", inset: 0, borderRadius: 18, background: C.white, border: `${hi ? 3 : 2}px solid ${hi ? mix(U.skel, C.cyan, hi) : U.skel}`,
               boxShadow: `0 ${8 + 14 * lift}px ${20 + 16 * lift}px -14px rgba(41,58,81,${0.3 + 0.2 * lift})` }} />
             <div style={{ position: "absolute", left: 18, top: 30 }}><IconBox name={s.i} size={54} bg={hi ? mix(U.tint, C.cyanSoft, hi) : U.tint} /></div>
@@ -136,6 +145,7 @@ const AppScreen: React.FC<{ g: number }> = ({ g }) => {
             <Skel w={130} h={11} style={{ position: "absolute", left: 88, top: 70 }} />
             {hi > 0 ? <div style={{ position: "absolute", right: 16, top: 38, opacity: hi, transform: `scale(${0.6 + 0.4 * hi})` }}><Check size={40} /></div>
               : <Icon name="drag" size={30} color={U.skelD} width={4} style={{ position: "absolute", right: 18, top: 43 }} />}
+            {lift > 0.05 && <div style={{ position: "absolute", right: 14, top: 34, width: 48, height: 48, borderRadius: 24, background: C.cyan, opacity: 0.45 * Math.min(1, lift * 3) }} />}
           </div>
         );
       })}
