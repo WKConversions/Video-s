@@ -1,0 +1,79 @@
+{
+ "title": "K.B Tech Partner Film",
+ "eyebrow": "K.B · brand film · 34 s · 1920×1080 · storyboard and QC",
+ "headline": "In, beside, <em>behind</em>",
+ "subtitle": "K.B is the one tile that isn't another tool: it comes in, stands beside your business and ends up behind it, so the business that technology held back grows. Told with K.B's own shapes, one business at work, and the real people of K.B.",
+ "film": "film.mp4",
+ "poster": "frames/t33.60.jpg",
+ "direction": {
+  "Purpose": "A website and LinkedIn film that positions K.B as the embedded tech partner.",
+  "Audience": "Founders and managers of startups and SMEs who know technology could help but not where to start.",
+  "Format": "16:9, 1920×1080, 30 fps, 34.0 s.",
+  "Core message": "Technology alone doesn't grow a business; K.B comes in, stays beside you and ends up behind your growth.",
+  "Tone": "Energetic voice, clean motion: no camera moves, no bounce, a calm sign-off.",
+  "Style and brand": "K.B's own site: canvas #F7F7F7, navy #293A51, cyan #38C8FF as marks only, Montserrat, Copperplate CC for the K.B logotype. Only \"K.B\" is said and shown.",
+  "Art direction": "One bright stage of rounded squares: one business at work (a clip in a tile), one K.B tile, the real tool tiles of the site, the founders' photo for the partner lines.",
+  "Motion": "Precise premium at the energetic end. Signature curve ARRIVE; MOVE for things already on screen; soft starts everywhere a still thing moves. The camera only breathes.",
+  "Transitions": "A tile flips into the next thing; a field or a mask grows out of a tile; the business opens into its parts and closes again.",
+  "5% motion": "Karl's target: the median frame changes 5% of its area. Reached by the content (the footage drifting inside its tile, the tool conveyors, the founders' photo, the moves), never by the camera.",
+  "Captions": "Words on 7 of 21 phrases (grow, Where to start?, Advice, Tech Partner, Strategy / Implementation, alone.); the other 14 are pure pictures.",
+  "Sound": "ElevenLabs voice (Christina) at 0.40 s; Mixkit \"Raising Me Higher\" cut on its bar grid, opening up on \"That's where K.B comes in\", its last chord on the end card; 47 effects on their moves."
+ },
+ "beats": [
+  {"id": "1", "time": "0.0–4.6 s", "title": "Technology should help your business grow. Not hold it back.",
+   "frames": [
+    {"t": "0.60", "phrase": "Technology", "words": "", "what": "From frame 0 a band of the real tools K.B builds with runs across the middle of the frame."},
+    {"t": "1.60", "phrase": "should help your business", "words": "", "what": "The floor glides down as the business (a team at work, seen from above) drops onto it."},
+    {"t": "2.50", "phrase": "grow", "words": "grow", "what": "The floor lifts the business on \"grow\"; the word rises out of a mask beside it."},
+    {"t": "3.40", "phrase": "not hold", "words": "", "what": "Two tiles lift out of the floor under its feet and turn their blank backs: the grip."},
+    {"t": "4.20", "phrase": "it back", "words": "", "what": "Floor, business and word sink 300 px; the business turns grey."}]},
+  {"id": "2", "time": "4.7–9.3 s", "title": "But finding the right solutions, and knowing where to start, isn't always easy.",
+   "frames": [
+    {"t": "5.60", "phrase": "finding the right solutions", "words": "", "what": "A full reel of tools runs up through a cyan selector that never settles."},
+    {"t": "7.40", "phrase": "and knowing where to start", "words": "Where to start?", "what": "The reel breaks: three tools land round the business; the selector hops between them and can't choose."},
+    {"t": "8.70", "phrase": "isn't always easy", "words": "", "what": "Tools close round the business in pairs: a wall with one tile-sized hole."}]},
+  {"id": "3", "time": "9.4–11.3 s", "title": "That's where K.B comes in.",
+   "frames": [
+    {"t": "9.95", "phrase": "That's where K.B", "words": "K.B (logo)", "what": "The K.B tile slides in from the right and seats in the hole; the wall of tools fades back."},
+    {"t": "10.90", "phrase": "comes in", "words": "K.B (logo)", "what": "The tile grows into the film's one full navy field; the logotype keeps growing under the voice."}]},
+  {"id": "4", "time": "11.3–15.0 s", "title": "We don't just offer advice. We become your tech partner.",
+   "frames": [
+    {"t": "12.40", "phrase": "we don't just offer advice", "words": "Advice", "what": "The field folds back into the tile; a note, \"Advice\", slides across the gap to the business, which stays grey."},
+    {"t": "14.50", "phrase": "we become your tech partner", "words": "TECH PARTNER", "what": "K.B crosses the gap and docks beside the business; the site's lockup builds under the pair, underlined on \"partner\"."}]},
+  {"id": "5", "time": "15.1–23.0 s", "title": "First, we understand your business. Then, we identify opportunities, develop solutions, and help bring them to life.",
+   "frames": [
+    {"t": "15.50", "phrase": "First", "words": "", "what": "The business grows close; the period of K.B lights and a cyan dot slides out of it."},
+    {"t": "16.20", "phrase": "we understand", "words": "", "what": "The dot opens into a lens gliding over the business: inside it, in colour and closer."},
+    {"t": "17.30", "phrase": "your business", "words": "", "what": "The business opens to the full frame and parts into nine: your business, laid out in its parts."},
+    {"t": "19.20", "phrase": "then we identify opportunities", "words": "labels: Excel files · CRM updates · Follow-ups", "what": "Three parts are ringed and lift forward, named with K.B's own words for manual work; the rest dims."},
+    {"t": "20.60", "phrase": "develop solutions", "words": "", "what": "The three parts flip into Make, n8n and Claude; a dotted flow draws between them."},
+    {"t": "22.20", "phrase": "and help bring them to life", "words": "", "what": "The parts close; a pulse runs the flow and colour floods out of the three tools into the whole business."}]},
+  {"id": "6", "time": "23.0–26.6 s", "title": "From strategy to implementation, we're by your side.",
+   "frames": [
+    {"t": "23.50", "phrase": "from strategy", "words": "Strategy", "what": "The pair sets down at the start of a road; the business becomes its plan, a dashed outline."},
+    {"t": "24.60", "phrase": "to implementation", "words": "Implementation", "what": "The pair rides the road side by side; the plan fills with the real business as it goes."},
+    {"t": "26.20", "phrase": "we're by your side", "words": "", "what": "The K.B tile turns over into the founders' Málaga photo, beside the business: the real team."}]},
+  {"id": "7", "time": "26.6–29.8 s", "title": "Because real growth doesn't come from technology alone.",
+   "frames": [
+    {"t": "27.60", "phrase": "because real growth", "words": "", "what": "The founders go behind the business, hidden; it rises on \"growth\"."},
+    {"t": "29.60", "phrase": "alone", "words": "alone.", "what": "The opening's floor returns as a treadmill; the business turns grey and sinks into it."}]},
+  {"id": "8", "time": "29.8–34.0 s", "title": "It comes from having the right partner behind it.",
+   "frames": [
+    {"t": "31.30", "phrase": "the right partner", "words": "", "what": "Carried left, the floor dropped away: the founders rise behind the business and its colour comes back."},
+    {"t": "32.10", "phrase": "behind it", "words": "grow", "what": "Both lift, higher than in the hook; \"grow\" returns at the hook's size."},
+    {"t": "33.60", "phrase": "end card", "words": "We grow with you. · Book a Free Discovery Call", "what": "The founders turn back into the K.B logo, the business in front of its corner; \"grow\" slots into the site's line; the button rises. Nothing crosses the screen."}]}
+ ],
+ "notes": [
+  "The voice-over is the script as written; nothing was rewritten. \"K.B.\" is spoken; the screen always writes \"K.B\" as the site does.",
+  "No URL on the end card: the domain contains \"consultancy\". The end card uses the site's own words: \"We grow with you.\" (About) and \"Book a Free Discovery Call\" (home).",
+  "\"Your business\" is a royalty-free Mixkit clip (4809, a team at a table seen from above, no faces to camera, no brand). It is never presented as a K.B client or the K.B team. The founders' photo is the site's own About photo.",
+  "The three ringed parts are named with the manual work K.B's own client cases describe (Excel files, CRM updates, follow-ups); the solution tools are the ones the site lists for AI and automation (Make, n8n, Claude). No figures, no client names, no case on screen.",
+  "\"Strategy\" is only loosely supported by the site now (it leads with building and running); the road shows it as a plan turning into the built business.",
+  "Nothing from the site's hero video (or its other videos) was downloaded, sampled or used."
+ ],
+ "questions": [
+  "Music: Mixkit \"Raising Me Higher\" (no credit needed) cut to the film. Keep it, or do you have a track?",
+  "End card: keep it URL-free, or add a domain without \"consultancy\" if K.B has one?",
+  "Founders' photo: fine to use the site's About photo on \"by your side\" and \"behind it\"?"
+ ]
+}

@@ -43,7 +43,7 @@ export const BEATS: Record<string, number | string> = {
   drop: "w:having-0.08",
   partner: "w:right2-0.10",
   up: "w:behind-0.06",
-  rest: "w:it3+0.05",             // the camera eases to rest; the end card
+  rest: "w:it3+0.42",             // the last word ends: the camera eases to rest; the end card (with the music's last chord)
   end: 34.0,
 };
 

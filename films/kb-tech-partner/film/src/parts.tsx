@@ -50,8 +50,8 @@ export type Piece = {
 export const Biz: React.FC<{
   t: number; x: number; y: number; w: number; h: number; grey?: number; open?: number; gap?: number; tilt?: number; zoom?: number;
   pieces?: Record<number, Piece>; flood?: { x: number; y: number; r: number }[]; lens?: { x: number; y: number; r: number; k: number };
-  plan?: number; radius?: number; shadow?: number; name?: string;
-}> = ({ t, x, y, w, h, grey = 0, open = 0, gap = 22, tilt = 8, zoom = 1.5, pieces = {}, flood = [], lens, plan = 1, radius = 0.12, shadow = 1, name = "biz" }) => {
+  plan?: number; planGhost?: number; radius?: number; shadow?: number; name?: string; backing?: boolean; logo?: number;
+}> = ({ t, x, y, w, h, grey = 0, open = 0, gap = 22, tilt = 8, zoom = 1.5, pieces = {}, flood = [], lens, plan = 1, planGhost = 0, radius = 0.12, shadow = 1, name = "biz", backing = false, logo = 0.5 }) => {
   const { S, fx, fy } = footagePan(t, w, h, zoom);
   const Rt = Math.min(w, h) * radius;
   const cw = w / 3, ch = h / 3, g = gap * open, inner = 12 * open;
@@ -96,13 +96,13 @@ export const Biz: React.FC<{
       <div key={i} data-probe={`${name}-p${i}`} style={{ position: "absolute", left: 0, top: 0, width: cw + 2 * ov, height: ch + 2 * ov,
         transform: `translate(${px - ov}px, ${py - ov}px) translateZ(${lift * 60}px) scale(${1 + 0.05 * lift})`, opacity: 1 - 0.55 * dim,
         boxShadow: lift > 0 ? `0 ${30 * lift}px ${60 * lift}px -20px rgba(41,58,81,${0.45 * lift})` : undefined, borderRadius: br.map((v) => `${v}px`).join(" "), willChange: "transform" }}>
-        {flip > 0 ? <Flip3D k={flip} w={cw} h={ch} a={face} b={<ToolFace tool={p.tool ?? "make"} w={cw} h={ch} radius={inner + 4} logo={0.5} />} /> : face}
+        {flip > 0 ? <Flip3D k={flip} w={cw} h={ch} a={face} b={<ToolFace tool={p.tool ?? "make"} w={cw} h={ch} radius={inner + 4} logo={logo} />} /> : face}
         {ring > 0 && flip < 0.5 && (
-          <div style={{ position: "absolute", left: -10, top: -10, width: cw + 20, height: ch + 20, borderRadius: inner + 10, border: `5px solid ${C.cyan}`,
-            opacity: clamp01(ring * 2), transform: `scale(${lerp(1.12, 1, ring)})` }} />
+          <div style={{ position: "absolute", left: 0, top: 0, width: cw, height: ch, borderRadius: inner, boxShadow: `inset 0 0 0 7px ${C.cyan}`,
+            opacity: clamp01(ring * 2), transform: `scale(${lerp(1.08, 1, ring)})` }} />
         )}
         {p.label && (p.labelK ?? 0) > 0 && flip < 0.5 && (
-          <div style={{ position: "absolute", left: 18, top: 18, padding: "10px 20px 11px", borderRadius: R.pill, background: C.white, boxShadow: SHADOW.soft,
+          <div style={{ position: "absolute", left: 30, top: 36, padding: "10px 20px 11px", borderRadius: R.pill, background: C.white, boxShadow: SHADOW.soft,
             fontFamily: F.sans, fontWeight: 700, fontSize: 36, letterSpacing: "-0.01em", color: C.navy, whiteSpace: "nowrap",
             opacity: clamp01((p.labelK ?? 0) * 1.6), transform: `translateY(${(1 - (p.labelK ?? 0)) * 26}px)`, filter: (p.labelK ?? 0) < 1 ? `blur(${(1 - (p.labelK ?? 0)) * 6}px)` : undefined }}>
             {p.label}
@@ -116,6 +116,21 @@ export const Biz: React.FC<{
     <div data-probe={name} style={{ position: "absolute", left: 0, top: 0, width: w, height: h, transform: `translate(${x - w / 2}px, ${y - h / 2}px)`, willChange: "transform" }}>
       {shadow > 0 && open < 0.5 && planK > 0.02 && (
         <div style={{ position: "absolute", inset: 0, borderRadius: Rt, boxShadow: SHADOW.card, opacity: shadow * (1 - open * 2) * planK }} />
+      )}
+      {backing && !plain && (
+        <div style={{ position: "absolute", inset: 0, overflow: "hidden", borderRadius: Rt, background: C.pale }}>
+          <Video S={S} x={fx} y={fy} grey={grey} />
+          {maskFor(0, 0) && grey > 0 && (
+            <div style={{ position: "absolute", inset: 0, WebkitMaskImage: maskFor(0, 0), maskImage: maskFor(0, 0) } as React.CSSProperties}>
+              <Video S={S} x={fx} y={fy} grey={0} />
+            </div>
+          )}
+        </div>
+      )}
+      {planK < 1 && planGhost > 0 && (
+        <div style={{ position: "absolute", inset: 0, overflow: "hidden", borderRadius: Rt, opacity: planGhost }}>
+          <Video S={S} x={fx} y={fy} grey={0} />
+        </div>
       )}
       <div style={{ position: "absolute", inset: 0, transformStyle: "preserve-3d", transform: open > 0 ? `perspective(2600px) rotateX(${tilt * open}deg)` : undefined,
         clipPath: planK < 1 ? `inset(-40px ${(1 - planK) * w}px -40px -40px)` : undefined }}>
@@ -149,9 +164,9 @@ export const Biz: React.FC<{
 
 /** The founders' photo (the site's About photo, Málaga) in a tile, drifting slowly across the three of them. */
 export const Founders: React.FC<{ t: number; w: number; h: number; radius?: number }> = ({ t, w, h, radius = 0.12 }) => {
-  const H = h * 1.32, W = H * (2800 / 2100);
-  const x = (w - W) / 2 + Math.min(0.07 * W, (W - w) / 2 - 2) * Math.sin((t / 9.5) * 2 * Math.PI - 0.4);
-  const y = (h - H) / 2 + Math.min(0.035 * H, (H - h) / 2 - 2) * Math.sin((t / 7.1) * 2 * Math.PI + 0.8);
+  const H = h * 1.06, W = H * (2800 / 2100);
+  const x = w / 2 - 0.475 * W + Math.min(0.06 * w, 40) * Math.sin((t / 9.5) * 2 * Math.PI - 0.4);
+  const y = (h - H) / 2 + Math.min(0.025 * H, (H - h) / 2 - 1) * Math.sin((t / 7.1) * 2 * Math.PI + 0.8);
   return (
     <div style={{ width: w, height: h, borderRadius: Math.min(w, h) * radius, overflow: "hidden", position: "relative", background: C.pale }}>
       <Img src={FOUNDERS} style={{ position: "absolute", left: 0, top: 0, width: W, height: H, transform: `translate(${x}px, ${y}px)`, willChange: "transform" }} />
@@ -177,8 +192,9 @@ export const travelled = (g: number, keys: [number, number][]) => {
 };
 
 /** A row of tool tiles running right to left; `offset` is how far it has travelled. Tiles 200, pitch 220. */
-export const ToolRow: React.FC<{ tools: string[]; y: number; offset: number; size?: number; pitch?: number; name: string; backs?: (i: number) => number; skip?: (x: number) => boolean }> = ({
-  tools, y, offset, size = 200, pitch = 220, name, backs, skip }) => {
+export const rowX = (i: number, offset: number, n: number, pitch = 220) => { const span = n * pitch; const base = ((offset % span) + span) % span; return i * pitch - base - pitch; };
+export const ToolRow: React.FC<{ tools: string[]; y: number; offset: number; size?: number; pitch?: number; name: string; backs?: (i: number) => number; skip?: (x: number) => boolean; skipIdx?: (i: number) => boolean }> = ({
+  tools, y, offset, size = 200, pitch = 220, name, backs, skip, skipIdx }) => {
   const n = tools.length, span = n * pitch;
   const base = ((offset % span) + span) % span;
   const out = [];
@@ -186,6 +202,7 @@ export const ToolRow: React.FC<{ tools: string[]; y: number; offset: number; siz
     const x = i * pitch - base - pitch;
     if (x < -pitch * 1.5 || x > 1920 + pitch) continue;
     if (skip && skip(x)) continue;
+    if (skipIdx && skipIdx(i)) continue;
     const tool = tools[i % n];
     const b = backs ? backs(i) : 0;
     out.push(
