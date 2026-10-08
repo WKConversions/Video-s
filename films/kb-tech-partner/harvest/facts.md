@@ -1,6 +1,8 @@
 # Facts: K.B (harvest, 2026-10-08)
 
-Every claim the film makes, on screen or in VO, must appear in this file with its source letter. A line that is not here is not in the film. Quotes in "double quotes" are verbatim from the live site, typos and all. The film says only **"K.B"**. It never says "Consultancy" or "Kruslock Bos". The site writes the name as **K.B** with no final period. The VO script writes "K.B.", but on screen the name is always "K.B".
+On screen and in the voice: "K.B" only, never "Consultancy".
+
+Every claim the film makes, on screen or in VO, must appear in this file with its source letter. Verified line by line against `harvest/pages/*` and the live site on 2026-10-08. A line that is not here is not in the film. Quotes in "double quotes" are verbatim from the live site, typos and all. The film says only **"K.B"**. It never says "Consultancy" or "Kruslock Bos". The site writes the name as **K.B** with no final period. The VO script writes "K.B.", but on screen the name is always "K.B".
 
 ## Sources
 All pages fetched with curl on 2026-10-08. Readable dumps are in `harvest/pages/<slug>.md`.
@@ -136,35 +138,35 @@ Under the services: "Not sure which service fits?" / "Talk to us and we'll map i
 ## Tools they build with
 Heading [H]: "Tools we build with". Sub: "We put these to work on every project, from quick automations to full builds." The 20 logos below use the names exactly as the site's alt text gives them, in marquee order.
 
-| Name on site | Logo file in `../robin-bos/assets/kb/`? |
+| Name on site | Logo file in `assets/kb/tools/` (md5 = live, 2026-10-08) |
 |---|---|
-| Apollo.io | no (live: /api/square-media/file/apollo-io.png) |
-| GetYourGuide | no (getyourguide.png) |
-| Zenchef | no (zenchef-app-b2b.png) |
-| Odoo | **yes**, odoo-1.png |
-| Aqqo | no (aqqo.png) |
-| Pipedrive | no (image-3.png) |
-| Resend | no (image-4.png) |
-| Datadog | no (datadog-1.webp) |
-| Supabase | **yes**, supabase.png |
-| PostgreSQL | **yes**, postgresql.png |
-| Expo | no (expogo.png). The earlier harvest called it "Expogo", but the alt text is "Expo". |
-| Claude | **yes**, claude-removebg-preview.png |
-| Payload CMS | no (payload-cms.png) |
-| Vite | no (vite-removebg-preview.png) |
-| Spring Boot | no (springboot.png) |
-| Tanstack | no (tanstack.png). Spelled "Tanstack" on the site. |
-| TypeScript | **yes**, typescript.png |
-| Next.js | **yes**, nextjs-white.png |
-| n8n | **yes**, n8n-logo2.webp |
-| Make | **yes**, makecom-removebg-preview.png |
+| Apollo.io | apollo-io.png |
+| GetYourGuide | getyourguide.png |
+| Zenchef | zenchef-app-b2b.png |
+| Odoo | odoo-1.png |
+| Aqqo | aqqo.png |
+| Pipedrive | pipedrive.png (site file image-3.png) |
+| Resend | resend.png (site file image-4.png) |
+| Datadog | datadog-1.webp (+ datadog-1.png conversion) |
+| Supabase | supabase.png |
+| PostgreSQL | postgresql.png |
+| Expo | expogo.png. The earlier harvest called it "Expogo", but the alt text is "Expo". |
+| Claude | claude-removebg-preview.png |
+| Payload CMS | payload-cms.png |
+| Vite | vite-removebg-preview.png |
+| Spring Boot | springboot.png |
+| Tanstack | tanstack.png. Spelled "Tanstack" on the site. |
+| TypeScript | typescript.png |
+| Next.js | nextjs-white.png |
+| n8n | n8n-logo2.webp (+ n8n-logo2.png conversion) |
+| Make | makecom-removebg-preview.png |
 
 - Several of these (Apollo.io, GetYourGuide, Zenchef, Aqqo, Pipedrive) are third-party platforms they integrate with, not build tools.
 - FAQ [K] also names integrations with "Google Workspace, Slack, ClickUp, Notion, Airtable".
 - Internship page [J]: "Make.com", "TypeScript and Java", "Next.js / Java development", "Using tools such as Claude to accelerate development workflows and helping build autonomous AI agent teams".
 
 ## Clients
-Home logo marquee [H], 14 logos, names exactly as the alt text gives them. All 14 PNG files are in `../robin-bos/assets/kb/` and match the live files by md5.
+Home logo marquee [H], 14 logos, names exactly as the alt text gives them. All 14 PNG files are in `assets/kb/clients/` (also `../robin-bos/assets/kb/`) and match the live files by md5 (re-checked 2026-10-08).
 mindmymind · Jongleren.es · Venga Travel · Olea Hospitality · Worldwiders · Abroad Internships · Custom Staffing · hirebetter.io · Tale Forge · Express Revisor · Social Impact Factory · Next Job Abroad · The Dutch Hub · Top Jobs Abroad
 
 - hirebetter.io and Tale Forge are K.B's own ventures, not ordinary clients (see [W]).
@@ -183,11 +185,11 @@ mindmymind · Jongleren.es · Venga Travel · Olea Hospitality · Worldwiders ·
   - "+20%" Growth. "Best-performing month up by +20% vs previous record"
 - Quote: "The automation they've introduced strikes a perfect balance between efficiency and personalization, showing a clear understanding of what works in practice." Attributed to "Susanne, Founder of Abroad Internships" here and to "Suzanne" on [S].
 - Safe figures for the screen: **21 automations**, **~30h saved per week**, **+20% best month**.
-- Real visuals on the site: a Make.com scenario graph and the K.B-built "Super Admin Dashboard" for "abroad". The dashboard image is on [SD]; its filename and content show it is the Abroad admin. See `harvest/ref-images/`.
+- Real visuals on the site: a Make.com scenario graph and the K.B-built "Super Admin Dashboard" for "abroad". The dashboard image is the "Business Dashboards" sample on [SD] (site file `business_dashboard_development.png`, which does not name the client); its workspace switcher reads "abroad", which is how we know it is the Abroad admin. See `harvest/ref-images/service-dashboard-abroad-super-admin.png`.
 
 ### Case 2: Göteborgsvarvet [C2]
 - H1: "Turning Sustainability Data Collection Into a Scalable Reporting Platform"
-- Lead: "Göteborgsvarvet needed a faster, easier, and more reliable way to collect CO2-related data across one of the world's largest half marathon events. Instead of relying on complex Excel files, manual follow-ups, and scattered submissions, K.B built a centralized sustainability reporting platform…"
+- Lead: "Göteborgsvarvet needed a faster, easier, and more reliable way to collect CO2-related data across one of the world’s largest half marathon events. Instead of relying on complex Excel files, manual follow-ups, and scattered submissions, K.B built a centralized sustainability reporting platform…"
 - Challenge: "The existing process was built around Excel files." Data was needed from "Internal staff, event personnel, suppliers, sponsors, partners, and collaborators" across "travel, food, materials, logistics, and other event-related emissions".
 - Approach: "K.B built a custom web-based CO2 data collection platform designed around simplicity, speed, and adoption." Features:
   - "A public submission portal"
@@ -197,6 +199,7 @@ mindmymind · Jongleren.es · Venga Travel · Olea Hospitality · Worldwiders ·
   - "Centralized storage"
   - "An admin dashboard for Göteborgsvarvet"
   - "Partner and submission tracking"
+  - "Manual record creation, editing, and deletion"
   - "Filtering and reporting overview"
   - "Excel export functionality aligned with the existing CO2 model"
 - Results: "10/10" Client Satisfaction; "100%" "Succesful submissions rate" (sic).
@@ -212,7 +215,7 @@ The case title is "Jongleren"; the body text writes "JongLeren".
 - Results:
   - "~40h" Time saved per month. "Each intake cut from 70 minutes to 20-30 minutes"
   - "90%" Error reduction. "Fewer lost notes, missing info, and manual mistakes"
-  - "~€1,200" Cost impact per month
+  - "~€1,200" Cost impact per month. "Equivalent of saved cost in recruiter hours"
   - "100%" Team impact. "Higher-quality candidate data and faster placements"
 - Quote: "We are very impressed with the outcomes of the intake calls." Marisa, JongLeren.
 - Real visual: the Make.com scenario image "Firefly Intake call automation".
@@ -236,7 +239,7 @@ The case title is "Jongleren"; the body text writes "JongLeren".
 
 ### Other work samples on [SD] (unlabelled)
 - The web-development image is the Olea Hospitality site ("The Long-Term Talent Strategy", "Disciplined System. Reliable Partner."). The page does not say K.B built it.
-- The mobile-app image is an internship app with a red bull mascot and a "My Internship >" button. The client is not named.
+- The mobile-app image is an internship app with a red bull mascot and a "My Internship >" button. The site does not name the client; the mascot matches the juggling bull in the Jongleren.es logo.
 
 ## About: team and place
 "Our team" / "The people of K.B" [A]
@@ -252,7 +255,7 @@ The case title is "Jongleren"; the body text writes "JongLeren".
 - [RB] Robin's personal site lists him as "CEO & Founder" since Oct 2026, which conflicts with [A]. The film names nobody, so this does not matter.
 - Office: "C. Bolsa, 3 Distrito Centro, 29015 Málaga". CIF: B23910946. [H footer]
 - Careers [J]: "Join our team of consultants, engineers, and innovators." One open role, "Software Engineer Internship": Engineering, Internship, Málaga, Spain, Hybrid, starts 1 September 2026.
-- Events [E]: K.B hosted the "International Founders" meetups in Málaga on 30 June, 30 July and 27 August 2026, at Bloom and at Grand Café Gezellig. Each opened with MingelBingo. The listing says "No upcoming events right now."
+- Events [E]: K.B hosted the "International Founders" meetups in Málaga on 30 June, 30 July and 27 August 2026, at Bloom and at Grand Café Gezellig. The July and August listings say they opened with MingelBingo; the June listing does not mention it. The listing says "No upcoming events right now."
 
 ## Contact
 - hello@kruslockbosconsultancy.com · +46 70 314 67 55 · C. Bolsa, 3 Distrito Centro, 29015 Málaga [H][K]
@@ -273,8 +276,8 @@ The case title is "Jongleren"; the body text writes "JongLeren".
 - Contact meta: "Get in touch to explore how we can facilitate growth and build systems for your business. Book a call today!" [K]
 
 ## Brand basics
-- Logotype: "K.B" set in Copperplate, the site font `CopperplateCC_Heavy` (.otf), applied through `.logo{font-family:Copperplate}`. White text on a navy pill. [CSS][H]
-- App-icon tile: white serif "K.B" on a navy rounded square with a gentle gradient, about #374E6B to #3D5574. The tile is identical to /favicon-512x512.png (md5 match). File: `../robin-bos/assets/kb/kb-logo-512.png`. [RB]
+- Logotype: "K.B" set in Copperplate, the site font `CopperplateCC_Heavy` (.otf), applied through `.logo{font-family:Copperplate,sans-serif}`. In the nav it is near-white text (`--color-muted` #f1f5f9) on a navy pill (`bg-secondary/85`). [CSS][H]
+- App-icon tile: white serif "K.B" on a navy rounded square with a gentle left-to-right gradient, measured #354C67 to #3D5574 (mid #394F6D). The tile is identical to /favicon-512x512.png (md5 match, re-checked live 2026-10-08). Files: `assets/logo/favicon-512x512.png` (= `../robin-bos/assets/kb/kb-logo-512.png`), vector rebuild `assets/logo/kb-logo-tile.svg`. [RB]
 - Typeface for everything else: Montserrat, weights 400/500/600/700. [CSS]
 - Colour tokens [CSS]:
   - primary / accent: #38c8ff (bright cyan)
@@ -282,13 +285,14 @@ The case title is "Jongleren"; the body text writes "JongLeren".
   - background: #f7f7f7
   - foreground: #252525
   - card: #ebecf4
+  - muted: #f1f5f9
   - muted foreground: #49525b
   - radius: .5rem
 
 ## The script's claims, checked
 | Script line | Site evidence | Verdict |
 |---|---|---|
-| Technology should help your business grow. Not hold it back. | [H] "Discover how we help your business grow with automation, AI, and systems"; [H] "…turning operational complexity into clarity"; [B] titles such as "AI Automation Isn't Scaling Your Business, Broken Processes Are Slowing It Down" and "When Teams Stop Trusting Your AI Systems, Business Growth Starts to Stall" | General tone line, consistent with the site. No factual claim. |
+| Technology should help your business grow. Not hold it back. | [H] "Discover how we help your business grow with automation, AI, and systems"; [H] "…turning operational complexity into clarity"; [B] titles such as "AI Automation Isn’t Scaling Your Business, Broken Processes Are Slowing It Down" and "When Teams Stop Trusting Your AI Systems, Business Growth Starts to Stall" | General tone line, consistent with the site. No factual claim. |
 | But finding the right solutions, and knowing where to start, isn't always easy. | [H] "Not sure which service fits? Talk to us and we'll map it out."; [H] "Whether you have a clear brief or just a challenge worth solving…"; [K] "Do I need to be tech-savvy to work with you? Not at all." | General problem line. Supported in spirit. |
 | That's where K.B. comes in. | Brand name "K.B" [H] | OK. On screen write **"K.B"** with no trailing period and never "K.B Consultancy". |
 | We don't just offer advice. We become your tech partner. | [A] "…weren't looking for advice. They wanted someone to build the thing and stay involved." / "From generalist consultancy to embedded tech partner"; [H] "The Embedded Tech Partner for Growing Businesses"; [A] Vision "the tech partner European SMEs and startups turn to"; [H] "We're the technical team you don't have to hire yet." | Strong, direct evidence. |
@@ -297,5 +301,5 @@ The case title is "Jongleren"; the body text writes "JongLeren".
 | develop solutions, | [K] "Our team develops custom software solutions, from tailored automations to full SaaS platforms."; [H] 02 Build "We design and build the system with your team, in the open…" | Direct evidence (Build). |
 | and help bring them to life. | [H] 02 Build; [S] "K.B sets everything up and makes sure it runs smoothly"; [C1][C3] "Training & onboarding so the team could confidently adopt the new system"; [H] 03 Run | Supported (Build → Run). |
 | From strategy to implementation, we're by your side. | [A] "practical transformation that combines strategy, structure, and technology"; [SA] "we implement systems that fit into your existing processes"; [H] "We build alongside your team from day one… and we stay on afterward"; [H] "We work alongside the people you already have"; [A] "Embedded: We work inside your team, not around it." | Supported. "By your side" matches "alongside" and "embedded". The site no longer leads with "strategy", so keep visuals on build and run rather than advisory. |
-| Because real growth doesn't come from technology alone. | [A] "combines strategy, structure, and technology"; [A] "the people, the processes, and the potential for improvement"; [B] "You Don't Need More AI Automation, You Need Better Business Process Design" | Tone line, consistent with the site's view. |
+| Because real growth doesn't come from technology alone. | [A] "combines strategy, structure, and technology"; [A] "the people, the processes, and the potential for improvement"; [B] "You Don’t Need More AI Automation, You Need Better Business Process Design" | Tone line, consistent with the site's view. |
 | It comes from having the right partner behind it. | [A] "you gain a strategic partner invested in your growth. We treat your goals like our own"; [S] meta "At K.B, we are your partner."; [K] "most of our clients choose us as a long-term partner"; [A] "Reliable: We show up, we deliver, and we stay around after launch." | Supported. |
