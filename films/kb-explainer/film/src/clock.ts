@@ -17,7 +17,7 @@ export const BEATS: Record<string, number | string> = {
   shift: "w:on-0.22",             // the window steps left
   phone: "w:on-0.12",             // the phone slides in
   chips: "w:with-0.12",           // K.B and You
-  away: "w:how-0.34",
+  away: "w:how-0.46",             // workspace, phone and the pair leave together, before the word
   how: "w:how-0.12",
   audit: "w:we-0.22",             // the process audit window rises
   steps: "w:how2-0.1",

@@ -140,7 +140,7 @@
   },
   {
    "id": "gen-whoosh-medium",
-   "frame": 193,
+   "frame": 190,
    "db": -6,
    "note": "everything leaves left"
   },
@@ -632,55 +632,55 @@
   },
   {
    "id": "gen-pop",
-   "frame": 1012,
+   "frame": 1017,
    "db": -10,
    "note": "a tool lands in the ring"
   },
   {
    "id": "gen-pop",
-   "frame": 1014,
+   "frame": 1019,
    "db": -10,
    "pitch": 1,
    "note": "a tool lands in the ring"
   },
   {
    "id": "gen-pop",
-   "frame": 1016,
+   "frame": 1021,
    "db": -10,
    "pitch": 2,
    "note": "a tool lands in the ring"
   },
   {
    "id": "gen-pop",
-   "frame": 1018,
+   "frame": 1023,
    "db": -10,
    "pitch": 3,
    "note": "a tool lands in the ring"
   },
   {
    "id": "gen-pop",
-   "frame": 1020,
+   "frame": 1025,
    "db": -10,
    "pitch": 4,
    "note": "a tool lands in the ring"
   },
   {
    "id": "gen-pop",
-   "frame": 1022,
+   "frame": 1027,
    "db": -10,
    "pitch": 5,
    "note": "a tool lands in the ring"
   },
   {
    "id": "gen-pop",
-   "frame": 1024,
+   "frame": 1030,
    "db": -10,
    "pitch": 6,
    "note": "a tool lands in the ring"
   },
   {
    "id": "gen-pop",
-   "frame": 1026,
+   "frame": 1032,
    "db": -10,
    "pitch": 7,
    "note": "a tool lands in the ring"
@@ -847,7 +847,7 @@
   },
   {
    "id": "gen-riser-1s",
-   "frame": 1524,
+   "frame": 1541,
    "db": -9,
    "note": "the loop draws (ends as it closes)"
   },

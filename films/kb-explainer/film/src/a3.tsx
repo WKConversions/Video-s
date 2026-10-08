@@ -13,8 +13,8 @@ const drop = (g: number, at: string | number, dur = 0.45) => { const a = k(g, at
 
 export const Need: React.FC<{ g: number }> = ({ g }) => {
   const words = [{ t: "Need", at: "w:need" }, { t: "more?", at: "w:more" }];
-  const size = 210, w = measure("Need", size, 800) + measure("more?", size, 800) + 0.26 * size;
-  return <Line g={g} words={words} x={960 - w / 2} y={540 - 130} size={size} weight={800} color={C.navy} out="custom" outDur={0.35} />;
+  const size = 210, w = measure("Need", size, 800, -0.02) + measure("more?", size, 800, -0.02) + 0.26 * size;
+  return <Line g={g} words={words} x={960 - w / 2} y={540 - 130} size={size} weight={800} color={C.navy} ls={-0.02} out="custom-0.16" outDur={0.25} />;
 };
 
 // ---- the dashboard ---------------------------------------------------------------------------------------------------
@@ -39,7 +39,7 @@ const Dashboard: React.FC<{ g: number }> = ({ g }) => {
       <Abs x={310} y={36} o={drop(g, "w:custom").o * (1 - dash)} dy={drop(g, "w:custom").dy}><Skel w={340} h={30} c={U.skelD} /></Abs>
       <Abs x={310} y={28} o={dash}><span style={txt(36, 800)}>Dashboard</span></Abs>
       <Abs x={1188} y={30} o={drop(g, "w:custom+0.1").o} dy={drop(g, "w:custom+0.1").dy}>
-        {dash > 0 ? <div style={{ opacity: dash }}><Pill bg={U.tint} color={C.muted} size={19}>Example data</Pill></div> : <Skel w={170} h={36} c={U.skel} />}
+        {dash > 0 ? <div style={{ opacity: dash, marginLeft: -40 }}><Pill bg={C.cyanSoft} color={C.navy} size={24}>Example data</Pill></div> : <Skel w={170} h={36} c={U.skel} />}
       </Abs>
       {KPI.map((m, i) => {
         const d = drop(g, off("w:software2", 0.08 * i)), f = k(g, off("dash", 0.06 * i), 0.7);
@@ -154,22 +154,20 @@ const AppScreen: React.FC<{ g: number }> = ({ g }) => {
 };
 
 export const Custom: React.FC<{ g: number }> = ({ g }) => {
-  const gone = k(g, "tools+0.15", 0.4);
-  const SW = trk(g, [["custom", 960, 1580, 1], ["custom+0.65", 960, 560, 1, IN], ["web", 960, 560, 1.1], ["web+0.6", 690, 610, 0.72, MOVE], ["app", 675, 613, 0.76],
-    ["app+0.6", 640, 620, 0.7, MOVE], ["tools", 600, 628, 0.77], ["tools+0.55", 960, 600, 0.14, MOVE]]);
+  // the window rises a short way into place; at "every tool" the three screens slide off in three directions
+  const gone = k(g, "tools-0.05", 0.4, OUT), rise = k(g, "custom", 0.3);
+  const SW = trk(g, [["custom", 960, 980, 1], ["custom+0.8", 960, 560, 1, IN], ["web", 960, 560, 1.08], ["web+0.6", 690, 610, 0.72, MOVE], ["app", 675, 613, 0.76],
+    ["app+0.6", 640, 620, 0.7, MOVE], ["tools-0.05", 600, 628, 0.77], ["tools+0.35", 0, 680, 0.77, OUT]]);
   const WB = trk(g, [["custom", 2400, 430, 0.72], ["web", 2400, 430, 0.72], ["web+0.7", 1240, 430, 0.72, IN], ["app", 1215, 422, 0.75], ["app+0.6", 1170, 420, 0.72, MOVE],
-    ["tools", 1130, 405, 0.78], ["tools+0.55", 960, 600, 0.12, MOVE]]);
-  const P = trk(g, [["custom", 1560, 1560, 0.84], ["app", 1560, 1560, 0.84], ["app+0.6", 1530, 640, 0.84, IN], ["tools", 1505, 625, 0.92], ["tools+0.55", 960, 600, 0.12, MOVE]]);
+    ["tools-0.05", 1130, 405, 0.78], ["tools+0.35", 1300, -100, 0.78, OUT]]);
+  const P = trk(g, [["custom", 1560, 1560, 0.84], ["app", 1560, 1560, 0.84], ["app+0.6", 1530, 640, 0.84, IN], ["tools-0.05", 1505, 625, 0.92], ["tools+0.35", 2060, 760, 0.92, OUT]]);
   return (
     <>
       {g >= T.f("web") && <Box x={WB[0]} y={WB[1]} w={1200} h={760} s={WB[2]} o={1 - gone}>
         <Win w={1200} h={760} logo={false} title={<BarTitle g={g} text="" at="web+0.2"><Icon name="globe" size={30} color={C.white} />Website</BarTitle>}><Website g={g} /></Win>
       </Box>}
-      <Box x={SW[0]} y={SW[1]} w={1440} h={820} s={SW[2]} o={1 - gone}>
-        <Win w={1440} h={820} logo={false} title={<>
-          <BarTitle g={g} text="Custom software" at="custom+0.35" out="dash" />
-          <BarTitle g={g} text="" at="dash+0.05"><Icon name="chart" size={30} color={C.white} />Dashboard</BarTitle>
-        </>}><Dashboard g={g} /></Win>
+      <Box x={SW[0]} y={SW[1]} w={1440} h={820} s={0.97 * SW[2]} o={rise * (1 - gone)}>
+        <Win w={1440} h={820} logo={false} title={<BarTitle g={g} text="Custom software" at="custom+0.35" />}><Dashboard g={g} /></Win>
       </Box>
       {g >= T.f("app") && <Box x={P[0]} y={P[1]} w={PHONE.w} h={PHONE.h} s={P[2]} o={1 - gone}><AppScreen g={g} /></Box>}
     </>
@@ -183,17 +181,17 @@ let SPIN = 0;   // the ring's slow turn (radians), set each frame by Tools
 const ringPos = (i: number) => { const a = ((22.5 + 45 * i) * Math.PI) / 180 + SPIN; return { x: HUB.x + 610 * Math.cos(a), y: HUB.y + 300 * Math.sin(a), ux: Math.cos(a), uy: Math.sin(a) }; };
 export const Tools: React.FC<{ g: number }> = ({ g }) => {
   SPIN = 0.22 * Math.max(0, g - T.f("tools")) / 30;
-  const hub = k(g, "tools+0.25", 0.55), hubOut = k(g, "team", 0.4, OUT);
-  const fl = k(g, "flows", 0.4) * (1 - k(g, "team", 0.3));
-  const keys = k(g, "copy", 0.4), keys2 = k(g, "paste-0.06", 0.4), keysOut = k(g, "team", 0.3);
-  const strike = k(g, "paste+0.12", 0.32, MOVE);
+  const hub = k(g, "tools+0.32", 0.55), hubOut = k(g, "team-0.3", 0.4, OUT);
+  const fl = k(g, "flows", 0.4) * (1 - k(g, "team-0.3", 0.3));
+  const keys = k(g, "copy", 0.4), keys2 = k(g, "paste-0.06", 0.4), keysOut = k(g, "paste+0.55", 0.35, OUT);
+  const strikes = [k(g, "paste+0.06", 0.25, MOVE), k(g, "paste+0.18", 0.25, MOVE)];
   return (
     <>
       <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0 }}>
         {RING.map((t, i) => {
           const p = ringPos(i), dx = p.x - HUB.x, dy = p.y - HUB.y, d = Math.hypot(dx, dy), ux = dx / d, uy = dy / d;
           const a = { x: p.x - ux * 82, y: p.y - uy * 82 }, b = { x: HUB.x + ux * (HUB.r + 10), y: HUB.y + uy * (HUB.r + 10) };
-          const kk = k(g, off("connect", 0.035 * i), 0.42, EASE.steady) * (1 - k(g, "team", 0.3));
+          const kk = k(g, off("connect", 0.035 * i), 0.42, EASE.steady) * (1 - k(g, "team-0.3", 0.3));
           if (kk <= 0) return null;
           return (
             <g key={i}>
@@ -217,21 +215,20 @@ export const Tools: React.FC<{ g: number }> = ({ g }) => {
         <div style={{ ...txt(32, 800), textAlign: "center", lineHeight: 1.1 }}>Your<br />system</div>
       </Box>
       {RING.map((t, i) => {
-        const p = ringPos(i), a = k(g, off("tools+0.12", 0.07 * i), 0.62, IN), o = k(g, off("team", 0.03 * i), 0.45, OUT);
+        const p = ringPos(i), a = k(g, off("tools+0.3", 0.07 * i), 0.62, IN), o = k(g, off("team-0.4", 0.03 * i), 0.45, OUT);
         if (a <= 0 || o >= 1) return null;
         const away = (1 - a) * 760 + o * 520;
         return <Box key={t} x={p.x + p.ux * away} y={p.y + p.uy * away} w={128} h={128} o={1 - o}><ToolTile tool={t} size={128} /></Box>;
       })}
-      {keys > 0 && keysOut < 1 && (
-        <div style={{ position: "absolute", left: 0, top: 0, opacity: 1 - keysOut }}>
-          {[["Copy", keys, 806], ["Paste", keys2, 978]].map(([t, a, x]) => (a as number) > 0 && (
-            <div key={t as string} style={{ position: "absolute", left: x as number, top: 104, width: 150, height: 96, borderRadius: 16, background: C.white, border: `2px solid ${U.skel}`,
-              borderBottom: `7px solid ${U.skelD}`, boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", ...txt(30, 700),
-              opacity: Math.min(1, (a as number) * 1.5), transform: `translateY(${(1 - (a as number)) * -40}px)` }}>{t as string}</div>
-          ))}
-          <div style={{ position: "absolute", left: 776, top: 146, width: 386, height: 11, borderRadius: 6, background: C.cyan, transform: `rotate(-4deg) scaleX(${strike})`, transformOrigin: "0 50%" }} />
+      {/* copy-paste: two keys, each struck out in red on "paste", then gone */}
+      {keys > 0 && keysOut < 1 && [["Copy", keys, 748], ["Paste", keys2, 972]].map(([t, a, x], j) => (a as number) > 0 && (
+        <div key={t as string} style={{ position: "absolute", left: x as number, top: 92 + keysOut * 40, width: 200, height: 118, opacity: Math.min(1, (a as number) * 1.5) * (1 - keysOut),
+          transform: `translateY(${(1 - (a as number)) * -40}px)` }}>
+          <div style={{ position: "absolute", inset: 0, borderRadius: 20, background: C.white, border: `2px solid ${U.skel}`, borderBottom: `9px solid ${U.skelD}`, boxSizing: "border-box",
+            display: "flex", alignItems: "center", justifyContent: "center", paddingBottom: 6, ...txt(40, 800), boxShadow: SHADOW.soft }}>{t as string}</div>
+          <div style={{ position: "absolute", left: 18, right: 18, top: 50, height: 12, borderRadius: 6, background: C.warn, transform: `rotate(-8deg) scaleX(${strikes[j]})`, transformOrigin: "0 50%" }} />
         </div>
-      )}
+      ))}
     </>
   );
 };

@@ -1,0 +1,20 @@
+{
+ "title": "K.B Explainer Film",
+ "eyebrow": "K.B · explainer · 58 s · 1920×1080 · storyboard and QC",
+ "headline": "Diagnose, build, <em>run</em>",
+ "subtitle": "The JustCall × HubSpot explainer Karl supplied, remade beat for beat for K.B: the same structure, pacing and kinds of motion, with K.B's own interface, words and voice. Only \"K.B\" is said and shown; people are initials, never photos.",
+ "film": "film.mp4",
+ "poster": "frames/t52.80.jpg",
+ "direction": {
+  "Purpose": "A product-explainer for K.B's website and LinkedIn: what K.B does, how it works, and the call to talk.",
+  "Audience": "Founders and managers of startups and SMEs whose work still runs on manual steps.",
+  "Format": "16:9, 1920×1080, 30 fps, 58.0 s.",
+  "Core message": "K.B builds the software and automation your business runs on, with you: diagnose, build, run, one loop.",
+  "Reference": "The JustCall × HubSpot explainer: logo circles open into an app window, a module switches on, a phone slides in, \"How?\", one window whose body changes while the view pushes into cards, a dropdown pick, a workflow, tools joined up, avatars, a month calendar, an infinity loop, a logo-and-button end card, a brand mark in the corner. Nothing of its artwork, screens or words is used.",
+  "Style and brand": "K.B's site: canvas #F7F7F7 with soft blobs, white rounded windows with a navy app bar, cyan as the action colour (never text on light), Montserrat; Copperplate only in the K.B logotype.",
+  "Motion": "Precise and calm: arrivals from outside the frame on a gentle curve, MOVE for things already on screen, slow push-ins on every hold (the reference's zoom language), no overshoot. The camera only breathes.",
+  "Words on screen": "Only \"How?\" and \"Need more?\" as big words (as in the reference); everything else is interface text inside the pictures.",
+  "Sound": "ElevenLabs voice (Christina) at 1.60 s; Mixkit \"Tears of Joy\" cut on its bar grid, the band coming in as the audit window rises after \"How?\", the song's last hit on \"K.B\" and the end card; 137 effects on their moves (clicks, typing, landings, chimes)."
+ },
+ "beats": []
+}

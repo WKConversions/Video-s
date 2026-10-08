@@ -194,11 +194,11 @@ export const Blobs: React.FC<{ g: number }> = ({ g }) => {
 type Bit = { x: number; y: number; kind: "tri" | "half" | "dot" | "ring" | "squig" | "plus"; c: string; s: number; r: number; vr: number; p: number };
 const BITS: Bit[] = [
   { x: 210, y: 170, kind: "tri", c: C.cyan, s: 40, r: 10, vr: 0.6, p: 0 },
-  { x: 1640, y: 230, kind: "half", c: C.navy, s: 34, r: 40, vr: -0.4, p: 1 },
+  { x: 1500, y: 190, kind: "half", c: C.navy, s: 34, r: 40, vr: -0.4, p: 1 },
   { x: 1500, y: 880, kind: "ring", c: C.cyan, s: 30, r: 0, vr: 0, p: 2 },
   { x: 330, y: 860, kind: "plus", c: C.kb, s: 30, r: 15, vr: 0.5, p: 3 },
-  { x: 120, y: 520, kind: "dot", c: C.cyan, s: 18, r: 0, vr: 0, p: 4 },
-  { x: 1800, y: 600, kind: "squig", c: C.navy, s: 52, r: -20, vr: 0.3, p: 5 },
+  { x: 130, y: 780, kind: "dot", c: C.cyan, s: 18, r: 0, vr: 0, p: 4 },
+  { x: 1830, y: 800, kind: "squig", c: C.navy, s: 52, r: -20, vr: 0.3, p: 5 },
   { x: 760, y: 110, kind: "dot", c: C.kb, s: 14, r: 0, vr: 0, p: 6 },
   { x: 1180, y: 980, kind: "tri", c: C.navy, s: 30, r: -30, vr: -0.5, p: 7 },
   { x: 560, y: 990, kind: "half", c: C.cyan, s: 28, r: 200, vr: 0.4, p: 8 },
@@ -217,8 +217,10 @@ const Bit: React.FC<{ b: Bit }> = ({ b }) => {
 };
 /** The small shapes at the edges (the open, "How?", "Need more?", the loop, the end): they drift and turn, and come
  *  in from (and go back past) the frame's edges with `k` (0..1). */
-export const Bits: React.FC<{ g: number; k: number }> = ({ g, k }) =>
-  k <= 0.001 ? null : (
+export const Bits: React.FC<{ g: number; k: number }> = ({ g: g0, k }) => {
+  // after the last word the shapes ease to a stop (a calm sign-off)
+  const r = T.f("rest"), g = g0 < r ? g0 : r + 24 * (1 - Math.exp(-(g0 - r) / 24));
+  return k <= 0.001 ? null : (
     <>
       {BITS.map((b, i) => {
         const dx = b.x - 960, dy = b.y - 540, d = Math.hypot(dx, dy), out = (1 - sm(k)) * 260;
@@ -229,3 +231,21 @@ export const Bits: React.FC<{ g: number; k: number }> = ({ g, k }) =>
       })}
     </>
   );
+};
+
+/** The canvas's faint dot texture (K.B's site and the reference both have one). */
+export const Dots: React.FC = () => (
+  <div style={{ position: "absolute", left: -60, top: -60, width: 2040, height: 1200, backgroundImage: "radial-gradient(circle, #D9DEE5 1.6px, transparent 2.2px)", backgroundSize: "28px 28px" }} />
+);
+
+/** A connector arrow that draws its shaft first and shows its head only when the shaft has arrived. */
+export const Arrow: React.FC<{ k: number; w: number; color?: string; width?: number }> = ({ k, w, color = U.link, width = 4 }) => {
+  if (k <= 0.03) return null;
+  const sh = Math.min(1, k / 0.85), hd = Math.min(1, Math.max(0, (k - 0.8) / 0.2));
+  return (
+    <svg width={w} height={24} viewBox={`0 0 ${w} 24`} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
+      <path d={`M2 12H${2 + (w - 6) * sh}`} stroke={color} strokeWidth={width} strokeLinecap="round" fill="none" />
+      {hd > 0 && <path d={`M${w - 11} 5l7 7-7 7`} stroke={color} strokeWidth={width} strokeLinecap="round" strokeLinejoin="round" fill="none" opacity={hd} />}
+    </svg>
+  );
+};
