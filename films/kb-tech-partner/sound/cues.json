@@ -1,0 +1,316 @@
+{
+ "fps": 30,
+ "frames": 1020,
+ "library": "lib",
+ "vo": {
+  "file": "../film/public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.2,
+  "fade_out": 0.6
+ },
+ "sfx": [
+  {
+   "id": "gen-impact-soft",
+   "frame": 49,
+   "db": -7,
+   "note": "the business lands on the floor"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 71,
+   "db": -5,
+   "note": "the floor lifts it on \"grow\" (mid-move)"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 107,
+   "db": -3,
+   "pitch": -3,
+   "note": "the two tiles clamp its feet"
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 117,
+   "db": -7,
+   "note": "held back: floor, business and word sink"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 147,
+   "db": -5,
+   "note": "a tool passes the selector"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 156,
+   "db": -5,
+   "pitch": 1,
+   "note": "a tool passes the selector"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 168,
+   "db": -5,
+   "pitch": 2,
+   "note": "a tool passes the selector"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 195,
+   "db": -5,
+   "pitch": 3,
+   "note": "a tool passes the selector"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 201,
+   "db": -5,
+   "pitch": 4,
+   "note": "a tool passes the selector"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 213,
+   "db": -5,
+   "note": "the reel breaks: three tiles land round the business"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 217,
+   "db": -7,
+   "note": "the selector can't settle"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 225,
+   "db": -7,
+   "note": "the selector can't settle"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 232,
+   "db": -7,
+   "note": "the selector can't settle"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 238,
+   "db": -6,
+   "note": "a pair of tiles closes the wall"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 243,
+   "db": -6,
+   "pitch": 1,
+   "note": "a pair of tiles closes the wall"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 248,
+   "db": -6,
+   "pitch": 2,
+   "note": "a pair of tiles closes the wall"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 253,
+   "db": -6,
+   "pitch": 3,
+   "note": "a pair of tiles closes the wall"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 255,
+   "db": -6,
+   "pitch": 5,
+   "note": "a pair of tiles closes the wall"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 260,
+   "db": -6,
+   "pitch": 7,
+   "note": "a pair of tiles closes the wall"
+  },
+  {
+   "id": "gen-stamp",
+   "frame": 299,
+   "db": -4,
+   "note": "K.B seats in the hole"
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 315,
+   "db": -3,
+   "note": "the tile grows into the navy field (fastest frame)"
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 319,
+   "db": -9,
+   "note": "K.B, the brand moment"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 345,
+   "db": -7,
+   "note": "the field folds back into the tile"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 358,
+   "db": -9,
+   "note": "the advice note slides across the gap"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 402,
+   "db": -5,
+   "note": "K.B crosses the gap"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 410,
+   "db": -5,
+   "note": "and docks beside the business"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 467,
+   "db": -6,
+   "pitch": 4,
+   "note": "the dot leaves the period"
+  },
+  {
+   "id": "gen-appear",
+   "frame": 476,
+   "db": -3,
+   "note": "the dot opens into a lens"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 507,
+   "db": -5,
+   "note": "the business opens into its parts"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 550,
+   "db": -5,
+   "note": "ringed: Excel files"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 566,
+   "db": -5,
+   "pitch": 2,
+   "note": "ringed: CRM updates"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 568,
+   "db": -5,
+   "pitch": 4,
+   "note": "ringed: Follow-ups"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 598,
+   "db": -6,
+   "note": "the pieces flip into Make, n8n, Claude"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 601,
+   "db": -6,
+   "pitch": 2,
+   "note": ""
+  },
+  {
+   "id": "gen-tap",
+   "frame": 604,
+   "db": -6,
+   "pitch": 4,
+   "note": ""
+  },
+  {
+   "id": "gen-riser-1s",
+   "frame": 659,
+   "db": -9,
+   "note": "the flow builds into \"life\" (ends on it)"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 652,
+   "db": -6,
+   "note": "the pieces close into one"
+  },
+  {
+   "id": "gen-success",
+   "frame": 663,
+   "db": -3,
+   "note": "brought to life: the colour comes back"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 728,
+   "db": -4,
+   "note": "the pair rides from strategy to implementation"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 742,
+   "db": -6,
+   "pitch": 2,
+   "note": "arrives at implementation"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 775,
+   "db": -6,
+   "note": "the K.B tile turns to the founders"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 804,
+   "db": -5,
+   "note": "the founders go behind the business"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 852,
+   "db": -6,
+   "note": "the opening's floor returns"
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 918,
+   "db": -4,
+   "note": "the floor drops away"
+  },
+  {
+   "id": "gen-swell",
+   "frame": 934,
+   "db": -2,
+   "note": "the founders rise behind it"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 953,
+   "db": -6,
+   "note": "both lift, higher than in the hook"
+  },
+  {
+   "id": "gen-impact-deep",
+   "frame": 961,
+   "db": -8,
+   "note": "the end card: with the song's last chord"
+  }
+ ]
+}
