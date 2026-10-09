@@ -4,9 +4,11 @@
 # The cues (frame, sound, pitch) come from the overlay itself (overlay/index.html, via render.mjs timing),
 # so picture and sound share one timing sheet. The effects are synthesized here, royalty-free:
 #   pop   a soft, rounded, marimba-like pop (a client landing on the row)
-#   tick  a short, light tick (a tile landing in the wall's stagger)
+#   tick  a short, soft, wooden tick (a tile landing in the wall's cascade)
 # Levels follow the studio's roles relative to the voice: voice -16, pops -29, ticks -31 LUFS; here the
 # voice is the film's own at about -22 LUFS, so the effects sit the same distance under it.
+# The output is the source track decoded; it goes into the film re-encoded (AAC 256 kb/s), so it is
+# the same voice-over, not the same bytes.
 import json, os, subprocess, sys, wave
 import numpy as np
 
@@ -47,16 +49,17 @@ def pop(semi):
     return room((body + wood) * att, 0.3, 0.10)
 
 def tick(semi):
-    f0 = 2100.0 * 2 ** (semi / 12)
-    n = int(0.09 * SR); t = np.arange(n) / SR
-    tone = np.sin(2 * np.pi * f0 * t) * np.exp(-t / 0.010)
-    click = rng.standard_normal(n) * np.exp(-t / 0.0015) * 0.25
+    f0 = 1320.0 * 2 ** (semi / 12)                    # soft and wooden rather than a bright click
+    n = int(0.12 * SR); t = np.arange(n) / SR
+    tone = np.sin(2 * np.pi * f0 * t) * np.exp(-t / 0.014)
+    click = rng.standard_normal(n) * np.exp(-t / 0.0012) * 0.08
     att = np.minimum(1, t / 0.0008)
     return room((tone + click) * att, 0.2, 0.08)
 
 SYNTH = {"pop": pop, "tick": tick}
-# dB under the voice's typical 100 ms loudness, from the role levels (voice -16: pop -29, tick -31)
-UNDER = {"pop": 13.0, "tick": 15.0}
+# dB under the voice's typical 100 ms loudness, from the role levels (voice -16: pop -29, tick -31); the
+# ticks come as a run, which sounds louder than one tick, so they sit 3 dB lower again
+UNDER = {"pop": 13.0, "tick": 18.0}
 
 def rms100_max(x):
     w = int(0.1 * SR)

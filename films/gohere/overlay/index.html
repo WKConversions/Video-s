@@ -13,7 +13,8 @@
   @font-face { font-family: 'Nunito Sans'; font-weight: 800; src: url(fonts/nunito-sans-latin-800-normal.woff2) format('woff2'); }
   html, body { margin: 0; background: #fff; }
   #stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: #fff; }
-  .abs { position: absolute; left: 0; top: 0; will-change: transform, opacity; }
+  /* no will-change: a promoted layer resamples the text and, split across render tabs, makes it tremble */
+  .abs { position: absolute; left: 0; top: 0; }
   .label { white-space: nowrap; }
   .item { display: flex; align-items: center; white-space: nowrap; }
   .tile { flex: none; overflow: hidden; background: #fff; }
@@ -36,7 +37,7 @@ const CLIENTS = {
   malagatips:       'Malaga Tips',
   clubrondreizen:   'Club Rondreizen',
   sevillabymandy:   'Sevilla by Mandy',
-  stouteschoenen:   'Stoute Schoenen',
+  stouteschoenen:   'Stoute schoenen',
   valenciatips:     'Valencia Tips',
   wereldstadgidsen: 'Wereldstadgidsen',
   vakantiexperts:   'VakantieXperts',
@@ -83,6 +84,9 @@ function makeItem(slug, withName = true) {
   const t = el('tile', d);
   Object.assign(t.style, { width: STYLE.tile + 'px', height: STYLE.tile + 'px', borderRadius: STYLE.radius + 'px', boxShadow: STYLE.shadow });
   const img = document.createElement('img'); img.src = `tiles/${slug}.png`; t.appendChild(img);
+  // the film's own four are 55 px cuts from the film: scale them by whole pixels so the supersampled
+  // render gives back exactly the film's pixels
+  if (ORDER.indexOf(slug) < 4) img.style.imageRendering = 'pixelated';
   if (withName) {
     const n = document.createElement('span');
     n.textContent = CLIENTS[slug];
@@ -94,7 +98,10 @@ function makeItem(slug, withName = true) {
   }
   return d;
 }
-const place = (d, x, y, o = 1) => { d.style.transform = `translate(${x}px, ${y}px)`; d.style.opacity = o; };
+// Positions snap to the render's device-pixel grid (1/SS px; see render.mjs): text and tile stay locked
+// together and every frame is the same whichever tab draws it, while the supersampled render glides.
+const snap = v => Math.round(v * (window.SS || 1)) / (window.SS || 1);
+const place = (d, x, y, o = 1) => { d.style.transform = `translate(${snap(x)}px, ${snap(y)}px)`; d.style.opacity = o; };
 
 // ---------------------------------------------------------------- layouts
 let scene = null;
@@ -114,51 +121,74 @@ function buildCalib() {
 // both starting on the headline's left edge (x = 76).
 const X0 = 76, LABEL_Y = 790, ROW_Y = 828;
 
-// A: the row keeps the film's style (tile + name) and pages through all sixteen, four at a time.
-const PAGES = [ORDER.slice(0, 4), ORDER.slice(4, 8), ORDER.slice(8, 12), ORDER.slice(12, 16)];
-// A page leaves left to right (2 frames apart) and the next one only starts 11 frames later, 4 frames
-// apart: a name never appears where the one before it is still fading. The last page stays.
-const A = { enter: [1017, 1087, 1156, 1225], exit: [1076, 1145, 1214, null], end: 1304 };
-const STAGGER = 4, FADE_IN = 13, FADE_OUT = 9, OUT_STAGGER = 2;
-// Sound: a soft pop as each new client lands (9 frames into its fade, when it reads as solid), the
-// four of a page rising a scale; the last page resolves to the octave. The first page is the film's
-// own row, under the voice's last word, and stays silent as it was.
-A.cues = A.enter.slice(1).flatMap((e, p) => [0, 1, 2, 3].map(k => ({
-  frame: e + STAGGER * k + 9, sound: 'pop', semitones: (p === 2 ? [0, 4, 7, 12] : [0, 2, 4, 7])[k],
-  note: `${PAGES[p + 1][k]} lands` })));
+// A: names, in the film's own tile + name style. Two rows under the label, two pages of eight: page 1 is
+// the film's four (in their original timing) with the client's first four under them; then each slot
+// hands over to the next client, and page 2 (the other eight) holds to the end.
+const ROW_PITCH = 70;
+const PAGES = [ORDER.slice(0, 8), ORDER.slice(8, 16)];
+const STAGGER = 4, FADE_IN = 13, FADE_OUT = 9, OUT_STAGGER = 3, ENTRY_DX = 32, EXIT_DX = 22;
+const A = { enter: 1017, exit: 1100, end: 1202 };
+
+// Final positions: four per row, flowing left to right like the original row.
+function layoutRows(items) {
+  return items.map((it, i) => ({ it, row: Math.floor(i / 4), w: it.offsetWidth })).map((o, i, all) => {
+    const before = all.slice(o.row * 4, i);
+    return { ...o, x: X0 + before.reduce((a, b) => a + b.w + STYLE.itemGap, 0), y: ROW_Y + o.row * ROW_PITCH };
+  });
+}
+
+// Page 1: the original row's timing for the first four; the client's first four follow in the same rhythm.
+// Page 2: a relay. Old item j has left (opacity < 0.05) EXIT_AT frames after it starts to go; new item i
+// starts once every old item its path could touch has left, and never sooner than STAGGER after the one before.
+const EXIT_AT = 8;
+function relayStarts(oldL, newL, x) {
+  const starts = [];
+  newL.forEach((n, i) => {
+    let s = i ? starts[i - 1] + STAGGER : x;
+    oldL.forEach((o, j) => {
+      const touches = o.row === n.row && n.x < o.x + o.w && o.x - EXIT_DX < n.x + n.w + ENTRY_DX;
+      if (touches) s = Math.max(s, x + OUT_STAGGER * j + EXIT_AT);
+    });
+    starts.push(s);
+  });
+  return starts;
+}
 
 function buildA() {
   const label = makeLabel('A SELECTION OF OUR CLIENTS');
   const pages = PAGES.map(p => p.map(s => makeItem(s)));
-  return { frame(f) {
-    // The label arrives with the first page, on the original row's settle (32 px left, 7 px down).
-    const u0 = (f - 1018) / 72;
-    place(label, X0 + 32 * settle(u0), LABEL_Y - 7 * settle(u0), smooth(ramp(f, 1017, 1031)));
-    pages.forEach((items, p) => {
-      const e = A.enter[p], x = A.exit[p];
-      // a page's row settles from the right like the original row; it leaves to the left.
-      const u = p === 0 ? u0 : (f - e) / 62;
-      let cx = X0 + 32 * settle(u);
-      items.forEach((it, k) => {
-        const w = it.offsetWidth;
-        const oIn = smooth(ramp(f, e + STAGGER * k, e + STAGGER * k + FADE_IN));
-        const leaves = x !== null;
-        const oOut = leaves ? 1 - smooth(ramp(f, x + OUT_STAGGER * k, x + OUT_STAGGER * k + FADE_OUT)) : 1;
-        const dxOut = leaves ? -22 * easeIn(ramp(f, x + OUT_STAGGER * k, x + OUT_STAGGER * k + 14)) : 0;
-        const o = oIn * oOut;
-        place(it, cx + dxOut, ROW_Y - 7 * settle(u), o);
-        it.style.visibility = o <= 0.001 ? 'hidden' : 'visible';
-        cx += w + STYLE.itemGap;
-      });
-    });
-  } };
+  let L = null, starts = null;
+  return {
+    timing() {
+      L = pages.map(layoutRows);
+      starts = [PAGES[0].map((_, i) => A.enter + STAGGER * i), relayStarts(L[0], L[1], A.exit)];
+      return starts;
+    },
+    frame(f) {
+      if (!L) this.timing();
+      // The label and page 1 settle like the original row: 32 px left and 7 px down, (1 - u)^2.2.
+      const u0 = (f - 1018) / 72;
+      place(label, X0 + ENTRY_DX * settle(u0), LABEL_Y - 7 * settle(u0), smooth(ramp(f, 1017, 1031)));
+      L.forEach((items, p) => items.forEach((o, i) => {
+        const s = starts[p][i];
+        // each page settles as one block, as the original row does; its items only fade in one by one
+        const u = p === 0 ? u0 : (f - starts[1][0]) / 62;
+        const oIn = smooth(ramp(f, s, s + FADE_IN));
+        const out = p === 0 ? A.exit + OUT_STAGGER * i : null;
+        const oOut = out === null ? 1 : 1 - smooth(ramp(f, out, out + FADE_OUT));
+        const dxOut = out === null ? 0 : -EXIT_DX * easeIn(ramp(f, out, out + 14));
+        const op = oIn * oOut;
+        place(o.it, o.x + ENTRY_DX * settle(u) + dxOut, o.y - 7 * settle(u), op);
+        o.it.style.visibility = op <= 0.001 ? 'hidden' : 'visible';
+      }));
+    },
+  };
 }
 
 // B: all sixteen at once, tiles only, in one row as wide as the old one.
-const B = { end: 1140, stagger: 2 };
-// Sound: a soft tick per tile as it lands, rising, from the third tile on (the first two land under the
-// voice's last word).
-B.cues = ORDER.map((slug, k) => ({ frame: 1017 + 4 + B.stagger * k + 9, sound: 'tick', semitones: +(0.6 * k).toFixed(2), note: `${slug} lands` })).slice(2);
+// B ends where the source ends (frame 1105 is its last): the wall is whole by 1047 and the source's own
+// settle carries the card to its end, so nothing is held or frozen.
+const B = { end: 1106, stagger: 1, first: 1021 };
 function buildB() {
   const label = makeLabel('A SELECTION OF OUR CLIENTS');
   const items = ORDER.map(s => makeItem(s, false));
@@ -168,10 +198,28 @@ function buildB() {
     const dx = 32 * settle(u0), dy = -7 * settle(u0);
     place(label, X0 + dx, LABEL_Y + dy, smooth(ramp(f, 1017, 1031)));
     items.forEach((it, k) => {
-      const s = 1017 + 4 + B.stagger * k;
+      const s = B.first + B.stagger * k;
       place(it, X0 + k * (STYLE.tile + gap) + dx, ROW_Y + dy, smooth(ramp(f, s, s + FADE_IN)));
     });
   } };
+}
+
+// Sound cues, from the same timing as the picture. A sound lands when its item is solid (95%, 11 frames
+// into the fade), on the frame or later, never before.
+const LAND = 11, VOICE_END = 1034;   // the voice's last word ends at 34.45 s
+function cuesA(starts) {
+  // the client's first four (page 1, second row) and all eight of page 2; the film's own four stay silent
+  const notes = [0, 2, 4, 7, 9, 12, 14, 16];
+  return [...starts[0].slice(4).map((s, i) => ({ frame: s + LAND, sound: 'pop', semitones: notes[i], note: `${PAGES[0][i + 4]} lands` })),
+          ...starts[1].map((s, i) => ({ frame: s + LAND, sound: 'pop', semitones: notes[i], note: `${PAGES[1][i]} lands` }))];
+}
+function cuesB() {
+  // a short, soft ticker on the cascade: every other tile, rising on a pentatonic scale, starting at
+  // least 0.15 s after the last word
+  const steps = [0, 2, 4, 7, 9, 12];
+  return ORDER.map((slug, k) => ({ k, frame: B.first + B.stagger * k + LAND, note: `${slug} lands` }))
+    .filter(c => c.frame >= VOICE_END + 5 && c.k % 2 === 0)
+    .map((c, i) => ({ frame: c.frame, sound: 'tick', semitones: steps[Math.min(i, steps.length - 1)], note: c.note }));
 }
 
 window.setup = async (mode) => {
@@ -179,7 +227,9 @@ window.setup = async (mode) => {
   scene = { calib: buildCalib, A: buildA, B: buildB }[mode]();
   await document.fonts.ready;
   await Promise.all([...document.images].map(i => i.complete ? 0 : new Promise(r => { i.onload = i.onerror = r; })));
-  return { A, B };
+  const out = { A: { ...A }, B: { ...B, cues: cuesB() } };
+  if (mode === 'A') { const st = scene.timing(); out.A.starts = st; out.A.cues = cuesA(st); }
+  return out;
 };
 window.frame = (f) => { scene.frame(f); };
 </script>
