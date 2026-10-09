@@ -1,0 +1,14 @@
+{
+ "nameSize": 22,
+ "nameWeight": 800,
+ "nameDy": 0,
+ "labelSize": 20,
+ "labelWeight": 800,
+ "labelTrack": 0.18,
+ "labelFamily": "Nunito Sans",
+ "labelDy": 2,
+ "nameColor": "#14142b",
+ "labelColor": "#4d4c60",
+ "tileGap": 12.5,
+ "nameTrack": 0
+}
