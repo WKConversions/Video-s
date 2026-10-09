@@ -1,0 +1,2168 @@
+{
+ "$schema_note": "Plain JSON, not a W3C design-token file. Every value cites its source. px = rendered CSS px; desktop 1440x900, mobile 390x844, tablet 834 (clamp evaluated).",
+ "meta": {
+  "site": "https://tale-forge.app",
+  "harvested": "2026-10-09",
+  "root_font_size_px": 16,
+  "sources": {
+   "css": "source/css/*.pretty.css",
+   "computed": "source/rendered/computed-styles__<page>__<lang>__<theme>__<vp>.json",
+   "inventory": [
+    "derived/typography/css-type-declarations.csv",
+    "derived/typography/js-inline-type-styles.csv",
+    "derived/typography/html-inline-type-styles.csv",
+    "derived/typography/computed-type-usage.csv"
+   ],
+   "font_faces": "derived/typography/font-faces.json",
+   "weight_resolution": "derived/typography/weight-resolution.json"
+  },
+  "status_values": {
+   "observed": "value read from computed styles of a harvested page",
+   "css-only": "from CSS for a screen not publicly reachable (reader, start flow, hearth, create)"
+  }
+ },
+ "rootVariables": {
+  "--display": "var(--font-lora), Georgia, serif",
+  "--ui": "var(--font-schibsted), \"Segoe UI\", system-ui, sans-serif",
+  "--serif": "var(--font-source-serif), Georgia, serif",
+  "--wordmark": "var(--font-cinzel), \"Playfair Display\", Georgia, serif",
+  "source": "source/css/3q17cp_jgfwol.pretty.css:460-472"
+ },
+ "families": {
+  "wordmark": {
+   "cssVar": "--wordmark",
+   "declared": "var(--font-cinzel), \"Playfair Display\", Georgia, serif",
+   "resolved": "Cinzel, \"Cinzel Fallback\", \"Playfair Display\", Georgia, serif",
+   "nextFontVar": "--font-cinzel: \"Cinzel\", \"Cinzel Fallback\"",
+   "family": "Cinzel",
+   "designer": "Natanael Gama",
+   "version": "Version 2.000",
+   "fileAxes": "static Bold (no fvar)",
+   "declaredWeights": [
+    700
+   ],
+   "drawnWeights": [
+    700
+   ],
+   "italic": "none loaded",
+   "subsets": [
+    "latin",
+    "latin-ext"
+   ],
+   "fallbackFace": {
+    "src": "local(Times New Roman)",
+    "size-adjust": "136.86%",
+    "ascent-override": "71.31%",
+    "descent-override": "27.18%",
+    "line-gap-override": "0%"
+   },
+   "metrics_em": {
+    "unitsPerEm": 1000,
+    "ascender": 0.976,
+    "descender": -0.372,
+    "lineGap": 0,
+    "capHeight_H": 0.7,
+    "smallcap_x": 0.601,
+    "avgLowercaseAdvance": 0.647,
+    "note": "lowercase glyphs are small capitals; no descenders except capital J"
+   },
+   "role": "wordmark and book titles; always uppercase",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1-39, 468"
+  },
+  "display": {
+   "cssVar": "--display",
+   "declared": "var(--font-lora), Georgia, serif",
+   "resolved": "Lora, \"Lora Fallback\", Georgia, serif",
+   "nextFontVar": "--font-lora: \"Lora\", \"Lora Fallback\"",
+   "family": "Lora",
+   "designer": "Cyreal",
+   "version": "Version 3.008",
+   "fileAxes": "wght 400–700",
+   "declaredWeights": [
+    600,
+    700
+   ],
+   "drawnWeights": [
+    600,
+    700
+   ],
+   "italic": "none loaded",
+   "subsets": [
+    "latin",
+    "latin-ext",
+    "cyrillic",
+    "cyrillic-ext",
+    "vietnamese",
+    "math",
+    "symbols"
+   ],
+   "fallbackFace": {
+    "src": "local(Times New Roman)",
+    "size-adjust": "115.2%",
+    "ascent-override": "87.33%",
+    "descent-override": "23.78%",
+    "line-gap-override": "0%"
+   },
+   "metrics_em": {
+    "unitsPerEm": 1000,
+    "ascender": 1.006,
+    "descender": -0.274,
+    "lineGap": 0,
+    "capHeight": 0.7,
+    "xHeight": 0.5,
+    "avgLowercaseAdvance_w700": 0.542,
+    "A_ring_top_w700": 1.006,
+    "A_diaeresis_top_w700": 0.949,
+    "a_ring_top": 0.795,
+    "a_diaeresis_top": 0.751,
+    "descender_gjy": -0.271
+   },
+   "role": "headlines, titles, names, numerals",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:40-252, 465"
+  },
+  "serif": {
+   "cssVar": "--serif",
+   "declared": "var(--font-source-serif), Georgia, serif",
+   "resolved": "\"Source Serif 4\", \"Source Serif 4 Fallback\", Georgia, serif",
+   "nextFontVar": "--font-source-serif: \"Source Serif 4\", \"Source Serif 4 Fallback\"",
+   "family": "Source Serif 4",
+   "designer": "Frank Grießhammer (Adobe)",
+   "version": "Version 4.004",
+   "fileAxes": "wght 200–900; opsz pinned at 14pt (STAT)",
+   "declaredWeights": [
+    400,
+    600
+   ],
+   "drawnWeights": [
+    400,
+    600
+   ],
+   "italic": "none loaded: font-style italic is synthesised (oblique)",
+   "subsets": [
+    "latin",
+    "latin-ext",
+    "cyrillic",
+    "cyrillic-ext",
+    "greek",
+    "vietnamese"
+   ],
+   "fallbackFace": {
+    "src": "local(Times New Roman)",
+    "size-adjust": "117.91%",
+    "ascent-override": "87.87%",
+    "descent-override": "28.41%",
+    "line-gap-override": "0%"
+   },
+   "metrics_em": {
+    "unitsPerEm": 1000,
+    "ascender": 1.036,
+    "descender": -0.335,
+    "lineGap": 0,
+    "capHeight": 0.67,
+    "xHeight_OS2": 0.475,
+    "xHeight_measured": 0.492,
+    "avgLowercaseAdvance_w400": 0.551
+   },
+   "role": "reading text: ledes, body copy, captions, legal prose, story prose, story choices",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:253-379, 467"
+  },
+  "ui": {
+   "cssVar": "--ui",
+   "declared": "var(--font-schibsted), \"Segoe UI\", system-ui, sans-serif",
+   "resolved": "\"Schibsted Grotesk\", \"Schibsted Grotesk Fallback\", \"Segoe UI\", system-ui, sans-serif",
+   "nextFontVar": "--font-schibsted: \"Schibsted Grotesk\", \"Schibsted Grotesk Fallback\"",
+   "family": "Schibsted Grotesk",
+   "designer": "Bakken & Bæck, Henrik Kongsvoll (for Schibsted)",
+   "version": "Version 1.100",
+   "fileAxes": "wght 400–900",
+   "declaredWeights": [
+    400,
+    700,
+    800
+   ],
+   "drawnWeights": [
+    400,
+    700,
+    800
+   ],
+   "italic": "none loaded",
+   "subsets": [
+    "latin",
+    "latin-ext"
+   ],
+   "fallbackFace": {
+    "src": "local(Arial)",
+    "size-adjust": "104.49%",
+    "ascent-override": "93.46%",
+    "descent-override": "24.67%",
+    "line-gap-override": "0%"
+   },
+   "metrics_em": {
+    "unitsPerEm": 2048,
+    "ascender": 0.9766,
+    "descender": -0.2578,
+    "lineGap": 0,
+    "capHeight": 0.7031,
+    "xHeight": 0.5273,
+    "avgLowercaseAdvance_w400": 0.526,
+    "avgLowercaseAdvance_w700": 0.566
+   },
+   "features_latin_subset": [
+    "ccmp",
+    "dnom",
+    "frac",
+    "liga",
+    "locl",
+    "numr",
+    "pnum",
+    "tnum",
+    "kern",
+    "mark",
+    "mkmk"
+   ],
+   "role": "interface: body default, buttons, chips, labels, nav, forms, footer",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:380-459, 466"
+  }
+ },
+ "weightResolution": {
+  "Lora": "declared 600 & 700 -> any request <=600 draws 600, >=700 draws 700 (Lora 400/500 are unreachable)",
+  "Source Serif 4": "declared 400 & 600 -> <=500 draws 400, >=600 draws 600 (bold 700 links/strong draw at 600)",
+  "Schibsted Grotesk": "declared 400, 700, 800 -> 400/500 draw 400; 600 and 700 draw 700; 800/900 draw 800",
+  "Cinzel": "static Bold file, every request draws the one Bold face"
+ },
+ "fontFaces": {
+  "count": 34,
+  "fallbackCount": 4,
+  "display": "swap",
+  "file": "derived/typography/font-faces.json",
+  "preloaded": [
+   "Schibsted Grotesk latin",
+   "Source Serif 4 latin",
+   "Lora latin",
+   "Cinzel latin"
+  ],
+  "preloadSource": "source/meta/home-response-headers.txt (link header)",
+  "csp": "font-src 'self'"
+ },
+ "roles": {
+  "h1.hero": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "clamp(2.7rem, 5.4vw, 4.4rem)",
+    "px": {
+     "desktop_1440": 70.4,
+     "tablet_834": 45.04,
+     "mobile_390": 43.2
+    }
+   },
+   "line-height": 1.06,
+   "letter-spacing": "-0.015em",
+   "text-wrap": "balance",
+   "text-shadow": "var(--h1-shadow)",
+   "color": "var(--page-ink)",
+   "margin-bottom": "18px",
+   "accent-span": {
+    "selector": "h1 .grad",
+    "color": "var(--accent-ink)",
+    "note": "flat colour, not gradient text; the trailing full stop stays in --page-ink",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:867-870"
+   },
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "70.4px",
+     "line-height": "74.624px",
+     "letter-spacing": "-1.056px",
+     "font-weight": "700",
+     "page": "home",
+     "text": "En värld som ."
+    },
+    "mobile": {
+     "font-size": "43.2px",
+     "line-height": "45.792px",
+     "letter-spacing": "-0.648px",
+     "font-weight": "700",
+     "page": "home",
+     "text": "En värld som ."
+    }
+   },
+   "copy": {
+    "sv": "En värld som [minns henne].",
+    "en": "A world that [remembers her].",
+    "start_sv": "Ikväll är hjälten [ert barn].",
+    "start_en": "Tonight the hero is [your child]."
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:855-866",
+    "source/css/3q17cp_jgfwol.pretty.css:867-870"
+   ]
+  },
+  "h1.handoff": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "clamp(2.2rem, 5vw, 3.4rem)",
+    "px": {
+     "desktop_1440": 54.4,
+     "tablet_834": 41.7,
+     "mobile_390": 35.2
+    }
+   },
+   "line-height": 1.06,
+   "letter-spacing": "-0.015em",
+   "note": ".start-flow .handoff h1 overrides only size and margin",
+   "status": "css-only",
+   "source": [
+    "source/css/2_gt301v4m-60.pretty.css:849-852",
+    "source/css/3q17cp_jgfwol.pretty.css:855-866"
+   ]
+  },
+  "h2.hiw-headline": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "clamp(1.9rem, 4vw, 2.7rem)",
+    "px": {
+     "desktop_1440": 43.2,
+     "tablet_834": 33.36,
+     "mobile_390": 30.4
+    }
+   },
+   "line-height": "normal",
+   "letter-spacing": "-0.015em",
+   "color": "var(--page-ink)",
+   "margin-bottom": "12px",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "43.2px",
+     "line-height": "normal",
+     "letter-spacing": "-0.648px",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Äventyr värda att prata om."
+    },
+    "mobile": {
+     "font-size": "30.4px",
+     "line-height": "normal",
+     "letter-spacing": "-0.456px",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Äventyr värda att prata om."
+    }
+   },
+   "copy": {
+    "sv": "Äventyr värda att prata om.",
+    "en": "Adventures worth talking about."
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:2554-2561"
+   ]
+  },
+  "h2.section": {
+   "family": "display",
+   "font-weight": 600,
+   "drawn-weight": 600,
+   "font-size": {
+    "css": "clamp(1.5rem, 2.4vw, 2rem)",
+    "px": {
+     "desktop_1440": 32,
+     "tablet_834": 24,
+     "mobile_390": 24
+    }
+   },
+   "line-height": "normal",
+   "letter-spacing": "-0.01em",
+   "color": "var(--page-ink)",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "32px",
+     "line-height": "normal",
+     "letter-spacing": "-0.32px",
+     "font-weight": "600",
+     "page": "home",
+     "text": "Din hjälte"
+    },
+    "mobile": {
+     "font-size": "24px",
+     "line-height": "normal",
+     "letter-spacing": "-0.24px",
+     "font-weight": "600",
+     "page": "home",
+     "text": "Din hjälte"
+    }
+   },
+   "copy": {
+    "sv": "Din hjälte · Bokhyllan · Det här ingår · Sidan finns inte"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1055-1062"
+   ]
+  },
+  "page-title": {
+   "family": "display",
+   "font-weight": 600,
+   "drawn-weight": 600,
+   "font-size": {
+    "css": "clamp(1.5rem, 2.4vw, 2rem)",
+    "px": {
+     "desktop_1440": 32,
+     "mobile_390": 24
+    }
+   },
+   "line-height": "1.06 when on an h1 (inherited from h1)",
+   "letter-spacing": "0",
+   "also": ".create-title",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "32px",
+     "line-height": "33.92px",
+     "letter-spacing": "normal",
+     "font-weight": "600",
+     "page": "integritet",
+     "text": "Integritetspolicy"
+    },
+    "mobile": {
+     "font-size": "24px",
+     "line-height": "25.44px",
+     "letter-spacing": "normal",
+     "font-weight": "600",
+     "page": "integritet",
+     "text": "Integritetspolicy"
+    }
+   },
+   "copy": {
+    "sv": "Integritetspolicy · Användarvillkor · Skapa konto · Uppgradera",
+    "en": "Privacy notice"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1063-1072"
+   ]
+  },
+  "builder-name": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "1.6rem",
+    "px": 25.6
+   },
+   "line-height": "normal",
+   "letter-spacing": "-0.01em",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "25.6px",
+     "line-height": "normal",
+     "letter-spacing": "-0.256px",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Alva"
+    },
+    "mobile": {
+     "font-size": "25.6px",
+     "line-height": "normal",
+     "letter-spacing": "-0.256px",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Alva"
+    }
+   },
+   "copy": {
+    "sv": "Alva"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1210-1216"
+   ]
+  },
+  "hiw-step-title": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "1.35rem",
+    "px": 21.6
+   },
+   "line-height": "normal",
+   "margin-bottom": "10px",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "21.6px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Bygg er hjälte"
+    },
+    "mobile": {
+     "font-size": "21.6px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Bygg er hjälte"
+    }
+   },
+   "copy": {
+    "sv": "Bygg er hjälte",
+    "en": "Build your hero"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:2631-2637"
+   ]
+  },
+  "friends-h3": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "1.25rem",
+    "px": 20
+   },
+   "line-height": "normal",
+   "letter-spacing": "-0.01em",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "20px",
+     "line-height": "normal",
+     "letter-spacing": "-0.2px",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Ta med en vän"
+    },
+    "mobile": {
+     "font-size": "20px",
+     "line-height": "normal",
+     "letter-spacing": "-0.2px",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Ta med en vän"
+    }
+   },
+   "copy": {
+    "sv": "Ta med en vän"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1290-1295"
+   ]
+  },
+  "companion-name": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "1.35rem",
+    "px": 21.6
+   },
+   "letter-spacing": "-0.01em",
+   "status": "css-only",
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1467-1472"
+   ]
+  },
+  "adv-title": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "1.3rem (1.08rem ≤600px; 1.1rem in .start-flow)",
+    "px": {
+     "default": 20.8,
+     "mobile_le600": 17.28
+    }
+   },
+   "line-height": 1.25,
+   "letter-spacing": "-0.015em",
+   "status": "css-only",
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1591-1597",
+    "source/css/3q17cp_jgfwol.pretty.css:2508-2511",
+    "source/css/2_gt301v4m-60.pretty.css:672-679"
+   ]
+  },
+  "cs-h1": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "1.92rem",
+    "px": 30.72
+   },
+   "line-height": 1.15,
+   "letter-spacing": "-0.01em",
+   "text-shadow": "var(--h1-shadow)",
+   "status": "css-only",
+   "source": [
+    "source/css/2h1wwdz1nvxwk.pretty.css:60-69"
+   ]
+  },
+  "cs-door-title": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "1.125rem",
+    "px": 18
+   },
+   "line-height": 1.2,
+   "status": "css-only",
+   "source": [
+    "source/css/2h1wwdz1nvxwk.pretty.css:400-407"
+   ]
+  },
+  "sheet-title": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "1.2rem",
+    "px": 19.2
+   },
+   "also": ".cs-h2 (1.2rem, -0.01em)",
+   "status": "css-only",
+   "source": [
+    "source/css/2h1wwdz1nvxwk.pretty.css:279-285",
+    "source/css/2h1wwdz1nvxwk.pretty.css:344-351"
+   ]
+  },
+  "book-title": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "1.02rem",
+    "px": 16.32
+   },
+   "line-height": 1.25,
+   "letter-spacing": "-0.01em",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "16.32px",
+     "line-height": "20.4px",
+     "letter-spacing": "-0.1632px",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Alva och fyraljuset i tornet"
+    },
+    "mobile": {
+     "font-size": "16.32px",
+     "line-height": "20.4px",
+     "letter-spacing": "-0.1632px",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Alva och fyraljuset i tornet"
+    }
+   },
+   "copy": {
+    "sv": "Alva och fyraljuset i tornet",
+    "en": null
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1513-1519"
+   ]
+  },
+  "price": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "1.6rem",
+    "px": 25.6
+   },
+   "line-height": "normal",
+   "note": "React inline style on /uppgradera",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "25.6px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "uppgradera",
+     "text": "1490 kr per år"
+    },
+    "mobile": {
+     "font-size": "25.6px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "uppgradera",
+     "text": "1490 kr per år"
+    }
+   },
+   "copy": {
+    "sv": "1490 kr per år",
+    "en": "$149.00 per year"
+   },
+   "source": [
+    "source/js/26ye0kuppitcn.js offset 18994",
+    "source/rendered/dom__uppgradera__sv.html"
+   ]
+  },
+  "numeral-node": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "1.05rem (0.9rem ≤880px)",
+    "px": {
+     "desktop_1440": 16.8,
+     "mobile_390": 14.4
+    }
+   },
+   "line-height": "normal",
+   "shape": "40px gold-chip circle (32px ≤880px)",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "16.8px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "home",
+     "text": "1"
+    },
+    "mobile": {
+     "font-size": "14.4px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "home",
+     "text": "1"
+    }
+   },
+   "copy": {
+    "sv": "1–6"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:2599-2613",
+    "source/css/3q17cp_jgfwol.pretty.css:3150-3154"
+   ]
+  },
+  "avatar-initial": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "1.3rem (.comp-avatar) · 3.4rem (.pframe-initial) · 2.4rem (.cs-portrait-initial) · 0.95rem (.cs-coin) · 0.8rem (.cs-chip-th)"
+   },
+   "status": "css-only",
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1407-1418",
+    "source/css/3q17cp_jgfwol.pretty.css:1746-1756",
+    "source/css/2h1wwdz1nvxwk.pretty.css:30-39",
+    "source/css/2h1wwdz1nvxwk.pretty.css:114-128",
+    "source/css/2h1wwdz1nvxwk.pretty.css:203-216"
+   ]
+  },
+  "glod-caption-line": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "clamp(1.15rem, 3.2vw, 1.45rem)",
+    "px": {
+     "desktop_1440": 23.2,
+     "mobile_390": 18.4
+    }
+   },
+   "letter-spacing": "-0.01em",
+   "color": "#fff7e9 (morgon #2f2350)",
+   "text-shadow": "0 2px 20px #060410cc",
+   "status": "css-only",
+   "copy": {
+    "sv": "Elden har smitt klart din saga.",
+    "en": "The fire has forged your story."
+   },
+   "source": [
+    "source/css/37m388zf6rymp.pretty.css:970-977"
+   ]
+  },
+  "glod-wb-title": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "1.16rem (1.32rem ≥1800px, 1rem narrow)",
+    "px": 18.56
+   },
+   "letter-spacing": "0",
+   "color": "#fbeed2",
+   "text-shadow": "0 1px #0006",
+   "status": "css-only",
+   "copy": {
+    "sv": "Din saga växer fram",
+    "en": "Your story is coming to life"
+   },
+   "source": [
+    "source/css/37m388zf6rymp.pretty.css:173-181"
+   ]
+  },
+  "glod-book-title": {
+   "family": "display",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "clamp(0.92rem, 2.4vw, 1.14rem)",
+    "px": {
+     "desktop_1440": 18.24,
+     "mobile_390": 14.72
+    }
+   },
+   "line-height": 1.35,
+   "letter-spacing": "0.01em",
+   "color": "#f7e7c3",
+   "text-shadow": "0 -1px #06031099, 0 1px 3px #06031066",
+   "status": "css-only",
+   "copy": {
+    "sv": "En ny saga om {name}",
+    "en": "A new story about {name}"
+   },
+   "source": [
+    "source/css/37m388zf6rymp.pretty.css:921-935"
+   ]
+  },
+  "logo": {
+   "family": "wordmark",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "1.72rem (1.05rem ≤560px)",
+    "px": {
+     "desktop_1440": 27.52,
+     "mobile_390": 16.8
+    }
+   },
+   "line-height": "normal",
+   "letter-spacing": "3px (1.5px ≤560px)",
+   "text-transform": "uppercase",
+   "color": "var(--logo-ink)",
+   "text-shadow": "var(--logo-shadow)",
+   "gap-to-icon": "13px (8px ≤560px)",
+   "icon": "42px (28px ≤560px)",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "27.52px",
+     "line-height": "normal",
+     "letter-spacing": "3px",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Tale Forge"
+    },
+    "mobile": {
+     "font-size": "16.8px",
+     "line-height": "normal",
+     "letter-spacing": "1.5px",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Tale Forge"
+    }
+   },
+   "copy": {
+    "source_text": "Tale Forge",
+    "rendered": "TALE FORGE"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:696-710",
+    "source/css/3q17cp_jgfwol.pretty.css:747-751"
+   ]
+  },
+  "reader-title": {
+   "family": "wordmark",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "2rem (1.55rem ≤560px)",
+    "px": {
+     "desktop_1440": 32,
+     "mobile_390": 24.8
+    }
+   },
+   "line-height": 1.18,
+   "letter-spacing": "0",
+   "text-transform": "uppercase",
+   "color": "var(--logo-ink)",
+   "text-shadow": "var(--logo-shadow)",
+   "overflow-wrap": "anywhere",
+   "element": "h1 (weight 700 comes from h1)",
+   "also": ".reader-ceremony-title 2rem / 1.35rem ≤560px",
+   "status": "css-only",
+   "copy": {
+    "sv": "Iris och den sparade platsen"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1810-1822",
+    "source/css/3q17cp_jgfwol.pretty.css:2298-2300",
+    "source/css/3q17cp_jgfwol.pretty.css:2119-2131"
+   ]
+  },
+  "glod-wb-kicker": {
+   "family": "wordmark",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "0.64rem (0.72rem ≥1800px, 0.58rem narrow)",
+    "px": 10.24
+   },
+   "letter-spacing": "0.13em",
+   "text-transform": "uppercase",
+   "color": "#e4cfa4",
+   "opacity": 0.92,
+   "status": "css-only",
+   "copy": {
+    "sv": "Väntelden",
+    "en": "The waiting fire"
+   },
+   "source": [
+    "source/css/37m388zf6rymp.pretty.css:157-166"
+   ]
+  },
+  "glod-book-colophon": {
+   "family": "wordmark",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "0.58rem",
+    "px": 9.28
+   },
+   "letter-spacing": "0.22em",
+   "text-transform": "uppercase",
+   "color": "#f7e7c38c",
+   "status": "css-only",
+   "copy": {
+    "any": "Tale Forge"
+   },
+   "source": [
+    "source/css/37m388zf6rymp.pretty.css:936-946"
+   ]
+  },
+  "lede": {
+   "family": "serif",
+   "font-weight": 400,
+   "drawn-weight": 400,
+   "font-size": {
+    "css": "clamp(1.08rem, 1.65vw, 1.28rem)",
+    "px": {
+     "desktop_1440": 20.48,
+     "tablet_834": 17.28,
+     "mobile_390": 17.28
+    }
+   },
+   "line-height": 1.65,
+   "max-width": "46ch",
+   "color": "var(--page-sub)",
+   "note": "auth pages override to 1rem, legal pages to 1.02rem (inline)",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "20.48px",
+     "line-height": "33.792px",
+     "letter-spacing": "normal",
+     "font-weight": "400",
+     "page": "home",
+     "text": "Den målade hjälten återvänder. Valen förändrar vad som händer, och sen"
+    },
+    "mobile": {
+     "font-size": "17.28px",
+     "line-height": "28.512px",
+     "letter-spacing": "normal",
+     "font-weight": "400",
+     "page": "home",
+     "text": "Den målade hjälten återvänder. Valen förändrar vad som händer, och sen"
+    }
+   },
+   "copy": {
+    "sv": "Den målade hjälten återvänder. Valen förändrar vad som händer, och senare böcker minns äventyren ni redan har delat."
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:871-879"
+   ]
+  },
+  "hiw-lede": {
+   "family": "serif",
+   "font-weight": 400,
+   "drawn-weight": 400,
+   "font-size": {
+    "css": "1.1rem",
+    "px": 17.6
+   },
+   "line-height": 1.7,
+   "max-width": "56ch",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "17.6px",
+     "line-height": "29.92px",
+     "letter-spacing": "normal",
+     "font-weight": "400",
+     "page": "home",
+     "text": "Från ett foto till en uppläst bilderbok med fyra olika slut. Så här gå"
+    },
+    "mobile": {
+     "font-size": "17.6px",
+     "line-height": "29.92px",
+     "letter-spacing": "normal",
+     "font-weight": "400",
+     "page": "home",
+     "text": "Från ett foto till en uppläst bilderbok med fyra olika slut. Så här gå"
+    }
+   },
+   "copy": {
+    "sv": "Från ett foto till en uppläst bilderbok med fyra olika slut. Så här går en kväll till."
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:2562-2568"
+   ]
+  },
+  "step-copy": {
+   "family": "serif",
+   "font-weight": 400,
+   "drawn-weight": 400,
+   "font-size": {
+    "css": "1.02rem",
+    "px": 16.32
+   },
+   "line-height": 1.75,
+   "max-width": "52ch",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "16.32px",
+     "line-height": "28.56px",
+     "letter-spacing": "normal",
+     "font-weight": "400",
+     "page": "home",
+     "text": "Ladda upp en bild och välj det som gör ert barn till ert barn. Vi måla"
+    },
+    "mobile": {
+     "font-size": "16.32px",
+     "line-height": "28.56px",
+     "letter-spacing": "normal",
+     "font-weight": "400",
+     "page": "home",
+     "text": "Ladda upp en bild och välj det som gör ert barn till ert barn. Vi måla"
+    }
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:2638-2644"
+   ]
+  },
+  "sec-intro": {
+   "family": "serif",
+   "font-weight": 400,
+   "drawn-weight": 400,
+   "font-size": {
+    "css": "1rem (0.95rem in .create-customize)",
+    "px": 16
+   },
+   "line-height": 1.6,
+   "max-width": "62ch",
+   "status": "css-only",
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1047-1054"
+   ]
+  },
+  "caption": {
+   "family": "serif",
+   "font-weight": 400,
+   "drawn-weight": 400,
+   "font-size": {
+    "css": "0.95rem",
+    "px": 15.2
+   },
+   "line-height": 1.6,
+   "max-width": "72ch",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "15.2px",
+     "line-height": "24.32px",
+     "letter-spacing": "normal",
+     "font-weight": "400",
+     "page": "home",
+     "text": "Kartan över exempelboken Iris och den sparade platsen. Varje prick är "
+    },
+    "mobile": {
+     "font-size": "15.2px",
+     "line-height": "24.32px",
+     "letter-spacing": "normal",
+     "font-weight": "400",
+     "page": "home",
+     "text": "Kartan över exempelboken Iris och den sparade platsen. Varje prick är "
+    }
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:2909-2916"
+   ]
+  },
+  "prose-plain": {
+   "family": "serif",
+   "font-weight": 400,
+   "drawn-weight": 400,
+   "font-size": {
+    "css": "1.05rem",
+    "px": 16.8
+   },
+   "line-height": 1.7,
+   "overflow-wrap": "anywhere",
+   "links": "inline font-weight 700 → drawn 600, underlined, var(--accent)",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "16.8px",
+     "line-height": "28.56px",
+     "letter-spacing": "normal",
+     "font-weight": "400",
+     "page": "integritet",
+     "text": "Vi är Tale Forge AB, ett litet svenskt företag i Värnamo (org.nr 55954"
+    },
+    "mobile": {
+     "font-size": "16.8px",
+     "line-height": "28.56px",
+     "letter-spacing": "normal",
+     "font-weight": "400",
+     "page": "integritet",
+     "text": "Vi är Tale Forge AB, ett litet svenskt företag i Värnamo (org.nr 55954"
+    }
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1842-1849"
+   ]
+  },
+  "reader-prose": {
+   "family": "serif",
+   "font-weight": 400,
+   "drawn-weight": 400,
+   "font-size": {
+    "css": "1.2rem",
+    "px": 19.2
+   },
+   "line-height": 1.85,
+   "color": "var(--prose-ink)",
+   "font-optical-sizing": "auto (no effect: no opsz axis served)",
+   "drop-cap": {
+    "selector": ".prose:first-letter",
+    "float": "left",
+    "font-size": "2.5em",
+    "font-weight": 600,
+    "line-height": 0.9,
+    "padding": "4px 10px 0 0",
+    "color": "var(--accent)",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:1834-1841"
+   },
+   "status": "css-only",
+   "copy": {
+    "sv": "Iris kom till kvartersbiblioteket med ett stort ritpapper under armen. …"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1823-1833",
+    "source/css/3q17cp_jgfwol.pretty.css:1834-1841"
+   ]
+  },
+  "mock-prose": {
+   "family": "serif",
+   "font-weight": 400,
+   "drawn-weight": 400,
+   "font-size": {
+    "css": "1.02rem",
+    "px": 16.32
+   },
+   "line-height": 1.7,
+   "drop-cap": {
+    "font-size": "2.2em",
+    "font-weight": 600,
+    "line-height": 0.9,
+    "padding": "3px 8px 0 0",
+    "color": "var(--accent)",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:2870-2877"
+   },
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "16.32px",
+     "line-height": "27.744px",
+     "letter-spacing": "normal",
+     "font-weight": "400",
+     "page": "home",
+     "text": "Iris gick in mellan fönsterbänken och mattan och lade ritpappret på et"
+    },
+    "mobile": {
+     "font-size": "16.32px",
+     "line-height": "27.744px",
+     "letter-spacing": "normal",
+     "font-weight": "400",
+     "page": "home",
+     "text": "Iris gick in mellan fönsterbänken och mattan och lade ritpappret på et"
+    }
+   },
+   "copy": {
+    "sv": "Iris gick in mellan fönsterbänken och mattan och lade ritpappret på ett lågt bord. Planen för den sparade platsen gällde inte längre."
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:2863-2869",
+    "source/css/3q17cp_jgfwol.pretty.css:2870-2877"
+   ]
+  },
+  "choice": {
+   "family": "serif",
+   "font-weight": 600,
+   "drawn-weight": 600,
+   "font-size": {
+    "css": "1.05rem",
+    "px": 16.8
+   },
+   "radius": "16px",
+   "border": "2px solid var(--choice-line)",
+   "min-height": "54px",
+   "status": "css-only",
+   "copy": {
+    "sv": "Gå med Mossa till den gröna mattan. / Stanna och rita med det nya barnet i fönsterljuset."
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1904-1922"
+   ]
+  },
+  "italic-aside": {
+   "family": "serif",
+   "font-weight": 400,
+   "drawn-weight": 400,
+   "font-size": {
+    "css": "0.78rem–1.18rem"
+   },
+   "line-height": "1.45–1.6",
+   "font-style": "italic (synthetic oblique: no italic face is loaded)",
+   "members": {
+    ".start-flow .veil-caption": "1.04rem/1.55, opacity breathing 0.72↔1 over 4.6s",
+    ".start-flow .reveal-line": "1.18rem/1.6",
+    ".start-flow .voice-line": "0.95rem/1.6",
+    ".start-flow .forge .inputs": "1.02rem/1.6",
+    ".cs-memtag": "0.78rem/1.45, rotate(-1deg)",
+    ".glod-mem-from": "0.9rem",
+    ".glod-hearth-box": "italic, 1.55, clamp(0.85rem, 1.3vw, 0.98rem)"
+   },
+   "status": "css-only",
+   "copy": {
+    "sv": "Er hjälte väntar bakom duken.",
+    "en": "Your hero is waiting behind the veil."
+   },
+   "source": [
+    "source/css/2_gt301v4m-60.pretty.css:427-436",
+    "source/css/2_gt301v4m-60.pretty.css:446-458",
+    "source/css/2_gt301v4m-60.pretty.css:798-805",
+    "source/css/2_gt301v4m-60.pretty.css:822-829",
+    "source/css/2h1wwdz1nvxwk.pretty.css:95-109",
+    "source/css/37m388zf6rymp.pretty.css:587-592",
+    "source/css/37m388zf6rymp.pretty.css:718-734"
+   ]
+  },
+  "cs-recipe": {
+   "family": "serif",
+   "font-weight": 400,
+   "drawn-weight": 400,
+   "font-size": {
+    "css": "0.97rem",
+    "px": 15.52
+   },
+   "line-height": 2.2,
+   "note": "sentence with inline .cs-chip pills (Grotesk 700 0.82rem); tall leading leaves room for the chips",
+   "status": "css-only",
+   "source": [
+    "source/css/2h1wwdz1nvxwk.pretty.css:164-170"
+   ]
+  },
+  "body-default": {
+   "family": "ui",
+   "font-weight": 400,
+   "drawn-weight": 400,
+   "font-size": {
+    "css": "16px (UA default)",
+    "px": 16
+   },
+   "line-height": "normal",
+   "-webkit-font-smoothing": "antialiased",
+   "color": "var(--page-ink)",
+   "status": "observed",
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:598-608"
+   ]
+  },
+  "button": {
+   "family": "ui",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "1.05rem (0.95rem in cards/feedback, 1.15rem .surprise)",
+    "px": 16.8
+   },
+   "line-height": "normal",
+   "shape": "pill 999px, padding 17px 30px, min-height 52px",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "16.8px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Skapa er hjälte"
+    },
+    "mobile": {
+     "font-size": "16.8px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Skapa er hjälte"
+    }
+   },
+   "copy": {
+    "sv": "Skapa er hjälte · Se hur det funkar · Läs exempelboken",
+    "en": "Create your hero"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:886-903"
+   ]
+  },
+  "nav-pill": {
+   "family": "ui",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "0.82rem",
+    "px": 13.12
+   },
+   "line-height": 1,
+   "note": "React inline style",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "13.12px",
+     "line-height": "13.12px",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Logga in"
+    },
+    "mobile": {
+     "font-size": "13.12px",
+     "line-height": "13.12px",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Logga in"
+    }
+   },
+   "copy": {
+    "sv": "Logga in · Priser",
+    "en": "Login · Pricing"
+   },
+   "source": [
+    "source/js/390j9gbq0u9ce.js offset 23394"
+   ]
+  },
+  "lang-switch": {
+   "family": "ui",
+   "font-weight": "800 active / 700",
+   "drawn-weight": "800 active / 700",
+   "font-size": {
+    "css": "0.82rem",
+    "px": 13.12
+   },
+   "line-height": "normal",
+   "letter-spacing": "0.02em",
+   "content": "SV / EN (r.toUpperCase())",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "13.12px",
+     "line-height": "normal",
+     "letter-spacing": "0.2624px",
+     "font-weight": "800",
+     "page": "home",
+     "text": "SV"
+    },
+    "mobile": {
+     "font-size": "13.12px",
+     "line-height": "normal",
+     "letter-spacing": "0.2624px",
+     "font-weight": "800",
+     "page": "home",
+     "text": "SV"
+    }
+   },
+   "source": [
+    "source/js/390j9gbq0u9ce.js offset 27271"
+   ]
+  },
+  "theme-toggle": {
+   "family": "ui",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "0.95rem (0 ≤560px: icons only)",
+    "px": {
+     "desktop_1440": 15.2,
+     "mobile_390": 0
+    }
+   },
+   "line-height": "normal",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "15.2px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Natt"
+    },
+    "mobile": {
+     "font-size": "0px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Natt"
+    }
+   },
+   "copy": {
+    "sv": "Natt · Morgon",
+    "en": "Night · Morning"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:801-813",
+    "source/css/3q17cp_jgfwol.pretty.css:2290-2294"
+   ]
+  },
+  "kicker": {
+   "family": "ui",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "0.85rem",
+    "px": 13.6
+   },
+   "line-height": "normal",
+   "case": "sentence case",
+   "shape": "blurred chip pill, padding 8px 16px, 14px icon",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "13.6px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Exempel: Alvas värld · 2 böcker"
+    },
+    "mobile": {
+     "font-size": "13.6px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Exempel: Alvas värld · 2 böcker"
+    }
+   },
+   "copy": {
+    "sv": "Exempel: Alvas värld · 2 böcker",
+    "en": "Demo: Alva's world · 2 books"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:835-850"
+   ]
+  },
+  "eyebrow": {
+   "family": "ui",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "0.82rem",
+    "px": 13.12
+   },
+   "line-height": "normal",
+   "letter-spacing": "2px",
+   "text-transform": "uppercase",
+   "shape": "violet pill (var(--pill-bg)/var(--pill-ink)), padding 7px 14px",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "13.12px",
+     "line-height": "normal",
+     "letter-spacing": "2px",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Så fungerar det"
+    },
+    "mobile": {
+     "font-size": "13.12px",
+     "line-height": "normal",
+     "letter-spacing": "2px",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Så fungerar det"
+    }
+   },
+   "copy": {
+    "sv": "Så fungerar det",
+    "en": "How it works"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:2541-2553"
+   ]
+  },
+  "sec-chip": {
+   "family": "ui",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "0.8rem",
+    "px": 12.8
+   },
+   "line-height": "normal",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "12.8px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "home",
+     "text": "barnens favorit"
+    },
+    "mobile": {
+     "font-size": "12.8px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "home",
+     "text": "barnens favorit"
+    }
+   },
+   "copy": {
+    "sv": "barnens favorit · 2 färdiga böcker",
+    "en": "the family favorite"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1087-1098"
+   ]
+  },
+  "chip": {
+   "family": "ui",
+   "font-weight": 800,
+   "drawn-weight": 800,
+   "font-size": {
+    "css": "0.76rem",
+    "px": 12.16
+   },
+   "letter-spacing": "0.05em",
+   "text-transform": "uppercase",
+   "variants": "gold / violet / coral",
+   "status": "css-only",
+   "copy": {
+    "sv": "Godnatt · Äventyr · Vänskap · Överraska",
+    "en": "Bedtime …"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1567-1578"
+   ]
+  },
+  "book-sub": {
+   "family": "ui",
+   "font-weight": 800,
+   "drawn-weight": 800,
+   "font-size": {
+    "css": "0.72rem",
+    "px": 11.52
+   },
+   "line-height": "normal",
+   "letter-spacing": "0.04em",
+   "text-transform": "uppercase",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "11.52px",
+     "line-height": "normal",
+     "letter-spacing": "0.4608px",
+     "font-weight": "800",
+     "page": "home",
+     "text": "Stora känslor"
+    },
+    "mobile": {
+     "font-size": "11.52px",
+     "line-height": "normal",
+     "letter-spacing": "0.4608px",
+     "font-weight": "800",
+     "page": "home",
+     "text": "Stora känslor"
+    }
+   },
+   "copy": {
+    "sv": "Stora känslor · Mysigt äventyr",
+    "en": "Big feelings"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1520-1531"
+   ]
+  },
+  "micro-label-uppercase": {
+   "family": "ui",
+   "font-weight": "700–800",
+   "drawn-weight": "700–800",
+   "font-size": {
+    "css": "0.58rem–0.78rem"
+   },
+   "letter-spacing": "0.04em–0.14em",
+   "text-transform": "uppercase",
+   "members": {
+    ".comp-chosen": "800 0.72rem 0.05em gold",
+    ".hiw-next-label": "700 0.72rem 0.05em, #fff7e9 on #0a0c188c",
+    ".sound-group-label": "800 0.72rem 0.09em",
+    ".cs-recipe-title": "800 0.72rem 0.12em lh 1.3",
+    ".cs-door-reg": "700 0.66rem 0.14em (godnatt=pill-ink, aventyr=gold-chip-ink, vanskap=coral-chip-ink, surprise=logo-ink)",
+    ".start-flow .ordiv": "700 0.85rem 0.06em with hairlines",
+    "legal language badge (inline)": "800 0.78rem 0.08em"
+   },
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "11.52px",
+     "line-height": "normal",
+     "letter-spacing": "0.576px",
+     "font-weight": "700",
+     "page": "home",
+     "text": "nästa bok"
+    },
+    "mobile": {
+     "font-size": "11.52px",
+     "line-height": "normal",
+     "letter-spacing": "0.576px",
+     "font-weight": "700",
+     "page": "home",
+     "text": "nästa bok"
+    }
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1431-1440",
+    "source/css/3q17cp_jgfwol.pretty.css:3072-3087",
+    "source/css/3q17cp_jgfwol.pretty.css:1974-1981",
+    "source/css/2h1wwdz1nvxwk.pretty.css:154-163",
+    "source/css/2h1wwdz1nvxwk.pretty.css:381-387",
+    "source/css/2_gt301v4m-60.pretty.css:613-623"
+   ]
+  },
+  "trait-chip": {
+   "family": "ui",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "0.88rem",
+    "px": 14.08
+   },
+   "line-height": "normal",
+   "shape": "2px border pill, min-height 44px, padding 8px 15px",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "14.08px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Modig"
+    },
+    "mobile": {
+     "font-size": "14.08px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "home",
+     "text": "Modig"
+    }
+   },
+   "copy": {
+    "sv": "Modig · Fnissig · Djurvän · Nyfiken · Envis · + Fler"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1223-1238"
+   ]
+  },
+  "micro-support": {
+   "family": "ui",
+   "font-weight": 600,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "0.88rem",
+    "px": 14.08
+   },
+   "line-height": "normal",
+   "color": "var(--micro-ink)",
+   "icon": "14px gold four-point star",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "14.08px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "600",
+     "page": "home",
+     "text": "Porträttet styr både bilderna och berättelsen."
+    },
+    "mobile": {
+     "font-size": "14.08px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "600",
+     "page": "home",
+     "text": "Porträttet styr både bilderna och berättelsen."
+    }
+   },
+   "copy": {
+    "sv": "Porträttet styr både bilderna och berättelsen."
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:2645-2654"
+   ]
+  },
+  "cta-microcopy": {
+   "family": "ui",
+   "font-weight": 400,
+   "drawn-weight": 400,
+   "font-size": {
+    "css": "0.85rem",
+    "px": 13.6
+   },
+   "line-height": "normal",
+   "color": "var(--page-sub)",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "13.6px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "400",
+     "page": "home",
+     "text": "Första boken är gratis, inget kort behövs. Sedan 149 kr i månaden."
+    },
+    "mobile": {
+     "font-size": "13.6px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "400",
+     "page": "home",
+     "text": "Första boken är gratis, inget kort behövs. Sedan 149 kr i månaden."
+    }
+   },
+   "copy": {
+    "sv": "Första boken är gratis, inget kort behövs. Sedan 149 kr i månaden."
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:3141-3145"
+   ]
+  },
+  "small-chips": {
+   "family": "ui",
+   "font-weight": "600–700",
+   "drawn-weight": "600–700",
+   "font-size": {
+    "css": "0.76rem–0.9rem"
+   },
+   "members": {
+    ".hiw-choice": "600 0.9rem",
+    ".hiw-voice-chip": "700 0.85rem",
+    ".hiw-ai-chip": "700 0.76rem, fixed #241f35 on #ffffffc7",
+    ".badge b / span": "0.95rem bold / 0.8rem"
+   },
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "14.4px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "600",
+     "page": "home",
+     "text": "Gå med Mossa till den gröna mattan."
+    },
+    "mobile": {
+     "font-size": "14.4px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "600",
+     "page": "home",
+     "text": "Gå med Mossa till den gröna mattan."
+    }
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:2884-2896",
+    "source/css/3q17cp_jgfwol.pretty.css:2834-2846",
+    "source/css/3q17cp_jgfwol.pretty.css:2684-2698",
+    "source/css/3q17cp_jgfwol.pretty.css:1030-1032",
+    "source/css/3q17cp_jgfwol.pretty.css:1033-1037"
+   ]
+  },
+  "reader-choice-prompt": {
+   "family": "ui",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "inherited (16px)",
+    "px": 16
+   },
+   "text-align": "center",
+   "box": "2px solid var(--choice-line), radius 16px, padding 16px 18px",
+   "status": "css-only",
+   "copy": {
+    "sv": "Det hettade i Iris händer; de ville rycka i stolen. Före sagostunden hinner hon bara rita på ett ställe. Vad gör hon?"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1888-1897"
+   ]
+  },
+  "reader-link-wait": {
+   "family": "ui",
+   "font-weight": 400,
+   "drawn-weight": 400,
+   "font-size": {
+    "css": "0.82rem",
+    "px": 13.12
+   },
+   "line-height": 1.4,
+   "letter-spacing": "0.01em",
+   "color": "var(--card-sub)",
+   "dot": "9px gold pulse",
+   "status": "css-only",
+   "copy": {
+    "sv": "Nästa sida målas fortfarande.",
+    "en": "The next page is still being drawn."
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1865-1875"
+   ]
+  },
+  "field": {
+   "family": "ui",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "1.15rem (auth inputs 1rem, 400)",
+    "px": 18.4
+   },
+   "placeholder-weight": 400,
+   "status": "css-only",
+   "copy": {
+    "placeholder_sv": "Barnets namn"
+   },
+   "source": [
+    "source/css/2_gt301v4m-60.pretty.css:61-73",
+    "source/css/2_gt301v4m-60.pretty.css:77-80"
+   ]
+  },
+  "form-label": {
+   "family": "ui",
+   "font-weight": 700,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "0.9rem",
+    "px": 14.4
+   },
+   "note": "inline style",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "14.4px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "login",
+     "text": "E-post"
+    },
+    "mobile": {
+     "font-size": "14.4px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "700",
+     "page": "login",
+     "text": "E-post"
+    }
+   },
+   "copy": {
+    "sv": "E-post"
+   },
+   "source": [
+    "source/js/1hcx0qn-qjgfn.js offset 3863"
+   ]
+  },
+  "legal-h3": {
+   "family": "ui",
+   "font-weight": 800,
+   "drawn-weight": 800,
+   "font-size": {
+    "css": "1.02rem",
+    "px": 16.32
+   },
+   "line-height": "normal",
+   "margin": "26px 0 8px",
+   "note": "inline style on legal pages",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "16.32px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "800",
+     "page": "integritet",
+     "text": "I korthet"
+    },
+    "mobile": {
+     "font-size": "16.32px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "800",
+     "page": "integritet",
+     "text": "I korthet"
+    }
+   },
+   "copy": {
+    "sv": "I korthet · Vad vi samlar in"
+   },
+   "source": [
+    "source/rendered/dom__integritet__sv.html",
+    "derived/typography/html-inline-type-styles.csv"
+   ]
+  },
+  "footer": {
+   "family": "ui",
+   "font-weight": 400,
+   "drawn-weight": 400,
+   "font-size": {
+    "css": "0.9rem",
+    "px": 14.4
+   },
+   "line-height": "normal",
+   "color": "var(--foot-ink)",
+   "beta-badge": "0.7rem, 0.03em, 1px pill, opacity 0.8",
+   "version": "0.8rem, opacity 0.85",
+   "links": "underline, text-decoration-color var(--accent)",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "14.4px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "400",
+     "page": "home",
+     "text": "Tale Forge, sagor som minns er värld."
+    },
+    "mobile": {
+     "font-size": "14.4px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "400",
+     "page": "home",
+     "text": "Tale Forge, sagor som minns er värld."
+    }
+   },
+   "copy": {
+    "sv": "Tale Forge, sagor som minns er värld.",
+    "en": "Tale Forge, storybooks that remember your world."
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:1933-1944"
+   ]
+  },
+  "svg-map-label": {
+   "family": "ui",
+   "font-weight": 600,
+   "drawn-weight": 700,
+   "font-size": {
+    "css": "11px",
+    "px": 11
+   },
+   "also": ".map-num 700 11px",
+   "status": "observed",
+   "rendered": {
+    "desktop": {
+     "font-size": "11px",
+     "line-height": "normal",
+     "letter-spacing": "normal",
+     "font-weight": "600",
+     "page": "home",
+     "text": "Val 1"
+    }
+   },
+   "copy": {
+    "sv": "Val 1 · Val 2"
+   },
+   "source": [
+    "source/css/3q17cp_jgfwol.pretty.css:2971-2976",
+    "source/css/3q17cp_jgfwol.pretty.css:3000-3005"
+   ]
+  },
+  "glod-board-text": {
+   "family": "ui",
+   "font-weight": "400–800",
+   "drawn-weight": "400–800",
+   "font-size": {
+    "css": "0.7rem–0.95rem"
+   },
+   "line-height": "1.4–1.5",
+   "members": {
+    ".glod-wb-expect": "0.8rem/1.5 #e4cfa4",
+    ".glod-wb-rewrite": "600 0.74rem/1.45 #4a2f10 on parchment",
+    ".glod-wb-action": "800 0.82rem #35210d on gold",
+    ".glod-wb-steps li": "0.85rem, active 700 #fbeed2",
+    ".glod-open": "800 0.95rem 0.02em #fbeed2 on wood",
+    ".glod-mem-carry": "800 0.78rem #fff3d8",
+    ".glod-active-ember-cue": "800 0.7rem #4b3116"
+   },
+   "status": "css-only",
+   "source": [
+    "source/css/37m388zf6rymp.pretty.css:210-216",
+    "source/css/37m388zf6rymp.pretty.css:217-229",
+    "source/css/37m388zf6rymp.pretty.css:230-243",
+    "source/css/37m388zf6rymp.pretty.css:263-271",
+    "source/css/37m388zf6rymp.pretty.css:982-1009",
+    "source/css/37m388zf6rymp.pretty.css:593-606",
+    "source/css/37m388zf6rymp.pretty.css:675-681"
+   ]
+  }
+ },
+ "responsive": {
+  "fluid (clamp)": [
+   "h1",
+   ".hiw-headline",
+   "h2/.page-title/.create-title",
+   ".lede",
+   ".start-flow .handoff h1",
+   ".glod-hearth-main",
+   ".glod-book-title",
+   ".glod-caption-line"
+  ],
+  "breakpoints": {
+   "≤880px": ".hiw-node 0.9rem; hero single column",
+   "≤600px": ".advs grid: .adv-title 1.08rem, .adv-sub 0.86rem/1.4, .adv-why 0.78rem/1.4",
+   "≤560px": ".logo 1.05rem + 1.5px tracking; .nav-cta 0.85rem; .tt-opt font-size 0 (icons only); .reader-title 1.55rem; .reader-ceremony-title 1.35rem",
+   "≤480px": ".start-flow .pick 0.78rem; .start-flow .stile 0.62rem",
+   "≥1800px / narrow stage": "glod board text scales (see roles.glod-*)"
+  }
+ },
+ "letterSpacing": {
+  "-0.015em": "h1, .hiw-headline, .adv-title",
+  "-0.01em": "h2, .builder-name, .friends h3, .companion-name, .book-title, .cs-h1, .cs-h2, .reveal-name, .hname, .glod-caption-line, JS job heading",
+  "0": ".page-title, .reader-title, .reader-ceremony-title, .glod-wb-title",
+  "0.01em": ".reader-link-wait, .glod-book-title",
+  "0.02em": "lang switch (inline), .start-flow .worldrow .wlabel, .glod-open",
+  "0.03em": "footer Beta badge (inline)",
+  "0.04em": ".book-sub",
+  "0.05em": ".chip, .comp-chosen, .hiw-next-label",
+  "0.06em": ".start-flow .ordiv",
+  "0.08em": "legal language badge (inline)",
+  "0.09em": ".sound-group-label",
+  "0.12em": ".cs-recipe-title",
+  "0.13em": ".glod-wb-kicker",
+  "0.14em": ".cs-door-reg",
+  "0.22em": ".glod-book-colophon",
+  "2px": ".hiw-kicker",
+  "3px / 1.5px": ".logo desktop / ≤560px",
+  "rule": "negative tracking on Lora headings (tighter as they grow); zero on Cinzel titles (the logo is the exception at 3px); positive tracking only on UPPERCASE Grotesk/Cinzel micro-labels"
+ },
+ "lineHeights": {
+  "1.06": "h1 (and .page-title on h1)",
+  "1.15": ".cs-h1",
+  "1.18": ".reader-title, .reader-ceremony-title",
+  "1.2-1.25": ".cs-door-title, .book-title, .adv-title",
+  "1.35-1.5": "small UI copy",
+  "1.55-1.6": "captions, sec-intro, lede-like UI copy",
+  "1.65": ".lede",
+  "1.7": ".hiw-lede, .prose-plain, .hiw-mock-prose",
+  "1.75": ".hiw-step-copy",
+  "1.85": ".prose (reader)",
+  "2.2": ".cs-recipe (inline chips)",
+  "normal": "most Lora headings below h1 and all UI labels (Lora normal = 1.28 em, Grotesk normal = 1.234 em)"
+ },
+ "measures": {
+  ".lede": "46ch",
+  ".cs-lede": "46ch",
+  ".hiw-step-copy": "52ch",
+  ".companion-sub": "56ch",
+  ".hiw-lede": "56ch",
+  ".honest": "60ch",
+  ".sec-intro": "62ch",
+  ".hiw-caption": "72ch",
+  ".veil-caption": "26ch",
+  ".reveal-line": "34ch"
+ },
+ "treatments": {
+  "grad": {
+   "css": ".grad{color:var(--accent-ink);transition:color .5s}",
+   "natt": "#f5c542 (var(--gold-soft) via --accent-ink)",
+   "morgon": "#5b3fc7",
+   "note": "name suggests gradient text but it is a flat colour; no background-clip:text anywhere in the CSS",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:867-870"
+  },
+  "h1Shadow": {
+   "natt": "0 2px 30px #0c082859",
+   "morgon": "none",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:511, 560"
+  },
+  "logoShadow": {
+   "natt": "0 2px 6px #050814cc, 0 0 34px #f5c54273",
+   "morgon": "0 1px 2px #241f352e, 0 0 24px #6d4fe052",
+   "logoInk": {
+    "natt": "#f5c542",
+    "morgon": "#6d4fe0"
+   },
+   "source": "source/css/3q17cp_jgfwol.pretty.css:537-538, 586-587"
+  },
+  "dropCap": {
+   "reader": "2.5em, 600, lh 0.9, padding 4px 10px 0 0, float left, var(--accent)",
+   "landingMock": "2.2em, 600, lh 0.9, padding 3px 8px 0 0",
+   "accent": {
+    "natt": "#f5c542",
+    "morgon": "#6d4fe0"
+   }
+  },
+  "syntheticItalic": "Source Serif 4 italic is never loaded; all font-style:italic text is a browser-slanted roman",
+  "textWrapBalance": [
+   "h1",
+   ".start-flow .stepcard h2"
+  ],
+  "fontSmoothing": "-webkit-font-smoothing: antialiased on body",
+  "canvasText": {
+   "css": "italic 700 ${max(13, round(14*d))}px Georgia, serif",
+   "fill": "rgba(255,232,166,1) active / rgba(255,214,150,0.98)",
+   "shadow": "same text offset +1.2px in rgba(24,10,2,0.92)",
+   "where": "story-title labels on the logs of the waiting-fire canvas",
+   "source": "source/js/1pgfdvt65g9p-.js (e.font=)"
+  },
+  "nextErrorPage": "Next.js built-in error UI uses system-ui 24px/32px 500 -0.02em and ui-monospace 12px (source/js/36s0t0o8ux5as.js) — not part of the brand"
+ },
+ "diacritics": {
+  "glyphsUsedOnSite": {
+   "å": "U+00E5",
+   "ä": "U+00E4",
+   "ö": "U+00F6",
+   "Å": "U+00C5",
+   "Ä": "U+00C4",
+   "Ö": "U+00D6",
+   "é": "U+00E9",
+   "·": "U+00B7",
+   "’": "U+2019 (book prose and JS)",
+   "—": "U+2014 (rare)"
+  },
+  "coverage": "all in the preloaded latin subset of every family",
+  "quotes": "dialogue and titles use ASCII \" and ' (e.g. från \"Alva och fyraljuset\"), not Swedish ” ” ; comma placed outside the closing quote (\"…\", sa han.)",
+  "englishFooterDropsDiacritics": "EN footer reads \"Varnamo, Sweden\" for Värnamo",
+  "risk": "h1 line-height 1.06 vs Lora 1.28 em glyph extent: capital Å/Ä/Ö starting a wrapped h1 line overlap descenders above by 0.16–0.22 em"
+ }
+}

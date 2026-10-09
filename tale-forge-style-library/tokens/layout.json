@@ -1,0 +1,938 @@
+{
+ "_meta": {
+  "title": "Tale Forge layout tokens (spacing, containers, grids, radii, elevation, z-index, blur, breakpoints)",
+  "site": "https://tale-forge.app",
+  "generated": "2026-10-09",
+  "status": "Plain JSON, not W3C design tokens. The site ships NO layout custom properties except --card-blur; every value below is a literal copied from CSS (cited file:line), from hydrated-DOM inline styles, or measured live (cited to derived/layout/measurements/*.json).",
+  "units": "CSS px unless stated; 1rem = 16px; vh/vw evaluated at the named viewport.",
+  "viewports_measured": {
+   "desktop": "1440x900 @1x",
+   "tablet": "834x1112 @1x",
+   "mobile": "390x844 @2x",
+   "film": "1920x1080, 1080x1920"
+  },
+  "theme_effect_on_layout": "None. natt and morgon produce identical page heights on every page and viewport (screenshots/pages/*); only --card-blur (22 vs 24px) and shadow tokens differ.",
+  "language_effect_on_layout": "English copy is longer: home mobile 7848 (sv) vs 8018 (en) CSS px; tablet 6663 vs 6691; desktop identical 4994.",
+  "companion_files": [
+   "analysis/04-layout-spacing-responsive.md",
+   "derived/layout/css-layout-declarations.csv",
+   "derived/layout/media-queries.csv",
+   "derived/layout/responsive-sweep.csv",
+   "derived/layout/inventory/*.csv"
+  ]
+ },
+ "containers": {
+  "shell": {
+   "width": "min(1120px, 100%)",
+   "margin": "0 auto",
+   "padding": "0 28px",
+   "content_width_max": 1064,
+   "display": "flex column, min-height 100dvh (footer pinned by .foot margin-top:auto)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:681-688, :1939"
+  },
+  "page_gutter": {
+   "value": 28,
+   "note": "identical at every viewport 320-1920; never reduced on phones",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:686"
+  },
+  "wrap_layer": {
+   "selector": ".wrap",
+   "z-index": 1,
+   "position": "relative",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:677-680"
+  },
+  "backdrop_layer": {
+   "selector": ".bg",
+   "position": "fixed",
+   "height": "100lvh",
+   "z-index": 0,
+   "source": "source/css/3q17cp_jgfwol.pretty.css:612-622"
+  },
+  "centred_columns": {
+   "_note": "Single-column pages wrap content in <section style=\"flex:1;display:grid;place-items:center;padding:36px 0\"> then a fixed-width column (hydrated DOM inline styles).",
+   "auth_and_404_card": {
+    "width": "min(440px, 100%)",
+    "padding": 34,
+    "pages": [
+     "/login",
+     "/signup",
+     "/404"
+    ],
+    "source": "source/rendered/dom__login__sv.html (div.glass inline style); source/js/1hcx0qn-qjgfn.js"
+   },
+   "pricing_column": {
+    "width": "min(560px, 100%)",
+    "card_padding": 28,
+    "card_gap": 20,
+    "pages": [
+     "/uppgradera"
+    ],
+    "source": "source/rendered/dom__uppgradera__sv.html; source/js/26ye0kuppitcn.js"
+   },
+   "legal_article": {
+    "width": "min(760px, 100%)",
+    "padding": 34,
+    "pages": [
+     "/integritet",
+     "/villkor"
+    ],
+    "source": "source/rendered/dom__integritet__sv.html (article.glass inline style)"
+   },
+   "start_screen_card": {
+    "max-width": 600,
+    "padding": "28px 22px",
+    "source": "source/js/0ad0wel9cyv30.js (start-screen section style)"
+   },
+   "stepcard_forge": {
+    "max-width": 560,
+    "source": "source/css/2_gt301v4m-60.pretty.css:47, :809"
+   },
+   "start_launch": {
+    "max-width": 980,
+    "source": "source/css/2_gt301v4m-60.pretty.css:552"
+   },
+   "reader_feedback_form": {
+    "width": "min(680px, 100%)",
+    "source": "source/js/36tbz-w9v-p8v.js"
+   },
+   "modal_sheets": {
+    "default": "min(100%, 560px)",
+    "style": "min(100%, 920px)",
+    "voice": "min(100%, 760px)",
+    "companion": "min(100%, 820px)",
+    "language": "min(100%, 420px)",
+    "start_sheet": "max-width 440px",
+    "source": "source/css/2h1wwdz1nvxwk.pretty.css:252-272; source/css/2_gt301v4m-60.pretty.css:764-772"
+   }
+  },
+  "text_measures": {
+   ".lede": "46ch",
+   ".cs-lede": "46ch",
+   ".hiw-step-copy": "52ch",
+   ".hiw-lede": "56ch",
+   ".companion-sub": "56ch",
+   ".honest": "60ch",
+   ".sec-intro": "62ch",
+   ".hiw-caption": "72ch",
+   ".veil-caption": "26ch",
+   ".reveal-line": "34ch",
+   "measured_px_at_1440": {
+    ".lede": 498,
+    ".hiw-lede": 521,
+    ".hiw-step-copy": 449,
+    ".hiw-caption": 578
+   },
+   "source": "source/css/3q17cp_jgfwol.pretty.css:874, :1050, :1475, :2565, :2641, :2912; source/css/2h1wwdz1nvxwk.pretty.css:73; source/css/2_gt301v4m-60.pretty.css:428, :447, :634"
+  }
+ },
+ "spacing": {
+  "has_tokens": false,
+  "scale_px": [
+   4,
+   6,
+   8,
+   10,
+   12,
+   14,
+   16,
+   18,
+   20,
+   22,
+   24,
+   26,
+   28,
+   30,
+   34,
+   36,
+   40,
+   44
+  ],
+  "frequency_css_tokens": {
+   "1": 3,
+   "2": 8,
+   "3": 4,
+   "4": 23,
+   "5": 10,
+   "6": 21,
+   "7": 11,
+   "8": 44,
+   "9": 18,
+   "10": 33,
+   "11": 5,
+   "12": 48,
+   "13": 11,
+   "14": 46,
+   "15": 8,
+   "16": 29,
+   "17": 1,
+   "18": 28,
+   "19": 1,
+   "20": 9,
+   "22": 26,
+   "24": 9,
+   "26": 10,
+   "28": 8,
+   "30": 5,
+   "32": 1,
+   "34": 4,
+   "36": 4,
+   "38": 1,
+   "40": 2,
+   "44": 1
+  },
+  "frequency_note": "Count of px tokens in gap/padding/margin declarations across the four CSS files + uppgradera inline style (432 non-zero tokens, keyframes excluded). Top five: 12 (48), 14 (46), 8 (44), 10 (33), 16 (29). Full list: derived/layout/inventory/spacing-declarations.csv.",
+  "semantic": {
+   "page_gutter_x": {
+    "value": 28,
+    "source": "source/css/3q17cp_jgfwol.pretty.css:686"
+   },
+   "nav_padding_y": {
+    "value": 22,
+    "mobile_le_560": 14,
+    "source": "source/css/3q17cp_jgfwol.pretty.css:693, :758"
+   },
+   "nav_gap": {
+    "value": 14,
+    "nav_right_gap": 12,
+    "mobile_le_560": "8 / 6",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:692, :719, :757, :2288"
+   },
+   "hero_padding": {
+    "value": "4vh 0 2vh",
+    "at_900_high": "36 / 18",
+    "le_880_top": "3vh",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:832, :2247"
+   },
+   "hero_column_gap": {
+    "value": 40,
+    "source": "source/css/3q17cp_jgfwol.pretty.css:830"
+   },
+   "hero_text_stack": {
+    "kicker_mb": 22,
+    "h1_mb": 18,
+    "lede_mb": 30,
+    "cta_gap": 14,
+    "cta_microcopy_gap": 10,
+    "source": "source/css/3q17cp_jgfwol.pretty.css:844, :861, :875, :883, :3138"
+   },
+   "section_padding": {
+    "value": "44px 0 8px",
+    "between_sections": 52,
+    "source": "source/css/3q17cp_jgfwol.pretty.css:1038-1040"
+   },
+   "page_section_padding": {
+    "value": "36px 0",
+    "pages": "pricing/auth/legal/404 (inline)",
+    "source": "source/rendered/dom__uppgradera__sv.html"
+   },
+   "section_head_mb": {
+    "value": 22,
+    "gap": 14,
+    "source": "source/css/3q17cp_jgfwol.pretty.css:1041-1046"
+   },
+   "sec_intro_margin": {
+    "value": "-10px 0 22px",
+    "home_inline_variant": "-12px 0 20px",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:1051; source/rendered/dom__home__sv.html"
+   },
+   "hiw_head_mb": {
+    "value": 36,
+    "source": "source/css/3q17cp_jgfwol.pretty.css:2539"
+   },
+   "hiw_steps_gap": {
+    "value": 36,
+    "source": "source/css/3q17cp_jgfwol.pretty.css:2571"
+   },
+   "hiw_step_body_gap": {
+    "value": 30,
+    "le_880": 16,
+    "source": "source/css/3q17cp_jgfwol.pretty.css:2617, :3162"
+   },
+   "hiw_closing_mt": {
+    "value": 40,
+    "source": "source/css/3q17cp_jgfwol.pretty.css:3129"
+   },
+   "card_padding": {
+    "hiw-card": 22,
+    "adv": 22,
+    "builder/friends/map/build-main": 26,
+    "page_glass(pricing)": 28,
+    "stepcard": "30px 28px 28px",
+    "auth/legal": 34,
+    "reader-body": "34px 36px (le_560: 24px 20px)",
+    "badge": "14px 18px",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:991, :1159, :1287, :1540, :1804, :2665, :2898; source/css/2_gt301v4m-60.pretty.css:49"
+   },
+   "grid_gaps": {
+    "builder-grid": 18,
+    "advs": 18,
+    "shelf": 22,
+    "choice-row": 12,
+    "hiw-mock-choices": 10,
+    "cs-doors": 13,
+    "start gallery": 14,
+    "pick-row": 12,
+    "stiles": 8,
+    "trait-row": 9,
+    "upgrade-proof col": 20
+   },
+   "foot_padding": {
+    "value": "26px 0 34px",
+    "gap": 16,
+    "source": "source/css/3q17cp_jgfwol.pretty.css:1933-1944"
+   },
+   "button_padding": {
+    ".btn": "17px 30px",
+    ".adv .btn": "12px 24px",
+    ".hiw-play": "12px 22px",
+    ".nav-cta": "11px 20px",
+    ".kicker": "8px 16px",
+    ".sec-chip": "6px 12px",
+    ".chip": "6px 13px",
+    ".trait": "8px 15px",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:894, :1618, :2817, :738, :845, :1094, :1574, :1233"
+   }
+  }
+ },
+ "grids": {
+  "hero": {
+   "columns": "1.05fr 0.95fr",
+   "gap": 40,
+   "align-items": "center",
+   "min-height": "64vh",
+   "measured_1440": [
+    537.594,
+    486.391
+   ],
+   "le_880": "1fr (text then fan)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:827-834, :2244-2248"
+  },
+  "fan_stage": {
+   "height": "min(58vh, 540px)",
+   "le_880": 340,
+   "card_width": "min(46%, 240px)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:925-932, :2249-2251"
+  },
+  "hiw_step": {
+   "columns": "88px 1fr",
+   "le_880": "44px 1fr",
+   "node": "40 (le_880: 32)",
+   "rail": "2px dashed var(--dash-line), from node+8 to next step",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:2577-2613, :3146-3158"
+  },
+  "hiw_step_body": {
+   "columns": "1fr 1fr",
+   "gap": 30,
+   "align-items": "center",
+   "flip": "order swap (.hiw-step--flip)",
+   "wide": "1fr (.hiw-step--wide)",
+   "measured_1440": [
+    473,
+    473
+   ],
+   "le_880": "1fr, gap 16, order reset",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:2614-2630, :3159-3169"
+  },
+  "builder_grid": {
+   "columns": "1.25fr 0.95fr",
+   "gap": 18,
+   "measured_1440": [
+    594.312,
+    451.672
+   ],
+   "le_880": "1fr",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1148-1152, :2253-2255"
+  },
+  "shelf": {
+   "columns": "repeat(auto-fill, minmax(215px, 1fr))",
+   "gap": 22,
+   "tracks": {
+    "1440": 4,
+    "960": 3,
+    "720": 2,
+    "390": 1
+   },
+   "track_thresholds_vw": {
+    "2": 508,
+    "3": 745,
+    "4": 982
+   },
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1480-1484"
+  },
+  "advs": {
+   "columns": "repeat(auto-fit, minmax(250px, 1fr))",
+   "gap": 18,
+   "le_600": "rows with 92px art column",
+   "start_flow": "repeat(3, 1fr) gap 14",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1532-1536, :2483-2526; source/css/2_gt301v4m-60.pretty.css:639-644"
+  },
+  "choice_row": {
+   "columns": "1fr 1fr",
+   "gap": 12,
+   "le_880": "1fr",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1898-1903, :2264-2266"
+  },
+  "reader_cover": {
+   "columns": "minmax(280px, 420px) 1fr",
+   "le_880": "1fr",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1770-1783"
+  },
+  "cs_doors": {
+   "columns": "repeat(4, minmax(0, 1fr))",
+   "gap": 13,
+   "le_1000": 2,
+   "le_520": 1,
+   "source": "source/css/2h1wwdz1nvxwk.pretty.css:352-356, :575-588"
+  },
+  "start_build_grid": {
+   "columns": "1.15fr 0.85fr",
+   "gap": 18,
+   "herocard": "sticky top 76",
+   "le_880": "1fr",
+   "source": "source/css/2_gt301v4m-60.pretty.css:134-139, :210-219, :863-869"
+  },
+  "upgrade_proof": {
+   "columns": "minmax(0, 1fr) 112px",
+   "column-gap": 20,
+   "le_600": "1fr, row-gap 16, cover first 128 wide",
+   "source": "derived/layout/uppgradera-inline-style.pretty.css:2-6, :42-59"
+  }
+ },
+ "breakpoints": {
+  "approach": "desktop-first max-width queries in px; no container queries; a few JS width checks (glöd stage <860).",
+  "list": [
+   {
+    "query": "(max-width: 400px)",
+    "changes": ".hiw-mock-choices -> 1 column",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:3208-3212"
+   },
+   {
+    "query": "(max-width: 480px)",
+    "changes": ".hiw-play full width (max 320); start-flow picks / stepcard / stiles compact",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:3201-3207; source/css/2_gt301v4m-60.pretty.css:883-912"
+   },
+   {
+    "query": "(max-width: 520px)",
+    "changes": ".cs-doors 1 column, door art 140 high",
+    "source": "source/css/2h1wwdz1nvxwk.pretty.css:580-588"
+   },
+   {
+    "query": "(max-width: 560px)",
+    "changes": "compact nav (logo 1.05rem / 28px mark, nav padding 14, gaps 8/6, theme toggle icon-only); reader body 24/20, reader image 16:9; keepsake; friend-mode 1 col; cs chips; cs-companion-actions 1 col",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:746-767, :2286-2348; source/css/2h1wwdz1nvxwk.pretty.css:232-239, :559-574"
+   },
+   {
+    "query": "(max-width: 600px)",
+    "changes": "create-customize summary 56; .advs compact rows; /uppgradera proof grid 1 col",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:2475-2527; derived/layout/uppgradera-inline-style.pretty.css:42-59"
+   },
+   {
+    "query": "(max-width: 700px)",
+    "changes": "cs-band wraps; create sheets become bottom sheets (align end, radius 24, padding 18 16)",
+    "source": "source/css/2h1wwdz1nvxwk.pretty.css:135-148, :325-343"
+   },
+   {
+    "query": "(max-width: 720px)",
+    "changes": "HIW map swaps to the vertical mobile SVG; card padding 16 12; medallion buttons 19%",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:3171-3200"
+   },
+   {
+    "query": "(max-width: 760px)",
+    "changes": "create adventure picker mobile variant; styles-grid 4 -> 2",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:1641-1741"
+   },
+   {
+    "query": "(max-width: 768px)",
+    "changes": "nav flex-wrap; .nav-right wraps right-aligned",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:2276-2285"
+   },
+   {
+    "query": "(max-width: 859px) / (min-width: 860px)",
+    "changes": "glöd takeover hides nav <=859; stage height max(560px, 100dvh - 89px) >=860; JS data-narrow when stage <860",
+    "source": "source/css/37m388zf6rymp.pretty.css:12-17, :1084-1088; source/js/2j_-r8q4tgdka.js"
+   },
+   {
+    "query": "(min-width: 860px) and (max-width: 1799px)",
+    "changes": ".glod-hearth-box offset beside the signboard",
+    "source": "source/css/37m388zf6rymp.pretty.css:738-743"
+   },
+   {
+    "query": "(max-width: 880px)",
+    "changes": "THE layout switch: hero 1 col + fan 340; builder 1 col centred; reader grids + choice rows 1 col; hiw-step rail 44 / 1 col; start build-grid 1 col; trait rows centred",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:1779-1783, :2243-2275, :3146-3170; source/css/2_gt301v4m-60.pretty.css:863-882"
+   },
+   {
+    "query": "(max-width: 1000px)",
+    "changes": ".cs-doors 4 -> 2 columns",
+    "source": "source/css/2h1wwdz1nvxwk.pretty.css:575-579"
+   },
+   {
+    "query": "(min-width: 1800px)",
+    "changes": "glöd signboard grows to 384 wide, larger type",
+    "source": "source/css/37m388zf6rymp.pretty.css:303-343"
+   }
+  ],
+  "implicit": {
+   "1120": "shell stops being fluid (min(1120px,100%))",
+   "fluid_type_ranges_vw": {
+    "h1": [
+     800,
+     1304
+    ],
+    ".lede": [
+     1047,
+     1241
+    ],
+    "h2": [
+     1000,
+     1333
+    ],
+    ".hiw-headline": [
+     760,
+     1080
+    ]
+   },
+   "shelf_tracks_vw": {
+    "2": 508,
+    "3": 745,
+    "4": 982
+   },
+   "nav_rows_measured": {
+    "<=379": 3,
+    "380-545": 2,
+    "546-560": 1,
+    "561-768": 2,
+    ">=769": 1
+   }
+  },
+  "reduced_motion": "prefers-reduced-motion: reduce removes float/pulse/twinkle and .reveal offsets; no layout change",
+  "reduced_motion_source": "source/css/3q17cp_jgfwol.pretty.css:2349-2372"
+ },
+ "radii": {
+  "pill": {
+   "value": "999px",
+   "css_uses": 26,
+   "for": ".btn, .kicker, .sec-chip, .chip, .trait, .tt, .tt-thumb, .nav-cta, nav links, language switcher, .hiw-choice, .book-sub"
+  },
+  "circle": {
+   "value": "50%",
+   "for": "dots, .hiw-node, .fab, avatars, map buttons"
+  },
+  "card": {
+   "value": 26,
+   "for": ".glass, .create-customize, .easel, .cs-portrait",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1117"
+  },
+  "ladder_px": [
+   2,
+   6,
+   8,
+   12,
+   14,
+   16,
+   18,
+   20,
+   22,
+   24,
+   26,
+   28,
+   30,
+   32
+  ],
+  "by_role": {
+   "input/field": "14 (inline) / 16 (.field)",
+   "choice": 16,
+   "badge/dashed slot/avatar": 18,
+   "hero book card": 20,
+   "shelf book": 22,
+   "frame": 24,
+   "card": 26,
+   "portrait frame": "28-32",
+   "small cover thumbs": 14,
+   "icon button": 8,
+   "skip link / paper props": 6,
+   "art top": "25px 25px 0 0 (card radius minus 1px border)"
+  },
+  "source": "derived/layout/inventory/radius-inventory.csv"
+ },
+ "elevation": {
+  "natt": {
+   "--card-shadow": "0 18px 44px #0508146b",
+   "--btn-shadow": "0 14px 40px #f5c54247",
+   "--btn-shadow-hover": "0 20px 55px #f5c5426b",
+   "--h1-shadow": "0 2px 30px #0c082859",
+   "--logo-shadow": "0 2px 6px #050814cc, 0 0 34px #f5c54273",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:511, :530-531, :536, :538"
+  },
+  "morgon": {
+   "--card-shadow": "0 4px 12px #241f351a, 0 22px 52px #241f3529",
+   "--btn-shadow": "0 14px 34px #6d4fe059",
+   "--btn-shadow-hover": "0 22px 48px #6d4fe073",
+   "--h1-shadow": "none",
+   "--logo-shadow": "0 1px 2px #241f352e, 0 0 24px #6d4fe052",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:560, :579-580, :585, :587"
+  },
+  "fixed": {
+   ".fan .fbook": "0 24px 50px #0a072066, 0 0 44px #f5c5421f",
+   ".pframe": "0 16px 36px #0a07204d",
+   ".friend .avatar": "0 10px 22px #0a072040",
+   ".companion-pic": "0 12px 26px #6d4fe040",
+   ".choice:hover": "0 14px 30px #6d4fe02e",
+   ".friend-mode-option[aria-pressed]": "0 10px 26px #6d4fe024",
+   ".easel": "0 30px 70px #0508148c, 0 0 60px #f5c54224",
+   ".btn-primary inner highlight": "inset 0 1px 0 #ffffff73",
+   "source": "derived/layout/inventory/shadow-inventory.csv"
+  },
+  "ladder": [
+   "avatar 10/22",
+   "frame 16/36",
+   "card 18/44",
+   "hero book 24/50 + 44 glow",
+   "easel 30/70 + 60 glow"
+  ],
+  "hover_lift": {
+   ".btn-primary": "translateY(-3px)",
+   ".choice": "translateY(-3px)",
+   ".hiw-play": "translateY(-2px)",
+   ".adv": "translateY(-6px)",
+   ".book": "translateY(-10px) rotate(-1deg)",
+   ".btn:active": "scale(0.96)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:905, :916, :1502, :1545, :1925, :2827"
+  }
+ },
+ "z_index": {
+  "-1": [
+   ".glod-ambient",
+   ".glod-post",
+   ".cs-door-face--fallback:before"
+  ],
+  "0": [
+   ".bg",
+   "body.glod-takeover .glod-stage",
+   ".hiw-cover-next",
+   ".hiw-next-label"
+  ],
+  "1": [
+   ".wrap",
+   ".tt-opt",
+   ".fb1",
+   ".hiw-node",
+   ".hiw-fan-1",
+   ".hiw-fan-3",
+   ".hiw-cover-1",
+   ".glod-board > *"
+  ],
+  "2": [
+   ".fb2",
+   ".hiw-fan-2",
+   ".hiw-cover-2",
+   ".glod-nail",
+   ".glod-mem-ember"
+  ],
+  "3": [
+   ".fan .badge",
+   ".hiw-memory-tag",
+   ".glod-mem-close"
+  ],
+  "4-8": {
+   ".glod-hearth-box": 4,
+   ".glod-sign": 5,
+   ".glod-active-ember": 6,
+   ".glod-sound": 6,
+   ".glod-mem": 7,
+   ".glod-book": 7,
+   ".glod-caption": 8
+  },
+  "10": [
+   "body.glod-takeover nav"
+  ],
+  "50": [
+   ".start-flow .sheetwrap"
+  ],
+  "60": [
+   ".cs-sheetwrap"
+  ],
+  "1000": [
+   ".skip-link"
+  ],
+  "source": "derived/layout/inventory/z-index-inventory.csv"
+ },
+ "blur": {
+  "--card-blur": {
+   "natt": "22px",
+   "morgon": "24px",
+   "used_by": [
+    ".glass",
+    ".fan .badge",
+    ".hiw-memory-tag",
+    ".create-customize"
+   ],
+   "source": "source/css/3q17cp_jgfwol.pretty.css:500, :549"
+  },
+  "chip": {
+   "value": "10px",
+   "used_by": [
+    ".kicker",
+    ".sec-chip",
+    ".hiw-ai-chip"
+   ],
+   "source": "source/css/3q17cp_jgfwol.pretty.css:839-840, :1091-1092, :2687-2688"
+  },
+  "ghost_button": {
+   "value": "14px",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:922-923"
+  },
+  "painting_veil": {
+   "value": "8px",
+   "source": "source/css/2_gt301v4m-60.pretty.css:239-240"
+  },
+  "modal_scrim": {
+   "value": "6px",
+   "bg": "#0a081980",
+   "source": "source/css/2h1wwdz1nvxwk.pretty.css:242-244; source/css/2_gt301v4m-60.pretty.css:752-754"
+  },
+  "glod_sound": {
+   "value": "4px",
+   "source": "source/css/37m388zf6rymp.pretty.css:779-780"
+  },
+  "image_filters": {
+   ".reader-img .art-bg": "blur(26px) saturate(1.08) + scale(1.18)",
+   ".easel img (phase 0)": "blur(26px) brightness(0.22) saturate(0)",
+   ".glod-ambient canvas": "blur(3px) saturate(0.94)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1786; source/css/2_gt301v4m-60.pretty.css:301; source/css/37m388zf6rymp.pretty.css:36"
+  }
+ },
+ "aspect_ratios": {
+  "book_cover": {
+   "value": "2/3",
+   "pixels": "848x1264 (true art ratio 0.671)",
+   "used_by": [
+    ".fan .fbook img",
+    ".book img",
+    ".hiw-cover",
+    ".gbook img",
+    "/uppgradera cover thumb"
+   ],
+   "source": "source/css/3q17cp_jgfwol.pretty.css:943, :1505, :3047; source/css/2_gt301v4m-60.pretty.css:32"
+  },
+  "story_scene": {
+   "value": "1264/848 (~3:2)",
+   "used_by": [
+    ".reader-img"
+   ],
+   "le_560": "16/9",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1766, :2302"
+  },
+  "landing_scene_mock": {
+   "value": "3/2",
+   "used_by": [
+    ".hiw-reader-mock > img"
+   ],
+   "source": "source/css/3q17cp_jgfwol.pretty.css:2858"
+  },
+  "adventure_art": {
+   "value": "16/9",
+   "used_by": [
+    ".adv-art"
+   ],
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1626; source/css/2_gt301v4m-60.pretty.css:660"
+  },
+  "easel": {
+   "value": "3/4",
+   "source": "source/css/2_gt301v4m-60.pretty.css:288"
+  },
+  "square": {
+   "value": "1",
+   "used_by": [
+    ".hiw-map-btn",
+    "HeroCanvasPlaceholder"
+   ],
+   "source": "source/css/3q17cp_jgfwol.pretty.css:3007; source/css/2h1wwdz1nvxwk.pretty.css:595"
+  },
+  "map_stage_measured_1440": "922 x 519 (16:9)"
+ },
+ "tap_targets": {
+  "minimum": 44,
+  "rule": "min-height: 44px on every pill control (nav links, language buttons also min-width 44, .tt, .trait, .sound-bed, summaries, map buttons min 44x44, invisible 44px :after on .cs-chip)",
+  "larger": {
+   ".btn": 52,
+   ".choice": 54,
+   ".hiw-play": 48,
+   ".adv .btn": 46,
+   ".create-customize > summary": "64 (le_600: 56)"
+  },
+  "below_44_exceptions": {
+   ".cs-andra": 30,
+   ".family-switcher .chip": 34,
+   ".glod-mem-close": 36,
+   "narrow .glod-wb-action": 36,
+   ".glod-wb-action": 42,
+   ".builder-pic .fab": 42
+  },
+  "source": "derived/layout/inventory/tap-target-inventory.csv"
+ },
+ "transforms": {
+  "rest_rotations_deg": {
+   ".fb1": -8,
+   ".fb2": 7,
+   ".fan .badge": 2.5,
+   ".hiw-cover-1": -7,
+   ".hiw-cover-2": 6,
+   ".hiw-fan-1": -4,
+   ".hiw-fan-3": 4,
+   ".hiw-memory-tag": 2.5,
+   ".cs-memtag": -1,
+   ".glod-board": -1.3,
+   ".glod-post-1": -1,
+   ".glod-post-2": 1.4,
+   ".glod-wb-rewrite": 0.6,
+   ".glod-mem-card": 1.6,
+   ".glod-book": -1.2,
+   ".glod-open": -0.6
+  },
+  "float_keyframes": {
+   "float1": "7s ease-in-out: rotate(-8deg) -> rotate(-8.6deg) translateY(-12px)",
+   "float2": "8s: rotate(7deg) -> rotate(7.6deg) translateY(-16px)",
+   "floatBadge": "9s: rotate(2.5deg) -> rotate(3deg) translateY(-7px)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:962-1009"
+  },
+  "fan_offsets": {
+   ".fb1": "top 10%, left 6%",
+   ".fb2": "top 2%, right 8%",
+   ".fan .badge": "bottom 23%, right 9%",
+   ".hiw-fan-1": "translate(10%)",
+   ".hiw-fan-3": "translate(-10%)",
+   ".hiw-cover-1": "translate(6%)",
+   ".hiw-cover-2": "translate(-6%)"
+  },
+  "reveal": {
+   "from": "opacity 0, translateY(26px)",
+   "to": "none",
+   "duration": "0.7s cubic-bezier(0.2, 0.7, 0.3, 1)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1099-1109"
+  },
+  "source": "derived/layout/inventory/transform-inventory.csv"
+ },
+ "borders_and_frames": {
+  "glass_hairline": "1px solid var(--card-line) + 1px gradient ring (.glass:before, opacity .45)",
+  "book_frame": "5px solid var(--frame) (.fbook, .book)",
+  "portrait_frame": "4px solid var(--frame) (.pframe, .gbook, .hiw-cover); 3px (.avatar, .companion-pic, .hiw-fan-card); 6px (.easel)",
+  "dashed": "2px dashed var(--dash-line) (.upload, .friend-add, .hiw-invite-slot, hiw rail)",
+  "control": "1px / 1.5px solid var(--control-line) or var(--card-line); 2px for .trait, .choice, .field",
+  "source": "source/css/3q17cp_jgfwol.pretty.css:930, :1168, :1226, :1248, :1302, :1487, :2589, :2729; source/css/2_gt301v4m-60.pretty.css:25, :66, :289"
+ },
+ "measured_rhythm": {
+  "home_1440": {
+   "nav": [
+    0,
+    96
+   ],
+   "hero": [
+    96,
+    576
+   ],
+   "section_hiw": [
+    672,
+    3183
+   ],
+   "section_din_hjalte": [
+    3855,
+    453
+   ],
+   "section_bokhyllan": [
+    4308,
+    583
+   ],
+   "foot": [
+    4891,
+    103
+   ],
+   "page_height": 4994,
+   "format": "[y, height]"
+  },
+  "home_834": {
+   "nav": [
+    0,
+    96
+   ],
+   "hero": [
+    96,
+    763
+   ],
+   "section_hiw": [
+    859,
+    4209
+   ],
+   "section_din_hjalte": [
+    5068,
+    892
+   ],
+   "section_bokhyllan": [
+    5960,
+    566
+   ],
+   "foot": [
+    6526,
+    137
+   ],
+   "page_height": 6663
+  },
+  "home_390": {
+   "nav": [
+    0,
+    116
+   ],
+   "hero": [
+    116,
+    909
+   ],
+   "section_hiw": [
+    1025,
+    4397
+   ],
+   "section_din_hjalte": [
+    5422,
+    961
+   ],
+   "section_bokhyllan": [
+    6384,
+    1276
+   ],
+   "foot": [
+    7659,
+    189
+   ],
+   "page_height": 7848
+  },
+  "hiw_step_heights_1440": [
+   410,
+   190,
+   214,
+   597,
+   887,
+   347
+  ],
+  "uppgradera_1440": {
+   "column_x": [
+    440,
+    1000
+   ],
+   "cards": [
+    [
+     132,
+     147
+    ],
+    [
+     299,
+     334
+    ],
+    [
+     711,
+     378
+    ]
+   ],
+   "page_height": 1312
+  },
+  "source": "derived/layout/measurements/*.json"
+ }
+}

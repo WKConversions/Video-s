@@ -1,0 +1,290 @@
+/* =====================================================================================
+   Tale Forge (https://tale-forge.app) - colour tokens, copy-pasteable.
+   Generated 2026-10-09 by tools/color/build_css.py from the harvested stylesheets.
+
+   SECTION 1-3 are VERBATIM from source/css/3q17cp_jgfwol.pretty.css
+   (values, names and selector scopes exactly as shipped; line numbers in comments).
+   SECTION 4 names colours that the site only uses as raw literals (no variable in the source);
+   the --tf-x-* names are ours, every value is copied verbatim and cited.
+   SECTION 5 is DERIVED (not in the source): opaque equivalents of the translucent tokens,
+   composited over measured backdrops, for video/print where there is no live blur.
+   SECTION 6 is MEASURED (not in the source): the illustration palette (k-means, CIELAB, k=8).
+
+   Usage: set data-theme="natt" (default) or "morgon" on <body>. Fonts are not included here
+   (--display Lora, --ui Schibsted Grotesk, --serif Source Serif 4, --wordmark Cinzel).
+   ===================================================================================== */
+
+/* 1. Primitives ------------------------------------------------------------------- */
+:root {
+  --violet:                    #6d4fe0;  /* 3q17cp_jgfwol.pretty.css:461 */
+  --violet-soft:               #9b87f5;  /* 3q17cp_jgfwol.pretty.css:462 */
+  --gold:                      #f2b22e;  /* 3q17cp_jgfwol.pretty.css:463 */
+  --gold-soft:                 #f5c542;  /* 3q17cp_jgfwol.pretty.css:464 */
+  --coral:                     #ff6154;  /* 3q17cp_jgfwol.pretty.css:465 */
+  --theme-transition-duration: 0.5s;  /* 3q17cp_jgfwol.pretty.css:470 */
+  --theme-transition-easing:   ease;  /* 3q17cp_jgfwol.pretty.css:471 */
+}
+
+/* 2. Page canvas (body) ------------------------------------------------------------ */
+body {
+  color: var(--page-ink);                       /* 3q17cp_jgfwol.pretty.css:599 */
+  background: #171232;                          /* 3q17cp_jgfwol.pretty.css:606  natt canvas under the nebula image */
+  transition:
+    background-color var(--theme-transition-duration) var(--theme-transition-easing),
+    color var(--theme-transition-duration) var(--theme-transition-easing);   /* :602-605 */
+}
+body[data-theme="morgon"] {
+  background: #ede9f6;                          /* :610  morgon canvas under the aurora image */
+}
+/* natt backdrop recipe (fixed full-viewport layer, opacity-swapped with the morgon image over 0.5s):
+   <div class="bg bg-night"><img src="/assets/nebula-hero.webp"><div class="scrim"></div><div class="starfield"></div></div>
+   <div class="bg bg-day"><picture>(<=760px) morgon-aurora-mobile.webp | morgon-aurora-desktop.webp</picture></div> */
+.bg-night .scrim {
+  background: linear-gradient(#0b0f1e61 0%, #0b0f1e80 45%, #0d1122bd 100%);   /* :632 */
+}
+.starfield {                                    /* :636-656  six single dots, not a tiled pattern */
+  background-image:
+    radial-gradient(1.4px 1.4px at 12% 8%, #ffe9b0e6 50%, #0000 51%),
+    radial-gradient(1px 1px at 32% 16%, #f5f0e8cc 50%, #0000 51%),
+    radial-gradient(1.6px 1.6px at 58% 6%, #f5c542d9 50%, #0000 51%),
+    radial-gradient(1px 1px at 76% 12%, #f5f0e8b3 50%, #0000 51%),
+    radial-gradient(1.2px 1.2px at 90% 22%, #ffe9b0bf 50%, #0000 51%),
+    radial-gradient(1.3px 1.3px at 44% 24%, #9b87f599 50%, #0000 51%);
+  animation: 4.6s ease-in-out infinite twinkle;   /* opacity 0.95 <-> 0.55 */
+}
+
+/* 3a. Theme set "natt" (night, default) - verbatim, 3q17cp_jgfwol.pretty.css:494-540 */
+body[data-theme="natt"] {
+  --page-ink:         #fff7e9;  /* :494 */
+  --page-sub:         #d9cfee;  /* :495 */
+  --accent:           var(--gold-soft);  /* :496 */
+  --accent-ink:       var(--gold-soft);  /* :497 */
+  --card:             #0f1628ad;  /* :498 */
+  --card-line:        #9b87f542;  /* :499 */
+  --card-blur:        22px;  /* :500 */
+  --card-ink:         #f2eeff;  /* :501 */
+  --card-sub:         #b5acd3;  /* :502 */
+  --frame:            #101a30;  /* :503 */
+  --frame-line:       #9b87f566;  /* :504 */
+  --chip-bg:          #fff9ec1a;  /* :505 */
+  --chip-line:        #fff3d942;  /* :506 */
+  --chip-ink:         #e8dfc9;  /* :507 */
+  --pill-bg:          #9b87f529;  /* :508 */
+  --pill-ink:         #c9bcff;  /* :509 */
+  --micro-ink:        color-mix(in srgb, var(--page-sub) 85%, transparent);  /* :510 */
+  --h1-shadow:        0 2px 30px #0c082859;  /* :511 */
+  --gold-chip-bg:     #f2b22e29;  /* :512 */
+  --gold-chip-ink:    #ffd98f;  /* :513 */
+  --coral-chip-bg:    #ff615424;  /* :514 */
+  --coral-chip-ink:   #ffab9f;  /* :515 */
+  --trait-line:       #9b87f559;  /* :516 */
+  --trait-ink:        #cfc5ec;  /* :517 */
+  --trait-on-bg:      #9b87f533;  /* :518 */
+  --trait-on-line:    #9b87f599;  /* :519 */
+  --trait-on-ink:     #e9e2ff;  /* :520 */
+  --dash-line:        #ffecbe59;  /* :521 */
+  --choice-bg:        #ffffff0f;  /* :522 */
+  --choice-line:      #9b87f552;  /* :523 */
+  --choice-ink:       #f2eeff;  /* :524 */
+  --bar-bg:           #ffffff24;  /* :525 */
+  --prose-ink:        #eae4f5;  /* :526 */
+  --foot-ink:         #b7a9d6;  /* :527 */
+  --btn-grad:         linear-gradient(135deg, #ffe08a, #f5c542);  /* :528 */
+  --btn-ink:          #3a2b10;  /* :529 */
+  --btn-shadow:       0 14px 40px #f5c54247;  /* :530 */
+  --btn-shadow-hover: 0 20px 55px #f5c5426b;  /* :531 */
+  --ghost-bg:         #fff9ec1a;  /* :532 */
+  --ghost-ink:        #fff3d9;  /* :533 */
+  --control-line:     #fff3d952;  /* :534 */
+  --ghost-line:       var(--control-line);  /* :535 */
+  --card-shadow:      0 18px 44px #0508146b;  /* :536 */
+  --logo-ink:         #f5c542;  /* :537 */
+  --logo-shadow:      0 2px 6px #050814cc, 0 0 34px #f5c54273;  /* :538 */
+  --map-dot:          var(--violet-soft);  /* :539 */
+  --map-glow:         #f5c54240;  /* :540 */
+}
+
+/* 3b. Theme set "morgon" (morning) - verbatim, 3q17cp_jgfwol.pretty.css:543-589 */
+body[data-theme="morgon"] {
+  --page-ink:         #241f35;  /* :543 */
+  --page-sub:         #5f5878;  /* :544 */
+  --accent:           #6d4fe0;  /* :545 */
+  --accent-ink:       #5b3fc7;  /* :546 */
+  --card:             #fffc;  /* :547 */
+  --card-line:        #ffffffe6;  /* :548 */
+  --card-blur:        24px;  /* :549 */
+  --card-ink:         #241f35;  /* :550 */
+  --card-sub:         #5f5878;  /* :551 */
+  --frame:            #fff;  /* :552 */
+  --frame-line:       #ffffffe6;  /* :553 */
+  --chip-bg:          #6d4fe014;  /* :554 */
+  --chip-line:        #6d4fe029;  /* :555 */
+  --chip-ink:         var(--accent-ink);  /* :556 */
+  --pill-bg:          #6d4fe01a;  /* :557 */
+  --pill-ink:         var(--accent-ink);  /* :558 */
+  --micro-ink:        var(--page-sub);  /* :559 */
+  --h1-shadow:        none;  /* :560 */
+  --gold-chip-bg:     #f2b22e26;  /* :561 */
+  --gold-chip-ink:    #8f6a12;  /* :562 */
+  --coral-chip-bg:    #ff61541f;  /* :563 */
+  --coral-chip-ink:   #c23a2b;  /* :564 */
+  --trait-line:       #6d4fe047;  /* :565 */
+  --trait-ink:        #5f5878;  /* :566 */
+  --trait-on-bg:      #6d4fe01f;  /* :567 */
+  --trait-on-line:    #6d4fe06b;  /* :568 */
+  --trait-on-ink:     #4a36a8;  /* :569 */
+  --dash-line:        #6d4fe059;  /* :570 */
+  --choice-bg:        #fff;  /* :571 */
+  --choice-line:      #6d4fe038;  /* :572 */
+  --choice-ink:       #241f35;  /* :573 */
+  --bar-bg:           #241f3514;  /* :574 */
+  --prose-ink:        #3a3450;  /* :575 */
+  --foot-ink:         #5f5878;  /* :576 */
+  --btn-grad:         linear-gradient(135deg, #6d4fe0, #5b3fc7);  /* :577 */
+  --btn-ink:          #fff;  /* :578 */
+  --btn-shadow:       0 14px 34px #6d4fe059;  /* :579 */
+  --btn-shadow-hover: 0 22px 48px #6d4fe073;  /* :580 */
+  --ghost-bg:         #ffffffb8;  /* :581 */
+  --ghost-ink:        #241f35;  /* :582 */
+  --control-line:     #887da0;  /* :583 */
+  --ghost-line:       var(--control-line);  /* :584 */
+  --card-shadow:      0 4px 12px #241f351a, 0 22px 52px #241f3529;  /* :585 */
+  --logo-ink:         #6d4fe0;  /* :586 */
+  --logo-shadow:      0 1px 2px #241f352e, 0 0 24px #6d4fe052;  /* :587 */
+  --map-dot:          var(--violet);  /* :588 */
+  --map-glow:         #6d4fe033;  /* :589 */
+}
+
+/* 4. Named raw literals (names are ours, values verbatim) ------------------------- */
+/* 4.1 Global UI literals */
+:root {
+  --tf-x-skip-link-ink:         #241608;  /* source/css/3q17cp_jgfwol.pretty.css:476 (.skip-link text on var(--gold)) */
+  --tf-x-glass-rim:             linear-gradient(135deg, #9b87f580, #f2b22e59 50%, #ff61544d);  /* source/css/3q17cp_jgfwol.pretty.css:1130 (.glass:before 1px masked rim, opacity .45) */
+  --tf-x-ember-rim:             linear-gradient(135deg, #f2b22ebf, #ff615466);  /* source/css/3q17cp_jgfwol.pretty.css:1623 (.adv.ember:before, opacity .85) */
+  --tf-x-btn-inset-highlight:   inset 0 1px 0 #ffffff73;  /* source/css/3q17cp_jgfwol.pretty.css:912 (.btn-primary, .hiw-play) */
+  --tf-x-cover-shadow:          0 24px 50px #0a072066, 0 0 44px #f5c5421f;  /* source/css/3q17cp_jgfwol.pretty.css:938-940 (.fan .fbook) */
+  --tf-x-logo-img-glow:         drop-shadow(0 0 14px #f5c54280);  /* source/css/3q17cp_jgfwol.pretty.css:713 (.logo img filter) */
+  --tf-x-pulse-gold:            #f2b22e80;  /* source/css/3q17cp_jgfwol.pretty.css:1017 (.dotpulse ring start; keyframes pulse #f2b22e73 -> #f2b22e00 :1019-1029) */
+  --tf-x-portrait-shadow:       0 16px 36px #0a07204d;  /* source/css/3q17cp_jgfwol.pretty.css:1175 (.builder-pic .pframe), source/css/2_gt301v4m-60.pretty.css:229 */
+  --tf-x-avatar-shadow:         0 10px 22px #0a072040;  /* source/css/3q17cp_jgfwol.pretty.css:1309 (.friend .avatar) */
+  --tf-x-companion-shadow:      0 12px 26px #6d4fe040;  /* source/css/3q17cp_jgfwol.pretty.css:1458 (.companion-pic) */
+  --tf-x-choice-hover-shadow:   0 14px 30px #6d4fe02e;  /* source/css/3q17cp_jgfwol.pretty.css:1926 (.choice:hover) */
+  --tf-x-option-pressed-shadow: 0 10px 26px #6d4fe024;  /* source/css/3q17cp_jgfwol.pretty.css:2186 (.friend-mode-option[aria-pressed=true]) */
+  --tf-x-progress-fill:         linear-gradient(90deg, #f5c542, #9b87f5);  /* source/css/3q17cp_jgfwol.pretty.css:2782 (.hiw-bar i) */
+  --tf-x-ai-chip-bg:            #ffffffc7;  /* source/css/3q17cp_jgfwol.pretty.css:2689 (.hiw-ai-chip, same in both themes) */
+  --tf-x-ai-chip-ink:           #241f35;  /* source/css/3q17cp_jgfwol.pretty.css:2686 */
+  --tf-x-ai-chip-line:          #241f3538;  /* source/css/3q17cp_jgfwol.pretty.css:2690 */
+  --tf-x-next-label-bg:         #0a0c188c;  /* source/css/3q17cp_jgfwol.pretty.css:3078 (.hiw-next-label) */
+  --tf-x-next-label-ink:        #fff7e9;  /* source/css/3q17cp_jgfwol.pretty.css:3076 */
+  --tf-x-map-path-gradient:     linear-gradient(#f5c542, #9b87f5);  /* source/js/3d9nxlx1n5pdy.js SVG linearGradient `-path` stops (x2,y2 vary per path) */
+  --tf-x-map-ring-gradient:     linear-gradient(135deg, #f5c542, #6D4FE0);  /* source/js/3d9nxlx1n5pdy.js SVG linearGradient `-ring` stops (x1,y1 0,0 to x2,y2 1,1) */
+}
+/* 4.2 Create flow (/start) literals */
+:root {
+  --tf-x-sheet-overlay:    #0a081980;  /* source/css/2h1wwdz1nvxwk.pretty.css:244 (.cs-sheetwrap), source/css/2_gt301v4m-60.pretty.css:754 */
+  --tf-x-cs-spine:         linear-gradient(160deg, #3f2f68, #241b3f);  /* source/css/2h1wwdz1nvxwk.pretty.css:89 */
+  --tf-x-door-face-natt:   linear-gradient(160deg, #140f28e6, #281e46d9);  /* source/css/2h1wwdz1nvxwk.pretty.css:435 */
+  --tf-x-door-face-morgon: linear-gradient(160deg, #ded5f5, #c9bcf0);  /* source/css/2h1wwdz1nvxwk.pretty.css:443 */
+  --tf-x-veil:             linear-gradient(160deg, #9b87f58c, #f2b22e66);  /* source/css/2_gt301v4m-60.pretty.css:242 (.pframe .veil while the portrait paints; text #fff7e9) */
+  --tf-x-easel-bg:         #1a1430;  /* source/css/2_gt301v4m-60.pretty.css:290 */
+  --tf-x-easel-shadow:     0 30px 70px #0508148c, 0 0 60px #f5c54224;  /* source/css/2_gt301v4m-60.pretty.css:295-297 */
+  --tf-x-easel-sheen:      linear-gradient(115deg, #0000 42%, #ffe08a80 50%, #0000 58%);  /* source/css/2_gt301v4m-60.pretty.css:313 */
+  --tf-x-ember-speck:      radial-gradient(circle, #ffe08a, #f2b22e 60%, #0000);  /* source/css/2_gt301v4m-60.pretty.css:342, :403 */
+  --tf-x-veil-glow:        radial-gradient(circle at 50% 60%, #f5c54266, #9b87f52e 46%, #0000 72%);  /* source/css/2_gt301v4m-60.pretty.css:368-373 (mix-blend-mode: screen) */
+  --tf-x-unveil-pop-glow:  0 0 26px #f5c5428c;  /* source/css/2_gt301v4m-60.pretty.css:520 */
+}
+/* 4.3 Glöd stage (hearth/ember scene on /start and /share) literals */
+:root {
+  --tf-x-glod-stage-natt:           #0b0e22;  /* source/css/37m388zf6rymp.pretty.css:2 */
+  --tf-x-glod-stage-morgon:         #b7c0ea;  /* source/css/37m388zf6rymp.pretty.css:19 */
+  --tf-x-glod-ambient-morgon:       #cdb9d8;  /* source/css/37m388zf6rymp.pretty.css:33 */
+  --tf-x-glod-ambient-scrim-natt:   linear-gradient(#07091780 0%, #07091742 42%, #07091770 100%);  /* source/css/37m388zf6rymp.pretty.css:46 */
+  --tf-x-glod-ambient-scrim-morgon: linear-gradient(#3b2c6433 0%, #fff6e814 45%, #ede9f661 100%);  /* source/css/37m388zf6rymp.pretty.css:51 */
+  --tf-x-wood-board:                linear-gradient(178deg, #5e4129, #4a3120 56%, #3c2717);  /* source/css/37m388zf6rymp.pretty.css:91 */
+  --tf-x-wood-board-line:           #281709;  /* source/css/37m388zf6rymp.pretty.css:92 */
+  --tf-x-wood-post:                 linear-gradient(90deg, #33210f, #553d24 45%, #291908);  /* source/css/37m388zf6rymp.pretty.css:73 */
+  --tf-x-wood-ink:                  #fbeed2;  /* source/css/37m388zf6rymp.pretty.css:90, :176, :286, :986 */
+  --tf-x-wood-ink-soft:             #e4cfa4;  /* source/css/37m388zf6rymp.pretty.css:161, :212, :265 */
+  --tf-x-wood-board-shadow:         0 22px 34px #04030c99, 0 0 60px #ff963c12, inset 0 1px #ffd8a038, inset 0 -3px #00000059;  /* source/css/37m388zf6rymp.pretty.css:97-101 */
+  --tf-x-brass-nail:                radial-gradient(circle at 35% 30%, #e8d5ac, #6b5335 62%, #2c1e12);  /* source/css/37m388zf6rymp.pretty.css:134 */
+  --tf-x-gold-action:               linear-gradient(#f7d77f, #eeb84e);  /* source/css/37m388zf6rymp.pretty.css:236 (text #35210d, border #ffe7b88c) */
+  --tf-x-parchment:                 linear-gradient(172deg, #f9edd2 0%, #f2e2ba 60%, #ebd8ab 100%);  /* source/css/37m388zf6rymp.pretty.css:469 (.glod-mem-card base layer) */
+  --tf-x-parchment-ink:             #3b2a16;  /* source/css/37m388zf6rymp.pretty.css:465 */
+  --tf-x-parchment-ink-soft:        #7a6136;  /* source/css/37m388zf6rymp.pretty.css:589 */
+  --tf-x-scorch:                    radial-gradient(37% 30% at 0 102%, #100602f5 0%, #2a1206e0 22%, #52260c9e 42%, #85481857 60%, #b2742e29 76%, #cda05014 86%, #0000 94%);  /* source/css/37m388zf6rymp.pretty.css:503-512 */
+  --tf-x-leather-button:            #5a3820;  /* source/css/37m388zf6rymp.pretty.css:599 (.glod-mem-carry; pressed #31543d :608) */
+  --tf-x-ember-core:                radial-gradient(circle at 42% 38%, #fff3cf, #ffd98f 45%, #ff9a4c 78%, #e06a24 100%);  /* source/css/37m388zf6rymp.pretty.css:542-548 */
+  --tf-x-ember-glow:                0 0 10px 3px #ffc373f2, 0 0 26px 9px #ff983e8c, 0 0 52px 20px #ff823240;  /* source/css/37m388zf6rymp.pretty.css:552-555 */
+  --tf-x-active-ember-core:         radial-gradient(circle at 38% 34%, #fff7d6 0 14%, #ffd77a 36%, #e78232 72%, #8b2f19 100%);  /* source/css/37m388zf6rymp.pretty.css:655-661 */
+  --tf-x-book-cloth:                linear-gradient(162deg, #322459 0%, #413067 58%, #4e2f5e 100%);  /* source/css/37m388zf6rymp.pretty.css:832 */
+  --tf-x-book-title-ink:            #f7e7c3;  /* source/css/37m388zf6rymp.pretty.css:924 */
+  --tf-x-book-pages:                linear-gradient(90deg, #cdb689, #f2e6c8 34%, #e6d5b0 72%, #c4ab7e);  /* source/css/37m388zf6rymp.pretty.css:819 */
+  --tf-x-book-fire:                 radial-gradient(125% 90% at 50% 120%, #ff963c66, #ff8c3721 46%, #0000 70%);  /* source/css/37m388zf6rymp.pretty.css:885-890 */
+  --tf-x-hearth-text-natt:          #eee1c6;  /* source/css/37m388zf6rymp.pretty.css:745 (shadow 0 1px 10px #060410d9, 0 0 3px #060410b3) */
+  --tf-x-hearth-text-morgon:        #fff6e4;  /* source/css/37m388zf6rymp.pretty.css:753 (shadow 0 1px 10px #2b1e4ee6, 0 0 4px #2b1e4ecc, 0 1px 2px #2b1e4ee6) */
+  --tf-x-caption-natt:              #fff7e9;  /* source/css/37m388zf6rymp.pretty.css:973 (shadow 0 2px 20px #060410cc) */
+  --tf-x-caption-morgon:            #2f2350;  /* source/css/37m388zf6rymp.pretty.css:979 (shadow 0 2px 20px #fff8ebb3) */
+  --tf-x-flame-1:                   #c8441f;  /* source/js/1pgfdvt65g9p-.js flame layer 1 (outer) */
+  --tf-x-flame-2:                   #ef7527;  /* flame layer 2 */
+  --tf-x-flame-3:                   #ffab3d;  /* flame layer 3 */
+  --tf-x-flame-4:                   #ffe9b8;  /* flame layer 4 (core) */
+}
+
+/* 5. DERIVED, not in source: opaque equivalents of translucent tokens ---------------------
+   composited (straight alpha, sRGB) over the measured median of the rendered backdrop layer:
+   natt #262a41, morgon #f1e4eb (derived/color/backdrop-layer__<theme>__desktop.png).
+   Use for video plates without live blur. In the browser the real token is always the translucent one. */
+body[data-theme="natt"] {
+  --flat-card:          #161c30;  /* #0f1628ad over #262a41 */
+  --flat-card-line:     #444270;  /* #9b87f542 over #262a41 */
+  --flat-frame-line:    #554f89;  /* #9b87f566 over #262a41 */
+  --flat-chip-bg:       #3c3f52;  /* #fff9ec1a over #262a41 */
+  --flat-chip-line:     #5e5e68;  /* #fff3d942 over #262a41 */
+  --flat-pill-bg:       #39395e;  /* #9b87f529 over #262a41 */
+  --flat-micro-ink:     #beb6d4;  /* #d9cfeed9 over #262a41 */
+  --flat-gold-chip-bg:  #47403e;  /* #f2b22e29 over #262a41 */
+  --flat-coral-chip-bg: #453244;  /* #ff615424 over #262a41 */
+  --flat-trait-line:    #4f4a80;  /* #9b87f559 over #262a41 */
+  --flat-trait-on-bg:   #3d3d65;  /* #9b87f533 over #262a41 */
+  --flat-trait-on-line: #6c62ad;  /* #9b87f599 over #262a41 */
+  --flat-dash-line:     #726e6d;  /* #ffecbe59 over #262a41 */
+  --flat-choice-bg:     #33374c;  /* #ffffff0f over #262a41 */
+  --flat-choice-line:   #4c487b;  /* #9b87f552 over #262a41 */
+  --flat-bar-bg:        #45485c;  /* #ffffff24 over #262a41 */
+  --flat-ghost-bg:      #3c3f52;  /* #fff9ec1a over #262a41 */
+  --flat-control-line:  #6c6b72;  /* #fff3d952 over #262a41 */
+  --flat-ghost-line:    #6c6b72;  /* #fff3d952 over #262a41 */
+  --flat-map-glow:      #5a5141;  /* #f5c54240 over #262a41 */
+}
+body[data-theme="morgon"] {
+  --flat-card:          #fcfafb;  /* #fffc over #f1e4eb */
+  --flat-card-line:     #fefcfd;  /* #ffffffe6 over #f1e4eb */
+  --flat-frame-line:    #fefcfd;  /* #ffffffe6 over #f1e4eb */
+  --flat-chip-bg:       #e7d8ea;  /* #6d4fe014 over #f1e4eb */
+  --flat-chip-line:     #dccce9;  /* #6d4fe029 over #f1e4eb */
+  --flat-pill-bg:       #e4d5ea;  /* #6d4fe01a over #f1e4eb */
+  --flat-gold-chip-bg:  #f1ddcf;  /* #f2b22e26 over #f1e4eb */
+  --flat-coral-chip-bg: #f3d4d9;  /* #ff61541f over #f1e4eb */
+  --flat-trait-line:    #ccbbe8;  /* #6d4fe047 over #f1e4eb */
+  --flat-trait-on-bg:   #e1d2ea;  /* #6d4fe01f over #f1e4eb */
+  --flat-trait-on-line: #baa5e6;  /* #6d4fe06b over #f1e4eb */
+  --flat-dash-line:     #c3b0e7;  /* #6d4fe059 over #f1e4eb */
+  --flat-choice-line:   #d4c3e9;  /* #6d4fe038 over #f1e4eb */
+  --flat-bar-bg:        #e1d5dd;  /* #241f3514 over #f1e4eb */
+  --flat-ghost-bg:      #fbf7f9;  /* #ffffffb8 over #f1e4eb */
+  --flat-map-glow:      #d7c6e9;  /* #6d4fe033 over #f1e4eb */
+}
+
+/* 6. MEASURED, not in source: sample-book illustration palette ---------------------------
+   k-means in CIELAB, k=8, median pixel per cluster, all 15 images of "Iris och den sparade platsen"
+   (derived/color/image-palettes.json, pooled entry). Ordered by share of pixels. */
+:root {
+  --tf-illus-1: #ebcb9e;  /* 17.5% of pixels, L*83 */
+  --tf-illus-2: #654619;  /* 17.0% of pixels, L*32 */
+  --tf-illus-3: #907330;  /* 16.1% of pixels, L*50 */
+  --tf-illus-4: #d59e56;  /* 14.6% of pixels, L*69 */
+  --tf-illus-5: #b96b24;  /* 12.9% of pixels, L*53 */
+  --tf-illus-6: #291e0f;  /* 12.1% of pixels, L*12 */
+  --tf-illus-7: #ab2923;  /* 6.6% of pixels, L*38 */
+  --tf-illus-8: #495050;  /* 3.1% of pixels, L*33 */
+}

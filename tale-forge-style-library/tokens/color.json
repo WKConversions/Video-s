@@ -1,0 +1,5200 @@
+{
+ "_meta": {
+  "title": "Tale Forge colour tokens",
+  "site": "https://tale-forge.app",
+  "generated": "2026-10-09",
+  "generator": "tools/color/build_tokens.py (scratchpad), from derived/color/css-custom-properties.csv",
+  "conventions": {
+   "hex": "Values are copied verbatim from the minified CSS (lower-case, shortest form, 8-digit #rrggbbaa for alpha). flat_on_* values are opaque composites (straight alpha, sRGB) for video/print where there is no live backdrop.",
+   "themes": "Theme sets are scoped to body[data-theme=\"natt\"] (default; server HTML ships it) and body[data-theme=\"morgon\"]. The choice persists in localStorage \"tf-theme\"; an inline script in <body> applies it before first paint.",
+   "reference_backgrounds": {
+    "natt": {
+     "body": "#171232",
+     "backdrop_median": "#262a41",
+     "backdrop_copy_column": "#292d41"
+    },
+    "morgon": {
+     "body": "#ede9f6",
+     "backdrop_median": "#f1e4eb",
+     "backdrop_copy_column": "#f2e9ef"
+    }
+   },
+   "reference_backgrounds_note": "body = body background-color (3q17cp_jgfwol.pretty.css:606 / :610). backdrop_median = median pixel of the fixed .bg layer as rendered at 1440x900 (derived/color/backdrop-layer__<theme>__desktop.png). backdrop_copy_column = median of the same layer in the hero copy column (x188-700, y140-650)."
+  }
+ },
+ "primitives": {
+  "violet": {
+   "value": "#6d4fe0",
+   "rgb": "rgb(109, 79, 224)",
+   "hsl_deg_pct_pct": [
+    252,
+    70,
+    59
+   ],
+   "lch_ab": [
+    44.6,
+    85.1,
+    304.8
+   ],
+   "source": "source/css/3q17cp_jgfwol.pretty.css:461",
+   "css_consumers": [
+    "body[data-theme=\"morgon\"] {--map-dot} @source/css/3q17cp_jgfwol.pretty.css:588"
+   ],
+   "appears_as_raw_hex_elsewhere": [
+    "#6d4fe0",
+    "#6d4fe014",
+    "#6d4fe01a",
+    "#6d4fe01f",
+    "#6d4fe024",
+    "#6d4fe029",
+    "#6d4fe02e",
+    "#6d4fe033",
+    "#6d4fe038",
+    "#6d4fe040",
+    "#6d4fe047",
+    "#6d4fe052",
+    "#6d4fe059",
+    "#6d4fe06b",
+    "#6d4fe073"
+   ],
+   "raw_hex_occurrences_outside_vars": 3
+  },
+  "violet-soft": {
+   "value": "#9b87f5",
+   "rgb": "rgb(155, 135, 245)",
+   "hsl_deg_pct_pct": [
+    251,
+    85,
+    75
+   ],
+   "lch_ab": [
+    62.4,
+    61.9,
+    301.6
+   ],
+   "source": "source/css/3q17cp_jgfwol.pretty.css:462",
+   "css_consumers": [
+    "body[data-theme=\"natt\"] {--map-dot} @source/css/3q17cp_jgfwol.pretty.css:539",
+    ".choice:hover {border-color} @source/css/3q17cp_jgfwol.pretty.css:1924",
+    ".sound-bed:hover {border-color} @source/css/3q17cp_jgfwol.pretty.css:2007",
+    ".sound-bed[aria-pressed=\"true\"] {border-color} @source/css/3q17cp_jgfwol.pretty.css:2010",
+    ".sound-volume input[type=\"range\"] {accent-color} @source/css/3q17cp_jgfwol.pretty.css:2029",
+    ".reader-audio-control:hover {border-color} @source/css/3q17cp_jgfwol.pretty.css:2068",
+    ".friend-mode-option[aria-pressed=\"true\"] {border-color} @source/css/3q17cp_jgfwol.pretty.css:2184",
+    ".cs-chip-th {background} @source/css/2h1wwdz1nvxwk.pretty.css:208",
+    ".cs-door-face--fallback:before {background} @source/css/2h1wwdz1nvxwk.pretty.css:472",
+    ".glod-sound[aria-pressed=\"true\"] {border-color} @source/css/37m388zf6rymp.pretty.css:795"
+   ],
+   "appears_as_raw_hex_elsewhere": [
+    "#9b87f5",
+    "#9b87f529",
+    "#9b87f52e",
+    "#9b87f533",
+    "#9b87f542",
+    "#9b87f552",
+    "#9b87f559",
+    "#9b87f566",
+    "#9b87f580",
+    "#9b87f58c",
+    "#9b87f599"
+   ],
+   "raw_hex_occurrences_outside_vars": 5
+  },
+  "gold": {
+   "value": "#f2b22e",
+   "rgb": "rgb(242, 178, 46)",
+   "hsl_deg_pct_pct": [
+    40,
+    88,
+    56
+   ],
+   "lch_ab": [
+    76.6,
+    71.7,
+    80.1
+   ],
+   "source": "source/css/3q17cp_jgfwol.pretty.css:463",
+   "css_consumers": [
+    ".skip-link {background} @source/css/3q17cp_jgfwol.pretty.css:475",
+    ".badge .dotpulse {background} @source/css/3q17cp_jgfwol.pretty.css:1011",
+    ".reader-link-wait .dotpulse {background} @source/css/3q17cp_jgfwol.pretty.css:1877",
+    ".friend-mode-lock {border-left} @source/css/3q17cp_jgfwol.pretty.css:2189",
+    ".friend-mode-lock {background} @source/css/3q17cp_jgfwol.pretty.css:2191",
+    ".create-carried-thread {border-left} @source/css/3q17cp_jgfwol.pretty.css:2380",
+    ".create-carried-thread {background} @source/css/3q17cp_jgfwol.pretty.css:2381",
+    ".hiw-memory-tag .dotpulse {background} @source/css/3q17cp_jgfwol.pretty.css:3107",
+    ".start-flow .paintpill .dotpulse {background} @source/css/2_gt301v4m-60.pretty.css:128"
+   ],
+   "appears_as_raw_hex_elsewhere": [
+    "#f2b22e",
+    "#f2b22e00",
+    "#f2b22e26",
+    "#f2b22e29",
+    "#f2b22e59",
+    "#f2b22e66",
+    "#f2b22e73",
+    "#f2b22e80",
+    "#f2b22ebf"
+   ],
+   "raw_hex_occurrences_outside_vars": 12
+  },
+  "gold-soft": {
+   "value": "#f5c542",
+   "rgb": "rgb(245, 197, 66)",
+   "hsl_deg_pct_pct": [
+    44,
+    90,
+    61
+   ],
+   "lch_ab": [
+    81.7,
+    68.6,
+    86.3
+   ],
+   "source": "source/css/3q17cp_jgfwol.pretty.css:464",
+   "css_consumers": [
+    "body[data-theme=\"natt\"] {--accent} @source/css/3q17cp_jgfwol.pretty.css:496",
+    "body[data-theme=\"natt\"] {--accent-ink} @source/css/3q17cp_jgfwol.pretty.css:497",
+    ".create-customize > summary:after {border-right} @source/css/3q17cp_jgfwol.pretty.css:2436",
+    ".create-customize > summary:after {border-bottom} @source/css/3q17cp_jgfwol.pretty.css:2437",
+    ".hiw-node {border} @source/css/3q17cp_jgfwol.pretty.css:2601",
+    ".hiw-star {color} @source/css/3q17cp_jgfwol.pretty.css:2658",
+    ".hiw-map .map-choice {stroke} @source/css/3q17cp_jgfwol.pretty.css:2962",
+    ".cs-chip-th {background} @source/css/2h1wwdz1nvxwk.pretty.css:208"
+   ],
+   "appears_as_raw_hex_elsewhere": [
+    "#f5c542",
+    "#f5c54200",
+    "#f5c5421f",
+    "#f5c54224",
+    "#f5c54240",
+    "#f5c54247",
+    "#f5c54266",
+    "#f5c5426b",
+    "#f5c54273",
+    "#f5c54280",
+    "#f5c5428c",
+    "#f5c54299",
+    "#f5c542d9"
+   ],
+   "raw_hex_occurrences_outside_vars": 13
+  },
+  "coral": {
+   "value": "#ff6154",
+   "rgb": "rgb(255, 97, 84)",
+   "hsl_deg_pct_pct": [
+    5,
+    100,
+    66
+   ],
+   "lch_ab": [
+    62.0,
+    71.1,
+    33.5
+   ],
+   "source": "source/css/3q17cp_jgfwol.pretty.css:465",
+   "css_consumers": [],
+   "appears_as_raw_hex_elsewhere": [
+    "#ff6154",
+    "#ff61541f",
+    "#ff615424",
+    "#ff61544d",
+    "#ff615466"
+   ],
+   "raw_hex_occurrences_outside_vars": 2,
+   "note": "--coral is defined but never referenced via var(); coral appears only as raw 8-digit hex (#ff615424/#ff61541f chip fills in the theme sets, #ff61544d glass rim, #ff615466 ember rim)."
+  }
+ },
+ "non_colour_root_tokens": {
+  "display": {
+   "value": "var(--font-lora), Georgia, serif",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:466"
+  },
+  "ui": {
+   "value": "var(--font-schibsted), \"Segoe UI\", system-ui, sans-serif",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:467"
+  },
+  "serif": {
+   "value": "var(--font-source-serif), Georgia, serif",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:468"
+  },
+  "wordmark": {
+   "value": "var(--font-cinzel), \"Playfair Display\", Georgia, serif",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:469"
+  },
+  "theme-transition-duration": {
+   "value": "0.5s",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:470"
+  },
+  "theme-transition-easing": {
+   "value": "ease",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:471"
+  }
+ },
+ "page_background": {
+  "natt": {
+   "body_background_color": "#171232",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:606",
+   "image": "assets/assets/nebula-hero.webp (object-position center 30%, cover)",
+   "scrim": {
+    "css": "linear-gradient(#0b0f1e61 0%, #0b0f1e80 45%, #0d1122bd 100%)",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:632",
+    "alphas": [
+     0.38,
+     0.5,
+     0.741
+    ]
+   },
+   "starfield": {
+    "css": "six single radial-gradient dots (1-1.6px) at fixed % positions, 4.6s twinkle 0.95<->0.55 opacity",
+    "dots": [
+     "#ffe9b0e6",
+     "#f5f0e8cc",
+     "#f5c542d9",
+     "#f5f0e8b3",
+     "#ffe9b0bf",
+     "#9b87f599"
+    ],
+    "source": "source/css/3q17cp_jgfwol.pretty.css:636-656"
+   },
+   "measured_backdrop_median": "#262a41"
+  },
+  "morgon": {
+   "body_background_color": "#ede9f6",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:609-611",
+   "image": "assets/assets/morgon-aurora-desktop.webp (<=760px: morgon-aurora-mobile.webp), cover, no scrim",
+   "measured_backdrop_median": "#f1e4eb"
+  },
+  "manifest_theme_color": {
+   "value": "#171232",
+   "source": "source/meta/manifest.webmanifest (theme_color and background_color)"
+  },
+  "pwa_icon_background_measured": "#171232 (94% of assets/icons/icon-512.png, derived/color/image-palettes.json)",
+  "crossfade": "body background-color and color transition 0.5s ease (--theme-transition-*); .bg-night/.bg-day swap by opacity over 0.5s."
+ },
+ "semantic": {
+  "natt": {
+   "page-ink": {
+    "value": "#fff7e9",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:494",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(255, 247, 233, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     97.5,
+     7.7,
+     87.5
+    ],
+    "role": "Primary text straight on the page backdrop: h1, h2, step h3, section headlines; also body `color`.",
+    "css_consumers": [
+     "body {color} @source/css/3q17cp_jgfwol.pretty.css:599",
+     "h1 {color} @source/css/3q17cp_jgfwol.pretty.css:859",
+     "h2 {color} @source/css/3q17cp_jgfwol.pretty.css:1058",
+     ".create-title, .page-title {color} @source/css/3q17cp_jgfwol.pretty.css:1067",
+     ".hiw-headline {color} @source/css/3q17cp_jgfwol.pretty.css:2557",
+     ".hiw-step-text h3 {color} @source/css/3q17cp_jgfwol.pretty.css:2633",
+     ".cs-h1 {color} @source/css/2h1wwdz1nvxwk.pretty.css:63",
+     ".cs-recipe {color} @source/css/2h1wwdz1nvxwk.pretty.css:166",
+     ".cs-h2 {color} @source/css/2h1wwdz1nvxwk.pretty.css:347",
+     ".start-flow .reveal-line {color} @source/css/2_gt301v4m-60.pretty.css:449",
+     ".start-flow .reveal-name {color} @source/css/2_gt301v4m-60.pretty.css:473"
+    ]
+   },
+   "page-sub": {
+    "value": "#d9cfee",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:495",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(217, 207, 238, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     84.8,
+     16.8,
+     303.4
+    ],
+    "role": "Secondary text on the backdrop: hero lede, section intros/ledes, step copy, captions, CTA microcopy, map labels.",
+    "css_consumers": [
+     "body[data-theme=\"natt\"] {--micro-ink} @source/css/3q17cp_jgfwol.pretty.css:510",
+     "body[data-theme=\"morgon\"] {--micro-ink} @source/css/3q17cp_jgfwol.pretty.css:559",
+     ".lede {color} @source/css/3q17cp_jgfwol.pretty.css:873",
+     ".sec-intro {color} @source/css/3q17cp_jgfwol.pretty.css:1049",
+     ".hiw-lede {color} @source/css/3q17cp_jgfwol.pretty.css:2564",
+     ".hiw-step-copy {color} @source/css/3q17cp_jgfwol.pretty.css:2640",
+     ".hiw-caption {color} @source/css/3q17cp_jgfwol.pretty.css:2911",
+     ".hiw-map .map-choice-label {fill} @source/css/3q17cp_jgfwol.pretty.css:2973",
+     ".cta-microcopy {color} @source/css/3q17cp_jgfwol.pretty.css:3143",
+     ".cs-lede {color} @source/css/2h1wwdz1nvxwk.pretty.css:72",
+     ".cs-recipe-title {color} @source/css/2h1wwdz1nvxwk.pretty.css:158",
+     ".start-flow .veil-caption {color} @source/css/2_gt301v4m-60.pretty.css:430",
+     ".start-flow .ordiv {color} @source/css/2_gt301v4m-60.pretty.css:614",
+     ".start-flow .honest {color} @source/css/2_gt301v4m-60.pretty.css:633"
+    ]
+   },
+   "accent": {
+    "value": "var(--gold-soft)",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:496",
+    "scope": "body[data-theme=\"natt\"]",
+    "resolved": "#f5c542",
+    "rgba": "rgba(245, 197, 66, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     81.7,
+     68.6,
+     86.3
+    ],
+    "role": "Interactive accent: focus outlines, drop caps, links, active language pill, upload/friend hover borders, field focus border. Gold in natt, violet in morgon.",
+    "css_consumers": [
+     ".tt:focus-visible {outline} @source/css/3q17cp_jgfwol.pretty.css:823",
+     ".legal-language-details > summary {color} @source/css/3q17cp_jgfwol.pretty.css:1080",
+     ".upload:hover {border-color} @source/css/3q17cp_jgfwol.pretty.css:1258",
+     ".friend-add:hover {border-color} @source/css/3q17cp_jgfwol.pretty.css:1343",
+     ".prose:first-letter {color} @source/css/3q17cp_jgfwol.pretty.css:1836",
+     ".choice:focus-visible {outline} @source/css/3q17cp_jgfwol.pretty.css:1929",
+     ".choice:focus-visible {border-color} @source/css/3q17cp_jgfwol.pretty.css:1931",
+     ".reader-replay:focus-visible, .reader-illustration-toggle:focus-visible {outline} @source/css/3q17cp_jgfwol.pretty.css:2094",
+     ".friend-photo-attestation input {accent-color} @source/css/3q17cp_jgfwol.pretty.css:2225",
+     "input:focus-visible, textarea:focus-visible, select:focus-visible {outline} @source/css/3q17cp_jgfwol.pretty.css:2376",
+     ".create-customize:hover, .create-customize[open] {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:2403",
+     ".hiw-mock-prose:first-letter {color} @source/css/3q17cp_jgfwol.pretty.css:2872",
+     ".hiw-map-btn:focus-visible {outline} @source/css/3q17cp_jgfwol.pretty.css:3020",
+     ".start-flow .field:focus {border-color} @source/css/2_gt301v4m-60.pretty.css:75",
+     ".start-flow .reveal-line svg {color} @source/css/2_gt301v4m-60.pretty.css:462"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 1,
+     "source/js/1hcx0qn-qjgfn.js": 4,
+     "source/js/2j_-r8q4tgdka.js": 1,
+     "source/js/0ad0wel9cyv30.js": 2,
+     "source/js/390j9gbq0u9ce.js": 1,
+     "source/html/login.en.html": 9,
+     "source/html/404.en.html": 7,
+     "source/html/uppgradera.en.html": 7,
+     "source/html/integritet.en.html": 12,
+     "source/html/start.en.html": 7,
+     "source/html/integritet.sv.html": 12,
+     "source/html/404.sv.html": 7,
+     "source/html/home.en.html": 7,
+     "source/html/login.sv.html": 9,
+     "source/html/villkor.sv.html": 18,
+     "source/html/villkor.en.html": 18,
+     "source/html/home.sv.html": 7,
+     "source/html/signup.sv.html": 10,
+     "source/html/share_iris-sparade-platsen.404.sv.html": 3,
+     "source/html/start.sv.html": 7,
+     "source/html/uppgradera.sv.html": 7,
+     "source/html/signup.en.html": 10
+    }
+   },
+   "accent-ink": {
+    "value": "var(--gold-soft)",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:497",
+    "scope": "body[data-theme=\"natt\"]",
+    "resolved": "#f5c542",
+    "rgba": "rgba(245, 197, 66, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     81.7,
+     68.6,
+     86.3
+    ],
+    "role": "Accent used AS TEXT: the highlighted words in h1 (`h1 .grad`). Same as --accent in natt; a darker violet (#5b3fc7) in morgon for legibility.",
+    "css_consumers": [
+     "body[data-theme=\"morgon\"] {--chip-ink} @source/css/3q17cp_jgfwol.pretty.css:556",
+     "body[data-theme=\"morgon\"] {--pill-ink} @source/css/3q17cp_jgfwol.pretty.css:558",
+     "h1 .grad {color} @source/css/3q17cp_jgfwol.pretty.css:868"
+    ]
+   },
+   "card": {
+    "value": "#0f1628ad",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:498",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(15, 22, 40, 0.678)",
+    "alpha": 0.678,
+    "alpha_hex_digits": "ad",
+    "flat_on_body": "#12152b",
+    "flat_on_backdrop_median": "#161c30",
+    "lch_ab": [
+     7.5,
+     13.7,
+     283.7
+    ],
+    "role": "Glass card fill (translucent, with backdrop blur): .glass, .badge, .book, memory tag, create-customize, cs-chip, figcaptions.",
+    "css_consumers": [
+     ".tt:focus-visible {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:825",
+     ".fan .badge {background} @source/css/3q17cp_jgfwol.pretty.css:982",
+     ".glass {background} @source/css/3q17cp_jgfwol.pretty.css:1111",
+     ".book {background} @source/css/3q17cp_jgfwol.pretty.css:1486",
+     ".create-customize {background} @source/css/3q17cp_jgfwol.pretty.css:2390",
+     ".hiw-memory-tag {background} @source/css/3q17cp_jgfwol.pretty.css:3090",
+     ".cs-memtag {background} @source/css/2h1wwdz1nvxwk.pretty.css:96",
+     ".cs-chip {background} @source/css/2h1wwdz1nvxwk.pretty.css:177",
+     ".HeroCanvasPlaceholder-module__H1HHWq__canvas {background-color} @source/css/2h1wwdz1nvxwk.pretty.css:597",
+     ".start-flow .gbook figcaption {background} @source/css/2_gt301v4m-60.pretty.css:38"
+    ]
+   },
+   "card-line": {
+    "value": "#9b87f542",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:499",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(155, 135, 245, 0.259)",
+    "alpha": 0.259,
+    "alpha_hex_digits": "42",
+    "flat_on_body": "#393064",
+    "flat_on_backdrop_median": "#444270",
+    "lch_ab": [
+     62.4,
+     61.9,
+     301.6
+    ],
+    "role": "Hairline on glass cards; also footer rule, legal divider, create-customize section dividers, inline separators.",
+    "css_consumers": [
+     ".fan .badge {border} @source/css/3q17cp_jgfwol.pretty.css:985",
+     ".legal-language-details {border-top} @source/css/3q17cp_jgfwol.pretty.css:1074",
+     ".glass {border} @source/css/3q17cp_jgfwol.pretty.css:1114",
+     ".comp-avatar {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:1411",
+     ".foot {border-top} @source/css/3q17cp_jgfwol.pretty.css:1934",
+     ".friend-photo-step {border} @source/css/3q17cp_jgfwol.pretty.css:2196",
+     ".create-customize {border} @source/css/3q17cp_jgfwol.pretty.css:2393",
+     ".create-customize-section + .create-customize-section {border-top} @source/css/3q17cp_jgfwol.pretty.css:2472",
+     ".hiw-memory-tag {border} @source/css/3q17cp_jgfwol.pretty.css:3093",
+     ".cs-portrait {border} @source/css/2h1wwdz1nvxwk.pretty.css:15",
+     ".cs-spine {border} @source/css/2h1wwdz1nvxwk.pretty.css:88",
+     ".cs-memtag {border} @source/css/2h1wwdz1nvxwk.pretty.css:97",
+     ".cs-coin {border} @source/css/2h1wwdz1nvxwk.pretty.css:115",
+     ".cs-chip {border} @source/css/2h1wwdz1nvxwk.pretty.css:176",
+     ".cs-sheet-close {border} @source/css/2h1wwdz1nvxwk.pretty.css:290",
+     ".cs-door-face {border-bottom} @source/css/2h1wwdz1nvxwk.pretty.css:434",
+     ".cs-inline-friend {border} @source/css/2h1wwdz1nvxwk.pretty.css:506",
+     ".start-flow .field {border} @source/css/2_gt301v4m-60.pretty.css:66",
+     ".start-flow .wslot {border} @source/css/2_gt301v4m-60.pretty.css:576",
+     ".start-flow .ordiv:before, .start-flow .ordiv:after {background} @source/css/2_gt301v4m-60.pretty.css:627"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 4,
+     "source/js/3d9nxlx1n5pdy.js": 1,
+     "source/js/1hcx0qn-qjgfn.js": 3,
+     "source/js/2j_-r8q4tgdka.js": 1,
+     "source/js/0ad0wel9cyv30.js": 2,
+     "source/js/390j9gbq0u9ce.js": 2,
+     "source/html/login.en.html": 7,
+     "source/html/404.en.html": 3,
+     "source/html/uppgradera.en.html": 3,
+     "source/html/integritet.en.html": 6,
+     "source/html/start.en.html": 3,
+     "source/html/integritet.sv.html": 6,
+     "source/html/404.sv.html": 3,
+     "source/html/home.en.html": 5,
+     "source/html/login.sv.html": 7,
+     "source/html/villkor.sv.html": 6,
+     "source/html/villkor.en.html": 6,
+     "source/html/home.sv.html": 5,
+     "source/html/signup.sv.html": 7,
+     "source/html/share_iris-sparade-platsen.404.sv.html": 1,
+     "source/html/start.sv.html": 3,
+     "source/html/uppgradera.sv.html": 3,
+     "source/html/signup.en.html": 7
+    }
+   },
+   "card-blur": {
+    "value": "22px",
+    "type": "length",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:500",
+    "scope": "body[data-theme=\"natt\"]",
+    "role": "Backdrop-filter blur radius for glass (not a colour, but it decides how the backdrop colours mix into the card).",
+    "css_consumers": [
+     ".fan .badge {-webkit-backdrop-filter} @source/css/3q17cp_jgfwol.pretty.css:983",
+     ".fan .badge {backdrop-filter} @source/css/3q17cp_jgfwol.pretty.css:984",
+     ".glass {-webkit-backdrop-filter} @source/css/3q17cp_jgfwol.pretty.css:1112",
+     ".glass {backdrop-filter} @source/css/3q17cp_jgfwol.pretty.css:1113",
+     ".create-customize {-webkit-backdrop-filter} @source/css/3q17cp_jgfwol.pretty.css:2391",
+     ".create-customize {backdrop-filter} @source/css/3q17cp_jgfwol.pretty.css:2392",
+     ".hiw-memory-tag {-webkit-backdrop-filter} @source/css/3q17cp_jgfwol.pretty.css:3091",
+     ".hiw-memory-tag {backdrop-filter} @source/css/3q17cp_jgfwol.pretty.css:3092"
+    ]
+   },
+   "card-ink": {
+    "value": "#f2eeff",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:501",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(242, 238, 255, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     94.8,
+     8.9,
+     299.8
+    ],
+    "role": "Primary text on cards.",
+    "css_consumers": [
+     ".fan .badge {color} @source/css/3q17cp_jgfwol.pretty.css:986",
+     ".glass {color} @source/css/3q17cp_jgfwol.pretty.css:1116",
+     ".book {color} @source/css/3q17cp_jgfwol.pretty.css:1490",
+     ".friend-mode-picker legend {color} @source/css/3q17cp_jgfwol.pretty.css:2150",
+     ".friend-photo-step h2 {color} @source/css/3q17cp_jgfwol.pretty.css:2206",
+     ".create-carried-thread {color} @source/css/3q17cp_jgfwol.pretty.css:2382",
+     ".create-customize > summary {color} @source/css/3q17cp_jgfwol.pretty.css:2407",
+     ".hiw-friend-row b {color} @source/css/3q17cp_jgfwol.pretty.css:2718",
+     ".hiw-memory-tag {color} @source/css/3q17cp_jgfwol.pretty.css:3094",
+     ".cs-andra:hover {color} @source/css/2h1wwdz1nvxwk.pretty.css:54",
+     ".cs-chip {color} @source/css/2h1wwdz1nvxwk.pretty.css:179",
+     ".cs-sheet-title {color} @source/css/2h1wwdz1nvxwk.pretty.css:281",
+     ".cs-sheet-close {color} @source/css/2h1wwdz1nvxwk.pretty.css:294",
+     ".cs-door-title {color} @source/css/2h1wwdz1nvxwk.pretty.css:402",
+     ".cs-companion-actions .friend-add {color} @source/css/2h1wwdz1nvxwk.pretty.css:496",
+     ".cs-inline-friend-head h4 {color} @source/css/2h1wwdz1nvxwk.pretty.css:519",
+     ".cs-inline-field {color} @source/css/2h1wwdz1nvxwk.pretty.css:529",
+     ".cs-inline-options legend {color} @source/css/2h1wwdz1nvxwk.pretty.css:547",
+     ".start-flow .gbook figcaption {color} @source/css/2_gt301v4m-60.pretty.css:39",
+     ".start-flow .field {color} @source/css/2_gt301v4m-60.pretty.css:64",
+     ".start-flow .hname {color} @source/css/2_gt301v4m-60.pretty.css:265",
+     ".start-flow .worldrow .wlabel {color} @source/css/2_gt301v4m-60.pretty.css:566",
+     ".start-flow .adv-title {color} @source/css/2_gt301v4m-60.pretty.css:675"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 4,
+     "source/js/1hcx0qn-qjgfn.js": 1,
+     "source/js/26ye0kuppitcn.js": 4,
+     "source/js/2j_-r8q4tgdka.js": 3,
+     "source/js/0ad0wel9cyv30.js": 3,
+     "source/html/login.en.html": 2,
+     "source/html/uppgradera.en.html": 5,
+     "source/html/integritet.en.html": 15,
+     "source/html/integritet.sv.html": 15,
+     "source/html/home.en.html": 2,
+     "source/html/login.sv.html": 2,
+     "source/html/villkor.sv.html": 21,
+     "source/html/villkor.en.html": 21,
+     "source/html/home.sv.html": 2,
+     "source/html/signup.sv.html": 2,
+     "source/html/uppgradera.sv.html": 5,
+     "source/html/signup.en.html": 2
+    }
+   },
+   "card-sub": {
+    "value": "#b5acd3",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:502",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(181, 172, 211, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     72.2,
+     21.6,
+     300.5
+    ],
+    "role": "Secondary text on cards; also nav links, inactive language button, footer links/meta, form labels, placeholders.",
+    "css_consumers": [
+     ".badge span {color} @source/css/3q17cp_jgfwol.pretty.css:1034",
+     ".upload span {color} @source/css/3q17cp_jgfwol.pretty.css:1280",
+     ".friend span {color} @source/css/3q17cp_jgfwol.pretty.css:1321",
+     ".companion-sub {color} @source/css/3q17cp_jgfwol.pretty.css:1474",
+     ".adv-sub {color} @source/css/3q17cp_jgfwol.pretty.css:1599",
+     ".adv-why {color} @source/css/3q17cp_jgfwol.pretty.css:1611",
+     ".mobile-adv-difference {color} @source/css/3q17cp_jgfwol.pretty.css:1672 [@media (max-width: 760px)]",
+     ".mobile-adv-details {color} @source/css/3q17cp_jgfwol.pretty.css:1678 [@media (max-width: 760px)]",
+     ".reader-link-wait {color} @source/css/3q17cp_jgfwol.pretty.css:1868",
+     ".sound-group-label {color} @source/css/3q17cp_jgfwol.pretty.css:1975",
+     ".friend-mode-option span {color} @source/css/3q17cp_jgfwol.pretty.css:2178",
+     ".friend-mode-lock {color} @source/css/3q17cp_jgfwol.pretty.css:2190",
+     ".friend-photo-step > p {color} @source/css/3q17cp_jgfwol.pretty.css:2211",
+     ".friend-photo-requirement {color} @source/css/3q17cp_jgfwol.pretty.css:2238",
+     ".hiw-friend-row span {color} @source/css/3q17cp_jgfwol.pretty.css:2724",
+     ".hiw-bake-line {color} @source/css/3q17cp_jgfwol.pretty.css:2790",
+     ".hiw-memory-tag div span {color} @source/css/3q17cp_jgfwol.pretty.css:3120",
+     ".cs-andra {color} @source/css/2h1wwdz1nvxwk.pretty.css:42",
+     ".cs-memtag {color} @source/css/2h1wwdz1nvxwk.pretty.css:99",
+     ".cs-chip--add {color} @source/css/2h1wwdz1nvxwk.pretty.css:224",
+     ".cs-chip--add .cs-chip-th {color} @source/css/2h1wwdz1nvxwk.pretty.css:229",
+     ".cs-door-hook {color} @source/css/2h1wwdz1nvxwk.pretty.css:410",
+     ".cs-companion-manage {color} @source/css/2h1wwdz1nvxwk.pretty.css:500",
+     ".cs-inline-friend-head p {color} @source/css/2h1wwdz1nvxwk.pretty.css:524",
+     ".start-flow .field::placeholder {color} @source/css/2_gt301v4m-60.pretty.css:78",
+     ".start-flow .privacy {color} @source/css/2_gt301v4m-60.pretty.css:100",
+     ".start-flow .pick-story-copy small {color} @source/css/2_gt301v4m-60.pretty.css:198",
+     ".start-flow .pick-divider {color} @source/css/2_gt301v4m-60.pretty.css:204",
+     ".start-flow .unveil-waiting {color} @source/css/2_gt301v4m-60.pretty.css:506",
+     ".start-flow .trial-line {color} @source/css/2_gt301v4m-60.pretty.css:546",
+     ".start-flow .wslot {color} @source/css/2_gt301v4m-60.pretty.css:577",
+     ".start-flow .surprise span {color} @source/css/2_gt301v4m-60.pretty.css:610",
+     ".start-flow .sheet p {color} @source/css/2_gt301v4m-60.pretty.css:779",
+     ".start-flow .voice-line {color} @source/css/2_gt301v4m-60.pretty.css:800",
+     ".start-flow .forge .inputs {color} @source/css/2_gt301v4m-60.pretty.css:824"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 11,
+     "source/js/1hcx0qn-qjgfn.js": 7,
+     "source/js/26ye0kuppitcn.js": 1,
+     "source/js/2j_-r8q4tgdka.js": 3,
+     "source/js/0ad0wel9cyv30.js": 6,
+     "source/js/390j9gbq0u9ce.js": 2,
+     "source/html/login.en.html": 19,
+     "source/html/404.en.html": 11,
+     "source/html/uppgradera.en.html": 15,
+     "source/html/integritet.en.html": 45,
+     "source/html/start.en.html": 11,
+     "source/html/integritet.sv.html": 45,
+     "source/html/404.sv.html": 11,
+     "source/html/home.en.html": 15,
+     "source/html/login.sv.html": 19,
+     "source/html/villkor.sv.html": 39,
+     "source/html/villkor.en.html": 39,
+     "source/html/home.sv.html": 15,
+     "source/html/signup.sv.html": 20,
+     "source/html/share_iris-sparade-platsen.404.sv.html": 5,
+     "source/html/start.sv.html": 11,
+     "source/html/uppgradera.sv.html": 15,
+     "source/html/signup.en.html": 20
+    }
+   },
+   "frame": {
+    "value": "#101a30",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:503",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(16, 26, 48, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     9.5,
+     16.5,
+     283.1
+    ],
+    "role": "Thick passe-partout border around book covers, portraits and avatars (3-6px); hiw-frame fill. Deep navy in natt, white in morgon.",
+    "css_consumers": [
+     ".fan .fbook {border} @source/css/3q17cp_jgfwol.pretty.css:930",
+     ".builder-pic .pframe {border} @source/css/3q17cp_jgfwol.pretty.css:1168",
+     ".friend .avatar {border} @source/css/3q17cp_jgfwol.pretty.css:1302",
+     ".companion-pic {border} @source/css/3q17cp_jgfwol.pretty.css:1451",
+     ".book {border} @source/css/3q17cp_jgfwol.pretty.css:1487",
+     ".hiw-frame {background} @source/css/3q17cp_jgfwol.pretty.css:2672",
+     ".hiw-fan-card {border} @source/css/3q17cp_jgfwol.pretty.css:2752",
+     ".hiw-cover {border} @source/css/3q17cp_jgfwol.pretty.css:3049",
+     ".start-flow .gbook {border} @source/css/2_gt301v4m-60.pretty.css:25",
+     ".start-flow .pframe {border} @source/css/2_gt301v4m-60.pretty.css:221",
+     ".start-flow .easel {border} @source/css/2_gt301v4m-60.pretty.css:289"
+    ]
+   },
+   "frame-line": {
+    "value": "#9b87f566",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:504",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(155, 135, 245, 0.4)",
+    "alpha": 0.4,
+    "alpha_hex_digits": "66",
+    "flat_on_body": "#4c4180",
+    "flat_on_backdrop_median": "#554f89",
+    "lch_ab": [
+     62.4,
+     61.9,
+     301.6
+    ],
+    "role": "Thin outer line of the portrait frame (.hiw-frame).",
+    "css_consumers": [
+     ".hiw-frame {border} @source/css/3q17cp_jgfwol.pretty.css:2673"
+    ]
+   },
+   "chip-bg": {
+    "value": "#fff9ec1a",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:505",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(255, 249, 236, 0.102)",
+    "alpha": 0.102,
+    "alpha_hex_digits": "1a",
+    "flat_on_body": "#2f2a45",
+    "flat_on_backdrop_median": "#3c3f52",
+    "lch_ab": [
+     98.1,
+     6.9,
+     91.5
+    ],
+    "role": "Neutral chip fill: kicker, sec-chip, voice chip, upload camera tile, family-switcher chip, field fallback fill.",
+    "css_consumers": [
+     ".kicker {background} @source/css/3q17cp_jgfwol.pretty.css:837",
+     ".sec-chip {background} @source/css/3q17cp_jgfwol.pretty.css:1089",
+     ".upload .cam {background} @source/css/3q17cp_jgfwol.pretty.css:1261",
+     ".family-switcher .chip {background} @source/css/3q17cp_jgfwol.pretty.css:1558",
+     ".create-customize > summary small {background} @source/css/3q17cp_jgfwol.pretty.css:2426",
+     ".hiw-voice-chip {background} @source/css/3q17cp_jgfwol.pretty.css:2837",
+     ".start-flow .field {background} @source/css/2_gt301v4m-60.pretty.css:65",
+     ".start-flow .unveil-waiting {background} @source/css/2_gt301v4m-60.pretty.css:505"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/2j_-r8q4tgdka.js": 1
+    }
+   },
+   "chip-line": {
+    "value": "#fff3d942",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:506",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(255, 243, 217, 0.259)",
+    "alpha": 0.259,
+    "alpha_hex_digits": "42",
+    "flat_on_body": "#534c5d",
+    "flat_on_backdrop_median": "#5e5e68",
+    "lch_ab": [
+     96.2,
+     14.0,
+     90.6
+    ],
+    "role": "Neutral chip border.",
+    "css_consumers": [
+     ".kicker {border} @source/css/3q17cp_jgfwol.pretty.css:838",
+     ".sec-chip {border} @source/css/3q17cp_jgfwol.pretty.css:1090",
+     ".upload .cam {border} @source/css/3q17cp_jgfwol.pretty.css:1262",
+     ".family-switcher .chip {border} @source/css/3q17cp_jgfwol.pretty.css:1559",
+     ".create-customize > summary small {border} @source/css/3q17cp_jgfwol.pretty.css:2427",
+     ".hiw-voice-chip {border} @source/css/3q17cp_jgfwol.pretty.css:2838"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/2j_-r8q4tgdka.js": 1
+    }
+   },
+   "chip-ink": {
+    "value": "#e8dfc9",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:507",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(232, 223, 201, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     89.0,
+     11.9,
+     92.8
+    ],
+    "role": "Neutral chip text; also dashed \"add\" buttons and invite slot.",
+    "css_consumers": [
+     ".kicker {color} @source/css/3q17cp_jgfwol.pretty.css:836",
+     ".sec-chip {color} @source/css/3q17cp_jgfwol.pretty.css:1088",
+     ".upload .cam {color} @source/css/3q17cp_jgfwol.pretty.css:1265",
+     ".friend-add {color} @source/css/3q17cp_jgfwol.pretty.css:1328",
+     ".family-switcher .chip {color} @source/css/3q17cp_jgfwol.pretty.css:1557",
+     ".create-customize > summary small {color} @source/css/3q17cp_jgfwol.pretty.css:2425",
+     ".hiw-invite-slot {color} @source/css/3q17cp_jgfwol.pretty.css:2731",
+     ".hiw-voice-chip {color} @source/css/3q17cp_jgfwol.pretty.css:2836"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/2j_-r8q4tgdka.js": 2,
+     "source/js/0ad0wel9cyv30.js": 1
+    }
+   },
+   "pill-bg": {
+    "value": "#9b87f529",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:508",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(155, 135, 245, 0.161)",
+    "alpha": 0.161,
+    "alpha_hex_digits": "29",
+    "flat_on_body": "#2c2551",
+    "flat_on_backdrop_median": "#39395e",
+    "lch_ab": [
+     62.4,
+     61.9,
+     301.6
+    ],
+    "role": "Violet category pill fill: book-sub, hiw-kicker, chip.violet, pressed sound bed, pressed friend-mode option; gradient partner in avatars.",
+    "css_consumers": [
+     ".comp-tile--violet {background-image} @source/css/3q17cp_jgfwol.pretty.css:1360",
+     ".comp-avatar--gold {background} @source/css/3q17cp_jgfwol.pretty.css:1420",
+     ".comp-avatar--violet {background} @source/css/3q17cp_jgfwol.pretty.css:1424",
+     ".comp-avatar--coral {background} @source/css/3q17cp_jgfwol.pretty.css:1428",
+     ".book-sub {background} @source/css/3q17cp_jgfwol.pretty.css:1523",
+     ".family-switcher .chip.violet {background} @source/css/3q17cp_jgfwol.pretty.css:1563",
+     ".chip.violet {background} @source/css/3q17cp_jgfwol.pretty.css:1584",
+     ".pframe-initial {background} @source/css/3q17cp_jgfwol.pretty.css:1751",
+     ".sound-bed[aria-pressed=\"true\"] {background} @source/css/3q17cp_jgfwol.pretty.css:2011",
+     ".friend-mode-option[aria-pressed=\"true\"] {background} @source/css/3q17cp_jgfwol.pretty.css:2185",
+     ".hiw-kicker {background} @source/css/3q17cp_jgfwol.pretty.css:2546",
+     ".cs-portrait {background} @source/css/2h1wwdz1nvxwk.pretty.css:16",
+     ".cs-coin {background} @source/css/2h1wwdz1nvxwk.pretty.css:120",
+     ".glod-sound[aria-pressed=\"true\"] {background} @source/css/37m388zf6rymp.pretty.css:793",
+     ".start-flow .pframe {background} @source/css/2_gt301v4m-60.pretty.css:222"
+    ]
+   },
+   "pill-ink": {
+    "value": "#c9bcff",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:509",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(201, 188, 255, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     79.4,
+     36.2,
+     299.9
+    ],
+    "role": "Violet pill text.",
+    "css_consumers": [
+     ".comp-avatar--violet {color} @source/css/3q17cp_jgfwol.pretty.css:1425",
+     ".book-sub {color} @source/css/3q17cp_jgfwol.pretty.css:1524",
+     ".family-switcher .chip.violet {color} @source/css/3q17cp_jgfwol.pretty.css:1564",
+     ".chip.violet {color} @source/css/3q17cp_jgfwol.pretty.css:1585",
+     ".sound-bed[aria-pressed=\"true\"] {color} @source/css/3q17cp_jgfwol.pretty.css:2012",
+     ".hiw-kicker {color} @source/css/3q17cp_jgfwol.pretty.css:2545",
+     ".cs-door-reg--godnatt {color} @source/css/2h1wwdz1nvxwk.pretty.css:389",
+     ".glod-sound[aria-pressed=\"true\"] {color} @source/css/37m388zf6rymp.pretty.css:794"
+    ]
+   },
+   "micro-ink": {
+    "value": "color-mix(in srgb, var(--page-sub) 85%, transparent)",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:510",
+    "scope": "body[data-theme=\"natt\"]",
+    "resolved": "#d9cfeed9",
+    "rgba": "rgba(217, 207, 238, 0.851)",
+    "alpha": 0.851,
+    "alpha_hex_digits": "d9",
+    "flat_on_body": "#bcb3d2",
+    "flat_on_backdrop_median": "#beb6d4",
+    "lch_ab": [
+     84.8,
+     16.8,
+     303.4
+    ],
+    "role": "Micro line under step copy (.hiw-micro). natt: --page-sub at 85% via color-mix.",
+    "css_consumers": [
+     ".hiw-micro {color} @source/css/3q17cp_jgfwol.pretty.css:2647"
+    ]
+   },
+   "h1-shadow": {
+    "value": "0 2px 30px #0c082859",
+    "type": "shadow",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:511",
+    "scope": "body[data-theme=\"natt\"]",
+    "colours": [
+     {
+      "hex": "#0c082859",
+      "rgb": "#0c0828",
+      "alpha": 0.349
+     }
+    ],
+    "role": "Soft dark glow under h1/cs-h1 for legibility over the nebula (none in morgon).",
+    "css_consumers": [
+     "h1 {text-shadow} @source/css/3q17cp_jgfwol.pretty.css:860",
+     ".cs-h1 {text-shadow} @source/css/2h1wwdz1nvxwk.pretty.css:64"
+    ]
+   },
+   "gold-chip-bg": {
+    "value": "#f2b22e29",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:512",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(242, 178, 46, 0.161)",
+    "alpha": 0.161,
+    "alpha_hex_digits": "29",
+    "flat_on_body": "#3a2c31",
+    "flat_on_backdrop_median": "#47403e",
+    "lch_ab": [
+     76.6,
+     71.7,
+     80.1
+    ],
+    "role": "Gold chip fill: chip.gold, step-number nodes, paint pill, map choice markers, success/status notes, avatar gradients.",
+    "css_consumers": [
+     ".comp-tile--gold {background-image} @source/css/3q17cp_jgfwol.pretty.css:1353",
+     ".comp-avatar--gold {background} @source/css/3q17cp_jgfwol.pretty.css:1420",
+     ".comp-avatar--violet {background} @source/css/3q17cp_jgfwol.pretty.css:1424",
+     ".chip.gold {background} @source/css/3q17cp_jgfwol.pretty.css:1580",
+     ".pframe-initial {background} @source/css/3q17cp_jgfwol.pretty.css:1751",
+     ".hiw-node {background} @source/css/3q17cp_jgfwol.pretty.css:2600",
+     ".hiw-map .map-choice {fill} @source/css/3q17cp_jgfwol.pretty.css:2961",
+     ".hiw-map .map-num-bg {fill} @source/css/3q17cp_jgfwol.pretty.css:2998",
+     ".cs-portrait {background} @source/css/2h1wwdz1nvxwk.pretty.css:16",
+     ".cs-coin {background} @source/css/2h1wwdz1nvxwk.pretty.css:120",
+     ".start-flow .paintpill {background} @source/css/2_gt301v4m-60.pretty.css:115",
+     ".start-flow .pframe {background} @source/css/2_gt301v4m-60.pretty.css:222",
+     ".start-flow .sheet .picked {background} @source/css/2_gt301v4m-60.pretty.css:786"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/1hcx0qn-qjgfn.js": 1,
+     "source/js/2j_-r8q4tgdka.js": 1
+    }
+   },
+   "gold-chip-ink": {
+    "value": "#ffd98f",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:513",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(255, 217, 143, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     88.4,
+     41.5,
+     84.8
+    ],
+    "role": "Gold chip text; star specks on story tiles; map numbers; initials in portrait placeholders.",
+    "css_consumers": [
+     ".comp-tile--story:after {background-image} @source/css/3q17cp_jgfwol.pretty.css:1377",
+     ".comp-tile--story:after {background-image} @source/css/3q17cp_jgfwol.pretty.css:1377",
+     ".comp-tile--story:after {background-image} @source/css/3q17cp_jgfwol.pretty.css:1377",
+     ".comp-tile--story:after {background-image} @source/css/3q17cp_jgfwol.pretty.css:1377",
+     ".comp-tile--story:after {background-image} @source/css/3q17cp_jgfwol.pretty.css:1377",
+     ".comp-avatar--gold {color} @source/css/3q17cp_jgfwol.pretty.css:1421",
+     ".comp-chosen {color} @source/css/3q17cp_jgfwol.pretty.css:1434",
+     ".chip.gold {color} @source/css/3q17cp_jgfwol.pretty.css:1581",
+     ".pframe-initial {color} @source/css/3q17cp_jgfwol.pretty.css:1750",
+     ".hiw-node {color} @source/css/3q17cp_jgfwol.pretty.css:2604",
+     ".hiw-map .map-choice-glyph {stroke} @source/css/3q17cp_jgfwol.pretty.css:2966",
+     ".hiw-map .map-num {fill} @source/css/3q17cp_jgfwol.pretty.css:3002",
+     ".cs-portrait-initial {color} @source/css/2h1wwdz1nvxwk.pretty.css:34",
+     ".cs-coin {color} @source/css/2h1wwdz1nvxwk.pretty.css:119",
+     ".cs-chip-th {color} @source/css/2h1wwdz1nvxwk.pretty.css:207",
+     ".cs-door-reg--aventyr {color} @source/css/2h1wwdz1nvxwk.pretty.css:392",
+     ".start-flow .privacy svg {color} @source/css/2_gt301v4m-60.pretty.css:110",
+     ".start-flow .paintpill {color} @source/css/2_gt301v4m-60.pretty.css:117",
+     ".start-flow .sheet .picked {color} @source/css/2_gt301v4m-60.pretty.css:785"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/1hcx0qn-qjgfn.js": 2,
+     "source/js/2j_-r8q4tgdka.js": 2
+    }
+   },
+   "coral-chip-bg": {
+    "value": "#ff615424",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:514",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(255, 97, 84, 0.141)",
+    "alpha": 0.141,
+    "alpha_hex_digits": "24",
+    "flat_on_body": "#381d37",
+    "flat_on_backdrop_median": "#453244",
+    "lch_ab": [
+     62.0,
+     71.1,
+     33.5
+    ],
+    "role": "Coral chip fill; error alert background (auth, upgrade).",
+    "css_consumers": [
+     ".comp-tile--coral {background-image} @source/css/3q17cp_jgfwol.pretty.css:1367",
+     ".comp-avatar--coral {background} @source/css/3q17cp_jgfwol.pretty.css:1428",
+     ".chip.coral {background} @source/css/3q17cp_jgfwol.pretty.css:1588"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/1hcx0qn-qjgfn.js": 1,
+     "source/js/26ye0kuppitcn.js": 1
+    }
+   },
+   "coral-chip-ink": {
+    "value": "#ffab9f",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:515",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(255, 171, 159, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     77.8,
+     34.9,
+     32.6
+    ],
+    "role": "Coral chip text; error text (field-error, alerts).",
+    "css_consumers": [
+     ".comp-avatar--coral {color} @source/css/3q17cp_jgfwol.pretty.css:1429",
+     ".chip.coral {color} @source/css/3q17cp_jgfwol.pretty.css:1589",
+     ".cs-door-reg--vanskap {color} @source/css/2h1wwdz1nvxwk.pretty.css:395",
+     ".start-flow .field-error {color} @source/css/2_gt301v4m-60.pretty.css:83"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 2,
+     "source/js/1hcx0qn-qjgfn.js": 2,
+     "source/js/26ye0kuppitcn.js": 2
+    }
+   },
+   "trait-line": {
+    "value": "#9b87f559",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:516",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(155, 135, 245, 0.349)",
+    "alpha": 0.349,
+    "alpha_hex_digits": "59",
+    "flat_on_body": "#453b76",
+    "flat_on_backdrop_median": "#4f4a80",
+    "lch_ab": [
+     62.4,
+     61.9,
+     301.6
+    ],
+    "role": "Outline of unselected trait / pick toggles.",
+    "css_consumers": [
+     ".trait {border} @source/css/3q17cp_jgfwol.pretty.css:1226",
+     ".start-flow .pick {border} @source/css/2_gt301v4m-60.pretty.css:155",
+     ".start-flow .stile {border} @source/css/2_gt301v4m-60.pretty.css:704"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 1
+    }
+   },
+   "trait-ink": {
+    "value": "#cfc5ec",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:517",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(207, 197, 236, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     81.4,
+     21.1,
+     301.3
+    ],
+    "role": "Text of unselected trait / pick toggles.",
+    "css_consumers": [
+     ".trait {color} @source/css/3q17cp_jgfwol.pretty.css:1225",
+     ".start-flow .pick {color} @source/css/2_gt301v4m-60.pretty.css:158",
+     ".start-flow .stile {color} @source/css/2_gt301v4m-60.pretty.css:707"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 1
+    }
+   },
+   "trait-on-bg": {
+    "value": "#9b87f533",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:518",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(155, 135, 245, 0.2)",
+    "alpha": 0.2,
+    "alpha_hex_digits": "33",
+    "flat_on_body": "#312959",
+    "flat_on_backdrop_median": "#3d3d65",
+    "lch_ab": [
+     62.4,
+     61.9,
+     301.6
+    ],
+    "role": "Fill of selected trait / pick toggles.",
+    "css_consumers": [
+     ".trait.on {background} @source/css/3q17cp_jgfwol.pretty.css:1240",
+     ".start-flow .pick.on {background} @source/css/2_gt301v4m-60.pretty.css:175",
+     ".start-flow .wslot.done {background} @source/css/2_gt301v4m-60.pretty.css:589",
+     ".start-flow .stile.on {background} @source/css/2_gt301v4m-60.pretty.css:733"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 1
+    }
+   },
+   "trait-on-line": {
+    "value": "#9b87f599",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:519",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(155, 135, 245, 0.6)",
+    "alpha": 0.6,
+    "alpha_hex_digits": "99",
+    "flat_on_body": "#6658a7",
+    "flat_on_backdrop_median": "#6c62ad",
+    "lch_ab": [
+     62.4,
+     61.9,
+     301.6
+    ],
+    "role": "Outline of selected toggles; hover outline for toggles, cs-chip, sheet close; active progress dot.",
+    "css_consumers": [
+     ".trait.on {border-color} @source/css/3q17cp_jgfwol.pretty.css:1241",
+     ".trait:hover {border-color} @source/css/3q17cp_jgfwol.pretty.css:1245",
+     ".comp-tile:hover {border-color} @source/css/3q17cp_jgfwol.pretty.css:1350",
+     ".create-customize:hover, .create-customize[open] {border-color} @source/css/3q17cp_jgfwol.pretty.css:2402",
+     ".cs-chip:hover {border-color} @source/css/2h1wwdz1nvxwk.pretty.css:192",
+     ".cs-sheet-close:hover {border-color} @source/css/2h1wwdz1nvxwk.pretty.css:303",
+     ".start-flow .pick.on {border-color} @source/css/2_gt301v4m-60.pretty.css:176",
+     ".start-flow .pick:hover {border-color} @source/css/2_gt301v4m-60.pretty.css:180",
+     ".start-flow .wslot.done {border-color} @source/css/2_gt301v4m-60.pretty.css:588",
+     ".start-flow .stile.on {border-color} @source/css/2_gt301v4m-60.pretty.css:732"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/0ad0wel9cyv30.js": 1
+    }
+   },
+   "trait-on-ink": {
+    "value": "#e9e2ff",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:520",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(233, 226, 255, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     91.2,
+     15.3,
+     300.3
+    ],
+    "role": "Text of selected toggles.",
+    "css_consumers": [
+     ".trait.on {color} @source/css/3q17cp_jgfwol.pretty.css:1242",
+     ".start-flow .pick.on {color} @source/css/2_gt301v4m-60.pretty.css:177",
+     ".start-flow .wslot.done {color} @source/css/2_gt301v4m-60.pretty.css:590",
+     ".start-flow .stile.on {color} @source/css/2_gt301v4m-60.pretty.css:734"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 1
+    }
+   },
+   "dash-line": {
+    "value": "#ffecbe59",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:521",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(255, 236, 190, 0.349)",
+    "alpha": 0.349,
+    "alpha_hex_digits": "59",
+    "flat_on_body": "#685e63",
+    "flat_on_backdrop_median": "#726e6d",
+    "lch_ab": [
+     93.9,
+     24.7,
+     91.0
+    ],
+    "role": "Dashed lines: upload drop zone, add-friend, how-it-works rail, invite slot, map path.",
+    "css_consumers": [
+     ".upload {border} @source/css/3q17cp_jgfwol.pretty.css:1248",
+     ".friend-add {border} @source/css/3q17cp_jgfwol.pretty.css:1326",
+     ".hiw-rail-col:before {border-left} @source/css/3q17cp_jgfwol.pretty.css:2589",
+     ".hiw-invite-slot {border} @source/css/3q17cp_jgfwol.pretty.css:2729",
+     ".hiw-map .map-path {stroke} @source/css/3q17cp_jgfwol.pretty.css:2932",
+     ".cs-chip--add .cs-chip-th {border} @source/css/2h1wwdz1nvxwk.pretty.css:228",
+     ".start-flow .wslot {border} @source/css/2_gt301v4m-60.pretty.css:576"
+    ]
+   },
+   "choice-bg": {
+    "value": "#ffffff0f",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:522",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(255, 255, 255, 0.059)",
+    "alpha": 0.059,
+    "alpha_hex_digits": "0f",
+    "flat_on_body": "#25203e",
+    "flat_on_backdrop_median": "#33374c",
+    "lch_ab": [
+     100.0,
+     0.0,
+     296.8
+    ],
+    "role": "Story-choice buttons and reader prompt; auth inputs; sound beds; sheet close; feedback textarea.",
+    "css_consumers": [
+     ".reader-choice-prompt {background} @source/css/3q17cp_jgfwol.pretty.css:1890",
+     ".choice {background} @source/css/3q17cp_jgfwol.pretty.css:1907",
+     ".sound-bed {background} @source/css/3q17cp_jgfwol.pretty.css:1990",
+     ".reader-audio-control {background} @source/css/3q17cp_jgfwol.pretty.css:2041",
+     ".friend-mode-option {background} @source/css/3q17cp_jgfwol.pretty.css:2162",
+     ".hiw-choice {background} @source/css/3q17cp_jgfwol.pretty.css:2888",
+     ".cs-sheet-close {background} @source/css/2h1wwdz1nvxwk.pretty.css:291"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 1,
+     "source/js/1hcx0qn-qjgfn.js": 1,
+     "source/js/2j_-r8q4tgdka.js": 2,
+     "source/html/login.en.html": 2,
+     "source/html/integritet.en.html": 3,
+     "source/html/integritet.sv.html": 3,
+     "source/html/login.sv.html": 2,
+     "source/html/villkor.sv.html": 3,
+     "source/html/villkor.en.html": 3,
+     "source/html/signup.sv.html": 2,
+     "source/html/signup.en.html": 2
+    }
+   },
+   "choice-line": {
+    "value": "#9b87f552",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:523",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(155, 135, 245, 0.322)",
+    "alpha": 0.322,
+    "alpha_hex_digits": "52",
+    "flat_on_body": "#413871",
+    "flat_on_backdrop_median": "#4c487b",
+    "lch_ab": [
+     62.4,
+     61.9,
+     301.6
+    ],
+    "role": "Border of choice buttons / inputs.",
+    "css_consumers": [
+     ".reader-body .btn:disabled:hover, .reader-body .btn:disabled:active, .choice:disabled:hover, .choice:disabled:active {border-color} @source/css/3q17cp_jgfwol.pretty.css:1862",
+     ".reader-choice-prompt {border} @source/css/3q17cp_jgfwol.pretty.css:1892",
+     ".choice {border} @source/css/3q17cp_jgfwol.pretty.css:1908",
+     ".sound-bed {border} @source/css/3q17cp_jgfwol.pretty.css:1991",
+     ".reader-audio-control {border} @source/css/3q17cp_jgfwol.pretty.css:2040",
+     ".friend-mode-option {border} @source/css/3q17cp_jgfwol.pretty.css:2161",
+     ".hiw-choice {border} @source/css/3q17cp_jgfwol.pretty.css:2889"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 1
+    }
+   },
+   "choice-ink": {
+    "value": "#f2eeff",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:524",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(242, 238, 255, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     94.8,
+     8.9,
+     299.8
+    ],
+    "role": "Text in choice buttons / inputs.",
+    "css_consumers": [
+     ".reader-choice-prompt {color} @source/css/3q17cp_jgfwol.pretty.css:1891",
+     ".choice {color} @source/css/3q17cp_jgfwol.pretty.css:1906",
+     ".sound-bed {color} @source/css/3q17cp_jgfwol.pretty.css:1989",
+     ".reader-audio-control {color} @source/css/3q17cp_jgfwol.pretty.css:2044",
+     ".friend-mode-option {color} @source/css/3q17cp_jgfwol.pretty.css:2165",
+     ".hiw-choice {color} @source/css/3q17cp_jgfwol.pretty.css:2887"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 1
+    }
+   },
+   "bar-bg": {
+    "value": "#ffffff24",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:525",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(255, 255, 255, 0.141)",
+    "alpha": 0.141,
+    "alpha_hex_digits": "24",
+    "flat_on_body": "#38334f",
+    "flat_on_backdrop_median": "#45485c",
+    "lch_ab": [
+     100.0,
+     0.0,
+     296.8
+    ],
+    "role": "Progress-bar track (.hiw-bar).",
+    "css_consumers": [
+     ".hiw-bar {background} @source/css/3q17cp_jgfwol.pretty.css:2776"
+    ]
+   },
+   "prose-ink": {
+    "value": "#eae4f5",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:526",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(234, 228, 245, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     91.5,
+     9.1,
+     304.1
+    ],
+    "role": "Story prose in the reader (Source Serif 4).",
+    "css_consumers": [
+     ".prose {color} @source/css/3q17cp_jgfwol.pretty.css:1825",
+     ".prose-plain {color} @source/css/3q17cp_jgfwol.pretty.css:1846",
+     ".hiw-mock-prose {color} @source/css/3q17cp_jgfwol.pretty.css:2865"
+    ]
+   },
+   "foot-ink": {
+    "value": "#b7a9d6",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:527",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(183, 169, 214, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     71.8,
+     25.1,
+     303.5
+    ],
+    "role": "Footer text.",
+    "css_consumers": [
+     ".foot {color} @source/css/3q17cp_jgfwol.pretty.css:1935",
+     ".foot a {color} @source/css/3q17cp_jgfwol.pretty.css:1946"
+    ]
+   },
+   "btn-grad": {
+    "value": "linear-gradient(135deg, #ffe08a, #f5c542)",
+    "type": "gradient",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:528",
+    "scope": "body[data-theme=\"natt\"]",
+    "colours": [
+     {
+      "hex": "#ffe08a",
+      "rgb": "#ffe08a",
+      "alpha": 1.0
+     },
+     {
+      "hex": "#f5c542",
+      "rgb": "#f5c542",
+      "alpha": 1.0
+     }
+    ],
+    "role": "Primary button fill (135deg two-stop gradient); theme-toggle thumb; avatar FAB; play button; active job-step dots.",
+    "css_consumers": [
+     ".tt-thumb {background} @source/css/3q17cp_jgfwol.pretty.css:786",
+     ".btn-primary {background} @source/css/3q17cp_jgfwol.pretty.css:909",
+     ".builder-pic .fab {background} @source/css/3q17cp_jgfwol.pretty.css:1187",
+     ".hiw-play {background} @source/css/3q17cp_jgfwol.pretty.css:2809"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/2j_-r8q4tgdka.js": 1
+    }
+   },
+   "btn-ink": {
+    "value": "#3a2b10",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:529",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(58, 43, 16, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     18.6,
+     20.1,
+     80.7
+    ],
+    "role": "Text on --btn-grad and on --accent (active language pill).",
+    "css_consumers": [
+     "body[data-theme=\"natt\"] .tt-opt.night, body[data-theme=\"morgon\"] .tt-opt.day {color} @source/css/3q17cp_jgfwol.pretty.css:820",
+     ".btn-primary {color} @source/css/3q17cp_jgfwol.pretty.css:908",
+     ".builder-pic .fab {color} @source/css/3q17cp_jgfwol.pretty.css:1190",
+     ".hiw-play {color} @source/css/3q17cp_jgfwol.pretty.css:2808"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/2j_-r8q4tgdka.js": 1,
+     "source/js/390j9gbq0u9ce.js": 1,
+     "source/html/login.en.html": 1,
+     "source/html/404.en.html": 1,
+     "source/html/uppgradera.en.html": 1,
+     "source/html/integritet.en.html": 1,
+     "source/html/start.en.html": 1,
+     "source/html/integritet.sv.html": 1,
+     "source/html/404.sv.html": 1,
+     "source/html/home.en.html": 1,
+     "source/html/login.sv.html": 1,
+     "source/html/villkor.sv.html": 1,
+     "source/html/villkor.en.html": 1,
+     "source/html/home.sv.html": 1,
+     "source/html/signup.sv.html": 1,
+     "source/html/start.sv.html": 1,
+     "source/html/uppgradera.sv.html": 1,
+     "source/html/signup.en.html": 1
+    }
+   },
+   "btn-shadow": {
+    "value": "0 14px 40px #f5c54247",
+    "type": "shadow",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:530",
+    "scope": "body[data-theme=\"natt\"]",
+    "colours": [
+     {
+      "hex": "#f5c54247",
+      "rgb": "#f5c542",
+      "alpha": 0.278
+     }
+    ],
+    "role": "Coloured glow under primary buttons (gold glow in natt, violet glow in morgon).",
+    "css_consumers": [
+     ".tt-thumb {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:788",
+     ".btn-primary {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:910",
+     ".builder-pic .fab {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:1191",
+     ".hiw-play {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:2810"
+    ]
+   },
+   "btn-shadow-hover": {
+    "value": "0 20px 55px #f5c5426b",
+    "type": "shadow",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:531",
+    "scope": "body[data-theme=\"natt\"]",
+    "colours": [
+     {
+      "hex": "#f5c5426b",
+      "rgb": "#f5c542",
+      "alpha": 0.42
+     }
+    ],
+    "role": "Larger glow on hover.",
+    "css_consumers": [
+     ".btn-primary:hover {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:915",
+     ".hiw-play:hover {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:2826"
+    ]
+   },
+   "ghost-bg": {
+    "value": "#fff9ec1a",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:532",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(255, 249, 236, 0.102)",
+    "alpha": 0.102,
+    "alpha_hex_digits": "1a",
+    "flat_on_body": "#2f2a45",
+    "flat_on_backdrop_median": "#3c3f52",
+    "lch_ab": [
+     98.1,
+     6.9,
+     91.5
+    ],
+    "role": "Ghost/secondary button fill, nav CTA, theme-toggle track, sound panel, friend-photo step, inline friend form.",
+    "css_consumers": [
+     ".nav-cta {background} @source/css/3q17cp_jgfwol.pretty.css:734",
+     ".tt {background} @source/css/3q17cp_jgfwol.pretty.css:769",
+     ".btn-ghost {background} @source/css/3q17cp_jgfwol.pretty.css:919",
+     ".sound-panel {background} @source/css/3q17cp_jgfwol.pretty.css:1960",
+     ".friend-photo-step {background} @source/css/3q17cp_jgfwol.pretty.css:2197",
+     ".cs-inline-friend {background} @source/css/2h1wwdz1nvxwk.pretty.css:507"
+    ]
+   },
+   "ghost-ink": {
+    "value": "#fff3d9",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:533",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(255, 243, 217, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     96.2,
+     14.0,
+     90.6
+    ],
+    "role": "Ghost button text; theme-toggle option text.",
+    "css_consumers": [
+     ".nav-cta {color} @source/css/3q17cp_jgfwol.pretty.css:733",
+     ".tt-opt {color} @source/css/3q17cp_jgfwol.pretty.css:803",
+     ".btn-ghost {color} @source/css/3q17cp_jgfwol.pretty.css:920"
+    ]
+   },
+   "control-line": {
+    "value": "#fff3d952",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:534",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(255, 243, 217, 0.322)",
+    "alpha": 0.322,
+    "alpha_hex_digits": "52",
+    "flat_on_body": "#625a68",
+    "flat_on_backdrop_median": "#6c6b72",
+    "lch_ab": [
+     96.2,
+     14.0,
+     90.6
+    ],
+    "role": "Outline of controls (theme toggle, ghost buttons via --ghost-line).",
+    "css_consumers": [
+     "body[data-theme=\"natt\"] {--ghost-line} @source/css/3q17cp_jgfwol.pretty.css:535",
+     "body[data-theme=\"morgon\"] {--ghost-line} @source/css/3q17cp_jgfwol.pretty.css:584",
+     ".tt {border} @source/css/3q17cp_jgfwol.pretty.css:770"
+    ]
+   },
+   "ghost-line": {
+    "value": "var(--control-line)",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:535",
+    "scope": "body[data-theme=\"natt\"]",
+    "resolved": "#fff3d952",
+    "rgba": "rgba(255, 243, 217, 0.322)",
+    "alpha": 0.322,
+    "alpha_hex_digits": "52",
+    "flat_on_body": "#625a68",
+    "flat_on_backdrop_median": "#6c6b72",
+    "lch_ab": [
+     96.2,
+     14.0,
+     90.6
+    ],
+    "role": "Ghost button outline (= --control-line).",
+    "css_consumers": [
+     ".nav-cta {border} @source/css/3q17cp_jgfwol.pretty.css:735",
+     ".btn-ghost {border} @source/css/3q17cp_jgfwol.pretty.css:921",
+     ".sound-panel {border} @source/css/3q17cp_jgfwol.pretty.css:1961"
+    ]
+   },
+   "card-shadow": {
+    "value": "0 18px 44px #0508146b",
+    "type": "shadow",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:536",
+    "scope": "body[data-theme=\"natt\"]",
+    "colours": [
+     {
+      "hex": "#0508146b",
+      "rgb": "#050814",
+      "alpha": 0.42
+     }
+    ],
+    "role": "Drop shadow of cards, books, covers (navy-black in natt; two-layer plum in morgon).",
+    "css_consumers": [
+     ".fan .badge {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:987",
+     ".glass {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:1115",
+     ".book {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:1488",
+     ".reader-keepsake-cover {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:2115",
+     ".hiw-fan-card {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:2754",
+     ".hiw-cover {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:3051",
+     ".hiw-memory-tag {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:3095",
+     ".start-flow .gbook {box-shadow} @source/css/2_gt301v4m-60.pretty.css:26"
+    ]
+   },
+   "logo-ink": {
+    "value": "#f5c542",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:537",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(245, 197, 66, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     81.7,
+     68.6,
+     86.3
+    ],
+    "role": "Wordmark colour (Cinzel caps); reader and ceremony titles; surprise door star; story-door register label.",
+    "css_consumers": [
+     ".logo {color} @source/css/3q17cp_jgfwol.pretty.css:699",
+     ".reader-title {color} @source/css/3q17cp_jgfwol.pretty.css:1815",
+     ".reader-ceremony-title {color} @source/css/3q17cp_jgfwol.pretty.css:2124",
+     ".cs-door-reg--surprise {color} @source/css/2h1wwdz1nvxwk.pretty.css:398",
+     ".cs-door-face:after {border} @source/css/2h1wwdz1nvxwk.pretty.css:447",
+     ".cs-door-star {color} @source/css/2h1wwdz1nvxwk.pretty.css:454",
+     ".cs-door-face--fallback:before {background} @source/css/2h1wwdz1nvxwk.pretty.css:472"
+    ]
+   },
+   "logo-shadow": {
+    "value": "0 2px 6px #050814cc, 0 0 34px #f5c54273",
+    "type": "shadow",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:538",
+    "scope": "body[data-theme=\"natt\"]",
+    "colours": [
+     {
+      "hex": "#050814cc",
+      "rgb": "#050814",
+      "alpha": 0.8
+     },
+     {
+      "hex": "#f5c54273",
+      "rgb": "#f5c542",
+      "alpha": 0.451
+     }
+    ],
+    "role": "Wordmark glow: dark drop + gold halo (natt) / soft plum drop + violet halo (morgon).",
+    "css_consumers": [
+     ".logo {text-shadow} @source/css/3q17cp_jgfwol.pretty.css:702",
+     ".reader-title {text-shadow} @source/css/3q17cp_jgfwol.pretty.css:1817",
+     ".reader-ceremony-title {text-shadow} @source/css/3q17cp_jgfwol.pretty.css:2126"
+    ]
+   },
+   "map-dot": {
+    "value": "var(--violet-soft)",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:539",
+    "scope": "body[data-theme=\"natt\"]",
+    "resolved": "#9b87f5",
+    "rgba": "rgba(155, 135, 245, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     62.4,
+     61.9,
+     301.6
+    ],
+    "role": "Dots on the how-it-works story map.",
+    "css_consumers": [
+     ".hiw-map .map-dot {fill} @source/css/3q17cp_jgfwol.pretty.css:2954",
+     ".hiw-map .map-dot-halo {fill} @source/css/3q17cp_jgfwol.pretty.css:2957"
+    ]
+   },
+   "map-glow": {
+    "value": "#f5c54240",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:540",
+    "scope": "body[data-theme=\"natt\"]",
+    "rgba": "rgba(245, 197, 66, 0.251)",
+    "alpha": 0.251,
+    "alpha_hex_digits": "40",
+    "flat_on_body": "#4f3f36",
+    "flat_on_backdrop_median": "#5a5141",
+    "lch_ab": [
+     81.7,
+     68.6,
+     86.3
+    ],
+    "role": "Glow behind map medallions and the \"next book\" cover.",
+    "css_consumers": [
+     ".hiw-map .map-medallion {filter} @source/css/3q17cp_jgfwol.pretty.css:2980",
+     ".hiw-cover-next {filter} @source/css/3q17cp_jgfwol.pretty.css:3057"
+    ]
+   }
+  },
+  "morgon": {
+   "page-ink": {
+    "value": "#241f35",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:543",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(36, 31, 53, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     13.3,
+     16.0,
+     301.9
+    ],
+    "role": "Primary text straight on the page backdrop: h1, h2, step h3, section headlines; also body `color`.",
+    "css_consumers": [
+     "body {color} @source/css/3q17cp_jgfwol.pretty.css:599",
+     "h1 {color} @source/css/3q17cp_jgfwol.pretty.css:859",
+     "h2 {color} @source/css/3q17cp_jgfwol.pretty.css:1058",
+     ".create-title, .page-title {color} @source/css/3q17cp_jgfwol.pretty.css:1067",
+     ".hiw-headline {color} @source/css/3q17cp_jgfwol.pretty.css:2557",
+     ".hiw-step-text h3 {color} @source/css/3q17cp_jgfwol.pretty.css:2633",
+     ".cs-h1 {color} @source/css/2h1wwdz1nvxwk.pretty.css:63",
+     ".cs-recipe {color} @source/css/2h1wwdz1nvxwk.pretty.css:166",
+     ".cs-h2 {color} @source/css/2h1wwdz1nvxwk.pretty.css:347",
+     ".start-flow .reveal-line {color} @source/css/2_gt301v4m-60.pretty.css:449",
+     ".start-flow .reveal-name {color} @source/css/2_gt301v4m-60.pretty.css:473"
+    ]
+   },
+   "page-sub": {
+    "value": "#5f5878",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:544",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(95, 88, 120, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     39.2,
+     19.9,
+     300.7
+    ],
+    "role": "Secondary text on the backdrop: hero lede, section intros/ledes, step copy, captions, CTA microcopy, map labels.",
+    "css_consumers": [
+     "body[data-theme=\"natt\"] {--micro-ink} @source/css/3q17cp_jgfwol.pretty.css:510",
+     "body[data-theme=\"morgon\"] {--micro-ink} @source/css/3q17cp_jgfwol.pretty.css:559",
+     ".lede {color} @source/css/3q17cp_jgfwol.pretty.css:873",
+     ".sec-intro {color} @source/css/3q17cp_jgfwol.pretty.css:1049",
+     ".hiw-lede {color} @source/css/3q17cp_jgfwol.pretty.css:2564",
+     ".hiw-step-copy {color} @source/css/3q17cp_jgfwol.pretty.css:2640",
+     ".hiw-caption {color} @source/css/3q17cp_jgfwol.pretty.css:2911",
+     ".hiw-map .map-choice-label {fill} @source/css/3q17cp_jgfwol.pretty.css:2973",
+     ".cta-microcopy {color} @source/css/3q17cp_jgfwol.pretty.css:3143",
+     ".cs-lede {color} @source/css/2h1wwdz1nvxwk.pretty.css:72",
+     ".cs-recipe-title {color} @source/css/2h1wwdz1nvxwk.pretty.css:158",
+     ".start-flow .veil-caption {color} @source/css/2_gt301v4m-60.pretty.css:430",
+     ".start-flow .ordiv {color} @source/css/2_gt301v4m-60.pretty.css:614",
+     ".start-flow .honest {color} @source/css/2_gt301v4m-60.pretty.css:633"
+    ]
+   },
+   "accent": {
+    "value": "#6d4fe0",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:545",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(109, 79, 224, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     44.6,
+     85.1,
+     304.8
+    ],
+    "role": "Interactive accent: focus outlines, drop caps, links, active language pill, upload/friend hover borders, field focus border. Gold in natt, violet in morgon.",
+    "css_consumers": [
+     ".tt:focus-visible {outline} @source/css/3q17cp_jgfwol.pretty.css:823",
+     ".legal-language-details > summary {color} @source/css/3q17cp_jgfwol.pretty.css:1080",
+     ".upload:hover {border-color} @source/css/3q17cp_jgfwol.pretty.css:1258",
+     ".friend-add:hover {border-color} @source/css/3q17cp_jgfwol.pretty.css:1343",
+     ".prose:first-letter {color} @source/css/3q17cp_jgfwol.pretty.css:1836",
+     ".choice:focus-visible {outline} @source/css/3q17cp_jgfwol.pretty.css:1929",
+     ".choice:focus-visible {border-color} @source/css/3q17cp_jgfwol.pretty.css:1931",
+     ".reader-replay:focus-visible, .reader-illustration-toggle:focus-visible {outline} @source/css/3q17cp_jgfwol.pretty.css:2094",
+     ".friend-photo-attestation input {accent-color} @source/css/3q17cp_jgfwol.pretty.css:2225",
+     "input:focus-visible, textarea:focus-visible, select:focus-visible {outline} @source/css/3q17cp_jgfwol.pretty.css:2376",
+     ".create-customize:hover, .create-customize[open] {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:2403",
+     ".hiw-mock-prose:first-letter {color} @source/css/3q17cp_jgfwol.pretty.css:2872",
+     ".hiw-map-btn:focus-visible {outline} @source/css/3q17cp_jgfwol.pretty.css:3020",
+     ".start-flow .field:focus {border-color} @source/css/2_gt301v4m-60.pretty.css:75",
+     ".start-flow .reveal-line svg {color} @source/css/2_gt301v4m-60.pretty.css:462"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 1,
+     "source/js/1hcx0qn-qjgfn.js": 4,
+     "source/js/2j_-r8q4tgdka.js": 1,
+     "source/js/0ad0wel9cyv30.js": 2,
+     "source/js/390j9gbq0u9ce.js": 1,
+     "source/html/login.en.html": 9,
+     "source/html/404.en.html": 7,
+     "source/html/uppgradera.en.html": 7,
+     "source/html/integritet.en.html": 12,
+     "source/html/start.en.html": 7,
+     "source/html/integritet.sv.html": 12,
+     "source/html/404.sv.html": 7,
+     "source/html/home.en.html": 7,
+     "source/html/login.sv.html": 9,
+     "source/html/villkor.sv.html": 18,
+     "source/html/villkor.en.html": 18,
+     "source/html/home.sv.html": 7,
+     "source/html/signup.sv.html": 10,
+     "source/html/share_iris-sparade-platsen.404.sv.html": 3,
+     "source/html/start.sv.html": 7,
+     "source/html/uppgradera.sv.html": 7,
+     "source/html/signup.en.html": 10
+    }
+   },
+   "accent-ink": {
+    "value": "#5b3fc7",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:546",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(91, 63, 199, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     37.7,
+     81.7,
+     305.1
+    ],
+    "role": "Accent used AS TEXT: the highlighted words in h1 (`h1 .grad`). Same as --accent in natt; a darker violet (#5b3fc7) in morgon for legibility.",
+    "css_consumers": [
+     "body[data-theme=\"morgon\"] {--chip-ink} @source/css/3q17cp_jgfwol.pretty.css:556",
+     "body[data-theme=\"morgon\"] {--pill-ink} @source/css/3q17cp_jgfwol.pretty.css:558",
+     "h1 .grad {color} @source/css/3q17cp_jgfwol.pretty.css:868"
+    ]
+   },
+   "card": {
+    "value": "#fffc",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:547",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(255, 255, 255, 0.8)",
+    "alpha": 0.8,
+    "alpha_hex_digits": "",
+    "flat_on_body": "#fbfbfd",
+    "flat_on_backdrop_median": "#fcfafb",
+    "lch_ab": [
+     100.0,
+     0.0,
+     296.8
+    ],
+    "role": "Glass card fill (translucent, with backdrop blur): .glass, .badge, .book, memory tag, create-customize, cs-chip, figcaptions.",
+    "css_consumers": [
+     ".tt:focus-visible {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:825",
+     ".fan .badge {background} @source/css/3q17cp_jgfwol.pretty.css:982",
+     ".glass {background} @source/css/3q17cp_jgfwol.pretty.css:1111",
+     ".book {background} @source/css/3q17cp_jgfwol.pretty.css:1486",
+     ".create-customize {background} @source/css/3q17cp_jgfwol.pretty.css:2390",
+     ".hiw-memory-tag {background} @source/css/3q17cp_jgfwol.pretty.css:3090",
+     ".cs-memtag {background} @source/css/2h1wwdz1nvxwk.pretty.css:96",
+     ".cs-chip {background} @source/css/2h1wwdz1nvxwk.pretty.css:177",
+     ".HeroCanvasPlaceholder-module__H1HHWq__canvas {background-color} @source/css/2h1wwdz1nvxwk.pretty.css:597",
+     ".start-flow .gbook figcaption {background} @source/css/2_gt301v4m-60.pretty.css:38"
+    ]
+   },
+   "card-line": {
+    "value": "#ffffffe6",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:548",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(255, 255, 255, 0.902)",
+    "alpha": 0.902,
+    "alpha_hex_digits": "e6",
+    "flat_on_body": "#fdfdfe",
+    "flat_on_backdrop_median": "#fefcfd",
+    "lch_ab": [
+     100.0,
+     0.0,
+     296.8
+    ],
+    "role": "Hairline on glass cards; also footer rule, legal divider, create-customize section dividers, inline separators.",
+    "css_consumers": [
+     ".fan .badge {border} @source/css/3q17cp_jgfwol.pretty.css:985",
+     ".legal-language-details {border-top} @source/css/3q17cp_jgfwol.pretty.css:1074",
+     ".glass {border} @source/css/3q17cp_jgfwol.pretty.css:1114",
+     ".comp-avatar {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:1411",
+     ".foot {border-top} @source/css/3q17cp_jgfwol.pretty.css:1934",
+     ".friend-photo-step {border} @source/css/3q17cp_jgfwol.pretty.css:2196",
+     ".create-customize {border} @source/css/3q17cp_jgfwol.pretty.css:2393",
+     ".create-customize-section + .create-customize-section {border-top} @source/css/3q17cp_jgfwol.pretty.css:2472",
+     ".hiw-memory-tag {border} @source/css/3q17cp_jgfwol.pretty.css:3093",
+     ".cs-portrait {border} @source/css/2h1wwdz1nvxwk.pretty.css:15",
+     ".cs-spine {border} @source/css/2h1wwdz1nvxwk.pretty.css:88",
+     ".cs-memtag {border} @source/css/2h1wwdz1nvxwk.pretty.css:97",
+     ".cs-coin {border} @source/css/2h1wwdz1nvxwk.pretty.css:115",
+     ".cs-chip {border} @source/css/2h1wwdz1nvxwk.pretty.css:176",
+     ".cs-sheet-close {border} @source/css/2h1wwdz1nvxwk.pretty.css:290",
+     ".cs-door-face {border-bottom} @source/css/2h1wwdz1nvxwk.pretty.css:434",
+     ".cs-inline-friend {border} @source/css/2h1wwdz1nvxwk.pretty.css:506",
+     ".start-flow .field {border} @source/css/2_gt301v4m-60.pretty.css:66",
+     ".start-flow .wslot {border} @source/css/2_gt301v4m-60.pretty.css:576",
+     ".start-flow .ordiv:before, .start-flow .ordiv:after {background} @source/css/2_gt301v4m-60.pretty.css:627"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 4,
+     "source/js/3d9nxlx1n5pdy.js": 1,
+     "source/js/1hcx0qn-qjgfn.js": 3,
+     "source/js/2j_-r8q4tgdka.js": 1,
+     "source/js/0ad0wel9cyv30.js": 2,
+     "source/js/390j9gbq0u9ce.js": 2,
+     "source/html/login.en.html": 7,
+     "source/html/404.en.html": 3,
+     "source/html/uppgradera.en.html": 3,
+     "source/html/integritet.en.html": 6,
+     "source/html/start.en.html": 3,
+     "source/html/integritet.sv.html": 6,
+     "source/html/404.sv.html": 3,
+     "source/html/home.en.html": 5,
+     "source/html/login.sv.html": 7,
+     "source/html/villkor.sv.html": 6,
+     "source/html/villkor.en.html": 6,
+     "source/html/home.sv.html": 5,
+     "source/html/signup.sv.html": 7,
+     "source/html/share_iris-sparade-platsen.404.sv.html": 1,
+     "source/html/start.sv.html": 3,
+     "source/html/uppgradera.sv.html": 3,
+     "source/html/signup.en.html": 7
+    }
+   },
+   "card-blur": {
+    "value": "24px",
+    "type": "length",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:549",
+    "scope": "body[data-theme=\"morgon\"]",
+    "role": "Backdrop-filter blur radius for glass (not a colour, but it decides how the backdrop colours mix into the card).",
+    "css_consumers": [
+     ".fan .badge {-webkit-backdrop-filter} @source/css/3q17cp_jgfwol.pretty.css:983",
+     ".fan .badge {backdrop-filter} @source/css/3q17cp_jgfwol.pretty.css:984",
+     ".glass {-webkit-backdrop-filter} @source/css/3q17cp_jgfwol.pretty.css:1112",
+     ".glass {backdrop-filter} @source/css/3q17cp_jgfwol.pretty.css:1113",
+     ".create-customize {-webkit-backdrop-filter} @source/css/3q17cp_jgfwol.pretty.css:2391",
+     ".create-customize {backdrop-filter} @source/css/3q17cp_jgfwol.pretty.css:2392",
+     ".hiw-memory-tag {-webkit-backdrop-filter} @source/css/3q17cp_jgfwol.pretty.css:3091",
+     ".hiw-memory-tag {backdrop-filter} @source/css/3q17cp_jgfwol.pretty.css:3092"
+    ]
+   },
+   "card-ink": {
+    "value": "#241f35",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:550",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(36, 31, 53, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     13.3,
+     16.0,
+     301.9
+    ],
+    "role": "Primary text on cards.",
+    "css_consumers": [
+     ".fan .badge {color} @source/css/3q17cp_jgfwol.pretty.css:986",
+     ".glass {color} @source/css/3q17cp_jgfwol.pretty.css:1116",
+     ".book {color} @source/css/3q17cp_jgfwol.pretty.css:1490",
+     ".friend-mode-picker legend {color} @source/css/3q17cp_jgfwol.pretty.css:2150",
+     ".friend-photo-step h2 {color} @source/css/3q17cp_jgfwol.pretty.css:2206",
+     ".create-carried-thread {color} @source/css/3q17cp_jgfwol.pretty.css:2382",
+     ".create-customize > summary {color} @source/css/3q17cp_jgfwol.pretty.css:2407",
+     ".hiw-friend-row b {color} @source/css/3q17cp_jgfwol.pretty.css:2718",
+     ".hiw-memory-tag {color} @source/css/3q17cp_jgfwol.pretty.css:3094",
+     ".cs-andra:hover {color} @source/css/2h1wwdz1nvxwk.pretty.css:54",
+     ".cs-chip {color} @source/css/2h1wwdz1nvxwk.pretty.css:179",
+     ".cs-sheet-title {color} @source/css/2h1wwdz1nvxwk.pretty.css:281",
+     ".cs-sheet-close {color} @source/css/2h1wwdz1nvxwk.pretty.css:294",
+     ".cs-door-title {color} @source/css/2h1wwdz1nvxwk.pretty.css:402",
+     ".cs-companion-actions .friend-add {color} @source/css/2h1wwdz1nvxwk.pretty.css:496",
+     ".cs-inline-friend-head h4 {color} @source/css/2h1wwdz1nvxwk.pretty.css:519",
+     ".cs-inline-field {color} @source/css/2h1wwdz1nvxwk.pretty.css:529",
+     ".cs-inline-options legend {color} @source/css/2h1wwdz1nvxwk.pretty.css:547",
+     ".start-flow .gbook figcaption {color} @source/css/2_gt301v4m-60.pretty.css:39",
+     ".start-flow .field {color} @source/css/2_gt301v4m-60.pretty.css:64",
+     ".start-flow .hname {color} @source/css/2_gt301v4m-60.pretty.css:265",
+     ".start-flow .worldrow .wlabel {color} @source/css/2_gt301v4m-60.pretty.css:566",
+     ".start-flow .adv-title {color} @source/css/2_gt301v4m-60.pretty.css:675"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 4,
+     "source/js/1hcx0qn-qjgfn.js": 1,
+     "source/js/26ye0kuppitcn.js": 4,
+     "source/js/2j_-r8q4tgdka.js": 3,
+     "source/js/0ad0wel9cyv30.js": 3,
+     "source/html/login.en.html": 2,
+     "source/html/uppgradera.en.html": 5,
+     "source/html/integritet.en.html": 15,
+     "source/html/integritet.sv.html": 15,
+     "source/html/home.en.html": 2,
+     "source/html/login.sv.html": 2,
+     "source/html/villkor.sv.html": 21,
+     "source/html/villkor.en.html": 21,
+     "source/html/home.sv.html": 2,
+     "source/html/signup.sv.html": 2,
+     "source/html/uppgradera.sv.html": 5,
+     "source/html/signup.en.html": 2
+    }
+   },
+   "card-sub": {
+    "value": "#5f5878",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:551",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(95, 88, 120, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     39.2,
+     19.9,
+     300.7
+    ],
+    "role": "Secondary text on cards; also nav links, inactive language button, footer links/meta, form labels, placeholders.",
+    "css_consumers": [
+     ".badge span {color} @source/css/3q17cp_jgfwol.pretty.css:1034",
+     ".upload span {color} @source/css/3q17cp_jgfwol.pretty.css:1280",
+     ".friend span {color} @source/css/3q17cp_jgfwol.pretty.css:1321",
+     ".companion-sub {color} @source/css/3q17cp_jgfwol.pretty.css:1474",
+     ".adv-sub {color} @source/css/3q17cp_jgfwol.pretty.css:1599",
+     ".adv-why {color} @source/css/3q17cp_jgfwol.pretty.css:1611",
+     ".mobile-adv-difference {color} @source/css/3q17cp_jgfwol.pretty.css:1672 [@media (max-width: 760px)]",
+     ".mobile-adv-details {color} @source/css/3q17cp_jgfwol.pretty.css:1678 [@media (max-width: 760px)]",
+     ".reader-link-wait {color} @source/css/3q17cp_jgfwol.pretty.css:1868",
+     ".sound-group-label {color} @source/css/3q17cp_jgfwol.pretty.css:1975",
+     ".friend-mode-option span {color} @source/css/3q17cp_jgfwol.pretty.css:2178",
+     ".friend-mode-lock {color} @source/css/3q17cp_jgfwol.pretty.css:2190",
+     ".friend-photo-step > p {color} @source/css/3q17cp_jgfwol.pretty.css:2211",
+     ".friend-photo-requirement {color} @source/css/3q17cp_jgfwol.pretty.css:2238",
+     ".hiw-friend-row span {color} @source/css/3q17cp_jgfwol.pretty.css:2724",
+     ".hiw-bake-line {color} @source/css/3q17cp_jgfwol.pretty.css:2790",
+     ".hiw-memory-tag div span {color} @source/css/3q17cp_jgfwol.pretty.css:3120",
+     ".cs-andra {color} @source/css/2h1wwdz1nvxwk.pretty.css:42",
+     ".cs-memtag {color} @source/css/2h1wwdz1nvxwk.pretty.css:99",
+     ".cs-chip--add {color} @source/css/2h1wwdz1nvxwk.pretty.css:224",
+     ".cs-chip--add .cs-chip-th {color} @source/css/2h1wwdz1nvxwk.pretty.css:229",
+     ".cs-door-hook {color} @source/css/2h1wwdz1nvxwk.pretty.css:410",
+     ".cs-companion-manage {color} @source/css/2h1wwdz1nvxwk.pretty.css:500",
+     ".cs-inline-friend-head p {color} @source/css/2h1wwdz1nvxwk.pretty.css:524",
+     ".start-flow .field::placeholder {color} @source/css/2_gt301v4m-60.pretty.css:78",
+     ".start-flow .privacy {color} @source/css/2_gt301v4m-60.pretty.css:100",
+     ".start-flow .pick-story-copy small {color} @source/css/2_gt301v4m-60.pretty.css:198",
+     ".start-flow .pick-divider {color} @source/css/2_gt301v4m-60.pretty.css:204",
+     ".start-flow .unveil-waiting {color} @source/css/2_gt301v4m-60.pretty.css:506",
+     ".start-flow .trial-line {color} @source/css/2_gt301v4m-60.pretty.css:546",
+     ".start-flow .wslot {color} @source/css/2_gt301v4m-60.pretty.css:577",
+     ".start-flow .surprise span {color} @source/css/2_gt301v4m-60.pretty.css:610",
+     ".start-flow .sheet p {color} @source/css/2_gt301v4m-60.pretty.css:779",
+     ".start-flow .voice-line {color} @source/css/2_gt301v4m-60.pretty.css:800",
+     ".start-flow .forge .inputs {color} @source/css/2_gt301v4m-60.pretty.css:824"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 11,
+     "source/js/1hcx0qn-qjgfn.js": 7,
+     "source/js/26ye0kuppitcn.js": 1,
+     "source/js/2j_-r8q4tgdka.js": 3,
+     "source/js/0ad0wel9cyv30.js": 6,
+     "source/js/390j9gbq0u9ce.js": 2,
+     "source/html/login.en.html": 19,
+     "source/html/404.en.html": 11,
+     "source/html/uppgradera.en.html": 15,
+     "source/html/integritet.en.html": 45,
+     "source/html/start.en.html": 11,
+     "source/html/integritet.sv.html": 45,
+     "source/html/404.sv.html": 11,
+     "source/html/home.en.html": 15,
+     "source/html/login.sv.html": 19,
+     "source/html/villkor.sv.html": 39,
+     "source/html/villkor.en.html": 39,
+     "source/html/home.sv.html": 15,
+     "source/html/signup.sv.html": 20,
+     "source/html/share_iris-sparade-platsen.404.sv.html": 5,
+     "source/html/start.sv.html": 11,
+     "source/html/uppgradera.sv.html": 15,
+     "source/html/signup.en.html": 20
+    }
+   },
+   "frame": {
+    "value": "#fff",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:552",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(255, 255, 255, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     100.0,
+     0.0,
+     296.8
+    ],
+    "role": "Thick passe-partout border around book covers, portraits and avatars (3-6px); hiw-frame fill. Deep navy in natt, white in morgon.",
+    "css_consumers": [
+     ".fan .fbook {border} @source/css/3q17cp_jgfwol.pretty.css:930",
+     ".builder-pic .pframe {border} @source/css/3q17cp_jgfwol.pretty.css:1168",
+     ".friend .avatar {border} @source/css/3q17cp_jgfwol.pretty.css:1302",
+     ".companion-pic {border} @source/css/3q17cp_jgfwol.pretty.css:1451",
+     ".book {border} @source/css/3q17cp_jgfwol.pretty.css:1487",
+     ".hiw-frame {background} @source/css/3q17cp_jgfwol.pretty.css:2672",
+     ".hiw-fan-card {border} @source/css/3q17cp_jgfwol.pretty.css:2752",
+     ".hiw-cover {border} @source/css/3q17cp_jgfwol.pretty.css:3049",
+     ".start-flow .gbook {border} @source/css/2_gt301v4m-60.pretty.css:25",
+     ".start-flow .pframe {border} @source/css/2_gt301v4m-60.pretty.css:221",
+     ".start-flow .easel {border} @source/css/2_gt301v4m-60.pretty.css:289"
+    ]
+   },
+   "frame-line": {
+    "value": "#ffffffe6",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:553",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(255, 255, 255, 0.902)",
+    "alpha": 0.902,
+    "alpha_hex_digits": "e6",
+    "flat_on_body": "#fdfdfe",
+    "flat_on_backdrop_median": "#fefcfd",
+    "lch_ab": [
+     100.0,
+     0.0,
+     296.8
+    ],
+    "role": "Thin outer line of the portrait frame (.hiw-frame).",
+    "css_consumers": [
+     ".hiw-frame {border} @source/css/3q17cp_jgfwol.pretty.css:2673"
+    ]
+   },
+   "chip-bg": {
+    "value": "#6d4fe014",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:554",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(109, 79, 224, 0.078)",
+    "alpha": 0.078,
+    "alpha_hex_digits": "14",
+    "flat_on_body": "#e3ddf4",
+    "flat_on_backdrop_median": "#e7d8ea",
+    "lch_ab": [
+     44.6,
+     85.1,
+     304.8
+    ],
+    "role": "Neutral chip fill: kicker, sec-chip, voice chip, upload camera tile, family-switcher chip, field fallback fill.",
+    "css_consumers": [
+     ".kicker {background} @source/css/3q17cp_jgfwol.pretty.css:837",
+     ".sec-chip {background} @source/css/3q17cp_jgfwol.pretty.css:1089",
+     ".upload .cam {background} @source/css/3q17cp_jgfwol.pretty.css:1261",
+     ".family-switcher .chip {background} @source/css/3q17cp_jgfwol.pretty.css:1558",
+     ".create-customize > summary small {background} @source/css/3q17cp_jgfwol.pretty.css:2426",
+     ".hiw-voice-chip {background} @source/css/3q17cp_jgfwol.pretty.css:2837",
+     ".start-flow .field {background} @source/css/2_gt301v4m-60.pretty.css:65",
+     ".start-flow .unveil-waiting {background} @source/css/2_gt301v4m-60.pretty.css:505"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/2j_-r8q4tgdka.js": 1
+    }
+   },
+   "chip-line": {
+    "value": "#6d4fe029",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:555",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(109, 79, 224, 0.161)",
+    "alpha": 0.161,
+    "alpha_hex_digits": "29",
+    "flat_on_body": "#d8d0f2",
+    "flat_on_backdrop_median": "#dccce9",
+    "lch_ab": [
+     44.6,
+     85.1,
+     304.8
+    ],
+    "role": "Neutral chip border.",
+    "css_consumers": [
+     ".kicker {border} @source/css/3q17cp_jgfwol.pretty.css:838",
+     ".sec-chip {border} @source/css/3q17cp_jgfwol.pretty.css:1090",
+     ".upload .cam {border} @source/css/3q17cp_jgfwol.pretty.css:1262",
+     ".family-switcher .chip {border} @source/css/3q17cp_jgfwol.pretty.css:1559",
+     ".create-customize > summary small {border} @source/css/3q17cp_jgfwol.pretty.css:2427",
+     ".hiw-voice-chip {border} @source/css/3q17cp_jgfwol.pretty.css:2838"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/2j_-r8q4tgdka.js": 1
+    }
+   },
+   "chip-ink": {
+    "value": "var(--accent-ink)",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:556",
+    "scope": "body[data-theme=\"morgon\"]",
+    "resolved": "#5b3fc7",
+    "rgba": "rgba(91, 63, 199, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     37.7,
+     81.7,
+     305.1
+    ],
+    "role": "Neutral chip text; also dashed \"add\" buttons and invite slot.",
+    "css_consumers": [
+     ".kicker {color} @source/css/3q17cp_jgfwol.pretty.css:836",
+     ".sec-chip {color} @source/css/3q17cp_jgfwol.pretty.css:1088",
+     ".upload .cam {color} @source/css/3q17cp_jgfwol.pretty.css:1265",
+     ".friend-add {color} @source/css/3q17cp_jgfwol.pretty.css:1328",
+     ".family-switcher .chip {color} @source/css/3q17cp_jgfwol.pretty.css:1557",
+     ".create-customize > summary small {color} @source/css/3q17cp_jgfwol.pretty.css:2425",
+     ".hiw-invite-slot {color} @source/css/3q17cp_jgfwol.pretty.css:2731",
+     ".hiw-voice-chip {color} @source/css/3q17cp_jgfwol.pretty.css:2836"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/2j_-r8q4tgdka.js": 2,
+     "source/js/0ad0wel9cyv30.js": 1
+    }
+   },
+   "pill-bg": {
+    "value": "#6d4fe01a",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:557",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(109, 79, 224, 0.102)",
+    "alpha": 0.102,
+    "alpha_hex_digits": "1a",
+    "flat_on_body": "#e0d9f4",
+    "flat_on_backdrop_median": "#e4d5ea",
+    "lch_ab": [
+     44.6,
+     85.1,
+     304.8
+    ],
+    "role": "Violet category pill fill: book-sub, hiw-kicker, chip.violet, pressed sound bed, pressed friend-mode option; gradient partner in avatars.",
+    "css_consumers": [
+     ".comp-tile--violet {background-image} @source/css/3q17cp_jgfwol.pretty.css:1360",
+     ".comp-avatar--gold {background} @source/css/3q17cp_jgfwol.pretty.css:1420",
+     ".comp-avatar--violet {background} @source/css/3q17cp_jgfwol.pretty.css:1424",
+     ".comp-avatar--coral {background} @source/css/3q17cp_jgfwol.pretty.css:1428",
+     ".book-sub {background} @source/css/3q17cp_jgfwol.pretty.css:1523",
+     ".family-switcher .chip.violet {background} @source/css/3q17cp_jgfwol.pretty.css:1563",
+     ".chip.violet {background} @source/css/3q17cp_jgfwol.pretty.css:1584",
+     ".pframe-initial {background} @source/css/3q17cp_jgfwol.pretty.css:1751",
+     ".sound-bed[aria-pressed=\"true\"] {background} @source/css/3q17cp_jgfwol.pretty.css:2011",
+     ".friend-mode-option[aria-pressed=\"true\"] {background} @source/css/3q17cp_jgfwol.pretty.css:2185",
+     ".hiw-kicker {background} @source/css/3q17cp_jgfwol.pretty.css:2546",
+     ".cs-portrait {background} @source/css/2h1wwdz1nvxwk.pretty.css:16",
+     ".cs-coin {background} @source/css/2h1wwdz1nvxwk.pretty.css:120",
+     ".glod-sound[aria-pressed=\"true\"] {background} @source/css/37m388zf6rymp.pretty.css:793",
+     ".start-flow .pframe {background} @source/css/2_gt301v4m-60.pretty.css:222"
+    ]
+   },
+   "pill-ink": {
+    "value": "var(--accent-ink)",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:558",
+    "scope": "body[data-theme=\"morgon\"]",
+    "resolved": "#5b3fc7",
+    "rgba": "rgba(91, 63, 199, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     37.7,
+     81.7,
+     305.1
+    ],
+    "role": "Violet pill text.",
+    "css_consumers": [
+     ".comp-avatar--violet {color} @source/css/3q17cp_jgfwol.pretty.css:1425",
+     ".book-sub {color} @source/css/3q17cp_jgfwol.pretty.css:1524",
+     ".family-switcher .chip.violet {color} @source/css/3q17cp_jgfwol.pretty.css:1564",
+     ".chip.violet {color} @source/css/3q17cp_jgfwol.pretty.css:1585",
+     ".sound-bed[aria-pressed=\"true\"] {color} @source/css/3q17cp_jgfwol.pretty.css:2012",
+     ".hiw-kicker {color} @source/css/3q17cp_jgfwol.pretty.css:2545",
+     ".cs-door-reg--godnatt {color} @source/css/2h1wwdz1nvxwk.pretty.css:389",
+     ".glod-sound[aria-pressed=\"true\"] {color} @source/css/37m388zf6rymp.pretty.css:794"
+    ]
+   },
+   "micro-ink": {
+    "value": "var(--page-sub)",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:559",
+    "scope": "body[data-theme=\"morgon\"]",
+    "resolved": "#5f5878",
+    "rgba": "rgba(95, 88, 120, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     39.2,
+     19.9,
+     300.7
+    ],
+    "role": "Micro line under step copy (.hiw-micro). natt: --page-sub at 85% via color-mix.",
+    "css_consumers": [
+     ".hiw-micro {color} @source/css/3q17cp_jgfwol.pretty.css:2647"
+    ]
+   },
+   "h1-shadow": {
+    "value": "none",
+    "type": "shadow",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:560",
+    "scope": "body[data-theme=\"morgon\"]",
+    "colours": [],
+    "role": "Soft dark glow under h1/cs-h1 for legibility over the nebula (none in morgon).",
+    "css_consumers": [
+     "h1 {text-shadow} @source/css/3q17cp_jgfwol.pretty.css:860",
+     ".cs-h1 {text-shadow} @source/css/2h1wwdz1nvxwk.pretty.css:64"
+    ]
+   },
+   "gold-chip-bg": {
+    "value": "#f2b22e26",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:561",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(242, 178, 46, 0.149)",
+    "alpha": 0.149,
+    "alpha_hex_digits": "26",
+    "flat_on_body": "#eee1d8",
+    "flat_on_backdrop_median": "#f1ddcf",
+    "lch_ab": [
+     76.6,
+     71.7,
+     80.1
+    ],
+    "role": "Gold chip fill: chip.gold, step-number nodes, paint pill, map choice markers, success/status notes, avatar gradients.",
+    "css_consumers": [
+     ".comp-tile--gold {background-image} @source/css/3q17cp_jgfwol.pretty.css:1353",
+     ".comp-avatar--gold {background} @source/css/3q17cp_jgfwol.pretty.css:1420",
+     ".comp-avatar--violet {background} @source/css/3q17cp_jgfwol.pretty.css:1424",
+     ".chip.gold {background} @source/css/3q17cp_jgfwol.pretty.css:1580",
+     ".pframe-initial {background} @source/css/3q17cp_jgfwol.pretty.css:1751",
+     ".hiw-node {background} @source/css/3q17cp_jgfwol.pretty.css:2600",
+     ".hiw-map .map-choice {fill} @source/css/3q17cp_jgfwol.pretty.css:2961",
+     ".hiw-map .map-num-bg {fill} @source/css/3q17cp_jgfwol.pretty.css:2998",
+     ".cs-portrait {background} @source/css/2h1wwdz1nvxwk.pretty.css:16",
+     ".cs-coin {background} @source/css/2h1wwdz1nvxwk.pretty.css:120",
+     ".start-flow .paintpill {background} @source/css/2_gt301v4m-60.pretty.css:115",
+     ".start-flow .pframe {background} @source/css/2_gt301v4m-60.pretty.css:222",
+     ".start-flow .sheet .picked {background} @source/css/2_gt301v4m-60.pretty.css:786"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/1hcx0qn-qjgfn.js": 1,
+     "source/js/2j_-r8q4tgdka.js": 1
+    }
+   },
+   "gold-chip-ink": {
+    "value": "#8f6a12",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:562",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(143, 106, 18, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     47.2,
+     50.3,
+     82.1
+    ],
+    "role": "Gold chip text; star specks on story tiles; map numbers; initials in portrait placeholders.",
+    "css_consumers": [
+     ".comp-tile--story:after {background-image} @source/css/3q17cp_jgfwol.pretty.css:1377",
+     ".comp-tile--story:after {background-image} @source/css/3q17cp_jgfwol.pretty.css:1377",
+     ".comp-tile--story:after {background-image} @source/css/3q17cp_jgfwol.pretty.css:1377",
+     ".comp-tile--story:after {background-image} @source/css/3q17cp_jgfwol.pretty.css:1377",
+     ".comp-tile--story:after {background-image} @source/css/3q17cp_jgfwol.pretty.css:1377",
+     ".comp-avatar--gold {color} @source/css/3q17cp_jgfwol.pretty.css:1421",
+     ".comp-chosen {color} @source/css/3q17cp_jgfwol.pretty.css:1434",
+     ".chip.gold {color} @source/css/3q17cp_jgfwol.pretty.css:1581",
+     ".pframe-initial {color} @source/css/3q17cp_jgfwol.pretty.css:1750",
+     ".hiw-node {color} @source/css/3q17cp_jgfwol.pretty.css:2604",
+     ".hiw-map .map-choice-glyph {stroke} @source/css/3q17cp_jgfwol.pretty.css:2966",
+     ".hiw-map .map-num {fill} @source/css/3q17cp_jgfwol.pretty.css:3002",
+     ".cs-portrait-initial {color} @source/css/2h1wwdz1nvxwk.pretty.css:34",
+     ".cs-coin {color} @source/css/2h1wwdz1nvxwk.pretty.css:119",
+     ".cs-chip-th {color} @source/css/2h1wwdz1nvxwk.pretty.css:207",
+     ".cs-door-reg--aventyr {color} @source/css/2h1wwdz1nvxwk.pretty.css:392",
+     ".start-flow .privacy svg {color} @source/css/2_gt301v4m-60.pretty.css:110",
+     ".start-flow .paintpill {color} @source/css/2_gt301v4m-60.pretty.css:117",
+     ".start-flow .sheet .picked {color} @source/css/2_gt301v4m-60.pretty.css:785"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/1hcx0qn-qjgfn.js": 2,
+     "source/js/2j_-r8q4tgdka.js": 2
+    }
+   },
+   "coral-chip-bg": {
+    "value": "#ff61541f",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:563",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(255, 97, 84, 0.122)",
+    "alpha": 0.122,
+    "alpha_hex_digits": "1f",
+    "flat_on_body": "#efd8e2",
+    "flat_on_backdrop_median": "#f3d4d9",
+    "lch_ab": [
+     62.0,
+     71.1,
+     33.5
+    ],
+    "role": "Coral chip fill; error alert background (auth, upgrade).",
+    "css_consumers": [
+     ".comp-tile--coral {background-image} @source/css/3q17cp_jgfwol.pretty.css:1367",
+     ".comp-avatar--coral {background} @source/css/3q17cp_jgfwol.pretty.css:1428",
+     ".chip.coral {background} @source/css/3q17cp_jgfwol.pretty.css:1588"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/1hcx0qn-qjgfn.js": 1,
+     "source/js/26ye0kuppitcn.js": 1
+    }
+   },
+   "coral-chip-ink": {
+    "value": "#c23a2b",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:564",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(194, 58, 43, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     45.2,
+     66.5,
+     36.9
+    ],
+    "role": "Coral chip text; error text (field-error, alerts).",
+    "css_consumers": [
+     ".comp-avatar--coral {color} @source/css/3q17cp_jgfwol.pretty.css:1429",
+     ".chip.coral {color} @source/css/3q17cp_jgfwol.pretty.css:1589",
+     ".cs-door-reg--vanskap {color} @source/css/2h1wwdz1nvxwk.pretty.css:395",
+     ".start-flow .field-error {color} @source/css/2_gt301v4m-60.pretty.css:83"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 2,
+     "source/js/1hcx0qn-qjgfn.js": 2,
+     "source/js/26ye0kuppitcn.js": 2
+    }
+   },
+   "trait-line": {
+    "value": "#6d4fe047",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:565",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(109, 79, 224, 0.278)",
+    "alpha": 0.278,
+    "alpha_hex_digits": "47",
+    "flat_on_body": "#c9bef0",
+    "flat_on_backdrop_median": "#ccbbe8",
+    "lch_ab": [
+     44.6,
+     85.1,
+     304.8
+    ],
+    "role": "Outline of unselected trait / pick toggles.",
+    "css_consumers": [
+     ".trait {border} @source/css/3q17cp_jgfwol.pretty.css:1226",
+     ".start-flow .pick {border} @source/css/2_gt301v4m-60.pretty.css:155",
+     ".start-flow .stile {border} @source/css/2_gt301v4m-60.pretty.css:704"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 1
+    }
+   },
+   "trait-ink": {
+    "value": "#5f5878",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:566",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(95, 88, 120, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     39.2,
+     19.9,
+     300.7
+    ],
+    "role": "Text of unselected trait / pick toggles.",
+    "css_consumers": [
+     ".trait {color} @source/css/3q17cp_jgfwol.pretty.css:1225",
+     ".start-flow .pick {color} @source/css/2_gt301v4m-60.pretty.css:158",
+     ".start-flow .stile {color} @source/css/2_gt301v4m-60.pretty.css:707"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 1
+    }
+   },
+   "trait-on-bg": {
+    "value": "#6d4fe01f",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:567",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(109, 79, 224, 0.122)",
+    "alpha": 0.122,
+    "alpha_hex_digits": "1f",
+    "flat_on_body": "#ddd6f3",
+    "flat_on_backdrop_median": "#e1d2ea",
+    "lch_ab": [
+     44.6,
+     85.1,
+     304.8
+    ],
+    "role": "Fill of selected trait / pick toggles.",
+    "css_consumers": [
+     ".trait.on {background} @source/css/3q17cp_jgfwol.pretty.css:1240",
+     ".start-flow .pick.on {background} @source/css/2_gt301v4m-60.pretty.css:175",
+     ".start-flow .wslot.done {background} @source/css/2_gt301v4m-60.pretty.css:589",
+     ".start-flow .stile.on {background} @source/css/2_gt301v4m-60.pretty.css:733"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 1
+    }
+   },
+   "trait-on-line": {
+    "value": "#6d4fe06b",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:568",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(109, 79, 224, 0.42)",
+    "alpha": 0.42,
+    "alpha_hex_digits": "6b",
+    "flat_on_body": "#b7a8ed",
+    "flat_on_backdrop_median": "#baa5e6",
+    "lch_ab": [
+     44.6,
+     85.1,
+     304.8
+    ],
+    "role": "Outline of selected toggles; hover outline for toggles, cs-chip, sheet close; active progress dot.",
+    "css_consumers": [
+     ".trait.on {border-color} @source/css/3q17cp_jgfwol.pretty.css:1241",
+     ".trait:hover {border-color} @source/css/3q17cp_jgfwol.pretty.css:1245",
+     ".comp-tile:hover {border-color} @source/css/3q17cp_jgfwol.pretty.css:1350",
+     ".create-customize:hover, .create-customize[open] {border-color} @source/css/3q17cp_jgfwol.pretty.css:2402",
+     ".cs-chip:hover {border-color} @source/css/2h1wwdz1nvxwk.pretty.css:192",
+     ".cs-sheet-close:hover {border-color} @source/css/2h1wwdz1nvxwk.pretty.css:303",
+     ".start-flow .pick.on {border-color} @source/css/2_gt301v4m-60.pretty.css:176",
+     ".start-flow .pick:hover {border-color} @source/css/2_gt301v4m-60.pretty.css:180",
+     ".start-flow .wslot.done {border-color} @source/css/2_gt301v4m-60.pretty.css:588",
+     ".start-flow .stile.on {border-color} @source/css/2_gt301v4m-60.pretty.css:732"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/0ad0wel9cyv30.js": 1
+    }
+   },
+   "trait-on-ink": {
+    "value": "#4a36a8",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:569",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(74, 54, 168, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     31.6,
+     70.8,
+     304.3
+    ],
+    "role": "Text of selected toggles.",
+    "css_consumers": [
+     ".trait.on {color} @source/css/3q17cp_jgfwol.pretty.css:1242",
+     ".start-flow .pick.on {color} @source/css/2_gt301v4m-60.pretty.css:177",
+     ".start-flow .wslot.done {color} @source/css/2_gt301v4m-60.pretty.css:590",
+     ".start-flow .stile.on {color} @source/css/2_gt301v4m-60.pretty.css:734"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 1
+    }
+   },
+   "dash-line": {
+    "value": "#6d4fe059",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:570",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(109, 79, 224, 0.349)",
+    "alpha": 0.349,
+    "alpha_hex_digits": "59",
+    "flat_on_body": "#c0b3ee",
+    "flat_on_backdrop_median": "#c3b0e7",
+    "lch_ab": [
+     44.6,
+     85.1,
+     304.8
+    ],
+    "role": "Dashed lines: upload drop zone, add-friend, how-it-works rail, invite slot, map path.",
+    "css_consumers": [
+     ".upload {border} @source/css/3q17cp_jgfwol.pretty.css:1248",
+     ".friend-add {border} @source/css/3q17cp_jgfwol.pretty.css:1326",
+     ".hiw-rail-col:before {border-left} @source/css/3q17cp_jgfwol.pretty.css:2589",
+     ".hiw-invite-slot {border} @source/css/3q17cp_jgfwol.pretty.css:2729",
+     ".hiw-map .map-path {stroke} @source/css/3q17cp_jgfwol.pretty.css:2932",
+     ".cs-chip--add .cs-chip-th {border} @source/css/2h1wwdz1nvxwk.pretty.css:228",
+     ".start-flow .wslot {border} @source/css/2_gt301v4m-60.pretty.css:576"
+    ]
+   },
+   "choice-bg": {
+    "value": "#fff",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:571",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(255, 255, 255, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     100.0,
+     0.0,
+     296.8
+    ],
+    "role": "Story-choice buttons and reader prompt; auth inputs; sound beds; sheet close; feedback textarea.",
+    "css_consumers": [
+     ".reader-choice-prompt {background} @source/css/3q17cp_jgfwol.pretty.css:1890",
+     ".choice {background} @source/css/3q17cp_jgfwol.pretty.css:1907",
+     ".sound-bed {background} @source/css/3q17cp_jgfwol.pretty.css:1990",
+     ".reader-audio-control {background} @source/css/3q17cp_jgfwol.pretty.css:2041",
+     ".friend-mode-option {background} @source/css/3q17cp_jgfwol.pretty.css:2162",
+     ".hiw-choice {background} @source/css/3q17cp_jgfwol.pretty.css:2888",
+     ".cs-sheet-close {background} @source/css/2h1wwdz1nvxwk.pretty.css:291"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 1,
+     "source/js/1hcx0qn-qjgfn.js": 1,
+     "source/js/2j_-r8q4tgdka.js": 2,
+     "source/html/login.en.html": 2,
+     "source/html/integritet.en.html": 3,
+     "source/html/integritet.sv.html": 3,
+     "source/html/login.sv.html": 2,
+     "source/html/villkor.sv.html": 3,
+     "source/html/villkor.en.html": 3,
+     "source/html/signup.sv.html": 2,
+     "source/html/signup.en.html": 2
+    }
+   },
+   "choice-line": {
+    "value": "#6d4fe038",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:572",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(109, 79, 224, 0.22)",
+    "alpha": 0.22,
+    "alpha_hex_digits": "38",
+    "flat_on_body": "#d1c7f1",
+    "flat_on_backdrop_median": "#d4c3e9",
+    "lch_ab": [
+     44.6,
+     85.1,
+     304.8
+    ],
+    "role": "Border of choice buttons / inputs.",
+    "css_consumers": [
+     ".reader-body .btn:disabled:hover, .reader-body .btn:disabled:active, .choice:disabled:hover, .choice:disabled:active {border-color} @source/css/3q17cp_jgfwol.pretty.css:1862",
+     ".reader-choice-prompt {border} @source/css/3q17cp_jgfwol.pretty.css:1892",
+     ".choice {border} @source/css/3q17cp_jgfwol.pretty.css:1908",
+     ".sound-bed {border} @source/css/3q17cp_jgfwol.pretty.css:1991",
+     ".reader-audio-control {border} @source/css/3q17cp_jgfwol.pretty.css:2040",
+     ".friend-mode-option {border} @source/css/3q17cp_jgfwol.pretty.css:2161",
+     ".hiw-choice {border} @source/css/3q17cp_jgfwol.pretty.css:2889"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 1
+    }
+   },
+   "choice-ink": {
+    "value": "#241f35",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:573",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(36, 31, 53, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     13.3,
+     16.0,
+     301.9
+    ],
+    "role": "Text in choice buttons / inputs.",
+    "css_consumers": [
+     ".reader-choice-prompt {color} @source/css/3q17cp_jgfwol.pretty.css:1891",
+     ".choice {color} @source/css/3q17cp_jgfwol.pretty.css:1906",
+     ".sound-bed {color} @source/css/3q17cp_jgfwol.pretty.css:1989",
+     ".reader-audio-control {color} @source/css/3q17cp_jgfwol.pretty.css:2044",
+     ".friend-mode-option {color} @source/css/3q17cp_jgfwol.pretty.css:2165",
+     ".hiw-choice {color} @source/css/3q17cp_jgfwol.pretty.css:2887"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/36tbz-w9v-p8v.js": 1
+    }
+   },
+   "bar-bg": {
+    "value": "#241f3514",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:574",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(36, 31, 53, 0.078)",
+    "alpha": 0.078,
+    "alpha_hex_digits": "14",
+    "flat_on_body": "#ddd9e7",
+    "flat_on_backdrop_median": "#e1d5dd",
+    "lch_ab": [
+     13.3,
+     16.0,
+     301.9
+    ],
+    "role": "Progress-bar track (.hiw-bar).",
+    "css_consumers": [
+     ".hiw-bar {background} @source/css/3q17cp_jgfwol.pretty.css:2776"
+    ]
+   },
+   "prose-ink": {
+    "value": "#3a3450",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:575",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(58, 52, 80, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     23.5,
+     18.9,
+     301.1
+    ],
+    "role": "Story prose in the reader (Source Serif 4).",
+    "css_consumers": [
+     ".prose {color} @source/css/3q17cp_jgfwol.pretty.css:1825",
+     ".prose-plain {color} @source/css/3q17cp_jgfwol.pretty.css:1846",
+     ".hiw-mock-prose {color} @source/css/3q17cp_jgfwol.pretty.css:2865"
+    ]
+   },
+   "foot-ink": {
+    "value": "#5f5878",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:576",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(95, 88, 120, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     39.2,
+     19.9,
+     300.7
+    ],
+    "role": "Footer text.",
+    "css_consumers": [
+     ".foot {color} @source/css/3q17cp_jgfwol.pretty.css:1935",
+     ".foot a {color} @source/css/3q17cp_jgfwol.pretty.css:1946"
+    ]
+   },
+   "btn-grad": {
+    "value": "linear-gradient(135deg, #6d4fe0, #5b3fc7)",
+    "type": "gradient",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:577",
+    "scope": "body[data-theme=\"morgon\"]",
+    "colours": [
+     {
+      "hex": "#6d4fe0",
+      "rgb": "#6d4fe0",
+      "alpha": 1.0
+     },
+     {
+      "hex": "#5b3fc7",
+      "rgb": "#5b3fc7",
+      "alpha": 1.0
+     }
+    ],
+    "role": "Primary button fill (135deg two-stop gradient); theme-toggle thumb; avatar FAB; play button; active job-step dots.",
+    "css_consumers": [
+     ".tt-thumb {background} @source/css/3q17cp_jgfwol.pretty.css:786",
+     ".btn-primary {background} @source/css/3q17cp_jgfwol.pretty.css:909",
+     ".builder-pic .fab {background} @source/css/3q17cp_jgfwol.pretty.css:1187",
+     ".hiw-play {background} @source/css/3q17cp_jgfwol.pretty.css:2809"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/2j_-r8q4tgdka.js": 1
+    }
+   },
+   "btn-ink": {
+    "value": "#fff",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:578",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(255, 255, 255, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     100.0,
+     0.0,
+     296.8
+    ],
+    "role": "Text on --btn-grad and on --accent (active language pill).",
+    "css_consumers": [
+     "body[data-theme=\"natt\"] .tt-opt.night, body[data-theme=\"morgon\"] .tt-opt.day {color} @source/css/3q17cp_jgfwol.pretty.css:820",
+     ".btn-primary {color} @source/css/3q17cp_jgfwol.pretty.css:908",
+     ".builder-pic .fab {color} @source/css/3q17cp_jgfwol.pretty.css:1190",
+     ".hiw-play {color} @source/css/3q17cp_jgfwol.pretty.css:2808"
+    ],
+    "js_html_inline_consumers": {
+     "source/js/2j_-r8q4tgdka.js": 1,
+     "source/js/390j9gbq0u9ce.js": 1,
+     "source/html/login.en.html": 1,
+     "source/html/404.en.html": 1,
+     "source/html/uppgradera.en.html": 1,
+     "source/html/integritet.en.html": 1,
+     "source/html/start.en.html": 1,
+     "source/html/integritet.sv.html": 1,
+     "source/html/404.sv.html": 1,
+     "source/html/home.en.html": 1,
+     "source/html/login.sv.html": 1,
+     "source/html/villkor.sv.html": 1,
+     "source/html/villkor.en.html": 1,
+     "source/html/home.sv.html": 1,
+     "source/html/signup.sv.html": 1,
+     "source/html/start.sv.html": 1,
+     "source/html/uppgradera.sv.html": 1,
+     "source/html/signup.en.html": 1
+    }
+   },
+   "btn-shadow": {
+    "value": "0 14px 34px #6d4fe059",
+    "type": "shadow",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:579",
+    "scope": "body[data-theme=\"morgon\"]",
+    "colours": [
+     {
+      "hex": "#6d4fe059",
+      "rgb": "#6d4fe0",
+      "alpha": 0.349
+     }
+    ],
+    "role": "Coloured glow under primary buttons (gold glow in natt, violet glow in morgon).",
+    "css_consumers": [
+     ".tt-thumb {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:788",
+     ".btn-primary {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:910",
+     ".builder-pic .fab {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:1191",
+     ".hiw-play {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:2810"
+    ]
+   },
+   "btn-shadow-hover": {
+    "value": "0 22px 48px #6d4fe073",
+    "type": "shadow",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:580",
+    "scope": "body[data-theme=\"morgon\"]",
+    "colours": [
+     {
+      "hex": "#6d4fe073",
+      "rgb": "#6d4fe0",
+      "alpha": 0.451
+     }
+    ],
+    "role": "Larger glow on hover.",
+    "css_consumers": [
+     ".btn-primary:hover {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:915",
+     ".hiw-play:hover {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:2826"
+    ]
+   },
+   "ghost-bg": {
+    "value": "#ffffffb8",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:581",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(255, 255, 255, 0.722)",
+    "alpha": 0.722,
+    "alpha_hex_digits": "b8",
+    "flat_on_body": "#faf9fc",
+    "flat_on_backdrop_median": "#fbf7f9",
+    "lch_ab": [
+     100.0,
+     0.0,
+     296.8
+    ],
+    "role": "Ghost/secondary button fill, nav CTA, theme-toggle track, sound panel, friend-photo step, inline friend form.",
+    "css_consumers": [
+     ".nav-cta {background} @source/css/3q17cp_jgfwol.pretty.css:734",
+     ".tt {background} @source/css/3q17cp_jgfwol.pretty.css:769",
+     ".btn-ghost {background} @source/css/3q17cp_jgfwol.pretty.css:919",
+     ".sound-panel {background} @source/css/3q17cp_jgfwol.pretty.css:1960",
+     ".friend-photo-step {background} @source/css/3q17cp_jgfwol.pretty.css:2197",
+     ".cs-inline-friend {background} @source/css/2h1wwdz1nvxwk.pretty.css:507"
+    ]
+   },
+   "ghost-ink": {
+    "value": "#241f35",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:582",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(36, 31, 53, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     13.3,
+     16.0,
+     301.9
+    ],
+    "role": "Ghost button text; theme-toggle option text.",
+    "css_consumers": [
+     ".nav-cta {color} @source/css/3q17cp_jgfwol.pretty.css:733",
+     ".tt-opt {color} @source/css/3q17cp_jgfwol.pretty.css:803",
+     ".btn-ghost {color} @source/css/3q17cp_jgfwol.pretty.css:920"
+    ]
+   },
+   "control-line": {
+    "value": "#887da0",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:583",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(136, 125, 160, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     54.5,
+     20.7,
+     303.7
+    ],
+    "role": "Outline of controls (theme toggle, ghost buttons via --ghost-line).",
+    "css_consumers": [
+     "body[data-theme=\"natt\"] {--ghost-line} @source/css/3q17cp_jgfwol.pretty.css:535",
+     "body[data-theme=\"morgon\"] {--ghost-line} @source/css/3q17cp_jgfwol.pretty.css:584",
+     ".tt {border} @source/css/3q17cp_jgfwol.pretty.css:770"
+    ]
+   },
+   "ghost-line": {
+    "value": "var(--control-line)",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:584",
+    "scope": "body[data-theme=\"morgon\"]",
+    "resolved": "#887da0",
+    "rgba": "rgba(136, 125, 160, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     54.5,
+     20.7,
+     303.7
+    ],
+    "role": "Ghost button outline (= --control-line).",
+    "css_consumers": [
+     ".nav-cta {border} @source/css/3q17cp_jgfwol.pretty.css:735",
+     ".btn-ghost {border} @source/css/3q17cp_jgfwol.pretty.css:921",
+     ".sound-panel {border} @source/css/3q17cp_jgfwol.pretty.css:1961"
+    ]
+   },
+   "card-shadow": {
+    "value": "0 4px 12px #241f351a, 0 22px 52px #241f3529",
+    "type": "shadow",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:585",
+    "scope": "body[data-theme=\"morgon\"]",
+    "colours": [
+     {
+      "hex": "#241f351a",
+      "rgb": "#241f35",
+      "alpha": 0.102
+     },
+     {
+      "hex": "#241f3529",
+      "rgb": "#241f35",
+      "alpha": 0.161
+     }
+    ],
+    "role": "Drop shadow of cards, books, covers (navy-black in natt; two-layer plum in morgon).",
+    "css_consumers": [
+     ".fan .badge {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:987",
+     ".glass {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:1115",
+     ".book {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:1488",
+     ".reader-keepsake-cover {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:2115",
+     ".hiw-fan-card {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:2754",
+     ".hiw-cover {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:3051",
+     ".hiw-memory-tag {box-shadow} @source/css/3q17cp_jgfwol.pretty.css:3095",
+     ".start-flow .gbook {box-shadow} @source/css/2_gt301v4m-60.pretty.css:26"
+    ]
+   },
+   "logo-ink": {
+    "value": "#6d4fe0",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:586",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(109, 79, 224, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     44.6,
+     85.1,
+     304.8
+    ],
+    "role": "Wordmark colour (Cinzel caps); reader and ceremony titles; surprise door star; story-door register label.",
+    "css_consumers": [
+     ".logo {color} @source/css/3q17cp_jgfwol.pretty.css:699",
+     ".reader-title {color} @source/css/3q17cp_jgfwol.pretty.css:1815",
+     ".reader-ceremony-title {color} @source/css/3q17cp_jgfwol.pretty.css:2124",
+     ".cs-door-reg--surprise {color} @source/css/2h1wwdz1nvxwk.pretty.css:398",
+     ".cs-door-face:after {border} @source/css/2h1wwdz1nvxwk.pretty.css:447",
+     ".cs-door-star {color} @source/css/2h1wwdz1nvxwk.pretty.css:454",
+     ".cs-door-face--fallback:before {background} @source/css/2h1wwdz1nvxwk.pretty.css:472"
+    ]
+   },
+   "logo-shadow": {
+    "value": "0 1px 2px #241f352e, 0 0 24px #6d4fe052",
+    "type": "shadow",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:587",
+    "scope": "body[data-theme=\"morgon\"]",
+    "colours": [
+     {
+      "hex": "#241f352e",
+      "rgb": "#241f35",
+      "alpha": 0.18
+     },
+     {
+      "hex": "#6d4fe052",
+      "rgb": "#6d4fe0",
+      "alpha": 0.322
+     }
+    ],
+    "role": "Wordmark glow: dark drop + gold halo (natt) / soft plum drop + violet halo (morgon).",
+    "css_consumers": [
+     ".logo {text-shadow} @source/css/3q17cp_jgfwol.pretty.css:702",
+     ".reader-title {text-shadow} @source/css/3q17cp_jgfwol.pretty.css:1817",
+     ".reader-ceremony-title {text-shadow} @source/css/3q17cp_jgfwol.pretty.css:2126"
+    ]
+   },
+   "map-dot": {
+    "value": "var(--violet)",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:588",
+    "scope": "body[data-theme=\"morgon\"]",
+    "resolved": "#6d4fe0",
+    "rgba": "rgba(109, 79, 224, 1.0)",
+    "alpha": 1.0,
+    "lch_ab": [
+     44.6,
+     85.1,
+     304.8
+    ],
+    "role": "Dots on the how-it-works story map.",
+    "css_consumers": [
+     ".hiw-map .map-dot {fill} @source/css/3q17cp_jgfwol.pretty.css:2954",
+     ".hiw-map .map-dot-halo {fill} @source/css/3q17cp_jgfwol.pretty.css:2957"
+    ]
+   },
+   "map-glow": {
+    "value": "#6d4fe033",
+    "type": "color",
+    "source": "source/css/3q17cp_jgfwol.pretty.css:589",
+    "scope": "body[data-theme=\"morgon\"]",
+    "rgba": "rgba(109, 79, 224, 0.2)",
+    "alpha": 0.2,
+    "alpha_hex_digits": "33",
+    "flat_on_body": "#d3caf2",
+    "flat_on_backdrop_median": "#d7c6e9",
+    "lch_ab": [
+     44.6,
+     85.1,
+     304.8
+    ],
+    "role": "Glow behind map medallions and the \"next book\" cover.",
+    "css_consumers": [
+     ".hiw-map .map-medallion {filter} @source/css/3q17cp_jgfwol.pretty.css:2980",
+     ".hiw-cover-next {filter} @source/css/3q17cp_jgfwol.pretty.css:3057"
+    ]
+   }
+  }
+ },
+ "accent_swap": {
+  "note": "Gold leads at night, violet leads in the morning; gold survives in morgon only as status/marker colour (--gold dots, --gold-chip-*, map choice ring --gold-soft, create-customize chevron --gold-soft).",
+  "pairs": [
+   {
+    "token": "--accent",
+    "natt": "#f5c542",
+    "morgon": "#6d4fe0"
+   },
+   {
+    "token": "--accent-ink",
+    "natt": "#f5c542",
+    "morgon": "#5b3fc7"
+   },
+   {
+    "token": "--logo-ink",
+    "natt": "#f5c542",
+    "morgon": "#6d4fe0"
+   },
+   {
+    "token": "--btn-grad",
+    "natt": "linear-gradient(135deg, #ffe08a, #f5c542)",
+    "morgon": "linear-gradient(135deg, #6d4fe0, #5b3fc7)"
+   },
+   {
+    "token": "--btn-ink",
+    "natt": "#3a2b10",
+    "morgon": "#fff"
+   },
+   {
+    "token": "--btn-shadow",
+    "natt": "0 14px 40px #f5c54247",
+    "morgon": "0 14px 34px #6d4fe059"
+   },
+   {
+    "token": "--map-dot",
+    "natt": "#9b87f5",
+    "morgon": "#6d4fe0"
+   },
+   {
+    "token": "--map-glow",
+    "natt": "#f5c54240",
+    "morgon": "#6d4fe033"
+   },
+   {
+    "token": "--logo-shadow",
+    "natt": "0 2px 6px #050814cc, 0 0 34px #f5c54273",
+    "morgon": "0 1px 2px #241f352e, 0 0 24px #6d4fe052"
+   },
+   {
+    "token": "--chip-ink",
+    "natt": "#e8dfc9",
+    "morgon": "#5b3fc7"
+   },
+   {
+    "token": "--pill-ink",
+    "natt": "#c9bcff",
+    "morgon": "#5b3fc7"
+   }
+  ]
+ },
+ "gradients": {
+  "theme_tokens": {
+   "btn-grad": {
+    "natt": "linear-gradient(135deg, #ffe08a, #f5c542)",
+    "morgon": "linear-gradient(135deg, #6d4fe0, #5b3fc7)",
+    "source": [
+     "source/css/3q17cp_jgfwol.pretty.css:528",
+     "source/css/3q17cp_jgfwol.pretty.css:577"
+    ]
+   }
+  },
+  "literal": [
+   {
+    "css": "linear-gradient(135deg, #ffe08a, #f5c542)",
+    "count": 2,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     "body[data-theme=\"natt\"] {--btn-grad} @source/css/3q17cp_jgfwol.pretty.css:528",
+     ".glod-wb-steps li.done .dot {background} @source/css/37m388zf6rymp.pretty.css:300"
+    ]
+   },
+   {
+    "css": "linear-gradient(#fff 0 0)",
+    "count": 2,
+    "family": "mask (not a colour)",
+    "uses": [
+     ".glass:before {-webkit-mask-image} @source/css/3q17cp_jgfwol.pretty.css:1135",
+     ".glass:before {-webkit-mask-image} @source/css/3q17cp_jgfwol.pretty.css:1135"
+    ]
+   },
+   {
+    "css": "linear-gradient(135deg, var(--gold-chip-bg), var(--pill-bg))",
+    "count": 2,
+    "family": "global UI",
+    "uses": [
+     ".comp-avatar--gold {background} @source/css/3q17cp_jgfwol.pretty.css:1420",
+     ".pframe-initial {background} @source/css/3q17cp_jgfwol.pretty.css:1751"
+    ]
+   },
+   {
+    "css": "linear-gradient(135deg, var(--pill-bg), var(--gold-chip-bg))",
+    "count": 2,
+    "family": "create sheet (/start)",
+    "uses": [
+     ".comp-avatar--violet {background} @source/css/3q17cp_jgfwol.pretty.css:1424",
+     ".cs-coin {background} @source/css/2h1wwdz1nvxwk.pretty.css:120"
+    ]
+   },
+   {
+    "css": "linear-gradient(160deg, var(--pill-bg), var(--gold-chip-bg))",
+    "count": 2,
+    "family": "start-flow (portrait painting)",
+    "uses": [
+     ".cs-portrait {background} @source/css/2h1wwdz1nvxwk.pretty.css:16",
+     ".start-flow .pframe {background} @source/css/2_gt301v4m-60.pretty.css:222"
+    ]
+   },
+   {
+    "css": "radial-gradient(circle, #ffe08a, #f2b22e 60%, #0000)",
+    "count": 2,
+    "family": "start-flow (portrait painting)",
+    "uses": [
+     ".start-flow .ember {background} @source/css/2_gt301v4m-60.pretty.css:342",
+     ".start-flow .veil-speck {background} @source/css/2_gt301v4m-60.pretty.css:403"
+    ]
+   },
+   {
+    "css": "linear-gradient(#0b0f1e61 0%, #0b0f1e80 45%, #0d1122bd 100%)",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".bg-night .scrim {background} @source/css/3q17cp_jgfwol.pretty.css:632"
+    ]
+   },
+   {
+    "css": "radial-gradient(1.4px 1.4px at 12% 8%, #ffe9b0e6 50%, #0000 51%)",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".starfield {background-image} @source/css/3q17cp_jgfwol.pretty.css:637-643"
+    ]
+   },
+   {
+    "css": "radial-gradient(1px 1px at 32% 16%, #f5f0e8cc 50%, #0000 51%)",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".starfield {background-image} @source/css/3q17cp_jgfwol.pretty.css:637-643"
+    ]
+   },
+   {
+    "css": "radial-gradient(1.6px 1.6px at 58% 6%, #f5c542d9 50%, #0000 51%)",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".starfield {background-image} @source/css/3q17cp_jgfwol.pretty.css:637-643"
+    ]
+   },
+   {
+    "css": "radial-gradient(1px 1px at 76% 12%, #f5f0e8b3 50%, #0000 51%)",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".starfield {background-image} @source/css/3q17cp_jgfwol.pretty.css:637-643"
+    ]
+   },
+   {
+    "css": "radial-gradient(1.2px 1.2px at 90% 22%, #ffe9b0bf 50%, #0000 51%)",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".starfield {background-image} @source/css/3q17cp_jgfwol.pretty.css:637-643"
+    ]
+   },
+   {
+    "css": "radial-gradient(1.3px 1.3px at 44% 24%, #9b87f599 50%, #0000 51%)",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".starfield {background-image} @source/css/3q17cp_jgfwol.pretty.css:637-643"
+    ]
+   },
+   {
+    "css": "linear-gradient(135deg, #9b87f580, #f2b22e59 50%, #ff61544d)",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".glass:before {background} @source/css/3q17cp_jgfwol.pretty.css:1130"
+    ]
+   },
+   {
+    "css": "radial-gradient( 130% 140% at 0% 0%, var(--gold-chip-bg), transparent 58% )",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".comp-tile--gold {background-image} @source/css/3q17cp_jgfwol.pretty.css:1353-1357"
+    ]
+   },
+   {
+    "css": "radial-gradient( 130% 140% at 0% 0%, var(--pill-bg), transparent 58% )",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".comp-tile--violet {background-image} @source/css/3q17cp_jgfwol.pretty.css:1360-1364"
+    ]
+   },
+   {
+    "css": "radial-gradient( 130% 140% at 0% 0%, var(--coral-chip-bg), transparent 58% )",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".comp-tile--coral {background-image} @source/css/3q17cp_jgfwol.pretty.css:1367-1371"
+    ]
+   },
+   {
+    "css": "radial-gradient( 1.3px 1.3px at 82% 22%, var(--gold-chip-ink) 50%, transparent 51% )",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".comp-tile--story:after {background-image} @source/css/3q17cp_jgfwol.pretty.css:1377-1402"
+    ]
+   },
+   {
+    "css": "radial-gradient( 1px 1px at 68% 66%, var(--gold-chip-ink) 50%, transparent 51% )",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".comp-tile--story:after {background-image} @source/css/3q17cp_jgfwol.pretty.css:1377-1402"
+    ]
+   },
+   {
+    "css": "radial-gradient( 1.5px 1.5px at 91% 50%, var(--gold-chip-ink) 50%, transparent 51% )",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".comp-tile--story:after {background-image} @source/css/3q17cp_jgfwol.pretty.css:1377-1402"
+    ]
+   },
+   {
+    "css": "radial-gradient( 1px 1px at 76% 84%, var(--gold-chip-ink) 50%, transparent 51% )",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".comp-tile--story:after {background-image} @source/css/3q17cp_jgfwol.pretty.css:1377-1402"
+    ]
+   },
+   {
+    "css": "radial-gradient( 1.2px 1.2px at 60% 32%, var(--gold-chip-ink) 50%, transparent 51% )",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".comp-tile--story:after {background-image} @source/css/3q17cp_jgfwol.pretty.css:1377-1402"
+    ]
+   },
+   {
+    "css": "linear-gradient(135deg, var(--coral-chip-bg), var(--pill-bg))",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".comp-avatar--coral {background} @source/css/3q17cp_jgfwol.pretty.css:1428"
+    ]
+   },
+   {
+    "css": "linear-gradient(135deg, #f2b22ebf, #ff615466)",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".adv.ember:before {background} @source/css/3q17cp_jgfwol.pretty.css:1623"
+    ]
+   },
+   {
+    "css": "linear-gradient(90deg, #f5c542, #9b87f5)",
+    "count": 1,
+    "family": "global UI",
+    "uses": [
+     ".hiw-bar i {background} @source/css/3q17cp_jgfwol.pretty.css:2782"
+    ]
+   },
+   {
+    "css": "linear-gradient(160deg, #3f2f68, #241b3f)",
+    "count": 1,
+    "family": "create sheet (/start)",
+    "uses": [
+     ".cs-spine {background} @source/css/2h1wwdz1nvxwk.pretty.css:89"
+    ]
+   },
+   {
+    "css": "linear-gradient(135deg, var(--violet-soft), var(--gold-soft))",
+    "count": 1,
+    "family": "create sheet (/start)",
+    "uses": [
+     ".cs-chip-th {background} @source/css/2h1wwdz1nvxwk.pretty.css:208"
+    ]
+   },
+   {
+    "css": "linear-gradient(160deg, #140f28e6, #281e46d9)",
+    "count": 1,
+    "family": "create sheet (/start)",
+    "uses": [
+     ".cs-door-face {background} @source/css/2h1wwdz1nvxwk.pretty.css:435"
+    ]
+   },
+   {
+    "css": "linear-gradient(160deg, #ded5f5, #c9bcf0)",
+    "count": 1,
+    "family": "create sheet (/start)",
+    "uses": [
+     "body[data-theme=\"morgon\"] .cs-door-face {background} @source/css/2h1wwdz1nvxwk.pretty.css:443"
+    ]
+   },
+   {
+    "css": "radial-gradient( circle at 50% 72%, color-mix(in srgb, var(--logo-ink) 34%, transparent), transparent 35% )",
+    "count": 1,
+    "family": "create sheet (/start)",
+    "uses": [
+     ".cs-door-face--fallback:before {background} @source/css/2h1wwdz1nvxwk.pretty.css:472-483"
+    ]
+   },
+   {
+    "css": "linear-gradient( 135deg, transparent 48%, color-mix(in srgb, var(--violet-soft) 38%, transparent) 50%, transparent 52% )",
+    "count": 1,
+    "family": "create sheet (/start)",
+    "uses": [
+     ".cs-door-face--fallback:before {background} @source/css/2h1wwdz1nvxwk.pretty.css:472-483"
+    ]
+   },
+   {
+    "css": "linear-gradient(#07091780 0%, #07091742 42%, #07091770 100%)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-ambient:after {background} @source/css/37m388zf6rymp.pretty.css:46"
+    ]
+   },
+   {
+    "css": "linear-gradient(#3b2c6433 0%, #fff6e814 45%, #ede9f661 100%)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     "body[data-theme=\"morgon\"] .glod-ambient:after {background} @source/css/37m388zf6rymp.pretty.css:51"
+    ]
+   },
+   {
+    "css": "linear-gradient(90deg, #33210f, #553d24 45%, #291908)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-post {background} @source/css/37m388zf6rymp.pretty.css:73"
+    ]
+   },
+   {
+    "css": "linear-gradient(178deg, #5e4129, #4a3120 56%, #3c2717)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-board {background} @source/css/37m388zf6rymp.pretty.css:91"
+    ]
+   },
+   {
+    "css": "radial-gradient(circle at 80% 22%, #0003 0 4px, #00000017 7px, #0000 13px)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-board:before {background} @source/css/37m388zf6rymp.pretty.css:108-116"
+    ]
+   },
+   {
+    "css": "repeating-linear-gradient( 91deg, #0000001c 0 2px, #0000 2px 9px, #00000012 9px 10px, #0000 10px 21px )",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-board:before {background} @source/css/37m388zf6rymp.pretty.css:108-116"
+    ]
+   },
+   {
+    "css": "linear-gradient(263deg, #ff983c29, #0000 46%)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-board:after {background} @source/css/37m388zf6rymp.pretty.css:124"
+    ]
+   },
+   {
+    "css": "radial-gradient(circle at 35% 30%, #e8d5ac, #6b5335 62%, #2c1e12)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-nail {background} @source/css/37m388zf6rymp.pretty.css:134"
+    ]
+   },
+   {
+    "css": "radial-gradient(circle at 40% 35%, #ffe9b0, #f2a13c 65%, #c96a1f)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-pulse-dot {background} @source/css/37m388zf6rymp.pretty.css:183"
+    ]
+   },
+   {
+    "css": "linear-gradient(#efdcb2, #e3cb9c)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-wb-rewrite {background} @source/css/37m388zf6rymp.pretty.css:220"
+    ]
+   },
+   {
+    "css": "linear-gradient(#f7d77f, #eeb84e)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-wb-action {background} @source/css/37m388zf6rymp.pretty.css:236"
+    ]
+   },
+   {
+    "css": "radial-gradient(circle at 40% 35%, #ffe9b0, #f5c542 70%, #d98f26)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-wb-steps li.active .dot {background} @source/css/37m388zf6rymp.pretty.css:291"
+    ]
+   },
+   {
+    "css": "linear-gradient(#d6ba8c00, #d6ba8c8c)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-stage[data-narrow=\"1\"] .glod-rope {background} @source/css/37m388zf6rymp.pretty.css:366"
+    ]
+   },
+   {
+    "css": "repeating-linear-gradient(97deg, #92704208 0 2px, #0000 2px 7px)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-mem-card {background} @source/css/37m388zf6rymp.pretty.css:466-469"
+    ]
+   },
+   {
+    "css": "radial-gradient(120% 90% at 80% 6%, #fdf4df 0%, #fdf4df00 55%)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-mem-card {background} @source/css/37m388zf6rymp.pretty.css:466-469"
+    ]
+   },
+   {
+    "css": "linear-gradient(172deg, #f9edd2 0%, #f2e2ba 60%, #ebd8ab 100%)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-mem-card {background} @source/css/37m388zf6rymp.pretty.css:466-469"
+    ]
+   },
+   {
+    "css": "radial-gradient( 37% 30% at 0 102%, #100602f5 0%, #2a1206e0 22%, #52260c9e 42%, #85481857 60%, #b2742e29 76%, #cda05014 86%, #0000 94% )",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-mem-card:before {background} @source/css/37m388zf6rymp.pretty.css:503-512"
+    ]
+   },
+   {
+    "css": "linear-gradient(#0000 44%, #ff943a17 66%, #ff943a57)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-mem-card:after {background} @source/css/37m388zf6rymp.pretty.css:519-521"
+    ]
+   },
+   {
+    "css": "radial-gradient(85% 50% at 50% 106%, #ffaa5047, #0000 70%)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-mem-card:after {background} @source/css/37m388zf6rymp.pretty.css:519-521"
+    ]
+   },
+   {
+    "css": "radial-gradient( circle at 42% 38%, #fff3cf, #ffd98f 45%, #ff9a4c 78%, #e06a24 100% )",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-mem-ember-core {background} @source/css/37m388zf6rymp.pretty.css:542-548"
+    ]
+   },
+   {
+    "css": "linear-gradient(172deg, #f9edd2, #ead5a5)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-active-ember-with-cue {background} @source/css/37m388zf6rymp.pretty.css:641"
+    ]
+   },
+   {
+    "css": "radial-gradient( circle at 38% 34%, #fff7d6 0 14%, #ffd77a 36%, #e78232 72%, #8b2f19 100% )",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-active-ember-core {background} @source/css/37m388zf6rymp.pretty.css:655-661"
+    ]
+   },
+   {
+    "css": "repeating-linear-gradient(#fffcf000 0 4px, #926e404d 4px 5px)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-book-pages {background} @source/css/37m388zf6rymp.pretty.css:817-819"
+    ]
+   },
+   {
+    "css": "linear-gradient(90deg, #cdb689, #f2e6c8 34%, #e6d5b0 72%, #c4ab7e)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-book-pages {background} @source/css/37m388zf6rymp.pretty.css:817-819"
+    ]
+   },
+   {
+    "css": "radial-gradient(150% 80% at 24% 0, #ffffff0d, #0000 55%)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-book-cover {background} @source/css/37m388zf6rymp.pretty.css:828-832"
+    ]
+   },
+   {
+    "css": "repeating-linear-gradient(98deg, #fff6e608 0 2px, #0000 2px 5px)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-book-cover {background} @source/css/37m388zf6rymp.pretty.css:828-832"
+    ]
+   },
+   {
+    "css": "repeating-linear-gradient(8deg, #0805160f 0 2px, #0000 2px 5px)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-book-cover {background} @source/css/37m388zf6rymp.pretty.css:828-832"
+    ]
+   },
+   {
+    "css": "linear-gradient(162deg, #322459 0%, #413067 58%, #4e2f5e 100%)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-book-cover {background} @source/css/37m388zf6rymp.pretty.css:828-832"
+    ]
+   },
+   {
+    "css": "repeating-linear-gradient( #0000 0 42px, #ffebbe21 42px 44px, #08051473 44px 47px )",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-book-spine {background} @source/css/37m388zf6rymp.pretty.css:860-874"
+    ]
+   },
+   {
+    "css": "linear-gradient( 90deg, #251a45 0%, #33255c 38%, #1e1440 66%, #ffe6b429 76%, #150e30 84%, #fff0 100% )",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-book-spine {background} @source/css/37m388zf6rymp.pretty.css:860-874"
+    ]
+   },
+   {
+    "css": "radial-gradient( 125% 90% at 50% 120%, #ff963c66, #ff8c3721 46%, #0000 70% )",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-book-fire {background} @source/css/37m388zf6rymp.pretty.css:885-890"
+    ]
+   },
+   {
+    "css": "linear-gradient(90deg, #0000, #f5c5428c 22% 78%, #0000)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-book-rule {background} @source/css/37m388zf6rymp.pretty.css:903"
+    ]
+   },
+   {
+    "css": "linear-gradient(178deg, #6a4a2f, #4a3120 58%, #38240f)",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-open {background} @source/css/37m388zf6rymp.pretty.css:988"
+    ]
+   },
+   {
+    "css": "radial-gradient( circle at 13px, #e8d5ace6 0 1.4px, #6b5335e6 2.2px, #2c1e12d9 3px, #0000 4.2px )",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-open:before {background} @source/css/37m388zf6rymp.pretty.css:1015-1036"
+    ]
+   },
+   {
+    "css": "radial-gradient( circle at calc(100% - 13px), #e8d5ace6 0 1.4px, #6b5335e6 2.2px, #2c1e12d9 3px, #0000 4.2px )",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-open:before {background} @source/css/37m388zf6rymp.pretty.css:1015-1036"
+    ]
+   },
+   {
+    "css": "repeating-linear-gradient( 92deg, #0000001f 0 2px, #0000 2px 8px, #00000012 8px 9px, #0000 9px 19px )",
+    "count": 1,
+    "family": "glod-stage (hearth/ember, /start + /share)",
+    "uses": [
+     ".glod-open:before {background} @source/css/37m388zf6rymp.pretty.css:1015-1036"
+    ]
+   },
+   {
+    "css": "linear-gradient(160deg, #9b87f58c, #f2b22e66)",
+    "count": 1,
+    "family": "start-flow (portrait painting)",
+    "uses": [
+     ".start-flow .pframe .veil {background} @source/css/2_gt301v4m-60.pretty.css:242"
+    ]
+   },
+   {
+    "css": "linear-gradient(115deg, #0000 42%, #ffe08a80 50%, #0000 58%)",
+    "count": 1,
+    "family": "start-flow (portrait painting)",
+    "uses": [
+     ".start-flow .easel .sheen {background} @source/css/2_gt301v4m-60.pretty.css:313"
+    ]
+   },
+   {
+    "css": "radial-gradient( circle at 50% 60%, #f5c54266, #9b87f52e 46%, #0000 72% )",
+    "count": 1,
+    "family": "start-flow (portrait painting)",
+    "uses": [
+     ".start-flow .easel .veil-glow {background} @source/css/2_gt301v4m-60.pretty.css:368-373"
+    ]
+   }
+  ]
+ },
+ "shadows_coloured": [
+  {
+   "selector": ".logo",
+   "context": "",
+   "property": "text-shadow",
+   "value": "var(--logo-shadow)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:702",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".logo img",
+   "context": "",
+   "property": "filter",
+   "value": "drop-shadow(0 0 14px #f5c54280)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:713",
+   "colours": [
+    {
+     "hex": "#f5c54280",
+     "rgb": "#f5c542",
+     "alpha": 0.502
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": ".tt-thumb",
+   "context": "",
+   "property": "box-shadow",
+   "value": "var(--btn-shadow)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:788",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".tt:focus-visible",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 0 0 6px color-mix(in srgb, var(--card) 88%, transparent)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:825",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": "h1",
+   "context": "",
+   "property": "text-shadow",
+   "value": "var(--h1-shadow)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:860",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".btn-primary",
+   "context": "",
+   "property": "box-shadow",
+   "value": "var(--btn-shadow), inset 0 1px 0 #ffffff73",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:910",
+   "colours": [
+    {
+     "hex": "#ffffff73",
+     "rgb": "#ffffff",
+     "alpha": 0.451
+    }
+   ],
+   "families": [
+    "light highlight (inset)"
+   ]
+  },
+  {
+   "selector": ".btn-primary:hover",
+   "context": "",
+   "property": "box-shadow",
+   "value": "var(--btn-shadow-hover)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:915",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".fan .fbook",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 24px 50px #0a072066, 0 0 44px #f5c5421f",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:938",
+   "colours": [
+    {
+     "hex": "#0a072066",
+     "rgb": "#0a0720",
+     "alpha": 0.4
+    },
+    {
+     "hex": "#f5c5421f",
+     "rgb": "#f5c542",
+     "alpha": 0.122
+    }
+   ],
+   "families": [
+    "gold/ember glow",
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".fan .badge",
+   "context": "",
+   "property": "box-shadow",
+   "value": "var(--card-shadow)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:987",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".badge .dotpulse",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 0 #f2b22e80",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1017",
+   "colours": [
+    {
+     "hex": "#f2b22e80",
+     "rgb": "#f2b22e",
+     "alpha": 0.502
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": "0%",
+   "context": "@keyframes pulse",
+   "property": "box-shadow",
+   "value": "0 0 #f2b22e73",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1021",
+   "colours": [
+    {
+     "hex": "#f2b22e73",
+     "rgb": "#f2b22e",
+     "alpha": 0.451
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": "70%",
+   "context": "@keyframes pulse",
+   "property": "box-shadow",
+   "value": "0 0 0 12px #f2b22e00",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1024",
+   "colours": [
+    {
+     "hex": "#f2b22e00",
+     "rgb": "#f2b22e",
+     "alpha": 0.0
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": "to",
+   "context": "@keyframes pulse",
+   "property": "box-shadow",
+   "value": "0 0 #f2b22e00",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1027",
+   "colours": [
+    {
+     "hex": "#f2b22e00",
+     "rgb": "#f2b22e",
+     "alpha": 0.0
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": ".glass",
+   "context": "",
+   "property": "box-shadow",
+   "value": "var(--card-shadow)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1115",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".builder-pic .pframe",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 16px 36px #0a07204d",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1175",
+   "colours": [
+    {
+     "hex": "#0a07204d",
+     "rgb": "#0a0720",
+     "alpha": 0.302
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".builder-pic .fab",
+   "context": "",
+   "property": "box-shadow",
+   "value": "var(--btn-shadow)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1191",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".friend .avatar",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 10px 22px #0a072040",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1309",
+   "colours": [
+    {
+     "hex": "#0a072040",
+     "rgb": "#0a0720",
+     "alpha": 0.251
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".comp-avatar",
+   "context": "",
+   "property": "box-shadow",
+   "value": "inset 0 0 0 1px var(--card-line)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1411",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".companion-pic",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 12px 26px #6d4fe040",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1458",
+   "colours": [
+    {
+     "hex": "#6d4fe040",
+     "rgb": "#6d4fe0",
+     "alpha": 0.251
+    }
+   ],
+   "families": [
+    "violet glow"
+   ]
+  },
+  {
+   "selector": ".book",
+   "context": "",
+   "property": "box-shadow",
+   "value": "var(--card-shadow)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1488",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".reader-title",
+   "context": "",
+   "property": "text-shadow",
+   "value": "var(--logo-shadow)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1817",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".reader-link-wait .dotpulse",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 0 #f2b22e80",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1883",
+   "colours": [
+    {
+     "hex": "#f2b22e80",
+     "rgb": "#f2b22e",
+     "alpha": 0.502
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": ".choice:hover",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 14px 30px #6d4fe02e",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:1926",
+   "colours": [
+    {
+     "hex": "#6d4fe02e",
+     "rgb": "#6d4fe0",
+     "alpha": 0.18
+    }
+   ],
+   "families": [
+    "violet glow"
+   ]
+  },
+  {
+   "selector": ".reader-keepsake-cover",
+   "context": "",
+   "property": "box-shadow",
+   "value": "var(--card-shadow)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:2115",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".reader-ceremony-title",
+   "context": "",
+   "property": "text-shadow",
+   "value": "var(--logo-shadow)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:2126",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".friend-mode-option[aria-pressed=\"true\"]",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 10px 26px #6d4fe024",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:2186",
+   "colours": [
+    {
+     "hex": "#6d4fe024",
+     "rgb": "#6d4fe0",
+     "alpha": 0.141
+    }
+   ],
+   "families": [
+    "violet glow"
+   ]
+  },
+  {
+   "selector": ".create-customize:hover, .create-customize[open]",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 6px 24px -14px var(--accent)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:2403",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".hiw-fan-card",
+   "context": "",
+   "property": "box-shadow",
+   "value": "var(--card-shadow)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:2754",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".hiw-play",
+   "context": "",
+   "property": "box-shadow",
+   "value": "var(--btn-shadow), inset 0 1px 0 #ffffff73",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:2810",
+   "colours": [
+    {
+     "hex": "#ffffff73",
+     "rgb": "#ffffff",
+     "alpha": 0.451
+    }
+   ],
+   "families": [
+    "light highlight (inset)"
+   ]
+  },
+  {
+   "selector": ".hiw-play:hover",
+   "context": "",
+   "property": "box-shadow",
+   "value": "var(--btn-shadow-hover)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:2826",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".hiw-map .map-medallion",
+   "context": "",
+   "property": "filter",
+   "value": "drop-shadow(0 0 18px var(--map-glow))",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:2980",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".hiw-cover",
+   "context": "",
+   "property": "box-shadow",
+   "value": "var(--card-shadow)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:3051",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".hiw-cover-next",
+   "context": "",
+   "property": "filter",
+   "value": "drop-shadow(0 0 22px var(--map-glow))",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:3057",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".hiw-memory-tag",
+   "context": "",
+   "property": "box-shadow",
+   "value": "var(--card-shadow)",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:3095",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".hiw-memory-tag .dotpulse",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 0 #f2b22e80",
+   "source": "source/css/3q17cp_jgfwol.pretty.css:3113",
+   "colours": [
+    {
+     "hex": "#f2b22e80",
+     "rgb": "#f2b22e",
+     "alpha": 0.502
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": ".cs-portrait",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 6px 22px #0000002e",
+   "source": "source/css/2h1wwdz1nvxwk.pretty.css:21",
+   "colours": [
+    {
+     "hex": "#0000002e",
+     "rgb": "#000000",
+     "alpha": 0.18
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".cs-h1",
+   "context": "",
+   "property": "text-shadow",
+   "value": "var(--h1-shadow)",
+   "source": "source/css/2h1wwdz1nvxwk.pretty.css:64",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".cs-memtag",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 4px 14px #00000026",
+   "source": "source/css/2h1wwdz1nvxwk.pretty.css:108",
+   "colours": [
+    {
+     "hex": "#00000026",
+     "rgb": "#000000",
+     "alpha": 0.149
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".glod-post",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 12px 18px #04030c8c",
+   "source": "source/css/37m388zf6rymp.pretty.css:79",
+   "colours": [
+    {
+     "hex": "#04030c8c",
+     "rgb": "#04030c",
+     "alpha": 0.549
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".glod-board",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 22px 34px #04030c99, 0 0 60px #ff963c12, inset 0 1px #ffd8a038, inset 0 -3px #00000059",
+   "source": "source/css/37m388zf6rymp.pretty.css:97",
+   "colours": [
+    {
+     "hex": "#04030c99",
+     "rgb": "#04030c",
+     "alpha": 0.6
+    },
+    {
+     "hex": "#ff963c12",
+     "rgb": "#ff963c",
+     "alpha": 0.071
+    },
+    {
+     "hex": "#ffd8a038",
+     "rgb": "#ffd8a0",
+     "alpha": 0.22
+    },
+    {
+     "hex": "#00000059",
+     "rgb": "#000000",
+     "alpha": 0.349
+    }
+   ],
+   "families": [
+    "gold/ember glow",
+    "ink-dark (navy/plum black)",
+    "other"
+   ]
+  },
+  {
+   "selector": ".glod-nail",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 1px 2px #0009",
+   "source": "source/css/37m388zf6rymp.pretty.css:139",
+   "colours": [
+    {
+     "hex": "#0009",
+     "rgb": "#000000",
+     "alpha": 0.6
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".glod-wb-title",
+   "context": "",
+   "property": "text-shadow",
+   "value": "0 1px #0006",
+   "source": "source/css/37m388zf6rymp.pretty.css:177",
+   "colours": [
+    {
+     "hex": "#0006",
+     "rgb": "#000000",
+     "alpha": 0.4
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".glod-pulse-dot",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 0 12px 3px #ffb2508c",
+   "source": "source/css/37m388zf6rymp.pretty.css:189",
+   "colours": [
+    {
+     "hex": "#ffb2508c",
+     "rgb": "#ffb250",
+     "alpha": 0.549
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": ".glod-alert-dot",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 0 10px 2px #f3c36b61",
+   "source": "source/css/37m388zf6rymp.pretty.css:208",
+   "colours": [
+    {
+     "hex": "#f3c36b61",
+     "rgb": "#f3c36b",
+     "alpha": 0.38
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": ".glod-wb-rewrite",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 3px 8px #04030c66",
+   "source": "source/css/37m388zf6rymp.pretty.css:228",
+   "colours": [
+    {
+     "hex": "#04030c66",
+     "rgb": "#04030c",
+     "alpha": 0.4
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".glod-wb-action",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 5px 12px #04030c59",
+   "source": "source/css/37m388zf6rymp.pretty.css:242",
+   "colours": [
+    {
+     "hex": "#04030c59",
+     "rgb": "#04030c",
+     "alpha": 0.349
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".glod-wb-steps li.active .dot",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 0 10px 2px #ffc45a80",
+   "source": "source/css/37m388zf6rymp.pretty.css:294",
+   "colours": [
+    {
+     "hex": "#ffc45a80",
+     "rgb": "#ffc45a",
+     "alpha": 0.502
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": ".glod-mem",
+   "context": "",
+   "property": "filter",
+   "value": "drop-shadow(0 16px 24px #0804128c) drop-shadow(0 4px 8px #280e0459) drop-shadow(0 0 28px #ffaa5026)",
+   "source": "source/css/37m388zf6rymp.pretty.css:434",
+   "colours": [
+    {
+     "hex": "#0804128c",
+     "rgb": "#080412",
+     "alpha": 0.549
+    },
+    {
+     "hex": "#280e0459",
+     "rgb": "#280e04",
+     "alpha": 0.349
+    },
+    {
+     "hex": "#ffaa5026",
+     "rgb": "#ffaa50",
+     "alpha": 0.149
+    }
+   ],
+   "families": [
+    "gold/ember glow",
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".glod-mem-ember-core",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 0 10px 3px #ffc373f2, 0 0 26px 9px #ff983e8c, 0 0 52px 20px #ff823240",
+   "source": "source/css/37m388zf6rymp.pretty.css:552",
+   "colours": [
+    {
+     "hex": "#ffc373f2",
+     "rgb": "#ffc373",
+     "alpha": 0.949
+    },
+    {
+     "hex": "#ff983e8c",
+     "rgb": "#ff983e",
+     "alpha": 0.549
+    },
+    {
+     "hex": "#ff823240",
+     "rgb": "#ff8232",
+     "alpha": 0.251
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": "0%, to",
+   "context": "@keyframes glodEmberBreath",
+   "property": "box-shadow",
+   "value": "0 0 10px 3px #ffc373f2, 0 0 26px 9px #ff983e8c, 0 0 52px 20px #ff823240",
+   "source": "source/css/37m388zf6rymp.pretty.css:567",
+   "colours": [
+    {
+     "hex": "#ffc373f2",
+     "rgb": "#ffc373",
+     "alpha": 0.949
+    },
+    {
+     "hex": "#ff983e8c",
+     "rgb": "#ff983e",
+     "alpha": 0.549
+    },
+    {
+     "hex": "#ff823240",
+     "rgb": "#ff8232",
+     "alpha": 0.251
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": "50%",
+   "context": "@keyframes glodEmberBreath",
+   "property": "box-shadow",
+   "value": "0 0 12px 4px #ffcd7d, 0 0 34px 12px #ffa044a6, 0 0 64px 26px #ff84344d",
+   "source": "source/css/37m388zf6rymp.pretty.css:574",
+   "colours": [
+    {
+     "hex": "#ffcd7d",
+     "rgb": "#ffcd7d",
+     "alpha": 1.0
+    },
+    {
+     "hex": "#ffa044a6",
+     "rgb": "#ffa044",
+     "alpha": 0.651
+    },
+    {
+     "hex": "#ff84344d",
+     "rgb": "#ff8434",
+     "alpha": 0.302
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": ".glod-active-ember-with-cue",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 5px 12px #08041257",
+   "source": "source/css/37m388zf6rymp.pretty.css:652",
+   "colours": [
+    {
+     "hex": "#08041257",
+     "rgb": "#080412",
+     "alpha": 0.341
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".glod-active-ember-core",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 0 10px 4px #ffc869e6, 0 0 28px 11px #ff983a9e, 0 0 54px 22px #ff80303d",
+   "source": "source/css/37m388zf6rymp.pretty.css:670",
+   "colours": [
+    {
+     "hex": "#ffc869e6",
+     "rgb": "#ffc869",
+     "alpha": 0.902
+    },
+    {
+     "hex": "#ff983a9e",
+     "rgb": "#ff983a",
+     "alpha": 0.62
+    },
+    {
+     "hex": "#ff80303d",
+     "rgb": "#ff8030",
+     "alpha": 0.239
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": ".glod-active-ember:hover .glod-active-ember-core, .glod-active-ember:active .glod-active-ember-core, .glod-active-ember:focus-visible .glod-active-ember-core",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 0 13px 5px #ffd782, 0 0 34px 14px #ffa546b8, 0 0 62px 27px #ff84344d",
+   "source": "source/css/37m388zf6rymp.pretty.css:686",
+   "colours": [
+    {
+     "hex": "#ffd782",
+     "rgb": "#ffd782",
+     "alpha": 1.0
+    },
+    {
+     "hex": "#ffa546b8",
+     "rgb": "#ffa546",
+     "alpha": 0.722
+    },
+    {
+     "hex": "#ff84344d",
+     "rgb": "#ff8434",
+     "alpha": 0.302
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": ".glod-hearth-box p",
+   "context": "",
+   "property": "text-shadow",
+   "value": "0 1px 10px #060410d9, 0 0 3px #060410b3",
+   "source": "source/css/37m388zf6rymp.pretty.css:746",
+   "colours": [
+    {
+     "hex": "#060410d9",
+     "rgb": "#060410",
+     "alpha": 0.851
+    },
+    {
+     "hex": "#060410b3",
+     "rgb": "#060410",
+     "alpha": 0.702
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": "body[data-theme=\"morgon\"] .glod-hearth-box p",
+   "context": "",
+   "property": "text-shadow",
+   "value": "0 1px 10px #2b1e4ee6, 0 0 4px #2b1e4ecc, 0 1px 2px #2b1e4ee6",
+   "source": "source/css/37m388zf6rymp.pretty.css:754",
+   "colours": [
+    {
+     "hex": "#2b1e4ee6",
+     "rgb": "#2b1e4e",
+     "alpha": 0.902
+    },
+    {
+     "hex": "#2b1e4ecc",
+     "rgb": "#2b1e4e",
+     "alpha": 0.8
+    },
+    {
+     "hex": "#2b1e4ee6",
+     "rgb": "#2b1e4e",
+     "alpha": 0.902
+    }
+   ],
+   "families": [
+    "violet glow"
+   ]
+  },
+  {
+   "selector": ".glod-book",
+   "context": "",
+   "property": "filter",
+   "value": "drop-shadow(0 26px 44px #04030c99) drop-shadow(0 0 42px #ffb45a42)",
+   "source": "source/css/37m388zf6rymp.pretty.css:805",
+   "colours": [
+    {
+     "hex": "#04030c99",
+     "rgb": "#04030c",
+     "alpha": 0.6
+    },
+    {
+     "hex": "#ffb45a42",
+     "rgb": "#ffb45a",
+     "alpha": 0.259
+    }
+   ],
+   "families": [
+    "gold/ember glow",
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".glod-book-pages",
+   "context": "",
+   "property": "box-shadow",
+   "value": "inset -2px 0 3px #5a3c1e66",
+   "source": "source/css/37m388zf6rymp.pretty.css:825",
+   "colours": [
+    {
+     "hex": "#5a3c1e66",
+     "rgb": "#5a3c1e",
+     "alpha": 0.4
+    }
+   ],
+   "families": [
+    "other"
+   ]
+  },
+  {
+   "selector": ".glod-book-cover",
+   "context": "",
+   "property": "box-shadow",
+   "value": "inset 0 0 0 1px #090516a6, inset 0 2px #fff0d212, inset -5px 0 9px #06031066, inset 0 -4px 7px #06031059, 4px 5px 0 -1px #191140, 7px 9px 0 -2px #120c31",
+   "source": "source/css/37m388zf6rymp.pretty.css:840",
+   "colours": [
+    {
+     "hex": "#090516a6",
+     "rgb": "#090516",
+     "alpha": 0.651
+    },
+    {
+     "hex": "#fff0d212",
+     "rgb": "#fff0d2",
+     "alpha": 0.071
+    },
+    {
+     "hex": "#06031066",
+     "rgb": "#060310",
+     "alpha": 0.4
+    },
+    {
+     "hex": "#06031059",
+     "rgb": "#060310",
+     "alpha": 0.349
+    },
+    {
+     "hex": "#191140",
+     "rgb": "#191140",
+     "alpha": 1.0
+    },
+    {
+     "hex": "#120c31",
+     "rgb": "#120c31",
+     "alpha": 1.0
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)",
+    "light highlight (inset)",
+    "violet glow"
+   ]
+  },
+  {
+   "selector": ".glod-book-cover:before",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 1px #ffecc40f, inset 0 1px #ffecc40f",
+   "source": "source/css/37m388zf6rymp.pretty.css:855",
+   "colours": [
+    {
+     "hex": "#ffecc40f",
+     "rgb": "#ffecc4",
+     "alpha": 0.059
+    },
+    {
+     "hex": "#ffecc40f",
+     "rgb": "#ffecc4",
+     "alpha": 0.059
+    }
+   ],
+   "families": [
+    "other"
+   ]
+  },
+  {
+   "selector": ".glod-book-art",
+   "context": "",
+   "property": "filter",
+   "value": "drop-shadow(0 3px 8px #05030e80)",
+   "source": "source/css/37m388zf6rymp.pretty.css:895",
+   "colours": [
+    {
+     "hex": "#05030e80",
+     "rgb": "#05030e",
+     "alpha": 0.502
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".glod-book-rule:after",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 0 8px #f5c54299",
+   "source": "source/css/37m388zf6rymp.pretty.css:919",
+   "colours": [
+    {
+     "hex": "#f5c54299",
+     "rgb": "#f5c542",
+     "alpha": 0.6
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": ".glod-book-title",
+   "context": "",
+   "property": "text-shadow",
+   "value": "0 -1px #06031099, 0 1px 3px #06031066",
+   "source": "source/css/37m388zf6rymp.pretty.css:926",
+   "colours": [
+    {
+     "hex": "#06031099",
+     "rgb": "#060310",
+     "alpha": 0.6
+    },
+    {
+     "hex": "#06031066",
+     "rgb": "#060310",
+     "alpha": 0.4
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".glod-book-colophon",
+   "context": "",
+   "property": "text-shadow",
+   "value": "0 1px 2px #06031080",
+   "source": "source/css/37m388zf6rymp.pretty.css:941",
+   "colours": [
+    {
+     "hex": "#06031080",
+     "rgb": "#060310",
+     "alpha": 0.502
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".glod-caption-line",
+   "context": "",
+   "property": "text-shadow",
+   "value": "0 2px 20px #060410cc",
+   "source": "source/css/37m388zf6rymp.pretty.css:974",
+   "colours": [
+    {
+     "hex": "#060410cc",
+     "rgb": "#060410",
+     "alpha": 0.8
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": "body[data-theme=\"morgon\"] .glod-caption-line",
+   "context": "",
+   "property": "text-shadow",
+   "value": "0 2px 20px #fff8ebb3",
+   "source": "source/css/37m388zf6rymp.pretty.css:980",
+   "colours": [
+    {
+     "hex": "#fff8ebb3",
+     "rgb": "#fff8eb",
+     "alpha": 0.702
+    }
+   ],
+   "families": [
+    "light highlight (inset)"
+   ]
+  },
+  {
+   "selector": ".glod-open",
+   "context": "",
+   "property": "text-shadow",
+   "value": "0 1px #00000080",
+   "source": "source/css/37m388zf6rymp.pretty.css:987",
+   "colours": [
+    {
+     "hex": "#00000080",
+     "rgb": "#000000",
+     "alpha": 0.502
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".glod-open",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 12px 26px #04030c8c, 0 0 30px #ffaa4629, inset 0 1px #ffd8a04d, inset 0 -3px #0006",
+   "source": "source/css/37m388zf6rymp.pretty.css:1004",
+   "colours": [
+    {
+     "hex": "#04030c8c",
+     "rgb": "#04030c",
+     "alpha": 0.549
+    },
+    {
+     "hex": "#ffaa4629",
+     "rgb": "#ffaa46",
+     "alpha": 0.161
+    },
+    {
+     "hex": "#ffd8a04d",
+     "rgb": "#ffd8a0",
+     "alpha": 0.302
+    },
+    {
+     "hex": "#0006",
+     "rgb": "#000000",
+     "alpha": 0.4
+    }
+   ],
+   "families": [
+    "gold/ember glow",
+    "ink-dark (navy/plum black)",
+    "other"
+   ]
+  },
+  {
+   "selector": ".glod-open:hover",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 18px 38px #04030c99, 0 0 44px #ffb45047, inset 0 1px #ffd8a059, inset 0 -3px #0006",
+   "source": "source/css/37m388zf6rymp.pretty.css:1043",
+   "colours": [
+    {
+     "hex": "#04030c99",
+     "rgb": "#04030c",
+     "alpha": 0.6
+    },
+    {
+     "hex": "#ffb45047",
+     "rgb": "#ffb450",
+     "alpha": 0.278
+    },
+    {
+     "hex": "#ffd8a059",
+     "rgb": "#ffd8a0",
+     "alpha": 0.349
+    },
+    {
+     "hex": "#0006",
+     "rgb": "#000000",
+     "alpha": 0.4
+    }
+   ],
+   "families": [
+    "gold/ember glow",
+    "ink-dark (navy/plum black)",
+    "other"
+   ]
+  },
+  {
+   "selector": ".start-flow .gbook",
+   "context": "",
+   "property": "box-shadow",
+   "value": "var(--card-shadow)",
+   "source": "source/css/2_gt301v4m-60.pretty.css:26",
+   "colours": [],
+   "families": []
+  },
+  {
+   "selector": ".start-flow .pframe",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 16px 36px #0a07204d",
+   "source": "source/css/2_gt301v4m-60.pretty.css:229",
+   "colours": [
+    {
+     "hex": "#0a07204d",
+     "rgb": "#0a0720",
+     "alpha": 0.302
+    }
+   ],
+   "families": [
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": ".start-flow .easel",
+   "context": "",
+   "property": "box-shadow",
+   "value": "0 30px 70px #0508148c, 0 0 60px #f5c54224",
+   "source": "source/css/2_gt301v4m-60.pretty.css:295",
+   "colours": [
+    {
+     "hex": "#0508148c",
+     "rgb": "#050814",
+     "alpha": 0.549
+    },
+    {
+     "hex": "#f5c54224",
+     "rgb": "#f5c542",
+     "alpha": 0.141
+    }
+   ],
+   "families": [
+    "gold/ember glow",
+    "ink-dark (navy/plum black)"
+   ]
+  },
+  {
+   "selector": "0%",
+   "context": "@keyframes tfUnveilPop",
+   "property": "box-shadow",
+   "value": "0 0 #f5c54200",
+   "source": "source/css/2_gt301v4m-60.pretty.css:516",
+   "colours": [
+    {
+     "hex": "#f5c54200",
+     "rgb": "#f5c542",
+     "alpha": 0.0
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": "45%",
+   "context": "@keyframes tfUnveilPop",
+   "property": "box-shadow",
+   "value": "0 0 26px #f5c5428c",
+   "source": "source/css/2_gt301v4m-60.pretty.css:520",
+   "colours": [
+    {
+     "hex": "#f5c5428c",
+     "rgb": "#f5c542",
+     "alpha": 0.549
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  },
+  {
+   "selector": "to",
+   "context": "@keyframes tfUnveilPop",
+   "property": "box-shadow",
+   "value": "0 0 #f5c54200",
+   "source": "source/css/2_gt301v4m-60.pretty.css:524",
+   "colours": [
+    {
+     "hex": "#f5c54200",
+     "rgb": "#f5c542",
+     "alpha": 0.0
+    }
+   ],
+   "families": [
+    "gold/ember glow"
+   ]
+  }
+ ],
+ "glod_stage": {
+  "css_backgrounds": {
+   "stage_natt": "#0b0e22",
+   "stage_morgon": "#b7c0ea",
+   "ambient_natt": "#0b0e22",
+   "ambient_morgon": "#cdb9d8",
+   "source": "source/css/37m388zf6rymp.pretty.css:2, 19, 24, 33"
+  },
+  "wood_signboard": {
+   "board": "linear-gradient(178deg, #5e4129, #4a3120 56%, #3c2717)",
+   "border": "#281709",
+   "ink": "#fbeed2",
+   "kicker_ink": "#e4cfa4",
+   "post": "linear-gradient(90deg, #33210f, #553d24 45%, #291908)",
+   "nail": "radial-gradient(circle at 35% 30%, #e8d5ac, #6b5335 62%, #2c1e12)",
+   "action_button": "linear-gradient(#f7d77f, #eeb84e) with #35210d text",
+   "source": "source/css/37m388zf6rymp.pretty.css:71-302"
+  },
+  "parchment_memory_card": {
+   "base": "linear-gradient(172deg, #f9edd2 0%, #f2e2ba 60%, #ebd8ab 100%)",
+   "ink": "#3b2a16",
+   "hook_ink": "#33240f",
+   "from_ink": "#7a6136",
+   "carry_button": "#5a3820 / pressed #31543d",
+   "scorch": "radial-gradient(37% 30% at 0 102%, #100602f5 0%, #2a1206e0 22%, #52260c9e 42%, #85481857 60%, #b2742e29 76%, #cda05014 86%, #0000 94%)",
+   "source": "source/css/37m388zf6rymp.pretty.css:464-524"
+  },
+  "ember_cores": [
+   "radial-gradient(circle at 42% 38%, #fff3cf, #ffd98f 45%, #ff9a4c 78%, #e06a24 100%)",
+   "radial-gradient(circle at 38% 34%, #fff7d6 0 14%, #ffd77a 36%, #e78232 72%, #8b2f19 100%)",
+   "radial-gradient(circle at 40% 35%, #ffe9b0, #f2a13c 65%, #c96a1f)"
+  ],
+  "storybook_cover": {
+   "cloth": "linear-gradient(162deg, #322459 0%, #413067 58%, #4e2f5e 100%)",
+   "title": "#f7e7c3",
+   "rule": "linear-gradient(90deg, #0000, #f5c5428c 22% 78%, #0000) with #f2b22e diamond",
+   "pages": "linear-gradient(90deg, #cdb689, #f2e6c8 34%, #e6d5b0 72%, #c4ab7e)",
+   "svg_art_sky": [
+    "#0d0a24",
+    "#2f2458"
+   ],
+   "svg_art_hills": [
+    "#241b49",
+    "#171130"
+   ],
+   "svg_moon": "#efe6cd",
+   "source": "source/css/37m388zf6rymp.pretty.css:801-946; source/js/2j_-r8q4tgdka.js (glodBookSky SVG)"
+  },
+  "canvas_painter": {
+   "natt": {
+    "sky": [
+     "#070917",
+     "#141134",
+     "#28204e"
+    ],
+    "showStars": true,
+    "cloudTint": "#7e70c4",
+    "cloudAlpha": 1,
+    "moonFill": "#efe6cd",
+    "moonHaloAlpha": 0.14,
+    "moonCraters": true,
+    "veryFar": "#2c2354",
+    "far": "#1d1540",
+    "bandA": "#241b49",
+    "bandB": "#1e1640",
+    "nearTrees": "#0f0b20",
+    "ground": "#191231",
+    "front": "#0c081d",
+    "grass": "#050310",
+    "tuftFar": "rgba(13,9,30,0.85)",
+    "tuftGround": "rgba(8,5,20,0.9)",
+    "tuftFront": "rgba(4,3,12,0.92)",
+    "mist": "200,186,236",
+    "cutEdgePale": "205,190,240",
+    "cutEdgeDark": "rgba(5,3,14,0.5)",
+    "emberCore": "#ffd98f",
+    "emberScale": 1,
+    "vignette": "5,3,14",
+    "vignetteAlpha": 0.42,
+    "bulrushStem": "#150e2c",
+    "bulrushHead": "#1c1233"
+   },
+   "morgon": {
+    "sky": [
+     "#a9b4e4",
+     "#dcc9e8",
+     "#f7ddba"
+    ],
+    "showStars": false,
+    "cloudTint": "#fff7ee",
+    "cloudAlpha": 3.2,
+    "moonFill": "#fff3d2",
+    "moonHaloAlpha": 0.34,
+    "moonCraters": false,
+    "veryFar": "#a292d2",
+    "far": "#8674bc",
+    "bandA": "#9080c4",
+    "bandB": "#7a68ac",
+    "nearTrees": "#4c3c7c",
+    "ground": "#5c4b8e",
+    "front": "#443570",
+    "grass": "#332659",
+    "tuftFar": "rgba(84,66,132,0.85)",
+    "tuftGround": "rgba(64,49,105,0.9)",
+    "tuftFront": "rgba(46,34,80,0.92)",
+    "mist": "255,250,240",
+    "cutEdgePale": "255,250,240",
+    "cutEdgeDark": "rgba(44,32,82,0.38)",
+    "emberCore": "#ffb35e",
+    "emberScale": 1.18,
+    "vignette": "56,42,96",
+    "vignetteAlpha": 0.26,
+    "bulrushStem": "#3b2d63",
+    "bulrushHead": "#453672"
+   },
+   "morgon_ambient": {
+    "sky": [
+     "#9db6e8",
+     "#f3cfc4",
+     "#ffe8b6"
+    ],
+    "showStars": false,
+    "cloudTint": "#fffdf6",
+    "cloudAlpha": 3.6,
+    "moonFill": "#fff0b4",
+    "moonHaloAlpha": 0.5,
+    "moonCraters": false,
+    "veryFar": "#b4a0dd",
+    "far": "#9c88cc",
+    "bandA": "#ab98d8",
+    "bandB": "#9280c0",
+    "nearTrees": "#5d4a92",
+    "ground": "#6d5aa4",
+    "front": "#524186",
+    "grass": "#40306e",
+    "tuftFar": "rgba(108,88,160,0.85)",
+    "tuftGround": "rgba(86,68,132,0.9)",
+    "tuftFront": "rgba(64,48,104,0.92)",
+    "mist": "255,248,236",
+    "cutEdgePale": "255,250,240",
+    "cutEdgeDark": "rgba(58,42,96,0.32)",
+    "emberCore": "#ff9e4a",
+    "emberScale": 1.25,
+    "vignette": "88,64,128",
+    "vignetteAlpha": 0.18,
+    "bulrushStem": "#4a3a78",
+    "bulrushHead": "#584684"
+   },
+   "flame_layers_back_to_front": [
+    {
+     "w": 1,
+     "h": 1,
+     "dx": 0,
+     "asym": 0.06,
+     "lobe": 0.035,
+     "col": "#c8441f",
+     "f1": 2.7,
+     "f2": 1.6
+    },
+    {
+     "w": 0.74,
+     "h": 0.8,
+     "dx": -0.065,
+     "asym": -0.11,
+     "lobe": 0.085,
+     "col": "#ef7527",
+     "f1": 3.5,
+     "f2": 2.2
+    },
+    {
+     "w": 0.5,
+     "h": 0.585,
+     "dx": 0.045,
+     "asym": 0.12,
+     "lobe": -0.06,
+     "col": "#ffab3d",
+     "f1": 4.3,
+     "f2": 2.9
+    },
+    {
+     "w": 0.28,
+     "h": 0.375,
+     "dx": 0.015,
+     "asym": -0.07,
+     "lobe": 0.05,
+     "col": "#ffe9b8",
+     "f1": 5.1,
+     "f2": 3.4
+    }
+   ],
+   "fire_level_multipliers": {
+    "unlit": 0,
+    "low": 0.55,
+    "mid": 1,
+    "high": 1.25
+   }
+  },
+  "canvas_source": "source/js/1pgfdvt65g9p-.js (createGlodScene). The object `l` holds natt/morgon; `a` is used when variant===\"ambient\" and theme===\"morgon\" (function x(e){return M&&\"morgon\"===e?a:l[e]}). `eT` are the four flame layers drawn back-to-front. Values copied verbatim; rgb triplets without rgba() are used inside template strings as rgba(${...},alpha)."
+ },
+ "svg_gradients_js": {
+  "hiw_map_path": {
+   "stops": [
+    "#f5c542",
+    "#9b87f5"
+   ],
+   "source": "source/js/3d9nxlx1n5pdy.js (linearGradient id `${n}-path`); also inline in source/html/home.*.html"
+  },
+  "hiw_map_ring": {
+   "stops": [
+    "#f5c542",
+    "#6D4FE0"
+   ],
+   "source": "source/js/3d9nxlx1n5pdy.js (linearGradient id `${n}-ring`)"
+  },
+  "style_picker_caption_scrim": {
+   "css": "linear-gradient(180deg, rgba(10,10,20,0) 0%, rgba(10,10,20,.72) 55%)",
+   "text": "#fff",
+   "source": "source/js/2j_-r8q4tgdka.js (StylePicker)"
+  }
+ },
+ "illustration": {
+  "style_prompt_verbatim": "Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+  "style_prompt_source": "source/sample-book.iris-och-den-sparade-platsen.json -> styleBlock",
+  "pooled_palette_k8": [
+   {
+    "hex": "#EBCB9E",
+    "share": 0.1755,
+    "lab": [
+     83.36,
+     4.86,
+     26.63
+    ]
+   },
+   {
+    "hex": "#654619",
+    "share": 0.1697,
+    "lab": [
+     32.3,
+     8.48,
+     31.35
+    ]
+   },
+   {
+    "hex": "#907330",
+    "share": 0.1608,
+    "lab": [
+     49.98,
+     3.6,
+     40.32
+    ]
+   },
+   {
+    "hex": "#D59E56",
+    "share": 0.1464,
+    "lab": [
+     68.95,
+     12.7,
+     45.03
+    ]
+   },
+   {
+    "hex": "#B96B24",
+    "share": 0.1293,
+    "lab": [
+     52.9,
+     25.84,
+     50.34
+    ]
+   },
+   {
+    "hex": "#291E0F",
+    "share": 0.1212,
+    "lab": [
+     12.19,
+     2.94,
+     11.69
+    ]
+   },
+   {
+    "hex": "#AB2923",
+    "share": 0.0662,
+    "lab": [
+     38.49,
+     51.68,
+     36.0
+    ]
+   },
+   {
+    "hex": "#495050",
+    "share": 0.031,
+    "lab": [
+     33.42,
+     -2.8,
+     -0.97
+    ]
+   }
+  ],
+  "pooled_stats": {
+   "L_median": 49.8,
+   "L_p10": 18.7,
+   "L_p90": 82.7,
+   "C_median": 36.3,
+   "chromatic_share": 0.916,
+   "hue_mass_of_chromatic_pixels": {
+    "red_pink 0-40": 0.076,
+    "orange_gold 40-100": 0.878,
+    "yellowgreen_green 100-160": 0.042,
+    "teal_cyan 160-230": 0.0,
+    "blue_indigo 230-290": 0.003,
+    "violet_magenta 290-360": 0.0
+   },
+   "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+  },
+  "pooled_source": "derived/color/image-palettes.json -> images[\"pooled: all 15 sample-book images (S1..S6BB + cover)\"]",
+  "canon_colour_words": {
+   "hero Iris": "hallonröd regnjacka och gula stövlar [raspberry-red raincoat and yellow boots]",
+   "companion Mossa": "liten brun skogsmus med grön halsduk [small brown forest mouse with a green scarf]",
+   "Amina": "orange tröja och blå byxor [orange sweater and blue trousers]",
+   "place": "en mjuk grön matta [a soft green rug]",
+   "object": "silverpenna ... blanka silverstreck [silver pen ... shiny silver lines]",
+   "source": "source/sample-book.iris-och-den-sparade-platsen.json -> canon"
+  }
+ }
+}
