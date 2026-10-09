@@ -1,0 +1,1069 @@
+{
+ "note": "Rest vs hover computed styles, active (mouse down), narrator pill playing state and endings-map engaged states. Desktop 1440x900, sv.",
+ "data": {
+  "natt": {
+   "theme": "natt",
+   "lang": "sv",
+   "hovers": [
+    {
+     "nn": "04",
+     "slug": "nav-link-login",
+     "target": "nav a[href=\"/login\"][0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(155, 135, 245, 0.26)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(181, 172, 211)",
+      "opacity": "1",
+      "outline": "rgb(181, 172, 211) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(155, 135, 245, 0.26)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(181, 172, 211)",
+      "opacity": "1",
+      "outline": "rgb(181, 172, 211) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "04-nav-link-login--hover__natt__desktop.png"
+    },
+    {
+     "nn": "06",
+     "slug": "language-switcher",
+     "target": ".language-switcher button[1]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgb(181, 172, 211)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(181, 172, 211)",
+      "opacity": "1",
+      "outline": "rgb(181, 172, 211) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgb(181, 172, 211)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(181, 172, 211)",
+      "opacity": "1",
+      "outline": "rgb(181, 172, 211) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "06-language-switcher--hover__natt__desktop.png"
+    },
+    {
+     "nn": "07",
+     "slug": "theme-toggle",
+     "target": ".tt[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(255, 243, 217, 0.32)",
+      "background-color": "rgba(255, 249, 236, 0.1)",
+      "background-image": "none",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "outline": "rgb(0, 0, 0) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(255, 243, 217, 0.32)",
+      "background-color": "rgba(255, 249, 236, 0.1)",
+      "background-image": "none",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "outline": "rgb(0, 0, 0) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "07-theme-toggle--hover__natt__desktop.png"
+    },
+    {
+     "nn": "13",
+     "slug": "btn-primary",
+     "target": ".hero .btn-primary[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "rgba(245, 197, 66, 0.28) 0px 14px 40px 0px, rgba(255, 255, 255, 0.45) 0px 1px 0px 0px inset",
+      "border-color": "rgb(58, 43, 16)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "linear-gradient(135deg, rgb(255, 224, 138), rgb(245, 197, 66))",
+      "color": "rgb(58, 43, 16)",
+      "opacity": "1",
+      "outline": "rgb(58, 43, 16) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "matrix(1, 0, 0, 1, 0, -3)",
+      "box-shadow": "rgba(245, 197, 66, 0.42) 0px 20px 55px 0px",
+      "border-color": "rgb(58, 43, 16)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "linear-gradient(135deg, rgb(255, 224, 138), rgb(245, 197, 66))",
+      "color": "rgb(58, 43, 16)",
+      "opacity": "1",
+      "outline": "rgb(58, 43, 16) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "13-btn-primary--hover__natt__desktop.png"
+    },
+    {
+     "nn": "15",
+     "slug": "btn-ghost",
+     "target": ".hero .btn-ghost[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(255, 243, 217, 0.32)",
+      "background-color": "rgba(255, 249, 236, 0.1)",
+      "background-image": "none",
+      "color": "rgb(255, 243, 217)",
+      "opacity": "1",
+      "outline": "rgb(255, 243, 217) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(255, 243, 217, 0.32)",
+      "background-color": "rgba(255, 249, 236, 0.1)",
+      "background-image": "none",
+      "color": "rgb(255, 243, 217)",
+      "opacity": "1",
+      "outline": "rgb(255, 243, 217) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "15-btn-ghost--hover__natt__desktop.png"
+    },
+    {
+     "nn": "33",
+     "slug": "play-pill",
+     "target": ".hiw-play[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "rgba(245, 197, 66, 0.28) 0px 14px 40px 0px, rgba(255, 255, 255, 0.45) 0px 1px 0px 0px inset",
+      "border-color": "rgb(58, 43, 16)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "linear-gradient(135deg, rgb(255, 224, 138), rgb(245, 197, 66))",
+      "color": "rgb(58, 43, 16)",
+      "opacity": "1",
+      "outline": "rgb(58, 43, 16) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "matrix(1, 0, 0, 1, 0, -2)",
+      "box-shadow": "rgba(245, 197, 66, 0.42) 0px 20px 55px 0px",
+      "border-color": "rgb(58, 43, 16)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "linear-gradient(135deg, rgb(255, 224, 138), rgb(245, 197, 66))",
+      "color": "rgb(58, 43, 16)",
+      "opacity": "1",
+      "outline": "rgb(58, 43, 16) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "33-play-pill--hover__natt__desktop.png"
+    },
+    {
+     "nn": "48",
+     "slug": "builder-portrait-fab",
+     "target": ".builder-pic .fab[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "rgba(245, 197, 66, 0.28) 0px 14px 40px 0px",
+      "border-color": "rgb(58, 43, 16)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "linear-gradient(135deg, rgb(255, 224, 138), rgb(245, 197, 66))",
+      "color": "rgb(58, 43, 16)",
+      "opacity": "1",
+      "outline": "rgb(58, 43, 16) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "underline"
+     },
+     "hover": {
+      "transform": "matrix(1.1, 0, 0, 1.1, 0, 0)",
+      "box-shadow": "rgba(245, 197, 66, 0.28) 0px 14px 40px 0px",
+      "border-color": "rgb(58, 43, 16)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "linear-gradient(135deg, rgb(255, 224, 138), rgb(245, 197, 66))",
+      "color": "rgb(58, 43, 16)",
+      "opacity": "1",
+      "outline": "rgb(58, 43, 16) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "underline"
+     },
+     "file": "48-builder-portrait-fab--hover__natt__desktop.png"
+    },
+    {
+     "nn": "50",
+     "slug": "trait-on",
+     "target": ".trait.on[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(155, 135, 245, 0.6)",
+      "background-color": "rgba(155, 135, 245, 0.2)",
+      "background-image": "none",
+      "color": "rgb(233, 226, 255)",
+      "opacity": "1",
+      "outline": "rgb(233, 226, 255) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(155, 135, 245, 0.6)",
+      "background-color": "rgba(155, 135, 245, 0.2)",
+      "background-image": "none",
+      "color": "rgb(233, 226, 255)",
+      "opacity": "1",
+      "outline": "rgb(233, 226, 255) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "50-trait-on--hover__natt__desktop.png"
+    },
+    {
+     "nn": "51",
+     "slug": "trait-off",
+     "target": ".trait:not(.on)[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(155, 135, 245, 0.35)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(207, 197, 236)",
+      "opacity": "1",
+      "outline": "rgb(207, 197, 236) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(155, 135, 245, 0.6)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(207, 197, 236)",
+      "opacity": "1",
+      "outline": "rgb(207, 197, 236) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "51-trait-off--hover__natt__desktop.png"
+    },
+    {
+     "nn": "53",
+     "slug": "upload-tile",
+     "target": ".upload[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(255, 236, 190, 0.35)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(242, 238, 255)",
+      "opacity": "1",
+      "outline": "rgb(242, 238, 255) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgb(245, 197, 66)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(242, 238, 255)",
+      "opacity": "1",
+      "outline": "rgb(242, 238, 255) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "53-upload-tile--hover__natt__desktop.png"
+    },
+    {
+     "nn": "56",
+     "slug": "friend-add",
+     "target": ".friend-add[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(255, 236, 190, 0.35)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(232, 223, 201)",
+      "opacity": "1",
+      "outline": "rgb(232, 223, 201) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgb(245, 197, 66)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(232, 223, 201)",
+      "opacity": "1",
+      "outline": "rgb(232, 223, 201) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "56-friend-add--hover__natt__desktop.png"
+    },
+    {
+     "nn": "59",
+     "slug": "book-card",
+     "target": ".book[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "rgba(5, 8, 20, 0.42) 0px 18px 44px 0px",
+      "border-color": "rgb(16, 26, 48)",
+      "background-color": "rgba(15, 22, 40, 0.68)",
+      "background-image": "none",
+      "color": "rgb(242, 238, 255)",
+      "opacity": "1",
+      "outline": "rgb(242, 238, 255) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "matrix(0.999848, -0.0174524, 0.0174524, 0.999848, 0, -10)",
+      "box-shadow": "rgba(5, 8, 20, 0.42) 0px 18px 44px 0px",
+      "border-color": "rgb(16, 26, 48)",
+      "background-color": "rgba(15, 22, 40, 0.68)",
+      "background-image": "none",
+      "color": "rgb(242, 238, 255)",
+      "opacity": "1",
+      "outline": "rgb(242, 238, 255) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "59-book-card--hover__natt__desktop.png"
+    },
+    {
+     "nn": "63",
+     "slug": "footer-org-links",
+     "target": "[data-testid=\"footer-company\"] a[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgb(181, 172, 211)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(181, 172, 211)",
+      "opacity": "1",
+      "outline": "rgb(181, 172, 211) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "underline rgb(245, 197, 66)"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgb(181, 172, 211)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(181, 172, 211)",
+      "opacity": "1",
+      "outline": "rgb(181, 172, 211) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "underline rgb(245, 197, 66)"
+     },
+     "file": "63-footer-org-links--hover__natt__desktop.png"
+    }
+   ],
+   "active": [
+    {
+     "nn": "13",
+     "slug": "btn-primary",
+     "style": {
+      "transform": "matrix(1, 0, 0, 1, 0, -3)",
+      "box-shadow": "rgba(245, 197, 66, 0.42) 0px 20px 55px 0px",
+      "border-color": "rgb(58, 43, 16)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "linear-gradient(135deg, rgb(255, 224, 138), rgb(245, 197, 66))",
+      "color": "rgb(58, 43, 16)",
+      "opacity": "1",
+      "outline": "rgb(58, 43, 16) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "13-btn-primary--active__natt__desktop.png"
+    },
+    {
+     "nn": "15",
+     "slug": "btn-ghost",
+     "style": {
+      "transform": "matrix(0.96, 0, 0, 0.96, 0, 0)",
+      "box-shadow": "none",
+      "border-color": "rgba(255, 243, 217, 0.32)",
+      "background-color": "rgba(255, 249, 236, 0.1)",
+      "background-image": "none",
+      "color": "rgb(255, 243, 217)",
+      "opacity": "1",
+      "outline": "rgb(255, 243, 217) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "15-btn-ghost--active__natt__desktop.png"
+    }
+   ],
+   "playing": {
+    "pressed": "true",
+    "label": "Spelar...",
+    "svg": "M7 5h4v14H7zM13 5h4v14h-4z",
+    "audioPaused": false,
+    "currentTime": 1.360214,
+    "duration": 13,
+    "src": "https://tale-forge.app/landing/voice/grandpa-sample.mp3",
+    "file": "33-play-pill--playing__natt__desktop.png"
+   },
+   "map": [
+    {
+     "ending": 1,
+     "pressed": [
+      "true",
+      "false",
+      "false",
+      "false"
+     ],
+     "lit": [
+      "map-path-lit map-path-lit--lit op=0.9 off=0",
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--off op=0 off=1"
+     ],
+     "medallions": [
+      "map-medallion is-active",
+      "map-medallion is-dimmed",
+      "map-medallion is-dimmed",
+      "map-medallion is-dimmed"
+     ],
+     "file": "38-endings-map--ending-1-engaged__natt__desktop.png"
+    },
+    {
+     "ending": 2,
+     "pressed": [
+      "false",
+      "true",
+      "false",
+      "false"
+     ],
+     "lit": [
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--lit op=0.9 off=0",
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--off op=0 off=1"
+     ],
+     "medallions": [
+      "map-medallion is-dimmed",
+      "map-medallion is-active",
+      "map-medallion is-dimmed",
+      "map-medallion is-dimmed"
+     ],
+     "file": "38-endings-map--ending-2-engaged__natt__desktop.png"
+    },
+    {
+     "ending": 3,
+     "pressed": [
+      "false",
+      "false",
+      "true",
+      "false"
+     ],
+     "lit": [
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--lit op=0.9 off=0",
+      "map-path-lit map-path-lit--off op=0 off=1"
+     ],
+     "medallions": [
+      "map-medallion is-dimmed",
+      "map-medallion is-dimmed",
+      "map-medallion is-active",
+      "map-medallion is-dimmed"
+     ],
+     "file": "38-endings-map--ending-3-engaged__natt__desktop.png"
+    },
+    {
+     "ending": 4,
+     "pressed": [
+      "false",
+      "false",
+      "false",
+      "true"
+     ],
+     "lit": [
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--lit op=0.9 off=0"
+     ],
+     "medallions": [
+      "map-medallion is-dimmed",
+      "map-medallion is-dimmed",
+      "map-medallion is-dimmed",
+      "map-medallion is-active"
+     ],
+     "file": "38-endings-map--ending-4-engaged__natt__desktop.png"
+    }
+   ]
+  },
+  "morgon": {
+   "theme": "morgon",
+   "lang": "sv",
+   "hovers": [
+    {
+     "nn": "04",
+     "slug": "nav-link-login",
+     "target": "nav a[href=\"/login\"][0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(255, 255, 255, 0.9)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(95, 88, 120)",
+      "opacity": "1",
+      "outline": "rgb(95, 88, 120) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(255, 255, 255, 0.9)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(95, 88, 120)",
+      "opacity": "1",
+      "outline": "rgb(95, 88, 120) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "04-nav-link-login--hover__morgon__desktop.png"
+    },
+    {
+     "nn": "06",
+     "slug": "language-switcher",
+     "target": ".language-switcher button[1]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgb(95, 88, 120)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(95, 88, 120)",
+      "opacity": "1",
+      "outline": "rgb(95, 88, 120) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgb(95, 88, 120)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(95, 88, 120)",
+      "opacity": "1",
+      "outline": "rgb(95, 88, 120) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "06-language-switcher--hover__morgon__desktop.png"
+    },
+    {
+     "nn": "07",
+     "slug": "theme-toggle",
+     "target": ".tt[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgb(136, 125, 160)",
+      "background-color": "rgba(255, 255, 255, 0.72)",
+      "background-image": "none",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "outline": "rgb(0, 0, 0) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgb(136, 125, 160)",
+      "background-color": "rgba(255, 255, 255, 0.72)",
+      "background-image": "none",
+      "color": "rgb(0, 0, 0)",
+      "opacity": "1",
+      "outline": "rgb(0, 0, 0) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "07-theme-toggle--hover__morgon__desktop.png"
+    },
+    {
+     "nn": "13",
+     "slug": "btn-primary",
+     "target": ".hero .btn-primary[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "rgba(109, 79, 224, 0.35) 0px 14px 34px 0px, rgba(255, 255, 255, 0.45) 0px 1px 0px 0px inset",
+      "border-color": "rgb(255, 255, 255)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "linear-gradient(135deg, rgb(109, 79, 224), rgb(91, 63, 199))",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "matrix(1, 0, 0, 1, 0, -3)",
+      "box-shadow": "rgba(109, 79, 224, 0.45) 0px 22px 48px 0px",
+      "border-color": "rgb(255, 255, 255)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "linear-gradient(135deg, rgb(109, 79, 224), rgb(91, 63, 199))",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "13-btn-primary--hover__morgon__desktop.png"
+    },
+    {
+     "nn": "15",
+     "slug": "btn-ghost",
+     "target": ".hero .btn-ghost[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgb(136, 125, 160)",
+      "background-color": "rgba(255, 255, 255, 0.72)",
+      "background-image": "none",
+      "color": "rgb(36, 31, 53)",
+      "opacity": "1",
+      "outline": "rgb(36, 31, 53) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgb(136, 125, 160)",
+      "background-color": "rgba(255, 255, 255, 0.72)",
+      "background-image": "none",
+      "color": "rgb(36, 31, 53)",
+      "opacity": "1",
+      "outline": "rgb(36, 31, 53) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "15-btn-ghost--hover__morgon__desktop.png"
+    },
+    {
+     "nn": "33",
+     "slug": "play-pill",
+     "target": ".hiw-play[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "rgba(109, 79, 224, 0.35) 0px 14px 34px 0px, rgba(255, 255, 255, 0.45) 0px 1px 0px 0px inset",
+      "border-color": "rgb(255, 255, 255)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "linear-gradient(135deg, rgb(109, 79, 224), rgb(91, 63, 199))",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "matrix(1, 0, 0, 1, 0, -2)",
+      "box-shadow": "rgba(109, 79, 224, 0.45) 0px 22px 48px 0px",
+      "border-color": "rgb(255, 255, 255)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "linear-gradient(135deg, rgb(109, 79, 224), rgb(91, 63, 199))",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "33-play-pill--hover__morgon__desktop.png"
+    },
+    {
+     "nn": "48",
+     "slug": "builder-portrait-fab",
+     "target": ".builder-pic .fab[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "rgba(109, 79, 224, 0.35) 0px 14px 34px 0px",
+      "border-color": "rgb(255, 255, 255)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "linear-gradient(135deg, rgb(109, 79, 224), rgb(91, 63, 199))",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "underline"
+     },
+     "hover": {
+      "transform": "matrix(1.1, 0, 0, 1.1, 0, 0)",
+      "box-shadow": "rgba(109, 79, 224, 0.35) 0px 14px 34px 0px",
+      "border-color": "rgb(255, 255, 255)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "linear-gradient(135deg, rgb(109, 79, 224), rgb(91, 63, 199))",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "underline"
+     },
+     "file": "48-builder-portrait-fab--hover__morgon__desktop.png"
+    },
+    {
+     "nn": "50",
+     "slug": "trait-on",
+     "target": ".trait.on[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(109, 79, 224, 0.42)",
+      "background-color": "rgba(109, 79, 224, 0.12)",
+      "background-image": "none",
+      "color": "rgb(74, 54, 168)",
+      "opacity": "1",
+      "outline": "rgb(74, 54, 168) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(109, 79, 224, 0.42)",
+      "background-color": "rgba(109, 79, 224, 0.12)",
+      "background-image": "none",
+      "color": "rgb(74, 54, 168)",
+      "opacity": "1",
+      "outline": "rgb(74, 54, 168) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "50-trait-on--hover__morgon__desktop.png"
+    },
+    {
+     "nn": "51",
+     "slug": "trait-off",
+     "target": ".trait:not(.on)[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(109, 79, 224, 0.28)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(95, 88, 120)",
+      "opacity": "1",
+      "outline": "rgb(95, 88, 120) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(109, 79, 224, 0.42)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(95, 88, 120)",
+      "opacity": "1",
+      "outline": "rgb(95, 88, 120) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "51-trait-off--hover__morgon__desktop.png"
+    },
+    {
+     "nn": "53",
+     "slug": "upload-tile",
+     "target": ".upload[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(109, 79, 224, 0.35)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(36, 31, 53)",
+      "opacity": "1",
+      "outline": "rgb(36, 31, 53) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgb(109, 79, 224)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(36, 31, 53)",
+      "opacity": "1",
+      "outline": "rgb(36, 31, 53) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "53-upload-tile--hover__morgon__desktop.png"
+    },
+    {
+     "nn": "56",
+     "slug": "friend-add",
+     "target": ".friend-add[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgba(109, 79, 224, 0.35)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(91, 63, 199)",
+      "opacity": "1",
+      "outline": "rgb(91, 63, 199) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgb(109, 79, 224)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(91, 63, 199)",
+      "opacity": "1",
+      "outline": "rgb(91, 63, 199) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "56-friend-add--hover__morgon__desktop.png"
+    },
+    {
+     "nn": "59",
+     "slug": "book-card",
+     "target": ".book[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "rgba(36, 31, 53, 0.1) 0px 4px 12px 0px, rgba(36, 31, 53, 0.16) 0px 22px 52px 0px",
+      "border-color": "rgb(255, 255, 255)",
+      "background-color": "rgba(255, 255, 255, 0.8)",
+      "background-image": "none",
+      "color": "rgb(36, 31, 53)",
+      "opacity": "1",
+      "outline": "rgb(36, 31, 53) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "hover": {
+      "transform": "matrix(0.999848, -0.0174524, 0.0174524, 0.999848, 0, -10)",
+      "box-shadow": "rgba(36, 31, 53, 0.1) 0px 4px 12px 0px, rgba(36, 31, 53, 0.16) 0px 22px 52px 0px",
+      "border-color": "rgb(255, 255, 255)",
+      "background-color": "rgba(255, 255, 255, 0.8)",
+      "background-image": "none",
+      "color": "rgb(36, 31, 53)",
+      "opacity": "1",
+      "outline": "rgb(36, 31, 53) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "59-book-card--hover__morgon__desktop.png"
+    },
+    {
+     "nn": "63",
+     "slug": "footer-org-links",
+     "target": "[data-testid=\"footer-company\"] a[0]",
+     "rest": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgb(95, 88, 120)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(95, 88, 120)",
+      "opacity": "1",
+      "outline": "rgb(95, 88, 120) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "underline rgb(109, 79, 224)"
+     },
+     "hover": {
+      "transform": "none",
+      "box-shadow": "none",
+      "border-color": "rgb(95, 88, 120)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "none",
+      "color": "rgb(95, 88, 120)",
+      "opacity": "1",
+      "outline": "rgb(95, 88, 120) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "underline rgb(109, 79, 224)"
+     },
+     "file": "63-footer-org-links--hover__morgon__desktop.png"
+    }
+   ],
+   "active": [
+    {
+     "nn": "13",
+     "slug": "btn-primary",
+     "style": {
+      "transform": "matrix(1, 0, 0, 1, 0, -3)",
+      "box-shadow": "rgba(109, 79, 224, 0.45) 0px 22px 48px 0px",
+      "border-color": "rgb(255, 255, 255)",
+      "background-color": "rgba(0, 0, 0, 0)",
+      "background-image": "linear-gradient(135deg, rgb(109, 79, 224), rgb(91, 63, 199))",
+      "color": "rgb(255, 255, 255)",
+      "opacity": "1",
+      "outline": "rgb(255, 255, 255) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "13-btn-primary--active__morgon__desktop.png"
+    },
+    {
+     "nn": "15",
+     "slug": "btn-ghost",
+     "style": {
+      "transform": "matrix(0.96, 0, 0, 0.96, 0, 0)",
+      "box-shadow": "none",
+      "border-color": "rgb(136, 125, 160)",
+      "background-color": "rgba(255, 255, 255, 0.72)",
+      "background-image": "none",
+      "color": "rgb(36, 31, 53)",
+      "opacity": "1",
+      "outline": "rgb(36, 31, 53) none 0px",
+      "outline-offset": "0px",
+      "text-decoration": "none"
+     },
+     "file": "15-btn-ghost--active__morgon__desktop.png"
+    }
+   ],
+   "playing": {
+    "pressed": "true",
+    "label": "Spelar...",
+    "svg": "M7 5h4v14H7zM13 5h4v14h-4z",
+    "audioPaused": false,
+    "currentTime": 1.394051,
+    "duration": 13,
+    "src": "https://tale-forge.app/landing/voice/grandpa-sample.mp3",
+    "file": "33-play-pill--playing__morgon__desktop.png"
+   },
+   "map": [
+    {
+     "ending": 1,
+     "pressed": [
+      "true",
+      "false",
+      "false",
+      "false"
+     ],
+     "lit": [
+      "map-path-lit map-path-lit--lit op=0.9 off=0",
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--off op=0 off=1"
+     ],
+     "medallions": [
+      "map-medallion is-active",
+      "map-medallion is-dimmed",
+      "map-medallion is-dimmed",
+      "map-medallion is-dimmed"
+     ],
+     "file": "38-endings-map--ending-1-engaged__morgon__desktop.png"
+    },
+    {
+     "ending": 2,
+     "pressed": [
+      "false",
+      "true",
+      "false",
+      "false"
+     ],
+     "lit": [
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--lit op=0.9 off=0",
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--off op=0 off=1"
+     ],
+     "medallions": [
+      "map-medallion is-dimmed",
+      "map-medallion is-active",
+      "map-medallion is-dimmed",
+      "map-medallion is-dimmed"
+     ],
+     "file": "38-endings-map--ending-2-engaged__morgon__desktop.png"
+    },
+    {
+     "ending": 3,
+     "pressed": [
+      "false",
+      "false",
+      "true",
+      "false"
+     ],
+     "lit": [
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--lit op=0.9 off=0",
+      "map-path-lit map-path-lit--off op=0 off=1"
+     ],
+     "medallions": [
+      "map-medallion is-dimmed",
+      "map-medallion is-dimmed",
+      "map-medallion is-active",
+      "map-medallion is-dimmed"
+     ],
+     "file": "38-endings-map--ending-3-engaged__morgon__desktop.png"
+    },
+    {
+     "ending": 4,
+     "pressed": [
+      "false",
+      "false",
+      "false",
+      "true"
+     ],
+     "lit": [
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--off op=0 off=1",
+      "map-path-lit map-path-lit--lit op=0.9 off=0"
+     ],
+     "medallions": [
+      "map-medallion is-dimmed",
+      "map-medallion is-dimmed",
+      "map-medallion is-dimmed",
+      "map-medallion is-active"
+     ],
+     "file": "38-endings-map--ending-4-engaged__morgon__desktop.png"
+    }
+   ]
+  }
+ }
+}

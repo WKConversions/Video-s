@@ -1,0 +1,270 @@
+method,theme,viewport,page,element,selector,sample_text,font_size_px,font_weight,large_text,text_token,text_colour,surface_spec,backdrop_median,surface_predicted,surface_predicted_how,surface_measured_median,contrast_measured_median,contrast_measured_worst5pct,contrast_predicted,wcag_aa,wcag_aa_worst5,wcag_aaa
+measured-live,natt,desktop,home,"Wordmark ""TALE FORGE""",a.logo,Tale Forge,27.52,700,True,--logo-ink,#f5c542,page backdrop,#0d172d,#0d172d,backdrop,#0d172d,11.0,3.83,11.0,pass,pass,pass
+measured-live,natt,desktop,home,"Nav link ""Logga in""",.nav-right > a,Logga in,13.12,700,False,--card-sub,#b5acd3,page backdrop,#192949,#192949,backdrop,#192949,6.74,5.65,6.74,pass,pass,fail
+measured-live,natt,desktop,home,"Language switch, active (SV)",".language-switcher button[aria-pressed=""true""]",SV,13.12,800,False,--btn-ink,#3a2b10,--accent (solid),#213053,#f5c542,#f5c542,#f5c542,8.45,8.45,8.45,pass,pass,pass
+measured-live,natt,desktop,home,"Language switch, inactive (EN)",".language-switcher button[aria-pressed=""false""]",EN,13.12,700,False,--card-sub,#b5acd3,page backdrop,#303c61,#303c61,backdrop,#303c61,5.04,4.81,5.04,pass,pass,fail
+measured-live,natt,desktop,home,"Theme toggle, active option",.tt-opt.night,Natt,15.2,700,False,--btn-ink,#3a2b10,--btn-grad (thumb),#262f5d,,,#fad264,9.44,9.11,,pass,pass,pass
+measured-live,natt,desktop,home,"Theme toggle, inactive option",.tt-opt.day,Morgon,15.2,700,False,--ghost-ink,#fff3d9,--ghost-bg over page,#1c2341,#333952,#fff9ec1a over backdrop,#333852,10.43,8.92,10.33,pass,pass,pass
+measured-live,natt,desktop,home,Hero kicker chip,.hero .kicker,Exempel: Alvas värld · 2 böcker,13.6,700,False,--chip-ink,#e8dfc9,--chip-bg over page,#141e36,#2c3449,#fff9ec1a over backdrop,#2b3347,9.49,8.81,9.32,pass,pass,pass
+measured-live,natt,desktop,home,H1 first line (page ink),.hero h1,En värld som,70.4,700,True,--page-ink,#fff7e9,page backdrop,#212c47,#212c47,backdrop,#212c47,13.02,9.24,13.02,pass,pass,pass
+measured-live,natt,desktop,home,H1 highlighted words (.grad),.hero h1 .grad,minns henne,70.4,700,True,--accent-ink,#f5c542,page backdrop,#30364c,#30364c,backdrop,#30364c,7.37,4.21,7.37,pass,pass,pass
+measured-live,natt,desktop,home,Hero lede,.hero .lede,Den målade hjälten återvänder. Valen för,20.48,400,False,--page-sub,#d9cfee,page backdrop,#3f394c,#3f394c,backdrop,#3f394c,7.42,3.61,7.42,pass,FAIL,pass
+measured-live,natt,desktop,home,"Primary CTA ""Skapa er hjälte""",.hero .btn-primary,Skapa er hjälte,16.8,700,False,--btn-ink,#3a2b10,--btn-grad,#353045,,,#fad266,9.44,8.97,,pass,pass,pass
+measured-live,natt,desktop,home,CTA microcopy,.hero .cta-microcopy,"Första boken är gratis, inget kort behöv",13.6,400,False,--page-sub,#d9cfee,page backdrop,#383141,#383141,backdrop,#433c40,7.2,3.83,8.38,pass,FAIL,pass
+measured-live,natt,desktop,home,"Ghost CTA ""Se hur det funkar""",.hero .btn-ghost,Se hur det funkar,16.8,700,False,--ghost-ink,#fff3d9,--ghost-bg over page,#373145,#4b4556,#fff9ec1a over backdrop,#4e464f,8.25,6.98,8.3,pass,pass,pass
+measured-live,natt,desktop,home,Floating badge title,.fan .badge b,Sixten minns tornet,15.2,700,False,--card-ink,#f2eeff,--card over page,#4f5676,#242b41,#0f1628ad over backdrop,#21263b,13.13,12.81,12.39,pass,pass,pass
+measured-live,natt,desktop,home,Floating badge subline,.fan .badge span,"från ""Alva och fyraljuset""",12.8,400,False,--card-sub,#b5acd3,--card over page,#4f5776,#242b41,#0f1628ad over backdrop,#21283d,6.83,6.69,6.56,pass,pass,fail
+measured-live,natt,desktop,home,"Section kicker ""SÅ FUNGERAR DET""",.hiw-kicker,Så fungerar det,13.12,700,False,--pill-ink,#c9bcff,--pill-bg over page,#373245,#474061,#9b87f529 over backdrop,#473f60,5.64,4.13,5.59,pass,FAIL,fail
+measured-live,natt,desktop,home,Section headline (h2),.hiw-headline,Äventyr värda att prata om.,43.2,700,True,--page-ink,#fff7e9,page backdrop,#3a3848,#3a3848,backdrop,#3a3848,10.73,6.38,10.73,pass,pass,pass
+measured-live,natt,desktop,home,Section lede,.hiw-lede,Från ett foto till en uppläst bilderbok ,17.6,400,False,--page-sub,#d9cfee,page backdrop,#393646,#393646,backdrop,#393646,7.88,4.47,7.88,pass,FAIL,pass
+measured-live,natt,desktop,home,Step number node,.hiw-node,1,16.8,700,False,--gold-chip-ink,#ffd98f,--gold-chip-bg over page,#393147,#574643,#f2b22e29 over backdrop,#564642,6.63,5.27,6.62,pass,pass,fail
+measured-live,natt,desktop,home,Step heading (h3),.hiw-step-text h3,Bygg er hjälte,21.6,700,True,--page-ink,#fff7e9,page backdrop,#322c36,#322c36,backdrop,#322c36,12.74,5.55,12.74,pass,pass,pass
+measured-live,natt,desktop,home,Step body copy,.hiw-step-copy,Ladda upp en bild och välj det som gör e,16.32,400,False,--page-sub,#d9cfee,page backdrop,#372f37,#372f37,backdrop,#372f37,8.69,4.57,8.69,pass,pass,pass
+measured-live,natt,desktop,home,Step micro line,.hiw-micro,Porträttet styr både bilderna och berätt,14.08,600,False,--micro-ink,#d9cfeed9,page backdrop,#372e38,#372e38,backdrop,#372e38,6.8,3.3,6.8,pass,FAIL,fail
+measured-live,natt,desktop,home,"""Skapad med AI"" chip on portrait",.hiw-ai-chip,Skapad med AI,12.16,700,False,literal #241f35,#241f35,literal #ffffffc7 over image,#373b5d,,,#fcf7f1,14.91,13.68,,pass,pass,pass
+measured-live,natt,desktop,home,Friend name in card,.hiw-friend-row b,Noah,15.2,700,False,--card-ink,#f2eeff,--card over page,#5c4844,#282631,#0f1628ad over backdrop,#1c1e2c,14.51,13.98,13.07,pass,pass,pass
+measured-live,natt,desktop,home,Friend subline in card,.hiw-friend-row span,bästa kompisen · med i 2 böcker,13.12,400,False,--card-sub,#b5acd3,--card over page,#2d2934,#191c2c,#0f1628ad over backdrop,#191c2c,7.88,7.46,7.88,pass,pass,pass
+measured-live,natt,desktop,home,"Invite slot ""+""",.hiw-invite-slot,+,17.6,700,False,--chip-ink,#e8dfc9,--card over page,#392d33,#1d1d2c,#0f1628ad over backdrop,#1e1f2c,12.29,12.17,12.5,pass,pass,pass
+measured-live,natt,desktop,home,Bake progress line,.hiw-bake-line,Boken bakas. Ungefär tio minuter kvar.,13.6,400,False,--card-sub,#b5acd3,--card over page,#33395a,#1b2138,#0f1628ad over backdrop,#181e34,7.7,7.27,7.41,pass,pass,pass
+measured-live,natt,desktop,home,Play button label,.hiw-play span,Hör berättarrösten,15.2,700,False,--btn-ink,#3a2b10,--btn-grad,#232333,,,#f9d162,9.34,8.82,,pass,pass,pass
+measured-live,natt,desktop,home,"Voice chip ""Morfar""",.hiw-voice-chip,Morfar,13.6,700,False,--chip-ink,#e8dfc9,--chip-bg over page,#4b455d,#5d576c,#fff9ec1a over backdrop,#5d566b,5.26,2.67,5.18,pass,FAIL,fail
+measured-live,natt,desktop,home,Reader mock prose,.hiw-mock-prose,Iris gick in mellan fönsterbänken och ma,16.32,400,False,--prose-ink,#eae4f5,--card over page,#342b35,#1b1d2c,#0f1628ad over backdrop,#1c1e2d,13.29,12.06,13.46,pass,pass,pass
+measured-live,natt,desktop,home,Reader mock choice pill,.hiw-choice,Gå med Mossa till den gröna mattan.,14.4,600,False,--choice-ink,#f2eeff,--choice-bg over --card,#201f32,#222638,#ffffff0f over #0f1628ad over backdrop,#242737,12.99,12.0,13.1,pass,pass,pass
+measured-live,natt,desktop,home,Map caption,.hiw-caption,Kartan över exempelboken Iris och den sp,15.2,400,False,--page-sub,#d9cfee,page backdrop,#37344c,#37344c,backdrop,#2f2f43,8.77,5.23,8.03,pass,pass,pass
+measured-live,natt,desktop,home,"""nästa bok"" label on cover",.hiw-next-label,nästa bok,11.52,700,False,literal #fff7e9,#fff7e9,literal #0a0c188c over cover art,#3e4060,,,#1e2536,14.37,11.54,,pass,pass,pass
+measured-live,natt,desktop,home,Memory tag title,.hiw-memory-tag b,Sixten minns tornet,13.6,700,False,--card-ink,#f2eeff,--card over --card,#505878,#161d30,#0f1628ad over #0f1628ad over backdrop,#3b393b,10.06,8.77,14.75,pass,pass,pass
+measured-live,natt,desktop,home,Memory tag subline,.hiw-memory-tag div span,"från ""Alva och fyraljuset""",12.0,400,False,--card-sub,#b5acd3,--card over --card,#4f5877,#161d30,#0f1628ad over #0f1628ad over backdrop,#242732,6.95,5.26,7.84,pass,pass,fail
+measured-live,natt,desktop,home,"Ghost CTA ""Läs exempelboken""",.hiw-map-cta .btn-ghost,Läs exempelboken,16.8,700,False,--ghost-ink,#fff3d9,--ghost-bg over page,#242333,#3a3946,#fff9ec1a over backdrop,#423c46,9.7,6.86,10.3,pass,pass,pass
+measured-live,natt,desktop,home,"Section chip ""barnens favorit""",section .sec-chip,barnens favorit,12.8,700,False,--chip-ink,#e8dfc9,--chip-bg over page,#1b1d32,#323345,#fff9ec1a over backdrop,#313344,9.38,4.94,9.29,pass,pass,pass
+measured-live,natt,desktop,home,"Section intro under ""Din hjälte""",section p,Den som varje saga handlar om.,14.72,400,False,--card-sub,#b5acd3,page backdrop,#393245,#393245,backdrop,#393244,5.72,3.07,5.71,pass,FAIL,fail
+measured-live,natt,desktop,home,"Hero name ""Alva"" in builder card",.builder-name,Alva,25.6,700,True,--card-ink,#f2eeff,--card over page,#16182e,#11172a,#0f1628ad over backdrop,#121729,15.63,15.45,15.67,pass,pass,pass
+measured-live,natt,desktop,home,"Trait chip, selected",.trait.on,Modig,14.08,700,False,--trait-on-ink,#e9e2ff,--trait-on-bg over --card,#171a32,#2d2e54,#9b87f533 over #0f1628ad over backdrop,#2e2e52,10.31,10.18,10.34,pass,pass,pass
+measured-live,natt,desktop,home,"Trait chip, unselected",.trait:not(.on),Nyfiken,14.08,700,False,--trait-ink,#cfc5ec,--card over page,#171b32,#12182b,#0f1628ad over backdrop,#13182a,10.78,10.56,10.82,pass,pass,pass
+measured-live,natt,desktop,home,Upload row title,.upload b,Bli din egen hjälte,15.68,700,False,--card-ink,#f2eeff,--card over page,#3f3e49,#1e2333,#0f1628ad over backdrop,#20222f,13.86,13.17,13.74,pass,pass,pass
+measured-live,natt,desktop,home,Upload row hint,.upload span,"Ladda upp en bild, så målar vi dig i bok",13.6,400,False,--card-sub,#b5acd3,--card over page,#3b3e52,#1d2336,#0f1628ad over backdrop,#1e2431,7.25,6.99,7.3,pass,pass,pass
+measured-live,natt,desktop,home,"""Lägg till en vän"" dashed button",.friend-add,Lägg till en vän,15.2,700,False,--chip-ink,#e8dfc9,--card over page,#414462,#1f253b,#0f1628ad over backdrop,#20263b,11.29,10.57,11.45,pass,pass,pass
+measured-live,natt,desktop,home,Shelf book title,.book-title,Alva och fyraljuset i tornet,16.32,700,False,--card-ink,#f2eeff,--card over page,#19192a,#121729,#0f1628ad over backdrop,#121728,15.65,14.87,15.64,pass,pass,pass
+measured-live,natt,desktop,home,Shelf book category pill,.book-sub,Stora känslor,11.52,800,False,--pill-ink,#c9bcff,--pill-bg over --card,#212238,#2a2b4d,#9b87f529 over #0f1628ad over backdrop,#2a2b4c,7.83,7.55,7.77,pass,pass,pass
+measured-live,natt,desktop,home,Footer tagline,.foot > div > span,"Tale Forge, sagor som minns er värld.Bet",14.4,400,False,--foot-ink,#b7a9d6,page backdrop,#13172c,#13172c,backdrop,#12162b,8.22,6.97,8.14,pass,pass,pass
+measured-live,natt,desktop,home,Footer link,.foot a,Kontakt,14.4,400,False,--card-sub,#b5acd3,page backdrop,#0d122b,#0d122b,backdrop,#0d122b,8.61,8.48,8.61,pass,pass,pass
+measured-live,natt,mobile,home,"Wordmark ""TALE FORGE""",a.logo,Tale Forge,16.8,700,False,--logo-ink,#f5c542,page backdrop,#101f3b,#101f3b,backdrop,#101f3b,10.11,9.79,10.11,pass,pass,pass
+measured-live,natt,mobile,home,Hero kicker chip,.hero .kicker,Exempel: Alvas värld · 2 böcker,13.6,700,False,--chip-ink,#e8dfc9,--chip-bg over page,#202d49,#37425a,#fff9ec1a over backdrop,#36415a,7.68,6.78,7.6,pass,pass,pass
+measured-live,natt,mobile,home,H1 first line (page ink),.hero h1,En värld som,43.2,700,True,--page-ink,#fff7e9,page backdrop,#2c3b55,#2c3b55,backdrop,#2c3b55,10.59,6.96,10.59,pass,pass,pass
+measured-live,natt,mobile,home,H1 highlighted words (.grad),.hero h1 .grad,minns henne,43.2,700,True,--accent-ink,#f5c542,page backdrop,#3f4c65,#3f4c65,backdrop,#3f4c65,5.32,3.52,5.32,pass,pass,pass
+measured-live,natt,mobile,home,Hero lede,.hero .lede,Den målade hjälten återvänder. Valen för,17.28,400,False,--page-sub,#d9cfee,page backdrop,#45485e,#45485e,backdrop,#45485e,6.03,4.08,6.03,pass,FAIL,fail
+measured-live,natt,mobile,home,"Primary CTA ""Skapa er hjälte""",.hero .btn-primary,Skapa er hjälte,16.8,700,False,--btn-ink,#3a2b10,--btn-grad,#404567,,,#fad366,9.51,8.98,,pass,pass,pass
+measured-live,natt,mobile,home,CTA microcopy,.hero .cta-microcopy,"Första boken är gratis, inget kort behöv",13.6,400,False,--page-sub,#d9cfee,page backdrop,#3c3f5c,#3c3f5c,backdrop,#4a4958,5.92,4.05,6.86,pass,FAIL,fail
+measured-live,natt,mobile,home,"Ghost CTA ""Se hur det funkar""",.hero .btn-ghost,Se hur det funkar,16.8,700,False,--ghost-ink,#fff3d9,--ghost-bg over page,#404567,#535775,#fff9ec1a over backdrop,#535775,6.38,5.92,6.35,pass,pass,fail
+measured-live,natt,mobile,home,Section headline (h2),.hiw-headline,Äventyr värda att prata om.,30.4,700,True,--page-ink,#fff7e9,page backdrop,#383e55,#383e55,backdrop,#383e55,9.92,6.64,9.92,pass,pass,pass
+measured-live,natt,mobile,home,Section lede,.hiw-lede,Från ett foto till en uppläst bilderbok ,17.6,400,False,--page-sub,#d9cfee,page backdrop,#383d55,#383d55,backdrop,#383d55,7.17,4.92,7.17,pass,pass,pass
+measured-live,natt,mobile,home,Step body copy,.hiw-step-copy,Ladda upp en bild och välj det som gör e,16.32,400,False,--page-sub,#d9cfee,page backdrop,#373e5a,#373e5a,backdrop,#373e5a,7.06,5.23,7.06,pass,pass,pass
+measured-live,natt,mobile,home,Reader mock prose,.hiw-mock-prose,Iris gick in mellan fönsterbänken och ma,16.32,400,False,--prose-ink,#eae4f5,--card over page,#373d59,#1c2338,#0f1628ad over backdrop,#1c2338,12.56,12.06,12.62,pass,pass,pass
+measured-live,natt,mobile,home,Footer link,.foot a,Kontakt,14.4,400,False,--card-sub,#b5acd3,page backdrop,#11152a,#11152a,backdrop,#11152a,8.42,7.6,8.42,pass,pass,pass
+measured-live,natt,desktop,login,"Login card title ""Logga in""",.page-title,Logga in,32.0,600,True,--page-ink,#fff7e9,--card over page,#1f2d4b,#141d33,#0f1628ad over backdrop,#141d33,15.74,15.45,15.69,pass,pass,pass
+measured-live,natt,desktop,login,Login subtitle,p.lede,Välkommen tillbaka.,16.0,400,False,--card-sub,#b5acd3,--card over page,#213150,#151f35,#0f1628ad over backdrop,#151f34,7.68,7.51,7.69,pass,pass,pass
+measured-live,natt,desktop,login,Google button label,button.btn-ghost,Fortsätt med Google,16.8,700,False,--ghost-ink,#fff3d9,--ghost-bg over --card,#4a5475,#393f52,#fff9ec1a over #0f1628ad over backdrop,#2c3243,11.6,11.45,9.51,pass,pass,pass
+measured-live,natt,desktop,login,"Form label ""E-post""",label,E-post,14.4,700,False,--card-sub,#b5acd3,--card over page,#7f6e59,#333238,#0f1628ad over backdrop,#2d2d36,6.37,6.31,5.91,pass,pass,fail
+measured-live,natt,desktop,login,"""Glömt lösenordet?"" link-button",button,Glömt lösenordet?,13.33,700,False,--accent,#f5c542,--card over page,#3c374d,#1d2134,#0f1628ad over backdrop,#1e2135,9.78,9.54,9.84,pass,pass,pass
+measured-live,natt,desktop,login,"Submit ""Logga in""",.btn-primary,Logga in,16.8,700,False,--btn-ink,#3a2b10,--btn-grad,#4e434f,,,#fad266,9.44,9.28,,pass,pass,pass
+measured-live,natt,desktop,login,"""Har du inget konto?""",p,Har du inget konto?,14.72,400,False,--card-sub,#b5acd3,--card over page,#4c3d3a,#23232e,#0f1628ad over backdrop,#2e2c2e,6.47,5.94,7.29,pass,pass,fail
+measured-live,natt,desktop,login,"""Skapa ett"" link",p a,Skapa ett,14.72,700,False,--accent,#f5c542,--card over page,#3a313c,#1d1f2e,#0f1628ad over backdrop,#2b2a2f,8.78,8.03,10.08,pass,pass,pass
+measured-live,natt,desktop,start,Start kicker chip,.kicker,"Riktiga bilderböcker, upplästa på svensk",13.6,700,False,--chip-ink,#e8dfc9,--chip-bg over page,#222c45,#394156,#fff9ec1a over backdrop,#394055,7.77,6.8,7.69,pass,pass,pass
+measured-live,natt,desktop,start,Start H1 first line,h1,Ikväll är hjälten,70.4,700,True,--page-ink,#fff7e9,page backdrop,#363a4e,#363a4e,backdrop,#363a4e,10.54,6.42,10.54,pass,pass,pass
+measured-live,natt,desktop,start,Start H1 .grad,h1 .grad,ert barn,70.4,700,True,--accent-ink,#f5c542,page backdrop,#32354e,#32354e,backdrop,#32354e,7.38,4.21,7.38,pass,pass,pass
+measured-live,natt,desktop,start,Start lede,.lede,"Tale Forge skriver, målar och läser in e",20.48,400,False,--page-sub,#d9cfee,page backdrop,#282331,#282331,backdrop,#282331,10.26,5.13,10.26,pass,pass,pass
+measured-live,natt,desktop,start,Start primary CTA,.btn-primary,Skapa er hjälte,16.8,700,False,--btn-ink,#3a2b10,--btn-grad,#141726,,,#fad266,9.48,8.97,,pass,pass,pass
+measured-live,natt,desktop,start,Start ghost CTA,.btn-ghost,Läs en exempelbok först,16.8,700,False,--ghost-ink,#fff3d9,--ghost-bg over page,#3f2e2b,#53433f,#fff9ec1a over backdrop,#504441,8.5,5.92,8.55,pass,pass,pass
+measured-live,morgon,desktop,home,"Wordmark ""TALE FORGE""",a.logo,Tale Forge,27.52,700,True,--logo-ink,#6d4fe0,page backdrop,#f8d1c6,#f8d1c6,backdrop,#f8d1c6,3.88,3.51,3.88,pass,pass,fail
+measured-live,morgon,desktop,home,"Nav link ""Logga in""",.nav-right > a,Logga in,13.12,700,False,--card-sub,#5f5878,page backdrop,#f9e7d5,#f9e7d5,backdrop,#f9e7d5,5.52,5.32,5.52,pass,pass,fail
+measured-live,morgon,desktop,home,"Language switch, active (SV)",".language-switcher button[aria-pressed=""true""]",SV,13.12,800,False,--btn-ink,#ffffff,--accent (solid),#fcd895,#6d4fe0,#6d4fe0,#6d4fe0,5.46,5.46,5.46,pass,pass,fail
+measured-live,morgon,desktop,home,"Language switch, inactive (EN)",".language-switcher button[aria-pressed=""false""]",EN,13.12,700,False,--card-sub,#5f5878,page backdrop,#fdd588,#fdd588,backdrop,#fdd588,4.77,4.55,4.77,pass,pass,fail
+measured-live,morgon,desktop,home,"Theme toggle, active option",.tt-opt.day,Morgon,15.2,700,False,--btn-ink,#ffffff,--btn-grad (thumb),#fab5a9,,,#6346d3,6.27,5.92,,pass,pass,fail
+measured-live,morgon,desktop,home,"Theme toggle, inactive option",.tt-opt.night,Natt,15.2,700,False,--ghost-ink,#241f35,--ghost-bg over page,#fcce8d,#fef1df,#ffffffb8 over backdrop,#fef1df,14.26,13.62,14.3,pass,pass,pass
+measured-live,morgon,desktop,home,Hero kicker chip,.hero .kicker,Exempel: Alvas värld · 2 böcker,13.6,700,False,--chip-ink,#5b3fc7,--chip-bg over page,#e9dbe9,#dfd0e8,#6d4fe014 over backdrop,#e0d0e9,4.82,4.53,4.81,pass,pass,fail
+measured-live,morgon,desktop,home,H1 first line (page ink),.hero h1,En värld som,70.4,700,True,--page-ink,#241f35,page backdrop,#f4eaec,#f4eaec,backdrop,#f4eaec,13.48,12.44,13.48,pass,pass,pass
+measured-live,morgon,desktop,home,H1 highlighted words (.grad),.hero h1 .grad,minns henne,70.4,700,True,--accent-ink,#5b3fc7,page backdrop,#f4ebef,#f4ebef,backdrop,#f4ebef,6.03,5.84,6.03,pass,pass,pass
+measured-live,morgon,desktop,home,Hero lede,.hero .lede,Den målade hjälten återvänder. Valen för,20.48,400,False,--page-sub,#5f5878,page backdrop,#f2eaf0,#f2eaf0,backdrop,#f2eaf0,5.65,5.39,5.65,pass,pass,fail
+measured-live,morgon,desktop,home,"Primary CTA ""Skapa er hjälte""",.hero .btn-primary,Skapa er hjälte,16.8,700,False,--btn-ink,#ffffff,--btn-grad,#f2e7ef,,,#6447d3,6.21,5.84,,pass,pass,fail
+measured-live,morgon,desktop,home,CTA microcopy,.hero .cta-microcopy,"Första boken är gratis, inget kort behöv",13.6,400,False,--page-sub,#5f5878,page backdrop,#f1e8f0,#f1e8f0,backdrop,#efe6ef,5.47,4.32,5.56,pass,FAIL,fail
+measured-live,morgon,desktop,home,"Ghost CTA ""Se hur det funkar""",.hero .btn-ghost,Se hur det funkar,16.8,700,False,--ghost-ink,#241f35,--ghost-bg over page,#f2e8f0,#fbf9fb,#ffffffb8 over backdrop,#fcf9fb,15.19,15.03,15.13,pass,pass,pass
+measured-live,morgon,desktop,home,Floating badge title,.fan .badge b,Sixten minns tornet,15.2,700,False,--card-ink,#241f35,--card over page,#eee4f0,#fcfafc,#fffc over backdrop,#f5f3f5,14.38,14.01,15.24,pass,pass,pass
+measured-live,morgon,desktop,home,Floating badge subline,.fan .badge span,"från ""Alva och fyraljuset""",12.8,400,False,--card-sub,#5f5878,--card over page,#eee4f0,#fcfafc,#fffc over backdrop,#f7f5f7,6.14,6.02,6.39,pass,pass,fail
+measured-live,morgon,desktop,home,"Section kicker ""SÅ FUNGERAR DET""",.hiw-kicker,Så fungerar det,13.12,700,False,--pill-ink,#5b3fc7,--pill-bg over page,#f2e7ef,#e4d8ed,#6d4fe01a over backdrop,#e4d7ed,5.11,4.88,5.14,pass,pass,fail
+measured-live,morgon,desktop,home,Section headline (h2),.hiw-headline,Äventyr värda att prata om.,43.2,700,True,--page-ink,#241f35,page backdrop,#f1e9f0,#f1e9f0,backdrop,#f1e9f0,13.35,12.75,13.35,pass,pass,pass
+measured-live,morgon,desktop,home,Section lede,.hiw-lede,Från ett foto till en uppläst bilderbok ,17.6,400,False,--page-sub,#5f5878,page backdrop,#f1e9f0,#f1e9f0,backdrop,#f1e9f0,5.6,5.3,5.6,pass,pass,fail
+measured-live,morgon,desktop,home,Step number node,.hiw-node,1,16.8,700,False,--gold-chip-ink,#8f6a12,--gold-chip-bg over page,#eee3ee,#efdcd1,#f2b22e26 over backdrop,#eedcd1,3.73,3.66,3.72,FAIL,FAIL,fail
+measured-live,morgon,desktop,home,Step heading (h3),.hiw-step-text h3,Bygg er hjälte,21.6,700,True,--page-ink,#241f35,page backdrop,#f3e9f1,#f3e9f1,backdrop,#f3e9f1,13.41,13.08,13.41,pass,pass,pass
+measured-live,morgon,desktop,home,Step body copy,.hiw-step-copy,Ladda upp en bild och välj det som gör e,16.32,400,False,--page-sub,#5f5878,page backdrop,#f2e9f0,#f2e9f0,backdrop,#f2e9f0,5.61,5.49,5.61,pass,pass,fail
+measured-live,morgon,desktop,home,Step micro line,.hiw-micro,Porträttet styr både bilderna och berätt,14.08,600,False,--micro-ink,#5f5878,page backdrop,#f1e9f0,#f1e9f0,backdrop,#f1e9f0,5.6,5.5,5.6,pass,pass,fail
+measured-live,morgon,desktop,home,"""Skapad med AI"" chip on portrait",.hiw-ai-chip,Skapad med AI,12.16,700,False,literal #241f35,#241f35,literal #ffffffc7 over image,#f0e6ef,,,#fcf7f1,14.91,13.69,,pass,pass,pass
+measured-live,morgon,desktop,home,Friend name in card,.hiw-friend-row b,Noah,15.2,700,False,--card-ink,#241f35,--card over page,#f3e9f1,#fdfbfc,#fffc over backdrop,#fdfbfc,15.41,15.41,15.36,pass,pass,pass
+measured-live,morgon,desktop,home,Friend subline in card,.hiw-friend-row span,bästa kompisen · med i 2 böcker,13.12,400,False,--card-sub,#5f5878,--card over page,#f1e9f0,#fcfbfc,#fffc over backdrop,#fcfbfc,6.45,6.45,6.44,pass,pass,fail
+measured-live,morgon,desktop,home,"Invite slot ""+""",.hiw-invite-slot,+,17.6,700,False,--chip-ink,#5b3fc7,--card over page,#f1e9f0,#fcfbfc,#fffc over backdrop,#fcfbfc,6.83,6.83,6.81,pass,pass,fail
+measured-live,morgon,desktop,home,Bake progress line,.hiw-bake-line,Boken bakas. Ungefär tio minuter kvar.,13.6,400,False,--card-sub,#5f5878,--card over page,#f0e6ef,#fcfafc,#fffc over backdrop,#f7f5f8,6.14,5.94,6.41,pass,pass,fail
+measured-live,morgon,desktop,home,Play button label,.hiw-play span,Hör berättarrösten,15.2,700,False,--btn-ink,#ffffff,--btn-grad,#f2e9f1,,,#6346d2,6.29,5.9,,pass,pass,fail
+measured-live,morgon,desktop,home,"Voice chip ""Morfar""",.hiw-voice-chip,Morfar,13.6,700,False,--chip-ink,#5b3fc7,--chip-bg over page,#f1e9f1,#e7ddf0,#6d4fe014 over backdrop,#e7dcf0,5.33,5.23,5.36,pass,pass,fail
+measured-live,morgon,desktop,home,Reader mock prose,.hiw-mock-prose,Iris gick in mellan fönsterbänken och ma,16.32,400,False,--prose-ink,#3a3450,--card over page,#f1e9f0,#fcfbfc,#fffc over backdrop,#fcfbfc,11.38,11.38,11.36,pass,pass,pass
+measured-live,morgon,desktop,home,Reader mock choice pill,.hiw-choice,Gå med Mossa till den gröna mattan.,14.4,600,False,--choice-ink,#241f35,--choice-bg over --card,#f2e9f0,#ffffff,#fff over #fffc over backdrop,#ffffff,15.88,15.88,15.88,pass,pass,pass
+measured-live,morgon,desktop,home,Map caption,.hiw-caption,Kartan över exempelboken Iris och den sp,15.2,400,False,--page-sub,#5f5878,page backdrop,#f1e9f0,#f1e9f0,backdrop,#e8dfe7,5.12,4.69,5.6,pass,pass,fail
+measured-live,morgon,desktop,home,"""nästa bok"" label on cover",.hiw-next-label,nästa bok,11.52,700,False,literal #fff7e9,#fff7e9,literal #0a0c188c over cover art,#efe6f0,,,#2f3646,11.36,8.85,,pass,pass,pass
+measured-live,morgon,desktop,home,Memory tag title,.hiw-memory-tag b,Sixten minns tornet,13.6,700,False,--card-ink,#241f35,--card over --card,#eee4f0,#fefefe,#fffc over #fffc over backdrop,#f7f3ec,14.36,13.36,15.75,pass,pass,pass
+measured-live,morgon,desktop,home,Memory tag subline,.hiw-memory-tag div span,"från ""Alva och fyraljuset""",12.0,400,False,--card-sub,#5f5878,--card over --card,#eee4f0,#fefefe,#fffc over #fffc over backdrop,#f9f6f3,6.18,5.93,6.6,pass,pass,fail
+measured-live,morgon,desktop,home,"Ghost CTA ""Läs exempelboken""",.hiw-map-cta .btn-ghost,Läs exempelboken,16.8,700,False,--ghost-ink,#241f35,--ghost-bg over page,#f2e9f1,#fbf9fb,#ffffffb8 over backdrop,#fcf9fb,15.19,15.16,15.16,pass,pass,pass
+measured-live,morgon,desktop,home,"Section chip ""barnens favorit""",section .sec-chip,barnens favorit,12.8,700,False,--chip-ink,#5b3fc7,--chip-bg over page,#f2e9f0,#e8ddef,#6d4fe014 over backdrop,#e8dcef,5.34,5.3,5.37,pass,pass,fail
+measured-live,morgon,desktop,home,"Section intro under ""Din hjälte""",section p,Den som varje saga handlar om.,14.72,400,False,--card-sub,#5f5878,page backdrop,#f2e8f0,#f2e8f0,backdrop,#f2e7ef,5.53,5.24,5.57,pass,pass,fail
+measured-live,morgon,desktop,home,"Hero name ""Alva"" in builder card",.builder-name,Alva,25.6,700,True,--card-ink,#241f35,--card over page,#f2e9f0,#fcfbfc,#fffc over backdrop,#fdfbfc,15.41,15.28,15.36,pass,pass,pass
+measured-live,morgon,desktop,home,"Trait chip, selected",.trait.on,Modig,14.08,700,False,--trait-on-ink,#4a36a8,--trait-on-bg over --card,#f1e9f0,#ebe6f9,#6d4fe01f over #fffc over backdrop,#ebe6f9,7.22,7.22,7.2,pass,pass,pass
+measured-live,morgon,desktop,home,"Trait chip, unselected",.trait:not(.on),Nyfiken,14.08,700,False,--trait-ink,#5f5878,--card over page,#f1e9f0,#fcfbfc,#fffc over backdrop,#fcfbfc,6.45,6.45,6.44,pass,pass,fail
+measured-live,morgon,desktop,home,Upload row title,.upload b,Bli din egen hjälte,15.68,700,False,--card-ink,#241f35,--card over page,#f1e9f0,#fcfbfc,#fffc over backdrop,#fcfbfc,15.38,15.38,15.35,pass,pass,pass
+measured-live,morgon,desktop,home,Upload row hint,.upload span,"Ladda upp en bild, så målar vi dig i bok",13.6,400,False,--card-sub,#5f5878,--card over page,#f1e9f0,#fcfbfc,#fffc over backdrop,#fcfbfc,6.45,6.45,6.44,pass,pass,fail
+measured-live,morgon,desktop,home,"""Lägg till en vän"" dashed button",.friend-add,Lägg till en vän,15.2,700,False,--chip-ink,#5b3fc7,--card over page,#f0e6f0,#fcfafc,#fffc over backdrop,#fcfafc,6.78,6.78,6.78,pass,pass,fail
+measured-live,morgon,desktop,home,Shelf book title,.book-title,Alva och fyraljuset i tornet,16.32,700,False,--card-ink,#241f35,--card over page,#ede2ee,#fbf9fc,#fffc over backdrop,#fcf9fc,15.2,15.04,15.19,pass,pass,pass
+measured-live,morgon,desktop,home,Shelf book category pill,.book-sub,Stora känslor,11.52,800,False,--pill-ink,#5b3fc7,--pill-bg over --card,#eee3ee,#ede8f9,#6d4fe01a over #fffc over backdrop,#ede8f9,5.88,5.74,5.88,pass,pass,fail
+measured-live,morgon,desktop,home,Footer tagline,.foot > div > span,"Tale Forge, sagor som minns er värld.Bet",14.4,400,False,--foot-ink,#5f5878,page backdrop,#ecd5e4,#ecd5e4,backdrop,#e5cfde,4.54,4.19,4.82,pass,FAIL,fail
+measured-live,morgon,desktop,home,Footer link,.foot a,Kontakt,14.4,400,False,--card-sub,#5f5878,page backdrop,#ead6e2,#ead6e2,backdrop,#ead6e2,4.82,4.6,4.82,pass,pass,fail
+measured-live,morgon,mobile,home,"Wordmark ""TALE FORGE""",a.logo,Tale Forge,16.8,700,False,--logo-ink,#6d4fe0,page backdrop,#ead6e9,#ead6e9,backdrop,#e9d6e8,3.97,3.72,3.98,FAIL,FAIL,fail
+measured-live,morgon,mobile,home,Hero kicker chip,.hero .kicker,Exempel: Alvas värld · 2 böcker,13.6,700,False,--chip-ink,#5b3fc7,--chip-bg over page,#f1e6eb,#e7daea,#6d4fe014 over backdrop,#e7daea,5.24,5.12,5.24,pass,pass,fail
+measured-live,morgon,mobile,home,H1 first line (page ink),.hero h1,En värld som,43.2,700,True,--page-ink,#241f35,page backdrop,#efe5ed,#efe5ed,backdrop,#efe5ed,12.93,12.14,12.93,pass,pass,pass
+measured-live,morgon,mobile,home,H1 highlighted words (.grad),.hero h1 .grad,minns henne,43.2,700,True,--accent-ink,#5b3fc7,page backdrop,#efe5ed,#efe5ed,backdrop,#efe5ed,5.74,5.4,5.74,pass,pass,pass
+measured-live,morgon,mobile,home,Hero lede,.hero .lede,Den målade hjälten återvänder. Valen för,17.28,400,False,--page-sub,#5f5878,page backdrop,#f1e6ed,#f1e6ed,backdrop,#f1e6ed,5.48,5.27,5.48,pass,pass,fail
+measured-live,morgon,mobile,home,"Primary CTA ""Skapa er hjälte""",.hero .btn-primary,Skapa er hjälte,16.8,700,False,--btn-ink,#ffffff,--btn-grad,#f3e5eb,,,#6447d4,6.19,5.84,,pass,pass,fail
+measured-live,morgon,mobile,home,CTA microcopy,.hero .cta-microcopy,"Första boken är gratis, inget kort behöv",13.6,400,False,--page-sub,#5f5878,page backdrop,#f2e6ec,#f2e6ec,backdrop,#ebdeeb,5.13,4.31,5.49,pass,FAIL,fail
+measured-live,morgon,mobile,home,"Ghost CTA ""Se hur det funkar""",.hero .btn-ghost,Se hur det funkar,16.8,700,False,--ghost-ink,#241f35,--ghost-bg over page,#f3e5eb,#fcf8f9,#ffffffb8 over backdrop,#fcf8fa,15.08,15.06,15.05,pass,pass,pass
+measured-live,morgon,mobile,home,Section headline (h2),.hiw-headline,Äventyr värda att prata om.,30.4,700,True,--page-ink,#241f35,page backdrop,#f2e6ed,#f2e6ed,backdrop,#f2e6ed,13.1,12.66,13.1,pass,pass,pass
+measured-live,morgon,mobile,home,Section lede,.hiw-lede,Från ett foto till en uppläst bilderbok ,17.6,400,False,--page-sub,#5f5878,page backdrop,#f2e6ed,#f2e6ed,backdrop,#f2e6ed,5.49,5.3,5.49,pass,pass,fail
+measured-live,morgon,mobile,home,Step body copy,.hiw-step-copy,Ladda upp en bild och välj det som gör e,16.32,400,False,--page-sub,#5f5878,page backdrop,#f2e7ec,#f2e7ec,backdrop,#f2e7ec,5.52,5.31,5.52,pass,pass,fail
+measured-live,morgon,mobile,home,Reader mock prose,.hiw-mock-prose,Iris gick in mellan fönsterbänken och ma,16.32,400,False,--prose-ink,#3a3450,--card over page,#f3e7ec,#fdfafb,#fffc over backdrop,#fdfafb,11.33,11.31,11.34,pass,pass,pass
+measured-live,morgon,mobile,home,Footer link,.foot a,Kontakt,14.4,400,False,--card-sub,#5f5878,page backdrop,#e0c2d1,#e0c2d1,backdrop,#e0c2d1,4.06,2.65,4.06,FAIL,FAIL,fail
+measured-live,morgon,desktop,login,"Login card title ""Logga in""",.page-title,Logga in,32.0,600,True,--page-ink,#241f35,--card over page,#f8ece7,#fefbfa,#fffc over backdrop,#fefbfa,15.42,15.4,15.43,pass,pass,pass
+measured-live,morgon,desktop,login,Login subtitle,p.lede,Välkommen tillbaka.,16.0,400,False,--card-sub,#5f5878,--card over page,#f7ebeb,#fdfbfb,#fffc over backdrop,#fefbfb,6.47,6.46,6.46,pass,pass,fail
+measured-live,morgon,desktop,login,Google button label,button.btn-ghost,Fortsätt med Google,16.8,700,False,--ghost-ink,#241f35,--ghost-bg over --card,#f5ebef,#fefefe,#ffffffb8 over #fffc over backdrop,#ffffff,15.88,15.88,15.75,pass,pass,pass
+measured-live,morgon,desktop,login,"Form label ""E-post""",label,E-post,14.4,700,False,--card-sub,#5f5878,--card over page,#f2ebf0,#fcfbfc,#fffc over backdrop,#fdfbfc,6.46,6.45,6.46,pass,pass,fail
+measured-live,morgon,desktop,login,"""Glömt lösenordet?"" link-button",button,Glömt lösenordet?,13.33,700,False,--accent,#6d4fe0,--card over page,#efe6f0,#fcfafc,#fffc over backdrop,#fcfafc,5.26,5.26,5.26,pass,pass,fail
+measured-live,morgon,desktop,login,"Submit ""Logga in""",.btn-primary,Logga in,16.8,700,False,--btn-ink,#ffffff,--btn-grad,#f0e8ef,,,#6447d4,6.2,6.1,,pass,pass,fail
+measured-live,morgon,desktop,login,"""Har du inget konto?""",p,Har du inget konto?,14.72,400,False,--card-sub,#5f5878,--card over page,#f2e7ee,#fcfafc,#fffc over backdrop,#f5f2fa,5.99,5.56,6.42,pass,pass,fail
+measured-live,morgon,desktop,login,"""Skapa ett"" link",p a,Skapa ett,14.72,700,False,--accent,#6d4fe0,--card over page,#f3e9ef,#fdfbfc,#fffc over backdrop,#f5f2fa,4.92,4.56,5.28,pass,pass,fail
+measured-live,morgon,desktop,start,Start kicker chip,.kicker,"Riktiga bilderböcker, upplästa på svensk",13.6,700,False,--chip-ink,#5b3fc7,--chip-bg over page,#f4eaec,#e9deeb,#6d4fe014 over backdrop,#e9deeb,5.41,5.29,5.41,pass,pass,fail
+measured-live,morgon,desktop,start,Start H1 first line,h1,Ikväll är hjälten,70.4,700,True,--page-ink,#241f35,page backdrop,#f4ebef,#f4ebef,backdrop,#f4ebef,13.59,13.22,13.59,pass,pass,pass
+measured-live,morgon,desktop,start,Start H1 .grad,h1 .grad,ert barn,70.4,700,True,--accent-ink,#5b3fc7,page backdrop,#f3ebf0,#f3ebf0,backdrop,#f3ebf0,6.02,5.81,6.02,pass,pass,pass
+measured-live,morgon,desktop,start,Start lede,.lede,"Tale Forge skriver, målar och läser in e",20.48,400,False,--page-sub,#5f5878,page backdrop,#f1e9f0,#f1e9f0,backdrop,#f1e9f0,5.6,5.37,5.6,pass,pass,fail
+measured-live,morgon,desktop,start,Start primary CTA,.btn-primary,Skapa er hjälte,16.8,700,False,--btn-ink,#ffffff,--btn-grad,#f2e7ef,,,#6447d3,6.21,5.84,,pass,pass,fail
+measured-live,morgon,desktop,start,Start ghost CTA,.btn-ghost,Läs en exempelbok först,16.8,700,False,--ghost-ink,#241f35,--ghost-bg over page,#f0e8ef,#fbf9fb,#ffffffb8 over backdrop,#fbf9fb,15.16,15.06,15.11,pass,pass,pass
+token-composite,natt,,,--page-ink on body #171232,,,,,,--page-ink,#fff7e9,page,#171232,#171232,body #171232,,,,16.88,pass,,pass
+token-composite,natt,,,--page-sub on body #171232,,,,,,--page-sub,#d9cfee,page,#171232,#171232,body #171232,,,,12.07,pass,,pass
+token-composite,natt,,,--accent-ink on body #171232,,,,,,--accent-ink,#f5c542,page,#171232,#171232,body #171232,,,,11.08,pass,,pass
+token-composite,natt,,,--accent on body #171232,,,,,,--accent,#f5c542,page,#171232,#171232,body #171232,,,,11.08,pass,,pass
+token-composite,natt,,,--logo-ink on body #171232,,,,,,--logo-ink,#f5c542,page,#171232,#171232,body #171232,,,,11.08,pass,,pass
+token-composite,natt,,,--micro-ink on body #171232,,,,,,--micro-ink,#d9cfeed9,page,#171232,#171232,body #171232,,,,8.99,pass,,pass
+token-composite,natt,,,--foot-ink on body #171232,,,,,,--foot-ink,#b7a9d6,page,#171232,#171232,body #171232,,,,8.26,pass,,pass
+token-composite,natt,,,--card-sub on body #171232,,,,,,--card-sub,#b5acd3,page,#171232,#171232,body #171232,,,,8.39,pass,,pass
+token-composite,natt,,,--card-ink on --card over body #171232,,,,,,--card-ink,#f2eeff,--card,#171232,#12152b,#0f1628ad over body #171232,,,,15.83,pass,,pass
+token-composite,natt,,,--card-sub on --card over body #171232,,,,,,--card-sub,#b5acd3,--card,#171232,#12152b,#0f1628ad over body #171232,,,,8.42,pass,,pass
+token-composite,natt,,,--prose-ink on --card over body #171232,,,,,,--prose-ink,#eae4f5,--card,#171232,#12152b,#0f1628ad over body #171232,,,,14.52,pass,,pass
+token-composite,natt,,,--accent on --card over body #171232,,,,,,--accent,#f5c542,--card,#171232,#12152b,#0f1628ad over body #171232,,,,11.11,pass,,pass
+token-composite,natt,,,--chip-ink on --chip-bg over body #171232,,,,,,--chip-ink,#e8dfc9,--chip-bg,#171232,#2f2a45,#fff9ec1a over body #171232,,,,10.35,pass,,pass
+token-composite,natt,,,--pill-ink on --pill-bg over body #171232,,,,,,--pill-ink,#c9bcff,--pill-bg,#171232,#2c2551,#9b87f529 over body #171232,,,,8.13,pass,,pass
+token-composite,natt,,,--pill-ink on --pill-bg over --card over body #171232,,,,,,--pill-ink,#c9bcff,--pill-bg over --card,#171232,#28274c,#9b87f529 over #0f1628ad over body #171232,,,,8.17,pass,,pass
+token-composite,natt,,,--gold-chip-ink on --gold-chip-bg over body #171232,,,,,,--gold-chip-ink,#ffd98f,--gold-chip-bg,#171232,#3a2c31,#f2b22e29 over body #171232,,,,9.84,pass,,pass
+token-composite,natt,,,--gold-chip-ink on --gold-chip-bg over --card over body #171232,,,,,,--gold-chip-ink,#ffd98f,--gold-chip-bg over --card,#171232,#362e2c,#f2b22e29 over #0f1628ad over body #171232,,,,9.85,pass,,pass
+token-composite,natt,,,--coral-chip-ink on --coral-chip-bg over body #171232,,,,,,--coral-chip-ink,#ffab9f,--coral-chip-bg,#171232,#381d37,#ff615424 over body #171232,,,,8.28,pass,,pass
+token-composite,natt,,,--coral-chip-ink on --coral-chip-bg over --card over body #171232,,,,,,--coral-chip-ink,#ffab9f,--coral-chip-bg over --card,#171232,#331f31,#ff615424 over #0f1628ad over body #171232,,,,8.35,pass,,pass
+token-composite,natt,,,--trait-ink on --card over body #171232,,,,,,--trait-ink,#cfc5ec,--card,#171232,#12152b,#0f1628ad over body #171232,,,,11.03,pass,,pass
+token-composite,natt,,,--trait-on-ink on --trait-on-bg over --card over body #171232,,,,,,--trait-on-ink,#e9e2ff,--trait-on-bg over --card,#171232,#2d2c54,#9b87f533 over #0f1628ad over body #171232,,,,10.54,pass,,pass
+token-composite,natt,,,--choice-ink on --choice-bg over --card over body #171232,,,,,,--choice-ink,#f2eeff,--choice-bg over --card,#171232,#202238,#ffffff0f over #0f1628ad over body #171232,,,,13.66,pass,,pass
+token-composite,natt,,,--ghost-ink on --ghost-bg over body #171232,,,,,,--ghost-ink,#fff3d9,--ghost-bg,#171232,#2f2a45,#fff9ec1a over body #171232,,,,12.47,pass,,pass
+token-composite,natt,,,--card-ink on --frame over body #171232,,,,,,--card-ink,#f2eeff,--frame,#171232,#101a30,#101a30 over body #171232,,,,15.22,pass,,pass
+token-composite,natt,,,--page-ink on measured backdrop #3f394c,,,,,,--page-ink,#fff7e9,page,#3f394c,#3f394c,measured backdrop #3f394c,,,,10.38,pass,,pass
+token-composite,natt,,,--page-sub on measured backdrop #3f394c,,,,,,--page-sub,#d9cfee,page,#3f394c,#3f394c,measured backdrop #3f394c,,,,7.42,pass,,pass
+token-composite,natt,,,--accent-ink on measured backdrop #3f394c,,,,,,--accent-ink,#f5c542,page,#3f394c,#3f394c,measured backdrop #3f394c,,,,6.81,pass,,fail
+token-composite,natt,,,--accent on measured backdrop #3f394c,,,,,,--accent,#f5c542,page,#3f394c,#3f394c,measured backdrop #3f394c,,,,6.81,pass,,fail
+token-composite,natt,,,--logo-ink on measured backdrop #3f394c,,,,,,--logo-ink,#f5c542,page,#3f394c,#3f394c,measured backdrop #3f394c,,,,6.81,pass,,fail
+token-composite,natt,,,--micro-ink on measured backdrop #3f394c,,,,,,--micro-ink,#d9cfeed9,page,#3f394c,#3f394c,measured backdrop #3f394c,,,,5.88,pass,,fail
+token-composite,natt,,,--foot-ink on measured backdrop #3f394c,,,,,,--foot-ink,#b7a9d6,page,#3f394c,#3f394c,measured backdrop #3f394c,,,,5.08,pass,,fail
+token-composite,natt,,,--card-sub on measured backdrop #3f394c,,,,,,--card-sub,#b5acd3,page,#3f394c,#3f394c,measured backdrop #3f394c,,,,5.16,pass,,fail
+token-composite,natt,,,--card-ink on --card over measured backdrop #3f394c,,,,,,--card-ink,#f2eeff,--card,#3f394c,#1e2134,#0f1628ad over measured backdrop #3f394c,,,,13.92,pass,,pass
+token-composite,natt,,,--card-sub on --card over measured backdrop #3f394c,,,,,,--card-sub,#b5acd3,--card,#3f394c,#1e2134,#0f1628ad over measured backdrop #3f394c,,,,7.4,pass,,pass
+token-composite,natt,,,--prose-ink on --card over measured backdrop #3f394c,,,,,,--prose-ink,#eae4f5,--card,#3f394c,#1e2134,#0f1628ad over measured backdrop #3f394c,,,,12.76,pass,,pass
+token-composite,natt,,,--accent on --card over measured backdrop #3f394c,,,,,,--accent,#f5c542,--card,#3f394c,#1e2134,#0f1628ad over measured backdrop #3f394c,,,,9.77,pass,,pass
+token-composite,natt,,,--chip-ink on --chip-bg over measured backdrop #3f394c,,,,,,--chip-ink,#e8dfc9,--chip-bg,#3f394c,#534d5c,#fff9ec1a over measured backdrop #3f394c,,,,6.16,pass,,fail
+token-composite,natt,,,--pill-ink on --pill-bg over measured backdrop #3f394c,,,,,,--pill-ink,#c9bcff,--pill-bg,#3f394c,#4e4667,#9b87f529 over measured backdrop #3f394c,,,,5.09,pass,,fail
+token-composite,natt,,,--pill-ink on --pill-bg over --card over measured backdrop #3f394c,,,,,,--pill-ink,#c9bcff,--pill-bg over --card,#3f394c,#323253,#9b87f529 over #0f1628ad over measured backdrop #3f394c,,,,7.08,pass,,pass
+token-composite,natt,,,--gold-chip-ink on --gold-chip-bg over measured backdrop #3f394c,,,,,,--gold-chip-ink,#ffd98f,--gold-chip-bg,#3f394c,#5c4c47,#f2b22e29 over measured backdrop #3f394c,,,,6.01,pass,,fail
+token-composite,natt,,,--gold-chip-ink on --gold-chip-bg over --card over measured backdrop #3f394c,,,,,,--gold-chip-ink,#ffd98f,--gold-chip-bg over --card,#3f394c,#403933,#f2b22e29 over #0f1628ad over measured backdrop #3f394c,,,,8.44,pass,,pass
+token-composite,natt,,,--coral-chip-ink on --coral-chip-bg over measured backdrop #3f394c,,,,,,--coral-chip-ink,#ffab9f,--coral-chip-bg,#3f394c,#5a3f4d,#ff615424 over measured backdrop #3f394c,,,,5.15,pass,,fail
+token-composite,natt,,,--coral-chip-ink on --coral-chip-bg over --card over measured backdrop #3f394c,,,,,,--coral-chip-ink,#ffab9f,--coral-chip-bg over --card,#3f394c,#3e2a38,#ff615424 over #0f1628ad over measured backdrop #3f394c,,,,7.25,pass,,pass
+token-composite,natt,,,--trait-ink on --card over measured backdrop #3f394c,,,,,,--trait-ink,#cfc5ec,--card,#3f394c,#1e2134,#0f1628ad over measured backdrop #3f394c,,,,9.69,pass,,pass
+token-composite,natt,,,--trait-on-ink on --trait-on-bg over --card over measured backdrop #3f394c,,,,,,--trait-on-ink,#e9e2ff,--trait-on-bg over --card,#3f394c,#37365a,#9b87f533 over #0f1628ad over measured backdrop #3f394c,,,,9.16,pass,,pass
+token-composite,natt,,,--choice-ink on --choice-bg over --card over measured backdrop #3f394c,,,,,,--choice-ink,#f2eeff,--choice-bg over --card,#3f394c,#2c2e40,#ffffff0f over #0f1628ad over measured backdrop #3f394c,,,,11.72,pass,,pass
+token-composite,natt,,,--ghost-ink on --ghost-bg over measured backdrop #3f394c,,,,,,--ghost-ink,#fff3d9,--ghost-bg,#3f394c,#534d5c,#fff9ec1a over measured backdrop #3f394c,,,,7.42,pass,,pass
+token-composite,natt,,,--card-ink on --frame over measured backdrop #3f394c,,,,,,--card-ink,#f2eeff,--frame,#3f394c,#101a30,#101a30 over measured backdrop #3f394c,,,,15.22,pass,,pass
+token-composite,natt,,,--btn-ink on --btn-grad stop #ffe08a,,,,,,--btn-ink,#3a2b10,--btn-grad,,#ffe08a,gradient stop,,,,10.62,pass,,pass
+token-composite,natt,,,--btn-ink on --btn-grad stop #f5c542,,,,,,--btn-ink,#3a2b10,--btn-grad,,#f5c542,gradient stop,,,,8.45,pass,,pass
+token-composite,morgon,,,--page-ink on body #ede9f6,,,,,,--page-ink,#241f35,page,#ede9f6,#ede9f6,body #ede9f6,,,,13.3,pass,,pass
+token-composite,morgon,,,--page-sub on body #ede9f6,,,,,,--page-sub,#5f5878,page,#ede9f6,#ede9f6,body #ede9f6,,,,5.58,pass,,fail
+token-composite,morgon,,,--accent-ink on body #ede9f6,,,,,,--accent-ink,#5b3fc7,page,#ede9f6,#ede9f6,body #ede9f6,,,,5.9,pass,,fail
+token-composite,morgon,,,--accent on body #ede9f6,,,,,,--accent,#6d4fe0,page,#ede9f6,#ede9f6,body #ede9f6,,,,4.57,pass,,fail
+token-composite,morgon,,,--logo-ink on body #ede9f6,,,,,,--logo-ink,#6d4fe0,page,#ede9f6,#ede9f6,body #ede9f6,,,,4.57,pass,,fail
+token-composite,morgon,,,--micro-ink on body #ede9f6,,,,,,--micro-ink,#5f5878,page,#ede9f6,#ede9f6,body #ede9f6,,,,5.58,pass,,fail
+token-composite,morgon,,,--foot-ink on body #ede9f6,,,,,,--foot-ink,#5f5878,page,#ede9f6,#ede9f6,body #ede9f6,,,,5.58,pass,,fail
+token-composite,morgon,,,--card-sub on body #ede9f6,,,,,,--card-sub,#5f5878,page,#ede9f6,#ede9f6,body #ede9f6,,,,5.58,pass,,fail
+token-composite,morgon,,,--card-ink on --card over body #ede9f6,,,,,,--card-ink,#241f35,--card,#ede9f6,#fbfbfd,#fffc over body #ede9f6,,,,15.34,pass,,pass
+token-composite,morgon,,,--card-sub on --card over body #ede9f6,,,,,,--card-sub,#5f5878,--card,#ede9f6,#fbfbfd,#fffc over body #ede9f6,,,,6.43,pass,,fail
+token-composite,morgon,,,--prose-ink on --card over body #ede9f6,,,,,,--prose-ink,#3a3450,--card,#ede9f6,#fbfbfd,#fffc over body #ede9f6,,,,11.35,pass,,pass
+token-composite,morgon,,,--accent on --card over body #ede9f6,,,,,,--accent,#6d4fe0,--card,#ede9f6,#fbfbfd,#fffc over body #ede9f6,,,,5.28,pass,,fail
+token-composite,morgon,,,--chip-ink on --chip-bg over body #ede9f6,,,,,,--chip-ink,#5b3fc7,--chip-bg,#ede9f6,#e3ddf4,#6d4fe014 over body #ede9f6,,,,5.34,pass,,fail
+token-composite,morgon,,,--pill-ink on --pill-bg over body #ede9f6,,,,,,--pill-ink,#5b3fc7,--pill-bg,#ede9f6,#e0d9f4,#6d4fe01a over body #ede9f6,,,,5.18,pass,,fail
+token-composite,morgon,,,--pill-ink on --pill-bg over --card over body #ede9f6,,,,,,--pill-ink,#5b3fc7,--pill-bg over --card,#ede9f6,#ede9fa,#6d4fe01a over #fffc over body #ede9f6,,,,5.92,pass,,fail
+token-composite,morgon,,,--gold-chip-ink on --gold-chip-bg over body #ede9f6,,,,,,--gold-chip-ink,#8f6a12,--gold-chip-bg,#ede9f6,#eee1d8,#f2b22e26 over body #ede9f6,,,,3.86,large-only,,fail
+token-composite,morgon,,,--gold-chip-ink on --gold-chip-bg over --card over body #ede9f6,,,,,,--gold-chip-ink,#8f6a12,--gold-chip-bg over --card,#ede9f6,#faf0de,#f2b22e26 over #fffc over body #ede9f6,,,,4.38,large-only,,fail
+token-composite,morgon,,,--coral-chip-ink on --coral-chip-bg over body #ede9f6,,,,,,--coral-chip-ink,#c23a2b,--coral-chip-bg,#ede9f6,#efd8e2,#ff61541f over body #ede9f6,,,,3.98,large-only,,fail
+token-composite,morgon,,,--coral-chip-ink on --coral-chip-bg over --card over body #ede9f6,,,,,,--coral-chip-ink,#c23a2b,--coral-chip-bg over --card,#ede9f6,#fce8e9,#ff61541f over #fffc over body #ede9f6,,,,4.53,pass,,fail
+token-composite,morgon,,,--trait-ink on --card over body #ede9f6,,,,,,--trait-ink,#5f5878,--card,#ede9f6,#fbfbfd,#fffc over body #ede9f6,,,,6.43,pass,,fail
+token-composite,morgon,,,--trait-on-ink on --trait-on-bg over --card over body #ede9f6,,,,,,--trait-on-ink,#4a36a8,--trait-on-bg over --card,#ede9f6,#eae6fa,#6d4fe01f over #fffc over body #ede9f6,,,,7.2,pass,,pass
+token-composite,morgon,,,--choice-ink on --choice-bg over --card over body #ede9f6,,,,,,--choice-ink,#241f35,--choice-bg over --card,#ede9f6,#ffffff,#fff over #fffc over body #ede9f6,,,,15.88,pass,,pass
+token-composite,morgon,,,--ghost-ink on --ghost-bg over body #ede9f6,,,,,,--ghost-ink,#241f35,--ghost-bg,#ede9f6,#faf9fc,#ffffffb8 over body #ede9f6,,,,15.13,pass,,pass
+token-composite,morgon,,,--card-ink on --frame over body #ede9f6,,,,,,--card-ink,#241f35,--frame,#ede9f6,#ffffff,#fff over body #ede9f6,,,,15.88,pass,,pass
+token-composite,morgon,,,--page-ink on measured backdrop #f2eaf0,,,,,,--page-ink,#241f35,page,#f2eaf0,#f2eaf0,measured backdrop #f2eaf0,,,,13.46,pass,,pass
+token-composite,morgon,,,--page-sub on measured backdrop #f2eaf0,,,,,,--page-sub,#5f5878,page,#f2eaf0,#f2eaf0,measured backdrop #f2eaf0,,,,5.65,pass,,fail
+token-composite,morgon,,,--accent-ink on measured backdrop #f2eaf0,,,,,,--accent-ink,#5b3fc7,page,#f2eaf0,#f2eaf0,measured backdrop #f2eaf0,,,,5.97,pass,,fail
+token-composite,morgon,,,--accent on measured backdrop #f2eaf0,,,,,,--accent,#6d4fe0,page,#f2eaf0,#f2eaf0,measured backdrop #f2eaf0,,,,4.63,pass,,fail
+token-composite,morgon,,,--logo-ink on measured backdrop #f2eaf0,,,,,,--logo-ink,#6d4fe0,page,#f2eaf0,#f2eaf0,measured backdrop #f2eaf0,,,,4.63,pass,,fail
+token-composite,morgon,,,--micro-ink on measured backdrop #f2eaf0,,,,,,--micro-ink,#5f5878,page,#f2eaf0,#f2eaf0,measured backdrop #f2eaf0,,,,5.65,pass,,fail
+token-composite,morgon,,,--foot-ink on measured backdrop #f2eaf0,,,,,,--foot-ink,#5f5878,page,#f2eaf0,#f2eaf0,measured backdrop #f2eaf0,,,,5.65,pass,,fail
+token-composite,morgon,,,--card-sub on measured backdrop #f2eaf0,,,,,,--card-sub,#5f5878,page,#f2eaf0,#f2eaf0,measured backdrop #f2eaf0,,,,5.65,pass,,fail
+token-composite,morgon,,,--card-ink on --card over measured backdrop #f2eaf0,,,,,,--card-ink,#241f35,--card,#f2eaf0,#fcfbfc,#fffc over measured backdrop #f2eaf0,,,,15.38,pass,,pass
+token-composite,morgon,,,--card-sub on --card over measured backdrop #f2eaf0,,,,,,--card-sub,#5f5878,--card,#f2eaf0,#fcfbfc,#fffc over measured backdrop #f2eaf0,,,,6.45,pass,,fail
+token-composite,morgon,,,--prose-ink on --card over measured backdrop #f2eaf0,,,,,,--prose-ink,#3a3450,--card,#f2eaf0,#fcfbfc,#fffc over measured backdrop #f2eaf0,,,,11.38,pass,,pass
+token-composite,morgon,,,--accent on --card over measured backdrop #f2eaf0,,,,,,--accent,#6d4fe0,--card,#f2eaf0,#fcfbfc,#fffc over measured backdrop #f2eaf0,,,,5.29,pass,,fail
+token-composite,morgon,,,--chip-ink on --chip-bg over measured backdrop #f2eaf0,,,,,,--chip-ink,#5b3fc7,--chip-bg,#f2eaf0,#e8deef,#6d4fe014 over measured backdrop #f2eaf0,,,,5.4,pass,,fail
+token-composite,morgon,,,--pill-ink on --pill-bg over measured backdrop #f2eaf0,,,,,,--pill-ink,#5b3fc7,--pill-bg,#f2eaf0,#e4daee,#6d4fe01a over measured backdrop #f2eaf0,,,,5.23,pass,,fail
+token-composite,morgon,,,--pill-ink on --pill-bg over --card over measured backdrop #f2eaf0,,,,,,--pill-ink,#5b3fc7,--pill-bg over --card,#f2eaf0,#eee9f9,#6d4fe01a over #fffc over measured backdrop #f2eaf0,,,,5.93,pass,,fail
+token-composite,morgon,,,--gold-chip-ink on --gold-chip-bg over measured backdrop #f2eaf0,,,,,,--gold-chip-ink,#8f6a12,--gold-chip-bg,#f2eaf0,#f2e2d3,#f2b22e26 over measured backdrop #f2eaf0,,,,3.91,large-only,,fail
+token-composite,morgon,,,--gold-chip-ink on --gold-chip-bg over --card over measured backdrop #f2eaf0,,,,,,--gold-chip-ink,#8f6a12,--gold-chip-bg over --card,#f2eaf0,#fbf0dd,#f2b22e26 over #fffc over measured backdrop #f2eaf0,,,,4.39,large-only,,fail
+token-composite,morgon,,,--coral-chip-ink on --coral-chip-bg over measured backdrop #f2eaf0,,,,,,--coral-chip-ink,#c23a2b,--coral-chip-bg,#f2eaf0,#f4d9dd,#ff61541f over measured backdrop #f2eaf0,,,,4.03,large-only,,fail
+token-composite,morgon,,,--coral-chip-ink on --coral-chip-bg over --card over measured backdrop #f2eaf0,,,,,,--coral-chip-ink,#c23a2b,--coral-chip-bg over --card,#f2eaf0,#fde8e8,#ff61541f over #fffc over measured backdrop #f2eaf0,,,,4.55,pass,,fail
+token-composite,morgon,,,--trait-ink on --card over measured backdrop #f2eaf0,,,,,,--trait-ink,#5f5878,--card,#f2eaf0,#fcfbfc,#fffc over measured backdrop #f2eaf0,,,,6.45,pass,,fail
+token-composite,morgon,,,--trait-on-ink on --trait-on-bg over --card over measured backdrop #f2eaf0,,,,,,--trait-on-ink,#4a36a8,--trait-on-bg over --card,#f2eaf0,#ebe6f9,#6d4fe01f over #fffc over measured backdrop #f2eaf0,,,,7.22,pass,,pass
+token-composite,morgon,,,--choice-ink on --choice-bg over --card over measured backdrop #f2eaf0,,,,,,--choice-ink,#241f35,--choice-bg over --card,#f2eaf0,#ffffff,#fff over #fffc over measured backdrop #f2eaf0,,,,15.88,pass,,pass
+token-composite,morgon,,,--ghost-ink on --ghost-bg over measured backdrop #f2eaf0,,,,,,--ghost-ink,#241f35,--ghost-bg,#f2eaf0,#fbf9fb,#ffffffb8 over measured backdrop #f2eaf0,,,,15.18,pass,,pass
+token-composite,morgon,,,--card-ink on --frame over measured backdrop #f2eaf0,,,,,,--card-ink,#241f35,--frame,#f2eaf0,#ffffff,#fff over measured backdrop #f2eaf0,,,,15.88,pass,,pass
+token-composite,morgon,,,--btn-ink on --btn-grad stop #6d4fe0,,,,,,--btn-ink,#fff,--btn-grad,,#6d4fe0,gradient stop,,,,5.46,pass,,fail
+token-composite,morgon,,,--btn-ink on --btn-grad stop #5b3fc7,,,,,,--btn-ink,#fff,--btn-grad,,#5b3fc7,gradient stop,,,,7.05,pass,,pass
+literal-pair,both,,,.skip-link text on --gold,,,,,,(literal),#241608,(literal),,#f2b22e,literal,,,,9.37,pass,,pass
+literal-pair,both,,,.glod-board #fbeed2 on board mid #4a3120,,,,,,(literal),#fbeed2,(literal),,#4a3120,literal,,,,10.43,pass,,pass
+literal-pair,both,,,.glod-board #fbeed2 on board top #5e4129,,,,,,(literal),#fbeed2,(literal),,#5e4129,literal,,,,8.07,pass,,pass
+literal-pair,both,,,.glod-wb-kicker / .glod-wb-expect #e4cfa4 on #4a3120,,,,,,(literal),#e4cfa4,(literal),,#4a3120,literal,,,,7.86,pass,,pass
+literal-pair,both,,,.glod-wb-rewrite #4a2f10 on #efdcb2,,,,,,(literal),#4a2f10,(literal),,#efdcb2,literal,,,,9.12,pass,,pass
+literal-pair,both,,,.glod-wb-action #35210d on #f7d77f,,,,,,(literal),#35210d,(literal),,#f7d77f,literal,,,,10.9,pass,,pass
+literal-pair,both,,,.glod-wb-action #35210d on #eeb84e,,,,,,(literal),#35210d,(literal),,#eeb84e,literal,,,,8.44,pass,,pass
+literal-pair,both,,,.glod-mem-card #3b2a16 on #f2e2ba,,,,,,(literal),#3b2a16,(literal),,#f2e2ba,literal,,,,10.7,pass,,pass
+literal-pair,both,,,.glod-mem-hook #33240f on #f9edd2,,,,,,(literal),#33240f,(literal),,#f9edd2,literal,,,,12.91,pass,,pass
+literal-pair,both,,,.glod-mem-from #7a6136 on #f2e2ba,,,,,,(literal),#7a6136,(literal),,#f2e2ba,literal,,,,4.56,pass,,fail
+literal-pair,both,,,.glod-mem-carry #fff3d8 on #5a3820,,,,,,(literal),#fff3d8,(literal),,#5a3820,literal,,,,9.43,pass,,pass
+literal-pair,both,,,.glod-mem-carry[pressed] #fff3d8 on #31543d,,,,,,(literal),#fff3d8,(literal),,#31543d,literal,,,,7.73,pass,,pass
+literal-pair,both,,,.glod-active-ember-cue #4b3116 on #ead5a5,,,,,,(literal),#4b3116,(literal),,#ead5a5,literal,,,,8.32,pass,,pass
+literal-pair,both,,,.glod-book-title #f7e7c3 on cover #413067,,,,,,(literal),#f7e7c3,(literal),,#413067,literal,,,,9.32,pass,,pass
+literal-pair,both,,,.glod-open #fbeed2 on #4a3120,,,,,,(literal),#fbeed2,(literal),,#4a3120,literal,,,,10.43,pass,,pass
+literal-pair,natt,,,.glod-hearth-box p #eee1c6 on stage #0b0e22,,,,,,(literal),#eee1c6,(literal),,#0b0e22,literal,,,,14.74,pass,,pass
+literal-pair,natt,,,.glod-caption-line #fff7e9 on stage #0b0e22,,,,,,(literal),#fff7e9,(literal),,#0b0e22,literal,,,,17.94,pass,,pass
+literal-pair,morgon,,,.glod-hearth-box p #fff6e4 on stage #b7c0ea (relies on #2b1e4e text-shadow),,,,,,(literal),#fff6e4,(literal),,#b7c0ea,literal,,,,1.67,FAIL,,fail
+literal-pair,morgon,,,.glod-caption-line #2f2350 on stage #b7c0ea,,,,,,(literal),#2f2350,(literal),,#b7c0ea,literal,,,,7.95,pass,,pass

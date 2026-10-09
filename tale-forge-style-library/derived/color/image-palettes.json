@@ -1,0 +1,4663 @@
+{
+ "measurement": {
+  "method": "k-means in CIELAB, median pixel per cluster",
+  "k": 8,
+  "implementation": "tools/color/palettes.py (numpy port of films/clearscaler/scripts/brand_measure.py: thumbnail 480px, alpha>200, k-means++ x4 attempts, 30 iter, eps 0.5)",
+  "date": "2026-10-09"
+ },
+ "images": {
+  "assets/assets/nebula-hero.webp": {
+   "group": "Theme backgrounds (raw files)",
+   "palette": [
+    {
+     "hex": "#101B3F",
+     "share": 0.2611,
+     "lab": [
+      10.94,
+      9.37,
+      -24.52
+     ]
+    },
+    {
+     "hex": "#38446E",
+     "share": 0.2406,
+     "lab": [
+      29.67,
+      7.77,
+      -25.89
+     ]
+    },
+    {
+     "hex": "#746F8E",
+     "share": 0.1456,
+     "lab": [
+      48.3,
+      8.73,
+      -16.23
+     ]
+    },
+    {
+     "hex": "#352D3A",
+     "share": 0.109,
+     "lab": [
+      19.8,
+      6.65,
+      -6.93
+     ]
+    },
+    {
+     "hex": "#6E7DB6",
+     "share": 0.0894,
+     "lab": [
+      53.34,
+      9.07,
+      -31.82
+     ]
+    },
+    {
+     "hex": "#7B5E58",
+     "share": 0.0597,
+     "lab": [
+      42.64,
+      10.86,
+      7.98
+     ]
+    },
+    {
+     "hex": "#ACA1CB",
+     "share": 0.0596,
+     "lab": [
+      68.44,
+      12.4,
+      -20.01
+     ]
+    },
+    {
+     "hex": "#CBA181",
+     "share": 0.035,
+     "lab": [
+      69.31,
+      11.12,
+      22.58
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#101B3F",
+    "text": "#CBA181",
+    "accent": "#6E7DB6"
+   },
+   "stats": {
+    "L_median": 30.9,
+    "L_p10": 9.0,
+    "L_p90": 60.6,
+    "C_median": 23.8,
+    "chromatic_share": 0.947,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.038,
+     "orange_gold 40-100": 0.059,
+     "yellowgreen_green 100-160": 0.001,
+     "teal_cyan 160-230": 0.0,
+     "blue_indigo 230-290": 0.41,
+     "violet_magenta 290-360": 0.492
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/assets/morgon-aurora-desktop.webp": {
+   "group": "Theme backgrounds (raw files)",
+   "palette": [
+    {
+     "hex": "#F3E9EF",
+     "share": 0.3971,
+     "lab": [
+      93.26,
+      4.42,
+      -1.71
+     ]
+    },
+    {
+     "hex": "#EEE2ED",
+     "share": 0.2366,
+     "lab": [
+      91.09,
+      6.0,
+      -3.9
+     ]
+    },
+    {
+     "hex": "#E4CEDE",
+     "share": 0.107,
+     "lab": [
+      84.95,
+      10.41,
+      -5.12
+     ]
+    },
+    {
+     "hex": "#FAE0D3",
+     "share": 0.1002,
+     "lab": [
+      90.93,
+      6.87,
+      9.61
+     ]
+    },
+    {
+     "hex": "#D5BBDC",
+     "share": 0.0664,
+     "lab": [
+      78.96,
+      15.11,
+      -13.09
+     ]
+    },
+    {
+     "hex": "#F8BAB9",
+     "share": 0.0333,
+     "lab": [
+      81.06,
+      22.22,
+      9.25
+     ]
+    },
+    {
+     "hex": "#B69DD2",
+     "share": 0.0317,
+     "lab": [
+      68.59,
+      19.54,
+      -23.58
+     ]
+    },
+    {
+     "hex": "#FCD8A6",
+     "share": 0.0277,
+     "lab": [
+      88.24,
+      5.61,
+      29.31
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#F3E9EF",
+    "text": "#B69DD2",
+    "accent": "#B69DD2"
+   },
+   "stats": {
+    "L_median": 91.6,
+    "L_p10": 80.5,
+    "L_p90": 94.1,
+    "C_median": 7.0,
+    "chromatic_share": 0.352,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.162,
+     "orange_gold 40-100": 0.276,
+     "yellowgreen_green 100-160": 0.0,
+     "teal_cyan 160-230": 0.0,
+     "blue_indigo 230-290": 0.0,
+     "violet_magenta 290-360": 0.562
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/assets/morgon-aurora-mobile.webp": {
+   "group": "Theme backgrounds (raw files)",
+   "palette": [
+    {
+     "hex": "#F2E6ED",
+     "share": 0.5141,
+     "lab": [
+      92.39,
+      5.28,
+      -1.95
+     ]
+    },
+    {
+     "hex": "#F9EAE1",
+     "share": 0.1622,
+     "lab": [
+      93.63,
+      3.59,
+      6.18
+     ]
+    },
+    {
+     "hex": "#EAD5E8",
+     "share": 0.1087,
+     "lab": [
+      87.44,
+      10.55,
+      -6.69
+     ]
+    },
+    {
+     "hex": "#F6DAD9",
+     "share": 0.0673,
+     "lab": [
+      89.27,
+      9.5,
+      4.03
+     ]
+    },
+    {
+     "hex": "#D0B4DC",
+     "share": 0.0487,
+     "lab": [
+      76.81,
+      17.24,
+      -16.36
+     ]
+    },
+    {
+     "hex": "#FBE1C0",
+     "share": 0.037,
+     "lab": [
+      90.86,
+      3.95,
+      19.41
+     ]
+    },
+    {
+     "hex": "#AE99D2",
+     "share": 0.0339,
+     "lab": [
+      66.85,
+      19.07,
+      -26.31
+     ]
+    },
+    {
+     "hex": "#F7C6BE",
+     "share": 0.0281,
+     "lab": [
+      83.9,
+      16.24,
+      10.62
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#F2E6ED",
+    "text": "#AE99D2",
+    "accent": "#AE99D2"
+   },
+   "stats": {
+    "L_median": 91.9,
+    "L_p10": 83.0,
+    "L_p90": 94.0,
+    "C_median": 6.6,
+    "chromatic_share": 0.307,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.152,
+     "orange_gold 40-100": 0.281,
+     "yellowgreen_green 100-160": 0.0,
+     "teal_cyan 160-230": 0.0,
+     "blue_indigo 230-290": 0.0,
+     "violet_magenta 290-360": 0.567
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "derived/color/backdrop-layer__natt__desktop.png": {
+   "group": "Theme backgrounds as rendered (fixed .bg layer only, live capture)",
+   "palette": [
+    {
+     "hex": "#0F152C",
+     "share": 0.2522,
+     "lab": [
+      7.4,
+      5.67,
+      -16.44
+     ]
+    },
+    {
+     "hex": "#212943",
+     "share": 0.22,
+     "lab": [
+      17.06,
+      4.87,
+      -17.51
+     ]
+    },
+    {
+     "hex": "#2F3859",
+     "share": 0.1217,
+     "lab": [
+      24.17,
+      6.23,
+      -21.03
+     ]
+    },
+    {
+     "hex": "#454259",
+     "share": 0.1192,
+     "lab": [
+      29.12,
+      6.87,
+      -13.22
+     ]
+    },
+    {
+     "hex": "#201E2C",
+     "share": 0.1091,
+     "lab": [
+      12.07,
+      4.81,
+      -9.02
+     ]
+    },
+    {
+     "hex": "#4B5378",
+     "share": 0.0871,
+     "lab": [
+      36.06,
+      6.71,
+      -22.04
+     ]
+    },
+    {
+     "hex": "#3B3137",
+     "share": 0.0568,
+     "lab": [
+      21.59,
+      5.77,
+      -2.13
+     ]
+    },
+    {
+     "hex": "#60524E",
+     "share": 0.0339,
+     "lab": [
+      36.12,
+      5.05,
+      4.48
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#0F152C",
+    "text": "#60524E",
+    "accent": null
+   },
+   "stats": {
+    "L_median": 17.9,
+    "L_p10": 6.8,
+    "L_p90": 33.6,
+    "C_median": 17.0,
+    "chromatic_share": 0.872,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.001,
+     "orange_gold 40-100": 0.015,
+     "yellowgreen_green 100-160": 0.001,
+     "teal_cyan 160-230": 0.0,
+     "blue_indigo 230-290": 0.549,
+     "violet_magenta 290-360": 0.434
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "derived/color/backdrop-layer__morgon__desktop.png": {
+   "group": "Theme backgrounds as rendered (fixed .bg layer only, live capture)",
+   "palette": [
+    {
+     "hex": "#F2E9EE",
+     "share": 0.4747,
+     "lab": [
+      93.16,
+      3.91,
+      -1.35
+     ]
+    },
+    {
+     "hex": "#EDE1ED",
+     "share": 0.2278,
+     "lab": [
+      90.77,
+      6.19,
+      -4.38
+     ]
+    },
+    {
+     "hex": "#FAE1D2",
+     "share": 0.0978,
+     "lab": [
+      91.16,
+      6.2,
+      10.45
+     ]
+    },
+    {
+     "hex": "#DBC3DE",
+     "share": 0.0791,
+     "lab": [
+      81.49,
+      13.21,
+      -10.33
+     ]
+    },
+    {
+     "hex": "#F0CCD0",
+     "share": 0.0486,
+     "lab": [
+      85.13,
+      13.27,
+      2.72
+     ]
+    },
+    {
+     "hex": "#FCD7A3",
+     "share": 0.0281,
+     "lab": [
+      87.94,
+      5.78,
+      30.46
+     ]
+    },
+    {
+     "hex": "#BEA6D6",
+     "share": 0.0266,
+     "lab": [
+      71.61,
+      17.8,
+      -21.12
+     ]
+    },
+    {
+     "hex": "#F9B3A7",
+     "share": 0.0174,
+     "lab": [
+      79.14,
+      23.93,
+      16.25
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#F2E9EE",
+    "text": "#BEA6D6",
+    "accent": "#FCD7A3"
+   },
+   "stats": {
+    "L_median": 91.8,
+    "L_p10": 82.4,
+    "L_p90": 94.1,
+    "C_median": 6.9,
+    "chromatic_share": 0.312,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.158,
+     "orange_gold 40-100": 0.341,
+     "yellowgreen_green 100-160": 0.0,
+     "teal_cyan 160-230": 0.0,
+     "blue_indigo 230-290": 0.0,
+     "violet_magenta 290-360": 0.5
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "screenshots/pages/home/home__sv__natt__desktop__fold.png": {
+   "group": "Home fold screenshots",
+   "palette": [
+    {
+     "hex": "#11172C",
+     "share": 0.3027,
+     "lab": [
+      8.25,
+      4.74,
+      -15.08
+     ]
+    },
+    {
+     "hex": "#252A44",
+     "share": 0.2525,
+     "lab": [
+      17.77,
+      5.77,
+      -17.06
+     ]
+    },
+    {
+     "hex": "#444460",
+     "share": 0.1758,
+     "lab": [
+      29.93,
+      7.14,
+      -16.48
+     ]
+    },
+    {
+     "hex": "#3B3236",
+     "share": 0.1067,
+     "lab": [
+      21.86,
+      4.87,
+      -1.04
+     ]
+    },
+    {
+     "hex": "#7D6A51",
+     "share": 0.0471,
+     "lab": [
+      45.99,
+      3.58,
+      16.84
+     ]
+    },
+    {
+     "hex": "#716E7E",
+     "share": 0.0399,
+     "lab": [
+      47.2,
+      4.55,
+      -8.42
+     ]
+    },
+    {
+     "hex": "#D7DDDA",
+     "share": 0.0397,
+     "lab": [
+      87.59,
+      -2.56,
+      0.75
+     ]
+    },
+    {
+     "hex": "#F6CC76",
+     "share": 0.0357,
+     "lab": [
+      84.01,
+      4.57,
+      48.04
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#11172C",
+    "text": "#D7DDDA",
+    "accent": "#F6CC76"
+   },
+   "stats": {
+    "L_median": 19.3,
+    "L_p10": 7.1,
+    "L_p90": 53.7,
+    "C_median": 16.2,
+    "chromatic_share": 0.813,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.007,
+     "orange_gold 40-100": 0.096,
+     "yellowgreen_green 100-160": 0.015,
+     "teal_cyan 160-230": 0.001,
+     "blue_indigo 230-290": 0.474,
+     "violet_magenta 290-360": 0.406
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "screenshots/pages/home/home__sv__morgon__desktop__fold.png": {
+   "group": "Home fold screenshots",
+   "palette": [
+    {
+     "hex": "#F1E7EE",
+     "share": 0.5291,
+     "lab": [
+      92.59,
+      4.6,
+      -2.19
+     ]
+    },
+    {
+     "hex": "#E0C9DB",
+     "share": 0.1865,
+     "lab": [
+      83.3,
+      11.16,
+      -5.99
+     ]
+    },
+    {
+     "hex": "#F9DDCE",
+     "share": 0.1087,
+     "lab": [
+      90.0,
+      7.3,
+      10.88
+     ]
+    },
+    {
+     "hex": "#C0A9D7",
+     "share": 0.0562,
+     "lab": [
+      72.55,
+      17.0,
+      -20.21
+     ]
+    },
+    {
+     "hex": "#857760",
+     "share": 0.0424,
+     "lab": [
+      50.72,
+      1.57,
+      14.64
+     ]
+    },
+    {
+     "hex": "#F9D596",
+     "share": 0.0401,
+     "lab": [
+      86.96,
+      4.19,
+      35.79
+     ]
+    },
+    {
+     "hex": "#3D3537",
+     "share": 0.0213,
+     "lab": [
+      23.05,
+      3.96,
+      0.04
+     ]
+    },
+    {
+     "hex": "#6548D1",
+     "share": 0.0159,
+     "lab": [
+      41.22,
+      46.68,
+      -66.78
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#F1E7EE",
+    "text": "#3D3537",
+    "accent": "#6548D1"
+   },
+   "stats": {
+    "L_median": 90.3,
+    "L_p10": 68.1,
+    "L_p90": 94.1,
+    "C_median": 7.7,
+    "chromatic_share": 0.393,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.113,
+     "orange_gold 40-100": 0.33,
+     "yellowgreen_green 100-160": 0.03,
+     "teal_cyan 160-230": 0.003,
+     "blue_indigo 230-290": 0.007,
+     "violet_magenta 290-360": 0.517
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "screenshots/pages/home/home__sv__natt__mobile__fold.png": {
+   "group": "Home fold screenshots",
+   "palette": [
+    {
+     "hex": "#1E2A45",
+     "share": 0.333,
+     "lab": [
+      17.28,
+      4.0,
+      -18.55
+     ]
+    },
+    {
+     "hex": "#3F4A6B",
+     "share": 0.2315,
+     "lab": [
+      31.84,
+      4.87,
+      -20.55
+     ]
+    },
+    {
+     "hex": "#463C40",
+     "share": 0.1681,
+     "lab": [
+      26.46,
+      5.17,
+      -0.86
+     ]
+    },
+    {
+     "hex": "#6C5E4F",
+     "share": 0.0928,
+     "lab": [
+      40.83,
+      3.05,
+      10.68
+     ]
+    },
+    {
+     "hex": "#D9E0DE",
+     "share": 0.0506,
+     "lab": [
+      88.61,
+      -2.71,
+      0.15
+     ]
+    },
+    {
+     "hex": "#908F9A",
+     "share": 0.0461,
+     "lab": [
+      59.8,
+      2.57,
+      -5.69
+     ]
+    },
+    {
+     "hex": "#F9CE59",
+     "share": 0.0414,
+     "lab": [
+      84.49,
+      2.69,
+      62.12
+     ]
+    },
+    {
+     "hex": "#E9CC8F",
+     "share": 0.0364,
+     "lab": [
+      83.17,
+      1.81,
+      34.15
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#463C40",
+    "text": "#D9E0DE",
+    "accent": "#F9CE59"
+   },
+   "stats": {
+    "L_median": 28.5,
+    "L_p10": 14.1,
+    "L_p90": 79.9,
+    "C_median": 17.6,
+    "chromatic_share": 0.742,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.013,
+     "orange_gold 40-100": 0.17,
+     "yellowgreen_green 100-160": 0.024,
+     "teal_cyan 160-230": 0.003,
+     "blue_indigo 230-290": 0.571,
+     "violet_magenta 290-360": 0.219
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "screenshots/pages/home/home__sv__morgon__mobile__fold.png": {
+   "group": "Home fold screenshots",
+   "palette": [
+    {
+     "hex": "#F1E6EC",
+     "share": 0.5497,
+     "lab": [
+      92.29,
+      4.76,
+      -1.59
+     ]
+    },
+    {
+     "hex": "#E1CEE4",
+     "share": 0.1295,
+     "lab": [
+      84.87,
+      10.49,
+      -8.46
+     ]
+    },
+    {
+     "hex": "#F6DECE",
+     "share": 0.1247,
+     "lab": [
+      89.99,
+      5.71,
+      10.84
+     ]
+    },
+    {
+     "hex": "#A393B7",
+     "share": 0.0556,
+     "lab": [
+      63.4,
+      12.98,
+      -16.56
+     ]
+    },
+    {
+     "hex": "#89765C",
+     "share": 0.0469,
+     "lab": [
+      50.74,
+      3.26,
+      17.06
+     ]
+    },
+    {
+     "hex": "#6548D3",
+     "share": 0.0426,
+     "lab": [
+      41.38,
+      47.27,
+      -67.67
+     ]
+    },
+    {
+     "hex": "#F7DC95",
+     "share": 0.0273,
+     "lab": [
+      88.51,
+      -0.29,
+      38.28
+     ]
+    },
+    {
+     "hex": "#392E33",
+     "share": 0.0237,
+     "lab": [
+      20.29,
+      6.05,
+      -1.32
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#F1E6EC",
+    "text": "#392E33",
+    "accent": "#6548D3"
+   },
+   "stats": {
+    "L_median": 90.8,
+    "L_p10": 54.1,
+    "L_p90": 93.9,
+    "C_median": 7.1,
+    "chromatic_share": 0.355,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.109,
+     "orange_gold 40-100": 0.301,
+     "yellowgreen_green 100-160": 0.047,
+     "teal_cyan 160-230": 0.006,
+     "blue_indigo 230-290": 0.013,
+     "violet_magenta 290-360": 0.525
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/assets/cover-tornet.webp": {
+   "group": "Book covers",
+   "palette": [
+    {
+     "hex": "#D7E3E6",
+     "share": 0.2841,
+     "lab": [
+      89.44,
+      -3.43,
+      -2.85
+     ]
+    },
+    {
+     "hex": "#5F5A3E",
+     "share": 0.1334,
+     "lab": [
+      38.01,
+      -2.85,
+      16.93
+     ]
+    },
+    {
+     "hex": "#8D7C64",
+     "share": 0.1235,
+     "lab": [
+      52.95,
+      2.63,
+      15.51
+     ]
+    },
+    {
+     "hex": "#A2A69F",
+     "share": 0.1106,
+     "lab": [
+      67.62,
+      -2.75,
+      3.12
+     ]
+    },
+    {
+     "hex": "#908F61",
+     "share": 0.0927,
+     "lab": [
+      58.45,
+      -7.17,
+      24.67
+     ]
+    },
+    {
+     "hex": "#383423",
+     "share": 0.0923,
+     "lab": [
+      21.65,
+      -1.45,
+      11.42
+     ]
+    },
+    {
+     "hex": "#686B66",
+     "share": 0.0883,
+     "lab": [
+      44.83,
+      -2.18,
+      2.39
+     ]
+    },
+    {
+     "hex": "#C2B798",
+     "share": 0.075,
+     "lab": [
+      74.57,
+      -1.14,
+      17.19
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#D7E3E6",
+    "text": "#383423",
+    "accent": "#908F61"
+   },
+   "stats": {
+    "L_median": 60.8,
+    "L_p10": 30.6,
+    "L_p90": 91.2,
+    "C_median": 10.7,
+    "chromatic_share": 0.525,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.019,
+     "orange_gold 40-100": 0.505,
+     "yellowgreen_green 100-160": 0.408,
+     "teal_cyan 160-230": 0.026,
+     "blue_indigo 230-290": 0.042,
+     "violet_magenta 290-360": 0.0
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/assets/cover-filten.webp": {
+   "group": "Book covers",
+   "palette": [
+    {
+     "hex": "#FAE299",
+     "share": 0.2546,
+     "lab": [
+      90.33,
+      -1.74,
+      38.68
+     ]
+    },
+    {
+     "hex": "#EDE9DB",
+     "share": 0.1886,
+     "lab": [
+      92.31,
+      -1.04,
+      7.27
+     ]
+    },
+    {
+     "hex": "#D9B07B",
+     "share": 0.179,
+     "lab": [
+      74.34,
+      8.0,
+      32.73
+     ]
+    },
+    {
+     "hex": "#36302C",
+     "share": 0.0903,
+     "lab": [
+      20.36,
+      1.86,
+      3.54
+     ]
+    },
+    {
+     "hex": "#6A6E5F",
+     "share": 0.0903,
+     "lab": [
+      45.69,
+      -4.49,
+      7.85
+     ]
+    },
+    {
+     "hex": "#987048",
+     "share": 0.0793,
+     "lab": [
+      50.37,
+      10.88,
+      28.3
+     ]
+    },
+    {
+     "hex": "#993637",
+     "share": 0.072,
+     "lab": [
+      37.27,
+      41.44,
+      21.76
+     ]
+    },
+    {
+     "hex": "#587D95",
+     "share": 0.0459,
+     "lab": [
+      50.58,
+      -6.49,
+      -17.05
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#EDE9DB",
+    "text": "#36302C",
+    "accent": "#993637"
+   },
+   "stats": {
+    "L_median": 76.3,
+    "L_p10": 30.2,
+    "L_p90": 93.2,
+    "C_median": 27.6,
+    "chromatic_share": 0.778,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.111,
+     "orange_gold 40-100": 0.776,
+     "yellowgreen_green 100-160": 0.051,
+     "teal_cyan 160-230": 0.014,
+     "blue_indigo 230-290": 0.045,
+     "violet_magenta 290-360": 0.003
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/share/iris-sparade-platsen/assets/cover.webp": {
+   "group": "Book covers",
+   "palette": [
+    {
+     "hex": "#BA6F1E",
+     "share": 0.1784,
+     "lab": [
+      53.92,
+      23.88,
+      53.65
+     ]
+    },
+    {
+     "hex": "#64551A",
+     "share": 0.1688,
+     "lab": [
+      36.52,
+      -1.12,
+      35.18
+     ]
+    },
+    {
+     "hex": "#72400E",
+     "share": 0.1541,
+     "lab": [
+      32.43,
+      17.9,
+      37.17
+     ]
+    },
+    {
+     "hex": "#987828",
+     "share": 0.14,
+     "lab": [
+      52.13,
+      3.96,
+      46.52
+     ]
+    },
+    {
+     "hex": "#E8AC42",
+     "share": 0.1269,
+     "lab": [
+      74.22,
+      12.06,
+      60.6
+     ]
+    },
+    {
+     "hex": "#392C11",
+     "share": 0.0945,
+     "lab": [
+      18.85,
+      2.14,
+      19.46
+     ]
+    },
+    {
+     "hex": "#F7CA7C",
+     "share": 0.0729,
+     "lab": [
+      83.69,
+      6.52,
+      44.71
+     ]
+    },
+    {
+     "hex": "#C22B28",
+     "share": 0.0643,
+     "lab": [
+      43.29,
+      58.25,
+      39.57
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#BA6F1E",
+    "text": "#392C11",
+    "accent": "#C22B28"
+   },
+   "stats": {
+    "L_median": 46.0,
+    "L_p10": 25.5,
+    "L_p90": 76.6,
+    "C_median": 45.2,
+    "chromatic_share": 0.968,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.07,
+     "orange_gold 40-100": 0.918,
+     "yellowgreen_green 100-160": 0.012,
+     "teal_cyan 160-230": 0.0,
+     "blue_indigo 230-290": 0.0,
+     "violet_magenta 290-360": 0.0
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/landing/cover-next-book.webp": {
+   "group": "Book covers",
+   "palette": [
+    {
+     "hex": "#434F67",
+     "share": 0.1889,
+     "lab": [
+      33.49,
+      1.71,
+      -15.46
+     ]
+    },
+    {
+     "hex": "#616673",
+     "share": 0.138,
+     "lab": [
+      43.19,
+      1.02,
+      -7.95
+     ]
+    },
+    {
+     "hex": "#E3C795",
+     "share": 0.1345,
+     "lab": [
+      81.48,
+      2.76,
+      28.69
+     ]
+    },
+    {
+     "hex": "#86827C",
+     "share": 0.1221,
+     "lab": [
+      54.54,
+      0.37,
+      3.77
+     ]
+    },
+    {
+     "hex": "#C7A972",
+     "share": 0.114,
+     "lab": [
+      70.69,
+      3.46,
+      32.41
+     ]
+    },
+    {
+     "hex": "#B0A389",
+     "share": 0.1074,
+     "lab": [
+      67.45,
+      0.44,
+      15.23
+     ]
+    },
+    {
+     "hex": "#2B3752",
+     "share": 0.1044,
+     "lab": [
+      23.19,
+      3.33,
+      -17.99
+     ]
+    },
+    {
+     "hex": "#A6906C",
+     "share": 0.0906,
+     "lab": [
+      60.9,
+      2.82,
+      22.19
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#616673",
+    "text": "#E3C795",
+    "accent": "#C7A972"
+   },
+   "stats": {
+    "L_median": 54.4,
+    "L_p10": 27.5,
+    "L_p90": 78.8,
+    "C_median": 17.3,
+    "chromatic_share": 0.771,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.0,
+     "orange_gold 40-100": 0.585,
+     "yellowgreen_green 100-160": 0.001,
+     "teal_cyan 160-230": 0.0,
+     "blue_indigo 230-290": 0.413,
+     "violet_magenta 290-360": 0.001
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/share/iris-sparade-platsen/assets/S1.webp": {
+   "group": "Sample-book scenes (Iris och den sparade platsen)",
+   "palette": [
+    {
+     "hex": "#F9DBBF",
+     "share": 0.2308,
+     "lab": [
+      89.19,
+      6.17,
+      17.58
+     ]
+    },
+    {
+     "hex": "#BCB777",
+     "share": 0.2127,
+     "lab": [
+      73.47,
+      -7.87,
+      33.2
+     ]
+    },
+    {
+     "hex": "#E6B893",
+     "share": 0.2072,
+     "lab": [
+      78.0,
+      11.59,
+      25.1
+     ]
+    },
+    {
+     "hex": "#C88C59",
+     "share": 0.1363,
+     "lab": [
+      63.14,
+      17.26,
+      36.14
+     ]
+    },
+    {
+     "hex": "#936442",
+     "share": 0.1119,
+     "lab": [
+      46.59,
+      15.05,
+      26.82
+     ]
+    },
+    {
+     "hex": "#7D7F75",
+     "share": 0.0377,
+     "lab": [
+      52.76,
+      -2.69,
+      5.17
+     ]
+    },
+    {
+     "hex": "#3B2C1C",
+     "share": 0.0345,
+     "lab": [
+      19.29,
+      4.39,
+      13.02
+     ]
+    },
+    {
+     "hex": "#C54140",
+     "share": 0.0289,
+     "lab": [
+      47.0,
+      52.35,
+      30.14
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#F9DBBF",
+    "text": "#3B2C1C",
+    "accent": "#C54140"
+   },
+   "stats": {
+    "L_median": 73.6,
+    "L_p10": 44.7,
+    "L_p90": 89.6,
+    "C_median": 29.2,
+    "chromatic_share": 0.958,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.054,
+     "orange_gold 40-100": 0.77,
+     "yellowgreen_green 100-160": 0.167,
+     "teal_cyan 160-230": 0.001,
+     "blue_indigo 230-290": 0.008,
+     "violet_magenta 290-360": 0.0
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/share/iris-sparade-platsen/assets/S2.webp": {
+   "group": "Sample-book scenes (Iris och den sparade platsen)",
+   "palette": [
+    {
+     "hex": "#A78145",
+     "share": 0.1822,
+     "lab": [
+      56.43,
+      7.56,
+      37.7
+     ]
+    },
+    {
+     "hex": "#694B22",
+     "share": 0.1595,
+     "lab": [
+      34.3,
+      7.94,
+      28.89
+     ]
+    },
+    {
+     "hex": "#CD8B40",
+     "share": 0.1389,
+     "lab": [
+      63.19,
+      18.19,
+      49.0
+     ]
+    },
+    {
+     "hex": "#8D5F27",
+     "share": 0.1346,
+     "lab": [
+      44.22,
+      13.25,
+      38.44
+     ]
+    },
+    {
+     "hex": "#D2A96C",
+     "share": 0.126,
+     "lab": [
+      71.66,
+      7.38,
+      37.03
+     ]
+    },
+    {
+     "hex": "#F5E3C7",
+     "share": 0.1224,
+     "lab": [
+      91.0,
+      1.74,
+      15.9
+     ]
+    },
+    {
+     "hex": "#332512",
+     "share": 0.0732,
+     "lab": [
+      15.85,
+      3.8,
+      15.04
+     ]
+    },
+    {
+     "hex": "#B42D27",
+     "share": 0.0633,
+     "lab": [
+      40.78,
+      53.29,
+      36.68
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#A78145",
+    "text": "#332512",
+    "accent": "#B42D27"
+   },
+   "stats": {
+    "L_median": 54.0,
+    "L_p10": 29.0,
+    "L_p90": 87.3,
+    "C_median": 36.9,
+    "chromatic_share": 0.965,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.065,
+     "orange_gold 40-100": 0.932,
+     "yellowgreen_green 100-160": 0.004,
+     "teal_cyan 160-230": 0.0,
+     "blue_indigo 230-290": 0.0,
+     "violet_magenta 290-360": 0.0
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/share/iris-sparade-platsen/assets/S3A.webp": {
+   "group": "Sample-book scenes (Iris och den sparade platsen)",
+   "palette": [
+    {
+     "hex": "#9A8A30",
+     "share": 0.219,
+     "lab": [
+      57.33,
+      -4.73,
+      48.41
+     ]
+    },
+    {
+     "hex": "#7D7225",
+     "share": 0.2183,
+     "lab": [
+      47.66,
+      -5.35,
+      42.4
+     ]
+    },
+    {
+     "hex": "#DFB879",
+     "share": 0.133,
+     "lab": [
+      76.89,
+      5.97,
+      37.18
+     ]
+    },
+    {
+     "hex": "#241C0E",
+     "share": 0.1118,
+     "lab": [
+      10.83,
+      1.49,
+      10.23
+     ]
+    },
+    {
+     "hex": "#94632B",
+     "share": 0.0868,
+     "lab": [
+      46.17,
+      14.35,
+      38.79
+     ]
+    },
+    {
+     "hex": "#C86C19",
+     "share": 0.0827,
+     "lab": [
+      55.15,
+      31.31,
+      57.16
+     ]
+    },
+    {
+     "hex": "#9B2219",
+     "share": 0.0796,
+     "lab": [
+      34.36,
+      48.64,
+      36.38
+     ]
+    },
+    {
+     "hex": "#4E3613",
+     "share": 0.0688,
+     "lab": [
+      24.66,
+      6.69,
+      25.52
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#9A8A30",
+    "text": "#241C0E",
+    "accent": "#C86C19"
+   },
+   "stats": {
+    "L_median": 50.3,
+    "L_p10": 18.1,
+    "L_p90": 71.9,
+    "C_median": 43.4,
+    "chromatic_share": 0.929,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.08,
+     "orange_gold 40-100": 0.824,
+     "yellowgreen_green 100-160": 0.096,
+     "teal_cyan 160-230": 0.0,
+     "blue_indigo 230-290": 0.0,
+     "violet_magenta 290-360": 0.0
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/share/iris-sparade-platsen/assets/S4B.webp": {
+   "group": "Sample-book scenes (Iris och den sparade platsen)",
+   "palette": [
+    {
+     "hex": "#ECD4AF",
+     "share": 0.2006,
+     "lab": [
+      86.01,
+      2.77,
+      21.37
+     ]
+    },
+    {
+     "hex": "#C9A870",
+     "share": 0.1737,
+     "lab": [
+      70.59,
+      4.61,
+      33.38
+     ]
+    },
+    {
+     "hex": "#2B2513",
+     "share": 0.1711,
+     "lab": [
+      14.86,
+      -0.37,
+      12.95
+     ]
+    },
+    {
+     "hex": "#B57A32",
+     "share": 0.1665,
+     "lab": [
+      56.06,
+      16.41,
+      47.12
+     ]
+    },
+    {
+     "hex": "#714214",
+     "share": 0.0889,
+     "lab": [
+      32.83,
+      16.46,
+      34.86
+     ]
+    },
+    {
+     "hex": "#B52F2C",
+     "share": 0.0832,
+     "lab": [
+      41.28,
+      53.1,
+      34.42
+     ]
+    },
+    {
+     "hex": "#6A5E25",
+     "share": 0.0615,
+     "lab": [
+      39.92,
+      -2.81,
+      33.62
+     ]
+    },
+    {
+     "hex": "#CF6313",
+     "share": 0.0545,
+     "lab": [
+      54.28,
+      38.69,
+      58.74
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#ECD4AF",
+    "text": "#2B2513",
+    "accent": "#CF6313"
+   },
+   "stats": {
+    "L_median": 54.7,
+    "L_p10": 17.4,
+    "L_p90": 86.0,
+    "C_median": 32.8,
+    "chromatic_share": 0.915,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.097,
+     "orange_gold 40-100": 0.848,
+     "yellowgreen_green 100-160": 0.054,
+     "teal_cyan 160-230": 0.0,
+     "blue_indigo 230-290": 0.0,
+     "violet_magenta 290-360": 0.0
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/share/iris-sparade-platsen/assets/S5AA.webp": {
+   "group": "Sample-book scenes (Iris och den sparade platsen)",
+   "palette": [
+    {
+     "hex": "#776120",
+     "share": 0.2171,
+     "lab": [
+      42.12,
+      1.32,
+      38.78
+     ]
+    },
+    {
+     "hex": "#523F16",
+     "share": 0.1711,
+     "lab": [
+      27.86,
+      3.17,
+      27.49
+     ]
+    },
+    {
+     "hex": "#7F4B17",
+     "share": 0.1651,
+     "lab": [
+      37.13,
+      17.76,
+      38.28
+     ]
+    },
+    {
+     "hex": "#251B0E",
+     "share": 0.1513,
+     "lab": [
+      10.62,
+      2.77,
+      9.97
+     ]
+    },
+    {
+     "hex": "#CF9A51",
+     "share": 0.1143,
+     "lab": [
+      67.26,
+      11.97,
+      45.37
+     ]
+    },
+    {
+     "hex": "#CD6F29",
+     "share": 0.0879,
+     "lab": [
+      56.59,
+      32.24,
+      52.69
+     ]
+    },
+    {
+     "hex": "#9F2221",
+     "share": 0.0477,
+     "lab": [
+      35.25,
+      50.15,
+      33.04
+     ]
+    },
+    {
+     "hex": "#601814",
+     "share": 0.0454,
+     "lab": [
+      20.79,
+      32.16,
+      21.56
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#776120",
+    "text": "#251B0E",
+    "accent": "#CD6F29"
+   },
+   "stats": {
+    "L_median": 36.7,
+    "L_p10": 13.4,
+    "L_p90": 62.7,
+    "C_median": 38.1,
+    "chromatic_share": 0.921,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.09,
+     "orange_gold 40-100": 0.886,
+     "yellowgreen_green 100-160": 0.023,
+     "teal_cyan 160-230": 0.0,
+     "blue_indigo 230-290": 0.0,
+     "violet_magenta 290-360": 0.0
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/share/iris-sparade-platsen/assets/S6BB.webp": {
+   "group": "Sample-book scenes (Iris och den sparade platsen)",
+   "palette": [
+    {
+     "hex": "#D3A661",
+     "share": 0.1801,
+     "lab": [
+      70.86,
+      8.42,
+      41.72
+     ]
+    },
+    {
+     "hex": "#BB7F35",
+     "share": 0.1793,
+     "lab": [
+      58.04,
+      16.41,
+      48.02
+     ]
+    },
+    {
+     "hex": "#2C2419",
+     "share": 0.1519,
+     "lab": [
+      14.78,
+      1.72,
+      8.77
+     ]
+    },
+    {
+     "hex": "#7B612A",
+     "share": 0.1377,
+     "lab": [
+      42.65,
+      3.88,
+      34.6
+     ]
+    },
+    {
+     "hex": "#844F18",
+     "share": 0.11,
+     "lab": [
+      38.84,
+      17.75,
+      39.7
+     ]
+    },
+    {
+     "hex": "#4D3213",
+     "share": 0.1019,
+     "lab": [
+      23.36,
+      8.77,
+      24.07
+     ]
+    },
+    {
+     "hex": "#BC4016",
+     "share": 0.0798,
+     "lab": [
+      44.82,
+      48.12,
+      49.23
+     ]
+    },
+    {
+     "hex": "#FCEBA6",
+     "share": 0.0594,
+     "lab": [
+      92.96,
+      -4.06,
+      35.61
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#2C2419",
+    "text": "#FCEBA6",
+    "accent": "#BC4016"
+   },
+   "stats": {
+    "L_median": 47.1,
+    "L_p10": 17.2,
+    "L_p90": 74.8,
+    "C_median": 39.9,
+    "chromatic_share": 0.888,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.056,
+     "orange_gold 40-100": 0.935,
+     "yellowgreen_green 100-160": 0.008,
+     "teal_cyan 160-230": 0.0,
+     "blue_indigo 230-290": 0.0,
+     "violet_magenta 290-360": 0.0
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/landing/iris/hero-portrait.webp": {
+   "group": "Portraits and adventure art",
+   "palette": [
+    {
+     "hex": "#FEF5E4",
+     "share": 0.6957,
+     "lab": [
+      96.81,
+      0.2,
+      9.24
+     ]
+    },
+    {
+     "hex": "#E24245",
+     "share": 0.123,
+     "lab": [
+      52.39,
+      61.48,
+      34.95
+     ]
+    },
+    {
+     "hex": "#372414",
+     "share": 0.0514,
+     "lab": [
+      16.13,
+      6.82,
+      14.23
+     ]
+    },
+    {
+     "hex": "#4D5F6B",
+     "share": 0.0295,
+     "lab": [
+      39.28,
+      -3.77,
+      -9.08
+     ]
+    },
+    {
+     "hex": "#E0965B",
+     "share": 0.0289,
+     "lab": [
+      68.33,
+      21.95,
+      42.05
+     ]
+    },
+    {
+     "hex": "#F2B231",
+     "share": 0.0262,
+     "lab": [
+      76.64,
+      12.46,
+      69.67
+     ]
+    },
+    {
+     "hex": "#8A6445",
+     "share": 0.0248,
+     "lab": [
+      45.56,
+      11.37,
+      23.56
+     ]
+    },
+    {
+     "hex": "#A32326",
+     "share": 0.0203,
+     "lab": [
+      36.23,
+      51.26,
+      31.38
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#FEF5E4",
+    "text": "#372414",
+    "accent": "#F2B231"
+   },
+   "stats": {
+    "L_median": 96.8,
+    "L_p10": 42.5,
+    "L_p90": 97.3,
+    "C_median": 9.2,
+    "chromatic_share": 0.365,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.402,
+     "orange_gold 40-100": 0.546,
+     "yellowgreen_green 100-160": 0.002,
+     "teal_cyan 160-230": 0.0,
+     "blue_indigo 230-290": 0.05,
+     "violet_magenta 290-360": 0.001
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/landing/voice/narrator-morfar.webp": {
+   "group": "Portraits and adventure art",
+   "palette": [
+    {
+     "hex": "#FAF8F2",
+     "share": 0.5155,
+     "lab": [
+      97.58,
+      -0.37,
+      3.1
+     ]
+    },
+    {
+     "hex": "#F3D9B7",
+     "share": 0.1403,
+     "lab": [
+      88.02,
+      3.88,
+      20.05
+     ]
+    },
+    {
+     "hex": "#DEAD63",
+     "share": 0.0904,
+     "lab": [
+      73.75,
+      9.42,
+      44.47
+     ]
+    },
+    {
+     "hex": "#B57F39",
+     "share": 0.0793,
+     "lab": [
+      57.36,
+      14.01,
+      45.2
+     ]
+    },
+    {
+     "hex": "#CC9C7D",
+     "share": 0.0745,
+     "lab": [
+      68.09,
+      13.77,
+      23.14
+     ]
+    },
+    {
+     "hex": "#CCC2BE",
+     "share": 0.0439,
+     "lab": [
+      79.12,
+      2.8,
+      3.25
+     ]
+    },
+    {
+     "hex": "#895B3E",
+     "share": 0.0361,
+     "lab": [
+      42.99,
+      15.51,
+      24.31
+     ]
+    },
+    {
+     "hex": "#7A7B84",
+     "share": 0.0199,
+     "lab": [
+      51.8,
+      1.5,
+      -5.02
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#FAF8F2",
+    "text": "#895B3E",
+    "accent": "#B57F39"
+   },
+   "stats": {
+    "L_median": 92.2,
+    "L_p10": 58.3,
+    "L_p90": 98.3,
+    "C_median": 7.7,
+    "chromatic_share": 0.463,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.006,
+     "orange_gold 40-100": 0.974,
+     "yellowgreen_green 100-160": 0.002,
+     "teal_cyan 160-230": 0.0,
+     "blue_indigo 230-290": 0.015,
+     "violet_magenta 290-360": 0.002
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/landing/cards/pick-1.webp": {
+   "group": "Portraits and adventure art",
+   "palette": [
+    {
+     "hex": "#242B2B",
+     "share": 0.1956,
+     "lab": [
+      16.88,
+      -3.05,
+      -1.04
+     ]
+    },
+    {
+     "hex": "#27364D",
+     "share": 0.1497,
+     "lab": [
+      22.32,
+      1.09,
+      -16.03
+     ]
+    },
+    {
+     "hex": "#143871",
+     "share": 0.1486,
+     "lab": [
+      24.22,
+      9.93,
+      -36.58
+     ]
+    },
+    {
+     "hex": "#35321B",
+     "share": 0.1401,
+     "lab": [
+      20.51,
+      -2.82,
+      15.1
+     ]
+    },
+    {
+     "hex": "#63522D",
+     "share": 0.1175,
+     "lab": [
+      35.75,
+      1.74,
+      24.2
+     ]
+    },
+    {
+     "hex": "#504A48",
+     "share": 0.1135,
+     "lab": [
+      31.97,
+      2.09,
+      2.09
+     ]
+    },
+    {
+     "hex": "#3C64C9",
+     "share": 0.08,
+     "lab": [
+      44.65,
+      20.09,
+      -56.74
+     ]
+    },
+    {
+     "hex": "#9E7A54",
+     "share": 0.055,
+     "lab": [
+      53.84,
+      8.98,
+      26.14
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#242B2B",
+    "text": "#9E7A54",
+    "accent": "#3C64C9"
+   },
+   "stats": {
+    "L_median": 25.1,
+    "L_p10": 14.4,
+    "L_p90": 45.2,
+    "C_median": 17.3,
+    "chromatic_share": 0.7,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.006,
+     "orange_gold 40-100": 0.326,
+     "yellowgreen_green 100-160": 0.13,
+     "teal_cyan 160-230": 0.002,
+     "blue_indigo 230-290": 0.434,
+     "violet_magenta 290-360": 0.102
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/landing/cards/pick-2.webp": {
+   "group": "Portraits and adventure art",
+   "palette": [
+    {
+     "hex": "#031D4F",
+     "share": 0.2114,
+     "lab": [
+      12.37,
+      13.14,
+      -33.36
+     ]
+    },
+    {
+     "hex": "#17231C",
+     "share": 0.1948,
+     "lab": [
+      12.4,
+      -7.18,
+      3.02
+     ]
+    },
+    {
+     "hex": "#081314",
+     "share": 0.1932,
+     "lab": [
+      5.13,
+      -3.3,
+      -1.84
+     ]
+    },
+    {
+     "hex": "#353D32",
+     "share": 0.1163,
+     "lab": [
+      24.72,
+      -5.85,
+      5.68
+     ]
+    },
+    {
+     "hex": "#142B35",
+     "share": 0.1128,
+     "lab": [
+      16.17,
+      -5.53,
+      -9.22
+     ]
+    },
+    {
+     "hex": "#104175",
+     "share": 0.0921,
+     "lab": [
+      27.23,
+      4.87,
+      -34.31
+     ]
+    },
+    {
+     "hex": "#5E4F23",
+     "share": 0.058,
+     "lab": [
+      34.18,
+      0.22,
+      27.86
+     ]
+    },
+    {
+     "hex": "#AF863A",
+     "share": 0.0212,
+     "lab": [
+      58.48,
+      7.52,
+      45.74
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#17231C",
+    "text": "#AF863A",
+    "accent": "#AF863A"
+   },
+   "stats": {
+    "L_median": 14.5,
+    "L_p10": 4.8,
+    "L_p90": 31.9,
+    "C_median": 12.2,
+    "chromatic_share": 0.594,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.0,
+     "orange_gold 40-100": 0.139,
+     "yellowgreen_green 100-160": 0.169,
+     "teal_cyan 160-230": 0.049,
+     "blue_indigo 230-290": 0.438,
+     "violet_magenta 290-360": 0.205
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/landing/cards/pick-3.webp": {
+   "group": "Portraits and adventure art",
+   "palette": [
+    {
+     "hex": "#EEF0EB",
+     "share": 0.2802,
+     "lab": [
+      94.52,
+      -1.54,
+      2.17
+     ]
+    },
+    {
+     "hex": "#98C7E2",
+     "share": 0.2302,
+     "lab": [
+      77.88,
+      -9.0,
+      -18.38
+     ]
+    },
+    {
+     "hex": "#C3DAE2",
+     "share": 0.1545,
+     "lab": [
+      85.62,
+      -6.03,
+      -6.53
+     ]
+    },
+    {
+     "hex": "#728329",
+     "share": 0.0954,
+     "lab": [
+      51.8,
+      -19.34,
+      44.63
+     ]
+    },
+    {
+     "hex": "#A8AE37",
+     "share": 0.0762,
+     "lab": [
+      68.66,
+      -17.17,
+      57.47
+     ]
+    },
+    {
+     "hex": "#CFBD84",
+     "share": 0.0587,
+     "lab": [
+      76.88,
+      -1.9,
+      31.15
+     ]
+    },
+    {
+     "hex": "#4A612D",
+     "share": 0.0552,
+     "lab": [
+      38.19,
+      -18.43,
+      26.66
+     ]
+    },
+    {
+     "hex": "#6E7562",
+     "share": 0.0496,
+     "lab": [
+      48.16,
+      -6.37,
+      9.6
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#EEF0EB",
+    "text": "#4A612D",
+    "accent": "#A8AE37"
+   },
+   "stats": {
+    "L_median": 80.1,
+    "L_p10": 47.8,
+    "L_p90": 95.7,
+    "C_median": 16.9,
+    "chromatic_share": 0.614,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.002,
+     "orange_gold 40-100": 0.119,
+     "yellowgreen_green 100-160": 0.405,
+     "teal_cyan 160-230": 0.071,
+     "blue_indigo 230-290": 0.403,
+     "violet_magenta 290-360": 0.0
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/images/create/surprise-us.webp": {
+   "group": "Portraits and adventure art",
+   "palette": [
+    {
+     "hex": "#1B2A28",
+     "share": 0.2289,
+     "lab": [
+      15.71,
+      -6.86,
+      -0.73
+     ]
+    },
+    {
+     "hex": "#44472C",
+     "share": 0.163,
+     "lab": [
+      29.2,
+      -6.35,
+      15.85
+     ]
+    },
+    {
+     "hex": "#062945",
+     "share": 0.1538,
+     "lab": [
+      15.77,
+      -0.24,
+      -21.01
+     ]
+    },
+    {
+     "hex": "#7E631A",
+     "share": 0.1063,
+     "lab": [
+      43.41,
+      3.2,
+      42.9
+     ]
+    },
+    {
+     "hex": "#ECC292",
+     "share": 0.0978,
+     "lab": [
+      81.01,
+      8.54,
+      29.78
+     ]
+    },
+    {
+     "hex": "#ADA1A8",
+     "share": 0.0896,
+     "lab": [
+      67.43,
+      5.63,
+      -2.06
+     ]
+    },
+    {
+     "hex": "#44669C",
+     "share": 0.0885,
+     "lab": [
+      42.96,
+      4.37,
+      -33.08
+     ]
+    },
+    {
+     "hex": "#CC9E29",
+     "share": 0.0722,
+     "lab": [
+      67.61,
+      6.41,
+      62.73
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#1B2A28",
+    "text": "#ECC292",
+    "accent": "#CC9E29"
+   },
+   "stats": {
+    "L_median": 32.2,
+    "L_p10": 11.6,
+    "L_p90": 76.0,
+    "C_median": 20.1,
+    "chromatic_share": 0.79,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.019,
+     "orange_gold 40-100": 0.389,
+     "yellowgreen_green 100-160": 0.18,
+     "teal_cyan 160-230": 0.049,
+     "blue_indigo 230-290": 0.325,
+     "violet_magenta 290-360": 0.039
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/assets/tf-logo.webp": {
+   "group": "Brand marks",
+   "palette": [
+    {
+     "hex": "#D29B13",
+     "share": 0.2091,
+     "lab": [
+      67.42,
+      10.12,
+      68.71
+     ]
+    },
+    {
+     "hex": "#CF9713",
+     "share": 0.1994,
+     "lab": [
+      66.09,
+      10.95,
+      67.56
+     ]
+    },
+    {
+     "hex": "#D8A215",
+     "share": 0.1815,
+     "lab": [
+      69.82,
+      9.03,
+      70.43
+     ]
+    },
+    {
+     "hex": "#DEA917",
+     "share": 0.1479,
+     "lab": [
+      72.21,
+      7.95,
+      72.14
+     ]
+    },
+    {
+     "hex": "#E5B21B",
+     "share": 0.0969,
+     "lab": [
+      75.19,
+      6.31,
+      73.94
+     ]
+    },
+    {
+     "hex": "#D79B13",
+     "share": 0.0653,
+     "lab": [
+      67.97,
+      12.31,
+      69.37
+     ]
+    },
+    {
+     "hex": "#EBBD24",
+     "share": 0.0624,
+     "lab": [
+      78.57,
+      3.34,
+      74.83
+     ]
+    },
+    {
+     "hex": "#D09212",
+     "share": 0.0376,
+     "lab": [
+      64.97,
+      14.08,
+      66.96
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#D29B13",
+    "text": "#EBBD24",
+    "accent": "#EBBD24"
+   },
+   "stats": {
+    "L_median": 68.8,
+    "L_p10": 65.7,
+    "L_p90": 75.7,
+    "C_median": 70.5,
+    "chromatic_share": 1.0,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.0,
+     "orange_gold 40-100": 1.0,
+     "yellowgreen_green 100-160": 0.0,
+     "teal_cyan 160-230": 0.0,
+     "blue_indigo 230-290": 0.0,
+     "violet_magenta 290-360": 0.0
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/icons/icon-512.png": {
+   "group": "Brand marks",
+   "palette": [
+    {
+     "hex": "#171232",
+     "share": 0.9405,
+     "lab": [
+      7.63,
+      12.76,
+      -20.46
+     ]
+    },
+    {
+     "hex": "#D19A13",
+     "share": 0.027,
+     "lab": [
+      67.06,
+      10.21,
+      68.39
+     ]
+    },
+    {
+     "hex": "#DFAC19",
+     "share": 0.0117,
+     "lab": [
+      73.06,
+      6.83,
+      72.44
+     ]
+    },
+    {
+     "hex": "#B78617",
+     "share": 0.005,
+     "lab": [
+      59.14,
+      9.64,
+      60.05
+     ]
+    },
+    {
+     "hex": "#2F242D",
+     "share": 0.0044,
+     "lab": [
+      15.78,
+      7.17,
+      -3.96
+     ]
+    },
+    {
+     "hex": "#4B3728",
+     "share": 0.0043,
+     "lab": [
+      24.89,
+      6.61,
+      12.86
+     ]
+    },
+    {
+     "hex": "#705223",
+     "share": 0.0039,
+     "lab": [
+      37.12,
+      7.12,
+      31.74
+     ]
+    },
+    {
+     "hex": "#916C1E",
+     "share": 0.0031,
+     "lab": [
+      48.06,
+      7.11,
+      46.44
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#171232",
+    "text": "#DFAC19",
+    "accent": "#DFAC19"
+   },
+   "stats": {
+    "L_median": 7.6,
+    "L_p10": 7.6,
+    "L_p90": 7.6,
+    "C_median": 24.1,
+    "chromatic_share": 0.997,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.0,
+     "orange_gold 40-100": 0.055,
+     "yellowgreen_green 100-160": 0.0,
+     "teal_cyan 160-230": 0.0,
+     "blue_indigo 230-290": 0.0,
+     "violet_magenta 290-360": 0.945
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "assets/brand/opengraph-image.png": {
+   "group": "Brand marks",
+   "palette": [
+    {
+     "hex": "#14182E",
+     "share": 0.426,
+     "lab": [
+      8.99,
+      5.69,
+      -15.38
+     ]
+    },
+    {
+     "hex": "#33364D",
+     "share": 0.1933,
+     "lab": [
+      23.26,
+      5.02,
+      -14.5
+     ]
+    },
+    {
+     "hex": "#877E64",
+     "share": 0.1005,
+     "lab": [
+      52.94,
+      -1.0,
+      15.42
+     ]
+    },
+    {
+     "hex": "#4E443B",
+     "share": 0.0954,
+     "lab": [
+      29.59,
+      2.57,
+      7.01
+     ]
+    },
+    {
+     "hex": "#D7E1DD",
+     "share": 0.09,
+     "lab": [
+      88.69,
+      -4.07,
+      0.78
+     ]
+    },
+    {
+     "hex": "#EFD08E",
+     "share": 0.0629,
+     "lab": [
+      84.7,
+      1.99,
+      36.75
+     ]
+    },
+    {
+     "hex": "#F5C542",
+     "share": 0.0167,
+     "lab": [
+      81.7,
+      4.47,
+      68.48
+     ]
+    },
+    {
+     "hex": "#8A3E34",
+     "share": 0.0152,
+     "lab": [
+      36.17,
+      31.58,
+      21.69
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#14182E",
+    "text": "#D7E1DD",
+    "accent": "#F5C542"
+   },
+   "stats": {
+    "L_median": 20.3,
+    "L_p10": 6.4,
+    "L_p90": 83.6,
+    "C_median": 16.2,
+    "chromatic_share": 0.768,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.015,
+     "orange_gold 40-100": 0.222,
+     "yellowgreen_green 100-160": 0.042,
+     "teal_cyan 160-230": 0.002,
+     "blue_indigo 230-290": 0.517,
+     "violet_magenta 290-360": 0.202
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  },
+  "pooled: all 15 sample-book images (S1..S6BB + cover)": {
+   "group": "pooled",
+   "files": [
+    "assets/share/iris-sparade-platsen/assets/S1.webp",
+    "assets/share/iris-sparade-platsen/assets/S2.webp",
+    "assets/share/iris-sparade-platsen/assets/S3A.webp",
+    "assets/share/iris-sparade-platsen/assets/S3B.webp",
+    "assets/share/iris-sparade-platsen/assets/S4A.webp",
+    "assets/share/iris-sparade-platsen/assets/S4B.webp",
+    "assets/share/iris-sparade-platsen/assets/S5AA.webp",
+    "assets/share/iris-sparade-platsen/assets/S5AB.webp",
+    "assets/share/iris-sparade-platsen/assets/S5BA.webp",
+    "assets/share/iris-sparade-platsen/assets/S5BB.webp",
+    "assets/share/iris-sparade-platsen/assets/S6AA.webp",
+    "assets/share/iris-sparade-platsen/assets/S6AB.webp",
+    "assets/share/iris-sparade-platsen/assets/S6BA.webp",
+    "assets/share/iris-sparade-platsen/assets/S6BB.webp",
+    "assets/share/iris-sparade-platsen/assets/cover.webp"
+   ],
+   "palette": [
+    {
+     "hex": "#EBCB9E",
+     "share": 0.1755,
+     "lab": [
+      83.36,
+      4.86,
+      26.63
+     ]
+    },
+    {
+     "hex": "#654619",
+     "share": 0.1697,
+     "lab": [
+      32.3,
+      8.48,
+      31.35
+     ]
+    },
+    {
+     "hex": "#907330",
+     "share": 0.1608,
+     "lab": [
+      49.98,
+      3.6,
+      40.32
+     ]
+    },
+    {
+     "hex": "#D59E56",
+     "share": 0.1464,
+     "lab": [
+      68.95,
+      12.7,
+      45.03
+     ]
+    },
+    {
+     "hex": "#B96B24",
+     "share": 0.1293,
+     "lab": [
+      52.9,
+      25.84,
+      50.34
+     ]
+    },
+    {
+     "hex": "#291E0F",
+     "share": 0.1212,
+     "lab": [
+      12.19,
+      2.94,
+      11.69
+     ]
+    },
+    {
+     "hex": "#AB2923",
+     "share": 0.0662,
+     "lab": [
+      38.49,
+      51.68,
+      36.0
+     ]
+    },
+    {
+     "hex": "#495050",
+     "share": 0.031,
+     "lab": [
+      33.42,
+      -2.8,
+      -0.97
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#EBCB9E",
+    "text": "#291E0F",
+    "accent": "#AB2923"
+   },
+   "stats": {
+    "L_median": 49.8,
+    "L_p10": 18.7,
+    "L_p90": 82.7,
+    "C_median": 36.3,
+    "chromatic_share": 0.916,
+    "hue_mass_of_chromatic_pixels": {
+     "red_pink 0-40": 0.076,
+     "orange_gold 40-100": 0.878,
+     "yellowgreen_green 100-160": 0.042,
+     "teal_cyan 160-230": 0.0,
+     "blue_indigo 230-290": 0.003,
+     "violet_magenta 290-360": 0.0
+    },
+    "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
+   }
+  }
+ },
+ "palette": [
+  {
+   "hex": "#101B3F",
+   "lab": [
+    10.94,
+    9.37,
+    -24.52
+   ]
+  },
+  {
+   "hex": "#38446E",
+   "lab": [
+    29.67,
+    7.77,
+    -25.89
+   ]
+  },
+  {
+   "hex": "#746F8E",
+   "lab": [
+    48.3,
+    8.73,
+    -16.23
+   ]
+  },
+  {
+   "hex": "#352D3A",
+   "lab": [
+    19.8,
+    6.65,
+    -6.93
+   ]
+  },
+  {
+   "hex": "#6E7DB6",
+   "lab": [
+    53.34,
+    9.07,
+    -31.82
+   ]
+  },
+  {
+   "hex": "#7B5E58",
+   "lab": [
+    42.64,
+    10.86,
+    7.98
+   ]
+  },
+  {
+   "hex": "#ACA1CB",
+   "lab": [
+    68.44,
+    12.4,
+    -20.01
+   ]
+  },
+  {
+   "hex": "#CBA181",
+   "lab": [
+    69.31,
+    11.12,
+    22.58
+   ]
+  },
+  {
+   "hex": "#F3E9EF",
+   "lab": [
+    93.26,
+    4.42,
+    -1.71
+   ]
+  },
+  {
+   "hex": "#EEE2ED",
+   "lab": [
+    91.09,
+    6.0,
+    -3.9
+   ]
+  },
+  {
+   "hex": "#E4CEDE",
+   "lab": [
+    84.95,
+    10.41,
+    -5.12
+   ]
+  },
+  {
+   "hex": "#FAE0D3",
+   "lab": [
+    90.93,
+    6.87,
+    9.61
+   ]
+  },
+  {
+   "hex": "#D5BBDC",
+   "lab": [
+    78.96,
+    15.11,
+    -13.09
+   ]
+  },
+  {
+   "hex": "#F8BAB9",
+   "lab": [
+    81.06,
+    22.22,
+    9.25
+   ]
+  },
+  {
+   "hex": "#B69DD2",
+   "lab": [
+    68.59,
+    19.54,
+    -23.58
+   ]
+  },
+  {
+   "hex": "#FCD8A6",
+   "lab": [
+    88.24,
+    5.61,
+    29.31
+   ]
+  },
+  {
+   "hex": "#F2E6ED",
+   "lab": [
+    92.39,
+    5.28,
+    -1.95
+   ]
+  },
+  {
+   "hex": "#F9EAE1",
+   "lab": [
+    93.63,
+    3.59,
+    6.18
+   ]
+  },
+  {
+   "hex": "#EAD5E8",
+   "lab": [
+    87.44,
+    10.55,
+    -6.69
+   ]
+  },
+  {
+   "hex": "#F6DAD9",
+   "lab": [
+    89.27,
+    9.5,
+    4.03
+   ]
+  },
+  {
+   "hex": "#D0B4DC",
+   "lab": [
+    76.81,
+    17.24,
+    -16.36
+   ]
+  },
+  {
+   "hex": "#FBE1C0",
+   "lab": [
+    90.86,
+    3.95,
+    19.41
+   ]
+  },
+  {
+   "hex": "#AE99D2",
+   "lab": [
+    66.85,
+    19.07,
+    -26.31
+   ]
+  },
+  {
+   "hex": "#F7C6BE",
+   "lab": [
+    83.9,
+    16.24,
+    10.62
+   ]
+  },
+  {
+   "hex": "#0F152C",
+   "lab": [
+    7.4,
+    5.67,
+    -16.44
+   ]
+  },
+  {
+   "hex": "#212943",
+   "lab": [
+    17.06,
+    4.87,
+    -17.51
+   ]
+  },
+  {
+   "hex": "#2F3859",
+   "lab": [
+    24.17,
+    6.23,
+    -21.03
+   ]
+  },
+  {
+   "hex": "#454259",
+   "lab": [
+    29.12,
+    6.87,
+    -13.22
+   ]
+  },
+  {
+   "hex": "#201E2C",
+   "lab": [
+    12.07,
+    4.81,
+    -9.02
+   ]
+  },
+  {
+   "hex": "#4B5378",
+   "lab": [
+    36.06,
+    6.71,
+    -22.04
+   ]
+  },
+  {
+   "hex": "#3B3137",
+   "lab": [
+    21.59,
+    5.77,
+    -2.13
+   ]
+  },
+  {
+   "hex": "#60524E",
+   "lab": [
+    36.12,
+    5.05,
+    4.48
+   ]
+  },
+  {
+   "hex": "#F2E9EE",
+   "lab": [
+    93.16,
+    3.91,
+    -1.35
+   ]
+  },
+  {
+   "hex": "#EDE1ED",
+   "lab": [
+    90.77,
+    6.19,
+    -4.38
+   ]
+  },
+  {
+   "hex": "#FAE1D2",
+   "lab": [
+    91.16,
+    6.2,
+    10.45
+   ]
+  },
+  {
+   "hex": "#DBC3DE",
+   "lab": [
+    81.49,
+    13.21,
+    -10.33
+   ]
+  },
+  {
+   "hex": "#F0CCD0",
+   "lab": [
+    85.13,
+    13.27,
+    2.72
+   ]
+  },
+  {
+   "hex": "#FCD7A3",
+   "lab": [
+    87.94,
+    5.78,
+    30.46
+   ]
+  },
+  {
+   "hex": "#BEA6D6",
+   "lab": [
+    71.61,
+    17.8,
+    -21.12
+   ]
+  },
+  {
+   "hex": "#F9B3A7",
+   "lab": [
+    79.14,
+    23.93,
+    16.25
+   ]
+  },
+  {
+   "hex": "#11172C",
+   "lab": [
+    8.25,
+    4.74,
+    -15.08
+   ]
+  },
+  {
+   "hex": "#252A44",
+   "lab": [
+    17.77,
+    5.77,
+    -17.06
+   ]
+  },
+  {
+   "hex": "#444460",
+   "lab": [
+    29.93,
+    7.14,
+    -16.48
+   ]
+  },
+  {
+   "hex": "#3B3236",
+   "lab": [
+    21.86,
+    4.87,
+    -1.04
+   ]
+  },
+  {
+   "hex": "#7D6A51",
+   "lab": [
+    45.99,
+    3.58,
+    16.84
+   ]
+  },
+  {
+   "hex": "#716E7E",
+   "lab": [
+    47.2,
+    4.55,
+    -8.42
+   ]
+  },
+  {
+   "hex": "#D7DDDA",
+   "lab": [
+    87.59,
+    -2.56,
+    0.75
+   ]
+  },
+  {
+   "hex": "#F6CC76",
+   "lab": [
+    84.01,
+    4.57,
+    48.04
+   ]
+  },
+  {
+   "hex": "#F1E7EE",
+   "lab": [
+    92.59,
+    4.6,
+    -2.19
+   ]
+  },
+  {
+   "hex": "#E0C9DB",
+   "lab": [
+    83.3,
+    11.16,
+    -5.99
+   ]
+  },
+  {
+   "hex": "#F9DDCE",
+   "lab": [
+    90.0,
+    7.3,
+    10.88
+   ]
+  },
+  {
+   "hex": "#C0A9D7",
+   "lab": [
+    72.55,
+    17.0,
+    -20.21
+   ]
+  },
+  {
+   "hex": "#857760",
+   "lab": [
+    50.72,
+    1.57,
+    14.64
+   ]
+  },
+  {
+   "hex": "#F9D596",
+   "lab": [
+    86.96,
+    4.19,
+    35.79
+   ]
+  },
+  {
+   "hex": "#3D3537",
+   "lab": [
+    23.05,
+    3.96,
+    0.04
+   ]
+  },
+  {
+   "hex": "#6548D1",
+   "lab": [
+    41.22,
+    46.68,
+    -66.78
+   ]
+  },
+  {
+   "hex": "#1E2A45",
+   "lab": [
+    17.28,
+    4.0,
+    -18.55
+   ]
+  },
+  {
+   "hex": "#3F4A6B",
+   "lab": [
+    31.84,
+    4.87,
+    -20.55
+   ]
+  },
+  {
+   "hex": "#463C40",
+   "lab": [
+    26.46,
+    5.17,
+    -0.86
+   ]
+  },
+  {
+   "hex": "#6C5E4F",
+   "lab": [
+    40.83,
+    3.05,
+    10.68
+   ]
+  },
+  {
+   "hex": "#D9E0DE",
+   "lab": [
+    88.61,
+    -2.71,
+    0.15
+   ]
+  },
+  {
+   "hex": "#908F9A",
+   "lab": [
+    59.8,
+    2.57,
+    -5.69
+   ]
+  },
+  {
+   "hex": "#F9CE59",
+   "lab": [
+    84.49,
+    2.69,
+    62.12
+   ]
+  },
+  {
+   "hex": "#E9CC8F",
+   "lab": [
+    83.17,
+    1.81,
+    34.15
+   ]
+  },
+  {
+   "hex": "#F1E6EC",
+   "lab": [
+    92.29,
+    4.76,
+    -1.59
+   ]
+  },
+  {
+   "hex": "#E1CEE4",
+   "lab": [
+    84.87,
+    10.49,
+    -8.46
+   ]
+  },
+  {
+   "hex": "#F6DECE",
+   "lab": [
+    89.99,
+    5.71,
+    10.84
+   ]
+  },
+  {
+   "hex": "#A393B7",
+   "lab": [
+    63.4,
+    12.98,
+    -16.56
+   ]
+  },
+  {
+   "hex": "#89765C",
+   "lab": [
+    50.74,
+    3.26,
+    17.06
+   ]
+  },
+  {
+   "hex": "#6548D3",
+   "lab": [
+    41.38,
+    47.27,
+    -67.67
+   ]
+  },
+  {
+   "hex": "#F7DC95",
+   "lab": [
+    88.51,
+    -0.29,
+    38.28
+   ]
+  },
+  {
+   "hex": "#392E33",
+   "lab": [
+    20.29,
+    6.05,
+    -1.32
+   ]
+  },
+  {
+   "hex": "#D7E3E6",
+   "lab": [
+    89.44,
+    -3.43,
+    -2.85
+   ]
+  },
+  {
+   "hex": "#5F5A3E",
+   "lab": [
+    38.01,
+    -2.85,
+    16.93
+   ]
+  },
+  {
+   "hex": "#8D7C64",
+   "lab": [
+    52.95,
+    2.63,
+    15.51
+   ]
+  },
+  {
+   "hex": "#A2A69F",
+   "lab": [
+    67.62,
+    -2.75,
+    3.12
+   ]
+  },
+  {
+   "hex": "#908F61",
+   "lab": [
+    58.45,
+    -7.17,
+    24.67
+   ]
+  },
+  {
+   "hex": "#383423",
+   "lab": [
+    21.65,
+    -1.45,
+    11.42
+   ]
+  },
+  {
+   "hex": "#686B66",
+   "lab": [
+    44.83,
+    -2.18,
+    2.39
+   ]
+  },
+  {
+   "hex": "#C2B798",
+   "lab": [
+    74.57,
+    -1.14,
+    17.19
+   ]
+  },
+  {
+   "hex": "#FAE299",
+   "lab": [
+    90.33,
+    -1.74,
+    38.68
+   ]
+  },
+  {
+   "hex": "#EDE9DB",
+   "lab": [
+    92.31,
+    -1.04,
+    7.27
+   ]
+  },
+  {
+   "hex": "#D9B07B",
+   "lab": [
+    74.34,
+    8.0,
+    32.73
+   ]
+  },
+  {
+   "hex": "#36302C",
+   "lab": [
+    20.36,
+    1.86,
+    3.54
+   ]
+  },
+  {
+   "hex": "#6A6E5F",
+   "lab": [
+    45.69,
+    -4.49,
+    7.85
+   ]
+  },
+  {
+   "hex": "#987048",
+   "lab": [
+    50.37,
+    10.88,
+    28.3
+   ]
+  },
+  {
+   "hex": "#993637",
+   "lab": [
+    37.27,
+    41.44,
+    21.76
+   ]
+  },
+  {
+   "hex": "#587D95",
+   "lab": [
+    50.58,
+    -6.49,
+    -17.05
+   ]
+  },
+  {
+   "hex": "#BA6F1E",
+   "lab": [
+    53.92,
+    23.88,
+    53.65
+   ]
+  },
+  {
+   "hex": "#64551A",
+   "lab": [
+    36.52,
+    -1.12,
+    35.18
+   ]
+  },
+  {
+   "hex": "#72400E",
+   "lab": [
+    32.43,
+    17.9,
+    37.17
+   ]
+  },
+  {
+   "hex": "#987828",
+   "lab": [
+    52.13,
+    3.96,
+    46.52
+   ]
+  },
+  {
+   "hex": "#E8AC42",
+   "lab": [
+    74.22,
+    12.06,
+    60.6
+   ]
+  },
+  {
+   "hex": "#392C11",
+   "lab": [
+    18.85,
+    2.14,
+    19.46
+   ]
+  },
+  {
+   "hex": "#F7CA7C",
+   "lab": [
+    83.69,
+    6.52,
+    44.71
+   ]
+  },
+  {
+   "hex": "#C22B28",
+   "lab": [
+    43.29,
+    58.25,
+    39.57
+   ]
+  },
+  {
+   "hex": "#434F67",
+   "lab": [
+    33.49,
+    1.71,
+    -15.46
+   ]
+  },
+  {
+   "hex": "#616673",
+   "lab": [
+    43.19,
+    1.02,
+    -7.95
+   ]
+  },
+  {
+   "hex": "#E3C795",
+   "lab": [
+    81.48,
+    2.76,
+    28.69
+   ]
+  },
+  {
+   "hex": "#86827C",
+   "lab": [
+    54.54,
+    0.37,
+    3.77
+   ]
+  },
+  {
+   "hex": "#C7A972",
+   "lab": [
+    70.69,
+    3.46,
+    32.41
+   ]
+  },
+  {
+   "hex": "#B0A389",
+   "lab": [
+    67.45,
+    0.44,
+    15.23
+   ]
+  },
+  {
+   "hex": "#2B3752",
+   "lab": [
+    23.19,
+    3.33,
+    -17.99
+   ]
+  },
+  {
+   "hex": "#A6906C",
+   "lab": [
+    60.9,
+    2.82,
+    22.19
+   ]
+  },
+  {
+   "hex": "#F9DBBF",
+   "lab": [
+    89.19,
+    6.17,
+    17.58
+   ]
+  },
+  {
+   "hex": "#BCB777",
+   "lab": [
+    73.47,
+    -7.87,
+    33.2
+   ]
+  },
+  {
+   "hex": "#E6B893",
+   "lab": [
+    78.0,
+    11.59,
+    25.1
+   ]
+  },
+  {
+   "hex": "#C88C59",
+   "lab": [
+    63.14,
+    17.26,
+    36.14
+   ]
+  },
+  {
+   "hex": "#936442",
+   "lab": [
+    46.59,
+    15.05,
+    26.82
+   ]
+  },
+  {
+   "hex": "#7D7F75",
+   "lab": [
+    52.76,
+    -2.69,
+    5.17
+   ]
+  },
+  {
+   "hex": "#3B2C1C",
+   "lab": [
+    19.29,
+    4.39,
+    13.02
+   ]
+  },
+  {
+   "hex": "#C54140",
+   "lab": [
+    47.0,
+    52.35,
+    30.14
+   ]
+  },
+  {
+   "hex": "#A78145",
+   "lab": [
+    56.43,
+    7.56,
+    37.7
+   ]
+  },
+  {
+   "hex": "#694B22",
+   "lab": [
+    34.3,
+    7.94,
+    28.89
+   ]
+  },
+  {
+   "hex": "#CD8B40",
+   "lab": [
+    63.19,
+    18.19,
+    49.0
+   ]
+  },
+  {
+   "hex": "#8D5F27",
+   "lab": [
+    44.22,
+    13.25,
+    38.44
+   ]
+  },
+  {
+   "hex": "#D2A96C",
+   "lab": [
+    71.66,
+    7.38,
+    37.03
+   ]
+  },
+  {
+   "hex": "#F5E3C7",
+   "lab": [
+    91.0,
+    1.74,
+    15.9
+   ]
+  },
+  {
+   "hex": "#332512",
+   "lab": [
+    15.85,
+    3.8,
+    15.04
+   ]
+  },
+  {
+   "hex": "#B42D27",
+   "lab": [
+    40.78,
+    53.29,
+    36.68
+   ]
+  },
+  {
+   "hex": "#9A8A30",
+   "lab": [
+    57.33,
+    -4.73,
+    48.41
+   ]
+  },
+  {
+   "hex": "#7D7225",
+   "lab": [
+    47.66,
+    -5.35,
+    42.4
+   ]
+  },
+  {
+   "hex": "#DFB879",
+   "lab": [
+    76.89,
+    5.97,
+    37.18
+   ]
+  },
+  {
+   "hex": "#241C0E",
+   "lab": [
+    10.83,
+    1.49,
+    10.23
+   ]
+  },
+  {
+   "hex": "#94632B",
+   "lab": [
+    46.17,
+    14.35,
+    38.79
+   ]
+  },
+  {
+   "hex": "#C86C19",
+   "lab": [
+    55.15,
+    31.31,
+    57.16
+   ]
+  },
+  {
+   "hex": "#9B2219",
+   "lab": [
+    34.36,
+    48.64,
+    36.38
+   ]
+  },
+  {
+   "hex": "#4E3613",
+   "lab": [
+    24.66,
+    6.69,
+    25.52
+   ]
+  },
+  {
+   "hex": "#ECD4AF",
+   "lab": [
+    86.01,
+    2.77,
+    21.37
+   ]
+  },
+  {
+   "hex": "#C9A870",
+   "lab": [
+    70.59,
+    4.61,
+    33.38
+   ]
+  },
+  {
+   "hex": "#2B2513",
+   "lab": [
+    14.86,
+    -0.37,
+    12.95
+   ]
+  },
+  {
+   "hex": "#B57A32",
+   "lab": [
+    56.06,
+    16.41,
+    47.12
+   ]
+  },
+  {
+   "hex": "#714214",
+   "lab": [
+    32.83,
+    16.46,
+    34.86
+   ]
+  },
+  {
+   "hex": "#B52F2C",
+   "lab": [
+    41.28,
+    53.1,
+    34.42
+   ]
+  },
+  {
+   "hex": "#6A5E25",
+   "lab": [
+    39.92,
+    -2.81,
+    33.62
+   ]
+  },
+  {
+   "hex": "#CF6313",
+   "lab": [
+    54.28,
+    38.69,
+    58.74
+   ]
+  },
+  {
+   "hex": "#776120",
+   "lab": [
+    42.12,
+    1.32,
+    38.78
+   ]
+  },
+  {
+   "hex": "#523F16",
+   "lab": [
+    27.86,
+    3.17,
+    27.49
+   ]
+  },
+  {
+   "hex": "#7F4B17",
+   "lab": [
+    37.13,
+    17.76,
+    38.28
+   ]
+  },
+  {
+   "hex": "#251B0E",
+   "lab": [
+    10.62,
+    2.77,
+    9.97
+   ]
+  },
+  {
+   "hex": "#CF9A51",
+   "lab": [
+    67.26,
+    11.97,
+    45.37
+   ]
+  },
+  {
+   "hex": "#CD6F29",
+   "lab": [
+    56.59,
+    32.24,
+    52.69
+   ]
+  },
+  {
+   "hex": "#9F2221",
+   "lab": [
+    35.25,
+    50.15,
+    33.04
+   ]
+  },
+  {
+   "hex": "#601814",
+   "lab": [
+    20.79,
+    32.16,
+    21.56
+   ]
+  },
+  {
+   "hex": "#D3A661",
+   "lab": [
+    70.86,
+    8.42,
+    41.72
+   ]
+  },
+  {
+   "hex": "#BB7F35",
+   "lab": [
+    58.04,
+    16.41,
+    48.02
+   ]
+  },
+  {
+   "hex": "#2C2419",
+   "lab": [
+    14.78,
+    1.72,
+    8.77
+   ]
+  },
+  {
+   "hex": "#7B612A",
+   "lab": [
+    42.65,
+    3.88,
+    34.6
+   ]
+  },
+  {
+   "hex": "#844F18",
+   "lab": [
+    38.84,
+    17.75,
+    39.7
+   ]
+  },
+  {
+   "hex": "#4D3213",
+   "lab": [
+    23.36,
+    8.77,
+    24.07
+   ]
+  },
+  {
+   "hex": "#BC4016",
+   "lab": [
+    44.82,
+    48.12,
+    49.23
+   ]
+  },
+  {
+   "hex": "#FCEBA6",
+   "lab": [
+    92.96,
+    -4.06,
+    35.61
+   ]
+  },
+  {
+   "hex": "#FEF5E4",
+   "lab": [
+    96.81,
+    0.2,
+    9.24
+   ]
+  },
+  {
+   "hex": "#E24245",
+   "lab": [
+    52.39,
+    61.48,
+    34.95
+   ]
+  },
+  {
+   "hex": "#372414",
+   "lab": [
+    16.13,
+    6.82,
+    14.23
+   ]
+  },
+  {
+   "hex": "#4D5F6B",
+   "lab": [
+    39.28,
+    -3.77,
+    -9.08
+   ]
+  },
+  {
+   "hex": "#E0965B",
+   "lab": [
+    68.33,
+    21.95,
+    42.05
+   ]
+  },
+  {
+   "hex": "#F2B231",
+   "lab": [
+    76.64,
+    12.46,
+    69.67
+   ]
+  },
+  {
+   "hex": "#8A6445",
+   "lab": [
+    45.56,
+    11.37,
+    23.56
+   ]
+  },
+  {
+   "hex": "#A32326",
+   "lab": [
+    36.23,
+    51.26,
+    31.38
+   ]
+  },
+  {
+   "hex": "#FAF8F2",
+   "lab": [
+    97.58,
+    -0.37,
+    3.1
+   ]
+  },
+  {
+   "hex": "#F3D9B7",
+   "lab": [
+    88.02,
+    3.88,
+    20.05
+   ]
+  },
+  {
+   "hex": "#DEAD63",
+   "lab": [
+    73.75,
+    9.42,
+    44.47
+   ]
+  },
+  {
+   "hex": "#B57F39",
+   "lab": [
+    57.36,
+    14.01,
+    45.2
+   ]
+  },
+  {
+   "hex": "#CC9C7D",
+   "lab": [
+    68.09,
+    13.77,
+    23.14
+   ]
+  },
+  {
+   "hex": "#CCC2BE",
+   "lab": [
+    79.12,
+    2.8,
+    3.25
+   ]
+  },
+  {
+   "hex": "#895B3E",
+   "lab": [
+    42.99,
+    15.51,
+    24.31
+   ]
+  },
+  {
+   "hex": "#7A7B84",
+   "lab": [
+    51.8,
+    1.5,
+    -5.02
+   ]
+  },
+  {
+   "hex": "#242B2B",
+   "lab": [
+    16.88,
+    -3.05,
+    -1.04
+   ]
+  },
+  {
+   "hex": "#27364D",
+   "lab": [
+    22.32,
+    1.09,
+    -16.03
+   ]
+  },
+  {
+   "hex": "#143871",
+   "lab": [
+    24.22,
+    9.93,
+    -36.58
+   ]
+  },
+  {
+   "hex": "#35321B",
+   "lab": [
+    20.51,
+    -2.82,
+    15.1
+   ]
+  },
+  {
+   "hex": "#63522D",
+   "lab": [
+    35.75,
+    1.74,
+    24.2
+   ]
+  },
+  {
+   "hex": "#504A48",
+   "lab": [
+    31.97,
+    2.09,
+    2.09
+   ]
+  },
+  {
+   "hex": "#3C64C9",
+   "lab": [
+    44.65,
+    20.09,
+    -56.74
+   ]
+  },
+  {
+   "hex": "#9E7A54",
+   "lab": [
+    53.84,
+    8.98,
+    26.14
+   ]
+  },
+  {
+   "hex": "#031D4F",
+   "lab": [
+    12.37,
+    13.14,
+    -33.36
+   ]
+  },
+  {
+   "hex": "#17231C",
+   "lab": [
+    12.4,
+    -7.18,
+    3.02
+   ]
+  },
+  {
+   "hex": "#081314",
+   "lab": [
+    5.13,
+    -3.3,
+    -1.84
+   ]
+  },
+  {
+   "hex": "#353D32",
+   "lab": [
+    24.72,
+    -5.85,
+    5.68
+   ]
+  },
+  {
+   "hex": "#142B35",
+   "lab": [
+    16.17,
+    -5.53,
+    -9.22
+   ]
+  },
+  {
+   "hex": "#104175",
+   "lab": [
+    27.23,
+    4.87,
+    -34.31
+   ]
+  },
+  {
+   "hex": "#5E4F23",
+   "lab": [
+    34.18,
+    0.22,
+    27.86
+   ]
+  },
+  {
+   "hex": "#AF863A",
+   "lab": [
+    58.48,
+    7.52,
+    45.74
+   ]
+  },
+  {
+   "hex": "#EEF0EB",
+   "lab": [
+    94.52,
+    -1.54,
+    2.17
+   ]
+  },
+  {
+   "hex": "#98C7E2",
+   "lab": [
+    77.88,
+    -9.0,
+    -18.38
+   ]
+  },
+  {
+   "hex": "#C3DAE2",
+   "lab": [
+    85.62,
+    -6.03,
+    -6.53
+   ]
+  },
+  {
+   "hex": "#728329",
+   "lab": [
+    51.8,
+    -19.34,
+    44.63
+   ]
+  },
+  {
+   "hex": "#A8AE37",
+   "lab": [
+    68.66,
+    -17.17,
+    57.47
+   ]
+  },
+  {
+   "hex": "#CFBD84",
+   "lab": [
+    76.88,
+    -1.9,
+    31.15
+   ]
+  },
+  {
+   "hex": "#4A612D",
+   "lab": [
+    38.19,
+    -18.43,
+    26.66
+   ]
+  },
+  {
+   "hex": "#6E7562",
+   "lab": [
+    48.16,
+    -6.37,
+    9.6
+   ]
+  },
+  {
+   "hex": "#1B2A28",
+   "lab": [
+    15.71,
+    -6.86,
+    -0.73
+   ]
+  },
+  {
+   "hex": "#44472C",
+   "lab": [
+    29.2,
+    -6.35,
+    15.85
+   ]
+  },
+  {
+   "hex": "#062945",
+   "lab": [
+    15.77,
+    -0.24,
+    -21.01
+   ]
+  },
+  {
+   "hex": "#7E631A",
+   "lab": [
+    43.41,
+    3.2,
+    42.9
+   ]
+  },
+  {
+   "hex": "#ECC292",
+   "lab": [
+    81.01,
+    8.54,
+    29.78
+   ]
+  },
+  {
+   "hex": "#ADA1A8",
+   "lab": [
+    67.43,
+    5.63,
+    -2.06
+   ]
+  },
+  {
+   "hex": "#44669C",
+   "lab": [
+    42.96,
+    4.37,
+    -33.08
+   ]
+  },
+  {
+   "hex": "#CC9E29",
+   "lab": [
+    67.61,
+    6.41,
+    62.73
+   ]
+  },
+  {
+   "hex": "#D29B13",
+   "lab": [
+    67.42,
+    10.12,
+    68.71
+   ]
+  },
+  {
+   "hex": "#CF9713",
+   "lab": [
+    66.09,
+    10.95,
+    67.56
+   ]
+  },
+  {
+   "hex": "#D8A215",
+   "lab": [
+    69.82,
+    9.03,
+    70.43
+   ]
+  },
+  {
+   "hex": "#DEA917",
+   "lab": [
+    72.21,
+    7.95,
+    72.14
+   ]
+  },
+  {
+   "hex": "#E5B21B",
+   "lab": [
+    75.19,
+    6.31,
+    73.94
+   ]
+  },
+  {
+   "hex": "#D79B13",
+   "lab": [
+    67.97,
+    12.31,
+    69.37
+   ]
+  },
+  {
+   "hex": "#EBBD24",
+   "lab": [
+    78.57,
+    3.34,
+    74.83
+   ]
+  },
+  {
+   "hex": "#D09212",
+   "lab": [
+    64.97,
+    14.08,
+    66.96
+   ]
+  },
+  {
+   "hex": "#171232",
+   "lab": [
+    7.63,
+    12.76,
+    -20.46
+   ]
+  },
+  {
+   "hex": "#D19A13",
+   "lab": [
+    67.06,
+    10.21,
+    68.39
+   ]
+  },
+  {
+   "hex": "#DFAC19",
+   "lab": [
+    73.06,
+    6.83,
+    72.44
+   ]
+  },
+  {
+   "hex": "#B78617",
+   "lab": [
+    59.14,
+    9.64,
+    60.05
+   ]
+  },
+  {
+   "hex": "#2F242D",
+   "lab": [
+    15.78,
+    7.17,
+    -3.96
+   ]
+  },
+  {
+   "hex": "#4B3728",
+   "lab": [
+    24.89,
+    6.61,
+    12.86
+   ]
+  },
+  {
+   "hex": "#705223",
+   "lab": [
+    37.12,
+    7.12,
+    31.74
+   ]
+  },
+  {
+   "hex": "#916C1E",
+   "lab": [
+    48.06,
+    7.11,
+    46.44
+   ]
+  },
+  {
+   "hex": "#14182E",
+   "lab": [
+    8.99,
+    5.69,
+    -15.38
+   ]
+  },
+  {
+   "hex": "#33364D",
+   "lab": [
+    23.26,
+    5.02,
+    -14.5
+   ]
+  },
+  {
+   "hex": "#877E64",
+   "lab": [
+    52.94,
+    -1.0,
+    15.42
+   ]
+  },
+  {
+   "hex": "#4E443B",
+   "lab": [
+    29.59,
+    2.57,
+    7.01
+   ]
+  },
+  {
+   "hex": "#D7E1DD",
+   "lab": [
+    88.69,
+    -4.07,
+    0.78
+   ]
+  },
+  {
+   "hex": "#EFD08E",
+   "lab": [
+    84.7,
+    1.99,
+    36.75
+   ]
+  },
+  {
+   "hex": "#F5C542",
+   "lab": [
+    81.7,
+    4.47,
+    68.48
+   ]
+  },
+  {
+   "hex": "#8A3E34",
+   "lab": [
+    36.17,
+    31.58,
+    21.69
+   ]
+  }
+ ]
+}

@@ -1,0 +1,785 @@
+file,line,scope,at_rule,selector,property,value,px@390,px@834,px@1440
+source/css/3q17cp_jgfwol.pretty.css,2,global stylesheet (every page),,@font-face,font-family,Cinzel,,,
+source/css/3q17cp_jgfwol.pretty.css,3,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,4,global stylesheet (every page),,@font-face,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,5,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,6,global stylesheet (every page),,@font-face,src,"url(../media/93b6da25d7dcc0a6-s.0ds8vreemgw27.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,7,global stylesheet (every page),,@font-face,unicode-range,"U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF",,,
+source/css/3q17cp_jgfwol.pretty.css,13,global stylesheet (every page),,@font-face,font-family,Cinzel,,,
+source/css/3q17cp_jgfwol.pretty.css,14,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,15,global stylesheet (every page),,@font-face,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,16,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,17,global stylesheet (every page),,@font-face,src,"url(../media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,18,global stylesheet (every page),,@font-face,unicode-range,"U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",,,
+source/css/3q17cp_jgfwol.pretty.css,23,global stylesheet (every page),,@font-face,font-family,Cinzel Fallback,,,
+source/css/3q17cp_jgfwol.pretty.css,24,global stylesheet (every page),,@font-face,src,local(Times New Roman),,,
+source/css/3q17cp_jgfwol.pretty.css,25,global stylesheet (every page),,@font-face,ascent-override,71.31%,,,
+source/css/3q17cp_jgfwol.pretty.css,26,global stylesheet (every page),,@font-face,descent-override,27.18%,,,
+source/css/3q17cp_jgfwol.pretty.css,27,global stylesheet (every page),,@font-face,line-gap-override,0%,,,
+source/css/3q17cp_jgfwol.pretty.css,28,global stylesheet (every page),,@font-face,size-adjust,136.86%,,,
+source/css/3q17cp_jgfwol.pretty.css,31,global stylesheet (every page),,.cinzel_71b11afb-module__MlkSrG__className,font-family,"Cinzel, Cinzel Fallback",,,
+source/css/3q17cp_jgfwol.pretty.css,34,global stylesheet (every page),,.cinzel_71b11afb-module__MlkSrG__className,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,35,global stylesheet (every page),,.cinzel_71b11afb-module__MlkSrG__className,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,41,global stylesheet (every page),,@font-face,font-family,Lora,,,
+source/css/3q17cp_jgfwol.pretty.css,42,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,43,global stylesheet (every page),,@font-face,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,44,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,45,global stylesheet (every page),,@font-face,src,"url(../media/e7150917543fc9da-s.0or-mv9rm3-7p.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,46,global stylesheet (every page),,@font-face,unicode-range,"U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F",,,
+source/css/3q17cp_jgfwol.pretty.css,50,global stylesheet (every page),,@font-face,font-family,Lora,,,
+source/css/3q17cp_jgfwol.pretty.css,51,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,52,global stylesheet (every page),,@font-face,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,53,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,54,global stylesheet (every page),,@font-face,src,"url(../media/71fbf9c08529c2a5-s.1dgp9w781ejf6.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,55,global stylesheet (every page),,@font-face,unicode-range,"U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116",,,
+source/css/3q17cp_jgfwol.pretty.css,58,global stylesheet (every page),,@font-face,font-family,Lora,,,
+source/css/3q17cp_jgfwol.pretty.css,59,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,60,global stylesheet (every page),,@font-face,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,61,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,62,global stylesheet (every page),,@font-face,src,"url(../media/e9457141811d41ae-s.0ydhovl1n7s8f.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,63,global stylesheet (every page),,@font-face,unicode-range,"U+302-303, U+305, U+307-308, U+310, U+312, U+315, U+31A, U+326-327, U+32C, U+32F-330, U+332-333, U+338, U+33A, U+346, U+34D, U+391-3A1, U+3A3-3A9, U+3B1-3C9, U+3D1, U+3D5-3D6, U+3F0-3F1, U+3F4-3F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE??",,,
+source/css/3q17cp_jgfwol.pretty.css,78,global stylesheet (every page),,@font-face,font-family,Lora,,,
+source/css/3q17cp_jgfwol.pretty.css,79,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,80,global stylesheet (every page),,@font-face,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,81,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,82,global stylesheet (every page),,@font-face,src,"url(../media/ac34884600cd8d5d-s.444o2y6he09-k.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,83,global stylesheet (every page),,@font-face,unicode-range,"U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+28??, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B??, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F0??, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F7??, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB??",,,
+source/css/3q17cp_jgfwol.pretty.css,108,global stylesheet (every page),,@font-face,font-family,Lora,,,
+source/css/3q17cp_jgfwol.pretty.css,109,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,110,global stylesheet (every page),,@font-face,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,111,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,112,global stylesheet (every page),,@font-face,src,"url(../media/e1ccd2766b08c828-s.1trkgqz3-pw7b.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,113,global stylesheet (every page),,@font-face,unicode-range,"U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB",,,
+source/css/3q17cp_jgfwol.pretty.css,118,global stylesheet (every page),,@font-face,font-family,Lora,,,
+source/css/3q17cp_jgfwol.pretty.css,119,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,120,global stylesheet (every page),,@font-face,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,121,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,122,global stylesheet (every page),,@font-face,src,"url(../media/507a47c1876d4ec2-s.16qc705tx6j2a.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,123,global stylesheet (every page),,@font-face,unicode-range,"U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF",,,
+source/css/3q17cp_jgfwol.pretty.css,129,global stylesheet (every page),,@font-face,font-family,Lora,,,
+source/css/3q17cp_jgfwol.pretty.css,130,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,131,global stylesheet (every page),,@font-face,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,132,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,133,global stylesheet (every page),,@font-face,src,"url(../media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,134,global stylesheet (every page),,@font-face,unicode-range,"U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",,,
+source/css/3q17cp_jgfwol.pretty.css,139,global stylesheet (every page),,@font-face,font-family,Lora,,,
+source/css/3q17cp_jgfwol.pretty.css,140,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,141,global stylesheet (every page),,@font-face,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,142,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,143,global stylesheet (every page),,@font-face,src,"url(../media/e7150917543fc9da-s.0or-mv9rm3-7p.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,144,global stylesheet (every page),,@font-face,unicode-range,"U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F",,,
+source/css/3q17cp_jgfwol.pretty.css,148,global stylesheet (every page),,@font-face,font-family,Lora,,,
+source/css/3q17cp_jgfwol.pretty.css,149,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,150,global stylesheet (every page),,@font-face,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,151,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,152,global stylesheet (every page),,@font-face,src,"url(../media/71fbf9c08529c2a5-s.1dgp9w781ejf6.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,153,global stylesheet (every page),,@font-face,unicode-range,"U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116",,,
+source/css/3q17cp_jgfwol.pretty.css,156,global stylesheet (every page),,@font-face,font-family,Lora,,,
+source/css/3q17cp_jgfwol.pretty.css,157,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,158,global stylesheet (every page),,@font-face,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,159,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,160,global stylesheet (every page),,@font-face,src,"url(../media/e9457141811d41ae-s.0ydhovl1n7s8f.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,161,global stylesheet (every page),,@font-face,unicode-range,"U+302-303, U+305, U+307-308, U+310, U+312, U+315, U+31A, U+326-327, U+32C, U+32F-330, U+332-333, U+338, U+33A, U+346, U+34D, U+391-3A1, U+3A3-3A9, U+3B1-3C9, U+3D1, U+3D5-3D6, U+3F0-3F1, U+3F4-3F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE??",,,
+source/css/3q17cp_jgfwol.pretty.css,176,global stylesheet (every page),,@font-face,font-family,Lora,,,
+source/css/3q17cp_jgfwol.pretty.css,177,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,178,global stylesheet (every page),,@font-face,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,179,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,180,global stylesheet (every page),,@font-face,src,"url(../media/ac34884600cd8d5d-s.444o2y6he09-k.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,181,global stylesheet (every page),,@font-face,unicode-range,"U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+28??, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B??, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F0??, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F7??, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB??",,,
+source/css/3q17cp_jgfwol.pretty.css,206,global stylesheet (every page),,@font-face,font-family,Lora,,,
+source/css/3q17cp_jgfwol.pretty.css,207,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,208,global stylesheet (every page),,@font-face,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,209,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,210,global stylesheet (every page),,@font-face,src,"url(../media/e1ccd2766b08c828-s.1trkgqz3-pw7b.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,211,global stylesheet (every page),,@font-face,unicode-range,"U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB",,,
+source/css/3q17cp_jgfwol.pretty.css,216,global stylesheet (every page),,@font-face,font-family,Lora,,,
+source/css/3q17cp_jgfwol.pretty.css,217,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,218,global stylesheet (every page),,@font-face,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,219,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,220,global stylesheet (every page),,@font-face,src,"url(../media/507a47c1876d4ec2-s.16qc705tx6j2a.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,221,global stylesheet (every page),,@font-face,unicode-range,"U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF",,,
+source/css/3q17cp_jgfwol.pretty.css,227,global stylesheet (every page),,@font-face,font-family,Lora,,,
+source/css/3q17cp_jgfwol.pretty.css,228,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,229,global stylesheet (every page),,@font-face,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,230,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,231,global stylesheet (every page),,@font-face,src,"url(../media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,232,global stylesheet (every page),,@font-face,unicode-range,"U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",,,
+source/css/3q17cp_jgfwol.pretty.css,237,global stylesheet (every page),,@font-face,font-family,Lora Fallback,,,
+source/css/3q17cp_jgfwol.pretty.css,238,global stylesheet (every page),,@font-face,src,local(Times New Roman),,,
+source/css/3q17cp_jgfwol.pretty.css,239,global stylesheet (every page),,@font-face,ascent-override,87.33%,,,
+source/css/3q17cp_jgfwol.pretty.css,240,global stylesheet (every page),,@font-face,descent-override,23.78%,,,
+source/css/3q17cp_jgfwol.pretty.css,241,global stylesheet (every page),,@font-face,line-gap-override,0%,,,
+source/css/3q17cp_jgfwol.pretty.css,242,global stylesheet (every page),,@font-face,size-adjust,115.2%,,,
+source/css/3q17cp_jgfwol.pretty.css,245,global stylesheet (every page),,.lora_f283b796-module__E6zvsG__className,font-family,"Lora, Lora Fallback",,,
+source/css/3q17cp_jgfwol.pretty.css,248,global stylesheet (every page),,.lora_f283b796-module__E6zvsG__className,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,254,global stylesheet (every page),,@font-face,font-family,"""Source Serif 4""",,,
+source/css/3q17cp_jgfwol.pretty.css,255,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,256,global stylesheet (every page),,@font-face,font-weight,400,,,
+source/css/3q17cp_jgfwol.pretty.css,257,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,258,global stylesheet (every page),,@font-face,src,"url(../media/20aee433927f7d4b-s.2u46yrlpkdxrh.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,259,global stylesheet (every page),,@font-face,unicode-range,"U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F",,,
+source/css/3q17cp_jgfwol.pretty.css,263,global stylesheet (every page),,@font-face,font-family,"""Source Serif 4""",,,
+source/css/3q17cp_jgfwol.pretty.css,264,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,265,global stylesheet (every page),,@font-face,font-weight,400,,,
+source/css/3q17cp_jgfwol.pretty.css,266,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,267,global stylesheet (every page),,@font-face,src,"url(../media/256e1f7f180674ba-s.444m1fhac1z6e.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,268,global stylesheet (every page),,@font-face,unicode-range,"U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116",,,
+source/css/3q17cp_jgfwol.pretty.css,271,global stylesheet (every page),,@font-face,font-family,"""Source Serif 4""",,,
+source/css/3q17cp_jgfwol.pretty.css,272,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,273,global stylesheet (every page),,@font-face,font-weight,400,,,
+source/css/3q17cp_jgfwol.pretty.css,274,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,275,global stylesheet (every page),,@font-face,src,"url(../media/be3bf58b83159894-s.1298pfel08g2l.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,276,global stylesheet (every page),,@font-face,unicode-range,"U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF",,,
+source/css/3q17cp_jgfwol.pretty.css,279,global stylesheet (every page),,@font-face,font-family,"""Source Serif 4""",,,
+source/css/3q17cp_jgfwol.pretty.css,280,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,281,global stylesheet (every page),,@font-face,font-weight,400,,,
+source/css/3q17cp_jgfwol.pretty.css,282,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,283,global stylesheet (every page),,@font-face,src,"url(../media/753b6407f468151f-s.1wcle8r8k1a_g.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,284,global stylesheet (every page),,@font-face,unicode-range,"U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB",,,
+source/css/3q17cp_jgfwol.pretty.css,289,global stylesheet (every page),,@font-face,font-family,"""Source Serif 4""",,,
+source/css/3q17cp_jgfwol.pretty.css,290,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,291,global stylesheet (every page),,@font-face,font-weight,400,,,
+source/css/3q17cp_jgfwol.pretty.css,292,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,293,global stylesheet (every page),,@font-face,src,"url(../media/292081311a6a8abc-s.3irbj1um1c5rd.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,294,global stylesheet (every page),,@font-face,unicode-range,"U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF",,,
+source/css/3q17cp_jgfwol.pretty.css,300,global stylesheet (every page),,@font-face,font-family,"""Source Serif 4""",,,
+source/css/3q17cp_jgfwol.pretty.css,301,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,302,global stylesheet (every page),,@font-face,font-weight,400,,,
+source/css/3q17cp_jgfwol.pretty.css,303,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,304,global stylesheet (every page),,@font-face,src,"url(../media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,305,global stylesheet (every page),,@font-face,unicode-range,"U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",,,
+source/css/3q17cp_jgfwol.pretty.css,310,global stylesheet (every page),,@font-face,font-family,"""Source Serif 4""",,,
+source/css/3q17cp_jgfwol.pretty.css,311,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,312,global stylesheet (every page),,@font-face,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,313,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,314,global stylesheet (every page),,@font-face,src,"url(../media/20aee433927f7d4b-s.2u46yrlpkdxrh.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,315,global stylesheet (every page),,@font-face,unicode-range,"U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F",,,
+source/css/3q17cp_jgfwol.pretty.css,319,global stylesheet (every page),,@font-face,font-family,"""Source Serif 4""",,,
+source/css/3q17cp_jgfwol.pretty.css,320,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,321,global stylesheet (every page),,@font-face,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,322,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,323,global stylesheet (every page),,@font-face,src,"url(../media/256e1f7f180674ba-s.444m1fhac1z6e.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,324,global stylesheet (every page),,@font-face,unicode-range,"U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116",,,
+source/css/3q17cp_jgfwol.pretty.css,327,global stylesheet (every page),,@font-face,font-family,"""Source Serif 4""",,,
+source/css/3q17cp_jgfwol.pretty.css,328,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,329,global stylesheet (every page),,@font-face,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,330,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,331,global stylesheet (every page),,@font-face,src,"url(../media/be3bf58b83159894-s.1298pfel08g2l.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,332,global stylesheet (every page),,@font-face,unicode-range,"U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF",,,
+source/css/3q17cp_jgfwol.pretty.css,335,global stylesheet (every page),,@font-face,font-family,"""Source Serif 4""",,,
+source/css/3q17cp_jgfwol.pretty.css,336,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,337,global stylesheet (every page),,@font-face,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,338,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,339,global stylesheet (every page),,@font-face,src,"url(../media/753b6407f468151f-s.1wcle8r8k1a_g.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,340,global stylesheet (every page),,@font-face,unicode-range,"U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB",,,
+source/css/3q17cp_jgfwol.pretty.css,345,global stylesheet (every page),,@font-face,font-family,"""Source Serif 4""",,,
+source/css/3q17cp_jgfwol.pretty.css,346,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,347,global stylesheet (every page),,@font-face,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,348,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,349,global stylesheet (every page),,@font-face,src,"url(../media/292081311a6a8abc-s.3irbj1um1c5rd.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,350,global stylesheet (every page),,@font-face,unicode-range,"U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF",,,
+source/css/3q17cp_jgfwol.pretty.css,356,global stylesheet (every page),,@font-face,font-family,"""Source Serif 4""",,,
+source/css/3q17cp_jgfwol.pretty.css,357,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,358,global stylesheet (every page),,@font-face,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,359,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,360,global stylesheet (every page),,@font-face,src,"url(../media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,361,global stylesheet (every page),,@font-face,unicode-range,"U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",,,
+source/css/3q17cp_jgfwol.pretty.css,366,global stylesheet (every page),,@font-face,font-family,"""Source Serif 4 Fallback""",,,
+source/css/3q17cp_jgfwol.pretty.css,367,global stylesheet (every page),,@font-face,src,local(Times New Roman),,,
+source/css/3q17cp_jgfwol.pretty.css,368,global stylesheet (every page),,@font-face,ascent-override,87.87%,,,
+source/css/3q17cp_jgfwol.pretty.css,369,global stylesheet (every page),,@font-face,descent-override,28.41%,,,
+source/css/3q17cp_jgfwol.pretty.css,370,global stylesheet (every page),,@font-face,line-gap-override,0%,,,
+source/css/3q17cp_jgfwol.pretty.css,371,global stylesheet (every page),,@font-face,size-adjust,117.91%,,,
+source/css/3q17cp_jgfwol.pretty.css,374,global stylesheet (every page),,.source_serif_4_efe0a908-module__kMXAjq__className,font-family,"""Source Serif 4"", ""Source Serif 4 Fallback""",,,
+source/css/3q17cp_jgfwol.pretty.css,375,global stylesheet (every page),,.source_serif_4_efe0a908-module__kMXAjq__className,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,381,global stylesheet (every page),,@font-face,font-family,Schibsted Grotesk,,,
+source/css/3q17cp_jgfwol.pretty.css,382,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,383,global stylesheet (every page),,@font-face,font-weight,400,,,
+source/css/3q17cp_jgfwol.pretty.css,384,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,385,global stylesheet (every page),,@font-face,src,"url(../media/481eac7be1c268b7-s.34f9nwclrjpmo.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,386,global stylesheet (every page),,@font-face,unicode-range,"U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF",,,
+source/css/3q17cp_jgfwol.pretty.css,392,global stylesheet (every page),,@font-face,font-family,Schibsted Grotesk,,,
+source/css/3q17cp_jgfwol.pretty.css,393,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,394,global stylesheet (every page),,@font-face,font-weight,400,,,
+source/css/3q17cp_jgfwol.pretty.css,395,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,396,global stylesheet (every page),,@font-face,src,"url(../media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,397,global stylesheet (every page),,@font-face,unicode-range,"U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",,,
+source/css/3q17cp_jgfwol.pretty.css,402,global stylesheet (every page),,@font-face,font-family,Schibsted Grotesk,,,
+source/css/3q17cp_jgfwol.pretty.css,403,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,404,global stylesheet (every page),,@font-face,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,405,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,406,global stylesheet (every page),,@font-face,src,"url(../media/481eac7be1c268b7-s.34f9nwclrjpmo.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,407,global stylesheet (every page),,@font-face,unicode-range,"U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF",,,
+source/css/3q17cp_jgfwol.pretty.css,413,global stylesheet (every page),,@font-face,font-family,Schibsted Grotesk,,,
+source/css/3q17cp_jgfwol.pretty.css,414,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,415,global stylesheet (every page),,@font-face,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,416,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,417,global stylesheet (every page),,@font-face,src,"url(../media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,418,global stylesheet (every page),,@font-face,unicode-range,"U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",,,
+source/css/3q17cp_jgfwol.pretty.css,423,global stylesheet (every page),,@font-face,font-family,Schibsted Grotesk,,,
+source/css/3q17cp_jgfwol.pretty.css,424,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,425,global stylesheet (every page),,@font-face,font-weight,800,,,
+source/css/3q17cp_jgfwol.pretty.css,426,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,427,global stylesheet (every page),,@font-face,src,"url(../media/481eac7be1c268b7-s.34f9nwclrjpmo.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,428,global stylesheet (every page),,@font-face,unicode-range,"U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF",,,
+source/css/3q17cp_jgfwol.pretty.css,434,global stylesheet (every page),,@font-face,font-family,Schibsted Grotesk,,,
+source/css/3q17cp_jgfwol.pretty.css,435,global stylesheet (every page),,@font-face,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,436,global stylesheet (every page),,@font-face,font-weight,800,,,
+source/css/3q17cp_jgfwol.pretty.css,437,global stylesheet (every page),,@font-face,font-display,swap,,,
+source/css/3q17cp_jgfwol.pretty.css,438,global stylesheet (every page),,@font-face,src,"url(../media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2) format(""woff2"")",,,
+source/css/3q17cp_jgfwol.pretty.css,439,global stylesheet (every page),,@font-face,unicode-range,"U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD",,,
+source/css/3q17cp_jgfwol.pretty.css,444,global stylesheet (every page),,@font-face,font-family,Schibsted Grotesk Fallback,,,
+source/css/3q17cp_jgfwol.pretty.css,445,global stylesheet (every page),,@font-face,src,local(Arial),,,
+source/css/3q17cp_jgfwol.pretty.css,446,global stylesheet (every page),,@font-face,ascent-override,93.46%,,,
+source/css/3q17cp_jgfwol.pretty.css,447,global stylesheet (every page),,@font-face,descent-override,24.67%,,,
+source/css/3q17cp_jgfwol.pretty.css,448,global stylesheet (every page),,@font-face,line-gap-override,0%,,,
+source/css/3q17cp_jgfwol.pretty.css,449,global stylesheet (every page),,@font-face,size-adjust,104.49%,,,
+source/css/3q17cp_jgfwol.pretty.css,452,global stylesheet (every page),,.schibsted_grotesk_e2dd7ded-module__kS_IdW__className,font-family,"Schibsted Grotesk, Schibsted Grotesk Fallback",,,
+source/css/3q17cp_jgfwol.pretty.css,455,global stylesheet (every page),,.schibsted_grotesk_e2dd7ded-module__kS_IdW__className,font-style,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,477,global stylesheet (every page),,.skip-link,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,480,global stylesheet (every page),,.skip-link,font-weight,800,,,
+source/css/3q17cp_jgfwol.pretty.css,600,global stylesheet (every page),,body,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,601,global stylesheet (every page),,body,-webkit-font-smoothing,antialiased,,,
+source/css/3q17cp_jgfwol.pretty.css,697,global stylesheet (every page),,.logo,white-space,nowrap,,,
+source/css/3q17cp_jgfwol.pretty.css,698,global stylesheet (every page),,.logo,font-family,var(--wordmark),,,
+source/css/3q17cp_jgfwol.pretty.css,700,global stylesheet (every page),,.logo,text-transform,uppercase,,,
+source/css/3q17cp_jgfwol.pretty.css,701,global stylesheet (every page),,.logo,letter-spacing,3px,,,
+source/css/3q17cp_jgfwol.pretty.css,702,global stylesheet (every page),,.logo,text-shadow,var(--logo-shadow),,,
+source/css/3q17cp_jgfwol.pretty.css,706,global stylesheet (every page),,.logo,font-size,1.72rem,27.52,27.52,27.52
+source/css/3q17cp_jgfwol.pretty.css,707,global stylesheet (every page),,.logo,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,732,global stylesheet (every page),,.nav-cta,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,739,global stylesheet (every page),,.nav-cta,font-size,0.95rem,15.2,15.2,15.2
+source/css/3q17cp_jgfwol.pretty.css,740,global stylesheet (every page),,.nav-cta,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,748,global stylesheet (every page),@media (max-width: 560px),.logo,letter-spacing,1.5px,,,
+source/css/3q17cp_jgfwol.pretty.css,750,global stylesheet (every page),@media (max-width: 560px),.logo,font-size,1.05rem,16.8,16.8,16.8
+source/css/3q17cp_jgfwol.pretty.css,765,global stylesheet (every page),@media (max-width: 560px),.nav-cta,font-size,0.85rem,13.6,13.6,13.6
+source/css/3q17cp_jgfwol.pretty.css,772,global stylesheet (every page),,.tt,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,809,global stylesheet (every page),,.tt-opt,font-size,0.95rem,15.2,15.2,15.2
+source/css/3q17cp_jgfwol.pretty.css,810,global stylesheet (every page),,.tt-opt,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,846,global stylesheet (every page),,.kicker,font-size,0.85rem,13.6,13.6,13.6
+source/css/3q17cp_jgfwol.pretty.css,847,global stylesheet (every page),,.kicker,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,856,global stylesheet (every page),,h1,font-family,var(--display),,,
+source/css/3q17cp_jgfwol.pretty.css,857,global stylesheet (every page),,h1,letter-spacing,-0.015em,,,
+source/css/3q17cp_jgfwol.pretty.css,858,global stylesheet (every page),,h1,text-wrap,balance,,,
+source/css/3q17cp_jgfwol.pretty.css,860,global stylesheet (every page),,h1,text-shadow,var(--h1-shadow),,,
+source/css/3q17cp_jgfwol.pretty.css,862,global stylesheet (every page),,h1,font-size,"clamp(2.7rem, 5.4vw, 4.4rem)",43.2,45.04,70.4
+source/css/3q17cp_jgfwol.pretty.css,863,global stylesheet (every page),,h1,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,864,global stylesheet (every page),,h1,line-height,1.06,,,
+source/css/3q17cp_jgfwol.pretty.css,872,global stylesheet (every page),,.lede,font-family,var(--serif),,,
+source/css/3q17cp_jgfwol.pretty.css,874,global stylesheet (every page),,.lede,max-width,46ch,,,
+source/css/3q17cp_jgfwol.pretty.css,876,global stylesheet (every page),,.lede,font-size,"clamp(1.08rem, 1.65vw, 1.28rem)",17.28,17.28,20.48
+source/css/3q17cp_jgfwol.pretty.css,877,global stylesheet (every page),,.lede,line-height,1.65,,,
+source/css/3q17cp_jgfwol.pretty.css,888,global stylesheet (every page),,.btn,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,895,global stylesheet (every page),,.btn,font-size,1.05rem,16.8,16.8,16.8
+source/css/3q17cp_jgfwol.pretty.css,896,global stylesheet (every page),,.btn,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,1031,global stylesheet (every page),,.badge b,font-size,0.95rem,15.2,15.2,15.2
+source/css/3q17cp_jgfwol.pretty.css,1035,global stylesheet (every page),,.badge span,font-size,0.8rem,12.8,12.8,12.8
+source/css/3q17cp_jgfwol.pretty.css,1048,global stylesheet (every page),,.sec-intro,font-family,var(--serif),,,
+source/css/3q17cp_jgfwol.pretty.css,1050,global stylesheet (every page),,.sec-intro,max-width,62ch,,,
+source/css/3q17cp_jgfwol.pretty.css,1052,global stylesheet (every page),,.sec-intro,font-size,1rem,16.0,16.0,16.0
+source/css/3q17cp_jgfwol.pretty.css,1053,global stylesheet (every page),,.sec-intro,line-height,1.6,,,
+source/css/3q17cp_jgfwol.pretty.css,1056,global stylesheet (every page),,h2,font-family,var(--display),,,
+source/css/3q17cp_jgfwol.pretty.css,1057,global stylesheet (every page),,h2,letter-spacing,-0.01em,,,
+source/css/3q17cp_jgfwol.pretty.css,1059,global stylesheet (every page),,h2,font-size,"clamp(1.5rem, 2.4vw, 2rem)",24.0,24.0,32.0
+source/css/3q17cp_jgfwol.pretty.css,1060,global stylesheet (every page),,h2,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,1065,global stylesheet (every page),,".create-title, .page-title",font-family,var(--display),,,
+source/css/3q17cp_jgfwol.pretty.css,1066,global stylesheet (every page),,".create-title, .page-title",letter-spacing,0,,,
+source/css/3q17cp_jgfwol.pretty.css,1069,global stylesheet (every page),,".create-title, .page-title",font-size,"clamp(1.5rem, 2.4vw, 2rem)",24.0,24.0,32.0
+source/css/3q17cp_jgfwol.pretty.css,1070,global stylesheet (every page),,".create-title, .page-title",font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,1081,global stylesheet (every page),,.legal-language-details > summary,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,1084,global stylesheet (every page),,.legal-language-details > summary,font-weight,800,,,
+source/css/3q17cp_jgfwol.pretty.css,1095,global stylesheet (every page),,.sec-chip,font-size,0.8rem,12.8,12.8,12.8
+source/css/3q17cp_jgfwol.pretty.css,1096,global stylesheet (every page),,.sec-chip,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,1211,global stylesheet (every page),,.builder-name,font-family,var(--display),,,
+source/css/3q17cp_jgfwol.pretty.css,1212,global stylesheet (every page),,.builder-name,letter-spacing,-0.01em,,,
+source/css/3q17cp_jgfwol.pretty.css,1214,global stylesheet (every page),,.builder-name,font-size,1.6rem,25.6,25.6,25.6
+source/css/3q17cp_jgfwol.pretty.css,1215,global stylesheet (every page),,.builder-name,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,1224,global stylesheet (every page),,.trait,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,1234,global stylesheet (every page),,.trait,font-size,0.88rem,14.08,14.08,14.08
+source/css/3q17cp_jgfwol.pretty.css,1235,global stylesheet (every page),,.trait,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,1276,global stylesheet (every page),,.upload b,font-size,0.98rem,15.68,15.68,15.68
+source/css/3q17cp_jgfwol.pretty.css,1281,global stylesheet (every page),,.upload span,font-size,0.85rem,13.6,13.6,13.6
+source/css/3q17cp_jgfwol.pretty.css,1282,global stylesheet (every page),,.upload span,line-height,1.45,,,
+source/css/3q17cp_jgfwol.pretty.css,1291,global stylesheet (every page),,.friends h3,font-family,var(--display),,,
+source/css/3q17cp_jgfwol.pretty.css,1292,global stylesheet (every page),,.friends h3,letter-spacing,-0.01em,,,
+source/css/3q17cp_jgfwol.pretty.css,1293,global stylesheet (every page),,.friends h3,font-size,1.25rem,20.0,20.0,20.0
+source/css/3q17cp_jgfwol.pretty.css,1294,global stylesheet (every page),,.friends h3,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,1318,global stylesheet (every page),,.friend b,font-size,1rem,16.0,16.0,16.0
+source/css/3q17cp_jgfwol.pretty.css,1322,global stylesheet (every page),,.friend span,font-size,0.84rem,13.44,13.44,13.44
+source/css/3q17cp_jgfwol.pretty.css,1329,global stylesheet (every page),,.friend-add,font-size,0.95rem,15.2,15.2,15.2
+source/css/3q17cp_jgfwol.pretty.css,1330,global stylesheet (every page),,.friend-add,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,1331,global stylesheet (every page),,.friend-add,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,1410,global stylesheet (every page),,.comp-avatar,font-family,var(--display),,,
+source/css/3q17cp_jgfwol.pretty.css,1415,global stylesheet (every page),,.comp-avatar,font-size,1.3rem,20.8,20.8,20.8
+source/css/3q17cp_jgfwol.pretty.css,1416,global stylesheet (every page),,.comp-avatar,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,1432,global stylesheet (every page),,.comp-chosen,letter-spacing,0.05em,,,
+source/css/3q17cp_jgfwol.pretty.css,1433,global stylesheet (every page),,.comp-chosen,text-transform,uppercase,,,
+source/css/3q17cp_jgfwol.pretty.css,1437,global stylesheet (every page),,.comp-chosen,font-size,0.72rem,11.52,11.52,11.52
+source/css/3q17cp_jgfwol.pretty.css,1438,global stylesheet (every page),,.comp-chosen,font-weight,800,,,
+source/css/3q17cp_jgfwol.pretty.css,1468,global stylesheet (every page),,.companion-name,font-family,var(--display),,,
+source/css/3q17cp_jgfwol.pretty.css,1469,global stylesheet (every page),,.companion-name,letter-spacing,-0.01em,,,
+source/css/3q17cp_jgfwol.pretty.css,1470,global stylesheet (every page),,.companion-name,font-size,1.35rem,21.6,21.6,21.6
+source/css/3q17cp_jgfwol.pretty.css,1471,global stylesheet (every page),,.companion-name,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,1475,global stylesheet (every page),,.companion-sub,max-width,56ch,,,
+source/css/3q17cp_jgfwol.pretty.css,1477,global stylesheet (every page),,.companion-sub,font-size,0.95rem,15.2,15.2,15.2
+source/css/3q17cp_jgfwol.pretty.css,1478,global stylesheet (every page),,.companion-sub,line-height,1.55,,,
+source/css/3q17cp_jgfwol.pretty.css,1514,global stylesheet (every page),,.book-title,font-family,var(--display),,,
+source/css/3q17cp_jgfwol.pretty.css,1515,global stylesheet (every page),,.book-title,letter-spacing,-0.01em,,,
+source/css/3q17cp_jgfwol.pretty.css,1516,global stylesheet (every page),,.book-title,font-size,1.02rem,16.32,16.32,16.32
+source/css/3q17cp_jgfwol.pretty.css,1517,global stylesheet (every page),,.book-title,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,1518,global stylesheet (every page),,.book-title,line-height,1.25,,,
+source/css/3q17cp_jgfwol.pretty.css,1521,global stylesheet (every page),,.book-sub,letter-spacing,0.04em,,,
+source/css/3q17cp_jgfwol.pretty.css,1522,global stylesheet (every page),,.book-sub,text-transform,uppercase,,,
+source/css/3q17cp_jgfwol.pretty.css,1528,global stylesheet (every page),,.book-sub,font-size,0.72rem,11.52,11.52,11.52
+source/css/3q17cp_jgfwol.pretty.css,1529,global stylesheet (every page),,.book-sub,font-weight,800,,,
+source/css/3q17cp_jgfwol.pretty.css,1560,global stylesheet (every page),,.family-switcher .chip,text-decoration,none,,,
+source/css/3q17cp_jgfwol.pretty.css,1568,global stylesheet (every page),,.chip,letter-spacing,0.05em,,,
+source/css/3q17cp_jgfwol.pretty.css,1569,global stylesheet (every page),,.chip,text-transform,uppercase,,,
+source/css/3q17cp_jgfwol.pretty.css,1575,global stylesheet (every page),,.chip,font-size,0.76rem,12.16,12.16,12.16
+source/css/3q17cp_jgfwol.pretty.css,1576,global stylesheet (every page),,.chip,font-weight,800,,,
+source/css/3q17cp_jgfwol.pretty.css,1592,global stylesheet (every page),,.adv-title,font-family,var(--display),,,
+source/css/3q17cp_jgfwol.pretty.css,1593,global stylesheet (every page),,.adv-title,letter-spacing,-0.015em,,,
+source/css/3q17cp_jgfwol.pretty.css,1594,global stylesheet (every page),,.adv-title,font-size,1.3rem,20.8,20.8,20.8
+source/css/3q17cp_jgfwol.pretty.css,1595,global stylesheet (every page),,.adv-title,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,1596,global stylesheet (every page),,.adv-title,line-height,1.25,,,
+source/css/3q17cp_jgfwol.pretty.css,1601,global stylesheet (every page),,.adv-sub,font-size,0.95rem,15.2,15.2,15.2
+source/css/3q17cp_jgfwol.pretty.css,1602,global stylesheet (every page),,.adv-sub,line-height,1.55,,,
+source/css/3q17cp_jgfwol.pretty.css,1612,global stylesheet (every page),,.adv-why,font-size,0.88rem,14.08,14.08,14.08
+source/css/3q17cp_jgfwol.pretty.css,1613,global stylesheet (every page),,.adv-why,line-height,1.5,,,
+source/css/3q17cp_jgfwol.pretty.css,1619,global stylesheet (every page),,.adv .btn,font-size,0.95rem,15.2,15.2,15.2
+source/css/3q17cp_jgfwol.pretty.css,1674,global stylesheet (every page),@media (max-width: 760px),.mobile-adv-difference,font-size,0.95rem,15.2,15.2,15.2
+source/css/3q17cp_jgfwol.pretty.css,1675,global stylesheet (every page),@media (max-width: 760px),.mobile-adv-difference,line-height,1.45,,,
+source/css/3q17cp_jgfwol.pretty.css,1679,global stylesheet (every page),@media (max-width: 760px),.mobile-adv-details,font-size,0.875rem,14.0,14.0,14.0
+source/css/3q17cp_jgfwol.pretty.css,1684,global stylesheet (every page),@media (max-width: 760px),.mobile-adv-details summary,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,1688,global stylesheet (every page),@media (max-width: 760px),.mobile-adv-details summary,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,1696,global stylesheet (every page),@media (max-width: 760px),.mobile-adv-details summary:after,text-align,center,,,
+source/css/3q17cp_jgfwol.pretty.css,1699,global stylesheet (every page),@media (max-width: 760px),.mobile-adv-details summary:after,font-size,1.15rem,18.4,18.4,18.4
+source/css/3q17cp_jgfwol.pretty.css,1715,global stylesheet (every page),@media (max-width: 760px),.mobile-adv .adv-sub,font-size,0.9rem,14.4,14.4,14.4
+source/css/3q17cp_jgfwol.pretty.css,1718,global stylesheet (every page),@media (max-width: 760px),.mobile-adv .adv-why,font-size,0.875rem,14.0,14.0,14.0
+source/css/3q17cp_jgfwol.pretty.css,1749,global stylesheet (every page),,.pframe-initial,font-family,var(--display),,,
+source/css/3q17cp_jgfwol.pretty.css,1753,global stylesheet (every page),,.pframe-initial,font-size,3.4rem,54.4,54.4,54.4
+source/css/3q17cp_jgfwol.pretty.css,1754,global stylesheet (every page),,.pframe-initial,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,1812,global stylesheet (every page),,.reader-title,font-family,var(--wordmark),,,
+source/css/3q17cp_jgfwol.pretty.css,1813,global stylesheet (every page),,.reader-title,letter-spacing,0,,,
+source/css/3q17cp_jgfwol.pretty.css,1814,global stylesheet (every page),,.reader-title,overflow-wrap,anywhere,,,
+source/css/3q17cp_jgfwol.pretty.css,1816,global stylesheet (every page),,.reader-title,text-transform,uppercase,,,
+source/css/3q17cp_jgfwol.pretty.css,1817,global stylesheet (every page),,.reader-title,text-shadow,var(--logo-shadow),,,
+source/css/3q17cp_jgfwol.pretty.css,1819,global stylesheet (every page),,.reader-title,font-size,2rem,32.0,32.0,32.0
+source/css/3q17cp_jgfwol.pretty.css,1820,global stylesheet (every page),,.reader-title,line-height,1.18,,,
+source/css/3q17cp_jgfwol.pretty.css,1824,global stylesheet (every page),,.prose,font-family,var(--serif),,,
+source/css/3q17cp_jgfwol.pretty.css,1826,global stylesheet (every page),,.prose,overflow-wrap,anywhere,,,
+source/css/3q17cp_jgfwol.pretty.css,1827,global stylesheet (every page),,.prose,font-optical-sizing,auto,,,
+source/css/3q17cp_jgfwol.pretty.css,1830,global stylesheet (every page),,.prose,font-size,1.2rem,19.2,19.2,19.2
+source/css/3q17cp_jgfwol.pretty.css,1831,global stylesheet (every page),,.prose,line-height,1.85,,,
+source/css/3q17cp_jgfwol.pretty.css,1838,global stylesheet (every page),,.prose:first-letter,font-size,2.5em,,,
+source/css/3q17cp_jgfwol.pretty.css,1839,global stylesheet (every page),,.prose:first-letter,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,1840,global stylesheet (every page),,.prose:first-letter,line-height,0.9,,,
+source/css/3q17cp_jgfwol.pretty.css,1843,global stylesheet (every page),,.prose-plain,overflow-wrap,anywhere,,,
+source/css/3q17cp_jgfwol.pretty.css,1845,global stylesheet (every page),,.prose-plain,font-family,var(--serif),,,
+source/css/3q17cp_jgfwol.pretty.css,1847,global stylesheet (every page),,.prose-plain,font-size,1.05rem,16.8,16.8,16.8
+source/css/3q17cp_jgfwol.pretty.css,1848,global stylesheet (every page),,.prose-plain,line-height,1.7,,,
+source/css/3q17cp_jgfwol.pretty.css,1866,global stylesheet (every page),,.reader-link-wait,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,1867,global stylesheet (every page),,.reader-link-wait,letter-spacing,0.01em,,,
+source/css/3q17cp_jgfwol.pretty.css,1872,global stylesheet (every page),,.reader-link-wait,font-size,0.82rem,13.12,13.12,13.12
+source/css/3q17cp_jgfwol.pretty.css,1873,global stylesheet (every page),,.reader-link-wait,line-height,1.4,,,
+source/css/3q17cp_jgfwol.pretty.css,1889,global stylesheet (every page),,.reader-choice-prompt,text-align,center,,,
+source/css/3q17cp_jgfwol.pretty.css,1896,global stylesheet (every page),,.reader-choice-prompt,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,1905,global stylesheet (every page),,.choice,font-family,var(--serif),,,
+source/css/3q17cp_jgfwol.pretty.css,1910,global stylesheet (every page),,.choice,overflow-wrap,anywhere,,,
+source/css/3q17cp_jgfwol.pretty.css,1916,global stylesheet (every page),,.choice,font-size,1.05rem,16.8,16.8,16.8
+source/css/3q17cp_jgfwol.pretty.css,1917,global stylesheet (every page),,.choice,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,1941,global stylesheet (every page),,.foot,font-size,0.9rem,14.4,14.4,14.4
+source/css/3q17cp_jgfwol.pretty.css,1976,global stylesheet (every page),,.sound-group-label,letter-spacing,0.09em,,,
+source/css/3q17cp_jgfwol.pretty.css,1977,global stylesheet (every page),,.sound-group-label,text-transform,uppercase,,,
+source/css/3q17cp_jgfwol.pretty.css,1978,global stylesheet (every page),,.sound-group-label,font-size,0.72rem,11.52,11.52,11.52
+source/css/3q17cp_jgfwol.pretty.css,1979,global stylesheet (every page),,.sound-group-label,font-weight,800,,,
+source/css/3q17cp_jgfwol.pretty.css,1980,global stylesheet (every page),,.sound-group-label,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,1988,global stylesheet (every page),,.sound-bed,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,1998,global stylesheet (every page),,.sound-bed,font-size,0.9rem,14.4,14.4,14.4
+source/css/3q17cp_jgfwol.pretty.css,1999,global stylesheet (every page),,.sound-bed,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,2121,global stylesheet (every page),,.reader-ceremony-title,font-family,var(--wordmark),,,
+source/css/3q17cp_jgfwol.pretty.css,2122,global stylesheet (every page),,.reader-ceremony-title,letter-spacing,0,,,
+source/css/3q17cp_jgfwol.pretty.css,2123,global stylesheet (every page),,.reader-ceremony-title,overflow-wrap,anywhere,,,
+source/css/3q17cp_jgfwol.pretty.css,2125,global stylesheet (every page),,.reader-ceremony-title,text-transform,uppercase,,,
+source/css/3q17cp_jgfwol.pretty.css,2126,global stylesheet (every page),,.reader-ceremony-title,text-shadow,var(--logo-shadow),,,
+source/css/3q17cp_jgfwol.pretty.css,2129,global stylesheet (every page),,.reader-ceremony-title,font-size,2rem,32.0,32.0,32.0
+source/css/3q17cp_jgfwol.pretty.css,2130,global stylesheet (every page),,.reader-ceremony-title,line-height,1.18,,,
+source/css/3q17cp_jgfwol.pretty.css,2140,global stylesheet (every page),,.reader-ceremony-actions .btn,text-decoration,none,,,
+source/css/3q17cp_jgfwol.pretty.css,2149,global stylesheet (every page),,.friend-mode-picker legend,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,2152,global stylesheet (every page),,.friend-mode-picker legend,font-weight,800,,,
+source/css/3q17cp_jgfwol.pretty.css,2160,global stylesheet (every page),,.friend-mode-option,text-align,left,,,
+source/css/3q17cp_jgfwol.pretty.css,2167,global stylesheet (every page),,.friend-mode-option,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,2175,global stylesheet (every page),,.friend-mode-option strong,font-size,1rem,16.0,16.0,16.0
+source/css/3q17cp_jgfwol.pretty.css,2179,global stylesheet (every page),,.friend-mode-option span,font-size,0.86rem,13.76,13.76,13.76
+source/css/3q17cp_jgfwol.pretty.css,2180,global stylesheet (every page),,.friend-mode-option span,font-weight,500,,,
+source/css/3q17cp_jgfwol.pretty.css,2181,global stylesheet (every page),,.friend-mode-option span,line-height,1.45,,,
+source/css/3q17cp_jgfwol.pretty.css,2205,global stylesheet (every page),,.friend-photo-step h2,font-family,var(--display),,,
+source/css/3q17cp_jgfwol.pretty.css,2208,global stylesheet (every page),,.friend-photo-step h2,font-size,1.15rem,18.4,18.4,18.4
+source/css/3q17cp_jgfwol.pretty.css,2213,global stylesheet (every page),,.friend-photo-step > p,line-height,1.5,,,
+source/css/3q17cp_jgfwol.pretty.css,2219,global stylesheet (every page),,.friend-photo-attestation,line-height,1.45,,,
+source/css/3q17cp_jgfwol.pretty.css,2239,global stylesheet (every page),,.friend-photo-requirement,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,2240,global stylesheet (every page),,.friend-photo-requirement,font-size,0.82rem,13.12,13.12,13.12
+source/css/3q17cp_jgfwol.pretty.css,2241,global stylesheet (every page),,.friend-photo-requirement,line-height,1.45,,,
+source/css/3q17cp_jgfwol.pretty.css,2257,global stylesheet (every page),@media (max-width: 880px),.builder,text-align,center,,,
+source/css/3q17cp_jgfwol.pretty.css,2293,global stylesheet (every page),@media (max-width: 560px),.tt-opt,font-size,0,,,
+source/css/3q17cp_jgfwol.pretty.css,2299,global stylesheet (every page),@media (max-width: 560px),.reader-title,font-size,1.55rem,24.8,24.8,24.8
+source/css/3q17cp_jgfwol.pretty.css,2330,global stylesheet (every page),@media (max-width: 560px),.reader-ceremony-title,overflow-wrap,break-word,,,
+source/css/3q17cp_jgfwol.pretty.css,2331,global stylesheet (every page),@media (max-width: 560px),.reader-ceremony-title,word-break,normal,,,
+source/css/3q17cp_jgfwol.pretty.css,2333,global stylesheet (every page),@media (max-width: 560px),.reader-ceremony-title,font-size,1.35rem,21.6,21.6,21.6
+source/css/3q17cp_jgfwol.pretty.css,2383,global stylesheet (every page),,.create-carried-thread,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,2386,global stylesheet (every page),,.create-carried-thread,font-size,0.9rem,14.4,14.4,14.4
+source/css/3q17cp_jgfwol.pretty.css,2387,global stylesheet (every page),,.create-carried-thread,line-height,1.5,,,
+source/css/3q17cp_jgfwol.pretty.css,2409,global stylesheet (every page),,.create-customize > summary,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,2413,global stylesheet (every page),,.create-customize > summary,font-size,1.05rem,16.8,16.8,16.8
+source/css/3q17cp_jgfwol.pretty.css,2414,global stylesheet (every page),,.create-customize > summary,font-weight,800,,,
+source/css/3q17cp_jgfwol.pretty.css,2431,global stylesheet (every page),,.create-customize > summary small,font-size,0.8rem,12.8,12.8,12.8
+source/css/3q17cp_jgfwol.pretty.css,2432,global stylesheet (every page),,.create-customize > summary small,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,2454,global stylesheet (every page),,.create-customize .sec-head h2,letter-spacing,-0.01em,,,
+source/css/3q17cp_jgfwol.pretty.css,2455,global stylesheet (every page),,.create-customize .sec-head h2,font-size,1.2rem,19.2,19.2,19.2
+source/css/3q17cp_jgfwol.pretty.css,2459,global stylesheet (every page),,.create-customize .sec-intro,font-size,0.95rem,15.2,15.2,15.2
+source/css/3q17cp_jgfwol.pretty.css,2480,global stylesheet (every page),@media (max-width: 600px),.create-customize > summary small,text-align,right,,,
+source/css/3q17cp_jgfwol.pretty.css,2510,global stylesheet (every page),@media (max-width: 600px),.advs > .adv .adv-title,font-size,1.08rem,17.28,17.28,17.28
+source/css/3q17cp_jgfwol.pretty.css,2514,global stylesheet (every page),@media (max-width: 600px),.advs > .adv .adv-sub,font-size,0.86rem,13.76,13.76,13.76
+source/css/3q17cp_jgfwol.pretty.css,2515,global stylesheet (every page),@media (max-width: 600px),.advs > .adv .adv-sub,line-height,1.4,,,
+source/css/3q17cp_jgfwol.pretty.css,2519,global stylesheet (every page),@media (max-width: 600px),.advs > .adv .adv-why,font-size,0.78rem,12.48,12.48,12.48
+source/css/3q17cp_jgfwol.pretty.css,2520,global stylesheet (every page),@media (max-width: 600px),.advs > .adv .adv-why,line-height,1.4,,,
+source/css/3q17cp_jgfwol.pretty.css,2542,global stylesheet (every page),,.hiw-kicker,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,2543,global stylesheet (every page),,.hiw-kicker,text-transform,uppercase,,,
+source/css/3q17cp_jgfwol.pretty.css,2544,global stylesheet (every page),,.hiw-kicker,letter-spacing,2px,,,
+source/css/3q17cp_jgfwol.pretty.css,2550,global stylesheet (every page),,.hiw-kicker,font-size,0.82rem,13.12,13.12,13.12
+source/css/3q17cp_jgfwol.pretty.css,2551,global stylesheet (every page),,.hiw-kicker,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,2555,global stylesheet (every page),,.hiw-headline,font-family,var(--display),,,
+source/css/3q17cp_jgfwol.pretty.css,2556,global stylesheet (every page),,.hiw-headline,letter-spacing,-0.015em,,,
+source/css/3q17cp_jgfwol.pretty.css,2559,global stylesheet (every page),,.hiw-headline,font-size,"clamp(1.9rem, 4vw, 2.7rem)",30.4,33.36,43.2
+source/css/3q17cp_jgfwol.pretty.css,2560,global stylesheet (every page),,.hiw-headline,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,2563,global stylesheet (every page),,.hiw-lede,font-family,var(--serif),,,
+source/css/3q17cp_jgfwol.pretty.css,2565,global stylesheet (every page),,.hiw-lede,max-width,56ch,,,
+source/css/3q17cp_jgfwol.pretty.css,2566,global stylesheet (every page),,.hiw-lede,font-size,1.1rem,17.6,17.6,17.6
+source/css/3q17cp_jgfwol.pretty.css,2567,global stylesheet (every page),,.hiw-lede,line-height,1.7,,,
+source/css/3q17cp_jgfwol.pretty.css,2605,global stylesheet (every page),,.hiw-node,font-family,var(--display),,,
+source/css/3q17cp_jgfwol.pretty.css,2609,global stylesheet (every page),,.hiw-node,font-size,1.05rem,16.8,16.8,16.8
+source/css/3q17cp_jgfwol.pretty.css,2610,global stylesheet (every page),,.hiw-node,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,2632,global stylesheet (every page),,.hiw-step-text h3,font-family,var(--display),,,
+source/css/3q17cp_jgfwol.pretty.css,2635,global stylesheet (every page),,.hiw-step-text h3,font-size,1.35rem,21.6,21.6,21.6
+source/css/3q17cp_jgfwol.pretty.css,2636,global stylesheet (every page),,.hiw-step-text h3,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,2639,global stylesheet (every page),,.hiw-step-copy,font-family,var(--serif),,,
+source/css/3q17cp_jgfwol.pretty.css,2641,global stylesheet (every page),,.hiw-step-copy,max-width,52ch,,,
+source/css/3q17cp_jgfwol.pretty.css,2642,global stylesheet (every page),,.hiw-step-copy,font-size,1.02rem,16.32,16.32,16.32
+source/css/3q17cp_jgfwol.pretty.css,2643,global stylesheet (every page),,.hiw-step-copy,line-height,1.75,,,
+source/css/3q17cp_jgfwol.pretty.css,2646,global stylesheet (every page),,.hiw-micro,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,2651,global stylesheet (every page),,.hiw-micro,font-size,0.88rem,14.08,14.08,14.08
+source/css/3q17cp_jgfwol.pretty.css,2652,global stylesheet (every page),,.hiw-micro,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,2685,global stylesheet (every page),,.hiw-ai-chip,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,2693,global stylesheet (every page),,.hiw-ai-chip,font-size,0.76rem,12.16,12.16,12.16
+source/css/3q17cp_jgfwol.pretty.css,2694,global stylesheet (every page),,.hiw-ai-chip,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,2717,global stylesheet (every page),,.hiw-friend-row b,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,2719,global stylesheet (every page),,.hiw-friend-row b,font-size,0.95rem,15.2,15.2,15.2
+source/css/3q17cp_jgfwol.pretty.css,2720,global stylesheet (every page),,.hiw-friend-row b,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,2725,global stylesheet (every page),,.hiw-friend-row span,font-size,0.82rem,13.12,13.12,13.12
+source/css/3q17cp_jgfwol.pretty.css,2732,global stylesheet (every page),,.hiw-invite-slot,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,2735,global stylesheet (every page),,.hiw-invite-slot,font-size,1.1rem,17.6,17.6,17.6
+source/css/3q17cp_jgfwol.pretty.css,2736,global stylesheet (every page),,.hiw-invite-slot,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,2789,global stylesheet (every page),,.hiw-bake-line,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,2791,global stylesheet (every page),,.hiw-bake-line,font-size,0.85rem,13.6,13.6,13.6
+source/css/3q17cp_jgfwol.pretty.css,2806,global stylesheet (every page),,.hiw-play,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,2818,global stylesheet (every page),,.hiw-play,font-size,0.95rem,15.2,15.2,15.2
+source/css/3q17cp_jgfwol.pretty.css,2819,global stylesheet (every page),,.hiw-play,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,2835,global stylesheet (every page),,.hiw-voice-chip,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,2843,global stylesheet (every page),,.hiw-voice-chip,font-size,0.85rem,13.6,13.6,13.6
+source/css/3q17cp_jgfwol.pretty.css,2844,global stylesheet (every page),,.hiw-voice-chip,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,2864,global stylesheet (every page),,.hiw-mock-prose,font-family,var(--serif),,,
+source/css/3q17cp_jgfwol.pretty.css,2867,global stylesheet (every page),,.hiw-mock-prose,font-size,1.02rem,16.32,16.32,16.32
+source/css/3q17cp_jgfwol.pretty.css,2868,global stylesheet (every page),,.hiw-mock-prose,line-height,1.7,,,
+source/css/3q17cp_jgfwol.pretty.css,2874,global stylesheet (every page),,.hiw-mock-prose:first-letter,font-size,2.2em,,,
+source/css/3q17cp_jgfwol.pretty.css,2875,global stylesheet (every page),,.hiw-mock-prose:first-letter,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,2876,global stylesheet (every page),,.hiw-mock-prose:first-letter,line-height,0.9,,,
+source/css/3q17cp_jgfwol.pretty.css,2885,global stylesheet (every page),,.hiw-choice,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,2886,global stylesheet (every page),,.hiw-choice,text-align,center,,,
+source/css/3q17cp_jgfwol.pretty.css,2890,global stylesheet (every page),,.hiw-choice,overflow-wrap,anywhere,,,
+source/css/3q17cp_jgfwol.pretty.css,2894,global stylesheet (every page),,.hiw-choice,font-size,0.9rem,14.4,14.4,14.4
+source/css/3q17cp_jgfwol.pretty.css,2895,global stylesheet (every page),,.hiw-choice,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,2910,global stylesheet (every page),,.hiw-caption,font-family,var(--serif),,,
+source/css/3q17cp_jgfwol.pretty.css,2912,global stylesheet (every page),,.hiw-caption,max-width,72ch,,,
+source/css/3q17cp_jgfwol.pretty.css,2914,global stylesheet (every page),,.hiw-caption,font-size,0.95rem,15.2,15.2,15.2
+source/css/3q17cp_jgfwol.pretty.css,2915,global stylesheet (every page),,.hiw-caption,line-height,1.6,,,
+source/css/3q17cp_jgfwol.pretty.css,2922,global stylesheet (every page),,.hiw-visually-hidden,white-space,nowrap,,,
+source/css/3q17cp_jgfwol.pretty.css,2972,global stylesheet (every page),,.hiw-map .map-choice-label,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,2974,global stylesheet (every page),,.hiw-map .map-choice-label,font-size,11px,11.0,11.0,11.0
+source/css/3q17cp_jgfwol.pretty.css,2975,global stylesheet (every page),,.hiw-map .map-choice-label,font-weight,600,,,
+source/css/3q17cp_jgfwol.pretty.css,3001,global stylesheet (every page),,.hiw-map .map-num,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,3003,global stylesheet (every page),,.hiw-map .map-num,font-size,11px,11.0,11.0,11.0
+source/css/3q17cp_jgfwol.pretty.css,3004,global stylesheet (every page),,.hiw-map .map-num,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,3073,global stylesheet (every page),,.hiw-next-label,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,3074,global stylesheet (every page),,.hiw-next-label,letter-spacing,0.05em,,,
+source/css/3q17cp_jgfwol.pretty.css,3075,global stylesheet (every page),,.hiw-next-label,text-transform,uppercase,,,
+source/css/3q17cp_jgfwol.pretty.css,3081,global stylesheet (every page),,.hiw-next-label,font-size,0.72rem,11.52,11.52,11.52
+source/css/3q17cp_jgfwol.pretty.css,3082,global stylesheet (every page),,.hiw-next-label,font-weight,700,,,
+source/css/3q17cp_jgfwol.pretty.css,3116,global stylesheet (every page),,.hiw-memory-tag b,font-size,0.85rem,13.6,13.6,13.6
+source/css/3q17cp_jgfwol.pretty.css,3121,global stylesheet (every page),,.hiw-memory-tag div span,font-size,0.75rem,12.0,12.0,12.0
+source/css/3q17cp_jgfwol.pretty.css,3142,global stylesheet (every page),,.cta-microcopy,font-family,var(--ui),,,
+source/css/3q17cp_jgfwol.pretty.css,3144,global stylesheet (every page),,.cta-microcopy,font-size,0.85rem,13.6,13.6,13.6
+source/css/3q17cp_jgfwol.pretty.css,3153,global stylesheet (every page),@media (max-width: 880px),.hiw-node,font-size,0.9rem,14.4,14.4,14.4
+source/css/2h1wwdz1nvxwk.pretty.css,33,route CSS on /start (.cs-* components),,.cs-portrait-initial,font-family,var(--display),,,
+source/css/2h1wwdz1nvxwk.pretty.css,36,route CSS on /start (.cs-* components),,.cs-portrait-initial,font-size,2.4rem,38.4,38.4,38.4
+source/css/2h1wwdz1nvxwk.pretty.css,37,route CSS on /start (.cs-* components),,.cs-portrait-initial,font-weight,700,,,
+source/css/2h1wwdz1nvxwk.pretty.css,41,route CSS on /start (.cs-* components),,.cs-andra,font-family,var(--ui),,,
+source/css/2h1wwdz1nvxwk.pretty.css,49,route CSS on /start (.cs-* components),,.cs-andra,font-size,0.78rem,12.48,12.48,12.48
+source/css/2h1wwdz1nvxwk.pretty.css,50,route CSS on /start (.cs-* components),,.cs-andra,text-decoration,underline,,,
+source/css/2h1wwdz1nvxwk.pretty.css,61,route CSS on /start (.cs-* components),,.cs-h1,font-family,var(--display),,,
+source/css/2h1wwdz1nvxwk.pretty.css,62,route CSS on /start (.cs-* components),,.cs-h1,letter-spacing,-0.01em,,,
+source/css/2h1wwdz1nvxwk.pretty.css,64,route CSS on /start (.cs-* components),,.cs-h1,text-shadow,var(--h1-shadow),,,
+source/css/2h1wwdz1nvxwk.pretty.css,66,route CSS on /start (.cs-* components),,.cs-h1,font-size,1.92rem,30.72,30.72,30.72
+source/css/2h1wwdz1nvxwk.pretty.css,67,route CSS on /start (.cs-* components),,.cs-h1,font-weight,700,,,
+source/css/2h1wwdz1nvxwk.pretty.css,68,route CSS on /start (.cs-* components),,.cs-h1,line-height,1.15,,,
+source/css/2h1wwdz1nvxwk.pretty.css,71,route CSS on /start (.cs-* components),,.cs-lede,font-family,var(--serif),,,
+source/css/2h1wwdz1nvxwk.pretty.css,73,route CSS on /start (.cs-* components),,.cs-lede,max-width,46ch,,,
+source/css/2h1wwdz1nvxwk.pretty.css,75,route CSS on /start (.cs-* components),,.cs-lede,font-size,0.94rem,15.04,15.04,15.04
+source/css/2h1wwdz1nvxwk.pretty.css,76,route CSS on /start (.cs-* components),,.cs-lede,line-height,1.55,,,
+source/css/2h1wwdz1nvxwk.pretty.css,98,route CSS on /start (.cs-* components),,.cs-memtag,font-family,var(--serif),,,
+source/css/2h1wwdz1nvxwk.pretty.css,104,route CSS on /start (.cs-* components),,.cs-memtag,font-size,0.78rem,12.48,12.48,12.48
+source/css/2h1wwdz1nvxwk.pretty.css,105,route CSS on /start (.cs-* components),,.cs-memtag,font-style,italic,,,
+source/css/2h1wwdz1nvxwk.pretty.css,106,route CSS on /start (.cs-* components),,.cs-memtag,line-height,1.45,,,
+source/css/2h1wwdz1nvxwk.pretty.css,118,route CSS on /start (.cs-* components),,.cs-coin,font-family,var(--display),,,
+source/css/2h1wwdz1nvxwk.pretty.css,124,route CSS on /start (.cs-* components),,.cs-coin,font-size,0.95rem,15.2,15.2,15.2
+source/css/2h1wwdz1nvxwk.pretty.css,125,route CSS on /start (.cs-* components),,.cs-coin,font-weight,700,,,
+source/css/2h1wwdz1nvxwk.pretty.css,155,route CSS on /start (.cs-* components),,.cs-recipe-title,font-family,var(--ui),,,
+source/css/2h1wwdz1nvxwk.pretty.css,156,route CSS on /start (.cs-* components),,.cs-recipe-title,letter-spacing,0.12em,,,
+source/css/2h1wwdz1nvxwk.pretty.css,157,route CSS on /start (.cs-* components),,.cs-recipe-title,text-transform,uppercase,,,
+source/css/2h1wwdz1nvxwk.pretty.css,160,route CSS on /start (.cs-* components),,.cs-recipe-title,font-size,0.72rem,11.52,11.52,11.52
+source/css/2h1wwdz1nvxwk.pretty.css,161,route CSS on /start (.cs-* components),,.cs-recipe-title,font-weight,800,,,
+source/css/2h1wwdz1nvxwk.pretty.css,162,route CSS on /start (.cs-* components),,.cs-recipe-title,line-height,1.3,,,
+source/css/2h1wwdz1nvxwk.pretty.css,165,route CSS on /start (.cs-* components),,.cs-recipe,font-family,var(--serif),,,
+source/css/2h1wwdz1nvxwk.pretty.css,168,route CSS on /start (.cs-* components),,.cs-recipe,font-size,0.97rem,15.52,15.52,15.52
+source/css/2h1wwdz1nvxwk.pretty.css,169,route CSS on /start (.cs-* components),,.cs-recipe,line-height,2.2,,,
+source/css/2h1wwdz1nvxwk.pretty.css,172,route CSS on /start (.cs-* components),,.cs-clause,white-space,nowrap,,,
+source/css/2h1wwdz1nvxwk.pretty.css,178,route CSS on /start (.cs-* components),,.cs-chip,font-family,var(--ui),,,
+source/css/2h1wwdz1nvxwk.pretty.css,185,route CSS on /start (.cs-* components),,.cs-chip,font-size,0.82rem,13.12,13.12,13.12
+source/css/2h1wwdz1nvxwk.pretty.css,186,route CSS on /start (.cs-* components),,.cs-chip,font-weight,700,,,
+source/css/2h1wwdz1nvxwk.pretty.css,206,route CSS on /start (.cs-* components),,.cs-chip-th,font-family,var(--display),,,
+source/css/2h1wwdz1nvxwk.pretty.css,212,route CSS on /start (.cs-* components),,.cs-chip-th,font-size,0.8rem,12.8,12.8,12.8
+source/css/2h1wwdz1nvxwk.pretty.css,213,route CSS on /start (.cs-* components),,.cs-chip-th,font-weight,700,,,
+source/css/2h1wwdz1nvxwk.pretty.css,225,route CSS on /start (.cs-* components),,.cs-chip--add,font-weight,500,,,
+source/css/2h1wwdz1nvxwk.pretty.css,234,route CSS on /start (.cs-* components),@media (max-width: 560px),.cs-clause,white-space,normal,,,
+source/css/2h1wwdz1nvxwk.pretty.css,237,route CSS on /start (.cs-* components),@media (max-width: 560px),.cs-chip,white-space,nowrap,,,
+source/css/2h1wwdz1nvxwk.pretty.css,280,route CSS on /start (.cs-* components),,.cs-sheet-title,font-family,var(--display),,,
+source/css/2h1wwdz1nvxwk.pretty.css,283,route CSS on /start (.cs-* components),,.cs-sheet-title,font-size,1.2rem,19.2,19.2,19.2
+source/css/2h1wwdz1nvxwk.pretty.css,284,route CSS on /start (.cs-* components),,.cs-sheet-title,font-weight,700,,,
+source/css/2h1wwdz1nvxwk.pretty.css,295,route CSS on /start (.cs-* components),,.cs-sheet-close,font,700 1.45rem/1 var(--ui),,,
+source/css/2h1wwdz1nvxwk.pretty.css,314,route CSS on /start (.cs-* components),,.cs-sheet-body > .sec-intro,max-width,62ch,,,
+source/css/2h1wwdz1nvxwk.pretty.css,345,route CSS on /start (.cs-* components),,.cs-h2,font-family,var(--display),,,
+source/css/2h1wwdz1nvxwk.pretty.css,346,route CSS on /start (.cs-* components),,.cs-h2,letter-spacing,-0.01em,,,
+source/css/2h1wwdz1nvxwk.pretty.css,349,route CSS on /start (.cs-* components),,.cs-h2,font-size,1.2rem,19.2,19.2,19.2
+source/css/2h1wwdz1nvxwk.pretty.css,350,route CSS on /start (.cs-* components),,.cs-h2,font-weight,700,,,
+source/css/2h1wwdz1nvxwk.pretty.css,358,route CSS on /start (.cs-* components),,.cs-door,text-align,left,,,
+source/css/2h1wwdz1nvxwk.pretty.css,382,route CSS on /start (.cs-* components),,.cs-door-reg,font-family,var(--ui),,,
+source/css/2h1wwdz1nvxwk.pretty.css,383,route CSS on /start (.cs-* components),,.cs-door-reg,letter-spacing,0.14em,,,
+source/css/2h1wwdz1nvxwk.pretty.css,384,route CSS on /start (.cs-* components),,.cs-door-reg,text-transform,uppercase,,,
+source/css/2h1wwdz1nvxwk.pretty.css,385,route CSS on /start (.cs-* components),,.cs-door-reg,font-size,0.66rem,10.56,10.56,10.56
+source/css/2h1wwdz1nvxwk.pretty.css,386,route CSS on /start (.cs-* components),,.cs-door-reg,font-weight,700,,,
+source/css/2h1wwdz1nvxwk.pretty.css,401,route CSS on /start (.cs-* components),,.cs-door-title,font-family,var(--display),,,
+source/css/2h1wwdz1nvxwk.pretty.css,404,route CSS on /start (.cs-* components),,.cs-door-title,font-size,1.125rem,18.0,18.0,18.0
+source/css/2h1wwdz1nvxwk.pretty.css,405,route CSS on /start (.cs-* components),,.cs-door-title,font-weight,700,,,
+source/css/2h1wwdz1nvxwk.pretty.css,406,route CSS on /start (.cs-* components),,.cs-door-title,line-height,1.2,,,
+source/css/2h1wwdz1nvxwk.pretty.css,409,route CSS on /start (.cs-* components),,.cs-door-hook,font-family,var(--serif),,,
+source/css/2h1wwdz1nvxwk.pretty.css,413,route CSS on /start (.cs-* components),,.cs-door-hook,font-size,0.8rem,12.8,12.8,12.8
+source/css/2h1wwdz1nvxwk.pretty.css,414,route CSS on /start (.cs-* components),,.cs-door-hook,line-height,1.45,,,
+source/css/2h1wwdz1nvxwk.pretty.css,425,route CSS on /start (.cs-* components),,.cs-door .btn,font-size,0.84rem,13.44,13.44,13.44
+source/css/2h1wwdz1nvxwk.pretty.css,453,route CSS on /start (.cs-* components),,.cs-door-star,font-family,var(--display),,,
+source/css/2h1wwdz1nvxwk.pretty.css,455,route CSS on /start (.cs-* components),,.cs-door-star,font-size,44px,44.0,44.0,44.0
+source/css/2h1wwdz1nvxwk.pretty.css,456,route CSS on /start (.cs-* components),,.cs-door-star,line-height,1,,,
+source/css/2h1wwdz1nvxwk.pretty.css,501,route CSS on /start (.cs-* components),,.cs-companion-manage,font,700 0.84rem/1.35 var(--ui),,,
+source/css/2h1wwdz1nvxwk.pretty.css,518,route CSS on /start (.cs-* components),,.cs-inline-friend-head h4,font-family,var(--display),,,
+source/css/2h1wwdz1nvxwk.pretty.css,521,route CSS on /start (.cs-* components),,.cs-inline-friend-head h4,font-size,1.05rem,16.8,16.8,16.8
+source/css/2h1wwdz1nvxwk.pretty.css,525,route CSS on /start (.cs-* components),,.cs-inline-friend-head p,font,0.86rem/1.5 var(--ui),,,
+source/css/2h1wwdz1nvxwk.pretty.css,530,route CSS on /start (.cs-* components),,.cs-inline-field,font,700 0.86rem/1.35 var(--ui),,,
+source/css/2h1wwdz1nvxwk.pretty.css,548,route CSS on /start (.cs-* components),,.cs-inline-options legend,font,700 0.86rem/1.35 var(--ui),,,
+source/css/2h1wwdz1nvxwk.pretty.css,564,route CSS on /start (.cs-* components),@media (max-width: 560px),.cs-companion-manage,text-align,center,,,
+source/css/2_gt301v4m-60.pretty.css,41,route CSS on /start (.start-flow),,.start-flow .gbook figcaption,font-size,0.8rem,12.8,12.8,12.8
+source/css/2_gt301v4m-60.pretty.css,42,route CSS on /start (.start-flow),,.start-flow .gbook figcaption,font-weight,700,,,
+source/css/2_gt301v4m-60.pretty.css,53,route CSS on /start (.start-flow),,.start-flow .stepcard h2,text-wrap,balance,,,
+source/css/2_gt301v4m-60.pretty.css,63,route CSS on /start (.start-flow),,.start-flow .field,font-family,var(--ui),,,
+source/css/2_gt301v4m-60.pretty.css,70,route CSS on /start (.start-flow),,.start-flow .field,font-size,1.15rem,18.4,18.4,18.4
+source/css/2_gt301v4m-60.pretty.css,71,route CSS on /start (.start-flow),,.start-flow .field,font-weight,700,,,
+source/css/2_gt301v4m-60.pretty.css,79,route CSS on /start (.start-flow),,.start-flow .field::placeholder,font-weight,400,,,
+source/css/2_gt301v4m-60.pretty.css,82,route CSS on /start (.start-flow),,.start-flow .field-error,font-family,var(--ui),,,
+source/css/2_gt301v4m-60.pretty.css,85,route CSS on /start (.start-flow),,.start-flow .field-error,font-size,0.85rem,13.6,13.6,13.6
+source/css/2_gt301v4m-60.pretty.css,103,route CSS on /start (.start-flow),,.start-flow .privacy,font-size,0.85rem,13.6,13.6,13.6
+source/css/2_gt301v4m-60.pretty.css,104,route CSS on /start (.start-flow),,.start-flow .privacy,line-height,1.55,,,
+source/css/2_gt301v4m-60.pretty.css,122,route CSS on /start (.start-flow),,.start-flow .paintpill,font-size,0.85rem,13.6,13.6,13.6
+source/css/2_gt301v4m-60.pretty.css,123,route CSS on /start (.start-flow),,.start-flow .paintpill,font-weight,700,,,
+source/css/2_gt301v4m-60.pretty.css,157,route CSS on /start (.start-flow),,.start-flow .pick,font-family,var(--ui),,,
+source/css/2_gt301v4m-60.pretty.css,165,route CSS on /start (.start-flow),,.start-flow .pick,font-size,0.88rem,14.08,14.08,14.08
+source/css/2_gt301v4m-60.pretty.css,166,route CSS on /start (.start-flow),,.start-flow .pick,font-weight,700,,,
+source/css/2_gt301v4m-60.pretty.css,183,route CSS on /start (.start-flow),,.start-flow .pick--story,text-align,left,,,
+source/css/2_gt301v4m-60.pretty.css,195,route CSS on /start (.start-flow),,.start-flow .pick-story-copy strong,font-size,0.95rem,15.2,15.2,15.2
+source/css/2_gt301v4m-60.pretty.css,199,route CSS on /start (.start-flow),,.start-flow .pick-story-copy small,font-size,0.78rem,12.48,12.48,12.48
+source/css/2_gt301v4m-60.pretty.css,200,route CSS on /start (.start-flow),,.start-flow .pick-story-copy small,font-weight,500,,,
+source/css/2_gt301v4m-60.pretty.css,201,route CSS on /start (.start-flow),,.start-flow .pick-story-copy small,line-height,1.4,,,
+source/css/2_gt301v4m-60.pretty.css,205,route CSS on /start (.start-flow),,.start-flow .pick-divider,font,700 0.76rem/1.4 var(--ui),,,
+source/css/2_gt301v4m-60.pretty.css,206,route CSS on /start (.start-flow),,.start-flow .pick-divider,text-align,center,,,
+source/css/2_gt301v4m-60.pretty.css,211,route CSS on /start (.start-flow),,.start-flow .herocard,text-align,center,,,
+source/css/2_gt301v4m-60.pretty.css,263,route CSS on /start (.start-flow),,.start-flow .hname,font-family,var(--display),,,
+source/css/2_gt301v4m-60.pretty.css,264,route CSS on /start (.start-flow),,.start-flow .hname,letter-spacing,-0.01em,,,
+source/css/2_gt301v4m-60.pretty.css,266,route CSS on /start (.start-flow),,.start-flow .hname,font-size,1.45rem,23.2,23.2,23.2
+source/css/2_gt301v4m-60.pretty.css,267,route CSS on /start (.start-flow),,.start-flow .hname,font-weight,700,,,
+source/css/2_gt301v4m-60.pretty.css,277,route CSS on /start (.start-flow),,.start-flow .stage,text-align,center,,,
+source/css/2_gt301v4m-60.pretty.css,428,route CSS on /start (.start-flow),,.start-flow .veil-caption,max-width,26ch,,,
+source/css/2_gt301v4m-60.pretty.css,429,route CSS on /start (.start-flow),,.start-flow .veil-caption,font-family,var(--serif),,,
+source/css/2_gt301v4m-60.pretty.css,432,route CSS on /start (.start-flow),,.start-flow .veil-caption,font-size,1.04rem,16.64,16.64,16.64
+source/css/2_gt301v4m-60.pretty.css,433,route CSS on /start (.start-flow),,.start-flow .veil-caption,font-style,italic,,,
+source/css/2_gt301v4m-60.pretty.css,434,route CSS on /start (.start-flow),,.start-flow .veil-caption,line-height,1.55,,,
+source/css/2_gt301v4m-60.pretty.css,447,route CSS on /start (.start-flow),,.start-flow .reveal-line,max-width,34ch,,,
+source/css/2_gt301v4m-60.pretty.css,448,route CSS on /start (.start-flow),,.start-flow .reveal-line,font-family,var(--serif),,,
+source/css/2_gt301v4m-60.pretty.css,450,route CSS on /start (.start-flow),,.start-flow .reveal-line,text-align,left,,,
+source/css/2_gt301v4m-60.pretty.css,454,route CSS on /start (.start-flow),,.start-flow .reveal-line,font-size,1.18rem,18.88,18.88,18.88
+source/css/2_gt301v4m-60.pretty.css,455,route CSS on /start (.start-flow),,.start-flow .reveal-line,font-style,italic,,,
+source/css/2_gt301v4m-60.pretty.css,456,route CSS on /start (.start-flow),,.start-flow .reveal-line,line-height,1.6,,,
+source/css/2_gt301v4m-60.pretty.css,471,route CSS on /start (.start-flow),,.start-flow .reveal-name,font-family,var(--display),,,
+source/css/2_gt301v4m-60.pretty.css,472,route CSS on /start (.start-flow),,.start-flow .reveal-name,letter-spacing,-0.01em,,,
+source/css/2_gt301v4m-60.pretty.css,474,route CSS on /start (.start-flow),,.start-flow .reveal-name,font-size,1.7rem,27.2,27.2,27.2
+source/css/2_gt301v4m-60.pretty.css,475,route CSS on /start (.start-flow),,.start-flow .reveal-name,font-weight,700,,,
+source/css/2_gt301v4m-60.pretty.css,493,route CSS on /start (.start-flow),,.start-flow .paint-retry,text-align,center,,,
+source/css/2_gt301v4m-60.pretty.css,545,route CSS on /start (.start-flow),,.start-flow .trial-line,font-family,var(--serif),,,
+source/css/2_gt301v4m-60.pretty.css,548,route CSS on /start (.start-flow),,.start-flow .trial-line,font-size,0.98rem,15.68,15.68,15.68
+source/css/2_gt301v4m-60.pretty.css,549,route CSS on /start (.start-flow),,.start-flow .trial-line,line-height,1.6,,,
+source/css/2_gt301v4m-60.pretty.css,565,route CSS on /start (.start-flow),,.start-flow .worldrow .wlabel,letter-spacing,0.02em,,,
+source/css/2_gt301v4m-60.pretty.css,567,route CSS on /start (.start-flow),,.start-flow .worldrow .wlabel,font-size,0.9rem,14.4,14.4,14.4
+source/css/2_gt301v4m-60.pretty.css,568,route CSS on /start (.start-flow),,.start-flow .worldrow .wlabel,font-weight,800,,,
+source/css/2_gt301v4m-60.pretty.css,582,route CSS on /start (.start-flow),,.start-flow .wslot,font-size,0.78rem,12.48,12.48,12.48
+source/css/2_gt301v4m-60.pretty.css,583,route CSS on /start (.start-flow),,.start-flow .wslot,font-weight,700,,,
+source/css/2_gt301v4m-60.pretty.css,597,route CSS on /start (.start-flow),,.start-flow .surprise,text-align,center,,,
+source/css/2_gt301v4m-60.pretty.css,607,route CSS on /start (.start-flow),,.start-flow .surprise .btn,font-size,1.15rem,18.4,18.4,18.4
+source/css/2_gt301v4m-60.pretty.css,611,route CSS on /start (.start-flow),,.start-flow .surprise span,font-size,0.88rem,14.08,14.08,14.08
+source/css/2_gt301v4m-60.pretty.css,615,route CSS on /start (.start-flow),,.start-flow .ordiv,letter-spacing,0.06em,,,
+source/css/2_gt301v4m-60.pretty.css,616,route CSS on /start (.start-flow),,.start-flow .ordiv,text-transform,uppercase,,,
+source/css/2_gt301v4m-60.pretty.css,620,route CSS on /start (.start-flow),,.start-flow .ordiv,font-size,0.85rem,13.6,13.6,13.6
+source/css/2_gt301v4m-60.pretty.css,621,route CSS on /start (.start-flow),,.start-flow .ordiv,font-weight,700,,,
+source/css/2_gt301v4m-60.pretty.css,632,route CSS on /start (.start-flow),,.start-flow .honest,font-family,var(--serif),,,
+source/css/2_gt301v4m-60.pretty.css,634,route CSS on /start (.start-flow),,.start-flow .honest,max-width,60ch,,,
+source/css/2_gt301v4m-60.pretty.css,636,route CSS on /start (.start-flow),,.start-flow .honest,font-size,0.98rem,15.68,15.68,15.68
+source/css/2_gt301v4m-60.pretty.css,637,route CSS on /start (.start-flow),,.start-flow .honest,line-height,1.6,,,
+source/css/2_gt301v4m-60.pretty.css,647,route CSS on /start (.start-flow),,.start-flow .adv,text-align,left,,,
+source/css/2_gt301v4m-60.pretty.css,648,route CSS on /start (.start-flow),,.start-flow .adv,font-family,var(--ui),,,
+source/css/2_gt301v4m-60.pretty.css,673,route CSS on /start (.start-flow),,.start-flow .adv-title,font-family,var(--display),,,
+source/css/2_gt301v4m-60.pretty.css,674,route CSS on /start (.start-flow),,.start-flow .adv-title,letter-spacing,-0.015em,,,
+source/css/2_gt301v4m-60.pretty.css,676,route CSS on /start (.start-flow),,.start-flow .adv-title,font-size,1.1rem,17.6,17.6,17.6
+source/css/2_gt301v4m-60.pretty.css,677,route CSS on /start (.start-flow),,.start-flow .adv-title,font-weight,700,,,
+source/css/2_gt301v4m-60.pretty.css,678,route CSS on /start (.start-flow),,.start-flow .adv-title,line-height,1.25,,,
+source/css/2_gt301v4m-60.pretty.css,706,route CSS on /start (.start-flow),,.start-flow .stile,font-family,var(--ui),,,
+source/css/2_gt301v4m-60.pretty.css,708,route CSS on /start (.start-flow),,.start-flow .stile,text-align,center,,,
+source/css/2_gt301v4m-60.pretty.css,715,route CSS on /start (.start-flow),,.start-flow .stile,font-size,0.72rem,11.52,11.52,11.52
+source/css/2_gt301v4m-60.pretty.css,716,route CSS on /start (.start-flow),,.start-flow .stile,font-weight,700,,,
+source/css/2_gt301v4m-60.pretty.css,775,route CSS on /start (.start-flow),,.start-flow .sheet h3,font-size,1.4rem,22.4,22.4,22.4
+source/css/2_gt301v4m-60.pretty.css,778,route CSS on /start (.start-flow),,.start-flow .sheet p,font-family,var(--serif),,,
+source/css/2_gt301v4m-60.pretty.css,781,route CSS on /start (.start-flow),,.start-flow .sheet p,font-size,1rem,16.0,16.0,16.0
+source/css/2_gt301v4m-60.pretty.css,782,route CSS on /start (.start-flow),,.start-flow .sheet p,line-height,1.65,,,
+source/css/2_gt301v4m-60.pretty.css,790,route CSS on /start (.start-flow),,.start-flow .sheet .picked,font-size,0.85rem,13.6,13.6,13.6
+source/css/2_gt301v4m-60.pretty.css,791,route CSS on /start (.start-flow),,.start-flow .sheet .picked,font-weight,700,,,
+source/css/2_gt301v4m-60.pretty.css,799,route CSS on /start (.start-flow),,.start-flow .voice-line,font-family,var(--serif),,,
+source/css/2_gt301v4m-60.pretty.css,802,route CSS on /start (.start-flow),,.start-flow .voice-line,font-size,0.95rem,15.2,15.2,15.2
+source/css/2_gt301v4m-60.pretty.css,803,route CSS on /start (.start-flow),,.start-flow .voice-line,font-style,italic,,,
+source/css/2_gt301v4m-60.pretty.css,804,route CSS on /start (.start-flow),,.start-flow .voice-line,line-height,1.6,,,
+source/css/2_gt301v4m-60.pretty.css,823,route CSS on /start (.start-flow),,.start-flow .forge .inputs,font-family,var(--serif),,,
+source/css/2_gt301v4m-60.pretty.css,826,route CSS on /start (.start-flow),,.start-flow .forge .inputs,font-size,1.02rem,16.32,16.32,16.32
+source/css/2_gt301v4m-60.pretty.css,827,route CSS on /start (.start-flow),,.start-flow .forge .inputs,font-style,italic,,,
+source/css/2_gt301v4m-60.pretty.css,828,route CSS on /start (.start-flow),,.start-flow .forge .inputs,line-height,1.6,,,
+source/css/2_gt301v4m-60.pretty.css,834,route CSS on /start (.start-flow),,.start-flow .handoff,text-align,center,,,
+source/css/2_gt301v4m-60.pretty.css,851,route CSS on /start (.start-flow),,.start-flow .handoff h1,font-size,"clamp(2.2rem, 5vw, 3.4rem)",35.2,41.7,54.4
+source/css/2_gt301v4m-60.pretty.css,854,route CSS on /start (.start-flow),,.start-flow .handoff .lede,text-align,center,,,
+source/css/2_gt301v4m-60.pretty.css,875,route CSS on /start (.start-flow),@media (max-width: 880px),.start-flow .acct,text-align,center,,,
+source/css/2_gt301v4m-60.pretty.css,886,route CSS on /start (.start-flow),@media (max-width: 480px),.start-flow .pick,font-size,0.78rem,12.48,12.48,12.48
+source/css/2_gt301v4m-60.pretty.css,899,route CSS on /start (.start-flow),@media (max-width: 480px),.start-flow .stile,font-size,0.62rem,9.92,9.92,9.92
+source/css/37m388zf6rymp.pretty.css,158,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-kicker,font-family,var(--wordmark),,,
+source/css/37m388zf6rymp.pretty.css,159,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-kicker,letter-spacing,0.13em,,,
+source/css/37m388zf6rymp.pretty.css,160,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-kicker,text-transform,uppercase,,,
+source/css/37m388zf6rymp.pretty.css,163,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-kicker,font-size,0.64rem,10.24,10.24,10.24
+source/css/37m388zf6rymp.pretty.css,164,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-kicker,font-weight,700,,,
+source/css/37m388zf6rymp.pretty.css,174,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-title,font-family,var(--display),,,
+source/css/37m388zf6rymp.pretty.css,175,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-title,letter-spacing,0,,,
+source/css/37m388zf6rymp.pretty.css,177,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-title,text-shadow,0 1px #0006,,,
+source/css/37m388zf6rymp.pretty.css,179,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-title,font-size,1.16rem,18.56,18.56,18.56
+source/css/37m388zf6rymp.pretty.css,180,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-title,font-weight,700,,,
+source/css/37m388zf6rymp.pretty.css,211,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-expect,font-family,var(--ui),,,
+source/css/37m388zf6rymp.pretty.css,214,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-expect,font-size,0.8rem,12.8,12.8,12.8
+source/css/37m388zf6rymp.pretty.css,215,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-expect,line-height,1.5,,,
+source/css/37m388zf6rymp.pretty.css,218,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-rewrite,font-family,var(--ui),,,
+source/css/37m388zf6rymp.pretty.css,224,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-rewrite,font-size,0.74rem,11.84,11.84,11.84
+source/css/37m388zf6rymp.pretty.css,225,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-rewrite,font-weight,600,,,
+source/css/37m388zf6rymp.pretty.css,226,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-rewrite,line-height,1.45,,,
+source/css/37m388zf6rymp.pretty.css,234,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-action,font-family,var(--ui),,,
+source/css/37m388zf6rymp.pretty.css,240,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-action,font-size,0.82rem,13.12,13.12,13.12
+source/css/37m388zf6rymp.pretty.css,241,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-action,font-weight,800,,,
+source/css/37m388zf6rymp.pretty.css,250,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-action-error,font-family,var(--ui),,,
+source/css/37m388zf6rymp.pretty.css,252,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-action-error,font-size,0.74rem,11.84,11.84,11.84
+source/css/37m388zf6rymp.pretty.css,253,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-action-error,line-height,1.4,,,
+source/css/37m388zf6rymp.pretty.css,264,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-steps li,font-family,var(--ui),,,
+source/css/37m388zf6rymp.pretty.css,269,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-steps li,font-size,0.85rem,13.6,13.6,13.6
+source/css/37m388zf6rymp.pretty.css,281,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-steps li .dot,font-size,0.64rem,10.24,10.24,10.24
+source/css/37m388zf6rymp.pretty.css,282,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-steps li .dot,font-weight,900,,,
+source/css/37m388zf6rymp.pretty.css,288,route CSS on /start and /share (.glod-* hearth stage),,.glod-wb-steps li.active,font-weight,700,,,
+source/css/37m388zf6rymp.pretty.css,313,route CSS on /start and /share (.glod-* hearth stage),@media (min-width: 1800px),.glod-wb-kicker,font-size,0.72rem,11.52,11.52,11.52
+source/css/37m388zf6rymp.pretty.css,316,route CSS on /start and /share (.glod-* hearth stage),@media (min-width: 1800px),.glod-wb-title,font-size,1.32rem,21.12,21.12,21.12
+source/css/37m388zf6rymp.pretty.css,324,route CSS on /start and /share (.glod-* hearth stage),@media (min-width: 1800px),.glod-wb-expect,font-size,0.88rem,14.08,14.08,14.08
+source/css/37m388zf6rymp.pretty.css,327,route CSS on /start and /share (.glod-* hearth stage),@media (min-width: 1800px),.glod-wb-rewrite,font-size,0.82rem,13.12,13.12,13.12
+source/css/37m388zf6rymp.pretty.css,336,route CSS on /start and /share (.glod-* hearth stage),@media (min-width: 1800px),.glod-wb-steps li,font-size,0.94rem,15.04,15.04,15.04
+source/css/37m388zf6rymp.pretty.css,341,route CSS on /start and /share (.glod-* hearth stage),@media (min-width: 1800px),.glod-wb-steps li .dot,font-size,0.72rem,11.52,11.52,11.52
+source/css/37m388zf6rymp.pretty.css,387,route CSS on /start and /share (.glod-* hearth stage),,".glod-stage[data-narrow=""1""] .glod-wb-kicker",font-size,0.58rem,9.28,9.28,9.28
+source/css/37m388zf6rymp.pretty.css,394,route CSS on /start and /share (.glod-* hearth stage),,".glod-stage[data-narrow=""1""] .glod-wb-title",font-size,1rem,16.0,16.0,16.0
+source/css/37m388zf6rymp.pretty.css,403,route CSS on /start and /share (.glod-* hearth stage),,".glod-stage[data-narrow=""1""] .glod-wb-expect",font-size,0.7rem,11.2,11.2,11.2
+source/css/37m388zf6rymp.pretty.css,404,route CSS on /start and /share (.glod-* hearth stage),,".glod-stage[data-narrow=""1""] .glod-wb-expect",line-height,1.4,,,
+source/css/37m388zf6rymp.pretty.css,409,route CSS on /start and /share (.glod-* hearth stage),,".glod-stage[data-narrow=""1""] .glod-wb-rewrite",font-size,0.68rem,10.88,10.88,10.88
+source/css/37m388zf6rymp.pretty.css,414,route CSS on /start and /share (.glod-* hearth stage),,".glod-stage[data-narrow=""1""] .glod-wb-action",font-size,0.72rem,11.52,11.52,11.52
+source/css/37m388zf6rymp.pretty.css,423,route CSS on /start and /share (.glod-* hearth stage),,".glod-stage[data-narrow=""1""] .glod-wb-steps li",font-size,0.74rem,11.84,11.84,11.84
+source/css/37m388zf6rymp.pretty.css,428,route CSS on /start and /share (.glod-* hearth stage),,".glod-stage[data-narrow=""1""] .glod-wb-steps li .dot",font-size,0.6rem,9.6,9.6,9.6
+source/css/37m388zf6rymp.pretty.css,479,route CSS on /start and /share (.glod-* hearth stage),,.glod-mem-close,font-family,var(--ui),,,
+source/css/37m388zf6rymp.pretty.css,486,route CSS on /start and /share (.glod-* hearth stage),,.glod-mem-close,font-size,1.35rem,21.6,21.6,21.6
+source/css/37m388zf6rymp.pretty.css,487,route CSS on /start and /share (.glod-* hearth stage),,.glod-mem-close,line-height,1,,,
+source/css/37m388zf6rymp.pretty.css,581,route CSS on /start and /share (.glod-* hearth stage),,.glod-mem-hook,font-family,var(--serif),,,
+source/css/37m388zf6rymp.pretty.css,584,route CSS on /start and /share (.glod-* hearth stage),,.glod-mem-hook,font-size,0.97rem,15.52,15.52,15.52
+source/css/37m388zf6rymp.pretty.css,585,route CSS on /start and /share (.glod-* hearth stage),,.glod-mem-hook,line-height,1.55,,,
+source/css/37m388zf6rymp.pretty.css,588,route CSS on /start and /share (.glod-* hearth stage),,.glod-mem-from,font-family,var(--serif),,,
+source/css/37m388zf6rymp.pretty.css,590,route CSS on /start and /share (.glod-* hearth stage),,.glod-mem-from,font-size,0.9rem,14.4,14.4,14.4
+source/css/37m388zf6rymp.pretty.css,591,route CSS on /start and /share (.glod-* hearth stage),,.glod-mem-from,font-style,italic,,,
+source/css/37m388zf6rymp.pretty.css,597,route CSS on /start and /share (.glod-* hearth stage),,.glod-mem-carry,font-family,var(--ui),,,
+source/css/37m388zf6rymp.pretty.css,604,route CSS on /start and /share (.glod-* hearth stage),,.glod-mem-carry,font-size,0.78rem,12.48,12.48,12.48
+source/css/37m388zf6rymp.pretty.css,605,route CSS on /start and /share (.glod-* hearth stage),,.glod-mem-carry,font-weight,800,,,
+source/css/37m388zf6rymp.pretty.css,613,route CSS on /start and /share (.glod-* hearth stage),,.glod-return-status,white-space,nowrap,,,
+source/css/37m388zf6rymp.pretty.css,677,route CSS on /start and /share (.glod-* hearth stage),,.glod-active-ember-cue,font-family,var(--ui),,,
+source/css/37m388zf6rymp.pretty.css,678,route CSS on /start and /share (.glod-* hearth stage),,.glod-active-ember-cue,white-space,nowrap,,,
+source/css/37m388zf6rymp.pretty.css,679,route CSS on /start and /share (.glod-* hearth stage),,.glod-active-ember-cue,font-size,0.7rem,11.2,11.2,11.2
+source/css/37m388zf6rymp.pretty.css,680,route CSS on /start and /share (.glod-* hearth stage),,.glod-active-ember-cue,font-weight,800,,,
+source/css/37m388zf6rymp.pretty.css,720,route CSS on /start and /share (.glod-* hearth stage),,.glod-hearth-box,text-align,center,,,
+source/css/37m388zf6rymp.pretty.css,722,route CSS on /start and /share (.glod-* hearth stage),,.glod-hearth-box,font-family,var(--serif),,,
+source/css/37m388zf6rymp.pretty.css,727,route CSS on /start and /share (.glod-* hearth stage),,.glod-hearth-box,font-style,italic,,,
+source/css/37m388zf6rymp.pretty.css,746,route CSS on /start and /share (.glod-* hearth stage),,.glod-hearth-box p,text-shadow,"0 1px 10px #060410d9, 0 0 3px #060410b3",,,
+source/css/37m388zf6rymp.pretty.css,750,route CSS on /start and /share (.glod-* hearth stage),,.glod-hearth-box p,line-height,1.55,,,
+source/css/37m388zf6rymp.pretty.css,754,route CSS on /start and /share (.glod-* hearth stage),,"body[data-theme=""morgon""] .glod-hearth-box p",text-shadow,"0 1px 10px #2b1e4ee6, 0 0 4px #2b1e4ecc, 0 1px 2px #2b1e4ee6",,,
+source/css/37m388zf6rymp.pretty.css,760,route CSS on /start and /share (.glod-* hearth stage),,.glod-hearth-main,font-size,"clamp(0.85rem, 1.3vw, 0.98rem)",13.6,13.6,15.68
+source/css/37m388zf6rymp.pretty.css,766,route CSS on /start and /share (.glod-* hearth stage),,".glod-stage[data-narrow=""1""] .glod-hearth-box",text-align,left,,,
+source/css/37m388zf6rymp.pretty.css,774,route CSS on /start and /share (.glod-* hearth stage),,".glod-stage[data-narrow=""1""] .glod-hearth-main",font-size,0.78rem,12.48,12.48,12.48
+source/css/37m388zf6rymp.pretty.css,783,route CSS on /start and /share (.glod-* hearth stage),,.glod-sound,font-size,0.8rem,12.8,12.8,12.8
+source/css/37m388zf6rymp.pretty.css,922,route CSS on /start and /share (.glod-* hearth stage),,.glod-book-title,font-family,var(--display),,,
+source/css/37m388zf6rymp.pretty.css,923,route CSS on /start and /share (.glod-* hearth stage),,.glod-book-title,text-align,center,,,
+source/css/37m388zf6rymp.pretty.css,925,route CSS on /start and /share (.glod-* hearth stage),,.glod-book-title,letter-spacing,0.01em,,,
+source/css/37m388zf6rymp.pretty.css,926,route CSS on /start and /share (.glod-* hearth stage),,.glod-book-title,text-shadow,"0 -1px #06031099, 0 1px 3px #06031066",,,
+source/css/37m388zf6rymp.pretty.css,931,route CSS on /start and /share (.glod-* hearth stage),,.glod-book-title,font-size,"clamp(0.92rem, 2.4vw, 1.14rem)",14.72,18.24,18.24
+source/css/37m388zf6rymp.pretty.css,932,route CSS on /start and /share (.glod-* hearth stage),,.glod-book-title,font-weight,700,,,
+source/css/37m388zf6rymp.pretty.css,933,route CSS on /start and /share (.glod-* hearth stage),,.glod-book-title,line-height,1.35,,,
+source/css/37m388zf6rymp.pretty.css,937,route CSS on /start and /share (.glod-* hearth stage),,.glod-book-colophon,font-family,var(--wordmark),,,
+source/css/37m388zf6rymp.pretty.css,938,route CSS on /start and /share (.glod-* hearth stage),,.glod-book-colophon,letter-spacing,0.22em,,,
+source/css/37m388zf6rymp.pretty.css,939,route CSS on /start and /share (.glod-* hearth stage),,.glod-book-colophon,text-transform,uppercase,,,
+source/css/37m388zf6rymp.pretty.css,941,route CSS on /start and /share (.glod-* hearth stage),,.glod-book-colophon,text-shadow,0 1px 2px #06031080,,,
+source/css/37m388zf6rymp.pretty.css,943,route CSS on /start and /share (.glod-* hearth stage),,.glod-book-colophon,font-size,0.58rem,9.28,9.28,9.28
+source/css/37m388zf6rymp.pretty.css,944,route CSS on /start and /share (.glod-* hearth stage),,.glod-book-colophon,font-weight,700,,,
+source/css/37m388zf6rymp.pretty.css,949,route CSS on /start and /share (.glod-* hearth stage),,.glod-caption,text-align,center,,,
+source/css/37m388zf6rymp.pretty.css,971,route CSS on /start and /share (.glod-* hearth stage),,.glod-caption-line,font-family,var(--display),,,
+source/css/37m388zf6rymp.pretty.css,972,route CSS on /start and /share (.glod-* hearth stage),,.glod-caption-line,letter-spacing,-0.01em,,,
+source/css/37m388zf6rymp.pretty.css,974,route CSS on /start and /share (.glod-* hearth stage),,.glod-caption-line,text-shadow,0 2px 20px #060410cc,,,
+source/css/37m388zf6rymp.pretty.css,975,route CSS on /start and /share (.glod-* hearth stage),,.glod-caption-line,font-size,"clamp(1.15rem, 3.2vw, 1.45rem)",18.4,23.2,23.2
+source/css/37m388zf6rymp.pretty.css,976,route CSS on /start and /share (.glod-* hearth stage),,.glod-caption-line,font-weight,700,,,
+source/css/37m388zf6rymp.pretty.css,980,route CSS on /start and /share (.glod-* hearth stage),,"body[data-theme=""morgon""] .glod-caption-line",text-shadow,0 2px 20px #fff8ebb3,,,
+source/css/37m388zf6rymp.pretty.css,984,route CSS on /start and /share (.glod-* hearth stage),,.glod-open,font-family,var(--ui),,,
+source/css/37m388zf6rymp.pretty.css,985,route CSS on /start and /share (.glod-* hearth stage),,.glod-open,letter-spacing,0.02em,,,
+source/css/37m388zf6rymp.pretty.css,987,route CSS on /start and /share (.glod-* hearth stage),,.glod-open,text-shadow,0 1px #00000080,,,
+source/css/37m388zf6rymp.pretty.css,995,route CSS on /start and /share (.glod-* hearth stage),,.glod-open,font-size,0.95rem,15.2,15.2,15.2
+source/css/37m388zf6rymp.pretty.css,996,route CSS on /start and /share (.glod-* hearth stage),,.glod-open,font-weight,800,,,

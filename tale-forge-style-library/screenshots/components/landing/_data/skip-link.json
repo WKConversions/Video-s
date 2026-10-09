@@ -1,0 +1,140 @@
+{
+ "note": "Skip-link check: firstTab = class of element focused by first Tab; programmatic = result of .focus(); afterForce = styles after forcing visibility for the simulated capture.",
+ "data": {
+  "sv__natt__desktop": {
+   "firstTab": "logo",
+   "programmatic": {
+    "active": false,
+    "vis": "hidden",
+    "transform": "matrix(1, 0, 0, 1, 0, -64)"
+   },
+   "afterForce": {
+    "active": true,
+    "focusVisible": true,
+    "outline": "rgb(16, 16, 16) auto 1px",
+    "bg": "rgb(242, 178, 46)",
+    "color": "rgb(36, 22, 8)",
+    "font": "\"Schibsted Grotesk\", \"Schibsted Grotesk Fallback\", \"Segoe UI\", system-ui, sans-serif",
+    "weight": "800",
+    "size": "16px",
+    "radius": "6px",
+    "padding": "10px 14px",
+    "box": [
+     10,
+     10,
+     188.40625,
+     40
+    ]
+   },
+   "file": "01-skip-link--focus-simulated__natt__desktop.png"
+  },
+  "sv__morgon__desktop": {
+   "firstTab": "logo",
+   "programmatic": {
+    "active": false,
+    "vis": "hidden",
+    "transform": "matrix(1, 0, 0, 1, 0, -64)"
+   },
+   "afterForce": {
+    "active": true,
+    "focusVisible": true,
+    "outline": "rgb(16, 16, 16) auto 1px",
+    "bg": "rgb(242, 178, 46)",
+    "color": "rgb(36, 22, 8)",
+    "font": "\"Schibsted Grotesk\", \"Schibsted Grotesk Fallback\", \"Segoe UI\", system-ui, sans-serif",
+    "weight": "800",
+    "size": "16px",
+    "radius": "6px",
+    "padding": "10px 14px",
+    "box": [
+     10,
+     10,
+     188.40625,
+     40
+    ]
+   },
+   "file": "01-skip-link--focus-simulated__morgon__desktop.png"
+  },
+  "sv__natt__mobile": {
+   "firstTab": "logo",
+   "programmatic": {
+    "active": false,
+    "vis": "hidden",
+    "transform": "matrix(1, 0, 0, 1, 0, -64)"
+   },
+   "afterForce": {
+    "active": true,
+    "focusVisible": true,
+    "outline": "rgb(229, 151, 0) auto 1px",
+    "bg": "rgb(242, 178, 46)",
+    "color": "rgb(36, 22, 8)",
+    "font": "\"Schibsted Grotesk\", \"Schibsted Grotesk Fallback\", \"Segoe UI\", system-ui, sans-serif",
+    "weight": "800",
+    "size": "16px",
+    "radius": "6px",
+    "padding": "10px 14px",
+    "box": [
+     10,
+     10,
+     188.40625,
+     40
+    ]
+   },
+   "file": "01-skip-link--focus-simulated__natt__mobile.png"
+  },
+  "sv__morgon__mobile": {
+   "firstTab": "logo",
+   "programmatic": {
+    "active": false,
+    "vis": "hidden",
+    "transform": "matrix(1, 0, 0, 1, 0, -64)"
+   },
+   "afterForce": {
+    "active": true,
+    "focusVisible": true,
+    "outline": "rgb(229, 151, 0) auto 1px",
+    "bg": "rgb(242, 178, 46)",
+    "color": "rgb(36, 22, 8)",
+    "font": "\"Schibsted Grotesk\", \"Schibsted Grotesk Fallback\", \"Segoe UI\", system-ui, sans-serif",
+    "weight": "800",
+    "size": "16px",
+    "radius": "6px",
+    "padding": "10px 14px",
+    "box": [
+     10,
+     10,
+     188.40625,
+     40
+    ]
+   },
+   "file": "01-skip-link--focus-simulated__morgon__mobile.png"
+  },
+  "en__natt__desktop": {
+   "firstTab": "logo",
+   "programmatic": {
+    "active": false,
+    "vis": "hidden",
+    "transform": "matrix(1, 0, 0, 1, 0, -64)"
+   },
+   "afterForce": {
+    "active": true,
+    "focusVisible": true,
+    "outline": "rgb(16, 16, 16) auto 1px",
+    "bg": "rgb(242, 178, 46)",
+    "color": "rgb(36, 22, 8)",
+    "font": "\"Schibsted Grotesk\", \"Schibsted Grotesk Fallback\", \"Segoe UI\", system-ui, sans-serif",
+    "weight": "800",
+    "size": "16px",
+    "radius": "6px",
+    "padding": "10px 14px",
+    "box": [
+     10,
+     10,
+     147.515625,
+     40
+    ]
+   },
+   "file": "01-skip-link-en--focus-simulated__natt__desktop.png"
+  }
+ }
+}

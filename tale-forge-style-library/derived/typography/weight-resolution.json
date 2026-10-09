@@ -1,0 +1,181 @@
+{
+ "what": "Which wght instance Chromium actually draws when the site asks for a given font-weight, given its @font-face rules (single-value font-weight descriptors pointing at variable files).",
+ "method": "Chromium (Playwright 1.x headless), page containing the site @font-face blocks verbatim (source/css/3q17cp_jgfwol.pretty.css:1-456, urls pointed at derived/typography/fonts/*.woff2) plus reference faces declaring the same latin files with font-weight: 100 900. The string \"Hamburgefontsiv åäö ÅÄÖ\" at 100px was measured (getBoundingClientRect width) for each requested weight in the site family and in the reference family. A site width equal to the reference width at weight W means the site draws wght W.",
+ "string": "Hamburgefontsiv åäö ÅÄÖ",
+ "font_size_px": 100,
+ "results": {
+  "Lora": {
+   "300": {
+    "site_width_px": 1245.7,
+    "reference_width_px_at_same_weight": 1226.1,
+    "drawn_as_wght": 600
+   },
+   "400": {
+    "site_width_px": 1245.7,
+    "reference_width_px_at_same_weight": 1226.1,
+    "drawn_as_wght": 600
+   },
+   "500": {
+    "site_width_px": 1245.7,
+    "reference_width_px_at_same_weight": 1236.1,
+    "drawn_as_wght": 600
+   },
+   "600": {
+    "site_width_px": 1245.7,
+    "reference_width_px_at_same_weight": 1245.7,
+    "drawn_as_wght": 600
+   },
+   "700": {
+    "site_width_px": 1255.7,
+    "reference_width_px_at_same_weight": 1255.7,
+    "drawn_as_wght": 700
+   },
+   "800": {
+    "site_width_px": 1255.7,
+    "reference_width_px_at_same_weight": 1255.7,
+    "drawn_as_wght": 700
+   },
+   "900": {
+    "site_width_px": 1255.7,
+    "reference_width_px_at_same_weight": 1255.7,
+    "drawn_as_wght": 700
+   }
+  },
+  "Source Serif 4": {
+   "300": {
+    "site_width_px": 1258.8,
+    "reference_width_px_at_same_weight": 1252.8,
+    "drawn_as_wght": 400
+   },
+   "400": {
+    "site_width_px": 1258.8,
+    "reference_width_px_at_same_weight": 1258.8,
+    "drawn_as_wght": 400
+   },
+   "500": {
+    "site_width_px": 1258.8,
+    "reference_width_px_at_same_weight": 1267.4,
+    "drawn_as_wght": 400
+   },
+   "600": {
+    "site_width_px": 1276.4,
+    "reference_width_px_at_same_weight": 1276.4,
+    "drawn_as_wght": 600
+   },
+   "700": {
+    "site_width_px": 1276.4,
+    "reference_width_px_at_same_weight": 1296.3,
+    "drawn_as_wght": 600
+   },
+   "800": {
+    "site_width_px": 1276.4,
+    "reference_width_px_at_same_weight": 1303.9,
+    "drawn_as_wght": 600
+   },
+   "900": {
+    "site_width_px": 1276.4,
+    "reference_width_px_at_same_weight": 1311.6,
+    "drawn_as_wght": 600
+   }
+  },
+  "Schibsted Grotesk": {
+   "300": {
+    "site_width_px": 1229.5,
+    "reference_width_px_at_same_weight": 1229.5,
+    "drawn_as_wght": 400
+   },
+   "400": {
+    "site_width_px": 1229.5,
+    "reference_width_px_at_same_weight": 1229.5,
+    "drawn_as_wght": 400
+   },
+   "500": {
+    "site_width_px": 1229.5,
+    "reference_width_px_at_same_weight": 1246.8,
+    "drawn_as_wght": 400
+   },
+   "600": {
+    "site_width_px": 1293.1,
+    "reference_width_px_at_same_weight": 1268.5,
+    "drawn_as_wght": 700
+   },
+   "700": {
+    "site_width_px": 1293.1,
+    "reference_width_px_at_same_weight": 1293.1,
+    "drawn_as_wght": 700
+   },
+   "800": {
+    "site_width_px": 1318.8,
+    "reference_width_px_at_same_weight": 1318.8,
+    "drawn_as_wght": 800
+   },
+   "900": {
+    "site_width_px": 1318.8,
+    "reference_width_px_at_same_weight": 1343.1,
+    "drawn_as_wght": 800
+   }
+  },
+  "Cinzel": {
+   "300": {
+    "site_width_px": 1459.1,
+    "reference_width_px_at_same_weight": 1459.1,
+    "drawn_as_wght": 700
+   },
+   "400": {
+    "site_width_px": 1459.1,
+    "reference_width_px_at_same_weight": 1459.1,
+    "drawn_as_wght": 700
+   },
+   "500": {
+    "site_width_px": 1459.1,
+    "reference_width_px_at_same_weight": 1459.1,
+    "drawn_as_wght": 700
+   },
+   "600": {
+    "site_width_px": 1459.1,
+    "reference_width_px_at_same_weight": 1459.1,
+    "drawn_as_wght": 700
+   },
+   "700": {
+    "site_width_px": 1459.1,
+    "reference_width_px_at_same_weight": 1459.1,
+    "drawn_as_wght": 700
+   },
+   "800": {
+    "site_width_px": 1459.1,
+    "reference_width_px_at_same_weight": 1459.1,
+    "drawn_as_wght": 700
+   },
+   "900": {
+    "site_width_px": 1459.1,
+    "reference_width_px_at_same_weight": 1459.1,
+    "drawn_as_wght": 700
+   }
+  }
+ },
+ "summary": {
+  "Lora": "declared 600 & 700 -> any request <=600 draws 600, >=700 draws 700 (Lora 400/500 are unreachable)",
+  "Source Serif 4": "declared 400 & 600 -> <=500 draws 400, >=600 draws 600 (bold 700 links/strong draw at 600)",
+  "Schibsted Grotesk": "declared 400, 700, 800 -> 400/500 draw 400; 600 and 700 draw 700; 800/900 draw 800",
+  "Cinzel": "static Bold file, every request draws the one Bold face"
+ },
+ "caveat": "Cinzel has no variable axis, so width is constant; whether Chromium adds synthetic emboldening for requests far from 700 is not measurable by width. Cinzel is only ever requested at 700 on the site.",
+ "declared_weights": {
+  "Lora": [
+   600,
+   700
+  ],
+  "Source Serif 4": [
+   400,
+   600
+  ],
+  "Schibsted Grotesk": [
+   400,
+   700,
+   800
+  ],
+  "Cinzel": [
+   700
+  ]
+ }
+}

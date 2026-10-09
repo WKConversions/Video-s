@@ -1,0 +1,59 @@
+/* Verbatim <style> block shipped inline in the server HTML of /uppgradera (source/html/uppgradera.sv.html and .en.html, identical). Not part of the four CSS chunks. Extracted and prettier-formatted for citation by the layout dimension. Also present in source/js/26ye0kuppitcn.js as a styled-jsx template string. */
+.upgrade-proof-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 112px;
+  column-gap: 20px;
+  align-items: start;
+}
+
+.upgrade-proof-list {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.upgrade-sample-link {
+  grid-column: 2;
+  grid-row: 1;
+  display: block;
+  width: 112px;
+  max-width: 100%;
+  justify-self: end;
+  color: var(--card-ink);
+  text-decoration-color: currentColor;
+  text-underline-offset: 3px;
+}
+
+.upgrade-sample-figure {
+  width: 100%;
+  margin: 0;
+}
+
+.upgrade-sample-caption {
+  margin-top: 8px;
+  color: var(--card-ink);
+  font-family: var(--ui);
+  font-size: 0.78rem;
+  line-height: 1.35;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .upgrade-proof-layout {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 16px;
+  }
+
+  .upgrade-sample-link {
+    grid-column: 1;
+    grid-row: 1;
+    width: 128px;
+    justify-self: center;
+  }
+
+  .upgrade-proof-list {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}

@@ -1,0 +1,244 @@
+{
+ "_about": "Machine-readable summary of Tale Forge's theme system (natt/morgon) and backdrop atmosphere. Every value cites its source; 'measured' values come from live captures documented in analysis/06-theming-and-atmosphere.md.",
+ "mechanism": {
+  "attribute": "body[data-theme] = 'natt' | 'morgon'",
+  "server_default": "natt (every source/html/*.html ships <body data-theme=\"natt\">)",
+  "storage": {
+   "key": "tf-theme",
+   "store": "localStorage",
+   "valid_values": [
+    "natt",
+    "morgon"
+   ],
+   "invalid_or_missing": "natt (measured: 'dag' -> natt)"
+  },
+  "pre_paint_script": "(function(){try{var t=localStorage.getItem('tf-theme');if(t==='natt'||t==='morgon'){document.body.dataset.theme=t;}}catch(e){}})();",
+  "pre_paint_script_location": "first <script> inside <body>, before the .bg layers (source/html/home.sv.html)",
+  "toggle_component": "ThemeToggle, source/js/390j9gbq0u9ce.js: useSyncExternalStore on window event 'tf-theme-change' (server snapshot 'natt'); useLayoutEffect re-reads localStorage; onClick flips data-theme, writes localStorage, dispatches 'tf-theme-change'",
+  "other_listeners": "glöd canvas scenes re-palette via MutationObserver on body[data-theme] (source/js/2j_-r8q4tgdka.js, 36tbz-w9v-p8v.js)",
+  "os_preference": "ignored: no prefers-color-scheme anywhere in CSS/JS; no <meta name=theme-color>; manifest theme_color/background_color #171232 (source/meta/manifest.webmanifest)",
+  "load_behaviour": "measured: saved theme already applied at readyState 'interactive'; 0 CSS transitions running at load (no flash, no animated switch)"
+ },
+ "tokens": {
+  "theme_tokens": 47,
+  "file": "derived/theming/token-diff.csv",
+  "css": "source/css/3q17cp_jgfwol.pretty.css:493-590",
+  "non_token_rules": "derived/theming/theme-scoped-rules.csv"
+ },
+ "backdrop_stack": {
+  "order_back_to_front": [
+   {
+    "layer": "body background",
+    "natt": "#171232",
+    "morgon": "#ede9f6",
+    "css": ":606, :609-611"
+   },
+   {
+    "layer": ".bg.bg-night > img",
+    "src": "assets/assets/nebula-hero.webp (2400x1340)",
+    "fit": "object-fit: cover; object-position: center 30%",
+    "css": ":623-630"
+   },
+   {
+    "layer": ".bg.bg-night > .scrim",
+    "value": "linear-gradient(#0b0f1e61 0%, #0b0f1e80 45%, #0d1122bd 100%)",
+    "alpha_stops": [
+     0.38,
+     0.5,
+     0.74
+    ],
+    "css": ":631-635"
+   },
+   {
+    "layer": ".bg.bg-night > .starfield",
+    "stars": [
+     {
+      "n": 1,
+      "size_px": 1.4,
+      "x_pct": 12,
+      "y_pct": 8,
+      "color": "#ffe9b0e6"
+     },
+     {
+      "n": 2,
+      "size_px": 1.0,
+      "x_pct": 32,
+      "y_pct": 16,
+      "color": "#f5f0e8cc"
+     },
+     {
+      "n": 3,
+      "size_px": 1.6,
+      "x_pct": 58,
+      "y_pct": 6,
+      "color": "#f5c542d9"
+     },
+     {
+      "n": 4,
+      "size_px": 1.0,
+      "x_pct": 76,
+      "y_pct": 12,
+      "color": "#f5f0e8b3"
+     },
+     {
+      "n": 5,
+      "size_px": 1.2,
+      "x_pct": 90,
+      "y_pct": 22,
+      "color": "#ffe9b0bf"
+     },
+     {
+      "n": 6,
+      "size_px": 1.3,
+      "x_pct": 44,
+      "y_pct": 24,
+      "color": "#9b87f599"
+     }
+    ],
+    "draw": "radial-gradient(<s> <s> at X% Y%, <colour> 50%, #0000 51%) per star: a hard-edged disc of diameter <s>",
+    "animation": {
+     "name": "twinkle",
+     "duration_s": 4.6,
+     "easing": "ease-in-out",
+     "iteration": "infinite",
+     "keyframes": {
+      "0%,100%": {
+       "opacity": 0.95
+      },
+      "50%": {
+       "opacity": 0.55
+      }
+     }
+    },
+    "css": ":636-656"
+   },
+   {
+    "layer": ".bg.bg-day > picture > img",
+    "src_desktop": "assets/assets/morgon-aurora-desktop.webp (2560x1440)",
+    "src_mobile": "assets/assets/morgon-aurora-mobile.webp (1440x2560) via <source media=\"(max-width: 760px)\">",
+    "fit": "object-fit: cover (center)",
+    "css": ":657-666"
+   },
+   {
+    "layer": ".wrap (all content)",
+    "z_index": 1,
+    "css": ":677-680"
+   }
+  ],
+  "bg_common": {
+   "position": "fixed",
+   "top/left/right": 0,
+   "height": "100lvh",
+   "z_index": 0,
+   "pointer_events": "none",
+   "css": ":612-622"
+  },
+  "visibility": {
+   "natt": {
+    "bg-night": 1,
+    "bg-day": 0
+   },
+   "morgon": {
+    "bg-night": 0,
+    "bg-day": 1
+   },
+   "css": ":667-676"
+  },
+  "crop_windows_image_px": {
+   "nebula": {
+    "desktop_1440x900": [
+     128.0,
+     0.0,
+     2272.0,
+     1340.0
+    ],
+    "tablet_834x1112": [
+     697.5,
+     0.0,
+     1702.5,
+     1340.0
+    ],
+    "mobile_390x844": [
+     890.4,
+     -0.0,
+     1509.6,
+     1340.0
+    ],
+    "film_1920x1080": [
+     8.9,
+     0.0,
+     2391.1,
+     1340.0
+    ]
+   },
+   "morgon_desktop": {
+    "desktop_1440x900": [
+     128.0,
+     0.0,
+     2432.0,
+     1440.0
+    ],
+    "tablet_834x1112": [
+     740.0,
+     0.0,
+     1820.0,
+     1440.0
+    ],
+    "film_1920x1080": [
+     0.0,
+     0.0,
+     2560.0,
+     1440.0
+    ]
+   },
+   "morgon_mobile": {
+    "mobile_390x844": [
+     128.5,
+     0.0,
+     1311.5,
+     2560.0
+    ]
+   }
+  }
+ },
+ "switch_motion": {
+  "duration_s": 0.5,
+  "easing": "ease = cubic-bezier(0.25, 0.1, 0.25, 1)",
+  "css_vars": "--theme-transition-duration / --theme-transition-easing (:470-471)",
+  "backdrop": "opacity cross-dissolve of .bg-night and .bg-day; measured 50% at 147 ms, 90% at 311 ms, 99% at 434 ms",
+  "toggle_thumb": "transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1.2); measured overshoot +4.2 px (4.4%) at ~350-367 ms on desktop (travel 94.6 px)",
+  "transitions_started_on_home": 182,
+  "property_changes": 1534,
+  "snapped_property_changes": 388,
+  "snaps": "gradients (--btn-grad on .btn-primary, .tt-thumb, .hiw-play, .fab), all text-shadows (h1, logo), inline-styled nav pills and language switcher, .cta-microcopy, .hiw-* step copy/kicker/lede/micro/nodes/covers, story-map SVG, .book-sub, .foot border",
+  "legibility_dip": "measured h1 contrast 11.99:1 -> 1.11:1 at 150 ms -> 13.56:1; lede below 3:1 from ~83 to ~250 ms (derived/theming/crossfade/legibility-during-switch.json)",
+  "reduced_motion": "starfield animation none; body/.bg/.tt/.tt-thumb/.tt-opt transition none (instant switch) (:2349-2372)",
+  "measurements": "derived/theming/crossfade/crossfade-measurements.json"
+ },
+ "glass": {
+  "card": {
+   "natt": "#0f1628ad + blur(22px)",
+   "morgon": "#fffc + blur(24px)",
+   "rim": ".glass:before linear-gradient(135deg, #9b87f580, #f2b22e59 50%, #ff61544d), 1px ring, opacity .45 (:1125-1147)"
+  },
+  "blur_ladder_px": {
+   "chip (.kicker, .sec-chip, .hiw-ai-chip)": 10,
+   "ghost button": 14,
+   "card (.glass, .badge, .hiw-memory-tag, .create-customize)": "22 natt / 24 morgon",
+   "modal scrim": 6
+  },
+  "measured_texture_suppression_pct": "cards 72-89%, ghost button 59-79%, chips 27-38% (derived/theming/glass/glass-measurements.json)"
+ },
+ "legibility_over_backdrop": {
+  "scrim_effect_desktop": "h1 vs brightest 10% of its backdrop: 3.06:1 without scrim -> 7.35:1 with; lede 1.63:1 -> 4.65:1",
+  "h1_shadow": "natt 0 2px 30px #0c082859 (mean backdrop luminance around glyphs -7%); morgon none",
+  "measurements": "derived/theming/night-stack/legibility-measurements.json"
+ },
+ "film_conversion": {
+  "theme_switch_frames_at_30fps": 15,
+  "theme_switch_frames_at_60fps": 30,
+  "twinkle_period_frames_at_30fps": 138,
+  "1920x1080_nebula_crop": "cover scales the 2400x1340 plate to 1934x1080; ~7 px trimmed each side at object-position center 30%",
+  "1920x1080_morning": "2560x1440 is exactly 16:9: whole painting visible"
+ }
+}

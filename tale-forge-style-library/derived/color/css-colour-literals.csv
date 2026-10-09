@@ -1,0 +1,500 @@
+kind,literal,rgb_hex,alpha,property,selector,at_rule_context,inside_custom_property,source
+hex,#6d4fe0,#6d4fe0,1.0,--violet,:root,,True,source/css/3q17cp_jgfwol.pretty.css:461
+hex,#9b87f5,#9b87f5,1.0,--violet-soft,:root,,True,source/css/3q17cp_jgfwol.pretty.css:462
+hex,#f2b22e,#f2b22e,1.0,--gold,:root,,True,source/css/3q17cp_jgfwol.pretty.css:463
+hex,#f5c542,#f5c542,1.0,--gold-soft,:root,,True,source/css/3q17cp_jgfwol.pretty.css:464
+hex,#ff6154,#ff6154,1.0,--coral,:root,,True,source/css/3q17cp_jgfwol.pretty.css:465
+hex,#241608,#241608,1.0,color,.skip-link,,False,source/css/3q17cp_jgfwol.pretty.css:476
+hex,#fff7e9,#fff7e9,1.0,--page-ink,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:494
+hex,#d9cfee,#d9cfee,1.0,--page-sub,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:495
+hex,#0f1628ad,#0f1628,0.678,--card,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:498
+hex,#9b87f542,#9b87f5,0.259,--card-line,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:499
+hex,#f2eeff,#f2eeff,1.0,--card-ink,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:501
+hex,#b5acd3,#b5acd3,1.0,--card-sub,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:502
+hex,#101a30,#101a30,1.0,--frame,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:503
+hex,#9b87f566,#9b87f5,0.4,--frame-line,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:504
+hex,#fff9ec1a,#fff9ec,0.102,--chip-bg,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:505
+hex,#fff3d942,#fff3d9,0.259,--chip-line,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:506
+hex,#e8dfc9,#e8dfc9,1.0,--chip-ink,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:507
+hex,#9b87f529,#9b87f5,0.161,--pill-bg,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:508
+hex,#c9bcff,#c9bcff,1.0,--pill-ink,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:509
+color-mix,"color-mix(in srgb, var(--page-sub) 85%, transparent)",,,--micro-ink,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:510
+named,transparent,,,--micro-ink,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:510
+hex,#0c082859,#0c0828,0.349,--h1-shadow,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:511
+hex,#f2b22e29,#f2b22e,0.161,--gold-chip-bg,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:512
+hex,#ffd98f,#ffd98f,1.0,--gold-chip-ink,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:513
+hex,#ff615424,#ff6154,0.141,--coral-chip-bg,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:514
+hex,#ffab9f,#ffab9f,1.0,--coral-chip-ink,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:515
+hex,#9b87f559,#9b87f5,0.349,--trait-line,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:516
+hex,#cfc5ec,#cfc5ec,1.0,--trait-ink,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:517
+hex,#9b87f533,#9b87f5,0.2,--trait-on-bg,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:518
+hex,#9b87f599,#9b87f5,0.6,--trait-on-line,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:519
+hex,#e9e2ff,#e9e2ff,1.0,--trait-on-ink,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:520
+hex,#ffecbe59,#ffecbe,0.349,--dash-line,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:521
+hex,#ffffff0f,#ffffff,0.059,--choice-bg,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:522
+hex,#9b87f552,#9b87f5,0.322,--choice-line,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:523
+hex,#f2eeff,#f2eeff,1.0,--choice-ink,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:524
+hex,#ffffff24,#ffffff,0.141,--bar-bg,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:525
+hex,#eae4f5,#eae4f5,1.0,--prose-ink,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:526
+hex,#b7a9d6,#b7a9d6,1.0,--foot-ink,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:527
+gradient,"linear-gradient(135deg, #ffe08a, #f5c542)",,,--btn-grad,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:528
+hex,#ffe08a,#ffe08a,1.0,--btn-grad,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:528
+hex,#f5c542,#f5c542,1.0,--btn-grad,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:528
+hex,#3a2b10,#3a2b10,1.0,--btn-ink,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:529
+hex,#f5c54247,#f5c542,0.278,--btn-shadow,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:530
+hex,#f5c5426b,#f5c542,0.42,--btn-shadow-hover,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:531
+hex,#fff9ec1a,#fff9ec,0.102,--ghost-bg,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:532
+hex,#fff3d9,#fff3d9,1.0,--ghost-ink,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:533
+hex,#fff3d952,#fff3d9,0.322,--control-line,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:534
+hex,#0508146b,#050814,0.42,--card-shadow,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:536
+hex,#f5c542,#f5c542,1.0,--logo-ink,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:537
+hex,#050814cc,#050814,0.8,--logo-shadow,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:538
+hex,#f5c54273,#f5c542,0.451,--logo-shadow,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:538
+hex,#f5c54240,#f5c542,0.251,--map-glow,"body[data-theme=""natt""]",,True,source/css/3q17cp_jgfwol.pretty.css:540
+hex,#241f35,#241f35,1.0,--page-ink,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:543
+hex,#5f5878,#5f5878,1.0,--page-sub,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:544
+hex,#6d4fe0,#6d4fe0,1.0,--accent,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:545
+hex,#5b3fc7,#5b3fc7,1.0,--accent-ink,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:546
+hex,#fffc,#ffffff,0.8,--card,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:547
+hex,#ffffffe6,#ffffff,0.902,--card-line,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:548
+hex,#241f35,#241f35,1.0,--card-ink,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:550
+hex,#5f5878,#5f5878,1.0,--card-sub,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:551
+hex,#fff,#ffffff,1.0,--frame,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:552
+hex,#ffffffe6,#ffffff,0.902,--frame-line,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:553
+hex,#6d4fe014,#6d4fe0,0.078,--chip-bg,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:554
+hex,#6d4fe029,#6d4fe0,0.161,--chip-line,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:555
+hex,#6d4fe01a,#6d4fe0,0.102,--pill-bg,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:557
+hex,#f2b22e26,#f2b22e,0.149,--gold-chip-bg,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:561
+hex,#8f6a12,#8f6a12,1.0,--gold-chip-ink,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:562
+hex,#ff61541f,#ff6154,0.122,--coral-chip-bg,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:563
+hex,#c23a2b,#c23a2b,1.0,--coral-chip-ink,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:564
+hex,#6d4fe047,#6d4fe0,0.278,--trait-line,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:565
+hex,#5f5878,#5f5878,1.0,--trait-ink,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:566
+hex,#6d4fe01f,#6d4fe0,0.122,--trait-on-bg,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:567
+hex,#6d4fe06b,#6d4fe0,0.42,--trait-on-line,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:568
+hex,#4a36a8,#4a36a8,1.0,--trait-on-ink,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:569
+hex,#6d4fe059,#6d4fe0,0.349,--dash-line,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:570
+hex,#fff,#ffffff,1.0,--choice-bg,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:571
+hex,#6d4fe038,#6d4fe0,0.22,--choice-line,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:572
+hex,#241f35,#241f35,1.0,--choice-ink,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:573
+hex,#241f3514,#241f35,0.078,--bar-bg,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:574
+hex,#3a3450,#3a3450,1.0,--prose-ink,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:575
+hex,#5f5878,#5f5878,1.0,--foot-ink,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:576
+gradient,"linear-gradient(135deg, #6d4fe0, #5b3fc7)",,,--btn-grad,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:577
+hex,#6d4fe0,#6d4fe0,1.0,--btn-grad,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:577
+hex,#5b3fc7,#5b3fc7,1.0,--btn-grad,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:577
+hex,#fff,#ffffff,1.0,--btn-ink,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:578
+hex,#6d4fe059,#6d4fe0,0.349,--btn-shadow,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:579
+hex,#6d4fe073,#6d4fe0,0.451,--btn-shadow-hover,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:580
+hex,#ffffffb8,#ffffff,0.722,--ghost-bg,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:581
+hex,#241f35,#241f35,1.0,--ghost-ink,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:582
+hex,#887da0,#887da0,1.0,--control-line,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:583
+hex,#241f351a,#241f35,0.102,--card-shadow,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:585
+hex,#241f3529,#241f35,0.161,--card-shadow,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:585
+hex,#6d4fe0,#6d4fe0,1.0,--logo-ink,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:586
+hex,#241f352e,#241f35,0.18,--logo-shadow,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:587
+hex,#6d4fe052,#6d4fe0,0.322,--logo-shadow,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:587
+hex,#6d4fe033,#6d4fe0,0.2,--map-glow,"body[data-theme=""morgon""]",,True,source/css/3q17cp_jgfwol.pretty.css:589
+hex,#171232,#171232,1.0,background,body,,False,source/css/3q17cp_jgfwol.pretty.css:606
+hex,#ede9f6,#ede9f6,1.0,background,"body[data-theme=""morgon""]",,False,source/css/3q17cp_jgfwol.pretty.css:610
+gradient,"linear-gradient(#0b0f1e61 0%, #0b0f1e80 45%, #0d1122bd 100%)",,,background,.bg-night .scrim,,False,source/css/3q17cp_jgfwol.pretty.css:632
+hex,#0b0f1e61,#0b0f1e,0.38,background,.bg-night .scrim,,False,source/css/3q17cp_jgfwol.pretty.css:632
+hex,#0b0f1e80,#0b0f1e,0.502,background,.bg-night .scrim,,False,source/css/3q17cp_jgfwol.pretty.css:632
+hex,#0d1122bd,#0d1122,0.741,background,.bg-night .scrim,,False,source/css/3q17cp_jgfwol.pretty.css:632
+gradient,"radial-gradient(1.4px 1.4px at 12% 8%, #ffe9b0e6 50%, #0000 51%)",,,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+gradient,"radial-gradient(1px 1px at 32% 16%, #f5f0e8cc 50%, #0000 51%)",,,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+gradient,"radial-gradient(1.6px 1.6px at 58% 6%, #f5c542d9 50%, #0000 51%)",,,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+gradient,"radial-gradient(1px 1px at 76% 12%, #f5f0e8b3 50%, #0000 51%)",,,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+gradient,"radial-gradient(1.2px 1.2px at 90% 22%, #ffe9b0bf 50%, #0000 51%)",,,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+gradient,"radial-gradient(1.3px 1.3px at 44% 24%, #9b87f599 50%, #0000 51%)",,,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+hex,#ffe9b0e6,#ffe9b0,0.902,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+hex,#0000,#000000,0.0,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+hex,#f5f0e8cc,#f5f0e8,0.8,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+hex,#0000,#000000,0.0,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+hex,#f5c542d9,#f5c542,0.851,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+hex,#0000,#000000,0.0,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+hex,#f5f0e8b3,#f5f0e8,0.702,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+hex,#0000,#000000,0.0,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+hex,#ffe9b0bf,#ffe9b0,0.749,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+hex,#0000,#000000,0.0,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+hex,#9b87f599,#9b87f5,0.6,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+hex,#0000,#000000,0.0,background-image,.starfield,,False,source/css/3q17cp_jgfwol.pretty.css:637-643
+hex,#f5c54280,#f5c542,0.502,filter,.logo img,,False,source/css/3q17cp_jgfwol.pretty.css:713
+color-mix,"color-mix(in srgb, var(--card) 88%, transparent)",,,box-shadow,.tt:focus-visible,,False,source/css/3q17cp_jgfwol.pretty.css:825
+named,transparent,,,box-shadow,.tt:focus-visible,,False,source/css/3q17cp_jgfwol.pretty.css:825
+hex,#ffffff73,#ffffff,0.451,box-shadow,.btn-primary,,False,source/css/3q17cp_jgfwol.pretty.css:910-912
+hex,#0a072066,#0a0720,0.4,box-shadow,.fan .fbook,,False,source/css/3q17cp_jgfwol.pretty.css:938-940
+hex,#f5c5421f,#f5c542,0.122,box-shadow,.fan .fbook,,False,source/css/3q17cp_jgfwol.pretty.css:938-940
+hex,#f2b22e80,#f2b22e,0.502,box-shadow,.badge .dotpulse,,False,source/css/3q17cp_jgfwol.pretty.css:1017
+hex,#f2b22e73,#f2b22e,0.451,box-shadow,0%,@keyframes pulse,False,source/css/3q17cp_jgfwol.pretty.css:1021
+hex,#f2b22e00,#f2b22e,0.0,box-shadow,70%,@keyframes pulse,False,source/css/3q17cp_jgfwol.pretty.css:1024
+hex,#f2b22e00,#f2b22e,0.0,box-shadow,to,@keyframes pulse,False,source/css/3q17cp_jgfwol.pretty.css:1027
+gradient,"linear-gradient(135deg, #9b87f580, #f2b22e59 50%, #ff61544d)",,,background,.glass:before,,False,source/css/3q17cp_jgfwol.pretty.css:1130
+hex,#9b87f580,#9b87f5,0.502,background,.glass:before,,False,source/css/3q17cp_jgfwol.pretty.css:1130
+hex,#f2b22e59,#f2b22e,0.349,background,.glass:before,,False,source/css/3q17cp_jgfwol.pretty.css:1130
+hex,#ff61544d,#ff6154,0.302,background,.glass:before,,False,source/css/3q17cp_jgfwol.pretty.css:1130
+gradient,linear-gradient(#fff 0 0),,,-webkit-mask-image,.glass:before,,False,source/css/3q17cp_jgfwol.pretty.css:1135
+gradient,linear-gradient(#fff 0 0),,,-webkit-mask-image,.glass:before,,False,source/css/3q17cp_jgfwol.pretty.css:1135
+hex,#fff,#ffffff,1.0,-webkit-mask-image,.glass:before,,False,source/css/3q17cp_jgfwol.pretty.css:1135
+hex,#fff,#ffffff,1.0,-webkit-mask-image,.glass:before,,False,source/css/3q17cp_jgfwol.pretty.css:1135
+hex,#0a07204d,#0a0720,0.302,box-shadow,.builder-pic .pframe,,False,source/css/3q17cp_jgfwol.pretty.css:1175
+hex,#0a072040,#0a0720,0.251,box-shadow,.friend .avatar,,False,source/css/3q17cp_jgfwol.pretty.css:1309
+gradient,"radial-gradient( 130% 140% at 0% 0%, var(--gold-chip-bg), transparent 58% )",,,background-image,.comp-tile--gold,,False,source/css/3q17cp_jgfwol.pretty.css:1353-1357
+named,transparent,,,background-image,.comp-tile--gold,,False,source/css/3q17cp_jgfwol.pretty.css:1353-1357
+gradient,"radial-gradient( 130% 140% at 0% 0%, var(--pill-bg), transparent 58% )",,,background-image,.comp-tile--violet,,False,source/css/3q17cp_jgfwol.pretty.css:1360-1364
+named,transparent,,,background-image,.comp-tile--violet,,False,source/css/3q17cp_jgfwol.pretty.css:1360-1364
+gradient,"radial-gradient( 130% 140% at 0% 0%, var(--coral-chip-bg), transparent 58% )",,,background-image,.comp-tile--coral,,False,source/css/3q17cp_jgfwol.pretty.css:1367-1371
+named,transparent,,,background-image,.comp-tile--coral,,False,source/css/3q17cp_jgfwol.pretty.css:1367-1371
+gradient,"radial-gradient( 1.3px 1.3px at 82% 22%, var(--gold-chip-ink) 50%, transparent 51% )",,,background-image,.comp-tile--story:after,,False,source/css/3q17cp_jgfwol.pretty.css:1377-1402
+gradient,"radial-gradient( 1px 1px at 68% 66%, var(--gold-chip-ink) 50%, transparent 51% )",,,background-image,.comp-tile--story:after,,False,source/css/3q17cp_jgfwol.pretty.css:1377-1402
+gradient,"radial-gradient( 1.5px 1.5px at 91% 50%, var(--gold-chip-ink) 50%, transparent 51% )",,,background-image,.comp-tile--story:after,,False,source/css/3q17cp_jgfwol.pretty.css:1377-1402
+gradient,"radial-gradient( 1px 1px at 76% 84%, var(--gold-chip-ink) 50%, transparent 51% )",,,background-image,.comp-tile--story:after,,False,source/css/3q17cp_jgfwol.pretty.css:1377-1402
+gradient,"radial-gradient( 1.2px 1.2px at 60% 32%, var(--gold-chip-ink) 50%, transparent 51% )",,,background-image,.comp-tile--story:after,,False,source/css/3q17cp_jgfwol.pretty.css:1377-1402
+named,transparent,,,background-image,.comp-tile--story:after,,False,source/css/3q17cp_jgfwol.pretty.css:1377-1402
+named,transparent,,,background-image,.comp-tile--story:after,,False,source/css/3q17cp_jgfwol.pretty.css:1377-1402
+named,transparent,,,background-image,.comp-tile--story:after,,False,source/css/3q17cp_jgfwol.pretty.css:1377-1402
+named,transparent,,,background-image,.comp-tile--story:after,,False,source/css/3q17cp_jgfwol.pretty.css:1377-1402
+named,transparent,,,background-image,.comp-tile--story:after,,False,source/css/3q17cp_jgfwol.pretty.css:1377-1402
+gradient,"linear-gradient(135deg, var(--gold-chip-bg), var(--pill-bg))",,,background,.comp-avatar--gold,,False,source/css/3q17cp_jgfwol.pretty.css:1420
+gradient,"linear-gradient(135deg, var(--pill-bg), var(--gold-chip-bg))",,,background,.comp-avatar--violet,,False,source/css/3q17cp_jgfwol.pretty.css:1424
+gradient,"linear-gradient(135deg, var(--coral-chip-bg), var(--pill-bg))",,,background,.comp-avatar--coral,,False,source/css/3q17cp_jgfwol.pretty.css:1428
+hex,#6d4fe040,#6d4fe0,0.251,box-shadow,.companion-pic,,False,source/css/3q17cp_jgfwol.pretty.css:1458
+hex,#0000,#000000,0.0,border-color,.family-switcher .chip.violet,,False,source/css/3q17cp_jgfwol.pretty.css:1565
+gradient,"linear-gradient(135deg, #f2b22ebf, #ff615466)",,,background,.adv.ember:before,,False,source/css/3q17cp_jgfwol.pretty.css:1623
+hex,#f2b22ebf,#f2b22e,0.749,background,.adv.ember:before,,False,source/css/3q17cp_jgfwol.pretty.css:1623
+hex,#ff615466,#ff6154,0.4,background,.adv.ember:before,,False,source/css/3q17cp_jgfwol.pretty.css:1623
+gradient,"linear-gradient(135deg, var(--gold-chip-bg), var(--pill-bg))",,,background,.pframe-initial,,False,source/css/3q17cp_jgfwol.pretty.css:1751
+hex,#f2b22e80,#f2b22e,0.502,box-shadow,.reader-link-wait .dotpulse,,False,source/css/3q17cp_jgfwol.pretty.css:1883
+hex,#6d4fe02e,#6d4fe0,0.18,box-shadow,.choice:hover,,False,source/css/3q17cp_jgfwol.pretty.css:1926
+named,currentColor,,,fill,.reader-audio-control svg,,False,source/css/3q17cp_jgfwol.pretty.css:2054
+named,currentColor,,,stroke,.reader-audio-control svg,,False,source/css/3q17cp_jgfwol.pretty.css:2055
+hex,#6d4fe024,#6d4fe0,0.141,box-shadow,".friend-mode-option[aria-pressed=""true""]",,False,source/css/3q17cp_jgfwol.pretty.css:2186
+color-mix,"color-mix(in srgb, var(--gold) 10%, transparent)",,,background,.friend-mode-lock,,False,source/css/3q17cp_jgfwol.pretty.css:2191
+named,transparent,,,background,.friend-mode-lock,,False,source/css/3q17cp_jgfwol.pretty.css:2191
+color-mix,"color-mix(in srgb, var(--gold) 11%, transparent)",,,background,.create-carried-thread,,False,source/css/3q17cp_jgfwol.pretty.css:2381
+named,transparent,,,background,.create-carried-thread,,False,source/css/3q17cp_jgfwol.pretty.css:2381
+color-mix,"color-mix(in srgb, var(--gold-soft) 55%, transparent)",,,border,.hiw-node,,False,source/css/3q17cp_jgfwol.pretty.css:2601
+named,transparent,,,border,.hiw-node,,False,source/css/3q17cp_jgfwol.pretty.css:2601
+hex,#241f35,#241f35,1.0,color,.hiw-ai-chip,,False,source/css/3q17cp_jgfwol.pretty.css:2686
+hex,#ffffffc7,#ffffff,0.78,background,.hiw-ai-chip,,False,source/css/3q17cp_jgfwol.pretty.css:2689
+hex,#241f3538,#241f35,0.22,border,.hiw-ai-chip,,False,source/css/3q17cp_jgfwol.pretty.css:2690
+gradient,"linear-gradient(90deg, #f5c542, #9b87f5)",,,background,.hiw-bar i,,False,source/css/3q17cp_jgfwol.pretty.css:2782
+hex,#f5c542,#f5c542,1.0,background,.hiw-bar i,,False,source/css/3q17cp_jgfwol.pretty.css:2782
+hex,#9b87f5,#9b87f5,1.0,background,.hiw-bar i,,False,source/css/3q17cp_jgfwol.pretty.css:2782
+hex,#ffffff73,#ffffff,0.451,box-shadow,.hiw-play,,False,source/css/3q17cp_jgfwol.pretty.css:2810-2812
+hex,#fff7e9,#fff7e9,1.0,color,.hiw-next-label,,False,source/css/3q17cp_jgfwol.pretty.css:3076
+hex,#0a0c188c,#0a0c18,0.549,background,.hiw-next-label,,False,source/css/3q17cp_jgfwol.pretty.css:3078
+hex,#f2b22e80,#f2b22e,0.502,box-shadow,.hiw-memory-tag .dotpulse,,False,source/css/3q17cp_jgfwol.pretty.css:3113
+gradient,"linear-gradient(160deg, var(--pill-bg), var(--gold-chip-bg))",,,background,.cs-portrait,,False,source/css/2h1wwdz1nvxwk.pretty.css:16
+hex,#0000002e,#000000,0.18,box-shadow,.cs-portrait,,False,source/css/2h1wwdz1nvxwk.pretty.css:21
+gradient,"linear-gradient(160deg, #3f2f68, #241b3f)",,,background,.cs-spine,,False,source/css/2h1wwdz1nvxwk.pretty.css:89
+hex,#3f2f68,#3f2f68,1.0,background,.cs-spine,,False,source/css/2h1wwdz1nvxwk.pretty.css:89
+hex,#241b3f,#241b3f,1.0,background,.cs-spine,,False,source/css/2h1wwdz1nvxwk.pretty.css:89
+hex,#00000026,#000000,0.149,box-shadow,.cs-memtag,,False,source/css/2h1wwdz1nvxwk.pretty.css:108
+gradient,"linear-gradient(135deg, var(--pill-bg), var(--gold-chip-bg))",,,background,.cs-coin,,False,source/css/2h1wwdz1nvxwk.pretty.css:120
+gradient,"linear-gradient(135deg, var(--violet-soft), var(--gold-soft))",,,background,.cs-chip-th,,False,source/css/2h1wwdz1nvxwk.pretty.css:208
+hex,#0a081980,#0a0819,0.502,background,.cs-sheetwrap,,False,source/css/2h1wwdz1nvxwk.pretty.css:244
+gradient,"linear-gradient(160deg, #140f28e6, #281e46d9)",,,background,.cs-door-face,,False,source/css/2h1wwdz1nvxwk.pretty.css:435
+hex,#140f28e6,#140f28,0.902,background,.cs-door-face,,False,source/css/2h1wwdz1nvxwk.pretty.css:435
+hex,#281e46d9,#281e46,0.851,background,.cs-door-face,,False,source/css/2h1wwdz1nvxwk.pretty.css:435
+gradient,"linear-gradient(160deg, #ded5f5, #c9bcf0)",,,background,"body[data-theme=""morgon""] .cs-door-face",,False,source/css/2h1wwdz1nvxwk.pretty.css:443
+hex,#ded5f5,#ded5f5,1.0,background,"body[data-theme=""morgon""] .cs-door-face",,False,source/css/2h1wwdz1nvxwk.pretty.css:443
+hex,#c9bcf0,#c9bcf0,1.0,background,"body[data-theme=""morgon""] .cs-door-face",,False,source/css/2h1wwdz1nvxwk.pretty.css:443
+color-mix,"color-mix(in srgb, var(--logo-ink) 55%, transparent)",,,border,.cs-door-face:after,,False,source/css/2h1wwdz1nvxwk.pretty.css:447
+named,transparent,,,border,.cs-door-face:after,,False,source/css/2h1wwdz1nvxwk.pretty.css:447
+gradient,"radial-gradient( circle at 50% 72%, color-mix(in srgb, var(--logo-ink) 34%, transparent), transparent 35% )",,,background,.cs-door-face--fallback:before,,False,source/css/2h1wwdz1nvxwk.pretty.css:472-483
+gradient,"linear-gradient( 135deg, transparent 48%, color-mix(in srgb, var(--violet-soft) 38%, transparent) 50%, transparent 52% )",,,background,.cs-door-face--fallback:before,,False,source/css/2h1wwdz1nvxwk.pretty.css:472-483
+color-mix,"color-mix(in srgb, var(--logo-ink) 34%, transparent)",,,background,.cs-door-face--fallback:before,,False,source/css/2h1wwdz1nvxwk.pretty.css:472-483
+color-mix,"color-mix(in srgb, var(--violet-soft) 38%, transparent)",,,background,.cs-door-face--fallback:before,,False,source/css/2h1wwdz1nvxwk.pretty.css:472-483
+named,transparent,,,background,.cs-door-face--fallback:before,,False,source/css/2h1wwdz1nvxwk.pretty.css:472-483
+named,transparent,,,background,.cs-door-face--fallback:before,,False,source/css/2h1wwdz1nvxwk.pretty.css:472-483
+named,transparent,,,background,.cs-door-face--fallback:before,,False,source/css/2h1wwdz1nvxwk.pretty.css:472-483
+named,transparent,,,background,.cs-door-face--fallback:before,,False,source/css/2h1wwdz1nvxwk.pretty.css:472-483
+named,transparent,,,background,.cs-door-face--fallback:before,,False,source/css/2h1wwdz1nvxwk.pretty.css:472-483
+hex,#0b0e22,#0b0e22,1.0,background,.glod-stage,,False,source/css/37m388zf6rymp.pretty.css:2
+hex,#b7c0ea,#b7c0ea,1.0,background,"body[data-theme=""morgon""] .glod-stage",,False,source/css/37m388zf6rymp.pretty.css:19
+hex,#0b0e22,#0b0e22,1.0,background,.glod-ambient,,False,source/css/37m388zf6rymp.pretty.css:24
+hex,#cdb9d8,#cdb9d8,1.0,background,"body[data-theme=""morgon""] .glod-ambient",,False,source/css/37m388zf6rymp.pretty.css:33
+gradient,"linear-gradient(#07091780 0%, #07091742 42%, #07091770 100%)",,,background,.glod-ambient:after,,False,source/css/37m388zf6rymp.pretty.css:46
+hex,#07091780,#070917,0.502,background,.glod-ambient:after,,False,source/css/37m388zf6rymp.pretty.css:46
+hex,#07091742,#070917,0.259,background,.glod-ambient:after,,False,source/css/37m388zf6rymp.pretty.css:46
+hex,#07091770,#070917,0.439,background,.glod-ambient:after,,False,source/css/37m388zf6rymp.pretty.css:46
+gradient,"linear-gradient(#3b2c6433 0%, #fff6e814 45%, #ede9f661 100%)",,,background,"body[data-theme=""morgon""] .glod-ambient:after",,False,source/css/37m388zf6rymp.pretty.css:51
+hex,#3b2c6433,#3b2c64,0.2,background,"body[data-theme=""morgon""] .glod-ambient:after",,False,source/css/37m388zf6rymp.pretty.css:51
+hex,#fff6e814,#fff6e8,0.078,background,"body[data-theme=""morgon""] .glod-ambient:after",,False,source/css/37m388zf6rymp.pretty.css:51
+hex,#ede9f661,#ede9f6,0.38,background,"body[data-theme=""morgon""] .glod-ambient:after",,False,source/css/37m388zf6rymp.pretty.css:51
+gradient,"linear-gradient(90deg, #33210f, #553d24 45%, #291908)",,,background,.glod-post,,False,source/css/37m388zf6rymp.pretty.css:73
+hex,#33210f,#33210f,1.0,background,.glod-post,,False,source/css/37m388zf6rymp.pretty.css:73
+hex,#553d24,#553d24,1.0,background,.glod-post,,False,source/css/37m388zf6rymp.pretty.css:73
+hex,#291908,#291908,1.0,background,.glod-post,,False,source/css/37m388zf6rymp.pretty.css:73
+hex,#04030c8c,#04030c,0.549,box-shadow,.glod-post,,False,source/css/37m388zf6rymp.pretty.css:79
+hex,#fbeed2,#fbeed2,1.0,color,.glod-board,,False,source/css/37m388zf6rymp.pretty.css:90
+gradient,"linear-gradient(178deg, #5e4129, #4a3120 56%, #3c2717)",,,background,.glod-board,,False,source/css/37m388zf6rymp.pretty.css:91
+hex,#5e4129,#5e4129,1.0,background,.glod-board,,False,source/css/37m388zf6rymp.pretty.css:91
+hex,#4a3120,#4a3120,1.0,background,.glod-board,,False,source/css/37m388zf6rymp.pretty.css:91
+hex,#3c2717,#3c2717,1.0,background,.glod-board,,False,source/css/37m388zf6rymp.pretty.css:91
+hex,#281709,#281709,1.0,border,.glod-board,,False,source/css/37m388zf6rymp.pretty.css:92
+hex,#04030c99,#04030c,0.6,box-shadow,.glod-board,,False,source/css/37m388zf6rymp.pretty.css:97-101
+hex,#ff963c12,#ff963c,0.071,box-shadow,.glod-board,,False,source/css/37m388zf6rymp.pretty.css:97-101
+hex,#ffd8a038,#ffd8a0,0.22,box-shadow,.glod-board,,False,source/css/37m388zf6rymp.pretty.css:97-101
+hex,#00000059,#000000,0.349,box-shadow,.glod-board,,False,source/css/37m388zf6rymp.pretty.css:97-101
+gradient,"radial-gradient(circle at 80% 22%, #0003 0 4px, #00000017 7px, #0000 13px)",,,background,.glod-board:before,,False,source/css/37m388zf6rymp.pretty.css:108-116
+gradient,"repeating-linear-gradient( 91deg, #0000001c 0 2px, #0000 2px 9px, #00000012 9px 10px, #0000 10px 21px )",,,background,.glod-board:before,,False,source/css/37m388zf6rymp.pretty.css:108-116
+hex,#0003,#000000,0.2,background,.glod-board:before,,False,source/css/37m388zf6rymp.pretty.css:108-116
+hex,#00000017,#000000,0.09,background,.glod-board:before,,False,source/css/37m388zf6rymp.pretty.css:108-116
+hex,#0000,#000000,0.0,background,.glod-board:before,,False,source/css/37m388zf6rymp.pretty.css:108-116
+hex,#0000001c,#000000,0.11,background,.glod-board:before,,False,source/css/37m388zf6rymp.pretty.css:108-116
+hex,#0000,#000000,0.0,background,.glod-board:before,,False,source/css/37m388zf6rymp.pretty.css:108-116
+hex,#00000012,#000000,0.071,background,.glod-board:before,,False,source/css/37m388zf6rymp.pretty.css:108-116
+hex,#0000,#000000,0.0,background,.glod-board:before,,False,source/css/37m388zf6rymp.pretty.css:108-116
+gradient,"linear-gradient(263deg, #ff983c29, #0000 46%)",,,background,.glod-board:after,,False,source/css/37m388zf6rymp.pretty.css:124
+hex,#ff983c29,#ff983c,0.161,background,.glod-board:after,,False,source/css/37m388zf6rymp.pretty.css:124
+hex,#0000,#000000,0.0,background,.glod-board:after,,False,source/css/37m388zf6rymp.pretty.css:124
+gradient,"radial-gradient(circle at 35% 30%, #e8d5ac, #6b5335 62%, #2c1e12)",,,background,.glod-nail,,False,source/css/37m388zf6rymp.pretty.css:134
+hex,#e8d5ac,#e8d5ac,1.0,background,.glod-nail,,False,source/css/37m388zf6rymp.pretty.css:134
+hex,#6b5335,#6b5335,1.0,background,.glod-nail,,False,source/css/37m388zf6rymp.pretty.css:134
+hex,#2c1e12,#2c1e12,1.0,background,.glod-nail,,False,source/css/37m388zf6rymp.pretty.css:134
+hex,#0009,#000000,0.6,box-shadow,.glod-nail,,False,source/css/37m388zf6rymp.pretty.css:139
+hex,#e4cfa4,#e4cfa4,1.0,color,.glod-wb-kicker,,False,source/css/37m388zf6rymp.pretty.css:161
+hex,#fbeed2,#fbeed2,1.0,color,.glod-wb-title,,False,source/css/37m388zf6rymp.pretty.css:176
+hex,#0006,#000000,0.4,text-shadow,.glod-wb-title,,False,source/css/37m388zf6rymp.pretty.css:177
+gradient,"radial-gradient(circle at 40% 35%, #ffe9b0, #f2a13c 65%, #c96a1f)",,,background,.glod-pulse-dot,,False,source/css/37m388zf6rymp.pretty.css:183
+hex,#ffe9b0,#ffe9b0,1.0,background,.glod-pulse-dot,,False,source/css/37m388zf6rymp.pretty.css:183
+hex,#f2a13c,#f2a13c,1.0,background,.glod-pulse-dot,,False,source/css/37m388zf6rymp.pretty.css:183
+hex,#c96a1f,#c96a1f,1.0,background,.glod-pulse-dot,,False,source/css/37m388zf6rymp.pretty.css:183
+hex,#ffb2508c,#ffb250,0.549,box-shadow,.glod-pulse-dot,,False,source/css/37m388zf6rymp.pretty.css:189
+hex,#f3c36b,#f3c36b,1.0,background,.glod-alert-dot,,False,source/css/37m388zf6rymp.pretty.css:203
+hex,#f3c36b61,#f3c36b,0.38,box-shadow,.glod-alert-dot,,False,source/css/37m388zf6rymp.pretty.css:208
+hex,#e4cfa4,#e4cfa4,1.0,color,.glod-wb-expect,,False,source/css/37m388zf6rymp.pretty.css:212
+hex,#4a2f10,#4a2f10,1.0,color,.glod-wb-rewrite,,False,source/css/37m388zf6rymp.pretty.css:219
+gradient,"linear-gradient(#efdcb2, #e3cb9c)",,,background,.glod-wb-rewrite,,False,source/css/37m388zf6rymp.pretty.css:220
+hex,#efdcb2,#efdcb2,1.0,background,.glod-wb-rewrite,,False,source/css/37m388zf6rymp.pretty.css:220
+hex,#e3cb9c,#e3cb9c,1.0,background,.glod-wb-rewrite,,False,source/css/37m388zf6rymp.pretty.css:220
+hex,#04030c66,#04030c,0.4,box-shadow,.glod-wb-rewrite,,False,source/css/37m388zf6rymp.pretty.css:228
+hex,#35210d,#35210d,1.0,color,.glod-wb-action,,False,source/css/37m388zf6rymp.pretty.css:231
+gradient,"linear-gradient(#f7d77f, #eeb84e)",,,background,.glod-wb-action,,False,source/css/37m388zf6rymp.pretty.css:236
+hex,#f7d77f,#f7d77f,1.0,background,.glod-wb-action,,False,source/css/37m388zf6rymp.pretty.css:236
+hex,#eeb84e,#eeb84e,1.0,background,.glod-wb-action,,False,source/css/37m388zf6rymp.pretty.css:236
+hex,#ffe7b88c,#ffe7b8,0.549,border,.glod-wb-action,,False,source/css/37m388zf6rymp.pretty.css:237
+hex,#04030c59,#04030c,0.349,box-shadow,.glod-wb-action,,False,source/css/37m388zf6rymp.pretty.css:242
+hex,#ffe0c7,#ffe0c7,1.0,color,.glod-wb-action-error,,False,source/css/37m388zf6rymp.pretty.css:249
+hex,#ffd8a047,#ffd8a0,0.278,border-top,.glod-wb-steps,,False,source/css/37m388zf6rymp.pretty.css:256
+hex,#e4cfa4,#e4cfa4,1.0,color,.glod-wb-steps li,,False,source/css/37m388zf6rymp.pretty.css:265
+hex,#3a2b10,#3a2b10,1.0,color,.glod-wb-steps li .dot,,False,source/css/37m388zf6rymp.pretty.css:273
+hex,#ffd8a066,#ffd8a0,0.4,border,.glod-wb-steps li .dot,,False,source/css/37m388zf6rymp.pretty.css:275
+hex,#fbeed2,#fbeed2,1.0,color,.glod-wb-steps li.active,,False,source/css/37m388zf6rymp.pretty.css:286
+gradient,"radial-gradient(circle at 40% 35%, #ffe9b0, #f5c542 70%, #d98f26)",,,background,.glod-wb-steps li.active .dot,,False,source/css/37m388zf6rymp.pretty.css:291
+hex,#ffe9b0,#ffe9b0,1.0,background,.glod-wb-steps li.active .dot,,False,source/css/37m388zf6rymp.pretty.css:291
+hex,#f5c542,#f5c542,1.0,background,.glod-wb-steps li.active .dot,,False,source/css/37m388zf6rymp.pretty.css:291
+hex,#d98f26,#d98f26,1.0,background,.glod-wb-steps li.active .dot,,False,source/css/37m388zf6rymp.pretty.css:291
+hex,#0000,#000000,0.0,border-color,.glod-wb-steps li.active .dot,,False,source/css/37m388zf6rymp.pretty.css:292
+hex,#ffc45a80,#ffc45a,0.502,box-shadow,.glod-wb-steps li.active .dot,,False,source/css/37m388zf6rymp.pretty.css:294
+gradient,"linear-gradient(135deg, #ffe08a, #f5c542)",,,background,.glod-wb-steps li.done .dot,,False,source/css/37m388zf6rymp.pretty.css:300
+hex,#ffe08a,#ffe08a,1.0,background,.glod-wb-steps li.done .dot,,False,source/css/37m388zf6rymp.pretty.css:300
+hex,#f5c542,#f5c542,1.0,background,.glod-wb-steps li.done .dot,,False,source/css/37m388zf6rymp.pretty.css:300
+hex,#0000,#000000,0.0,border-color,.glod-wb-steps li.done .dot,,False,source/css/37m388zf6rymp.pretty.css:301
+gradient,"linear-gradient(#d6ba8c00, #d6ba8c8c)",,,background,".glod-stage[data-narrow=""1""] .glod-rope",,False,source/css/37m388zf6rymp.pretty.css:366
+hex,#d6ba8c00,#d6ba8c,0.0,background,".glod-stage[data-narrow=""1""] .glod-rope",,False,source/css/37m388zf6rymp.pretty.css:366
+hex,#d6ba8c8c,#d6ba8c,0.549,background,".glod-stage[data-narrow=""1""] .glod-rope",,False,source/css/37m388zf6rymp.pretty.css:366
+hex,#0804128c,#080412,0.549,filter,.glod-mem,,False,source/css/37m388zf6rymp.pretty.css:434-435
+hex,#280e0459,#280e04,0.349,filter,.glod-mem,,False,source/css/37m388zf6rymp.pretty.css:434-435
+hex,#ffaa5026,#ffaa50,0.149,filter,.glod-mem,,False,source/css/37m388zf6rymp.pretty.css:434-435
+hex,#3b2a16,#3b2a16,1.0,color,.glod-mem-card,,False,source/css/37m388zf6rymp.pretty.css:465
+gradient,"repeating-linear-gradient(97deg, #92704208 0 2px, #0000 2px 7px)",,,background,.glod-mem-card,,False,source/css/37m388zf6rymp.pretty.css:466-469
+gradient,"radial-gradient(120% 90% at 80% 6%, #fdf4df 0%, #fdf4df00 55%)",,,background,.glod-mem-card,,False,source/css/37m388zf6rymp.pretty.css:466-469
+gradient,"linear-gradient(172deg, #f9edd2 0%, #f2e2ba 60%, #ebd8ab 100%)",,,background,.glod-mem-card,,False,source/css/37m388zf6rymp.pretty.css:466-469
+hex,#92704208,#927042,0.031,background,.glod-mem-card,,False,source/css/37m388zf6rymp.pretty.css:466-469
+hex,#0000,#000000,0.0,background,.glod-mem-card,,False,source/css/37m388zf6rymp.pretty.css:466-469
+hex,#fdf4df,#fdf4df,1.0,background,.glod-mem-card,,False,source/css/37m388zf6rymp.pretty.css:466-469
+hex,#fdf4df00,#fdf4df,0.0,background,.glod-mem-card,,False,source/css/37m388zf6rymp.pretty.css:466-469
+hex,#f9edd2,#f9edd2,1.0,background,.glod-mem-card,,False,source/css/37m388zf6rymp.pretty.css:466-469
+hex,#f2e2ba,#f2e2ba,1.0,background,.glod-mem-card,,False,source/css/37m388zf6rymp.pretty.css:466-469
+hex,#ebd8ab,#ebd8ab,1.0,background,.glod-mem-card,,False,source/css/37m388zf6rymp.pretty.css:466-469
+hex,#5f431f,#5f431f,1.0,color,.glod-mem-close,,False,source/css/37m388zf6rymp.pretty.css:476
+hex,#5c3a141a,#5c3a14,0.102,background,.glod-mem-close:hover,,False,source/css/37m388zf6rymp.pretty.css:494
+hex,#7a3f0c,#7a3f0c,1.0,outline,.glod-mem-close:focus-visible,,False,source/css/37m388zf6rymp.pretty.css:498
+gradient,"radial-gradient( 37% 30% at 0 102%, #100602f5 0%, #2a1206e0 22%, #52260c9e 42%, #85481857 60%, #b2742e29 76%, #cda05014 86%, #0000 94% )",,,background,.glod-mem-card:before,,False,source/css/37m388zf6rymp.pretty.css:503-512
+hex,#100602f5,#100602,0.961,background,.glod-mem-card:before,,False,source/css/37m388zf6rymp.pretty.css:503-512
+hex,#2a1206e0,#2a1206,0.878,background,.glod-mem-card:before,,False,source/css/37m388zf6rymp.pretty.css:503-512
+hex,#52260c9e,#52260c,0.62,background,.glod-mem-card:before,,False,source/css/37m388zf6rymp.pretty.css:503-512
+hex,#85481857,#854818,0.341,background,.glod-mem-card:before,,False,source/css/37m388zf6rymp.pretty.css:503-512
+hex,#b2742e29,#b2742e,0.161,background,.glod-mem-card:before,,False,source/css/37m388zf6rymp.pretty.css:503-512
+hex,#cda05014,#cda050,0.078,background,.glod-mem-card:before,,False,source/css/37m388zf6rymp.pretty.css:503-512
+hex,#0000,#000000,0.0,background,.glod-mem-card:before,,False,source/css/37m388zf6rymp.pretty.css:503-512
+gradient,"linear-gradient(#0000 44%, #ff943a17 66%, #ff943a57)",,,background,.glod-mem-card:after,,False,source/css/37m388zf6rymp.pretty.css:519-521
+gradient,"radial-gradient(85% 50% at 50% 106%, #ffaa5047, #0000 70%)",,,background,.glod-mem-card:after,,False,source/css/37m388zf6rymp.pretty.css:519-521
+hex,#0000,#000000,0.0,background,.glod-mem-card:after,,False,source/css/37m388zf6rymp.pretty.css:519-521
+hex,#ff943a17,#ff943a,0.09,background,.glod-mem-card:after,,False,source/css/37m388zf6rymp.pretty.css:519-521
+hex,#ff943a57,#ff943a,0.341,background,.glod-mem-card:after,,False,source/css/37m388zf6rymp.pretty.css:519-521
+hex,#ffaa5047,#ffaa50,0.278,background,.glod-mem-card:after,,False,source/css/37m388zf6rymp.pretty.css:519-521
+hex,#0000,#000000,0.0,background,.glod-mem-card:after,,False,source/css/37m388zf6rymp.pretty.css:519-521
+gradient,"radial-gradient( circle at 42% 38%, #fff3cf, #ffd98f 45%, #ff9a4c 78%, #e06a24 100% )",,,background,.glod-mem-ember-core,,False,source/css/37m388zf6rymp.pretty.css:542-548
+hex,#fff3cf,#fff3cf,1.0,background,.glod-mem-ember-core,,False,source/css/37m388zf6rymp.pretty.css:542-548
+hex,#ffd98f,#ffd98f,1.0,background,.glod-mem-ember-core,,False,source/css/37m388zf6rymp.pretty.css:542-548
+hex,#ff9a4c,#ff9a4c,1.0,background,.glod-mem-ember-core,,False,source/css/37m388zf6rymp.pretty.css:542-548
+hex,#e06a24,#e06a24,1.0,background,.glod-mem-ember-core,,False,source/css/37m388zf6rymp.pretty.css:542-548
+hex,#ffc373f2,#ffc373,0.949,box-shadow,.glod-mem-ember-core,,False,source/css/37m388zf6rymp.pretty.css:552-555
+hex,#ff983e8c,#ff983e,0.549,box-shadow,.glod-mem-ember-core,,False,source/css/37m388zf6rymp.pretty.css:552-555
+hex,#ff823240,#ff8232,0.251,box-shadow,.glod-mem-ember-core,,False,source/css/37m388zf6rymp.pretty.css:552-555
+hex,#ffc373f2,#ffc373,0.949,box-shadow,"0%, to",@keyframes glodEmberBreath,False,source/css/37m388zf6rymp.pretty.css:567-570
+hex,#ff983e8c,#ff983e,0.549,box-shadow,"0%, to",@keyframes glodEmberBreath,False,source/css/37m388zf6rymp.pretty.css:567-570
+hex,#ff823240,#ff8232,0.251,box-shadow,"0%, to",@keyframes glodEmberBreath,False,source/css/37m388zf6rymp.pretty.css:567-570
+hex,#ffcd7d,#ffcd7d,1.0,box-shadow,50%,@keyframes glodEmberBreath,False,source/css/37m388zf6rymp.pretty.css:574-577
+hex,#ffa044a6,#ffa044,0.651,box-shadow,50%,@keyframes glodEmberBreath,False,source/css/37m388zf6rymp.pretty.css:574-577
+hex,#ff84344d,#ff8434,0.302,box-shadow,50%,@keyframes glodEmberBreath,False,source/css/37m388zf6rymp.pretty.css:574-577
+hex,#33240f,#33240f,1.0,color,.glod-mem-hook,,False,source/css/37m388zf6rymp.pretty.css:582
+hex,#7a6136,#7a6136,1.0,color,.glod-mem-from,,False,source/css/37m388zf6rymp.pretty.css:589
+hex,#fff3d8,#fff3d8,1.0,color,.glod-mem-carry,,False,source/css/37m388zf6rymp.pretty.css:594
+hex,#5a3820,#5a3820,1.0,background,.glod-mem-carry,,False,source/css/37m388zf6rymp.pretty.css:599
+hex,#5c3a146b,#5c3a14,0.42,border,.glod-mem-carry,,False,source/css/37m388zf6rymp.pretty.css:600
+hex,#31543d,#31543d,1.0,background,".glod-mem-carry[aria-pressed=""true""]",,False,source/css/37m388zf6rymp.pretty.css:608
+hex,#24422e,#24422e,1.0,border-color,".glod-mem-carry[aria-pressed=""true""]",,False,source/css/37m388zf6rymp.pretty.css:609
+gradient,"linear-gradient(172deg, #f9edd2, #ead5a5)",,,background,.glod-active-ember-with-cue,,False,source/css/37m388zf6rymp.pretty.css:641
+hex,#f9edd2,#f9edd2,1.0,background,.glod-active-ember-with-cue,,False,source/css/37m388zf6rymp.pretty.css:641
+hex,#ead5a5,#ead5a5,1.0,background,.glod-active-ember-with-cue,,False,source/css/37m388zf6rymp.pretty.css:641
+hex,#5c3a1480,#5c3a14,0.502,border,.glod-active-ember-with-cue,,False,source/css/37m388zf6rymp.pretty.css:642
+hex,#08041257,#080412,0.341,box-shadow,.glod-active-ember-with-cue,,False,source/css/37m388zf6rymp.pretty.css:652
+gradient,"radial-gradient( circle at 38% 34%, #fff7d6 0 14%, #ffd77a 36%, #e78232 72%, #8b2f19 100% )",,,background,.glod-active-ember-core,,False,source/css/37m388zf6rymp.pretty.css:655-661
+hex,#fff7d6,#fff7d6,1.0,background,.glod-active-ember-core,,False,source/css/37m388zf6rymp.pretty.css:655-661
+hex,#ffd77a,#ffd77a,1.0,background,.glod-active-ember-core,,False,source/css/37m388zf6rymp.pretty.css:655-661
+hex,#e78232,#e78232,1.0,background,.glod-active-ember-core,,False,source/css/37m388zf6rymp.pretty.css:655-661
+hex,#8b2f19,#8b2f19,1.0,background,.glod-active-ember-core,,False,source/css/37m388zf6rymp.pretty.css:655-661
+hex,#ffc869e6,#ffc869,0.902,box-shadow,.glod-active-ember-core,,False,source/css/37m388zf6rymp.pretty.css:670-673
+hex,#ff983a9e,#ff983a,0.62,box-shadow,.glod-active-ember-core,,False,source/css/37m388zf6rymp.pretty.css:670-673
+hex,#ff80303d,#ff8030,0.239,box-shadow,.glod-active-ember-core,,False,source/css/37m388zf6rymp.pretty.css:670-673
+hex,#4b3116,#4b3116,1.0,color,.glod-active-ember-cue,,False,source/css/37m388zf6rymp.pretty.css:676
+hex,#ffd782,#ffd782,1.0,box-shadow,".glod-active-ember:hover .glod-active-ember-core, .glod-active-ember:active .glod-active-ember-core, .glod-active-ember:focus-visible .glod-active-ember-core",,False,source/css/37m388zf6rymp.pretty.css:686-689
+hex,#ffa546b8,#ffa546,0.722,box-shadow,".glod-active-ember:hover .glod-active-ember-core, .glod-active-ember:active .glod-active-ember-core, .glod-active-ember:focus-visible .glod-active-ember-core",,False,source/css/37m388zf6rymp.pretty.css:686-689
+hex,#ff84344d,#ff8434,0.302,box-shadow,".glod-active-ember:hover .glod-active-ember-core, .glod-active-ember:active .glod-active-ember-core, .glod-active-ember:focus-visible .glod-active-ember-core",,False,source/css/37m388zf6rymp.pretty.css:686-689
+hex,#fff1bf,#fff1bf,1.0,outline,.glod-active-ember:focus-visible,,False,source/css/37m388zf6rymp.pretty.css:693
+hex,#eee1c6,#eee1c6,1.0,color,.glod-hearth-box p,,False,source/css/37m388zf6rymp.pretty.css:745
+hex,#060410d9,#060410,0.851,text-shadow,.glod-hearth-box p,,False,source/css/37m388zf6rymp.pretty.css:746-748
+hex,#060410b3,#060410,0.702,text-shadow,.glod-hearth-box p,,False,source/css/37m388zf6rymp.pretty.css:746-748
+hex,#fff6e4,#fff6e4,1.0,color,"body[data-theme=""morgon""] .glod-hearth-box p",,False,source/css/37m388zf6rymp.pretty.css:753
+hex,#2b1e4ee6,#2b1e4e,0.902,text-shadow,"body[data-theme=""morgon""] .glod-hearth-box p",,False,source/css/37m388zf6rymp.pretty.css:754-757
+hex,#2b1e4ecc,#2b1e4e,0.8,text-shadow,"body[data-theme=""morgon""] .glod-hearth-box p",,False,source/css/37m388zf6rymp.pretty.css:754-757
+hex,#2b1e4ee6,#2b1e4e,0.902,text-shadow,"body[data-theme=""morgon""] .glod-hearth-box p",,False,source/css/37m388zf6rymp.pretty.css:754-757
+hex,#04030c99,#04030c,0.6,filter,.glod-book,,False,source/css/37m388zf6rymp.pretty.css:805
+hex,#ffb45a42,#ffb45a,0.259,filter,.glod-book,,False,source/css/37m388zf6rymp.pretty.css:805
+gradient,"repeating-linear-gradient(#fffcf000 0 4px, #926e404d 4px 5px)",,,background,.glod-book-pages,,False,source/css/37m388zf6rymp.pretty.css:817-819
+gradient,"linear-gradient(90deg, #cdb689, #f2e6c8 34%, #e6d5b0 72%, #c4ab7e)",,,background,.glod-book-pages,,False,source/css/37m388zf6rymp.pretty.css:817-819
+hex,#fffcf000,#fffcf0,0.0,background,.glod-book-pages,,False,source/css/37m388zf6rymp.pretty.css:817-819
+hex,#926e404d,#926e40,0.302,background,.glod-book-pages,,False,source/css/37m388zf6rymp.pretty.css:817-819
+hex,#cdb689,#cdb689,1.0,background,.glod-book-pages,,False,source/css/37m388zf6rymp.pretty.css:817-819
+hex,#f2e6c8,#f2e6c8,1.0,background,.glod-book-pages,,False,source/css/37m388zf6rymp.pretty.css:817-819
+hex,#e6d5b0,#e6d5b0,1.0,background,.glod-book-pages,,False,source/css/37m388zf6rymp.pretty.css:817-819
+hex,#c4ab7e,#c4ab7e,1.0,background,.glod-book-pages,,False,source/css/37m388zf6rymp.pretty.css:817-819
+hex,#5a3c1e66,#5a3c1e,0.4,box-shadow,.glod-book-pages,,False,source/css/37m388zf6rymp.pretty.css:825
+gradient,"radial-gradient(150% 80% at 24% 0, #ffffff0d, #0000 55%)",,,background,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:828-832
+gradient,"repeating-linear-gradient(98deg, #fff6e608 0 2px, #0000 2px 5px)",,,background,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:828-832
+gradient,"repeating-linear-gradient(8deg, #0805160f 0 2px, #0000 2px 5px)",,,background,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:828-832
+gradient,"linear-gradient(162deg, #322459 0%, #413067 58%, #4e2f5e 100%)",,,background,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:828-832
+hex,#ffffff0d,#ffffff,0.051,background,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:828-832
+hex,#0000,#000000,0.0,background,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:828-832
+hex,#fff6e608,#fff6e6,0.031,background,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:828-832
+hex,#0000,#000000,0.0,background,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:828-832
+hex,#0805160f,#080516,0.059,background,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:828-832
+hex,#0000,#000000,0.0,background,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:828-832
+hex,#322459,#322459,1.0,background,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:828-832
+hex,#413067,#413067,1.0,background,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:828-832
+hex,#4e2f5e,#4e2f5e,1.0,background,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:828-832
+hex,#090516a6,#090516,0.651,box-shadow,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:840-846
+hex,#fff0d212,#fff0d2,0.071,box-shadow,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:840-846
+hex,#06031066,#060310,0.4,box-shadow,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:840-846
+hex,#06031059,#060310,0.349,box-shadow,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:840-846
+hex,#191140,#191140,1.0,box-shadow,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:840-846
+hex,#120c31,#120c31,1.0,box-shadow,.glod-book-cover,,False,source/css/37m388zf6rymp.pretty.css:840-846
+hex,#10092499,#100924,0.6,border,.glod-book-cover:before,,False,source/css/37m388zf6rymp.pretty.css:851
+hex,#ffecc40f,#ffecc4,0.059,box-shadow,.glod-book-cover:before,,False,source/css/37m388zf6rymp.pretty.css:855-857
+hex,#ffecc40f,#ffecc4,0.059,box-shadow,.glod-book-cover:before,,False,source/css/37m388zf6rymp.pretty.css:855-857
+gradient,"repeating-linear-gradient( #0000 0 42px, #ffebbe21 42px 44px, #08051473 44px 47px )",,,background,.glod-book-spine,,False,source/css/37m388zf6rymp.pretty.css:860-874
+gradient,"linear-gradient( 90deg, #251a45 0%, #33255c 38%, #1e1440 66%, #ffe6b429 76%, #150e30 84%, #fff0 100% )",,,background,.glod-book-spine,,False,source/css/37m388zf6rymp.pretty.css:860-874
+hex,#0000,#000000,0.0,background,.glod-book-spine,,False,source/css/37m388zf6rymp.pretty.css:860-874
+hex,#ffebbe21,#ffebbe,0.129,background,.glod-book-spine,,False,source/css/37m388zf6rymp.pretty.css:860-874
+hex,#08051473,#080514,0.451,background,.glod-book-spine,,False,source/css/37m388zf6rymp.pretty.css:860-874
+hex,#251a45,#251a45,1.0,background,.glod-book-spine,,False,source/css/37m388zf6rymp.pretty.css:860-874
+hex,#33255c,#33255c,1.0,background,.glod-book-spine,,False,source/css/37m388zf6rymp.pretty.css:860-874
+hex,#1e1440,#1e1440,1.0,background,.glod-book-spine,,False,source/css/37m388zf6rymp.pretty.css:860-874
+hex,#ffe6b429,#ffe6b4,0.161,background,.glod-book-spine,,False,source/css/37m388zf6rymp.pretty.css:860-874
+hex,#150e30,#150e30,1.0,background,.glod-book-spine,,False,source/css/37m388zf6rymp.pretty.css:860-874
+hex,#fff0,#ffffff,0.0,background,.glod-book-spine,,False,source/css/37m388zf6rymp.pretty.css:860-874
+gradient,"radial-gradient( 125% 90% at 50% 120%, #ff963c66, #ff8c3721 46%, #0000 70% )",,,background,.glod-book-fire,,False,source/css/37m388zf6rymp.pretty.css:885-890
+hex,#ff963c66,#ff963c,0.4,background,.glod-book-fire,,False,source/css/37m388zf6rymp.pretty.css:885-890
+hex,#ff8c3721,#ff8c37,0.129,background,.glod-book-fire,,False,source/css/37m388zf6rymp.pretty.css:885-890
+hex,#0000,#000000,0.0,background,.glod-book-fire,,False,source/css/37m388zf6rymp.pretty.css:885-890
+hex,#05030e80,#05030e,0.502,filter,.glod-book-art,,False,source/css/37m388zf6rymp.pretty.css:895
+gradient,"linear-gradient(90deg, #0000, #f5c5428c 22% 78%, #0000)",,,background,.glod-book-rule,,False,source/css/37m388zf6rymp.pretty.css:903
+hex,#0000,#000000,0.0,background,.glod-book-rule,,False,source/css/37m388zf6rymp.pretty.css:903
+hex,#f5c5428c,#f5c542,0.549,background,.glod-book-rule,,False,source/css/37m388zf6rymp.pretty.css:903
+hex,#0000,#000000,0.0,background,.glod-book-rule,,False,source/css/37m388zf6rymp.pretty.css:903
+hex,#f2b22e,#f2b22e,1.0,background,.glod-book-rule:after,,False,source/css/37m388zf6rymp.pretty.css:912
+hex,#f5c54299,#f5c542,0.6,box-shadow,.glod-book-rule:after,,False,source/css/37m388zf6rymp.pretty.css:919
+hex,#f7e7c3,#f7e7c3,1.0,color,.glod-book-title,,False,source/css/37m388zf6rymp.pretty.css:924
+hex,#06031099,#060310,0.6,text-shadow,.glod-book-title,,False,source/css/37m388zf6rymp.pretty.css:926-928
+hex,#06031066,#060310,0.4,text-shadow,.glod-book-title,,False,source/css/37m388zf6rymp.pretty.css:926-928
+hex,#f7e7c38c,#f7e7c3,0.549,color,.glod-book-colophon,,False,source/css/37m388zf6rymp.pretty.css:940
+hex,#06031080,#060310,0.502,text-shadow,.glod-book-colophon,,False,source/css/37m388zf6rymp.pretty.css:941
+hex,#fff7e9,#fff7e9,1.0,color,.glod-caption-line,,False,source/css/37m388zf6rymp.pretty.css:973
+hex,#060410cc,#060410,0.8,text-shadow,.glod-caption-line,,False,source/css/37m388zf6rymp.pretty.css:974
+hex,#2f2350,#2f2350,1.0,color,"body[data-theme=""morgon""] .glod-caption-line",,False,source/css/37m388zf6rymp.pretty.css:979
+hex,#fff8ebb3,#fff8eb,0.702,text-shadow,"body[data-theme=""morgon""] .glod-caption-line",,False,source/css/37m388zf6rymp.pretty.css:980
+hex,#fbeed2,#fbeed2,1.0,color,.glod-open,,False,source/css/37m388zf6rymp.pretty.css:986
+hex,#00000080,#000000,0.502,text-shadow,.glod-open,,False,source/css/37m388zf6rymp.pretty.css:987
+gradient,"linear-gradient(178deg, #6a4a2f, #4a3120 58%, #38240f)",,,background,.glod-open,,False,source/css/37m388zf6rymp.pretty.css:988
+hex,#6a4a2f,#6a4a2f,1.0,background,.glod-open,,False,source/css/37m388zf6rymp.pretty.css:988
+hex,#4a3120,#4a3120,1.0,background,.glod-open,,False,source/css/37m388zf6rymp.pretty.css:988
+hex,#38240f,#38240f,1.0,background,.glod-open,,False,source/css/37m388zf6rymp.pretty.css:988
+hex,#241505,#241505,1.0,border,.glod-open,,False,source/css/37m388zf6rymp.pretty.css:989
+hex,#04030c8c,#04030c,0.549,box-shadow,.glod-open,,False,source/css/37m388zf6rymp.pretty.css:1004-1008
+hex,#ffaa4629,#ffaa46,0.161,box-shadow,.glod-open,,False,source/css/37m388zf6rymp.pretty.css:1004-1008
+hex,#ffd8a04d,#ffd8a0,0.302,box-shadow,.glod-open,,False,source/css/37m388zf6rymp.pretty.css:1004-1008
+hex,#0006,#000000,0.4,box-shadow,.glod-open,,False,source/css/37m388zf6rymp.pretty.css:1004-1008
+gradient,"radial-gradient( circle at 13px, #e8d5ace6 0 1.4px, #6b5335e6 2.2px, #2c1e12d9 3px, #0000 4.2px )",,,background,.glod-open:before,,False,source/css/37m388zf6rymp.pretty.css:1015-1036
+gradient,"radial-gradient( circle at calc(100% - 13px), #e8d5ace6 0 1.4px, #6b5335e6 2.2px, #2c1e12d9 3px, #0000 4.2px )",,,background,.glod-open:before,,False,source/css/37m388zf6rymp.pretty.css:1015-1036
+gradient,"repeating-linear-gradient( 92deg, #0000001f 0 2px, #0000 2px 8px, #00000012 8px 9px, #0000 9px 19px )",,,background,.glod-open:before,,False,source/css/37m388zf6rymp.pretty.css:1015-1036
+hex,#e8d5ace6,#e8d5ac,0.902,background,.glod-open:before,,False,source/css/37m388zf6rymp.pretty.css:1015-1036
+hex,#6b5335e6,#6b5335,0.902,background,.glod-open:before,,False,source/css/37m388zf6rymp.pretty.css:1015-1036
+hex,#2c1e12d9,#2c1e12,0.851,background,.glod-open:before,,False,source/css/37m388zf6rymp.pretty.css:1015-1036
+hex,#0000,#000000,0.0,background,.glod-open:before,,False,source/css/37m388zf6rymp.pretty.css:1015-1036
+hex,#e8d5ace6,#e8d5ac,0.902,background,.glod-open:before,,False,source/css/37m388zf6rymp.pretty.css:1015-1036
+hex,#6b5335e6,#6b5335,0.902,background,.glod-open:before,,False,source/css/37m388zf6rymp.pretty.css:1015-1036
+hex,#2c1e12d9,#2c1e12,0.851,background,.glod-open:before,,False,source/css/37m388zf6rymp.pretty.css:1015-1036
+hex,#0000,#000000,0.0,background,.glod-open:before,,False,source/css/37m388zf6rymp.pretty.css:1015-1036
+hex,#0000001f,#000000,0.122,background,.glod-open:before,,False,source/css/37m388zf6rymp.pretty.css:1015-1036
+hex,#0000,#000000,0.0,background,.glod-open:before,,False,source/css/37m388zf6rymp.pretty.css:1015-1036
+hex,#00000012,#000000,0.071,background,.glod-open:before,,False,source/css/37m388zf6rymp.pretty.css:1015-1036
+hex,#0000,#000000,0.0,background,.glod-open:before,,False,source/css/37m388zf6rymp.pretty.css:1015-1036
+hex,#3a2408,#3a2408,1.0,border-color,.glod-open:hover,,False,source/css/37m388zf6rymp.pretty.css:1041
+hex,#04030c99,#04030c,0.6,box-shadow,.glod-open:hover,,False,source/css/37m388zf6rymp.pretty.css:1043-1047
+hex,#ffb45047,#ffb450,0.278,box-shadow,.glod-open:hover,,False,source/css/37m388zf6rymp.pretty.css:1043-1047
+hex,#ffd8a059,#ffd8a0,0.349,box-shadow,.glod-open:hover,,False,source/css/37m388zf6rymp.pretty.css:1043-1047
+hex,#0006,#000000,0.4,box-shadow,.glod-open:hover,,False,source/css/37m388zf6rymp.pretty.css:1043-1047
+gradient,"linear-gradient(160deg, var(--pill-bg), var(--gold-chip-bg))",,,background,.start-flow .pframe,,False,source/css/2_gt301v4m-60.pretty.css:222
+hex,#0a07204d,#0a0720,0.302,box-shadow,.start-flow .pframe,,False,source/css/2_gt301v4m-60.pretty.css:229
+hex,#fff7e9,#fff7e9,1.0,color,.start-flow .pframe .veil,,False,source/css/2_gt301v4m-60.pretty.css:241
+gradient,"linear-gradient(160deg, #9b87f58c, #f2b22e66)",,,background,.start-flow .pframe .veil,,False,source/css/2_gt301v4m-60.pretty.css:242
+hex,#9b87f58c,#9b87f5,0.549,background,.start-flow .pframe .veil,,False,source/css/2_gt301v4m-60.pretty.css:242
+hex,#f2b22e66,#f2b22e,0.4,background,.start-flow .pframe .veil,,False,source/css/2_gt301v4m-60.pretty.css:242
+hex,#1a1430,#1a1430,1.0,background,.start-flow .easel,,False,source/css/2_gt301v4m-60.pretty.css:290
+hex,#0508148c,#050814,0.549,box-shadow,.start-flow .easel,,False,source/css/2_gt301v4m-60.pretty.css:295-297
+hex,#f5c54224,#f5c542,0.141,box-shadow,.start-flow .easel,,False,source/css/2_gt301v4m-60.pretty.css:295-297
+gradient,"linear-gradient(115deg, #0000 42%, #ffe08a80 50%, #0000 58%)",,,background,.start-flow .easel .sheen,,False,source/css/2_gt301v4m-60.pretty.css:313
+hex,#0000,#000000,0.0,background,.start-flow .easel .sheen,,False,source/css/2_gt301v4m-60.pretty.css:313
+hex,#ffe08a80,#ffe08a,0.502,background,.start-flow .easel .sheen,,False,source/css/2_gt301v4m-60.pretty.css:313
+hex,#0000,#000000,0.0,background,.start-flow .easel .sheen,,False,source/css/2_gt301v4m-60.pretty.css:313
+gradient,"radial-gradient(circle, #ffe08a, #f2b22e 60%, #0000)",,,background,.start-flow .ember,,False,source/css/2_gt301v4m-60.pretty.css:342
+hex,#ffe08a,#ffe08a,1.0,background,.start-flow .ember,,False,source/css/2_gt301v4m-60.pretty.css:342
+hex,#f2b22e,#f2b22e,1.0,background,.start-flow .ember,,False,source/css/2_gt301v4m-60.pretty.css:342
+hex,#0000,#000000,0.0,background,.start-flow .ember,,False,source/css/2_gt301v4m-60.pretty.css:342
+gradient,"radial-gradient( circle at 50% 60%, #f5c54266, #9b87f52e 46%, #0000 72% )",,,background,.start-flow .easel .veil-glow,,False,source/css/2_gt301v4m-60.pretty.css:368-373
+hex,#f5c54266,#f5c542,0.4,background,.start-flow .easel .veil-glow,,False,source/css/2_gt301v4m-60.pretty.css:368-373
+hex,#9b87f52e,#9b87f5,0.18,background,.start-flow .easel .veil-glow,,False,source/css/2_gt301v4m-60.pretty.css:368-373
+hex,#0000,#000000,0.0,background,.start-flow .easel .veil-glow,,False,source/css/2_gt301v4m-60.pretty.css:368-373
+gradient,"radial-gradient(circle, #ffe08a, #f2b22e 60%, #0000)",,,background,.start-flow .veil-speck,,False,source/css/2_gt301v4m-60.pretty.css:403
+hex,#ffe08a,#ffe08a,1.0,background,.start-flow .veil-speck,,False,source/css/2_gt301v4m-60.pretty.css:403
+hex,#f2b22e,#f2b22e,1.0,background,.start-flow .veil-speck,,False,source/css/2_gt301v4m-60.pretty.css:403
+hex,#0000,#000000,0.0,background,.start-flow .veil-speck,,False,source/css/2_gt301v4m-60.pretty.css:403
+hex,#f5c54200,#f5c542,0.0,box-shadow,0%,@keyframes tfUnveilPop,False,source/css/2_gt301v4m-60.pretty.css:516
+hex,#f5c5428c,#f5c542,0.549,box-shadow,45%,@keyframes tfUnveilPop,False,source/css/2_gt301v4m-60.pretty.css:520
+hex,#f5c54200,#f5c542,0.0,box-shadow,to,@keyframes tfUnveilPop,False,source/css/2_gt301v4m-60.pretty.css:524
+hex,#0a081980,#0a0819,0.502,background,.start-flow .sheetwrap,,False,source/css/2_gt301v4m-60.pretty.css:754

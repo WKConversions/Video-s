@@ -1,0 +1,1982 @@
+source,line,at_rule,selector,property,value
+source/css/3q17cp_jgfwol.pretty.css,474,,.skip-link,z-index,1000
+source/css/3q17cp_jgfwol.pretty.css,478,,.skip-link,border-radius,6px
+source/css/3q17cp_jgfwol.pretty.css,479,,.skip-link,padding,10px 14px
+source/css/3q17cp_jgfwol.pretty.css,481,,.skip-link,position,fixed
+source/css/3q17cp_jgfwol.pretty.css,482,,.skip-link,top,10px
+source/css/3q17cp_jgfwol.pretty.css,483,,.skip-link,left,10px
+source/css/3q17cp_jgfwol.pretty.css,484,,.skip-link,transform,translateY(-160%)
+source/css/3q17cp_jgfwol.pretty.css,491,,.skip-link:focus,transform,translateY(0)
+source/css/3q17cp_jgfwol.pretty.css,592,,*,box-sizing,border-box
+source/css/3q17cp_jgfwol.pretty.css,593,,*,margin,0
+source/css/3q17cp_jgfwol.pretty.css,607,,body,overflow-x,hidden
+source/css/3q17cp_jgfwol.pretty.css,613,,.bg,z-index,0
+source/css/3q17cp_jgfwol.pretty.css,615,,.bg,height,100lvh
+source/css/3q17cp_jgfwol.pretty.css,618,,.bg,position,fixed
+source/css/3q17cp_jgfwol.pretty.css,619,,.bg,top,0
+source/css/3q17cp_jgfwol.pretty.css,620,,.bg,left,0
+source/css/3q17cp_jgfwol.pretty.css,621,,.bg,right,0
+source/css/3q17cp_jgfwol.pretty.css,624,,.bg-night img,object-fit,cover
+source/css/3q17cp_jgfwol.pretty.css,625,,.bg-night img,object-position,center 30%
+source/css/3q17cp_jgfwol.pretty.css,626,,.bg-night img,width,100%
+source/css/3q17cp_jgfwol.pretty.css,627,,.bg-night img,height,100%
+source/css/3q17cp_jgfwol.pretty.css,628,,.bg-night img,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,629,,.bg-night img,inset,0
+source/css/3q17cp_jgfwol.pretty.css,633,,.bg-night .scrim,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,634,,.bg-night .scrim,inset,0
+source/css/3q17cp_jgfwol.pretty.css,645,,.starfield,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,646,,.starfield,inset,0
+source/css/3q17cp_jgfwol.pretty.css,659,,".bg-day picture, .bg-day img",width,100%
+source/css/3q17cp_jgfwol.pretty.css,660,,".bg-day picture, .bg-day img",height,100%
+source/css/3q17cp_jgfwol.pretty.css,661,,".bg-day picture, .bg-day img",position,absolute
+source/css/3q17cp_jgfwol.pretty.css,662,,".bg-day picture, .bg-day img",inset,0
+source/css/3q17cp_jgfwol.pretty.css,665,,.bg-day img,object-fit,cover
+source/css/3q17cp_jgfwol.pretty.css,678,,.wrap,z-index,1
+source/css/3q17cp_jgfwol.pretty.css,679,,.wrap,position,relative
+source/css/3q17cp_jgfwol.pretty.css,682,,.shell,flex-direction,column
+source/css/3q17cp_jgfwol.pretty.css,683,,.shell,width,"min(1120px, 100%)"
+source/css/3q17cp_jgfwol.pretty.css,684,,.shell,min-height,100dvh
+source/css/3q17cp_jgfwol.pretty.css,685,,.shell,margin,0 auto
+source/css/3q17cp_jgfwol.pretty.css,686,,.shell,padding,0 28px
+source/css/3q17cp_jgfwol.pretty.css,687,,.shell,display,flex
+source/css/3q17cp_jgfwol.pretty.css,690,,.shell > nav,justify-content,space-between
+source/css/3q17cp_jgfwol.pretty.css,691,,.shell > nav,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,692,,.shell > nav,gap,14px
+source/css/3q17cp_jgfwol.pretty.css,693,,.shell > nav,padding,22px 0
+source/css/3q17cp_jgfwol.pretty.css,694,,.shell > nav,display,flex
+source/css/3q17cp_jgfwol.pretty.css,703,,.logo,flex-shrink,0
+source/css/3q17cp_jgfwol.pretty.css,704,,.logo,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,705,,.logo,gap,13px
+source/css/3q17cp_jgfwol.pretty.css,709,,.logo,display,flex
+source/css/3q17cp_jgfwol.pretty.css,712,,.logo img,object-fit,contain
+source/css/3q17cp_jgfwol.pretty.css,713,,.logo img,filter,drop-shadow(0 0 14px #f5c54280)
+source/css/3q17cp_jgfwol.pretty.css,714,,.logo img,width,42px
+source/css/3q17cp_jgfwol.pretty.css,715,,.logo img,height,42px
+source/css/3q17cp_jgfwol.pretty.css,718,,.nav-right,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,719,,.nav-right,gap,12px
+source/css/3q17cp_jgfwol.pretty.css,720,,.nav-right,display,flex
+source/css/3q17cp_jgfwol.pretty.css,723,,"body:has([data-testid=""fair-story-page""]) .nav-right",display,none
+source/css/3q17cp_jgfwol.pretty.css,729,,":is( body:has([data-testid=""curated-stories-gallery""]) .nav-right, body:has([data-testid=""curated-story-reader""]) .nav-right )",display,none
+source/css/3q17cp_jgfwol.pretty.css,737,,.nav-cta,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,738,,.nav-cta,padding,11px 20px
+source/css/3q17cp_jgfwol.pretty.css,749,@media (max-width: 560px),.logo,gap,8px
+source/css/3q17cp_jgfwol.pretty.css,753,@media (max-width: 560px),.logo img,width,28px
+source/css/3q17cp_jgfwol.pretty.css,754,@media (max-width: 560px),.logo img,height,28px
+source/css/3q17cp_jgfwol.pretty.css,757,@media (max-width: 560px),.shell > nav,gap,8px
+source/css/3q17cp_jgfwol.pretty.css,758,@media (max-width: 560px),.shell > nav,padding,14px 0
+source/css/3q17cp_jgfwol.pretty.css,761,@media (max-width: 560px),.nav-right,gap,8px
+source/css/3q17cp_jgfwol.pretty.css,764,@media (max-width: 560px),.nav-cta,padding,9px 14px
+source/css/3q17cp_jgfwol.pretty.css,771,,.tt,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css,779,,.tt,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,780,,.tt,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,781,,.tt,padding,4px
+source/css/3q17cp_jgfwol.pretty.css,782,,.tt,display,flex
+source/css/3q17cp_jgfwol.pretty.css,783,,.tt,position,relative
+source/css/3q17cp_jgfwol.pretty.css,787,,.tt-thumb,width,calc(50% - 4px)
+source/css/3q17cp_jgfwol.pretty.css,788,,.tt-thumb,box-shadow,var(--btn-shadow)
+source/css/3q17cp_jgfwol.pretty.css,792,,.tt-thumb,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,793,,.tt-thumb,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,794,,.tt-thumb,top,4px
+source/css/3q17cp_jgfwol.pretty.css,795,,.tt-thumb,bottom,4px
+source/css/3q17cp_jgfwol.pretty.css,796,,.tt-thumb,left,4px
+source/css/3q17cp_jgfwol.pretty.css,799,,"body[data-theme=""morgon""] .tt-thumb",transform,translate(100%)
+source/css/3q17cp_jgfwol.pretty.css,802,,.tt-opt,z-index,1
+source/css/3q17cp_jgfwol.pretty.css,806,,.tt-opt,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,807,,.tt-opt,gap,7px
+source/css/3q17cp_jgfwol.pretty.css,808,,.tt-opt,padding,8px 14px
+source/css/3q17cp_jgfwol.pretty.css,811,,.tt-opt,display,inline-flex
+source/css/3q17cp_jgfwol.pretty.css,812,,.tt-opt,position,relative
+source/css/3q17cp_jgfwol.pretty.css,815,,.tt-opt svg,width,15px
+source/css/3q17cp_jgfwol.pretty.css,816,,.tt-opt svg,height,15px
+source/css/3q17cp_jgfwol.pretty.css,825,,.tt:focus-visible,box-shadow,"0 0 0 6px color-mix(in srgb, var(--card) 88%, transparent)"
+source/css/3q17cp_jgfwol.pretty.css,828,,.hero,grid-template-columns,1.05fr 0.95fr
+source/css/3q17cp_jgfwol.pretty.css,829,,.hero,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,830,,.hero,gap,40px
+source/css/3q17cp_jgfwol.pretty.css,831,,.hero,min-height,64vh
+source/css/3q17cp_jgfwol.pretty.css,832,,.hero,padding,4vh 0 2vh
+source/css/3q17cp_jgfwol.pretty.css,833,,.hero,display,grid
+source/css/3q17cp_jgfwol.pretty.css,839,,.kicker,-webkit-backdrop-filter,blur(10px)
+source/css/3q17cp_jgfwol.pretty.css,840,,.kicker,backdrop-filter,blur(10px)
+source/css/3q17cp_jgfwol.pretty.css,841,,.kicker,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,842,,.kicker,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,843,,.kicker,gap,8px
+source/css/3q17cp_jgfwol.pretty.css,844,,.kicker,margin-bottom,22px
+source/css/3q17cp_jgfwol.pretty.css,845,,.kicker,padding,8px 16px
+source/css/3q17cp_jgfwol.pretty.css,849,,.kicker,display,inline-flex
+source/css/3q17cp_jgfwol.pretty.css,852,,.kicker svg,width,14px
+source/css/3q17cp_jgfwol.pretty.css,853,,.kicker svg,height,14px
+source/css/3q17cp_jgfwol.pretty.css,861,,h1,margin-bottom,18px
+source/css/3q17cp_jgfwol.pretty.css,874,,.lede,max-width,46ch
+source/css/3q17cp_jgfwol.pretty.css,875,,.lede,margin-bottom,30px
+source/css/3q17cp_jgfwol.pretty.css,881,,.cta-row,flex-wrap,wrap
+source/css/3q17cp_jgfwol.pretty.css,882,,.cta-row,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,883,,.cta-row,gap,14px
+source/css/3q17cp_jgfwol.pretty.css,884,,.cta-row,display,flex
+source/css/3q17cp_jgfwol.pretty.css,890,,.btn,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,891,,.btn,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,892,,.btn,gap,10px
+source/css/3q17cp_jgfwol.pretty.css,893,,.btn,min-height,52px
+source/css/3q17cp_jgfwol.pretty.css,894,,.btn,padding,17px 30px
+source/css/3q17cp_jgfwol.pretty.css,902,,.btn,display,inline-flex
+source/css/3q17cp_jgfwol.pretty.css,905,,.btn:active,transform,scale(0.96)
+source/css/3q17cp_jgfwol.pretty.css,910,,.btn-primary,box-shadow,"var(--btn-shadow), inset 0 1px 0 #ffffff73"
+source/css/3q17cp_jgfwol.pretty.css,915,,.btn-primary:hover,box-shadow,var(--btn-shadow-hover)
+source/css/3q17cp_jgfwol.pretty.css,916,,.btn-primary:hover,transform,translateY(-3px)
+source/css/3q17cp_jgfwol.pretty.css,922,,.btn-ghost,-webkit-backdrop-filter,blur(14px)
+source/css/3q17cp_jgfwol.pretty.css,923,,.btn-ghost,backdrop-filter,blur(14px)
+source/css/3q17cp_jgfwol.pretty.css,926,,.fan,height,"min(58vh, 540px)"
+source/css/3q17cp_jgfwol.pretty.css,927,,.fan,position,relative
+source/css/3q17cp_jgfwol.pretty.css,931,,.fan .fbook,border-radius,20px
+source/css/3q17cp_jgfwol.pretty.css,932,,.fan .fbook,width,"min(46%, 240px)"
+source/css/3q17cp_jgfwol.pretty.css,936,,.fan .fbook,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,937,,.fan .fbook,overflow,hidden
+source/css/3q17cp_jgfwol.pretty.css,938,,.fan .fbook,box-shadow,"0 24px 50px #0a072066, 0 0 44px #f5c5421f"
+source/css/3q17cp_jgfwol.pretty.css,943,,.fan .fbook img,aspect-ratio,2/3
+source/css/3q17cp_jgfwol.pretty.css,944,,.fan .fbook img,object-fit,cover
+source/css/3q17cp_jgfwol.pretty.css,945,,.fan .fbook img,width,100%
+source/css/3q17cp_jgfwol.pretty.css,946,,.fan .fbook img,display,block
+source/css/3q17cp_jgfwol.pretty.css,949,,.fb1,z-index,1
+source/css/3q17cp_jgfwol.pretty.css,951,,.fb1,top,10%
+source/css/3q17cp_jgfwol.pretty.css,952,,.fb1,left,6%
+source/css/3q17cp_jgfwol.pretty.css,953,,.fb1,transform,rotate(-8deg)
+source/css/3q17cp_jgfwol.pretty.css,956,,.fb2,z-index,2
+source/css/3q17cp_jgfwol.pretty.css,958,,.fb2,top,2%
+source/css/3q17cp_jgfwol.pretty.css,959,,.fb2,right,8%
+source/css/3q17cp_jgfwol.pretty.css,960,,.fb2,transform,rotate(7deg)
+source/css/3q17cp_jgfwol.pretty.css,965,@keyframes float1,"0%, to",transform,rotate(-8deg) translateY(0)
+source/css/3q17cp_jgfwol.pretty.css,968,@keyframes float1,50%,transform,rotate(-8.6deg) translateY(-12px)
+source/css/3q17cp_jgfwol.pretty.css,974,@keyframes float2,"0%, to",transform,rotate(7deg) translateY(0)
+source/css/3q17cp_jgfwol.pretty.css,977,@keyframes float2,50%,transform,rotate(7.6deg) translateY(-16px)
+source/css/3q17cp_jgfwol.pretty.css,981,,.fan .badge,z-index,3
+source/css/3q17cp_jgfwol.pretty.css,983,,.fan .badge,-webkit-backdrop-filter,blur(var(--card-blur))
+source/css/3q17cp_jgfwol.pretty.css,984,,.fan .badge,backdrop-filter,blur(var(--card-blur))
+source/css/3q17cp_jgfwol.pretty.css,987,,.fan .badge,box-shadow,var(--card-shadow)
+source/css/3q17cp_jgfwol.pretty.css,988,,.fan .badge,border-radius,18px
+source/css/3q17cp_jgfwol.pretty.css,989,,.fan .badge,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,990,,.fan .badge,gap,12px
+source/css/3q17cp_jgfwol.pretty.css,991,,.fan .badge,padding,14px 18px
+source/css/3q17cp_jgfwol.pretty.css,996,,.fan .badge,display,flex
+source/css/3q17cp_jgfwol.pretty.css,997,,.fan .badge,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,998,,.fan .badge,bottom,23%
+source/css/3q17cp_jgfwol.pretty.css,999,,.fan .badge,right,9%
+source/css/3q17cp_jgfwol.pretty.css,1004,@keyframes floatBadge,"0%, to",transform,rotate(2.5deg) translateY(0)
+source/css/3q17cp_jgfwol.pretty.css,1007,@keyframes floatBadge,50%,transform,rotate(3deg) translateY(-7px)
+source/css/3q17cp_jgfwol.pretty.css,1012,,.badge .dotpulse,border-radius,50%
+source/css/3q17cp_jgfwol.pretty.css,1013,,.badge .dotpulse,flex,none
+source/css/3q17cp_jgfwol.pretty.css,1014,,.badge .dotpulse,width,10px
+source/css/3q17cp_jgfwol.pretty.css,1015,,.badge .dotpulse,height,10px
+source/css/3q17cp_jgfwol.pretty.css,1017,,.badge .dotpulse,box-shadow,0 0 #f2b22e80
+source/css/3q17cp_jgfwol.pretty.css,1021,@keyframes pulse,0%,box-shadow,0 0 #f2b22e73
+source/css/3q17cp_jgfwol.pretty.css,1024,@keyframes pulse,70%,box-shadow,0 0 0 12px #f2b22e00
+source/css/3q17cp_jgfwol.pretty.css,1027,@keyframes pulse,to,box-shadow,0 0 #f2b22e00
+source/css/3q17cp_jgfwol.pretty.css,1036,,.badge span,display,block
+source/css/3q17cp_jgfwol.pretty.css,1039,,section,padding,44px 0 8px
+source/css/3q17cp_jgfwol.pretty.css,1042,,.sec-head,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,1043,,.sec-head,gap,14px
+source/css/3q17cp_jgfwol.pretty.css,1044,,.sec-head,margin-bottom,22px
+source/css/3q17cp_jgfwol.pretty.css,1045,,.sec-head,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1050,,.sec-intro,max-width,62ch
+source/css/3q17cp_jgfwol.pretty.css,1051,,.sec-intro,margin,-10px 0 22px
+source/css/3q17cp_jgfwol.pretty.css,1068,,".create-title, .page-title",margin,0
+source/css/3q17cp_jgfwol.pretty.css,1075,,.legal-language-details,margin-top,32px
+source/css/3q17cp_jgfwol.pretty.css,1076,,.legal-language-details,padding-top,18px
+source/css/3q17cp_jgfwol.pretty.css,1079,,.legal-language-details > summary,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css,1083,,.legal-language-details > summary,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,1085,,.legal-language-details > summary,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1091,,.sec-chip,-webkit-backdrop-filter,blur(10px)
+source/css/3q17cp_jgfwol.pretty.css,1092,,.sec-chip,backdrop-filter,blur(10px)
+source/css/3q17cp_jgfwol.pretty.css,1093,,.sec-chip,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,1094,,.sec-chip,padding,6px 12px
+source/css/3q17cp_jgfwol.pretty.css,1104,,.reveal,transform,translateY(26px)
+source/css/3q17cp_jgfwol.pretty.css,1108,,.reveal.in,transform,none
+source/css/3q17cp_jgfwol.pretty.css,1112,,.glass,-webkit-backdrop-filter,blur(var(--card-blur))
+source/css/3q17cp_jgfwol.pretty.css,1113,,.glass,backdrop-filter,blur(var(--card-blur))
+source/css/3q17cp_jgfwol.pretty.css,1115,,.glass,box-shadow,var(--card-shadow)
+source/css/3q17cp_jgfwol.pretty.css,1117,,.glass,border-radius,26px
+source/css/3q17cp_jgfwol.pretty.css,1123,,.glass,position,relative
+source/css/3q17cp_jgfwol.pretty.css,1131,,.glass:before,border-radius,26px
+source/css/3q17cp_jgfwol.pretty.css,1132,,.glass:before,padding,1px
+source/css/3q17cp_jgfwol.pretty.css,1133,,.glass:before,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,1134,,.glass:before,inset,0
+source/css/3q17cp_jgfwol.pretty.css,1149,,.builder-grid,grid-template-columns,1.25fr 0.95fr
+source/css/3q17cp_jgfwol.pretty.css,1150,,.builder-grid,gap,18px
+source/css/3q17cp_jgfwol.pretty.css,1151,,.builder-grid,display,grid
+source/css/3q17cp_jgfwol.pretty.css,1154,,.builder-grid--summary,grid-template-columns,"minmax(0, 1fr)"
+source/css/3q17cp_jgfwol.pretty.css,1157,,.builder,align-items,flex-start
+source/css/3q17cp_jgfwol.pretty.css,1158,,.builder,gap,24px
+source/css/3q17cp_jgfwol.pretty.css,1159,,.builder,padding,26px
+source/css/3q17cp_jgfwol.pretty.css,1160,,.builder,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1163,,.builder-pic,flex,none
+source/css/3q17cp_jgfwol.pretty.css,1164,,.builder-pic,width,158px
+source/css/3q17cp_jgfwol.pretty.css,1165,,.builder-pic,position,relative
+source/css/3q17cp_jgfwol.pretty.css,1169,,.builder-pic .pframe,border-radius,30px
+source/css/3q17cp_jgfwol.pretty.css,1170,,.builder-pic .pframe,width,158px
+source/css/3q17cp_jgfwol.pretty.css,1171,,.builder-pic .pframe,height,158px
+source/css/3q17cp_jgfwol.pretty.css,1173,,.builder-pic .pframe,position,relative
+source/css/3q17cp_jgfwol.pretty.css,1174,,.builder-pic .pframe,overflow,hidden
+source/css/3q17cp_jgfwol.pretty.css,1175,,.builder-pic .pframe,box-shadow,0 16px 36px #0a07204d
+source/css/3q17cp_jgfwol.pretty.css,1178,,.builder-pic .pframe img,object-fit,cover
+source/css/3q17cp_jgfwol.pretty.css,1179,,.builder-pic .pframe img,object-position,47% 18%
+source/css/3q17cp_jgfwol.pretty.css,1180,,.builder-pic .pframe img,width,100%
+source/css/3q17cp_jgfwol.pretty.css,1181,,.builder-pic .pframe img,height,100%
+source/css/3q17cp_jgfwol.pretty.css,1182,,.builder-pic .pframe img,display,block
+source/css/3q17cp_jgfwol.pretty.css,1183,,.builder-pic .pframe img,transform,scale(1.7)
+source/css/3q17cp_jgfwol.pretty.css,1188,,.builder-pic .fab,width,42px
+source/css/3q17cp_jgfwol.pretty.css,1189,,.builder-pic .fab,height,42px
+source/css/3q17cp_jgfwol.pretty.css,1191,,.builder-pic .fab,box-shadow,var(--btn-shadow)
+source/css/3q17cp_jgfwol.pretty.css,1193,,.builder-pic .fab,border-radius,50%
+source/css/3q17cp_jgfwol.pretty.css,1194,,.builder-pic .fab,place-items,center
+source/css/3q17cp_jgfwol.pretty.css,1198,,.builder-pic .fab,display,grid
+source/css/3q17cp_jgfwol.pretty.css,1199,,.builder-pic .fab,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,1200,,.builder-pic .fab,bottom,-8px
+source/css/3q17cp_jgfwol.pretty.css,1201,,.builder-pic .fab,right,-8px
+source/css/3q17cp_jgfwol.pretty.css,1204,,.builder-pic .fab:hover,transform,scale(1.1)
+source/css/3q17cp_jgfwol.pretty.css,1207,,.builder-pic .fab svg,width,18px
+source/css/3q17cp_jgfwol.pretty.css,1208,,.builder-pic .fab svg,height,18px
+source/css/3q17cp_jgfwol.pretty.css,1213,,.builder-name,margin-bottom,12px
+source/css/3q17cp_jgfwol.pretty.css,1218,,.trait-row,flex-wrap,wrap
+source/css/3q17cp_jgfwol.pretty.css,1219,,.trait-row,gap,9px
+source/css/3q17cp_jgfwol.pretty.css,1220,,.trait-row,margin-bottom,18px
+source/css/3q17cp_jgfwol.pretty.css,1221,,.trait-row,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1229,,.trait,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,1230,,.trait,justify-content,center
+source/css/3q17cp_jgfwol.pretty.css,1231,,.trait,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,1232,,.trait,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css,1233,,.trait,padding,8px 15px
+source/css/3q17cp_jgfwol.pretty.css,1237,,.trait,display,inline-flex
+source/css/3q17cp_jgfwol.pretty.css,1250,,.upload,border-radius,18px
+source/css/3q17cp_jgfwol.pretty.css,1251,,.upload,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,1252,,.upload,gap,14px
+source/css/3q17cp_jgfwol.pretty.css,1253,,.upload,padding,14px 16px
+source/css/3q17cp_jgfwol.pretty.css,1255,,.upload,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1263,,.upload .cam,width,46px
+source/css/3q17cp_jgfwol.pretty.css,1264,,.upload .cam,height,46px
+source/css/3q17cp_jgfwol.pretty.css,1266,,.upload .cam,border-radius,14px
+source/css/3q17cp_jgfwol.pretty.css,1267,,.upload .cam,flex,none
+source/css/3q17cp_jgfwol.pretty.css,1268,,.upload .cam,place-items,center
+source/css/3q17cp_jgfwol.pretty.css,1269,,.upload .cam,display,grid
+source/css/3q17cp_jgfwol.pretty.css,1272,,.upload .cam svg,width,22px
+source/css/3q17cp_jgfwol.pretty.css,1273,,.upload .cam svg,height,22px
+source/css/3q17cp_jgfwol.pretty.css,1277,,.upload b,display,block
+source/css/3q17cp_jgfwol.pretty.css,1285,,.friends,flex-direction,column
+source/css/3q17cp_jgfwol.pretty.css,1286,,.friends,gap,14px
+source/css/3q17cp_jgfwol.pretty.css,1287,,.friends,padding,26px
+source/css/3q17cp_jgfwol.pretty.css,1288,,.friends,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1297,,.friend,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,1298,,.friend,gap,14px
+source/css/3q17cp_jgfwol.pretty.css,1299,,.friend,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1303,,.friend .avatar,border-radius,18px
+source/css/3q17cp_jgfwol.pretty.css,1304,,.friend .avatar,flex,none
+source/css/3q17cp_jgfwol.pretty.css,1305,,.friend .avatar,width,58px
+source/css/3q17cp_jgfwol.pretty.css,1306,,.friend .avatar,height,58px
+source/css/3q17cp_jgfwol.pretty.css,1308,,.friend .avatar,overflow,hidden
+source/css/3q17cp_jgfwol.pretty.css,1309,,.friend .avatar,box-shadow,0 10px 22px #0a072040
+source/css/3q17cp_jgfwol.pretty.css,1312,,.friend .avatar img,object-fit,cover
+source/css/3q17cp_jgfwol.pretty.css,1313,,.friend .avatar img,width,100%
+source/css/3q17cp_jgfwol.pretty.css,1314,,.friend .avatar img,height,100%
+source/css/3q17cp_jgfwol.pretty.css,1315,,.friend .avatar img,display,block
+source/css/3q17cp_jgfwol.pretty.css,1323,,.friend span,display,block
+source/css/3q17cp_jgfwol.pretty.css,1333,,.friend-add,border-radius,18px
+source/css/3q17cp_jgfwol.pretty.css,1334,,.friend-add,justify-content,center
+source/css/3q17cp_jgfwol.pretty.css,1335,,.friend-add,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,1336,,.friend-add,gap,12px
+source/css/3q17cp_jgfwol.pretty.css,1337,,.friend-add,margin-top,auto
+source/css/3q17cp_jgfwol.pretty.css,1338,,.friend-add,padding,15px
+source/css/3q17cp_jgfwol.pretty.css,1340,,.friend-add,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1346,,.friend-add svg,width,18px
+source/css/3q17cp_jgfwol.pretty.css,1347,,.friend-add svg,height,18px
+source/css/3q17cp_jgfwol.pretty.css,1403,,.comp-tile--story:after,border-radius,26px
+source/css/3q17cp_jgfwol.pretty.css,1404,,.comp-tile--story:after,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,1405,,.comp-tile--story:after,inset,0
+source/css/3q17cp_jgfwol.pretty.css,1408,,.comp-avatar,width,48px
+source/css/3q17cp_jgfwol.pretty.css,1409,,.comp-avatar,height,48px
+source/css/3q17cp_jgfwol.pretty.css,1411,,.comp-avatar,box-shadow,inset 0 0 0 1px var(--card-line)
+source/css/3q17cp_jgfwol.pretty.css,1412,,.comp-avatar,border-radius,16px
+source/css/3q17cp_jgfwol.pretty.css,1413,,.comp-avatar,flex,none
+source/css/3q17cp_jgfwol.pretty.css,1414,,.comp-avatar,place-items,center
+source/css/3q17cp_jgfwol.pretty.css,1417,,.comp-avatar,display,grid
+source/css/3q17cp_jgfwol.pretty.css,1436,,.comp-chosen,margin-top,4px
+source/css/3q17cp_jgfwol.pretty.css,1445,,.companion,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,1446,,.companion,gap,18px
+source/css/3q17cp_jgfwol.pretty.css,1447,,.companion,padding,20px 22px
+source/css/3q17cp_jgfwol.pretty.css,1448,,.companion,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1452,,.companion-pic,border-radius,24px
+source/css/3q17cp_jgfwol.pretty.css,1453,,.companion-pic,flex,none
+source/css/3q17cp_jgfwol.pretty.css,1454,,.companion-pic,width,84px
+source/css/3q17cp_jgfwol.pretty.css,1455,,.companion-pic,height,84px
+source/css/3q17cp_jgfwol.pretty.css,1457,,.companion-pic,overflow,hidden
+source/css/3q17cp_jgfwol.pretty.css,1458,,.companion-pic,box-shadow,0 12px 26px #6d4fe040
+source/css/3q17cp_jgfwol.pretty.css,1461,,.companion-pic img,object-fit,cover
+source/css/3q17cp_jgfwol.pretty.css,1462,,.companion-pic img,object-position,62% 78%
+source/css/3q17cp_jgfwol.pretty.css,1463,,.companion-pic img,width,100%
+source/css/3q17cp_jgfwol.pretty.css,1464,,.companion-pic img,height,100%
+source/css/3q17cp_jgfwol.pretty.css,1465,,.companion-pic img,transform,scale(1.9)
+source/css/3q17cp_jgfwol.pretty.css,1475,,.companion-sub,max-width,56ch
+source/css/3q17cp_jgfwol.pretty.css,1476,,.companion-sub,margin-top,4px
+source/css/3q17cp_jgfwol.pretty.css,1481,,.shelf,grid-template-columns,"repeat(auto-fill, minmax(215px, 1fr))"
+source/css/3q17cp_jgfwol.pretty.css,1482,,.shelf,gap,22px
+source/css/3q17cp_jgfwol.pretty.css,1483,,.shelf,display,grid
+source/css/3q17cp_jgfwol.pretty.css,1488,,.book,box-shadow,var(--card-shadow)
+source/css/3q17cp_jgfwol.pretty.css,1491,,.book,border-radius,22px
+source/css/3q17cp_jgfwol.pretty.css,1498,,.book,position,relative
+source/css/3q17cp_jgfwol.pretty.css,1499,,.book,overflow,hidden
+source/css/3q17cp_jgfwol.pretty.css,1502,,.book:hover,transform,translateY(-10px) rotate(-1deg)
+source/css/3q17cp_jgfwol.pretty.css,1505,,.book img,aspect-ratio,2/3
+source/css/3q17cp_jgfwol.pretty.css,1506,,.book img,object-fit,cover
+source/css/3q17cp_jgfwol.pretty.css,1507,,.book img,width,100%
+source/css/3q17cp_jgfwol.pretty.css,1508,,.book img,display,block
+source/css/3q17cp_jgfwol.pretty.css,1511,,.book-meta,padding,14px 16px 16px
+source/css/3q17cp_jgfwol.pretty.css,1525,,.book-sub,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,1526,,.book-sub,margin-top,6px
+source/css/3q17cp_jgfwol.pretty.css,1527,,.book-sub,padding,4px 10px
+source/css/3q17cp_jgfwol.pretty.css,1530,,.book-sub,display,inline-flex
+source/css/3q17cp_jgfwol.pretty.css,1533,,.advs,grid-template-columns,"repeat(auto-fit, minmax(250px, 1fr))"
+source/css/3q17cp_jgfwol.pretty.css,1534,,.advs,gap,18px
+source/css/3q17cp_jgfwol.pretty.css,1535,,.advs,display,grid
+source/css/3q17cp_jgfwol.pretty.css,1538,,.adv,flex-direction,column
+source/css/3q17cp_jgfwol.pretty.css,1539,,.adv,gap,12px
+source/css/3q17cp_jgfwol.pretty.css,1540,,.adv,padding,22px
+source/css/3q17cp_jgfwol.pretty.css,1542,,.adv,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1545,,.adv:hover,transform,translateY(-6px)
+source/css/3q17cp_jgfwol.pretty.css,1548,,.family-switcher,flex-wrap,wrap
+source/css/3q17cp_jgfwol.pretty.css,1549,,.family-switcher,gap,8px
+source/css/3q17cp_jgfwol.pretty.css,1550,,.family-switcher,width,"min(1120px, 100%)"
+source/css/3q17cp_jgfwol.pretty.css,1551,,.family-switcher,margin,0 auto
+source/css/3q17cp_jgfwol.pretty.css,1552,,.family-switcher,padding,14px 28px 0
+source/css/3q17cp_jgfwol.pretty.css,1553,,.family-switcher,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1556,,.family-switcher .chip,min-height,34px
+source/css/3q17cp_jgfwol.pretty.css,1570,,.chip,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,1571,,.chip,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,1572,,.chip,gap,7px
+source/css/3q17cp_jgfwol.pretty.css,1573,,.chip,width,fit-content
+source/css/3q17cp_jgfwol.pretty.css,1574,,.chip,padding,6px 13px
+source/css/3q17cp_jgfwol.pretty.css,1577,,.chip,display,inline-flex
+source/css/3q17cp_jgfwol.pretty.css,1600,,.adv-sub,flex,1 0 auto
+source/css/3q17cp_jgfwol.pretty.css,1608,,".adv-title, .adv-sub, .adv-why, .adv .chip",flex-shrink,0
+source/css/3q17cp_jgfwol.pretty.css,1616,,.adv .btn,align-self,flex-start
+source/css/3q17cp_jgfwol.pretty.css,1617,,.adv .btn,min-height,46px
+source/css/3q17cp_jgfwol.pretty.css,1618,,.adv .btn,padding,12px 24px
+source/css/3q17cp_jgfwol.pretty.css,1626,,.adv-art,aspect-ratio,16/9
+source/css/3q17cp_jgfwol.pretty.css,1627,,.adv-art,border-radius,25px 25px 0 0
+source/css/3q17cp_jgfwol.pretty.css,1628,,.adv-art,margin,-22px -22px 2px
+source/css/3q17cp_jgfwol.pretty.css,1629,,.adv-art,display,block
+source/css/3q17cp_jgfwol.pretty.css,1630,,.adv-art,overflow,hidden
+source/css/3q17cp_jgfwol.pretty.css,1633,,.adv-art img,object-fit,cover
+source/css/3q17cp_jgfwol.pretty.css,1634,,.adv-art img,width,100%
+source/css/3q17cp_jgfwol.pretty.css,1635,,.adv-art img,height,100%
+source/css/3q17cp_jgfwol.pretty.css,1636,,.adv-art img,display,block
+source/css/3q17cp_jgfwol.pretty.css,1639,,.create-adventure-picker--mobile,display,none
+source/css/3q17cp_jgfwol.pretty.css,1643,@media (max-width: 760px),.create-adventure-picker--desktop,display,none
+source/css/3q17cp_jgfwol.pretty.css,1646,@media (max-width: 760px),.create-adventure-picker--mobile,grid-template-columns,1fr
+source/css/3q17cp_jgfwol.pretty.css,1647,@media (max-width: 760px),.create-adventure-picker--mobile,gap,14px
+source/css/3q17cp_jgfwol.pretty.css,1648,@media (max-width: 760px),.create-adventure-picker--mobile,display,grid
+source/css/3q17cp_jgfwol.pretty.css,1651,@media (max-width: 760px),.mobile-adv.adv,flex-direction,column
+source/css/3q17cp_jgfwol.pretty.css,1652,@media (max-width: 760px),.mobile-adv.adv,gap,10px
+source/css/3q17cp_jgfwol.pretty.css,1653,@media (max-width: 760px),.mobile-adv.adv,padding,16px
+source/css/3q17cp_jgfwol.pretty.css,1654,@media (max-width: 760px),.mobile-adv.adv,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1657,@media (max-width: 760px),.mobile-adv:hover,transform,none
+source/css/3q17cp_jgfwol.pretty.css,1660,@media (max-width: 760px),.mobile-adv.adv .adv-art,aspect-ratio,auto
+source/css/3q17cp_jgfwol.pretty.css,1661,@media (max-width: 760px),.mobile-adv.adv .adv-art,border-radius,25px 25px 0 0
+source/css/3q17cp_jgfwol.pretty.css,1662,@media (max-width: 760px),.mobile-adv.adv .adv-art,grid-area,auto
+source/css/3q17cp_jgfwol.pretty.css,1663,@media (max-width: 760px),.mobile-adv.adv .adv-art,width,auto
+source/css/3q17cp_jgfwol.pretty.css,1664,@media (max-width: 760px),.mobile-adv.adv .adv-art,height,112px
+source/css/3q17cp_jgfwol.pretty.css,1665,@media (max-width: 760px),.mobile-adv.adv .adv-art,min-height,0
+source/css/3q17cp_jgfwol.pretty.css,1666,@media (max-width: 760px),.mobile-adv.adv .adv-art,margin,-16px -16px 0
+source/css/3q17cp_jgfwol.pretty.css,1669,@media (max-width: 760px),.mobile-adv .adv-title,margin,0
+source/css/3q17cp_jgfwol.pretty.css,1673,@media (max-width: 760px),.mobile-adv-difference,margin,0
+source/css/3q17cp_jgfwol.pretty.css,1683,@media (max-width: 760px),.mobile-adv-details summary,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css,1685,@media (max-width: 760px),.mobile-adv-details summary,justify-content,space-between
+source/css/3q17cp_jgfwol.pretty.css,1686,@media (max-width: 760px),.mobile-adv-details summary,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,1687,@media (max-width: 760px),.mobile-adv-details summary,gap,12px
+source/css/3q17cp_jgfwol.pretty.css,1689,@media (max-width: 760px),.mobile-adv-details summary,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1692,@media (max-width: 760px),.mobile-adv-details summary::-webkit-details-marker,display,none
+source/css/3q17cp_jgfwol.pretty.css,1697,@media (max-width: 760px),.mobile-adv-details summary:after,flex,none
+source/css/3q17cp_jgfwol.pretty.css,1698,@media (max-width: 760px),.mobile-adv-details summary:after,width,24px
+source/css/3q17cp_jgfwol.pretty.css,1705,@media (max-width: 760px),.mobile-adv-detail-copy,gap,6px
+source/css/3q17cp_jgfwol.pretty.css,1706,@media (max-width: 760px),.mobile-adv-detail-copy,padding,2px 0 8px
+source/css/3q17cp_jgfwol.pretty.css,1707,@media (max-width: 760px),.mobile-adv-detail-copy,display,grid
+source/css/3q17cp_jgfwol.pretty.css,1711,@media (max-width: 760px),".mobile-adv-detail-copy > .adv-sub, .mobile-adv-detail-copy > .adv-why",grid-area,auto
+source/css/3q17cp_jgfwol.pretty.css,1714,@media (max-width: 760px),.mobile-adv .adv-sub,flex,none
+source/css/3q17cp_jgfwol.pretty.css,1721,@media (max-width: 760px),.mobile-adv.adv .btn,grid-area,auto
+source/css/3q17cp_jgfwol.pretty.css,1722,@media (max-width: 760px),.mobile-adv.adv .btn,justify-content,center
+source/css/3q17cp_jgfwol.pretty.css,1723,@media (max-width: 760px),.mobile-adv.adv .btn,align-self,stretch
+source/css/3q17cp_jgfwol.pretty.css,1724,@media (max-width: 760px),.mobile-adv.adv .btn,width,100%
+source/css/3q17cp_jgfwol.pretty.css,1725,@media (max-width: 760px),.mobile-adv.adv .btn,min-height,46px
+source/css/3q17cp_jgfwol.pretty.css,1730,@media (max-width: 760px),.mobile-adv .btn:disabled,box-shadow,none
+source/css/3q17cp_jgfwol.pretty.css,1731,@media (max-width: 760px),.mobile-adv .btn:disabled,transform,none
+source/css/3q17cp_jgfwol.pretty.css,1735,,.styles-grid,grid-template-columns,"repeat(4, 1fr)"
+source/css/3q17cp_jgfwol.pretty.css,1739,@media (max-width: 760px),.styles-grid,grid-template-columns,"repeat(2, 1fr)"
+source/css/3q17cp_jgfwol.pretty.css,1743,,.builder-pic .pframe--hero img,object-position,center 28%
+source/css/3q17cp_jgfwol.pretty.css,1744,,.builder-pic .pframe--hero img,transform,none
+source/css/3q17cp_jgfwol.pretty.css,1747,,.pframe-initial,width,100%
+source/css/3q17cp_jgfwol.pretty.css,1748,,.pframe-initial,height,100%
+source/css/3q17cp_jgfwol.pretty.css,1752,,.pframe-initial,place-items,center
+source/css/3q17cp_jgfwol.pretty.css,1755,,.pframe-initial,display,grid
+source/css/3q17cp_jgfwol.pretty.css,1758,,.reader,border-radius,30px
+source/css/3q17cp_jgfwol.pretty.css,1759,,.reader,overflow,hidden
+source/css/3q17cp_jgfwol.pretty.css,1762,,.reader-grid,grid-template-columns,1fr
+source/css/3q17cp_jgfwol.pretty.css,1763,,.reader-grid,display,grid
+source/css/3q17cp_jgfwol.pretty.css,1766,,.reader-img,aspect-ratio,1264/848
+source/css/3q17cp_jgfwol.pretty.css,1767,,.reader-img,position,relative
+source/css/3q17cp_jgfwol.pretty.css,1768,,.reader-img,overflow,hidden
+source/css/3q17cp_jgfwol.pretty.css,1771,,.reader-grid--cover,grid-template-columns,"minmax(280px, 420px) 1fr"
+source/css/3q17cp_jgfwol.pretty.css,1774,,.reader-grid--cover.reader-grid--text-only,grid-template-columns,1fr
+source/css/3q17cp_jgfwol.pretty.css,1777,,.reader-img--cover,aspect-ratio,848/1264
+source/css/3q17cp_jgfwol.pretty.css,1781,@media (max-width: 880px),.reader-grid--cover,grid-template-columns,1fr
+source/css/3q17cp_jgfwol.pretty.css,1785,,.reader-img .art-bg,object-fit,cover
+source/css/3q17cp_jgfwol.pretty.css,1786,,.reader-img .art-bg,filter,blur(26px) saturate(1.08)
+source/css/3q17cp_jgfwol.pretty.css,1788,,.reader-img .art-bg,width,100%
+source/css/3q17cp_jgfwol.pretty.css,1789,,.reader-img .art-bg,height,100%
+source/css/3q17cp_jgfwol.pretty.css,1790,,.reader-img .art-bg,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,1791,,.reader-img .art-bg,inset,0
+source/css/3q17cp_jgfwol.pretty.css,1792,,.reader-img .art-bg,transform,scale(1.18)
+source/css/3q17cp_jgfwol.pretty.css,1795,,.reader-img .art-main,object-fit,contain
+source/css/3q17cp_jgfwol.pretty.css,1796,,.reader-img .art-main,width,100%
+source/css/3q17cp_jgfwol.pretty.css,1797,,.reader-img .art-main,height,100%
+source/css/3q17cp_jgfwol.pretty.css,1798,,.reader-img .art-main,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,1799,,.reader-img .art-main,inset,0
+source/css/3q17cp_jgfwol.pretty.css,1802,,.reader-body,flex-direction,column
+source/css/3q17cp_jgfwol.pretty.css,1803,,.reader-body,min-width,0
+source/css/3q17cp_jgfwol.pretty.css,1804,,.reader-body,padding,34px 36px
+source/css/3q17cp_jgfwol.pretty.css,1805,,.reader-body,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1808,,.reader-body[hidden],display,none
+source/css/3q17cp_jgfwol.pretty.css,1811,,.reader-title,max-width,100%
+source/css/3q17cp_jgfwol.pretty.css,1814,,.reader-title,overflow-wrap,anywhere
+source/css/3q17cp_jgfwol.pretty.css,1818,,.reader-title,margin,0
+source/css/3q17cp_jgfwol.pretty.css,1826,,.prose,overflow-wrap,anywhere
+source/css/3q17cp_jgfwol.pretty.css,1828,,.prose,flex,1
+source/css/3q17cp_jgfwol.pretty.css,1829,,.prose,min-width,0
+source/css/3q17cp_jgfwol.pretty.css,1835,,.prose:first-letter,float,left
+source/css/3q17cp_jgfwol.pretty.css,1837,,.prose:first-letter,padding,4px 10px 0 0
+source/css/3q17cp_jgfwol.pretty.css,1843,,.prose-plain,overflow-wrap,anywhere
+source/css/3q17cp_jgfwol.pretty.css,1844,,.prose-plain,min-width,0
+source/css/3q17cp_jgfwol.pretty.css,1854,,".reader-body .btn:disabled, .choice:disabled",box-shadow,none
+source/css/3q17cp_jgfwol.pretty.css,1855,,".reader-body .btn:disabled, .choice:disabled",transform,none
+source/css/3q17cp_jgfwol.pretty.css,1861,,".reader-body .btn:disabled:hover, .reader-body .btn:disabled:active, .choice:disabled:hover, .choice:disabled:active",box-shadow,none
+source/css/3q17cp_jgfwol.pretty.css,1863,,".reader-body .btn:disabled:hover, .reader-body .btn:disabled:active, .choice:disabled:hover, .choice:disabled:active",transform,none
+source/css/3q17cp_jgfwol.pretty.css,1869,,.reader-link-wait,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,1870,,.reader-link-wait,gap,8px
+source/css/3q17cp_jgfwol.pretty.css,1871,,.reader-link-wait,margin,10px 0 0
+source/css/3q17cp_jgfwol.pretty.css,1874,,.reader-link-wait,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1878,,.reader-link-wait .dotpulse,border-radius,50%
+source/css/3q17cp_jgfwol.pretty.css,1879,,.reader-link-wait .dotpulse,flex,none
+source/css/3q17cp_jgfwol.pretty.css,1880,,.reader-link-wait .dotpulse,width,9px
+source/css/3q17cp_jgfwol.pretty.css,1881,,.reader-link-wait .dotpulse,height,9px
+source/css/3q17cp_jgfwol.pretty.css,1883,,.reader-link-wait .dotpulse,box-shadow,0 0 #f2b22e80
+source/css/3q17cp_jgfwol.pretty.css,1886,,.reader-choice-group,margin-top,22px
+source/css/3q17cp_jgfwol.pretty.css,1893,,.reader-choice-prompt,border-radius,16px
+source/css/3q17cp_jgfwol.pretty.css,1894,,.reader-choice-prompt,margin,0
+source/css/3q17cp_jgfwol.pretty.css,1895,,.reader-choice-prompt,padding,16px 18px
+source/css/3q17cp_jgfwol.pretty.css,1899,,.choice-row,grid-template-columns,1fr 1fr
+source/css/3q17cp_jgfwol.pretty.css,1900,,.choice-row,gap,12px
+source/css/3q17cp_jgfwol.pretty.css,1901,,.choice-row,margin-top,24px
+source/css/3q17cp_jgfwol.pretty.css,1902,,.choice-row,display,grid
+source/css/3q17cp_jgfwol.pretty.css,1910,,.choice,overflow-wrap,anywhere
+source/css/3q17cp_jgfwol.pretty.css,1911,,.choice,border-radius,16px
+source/css/3q17cp_jgfwol.pretty.css,1912,,.choice,min-width,0
+source/css/3q17cp_jgfwol.pretty.css,1913,,.choice,max-width,100%
+source/css/3q17cp_jgfwol.pretty.css,1914,,.choice,min-height,54px
+source/css/3q17cp_jgfwol.pretty.css,1915,,.choice,padding,16px 14px
+source/css/3q17cp_jgfwol.pretty.css,1925,,.choice:hover,transform,translateY(-3px)
+source/css/3q17cp_jgfwol.pretty.css,1926,,.choice:hover,box-shadow,0 14px 30px #6d4fe02e
+source/css/3q17cp_jgfwol.pretty.css,1936,,.foot,flex-wrap,wrap
+source/css/3q17cp_jgfwol.pretty.css,1937,,.foot,justify-content,space-between
+source/css/3q17cp_jgfwol.pretty.css,1938,,.foot,gap,16px
+source/css/3q17cp_jgfwol.pretty.css,1939,,.foot,margin-top,auto
+source/css/3q17cp_jgfwol.pretty.css,1940,,.foot,padding,26px 0 34px
+source/css/3q17cp_jgfwol.pretty.css,1943,,.foot,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1949,,.sound,margin,14px 0 4px
+source/css/3q17cp_jgfwol.pretty.css,1953,,.sound-toggle,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css,1956,,.sound-toggle svg,width,15px
+source/css/3q17cp_jgfwol.pretty.css,1957,,.sound-toggle svg,height,15px
+source/css/3q17cp_jgfwol.pretty.css,1962,,.sound-panel,border-radius,18px
+source/css/3q17cp_jgfwol.pretty.css,1963,,.sound-panel,flex-direction,column
+source/css/3q17cp_jgfwol.pretty.css,1964,,.sound-panel,gap,14px
+source/css/3q17cp_jgfwol.pretty.css,1965,,.sound-panel,margin-top,12px
+source/css/3q17cp_jgfwol.pretty.css,1966,,.sound-panel,padding,16px
+source/css/3q17cp_jgfwol.pretty.css,1967,,.sound-panel,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1970,,.sound-group,flex-direction,column
+source/css/3q17cp_jgfwol.pretty.css,1971,,.sound-group,gap,8px
+source/css/3q17cp_jgfwol.pretty.css,1972,,.sound-group,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1983,,.sound-beds,flex-wrap,wrap
+source/css/3q17cp_jgfwol.pretty.css,1984,,.sound-beds,gap,8px
+source/css/3q17cp_jgfwol.pretty.css,1985,,.sound-beds,display,flex
+source/css/3q17cp_jgfwol.pretty.css,1993,,.sound-bed,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,1994,,.sound-bed,justify-content,center
+source/css/3q17cp_jgfwol.pretty.css,1995,,.sound-bed,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,1996,,.sound-bed,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css,1997,,.sound-bed,padding,8px 16px
+source/css/3q17cp_jgfwol.pretty.css,2004,,.sound-bed,display,inline-flex
+source/css/3q17cp_jgfwol.pretty.css,2015,,.sound-foot,flex-wrap,wrap
+source/css/3q17cp_jgfwol.pretty.css,2016,,.sound-foot,justify-content,space-between
+source/css/3q17cp_jgfwol.pretty.css,2017,,.sound-foot,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,2018,,.sound-foot,gap,16px
+source/css/3q17cp_jgfwol.pretty.css,2019,,.sound-foot,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2022,,.sound-volume,flex,1
+source/css/3q17cp_jgfwol.pretty.css,2023,,.sound-volume,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,2024,,.sound-volume,gap,10px
+source/css/3q17cp_jgfwol.pretty.css,2025,,.sound-volume,min-width,170px
+source/css/3q17cp_jgfwol.pretty.css,2026,,.sound-volume,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2031,,".sound-volume input[type=""range""]",flex,1
+source/css/3q17cp_jgfwol.pretty.css,2034,,.reader-narration,flex-wrap,wrap
+source/css/3q17cp_jgfwol.pretty.css,2035,,.reader-narration,gap,8px
+source/css/3q17cp_jgfwol.pretty.css,2036,,.reader-narration,margin,14px 0 2px
+source/css/3q17cp_jgfwol.pretty.css,2037,,.reader-narration,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2042,,.reader-audio-control,width,44px
+source/css/3q17cp_jgfwol.pretty.css,2043,,.reader-audio-control,height,44px
+source/css/3q17cp_jgfwol.pretty.css,2046,,.reader-audio-control,border-radius,8px
+source/css/3q17cp_jgfwol.pretty.css,2047,,.reader-audio-control,flex,none
+source/css/3q17cp_jgfwol.pretty.css,2048,,.reader-audio-control,justify-content,center
+source/css/3q17cp_jgfwol.pretty.css,2049,,.reader-audio-control,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,2050,,.reader-audio-control,padding,0
+source/css/3q17cp_jgfwol.pretty.css,2051,,.reader-audio-control,display,inline-flex
+source/css/3q17cp_jgfwol.pretty.css,2059,,.reader-audio-control svg,width,20px
+source/css/3q17cp_jgfwol.pretty.css,2060,,.reader-audio-control svg,height,20px
+source/css/3q17cp_jgfwol.pretty.css,2071,,.reader-replay,align-self,flex-start
+source/css/3q17cp_jgfwol.pretty.css,2072,,.reader-replay,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css,2075,,.reader-illustration-toggle,justify-self,center
+source/css/3q17cp_jgfwol.pretty.css,2076,,.reader-illustration-toggle,max-width,calc(100% - 32px)
+source/css/3q17cp_jgfwol.pretty.css,2077,,.reader-illustration-toggle,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css,2078,,.reader-illustration-toggle,margin,10px 0 2px
+source/css/3q17cp_jgfwol.pretty.css,2081,,.reader-grid--illustration-only .reader-img,aspect-ratio,1264/848
+source/css/3q17cp_jgfwol.pretty.css,2082,,.reader-grid--illustration-only .reader-img,width,100%
+source/css/3q17cp_jgfwol.pretty.css,2083,,.reader-grid--illustration-only .reader-img,height,auto
+source/css/3q17cp_jgfwol.pretty.css,2098,,.reader-ceremony,flex-direction,column
+source/css/3q17cp_jgfwol.pretty.css,2099,,.reader-ceremony,gap,18px
+source/css/3q17cp_jgfwol.pretty.css,2100,,.reader-ceremony,width,100%
+source/css/3q17cp_jgfwol.pretty.css,2101,,.reader-ceremony,min-width,0
+source/css/3q17cp_jgfwol.pretty.css,2102,,.reader-ceremony,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2105,,.reader-keepsake-head,flex-wrap,wrap
+source/css/3q17cp_jgfwol.pretty.css,2106,,.reader-keepsake-head,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,2107,,.reader-keepsake-head,gap,22px
+source/css/3q17cp_jgfwol.pretty.css,2108,,.reader-keepsake-head,min-width,0
+source/css/3q17cp_jgfwol.pretty.css,2109,,.reader-keepsake-head,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2112,,.reader-keepsake-cover,aspect-ratio,848/1264
+source/css/3q17cp_jgfwol.pretty.css,2113,,.reader-keepsake-cover,object-fit,cover
+source/css/3q17cp_jgfwol.pretty.css,2114,,.reader-keepsake-cover,width,180px
+source/css/3q17cp_jgfwol.pretty.css,2115,,.reader-keepsake-cover,box-shadow,var(--card-shadow)
+source/css/3q17cp_jgfwol.pretty.css,2116,,.reader-keepsake-cover,border-radius,14px
+source/css/3q17cp_jgfwol.pretty.css,2117,,.reader-keepsake-cover,flex,none
+source/css/3q17cp_jgfwol.pretty.css,2120,,.reader-ceremony-title,min-width,0
+source/css/3q17cp_jgfwol.pretty.css,2123,,.reader-ceremony-title,overflow-wrap,anywhere
+source/css/3q17cp_jgfwol.pretty.css,2127,,.reader-ceremony-title,flex,220px
+source/css/3q17cp_jgfwol.pretty.css,2128,,.reader-ceremony-title,margin,0
+source/css/3q17cp_jgfwol.pretty.css,2133,,.reader-ceremony-actions,grid-template-columns,"repeat(auto-fit, minmax(min(148px, 100%), 1fr))"
+source/css/3q17cp_jgfwol.pretty.css,2134,,.reader-ceremony-actions,gap,12px
+source/css/3q17cp_jgfwol.pretty.css,2135,,.reader-ceremony-actions,width,"min(420px, 100%)"
+source/css/3q17cp_jgfwol.pretty.css,2136,,.reader-ceremony-actions,display,grid
+source/css/3q17cp_jgfwol.pretty.css,2139,,.reader-ceremony-actions .btn,justify-content,center
+source/css/3q17cp_jgfwol.pretty.css,2144,,.friend-mode-picker,min-width,0
+source/css/3q17cp_jgfwol.pretty.css,2145,,.friend-mode-picker,margin,0
+source/css/3q17cp_jgfwol.pretty.css,2146,,.friend-mode-picker,padding,0
+source/css/3q17cp_jgfwol.pretty.css,2151,,.friend-mode-picker legend,margin-bottom,10px
+source/css/3q17cp_jgfwol.pretty.css,2155,,.friend-mode-options,grid-template-columns,1fr 1fr
+source/css/3q17cp_jgfwol.pretty.css,2156,,.friend-mode-options,gap,12px
+source/css/3q17cp_jgfwol.pretty.css,2157,,.friend-mode-options,display,grid
+source/css/3q17cp_jgfwol.pretty.css,2163,,.friend-mode-option,min-width,0
+source/css/3q17cp_jgfwol.pretty.css,2164,,.friend-mode-option,min-height,112px
+source/css/3q17cp_jgfwol.pretty.css,2168,,.friend-mode-option,border-radius,18px
+source/css/3q17cp_jgfwol.pretty.css,2169,,.friend-mode-option,align-content,start
+source/css/3q17cp_jgfwol.pretty.css,2170,,.friend-mode-option,gap,6px
+source/css/3q17cp_jgfwol.pretty.css,2171,,.friend-mode-option,padding,16px
+source/css/3q17cp_jgfwol.pretty.css,2172,,.friend-mode-option,display,grid
+source/css/3q17cp_jgfwol.pretty.css,2186,,".friend-mode-option[aria-pressed=""true""]",box-shadow,0 10px 26px #6d4fe024
+source/css/3q17cp_jgfwol.pretty.css,2192,,.friend-mode-lock,margin,0
+source/css/3q17cp_jgfwol.pretty.css,2193,,.friend-mode-lock,padding,12px 14px
+source/css/3q17cp_jgfwol.pretty.css,2198,,.friend-photo-step,border-radius,18px
+source/css/3q17cp_jgfwol.pretty.css,2199,,.friend-photo-step,gap,14px
+source/css/3q17cp_jgfwol.pretty.css,2200,,.friend-photo-step,min-width,0
+source/css/3q17cp_jgfwol.pretty.css,2201,,.friend-photo-step,padding,18px
+source/css/3q17cp_jgfwol.pretty.css,2202,,.friend-photo-step,display,grid
+source/css/3q17cp_jgfwol.pretty.css,2207,,.friend-photo-step h2,margin,0
+source/css/3q17cp_jgfwol.pretty.css,2212,,.friend-photo-step > p,margin,0
+source/css/3q17cp_jgfwol.pretty.css,2216,,.friend-photo-attestation,align-items,flex-start
+source/css/3q17cp_jgfwol.pretty.css,2217,,.friend-photo-attestation,gap,12px
+source/css/3q17cp_jgfwol.pretty.css,2218,,.friend-photo-attestation,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css,2220,,.friend-photo-attestation,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2223,,.friend-photo-attestation input,width,22px
+source/css/3q17cp_jgfwol.pretty.css,2224,,.friend-photo-attestation input,height,22px
+source/css/3q17cp_jgfwol.pretty.css,2226,,.friend-photo-attestation input,flex,none
+source/css/3q17cp_jgfwol.pretty.css,2229,,.friend-photo-step > .btn,justify-self,start
+source/css/3q17cp_jgfwol.pretty.css,2234,,.friend-photo-step > .btn:disabled,box-shadow,none
+source/css/3q17cp_jgfwol.pretty.css,2235,,.friend-photo-step > .btn:disabled,transform,none
+source/css/3q17cp_jgfwol.pretty.css,2245,@media (max-width: 880px),.hero,grid-template-columns,1fr
+source/css/3q17cp_jgfwol.pretty.css,2246,@media (max-width: 880px),.hero,min-height,auto
+source/css/3q17cp_jgfwol.pretty.css,2247,@media (max-width: 880px),.hero,padding-top,3vh
+source/css/3q17cp_jgfwol.pretty.css,2250,@media (max-width: 880px),.fan,height,340px
+source/css/3q17cp_jgfwol.pretty.css,2251,@media (max-width: 880px),.fan,margin-top,8px
+source/css/3q17cp_jgfwol.pretty.css,2254,@media (max-width: 880px),.builder-grid,grid-template-columns,1fr
+source/css/3q17cp_jgfwol.pretty.css,2258,@media (max-width: 880px),.builder,flex-direction,column
+source/css/3q17cp_jgfwol.pretty.css,2259,@media (max-width: 880px),.builder,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,2262,@media (max-width: 880px),.trait-row,justify-content,center
+source/css/3q17cp_jgfwol.pretty.css,2266,@media (max-width: 880px),".reader-grid, .choice-row",grid-template-columns,1fr
+source/css/3q17cp_jgfwol.pretty.css,2269,@media (max-width: 880px),.sound-foot,flex-direction,column
+source/css/3q17cp_jgfwol.pretty.css,2270,@media (max-width: 880px),.sound-foot,align-items,stretch
+source/css/3q17cp_jgfwol.pretty.css,2273,@media (max-width: 880px),.tt-opt,padding,8px 10px
+source/css/3q17cp_jgfwol.pretty.css,2278,@media (max-width: 768px),.shell > nav,flex-wrap,wrap
+source/css/3q17cp_jgfwol.pretty.css,2281,@media (max-width: 768px),.nav-right,flex-wrap,wrap
+source/css/3q17cp_jgfwol.pretty.css,2282,@media (max-width: 768px),.nav-right,justify-content,flex-end
+source/css/3q17cp_jgfwol.pretty.css,2283,@media (max-width: 768px),.nav-right,margin-left,auto
+source/css/3q17cp_jgfwol.pretty.css,2288,@media (max-width: 560px),.nav-right,gap,6px
+source/css/3q17cp_jgfwol.pretty.css,2291,@media (max-width: 560px),.tt-opt,gap,0
+source/css/3q17cp_jgfwol.pretty.css,2292,@media (max-width: 560px),.tt-opt,padding,8px
+source/css/3q17cp_jgfwol.pretty.css,2296,@media (max-width: 560px),.reader-body,padding,24px 20px
+source/css/3q17cp_jgfwol.pretty.css,2302,@media (max-width: 560px),.reader-img,aspect-ratio,16/9
+source/css/3q17cp_jgfwol.pretty.css,2305,@media (max-width: 560px),.reader-grid--cover .reader-img,aspect-ratio,848/1264
+source/css/3q17cp_jgfwol.pretty.css,2306,@media (max-width: 560px),.reader-grid--cover .reader-img,justify-self,center
+source/css/3q17cp_jgfwol.pretty.css,2307,@media (max-width: 560px),.reader-grid--cover .reader-img,width,"min(300px, 100%)"
+source/css/3q17cp_jgfwol.pretty.css,2310,@media (max-width: 560px),.reader-narration,margin-top,12px
+source/css/3q17cp_jgfwol.pretty.css,2313,@media (max-width: 560px),.reader-grid--cover .cta-row,grid-template-columns,1fr
+source/css/3q17cp_jgfwol.pretty.css,2314,@media (max-width: 560px),.reader-grid--cover .cta-row,width,100%
+source/css/3q17cp_jgfwol.pretty.css,2315,@media (max-width: 560px),.reader-grid--cover .cta-row,display,grid
+source/css/3q17cp_jgfwol.pretty.css,2318,@media (max-width: 560px),.reader-grid--cover .btn,justify-content,center
+source/css/3q17cp_jgfwol.pretty.css,2319,@media (max-width: 560px),.reader-grid--cover .btn,width,100%
+source/css/3q17cp_jgfwol.pretty.css,2322,@media (max-width: 560px),.reader-keepsake-head,flex-wrap,nowrap
+source/css/3q17cp_jgfwol.pretty.css,2323,@media (max-width: 560px),.reader-keepsake-head,align-items,flex-start
+source/css/3q17cp_jgfwol.pretty.css,2324,@media (max-width: 560px),.reader-keepsake-head,gap,14px
+source/css/3q17cp_jgfwol.pretty.css,2327,@media (max-width: 560px),.reader-keepsake-cover,width,96px
+source/css/3q17cp_jgfwol.pretty.css,2330,@media (max-width: 560px),.reader-ceremony-title,overflow-wrap,break-word
+source/css/3q17cp_jgfwol.pretty.css,2332,@media (max-width: 560px),.reader-ceremony-title,flex,180px
+source/css/3q17cp_jgfwol.pretty.css,2336,@media (max-width: 560px),.friend-mode-options,grid-template-columns,1fr
+source/css/3q17cp_jgfwol.pretty.css,2339,@media (max-width: 560px),.friend-mode-option,min-height,0
+source/css/3q17cp_jgfwol.pretty.css,2342,@media (max-width: 560px),.friend-photo-step,padding,16px
+source/css/3q17cp_jgfwol.pretty.css,2345,@media (max-width: 560px),.friend-photo-step > .btn,justify-content,center
+source/css/3q17cp_jgfwol.pretty.css,2346,@media (max-width: 560px),.friend-photo-step > .btn,width,100%
+source/css/3q17cp_jgfwol.pretty.css,2367,@media (prefers-reduced-motion: reduce),.reveal,transform,none
+source/css/3q17cp_jgfwol.pretty.css,2384,,.create-carried-thread,margin,0 0 16px
+source/css/3q17cp_jgfwol.pretty.css,2385,,.create-carried-thread,padding,12px 14px
+source/css/3q17cp_jgfwol.pretty.css,2391,,.create-customize,-webkit-backdrop-filter,blur(var(--card-blur))
+source/css/3q17cp_jgfwol.pretty.css,2392,,.create-customize,backdrop-filter,blur(var(--card-blur))
+source/css/3q17cp_jgfwol.pretty.css,2394,,.create-customize,border-radius,26px
+source/css/3q17cp_jgfwol.pretty.css,2395,,.create-customize,margin-top,34px
+source/css/3q17cp_jgfwol.pretty.css,2403,,".create-customize:hover, .create-customize[open]",box-shadow,0 6px 24px -14px var(--accent)
+source/css/3q17cp_jgfwol.pretty.css,2406,,.create-customize > summary,min-height,64px
+source/css/3q17cp_jgfwol.pretty.css,2410,,.create-customize > summary,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,2411,,.create-customize > summary,gap,12px
+source/css/3q17cp_jgfwol.pretty.css,2412,,.create-customize > summary,padding,14px 22px
+source/css/3q17cp_jgfwol.pretty.css,2416,,.create-customize > summary,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2419,,.create-customize > summary::-webkit-details-marker,display,none
+source/css/3q17cp_jgfwol.pretty.css,2428,,.create-customize > summary small,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,2429,,.create-customize > summary small,margin-left,auto
+source/css/3q17cp_jgfwol.pretty.css,2430,,.create-customize > summary small,padding,6px 14px
+source/css/3q17cp_jgfwol.pretty.css,2438,,.create-customize > summary:after,flex,none
+source/css/3q17cp_jgfwol.pretty.css,2439,,.create-customize > summary:after,width,10px
+source/css/3q17cp_jgfwol.pretty.css,2440,,.create-customize > summary:after,height,10px
+source/css/3q17cp_jgfwol.pretty.css,2442,,.create-customize > summary:after,transform,rotate(-45deg)
+source/css/3q17cp_jgfwol.pretty.css,2445,,.create-customize[open] > summary:after,transform,rotate(45deg)
+source/css/3q17cp_jgfwol.pretty.css,2448,,.create-customize-body,padding,0 22px 26px
+source/css/3q17cp_jgfwol.pretty.css,2451,,.create-customize .sec-head,margin-bottom,12px
+source/css/3q17cp_jgfwol.pretty.css,2458,,.create-customize .sec-intro,margin-bottom,14px
+source/css/3q17cp_jgfwol.pretty.css,2462,,.create-customize .friend-add,max-width,360px
+source/css/3q17cp_jgfwol.pretty.css,2465,,.create-customize > summary:after,margin-left,2px
+source/css/3q17cp_jgfwol.pretty.css,2466,,.create-customize > summary:after,margin-right,4px
+source/css/3q17cp_jgfwol.pretty.css,2469,,.create-customize-section,padding,28px 0 4px
+source/css/3q17cp_jgfwol.pretty.css,2473,,.create-customize-section + .create-customize-section,margin-top,22px
+source/css/3q17cp_jgfwol.pretty.css,2477,@media (max-width: 600px),.create-customize > summary,min-height,56px
+source/css/3q17cp_jgfwol.pretty.css,2481,@media (max-width: 600px),.create-customize > summary small,max-width,46%
+source/css/3q17cp_jgfwol.pretty.css,2484,@media (max-width: 600px),.advs,gap,12px
+source/css/3q17cp_jgfwol.pretty.css,2487,@media (max-width: 600px),.advs > .adv,grid-template-columns,"92px minmax(0, 1fr)"
+source/css/3q17cp_jgfwol.pretty.css,2488,@media (max-width: 600px),.advs > .adv,grid-template-areas,"""art chip"" ""art title"" ""art sub"" ""art why"" ""art action"""
+source/css/3q17cp_jgfwol.pretty.css,2489,@media (max-width: 600px),.advs > .adv,gap,7px 12px
+source/css/3q17cp_jgfwol.pretty.css,2490,@media (max-width: 600px),.advs > .adv,padding,14px
+source/css/3q17cp_jgfwol.pretty.css,2491,@media (max-width: 600px),.advs > .adv,display,grid
+source/css/3q17cp_jgfwol.pretty.css,2494,@media (max-width: 600px),.advs > .adv:hover,transform,none
+source/css/3q17cp_jgfwol.pretty.css,2497,@media (max-width: 600px),.advs > .adv .adv-art,aspect-ratio,auto
+source/css/3q17cp_jgfwol.pretty.css,2498,@media (max-width: 600px),.advs > .adv .adv-art,border-radius,8px
+source/css/3q17cp_jgfwol.pretty.css,2499,@media (max-width: 600px),.advs > .adv .adv-art,grid-area,art
+source/css/3q17cp_jgfwol.pretty.css,2500,@media (max-width: 600px),.advs > .adv .adv-art,width,92px
+source/css/3q17cp_jgfwol.pretty.css,2501,@media (max-width: 600px),.advs > .adv .adv-art,height,100%
+source/css/3q17cp_jgfwol.pretty.css,2502,@media (max-width: 600px),.advs > .adv .adv-art,min-height,218px
+source/css/3q17cp_jgfwol.pretty.css,2503,@media (max-width: 600px),.advs > .adv .adv-art,margin,0
+source/css/3q17cp_jgfwol.pretty.css,2506,@media (max-width: 600px),.advs > .adv .chip,grid-area,chip
+source/css/3q17cp_jgfwol.pretty.css,2509,@media (max-width: 600px),.advs > .adv .adv-title,grid-area,title
+source/css/3q17cp_jgfwol.pretty.css,2513,@media (max-width: 600px),.advs > .adv .adv-sub,grid-area,sub
+source/css/3q17cp_jgfwol.pretty.css,2518,@media (max-width: 600px),.advs > .adv .adv-why,grid-area,why
+source/css/3q17cp_jgfwol.pretty.css,2523,@media (max-width: 600px),.advs > .adv .btn,grid-area,action
+source/css/3q17cp_jgfwol.pretty.css,2524,@media (max-width: 600px),.advs > .adv .btn,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css,2525,@media (max-width: 600px),.advs > .adv .btn,padding,9px 18px
+source/css/3q17cp_jgfwol.pretty.css,2529,,.hiw,scroll-margin-top,24px
+source/css/3q17cp_jgfwol.pretty.css,2530,,.hiw,position,relative
+source/css/3q17cp_jgfwol.pretty.css,2533,,.hiw-anchor-alias,width,1px
+source/css/3q17cp_jgfwol.pretty.css,2534,,.hiw-anchor-alias,height,1px
+source/css/3q17cp_jgfwol.pretty.css,2535,,.hiw-anchor-alias,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,2536,,.hiw-anchor-alias,top,0
+source/css/3q17cp_jgfwol.pretty.css,2539,,.hiw-head,margin-bottom,36px
+source/css/3q17cp_jgfwol.pretty.css,2547,,.hiw-kicker,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,2548,,.hiw-kicker,margin-bottom,16px
+source/css/3q17cp_jgfwol.pretty.css,2549,,.hiw-kicker,padding,7px 14px
+source/css/3q17cp_jgfwol.pretty.css,2552,,.hiw-kicker,display,inline-flex
+source/css/3q17cp_jgfwol.pretty.css,2558,,.hiw-headline,margin-bottom,12px
+source/css/3q17cp_jgfwol.pretty.css,2565,,.hiw-lede,max-width,56ch
+source/css/3q17cp_jgfwol.pretty.css,2570,,.hiw-steps,flex-direction,column
+source/css/3q17cp_jgfwol.pretty.css,2571,,.hiw-steps,gap,36px
+source/css/3q17cp_jgfwol.pretty.css,2572,,.hiw-steps,margin,0
+source/css/3q17cp_jgfwol.pretty.css,2573,,.hiw-steps,padding,0
+source/css/3q17cp_jgfwol.pretty.css,2575,,.hiw-steps,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2578,,.hiw-step,grid-template-columns,88px 1fr
+source/css/3q17cp_jgfwol.pretty.css,2579,,.hiw-step,display,grid
+source/css/3q17cp_jgfwol.pretty.css,2582,,.hiw-rail-col,justify-content,center
+source/css/3q17cp_jgfwol.pretty.css,2583,,.hiw-rail-col,align-items,flex-start
+source/css/3q17cp_jgfwol.pretty.css,2584,,.hiw-rail-col,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2585,,.hiw-rail-col,position,relative
+source/css/3q17cp_jgfwol.pretty.css,2590,,.hiw-rail-col:before,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,2591,,.hiw-rail-col:before,top,48px
+source/css/3q17cp_jgfwol.pretty.css,2592,,.hiw-rail-col:before,bottom,-44px
+source/css/3q17cp_jgfwol.pretty.css,2593,,.hiw-rail-col:before,left,50%
+source/css/3q17cp_jgfwol.pretty.css,2594,,.hiw-rail-col:before,transform,translate(-1px)
+source/css/3q17cp_jgfwol.pretty.css,2597,,.hiw-step--last .hiw-rail-col:before,display,none
+source/css/3q17cp_jgfwol.pretty.css,2602,,.hiw-node,width,40px
+source/css/3q17cp_jgfwol.pretty.css,2603,,.hiw-node,height,40px
+source/css/3q17cp_jgfwol.pretty.css,2606,,.hiw-node,z-index,1
+source/css/3q17cp_jgfwol.pretty.css,2607,,.hiw-node,border-radius,50%
+source/css/3q17cp_jgfwol.pretty.css,2608,,.hiw-node,place-items,center
+source/css/3q17cp_jgfwol.pretty.css,2611,,.hiw-node,display,grid
+source/css/3q17cp_jgfwol.pretty.css,2612,,.hiw-node,position,relative
+source/css/3q17cp_jgfwol.pretty.css,2615,,.hiw-step-body,grid-template-columns,1fr 1fr
+source/css/3q17cp_jgfwol.pretty.css,2616,,.hiw-step-body,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,2617,,.hiw-step-body,gap,30px
+source/css/3q17cp_jgfwol.pretty.css,2618,,.hiw-step-body,min-width,0
+source/css/3q17cp_jgfwol.pretty.css,2619,,.hiw-step-body,display,grid
+source/css/3q17cp_jgfwol.pretty.css,2622,,.hiw-step--flip .hiw-step-text,order,2
+source/css/3q17cp_jgfwol.pretty.css,2625,,.hiw-step--flip .hiw-step-visual,order,1
+source/css/3q17cp_jgfwol.pretty.css,2628,,.hiw-step--wide .hiw-step-body,grid-template-columns,1fr
+source/css/3q17cp_jgfwol.pretty.css,2629,,.hiw-step--wide .hiw-step-body,align-items,stretch
+source/css/3q17cp_jgfwol.pretty.css,2634,,.hiw-step-text h3,margin-bottom,10px
+source/css/3q17cp_jgfwol.pretty.css,2641,,.hiw-step-copy,max-width,52ch
+source/css/3q17cp_jgfwol.pretty.css,2648,,.hiw-micro,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,2649,,.hiw-micro,gap,8px
+source/css/3q17cp_jgfwol.pretty.css,2650,,.hiw-micro,margin-top,12px
+source/css/3q17cp_jgfwol.pretty.css,2653,,.hiw-micro,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2656,,.hiw-star,width,14px
+source/css/3q17cp_jgfwol.pretty.css,2657,,.hiw-star,height,14px
+source/css/3q17cp_jgfwol.pretty.css,2659,,.hiw-star,flex,none
+source/css/3q17cp_jgfwol.pretty.css,2662,,.hiw-step-visual,min-width,0
+source/css/3q17cp_jgfwol.pretty.css,2665,,.hiw-card,padding,22px
+source/css/3q17cp_jgfwol.pretty.css,2668,,.hiw-portrait-card,justify-content,center
+source/css/3q17cp_jgfwol.pretty.css,2669,,.hiw-portrait-card,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2674,,.hiw-frame,border-radius,24px
+source/css/3q17cp_jgfwol.pretty.css,2675,,.hiw-frame,width,"min(250px, 100%)"
+source/css/3q17cp_jgfwol.pretty.css,2676,,.hiw-frame,padding,10px
+source/css/3q17cp_jgfwol.pretty.css,2677,,.hiw-frame,position,relative
+source/css/3q17cp_jgfwol.pretty.css,2680,,.hiw-frame img,border-radius,20px
+source/css/3q17cp_jgfwol.pretty.css,2681,,.hiw-frame img,width,100%
+source/css/3q17cp_jgfwol.pretty.css,2682,,.hiw-frame img,display,block
+source/css/3q17cp_jgfwol.pretty.css,2687,,.hiw-ai-chip,-webkit-backdrop-filter,blur(10px)
+source/css/3q17cp_jgfwol.pretty.css,2688,,.hiw-ai-chip,backdrop-filter,blur(10px)
+source/css/3q17cp_jgfwol.pretty.css,2691,,.hiw-ai-chip,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,2692,,.hiw-ai-chip,padding,5px 11px
+source/css/3q17cp_jgfwol.pretty.css,2695,,.hiw-ai-chip,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,2696,,.hiw-ai-chip,bottom,18px
+source/css/3q17cp_jgfwol.pretty.css,2697,,.hiw-ai-chip,left,18px
+source/css/3q17cp_jgfwol.pretty.css,2700,,.hiw-friend-card,flex-direction,column
+source/css/3q17cp_jgfwol.pretty.css,2701,,.hiw-friend-card,gap,14px
+source/css/3q17cp_jgfwol.pretty.css,2702,,.hiw-friend-card,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2705,,.hiw-friend-row,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,2706,,.hiw-friend-row,gap,12px
+source/css/3q17cp_jgfwol.pretty.css,2707,,.hiw-friend-row,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2710,,.hiw-friend-row img,object-fit,cover
+source/css/3q17cp_jgfwol.pretty.css,2711,,.hiw-friend-row img,border-radius,50%
+source/css/3q17cp_jgfwol.pretty.css,2712,,.hiw-friend-row img,flex,none
+source/css/3q17cp_jgfwol.pretty.css,2713,,.hiw-friend-row img,width,36px
+source/css/3q17cp_jgfwol.pretty.css,2714,,.hiw-friend-row img,height,36px
+source/css/3q17cp_jgfwol.pretty.css,2721,,.hiw-friend-row b,display,block
+source/css/3q17cp_jgfwol.pretty.css,2726,,.hiw-friend-row span,display,block
+source/css/3q17cp_jgfwol.pretty.css,2730,,.hiw-invite-slot,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css,2733,,.hiw-invite-slot,border-radius,14px
+source/css/3q17cp_jgfwol.pretty.css,2734,,.hiw-invite-slot,place-items,center
+source/css/3q17cp_jgfwol.pretty.css,2737,,.hiw-invite-slot,display,grid
+source/css/3q17cp_jgfwol.pretty.css,2740,,.hiw-adventure-card,flex-direction,column
+source/css/3q17cp_jgfwol.pretty.css,2741,,.hiw-adventure-card,gap,18px
+source/css/3q17cp_jgfwol.pretty.css,2742,,.hiw-adventure-card,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2745,,.hiw-fan,justify-content,center
+source/css/3q17cp_jgfwol.pretty.css,2746,,.hiw-fan,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,2747,,.hiw-fan,padding,8px 0 4px
+source/css/3q17cp_jgfwol.pretty.css,2748,,.hiw-fan,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2749,,.hiw-fan,position,relative
+source/css/3q17cp_jgfwol.pretty.css,2753,,.hiw-fan-card,width,34%
+source/css/3q17cp_jgfwol.pretty.css,2754,,.hiw-fan-card,box-shadow,var(--card-shadow)
+source/css/3q17cp_jgfwol.pretty.css,2755,,.hiw-fan-card,border-radius,14px
+source/css/3q17cp_jgfwol.pretty.css,2758,,.hiw-fan-1,z-index,1
+source/css/3q17cp_jgfwol.pretty.css,2759,,.hiw-fan-1,transform,rotate(-4deg) translate(10%)
+source/css/3q17cp_jgfwol.pretty.css,2762,,.hiw-fan-2,z-index,2
+source/css/3q17cp_jgfwol.pretty.css,2763,,.hiw-fan-2,width,36%
+source/css/3q17cp_jgfwol.pretty.css,2764,,.hiw-fan-2,transform,none
+source/css/3q17cp_jgfwol.pretty.css,2767,,.hiw-fan-3,z-index,1
+source/css/3q17cp_jgfwol.pretty.css,2768,,.hiw-fan-3,transform,rotate(4deg) translate(-10%)
+source/css/3q17cp_jgfwol.pretty.css,2771,,.hiw-bake,flex-direction,column
+source/css/3q17cp_jgfwol.pretty.css,2772,,.hiw-bake,gap,8px
+source/css/3q17cp_jgfwol.pretty.css,2773,,.hiw-bake,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2777,,.hiw-bar,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,2778,,.hiw-bar,height,8px
+source/css/3q17cp_jgfwol.pretty.css,2779,,.hiw-bar,overflow,hidden
+source/css/3q17cp_jgfwol.pretty.css,2783,,.hiw-bar i,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,2784,,.hiw-bar i,width,60%
+source/css/3q17cp_jgfwol.pretty.css,2785,,.hiw-bar i,height,100%
+source/css/3q17cp_jgfwol.pretty.css,2786,,.hiw-bar i,display,block
+source/css/3q17cp_jgfwol.pretty.css,2794,,.hiw-read-visual,flex-direction,column
+source/css/3q17cp_jgfwol.pretty.css,2795,,.hiw-read-visual,gap,14px
+source/css/3q17cp_jgfwol.pretty.css,2796,,.hiw-read-visual,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2799,,.hiw-playrow,flex-wrap,wrap
+source/css/3q17cp_jgfwol.pretty.css,2800,,.hiw-playrow,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,2801,,.hiw-playrow,gap,12px
+source/css/3q17cp_jgfwol.pretty.css,2802,,.hiw-playrow,display,flex
+source/css/3q17cp_jgfwol.pretty.css,2807,,.hiw-play,min-height,48px
+source/css/3q17cp_jgfwol.pretty.css,2810,,.hiw-play,box-shadow,"var(--btn-shadow), inset 0 1px 0 #ffffff73"
+source/css/3q17cp_jgfwol.pretty.css,2814,,.hiw-play,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,2815,,.hiw-play,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,2816,,.hiw-play,gap,10px
+source/css/3q17cp_jgfwol.pretty.css,2817,,.hiw-play,padding,12px 22px
+source/css/3q17cp_jgfwol.pretty.css,2823,,.hiw-play,display,inline-flex
+source/css/3q17cp_jgfwol.pretty.css,2826,,.hiw-play:hover,box-shadow,var(--btn-shadow-hover)
+source/css/3q17cp_jgfwol.pretty.css,2827,,.hiw-play:hover,transform,translateY(-2px)
+source/css/3q17cp_jgfwol.pretty.css,2830,,.hiw-play svg,flex,none
+source/css/3q17cp_jgfwol.pretty.css,2831,,.hiw-play svg,width,16px
+source/css/3q17cp_jgfwol.pretty.css,2832,,.hiw-play svg,height,16px
+source/css/3q17cp_jgfwol.pretty.css,2839,,.hiw-voice-chip,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,2840,,.hiw-voice-chip,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,2841,,.hiw-voice-chip,gap,8px
+source/css/3q17cp_jgfwol.pretty.css,2842,,.hiw-voice-chip,padding,5px 12px 5px 5px
+source/css/3q17cp_jgfwol.pretty.css,2845,,.hiw-voice-chip,display,inline-flex
+source/css/3q17cp_jgfwol.pretty.css,2848,,.hiw-voice-chip img,object-fit,cover
+source/css/3q17cp_jgfwol.pretty.css,2849,,.hiw-voice-chip img,border-radius,50%
+source/css/3q17cp_jgfwol.pretty.css,2850,,.hiw-voice-chip img,width,28px
+source/css/3q17cp_jgfwol.pretty.css,2851,,.hiw-voice-chip img,height,28px
+source/css/3q17cp_jgfwol.pretty.css,2854,,.hiw-reader-mock,padding,0
+source/css/3q17cp_jgfwol.pretty.css,2855,,.hiw-reader-mock,overflow,hidden
+source/css/3q17cp_jgfwol.pretty.css,2858,,.hiw-reader-mock > img,aspect-ratio,3/2
+source/css/3q17cp_jgfwol.pretty.css,2859,,.hiw-reader-mock > img,object-fit,cover
+source/css/3q17cp_jgfwol.pretty.css,2860,,.hiw-reader-mock > img,width,100%
+source/css/3q17cp_jgfwol.pretty.css,2861,,.hiw-reader-mock > img,display,block
+source/css/3q17cp_jgfwol.pretty.css,2866,,.hiw-mock-prose,padding,18px 22px 6px
+source/css/3q17cp_jgfwol.pretty.css,2871,,.hiw-mock-prose:first-letter,float,left
+source/css/3q17cp_jgfwol.pretty.css,2873,,.hiw-mock-prose:first-letter,padding,3px 8px 0 0
+source/css/3q17cp_jgfwol.pretty.css,2879,,.hiw-mock-choices,grid-template-columns,1fr 1fr
+source/css/3q17cp_jgfwol.pretty.css,2880,,.hiw-mock-choices,gap,10px
+source/css/3q17cp_jgfwol.pretty.css,2881,,.hiw-mock-choices,padding,12px 22px 22px
+source/css/3q17cp_jgfwol.pretty.css,2882,,.hiw-mock-choices,display,grid
+source/css/3q17cp_jgfwol.pretty.css,2890,,.hiw-choice,overflow-wrap,anywhere
+source/css/3q17cp_jgfwol.pretty.css,2891,,.hiw-choice,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,2892,,.hiw-choice,min-width,0
+source/css/3q17cp_jgfwol.pretty.css,2893,,.hiw-choice,padding,10px 14px
+source/css/3q17cp_jgfwol.pretty.css,2898,,.hiw-map,padding,26px
+source/css/3q17cp_jgfwol.pretty.css,2901,,.hiw-map-stage,position,relative
+source/css/3q17cp_jgfwol.pretty.css,2904,,.hiw-map-desktop,display,block
+source/css/3q17cp_jgfwol.pretty.css,2907,,.hiw-map-mobile,display,none
+source/css/3q17cp_jgfwol.pretty.css,2912,,.hiw-caption,max-width,72ch
+source/css/3q17cp_jgfwol.pretty.css,2913,,.hiw-caption,margin-top,14px
+source/css/3q17cp_jgfwol.pretty.css,2918,,.hiw-map-cta,margin-top,14px
+source/css/3q17cp_jgfwol.pretty.css,2924,,.hiw-visually-hidden,width,1px
+source/css/3q17cp_jgfwol.pretty.css,2925,,.hiw-visually-hidden,height,1px
+source/css/3q17cp_jgfwol.pretty.css,2926,,.hiw-visually-hidden,margin,-1px
+source/css/3q17cp_jgfwol.pretty.css,2927,,.hiw-visually-hidden,padding,0
+source/css/3q17cp_jgfwol.pretty.css,2928,,.hiw-visually-hidden,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,2929,,.hiw-visually-hidden,overflow,hidden
+source/css/3q17cp_jgfwol.pretty.css,2978,,.hiw-map .map-medallion,transform-box,fill-box
+source/css/3q17cp_jgfwol.pretty.css,2979,,.hiw-map .map-medallion,transform-origin,50%
+source/css/3q17cp_jgfwol.pretty.css,2980,,.hiw-map .map-medallion,filter,drop-shadow(0 0 18px var(--map-glow))
+source/css/3q17cp_jgfwol.pretty.css,2989,,.hiw-map .map-medallion.is-active,transform,scale(1.05)
+source/css/3q17cp_jgfwol.pretty.css,3007,,.hiw-map-btn,aspect-ratio,1
+source/css/3q17cp_jgfwol.pretty.css,3011,,.hiw-map-btn,border-radius,50%
+source/css/3q17cp_jgfwol.pretty.css,3012,,.hiw-map-btn,width,9.6%
+source/css/3q17cp_jgfwol.pretty.css,3013,,.hiw-map-btn,min-width,44px
+source/css/3q17cp_jgfwol.pretty.css,3014,,.hiw-map-btn,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css,3015,,.hiw-map-btn,padding,0
+source/css/3q17cp_jgfwol.pretty.css,3016,,.hiw-map-btn,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,3017,,.hiw-map-btn,transform,"translate(-50%, -50%)"
+source/css/3q17cp_jgfwol.pretty.css,3024,,.hiw-map-btn-1,top,13.3%
+source/css/3q17cp_jgfwol.pretty.css,3025,,.hiw-map-btn-1,left,89.2%
+source/css/3q17cp_jgfwol.pretty.css,3028,,.hiw-map-btn-2,top,37.8%
+source/css/3q17cp_jgfwol.pretty.css,3029,,.hiw-map-btn-2,left,89.2%
+source/css/3q17cp_jgfwol.pretty.css,3032,,.hiw-map-btn-3,top,62.2%
+source/css/3q17cp_jgfwol.pretty.css,3033,,.hiw-map-btn-3,left,89.2%
+source/css/3q17cp_jgfwol.pretty.css,3036,,.hiw-map-btn-4,top,86.7%
+source/css/3q17cp_jgfwol.pretty.css,3037,,.hiw-map-btn-4,left,89.2%
+source/css/3q17cp_jgfwol.pretty.css,3040,,.hiw-bookfan,justify-content,center
+source/css/3q17cp_jgfwol.pretty.css,3041,,.hiw-bookfan,align-items,flex-end
+source/css/3q17cp_jgfwol.pretty.css,3042,,.hiw-bookfan,padding,34px 0 24px
+source/css/3q17cp_jgfwol.pretty.css,3043,,.hiw-bookfan,display,flex
+source/css/3q17cp_jgfwol.pretty.css,3044,,.hiw-bookfan,position,relative
+source/css/3q17cp_jgfwol.pretty.css,3047,,.hiw-cover,aspect-ratio,2/3
+source/css/3q17cp_jgfwol.pretty.css,3048,,.hiw-cover,object-fit,cover
+source/css/3q17cp_jgfwol.pretty.css,3050,,.hiw-cover,width,38%
+source/css/3q17cp_jgfwol.pretty.css,3051,,.hiw-cover,box-shadow,var(--card-shadow)
+source/css/3q17cp_jgfwol.pretty.css,3052,,.hiw-cover,border-radius,14px
+source/css/3q17cp_jgfwol.pretty.css,3056,,.hiw-cover-next,width,34%
+source/css/3q17cp_jgfwol.pretty.css,3057,,.hiw-cover-next,filter,drop-shadow(0 0 22px var(--map-glow))
+source/css/3q17cp_jgfwol.pretty.css,3058,,.hiw-cover-next,z-index,0
+source/css/3q17cp_jgfwol.pretty.css,3059,,.hiw-cover-next,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,3060,,.hiw-cover-next,top,6px
+source/css/3q17cp_jgfwol.pretty.css,3061,,.hiw-cover-next,left,50%
+source/css/3q17cp_jgfwol.pretty.css,3062,,.hiw-cover-next,transform,translate(-50%)
+source/css/3q17cp_jgfwol.pretty.css,3065,,.hiw-cover-1,z-index,1
+source/css/3q17cp_jgfwol.pretty.css,3066,,.hiw-cover-1,transform,rotate(-7deg) translate(6%)
+source/css/3q17cp_jgfwol.pretty.css,3069,,.hiw-cover-2,z-index,2
+source/css/3q17cp_jgfwol.pretty.css,3070,,.hiw-cover-2,transform,rotate(6deg) translate(-6%)
+source/css/3q17cp_jgfwol.pretty.css,3077,,.hiw-next-label,z-index,0
+source/css/3q17cp_jgfwol.pretty.css,3079,,.hiw-next-label,border-radius,999px
+source/css/3q17cp_jgfwol.pretty.css,3080,,.hiw-next-label,padding,3px 10px
+source/css/3q17cp_jgfwol.pretty.css,3083,,.hiw-next-label,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,3084,,.hiw-next-label,top,10px
+source/css/3q17cp_jgfwol.pretty.css,3085,,.hiw-next-label,left,50%
+source/css/3q17cp_jgfwol.pretty.css,3086,,.hiw-next-label,transform,translate(-50%)
+source/css/3q17cp_jgfwol.pretty.css,3089,,.hiw-memory-tag,z-index,3
+source/css/3q17cp_jgfwol.pretty.css,3091,,.hiw-memory-tag,-webkit-backdrop-filter,blur(var(--card-blur))
+source/css/3q17cp_jgfwol.pretty.css,3092,,.hiw-memory-tag,backdrop-filter,blur(var(--card-blur))
+source/css/3q17cp_jgfwol.pretty.css,3095,,.hiw-memory-tag,box-shadow,var(--card-shadow)
+source/css/3q17cp_jgfwol.pretty.css,3096,,.hiw-memory-tag,border-radius,16px
+source/css/3q17cp_jgfwol.pretty.css,3097,,.hiw-memory-tag,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,3098,,.hiw-memory-tag,gap,10px
+source/css/3q17cp_jgfwol.pretty.css,3099,,.hiw-memory-tag,padding,10px 14px
+source/css/3q17cp_jgfwol.pretty.css,3100,,.hiw-memory-tag,display,flex
+source/css/3q17cp_jgfwol.pretty.css,3101,,.hiw-memory-tag,position,absolute
+source/css/3q17cp_jgfwol.pretty.css,3102,,.hiw-memory-tag,bottom,8px
+source/css/3q17cp_jgfwol.pretty.css,3103,,.hiw-memory-tag,right,4%
+source/css/3q17cp_jgfwol.pretty.css,3104,,.hiw-memory-tag,transform,rotate(2.5deg)
+source/css/3q17cp_jgfwol.pretty.css,3108,,.hiw-memory-tag .dotpulse,border-radius,50%
+source/css/3q17cp_jgfwol.pretty.css,3109,,.hiw-memory-tag .dotpulse,flex,none
+source/css/3q17cp_jgfwol.pretty.css,3110,,.hiw-memory-tag .dotpulse,width,9px
+source/css/3q17cp_jgfwol.pretty.css,3111,,.hiw-memory-tag .dotpulse,height,9px
+source/css/3q17cp_jgfwol.pretty.css,3113,,.hiw-memory-tag .dotpulse,box-shadow,0 0 #f2b22e80
+source/css/3q17cp_jgfwol.pretty.css,3117,,.hiw-memory-tag b,display,block
+source/css/3q17cp_jgfwol.pretty.css,3122,,.hiw-memory-tag div span,display,block
+source/css/3q17cp_jgfwol.pretty.css,3125,,.hiw-closing,flex-wrap,wrap
+source/css/3q17cp_jgfwol.pretty.css,3126,,.hiw-closing,justify-content,center
+source/css/3q17cp_jgfwol.pretty.css,3127,,.hiw-closing,align-items,center
+source/css/3q17cp_jgfwol.pretty.css,3128,,.hiw-closing,gap,14px
+source/css/3q17cp_jgfwol.pretty.css,3129,,.hiw-closing,margin-top,40px
+source/css/3q17cp_jgfwol.pretty.css,3130,,.hiw-closing,display,flex
+source/css/3q17cp_jgfwol.pretty.css,3133,,.cta-row--microcopy,align-items,flex-start
+source/css/3q17cp_jgfwol.pretty.css,3136,,.cta-primary-col,flex-direction,column
+source/css/3q17cp_jgfwol.pretty.css,3137,,.cta-primary-col,align-items,flex-start
+source/css/3q17cp_jgfwol.pretty.css,3138,,.cta-primary-col,gap,10px
+source/css/3q17cp_jgfwol.pretty.css,3139,,.cta-primary-col,display,flex
+source/css/3q17cp_jgfwol.pretty.css,3148,@media (max-width: 880px),.hiw-step,grid-template-columns,44px 1fr
+source/css/3q17cp_jgfwol.pretty.css,3151,@media (max-width: 880px),.hiw-node,width,32px
+source/css/3q17cp_jgfwol.pretty.css,3152,@media (max-width: 880px),.hiw-node,height,32px
+source/css/3q17cp_jgfwol.pretty.css,3156,@media (max-width: 880px),.hiw-rail-col:before,top,40px
+source/css/3q17cp_jgfwol.pretty.css,3157,@media (max-width: 880px),.hiw-rail-col:before,bottom,-40px
+source/css/3q17cp_jgfwol.pretty.css,3160,@media (max-width: 880px),.hiw-step-body,grid-template-columns,1fr
+source/css/3q17cp_jgfwol.pretty.css,3161,@media (max-width: 880px),.hiw-step-body,align-items,stretch
+source/css/3q17cp_jgfwol.pretty.css,3162,@media (max-width: 880px),.hiw-step-body,gap,16px
+source/css/3q17cp_jgfwol.pretty.css,3165,@media (max-width: 880px),.hiw-step--flip .hiw-step-text,order,0
+source/css/3q17cp_jgfwol.pretty.css,3168,@media (max-width: 880px),.hiw-step--flip .hiw-step-visual,order,1
+source/css/3q17cp_jgfwol.pretty.css,3173,@media (max-width: 720px),.hiw-map,padding,16px 12px
+source/css/3q17cp_jgfwol.pretty.css,3176,@media (max-width: 720px),.hiw-map-desktop,display,none
+source/css/3q17cp_jgfwol.pretty.css,3179,@media (max-width: 720px),.hiw-map-mobile,display,block
+source/css/3q17cp_jgfwol.pretty.css,3182,@media (max-width: 720px),.hiw-map-btn,width,19%
+source/css/3q17cp_jgfwol.pretty.css,3185,@media (max-width: 720px),.hiw-map-btn-1,top,77.4%
+source/css/3q17cp_jgfwol.pretty.css,3186,@media (max-width: 720px),.hiw-map-btn-1,left,14.4%
+source/css/3q17cp_jgfwol.pretty.css,3189,@media (max-width: 720px),.hiw-map-btn-2,top,77.4%
+source/css/3q17cp_jgfwol.pretty.css,3190,@media (max-width: 720px),.hiw-map-btn-2,left,38.1%
+source/css/3q17cp_jgfwol.pretty.css,3193,@media (max-width: 720px),.hiw-map-btn-3,top,77.4%
+source/css/3q17cp_jgfwol.pretty.css,3194,@media (max-width: 720px),.hiw-map-btn-3,left,61.9%
+source/css/3q17cp_jgfwol.pretty.css,3197,@media (max-width: 720px),.hiw-map-btn-4,top,77.4%
+source/css/3q17cp_jgfwol.pretty.css,3198,@media (max-width: 720px),.hiw-map-btn-4,left,85.6%
+source/css/3q17cp_jgfwol.pretty.css,3203,@media (max-width: 480px),.hiw-play,justify-content,center
+source/css/3q17cp_jgfwol.pretty.css,3204,@media (max-width: 480px),.hiw-play,width,100%
+source/css/3q17cp_jgfwol.pretty.css,3205,@media (max-width: 480px),.hiw-play,max-width,320px
+source/css/3q17cp_jgfwol.pretty.css,3210,@media (max-width: 400px),.hiw-mock-choices,grid-template-columns,1fr
+source/css/3q17cp_jgfwol.pretty.css,3225,@media (prefers-reduced-motion: reduce),".hiw-play, .hiw-play:hover",transform,none
+source/css/3q17cp_jgfwol.pretty.css,3234,,":is( body:has(#main-content [data-testid=""fair-story-chooser""]) .nav-right, body:has(#main-content [data-testid=""fair-story-page""]) .nav-right, body:has(#main-content [data-testid=""curated-stories-gallery""]) .nav-right, body:has(#main-content [data-testid=""curated-story-reader""]) .nav-right )",display,none
+source/css/2h1wwdz1nvxwk.pretty.css,2,,.cs-band,align-items,flex-start
+source/css/2h1wwdz1nvxwk.pretty.css,3,,.cs-band,gap,18px
+source/css/2h1wwdz1nvxwk.pretty.css,4,,.cs-band,margin-bottom,6px
+source/css/2h1wwdz1nvxwk.pretty.css,5,,.cs-band,display,flex
+source/css/2h1wwdz1nvxwk.pretty.css,8,,.cs-band-left,flex-direction,column
+source/css/2h1wwdz1nvxwk.pretty.css,9,,.cs-band-left,flex,none
+source/css/2h1wwdz1nvxwk.pretty.css,10,,.cs-band-left,align-items,flex-start
+source/css/2h1wwdz1nvxwk.pretty.css,11,,.cs-band-left,gap,2px
+source/css/2h1wwdz1nvxwk.pretty.css,12,,.cs-band-left,display,flex
+source/css/2h1wwdz1nvxwk.pretty.css,17,,.cs-portrait,border-radius,26px
+source/css/2h1wwdz1nvxwk.pretty.css,18,,.cs-portrait,width,110px
+source/css/2h1wwdz1nvxwk.pretty.css,19,,.cs-portrait,height,110px
+source/css/2h1wwdz1nvxwk.pretty.css,20,,.cs-portrait,overflow,hidden
+source/css/2h1wwdz1nvxwk.pretty.css,21,,.cs-portrait,box-shadow,0 6px 22px #0000002e
+source/css/2h1wwdz1nvxwk.pretty.css,24,,.cs-portrait img,object-fit,cover
+source/css/2h1wwdz1nvxwk.pretty.css,25,,.cs-portrait img,object-position,center 20%
+source/css/2h1wwdz1nvxwk.pretty.css,26,,.cs-portrait img,width,100%
+source/css/2h1wwdz1nvxwk.pretty.css,27,,.cs-portrait img,height,100%
+source/css/2h1wwdz1nvxwk.pretty.css,28,,.cs-portrait img,display,block
+source/css/2h1wwdz1nvxwk.pretty.css,31,,.cs-portrait-initial,width,100%
+source/css/2h1wwdz1nvxwk.pretty.css,32,,.cs-portrait-initial,height,100%
+source/css/2h1wwdz1nvxwk.pretty.css,35,,.cs-portrait-initial,place-items,center
+source/css/2h1wwdz1nvxwk.pretty.css,38,,.cs-portrait-initial,display,grid
+source/css/2h1wwdz1nvxwk.pretty.css,46,,.cs-andra,min-height,30px
+source/css/2h1wwdz1nvxwk.pretty.css,47,,.cs-andra,margin-top,6px
+source/css/2h1wwdz1nvxwk.pretty.css,48,,.cs-andra,padding,0
+source/css/2h1wwdz1nvxwk.pretty.css,51,,.cs-andra,display,inline-block
+source/css/2h1wwdz1nvxwk.pretty.css,57,,.cs-band-who,flex,1
+source/css/2h1wwdz1nvxwk.pretty.css,58,,.cs-band-who,min-width,0
+source/css/2h1wwdz1nvxwk.pretty.css,65,,.cs-h1,margin,0
+source/css/2h1wwdz1nvxwk.pretty.css,73,,.cs-lede,max-width,46ch
+source/css/2h1wwdz1nvxwk.pretty.css,74,,.cs-lede,margin,8px 0 0
+source/css/2h1wwdz1nvxwk.pretty.css,79,,.cs-memory,flex-direction,column
+source/css/2h1wwdz1nvxwk.pretty.css,80,,.cs-memory,flex,none
+source/css/2h1wwdz1nvxwk.pretty.css,81,,.cs-memory,align-items,flex-end
+source/css/2h1wwdz1nvxwk.pretty.css,82,,.cs-memory,gap,9px
+source/css/2h1wwdz1nvxwk.pretty.css,83,,.cs-memory,width,170px
+source/css/2h1wwdz1nvxwk.pretty.css,84,,.cs-memory,margin-top,4px
+source/css/2h1wwdz1nvxwk.pretty.css,85,,.cs-memory,display,flex
+source/css/2h1wwdz1nvxwk.pretty.css,90,,.cs-spine,border-radius,8px
+source/css/2h1wwdz1nvxwk.pretty.css,91,,.cs-spine,width,56px
+source/css/2h1wwdz1nvxwk.pretty.css,92,,.cs-spine,height,72px
+source/css/2h1wwdz1nvxwk.pretty.css,93,,.cs-spine,display,block
+source/css/2h1wwdz1nvxwk.pretty.css,100,,.cs-memtag,border-radius,12px
+source/css/2h1wwdz1nvxwk.pretty.css,101,,.cs-memtag,width,150px
+source/css/2h1wwdz1nvxwk.pretty.css,102,,.cs-memtag,margin,0
+source/css/2h1wwdz1nvxwk.pretty.css,103,,.cs-memtag,padding,8px 12px
+source/css/2h1wwdz1nvxwk.pretty.css,107,,.cs-memtag,transform,rotate(-1deg)
+source/css/2h1wwdz1nvxwk.pretty.css,108,,.cs-memtag,box-shadow,0 4px 14px #00000026
+source/css/2h1wwdz1nvxwk.pretty.css,111,,.cs-coins,justify-content,flex-end
+source/css/2h1wwdz1nvxwk.pretty.css,112,,.cs-coins,display,flex
+source/css/2h1wwdz1nvxwk.pretty.css,116,,.cs-coin,width,38px
+source/css/2h1wwdz1nvxwk.pretty.css,117,,.cs-coin,height,38px
+source/css/2h1wwdz1nvxwk.pretty.css,121,,.cs-coin,border-radius,999px
+source/css/2h1wwdz1nvxwk.pretty.css,122,,.cs-coin,place-items,center
+source/css/2h1wwdz1nvxwk.pretty.css,123,,.cs-coin,margin-left,-9px
+source/css/2h1wwdz1nvxwk.pretty.css,126,,.cs-coin,display,grid
+source/css/2h1wwdz1nvxwk.pretty.css,127,,.cs-coin,overflow,hidden
+source/css/2h1wwdz1nvxwk.pretty.css,130,,.cs-coin img,object-fit,cover
+source/css/2h1wwdz1nvxwk.pretty.css,131,,.cs-coin img,width,100%
+source/css/2h1wwdz1nvxwk.pretty.css,132,,.cs-coin img,height,100%
+source/css/2h1wwdz1nvxwk.pretty.css,133,,.cs-coin img,display,block
+source/css/2h1wwdz1nvxwk.pretty.css,137,@media (max-width: 700px),.cs-band,flex-wrap,wrap
+source/css/2h1wwdz1nvxwk.pretty.css,140,@media (max-width: 700px),.cs-memory,flex-direction,row
+source/css/2h1wwdz1nvxwk.pretty.css,141,@media (max-width: 700px),.cs-memory,justify-content,flex-start
+source/css/2h1wwdz1nvxwk.pretty.css,142,@media (max-width: 700px),.cs-memory,align-items,center
+source/css/2h1wwdz1nvxwk.pretty.css,143,@media (max-width: 700px),.cs-memory,width,100%
+source/css/2h1wwdz1nvxwk.pretty.css,146,@media (max-width: 700px),.cs-memory .cs-coins,margin-left,auto
+source/css/2h1wwdz1nvxwk.pretty.css,150,,.cs-recipe-group,min-width,0
+source/css/2h1wwdz1nvxwk.pretty.css,151,,.cs-recipe-group,max-width,100%
+source/css/2h1wwdz1nvxwk.pretty.css,152,,.cs-recipe-group,margin,16px 0 4px
+source/css/2h1wwdz1nvxwk.pretty.css,159,,.cs-recipe-title,margin,0
+source/css/2h1wwdz1nvxwk.pretty.css,167,,.cs-recipe,margin,4px 0 0
+source/css/2h1wwdz1nvxwk.pretty.css,181,,.cs-chip,border-radius,999px
+source/css/2h1wwdz1nvxwk.pretty.css,182,,.cs-chip,align-items,center
+source/css/2h1wwdz1nvxwk.pretty.css,183,,.cs-chip,gap,7px
+source/css/2h1wwdz1nvxwk.pretty.css,184,,.cs-chip,padding,4px 12px 4px 5px
+source/css/2h1wwdz1nvxwk.pretty.css,188,,.cs-chip,display,inline-flex
+source/css/2h1wwdz1nvxwk.pretty.css,189,,.cs-chip,position,relative
+source/css/2h1wwdz1nvxwk.pretty.css,196,,.cs-chip:after,height,44px
+source/css/2h1wwdz1nvxwk.pretty.css,197,,.cs-chip:after,position,absolute
+source/css/2h1wwdz1nvxwk.pretty.css,198,,.cs-chip:after,top,50%
+source/css/2h1wwdz1nvxwk.pretty.css,199,,.cs-chip:after,left,0
+source/css/2h1wwdz1nvxwk.pretty.css,200,,.cs-chip:after,right,0
+source/css/2h1wwdz1nvxwk.pretty.css,201,,.cs-chip:after,transform,translateY(-50%)
+source/css/2h1wwdz1nvxwk.pretty.css,204,,.cs-chip-th,width,26px
+source/css/2h1wwdz1nvxwk.pretty.css,205,,.cs-chip-th,height,26px
+source/css/2h1wwdz1nvxwk.pretty.css,209,,.cs-chip-th,border-radius,999px
+source/css/2h1wwdz1nvxwk.pretty.css,210,,.cs-chip-th,flex,none
+source/css/2h1wwdz1nvxwk.pretty.css,211,,.cs-chip-th,place-items,center
+source/css/2h1wwdz1nvxwk.pretty.css,214,,.cs-chip-th,display,grid
+source/css/2h1wwdz1nvxwk.pretty.css,215,,.cs-chip-th,overflow,hidden
+source/css/2h1wwdz1nvxwk.pretty.css,218,,.cs-chip-th img,object-fit,cover
+source/css/2h1wwdz1nvxwk.pretty.css,219,,.cs-chip-th img,width,100%
+source/css/2h1wwdz1nvxwk.pretty.css,220,,.cs-chip-th img,height,100%
+source/css/2h1wwdz1nvxwk.pretty.css,221,,.cs-chip-th img,display,block
+source/css/2h1wwdz1nvxwk.pretty.css,241,,.cs-sheetwrap,z-index,60
+source/css/2h1wwdz1nvxwk.pretty.css,242,,.cs-sheetwrap,-webkit-backdrop-filter,blur(6px)
+source/css/2h1wwdz1nvxwk.pretty.css,243,,.cs-sheetwrap,backdrop-filter,blur(6px)
+source/css/2h1wwdz1nvxwk.pretty.css,245,,.cs-sheetwrap,place-items,center
+source/css/2h1wwdz1nvxwk.pretty.css,246,,.cs-sheetwrap,padding,20px
+source/css/2h1wwdz1nvxwk.pretty.css,247,,.cs-sheetwrap,display,grid
+source/css/2h1wwdz1nvxwk.pretty.css,248,,.cs-sheetwrap,position,fixed
+source/css/2h1wwdz1nvxwk.pretty.css,249,,.cs-sheetwrap,inset,0
+source/css/2h1wwdz1nvxwk.pretty.css,250,,.cs-sheetwrap,overflow,hidden
+source/css/2h1wwdz1nvxwk.pretty.css,253,,.cs-sheet,grid-template-rows,"auto minmax(0, 1fr) auto"
+source/css/2h1wwdz1nvxwk.pretty.css,254,,.cs-sheet,gap,16px
+source/css/2h1wwdz1nvxwk.pretty.css,255,,.cs-sheet,width,"min(100%, 560px)"
+source/css/2h1wwdz1nvxwk.pretty.css,256,,.cs-sheet,max-height,"min(86dvh, 760px)"
+source/css/2h1wwdz1nvxwk.pretty.css,257,,.cs-sheet,padding,24px
+source/css/2h1wwdz1nvxwk.pretty.css,258,,.cs-sheet,display,grid
+source/css/2h1wwdz1nvxwk.pretty.css,259,,.cs-sheet,overflow,hidden
+source/css/2h1wwdz1nvxwk.pretty.css,262,,".cs-sheet[data-sheet=""style""]",width,"min(100%, 920px)"
+source/css/2h1wwdz1nvxwk.pretty.css,265,,".cs-sheet[data-sheet=""voice""]",width,"min(100%, 760px)"
+source/css/2h1wwdz1nvxwk.pretty.css,268,,".cs-sheet[data-sheet=""language""]",width,"min(100%, 420px)"
+source/css/2h1wwdz1nvxwk.pretty.css,271,,".cs-sheet[data-sheet=""companion""]",width,"min(100%, 820px)"
+source/css/2h1wwdz1nvxwk.pretty.css,274,,.cs-sheet-head,justify-content,space-between
+source/css/2h1wwdz1nvxwk.pretty.css,275,,.cs-sheet-head,align-items,center
+source/css/2h1wwdz1nvxwk.pretty.css,276,,.cs-sheet-head,gap,16px
+source/css/2h1wwdz1nvxwk.pretty.css,277,,.cs-sheet-head,display,flex
+source/css/2h1wwdz1nvxwk.pretty.css,282,,.cs-sheet-title,margin,0
+source/css/2h1wwdz1nvxwk.pretty.css,292,,.cs-sheet-close,width,44px
+source/css/2h1wwdz1nvxwk.pretty.css,293,,.cs-sheet-close,height,44px
+source/css/2h1wwdz1nvxwk.pretty.css,297,,.cs-sheet-close,border-radius,999px
+source/css/2h1wwdz1nvxwk.pretty.css,298,,.cs-sheet-close,flex,none
+source/css/2h1wwdz1nvxwk.pretty.css,299,,.cs-sheet-close,place-items,center
+source/css/2h1wwdz1nvxwk.pretty.css,300,,.cs-sheet-close,display,grid
+source/css/2h1wwdz1nvxwk.pretty.css,307,,.cs-sheet-body,gap,14px
+source/css/2h1wwdz1nvxwk.pretty.css,308,,.cs-sheet-body,min-width,0
+source/css/2h1wwdz1nvxwk.pretty.css,309,,.cs-sheet-body,padding,2px 3px 4px
+source/css/2h1wwdz1nvxwk.pretty.css,310,,.cs-sheet-body,display,grid
+source/css/2h1wwdz1nvxwk.pretty.css,311,,.cs-sheet-body,overflow-y,auto
+source/css/2h1wwdz1nvxwk.pretty.css,314,,.cs-sheet-body > .sec-intro,max-width,62ch
+source/css/2h1wwdz1nvxwk.pretty.css,315,,.cs-sheet-body > .sec-intro,margin,0
+source/css/2h1wwdz1nvxwk.pretty.css,318,,.cs-sheet-actions,justify-content,flex-end
+source/css/2h1wwdz1nvxwk.pretty.css,319,,.cs-sheet-actions,display,flex
+source/css/2h1wwdz1nvxwk.pretty.css,322,,.cs-sheet-done,justify-content,center
+source/css/2h1wwdz1nvxwk.pretty.css,323,,.cs-sheet-done,min-width,104px
+source/css/2h1wwdz1nvxwk.pretty.css,327,@media (max-width: 700px),.cs-sheetwrap,align-items,end
+source/css/2h1wwdz1nvxwk.pretty.css,328,@media (max-width: 700px),.cs-sheetwrap,padding,12px
+source/css/2h1wwdz1nvxwk.pretty.css,332,@media (max-width: 700px),".cs-sheet, .cs-sheet[data-sheet]",border-radius,24px
+source/css/2h1wwdz1nvxwk.pretty.css,333,@media (max-width: 700px),".cs-sheet, .cs-sheet[data-sheet]",width,100%
+source/css/2h1wwdz1nvxwk.pretty.css,334,@media (max-width: 700px),".cs-sheet, .cs-sheet[data-sheet]",max-height,calc(100dvh - 24px)
+source/css/2h1wwdz1nvxwk.pretty.css,335,@media (max-width: 700px),".cs-sheet, .cs-sheet[data-sheet]",padding,18px 16px
+source/css/2h1wwdz1nvxwk.pretty.css,338,@media (max-width: 700px),.cs-sheet-body,padding-inline,1px
+source/css/2h1wwdz1nvxwk.pretty.css,341,@media (max-width: 700px),.cs-sheet-actions .btn,width,100%
+source/css/2h1wwdz1nvxwk.pretty.css,348,,.cs-h2,margin,22px 0 12px
+source/css/2h1wwdz1nvxwk.pretty.css,353,,.cs-doors,grid-template-columns,"repeat(4, minmax(0, 1fr))"
+source/css/2h1wwdz1nvxwk.pretty.css,354,,.cs-doors,gap,13px
+source/css/2h1wwdz1nvxwk.pretty.css,355,,.cs-doors,display,grid
+source/css/2h1wwdz1nvxwk.pretty.css,359,,.cs-door,flex-direction,column
+source/css/2h1wwdz1nvxwk.pretty.css,360,,.cs-door,display,flex
+source/css/2h1wwdz1nvxwk.pretty.css,361,,.cs-door,overflow,hidden
+source/css/2h1wwdz1nvxwk.pretty.css,364,,.cs-door-art,height,120px
+source/css/2h1wwdz1nvxwk.pretty.css,365,,.cs-door-art,display,block
+source/css/2h1wwdz1nvxwk.pretty.css,366,,.cs-door-art,overflow,hidden
+source/css/2h1wwdz1nvxwk.pretty.css,369,,.cs-door-art img,object-fit,cover
+source/css/2h1wwdz1nvxwk.pretty.css,370,,.cs-door-art img,width,100%
+source/css/2h1wwdz1nvxwk.pretty.css,371,,.cs-door-art img,height,100%
+source/css/2h1wwdz1nvxwk.pretty.css,372,,.cs-door-art img,display,block
+source/css/2h1wwdz1nvxwk.pretty.css,375,,.cs-door-foot,flex-direction,column
+source/css/2h1wwdz1nvxwk.pretty.css,376,,.cs-door-foot,flex,1
+source/css/2h1wwdz1nvxwk.pretty.css,377,,.cs-door-foot,gap,6px
+source/css/2h1wwdz1nvxwk.pretty.css,378,,.cs-door-foot,padding,11px 13px 13px
+source/css/2h1wwdz1nvxwk.pretty.css,379,,.cs-door-foot,display,flex
+source/css/2h1wwdz1nvxwk.pretty.css,403,,.cs-door-title,margin,0
+source/css/2h1wwdz1nvxwk.pretty.css,411,,.cs-door-hook,flex,1 0 auto
+source/css/2h1wwdz1nvxwk.pretty.css,412,,.cs-door-hook,margin,0
+source/css/2h1wwdz1nvxwk.pretty.css,418,,".cs-door-title, .cs-door-reg",flex-shrink,0
+source/css/2h1wwdz1nvxwk.pretty.css,421,,.cs-door .btn,justify-content,center
+source/css/2h1wwdz1nvxwk.pretty.css,422,,.cs-door .btn,width,100%
+source/css/2h1wwdz1nvxwk.pretty.css,423,,.cs-door .btn,min-height,44px
+source/css/2h1wwdz1nvxwk.pretty.css,424,,.cs-door .btn,padding,9px 12px
+source/css/2h1wwdz1nvxwk.pretty.css,430,,.cs-door .btn:disabled,box-shadow,none
+source/css/2h1wwdz1nvxwk.pretty.css,431,,.cs-door .btn:disabled,transform,none
+source/css/2h1wwdz1nvxwk.pretty.css,436,,.cs-door-face,justify-content,center
+source/css/2h1wwdz1nvxwk.pretty.css,437,,.cs-door-face,align-items,center
+source/css/2h1wwdz1nvxwk.pretty.css,438,,.cs-door-face,height,120px
+source/css/2h1wwdz1nvxwk.pretty.css,439,,.cs-door-face,display,flex
+source/css/2h1wwdz1nvxwk.pretty.css,440,,.cs-door-face,position,relative
+source/css/2h1wwdz1nvxwk.pretty.css,448,,.cs-door-face:after,border-radius,18px
+source/css/2h1wwdz1nvxwk.pretty.css,449,,.cs-door-face:after,position,absolute
+source/css/2h1wwdz1nvxwk.pretty.css,450,,.cs-door-face:after,inset,8px
+source/css/2h1wwdz1nvxwk.pretty.css,459,,.cs-door-art--surprise,position,relative
+source/css/2h1wwdz1nvxwk.pretty.css,462,,.cs-door-art--surprise img,object-position,center 55%
+source/css/2h1wwdz1nvxwk.pretty.css,465,,.cs-door-face--fallback,isolation,isolate
+source/css/2h1wwdz1nvxwk.pretty.css,466,,.cs-door-face--fallback,width,100%
+source/css/2h1wwdz1nvxwk.pretty.css,467,,.cs-door-face--fallback,height,100%
+source/css/2h1wwdz1nvxwk.pretty.css,471,,.cs-door-face--fallback:before,z-index,-1
+source/css/2h1wwdz1nvxwk.pretty.css,484,,.cs-door-face--fallback:before,position,absolute
+source/css/2h1wwdz1nvxwk.pretty.css,485,,.cs-door-face--fallback:before,inset,0
+source/css/2h1wwdz1nvxwk.pretty.css,488,,.cs-companion-actions,grid-template-columns,"minmax(0, 1fr) auto"
+source/css/2h1wwdz1nvxwk.pretty.css,489,,.cs-companion-actions,align-items,center
+source/css/2h1wwdz1nvxwk.pretty.css,490,,.cs-companion-actions,gap,12px
+source/css/2h1wwdz1nvxwk.pretty.css,491,,.cs-companion-actions,display,grid
+source/css/2h1wwdz1nvxwk.pretty.css,494,,.cs-companion-actions .friend-add,width,100%
+source/css/2h1wwdz1nvxwk.pretty.css,495,,.cs-companion-actions .friend-add,min-height,48px
+source/css/2h1wwdz1nvxwk.pretty.css,499,,.cs-companion-manage,min-height,44px
+source/css/2h1wwdz1nvxwk.pretty.css,502,,.cs-companion-manage,align-items,center
+source/css/2h1wwdz1nvxwk.pretty.css,503,,.cs-companion-manage,display,inline-flex
+source/css/2h1wwdz1nvxwk.pretty.css,508,,.cs-inline-friend,border-radius,20px
+source/css/2h1wwdz1nvxwk.pretty.css,509,,.cs-inline-friend,gap,15px
+source/css/2h1wwdz1nvxwk.pretty.css,510,,.cs-inline-friend,padding,18px
+source/css/2h1wwdz1nvxwk.pretty.css,511,,.cs-inline-friend,display,grid
+source/css/2h1wwdz1nvxwk.pretty.css,514,,.cs-inline-friend-head,gap,5px
+source/css/2h1wwdz1nvxwk.pretty.css,515,,.cs-inline-friend-head,display,grid
+source/css/2h1wwdz1nvxwk.pretty.css,520,,.cs-inline-friend-head h4,margin,0
+source/css/2h1wwdz1nvxwk.pretty.css,526,,.cs-inline-friend-head p,margin,0
+source/css/2h1wwdz1nvxwk.pretty.css,531,,.cs-inline-field,gap,7px
+source/css/2h1wwdz1nvxwk.pretty.css,532,,.cs-inline-field,display,grid
+source/css/2h1wwdz1nvxwk.pretty.css,535,,.cs-inline-field input,border-radius,12px
+source/css/2h1wwdz1nvxwk.pretty.css,536,,.cs-inline-field input,width,100%
+source/css/2h1wwdz1nvxwk.pretty.css,537,,.cs-inline-field input,min-height,44px
+source/css/2h1wwdz1nvxwk.pretty.css,538,,.cs-inline-field input,padding,10px 12px
+source/css/2h1wwdz1nvxwk.pretty.css,542,,.cs-inline-options,min-width,0
+source/css/2h1wwdz1nvxwk.pretty.css,543,,.cs-inline-options,margin,0
+source/css/2h1wwdz1nvxwk.pretty.css,544,,.cs-inline-options,padding,0
+source/css/2h1wwdz1nvxwk.pretty.css,549,,.cs-inline-options legend,margin-bottom,9px
+source/css/2h1wwdz1nvxwk.pretty.css,552,,.cs-inline-options .trait-row,margin-bottom,0
+source/css/2h1wwdz1nvxwk.pretty.css,555,,.cs-inline-actions,flex-wrap,wrap
+source/css/2h1wwdz1nvxwk.pretty.css,556,,.cs-inline-actions,gap,10px
+source/css/2h1wwdz1nvxwk.pretty.css,557,,.cs-inline-actions,display,flex
+source/css/2h1wwdz1nvxwk.pretty.css,561,@media (max-width: 560px),.cs-companion-actions,grid-template-columns,1fr
+source/css/2h1wwdz1nvxwk.pretty.css,565,@media (max-width: 560px),.cs-companion-manage,justify-content,center
+source/css/2h1wwdz1nvxwk.pretty.css,568,@media (max-width: 560px),.cs-inline-friend,padding,15px
+source/css/2h1wwdz1nvxwk.pretty.css,571,@media (max-width: 560px),.cs-inline-actions .btn,justify-content,center
+source/css/2h1wwdz1nvxwk.pretty.css,572,@media (max-width: 560px),.cs-inline-actions .btn,width,100%
+source/css/2h1wwdz1nvxwk.pretty.css,577,@media (max-width: 1000px),.cs-doors,grid-template-columns,"repeat(2, minmax(0, 1fr))"
+source/css/2h1wwdz1nvxwk.pretty.css,582,@media (max-width: 520px),.cs-doors,grid-template-columns,"minmax(0, 1fr)"
+source/css/2h1wwdz1nvxwk.pretty.css,586,@media (max-width: 520px),".cs-door-art, .cs-door-face",height,140px
+source/css/2h1wwdz1nvxwk.pretty.css,595,,.HeroCanvasPlaceholder-module__H1HHWq__canvas,aspect-ratio,1
+source/css/2h1wwdz1nvxwk.pretty.css,596,,.HeroCanvasPlaceholder-module__H1HHWq__canvas,isolation,isolate
+source/css/2h1wwdz1nvxwk.pretty.css,598,,.HeroCanvasPlaceholder-module__H1HHWq__canvas,width,100%
+source/css/2h1wwdz1nvxwk.pretty.css,599,,.HeroCanvasPlaceholder-module__H1HHWq__canvas,height,100%
+source/css/2h1wwdz1nvxwk.pretty.css,600,,.HeroCanvasPlaceholder-module__H1HHWq__canvas,display,block
+source/css/2h1wwdz1nvxwk.pretty.css,601,,.HeroCanvasPlaceholder-module__H1HHWq__canvas,position,relative
+source/css/2h1wwdz1nvxwk.pretty.css,602,,.HeroCanvasPlaceholder-module__H1HHWq__canvas,overflow,hidden
+source/css/2h1wwdz1nvxwk.pretty.css,605,,.HeroCanvasPlaceholder-module__H1HHWq__art,object-fit,cover
+source/css/2h1wwdz1nvxwk.pretty.css,606,,.HeroCanvasPlaceholder-module__H1HHWq__art,width,100%
+source/css/2h1wwdz1nvxwk.pretty.css,607,,.HeroCanvasPlaceholder-module__H1HHWq__art,height,100%
+source/css/2h1wwdz1nvxwk.pretty.css,608,,.HeroCanvasPlaceholder-module__H1HHWq__art,display,block
+source/css/37m388zf6rymp.pretty.css,3,,.glod-stage,width,100vw
+source/css/37m388zf6rymp.pretty.css,4,,.glod-stage,height,"clamp(560px, 78vh, 1150px)"
+source/css/37m388zf6rymp.pretty.css,5,,.glod-stage,margin-top,6px
+source/css/37m388zf6rymp.pretty.css,6,,.glod-stage,margin-bottom,30px
+source/css/37m388zf6rymp.pretty.css,7,,.glod-stage,margin-left,-50vw
+source/css/37m388zf6rymp.pretty.css,8,,.glod-stage,position,relative
+source/css/37m388zf6rymp.pretty.css,9,,.glod-stage,left,50%
+source/css/37m388zf6rymp.pretty.css,10,,.glod-stage,overflow,hidden
+source/css/37m388zf6rymp.pretty.css,14,@media (min-width: 860px),.glod-stage,height,"max(560px, 100dvh - 89px)"
+source/css/37m388zf6rymp.pretty.css,15,@media (min-width: 860px),.glod-stage,margin-top,0
+source/css/37m388zf6rymp.pretty.css,22,,.glod-ambient,z-index,-1
+source/css/37m388zf6rymp.pretty.css,25,,.glod-ambient,height,100lvh
+source/css/37m388zf6rymp.pretty.css,26,,.glod-ambient,position,fixed
+source/css/37m388zf6rymp.pretty.css,27,,.glod-ambient,top,0
+source/css/37m388zf6rymp.pretty.css,28,,.glod-ambient,left,0
+source/css/37m388zf6rymp.pretty.css,29,,.glod-ambient,right,0
+source/css/37m388zf6rymp.pretty.css,30,,.glod-ambient,overflow,hidden
+source/css/37m388zf6rymp.pretty.css,36,,.glod-ambient canvas,filter,blur(3px) saturate(0.94)
+source/css/37m388zf6rymp.pretty.css,37,,.glod-ambient canvas,width,100%
+source/css/37m388zf6rymp.pretty.css,38,,.glod-ambient canvas,height,100%
+source/css/37m388zf6rymp.pretty.css,39,,.glod-ambient canvas,display,block
+source/css/37m388zf6rymp.pretty.css,40,,.glod-ambient canvas,position,absolute
+source/css/37m388zf6rymp.pretty.css,41,,.glod-ambient canvas,inset,0
+source/css/37m388zf6rymp.pretty.css,42,,.glod-ambient canvas,transform,scale(1.012)
+source/css/37m388zf6rymp.pretty.css,47,,.glod-ambient:after,position,absolute
+source/css/37m388zf6rymp.pretty.css,48,,.glod-ambient:after,inset,0
+source/css/37m388zf6rymp.pretty.css,55,,.glod-stage .glod-fire,width,100%
+source/css/37m388zf6rymp.pretty.css,56,,.glod-stage .glod-fire,height,100%
+source/css/37m388zf6rymp.pretty.css,57,,.glod-stage .glod-fire,display,block
+source/css/37m388zf6rymp.pretty.css,58,,.glod-stage .glod-fire,position,absolute
+source/css/37m388zf6rymp.pretty.css,59,,.glod-stage .glod-fire,inset,0
+source/css/37m388zf6rymp.pretty.css,62,,.glod-sign,z-index,5
+source/css/37m388zf6rymp.pretty.css,63,,.glod-sign,width,"min(330px, 42vw)"
+source/css/37m388zf6rymp.pretty.css,64,,.glod-sign,position,absolute
+source/css/37m388zf6rymp.pretty.css,65,,.glod-sign,bottom,"clamp(18px, 7vh, 92px)"
+source/css/37m388zf6rymp.pretty.css,66,,.glod-sign,left,"clamp(14px, 3.4vw, 64px)"
+source/css/37m388zf6rymp.pretty.css,69,,.glod-rope,display,none
+source/css/37m388zf6rymp.pretty.css,72,,.glod-post,z-index,-1
+source/css/37m388zf6rymp.pretty.css,74,,.glod-post,border-radius,3px
+source/css/37m388zf6rymp.pretty.css,75,,.glod-post,width,15px
+source/css/37m388zf6rymp.pretty.css,76,,.glod-post,height,calc(54% + 58px)
+source/css/37m388zf6rymp.pretty.css,77,,.glod-post,position,absolute
+source/css/37m388zf6rymp.pretty.css,78,,.glod-post,top,46%
+source/css/37m388zf6rymp.pretty.css,79,,.glod-post,box-shadow,0 12px 18px #04030c8c
+source/css/37m388zf6rymp.pretty.css,82,,.glod-post-1,left,11%
+source/css/37m388zf6rymp.pretty.css,83,,.glod-post-1,transform,rotate(-1deg)
+source/css/37m388zf6rymp.pretty.css,86,,.glod-post-2,right,11%
+source/css/37m388zf6rymp.pretty.css,87,,.glod-post-2,transform,rotate(1.4deg)
+source/css/37m388zf6rymp.pretty.css,93,,.glod-board,border-radius,12px
+source/css/37m388zf6rymp.pretty.css,94,,.glod-board,padding,15px 18px 13px
+source/css/37m388zf6rymp.pretty.css,95,,.glod-board,position,relative
+source/css/37m388zf6rymp.pretty.css,96,,.glod-board,transform,rotate(-1.3deg)
+source/css/37m388zf6rymp.pretty.css,97,,.glod-board,box-shadow,"0 22px 34px #04030c99, 0 0 60px #ff963c12, inset 0 1px #ffd8a038, inset 0 -3px #00000059"
+source/css/37m388zf6rymp.pretty.css,105,,.glod-board:before,border-radius,inherit
+source/css/37m388zf6rymp.pretty.css,117,,.glod-board:before,position,absolute
+source/css/37m388zf6rymp.pretty.css,118,,.glod-board:before,inset,0
+source/css/37m388zf6rymp.pretty.css,122,,.glod-board:after,border-radius,inherit
+source/css/37m388zf6rymp.pretty.css,125,,.glod-board:after,position,absolute
+source/css/37m388zf6rymp.pretty.css,126,,.glod-board:after,inset,0
+source/css/37m388zf6rymp.pretty.css,129,,.glod-board > *,z-index,1
+source/css/37m388zf6rymp.pretty.css,130,,.glod-board > *,position,relative
+source/css/37m388zf6rymp.pretty.css,133,,.glod-nail,z-index,2
+source/css/37m388zf6rymp.pretty.css,135,,.glod-nail,border-radius,50%
+source/css/37m388zf6rymp.pretty.css,136,,.glod-nail,width,7px
+source/css/37m388zf6rymp.pretty.css,137,,.glod-nail,height,7px
+source/css/37m388zf6rymp.pretty.css,138,,.glod-nail,position,absolute
+source/css/37m388zf6rymp.pretty.css,139,,.glod-nail,box-shadow,0 1px 2px #0009
+source/css/37m388zf6rymp.pretty.css,142,,.glod-nail-1,top,8px
+source/css/37m388zf6rymp.pretty.css,143,,.glod-nail-1,left,9px
+source/css/37m388zf6rymp.pretty.css,146,,.glod-nail-2,top,8px
+source/css/37m388zf6rymp.pretty.css,147,,.glod-nail-2,right,9px
+source/css/37m388zf6rymp.pretty.css,150,,.glod-nail-3,bottom,8px
+source/css/37m388zf6rymp.pretty.css,151,,.glod-nail-3,left,9px
+source/css/37m388zf6rymp.pretty.css,154,,.glod-nail-4,bottom,8px
+source/css/37m388zf6rymp.pretty.css,155,,.glod-nail-4,right,9px
+source/css/37m388zf6rymp.pretty.css,165,,.glod-wb-kicker,display,block
+source/css/37m388zf6rymp.pretty.css,168,,.glod-wb-head,align-items,center
+source/css/37m388zf6rymp.pretty.css,169,,.glod-wb-head,gap,9px
+source/css/37m388zf6rymp.pretty.css,170,,.glod-wb-head,margin-top,5px
+source/css/37m388zf6rymp.pretty.css,171,,.glod-wb-head,display,flex
+source/css/37m388zf6rymp.pretty.css,178,,.glod-wb-title,margin,0
+source/css/37m388zf6rymp.pretty.css,184,,.glod-pulse-dot,border-radius,50%
+source/css/37m388zf6rymp.pretty.css,185,,.glod-pulse-dot,flex,none
+source/css/37m388zf6rymp.pretty.css,186,,.glod-pulse-dot,width,11px
+source/css/37m388zf6rymp.pretty.css,187,,.glod-pulse-dot,height,11px
+source/css/37m388zf6rymp.pretty.css,189,,.glod-pulse-dot,box-shadow,0 0 12px 3px #ffb2508c
+source/css/37m388zf6rymp.pretty.css,195,@keyframes glodPulse,"0%, to",transform,scale(1)
+source/css/37m388zf6rymp.pretty.css,199,@keyframes glodPulse,50%,transform,scale(1.25)
+source/css/37m388zf6rymp.pretty.css,204,,.glod-alert-dot,border-radius,50%
+source/css/37m388zf6rymp.pretty.css,205,,.glod-alert-dot,flex,none
+source/css/37m388zf6rymp.pretty.css,206,,.glod-alert-dot,width,11px
+source/css/37m388zf6rymp.pretty.css,207,,.glod-alert-dot,height,11px
+source/css/37m388zf6rymp.pretty.css,208,,.glod-alert-dot,box-shadow,0 0 10px 2px #f3c36b61
+source/css/37m388zf6rymp.pretty.css,213,,.glod-wb-expect,margin,8px 0 0
+source/css/37m388zf6rymp.pretty.css,221,,.glod-wb-rewrite,border-radius,6px
+source/css/37m388zf6rymp.pretty.css,222,,.glod-wb-rewrite,margin,9px 0 0
+source/css/37m388zf6rymp.pretty.css,223,,.glod-wb-rewrite,padding,8px 10px
+source/css/37m388zf6rymp.pretty.css,227,,.glod-wb-rewrite,transform,rotate(0.6deg)
+source/css/37m388zf6rymp.pretty.css,228,,.glod-wb-rewrite,box-shadow,0 3px 8px #04030c66
+source/css/37m388zf6rymp.pretty.css,232,,.glod-wb-action,width,100%
+source/css/37m388zf6rymp.pretty.css,233,,.glod-wb-action,min-height,42px
+source/css/37m388zf6rymp.pretty.css,238,,.glod-wb-action,border-radius,6px
+source/css/37m388zf6rymp.pretty.css,239,,.glod-wb-action,margin-top,12px
+source/css/37m388zf6rymp.pretty.css,242,,.glod-wb-action,box-shadow,0 5px 12px #04030c59
+source/css/37m388zf6rymp.pretty.css,251,,.glod-wb-action-error,margin,8px 0 0
+source/css/37m388zf6rymp.pretty.css,257,,.glod-wb-steps,gap,6px
+source/css/37m388zf6rymp.pretty.css,258,,.glod-wb-steps,margin,10px 0 0
+source/css/37m388zf6rymp.pretty.css,259,,.glod-wb-steps,padding,10px 0 0
+source/css/37m388zf6rymp.pretty.css,261,,.glod-wb-steps,display,grid
+source/css/37m388zf6rymp.pretty.css,267,,.glod-wb-steps li,align-items,center
+source/css/37m388zf6rymp.pretty.css,268,,.glod-wb-steps li,gap,9px
+source/css/37m388zf6rymp.pretty.css,270,,.glod-wb-steps li,display,flex
+source/css/37m388zf6rymp.pretty.css,276,,.glod-wb-steps li .dot,border-radius,50%
+source/css/37m388zf6rymp.pretty.css,277,,.glod-wb-steps li .dot,flex,none
+source/css/37m388zf6rymp.pretty.css,278,,.glod-wb-steps li .dot,place-items,center
+source/css/37m388zf6rymp.pretty.css,279,,.glod-wb-steps li .dot,width,18px
+source/css/37m388zf6rymp.pretty.css,280,,.glod-wb-steps li .dot,height,18px
+source/css/37m388zf6rymp.pretty.css,283,,.glod-wb-steps li .dot,display,grid
+source/css/37m388zf6rymp.pretty.css,294,,.glod-wb-steps li.active .dot,box-shadow,0 0 10px 2px #ffc45a80
+source/css/37m388zf6rymp.pretty.css,305,@media (min-width: 1800px),.glod-sign,width,384px
+source/css/37m388zf6rymp.pretty.css,306,@media (min-width: 1800px),.glod-sign,bottom,"clamp(48px, 7.5vh, 116px)"
+source/css/37m388zf6rymp.pretty.css,307,@media (min-width: 1800px),.glod-sign,left,"clamp(200px, 11vw, 320px)"
+source/css/37m388zf6rymp.pretty.css,310,@media (min-width: 1800px),.glod-board,padding,18px 22px 16px
+source/css/37m388zf6rymp.pretty.css,319,@media (min-width: 1800px),.glod-pulse-dot,width,13px
+source/css/37m388zf6rymp.pretty.css,320,@media (min-width: 1800px),.glod-pulse-dot,height,13px
+source/css/37m388zf6rymp.pretty.css,323,@media (min-width: 1800px),.glod-wb-expect,margin-top,9px
+source/css/37m388zf6rymp.pretty.css,330,@media (min-width: 1800px),.glod-wb-steps,gap,8px
+source/css/37m388zf6rymp.pretty.css,331,@media (min-width: 1800px),.glod-wb-steps,margin-top,12px
+source/css/37m388zf6rymp.pretty.css,332,@media (min-width: 1800px),.glod-wb-steps,padding-top,12px
+source/css/37m388zf6rymp.pretty.css,335,@media (min-width: 1800px),.glod-wb-steps li,gap,10px
+source/css/37m388zf6rymp.pretty.css,339,@media (min-width: 1800px),.glod-wb-steps li .dot,width,21px
+source/css/37m388zf6rymp.pretty.css,340,@media (min-width: 1800px),.glod-wb-steps li .dot,height,21px
+source/css/37m388zf6rymp.pretty.css,345,,".glod-stage[data-narrow=""1""] .glod-sign",width,auto
+source/css/37m388zf6rymp.pretty.css,349,,".glod-stage[data-narrow=""1""] .glod-sign",inset,14px 13px auto
+source/css/37m388zf6rymp.pretty.css,350,,".glod-stage[data-narrow=""1""] .glod-sign",transform,none
+source/css/37m388zf6rymp.pretty.css,360,,".glod-stage[data-narrow=""1""].glod-climax .glod-sign",transform,translateY(-130%) scale(0.92)
+source/css/37m388zf6rymp.pretty.css,363,,".glod-stage[data-narrow=""1""] .glod-post",display,none
+source/css/37m388zf6rymp.pretty.css,367,,".glod-stage[data-narrow=""1""] .glod-rope",border-radius,2px
+source/css/37m388zf6rymp.pretty.css,368,,".glod-stage[data-narrow=""1""] .glod-rope",width,2px
+source/css/37m388zf6rymp.pretty.css,369,,".glod-stage[data-narrow=""1""] .glod-rope",height,70px
+source/css/37m388zf6rymp.pretty.css,370,,".glod-stage[data-narrow=""1""] .glod-rope",display,block
+source/css/37m388zf6rymp.pretty.css,371,,".glod-stage[data-narrow=""1""] .glod-rope",position,absolute
+source/css/37m388zf6rymp.pretty.css,372,,".glod-stage[data-narrow=""1""] .glod-rope",bottom,calc(100% - 6px)
+source/css/37m388zf6rymp.pretty.css,375,,".glod-stage[data-narrow=""1""] .glod-rope-1",left,20%
+source/css/37m388zf6rymp.pretty.css,376,,".glod-stage[data-narrow=""1""] .glod-rope-1",transform,rotate(1deg)
+source/css/37m388zf6rymp.pretty.css,379,,".glod-stage[data-narrow=""1""] .glod-rope-2",right,20%
+source/css/37m388zf6rymp.pretty.css,380,,".glod-stage[data-narrow=""1""] .glod-rope-2",transform,rotate(-1deg)
+source/css/37m388zf6rymp.pretty.css,383,,".glod-stage[data-narrow=""1""] .glod-board",padding,11px 13px 10px
+source/css/37m388zf6rymp.pretty.css,384,,".glod-stage[data-narrow=""1""] .glod-board",transform,rotate(-0.7deg)
+source/css/37m388zf6rymp.pretty.css,390,,".glod-stage[data-narrow=""1""] .glod-wb-head",gap,8px
+source/css/37m388zf6rymp.pretty.css,391,,".glod-stage[data-narrow=""1""] .glod-wb-head",margin-top,4px
+source/css/37m388zf6rymp.pretty.css,398,,".glod-stage[data-narrow=""1""] .glod-pulse-dot, .glod-stage[data-narrow=""1""] .glod-alert-dot",width,9px
+source/css/37m388zf6rymp.pretty.css,399,,".glod-stage[data-narrow=""1""] .glod-pulse-dot, .glod-stage[data-narrow=""1""] .glod-alert-dot",height,9px
+source/css/37m388zf6rymp.pretty.css,402,,".glod-stage[data-narrow=""1""] .glod-wb-expect",margin-top,5px
+source/css/37m388zf6rymp.pretty.css,407,,".glod-stage[data-narrow=""1""] .glod-wb-rewrite",margin-top,6px
+source/css/37m388zf6rymp.pretty.css,408,,".glod-stage[data-narrow=""1""] .glod-wb-rewrite",padding,6px 8px
+source/css/37m388zf6rymp.pretty.css,412,,".glod-stage[data-narrow=""1""] .glod-wb-action",min-height,36px
+source/css/37m388zf6rymp.pretty.css,413,,".glod-stage[data-narrow=""1""] .glod-wb-action",margin-top,8px
+source/css/37m388zf6rymp.pretty.css,417,,".glod-stage[data-narrow=""1""] .glod-wb-steps",gap,4px
+source/css/37m388zf6rymp.pretty.css,418,,".glod-stage[data-narrow=""1""] .glod-wb-steps",margin-top,7px
+source/css/37m388zf6rymp.pretty.css,419,,".glod-stage[data-narrow=""1""] .glod-wb-steps",padding-top,7px
+source/css/37m388zf6rymp.pretty.css,422,,".glod-stage[data-narrow=""1""] .glod-wb-steps li",gap,8px
+source/css/37m388zf6rymp.pretty.css,426,,".glod-stage[data-narrow=""1""] .glod-wb-steps li .dot",width,16px
+source/css/37m388zf6rymp.pretty.css,427,,".glod-stage[data-narrow=""1""] .glod-wb-steps li .dot",height,16px
+source/css/37m388zf6rymp.pretty.css,431,,.glod-mem,z-index,7
+source/css/37m388zf6rymp.pretty.css,434,,.glod-mem,filter,drop-shadow(0 16px 24px #0804128c) drop-shadow(0 4px 8px #280e0459) drop-shadow(0 0 28px #ffaa5026)
+source/css/37m388zf6rymp.pretty.css,436,,.glod-mem,width,"min(360px, 86vw)"
+source/css/37m388zf6rymp.pretty.css,440,,.glod-mem,position,absolute
+source/css/37m388zf6rymp.pretty.css,441,,.glod-mem,transform,scale(0.9) translateY(12px)
+source/css/37m388zf6rymp.pretty.css,446,,.glod-mem.show,transform,scale(1) translateY(0)
+source/css/37m388zf6rymp.pretty.css,453,,.glod-mem-float,position,relative
+source/css/37m388zf6rymp.pretty.css,458,@keyframes glodMemBob,"0%, to",transform,translateY(0) rotate(0)
+source/css/37m388zf6rymp.pretty.css,461,@keyframes glodMemBob,50%,transform,translateY(-5px) rotate(0.4deg)
+source/css/37m388zf6rymp.pretty.css,470,,.glod-mem-card,padding,24px 22px 28px
+source/css/37m388zf6rymp.pretty.css,471,,.glod-mem-card,position,relative
+source/css/37m388zf6rymp.pretty.css,472,,.glod-mem-card,transform,rotate(1.6deg)
+source/css/37m388zf6rymp.pretty.css,475,,.glod-mem-close,z-index,3
+source/css/37m388zf6rymp.pretty.css,477,,.glod-mem-close,width,36px
+source/css/37m388zf6rymp.pretty.css,478,,.glod-mem-close,height,36px
+source/css/37m388zf6rymp.pretty.css,483,,.glod-mem-close,border-radius,50%
+source/css/37m388zf6rymp.pretty.css,484,,.glod-mem-close,place-items,center
+source/css/37m388zf6rymp.pretty.css,485,,.glod-mem-close,padding,0
+source/css/37m388zf6rymp.pretty.css,488,,.glod-mem-close,display,grid
+source/css/37m388zf6rymp.pretty.css,489,,.glod-mem-close,position,absolute
+source/css/37m388zf6rymp.pretty.css,490,,.glod-mem-close,top,7px
+source/css/37m388zf6rymp.pretty.css,491,,.glod-mem-close,right,9px
+source/css/37m388zf6rymp.pretty.css,513,,.glod-mem-card:before,position,absolute
+source/css/37m388zf6rymp.pretty.css,514,,.glod-mem-card:before,inset,0
+source/css/37m388zf6rymp.pretty.css,522,,.glod-mem-card:after,position,absolute
+source/css/37m388zf6rymp.pretty.css,523,,.glod-mem-card:after,inset,0
+source/css/37m388zf6rymp.pretty.css,526,,.glod-mem-ember,z-index,2
+source/css/37m388zf6rymp.pretty.css,530,,.glod-mem-ember,border-radius,50%
+source/css/37m388zf6rymp.pretty.css,531,,.glod-mem-ember,place-items,center
+source/css/37m388zf6rymp.pretty.css,532,,.glod-mem-ember,width,48px
+source/css/37m388zf6rymp.pretty.css,533,,.glod-mem-ember,height,48px
+source/css/37m388zf6rymp.pretty.css,534,,.glod-mem-ember,padding,0
+source/css/37m388zf6rymp.pretty.css,536,,.glod-mem-ember,display,grid
+source/css/37m388zf6rymp.pretty.css,537,,.glod-mem-ember,position,absolute
+source/css/37m388zf6rymp.pretty.css,538,,.glod-mem-ember,bottom,-13px
+source/css/37m388zf6rymp.pretty.css,539,,.glod-mem-ember,left,-6px
+source/css/37m388zf6rymp.pretty.css,549,,.glod-mem-ember-core,border-radius,50%
+source/css/37m388zf6rymp.pretty.css,550,,.glod-mem-ember-core,width,14px
+source/css/37m388zf6rymp.pretty.css,551,,.glod-mem-ember-core,height,14px
+source/css/37m388zf6rymp.pretty.css,552,,.glod-mem-ember-core,box-shadow,"0 0 10px 3px #ffc373f2, 0 0 26px 9px #ff983e8c, 0 0 52px 20px #ff823240"
+source/css/37m388zf6rymp.pretty.css,566,@keyframes glodEmberBreath,"0%, to",transform,scale(1)
+source/css/37m388zf6rymp.pretty.css,567,@keyframes glodEmberBreath,"0%, to",box-shadow,"0 0 10px 3px #ffc373f2, 0 0 26px 9px #ff983e8c, 0 0 52px 20px #ff823240"
+source/css/37m388zf6rymp.pretty.css,573,@keyframes glodEmberBreath,50%,transform,scale(1.25)
+source/css/37m388zf6rymp.pretty.css,574,@keyframes glodEmberBreath,50%,box-shadow,"0 0 12px 4px #ffcd7d, 0 0 34px 12px #ffa044a6, 0 0 64px 26px #ff84344d"
+source/css/37m388zf6rymp.pretty.css,583,,.glod-mem-hook,margin,0 26px 0 0
+source/css/37m388zf6rymp.pretty.css,595,,.glod-mem-carry,width,100%
+source/css/37m388zf6rymp.pretty.css,596,,.glod-mem-carry,min-height,44px
+source/css/37m388zf6rymp.pretty.css,601,,.glod-mem-carry,border-radius,6px
+source/css/37m388zf6rymp.pretty.css,602,,.glod-mem-carry,margin-top,14px
+source/css/37m388zf6rymp.pretty.css,603,,.glod-mem-carry,padding,9px 12px
+source/css/37m388zf6rymp.pretty.css,615,,.glod-return-status,width,1px
+source/css/37m388zf6rymp.pretty.css,616,,.glod-return-status,height,1px
+source/css/37m388zf6rymp.pretty.css,617,,.glod-return-status,margin,-1px
+source/css/37m388zf6rymp.pretty.css,618,,.glod-return-status,padding,0
+source/css/37m388zf6rymp.pretty.css,619,,.glod-return-status,position,absolute
+source/css/37m388zf6rymp.pretty.css,620,,.glod-return-status,overflow,hidden
+source/css/37m388zf6rymp.pretty.css,623,,.glod-active-ember,z-index,6
+source/css/37m388zf6rymp.pretty.css,627,,.glod-active-ember,border-radius,50%
+source/css/37m388zf6rymp.pretty.css,628,,.glod-active-ember,place-items,center
+source/css/37m388zf6rymp.pretty.css,629,,.glod-active-ember,width,48px
+source/css/37m388zf6rymp.pretty.css,630,,.glod-active-ember,height,48px
+source/css/37m388zf6rymp.pretty.css,631,,.glod-active-ember,padding,0
+source/css/37m388zf6rymp.pretty.css,633,,.glod-active-ember,display,grid
+source/css/37m388zf6rymp.pretty.css,634,,.glod-active-ember,position,absolute
+source/css/37m388zf6rymp.pretty.css,635,,.glod-active-ember,top,53%
+source/css/37m388zf6rymp.pretty.css,636,,.glod-active-ember,left,54%
+source/css/37m388zf6rymp.pretty.css,637,,.glod-active-ember,transform,"translate(-50%, -50%)"
+source/css/37m388zf6rymp.pretty.css,640,,.glod-active-ember-with-cue,box-sizing,border-box
+source/css/37m388zf6rymp.pretty.css,643,,.glod-active-ember-with-cue,border-radius,6px
+source/css/37m388zf6rymp.pretty.css,644,,.glod-active-ember-with-cue,justify-content,center
+source/css/37m388zf6rymp.pretty.css,645,,.glod-active-ember-with-cue,align-items,center
+source/css/37m388zf6rymp.pretty.css,646,,.glod-active-ember-with-cue,gap,8px
+source/css/37m388zf6rymp.pretty.css,647,,.glod-active-ember-with-cue,width,auto
+source/css/37m388zf6rymp.pretty.css,648,,.glod-active-ember-with-cue,min-width,104px
+source/css/37m388zf6rymp.pretty.css,649,,.glod-active-ember-with-cue,min-height,48px
+source/css/37m388zf6rymp.pretty.css,650,,.glod-active-ember-with-cue,padding,5px 10px 5px 9px
+source/css/37m388zf6rymp.pretty.css,651,,.glod-active-ember-with-cue,display,inline-flex
+source/css/37m388zf6rymp.pretty.css,652,,.glod-active-ember-with-cue,box-shadow,0 5px 12px #08041257
+source/css/37m388zf6rymp.pretty.css,662,,.glod-active-ember-core,border-radius,50%
+source/css/37m388zf6rymp.pretty.css,663,,.glod-active-ember-core,flex,none
+source/css/37m388zf6rymp.pretty.css,664,,.glod-active-ember-core,width,15px
+source/css/37m388zf6rymp.pretty.css,665,,.glod-active-ember-core,height,15px
+source/css/37m388zf6rymp.pretty.css,670,,.glod-active-ember-core,box-shadow,"0 0 10px 4px #ffc869e6, 0 0 28px 11px #ff983a9e, 0 0 54px 22px #ff80303d"
+source/css/37m388zf6rymp.pretty.css,685,,".glod-active-ember:hover .glod-active-ember-core, .glod-active-ember:active .glod-active-ember-core, .glod-active-ember:focus-visible .glod-active-ember-core",transform,scale(1.22)
+source/css/37m388zf6rymp.pretty.css,686,,".glod-active-ember:hover .glod-active-ember-core, .glod-active-ember:active .glod-active-ember-core, .glod-active-ember:focus-visible .glod-active-ember-core",box-shadow,"0 0 13px 5px #ffd782, 0 0 34px 14px #ffa546b8, 0 0 62px 27px #ff84344d"
+source/css/37m388zf6rymp.pretty.css,699,@keyframes glodActiveEmberGlow,"0%, to",filter,brightness(0.96)
+source/css/37m388zf6rymp.pretty.css,703,@keyframes glodActiveEmberGlow,50%,filter,brightness(1.2)
+source/css/37m388zf6rymp.pretty.css,707,,".glod-stage[data-narrow=""1""] .glod-active-ember",left,50%
+source/css/37m388zf6rymp.pretty.css,710,,".glod-stage[data-fire-level=""high""] .glod-active-ember",top,48%
+source/css/37m388zf6rymp.pretty.css,713,,".glod-stage[data-fire-level=""low""] .glod-active-ember",top,60%
+source/css/37m388zf6rymp.pretty.css,716,,".glod-stage[data-fire-level=""unlit""] .glod-active-ember",top,66%
+source/css/37m388zf6rymp.pretty.css,719,,.glod-hearth-box,z-index,4
+source/css/37m388zf6rymp.pretty.css,721,,.glod-hearth-box,width,"min(92%, 660px)"
+source/css/37m388zf6rymp.pretty.css,725,,.glod-hearth-box,flex-direction,column
+source/css/37m388zf6rymp.pretty.css,726,,.glod-hearth-box,gap,6px
+source/css/37m388zf6rymp.pretty.css,729,,.glod-hearth-box,display,flex
+source/css/37m388zf6rymp.pretty.css,730,,.glod-hearth-box,position,absolute
+source/css/37m388zf6rymp.pretty.css,731,,.glod-hearth-box,bottom,"clamp(16px, 3.4vh, 48px)"
+source/css/37m388zf6rymp.pretty.css,732,,.glod-hearth-box,left,54%
+source/css/37m388zf6rymp.pretty.css,733,,.glod-hearth-box,transform,translate(-50%)
+source/css/37m388zf6rymp.pretty.css,740,@media (min-width: 860px) and (max-width: 1799px),.glod-hearth-box,width,"min(100% - 430px, 660px)"
+source/css/37m388zf6rymp.pretty.css,741,@media (min-width: 860px) and (max-width: 1799px),.glod-hearth-box,left,calc(54% + 48px)
+source/css/37m388zf6rymp.pretty.css,749,,.glod-hearth-box p,margin,0
+source/css/37m388zf6rymp.pretty.css,767,,".glod-stage[data-narrow=""1""] .glod-hearth-box",gap,4px
+source/css/37m388zf6rymp.pretty.css,768,,".glod-stage[data-narrow=""1""] .glod-hearth-box",width,calc(100% - 28px)
+source/css/37m388zf6rymp.pretty.css,769,,".glod-stage[data-narrow=""1""] .glod-hearth-box",bottom,12px
+source/css/37m388zf6rymp.pretty.css,770,,".glod-stage[data-narrow=""1""] .glod-hearth-box",left,14px
+source/css/37m388zf6rymp.pretty.css,771,,".glod-stage[data-narrow=""1""] .glod-hearth-box",transform,none
+source/css/37m388zf6rymp.pretty.css,777,,.glod-sound,z-index,6
+source/css/37m388zf6rymp.pretty.css,779,,.glod-sound,-webkit-backdrop-filter,blur(4px)
+source/css/37m388zf6rymp.pretty.css,780,,.glod-sound,backdrop-filter,blur(4px)
+source/css/37m388zf6rymp.pretty.css,781,,.glod-sound,min-height,44px
+source/css/37m388zf6rymp.pretty.css,782,,.glod-sound,padding,9px 16px
+source/css/37m388zf6rymp.pretty.css,784,,.glod-sound,position,absolute
+source/css/37m388zf6rymp.pretty.css,785,,.glod-sound,bottom,"clamp(16px, 3.4vh, 48px)"
+source/css/37m388zf6rymp.pretty.css,786,,.glod-sound,right,22px
+source/css/37m388zf6rymp.pretty.css,789,,.glod-sound svg,width,15px
+source/css/37m388zf6rymp.pretty.css,790,,.glod-sound svg,height,15px
+source/css/37m388zf6rymp.pretty.css,798,,".glod-stage[data-narrow=""1""] .glod-sound",bottom,56px
+source/css/37m388zf6rymp.pretty.css,799,,".glod-stage[data-narrow=""1""] .glod-sound",right,12px
+source/css/37m388zf6rymp.pretty.css,802,,.glod-book,z-index,7
+source/css/37m388zf6rymp.pretty.css,805,,.glod-book,filter,drop-shadow(0 26px 44px #04030c99) drop-shadow(0 0 42px #ffb45a42)
+source/css/37m388zf6rymp.pretty.css,809,,.glod-book,position,absolute
+source/css/37m388zf6rymp.pretty.css,810,,.glod-book,transform,scale(0.92) rotate(-1.2deg)
+source/css/37m388zf6rymp.pretty.css,814,,.glod-book.show,transform,scale(1) rotate(-1.2deg)
+source/css/37m388zf6rymp.pretty.css,820,,.glod-book-pages,width,19px
+source/css/37m388zf6rymp.pretty.css,821,,.glod-book-pages,position,absolute
+source/css/37m388zf6rymp.pretty.css,822,,.glod-book-pages,top,10px
+source/css/37m388zf6rymp.pretty.css,823,,.glod-book-pages,bottom,6px
+source/css/37m388zf6rymp.pretty.css,824,,.glod-book-pages,right,0
+source/css/37m388zf6rymp.pretty.css,825,,.glod-book-pages,box-shadow,inset -2px 0 3px #5a3c1e66
+source/css/37m388zf6rymp.pretty.css,833,,.glod-book-cover,border-radius,9px 15px 15px 7px
+source/css/37m388zf6rymp.pretty.css,834,,.glod-book-cover,flex-direction,column
+source/css/37m388zf6rymp.pretty.css,835,,.glod-book-cover,align-items,center
+source/css/37m388zf6rymp.pretty.css,836,,.glod-book-cover,padding,0 16px 18px
+source/css/37m388zf6rymp.pretty.css,837,,.glod-book-cover,display,flex
+source/css/37m388zf6rymp.pretty.css,838,,.glod-book-cover,position,absolute
+source/css/37m388zf6rymp.pretty.css,839,,.glod-book-cover,inset,0 13px 0 0
+source/css/37m388zf6rymp.pretty.css,840,,.glod-book-cover,box-shadow,"inset 0 0 0 1px #090516a6, inset 0 2px #fff0d212, inset -5px 0 9px #06031066, inset 0 -4px 7px #06031059, 4px 5px 0 -1px #191140, 7px 9px 0 -2px #120c31"
+source/css/37m388zf6rymp.pretty.css,852,,.glod-book-cover:before,border-radius,7px
+source/css/37m388zf6rymp.pretty.css,853,,.glod-book-cover:before,position,absolute
+source/css/37m388zf6rymp.pretty.css,854,,.glod-book-cover:before,inset,11px 13px
+source/css/37m388zf6rymp.pretty.css,855,,.glod-book-cover:before,box-shadow,"0 1px #ffecc40f, inset 0 1px #ffecc40f"
+source/css/37m388zf6rymp.pretty.css,875,,.glod-book-spine,border-radius,9px 0 0 7px
+source/css/37m388zf6rymp.pretty.css,876,,.glod-book-spine,width,24px
+source/css/37m388zf6rymp.pretty.css,877,,.glod-book-spine,position,absolute
+source/css/37m388zf6rymp.pretty.css,878,,.glod-book-spine,top,0
+source/css/37m388zf6rymp.pretty.css,879,,.glod-book-spine,bottom,0
+source/css/37m388zf6rymp.pretty.css,880,,.glod-book-spine,left,0
+source/css/37m388zf6rymp.pretty.css,883,,.glod-book-fire,border-radius,inherit
+source/css/37m388zf6rymp.pretty.css,891,,.glod-book-fire,position,absolute
+source/css/37m388zf6rymp.pretty.css,892,,.glod-book-fire,inset,0
+source/css/37m388zf6rymp.pretty.css,895,,.glod-book-art,filter,drop-shadow(0 3px 8px #05030e80)
+source/css/37m388zf6rymp.pretty.css,896,,.glod-book-art,width,76%
+source/css/37m388zf6rymp.pretty.css,897,,.glod-book-art,height,auto
+source/css/37m388zf6rymp.pretty.css,898,,.glod-book-art,margin-top,11%
+source/css/37m388zf6rymp.pretty.css,899,,.glod-book-art,display,block
+source/css/37m388zf6rymp.pretty.css,900,,.glod-book-art,position,relative
+source/css/37m388zf6rymp.pretty.css,904,,.glod-book-rule,border-radius,2px
+source/css/37m388zf6rymp.pretty.css,905,,.glod-book-rule,width,52%
+source/css/37m388zf6rymp.pretty.css,906,,.glod-book-rule,height,2px
+source/css/37m388zf6rymp.pretty.css,907,,.glod-book-rule,margin-top,15px
+source/css/37m388zf6rymp.pretty.css,908,,.glod-book-rule,position,relative
+source/css/37m388zf6rymp.pretty.css,913,,.glod-book-rule:after,width,6px
+source/css/37m388zf6rymp.pretty.css,914,,.glod-book-rule:after,height,6px
+source/css/37m388zf6rymp.pretty.css,915,,.glod-book-rule:after,position,absolute
+source/css/37m388zf6rymp.pretty.css,916,,.glod-book-rule:after,top,50%
+source/css/37m388zf6rymp.pretty.css,917,,.glod-book-rule:after,left,50%
+source/css/37m388zf6rymp.pretty.css,918,,.glod-book-rule:after,transform,"translate(-50%, -50%) rotate(45deg)"
+source/css/37m388zf6rymp.pretty.css,919,,.glod-book-rule:after,box-shadow,0 0 8px #f5c54299
+source/css/37m388zf6rymp.pretty.css,929,,.glod-book-title,margin-top,12px
+source/css/37m388zf6rymp.pretty.css,930,,.glod-book-title,padding,0 6px
+source/css/37m388zf6rymp.pretty.css,934,,.glod-book-title,position,relative
+source/css/37m388zf6rymp.pretty.css,942,,.glod-book-colophon,margin-top,auto
+source/css/37m388zf6rymp.pretty.css,945,,.glod-book-colophon,position,relative
+source/css/37m388zf6rymp.pretty.css,948,,.glod-caption,z-index,8
+source/css/37m388zf6rymp.pretty.css,953,,.glod-caption,flex-direction,column
+source/css/37m388zf6rymp.pretty.css,954,,.glod-caption,align-items,center
+source/css/37m388zf6rymp.pretty.css,955,,.glod-caption,gap,16px
+source/css/37m388zf6rymp.pretty.css,956,,.glod-caption,width,"min(380px, 100% - 32px)"
+source/css/37m388zf6rymp.pretty.css,960,,.glod-caption,display,flex
+source/css/37m388zf6rymp.pretty.css,961,,.glod-caption,position,absolute
+source/css/37m388zf6rymp.pretty.css,962,,.glod-caption,transform,translate(-50%)
+source/css/37m388zf6rymp.pretty.css,990,,.glod-open,border-radius,9px
+source/css/37m388zf6rymp.pretty.css,991,,.glod-open,justify-content,center
+source/css/37m388zf6rymp.pretty.css,992,,.glod-open,align-items,center
+source/css/37m388zf6rymp.pretty.css,993,,.glod-open,min-height,52px
+source/css/37m388zf6rymp.pretty.css,994,,.glod-open,padding,13px 36px
+source/css/37m388zf6rymp.pretty.css,1001,,.glod-open,display,inline-flex
+source/css/37m388zf6rymp.pretty.css,1002,,.glod-open,position,relative
+source/css/37m388zf6rymp.pretty.css,1003,,.glod-open,transform,rotate(-0.6deg)
+source/css/37m388zf6rymp.pretty.css,1004,,.glod-open,box-shadow,"0 12px 26px #04030c8c, 0 0 30px #ffaa4629, inset 0 1px #ffd8a04d, inset 0 -3px #0006"
+source/css/37m388zf6rymp.pretty.css,1012,,.glod-open:before,border-radius,inherit
+source/css/37m388zf6rymp.pretty.css,1037,,.glod-open:before,position,absolute
+source/css/37m388zf6rymp.pretty.css,1038,,.glod-open:before,inset,0
+source/css/37m388zf6rymp.pretty.css,1042,,.glod-open:hover,transform,rotate(-0.6deg) translateY(-3px)
+source/css/37m388zf6rymp.pretty.css,1043,,.glod-open:hover,box-shadow,"0 18px 38px #04030c99, 0 0 44px #ffb45047, inset 0 1px #ffd8a059, inset 0 -3px #0006"
+source/css/37m388zf6rymp.pretty.css,1050,,.glod-open:active,transform,rotate(-0.6deg) scale(0.97)
+source/css/37m388zf6rymp.pretty.css,1067,@media (prefers-reduced-motion: reduce),.glod-book,transform,none
+source/css/37m388zf6rymp.pretty.css,1070,@media (prefers-reduced-motion: reduce),.glod-book.show,transform,none
+source/css/37m388zf6rymp.pretty.css,1074,,body.glod-takeover,overflow,hidden
+source/css/37m388zf6rymp.pretty.css,1078,,"body.glod-takeover .bg, body.glod-takeover .foot",display,none
+source/css/37m388zf6rymp.pretty.css,1081,,body.glod-takeover nav,z-index,10
+source/css/37m388zf6rymp.pretty.css,1082,,body.glod-takeover nav,position,relative
+source/css/37m388zf6rymp.pretty.css,1086,@media (max-width: 859px),body.glod-takeover nav,display,none
+source/css/37m388zf6rymp.pretty.css,1090,,body.glod-takeover .glod-stage,z-index,0
+source/css/37m388zf6rymp.pretty.css,1091,,body.glod-takeover .glod-stage,width,100vw
+source/css/37m388zf6rymp.pretty.css,1092,,body.glod-takeover .glod-stage,height,100dvh
+source/css/37m388zf6rymp.pretty.css,1093,,body.glod-takeover .glod-stage,margin,0
+source/css/37m388zf6rymp.pretty.css,1094,,body.glod-takeover .glod-stage,position,fixed
+source/css/37m388zf6rymp.pretty.css,1095,,body.glod-takeover .glod-stage,inset,0
+source/css/2_gt301v4m-60.pretty.css,4,@keyframes tfStartIn,0%,transform,translateY(22px)
+source/css/2_gt301v4m-60.pretty.css,8,@keyframes tfStartIn,to,transform,none
+source/css/2_gt301v4m-60.pretty.css,15,,.start-flow .gallery,grid-template-columns,"repeat(3, 1fr)"
+source/css/2_gt301v4m-60.pretty.css,16,,.start-flow .gallery,gap,14px
+source/css/2_gt301v4m-60.pretty.css,17,,.start-flow .gallery,padding,22px 0 6px
+source/css/2_gt301v4m-60.pretty.css,18,,.start-flow .gallery,display,none
+source/css/2_gt301v4m-60.pretty.css,22,,.start-flow .gallery.open,display,grid
+source/css/2_gt301v4m-60.pretty.css,26,,.start-flow .gbook,box-shadow,var(--card-shadow)
+source/css/2_gt301v4m-60.pretty.css,27,,.start-flow .gbook,border-radius,16px
+source/css/2_gt301v4m-60.pretty.css,28,,.start-flow .gbook,margin,0
+source/css/2_gt301v4m-60.pretty.css,29,,.start-flow .gbook,overflow,hidden
+source/css/2_gt301v4m-60.pretty.css,32,,.start-flow .gbook img,aspect-ratio,2/3
+source/css/2_gt301v4m-60.pretty.css,33,,.start-flow .gbook img,object-fit,cover
+source/css/2_gt301v4m-60.pretty.css,34,,.start-flow .gbook img,width,100%
+source/css/2_gt301v4m-60.pretty.css,35,,.start-flow .gbook img,display,block
+source/css/2_gt301v4m-60.pretty.css,40,,.start-flow .gbook figcaption,padding,8px 10px
+source/css/2_gt301v4m-60.pretty.css,45,,.start-flow .stepcard,flex-direction,column
+source/css/2_gt301v4m-60.pretty.css,46,,.start-flow .stepcard,gap,20px
+source/css/2_gt301v4m-60.pretty.css,47,,.start-flow .stepcard,max-width,560px
+source/css/2_gt301v4m-60.pretty.css,48,,.start-flow .stepcard,margin,0 auto
+source/css/2_gt301v4m-60.pretty.css,49,,.start-flow .stepcard,padding,30px 28px 28px
+source/css/2_gt301v4m-60.pretty.css,50,,.start-flow .stepcard,display,flex
+source/css/2_gt301v4m-60.pretty.css,58,,.start-flow .stepcard .btn:disabled,box-shadow,none
+source/css/2_gt301v4m-60.pretty.css,59,,.start-flow .stepcard .btn:disabled,transform,none
+source/css/2_gt301v4m-60.pretty.css,62,,.start-flow .field,width,100%
+source/css/2_gt301v4m-60.pretty.css,67,,.start-flow .field,border-radius,16px
+source/css/2_gt301v4m-60.pretty.css,69,,.start-flow .field,padding,15px 18px
+source/css/2_gt301v4m-60.pretty.css,84,,.start-flow .field-error,margin,0
+source/css/2_gt301v4m-60.pretty.css,88,,.start-flow .upload .cam img,object-fit,cover
+source/css/2_gt301v4m-60.pretty.css,89,,.start-flow .upload .cam img,width,100%
+source/css/2_gt301v4m-60.pretty.css,90,,.start-flow .upload .cam img,height,100%
+source/css/2_gt301v4m-60.pretty.css,91,,.start-flow .upload .cam img,display,none
+source/css/2_gt301v4m-60.pretty.css,94,,.start-flow .upload.chosen .cam svg,display,none
+source/css/2_gt301v4m-60.pretty.css,97,,.start-flow .upload.chosen .cam img,display,block
+source/css/2_gt301v4m-60.pretty.css,101,,.start-flow .privacy,align-items,flex-start
+source/css/2_gt301v4m-60.pretty.css,102,,.start-flow .privacy,gap,10px
+source/css/2_gt301v4m-60.pretty.css,105,,.start-flow .privacy,display,flex
+source/css/2_gt301v4m-60.pretty.css,108,,.start-flow .privacy svg,width,16px
+source/css/2_gt301v4m-60.pretty.css,109,,.start-flow .privacy svg,height,16px
+source/css/2_gt301v4m-60.pretty.css,111,,.start-flow .privacy svg,flex,none
+source/css/2_gt301v4m-60.pretty.css,112,,.start-flow .privacy svg,margin-top,2px
+source/css/2_gt301v4m-60.pretty.css,116,,.start-flow .paintpill,width,fit-content
+source/css/2_gt301v4m-60.pretty.css,118,,.start-flow .paintpill,border-radius,999px
+source/css/2_gt301v4m-60.pretty.css,119,,.start-flow .paintpill,align-items,center
+source/css/2_gt301v4m-60.pretty.css,120,,.start-flow .paintpill,gap,9px
+source/css/2_gt301v4m-60.pretty.css,121,,.start-flow .paintpill,padding,8px 15px
+source/css/2_gt301v4m-60.pretty.css,125,,.start-flow .paintpill,display,inline-flex
+source/css/2_gt301v4m-60.pretty.css,129,,.start-flow .paintpill .dotpulse,border-radius,50%
+source/css/2_gt301v4m-60.pretty.css,130,,.start-flow .paintpill .dotpulse,width,8px
+source/css/2_gt301v4m-60.pretty.css,131,,.start-flow .paintpill .dotpulse,height,8px
+source/css/2_gt301v4m-60.pretty.css,135,,.start-flow .build-grid,grid-template-columns,1.15fr 0.85fr
+source/css/2_gt301v4m-60.pretty.css,136,,.start-flow .build-grid,align-items,start
+source/css/2_gt301v4m-60.pretty.css,137,,.start-flow .build-grid,gap,18px
+source/css/2_gt301v4m-60.pretty.css,138,,.start-flow .build-grid,display,grid
+source/css/2_gt301v4m-60.pretty.css,141,,.start-flow .build-main,flex-direction,column
+source/css/2_gt301v4m-60.pretty.css,142,,.start-flow .build-main,gap,20px
+source/css/2_gt301v4m-60.pretty.css,143,,.start-flow .build-main,padding,26px
+source/css/2_gt301v4m-60.pretty.css,144,,.start-flow .build-main,display,flex
+source/css/2_gt301v4m-60.pretty.css,147,,.start-flow .build-main h3,margin,0 0 12px
+source/css/2_gt301v4m-60.pretty.css,150,,.start-flow .pick-row,grid-template-columns,"repeat(3, 1fr)"
+source/css/2_gt301v4m-60.pretty.css,151,,.start-flow .pick-row,gap,12px
+source/css/2_gt301v4m-60.pretty.css,152,,.start-flow .pick-row,display,grid
+source/css/2_gt301v4m-60.pretty.css,160,,.start-flow .pick,border-radius,18px
+source/css/2_gt301v4m-60.pretty.css,161,,.start-flow .pick,flex-direction,column
+source/css/2_gt301v4m-60.pretty.css,162,,.start-flow .pick,align-items,center
+source/css/2_gt301v4m-60.pretty.css,163,,.start-flow .pick,gap,9px
+source/css/2_gt301v4m-60.pretty.css,164,,.start-flow .pick,padding,16px 8px 13px
+source/css/2_gt301v4m-60.pretty.css,168,,.start-flow .pick,display,flex
+source/css/2_gt301v4m-60.pretty.css,171,,.start-flow .pick svg,width,34px
+source/css/2_gt301v4m-60.pretty.css,172,,.start-flow .pick svg,height,34px
+source/css/2_gt301v4m-60.pretty.css,184,,.start-flow .pick--story,flex-direction,row
+source/css/2_gt301v4m-60.pretty.css,185,,.start-flow .pick--story,grid-column,1/-1
+source/css/2_gt301v4m-60.pretty.css,186,,.start-flow .pick--story,justify-content,flex-start
+source/css/2_gt301v4m-60.pretty.css,187,,.start-flow .pick--story,min-height,76px
+source/css/2_gt301v4m-60.pretty.css,188,,.start-flow .pick--story,padding,14px 18px
+source/css/2_gt301v4m-60.pretty.css,191,,.start-flow .pick-story-copy,gap,3px
+source/css/2_gt301v4m-60.pretty.css,192,,.start-flow .pick-story-copy,display,grid
+source/css/2_gt301v4m-60.pretty.css,207,,.start-flow .pick-divider,grid-column,1/-1
+source/css/2_gt301v4m-60.pretty.css,208,,.start-flow .pick-divider,margin,1px 0 -2px
+source/css/2_gt301v4m-60.pretty.css,212,,.start-flow .herocard,flex-direction,column
+source/css/2_gt301v4m-60.pretty.css,213,,.start-flow .herocard,align-items,center
+source/css/2_gt301v4m-60.pretty.css,214,,.start-flow .herocard,gap,13px
+source/css/2_gt301v4m-60.pretty.css,215,,.start-flow .herocard,padding,22px
+source/css/2_gt301v4m-60.pretty.css,216,,.start-flow .herocard,display,flex
+source/css/2_gt301v4m-60.pretty.css,217,,.start-flow .herocard,position,sticky
+source/css/2_gt301v4m-60.pretty.css,218,,.start-flow .herocard,top,76px
+source/css/2_gt301v4m-60.pretty.css,223,,.start-flow .pframe,border-radius,28px
+source/css/2_gt301v4m-60.pretty.css,224,,.start-flow .pframe,width,148px
+source/css/2_gt301v4m-60.pretty.css,225,,.start-flow .pframe,height,148px
+source/css/2_gt301v4m-60.pretty.css,227,,.start-flow .pframe,position,relative
+source/css/2_gt301v4m-60.pretty.css,228,,.start-flow .pframe,overflow,hidden
+source/css/2_gt301v4m-60.pretty.css,229,,.start-flow .pframe,box-shadow,0 16px 36px #0a07204d
+source/css/2_gt301v4m-60.pretty.css,232,,.start-flow .pframe img,object-fit,cover
+source/css/2_gt301v4m-60.pretty.css,233,,.start-flow .pframe img,object-position,center 20%
+source/css/2_gt301v4m-60.pretty.css,234,,.start-flow .pframe img,width,100%
+source/css/2_gt301v4m-60.pretty.css,235,,.start-flow .pframe img,height,100%
+source/css/2_gt301v4m-60.pretty.css,236,,.start-flow .pframe img,display,block
+source/css/2_gt301v4m-60.pretty.css,239,,.start-flow .pframe .veil,-webkit-backdrop-filter,blur(8px)
+source/css/2_gt301v4m-60.pretty.css,240,,.start-flow .pframe .veil,backdrop-filter,blur(8px)
+source/css/2_gt301v4m-60.pretty.css,243,,.start-flow .pframe .veil,place-items,center
+source/css/2_gt301v4m-60.pretty.css,244,,.start-flow .pframe .veil,display,grid
+source/css/2_gt301v4m-60.pretty.css,245,,.start-flow .pframe .veil,position,absolute
+source/css/2_gt301v4m-60.pretty.css,246,,.start-flow .pframe .veil,inset,0
+source/css/2_gt301v4m-60.pretty.css,249,,.start-flow .pframe .veil svg,width,30px
+source/css/2_gt301v4m-60.pretty.css,250,,.start-flow .pframe .veil svg,height,30px
+source/css/2_gt301v4m-60.pretty.css,256,@keyframes tfBrushBob,"0%, to",transform,rotate(-8deg) translateY(0)
+source/css/2_gt301v4m-60.pretty.css,259,@keyframes tfBrushBob,50%,transform,rotate(6deg) translateY(-5px)
+source/css/2_gt301v4m-60.pretty.css,270,,.start-flow .stamps,flex-wrap,wrap
+source/css/2_gt301v4m-60.pretty.css,271,,.start-flow .stamps,justify-content,center
+source/css/2_gt301v4m-60.pretty.css,272,,.start-flow .stamps,gap,7px
+source/css/2_gt301v4m-60.pretty.css,273,,.start-flow .stamps,min-height,30px
+source/css/2_gt301v4m-60.pretty.css,274,,.start-flow .stamps,display,flex
+source/css/2_gt301v4m-60.pretty.css,278,,.start-flow .stage,flex-direction,column
+source/css/2_gt301v4m-60.pretty.css,279,,.start-flow .stage,align-items,center
+source/css/2_gt301v4m-60.pretty.css,280,,.start-flow .stage,gap,24px
+source/css/2_gt301v4m-60.pretty.css,281,,.start-flow .stage,padding,3vh 0 5vh
+source/css/2_gt301v4m-60.pretty.css,282,,.start-flow .stage,display,flex
+source/css/2_gt301v4m-60.pretty.css,285,,.start-flow .easel-wrap,position,relative
+source/css/2_gt301v4m-60.pretty.css,288,,.start-flow .easel,aspect-ratio,3/4
+source/css/2_gt301v4m-60.pretty.css,291,,.start-flow .easel,border-radius,26px
+source/css/2_gt301v4m-60.pretty.css,292,,.start-flow .easel,width,"min(76vw, 330px)"
+source/css/2_gt301v4m-60.pretty.css,293,,.start-flow .easel,position,relative
+source/css/2_gt301v4m-60.pretty.css,294,,.start-flow .easel,overflow,hidden
+source/css/2_gt301v4m-60.pretty.css,295,,.start-flow .easel,box-shadow,"0 30px 70px #0508148c, 0 0 60px #f5c54224"
+source/css/2_gt301v4m-60.pretty.css,300,,.start-flow .easel img,object-fit,cover
+source/css/2_gt301v4m-60.pretty.css,301,,.start-flow .easel img,filter,blur(26px) brightness(0.22) saturate(0)
+source/css/2_gt301v4m-60.pretty.css,302,,.start-flow .easel img,width,100%
+source/css/2_gt301v4m-60.pretty.css,303,,.start-flow .easel img,height,100%
+source/css/2_gt301v4m-60.pretty.css,307,,.start-flow .easel img,display,block
+source/css/2_gt301v4m-60.pretty.css,308,,.start-flow .easel img,transform,scale(1.08)
+source/css/2_gt301v4m-60.pretty.css,314,,.start-flow .easel .sheen,position,absolute
+source/css/2_gt301v4m-60.pretty.css,315,,.start-flow .easel .sheen,inset,-30%
+source/css/2_gt301v4m-60.pretty.css,316,,.start-flow .easel .sheen,transform,translate(-130%) rotate(0.001deg)
+source/css/2_gt301v4m-60.pretty.css,319,,.start-flow .easel.ph1 img,filter,blur(20px) brightness(0.5) saturate(0.15)
+source/css/2_gt301v4m-60.pretty.css,322,,.start-flow .easel.ph2 img,filter,blur(7px) brightness(0.85) saturate(0.7)
+source/css/2_gt301v4m-60.pretty.css,330,@keyframes tfSweep,to,transform,translate(130%)
+source/css/2_gt301v4m-60.pretty.css,334,,.start-flow .easel.ph3 img,filter,none
+source/css/2_gt301v4m-60.pretty.css,335,,.start-flow .easel.ph3 img,transform,scale(1)
+source/css/2_gt301v4m-60.pretty.css,338,,.start-flow .ember,width,"var(--s, 5px)"
+source/css/2_gt301v4m-60.pretty.css,339,,.start-flow .ember,height,"var(--s, 5px)"
+source/css/2_gt301v4m-60.pretty.css,343,,.start-flow .ember,border-radius,50%
+source/css/2_gt301v4m-60.pretty.css,344,,.start-flow .ember,position,absolute
+source/css/2_gt301v4m-60.pretty.css,345,,.start-flow .ember,bottom,8%
+source/css/2_gt301v4m-60.pretty.css,346,,.start-flow .ember,left,50%
+source/css/2_gt301v4m-60.pretty.css,355,@keyframes tfRise,0%,transform,translate(0)
+source/css/2_gt301v4m-60.pretty.css,362,@keyframes tfRise,to,transform,"translate(var(--x, 0), var(--y, -180px))"
+source/css/2_gt301v4m-60.pretty.css,375,,.start-flow .easel .veil-glow,position,absolute
+source/css/2_gt301v4m-60.pretty.css,376,,.start-flow .easel .veil-glow,inset,0
+source/css/2_gt301v4m-60.pretty.css,382,@keyframes tfVeilBreathe,"0%, to",transform,scale(1)
+source/css/2_gt301v4m-60.pretty.css,386,@keyframes tfVeilBreathe,50%,transform,scale(1.06)
+source/css/2_gt301v4m-60.pretty.css,391,,.start-flow .veil-specks,position,absolute
+source/css/2_gt301v4m-60.pretty.css,392,,.start-flow .veil-specks,inset,0
+source/css/2_gt301v4m-60.pretty.css,393,,.start-flow .veil-specks,overflow,hidden
+source/css/2_gt301v4m-60.pretty.css,396,,.start-flow .veil-speck,bottom,16%
+source/css/2_gt301v4m-60.pretty.css,397,,.start-flow .veil-speck,left,"var(--vl, 50%)"
+source/css/2_gt301v4m-60.pretty.css,398,,.start-flow .veil-speck,width,"var(--vs, 4px)"
+source/css/2_gt301v4m-60.pretty.css,399,,.start-flow .veil-speck,height,"var(--vs, 4px)"
+source/css/2_gt301v4m-60.pretty.css,404,,.start-flow .veil-speck,border-radius,50%
+source/css/2_gt301v4m-60.pretty.css,405,,.start-flow .veil-speck,position,absolute
+source/css/2_gt301v4m-60.pretty.css,410,@keyframes tfVeilDrift,0%,transform,translateY(0) scale(0.75)
+source/css/2_gt301v4m-60.pretty.css,417,@keyframes tfVeilDrift,50%,transform,translateY(-28px) scale(1)
+source/css/2_gt301v4m-60.pretty.css,424,@keyframes tfVeilDrift,to,transform,translateY(-56px) scale(0.7)
+source/css/2_gt301v4m-60.pretty.css,428,,.start-flow .veil-caption,max-width,26ch
+source/css/2_gt301v4m-60.pretty.css,431,,.start-flow .veil-caption,margin,0
+source/css/2_gt301v4m-60.pretty.css,447,,.start-flow .reveal-line,max-width,34ch
+source/css/2_gt301v4m-60.pretty.css,451,,.start-flow .reveal-line,align-items,flex-start
+source/css/2_gt301v4m-60.pretty.css,452,,.start-flow .reveal-line,gap,10px
+source/css/2_gt301v4m-60.pretty.css,453,,.start-flow .reveal-line,margin,0
+source/css/2_gt301v4m-60.pretty.css,457,,.start-flow .reveal-line,display,none
+source/css/2_gt301v4m-60.pretty.css,460,,.start-flow .reveal-line svg,width,19px
+source/css/2_gt301v4m-60.pretty.css,461,,.start-flow .reveal-line svg,height,19px
+source/css/2_gt301v4m-60.pretty.css,463,,.start-flow .reveal-line svg,flex,none
+source/css/2_gt301v4m-60.pretty.css,464,,.start-flow .reveal-line svg,margin-top,4px
+source/css/2_gt301v4m-60.pretty.css,468,,.start-flow .reveal-line.on,display,flex
+source/css/2_gt301v4m-60.pretty.css,476,,.start-flow .reveal-name,display,none
+source/css/2_gt301v4m-60.pretty.css,480,,.start-flow .reveal-name.on,display,block
+source/css/2_gt301v4m-60.pretty.css,483,,.start-flow .reveal-actions,flex-wrap,wrap
+source/css/2_gt301v4m-60.pretty.css,484,,.start-flow .reveal-actions,justify-content,center
+source/css/2_gt301v4m-60.pretty.css,485,,.start-flow .reveal-actions,gap,12px
+source/css/2_gt301v4m-60.pretty.css,486,,.start-flow .reveal-actions,display,none
+source/css/2_gt301v4m-60.pretty.css,490,,.start-flow .reveal-actions.on,display,flex
+source/css/2_gt301v4m-60.pretty.css,494,,.start-flow .paint-retry,flex-direction,column
+source/css/2_gt301v4m-60.pretty.css,495,,.start-flow .paint-retry,align-items,center
+source/css/2_gt301v4m-60.pretty.css,496,,.start-flow .paint-retry,gap,14px
+source/css/2_gt301v4m-60.pretty.css,498,,.start-flow .paint-retry,display,flex
+source/css/2_gt301v4m-60.pretty.css,501,,.start-flow .paint-retry .field-error,margin,0
+source/css/2_gt301v4m-60.pretty.css,507,,.start-flow .unveil-waiting,box-shadow,none
+source/css/2_gt301v4m-60.pretty.css,515,@keyframes tfUnveilPop,0%,transform,scale(0.92)
+source/css/2_gt301v4m-60.pretty.css,516,@keyframes tfUnveilPop,0%,box-shadow,0 0 #f5c54200
+source/css/2_gt301v4m-60.pretty.css,519,@keyframes tfUnveilPop,45%,transform,scale(1.06)
+source/css/2_gt301v4m-60.pretty.css,520,@keyframes tfUnveilPop,45%,box-shadow,0 0 26px #f5c5428c
+source/css/2_gt301v4m-60.pretty.css,523,@keyframes tfUnveilPop,to,transform,scale(1)
+source/css/2_gt301v4m-60.pretty.css,524,@keyframes tfUnveilPop,to,box-shadow,0 0 #f5c54200
+source/css/2_gt301v4m-60.pretty.css,528,,.start-flow .acct,align-items,center
+source/css/2_gt301v4m-60.pretty.css,529,,.start-flow .acct,gap,22px
+source/css/2_gt301v4m-60.pretty.css,530,,.start-flow .acct,display,flex
+source/css/2_gt301v4m-60.pretty.css,533,,.start-flow .acct .pframe,flex,none
+source/css/2_gt301v4m-60.pretty.css,534,,.start-flow .acct .pframe,width,110px
+source/css/2_gt301v4m-60.pretty.css,535,,.start-flow .acct .pframe,height,110px
+source/css/2_gt301v4m-60.pretty.css,538,,.start-flow .acct-copy,flex,1
+source/css/2_gt301v4m-60.pretty.css,539,,.start-flow .acct-copy,min-width,0
+source/css/2_gt301v4m-60.pretty.css,542,,.start-flow .acct-copy h2,margin,0 0 10px
+source/css/2_gt301v4m-60.pretty.css,547,,.start-flow .trial-line,margin,0
+source/css/2_gt301v4m-60.pretty.css,552,,.start-flow .launch,max-width,980px
+source/css/2_gt301v4m-60.pretty.css,553,,.start-flow .launch,margin,0 auto
+source/css/2_gt301v4m-60.pretty.css,556,,.start-flow .worldrow,border-radius,18px
+source/css/2_gt301v4m-60.pretty.css,557,,.start-flow .worldrow,flex-wrap,wrap
+source/css/2_gt301v4m-60.pretty.css,558,,.start-flow .worldrow,align-items,center
+source/css/2_gt301v4m-60.pretty.css,559,,.start-flow .worldrow,gap,12px
+source/css/2_gt301v4m-60.pretty.css,560,,.start-flow .worldrow,margin-bottom,18px
+source/css/2_gt301v4m-60.pretty.css,561,,.start-flow .worldrow,padding,14px 18px
+source/css/2_gt301v4m-60.pretty.css,562,,.start-flow .worldrow,display,flex
+source/css/2_gt301v4m-60.pretty.css,571,,.start-flow .wslots,flex-wrap,wrap
+source/css/2_gt301v4m-60.pretty.css,572,,.start-flow .wslots,gap,8px
+source/css/2_gt301v4m-60.pretty.css,573,,.start-flow .wslots,display,flex
+source/css/2_gt301v4m-60.pretty.css,578,,.start-flow .wslot,border-radius,999px
+source/css/2_gt301v4m-60.pretty.css,579,,.start-flow .wslot,align-items,center
+source/css/2_gt301v4m-60.pretty.css,580,,.start-flow .wslot,gap,6px
+source/css/2_gt301v4m-60.pretty.css,581,,.start-flow .wslot,padding,6px 11px
+source/css/2_gt301v4m-60.pretty.css,584,,.start-flow .wslot,display,inline-flex
+source/css/2_gt301v4m-60.pretty.css,593,,.start-flow .wslot svg,width,12px
+source/css/2_gt301v4m-60.pretty.css,594,,.start-flow .wslot svg,height,12px
+source/css/2_gt301v4m-60.pretty.css,598,,.start-flow .surprise,flex-direction,column
+source/css/2_gt301v4m-60.pretty.css,599,,.start-flow .surprise,align-items,center
+source/css/2_gt301v4m-60.pretty.css,600,,.start-flow .surprise,gap,8px
+source/css/2_gt301v4m-60.pretty.css,601,,.start-flow .surprise,margin-bottom,18px
+source/css/2_gt301v4m-60.pretty.css,602,,.start-flow .surprise,padding,26px 22px
+source/css/2_gt301v4m-60.pretty.css,603,,.start-flow .surprise,display,flex
+source/css/2_gt301v4m-60.pretty.css,606,,.start-flow .surprise .btn,padding,19px 38px
+source/css/2_gt301v4m-60.pretty.css,617,,.start-flow .ordiv,align-items,center
+source/css/2_gt301v4m-60.pretty.css,618,,.start-flow .ordiv,gap,14px
+source/css/2_gt301v4m-60.pretty.css,619,,.start-flow .ordiv,margin,4px 0 14px
+source/css/2_gt301v4m-60.pretty.css,622,,.start-flow .ordiv,display,flex
+source/css/2_gt301v4m-60.pretty.css,628,,".start-flow .ordiv:before, .start-flow .ordiv:after",flex,1
+source/css/2_gt301v4m-60.pretty.css,629,,".start-flow .ordiv:before, .start-flow .ordiv:after",height,1px
+source/css/2_gt301v4m-60.pretty.css,634,,.start-flow .honest,max-width,60ch
+source/css/2_gt301v4m-60.pretty.css,635,,.start-flow .honest,margin,0 0 14px
+source/css/2_gt301v4m-60.pretty.css,640,,.start-flow .advs,grid-template-columns,"repeat(3, 1fr)"
+source/css/2_gt301v4m-60.pretty.css,641,,.start-flow .advs,gap,14px
+source/css/2_gt301v4m-60.pretty.css,642,,.start-flow .advs,margin-bottom,22px
+source/css/2_gt301v4m-60.pretty.css,643,,.start-flow .advs,display,grid
+source/css/2_gt301v4m-60.pretty.css,650,,.start-flow .adv,flex-direction,column
+source/css/2_gt301v4m-60.pretty.css,651,,.start-flow .adv,gap,9px
+source/css/2_gt301v4m-60.pretty.css,652,,.start-flow .adv,padding,16px
+source/css/2_gt301v4m-60.pretty.css,654,,.start-flow .adv,display,flex
+source/css/2_gt301v4m-60.pretty.css,657,,.start-flow .adv:hover,transform,translateY(-6px)
+source/css/2_gt301v4m-60.pretty.css,660,,.start-flow .adv-art,aspect-ratio,16/9
+source/css/2_gt301v4m-60.pretty.css,661,,.start-flow .adv-art,border-radius,25px 25px 0 0
+source/css/2_gt301v4m-60.pretty.css,662,,.start-flow .adv-art,margin,-16px -16px 4px
+source/css/2_gt301v4m-60.pretty.css,663,,.start-flow .adv-art,display,block
+source/css/2_gt301v4m-60.pretty.css,664,,.start-flow .adv-art,overflow,hidden
+source/css/2_gt301v4m-60.pretty.css,667,,.start-flow .adv-art img,object-fit,cover
+source/css/2_gt301v4m-60.pretty.css,668,,.start-flow .adv-art img,width,100%
+source/css/2_gt301v4m-60.pretty.css,669,,.start-flow .adv-art img,height,100%
+source/css/2_gt301v4m-60.pretty.css,670,,.start-flow .adv-art img,display,block
+source/css/2_gt301v4m-60.pretty.css,681,,.start-flow .subrow,grid-template-columns,1fr 1fr
+source/css/2_gt301v4m-60.pretty.css,682,,.start-flow .subrow,gap,14px
+source/css/2_gt301v4m-60.pretty.css,683,,.start-flow .subrow,margin-bottom,8px
+source/css/2_gt301v4m-60.pretty.css,684,,.start-flow .subrow,display,grid
+source/css/2_gt301v4m-60.pretty.css,687,,.start-flow .subcard,flex-direction,column
+source/css/2_gt301v4m-60.pretty.css,688,,.start-flow .subcard,gap,12px
+source/css/2_gt301v4m-60.pretty.css,689,,.start-flow .subcard,padding,18px
+source/css/2_gt301v4m-60.pretty.css,690,,.start-flow .subcard,display,flex
+source/css/2_gt301v4m-60.pretty.css,693,,.start-flow .subcard h3,margin,0
+source/css/2_gt301v4m-60.pretty.css,696,,.start-flow .langcard,grid-column,1/-1
+source/css/2_gt301v4m-60.pretty.css,699,,.start-flow .stiles,grid-template-columns,"repeat(4, 1fr)"
+source/css/2_gt301v4m-60.pretty.css,700,,.start-flow .stiles,gap,8px
+source/css/2_gt301v4m-60.pretty.css,701,,.start-flow .stiles,display,grid
+source/css/2_gt301v4m-60.pretty.css,710,,.start-flow .stile,border-radius,14px
+source/css/2_gt301v4m-60.pretty.css,711,,.start-flow .stile,flex-direction,column
+source/css/2_gt301v4m-60.pretty.css,712,,.start-flow .stile,align-items,stretch
+source/css/2_gt301v4m-60.pretty.css,713,,.start-flow .stile,gap,6px
+source/css/2_gt301v4m-60.pretty.css,714,,.start-flow .stile,padding,7px
+source/css/2_gt301v4m-60.pretty.css,718,,.start-flow .stile,display,flex
+source/css/2_gt301v4m-60.pretty.css,721,,.start-flow .stile .sw,border-radius,9px
+source/css/2_gt301v4m-60.pretty.css,722,,.start-flow .stile .sw,height,38px
+source/css/2_gt301v4m-60.pretty.css,723,,.start-flow .stile .sw,overflow,hidden
+source/css/2_gt301v4m-60.pretty.css,726,,.start-flow .stile .sw img,object-fit,cover
+source/css/2_gt301v4m-60.pretty.css,727,,.start-flow .stile .sw img,width,100%
+source/css/2_gt301v4m-60.pretty.css,728,,.start-flow .stile .sw img,height,100%
+source/css/2_gt301v4m-60.pretty.css,729,,.start-flow .stile .sw img,display,block
+source/css/2_gt301v4m-60.pretty.css,737,,.start-flow .voices,flex-wrap,wrap
+source/css/2_gt301v4m-60.pretty.css,738,,.start-flow .voices,gap,9px
+source/css/2_gt301v4m-60.pretty.css,739,,.start-flow .voices,display,flex
+source/css/2_gt301v4m-60.pretty.css,742,,.start-flow .voice,align-items,center
+source/css/2_gt301v4m-60.pretty.css,743,,.start-flow .voice,gap,8px
+source/css/2_gt301v4m-60.pretty.css,744,,.start-flow .voice,display,inline-flex
+source/css/2_gt301v4m-60.pretty.css,747,,.start-flow .voice svg,width,13px
+source/css/2_gt301v4m-60.pretty.css,748,,.start-flow .voice svg,height,13px
+source/css/2_gt301v4m-60.pretty.css,751,,.start-flow .sheetwrap,z-index,50
+source/css/2_gt301v4m-60.pretty.css,752,,.start-flow .sheetwrap,-webkit-backdrop-filter,blur(6px)
+source/css/2_gt301v4m-60.pretty.css,753,,.start-flow .sheetwrap,backdrop-filter,blur(6px)
+source/css/2_gt301v4m-60.pretty.css,755,,.start-flow .sheetwrap,place-items,center
+source/css/2_gt301v4m-60.pretty.css,756,,.start-flow .sheetwrap,padding,20px
+source/css/2_gt301v4m-60.pretty.css,757,,.start-flow .sheetwrap,display,none
+source/css/2_gt301v4m-60.pretty.css,758,,.start-flow .sheetwrap,position,fixed
+source/css/2_gt301v4m-60.pretty.css,759,,.start-flow .sheetwrap,inset,0
+source/css/2_gt301v4m-60.pretty.css,762,,.start-flow .sheetwrap.on,display,grid
+source/css/2_gt301v4m-60.pretty.css,765,,.start-flow .sheet,flex-direction,column
+source/css/2_gt301v4m-60.pretty.css,766,,.start-flow .sheet,gap,16px
+source/css/2_gt301v4m-60.pretty.css,767,,.start-flow .sheet,width,100%
+source/css/2_gt301v4m-60.pretty.css,768,,.start-flow .sheet,max-width,440px
+source/css/2_gt301v4m-60.pretty.css,769,,.start-flow .sheet,padding,28px 26px
+source/css/2_gt301v4m-60.pretty.css,771,,.start-flow .sheet,display,flex
+source/css/2_gt301v4m-60.pretty.css,774,,.start-flow .sheet h3,margin,0
+source/css/2_gt301v4m-60.pretty.css,780,,.start-flow .sheet p,margin,0
+source/css/2_gt301v4m-60.pretty.css,787,,.start-flow .sheet .picked,border-radius,999px
+source/css/2_gt301v4m-60.pretty.css,788,,.start-flow .sheet .picked,width,fit-content
+source/css/2_gt301v4m-60.pretty.css,789,,.start-flow .sheet .picked,padding,7px 13px
+source/css/2_gt301v4m-60.pretty.css,794,,.start-flow .sheet .row,flex-wrap,wrap
+source/css/2_gt301v4m-60.pretty.css,795,,.start-flow .sheet .row,gap,10px
+source/css/2_gt301v4m-60.pretty.css,796,,.start-flow .sheet .row,display,flex
+source/css/2_gt301v4m-60.pretty.css,801,,.start-flow .voice-line,margin,0
+source/css/2_gt301v4m-60.pretty.css,807,,.start-flow .forge,flex-direction,column
+source/css/2_gt301v4m-60.pretty.css,808,,.start-flow .forge,gap,18px
+source/css/2_gt301v4m-60.pretty.css,809,,.start-flow .forge,max-width,560px
+source/css/2_gt301v4m-60.pretty.css,810,,.start-flow .forge,margin,0 auto
+source/css/2_gt301v4m-60.pretty.css,811,,.start-flow .forge,display,flex
+source/css/2_gt301v4m-60.pretty.css,814,,.start-flow .forge-head,flex-direction,column
+source/css/2_gt301v4m-60.pretty.css,815,,.start-flow .forge-head,gap,12px
+source/css/2_gt301v4m-60.pretty.css,816,,.start-flow .forge-head,padding,26px 28px
+source/css/2_gt301v4m-60.pretty.css,817,,.start-flow .forge-head,display,flex
+source/css/2_gt301v4m-60.pretty.css,820,,.start-flow .forge-head h2,margin,0
+source/css/2_gt301v4m-60.pretty.css,825,,.start-flow .forge .inputs,margin,0
+source/css/2_gt301v4m-60.pretty.css,831,,.start-flow .forge .trial-line,margin,0
+source/css/2_gt301v4m-60.pretty.css,835,,.start-flow .handoff,flex-direction,column
+source/css/2_gt301v4m-60.pretty.css,836,,.start-flow .handoff,flex,1
+source/css/2_gt301v4m-60.pretty.css,837,,.start-flow .handoff,justify-content,center
+source/css/2_gt301v4m-60.pretty.css,838,,.start-flow .handoff,align-items,center
+source/css/2_gt301v4m-60.pretty.css,839,,.start-flow .handoff,gap,20px
+source/css/2_gt301v4m-60.pretty.css,840,,.start-flow .handoff,min-height,62vh
+source/css/2_gt301v4m-60.pretty.css,841,,.start-flow .handoff,padding,4vh 0
+source/css/2_gt301v4m-60.pretty.css,842,,.start-flow .handoff,display,flex
+source/css/2_gt301v4m-60.pretty.css,845,,.start-flow .handoff .pframe,border-radius,32px
+source/css/2_gt301v4m-60.pretty.css,846,,.start-flow .handoff .pframe,width,120px
+source/css/2_gt301v4m-60.pretty.css,847,,.start-flow .handoff .pframe,height,120px
+source/css/2_gt301v4m-60.pretty.css,850,,.start-flow .handoff h1,margin,0
+source/css/2_gt301v4m-60.pretty.css,855,,.start-flow .handoff .lede,margin,0 0 8px
+source/css/2_gt301v4m-60.pretty.css,858,,.start-flow .cta-row,flex-wrap,wrap
+source/css/2_gt301v4m-60.pretty.css,859,,.start-flow .cta-row,justify-content,center
+source/css/2_gt301v4m-60.pretty.css,860,,.start-flow .cta-row,gap,12px
+source/css/2_gt301v4m-60.pretty.css,861,,.start-flow .cta-row,display,flex
+source/css/2_gt301v4m-60.pretty.css,865,@media (max-width: 880px),.start-flow .build-grid,grid-template-columns,1fr
+source/css/2_gt301v4m-60.pretty.css,868,@media (max-width: 880px),.start-flow .herocard,position,static
+source/css/2_gt301v4m-60.pretty.css,871,@media (max-width: 880px),.start-flow .gallery,grid-template-columns,"repeat(3, 1fr)"
+source/css/2_gt301v4m-60.pretty.css,872,@media (max-width: 880px),.start-flow .gallery,gap,9px
+source/css/2_gt301v4m-60.pretty.css,876,@media (max-width: 880px),.start-flow .acct,flex-direction,column
+source/css/2_gt301v4m-60.pretty.css,880,@media (max-width: 880px),".start-flow .advs, .start-flow .subrow",grid-template-columns,1fr
+source/css/2_gt301v4m-60.pretty.css,885,@media (max-width: 480px),.start-flow .pick,padding,12px 4px 10px
+source/css/2_gt301v4m-60.pretty.css,889,@media (max-width: 480px),.start-flow .pick svg,width,28px
+source/css/2_gt301v4m-60.pretty.css,890,@media (max-width: 480px),.start-flow .pick svg,height,28px
+source/css/2_gt301v4m-60.pretty.css,893,@media (max-width: 480px),.start-flow .stepcard,padding,24px 18px 22px
+source/css/2_gt301v4m-60.pretty.css,896,@media (max-width: 480px),.start-flow .stiles,grid-template-columns,"repeat(4, 1fr)"
+source/css/2_gt301v4m-60.pretty.css,902,@media (max-width: 480px),.start-flow .adv,display,flex
+source/css/2_gt301v4m-60.pretty.css,905,@media (max-width: 480px),.start-flow .adv-art,aspect-ratio,16/9
+source/css/2_gt301v4m-60.pretty.css,906,@media (max-width: 480px),.start-flow .adv-art,border-radius,25px 25px 0 0
+source/css/2_gt301v4m-60.pretty.css,907,@media (max-width: 480px),.start-flow .adv-art,width,auto
+source/css/2_gt301v4m-60.pretty.css,908,@media (max-width: 480px),.start-flow .adv-art,height,auto
+source/css/2_gt301v4m-60.pretty.css,909,@media (max-width: 480px),.start-flow .adv-art,min-height,0
+source/css/2_gt301v4m-60.pretty.css,910,@media (max-width: 480px),.start-flow .adv-art,margin,-16px -16px 4px
+source/css/2_gt301v4m-60.pretty.css,926,@media (prefers-reduced-motion: reduce),".start-flow .adv, .start-flow .adv:hover",transform,none
+derived/layout/uppgradera-inline-style.pretty.css,3,,"/* Verbatim <style> block shipped inline in the server HTML of /uppgradera (source/html/uppgradera.sv.html and .en.html, identical). Not part of the four CSS chunks. Extracted and prettier-formatted for citation by the layout dimension. Also present in source/js/26ye0kuppitcn.js as a styled-jsx template string. */ .upgrade-proof-layout",display,grid
+derived/layout/uppgradera-inline-style.pretty.css,4,,"/* Verbatim <style> block shipped inline in the server HTML of /uppgradera (source/html/uppgradera.sv.html and .en.html, identical). Not part of the four CSS chunks. Extracted and prettier-formatted for citation by the layout dimension. Also present in source/js/26ye0kuppitcn.js as a styled-jsx template string. */ .upgrade-proof-layout",grid-template-columns,"minmax(0, 1fr) 112px"
+derived/layout/uppgradera-inline-style.pretty.css,5,,"/* Verbatim <style> block shipped inline in the server HTML of /uppgradera (source/html/uppgradera.sv.html and .en.html, identical). Not part of the four CSS chunks. Extracted and prettier-formatted for citation by the layout dimension. Also present in source/js/26ye0kuppitcn.js as a styled-jsx template string. */ .upgrade-proof-layout",column-gap,20px
+derived/layout/uppgradera-inline-style.pretty.css,6,,"/* Verbatim <style> block shipped inline in the server HTML of /uppgradera (source/html/uppgradera.sv.html and .en.html, identical). Not part of the four CSS chunks. Extracted and prettier-formatted for citation by the layout dimension. Also present in source/js/26ye0kuppitcn.js as a styled-jsx template string. */ .upgrade-proof-layout",align-items,start
+derived/layout/uppgradera-inline-style.pretty.css,10,,.upgrade-proof-list,grid-column,1
+derived/layout/uppgradera-inline-style.pretty.css,11,,.upgrade-proof-list,grid-row,1
+derived/layout/uppgradera-inline-style.pretty.css,12,,.upgrade-proof-list,min-width,0
+derived/layout/uppgradera-inline-style.pretty.css,16,,.upgrade-sample-link,grid-column,2
+derived/layout/uppgradera-inline-style.pretty.css,17,,.upgrade-sample-link,grid-row,1
+derived/layout/uppgradera-inline-style.pretty.css,18,,.upgrade-sample-link,display,block
+derived/layout/uppgradera-inline-style.pretty.css,19,,.upgrade-sample-link,width,112px
+derived/layout/uppgradera-inline-style.pretty.css,20,,.upgrade-sample-link,max-width,100%
+derived/layout/uppgradera-inline-style.pretty.css,21,,.upgrade-sample-link,justify-self,end
+derived/layout/uppgradera-inline-style.pretty.css,28,,.upgrade-sample-figure,width,100%
+derived/layout/uppgradera-inline-style.pretty.css,29,,.upgrade-sample-figure,margin,0
+derived/layout/uppgradera-inline-style.pretty.css,33,,.upgrade-sample-caption,margin-top,8px
+derived/layout/uppgradera-inline-style.pretty.css,39,,.upgrade-sample-caption,overflow-wrap,anywhere
+derived/layout/uppgradera-inline-style.pretty.css,44,@media (max-width: 600px),.upgrade-proof-layout,grid-template-columns,"minmax(0, 1fr)"
+derived/layout/uppgradera-inline-style.pretty.css,45,@media (max-width: 600px),.upgrade-proof-layout,row-gap,16px
+derived/layout/uppgradera-inline-style.pretty.css,49,@media (max-width: 600px),.upgrade-sample-link,grid-column,1
+derived/layout/uppgradera-inline-style.pretty.css,50,@media (max-width: 600px),.upgrade-sample-link,grid-row,1
+derived/layout/uppgradera-inline-style.pretty.css,51,@media (max-width: 600px),.upgrade-sample-link,width,128px
+derived/layout/uppgradera-inline-style.pretty.css,52,@media (max-width: 600px),.upgrade-sample-link,justify-self,center
+derived/layout/uppgradera-inline-style.pretty.css,56,@media (max-width: 600px),.upgrade-proof-list,grid-column,1
+derived/layout/uppgradera-inline-style.pretty.css,57,@media (max-width: 600px),.upgrade-proof-list,grid-row,2

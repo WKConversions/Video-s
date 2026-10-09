@@ -1,0 +1,872 @@
+{
+ "natt": {
+  "color": [
+   {
+    "hex": "#fff7e9",
+    "rgba": "rgba(255, 247, 233, 1.0)",
+    "count": 354,
+    "tokens": [
+     "--page-ink"
+    ]
+   },
+   {
+    "hex": "#f2eeff",
+    "rgba": "rgba(242, 238, 255, 1.0)",
+    "count": 265,
+    "tokens": [
+     "--card-ink",
+     "--choice-ink"
+    ]
+   },
+   {
+    "hex": "#b5acd3",
+    "rgba": "rgba(181, 172, 211, 1.0)",
+    "count": 246,
+    "tokens": [
+     "--card-sub"
+    ]
+   },
+   {
+    "hex": "#b7a9d6",
+    "rgba": "rgba(183, 169, 214, 1.0)",
+    "count": 96,
+    "tokens": [
+     "--foot-ink"
+    ]
+   },
+   {
+    "hex": "#3a2b10",
+    "rgba": "rgba(58, 43, 16, 1.0)",
+    "count": 70,
+    "tokens": [
+     "--btn-ink"
+    ]
+   },
+   {
+    "hex": "#f5c542",
+    "rgba": "rgba(245, 197, 66, 1.0)",
+    "count": 54,
+    "tokens": [
+     "--accent",
+     "--accent-ink",
+     "--logo-ink",
+     "--gold-soft"
+    ]
+   },
+   {
+    "hex": "#fff3d9",
+    "rgba": "rgba(255, 243, 217, 1.0)",
+    "count": 48,
+    "tokens": [
+     "--ghost-ink"
+    ]
+   },
+   {
+    "hex": "#000000",
+    "rgba": "rgba(0, 0, 0, 1.0)",
+    "count": 42,
+    "tokens": []
+   },
+   {
+    "hex": "#e8dfc9",
+    "rgba": "rgba(232, 223, 201, 1.0)",
+    "count": 26,
+    "tokens": [
+     "--chip-ink"
+    ]
+   },
+   {
+    "hex": "#241608",
+    "rgba": "rgba(36, 22, 8, 1.0)",
+    "count": 16,
+    "tokens": []
+   },
+   {
+    "hex": "#d9cfee",
+    "rgba": "rgba(217, 207, 238, 1.0)",
+    "count": 14,
+    "tokens": [
+     "--page-sub"
+    ]
+   },
+   {
+    "hex": "#cfc5ec",
+    "rgba": "rgba(207, 197, 236, 1.0)",
+    "count": 10,
+    "tokens": [
+     "--trait-ink"
+    ]
+   },
+   {
+    "hex": "#e9e2ff",
+    "rgba": "rgba(233, 226, 255, 1.0)",
+    "count": 8,
+    "tokens": [
+     "--trait-on-ink"
+    ]
+   },
+   {
+    "hex": "#c9bcff",
+    "rgba": "rgba(201, 188, 255, 1.0)",
+    "count": 6,
+    "tokens": [
+     "--pill-ink"
+    ]
+   },
+   {
+    "hex": "#eae4f5",
+    "rgba": "rgba(234, 228, 245, 1.0)",
+    "count": 4,
+    "tokens": [
+     "--prose-ink"
+    ]
+   },
+   {
+    "hex": "#0000ee",
+    "rgba": "rgba(0, 0, 238, 1.0)",
+    "count": 4,
+    "tokens": []
+   },
+   {
+    "hex": "#d9cfeed9",
+    "rgba": "rgba(217, 207, 238, 0.85)",
+    "count": 3,
+    "tokens": []
+   },
+   {
+    "hex": "#ffd98f",
+    "rgba": "rgba(255, 217, 143, 1.0)",
+    "count": 2,
+    "tokens": [
+     "--gold-chip-ink"
+    ]
+   },
+   {
+    "hex": "#241f35",
+    "rgba": "rgba(36, 31, 53, 1.0)",
+    "count": 2,
+    "tokens": []
+   },
+   {
+    "hex": "#00000000",
+    "rgba": "rgba(0, 0, 0, 0.0)",
+    "count": 2,
+    "tokens": []
+   }
+  ],
+  "background-color": [
+   {
+    "hex": "#fff9ec1a",
+    "rgba": "rgba(255, 249, 236, 0.1)",
+    "count": 40,
+    "tokens": [
+     "--chip-bg",
+     "--ghost-bg"
+    ]
+   },
+   {
+    "hex": "#0f1628ad",
+    "rgba": "rgba(15, 22, 40, 0.68)",
+    "count": 40,
+    "tokens": [
+     "--card"
+    ]
+   },
+   {
+    "hex": "#f2b22e",
+    "rgba": "rgba(242, 178, 46, 1.0)",
+    "count": 22,
+    "tokens": [
+     "--gold"
+    ]
+   },
+   {
+    "hex": "#ffffff0f",
+    "rgba": "rgba(255, 255, 255, 0.06)",
+    "count": 18,
+    "tokens": [
+     "--choice-bg"
+    ]
+   },
+   {
+    "hex": "#f5c542",
+    "rgba": "rgba(245, 197, 66, 1.0)",
+    "count": 16,
+    "tokens": [
+     "--accent",
+     "--accent-ink",
+     "--logo-ink",
+     "--gold-soft"
+    ]
+   },
+   {
+    "hex": "#9b87f533",
+    "rgba": "rgba(155, 135, 245, 0.2)",
+    "count": 8,
+    "tokens": [
+     "--trait-on-bg"
+    ]
+   },
+   {
+    "hex": "#9b87f529",
+    "rgba": "rgba(155, 135, 245, 0.16)",
+    "count": 6,
+    "tokens": [
+     "--pill-bg"
+    ]
+   },
+   {
+    "hex": "#9b87f542",
+    "rgba": "rgba(155, 135, 245, 0.26)",
+    "count": 4,
+    "tokens": [
+     "--card-line"
+    ]
+   },
+   {
+    "hex": "#f2b22e29",
+    "rgba": "rgba(242, 178, 46, 0.16)",
+    "count": 2,
+    "tokens": [
+     "--gold-chip-bg"
+    ]
+   },
+   {
+    "hex": "#101a30",
+    "rgba": "rgba(16, 26, 48, 1.0)",
+    "count": 2,
+    "tokens": [
+     "--frame"
+    ]
+   },
+   {
+    "hex": "#ffffffc7",
+    "rgba": "rgba(255, 255, 255, 0.78)",
+    "count": 2,
+    "tokens": []
+   },
+   {
+    "hex": "#ffffff24",
+    "rgba": "rgba(255, 255, 255, 0.14)",
+    "count": 2,
+    "tokens": [
+     "--bar-bg"
+    ]
+   },
+   {
+    "hex": "#0a0c188c",
+    "rgba": "rgba(10, 12, 24, 0.55)",
+    "count": 2,
+    "tokens": []
+   }
+  ],
+  "border-top": [
+   {
+    "hex": "#9b87f542",
+    "rgba": "rgba(155, 135, 245, 0.26)",
+    "count": 138,
+    "tokens": [
+     "--card-line"
+    ]
+   },
+   {
+    "hex": "#fff3d952",
+    "rgba": "rgba(255, 243, 217, 0.32)",
+    "count": 28,
+    "tokens": [
+     "--control-line",
+     "--ghost-line"
+    ]
+   },
+   {
+    "hex": "#101a30",
+    "rgba": "rgba(16, 26, 48, 1.0)",
+    "count": 26,
+    "tokens": [
+     "--frame"
+    ]
+   },
+   {
+    "hex": "#fff3d942",
+    "rgba": "rgba(255, 243, 217, 0.26)",
+    "count": 12,
+    "tokens": [
+     "--chip-line"
+    ]
+   },
+   {
+    "hex": "#9b87f559",
+    "rgba": "rgba(155, 135, 245, 0.35)",
+    "count": 10,
+    "tokens": [
+     "--trait-line"
+    ]
+   },
+   {
+    "hex": "#9b87f599",
+    "rgba": "rgba(155, 135, 245, 0.6)",
+    "count": 8,
+    "tokens": [
+     "--trait-on-line"
+    ]
+   },
+   {
+    "hex": "#ffecbe59",
+    "rgba": "rgba(255, 236, 190, 0.35)",
+    "count": 6,
+    "tokens": [
+     "--dash-line"
+    ]
+   },
+   {
+    "hex": "#f5c5428c",
+    "rgba": "rgba(245, 197, 66, 0.55)",
+    "count": 2,
+    "tokens": []
+   },
+   {
+    "hex": "#9b87f566",
+    "rgba": "rgba(155, 135, 245, 0.4)",
+    "count": 2,
+    "tokens": [
+     "--frame-line"
+    ]
+   },
+   {
+    "hex": "#241f3538",
+    "rgba": "rgba(36, 31, 53, 0.22)",
+    "count": 2,
+    "tokens": []
+   },
+   {
+    "hex": "#9b87f552",
+    "rgba": "rgba(155, 135, 245, 0.32)",
+    "count": 2,
+    "tokens": [
+     "--choice-line"
+    ]
+   }
+  ],
+  "box-shadow": [
+   {
+    "hex": "#0508146b",
+    "rgba": "rgba(5, 8, 20, 0.42)",
+    "count": 52,
+    "tokens": []
+   },
+   {
+    "hex": "#f5c54247",
+    "rgba": "rgba(245, 197, 66, 0.28)",
+    "count": 32,
+    "tokens": []
+   },
+   {
+    "hex": "#ffffff73",
+    "rgba": "rgba(255, 255, 255, 0.45)",
+    "count": 14,
+    "tokens": []
+   },
+   {
+    "hex": "#0a072066",
+    "rgba": "rgba(10, 7, 32, 0.4)",
+    "count": 8,
+    "tokens": []
+   },
+   {
+    "hex": "#f5c5421f",
+    "rgba": "rgba(245, 197, 66, 0.12)",
+    "count": 8,
+    "tokens": []
+   },
+   {
+    "hex": "#00000000",
+    "rgba": "rgba(0, 0, 0, 0.0)",
+    "count": 4,
+    "tokens": []
+   },
+   {
+    "hex": "#0a07204c",
+    "rgba": "rgba(10, 7, 32, 0.3)",
+    "count": 2,
+    "tokens": []
+   },
+   {
+    "hex": "#0a072040",
+    "rgba": "rgba(10, 7, 32, 0.25)",
+    "count": 2,
+    "tokens": []
+   },
+   {
+    "hex": "#f2b22e6b",
+    "rgba": "rgba(242, 178, 46, 0.42)",
+    "count": 2,
+    "tokens": []
+   }
+  ],
+  "text-shadow": [
+   {
+    "hex": "#050814cc",
+    "rgba": "rgba(5, 8, 20, 0.8)",
+    "count": 32,
+    "tokens": []
+   },
+   {
+    "hex": "#f5c54273",
+    "rgba": "rgba(245, 197, 66, 0.45)",
+    "count": 32,
+    "tokens": []
+   },
+   {
+    "hex": "#0c082859",
+    "rgba": "rgba(12, 8, 40, 0.35)",
+    "count": 18,
+    "tokens": []
+   }
+  ],
+  "background-image": [
+   {
+    "value": "linear-gradient(135deg, rgb(255, 224, 138), rgb(245, 197, 66))",
+    "count": 32
+   },
+   {
+    "value": "linear-gradient(rgba(11, 15, 30, 0.38) 0%, rgba(11, 15, 30, 0.5) 45%, rgba(13, 17, 34, 0.74) 100%)",
+    "count": 16
+   },
+   {
+    "value": "radial-gradient(1.4px 1.4px at 12% 8%, rgba(255, 233, 176, 0.9) 50%, rgba(0, 0, 0, 0) 51%), radial-gradient(1px 1px at 32% 16%, rgba(245, 240, 232, 0.8) 50%, rg",
+    "count": 16
+   },
+   {
+    "value": "linear-gradient(90deg, rgb(245, 197, 66), rgb(155, 135, 245))",
+    "count": 2
+   }
+  ],
+  "_elements_per_page": {
+   "404": 84,
+   "home": 429,
+   "integritet": 146,
+   "login": 120,
+   "signup": 126,
+   "start": 114,
+   "uppgradera": 131,
+   "villkor": 122
+  }
+ },
+ "morgon": {
+  "color": [
+   {
+    "hex": "#241f35",
+    "rgba": "rgba(36, 31, 53, 1.0)",
+    "count": 667,
+    "tokens": [
+     "--page-ink",
+     "--card-ink",
+     "--choice-ink",
+     "--ghost-ink"
+    ]
+   },
+   {
+    "hex": "#5f5878",
+    "rgba": "rgba(95, 88, 120, 1.0)",
+    "count": 369,
+    "tokens": [
+     "--page-sub",
+     "--card-sub",
+     "--micro-ink",
+     "--trait-ink",
+     "--foot-ink"
+    ]
+   },
+   {
+    "hex": "#ffffff",
+    "rgba": "rgba(255, 255, 255, 1.0)",
+    "count": 70,
+    "tokens": [
+     "--frame",
+     "--choice-bg",
+     "--btn-ink"
+    ]
+   },
+   {
+    "hex": "#6d4fe0",
+    "rgba": "rgba(109, 79, 224, 1.0)",
+    "count": 48,
+    "tokens": [
+     "--accent",
+     "--logo-ink",
+     "--map-dot",
+     "--violet"
+    ]
+   },
+   {
+    "hex": "#000000",
+    "rgba": "rgba(0, 0, 0, 1.0)",
+    "count": 42,
+    "tokens": []
+   },
+   {
+    "hex": "#5b3fc7",
+    "rgba": "rgba(91, 63, 199, 1.0)",
+    "count": 36,
+    "tokens": [
+     "--accent-ink",
+     "--chip-ink",
+     "--pill-ink"
+    ]
+   },
+   {
+    "hex": "#241608",
+    "rgba": "rgba(36, 22, 8, 1.0)",
+    "count": 16,
+    "tokens": []
+   },
+   {
+    "hex": "#4a36a8",
+    "rgba": "rgba(74, 54, 168, 1.0)",
+    "count": 8,
+    "tokens": [
+     "--trait-on-ink"
+    ]
+   },
+   {
+    "hex": "#3a3450",
+    "rgba": "rgba(58, 52, 80, 1.0)",
+    "count": 4,
+    "tokens": [
+     "--prose-ink"
+    ]
+   },
+   {
+    "hex": "#0000ee",
+    "rgba": "rgba(0, 0, 238, 1.0)",
+    "count": 4,
+    "tokens": []
+   },
+   {
+    "hex": "#8f6a12",
+    "rgba": "rgba(143, 106, 18, 1.0)",
+    "count": 2,
+    "tokens": [
+     "--gold-chip-ink"
+    ]
+   },
+   {
+    "hex": "#f5c542",
+    "rgba": "rgba(245, 197, 66, 1.0)",
+    "count": 2,
+    "tokens": [
+     "--gold-soft"
+    ]
+   },
+   {
+    "hex": "#fff7e9",
+    "rgba": "rgba(255, 247, 233, 1.0)",
+    "count": 2,
+    "tokens": []
+   },
+   {
+    "hex": "#00000000",
+    "rgba": "rgba(0, 0, 0, 0.0)",
+    "count": 2,
+    "tokens": []
+   }
+  ],
+  "background-color": [
+   {
+    "hex": "#ffffffcc",
+    "rgba": "rgba(255, 255, 255, 0.8)",
+    "count": 40,
+    "tokens": [
+     "--card"
+    ]
+   },
+   {
+    "hex": "#ffffffb8",
+    "rgba": "rgba(255, 255, 255, 0.72)",
+    "count": 28,
+    "tokens": [
+     "--ghost-bg"
+    ]
+   },
+   {
+    "hex": "#f2b22e",
+    "rgba": "rgba(242, 178, 46, 1.0)",
+    "count": 22,
+    "tokens": [
+     "--gold"
+    ]
+   },
+   {
+    "hex": "#ffffff",
+    "rgba": "rgba(255, 255, 255, 1.0)",
+    "count": 20,
+    "tokens": [
+     "--frame",
+     "--choice-bg",
+     "--btn-ink"
+    ]
+   },
+   {
+    "hex": "#6d4fe0",
+    "rgba": "rgba(109, 79, 224, 1.0)",
+    "count": 16,
+    "tokens": [
+     "--accent",
+     "--logo-ink",
+     "--map-dot",
+     "--violet"
+    ]
+   },
+   {
+    "hex": "#6d4fe014",
+    "rgba": "rgba(109, 79, 224, 0.08)",
+    "count": 12,
+    "tokens": [
+     "--chip-bg"
+    ]
+   },
+   {
+    "hex": "#6d4fe01f",
+    "rgba": "rgba(109, 79, 224, 0.12)",
+    "count": 8,
+    "tokens": [
+     "--trait-on-bg"
+    ]
+   },
+   {
+    "hex": "#6d4fe01a",
+    "rgba": "rgba(109, 79, 224, 0.1)",
+    "count": 6,
+    "tokens": [
+     "--pill-bg"
+    ]
+   },
+   {
+    "hex": "#ffffffe6",
+    "rgba": "rgba(255, 255, 255, 0.9)",
+    "count": 4,
+    "tokens": [
+     "--card-line",
+     "--frame-line"
+    ]
+   },
+   {
+    "hex": "#f2b22e26",
+    "rgba": "rgba(242, 178, 46, 0.15)",
+    "count": 2,
+    "tokens": [
+     "--gold-chip-bg"
+    ]
+   },
+   {
+    "hex": "#ffffffc7",
+    "rgba": "rgba(255, 255, 255, 0.78)",
+    "count": 2,
+    "tokens": []
+   },
+   {
+    "hex": "#241f3514",
+    "rgba": "rgba(36, 31, 53, 0.08)",
+    "count": 2,
+    "tokens": [
+     "--bar-bg"
+    ]
+   },
+   {
+    "hex": "#0a0c188c",
+    "rgba": "rgba(10, 12, 24, 0.55)",
+    "count": 2,
+    "tokens": []
+   }
+  ],
+  "border-top": [
+   {
+    "hex": "#ffffffe6",
+    "rgba": "rgba(255, 255, 255, 0.9)",
+    "count": 140,
+    "tokens": [
+     "--card-line",
+     "--frame-line"
+    ]
+   },
+   {
+    "hex": "#887da0",
+    "rgba": "rgba(136, 125, 160, 1.0)",
+    "count": 28,
+    "tokens": [
+     "--control-line",
+     "--ghost-line"
+    ]
+   },
+   {
+    "hex": "#ffffff",
+    "rgba": "rgba(255, 255, 255, 1.0)",
+    "count": 26,
+    "tokens": [
+     "--frame",
+     "--choice-bg",
+     "--btn-ink"
+    ]
+   },
+   {
+    "hex": "#6d4fe029",
+    "rgba": "rgba(109, 79, 224, 0.16)",
+    "count": 12,
+    "tokens": [
+     "--chip-line"
+    ]
+   },
+   {
+    "hex": "#6d4fe047",
+    "rgba": "rgba(109, 79, 224, 0.28)",
+    "count": 10,
+    "tokens": [
+     "--trait-line"
+    ]
+   },
+   {
+    "hex": "#6d4fe06b",
+    "rgba": "rgba(109, 79, 224, 0.42)",
+    "count": 8,
+    "tokens": [
+     "--trait-on-line"
+    ]
+   },
+   {
+    "hex": "#6d4fe059",
+    "rgba": "rgba(109, 79, 224, 0.35)",
+    "count": 6,
+    "tokens": [
+     "--dash-line"
+    ]
+   },
+   {
+    "hex": "#f5c5428c",
+    "rgba": "rgba(245, 197, 66, 0.55)",
+    "count": 2,
+    "tokens": []
+   },
+   {
+    "hex": "#241f3538",
+    "rgba": "rgba(36, 31, 53, 0.22)",
+    "count": 2,
+    "tokens": []
+   },
+   {
+    "hex": "#6d4fe038",
+    "rgba": "rgba(109, 79, 224, 0.22)",
+    "count": 2,
+    "tokens": [
+     "--choice-line"
+    ]
+   }
+  ],
+  "box-shadow": [
+   {
+    "hex": "#241f351a",
+    "rgba": "rgba(36, 31, 53, 0.1)",
+    "count": 52,
+    "tokens": []
+   },
+   {
+    "hex": "#241f3529",
+    "rgba": "rgba(36, 31, 53, 0.16)",
+    "count": 52,
+    "tokens": []
+   },
+   {
+    "hex": "#6d4fe059",
+    "rgba": "rgba(109, 79, 224, 0.35)",
+    "count": 32,
+    "tokens": [
+     "--dash-line"
+    ]
+   },
+   {
+    "hex": "#ffffff73",
+    "rgba": "rgba(255, 255, 255, 0.45)",
+    "count": 14,
+    "tokens": []
+   },
+   {
+    "hex": "#0a072066",
+    "rgba": "rgba(10, 7, 32, 0.4)",
+    "count": 8,
+    "tokens": []
+   },
+   {
+    "hex": "#f5c5421f",
+    "rgba": "rgba(245, 197, 66, 0.12)",
+    "count": 8,
+    "tokens": []
+   },
+   {
+    "hex": "#00000000",
+    "rgba": "rgba(0, 0, 0, 0.0)",
+    "count": 4,
+    "tokens": []
+   },
+   {
+    "hex": "#f2b22e00",
+    "rgba": "rgba(242, 178, 46, 0.0)",
+    "count": 2,
+    "tokens": []
+   },
+   {
+    "hex": "#0a07204c",
+    "rgba": "rgba(10, 7, 32, 0.3)",
+    "count": 2,
+    "tokens": []
+   },
+   {
+    "hex": "#0a072040",
+    "rgba": "rgba(10, 7, 32, 0.25)",
+    "count": 2,
+    "tokens": []
+   }
+  ],
+  "text-shadow": [
+   {
+    "hex": "#241f352e",
+    "rgba": "rgba(36, 31, 53, 0.18)",
+    "count": 32,
+    "tokens": []
+   },
+   {
+    "hex": "#6d4fe052",
+    "rgba": "rgba(109, 79, 224, 0.32)",
+    "count": 32,
+    "tokens": []
+   }
+  ],
+  "background-image": [
+   {
+    "value": "linear-gradient(135deg, rgb(109, 79, 224), rgb(91, 63, 199))",
+    "count": 32
+   },
+   {
+    "value": "linear-gradient(rgba(11, 15, 30, 0.38) 0%, rgba(11, 15, 30, 0.5) 45%, rgba(13, 17, 34, 0.74) 100%)",
+    "count": 16
+   },
+   {
+    "value": "radial-gradient(1.4px 1.4px at 12% 8%, rgba(255, 233, 176, 0.9) 50%, rgba(0, 0, 0, 0) 51%), radial-gradient(1px 1px at 32% 16%, rgba(245, 240, 232, 0.8) 50%, rg",
+    "count": 16
+   },
+   {
+    "value": "linear-gradient(90deg, rgb(245, 197, 66), rgb(155, 135, 245))",
+    "count": 2
+   }
+  ],
+  "_elements_per_page": {
+   "404": 84,
+   "home": 429,
+   "integritet": 146,
+   "login": 120,
+   "signup": 126,
+   "start": 114,
+   "uppgradera": 131,
+   "villkor": 122
+  }
+ },
+ "_note": "Counts of visible elements (display != none) per resolved colour, summed over the desktop computed-style dumps of all 8 pages x 2 languages (each dump is deduplicated by the harvester, so counts are element-style combinations, not raw DOM nodes). \"tokens\" = custom properties that resolve to exactly that rgba in that theme. Source: source/rendered/computed-styles__<page>__<lang>__<theme>__desktop.json"
+}

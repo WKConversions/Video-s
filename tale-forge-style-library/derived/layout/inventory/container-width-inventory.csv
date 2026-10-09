@@ -1,0 +1,50 @@
+source,selector,at_rule,property,value
+source/css/3q17cp_jgfwol.pretty.css:683,.shell,,width,"min(1120px, 100%)"
+source/css/3q17cp_jgfwol.pretty.css:874,.lede,,max-width,46ch
+source/css/3q17cp_jgfwol.pretty.css:932,.fan .fbook,,width,"min(46%, 240px)"
+source/css/3q17cp_jgfwol.pretty.css:1050,.sec-intro,,max-width,62ch
+source/css/3q17cp_jgfwol.pretty.css:1164,.builder-pic,,width,158px
+source/css/3q17cp_jgfwol.pretty.css:1170,.builder-pic .pframe,,width,158px
+source/css/3q17cp_jgfwol.pretty.css:1475,.companion-sub,,max-width,56ch
+source/css/3q17cp_jgfwol.pretty.css:1550,.family-switcher,,width,"min(1120px, 100%)"
+source/css/3q17cp_jgfwol.pretty.css:2025,.sound-volume,,min-width,170px
+source/css/3q17cp_jgfwol.pretty.css:2114,.reader-keepsake-cover,,width,180px
+source/css/3q17cp_jgfwol.pretty.css:2135,.reader-ceremony-actions,,width,"min(420px, 100%)"
+source/css/3q17cp_jgfwol.pretty.css:2307,.reader-grid--cover .reader-img,@media (max-width: 560px),width,"min(300px, 100%)"
+source/css/3q17cp_jgfwol.pretty.css:2462,.create-customize .friend-add,,max-width,360px
+source/css/3q17cp_jgfwol.pretty.css:2565,.hiw-lede,,max-width,56ch
+source/css/3q17cp_jgfwol.pretty.css:2641,.hiw-step-copy,,max-width,52ch
+source/css/3q17cp_jgfwol.pretty.css:2675,.hiw-frame,,width,"min(250px, 100%)"
+source/css/3q17cp_jgfwol.pretty.css:2912,.hiw-caption,,max-width,72ch
+source/css/3q17cp_jgfwol.pretty.css:3205,.hiw-play,@media (max-width: 480px),max-width,320px
+source/css/2h1wwdz1nvxwk.pretty.css:18,.cs-portrait,,width,110px
+source/css/2h1wwdz1nvxwk.pretty.css:73,.cs-lede,,max-width,46ch
+source/css/2h1wwdz1nvxwk.pretty.css:83,.cs-memory,,width,170px
+source/css/2h1wwdz1nvxwk.pretty.css:101,.cs-memtag,,width,150px
+source/css/2h1wwdz1nvxwk.pretty.css:255,.cs-sheet,,width,"min(100%, 560px)"
+source/css/2h1wwdz1nvxwk.pretty.css:262,".cs-sheet[data-sheet=""style""]",,width,"min(100%, 920px)"
+source/css/2h1wwdz1nvxwk.pretty.css:265,".cs-sheet[data-sheet=""voice""]",,width,"min(100%, 760px)"
+source/css/2h1wwdz1nvxwk.pretty.css:268,".cs-sheet[data-sheet=""language""]",,width,"min(100%, 420px)"
+source/css/2h1wwdz1nvxwk.pretty.css:271,".cs-sheet[data-sheet=""companion""]",,width,"min(100%, 820px)"
+source/css/2h1wwdz1nvxwk.pretty.css:314,.cs-sheet-body > .sec-intro,,max-width,62ch
+source/css/2h1wwdz1nvxwk.pretty.css:323,.cs-sheet-done,,min-width,104px
+source/css/37m388zf6rymp.pretty.css:63,.glod-sign,,width,"min(330px, 42vw)"
+source/css/37m388zf6rymp.pretty.css:305,.glod-sign,@media (min-width: 1800px),width,384px
+source/css/37m388zf6rymp.pretty.css:436,.glod-mem,,width,"min(360px, 86vw)"
+source/css/37m388zf6rymp.pretty.css:648,.glod-active-ember-with-cue,,min-width,104px
+source/css/37m388zf6rymp.pretty.css:721,.glod-hearth-box,,width,"min(92%, 660px)"
+source/css/37m388zf6rymp.pretty.css:740,.glod-hearth-box,@media (min-width: 860px) and (max-width: 1799px),width,"min(100% - 430px, 660px)"
+source/css/37m388zf6rymp.pretty.css:956,.glod-caption,,width,"min(380px, 100% - 32px)"
+source/css/2_gt301v4m-60.pretty.css:47,.start-flow .stepcard,,max-width,560px
+source/css/2_gt301v4m-60.pretty.css:224,.start-flow .pframe,,width,148px
+source/css/2_gt301v4m-60.pretty.css:292,.start-flow .easel,,width,"min(76vw, 330px)"
+source/css/2_gt301v4m-60.pretty.css:428,.start-flow .veil-caption,,max-width,26ch
+source/css/2_gt301v4m-60.pretty.css:447,.start-flow .reveal-line,,max-width,34ch
+source/css/2_gt301v4m-60.pretty.css:534,.start-flow .acct .pframe,,width,110px
+source/css/2_gt301v4m-60.pretty.css:552,.start-flow .launch,,max-width,980px
+source/css/2_gt301v4m-60.pretty.css:634,.start-flow .honest,,max-width,60ch
+source/css/2_gt301v4m-60.pretty.css:768,.start-flow .sheet,,max-width,440px
+source/css/2_gt301v4m-60.pretty.css:809,.start-flow .forge,,max-width,560px
+source/css/2_gt301v4m-60.pretty.css:846,.start-flow .handoff .pframe,,width,120px
+derived/layout/uppgradera-inline-style.pretty.css:19,.upgrade-sample-link,,width,112px
+derived/layout/uppgradera-inline-style.pretty.css:51,.upgrade-sample-link,@media (max-width: 600px),width,128px

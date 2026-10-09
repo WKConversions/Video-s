@@ -1,0 +1,41 @@
+source,selector,at_rule,property,value
+source/css/3q17cp_jgfwol.pretty.css:771,.tt,,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css:893,.btn,,min-height,52px
+source/css/3q17cp_jgfwol.pretty.css:1079,.legal-language-details > summary,,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css:1188,.builder-pic .fab,,width,42px
+source/css/3q17cp_jgfwol.pretty.css:1189,.builder-pic .fab,,height,42px
+source/css/3q17cp_jgfwol.pretty.css:1232,.trait,,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css:1617,.adv .btn,,min-height,46px
+source/css/3q17cp_jgfwol.pretty.css:1683,.mobile-adv-details summary,@media (max-width: 760px),min-height,44px
+source/css/3q17cp_jgfwol.pretty.css:1725,.mobile-adv.adv .btn,@media (max-width: 760px),min-height,46px
+source/css/3q17cp_jgfwol.pretty.css:1914,.choice,,min-height,54px
+source/css/3q17cp_jgfwol.pretty.css:1953,.sound-toggle,,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css:1996,.sound-bed,,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css:2042,.reader-audio-control,,width,44px
+source/css/3q17cp_jgfwol.pretty.css:2043,.reader-audio-control,,height,44px
+source/css/3q17cp_jgfwol.pretty.css:2072,.reader-replay,,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css:2077,.reader-illustration-toggle,,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css:2218,.friend-photo-attestation,,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css:2406,.create-customize > summary,,min-height,64px
+source/css/3q17cp_jgfwol.pretty.css:2477,.create-customize > summary,@media (max-width: 600px),min-height,56px
+source/css/3q17cp_jgfwol.pretty.css:2524,.advs > .adv .btn,@media (max-width: 600px),min-height,44px
+source/css/3q17cp_jgfwol.pretty.css:2730,.hiw-invite-slot,,min-height,44px
+source/css/3q17cp_jgfwol.pretty.css:2807,.hiw-play,,min-height,48px
+source/css/3q17cp_jgfwol.pretty.css:3013,.hiw-map-btn,,min-width,44px
+source/css/3q17cp_jgfwol.pretty.css:3014,.hiw-map-btn,,min-height,44px
+source/css/2h1wwdz1nvxwk.pretty.css:196,.cs-chip:after,,height,44px
+source/css/2h1wwdz1nvxwk.pretty.css:292,.cs-sheet-close,,width,44px
+source/css/2h1wwdz1nvxwk.pretty.css:293,.cs-sheet-close,,height,44px
+source/css/2h1wwdz1nvxwk.pretty.css:423,.cs-door .btn,,min-height,44px
+source/css/2h1wwdz1nvxwk.pretty.css:495,.cs-companion-actions .friend-add,,min-height,48px
+source/css/2h1wwdz1nvxwk.pretty.css:499,.cs-companion-manage,,min-height,44px
+source/css/2h1wwdz1nvxwk.pretty.css:537,.cs-inline-field input,,min-height,44px
+source/css/37m388zf6rymp.pretty.css:233,.glod-wb-action,,min-height,42px
+source/css/37m388zf6rymp.pretty.css:532,.glod-mem-ember,,width,48px
+source/css/37m388zf6rymp.pretty.css:533,.glod-mem-ember,,height,48px
+source/css/37m388zf6rymp.pretty.css:596,.glod-mem-carry,,min-height,44px
+source/css/37m388zf6rymp.pretty.css:629,.glod-active-ember,,width,48px
+source/css/37m388zf6rymp.pretty.css:630,.glod-active-ember,,height,48px
+source/css/37m388zf6rymp.pretty.css:649,.glod-active-ember-with-cue,,min-height,48px
+source/css/37m388zf6rymp.pretty.css:781,.glod-sound,,min-height,44px
+source/css/37m388zf6rymp.pretty.css:993,.glod-open,,min-height,52px

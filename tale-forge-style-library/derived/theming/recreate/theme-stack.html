@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tale Forge theme stack (reconstruction)</title>
+<!--
+  Minimal, offline reconstruction of Tale Forge's two-theme system, for study and emulation.
+  Every CSS block below is copied verbatim from source/css/3q17cp_jgfwol.pretty.css (line ranges in comments);
+  only the @font-face rules, the demo layout (.demo-*) and the font variables are added here.
+  Assets are referenced from the library's assets/ folder (relative paths), so open this file from inside the library.
+  Toggle: click the Natt/Morgon switch, or append ?theme=morgon. Add ?bare to hide the content and see only the backdrop.
+-->
+<style>
+@font-face { font-family: "Lora"; src: url(../../typography/fonts/Lora-var400-700-latin.woff2) format("woff2"); font-weight: 400 700; }
+@font-face { font-family: "Schibsted Grotesk"; src: url(../../typography/fonts/SchibstedGrotesk-var400-900-latin.woff2) format("woff2"); font-weight: 400 900; }
+@font-face { font-family: "Source Serif 4"; src: url(../../typography/fonts/SourceSerif4-var200-900-latin.woff2) format("woff2"); font-weight: 200 900; }
+@font-face { font-family: "Cinzel"; src: url(../../typography/fonts/Cinzel-700-latin.woff2) format("woff2"); font-weight: 700; }
+html { --font-lora: "Lora"; --font-schibsted: "Schibsted Grotesk"; --font-source-serif: "Source Serif 4"; --font-cinzel: "Cinzel"; }
+* { box-sizing: border-box; margin: 0; }
+
+/* :root primitives, 3q17cp_jgfwol.pretty.css:460-472 */
+:root {
+  --violet: #6d4fe0;
+  --violet-soft: #9b87f5;
+  --gold: #f2b22e;
+  --gold-soft: #f5c542;
+  --coral: #ff6154;
+  --display: var(--font-lora), Georgia, serif;
+  --ui: var(--font-schibsted), "Segoe UI", system-ui, sans-serif;
+  --serif: var(--font-source-serif), Georgia, serif;
+  --wordmark: var(--font-cinzel), "Playfair Display", Georgia, serif;
+  --theme-transition-duration: 0.5s;
+  --theme-transition-easing: ease;
+}
+
+/* theme sets, :493-590 */
+body[data-theme="natt"] {
+  --page-ink: #fff7e9;
+  --page-sub: #d9cfee;
+  --accent: var(--gold-soft);
+  --accent-ink: var(--gold-soft);
+  --card: #0f1628ad;
+  --card-line: #9b87f542;
+  --card-blur: 22px;
+  --card-ink: #f2eeff;
+  --card-sub: #b5acd3;
+  --frame: #101a30;
+  --frame-line: #9b87f566;
+  --chip-bg: #fff9ec1a;
+  --chip-line: #fff3d942;
+  --chip-ink: #e8dfc9;
+  --pill-bg: #9b87f529;
+  --pill-ink: #c9bcff;
+  --micro-ink: color-mix(in srgb, var(--page-sub) 85%, transparent);
+  --h1-shadow: 0 2px 30px #0c082859;
+  --gold-chip-bg: #f2b22e29;
+  --gold-chip-ink: #ffd98f;
+  --coral-chip-bg: #ff615424;
+  --coral-chip-ink: #ffab9f;
+  --trait-line: #9b87f559;
+  --trait-ink: #cfc5ec;
+  --trait-on-bg: #9b87f533;
+  --trait-on-line: #9b87f599;
+  --trait-on-ink: #e9e2ff;
+  --dash-line: #ffecbe59;
+  --choice-bg: #ffffff0f;
+  --choice-line: #9b87f552;
+  --choice-ink: #f2eeff;
+  --bar-bg: #ffffff24;
+  --prose-ink: #eae4f5;
+  --foot-ink: #b7a9d6;
+  --btn-grad: linear-gradient(135deg, #ffe08a, #f5c542);
+  --btn-ink: #3a2b10;
+  --btn-shadow: 0 14px 40px #f5c54247;
+  --btn-shadow-hover: 0 20px 55px #f5c5426b;
+  --ghost-bg: #fff9ec1a;
+  --ghost-ink: #fff3d9;
+  --control-line: #fff3d952;
+  --ghost-line: var(--control-line);
+  --card-shadow: 0 18px 44px #0508146b;
+  --logo-ink: #f5c542;
+  --logo-shadow: 0 2px 6px #050814cc, 0 0 34px #f5c54273;
+  --map-dot: var(--violet-soft);
+  --map-glow: #f5c54240;
+}
+body[data-theme="morgon"] {
+  --page-ink: #241f35;
+  --page-sub: #5f5878;
+  --accent: #6d4fe0;
+  --accent-ink: #5b3fc7;
+  --card: #fffc;
+  --card-line: #ffffffe6;
+  --card-blur: 24px;
+  --card-ink: #241f35;
+  --card-sub: #5f5878;
+  --frame: #fff;
+  --frame-line: #ffffffe6;
+  --chip-bg: #6d4fe014;
+  --chip-line: #6d4fe029;
+  --chip-ink: var(--accent-ink);
+  --pill-bg: #6d4fe01a;
+  --pill-ink: var(--accent-ink);
+  --micro-ink: var(--page-sub);
+  --h1-shadow: none;
+  --gold-chip-bg: #f2b22e26;
+  --gold-chip-ink: #8f6a12;
+  --coral-chip-bg: #ff61541f;
+  --coral-chip-ink: #c23a2b;
+  --trait-line: #6d4fe047;
+  --trait-ink: #5f5878;
+  --trait-on-bg: #6d4fe01f;
+  --trait-on-line: #6d4fe06b;
+  --trait-on-ink: #4a36a8;
+  --dash-line: #6d4fe059;
+  --choice-bg: #fff;
+  --choice-line: #6d4fe038;
+  --choice-ink: #241f35;
+  --bar-bg: #241f3514;
+  --prose-ink: #3a3450;
+  --foot-ink: #5f5878;
+  --btn-grad: linear-gradient(135deg, #6d4fe0, #5b3fc7);
+  --btn-ink: #fff;
+  --btn-shadow: 0 14px 34px #6d4fe059;
+  --btn-shadow-hover: 0 22px 48px #6d4fe073;
+  --ghost-bg: #ffffffb8;
+  --ghost-ink: #241f35;
+  --control-line: #887da0;
+  --ghost-line: var(--control-line);
+  --card-shadow: 0 4px 12px #241f351a, 0 22px 52px #241f3529;
+  --logo-ink: #6d4fe0;
+  --logo-shadow: 0 1px 2px #241f352e, 0 0 24px #6d4fe052;
+  --map-dot: var(--violet);
+  --map-glow: #6d4fe033;
+}
+
+/* body, backdrop stack, starfield, cross-fade, :598-680 */
+body {
+  color: var(--page-ink);
+  font-family: var(--ui);
+  -webkit-font-smoothing: antialiased;
+  transition:
+    background-color var(--theme-transition-duration)
+      var(--theme-transition-easing),
+    color var(--theme-transition-duration) var(--theme-transition-easing);
+  background: #171232;
+  overflow-x: hidden;
+}
+body[data-theme="morgon"] {
+  background: #ede9f6;
+}
+.bg {
+  z-index: 0;
+  pointer-events: none;
+  height: 100lvh;
+  transition: opacity var(--theme-transition-duration)
+    var(--theme-transition-easing);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.bg-night img {
+  object-fit: cover;
+  object-position: center 30%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+.bg-night .scrim {
+  background: linear-gradient(#0b0f1e61 0%, #0b0f1e80 45%, #0d1122bd 100%);
+  position: absolute;
+  inset: 0;
+}
+.starfield {
+  background-image:
+    radial-gradient(1.4px 1.4px at 12% 8%, #ffe9b0e6 50%, #0000 51%),
+    radial-gradient(1px 1px at 32% 16%, #f5f0e8cc 50%, #0000 51%),
+    radial-gradient(1.6px 1.6px at 58% 6%, #f5c542d9 50%, #0000 51%),
+    radial-gradient(1px 1px at 76% 12%, #f5f0e8b3 50%, #0000 51%),
+    radial-gradient(1.2px 1.2px at 90% 22%, #ffe9b0bf 50%, #0000 51%),
+    radial-gradient(1.3px 1.3px at 44% 24%, #9b87f599 50%, #0000 51%);
+  animation: 4.6s ease-in-out infinite twinkle;
+  position: absolute;
+  inset: 0;
+}
+@keyframes twinkle {
+  0%,
+  to {
+    opacity: 0.95;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+.bg-day picture,
+.bg-day img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+.bg-day img {
+  object-fit: cover;
+}
+body[data-theme="natt"] .bg-day {
+  opacity: 0;
+}
+body[data-theme="natt"] .bg-night,
+body[data-theme="morgon"] .bg-day {
+  opacity: 1;
+}
+body[data-theme="morgon"] .bg-night {
+  opacity: 0;
+}
+.wrap {
+  z-index: 1;
+  position: relative;
+}
+
+/* theme toggle, :768-826 */
+.tt {
+  background: var(--ghost-bg);
+  border: 1px solid var(--control-line);
+  min-height: 44px;
+  font-family: var(--ui);
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  transition:
+    background var(--theme-transition-duration) var(--theme-transition-easing),
+    border-color var(--theme-transition-duration) var(--theme-transition-easing);
+  border-radius: 999px;
+  align-items: center;
+  padding: 4px;
+  display: flex;
+  position: relative;
+}
+.tt-thumb {
+  background: var(--btn-grad);
+  width: calc(50% - 4px);
+  box-shadow: var(--btn-shadow);
+  transition:
+    transform var(--theme-transition-duration) cubic-bezier(0.2, 0.7, 0.3, 1.2),
+    background var(--theme-transition-duration) var(--theme-transition-easing);
+  border-radius: 999px;
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+}
+body[data-theme="morgon"] .tt-thumb {
+  transform: translate(100%);
+}
+.tt-opt {
+  z-index: 1;
+  color: var(--ghost-ink);
+  transition: color var(--theme-transition-duration)
+    var(--theme-transition-easing);
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: inline-flex;
+  position: relative;
+}
+.tt-opt svg {
+  width: 15px;
+  height: 15px;
+}
+body[data-theme="natt"] .tt-opt.night,
+body[data-theme="morgon"] .tt-opt.day {
+  color: var(--btn-ink);
+}
+.tt:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--card) 88%, transparent);
+}
+
+/* kicker, :835-854 */
+.kicker {
+  color: var(--chip-ink);
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-line);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 999px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: all 0.5s;
+  display: inline-flex;
+}
+.kicker svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* h1, .grad, .lede, :855-885 */
+h1 {
+  font-family: var(--display);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  color: var(--page-ink);
+  text-shadow: var(--h1-shadow);
+  margin-bottom: 18px;
+  font-size: clamp(2.7rem, 5.4vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1.06;
+  transition: color 0.5s;
+}
+h1 .grad {
+  color: var(--accent-ink);
+  transition: color 0.5s;
+}
+.lede {
+  font-family: var(--serif);
+  color: var(--page-sub);
+  max-width: 46ch;
+  margin-bottom: 30px;
+  font-size: clamp(1.08rem, 1.65vw, 1.28rem);
+  line-height: 1.65;
+  transition: color 0.5s;
+}
+.cta-row {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  display: flex;
+}
+
+/* buttons, :886-924 */
+.btn {
+  cursor: pointer;
+  font-family: var(--ui);
+  border: none;
+  border-radius: 999px;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 17px 30px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  transition:
+    transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4),
+    box-shadow 0.3s,
+    background 0.5s,
+    color 0.5s;
+  display: inline-flex;
+}
+.btn:active {
+  transform: scale(0.96);
+}
+.btn-primary {
+  color: var(--btn-ink);
+  background: var(--btn-grad);
+  box-shadow:
+    var(--btn-shadow),
+    inset 0 1px 0 #ffffff73;
+}
+.btn-primary:hover {
+  box-shadow: var(--btn-shadow-hover);
+  transform: translateY(-3px);
+}
+.btn-ghost {
+  background: var(--ghost-bg);
+  color: var(--ghost-ink);
+  border: 1px solid var(--ghost-line);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+.btn-primary:hover { box-shadow: var(--btn-shadow-hover); transform: translateY(-3px); }
+
+/* glass card + gradient rim, :1110-1147 */
+.glass {
+  background: var(--card);
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  backdrop-filter: blur(var(--card-blur));
+  border: 1px solid var(--card-line);
+  box-shadow: var(--card-shadow);
+  color: var(--card-ink);
+  border-radius: 26px;
+  transition:
+    background 0.5s,
+    border-color 0.5s,
+    color 0.5s,
+    box-shadow 0.4s;
+  position: relative;
+}
+.glass:before {
+  content: "";
+  pointer-events: none;
+  -webkit-mask-composite: xor;
+  opacity: 0.45;
+  background: linear-gradient(135deg, #9b87f580, #f2b22e59 50%, #ff61544d);
+  border-radius: 26px;
+  padding: 1px;
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+  -webkit-mask-position:
+    0 0,
+    0 0;
+  -webkit-mask-size: auto, auto;
+  -webkit-mask-repeat: repeat, repeat;
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-origin: content-box, border-box;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  -webkit-mask-source-type: auto, auto;
+  mask-mode: match-source, match-source;
+}
+
+/* reduced motion, :2349-2366 (subset) */
+@media (prefers-reduced-motion: reduce) { .starfield { animation: none; } body, .bg, .tt, .tt-thumb, .tt-opt { transition: none; } }
+
+/* ---- demo layout (not from the site) ---- */
+.demo-shell { width: min(1120px, 100%); margin: 0 auto; padding: 0 28px; }
+.demo-nav { display: flex; justify-content: space-between; align-items: center; padding: 22px 0; }
+.demo-logo { font-family: var(--wordmark); color: var(--logo-ink); text-shadow: var(--logo-shadow); text-transform: uppercase; letter-spacing: 3px; font-size: 1.72rem; font-weight: 700; transition: color .5s; }
+.demo-hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; min-height: 64vh; padding: 4vh 0 2vh; }
+.demo-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+.demo-card { padding: 28px; font-family: var(--ui); }
+.demo-card h3 { font-family: var(--display); font-size: 1.4rem; margin-bottom: 8px; }
+.demo-card p { color: var(--card-sub); line-height: 1.5; }
+@media (max-width: 760px) { .demo-hero { grid-template-columns: 1fr; } }
+body.bare .wrap { visibility: hidden; }
+</style>
+</head>
+<body data-theme="natt">
+<script>(function(){try{var t=localStorage.getItem('tf-theme');if(t==='natt'||t==='morgon'){document.body.dataset.theme=t;}}catch(e){}
+var q=new URLSearchParams(location.search);if(q.get('theme')==='natt'||q.get('theme')==='morgon'){document.body.dataset.theme=q.get('theme');}if(q.has('bare')){document.body.classList.add('bare');}})();</script>
+<div class="bg bg-night"><img src="../../../assets/assets/nebula-hero.webp" alt=""/><div class="scrim"></div><div class="starfield"></div></div>
+<div class="bg bg-day"><picture><source media="(max-width: 760px)" srcset="../../../assets/assets/morgon-aurora-mobile.webp"/><img src="../../../assets/assets/morgon-aurora-desktop.webp" alt=""/></picture></div>
+<div class="wrap"><div class="demo-shell">
+  <nav class="demo-nav"><span class="demo-logo">Tale Forge</span>
+    <button class="tt" role="switch" aria-checked="false" aria-label="Byt tema" type="button"><span class="tt-thumb" aria-hidden="true"></span><span class="tt-opt night"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>Natt</span><span class="tt-opt day"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"></path></svg>Morgon</span></button>
+  </nav>
+  <header class="demo-hero"><div>
+    <span class="kicker">Exempel: Alvas värld · 2 böcker</span>
+    <h1>En värld som <span class="grad">minns henne</span>.</h1>
+    <p class="lede">Den målade hjälten återvänder. Valen förändrar vad som händer, och senare böcker minns äventyren ni redan har delat.</p>
+    <div class="demo-row"><a class="btn btn-primary">Skapa er hjälte</a><a class="btn btn-ghost">Se hur det funkar</a></div>
+  </div>
+  <div class="glass demo-card"><h3>Glass card</h3><p>background: var(--card); backdrop-filter: blur(var(--card-blur)); border: 1px solid var(--card-line); box-shadow: var(--card-shadow); plus the :before gradient rim.</p></div>
+  </header>
+</div></div>
+<script>
+/* Behaviour of ThemeToggle (source/js/390j9gbq0u9ce.js), rewritten without React */
+(function(){
+  var btn=document.querySelector('.tt');
+  function cur(){return document.body.dataset.theme==='morgon'?'morgon':'natt';}
+  function sync(){btn.setAttribute('aria-checked', String(cur()==='morgon'));}
+  btn.addEventListener('click',function(){var n=cur()==='natt'?'morgon':'natt';document.body.dataset.theme=n;try{localStorage.setItem('tf-theme',n);}catch(e){}window.dispatchEvent(new Event('tf-theme-change'));});
+  window.addEventListener('tf-theme-change',sync); sync();
+})();
+</script>
+</body>
+</html>

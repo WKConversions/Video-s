@@ -1,0 +1,20 @@
+source,selector,at_rule,property,value
+source/css/3q17cp_jgfwol.pretty.css:943,.fan .fbook img,,aspect-ratio,2/3
+source/css/3q17cp_jgfwol.pretty.css:1505,.book img,,aspect-ratio,2/3
+source/css/3q17cp_jgfwol.pretty.css:1626,.adv-art,,aspect-ratio,16/9
+source/css/3q17cp_jgfwol.pretty.css:1660,.mobile-adv.adv .adv-art,@media (max-width: 760px),aspect-ratio,auto
+source/css/3q17cp_jgfwol.pretty.css:1766,.reader-img,,aspect-ratio,1264/848
+source/css/3q17cp_jgfwol.pretty.css:1777,.reader-img--cover,,aspect-ratio,848/1264
+source/css/3q17cp_jgfwol.pretty.css:2081,.reader-grid--illustration-only .reader-img,,aspect-ratio,1264/848
+source/css/3q17cp_jgfwol.pretty.css:2112,.reader-keepsake-cover,,aspect-ratio,848/1264
+source/css/3q17cp_jgfwol.pretty.css:2302,.reader-img,@media (max-width: 560px),aspect-ratio,16/9
+source/css/3q17cp_jgfwol.pretty.css:2305,.reader-grid--cover .reader-img,@media (max-width: 560px),aspect-ratio,848/1264
+source/css/3q17cp_jgfwol.pretty.css:2497,.advs > .adv .adv-art,@media (max-width: 600px),aspect-ratio,auto
+source/css/3q17cp_jgfwol.pretty.css:2858,.hiw-reader-mock > img,,aspect-ratio,3/2
+source/css/3q17cp_jgfwol.pretty.css:3007,.hiw-map-btn,,aspect-ratio,1
+source/css/3q17cp_jgfwol.pretty.css:3047,.hiw-cover,,aspect-ratio,2/3
+source/css/2h1wwdz1nvxwk.pretty.css:595,.HeroCanvasPlaceholder-module__H1HHWq__canvas,,aspect-ratio,1
+source/css/2_gt301v4m-60.pretty.css:32,.start-flow .gbook img,,aspect-ratio,2/3
+source/css/2_gt301v4m-60.pretty.css:288,.start-flow .easel,,aspect-ratio,3/4
+source/css/2_gt301v4m-60.pretty.css:660,.start-flow .adv-art,,aspect-ratio,16/9
+source/css/2_gt301v4m-60.pretty.css:905,.start-flow .adv-art,@media (max-width: 480px),aspect-ratio,16/9

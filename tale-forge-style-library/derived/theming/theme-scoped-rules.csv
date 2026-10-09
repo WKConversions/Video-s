@@ -1,0 +1,18 @@
+selector,property,natt,morgon,source,note
+body,background,#171232,#ede9f6,source/css/3q17cp_jgfwol.pretty.css:606 / :609-611,canvas under the fixed plate; transitions background-color 0.5s ease (:602-605)
+body,data-theme attribute,"natt (server default, every source/html/*.html)",morgon,source/html/home.sv.html (body tag + inline script),set by inline script before paint and by ThemeToggle onClick (source/js/390j9gbq0u9ce.js)
+.bg-night (img + .scrim + .starfield),opacity,1,0,source/css/3q17cp_jgfwol.pretty.css:670-676,transition opacity 0.5s ease (:616-617)
+.bg-day (picture > img),opacity,0,1,source/css/3q17cp_jgfwol.pretty.css:667-672,.bg-day is later in the DOM so it paints on top of .bg-night
+.tt-thumb,transform,none (thumb under the left option),translate(100%) (thumb under the right option),source/css/3q17cp_jgfwol.pretty.css:798-800,transition transform 0.5s cubic-bezier(0.2 0.7 0.3 1.2) (:789-792)
+.tt-opt.night,color,var(--btn-ink) = #3a2b10,var(--ghost-ink) = #241f35,source/css/3q17cp_jgfwol.pretty.css:803 / :818-821,the active option takes button ink because the thumb sits under it
+.tt-opt.day,color,var(--ghost-ink) = #fff3d9,var(--btn-ink) = #fff,source/css/3q17cp_jgfwol.pretty.css:803 / :818-821,
+button.tt,aria-checked,false,true,source/js/390j9gbq0u9ce.js (ThemeToggle),"role=switch; checked means morgon"
+.cs-door-face,background,"linear-gradient(160deg, #140f28e6, #281e46d9)","linear-gradient(160deg, #ded5f5, #c9bcf0)",source/css/2h1wwdz1nvxwk.pretty.css:433-444,create-sheet 'story door' card face
+.glod-stage,background,#0b0e22,#b7c0ea,source/css/37m388zf6rymp.pretty.css:1-2 / :18-20,hearth stage (create flow) behind the canvas
+.glod-ambient,background,#0b0e22,#cdb9d8,source/css/37m388zf6rymp.pretty.css:21-24 / :32-34,fixed ambient canvas layer used by the StoryReader (source/js/36tbz-w9v-p8v.js)
+.glod-ambient:after,background,"linear-gradient(#07091780 0%, #07091742 42%, #07091770 100%)","linear-gradient(#3b2c6433 0%, #fff6e814 45%, #ede9f661 100%)",source/css/37m388zf6rymp.pretty.css:44-52,scrim over the ambient canvas: dark navy at night; violet top + cream middle + lavender bottom in the morning
+.glod-hearth-box p,color,#eee1c6,#fff6e4,source/css/37m388zf6rymp.pretty.css:744-758,text over the fire scene stays light in BOTH themes
+.glod-hearth-box p,text-shadow,"0 1px 10px #060410d9, 0 0 3px #060410b3","0 1px 10px #2b1e4ee6, 0 0 4px #2b1e4ecc, 0 1px 2px #2b1e4ee6",source/css/37m388zf6rymp.pretty.css:744-758,morning uses a heavier three-layer plum halo to keep cream text legible on a lighter scene
+.glod-caption-line,color,#fff7e9,#2f2350,source/css/37m388zf6rymp.pretty.css:970-981,caption text flips polarity
+.glod-caption-line,text-shadow,0 2px 20px #060410cc,0 2px 20px #fff8ebb3,source/css/37m388zf6rymp.pretty.css:970-981,dark halo at night; cream halo in the morning
+glöd canvas scene (createGlodScene),palette object,"natt palette (sky #070917 -> #141134 -> #28204e, stars on, moon #efe6cd with craters, vignette 5,3,14 @ .42)","morgon palette (sky #a9b4e4 -> #dcc9e8 -> #f7ddba, no stars, moon #fff3d2 no craters, vignette 56,42,96 @ .26); reader ambient variant uses a third, brighter morgon palette",source/js/1pgfdvt65g9p-.js; full values in derived/color/glod-canvas-palettes.json,re-painted live via MutationObserver on body[data-theme] (source/js/2j_-r8q4tgdka.js and 36tbz-w9v-p8v.js)

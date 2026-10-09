@@ -1,0 +1,80 @@
+source,selector,at_rule,property,value
+source/css/3q17cp_jgfwol.pretty.css:511,"body[data-theme=""natt""]",,--h1-shadow,0 2px 30px #0c082859
+source/css/3q17cp_jgfwol.pretty.css:530,"body[data-theme=""natt""]",,--btn-shadow,0 14px 40px #f5c54247
+source/css/3q17cp_jgfwol.pretty.css:531,"body[data-theme=""natt""]",,--btn-shadow-hover,0 20px 55px #f5c5426b
+source/css/3q17cp_jgfwol.pretty.css:536,"body[data-theme=""natt""]",,--card-shadow,0 18px 44px #0508146b
+source/css/3q17cp_jgfwol.pretty.css:538,"body[data-theme=""natt""]",,--logo-shadow,"0 2px 6px #050814cc, 0 0 34px #f5c54273"
+source/css/3q17cp_jgfwol.pretty.css:560,"body[data-theme=""morgon""]",,--h1-shadow,none
+source/css/3q17cp_jgfwol.pretty.css:579,"body[data-theme=""morgon""]",,--btn-shadow,0 14px 34px #6d4fe059
+source/css/3q17cp_jgfwol.pretty.css:580,"body[data-theme=""morgon""]",,--btn-shadow-hover,0 22px 48px #6d4fe073
+source/css/3q17cp_jgfwol.pretty.css:585,"body[data-theme=""morgon""]",,--card-shadow,"0 4px 12px #241f351a, 0 22px 52px #241f3529"
+source/css/3q17cp_jgfwol.pretty.css:587,"body[data-theme=""morgon""]",,--logo-shadow,"0 1px 2px #241f352e, 0 0 24px #6d4fe052"
+source/css/3q17cp_jgfwol.pretty.css:713,.logo img,,filter,drop-shadow(0 0 14px #f5c54280)
+source/css/3q17cp_jgfwol.pretty.css:788,.tt-thumb,,box-shadow,var(--btn-shadow)
+source/css/3q17cp_jgfwol.pretty.css:825,.tt:focus-visible,,box-shadow,"0 0 0 6px color-mix(in srgb, var(--card) 88%, transparent)"
+source/css/3q17cp_jgfwol.pretty.css:910-912,.btn-primary,,box-shadow,"var(--btn-shadow), inset 0 1px 0 #ffffff73"
+source/css/3q17cp_jgfwol.pretty.css:915,.btn-primary:hover,,box-shadow,var(--btn-shadow-hover)
+source/css/3q17cp_jgfwol.pretty.css:938-940,.fan .fbook,,box-shadow,"0 24px 50px #0a072066, 0 0 44px #f5c5421f"
+source/css/3q17cp_jgfwol.pretty.css:987,.fan .badge,,box-shadow,var(--card-shadow)
+source/css/3q17cp_jgfwol.pretty.css:1017,.badge .dotpulse,,box-shadow,0 0 #f2b22e80
+source/css/3q17cp_jgfwol.pretty.css:1021,0%,@keyframes pulse,box-shadow,0 0 #f2b22e73
+source/css/3q17cp_jgfwol.pretty.css:1024,70%,@keyframes pulse,box-shadow,0 0 0 12px #f2b22e00
+source/css/3q17cp_jgfwol.pretty.css:1027,to,@keyframes pulse,box-shadow,0 0 #f2b22e00
+source/css/3q17cp_jgfwol.pretty.css:1115,.glass,,box-shadow,var(--card-shadow)
+source/css/3q17cp_jgfwol.pretty.css:1175,.builder-pic .pframe,,box-shadow,0 16px 36px #0a07204d
+source/css/3q17cp_jgfwol.pretty.css:1191,.builder-pic .fab,,box-shadow,var(--btn-shadow)
+source/css/3q17cp_jgfwol.pretty.css:1309,.friend .avatar,,box-shadow,0 10px 22px #0a072040
+source/css/3q17cp_jgfwol.pretty.css:1411,.comp-avatar,,box-shadow,inset 0 0 0 1px var(--card-line)
+source/css/3q17cp_jgfwol.pretty.css:1458,.companion-pic,,box-shadow,0 12px 26px #6d4fe040
+source/css/3q17cp_jgfwol.pretty.css:1488,.book,,box-shadow,var(--card-shadow)
+source/css/3q17cp_jgfwol.pretty.css:1730,.mobile-adv .btn:disabled,@media (max-width: 760px),box-shadow,none
+source/css/3q17cp_jgfwol.pretty.css:1854,".reader-body .btn:disabled, .choice:disabled",,box-shadow,none
+source/css/3q17cp_jgfwol.pretty.css:1861,".reader-body .btn:disabled:hover, .reader-body .btn:disabled:active, .choice:disabled:hover, .choice:disabled:active",,box-shadow,none
+source/css/3q17cp_jgfwol.pretty.css:1883,.reader-link-wait .dotpulse,,box-shadow,0 0 #f2b22e80
+source/css/3q17cp_jgfwol.pretty.css:1926,.choice:hover,,box-shadow,0 14px 30px #6d4fe02e
+source/css/3q17cp_jgfwol.pretty.css:2115,.reader-keepsake-cover,,box-shadow,var(--card-shadow)
+source/css/3q17cp_jgfwol.pretty.css:2186,".friend-mode-option[aria-pressed=""true""]",,box-shadow,0 10px 26px #6d4fe024
+source/css/3q17cp_jgfwol.pretty.css:2234,.friend-photo-step > .btn:disabled,,box-shadow,none
+source/css/3q17cp_jgfwol.pretty.css:2403,".create-customize:hover, .create-customize[open]",,box-shadow,0 6px 24px -14px var(--accent)
+source/css/3q17cp_jgfwol.pretty.css:2754,.hiw-fan-card,,box-shadow,var(--card-shadow)
+source/css/3q17cp_jgfwol.pretty.css:2810-2812,.hiw-play,,box-shadow,"var(--btn-shadow), inset 0 1px 0 #ffffff73"
+source/css/3q17cp_jgfwol.pretty.css:2826,.hiw-play:hover,,box-shadow,var(--btn-shadow-hover)
+source/css/3q17cp_jgfwol.pretty.css:2980,.hiw-map .map-medallion,,filter,drop-shadow(0 0 18px var(--map-glow))
+source/css/3q17cp_jgfwol.pretty.css:3051,.hiw-cover,,box-shadow,var(--card-shadow)
+source/css/3q17cp_jgfwol.pretty.css:3057,.hiw-cover-next,,filter,drop-shadow(0 0 22px var(--map-glow))
+source/css/3q17cp_jgfwol.pretty.css:3095,.hiw-memory-tag,,box-shadow,var(--card-shadow)
+source/css/3q17cp_jgfwol.pretty.css:3113,.hiw-memory-tag .dotpulse,,box-shadow,0 0 #f2b22e80
+source/css/2h1wwdz1nvxwk.pretty.css:21,.cs-portrait,,box-shadow,0 6px 22px #0000002e
+source/css/2h1wwdz1nvxwk.pretty.css:108,.cs-memtag,,box-shadow,0 4px 14px #00000026
+source/css/2h1wwdz1nvxwk.pretty.css:430,.cs-door .btn:disabled,,box-shadow,none
+source/css/37m388zf6rymp.pretty.css:79,.glod-post,,box-shadow,0 12px 18px #04030c8c
+source/css/37m388zf6rymp.pretty.css:97-101,.glod-board,,box-shadow,"0 22px 34px #04030c99, 0 0 60px #ff963c12, inset 0 1px #ffd8a038, inset 0 -3px #00000059"
+source/css/37m388zf6rymp.pretty.css:139,.glod-nail,,box-shadow,0 1px 2px #0009
+source/css/37m388zf6rymp.pretty.css:189,.glod-pulse-dot,,box-shadow,0 0 12px 3px #ffb2508c
+source/css/37m388zf6rymp.pretty.css:208,.glod-alert-dot,,box-shadow,0 0 10px 2px #f3c36b61
+source/css/37m388zf6rymp.pretty.css:228,.glod-wb-rewrite,,box-shadow,0 3px 8px #04030c66
+source/css/37m388zf6rymp.pretty.css:242,.glod-wb-action,,box-shadow,0 5px 12px #04030c59
+source/css/37m388zf6rymp.pretty.css:294,.glod-wb-steps li.active .dot,,box-shadow,0 0 10px 2px #ffc45a80
+source/css/37m388zf6rymp.pretty.css:434-435,.glod-mem,,filter,drop-shadow(0 16px 24px #0804128c) drop-shadow(0 4px 8px #280e0459) drop-shadow(0 0 28px #ffaa5026)
+source/css/37m388zf6rymp.pretty.css:552-555,.glod-mem-ember-core,,box-shadow,"0 0 10px 3px #ffc373f2, 0 0 26px 9px #ff983e8c, 0 0 52px 20px #ff823240"
+source/css/37m388zf6rymp.pretty.css:567-570,"0%, to",@keyframes glodEmberBreath,box-shadow,"0 0 10px 3px #ffc373f2, 0 0 26px 9px #ff983e8c, 0 0 52px 20px #ff823240"
+source/css/37m388zf6rymp.pretty.css:574-577,50%,@keyframes glodEmberBreath,box-shadow,"0 0 12px 4px #ffcd7d, 0 0 34px 12px #ffa044a6, 0 0 64px 26px #ff84344d"
+source/css/37m388zf6rymp.pretty.css:652,.glod-active-ember-with-cue,,box-shadow,0 5px 12px #08041257
+source/css/37m388zf6rymp.pretty.css:670-673,.glod-active-ember-core,,box-shadow,"0 0 10px 4px #ffc869e6, 0 0 28px 11px #ff983a9e, 0 0 54px 22px #ff80303d"
+source/css/37m388zf6rymp.pretty.css:686-689,".glod-active-ember:hover .glod-active-ember-core, .glod-active-ember:active .glod-active-ember-core, .glod-active-ember:focus-visible .glod-active-ember-core",,box-shadow,"0 0 13px 5px #ffd782, 0 0 34px 14px #ffa546b8, 0 0 62px 27px #ff84344d"
+source/css/37m388zf6rymp.pretty.css:805,.glod-book,,filter,drop-shadow(0 26px 44px #04030c99) drop-shadow(0 0 42px #ffb45a42)
+source/css/37m388zf6rymp.pretty.css:825,.glod-book-pages,,box-shadow,inset -2px 0 3px #5a3c1e66
+source/css/37m388zf6rymp.pretty.css:840-846,.glod-book-cover,,box-shadow,"inset 0 0 0 1px #090516a6, inset 0 2px #fff0d212, inset -5px 0 9px #06031066, inset 0 -4px 7px #06031059, 4px 5px 0 -1px #191140, 7px 9px 0 -2px #120c31"
+source/css/37m388zf6rymp.pretty.css:855-857,.glod-book-cover:before,,box-shadow,"0 1px #ffecc40f, inset 0 1px #ffecc40f"
+source/css/37m388zf6rymp.pretty.css:895,.glod-book-art,,filter,drop-shadow(0 3px 8px #05030e80)
+source/css/37m388zf6rymp.pretty.css:919,.glod-book-rule:after,,box-shadow,0 0 8px #f5c54299
+source/css/37m388zf6rymp.pretty.css:1004-1008,.glod-open,,box-shadow,"0 12px 26px #04030c8c, 0 0 30px #ffaa4629, inset 0 1px #ffd8a04d, inset 0 -3px #0006"
+source/css/37m388zf6rymp.pretty.css:1043-1047,.glod-open:hover,,box-shadow,"0 18px 38px #04030c99, 0 0 44px #ffb45047, inset 0 1px #ffd8a059, inset 0 -3px #0006"
+source/css/2_gt301v4m-60.pretty.css:26,.start-flow .gbook,,box-shadow,var(--card-shadow)
+source/css/2_gt301v4m-60.pretty.css:58,.start-flow .stepcard .btn:disabled,,box-shadow,none
+source/css/2_gt301v4m-60.pretty.css:229,.start-flow .pframe,,box-shadow,0 16px 36px #0a07204d
+source/css/2_gt301v4m-60.pretty.css:295-297,.start-flow .easel,,box-shadow,"0 30px 70px #0508148c, 0 0 60px #f5c54224"
+source/css/2_gt301v4m-60.pretty.css:507,.start-flow .unveil-waiting,,box-shadow,none
+source/css/2_gt301v4m-60.pretty.css:516,0%,@keyframes tfUnveilPop,box-shadow,0 0 #f5c54200
+source/css/2_gt301v4m-60.pretty.css:520,45%,@keyframes tfUnveilPop,box-shadow,0 0 26px #f5c5428c
+source/css/2_gt301v4m-60.pretty.css:524,to,@keyframes tfUnveilPop,box-shadow,0 0 #f5c54200

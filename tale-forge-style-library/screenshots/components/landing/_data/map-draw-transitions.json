@@ -1,0 +1,93 @@
+{
+ "note": "CSS transitions running immediately after switching the endings map to ending 3 (document.getAnimations()).",
+ "data": {
+  "natt": [
+   {
+    "prop": "opacity",
+    "target": "map-path-lit map-path-lit--lit",
+    "dur": 200,
+    "easing": "ease"
+   },
+   {
+    "prop": "stroke-dashoffset",
+    "target": "map-path-lit map-path-lit--lit",
+    "dur": 900,
+    "easing": "ease-out"
+   },
+   {
+    "prop": "opacity",
+    "target": "map-path-lit map-path-lit--fading",
+    "dur": 250,
+    "easing": "ease"
+   },
+   {
+    "prop": "opacity",
+    "target": "map-medallion is-active",
+    "dur": 200,
+    "easing": "ease"
+   },
+   {
+    "prop": "transform",
+    "target": "map-medallion is-active",
+    "dur": 200,
+    "easing": "ease"
+   },
+   {
+    "prop": "opacity",
+    "target": "map-medallion is-dimmed",
+    "dur": 200,
+    "easing": "ease"
+   },
+   {
+    "prop": "transform",
+    "target": "map-medallion is-dimmed",
+    "dur": 200,
+    "easing": "ease"
+   }
+  ],
+  "morgon": [
+   {
+    "prop": "opacity",
+    "target": "map-path-lit map-path-lit--lit",
+    "dur": 200,
+    "easing": "ease"
+   },
+   {
+    "prop": "stroke-dashoffset",
+    "target": "map-path-lit map-path-lit--lit",
+    "dur": 900,
+    "easing": "ease-out"
+   },
+   {
+    "prop": "opacity",
+    "target": "map-path-lit map-path-lit--fading",
+    "dur": 250,
+    "easing": "ease"
+   },
+   {
+    "prop": "opacity",
+    "target": "map-medallion is-active",
+    "dur": 200,
+    "easing": "ease"
+   },
+   {
+    "prop": "transform",
+    "target": "map-medallion is-active",
+    "dur": 200,
+    "easing": "ease"
+   },
+   {
+    "prop": "opacity",
+    "target": "map-medallion is-dimmed",
+    "dur": 200,
+    "easing": "ease"
+   },
+   {
+    "prop": "transform",
+    "target": "map-medallion is-dimmed",
+    "dur": 200,
+    "easing": "ease"
+   }
+  ]
+ }
+}

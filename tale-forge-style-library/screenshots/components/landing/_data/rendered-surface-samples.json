@@ -1,0 +1,329 @@
+{
+ "note": "Mean sRGB of a 7x7 device-pixel patch sampled from each 2x crop at the given CSS-px position (crop-relative). Translucent surfaces vary with the backdrop behind them; patch_std is the per-channel std (texture/noise).",
+ "data": {
+  "natt": [
+   {
+    "crop": "38-endings-map__natt__desktop.png",
+    "what": "glass card interior (map card, top-left)",
+    "css_px": [
+     64,
+     64
+    ],
+    "mean_hex": "#141b2e",
+    "patch_std": 0.0
+   },
+   {
+    "crop": "47-hero-builder-card__natt__desktop.png",
+    "what": "glass card interior (builder, lower-left)",
+    "css_px": [
+     39,
+     274
+    ],
+    "mean_hex": "#22232f",
+    "patch_std": 0.6
+   },
+   {
+    "crop": "15-btn-ghost__natt__desktop.png",
+    "what": "ghost button fill (left padding)",
+    "css_px": [
+     30,
+     44
+    ],
+    "mean_hex": "#524d5d",
+    "patch_std": 0.7
+   },
+   {
+    "crop": "13-btn-primary__natt__desktop.png",
+    "what": "primary button left end",
+    "css_px": [
+     42,
+     55
+    ],
+    "mean_hex": "#fddb7d",
+    "patch_std": 0.5
+   },
+   {
+    "crop": "13-btn-primary__natt__desktop.png",
+    "what": "primary button right end",
+    "css_px": [
+     198,
+     55
+    ],
+    "mean_hex": "#f7c94e",
+    "patch_std": 0.5
+   },
+   {
+    "crop": "09-hero-kicker-chip__natt__desktop.png",
+    "what": "kicker chip fill",
+    "css_px": [
+     17,
+     27
+    ],
+    "mean_hex": "#202a43",
+    "patch_std": 0.5
+   },
+   {
+    "crop": "07-theme-toggle__natt__desktop.png",
+    "what": "theme-toggle left half (thumb in natt; bare track in morgon)",
+    "css_px": [
+     52,
+     20
+    ],
+    "mean_hex": "#fcd875",
+    "patch_std": 0.6
+   },
+   {
+    "crop": "50-trait-on__natt__desktop.png",
+    "what": ".trait.on fill",
+    "css_px": [
+     18,
+     32
+    ],
+    "mean_hex": "#2c2d51",
+    "patch_std": 0.7
+   },
+   {
+    "crop": "51-trait-off__natt__desktop.png",
+    "what": ".trait fill (transparent)",
+    "css_px": [
+     18,
+     32
+    ],
+    "mean_hex": "#111628",
+    "patch_std": 1.0
+   },
+   {
+    "crop": "22-hiw-node__natt__desktop.png",
+    "what": ".hiw-node fill",
+    "css_px": [
+     18,
+     30
+    ],
+    "mean_hex": "#5f4c46",
+    "patch_std": 1.5
+   },
+   {
+    "crop": "60-book-genre-tag__natt__desktop.png",
+    "what": ".book-sub pill fill",
+    "css_px": [
+     14,
+     21
+    ],
+    "mean_hex": "#292949",
+    "patch_std": 0.5
+   },
+   {
+    "crop": "34-voice-chip__natt__desktop.png",
+    "what": "voice chip fill",
+    "css_px": [
+     106,
+     30
+    ],
+    "mean_hex": "#555470",
+    "patch_std": 0.8
+   },
+   {
+    "crop": "36-mock-choice__natt__desktop.png",
+    "what": ".hiw-choice fill",
+    "css_px": [
+     16,
+     49
+    ],
+    "mean_hex": "#272a39",
+    "patch_std": 0.6
+   },
+   {
+    "crop": "18-memory-badge__natt__desktop.png",
+    "what": "memory badge fill",
+    "css_px": [
+     54,
+     79
+    ],
+    "mean_hex": "#1e2336",
+    "patch_std": 0.3
+   },
+   {
+    "crop": "20-hiw-eyebrow-pill__natt__desktop.png",
+    "what": "eyebrow pill fill",
+    "css_px": [
+     15,
+     25
+    ],
+    "mean_hex": "#4d466b",
+    "patch_std": 0.7
+   },
+   {
+    "crop": "45-sec-chip__natt__desktop.png",
+    "what": ".sec-chip fill",
+    "css_px": [
+     15,
+     25
+    ],
+    "mean_hex": "#6c5d56",
+    "patch_std": 2.1
+   }
+  ],
+  "morgon": [
+   {
+    "crop": "38-endings-map__morgon__desktop.png",
+    "what": "glass card interior (map card, top-left)",
+    "css_px": [
+     64,
+     64
+    ],
+    "mean_hex": "#fdfbfb",
+    "patch_std": 0.0
+   },
+   {
+    "crop": "47-hero-builder-card__morgon__desktop.png",
+    "what": "glass card interior (builder, lower-left)",
+    "css_px": [
+     39,
+     274
+    ],
+    "mean_hex": "#fcfafc",
+    "patch_std": 0.2
+   },
+   {
+    "crop": "15-btn-ghost__morgon__desktop.png",
+    "what": "ghost button fill (left padding)",
+    "css_px": [
+     30,
+     44
+    ],
+    "mean_hex": "#faf7fa",
+    "patch_std": 0.2
+   },
+   {
+    "crop": "13-btn-primary__morgon__desktop.png",
+    "what": "primary button left end",
+    "css_px": [
+     42,
+     55
+    ],
+    "mean_hex": "#6a4cdc",
+    "patch_std": 0.4
+   },
+   {
+    "crop": "13-btn-primary__morgon__desktop.png",
+    "what": "primary button right end",
+    "css_px": [
+     198,
+     55
+    ],
+    "mean_hex": "#5e42cb",
+    "patch_std": 0.4
+   },
+   {
+    "crop": "09-hero-kicker-chip__morgon__desktop.png",
+    "what": "kicker chip fill",
+    "css_px": [
+     17,
+     27
+    ],
+    "mean_hex": "#d5c2e9",
+    "patch_std": 0.6
+   },
+   {
+    "crop": "07-theme-toggle__morgon__desktop.png",
+    "what": "theme-toggle left half (thumb in natt; bare track in morgon)",
+    "css_px": [
+     52,
+     20
+    ],
+    "mean_hex": "#fff4e2",
+    "patch_std": 0.6
+   },
+   {
+    "crop": "50-trait-on__morgon__desktop.png",
+    "what": ".trait.on fill",
+    "css_px": [
+     18,
+     32
+    ],
+    "mean_hex": "#e9e5f7",
+    "patch_std": 0.5
+   },
+   {
+    "crop": "51-trait-off__morgon__desktop.png",
+    "what": ".trait fill (transparent)",
+    "css_px": [
+     18,
+     32
+    ],
+    "mean_hex": "#fbf9fa",
+    "patch_std": 0.6
+   },
+   {
+    "crop": "22-hiw-node__morgon__desktop.png",
+    "what": ".hiw-node fill",
+    "css_px": [
+     18,
+     30
+    ],
+    "mean_hex": "#ecdacf",
+    "patch_std": 0.4
+   },
+   {
+    "crop": "60-book-genre-tag__morgon__desktop.png",
+    "what": ".book-sub pill fill",
+    "css_px": [
+     14,
+     21
+    ],
+    "mean_hex": "#ede8f9",
+    "patch_std": 0.2
+   },
+   {
+    "crop": "34-voice-chip__morgon__desktop.png",
+    "what": "voice chip fill",
+    "css_px": [
+     106,
+     30
+    ],
+    "mean_hex": "#e7dcf0",
+    "patch_std": 0.7
+   },
+   {
+    "crop": "36-mock-choice__morgon__desktop.png",
+    "what": ".hiw-choice fill",
+    "css_px": [
+     16,
+     49
+    ],
+    "mean_hex": "#ffffff",
+    "patch_std": 0.0
+   },
+   {
+    "crop": "18-memory-badge__morgon__desktop.png",
+    "what": "memory badge fill",
+    "css_px": [
+     54,
+     79
+    ],
+    "mean_hex": "#f2f1f3",
+    "patch_std": 0.5
+   },
+   {
+    "crop": "20-hiw-eyebrow-pill__morgon__desktop.png",
+    "what": "eyebrow pill fill",
+    "css_px": [
+     15,
+     25
+    ],
+    "mean_hex": "#e0d3ed",
+    "patch_std": 0.8
+   },
+   {
+    "crop": "45-sec-chip__morgon__desktop.png",
+    "what": ".sec-chip fill",
+    "css_px": [
+     15,
+     25
+    ],
+    "mean_hex": "#e8ddf1",
+    "patch_std": 0.6
+   }
+  ]
+ }
+}

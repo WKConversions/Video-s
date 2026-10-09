@@ -1,0 +1,240 @@
+{
+ "desktop": {
+  "h1 (--page-ink #fff7e9)": {
+   "rect_css": [
+    188,
+    197,
+    538,
+    149
+   ],
+   "image-only": {
+    "bg_median_L": 0.0789,
+    "bg_p90_L": 0.272,
+    "bg_max_L": 0.9919,
+    "contrast_vs_median": 7.65,
+    "contrast_vs_p90": 3.06,
+    "contrast_vs_max": 1.06
+   },
+   "image+scrim": {
+    "bg_median_L": 0.0323,
+    "bg_p90_L": 0.0842,
+    "bg_max_L": 0.2754,
+    "contrast_vs_median": 11.99,
+    "contrast_vs_p90": 7.35,
+    "contrast_vs_max": 3.03
+   },
+   "full-stack": {
+    "bg_median_L": 0.0323,
+    "bg_p90_L": 0.0842,
+    "bg_max_L": 0.2754,
+    "contrast_vs_median": 11.99,
+    "contrast_vs_p90": 7.35,
+    "contrast_vs_max": 3.03
+   }
+  },
+  ".lede (--page-sub #d9cfee)": {
+   "rect_css": [
+    188,
+    364,
+    498,
+    101
+   ],
+   "image-only": {
+    "bg_median_L": 0.1634,
+    "bg_p90_L": 0.3821,
+    "bg_max_L": 0.9886,
+    "contrast_vs_median": 3.31,
+    "contrast_vs_p90": 1.63,
+    "contrast_vs_max": 1.47
+   },
+   "image+scrim": {
+    "bg_median_L": 0.0503,
+    "bg_p90_L": 0.1017,
+    "bg_max_L": 0.2468,
+    "contrast_vs_median": 7.03,
+    "contrast_vs_p90": 4.65,
+    "contrast_vs_max": 2.38
+   },
+   "full-stack": {
+    "bg_median_L": 0.0503,
+    "bg_p90_L": 0.1017,
+    "bg_max_L": 0.2468,
+    "contrast_vs_median": 7.03,
+    "contrast_vs_p90": 4.65,
+    "contrast_vs_max": 2.38
+   }
+  },
+  ".cta-microcopy (--page-sub)": {
+   "rect_css": [
+    188,
+    559,
+    413,
+    17
+   ],
+   "image-only": {
+    "bg_median_L": 0.0313,
+    "bg_p90_L": 0.3074,
+    "bg_max_L": 0.9039,
+    "contrast_vs_median": 8.67,
+    "contrast_vs_p90": 1.97,
+    "contrast_vs_max": 1.35
+   },
+   "image+scrim": {
+    "bg_median_L": 0.013,
+    "bg_p90_L": 0.0644,
+    "bg_max_L": 0.162,
+    "contrast_vs_median": 11.2,
+    "contrast_vs_p90": 6.17,
+    "contrast_vs_max": 3.33
+   },
+   "full-stack": {
+    "bg_median_L": 0.013,
+    "bg_p90_L": 0.0644,
+    "bg_max_L": 0.162,
+    "contrast_vs_median": 11.2,
+    "contrast_vs_p90": 6.17,
+    "contrast_vs_max": 3.33
+   }
+  },
+  ".hiw-lede (--page-sub)": {
+   "rect_css": [
+    188,
+    829,
+    521,
+    60
+   ],
+   "image-only": {
+    "bg_median_L": 0.0251,
+    "bg_p90_L": 0.062,
+    "bg_max_L": 0.3282,
+    "contrast_vs_median": 9.39,
+    "contrast_vs_p90": 6.3,
+    "contrast_vs_max": 1.87
+   },
+   "image+scrim": {
+    "bg_median_L": 0.0097,
+    "bg_p90_L": 0.0148,
+    "bg_max_L": 0.0421,
+    "contrast_vs_median": 11.81,
+    "contrast_vs_p90": 10.9,
+    "contrast_vs_max": 7.66
+   },
+   "full-stack": {
+    "bg_median_L": 0.0097,
+    "bg_p90_L": 0.0148,
+    "bg_max_L": 0.0421,
+    "contrast_vs_median": 11.81,
+    "contrast_vs_p90": 10.9,
+    "contrast_vs_max": 7.66
+   }
+  },
+  "h1-shadow effect": {
+   "mean_bg_L_with_shadow": 0.0475,
+   "mean_bg_L_without_shadow": 0.0508,
+   "max_darkening_rgb": 19.0
+  }
+ },
+ "mobile": {
+  "h1 (--page-ink #fff7e9)": {
+   "rect_css": [
+    28,
+    198,
+    334,
+    92
+   ],
+   "image-only": {
+    "bg_median_L": 0.193,
+    "bg_p90_L": 0.3252,
+    "bg_max_L": 0.8636,
+    "contrast_vs_median": 4.06,
+    "contrast_vs_p90": 2.63,
+    "contrast_vs_max": 1.08
+   },
+   "image+scrim": {
+    "bg_median_L": 0.0666,
+    "bg_p90_L": 0.1039,
+    "bg_max_L": 0.252,
+    "contrast_vs_median": 8.46,
+    "contrast_vs_p90": 6.41,
+    "contrast_vs_max": 3.27
+   },
+   "full-stack": {
+    "bg_median_L": 0.0666,
+    "bg_p90_L": 0.104,
+    "bg_max_L": 0.252,
+    "contrast_vs_median": 8.46,
+    "contrast_vs_p90": 6.41,
+    "contrast_vs_max": 3.27
+   }
+  },
+  ".lede (--page-sub #d9cfee)": {
+   "rect_css": [
+    28,
+    308,
+    334,
+    114
+   ],
+   "image-only": {
+    "bg_median_L": 0.1969,
+    "bg_p90_L": 0.3361,
+    "bg_max_L": 0.9775,
+    "contrast_vs_median": 2.86,
+    "contrast_vs_p90": 1.83,
+    "contrast_vs_max": 1.46
+   },
+   "image+scrim": {
+    "bg_median_L": 0.0595,
+    "bg_p90_L": 0.0964,
+    "bg_max_L": 0.2493,
+    "contrast_vs_median": 6.45,
+    "contrast_vs_p90": 4.82,
+    "contrast_vs_max": 2.36
+   },
+   "full-stack": {
+    "bg_median_L": 0.0595,
+    "bg_p90_L": 0.0964,
+    "bg_max_L": 0.2493,
+    "contrast_vs_median": 6.45,
+    "contrast_vs_p90": 4.82,
+    "contrast_vs_max": 2.36
+   }
+  },
+  ".cta-microcopy (--page-sub)": {
+   "rect_css": [
+    28,
+    516,
+    334,
+    34
+   ],
+   "image-only": {
+    "bg_median_L": 0.2272,
+    "bg_p90_L": 0.5128,
+    "bg_max_L": 0.8917,
+    "contrast_vs_median": 2.55,
+    "contrast_vs_p90": 1.25,
+    "contrast_vs_max": 1.33
+   },
+   "image+scrim": {
+    "bg_median_L": 0.0518,
+    "bg_p90_L": 0.0986,
+    "bg_max_L": 0.1625,
+    "contrast_vs_median": 6.93,
+    "contrast_vs_p90": 4.75,
+    "contrast_vs_max": 3.32
+   },
+   "full-stack": {
+    "bg_median_L": 0.0518,
+    "bg_p90_L": 0.0986,
+    "bg_max_L": 0.1625,
+    "contrast_vs_median": 6.93,
+    "contrast_vs_p90": 4.75,
+    "contrast_vs_max": 3.32
+   }
+  },
+  "h1-shadow effect": {
+   "mean_bg_L_with_shadow": 0.0664,
+   "mean_bg_L_without_shadow": 0.0711,
+   "max_darkening_rgb": 13.0
+  }
+ }
+}

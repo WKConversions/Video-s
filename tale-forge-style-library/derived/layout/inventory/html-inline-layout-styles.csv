@@ -1,0 +1,399 @@
+source,page,element,text,property,value
+source/rendered/dom__home__sv.html,home,a,Logga in,display,inline-flex
+source/rendered/dom__home__sv.html,home,a,Logga in,align-items,center
+source/rendered/dom__home__sv.html,home,a,Logga in,justify-content,center
+source/rendered/dom__home__sv.html,home,a,Logga in,gap,7px
+source/rendered/dom__home__sv.html,home,a,Logga in,min-height,44px
+source/rendered/dom__home__sv.html,home,a,Logga in,max-width,100%
+source/rendered/dom__home__sv.html,home,a,Logga in,box-sizing,border-box
+source/rendered/dom__home__sv.html,home,a,Logga in,padding,0px 10px
+source/rendered/dom__home__sv.html,home,a,Logga in,border-radius,999px
+source/rendered/dom__home__sv.html,home,div.language-switcher,SV EN,display,inline-flex
+source/rendered/dom__home__sv.html,home,div.language-switcher,SV EN,align-items,center
+source/rendered/dom__home__sv.html,home,div.language-switcher,SV EN,gap,2px
+source/rendered/dom__home__sv.html,home,div.language-switcher,SV EN,padding,3px
+source/rendered/dom__home__sv.html,home,div.language-switcher,SV EN,border-radius,999px
+source/rendered/dom__home__sv.html,home,button,SV,padding,5px 11px
+source/rendered/dom__home__sv.html,home,button,SV,border-radius,999px
+source/rendered/dom__home__sv.html,home,button,SV,min-height,44px
+source/rendered/dom__home__sv.html,home,button,SV,min-width,44px
+source/rendered/dom__home__sv.html,home,p,Den som varje saga handlar om.,margin,-12px 0 20px
+source/rendered/dom__home__sv.html,home,div,Skapad med AI,display,flex
+source/rendered/dom__home__sv.html,home,div,Skapad med AI,flex-direction,column
+source/rendered/dom__home__sv.html,home,div,Skapad med AI,align-items,center
+source/rendered/dom__home__sv.html,home,div,Skapad med AI,flex,none
+source/rendered/dom__home__sv.html,home,span,Skapad med AI,margin-top,14px
+source/rendered/dom__home__sv.html,home,div,"Tale Forge, sagor som minns er värld. Be",gap,6px
+source/rendered/dom__home__sv.html,home,span,"Tale Forge, sagor som minns er värld. Be",display,inline-flex
+source/rendered/dom__home__sv.html,home,span,"Tale Forge, sagor som minns er värld. Be",align-items,center
+source/rendered/dom__home__sv.html,home,span,"Tale Forge, sagor som minns er värld. Be",flex-wrap,wrap
+source/rendered/dom__home__sv.html,home,span,"Tale Forge, sagor som minns er värld. Be",gap,10px
+source/rendered/dom__home__sv.html,home,span,Beta,padding,2px 7px
+source/rendered/dom__home__sv.html,home,span,Beta,border-radius,999px
+source/rendered/dom__home__sv.html,home,span,"Tale Forge AB, org.nr 559543-1122, Värna",gap,16px
+source/rendered/dom__home__sv.html,home,next-route-announcer,,position,absolute
+source/rendered/dom__start__sv.html,start,a,Logga in,display,inline-flex
+source/rendered/dom__start__sv.html,start,a,Logga in,align-items,center
+source/rendered/dom__start__sv.html,start,a,Logga in,justify-content,center
+source/rendered/dom__start__sv.html,start,a,Logga in,gap,7px
+source/rendered/dom__start__sv.html,start,a,Logga in,min-height,44px
+source/rendered/dom__start__sv.html,start,a,Logga in,max-width,100%
+source/rendered/dom__start__sv.html,start,a,Logga in,box-sizing,border-box
+source/rendered/dom__start__sv.html,start,a,Logga in,padding,0px 10px
+source/rendered/dom__start__sv.html,start,a,Logga in,border-radius,999px
+source/rendered/dom__start__sv.html,start,div.language-switcher,SV EN,display,inline-flex
+source/rendered/dom__start__sv.html,start,div.language-switcher,SV EN,align-items,center
+source/rendered/dom__start__sv.html,start,div.language-switcher,SV EN,gap,2px
+source/rendered/dom__start__sv.html,start,div.language-switcher,SV EN,padding,3px
+source/rendered/dom__start__sv.html,start,div.language-switcher,SV EN,border-radius,999px
+source/rendered/dom__start__sv.html,start,button,SV,padding,5px 11px
+source/rendered/dom__start__sv.html,start,button,SV,border-radius,999px
+source/rendered/dom__start__sv.html,start,button,SV,min-height,44px
+source/rendered/dom__start__sv.html,start,button,SV,min-width,44px
+source/rendered/dom__start__sv.html,start,div,"Tale Forge, sagor som minns er värld. Be",display,flex
+source/rendered/dom__start__sv.html,start,div,"Tale Forge, sagor som minns er värld. Be",flex-direction,column
+source/rendered/dom__start__sv.html,start,div,"Tale Forge, sagor som minns er värld. Be",gap,6px
+source/rendered/dom__start__sv.html,start,span,"Tale Forge, sagor som minns er värld. Be",display,inline-flex
+source/rendered/dom__start__sv.html,start,span,"Tale Forge, sagor som minns er värld. Be",align-items,center
+source/rendered/dom__start__sv.html,start,span,"Tale Forge, sagor som minns er värld. Be",flex-wrap,wrap
+source/rendered/dom__start__sv.html,start,span,"Tale Forge, sagor som minns er värld. Be",gap,10px
+source/rendered/dom__start__sv.html,start,span,Beta,padding,2px 7px
+source/rendered/dom__start__sv.html,start,span,Beta,border-radius,999px
+source/rendered/dom__start__sv.html,start,span,"Tale Forge AB, org.nr 559543-1122, Värna",gap,16px
+source/rendered/dom__start__sv.html,start,next-route-announcer,,position,absolute
+source/rendered/dom__uppgradera__sv.html,uppgradera,a,Logga in,display,inline-flex
+source/rendered/dom__uppgradera__sv.html,uppgradera,a,Logga in,align-items,center
+source/rendered/dom__uppgradera__sv.html,uppgradera,a,Logga in,justify-content,center
+source/rendered/dom__uppgradera__sv.html,uppgradera,a,Logga in,gap,7px
+source/rendered/dom__uppgradera__sv.html,uppgradera,a,Logga in,min-height,44px
+source/rendered/dom__uppgradera__sv.html,uppgradera,a,Logga in,max-width,100%
+source/rendered/dom__uppgradera__sv.html,uppgradera,a,Logga in,box-sizing,border-box
+source/rendered/dom__uppgradera__sv.html,uppgradera,a,Logga in,padding,0px 10px
+source/rendered/dom__uppgradera__sv.html,uppgradera,a,Logga in,border-radius,999px
+source/rendered/dom__uppgradera__sv.html,uppgradera,div.language-switcher,SV EN,display,inline-flex
+source/rendered/dom__uppgradera__sv.html,uppgradera,div.language-switcher,SV EN,align-items,center
+source/rendered/dom__uppgradera__sv.html,uppgradera,div.language-switcher,SV EN,gap,2px
+source/rendered/dom__uppgradera__sv.html,uppgradera,div.language-switcher,SV EN,padding,3px
+source/rendered/dom__uppgradera__sv.html,uppgradera,div.language-switcher,SV EN,border-radius,999px
+source/rendered/dom__uppgradera__sv.html,uppgradera,button,SV,padding,5px 11px
+source/rendered/dom__uppgradera__sv.html,uppgradera,button,SV,border-radius,999px
+source/rendered/dom__uppgradera__sv.html,uppgradera,button,SV,min-height,44px
+source/rendered/dom__uppgradera__sv.html,uppgradera,button,SV,min-width,44px
+source/rendered/dom__uppgradera__sv.html,uppgradera,section,Uppgradera Nya personliga böcker varje m,flex,1
+source/rendered/dom__uppgradera__sv.html,uppgradera,section,Uppgradera Nya personliga böcker varje m,display,grid
+source/rendered/dom__uppgradera__sv.html,uppgradera,section,Uppgradera Nya personliga böcker varje m,place-items,center
+source/rendered/dom__uppgradera__sv.html,uppgradera,section,Uppgradera Nya personliga böcker varje m,padding,36px 0
+source/rendered/dom__uppgradera__sv.html,uppgradera,div,Uppgradera Nya personliga böcker varje m,width,"min(560px, 100%)"
+source/rendered/dom__uppgradera__sv.html,uppgradera,div.glass,Uppgradera Nya personliga böcker varje m,width,"min(560px, 100%)"
+source/rendered/dom__uppgradera__sv.html,uppgradera,div.glass,Uppgradera Nya personliga böcker varje m,padding,28px
+source/rendered/dom__uppgradera__sv.html,uppgradera,div.glass,Uppgradera Nya personliga böcker varje m,margin-bottom,20px
+source/rendered/dom__uppgradera__sv.html,uppgradera,div.sec-head,Uppgradera,margin-bottom,8px
+source/rendered/dom__uppgradera__sv.html,uppgradera,p,"Nya personliga böcker varje månad, i en ",margin-bottom,0
+source/rendered/dom__uppgradera__sv.html,uppgradera,section.glass,Det här ingår Exempelbok: Iris och den s,width,"min(560px, 100%)"
+source/rendered/dom__uppgradera__sv.html,uppgradera,section.glass,Det här ingår Exempelbok: Iris och den s,padding,28px
+source/rendered/dom__uppgradera__sv.html,uppgradera,section.glass,Det här ingår Exempelbok: Iris och den s,margin-bottom,20px
+source/rendered/dom__uppgradera__sv.html,uppgradera,img,,display,block
+source/rendered/dom__uppgradera__sv.html,uppgradera,img,,width,100%
+source/rendered/dom__uppgradera__sv.html,uppgradera,img,,height,auto
+source/rendered/dom__uppgradera__sv.html,uppgradera,img,,aspect-ratio,2 / 3
+source/rendered/dom__uppgradera__sv.html,uppgradera,ul.upgrade-proof-list,"Personliga, illustrerade sagoböcker Uppl",margin,0 0 18px
+source/rendered/dom__uppgradera__sv.html,uppgradera,ul.upgrade-proof-list,"Personliga, illustrerade sagoböcker Uppl",padding,0
+source/rendered/dom__uppgradera__sv.html,uppgradera,ul.upgrade-proof-list,"Personliga, illustrerade sagoböcker Uppl",margin-bottom,0
+source/rendered/dom__uppgradera__sv.html,uppgradera,div.trait-row,Månadsvis Årsvis,margin-bottom,14px
+source/rendered/dom__uppgradera__sv.html,uppgradera,p,För familjen som vill fortsätta berätta ,margin-bottom,12px
+source/rendered/dom__uppgradera__sv.html,uppgradera,p,1490 kr per år,margin-bottom,4px
+source/rendered/dom__uppgradera__sv.html,uppgradera,ul,"3 nya böcker varje månad, oanvända följe",margin,0 0 18px
+source/rendered/dom__uppgradera__sv.html,uppgradera,ul,"3 nya böcker varje månad, oanvända följe",padding,0
+source/rendered/dom__uppgradera__sv.html,uppgradera,p,"14 dagar gratis, avsluta när du vill. Ko",margin-bottom,16px
+source/rendered/dom__uppgradera__sv.html,uppgradera,button.btn.btn-primary,Prova gratis i 14 dagar,justify-content,center
+source/rendered/dom__uppgradera__sv.html,uppgradera,div.trait-row,För skolor,margin-bottom,20px
+source/rendered/dom__uppgradera__sv.html,uppgradera,div,"Tale Forge, sagor som minns er värld. Be",display,flex
+source/rendered/dom__uppgradera__sv.html,uppgradera,div,"Tale Forge, sagor som minns er värld. Be",flex-direction,column
+source/rendered/dom__uppgradera__sv.html,uppgradera,div,"Tale Forge, sagor som minns er värld. Be",gap,6px
+source/rendered/dom__uppgradera__sv.html,uppgradera,span,"Tale Forge, sagor som minns er värld. Be",display,inline-flex
+source/rendered/dom__uppgradera__sv.html,uppgradera,span,"Tale Forge, sagor som minns er värld. Be",align-items,center
+source/rendered/dom__uppgradera__sv.html,uppgradera,span,"Tale Forge, sagor som minns er värld. Be",flex-wrap,wrap
+source/rendered/dom__uppgradera__sv.html,uppgradera,span,"Tale Forge, sagor som minns er värld. Be",gap,10px
+source/rendered/dom__uppgradera__sv.html,uppgradera,span,Beta,padding,2px 7px
+source/rendered/dom__uppgradera__sv.html,uppgradera,span,Beta,border-radius,999px
+source/rendered/dom__uppgradera__sv.html,uppgradera,span,"Tale Forge AB, org.nr 559543-1122, Värna",gap,16px
+source/rendered/dom__uppgradera__sv.html,uppgradera,next-route-announcer,,position,absolute
+source/rendered/dom__login__sv.html,login,a,Logga in,display,inline-flex
+source/rendered/dom__login__sv.html,login,a,Logga in,align-items,center
+source/rendered/dom__login__sv.html,login,a,Logga in,justify-content,center
+source/rendered/dom__login__sv.html,login,a,Logga in,gap,7px
+source/rendered/dom__login__sv.html,login,a,Logga in,min-height,44px
+source/rendered/dom__login__sv.html,login,a,Logga in,max-width,100%
+source/rendered/dom__login__sv.html,login,a,Logga in,box-sizing,border-box
+source/rendered/dom__login__sv.html,login,a,Logga in,padding,0px 10px
+source/rendered/dom__login__sv.html,login,a,Logga in,border-radius,999px
+source/rendered/dom__login__sv.html,login,div.language-switcher,SV EN,display,inline-flex
+source/rendered/dom__login__sv.html,login,div.language-switcher,SV EN,align-items,center
+source/rendered/dom__login__sv.html,login,div.language-switcher,SV EN,gap,2px
+source/rendered/dom__login__sv.html,login,div.language-switcher,SV EN,padding,3px
+source/rendered/dom__login__sv.html,login,div.language-switcher,SV EN,border-radius,999px
+source/rendered/dom__login__sv.html,login,button,SV,padding,5px 11px
+source/rendered/dom__login__sv.html,login,button,SV,border-radius,999px
+source/rendered/dom__login__sv.html,login,button,SV,min-height,44px
+source/rendered/dom__login__sv.html,login,button,SV,min-width,44px
+source/rendered/dom__login__sv.html,login,section,Logga in Välkommen tillbaka. Fortsätt me,flex,1
+source/rendered/dom__login__sv.html,login,section,Logga in Välkommen tillbaka. Fortsätt me,display,grid
+source/rendered/dom__login__sv.html,login,section,Logga in Välkommen tillbaka. Fortsätt me,place-items,center
+source/rendered/dom__login__sv.html,login,section,Logga in Välkommen tillbaka. Fortsätt me,padding,36px 0
+source/rendered/dom__login__sv.html,login,div.glass,Logga in Välkommen tillbaka. Fortsätt me,width,"min(440px, 100%)"
+source/rendered/dom__login__sv.html,login,div.glass,Logga in Välkommen tillbaka. Fortsätt me,padding,34px
+source/rendered/dom__login__sv.html,login,div.sec-head,Logga in,margin-bottom,6px
+source/rendered/dom__login__sv.html,login,p.lede,Välkommen tillbaka.,margin-bottom,24px
+source/rendered/dom__login__sv.html,login,button.btn.btn-ghost,Fortsätt med Google,width,100%
+source/rendered/dom__login__sv.html,login,button.btn.btn-ghost,Fortsätt med Google,justify-content,center
+source/rendered/dom__login__sv.html,login,div,eller,display,flex
+source/rendered/dom__login__sv.html,login,div,eller,align-items,center
+source/rendered/dom__login__sv.html,login,div,eller,gap,12px
+source/rendered/dom__login__sv.html,login,div,eller,margin,20px 0
+source/rendered/dom__login__sv.html,login,span,,flex,1
+source/rendered/dom__login__sv.html,login,span,,height,1px
+source/rendered/dom__login__sv.html,login,div,E-post,margin-bottom,16px
+source/rendered/dom__login__sv.html,login,label,E-post,display,block
+source/rendered/dom__login__sv.html,login,label,E-post,margin-bottom,8px
+source/rendered/dom__login__sv.html,login,div,,position,relative
+source/rendered/dom__login__sv.html,login,svg,,position,absolute
+source/rendered/dom__login__sv.html,login,svg,,left,14px
+source/rendered/dom__login__sv.html,login,svg,,top,50%
+source/rendered/dom__login__sv.html,login,svg,,transform,translateY(-50%)
+source/rendered/dom__login__sv.html,login,svg,,width,18px
+source/rendered/dom__login__sv.html,login,svg,,height,18px
+source/rendered/dom__login__sv.html,login,input,,width,100%
+source/rendered/dom__login__sv.html,login,input,,padding,14px 14px 14px 44px
+source/rendered/dom__login__sv.html,login,input,,border-radius,14px
+source/rendered/dom__login__sv.html,login,div,Lösenord,margin-bottom,10px
+source/rendered/dom__login__sv.html,login,input,,padding,14px 44px
+source/rendered/dom__login__sv.html,login,button,,position,absolute
+source/rendered/dom__login__sv.html,login,button,,right,2px
+source/rendered/dom__login__sv.html,login,button,,top,50%
+source/rendered/dom__login__sv.html,login,button,,transform,translateY(-50%)
+source/rendered/dom__login__sv.html,login,button,,display,grid
+source/rendered/dom__login__sv.html,login,button,,place-items,center
+source/rendered/dom__login__sv.html,login,button,,padding,0
+source/rendered/dom__login__sv.html,login,button,,width,44px
+source/rendered/dom__login__sv.html,login,button,,height,44px
+source/rendered/dom__login__sv.html,login,div,Glömt lösenordet?,margin-bottom,22px
+source/rendered/dom__login__sv.html,login,button,Glömt lösenordet?,padding,4px 0
+source/rendered/dom__login__sv.html,login,button.btn.btn-primary,Logga in,width,100%
+source/rendered/dom__login__sv.html,login,button.btn.btn-primary,Logga in,justify-content,center
+source/rendered/dom__login__sv.html,login,p,Har du inget konto? Skapa ett,margin-top,22px
+source/rendered/dom__login__sv.html,login,div,"Tale Forge, sagor som minns er värld. Be",flex-direction,column
+source/rendered/dom__login__sv.html,login,div,"Tale Forge, sagor som minns er värld. Be",gap,6px
+source/rendered/dom__login__sv.html,login,span,"Tale Forge, sagor som minns er värld. Be",display,inline-flex
+source/rendered/dom__login__sv.html,login,span,"Tale Forge, sagor som minns er värld. Be",align-items,center
+source/rendered/dom__login__sv.html,login,span,"Tale Forge, sagor som minns er värld. Be",flex-wrap,wrap
+source/rendered/dom__login__sv.html,login,span,"Tale Forge, sagor som minns er värld. Be",gap,10px
+source/rendered/dom__login__sv.html,login,span,Beta,padding,2px 7px
+source/rendered/dom__login__sv.html,login,span,Beta,border-radius,999px
+source/rendered/dom__login__sv.html,login,span,"Tale Forge AB, org.nr 559543-1122, Värna",gap,16px
+source/rendered/dom__login__sv.html,login,next-route-announcer,,position,absolute
+source/rendered/dom__signup__sv.html,signup,a,Logga in,display,inline-flex
+source/rendered/dom__signup__sv.html,signup,a,Logga in,align-items,center
+source/rendered/dom__signup__sv.html,signup,a,Logga in,justify-content,center
+source/rendered/dom__signup__sv.html,signup,a,Logga in,gap,7px
+source/rendered/dom__signup__sv.html,signup,a,Logga in,min-height,44px
+source/rendered/dom__signup__sv.html,signup,a,Logga in,max-width,100%
+source/rendered/dom__signup__sv.html,signup,a,Logga in,box-sizing,border-box
+source/rendered/dom__signup__sv.html,signup,a,Logga in,padding,0px 10px
+source/rendered/dom__signup__sv.html,signup,a,Logga in,border-radius,999px
+source/rendered/dom__signup__sv.html,signup,div.language-switcher,SV EN,display,inline-flex
+source/rendered/dom__signup__sv.html,signup,div.language-switcher,SV EN,align-items,center
+source/rendered/dom__signup__sv.html,signup,div.language-switcher,SV EN,gap,2px
+source/rendered/dom__signup__sv.html,signup,div.language-switcher,SV EN,padding,3px
+source/rendered/dom__signup__sv.html,signup,div.language-switcher,SV EN,border-radius,999px
+source/rendered/dom__signup__sv.html,signup,button,SV,padding,5px 11px
+source/rendered/dom__signup__sv.html,signup,button,SV,border-radius,999px
+source/rendered/dom__signup__sv.html,signup,button,SV,min-height,44px
+source/rendered/dom__signup__sv.html,signup,button,SV,min-width,44px
+source/rendered/dom__signup__sv.html,signup,section,Skapa konto Personliga sagoböcker där er,flex,1
+source/rendered/dom__signup__sv.html,signup,section,Skapa konto Personliga sagoböcker där er,display,grid
+source/rendered/dom__signup__sv.html,signup,section,Skapa konto Personliga sagoböcker där er,place-items,center
+source/rendered/dom__signup__sv.html,signup,section,Skapa konto Personliga sagoböcker där er,padding,36px 0
+source/rendered/dom__signup__sv.html,signup,div.glass,Skapa konto Personliga sagoböcker där er,width,"min(440px, 100%)"
+source/rendered/dom__signup__sv.html,signup,div.glass,Skapa konto Personliga sagoböcker där er,padding,34px
+source/rendered/dom__signup__sv.html,signup,div.sec-head,Skapa konto,margin-bottom,6px
+source/rendered/dom__signup__sv.html,signup,p.lede,Personliga sagoböcker där ert barn är hj,margin-bottom,24px
+source/rendered/dom__signup__sv.html,signup,button.btn.btn-ghost,Fortsätt med Google,width,100%
+source/rendered/dom__signup__sv.html,signup,button.btn.btn-ghost,Fortsätt med Google,justify-content,center
+source/rendered/dom__signup__sv.html,signup,div,eller,display,flex
+source/rendered/dom__signup__sv.html,signup,div,eller,align-items,center
+source/rendered/dom__signup__sv.html,signup,div,eller,gap,12px
+source/rendered/dom__signup__sv.html,signup,div,eller,margin,20px 0
+source/rendered/dom__signup__sv.html,signup,span,,flex,1
+source/rendered/dom__signup__sv.html,signup,span,,height,1px
+source/rendered/dom__signup__sv.html,signup,div,E-post,margin-bottom,16px
+source/rendered/dom__signup__sv.html,signup,label,E-post,display,block
+source/rendered/dom__signup__sv.html,signup,label,E-post,margin-bottom,8px
+source/rendered/dom__signup__sv.html,signup,div,,position,relative
+source/rendered/dom__signup__sv.html,signup,svg,,position,absolute
+source/rendered/dom__signup__sv.html,signup,svg,,left,14px
+source/rendered/dom__signup__sv.html,signup,svg,,top,50%
+source/rendered/dom__signup__sv.html,signup,svg,,transform,translateY(-50%)
+source/rendered/dom__signup__sv.html,signup,svg,,width,18px
+source/rendered/dom__signup__sv.html,signup,svg,,height,18px
+source/rendered/dom__signup__sv.html,signup,input,,width,100%
+source/rendered/dom__signup__sv.html,signup,input,,padding,14px 14px 14px 44px
+source/rendered/dom__signup__sv.html,signup,input,,border-radius,14px
+source/rendered/dom__signup__sv.html,signup,div,Lösenord,margin-bottom,22px
+source/rendered/dom__signup__sv.html,signup,input,,padding,14px 44px
+source/rendered/dom__signup__sv.html,signup,button,,position,absolute
+source/rendered/dom__signup__sv.html,signup,button,,right,2px
+source/rendered/dom__signup__sv.html,signup,button,,top,50%
+source/rendered/dom__signup__sv.html,signup,button,,transform,translateY(-50%)
+source/rendered/dom__signup__sv.html,signup,button,,display,grid
+source/rendered/dom__signup__sv.html,signup,button,,place-items,center
+source/rendered/dom__signup__sv.html,signup,button,,padding,0
+source/rendered/dom__signup__sv.html,signup,button,,width,44px
+source/rendered/dom__signup__sv.html,signup,button,,height,44px
+source/rendered/dom__signup__sv.html,signup,label,Jag är barnets förälder eller vårdnadsha,display,flex
+source/rendered/dom__signup__sv.html,signup,label,Jag är barnets förälder eller vårdnadsha,align-items,center
+source/rendered/dom__signup__sv.html,signup,label,Jag är barnets förälder eller vårdnadsha,gap,12px
+source/rendered/dom__signup__sv.html,signup,label,Jag är barnets förälder eller vårdnadsha,min-height,44px
+source/rendered/dom__signup__sv.html,signup,label,Jag är barnets förälder eller vårdnadsha,margin-bottom,2px
+source/rendered/dom__signup__sv.html,signup,input,,width,24px
+source/rendered/dom__signup__sv.html,signup,input,,height,24px
+source/rendered/dom__signup__sv.html,signup,input,,flex-shrink,0
+source/rendered/dom__signup__sv.html,signup,a,Läs integritetspolicyn,padding,0 4px
+source/rendered/dom__signup__sv.html,signup,button.btn.btn-primary,Skapa konto,width,100%
+source/rendered/dom__signup__sv.html,signup,button.btn.btn-primary,Skapa konto,justify-content,center
+source/rendered/dom__signup__sv.html,signup,p,Har du redan ett konto? Logga in,margin-top,22px
+source/rendered/dom__signup__sv.html,signup,div,"Tale Forge, sagor som minns er värld. Be",flex-direction,column
+source/rendered/dom__signup__sv.html,signup,div,"Tale Forge, sagor som minns er värld. Be",gap,6px
+source/rendered/dom__signup__sv.html,signup,span,"Tale Forge, sagor som minns er värld. Be",display,inline-flex
+source/rendered/dom__signup__sv.html,signup,span,"Tale Forge, sagor som minns er värld. Be",align-items,center
+source/rendered/dom__signup__sv.html,signup,span,"Tale Forge, sagor som minns er värld. Be",flex-wrap,wrap
+source/rendered/dom__signup__sv.html,signup,span,"Tale Forge, sagor som minns er värld. Be",gap,10px
+source/rendered/dom__signup__sv.html,signup,span,Beta,padding,2px 7px
+source/rendered/dom__signup__sv.html,signup,span,Beta,border-radius,999px
+source/rendered/dom__signup__sv.html,signup,span,"Tale Forge AB, org.nr 559543-1122, Värna",gap,16px
+source/rendered/dom__signup__sv.html,signup,next-route-announcer,,position,absolute
+source/rendered/dom__integritet__sv.html,integritet,a,Logga in,display,inline-flex
+source/rendered/dom__integritet__sv.html,integritet,a,Logga in,align-items,center
+source/rendered/dom__integritet__sv.html,integritet,a,Logga in,justify-content,center
+source/rendered/dom__integritet__sv.html,integritet,a,Logga in,gap,7px
+source/rendered/dom__integritet__sv.html,integritet,a,Logga in,min-height,44px
+source/rendered/dom__integritet__sv.html,integritet,a,Logga in,max-width,100%
+source/rendered/dom__integritet__sv.html,integritet,a,Logga in,box-sizing,border-box
+source/rendered/dom__integritet__sv.html,integritet,a,Logga in,padding,0px 10px
+source/rendered/dom__integritet__sv.html,integritet,a,Logga in,border-radius,999px
+source/rendered/dom__integritet__sv.html,integritet,div.language-switcher,SV EN,display,inline-flex
+source/rendered/dom__integritet__sv.html,integritet,div.language-switcher,SV EN,align-items,center
+source/rendered/dom__integritet__sv.html,integritet,div.language-switcher,SV EN,gap,2px
+source/rendered/dom__integritet__sv.html,integritet,div.language-switcher,SV EN,padding,3px
+source/rendered/dom__integritet__sv.html,integritet,div.language-switcher,SV EN,border-radius,999px
+source/rendered/dom__integritet__sv.html,integritet,button,SV,padding,5px 11px
+source/rendered/dom__integritet__sv.html,integritet,button,SV,border-radius,999px
+source/rendered/dom__integritet__sv.html,integritet,button,SV,min-height,44px
+source/rendered/dom__integritet__sv.html,integritet,button,SV,min-width,44px
+source/rendered/dom__integritet__sv.html,integritet,section,Integritetspolicy Hur vi tar hand om upp,flex,1
+source/rendered/dom__integritet__sv.html,integritet,section,Integritetspolicy Hur vi tar hand om upp,display,grid
+source/rendered/dom__integritet__sv.html,integritet,section,Integritetspolicy Hur vi tar hand om upp,place-items,center
+source/rendered/dom__integritet__sv.html,integritet,section,Integritetspolicy Hur vi tar hand om upp,padding,36px 0
+source/rendered/dom__integritet__sv.html,integritet,article.glass,Integritetspolicy Hur vi tar hand om upp,width,"min(760px, 100%)"
+source/rendered/dom__integritet__sv.html,integritet,article.glass,Integritetspolicy Hur vi tar hand om upp,padding,34px
+source/rendered/dom__integritet__sv.html,integritet,div.sec-head,Integritetspolicy,margin-bottom,6px
+source/rendered/dom__integritet__sv.html,integritet,p.lede,Hur vi tar hand om uppgifterna om ert ba,margin-bottom,18px
+source/rendered/dom__integritet__sv.html,integritet,span,Svenska,display,inline-block
+source/rendered/dom__integritet__sv.html,integritet,span,Svenska,margin-top,8px
+source/rendered/dom__integritet__sv.html,integritet,span,Svenska,padding,4px 12px
+source/rendered/dom__integritet__sv.html,integritet,span,Svenska,border-radius,999px
+source/rendered/dom__integritet__sv.html,integritet,h3,I korthet,margin,26px 0 8px
+source/rendered/dom__integritet__sv.html,integritet,p.prose-plain,"Vi är Tale Forge AB, ett litet svenskt f",margin,0 0 10px
+source/rendered/dom__integritet__sv.html,integritet,ul.prose-plain,"Supabase, databas och lagring (EU). Micr",margin,0 0 10px
+source/rendered/dom__integritet__sv.html,integritet,ul.prose-plain,"Supabase, databas och lagring (EU). Micr",padding-left,20px
+source/rendered/dom__integritet__sv.html,integritet,div,"English In short We are Tale Forge AB, a",margin-top,24px
+source/rendered/dom__integritet__sv.html,integritet,div,"Tale Forge, sagor som minns er värld. Be",display,flex
+source/rendered/dom__integritet__sv.html,integritet,div,"Tale Forge, sagor som minns er värld. Be",flex-direction,column
+source/rendered/dom__integritet__sv.html,integritet,div,"Tale Forge, sagor som minns er värld. Be",gap,6px
+source/rendered/dom__integritet__sv.html,integritet,span,"Tale Forge, sagor som minns er värld. Be",display,inline-flex
+source/rendered/dom__integritet__sv.html,integritet,span,"Tale Forge, sagor som minns er värld. Be",align-items,center
+source/rendered/dom__integritet__sv.html,integritet,span,"Tale Forge, sagor som minns er värld. Be",flex-wrap,wrap
+source/rendered/dom__integritet__sv.html,integritet,span,"Tale Forge, sagor som minns er värld. Be",gap,10px
+source/rendered/dom__integritet__sv.html,integritet,span,Beta,padding,2px 7px
+source/rendered/dom__integritet__sv.html,integritet,span,"Tale Forge AB, org.nr 559543-1122, Värna",gap,16px
+source/rendered/dom__integritet__sv.html,integritet,next-route-announcer,,position,absolute
+source/rendered/dom__villkor__sv.html,villkor,a,Logga in,display,inline-flex
+source/rendered/dom__villkor__sv.html,villkor,a,Logga in,align-items,center
+source/rendered/dom__villkor__sv.html,villkor,a,Logga in,justify-content,center
+source/rendered/dom__villkor__sv.html,villkor,a,Logga in,gap,7px
+source/rendered/dom__villkor__sv.html,villkor,a,Logga in,min-height,44px
+source/rendered/dom__villkor__sv.html,villkor,a,Logga in,max-width,100%
+source/rendered/dom__villkor__sv.html,villkor,a,Logga in,box-sizing,border-box
+source/rendered/dom__villkor__sv.html,villkor,a,Logga in,padding,0px 10px
+source/rendered/dom__villkor__sv.html,villkor,a,Logga in,border-radius,999px
+source/rendered/dom__villkor__sv.html,villkor,div.language-switcher,SV EN,display,inline-flex
+source/rendered/dom__villkor__sv.html,villkor,div.language-switcher,SV EN,align-items,center
+source/rendered/dom__villkor__sv.html,villkor,div.language-switcher,SV EN,gap,2px
+source/rendered/dom__villkor__sv.html,villkor,div.language-switcher,SV EN,padding,3px
+source/rendered/dom__villkor__sv.html,villkor,div.language-switcher,SV EN,border-radius,999px
+source/rendered/dom__villkor__sv.html,villkor,button,SV,padding,5px 11px
+source/rendered/dom__villkor__sv.html,villkor,button,SV,border-radius,999px
+source/rendered/dom__villkor__sv.html,villkor,button,SV,min-height,44px
+source/rendered/dom__villkor__sv.html,villkor,button,SV,min-width,44px
+source/rendered/dom__villkor__sv.html,villkor,section,Användarvillkor Enkla villkor för att an,flex,1
+source/rendered/dom__villkor__sv.html,villkor,section,Användarvillkor Enkla villkor för att an,display,grid
+source/rendered/dom__villkor__sv.html,villkor,section,Användarvillkor Enkla villkor för att an,place-items,center
+source/rendered/dom__villkor__sv.html,villkor,section,Användarvillkor Enkla villkor för att an,padding,36px 0
+source/rendered/dom__villkor__sv.html,villkor,article.glass,Användarvillkor Enkla villkor för att an,width,"min(760px, 100%)"
+source/rendered/dom__villkor__sv.html,villkor,article.glass,Användarvillkor Enkla villkor för att an,padding,34px
+source/rendered/dom__villkor__sv.html,villkor,div.sec-head,Användarvillkor,margin-bottom,6px
+source/rendered/dom__villkor__sv.html,villkor,p.lede,Enkla villkor för att använda Tale Forge,margin-bottom,18px
+source/rendered/dom__villkor__sv.html,villkor,span,Svenska,display,inline-block
+source/rendered/dom__villkor__sv.html,villkor,span,Svenska,margin-top,8px
+source/rendered/dom__villkor__sv.html,villkor,span,Svenska,padding,4px 12px
+source/rendered/dom__villkor__sv.html,villkor,span,Svenska,border-radius,999px
+source/rendered/dom__villkor__sv.html,villkor,h3,I korthet,margin,26px 0 8px
+source/rendered/dom__villkor__sv.html,villkor,p.prose-plain,"Vi är Tale Forge AB, ett litet svenskt f",margin,0 0 10px
+source/rendered/dom__villkor__sv.html,villkor,div,"English In short We are Tale Forge AB, a",margin-top,24px
+source/rendered/dom__villkor__sv.html,villkor,div,"Tale Forge, sagor som minns er värld. Be",display,flex
+source/rendered/dom__villkor__sv.html,villkor,div,"Tale Forge, sagor som minns er värld. Be",flex-direction,column
+source/rendered/dom__villkor__sv.html,villkor,div,"Tale Forge, sagor som minns er värld. Be",gap,6px
+source/rendered/dom__villkor__sv.html,villkor,span,"Tale Forge, sagor som minns er värld. Be",display,inline-flex
+source/rendered/dom__villkor__sv.html,villkor,span,"Tale Forge, sagor som minns er värld. Be",align-items,center
+source/rendered/dom__villkor__sv.html,villkor,span,"Tale Forge, sagor som minns er värld. Be",flex-wrap,wrap
+source/rendered/dom__villkor__sv.html,villkor,span,"Tale Forge, sagor som minns er värld. Be",gap,10px
+source/rendered/dom__villkor__sv.html,villkor,span,Beta,padding,2px 7px
+source/rendered/dom__villkor__sv.html,villkor,span,"Tale Forge AB, org.nr 559543-1122, Värna",gap,16px
+source/rendered/dom__villkor__sv.html,villkor,next-route-announcer,,position,absolute
+source/rendered/dom__404__sv.html,404,a,Logga in,display,inline-flex
+source/rendered/dom__404__sv.html,404,a,Logga in,align-items,center
+source/rendered/dom__404__sv.html,404,a,Logga in,justify-content,center
+source/rendered/dom__404__sv.html,404,a,Logga in,gap,7px
+source/rendered/dom__404__sv.html,404,a,Logga in,min-height,44px
+source/rendered/dom__404__sv.html,404,a,Logga in,max-width,100%
+source/rendered/dom__404__sv.html,404,a,Logga in,box-sizing,border-box
+source/rendered/dom__404__sv.html,404,a,Logga in,padding,0px 10px
+source/rendered/dom__404__sv.html,404,a,Logga in,border-radius,999px
+source/rendered/dom__404__sv.html,404,div.language-switcher,SV EN,display,inline-flex
+source/rendered/dom__404__sv.html,404,div.language-switcher,SV EN,align-items,center
+source/rendered/dom__404__sv.html,404,div.language-switcher,SV EN,gap,2px
+source/rendered/dom__404__sv.html,404,div.language-switcher,SV EN,padding,3px
+source/rendered/dom__404__sv.html,404,div.language-switcher,SV EN,border-radius,999px
+source/rendered/dom__404__sv.html,404,button,SV,padding,5px 11px
+source/rendered/dom__404__sv.html,404,button,SV,border-radius,999px
+source/rendered/dom__404__sv.html,404,button,SV,min-height,44px
+source/rendered/dom__404__sv.html,404,button,SV,min-width,44px
+source/rendered/dom__404__sv.html,404,section,Sidan finns inte Den här sidan har vandr,flex,1
+source/rendered/dom__404__sv.html,404,section,Sidan finns inte Den här sidan har vandr,display,grid
+source/rendered/dom__404__sv.html,404,section,Sidan finns inte Den här sidan har vandr,place-items,center
+source/rendered/dom__404__sv.html,404,section,Sidan finns inte Den här sidan har vandr,padding,36px 0
+source/rendered/dom__404__sv.html,404,div.glass,Sidan finns inte Den här sidan har vandr,width,"min(440px, 100%)"
+source/rendered/dom__404__sv.html,404,div.glass,Sidan finns inte Den här sidan har vandr,padding,34px
+source/rendered/dom__404__sv.html,404,div.sec-head,Sidan finns inte,justify-content,center
+source/rendered/dom__404__sv.html,404,div.sec-head,Sidan finns inte,margin-bottom,10px
+source/rendered/dom__404__sv.html,404,p.prose-plain,Den här sidan har vandrat iväg i sagovär,margin-bottom,22px
+source/rendered/dom__404__sv.html,404,div,"Tale Forge, sagor som minns er värld. Be",display,flex
+source/rendered/dom__404__sv.html,404,div,"Tale Forge, sagor som minns er värld. Be",flex-direction,column
+source/rendered/dom__404__sv.html,404,div,"Tale Forge, sagor som minns er värld. Be",gap,6px
+source/rendered/dom__404__sv.html,404,span,"Tale Forge, sagor som minns er värld. Be",display,inline-flex
+source/rendered/dom__404__sv.html,404,span,"Tale Forge, sagor som minns er värld. Be",align-items,center
+source/rendered/dom__404__sv.html,404,span,"Tale Forge, sagor som minns er värld. Be",flex-wrap,wrap
+source/rendered/dom__404__sv.html,404,span,"Tale Forge, sagor som minns er värld. Be",gap,10px
+source/rendered/dom__404__sv.html,404,span,Beta,padding,2px 7px
+source/rendered/dom__404__sv.html,404,span,Beta,border-radius,999px
+source/rendered/dom__404__sv.html,404,span,"Tale Forge AB, org.nr 559543-1122, Värna",gap,16px
+source/rendered/dom__404__sv.html,404,next-route-announcer,,position,absolute

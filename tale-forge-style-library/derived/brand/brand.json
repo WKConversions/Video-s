@@ -1,0 +1,1033 @@
+{
+ "_about": "Machine-readable brand facts for Tale Forge (https://tale-forge.app), harvested 2026-10-09. Every value is cited; prose and interpretation live in analysis/01-brand-identity.md.",
+ "name": {
+  "display": "Tale Forge",
+  "nav_rendering": "TALE FORGE (CSS text-transform: uppercase on the source text \"Tale Forge\")",
+  "html": "<a class=\"logo\" translate=\"no\" href=\"/\"><img src=\"/assets/tf-logo.webp\" alt=\"\">Tale Forge</a>",
+  "source": "source/rendered/dom__home__sv.html (nav), source/css/3q17cp_jgfwol.pretty.css:696-716",
+  "legal_entity": {
+   "sv": "Tale Forge AB, org.nr 559543-1122, Värnamo, Sverige",
+   "en": "Tale Forge AB, reg. no. 559543-1122, Varnamo, Sweden"
+  },
+  "contact_link": {
+   "sv": "Kontakt",
+   "en": "Contact",
+   "href": "mailto: a first-name address at tale-forge.app (footer)"
+  },
+  "engine_internal_name": "causal-foundry-v1 (source/sample-book.iris-och-den-sparade-platsen.json engineVersion)"
+ },
+ "lines": {
+  "meta_description": {
+   "sv": "Riktiga bilderböcker, skapade för ditt barn.",
+   "en": "Real picture books, made for your child."
+  },
+  "footer_tagline": {
+   "sv": "Tale Forge, sagor som minns er värld.",
+   "en": "Tale Forge, storybooks that remember your world."
+  },
+  "home_h1": {
+   "sv": "En värld som minns henne.",
+   "en": "A world that remembers her.",
+   "accent_words": {
+    "sv": "minns henne",
+    "en": "remembers her"
+   }
+  },
+  "start_h1": {
+   "sv": "Ikväll är hjälten ert barn.",
+   "en": "Tonight the hero is your child.",
+   "accent_words": {
+    "sv": "ert barn",
+    "en": "your child"
+   }
+  },
+  "start_kicker": {
+   "sv": "Riktiga bilderböcker, upplästa på svenska",
+   "en": "Real picture books, read aloud"
+  },
+  "home_kicker": {
+   "sv": "Exempel: Alvas värld · 2 böcker",
+   "en": "Demo: Alva's world · 2 books"
+  },
+  "price_line": {
+   "sv": "Första boken är gratis, inget kort behövs. Sedan 149 kr i månaden.",
+   "en": "The first book is free, no card needed. After that $14.99 a month."
+  },
+  "primary_cta": {
+   "sv": "Skapa er hjälte",
+   "en": "Create your hero"
+  },
+  "how_it_works_headline": {
+   "sv": "Äventyr värda att prata om.",
+   "en": "Adventures worth talking about."
+  },
+  "memory_section": {
+   "sv": "Världen minns",
+   "en": "The world remembers"
+  },
+  "upgrade_intro": {
+   "sv": "Nya personliga böcker varje månad, i en värld som minns. Ingen bindningstid, avsluta när du vill.",
+   "en": "New personalized books every month, in a world that remembers. No lock-in, cancel anytime."
+  },
+  "not_found": {
+   "sv": "Den här sidan har vandrat iväg i sagovärlden.",
+   "en": "This page wandered off into the story world."
+  },
+  "forge_finale": {
+   "sv": "Elden har smitt klart din saga.",
+   "en": "The fire has forged your story."
+  },
+  "beta_badge": "Beta",
+  "version_strip": {
+   "sv": "Version 16ab1756 · 26 sep. 2026",
+   "en": "Version 16ab1756 · 26 Sep 2026",
+   "note": "meta tf-release-sha in the same HTML is 4be07efd68ad299089d33297742e56589f587460"
+  },
+  "sources": "source/html/*.html <head>, source/rendered/dom__*.html, source/js/3d9nxlx1n5pdy.js, source/js/26ye0kuppitcn.js, source/js/2j_-r8q4tgdka.js"
+ },
+ "wordmark": {
+  "font": "Cinzel 700 (var(--wordmark): var(--font-cinzel), \"Playfair Display\", Georgia, serif) — 3q17cp_jgfwol.pretty.css:469",
+  "font_file": "assets/fonts/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2 (latin subset, preloaded on every page)",
+  "fallback": "Cinzel Fallback = local(Times New Roman), size-adjust 136.86%, ascent 71.31%, descent 27.18% (3q17cp_jgfwol.pretty.css:22-30)",
+  "desktop": {
+   "font_size": "1.72rem = 27.52px",
+   "letter_spacing": "3px",
+   "gap_img_text": "13px",
+   "img": "42x42",
+   "box": [
+    188,
+    27,
+    261,
+    42
+   ]
+  },
+  "mobile_max_560": {
+   "font_size": "1.05rem = 16.8px",
+   "letter_spacing": "1.5px",
+   "gap_img_text": "8px",
+   "img": "28x28",
+   "box": [
+    28,
+    14,
+    158.34,
+    28
+   ]
+  },
+  "ink": {
+   "natt": "#f5c542",
+   "morgon": "#6d4fe0"
+  },
+  "shadow": {
+   "natt": "0 2px 6px #050814cc, 0 0 34px #f5c54273",
+   "morgon": "0 1px 2px #241f352e, 0 0 24px #6d4fe052"
+  },
+  "img_filter_both_themes": "drop-shadow(0 0 14px #f5c54280)",
+  "transition": "color 0.5s",
+  "live_measurements": [
+   {
+    "tag": "natt__sv__desktop",
+    "theme": "natt",
+    "lang": "sv",
+    "logoRect": [
+     188,
+     27,
+     261,
+     42
+    ],
+    "imgRect": [
+     188,
+     27,
+     42,
+     42
+    ],
+    "textRect": [
+     243,
+     29.5,
+     206,
+     37
+    ],
+    "color": "rgb(245, 197, 66)",
+    "textShadow": "rgba(5, 8, 20, 0.8) 0px 2px 6px, rgba(245, 197, 66, 0.45) 0px 0px 34px",
+    "fontFamily": "Cinzel, \"Cinzel Fallback\", \"Playfair Display\", Georgia, serif",
+    "fontSize": "27.52px",
+    "letterSpacing": "3px",
+    "textTransform": "uppercase",
+    "gap": "13px",
+    "imgFilter": "drop-shadow(rgba(245, 197, 66, 0.5) 0px 0px 14px)",
+    "translate": "no",
+    "bodyBg": "rgb(23, 18, 50)",
+    "fontsLoaded": [
+     "Cinzel 700",
+     "Lora 600",
+     "Lora 700",
+     "Source Serif 4 400",
+     "Source Serif 4 600",
+     "Schibsted Grotesk 400",
+     "Schibsted Grotesk 700",
+     "Schibsted Grotesk 800"
+    ]
+   },
+   {
+    "tag": "natt__en__desktop",
+    "theme": "natt",
+    "lang": "en",
+    "logoRect": [
+     188,
+     27,
+     261,
+     42
+    ],
+    "imgRect": [
+     188,
+     27,
+     42,
+     42
+    ],
+    "textRect": [
+     243,
+     29.5,
+     206,
+     37
+    ],
+    "color": "rgb(245, 197, 66)",
+    "textShadow": "rgba(5, 8, 20, 0.8) 0px 2px 6px, rgba(245, 197, 66, 0.45) 0px 0px 34px",
+    "fontFamily": "Cinzel, \"Cinzel Fallback\", \"Playfair Display\", Georgia, serif",
+    "fontSize": "27.52px",
+    "letterSpacing": "3px",
+    "textTransform": "uppercase",
+    "gap": "13px",
+    "imgFilter": "drop-shadow(rgba(245, 197, 66, 0.5) 0px 0px 14px)",
+    "translate": "no",
+    "bodyBg": "rgb(23, 18, 50)",
+    "fontsLoaded": [
+     "Cinzel 700",
+     "Lora 600",
+     "Lora 700",
+     "Source Serif 4 400",
+     "Source Serif 4 600",
+     "Schibsted Grotesk 400",
+     "Schibsted Grotesk 700",
+     "Schibsted Grotesk 800"
+    ]
+   },
+   {
+    "tag": "natt__sv__mobile",
+    "theme": "natt",
+    "lang": "sv",
+    "logoRect": [
+     28,
+     14,
+     158.34375,
+     28
+    ],
+    "imgRect": [
+     28,
+     14,
+     28,
+     28
+    ],
+    "textRect": [
+     64,
+     17,
+     122.34375,
+     22
+    ],
+    "color": "rgb(245, 197, 66)",
+    "textShadow": "rgba(5, 8, 20, 0.8) 0px 2px 6px, rgba(245, 197, 66, 0.45) 0px 0px 34px",
+    "fontFamily": "Cinzel, \"Cinzel Fallback\", \"Playfair Display\", Georgia, serif",
+    "fontSize": "16.8px",
+    "letterSpacing": "1.5px",
+    "textTransform": "uppercase",
+    "gap": "8px",
+    "imgFilter": "drop-shadow(rgba(245, 197, 66, 0.5) 0px 0px 14px)",
+    "translate": "no",
+    "bodyBg": "rgb(23, 18, 50)",
+    "fontsLoaded": [
+     "Cinzel 700",
+     "Lora 600",
+     "Lora 700",
+     "Source Serif 4 400",
+     "Source Serif 4 600",
+     "Schibsted Grotesk 400",
+     "Schibsted Grotesk 700",
+     "Schibsted Grotesk 800"
+    ]
+   },
+   {
+    "tag": "natt__en__mobile",
+    "theme": "natt",
+    "lang": "en",
+    "logoRect": [
+     28,
+     14,
+     158.34375,
+     28
+    ],
+    "imgRect": [
+     28,
+     14,
+     28,
+     28
+    ],
+    "textRect": [
+     64,
+     17,
+     122.34375,
+     22
+    ],
+    "color": "rgb(245, 197, 66)",
+    "textShadow": "rgba(5, 8, 20, 0.8) 0px 2px 6px, rgba(245, 197, 66, 0.45) 0px 0px 34px",
+    "fontFamily": "Cinzel, \"Cinzel Fallback\", \"Playfair Display\", Georgia, serif",
+    "fontSize": "16.8px",
+    "letterSpacing": "1.5px",
+    "textTransform": "uppercase",
+    "gap": "8px",
+    "imgFilter": "drop-shadow(rgba(245, 197, 66, 0.5) 0px 0px 14px)",
+    "translate": "no",
+    "bodyBg": "rgb(23, 18, 50)",
+    "fontsLoaded": [
+     "Cinzel 700",
+     "Lora 600",
+     "Lora 700",
+     "Source Serif 4 400",
+     "Source Serif 4 600",
+     "Schibsted Grotesk 400",
+     "Schibsted Grotesk 700",
+     "Schibsted Grotesk 800"
+    ]
+   },
+   {
+    "tag": "morgon__sv__desktop",
+    "theme": "morgon",
+    "lang": "sv",
+    "logoRect": [
+     188,
+     27,
+     261,
+     42
+    ],
+    "imgRect": [
+     188,
+     27,
+     42,
+     42
+    ],
+    "textRect": [
+     243,
+     29.5,
+     206,
+     37
+    ],
+    "color": "rgb(109, 79, 224)",
+    "textShadow": "rgba(36, 31, 53, 0.18) 0px 1px 2px, rgba(109, 79, 224, 0.32) 0px 0px 24px",
+    "fontFamily": "Cinzel, \"Cinzel Fallback\", \"Playfair Display\", Georgia, serif",
+    "fontSize": "27.52px",
+    "letterSpacing": "3px",
+    "textTransform": "uppercase",
+    "gap": "13px",
+    "imgFilter": "drop-shadow(rgba(245, 197, 66, 0.5) 0px 0px 14px)",
+    "translate": "no",
+    "bodyBg": "rgb(237, 233, 246)",
+    "fontsLoaded": [
+     "Cinzel 700",
+     "Lora 600",
+     "Lora 700",
+     "Source Serif 4 400",
+     "Source Serif 4 600",
+     "Schibsted Grotesk 400",
+     "Schibsted Grotesk 700",
+     "Schibsted Grotesk 800"
+    ]
+   },
+   {
+    "tag": "morgon__en__desktop",
+    "theme": "morgon",
+    "lang": "en",
+    "logoRect": [
+     188,
+     27,
+     261,
+     42
+    ],
+    "imgRect": [
+     188,
+     27,
+     42,
+     42
+    ],
+    "textRect": [
+     243,
+     29.5,
+     206,
+     37
+    ],
+    "color": "rgb(109, 79, 224)",
+    "textShadow": "rgba(36, 31, 53, 0.18) 0px 1px 2px, rgba(109, 79, 224, 0.32) 0px 0px 24px",
+    "fontFamily": "Cinzel, \"Cinzel Fallback\", \"Playfair Display\", Georgia, serif",
+    "fontSize": "27.52px",
+    "letterSpacing": "3px",
+    "textTransform": "uppercase",
+    "gap": "13px",
+    "imgFilter": "drop-shadow(rgba(245, 197, 66, 0.5) 0px 0px 14px)",
+    "translate": "no",
+    "bodyBg": "rgb(237, 233, 246)",
+    "fontsLoaded": [
+     "Cinzel 700",
+     "Lora 600",
+     "Lora 700",
+     "Source Serif 4 400",
+     "Source Serif 4 600",
+     "Schibsted Grotesk 400",
+     "Schibsted Grotesk 700",
+     "Schibsted Grotesk 800"
+    ]
+   },
+   {
+    "tag": "morgon__sv__mobile",
+    "theme": "morgon",
+    "lang": "sv",
+    "logoRect": [
+     28,
+     14,
+     158.34375,
+     28
+    ],
+    "imgRect": [
+     28,
+     14,
+     28,
+     28
+    ],
+    "textRect": [
+     64,
+     17,
+     122.34375,
+     22
+    ],
+    "color": "rgb(109, 79, 224)",
+    "textShadow": "rgba(36, 31, 53, 0.18) 0px 1px 2px, rgba(109, 79, 224, 0.32) 0px 0px 24px",
+    "fontFamily": "Cinzel, \"Cinzel Fallback\", \"Playfair Display\", Georgia, serif",
+    "fontSize": "16.8px",
+    "letterSpacing": "1.5px",
+    "textTransform": "uppercase",
+    "gap": "8px",
+    "imgFilter": "drop-shadow(rgba(245, 197, 66, 0.5) 0px 0px 14px)",
+    "translate": "no",
+    "bodyBg": "rgb(237, 233, 246)",
+    "fontsLoaded": [
+     "Cinzel 700",
+     "Lora 600",
+     "Lora 700",
+     "Source Serif 4 400",
+     "Source Serif 4 600",
+     "Schibsted Grotesk 400",
+     "Schibsted Grotesk 700",
+     "Schibsted Grotesk 800"
+    ]
+   },
+   {
+    "tag": "morgon__en__mobile",
+    "theme": "morgon",
+    "lang": "en",
+    "logoRect": [
+     28,
+     14,
+     158.34375,
+     28
+    ],
+    "imgRect": [
+     28,
+     14,
+     28,
+     28
+    ],
+    "textRect": [
+     64,
+     17,
+     122.34375,
+     22
+    ],
+    "color": "rgb(109, 79, 224)",
+    "textShadow": "rgba(36, 31, 53, 0.18) 0px 1px 2px, rgba(109, 79, 224, 0.32) 0px 0px 24px",
+    "fontFamily": "Cinzel, \"Cinzel Fallback\", \"Playfair Display\", Georgia, serif",
+    "fontSize": "16.8px",
+    "letterSpacing": "1.5px",
+    "textTransform": "uppercase",
+    "gap": "8px",
+    "imgFilter": "drop-shadow(rgba(245, 197, 66, 0.5) 0px 0px 14px)",
+    "translate": "no",
+    "bodyBg": "rgb(237, 233, 246)",
+    "fontsLoaded": [
+     "Cinzel 700",
+     "Lora 600",
+     "Lora 700",
+     "Source Serif 4 400",
+     "Source Serif 4 600",
+     "Schibsted Grotesk 400",
+     "Schibsted Grotesk 700",
+     "Schibsted Grotesk 800"
+    ]
+   }
+  ]
+ },
+ "logo": {
+  "file": "assets/assets/tf-logo.webp",
+  "size": [
+   512,
+   512
+  ],
+  "mode": "RGBA, no vector original found (probed /assets/tf-logo.svg, /logo.svg, /icon.svg: 404)",
+  "elements": [
+   "quill (leans ~30° right of vertical, nib into book gutter)",
+   "4 four-point sparkles (2 large, 2 small) + 2 round dots",
+   "open book, outlined pages",
+   "anvil, horn left",
+   "stacked wordmark TALE / FORGE in Roman inscriptional capitals"
+  ],
+  "palette": {
+   "source": "assets/assets/tf-logo.webp",
+   "pixels": 24574,
+   "method": "k-means in CIELAB (D65), k=8, k-means++ seed 0, median member pixel per cluster; alpha >= 250 only",
+   "palette": [
+    {
+     "hex": "#ecbe25",
+     "share": 0.0509,
+     "lab": [
+      78.97,
+      3.45,
+      74.98
+     ]
+    },
+    {
+     "hex": "#e6b41e",
+     "share": 0.0809,
+     "lab": [
+      76.03,
+      5.86,
+      74.01
+     ]
+    },
+    {
+     "hex": "#dfab18",
+     "share": 0.1218,
+     "lab": [
+      72.84,
+      7.39,
+      72.47
+     ]
+    },
+    {
+     "hex": "#daa415",
+     "share": 0.1361,
+     "lab": [
+      70.82,
+      8.81,
+      71.23
+     ]
+    },
+    {
+     "hex": "#d69f13",
+     "share": 0.1871,
+     "lab": [
+      68.91,
+      9.6,
+      69.86
+     ]
+    },
+    {
+     "hex": "#d59a14",
+     "share": 0.0712,
+     "lab": [
+      67.76,
+      12.07,
+      68.96
+     ]
+    },
+    {
+     "hex": "#d19a13",
+     "share": 0.2254,
+     "lab": [
+      66.9,
+      10.36,
+      68.26
+     ]
+    },
+    {
+     "hex": "#cf9512",
+     "share": 0.1267,
+     "lab": [
+      65.52,
+      12.18,
+      67.33
+     ]
+    }
+   ],
+   "mean": "#d8a216",
+   "brightest_3pct": "#eec026",
+   "darkest_3pct": "#cd9210",
+   "elements": {
+    "quill": {
+     "mean": "#d7a114",
+     "left_to_right_fifths": [
+      "#e0ad18",
+      "#daa415",
+      "#d59e14",
+      "#d39b13",
+      "#d29a13"
+     ]
+    },
+    "open book": {
+     "mean": "#dfab19",
+     "left_to_right_fifths": [
+      "#ecbb23",
+      "#e7b41d",
+      "#dfaa17",
+      "#d7a014",
+      "#d49d13"
+     ]
+    },
+    "anvil": {
+     "mean": "#d9a316",
+     "left_to_right_fifths": [
+      "#ecbe26",
+      "#e2af1a",
+      "#d9a315",
+      "#d29a13",
+      "#d29914"
+     ]
+    },
+    "TALE": {
+     "mean": "#d69e15",
+     "left_to_right_fifths": [
+      "#e0ab1a",
+      "#d9a014",
+      "#d49b14",
+      "#d29913",
+      "#d19813"
+     ]
+    },
+    "FORGE": {
+     "mean": "#d19813",
+     "left_to_right_fifths": [
+      "#d8a217",
+      "#d39a13",
+      "#cf9512",
+      "#ce9412",
+      "#cf9612"
+     ]
+    }
+   },
+   "element_boxes_px_in_512": {
+    "quill": [
+     242,
+     38,
+     339,
+     191
+    ],
+    "open book": [
+     160,
+     153,
+     343,
+     210
+    ],
+    "anvil": [
+     123,
+     210,
+     361,
+     327
+    ],
+    "TALE": [
+     152,
+     340,
+     355,
+     391
+    ],
+    "FORGE": [
+     133,
+     403,
+     383,
+     452
+    ]
+   }
+  }
+ },
+ "theme_backgrounds": {
+  "natt_body": "#171232",
+  "morgon_body": "#ede9f6",
+  "manifest_theme_color": "#171232",
+  "manifest_background_color": "#171232",
+  "meta_theme_color_tag": "none"
+ },
+ "icons": [
+  {
+   "file": "assets/brand/favicon.ico",
+   "frame": "favicon.ico 16",
+   "size": [
+    16,
+    16
+   ],
+   "background": "transparent",
+   "content_bbox": [
+    4,
+    1,
+    11,
+    13
+   ],
+   "content_height_pct": 81.2,
+   "content_width_pct": 50.0
+  },
+  {
+   "file": "assets/brand/favicon.ico",
+   "frame": "favicon.ico 32",
+   "size": [
+    32,
+    32
+   ],
+   "background": "transparent",
+   "content_bbox": [
+    8,
+    2,
+    23,
+    28
+   ],
+   "content_height_pct": 84.4,
+   "content_width_pct": 50.0
+  },
+  {
+   "file": "assets/brand/favicon.ico",
+   "frame": "favicon.ico 48",
+   "size": [
+    48,
+    48
+   ],
+   "background": "transparent",
+   "content_bbox": [
+    11,
+    3,
+    35,
+    42
+   ],
+   "content_height_pct": 83.3,
+   "content_width_pct": 52.1
+  },
+  {
+   "file": "assets/brand/icon.png",
+   "frame": "icon.png",
+   "size": [
+    256,
+    256
+   ],
+   "background": "transparent",
+   "content_bbox": [
+    61,
+    19,
+    191,
+    226
+   ],
+   "content_height_pct": 81.2,
+   "content_width_pct": 51.2
+  },
+  {
+   "file": "assets/brand/apple-icon.png",
+   "frame": "apple-icon.png",
+   "size": [
+    180,
+    180
+   ],
+   "background": "#171232",
+   "content_bbox": [
+    55,
+    32,
+    123,
+    142
+   ],
+   "content_height_pct": 61.7,
+   "content_width_pct": 38.3
+  },
+  {
+   "file": "assets/icons/icon-192.png",
+   "frame": "icons/icon-192.png",
+   "size": [
+    192,
+    192
+   ],
+   "background": "#171232",
+   "content_bbox": [
+    63,
+    42,
+    127,
+    145
+   ],
+   "content_height_pct": 54.2,
+   "content_width_pct": 33.9
+  },
+  {
+   "file": "assets/icons/icon-512.png",
+   "frame": "icons/icon-512.png",
+   "size": [
+    512,
+    512
+   ],
+   "background": "#171232",
+   "content_bbox": [
+    168,
+    112,
+    340,
+    385
+   ],
+   "content_height_pct": 53.5,
+   "content_width_pct": 33.8
+  }
+ ],
+ "og_image": {
+  "files": [
+   "assets/brand/opengraph-image.png",
+   "assets/brand/twitter-image.png"
+  ],
+  "identical": true,
+  "size": [
+   1200,
+   630
+  ],
+  "png_mode": "P (256-colour palette)",
+  "background": "nebula-hero.webp scaled 0.5 (1200x670), top 40px cropped; out ~ 0.445*src + (5,8,16) = flat #0b0f1e scrim at ~55%",
+  "logo": {
+   "size_px": 149,
+   "box": [
+    70,
+    161,
+    219,
+    310
+   ]
+  },
+  "title": {
+   "text": "Tale Forge",
+   "font": "DejaVu Serif Bold (measured, glyph runs within ±1px at 84px)",
+   "size_px": 84,
+   "fill": "#f5c542",
+   "bbox": [
+    71,
+    301,
+    556,
+    382
+   ]
+  },
+  "cards": [
+   {
+    "src": "assets/assets/cover-tornet.webp",
+    "box": [
+     616,
+     101,
+     891,
+     508
+    ]
+   },
+   {
+    "src": "assets/assets/cover-filten.webp",
+    "box": [
+     906,
+     121,
+     1181,
+     528
+    ]
+   }
+  ],
+  "card_style": "276x408, 4px border #efe8dd, radius ~10px, rotation 0",
+  "og_title": "Tale Forge",
+  "og_locale": {
+   "sv": "sv_SE",
+   "en": "en_US"
+  },
+  "og_image_alt": "none"
+ },
+ "naming": {
+  "themes": {
+   "natt": {
+    "sv": "Natt",
+    "en": "Night",
+    "default": true
+   },
+   "morgon": {
+    "sv": "Morgon",
+    "en": "Morning"
+   },
+   "storage": "localStorage 'tf-theme'",
+   "switch_label": {
+    "sv": "Byt tema",
+    "en": "Switch theme"
+   }
+  },
+  "language": {
+   "cookie": "tf_locale",
+   "default": "sv",
+   "switch_label": {
+    "sv": "Byt språk",
+    "en": "Change language"
+   }
+  },
+  "narrators": [
+   {
+    "id": "grandpa",
+    "sv": "Morfar Erik",
+    "en": "Grandpa Erik",
+    "chip_sv": "Morfar",
+    "default": true
+   },
+   {
+    "id": "female",
+    "sv": "Berättaren Lily",
+    "en": "Storyteller Lily"
+   },
+   {
+    "id": "male",
+    "sv": "Berättaren Marcus",
+    "en": "Narrator Marcus"
+   },
+   {
+    "id": "young",
+    "sv": "Unga Saga",
+    "en": "Young Saga"
+   }
+  ],
+  "ambient_beds": [
+   {
+    "id": "hearth",
+    "group": "ambience",
+    "sv": "Brasa",
+    "en": "Fireplace",
+    "default_wait_bed": true
+   },
+   {
+    "id": "rain",
+    "group": "ambience",
+    "sv": "Fönsterregn",
+    "en": "Window rain"
+   },
+   {
+    "id": "forest",
+    "group": "ambience",
+    "sv": "Sagoskogen",
+    "en": "Enchanted forest"
+   },
+   {
+    "id": "musicbox",
+    "group": "music",
+    "sv": "Speldosa",
+    "en": "Music box"
+   },
+   {
+    "id": "harp",
+    "group": "music",
+    "sv": "Månharpa",
+    "en": "Moonlit harp"
+   },
+   {
+    "id": "fire",
+    "group": "music",
+    "sv": "Glödljus",
+    "en": "Ember glow"
+   }
+  ],
+  "ambient_defaults": {
+   "volume": 0.18,
+   "max": 0.4,
+   "url": "/audio/atmosphere/v1/<id>.mp3",
+   "source": "source/js/1pgfdvt65g9p-.js"
+  },
+  "story_registers": {
+   "godnatt": {
+    "sv": "Godnatt",
+    "en": "Bedtime"
+   },
+   "aventyr": {
+    "sv": "Äventyr",
+    "en": "Adventure"
+   },
+   "vanskap": {
+    "sv": "Vänskap",
+    "en": "Friendship"
+   },
+   "surprise": {
+    "sv": "Överraska oss",
+    "en": "Surprise us"
+   }
+  },
+  "plans": {
+   "family": {
+    "sv": "Familj",
+    "en": "Family"
+   },
+   "academy": {
+    "sv": "Skola",
+    "en": "School"
+   }
+  },
+  "product_nouns": {
+   "hjälte": "hero",
+   "vän / sällskapet": "friend / the company",
+   "värld / sagovärld": "world / story world",
+   "bokhyllan": "the bookshelf",
+   "exempelboken": "the sample book",
+   "berättarrösten": "the narrator voice",
+   "porträttet": "the portrait",
+   "val": "choice",
+   "slut": "ending",
+   "Väntelden": "the waiting fire",
+   "glöd / gnista": "ember / spark",
+   "smedjan / smed": "the smithy / a smith",
+   "Bokmässans snabb-saga": "the Book Fair quick story"
+  },
+  "traits_shown": {
+   "sv": [
+    "Modig",
+    "Fnissig",
+    "Djurvän",
+    "Nyfiken",
+    "Envis",
+    "+ Fler"
+   ],
+   "en": [
+    "Brave",
+    "Giggly",
+    "Animal lover",
+    "Curious",
+    "Stubborn",
+    "+ More"
+   ]
+  }
+ },
+ "pricing": {
+  "source": "source/js/26ye0kuppitcn.js",
+  "family": {
+   "monthly": {
+    "SEK": 149,
+    "USD": 14.99,
+    "EUR": 13.99
+   },
+   "yearly": {
+    "SEK": 1490,
+    "USD": 149,
+    "EUR": 139
+   },
+   "books_per_month": 3,
+   "children": 4,
+   "trial": "14 dagar gratis ... Kort krävs. / 14 days free ... Card required."
+  },
+  "school(academy)": {
+   "monthly": {
+    "SEK": 249,
+    "USD": 24.99,
+    "EUR": 22.99
+   },
+   "yearly": {
+    "SEK": 2490,
+    "USD": 249,
+    "EUR": 229
+   },
+   "books_per_month": 6,
+   "children": 30
+  },
+  "default_billing_toggle": "yearly",
+  "home_promise": "first book free, no card needed"
+ }
+}

@@ -1,0 +1,346 @@
+[
+ {
+  "tag": "natt__sv__desktop",
+  "theme": "natt",
+  "lang": "sv",
+  "logoRect": [
+   188,
+   27,
+   261,
+   42
+  ],
+  "imgRect": [
+   188,
+   27,
+   42,
+   42
+  ],
+  "textRect": [
+   243,
+   29.5,
+   206,
+   37
+  ],
+  "color": "rgb(245, 197, 66)",
+  "textShadow": "rgba(5, 8, 20, 0.8) 0px 2px 6px, rgba(245, 197, 66, 0.45) 0px 0px 34px",
+  "fontFamily": "Cinzel, \"Cinzel Fallback\", \"Playfair Display\", Georgia, serif",
+  "fontSize": "27.52px",
+  "letterSpacing": "3px",
+  "textTransform": "uppercase",
+  "gap": "13px",
+  "imgFilter": "drop-shadow(rgba(245, 197, 66, 0.5) 0px 0px 14px)",
+  "translate": "no",
+  "bodyBg": "rgb(23, 18, 50)",
+  "fontsLoaded": [
+   "Cinzel 700",
+   "Lora 600",
+   "Lora 700",
+   "Source Serif 4 400",
+   "Source Serif 4 600",
+   "Schibsted Grotesk 400",
+   "Schibsted Grotesk 700",
+   "Schibsted Grotesk 800"
+  ]
+ },
+ {
+  "tag": "natt__en__desktop",
+  "theme": "natt",
+  "lang": "en",
+  "logoRect": [
+   188,
+   27,
+   261,
+   42
+  ],
+  "imgRect": [
+   188,
+   27,
+   42,
+   42
+  ],
+  "textRect": [
+   243,
+   29.5,
+   206,
+   37
+  ],
+  "color": "rgb(245, 197, 66)",
+  "textShadow": "rgba(5, 8, 20, 0.8) 0px 2px 6px, rgba(245, 197, 66, 0.45) 0px 0px 34px",
+  "fontFamily": "Cinzel, \"Cinzel Fallback\", \"Playfair Display\", Georgia, serif",
+  "fontSize": "27.52px",
+  "letterSpacing": "3px",
+  "textTransform": "uppercase",
+  "gap": "13px",
+  "imgFilter": "drop-shadow(rgba(245, 197, 66, 0.5) 0px 0px 14px)",
+  "translate": "no",
+  "bodyBg": "rgb(23, 18, 50)",
+  "fontsLoaded": [
+   "Cinzel 700",
+   "Lora 600",
+   "Lora 700",
+   "Source Serif 4 400",
+   "Source Serif 4 600",
+   "Schibsted Grotesk 400",
+   "Schibsted Grotesk 700",
+   "Schibsted Grotesk 800"
+  ]
+ },
+ {
+  "tag": "natt__sv__mobile",
+  "theme": "natt",
+  "lang": "sv",
+  "logoRect": [
+   28,
+   14,
+   158.34375,
+   28
+  ],
+  "imgRect": [
+   28,
+   14,
+   28,
+   28
+  ],
+  "textRect": [
+   64,
+   17,
+   122.34375,
+   22
+  ],
+  "color": "rgb(245, 197, 66)",
+  "textShadow": "rgba(5, 8, 20, 0.8) 0px 2px 6px, rgba(245, 197, 66, 0.45) 0px 0px 34px",
+  "fontFamily": "Cinzel, \"Cinzel Fallback\", \"Playfair Display\", Georgia, serif",
+  "fontSize": "16.8px",
+  "letterSpacing": "1.5px",
+  "textTransform": "uppercase",
+  "gap": "8px",
+  "imgFilter": "drop-shadow(rgba(245, 197, 66, 0.5) 0px 0px 14px)",
+  "translate": "no",
+  "bodyBg": "rgb(23, 18, 50)",
+  "fontsLoaded": [
+   "Cinzel 700",
+   "Lora 600",
+   "Lora 700",
+   "Source Serif 4 400",
+   "Source Serif 4 600",
+   "Schibsted Grotesk 400",
+   "Schibsted Grotesk 700",
+   "Schibsted Grotesk 800"
+  ]
+ },
+ {
+  "tag": "natt__en__mobile",
+  "theme": "natt",
+  "lang": "en",
+  "logoRect": [
+   28,
+   14,
+   158.34375,
+   28
+  ],
+  "imgRect": [
+   28,
+   14,
+   28,
+   28
+  ],
+  "textRect": [
+   64,
+   17,
+   122.34375,
+   22
+  ],
+  "color": "rgb(245, 197, 66)",
+  "textShadow": "rgba(5, 8, 20, 0.8) 0px 2px 6px, rgba(245, 197, 66, 0.45) 0px 0px 34px",
+  "fontFamily": "Cinzel, \"Cinzel Fallback\", \"Playfair Display\", Georgia, serif",
+  "fontSize": "16.8px",
+  "letterSpacing": "1.5px",
+  "textTransform": "uppercase",
+  "gap": "8px",
+  "imgFilter": "drop-shadow(rgba(245, 197, 66, 0.5) 0px 0px 14px)",
+  "translate": "no",
+  "bodyBg": "rgb(23, 18, 50)",
+  "fontsLoaded": [
+   "Cinzel 700",
+   "Lora 600",
+   "Lora 700",
+   "Source Serif 4 400",
+   "Source Serif 4 600",
+   "Schibsted Grotesk 400",
+   "Schibsted Grotesk 700",
+   "Schibsted Grotesk 800"
+  ]
+ },
+ {
+  "tag": "morgon__sv__desktop",
+  "theme": "morgon",
+  "lang": "sv",
+  "logoRect": [
+   188,
+   27,
+   261,
+   42
+  ],
+  "imgRect": [
+   188,
+   27,
+   42,
+   42
+  ],
+  "textRect": [
+   243,
+   29.5,
+   206,
+   37
+  ],
+  "color": "rgb(109, 79, 224)",
+  "textShadow": "rgba(36, 31, 53, 0.18) 0px 1px 2px, rgba(109, 79, 224, 0.32) 0px 0px 24px",
+  "fontFamily": "Cinzel, \"Cinzel Fallback\", \"Playfair Display\", Georgia, serif",
+  "fontSize": "27.52px",
+  "letterSpacing": "3px",
+  "textTransform": "uppercase",
+  "gap": "13px",
+  "imgFilter": "drop-shadow(rgba(245, 197, 66, 0.5) 0px 0px 14px)",
+  "translate": "no",
+  "bodyBg": "rgb(237, 233, 246)",
+  "fontsLoaded": [
+   "Cinzel 700",
+   "Lora 600",
+   "Lora 700",
+   "Source Serif 4 400",
+   "Source Serif 4 600",
+   "Schibsted Grotesk 400",
+   "Schibsted Grotesk 700",
+   "Schibsted Grotesk 800"
+  ]
+ },
+ {
+  "tag": "morgon__en__desktop",
+  "theme": "morgon",
+  "lang": "en",
+  "logoRect": [
+   188,
+   27,
+   261,
+   42
+  ],
+  "imgRect": [
+   188,
+   27,
+   42,
+   42
+  ],
+  "textRect": [
+   243,
+   29.5,
+   206,
+   37
+  ],
+  "color": "rgb(109, 79, 224)",
+  "textShadow": "rgba(36, 31, 53, 0.18) 0px 1px 2px, rgba(109, 79, 224, 0.32) 0px 0px 24px",
+  "fontFamily": "Cinzel, \"Cinzel Fallback\", \"Playfair Display\", Georgia, serif",
+  "fontSize": "27.52px",
+  "letterSpacing": "3px",
+  "textTransform": "uppercase",
+  "gap": "13px",
+  "imgFilter": "drop-shadow(rgba(245, 197, 66, 0.5) 0px 0px 14px)",
+  "translate": "no",
+  "bodyBg": "rgb(237, 233, 246)",
+  "fontsLoaded": [
+   "Cinzel 700",
+   "Lora 600",
+   "Lora 700",
+   "Source Serif 4 400",
+   "Source Serif 4 600",
+   "Schibsted Grotesk 400",
+   "Schibsted Grotesk 700",
+   "Schibsted Grotesk 800"
+  ]
+ },
+ {
+  "tag": "morgon__sv__mobile",
+  "theme": "morgon",
+  "lang": "sv",
+  "logoRect": [
+   28,
+   14,
+   158.34375,
+   28
+  ],
+  "imgRect": [
+   28,
+   14,
+   28,
+   28
+  ],
+  "textRect": [
+   64,
+   17,
+   122.34375,
+   22
+  ],
+  "color": "rgb(109, 79, 224)",
+  "textShadow": "rgba(36, 31, 53, 0.18) 0px 1px 2px, rgba(109, 79, 224, 0.32) 0px 0px 24px",
+  "fontFamily": "Cinzel, \"Cinzel Fallback\", \"Playfair Display\", Georgia, serif",
+  "fontSize": "16.8px",
+  "letterSpacing": "1.5px",
+  "textTransform": "uppercase",
+  "gap": "8px",
+  "imgFilter": "drop-shadow(rgba(245, 197, 66, 0.5) 0px 0px 14px)",
+  "translate": "no",
+  "bodyBg": "rgb(237, 233, 246)",
+  "fontsLoaded": [
+   "Cinzel 700",
+   "Lora 600",
+   "Lora 700",
+   "Source Serif 4 400",
+   "Source Serif 4 600",
+   "Schibsted Grotesk 400",
+   "Schibsted Grotesk 700",
+   "Schibsted Grotesk 800"
+  ]
+ },
+ {
+  "tag": "morgon__en__mobile",
+  "theme": "morgon",
+  "lang": "en",
+  "logoRect": [
+   28,
+   14,
+   158.34375,
+   28
+  ],
+  "imgRect": [
+   28,
+   14,
+   28,
+   28
+  ],
+  "textRect": [
+   64,
+   17,
+   122.34375,
+   22
+  ],
+  "color": "rgb(109, 79, 224)",
+  "textShadow": "rgba(36, 31, 53, 0.18) 0px 1px 2px, rgba(109, 79, 224, 0.32) 0px 0px 24px",
+  "fontFamily": "Cinzel, \"Cinzel Fallback\", \"Playfair Display\", Georgia, serif",
+  "fontSize": "16.8px",
+  "letterSpacing": "1.5px",
+  "textTransform": "uppercase",
+  "gap": "8px",
+  "imgFilter": "drop-shadow(rgba(245, 197, 66, 0.5) 0px 0px 14px)",
+  "translate": "no",
+  "bodyBg": "rgb(237, 233, 246)",
+  "fontsLoaded": [
+   "Cinzel 700",
+   "Lora 600",
+   "Lora 700",
+   "Source Serif 4 400",
+   "Source Serif 4 600",
+   "Schibsted Grotesk 400",
+   "Schibsted Grotesk 700",
+   "Schibsted Grotesk 800"
+  ]
+ }
+]

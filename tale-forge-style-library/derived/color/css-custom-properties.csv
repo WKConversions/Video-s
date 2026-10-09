@@ -1,0 +1,110 @@
+property,scope_selector,at_rule_context,value,source
+--font-cinzel,.cinzel_71b11afb-module__MlkSrG__variable,,"""Cinzel"", ""Cinzel Fallback""",source/css/3q17cp_jgfwol.pretty.css:38
+--font-lora,.lora_f283b796-module__E6zvsG__variable,,"""Lora"", ""Lora Fallback""",source/css/3q17cp_jgfwol.pretty.css:251
+--font-source-serif,.source_serif_4_efe0a908-module__kMXAjq__variable,,"""Source Serif 4"", ""Source Serif 4 Fallback""",source/css/3q17cp_jgfwol.pretty.css:378
+--font-schibsted,.schibsted_grotesk_e2dd7ded-module__kS_IdW__variable,,"""Schibsted Grotesk"", ""Schibsted Grotesk Fallback""",source/css/3q17cp_jgfwol.pretty.css:458
+--violet,:root,,#6d4fe0,source/css/3q17cp_jgfwol.pretty.css:461
+--violet-soft,:root,,#9b87f5,source/css/3q17cp_jgfwol.pretty.css:462
+--gold,:root,,#f2b22e,source/css/3q17cp_jgfwol.pretty.css:463
+--gold-soft,:root,,#f5c542,source/css/3q17cp_jgfwol.pretty.css:464
+--coral,:root,,#ff6154,source/css/3q17cp_jgfwol.pretty.css:465
+--display,:root,,"var(--font-lora), Georgia, serif",source/css/3q17cp_jgfwol.pretty.css:466
+--ui,:root,,"var(--font-schibsted), ""Segoe UI"", system-ui, sans-serif",source/css/3q17cp_jgfwol.pretty.css:467
+--serif,:root,,"var(--font-source-serif), Georgia, serif",source/css/3q17cp_jgfwol.pretty.css:468
+--wordmark,:root,,"var(--font-cinzel), ""Playfair Display"", Georgia, serif",source/css/3q17cp_jgfwol.pretty.css:469
+--theme-transition-duration,:root,,0.5s,source/css/3q17cp_jgfwol.pretty.css:470
+--theme-transition-easing,:root,,ease,source/css/3q17cp_jgfwol.pretty.css:471
+--page-ink,"body[data-theme=""natt""]",,#fff7e9,source/css/3q17cp_jgfwol.pretty.css:494
+--page-sub,"body[data-theme=""natt""]",,#d9cfee,source/css/3q17cp_jgfwol.pretty.css:495
+--accent,"body[data-theme=""natt""]",,var(--gold-soft),source/css/3q17cp_jgfwol.pretty.css:496
+--accent-ink,"body[data-theme=""natt""]",,var(--gold-soft),source/css/3q17cp_jgfwol.pretty.css:497
+--card,"body[data-theme=""natt""]",,#0f1628ad,source/css/3q17cp_jgfwol.pretty.css:498
+--card-line,"body[data-theme=""natt""]",,#9b87f542,source/css/3q17cp_jgfwol.pretty.css:499
+--card-blur,"body[data-theme=""natt""]",,22px,source/css/3q17cp_jgfwol.pretty.css:500
+--card-ink,"body[data-theme=""natt""]",,#f2eeff,source/css/3q17cp_jgfwol.pretty.css:501
+--card-sub,"body[data-theme=""natt""]",,#b5acd3,source/css/3q17cp_jgfwol.pretty.css:502
+--frame,"body[data-theme=""natt""]",,#101a30,source/css/3q17cp_jgfwol.pretty.css:503
+--frame-line,"body[data-theme=""natt""]",,#9b87f566,source/css/3q17cp_jgfwol.pretty.css:504
+--chip-bg,"body[data-theme=""natt""]",,#fff9ec1a,source/css/3q17cp_jgfwol.pretty.css:505
+--chip-line,"body[data-theme=""natt""]",,#fff3d942,source/css/3q17cp_jgfwol.pretty.css:506
+--chip-ink,"body[data-theme=""natt""]",,#e8dfc9,source/css/3q17cp_jgfwol.pretty.css:507
+--pill-bg,"body[data-theme=""natt""]",,#9b87f529,source/css/3q17cp_jgfwol.pretty.css:508
+--pill-ink,"body[data-theme=""natt""]",,#c9bcff,source/css/3q17cp_jgfwol.pretty.css:509
+--micro-ink,"body[data-theme=""natt""]",,"color-mix(in srgb, var(--page-sub) 85%, transparent)",source/css/3q17cp_jgfwol.pretty.css:510
+--h1-shadow,"body[data-theme=""natt""]",,0 2px 30px #0c082859,source/css/3q17cp_jgfwol.pretty.css:511
+--gold-chip-bg,"body[data-theme=""natt""]",,#f2b22e29,source/css/3q17cp_jgfwol.pretty.css:512
+--gold-chip-ink,"body[data-theme=""natt""]",,#ffd98f,source/css/3q17cp_jgfwol.pretty.css:513
+--coral-chip-bg,"body[data-theme=""natt""]",,#ff615424,source/css/3q17cp_jgfwol.pretty.css:514
+--coral-chip-ink,"body[data-theme=""natt""]",,#ffab9f,source/css/3q17cp_jgfwol.pretty.css:515
+--trait-line,"body[data-theme=""natt""]",,#9b87f559,source/css/3q17cp_jgfwol.pretty.css:516
+--trait-ink,"body[data-theme=""natt""]",,#cfc5ec,source/css/3q17cp_jgfwol.pretty.css:517
+--trait-on-bg,"body[data-theme=""natt""]",,#9b87f533,source/css/3q17cp_jgfwol.pretty.css:518
+--trait-on-line,"body[data-theme=""natt""]",,#9b87f599,source/css/3q17cp_jgfwol.pretty.css:519
+--trait-on-ink,"body[data-theme=""natt""]",,#e9e2ff,source/css/3q17cp_jgfwol.pretty.css:520
+--dash-line,"body[data-theme=""natt""]",,#ffecbe59,source/css/3q17cp_jgfwol.pretty.css:521
+--choice-bg,"body[data-theme=""natt""]",,#ffffff0f,source/css/3q17cp_jgfwol.pretty.css:522
+--choice-line,"body[data-theme=""natt""]",,#9b87f552,source/css/3q17cp_jgfwol.pretty.css:523
+--choice-ink,"body[data-theme=""natt""]",,#f2eeff,source/css/3q17cp_jgfwol.pretty.css:524
+--bar-bg,"body[data-theme=""natt""]",,#ffffff24,source/css/3q17cp_jgfwol.pretty.css:525
+--prose-ink,"body[data-theme=""natt""]",,#eae4f5,source/css/3q17cp_jgfwol.pretty.css:526
+--foot-ink,"body[data-theme=""natt""]",,#b7a9d6,source/css/3q17cp_jgfwol.pretty.css:527
+--btn-grad,"body[data-theme=""natt""]",,"linear-gradient(135deg, #ffe08a, #f5c542)",source/css/3q17cp_jgfwol.pretty.css:528
+--btn-ink,"body[data-theme=""natt""]",,#3a2b10,source/css/3q17cp_jgfwol.pretty.css:529
+--btn-shadow,"body[data-theme=""natt""]",,0 14px 40px #f5c54247,source/css/3q17cp_jgfwol.pretty.css:530
+--btn-shadow-hover,"body[data-theme=""natt""]",,0 20px 55px #f5c5426b,source/css/3q17cp_jgfwol.pretty.css:531
+--ghost-bg,"body[data-theme=""natt""]",,#fff9ec1a,source/css/3q17cp_jgfwol.pretty.css:532
+--ghost-ink,"body[data-theme=""natt""]",,#fff3d9,source/css/3q17cp_jgfwol.pretty.css:533
+--control-line,"body[data-theme=""natt""]",,#fff3d952,source/css/3q17cp_jgfwol.pretty.css:534
+--ghost-line,"body[data-theme=""natt""]",,var(--control-line),source/css/3q17cp_jgfwol.pretty.css:535
+--card-shadow,"body[data-theme=""natt""]",,0 18px 44px #0508146b,source/css/3q17cp_jgfwol.pretty.css:536
+--logo-ink,"body[data-theme=""natt""]",,#f5c542,source/css/3q17cp_jgfwol.pretty.css:537
+--logo-shadow,"body[data-theme=""natt""]",,"0 2px 6px #050814cc, 0 0 34px #f5c54273",source/css/3q17cp_jgfwol.pretty.css:538
+--map-dot,"body[data-theme=""natt""]",,var(--violet-soft),source/css/3q17cp_jgfwol.pretty.css:539
+--map-glow,"body[data-theme=""natt""]",,#f5c54240,source/css/3q17cp_jgfwol.pretty.css:540
+--page-ink,"body[data-theme=""morgon""]",,#241f35,source/css/3q17cp_jgfwol.pretty.css:543
+--page-sub,"body[data-theme=""morgon""]",,#5f5878,source/css/3q17cp_jgfwol.pretty.css:544
+--accent,"body[data-theme=""morgon""]",,#6d4fe0,source/css/3q17cp_jgfwol.pretty.css:545
+--accent-ink,"body[data-theme=""morgon""]",,#5b3fc7,source/css/3q17cp_jgfwol.pretty.css:546
+--card,"body[data-theme=""morgon""]",,#fffc,source/css/3q17cp_jgfwol.pretty.css:547
+--card-line,"body[data-theme=""morgon""]",,#ffffffe6,source/css/3q17cp_jgfwol.pretty.css:548
+--card-blur,"body[data-theme=""morgon""]",,24px,source/css/3q17cp_jgfwol.pretty.css:549
+--card-ink,"body[data-theme=""morgon""]",,#241f35,source/css/3q17cp_jgfwol.pretty.css:550
+--card-sub,"body[data-theme=""morgon""]",,#5f5878,source/css/3q17cp_jgfwol.pretty.css:551
+--frame,"body[data-theme=""morgon""]",,#fff,source/css/3q17cp_jgfwol.pretty.css:552
+--frame-line,"body[data-theme=""morgon""]",,#ffffffe6,source/css/3q17cp_jgfwol.pretty.css:553
+--chip-bg,"body[data-theme=""morgon""]",,#6d4fe014,source/css/3q17cp_jgfwol.pretty.css:554
+--chip-line,"body[data-theme=""morgon""]",,#6d4fe029,source/css/3q17cp_jgfwol.pretty.css:555
+--chip-ink,"body[data-theme=""morgon""]",,var(--accent-ink),source/css/3q17cp_jgfwol.pretty.css:556
+--pill-bg,"body[data-theme=""morgon""]",,#6d4fe01a,source/css/3q17cp_jgfwol.pretty.css:557
+--pill-ink,"body[data-theme=""morgon""]",,var(--accent-ink),source/css/3q17cp_jgfwol.pretty.css:558
+--micro-ink,"body[data-theme=""morgon""]",,var(--page-sub),source/css/3q17cp_jgfwol.pretty.css:559
+--h1-shadow,"body[data-theme=""morgon""]",,none,source/css/3q17cp_jgfwol.pretty.css:560
+--gold-chip-bg,"body[data-theme=""morgon""]",,#f2b22e26,source/css/3q17cp_jgfwol.pretty.css:561
+--gold-chip-ink,"body[data-theme=""morgon""]",,#8f6a12,source/css/3q17cp_jgfwol.pretty.css:562
+--coral-chip-bg,"body[data-theme=""morgon""]",,#ff61541f,source/css/3q17cp_jgfwol.pretty.css:563
+--coral-chip-ink,"body[data-theme=""morgon""]",,#c23a2b,source/css/3q17cp_jgfwol.pretty.css:564
+--trait-line,"body[data-theme=""morgon""]",,#6d4fe047,source/css/3q17cp_jgfwol.pretty.css:565
+--trait-ink,"body[data-theme=""morgon""]",,#5f5878,source/css/3q17cp_jgfwol.pretty.css:566
+--trait-on-bg,"body[data-theme=""morgon""]",,#6d4fe01f,source/css/3q17cp_jgfwol.pretty.css:567
+--trait-on-line,"body[data-theme=""morgon""]",,#6d4fe06b,source/css/3q17cp_jgfwol.pretty.css:568
+--trait-on-ink,"body[data-theme=""morgon""]",,#4a36a8,source/css/3q17cp_jgfwol.pretty.css:569
+--dash-line,"body[data-theme=""morgon""]",,#6d4fe059,source/css/3q17cp_jgfwol.pretty.css:570
+--choice-bg,"body[data-theme=""morgon""]",,#fff,source/css/3q17cp_jgfwol.pretty.css:571
+--choice-line,"body[data-theme=""morgon""]",,#6d4fe038,source/css/3q17cp_jgfwol.pretty.css:572
+--choice-ink,"body[data-theme=""morgon""]",,#241f35,source/css/3q17cp_jgfwol.pretty.css:573
+--bar-bg,"body[data-theme=""morgon""]",,#241f3514,source/css/3q17cp_jgfwol.pretty.css:574
+--prose-ink,"body[data-theme=""morgon""]",,#3a3450,source/css/3q17cp_jgfwol.pretty.css:575
+--foot-ink,"body[data-theme=""morgon""]",,#5f5878,source/css/3q17cp_jgfwol.pretty.css:576
+--btn-grad,"body[data-theme=""morgon""]",,"linear-gradient(135deg, #6d4fe0, #5b3fc7)",source/css/3q17cp_jgfwol.pretty.css:577
+--btn-ink,"body[data-theme=""morgon""]",,#fff,source/css/3q17cp_jgfwol.pretty.css:578
+--btn-shadow,"body[data-theme=""morgon""]",,0 14px 34px #6d4fe059,source/css/3q17cp_jgfwol.pretty.css:579
+--btn-shadow-hover,"body[data-theme=""morgon""]",,0 22px 48px #6d4fe073,source/css/3q17cp_jgfwol.pretty.css:580
+--ghost-bg,"body[data-theme=""morgon""]",,#ffffffb8,source/css/3q17cp_jgfwol.pretty.css:581
+--ghost-ink,"body[data-theme=""morgon""]",,#241f35,source/css/3q17cp_jgfwol.pretty.css:582
+--control-line,"body[data-theme=""morgon""]",,#887da0,source/css/3q17cp_jgfwol.pretty.css:583
+--ghost-line,"body[data-theme=""morgon""]",,var(--control-line),source/css/3q17cp_jgfwol.pretty.css:584
+--card-shadow,"body[data-theme=""morgon""]",,"0 4px 12px #241f351a, 0 22px 52px #241f3529",source/css/3q17cp_jgfwol.pretty.css:585
+--logo-ink,"body[data-theme=""morgon""]",,#6d4fe0,source/css/3q17cp_jgfwol.pretty.css:586
+--logo-shadow,"body[data-theme=""morgon""]",,"0 1px 2px #241f352e, 0 0 24px #6d4fe052",source/css/3q17cp_jgfwol.pretty.css:587
+--map-dot,"body[data-theme=""morgon""]",,var(--violet),source/css/3q17cp_jgfwol.pretty.css:588
+--map-glow,"body[data-theme=""morgon""]",,#6d4fe033,source/css/3q17cp_jgfwol.pretty.css:589

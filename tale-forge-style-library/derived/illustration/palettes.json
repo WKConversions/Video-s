@@ -1,0 +1,4424 @@
+{
+ "method": "Each image thumbnailed to 360 px long side (Lanczos), sRGB->CIELAB (D65), k-means++ k=6, 4 attempts, <=40 iterations, seed 7. hex = median pixel of the cluster (a colour that actually occurs); hex_mean = cluster mean; lab = cluster centroid; hue_band from the centroid hue angle (neutral if chroma <= 8). Pooled palettes use 200 px thumbnails.",
+ "script": "scratchpad tools/illustration/palettes.py (not shipped in the library)",
+ "images": {
+  "assets/share/iris-sparade-platsen/assets/cover.webp": {
+   "family": "storybook",
+   "role": "sample-book cover (Iris)",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#74601E",
+     "hex_mean": "#776321",
+     "share": 0.239,
+     "lab": [
+      42.7,
+      0.5,
+      38.6
+     ],
+     "chroma": 38.6,
+     "hue_deg": 89.2,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#BB7420",
+     "hex_mean": "#BD7523",
+     "share": 0.213,
+     "lab": [
+      55.5,
+      22.4,
+      52.7
+     ],
+     "chroma": 57.3,
+     "hue_deg": 67.0,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#EBB354",
+     "hex_mean": "#E4B458",
+     "share": 0.207,
+     "lab": [
+      75.9,
+      8.0,
+      51.9
+     ],
+     "chroma": 52.5,
+     "hue_deg": 81.3,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#72400E",
+     "hex_mean": "#734111",
+     "share": 0.155,
+     "lab": [
+      32.8,
+      17.8,
+      36.1
+     ],
+     "chroma": 40.3,
+     "hue_deg": 63.7,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#3F3313",
+     "hex_mean": "#3D321B",
+     "share": 0.121,
+     "lab": [
+      21.4,
+      1.5,
+      16.0
+     ],
+     "chroma": 16.0,
+     "hue_deg": 84.6,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#C22C28",
+     "hex_mean": "#BD2E29",
+     "share": 0.065,
+     "lab": [
+      42.6,
+      55.5,
+      38.1
+     ],
+     "chroma": 67.3,
+     "hue_deg": 34.5,
+     "hue_band": "red-orange"
+    }
+   ]
+  },
+  "assets/share/iris-sparade-platsen/assets/S1.webp": {
+   "family": "storybook",
+   "role": "sample-book scene S1",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#F7D4B4",
+     "hex_mean": "#F2D1B4",
+     "share": 0.35,
+     "lab": [
+      86.0,
+      7.2,
+      18.6
+     ],
+     "chroma": 19.9,
+     "hue_deg": 68.9,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#BCB778",
+     "hex_mean": "#BBB679",
+     "share": 0.22,
+     "lab": [
+      73.1,
+      -7.3,
+      31.8
+     ],
+     "chroma": 32.6,
+     "hue_deg": 102.9,
+     "hue_band": "green"
+    },
+    {
+     "hex": "#D09B6B",
+     "hex_mean": "#D19D6B",
+     "share": 0.202,
+     "lab": [
+      68.7,
+      13.6,
+      33.5
+     ],
+     "chroma": 36.1,
+     "hue_deg": 67.8,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#976A45",
+     "hex_mean": "#956746",
+     "share": 0.134,
+     "lab": [
+      47.8,
+      14.6,
+      25.8
+     ],
+     "chroma": 29.7,
+     "hue_deg": 60.6,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#4E4334",
+     "hex_mean": "#4E4940",
+     "share": 0.055,
+     "lab": [
+      30.7,
+      1.6,
+      6.7
+     ],
+     "chroma": 6.9,
+     "hue_deg": 76.3,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#CD5039",
+     "hex_mean": "#C8503C",
+     "share": 0.039,
+     "lab": [
+      50.3,
+      45.8,
+      35.7
+     ],
+     "chroma": 58.1,
+     "hue_deg": 38.0,
+     "hue_band": "red-orange"
+    }
+   ]
+  },
+  "assets/share/iris-sparade-platsen/assets/S2.webp": {
+   "family": "storybook",
+   "role": "sample-book scene S2",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#7F5A28",
+     "hex_mean": "#7E5A29",
+     "share": 0.291,
+     "lab": [
+      41.0,
+      9.4,
+      33.2
+     ],
+     "chroma": 34.5,
+     "hue_deg": 74.2,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#C0965A",
+     "hex_mean": "#BF9859",
+     "share": 0.248,
+     "lab": [
+      65.0,
+      6.8,
+      38.3
+     ],
+     "chroma": 38.9,
+     "hue_deg": 79.9,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#C7853B",
+     "hex_mean": "#C6843C",
+     "share": 0.16,
+     "lab": [
+      60.7,
+      18.8,
+      48.1
+     ],
+     "chroma": 51.6,
+     "hue_deg": 68.6,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#F5E2C6",
+     "hex_mean": "#F2DEBF",
+     "share": 0.132,
+     "lab": [
+      89.4,
+      2.1,
+      17.9
+     ],
+     "chroma": 18.1,
+     "hue_deg": 83.2,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#3E2F16",
+     "hex_mean": "#3D301D",
+     "share": 0.101,
+     "lab": [
+      20.5,
+      3.4,
+      13.8
+     ],
+     "chroma": 14.2,
+     "hue_deg": 76.2,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#B22E27",
+     "hex_mean": "#AF3128",
+     "share": 0.067,
+     "lab": [
+      40.5,
+      49.6,
+      35.4
+     ],
+     "chroma": 60.9,
+     "hue_deg": 35.5,
+     "hue_band": "red-orange"
+    }
+   ]
+  },
+  "assets/share/iris-sparade-platsen/assets/S3A.webp": {
+   "family": "storybook",
+   "role": "sample-book scene S3A",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#8E802B",
+     "hex_mean": "#90802C",
+     "share": 0.407,
+     "lab": [
+      53.6,
+      -4.3,
+      45.7
+     ],
+     "chroma": 45.9,
+     "hue_deg": 95.4,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#DDB575",
+     "hex_mean": "#D9B375",
+     "share": 0.145,
+     "lab": [
+      75.1,
+      6.0,
+      37.0
+     ],
+     "chroma": 37.4,
+     "hue_deg": 80.8,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#281F0E",
+     "hex_mean": "#2A2215",
+     "share": 0.135,
+     "lab": [
+      13.9,
+      1.7,
+      9.4
+     ],
+     "chroma": 9.5,
+     "hue_deg": 80.0,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#6A561E",
+     "hex_mean": "#6D521F",
+     "share": 0.127,
+     "lab": [
+      36.9,
+      5.4,
+      33.5
+     ],
+     "chroma": 33.9,
+     "hue_deg": 80.8,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#C0691B",
+     "hex_mean": "#BE6A1F",
+     "share": 0.104,
+     "lab": [
+      53.3,
+      28.4,
+      51.9
+     ],
+     "chroma": 59.2,
+     "hue_deg": 61.3,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#9A2218",
+     "hex_mean": "#9A241A",
+     "share": 0.082,
+     "lab": [
+      34.6,
+      47.1,
+      36.0
+     ],
+     "chroma": 59.3,
+     "hue_deg": 37.4,
+     "hue_band": "red-orange"
+    }
+   ]
+  },
+  "assets/share/iris-sparade-platsen/assets/S3B.webp": {
+   "family": "storybook",
+   "role": "sample-book scene S3B",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#F6CD95",
+     "hex_mean": "#F0C993",
+     "share": 0.248,
+     "lab": [
+      83.1,
+      6.7,
+      32.4
+     ],
+     "chroma": 33.1,
+     "hue_deg": 78.3,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#6B3B14",
+     "hex_mean": "#693C18",
+     "share": 0.197,
+     "lab": [
+      30.3,
+      16.8,
+      29.5
+     ],
+     "chroma": 34.0,
+     "hue_deg": 60.4,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#A3672E",
+     "hex_mean": "#A46831",
+     "share": 0.181,
+     "lab": [
+      49.6,
+      19.1,
+      39.8
+     ],
+     "chroma": 44.2,
+     "hue_deg": 64.3,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#24160A",
+     "hex_mean": "#26180B",
+     "share": 0.141,
+     "lab": [
+      9.7,
+      5.1,
+      9.7
+     ],
+     "chroma": 11.0,
+     "hue_deg": 62.3,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#E79848",
+     "hex_mean": "#E59A49",
+     "share": 0.133,
+     "lab": [
+      69.8,
+      20.6,
+      52.6
+     ],
+     "chroma": 56.5,
+     "hue_deg": 68.7,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#A63211",
+     "hex_mean": "#A63313",
+     "share": 0.1,
+     "lab": [
+      39.0,
+      44.9,
+      43.4
+     ],
+     "chroma": 62.4,
+     "hue_deg": 44.0,
+     "hue_band": "red-orange"
+    }
+   ]
+  },
+  "assets/share/iris-sparade-platsen/assets/S4A.webp": {
+   "family": "storybook",
+   "role": "sample-book scene S4A",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#DCBB8D",
+     "hex_mean": "#D7B88C",
+     "share": 0.263,
+     "lab": [
+      76.6,
+      4.6,
+      26.8
+     ],
+     "chroma": 27.2,
+     "hue_deg": 80.4,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#F7EDD6",
+     "hex_mean": "#F2E7CF",
+     "share": 0.232,
+     "lab": [
+      92.1,
+      -0.1,
+      13.2
+     ],
+     "chroma": 13.2,
+     "hue_deg": 90.6,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#91673B",
+     "hex_mean": "#90653D",
+     "share": 0.201,
+     "lab": [
+      46.6,
+      12.8,
+      29.7
+     ],
+     "chroma": 32.4,
+     "hue_deg": 66.7,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#C95830",
+     "hex_mean": "#C65635",
+     "share": 0.108,
+     "lab": [
+      50.9,
+      41.8,
+      40.1
+     ],
+     "chroma": 57.9,
+     "hue_deg": 43.9,
+     "hue_band": "red-orange"
+    },
+    {
+     "hex": "#453827",
+     "hex_mean": "#443E34",
+     "share": 0.099,
+     "lab": [
+      26.4,
+      2.2,
+      7.7
+     ],
+     "chroma": 8.0,
+     "hue_deg": 74.2,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#939342",
+     "hex_mean": "#919244",
+     "share": 0.097,
+     "lab": [
+      58.8,
+      -11.5,
+      40.4
+     ],
+     "chroma": 42.0,
+     "hue_deg": 105.9,
+     "hue_band": "green"
+    }
+   ]
+  },
+  "assets/share/iris-sparade-platsen/assets/S4B.webp": {
+   "family": "storybook",
+   "role": "sample-book scene S4B",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#EBD3AE",
+     "hex_mean": "#E6CEA8",
+     "share": 0.223,
+     "lab": [
+      83.8,
+      2.5,
+      22.2
+     ],
+     "chroma": 22.3,
+     "hue_deg": 83.6,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#BA742B",
+     "hex_mean": "#BE732A",
+     "share": 0.208,
+     "lab": [
+      55.5,
+      23.5,
+      49.9
+     ],
+     "chroma": 55.1,
+     "hue_deg": 64.8,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#C29F64",
+     "hex_mean": "#BD9D61",
+     "share": 0.179,
+     "lab": [
+      66.2,
+      4.4,
+      35.7
+     ],
+     "chroma": 36.0,
+     "hue_deg": 83.0,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#2B2513",
+     "hex_mean": "#2C2719",
+     "share": 0.171,
+     "lab": [
+      15.7,
+      0.2,
+      9.4
+     ],
+     "chroma": 9.4,
+     "hue_deg": 89.0,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#6B4918",
+     "hex_mean": "#6A4A1B",
+     "share": 0.13,
+     "lab": [
+      34.2,
+      8.6,
+      32.1
+     ],
+     "chroma": 33.3,
+     "hue_deg": 75.0,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#B02F2B",
+     "hex_mean": "#AD312C",
+     "share": 0.09,
+     "lab": [
+      40.0,
+      49.7,
+      32.5
+     ],
+     "chroma": 59.4,
+     "hue_deg": 33.2,
+     "hue_band": "red-orange"
+    }
+   ]
+  },
+  "assets/share/iris-sparade-platsen/assets/S5AA.webp": {
+   "family": "storybook",
+   "role": "sample-book scene S5AA",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#6D591E",
+     "hex_mean": "#6C591F",
+     "share": 0.282,
+     "lab": [
+      38.7,
+      0.8,
+      35.1
+     ],
+     "chroma": 35.1,
+     "hue_deg": 88.8,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#2D200F",
+     "hex_mean": "#2E2212",
+     "share": 0.207,
+     "lab": [
+      14.2,
+      3.4,
+      12.2
+     ],
+     "chroma": 12.7,
+     "hue_deg": 74.6,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#774616",
+     "hex_mean": "#764616",
+     "share": 0.2,
+     "lab": [
+      34.6,
+      16.6,
+      35.6
+     ],
+     "chroma": 39.3,
+     "hue_deg": 64.9,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#CA964E",
+     "hex_mean": "#C4944C",
+     "share": 0.131,
+     "lab": [
+      64.5,
+      10.5,
+      44.5
+     ],
+     "chroma": 45.7,
+     "hue_deg": 76.7,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#C66B25",
+     "hex_mean": "#C46C27",
+     "share": 0.099,
+     "lab": [
+      54.7,
+      30.1,
+      51.1
+     ],
+     "chroma": 59.3,
+     "hue_deg": 59.5,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#881D1B",
+     "hex_mean": "#87201D",
+     "share": 0.081,
+     "lab": [
+      30.1,
+      42.7,
+      28.5
+     ],
+     "chroma": 51.3,
+     "hue_deg": 33.7,
+     "hue_band": "red-orange"
+    }
+   ]
+  },
+  "assets/share/iris-sparade-platsen/assets/S5AB.webp": {
+   "family": "storybook",
+   "role": "sample-book scene S5AB",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#785B22",
+     "hex_mean": "#775B26",
+     "share": 0.258,
+     "lab": [
+      40.6,
+      5.2,
+      34.0
+     ],
+     "chroma": 34.4,
+     "hue_deg": 81.3,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#BB9046",
+     "hex_mean": "#BB9046",
+     "share": 0.256,
+     "lab": [
+      62.8,
+      8.0,
+      44.9
+     ],
+     "chroma": 45.6,
+     "hue_deg": 79.9,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#322515",
+     "hex_mean": "#33291C",
+     "share": 0.16,
+     "lab": [
+      17.3,
+      2.8,
+      10.1
+     ],
+     "chroma": 10.5,
+     "hue_deg": 74.2,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#C36524",
+     "hex_mean": "#C06626",
+     "share": 0.136,
+     "lab": [
+      52.9,
+      31.3,
+      49.6
+     ],
+     "chroma": 58.7,
+     "hue_deg": 57.8,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#EEC588",
+     "hex_mean": "#EBC995",
+     "share": 0.101,
+     "lab": [
+      82.8,
+      4.9,
+      30.6
+     ],
+     "chroma": 31.0,
+     "hue_deg": 80.9,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#B02A27",
+     "hex_mean": "#AC2C29",
+     "share": 0.09,
+     "lab": [
+      39.2,
+      50.9,
+      33.7
+     ],
+     "chroma": 61.0,
+     "hue_deg": 33.5,
+     "hue_band": "red-orange"
+    }
+   ]
+  },
+  "assets/share/iris-sparade-platsen/assets/S5BA.webp": {
+   "family": "storybook",
+   "role": "sample-book scene S5BA",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#E5C399",
+     "hex_mean": "#DBBE96",
+     "share": 0.37,
+     "lab": [
+      78.6,
+      4.6,
+      24.2
+     ],
+     "chroma": 24.6,
+     "hue_deg": 79.3,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#E7974B",
+     "hex_mean": "#E2964A",
+     "share": 0.191,
+     "lab": [
+      68.5,
+      21.8,
+      50.3
+     ],
+     "chroma": 54.8,
+     "hue_deg": 66.5,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#1E140B",
+     "hex_mean": "#20160E",
+     "share": 0.153,
+     "lab": [
+      8.7,
+      3.5,
+      6.2
+     ],
+     "chroma": 7.2,
+     "hue_deg": 60.7,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#925B20",
+     "hex_mean": "#945C26",
+     "share": 0.128,
+     "lab": [
+      44.7,
+      18.2,
+      39.5
+     ],
+     "chroma": 43.5,
+     "hue_deg": 65.3,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#573211",
+     "hex_mean": "#573114",
+     "share": 0.105,
+     "lab": [
+      25.0,
+      14.1,
+      25.3
+     ],
+     "chroma": 29.0,
+     "hue_deg": 60.9,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#99261F",
+     "hex_mean": "#9C2921",
+     "share": 0.053,
+     "lab": [
+      35.4,
+      46.5,
+      33.1
+     ],
+     "chroma": 57.1,
+     "hue_deg": 35.4,
+     "hue_band": "red-orange"
+    }
+   ]
+  },
+  "assets/share/iris-sparade-platsen/assets/S5BB.webp": {
+   "family": "storybook",
+   "role": "sample-book scene S5BB",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#EFCE9C",
+     "hex_mean": "#E7C89B",
+     "share": 0.302,
+     "lab": [
+      82.2,
+      4.3,
+      26.9
+     ],
+     "chroma": 27.2,
+     "hue_deg": 80.9,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#D28B3D",
+     "hex_mean": "#D28D40",
+     "share": 0.222,
+     "lab": [
+      64.2,
+      19.4,
+      50.2
+     ],
+     "chroma": 53.8,
+     "hue_deg": 68.9,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#2B1C0D",
+     "hex_mean": "#2D1E0F",
+     "share": 0.169,
+     "lab": [
+      12.7,
+      5.0,
+      11.5
+     ],
+     "chroma": 12.5,
+     "hue_deg": 66.5,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#7E4B1B",
+     "hex_mean": "#7C4C1F",
+     "share": 0.137,
+     "lab": [
+      37.1,
+      16.1,
+      33.9
+     ],
+     "chroma": 37.5,
+     "hue_deg": 64.6,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#C76214",
+     "hex_mean": "#C66116",
+     "share": 0.096,
+     "lab": [
+      52.5,
+      35.8,
+      55.6
+     ],
+     "chroma": 66.2,
+     "hue_deg": 57.2,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#B02625",
+     "hex_mean": "#AA2826",
+     "share": 0.074,
+     "lab": [
+      38.3,
+      51.5,
+      34.2
+     ],
+     "chroma": 61.9,
+     "hue_deg": 33.6,
+     "hue_band": "red-orange"
+    }
+   ]
+  },
+  "assets/share/iris-sparade-platsen/assets/S6AA.webp": {
+   "family": "storybook",
+   "role": "sample-book scene S6AA",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#56401B",
+     "hex_mean": "#56401E",
+     "share": 0.334,
+     "lab": [
+      29.0,
+      5.1,
+      24.6
+     ],
+     "chroma": 25.1,
+     "hue_deg": 78.3,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#805E27",
+     "hex_mean": "#815F29",
+     "share": 0.222,
+     "lab": [
+      42.7,
+      8.2,
+      35.3
+     ],
+     "chroma": 36.3,
+     "hue_deg": 76.9,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#2B2515",
+     "hex_mean": "#2B261B",
+     "share": 0.163,
+     "lab": [
+      15.5,
+      0.2,
+      8.1
+     ],
+     "chroma": 8.1,
+     "hue_deg": 88.7,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#BC7C36",
+     "hex_mean": "#BE7C35",
+     "share": 0.108,
+     "lab": [
+      57.6,
+      19.4,
+      47.1
+     ],
+     "chroma": 50.9,
+     "hue_deg": 67.5,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#AA2E19",
+     "hex_mean": "#A7311A",
+     "share": 0.087,
+     "lab": [
+      38.7,
+      46.5,
+      39.9
+     ],
+     "chroma": 61.3,
+     "hue_deg": 40.6,
+     "hue_band": "red-orange"
+    },
+    {
+     "hex": "#48545E",
+     "hex_mean": "#4D5865",
+     "share": 0.086,
+     "lab": [
+      36.8,
+      -0.6,
+      -9.0
+     ],
+     "chroma": 9.0,
+     "hue_deg": 266.1,
+     "hue_band": "blue"
+    }
+   ]
+  },
+  "assets/share/iris-sparade-platsen/assets/S6AB.webp": {
+   "family": "storybook",
+   "role": "sample-book scene S6AB",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#927735",
+     "hex_mean": "#907637",
+     "share": 0.266,
+     "lab": [
+      51.0,
+      2.4,
+      38.1
+     ],
+     "chroma": 38.2,
+     "hue_deg": 86.4,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#261F10",
+     "hex_mean": "#282217",
+     "share": 0.19,
+     "lab": [
+      13.6,
+      1.5,
+      7.6
+     ],
+     "chroma": 7.7,
+     "hue_deg": 79.0,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#C6A166",
+     "hex_mean": "#C6A269",
+     "share": 0.182,
+     "lab": [
+      68.6,
+      6.0,
+      34.3
+     ],
+     "chroma": 34.8,
+     "hue_deg": 80.0,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#5F4E1C",
+     "hex_mean": "#5E4C1D",
+     "share": 0.173,
+     "lab": [
+      33.3,
+      1.4,
+      29.8
+     ],
+     "chroma": 29.8,
+     "hue_deg": 87.3,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#C16B25",
+     "hex_mean": "#BE6D2A",
+     "share": 0.114,
+     "lab": [
+      54.1,
+      27.1,
+      48.8
+     ],
+     "chroma": 55.8,
+     "hue_deg": 60.9,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#A92D2A",
+     "hex_mean": "#A52D2A",
+     "share": 0.074,
+     "lab": [
+      37.8,
+      48.0,
+      31.2
+     ],
+     "chroma": 57.2,
+     "hue_deg": 33.0,
+     "hue_band": "red-orange"
+    }
+   ]
+  },
+  "assets/share/iris-sparade-platsen/assets/S6BA.webp": {
+   "family": "storybook",
+   "role": "sample-book scene S6BA",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#342C18",
+     "hex_mean": "#373127",
+     "share": 0.232,
+     "lab": [
+      20.7,
+      1.1,
+      7.9
+     ],
+     "chroma": 7.9,
+     "hue_deg": 81.7,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#CB7B28",
+     "hex_mean": "#C87926",
+     "share": 0.222,
+     "lab": [
+      58.1,
+      24.6,
+      54.6
+     ],
+     "chroma": 59.9,
+     "hue_deg": 65.7,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#725620",
+     "hex_mean": "#725620",
+     "share": 0.192,
+     "lab": [
+      38.6,
+      5.4,
+      34.8
+     ],
+     "chroma": 35.2,
+     "hue_deg": 81.2,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#EEB65B",
+     "hex_mean": "#E9B65D",
+     "share": 0.189,
+     "lab": [
+      76.9,
+      9.2,
+      51.5
+     ],
+     "chroma": 52.3,
+     "hue_deg": 79.9,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#AD2B1A",
+     "hex_mean": "#AB2E1A",
+     "share": 0.084,
+     "lab": [
+      39.3,
+      48.4,
+      40.8
+     ],
+     "chroma": 63.3,
+     "hue_deg": 40.2,
+     "hue_band": "red-orange"
+    },
+    {
+     "hex": "#AE9B80",
+     "hex_mean": "#B6A78A",
+     "share": 0.082,
+     "lab": [
+      68.8,
+      0.7,
+      16.8
+     ],
+     "chroma": 16.8,
+     "hue_deg": 87.5,
+     "hue_band": "yellow-olive"
+    }
+   ]
+  },
+  "assets/share/iris-sparade-platsen/assets/S6BB.webp": {
+   "family": "storybook",
+   "role": "sample-book scene S6BB",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#72511F",
+     "hex_mean": "#735121",
+     "share": 0.244,
+     "lab": [
+      37.2,
+      8.7,
+      33.0
+     ],
+     "chroma": 34.1,
+     "hue_deg": 75.3,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#B37A31",
+     "hex_mean": "#B57830",
+     "share": 0.207,
+     "lab": [
+      55.5,
+      17.5,
+      47.0
+     ],
+     "chroma": 50.2,
+     "hue_deg": 69.6,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#322813",
+     "hex_mean": "#332B1E",
+     "share": 0.202,
+     "lab": [
+      17.9,
+      1.9,
+      9.1
+     ],
+     "chroma": 9.3,
+     "hue_deg": 78.2,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#D4A45F",
+     "hex_mean": "#D3A45E",
+     "share": 0.198,
+     "lab": [
+      70.2,
+      9.2,
+      42.6
+     ],
+     "chroma": 43.6,
+     "hue_deg": 77.8,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#B73D14",
+     "hex_mean": "#B23F1C",
+     "share": 0.089,
+     "lab": [
+      43.2,
+      44.5,
+      43.5
+     ],
+     "chroma": 62.3,
+     "hue_deg": 44.3,
+     "hue_band": "red-orange"
+    },
+    {
+     "hex": "#FCEAA6",
+     "hex_mean": "#FBE7A6",
+     "share": 0.06,
+     "lab": [
+      92.0,
+      -2.6,
+      34.3
+     ],
+     "chroma": 34.4,
+     "hue_deg": 94.3,
+     "hue_band": "yellow-olive"
+    }
+   ]
+  },
+  "assets/assets/cover-tornet.webp": {
+   "family": "storybook-alva",
+   "role": "demo cover: Alva och fyraljuset i tornet",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#D7E3E6",
+     "hex_mean": "#D9E2E4",
+     "share": 0.278,
+     "lab": [
+      89.3,
+      -2.8,
+      -1.8
+     ],
+     "chroma": 3.4,
+     "hue_deg": 212.9,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#6C6447",
+     "hex_mean": "#6C6346",
+     "share": 0.189,
+     "lab": [
+      42.2,
+      -1.2,
+      18.0
+     ],
+     "chroma": 18.1,
+     "hue_deg": 94.0,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#9D916E",
+     "hex_mean": "#9E946D",
+     "share": 0.152,
+     "lab": [
+      61.5,
+      -2.3,
+      22.1
+     ],
+     "chroma": 22.2,
+     "hue_deg": 96.0,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#B3B3A5",
+     "hex_mean": "#B4B3A6",
+     "share": 0.142,
+     "lab": [
+      72.6,
+      -2.0,
+      6.6
+     ],
+     "chroma": 6.9,
+     "hue_deg": 106.6,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#777970",
+     "hex_mean": "#757872",
+     "share": 0.123,
+     "lab": [
+      50.0,
+      -2.0,
+      3.4
+     ],
+     "chroma": 4.0,
+     "hue_deg": 120.5,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#3E3B29",
+     "hex_mean": "#3D382A",
+     "share": 0.116,
+     "lab": [
+      23.8,
+      -0.4,
+      10.1
+     ],
+     "chroma": 10.1,
+     "hue_deg": 92.1,
+     "hue_band": "yellow-olive"
+    }
+   ]
+  },
+  "assets/assets/cover-filten.webp": {
+   "family": "storybook-alva",
+   "role": "demo cover: Alva och filten vid elementet",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#F9DD94",
+     "hex_mean": "#F4D895",
+     "share": 0.332,
+     "lab": [
+      87.2,
+      0.8,
+      36.7
+     ],
+     "chroma": 36.7,
+     "hue_deg": 88.8,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#EBE9DA",
+     "hex_mean": "#E4E3D8",
+     "share": 0.186,
+     "lab": [
+      89.9,
+      -1.4,
+      5.6
+     ],
+     "chroma": 5.8,
+     "hue_deg": 103.8,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#BA976A",
+     "hex_mean": "#B79266",
+     "share": 0.17,
+     "lab": [
+      62.7,
+      8.5,
+      28.4
+     ],
+     "chroma": 29.6,
+     "hue_deg": 73.4,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#697675",
+     "hex_mean": "#687978",
+     "share": 0.118,
+     "lab": [
+      49.6,
+      -5.1,
+      -0.9
+     ],
+     "chroma": 5.2,
+     "hue_deg": 190.0,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#3D3A33",
+     "hex_mean": "#3C3731",
+     "share": 0.108,
+     "lab": [
+      23.4,
+      1.8,
+      4.4
+     ],
+     "chroma": 4.8,
+     "hue_deg": 68.3,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#903933",
+     "hex_mean": "#923B38",
+     "share": 0.085,
+     "lab": [
+      37.0,
+      35.9,
+      21.0
+     ],
+     "chroma": 41.6,
+     "hue_deg": 30.3,
+     "hue_band": "red-orange"
+    }
+   ]
+  },
+  "assets/assets/avatar-noah.jpg": {
+   "family": "storybook-alva",
+   "role": "friend avatar \"Noah\" (red-hat girl)",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#EFF4F4",
+     "hex_mean": "#EBEFEF",
+     "share": 0.24,
+     "lab": [
+      94.2,
+      -1.4,
+      -0.5
+     ],
+     "chroma": 1.5,
+     "hue_deg": 198.0,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#9A392D",
+     "hex_mean": "#9A3D31",
+     "share": 0.19,
+     "lab": [
+      38.5,
+      37.8,
+      27.3
+     ],
+     "chroma": 46.6,
+     "hue_deg": 35.8,
+     "hue_band": "red-orange"
+    },
+    {
+     "hex": "#7C634B",
+     "hex_mean": "#7A644C",
+     "share": 0.173,
+     "lab": [
+      44.0,
+      5.5,
+      17.1
+     ],
+     "chroma": 18.0,
+     "hue_deg": 72.1,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#ECBFA7",
+     "hex_mean": "#E2BFA6",
+     "share": 0.148,
+     "lab": [
+      79.9,
+      9.0,
+      17.6
+     ],
+     "chroma": 19.7,
+     "hue_deg": 63.0,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#342414",
+     "hex_mean": "#342515",
+     "share": 0.131,
+     "lab": [
+      16.4,
+      5.0,
+      12.2
+     ],
+     "chroma": 13.2,
+     "hue_deg": 67.6,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#84975E",
+     "hex_mean": "#80935C",
+     "share": 0.118,
+     "lab": [
+      58.0,
+      -16.3,
+      26.7
+     ],
+     "chroma": 31.3,
+     "hue_deg": 121.4,
+     "hue_band": "green"
+    }
+   ]
+  },
+  "assets/assets/avatar-sixten.jpg": {
+   "family": "storybook-alva",
+   "role": "friend avatar Sixten (arctic fox)",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#81725E",
+     "hex_mean": "#81725F",
+     "share": 0.248,
+     "lab": [
+      48.8,
+      2.8,
+      12.9
+     ],
+     "chroma": 13.2,
+     "hue_deg": 77.7,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#A7957A",
+     "hex_mean": "#A9987A",
+     "share": 0.201,
+     "lab": [
+      63.4,
+      1.7,
+      18.1
+     ],
+     "chroma": 18.2,
+     "hue_deg": 84.5,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#F2EFE8",
+     "hex_mean": "#ECEAE4",
+     "share": 0.194,
+     "lab": [
+      92.6,
+      -0.2,
+      3.0
+     ],
+     "chroma": 3.0,
+     "hue_deg": 93.5,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#5B4E3D",
+     "hex_mean": "#5A4D3C",
+     "share": 0.165,
+     "lab": [
+      33.3,
+      2.5,
+      12.1
+     ],
+     "chroma": 12.4,
+     "hue_deg": 78.2,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#B5B4B1",
+     "hex_mean": "#B1B0B0",
+     "share": 0.111,
+     "lab": [
+      71.8,
+      0.1,
+      0.3
+     ],
+     "chroma": 0.3,
+     "hue_deg": 70.0,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#292012",
+     "hex_mean": "#281F13",
+     "share": 0.081,
+     "lab": [
+      12.5,
+      2.3,
+      8.5
+     ],
+     "chroma": 8.8,
+     "hue_deg": 74.8,
+     "hue_band": "yellow-olive"
+    }
+   ]
+  },
+  "assets/landing/iris/hero-portrait.webp": {
+   "family": "storybook",
+   "role": "landing step 1 hero portrait (Iris)",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#FEF5E4",
+     "hex_mean": "#FDF4E2",
+     "share": 0.696,
+     "lab": [
+      96.3,
+      0.2,
+      9.5
+     ],
+     "chroma": 9.5,
+     "hue_deg": 88.5,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#E04044",
+     "hex_mean": "#D83F42",
+     "share": 0.14,
+     "lab": [
+      50.2,
+      59.2,
+      34.1
+     ],
+     "chroma": 68.3,
+     "hue_deg": 29.9,
+     "hue_band": "red-orange"
+    },
+    {
+     "hex": "#3A2515",
+     "hex_mean": "#3B2718",
+     "share": 0.056,
+     "lab": [
+      17.8,
+      6.8,
+      13.5
+     ],
+     "chroma": 15.1,
+     "hue_deg": 63.1,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#EDA641",
+     "hex_mean": "#E7A543",
+     "share": 0.048,
+     "lab": [
+      72.4,
+      16.0,
+      56.8
+     ],
+     "chroma": 59.0,
+     "hue_deg": 74.3,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#9D6E4B",
+     "hex_mean": "#9E7250",
+     "share": 0.031,
+     "lab": [
+      51.7,
+      13.7,
+      26.2
+     ],
+     "chroma": 29.5,
+     "hue_deg": 62.4,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#4D5F6C",
+     "hex_mean": "#50616D",
+     "share": 0.03,
+     "lab": [
+      40.0,
+      -3.4,
+      -8.7
+     ],
+     "chroma": 9.3,
+     "hue_deg": 248.7,
+     "hue_band": "blue"
+    }
+   ]
+  },
+  "assets/landing/iris/scene-choice.webp": {
+   "family": "storybook",
+   "role": "landing step 4 reader mock (= S2 downscaled)",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#CC9958",
+     "hex_mean": "#CD9B58",
+     "share": 0.272,
+     "lab": [
+      67.5,
+      11.0,
+      42.1
+     ],
+     "chroma": 43.5,
+     "hue_deg": 75.4,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#9D7336",
+     "hex_mean": "#9D7237",
+     "share": 0.245,
+     "lab": [
+      51.5,
+      10.5,
+      38.8
+     ],
+     "chroma": 40.1,
+     "hue_deg": 74.9,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#6F4D21",
+     "hex_mean": "#6E4E23",
+     "share": 0.199,
+     "lab": [
+      35.8,
+      8.7,
+      30.1
+     ],
+     "chroma": 31.3,
+     "hue_deg": 73.9,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#F4E2C6",
+     "hex_mean": "#F2DEBE",
+     "share": 0.133,
+     "lab": [
+      89.2,
+      2.0,
+      18.2
+     ],
+     "chroma": 18.3,
+     "hue_deg": 83.6,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#342613",
+     "hex_mean": "#362A1B",
+     "share": 0.076,
+     "lab": [
+      18.1,
+      3.0,
+      11.5
+     ],
+     "chroma": 11.9,
+     "hue_deg": 75.3,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#B33125",
+     "hex_mean": "#B03627",
+     "share": 0.075,
+     "lab": [
+      41.6,
+      47.8,
+      37.1
+     ],
+     "chroma": 60.5,
+     "hue_deg": 37.8,
+     "hue_band": "red-orange"
+    }
+   ]
+  },
+  "assets/landing/iris/cover-thumb.webp": {
+   "family": "storybook",
+   "role": "landing map cover thumb (= cover downscaled)",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#B67C29",
+     "hex_mean": "#BA7B2C",
+     "share": 0.263,
+     "lab": [
+      57.0,
+      17.6,
+      50.4
+     ],
+     "chroma": 53.4,
+     "hue_deg": 70.7,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#705E1E",
+     "hex_mean": "#725F20",
+     "share": 0.221,
+     "lab": [
+      40.9,
+      0.3,
+      37.4
+     ],
+     "chroma": 37.4,
+     "hue_deg": 89.5,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#75430F",
+     "hex_mean": "#774411",
+     "share": 0.178,
+     "lab": [
+      34.0,
+      18.0,
+      37.2
+     ],
+     "chroma": 41.3,
+     "hue_deg": 64.2,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#EFB959",
+     "hex_mean": "#EBBA5D",
+     "share": 0.17,
+     "lab": [
+      78.3,
+      7.8,
+      52.3
+     ],
+     "chroma": 52.9,
+     "hue_deg": 81.5,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#3E3112",
+     "hex_mean": "#3E3018",
+     "share": 0.103,
+     "lab": [
+      20.7,
+      3.3,
+      16.7
+     ],
+     "chroma": 17.0,
+     "hue_deg": 78.7,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#BC2E29",
+     "hex_mean": "#B83029",
+     "share": 0.066,
+     "lab": [
+      42.2,
+      53.1,
+      37.3
+     ],
+     "chroma": 64.8,
+     "hue_deg": 35.1,
+     "hue_band": "red-orange"
+    }
+   ]
+  },
+  "assets/landing/iris/ending-1.webp": {
+   "family": "storybook",
+   "role": "ending medallion 1 (= S6AA centre square)",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#635325",
+     "hex_mean": "#685628",
+     "share": 0.29,
+     "lab": [
+      37.1,
+      1.3,
+      28.7
+     ],
+     "chroma": 28.8,
+     "hue_deg": 87.4,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#2D2414",
+     "hex_mean": "#2E2617",
+     "share": 0.214,
+     "lab": [
+      15.6,
+      1.8,
+      10.5
+     ],
+     "chroma": 10.6,
+     "hue_deg": 80.0,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#683D17",
+     "hex_mean": "#693C17",
+     "share": 0.174,
+     "lab": [
+      30.2,
+      16.8,
+      30.0
+     ],
+     "chroma": 34.4,
+     "hue_deg": 60.7,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#B67833",
+     "hex_mean": "#B97934",
+     "share": 0.143,
+     "lab": [
+      56.4,
+      18.9,
+      45.7
+     ],
+     "chroma": 49.4,
+     "hue_deg": 67.5,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#AE2E1D",
+     "hex_mean": "#AC311E",
+     "share": 0.103,
+     "lab": [
+      39.8,
+      48.2,
+      39.0
+     ],
+     "chroma": 62.0,
+     "hue_deg": 39.0,
+     "hue_band": "red-orange"
+    },
+    {
+     "hex": "#495058",
+     "hex_mean": "#4C555E",
+     "share": 0.076,
+     "lab": [
+      35.5,
+      -0.8,
+      -6.6
+     ],
+     "chroma": 6.6,
+     "hue_deg": 263.1,
+     "hue_band": "neutral"
+    }
+   ]
+  },
+  "assets/landing/iris/ending-2.webp": {
+   "family": "storybook",
+   "role": "ending medallion 2 (= S6AB centre square)",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#AC9054",
+     "hex_mean": "#B09255",
+     "share": 0.241,
+     "lab": [
+      62.0,
+      3.1,
+      36.1
+     ],
+     "chroma": 36.3,
+     "hue_deg": 85.0,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#261F12",
+     "hex_mean": "#272219",
+     "share": 0.212,
+     "lab": [
+      13.7,
+      1.2,
+      6.3
+     ],
+     "chroma": 6.4,
+     "hue_deg": 79.5,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#7A662B",
+     "hex_mean": "#79662B",
+     "share": 0.205,
+     "lab": [
+      43.5,
+      0.4,
+      34.9
+     ],
+     "chroma": 34.9,
+     "hue_deg": 89.3,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#C06E30",
+     "hex_mean": "#BE7031",
+     "share": 0.143,
+     "lab": [
+      54.6,
+      25.9,
+      46.2
+     ],
+     "chroma": 53.0,
+     "hue_deg": 60.7,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#4E3C15",
+     "hex_mean": "#503B16",
+     "share": 0.127,
+     "lab": [
+      26.2,
+      5.0,
+      25.3
+     ],
+     "chroma": 25.8,
+     "hue_deg": 78.9,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#B5332F",
+     "hex_mean": "#AD312D",
+     "share": 0.072,
+     "lab": [
+      40.1,
+      49.5,
+      32.3
+     ],
+     "chroma": 59.1,
+     "hue_deg": 33.1,
+     "hue_band": "red-orange"
+    }
+   ]
+  },
+  "assets/landing/iris/ending-3.webp": {
+   "family": "storybook",
+   "role": "ending medallion 3 (= S6BA centre square)",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#332817",
+     "hex_mean": "#342C1F",
+     "share": 0.274,
+     "lab": [
+      18.4,
+      2.3,
+      9.3
+     ],
+     "chroma": 9.6,
+     "hue_deg": 75.9,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#71511D",
+     "hex_mean": "#72511D",
+     "share": 0.195,
+     "lab": [
+      37.0,
+      8.0,
+      34.5
+     ],
+     "chroma": 35.4,
+     "hue_deg": 77.0,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#EFB65F",
+     "hex_mean": "#ECB661",
+     "share": 0.183,
+     "lab": [
+      77.4,
+      10.6,
+      49.8
+     ],
+     "chroma": 51.0,
+     "hue_deg": 77.9,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#C66E1C",
+     "hex_mean": "#C46E1F",
+     "share": 0.174,
+     "lab": [
+      55.2,
+      28.6,
+      53.9
+     ],
+     "chroma": 61.0,
+     "hue_deg": 62.1,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#AD271F",
+     "hex_mean": "#AA281E",
+     "share": 0.098,
+     "lab": [
+      38.3,
+      50.8,
+      37.9
+     ],
+     "chroma": 63.4,
+     "hue_deg": 36.8,
+     "hue_band": "red-orange"
+    },
+    {
+     "hex": "#A1947C",
+     "hex_mean": "#A3977F",
+     "share": 0.076,
+     "lab": [
+      62.8,
+      0.5,
+      14.5
+     ],
+     "chroma": 14.5,
+     "hue_deg": 88.2,
+     "hue_band": "yellow-olive"
+    }
+   ]
+  },
+  "assets/landing/iris/ending-4.webp": {
+   "family": "storybook",
+   "role": "ending medallion 4 (= S6BB centre square)",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#CC9450",
+     "hex_mean": "#CC964F",
+     "share": 0.284,
+     "lab": [
+      65.8,
+      12.9,
+      44.4
+     ],
+     "chroma": 46.3,
+     "hue_deg": 73.8,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#785522",
+     "hex_mean": "#785424",
+     "share": 0.206,
+     "lab": [
+      38.7,
+      9.7,
+      33.3
+     ],
+     "chroma": 34.7,
+     "hue_deg": 73.7,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#32200E",
+     "hex_mean": "#33210F",
+     "share": 0.201,
+     "lab": [
+      14.5,
+      6.0,
+      14.2
+     ],
+     "chroma": 15.5,
+     "hue_deg": 67.1,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#BB621A",
+     "hex_mean": "#BC6320",
+     "share": 0.119,
+     "lab": [
+      51.6,
+      31.5,
+      50.0
+     ],
+     "chroma": 59.2,
+     "hue_deg": 57.8,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#383D38",
+     "hex_mean": "#3A3F3A",
+     "share": 0.108,
+     "lab": [
+      26.0,
+      -3.3,
+      2.3
+     ],
+     "chroma": 4.1,
+     "hue_deg": 144.7,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#9F2C1E",
+     "hex_mean": "#A22E1F",
+     "share": 0.082,
+     "lab": [
+      37.5,
+      46.3,
+      36.1
+     ],
+     "chroma": 58.7,
+     "hue_deg": 38.0,
+     "hue_band": "red-orange"
+    }
+   ]
+  },
+  "assets/landing/voice/narrator-morfar.webp": {
+   "family": "vignette",
+   "role": "narrator chip: Morfar Erik",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#FAF8F2",
+     "hex_mean": "#F5F4EE",
+     "share": 0.531,
+     "lab": [
+      96.1,
+      -0.6,
+      3.0
+     ],
+     "chroma": 3.0,
+     "hue_deg": 101.0,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#F2D6B6",
+     "hex_mean": "#EED5B6",
+     "share": 0.161,
+     "lab": [
+      86.6,
+      4.3,
+      18.4
+     ],
+     "chroma": 18.9,
+     "hue_deg": 76.9,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#D5A358",
+     "hex_mean": "#D5A359",
+     "share": 0.127,
+     "lab": [
+      70.2,
+      10.5,
+      44.9
+     ],
+     "chroma": 46.1,
+     "hue_deg": 76.9,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#C99B7C",
+     "hex_mean": "#C99A7C",
+     "share": 0.078,
+     "lab": [
+      67.5,
+      13.2,
+      22.7
+     ],
+     "chroma": 26.2,
+     "hue_deg": 59.9,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#A06B31",
+     "hex_mean": "#9A6631",
+     "share": 0.072,
+     "lab": [
+      47.8,
+      15.8,
+      37.0
+     ],
+     "chroma": 40.3,
+     "hue_deg": 66.9,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#88868F",
+     "hex_mean": "#85848A",
+     "share": 0.031,
+     "lab": [
+      55.2,
+      2.5,
+      -3.2
+     ],
+     "chroma": 4.1,
+     "hue_deg": 308.8,
+     "hue_band": "neutral"
+    }
+   ]
+  },
+  "derived/brand/narrators/portrait-grandpa.jpg": {
+   "family": "vignette",
+   "role": "narrator portrait grandpa (fetched by brand agent)",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#FAF8F2",
+     "hex_mean": "#F5F4EE",
+     "share": 0.534,
+     "lab": [
+      96.1,
+      -0.8,
+      3.1
+     ],
+     "chroma": 3.2,
+     "hue_deg": 105.3,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#F3D6B6",
+     "hex_mean": "#EFD5B6",
+     "share": 0.158,
+     "lab": [
+      86.6,
+      4.4,
+      18.7
+     ],
+     "chroma": 19.3,
+     "hue_deg": 76.7,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#D3A055",
+     "hex_mean": "#D4A056",
+     "share": 0.136,
+     "lab": [
+      69.3,
+      11.0,
+      45.3
+     ],
+     "chroma": 46.6,
+     "hue_deg": 76.3,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#CD9C7C",
+     "hex_mean": "#CC9B7C",
+     "share": 0.074,
+     "lab": [
+      68.0,
+      14.3,
+      23.4
+     ],
+     "chroma": 27.4,
+     "hue_deg": 58.6,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#9B6630",
+     "hex_mean": "#956131",
+     "share": 0.067,
+     "lab": [
+      45.8,
+      16.8,
+      34.6
+     ],
+     "chroma": 38.4,
+     "hue_deg": 64.1,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#898B96",
+     "hex_mean": "#868891",
+     "share": 0.031,
+     "lab": [
+      56.4,
+      1.9,
+      -4.8
+     ],
+     "chroma": 5.1,
+     "hue_deg": 291.3,
+     "hue_band": "neutral"
+    }
+   ]
+  },
+  "derived/brand/narrators/portrait-female.jpg": {
+   "family": "vignette",
+   "role": "narrator portrait female / Lily",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#FAF6EC",
+     "hex_mean": "#F8F1E3",
+     "share": 0.61,
+     "lab": [
+      95.2,
+      0.2,
+      7.6
+     ],
+     "chroma": 7.6,
+     "hue_deg": 88.9,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#352B2B",
+     "hex_mean": "#362B2A",
+     "share": 0.101,
+     "lab": [
+      18.6,
+      5.6,
+      2.5
+     ],
+     "chroma": 6.1,
+     "hue_deg": 23.7,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#DFA66E",
+     "hex_mean": "#DEA770",
+     "share": 0.096,
+     "lab": [
+      72.4,
+      13.9,
+      36.1
+     ],
+     "chroma": 38.7,
+     "hue_deg": 69.0,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#5E6672",
+     "hex_mean": "#5C6672",
+     "share": 0.076,
+     "lab": [
+      42.7,
+      -0.4,
+      -7.5
+     ],
+     "chroma": 7.6,
+     "hue_deg": 267.0,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#A0A7AB",
+     "hex_mean": "#A0A6A9",
+     "share": 0.062,
+     "lab": [
+      67.7,
+      -1.5,
+      -1.9
+     ],
+     "chroma": 2.4,
+     "hue_deg": 232.0,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#AA6844",
+     "hex_mean": "#A36443",
+     "share": 0.055,
+     "lab": [
+      48.5,
+      22.6,
+      29.2
+     ],
+     "chroma": 36.9,
+     "hue_deg": 52.3,
+     "hue_band": "orange-ochre"
+    }
+   ]
+  },
+  "derived/brand/narrators/portrait-male.jpg": {
+   "family": "vignette",
+   "role": "narrator portrait male / Marcus",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#FBF7EE",
+     "hex_mean": "#F6F4EB",
+     "share": 0.426,
+     "lab": [
+      96.2,
+      -1.0,
+      4.9
+     ],
+     "chroma": 5.0,
+     "hue_deg": 102.0,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#B2A373",
+     "hex_mean": "#B0A373",
+     "share": 0.159,
+     "lab": [
+      67.0,
+      -2.3,
+      26.8
+     ],
+     "chroma": 26.9,
+     "hue_deg": 95.0,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#877655",
+     "hex_mean": "#887558",
+     "share": 0.135,
+     "lab": [
+      50.5,
+      2.8,
+      18.9
+     ],
+     "chroma": 19.1,
+     "hue_deg": 81.5,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#EAD6B7",
+     "hex_mean": "#E6D4B6",
+     "share": 0.128,
+     "lab": [
+      85.7,
+      1.8,
+      16.9
+     ],
+     "chroma": 17.0,
+     "hue_deg": 83.9,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#4E3D2B",
+     "hex_mean": "#4B3B29",
+     "share": 0.082,
+     "lab": [
+      26.1,
+      4.5,
+      13.4
+     ],
+     "chroma": 14.1,
+     "hue_deg": 71.6,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#DFB681",
+     "hex_mean": "#DEB27F",
+     "share": 0.069,
+     "lab": [
+      75.7,
+      9.3,
+      32.1
+     ],
+     "chroma": 33.4,
+     "hue_deg": 73.8,
+     "hue_band": "yellow-olive"
+    }
+   ]
+  },
+  "derived/brand/narrators/portrait-young.jpg": {
+   "family": "vignette",
+   "role": "narrator portrait young / Saga",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#FAFAF5",
+     "hex_mean": "#F6F7F1",
+     "share": 0.356,
+     "lab": [
+      96.9,
+      -1.4,
+      2.6
+     ],
+     "chroma": 3.0,
+     "hue_deg": 118.3,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#FAE4C9",
+     "hex_mean": "#F8E1C6",
+     "share": 0.248,
+     "lab": [
+      90.8,
+      3.9,
+      16.1
+     ],
+     "chroma": 16.6,
+     "hue_deg": 76.4,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#F2A68B",
+     "hex_mean": "#EBA68B",
+     "share": 0.126,
+     "lab": [
+      74.1,
+      22.3,
+      24.3
+     ],
+     "chroma": 33.0,
+     "hue_deg": 47.5,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#C06D4D",
+     "hex_mean": "#C46D4E",
+     "share": 0.125,
+     "lab": [
+      55.2,
+      31.4,
+      32.2
+     ],
+     "chroma": 45.0,
+     "hue_deg": 45.7,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#853B21",
+     "hex_mean": "#823922",
+     "share": 0.111,
+     "lab": [
+      33.6,
+      29.4,
+      28.9
+     ],
+     "chroma": 41.2,
+     "hue_deg": 44.5,
+     "hue_band": "red-orange"
+    },
+    {
+     "hex": "#B7C8D1",
+     "hex_mean": "#B0C2CD",
+     "share": 0.035,
+     "lab": [
+      77.2,
+      -4.1,
+      -7.2
+     ],
+     "chroma": 8.3,
+     "hue_deg": 240.4,
+     "hue_band": "blue"
+    }
+   ]
+  },
+  "assets/landing/cover-next-book.webp": {
+   "family": "atmospheric-watercolour",
+   "role": "blank \"next book\" cover",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#39455E",
+     "hex_mean": "#37435C",
+     "share": 0.247,
+     "lab": [
+      28.4,
+      2.6,
+      -16.6
+     ],
+     "chroma": 16.8,
+     "hue_deg": 278.7,
+     "hue_band": "blue"
+    },
+    {
+     "hex": "#5B6171",
+     "hex_mean": "#5C616F",
+     "share": 0.178,
+     "lab": [
+      41.4,
+      1.1,
+      -8.2
+     ],
+     "chroma": 8.3,
+     "hue_deg": 277.9,
+     "hue_band": "blue"
+    },
+    {
+     "hex": "#AA9A7D",
+     "hex_mean": "#AB9A7C",
+     "share": 0.172,
+     "lab": [
+      64.3,
+      1.6,
+      18.1
+     ],
+     "chroma": 18.2,
+     "hue_deg": 85.0,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#E2C694",
+     "hex_mean": "#E1C694",
+     "share": 0.147,
+     "lab": [
+      80.9,
+      2.3,
+      28.6
+     ],
+     "chroma": 28.7,
+     "hue_deg": 85.3,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#85817C",
+     "hex_mean": "#86827A",
+     "share": 0.134,
+     "lab": [
+      54.6,
+      0.3,
+      4.8
+     ],
+     "chroma": 4.8,
+     "hue_deg": 86.2,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#C3A670",
+     "hex_mean": "#C4A56E",
+     "share": 0.121,
+     "lab": [
+      69.2,
+      4.2,
+      32.5
+     ],
+     "chroma": 32.7,
+     "hue_deg": 82.6,
+     "hue_band": "yellow-olive"
+    }
+   ]
+  },
+  "assets/landing/cards/pick-1.webp": {
+   "family": "painterly-card",
+   "role": "adventure card 1 = /cards/generated/lost-lantern-v1.webp",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#2F3745",
+     "hex_mean": "#303947",
+     "share": 0.227,
+     "lab": [
+      23.5,
+      1.1,
+      -10.3
+     ],
+     "chroma": 10.4,
+     "hue_deg": 276.1,
+     "hue_band": "blue"
+    },
+    {
+     "hex": "#272A22",
+     "hex_mean": "#272B22",
+     "share": 0.226,
+     "lab": [
+      16.7,
+      -3.2,
+      5.0
+     ],
+     "chroma": 5.9,
+     "hue_deg": 122.8,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#52472C",
+     "hex_mean": "#53472E",
+     "share": 0.199,
+     "lab": [
+      30.7,
+      1.4,
+      16.8
+     ],
+     "chroma": 16.8,
+     "hue_deg": 85.1,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#15376D",
+     "hex_mean": "#19396D",
+     "share": 0.173,
+     "lab": [
+      24.4,
+      9.2,
+      -33.8
+     ],
+     "chroma": 35.1,
+     "hue_deg": 285.3,
+     "hue_band": "blue"
+    },
+    {
+     "hex": "#8C6D49",
+     "hex_mean": "#937348",
+     "share": 0.091,
+     "lab": [
+      50.4,
+      6.8,
+      28.3
+     ],
+     "chroma": 29.1,
+     "hue_deg": 76.5,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#3A63C6",
+     "hex_mean": "#3F65C2",
+     "share": 0.084,
+     "lab": [
+      44.6,
+      18.1,
+      -52.7
+     ],
+     "chroma": 55.7,
+     "hue_deg": 289.0,
+     "hue_band": "blue"
+    }
+   ]
+  },
+  "assets/landing/cards/pick-2.webp": {
+   "family": "painterly-card",
+   "role": "adventure card 2 = /cards/generated/starry-friendship-v1.webp",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#0C1919",
+     "hex_mean": "#0D191B",
+     "share": 0.346,
+     "lab": [
+      8.2,
+      -3.7,
+      -2.9
+     ],
+     "chroma": 4.7,
+     "hue_deg": 217.8,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#25312A",
+     "hex_mean": "#27342C",
+     "share": 0.229,
+     "lab": [
+      20.0,
+      -6.8,
+      3.1
+     ],
+     "chroma": 7.5,
+     "hue_deg": 155.5,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#031E4F",
+     "hex_mean": "#041D4D",
+     "share": 0.217,
+     "lab": [
+      12.5,
+      11.9,
+      -31.9
+     ],
+     "chroma": 34.1,
+     "hue_deg": 290.4,
+     "hue_band": "violet"
+    },
+    {
+     "hex": "#114073",
+     "hex_mean": "#154372",
+     "share": 0.103,
+     "lab": [
+      28.1,
+      3.0,
+      -30.9
+     ],
+     "chroma": 31.1,
+     "hue_deg": 275.6,
+     "hue_band": "blue"
+    },
+    {
+     "hex": "#514925",
+     "hex_mean": "#534926",
+     "share": 0.076,
+     "lab": [
+      31.1,
+      -0.9,
+      21.7
+     ],
+     "chroma": 21.7,
+     "hue_deg": 92.4,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#9E7934",
+     "hex_mean": "#A68137",
+     "share": 0.029,
+     "lab": [
+      55.7,
+      6.7,
+      43.7
+     ],
+     "chroma": 44.3,
+     "hue_deg": 81.3,
+     "hue_band": "yellow-olive"
+    }
+   ]
+  },
+  "assets/landing/cards/pick-3.webp": {
+   "family": "painterly-card",
+   "role": "adventure card 3 = /cards/generated/tower-clouds-v1.webp",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#E8ECE8",
+     "hex_mean": "#E3EAE6",
+     "share": 0.379,
+     "lab": [
+      92.0,
+      -2.6,
+      0.9
+     ],
+     "chroma": 2.8,
+     "hue_deg": 160.0,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#9BC9E2",
+     "hex_mean": "#9CC9E1",
+     "share": 0.286,
+     "lab": [
+      78.6,
+      -9.1,
+      -16.5
+     ],
+     "chroma": 18.8,
+     "hue_deg": 241.2,
+     "hue_band": "blue"
+    },
+    {
+     "hex": "#657A28",
+     "hex_mean": "#647829",
+     "share": 0.105,
+     "lab": [
+      47.3,
+      -19.3,
+      39.1
+     ],
+     "chroma": 43.6,
+     "hue_deg": 116.3,
+     "hue_band": "green"
+    },
+    {
+     "hex": "#A1A835",
+     "hex_mean": "#A3AA37",
+     "share": 0.095,
+     "lab": [
+      66.9,
+      -16.8,
+      55.2
+     ],
+     "chroma": 57.7,
+     "hue_deg": 106.9,
+     "hue_band": "green"
+    },
+    {
+     "hex": "#5C6A50",
+     "hex_mean": "#5E6A50",
+     "share": 0.071,
+     "lab": [
+      43.4,
+      -9.1,
+      13.2
+     ],
+     "chroma": 16.1,
+     "hue_deg": 124.7,
+     "hue_band": "green"
+    },
+    {
+     "hex": "#CBBA84",
+     "hex_mean": "#CAB883",
+     "share": 0.064,
+     "lab": [
+      75.1,
+      -1.2,
+      29.5
+     ],
+     "chroma": 29.5,
+     "hue_deg": 92.3,
+     "hue_band": "yellow-olive"
+    }
+   ]
+  },
+  "assets/images/create/surprise-us.webp": {
+   "family": "painterly-card",
+   "role": "\"Överraska oss\" door art",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#1F2E2A",
+     "hex_mean": "#222F2C",
+     "share": 0.297,
+     "lab": [
+      18.1,
+      -5.8,
+      0.5
+     ],
+     "chroma": 5.8,
+     "hue_deg": 175.2,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#0A304F",
+     "hex_mean": "#123458",
+     "share": 0.186,
+     "lab": [
+      21.2,
+      2.1,
+      -24.6
+     ],
+     "chroma": 24.7,
+     "hue_deg": 274.8,
+     "hue_band": "blue"
+    },
+    {
+     "hex": "#5B5326",
+     "hex_mean": "#5C552A",
+     "share": 0.171,
+     "lab": [
+      35.9,
+      -2.8,
+      25.3
+     ],
+     "chroma": 25.4,
+     "hue_deg": 96.4,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#E5BD96",
+     "hex_mean": "#E0BD96",
+     "share": 0.121,
+     "lab": [
+      78.7,
+      7.1,
+      24.7
+     ],
+     "chroma": 25.7,
+     "hue_deg": 74.0,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#B68C21",
+     "hex_mean": "#B88F29",
+     "share": 0.115,
+     "lab": [
+      61.6,
+      6.0,
+      55.3
+     ],
+     "chroma": 55.7,
+     "hue_deg": 83.8,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#858AAB",
+     "hex_mean": "#848BA6",
+     "share": 0.11,
+     "lab": [
+      58.5,
+      4.6,
+      -14.8
+     ],
+     "chroma": 15.5,
+     "hue_deg": 287.1,
+     "hue_band": "blue"
+    }
+   ]
+  },
+  "assets/assets/nebula-hero.webp": {
+   "family": "cinematic-backdrop",
+   "role": "natt backdrop: astronaut on books in nebula",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#141D3E",
+     "hex_mean": "#151D3C",
+     "share": 0.317,
+     "lab": [
+      11.9,
+      8.1,
+      -20.5
+     ],
+     "chroma": 22.0,
+     "hue_deg": 291.5,
+     "hue_band": "violet"
+    },
+    {
+     "hex": "#3B4670",
+     "hex_mean": "#3C4772",
+     "share": 0.26,
+     "lab": [
+      31.0,
+      8.3,
+      -25.9
+     ],
+     "chroma": 27.2,
+     "hue_deg": 287.7,
+     "hue_band": "blue"
+    },
+    {
+     "hex": "#777290",
+     "hex_mean": "#797390",
+     "share": 0.161,
+     "lab": [
+      49.7,
+      9.2,
+      -15.3
+     ],
+     "chroma": 17.8,
+     "hue_deg": 301.0,
+     "hue_band": "violet"
+    },
+    {
+     "hex": "#8C8FC6",
+     "hex_mean": "#8F93C9",
+     "share": 0.116,
+     "lab": [
+      62.4,
+      11.6,
+      -28.3
+     ],
+     "chroma": 30.6,
+     "hue_deg": 292.4,
+     "hue_band": "violet"
+    },
+    {
+     "hex": "#534045",
+     "hex_mean": "#554145",
+     "share": 0.093,
+     "lab": [
+      29.8,
+      9.6,
+      1.3
+     ],
+     "chroma": 9.7,
+     "hue_deg": 7.8,
+     "hue_band": "pink-red"
+    },
+    {
+     "hex": "#BB927B",
+     "hex_mean": "#BD977A",
+     "share": 0.053,
+     "lab": [
+      65.2,
+      10.6,
+      20.9
+     ],
+     "chroma": 23.4,
+     "hue_deg": 63.2,
+     "hue_band": "orange-ochre"
+    }
+   ]
+  },
+  "assets/assets/morgon-aurora-desktop.webp": {
+   "family": "atmospheric-watercolour",
+   "role": "morgon backdrop desktop",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#F1E7EE",
+     "hex_mean": "#F1E6ED",
+     "share": 0.626,
+     "lab": [
+      92.4,
+      4.8,
+      -2.0
+     ],
+     "chroma": 5.2,
+     "hue_deg": 338.0,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#E1C9DF",
+     "hex_mean": "#E1C8DD",
+     "share": 0.156,
+     "lab": [
+      83.2,
+      12.3,
+      -7.2
+     ],
+     "chroma": 14.3,
+     "hue_deg": 329.5,
+     "hue_band": "violet"
+    },
+    {
+     "hex": "#FAE0D3",
+     "hex_mean": "#F9E0D2",
+     "share": 0.107,
+     "lab": [
+      90.8,
+      6.4,
+      10.1
+     ],
+     "chroma": 12.0,
+     "hue_deg": 57.6,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#C1A7D5",
+     "hex_mean": "#BEA5D4",
+     "share": 0.05,
+     "lab": [
+      71.1,
+      18.3,
+      -20.8
+     ],
+     "chroma": 27.7,
+     "hue_deg": 311.3,
+     "hue_band": "violet"
+    },
+    {
+     "hex": "#F8BAB9",
+     "hex_mean": "#F4BAB5",
+     "share": 0.033,
+     "lab": [
+      80.6,
+      20.5,
+      10.6
+     ],
+     "chroma": 23.1,
+     "hue_deg": 27.4,
+     "hue_band": "red-orange"
+    },
+    {
+     "hex": "#FCD8A6",
+     "hex_mean": "#FCD8A5",
+     "share": 0.028,
+     "lab": [
+      88.2,
+      5.5,
+      30.0
+     ],
+     "chroma": 30.5,
+     "hue_deg": 79.6,
+     "hue_band": "yellow-olive"
+    }
+   ]
+  },
+  "assets/assets/morgon-aurora-mobile.webp": {
+   "family": "atmospheric-watercolour",
+   "role": "morgon backdrop mobile",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#F1E5ED",
+     "hex_mean": "#F1E4EC",
+     "share": 0.52,
+     "lab": [
+      91.8,
+      5.7,
+      -2.2
+     ],
+     "chroma": 6.1,
+     "hue_deg": 338.9,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#F8EAE4",
+     "hex_mean": "#F7E9E3",
+     "share": 0.224,
+     "lab": [
+      93.2,
+      4.1,
+      4.6
+     ],
+     "chroma": 6.2,
+     "hue_deg": 48.5,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#E4CCE5",
+     "hex_mean": "#E1C9E3",
+     "share": 0.093,
+     "lab": [
+      83.5,
+      13.2,
+      -9.7
+     ],
+     "chroma": 16.4,
+     "hue_deg": 323.8,
+     "hue_band": "violet"
+    },
+    {
+     "hex": "#FBE3C9",
+     "hex_mean": "#FBE1C6",
+     "share": 0.056,
+     "lab": [
+      91.0,
+      4.6,
+      16.5
+     ],
+     "chroma": 17.1,
+     "hue_deg": 74.5,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#F7CDC8",
+     "hex_mean": "#F4CBC6",
+     "share": 0.054,
+     "lab": [
+      85.0,
+      14.2,
+      7.6
+     ],
+     "chroma": 16.1,
+     "hue_deg": 28.1,
+     "hue_band": "red-orange"
+    },
+    {
+     "hex": "#B7A1D4",
+     "hex_mean": "#B59ED3",
+     "share": 0.053,
+     "lab": [
+      68.6,
+      18.7,
+      -23.8
+     ],
+     "chroma": 30.3,
+     "hue_deg": 308.2,
+     "hue_band": "violet"
+    }
+   ]
+  },
+  "assets/brand/opengraph-image.png": {
+   "family": "composite",
+   "role": "OG / Twitter share card",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#14192E",
+     "hex_mean": "#151A2F",
+     "share": 0.446,
+     "lab": [
+      9.9,
+      5.1,
+      -14.9
+     ],
+     "chroma": 15.7,
+     "hue_deg": 288.8,
+     "hue_band": "blue"
+    },
+    {
+     "hex": "#36384D",
+     "hex_mean": "#373A4F",
+     "share": 0.2,
+     "lab": [
+      25.0,
+      4.9,
+      -13.0
+     ],
+     "chroma": 13.9,
+     "hue_deg": 290.8,
+     "hue_band": "violet"
+    },
+    {
+     "hex": "#8E8369",
+     "hex_mean": "#8F846A",
+     "share": 0.096,
+     "lab": [
+      55.4,
+      0.0,
+      15.5
+     ],
+     "chroma": 15.5,
+     "hue_deg": 90.0,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#D8E0DC",
+     "hex_mean": "#D7DAD4",
+     "share": 0.093,
+     "lab": [
+      86.5,
+      -1.8,
+      2.7
+     ],
+     "chroma": 3.2,
+     "hue_deg": 124.4,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#5A4B3C",
+     "hex_mean": "#5D493D",
+     "share": 0.093,
+     "lab": [
+      33.0,
+      6.6,
+      11.2
+     ],
+     "chroma": 13.0,
+     "hue_deg": 59.3,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#F1CC86",
+     "hex_mean": "#E9C77A",
+     "share": 0.072,
+     "lab": [
+      81.6,
+      2.7,
+      42.5
+     ],
+     "chroma": 42.5,
+     "hue_deg": 86.4,
+     "hue_band": "yellow-olive"
+    }
+   ]
+  },
+  "derived/illustration/fetched/style-previews/watercolor.jpg": {
+   "family": "style-preview",
+   "role": "create-flow style preview watercolor",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#FBF5E7",
+     "hex_mean": "#F8F2E3",
+     "share": 0.43,
+     "lab": [
+      95.6,
+      -0.7,
+      8.1
+     ],
+     "chroma": 8.1,
+     "hue_deg": 95.1,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#E1CB96",
+     "hex_mean": "#DFCB95",
+     "share": 0.239,
+     "lab": [
+      82.2,
+      -0.6,
+      29.6
+     ],
+     "chroma": 29.6,
+     "hue_deg": 91.1,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#9F9560",
+     "hex_mean": "#9C9361",
+     "share": 0.138,
+     "lab": [
+      60.6,
+      -3.8,
+      27.6
+     ],
+     "chroma": 27.8,
+     "hue_deg": 97.7,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#C07D4F",
+     "hex_mean": "#BF794B",
+     "share": 0.081,
+     "lab": [
+      57.4,
+      22.6,
+      36.1
+     ],
+     "chroma": 42.6,
+     "hue_deg": 57.9,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#4A3B2E",
+     "hex_mean": "#483F39",
+     "share": 0.062,
+     "lab": [
+      27.0,
+      3.9,
+      5.3
+     ],
+     "chroma": 6.6,
+     "hue_deg": 53.6,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#F1B84B",
+     "hex_mean": "#EAB848",
+     "share": 0.05,
+     "lab": [
+      77.3,
+      7.1,
+      60.2
+     ],
+     "chroma": 60.7,
+     "hue_deg": 83.3,
+     "hue_band": "yellow-olive"
+    }
+   ]
+  },
+  "derived/illustration/fetched/style-previews/inkaccent.png": {
+   "family": "style-preview",
+   "role": "create-flow style preview inkaccent",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#FCFCFC",
+     "hex_mean": "#FBFBFB",
+     "share": 0.867,
+     "lab": [
+      98.7,
+      -0.1,
+      0.1
+     ],
+     "chroma": 0.2,
+     "hue_deg": 143.5,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#23201C",
+     "hex_mean": "#24211F",
+     "share": 0.04,
+     "lab": [
+      13.8,
+      1.0,
+      1.9
+     ],
+     "chroma": 2.1,
+     "hue_deg": 62.1,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#7B8A96",
+     "hex_mean": "#808691",
+     "share": 0.035,
+     "lab": [
+      55.7,
+      0.4,
+      -6.2
+     ],
+     "chroma": 6.3,
+     "hue_deg": 273.6,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#969973",
+     "hex_mean": "#9D966D",
+     "share": 0.031,
+     "lab": [
+      61.8,
+      -3.3,
+      22.9
+     ],
+     "chroma": 23.1,
+     "hue_deg": 98.2,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#F9DA61",
+     "hex_mean": "#F0D664",
+     "share": 0.017,
+     "lab": [
+      85.7,
+      -4.1,
+      58.1
+     ],
+     "chroma": 58.3,
+     "hue_deg": 94.1,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#CF5743",
+     "hex_mean": "#BA5343",
+     "share": 0.01,
+     "lab": [
+      48.2,
+      40.0,
+      29.6
+     ],
+     "chroma": 49.8,
+     "hue_deg": 36.4,
+     "hue_band": "red-orange"
+    }
+   ]
+  },
+  "derived/illustration/fetched/style-previews/comic.png": {
+   "family": "style-preview",
+   "role": "create-flow style preview comic",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#EDEAE0",
+     "hex_mean": "#E1E0D7",
+     "share": 0.447,
+     "lab": [
+      88.9,
+      -0.8,
+      4.5
+     ],
+     "chroma": 4.6,
+     "hue_deg": 100.1,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#6A7278",
+     "hex_mean": "#67757E",
+     "share": 0.213,
+     "lab": [
+      48.6,
+      -0.4,
+      -6.0
+     ],
+     "chroma": 6.0,
+     "hue_deg": 266.3,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#171613",
+     "hex_mean": "#1C1A1B",
+     "share": 0.187,
+     "lab": [
+      10.7,
+      2.2,
+      -0.1
+     ],
+     "chroma": 2.2,
+     "hue_deg": 358.6,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#F9D50E",
+     "hex_mean": "#F0CA16",
+     "share": 0.06,
+     "lab": [
+      82.4,
+      -1.5,
+      79.2
+     ],
+     "chroma": 79.2,
+     "hue_deg": 91.1,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#C22B16",
+     "hex_mean": "#C3361E",
+     "share": 0.059,
+     "lab": [
+      45.5,
+      52.0,
+      46.0
+     ],
+     "chroma": 69.4,
+     "hue_deg": 41.5,
+     "hue_band": "red-orange"
+    },
+    {
+     "hex": "#447938",
+     "hex_mean": "#537836",
+     "share": 0.035,
+     "lab": [
+      46.7,
+      -22.6,
+      32.0
+     ],
+     "chroma": 39.2,
+     "hue_deg": 125.2,
+     "hue_band": "green"
+    }
+   ]
+  },
+  "derived/illustration/fetched/style-previews/crayon.png": {
+   "family": "style-preview",
+   "role": "create-flow style preview crayon",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#F7F4EA",
+     "hex_mean": "#F6F3EA",
+     "share": 0.797,
+     "lab": [
+      95.8,
+      -0.5,
+      4.7
+     ],
+     "chroma": 4.7,
+     "hue_deg": 96.5,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#2B2721",
+     "hex_mean": "#2D2925",
+     "share": 0.057,
+     "lab": [
+      17.2,
+      1.1,
+      3.2
+     ],
+     "chroma": 3.4,
+     "hue_deg": 71.8,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#81849E",
+     "hex_mean": "#7C859D",
+     "share": 0.05,
+     "lab": [
+      55.8,
+      4.2,
+      -13.2
+     ],
+     "chroma": 13.8,
+     "hue_deg": 287.7,
+     "hue_band": "blue"
+    },
+    {
+     "hex": "#F8E83C",
+     "hex_mean": "#F4E643",
+     "share": 0.037,
+     "lab": [
+      90.0,
+      -12.0,
+      74.1
+     ],
+     "chroma": 75.1,
+     "hue_deg": 99.2,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#D16943",
+     "hex_mean": "#CD5F44",
+     "share": 0.036,
+     "lab": [
+      55.2,
+      39.2,
+      37.6
+     ],
+     "chroma": 54.3,
+     "hue_deg": 43.8,
+     "hue_band": "red-orange"
+    },
+    {
+     "hex": "#67A864",
+     "hex_mean": "#66A666",
+     "share": 0.023,
+     "lab": [
+      62.8,
+      -32.3,
+      27.5
+     ],
+     "chroma": 42.4,
+     "hue_deg": 139.6,
+     "hue_band": "green"
+    }
+   ]
+  },
+  "derived/illustration/fetched/style-previews/neon.png": {
+   "family": "style-preview",
+   "role": "create-flow style preview neon",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#030C29",
+     "hex_mean": "#070F2A",
+     "share": 0.539,
+     "lab": [
+      5.7,
+      5.8,
+      -17.5
+     ],
+     "chroma": 18.4,
+     "hue_deg": 288.3,
+     "hue_band": "blue"
+    },
+    {
+     "hex": "#12435B",
+     "hex_mean": "#17475F",
+     "share": 0.182,
+     "lab": [
+      28.3,
+      -5.9,
+      -18.6
+     ],
+     "chroma": 19.5,
+     "hue_deg": 252.5,
+     "hue_band": "blue"
+    },
+    {
+     "hex": "#202356",
+     "hex_mean": "#352860",
+     "share": 0.107,
+     "lab": [
+      20.7,
+      21.7,
+      -30.6
+     ],
+     "chroma": 37.5,
+     "hue_deg": 305.3,
+     "hue_band": "violet"
+    },
+    {
+     "hex": "#3DA1A6",
+     "hex_mean": "#63A89C",
+     "share": 0.067,
+     "lab": [
+      64.6,
+      -21.2,
+      0.6
+     ],
+     "chroma": 21.2,
+     "hue_deg": 178.3,
+     "hue_band": "teal-cyan"
+    },
+    {
+     "hex": "#B5563A",
+     "hex_mean": "#B85F49",
+     "share": 0.064,
+     "lab": [
+      51.0,
+      33.2,
+      29.8
+     ],
+     "chroma": 44.6,
+     "hue_deg": 41.9,
+     "hue_band": "red-orange"
+    },
+    {
+     "hex": "#F6BD15",
+     "hex_mean": "#EFB620",
+     "share": 0.04,
+     "lab": [
+      77.3,
+      9.1,
+      73.5
+     ],
+     "chroma": 74.0,
+     "hue_deg": 82.9,
+     "hue_band": "yellow-olive"
+    }
+   ]
+  },
+  "derived/illustration/fetched/style-previews/pixel.png": {
+   "family": "style-preview",
+   "role": "create-flow style preview pixel",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#91C9E7",
+     "hex_mean": "#91C9E6",
+     "share": 0.745,
+     "lab": [
+      78.2,
+      -10.9,
+      -20.3
+     ],
+     "chroma": 23.0,
+     "hue_deg": 241.8,
+     "hue_band": "blue"
+    },
+    {
+     "hex": "#020202",
+     "hex_mean": "#0F0F10",
+     "share": 0.085,
+     "lab": [
+      6.1,
+      0.9,
+      -0.6
+     ],
+     "chroma": 1.0,
+     "hue_deg": 326.0,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#C55C3A",
+     "hex_mean": "#B7553A",
+     "share": 0.051,
+     "lab": [
+      48.7,
+      36.4,
+      34.9
+     ],
+     "chroma": 50.4,
+     "hue_deg": 43.7,
+     "hue_band": "red-orange"
+    },
+    {
+     "hex": "#CAC399",
+     "hex_mean": "#ABB78A",
+     "share": 0.047,
+     "lab": [
+      72.8,
+      -11.6,
+      23.1
+     ],
+     "chroma": 25.8,
+     "hue_deg": 116.8,
+     "hue_band": "green"
+    },
+    {
+     "hex": "#444E6B",
+     "hex_mean": "#4A5377",
+     "share": 0.046,
+     "lab": [
+      36.0,
+      7.0,
+      -20.7
+     ],
+     "chroma": 21.8,
+     "hue_deg": 288.7,
+     "hue_band": "blue"
+    },
+    {
+     "hex": "#FBD904",
+     "hex_mean": "#F6C607",
+     "share": 0.026,
+     "lab": [
+      81.9,
+      3.0,
+      82.4
+     ],
+     "chroma": 82.4,
+     "hue_deg": 87.9,
+     "hue_band": "yellow-olive"
+    }
+   ]
+  },
+  "derived/illustration/fetched/style-previews/clay.png": {
+   "family": "style-preview",
+   "role": "create-flow style preview clay",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#CDAE8D",
+     "hex_mean": "#CCAF8E",
+     "share": 0.47,
+     "lab": [
+      73.1,
+      5.4,
+      21.1
+     ],
+     "chroma": 21.8,
+     "hue_deg": 75.6,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#A7825B",
+     "hex_mean": "#A6805B",
+     "share": 0.27,
+     "lab": [
+      56.2,
+      9.5,
+      25.9
+     ],
+     "chroma": 27.6,
+     "hue_deg": 69.8,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#6F5535",
+     "hex_mean": "#655233",
+     "share": 0.102,
+     "lab": [
+      36.5,
+      4.2,
+      21.9
+     ],
+     "chroma": 22.3,
+     "hue_deg": 79.3,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#252F34",
+     "hex_mean": "#2C343F",
+     "share": 0.07,
+     "lab": [
+      21.5,
+      0.8,
+      -6.9
+     ],
+     "chroma": 7.0,
+     "hue_deg": 276.5,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#A85325",
+     "hex_mean": "#A74F24",
+     "share": 0.052,
+     "lab": [
+      44.4,
+      32.6,
+      39.8
+     ],
+     "chroma": 51.4,
+     "hue_deg": 50.7,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#EEC12F",
+     "hex_mean": "#E5B62E",
+     "share": 0.036,
+     "lab": [
+      76.2,
+      5.1,
+      68.2
+     ],
+     "chroma": 68.4,
+     "hue_deg": 85.7,
+     "hue_band": "yellow-olive"
+    }
+   ]
+  },
+  "derived/illustration/fetched/style-previews/screenprint.png": {
+   "family": "style-preview",
+   "role": "create-flow style preview screenprint",
+   "k": 6,
+   "clusters": [
+    {
+     "hex": "#F5EEDC",
+     "hex_mean": "#F4EDDA",
+     "share": 0.486,
+     "lab": [
+      93.8,
+      -0.8,
+      9.9
+     ],
+     "chroma": 9.9,
+     "hue_deg": 94.5,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#D6A32C",
+     "hex_mean": "#D4A22D",
+     "share": 0.298,
+     "lab": [
+      69.6,
+      7.9,
+      63.3
+     ],
+     "chroma": 63.8,
+     "hue_deg": 82.9,
+     "hue_band": "yellow-olive"
+    },
+    {
+     "hex": "#132327",
+     "hex_mean": "#1D2525",
+     "share": 0.061,
+     "lab": [
+      14.5,
+      -0.5,
+      -0.3
+     ],
+     "chroma": 0.5,
+     "hue_deg": 210.7,
+     "hue_band": "neutral"
+    },
+    {
+     "hex": "#B75929",
+     "hex_mean": "#A35327",
+     "share": 0.057,
+     "lab": [
+      44.8,
+      29.1,
+      40.0
+     ],
+     "chroma": 49.5,
+     "hue_deg": 54.0,
+     "hue_band": "orange-ochre"
+    },
+    {
+     "hex": "#47706D",
+     "hex_mean": "#447468",
+     "share": 0.053,
+     "lab": [
+      45.5,
+      -16.4,
+      1.9
+     ],
+     "chroma": 16.5,
+     "hue_deg": 173.4,
+     "hue_band": "teal-cyan"
+    },
+    {
+     "hex": "#F0C404",
+     "hex_mean": "#F0C406",
+     "share": 0.045,
+     "lab": [
+      80.9,
+      1.2,
+      81.5
+     ],
+     "chroma": 81.5,
+     "hue_deg": 89.2,
+     "hue_band": "yellow-olive"
+    }
+   ]
+  }
+ },
+ "pooled": {
+  "sample-book (cover + 14 scenes)": {
+   "images": [
+    "assets/share/iris-sparade-platsen/assets/cover.webp",
+    "assets/share/iris-sparade-platsen/assets/S1.webp",
+    "assets/share/iris-sparade-platsen/assets/S2.webp",
+    "assets/share/iris-sparade-platsen/assets/S3A.webp",
+    "assets/share/iris-sparade-platsen/assets/S3B.webp",
+    "assets/share/iris-sparade-platsen/assets/S4A.webp",
+    "assets/share/iris-sparade-platsen/assets/S4B.webp",
+    "assets/share/iris-sparade-platsen/assets/S5AA.webp",
+    "assets/share/iris-sparade-platsen/assets/S5AB.webp",
+    "assets/share/iris-sparade-platsen/assets/S5BA.webp",
+    "assets/share/iris-sparade-platsen/assets/S5BB.webp",
+    "assets/share/iris-sparade-platsen/assets/S6AA.webp",
+    "assets/share/iris-sparade-platsen/assets/S6AB.webp",
+    "assets/share/iris-sparade-platsen/assets/S6BA.webp",
+    "assets/share/iris-sparade-platsen/assets/S6BB.webp"
+   ],
+   "clusters": [
+    {
+     "hex": "#E9C898",
+     "share": 0.205,
+     "lab": [
+      81.6,
+      3.7,
+      26.3
+     ]
+    },
+    {
+     "hex": "#6A4B1B",
+     "share": 0.204,
+     "lab": [
+      34.2,
+      9.4,
+      30.8
+     ]
+    },
+    {
+     "hex": "#9D7D38",
+     "share": 0.182,
+     "lab": [
+      54.7,
+      4.2,
+      39.3
+     ]
+    },
+    {
+     "hex": "#D18537",
+     "share": 0.173,
+     "lab": [
+      62.1,
+      21.4,
+      51.1
+     ]
+    },
+    {
+     "hex": "#2E2211",
+     "share": 0.151,
+     "lab": [
+      16.5,
+      2.0,
+      8.4
+     ]
+    },
+    {
+     "hex": "#AB301F",
+     "share": 0.085,
+     "lab": [
+      39.6,
+      46.5,
+      37.4
+     ]
+    }
+   ]
+  },
+  "sample-book warm sub-family (12 scenes + cover, excl. S1,S4A)": {
+   "images": [
+    "assets/share/iris-sparade-platsen/assets/cover.webp",
+    "assets/share/iris-sparade-platsen/assets/S2.webp",
+    "assets/share/iris-sparade-platsen/assets/S3A.webp",
+    "assets/share/iris-sparade-platsen/assets/S3B.webp",
+    "assets/share/iris-sparade-platsen/assets/S4B.webp",
+    "assets/share/iris-sparade-platsen/assets/S5AA.webp",
+    "assets/share/iris-sparade-platsen/assets/S5AB.webp",
+    "assets/share/iris-sparade-platsen/assets/S5BA.webp",
+    "assets/share/iris-sparade-platsen/assets/S5BB.webp",
+    "assets/share/iris-sparade-platsen/assets/S6AA.webp",
+    "assets/share/iris-sparade-platsen/assets/S6AB.webp",
+    "assets/share/iris-sparade-platsen/assets/S6BA.webp",
+    "assets/share/iris-sparade-platsen/assets/S6BB.webp"
+   ],
+   "clusters": [
+    {
+     "hex": "#67491A",
+     "share": 0.208,
+     "lab": [
+      33.6,
+      9.7,
+      31.1
+     ]
+    },
+    {
+     "hex": "#D08637",
+     "share": 0.19,
+     "lab": [
+      62.3,
+      20.7,
+      51.1
+     ]
+    },
+    {
+     "hex": "#967731",
+     "share": 0.179,
+     "lab": [
+      52.3,
+      3.6,
+      40.1
+     ]
+    },
+    {
+     "hex": "#2D2211",
+     "share": 0.166,
+     "lab": [
+      16.2,
+      2.1,
+      8.7
+     ]
+    },
+    {
+     "hex": "#E8C591",
+     "share": 0.165,
+     "lab": [
+      80.5,
+      4.5,
+      29.4
+     ]
+    },
+    {
+     "hex": "#AA2F1D",
+     "share": 0.093,
+     "lab": [
+      39.5,
+      46.1,
+      38.7
+     ]
+    }
+   ]
+  },
+  "sample-book pale sub-family (S1, S4A)": {
+   "images": [
+    "assets/share/iris-sparade-platsen/assets/S1.webp",
+    "assets/share/iris-sparade-platsen/assets/S4A.webp"
+   ],
+   "clusters": [
+    {
+     "hex": "#F4D7B7",
+     "share": 0.336,
+     "lab": [
+      87.0,
+      3.8,
+      17.0
+     ]
+    },
+    {
+     "hex": "#CF9F70",
+     "share": 0.211,
+     "lab": [
+      68.5,
+      12.5,
+      32.4
+     ]
+    },
+    {
+     "hex": "#B5B272",
+     "share": 0.16,
+     "lab": [
+      70.5,
+      -8.8,
+      34.9
+     ]
+    },
+    {
+     "hex": "#88643B",
+     "share": 0.159,
+     "lab": [
+      44.3,
+      11.4,
+      26.2
+     ]
+    },
+    {
+     "hex": "#C55332",
+     "share": 0.072,
+     "lab": [
+      49.4,
+      43.4,
+      37.9
+     ]
+    },
+    {
+     "hex": "#41382C",
+     "share": 0.062,
+     "lab": [
+      27.2,
+      0.8,
+      4.6
+     ]
+    }
+   ]
+  },
+  "Alva demo covers": {
+   "images": [
+    "assets/assets/cover-tornet.webp",
+    "assets/assets/cover-filten.webp"
+   ],
+   "clusters": [
+    {
+     "hex": "#D8E2E2",
+     "share": 0.253,
+     "lab": [
+      88.2,
+      -2.4,
+      1.4
+     ]
+    },
+    {
+     "hex": "#978663",
+     "share": 0.207,
+     "lab": [
+      57.1,
+      1.1,
+      21.6
+     ]
+    },
+    {
+     "hex": "#F5D691",
+     "share": 0.197,
+     "lab": [
+      84.9,
+      1.5,
+      35.8
+     ]
+    },
+    {
+     "hex": "#4F4F3C",
+     "share": 0.176,
+     "lab": [
+      31.5,
+      -1.6,
+      9.3
+     ]
+    },
+    {
+     "hex": "#818887",
+     "share": 0.115,
+     "lab": [
+      55.7,
+      -3.1,
+      -0.6
+     ]
+    },
+    {
+     "hex": "#8E3B33",
+     "share": 0.053,
+     "lab": [
+      37.0,
+      33.9,
+      21.0
+     ]
+    }
+   ]
+  },
+  "adventure cards": {
+   "images": [
+    "assets/landing/cards/pick-1.webp",
+    "assets/landing/cards/pick-2.webp",
+    "assets/landing/cards/pick-3.webp",
+    "assets/images/create/surprise-us.webp"
+   ],
+   "clusters": [
+    {
+     "hex": "#1E2A29",
+     "share": 0.33,
+     "lab": [
+      16.4,
+      -3.8,
+      -1.6
+     ]
+    },
+    {
+     "hex": "#0E3565",
+     "share": 0.188,
+     "lab": [
+      24.1,
+      8.8,
+      -33.3
+     ]
+    },
+    {
+     "hex": "#57512D",
+     "share": 0.166,
+     "lab": [
+      35.4,
+      -2.0,
+      20.4
+     ]
+    },
+    {
+     "hex": "#E5E6E6",
+     "share": 0.122,
+     "lab": [
+      88.7,
+      -0.8,
+      4.2
+     ]
+    },
+    {
+     "hex": "#A89737",
+     "share": 0.106,
+     "lab": [
+      63.4,
+      -4.1,
+      47.2
+     ]
+    },
+    {
+     "hex": "#9AC6E1",
+     "share": 0.089,
+     "lab": [
+      75.1,
+      -6.4,
+      -16.5
+     ]
+    }
+   ]
+  }
+ }
+}
