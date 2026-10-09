@@ -1,0 +1,2 @@
+# build outputs: scripts/build.sh regenerates the mixes (the delivered MP4s carry the final sound)
+sound/mix-*.wav
