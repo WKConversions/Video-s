@@ -1,0 +1,621 @@
+{
+  "storyId": "causal-e2e-DC-KERNEL-SV-18-MEDIA",
+  "createdAt": "2026-07-12T16:40:44.936Z",
+  "engineVersion": "causal-foundry-v1",
+  "spec": {
+    "child": {
+      "firstName": "Iris",
+      "ageBand": "B",
+      "gender": "girl"
+    },
+    "language": "sv",
+    "companion": "Mossa, en talande skogsmus",
+    "setting": "kvartersbiblioteket",
+    "domainId": "sel.self-regulation",
+    "register": "wonder",
+    "world": {
+      "child": {
+        "firstName": "Iris"
+      },
+      "keepsakes": [],
+      "skills": [
+        {
+          "what": "gör plats utan att sudda ut sin egen idé",
+          "domainId": "sel.self-regulation",
+          "fromStory": "memory-shared-page-001",
+          "storyTitle": "Den tomma sidan"
+        }
+      ],
+      "shelf": [
+        {
+          "storyId": "memory-shared-page-001",
+          "title": "Den tomma sidan",
+          "throughline": "Iris upptäckte att plats för någon annan också kan förändra hennes egen bild.",
+          "language": "sv",
+          "band": "B",
+          "domainId": "sel.self-regulation"
+        }
+      ],
+      "embers": [],
+      "places": [
+        {
+          "id": "neighborhood-library",
+          "name": "kvartersbiblioteket",
+          "look": "låga bokhyllor, en bred fönsterbänk och en mjuk grön matta",
+          "fromStory": "memory-shared-page-001",
+          "storyTitle": "Den tomma sidan"
+        }
+      ],
+      "friends": [
+        {
+          "name": "Mossa",
+          "kind": "talande skogsmus",
+          "look": "liten brun skogsmus med grön halsduk och runda öron",
+          "mannerism": "snurrar halsduken ett varv när han tänker"
+        }
+      ],
+      "cast": [],
+      "readJourneys": {},
+      "hero": {
+        "name": "Iris",
+        "kind": "barnhjälte",
+        "look": "sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar",
+        "mannerism": "lämnar alltid lite plats på sidan när hon ritar med någon annan"
+      }
+    },
+    "premiseAnchor": "Iris hade sparat fönsterplatsen åt Mossa, men ett nytt barn hann sätta sig där först.",
+    "textEngine": "causal-foundry-v1",
+    "companionMode": "locked"
+  },
+  "pii": [
+    "spec.child.firstName",
+    "spec.companion",
+    "canon.hero.name",
+    "canon.companion.name",
+    "canon.others.0.name"
+  ],
+  "title": "Iris och den sparade platsen",
+  "language": "sv",
+  "band": "B",
+  "throughline": "Iris vill dela sin sista ritstund före sagostunden, men fönsterplatsen hon sparat åt Mossa är tagen; nu måste hon välja var hon ritar och vem som får bildens sista silvertecken.",
+  "canon": {
+    "hero": {
+      "name": "Iris",
+      "kind": "barnhjälte",
+      "look": "sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar",
+      "mannerism": "lämnar alltid lite plats på sidan när hon ritar med någon annan"
+    },
+    "companion": {
+      "name": "Mossa",
+      "kind": "talande skogsmus",
+      "look": "liten brun skogsmus med grön halsduk och runda öron",
+      "mannerism": "snurrar halsduken ett varv när han tänker"
+    },
+    "others": [
+      {
+        "name": "Amina",
+        "kind": "barn",
+        "look": "sjuårig flicka med två mörka flätor, orange tröja och blå byxor",
+        "mannerism": "knackar lätt med pekfingret mot pappret när hon får en idé",
+        "emberHook": "ritar gärna fåglar och letar efter nya ritkompisar",
+        "gender": "girl"
+      }
+    ],
+    "place": {
+      "name": "kvartersbiblioteket",
+      "look": "låga bokhyllor, en bred fönsterbänk och en mjuk grön matta"
+    },
+    "objects": [
+      {
+        "id": "stort-ritpapper",
+        "name": "stort ritpapper",
+        "look": "ett brett vitt ritpapper med plats för flera tecknare",
+        "role": "prop",
+        "states": [
+          {
+            "slot": 1,
+            "state": "tomt under Iris arm"
+          },
+          {
+            "slot": 3,
+            "state": "förvandlat till en gemensam bild med öppna ritplatser"
+          },
+          {
+            "slot": 5,
+            "state": "färdigt och upphängt med ett enda sista silvertecken"
+          }
+        ]
+      },
+      {
+        "id": "silverpenna",
+        "name": "silverpenna",
+        "look": "en vanlig tjock penna som lämnar blanka silverstreck",
+        "role": "tool",
+        "states": [
+          {
+            "slot": 3,
+            "state": "ligger bredvid bilden med en ritningstur kvar"
+          },
+          {
+            "slot": 5,
+            "state": "har använts till bildens sista tecken"
+          }
+        ]
+      }
+    ]
+  },
+  "fills": {
+    "need": "a huge feeling will pass if you can hold steady through it",
+    "want": "att bestämma vad hon ska göra när fönsterplatsen hon sparat åt Mossa är tagen och bara en ritstund återstår",
+    "ordealType": "vänta och välja mellan två rättvisa önskemål när händerna vill rycka åt sig turen",
+    "tool": {
+      "what": "Iris vana att lämna tydlig plats för någon annans idé utan att sudda ut sin egen",
+      "plantedSlot": 2
+    },
+    "elixir": "Iris kan göra verklig plats för andra och ändå stå kvar i sitt eget val",
+    "rubric": {
+      "preferred": "pause, breathe, go slow, try again gently",
+      "unpreferred": "force it, rush, run away, give up"
+    }
+  },
+  "styleBlock": "Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+  "beats": [
+    {
+      "beatId": "S1",
+      "slot": 1,
+      "pathTag": "neutral",
+      "prose": "Iris kom till kvartersbiblioteket med ett stort ritpapper under armen. Hon hade sparat fönsterplatsen åt Mossa. Där skulle kvällsljuset räcka över hela deras teckning. Men ett nytt barn hade hunnit sätta sig där först. Flickan hette Amina och höll en grön penna redo.\n\n\"Kan vi ta en sista ritstund här i fönsterljuset?\" frågade hon.\n\nMossa kikade fram ur Iris luva och snurrade halsduken ett varv.\n\n\"Det var ju platsen vi skulle ha\", sa han. Sedan såg han på Amina. \"Fast nu sitter du där, och jag vill inte tränga bort dig. Iris, kan vi ta vår sista ritstund på gröna mattan i stället? Där ryms en karta stor som en skog.\"\n\nIris såg från den tagna fönsterplatsen till mattan. Före sagostunden fanns det bara tid för en ritstund.",
+      "illustrationBrief": "Wide establishing frame in kvartersbiblioteket. Iris stands between the broad window bench and the green rug, gripping the empty stort ritpapper under her arm, her face caught between disappointment and thought. Amina sits at the window bench with her green pen poised, while Mossa waits near the edge of the rug, one paw twisting his green scarf. Low bookcases and evening window light make both possible drawing places clearly legible.\n\nAppearance reference for entities already named in the shot above. Never add a character, object, flower, or prop merely because it is listed here:\nHero Iris, barnhjälte: sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar\nCompanion Mossa, talande skogsmus: liten brun skogsmus med grön halsduk och runda öron\nOther Amina, barn: sjuårig flicka med två mörka flätor, orange tröja och blå byxor\nPlace kvartersbiblioteket: låga bokhyllor, en bred fönsterbänk och en mjuk grön matta\nObject stort ritpapper: ett brett vitt ritpapper med plats för flera tecknare\n\nStyle: Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+      "nextBeatId": "S2",
+      "assets": {
+        "audio": {
+          "kind": "audio",
+          "path": "/share/iris-sparade-platsen/assets/S1.mp3",
+          "provider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+          "meta": {
+            "ms": 34596,
+            "normalization": "ffmpeg-loudnorm:-23LUFS:-2dBTP:11LRA"
+          }
+        },
+        "image": {
+          "kind": "image",
+          "path": "/share/iris-sparade-platsen/assets/S1.webp",
+          "provider": "existing"
+        }
+      }
+    },
+    {
+      "beatId": "S2",
+      "slot": 2,
+      "pathTag": "neutral",
+      "prose": "Iris gick in mellan fönsterbänken och mattan och lade ritpappret på ett lågt bord. Planen för den sparade platsen gällde inte längre. Nu väntade Mossa på mattan, medan Amina ville rita med Iris i fönsterljuset.\n\nNär Iris ritade med någon annan brukade hon börja på ena sidan. Då blev det en riktig plats kvar för den andras idé, inte bara en smal kant. Hon drog fingertoppen genom luften över pappret. Här kunde hennes bild vara. Där kunde någon annans ta vid.\n\n\"Kom nu\", sa Mossa. \"Jag har ju tre krokiga stigar i huvudet.\"\n\nAmina knackade på fönsterbänken. \"Ljuset är fint just här.\"\n\nSagoboken låg redan framme. När ritstunden var slut skulle bibliotekarien öppna den.",
+      "illustrationBrief": "Pre-choice. A balanced overhead-three-quarter frame at the low table: Iris’s fingertips hover over the blank stort ritpapper, visibly leaving broad open space on each side. Mossa waits on the green rug in the background, while Amina remains at the window bench, lightly tapping her index finger beside her green pen. The closed sagobok rests nearby, making the limited time tangible; neither drawing place has been chosen.\n\nAppearance reference for entities already named in the shot above. Never add a character, object, flower, or prop merely because it is listed here:\nHero Iris, barnhjälte: sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar\nCompanion Mossa, talande skogsmus: liten brun skogsmus med grön halsduk och runda öron\nOther Amina, barn: sjuårig flicka med två mörka flätor, orange tröja och blå byxor\nObject stort ritpapper: ett brett vitt ritpapper med plats för flera tecknare\n\nStyle: Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+      "choice": {
+        "afterSlot": 2,
+        "kind": "path",
+        "prompt": "Det hettade i Iris händer; de ville rycka i stolen. Före sagostunden hinner hon bara rita på ett ställe. Vad gör hon?",
+        "options": [
+          {
+            "id": "A",
+            "label": "Gå med Mossa till den gröna mattan.",
+            "leadsTo": "S3A",
+            "rubricTag": "neutral",
+            "effects": {
+              "set": {
+                "consequence.S2.gain": "en sista ritstund med Mossa på den gröna mattan",
+                "consequence.S2.cost": "en sista ritstund med det nya barnet i fönsterljuset",
+                "history.choice.S2": "S2:A"
+              }
+            }
+          },
+          {
+            "id": "B",
+            "label": "Stanna och rita med det nya barnet i fönsterljuset.",
+            "leadsTo": "S3B",
+            "rubricTag": "neutral",
+            "effects": {
+              "set": {
+                "consequence.S2.gain": "en sista ritstund med det nya barnet i fönsterljuset",
+                "consequence.S2.cost": "en sista ritstund med Mossa på den gröna mattan",
+                "history.choice.S2": "S2:B"
+              }
+            }
+          }
+        ]
+      },
+      "assets": {
+        "audio": {
+          "kind": "audio",
+          "path": "/share/iris-sparade-platsen/assets/S2.mp3",
+          "provider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+          "meta": {
+            "ms": 41457,
+            "normalization": "ffmpeg-loudnorm:-23LUFS:-2dBTP:11LRA"
+          }
+        },
+        "image": {
+          "kind": "image",
+          "path": "/share/iris-sparade-platsen/assets/S2.webp",
+          "provider": "existing"
+        }
+      }
+    },
+    {
+      "beatId": "S3A",
+      "slot": 3,
+      "pathTag": "neutral",
+      "prose": "Iris gick med Mossa till den gröna mattan. Hon bar dit ritpappret och lade det mitt framför dem. Amina lämnade fönsterbänken och satte sig vid papprets andra kant.\n\n\"Då blir det ingen ritstund i fönsterljuset\", sa hon. \"Men jag vill gärna hjälpa till här.\"\n\nIris ritade gröna mossöar på ena sidan och lämnade öppna platser intill. Mossa ritade kartans stigar. Han ville använda bibliotekets sista tur med silverpennan till en måne. Amina ritade träden och ville använda samma sista tur till en fågel.\n\nBibliotekarien lade silverpennan bredvid pappret och höll upp ett finger. Efter nästa tecken skulle mosskartan hängas upp. Två tomma platser väntade, men bara en kunde bli silverblank.",
+      "illustrationBrief": "High three-quarter view on the green rug. Iris, Mossa, and Amina gather around the completed shared mosskarta on the stort ritpapper: green moss islands, winding paths, and trees are clearly drawn, with exactly two blank drawing spaces remaining. The silverpenna lies between the two open spaces. Iris’s hand rests at the paper’s edge, her expression attentive as Mossa and Amina look toward their separate blank places.\n\nAppearance reference for entities already named in the shot above. Never add a character, object, flower, or prop merely because it is listed here:\nHero Iris, barnhjälte: sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar\nCompanion Mossa, talande skogsmus: liten brun skogsmus med grön halsduk och runda öron\nOther Amina, barn: sjuårig flicka med två mörka flätor, orange tröja och blå byxor\nObject stort ritpapper: ett brett vitt ritpapper med plats för flera tecknare\nObject silverpenna: en vanlig tjock penna som lämnar blanka silverstreck\n\nStyle: Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+      "nextBeatId": "S4A",
+      "assets": {
+        "audio": {
+          "kind": "audio",
+          "path": "/share/iris-sparade-platsen/assets/S3A.mp3",
+          "provider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+          "meta": {
+            "ms": 40515,
+            "normalization": "ffmpeg-loudnorm:-23LUFS:-2dBTP:11LRA"
+          }
+        },
+        "image": {
+          "kind": "image",
+          "path": "/share/iris-sparade-platsen/assets/S3A.webp",
+          "provider": "existing"
+        }
+      }
+    },
+    {
+      "beatId": "S3B",
+      "slot": 3,
+      "pathTag": "neutral",
+      "prose": "Iris stannade och ritade med Amina i fönsterljuset. Hon lyfte upp ritpappret på fönsterbänken och satte sig bredvid. Mossa kom efter, men den sista ritstunden på gröna mattan var förbi.\n\n\"Jaha\", sa han och snurrade halsduken. \"Då får väl molnen flyga hit.\"\n\nIris ritade en rund solfågel på ena sidan och lämnade öppna platser runt den. Mossa ritade molnen. Han ville använda bibliotekets sista tur med silverpennan till en stjärna. Amina ritade solfågelns vingar och ville använda samma sista tur till ett bo.\n\nBibliotekarien lade silverpennan på fönsterbänken och höll upp ett finger. Efter nästa tecken skulle bilden hängas upp. Bara en idé kunde bli silverblank.",
+      "illustrationBrief": "Intimate window-bench frame in warm evening light. The stort ritpapper shows Iris’s round sun bird, Mossa’s clouds, and Amina’s wings, with exactly two unmarked open spaces—one above the clouds and one between the wings. The silverpenna lies on the window bench. Iris and Amina sit shoulder to shoulder behind the picture while Mossa perches at its edge, all three focused on the single pen.\n\nAppearance reference for entities already named in the shot above. Never add a character, object, flower, or prop merely because it is listed here:\nHero Iris, barnhjälte: sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar\nCompanion Mossa, talande skogsmus: liten brun skogsmus med grön halsduk och runda öron\nOther Amina, barn: sjuårig flicka med två mörka flätor, orange tröja och blå byxor\nObject stort ritpapper: ett brett vitt ritpapper med plats för flera tecknare\nObject silverpenna: en vanlig tjock penna som lämnar blanka silverstreck\n\nStyle: Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+      "nextBeatId": "S4B",
+      "assets": {
+        "audio": {
+          "kind": "audio",
+          "path": "/share/iris-sparade-platsen/assets/S3B.mp3",
+          "provider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+          "meta": {
+            "ms": 28008,
+            "normalization": "ffmpeg-loudnorm:-23LUFS:-2dBTP:11LRA"
+          }
+        },
+        "image": {
+          "kind": "image",
+          "path": "/share/iris-sparade-platsen/assets/S3B.webp",
+          "provider": "existing"
+        }
+      }
+    },
+    {
+      "beatId": "S4A",
+      "slot": 4,
+      "pathTag": "neutral",
+      "prose": "Bibliotekarien bar mosskartan till det låga bordet vid väggen. Iris lade handen på ena hörnet så att pappret låg stilla. Mossa stod vid platsen ovanför stigarna. Amina satt vid platsen bredvid träden. Silverpennan låg mitt emellan dem.\n\n\"Månen visar ju vägen genom min skog\", sa Mossa.\n\n\"Och fågeln kan visa var träden slutar\", sa Amina.\n\nBåda tecknen skulle fylla en hel tur. Bibliotekarien höll redan upp klämmorna som kartan skulle hängas i direkt efter nästa tur. Iris såg de två platser hon lämnat. Det brände i fingertopparna. Hon ville rycka åt sig pennan och försöka hinna allt på en gång.",
+      "illustrationBrief": "Pre-choice. Tight tabletop frame at the low table by the wall. Iris holds one corner of the mosskarta flat, her other hand tense but suspended above the untouched silverpenna. Mossa stands beside the blank space above the winding paths; Amina sits beside the blank space near the trees. Both open spaces remain empty, and the librarian’s hanging clips are visible at the edge of the table, with no one touching the pen.\n\nAppearance reference for entities already named in the shot above. Never add a character, object, flower, or prop merely because it is listed here:\nHero Iris, barnhjälte: sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar\nCompanion Mossa, talande skogsmus: liten brun skogsmus med grön halsduk och runda öron\nOther Amina, barn: sjuårig flicka med två mörka flätor, orange tröja och blå byxor\nObject silverpenna: en vanlig tjock penna som lämnar blanka silverstreck\n\nStyle: Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+      "choice": {
+        "afterSlot": 4,
+        "kind": "ordeal",
+        "prompt": "Mosskartan ska hängas upp, och bara en tur med silverpennan återstår. Vem får rita kartans sista tecken?",
+        "options": [
+          {
+            "id": "A",
+            "label": "Låt Mossa rita månen.",
+            "leadsTo": "S5AA",
+            "rubricTag": "neutral",
+            "effects": {
+              "set": {
+                "consequence.S4A.gain": "Mossas måne får bli mosskartans sista silvertecken",
+                "consequence.S4A.cost": "det nya barnets fågel får bli mosskartans sista silvertecken",
+                "history.choice.S4A": "S4A:A"
+              }
+            }
+          },
+          {
+            "id": "B",
+            "label": "Låt det nya barnet rita fågeln.",
+            "leadsTo": "S5AB",
+            "rubricTag": "neutral",
+            "effects": {
+              "set": {
+                "consequence.S4A.gain": "det nya barnets fågel får bli mosskartans sista silvertecken",
+                "consequence.S4A.cost": "Mossas måne får bli mosskartans sista silvertecken",
+                "history.choice.S4A": "S4A:B"
+              }
+            }
+          }
+        ]
+      },
+      "assets": {
+        "audio": {
+          "kind": "audio",
+          "path": "/share/iris-sparade-platsen/assets/S4A.mp3",
+          "provider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+          "meta": {
+            "ms": 28627,
+            "normalization": "ffmpeg-loudnorm:-23LUFS:-2dBTP:11LRA"
+          }
+        },
+        "image": {
+          "kind": "image",
+          "path": "/share/iris-sparade-platsen/assets/S4A.webp",
+          "provider": "existing"
+        }
+      }
+    },
+    {
+      "beatId": "S4B",
+      "slot": 4,
+      "pathTag": "neutral",
+      "prose": "Bibliotekarien bar solfågelbilden till det låga bordet vid väggen. Iris höll pappret stilla. Mossa stod vid den öppna platsen ovanför molnen. Amina satt vid den öppna platsen mellan vingarna. Silverpennan låg mitt emellan dem.\n\n\"Min stjärna skulle lysa över molnen\", sa Mossa.\n\n\"Mitt bo skulle höra ihop med vingarna\", sa Amina.\n\nBåda tecknen skulle ta en hel tur. Bibliotekarien väntade med klämmorna och skulle hänga upp bilden direkt efter nästa tecken. Iris hade lämnat plats för båda idéerna, men silverpennan räckte bara till en. Det hettade i händerna. De ville gripa pennan och fara över pappret fortare än någon hann säga stopp.",
+      "illustrationBrief": "Pre-choice tight three-quarter view of the low table. Amina in her orange top and Iris in her raspberry-red raincoat are clearly visible at opposite sides of the shared solfågelbild. Palm-sized Mossa, much smaller than Iris's hand, waits at the top edge with his green scarf. Exactly one untouched silverpenna lies in the center. Iris keeps both hands on the paper's edge; nobody has started the final silver mark.\n\nAppearance reference for entities already named in the shot above. Never add a character, object, flower, or prop merely because it is listed here:\nHero Iris, barnhjälte: sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar\nCompanion Mossa, talande skogsmus: liten brun skogsmus med grön halsduk och runda öron\nOther Amina, barn: sjuårig flicka med två mörka flätor, orange tröja och blå byxor\nObject silverpenna: en vanlig tjock penna som lämnar blanka silverstreck\n\nStyle: Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+      "choice": {
+        "afterSlot": 4,
+        "kind": "ordeal",
+        "prompt": "Solfågelbilden ska hängas upp, och bara en tur med silverpennan återstår. Vem får rita bildens sista tecken?",
+        "options": [
+          {
+            "id": "A",
+            "label": "Låt Mossa rita stjärnan.",
+            "leadsTo": "S5BA",
+            "rubricTag": "neutral",
+            "effects": {
+              "set": {
+                "consequence.S4B.gain": "Mossas stjärna får bli solfågelbildens sista silvertecken",
+                "consequence.S4B.cost": "det nya barnets bo får bli solfågelbildens sista silvertecken",
+                "history.choice.S4B": "S4B:A"
+              }
+            }
+          },
+          {
+            "id": "B",
+            "label": "Låt det nya barnet rita boet.",
+            "leadsTo": "S5BB",
+            "rubricTag": "neutral",
+            "effects": {
+              "set": {
+                "consequence.S4B.gain": "det nya barnets bo får bli solfågelbildens sista silvertecken",
+                "consequence.S4B.cost": "Mossas stjärna får bli solfågelbildens sista silvertecken",
+                "history.choice.S4B": "S4B:B"
+              }
+            }
+          }
+        ]
+      },
+      "assets": {
+        "audio": {
+          "kind": "audio",
+          "path": "/share/iris-sparade-platsen/assets/S4B.mp3",
+          "provider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+          "meta": {
+            "ms": 28805,
+            "normalization": "ffmpeg-loudnorm:-23LUFS:-2dBTP:11LRA"
+          }
+        },
+        "image": {
+          "kind": "image",
+          "path": "/share/iris-sparade-platsen/assets/S4B.webp",
+          "provider": "existing"
+        }
+      }
+    },
+    {
+      "beatId": "S5AA",
+      "slot": 5,
+      "pathTag": "neutral",
+      "prose": "Iris lät Mossa rita månen. Hon sköt silverpennan över bordet tills den låg framför tassarna och pekade på den öppna platsen ovanför stigarna.\n\nMossa tog pennan med båda tassarna. Halsduken släpade genom mossan medan han ritade en rund måne. Iris höll kartan stilla utan att täcka träden eller platsen bredvid dem.\n\nAmina tittade på den tomma platsen där fågeln kunde ha varit. Hon knackade en gång mot bordet och drog sedan fingret längs sina träd.\n\nMossa slöt månens ring. Silvermånen blinkade till fast ingen rörde pappret. Iris rätade på ryggen. Hon hade inte ryckt åt sig pennan. Kartan bar Mossas måne, och någon silverfågel fanns inte där.",
+      "illustrationBrief": "Settled result, close view of the finished mosskarta on the low table. A bright silver moon is clearly complete above Mossa’s winding paths, while the space beside Amina’s trees remains plainly unmarked. Mossa stands proudly beside the moon with both paws near the paper; Iris holds the map steady at one corner, calm and relieved. Amina looks thoughtfully at her trees.\n\nAppearance reference for entities already named in the shot above. Never add a character, object, flower, or prop merely because it is listed here:\nHero Iris, barnhjälte: sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar\nCompanion Mossa, talande skogsmus: liten brun skogsmus med grön halsduk och runda öron\nOther Amina, barn: sjuårig flicka med två mörka flätor, orange tröja och blå byxor\n\nStyle: Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+      "nextBeatId": "S6AA",
+      "assets": {
+        "audio": {
+          "kind": "audio",
+          "path": "/share/iris-sparade-platsen/assets/S5AA.mp3",
+          "provider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+          "meta": {
+            "ms": 26155,
+            "normalization": "ffmpeg-loudnorm:-23LUFS:-2dBTP:11LRA"
+          }
+        },
+        "image": {
+          "kind": "image",
+          "path": "/share/iris-sparade-platsen/assets/S5AA.webp",
+          "provider": "existing"
+        }
+      }
+    },
+    {
+      "beatId": "S5AB",
+      "slot": 5,
+      "pathTag": "neutral",
+      "prose": "Iris lät Amina rita fågeln. Hon räckte fram silverpennan, men fingrarna knep kvar om mitten. Pennan rörde sig inte. Amina höll i andra änden och väntade.\n\nMossa snurrade halsduken ett varv. Iris såg platsen bredvid träden, den som hon själv hade lämnat öppen. Hon släppte pennan och lade handflatan på kartans kant i stället.\n\nAmina ritade en liten fågel med utbredda vingar. När näbben blev klar, flaxade silvervingarna en enda gång fast pappret låg stilla.\n\nMossa tittade upp mot platsen ovanför stigarna. Ingen silvermåne fanns där. Iris drog inte tillbaka pennan. Fågeln fick kartans sista silverstreck, och Amina log så att flätorna gungade.",
+      "illustrationBrief": "Settled result, close view of the finished mosskarta. A small silver bird with spread wings shines beside Amina’s trees, while the open space above Mossa’s paths remains unmarked. Amina smiles broadly, her two braids swinging; Iris’s open hand rests safely on the map’s edge instead of the pen. Mossa looks up from the paths, his green scarf softly twisted.\n\nAppearance reference for entities already named in the shot above. Never add a character, object, flower, or prop merely because it is listed here:\nHero Iris, barnhjälte: sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar\nCompanion Mossa, talande skogsmus: liten brun skogsmus med grön halsduk och runda öron\nOther Amina, barn: sjuårig flicka med två mörka flätor, orange tröja och blå byxor\n\nStyle: Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+      "nextBeatId": "S6AB",
+      "assets": {
+        "audio": {
+          "kind": "audio",
+          "path": "/share/iris-sparade-platsen/assets/S5AB.mp3",
+          "provider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+          "meta": {
+            "ms": 29967,
+            "normalization": "ffmpeg-loudnorm:-23LUFS:-2dBTP:11LRA"
+          }
+        },
+        "image": {
+          "kind": "image",
+          "path": "/share/iris-sparade-platsen/assets/S5AB.webp",
+          "provider": "existing"
+        }
+      }
+    },
+    {
+      "beatId": "S5BA",
+      "slot": 5,
+      "pathTag": "neutral",
+      "prose": "Iris lät Mossa rita stjärnan. Hon vände pappret en aning på det låga bordet så att platsen ovanför molnen låg framför honom. Sedan rullade hon silverpennan över bordet till hans tassar.\n\nMossa satte ena foten på pennan och styrde med hela kroppen. Först kom ett streck, sedan fem spetsar. Iris höll kvar sin solfågel på ena sidan och lämnade Aminas vingar fria på den andra.\n\nAmina följde den tomma platsen mellan vingarna med blicken. Där blev inget silverbo.\n\nNär Mossa ritade sista spetsen, glimmade stjärnan och hoppade till på pappret. Mossa tappade nästan halsduken av förvåning. Iris skrattade till. Hon hade valt utan att knuffa sig före, och stjärnan lyste över deras gemensamma bild.",
+      "illustrationBrief": "Settled result in a tight tabletop crop. Palm-sized Mossa, much smaller than Iris's hand, stands proudly beside a finished five-pointed silver star and his cloud drawings on the solfågelbild. Iris's red-sleeved hand steadies the paper and her smiling face enters at one edge. The round sun bird remains clearly visible on the other side of the shared picture.\n\nAppearance reference for entities already named in the shot above. Never add a character, object, flower, or prop merely because it is listed here:\nHero Iris, barnhjälte: sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar\nCompanion Mossa, talande skogsmus: liten brun skogsmus med grön halsduk och runda öron\n\nStyle: Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+      "nextBeatId": "S6BA",
+      "assets": {
+        "audio": {
+          "kind": "audio",
+          "path": "/share/iris-sparade-platsen/assets/S5BA.mp3",
+          "provider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+          "meta": {
+            "ms": 32139,
+            "normalization": "ffmpeg-loudnorm:-23LUFS:-2dBTP:11LRA"
+          }
+        },
+        "image": {
+          "kind": "image",
+          "path": "/share/iris-sparade-platsen/assets/S5BA.webp",
+          "provider": "existing"
+        }
+      }
+    },
+    {
+      "beatId": "S5BB",
+      "slot": 5,
+      "pathTag": "neutral",
+      "prose": "Iris lät Amina rita boet. Amina sträckte sig efter silverpennan. Då lade Iris snabbt handen över den öppna platsen mellan vingarna.\n\n\"Vänta\", sa hon.\n\nHänderna ville fortfarande hinna först. Men under handflatan fanns platsen hon hade sparat åt någon annans idé. Iris flyttade handen till papprets kant och sköt pennan mot Amina.\n\nAmina ritade ett runt bo mellan vingarna. Mossa satt vid molnen och såg på platsen där stjärnan inte skulle komma. Han snurrade halsduken långsamt.\n\nNär sista kvisten var ritad, puffade silverboet upp sig som om en osynlig fågel landat där. Iris höll pappret stadigt. Boet blev bildens sista silvertecken. Någon silverstjärna fanns inte ovanför molnen.",
+      "illustrationBrief": "Settled result in a tight two-child tabletop crop. Amina in her orange top is the primary figure, holding the silverpenna above one completed rounded silver nest nestled within the broad wings of the round sun bird. Iris in her raspberry-red raincoat steadies the shared paper and smiles beside her. Palm-sized Mossa with his green scarf watches from the far edge.\n\nAppearance reference for entities already named in the shot above. Never add a character, object, flower, or prop merely because it is listed here:\nHero Iris, barnhjälte: sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar\nCompanion Mossa, talande skogsmus: liten brun skogsmus med grön halsduk och runda öron\nOther Amina, barn: sjuårig flicka med två mörka flätor, orange tröja och blå byxor\nObject silverpenna: en vanlig tjock penna som lämnar blanka silverstreck\n\nStyle: Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+      "nextBeatId": "S6BB",
+      "assets": {
+        "audio": {
+          "kind": "audio",
+          "path": "/share/iris-sparade-platsen/assets/S5BB.mp3",
+          "provider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+          "meta": {
+            "ms": 35581,
+            "normalization": "ffmpeg-loudnorm:-23LUFS:-2dBTP:11LRA"
+          }
+        },
+        "image": {
+          "kind": "image",
+          "path": "/share/iris-sparade-platsen/assets/S5BB.webp",
+          "provider": "existing"
+        }
+      }
+    },
+    {
+      "beatId": "S6AA",
+      "slot": 6,
+      "pathTag": "neutral",
+      "prose": "Bibliotekarien hängde upp mosskartan, och sagostunden började. Iris hade fått sin sista ritstund med Mossa på gröna mattan. Ritstunden med Amina i fönsterljuset hade inte blivit av. På kartan lyste Mossas måne. Ingen silverfågel flög över Aminas träd.\n\nIris satte sig på mattan, men inte mitt på den mjukaste platsen. Hon lämnade en bred bit bredvid knät. Amina slog sig ner där. Mossa klättrade upp på Iris gula stövel.\n\n\"Min måne kan nog lysa åt dina träd också\", viskade han till Amina.\n\nAmina pekade ut en krokig stig åt honom. Iris höll sagoboken så att alla tre såg. Bakom dem glimmade månen över kartan, och fönsterplatsen stod tom i kvällsljuset.",
+      "illustrationBrief": "Final wide return image during sagostunden. Iris sits on the green rug with the sagobok open so Amina, seated in the broad space Iris left beside her, can see it too. Mossa stands on Iris’s yellow boot. Behind them, the hung mosskarta visibly glimmers with its silver moon above the paths, while the broad window bench is empty in evening light.\n\nAppearance reference for entities already named in the shot above. Never add a character, object, flower, or prop merely because it is listed here:\nHero Iris, barnhjälte: sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar\nCompanion Mossa, talande skogsmus: liten brun skogsmus med grön halsduk och runda öron\nOther Amina, barn: sjuårig flicka med två mörka flätor, orange tröja och blå byxor\n\nStyle: Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+      "assets": {
+        "audio": {
+          "kind": "audio",
+          "path": "/share/iris-sparade-platsen/assets/S6AA.mp3",
+          "provider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+          "meta": {
+            "ms": 27419,
+            "normalization": "ffmpeg-loudnorm:-23LUFS:-2dBTP:11LRA"
+          }
+        },
+        "image": {
+          "kind": "image",
+          "path": "/share/iris-sparade-platsen/assets/S6AA.webp",
+          "provider": "existing"
+        }
+      }
+    },
+    {
+      "beatId": "S6AB",
+      "slot": 6,
+      "pathTag": "neutral",
+      "prose": "Bibliotekarien hängde upp mosskartan, och sagostunden började. Iris hade ritat med Mossa på gröna mattan. Hon och Amina hade inte fått sin sista ritstund i fönsterljuset. Aminas silverfågel flög över träden, men ingen silvermåne syntes ovanför Mossas stigar.\n\nIris satte sig på mattan och lämnade en liten plats på den öppna sagobokens kant. Mossa slog sig ner där. Amina satt på andra sidan Iris.\n\n\"Du kan välja första stigen i berättelsen\", viskade Iris till Mossa.\n\nHan snurrade halsduken och pekade. Amina följde stigen med fingret i luften. Iris lutade sig närmare båda två. Bakom dem blinkade silverfågeln, och på kartan fick natten vara utan måne.",
+      "illustrationBrief": "Final warm medium close-up on the green rug. Iris and Amina sit shoulder to shoulder, both clearly visible as they hold the open sagobok. At the book's lower edge, only Mossa's tiny mouse head and two little front paws peek over the page; his green scarf lies along the paper, making his true mouse scale unmistakable. Behind them, the hung mosskarta carries Amina's single silver bird above the trees.\n\nAppearance reference for entities already named in the shot above. Never add a character, object, flower, or prop merely because it is listed here:\nHero Iris, barnhjälte: sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar\nCompanion Mossa, talande skogsmus: liten brun skogsmus med grön halsduk och runda öron\nOther Amina, barn: sjuårig flicka med två mörka flätor, orange tröja och blå byxor\n\nStyle: Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+      "assets": {
+        "audio": {
+          "kind": "audio",
+          "path": "/share/iris-sparade-platsen/assets/S6AB.mp3",
+          "provider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+          "meta": {
+            "ms": 30485,
+            "normalization": "ffmpeg-loudnorm:-23LUFS:-2dBTP:11LRA"
+          }
+        },
+        "image": {
+          "kind": "image",
+          "path": "/share/iris-sparade-platsen/assets/S6AB.webp",
+          "provider": "existing"
+        }
+      }
+    },
+    {
+      "beatId": "S6BA",
+      "slot": 6,
+      "pathTag": "neutral",
+      "prose": "Bibliotekarien hängde upp solfågelbilden, och sagostunden började. Iris och Amina hade fått sin sista ritstund i fönsterljuset. Mossa hade inte fått rita med Iris på gröna mattan. Över molnen lyste hans silverstjärna. Mellan Aminas vingar fanns inget silverbo.\n\nIris gick först till sagomattan. Hon valde en plats nära fönstret och lämnade en liten öppning mellan sig och Amina. Mossa tassade in i den och lutade ryggen mot deras armar.\n\n\"Här syns stjärnan ju bäst\", sa han.\n\nAmina kupade händerna som ett låtsasbo åt hans svans. Iris log och höll sagoboken öppen. Ovanför dem hoppade silverstjärnan till, precis som när Mossa ritade sista spetsen.",
+      "illustrationBrief": "Final warm window-side sagostund frame. Iris and Amina sit together on the green rug with a small opening between them, and Mossa nestles in that opening against their arms while Iris holds the sagobok open. Above them, the hung solfågelbild shows Mossa’s silver star shining over the clouds; Amina’s cupped hands form a gentle pretend nest around Mossa’s tail.\n\nAppearance reference for entities already named in the shot above. Never add a character, object, flower, or prop merely because it is listed here:\nHero Iris, barnhjälte: sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar\nCompanion Mossa, talande skogsmus: liten brun skogsmus med grön halsduk och runda öron\nOther Amina, barn: sjuårig flicka med två mörka flätor, orange tröja och blå byxor\n\nStyle: Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+      "assets": {
+        "audio": {
+          "kind": "audio",
+          "path": "/share/iris-sparade-platsen/assets/S6BA.mp3",
+          "provider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+          "meta": {
+            "ms": 27711,
+            "normalization": "ffmpeg-loudnorm:-23LUFS:-2dBTP:11LRA"
+          }
+        },
+        "image": {
+          "kind": "image",
+          "path": "/share/iris-sparade-platsen/assets/S6BA.webp",
+          "provider": "existing"
+        }
+      }
+    },
+    {
+      "beatId": "S6BB",
+      "slot": 6,
+      "pathTag": "neutral",
+      "prose": "Bibliotekarien hängde upp solfågelbilden, och sagostunden började. Iris och Amina hade ritat i fönsterljuset. Den sista ritstunden med Mossa på gröna mattan hade inte blivit av. Aminas silverbo låg mellan vingarna. Över Mossas moln fanns ingen silverstjärna.\n\nIris satte sig vid kanten av sagomattan. Hon lämnade plats på ena knät och höll det andra intill Amina. Mossa hoppade upp, virade halsduken runt tassarna och såg på bilden.\n\n\"Moln behöver väl inte alltid en stjärna\", mumlade han. \"De kan vaka över ett bo.\"\n\nAmina knackade lätt mot Iris hand. Iris öppnade sagoboken mellan dem. Bakom deras huvuden puffade silverboet till, och fönsterljuset föll över alla tre.",
+      "illustrationBrief": "Final close return image at the edge of the green rug. Iris holds the sagobok open between herself and Amina while Mossa sits securely on Iris’s knee, green scarf wrapped around his paws. Warm window light falls across all three. Behind their heads, the hung solfågelbild visibly shows Amina’s rounded silver nest between the wings.\n\nAppearance reference for entities already named in the shot above. Never add a character, object, flower, or prop merely because it is listed here:\nHero Iris, barnhjälte: sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar\nCompanion Mossa, talande skogsmus: liten brun skogsmus med grön halsduk och runda öron\nOther Amina, barn: sjuårig flicka med två mörka flätor, orange tröja och blå byxor\n\nStyle: Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+      "assets": {
+        "audio": {
+          "kind": "audio",
+          "path": "/share/iris-sparade-platsen/assets/S6BB.mp3",
+          "provider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+          "meta": {
+            "ms": 30740,
+            "normalization": "ffmpeg-loudnorm:-23LUFS:-2dBTP:11LRA"
+          }
+        },
+        "image": {
+          "kind": "image",
+          "path": "/share/iris-sparade-platsen/assets/S6BB.webp",
+          "provider": "existing"
+        }
+      }
+    }
+  ],
+  "entryBeat": "S1",
+  "coverBrief": "Wordless portrait 2:3 book cover in warm evening light at kvartersbiblioteket. Iris, a seven-year-old girl with dark curls, a raspberry-red raincoat, and yellow boots, stands decisively between the broad window bench and the soft green rug, holding exactly one stort ritpapper under her arm. Mossa, a small brown forest mouse with round ears and a green scarf, points toward the rug from Iris's yellow boot. On a low table between them lies exactly one silverpenna, catching the window light. Low bookcases frame the scene; no typography.\n\nAppearance reference for entities already named in the shot above. Never add a character, object, flower, or prop merely because it is listed here:\nHero Iris, barnhjälte: sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar\nCompanion Mossa, talande skogsmus: liten brun skogsmus med grön halsduk och runda öron\nPlace kvartersbiblioteket: låga bokhyllor, en bred fönsterbänk och en mjuk grön matta\nObject stort ritpapper: ett brett vitt ritpapper med plats för flera tecknare\nObject silverpenna: en vanlig tjock penna som lämnar blanka silverstreck\n\nStyle: Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+  "validation": {
+    "passed": true,
+    "hardFindings": [],
+    "softFindings": [],
+    "judgeNotes": []
+  },
+  "narratorPersona": "grandpa",
+  "portraits": {
+    "hero": {
+      "kind": "image",
+      "path": "/share/iris-sparade-platsen/assets/refs/hero.png",
+      "provider": "azure-images:gpt-image-2"
+    },
+    "companion": {
+      "kind": "image",
+      "path": "/share/iris-sparade-platsen/assets/refs/companion.png",
+      "provider": "azure-images:gpt-image-2"
+    }
+  },
+  "cover": {
+    "kind": "image",
+    "path": "/share/iris-sparade-platsen/assets/cover.webp",
+    "provider": "azure-images:gpt-image-2",
+    "meta": {
+      "ms": 57340
+    }
+  }
+}

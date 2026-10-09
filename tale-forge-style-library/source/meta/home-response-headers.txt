@@ -1,0 +1,26 @@
+HTTP/1.1 200 Connection Established
+
+HTTP/2 200 
+date: Fri, 09 Oct 2026 13:03:29 GMT
+content-type: text/html; charset=utf-8
+age: 0
+cache-control: private, no-cache, no-store, max-age=0, must-revalidate
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+content-security-policy: default-src 'self'; img-src 'self' blob: data: https://snamhqcmfsaqbqcwccqv.supabase.co https://storage.googleapis.com; media-src 'self' blob: https://snamhqcmfsaqbqcwccqv.supabase.co https://storage.googleapis.com; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self' https://snamhqcmfsaqbqcwccqv.supabase.co wss://snamhqcmfsaqbqcwccqv.supabase.co https://taleforge-backend-production-450761080181.europe-west4.run.app; frame-ancestors 'none'; object-src 'none'; base-uri 'self'
+link: </_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2>; rel=preload; as="font"; crossorigin=""; type="font/woff2", </_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2>; rel=preload; as="font"; crossorigin=""; type="font/woff2", </_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2>; rel=preload; as="font"; crossorigin=""; type="font/woff2", </_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2>; rel=preload; as="font"; crossorigin=""; type="font/woff2", </landing/iris/hero-portrait.webp>; rel=preload; as="image"
+referrer-policy: strict-origin-when-cross-origin
+server: cloudflare
+strict-transport-security: max-age=63072000
+vary: rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch
+vary: accept-encoding
+x-content-type-options: nosniff
+x-frame-options: DENY
+x-matched-path: /
+x-powered-by: Next.js
+x-vercel-cache: MISS
+x-vercel-id: iad1::iad1::mzr8c-1791551008867-63f198841e61
+cf-cache-status: DYNAMIC
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=puytENab3D%2BpUT6hdhN2NsuFpMqP9KNJOFin1mML%2FsB%2FaLBgQw%2BZKZFyVFlffsPaF5CqMMJrBL7YNqE8Tg1II83XKGzEX8OAxwEct2n7K%2BFZXk1MOc95YHLyyW8FWABYNA%3D%3D"}]}
+cf-ray: a47d95ed5c399b2e-IAD
+alt-svc: h3=":443"; ma=86400
+

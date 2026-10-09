@@ -1,0 +1,254 @@
+[
+ {
+  "name": "twinkle",
+  "target": "DIV.starfield",
+  "timing": {
+   "delay": 0,
+   "direction": "normal",
+   "duration": 4600,
+   "easing": "linear",
+   "endDelay": 0,
+   "fill": "none",
+   "iterationStart": 0,
+   "iterations": null,
+   "activeDuration": null,
+   "currentIteration": 1,
+   "endTime": null,
+   "localTime": 7483.021000000012,
+   "progress": 0.6267436956521766
+  },
+  "keyframes": [
+   {
+    "offset": 0,
+    "easing": "ease-in-out",
+    "composite": "auto",
+    "opacity": "0.95",
+    "computedOffset": 0
+   },
+   {
+    "offset": 0.5,
+    "easing": "ease-in-out",
+    "composite": "auto",
+    "opacity": "0.55",
+    "computedOffset": 0.5
+   },
+   {
+    "offset": 1,
+    "easing": "ease-in-out",
+    "composite": "auto",
+    "opacity": "0.95",
+    "computedOffset": 1
+   }
+  ]
+ },
+ {
+  "name": "float1",
+  "target": "DIV.fbook fb1",
+  "timing": {
+   "delay": 0,
+   "direction": "normal",
+   "duration": 7000,
+   "easing": "linear",
+   "endDelay": 0,
+   "fill": "none",
+   "iterationStart": 0,
+   "iterations": null,
+   "activeDuration": null,
+   "currentIteration": 1,
+   "endTime": null,
+   "localTime": 7483.021000000012,
+   "progress": 0.0690030000000017
+  },
+  "keyframes": [
+   {
+    "offset": 0,
+    "easing": "ease-in-out",
+    "composite": "auto",
+    "transform": "rotate(-8deg) translateY(0px)",
+    "computedOffset": 0
+   },
+   {
+    "offset": 0.5,
+    "easing": "ease-in-out",
+    "composite": "auto",
+    "transform": "rotate(-8.6deg) translateY(-12px)",
+    "computedOffset": 0.5
+   },
+   {
+    "offset": 1,
+    "easing": "ease-in-out",
+    "composite": "auto",
+    "transform": "rotate(-8deg) translateY(0px)",
+    "computedOffset": 1
+   }
+  ]
+ },
+ {
+  "name": "float2",
+  "target": "DIV.fbook fb2",
+  "timing": {
+   "delay": 0,
+   "direction": "normal",
+   "duration": 8000,
+   "easing": "linear",
+   "endDelay": 0,
+   "fill": "none",
+   "iterationStart": 0,
+   "iterations": null,
+   "activeDuration": null,
+   "currentIteration": 0,
+   "endTime": null,
+   "localTime": 7483.021000000012,
+   "progress": 0.9353776250000014
+  },
+  "keyframes": [
+   {
+    "offset": 0,
+    "easing": "ease-in-out",
+    "composite": "auto",
+    "transform": "rotate(7deg) translateY(0px)",
+    "computedOffset": 0
+   },
+   {
+    "offset": 0.5,
+    "easing": "ease-in-out",
+    "composite": "auto",
+    "transform": "rotate(7.6deg) translateY(-16px)",
+    "computedOffset": 0.5
+   },
+   {
+    "offset": 1,
+    "easing": "ease-in-out",
+    "composite": "auto",
+    "transform": "rotate(7deg) translateY(0px)",
+    "computedOffset": 1
+   }
+  ]
+ },
+ {
+  "name": "floatBadge",
+  "target": "DIV.badge",
+  "timing": {
+   "delay": 0,
+   "direction": "normal",
+   "duration": 9000,
+   "easing": "linear",
+   "endDelay": 0,
+   "fill": "none",
+   "iterationStart": 0,
+   "iterations": null,
+   "activeDuration": null,
+   "currentIteration": 0,
+   "endTime": null,
+   "localTime": 7483.021000000012,
+   "progress": 0.8314467777777791
+  },
+  "keyframes": [
+   {
+    "offset": 0,
+    "easing": "ease-in-out",
+    "composite": "auto",
+    "transform": "rotate(2.5deg) translateY(0px)",
+    "computedOffset": 0
+   },
+   {
+    "offset": 0.5,
+    "easing": "ease-in-out",
+    "composite": "auto",
+    "transform": "rotate(3deg) translateY(-7px)",
+    "computedOffset": 0.5
+   },
+   {
+    "offset": 1,
+    "easing": "ease-in-out",
+    "composite": "auto",
+    "transform": "rotate(2.5deg) translateY(0px)",
+    "computedOffset": 1
+   }
+  ]
+ },
+ {
+  "name": "pulse",
+  "target": "SPAN.dotpulse",
+  "timing": {
+   "delay": 0,
+   "direction": "normal",
+   "duration": 2400,
+   "easing": "linear",
+   "endDelay": 0,
+   "fill": "none",
+   "iterationStart": 0,
+   "iterations": null,
+   "activeDuration": null,
+   "currentIteration": 3,
+   "endTime": null,
+   "localTime": 7483.021000000012,
+   "progress": 0.11792541666667145
+  },
+  "keyframes": [
+   {
+    "offset": 0,
+    "easing": "ease",
+    "composite": "auto",
+    "boxShadow": "rgba(242, 178, 46, 0.45) 0px 0px 0px 0px",
+    "computedOffset": 0
+   },
+   {
+    "offset": 0.7,
+    "easing": "ease",
+    "composite": "auto",
+    "boxShadow": "rgba(242, 178, 46, 0) 0px 0px 0px 12px",
+    "computedOffset": 0.7
+   },
+   {
+    "offset": 1,
+    "easing": "ease",
+    "composite": "auto",
+    "boxShadow": "rgba(242, 178, 46, 0) 0px 0px 0px 0px",
+    "computedOffset": 1
+   }
+  ]
+ },
+ {
+  "name": "pulse",
+  "target": "SPAN.dotpulse",
+  "timing": {
+   "delay": 0,
+   "direction": "normal",
+   "duration": 2400,
+   "easing": "linear",
+   "endDelay": 0,
+   "fill": "none",
+   "iterationStart": 0,
+   "iterations": null,
+   "activeDuration": null,
+   "currentIteration": 3,
+   "endTime": null,
+   "localTime": 7483.021000000012,
+   "progress": 0.11792541666667145
+  },
+  "keyframes": [
+   {
+    "offset": 0,
+    "easing": "ease",
+    "composite": "auto",
+    "boxShadow": "rgba(242, 178, 46, 0.45) 0px 0px 0px 0px",
+    "computedOffset": 0
+   },
+   {
+    "offset": 0.7,
+    "easing": "ease",
+    "composite": "auto",
+    "boxShadow": "rgba(242, 178, 46, 0) 0px 0px 0px 12px",
+    "computedOffset": 0.7
+   },
+   {
+    "offset": 1,
+    "easing": "ease",
+    "composite": "auto",
+    "boxShadow": "rgba(242, 178, 46, 0) 0px 0px 0px 0px",
+    "computedOffset": 1
+   }
+  ]
+ }
+]

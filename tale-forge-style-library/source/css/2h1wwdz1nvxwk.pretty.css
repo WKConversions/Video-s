@@ -1,0 +1,609 @@
+.cs-band {
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 6px;
+  display: flex;
+}
+.cs-band-left {
+  flex-direction: column;
+  flex: none;
+  align-items: flex-start;
+  gap: 2px;
+  display: flex;
+}
+.cs-portrait {
+  border: 1px solid var(--card-line);
+  background: linear-gradient(160deg, var(--pill-bg), var(--gold-chip-bg));
+  border-radius: 26px;
+  width: 110px;
+  height: 110px;
+  overflow: hidden;
+  box-shadow: 0 6px 22px #0000002e;
+}
+.cs-portrait img {
+  object-fit: cover;
+  object-position: center 20%;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.cs-portrait-initial {
+  width: 100%;
+  height: 100%;
+  font-family: var(--display);
+  color: var(--gold-chip-ink);
+  place-items: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  display: grid;
+}
+.cs-andra {
+  font-family: var(--ui);
+  color: var(--card-sub);
+  cursor: pointer;
+  background: 0 0;
+  border: none;
+  min-height: 30px;
+  margin-top: 6px;
+  padding: 0;
+  font-size: 0.78rem;
+  text-decoration: underline;
+  display: inline-block;
+}
+.cs-andra:hover {
+  color: var(--card-ink);
+}
+.cs-band-who {
+  flex: 1;
+  min-width: 0;
+}
+.cs-h1 {
+  font-family: var(--display);
+  letter-spacing: -0.01em;
+  color: var(--page-ink);
+  text-shadow: var(--h1-shadow);
+  margin: 0;
+  font-size: 1.92rem;
+  font-weight: 700;
+  line-height: 1.15;
+}
+.cs-lede {
+  font-family: var(--serif);
+  color: var(--page-sub);
+  max-width: 46ch;
+  margin: 8px 0 0;
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+.cs-memory {
+  flex-direction: column;
+  flex: none;
+  align-items: flex-end;
+  gap: 9px;
+  width: 170px;
+  margin-top: 4px;
+  display: flex;
+}
+.cs-spine {
+  border: 1px solid var(--card-line);
+  background: linear-gradient(160deg, #3f2f68, #241b3f);
+  border-radius: 8px;
+  width: 56px;
+  height: 72px;
+  display: block;
+}
+.cs-memtag {
+  background: var(--card);
+  border: 1px solid var(--card-line);
+  font-family: var(--serif);
+  color: var(--card-sub);
+  border-radius: 12px;
+  width: 150px;
+  margin: 0;
+  padding: 8px 12px;
+  font-size: 0.78rem;
+  font-style: italic;
+  line-height: 1.45;
+  transform: rotate(-1deg);
+  box-shadow: 0 4px 14px #00000026;
+}
+.cs-coins {
+  justify-content: flex-end;
+  display: flex;
+}
+.cs-coin {
+  border: 2px solid var(--card-line);
+  width: 38px;
+  height: 38px;
+  font-family: var(--display);
+  color: var(--gold-chip-ink);
+  background: linear-gradient(135deg, var(--pill-bg), var(--gold-chip-bg));
+  border-radius: 999px;
+  place-items: center;
+  margin-left: -9px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: grid;
+  overflow: hidden;
+}
+.cs-coin img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+@media (max-width: 700px) {
+  .cs-band {
+    flex-wrap: wrap;
+  }
+  .cs-memory {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+  .cs-memory .cs-coins {
+    margin-left: auto;
+  }
+}
+.cs-recipe-group {
+  min-width: 0;
+  max-width: 100%;
+  margin: 16px 0 4px;
+}
+.cs-recipe-title {
+  font-family: var(--ui);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--page-sub);
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+.cs-recipe {
+  font-family: var(--serif);
+  color: var(--page-ink);
+  margin: 4px 0 0;
+  font-size: 0.97rem;
+  line-height: 2.2;
+}
+.cs-clause {
+  white-space: nowrap;
+}
+.cs-chip {
+  vertical-align: middle;
+  border: 1px solid var(--card-line);
+  background: var(--card);
+  font-family: var(--ui);
+  color: var(--card-ink);
+  cursor: pointer;
+  border-radius: 999px;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 12px 4px 5px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: border-color 0.25s;
+  display: inline-flex;
+  position: relative;
+}
+.cs-chip:hover {
+  border-color: var(--trait-on-line);
+}
+.cs-chip:after {
+  content: "";
+  height: 44px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+.cs-chip-th {
+  width: 26px;
+  height: 26px;
+  font-family: var(--display);
+  color: var(--gold-chip-ink);
+  background: linear-gradient(135deg, var(--violet-soft), var(--gold-soft));
+  border-radius: 999px;
+  flex: none;
+  place-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: grid;
+  overflow: hidden;
+}
+.cs-chip-th img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.cs-chip--add {
+  color: var(--card-sub);
+  font-weight: 500;
+}
+.cs-chip--add .cs-chip-th {
+  border: 1.5px dashed var(--dash-line);
+  color: var(--card-sub);
+  background: 0 0;
+}
+@media (max-width: 560px) {
+  .cs-clause {
+    white-space: normal;
+  }
+  .cs-chip {
+    white-space: nowrap;
+  }
+}
+.cs-sheetwrap {
+  z-index: 60;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  background: #0a081980;
+  place-items: center;
+  padding: 20px;
+  display: grid;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+.cs-sheet {
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 16px;
+  width: min(100%, 560px);
+  max-height: min(86dvh, 760px);
+  padding: 24px;
+  display: grid;
+  overflow: hidden;
+}
+.cs-sheet[data-sheet="style"] {
+  width: min(100%, 920px);
+}
+.cs-sheet[data-sheet="voice"] {
+  width: min(100%, 760px);
+}
+.cs-sheet[data-sheet="language"] {
+  width: min(100%, 420px);
+}
+.cs-sheet[data-sheet="companion"] {
+  width: min(100%, 820px);
+}
+.cs-sheet-head {
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+.cs-sheet-title {
+  font-family: var(--display);
+  color: var(--card-ink);
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.cs-sheet-title:focus {
+  outline: none;
+}
+.cs-sheet-close {
+  border: 1px solid var(--card-line);
+  background: var(--choice-bg);
+  width: 44px;
+  height: 44px;
+  color: var(--card-ink);
+  font: 700 1.45rem/1 var(--ui);
+  cursor: pointer;
+  border-radius: 999px;
+  flex: none;
+  place-items: center;
+  display: grid;
+}
+.cs-sheet-close:hover {
+  border-color: var(--trait-on-line);
+}
+.cs-sheet-body {
+  overscroll-behavior: contain;
+  gap: 14px;
+  min-width: 0;
+  padding: 2px 3px 4px;
+  display: grid;
+  overflow-y: auto;
+}
+.cs-sheet-body > .sec-intro {
+  max-width: 62ch;
+  margin: 0;
+}
+.cs-sheet-actions {
+  justify-content: flex-end;
+  display: flex;
+}
+.cs-sheet-done {
+  justify-content: center;
+  min-width: 104px;
+}
+@media (max-width: 700px) {
+  .cs-sheetwrap {
+    align-items: end;
+    padding: 12px;
+  }
+  .cs-sheet,
+  .cs-sheet[data-sheet] {
+    border-radius: 24px;
+    width: 100%;
+    max-height: calc(100dvh - 24px);
+    padding: 18px 16px;
+  }
+  .cs-sheet-body {
+    padding-inline: 1px;
+  }
+  .cs-sheet-actions .btn {
+    width: 100%;
+  }
+}
+.cs-h2 {
+  font-family: var(--display);
+  letter-spacing: -0.01em;
+  color: var(--page-ink);
+  margin: 22px 0 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.cs-doors {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 13px;
+  display: grid;
+}
+.cs-door {
+  text-align: left;
+  flex-direction: column;
+  display: flex;
+  overflow: hidden;
+}
+.cs-door-art {
+  height: 120px;
+  display: block;
+  overflow: hidden;
+}
+.cs-door-art img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.cs-door-foot {
+  flex-direction: column;
+  flex: 1;
+  gap: 6px;
+  padding: 11px 13px 13px;
+  display: flex;
+}
+.cs-door-reg {
+  font-family: var(--ui);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.66rem;
+  font-weight: 700;
+}
+.cs-door-reg--godnatt {
+  color: var(--pill-ink);
+}
+.cs-door-reg--aventyr {
+  color: var(--gold-chip-ink);
+}
+.cs-door-reg--vanskap {
+  color: var(--coral-chip-ink);
+}
+.cs-door-reg--surprise {
+  color: var(--logo-ink);
+}
+.cs-door-title {
+  font-family: var(--display);
+  color: var(--card-ink);
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.cs-door-hook {
+  font-family: var(--serif);
+  color: var(--card-sub);
+  flex: 1 0 auto;
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+.cs-door-title,
+.cs-door-reg {
+  flex-shrink: 0;
+}
+.cs-door .btn {
+  justify-content: center;
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 12px;
+  font-size: 0.84rem;
+}
+.cs-door .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+.cs-door-face {
+  border-bottom: 1px solid var(--card-line);
+  background: linear-gradient(160deg, #140f28e6, #281e46d9);
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  display: flex;
+  position: relative;
+}
+body[data-theme="morgon"] .cs-door-face {
+  background: linear-gradient(160deg, #ded5f5, #c9bcf0);
+}
+.cs-door-face:after {
+  content: "";
+  border: 1px solid color-mix(in srgb, var(--logo-ink) 55%, transparent);
+  border-radius: 18px;
+  position: absolute;
+  inset: 8px;
+}
+.cs-door-star {
+  font-family: var(--display);
+  color: var(--logo-ink);
+  font-size: 44px;
+  line-height: 1;
+}
+.cs-door-art--surprise {
+  position: relative;
+}
+.cs-door-art--surprise img {
+  object-position: center 55%;
+}
+.cs-door-face--fallback {
+  isolation: isolate;
+  width: 100%;
+  height: 100%;
+}
+.cs-door-face--fallback:before {
+  content: "";
+  z-index: -1;
+  background:
+    radial-gradient(
+      circle at 50% 72%,
+      color-mix(in srgb, var(--logo-ink) 34%, transparent),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      transparent 48%,
+      color-mix(in srgb, var(--violet-soft) 38%, transparent) 50%,
+      transparent 52%
+    );
+  position: absolute;
+  inset: 0;
+}
+.cs-companion-actions {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  display: grid;
+}
+.cs-companion-actions .friend-add {
+  width: 100%;
+  min-height: 48px;
+  color: var(--card-ink);
+}
+.cs-companion-manage {
+  min-height: 44px;
+  color: var(--card-sub);
+  font: 700 0.84rem/1.35 var(--ui);
+  align-items: center;
+  display: inline-flex;
+}
+.cs-inline-friend {
+  border: 1px solid var(--card-line);
+  background: var(--ghost-bg);
+  border-radius: 20px;
+  gap: 15px;
+  padding: 18px;
+  display: grid;
+}
+.cs-inline-friend-head {
+  gap: 5px;
+  display: grid;
+}
+.cs-inline-friend-head h4 {
+  font-family: var(--display);
+  color: var(--card-ink);
+  margin: 0;
+  font-size: 1.05rem;
+}
+.cs-inline-friend-head p {
+  color: var(--card-sub);
+  font: 0.86rem/1.5 var(--ui);
+  margin: 0;
+}
+.cs-inline-field {
+  color: var(--card-ink);
+  font: 700 0.86rem/1.35 var(--ui);
+  gap: 7px;
+  display: grid;
+}
+.cs-inline-field input {
+  border-radius: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+}
+.cs-inline-options {
+  border: 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+.cs-inline-options legend {
+  color: var(--card-ink);
+  font: 700 0.86rem/1.35 var(--ui);
+  margin-bottom: 9px;
+}
+.cs-inline-options .trait-row {
+  margin-bottom: 0;
+}
+.cs-inline-actions {
+  flex-wrap: wrap;
+  gap: 10px;
+  display: flex;
+}
+@media (max-width: 560px) {
+  .cs-companion-actions {
+    grid-template-columns: 1fr;
+  }
+  .cs-companion-manage {
+    text-align: center;
+    justify-content: center;
+  }
+  .cs-inline-friend {
+    padding: 15px;
+  }
+  .cs-inline-actions .btn {
+    justify-content: center;
+    width: 100%;
+  }
+}
+@media (max-width: 1000px) {
+  .cs-doors {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 520px) {
+  .cs-doors {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .cs-door-art,
+  .cs-door-face {
+    height: 140px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs-chip {
+    transition: none;
+  }
+}
+.HeroCanvasPlaceholder-module__H1HHWq__canvas {
+  aspect-ratio: 1;
+  isolation: isolate;
+  background-color: var(--card);
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.HeroCanvasPlaceholder-module__H1HHWq__art {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
