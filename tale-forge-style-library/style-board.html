@@ -1,0 +1,1680 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tale Forge Style Board</title>
+<meta name="description" content="One-page style board for tale-forge.app: logo, colour, type, components, illustration, paintings, icons, motion, copy and sound, drawn with tokens/tokens.css. Captured 2026-10-09/10.">
+<link rel="stylesheet" href="tokens/tokens.css">
+<style>
+/* =====================================================================================
+   A. Site component CSS, VERBATIM from source/css/3q17cp_jgfwol.pretty.css (line ranges in
+   the headers). Tokens, fonts and the body canvas come from tokens/tokens.css.
+   ===================================================================================== */
+/* ---- 3q17cp_jgfwol.pretty.css:591-597 · reset, html ---- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+/* ---- 3q17cp_jgfwol.pretty.css:612-680 · backdrop stack .bg / .scrim / .starfield / .wrap ---- */
+.bg {
+  z-index: 0;
+  pointer-events: none;
+  height: 100lvh;
+  transition: opacity var(--theme-transition-duration)
+    var(--theme-transition-easing);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.bg-night img {
+  object-fit: cover;
+  object-position: center 30%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+.bg-night .scrim {
+  background: linear-gradient(#0b0f1e61 0%, #0b0f1e80 45%, #0d1122bd 100%);
+  position: absolute;
+  inset: 0;
+}
+.starfield {
+  background-image:
+    radial-gradient(1.4px 1.4px at 12% 8%, #ffe9b0e6 50%, #0000 51%),
+    radial-gradient(1px 1px at 32% 16%, #f5f0e8cc 50%, #0000 51%),
+    radial-gradient(1.6px 1.6px at 58% 6%, #f5c542d9 50%, #0000 51%),
+    radial-gradient(1px 1px at 76% 12%, #f5f0e8b3 50%, #0000 51%),
+    radial-gradient(1.2px 1.2px at 90% 22%, #ffe9b0bf 50%, #0000 51%),
+    radial-gradient(1.3px 1.3px at 44% 24%, #9b87f599 50%, #0000 51%);
+  animation: 4.6s ease-in-out infinite twinkle;
+  position: absolute;
+  inset: 0;
+}
+@keyframes twinkle {
+  0%,
+  to {
+    opacity: 0.95;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+.bg-day picture,
+.bg-day img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+.bg-day img {
+  object-fit: cover;
+}
+body[data-theme="natt"] .bg-day {
+  opacity: 0;
+}
+body[data-theme="natt"] .bg-night,
+body[data-theme="morgon"] .bg-day {
+  opacity: 1;
+}
+body[data-theme="morgon"] .bg-night {
+  opacity: 0;
+}
+.wrap {
+  z-index: 1;
+  position: relative;
+}
+/* ---- 3q17cp_jgfwol.pretty.css:681-721 · shell, nav, logo ---- */
+.shell {
+  flex-direction: column;
+  width: min(1120px, 100%);
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+}
+.shell > nav {
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 0;
+  display: flex;
+}
+.logo {
+  white-space: nowrap;
+  font-family: var(--wordmark);
+  color: var(--logo-ink);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: var(--logo-shadow);
+  flex-shrink: 0;
+  align-items: center;
+  gap: 13px;
+  font-size: 1.72rem;
+  font-weight: 700;
+  transition: color 0.5s;
+  display: flex;
+}
+.logo img {
+  object-fit: contain;
+  filter: drop-shadow(0 0 14px #f5c54280);
+  width: 42px;
+  height: 42px;
+}
+.nav-right {
+  align-items: center;
+  gap: 12px;
+  display: flex;
+}
+/* ---- 3q17cp_jgfwol.pretty.css:731-767 · .nav-cta and the 560px nav ---- */
+.nav-cta {
+  font-family: var(--ui);
+  color: var(--ghost-ink);
+  background: var(--ghost-bg);
+  border: 1px solid var(--ghost-line);
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 11px 20px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition:
+    background 0.5s,
+    color 0.5s,
+    border-color 0.5s;
+}
+@media (max-width: 560px) {
+  .logo {
+    letter-spacing: 1.5px;
+    gap: 8px;
+    font-size: 1.05rem;
+  }
+  .logo img {
+    width: 28px;
+    height: 28px;
+  }
+  .shell > nav {
+    gap: 8px;
+    padding: 14px 0;
+  }
+  .nav-right {
+    gap: 8px;
+  }
+  .nav-cta {
+    padding: 9px 14px;
+    font-size: 0.85rem;
+  }
+}
+/* ---- 3q17cp_jgfwol.pretty.css:768-826 · theme toggle .tt ---- */
+.tt {
+  background: var(--ghost-bg);
+  border: 1px solid var(--control-line);
+  min-height: 44px;
+  font-family: var(--ui);
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  transition:
+    background var(--theme-transition-duration) var(--theme-transition-easing),
+    border-color var(--theme-transition-duration) var(--theme-transition-easing);
+  border-radius: 999px;
+  align-items: center;
+  padding: 4px;
+  display: flex;
+  position: relative;
+}
+.tt-thumb {
+  background: var(--btn-grad);
+  width: calc(50% - 4px);
+  box-shadow: var(--btn-shadow);
+  transition:
+    transform var(--theme-transition-duration) cubic-bezier(0.2, 0.7, 0.3, 1.2),
+    background var(--theme-transition-duration) var(--theme-transition-easing);
+  border-radius: 999px;
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+}
+body[data-theme="morgon"] .tt-thumb {
+  transform: translate(100%);
+}
+.tt-opt {
+  z-index: 1;
+  color: var(--ghost-ink);
+  transition: color var(--theme-transition-duration)
+    var(--theme-transition-easing);
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  display: inline-flex;
+  position: relative;
+}
+.tt-opt svg {
+  width: 15px;
+  height: 15px;
+}
+body[data-theme="natt"] .tt-opt.night,
+body[data-theme="morgon"] .tt-opt.day {
+  color: var(--btn-ink);
+}
+.tt:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--card) 88%, transparent);
+}
+/* ---- 3q17cp_jgfwol.pretty.css:827-885 · hero, kicker, h1, lede, cta-row ---- */
+.hero {
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 40px;
+  min-height: 64vh;
+  padding: 4vh 0 2vh;
+  display: grid;
+}
+.kicker {
+  color: var(--chip-ink);
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-line);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 999px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: all 0.5s;
+  display: inline-flex;
+}
+.kicker svg {
+  width: 14px;
+  height: 14px;
+}
+h1 {
+  font-family: var(--display);
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  color: var(--page-ink);
+  text-shadow: var(--h1-shadow);
+  margin-bottom: 18px;
+  font-size: clamp(2.7rem, 5.4vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1.06;
+  transition: color 0.5s;
+}
+h1 .grad {
+  color: var(--accent-ink);
+  transition: color 0.5s;
+}
+.lede {
+  font-family: var(--serif);
+  color: var(--page-sub);
+  max-width: 46ch;
+  margin-bottom: 30px;
+  font-size: clamp(1.08rem, 1.65vw, 1.28rem);
+  line-height: 1.65;
+  transition: color 0.5s;
+}
+.cta-row {
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  display: flex;
+}
+/* ---- 3q17cp_jgfwol.pretty.css:886-1037 · buttons, hero cover fan, badge, gold pulse ---- */
+.btn {
+  cursor: pointer;
+  font-family: var(--ui);
+  border: none;
+  border-radius: 999px;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 17px 30px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  transition:
+    transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4),
+    box-shadow 0.3s,
+    background 0.5s,
+    color 0.5s;
+  display: inline-flex;
+}
+.btn:active {
+  transform: scale(0.96);
+}
+.btn-primary {
+  color: var(--btn-ink);
+  background: var(--btn-grad);
+  box-shadow:
+    var(--btn-shadow),
+    inset 0 1px 0 #ffffff73;
+}
+.btn-primary:hover {
+  box-shadow: var(--btn-shadow-hover);
+  transform: translateY(-3px);
+}
+.btn-ghost {
+  background: var(--ghost-bg);
+  color: var(--ghost-ink);
+  border: 1px solid var(--ghost-line);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+.fan {
+  height: min(58vh, 540px);
+  position: relative;
+}
+.fan .fbook {
+  border: 5px solid var(--frame);
+  border-radius: 20px;
+  width: min(46%, 240px);
+  transition:
+    transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1.2),
+    border-color 0.5s;
+  position: absolute;
+  overflow: hidden;
+  box-shadow:
+    0 24px 50px #0a072066,
+    0 0 44px #f5c5421f;
+}
+.fan .fbook img {
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}
+.fb1 {
+  z-index: 1;
+  animation: 7s ease-in-out infinite float1;
+  top: 10%;
+  left: 6%;
+  transform: rotate(-8deg);
+}
+.fb2 {
+  z-index: 2;
+  animation: 8s ease-in-out infinite float2;
+  top: 2%;
+  right: 8%;
+  transform: rotate(7deg);
+}
+@keyframes float1 {
+  0%,
+  to {
+    transform: rotate(-8deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-8.6deg) translateY(-12px);
+  }
+}
+@keyframes float2 {
+  0%,
+  to {
+    transform: rotate(7deg) translateY(0);
+  }
+  50% {
+    transform: rotate(7.6deg) translateY(-16px);
+  }
+}
+.fan .badge {
+  z-index: 3;
+  background: var(--card);
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  backdrop-filter: blur(var(--card-blur));
+  border: 1px solid var(--card-line);
+  color: var(--card-ink);
+  box-shadow: var(--card-shadow);
+  border-radius: 18px;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  transition:
+    background 0.5s,
+    color 0.5s;
+  animation: 9s ease-in-out infinite floatBadge;
+  display: flex;
+  position: absolute;
+  bottom: 23%;
+  right: 9%;
+}
+@keyframes floatBadge {
+  0%,
+  to {
+    transform: rotate(2.5deg) translateY(0);
+  }
+  50% {
+    transform: rotate(3deg) translateY(-7px);
+  }
+}
+.badge .dotpulse {
+  background: var(--gold);
+  border-radius: 50%;
+  flex: none;
+  width: 10px;
+  height: 10px;
+  animation: 2.4s infinite pulse;
+  box-shadow: 0 0 #f2b22e80;
+}
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 #f2b22e73;
+  }
+  70% {
+    box-shadow: 0 0 0 12px #f2b22e00;
+  }
+  to {
+    box-shadow: 0 0 #f2b22e00;
+  }
+}
+.badge b {
+  font-size: 0.95rem;
+}
+.badge span {
+  color: var(--card-sub);
+  font-size: 0.8rem;
+  display: block;
+}
+/* ---- 3q17cp_jgfwol.pretty.css:1038-1062 · section, h2 ---- */
+section {
+  padding: 44px 0 8px;
+}
+.sec-head {
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+  display: flex;
+}
+.sec-intro {
+  font-family: var(--serif);
+  color: var(--page-sub);
+  max-width: 62ch;
+  margin: -10px 0 22px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+h2 {
+  font-family: var(--display);
+  letter-spacing: -0.01em;
+  color: var(--page-ink);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 600;
+  transition: color 0.5s;
+}
+/* ---- 3q17cp_jgfwol.pretty.css:1087-1098 · .sec-chip ---- */
+.sec-chip {
+  color: var(--chip-ink);
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-line);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.5s;
+}
+/* ---- 3q17cp_jgfwol.pretty.css:1110-1147 · .glass ---- */
+.glass {
+  background: var(--card);
+  -webkit-backdrop-filter: blur(var(--card-blur));
+  backdrop-filter: blur(var(--card-blur));
+  border: 1px solid var(--card-line);
+  box-shadow: var(--card-shadow);
+  color: var(--card-ink);
+  border-radius: 26px;
+  transition:
+    background 0.5s,
+    border-color 0.5s,
+    color 0.5s,
+    box-shadow 0.4s;
+  position: relative;
+}
+.glass:before {
+  content: "";
+  pointer-events: none;
+  -webkit-mask-composite: xor;
+  opacity: 0.45;
+  background: linear-gradient(135deg, #9b87f580, #f2b22e59 50%, #ff61544d);
+  border-radius: 26px;
+  padding: 1px;
+  position: absolute;
+  inset: 0;
+  -webkit-mask-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0);
+  -webkit-mask-position:
+    0 0,
+    0 0;
+  -webkit-mask-size: auto, auto;
+  -webkit-mask-repeat: repeat, repeat;
+  -webkit-mask-clip: content-box, border-box;
+  -webkit-mask-origin: content-box, border-box;
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  -webkit-mask-source-type: auto, auto;
+  mask-mode: match-source, match-source;
+}
+/* ---- 3q17cp_jgfwol.pretty.css:1148-1283 · builder card, portrait frame, FAB, traits, upload ---- */
+.builder-grid {
+  grid-template-columns: 1.25fr 0.95fr;
+  gap: 18px;
+  display: grid;
+}
+.builder-grid--summary {
+  grid-template-columns: minmax(0, 1fr);
+}
+.builder {
+  align-items: flex-start;
+  gap: 24px;
+  padding: 26px;
+  display: flex;
+}
+.builder-pic {
+  flex: none;
+  width: 158px;
+  position: relative;
+}
+.builder-pic .pframe {
+  border: 4px solid var(--frame);
+  border-radius: 30px;
+  width: 158px;
+  height: 158px;
+  transition: border-color 0.5s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 36px #0a07204d;
+}
+.builder-pic .pframe img {
+  object-fit: cover;
+  object-position: 47% 18%;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform: scale(1.7);
+}
+.builder-pic .fab {
+  cursor: pointer;
+  background: var(--btn-grad);
+  width: 42px;
+  height: 42px;
+  color: var(--btn-ink);
+  box-shadow: var(--btn-shadow);
+  border: none;
+  border-radius: 50%;
+  place-items: center;
+  transition:
+    transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4),
+    background 0.5s;
+  display: grid;
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+}
+.builder-pic .fab:hover {
+  transform: scale(1.1);
+}
+.builder-pic .fab svg {
+  width: 18px;
+  height: 18px;
+}
+.builder-name {
+  font-family: var(--display);
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+.trait-row {
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 18px;
+  display: flex;
+}
+.trait {
+  font-family: var(--ui);
+  color: var(--trait-ink);
+  border: 2px solid var(--trait-line);
+  cursor: pointer;
+  background: 0 0;
+  border-radius: 999px;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 15px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  transition: all 0.25s;
+  display: inline-flex;
+}
+.trait.on {
+  background: var(--trait-on-bg);
+  border-color: var(--trait-on-line);
+  color: var(--trait-on-ink);
+}
+.trait:hover {
+  border-color: var(--trait-on-line);
+}
+.upload {
+  border: 2px dashed var(--dash-line);
+  cursor: pointer;
+  border-radius: 18px;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  transition: border-color 0.3s;
+  display: flex;
+}
+.upload:hover {
+  border-color: var(--accent);
+}
+.upload .cam {
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-line);
+  width: 46px;
+  height: 46px;
+  color: var(--chip-ink);
+  border-radius: 14px;
+  flex: none;
+  place-items: center;
+  display: grid;
+}
+.upload .cam svg {
+  width: 22px;
+  height: 22px;
+}
+.upload b {
+  font-size: 0.98rem;
+  display: block;
+}
+.upload span {
+  color: var(--card-sub);
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+/* ---- 3q17cp_jgfwol.pretty.css:1480-1531 · bookshelf card ---- */
+.shelf {
+  grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+  gap: 22px;
+  display: grid;
+}
+.book {
+  background: var(--card);
+  border: 5px solid var(--frame);
+  box-shadow: var(--card-shadow);
+  cursor: pointer;
+  color: var(--card-ink);
+  border-radius: 22px;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1.2),
+    box-shadow 0.35s,
+    background 0.5s,
+    border-color 0.5s,
+    color 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+.book:hover {
+  transform: translateY(-10px) rotate(-1deg);
+}
+.book img {
+  aspect-ratio: 2/3;
+  object-fit: cover;
+  width: 100%;
+  display: block;
+}
+.book-meta {
+  padding: 14px 16px 16px;
+}
+.book-title {
+  font-family: var(--display);
+  letter-spacing: -0.01em;
+  font-size: 1.02rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.book-sub {
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--pill-bg);
+  color: var(--pill-ink);
+  border-radius: 999px;
+  margin-top: 6px;
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: inline-flex;
+}
+/* ---- 3q17cp_jgfwol.pretty.css:1567-1590 · .chip ---- */
+.chip {
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  padding: 6px 13px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  display: inline-flex;
+}
+.chip.gold {
+  background: var(--gold-chip-bg);
+  color: var(--gold-chip-ink);
+}
+.chip.violet {
+  background: var(--pill-bg);
+  color: var(--pill-ink);
+}
+.chip.coral {
+  background: var(--coral-chip-bg);
+  color: var(--coral-chip-ink);
+}
+/* ---- 3q17cp_jgfwol.pretty.css:1823-1841 · reader prose, drop cap ---- */
+.prose {
+  font-family: var(--serif);
+  color: var(--prose-ink);
+  overflow-wrap: anywhere;
+  font-optical-sizing: auto;
+  flex: 1;
+  min-width: 0;
+  font-size: 1.2rem;
+  line-height: 1.85;
+  transition: color 0.5s;
+}
+.prose:first-letter {
+  float: left;
+  color: var(--accent);
+  padding: 4px 10px 0 0;
+  font-size: 2.5em;
+  font-weight: 600;
+  line-height: 0.9;
+}
+/* ---- 3q17cp_jgfwol.pretty.css:1898-1947 · choices, footer ---- */
+.choice-row {
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 24px;
+  display: grid;
+}
+.choice {
+  font-family: var(--serif);
+  color: var(--choice-ink);
+  background: var(--choice-bg);
+  border: 2px solid var(--choice-line);
+  cursor: pointer;
+  overflow-wrap: anywhere;
+  border-radius: 16px;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 54px;
+  padding: 16px 14px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition:
+    transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.2),
+    box-shadow 0.25s,
+    border-color 0.2s;
+}
+.choice:hover {
+  border-color: var(--violet-soft);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px #6d4fe02e;
+}
+.choice:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-color: var(--accent);
+}
+.foot {
+  border-top: 1px solid var(--card-line);
+  color: var(--foot-ink);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: auto;
+  padding: 26px 0 34px;
+  font-size: 0.9rem;
+  transition: color 0.5s;
+  display: flex;
+}
+.foot a {
+  color: var(--foot-ink);
+}
+/* ---- 3q17cp_jgfwol.pretty.css:1982-2013 · sound beds ---- */
+.sound-beds {
+  flex-wrap: wrap;
+  gap: 8px;
+  display: flex;
+}
+.sound-bed {
+  font-family: var(--ui);
+  color: var(--choice-ink);
+  background: var(--choice-bg);
+  border: 2px solid var(--choice-line);
+  cursor: pointer;
+  border-radius: 999px;
+  justify-content: center;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    color 0.2s;
+  display: inline-flex;
+}
+.sound-bed:hover {
+  border-color: var(--violet-soft);
+}
+.sound-bed[aria-pressed="true"] {
+  border-color: var(--violet-soft);
+  background: var(--pill-bg);
+  color: var(--pill-ink);
+}
+/* ---- 3q17cp_jgfwol.pretty.css:2243-2285 · 880 / 768 px layout switch ---- */
+@media (max-width: 880px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 3vh;
+  }
+  .fan {
+    height: 340px;
+    margin-top: 8px;
+  }
+  .builder-grid {
+    grid-template-columns: 1fr;
+  }
+  .builder {
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .trait-row {
+    justify-content: center;
+  }
+  .reader-grid,
+  .choice-row {
+    grid-template-columns: 1fr;
+  }
+  .sound-foot {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .tt-opt {
+    padding: 8px 10px;
+  }
+}
+@media (max-width: 768px) {
+  .shell > nav {
+    flex-wrap: wrap;
+  }
+  .nav-right {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+}
+/* ---- 3q17cp_jgfwol.pretty.css:2349-2372 · reduced motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .fb1,
+  .fb2,
+  .badge,
+  .dotpulse,
+  .starfield {
+    animation: none;
+  }
+  body,
+  .bg,
+  .tt,
+  .tt-thumb,
+  .tt-opt {
+    transition: none;
+  }
+  .reveal {
+    opacity: 1;
+    transition: none;
+    transform: none;
+  }
+  .comp-chosen {
+    transition: none;
+  }
+}
+/* ---- 3q17cp_jgfwol.pretty.css:2541-2568 · how-it-works head ---- */
+.hiw-kicker {
+  font-family: var(--ui);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--pill-ink);
+  background: var(--pill-bg);
+  border-radius: 999px;
+  margin-bottom: 16px;
+  padding: 7px 14px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: inline-flex;
+}
+.hiw-headline {
+  font-family: var(--display);
+  letter-spacing: -0.015em;
+  color: var(--page-ink);
+  margin-bottom: 12px;
+  font-size: clamp(1.9rem, 4vw, 2.7rem);
+  font-weight: 700;
+}
+.hiw-lede {
+  font-family: var(--serif);
+  color: var(--page-sub);
+  max-width: 56ch;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+/* ---- 3q17cp_jgfwol.pretty.css:2599-2613 · .hiw-node ---- */
+.hiw-node {
+  background: var(--gold-chip-bg);
+  border: 1.5px solid color-mix(in srgb, var(--gold-soft) 55%, transparent);
+  width: 40px;
+  height: 40px;
+  color: var(--gold-chip-ink);
+  font-family: var(--display);
+  z-index: 1;
+  border-radius: 50%;
+  place-items: center;
+  font-size: 1.05rem;
+  font-weight: 700;
+  display: grid;
+  position: relative;
+}
+/* ---- 3q17cp_jgfwol.pretty.css:2631-2660 · step text, micro, sparkle ---- */
+.hiw-step-text h3 {
+  font-family: var(--display);
+  color: var(--page-ink);
+  margin-bottom: 10px;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+.hiw-step-copy {
+  font-family: var(--serif);
+  color: var(--page-sub);
+  max-width: 52ch;
+  font-size: 1.02rem;
+  line-height: 1.75;
+}
+.hiw-micro {
+  font-family: var(--ui);
+  color: var(--micro-ink);
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  display: flex;
+}
+.hiw-star {
+  width: 14px;
+  height: 14px;
+  color: var(--gold-soft);
+  flex: none;
+}
+/* ---- 3q17cp_jgfwol.pretty.css:2684-2698 · .hiw-ai-chip ---- */
+.hiw-ai-chip {
+  font-family: var(--ui);
+  color: #241f35;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  background: #ffffffc7;
+  border: 1px solid #241f3538;
+  border-radius: 999px;
+  padding: 5px 11px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+}
+/* ---- 3q17cp_jgfwol.pretty.css:2775-2797 · baking bar ---- */
+.hiw-bar {
+  background: var(--bar-bg);
+  border-radius: 999px;
+  height: 8px;
+  overflow: hidden;
+}
+.hiw-bar i {
+  background: linear-gradient(90deg, #f5c542, #9b87f5);
+  border-radius: 999px;
+  width: 60%;
+  height: 100%;
+  display: block;
+}
+.hiw-bake-line {
+  font-family: var(--ui);
+  color: var(--card-sub);
+  font-size: 0.85rem;
+}
+.hiw-read-visual {
+  flex-direction: column;
+  gap: 14px;
+  display: flex;
+}
+/* ---- 3q17cp_jgfwol.pretty.css:2804-2852 · .hiw-play, voice chip ---- */
+.hiw-play {
+  cursor: pointer;
+  font-family: var(--ui);
+  min-height: 48px;
+  color: var(--btn-ink);
+  background: var(--btn-grad);
+  box-shadow:
+    var(--btn-shadow),
+    inset 0 1px 0 #ffffff73;
+  border: none;
+  border-radius: 999px;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition:
+    transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4),
+    box-shadow 0.3s;
+  display: inline-flex;
+}
+.hiw-play:hover {
+  box-shadow: var(--btn-shadow-hover);
+  transform: translateY(-2px);
+}
+.hiw-play svg {
+  flex: none;
+  width: 16px;
+  height: 16px;
+}
+.hiw-voice-chip {
+  font-family: var(--ui);
+  color: var(--chip-ink);
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-line);
+  border-radius: 999px;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px 5px 5px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-flex;
+}
+.hiw-voice-chip img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+}
+/* ---- 3q17cp_jgfwol.pretty.css:3132-3145 · cta column, microcopy ---- */
+.cta-row--microcopy {
+  align-items: flex-start;
+}
+.cta-primary-col {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  display: flex;
+}
+.cta-microcopy {
+  font-family: var(--ui);
+  color: var(--page-sub);
+  font-size: 0.85rem;
+}
+
+/* =====================================================================================
+   B. Board layout (ours). Uses only tokens from tokens/tokens.css; no new colours.
+   ===================================================================================== */
+a { color: inherit; }
+.bg { position: absolute; height: 1080px; -webkit-mask-image: linear-gradient(#000 60%, #0000); mask-image: linear-gradient(#000 60%, #0000); }
+.shell { width: min(1240px, 100%); }
+.sb-topline { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 4px 0 6px; }
+.sb-note { font-family: var(--ui); font-size: .8rem; line-height: 1.5; color: var(--micro-ink); }
+.sb-cite { font-family: var(--ui); font-size: .72rem; line-height: 1.45; color: var(--card-sub); font-variant-numeric: tabular-nums; letter-spacing: .01em; overflow-wrap: anywhere; }
+.sb-cite code, .sb-note code, .sb-spec code { font-family: inherit; font-weight: 700; color: var(--card-ink); }
+.sb-gloss { font-family: var(--serif); font-size: .95rem; line-height: 1.6; color: var(--page-sub); max-width: 70ch; }
+.sb-gloss i { font-style: normal; color: var(--page-ink); }
+.sb-index { display: flex; flex-wrap: wrap; gap: 8px; margin: 26px 0 0; }
+.sb-index a { text-decoration: none; }
+.sb-card { padding: 26px; }
+.sb-card > h3, .sb-h3 { font-family: var(--display); font-weight: 700; font-size: 1.25rem; letter-spacing: -0.01em; margin-bottom: 6px; }
+.sb-card > .sb-cite:first-of-type { margin-bottom: 16px; }
+.sb-grid { display: grid; gap: 18px; }
+.sb-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.sb-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.sb-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.sb-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.sb-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.sb-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.sb-8 { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+.sb-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.sb-stack { display: flex; flex-direction: column; gap: 14px; }
+.sb-spec { margin-top: 16px; display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; font-family: var(--ui); font-size: .78rem; line-height: 1.45; color: var(--card-sub); }
+.sb-spec dt { color: var(--card-ink); font-weight: 700; }
+.sb-spec dd { margin: 0; }
+.sb-label { font-family: var(--ui); font-size: .72rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--card-sub); margin: 18px 0 10px; }
+.sb-label:first-child { margin-top: 0; }
+/* swatches */
+.sb-prim { border-radius: 26px; height: 104px; box-shadow: var(--card-shadow); border: 1px solid var(--card-line); }
+.sb-paint { position: relative; overflow: hidden; border-radius: 16px; height: 64px; border: 1px solid var(--card-line);
+  background: url(assets/assets/nebula-hero.webp) center 30% / 900px auto; }
+body[data-theme="morgon"] .sb-paint { background: url(assets/assets/morgon-aurora-desktop.webp) center / 900px auto; }
+.sb-paint > i { position: absolute; inset: 0; display: block; }
+.sb-paint > i.sb-shadow { inset: 14px 22%; border-radius: 12px; background: var(--card); }
+.sb-paint > i.sb-text { display: grid; place-items: center; font-family: var(--display); font-weight: 700; font-size: 1.5rem; font-style: normal; }
+.sb-tok { font-family: var(--ui); font-size: .78rem; font-weight: 800; color: var(--card-ink); margin-top: 8px; }
+.sb-vals { font-family: var(--ui); font-size: .7rem; line-height: 1.4; color: var(--card-sub); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.sb-vals b { font-weight: 700; color: var(--card-sub); }
+body[data-theme="natt"] .sb-vals .m-natt, body[data-theme="morgon"] .sb-vals .m-morgon { color: var(--card-ink); }
+body[data-theme="natt"] .sb-vals .m-natt b, body[data-theme="morgon"] .sb-vals .m-morgon b { color: var(--accent-ink); }
+.sb-grad { height: 56px; border-radius: 16px; border: 1px solid var(--card-line); }
+/* type */
+.sb-type { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 6px 26px; align-items: baseline; padding: 12px 0; border-top: 1px solid var(--card-line); }
+.sb-type-small .sb-type { grid-template-columns: 190px minmax(0, 1fr); border-top: 1px solid var(--card-line); }
+.sb-type:first-of-type { border-top: 0; }
+.sb-type .sb-sample { min-width: 0; overflow-wrap: anywhere; }
+.sb-family { padding: 22px; }
+.sb-family .sb-big { font-size: 2.05rem; line-height: 1.1; margin: 10px 0 8px; overflow-wrap: anywhere; }
+/* components */
+.sb-forced-hover { box-shadow: var(--btn-shadow-hover) !important; transform: translateY(-3px); }
+.sb-forced-active { transform: scale(0.96); }
+.sb-tag { font-family: var(--ui); font-size: .72rem; font-weight: 700; color: var(--card-sub); display: block; margin-top: 6px; line-height: 1.4; }
+.sb-fan-static.fan { height: auto; }
+.sb-fan-static .badge { position: relative; bottom: auto; right: auto; animation: none; transform: rotate(2.5deg); display: inline-flex; }
+body[data-theme] .sb-tt-natt .tt-thumb { transform: none; }
+body[data-theme] .sb-tt-morgon .tt-thumb { transform: translate(100%); }
+body[data-theme] .sb-tt-natt .tt-opt.night, body[data-theme] .sb-tt-morgon .tt-opt.day { color: var(--btn-ink); }
+body[data-theme] .sb-tt-natt .tt-opt.day, body[data-theme] .sb-tt-morgon .tt-opt.night { color: var(--ghost-ink); }
+.sb-focus { outline: 3px solid var(--accent); outline-offset: 3px; border-color: var(--accent); }
+.sb-shelf { width: 215px; }
+.sb-portrait { position: relative; border: 4px solid var(--frame); border-radius: 24px; overflow: hidden; width: 170px; box-shadow: var(--tf-portrait-shadow); }
+.sb-portrait img { display: block; width: 100%; aspect-ratio: 2/3; object-fit: cover; }
+.hiw-bake { max-width: 360px; }
+/* illustration */
+.sb-frame { border: 5px solid var(--frame); border-radius: 20px; overflow: hidden; box-shadow: var(--card-shadow); background: var(--frame); }
+.sb-frame img { display: block; width: 100%; height: auto; }
+.sb-fig { margin: 0; }
+.sb-fig figcaption { margin-top: 8px; }
+.sb-cover img { aspect-ratio: 2/3; object-fit: cover; }
+.sb-scene img { aspect-ratio: 1264/848; object-fit: cover; }
+.sb-medal { width: 96px; height: 96px; border-radius: 50%; padding: 3px; background: var(--tf-map-ring-gradient); box-shadow: 0 0 18px var(--map-glow); }
+.sb-medal img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+.sb-avatar { width: 58px; height: 58px; border-radius: 50%; border: 3px solid var(--frame); box-shadow: var(--tf-avatar-shadow); object-fit: cover; }
+/* paintings */
+.sb-plate { border-radius: 26px; border: 1px solid var(--card-line); box-shadow: var(--card-shadow); overflow: hidden; position: relative; }
+.sb-plate.wide { aspect-ratio: 2400/1340; }
+.sb-plate.wide.m { aspect-ratio: 2560/1440; }
+.sb-plate.tall { aspect-ratio: 1440/2560; }
+.sb-plates { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.6fr) minmax(0, .46fr); }
+.sb-plate > .tf-starfield { position: absolute; inset: 0; background-size: 100% 100%; }
+.sb-plate img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* icons */
+.sb-icon { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 6px 10px; border-radius: 18px; background: var(--choice-bg); border: 1px solid var(--choice-line); text-align: center; }
+.sb-icon svg { width: 30px; height: 30px; color: var(--card-ink); }
+.sb-icon.gold svg { color: var(--gold-soft); }
+.sb-icon.wide svg { width: 120px; height: auto; }
+.sb-icon .sb-cite { overflow-wrap: anywhere; }
+.only-morgon { display: none; }
+body[data-theme="morgon"] .only-morgon { display: block; }
+body[data-theme="morgon"] .only-natt { display: none; }
+/* motion */
+.sb-curve { width: 100%; height: auto; display: block; }
+.sb-curve .grid { stroke: var(--card-line); stroke-width: .6; fill: none; }
+.sb-curve .c { stroke: var(--accent); stroke-width: 2.4; fill: none; stroke-linecap: round; }
+.sb-curve .h { stroke: var(--card-sub); stroke-width: .8; stroke-dasharray: 2 3; fill: none; }
+.sb-curve .p { fill: var(--card-sub); }
+.sb-stage { position: relative; height: 300px; border-radius: 18px; overflow: hidden; border: 1px solid var(--card-line); }
+.sb-stage .fan { height: 300px; }
+.sb-stage .fan .fbook { width: 120px; border-width: 4px; border-radius: 14px; }
+.sb-stage .fan .badge { bottom: 10%; right: 6%; padding: 10px 14px; }
+.sb-stage .starfield { position: absolute; inset: 0; background-size: 100% 100%; }
+.sb-dur { display: grid; grid-template-columns: 120px 1fr 96px; gap: 6px 12px; align-items: center; font-family: var(--ui); font-size: .78rem; color: var(--card-sub); }
+.sb-dur i { display: block; height: 8px; border-radius: 999px; background: var(--tf-progress-fill); }
+.sb-dur b { color: var(--card-ink); }
+/* copy */
+.sb-copy { display: grid; grid-template-columns: 170px minmax(0, 1fr); gap: 6px 22px; padding: 10px 0; border-top: 1px solid var(--card-line); }
+.sb-copy:first-of-type { border-top: 0; }
+.sb-copy .sv { color: var(--card-ink); }
+.sb-copy .en { font-family: var(--serif); font-size: .92rem; line-height: 1.5; color: var(--card-sub); margin-top: 4px; }
+.sb-copy .en em { font-style: normal; font-family: var(--ui); font-size: .7rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; opacity: .85; }
+.foot { margin-top: 60px; }
+.foot .sb-links { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+@media (max-width: 1000px) {
+  .sb-5, .sb-6, .sb-7, .sb-8 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .sb-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 880px) {
+  .sb-2, .sb-3, .sb-plates { grid-template-columns: minmax(0, 1fr); }
+  .sb-plate.tall { max-width: 220px; }
+  .sb-type, .sb-copy { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .sb-logo-xl { font-size: 1.6rem !important; letter-spacing: 2.8px !important; gap: 12px !important; }
+  .sb-logo-xl img { width: 39px !important; height: 39px !important; }
+  .sb-4, .sb-5, .sb-6, .sb-7, .sb-8 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sb-card { padding: 20px 16px; }
+}
+
+</style>
+</head>
+<body data-theme="natt">
+<div class="bg bg-night"><img src="assets/assets/nebula-hero.webp" alt=""><div class="scrim"></div><div class="starfield"></div></div>
+<div class="bg bg-day"><picture><source media="(max-width: 760px)" srcset="assets/assets/morgon-aurora-mobile.webp"><img src="assets/assets/morgon-aurora-desktop.webp" alt=""></picture></div>
+<div class="wrap"><div class="shell">
+<nav>
+  <a class="logo" href="#top" translate="no" style="text-decoration:none"><img src="assets/assets/tf-logo.webp" alt="">Tale Forge</a>
+  <div class="nav-right">
+    <a class="nav-cta" href="tokens/tokens.css" style="text-decoration:none">tokens.css</a>
+    <button class="tt sb-live" role="switch" aria-checked="false" aria-label="Byt tema" type="button"><span class="tt-thumb" aria-hidden="true"></span><span class="tt-opt night"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>Natt</span><span class="tt-opt day"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>Morgon</span></button>
+  </div>
+</nav>
+<main id="top">
+<div class="sb-topline"><span class="hiw-kicker" style="margin:0">Style board</span><span class="sb-note">tale-forge.app, captured 2026-10-09/10. Everything below is drawn with <code>tokens/tokens.css</code> and the site's own component CSS (verbatim, line-cited). Toggle Natt / Morgon in the corner.</span></div>
+<header class="hero">
+  <div>
+    <span class="kicker"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg>Exempel: Alvas värld · 2 böcker</span>
+    <h1>En värld som <span class="grad">minns henne</span>.</h1>
+    <p class="lede">Den målade hjälten återvänder. Valen förändrar vad som händer, och senare böcker minns äventyren ni redan har delat.</p>
+    <div class="cta-row cta-row--microcopy">
+      <div class="cta-primary-col"><a class="btn btn-primary" href="#components" style="text-decoration:none">Skapa er hjälte</a><span class="cta-microcopy">Första boken är gratis, inget kort behövs. Sedan 149 kr i månaden.</span></div>
+      <a class="btn btn-ghost" href="#color" style="text-decoration:none">Se hur det funkar</a>
+    </div>
+  </div>
+  <div class="fan">
+    <div class="fbook fb1"><img src="assets/assets/cover-tornet.webp" alt="Cover: Alva och fyraljuset i tornet"></div>
+    <div class="fbook fb2"><img src="assets/assets/cover-filten.webp" alt="Cover: Alva och filten vid elementet"></div>
+    <div class="badge"><span class="dotpulse"></span><div><b>Sixten minns tornet</b><span>från "Alva och fyraljuset"</span></div></div>
+  </div>
+</header>
+<p class="sb-gloss">The home hero, rebuilt verbatim (markup from <a href="source/rendered/dom__home__sv.html">source/rendered/dom__home__sv.html</a>, CSS 3q17cp:827-1037). English, as the site says it: <i>"A world that remembers her."</i> · <i>"The painted hero returns. Choices change what happens, and later books remember the adventures you have already shared."</i> · <i>"Create your hero"</i> · <i>"See how it works"</i> · badge <i>"Sixten remembers the tower / from "Alva and the Fourth Candle""</i>.</p>
+<nav class="sb-index" aria-label="Board sections">
+
+<a class="sec-chip" href="#logo">Logo</a>
+<a class="sec-chip" href="#color">Colour</a>
+<a class="sec-chip" href="#type">Type</a>
+<a class="sec-chip" href="#components">Components</a>
+<a class="sec-chip" href="#illustration">Illustration</a>
+<a class="sec-chip" href="#paintings">Paintings</a>
+<a class="sec-chip" href="#icons">Icons</a>
+<a class="sec-chip" href="#motion">Motion</a>
+<a class="sec-chip" href="#copy">Copy</a>
+<a class="sec-chip" href="#sound">Sound</a>
+</nav>
+<section id="logo"><div class="sec-head"><h2>Logo and wordmark</h2><span class="sec-chip">Cinzel 700 · 3q17cp:696-716</span></div>
+<p class="sec-intro">A gold-lit book-and-quill mark beside the name in Cinzel capitals. The source text is "Tale Forge"; CSS uppercases it. The ink and glow change with the theme; the image glow does not.</p>
+<div class="sb-grid sb-2">
+<div class="glass sb-card"><h3>Lockup, as in the nav</h3><p class="sb-cite">.logo 3q17cp:696-716 · 560px variant :746-755</p>
+<div class="sb-stack">
+  <span class="logo"><img src="assets/assets/tf-logo.webp" alt="">Tale Forge</span>
+  <span class="logo" style="font-size:1.05rem;letter-spacing:1.5px;gap:8px"><img src="assets/assets/tf-logo.webp" alt="" style="width:28px;height:28px">Tale Forge</span>
+  <span class="logo sb-logo-xl" style="font-size:3.01rem;letter-spacing:5.25px;gap:23px"><img src="assets/assets/tf-logo.webp" alt="" style="width:73.5px;height:73.5px">Tale Forge</span>
+</div>
+<dl class="sb-spec">
+<dt>Type</dt><dd>var(--wordmark) = Cinzel 700, 1.72rem (27.52px), letter-spacing 3px, uppercase (:698-707). Phone: 1.05rem, 1.5px (:747-750)</dd>
+<dt>Mark</dt><dd>assets/assets/tf-logo.webp 512×512 RGBA, drawn 42px (28px ≤560px), gap 13px (8px), filter drop-shadow(0 0 14px #f5c54280) (:705, :711-716)</dd>
+<dt>Ink</dt><dd>var(--logo-ink): natt #f5c542 (:537) · morgon #6d4fe0 (:586)</dd>
+<dt>Glow</dt><dd>var(--logo-shadow): natt 0 2px 6px #050814cc, 0 0 34px #f5c54273 (:538) · morgon 0 1px 2px #241f352e, 0 0 24px #6d4fe052 (:587)</dd>
+<dt>Large</dt><dd>third row is ours: the nav spec scaled ×1.75 (3.01rem, 5.25px tracking, 73.5px mark, 23px gap)</dd>
+</dl></div>
+<div class="glass sb-card"><h3>Mark and app icons</h3><p class="sb-cite">assets/assets/tf-logo.webp · assets/icons/ · assets/brand/</p>
+<div class="sb-row" style="gap:22px;align-items:flex-end">
+  <figure class="sb-fig"><img src="assets/assets/tf-logo.webp" alt="Tale Forge mark" style="width:150px;height:150px;filter:var(--tf-logo-img-glow)"><figcaption class="sb-cite">tf-logo.webp, glow on</figcaption></figure>
+  <figure class="sb-fig"><img src="assets/icons/icon-512.png" alt="App icon" style="width:96px;height:96px;border-radius:22px"><figcaption class="sb-cite">icon-512.png</figcaption></figure>
+  <figure class="sb-fig"><img src="assets/brand/apple-icon.png" alt="Apple touch icon" style="width:64px;height:64px;border-radius:14px"><figcaption class="sb-cite">apple-icon.png</figcaption></figure>
+</div>
+<figure class="sb-fig" style="margin-top:16px"><div class="sb-frame" style="border-width:3px;border-radius:16px"><img src="assets/brand/opengraph-image.png" alt="Open Graph share image"></div><figcaption class="sb-cite">opengraph-image.png 1200×630 (og:image). Lockup captures at 3×: <a href="derived/brand/lockups/nav-lockup__natt__transparent@3x.png">natt</a> · <a href="derived/brand/lockups/nav-lockup__morgon__transparent@3x.png">morgon</a>; anatomy: <a href="analysis/01-brand-identity.md">analysis/01</a></figcaption></figure>
+</div>
+</div></section>
+<section id="color"><div class="sec-head"><h2>Colour</h2><span class="sec-chip">tokens.css §2-5</span></div>
+<p class="sec-intro">Five primitives, then 47 semantic tokens that swap as a set on <code>body[data-theme]</code>. Translucent tokens are shown over the painting they sit on in the live site, so what you see is what the page shows. The value in bold is the active theme.</p>
+<div class="glass sb-card"><h3>Primitives and canvas</h3><p class="sb-cite">:root, 3q17cp:461-465 · body background, 3q17cp:606 / :610 (under the painting)</p><div class="sb-grid sb-7">
+<div><div class="sb-prim" style="background:var(--violet)"></div><div class="sb-tok">--violet</div><div class="sb-vals">#6d4fe0 · 3q17cp:461</div></div>
+<div><div class="sb-prim" style="background:var(--violet-soft)"></div><div class="sb-tok">--violet-soft</div><div class="sb-vals">#9b87f5 · 3q17cp:462</div></div>
+<div><div class="sb-prim" style="background:var(--gold)"></div><div class="sb-tok">--gold</div><div class="sb-vals">#f2b22e · 3q17cp:463</div></div>
+<div><div class="sb-prim" style="background:var(--gold-soft)"></div><div class="sb-tok">--gold-soft</div><div class="sb-vals">#f5c542 · 3q17cp:464</div></div>
+<div><div class="sb-prim" style="background:var(--coral)"></div><div class="sb-tok">--coral</div><div class="sb-vals">#ff6154 · 3q17cp:465</div></div>
+<div><div class="sb-prim" style="background:var(--tf-canvas-natt)"></div><div class="sb-tok">natt canvas</div><div class="sb-vals">#171232 · 3q17cp:606</div></div><div><div class="sb-prim" style="background:var(--tf-canvas-morgon)"></div><div class="sb-tok">morgon canvas</div><div class="sb-vals">#ede9f6 · 3q17cp:610</div></div>
+</div></div>
+<div class="glass sb-card" style="margin-top:18px"><h3>Semantic tokens, live</h3><p class="sb-cite">body[data-theme="natt"] 3q17cp:494-540 · body[data-theme="morgon"] 3q17cp:543-589 · values verbatim</p><div class="sb-grid sb-6">
+<div><div class="sb-paint"><i style="background:var(--page-ink)"></i></div><div class="sb-tok">--page-ink</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #fff7e9 <span style="opacity:.75">:494</span></span><br><span class="m-morgon"><b>morgon</b> #241f35 <span style="opacity:.75">:543</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--page-sub)"></i></div><div class="sb-tok">--page-sub</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #d9cfee <span style="opacity:.75">:495</span></span><br><span class="m-morgon"><b>morgon</b> #5f5878 <span style="opacity:.75">:544</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--accent)"></i></div><div class="sb-tok">--accent</div><div class="sb-vals"><span class="m-natt"><b>natt</b> var(--gold-soft) <span style="opacity:.75">:496</span></span><br><span class="m-morgon"><b>morgon</b> #6d4fe0 <span style="opacity:.75">:545</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--accent-ink)"></i></div><div class="sb-tok">--accent-ink</div><div class="sb-vals"><span class="m-natt"><b>natt</b> var(--gold-soft) <span style="opacity:.75">:497</span></span><br><span class="m-morgon"><b>morgon</b> #5b3fc7 <span style="opacity:.75">:546</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--card)"></i></div><div class="sb-tok">--card</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #0f1628ad <span style="opacity:.75">:498</span></span><br><span class="m-morgon"><b>morgon</b> #fffc <span style="opacity:.75">:547</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--card-line)"></i></div><div class="sb-tok">--card-line</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #9b87f542 <span style="opacity:.75">:499</span></span><br><span class="m-morgon"><b>morgon</b> #ffffffe6 <span style="opacity:.75">:548</span></span></div></div>
+<div><div class="sb-paint"><i style="inset:10px 18%;border-radius:12px;background:var(--card);backdrop-filter:blur(var(--card-blur));-webkit-backdrop-filter:blur(var(--card-blur))"></i></div><div class="sb-tok">--card-blur</div><div class="sb-vals"><span class="m-natt"><b>natt</b> 22px <span style="opacity:.75">:500</span></span><br><span class="m-morgon"><b>morgon</b> 24px <span style="opacity:.75">:549</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--card-ink)"></i></div><div class="sb-tok">--card-ink</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #f2eeff <span style="opacity:.75">:501</span></span><br><span class="m-morgon"><b>morgon</b> #241f35 <span style="opacity:.75">:550</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--card-sub)"></i></div><div class="sb-tok">--card-sub</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #b5acd3 <span style="opacity:.75">:502</span></span><br><span class="m-morgon"><b>morgon</b> #5f5878 <span style="opacity:.75">:551</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--frame)"></i></div><div class="sb-tok">--frame</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #101a30 <span style="opacity:.75">:503</span></span><br><span class="m-morgon"><b>morgon</b> #fff <span style="opacity:.75">:552</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--frame-line)"></i></div><div class="sb-tok">--frame-line</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #9b87f566 <span style="opacity:.75">:504</span></span><br><span class="m-morgon"><b>morgon</b> #ffffffe6 <span style="opacity:.75">:553</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--chip-bg)"></i></div><div class="sb-tok">--chip-bg</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #fff9ec1a <span style="opacity:.75">:505</span></span><br><span class="m-morgon"><b>morgon</b> #6d4fe014 <span style="opacity:.75">:554</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--chip-line)"></i></div><div class="sb-tok">--chip-line</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #fff3d942 <span style="opacity:.75">:506</span></span><br><span class="m-morgon"><b>morgon</b> #6d4fe029 <span style="opacity:.75">:555</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--chip-ink)"></i></div><div class="sb-tok">--chip-ink</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #e8dfc9 <span style="opacity:.75">:507</span></span><br><span class="m-morgon"><b>morgon</b> var(--accent-ink) <span style="opacity:.75">:556</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--pill-bg)"></i></div><div class="sb-tok">--pill-bg</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #9b87f529 <span style="opacity:.75">:508</span></span><br><span class="m-morgon"><b>morgon</b> #6d4fe01a <span style="opacity:.75">:557</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--pill-ink)"></i></div><div class="sb-tok">--pill-ink</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #c9bcff <span style="opacity:.75">:509</span></span><br><span class="m-morgon"><b>morgon</b> var(--accent-ink) <span style="opacity:.75">:558</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--micro-ink)"></i></div><div class="sb-tok">--micro-ink</div><div class="sb-vals"><span class="m-natt"><b>natt</b> color-mix(in srgb, var(--page-sub) 85%, transparent) <span style="opacity:.75">:510</span></span><br><span class="m-morgon"><b>morgon</b> var(--page-sub) <span style="opacity:.75">:559</span></span></div></div>
+<div><div class="sb-paint"><i class="sb-text" style="color:var(--page-ink);text-shadow:var(--h1-shadow)">Aa</i></div><div class="sb-tok">--h1-shadow</div><div class="sb-vals"><span class="m-natt"><b>natt</b> 0 2px 30px #0c082859 <span style="opacity:.75">:511</span></span><br><span class="m-morgon"><b>morgon</b> none <span style="opacity:.75">:560</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--gold-chip-bg)"></i></div><div class="sb-tok">--gold-chip-bg</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #f2b22e29 <span style="opacity:.75">:512</span></span><br><span class="m-morgon"><b>morgon</b> #f2b22e26 <span style="opacity:.75">:561</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--gold-chip-ink)"></i></div><div class="sb-tok">--gold-chip-ink</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #ffd98f <span style="opacity:.75">:513</span></span><br><span class="m-morgon"><b>morgon</b> #8f6a12 <span style="opacity:.75">:562</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--coral-chip-bg)"></i></div><div class="sb-tok">--coral-chip-bg</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #ff615424 <span style="opacity:.75">:514</span></span><br><span class="m-morgon"><b>morgon</b> #ff61541f <span style="opacity:.75">:563</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--coral-chip-ink)"></i></div><div class="sb-tok">--coral-chip-ink</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #ffab9f <span style="opacity:.75">:515</span></span><br><span class="m-morgon"><b>morgon</b> #c23a2b <span style="opacity:.75">:564</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--trait-line)"></i></div><div class="sb-tok">--trait-line</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #9b87f559 <span style="opacity:.75">:516</span></span><br><span class="m-morgon"><b>morgon</b> #6d4fe047 <span style="opacity:.75">:565</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--trait-ink)"></i></div><div class="sb-tok">--trait-ink</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #cfc5ec <span style="opacity:.75">:517</span></span><br><span class="m-morgon"><b>morgon</b> #5f5878 <span style="opacity:.75">:566</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--trait-on-bg)"></i></div><div class="sb-tok">--trait-on-bg</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #9b87f533 <span style="opacity:.75">:518</span></span><br><span class="m-morgon"><b>morgon</b> #6d4fe01f <span style="opacity:.75">:567</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--trait-on-line)"></i></div><div class="sb-tok">--trait-on-line</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #9b87f599 <span style="opacity:.75">:519</span></span><br><span class="m-morgon"><b>morgon</b> #6d4fe06b <span style="opacity:.75">:568</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--trait-on-ink)"></i></div><div class="sb-tok">--trait-on-ink</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #e9e2ff <span style="opacity:.75">:520</span></span><br><span class="m-morgon"><b>morgon</b> #4a36a8 <span style="opacity:.75">:569</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--dash-line)"></i></div><div class="sb-tok">--dash-line</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #ffecbe59 <span style="opacity:.75">:521</span></span><br><span class="m-morgon"><b>morgon</b> #6d4fe059 <span style="opacity:.75">:570</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--choice-bg)"></i></div><div class="sb-tok">--choice-bg</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #ffffff0f <span style="opacity:.75">:522</span></span><br><span class="m-morgon"><b>morgon</b> #fff <span style="opacity:.75">:571</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--choice-line)"></i></div><div class="sb-tok">--choice-line</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #9b87f552 <span style="opacity:.75">:523</span></span><br><span class="m-morgon"><b>morgon</b> #6d4fe038 <span style="opacity:.75">:572</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--choice-ink)"></i></div><div class="sb-tok">--choice-ink</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #f2eeff <span style="opacity:.75">:524</span></span><br><span class="m-morgon"><b>morgon</b> #241f35 <span style="opacity:.75">:573</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--bar-bg)"></i></div><div class="sb-tok">--bar-bg</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #ffffff24 <span style="opacity:.75">:525</span></span><br><span class="m-morgon"><b>morgon</b> #241f3514 <span style="opacity:.75">:574</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--prose-ink)"></i></div><div class="sb-tok">--prose-ink</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #eae4f5 <span style="opacity:.75">:526</span></span><br><span class="m-morgon"><b>morgon</b> #3a3450 <span style="opacity:.75">:575</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--foot-ink)"></i></div><div class="sb-tok">--foot-ink</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #b7a9d6 <span style="opacity:.75">:527</span></span><br><span class="m-morgon"><b>morgon</b> #5f5878 <span style="opacity:.75">:576</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--btn-grad);inset:12px 18%;border-radius:999px;box-shadow:var(--btn-shadow)"></i></div><div class="sb-tok">--btn-grad</div><div class="sb-vals"><span class="m-natt"><b>natt</b> linear-gradient(135deg, #ffe08a, #f5c542) <span style="opacity:.75">:528</span></span><br><span class="m-morgon"><b>morgon</b> linear-gradient(135deg, #6d4fe0, #5b3fc7) <span style="opacity:.75">:577</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--btn-ink)"></i></div><div class="sb-tok">--btn-ink</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #3a2b10 <span style="opacity:.75">:529</span></span><br><span class="m-morgon"><b>morgon</b> #fff <span style="opacity:.75">:578</span></span></div></div>
+<div><div class="sb-paint"><i class="sb-shadow" style="box-shadow:var(--btn-shadow)"></i></div><div class="sb-tok">--btn-shadow</div><div class="sb-vals"><span class="m-natt"><b>natt</b> 0 14px 40px #f5c54247 <span style="opacity:.75">:530</span></span><br><span class="m-morgon"><b>morgon</b> 0 14px 34px #6d4fe059 <span style="opacity:.75">:579</span></span></div></div>
+<div><div class="sb-paint"><i class="sb-shadow" style="box-shadow:var(--btn-shadow-hover)"></i></div><div class="sb-tok">--btn-shadow-hover</div><div class="sb-vals"><span class="m-natt"><b>natt</b> 0 20px 55px #f5c5426b <span style="opacity:.75">:531</span></span><br><span class="m-morgon"><b>morgon</b> 0 22px 48px #6d4fe073 <span style="opacity:.75">:580</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--ghost-bg)"></i></div><div class="sb-tok">--ghost-bg</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #fff9ec1a <span style="opacity:.75">:532</span></span><br><span class="m-morgon"><b>morgon</b> #ffffffb8 <span style="opacity:.75">:581</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--ghost-ink)"></i></div><div class="sb-tok">--ghost-ink</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #fff3d9 <span style="opacity:.75">:533</span></span><br><span class="m-morgon"><b>morgon</b> #241f35 <span style="opacity:.75">:582</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--control-line)"></i></div><div class="sb-tok">--control-line</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #fff3d952 <span style="opacity:.75">:534</span></span><br><span class="m-morgon"><b>morgon</b> #887da0 <span style="opacity:.75">:583</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--ghost-line)"></i></div><div class="sb-tok">--ghost-line</div><div class="sb-vals"><span class="m-natt"><b>natt</b> var(--control-line) <span style="opacity:.75">:535</span></span><br><span class="m-morgon"><b>morgon</b> var(--control-line) <span style="opacity:.75">:584</span></span></div></div>
+<div><div class="sb-paint"><i class="sb-shadow" style="box-shadow:var(--card-shadow)"></i></div><div class="sb-tok">--card-shadow</div><div class="sb-vals"><span class="m-natt"><b>natt</b> 0 18px 44px #0508146b <span style="opacity:.75">:536</span></span><br><span class="m-morgon"><b>morgon</b> 0 4px 12px #241f351a, 0 22px 52px #241f3529 <span style="opacity:.75">:585</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--logo-ink)"></i></div><div class="sb-tok">--logo-ink</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #f5c542 <span style="opacity:.75">:537</span></span><br><span class="m-morgon"><b>morgon</b> #6d4fe0 <span style="opacity:.75">:586</span></span></div></div>
+<div><div class="sb-paint"><i class="sb-text" style="color:var(--page-ink);text-shadow:var(--logo-shadow)">Aa</i></div><div class="sb-tok">--logo-shadow</div><div class="sb-vals"><span class="m-natt"><b>natt</b> 0 2px 6px #050814cc, 0 0 34px #f5c54273 <span style="opacity:.75">:538</span></span><br><span class="m-morgon"><b>morgon</b> 0 1px 2px #241f352e, 0 0 24px #6d4fe052 <span style="opacity:.75">:587</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--map-dot)"></i></div><div class="sb-tok">--map-dot</div><div class="sb-vals"><span class="m-natt"><b>natt</b> var(--violet-soft) <span style="opacity:.75">:539</span></span><br><span class="m-morgon"><b>morgon</b> var(--violet) <span style="opacity:.75">:588</span></span></div></div>
+<div><div class="sb-paint"><i style="background:var(--map-glow)"></i></div><div class="sb-tok">--map-glow</div><div class="sb-vals"><span class="m-natt"><b>natt</b> #f5c54240 <span style="opacity:.75">:540</span></span><br><span class="m-morgon"><b>morgon</b> #6d4fe033 <span style="opacity:.75">:589</span></span></div></div>
+</div></div>
+<div class="sb-grid sb-2" style="margin-top:18px">
+<div class="glass sb-card"><h3>Gradients</h3><p class="sb-cite">names ours (tokens.css §5), values verbatim</p><div class="sb-stack">
+<div><div class="sb-grad" style="background:var(--btn-grad)"></div><div class="sb-tok">--btn-grad (theme)</div><div class="sb-vals">natt linear-gradient(135deg, #ffe08a, #f5c542) :528 · morgon linear-gradient(135deg, #6d4fe0, #5b3fc7) :577</div></div>
+<div><div class="sb-grad" style="background:var(--tf-glass-rim)"></div><div class="sb-tok">--tf-glass-rim</div><div class="sb-vals">linear-gradient(135deg, #9b87f580, #f2b22e59 50%, #ff61544d), at opacity 0.45 as a 1px ring · 3q17cp:1129-1130</div></div>
+<div><div class="sb-grad" style="background:var(--tf-progress-fill)"></div><div class="sb-tok">--tf-progress-fill</div><div class="sb-vals">linear-gradient(90deg, #f5c542, #9b87f5) · 3q17cp:2782</div></div>
+<div><div class="sb-grad" style="background:var(--tf-map-ring-gradient)"></div><div class="sb-tok">--tf-map-ring-gradient</div><div class="sb-vals">#f5c542 → #6D4FE0, 0,0 → 1,1 · source/js/3d9nxlx1n5pdy.js @10221</div></div>
+<div><div class="sb-grad" style="background:var(--tf-ember-rim)"></div><div class="sb-tok">--tf-ember-rim</div><div class="sb-vals">linear-gradient(135deg, #f2b22ebf, #ff615466) · 3q17cp:1623</div></div>
+<div><div class="sb-grad" style="background:var(--tf-scrim-natt), #808080"></div><div class="sb-tok">--tf-scrim-natt over #808080</div><div class="sb-vals">linear-gradient(#0b0f1e61 0%, #0b0f1e80 45%, #0d1122bd 100%) · 3q17cp:632</div></div>
+</div></div>
+<div class="glass sb-card"><h3>Illustration palette</h3><p class="sb-cite">MEASURED, not in the CSS: k-means (CIELAB, k=8) over the 15 sample-book images · <a href="derived/color/image-palettes.json">derived/color/image-palettes.json</a> · tokens/color.css §6</p><div class="sb-grid sb-4">
+<div><div class="sb-prim" style="background:#ebcb9e;height:70px;border-radius:18px"></div><div class="sb-tok">#ebcb9e</div><div class="sb-vals">17.5% of pixels</div></div>
+<div><div class="sb-prim" style="background:#654619;height:70px;border-radius:18px"></div><div class="sb-tok">#654619</div><div class="sb-vals">17.0% of pixels</div></div>
+<div><div class="sb-prim" style="background:#907330;height:70px;border-radius:18px"></div><div class="sb-tok">#907330</div><div class="sb-vals">16.1% of pixels</div></div>
+<div><div class="sb-prim" style="background:#d59e56;height:70px;border-radius:18px"></div><div class="sb-tok">#d59e56</div><div class="sb-vals">14.6% of pixels</div></div>
+<div><div class="sb-prim" style="background:#b96b24;height:70px;border-radius:18px"></div><div class="sb-tok">#b96b24</div><div class="sb-vals">12.9% of pixels</div></div>
+<div><div class="sb-prim" style="background:#291e0f;height:70px;border-radius:18px"></div><div class="sb-tok">#291e0f</div><div class="sb-vals">12.1% of pixels</div></div>
+<div><div class="sb-prim" style="background:#ab2923;height:70px;border-radius:18px"></div><div class="sb-tok">#ab2923</div><div class="sb-vals">6.6% of pixels</div></div>
+<div><div class="sb-prim" style="background:#495050;height:70px;border-radius:18px"></div><div class="sb-tok">#495050</div><div class="sb-vals">3.1% of pixels</div></div>
+</div><p class="sb-note" style="margin-top:16px">Warm parchment, umber and ochre with a raspberry-red accent (Iris's raincoat). The UI is violet and gold; the pictures are not. The paintings and the glass carry the cool colours, the books carry the warm ones.</p></div>
+</div></section>
+<section id="type"><div class="sec-head"><h2>Typography</h2><span class="sec-chip">tokens.css §0-2, §6</span></div>
+<p class="sec-intro">Four self-hosted Google families, all SIL OFL 1.1, loaded here from <code>derived/typography/fonts/</code> through the same @font-face rules the site ships.</p>
+<div class="sb-grid sb-4">
+<div class="glass sb-family"><div class="sb-tok" style="margin:0">Cinzel</div><div class="sb-cite">var(--wordmark) · 3q17cp:1-39, :469</div><div class="sb-big" style="font-family:var(--wordmark);font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--logo-ink);text-shadow:var(--logo-shadow);">TALE FORGE</div><div style="font-family:var(--wordmark);font-size:1rem;line-height:1.5">ÅÄÖ åäö é · 0123456789</div><p class="sb-cite" style="margin-top:10px">Logo, book titles. Static Bold; lowercase are small caps. File: <a href="derived/typography/fonts/Cinzel-700-latin.woff2">Cinzel-700-latin.woff2</a></p></div>
+<div class="glass sb-family"><div class="sb-tok" style="margin:0">Lora</div><div class="sb-cite">var(--display) · 3q17cp:40-252, :466</div><div class="sb-big" style="font-family:var(--display);font-weight:700;">Äventyr värda</div><div style="font-family:var(--display);font-size:1rem;line-height:1.5">ÅÄÖ åäö é · 0123456789</div><p class="sb-cite" style="margin-top:10px">Headlines, names, numerals. 600 and 700. File: <a href="derived/typography/fonts/Lora-var400-700-latin.woff2">Lora-var400-700-latin.woff2</a></p></div>
+<div class="glass sb-family"><div class="sb-tok" style="margin:0">Source Serif 4</div><div class="sb-cite">var(--serif) · 3q17cp:253-379, :468</div><div class="sb-big" style="font-family:var(--serif);font-weight:400;">Den målade hjälten</div><div style="font-family:var(--serif);font-size:1rem;line-height:1.5">ÅÄÖ åäö é · 0123456789</div><p class="sb-cite" style="margin-top:10px">Ledes, story prose, choices. 400 and 600; italic is synthetic. File: <a href="derived/typography/fonts/SourceSerif4-var200-900-latin.woff2">SourceSerif4-var200-900-latin.woff2</a></p></div>
+<div class="glass sb-family"><div class="sb-tok" style="margin:0">Schibsted Grotesk</div><div class="sb-cite">var(--ui) · 3q17cp:380-459, :467</div><div class="sb-big" style="font-family:var(--ui);font-weight:800;">Skapa er hjälte</div><div style="font-family:var(--ui);font-size:1rem;line-height:1.5">ÅÄÖ åäö é · 0123456789</div><p class="sb-cite" style="margin-top:10px">UI, buttons, chips, body. 400, 700, 800. File: <a href="derived/typography/fonts/SchibstedGrotesk-var400-900-latin.woff2">SchibstedGrotesk-var400-900-latin.woff2</a></p></div>
+</div>
+<div class="glass sb-card" style="margin-top:18px"><h3>Type scale</h3><p class="sb-cite">drawn with the --tf-type-* tokens (tokens.css §6); px at a 1440 px viewport from tokens/typography.json</p>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">h1 (hero)</div><div class="sb-vals">clamp(2.7rem, 5.4vw, 4.4rem) · 700 · lh 1.06 · ls -0.015em<br>70.4px @1440 / 45.04px @834 / 43.2px @390 · 3q17cp:862, 863, 864, 857</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-hero-family);font-size:var(--tf-type-hero-size);font-weight:var(--tf-type-hero-weight);line-height:var(--tf-type-hero-leading);letter-spacing:var(--tf-type-hero-tracking);text-shadow:var(--h1-shadow);text-wrap:balance;color:var(--page-ink)">En värld som minns henne.</div><div class="sb-cite" style="margin-top:4px">A world that remembers her.</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">h2.hiw-headline</div><div class="sb-vals">clamp(1.9rem, 4vw, 2.7rem) · 700 · lh normal · ls -0.015em<br>43.2px @1440 / 33.36px @834 / 30.4px @390 · 3q17cp:2559, 2560, 2556</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-hiw-headline-family);font-size:var(--tf-type-hiw-headline-size);font-weight:var(--tf-type-hiw-headline-weight);line-height:var(--tf-type-hiw-headline-leading);letter-spacing:var(--tf-type-hiw-headline-tracking);">Äventyr värda att prata om.</div><div class="sb-cite" style="margin-top:4px">Adventures worth talking about.</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">h2 (section)</div><div class="sb-vals">clamp(1.5rem, 2.4vw, 2rem) · 600 · lh normal · ls -0.01em<br>32px @1440 / 24px @834 / 24px @390 · 3q17cp:1059, 1060, 1057</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-h2-family);font-size:var(--tf-type-h2-size);font-weight:var(--tf-type-h2-weight);line-height:var(--tf-type-h2-leading);letter-spacing:var(--tf-type-h2-tracking);">Din hjälte</div><div class="sb-cite" style="margin-top:4px">Your hero</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.reader-title (book title, Cinzel)</div><div class="sb-vals">2rem · 700 · lh 1.18 · ls 0<br>32px @1440 / 24.8px @390 · 3q17cp:1819, 1820, 1813</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-reader-title-family);font-size:var(--tf-type-reader-title-size);font-weight:var(--tf-type-reader-title-weight);line-height:var(--tf-type-reader-title-leading);letter-spacing:var(--tf-type-reader-title-tracking);text-transform:uppercase;color:var(--logo-ink);text-shadow:var(--logo-shadow)">Iris och den sparade platsen</div><div class="sb-cite" style="margin-top:4px">Iris and the Saved Place</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.logo (wordmark)</div><div class="sb-vals">1.72rem · 700 · lh normal · ls 3px<br>27.52px @1440 / 16.8px @390 · 3q17cp:706, 707, 701</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-logo-family);font-size:var(--tf-type-logo-size);font-weight:var(--tf-type-logo-weight);line-height:var(--tf-type-logo-leading);letter-spacing:var(--tf-type-logo-tracking);text-transform:uppercase;color:var(--logo-ink);text-shadow:var(--logo-shadow)">Tale Forge</div><div class="sb-cite" style="margin-top:4px">Tale Forge</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.builder-name</div><div class="sb-vals">1.6rem · 700 · lh normal · ls -0.01em<br>25.6px @1440 · 3q17cp:1214, 1215, 1212</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-builder-name-family);font-size:var(--tf-type-builder-name-size);font-weight:var(--tf-type-builder-name-weight);line-height:var(--tf-type-builder-name-leading);letter-spacing:var(--tf-type-builder-name-tracking);">Alva</div><div class="sb-cite" style="margin-top:4px">Alva</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.hiw-step-text h3</div><div class="sb-vals">1.35rem · 700 · lh normal · ls normal<br>21.6px @1440 · 3q17cp:2635, 2636</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-step-title-family);font-size:var(--tf-type-step-title-size);font-weight:var(--tf-type-step-title-weight);line-height:var(--tf-type-step-title-leading);letter-spacing:var(--tf-type-step-title-tracking);">Bygg er hjälte</div><div class="sb-cite" style="margin-top:4px">Build your hero</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.adv-title</div><div class="sb-vals">1.3rem · 700 · lh 1.25 · ls -0.015em<br>20.8px @1440 · 3q17cp:1594, 1595, 1596, 1593</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-adv-title-family);font-size:var(--tf-type-adv-title-size);font-weight:var(--tf-type-adv-title-weight);line-height:var(--tf-type-adv-title-leading);letter-spacing:var(--tf-type-adv-title-tracking);">Ett stort äventyr</div><div class="sb-cite" style="margin-top:4px">A big adventure</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.book-title</div><div class="sb-vals">1.02rem · 700 · lh 1.25 · ls -0.01em<br>16.32px @1440 · 3q17cp:1516, 1517, 1518, 1515</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-book-title-family);font-size:var(--tf-type-book-title-size);font-weight:var(--tf-type-book-title-weight);line-height:var(--tf-type-book-title-leading);letter-spacing:var(--tf-type-book-title-tracking);">Alva och fyraljuset i tornet</div><div class="sb-cite" style="margin-top:4px">Alva and the Fourth Candle in the Tower</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.lede</div><div class="sb-vals">clamp(1.08rem, 1.65vw, 1.28rem) · 400 · lh 1.65 · ls normal<br>20.48px @1440 / 17.28px @834 / 17.28px @390 · 3q17cp:876, 877</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-lede-family);font-size:var(--tf-type-lede-size);font-weight:var(--tf-type-lede-weight);line-height:var(--tf-type-lede-leading);letter-spacing:var(--tf-type-lede-tracking);color:var(--page-sub)">Den målade hjälten återvänder. Valen förändrar vad som händer, och senare böcker minns äventyren ni redan har delat.</div><div class="sb-cite" style="margin-top:4px">The painted hero returns. Choices change what happens, and later books remember the adventures you have already shared.</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.prose (reader page)</div><div class="sb-vals">1.2rem · 400 · lh 1.85 · ls normal<br>19.2px @1440 · 3q17cp:1830, 1831</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-prose-family);font-size:var(--tf-type-prose-size);font-weight:var(--tf-type-prose-weight);line-height:var(--tf-type-prose-leading);letter-spacing:var(--tf-type-prose-tracking);color:var(--prose-ink)">Iris kom till kvartersbiblioteket med ett stort ritpapper under armen.</div><div class="sb-cite" style="margin-top:4px">Iris came to the neighbourhood library with a big sheet of drawing paper under her arm. (library translation)</div></div></div>
+<div class="sb-grid sb-2 sb-type-small" style="gap:0 34px">
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.hiw-lede</div><div class="sb-vals">1.1rem · 400 · lh 1.7 · ls normal<br>17.6px @1440 · 3q17cp:2566, 2567</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-hiw-lede-family);font-size:var(--tf-type-hiw-lede-size);font-weight:var(--tf-type-hiw-lede-weight);line-height:var(--tf-type-hiw-lede-leading);letter-spacing:var(--tf-type-hiw-lede-tracking);color:var(--page-sub)">Från ett foto till en uppläst bilderbok med fyra olika slut.</div><div class="sb-cite" style="margin-top:4px">From one photo to a narrated picture book with four different endings.</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.hiw-step-copy</div><div class="sb-vals">1.02rem · 400 · lh 1.75 · ls normal<br>16.32px @1440 · 3q17cp:2642, 2643</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-step-copy-family);font-size:var(--tf-type-step-copy-size);font-weight:var(--tf-type-step-copy-weight);line-height:var(--tf-type-step-copy-leading);letter-spacing:var(--tf-type-step-copy-tracking);color:var(--page-sub)">Ladda upp en bild och välj det som gör ert barn till ert barn.</div><div class="sb-cite" style="margin-top:4px">Upload a photo and pick what makes your child your child.</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.choice (story choice)</div><div class="sb-vals">1.05rem · 600 · lh normal · ls normal<br>16.8px @1440 · 3q17cp:1916, 1917</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-choice-family);font-size:var(--tf-type-choice-size);font-weight:var(--tf-type-choice-weight);line-height:var(--tf-type-choice-leading);letter-spacing:var(--tf-type-choice-tracking);color:var(--choice-ink)">Gå med Mossa till den gröna mattan.</div><div class="sb-cite" style="margin-top:4px">Go with Mossa to the green rug. (library translation)</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.btn</div><div class="sb-vals">1.05rem · 700 · lh normal · ls normal<br>16.8px @1440 · 3q17cp:895, 896</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-button-family);font-size:var(--tf-type-button-size);font-weight:var(--tf-type-button-weight);line-height:var(--tf-type-button-leading);letter-spacing:var(--tf-type-button-tracking);">Skapa er hjälte</div><div class="sb-cite" style="margin-top:4px">Create your hero</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.nav-cta / .tt-opt</div><div class="sb-vals">0.95rem · 700 · lh normal · ls normal<br>15.2px @1440 · 3q17cp:739, 740</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-nav-cta-family);font-size:var(--tf-type-nav-cta-size);font-weight:var(--tf-type-nav-cta-weight);line-height:var(--tf-type-nav-cta-leading);letter-spacing:var(--tf-type-nav-cta-tracking);">Logga in</div><div class="sb-cite" style="margin-top:4px">Login</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.trait</div><div class="sb-vals">0.88rem · 700 · lh normal · ls normal<br>14.08px @1440 · 3q17cp:1234, 1235</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-trait-family);font-size:var(--tf-type-trait-size);font-weight:var(--tf-type-trait-weight);line-height:var(--tf-type-trait-leading);letter-spacing:var(--tf-type-trait-tracking);color:var(--trait-ink)">Modig</div><div class="sb-cite" style="margin-top:4px">Brave</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.hiw-micro</div><div class="sb-vals">0.88rem · 600 · lh normal · ls normal<br>14.08px @1440 · 3q17cp:2651, 2652</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-micro-family);font-size:var(--tf-type-micro-size);font-weight:var(--tf-type-micro-weight);line-height:var(--tf-type-micro-leading);letter-spacing:var(--tf-type-micro-tracking);color:var(--micro-ink)">Porträttet styr både bilderna och berättelsen.</div><div class="sb-cite" style="margin-top:4px">The portrait shapes both the pictures and the story.</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.kicker</div><div class="sb-vals">0.85rem · 700 · lh normal · ls normal<br>13.6px @1440 · 3q17cp:846, 847</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-kicker-family);font-size:var(--tf-type-kicker-size);font-weight:var(--tf-type-kicker-weight);line-height:var(--tf-type-kicker-leading);letter-spacing:var(--tf-type-kicker-tracking);color:var(--chip-ink)">Exempel: Alvas värld · 2 böcker</div><div class="sb-cite" style="margin-top:4px">Demo: Alva&#x27;s world · 2 books</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.cta-microcopy</div><div class="sb-vals">0.85rem · 400 · lh normal · ls normal<br>13.6px @1440 · 3q17cp:3144</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-cta-microcopy-family);font-size:var(--tf-type-cta-microcopy-size);font-weight:var(--tf-type-cta-microcopy-weight);line-height:var(--tf-type-cta-microcopy-leading);letter-spacing:var(--tf-type-cta-microcopy-tracking);color:var(--page-sub)">Första boken är gratis, inget kort behövs. Sedan 149 kr i månaden.</div><div class="sb-cite" style="margin-top:4px">The first book is free, no card needed. After that $14.99 a month.</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.hiw-kicker</div><div class="sb-vals">0.82rem · 700 · lh normal · ls 2px<br>13.12px @1440 · 3q17cp:2550, 2551, 2544</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-eyebrow-family);font-size:var(--tf-type-eyebrow-size);font-weight:var(--tf-type-eyebrow-weight);line-height:var(--tf-type-eyebrow-leading);letter-spacing:var(--tf-type-eyebrow-tracking);text-transform:uppercase;color:var(--pill-ink)">Så fungerar det</div><div class="sb-cite" style="margin-top:4px">How it works</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.sec-chip</div><div class="sb-vals">0.8rem · 700 · lh normal · ls normal<br>12.8px @1440 · 3q17cp:1095, 1096</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-sec-chip-family);font-size:var(--tf-type-sec-chip-size);font-weight:var(--tf-type-sec-chip-weight);line-height:var(--tf-type-sec-chip-leading);letter-spacing:var(--tf-type-sec-chip-tracking);color:var(--chip-ink)">barnens favorit</div><div class="sb-cite" style="margin-top:4px">the family favorite</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.chip</div><div class="sb-vals">0.76rem · 800 · lh normal · ls 0.05em<br>12.16px @1440 · 3q17cp:1575, 1576, 1568</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-chip-family);font-size:var(--tf-type-chip-size);font-weight:var(--tf-type-chip-weight);line-height:var(--tf-type-chip-leading);letter-spacing:var(--tf-type-chip-tracking);text-transform:uppercase;color:var(--gold-chip-ink)">Godnatt</div><div class="sb-cite" style="margin-top:4px">Bedtime</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.book-sub</div><div class="sb-vals">0.72rem · 800 · lh normal · ls 0.04em<br>11.52px @1440 · 3q17cp:1528, 1529, 1521</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-book-sub-family);font-size:var(--tf-type-book-sub-size);font-weight:var(--tf-type-book-sub-weight);line-height:var(--tf-type-book-sub-leading);letter-spacing:var(--tf-type-book-sub-tracking);text-transform:uppercase;color:var(--pill-ink)">Stora känslor</div><div class="sb-cite" style="margin-top:4px">Big feelings</div></div></div>
+<div class="sb-type"><div><div class="sb-tok" style="margin:0">.foot</div><div class="sb-vals">0.9rem · 400 · lh normal · ls normal<br>14.4px @1440 · 3q17cp:1941</div></div><div class="sb-sample"><div style="font-family:var(--tf-type-footer-family);font-size:var(--tf-type-footer-size);font-weight:var(--tf-type-footer-weight);line-height:var(--tf-type-footer-leading);letter-spacing:var(--tf-type-footer-tracking);color:var(--foot-ink)">Tale Forge, sagor som minns er värld.</div><div class="sb-cite" style="margin-top:4px">Tale Forge, storybooks that remember your world.</div></div></div>
+</div>
+</div></section>
+<section id="components"><div class="sec-head"><h2>Components</h2><span class="sec-chip">site CSS, verbatim</span></div>
+<p class="sec-intro">Each piece below uses the shipped class names and rules, copied line for line into this page (block A of the inline stylesheet). Forced states (hover, pressed, focus) are marked; on the site they need a pointer or keyboard.</p>
+<div class="sb-grid sb-2">
+<div class="glass sb-card"><h3>Buttons</h3><p class="sb-cite">.btn 3q17cp:886-924 · .hiw-play :2804-2833 · .nav-cta :731-745 · .hiw-voice-chip :2834-2852</p>
+<div class="sb-row"><a class="btn btn-primary" href="#components" style="text-decoration:none">Skapa er hjälte</a><a class="btn btn-ghost" href="#components" style="text-decoration:none">Se hur det funkar</a></div>
+<div class="sb-row" style="margin-top:22px;align-items:flex-start"><div><span class="btn btn-primary sb-forced-hover">Skapa er hjälte</span><span class="sb-tag">:hover (forced)</span></div><div><span class="btn btn-primary sb-forced-active">Skapa er hjälte</span><span class="sb-tag">:active (forced)</span></div></div>
+<div class="sb-row" style="margin-top:18px"><button class="hiw-play" type="button" data-audio="assets/audio/landing-voice/grandpa-sample.mp3"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>Hör berättarrösten</button><span class="hiw-voice-chip"><img src="assets/landing/voice/narrator-morfar.webp" alt="">Morfar</span><a class="nav-cta" href="#components" style="text-decoration:none">Logga in</a></div>
+<dl class="sb-spec">
+<dt>.btn</dt><dd>Schibsted 700 1.05rem · padding 17px 30px · min-height 52px · radius 999px · gap 10px (:886-903)</dd>
+<dt>primary</dt><dd>background var(--btn-grad), ink var(--btn-ink) (natt #3a2b10 / morgon #fff), shadow var(--btn-shadow) + inset 0 1px 0 #ffffff73 (:907-913)</dd>
+<dt>ghost</dt><dd>var(--ghost-bg) + 1px var(--ghost-line) + backdrop-filter blur(14px) (:918-924)</dd>
+<dt>motion</dt><dd>transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, background/color 0.5s (:897-901); :hover translateY(-3px) + var(--btn-shadow-hover) (:914-917); :active scale(0.96) (:904-906)</dd>
+<dt>English</dt><dd>"Create your hero" · "See how it works" · "Hear the narrator" · "Grandpa Erik" · "Login"</dd>
+</dl></div>
+<div class="glass sb-card"><h3>Chips, pills and traits</h3><p class="sb-cite">.kicker :835-854 · .sec-chip :1087-1098 · .hiw-kicker :2541-2553 · .chip :1567-1590 · .book-sub :1520-1531 · .trait :1223-1246 · .hiw-node :2599-2613</p>
+<div class="sb-row"><span class="kicker" style="margin:0"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg>Exempel: Alvas värld · 2 böcker</span><span class="sec-chip">barnens favorit</span><span class="hiw-kicker" style="margin:0">Så fungerar det</span></div>
+<div class="sb-row" style="margin-top:14px"><span class="chip gold">Godnatt</span><span class="chip violet">Äventyr</span><span class="chip coral">Vänskap</span><span class="book-sub" style="margin:0">Stora känslor</span></div>
+<div class="trait-row" style="margin-top:14px"><span class="trait on">Modig</span><span class="trait on">Fnissig</span><span class="trait on">Djurvän</span><span class="trait">Nyfiken</span><span class="trait">Envis</span><span class="trait">+ Fler</span></div>
+<div class="sb-row"><span class="hiw-node">1</span><span class="hiw-node">2</span><span class="hiw-node">3</span><span class="hiw-node">4</span><span class="hiw-node">5</span><span class="hiw-node">6</span></div>
+<p class="hiw-micro"><svg class="hiw-star" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.7 5.6 4.4 9.3 10 10-5.6.7-9.3 4.4-10 10-.7-5.6-4.4-9.3-10-10 5.6-.7 9.3-4.4 10-10z"/></svg>Porträttet styr både bilderna och berättelsen.</p>
+<dl class="sb-spec">
+<dt>kicker</dt><dd>var(--chip-bg) / --chip-line / --chip-ink, blur(10px), 0.85rem 700, padding 8px 16px</dd>
+<dt>trait</dt><dd>2px var(--trait-line), 0.88rem 700, min-height 44px; .on = var(--trait-on-bg / -line / -ink)</dd>
+<dt>chip</dt><dd>0.76rem 800, 0.05em, uppercase; gold / violet (pill) / coral token pairs</dd>
+<dt>node</dt><dd>40px Lora 700 1.05rem numeral on var(--gold-chip-bg), 1.5px ring color-mix(in srgb, var(--gold-soft) 55%, transparent)</dd>
+<dt>English</dt><dd>"Demo: Alva's world · 2 books" · "the family favorite" · "How it works" · traits "Brave · Giggly · Animal lover · Curious · Stubborn · + More" · "The portrait shapes both the pictures and the story."</dd>
+</dl></div>
+</div>
+<div class="sb-grid sb-2" style="margin-top:18px">
+<div class="glass builder"><div style="display:flex;flex-direction:column;align-items:center;flex:none"><div class="builder-pic"><div class="pframe"><img src="assets/assets/cover-filten.webp" alt=""></div><a class="fab" href="#components" aria-label="Ändra utseende"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></a></div><span style="margin-top:14px;font-family:var(--ui);font-size:.72rem;color:var(--card-sub)">Skapad med AI</span></div><div><div class="builder-name">Alva</div><div class="trait-row"><span class="trait on">Modig</span><span class="trait on">Fnissig</span><span class="trait on">Djurvän</span><span class="trait">Nyfiken</span></div><a class="upload" href="#components" style="text-decoration:none;color:var(--card-ink)"><span class="cam"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h2.4l1.4-2.2A2 2 0 0 1 9.5 5h5a2 2 0 0 1 1.7.8L17.6 8H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z"/><circle cx="12" cy="13.5" r="3.4"/></svg></span><div><b>Bli din egen hjälte</b><span>Ladda upp en bild, så målar vi dig i bokens stil.</span></div></a>
+<p class="sb-cite" style="margin-top:14px">.glass.builder: glass :1110-1147, builder :1148-1283, markup from the home DOM. 158px portrait frame, radius 30px, 4px var(--frame), img scale(1.7) at 47% 18%; FAB 42px var(--btn-grad). English (official): "Created with AI" · "Become your own hero" · "Upload a photo, and we paint you into the book's style."</p></div></div>
+<div class="glass sb-card"><h3>Glass, badge, shelf book</h3><p class="sb-cite">.glass :1110-1147 (rim :1125-1147) · .fan .badge :980-1037 · .book :1485-1531</p>
+<div class="sb-row" style="align-items:flex-start;gap:22px">
+  <div class="sb-shelf"><div class="book"><img src="assets/assets/cover-tornet.webp" alt=""><div class="book-meta"><div class="book-title">Alva och fyraljuset i tornet</div><span class="book-sub">Stora känslor</span></div></div><span class="sb-tag">English: "Alva and the Fourth Candle in the Tower" · "Big feelings"</span></div>
+  <div class="sb-stack" style="flex:1;min-width:220px">
+    <div class="fan sb-fan-static"><div class="badge"><span class="dotpulse"></span><div><b>Sixten minns tornet</b><span>från "Alva och fyraljuset"</span></div></div></div>
+    <span class="sb-tag">badge at its rest pose rotate(2.5deg); the gold dot pulses 2.4s</span>
+    <div class="sb-portrait"><img src="assets/landing/iris/hero-portrait.webp" alt="Iris, the painted hero of the sample book"><span class="hiw-ai-chip">Skapad med AI</span></div>
+    <span class="sb-tag">.hiw-ai-chip (:2684-2698) · English "Created with AI"</span>
+  </div>
+</div>
+<dl class="sb-spec">
+<dt>glass</dt><dd>var(--card) + backdrop-filter blur(var(--card-blur)) (22px / 24px) + 1px var(--card-line) + var(--card-shadow), radius 26px</dd>
+<dt>rim</dt><dd>:before, 1px padding, linear-gradient(135deg, #9b87f580, #f2b22e59 50%, #ff61544d), opacity 0.45, mask-composite: exclude</dd>
+<dt>book</dt><dd>5px var(--frame), radius 22px, cover 2/3; hover translateY(-10px) rotate(-1deg) over 0.35s cubic-bezier(0.2, 0.7, 0.3, 1.2)</dd>
+</dl></div>
+</div>
+<div class="sb-grid sb-2" style="margin-top:18px">
+<div class="glass sb-card"><h3>Theme toggle</h3><p class="sb-cite">.tt 3q17cp:768-826 · markup from the home DOM · thumb slides on cubic-bezier(0.2, 0.7, 0.3, 1.2) over 0.5s</p>
+<div class="sb-row" style="gap:22px"><button class="tt sb-tt-natt" role="switch" aria-checked="false" aria-label="Natt (forced)" type="button"><span class="tt-thumb" aria-hidden="true"></span><span class="tt-opt night"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>Natt</span><span class="tt-opt day"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>Morgon</span></button><button class="tt sb-tt-morgon" role="switch" aria-checked="false" aria-label="Morgon (forced)" type="button"><span class="tt-thumb" aria-hidden="true"></span><span class="tt-opt night"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>Natt</span><span class="tt-opt day"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>Morgon</span></button></div>
+<p class="sb-cite" style="margin-top:10px">Left: Natt selected. Right: Morgon selected (states forced for the board; the live switch is in the nav). Track var(--ghost-bg) + 1px var(--control-line), min-height 44px, padding 4px; thumb var(--btn-grad) + var(--btn-shadow); labels 0.95rem 700, 15px icons. English: "Night" / "Morning"; aria-label "Byt tema" ("Switch theme").</p>
+<div class="sb-label">Focus</div>
+<div class="sb-row"><span class="choice sb-focus" style="display:inline-block">Gå med Mossa till den gröna mattan.</span></div>
+<p class="sb-cite" style="margin-top:10px">:focus-visible: outline 3px solid var(--accent), offset 3px (.tt :822-826, .choice :1928-1932). Inputs use 2px / 2px (:2373-2378).</p></div>
+<div class="glass sb-card"><h3>Reader: prose, choices, progress</h3><p class="sb-cite">.prose :1823-1841 · .choice :1898-1932 · .hiw-bar :2775-2797 · text: S1 of the sample book</p>
+<div class="prose" style="font-size:1.1rem">Iris kom till kvartersbiblioteket med ett stort ritpapper under armen. Hon hade sparat fönsterplatsen åt Mossa. Där skulle kvällsljuset räcka över hela deras teckning.</div>
+<p class="sb-cite" style="margin-top:6px">"Iris came to the neighbourhood library with a big sheet of drawing paper under her arm. She had saved the window seat for Mossa. There, the evening light would reach across their whole drawing." (library translation, <a href="copy/sample-book/path-AA.md">copy/sample-book/path-AA.md</a>). Drawn at 1.1rem here; the reader uses 1.2rem / 1.85.</p>
+<div class="choice-row"><button class="choice" type="button">Gå med Mossa till den gröna mattan.</button><button class="choice" type="button">Stanna och rita med det nya barnet i fönsterljuset.</button></div>
+<p class="sb-cite" style="margin-top:8px">"Go with Mossa to the green rug." · "Stay and draw with the new child in the window light." (library translation)</p>
+<div class="hiw-bake" style="margin-top:16px"><div class="hiw-bar"><i></i></div><span class="hiw-bake-line">Boken bakas. Ungefär tio minuter kvar.</span></div>
+<p class="sb-cite" style="margin-top:6px">"The book is baking. About ten minutes to go." Bar 8px var(--bar-bg), fill linear-gradient(90deg, #f5c542, #9b87f5) at 60%.</p></div>
+</div></section>
+<section id="illustration"><div class="sec-head"><h2>Illustration contact sheet</h2><span class="sec-chip">AI-painted, per book</span></div>
+<p class="sec-intro">Every picture is generated per family (the site labels them <i>Skapad med AI</i>, "Created with AI"): simulated watercolour washes with coloured-pencil texture and warm brown pencil outlines (never black ink), rounded shapes, the child hero in the same costume on every page (analysis/07 §4). The UI frames them in 5px <code>var(--frame)</code> borders with rounded corners.</p>
+<div class="glass sb-card"><h3>Covers</h3><p class="sb-cite">2:3, 848×1264 (sample cover 1024×1536) · .fan .fbook 20px / .book 22px radius, 5px var(--frame)</p><div class="sb-grid sb-4">
+<figure class="sb-fig"><div class="sb-frame sb-cover"><img src="assets/share/iris-sparade-platsen/assets/cover.webp" alt="Iris och den sparade platsen"></div><figcaption><div class="book-title" style="margin-top:8px">Iris och den sparade platsen</div><div class="sb-cite">sample book cover, &quot;Iris and the Saved Place&quot; · assets/share/iris-sparade-platsen/assets/cover.webp</div></figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame sb-cover"><img src="assets/assets/cover-tornet.webp" alt="Alva och fyraljuset i tornet"></div><figcaption><div class="book-title" style="margin-top:8px">Alva och fyraljuset i tornet</div><div class="sb-cite">demo, &quot;Alva and the Fourth Candle in the Tower&quot; · assets/assets/cover-tornet.webp</div></figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame sb-cover"><img src="assets/assets/cover-filten.webp" alt="Alva och filten vid elementet"></div><figcaption><div class="book-title" style="margin-top:8px">Alva och filten vid elementet</div><div class="sb-cite">demo, &quot;Alva and the Blanket by the Radiator&quot; · assets/assets/cover-filten.webp</div></figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame sb-cover"><img src="assets/landing/cover-next-book.webp" alt="nästa bok"></div><figcaption><div class="book-title" style="margin-top:8px">nästa bok</div><div class="sb-cite">landing &quot;next book&quot; teaser · assets/landing/cover-next-book.webp</div></figcaption></figure>
+</div></div>
+<div class="glass sb-card" style="margin-top:18px"><h3>The sample book, all 14 beats</h3><p class="sb-cite">assets/share/iris-sparade-platsen/assets/&lt;beat&gt;.webp, 1264×848 · narration &lt;beat&gt;.mp3 (durations from derived/audio/audio-specs.csv) · S1 → S2 → choice 1 (A/B) → S3, S4 → choice 2 (A/B) → S5, S6: two choices, four endings · branch tree in <a href="copy/sample-book-text.sv.md">copy/sample-book-text.sv.md</a></p><div class="sb-grid sb-7">
+<figure class="sb-fig"><div class="sb-frame sb-scene" style="border-width:3px;border-radius:14px"><img src="assets/share/iris-sparade-platsen/assets/S1.webp" alt="Sample book page S1"></div><figcaption class="sb-cite"><b style="color:var(--card-ink)">S1</b> · 67.0 s narration</figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame sb-scene" style="border-width:3px;border-radius:14px"><img src="assets/share/iris-sparade-platsen/assets/S2.webp" alt="Sample book page S2"></div><figcaption class="sb-cite"><b style="color:var(--card-ink)">S2</b> · 67.4 s narration</figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame sb-scene" style="border-width:3px;border-radius:14px"><img src="assets/share/iris-sparade-platsen/assets/S3A.webp" alt="Sample book page S3A"></div><figcaption class="sb-cite"><b style="color:var(--card-ink)">S3A</b> · 64.3 s narration</figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame sb-scene" style="border-width:3px;border-radius:14px"><img src="assets/share/iris-sparade-platsen/assets/S3B.webp" alt="Sample book page S3B"></div><figcaption class="sb-cite"><b style="color:var(--card-ink)">S3B</b> · 66.1 s narration</figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame sb-scene" style="border-width:3px;border-radius:14px"><img src="assets/share/iris-sparade-platsen/assets/S4A.webp" alt="Sample book page S4A"></div><figcaption class="sb-cite"><b style="color:var(--card-ink)">S4A</b> · 53.3 s narration</figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame sb-scene" style="border-width:3px;border-radius:14px"><img src="assets/share/iris-sparade-platsen/assets/S4B.webp" alt="Sample book page S4B"></div><figcaption class="sb-cite"><b style="color:var(--card-ink)">S4B</b> · 57.2 s narration</figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame sb-scene" style="border-width:3px;border-radius:14px"><img src="assets/share/iris-sparade-platsen/assets/S5AA.webp" alt="Sample book page S5AA"></div><figcaption class="sb-cite"><b style="color:var(--card-ink)">S5AA</b> · 62.3 s narration</figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame sb-scene" style="border-width:3px;border-radius:14px"><img src="assets/share/iris-sparade-platsen/assets/S5AB.webp" alt="Sample book page S5AB"></div><figcaption class="sb-cite"><b style="color:var(--card-ink)">S5AB</b> · 63.2 s narration</figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame sb-scene" style="border-width:3px;border-radius:14px"><img src="assets/share/iris-sparade-platsen/assets/S5BA.webp" alt="Sample book page S5BA"></div><figcaption class="sb-cite"><b style="color:var(--card-ink)">S5BA</b> · 69.2 s narration</figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame sb-scene" style="border-width:3px;border-radius:14px"><img src="assets/share/iris-sparade-platsen/assets/S5BB.webp" alt="Sample book page S5BB"></div><figcaption class="sb-cite"><b style="color:var(--card-ink)">S5BB</b> · 65.0 s narration</figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame sb-scene" style="border-width:3px;border-radius:14px"><img src="assets/share/iris-sparade-platsen/assets/S6AA.webp" alt="Sample book page S6AA"></div><figcaption class="sb-cite"><b style="color:var(--card-ink)">S6AA</b> · 63.6 s narration</figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame sb-scene" style="border-width:3px;border-radius:14px"><img src="assets/share/iris-sparade-platsen/assets/S6AB.webp" alt="Sample book page S6AB"></div><figcaption class="sb-cite"><b style="color:var(--card-ink)">S6AB</b> · 65.6 s narration</figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame sb-scene" style="border-width:3px;border-radius:14px"><img src="assets/share/iris-sparade-platsen/assets/S6BA.webp" alt="Sample book page S6BA"></div><figcaption class="sb-cite"><b style="color:var(--card-ink)">S6BA</b> · 58.5 s narration</figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame sb-scene" style="border-width:3px;border-radius:14px"><img src="assets/share/iris-sparade-platsen/assets/S6BB.webp" alt="Sample book page S6BB"></div><figcaption class="sb-cite"><b style="color:var(--card-ink)">S6BB</b> · 72.5 s narration</figcaption></figure>
+</div></div>
+<div class="glass sb-card" style="margin-top:18px"><h3>Landing crops, friends and narrators</h3><p class="sb-cite">assets/landing/ · assets/assets/ · ending medallions 84px on the site with a 2px gold-to-violet ring (3q17cp:2977-3005)</p>
+<div class="sb-row" style="gap:20px;align-items:flex-start">
+<figure class="sb-fig" style="width:150px"><div class="sb-frame sb-cover" style="border-width:4px"><img src="assets/landing/iris/hero-portrait.webp" alt="Iris portrait"></div><figcaption class="sb-cite">hero-portrait.webp</figcaption></figure>
+<figure class="sb-fig" style="width:300px"><div class="sb-frame sb-scene" style="border-width:4px"><img src="assets/landing/iris/scene-choice.webp" alt="Scene before the first choice"></div><figcaption class="sb-cite">scene-choice.webp (reader mock)</figcaption></figure>
+<div><div class="sb-row" style="gap:14px">
+<figure class="sb-fig" style="text-align:center"><div class="sb-medal"><img src="assets/landing/iris/ending-1.webp" alt="Ending 1"></div><figcaption class="sb-cite">ending-1</figcaption></figure>
+<figure class="sb-fig" style="text-align:center"><div class="sb-medal"><img src="assets/landing/iris/ending-2.webp" alt="Ending 2"></div><figcaption class="sb-cite">ending-2</figcaption></figure>
+<figure class="sb-fig" style="text-align:center"><div class="sb-medal"><img src="assets/landing/iris/ending-3.webp" alt="Ending 3"></div><figcaption class="sb-cite">ending-3</figcaption></figure>
+<figure class="sb-fig" style="text-align:center"><div class="sb-medal"><img src="assets/landing/iris/ending-4.webp" alt="Ending 4"></div><figcaption class="sb-cite">ending-4</figcaption></figure>
+</div><div class="sb-row" style="gap:14px;margin-top:14px">
+<figure class="sb-fig" style="text-align:center"><img class="sb-avatar" src="assets/assets/avatar-noah.jpg" alt="Noah"><figcaption class="sb-cite">Noah</figcaption></figure>
+<figure class="sb-fig" style="text-align:center"><img class="sb-avatar" src="assets/assets/avatar-sixten.jpg" alt="Sixten"><figcaption class="sb-cite">Sixten</figcaption></figure>
+<figure class="sb-fig" style="text-align:center"><img class="sb-avatar" src="assets/landing/voice/narrator-morfar.webp" alt="Morfar"><figcaption class="sb-cite">Morfar</figcaption></figure>
+<figure class="sb-fig" style="text-align:center"><img class="sb-avatar" src="derived/brand/narrators/portrait-female.jpg" alt="Narrator portrait-female"><figcaption class="sb-cite">female</figcaption></figure>
+<figure class="sb-fig" style="text-align:center"><img class="sb-avatar" src="derived/brand/narrators/portrait-male.jpg" alt="Narrator portrait-male"><figcaption class="sb-cite">male</figcaption></figure>
+<figure class="sb-fig" style="text-align:center"><img class="sb-avatar" src="derived/brand/narrators/portrait-young.jpg" alt="Narrator portrait-young"><figcaption class="sb-cite">young</figcaption></figure>
+</div></div></div>
+<div class="sb-label">Adventure cards (/start)</div><div class="sb-grid sb-4">
+<figure class="sb-fig"><div class="sb-frame" style="border-width:3px;border-radius:16px"><img src="assets/landing/cards/pick-1.webp" alt="" style="aspect-ratio:800/537;object-fit:cover"></div><figcaption class="sb-cite">pick-1.webp</figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame" style="border-width:3px;border-radius:16px"><img src="assets/landing/cards/pick-2.webp" alt="" style="aspect-ratio:800/537;object-fit:cover"></div><figcaption class="sb-cite">pick-2.webp</figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame" style="border-width:3px;border-radius:16px"><img src="assets/landing/cards/pick-3.webp" alt="" style="aspect-ratio:800/537;object-fit:cover"></div><figcaption class="sb-cite">pick-3.webp</figcaption></figure>
+<figure class="sb-fig"><div class="sb-frame" style="border-width:3px;border-radius:16px"><img src="assets/images/create/surprise-us.webp" alt="" style="aspect-ratio:800/537;object-fit:cover"></div><figcaption class="sb-cite">surprise-us.webp</figcaption></figure>
+</div><p class="sb-cite" style="margin-top:14px">Full contact sheets: <a href="derived/illustration/contact-sheet__scenes-branch-tree.webp">scenes as a branch tree</a> · <a href="derived/illustration/contact-sheet__covers.webp">covers</a> · <a href="derived/illustration/contact-sheet__landing-images.webp">landing images</a> · <a href="derived/illustration/contact-sheet__create-style-presets.webp">create-flow style presets</a> · <a href="derived/illustration/contact-sheet__bokmassan-stories.webp">Bokmässan stories</a> · analysis: <a href="analysis/07-illustration-and-imagery.md">analysis/07</a></p></div></section>
+<section id="paintings"><div class="sec-head"><h2>Background paintings</h2><span class="sec-chip">fixed plate, 100lvh</span></div>
+<p class="sec-intro">One painting per theme sits behind every page, fixed, with the glass floating over it. Night is a violet-and-gold nebula darkened by a navy scrim and six CSS stars; morning is a pale aurora with no scrim and no stars. They cross-fade over 0.5s <code>ease</code>.</p>
+<div class="sb-grid sb-plates">
+<figure class="sb-fig"><div class="sb-plate wide tf-plate-natt-scrim"><div class="tf-starfield"></div></div><figcaption><div class="sb-tok">Natt: nebula-hero.webp + scrim + starfield</div><div class="sb-cite">2400×1340, object-fit cover, object-position center 30% (3q17cp:623-630) · scrim linear-gradient(#0b0f1e61 0%, #0b0f1e80 45%, #0d1122bd 100%) (:632) · six stars twinkle 0.95 ↔ 0.55 over 4.6s (:636-656). Drawn with tokens.css classes .tf-plate-natt-scrim + .tf-starfield.</div></figcaption></figure>
+<figure class="sb-fig"><div class="sb-plate wide m"><img src="assets/assets/morgon-aurora-desktop.webp" alt="Morning aurora painting"></div><figcaption><div class="sb-tok">Morgon: morgon-aurora-desktop.webp</div><div class="sb-cite">2560×1440, object-fit cover, no scrim, no stars (:657-666); canvas #ede9f6 (:610)</div></figcaption></figure>
+<figure class="sb-fig"><div class="sb-plate tall"><img src="assets/assets/morgon-aurora-mobile.webp" alt="Morning aurora, portrait"></div><figcaption><div class="sb-tok">Morgon, ≤760px</div><div class="sb-cite">1440×2560 via &lt;source media="(max-width: 760px)"&gt;</div></figcaption></figure>
+</div><p class="sb-cite" style="margin-top:10px">Film plates (RGBA scrim and star layers at 1920×1080 and 3840×2160): <a href="derived/theming/night-stack/element__scrim-rgba__1920x1080.png">scrim</a> · <a href="derived/theming/night-stack/element__starfield-rgba__1920x1080__peak-opacity.png">stars</a> · analysis: <a href="analysis/06-theming-and-atmosphere.md">analysis/06</a></p></section>
+<section id="icons"><div class="sec-head"><h2>Icons</h2><span class="sec-chip">24px grid · currentColor</span></div>
+<p class="sec-intro">Hand-drawn inline SVG, no icon font: 24×24 viewBox, round caps and joins, stroke 2 to 2.4 for UI glyphs, 1.7 for companions; every glyph takes <code>currentColor</code>. The four-point sparkle is the brand motif and is always gold.</p>
+<div class="glass sb-card"><div class="sb-grid sb-8">
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 60" fill="none"><g stroke="#e7c98b" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 38c9-3 18-1 26 9 8-10 17-12 26-9l-3 15c-9-2-15-2-23 1-8-3-14-3-23-1L6 38Z"/><path d="M10 34c9 0 16 5 22 13 6-8 13-13 22-13M12 43c7 0 12 3 16 6m8 0c4-3 9-6 16-6M3 57c11-2 20-2 29 0 9-2 18-2 29 0M32 47v7"/><path d="m31 4 3 10 10 3-10 3-3 10-3-10-10-3 10-3Z" fill="#e7c98b" stroke="none"/><path d="m48 23 2 6 6 2-6 2-2 6-2-6-6-2 6-2Z" fill="#e7c98b" stroke="none"/><path d="m13 22 1 4 4 1-4 1-1 4-1-4-4-1 4-1Z" fill="#e7c98b" stroke="none"/></g></svg><span class="sb-cite"><a href="derived/icons/svg/brand-fair-contest-book-stars.svg">brand-fair-contest-book-stars</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg><span class="sb-cite"><a href="derived/icons/svg/brand-google-g.svg">brand-google-g</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3.2 3.1 6 5.7 6 9.2A6 6 0 0 1 6 12.2C6 8.7 8.8 6.1 12 3z"/><path d="M10 14a2 2 0 0 0 4 0"/></svg><span class="sb-cite"><a href="derived/icons/svg/companion-bo-dragon.svg">companion-bo-dragon</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="13" r="7"/><circle cx="9.4" cy="11.6" r="1.5"/><circle cx="14.6" cy="11.6" r="1.5"/><path d="M12 14.6l-1.2 1.6h2.4z"/><path d="M5.6 8.4L8 5.6M18.4 8.4L16 5.6"/></svg><span class="sb-cite"><a href="derived/icons/svg/companion-luna-owl.svg">companion-luna-owl</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4l4 4h6l4-4v6c0 5-3.4 9-7 9s-7-4-7-9z"/><path d="M9.4 11h.01M14.6 11h.01"/><path d="M12 14l-1.1 1.5h2.2z"/></svg><span class="sb-cite"><a href="derived/icons/svg/companion-rufus-fox.svg">companion-rufus-fox</a></span></div>
+<div class="sb-icon wide"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" class="glod-book-art" viewBox="0 0 160 122"><defs><linearGradient id="glodBookSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0d0a24"/><stop offset="1" stop-color="#2f2458"/></linearGradient><radialGradient id="glodBookGlow"><stop offset="0" stop-color="rgba(255,200,90,.4)"/><stop offset="1" stop-color="rgba(255,200,90,0)"/></radialGradient><clipPath id="glodBookClip"><rect x="3" y="3" width="154" height="116" rx="8"/></clipPath></defs><rect x="3" y="3" width="154" height="116" rx="8" fill="url(#glodBookSky)"/><g clip-path="url(#glodBookClip)"><g fill="#efe6cd"><circle cx="22" cy="20" r="1.1" opacity=".7"/><circle cx="47" cy="13" r=".8" opacity=".5"/><circle cx="60" cy="30" r="1" opacity=".6"/><circle cx="118" cy="15" r=".9" opacity=".55"/><circle cx="143" cy="40" r="1.1" opacity=".65"/><circle cx="30" cy="44" r=".8" opacity=".5"/><circle cx="97" cy="12" r=".8" opacity=".5"/><circle cx="14" cy="60" r=".9" opacity=".45"/></g><circle cx="132" cy="24" r="8" fill="#efe6cd" opacity=".92"/><circle cx="129.6" cy="22.4" r="1.6" fill="#c9b894" opacity=".7"/><circle cx="134.5" cy="26.5" r="1.1" fill="#c9b894" opacity=".7"/><circle cx="80" cy="44" r="26" fill="url(#glodBookGlow)"/><path fill="#241b49" d="M3 78 L11 66 17 78 24 60 32 78 40 70 46 78 55 58 64 78 72 68 78 78 88 62 97 78 104 71 110 78 120 60 129 78 136 70 142 78 150 64 157 78 V119 H3 Z"/><path fill="#171130" d="M3 92 L14 74 24 92 34 80 43 92 56 70 68 92 78 82 87 92 100 72 112 92 122 82 131 92 144 74 157 92 V119 H3 Z"/><ellipse cx="80" cy="114" rx="38" ry="11" fill="rgba(255,158,68,.22)"/></g><g transform="translate(66.5,28) scale(1.15)" fill="none" stroke="#f5c542" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6c.5 3.1-1.8 4.5-1.8 7a4.6 4.6 0 0 0 2.1 3.9c-.2-1.6.6-2.6 1.5-3.4.2 2.6 3.1 3 3.1 6.2A5.4 5.4 0 0 1 6.2 17c0-4.3 4.7-5.6 5.8-14.4z"/></g><rect x="3" y="3" width="154" height="116" rx="8" fill="none" stroke="rgba(10,6,24,.85)" stroke-width="1.6"/><rect x="4.5" y="4.5" width="151" height="113" rx="7" fill="none" stroke="rgba(245,197,66,.28)" stroke-width="1"/></svg><span class="sb-cite"><a href="derived/icons/svg/illus-glod-book-art.svg">illus-glod-book-art</a></span></div>
+<div class="sb-icon gold"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.6c.5 3.1-1.8 4.5-1.8 7a4.6 4.6 0 0 0 2.1 3.9c-.2-1.6.6-2.6 1.5-3.4.2 2.6 3.1 3 3.1 6.2A5.4 5.4 0 0 1 6.2 17c0-4.3 4.7-5.6 5.8-14.4z"/></svg><span class="sb-cite"><a href="derived/icons/svg/motif-flame-glod.svg">motif-flame-glod</a></span></div>
+<div class="sb-icon gold"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c.7 5.6 4.4 9.3 10 10-5.6.7-9.3 4.4-10 10-.7-5.6-4.4-9.3-10-10 5.6-.7 9.3-4.4 10-10z"/></svg><span class="sb-cite"><a href="derived/icons/svg/motif-four-point-sparkle.svg">motif-four-point-sparkle</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 4l-8.5 8.5M9 15.5c-1 1-1.2 3-3.4 3.4.4-2.2 1-3.8 2-4.8"/><path d="M17.5 2.5l4 4-2 2-4-4z"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-brush-painting.svg">ui-brush-painting</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h2.4l1.4-2.2A2 2 0 0 1 9.5 5h5a2 2 0 0 1 1.7.8L17.6 8H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z"/><circle cx="12" cy="13.5" r="3.4"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-camera-home.svg">ui-camera-home</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-2.5h6L17 8h3a1.5 1.5 0 0 1 1.5 1.5V18a1.5 1.5 0 0 1-1.5 1.5H4A1.5 1.5 0 0 1 2.5 18V9.5A1.5 1.5 0 0 1 4 8z"/><circle cx="12" cy="13.4" r="3.4"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-camera-start.svg">ui-camera-start</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-chevron-back.svg">ui-chevron-back</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-8 10-8 10 8 10 8-3 8-10 8-10-8-10-8z"/><circle cx="12" cy="12" r="3"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-eye.svg">ui-eye</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.9 4.24A9.1 9.1 0 0 1 12 4c7 0 10 8 10 8a18.5 18.5 0 0 1-2.16 3.19M6.6 6.6A18.5 18.5 0 0 0 2 12s3 8 10 8a9.1 9.1 0 0 0 5.4-1.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2M2 2l20 20"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-eye-off.svg">ui-eye-off</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-kicker-sparkle-burst.svg">ui-kicker-sparkle-burst</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.6L20 10l-5 3.6 1.6 6L12 16l-4.6 3.6L9 13.6 4 10l6.1-1.4z"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-kicker-star-start.svg">ui-kicker-star-start</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-lock.svg">ui-lock</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-mail.svg">ui-mail</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-nav-account.svg">ui-nav-account</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-nav-bookshelf.svg">ui-nav-bookshelf</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1 0 1.6-.8 1.6-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.1 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-3.9-4-7.3-9-7.3z"/><circle cx="7.5" cy="10.5" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="7.5" r="1" fill="currentColor" stroke="none"/><circle cx="16.5" cy="10.5" r="1" fill="currentColor" stroke="none"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-palette-placeholder.svg">ui-palette-placeholder</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-pause-hiw.svg">ui-pause-hiw</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-pen-fab.svg">ui-pen-fab</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-play-hiw.svg">ui-play-hiw</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5l12 7.5-12 7.5z"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-play-voice-sample.svg">ui-play-voice-sample</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-plus-friend-add.svg">ui-plus-friend-add</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-reader-pause.svg">ui-reader-pause</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5v14l11-7z"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-reader-play.svg">ui-reader-play</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7v5h5"/><path d="M5.5 16a8 8 0 1 0 .5-9l-2 5"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-reader-replay.svg">ui-reader-replay</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-retry-arrows.svg">ui-retry-arrows</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6z"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-shield-privacy.svg">ui-shield-privacy</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="m16 9 6 6M22 9l-6 6"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-sound-off.svg">ui-sound-off</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 6a8 8 0 0 1 0 12"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-sound-on.svg">ui-sound-on</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6.5 8.5H3v7h3.5L11 19z"/><path d="M15 9a4.2 4.2 0 0 1 0 6M17.8 6.5a8 8 0 0 1 0 11"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-speaker-reveal.svg">ui-speaker-reveal</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="0.8s" repeatCount="indefinite"/></path></svg><span class="sb-cite"><a href="derived/icons/svg/ui-spinner.svg">ui-spinner</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-theme-moon.svg">ui-theme-moon</a></span></div>
+<div class="sb-icon"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg><span class="sb-cite"><a href="derived/icons/svg/ui-theme-sun.svg">ui-theme-sun</a></span></div>
+</div>
+<div class="sb-label">Endings map (how-it-works step 5)</div>
+<img class="only-natt" src="derived/icons/endings-map-clean__natt.webp" alt="Endings map, natt" style="width:100%;max-width:820px;border-radius:18px">
+<img class="only-morgon" src="derived/icons/endings-map-clean__morgon.webp" alt="Endings map, morgon" style="width:100%;max-width:820px;border-radius:18px">
+<p class="sb-cite" style="margin-top:10px">Pages are dots in var(--map-dot), choices are gold diamonds, endings are medallions; the lit route draws itself over 0.9s ease-out every 4.5s (3q17cp:2931-3005). Not inlined here (they carry their own styles): framework-next-error-triangle, hiw-endings-map-desktop__morgon, hiw-endings-map-desktop__natt, hiw-endings-map-desktop__natt__en, hiw-endings-map-mobile__morgon, hiw-endings-map-mobile__natt, map-choice-diamond, map-dotted-path, map-medallion, map-page-dot. Sheets: <a href="derived/icons/icon-sheet-natt.png">natt</a> · <a href="derived/icons/icon-sheet-morgon.png">morgon</a> · analysis: <a href="analysis/08-iconography-and-svg.md">analysis/08</a></p></div></section>
+<section id="motion"><div class="sec-head"><h2>Motion</h2><span class="sec-chip">slow idle, springy touch</span></div>
+<p class="sec-intro">Idle things breathe slowly on <code>ease-in-out</code> (4.6 to 9 s loops, a few px). Things you touch answer fast on overshooting springs (0.25 to 0.5 s). Theme changes fade in 0.5 s <code>ease</code>. With reduced motion every loop stops.</p>
+<div class="glass sb-card"><h3>Curves</h3><p class="sb-cite">tokens.css §12a · drawn from the bezier control points; dashed line = 1.0</p><div class="sb-grid sb-6">
+<div><svg class="sb-curve" viewBox="0 0 100 104" aria-hidden="true"><rect class="grid" x="4" y="32.8" width="92" height="64.0"/><line class="h" x1="0" x2="100" y1="32.8" y2="32.8"/><line class="grid" x1="4.0" y1="96.8" x2="27.0" y2="90.4"/><line class="grid" x1="96.0" y1="32.8" x2="27.0" y2="32.8"/><circle class="p" cx="27.0" cy="90.4" r="1.6"/><circle class="p" cx="27.0" cy="32.8" r="1.6"/><path class="c" d="M4.0,96.8 C27.0,90.4 27.0,32.8 96.0,32.8"/></svg><div class="sb-tok">--tf-ease</div><div class="sb-vals">ease<br>--theme-transition-easing; unnamed `transition: x 0.5s` too · 3q17cp:471</div></div>
+<div><svg class="sb-curve" viewBox="0 0 100 104" aria-hidden="true"><rect class="grid" x="4" y="32.8" width="92" height="64.0"/><line class="h" x1="0" x2="100" y1="32.8" y2="32.8"/><line class="grid" x1="4.0" y1="96.8" x2="42.6" y2="96.8"/><line class="grid" x1="96.0" y1="32.8" x2="57.4" y2="32.8"/><circle class="p" cx="42.6" cy="96.8" r="1.6"/><circle class="p" cx="57.4" cy="32.8" r="1.6"/><path class="c" d="M4.0,96.8 C42.6,96.8 57.4,32.8 96.0,32.8"/></svg><div class="sb-tok">--tf-ease-in-out</div><div class="sb-vals">ease-in-out<br>every idle loop (twinkle, float1/2, floatBadge) · 3q17cp:644</div></div>
+<div><svg class="sb-curve" viewBox="0 0 100 104" aria-hidden="true"><rect class="grid" x="4" y="32.8" width="92" height="64.0"/><line class="h" x1="0" x2="100" y1="32.8" y2="32.8"/><line class="grid" x1="4.0" y1="96.8" x2="4.0" y2="96.8"/><line class="grid" x1="96.0" y1="32.8" x2="57.4" y2="32.8"/><circle class="p" cx="4.0" cy="96.8" r="1.6"/><circle class="p" cx="57.4" cy="32.8" r="1.6"/><path class="c" d="M4.0,96.8 C4.0,96.8 57.4,32.8 96.0,32.8"/></svg><div class="sb-tok">--tf-ease-out</div><div class="sb-vals">ease-out<br>map path draw · 3q17cp:2944</div></div>
+<div><svg class="sb-curve" viewBox="0 0 100 104" aria-hidden="true"><rect class="grid" x="4" y="32.8" width="92" height="64.0"/><line class="h" x1="0" x2="100" y1="32.8" y2="32.8"/><line class="grid" x1="4.0" y1="96.8" x2="22.4" y2="52.0"/><line class="grid" x1="96.0" y1="32.8" x2="31.6" y2="32.8"/><circle class="p" cx="22.4" cy="52.0" r="1.6"/><circle class="p" cx="31.6" cy="32.8" r="1.6"/><path class="c" d="M4.0,96.8 C22.4,52.0 31.6,32.8 96.0,32.8"/></svg><div class="sb-tok">--tf-ease-settle</div><div class="sb-vals">cubic-bezier(0.2, 0.7, 0.3, 1)<br>.reveal; tfStartIn screens · 3q17cp:1102</div></div>
+<div><svg class="sb-curve" viewBox="0 0 100 104" aria-hidden="true"><rect class="grid" x="4" y="32.8" width="92" height="64.0"/><line class="h" x1="0" x2="100" y1="32.8" y2="32.8"/><line class="grid" x1="4.0" y1="96.8" x2="22.4" y2="52.0"/><line class="grid" x1="96.0" y1="32.8" x2="31.6" y2="20.0"/><circle class="p" cx="22.4" cy="52.0" r="1.6"/><circle class="p" cx="31.6" cy="20.0" r="1.6"/><path class="c" d="M4.0,96.8 C22.4,52.0 31.6,20.0 96.0,32.8"/></svg><div class="sb-tok">--tf-ease-soft-spring</div><div class="sb-vals">cubic-bezier(0.2, 0.7, 0.3, 1.2)<br>fan covers, toggle thumb (:790), .book, .adv, .choice · 3q17cp:934</div></div>
+<div><svg class="sb-curve" viewBox="0 0 100 104" aria-hidden="true"><rect class="grid" x="4" y="32.8" width="92" height="64.0"/><line class="h" x1="0" x2="100" y1="32.8" y2="32.8"/><line class="grid" x1="4.0" y1="96.8" x2="22.4" y2="52.0"/><line class="grid" x1="96.0" y1="32.8" x2="31.6" y2="7.2"/><circle class="p" cx="22.4" cy="52.0" r="1.6"/><circle class="p" cx="31.6" cy="7.2" r="1.6"/><path class="c" d="M4.0,96.8 C22.4,52.0 31.6,7.2 96.0,32.8"/></svg><div class="sb-tok">--tf-ease-spring</div><div class="sb-vals">cubic-bezier(0.2, 0.7, 0.3, 1.4)<br>.btn, .fab, .hiw-play press targets · 3q17cp:898</div></div>
+</div><p class="sb-note" style="margin-top:12px">Overshoot: spring peaks at +11.7 % (the CTA rises to -3.35 px before settling at -3 px; measured -3.348 px), soft spring at +4.4 % (shelf book -10.44 px). Source: <a href="derived/motion/motion-spec.json">motion-spec.json</a>.</p></div>
+<div class="sb-grid sb-2" style="margin-top:18px">
+<div class="glass sb-card"><h3>Durations</h3><p class="sb-cite">tokens.css §12b · one-shots on top, loops below (scaled separately)</p><div class="sb-dur">
+<b>theme</b><i style="width:50.0%"></i><span>0.5s · :470</span>
+<b>press</b><i style="width:25.0%"></i><span>0.25s · :898</span>
+<b>shadow</b><i style="width:30.0%"></i><span>0.3s · :899</span>
+<b>trait</b><i style="width:25.0%"></i><span>0.25s · :1236</span>
+<b>card</b><i style="width:35.0%"></i><span>0.35s · :1493</span>
+<b>adv</b><i style="width:30.0%"></i><span>0.3s · :1541</span>
+<b>glass-shadow</b><i style="width:40.0%"></i><span>0.4s · :1122</span>
+<b>cover</b><i style="width:50.0%"></i><span>0.5s · :934</span>
+<b>reveal</b><i style="width:70.0%"></i><span>0.7s · :1102</span>
+<b>path-draw</b><i style="width:90.0%"></i><span>0.9s · :2944</span>
+<b>path-fade</b><i style="width:25.0%"></i><span>0.25s · :2948</span>
+<b>screen-in</b><i style="width:45.0%"></i><span>0.45s · :12</span>
+<b>twinkle</b><i style="width:51.1%"></i><span>4.6s · :644</span>
+<b>float1</b><i style="width:77.8%"></i><span>7s · :950</span>
+<b>float2</b><i style="width:88.9%"></i><span>8s · :957</span>
+<b>float-badge</b><i style="width:100.0%"></i><span>9s · :995</span>
+<b>pulse</b><i style="width:26.7%"></i><span>2.4s · :1016</span>
+</div></div>
+<div class="glass sb-card"><h3>Idle loops, running</h3><p class="sb-cite">site keyframes float1 / float2 / floatBadge / pulse / twinkle (3q17cp:948-1029, :636-656), here at reduced size</p>
+<div class="sb-stage tf-plate-natt-scrim"><div class="starfield"></div><div class="fan"><div class="fbook fb1"><img src="assets/assets/cover-tornet.webp" alt=""></div><div class="fbook fb2"><img src="assets/assets/cover-filten.webp" alt=""></div><div class="badge"><span class="dotpulse"></span><div><b>Sixten minns tornet</b><span>från "Alva och fyraljuset"</span></div></div></div></div>
+<dl class="sb-spec">
+<dt>fb1</dt><dd>7s: rotate -8° ↔ -8.6°, y 0 ↔ -12px (measured p2p 11.7 px)</dd>
+<dt>fb2</dt><dd>8s: rotate 7° ↔ 7.6°, y 0 ↔ -16px (measured p2p 15.7 px)</dd>
+<dt>badge</dt><dd>9s: rotate 2.5° ↔ 3°, y 0 ↔ -7px; gold dot ring 0 → 12px, alpha 0.45 → 0 by 70 %, 2.4s</dd>
+<dt>stars</dt><dd>4.6s: opacity 0.95 ↔ 0.55, natt only</dd>
+<dt>moves</dt><dd>lift-btn translateY(-3px) · lift-play translateY(-2px) · lift-choice translateY(-3px) · lift-adv translateY(-6px) · lift-book translateY(-10px) rotate(-1deg) · press scale(0.96) · fab-hover scale(1.1)</dd>
+</dl></div>
+</div></section>
+<section id="copy"><div class="sec-head"><h2>Sample copy</h2><span class="sec-chip">Swedish first, English gloss</span></div>
+<p class="sec-intro">Swedish is the source language; the English site is a translation. Quotes are verbatim from the DOM and the i18n dictionaries. "Official" marks Tale Forge's own English; "library translation" marks ours.</p>
+<div class="glass sb-card">
+<div class="sb-copy"><div class="sb-tok" style="margin:0">meta description</div><div><div class="sv" style="font-family:var(--display);font-weight:700;font-size:1.5rem;letter-spacing:-0.015em">Riktiga bilderböcker, skapade för ditt barn.</div><div class="en">Real picture books, made for your child. <em>official</em></div></div></div>
+<div class="sb-copy"><div class="sb-tok" style="margin:0">/start h1</div><div><div class="sv" style="font-family:var(--display);font-weight:700;font-size:2.2rem;line-height:1.06;letter-spacing:-0.015em">Ikväll är hjälten <span style="color:var(--accent-ink)">ert barn</span>.</div><div class="en">Tonight the hero is your child. <em>official</em></div></div></div>
+<div class="sb-copy"><div class="sb-tok" style="margin:0">how it works</div><div><div class="sv" style="font-family:var(--display);font-weight:700;font-size:1.7rem;letter-spacing:-0.015em">Äventyr värda att prata om.</div><div class="en">Adventures worth talking about. <em>official</em></div></div></div>
+<div class="sb-copy"><div class="sb-tok" style="margin:0">hiw lede</div><div><div class="sv" style="font-family:var(--serif);font-size:1.1rem;line-height:1.7">Från ett foto till en uppläst bilderbok med fyra olika slut. Så här går en kväll till.</div><div class="en">From one photo to a narrated picture book with four different endings. Here is how an evening works. <em>official</em></div></div></div>
+<div class="sb-copy"><div class="sb-tok" style="margin:0">six steps</div><div><div class="sv" style="font-family:var(--display);font-weight:700;font-size:1.15rem">Bygg er hjälte · Ta med en vän · Välj kvällens äventyr · Läs och välj · Fyra olika slut · Världen minns</div><div class="en">Build your hero · Bring a friend · Pick tonight&#x27;s adventure · Read and choose · Four different endings · The world remembers <em>official</em></div></div></div>
+<div class="sb-copy"><div class="sb-tok" style="margin:0">step 3 copy</div><div><div class="sv" style="font-family:var(--serif);font-size:1.02rem;line-height:1.75">Det tar ungefär tio minuter, och det säger vi hellre ärligt än låtsas att det går på en sekund.</div><div class="en">It takes about ten minutes, and we would rather say that honestly than pretend it takes a second. <em>official</em></div></div></div>
+<div class="sb-copy"><div class="sb-tok" style="margin:0">step 4 micro</div><div><div class="sv" style="font-family:var(--ui);font-weight:600;font-size:.95rem">Inga låtsasval. Båda vägarna är skrivna, målade och inlästa.</div><div class="en">No pretend choices. Both paths are written, painted, and narrated. <em>official</em></div></div></div>
+<div class="sb-copy"><div class="sb-tok" style="margin:0">map caption</div><div><div class="sv" style="font-family:var(--serif);font-size:.95rem;line-height:1.6">Varje prick är en sida, varje guldstjärna ett val, varje medaljong ett slut. Alla fyra finns på riktigt.</div><div class="en">Every dot is a page, every gold star a choice, every medallion an ending. All four really exist. <em>official</em></div></div></div>
+<div class="sb-copy"><div class="sb-tok" style="margin:0">story choice prompt</div><div><div class="sv" style="font-family:var(--ui);font-weight:700;font-size:1rem">Det hettade i Iris händer; de ville rycka i stolen. Före sagostunden hinner hon bara rita på ett ställe. Vad gör hon?</div><div class="en">Iris&#x27;s hands felt hot; they wanted to tug at the chair. Before story time she only has time to draw in one place. What does she do? <em>library translation</em></div></div></div>
+<div class="sb-copy"><div class="sb-tok" style="margin:0">waiting fire</div><div><div class="sv" style="font-family:var(--display);font-weight:700;font-size:1.4rem;letter-spacing:-0.01em">Elden har smitt klart din saga.</div><div class="en">The fire has forged your story. <em>official</em></div></div></div>
+<div class="sb-copy"><div class="sb-tok" style="margin:0">404</div><div><div class="sv" style="font-family:var(--serif);font-size:1.05rem;line-height:1.7">Den här sidan har vandrat iväg i sagovärlden.</div><div class="en">This page wandered off into the story world. <em>official</em></div></div></div>
+<div class="sb-copy"><div class="sb-tok" style="margin:0">footer</div><div><div class="sv" style="font-family:var(--ui);font-size:.9rem;color:var(--foot-ink)">Tale Forge, sagor som minns er värld.</div><div class="en">Tale Forge, storybooks that remember your world. <em>official</em></div></div></div>
+<p class="sb-cite" style="margin-top:12px">Sources: <a href="copy/pages/home.sv.md">copy/pages/home.sv.md</a> / <a href="copy/pages/home.en.md">home.en.md</a> · <a href="copy/pages/start.sv.md">start.sv.md</a> · <a href="copy/pages/404.sv.md">404.sv.md</a> · <a href="copy/i18n-strings.json">copy/i18n-strings.json</a> · <a href="copy/sample-book-text.sv.md">sample-book-text.sv.md</a> · voice: <a href="analysis/10-copy-voice-and-tone.md">analysis/10</a></p></div></section>
+<section id="sound"><div class="sec-head"><h2>Sound beds and voice</h2><span class="sec-chip">30 s seamless loops</span></div>
+<p class="sec-intro">While a book is being made, the waiting room offers six beds in two groups, <i>Stämning</i> ("Mood") and <i>Musik</i> ("Music"), as <code>.sound-bed</code> pills (3q17cp:1982-2012). Tap to listen; the pressed pill is the one playing.</p>
+<div class="glass sb-card"><div class="sb-grid sb-2">
+<div><div class="sb-label">Stämning · Mood</div><div class="sound-beds">
+<button class="sound-bed" type="button" aria-pressed="false" data-audio="assets/audio/atmosphere/v1/hearth.mp3">Brasa</button>
+<button class="sound-bed" type="button" aria-pressed="false" data-audio="assets/audio/atmosphere/v1/rain.mp3">Fönsterregn</button>
+<button class="sound-bed" type="button" aria-pressed="false" data-audio="assets/audio/atmosphere/v1/forest.mp3">Sagoskogen</button>
+</div><p class="sb-cite" style="margin-top:8px">Brasa = "Fireplace" -24.4 LUFS · Fönsterregn = "Window rain" -24.7 LUFS · Sagoskogen = "Enchanted forest" -24.4 LUFS</p></div>
+<div><div class="sb-label">Musik · Music</div><div class="sound-beds">
+<button class="sound-bed" type="button" aria-pressed="false" data-audio="assets/audio/atmosphere/v1/musicbox.mp3">Speldosa</button>
+<button class="sound-bed" type="button" aria-pressed="false" data-audio="assets/audio/atmosphere/v1/harp.mp3">Månharpa</button>
+<button class="sound-bed" type="button" aria-pressed="false" data-audio="assets/audio/atmosphere/v1/fire.mp3">Glödljus</button>
+</div><p class="sb-cite" style="margin-top:8px">Speldosa = "Music box" -24.3 LUFS · Månharpa = "Moonlit harp" -24.3 LUFS · Glödljus = "Ember glow" -24.4 LUFS</p></div>
+</div>
+<div class="sb-label">Narrator sample</div><div class="sb-row"><button class="hiw-play" type="button" data-audio="assets/audio/landing-voice/grandpa-sample.mp3"><svg class="ico" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>Hör berättarrösten</button><span class="hiw-voice-chip"><img src="assets/landing/voice/narrator-morfar.webp" alt="">Morfar</span><span class="sb-cite">13 s, -26.6 LUFS · English sample: <a href="assets/audio/landing-voice/grandpa-sample-en.mp3">grandpa-sample-en.mp3</a> ("Grandpa Erik") · default bed "hearth" (Brasa) · analysis: <a href="analysis/11-audio-and-voice.md">analysis/11</a></span></div></div></section>
+</main>
+<div class="foot"><span>Tale Forge, sagor som minns er värld. <span style="opacity:.8">(“Tale Forge, storybooks that remember your world.”)</span></span>
+<span class="sb-links"><a href="tokens/tokens.css">tokens.css</a><a href="tokens/tokens.json">tokens.json</a><a href="tokens/tokens.ts">tokens.ts</a><a href="source/css/3q17cp_jgfwol.pretty.css">3q17cp_jgfwol.pretty.css</a><a href="analysis/02-color.md">02 colour</a><a href="analysis/03-typography.md">03 type</a><a href="analysis/05a-components-landing.md">05a components</a><a href="analysis/09-motion-and-interaction.md">09 motion</a></span></div>
+</div></div>
+
+<script>
+(function () {
+  var body = document.body;
+  try {
+    var q = new URLSearchParams(location.search).get('theme');
+    if (q === 'natt' || q === 'morgon') body.setAttribute('data-theme', q);
+  } catch (e) {}
+  var live = document.querySelector('.tt.sb-live');
+  function sync() { live.setAttribute('aria-checked', body.getAttribute('data-theme') === 'morgon' ? 'true' : 'false'); }
+  live.addEventListener('click', function () {
+    body.setAttribute('data-theme', body.getAttribute('data-theme') === 'morgon' ? 'natt' : 'morgon');
+    sync();
+  });
+  sync();
+  var player = null, current = null;
+  document.querySelectorAll('[data-audio]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (current === b && player && !player.paused) { player.pause(); b.setAttribute('aria-pressed', 'false'); current = null; return; }
+      if (player) player.pause();
+      document.querySelectorAll('[data-audio]').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+      player = new Audio(b.getAttribute('data-audio'));
+      player.loop = b.classList.contains('sound-bed');
+      player.volume = 0.4;
+      player.play();
+      b.setAttribute('aria-pressed', 'true');
+      current = b;
+    });
+  });
+})();
+</script>
+</body>
+</html>

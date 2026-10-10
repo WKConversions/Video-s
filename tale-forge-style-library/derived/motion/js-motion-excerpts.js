@@ -223,7 +223,7 @@
 
 /* ====================================================================================================
  * source/js/1pgfdvt65g9p-.js  |  anchor: unlit:0,low:.55,mid:1,high:1.25
- * createGlodScene, the canvas hearth ("glöd") painter: easeInOutQuad helper, ambient variant flag, twinkling stars, flame layer table, fire levels, the requestAnimationFrame loop (28 ms throttle for the ambient variant, dt clamp 0.1 s, fire level slews at 0.35/s), flicker sines, rising sparks, climax state machine, visibility pause.
+ * createGlodScene, the canvas hearth ("glöd") painter: easeInOutQuad helper, ambient variant flag, twinkling stars, flame layer table, fire levels, the requestAnimationFrame loop (28 ms throttle for the ambient variant, dt clamp 0.1 s, fire level slews at 0.35/s), flicker sines, rising sparks, climax state machine, visibility pause, resolution caps.
  * ==================================================================================================== */
 /* --- L130-132 --- */
     function n(e) {
@@ -362,14 +362,193 @@
               y.clearRect(0, 0, w, P),
               y.drawImage(A, 0, 0, w, P),
               (eA += a) >= 1 &&
-/* --- L1503-1508 --- */
+/* --- L1476-1660 --- */
+                    (l = (t = document.createElement("canvas")).getContext(
+                      "2d",
+                    )) &&
+                    (A.removeEventListener("contextrestored", ez),
+                    t.addEventListener("contextrestored", ez),
+                    (A = t),
+                    (E = l),
+                    F && el()))),
+              F.twinklers.length)
+            ) {
+              if ((y.save(), T)) {
+                ((y.globalAlpha = 0.6), (y.fillStyle = "#e9e4f5"));
+                for (let e = 0; e < F.twinklers.length; e++) {
+                  let t = F.twinklers[e];
+                  (y.beginPath(), y.arc(t.x, t.y, t.r, 0, 6.2832), y.fill());
+                }
+              } else
+                for (let e = 0; e < F.twinklers.length; e++) {
+                  let t = F.twinklers[e];
+                  ((y.globalAlpha =
+                    0.3 + 0.55 * (0.5 + 0.5 * Math.sin(eP * t.sp + t.ph))),
+                    (y.fillStyle = t.warm ? "#ffe3a8" : "#e9e4f5"),
+                    y.beginPath(),
+                    y.arc(t.x, t.y, t.r, 0, 6.2832),
+                    y.fill());
+                }
+              y.restore();
             }
             let s = T
               ? 0.5
               : 0.5 +
                 0.32 * Math.sin(5.7 * eP) +
                 0.18 * Math.sin(2.3 * eP + 1.4);
-/* --- L1720-1760 --- */
+            if (F.union) {
+              (y.save(),
+                y.clip(F.union),
+                (y.globalCompositeOperation = "lighter"),
+                y.translate(F.fx, F.fy),
+                y.scale(1, 0.62));
+              let e = 3.1 * F.flameH * (1 + 0.3 * (i - 1)),
+                t = y.createRadialGradient(0, 0, 0.03 * e, 0, 0, e),
+                l =
+                  (0.05 + 0.05 * s) *
+                  (0.7 + 0.6 * i) *
+                  (0.25 + 0.75 * Math.min(eG(), 1));
+              (t.addColorStop(0, `rgba(255,158,72,${l.toFixed(3)})`),
+                t.addColorStop(1, "rgba(255,120,50,0)"),
+                (y.fillStyle = t),
+                y.fillRect(-e, -(2.2 * e), 2 * e, 4.4 * e),
+                y.restore());
+            }
+            (!(function (e) {
+              if (!F) return;
+              let t = eP,
+                l = F.s,
+                a = F.fx,
+                r = F.y0,
+                i = +!T,
+                n = (0.95 + (e - 1) * 0.5) * (1 - eB),
+                s = eG(),
+                d = F.flameH * s,
+                f = F.flameW * (0.75 + 0.25 * Math.min(s, 1.1)),
+                h = 1 + 0.45 * Math.max(0, s - 1);
+              if (s > 0.02) {
+                (y.save(), (y.globalCompositeOperation = "lighter"));
+                let o =
+                  1.5 *
+                  d *
+                  (0.9 + 0.35 * (e - 1)) *
+                  (1 + 0.03 * i * Math.sin(6.1 * t)) *
+                  (1 - 0.45 * eB);
+                ((y.globalAlpha = Math.min(1, 0.34 * h)),
+                  y.drawImage(W, a - o, F.fy - 0.35 * d - o, 2 * o, 2 * o));
+                let s = 0.75 * d * e * (1 - 0.45 * eB);
+                ((y.globalAlpha = Math.min(1, 0.5 * h)),
+                  y.drawImage($, a - s, r - 10 * l - s, 2 * s, 2 * s),
+                  y.restore(),
+                  y.save(),
+                  (y.shadowColor = "rgba(120,30,0,0.3)"),
+                  (y.shadowBlur = 5 * l),
+                  (y.shadowOffsetY = 0));
+                let u = i * f * 0.09 * Math.sin(2.5 * t + 1.2);
+                ((y.fillStyle = "#d95a22"),
+                  eC(
+                    y,
+                    a - 0.38 * f,
+                    r - 2 * l,
+                    0.34 * f,
+                    d * (0.4 + 0.05 * i * Math.sin(3.3 * t)) * n,
+                    -u,
+                    0.1,
+                    0.06,
+                  ),
+                  y.fill(),
+                  eC(
+                    y,
+                    a + 0.4 * f,
+                    r - 2 * l,
+                    0.3 * f,
+                    d * (0.34 + 0.05 * i * Math.sin(3.9 * t + 2)) * n,
+                    0.8 * u,
+                    -0.12,
+                    -0.05,
+                  ),
+                  y.fill());
+                for (let e = 0; e < eT.length; e++) {
+                  let l = eT[e],
+                    o =
+                      d *
+                      l.h *
+                      (1 + 0.055 * i * Math.sin(t * l.f1 + 1.7 * e)) *
+                      n,
+                    s =
+                      i *
+                      f *
+                      0.1 *
+                      Math.sin(t * l.f2 + 2.1 * e) *
+                      (0.65 + 0.35 * e);
+                  ((y.fillStyle = l.col),
+                    eC(y, a + f * l.dx, r, f * l.w, o, s, l.asym, l.lobe),
+                    y.fill(),
+                    0 === e &&
+                      (y.save(),
+                      (y.shadowColor = "transparent"),
+                      (y.strokeStyle = "rgba(80,18,4,0.4)"),
+                      (y.lineWidth = 1.2),
+                      y.stroke(),
+                      y.restore()));
+                }
+                y.restore();
+              }
+              !(function (e) {
+                if (!F || !F.coals.length) return;
+                let t = F.s,
+                  l = F.fx,
+                  a = F.fy + 2 * t,
+                  o = eP;
+                (y.save(), (y.globalCompositeOperation = "lighter"));
+                let r = 0.5 * F.logSpan,
+                  i = 2.4 * F.logTh;
+                (y.save(),
+                  y.translate(l, a - 0.9 * F.logTh),
+                  y.scale(1, i / r));
+                let n = (
+                    (0.26 +
+                      0.14 *
+                        (T
+                          ? 0.5
+                          : 0.5 +
+                            0.28 * Math.sin(3.3 * o) +
+                            0.22 * Math.sin(5.1 * o + 1))) *
+                    Math.min(e, 1.35)
+                  ).toFixed(3),
+                  s = y.createRadialGradient(0, 0, 0, 0, 0, r);
+                (s.addColorStop(0, `rgba(255,158,66,${n})`),
+                  s.addColorStop(1, "rgba(255,120,40,0)"),
+                  (y.fillStyle = s),
+                  y.fillRect(-r, -r, 2 * r, 2 * r),
+                  y.restore());
+                for (let e = 0; e < F.coals.length; e++) {
+                  let t = F.coals[e],
+                    r = T
+                      ? 0.8
+                      : 0.62 + 0.38 * (0.5 + 0.5 * Math.sin(1.7 * o + t.ph)),
+                    i = l + t.dx,
+                    n = a + t.dy,
+                    s = 3.6 * t.r * r;
+                  ((y.globalAlpha = 0.5 * r * t.edge),
+                    y.drawImage(W, i - s, n - s, 2 * s, 2 * s),
+                    (y.globalAlpha = (0.6 + 0.4 * r) * t.edge));
+                  let d = y.createRadialGradient(i, n, 0, i, n, t.r);
+                  (d.addColorStop(0, "#ffe6ac"),
+                    d.addColorStop(0.55, "#ff9c46"),
+                    d.addColorStop(1, "rgba(214,74,16,0.25)"),
+                    (y.fillStyle = d),
+                    y.beginPath(),
+                    y.ellipse(i, n, t.r, 0.72 * t.r, 0, 0, 6.2832),
+                    y.fill());
+                }
+                y.restore();
+              })(e * (0.35 + 0.65 * Math.min(s, 1)));
+              let u = F.fy + 2 * l,
+                g = u + 1.35 * F.logTh,
+                c = g + 1.35 * F.logTh;
+              (et(
+/* --- L1720-1830 --- */
               (function (e, t) {
                 if (!F) return;
                 let l = F.s,
@@ -411,7 +590,77 @@
                     (l.y += l.vy * e),
                     (l.vy *= 1 - 0.12 * e));
                   let r = (1 - l.life / l.ttl) * a;
-/* --- L1880-1935 --- */
+                  ((y.globalAlpha = 0.9 * r),
+                    (y.fillStyle = "#ffdf9e"),
+                    y.beginPath(),
+                    y.arc(l.x, l.y, l.r, 0, 6.2832),
+                    y.fill());
+                  let i = 3.4 * l.r;
+                  ((y.globalAlpha = 0.5 * r),
+                    y.drawImage($, l.x - i, l.y - i, 2 * i, 2 * i));
+                }
+                y.restore();
+              })(a, i),
+              "bake" === eE &&
+                (function (e) {
+                  if (!F) return;
+                  let t = F.s,
+                    l = (1 - Math.min(eG(), 1)) * F.flameH * 0.5;
+                  for (let a = 0; a < ea.length; a++) {
+                    let o = ea[a];
+                    if (((o.phase += e * o.wobble), "drift" === o.state))
+                      ((o.x =
+                        o.fx +
+                        8 * Math.sin(0.7 * o.phase + o.idx) * t +
+                        10 * Math.sin(0.19 * o.phase + 2 * o.idx) * t),
+                        (o.y =
+                          o.fy +
+                          l +
+                          6 * Math.sin(1.1 * o.phase) +
+                          13 * Math.sin(0.23 * o.phase)));
+                    else if ("lifting" === o.state) {
+                      if (((o.t += e / 0.9), o === er)) {
+                        let e = eg();
+                        ((o.liftToX = e.x), (o.liftToY = e.y));
+                      }
+                      let t = n(Math.min(o.t, 1));
+                      ((o.x =
+                        (o.liftFromX ?? o.x) +
+                        ((o.liftToX ?? o.x) - (o.liftFromX ?? o.x)) * t),
+                        (o.y =
+                          (o.liftFromY ?? o.y) +
+                          ((o.liftToY ?? o.y) - (o.liftFromY ?? o.y)) * t),
+                        o.t >= 1 &&
+                          ((o.state = "lifted"),
+                          (o.t = 0),
+                          o === er && d.onEmberPerched(!0)));
+                    } else if ("lifted" === o.state) {
+                      if (o === er) {
+                        let e = eg();
+                        ((o.x = e.x), (o.y = e.y));
+                      }
+                    } else if ("settling" === o.state) {
+                      o.t += e / 1.2;
+                      let t = n(Math.min(o.t, 1));
+                      ((o.x =
+                        (o.setFromX ?? o.x) + (o.fx - (o.setFromX ?? o.x)) * t),
+                        (o.y =
+                          (o.setFromY ?? o.y) +
+                          (o.fy - (o.setFromY ?? o.y)) * t),
+                        o.t >= 1 && (o.state = "drift"));
+                    }
+                    if (o === er && "lifted" === o.state) continue;
+                    let r =
+                        "lifted" === o.state ||
+                        "lifting" === o.state ||
+                        o.fresh,
+                      i = 0.74 + 0.26 * Math.sin(2.1 * o.phase),
+                      s = null != F.corrBot ? F.corrBot : F.fy - F.flameH,
+                      f = null != F.corrTop ? F.corrTop : s - F.flameH,
+                      h = r
+                        ? 0
+                        : Math.max(
+/* --- L1880-1945 --- */
                     ((y.globalAlpha = 0.6 * a),
                       y.drawImage(O, l.x - o, l.y - o, 2 * o, 2 * o));
                   }
@@ -467,6 +716,67 @@
           }
           function eL() {
             null !== eF && (cancelAnimationFrame(eF), (eF = null));
+          }
+          let eD = () => {
+            document.hidden ? eL() : (F && el(), eq());
+          };
+          document.addEventListener("visibilitychange", eD);
+          let ez = () => {
+            (F && el(), document.hidden || eq());
+          };
+          function eK() {
+            try {
+              return 0 === E.getImageData(0, 0, 1, 1).data[3];
+/* --- L1951-2000 --- */
+            let e,
+              t,
+              l,
+              a = h.getBoundingClientRect();
+            ((w = Math.max(1, Math.round(a.width))),
+              (P = Math.max(1, Math.round(a.height))),
+              (k = Math.min(window.devicePixelRatio || 1, 2)),
+              w * P > 24e5 && (k = Math.min(k, 1.25)),
+              M && (k = 1),
+              (u.width = w * k),
+              (u.height = P * k),
+              y.setTransform(k, 0, 0, k, 0, 0),
+              (e = Math.max(
+                0.72,
+                Math.min(
+                  Math.min(w / 1200, P / 860) *
+                    (1 + 0.1 * Math.min(Math.max((w - 1700) / 860, 0), 1)),
+                  1.8,
+                ),
+              )),
+              (F = {
+                s: e,
+                fx: w >= 860 ? 0.54 * w : 0.5 * w,
+                fy: (t = 0.765 * P),
+                flameH: (l = Math.min(
+                  (l = Math.max(118, Math.min(0.21 * P, 300))) *
+                    (w >= 2e3 ? 1.3 : w >= 1700 ? 1.14 : 1),
+                  0.27 * P,
+                )),
+                flameW: 0.72 * l,
+                logSpan: 1.6 * l,
+                logTh: Math.max(13, Math.min(0.09 * l, 27)),
+                horizonY: 0.505 * P,
+                groundTopY: 0.7 * P,
+                frontTopY: 0.868 * P,
+                y0: t + 12 * e,
+                twinklers: [],
+                coals: [],
+              }),
+              (h.dataset.glodLogBand = [
+                Math.round(F.fy + 2 * F.s - F.logTh),
+                Math.round(F.fy + 2 * F.s + 3.7 * F.logTh),
+                Math.round(F.fx - 0.02 * F.logSpan - F.logSpan / 2),
+                Math.round(F.fx + 0.04 * F.logSpan + F.logSpan / 2),
+              ].join(",")),
+              el(),
+              ef(),
+              eu(),
+              ("book" === eE || "swirl" === eE || "flare" === eE) && ev());
           }
 
 /* ====================================================================================================

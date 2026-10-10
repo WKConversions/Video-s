@@ -1,0 +1,4 @@
+CROWDED 26.40–27.45 s: up to 10 separate things on screen
+CROWDED 34.40–37.58 s: up to 15 separate things on screen
+CROWDED 59.47–70.12 s: up to 16 separate things on screen
+things on screen: median 2 (references 3–7, median 4); 8 or more for 21% of the time (references median 25%, limit 35%); frame covered 59% (references median 26%)

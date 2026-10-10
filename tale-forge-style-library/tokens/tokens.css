@@ -1,0 +1,907 @@
+/* =====================================================================================
+   Tale Forge (https://tale-forge.app) · design tokens, complete and copy-pasteable
+   Captured 2026-10-09/10. Built from the shipped stylesheets in ../source/css/.
+
+   Citations: a bare ":123" or "3q17cp:123" is a line in ../source/css/3q17cp_jgfwol.pretty.css.
+   Other files are named in full (2_gt301v4m-60, 2h1wwdz1nvxwk, 37m388zf6rymp .pretty.css).
+   Every value below was checked, by script, to appear verbatim on the cited line(s).
+
+   Naming: names WITHOUT a --tf- prefix are the site's own custom properties, values and
+   selector scopes exactly as shipped (sections 1-3). Names WITH --tf- are ours: the site
+   writes those values as raw literals; the value is verbatim, the name is invented.
+
+   Usage:  <link rel="stylesheet" href="tokens/tokens.css">
+           <body data-theme="natt">   (default, served in the HTML)  or  data-theme="morgon"
+   Fonts load from ../derived/typography/fonts/ (byte-identical renamed copies of
+   ../assets/fonts/; mapping in ../derived/typography/font-files.md). Licence: SIL OFL 1.1,
+   ../derived/typography/licences/.
+   Companions: tokens.json (W3C design-token format, natt/morgon modes), tokens.ts (film).
+   ===================================================================================== */
+
+/* 0. @font-face ----------------------------------------------------------------------
+   As shipped by next/font (:1-459): one rule per declared weight per unicode subset; the
+   variable files are reused across weights, so the browser draws exactly these instances:
+   Cinzel 700 · Lora 600/700 · Source Serif 4 400/600 · Schibsted Grotesk 400/700/800.
+   Only the url() changed (hashed ../media/<hash>.woff2 -> human-named copy). */
+@font-face { /* :1-11 · 93b6da25d7dcc0a6-s.0ds8vreemgw27.woff2 */
+  font-family: Cinzel;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../derived/typography/fonts/Cinzel-700-latin-ext.woff2) format("woff2");
+  unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face { /* :12-21 · fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2 */
+  font-family: Cinzel;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../derived/typography/fonts/Cinzel-700-latin.woff2) format("woff2");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face { /* :22-29 */
+  font-family: Cinzel Fallback;
+  src: local(Times New Roman);
+  ascent-override: 71.31%;
+  descent-override: 27.18%;
+  line-gap-override: 0%;
+  size-adjust: 136.86%;
+}
+@font-face { /* :40-48 · e7150917543fc9da-s.0or-mv9rm3-7p.woff2 */
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../derived/typography/fonts/Lora-var400-700-cyrillic-ext.woff2) format("woff2");
+  unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face { /* :49-56 · 71fbf9c08529c2a5-s.1dgp9w781ejf6.woff2 */
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../derived/typography/fonts/Lora-var400-700-cyrillic.woff2) format("woff2");
+  unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116;
+}
+@font-face { /* :57-76 · e9457141811d41ae-s.0ydhovl1n7s8f.woff2 */
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../derived/typography/fonts/Lora-var400-700-math.woff2) format("woff2");
+  unicode-range: U+302-303, U+305, U+307-308, U+310, U+312, U+315, U+31A, U+326-327, U+32C, U+32F-330, U+332-333, U+338, U+33A, U+346, U+34D, U+391-3A1, U+3A3-3A9, U+3B1-3C9, U+3D1, U+3D5-3D6, U+3F0-3F1, U+3F4-3F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE??;
+}
+@font-face { /* :77-106 · ac34884600cd8d5d-s.444o2y6he09-k.woff2 */
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../derived/typography/fonts/Lora-var400-700-symbols.woff2) format("woff2");
+  unicode-range: U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+28??, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B??, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F0??, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F7??, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB??;
+}
+@font-face { /* :107-116 · e1ccd2766b08c828-s.1trkgqz3-pw7b.woff2 */
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../derived/typography/fonts/Lora-var400-700-vietnamese.woff2) format("woff2");
+  unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB;
+}
+@font-face { /* :117-127 · 507a47c1876d4ec2-s.16qc705tx6j2a.woff2 */
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../derived/typography/fonts/Lora-var400-700-latin-ext.woff2) format("woff2");
+  unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face { /* :128-137 · 8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2 */
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../derived/typography/fonts/Lora-var400-700-latin.woff2) format("woff2");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face { /* :138-146 · e7150917543fc9da-s.0or-mv9rm3-7p.woff2 */
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../derived/typography/fonts/Lora-var400-700-cyrillic-ext.woff2) format("woff2");
+  unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face { /* :147-154 · 71fbf9c08529c2a5-s.1dgp9w781ejf6.woff2 */
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../derived/typography/fonts/Lora-var400-700-cyrillic.woff2) format("woff2");
+  unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116;
+}
+@font-face { /* :155-174 · e9457141811d41ae-s.0ydhovl1n7s8f.woff2 */
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../derived/typography/fonts/Lora-var400-700-math.woff2) format("woff2");
+  unicode-range: U+302-303, U+305, U+307-308, U+310, U+312, U+315, U+31A, U+326-327, U+32C, U+32F-330, U+332-333, U+338, U+33A, U+346, U+34D, U+391-3A1, U+3A3-3A9, U+3B1-3C9, U+3D1, U+3D5-3D6, U+3F0-3F1, U+3F4-3F5, U+2016-2017, U+2034-2038, U+203C, U+2040, U+2043, U+2047, U+2050, U+2057, U+205F, U+2070-2071, U+2074-208E, U+2090-209C, U+20D0-20DC, U+20E1, U+20E5-20EF, U+2100-2112, U+2114-2115, U+2117-2121, U+2123-214F, U+2190, U+2192, U+2194-21AE, U+21B0-21E5, U+21F1-21F2, U+21F4-2211, U+2213-2214, U+2216-22FF, U+2308-230B, U+2310, U+2319, U+231C-2321, U+2336-237A, U+237C, U+2395, U+239B-23B7, U+23D0, U+23DC-23E1, U+2474-2475, U+25AF, U+25B3, U+25B7, U+25BD, U+25C1, U+25CA, U+25CC, U+25FB, U+266D-266F, U+27C0-27FF, U+2900-2AFF, U+2B0E-2B11, U+2B30-2B4C, U+2BFE, U+3030, U+FF5B, U+FF5D, U+1D400-1D7FF, U+1EE??;
+}
+@font-face { /* :175-204 · ac34884600cd8d5d-s.444o2y6he09-k.woff2 */
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../derived/typography/fonts/Lora-var400-700-symbols.woff2) format("woff2");
+  unicode-range: U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U+21F3, U+2218-2219, U+2299, U+22C4-22C6, U+2300-243F, U+2440-244A, U+2460-24FF, U+25A0-27BF, U+28??, U+2921-2922, U+2981, U+29BF, U+29EB, U+2B??, U+4DC0-4DFF, U+FFF9-FFFB, U+10140-1018E, U+10190-1019C, U+101A0, U+101D0-101FD, U+102E0-102FB, U+10E60-10E7E, U+1D2C0-1D2D3, U+1D2E0-1D37F, U+1F0??, U+1F100-1F1AD, U+1F1E6-1F1FF, U+1F30D-1F30F, U+1F315, U+1F31C, U+1F31E, U+1F320-1F32C, U+1F336, U+1F378, U+1F37D, U+1F382, U+1F393-1F39F, U+1F3A7-1F3A8, U+1F3AC-1F3AF, U+1F3C2, U+1F3C4-1F3C6, U+1F3CA-1F3CE, U+1F3D4-1F3E0, U+1F3ED, U+1F3F1-1F3F3, U+1F3F5-1F3F7, U+1F408, U+1F415, U+1F41F, U+1F426, U+1F43F, U+1F441-1F442, U+1F444, U+1F446-1F449, U+1F44C-1F44E, U+1F453, U+1F46A, U+1F47D, U+1F4A3, U+1F4B0, U+1F4B3, U+1F4B9, U+1F4BB, U+1F4BF, U+1F4C8-1F4CB, U+1F4D6, U+1F4DA, U+1F4DF, U+1F4E3-1F4E6, U+1F4EA-1F4ED, U+1F4F7, U+1F4F9-1F4FB, U+1F4FD-1F4FE, U+1F503, U+1F507-1F50B, U+1F50D, U+1F512-1F513, U+1F53E-1F54A, U+1F54F-1F5FA, U+1F610, U+1F650-1F67F, U+1F687, U+1F68D, U+1F691, U+1F694, U+1F698, U+1F6AD, U+1F6B2, U+1F6B9-1F6BA, U+1F6BC, U+1F6C6-1F6CF, U+1F6D3-1F6D7, U+1F6E0-1F6EA, U+1F6F0-1F6F3, U+1F6F7-1F6FC, U+1F7??, U+1F800-1F80B, U+1F810-1F847, U+1F850-1F859, U+1F860-1F887, U+1F890-1F8AD, U+1F8B0-1F8BB, U+1F8C0-1F8C1, U+1F900-1F90B, U+1F93B, U+1F946, U+1F984, U+1F996, U+1F9E9, U+1FA00-1FA6F, U+1FA70-1FA7C, U+1FA80-1FA89, U+1FA8F-1FAC6, U+1FACE-1FADC, U+1FADF-1FAE9, U+1FAF0-1FAF8, U+1FB??;
+}
+@font-face { /* :205-214 · e1ccd2766b08c828-s.1trkgqz3-pw7b.woff2 */
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../derived/typography/fonts/Lora-var400-700-vietnamese.woff2) format("woff2");
+  unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB;
+}
+@font-face { /* :215-225 · 507a47c1876d4ec2-s.16qc705tx6j2a.woff2 */
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../derived/typography/fonts/Lora-var400-700-latin-ext.woff2) format("woff2");
+  unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face { /* :226-235 · 8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2 */
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../derived/typography/fonts/Lora-var400-700-latin.woff2) format("woff2");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face { /* :236-243 */
+  font-family: Lora Fallback;
+  src: local(Times New Roman);
+  ascent-override: 87.33%;
+  descent-override: 23.78%;
+  line-gap-override: 0%;
+  size-adjust: 115.2%;
+}
+@font-face { /* :253-261 · 20aee433927f7d4b-s.2u46yrlpkdxrh.woff2 */
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SourceSerif4-var200-900-cyrillic-ext.woff2) format("woff2");
+  unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face { /* :262-269 · 256e1f7f180674ba-s.444m1fhac1z6e.woff2 */
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SourceSerif4-var200-900-cyrillic.woff2) format("woff2");
+  unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116;
+}
+@font-face { /* :270-277 · be3bf58b83159894-s.1298pfel08g2l.woff2 */
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SourceSerif4-var200-900-greek.woff2) format("woff2");
+  unicode-range: U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF;
+}
+@font-face { /* :278-287 · 753b6407f468151f-s.1wcle8r8k1a_g.woff2 */
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SourceSerif4-var200-900-vietnamese.woff2) format("woff2");
+  unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB;
+}
+@font-face { /* :288-298 · 292081311a6a8abc-s.3irbj1um1c5rd.woff2 */
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SourceSerif4-var200-900-latin-ext.woff2) format("woff2");
+  unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face { /* :299-308 · 68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2 */
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SourceSerif4-var200-900-latin.woff2) format("woff2");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face { /* :309-317 · 20aee433927f7d4b-s.2u46yrlpkdxrh.woff2 */
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SourceSerif4-var200-900-cyrillic-ext.woff2) format("woff2");
+  unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face { /* :318-325 · 256e1f7f180674ba-s.444m1fhac1z6e.woff2 */
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SourceSerif4-var200-900-cyrillic.woff2) format("woff2");
+  unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116;
+}
+@font-face { /* :326-333 · be3bf58b83159894-s.1298pfel08g2l.woff2 */
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SourceSerif4-var200-900-greek.woff2) format("woff2");
+  unicode-range: U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF;
+}
+@font-face { /* :334-343 · 753b6407f468151f-s.1wcle8r8k1a_g.woff2 */
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SourceSerif4-var200-900-vietnamese.woff2) format("woff2");
+  unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U+1EA0-1EF9, U+20AB;
+}
+@font-face { /* :344-354 · 292081311a6a8abc-s.3irbj1um1c5rd.woff2 */
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SourceSerif4-var200-900-latin-ext.woff2) format("woff2");
+  unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face { /* :355-364 · 68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2 */
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SourceSerif4-var200-900-latin.woff2) format("woff2");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face { /* :365-372 */
+  font-family: "Source Serif 4 Fallback";
+  src: local(Times New Roman);
+  ascent-override: 87.87%;
+  descent-override: 28.41%;
+  line-gap-override: 0%;
+  size-adjust: 117.91%;
+}
+@font-face { /* :380-390 · 481eac7be1c268b7-s.34f9nwclrjpmo.woff2 */
+  font-family: Schibsted Grotesk;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SchibstedGrotesk-var400-900-latin-ext.woff2) format("woff2");
+  unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face { /* :391-400 · 31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2 */
+  font-family: Schibsted Grotesk;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SchibstedGrotesk-var400-900-latin.woff2) format("woff2");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face { /* :401-411 · 481eac7be1c268b7-s.34f9nwclrjpmo.woff2 */
+  font-family: Schibsted Grotesk;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SchibstedGrotesk-var400-900-latin-ext.woff2) format("woff2");
+  unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face { /* :412-421 · 31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2 */
+  font-family: Schibsted Grotesk;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SchibstedGrotesk-var400-900-latin.woff2) format("woff2");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face { /* :422-432 · 481eac7be1c268b7-s.34f9nwclrjpmo.woff2 */
+  font-family: Schibsted Grotesk;
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SchibstedGrotesk-var400-900-latin-ext.woff2) format("woff2");
+  unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face { /* :433-442 · 31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2 */
+  font-family: Schibsted Grotesk;
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url(../derived/typography/fonts/SchibstedGrotesk-var400-900-latin.woff2) format("woff2");
+  unicode-range: U+??, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face { /* :443-450 */
+  font-family: Schibsted Grotesk Fallback;
+  src: local(Arial);
+  ascent-override: 93.46%;
+  descent-override: 24.67%;
+  line-gap-override: 0%;
+  size-adjust: 104.49%;
+}
+
+/* 1. Family variables -----------------------------------------------------------------
+   On the site these sit on <html> through the four next/font "__variable" classes. */
+:root {
+  --font-cinzel: "Cinzel", "Cinzel Fallback";  /* :38 */
+  --font-lora: "Lora", "Lora Fallback";  /* :251 */
+  --font-source-serif: "Source Serif 4", "Source Serif 4 Fallback";  /* :378 */
+  --font-schibsted: "Schibsted Grotesk", "Schibsted Grotesk Fallback";  /* :458 */
+}
+
+/* 2. Primitives and role stacks, verbatim (:460-472) -----------------------------------
+   --display Lora (headlines) · --ui Schibsted Grotesk (UI, body) · --serif Source Serif 4
+   (ledes, story prose) · --wordmark Cinzel (logo, book titles, always uppercase). */
+:root {
+  --violet: #6d4fe0;  /* :461 */
+  --violet-soft: #9b87f5;  /* :462 */
+  --gold: #f2b22e;  /* :463 */
+  --gold-soft: #f5c542;  /* :464 */
+  --coral: #ff6154;  /* :465 */
+  --display: var(--font-lora), Georgia, serif;  /* :466 */
+  --ui: var(--font-schibsted), "Segoe UI", system-ui, sans-serif;  /* :467 */
+  --serif: var(--font-source-serif), Georgia, serif;  /* :468 */
+  --wordmark: var(--font-cinzel), "Playfair Display", Georgia, serif;  /* :469 */
+  --theme-transition-duration: 0.5s;  /* :470 */
+  --theme-transition-easing: ease;  /* :471 */
+}
+
+/* 3a. Theme "natt" (night, the default), verbatim (:493-541) ------------------ */
+body[data-theme="natt"] {
+  --page-ink:         #fff7e9;  /* :494 */
+  --page-sub:         #d9cfee;  /* :495 */
+  --accent:           var(--gold-soft);  /* :496 */
+  --accent-ink:       var(--gold-soft);  /* :497 */
+  --card:             #0f1628ad;  /* :498 */
+  --card-line:        #9b87f542;  /* :499 */
+  --card-blur:        22px;  /* :500 */
+  --card-ink:         #f2eeff;  /* :501 */
+  --card-sub:         #b5acd3;  /* :502 */
+  --frame:            #101a30;  /* :503 */
+  --frame-line:       #9b87f566;  /* :504 */
+  --chip-bg:          #fff9ec1a;  /* :505 */
+  --chip-line:        #fff3d942;  /* :506 */
+  --chip-ink:         #e8dfc9;  /* :507 */
+  --pill-bg:          #9b87f529;  /* :508 */
+  --pill-ink:         #c9bcff;  /* :509 */
+  --micro-ink:        color-mix(in srgb, var(--page-sub) 85%, transparent);  /* :510 */
+  --h1-shadow:        0 2px 30px #0c082859;  /* :511 */
+  --gold-chip-bg:     #f2b22e29;  /* :512 */
+  --gold-chip-ink:    #ffd98f;  /* :513 */
+  --coral-chip-bg:    #ff615424;  /* :514 */
+  --coral-chip-ink:   #ffab9f;  /* :515 */
+  --trait-line:       #9b87f559;  /* :516 */
+  --trait-ink:        #cfc5ec;  /* :517 */
+  --trait-on-bg:      #9b87f533;  /* :518 */
+  --trait-on-line:    #9b87f599;  /* :519 */
+  --trait-on-ink:     #e9e2ff;  /* :520 */
+  --dash-line:        #ffecbe59;  /* :521 */
+  --choice-bg:        #ffffff0f;  /* :522 */
+  --choice-line:      #9b87f552;  /* :523 */
+  --choice-ink:       #f2eeff;  /* :524 */
+  --bar-bg:           #ffffff24;  /* :525 */
+  --prose-ink:        #eae4f5;  /* :526 */
+  --foot-ink:         #b7a9d6;  /* :527 */
+  --btn-grad:         linear-gradient(135deg, #ffe08a, #f5c542);  /* :528 */
+  --btn-ink:          #3a2b10;  /* :529 */
+  --btn-shadow:       0 14px 40px #f5c54247;  /* :530 */
+  --btn-shadow-hover: 0 20px 55px #f5c5426b;  /* :531 */
+  --ghost-bg:         #fff9ec1a;  /* :532 */
+  --ghost-ink:        #fff3d9;  /* :533 */
+  --control-line:     #fff3d952;  /* :534 */
+  --ghost-line:       var(--control-line);  /* :535 */
+  --card-shadow:      0 18px 44px #0508146b;  /* :536 */
+  --logo-ink:         #f5c542;  /* :537 */
+  --logo-shadow:      0 2px 6px #050814cc, 0 0 34px #f5c54273;  /* :538 */
+  --map-dot:          var(--violet-soft);  /* :539 */
+  --map-glow:         #f5c54240;  /* :540 */
+}
+
+/* 3b. Theme "morgon" (morning), verbatim (:542-590) --------------------------- */
+body[data-theme="morgon"] {
+  --page-ink:         #241f35;  /* :543 */
+  --page-sub:         #5f5878;  /* :544 */
+  --accent:           #6d4fe0;  /* :545 */
+  --accent-ink:       #5b3fc7;  /* :546 */
+  --card:             #fffc;  /* :547 */
+  --card-line:        #ffffffe6;  /* :548 */
+  --card-blur:        24px;  /* :549 */
+  --card-ink:         #241f35;  /* :550 */
+  --card-sub:         #5f5878;  /* :551 */
+  --frame:            #fff;  /* :552 */
+  --frame-line:       #ffffffe6;  /* :553 */
+  --chip-bg:          #6d4fe014;  /* :554 */
+  --chip-line:        #6d4fe029;  /* :555 */
+  --chip-ink:         var(--accent-ink);  /* :556 */
+  --pill-bg:          #6d4fe01a;  /* :557 */
+  --pill-ink:         var(--accent-ink);  /* :558 */
+  --micro-ink:        var(--page-sub);  /* :559 */
+  --h1-shadow:        none;  /* :560 */
+  --gold-chip-bg:     #f2b22e26;  /* :561 */
+  --gold-chip-ink:    #8f6a12;  /* :562 */
+  --coral-chip-bg:    #ff61541f;  /* :563 */
+  --coral-chip-ink:   #c23a2b;  /* :564 */
+  --trait-line:       #6d4fe047;  /* :565 */
+  --trait-ink:        #5f5878;  /* :566 */
+  --trait-on-bg:      #6d4fe01f;  /* :567 */
+  --trait-on-line:    #6d4fe06b;  /* :568 */
+  --trait-on-ink:     #4a36a8;  /* :569 */
+  --dash-line:        #6d4fe059;  /* :570 */
+  --choice-bg:        #fff;  /* :571 */
+  --choice-line:      #6d4fe038;  /* :572 */
+  --choice-ink:       #241f35;  /* :573 */
+  --bar-bg:           #241f3514;  /* :574 */
+  --prose-ink:        #3a3450;  /* :575 */
+  --foot-ink:         #5f5878;  /* :576 */
+  --btn-grad:         linear-gradient(135deg, #6d4fe0, #5b3fc7);  /* :577 */
+  --btn-ink:          #fff;  /* :578 */
+  --btn-shadow:       0 14px 34px #6d4fe059;  /* :579 */
+  --btn-shadow-hover: 0 22px 48px #6d4fe073;  /* :580 */
+  --ghost-bg:         #ffffffb8;  /* :581 */
+  --ghost-ink:        #241f35;  /* :582 */
+  --control-line:     #887da0;  /* :583 */
+  --ghost-line:       var(--control-line);  /* :584 */
+  --card-shadow:      0 4px 12px #241f351a, 0 22px 52px #241f3529;  /* :585 */
+  --logo-ink:         #6d4fe0;  /* :586 */
+  --logo-shadow:      0 1px 2px #241f352e, 0 0 24px #6d4fe052;  /* :587 */
+  --map-dot:          var(--violet);  /* :588 */
+  --map-glow:         #6d4fe033;  /* :589 */
+}
+
+/* 4. Page canvas, verbatim (:598-611) -------------------------------------------------
+   The painted backdrop (section 11) sits over this flat colour; the colour shows only where
+   the fixed plate does not reach. */
+body {
+  color: var(--page-ink);                 /* :599 */
+  font-family: var(--ui);                 /* :600 */
+  -webkit-font-smoothing: antialiased;    /* :601 */
+  transition:
+    background-color var(--theme-transition-duration)
+      var(--theme-transition-easing),
+    color var(--theme-transition-duration) var(--theme-transition-easing);  /* :602-605 */
+  background: #171232;                    /* :606  natt canvas */
+  overflow-x: hidden;                     /* :607 */
+}
+body[data-theme="morgon"] {
+  background: #ede9f6;                    /* :610  morgon canvas */
+}
+:root {
+  --tf-canvas-natt:   #171232;  /* :606 */
+  --tf-canvas-morgon: #ede9f6;  /* :610 */
+}
+
+/* 5. Named literals: gradients, fixed shadows, glows, focus (names ours, values verbatim) ---------- */
+
+/* 5a. CSS literals */
+:root {
+  --tf-scrim-natt:            linear-gradient(#0b0f1e61 0%, #0b0f1e80 45%, #0d1122bd 100%);  /* 3q17cp_jgfwol.pretty.css:632 · .bg-night .scrim, over nebula-hero.webp */
+  --tf-starfield:             radial-gradient(1.4px 1.4px at 12% 8%, #ffe9b0e6 50%, #0000 51%), radial-gradient(1px 1px at 32% 16%, #f5f0e8cc 50%, #0000 51%), radial-gradient(1.6px 1.6px at 58% 6%, #f5c542d9 50%, #0000 51%), radial-gradient(1px 1px at 76% 12%, #f5f0e8b3 50%, #0000 51%), radial-gradient(1.2px 1.2px at 90% 22%, #ffe9b0bf 50%, #0000 51%), radial-gradient(1.3px 1.3px at 44% 24%, #9b87f599 50%, #0000 51%);  /* 3q17cp_jgfwol.pretty.css:638-643 · .starfield background-image (natt only), six hard-edged dots */
+  --tf-glass-rim:             linear-gradient(135deg, #9b87f580, #f2b22e59 50%, #ff61544d);  /* 3q17cp_jgfwol.pretty.css:1130 · .glass:before 1px masked ring */
+  --tf-glass-rim-opacity:     0.45;  /* 3q17cp_jgfwol.pretty.css:1129 · .glass:before opacity */
+  --tf-ember-rim:             linear-gradient(135deg, #f2b22ebf, #ff615466);  /* 3q17cp_jgfwol.pretty.css:1623 · .adv.ember:before (opacity 0.85, :1622) */
+  --tf-progress-fill:         linear-gradient(90deg, #f5c542, #9b87f5);  /* 3q17cp_jgfwol.pretty.css:2782 · .hiw-bar i (book baking bar), both themes */
+  --tf-btn-inset-highlight:   inset 0 1px 0 #ffffff73;  /* 3q17cp_jgfwol.pretty.css:912 · .btn-primary second shadow (also .hiw-play :2812) */
+  --tf-cover-shadow:          0 24px 50px #0a072066, 0 0 44px #f5c5421f;  /* 3q17cp_jgfwol.pretty.css:939-940 · .fan .fbook hero covers */
+  --tf-portrait-shadow:       0 16px 36px #0a07204d;  /* 3q17cp_jgfwol.pretty.css:1175 · .builder-pic .pframe */
+  --tf-avatar-shadow:         0 10px 22px #0a072040;  /* 3q17cp_jgfwol.pretty.css:1309 · .friend .avatar */
+  --tf-companion-shadow:      0 12px 26px #6d4fe040;  /* 3q17cp_jgfwol.pretty.css:1458 · .companion-pic */
+  --tf-choice-hover-shadow:   0 14px 30px #6d4fe02e;  /* 3q17cp_jgfwol.pretty.css:1926 · .choice:hover */
+  --tf-option-pressed-shadow: 0 10px 26px #6d4fe024;  /* 3q17cp_jgfwol.pretty.css:2186 · .friend-mode-option[aria-pressed="true"] */
+  --tf-logo-img-glow:         drop-shadow(0 0 14px #f5c54280);  /* 3q17cp_jgfwol.pretty.css:713 · .logo img filter, both themes */
+  --tf-dotpulse-rest:         0 0 #f2b22e80;  /* 3q17cp_jgfwol.pretty.css:1017 · .badge .dotpulse resting ring; keyframes pulse :1019-1029 */
+  --tf-focus-offset:          3px;  /* 3q17cp_jgfwol.pretty.css:824 · outline-offset */
+  --tf-node-ring:             color-mix(in srgb, var(--gold-soft) 55%, transparent);  /* 3q17cp_jgfwol.pretty.css:2601 · .hiw-node 1.5px border */
+  --tf-skip-link-ink:         #241608;  /* 3q17cp_jgfwol.pretty.css:476 · .skip-link text on var(--gold) */
+  --tf-ai-chip-bg:            #ffffffc7;  /* 3q17cp_jgfwol.pretty.css:2689 · .hiw-ai-chip, same in both themes */
+  --tf-ai-chip-ink:           #241f35;  /* 3q17cp_jgfwol.pretty.css:2686 · .hiw-ai-chip */
+  --tf-ai-chip-line:          #241f3538;  /* 3q17cp_jgfwol.pretty.css:2690 · .hiw-ai-chip border */
+  --tf-modal-scrim:           #0a081980;  /* 2h1wwdz1nvxwk.pretty.css:244 · .cs-sheetwrap backdrop (blur 6px :242-243) */
+}
+/* these reference theme variables, which live on body[data-theme], so they are declared on body */
+body {
+  --tf-focus-ring:            3px solid var(--accent);  /* 3q17cp_jgfwol.pretty.css:823 · .tt:focus-visible outline (also .choice :1929) */
+  --tf-focus-halo:            0 0 0 6px color-mix(in srgb, var(--card) 88%, transparent);  /* 3q17cp_jgfwol.pretty.css:825 · .tt:focus-visible box-shadow */
+}
+
+/* 5b. From the endings-map SVG in JS (3d9nxlx1n5pdy.js, byte offset; stops verbatim, angle ours) */
+:root {
+  --tf-map-path-gradient: linear-gradient(#f5c542, #9b87f5);  /* source/js/3d9nxlx1n5pdy.js @10032 · SVG linearGradient `${n}-path` stops 0 #f5c542 / 1 #9b87f5 (x2,y2 vary per path) */
+  --tf-map-ring-gradient: linear-gradient(135deg, #f5c542, #6D4FE0);  /* source/js/3d9nxlx1n5pdy.js @10221 · SVG linearGradient `${n}-ring` 0,0 -> 1,1, stops #f5c542 / #6D4FE0 */
+}
+
+/* 6. Type scale (names ours, values verbatim). --tf-type-<role>-{size,leading,tracking,weight}
+   px values in the trailing comment are measured/computed at a 1440 px viewport (tokens/typography.json). */
+:root {
+  /* h1 (hero): family var(--display) · 3q17cp_jgfwol.pretty.css:862 · text-wrap: balance; text-shadow: var(--h1-shadow) · 70.4px @1440 */
+  --tf-type-hero-family: var(--display);
+  --tf-type-hero-size: clamp(2.7rem, 5.4vw, 4.4rem);
+  --tf-type-hero-weight: 700;  /* :863 */
+  --tf-type-hero-leading: 1.06;  /* :864 */
+  --tf-type-hero-tracking: -0.015em;  /* :857 */
+  /* h2.hiw-headline: family var(--display) · 3q17cp_jgfwol.pretty.css:2559 · 43.2px @1440 */
+  --tf-type-hiw-headline-family: var(--display);
+  --tf-type-hiw-headline-size: clamp(1.9rem, 4vw, 2.7rem);
+  --tf-type-hiw-headline-weight: 700;  /* :2560 */
+  --tf-type-hiw-headline-leading: normal;  /* not set: normal */
+  --tf-type-hiw-headline-tracking: -0.015em;  /* :2556 */
+  /* h2 (section): family var(--display) · 3q17cp_jgfwol.pretty.css:1059 · 32px @1440 */
+  --tf-type-h2-family: var(--display);
+  --tf-type-h2-size: clamp(1.5rem, 2.4vw, 2rem);
+  --tf-type-h2-weight: 600;  /* :1060 */
+  --tf-type-h2-leading: normal;  /* not set: normal */
+  --tf-type-h2-tracking: -0.01em;  /* :1057 */
+  /* .reader-title (book title, Cinzel): family var(--wordmark) · 3q17cp_jgfwol.pretty.css:1819 · text-transform: uppercase; color: var(--logo-ink); text-shadow: var(--logo-shadow) · 32px @1440 */
+  --tf-type-reader-title-family: var(--wordmark);
+  --tf-type-reader-title-size: 2rem;
+  --tf-type-reader-title-weight: 700;
+  --tf-type-reader-title-leading: 1.18;  /* :1820 */
+  --tf-type-reader-title-tracking: 0;  /* :1813 */
+  /* .logo (wordmark): family var(--wordmark) · 3q17cp_jgfwol.pretty.css:706 · text-transform: uppercase; color: var(--logo-ink); text-shadow: var(--logo-shadow) · 27.52px @1440 */
+  --tf-type-logo-family: var(--wordmark);
+  --tf-type-logo-size: 1.72rem;
+  --tf-type-logo-weight: 700;  /* :707 */
+  --tf-type-logo-leading: normal;  /* not set: normal */
+  --tf-type-logo-tracking: 3px;  /* :701 */
+  /* .builder-name: family var(--display) · 3q17cp_jgfwol.pretty.css:1214 · 25.6px @1440 */
+  --tf-type-builder-name-family: var(--display);
+  --tf-type-builder-name-size: 1.6rem;
+  --tf-type-builder-name-weight: 700;  /* :1215 */
+  --tf-type-builder-name-leading: normal;  /* not set: normal */
+  --tf-type-builder-name-tracking: -0.01em;  /* :1212 */
+  /* .hiw-step-text h3: family var(--display) · 3q17cp_jgfwol.pretty.css:2635 · 21.6px @1440 */
+  --tf-type-step-title-family: var(--display);
+  --tf-type-step-title-size: 1.35rem;
+  --tf-type-step-title-weight: 700;  /* :2636 */
+  --tf-type-step-title-leading: normal;  /* not set: normal */
+  --tf-type-step-title-tracking: normal;  /* not set: normal */
+  /* .adv-title: family var(--display) · 3q17cp_jgfwol.pretty.css:1594 · 20.8px @1440 */
+  --tf-type-adv-title-family: var(--display);
+  --tf-type-adv-title-size: 1.3rem;
+  --tf-type-adv-title-weight: 700;  /* :1595 */
+  --tf-type-adv-title-leading: 1.25;  /* :1596 */
+  --tf-type-adv-title-tracking: -0.015em;  /* :1593 */
+  /* .book-title: family var(--display) · 3q17cp_jgfwol.pretty.css:1516 · 16.32px @1440 */
+  --tf-type-book-title-family: var(--display);
+  --tf-type-book-title-size: 1.02rem;
+  --tf-type-book-title-weight: 700;  /* :1517 */
+  --tf-type-book-title-leading: 1.25;  /* :1518 */
+  --tf-type-book-title-tracking: -0.01em;  /* :1515 */
+  /* .lede: family var(--serif) · 3q17cp_jgfwol.pretty.css:876 · max-width: 46ch; color: var(--page-sub) · 20.48px @1440 */
+  --tf-type-lede-family: var(--serif);
+  --tf-type-lede-size: clamp(1.08rem, 1.65vw, 1.28rem);
+  --tf-type-lede-weight: 400;
+  --tf-type-lede-leading: 1.65;  /* :877 */
+  --tf-type-lede-tracking: normal;  /* not set: normal */
+  /* .prose (reader page): family var(--serif) · 3q17cp_jgfwol.pretty.css:1830 · color: var(--prose-ink); :first-letter 2.5em/0.9, 600, var(--accent) · 19.2px @1440 */
+  --tf-type-prose-family: var(--serif);
+  --tf-type-prose-size: 1.2rem;
+  --tf-type-prose-weight: 400;
+  --tf-type-prose-leading: 1.85;  /* :1831 */
+  --tf-type-prose-tracking: normal;  /* not set: normal */
+  /* .hiw-lede: family var(--serif) · 3q17cp_jgfwol.pretty.css:2566 · max-width: 56ch · 17.6px @1440 */
+  --tf-type-hiw-lede-family: var(--serif);
+  --tf-type-hiw-lede-size: 1.1rem;
+  --tf-type-hiw-lede-weight: 400;
+  --tf-type-hiw-lede-leading: 1.7;  /* :2567 */
+  --tf-type-hiw-lede-tracking: normal;  /* not set: normal */
+  /* .hiw-step-copy: family var(--serif) · 3q17cp_jgfwol.pretty.css:2642 · max-width: 52ch · 16.32px @1440 */
+  --tf-type-step-copy-family: var(--serif);
+  --tf-type-step-copy-size: 1.02rem;
+  --tf-type-step-copy-weight: 400;
+  --tf-type-step-copy-leading: 1.75;  /* :2643 */
+  --tf-type-step-copy-tracking: normal;  /* not set: normal */
+  /* .choice (story choice): family var(--serif) · 3q17cp_jgfwol.pretty.css:1916 · radius 16px; 2px solid var(--choice-line) · 16.8px @1440 */
+  --tf-type-choice-family: var(--serif);
+  --tf-type-choice-size: 1.05rem;
+  --tf-type-choice-weight: 600;  /* :1917 */
+  --tf-type-choice-leading: normal;  /* not set: normal */
+  --tf-type-choice-tracking: normal;  /* not set: normal */
+  /* .btn: family var(--ui) · 3q17cp_jgfwol.pretty.css:895 · pill, padding 17px 30px, min-height 52px · 16.8px @1440 */
+  --tf-type-button-family: var(--ui);
+  --tf-type-button-size: 1.05rem;
+  --tf-type-button-weight: 700;  /* :896 */
+  --tf-type-button-leading: normal;  /* not set: normal */
+  --tf-type-button-tracking: normal;  /* not set: normal */
+  /* .nav-cta / .tt-opt: family var(--ui) · 3q17cp_jgfwol.pretty.css:739 · 15.2px @1440 */
+  --tf-type-nav-cta-family: var(--ui);
+  --tf-type-nav-cta-size: 0.95rem;
+  --tf-type-nav-cta-weight: 700;  /* :740 */
+  --tf-type-nav-cta-leading: normal;  /* not set: normal */
+  --tf-type-nav-cta-tracking: normal;  /* not set: normal */
+  /* .trait: family var(--ui) · 3q17cp_jgfwol.pretty.css:1234 · 14.08px @1440 */
+  --tf-type-trait-family: var(--ui);
+  --tf-type-trait-size: 0.88rem;
+  --tf-type-trait-weight: 700;  /* :1235 */
+  --tf-type-trait-leading: normal;  /* not set: normal */
+  --tf-type-trait-tracking: normal;  /* not set: normal */
+  /* .hiw-micro: family var(--ui) · 3q17cp_jgfwol.pretty.css:2651 · color: var(--micro-ink) · 14.08px @1440 */
+  --tf-type-micro-family: var(--ui);
+  --tf-type-micro-size: 0.88rem;
+  --tf-type-micro-weight: 600;  /* :2652 */
+  --tf-type-micro-leading: normal;  /* not set: normal */
+  --tf-type-micro-tracking: normal;  /* not set: normal */
+  /* .kicker: family var(--ui) · 3q17cp_jgfwol.pretty.css:846 · 13.6px @1440 */
+  --tf-type-kicker-family: var(--ui);
+  --tf-type-kicker-size: 0.85rem;
+  --tf-type-kicker-weight: 700;  /* :847 */
+  --tf-type-kicker-leading: normal;  /* not set: normal */
+  --tf-type-kicker-tracking: normal;  /* not set: normal */
+  /* .cta-microcopy: family var(--ui) · 3q17cp_jgfwol.pretty.css:3144 · color: var(--page-sub) · 13.6px @1440 */
+  --tf-type-cta-microcopy-family: var(--ui);
+  --tf-type-cta-microcopy-size: 0.85rem;
+  --tf-type-cta-microcopy-weight: 400;
+  --tf-type-cta-microcopy-leading: normal;  /* not set: normal */
+  --tf-type-cta-microcopy-tracking: normal;  /* not set: normal */
+  /* .hiw-kicker: family var(--ui) · 3q17cp_jgfwol.pretty.css:2550 · text-transform: uppercase · 13.12px @1440 */
+  --tf-type-eyebrow-family: var(--ui);
+  --tf-type-eyebrow-size: 0.82rem;
+  --tf-type-eyebrow-weight: 700;  /* :2551 */
+  --tf-type-eyebrow-leading: normal;  /* not set: normal */
+  --tf-type-eyebrow-tracking: 2px;  /* :2544 */
+  /* .sec-chip: family var(--ui) · 3q17cp_jgfwol.pretty.css:1095 · 12.8px @1440 */
+  --tf-type-sec-chip-family: var(--ui);
+  --tf-type-sec-chip-size: 0.8rem;
+  --tf-type-sec-chip-weight: 700;  /* :1096 */
+  --tf-type-sec-chip-leading: normal;  /* not set: normal */
+  --tf-type-sec-chip-tracking: normal;  /* not set: normal */
+  /* .chip: family var(--ui) · 3q17cp_jgfwol.pretty.css:1575 · text-transform: uppercase · 12.16px @1440 */
+  --tf-type-chip-family: var(--ui);
+  --tf-type-chip-size: 0.76rem;
+  --tf-type-chip-weight: 800;  /* :1576 */
+  --tf-type-chip-leading: normal;  /* not set: normal */
+  --tf-type-chip-tracking: 0.05em;  /* :1568 */
+  /* .book-sub: family var(--ui) · 3q17cp_jgfwol.pretty.css:1528 · text-transform: uppercase · 11.52px @1440 */
+  --tf-type-book-sub-family: var(--ui);
+  --tf-type-book-sub-size: 0.72rem;
+  --tf-type-book-sub-weight: 800;  /* :1529 */
+  --tf-type-book-sub-leading: normal;  /* not set: normal */
+  --tf-type-book-sub-tracking: 0.04em;  /* :1521 */
+  /* .foot: family var(--ui) · 3q17cp_jgfwol.pretty.css:1941 · color: var(--foot-ink) · 14.4px @1440 */
+  --tf-type-footer-family: var(--ui);
+  --tf-type-footer-size: 0.9rem;
+  --tf-type-footer-weight: 400;
+  --tf-type-footer-leading: normal;  /* not set: normal */
+  --tf-type-footer-tracking: normal;  /* not set: normal */
+}
+
+/* 7. Spacing and layout (names ours). The site has NO spacing tokens: px literals only.
+   7a is the de-facto scale (every px step used in gap/padding/margin, tokens/layout.json
+   spacing.scale_px; most used: 12, 14, 8, 10, 16). 7b are the semantic values, cited. */
+:root {
+  --tf-space-4: 4px;
+  --tf-space-6: 6px;
+  --tf-space-8: 8px;
+  --tf-space-10: 10px;
+  --tf-space-12: 12px;
+  --tf-space-14: 14px;
+  --tf-space-16: 16px;
+  --tf-space-18: 18px;
+  --tf-space-20: 20px;
+  --tf-space-22: 22px;
+  --tf-space-24: 24px;
+  --tf-space-26: 26px;
+  --tf-space-28: 28px;
+  --tf-space-30: 30px;
+  --tf-space-34: 34px;
+  --tf-space-36: 36px;
+  --tf-space-40: 40px;
+  --tf-space-44: 44px;
+}
+
+/* 7b. Semantic spacing */
+:root {
+  --tf-shell-width:      min(1120px, 100%);  /* 3q17cp_jgfwol.pretty.css:683 · .shell width */
+  --tf-gutter:           28px;  /* 3q17cp_jgfwol.pretty.css:686 · .shell padding 0 28px, every viewport */
+  --tf-nav-pad-y:        22px;  /* 3q17cp_jgfwol.pretty.css:693 · .shell > nav padding (14px at <=560px, :758) */
+  --tf-hero-gap:         40px;  /* 3q17cp_jgfwol.pretty.css:830 · .hero column gap */
+  --tf-section-pad:      44px 0 8px;  /* 3q17cp_jgfwol.pretty.css:1039 · section padding */
+  --tf-section-head-gap: 22px;  /* 3q17cp_jgfwol.pretty.css:1044 · .sec-head margin-bottom */
+  --tf-cta-gap:          14px;  /* 3q17cp_jgfwol.pretty.css:883 · .cta-row gap */
+  --tf-btn-pad:          17px 30px;  /* 3q17cp_jgfwol.pretty.css:894 · .btn padding */
+  --tf-btn-min-h:        52px;  /* 3q17cp_jgfwol.pretty.css:893 · .btn min-height */
+  --tf-tap-min:          44px;  /* 3q17cp_jgfwol.pretty.css:771 · .tt min-height (all pill controls) */
+  --tf-kicker-pad:       8px 16px;  /* 3q17cp_jgfwol.pretty.css:845 · .kicker padding */
+  --tf-sec-chip-pad:     6px 12px;  /* 3q17cp_jgfwol.pretty.css:1094 · .sec-chip padding */
+  --tf-chip-pad:         6px 13px;  /* 3q17cp_jgfwol.pretty.css:1574 · .chip padding */
+  --tf-trait-pad:        8px 15px;  /* 3q17cp_jgfwol.pretty.css:1233 · .trait padding */
+  --tf-badge-pad:        14px 18px;  /* 3q17cp_jgfwol.pretty.css:991 · .fan .badge padding */
+  --tf-card-pad:         22px;  /* 3q17cp_jgfwol.pretty.css:1540 · .adv padding (.hiw-card also 22px) */
+  --tf-card-pad-lg:      26px;  /* 3q17cp_jgfwol.pretty.css:1159 · .builder padding */
+  --tf-grid-gap:         18px;  /* 3q17cp_jgfwol.pretty.css:1150 · .builder-grid gap (.advs :1534) */
+  --tf-shelf-gap:        22px;  /* 3q17cp_jgfwol.pretty.css:1482 · .shelf gap */
+}
+
+/* 8. Radius and frames (names ours, values verbatim) */
+:root {
+  --tf-radius-pill:     999px;  /* 3q17cp_jgfwol.pretty.css:890 · .btn and every pill control */
+  --tf-radius-circle:   50%;  /* 3q17cp_jgfwol.pretty.css:1012 · dots, .hiw-node, .fab, avatars */
+  --tf-radius-card:     26px;  /* 3q17cp_jgfwol.pretty.css:1117 · .glass */
+  --tf-radius-book:     22px;  /* 3q17cp_jgfwol.pretty.css:1491 · .book (shelf card) */
+  --tf-radius-cover:    20px;  /* 3q17cp_jgfwol.pretty.css:931 · .fan .fbook (hero covers) */
+  --tf-radius-badge:    18px;  /* 3q17cp_jgfwol.pretty.css:988 · .fan .badge, dashed slots */
+  --tf-radius-choice:   16px;  /* 3q17cp_jgfwol.pretty.css:1911 · .choice */
+  --tf-radius-portrait: 30px;  /* 3q17cp_jgfwol.pretty.css:1169 · .builder-pic .pframe */
+  --tf-radius-small:    6px;  /* 3q17cp_jgfwol.pretty.css:478 · .skip-link */
+}
+/* these reference theme variables, which live on body[data-theme], so they are declared on body */
+body {
+  --tf-frame-book:      5px solid var(--frame);  /* 3q17cp_jgfwol.pretty.css:930 · .fan .fbook, .book (:1487) border */
+  --tf-frame-portrait:  4px solid var(--frame);  /* 3q17cp_jgfwol.pretty.css:1168 · .pframe border */
+}
+
+/* 9. Shadows: the theme-scoped ones are the site's own (section 3):
+   --card-shadow   natt 0 18px 44px #0508146b                       (:536)
+                   morgon 0 4px 12px #241f351a, 0 22px 52px #241f3529 (:585)
+   --btn-shadow    natt 0 14px 40px #f5c54247 · morgon 0 14px 34px #6d4fe059   (:530 / :579)
+   --btn-shadow-hover natt 0 20px 55px #f5c5426b · morgon 0 22px 48px #6d4fe073 (:531 / :580)
+   --h1-shadow     natt 0 2px 30px #0c082859 · morgon none          (:511 / :560)
+   --logo-shadow   natt 0 2px 6px #050814cc, 0 0 34px #f5c54273     (:538)
+                   morgon 0 1px 2px #241f352e, 0 0 24px #6d4fe052   (:587)
+   Fixed (theme-independent) shadows are in 5a. Elevation ladder, low to high:
+   avatar 10/22 · portrait 16/36 · card 18/44 · hero cover 24/50 + 44 glow. */
+
+/* 10. Blur (names ours). Glass uses the theme token --card-blur: natt 22px (:500), morgon 24px (:549) */
+:root {
+  --tf-blur-chip:  10px;  /* 3q17cp_jgfwol.pretty.css:840 · .kicker, .sec-chip, .hiw-ai-chip backdrop-filter */
+  --tf-blur-ghost: 14px;  /* 3q17cp_jgfwol.pretty.css:923 · .btn-ghost backdrop-filter */
+  --tf-blur-veil:  8px;  /* 2_gt301v4m-60.pretty.css:240 · .pframe .veil while the portrait paints */
+  --tf-blur-modal: 6px;  /* 2h1wwdz1nvxwk.pretty.css:243 · sheet scrim */
+  --tf-blur-glod:  4px;  /* 37m388zf6rymp.pretty.css:780 · glöd sound pill */
+}
+
+/* 11. Atmosphere: the fixed backdrop stack (markup and rules in :598-680; analysis/06 section 5)
+   <div class="bg bg-night"><img src="/assets/nebula-hero.webp"><div class="scrim"></div><div class="starfield"></div></div>
+   <div class="bg bg-day"><picture><source media="(max-width: 760px)" srcset="/assets/morgon-aurora-mobile.webp">
+     <img src="/assets/morgon-aurora-desktop.webp"></picture></div>
+   .bg is position: fixed, height: 100lvh, z-index 0 (:612-622); the two layers cross-fade on opacity over
+   var(--theme-transition-duration) var(--theme-transition-easing) (:616-617, :667-676).
+   The images are offered as classes, not url() custom properties: browsers resolve a url() held in a
+   custom property against the page that uses it, not against this file, so a variable would break.
+   Library paths: assets/assets/nebula-hero.webp (2400x1340), morgon-aurora-desktop.webp (2560x1440),
+   morgon-aurora-mobile.webp (1440x2560), tf-logo.webp (512x512 RGBA). The classes are ours. */
+.tf-plate-natt {
+  background: url(../assets/assets/nebula-hero.webp) center 30% / cover no-repeat;  /* .bg-night img: object-fit: cover; object-position: center 30% (:624-625) */
+}
+.tf-plate-natt-scrim {
+  background: var(--tf-scrim-natt), url(../assets/assets/nebula-hero.webp) center 30% / cover no-repeat;  /* image + .scrim (:632) */
+}
+.tf-plate-morgon {
+  background: url(../assets/assets/morgon-aurora-desktop.webp) center / cover no-repeat;  /* .bg-day img: object-fit: cover (:665) */
+}
+@media (max-width: 760px) {
+  .tf-plate-morgon { background-image: url(../assets/assets/morgon-aurora-mobile.webp); }  /* <source media="(max-width: 760px)"> */
+}
+.tf-starfield {
+  background-image: var(--tf-starfield);
+  animation: 4.6s ease-in-out infinite twinkle;  /* :644 */
+}
+.tf-logo-mark {
+  background: url(../assets/assets/tf-logo.webp) center / contain no-repeat;  /* drawn 42px, 28px <=560px (:714-715, :753-754) */
+  filter: var(--tf-logo-img-glow);  /* :713 */
+}
+
+/* 12. Motion (names ours, values verbatim). Curves, durations, hover/press moves.
+   Film versions with measured overshoot: ../derived/motion/motion-spec.json, motion-tokens.ts. */
+
+/* 12a. Curves */
+:root {
+  --tf-ease:             ease;  /* 3q17cp_jgfwol.pretty.css:471 · --theme-transition-easing; unnamed `transition: x 0.5s` too */
+  --tf-ease-in-out:      ease-in-out;  /* 3q17cp_jgfwol.pretty.css:644 · every idle loop (twinkle, float1/2, floatBadge) */
+  --tf-ease-out:         ease-out;  /* 3q17cp_jgfwol.pretty.css:2944 · map path draw */
+  --tf-ease-settle:      cubic-bezier(0.2, 0.7, 0.3, 1);  /* 3q17cp_jgfwol.pretty.css:1102 · .reveal; tfStartIn screens */
+  --tf-ease-soft-spring: cubic-bezier(0.2, 0.7, 0.3, 1.2);  /* 3q17cp_jgfwol.pretty.css:934 · fan covers, toggle thumb (:790), .book, .adv, .choice */
+  --tf-ease-spring:      cubic-bezier(0.2, 0.7, 0.3, 1.4);  /* 3q17cp_jgfwol.pretty.css:898 · .btn, .fab, .hiw-play press targets */
+}
+
+/* 12b. Durations */
+:root {
+  --tf-dur-theme:        0.5s;  /* 3q17cp_jgfwol.pretty.css:470 · --theme-transition-duration */
+  --tf-dur-press:        0.25s;  /* 3q17cp_jgfwol.pretty.css:898 · .btn transform */
+  --tf-dur-shadow:       0.3s;  /* 3q17cp_jgfwol.pretty.css:899 · .btn box-shadow */
+  --tf-dur-trait:        0.25s;  /* 3q17cp_jgfwol.pretty.css:1236 · .trait all */
+  --tf-dur-card:         0.35s;  /* 3q17cp_jgfwol.pretty.css:1493 · .book lift */
+  --tf-dur-adv:          0.3s;  /* 3q17cp_jgfwol.pretty.css:1541 · .adv lift */
+  --tf-dur-glass-shadow: 0.4s;  /* 3q17cp_jgfwol.pretty.css:1122 · .glass box-shadow */
+  --tf-dur-cover:        0.5s;  /* 3q17cp_jgfwol.pretty.css:934 · .fan .fbook transform */
+  --tf-dur-reveal:       0.7s;  /* 3q17cp_jgfwol.pretty.css:1102 · .reveal (dormant on the live site) */
+  --tf-dur-path-draw:    0.9s;  /* 3q17cp_jgfwol.pretty.css:2944 · map lit path stroke-dashoffset */
+  --tf-dur-path-fade:    0.25s;  /* 3q17cp_jgfwol.pretty.css:2948 · previous map path fade */
+  --tf-dur-screen-in:    0.45s;  /* 2_gt301v4m-60.pretty.css:12 · .start-screen tfStartIn */
+  --tf-dur-twinkle:      4.6s;  /* 3q17cp_jgfwol.pretty.css:644 · .starfield loop */
+  --tf-dur-float1:       7s;  /* 3q17cp_jgfwol.pretty.css:950 · .fb1 loop */
+  --tf-dur-float2:       8s;  /* 3q17cp_jgfwol.pretty.css:957 · .fb2 loop */
+  --tf-dur-float-badge:  9s;  /* 3q17cp_jgfwol.pretty.css:995 · .fan .badge loop */
+  --tf-dur-pulse:        2.4s;  /* 3q17cp_jgfwol.pretty.css:1016 · .dotpulse loop */
+}
+
+/* 12c. Moves */
+:root {
+  --tf-lift-btn:    translateY(-3px);  /* 3q17cp_jgfwol.pretty.css:916 · .btn-primary:hover */
+  --tf-lift-play:   translateY(-2px);  /* 3q17cp_jgfwol.pretty.css:2827 · .hiw-play:hover */
+  --tf-lift-choice: translateY(-3px);  /* 3q17cp_jgfwol.pretty.css:1925 · .choice:hover */
+  --tf-lift-adv:    translateY(-6px);  /* 3q17cp_jgfwol.pretty.css:1545 · .adv:hover */
+  --tf-lift-book:   translateY(-10px) rotate(-1deg);  /* 3q17cp_jgfwol.pretty.css:1502 · .book:hover */
+  --tf-press:       scale(0.96);  /* 3q17cp_jgfwol.pretty.css:905 · .btn:active */
+  --tf-fab-hover:   scale(1.1);  /* 3q17cp_jgfwol.pretty.css:1204 · .builder-pic .fab:hover */
+}
+
+/* 12d. Keyframes, verbatim. Used as: .starfield 4.6s ease-in-out infinite twinkle (:644);
+   .fb1 7s ease-in-out infinite float1 (:950); .fb2 8s ... float2 (:957); .fan .badge 9s ... floatBadge (:995);
+   .badge .dotpulse 2.4s infinite pulse (:1016); .start-screen 0.45s cubic-bezier(0.2, 0.7, 0.3, 1) tfStartIn
+   (2_gt301v4m-60.pretty.css:12). Reduced motion switches all loops off (:2349-2372). */
+/* 3q17cp_jgfwol.pretty.css:648-656 */
+@keyframes twinkle {
+  0%,
+  to {
+    opacity: 0.95;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+/* 3q17cp_jgfwol.pretty.css:962-970 */
+@keyframes float1 {
+  0%,
+  to {
+    transform: rotate(-8deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-8.6deg) translateY(-12px);
+  }
+}
+/* 3q17cp_jgfwol.pretty.css:971-979 */
+@keyframes float2 {
+  0%,
+  to {
+    transform: rotate(7deg) translateY(0);
+  }
+  50% {
+    transform: rotate(7.6deg) translateY(-16px);
+  }
+}
+/* 3q17cp_jgfwol.pretty.css:1001-1009 */
+@keyframes floatBadge {
+  0%,
+  to {
+    transform: rotate(2.5deg) translateY(0);
+  }
+  50% {
+    transform: rotate(3deg) translateY(-7px);
+  }
+}
+/* 3q17cp_jgfwol.pretty.css:1019-1029 */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 #f2b22e73;
+  }
+  70% {
+    box-shadow: 0 0 0 12px #f2b22e00;
+  }
+  to {
+    box-shadow: 0 0 #f2b22e00;
+  }
+}
+/* 2_gt301v4m-60.pretty.css:1-10 */
+@keyframes tfStartIn {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tf-starfield { animation: none; }  /* as the site does for .starfield (:2350-2356) */
+  /* The site's rule (:2349-2372) also stops .fb1, .fb2, .badge, .dotpulse { animation: none } and sets
+     body, .bg, .tt, .tt-thumb, .tt-opt { transition: none }; .reveal is shown at once. Mirror it on your classes. */
+}

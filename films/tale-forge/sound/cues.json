@@ -1,0 +1,450 @@
+{
+ "fps": 30,
+ "frames": 2100,
+ "library": "lib",
+ "vo": {
+  "file": "../vo/vo-en__elevenlabs-spuds-oxley-grandpa.mp3",
+  "at": 1.0
+ },
+ "music": {
+  "file": "music/bed-final.wav",
+  "at": 0,
+  "duck_db": 5,
+  "fade_in": 0.0,
+  "fade_out": 2.4
+ },
+ "sfx": [
+  {
+   "id": "shooting-star",
+   "frame": 14,
+   "db": -4,
+   "note": "the shooting star crosses the sky"
+  },
+  {
+   "id": "twinkle-1",
+   "frame": 39,
+   "db": -5,
+   "note": "the house's windows light up"
+  },
+  {
+   "id": "step-soft",
+   "frame": 49,
+   "db": -8,
+   "note": "footsteps on the ridge path"
+  },
+  {
+   "id": "step-soft",
+   "frame": 63,
+   "db": -8,
+   "note": "",
+   "pitch": 1
+  },
+  {
+   "id": "step-soft",
+   "frame": 77,
+   "db": -8,
+   "note": "",
+   "pitch": -1
+  },
+  {
+   "id": "step-soft",
+   "frame": 92,
+   "db": -9,
+   "note": "",
+   "pitch": 1
+  },
+  {
+   "id": "door-latch",
+   "frame": 82,
+   "db": -5,
+   "note": "the door opens onto warm light"
+  },
+  {
+   "id": "swell-air",
+   "frame": 118,
+   "db": -7,
+   "note": "the room grows out of the door"
+  },
+  {
+   "id": "bloop-1",
+   "frame": 160,
+   "db": -6,
+   "note": "thought puff 1"
+  },
+  {
+   "id": "bloop-1",
+   "frame": 166,
+   "db": -6,
+   "note": "thought puff 2",
+   "pitch": 2
+  },
+  {
+   "id": "bloop-2",
+   "frame": 170,
+   "db": -4,
+   "note": "the thought cloud",
+   "pitch": 4
+  },
+  {
+   "id": "bloop-1",
+   "frame": 357,
+   "db": -4,
+   "note": "question bubble 1"
+  },
+  {
+   "id": "bloop-1",
+   "frame": 364,
+   "db": -4,
+   "note": "question bubble 2",
+   "pitch": 2
+  },
+  {
+   "id": "bloop-1",
+   "frame": 372,
+   "db": -4,
+   "note": "question bubble 3",
+   "pitch": 4
+  },
+  {
+   "id": "whoosh-soft",
+   "frame": 394,
+   "db": -9,
+   "note": "the questions float away"
+  },
+  {
+   "id": "shimmer",
+   "frame": 424,
+   "db": 0,
+   "note": "the book opens into light"
+  },
+  {
+   "id": "magic-dust",
+   "frame": 426,
+   "db": -2,
+   "note": "sparkles rise from the pages"
+  },
+  {
+   "id": "swell-air",
+   "frame": 436,
+   "db": -5,
+   "note": "the light swells"
+  },
+  {
+   "id": "whoosh-soft",
+   "frame": 464,
+   "db": -7,
+   "note": "the open book comes forward"
+  },
+  {
+   "id": "twinkle-2",
+   "frame": 465,
+   "db": -3,
+   "note": "the Tale Forge mark appears on the page"
+  },
+  {
+   "id": "whoosh-soft",
+   "frame": 512,
+   "db": -8,
+   "note": "today's moment flies onto the page"
+  },
+  {
+   "id": "bloop-2",
+   "frame": 524,
+   "db": -6,
+   "note": "it settles: TODAY",
+   "pitch": -2
+  },
+  {
+   "id": "page-turn",
+   "frame": 564,
+   "db": 0,
+   "note": "the page turns"
+  },
+  {
+   "id": "paint-bloom",
+   "frame": 579,
+   "db": -2,
+   "note": "the silhouette is painted into the hero"
+  },
+  {
+   "id": "magic-dust",
+   "frame": 570,
+   "db": -7,
+   "note": ""
+  },
+  {
+   "id": "paint-bloom",
+   "frame": 603,
+   "db": -3,
+   "note": "the picture blooms across the spread"
+  },
+  {
+   "id": "swell-air",
+   "frame": 624,
+   "db": -6,
+   "note": "into the adventure"
+  },
+  {
+   "id": "twinkle-3",
+   "frame": 682,
+   "db": -4,
+   "note": "your child is the hero"
+  },
+  {
+   "id": "paint-bloom",
+   "frame": 718,
+   "db": -4,
+   "note": "the next page blooms out of Iris"
+  },
+  {
+   "id": "whoosh-soft",
+   "frame": 838,
+   "db": -9,
+   "note": "the page becomes the reader"
+  },
+  {
+   "id": "twinkle-1",
+   "frame": 870,
+   "db": -6,
+   "note": "look closer: the lens",
+   "pitch": 2
+  },
+  {
+   "id": "bloop-1",
+   "frame": 904,
+   "db": -7,
+   "note": "choice A"
+  },
+  {
+   "id": "bloop-1",
+   "frame": 908,
+   "db": -7,
+   "note": "choice B",
+   "pitch": 2
+  },
+  {
+   "id": "tap-glass",
+   "frame": 979,
+   "db": -5,
+   "note": "the child's touch on B"
+  },
+  {
+   "id": "chime-choice",
+   "frame": 984,
+   "db": -1,
+   "note": "their choices matter"
+  },
+  {
+   "id": "magic-dust",
+   "frame": 998,
+   "db": -4,
+   "note": "the gold star bursts"
+  },
+  {
+   "id": "whoosh-soft",
+   "frame": 1032,
+   "db": -8,
+   "note": "the star flies to the map"
+  },
+  {
+   "id": "twinkle-2",
+   "frame": 1041,
+   "db": -5,
+   "note": "it lands on choice 1"
+  },
+  {
+   "id": "riser-soft",
+   "frame": 1056,
+   "db": -9,
+   "note": "the path builds to the ending"
+  },
+  {
+   "id": "twinkle-4",
+   "frame": 1104,
+   "db": -3,
+   "note": "the ending lights up"
+  },
+  {
+   "id": "paint-bloom",
+   "frame": 1138,
+   "db": -2,
+   "note": "S3B blooms out of the branch"
+  },
+  {
+   "id": "whoosh-soft",
+   "frame": 1170,
+   "db": -10,
+   "note": "the before card arrives"
+  },
+  {
+   "id": "page-turn",
+   "frame": 1230,
+   "db": -3,
+   "note": "the card turns: after"
+  },
+  {
+   "id": "twinkle-3",
+   "frame": 1232,
+   "db": -6,
+   "note": "",
+   "pitch": 2
+  },
+  {
+   "id": "whoosh-soft",
+   "frame": 1252,
+   "db": -7,
+   "note": "the picture returns to its page"
+  },
+  {
+   "id": "book-close",
+   "frame": 1276,
+   "db": -2,
+   "note": "the book closes"
+  },
+  {
+   "id": "impact-soft",
+   "frame": 1295,
+   "db": -11,
+   "note": "the book stands on the shelf"
+  },
+  {
+   "id": "swell-air",
+   "frame": 1329,
+   "db": -4,
+   "note": "the ending opens"
+  },
+  {
+   "id": "shimmer",
+   "frame": 1335,
+   "db": -4,
+   "note": ""
+  },
+  {
+   "id": "swell-air",
+   "frame": 1376,
+   "db": -6,
+   "note": "back to the lamp-lit room"
+  },
+  {
+   "id": "twinkle-1",
+   "frame": 1389,
+   "db": -5,
+   "note": "our friend rises from the page",
+   "pitch": -2
+  },
+  {
+   "id": "magic-dust",
+   "frame": 1392,
+   "db": -9,
+   "note": ""
+  },
+  {
+   "id": "bloop-2",
+   "frame": 1419,
+   "db": -6,
+   "note": "the child answers"
+  },
+  {
+   "id": "bloop-1",
+   "frame": 1449,
+   "db": -6,
+   "note": "the adult",
+   "pitch": 2
+  },
+  {
+   "id": "bloop-2",
+   "frame": 1470,
+   "db": -7,
+   "note": "the child",
+   "pitch": 4
+  },
+  {
+   "id": "bloop-1",
+   "frame": 1488,
+   "db": -7,
+   "note": "the adult",
+   "pitch": 5
+  },
+  {
+   "id": "swell-air",
+   "frame": 1556,
+   "db": -4,
+   "note": "the window opens into the sky"
+  },
+  {
+   "id": "twinkle-1",
+   "frame": 1575,
+   "db": -8,
+   "note": "adventure 1"
+  },
+  {
+   "id": "twinkle-1",
+   "frame": 1582,
+   "db": -8,
+   "note": "adventure 2",
+   "pitch": 2
+  },
+  {
+   "id": "twinkle-1",
+   "frame": 1588,
+   "db": -8,
+   "note": "adventure 3",
+   "pitch": 4
+  },
+  {
+   "id": "twinkle-1",
+   "frame": 1595,
+   "db": -8,
+   "note": "adventure 4",
+   "pitch": 7
+  },
+  {
+   "id": "shimmer",
+   "frame": 1617,
+   "db": -3,
+   "note": "one story tonight: the book glows"
+  },
+  {
+   "id": "magic-dust",
+   "frame": 1680,
+   "db": -3,
+   "note": "the world blooms out of the book"
+  },
+  {
+   "id": "swell-air",
+   "frame": 1698,
+   "db": -3,
+   "note": ""
+  },
+  {
+   "id": "tap-glass",
+   "frame": 1754,
+   "db": -7,
+   "note": "the Natt/Morgon switch appears"
+  },
+  {
+   "id": "tap-glass",
+   "frame": 1770,
+   "db": -3,
+   "note": "the switch flips to Morgon"
+  },
+  {
+   "id": "shimmer",
+   "frame": 1773,
+   "db": -4,
+   "note": "dawn"
+  },
+  {
+   "id": "impact-soft",
+   "frame": 1836,
+   "db": -8,
+   "note": "the logo arrives"
+  },
+  {
+   "id": "twinkle-2",
+   "frame": 1838,
+   "db": -4,
+   "note": ""
+  }
+ ]
+}

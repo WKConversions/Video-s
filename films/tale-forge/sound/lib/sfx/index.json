@@ -1,0 +1,182 @@
+[
+ {
+  "id": "twinkle-1",
+  "file": "sfx/chime/twinkle-1.wav",
+  "category": "chime",
+  "character": "a rising run of small tuned bells, sparkling",
+  "licence": "generated",
+  "sync": 0.004,
+  "length": 3.2
+ },
+ {
+  "id": "twinkle-2",
+  "file": "sfx/chime/twinkle-2.wav",
+  "category": "chime",
+  "character": "a rising run of small tuned bells, sparkling",
+  "licence": "generated",
+  "sync": 0.004,
+  "length": 3.2
+ },
+ {
+  "id": "twinkle-3",
+  "file": "sfx/chime/twinkle-3.wav",
+  "category": "chime",
+  "character": "a rising run of small tuned bells, sparkling",
+  "licence": "generated",
+  "sync": 0.004,
+  "length": 3.2
+ },
+ {
+  "id": "twinkle-4",
+  "file": "sfx/chime/twinkle-4.wav",
+  "category": "chime",
+  "character": "a rising run of small tuned bells, sparkling",
+  "licence": "generated",
+  "sync": 0.004,
+  "length": 3.2
+ },
+ {
+  "id": "shooting-star",
+  "file": "sfx/chime/shooting-star.wav",
+  "category": "chime",
+  "character": "a falling glissando of tiny bells",
+  "licence": "generated",
+  "sync": 0.3,
+  "length": 3.2
+ },
+ {
+  "id": "chime-choice",
+  "file": "sfx/success/chime-choice.wav",
+  "category": "success",
+  "character": "a warm bell chord with a long tail",
+  "licence": "generated",
+  "sync": 0.004,
+  "length": 4.4
+ },
+ {
+  "id": "magic-dust",
+  "file": "sfx/stinger/magic-dust.wav",
+  "category": "stinger",
+  "character": "a shower of tiny high sparkles",
+  "licence": "generated",
+  "sync": 0.01,
+  "length": 2.8
+ },
+ {
+  "id": "bloop-1",
+  "file": "sfx/pop/bloop-1.wav",
+  "category": "pop",
+  "character": "a soft rounded bloop, like a bubble",
+  "licence": "generated",
+  "sync": 0.012,
+  "length": 0.78
+ },
+ {
+  "id": "bloop-2",
+  "file": "sfx/pop/bloop-2.wav",
+  "category": "pop",
+  "character": "a soft rounded bloop, like a bubble",
+  "licence": "generated",
+  "sync": 0.012,
+  "length": 0.78
+ },
+ {
+  "id": "step-soft",
+  "file": "sfx/tap/step-soft.wav",
+  "category": "tap",
+  "character": "a soft footstep on a garden path",
+  "licence": "generated",
+  "sync": 0.004,
+  "length": 0.25
+ },
+ {
+  "id": "door-latch",
+  "file": "sfx/tap/door-latch.wav",
+  "category": "tap",
+  "character": "a small latch click and a wooden door opening",
+  "licence": "generated",
+  "sync": 0.003,
+  "length": 1.7
+ },
+ {
+  "id": "page-turn",
+  "file": "sfx/swipe/page-turn.wav",
+  "category": "swipe",
+  "character": "a picture-book page turning and settling",
+  "licence": "generated",
+  "sync": 0.52,
+  "length": 1.35
+ },
+ {
+  "id": "book-close",
+  "file": "sfx/impact/book-close.wav",
+  "category": "impact",
+  "character": "a book closing with a soft cloth thump",
+  "licence": "generated",
+  "sync": 0.45,
+  "length": 1.7
+ },
+ {
+  "id": "paint-bloom",
+  "file": "sfx/whoosh/paint-bloom.wav",
+  "category": "whoosh",
+  "character": "a soft wet brush stroke blooming",
+  "licence": "generated",
+  "sync": 0.35,
+  "length": 2.4
+ },
+ {
+  "id": "tap-glass",
+  "file": "sfx/tap/tap-glass.wav",
+  "category": "tap",
+  "character": "a soft tap on glass",
+  "licence": "generated",
+  "sync": 0.002,
+  "length": 0.7
+ },
+ {
+  "id": "swell-air",
+  "file": "sfx/whoosh/swell-air.wav",
+  "category": "whoosh",
+  "character": "soft air swelling and fading",
+  "licence": "generated",
+  "sync": 0.9,
+  "length": 2.8
+ },
+ {
+  "id": "whoosh-soft",
+  "file": "sfx/whoosh/whoosh-soft.wav",
+  "category": "whoosh",
+  "character": "a soft airy whoosh",
+  "licence": "generated",
+  "sync": 0.5,
+  "length": 1.4
+ },
+ {
+  "id": "shimmer",
+  "file": "sfx/stinger/shimmer.wav",
+  "category": "stinger",
+  "character": "bright partials sparkling",
+  "licence": "generated",
+  "sync": 0.05,
+  "length": 3.0
+ },
+ {
+  "id": "impact-soft",
+  "file": "sfx/impact/impact-soft.wav",
+  "category": "impact",
+  "character": "a soft low thump",
+  "licence": "generated",
+  "sync": 0.0,
+  "length": 2.6
+ },
+ {
+  "id": "riser-soft",
+  "file": "sfx/riser/riser-soft.wav",
+  "category": "riser",
+  "character": "air and a tone climbing into a reveal",
+  "licence": "generated",
+  "sync": 1.6,
+  "length": 2.5
+ }
+]

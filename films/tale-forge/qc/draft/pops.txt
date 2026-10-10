@@ -1,0 +1,29 @@
+POP at 1.30 s (frame 39): 9.7× the change around it, tiles r3c5
+POP at 3.87 s (frame 116): 12.9× the change around it, tiles r0c6, r1c6
+POP at 3.90 s (frame 117): 5.9× the change around it, tiles r4c2
+POP at 4.13 s (frame 124): 4.6× the change around it, tiles r4c0
+POP at 5.70 s (frame 171): 7.0× the change around it, tiles r1c1, r1c2
+POP at 8.67 s (frame 260): 5.2× the change around it, tiles r4c4
+POP at 14.60 s (frame 438): 5.0× the change around it, tiles r3c3
+POP at 14.90 s (frame 447): 12.0× the change around it, tiles r0c1, r0c2, r0c3, r0c4, r0c5, r0c6, r1c2, r1c3 …
+POP at 15.07 s (frame 452): 26.8× the change around it, tiles r3c4
+POP at 15.20 s (frame 456): 6.7× the change around it, tiles r3c4
+POP at 15.70 s (frame 471): 7.0× the change around it, tiles r0c2, r1c1
+POP at 15.97 s (frame 479): 29.3× the change around it, tiles r0c2, r1c1, r1c2
+POP at 18.33 s (frame 550): 21.5× the change around it, tiles r1c5
+POP at 18.37 s (frame 551): 20.5× the change around it, tiles r3c5, r3c6
+POP at 18.47 s (frame 554): 141.5× the change around it, tiles r0c5, r1c5, r1c6, r2c5, r2c6
+POP at 18.93 s (frame 568): 4.2× the change around it, tiles r2c1
+POP at 21.30 s (frame 639): 87.4× the change around it, tiles r3c0, r3c1, r3c2, r3c3, r3c4, r3c5, r3c6, r3c7 …
+cut at 24.77 s (frame 743): 139.4× the change around it, tiles r0c0, r0c1, r0c2, r0c3, r0c4, r0c5, r0c6, r0c7 …
+POP at 28.03 s (frame 841): 12.2× the change around it, tiles r3c3, r3c4
+POP at 28.60 s (frame 858): 5.0× the change around it, tiles r3c3
+POP at 38.93 s (frame 1168): 253.0× the change around it, tiles r3c0, r3c1, r3c2, r3c3, r3c4, r3c5, r3c6, r3c7 …
+POP at 40.70 s (frame 1221): 5.0× the change around it, tiles r1c0
+POP at 40.93 s (frame 1228): 5.8× the change around it, tiles r0c0, r2c0
+POP at 51.63 s (frame 1549): 16.1× the change around it, tiles r4c0
+POP at 51.73 s (frame 1552): 8.6× the change around it, tiles r3c7, r4c7
+POP at 59.73 s (frame 1792): 7.3× the change around it, tiles r0c3
+25 pops; the strongest at frames 1168, 554, 639, 479, 452. Look at each strip: a designed
+text change can show here; a blink, a jump in size or a layer appearing without a move is a bug.
+strips: qc/draft/pops/pop_*.png (frames 39, 116, 117, 124, 171, 260, 438, 447, 452, 456, 471, 479, 550, 551, 554, 568, 639, 841, 858, 1168, 1221, 1228, 1549, 1552, 1792)
