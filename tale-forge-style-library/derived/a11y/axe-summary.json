@@ -1,0 +1,442 @@
+{
+ "axe_version": "4.14.0",
+ "counts_per_run": {
+  "404__en__morgon": {
+   "passes": 33,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 56
+  },
+  "404__en__natt": {
+   "passes": 33,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 56
+  },
+  "404__morgon": {
+   "passes": 33,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 56
+  },
+  "404__natt": {
+   "passes": 33,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 56
+  },
+  "home__en__morgon": {
+   "passes": 37,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 53
+  },
+  "home__en__natt": {
+   "passes": 37,
+   "violations": 1,
+   "incomplete": 2,
+   "inapplicable": 53
+  },
+  "home__morgon": {
+   "passes": 37,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 53
+  },
+  "home__natt": {
+   "passes": 37,
+   "violations": 1,
+   "incomplete": 2,
+   "inapplicable": 53
+  },
+  "integritet__en__morgon": {
+   "passes": 39,
+   "violations": 3,
+   "incomplete": 2,
+   "inapplicable": 51
+  },
+  "integritet__en__natt": {
+   "passes": 39,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 51
+  },
+  "integritet__morgon": {
+   "passes": 39,
+   "violations": 3,
+   "incomplete": 2,
+   "inapplicable": 51
+  },
+  "integritet__natt": {
+   "passes": 39,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 51
+  },
+  "login__en__morgon": {
+   "passes": 40,
+   "violations": 1,
+   "incomplete": 2,
+   "inapplicable": 50
+  },
+  "login__en__natt": {
+   "passes": 40,
+   "violations": 1,
+   "incomplete": 2,
+   "inapplicable": 50
+  },
+  "login__morgon": {
+   "passes": 40,
+   "violations": 1,
+   "incomplete": 2,
+   "inapplicable": 50
+  },
+  "login__natt": {
+   "passes": 40,
+   "violations": 1,
+   "incomplete": 2,
+   "inapplicable": 50
+  },
+  "share-sample__en__morgon": {
+   "passes": 33,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 56
+  },
+  "share-sample__en__natt": {
+   "passes": 33,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 56
+  },
+  "share-sample__morgon": {
+   "passes": 33,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 56
+  },
+  "share-sample__natt": {
+   "passes": 33,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 56
+  },
+  "signup__en__morgon": {
+   "passes": 40,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 50
+  },
+  "signup__en__natt": {
+   "passes": 40,
+   "violations": 1,
+   "incomplete": 2,
+   "inapplicable": 50
+  },
+  "signup__morgon": {
+   "passes": 40,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 50
+  },
+  "signup__natt": {
+   "passes": 40,
+   "violations": 1,
+   "incomplete": 2,
+   "inapplicable": 50
+  },
+  "start__en__morgon": {
+   "passes": 34,
+   "violations": 1,
+   "incomplete": 2,
+   "inapplicable": 56
+  },
+  "start__en__natt": {
+   "passes": 34,
+   "violations": 1,
+   "incomplete": 2,
+   "inapplicable": 56
+  },
+  "start__morgon": {
+   "passes": 34,
+   "violations": 1,
+   "incomplete": 2,
+   "inapplicable": 56
+  },
+  "start__natt": {
+   "passes": 34,
+   "violations": 1,
+   "incomplete": 2,
+   "inapplicable": 56
+  },
+  "uppgradera__en__morgon": {
+   "passes": 37,
+   "violations": 3,
+   "incomplete": 2,
+   "inapplicable": 53
+  },
+  "uppgradera__en__natt": {
+   "passes": 37,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 53
+  },
+  "uppgradera__morgon": {
+   "passes": 37,
+   "violations": 3,
+   "incomplete": 2,
+   "inapplicable": 53
+  },
+  "uppgradera__natt": {
+   "passes": 37,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 53
+  },
+  "villkor__en__morgon": {
+   "passes": 37,
+   "violations": 3,
+   "incomplete": 2,
+   "inapplicable": 53
+  },
+  "villkor__en__natt": {
+   "passes": 37,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 53
+  },
+  "villkor__morgon": {
+   "passes": 37,
+   "violations": 3,
+   "incomplete": 2,
+   "inapplicable": 53
+  },
+  "villkor__natt": {
+   "passes": 37,
+   "violations": 2,
+   "incomplete": 2,
+   "inapplicable": 53
+  }
+ },
+ "rules": {
+  "color-contrast": {
+   "impact": "serious",
+   "help": "Elements must meet minimum color contrast ratio thresholds",
+   "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=axeAPI",
+   "tags": [
+    "cat.color",
+    "wcag2aa",
+    "wcag143",
+    "TTv5",
+    "TT13.c",
+    "EN-301-549",
+    "EN-9.1.4.3",
+    "ACT",
+    "RGAAv4",
+    "RGAA-3.2.1"
+   ],
+   "violation_runs": 10,
+   "incomplete_runs": 36,
+   "violation_in": [
+    "home__en__morgon",
+    "home__morgon",
+    "integritet__en__morgon",
+    "integritet__morgon",
+    "signup__en__morgon",
+    "signup__morgon",
+    "uppgradera__en__morgon",
+    "uppgradera__morgon",
+    "villkor__en__morgon",
+    "villkor__morgon"
+   ],
+   "targets": [
+    "#auth-email",
+    "#auth-password",
+    "#included-heading",
+    ".badge > div > b",
+    ".badge > div > span",
+    ".btn",
+    ".btn-ghost",
+    ".btn-primary",
+    ".builder > div:nth-child(1) > span",
+    ".builder-name",
+    ".cta-microcopy",
+    ".cta-primary-col > .btn-primary.btn[href$=\"start\"]",
+    ".day",
+    ".friend-add",
+    ".friend:nth-child(2) > div:nth-child(2) > b",
+    ".friend:nth-child(2) > div:nth-child(2) > span",
+    ".friend:nth-child(3) > div:nth-child(2) > b",
+    ".friend:nth-child(3) > div:nth-child(2) > span",
+    ".friends > h3",
+    ".glass > div:nth-child(4)",
+    ".glass:nth-child(1) > p",
+    ".glass:nth-child(4) > .sec-head > h2",
+    ".glass:nth-child(4) > p:nth-child(2)",
+    ".glass:nth-child(4) > ul > li:nth-child(1)",
+    ".glass:nth-child(4) > ul > li:nth-child(2)",
+    ".grad",
+    ".hiw-ai-chip",
+    ".hiw-bake-line",
+    ".hiw-choice:nth-child(1)",
+    ".hiw-choice:nth-child(2)",
+    ".hiw-closing > .btn-primary.btn[href$=\"start\"]",
+    ".hiw-friend-row:nth-child(1) > div > b",
+    ".hiw-friend-row:nth-child(1) > div > span",
+    ".hiw-friend-row:nth-child(2) > div > b",
+    ".hiw-friend-row:nth-child(2) > div > span",
+    ".hiw-headline",
+    ".hiw-kicker",
+    ".hiw-lede",
+    ".hiw-memory-tag > div > b",
+    ".hiw-memory-tag > div > span"
+   ],
+   "violation_messages": [
+    "Element has insufficient color contrast of 3.66 (foreground color: #7b7591, background color: #ede9f6, font size: 8.4pt (11.2px), font weight: normal). Expected contrast ratio of 4.5:1",
+    "Element has insufficient color contrast of 4.04 (foreground color: #746e8b, background color: #ede9f6, font size: 10.8pt (14.4px), font weight: normal). Expected contrast ratio of 4.5:1",
+    "Element has insufficient color contrast of 4.04 (foreground color: #746e8b, background color: #ede9f6, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1"
+   ]
+  },
+  "heading-order": {
+   "impact": "moderate",
+   "help": "Heading levels should only increase by one",
+   "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/heading-order?application=axeAPI",
+   "tags": [
+    "cat.semantics",
+    "best-practice"
+   ],
+   "violation_runs": 8,
+   "incomplete_runs": 0,
+   "violation_in": [
+    "integritet__en__morgon",
+    "integritet__en__natt",
+    "integritet__morgon",
+    "integritet__natt",
+    "villkor__en__morgon",
+    "villkor__en__natt",
+    "villkor__morgon",
+    "villkor__natt"
+   ],
+   "targets": [
+    "div[lang=\"en\"] > div:nth-child(2) > h3",
+    "div[lang=\"sv\"] > div:nth-child(2) > h3"
+   ],
+   "violation_messages": [
+    "Heading order invalid"
+   ]
+  },
+  "label-content-name-mismatch": {
+   "impact": "serious",
+   "help": "Elements must have their visible text as part of their accessible name",
+   "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=axeAPI",
+   "tags": [
+    "cat.semantics",
+    "wcag21a",
+    "wcag253",
+    "EN-301-549",
+    "EN-9.2.5.3",
+    "RGAAv4",
+    "RGAA-6.1.5"
+   ],
+   "violation_runs": 4,
+   "incomplete_runs": 36,
+   "violation_in": [
+    "uppgradera__en__morgon",
+    "uppgradera__en__natt",
+    "uppgradera__morgon",
+    "uppgradera__natt"
+   ],
+   "targets": [
+    ".tt",
+    ".upgrade-sample-link"
+   ],
+   "violation_messages": [
+    "Text inside the element is not included in the accessible name"
+   ]
+  },
+  "page-has-heading-one": {
+   "impact": "moderate",
+   "help": "Page should contain a level-one heading",
+   "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/page-has-heading-one?application=axeAPI",
+   "tags": [
+    "cat.semantics",
+    "best-practice"
+   ],
+   "violation_runs": 8,
+   "incomplete_runs": 0,
+   "violation_in": [
+    "404__en__morgon",
+    "404__en__natt",
+    "404__morgon",
+    "404__natt",
+    "share-sample__en__morgon",
+    "share-sample__en__natt",
+    "share-sample__morgon",
+    "share-sample__natt"
+   ],
+   "targets": [
+    "html"
+   ],
+   "violation_messages": [
+    "Page must have a level-one heading"
+   ]
+  },
+  "region": {
+   "impact": "moderate",
+   "help": "All page content should be contained by landmarks",
+   "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/region?application=axeAPI",
+   "tags": [
+    "cat.keyboard",
+    "best-practice",
+    "RGAAv4",
+    "RGAA-9.2.1"
+   ],
+   "violation_runs": 36,
+   "incomplete_runs": 0,
+   "violation_in": [
+    "404__en__morgon",
+    "404__en__natt",
+    "404__morgon",
+    "404__natt",
+    "home__en__morgon",
+    "home__en__natt",
+    "home__morgon",
+    "home__natt",
+    "integritet__en__morgon",
+    "integritet__en__natt",
+    "integritet__morgon",
+    "integritet__natt",
+    "login__en__morgon",
+    "login__en__natt",
+    "login__morgon",
+    "login__natt",
+    "share-sample__en__morgon",
+    "share-sample__en__natt",
+    "share-sample__morgon",
+    "share-sample__natt",
+    "signup__en__morgon",
+    "signup__en__natt",
+    "signup__morgon",
+    "signup__natt",
+    "start__en__morgon",
+    "start__en__natt",
+    "start__morgon",
+    "start__natt",
+    "uppgradera__en__morgon",
+    "uppgradera__en__natt",
+    "uppgradera__morgon",
+    "uppgradera__natt",
+    "villkor__en__morgon",
+    "villkor__en__natt",
+    "villkor__morgon",
+    "villkor__natt"
+   ],
+   "targets": [
+    ".foot"
+   ],
+   "violation_messages": [
+    "Some page content is not contained by landmarks"
+   ]
+  }
+ }
+}

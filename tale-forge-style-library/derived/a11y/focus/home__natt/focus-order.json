@@ -1,0 +1,836 @@
+{
+ "page": "home",
+ "url": "https://tale-forge.app/",
+ "theme": "natt",
+ "lang": "sv",
+ "viewport": "1440x900@2x",
+ "capturedAt": "2026-10-09T15:53:19.507Z",
+ "stops": [
+  {
+   "i": 1,
+   "sig": "A|logo|TALE FORGE|188,27",
+   "tag": "a",
+   "cls": "logo",
+   "role": null,
+   "href": "/",
+   "name": "TALE FORGE",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    188,
+    27,
+    261,
+    42
+   ],
+   "pageY": 27,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(245, 197, 66)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "01_a_tale-forge.png"
+  },
+  {
+   "i": 2,
+   "sig": "A||Logga in|783,26",
+   "tag": "a",
+   "cls": "",
+   "role": null,
+   "href": "/login",
+   "name": "Logga in",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    783,
+    26,
+    74.5,
+    44
+   ],
+   "pageY": 26,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgba(155, 135, 245, 0.26)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "02_a_logga-in.png"
+  },
+  {
+   "i": 3,
+   "sig": "A||Priser|870,26",
+   "tag": "a",
+   "cls": "",
+   "role": null,
+   "href": "/uppgradera",
+   "name": "Priser",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    869.5,
+    26,
+    61.3,
+    44
+   ],
+   "pageY": 26,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgba(155, 135, 245, 0.26)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "03_a_priser.png"
+  },
+  {
+   "i": 4,
+   "sig": "BUTTON||SV|947,26",
+   "tag": "button",
+   "cls": "",
+   "role": null,
+   "href": null,
+   "name": "SV",
+   "ariaPressed": "true",
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    946.8,
+    26,
+    44,
+    44
+   ],
+   "pageY": 26,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "0px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(58, 43, 16)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "04_button_sv.png"
+  },
+  {
+   "i": 5,
+   "sig": "BUTTON||EN|993,26",
+   "tag": "button",
+   "cls": "",
+   "role": null,
+   "href": null,
+   "name": "EN",
+   "ariaPressed": "false",
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    992.8,
+    26,
+    44,
+    44
+   ],
+   "pageY": 26,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "0px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(181, 172, 211)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "05_button_en.png"
+  },
+  {
+   "i": 6,
+   "sig": "BUTTON|tt|Byt tema|1053,26",
+   "tag": "button",
+   "cls": "tt",
+   "role": "switch",
+   "href": null,
+   "name": "Byt tema",
+   "ariaPressed": null,
+   "ariaChecked": "false",
+   "ariaExpanded": null,
+   "rect": [
+    1052.8,
+    25.5,
+    199.2,
+    45
+   ],
+   "pageY": 26,
+   "focusVisible": true,
+   "outline": {
+    "style": "solid",
+    "color": "rgb(245, 197, 66)",
+    "width": "3px",
+    "offset": "3px"
+   },
+   "boxShadow": "color(srgb 0.0588235 0.0862745 0.156863 / 0.59702) 0px 0px 0px 6px",
+   "borderColor": "rgba(255, 243, 217, 0.32)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "06_button_byt-tema.png"
+  },
+  {
+   "i": 7,
+   "sig": "A|btn btn-primary|Skapa er hjälte|188,495",
+   "tag": "a",
+   "cls": "btn btn-primary",
+   "role": null,
+   "href": "/start",
+   "name": "Skapa er hjälte",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    188,
+    495.3,
+    182.7,
+    54
+   ],
+   "pageY": 495,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "rgba(245, 197, 66, 0.28) 0px 14px 40px 0px, rgba(255, 255, 255, 0.45) 0px 1px 0px 0px inset",
+   "borderColor": "rgb(58, 43, 16)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "07_a_skapa-er-hjalte.png"
+  },
+  {
+   "i": 8,
+   "sig": "A|btn btn-ghost|Se hur det funkar|188,590",
+   "tag": "a",
+   "cls": "btn btn-ghost",
+   "role": null,
+   "href": "#sa-funkar-det",
+   "name": "Se hur det funkar",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    188,
+    590.3,
+    202.9,
+    56
+   ],
+   "pageY": 590,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgba(255, 243, 217, 0.32)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "08_a_se-hur-det-funkar.png"
+  },
+  {
+   "i": 9,
+   "sig": "A||Alva och fyraljuset i tornet|778,175",
+   "tag": "a",
+   "cls": "",
+   "role": null,
+   "href": "/signup",
+   "name": "Alva och fyraljuset i tornet",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    778.2,
+    174.5,
+    256.6,
+    347.4
+   ],
+   "pageY": 175,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(0, 0, 238)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "09_a_alva-och-fyraljuset-i-tornet.png"
+  },
+  {
+   "i": 10,
+   "sig": "A||Alva och filten vid elementet|976,125",
+   "tag": "a",
+   "cls": "",
+   "role": null,
+   "href": "/signup",
+   "name": "Alva och filten vid elementet",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    976,
+    124.5,
+    253.2,
+    345.4
+   ],
+   "pageY": 125,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(0, 0, 238)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "10_a_alva-och-filten-vid-elementet.png"
+  },
+  {
+   "i": 11,
+   "sig": "BUTTON|hiw-play|Hör berättarrösten|276,1847",
+   "tag": "button",
+   "cls": "hiw-play",
+   "role": null,
+   "href": null,
+   "name": "Hör berättarrösten",
+   "ariaPressed": "false",
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    276,
+    470,
+    210.2,
+    48
+   ],
+   "pageY": 1847,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "0px"
+   },
+   "boxShadow": "rgba(245, 197, 66, 0.28) 0px 14px 40px 0px, rgba(255, 255, 255, 0.45) 0px 1px 0px 0px inset",
+   "borderColor": "rgb(58, 43, 16)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "11_button_hor-berattarrosten.png"
+  },
+  {
+   "i": 12,
+   "sig": "BUTTON|hiw-map-btn hiw-map-btn-1|Slut 1 av 4, visa vägen dit|1081,2714",
+   "tag": "button",
+   "cls": "hiw-map-btn hiw-map-btn-1",
+   "role": null,
+   "href": null,
+   "name": "Slut 1 av 4, visa vägen dit",
+   "ariaPressed": "true",
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    1081.2,
+    531,
+    88.5,
+    88.5
+   ],
+   "pageY": 2714,
+   "focusVisible": true,
+   "outline": {
+    "style": "solid",
+    "color": "rgb(245, 197, 66)",
+    "width": "3px",
+    "offset": "2px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(0, 0, 0)",
+   "transform": "matrix(1, 0, 0, 1, -44.25, -44.25)",
+   "visibility": "visible",
+   "crop": "12_button_slut-1-av-4-visa-vagen-dit.png"
+  },
+  {
+   "i": 13,
+   "sig": "BUTTON|hiw-map-btn hiw-map-btn-2|Slut 2 av 4, visa vägen dit|1081,2841",
+   "tag": "button",
+   "cls": "hiw-map-btn hiw-map-btn-2",
+   "role": null,
+   "href": null,
+   "name": "Slut 2 av 4, visa vägen dit",
+   "ariaPressed": "false",
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    1081.2,
+    533.1,
+    88.5,
+    88.5
+   ],
+   "pageY": 2841,
+   "focusVisible": true,
+   "outline": {
+    "style": "solid",
+    "color": "rgb(245, 197, 66)",
+    "width": "3px",
+    "offset": "2px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(0, 0, 0)",
+   "transform": "matrix(1, 0, 0, 1, -44.25, -44.25)",
+   "visibility": "visible",
+   "crop": "13_button_slut-2-av-4-visa-vagen-dit.png"
+  },
+  {
+   "i": 14,
+   "sig": "BUTTON|hiw-map-btn hiw-map-btn-3|Slut 3 av 4, visa vägen dit|1081,2968",
+   "tag": "button",
+   "cls": "hiw-map-btn hiw-map-btn-3",
+   "role": null,
+   "href": null,
+   "name": "Slut 3 av 4, visa vägen dit",
+   "ariaPressed": "true",
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    1081.2,
+    659.6,
+    88.5,
+    88.5
+   ],
+   "pageY": 2968,
+   "focusVisible": true,
+   "outline": {
+    "style": "solid",
+    "color": "rgb(245, 197, 66)",
+    "width": "3px",
+    "offset": "2px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(0, 0, 0)",
+   "transform": "matrix(1, 0, 0, 1, -44.25, -44.25)",
+   "visibility": "visible",
+   "crop": "14_button_slut-3-av-4-visa-vagen-dit.png"
+  },
+  {
+   "i": 15,
+   "sig": "BUTTON|hiw-map-btn hiw-map-btn-4|Slut 4 av 4, visa vägen dit|1081,3095",
+   "tag": "button",
+   "cls": "hiw-map-btn hiw-map-btn-4",
+   "role": null,
+   "href": null,
+   "name": "Slut 4 av 4, visa vägen dit",
+   "ariaPressed": "true",
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    1081.2,
+    786.7,
+    88.5,
+    88.5
+   ],
+   "pageY": 3095,
+   "focusVisible": true,
+   "outline": {
+    "style": "solid",
+    "color": "rgb(245, 197, 66)",
+    "width": "3px",
+    "offset": "2px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(0, 0, 0)",
+   "transform": "matrix(1, 0, 0, 1, -44.25, -44.25)",
+   "visibility": "visible",
+   "crop": "15_button_slut-4-av-4-visa-vagen-dit.png"
+  },
+  {
+   "i": 16,
+   "sig": "A|btn btn-ghost|Läs exempelboken|276,3312",
+   "tag": "a",
+   "cls": "btn btn-ghost",
+   "role": null,
+   "href": "/share/iris-sparade-platsen",
+   "name": "Läs exempelboken",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    276,
+    421.5,
+    215.5,
+    56
+   ],
+   "pageY": 3312,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgba(255, 243, 217, 0.32)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "16_a_las-exempelboken.png"
+  },
+  {
+   "i": 17,
+   "sig": "A|btn btn-primary|Skapa er hjälte|514,3792",
+   "tag": "a",
+   "cls": "btn btn-primary",
+   "role": null,
+   "href": "/start",
+   "name": "Skapa er hjälte",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    513.9,
+    422.9,
+    182.7,
+    54
+   ],
+   "pageY": 3792,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "rgba(245, 197, 66, 0.28) 0px 14px 40px 0px, rgba(255, 255, 255, 0.45) 0px 1px 0px 0px inset",
+   "borderColor": "rgb(58, 43, 16)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "17_a_skapa-er-hjalte.png"
+  },
+  {
+   "i": 18,
+   "sig": "A|btn btn-ghost|Läs exempelboken|711,3791",
+   "tag": "a",
+   "cls": "btn btn-ghost",
+   "role": null,
+   "href": "/share/iris-sparade-platsen",
+   "name": "Läs exempelboken",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    710.6,
+    421.9,
+    215.5,
+    56
+   ],
+   "pageY": 3791,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgba(255, 243, 217, 0.32)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "18_a_las-exempelboken.png"
+  },
+  {
+   "i": 19,
+   "sig": "A|fab|Ändra utseende|339,4143",
+   "tag": "a",
+   "cls": "fab",
+   "role": null,
+   "href": "/login",
+   "name": "Ändra utseende",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    339,
+    774,
+    42,
+    42
+   ],
+   "pageY": 4143,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "rgba(245, 197, 66, 0.28) 0px 14px 40px 0px",
+   "borderColor": "rgb(58, 43, 16)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "19_a_andra-utseende.png"
+  },
+  {
+   "i": 20,
+   "sig": "A|upload|Bli din egen hjälte Ladda upp en bild, så målar vi dig i bok|397,4179",
+   "tag": "a",
+   "cls": "upload",
+   "role": null,
+   "href": "/signup",
+   "name": "Bli din egen hjälte Ladda upp en bild, så målar vi dig i bok",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    397,
+    806,
+    358.3,
+    94.4
+   ],
+   "pageY": 4179,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgba(255, 236, 190, 0.35)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "20_a_bli-din-egen-hjalte-ladda-upp-en.png"
+  },
+  {
+   "i": 21,
+   "sig": "A|friend-add|Lägg till en vän|827,4220",
+   "tag": "a",
+   "cls": "friend-add",
+   "role": null,
+   "href": "/signup",
+   "name": "Lägg till en vän",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    827.3,
+    847.4,
+    397.7,
+    53
+   ],
+   "pageY": 4220,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgba(255, 236, 190, 0.35)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "21_a_lagg-till-en-van.png"
+  },
+  {
+   "i": 22,
+   "sig": "A|book|Alva och fyraljuset i tornet STORA KÄNSLOR|188,4415",
+   "tag": "a",
+   "cls": "book",
+   "role": null,
+   "href": "/signup",
+   "name": "Alva och fyraljuset i tornet STORA KÄNSLOR",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    188,
+    321.4,
+    249.5,
+    468
+   ],
+   "pageY": 4415,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "rgba(5, 8, 20, 0.42) 0px 18px 44px 0px",
+   "borderColor": "rgb(16, 26, 48)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "22_a_alva-och-fyraljuset-i-tornet-sto.png"
+  },
+  {
+   "i": 23,
+   "sig": "A|book|Alva och filten vid elementet MYSIGT ÄVENTYR|460,4415",
+   "tag": "a",
+   "cls": "book",
+   "role": null,
+   "href": "/signup",
+   "name": "Alva och filten vid elementet MYSIGT ÄVENTYR",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    459.5,
+    321.4,
+    249.5,
+    468
+   ],
+   "pageY": 4415,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "rgba(5, 8, 20, 0.42) 0px 18px 44px 0px",
+   "borderColor": "rgb(16, 26, 48)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "23_a_alva-och-filten-vid-elementet-my.png"
+  },
+  {
+   "i": 24,
+   "sig": "A||Kontakt|1066,4930",
+   "tag": "a",
+   "cls": "",
+   "role": null,
+   "href": "mailto:kevin@tale-forge.app",
+   "name": "Kontakt",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    1065.6,
+    836.4,
+    51.1,
+    18
+   ],
+   "pageY": 4930,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(181, 172, 211)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "24_a_kontakt.png"
+  },
+  {
+   "i": 25,
+   "sig": "A||Integritet|1133,4930",
+   "tag": "a",
+   "cls": "",
+   "role": null,
+   "href": "/integritet",
+   "name": "Integritet",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    1132.8,
+    836.4,
+    60.7,
+    18
+   ],
+   "pageY": 4930,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(181, 172, 211)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "25_a_integritet.png"
+  },
+  {
+   "i": 26,
+   "sig": "A||Villkor|1209,4930",
+   "tag": "a",
+   "cls": "",
+   "role": null,
+   "href": "/villkor",
+   "name": "Villkor",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    1209.5,
+    836.4,
+    42.5,
+    18
+   ],
+   "pageY": 4930,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(181, 172, 211)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "26_a_villkor.png"
+  },
+  {
+   "i": 27,
+   "tag": "body"
+  }
+ ],
+ "skipLinkTest": {
+  "skipFocused": {
+   "text": "TALE FORGE",
+   "cls": "logo"
+  },
+  "afterEnter": {
+   "hash": "",
+   "scrollY": 0,
+   "active": "A.logo"
+  },
+  "nextTabAfterSkip": {
+   "tag": "A",
+   "cls": "",
+   "name": "Logga in"
+  }
+ }
+}

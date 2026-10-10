@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-14 -14 28 28" width="28" height="28">
+  <title>Map: page dot with halo</title>
+  <!-- Tale Forge endings-map part. One per page/beat on the endings map: r 6 dot over an r 11 halo at 18% opacity (r 5 / 9 on mobile). Source: source/js/3d9nxlx1n5pdy.js@9744 (dotR 6, haloR 11; mobile 5 / 9). CSS: source/css/3q17cp_jgfwol.pretty.css:2953-2959 (.map-dot fill --map-dot; .map-dot-halo opacity .18). Tokens below are the Natt values; swap in TOKENS from the Morgon theme to re-theme. -->
+  <style>
+  @font-face { font-family: "Schibsted Grotesk"; src: url(../../../assets/fonts/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2) format("woff2"); font-weight: 400 800; }
+  svg { --dash-line: #ffecbe59; --map-dot: #9b87f5; --map-glow: #f5c54240; --gold-chip-bg: #f2b22e29; --gold-chip-ink: #ffd98f; --gold-soft: #f5c542; --page-sub: #d9cfee; --card-line: #9b87f542; }
+  .map-path { stroke: var(--dash-line); fill: none; stroke-width: 1.6px; stroke-dasharray: 0.1 8; stroke-linecap: round; }
+  .map-path-lit { stroke-width: 2.4px; fill: none; }
+  .map-path-lit--lit { transition: stroke-dashoffset .9s ease-out, opacity .2s; }
+  .map-path-lit--fading { transition: opacity .25s; }
+  .map-path-lit--off { transition: none; }
+  .map-dot { fill: var(--map-dot); }
+  .map-dot-halo { fill: var(--map-dot); opacity: .18; }
+  .map-choice { fill: var(--gold-chip-bg); stroke: var(--gold-soft); stroke-width: 1.5px; }
+  .map-choice-glyph { stroke: var(--gold-chip-ink); stroke-width: 1.6px; stroke-linecap: round; stroke-linejoin: round; }
+  .map-choice-label { font-family: "Schibsted Grotesk", "Segoe UI", system-ui, sans-serif; fill: var(--page-sub); font-size: 11px; font-weight: 600; }
+  .map-medallion { transform-box: fill-box; transform-origin: 50%; filter: drop-shadow(0 0 18px var(--map-glow)); transition: transform .2s, opacity .2s; }
+  .map-medallion-ring { stroke-width: 2px; }
+  .map-medallion.is-active { transform: scale(1.05); }
+  .map-medallion.is-active .map-medallion-ring { stroke-width: 3px; }
+  .map-medallion.is-dimmed { opacity: .55; }
+  .map-num-bg { fill: var(--gold-chip-bg); }
+  .map-num { font-family: "Schibsted Grotesk", "Segoe UI", system-ui, sans-serif; fill: var(--gold-chip-ink); font-size: 11px; font-weight: 700; }
+</style>
+  <circle class="map-dot-halo" cx="0" cy="0" r="11"/>
+  <circle class="map-dot" cx="0" cy="0" r="6"/>
+</svg>

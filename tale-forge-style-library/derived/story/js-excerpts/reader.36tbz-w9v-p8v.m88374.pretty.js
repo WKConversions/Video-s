@@ -1,0 +1,1729 @@
+// EXCERPT (data, not for execution). Verbatim Turbopack module 88374 from source/js/36tbz-w9v-p8v.js,
+// characters 112-28290 of the single-line minified file (UTF-8 decoded string index).
+// Wrapped in parentheses and formatted with prettier 3 for reading; no other change.
+// Content: Reader: cover, prose, narration, sound, feedback tags, The End ceremony, choice group
+
+(88374,
+  (e) => {
+    "use strict";
+    var t = e.i(43476),
+      a = e.i(71645),
+      r = e.i(22016),
+      n = e.i(16934);
+    let i = {
+      sv: {
+        read: "Läs sagan",
+        listen: "Lyssna-läge",
+        madeFor: (e) => `En saga f\xf6r ${e}`,
+        madeWithAi: "Skapad med AI.",
+        coverArtAlt: (e) => `Omslagsbild till ${e}`,
+      },
+      en: {
+        read: "Read the story",
+        listen: "Listen mode",
+        madeFor: (e) => `A story for ${e}`,
+        madeWithAi: "Made with AI.",
+        coverArtAlt: (e) => `Cover illustration for ${e}`,
+      },
+    };
+    function s({
+      title: e,
+      coverUrl: a,
+      childName: r,
+      locale: n,
+      onRead: l,
+      onListen: o,
+    }) {
+      let d = i[n];
+      return (0, t.jsx)("div", {
+        className: "glass reader",
+        "data-testid": "reader-cover",
+        children: (0, t.jsxs)("div", {
+          className: `reader-grid reader-grid--cover${a ? "" : " reader-grid--text-only"}`,
+          children: [
+            a
+              ? (0, t.jsx)("div", {
+                  className: "reader-img reader-img--cover",
+                  children: (0, t.jsxs)(t.Fragment, {
+                    children: [
+                      (0, t.jsx)("img", {
+                        className: "art-bg",
+                        src: a,
+                        alt: "",
+                        "aria-hidden": "true",
+                      }),
+                      (0, t.jsx)("img", {
+                        className: "art-main",
+                        src: a,
+                        alt: d.coverArtAlt(e),
+                      }),
+                    ],
+                  }),
+                })
+              : null,
+            (0, t.jsxs)("div", {
+              className: "reader-body",
+              style: { gap: "14px" },
+              children: [
+                (0, t.jsx)("h1", { className: "reader-title", children: e }),
+                (0, t.jsx)("p", {
+                  className: "prose-plain",
+                  children: d.madeFor(r),
+                }),
+                (0, t.jsx)("p", {
+                  className: "prose-plain",
+                  "data-testid": "reader-made-with-ai",
+                  style: {
+                    color: "var(--card-sub)",
+                    fontSize: ".8rem",
+                    margin: 0,
+                  },
+                  children: d.madeWithAi,
+                }),
+                (0, t.jsxs)("div", {
+                  className: "cta-row",
+                  style: { marginTop: "auto" },
+                  children: [
+                    (0, t.jsx)("button", {
+                      type: "button",
+                      className: "btn btn-primary",
+                      "data-testid": "reader-read",
+                      onClick: l,
+                      children: d.read,
+                    }),
+                    o
+                      ? (0, t.jsx)("button", {
+                          type: "button",
+                          className: "btn btn-ghost",
+                          "data-testid": "reader-listen",
+                          onClick: o,
+                          children: d.listen,
+                        })
+                      : null,
+                  ],
+                }),
+              ],
+            }),
+          ],
+        }),
+      });
+    }
+    let l = {
+      en: { pictureWait: "The picture is still being painted." },
+      sv: { pictureWait: "Bilden målas fortfarande." },
+    };
+    function o({ pictureUrl: e, alt: a, locale: r, models: n }) {
+      let i = l[r];
+      return (0, t.jsxs)("div", {
+        children: [
+          (0, t.jsx)("div", {
+            className: "reader-img",
+            "data-testid": "page-illustration",
+            children: e
+              ? (0, t.jsxs)(t.Fragment, {
+                  children: [
+                    (0, t.jsx)("img", {
+                      className: "art-bg",
+                      src: e,
+                      alt: "",
+                      "aria-hidden": "true",
+                    }),
+                    (0, t.jsx)("img", {
+                      className: "art-main",
+                      src: e,
+                      alt: a,
+                    }),
+                  ],
+                })
+              : (0, t.jsx)("p", {
+                  style: {
+                    margin: 0,
+                    fontSize: ".9rem",
+                    color: "var(--card-sub)",
+                  },
+                  children: i.pictureWait,
+                }),
+          }),
+          n
+            ? (0, t.jsx)("p", {
+                "data-testid": "page-illustration-dev-models",
+                style: {
+                  margin: "6px 12px 0",
+                  fontSize: ".78rem",
+                  color: "var(--card-sub)",
+                },
+                children: `DEV: image with ${n.image.join(" + ")}, narration with ${n.narration.join(" + ")}, outline with ${n.outline.join(" + ")}, story with ${n.story.join(" + ")}`,
+              })
+            : null,
+        ],
+      });
+    }
+    function d({ text: e, locale: a }) {
+      return (0, t.jsx)("p", {
+        className: "prose",
+        lang: a,
+        "data-testid": "story-prose",
+        children: e,
+      });
+    }
+    let c = {
+      sv: {
+        playNarration: "Spela berättelsen",
+        pauseNarration: "Pausa berättelsen",
+        restartNarration: "Börja om sidan",
+      },
+      en: {
+        playNarration: "Play narration",
+        pauseNarration: "Pause narration",
+        restartNarration: "Restart this page",
+      },
+    };
+    function u({
+      narrationUrl: e,
+      locale: r,
+      controls: n = !0,
+      autoPlay: i = !1,
+      onEnded: s,
+    }) {
+      let l = c[r],
+        o = (0, a.useRef)(null),
+        d = (0, a.useRef)(null),
+        [p, m] = (0, a.useState)(!1),
+        h =
+          null === e
+            ? null
+            : (function (e) {
+                try {
+                  let t = new URL(e, "http://localhost");
+                  return `${t.origin}${t.pathname}`;
+                } catch {
+                  return e;
+                }
+              })(e);
+      if (
+        ((0, a.useEffect)(() => {
+          let t = o.current;
+          !t ||
+            (d.current !== h &&
+              ((d.current = h),
+              t.pause(),
+              m(!1),
+              e
+                ? ((t.src = e),
+                  (t.currentTime = 0),
+                  i &&
+                    t
+                      .play()
+                      .then(() => m(!0))
+                      .catch(() => {}))
+                : t.removeAttribute("src")));
+        }, [h, e, i]),
+        !e)
+      )
+        return null;
+      let g = (0, t.jsx)("audio", {
+        ref: o,
+        "data-testid": "narration-audio",
+        preload: "metadata",
+        hidden: !0,
+        onEnded: () => {
+          (m(!1), s?.());
+        },
+      });
+      return n
+        ? (0, t.jsxs)("div", {
+            className: "reader-narration",
+            "data-testid": "reader-narration",
+            children: [
+              g,
+              (0, t.jsx)("button", {
+                type: "button",
+                className: "reader-audio-control",
+                "data-testid": "narration-toggle",
+                "aria-label": p ? l.pauseNarration : l.playNarration,
+                title: p ? l.pauseNarration : l.playNarration,
+                onClick: function () {
+                  let t = o.current;
+                  if (t && e) {
+                    if (p) {
+                      (t.pause(), m(!1));
+                      return;
+                    }
+                    t.play()
+                      .then(() => m(!0))
+                      .catch(() => {});
+                  }
+                },
+                children: p
+                  ? (0, t.jsxs)("svg", {
+                      viewBox: "0 0 24 24",
+                      "aria-hidden": "true",
+                      children: [
+                        (0, t.jsx)("rect", {
+                          x: "6",
+                          y: "4",
+                          width: "4",
+                          height: "16",
+                          rx: "1",
+                        }),
+                        (0, t.jsx)("rect", {
+                          x: "14",
+                          y: "4",
+                          width: "4",
+                          height: "16",
+                          rx: "1",
+                        }),
+                      ],
+                    })
+                  : (0, t.jsx)("svg", {
+                      viewBox: "0 0 24 24",
+                      "aria-hidden": "true",
+                      children: (0, t.jsx)("path", { d: "M8 5v14l11-7z" }),
+                    }),
+              }),
+              (0, t.jsx)("button", {
+                type: "button",
+                className: "reader-audio-control",
+                "data-testid": "narration-replay",
+                "aria-label": l.restartNarration,
+                title: l.restartNarration,
+                onClick: function () {
+                  let t = o.current;
+                  t &&
+                    e &&
+                    ((t.currentTime = 0),
+                    t
+                      .play()
+                      .then(() => m(!0))
+                      .catch(() => {}));
+                },
+                children: (0, t.jsxs)("svg", {
+                  viewBox: "0 0 24 24",
+                  "aria-hidden": "true",
+                  children: [
+                    (0, t.jsx)("path", { d: "M4 7v5h5" }),
+                    (0, t.jsx)("path", { d: "M5.5 16a8 8 0 1 0 .5-9l-2 5" }),
+                  ],
+                }),
+              }),
+            ],
+          })
+        : g;
+    }
+    var p = e.i(77147),
+      m = e.i(38618);
+    let h = {
+      sv: {
+        soundTitle: "Bakgrundsljud",
+        groupAmbience: "Stämning",
+        groupMusic: "Musik",
+        soundOff: "Av",
+        volume: "Volym",
+      },
+      en: {
+        soundTitle: "Background sound",
+        groupAmbience: "Ambience",
+        groupMusic: "Music",
+        soundOff: "Off",
+        volume: "Volume",
+      },
+    };
+    function g(e) {
+      let t = (t) => {
+        (null === t.key ||
+          "tf-bed" === t.key ||
+          "tf-bed-vol" === t.key ||
+          t.key?.startsWith("tf-bed:") ||
+          t.key?.startsWith("tf-bed-vol:")) &&
+          e();
+      };
+      return (
+        window.addEventListener("storage", t),
+        () => window.removeEventListener("storage", t)
+      );
+    }
+    function y() {
+      return () => {};
+    }
+    function f({
+      locale: e,
+      childId: r,
+      initialSoundOpen: n = !1,
+      controls: i = !0,
+    }) {
+      let s = h[e],
+        [l, o] = (0, a.useState)(n),
+        d = r ?? null,
+        c = (0, a.useSyncExternalStore)(
+          g,
+          () => (0, m.readBedPref)(r),
+          () => null,
+        ),
+        u = (0, a.useSyncExternalStore)(
+          g,
+          () => (0, m.readBedVol)(r),
+          () => p.DEFAULT_BED_VOLUME,
+        ),
+        b = (0, a.useSyncExternalStore)(
+          y,
+          () => !0,
+          () => !1,
+        ),
+        [x, v] = (0, a.useState)(null),
+        [k, j] = (0, a.useState)(null),
+        N = x?.scope === d ? x.value : c,
+        S = k?.scope === d ? k.value : u;
+      function w(e) {
+        (v({ scope: d, value: e }),
+          (0, m.writeBedPref)(e, r),
+          (0, m.syncBed)({ bedId: e, volume: S, play: null != e }));
+      }
+      return ((0, a.useEffect)(() => (0, m.claimBed)(), []),
+      (0, a.useEffect)(() => {
+        b && (0, m.syncBed)({ bedId: N, volume: S, play: null != N });
+      }, [N, b, S]),
+      i)
+        ? (0, t.jsxs)("div", {
+            className: "sound",
+            "data-testid": "reader-sound",
+            children: [
+              (0, t.jsxs)("button", {
+                type: "button",
+                className: "chip sound-toggle",
+                "data-testid": "reader-sound-toggle",
+                "aria-expanded": l,
+                "aria-pressed": null !== N,
+                "aria-controls": "reader-sound-panel",
+                onClick: function () {
+                  let e = !l;
+                  (o(e), e && null === N && w(m.DEFAULT_WAIT_BED));
+                },
+                children: [
+                  (0, t.jsxs)("svg", {
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    stroke: "currentColor",
+                    strokeWidth: "2",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    "aria-hidden": "true",
+                    children: [
+                      (0, t.jsx)("path", { d: "M11 5 6 9H3v6h3l5 4V5z" }),
+                      (0, t.jsx)("path", {
+                        d: "M15.5 8.5a5 5 0 0 1 0 7M18.5 6a8 8 0 0 1 0 12",
+                      }),
+                    ],
+                  }),
+                  s.soundTitle,
+                ],
+              }),
+              l &&
+                (0, t.jsxs)("div", {
+                  className: "sound-panel",
+                  id: "reader-sound-panel",
+                  "data-testid": "reader-sound-panel",
+                  role: "group",
+                  "aria-label": s.soundTitle,
+                  children: [
+                    ["ambience", "music"].map((a) =>
+                      (0, t.jsxs)(
+                        "div",
+                        {
+                          className: "sound-group",
+                          children: [
+                            (0, t.jsx)("span", {
+                              className: "sound-group-label",
+                              children:
+                                "ambience" === a
+                                  ? s.groupAmbience
+                                  : s.groupMusic,
+                            }),
+                            (0, t.jsx)("div", {
+                              className: "sound-beds",
+                              children: p.AMBIENT_BEDS.filter(
+                                (e) => e.group === a,
+                              ).map((a) =>
+                                (0, t.jsx)(
+                                  "button",
+                                  {
+                                    type: "button",
+                                    className: "sound-bed",
+                                    "data-testid": `reader-bed-${a.id}`,
+                                    "aria-pressed": N === a.id,
+                                    onClick: () => w(a.id),
+                                    children: a.label[e],
+                                  },
+                                  a.id,
+                                ),
+                              ),
+                            }),
+                          ],
+                        },
+                        a,
+                      ),
+                    ),
+                    (0, t.jsxs)("div", {
+                      className: "sound-foot",
+                      children: [
+                        (0, t.jsx)("button", {
+                          type: "button",
+                          className: "sound-bed sound-off",
+                          "data-testid": "reader-sound-off",
+                          "aria-pressed": null === N,
+                          onClick: () => w(null),
+                          children: s.soundOff,
+                        }),
+                        (0, t.jsxs)("label", {
+                          className: "sound-volume",
+                          children: [
+                            (0, t.jsx)("span", {
+                              className: "sound-group-label",
+                              children: s.volume,
+                            }),
+                            (0, t.jsx)("input", {
+                              type: "range",
+                              min: 0,
+                              max: m.MAX_BED_VOLUME,
+                              step: 0.02,
+                              value: S,
+                              "data-testid": "reader-sound-volume",
+                              "aria-label": s.volume,
+                              onChange: (e) => {
+                                var t;
+                                let a;
+                                return (
+                                  (t = Number(e.target.value)),
+                                  void (j({
+                                    scope: d,
+                                    value: (a = (0, m.clampBedVol)(t)),
+                                  }),
+                                  (0, m.writeBedVol)(a, r))
+                                );
+                              },
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
+            ],
+          })
+        : null;
+    }
+    let b = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i,
+      x = [
+        {
+          tag: "confusing",
+          en: "Something was unclear",
+          sv: "Något var otydligt",
+        },
+        {
+          tag: "choices_felt_same",
+          en: "Choices felt too similar",
+          sv: "Valen kändes för lika",
+        },
+        { tag: "too_long", en: "Too long", sv: "För lång" },
+        {
+          tag: "wait_too_long",
+          en: "The wait was too long",
+          sv: "Väntan var för lång",
+        },
+        {
+          tag: "not_engaging",
+          en: "Did not hold our attention",
+          sv: "Fångade inte vårt intresse",
+        },
+        {
+          tag: "image_issue",
+          en: "Issue with an image",
+          sv: "Problem med en bild",
+        },
+        {
+          tag: "audio_issue",
+          en: "Issue with the audio",
+          sv: "Problem med ljudet",
+        },
+        {
+          tag: "safety_concern",
+          en: "Safety concern",
+          sv: "Oro kring trygghet",
+        },
+        {
+          tag: "privacy_concern",
+          en: "Privacy concern",
+          sv: "Oro kring integritet",
+        },
+        {
+          tag: "technical_problem",
+          en: "Technical problem",
+          sv: "Tekniskt problem",
+        },
+        { tag: "other", en: "Something else", sv: "Något annat" },
+      ],
+      v = {
+        en: {
+          grownUp: "For grown-ups",
+          question: "Would your family choose another adventure like this?",
+          yes: "Yes",
+          yesRetry: "Yes, try again",
+          notYet: "Not yet",
+          issueLegend:
+            "What made it not feel right yet? Choose up to 6, if you like.",
+          commentLabel:
+            "Anything else you would like to tell us? Optional, up to 1000 characters.",
+          submit: "Send feedback",
+          retry: "Try again",
+          sending: "Sending feedback...",
+          thanks: "Thank you for telling us.",
+          error: "We could not send your feedback just now. Please try again.",
+        },
+        sv: {
+          grownUp: "Till dig som vuxen",
+          question: "Skulle er familj välja ett nytt äventyr som det här?",
+          yes: "Ja",
+          yesRetry: "Ja, försök igen",
+          notYet: "Inte än",
+          issueLegend:
+            "Vad gjorde att det inte kändes rätt än? Välj upp till 6 om du vill.",
+          commentLabel:
+            "Är det något mer du vill berätta? Valfritt, upp till 1000 tecken.",
+          submit: "Skicka feedback",
+          retry: "Försök igen",
+          sending: "Skickar feedback...",
+          thanks: "Tack för att du berättade.",
+          error: "Det gick inte att skicka din feedback just nu. Försök igen.",
+        },
+      };
+    function k({ artifactId: e, routeId: r, terminalBeatId: i, locale: s }) {
+      let [l, o] = (0, a.useState)(null),
+        [d, c] = (0, a.useState)([]),
+        [u, p] = (0, a.useState)(""),
+        [m, h] = (0, a.useState)(!1),
+        [g, y] = (0, a.useState)(!1),
+        [f, j] = (0, a.useState)(!1),
+        N = (0, a.useRef)(!1);
+      if (!e || !b.test(e)) return null;
+      let S = v[s];
+      async function w(t) {
+        if (!N.current) {
+          ((N.current = !0), o(t), h(!0), j(!1));
+          try {
+            let a = t ? [] : d,
+              s = t ? null : u.trim() || null;
+            (await (0, n.backendFetch)("/reader/feedback", {
+              method: "POST",
+              body: {
+                artifactId: e,
+                wouldReadAgain: t,
+                issueTags: a,
+                parentComment: s,
+                routeId: r ?? null,
+                terminalBeatId: i ?? null,
+              },
+            }),
+              y(!0));
+          } catch {
+            j(!0);
+          } finally {
+            ((N.current = !1), h(!1));
+          }
+        }
+      }
+      return g
+        ? (0, t.jsx)("p", {
+            "data-testid": "reader-feedback-thanks",
+            role: "status",
+            style: {
+              borderTop: "1px solid var(--card-line)",
+              paddingTop: "18px",
+              color: "var(--card-sub)",
+              fontFamily: "var(--ui)",
+              fontSize: ".92rem",
+              lineHeight: 1.5,
+            },
+            children: S.thanks,
+          })
+        : (0, t.jsxs)("form", {
+            "data-testid": "reader-feedback",
+            onSubmit: function (e) {
+              (e.preventDefault(), !1 === l && w(!1));
+            },
+            style: {
+              width: "min(680px, 100%)",
+              borderTop: "1px solid var(--card-line)",
+              paddingTop: "18px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "16px",
+              color: "var(--card-ink)",
+            },
+            children: [
+              (0, t.jsx)("p", {
+                style: {
+                  color: "var(--card-sub)",
+                  fontFamily: "var(--ui)",
+                  fontSize: ".82rem",
+                  fontWeight: 700,
+                },
+                children: S.grownUp,
+              }),
+              (0, t.jsxs)("fieldset", {
+                disabled: m,
+                style: { minWidth: 0, padding: 0, border: 0 },
+                children: [
+                  (0, t.jsx)("legend", {
+                    style: {
+                      maxWidth: "100%",
+                      padding: 0,
+                      fontFamily: "var(--serif)",
+                      fontSize: "1.05rem",
+                      fontWeight: 600,
+                      lineHeight: 1.55,
+                      color: "var(--card-ink)",
+                    },
+                    children: S.question,
+                  }),
+                  (0, t.jsxs)("div", {
+                    style: {
+                      display: "flex",
+                      flexWrap: "wrap",
+                      gap: "10px",
+                      marginTop: "12px",
+                    },
+                    children: [
+                      (0, t.jsx)("button", {
+                        type: "button",
+                        className: "btn btn-primary",
+                        "aria-pressed": !0 === l,
+                        onClick: () => void w(!0),
+                        style: {
+                          minHeight: "44px",
+                          padding: "10px 22px",
+                          fontSize: ".95rem",
+                        },
+                        children: f && !0 === l ? S.yesRetry : S.yes,
+                      }),
+                      (0, t.jsx)("button", {
+                        type: "button",
+                        className: "btn btn-ghost",
+                        "aria-pressed": !1 === l,
+                        onClick: function () {
+                          m || (o(!1), j(!1));
+                        },
+                        style: {
+                          minHeight: "44px",
+                          padding: "10px 22px",
+                          fontSize: ".95rem",
+                        },
+                        children: S.notYet,
+                      }),
+                    ],
+                  }),
+                ],
+              }),
+              !1 === l
+                ? (0, t.jsxs)(t.Fragment, {
+                    children: [
+                      (0, t.jsxs)("fieldset", {
+                        disabled: m,
+                        style: { minWidth: 0, padding: 0, border: 0 },
+                        children: [
+                          (0, t.jsx)("legend", {
+                            style: {
+                              maxWidth: "100%",
+                              padding: 0,
+                              color: "var(--card-sub)",
+                              fontFamily: "var(--ui)",
+                              fontSize: ".88rem",
+                              lineHeight: 1.5,
+                            },
+                            children: S.issueLegend,
+                          }),
+                          (0, t.jsx)("div", {
+                            style: {
+                              display: "grid",
+                              gridTemplateColumns:
+                                "repeat(auto-fit, minmax(min(220px, 100%), 1fr))",
+                              gap: "8px",
+                              marginTop: "10px",
+                            },
+                            children: x.map((e) => {
+                              let a = d.includes(e.tag),
+                                r = !a && d.length >= 6;
+                              return (0, t.jsxs)(
+                                "label",
+                                {
+                                  style: {
+                                    minHeight: "44px",
+                                    display: "flex",
+                                    alignItems: "center",
+                                    gap: "10px",
+                                    padding: "9px 12px",
+                                    border: "1px solid var(--trait-line)",
+                                    borderRadius: "8px",
+                                    background: a
+                                      ? "var(--trait-on-bg)"
+                                      : "transparent",
+                                    color: a
+                                      ? "var(--trait-on-ink)"
+                                      : "var(--trait-ink)",
+                                    fontFamily: "var(--ui)",
+                                    fontSize: ".88rem",
+                                    lineHeight: 1.35,
+                                    cursor: r ? "not-allowed" : "pointer",
+                                    opacity: r ? 0.55 : 1,
+                                  },
+                                  children: [
+                                    (0, t.jsx)("input", {
+                                      type: "checkbox",
+                                      name: "reader-feedback-issue",
+                                      value: e.tag,
+                                      checked: a,
+                                      disabled: r,
+                                      onChange: () => {
+                                        var t;
+                                        return (
+                                          (t = e.tag),
+                                          void c((e) =>
+                                            e.includes(t)
+                                              ? e.filter((e) => e !== t)
+                                              : e.length >= 6
+                                                ? e
+                                                : [...e, t],
+                                          )
+                                        );
+                                      },
+                                      style: {
+                                        width: "18px",
+                                        height: "18px",
+                                        flex: "none",
+                                        accentColor: "var(--accent)",
+                                      },
+                                    }),
+                                    (0, t.jsx)("span", { children: e[s] }),
+                                  ],
+                                },
+                                e.tag,
+                              );
+                            }),
+                          }),
+                        ],
+                      }),
+                      (0, t.jsxs)("div", {
+                        style: {
+                          display: "flex",
+                          flexDirection: "column",
+                          gap: "8px",
+                        },
+                        children: [
+                          (0, t.jsx)("label", {
+                            htmlFor: "reader-parent-comment",
+                            style: {
+                              color: "var(--card-sub)",
+                              fontFamily: "var(--ui)",
+                              fontSize: ".88rem",
+                              lineHeight: 1.5,
+                            },
+                            children: S.commentLabel,
+                          }),
+                          (0, t.jsx)("textarea", {
+                            id: "reader-parent-comment",
+                            maxLength: 1e3,
+                            value: u,
+                            disabled: m,
+                            onChange: (e) => p(e.target.value),
+                            style: {
+                              width: "100%",
+                              minHeight: "112px",
+                              resize: "vertical",
+                              border: "1px solid var(--choice-line)",
+                              borderRadius: "8px",
+                              padding: "12px",
+                              background: "var(--choice-bg)",
+                              color: "var(--choice-ink)",
+                              fontFamily: "var(--ui)",
+                              fontSize: "1rem",
+                              lineHeight: 1.5,
+                            },
+                          }),
+                        ],
+                      }),
+                      (0, t.jsx)("button", {
+                        type: "submit",
+                        className: "btn btn-primary",
+                        disabled: m,
+                        style: {
+                          alignSelf: "flex-start",
+                          minHeight: "44px",
+                          padding: "10px 22px",
+                          fontSize: ".95rem",
+                        },
+                        children: m ? S.sending : f ? S.retry : S.submit,
+                      }),
+                    ],
+                  })
+                : null,
+              m
+                ? (0, t.jsx)("p", {
+                    role: "status",
+                    style: {
+                      color: "var(--card-sub)",
+                      fontFamily: "var(--ui)",
+                      fontSize: ".88rem",
+                    },
+                    children: S.sending,
+                  })
+                : null,
+              f
+                ? (0, t.jsx)("p", {
+                    role: "alert",
+                    style: {
+                      color: "var(--coral-chip-ink)",
+                      fontFamily: "var(--ui)",
+                      fontSize: ".88rem",
+                      lineHeight: 1.5,
+                    },
+                    children: S.error,
+                  })
+                : null,
+            ],
+          });
+    }
+    var j = e.i(35768);
+    let N = {
+      en: {
+        carries: (e) => `What ${e} carries forward`,
+        finished: (e) =>
+          `Read to the end. This book now lives in ${(0, j.genitive)(e, "en")} world.`,
+        emberHeading: "Next time, maybe...",
+        nextAdventure: "Next adventure",
+        toBookshelf: "To the bookshelf",
+        readAgain: "Read again",
+        createHero: "Create your own hero",
+        howItWorks: "How it works",
+      },
+      sv: {
+        carries: (e) => `Vad ${e} b\xe4r med sig`,
+        finished: (e) =>
+          `L\xe4st \xe4nda till slutet. Den h\xe4r boken bor nu i ${(0, j.genitive)(e, "sv")} v\xe4rld.`,
+        emberHeading: "Nästa gång, kanske...",
+        nextAdventure: "Nästa äventyr",
+        toBookshelf: "Till bokhyllan",
+        readAgain: "Läs igen",
+        createHero: "Skapa er egen hjälte",
+        howItWorks: "Så funkar det",
+      },
+    };
+    function S({
+      title: e,
+      coverUrl: a,
+      childFirstName: n,
+      locale: i,
+      artifactId: s,
+      routeId: l,
+      terminalBeatId: o,
+      ember: d,
+      anonymous: c = !1,
+      onReplay: u,
+      replaying: p = !1,
+      feedback: m,
+    }) {
+      let h = N[i];
+      return (0, t.jsxs)("div", {
+        "data-testid": "reader-ceremony",
+        className: "reader-ceremony",
+        children: [
+          (0, t.jsxs)("div", {
+            "data-testid": "reader-keepsake",
+            className: "glass adv",
+            children: [
+              (0, t.jsxs)("div", {
+                className: "reader-keepsake-head",
+                children: [
+                  a
+                    ? (0, t.jsx)("img", {
+                        src: a,
+                        alt: "",
+                        className: "reader-keepsake-cover",
+                      })
+                    : null,
+                  (0, t.jsx)("h1", {
+                    className: "reader-ceremony-title",
+                    children: e,
+                  }),
+                ],
+              }),
+              (0, t.jsx)("p", {
+                className: "adv-sub",
+                children: h.finished(n),
+              }),
+            ],
+          }),
+          (0, t.jsxs)("div", {
+            className: "reader-ceremony-actions",
+            children: [
+              u
+                ? (0, t.jsx)("button", {
+                    type: "button",
+                    className: "btn btn-ghost",
+                    "data-testid": "reader-ceremony-replay",
+                    disabled: p,
+                    "aria-busy": p,
+                    onClick: u,
+                    children: h.readAgain,
+                  })
+                : null,
+              c
+                ? (0, t.jsxs)(t.Fragment, {
+                    children: [
+                      (0, t.jsx)(r.default, {
+                        className: "btn btn-primary",
+                        href: "/start",
+                        "data-testid": "ceremony-cta-start",
+                        style: { textDecoration: "none" },
+                        children: h.createHero,
+                      }),
+                      (0, t.jsx)(r.default, {
+                        className: "btn btn-ghost",
+                        href: "/",
+                        style: { textDecoration: "none" },
+                        children: h.howItWorks,
+                      }),
+                    ],
+                  })
+                : (0, t.jsxs)(t.Fragment, {
+                    children: [
+                      (0, t.jsx)(r.default, {
+                        className: "btn btn-primary",
+                        href: "/create",
+                        style: { textDecoration: "none" },
+                        children: h.nextAdventure,
+                      }),
+                      (0, t.jsx)(r.default, {
+                        className: "btn btn-ghost",
+                        href: "/",
+                        style: { textDecoration: "none" },
+                        children: h.toBookshelf,
+                      }),
+                    ],
+                  }),
+            ],
+          }),
+          m ??
+            (0, t.jsx)(k, {
+              artifactId: s,
+              routeId: l,
+              terminalBeatId: o,
+              locale: i,
+            }),
+          d?.hook
+            ? (0, t.jsxs)("div", {
+                "data-testid": "reader-ember",
+                className: "glass adv ember",
+                children: [
+                  (0, t.jsx)("span", {
+                    className: "chip gold",
+                    children: h.emberHeading,
+                  }),
+                  (0, t.jsx)("p", { className: "adv-sub", children: d.hook }),
+                ],
+              })
+            : null,
+        ],
+      });
+    }
+    let w = { sv: { theEnd: "Slut" }, en: { theEnd: "The End" } };
+    function T({ locale: e, onFinish: r, ...n }) {
+      let [i, s] = (0, a.useState)(!1);
+      return i
+        ? (0, t.jsx)(S, { locale: e, ...n })
+        : (0, t.jsx)("button", {
+            type: "button",
+            className: "btn btn-primary",
+            "data-testid": "reader-finish",
+            style: { alignSelf: "flex-start", marginTop: "24px" },
+            onClick: function () {
+              (s(!0), r?.());
+            },
+            children: w[e].theEnd,
+          });
+    }
+    function F({ question: e, locale: r, id: n }) {
+      let i = (0, a.useId)();
+      return e
+        ? (0, t.jsx)("p", {
+            id: n ?? i,
+            className: "prose-plain reader-choice-prompt",
+            lang: r,
+            "data-testid": "choice-prompt",
+            children: e,
+          })
+        : null;
+    }
+    let E = {
+      en: {
+        grownUp: "For grown-ups",
+        question: "Would your family choose another adventure like this?",
+        yes: "Yes",
+        yesRetry: "Yes, try again",
+        notYet: "Not yet",
+        notYetRetry: "Not yet, try again",
+        sending: "Sending...",
+        thanks: "Thank you for telling us.",
+        error: "We could not send your answer just now. Please try again.",
+      },
+      sv: {
+        grownUp: "Till dig som vuxen",
+        question: "Skulle er familj välja ett nytt äventyr som det här?",
+        yes: "Ja",
+        yesRetry: "Ja, försök igen",
+        notYet: "Inte än",
+        notYetRetry: "Inte än, försök igen",
+        sending: "Skickar...",
+        thanks: "Tack för att du berättade.",
+        error: "Det gick inte att skicka ditt svar just nu. Försök igen.",
+      },
+    };
+    function I({ storyId: e, pageId: r, locale: i }) {
+      let s = E[i],
+        [l, o] = (0, a.useState)(null),
+        [d, c] = (0, a.useState)(!1),
+        [u, p] = (0, a.useState)(!1),
+        [m, h] = (0, a.useState)(!1),
+        g = (0, a.useRef)(!1);
+      async function y(t) {
+        if (!g.current && !u) {
+          ((g.current = !0), o(t), c(!0), h(!1));
+          try {
+            (await (0, n.backendFetch)("/reader/feedback", {
+              method: "POST",
+              body: {
+                storyId: e,
+                pageId: r ?? null,
+                wouldReadAgain: t,
+                issueTags: [],
+              },
+            }),
+              p(!0));
+          } catch {
+            h(!0);
+          } finally {
+            ((g.current = !1), c(!1));
+          }
+        }
+      }
+      return u
+        ? (0, t.jsx)("p", {
+            "data-testid": "parent-feedback-thanks",
+            role: "status",
+            style: {
+              borderTop: "1px solid var(--card-line)",
+              paddingTop: "18px",
+              color: "var(--card-sub)",
+              fontFamily: "var(--ui)",
+              fontSize: ".92rem",
+              lineHeight: 1.5,
+            },
+            children: s.thanks,
+          })
+        : (0, t.jsxs)("div", {
+            "data-testid": "parent-feedback",
+            style: {
+              width: "min(680px, 100%)",
+              borderTop: "1px solid var(--card-line)",
+              paddingTop: "18px",
+              display: "flex",
+              flexDirection: "column",
+              gap: "12px",
+              color: "var(--card-ink)",
+            },
+            children: [
+              (0, t.jsx)("p", {
+                style: {
+                  margin: 0,
+                  color: "var(--card-sub)",
+                  fontFamily: "var(--ui)",
+                  fontSize: ".82rem",
+                  fontWeight: 700,
+                },
+                children: s.grownUp,
+              }),
+              (0, t.jsx)("p", {
+                className: "prose-plain",
+                style: {
+                  margin: 0,
+                  fontSize: "1.05rem",
+                  fontWeight: 600,
+                  lineHeight: 1.55,
+                  color: "var(--card-ink)",
+                },
+                children: s.question,
+              }),
+              (0, t.jsxs)("div", {
+                style: { display: "flex", flexWrap: "wrap", gap: "10px" },
+                children: [
+                  (0, t.jsx)("button", {
+                    type: "button",
+                    className: "btn btn-primary",
+                    disabled: d,
+                    "aria-pressed": !0 === l,
+                    onClick: () => void y(!0),
+                    style: {
+                      minHeight: "44px",
+                      padding: "10px 22px",
+                      fontSize: ".95rem",
+                    },
+                    children: m && !0 === l ? s.yesRetry : s.yes,
+                  }),
+                  (0, t.jsx)("button", {
+                    type: "button",
+                    className: "btn btn-ghost",
+                    disabled: d,
+                    "aria-pressed": !1 === l,
+                    onClick: () => void y(!1),
+                    style: {
+                      minHeight: "44px",
+                      padding: "10px 22px",
+                      fontSize: ".95rem",
+                    },
+                    children: m && !1 === l ? s.notYetRetry : s.notYet,
+                  }),
+                ],
+              }),
+              d
+                ? (0, t.jsx)("p", {
+                    role: "status",
+                    style: {
+                      margin: 0,
+                      color: "var(--card-sub)",
+                      fontFamily: "var(--ui)",
+                      fontSize: ".88rem",
+                    },
+                    children: s.sending,
+                  })
+                : null,
+              m
+                ? (0, t.jsx)("p", {
+                    role: "alert",
+                    style: {
+                      margin: 0,
+                      color: "var(--coral-chip-ink)",
+                      fontFamily: "var(--ui)",
+                      fontSize: ".88rem",
+                      lineHeight: 1.5,
+                    },
+                    children: s.error,
+                  })
+                : null,
+            ],
+          });
+    }
+    var B = e.i(3935);
+    let A = {
+      cold: !1,
+      heroName: "",
+      namedHero: null,
+      mems: [
+        {
+          memoryKey: "ambient:neutral",
+          emberId: null,
+          sourceKey: null,
+          hook: "",
+          storyTitle: null,
+          fresh: !1,
+        },
+      ],
+      logTitles: [null, null, null],
+      logKeys: [null, null, null],
+    };
+    function W() {
+      let e = (0, a.useRef)(null),
+        r = (0, a.useRef)(null);
+      return (
+        (0, a.useEffect)(() => {
+          let t = e.current,
+            a = r.current;
+          if (!t || !a) return;
+          let n =
+              "function" == typeof window.matchMedia &&
+              window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+            i = () =>
+              "morgon" === document.body.dataset.theme ? "morgon" : "natt",
+            s = (0, B.createGlodScene)(
+              {
+                stage: t,
+                canvas: a,
+                memWrap: document.createElement("div"),
+                memEmber: document.createElement("div"),
+                book: document.createElement("div"),
+                caption: document.createElement("div"),
+              },
+              A,
+              {
+                onMemOpen: () => {},
+                onMemClose: () => {},
+                onEmberPerched: () => {},
+                onBookVisible: () => {},
+                onCaptionVisible: () => {},
+              },
+              { theme: i(), reducedMotion: n, variant: "ambient" },
+            );
+          if (!s) return;
+          let l = t.clientWidth,
+            o = () => {
+              let e = t.clientWidth;
+              e !== l && ((l = e), s.resize());
+            },
+            d = null,
+            c = !1;
+          "function" == typeof ResizeObserver
+            ? (d = new ResizeObserver(o)).observe(t)
+            : ((c = !0), window.addEventListener("resize", o));
+          let u = new MutationObserver(() => s.setTheme(i()));
+          return (
+            u.observe(document.body, {
+              attributes: !0,
+              attributeFilter: ["data-theme"],
+            }),
+            () => {
+              (u.disconnect(),
+                d?.disconnect(),
+                c && window.removeEventListener("resize", o),
+                s.destroy());
+            }
+          );
+        }, []),
+        (0, t.jsx)("div", {
+          ref: e,
+          className: "glod-ambient",
+          "aria-hidden": "true",
+          "data-testid": "glod-ambient",
+          children: (0, t.jsx)("canvas", { ref: r }),
+        })
+      );
+    }
+    let C = {
+        en: {
+          next: "Next page",
+          restartStory: "Replay from the start",
+          viewIllustration: "View illustration",
+          backToStory: "Back to story",
+          pictureAlt: "Story illustration",
+          loadError: "That page could not be reached. Please try again.",
+          restartError: "We could not restart the story. Please try again.",
+          linkWait: "The next page is still being drawn.",
+          pageWaiting: "This page is still being made.",
+          pageMediaComing: "The picture and the voice are still coming.",
+          pageMediaMissing:
+            "This page kept its words, but its picture or its voice did not arrive.",
+          pageFailedLead: "This page did not come together.",
+          pageFailedHint: "The rest of the book is safe.",
+          toBookshelf: "Back to the bookshelf",
+        },
+        sv: {
+          next: "Nästa sida",
+          restartStory: "Börja om sagan",
+          viewIllustration: "Visa bara bilden",
+          backToStory: "Tillbaka till sagan",
+          pictureAlt: "Sagans illustration",
+          loadError: "Sidan gick inte att nå. Försök igen.",
+          restartError: "Sagan kunde inte startas om. Försök igen.",
+          linkWait: "Nästa sida målas fortfarande.",
+          pageWaiting: "Den här sidan målas fortfarande.",
+          pageMediaComing: "Bilden och rösten är på väg.",
+          pageMediaMissing:
+            "Den här sidan har sina ord, men bilden eller rösten kom inte fram.",
+          pageFailedLead: "Den här sidan blev inte klar.",
+          pageFailedHint: "Resten av boken är kvar.",
+          toBookshelf: "Tillbaka till bokhyllan",
+        },
+      },
+      R = { alignSelf: "flex-start", marginTop: "24px" };
+    function M({ label: e }) {
+      return (0, t.jsxs)("p", {
+        className: "reader-link-wait",
+        role: "status",
+        "data-testid": "reader-link-wait",
+        children: [
+          (0, t.jsx)("span", { className: "dotpulse", "aria-hidden": "true" }),
+          e,
+        ],
+      });
+    }
+    async function z(e) {
+      return e.slug
+        ? (0, n.backendFetch)("/reader/public/{slug}/page/{page_id}", {
+            params: { slug: e.slug, page_id: e.pageId },
+            timeoutMs: 15e3,
+          })
+        : (0, n.backendFetch)("/reader/story/{story_id}/page/{page_id}", {
+            params: { story_id: e.storyId, page_id: e.pageId },
+            timeoutMs: 15e3,
+          });
+    }
+    async function U(e) {
+      return e.slug
+        ? (0, n.backendFetch)("/reader/public/{slug}", {
+            params: { slug: e.slug },
+            timeoutMs: 15e3,
+          })
+        : (0, n.backendFetch)("/reader/story/{story_id}/restart", {
+            method: "POST",
+            params: { story_id: e.storyId },
+            timeoutMs: 15e3,
+          });
+    }
+    async function _(e) {
+      let t = await (0, n.backendFetch)("/reader/story/{story_id}", {
+        params: { story_id: e },
+        timeoutMs: 15e3,
+      });
+      return !t || "state" in t ? null : t;
+    }
+    async function H(e) {
+      await (0, n.backendFetch)("/reader/story/{story_id}/open", {
+        method: "POST",
+        params: { story_id: e },
+      });
+    }
+    e.s(
+      [
+        "StoryReader",
+        0,
+        function ({ storyId: e, initialPage: n, locale: i, slug: l }) {
+          let c,
+            p = C[i],
+            [m, h] = (0, a.useState)(n.resumed ? "page" : "cover"),
+            [g, y] = (0, a.useState)(n),
+            [b, x] = (0, a.useState)(!1),
+            [v, k] = (0, a.useState)(!1),
+            [j, N] = (0, a.useState)(null),
+            [w, E] = (0, a.useState)(!1),
+            [B, A] = (0, a.useState)(null),
+            [$, L] = (0, a.useState)(!1),
+            [P, O] = (0, a.useState)(!1),
+            D = (0, a.useRef)(null),
+            V = (0, a.useRef)(null),
+            q = (0, a.useId)(),
+            Y = (0, a.useRef)(g),
+            J = g.pageId,
+            K = g.text.trim().length > 0,
+            G = !(g.ready && g.links.every((e) => e.ready));
+          ((0, a.useEffect)(() => {
+            Y.current = g;
+          }, [g]),
+            (0, a.useEffect)(
+              () => () => {
+                null !== V.current && clearTimeout(V.current);
+              },
+              [],
+            ),
+            (0, a.useEffect)(() => {
+              if (!G) return;
+              let t = !1,
+                a = "cover" === m && !l,
+                r = () => {
+                  (a ? _(e) : z({ storyId: e, slug: l, pageId: J }))
+                    .then((e) => {
+                      t || !e || (Y.current.pageId === J && y(e));
+                    })
+                    .catch(() => {});
+                };
+              r();
+              let n = setInterval(r, 2500);
+              return () => {
+                ((t = !0), clearInterval(n));
+              };
+            }, [e, l, J, m, G]),
+            (0, a.useEffect)(() => {
+              if ("page" !== m || $) return;
+              let e = D.current;
+              e &&
+                (e.focus({ preventScroll: !0 }),
+                e.scrollIntoView?.({ block: "start", behavior: "auto" }));
+            }, [g.pageId, m, $]));
+          let X = async (t) => {
+              (null !== V.current &&
+                (clearTimeout(V.current), (V.current = null)),
+                k(!0),
+                N(null));
+              try {
+                let a = await z({ storyId: e, slug: l, pageId: t });
+                (y(a), x(!1), L(!1));
+              } catch {
+                N(p.loadError);
+              } finally {
+                k(!1);
+              }
+            },
+            Q = async () => {
+              (E(!0), A(null));
+              try {
+                let t = await U({ storyId: e, slug: l });
+                (y(t), x(!1), L(!1), h("page"));
+              } catch {
+                A(p.restartError);
+              } finally {
+                E(!1);
+              }
+            },
+            Z = () => {
+              (h("page"), l || H(e).catch(() => {}));
+            },
+            ee = j ?? B;
+          if ("cover" === m)
+            c = (0, t.jsxs)(t.Fragment, {
+              children: [
+                (0, t.jsx)(s, {
+                  title: g.title ?? "",
+                  coverUrl: g.coverUrl,
+                  childName: g.childName,
+                  locale: i,
+                  onRead: () => Z(),
+                  onListen: g.narrationUrl
+                    ? () => {
+                        (O(!0), Z());
+                      }
+                    : void 0,
+                }),
+                (0, t.jsx)(f, { locale: i, controls: !1 }),
+                (0, t.jsx)(u, {
+                  narrationUrl: g.narrationUrl,
+                  locale: i,
+                  controls: !1,
+                }),
+              ],
+            });
+          else if ($)
+            c = (0, t.jsxs)(t.Fragment, {
+              children: [
+                (0, t.jsx)(S, {
+                  locale: i,
+                  title: g.title ?? "",
+                  coverUrl: g.coverUrl,
+                  childFirstName: g.childName,
+                  anonymous: !!l,
+                  feedback: l
+                    ? void 0
+                    : (0, t.jsx)(I, {
+                        storyId: e,
+                        pageId: g.pageId,
+                        locale: i,
+                      }),
+                  onReplay: () => void Q(),
+                  replaying: w,
+                }),
+                (0, t.jsx)(f, { locale: i, controls: !1 }),
+                (0, t.jsx)(u, {
+                  narrationUrl: g.narrationUrl,
+                  locale: i,
+                  controls: !1,
+                }),
+                ee
+                  ? (0, t.jsx)("p", {
+                      role: "alert",
+                      className: "prose-plain",
+                      children: ee,
+                    })
+                  : null,
+              ],
+            });
+          else if (!K && g.failed)
+            c = (0, t.jsx)("div", {
+              ref: D,
+              tabIndex: -1,
+              className: "glass reader",
+              "data-testid": "reader-page-failed",
+              children: (0, t.jsxs)("div", {
+                className: "reader-body",
+                children: [
+                  (0, t.jsxs)("p", {
+                    role: "alert",
+                    className: "prose-plain",
+                    children: [p.pageFailedLead, " ", p.pageFailedHint],
+                  }),
+                  (0, t.jsx)(r.default, {
+                    href: "/",
+                    className: "btn btn-primary",
+                    style: { textDecoration: "none", alignSelf: "flex-start" },
+                    children: p.toBookshelf,
+                  }),
+                ],
+              }),
+            });
+          else if (K) {
+            let e = 1 === g.links.length ? g.links[0] : null,
+              a = g.links.every((e) => e.ready),
+              r = g.ready
+                ? null
+                : g.failed
+                  ? p.pageMediaMissing
+                  : p.pageMediaComing;
+            c = (0, t.jsx)("div", {
+              ref: D,
+              tabIndex: -1,
+              className: "glass reader",
+              "data-testid": "reader-beat",
+              "data-page-id": g.pageId,
+              children: (0, t.jsxs)("div", {
+                className: `reader-grid${b ? " reader-grid--illustration-only" : ""}`,
+                children: [
+                  (0, t.jsx)(o, {
+                    pictureUrl: g.pictureUrl,
+                    alt: p.pictureAlt,
+                    locale: i,
+                    models: g.models,
+                  }),
+                  g.pictureUrl
+                    ? (0, t.jsx)("button", {
+                        type: "button",
+                        className: "btn btn-ghost reader-illustration-toggle",
+                        "data-testid": "reader-illustration-toggle",
+                        "aria-pressed": b,
+                        onClick: () => x((e) => !e),
+                        children: b ? p.backToStory : p.viewIllustration,
+                      })
+                    : null,
+                  (0, t.jsxs)("div", {
+                    className: "reader-body",
+                    hidden: b && !!g.pictureUrl,
+                    children: [
+                      (0, t.jsx)("button", {
+                        type: "button",
+                        className: "btn btn-ghost reader-replay",
+                        "data-testid": "reader-restart-story",
+                        disabled: w,
+                        onClick: () => void Q(),
+                        children: p.restartStory,
+                      }),
+                      (0, t.jsx)(f, { locale: i }),
+                      (0, t.jsx)(u, {
+                        narrationUrl: g.narrationUrl,
+                        locale: i,
+                        autoPlay: P,
+                        onEnded: () => {
+                          if (!P || $) return;
+                          if (0 === g.links.length) return void L(!0);
+                          if (1 !== g.links.length) return;
+                          let e = g.links[0];
+                          e.ready &&
+                            (null !== V.current && clearTimeout(V.current),
+                            (V.current = setTimeout(() => {
+                              ((V.current = null), X(e.toPageId));
+                            }, 900)));
+                        },
+                      }),
+                      (0, t.jsx)(d, { text: g.text, locale: i }),
+                      r
+                        ? (0, t.jsxs)("p", {
+                            className: "reader-link-wait",
+                            role: "status",
+                            "data-testid": "reader-page-media-note",
+                            children: [
+                              g.failed
+                                ? null
+                                : (0, t.jsx)("span", {
+                                    className: "dotpulse",
+                                    "aria-hidden": "true",
+                                  }),
+                              r,
+                            ],
+                          })
+                        : null,
+                      ee
+                        ? (0, t.jsx)("p", {
+                            role: "alert",
+                            className: "prose-plain",
+                            children: ee,
+                          })
+                        : null,
+                      0 === g.links.length
+                        ? (0, t.jsx)(T, {
+                            locale: i,
+                            title: g.title ?? "",
+                            coverUrl: g.coverUrl,
+                            childFirstName: g.childName,
+                            anonymous: !!l,
+                            onFinish: () => L(!0),
+                            onReplay: () => void Q(),
+                            replaying: w,
+                          })
+                        : e
+                          ? (0, t.jsx)("button", {
+                              type: "button",
+                              className: "btn btn-primary",
+                              "data-testid": "reader-next",
+                              style: R,
+                              disabled: v,
+                              "aria-busy": v,
+                              onClick: () => X(e.toPageId),
+                              children: p.next,
+                            })
+                          : (0, t.jsxs)("div", {
+                              className: "reader-choice-group",
+                              "data-testid": "reader-choice",
+                              role: "group",
+                              "aria-labelledby": g.question ? q : void 0,
+                              children: [
+                                (0, t.jsx)(F, {
+                                  question: g.question,
+                                  locale: i,
+                                  id: q,
+                                }),
+                                (0, t.jsx)("div", {
+                                  className: "choice-row",
+                                  children: g.links.map((e) =>
+                                    (0, t.jsx)(
+                                      "button",
+                                      {
+                                        type: "button",
+                                        className: "choice",
+                                        "data-testid": "reader-option",
+                                        disabled: v,
+                                        "aria-busy": v,
+                                        onClick: () => X(e.toPageId),
+                                        children: e.label,
+                                      },
+                                      e.id,
+                                    ),
+                                  ),
+                                }),
+                                a ? null : (0, t.jsx)(M, { label: p.linkWait }),
+                              ],
+                            }),
+                      e && !e.ready
+                        ? (0, t.jsx)(M, { label: p.linkWait })
+                        : null,
+                    ],
+                  }),
+                ],
+              }),
+            });
+          } else
+            c = (0, t.jsx)("div", {
+              ref: D,
+              tabIndex: -1,
+              className: "glass reader",
+              "data-testid": "reader-page-waiting",
+              children: (0, t.jsx)("div", {
+                className: "reader-body",
+                children: (0, t.jsxs)("p", {
+                  className: "reader-link-wait",
+                  role: "status",
+                  children: [
+                    (0, t.jsx)("span", {
+                      className: "dotpulse",
+                      "aria-hidden": "true",
+                    }),
+                    p.pageWaiting,
+                  ],
+                }),
+              }),
+            });
+          return (0, t.jsxs)("section", { children: [(0, t.jsx)(W, {}), c] });
+        },
+      ],
+      88374,
+    );
+  });

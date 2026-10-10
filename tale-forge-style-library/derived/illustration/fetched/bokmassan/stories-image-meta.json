@@ -1,0 +1,641 @@
+{
+ "source": "Decoded from the React Server Components payload of https://tale-forge.app/bokmassan/saga/berattelser/<slug> (fetched 2026-10-09, read-only GET, cookie tf_locale=sv). Prose text omitted; image fields, alt text, style label and clue hotspots kept verbatim.",
+ "stories": [
+  {
+   "slug": "boken-som-foljde-med",
+   "title": "Valen som bar små berättelser",
+   "kind": "Mod och gemenskap",
+   "teaser": "När mässan släcks vaknar en val av boksidor. Nilo och morfar måste hjälpa dess små berättelser att hitta hem.",
+   "style": "Lysande gouache och papperskonst",
+   "voice": "Brage",
+   "aspect": "3 / 2",
+   "cover": "/bokmassan/berattelser/foljde-med/cover.webp",
+   "source_page": "https://tale-forge.app/bokmassan/saga/berattelser/boken-som-foljde-med",
+   "choice_question": "Hur hjälper Nilo berättelserna att hitta hem?",
+   "pages": [
+    {
+     "id": "opening",
+     "image": "/bokmassan/berattelser/foljde-med/cover.webp",
+     "alt": "Nilo och hans morfar ser en väldig pappersval vecklas ut ur en bok i en blå bokmässemonter; i valens kropp lyser ett litet hav av stjärnor och båtar.",
+     "clue": {
+      "x": 49,
+      "y": 20,
+      "label": "Den minsta båten",
+      "description": "Bland alla båtar på valens hav finns en som nästan försvinner i ljuset. Den bär en tunn guldtråd. Kanske är det just en liten berättelse som kan visa de andra vägen."
+     },
+     "library_path": "derived/illustration/fetched/bokmassan/foljde-med/cover.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "id": "middle-a",
+     "image": "/bokmassan/berattelser/foljde-med/middle-a.webp",
+     "alt": "Nilo och morfar står på valens vikta rygg ovanför ett stjärnblått hav där små pappersbåtar med slocknande lyktor driver mot en vit storm av oskrivna sidor.",
+     "library_path": "derived/illustration/fetched/bokmassan/foljde-med/middle-a.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "id": "middle-b",
+     "image": "/bokmassan/berattelser/foljde-med/middle-b.webp",
+     "alt": "Morfar berättar för Nilo om ett regnigt barndomsminne som öppnar sig som en liten pop-up-värld på valens rygg; en pappersbåts lykta tänds av berättelsen.",
+     "library_path": "derived/illustration/fetched/bokmassan/foljde-med/middle-b.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "id": "choice",
+     "image": "/bokmassan/berattelser/foljde-med/choice.webp",
+     "alt": "Nilo håller en skimrande guldtråd medan pappersvalen svävar över Bokmässan; en storm av vita sidor hotar små lyktbåtar som kan bindas samman eller få var sitt ljus.",
+     "library_path": "derived/illustration/fetched/bokmassan/foljde-med/choice.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "id": "ending-a",
+     "image": "/bokmassan/berattelser/foljde-med/ending-a.webp",
+     "alt": "Nilo binder ihop pappersbåtarna till en lysande flotta och familjer på Bokmässan samlas kring dem för att dela små berättelser medan morfar och valen lyssnar.",
+     "via_choice": "a",
+     "choice_label": "Knyt ihop båtarna så de kan hjälpa varandra",
+     "library_path": "derived/illustration/fetched/bokmassan/foljde-med/ending-a.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "id": "ending-b",
+     "image": "/bokmassan/berattelser/foljde-med/ending-b.webp",
+     "alt": "Nilo låter små pappersbåtar med egna gyllene ljus flyga från Bokmässan till många barns och vuxnas fönster i kvällsstaden medan morfar och pappersvalen ser på.",
+     "via_choice": "b",
+     "choice_label": "Ge varje båt ett eget ljus och låt den segla",
+     "library_path": "derived/illustration/fetched/bokmassan/foljde-med/ending-b.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "den-forsvunna-bokstaven",
+   "title": "Den försvunna bokstaven",
+   "kind": "En bildgåta",
+   "teaser": "Kevin och grannen från montern intill följer ett gyllene spår. En bokstav kan visa mer än ett ord.",
+   "style": "Lysande glasmosaik",
+   "voice": "Brage",
+   "aspect": "16 / 9",
+   "cover": "/bokmassan/berattelser/bokstaven/cover.webp",
+   "source_page": "https://tale-forge.app/bokmassan/saga/berattelser/den-forsvunna-bokstaven",
+   "choice_question": "Vilket spår följer Kevin och grannen först?",
+   "pages": [
+    {
+     "id": "opening",
+     "image": "/bokmassan/berattelser/bokstaven/cover.webp",
+     "alt": "Kevin i vit tröja och svart keps står med grannen i svart kavaj mellan montrarna; på golvet lyser V Ä N och en lykta kastar en skugga mot en tom plats.",
+     "clue": {
+      "x": 59,
+      "y": 87,
+      "label": "D:et i skuggan",
+      "description": "Lykthandtagets skugga ser ut som ett D när man går ett steg åt vänster. Det är inte den försvunna bokstaven, men skuggan kan hjälpa dem läsa ett ord."
+     },
+     "library_path": "derived/illustration/fetched/bokmassan/bokstaven/cover.webp",
+     "size": [
+      1376,
+      768
+     ]
+    },
+    {
+     "id": "choice",
+     "image": "/bokmassan/berattelser/bokstaven/choice.webp",
+     "alt": "Kevin och grannen står vid lyktan mellan Tale Forges bokhylla och hyllan med mjukisdjur; på golvet syns V Ä N och en D-formad skugga.",
+     "library_path": "derived/illustration/fetched/bokmassan/bokstaven/choice.webp",
+     "size": [
+      1376,
+      768
+     ]
+    },
+    {
+     "id": "ending-a",
+     "image": "/bokmassan/berattelser/bokstaven/ending-a.webp",
+     "alt": "Kevin och grannen hittar det riktiga gyllene D:et hos en liten pappersfigur bakom Tale Forges bokhylla och lägger bokstaven efter V Ä N.",
+     "via_choice": "a",
+     "choice_label": "Läs VÄND och leta bakom Kevins bokhylla",
+     "library_path": "derived/illustration/fetched/bokmassan/bokstaven/ending-a.webp",
+     "size": [
+      1376,
+      768
+     ]
+    },
+    {
+     "id": "ending-b",
+     "image": "/bokmassan/berattelser/bokstaven/ending-b.webp",
+     "alt": "Kevin och grannen hittar det gyllene D:et och en tom pappersbok bakom hyllan med mjukisdjur; de sitter sedan mellan montrarna och börjar en ny saga.",
+     "via_choice": "b",
+     "choice_label": "Följ dörrskuggan bakom grannens hylla",
+     "library_path": "derived/illustration/fetched/bokmassan/bokstaven/ending-b.webp",
+     "size": [
+      1376,
+      768
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "den-tysta-platsen",
+   "title": "Den tysta platsen",
+   "kind": "Att förstå varandra",
+   "teaser": "Mässan är full av ljud. Men i sagotältet finns en vän som behöver något helt annat.",
+   "style": "Pappersteater",
+   "voice": "Mira",
+   "aspect": "3 / 2",
+   "cover": "/bokmassan/berattelser/tysta-platsen/cover.webp",
+   "source_page": "https://tale-forge.app/bokmassan/saga/berattelser/den-tysta-platsen",
+   "choice_question": "Hur bjuder hon in sin vän?",
+   "pages": [
+    {
+     "id": "opening",
+     "image": "/bokmassan/berattelser/tysta-platsen/cover.webp",
+     "alt": "Två flickor vid det lila sagotältet; den ena håller en bok, den andra vilar med händerna över öronen medan mässan pågår bakom dem.",
+     "clue": {
+      "x": 76,
+      "y": 68,
+      "label": "Det lilla hörnet",
+      "description": "Bakom tältduken ligger en kudde i ett lugnt hörn. Där når mässans ljud inte fram lika starkt. Ibland är den bästa inbjudan att göra plats."
+     },
+     "library_path": "derived/illustration/fetched/bokmassan/tysta-platsen/cover.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "id": "choice",
+     "image": "/bokmassan/berattelser/tysta-platsen/choice.webp",
+     "alt": "Flickan i vitt visar boken för sin vän vid tältöppningen; ett stilla hörn med kudde syns bakom duken.",
+     "library_path": "derived/illustration/fetched/bokmassan/tysta-platsen/choice.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "id": "ending-a",
+     "image": "/bokmassan/berattelser/tysta-platsen/ending-a.webp",
+     "alt": "De två flickorna läser tillsammans på kuddar i det stilla lila tältet och hittar drakens gömda svans.",
+     "via_choice": "a",
+     "choice_label": "Gör en lugn läshörna inne i tältet",
+     "library_path": "derived/illustration/fetched/bokmassan/tysta-platsen/ending-a.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "id": "ending-b",
+     "image": "/bokmassan/berattelser/tysta-platsen/ending-b.webp",
+     "alt": "Vännen kommer utvilad från tältet med boken; flickan i vitt möter henne vid bokstället när mässljusen dämpas.",
+     "via_choice": "b",
+     "choice_label": "Låt vännen vila och spara boken till senare",
+     "library_path": "derived/illustration/fetched/bokmassan/tysta-platsen/ending-b.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "drakens-felknut",
+   "title": "Drakens felknut",
+   "kind": "Att göra det bra igen",
+   "teaser": "En pappersdrake går sönder mitt i leken. Vem vågar säga vad som faktiskt hände?",
+   "style": "Leranimering",
+   "voice": "Janne",
+   "aspect": "3 / 2",
+   "cover": "/bokmassan/berattelser/felknut/cover.webp",
+   "source_page": "https://tale-forge.app/bokmassan/saga/berattelser/drakens-felknut",
+   "choice_question": "Vad gör flickan i grått?",
+   "pages": [
+    {
+     "id": "opening",
+     "image": "/bokmassan/berattelser/felknut/cover.webp",
+     "alt": "En lekfull blå pappersdrake med gul bokmärkessvans flyger över Tale Forges blå matta, med två flickor och Jonas i montern.",
+     "clue": {
+      "x": 72,
+      "y": 73,
+      "label": "Knuten vid stolen",
+      "description": "På stolen sitter en liten blå pappersbit kvar, men snöret är fortfarande helt. Draken fastnade först; svansen gick av när någon drog i den. Båda sakerna kan vara sanna."
+     },
+     "library_path": "derived/illustration/fetched/bokmassan/felknut/cover.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "id": "choice",
+     "image": "/bokmassan/berattelser/felknut/choice.webp",
+     "alt": "Vid en låg stol håller flickan i grått den trasiga draksvansen medan hennes vän erbjuder nya bokmärken; Jonas väntar med tejp.",
+     "library_path": "derived/illustration/fetched/bokmassan/felknut/choice.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "id": "ending-a",
+     "image": "/bokmassan/berattelser/felknut/ending-a.webp",
+     "alt": "Flickorna knyter två gula svansar på draken tillsammans; draken flyger i glada öglor medan Jonas håller upp snöret.",
+     "via_choice": "a",
+     "choice_label": "Berätta att hon drog sönder svansen och fråga hur hon kan hjälpa",
+     "library_path": "derived/illustration/fetched/bokmassan/felknut/ending-a.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "id": "ending-b",
+     "image": "/bokmassan/berattelser/felknut/ending-b.webp",
+     "alt": "De två flickorna sitter bredvid den tejpade draken med en liten lapp på svansen: den ska lagas tillsammans nästa dag.",
+     "via_choice": "b",
+     "choice_label": "Laga svansen först och berätta sanningen när hon vågar",
+     "library_path": "derived/illustration/fetched/bokmassan/felknut/ending-b.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "glasspinnens-stora-rymning",
+   "title": "Glasspinnens stora rymning",
+   "kind": "En rolig röra",
+   "teaser": "En glasspinne får ben, en bokhylla nyser och Kevin får springa fortare än han tänkt.",
+   "style": "Färgstarkt bläck",
+   "voice": "Johnny",
+   "aspect": "3 / 2",
+   "cover": "/bokmassan/berattelser/glasspinnen/cover.webp",
+   "source_page": "https://tale-forge.app/bokmassan/saga/berattelser/glasspinnens-stora-rymning",
+   "choice_question": "Hur räddar de den rymmande glassen?",
+   "pages": [
+    {
+     "id": "opening",
+     "image": "/bokmassan/berattelser/glasspinnen/cover.webp",
+     "alt": "En färgglad glasspinne med strösselben rusar över blå matta mellan Kevin i vit tröja och keps, Jonas i mörkblå tröja och två skrattande flickor.",
+     "clue": {
+      "x": 72,
+      "y": 60,
+      "label": "Lappen under strösslet",
+      "description": "På den pyttelilla lappen står: 'Jag vill inte smälta innan sagan är slut.' Den rymmande glassen är kanske inte busig. Den har bråttom av en anledning."
+     },
+     "library_path": "derived/illustration/fetched/bokmassan/glasspinnen/cover.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "id": "choice",
+     "image": "/bokmassan/berattelser/glasspinnen/choice.webp",
+     "alt": "Den smältande glasspinnen balanserar på bokhyllan; Kevin håller en kylväska och flickan i grått håller upp en sagobok.",
+     "library_path": "derived/illustration/fetched/bokmassan/glasspinnen/choice.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "id": "ending-a",
+     "image": "/bokmassan/berattelser/glasspinnen/ending-a.webp",
+     "alt": "Flickorna läser vid en öppen kylväska där den lyckliga glasspinnen lyssnar; Kevin och Jonas skrattar bredvid bokhyllan.",
+     "via_choice": "a",
+     "choice_label": "Locka ner den i kylväskan och läs genom den öppna luckan",
+     "library_path": "derived/illustration/fetched/bokmassan/glasspinnen/ending-a.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "id": "ending-b",
+     "image": "/bokmassan/berattelser/glasspinnen/ending-b.webp",
+     "alt": "En liten skuggig sagoscen av böcker och kuddar; glasspinnen lyssnar medan Kevin läser, flickorna ler och Jonas lyfter solskyddet.",
+     "via_choice": "b",
+     "choice_label": "Bygg en skuggig sagoscen och läs slutet direkt",
+     "library_path": "derived/illustration/fetched/bokmassan/glasspinnen/ending-b.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "nar-mattan-blev-hav",
+   "title": "När mattan blev hav",
+   "kind": "Ett stort äventyr",
+   "teaser": "Den blå mattan börjar bölja och hela montern blir ett skepp. Vem får styra när kartan tar slut?",
+   "style": "Nordiskt träsnitt",
+   "voice": "Sanna",
+   "aspect": "16 / 9",
+   "cover": "/bokmassan/berattelser/matthavet/cover.webp",
+   "source_page": "https://tale-forge.app/bokmassan/saga/berattelser/nar-mattan-blev-hav",
+   "choice_question": "Vilken ö seglar de till först?",
+   "pages": [
+    {
+     "id": "opening",
+     "image": "/bokmassan/berattelser/matthavet/cover.webp",
+     "alt": "Tale Forges blå matta har blivit ett sagohav; det lila tältet seglar med två flickor medan Kevin, Monika och Jonas håller i montern.",
+     "clue": {
+      "x": 43,
+      "y": 77,
+      "label": "Kartans lilla våg",
+      "description": "Nere i kartans hörn finns ett blått vågtecken ritat bredvid en ensam röd prick. Det pekar mot ön där någon ropar. Kanske visar kartan inte den vackraste vägen, utan den som behövs mest."
+     },
+     "library_path": "derived/illustration/fetched/bokmassan/matthavet/cover.webp",
+     "size": [
+      1376,
+      768
+     ]
+    },
+    {
+     "id": "choice",
+     "image": "/bokmassan/berattelser/matthavet/choice.webp",
+     "alt": "Tältbåten driver mellan en röd ö där någon ropar och en ö med lysande bokträd; flickorna håller kartan medan vuxna sköter seglet.",
+     "library_path": "derived/illustration/fetched/bokmassan/matthavet/choice.webp",
+     "size": [
+      1376,
+      768
+     ]
+    },
+    {
+     "id": "ending-a",
+     "image": "/bokmassan/berattelser/matthavet/ending-a.webp",
+     "alt": "Flickorna befriar en liten bokdrake på den röda ön; den flyger hem bredvid tältbåten med en lysande sida.",
+     "via_choice": "a",
+     "choice_label": "Segla till ön där någon ropar",
+     "library_path": "derived/illustration/fetched/bokmassan/matthavet/ending-a.webp",
+     "size": [
+      1376,
+      768
+     ]
+    },
+    {
+     "id": "ending-b",
+     "image": "/bokmassan/berattelser/matthavet/ending-b.webp",
+     "alt": "Tältbåten återvänder till blå matta i skymningen; flickorna och vuxna paddlar med bilderböcker medan en befriad bokdrake bär en lykta.",
+     "via_choice": "b",
+     "choice_label": "Hämta ljuset i bokträdet så alla hittar hem",
+     "library_path": "derived/illustration/fetched/bokmassan/matthavet/ending-b.webp",
+     "size": [
+      1376,
+      768
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "nattaget-fran-bla-mattan",
+   "title": "Nattåget från blå mattan",
+   "kind": "Ett tokigt äventyr",
+   "teaser": "När montern stänger rullar ett tåg av böcker i väg. Kevin, Jonas och Monika får en oväntad konduktör.",
+   "style": "Lekfull leranimation",
+   "voice": "Johnny",
+   "aspect": "16 / 9",
+   "cover": "/bokmassan/berattelser/nattaget/cover.webp",
+   "source_page": "https://tale-forge.app/bokmassan/saga/berattelser/nattaget-fran-bla-mattan",
+   "choice_question": "Hur når boktåget Imorgon?",
+   "pages": [
+    {
+     "id": "opening",
+     "image": "/bokmassan/berattelser/nattaget/cover.webp",
+     "alt": "Kevin i vit tröja och svart keps, Jonas i blå tröja och Monika åker på ett fantasitåg byggt av böcker över Tale Forges blå matta; konduktören fru Blom bär gul regnrock.",
+     "clue": {
+      "x": 44,
+      "y": 73,
+      "label": "Bokmärkena vid hjulen",
+      "description": "Tågets hjul är fästa med bokmärken. Om ett hjul lossnar kan bokmärkena också bli ny räls. Jonas kanske redan har materialet han behöver för att laga spåret."
+     },
+     "library_path": "derived/illustration/fetched/bokmassan/nattaget/cover.webp",
+     "size": [
+      1376,
+      768
+     ]
+    },
+    {
+     "id": "middle-a",
+     "image": "/bokmassan/berattelser/nattaget/middle-a.webp",
+     "alt": "Boktåget färdas genom den stängda Bokmässans sagolika gångar; Kevin, Jonas, Monika och fru Blom ser en pappersdrake flyga bredvid och en sträcka med saknad räls längre fram.",
+     "library_path": "derived/illustration/fetched/bokmassan/nattaget/middle-a.webp",
+     "size": [
+      1376,
+      768
+     ]
+    },
+    {
+     "id": "middle-b",
+     "image": "/bokmassan/berattelser/nattaget/middle-b.webp",
+     "alt": "Det lilla boktåget står vid en bruten räls av bokmärken; Kevin visar ett löst bokmärke, Monika lyser med en lykta och Jonas ser en tunnel genom en jättestor uppslagen bok.",
+     "library_path": "derived/illustration/fetched/bokmassan/nattaget/middle-b.webp",
+     "size": [
+      1376,
+      768
+     ]
+    },
+    {
+     "id": "choice",
+     "image": "/bokmassan/berattelser/nattaget/choice.webp",
+     "alt": "Boktåget stannar mellan en stängd mässhalldörr med trasig räls och en tunnel av ett enormt uppslaget sista kapitel; Kevin, Jonas och Monika överväger vägen.",
+     "library_path": "derived/illustration/fetched/bokmassan/nattaget/choice.webp",
+     "size": [
+      1376,
+      768
+     ]
+    },
+    {
+     "id": "ending-a",
+     "image": "/bokmassan/berattelser/nattaget/ending-a.webp",
+     "alt": "Kevin, Jonas och Monika åker sitt lagade boktåg genom en målad dörr på en jättestor boksida och ut i varmt morgonljus; fru Blom vinkar.",
+     "via_choice": "a",
+     "choice_label": "Laga rälsen tillsammans och kör mot dörren",
+     "library_path": "derived/illustration/fetched/bokmassan/nattaget/ending-a.webp",
+     "size": [
+      1376,
+      768
+     ]
+    },
+    {
+     "id": "ending-b",
+     "image": "/bokmassan/berattelser/nattaget/ending-b.webp",
+     "alt": "Boktåget kommer ut på en strand av oskrivna papperssidor med flygande bokstäver; Kevin, Jonas, Monika och fru Blom skriver en ny första mening.",
+     "via_choice": "b",
+     "choice_label": "Ta genvägen genom det sista kapitlet",
+     "library_path": "derived/illustration/fetched/bokmassan/nattaget/ending-b.webp",
+     "size": [
+      1376,
+      768
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "ravens-nya-hem",
+   "title": "Rävens nya hem",
+   "kind": "Trygghet och mod",
+   "teaser": "Ett litet mjukisdjur i grannmontern är rädd för att lämna sin hylla. Grannen och Monika lyssnar innan de hjälper.",
+   "style": "Mjuk filtillustration",
+   "voice": "Brage",
+   "aspect": "16 / 9",
+   "cover": "/bokmassan/berattelser/ravens-hem/cover.webp",
+   "source_page": "https://tale-forge.app/bokmassan/saga/berattelser/ravens-nya-hem",
+   "choice_question": "Vad hjälper räven att känna sig trygg?",
+   "pages": [
+    {
+     "id": "opening",
+     "image": "/bokmassan/berattelser/ravens-hem/cover.webp",
+     "alt": "Grannen i svart kavaj och Monika vid en hylla med påhittade mjukisdjur; pojken Sami sitter på huk framför en blyg liten räv med nedvikt öra.",
+     "clue": {
+      "x": 42,
+      "y": 70,
+      "label": "Tråden vid rävens tass",
+      "description": "Den lilla tråden sitter inte fast i hyllan. Den är knuten kring rävens tass som ett minne. Kanske är räven rädd att lämna något bakom sig, inte rädd för Sami."
+     },
+     "library_path": "derived/illustration/fetched/bokmassan/ravens-hem/cover.webp",
+     "size": [
+      1376,
+      768
+     ]
+    },
+    {
+     "id": "middle-a",
+     "image": "/bokmassan/berattelser/ravens-hem/middle-a.webp",
+     "alt": "Grannen i svart kavaj berättar för Sami och Monika om den lilla rävens första dag på mjukisdjurshyllan; en röd minnestråd förbinder räven med en liten björn.",
+     "library_path": "derived/illustration/fetched/bokmassan/ravens-hem/middle-a.webp",
+     "size": [
+      1376,
+      768
+     ]
+    },
+    {
+     "id": "middle-b",
+     "image": "/bokmassan/berattelser/ravens-hem/middle-b.webp",
+     "alt": "Sami visar den blyga räven en teckning av en solig fönsterbräda och en bok; Monika knyter ett litet blått band intill rävens röda tråd medan grannen håller en tygpåse.",
+     "library_path": "derived/illustration/fetched/bokmassan/ravens-hem/middle-b.webp",
+     "size": [
+      1376,
+      768
+     ]
+    },
+    {
+     "id": "choice",
+     "image": "/bokmassan/berattelser/ravens-hem/choice.webp",
+     "alt": "Sami håller handen öppen vid mjukisdjurshyllan; räven håller sin tråd, grannen visar en tygpåse och Monika sitter bredvid och lyssnar.",
+     "library_path": "derived/illustration/fetched/bokmassan/ravens-hem/choice.webp",
+     "size": [
+      1376,
+      768
+     ]
+    },
+    {
+     "id": "ending-a",
+     "image": "/bokmassan/berattelser/ravens-hem/ending-a.webp",
+     "alt": "Sami bär försiktigt den lilla räven i sin hand ut från grannmontern; Monika och kvinnan i svart kavaj vinkar medan andra mjukisdjur syns på hyllan.",
+     "via_choice": "a",
+     "choice_label": "Visa räven vägen till ett nytt hem i dag",
+     "library_path": "derived/illustration/fetched/bokmassan/ravens-hem/ending-a.webp",
+     "size": [
+      1376,
+      768
+     ]
+    },
+    {
+     "id": "ending-b",
+     "image": "/bokmassan/berattelser/ravens-hem/ending-b.webp",
+     "alt": "Nästa morgon sitter den lilla räven modigt längst fram på grannmonterns hylla och sträcker sig mot Samis öppna hand; grannen och Monika ler.",
+     "via_choice": "b",
+     "choice_label": "Låt räven stanna och kom tillbaka i morgon",
+     "library_path": "derived/illustration/fetched/bokmassan/ravens-hem/ending-b.webp",
+     "size": [
+      1376,
+      768
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "stjarnan-som-inte-vagade-lysa",
+   "title": "Stjärnan som inte vågade lysa",
+   "kind": "Mod och känslor",
+   "teaser": "Två vänner hittar en liten stjärna under sagotältet. Den har tappat bort sitt mod – och vägen hem.",
+   "style": "Filmisk gouache",
+   "voice": "Sanna",
+   "aspect": "3 / 2",
+   "cover": "/bokmassan/berattelser/stjarnan/cover.webp",
+   "source_page": "https://tale-forge.app/bokmassan/saga/berattelser/stjarnan-som-inte-vagade-lysa",
+   "choice_question": "Var får stjärnan börja lysa?",
+   "pages": [
+    {
+     "id": "opening",
+     "image": "/bokmassan/berattelser/stjarnan/cover.webp",
+     "alt": "Två flickor hittar en liten lysande stjärna på den blå mattan i sagomontern; Monika och Kevin ser på.",
+     "clue": {
+      "x": 82,
+      "y": 17,
+      "label": "En liten stjärna i tältet",
+      "description": "På det lila tältets kant lyser en stjärna svagt. Ljuset är lika varmt som ljuset från den lilla stjärnan på golvet. Kanske finns det fler sätt att lysa än högt uppe i taket."
+     },
+     "library_path": "derived/illustration/fetched/bokmassan/stjarnan/cover.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "id": "choice",
+     "image": "/bokmassan/berattelser/stjarnan/choice.webp",
+     "alt": "Flickorna håller stjärnan mellan det mjukt upplysta lästältet och den höga ljusslingan.",
+     "library_path": "derived/illustration/fetched/bokmassan/stjarnan/choice.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "id": "ending-a",
+     "image": "/bokmassan/berattelser/stjarnan/ending-a.webp",
+     "alt": "Stjärnan lyser mjukt från det lila lästältet medan ett barn läser sin bok.",
+     "via_choice": "a",
+     "choice_label": "Sätt den vid sagotältet, nära barnet som läser",
+     "library_path": "derived/illustration/fetched/bokmassan/stjarnan/ending-a.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    },
+    {
+     "id": "ending-b",
+     "image": "/bokmassan/berattelser/stjarnan/ending-b.webp",
+     "alt": "Den lilla stjärnan lyser bland monterväggens ljusslinga ovanför flickorna, Kevin och Monika.",
+     "via_choice": "b",
+     "choice_label": "Hjälp den upp till sin plats i ljusslingan",
+     "library_path": "derived/illustration/fetched/bokmassan/stjarnan/ending-b.webp",
+     "size": [
+      1536,
+      1024
+     ]
+    }
+   ]
+  }
+ ]
+}

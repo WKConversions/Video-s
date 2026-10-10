@@ -1,0 +1,125 @@
+/* Tale Forge: every prefers-reduced-motion block in the harvested CSS, verbatim, with source lines. */
+
+/* source/css/3q17cp_jgfwol.pretty.css:2085-2091 */
+@media (prefers-reduced-motion: no-preference) {
+  .reader-img {
+    transition:
+      width 0.3s,
+      aspect-ratio 0.3s;
+  }
+}
+
+/* source/css/3q17cp_jgfwol.pretty.css:2349-2372 */
+@media (prefers-reduced-motion: reduce) {
+  .fb1,
+  .fb2,
+  .badge,
+  .dotpulse,
+  .starfield {
+    animation: none;
+  }
+  body,
+  .bg,
+  .tt,
+  .tt-thumb,
+  .tt-opt {
+    transition: none;
+  }
+  .reveal {
+    opacity: 1;
+    transition: none;
+    transform: none;
+  }
+  .comp-chosen {
+    transition: none;
+  }
+}
+
+/* source/css/3q17cp_jgfwol.pretty.css:3213-3227 */
+@media (prefers-reduced-motion: reduce) {
+  .hiw-map .map-path-lit--lit,
+  .hiw-map .map-path-lit--fading,
+  .hiw-map .map-medallion {
+    transition: none;
+  }
+  .hiw-memory-tag .dotpulse {
+    animation: none;
+  }
+  .hiw-play,
+  .hiw-play:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* source/css/2h1wwdz1nvxwk.pretty.css:589-593 */
+@media (prefers-reduced-motion: reduce) {
+  .cs-chip {
+    transition: none;
+  }
+}
+
+/* source/css/37m388zf6rymp.pretty.css:1052-1072 */
+@media (prefers-reduced-motion: reduce) {
+  .glod-pulse-dot,
+  .glod-wb-steps li.active .dot {
+    animation: none;
+  }
+  .glod-active-ember {
+    transition: none;
+  }
+  .glod-active-ember-core,
+  .glod-mem-float,
+  .glod-mem-ember.on .glod-mem-ember-core {
+    animation: none;
+  }
+  .glod-book {
+    transition: opacity 0.4s;
+    transform: none;
+  }
+  .glod-book.show {
+    transform: none;
+  }
+}
+
+/* source/css/2_gt301v4m-60.pretty.css:913-951 */
+@media (prefers-reduced-motion: reduce) {
+  .start-flow .start-screen,
+  .start-flow .gallery.open,
+  .start-flow .paintpill,
+  .start-flow .reveal-line.on,
+  .start-flow .reveal-name.on,
+  .start-flow .reveal-actions.on,
+  .start-flow .sheet {
+    animation: none;
+  }
+  .start-flow .adv,
+  .start-flow .adv:hover {
+    transition: none;
+    transform: none;
+  }
+  .start-flow .paintpill .dotpulse,
+  .start-flow .pframe .veil svg {
+    animation: none;
+  }
+  .start-flow .easel img {
+    transition: opacity 0.2s;
+  }
+  .start-flow .embers.go .ember,
+  .start-flow .unveil-armed.ready-pop {
+    animation: none;
+  }
+  .start-flow .easel .veil-glow {
+    opacity: 0.6;
+    animation: none;
+  }
+  .start-flow .veil-speck {
+    opacity: 0.4;
+    animation: none;
+  }
+  .start-flow .veil-caption {
+    opacity: 1;
+    animation: none;
+  }
+}
+

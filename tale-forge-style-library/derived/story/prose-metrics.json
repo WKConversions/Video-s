@@ -1,0 +1,754 @@
+{
+ "source": "source/sample-book.iris-och-den-sparade-platsen.json",
+ "method": {
+  "LIX": "words/sentences + 100*words_longer_than_6_letters/words; sentence terminators . : ! ? (Björnsson). Scale: <25 children's books, 25-30 easy, 30-40 normal/fiction, 40-50 factual, >50 bureaucratic.",
+  "tenseProbe": "Counts of a closed list of common past-tense vs present-tense finite verb forms in narration (text outside double quotes). Indicative only.",
+  "audio": "mp3DurationS measured with ffprobe on assets/share/iris-sparade-platsen/assets/<beat>.mp3; jsonAudioMetaMs is beats[].assets.audio.meta.ms in the JSON (differs from the shipped files)."
+ },
+ "wholeBook": {
+  "beats": 14,
+  "uniqueProseWords": 427,
+  "words": 1514,
+  "sentences": 178,
+  "meanSentenceWords": 8.51,
+  "LIX": 27.8
+ },
+ "perPath": [
+  {
+   "path": "AA",
+   "beats": [
+    "S1",
+    "S2",
+    "S3A",
+    "S4A",
+    "S5AA",
+    "S6AA"
+   ],
+   "words": 669,
+   "sentences": 78,
+   "meanSentenceWords": 8.58,
+   "LIX": 24.9,
+   "mp3TotalS": 378.1,
+   "mp3TotalMinSec": "6:18",
+   "jsonMetaTotalS": 198.8
+  },
+  {
+   "path": "AB",
+   "beats": [
+    "S1",
+    "S2",
+    "S3A",
+    "S4A",
+    "S5AB",
+    "S6AB"
+   ],
+   "words": 660,
+   "sentences": 78,
+   "meanSentenceWords": 8.46,
+   "LIX": 26.0,
+   "mp3TotalS": 381.0,
+   "mp3TotalMinSec": "6:21",
+   "jsonMetaTotalS": 205.6
+  },
+  {
+   "path": "BA",
+   "beats": [
+    "S1",
+    "S2",
+    "S3B",
+    "S4B",
+    "S5BA",
+    "S6BA"
+   ],
+   "words": 667,
+   "sentences": 77,
+   "meanSentenceWords": 8.66,
+   "LIX": 27.0,
+   "mp3TotalS": 385.7,
+   "mp3TotalMinSec": "6:25",
+   "jsonMetaTotalS": 192.7
+  },
+  {
+   "path": "BB",
+   "beats": [
+    "S1",
+    "S2",
+    "S3B",
+    "S4B",
+    "S5BB",
+    "S6BB"
+   ],
+   "words": 662,
+   "sentences": 80,
+   "meanSentenceWords": 8.28,
+   "LIX": 27.2,
+   "mp3TotalS": 395.5,
+   "mp3TotalMinSec": "6:35",
+   "jsonMetaTotalS": 199.2
+  }
+ ],
+ "perBeat": [
+  {
+   "beatId": "S1",
+   "slot": 1,
+   "pathTag": "neutral",
+   "hasChoice": false,
+   "choiceKind": null,
+   "words": 128,
+   "sentences": 15,
+   "paragraphs": 5,
+   "meanSentenceWords": 8.53,
+   "medianSentenceWords": 9,
+   "maxSentenceWords": 12,
+   "minSentenceWords": 2,
+   "longWordsOver6": 17,
+   "longWordShare": 0.133,
+   "LIX": 21.8,
+   "dialogueLines": 3,
+   "dialogueWords": 48,
+   "dialogueShare": 0.375,
+   "narrationPastTenseProbeHits": 13,
+   "narrationPresentTenseProbeHits": 0,
+   "mp3DurationS": 67.08,
+   "jsonAudioMetaMs": 34596,
+   "wpmVsMp3": 114.5,
+   "wpmVsJsonMeta": 222.0,
+   "sensoryProbeHits": 2
+  },
+  {
+   "beatId": "S2",
+   "slot": 2,
+   "pathTag": "neutral",
+   "hasChoice": true,
+   "choiceKind": "path",
+   "words": 114,
+   "sentences": 14,
+   "paragraphs": 5,
+   "meanSentenceWords": 8.14,
+   "medianSentenceWords": 8,
+   "maxSentenceWords": 16,
+   "minSentenceWords": 4,
+   "longWordsOver6": 16,
+   "longWordShare": 0.14,
+   "LIX": 22.2,
+   "dialogueLines": 3,
+   "dialogueWords": 15,
+   "dialogueShare": 0.132,
+   "narrationPastTenseProbeHits": 16,
+   "narrationPresentTenseProbeHits": 0,
+   "mp3DurationS": 67.464,
+   "jsonAudioMetaMs": 41457,
+   "wpmVsMp3": 101.4,
+   "wpmVsJsonMeta": 165.0,
+   "sensoryProbeHits": 2,
+   "choicePrompt": "Det hettade i Iris händer; de ville rycka i stolen. Före sagostunden hinner hon bara rita på ett ställe. Vad gör hon?",
+   "choicePromptWords": 22,
+   "optionLabels": [
+    "Gå med Mossa till den gröna mattan.",
+    "Stanna och rita med det nya barnet i fönsterljuset."
+   ],
+   "optionLabelWords": [
+    7,
+    9
+   ],
+   "optionFirstWord": [
+    "Gå",
+    "Stanna"
+   ]
+  },
+  {
+   "beatId": "S3A",
+   "slot": 3,
+   "pathTag": "neutral",
+   "hasChoice": false,
+   "choiceKind": null,
+   "words": 110,
+   "sentences": 12,
+   "paragraphs": 4,
+   "meanSentenceWords": 9.17,
+   "medianSentenceWords": 10,
+   "maxSentenceWords": 12,
+   "minSentenceWords": 4,
+   "longWordsOver6": 23,
+   "longWordShare": 0.209,
+   "LIX": 30.1,
+   "dialogueLines": 2,
+   "dialogueWords": 14,
+   "dialogueShare": 0.127,
+   "narrationPastTenseProbeHits": 17,
+   "narrationPresentTenseProbeHits": 0,
+   "mp3DurationS": 64.32,
+   "jsonAudioMetaMs": 40515,
+   "wpmVsMp3": 102.6,
+   "wpmVsJsonMeta": 162.9,
+   "sensoryProbeHits": 3
+  },
+  {
+   "beatId": "S3B",
+   "slot": 3,
+   "pathTag": "neutral",
+   "hasChoice": false,
+   "choiceKind": null,
+   "words": 106,
+   "sentences": 12,
+   "paragraphs": 4,
+   "meanSentenceWords": 8.83,
+   "medianSentenceWords": 10,
+   "maxSentenceWords": 14,
+   "minSentenceWords": 3,
+   "longWordsOver6": 21,
+   "longWordShare": 0.198,
+   "LIX": 28.6,
+   "dialogueLines": 2,
+   "dialogueWords": 7,
+   "dialogueShare": 0.066,
+   "narrationPastTenseProbeHits": 18,
+   "narrationPresentTenseProbeHits": 0,
+   "mp3DurationS": 66.12,
+   "jsonAudioMetaMs": 28008,
+   "wpmVsMp3": 96.2,
+   "wpmVsJsonMeta": 227.1,
+   "sensoryProbeHits": 3
+  },
+  {
+   "beatId": "S4A",
+   "slot": 4,
+   "pathTag": "neutral",
+   "hasChoice": true,
+   "choiceKind": "ordeal",
+   "words": 100,
+   "sentences": 12,
+   "paragraphs": 4,
+   "meanSentenceWords": 8.33,
+   "medianSentenceWords": 9,
+   "maxSentenceWords": 14,
+   "minSentenceWords": 4,
+   "longWordsOver6": 16,
+   "longWordShare": 0.16,
+   "LIX": 24.3,
+   "dialogueLines": 2,
+   "dialogueWords": 14,
+   "dialogueShare": 0.14,
+   "narrationPastTenseProbeHits": 14,
+   "narrationPresentTenseProbeHits": 0,
+   "mp3DurationS": 53.304,
+   "jsonAudioMetaMs": 28627,
+   "wpmVsMp3": 112.6,
+   "wpmVsJsonMeta": 209.6,
+   "sensoryProbeHits": 2,
+   "choicePrompt": "Mosskartan ska hängas upp, och bara en tur med silverpennan återstår. Vem får rita kartans sista tecken?",
+   "choicePromptWords": 17,
+   "optionLabels": [
+    "Låt Mossa rita månen.",
+    "Låt det nya barnet rita fågeln."
+   ],
+   "optionLabelWords": [
+    4,
+    6
+   ],
+   "optionFirstWord": [
+    "Låt",
+    "Låt"
+   ]
+  },
+  {
+   "beatId": "S4B",
+   "slot": 4,
+   "pathTag": "neutral",
+   "hasChoice": true,
+   "choiceKind": "ordeal",
+   "words": 102,
+   "sentences": 12,
+   "paragraphs": 4,
+   "meanSentenceWords": 8.5,
+   "medianSentenceWords": 8,
+   "maxSentenceWords": 14,
+   "minSentenceWords": 4,
+   "longWordsOver6": 21,
+   "longWordShare": 0.206,
+   "LIX": 29.1,
+   "dialogueLines": 2,
+   "dialogueWords": 13,
+   "dialogueShare": 0.127,
+   "narrationPastTenseProbeHits": 15,
+   "narrationPresentTenseProbeHits": 0,
+   "mp3DurationS": 57.264,
+   "jsonAudioMetaMs": 28805,
+   "wpmVsMp3": 106.9,
+   "wpmVsJsonMeta": 212.5,
+   "sensoryProbeHits": 1,
+   "choicePrompt": "Solfågelbilden ska hängas upp, och bara en tur med silverpennan återstår. Vem får rita bildens sista tecken?",
+   "choicePromptWords": 17,
+   "optionLabels": [
+    "Låt Mossa rita stjärnan.",
+    "Låt det nya barnet rita boet."
+   ],
+   "optionLabelWords": [
+    4,
+    6
+   ],
+   "optionFirstWord": [
+    "Låt",
+    "Låt"
+   ]
+  },
+  {
+   "beatId": "S5AA",
+   "slot": 5,
+   "pathTag": "neutral",
+   "hasChoice": false,
+   "choiceKind": null,
+   "words": 107,
+   "sentences": 12,
+   "paragraphs": 4,
+   "meanSentenceWords": 8.92,
+   "medianSentenceWords": 10,
+   "maxSentenceWords": 18,
+   "minSentenceWords": 4,
+   "longWordsOver6": 19,
+   "longWordShare": 0.178,
+   "LIX": 26.7,
+   "dialogueLines": 0,
+   "dialogueWords": 0,
+   "dialogueShare": 0.0,
+   "narrationPastTenseProbeHits": 17,
+   "narrationPresentTenseProbeHits": 0,
+   "mp3DurationS": 62.304,
+   "jsonAudioMetaMs": 26155,
+   "wpmVsMp3": 103.0,
+   "wpmVsJsonMeta": 245.5,
+   "sensoryProbeHits": 6
+  },
+  {
+   "beatId": "S5AB",
+   "slot": 5,
+   "pathTag": "neutral",
+   "hasChoice": false,
+   "choiceKind": null,
+   "words": 103,
+   "sentences": 13,
+   "paragraphs": 4,
+   "meanSentenceWords": 7.92,
+   "medianSentenceWords": 7,
+   "maxSentenceWords": 13,
+   "minSentenceWords": 4,
+   "longWordsOver6": 25,
+   "longWordShare": 0.243,
+   "LIX": 32.2,
+   "dialogueLines": 0,
+   "dialogueWords": 0,
+   "dialogueShare": 0.0,
+   "narrationPastTenseProbeHits": 20,
+   "narrationPresentTenseProbeHits": 0,
+   "mp3DurationS": 63.24,
+   "jsonAudioMetaMs": 29967,
+   "wpmVsMp3": 97.7,
+   "wpmVsJsonMeta": 206.2,
+   "sensoryProbeHits": 4
+  },
+  {
+   "beatId": "S5BA",
+   "slot": 5,
+   "pathTag": "neutral",
+   "hasChoice": false,
+   "choiceKind": null,
+   "words": 114,
+   "sentences": 12,
+   "paragraphs": 4,
+   "meanSentenceWords": 9.5,
+   "medianSentenceWords": 9,
+   "maxSentenceWords": 17,
+   "minSentenceWords": 3,
+   "longWordsOver6": 26,
+   "longWordShare": 0.228,
+   "LIX": 32.3,
+   "dialogueLines": 0,
+   "dialogueWords": 0,
+   "dialogueShare": 0.0,
+   "narrationPastTenseProbeHits": 17,
+   "narrationPresentTenseProbeHits": 0,
+   "mp3DurationS": 69.192,
+   "jsonAudioMetaMs": 32139,
+   "wpmVsMp3": 98.9,
+   "wpmVsJsonMeta": 212.8,
+   "sensoryProbeHits": 2
+  },
+  {
+   "beatId": "S5BB",
+   "slot": 5,
+   "pathTag": "neutral",
+   "hasChoice": false,
+   "choiceKind": null,
+   "words": 107,
+   "sentences": 14,
+   "paragraphs": 5,
+   "meanSentenceWords": 7.64,
+   "medianSentenceWords": 6,
+   "maxSentenceWords": 16,
+   "minSentenceWords": 3,
+   "longWordsOver6": 26,
+   "longWordShare": 0.243,
+   "LIX": 31.9,
+   "dialogueLines": 1,
+   "dialogueWords": 1,
+   "dialogueShare": 0.009,
+   "narrationPastTenseProbeHits": 18,
+   "narrationPresentTenseProbeHits": 0,
+   "mp3DurationS": 65.064,
+   "jsonAudioMetaMs": 35581,
+   "wpmVsMp3": 98.7,
+   "wpmVsJsonMeta": 180.4,
+   "sensoryProbeHits": 2
+  },
+  {
+   "beatId": "S6AA",
+   "slot": 6,
+   "pathTag": "neutral",
+   "hasChoice": false,
+   "choiceKind": null,
+   "words": 110,
+   "sentences": 13,
+   "paragraphs": 4,
+   "meanSentenceWords": 8.46,
+   "medianSentenceWords": 8,
+   "maxSentenceWords": 13,
+   "minSentenceWords": 5,
+   "longWordsOver6": 18,
+   "longWordShare": 0.164,
+   "LIX": 24.8,
+   "dialogueLines": 1,
+   "dialogueWords": 9,
+   "dialogueShare": 0.082,
+   "narrationPastTenseProbeHits": 16,
+   "narrationPresentTenseProbeHits": 0,
+   "mp3DurationS": 63.624,
+   "jsonAudioMetaMs": 27419,
+   "wpmVsMp3": 103.7,
+   "wpmVsJsonMeta": 240.7,
+   "sensoryProbeHits": 6
+  },
+  {
+   "beatId": "S6AB",
+   "slot": 6,
+   "pathTag": "neutral",
+   "hasChoice": false,
+   "choiceKind": null,
+   "words": 105,
+   "sentences": 12,
+   "paragraphs": 4,
+   "meanSentenceWords": 8.75,
+   "medianSentenceWords": 8,
+   "maxSentenceWords": 15,
+   "minSentenceWords": 5,
+   "longWordsOver6": 19,
+   "longWordShare": 0.181,
+   "LIX": 26.8,
+   "dialogueLines": 1,
+   "dialogueWords": 7,
+   "dialogueShare": 0.067,
+   "narrationPastTenseProbeHits": 17,
+   "narrationPresentTenseProbeHits": 0,
+   "mp3DurationS": 65.64,
+   "jsonAudioMetaMs": 30485,
+   "wpmVsMp3": 96.0,
+   "wpmVsJsonMeta": 206.7,
+   "sensoryProbeHits": 2
+  },
+  {
+   "beatId": "S6BA",
+   "slot": 6,
+   "pathTag": "neutral",
+   "hasChoice": false,
+   "choiceKind": null,
+   "words": 103,
+   "sentences": 12,
+   "paragraphs": 4,
+   "meanSentenceWords": 8.58,
+   "medianSentenceWords": 9,
+   "maxSentenceWords": 15,
+   "minSentenceWords": 5,
+   "longWordsOver6": 21,
+   "longWordShare": 0.204,
+   "LIX": 29.0,
+   "dialogueLines": 1,
+   "dialogueWords": 5,
+   "dialogueShare": 0.049,
+   "narrationPastTenseProbeHits": 17,
+   "narrationPresentTenseProbeHits": 0,
+   "mp3DurationS": 58.56,
+   "jsonAudioMetaMs": 27711,
+   "wpmVsMp3": 105.5,
+   "wpmVsJsonMeta": 223.0,
+   "sensoryProbeHits": 2
+  },
+  {
+   "beatId": "S6BB",
+   "slot": 6,
+   "pathTag": "neutral",
+   "hasChoice": false,
+   "choiceKind": null,
+   "words": 105,
+   "sentences": 13,
+   "paragraphs": 4,
+   "meanSentenceWords": 8.08,
+   "medianSentenceWords": 7,
+   "maxSentenceWords": 12,
+   "minSentenceWords": 5,
+   "longWordsOver6": 24,
+   "longWordShare": 0.229,
+   "LIX": 30.9,
+   "dialogueLines": 2,
+   "dialogueWords": 13,
+   "dialogueShare": 0.124,
+   "narrationPastTenseProbeHits": 17,
+   "narrationPresentTenseProbeHits": 0,
+   "mp3DurationS": 72.552,
+   "jsonAudioMetaMs": 30740,
+   "wpmVsMp3": 86.8,
+   "wpmVsJsonMeta": 204.9,
+   "sensoryProbeHits": 4
+  }
+ ],
+ "topContentWords": [
+  [
+   "iris",
+   45
+  ],
+  [
+   "amina",
+   35
+  ],
+  [
+   "mossa",
+   32
+  ],
+  [
+   "platsen",
+   17
+  ],
+  [
+   "sista",
+   16
+  ],
+  [
+   "upp",
+   15
+  ],
+  [
+   "ritade",
+   13
+  ],
+  [
+   "höll",
+   12
+  ],
+  [
+   "mattan",
+   12
+  ],
+  [
+   "bibliotekarien",
+   11
+  ],
+  [
+   "silverpennan",
+   11
+  ],
+  [
+   "sa",
+   10
+  ],
+  [
+   "pappret",
+   10
+  ],
+  [
+   "fönsterljuset",
+   9
+  ],
+  [
+   "mellan",
+   9
+  ],
+  [
+   "pennan",
+   9
+  ],
+  [
+   "halsduken",
+   8
+  ],
+  [
+   "gröna",
+   8
+  ],
+  [
+   "låg",
+   8
+  ],
+  [
+   "öppna",
+   8
+  ],
+  [
+   "lämnade",
+   8
+  ],
+  [
+   "molnen",
+   8
+  ],
+  [
+   "ovanför",
+   8
+  ],
+  [
+   "åt",
+   7
+  ],
+  [
+   "ritstund",
+   7
+  ],
+  [
+   "såg",
+   7
+  ],
+  [
+   "fanns",
+   7
+  ],
+  [
+   "lade",
+   7
+  ],
+  [
+   "ena",
+   7
+  ],
+  [
+   "tur",
+   7
+  ],
+  [
+   "rita",
+   6
+  ],
+  [
+   "någon",
+   6
+  ],
+  [
+   "satte",
+   6
+  ],
+  [
+   "ingen",
+   6
+  ],
+  [
+   "måne",
+   6
+  ],
+  [
+   "träden",
+   6
+  ],
+  [
+   "bredvid",
+   6
+  ],
+  [
+   "bordet",
+   6
+  ],
+  [
+   "kartan",
+   6
+  ],
+  [
+   "vingarna",
+   6
+  ],
+  [
+   "här",
+   5
+  ],
+  [
+   "snurrade",
+   5
+  ],
+  [
+   "sagostunden",
+   5
+  ],
+  [
+   "fönsterbänken",
+   5
+  ],
+  [
+   "sidan",
+   5
+  ],
+  [
+   "plats",
+   5
+  ],
+  [
+   "kant",
+   5
+  ],
+  [
+   "andra",
+   5
+  ],
+  [
+   "båda",
+   5
+  ],
+  [
+   "stjärnan",
+   5
+  ],
+  [
+   "aminas",
+   5
+  ],
+  [
+   "kom",
+   4
+  ],
+  [
+   "först",
+   4
+  ],
+  [
+   "ta",
+   4
+  ],
+  [
+   "väntade",
+   4
+  ],
+  [
+   "blev",
+   4
+  ],
+  [
+   "sagoboken",
+   4
+  ],
+  [
+   "ritstunden",
+   4
+  ],
+  [
+   "bar",
+   4
+  ],
+  [
+   "platser",
+   4
+  ]
+ ]
+}

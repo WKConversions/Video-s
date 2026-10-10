@@ -1,0 +1,526 @@
+{
+ "page": "login",
+ "url": "https://tale-forge.app/login",
+ "theme": "morgon",
+ "lang": "sv",
+ "viewport": "1440x900@2x",
+ "capturedAt": "2026-10-09T15:55:09.682Z",
+ "stops": [
+  {
+   "i": 1,
+   "sig": "A|logo|TALE FORGE|188,27",
+   "tag": "a",
+   "cls": "logo",
+   "role": null,
+   "href": "/",
+   "name": "TALE FORGE",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    188,
+    27,
+    261,
+    42
+   ],
+   "pageY": 27,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(109, 79, 224)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "01_a_tale-forge.png"
+  },
+  {
+   "i": 2,
+   "sig": "A||Logga in|783,26",
+   "tag": "a",
+   "cls": "",
+   "role": null,
+   "href": "/login",
+   "name": "Logga in",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    783,
+    26,
+    74.5,
+    44
+   ],
+   "pageY": 26,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgba(255, 255, 255, 0.9)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "02_a_logga-in.png"
+  },
+  {
+   "i": 3,
+   "sig": "A||Priser|870,26",
+   "tag": "a",
+   "cls": "",
+   "role": null,
+   "href": "/uppgradera",
+   "name": "Priser",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    869.5,
+    26,
+    61.3,
+    44
+   ],
+   "pageY": 26,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgba(255, 255, 255, 0.9)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "03_a_priser.png"
+  },
+  {
+   "i": 4,
+   "sig": "BUTTON||SV|947,26",
+   "tag": "button",
+   "cls": "",
+   "role": null,
+   "href": null,
+   "name": "SV",
+   "ariaPressed": "true",
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    946.8,
+    26,
+    44,
+    44
+   ],
+   "pageY": 26,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "0px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(255, 255, 255)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "04_button_sv.png"
+  },
+  {
+   "i": 5,
+   "sig": "BUTTON||EN|993,26",
+   "tag": "button",
+   "cls": "",
+   "role": null,
+   "href": null,
+   "name": "EN",
+   "ariaPressed": "false",
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    992.8,
+    26,
+    44,
+    44
+   ],
+   "pageY": 26,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "0px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(95, 88, 120)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "05_button_en.png"
+  },
+  {
+   "i": 6,
+   "sig": "BUTTON|tt|Byt tema|1053,26",
+   "tag": "button",
+   "cls": "tt",
+   "role": "switch",
+   "href": null,
+   "name": "Byt tema",
+   "ariaPressed": null,
+   "ariaChecked": "true",
+   "ariaExpanded": null,
+   "rect": [
+    1052.8,
+    25.5,
+    199.2,
+    45
+   ],
+   "pageY": 26,
+   "focusVisible": true,
+   "outline": {
+    "style": "solid",
+    "color": "rgb(109, 79, 224)",
+    "width": "3px",
+    "offset": "3px"
+   },
+   "boxShadow": "color(srgb 1 1 1 / 0.704) 0px 0px 0px 6px",
+   "borderColor": "rgb(136, 125, 160)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "06_button_byt-tema.png"
+  },
+  {
+   "i": 7,
+   "sig": "BUTTON|btn btn-ghost|Fortsätt med Google|535,257",
+   "tag": "button",
+   "cls": "btn btn-ghost",
+   "role": null,
+   "href": null,
+   "name": "Fortsätt med Google",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    535,
+    257.3,
+    370,
+    56
+   ],
+   "pageY": 257,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "0px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(136, 125, 160)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "07_button_fortsatt-med-google.png"
+  },
+  {
+   "i": 8,
+   "sig": "INPUT||du@exempel.se|535,396",
+   "tag": "input",
+   "cls": "",
+   "role": null,
+   "href": null,
+   "name": "du@exempel.se",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    535,
+    396.3,
+    370,
+    50
+   ],
+   "pageY": 396,
+   "focusVisible": true,
+   "outline": {
+    "style": "solid",
+    "color": "rgb(109, 79, 224)",
+    "width": "2px",
+    "offset": "2px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgba(255, 255, 255, 0.9)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "08_input_du-exempel-se.png"
+  },
+  {
+   "i": 9,
+   "sig": "INPUT||Ditt lösenord|535,488",
+   "tag": "input",
+   "cls": "",
+   "role": null,
+   "href": null,
+   "name": "Ditt lösenord",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    535,
+    488.3,
+    370,
+    50
+   ],
+   "pageY": 488,
+   "focusVisible": true,
+   "outline": {
+    "style": "solid",
+    "color": "rgb(109, 79, 224)",
+    "width": "2px",
+    "offset": "2px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgba(255, 255, 255, 0.9)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "09_input_ditt-losenord.png"
+  },
+  {
+   "i": 10,
+   "sig": "BUTTON||Visa lösenord|859,491",
+   "tag": "button",
+   "cls": "",
+   "role": null,
+   "href": null,
+   "name": "Visa lösenord",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    859,
+    491.3,
+    44,
+    44
+   ],
+   "pageY": 491,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "0px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(95, 88, 120)",
+   "transform": "matrix(1, 0, 0, 1, 0, -22)",
+   "visibility": "visible",
+   "crop": "10_button_visa-losenord.png"
+  },
+  {
+   "i": 11,
+   "sig": "BUTTON||Glömt lösenordet?|785,548",
+   "tag": "button",
+   "cls": "",
+   "role": null,
+   "href": null,
+   "name": "Glömt lösenordet?",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    785,
+    548.3,
+    120,
+    24
+   ],
+   "pageY": 548,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "0px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(109, 79, 224)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "11_button_glomt-losenordet.png"
+  },
+  {
+   "i": 12,
+   "sig": "BUTTON|btn btn-primary|Logga in|535,594",
+   "tag": "button",
+   "cls": "btn btn-primary",
+   "role": null,
+   "href": null,
+   "name": "Logga in",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    535,
+    594.3,
+    370,
+    54
+   ],
+   "pageY": 594,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "0px"
+   },
+   "boxShadow": "rgba(109, 79, 224, 0.35) 0px 14px 34px 0px, rgba(255, 255, 255, 0.45) 0px 1px 0px 0px inset",
+   "borderColor": "rgb(255, 255, 255)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "12_button_logga-in.png"
+  },
+  {
+   "i": 13,
+   "sig": "A||Skapa ett|754,670",
+   "tag": "a",
+   "cls": "",
+   "role": null,
+   "href": "/signup",
+   "name": "Skapa ett",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    753.7,
+    670.3,
+    68.4,
+    18
+   ],
+   "pageY": 670,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(109, 79, 224)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "13_a_skapa-ett.png"
+  },
+  {
+   "i": 14,
+   "sig": "A||Kontakt|1066,836",
+   "tag": "a",
+   "cls": "",
+   "role": null,
+   "href": "mailto:kevin@tale-forge.app",
+   "name": "Kontakt",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    1065.6,
+    836,
+    51.1,
+    18
+   ],
+   "pageY": 836,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(95, 88, 120)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "14_a_kontakt.png"
+  },
+  {
+   "i": 15,
+   "sig": "A||Integritet|1133,836",
+   "tag": "a",
+   "cls": "",
+   "role": null,
+   "href": "/integritet",
+   "name": "Integritet",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    1132.8,
+    836,
+    60.7,
+    18
+   ],
+   "pageY": 836,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(95, 88, 120)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "15_a_integritet.png"
+  },
+  {
+   "i": 16,
+   "sig": "A||Villkor|1209,836",
+   "tag": "a",
+   "cls": "",
+   "role": null,
+   "href": "/villkor",
+   "name": "Villkor",
+   "ariaPressed": null,
+   "ariaChecked": null,
+   "ariaExpanded": null,
+   "rect": [
+    1209.5,
+    836,
+    42.5,
+    18
+   ],
+   "pageY": 836,
+   "focusVisible": true,
+   "outline": {
+    "style": "auto",
+    "color": "rgb(16, 16, 16)",
+    "width": "1px",
+    "offset": "1px"
+   },
+   "boxShadow": "none",
+   "borderColor": "rgb(95, 88, 120)",
+   "transform": "none",
+   "visibility": "visible",
+   "crop": "16_a_villkor.png"
+  },
+  {
+   "i": 17,
+   "tag": "body"
+  }
+ ],
+ "skipLinkTest": {
+  "skipFocused": {
+   "text": "TALE FORGE",
+   "cls": "logo"
+  },
+  "afterEnter": {
+   "hash": "",
+   "scrollY": 0,
+   "active": "A.logo"
+  },
+  "nextTabAfterSkip": {
+   "tag": "A",
+   "cls": "",
+   "name": "Logga in"
+  }
+ }
+}

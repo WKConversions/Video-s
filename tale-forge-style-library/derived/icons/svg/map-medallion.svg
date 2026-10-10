@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-52 -52 104 120" width="104" height="120">
+  <title>Map: ending medallion with number chip</title>
+  <!-- Tale Forge endings-map part. Ending node: 84 px circular crop of the ending illustration, a gradient ring r 44 (gold -&gt; violet), a 22x18 pill with the ending number. Source: source/js/3d9nxlx1n5pdy.js@9744 (medallionImageR 42, medallionRingR 44, numChipY = y+50); assets/landing/iris/ending-1.webp. CSS: source/css/3q17cp_jgfwol.pretty.css:2977-3004 (drop-shadow 0 0 18px --map-glow; ring 2px, 3px + scale 1.05 when active; dimmed .55; chip --gold-chip-bg; number 11px 700 --gold-chip-ink). Tokens below are the Natt values; swap in TOKENS from the Morgon theme to re-theme. -->
+  <style>
+  @font-face { font-family: "Schibsted Grotesk"; src: url(../../../assets/fonts/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2) format("woff2"); font-weight: 400 800; }
+  svg { --dash-line: #ffecbe59; --map-dot: #9b87f5; --map-glow: #f5c54240; --gold-chip-bg: #f2b22e29; --gold-chip-ink: #ffd98f; --gold-soft: #f5c542; --page-sub: #d9cfee; --card-line: #9b87f542; }
+  .map-path { stroke: var(--dash-line); fill: none; stroke-width: 1.6px; stroke-dasharray: 0.1 8; stroke-linecap: round; }
+  .map-path-lit { stroke-width: 2.4px; fill: none; }
+  .map-path-lit--lit { transition: stroke-dashoffset .9s ease-out, opacity .2s; }
+  .map-path-lit--fading { transition: opacity .25s; }
+  .map-path-lit--off { transition: none; }
+  .map-dot { fill: var(--map-dot); }
+  .map-dot-halo { fill: var(--map-dot); opacity: .18; }
+  .map-choice { fill: var(--gold-chip-bg); stroke: var(--gold-soft); stroke-width: 1.5px; }
+  .map-choice-glyph { stroke: var(--gold-chip-ink); stroke-width: 1.6px; stroke-linecap: round; stroke-linejoin: round; }
+  .map-choice-label { font-family: "Schibsted Grotesk", "Segoe UI", system-ui, sans-serif; fill: var(--page-sub); font-size: 11px; font-weight: 600; }
+  .map-medallion { transform-box: fill-box; transform-origin: 50%; filter: drop-shadow(0 0 18px var(--map-glow)); transition: transform .2s, opacity .2s; }
+  .map-medallion-ring { stroke-width: 2px; }
+  .map-medallion.is-active { transform: scale(1.05); }
+  .map-medallion.is-active .map-medallion-ring { stroke-width: 3px; }
+  .map-medallion.is-dimmed { opacity: .55; }
+  .map-num-bg { fill: var(--gold-chip-bg); }
+  .map-num { font-family: "Schibsted Grotesk", "Segoe UI", system-ui, sans-serif; fill: var(--gold-chip-ink); font-size: 11px; font-weight: 700; }
+</style>
+  <defs>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5c542"/>
+      <stop offset="1" stop-color="#6D4FE0"/>
+    </linearGradient>
+    <clipPath id="m0">
+      <circle cx="0" cy="0" r="42"/>
+    </clipPath>
+  </defs>
+  <g class="map-medallion is-active">
+    <image href="../../../assets/landing/iris/ending-1.webp" x="-42" y="-42" width="84" height="84" clip-path="url(#m0)" preserveAspectRatio="xMidYMid slice"/>
+    <circle class="map-medallion-ring" cx="0" cy="0" r="44" fill="none" stroke="url(#ring)"/>
+    <rect class="map-num-bg" x="-11" y="50" width="22" height="18" rx="9"/>
+    <text class="map-num" x="0" y="63" text-anchor="middle">1</text>
+  </g>
+</svg>

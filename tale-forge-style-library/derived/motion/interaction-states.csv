@@ -1,0 +1,158 @@
+file,lines,context,selector,property,value,decl_line
+source/css/3q17cp_jgfwol.pretty.css,486-488,,.skip-link:not(:focus),visibility,hidden,487
+source/css/3q17cp_jgfwol.pretty.css,489-492,,.skip-link:focus,visibility,visible,490
+source/css/3q17cp_jgfwol.pretty.css,489-492,,.skip-link:focus,transform,translateY(0),491
+source/css/3q17cp_jgfwol.pretty.css,798-800,,"body[data-theme=""morgon""] .tt-thumb",transform,translate(100%),799
+source/css/3q17cp_jgfwol.pretty.css,822-826,,.tt:focus-visible,outline,3px solid var(--accent),823
+source/css/3q17cp_jgfwol.pretty.css,822-826,,.tt:focus-visible,box-shadow,"0 0 0 6px color-mix(in srgb, var(--card) 88%, transparent)",825
+source/css/3q17cp_jgfwol.pretty.css,904-906,,.btn:active,transform,scale(0.96),905
+source/css/3q17cp_jgfwol.pretty.css,914-917,,.btn-primary:hover,box-shadow,var(--btn-shadow-hover),915
+source/css/3q17cp_jgfwol.pretty.css,914-917,,.btn-primary:hover,transform,translateY(-3px),916
+source/css/3q17cp_jgfwol.pretty.css,1106-1109,,.reveal.in,opacity,1,1107
+source/css/3q17cp_jgfwol.pretty.css,1106-1109,,.reveal.in,transform,none,1108
+source/css/3q17cp_jgfwol.pretty.css,1203-1205,,.builder-pic .fab:hover,transform,scale(1.1),1204
+source/css/3q17cp_jgfwol.pretty.css,1239-1243,,.trait.on,background,var(--trait-on-bg),1240
+source/css/3q17cp_jgfwol.pretty.css,1239-1243,,.trait.on,border-color,var(--trait-on-line),1241
+source/css/3q17cp_jgfwol.pretty.css,1239-1243,,.trait.on,color,var(--trait-on-ink),1242
+source/css/3q17cp_jgfwol.pretty.css,1244-1246,,.trait:hover,border-color,var(--trait-on-line),1245
+source/css/3q17cp_jgfwol.pretty.css,1257-1259,,.upload:hover,border-color,var(--accent),1258
+source/css/3q17cp_jgfwol.pretty.css,1342-1344,,.friend-add:hover,border-color,var(--accent),1343
+source/css/3q17cp_jgfwol.pretty.css,1349-1351,,.comp-tile:hover,border-color,var(--trait-on-line),1350
+source/css/3q17cp_jgfwol.pretty.css,1441-1443,,"[aria-selected=""true""] .comp-chosen",opacity,1,1442
+source/css/3q17cp_jgfwol.pretty.css,1501-1503,,.book:hover,transform,translateY(-10px) rotate(-1deg),1502
+source/css/3q17cp_jgfwol.pretty.css,1544-1546,,.adv:hover,transform,translateY(-6px),1545
+source/css/3q17cp_jgfwol.pretty.css,1656-1658,@media (max-width: 760px),.mobile-adv:hover,transform,none,1657
+source/css/3q17cp_jgfwol.pretty.css,1727-1732,@media (max-width: 760px),.mobile-adv .btn:disabled,opacity,0.5,1729
+source/css/3q17cp_jgfwol.pretty.css,1727-1732,@media (max-width: 760px),.mobile-adv .btn:disabled,box-shadow,none,1730
+source/css/3q17cp_jgfwol.pretty.css,1727-1732,@media (max-width: 760px),.mobile-adv .btn:disabled,transform,none,1731
+source/css/3q17cp_jgfwol.pretty.css,1850-1856,,".reader-body .btn:disabled, .choice:disabled",opacity,0.5,1852
+source/css/3q17cp_jgfwol.pretty.css,1850-1856,,".reader-body .btn:disabled, .choice:disabled",box-shadow,none,1854
+source/css/3q17cp_jgfwol.pretty.css,1850-1856,,".reader-body .btn:disabled, .choice:disabled",transform,none,1855
+source/css/3q17cp_jgfwol.pretty.css,1857-1864,,".reader-body .btn:disabled:hover, .reader-body .btn:disabled:active, .choice:disabled:hover, .choice:disabled:active",box-shadow,none,1861
+source/css/3q17cp_jgfwol.pretty.css,1857-1864,,".reader-body .btn:disabled:hover, .reader-body .btn:disabled:active, .choice:disabled:hover, .choice:disabled:active",border-color,var(--choice-line),1862
+source/css/3q17cp_jgfwol.pretty.css,1857-1864,,".reader-body .btn:disabled:hover, .reader-body .btn:disabled:active, .choice:disabled:hover, .choice:disabled:active",transform,none,1863
+source/css/3q17cp_jgfwol.pretty.css,1923-1927,,.choice:hover,border-color,var(--violet-soft),1924
+source/css/3q17cp_jgfwol.pretty.css,1923-1927,,.choice:hover,transform,translateY(-3px),1925
+source/css/3q17cp_jgfwol.pretty.css,1923-1927,,.choice:hover,box-shadow,0 14px 30px #6d4fe02e,1926
+source/css/3q17cp_jgfwol.pretty.css,1928-1932,,.choice:focus-visible,outline,3px solid var(--accent),1929
+source/css/3q17cp_jgfwol.pretty.css,1928-1932,,.choice:focus-visible,border-color,var(--accent),1931
+source/css/3q17cp_jgfwol.pretty.css,2006-2008,,.sound-bed:hover,border-color,var(--violet-soft),2007
+source/css/3q17cp_jgfwol.pretty.css,2009-2013,,".sound-bed[aria-pressed=""true""]",border-color,var(--violet-soft),2010
+source/css/3q17cp_jgfwol.pretty.css,2009-2013,,".sound-bed[aria-pressed=""true""]",background,var(--pill-bg),2011
+source/css/3q17cp_jgfwol.pretty.css,2009-2013,,".sound-bed[aria-pressed=""true""]",color,var(--pill-ink),2012
+source/css/3q17cp_jgfwol.pretty.css,2067-2069,,.reader-audio-control:hover,border-color,var(--violet-soft),2068
+source/css/3q17cp_jgfwol.pretty.css,2092-2096,,".reader-replay:focus-visible, .reader-illustration-toggle:focus-visible",outline,3px solid var(--accent),2094
+source/css/3q17cp_jgfwol.pretty.css,2183-2187,,".friend-mode-option[aria-pressed=""true""]",border-color,var(--violet-soft),2184
+source/css/3q17cp_jgfwol.pretty.css,2183-2187,,".friend-mode-option[aria-pressed=""true""]",background,var(--pill-bg),2185
+source/css/3q17cp_jgfwol.pretty.css,2183-2187,,".friend-mode-option[aria-pressed=""true""]",box-shadow,0 10px 26px #6d4fe024,2186
+source/css/3q17cp_jgfwol.pretty.css,2231-2236,,.friend-photo-step > .btn:disabled,opacity,0.48,2232
+source/css/3q17cp_jgfwol.pretty.css,2231-2236,,.friend-photo-step > .btn:disabled,box-shadow,none,2234
+source/css/3q17cp_jgfwol.pretty.css,2231-2236,,.friend-photo-step > .btn:disabled,transform,none,2235
+source/css/3q17cp_jgfwol.pretty.css,2373-2378,,"input:focus-visible, textarea:focus-visible, select:focus-visible",outline,2px solid var(--accent),2376
+source/css/3q17cp_jgfwol.pretty.css,2400-2404,,".create-customize:hover, .create-customize[open]",border-color,var(--trait-on-line),2402
+source/css/3q17cp_jgfwol.pretty.css,2400-2404,,".create-customize:hover, .create-customize[open]",box-shadow,0 6px 24px -14px var(--accent),2403
+source/css/3q17cp_jgfwol.pretty.css,2444-2446,,.create-customize[open] > summary:after,transform,rotate(45deg),2445
+source/css/3q17cp_jgfwol.pretty.css,2493-2495,@media (max-width: 600px),.advs > .adv:hover,transform,none,2494
+source/css/3q17cp_jgfwol.pretty.css,2825-2828,,.hiw-play:hover,box-shadow,var(--btn-shadow-hover),2826
+source/css/3q17cp_jgfwol.pretty.css,2825-2828,,.hiw-play:hover,transform,translateY(-2px),2827
+source/css/3q17cp_jgfwol.pretty.css,2942-2946,,.hiw-map .map-path-lit--lit,transition,"stroke-dashoffset 0.9s ease-out, opacity 0.2s",2943
+source/css/3q17cp_jgfwol.pretty.css,2947-2949,,.hiw-map .map-path-lit--fading,transition,opacity 0.25s,2948
+source/css/3q17cp_jgfwol.pretty.css,2950-2952,,.hiw-map .map-path-lit--off,transition,none,2951
+source/css/3q17cp_jgfwol.pretty.css,2988-2990,,.hiw-map .map-medallion.is-active,transform,scale(1.05),2989
+source/css/3q17cp_jgfwol.pretty.css,2994-2996,,.hiw-map .map-medallion.is-dimmed,opacity,0.55,2995
+source/css/3q17cp_jgfwol.pretty.css,3019-3022,,.hiw-map-btn:focus-visible,outline,3px solid var(--accent),3020
+source/css/3q17cp_jgfwol.pretty.css,3214-3218,@media (prefers-reduced-motion: reduce),".hiw-map .map-path-lit--lit, .hiw-map .map-path-lit--fading, .hiw-map .map-medallion",transition,none,3217
+source/css/3q17cp_jgfwol.pretty.css,3222-3226,@media (prefers-reduced-motion: reduce),".hiw-play, .hiw-play:hover",transition,none,3224
+source/css/3q17cp_jgfwol.pretty.css,3222-3226,@media (prefers-reduced-motion: reduce),".hiw-play, .hiw-play:hover",transform,none,3225
+source/css/2h1wwdz1nvxwk.pretty.css,53-55,,.cs-andra:hover,color,var(--card-ink),54
+source/css/2h1wwdz1nvxwk.pretty.css,191-193,,.cs-chip:hover,border-color,var(--trait-on-line),192
+source/css/2h1wwdz1nvxwk.pretty.css,286-288,,.cs-sheet-title:focus,outline,none,287
+source/css/2h1wwdz1nvxwk.pretty.css,302-304,,.cs-sheet-close:hover,border-color,var(--trait-on-line),303
+source/css/2h1wwdz1nvxwk.pretty.css,427-432,,.cs-door .btn:disabled,opacity,0.5,428
+source/css/2h1wwdz1nvxwk.pretty.css,427-432,,.cs-door .btn:disabled,box-shadow,none,430
+source/css/2h1wwdz1nvxwk.pretty.css,427-432,,.cs-door .btn:disabled,transform,none,431
+source/css/37m388zf6rymp.pretty.css,244-247,,.glod-wb-action:disabled,opacity,0.72,246
+source/css/37m388zf6rymp.pretty.css,285-289,,.glod-wb-steps li.active,color,#fbeed2,286
+source/css/37m388zf6rymp.pretty.css,285-289,,.glod-wb-steps li.active,opacity,1,287
+source/css/37m388zf6rymp.pretty.css,290-295,,.glod-wb-steps li.active .dot,background,"radial-gradient(circle at 40% 35%, #ffe9b0, #f5c542 70%, #d98f26)",291
+source/css/37m388zf6rymp.pretty.css,290-295,,.glod-wb-steps li.active .dot,border-color,#0000,292
+source/css/37m388zf6rymp.pretty.css,290-295,,.glod-wb-steps li.active .dot,animation,2.6s ease-in-out infinite glodPulse,293
+source/css/37m388zf6rymp.pretty.css,290-295,,.glod-wb-steps li.active .dot,box-shadow,0 0 10px 2px #ffc45a80,294
+source/css/37m388zf6rymp.pretty.css,296-298,,.glod-wb-steps li.done,opacity,0.95,297
+source/css/37m388zf6rymp.pretty.css,299-302,,.glod-wb-steps li.done .dot,background,"linear-gradient(135deg, #ffe08a, #f5c542)",300
+source/css/37m388zf6rymp.pretty.css,299-302,,.glod-wb-steps li.done .dot,border-color,#0000,301
+source/css/37m388zf6rymp.pretty.css,352-361,,".glod-stage[data-narrow=""1""].glod-climax .glod-sign",opacity,0,353
+source/css/37m388zf6rymp.pretty.css,352-361,,".glod-stage[data-narrow=""1""].glod-climax .glod-sign",visibility,hidden,354
+source/css/37m388zf6rymp.pretty.css,352-361,,".glod-stage[data-narrow=""1""].glod-climax .glod-sign",transition,"opacity 0.3s, transform 0.35s, visibility 0s linear 0.35s",356
+source/css/37m388zf6rymp.pretty.css,352-361,,".glod-stage[data-narrow=""1""].glod-climax .glod-sign",transform,translateY(-130%) scale(0.92),360
+source/css/37m388zf6rymp.pretty.css,443-447,,.glod-mem.show,opacity,1,444
+source/css/37m388zf6rymp.pretty.css,443-447,,.glod-mem.show,transform,scale(1) translateY(0),446
+source/css/37m388zf6rymp.pretty.css,448-450,,.glod-mem.show .glod-mem-float,animation-play-state,paused,449
+source/css/37m388zf6rymp.pretty.css,493-495,,.glod-mem-close:hover,background,#5c3a141a,494
+source/css/37m388zf6rymp.pretty.css,496-499,,.glod-mem-close:focus-visible,outline,3px solid #7a3f0c,498
+source/css/37m388zf6rymp.pretty.css,557-559,,.glod-mem-ember.on,opacity,1,558
+source/css/37m388zf6rymp.pretty.css,560-562,,.glod-mem-ember.on .glod-mem-ember-core,animation,2s ease-in-out infinite glodEmberBreath,561
+source/css/37m388zf6rymp.pretty.css,607-610,,".glod-mem-carry[aria-pressed=""true""]",background,#31543d,608
+source/css/37m388zf6rymp.pretty.css,607-610,,".glod-mem-carry[aria-pressed=""true""]",border-color,#24422e,609
+source/css/37m388zf6rymp.pretty.css,682-690,,".glod-active-ember:hover .glod-active-ember-core, .glod-active-ember:active .glod-active-ember-core, .glod-active-ember:focus-visible .glod-active-ember-core",transform,scale(1.22),685
+source/css/37m388zf6rymp.pretty.css,682-690,,".glod-active-ember:hover .glod-active-ember-core, .glod-active-ember:active .glod-active-ember-core, .glod-active-ember:focus-visible .glod-active-ember-core",box-shadow,"0 0 13px 5px #ffd782, 0 0 34px 14px #ffa546b8, 0 0 62px 27px #ff84344d",686
+source/css/37m388zf6rymp.pretty.css,691-694,,.glod-active-ember:focus-visible,outline,3px solid #fff1bf,693
+source/css/37m388zf6rymp.pretty.css,709-711,,".glod-stage[data-fire-level=""high""] .glod-active-ember",top,48%,710
+source/css/37m388zf6rymp.pretty.css,712-714,,".glod-stage[data-fire-level=""low""] .glod-active-ember",top,60%,713
+source/css/37m388zf6rymp.pretty.css,715-717,,".glod-stage[data-fire-level=""unlit""] .glod-active-ember",top,66%,716
+source/css/37m388zf6rymp.pretty.css,735-737,,.glod-hearth-box.on,opacity,1,736
+source/css/37m388zf6rymp.pretty.css,762-764,,.glod-stage.glod-climax .glod-hearth-box,opacity,0,763
+source/css/37m388zf6rymp.pretty.css,792-796,,".glod-sound[aria-pressed=""true""]",background,var(--pill-bg),793
+source/css/37m388zf6rymp.pretty.css,792-796,,".glod-sound[aria-pressed=""true""]",color,var(--pill-ink),794
+source/css/37m388zf6rymp.pretty.css,792-796,,".glod-sound[aria-pressed=""true""]",border-color,var(--violet-soft),795
+source/css/37m388zf6rymp.pretty.css,812-815,,.glod-book.show,opacity,1,813
+source/css/37m388zf6rymp.pretty.css,812-815,,.glod-book.show,transform,scale(1) rotate(-1.2deg),814
+source/css/37m388zf6rymp.pretty.css,964-969,,.glod-caption.show,opacity,1,965
+source/css/37m388zf6rymp.pretty.css,964-969,,.glod-caption.show,visibility,visible,966
+source/css/37m388zf6rymp.pretty.css,964-969,,.glod-caption.show,transition,opacity 0.9s 0.2s,968
+source/css/37m388zf6rymp.pretty.css,1040-1048,,.glod-open:hover,border-color,#3a2408,1041
+source/css/37m388zf6rymp.pretty.css,1040-1048,,.glod-open:hover,transform,rotate(-0.6deg) translateY(-3px),1042
+source/css/37m388zf6rymp.pretty.css,1040-1048,,.glod-open:hover,box-shadow,"0 18px 38px #04030c99, 0 0 44px #ffb45047, inset 0 1px #ffd8a059, inset 0 -3px #0006",1043
+source/css/37m388zf6rymp.pretty.css,1049-1051,,.glod-open:active,transform,rotate(-0.6deg) scale(0.97),1050
+source/css/37m388zf6rymp.pretty.css,1053-1056,@media (prefers-reduced-motion: reduce),".glod-pulse-dot, .glod-wb-steps li.active .dot",animation,none,1055
+source/css/37m388zf6rymp.pretty.css,1060-1064,@media (prefers-reduced-motion: reduce),".glod-active-ember-core, .glod-mem-float, .glod-mem-ember.on .glod-mem-ember-core",animation,none,1063
+source/css/37m388zf6rymp.pretty.css,1069-1071,@media (prefers-reduced-motion: reduce),.glod-book.show,transform,none,1070
+source/css/2_gt301v4m-60.pretty.css,20-23,,.start-flow .gallery.open,animation,0.4s tfStartIn,21
+source/css/2_gt301v4m-60.pretty.css,20-23,,.start-flow .gallery.open,display,grid,22
+source/css/2_gt301v4m-60.pretty.css,55-60,,.start-flow .stepcard .btn:disabled,opacity,0.5,56
+source/css/2_gt301v4m-60.pretty.css,55-60,,.start-flow .stepcard .btn:disabled,box-shadow,none,58
+source/css/2_gt301v4m-60.pretty.css,55-60,,.start-flow .stepcard .btn:disabled,transform,none,59
+source/css/2_gt301v4m-60.pretty.css,74-76,,.start-flow .field:focus,border-color,var(--accent),75
+source/css/2_gt301v4m-60.pretty.css,93-95,,.start-flow .upload.chosen .cam svg,display,none,94
+source/css/2_gt301v4m-60.pretty.css,96-98,,.start-flow .upload.chosen .cam img,display,block,97
+source/css/2_gt301v4m-60.pretty.css,174-178,,.start-flow .pick.on,background,var(--trait-on-bg),175
+source/css/2_gt301v4m-60.pretty.css,174-178,,.start-flow .pick.on,border-color,var(--trait-on-line),176
+source/css/2_gt301v4m-60.pretty.css,174-178,,.start-flow .pick.on,color,var(--trait-on-ink),177
+source/css/2_gt301v4m-60.pretty.css,179-181,,.start-flow .pick:hover,border-color,var(--trait-on-line),180
+source/css/2_gt301v4m-60.pretty.css,318-320,,.start-flow .easel.ph1 img,filter,blur(20px) brightness(0.5) saturate(0.15),319
+source/css/2_gt301v4m-60.pretty.css,321-323,,.start-flow .easel.ph2 img,filter,blur(7px) brightness(0.85) saturate(0.7),322
+source/css/2_gt301v4m-60.pretty.css,324-327,,.start-flow .easel.ph2 .sheen,opacity,1,325
+source/css/2_gt301v4m-60.pretty.css,324-327,,.start-flow .easel.ph2 .sheen,animation,1.3s forwards tfSweep,326
+source/css/2_gt301v4m-60.pretty.css,333-336,,.start-flow .easel.ph3 img,filter,none,334
+source/css/2_gt301v4m-60.pretty.css,333-336,,.start-flow .easel.ph3 img,transform,scale(1),335
+source/css/2_gt301v4m-60.pretty.css,348-351,,.start-flow .embers.go .ember,animation,2.4s ease-out forwards tfRise,349
+source/css/2_gt301v4m-60.pretty.css,348-351,,.start-flow .embers.go .ember,animation-delay,"var(--d, 0s)",350
+source/css/2_gt301v4m-60.pretty.css,466-469,,.start-flow .reveal-line.on,animation,0.7s tfStartIn,467
+source/css/2_gt301v4m-60.pretty.css,466-469,,.start-flow .reveal-line.on,display,flex,468
+source/css/2_gt301v4m-60.pretty.css,478-481,,.start-flow .reveal-name.on,animation,0.7s tfStartIn,479
+source/css/2_gt301v4m-60.pretty.css,478-481,,.start-flow .reveal-name.on,display,block,480
+source/css/2_gt301v4m-60.pretty.css,488-491,,.start-flow .reveal-actions.on,animation,0.6s tfStartIn,489
+source/css/2_gt301v4m-60.pretty.css,488-491,,.start-flow .reveal-actions.on,display,flex,490
+source/css/2_gt301v4m-60.pretty.css,510-512,,.start-flow .unveil-armed.ready-pop,animation,"0.42s cubic-bezier(0.2, 0.7, 0.3, 1.4) tfUnveilPop",511
+source/css/2_gt301v4m-60.pretty.css,586-591,,.start-flow .wslot.done,border-color,var(--trait-on-line),588
+source/css/2_gt301v4m-60.pretty.css,586-591,,.start-flow .wslot.done,background,var(--trait-on-bg),589
+source/css/2_gt301v4m-60.pretty.css,586-591,,.start-flow .wslot.done,color,var(--trait-on-ink),590
+source/css/2_gt301v4m-60.pretty.css,656-658,,.start-flow .adv:hover,transform,translateY(-6px),657
+source/css/2_gt301v4m-60.pretty.css,731-735,,.start-flow .stile.on,border-color,var(--trait-on-line),732
+source/css/2_gt301v4m-60.pretty.css,731-735,,.start-flow .stile.on,background,var(--trait-on-bg),733
+source/css/2_gt301v4m-60.pretty.css,731-735,,.start-flow .stile.on,color,var(--trait-on-ink),734
+source/css/2_gt301v4m-60.pretty.css,761-763,,.start-flow .sheetwrap.on,display,grid,762
+source/css/2_gt301v4m-60.pretty.css,914-922,@media (prefers-reduced-motion: reduce),".start-flow .start-screen, .start-flow .gallery.open, .start-flow .paintpill, .start-flow .reveal-line.on, .start-flow .reveal-name.on, .start-flow .reveal-actions.on, .start-flow .sheet",animation,none,921
+source/css/2_gt301v4m-60.pretty.css,923-927,@media (prefers-reduced-motion: reduce),".start-flow .adv, .start-flow .adv:hover",transition,none,925
+source/css/2_gt301v4m-60.pretty.css,923-927,@media (prefers-reduced-motion: reduce),".start-flow .adv, .start-flow .adv:hover",transform,none,926
+source/css/2_gt301v4m-60.pretty.css,935-938,@media (prefers-reduced-motion: reduce),".start-flow .embers.go .ember, .start-flow .unveil-armed.ready-pop",animation,none,937

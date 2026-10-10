@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <title>Companion: Luna the owl</title>
+  <!-- Tale Forge (tale-forge.app). Source: source/js/0ad0wel9cyv30.js@3852 (map C.luna). Rendered 34 px (28 px on phones); colour --trait-ink / --trait-on-ink. currentColor = the CSS color of the parent on the site. -->
+  <circle cx="12" cy="13" r="7"/>
+  <circle cx="9.4" cy="11.6" r="1.5"/>
+  <circle cx="14.6" cy="11.6" r="1.5"/>
+  <path d="M12 14.6l-1.2 1.6h2.4z"/>
+  <path d="M5.6 8.4L8 5.6M18.4 8.4L16 5.6"/>
+</svg>

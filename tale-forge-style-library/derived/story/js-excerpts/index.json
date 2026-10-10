@@ -1,0 +1,167 @@
+[
+ {
+  "name": "age-groups",
+  "chunk": "source/js/2x2s34sgoij7z.js",
+  "module": "32123",
+  "charStart": 3878,
+  "charEnd": 4124,
+  "chars": 246,
+  "description": "AGE_GROUPS: age values, sv/en labels, bands A/B/C",
+  "file": "age-groups.2x2s34sgoij7z.m32123.pretty.js",
+  "lines": 30
+ },
+ {
+  "name": "moderation",
+  "chunk": "source/js/2x2s34sgoij7z.js",
+  "module": "40070",
+  "charStart": 5386,
+  "charEnd": 8113,
+  "chars": 2727,
+  "description": "moderateInput: blocked-word list and kind-and-safe messages",
+  "file": "moderation.2x2s34sgoij7z.m40070.pretty.js",
+  "lines": 75
+ },
+ {
+  "name": "genitive",
+  "chunk": "source/js/2x2s34sgoij7z.js",
+  "module": "35768",
+  "charStart": 5275,
+  "charEnd": 5386,
+  "chars": 111,
+  "description": "genitive(): Swedish/English possessive helper used in story copy",
+  "file": "genitive.2x2s34sgoij7z.m35768.pretty.js",
+  "lines": 16
+ },
+ {
+  "name": "start-flow",
+  "chunk": "source/js/0ad0wel9cyv30.js",
+  "module": "9181",
+  "charStart": 112,
+  "charEnd": 50575,
+  "chars": 50463,
+  "description": "/start onboarding: landing hero copy, hero step, starter companions, keepsake objects, step titles, first-run adventure cards, enqueue payload",
+  "file": "start-flow.0ad0wel9cyv30.m9181.pretty.js",
+  "lines": 2840
+ },
+ {
+  "name": "style-presets",
+  "chunk": "source/js/390j9gbq0u9ce.js",
+  "module": "67711",
+  "charStart": 30758,
+  "charEnd": 32398,
+  "chars": 1640,
+  "description": "CREATE_STYLE_PRESETS (8 art styles), DEFAULT_CREATE_STYLE_ID",
+  "file": "style-presets.390j9gbq0u9ce.m67711.pretty.js",
+  "lines": 83
+ },
+ {
+  "name": "narrator-voices",
+  "chunk": "source/js/390j9gbq0u9ce.js",
+  "module": "99026",
+  "charStart": 32398,
+  "charEnd": 33783,
+  "chars": 1385,
+  "description": "CREATE_VOICES (4 narrators), DEFAULT_CREATE_VOICE_ID",
+  "file": "narrator-voices.390j9gbq0u9ce.m99026.pretty.js",
+  "lines": 65
+ },
+ {
+  "name": "start-draft",
+  "chunk": "source/js/390j9gbq0u9ce.js",
+  "module": "33570",
+  "charStart": 33844,
+  "charEnd": 35179,
+  "chars": 1335,
+  "description": "defaultDraft(): ageBand B default, tf-start-draft storage",
+  "file": "start-draft.390j9gbq0u9ce.m33570.pretty.js",
+  "lines": 110
+ },
+ {
+  "name": "generation-preview",
+  "chunk": "source/js/390j9gbq0u9ce.js",
+  "module": "62971",
+  "charStart": 29546,
+  "charEnd": 30758,
+  "chars": 1212,
+  "description": "generation preview record: heroName, adventureDirection, companion, styleLabel, narratorLabel, carriedEmberThread",
+  "file": "generation-preview.390j9gbq0u9ce.m62971.pretty.js",
+  "lines": 86
+ },
+ {
+  "name": "job-status",
+  "chunk": "source/js/2j_-r8q4tgdka.js",
+  "module": "78128",
+  "charStart": 112,
+  "charEnd": 14643,
+  "chars": 14531,
+  "description": "JOB_STATUS_COPY (4 build steps) + GLOD_COPY (waiting fire / memory embers)",
+  "file": "job-status.2j_-r8q4tgdka.m78128.pretty.js",
+  "lines": 622
+ },
+ {
+  "name": "doors-recipe-worldband",
+  "chunk": "source/js/2j_-r8q4tgdka.js",
+  "module": "83876",
+  "charStart": 14643,
+  "charEnd": 26797,
+  "chars": 12154,
+  "description": "Door cards (register to Godnatt/Aventyr/Vanskap), Surprise-us door, DoorGrid, RecipeLine, WorldBand (The world remembers), StylePicker",
+  "file": "doors-recipe-worldband.2j_-r8q4tgdka.m83876.pretty.js",
+  "lines": 787
+ },
+ {
+  "name": "assemble-cards",
+  "chunk": "source/js/2j_-r8q4tgdka.js",
+  "module": "16335",
+  "charStart": 45377,
+  "charEnd": 49536,
+  "chars": 4159,
+  "description": "assembleCards(): registers cozy/adventure/silly/wonder, ember/register/competency cards",
+  "file": "assemble-cards.2j_-r8q4tgdka.m16335.pretty.js",
+  "lines": 172
+ },
+ {
+  "name": "wait-phrase",
+  "chunk": "source/js/2j_-r8q4tgdka.js",
+  "module": "56020",
+  "charStart": 50261,
+  "charEnd": 50396,
+  "chars": 135,
+  "description": "WAIT_PHRASE: \"några minuter\" / \"a few minutes\"",
+  "file": "wait-phrase.2j_-r8q4tgdka.m56020.pretty.js",
+  "lines": 20
+ },
+ {
+  "name": "landing-explainer",
+  "chunk": "source/js/3d9nxlx1n5pdy.js",
+  "module": "29416",
+  "charStart": 620,
+  "charEnd": 20891,
+  "chars": 20271,
+  "description": "ExplainerChapter: six how-it-works steps, endings-map geometry and copy",
+  "file": "landing-explainer.3d9nxlx1n5pdy.m29416.pretty.js",
+  "lines": 1086
+ },
+ {
+  "name": "ambient-beds",
+  "chunk": "source/js/1pgfdvt65g9p-.js",
+  "module": "77147",
+  "charStart": 36382,
+  "charEnd": 38276,
+  "chars": 1894,
+  "description": "AMBIENT_BEDS: six reader background sounds",
+  "file": "ambient-beds.1pgfdvt65g9p-.m77147.pretty.js",
+  "lines": 164
+ },
+ {
+  "name": "reader",
+  "chunk": "source/js/36tbz-w9v-p8v.js",
+  "module": "88374",
+  "charStart": 112,
+  "charEnd": 28290,
+  "chars": 28178,
+  "description": "Reader: cover, prose, narration, sound, feedback tags, The End ceremony, choice group",
+  "file": "reader.36tbz-w9v-p8v.m88374.pretty.js",
+  "lines": 1729
+ }
+]

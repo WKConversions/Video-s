@@ -1,0 +1,2840 @@
+// EXCERPT (data, not for execution). Verbatim Turbopack module 9181 from source/js/0ad0wel9cyv30.js,
+// characters 112-50575 of the single-line minified file (UTF-8 decoded string index).
+// Wrapped in parentheses and formatted with prettier 3 for reading; no other change.
+// Content: /start onboarding: landing hero copy, hero step, starter companions, keepsake objects, step titles, first-run adventure cards, enqueue payload
+
+(9181,
+  (e) => {
+    "use strict";
+    var t = e.i(43476),
+      a = e.i(71645),
+      r = e.i(88065),
+      n = e.i(33570);
+    let i = {
+        sv: {
+          kicker: "Riktiga bilderböcker, upplästa på svenska",
+          h1Lead: "Ikväll är hjälten",
+          h1Grad: "ert barn",
+          lede: "Tale Forge skriver, målar och läser in en riktig bilderbok där ert barn är huvudpersonen. Porträttet ser ni om ett par minuter, den första boken är gratis.",
+          cta: "Skapa er hjälte",
+          gallery: "Läs en exempelbok först",
+          badgeTitle: "Exempelbok",
+          badgeSub: "Iris och den sparade platsen · på svenska",
+          sampleAction: "Läs exempelboken",
+          sampleCoverAlt:
+            "Omslag till exempelboken Iris och den sparade platsen",
+        },
+        en: {
+          kicker: "Real picture books, read aloud",
+          h1Lead: "Tonight the hero is",
+          h1Grad: "your child",
+          lede: "Tale Forge writes, paints and narrates a real picture book where your child is the main character. You see the portrait in a couple of minutes, and the first book is free.",
+          cta: "Create your hero",
+          gallery: "Read a sample book first",
+          badgeTitle: "Sample book",
+          badgeSub: "Iris och den sparade platsen · Swedish",
+          sampleAction: "Read the Swedish sample",
+          sampleCoverAlt:
+            "Cover of the Swedish sample book Iris och den sparade platsen",
+        },
+      },
+      s = "Iris och den sparade platsen";
+    var l = e.i(32123),
+      o = e.i(40070);
+    let d = {
+        sv: {
+          heading: "Vem blir hjälten?",
+          placeholder: "Barnets namn",
+          next: "Vidare",
+          genderHint: "Vilket ord ska sagan använda?",
+          boy: "Han",
+          girl: "Hon",
+        },
+        en: {
+          heading: "Who becomes the hero?",
+          placeholder: "Your child's name",
+          next: "Next",
+          genderHint: "Which word should the story use?",
+          boy: "He",
+          girl: "She",
+        },
+      },
+      c = {
+        sv: "Kontot är klart. Nu bygger vi er hjälte.",
+        en: "Your account is ready. Now let's build your hero.",
+      };
+    var h = e.i(11795),
+      u = e.i(16934),
+      p = e.i(53949),
+      g = e.i(51806),
+      m = e.i(2002),
+      b = e.i(22016),
+      v = e.i(41872),
+      k = e.i(10344),
+      x = e.i(57128),
+      y = e.i(87125),
+      f = e.i(35768);
+    let j = [
+        {
+          id: "rufus",
+          short: "Rufus",
+          label: { sv: "Rufus räven", en: "Rufus the fox" },
+          clause: { sv: "och räven Rufus log", en: "and Rufus the fox smiled" },
+        },
+        {
+          id: "luna",
+          short: "Luna",
+          label: { sv: "Luna ugglan", en: "Luna the owl" },
+          clause: {
+            sv: "och ugglan Luna blinkade långsamt",
+            en: "and Luna the owl blinked slowly",
+          },
+        },
+        {
+          id: "bo",
+          short: "Bo",
+          label: { sv: "Bo draken", en: "Bo the dragon" },
+          clause: {
+            sv: "och draken Bo blåste en liten rökring",
+            en: "and Bo the dragon blew a small smoke ring",
+          },
+        },
+      ],
+      w = [
+        {
+          id: "halsduk",
+          label: { sv: "Röd halsduk", en: "Red scarf" },
+          clause: {
+            sv: "drog åt sin röda halsduk",
+            en: "pulled the red scarf tight",
+          },
+        },
+        {
+          id: "lykta",
+          label: { sv: "Gammal lykta", en: "Old lantern" },
+          clause: { sv: "höll lyktan högt", en: "held the lantern high" },
+        },
+        {
+          id: "svard",
+          label: { sv: "Träsvärd", en: "Wooden sword" },
+          clause: {
+            sv: "lyfte träsvärdet mot stjärnorna",
+            en: "raised the wooden sword to the stars",
+          },
+        },
+      ],
+      N = "story";
+    function S(e) {
+      return e && e !== N ? (j.find((t) => t.id === e) ?? null) : null;
+    }
+    function I(e) {
+      return w.find((t) => t.id === e) ?? w[0];
+    }
+    let L = {
+        sv: {
+          companionLead: "Vem följer med",
+          storyChooses: "Sagan väljer",
+          storyChoosesHint:
+            "Du behöver inte välja en färdig vän. Sagan hittar någon när det passar.",
+          starterFriends: "Eller välj en färdig vän",
+          objectHeading: "Något kärt att ta med?",
+          dryPill: "Färgen torkar på porträttet",
+          next: "Vidare",
+          heroCardLabel: "Hjältekortet",
+          fallbackName: "Hjälten",
+        },
+        en: {
+          companionLead: "Who comes along with",
+          storyChooses: "The story chooses",
+          storyChoosesHint:
+            "You do not need to pick a ready-made friend. The story finds one when it fits.",
+          starterFriends: "Or choose a ready-made friend",
+          objectHeading: "Something dear to bring?",
+          dryPill: "The paint is drying on the portrait",
+          next: "Next",
+          heroCardLabel: "The hero card",
+          fallbackName: "The hero",
+        },
+      },
+      C = {
+        rufus: (0, t.jsxs)("svg", {
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          strokeWidth: "1.7",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          "aria-hidden": "true",
+          children: [
+            (0, t.jsx)("path", {
+              d: "M5 4l4 4h6l4-4v6c0 5-3.4 9-7 9s-7-4-7-9z",
+            }),
+            (0, t.jsx)("path", { d: "M9.4 11h.01M14.6 11h.01" }),
+            (0, t.jsx)("path", { d: "M12 14l-1.1 1.5h2.2z" }),
+          ],
+        }),
+        luna: (0, t.jsxs)("svg", {
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          strokeWidth: "1.7",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          "aria-hidden": "true",
+          children: [
+            (0, t.jsx)("circle", { cx: "12", cy: "13", r: "7" }),
+            (0, t.jsx)("circle", { cx: "9.4", cy: "11.6", r: "1.5" }),
+            (0, t.jsx)("circle", { cx: "14.6", cy: "11.6", r: "1.5" }),
+            (0, t.jsx)("path", { d: "M12 14.6l-1.2 1.6h2.4z" }),
+            (0, t.jsx)("path", { d: "M5.6 8.4L8 5.6M18.4 8.4L16 5.6" }),
+          ],
+        }),
+        bo: (0, t.jsxs)("svg", {
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          strokeWidth: "1.7",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          "aria-hidden": "true",
+          children: [
+            (0, t.jsx)("path", {
+              d: "M12 3c3.2 3.1 6 5.7 6 9.2A6 6 0 0 1 6 12.2C6 8.7 8.8 6.1 12 3z",
+            }),
+            (0, t.jsx)("path", { d: "M10 14a2 2 0 0 0 4 0" }),
+          ],
+        }),
+      },
+      T = {
+        sv: {
+          headingTail: "hjälte och börja den första boken.",
+          headingLead: "Spara",
+          trialLead: "Första boken är gratis. Porträttet,",
+          trialTail: "och allt ni just byggt följer med.",
+          emailPlaceholder: "Din mejladress",
+          passwordPlaceholder: "Ditt lösenord",
+          showPassword: "Visa lösenord",
+          hidePassword: "Dölj lösenord",
+          submit: "Skapa konto",
+          submitting: "Skapar konto...",
+          google: "Fortsätt med Google",
+          savePresent: "Spara hjälten",
+          savingPresent: "Sparar hjälten...",
+          attestPrefix:
+            "Jag är barnets förälder eller vårdnadshavare och godkänner",
+          policyLinkText: "integritetspolicyn",
+          policyReadLink: "Läs integritetspolicyn",
+          confirmNotice:
+            "Kolla din e-post för att bekräfta kontot, sen fortsätter ni här.",
+          claimError:
+            "Något gick fel när hjälten skulle sparas. Allt ni byggt finns kvar, försök igen.",
+          genericError: "Något gick fel. Försök igen.",
+          moderationFallback:
+            "Vi håller sagorna snälla och trygga. Prova gärna andra ord.",
+          changeDescription: "Ändra beskrivningen",
+          fallbackName: "Hjälten",
+          existingAccountLead:
+            "Du har redan ett konto med den här adressen. Du behöver inte minnas lösenordet, vi mejlar dig en länk som loggar in dig direkt.",
+          sendLinkCta: "Mejla mig en inloggningslänk",
+          sendingLink: "Skickar länken...",
+          linkSentNotice:
+            "Om adressen har ett konto ligger en inloggningslänk i inkorgen om en minut. Öppna den så fortsätter ni precis här, med hjälten ni just byggt.",
+        },
+        en: {
+          headingTail: "hero and start the first book.",
+          headingLead: "Save",
+          trialLead: "The first book is free. The portrait,",
+          trialTail: "and everything you just built come along.",
+          emailPlaceholder: "Your email address",
+          passwordPlaceholder: "Your password",
+          showPassword: "Show password",
+          hidePassword: "Hide password",
+          submit: "Create account",
+          submitting: "Creating account...",
+          google: "Continue with Google",
+          savePresent: "Save the hero",
+          savingPresent: "Saving the hero...",
+          attestPrefix: "I am the child's parent or guardian and I accept",
+          policyLinkText: "the privacy notice",
+          policyReadLink: "Read the privacy notice",
+          confirmNotice:
+            "Check your email to confirm the account, then continue here.",
+          claimError:
+            "Something went wrong while saving the hero. Everything you built is still here, please try again.",
+          genericError: "Something went wrong. Please try again.",
+          moderationFallback:
+            "Let's keep our stories kind and safe! Please try different words.",
+          changeDescription: "Change the description",
+          fallbackName: "The hero",
+          existingAccountLead:
+            "You already have an account with this address. You do not need to remember the password, we will email you a link that signs you straight in.",
+          sendLinkCta: "Email me a login link",
+          sendingLink: "Sending the link...",
+          linkSentNotice:
+            "If that address has an account, a login link is in the inbox within a minute. Open it and you carry on right here, with the hero you just built.",
+        },
+      },
+      E = {
+        display: "flex",
+        alignItems: "center",
+        gap: "12px",
+        minHeight: "44px",
+        fontFamily: "var(--ui)",
+        fontSize: "16px",
+        lineHeight: 1.45,
+        color: "var(--card-sub)",
+        cursor: "pointer",
+        textAlign: "left",
+      },
+      P = {
+        width: "24px",
+        height: "24px",
+        flexShrink: 0,
+        fontSize: "16px",
+        accentColor: "var(--accent)",
+        cursor: "pointer",
+      },
+      B = {
+        display: "inline-flex",
+        alignItems: "center",
+        minHeight: "44px",
+        padding: "0 4px",
+        fontFamily: "var(--ui)",
+        fontSize: ".9rem",
+        color: "var(--accent)",
+        fontWeight: 700,
+        textDecoration: "underline",
+      };
+    function F({ locale: e, checked: a, onChange: r, disabled: n }) {
+      let i = T[e];
+      return (0, t.jsxs)(t.Fragment, {
+        children: [
+          (0, t.jsxs)("label", {
+            htmlFor: "start-attest",
+            style: E,
+            children: [
+              (0, t.jsx)("input", {
+                id: "start-attest",
+                type: "checkbox",
+                checked: a,
+                onChange: (e) => r(e.target.checked),
+                disabled: n,
+                style: P,
+              }),
+              (0, t.jsxs)("span", {
+                children: [i.attestPrefix, " ", i.policyLinkText, "."],
+              }),
+            ],
+          }),
+          (0, t.jsx)("div", {
+            style: { textAlign: "left" },
+            children: (0, t.jsx)(b.default, {
+              href: "/integritet",
+              target: "_blank",
+              rel: "noopener noreferrer",
+              style: B,
+              children: i.policyReadLink,
+            }),
+          }),
+        ],
+      });
+    }
+    let A = {
+        sv: {
+          headingLead: "Gör",
+          headingTail: "till hjälten.",
+          fallbackName: "ert barn",
+          uploadTitle: "Välj ett foto",
+          uploadTitleChosen: "Fint. Det här fotot blir hjälten.",
+          uploadSub: "Ansiktet räcker, resten målar vi.",
+          privacy:
+            "Fotot används bara för att måla porträttet. Det tränar aldrig någon AI, och ni kan radera det när som helst.",
+          paintPill: "Porträttet har börjat målas",
+          next: "Vidare",
+          skip: "Hoppa över, måla en hjälte åt oss",
+          decodeFailed:
+            "Vi kunde inte läsa det fotot. Prova en JPEG eller PNG bild.",
+          tooLarge: "Det fotot är för stort. Välj ett som är mindre än 6MB.",
+          uploadLabel: "Välj ett foto",
+          writeError: "Något gick fel. Försök igen.",
+          saving: "Sparar...",
+        },
+        en: {
+          headingLead: "Make",
+          headingTail: "the hero.",
+          fallbackName: "your child",
+          uploadTitle: "Choose a photo",
+          uploadTitleChosen: "Lovely. This photo becomes the hero.",
+          uploadSub: "The face is enough, we paint the rest.",
+          privacy:
+            "The photo is only used to paint the portrait. It never trains any AI, and you can delete it whenever you like.",
+          paintPill: "The portrait has started painting",
+          next: "Next",
+          skip: "Skip, paint a hero for us",
+          decodeFailed:
+            "We could not read that photo. Please try a JPEG or PNG image.",
+          tooLarge: "That photo is too large. Please choose one under 6MB.",
+          uploadLabel: "Choose a photo",
+          writeError: "Something went wrong. Please try again.",
+          saving: "Saving...",
+        },
+      },
+      R = null,
+      H = null;
+    function $(e) {
+      if (R) return R;
+      let t = e().finally(() => {
+        R = null;
+      });
+      return ((R = t), t);
+    }
+    async function _() {
+      return (
+        H ||
+          (H = (async () => {
+            let e = (0, h.createClient)(),
+              {
+                data: { session: t },
+              } = await e.auth.getSession();
+            t || (await e.auth.signInAnonymously());
+          })().finally(() => {
+            H = null;
+          })),
+        H
+      );
+    }
+    function D(e) {
+      return e.startsWith("data:") || /^https?:\/\//.test(e)
+        ? e
+        : `data:image/png;base64,${e}`;
+    }
+    async function M(e, t) {
+      return $(async () => {
+        t({ paintJob: { status: "painting" } });
+        try {
+          await _();
+          let a = async (e) => {
+              try {
+                let { workItemId: a } = await e();
+                t({ paintJob: { status: "painting", workItemId: a } });
+                let r = await (0, g.awaitPortraitReady)(a);
+                return "ready" === r.outcome
+                  ? { workItemId: a, portraitUrl: r.portraitUrl }
+                  : null;
+              } catch {
+                return null;
+              }
+            },
+            r = () =>
+              a(() =>
+                (0, u.backendFetch)("/create/portrait/paint", {
+                  method: "POST",
+                  body: { characterId: e.characterId },
+                }),
+              ),
+            n = null;
+          if (e.photoBase64) {
+            let i = e.photoBase64.includes(",")
+              ? e.photoBase64.split(",")[1]
+              : e.photoBase64;
+            !(n = await a(() =>
+              (0, u.backendFetch)("/start/portrait-draft", {
+                method: "POST",
+                body: {
+                  characterId: e.characterId,
+                  photoBase64: i,
+                  contentType: "image/png",
+                },
+              }),
+            )) &&
+              (n = await r()) &&
+              t({ heroSource: "look" });
+          } else n = await r();
+          if (n)
+            return (
+              t({
+                portraitBase64: n.portraitUrl,
+                paintedWorkItemId: n.workItemId,
+                paintJob: void 0,
+              }),
+              "painted"
+            );
+          return (t({ paintJob: { status: "failed" } }), "failed");
+        } catch {
+          return (t({ paintJob: { status: "failed" } }), "failed");
+        }
+      });
+    }
+    async function W(e, t) {
+      return $(async () => {
+        try {
+          let a = await (0, g.awaitPortraitReady)(e);
+          if ("ready" === a.outcome)
+            return (
+              t({
+                portraitBase64: a.portraitUrl,
+                paintedWorkItemId: e,
+                paintJob: void 0,
+              }),
+              "painted"
+            );
+        } catch {}
+        return (t({ paintJob: { status: "failed" } }), "failed");
+      });
+    }
+    let O = {
+        sv: {
+          unveil: "Avtäck",
+          painting: "Målar...",
+          save: "Spara hjälten",
+          rename: "Ändra namnet",
+          fallbackName: "Hjälten",
+          paintFailedLead: "Färgen ville inte fastna den här gången.",
+          paintFailedHint: "Allt ni byggt är kvar. Vi provar igen.",
+          retry: "Måla igen",
+          veilWaiting: "Er hjälte väntar bakom duken.",
+          veilPainting: "Porträttet målas...",
+        },
+        en: {
+          unveil: "Unveil",
+          painting: "Painting...",
+          save: "Save the hero",
+          rename: "Change the name",
+          fallbackName: "The hero",
+          paintFailedLead: "The colour would not settle this time.",
+          paintFailedHint: "Everything you built is safe. Let us try again.",
+          retry: "Paint again",
+          veilWaiting: "Your hero is waiting behind the veil.",
+          veilPainting: "The portrait is being painted...",
+        },
+      },
+      G = [
+        { vl: "24%", vs: "4px", vd: "0s" },
+        { vl: "44%", vs: "3px", vd: "1.4s" },
+        { vl: "60%", vs: "5px", vd: "0.7s" },
+        { vl: "78%", vs: "3px", vd: "2.1s" },
+        { vl: "52%", vs: "4px", vd: "3.0s" },
+      ];
+    function U() {
+      try {
+        return (
+          "function" == typeof window.matchMedia &&
+          window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        );
+      } catch {
+        return !1;
+      }
+    }
+    e.i(42958);
+    var V = e.i(18149),
+      z = e.i(51322),
+      J = e.i(80937),
+      Y = e.i(83876),
+      K = e.i(67711),
+      q = e.i(99026),
+      Q = e.i(56020);
+    let X = {
+        sv: {
+          lede: "Hjälten är klar. Välj en dörr så skrivs första boken, den tar {time}.",
+          sheetHeading: "Redo att tända glöden?",
+          pickedLead: "Vi valde:",
+          sheetBody:
+            "bok skrivs, målas och läses in när ni trycker på Sätt igång. Det tar {time}, och ni kan stänga sidan under tiden. Boken lägger sig i bokhyllan när den är klar.",
+          storyteller:
+            "Vilken hjälte ni har byggt. Jag börjar berätta så fort ni säger till.",
+          companionHeading: "Vem följer med?",
+          companionHelper:
+            "Berättelsen väljer vem som följer med om ni inte väljer någon.",
+          ignite: "Sätt igång",
+          igniting: "Glöden tänds...",
+          wait: "Inte än",
+          capError:
+            "Er plan har inte plats för fler böcker just nu. Allt ni byggt är kvar.",
+          capLink: "Se planer",
+          busyError:
+            "En bok skapas redan för er. Den lägger sig i bokhyllan när den är klar.",
+          genericError: "Något gick fel när boken skulle börja. Försök igen.",
+          languageError: "Språket kunde inte sparas. Försök igen.",
+          fallbackName: "Hjälten",
+        },
+        en: {
+          lede: "The hero is ready. Pick a door and the first book is written, it takes {time}.",
+          sheetHeading: "Ready to light the ember?",
+          pickedLead: "We picked:",
+          sheetBody:
+            "book will be written, painted and narrated once you press Light it. It takes {time}, and you can close the page meanwhile. The book lands on the bookshelf when it is ready.",
+          storyteller:
+            "What a hero you have built. I start telling the moment you say the word.",
+          companionHeading: "Who comes along?",
+          companionHelper:
+            "The story chooses who comes along if you do not pick anyone.",
+          ignite: "Light it",
+          igniting: "Lighting the ember...",
+          wait: "Not yet",
+          capError:
+            "Your plan has no room for more books right now. Everything you built is safe.",
+          capLink: "See plans",
+          busyError:
+            "A book is already being made for you. It lands on the bookshelf when it is ready.",
+          genericError:
+            "Something went wrong starting the book. Please try again.",
+          languageError: "The language could not be saved. Please try again.",
+          fallbackName: "The hero",
+        },
+      },
+      Z = [
+        { id: "sv", label: "Svenska" },
+        { id: "en", label: "English" },
+      ];
+    var ee = e.i(18566),
+      et = e.i(48087),
+      ea = e.i(62971);
+    let er = {
+        sv: {
+          headingTail: "saga växer fram.",
+          headingGeneric: "Sagan växer fram.",
+          reads: "läser",
+          voiceLineLead: "Jag skriver, målar och övar på att säga",
+          voiceLineTail: "precis rätt.",
+          lostTrace:
+            "Den här skärmen tappade bokens spår, men boken är kvar och lägger sig i bokhyllan när den är klar.",
+          lostTraceLink: "Tillbaka till skapandet",
+        },
+        en: {
+          headingTail: "story is taking shape.",
+          headingGeneric: "The story is taking shape.",
+          reads: "reads",
+          voiceLineLead: "I am writing, painting, and practicing saying",
+          voiceLineTail: "just right.",
+          lostTrace:
+            "This screen lost track of the book, but the book is safe and lands on the bookshelf when it is ready.",
+          lostTraceLink: "Back to creating",
+        },
+      },
+      en = {
+        sv: {
+          headingLead: "Lämna över till",
+          ledeMid: "stora bilder, berättarrösten, och ingenting",
+          ledeTail: "måste läsa själv.",
+          ledeLead: "Härifrån är boken",
+          open: "Öppna boken tillsammans",
+          fallbackName: "Hjälten",
+        },
+        en: {
+          headingLead: "Hand it over to",
+          ledeMid: "big pictures, the storyteller's voice, and nothing",
+          ledeTail: "has to read alone.",
+          ledeLead: "From here the book is",
+          open: "Open the book together",
+          fallbackName: "The hero",
+        },
+      },
+      ei = "tf-invite-code";
+    function es() {
+      let e = (0, a.useRef)(!1);
+      return (
+        (0, a.useEffect)(() => {
+          let t;
+          try {
+            let e = new URLSearchParams(window.location.search).get("invite");
+            e && window.localStorage.setItem(ei, e.trim().toLowerCase());
+          } catch {}
+          try {
+            t = (0, h.createClient)();
+          } catch {
+            return;
+          }
+          let a = !0,
+            r = !1,
+            n = !1,
+            i = null;
+          async function s() {
+            if (!a || e.current) return;
+            if (r) {
+              n = !0;
+              return;
+            }
+            let i = null;
+            try {
+              i = window.localStorage.getItem(ei);
+            } catch {
+              return;
+            }
+            if (i) {
+              r = !0;
+              try {
+                let {
+                  data: { user: r },
+                } = await t.auth.getUser();
+                if (!a || !r || r.is_anonymous) return;
+                e.current = !0;
+                let n = { code: i };
+                (await (0, u.backendFetch)("/tester-invite", {
+                  method: "POST",
+                  body: n,
+                }),
+                  a && window.localStorage.removeItem(ei));
+              } catch (t) {
+                if (!a) return;
+                t instanceof u.BackendFetchError && 404 === t.status
+                  ? window.localStorage.removeItem(ei)
+                  : (e.current = !1);
+              } finally {
+                ((r = !1), a && n && !e.current ? ((n = !1), l()) : (n = !1));
+              }
+            }
+          }
+          let l = () => {
+              !a ||
+                ((n = !0),
+                r ||
+                  null !== i ||
+                  (i = window.setTimeout(() => {
+                    ((i = null), a && ((n = !1), s()));
+                  }, 0)));
+            },
+            o = null;
+          try {
+            let {
+              data: { subscription: e },
+            } = t.auth.onAuthStateChange(() => {
+              l();
+            });
+            o = () => e.unsubscribe();
+          } catch {
+            o = null;
+          }
+          return () => {
+            ((a = !1), (n = !1), null !== i && window.clearTimeout(i), o?.());
+          };
+        }, []),
+        null
+      );
+    }
+    let el = ["s0", "s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8"],
+      eo = {
+        sv: {
+          s0: null,
+          s1: {
+            step: 1,
+            title: "Steg 1 av 4 · Hjälten",
+            sub: "Inget konto och inget kort ännu. Ni börjar med barnet.",
+          },
+          s2: {
+            step: 2,
+            title: "Steg 2 av 4 · Fotot",
+            sub: "Ett foto räcker för porträttet, och det går bra att hoppa över.",
+          },
+          s3: {
+            step: 3,
+            title: "Steg 3 av 4 · Sällskapet",
+            sub: "Porträttet målas i bakgrunden medan ni väljer.",
+          },
+          s4: null,
+          s5: {
+            step: 4,
+            title: "Steg 4 av 4 · Kontot",
+            sub: "Hjälten och porträttet sparas i er värld.",
+          },
+          s6: {
+            step: 0,
+            title: "Sista valet före boken",
+            sub: "Ett äventyrsval startar bygget. Överraska oss går alltid att välja.",
+          },
+          s7: {
+            step: 0,
+            title: "Boken skapas",
+            sub: "Boken lägger sig i bokhyllan när den är klar.",
+          },
+          s8: null,
+        },
+        en: {
+          s0: null,
+          s1: {
+            step: 1,
+            title: "Step 1 of 4 · The hero",
+            sub: "No account and no card yet. You start with your child.",
+          },
+          s2: {
+            step: 2,
+            title: "Step 2 of 4 · The photo",
+            sub: "One photo is enough for the portrait, and skipping is fine.",
+          },
+          s3: {
+            step: 3,
+            title: "Step 3 of 4 · The company",
+            sub: "The portrait is painted in the background while you choose.",
+          },
+          s4: null,
+          s5: {
+            step: 4,
+            title: "Step 4 of 4 · The account",
+            sub: "The hero and the portrait are saved in your world.",
+          },
+          s6: {
+            step: 0,
+            title: "The last choice before the book",
+            sub: "Picking an adventure starts the build. Surprise us is always an option.",
+          },
+          s7: {
+            step: 0,
+            title: "The book is being made",
+            sub: "The book lands on the bookshelf when it is ready.",
+          },
+          s8: null,
+        },
+      },
+      ed = { sv: "Tillbaka", en: "Back" },
+      ec = {
+        sv: "Ni börjar med barnet. Inget kort behövs.",
+        en: "You start with your child. No card needed.",
+      },
+      eh = {
+        sv: { body: "Det här steget byggs just nu.", next: "Vidare" },
+        en: { body: "This step is being built.", next: "Next" },
+      };
+    function eu({ draft: e, show: a, locale: r }) {
+      let n = eh[r],
+        i = el.indexOf(e.currentScreen),
+        s = i >= 0 && i < el.length - 1 ? el[i + 1] : null;
+      return (0, t.jsxs)("section", {
+        "data-testid": `start-screen-${e.currentScreen}`,
+        className: "glass",
+        style: {
+          maxWidth: "600px",
+          margin: "0 auto",
+          padding: "28px 22px",
+          display: "grid",
+          gap: "18px",
+          justifyItems: "start",
+        },
+        children: [
+          (0, t.jsx)("p", {
+            style: {
+              margin: 0,
+              fontFamily: "var(--ui)",
+              fontSize: ".95rem",
+              color: "var(--card-sub)",
+            },
+            children: n.body,
+          }),
+          s
+            ? (0, t.jsx)("button", {
+                type: "button",
+                className: "btn btn-primary",
+                "data-testid": "start-screen-next",
+                onClick: () => a(s),
+                children: n.next,
+              })
+            : null,
+        ],
+      });
+    }
+    let ep = {
+        s0: function ({ show: e, locale: r }) {
+          let n = i[r],
+            [l, o] = (0, a.useState)(!1);
+          return (0, t.jsx)("section", {
+            "data-testid": "start-screen-s0",
+            className: "start-screen",
+            children: (0, t.jsxs)("div", {
+              className: "hero",
+              children: [
+                (0, t.jsxs)("div", {
+                  children: [
+                    (0, t.jsxs)("div", {
+                      className: "kicker",
+                      children: [
+                        (0, t.jsx)("svg", {
+                          viewBox: "0 0 24 24",
+                          fill: "none",
+                          stroke: "currentColor",
+                          strokeWidth: "2",
+                          strokeLinecap: "round",
+                          strokeLinejoin: "round",
+                          "aria-hidden": "true",
+                          children: (0, t.jsx)("path", {
+                            d: "M12 3l1.9 5.6L20 10l-5 3.6 1.6 6L12 16l-4.6 3.6L9 13.6 4 10l6.1-1.4z",
+                          }),
+                        }),
+                        n.kicker,
+                      ],
+                    }),
+                    (0, t.jsxs)("h1", {
+                      children: [
+                        n.h1Lead,
+                        " ",
+                        (0, t.jsx)("span", {
+                          className: "grad",
+                          children: n.h1Grad,
+                        }),
+                        ".",
+                      ],
+                    }),
+                    (0, t.jsx)("p", { className: "lede", children: n.lede }),
+                    (0, t.jsxs)("div", {
+                      className: "cta-row",
+                      children: [
+                        (0, t.jsx)("button", {
+                          type: "button",
+                          className: "btn btn-primary",
+                          onClick: () => e("s1"),
+                          children: n.cta,
+                        }),
+                        (0, t.jsx)("button", {
+                          type: "button",
+                          className: "btn btn-ghost",
+                          "aria-expanded": l,
+                          onClick: () => o((e) => !e),
+                          children: n.gallery,
+                        }),
+                      ],
+                    }),
+                    l
+                      ? (0, t.jsx)("div", {
+                          className: "gallery open",
+                          "data-testid": "start-gallery",
+                          children: (0, t.jsx)("figure", {
+                            className: "gbook",
+                            children: (0, t.jsxs)("a", {
+                              href: "/share/iris-sparade-platsen",
+                              "aria-label": `${n.sampleAction}: ${s}`,
+                              style: {
+                                color: "inherit",
+                                textDecoration: "none",
+                              },
+                              children: [
+                                (0, t.jsx)("img", {
+                                  src: "/share/iris-sparade-platsen/assets/cover.webp",
+                                  alt: n.sampleCoverAlt,
+                                }),
+                                (0, t.jsxs)("figcaption", {
+                                  children: [s, " · ", n.sampleAction],
+                                }),
+                              ],
+                            }),
+                          }),
+                        })
+                      : null,
+                  ],
+                }),
+                (0, t.jsxs)("div", {
+                  className: "fan",
+                  "aria-hidden": "true",
+                  children: [
+                    (0, t.jsx)("div", {
+                      className: "fbook fb1",
+                      children: (0, t.jsx)("img", {
+                        src: "/assets/cover-filten.webp",
+                        alt: "",
+                      }),
+                    }),
+                    (0, t.jsx)("div", {
+                      className: "fbook fb2",
+                      children: (0, t.jsx)("img", {
+                        src: "/assets/cover-tornet.webp",
+                        alt: "",
+                      }),
+                    }),
+                    (0, t.jsxs)("div", {
+                      className: "badge",
+                      children: [
+                        (0, t.jsx)("span", { className: "dotpulse" }),
+                        (0, t.jsxs)("div", {
+                          children: [
+                            (0, t.jsx)("b", { children: n.badgeTitle }),
+                            (0, t.jsx)("span", { children: n.badgeSub }),
+                          ],
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
+              ],
+            }),
+          });
+        },
+        s1: function ({
+          draft: e,
+          updateDraft: r,
+          show: n,
+          locale: i,
+          accountReadyEntry: s,
+        }) {
+          let h = d[i],
+            [u, p] = (0, a.useState)(null),
+            [g, m] = (0, a.useState)(""),
+            b = u ?? e.name ?? "";
+          return (0, t.jsx)("section", {
+            "data-testid": "start-screen-s1",
+            className: "start-screen",
+            children: (0, t.jsxs)("div", {
+              className: "stepcard glass",
+              children: [
+                s
+                  ? (0, t.jsx)("p", {
+                      "data-testid": "s1-account-ready",
+                      style: {
+                        margin: "0 0 4px",
+                        fontFamily: "var(--ui)",
+                        fontSize: ".9rem",
+                        lineHeight: 1.4,
+                        color: "var(--card-sub)",
+                      },
+                      children: c[i],
+                    })
+                  : null,
+                (0, t.jsx)("h2", { children: h.heading }),
+                (0, t.jsx)("input", {
+                  className: "field",
+                  type: "text",
+                  placeholder: h.placeholder,
+                  autoComplete: "off",
+                  maxLength: 24,
+                  value: b,
+                  onChange: (e) => {
+                    (p(e.target.value), g && m(""));
+                  },
+                }),
+                g
+                  ? (0, t.jsx)("p", {
+                      role: "alert",
+                      className: "field-error",
+                      children: g,
+                    })
+                  : null,
+                (0, t.jsx)("div", {
+                  className: "trait-row",
+                  children: l.AGE_GROUPS.map((a) => {
+                    let n = e.ageBand === a.band;
+                    return (0, t.jsx)(
+                      "button",
+                      {
+                        type: "button",
+                        className: n ? "trait on" : "trait",
+                        "aria-pressed": n,
+                        onClick: () => r({ ageBand: a.band }),
+                        children: a.label[i],
+                      },
+                      a.value,
+                    );
+                  }),
+                }),
+                (0, t.jsx)("p", {
+                  style: {
+                    margin: "10px 0 4px",
+                    fontFamily: "var(--ui)",
+                    fontSize: ".85rem",
+                    lineHeight: 1.4,
+                    color: "var(--card-sub)",
+                  },
+                  children: h.genderHint,
+                }),
+                (0, t.jsx)("div", {
+                  className: "trait-row",
+                  "data-testid": "s1-gender-row",
+                  children: ["boy", "girl"].map((a) => {
+                    let n = e.gender === a;
+                    return (0, t.jsx)(
+                      "button",
+                      {
+                        type: "button",
+                        className: n ? "trait on" : "trait",
+                        "aria-pressed": n,
+                        onClick: () => r({ gender: n ? void 0 : a }),
+                        children: h[a],
+                      },
+                      a,
+                    );
+                  }),
+                }),
+                (0, t.jsx)("button", {
+                  type: "button",
+                  className: "btn btn-primary",
+                  disabled: !b.trim() || !e.gender,
+                  onClick: () => {
+                    let t = b.trim();
+                    if (!t || ("boy" !== e.gender && "girl" !== e.gender))
+                      return;
+                    let a = (0, o.moderateInput)(t, i);
+                    a.safe
+                      ? (m(""), r({ name: t.slice(0, 24) }), n("s2"))
+                      : m(a.reason ?? "");
+                  },
+                  children: h.next,
+                }),
+              ],
+            }),
+          });
+        },
+        s2: function ({ draft: e, updateDraft: i, show: s, locale: l }) {
+          let o = A[l],
+            d = (0, a.useRef)(null),
+            [c, h] = (0, a.useState)(""),
+            [u, g] = (0, a.useState)(!1),
+            [b, v] = (0, a.useState)(!1),
+            k = e.paintJob?.status === "painting",
+            x = !!e.photoBase64,
+            y = !!e.portraitBase64,
+            f = e.name || o.fallbackName,
+            j = async (t) => {
+              (v(!0), h(""));
+              let a =
+                  ("string" == typeof e.childId && e.childId) ||
+                  globalThis.crypto.randomUUID(),
+                r = { ...e, ...t, childId: a };
+              if (!(0, n.saveDraft)(r)) return (h(o.writeError), v(!1), null);
+              (i({ ...t, childId: a }), await _());
+              let s = await (0, m.createChildAndHero)(r, l);
+              return (v(!1), s.ok)
+                ? (i({ characterId: s.characterId }),
+                  { characterId: s.characterId })
+                : (s.childId && i({ childId: s.childId }),
+                  h(s.message || o.writeError),
+                  null);
+            },
+            w = async (e) => {
+              let t;
+              if (!u || b) return;
+              let a = e.target.files?.[0];
+              if (!a) return;
+              if (a.size > 6291456) return void h(o.tooLarge);
+              try {
+                t = await (0, p.normalizeImageToPng)(a);
+              } catch {
+                h(o.decodeFailed);
+                return;
+              }
+              h("");
+              let s = (0, n.elapsedSinceLanding)(),
+                l = await j({ photoBase64: t, heroSource: "photo" });
+              l &&
+                ((0, r.track)(
+                  "photo_landed",
+                  void 0 === s ? void 0 : { elapsed_ms: s },
+                ),
+                M({ photoBase64: t, characterId: l.characterId }, i));
+            },
+            N = async () => {
+              b || !u || !x || ((await j({})) && s("s3"));
+            },
+            S = async () => {
+              if (b || !u) return;
+              let e = await j({ photoBase64: void 0, heroSource: "look" });
+              e && (M({ characterId: e.characterId }, i), s("s3"));
+            };
+          return (0, t.jsx)("section", {
+            "data-testid": "start-screen-s2",
+            className: "start-screen",
+            children: (0, t.jsxs)("div", {
+              className: "stepcard glass",
+              children: [
+                (0, t.jsxs)("h2", {
+                  children: [o.headingLead, " ", f, " ", o.headingTail],
+                }),
+                (0, t.jsx)(F, {
+                  locale: l,
+                  checked: u,
+                  onChange: g,
+                  disabled: b,
+                }),
+                (0, t.jsx)("input", {
+                  ref: d,
+                  "data-testid": "start-photo-input",
+                  type: "file",
+                  accept: "image/png,image/jpeg,image/webp,image/heic",
+                  onChange: w,
+                  disabled: !u || b,
+                  "aria-label": o.uploadLabel,
+                  style: {
+                    position: "absolute",
+                    width: 1,
+                    height: 1,
+                    padding: 0,
+                    margin: -1,
+                    overflow: "hidden",
+                    clip: "rect(0 0 0 0)",
+                    whiteSpace: "nowrap",
+                    border: 0,
+                  },
+                }),
+                (0, t.jsxs)("button", {
+                  type: "button",
+                  className: x ? "upload chosen" : "upload",
+                  onClick: () => d.current?.click(),
+                  disabled: !u || b,
+                  style: {
+                    width: "100%",
+                    background: "transparent",
+                    textAlign: "left",
+                    fontFamily: "var(--ui)",
+                    color: "var(--card-ink)",
+                    cursor: "pointer",
+                  },
+                  children: [
+                    (0, t.jsxs)("span", {
+                      className: "cam",
+                      "aria-hidden": "true",
+                      children: [
+                        (0, t.jsxs)("svg", {
+                          viewBox: "0 0 24 24",
+                          fill: "none",
+                          stroke: "currentColor",
+                          strokeWidth: "1.8",
+                          strokeLinecap: "round",
+                          strokeLinejoin: "round",
+                          children: [
+                            (0, t.jsx)("path", {
+                              d: "M4 8h3l2-2.5h6L17 8h3a1.5 1.5 0 0 1 1.5 1.5V18a1.5 1.5 0 0 1-1.5 1.5H4A1.5 1.5 0 0 1 2.5 18V9.5A1.5 1.5 0 0 1 4 8z",
+                            }),
+                            (0, t.jsx)("circle", {
+                              cx: "12",
+                              cy: "13.4",
+                              r: "3.4",
+                            }),
+                          ],
+                        }),
+                        x && e.photoBase64
+                          ? (0, t.jsx)("img", { src: e.photoBase64, alt: "" })
+                          : null,
+                      ],
+                    }),
+                    (0, t.jsxs)("div", {
+                      children: [
+                        (0, t.jsx)("b", {
+                          children: x ? o.uploadTitleChosen : o.uploadTitle,
+                        }),
+                        (0, t.jsx)("span", { children: o.uploadSub }),
+                      ],
+                    }),
+                  ],
+                }),
+                c
+                  ? (0, t.jsx)("p", {
+                      role: "alert",
+                      className: "field-error",
+                      children: c,
+                    })
+                  : null,
+                (0, t.jsxs)("div", {
+                  className: "privacy",
+                  children: [
+                    (0, t.jsx)("svg", {
+                      viewBox: "0 0 24 24",
+                      fill: "none",
+                      stroke: "currentColor",
+                      strokeWidth: "2",
+                      strokeLinecap: "round",
+                      strokeLinejoin: "round",
+                      "aria-hidden": "true",
+                      children: (0, t.jsx)("path", {
+                        d: "M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6z",
+                      }),
+                    }),
+                    (0, t.jsx)("span", { children: o.privacy }),
+                  ],
+                }),
+                k && !y
+                  ? (0, t.jsxs)("span", {
+                      className: "paintpill",
+                      children: [
+                        (0, t.jsx)("span", { className: "dotpulse" }),
+                        o.paintPill,
+                      ],
+                    })
+                  : null,
+                (0, t.jsx)("button", {
+                  type: "button",
+                  className: "btn btn-primary",
+                  disabled: !x || !u || b,
+                  onClick: () => void N(),
+                  children: b ? o.saving : o.next,
+                }),
+                (0, t.jsx)("button", {
+                  type: "button",
+                  className: "btn btn-ghost",
+                  disabled: !u || b,
+                  onClick: () => void S(),
+                  children: b ? o.saving : o.skip,
+                }),
+              ],
+            }),
+          });
+        },
+        s3: function ({ draft: e, updateDraft: a, show: r, locale: n }) {
+          let i = L[n],
+            s = S(e.companion),
+            o = I(e.object),
+            d = e.name || i.fallbackName,
+            c = !!e.portraitBase64,
+            h = (
+              l.AGE_GROUPS.find((t) => t.band === e.ageBand) ?? l.AGE_GROUPS[1]
+            ).label[n],
+            u = e.photoBase64 || null;
+          return (0, t.jsx)("section", {
+            "data-testid": "start-screen-s3",
+            className: "start-screen",
+            children: (0, t.jsxs)("div", {
+              className: "build-grid",
+              children: [
+                (0, t.jsxs)("div", {
+                  className: "build-main glass",
+                  children: [
+                    (0, t.jsxs)("div", {
+                      children: [
+                        (0, t.jsxs)("h3", {
+                          children: [i.companionLead, " ", d, "?"],
+                        }),
+                        (0, t.jsxs)("div", {
+                          className: "pick-row",
+                          children: [
+                            (0, t.jsxs)("button", {
+                              type: "button",
+                              className:
+                                null === s
+                                  ? "pick pick--story on"
+                                  : "pick pick--story",
+                              "aria-pressed": null === s,
+                              "data-testid": "start-companion-story",
+                              onClick: () => a({ companion: N }),
+                              children: [
+                                (0, t.jsx)("span", {
+                                  "aria-hidden": "true",
+                                  style: { fontSize: "1.3rem", lineHeight: 1 },
+                                  children: "✦",
+                                }),
+                                (0, t.jsxs)("span", {
+                                  className: "pick-story-copy",
+                                  children: [
+                                    (0, t.jsx)("strong", {
+                                      children: i.storyChooses,
+                                    }),
+                                    (0, t.jsx)("small", {
+                                      children: i.storyChoosesHint,
+                                    }),
+                                  ],
+                                }),
+                              ],
+                            }),
+                            (0, t.jsx)("p", {
+                              className: "pick-divider",
+                              children: i.starterFriends,
+                            }),
+                            j.map((e) => {
+                              let r = s?.id === e.id;
+                              return (0, t.jsxs)(
+                                "button",
+                                {
+                                  type: "button",
+                                  className: r ? "pick on" : "pick",
+                                  "aria-pressed": r,
+                                  onClick: () => a({ companion: e.id }),
+                                  children: [C[e.id], e.label[n]],
+                                },
+                                e.id,
+                              );
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+                    (0, t.jsxs)("div", {
+                      children: [
+                        (0, t.jsx)("h3", { children: i.objectHeading }),
+                        (0, t.jsx)("div", {
+                          className: "trait-row",
+                          children: w.map((e) => {
+                            let r = o.id === e.id;
+                            return (0, t.jsx)(
+                              "button",
+                              {
+                                type: "button",
+                                className: r ? "trait on" : "trait",
+                                "aria-pressed": r,
+                                onClick: () => a({ object: e.id }),
+                                children: e.label[n],
+                              },
+                              e.id,
+                            );
+                          }),
+                        }),
+                      ],
+                    }),
+                    c
+                      ? null
+                      : (0, t.jsxs)("span", {
+                          className: "paintpill",
+                          children: [
+                            (0, t.jsx)("span", { className: "dotpulse" }),
+                            i.dryPill,
+                          ],
+                        }),
+                    (0, t.jsx)("button", {
+                      type: "button",
+                      className: "btn btn-primary",
+                      onClick: () => r("s4"),
+                      children: i.next,
+                    }),
+                  ],
+                }),
+                (0, t.jsxs)("aside", {
+                  className: "herocard glass",
+                  "aria-label": i.heroCardLabel,
+                  children: [
+                    (0, t.jsxs)("div", {
+                      className: "pframe",
+                      children: [
+                        u
+                          ? (0, t.jsx)("img", {
+                              src: u,
+                              alt: "",
+                              "data-testid": "start-hero-portrait",
+                            })
+                          : null,
+                        (0, t.jsx)("div", {
+                          className: "veil",
+                          "data-testid": "start-hero-veil",
+                          children: (0, t.jsxs)("svg", {
+                            viewBox: "0 0 24 24",
+                            fill: "none",
+                            stroke: "currentColor",
+                            strokeWidth: "1.8",
+                            strokeLinecap: "round",
+                            strokeLinejoin: "round",
+                            "aria-hidden": "true",
+                            children: [
+                              (0, t.jsx)("path", {
+                                d: "M19 4l-8.5 8.5M9 15.5c-1 1-1.2 3-3.4 3.4.4-2.2 1-3.8 2-4.8",
+                              }),
+                              (0, t.jsx)("path", {
+                                d: "M17.5 2.5l4 4-2 2-4-4z",
+                              }),
+                            ],
+                          }),
+                        }),
+                      ],
+                    }),
+                    (0, t.jsx)("div", { className: "hname", children: d }),
+                    (0, t.jsxs)("div", {
+                      className: "stamps",
+                      "data-testid": "start-hero-stamps",
+                      children: [
+                        (0, t.jsx)("span", {
+                          className: "chip violet",
+                          children: h,
+                        }),
+                        (0, t.jsx)("span", {
+                          className: "chip gold",
+                          children: s ? s.label[n] : i.storyChooses,
+                        }),
+                        (0, t.jsx)("span", {
+                          className: "chip violet",
+                          children: o.label[n],
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
+              ],
+            }),
+          });
+        },
+        s4: function ({ draft: e, updateDraft: i, show: s, locale: l }) {
+          let o = O[l],
+            [d, c] = (0, a.useState)(0),
+            [h, u] = (0, a.useState)(!1),
+            [p, g] = (0, a.useState)(!1),
+            [m, b] = (0, a.useState)([]),
+            [v, k] = (0, a.useState)(!1),
+            x = (0, a.useRef)(!1),
+            y = (0, a.useRef)([]),
+            f = e.portraitBase64 ? D(e.portraitBase64) : null,
+            j = e.paintJob?.status === "failed",
+            w = e.name || o.fallbackName,
+            N = S(e.companion),
+            L = I(e.object),
+            C = N
+              ? `${w} ${L.clause[l]}, ${N.clause[l]}.`
+              : `${w} ${L.clause[l]}.`,
+            T = () =>
+              e.paintJob?.status === "painting" && e.paintJob.workItemId
+                ? W(e.paintJob.workItemId, i)
+                : e.characterId
+                  ? e.photoBase64
+                    ? M(
+                        {
+                          photoBase64: e.photoBase64,
+                          characterId: e.characterId,
+                        },
+                        i,
+                      )
+                    : e.heroSource
+                      ? M({ characterId: e.characterId }, i)
+                      : null
+                  : null;
+          ((0, a.useEffect)(() => {
+            e.portraitBase64 || e.paintJob?.status === "failed" || T();
+          }, [e.portraitBase64, e.paintJob?.status]),
+            (0, a.useEffect)(() => {
+              if (0 !== d || !e.portraitBase64 || U()) return;
+              let t = setTimeout(() => k(!0), 0),
+                a = setTimeout(() => k(!1), 460);
+              return () => {
+                (clearTimeout(t), clearTimeout(a));
+              };
+            }, [e.portraitBase64, d]),
+            (0, a.useEffect)(
+              () => () => {
+                for (let e of y.current) clearTimeout(e);
+              },
+              [],
+            ));
+          let E = (e, t) => {
+              y.current.push(setTimeout(e, t));
+            },
+            P = [
+              "easel",
+              d >= 1 ? "ph1" : "",
+              d >= 2 ? "ph2" : "",
+              d >= 3 ? "ph3" : "",
+            ]
+              .filter(Boolean)
+              .join(" "),
+            B = 0 === d && !j;
+          return (0, t.jsx)("section", {
+            "data-testid": "start-screen-s4",
+            className: "start-screen",
+            children: (0, t.jsxs)("div", {
+              className: "stage",
+              children: [
+                (0, t.jsxs)("div", {
+                  className: "easel-wrap",
+                  children: [
+                    (0, t.jsxs)("div", {
+                      className: P,
+                      "data-testid": "start-easel",
+                      children: [
+                        f ? (0, t.jsx)("img", { src: f, alt: "" }) : null,
+                        (0, t.jsx)("div", { className: "sheen" }),
+                        B
+                          ? (0, t.jsxs)(t.Fragment, {
+                              children: [
+                                (0, t.jsx)("div", {
+                                  className: "veil-glow",
+                                  "aria-hidden": "true",
+                                }),
+                                (0, t.jsx)("div", {
+                                  className: "veil-specks",
+                                  "aria-hidden": "true",
+                                  children: G.map((e, a) =>
+                                    (0, t.jsx)(
+                                      "span",
+                                      {
+                                        className: "veil-speck",
+                                        style: {
+                                          "--vl": e.vl,
+                                          "--vs": e.vs,
+                                          "--vd": e.vd,
+                                        },
+                                      },
+                                      a,
+                                    ),
+                                  ),
+                                }),
+                              ],
+                            })
+                          : null,
+                      ],
+                    }),
+                    d >= 3 && m.length > 0
+                      ? (0, t.jsx)("div", {
+                          className: "embers go",
+                          "aria-hidden": "true",
+                          children: m.map((e, a) =>
+                            (0, t.jsx)(
+                              "span",
+                              {
+                                className: "ember",
+                                style: {
+                                  "--x": e.x,
+                                  "--y": e.y,
+                                  "--d": e.d,
+                                  "--s": e.s,
+                                  left: e.left,
+                                },
+                              },
+                              a,
+                            ),
+                          ),
+                        })
+                      : null,
+                  ],
+                }),
+                B
+                  ? (0, t.jsx)("p", {
+                      className: `veil-caption veil-alive ${f ? "veil-ready" : "veil-painting"}`,
+                      "data-testid": "start-veil-caption",
+                      children: f ? o.veilWaiting : o.veilPainting,
+                    })
+                  : null,
+                d < 3 && !j
+                  ? (0, t.jsx)("button", {
+                      type: "button",
+                      "data-testid": "start-unveil",
+                      className: f
+                        ? `btn btn-primary unveil-armed${v ? " ready-pop" : ""}`
+                        : "btn unveil-waiting",
+                      disabled: !f || d > 0,
+                      onClick: () => {
+                        if (x.current || !f) return;
+                        x.current = !0;
+                        let e = U(),
+                          t = () => {
+                            (c(3),
+                              b(
+                                e
+                                  ? []
+                                  : (function () {
+                                      let e = [];
+                                      for (let t = 0; t < 18; t += 1)
+                                        e.push({
+                                          x: `${(220 * Math.random() - 110).toFixed(0)}px`,
+                                          y: `${(-120 - 160 * Math.random()).toFixed(0)}px`,
+                                          d: `${(0.9 * Math.random()).toFixed(2)}s`,
+                                          s: `${(3 + 5 * Math.random()).toFixed(1)}px`,
+                                          left: `${(35 + 30 * Math.random()).toFixed(0)}%`,
+                                        });
+                                      return e;
+                                    })(),
+                              ));
+                            let t = (0, n.elapsedSinceLanding)();
+                            ((0, r.track)(
+                              "portrait_revealed",
+                              void 0 === t ? void 0 : { elapsed_ms: t },
+                            ),
+                              e
+                                ? (u(!0), g(!0))
+                                : (E(() => u(!0), 700), E(() => g(!0), 1500)));
+                          };
+                        e ? t() : (c(1), E(() => c(2), 1100), E(t, 2600));
+                      },
+                      children: f ? o.unveil : o.painting,
+                    })
+                  : null,
+                j && !f
+                  ? (0, t.jsxs)("div", {
+                      className: "paint-retry",
+                      children: [
+                        (0, t.jsxs)("p", {
+                          role: "alert",
+                          className: "field-error",
+                          children: [o.paintFailedLead, " ", o.paintFailedHint],
+                        }),
+                        (0, t.jsx)("button", {
+                          type: "button",
+                          className: "btn btn-primary",
+                          onClick: () => {
+                            T();
+                          },
+                          children: o.retry,
+                        }),
+                      ],
+                    })
+                  : null,
+                d >= 3
+                  ? (0, t.jsx)("div", {
+                      className: "reveal-name on",
+                      children: w,
+                    })
+                  : null,
+                h
+                  ? (0, t.jsxs)("p", {
+                      className: "reveal-line on",
+                      children: [
+                        (0, t.jsxs)("svg", {
+                          viewBox: "0 0 24 24",
+                          fill: "none",
+                          stroke: "currentColor",
+                          strokeWidth: "2",
+                          strokeLinecap: "round",
+                          strokeLinejoin: "round",
+                          "aria-hidden": "true",
+                          children: [
+                            (0, t.jsx)("path", {
+                              d: "M11 5L6.5 8.5H3v7h3.5L11 19z",
+                            }),
+                            (0, t.jsx)("path", {
+                              d: "M15 9a4.2 4.2 0 0 1 0 6M17.8 6.5a8 8 0 0 1 0 11",
+                            }),
+                          ],
+                        }),
+                        (0, t.jsx)("span", { children: C }),
+                      ],
+                    })
+                  : null,
+                p
+                  ? (0, t.jsxs)("div", {
+                      className: "reveal-actions on",
+                      children: [
+                        (0, t.jsx)("button", {
+                          type: "button",
+                          className: "btn btn-primary",
+                          onClick: () => s("s5"),
+                          children: o.save,
+                        }),
+                        (0, t.jsx)("button", {
+                          type: "button",
+                          className: "btn btn-ghost",
+                          "data-testid": "reveal-rename",
+                          onClick: () => s("s1"),
+                          children: o.rename,
+                        }),
+                      ],
+                    })
+                  : null,
+              ],
+            }),
+          });
+        },
+        s5: function ({
+          draft: e,
+          updateDraft: i,
+          show: s,
+          locale: l,
+          accountPresent: o,
+        }) {
+          let d = T[l],
+            c = e.name || d.fallbackName,
+            p = S(e.companion),
+            [g, b] = (0, a.useState)(""),
+            [j, w] = (0, a.useState)(""),
+            [N, I] = (0, a.useState)(!1),
+            [L, C] = (0, a.useState)(!1),
+            [E, P] = (0, a.useState)(!1),
+            [B, A] = (0, a.useState)(""),
+            [R, H] = (0, a.useState)(""),
+            [$, _] = (0, a.useState)(!1),
+            [M, W] = (0, a.useState)(!1),
+            [O, G] = (0, a.useState)(""),
+            [U, V] = (0, a.useState)(!0),
+            [z, J] = (0, a.useState)(!o);
+          ((0, a.useEffect)(() => {
+            let e = !0;
+            return (
+              (async () => {
+                try {
+                  let t = await (0, u.backendFetch)("/account/profile");
+                  e && V(!(0, v.hasConsent)(t));
+                } catch {}
+              })(),
+              () => {
+                e = !1;
+              }
+            );
+          }, []),
+            (0, a.useEffect)(() => {
+              if (o) return;
+              let e = !0;
+              return (
+                (async () => {
+                  try {
+                    let t = (0, h.createClient)(),
+                      { data: a } = await t.auth.getUser();
+                    e && J(!!(a.user?.is_anonymous ?? !0));
+                  } catch {}
+                })(),
+                () => {
+                  e = !1;
+                }
+              );
+            }, [o]));
+          let Y = o || !z,
+            K = async () => {
+              let t = (0, h.createClient)(),
+                a = await (0, m.claimDraft)(t, e, { locale: l });
+              if (!a.ok) {
+                if ("moderation_flagged" === a.reason) {
+                  (G(a.message || d.moderationFallback), A(""), P(!1));
+                  return;
+                }
+                (A(d.claimError), P(!1));
+                return;
+              }
+              try {
+                let { data: e } = await t.auth.getSession(),
+                  a = e.session?.user,
+                  n = a?.created_at ? Date.parse(a.created_at) : NaN,
+                  i = a?.id ? `tf-signup-tracked:${a.id}` : null;
+                if (
+                  !(i && "1" === window.localStorage.getItem(i)) &&
+                  Number.isFinite(n) &&
+                  Date.now() - n < 2592e5
+                ) {
+                  let e =
+                    a?.app_metadata?.provider === "google" ? "google" : "email";
+                  ((0, r.track)("signup_completed", { signup_method: e }),
+                    i && window.localStorage.setItem(i, "1"));
+                }
+                (0, k.bindCampaignGrant)();
+              } catch {}
+              ((0, r.track)("consent_accepted"),
+                (0, r.track)("child_created", {
+                  ageBand: e.ageBand,
+                  language: l,
+                }),
+                i({ childId: a.childId }),
+                (0, y.rememberActiveChild)(a.childId),
+                (document.cookie = `${n.INFLIGHT_COOKIE}=1; path=/; max-age=86400; samesite=lax`),
+                s("s6"));
+            },
+            q = async (e) => {
+              if ((e.preventDefault(), !E && (!U || L))) {
+                (P(!0), A(""), H(""));
+                try {
+                  let e = (0, h.createClient)(),
+                    { data: t, error: a } = await e.auth.updateUser(
+                      { email: g, password: j },
+                      {
+                        emailRedirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent("/start")}`,
+                      },
+                    );
+                  if (a) {
+                    ("email_exists" === a.code ||
+                    "user_already_exists" === a.code
+                      ? _(!0)
+                      : A((0, x.localizeAuthError)(a, l, d.genericError)),
+                      P(!1));
+                    return;
+                  }
+                  if (t.user?.is_anonymous) {
+                    (H(d.confirmNotice), P(!1));
+                    return;
+                  }
+                  (J(!1), await K());
+                } catch {
+                  (A(d.genericError), P(!1));
+                }
+              }
+            },
+            Q = async () => {
+              if (!M) {
+                (W(!0), A(""));
+                try {
+                  await fetch("/api/beta/resend-link", {
+                    method: "POST",
+                    headers: { "content-type": "application/json" },
+                    body: JSON.stringify({ email: g, locale: l }),
+                  });
+                } catch {}
+                (H(d.linkSentNotice), _(!1), W(!1));
+              }
+            },
+            X = async () => {
+              A("");
+              try {
+                let e = (0, h.createClient)(),
+                  { error: t } = await e.auth.linkIdentity({
+                    provider: "google",
+                    options: {
+                      redirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent("/start")}`,
+                    },
+                  });
+                t && A((0, x.localizeAuthError)(t, l, d.genericError));
+              } catch {
+                A(d.genericError);
+              }
+            },
+            Z = async () => {
+              if (!E && (!U || L)) {
+                (P(!0), A(""));
+                try {
+                  await K();
+                } catch {
+                  (A(d.genericError), P(!1));
+                }
+              }
+            },
+            ee = (0, t.jsx)(F, {
+              locale: l,
+              checked: L,
+              onChange: C,
+              disabled: E,
+            });
+          return (0, t.jsx)("section", {
+            "data-testid": "start-screen-s5",
+            className: "start-screen",
+            children: (0, t.jsxs)("div", {
+              className: "stepcard glass",
+              style: { maxWidth: "600px" },
+              children: [
+                (0, t.jsxs)("div", {
+                  className: "acct",
+                  children: [
+                    (0, t.jsx)("div", {
+                      className: "pframe",
+                      children: e.portraitBase64
+                        ? (0, t.jsx)("img", {
+                            src: D(e.portraitBase64),
+                            alt: "",
+                          })
+                        : null,
+                    }),
+                    (0, t.jsxs)("div", {
+                      className: "acct-copy",
+                      children: [
+                        (0, t.jsxs)("h2", {
+                          children: [
+                            d.headingLead,
+                            " ",
+                            (0, f.genitive)(c, l),
+                            " ",
+                            d.headingTail,
+                          ],
+                        }),
+                        (0, t.jsx)("p", {
+                          className: "trial-line",
+                          children: p
+                            ? `${d.trialLead} ${p.short} ${d.trialTail}`
+                            : `${d.trialLead.replace(/,$/, "")} ${d.trialTail}`,
+                        }),
+                      ],
+                    }),
+                  ],
+                }),
+                B
+                  ? (0, t.jsx)("p", {
+                      role: "alert",
+                      className: "field-error",
+                      children: B,
+                    })
+                  : null,
+                $
+                  ? (0, t.jsxs)("div", {
+                      "data-testid": "start-account-exists",
+                      style: {
+                        display: "grid",
+                        gap: "8px",
+                        justifyItems: "start",
+                      },
+                      children: [
+                        (0, t.jsx)("p", {
+                          className: "trial-line",
+                          style: { margin: 0 },
+                          children: d.existingAccountLead,
+                        }),
+                        (0, t.jsx)("button", {
+                          type: "button",
+                          className: "btn btn-primary",
+                          onClick: Q,
+                          disabled: M,
+                          "data-testid": "start-send-login-link",
+                          children: M ? d.sendingLink : d.sendLinkCta,
+                        }),
+                      ],
+                    })
+                  : null,
+                R
+                  ? (0, t.jsx)("p", {
+                      role: "status",
+                      className: "trial-line",
+                      children: R,
+                    })
+                  : null,
+                O
+                  ? (0, t.jsxs)("div", {
+                      role: "alert",
+                      "data-testid": "start-moderation-blocked",
+                      style: {
+                        display: "grid",
+                        gap: "14px",
+                        justifyItems: "start",
+                      },
+                      children: [
+                        (0, t.jsx)("p", {
+                          className: "field-error",
+                          style: { margin: 0 },
+                          children: O,
+                        }),
+                        (0, t.jsx)("button", {
+                          type: "button",
+                          className: "btn btn-primary",
+                          onClick: () => {
+                            (G(""), s("s3"));
+                          },
+                          children: d.changeDescription,
+                        }),
+                      ],
+                    })
+                  : Y
+                    ? (0, t.jsxs)(t.Fragment, {
+                        children: [
+                          U ? ee : null,
+                          (0, t.jsx)("button", {
+                            type: "button",
+                            className: "btn btn-primary",
+                            disabled: E || (U && !L),
+                            onClick: Z,
+                            children: E ? d.savingPresent : d.savePresent,
+                          }),
+                        ],
+                      })
+                    : (0, t.jsxs)(t.Fragment, {
+                        children: [
+                          (0, t.jsxs)("form", {
+                            onSubmit: q,
+                            style: {
+                              display: "flex",
+                              flexDirection: "column",
+                              gap: "14px",
+                            },
+                            children: [
+                              (0, t.jsx)("input", {
+                                className: "field",
+                                type: "email",
+                                autoComplete: "email",
+                                placeholder: d.emailPlaceholder,
+                                "aria-label": d.emailPlaceholder,
+                                value: g,
+                                onChange: (e) => b(e.target.value),
+                                required: !0,
+                                disabled: E,
+                              }),
+                              (0, t.jsxs)("div", {
+                                style: { position: "relative" },
+                                children: [
+                                  (0, t.jsx)("input", {
+                                    className: "field",
+                                    type: N ? "text" : "password",
+                                    autoComplete: "new-password",
+                                    placeholder: d.passwordPlaceholder,
+                                    "aria-label": d.passwordPlaceholder,
+                                    value: j,
+                                    onChange: (e) => w(e.target.value),
+                                    required: !0,
+                                    minLength: 6,
+                                    disabled: E,
+                                    style: { paddingRight: "52px" },
+                                  }),
+                                  (0, t.jsx)("button", {
+                                    type: "button",
+                                    onClick: () => I((e) => !e),
+                                    "aria-label": N
+                                      ? d.hidePassword
+                                      : d.showPassword,
+                                    disabled: E,
+                                    style: {
+                                      position: "absolute",
+                                      right: "2px",
+                                      top: "50%",
+                                      transform: "translateY(-50%)",
+                                      width: "44px",
+                                      height: "44px",
+                                      padding: 0,
+                                      display: "grid",
+                                      placeItems: "center",
+                                      border: "none",
+                                      background: "none",
+                                      color: "var(--card-sub)",
+                                      cursor: "pointer",
+                                    },
+                                    children: N
+                                      ? (0, t.jsxs)("svg", {
+                                          viewBox: "0 0 24 24",
+                                          width: "18",
+                                          height: "18",
+                                          fill: "none",
+                                          stroke: "currentColor",
+                                          strokeWidth: "2",
+                                          strokeLinecap: "round",
+                                          strokeLinejoin: "round",
+                                          "aria-hidden": "true",
+                                          children: [
+                                            (0, t.jsx)("path", {
+                                              d: "M9.9 4.24A9.1 9.1 0 0 1 12 4c7 0 10 8 10 8a18.5 18.5 0 0 1-2.16 3.19M6.6 6.6A18.5 18.5 0 0 0 2 12s3 8 10 8a9.1 9.1 0 0 0 5.4-1.6",
+                                            }),
+                                            (0, t.jsx)("path", {
+                                              d: "M9.9 9.9a3 3 0 0 0 4.2 4.2M2 2l20 20",
+                                            }),
+                                          ],
+                                        })
+                                      : (0, t.jsxs)("svg", {
+                                          viewBox: "0 0 24 24",
+                                          width: "18",
+                                          height: "18",
+                                          fill: "none",
+                                          stroke: "currentColor",
+                                          strokeWidth: "2",
+                                          strokeLinecap: "round",
+                                          strokeLinejoin: "round",
+                                          "aria-hidden": "true",
+                                          children: [
+                                            (0, t.jsx)("path", {
+                                              d: "M2 12s3-8 10-8 10 8 10 8-3 8-10 8-10-8-10-8z",
+                                            }),
+                                            (0, t.jsx)("circle", {
+                                              cx: "12",
+                                              cy: "12",
+                                              r: "3",
+                                            }),
+                                          ],
+                                        }),
+                                  }),
+                                ],
+                              }),
+                              U ? ee : null,
+                              (0, t.jsx)("button", {
+                                type: "submit",
+                                className: "btn btn-primary",
+                                disabled: E || (U && !L),
+                                children: E ? d.submitting : d.submit,
+                              }),
+                            ],
+                          }),
+                          (0, t.jsx)("button", {
+                            type: "button",
+                            className: "btn btn-ghost",
+                            onClick: X,
+                            disabled: E,
+                            children: d.google,
+                          }),
+                        ],
+                      }),
+              ],
+            }),
+          });
+        },
+        s6: function ({ draft: e, updateDraft: n, show: i, locale: s }) {
+          let l,
+            o = X[s],
+            d = e.name || o.fallbackName,
+            c = [
+              {
+                id: "first-run-ember",
+                kind: "ember",
+                title: (l = "sv" === s)
+                  ? "Den försvunna lyktan"
+                  : "The Lost Lantern",
+                invitation: l
+                  ? "En godnattsaga där kvällens ljus behöver hittas igen."
+                  : "A bedtime story where tonight's light needs finding again.",
+                whyLine: l
+                  ? "En mjuk start, vald för er allra första bok."
+                  : "A gentle start, chosen for your very first book.",
+                register: "cozy",
+                premiseId: "lost-lantern-home-lanes",
+                domainId: "sel.self-regulation",
+                highlighted: !0,
+              },
+              {
+                id: "first-run-register",
+                kind: "register",
+                title: l ? "Tornet i molnen" : "The Tower in the Clouds",
+                invitation: l
+                  ? "Ett större äventyr högt uppe bland molnen."
+                  : "A bigger adventure high up among the clouds.",
+                whyLine: l
+                  ? "För kvällar när modet vill växa."
+                  : "For evenings when courage wants to grow.",
+                register: "adventure",
+                premiseId: "tower-in-the-clouds-stair",
+                domainId: "sel.self-regulation",
+              },
+              {
+                id: "first-run-competency",
+                kind: "competency",
+                title: l ? "Stjärnnatten" : "The Starry Night",
+                invitation: l
+                  ? "En saga om vänskap under natthimlen."
+                  : "A story about friendship under the night sky.",
+                whyLine: l
+                  ? "Ett första steg, sparat till nästa bok."
+                  : "A first step, saved for the next book.",
+                premiseId: "starry-night-hilltop-meadow",
+                domainId: "sel.self-regulation",
+              },
+            ],
+            h = (0, Q.waitPhrase)(s),
+            p = e.style ?? K.DEFAULT_CREATE_STYLE_ID,
+            g = e.voice ?? q.DEFAULT_CREATE_VOICE_ID,
+            m = e.language ?? s,
+            v =
+              K.CREATE_STYLE_PRESETS.find((e) => e.id === p) ??
+              K.CREATE_STYLE_PRESETS[0],
+            k = q.CREATE_VOICES.find((e) => e.id === g) ?? q.CREATE_VOICES[0],
+            x = S(e.companion)?.short ?? null,
+            y = null !== x && e.launchCompanion === x,
+            [j, w] = (0, a.useState)(null),
+            [N, I] = (0, a.useState)(!1),
+            [L, C] = (0, a.useState)(null),
+            [T, E] = (0, a.useState)(!1),
+            [P, B] = (0, a.useState)(!1),
+            F = (0, a.useRef)(null),
+            A = (e, t) => {
+              (n({ adventure: e.id }),
+                (0, r.track)("card_picked", { kind: e.kind }),
+                C(null),
+                w({ card: e, surprise: t }));
+            },
+            R = async (t) => {
+              if (t !== m && !T) {
+                (E(!0), B(!1));
+                try {
+                  if (!e.childId) throw Error("language_owner_unavailable");
+                  (await (0, u.backendFetch)("/children/{child_id}", {
+                    method: "PATCH",
+                    params: { child_id: e.childId },
+                    body: { preferredLanguage: t },
+                  }),
+                    n({ language: t }),
+                    (0, r.track)("language_changed", { language: t }));
+                } catch {
+                  B(!0);
+                } finally {
+                  E(!1);
+                }
+              }
+            },
+            H = e.childId ? `tf-create-job-${e.childId}` : null,
+            $ = async () => {
+              if (N || !j) return;
+              let t = e.childId;
+              if (!t) return void C("generic");
+              (I(!0), C(null));
+              try {
+                var a = await (0, u.backendFetch)("/create/enqueue", {
+                  method: "POST",
+                  body: {
+                    childId: t,
+                    ageBand: e.ageBand,
+                    language: m,
+                    stylePresetId: p,
+                    narratorPersona: g,
+                    ...(j.surprise
+                      ? {}
+                      : j.card.premiseId
+                        ? {
+                            premiseId: j.card.premiseId,
+                            ...(j.card.domainId
+                              ? { domainId: j.card.domainId }
+                              : {}),
+                          }
+                        : j.card.register
+                          ? { register: j.card.register }
+                          : {}),
+                    ...(y && x ? { companionOverride: x } : {}),
+                  },
+                });
+                if (H)
+                  try {
+                    window.sessionStorage.setItem(H, a.storyId);
+                  } catch {}
+                (n({ jobId: a.storyId }),
+                  (0, r.track)("forge_started", { companion_selected: y }),
+                  i("s7"));
+              } catch (e) {
+                if (e instanceof u.BackendFetchError) {
+                  if (402 === e.status) {
+                    (C("cap"), I(!1));
+                    return;
+                  }
+                  if (409 === e.status) {
+                    let t = e.body;
+                    if (t?.storyId) {
+                      (n({ jobId: t.storyId }), i("s7"));
+                      return;
+                    }
+                    (C("busy"), I(!1));
+                    return;
+                  }
+                }
+                (C("generic"), I(!1));
+              }
+            };
+          return (0, t.jsxs)("section", {
+            "data-testid": "start-screen-s6",
+            className: "start-screen",
+            children: [
+              (0, t.jsxs)("div", {
+                className: "launch",
+                children: [
+                  (0, t.jsx)(J.WorldBand, {
+                    locale: s,
+                    heroName: e.name?.trim() ? e.name : null,
+                    portraitUrl: e.portraitBase64
+                      ? D(e.portraitBase64)
+                      : e.photoBase64 || null,
+                    portraitAlt: "",
+                    lede: o.lede.replace("{time}", h),
+                  }),
+                  (0, t.jsx)(z.RecipeLine, {
+                    locale: s,
+                    style: {
+                      label: "sv" === s ? v.labelSv : v.labelEn,
+                      thumbUrl: v.previewImageUrl,
+                    },
+                    voice: {
+                      label: "sv" === s ? k.nameSv : k.nameEn,
+                      thumbUrl: k.portraitUrl,
+                    },
+                    language: { label: "sv" === m ? "svenska" : "English" },
+                    companion: y && x ? { label: x } : null,
+                    companionAdd: !!x,
+                    renderStylePicker: () =>
+                      (0, t.jsx)(Y.StylePicker, {
+                        selectedId: p,
+                        onSelect: (e) => n({ style: e }),
+                        locale: s,
+                      }),
+                    renderVoicePicker: () =>
+                      (0, t.jsx)("div", {
+                        className: "voices",
+                        children: q.CREATE_VOICES.map((e) => {
+                          let a = e.id === g;
+                          return (0, t.jsxs)(
+                            "button",
+                            {
+                              type: "button",
+                              className: a ? "trait voice on" : "trait voice",
+                              "aria-pressed": a,
+                              onClick: () =>
+                                ((e) => {
+                                  n({ voice: e.id });
+                                  try {
+                                    F.current?.pause();
+                                    let t = new Audio(
+                                      (0, q.voiceSampleUrl)(e, m),
+                                    );
+                                    ((F.current = t),
+                                      t.play()?.catch?.(() => {}));
+                                  } catch {}
+                                })(e),
+                              children: [
+                                (0, t.jsx)("svg", {
+                                  viewBox: "0 0 24 24",
+                                  fill: "currentColor",
+                                  "aria-hidden": "true",
+                                  children: (0, t.jsx)("path", {
+                                    d: "M7 4.5l12 7.5-12 7.5z",
+                                  }),
+                                }),
+                                "sv" === s ? e.nameSv : e.nameEn,
+                              ],
+                            },
+                            e.id,
+                          );
+                        }),
+                      }),
+                    renderLanguagePicker: () =>
+                      (0, t.jsxs)(t.Fragment, {
+                        children: [
+                          (0, t.jsx)("div", {
+                            className: "voices",
+                            "aria-busy": T,
+                            children: Z.map((e) => {
+                              let a = e.id === m;
+                              return (0, t.jsx)(
+                                "button",
+                                {
+                                  type: "button",
+                                  className: a ? "trait on" : "trait",
+                                  "aria-pressed": a,
+                                  onClick: () => void R(e.id),
+                                  disabled: T,
+                                  children: e.label,
+                                },
+                                e.id,
+                              );
+                            }),
+                          }),
+                          P
+                            ? (0, t.jsx)("p", {
+                                role: "alert",
+                                className: "field-error",
+                                children: o.languageError,
+                              })
+                            : null,
+                        ],
+                      }),
+                    renderCompanionPicker: x
+                      ? () =>
+                          (0, t.jsxs)(t.Fragment, {
+                            children: [
+                              (0, t.jsx)("p", {
+                                className: "sec-intro",
+                                style: { margin: 0 },
+                                children: o.companionHelper,
+                              }),
+                              (0, t.jsx)("div", {
+                                className: "voices",
+                                children: (0, t.jsx)("button", {
+                                  type: "button",
+                                  className: y ? "trait on" : "trait",
+                                  "aria-pressed": y,
+                                  onClick: () =>
+                                    n({ launchCompanion: y ? void 0 : x }),
+                                  children: x,
+                                }),
+                              }),
+                            ],
+                          })
+                      : void 0,
+                  }),
+                  (0, t.jsx)(V.DoorGrid, {
+                    cards: c,
+                    heroName: d,
+                    locale: s,
+                    onPickCard: (e) => A(e, !1),
+                    onSurprise: () => {
+                      A(c.find((e) => e.highlighted) ?? c[0], !0);
+                    },
+                    disabled: N,
+                  }),
+                ],
+              }),
+              j
+                ? (0, t.jsx)("div", {
+                    className: "sheetwrap on",
+                    "data-testid": "start-launch-sheet",
+                    onClick: (e) => {
+                      e.target !== e.currentTarget || N || w(null);
+                    },
+                    children: (0, t.jsxs)("div", {
+                      className: "sheet glass",
+                      role: "dialog",
+                      "aria-modal": "true",
+                      "aria-labelledby": "start-launch-sheet-heading",
+                      children: [
+                        (0, t.jsx)("h3", {
+                          id: "start-launch-sheet-heading",
+                          children: o.sheetHeading,
+                        }),
+                        (0, t.jsx)("span", {
+                          className: "picked",
+                          children: j.surprise
+                            ? `${o.pickedLead} ${j.card.title}`
+                            : j.card.title,
+                        }),
+                        (0, t.jsxs)("p", {
+                          children: [
+                            (0, f.genitive)(d, s),
+                            " ",
+                            o.sheetBody.replace("{time}", h),
+                          ],
+                        }),
+                        (0, t.jsx)("p", {
+                          className: "voice-line",
+                          children: o.storyteller,
+                        }),
+                        x
+                          ? (0, t.jsxs)("div", {
+                              className: "subcard glass",
+                              children: [
+                                (0, t.jsx)("h3", {
+                                  children: o.companionHeading,
+                                }),
+                                (0, t.jsx)("p", {
+                                  children: o.companionHelper,
+                                }),
+                                (0, t.jsx)("div", {
+                                  className: "voices",
+                                  children: (0, t.jsx)("button", {
+                                    type: "button",
+                                    className: y ? "trait on" : "trait",
+                                    "aria-pressed": y,
+                                    onClick: () =>
+                                      n({ launchCompanion: y ? void 0 : x }),
+                                    disabled: N,
+                                    children: x,
+                                  }),
+                                }),
+                              ],
+                            })
+                          : null,
+                        L
+                          ? (0, t.jsxs)("p", {
+                              role: "alert",
+                              className: "field-error",
+                              children: [
+                                "cap" === L
+                                  ? o.capError
+                                  : "busy" === L
+                                    ? o.busyError
+                                    : o.genericError,
+                                "cap" === L
+                                  ? (0, t.jsxs)(t.Fragment, {
+                                      children: [
+                                        " ",
+                                        (0, t.jsx)(b.default, {
+                                          href: "/uppgradera",
+                                          children: o.capLink,
+                                        }),
+                                      ],
+                                    })
+                                  : null,
+                              ],
+                            })
+                          : null,
+                        (0, t.jsxs)("div", {
+                          className: "row",
+                          children: [
+                            (0, t.jsx)("button", {
+                              type: "button",
+                              className: "btn btn-primary",
+                              onClick: () => void $(),
+                              disabled: N,
+                              children: N ? o.igniting : o.ignite,
+                            }),
+                            (0, t.jsx)("button", {
+                              type: "button",
+                              className: "btn btn-ghost",
+                              onClick: () => w(null),
+                              disabled: N,
+                              children: o.wait,
+                            }),
+                          ],
+                        }),
+                      ],
+                    }),
+                  })
+                : null,
+            ],
+          });
+        },
+        s7: function ({ draft: e, updateDraft: r, show: i, locale: s }) {
+          let l = (0, ee.useRouter)(),
+            o = er[s],
+            d = e.childId ? `tf-create-job-${e.childId}` : null;
+          (0, a.useEffect)(() => {
+            if (!e.jobId && d)
+              try {
+                let t = window.sessionStorage.getItem(d);
+                if (t) {
+                  let a = (0, ea.parseStoredGenerationPreview)(
+                    window.sessionStorage.getItem(
+                      (0, ea.generationPreviewStorageKey)(e.childId),
+                    ),
+                  );
+                  a && r({ jobId: t, generationPreview: a });
+                }
+              } catch {}
+          }, [e.childId, e.jobId, d, r]);
+          let c = () => {
+              if (d)
+                try {
+                  (window.sessionStorage.removeItem(d),
+                    e.childId &&
+                      window.sessionStorage.removeItem(
+                        (0, ea.generationPreviewStorageKey)(e.childId),
+                      ));
+                } catch {}
+            },
+            h = async (t) => {
+              (c(),
+                (0, n.clearDraft)(),
+                (document.cookie = `${n.INFLIGHT_COOKIE}=; path=/; max-age=0; samesite=lax`));
+              let a = e.childId
+                ? `?child=${encodeURIComponent(e.childId)}`
+                : "";
+              l.push(`/create${a}`);
+            },
+            u = e.generationPreview ?? null,
+            p = u
+              ? "sv" === s
+                ? `${u.adventureDirection} f\xf6r ${u.heroName} och ${u.companion}, i ${u.styleLabel.toLowerCase()}. ${u.narratorLabel} ${o.reads}.`
+                : `${u.adventureDirection} for ${u.heroName} and ${u.companion}, in ${u.styleLabel.toLowerCase()}. ${u.narratorLabel} ${o.reads}.`
+              : null;
+          return (0, t.jsx)("section", {
+            "data-testid": "start-screen-s7",
+            className: "start-screen",
+            children: (0, t.jsxs)("div", {
+              className: "forge",
+              children: [
+                u
+                  ? (0, t.jsxs)("div", {
+                      className: "glass forge-head",
+                      children: [
+                        (0, t.jsxs)("h2", {
+                          children: [
+                            (0, f.genitive)(u.heroName, s),
+                            " ",
+                            o.headingTail,
+                          ],
+                        }),
+                        (0, t.jsx)("p", { className: "inputs", children: p }),
+                        (0, t.jsxs)("p", {
+                          className: "voice-line",
+                          children: [
+                            o.voiceLineLead,
+                            " ",
+                            u.heroName,
+                            " ",
+                            o.voiceLineTail,
+                          ],
+                        }),
+                      ],
+                    })
+                  : e.jobId
+                    ? (0, t.jsx)("div", {
+                        className: "glass forge-head",
+                        children: (0, t.jsx)("h2", {
+                          children: o.headingGeneric,
+                        }),
+                      })
+                    : null,
+                e.jobId
+                  ? (0, t.jsx)(et.Glodvakten, {
+                      jobId: e.jobId,
+                      locale: s,
+                      heroName: u?.heroName ?? "",
+                      childId: e.childId,
+                      generationPreview: u,
+                      onDone: (e) => {
+                        (c(), r({ artifactId: e }), i("s8"));
+                      },
+                      onRetry: h,
+                      onSettled: c,
+                    })
+                  : (0, t.jsxs)("div", {
+                      className: "glass forge-head",
+                      children: [
+                        (0, t.jsx)("p", {
+                          className: "trial-line",
+                          children: o.lostTrace,
+                        }),
+                        (0, t.jsx)("a", {
+                          href: "/create",
+                          style: {
+                            fontSize: ".9rem",
+                            fontWeight: 700,
+                            color: "var(--chip-ink)",
+                            textDecoration: "underline",
+                          },
+                          children: o.lostTraceLink,
+                        }),
+                      ],
+                    }),
+              ],
+            }),
+          });
+        },
+        s8: function ({ draft: e, locale: a }) {
+          let r = (0, ee.useRouter)(),
+            i = en[a],
+            s = e.name || i.fallbackName;
+          return (0, t.jsx)("section", {
+            "data-testid": "start-screen-s8",
+            className: "start-screen",
+            children: (0, t.jsxs)("div", {
+              className: "handoff",
+              children: [
+                (0, t.jsx)("div", {
+                  className: "pframe",
+                  children: e.portraitBase64
+                    ? (0, t.jsx)("img", { src: D(e.portraitBase64), alt: "" })
+                    : null,
+                }),
+                (0, t.jsxs)("h1", {
+                  children: [
+                    i.headingLead,
+                    " ",
+                    (0, t.jsx)("span", { className: "grad", children: s }),
+                    ".",
+                  ],
+                }),
+                (0, t.jsxs)("p", {
+                  className: "lede",
+                  children: [
+                    i.ledeLead,
+                    " ",
+                    (0, f.genitive)(s, a),
+                    ": ",
+                    i.ledeMid,
+                    " ",
+                    s,
+                    " ",
+                    i.ledeTail,
+                  ],
+                }),
+                (0, t.jsx)("div", {
+                  className: "cta-row",
+                  children: (0, t.jsx)("button", {
+                    type: "button",
+                    className: "btn btn-primary",
+                    onClick: () => {
+                      ((0, n.clearDraft)(),
+                        (document.cookie = `${n.INFLIGHT_COOKIE}=; path=/; max-age=0; samesite=lax`),
+                        r.push(
+                          e.artifactId
+                            ? `/reader/${e.artifactId}?from=create`
+                            : "/create",
+                        ));
+                    },
+                    children: i.open,
+                  }),
+                }),
+              ],
+            }),
+          });
+        },
+      },
+      eg = {
+        display: "flex",
+        alignItems: "center",
+        gap: "14px",
+        maxWidth: "600px",
+        margin: "0 auto 22px",
+        padding: "10px 16px",
+        fontFamily: "var(--ui)",
+      },
+      em = { ...eg, maxWidth: "560px" },
+      eb = {
+        display: "grid",
+        gap: "2px",
+        fontSize: ".9rem",
+        lineHeight: 1.4,
+        color: "var(--card-sub)",
+      },
+      ev = () => () => {},
+      ek = () => null;
+    e.s(
+      [
+        "SCREEN_ORDER",
+        0,
+        el,
+        "StartFlow",
+        0,
+        function ({ locale: e, accountPresent: i }) {
+          let s = (0, a.useSyncExternalStore)(ev, n.draftSnapshot, ek),
+            [l, o] = (0, a.useState)(n.defaultDraft),
+            [d, c] = (0, a.useState)([]),
+            [h, u] = (0, a.useState)(!1),
+            [p, g] = (0, a.useState)(!1),
+            m = (0, a.useRef)(!1);
+          (!p &&
+            s &&
+            (g(!0),
+            i &&
+            !s.name &&
+            ("s0" === s.currentScreen || "s1" === s.currentScreen)
+              ? (u(!0),
+                o("s0" === s.currentScreen ? { ...s, currentScreen: "s1" } : s))
+              : o(s)),
+            (0, a.useEffect)(() => {
+              m.current ||
+                ((m.current = !0),
+                (0, n.markLandedAt)(),
+                (0, r.track)("landing", { surface: "start" }));
+            }, []));
+          let b = (e) => {
+              o((t) => {
+                let a = { ...t, ...e };
+                return ((0, n.saveDraft)(a), a);
+              });
+            },
+            v = eo[e][l.currentScreen],
+            k = v && h && "s1" === l.currentScreen ? { ...v, sub: ec[e] } : v,
+            x = ep[l.currentScreen] ?? eu,
+            y = "s7" === l.currentScreen ? em : eg;
+          return (0, t.jsxs)("div", {
+            "data-testid": "start-flow",
+            className: "start-flow",
+            children: [
+              (0, t.jsx)(es, {}),
+              k
+                ? (0, t.jsxs)("div", {
+                    className: "glass",
+                    "data-testid": "start-strip",
+                    style: y,
+                    children: [
+                      (0, t.jsx)("button", {
+                        type: "button",
+                        "aria-label": ed[e],
+                        onClick: () => {
+                          if (0 === d.length) return;
+                          let e = d[d.length - 1];
+                          (c((e) => e.slice(0, -1)), b({ currentScreen: e }));
+                        },
+                        style: {
+                          visibility: d.length ? "visible" : "hidden",
+                          flex: "none",
+                          display: "grid",
+                          placeItems: "center",
+                          width: "34px",
+                          height: "34px",
+                          background: "none",
+                          border: "1px solid var(--card-line)",
+                          borderRadius: "12px",
+                          cursor: "pointer",
+                          color: "var(--card-ink)",
+                        },
+                        children: (0, t.jsx)("svg", {
+                          viewBox: "0 0 24 24",
+                          width: "16",
+                          height: "16",
+                          fill: "none",
+                          stroke: "currentColor",
+                          strokeWidth: "2.4",
+                          strokeLinecap: "round",
+                          strokeLinejoin: "round",
+                          "aria-hidden": "true",
+                          children: (0, t.jsx)("path", { d: "M15 5l-7 7 7 7" }),
+                        }),
+                      }),
+                      k.step > 0
+                        ? (0, t.jsx)("span", {
+                            "data-testid": "start-strip-dots",
+                            "aria-hidden": "true",
+                            style: {
+                              display: "flex",
+                              gap: "6px",
+                              flex: "none",
+                            },
+                            children: [1, 2, 3, 4].map((e) =>
+                              (0, t.jsx)(
+                                "i",
+                                {
+                                  style: {
+                                    width: "8px",
+                                    height: "8px",
+                                    borderRadius: "50%",
+                                    background:
+                                      e <= k.step
+                                        ? "var(--trait-on-line)"
+                                        : "var(--card-line)",
+                                  },
+                                },
+                                e,
+                              ),
+                            ),
+                          })
+                        : null,
+                      (0, t.jsxs)("span", {
+                        style: eb,
+                        children: [
+                          (0, t.jsx)("b", {
+                            style: { color: "var(--card-ink)" },
+                            children: k.title,
+                          }),
+                          (0, t.jsx)("span", { children: k.sub }),
+                        ],
+                      }),
+                    ],
+                  })
+                : null,
+              (0, t.jsx)(x, {
+                draft: l,
+                updateDraft: b,
+                show: (e) => {
+                  (c((e) => [...e, l.currentScreen]), b({ currentScreen: e }));
+                },
+                locale: e,
+                accountPresent: i,
+                accountReadyEntry: h,
+              }),
+            ],
+          });
+        },
+      ],
+      9181,
+    );
+  });

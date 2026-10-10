@@ -1,0 +1,150 @@
+kind,file,lines,context,selector,property_or_keyframes,duration_s,easing,easing_bezier,delay_s,iteration,direction,fill,raw
+transition,source/css/3q17cp_jgfwol.pretty.css,602-605,,body,background-color,0.5,ease,"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"background-color var(--theme-transition-duration) var(--theme-transition-easing), color var(--theme-transition-duration) var(--theme-transition-easing)"
+transition,source/css/3q17cp_jgfwol.pretty.css,602-605,,body,color,0.5,ease,"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"background-color var(--theme-transition-duration) var(--theme-transition-easing), color var(--theme-transition-duration) var(--theme-transition-easing)"
+transition,source/css/3q17cp_jgfwol.pretty.css,616-617,,.bg,opacity,0.5,ease,"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,opacity var(--theme-transition-duration) var(--theme-transition-easing)
+transition,source/css/3q17cp_jgfwol.pretty.css,708,,.logo,color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,color 0.5s
+transition,source/css/3q17cp_jgfwol.pretty.css,741-744,,.nav-cta,background,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"background 0.5s, color 0.5s, border-color 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,741-744,,.nav-cta,color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"background 0.5s, color 0.5s, border-color 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,741-744,,.nav-cta,border-color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"background 0.5s, color 0.5s, border-color 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,776-778,,.tt,background,0.5,ease,"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"background var(--theme-transition-duration) var(--theme-transition-easing), border-color var(--theme-transition-duration) var(--theme-transition-easing)"
+transition,source/css/3q17cp_jgfwol.pretty.css,776-778,,.tt,border-color,0.5,ease,"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"background var(--theme-transition-duration) var(--theme-transition-easing), border-color var(--theme-transition-duration) var(--theme-transition-easing)"
+transition,source/css/3q17cp_jgfwol.pretty.css,789-791,,.tt-thumb,transform,0.5,"cubic-bezier(0.2, 0.7, 0.3, 1.2)","cubic-bezier(0.2, 0.7, 0.3, 1.2)",0.0,,,,"transform var(--theme-transition-duration) cubic-bezier(0.2, 0.7, 0.3, 1.2), background var(--theme-transition-duration) var(--theme-transition-easing)"
+transition,source/css/3q17cp_jgfwol.pretty.css,789-791,,.tt-thumb,background,0.5,ease,"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform var(--theme-transition-duration) cubic-bezier(0.2, 0.7, 0.3, 1.2), background var(--theme-transition-duration) var(--theme-transition-easing)"
+transition,source/css/3q17cp_jgfwol.pretty.css,804-805,,.tt-opt,color,0.5,ease,"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,color var(--theme-transition-duration) var(--theme-transition-easing)
+transition,source/css/3q17cp_jgfwol.pretty.css,848,,.kicker,all,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,all 0.5s
+transition,source/css/3q17cp_jgfwol.pretty.css,865,,h1,color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,color 0.5s
+transition,source/css/3q17cp_jgfwol.pretty.css,869,,h1 .grad,color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,color 0.5s
+transition,source/css/3q17cp_jgfwol.pretty.css,878,,.lede,color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,color 0.5s
+transition,source/css/3q17cp_jgfwol.pretty.css,897-901,,.btn,transform,0.25,"cubic-bezier(0.2, 0.7, 0.3, 1.4)","cubic-bezier(0.2, 0.7, 0.3, 1.4)",0.0,,,,"transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, background 0.5s, color 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,897-901,,.btn,box-shadow,0.3,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, background 0.5s, color 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,897-901,,.btn,background,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, background 0.5s, color 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,897-901,,.btn,color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, background 0.5s, color 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,933-935,,.fan .fbook,transform,0.5,"cubic-bezier(0.2, 0.7, 0.3, 1.2)","cubic-bezier(0.2, 0.7, 0.3, 1.2)",0.0,,,,"transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1.2), border-color 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,933-935,,.fan .fbook,border-color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1.2), border-color 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,992-994,,.fan .badge,background,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"background 0.5s, color 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,992-994,,.fan .badge,color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"background 0.5s, color 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,1061,,h2,color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,color 0.5s
+transition,source/css/3q17cp_jgfwol.pretty.css,1071,,".create-title, .page-title",color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,color 0.5s
+transition,source/css/3q17cp_jgfwol.pretty.css,1097,,.sec-chip,all,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,all 0.5s
+transition,source/css/3q17cp_jgfwol.pretty.css,1101-1103,,.reveal,opacity,0.7,"cubic-bezier(0.2, 0.7, 0.3, 1)","cubic-bezier(0.2, 0.7, 0.3, 1)",0.0,,,,"opacity 0.7s cubic-bezier(0.2, 0.7, 0.3, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1)"
+transition,source/css/3q17cp_jgfwol.pretty.css,1101-1103,,.reveal,transform,0.7,"cubic-bezier(0.2, 0.7, 0.3, 1)","cubic-bezier(0.2, 0.7, 0.3, 1)",0.0,,,,"opacity 0.7s cubic-bezier(0.2, 0.7, 0.3, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1)"
+transition,source/css/3q17cp_jgfwol.pretty.css,1118-1122,,.glass,background,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"background 0.5s, border-color 0.5s, color 0.5s, box-shadow 0.4s"
+transition,source/css/3q17cp_jgfwol.pretty.css,1118-1122,,.glass,border-color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"background 0.5s, border-color 0.5s, color 0.5s, box-shadow 0.4s"
+transition,source/css/3q17cp_jgfwol.pretty.css,1118-1122,,.glass,color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"background 0.5s, border-color 0.5s, color 0.5s, box-shadow 0.4s"
+transition,source/css/3q17cp_jgfwol.pretty.css,1118-1122,,.glass,box-shadow,0.4,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"background 0.5s, border-color 0.5s, color 0.5s, box-shadow 0.4s"
+transition,source/css/3q17cp_jgfwol.pretty.css,1172,,.builder-pic .pframe,border-color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,border-color 0.5s
+transition,source/css/3q17cp_jgfwol.pretty.css,1195-1197,,.builder-pic .fab,transform,0.25,"cubic-bezier(0.2, 0.7, 0.3, 1.4)","cubic-bezier(0.2, 0.7, 0.3, 1.4)",0.0,,,,"transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), background 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,1195-1197,,.builder-pic .fab,background,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), background 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,1236,,.trait,all,0.25,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,all 0.25s
+transition,source/css/3q17cp_jgfwol.pretty.css,1254,,.upload,border-color,0.3,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,border-color 0.3s
+transition,source/css/3q17cp_jgfwol.pretty.css,1307,,.friend .avatar,border-color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,border-color 0.5s
+transition,source/css/3q17cp_jgfwol.pretty.css,1339,,.friend-add,border-color,0.3,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,border-color 0.3s
+transition,source/css/3q17cp_jgfwol.pretty.css,1439,,.comp-chosen,opacity,0.25,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,opacity 0.25s
+transition,source/css/3q17cp_jgfwol.pretty.css,1456,,.companion-pic,border-color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,border-color 0.5s
+transition,source/css/3q17cp_jgfwol.pretty.css,1492-1497,,.book,transform,0.35,"cubic-bezier(0.2, 0.7, 0.3, 1.2)","cubic-bezier(0.2, 0.7, 0.3, 1.2)",0.0,,,,"transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1.2), box-shadow 0.35s, background 0.5s, border-color 0.5s, color 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,1492-1497,,.book,box-shadow,0.35,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1.2), box-shadow 0.35s, background 0.5s, border-color 0.5s, color 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,1492-1497,,.book,background,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1.2), box-shadow 0.35s, background 0.5s, border-color 0.5s, color 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,1492-1497,,.book,border-color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1.2), box-shadow 0.35s, background 0.5s, border-color 0.5s, color 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,1492-1497,,.book,color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1.2), box-shadow 0.35s, background 0.5s, border-color 0.5s, color 0.5s"
+transition,source/css/3q17cp_jgfwol.pretty.css,1541,,.adv,transform,0.3,"cubic-bezier(0.2, 0.7, 0.3, 1.2)","cubic-bezier(0.2, 0.7, 0.3, 1.2)",0.0,,,,"transform 0.3s cubic-bezier(0.2, 0.7, 0.3, 1.2)"
+transition,source/css/3q17cp_jgfwol.pretty.css,1821,,.reader-title,color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,color 0.5s
+transition,source/css/3q17cp_jgfwol.pretty.css,1832,,.prose,color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,color 0.5s
+transition,source/css/3q17cp_jgfwol.pretty.css,1918-1921,,.choice,transform,0.25,"cubic-bezier(0.2, 0.7, 0.3, 1.2)","cubic-bezier(0.2, 0.7, 0.3, 1.2)",0.0,,,,"transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.2), box-shadow 0.25s, border-color 0.2s"
+transition,source/css/3q17cp_jgfwol.pretty.css,1918-1921,,.choice,box-shadow,0.25,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.2), box-shadow 0.25s, border-color 0.2s"
+transition,source/css/3q17cp_jgfwol.pretty.css,1918-1921,,.choice,border-color,0.2,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.2), box-shadow 0.25s, border-color 0.2s"
+transition,source/css/3q17cp_jgfwol.pretty.css,1942,,.foot,color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,color 0.5s
+transition,source/css/3q17cp_jgfwol.pretty.css,2000-2003,,.sound-bed,border-color,0.2,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"border-color 0.2s, background 0.2s, color 0.2s"
+transition,source/css/3q17cp_jgfwol.pretty.css,2000-2003,,.sound-bed,background,0.2,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"border-color 0.2s, background 0.2s, color 0.2s"
+transition,source/css/3q17cp_jgfwol.pretty.css,2000-2003,,.sound-bed,color,0.2,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"border-color 0.2s, background 0.2s, color 0.2s"
+transition,source/css/3q17cp_jgfwol.pretty.css,2087-2089,@media (prefers-reduced-motion: no-preference),.reader-img,width,0.3,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"width 0.3s, aspect-ratio 0.3s"
+transition,source/css/3q17cp_jgfwol.pretty.css,2087-2089,@media (prefers-reduced-motion: no-preference),.reader-img,aspect-ratio,0.3,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"width 0.3s, aspect-ratio 0.3s"
+transition,source/css/3q17cp_jgfwol.pretty.css,2362,@media (prefers-reduced-motion: reduce),"body, .bg, .tt, .tt-thumb, .tt-opt",none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,none
+transition,source/css/3q17cp_jgfwol.pretty.css,2366,@media (prefers-reduced-motion: reduce),.reveal,none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,none
+transition,source/css/3q17cp_jgfwol.pretty.css,2370,@media (prefers-reduced-motion: reduce),.comp-chosen,none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,none
+transition,source/css/3q17cp_jgfwol.pretty.css,2396-2398,,.create-customize,border-color,0.3,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"border-color 0.3s, box-shadow 0.3s"
+transition,source/css/3q17cp_jgfwol.pretty.css,2396-2398,,.create-customize,box-shadow,0.3,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"border-color 0.3s, box-shadow 0.3s"
+transition,source/css/3q17cp_jgfwol.pretty.css,2441,,.create-customize > summary:after,transform,0.25,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,transform 0.25s
+transition,source/css/3q17cp_jgfwol.pretty.css,2820-2822,,.hiw-play,transform,0.25,"cubic-bezier(0.2, 0.7, 0.3, 1.4)","cubic-bezier(0.2, 0.7, 0.3, 1.4)",0.0,,,,"transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s"
+transition,source/css/3q17cp_jgfwol.pretty.css,2820-2822,,.hiw-play,box-shadow,0.3,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s"
+transition,source/css/3q17cp_jgfwol.pretty.css,2943-2945,,.hiw-map .map-path-lit--lit,stroke-dashoffset,0.9,ease-out,"cubic-bezier(0, 0, 0.58, 1)",0.0,,,,"stroke-dashoffset 0.9s ease-out, opacity 0.2s"
+transition,source/css/3q17cp_jgfwol.pretty.css,2943-2945,,.hiw-map .map-path-lit--lit,opacity,0.2,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"stroke-dashoffset 0.9s ease-out, opacity 0.2s"
+transition,source/css/3q17cp_jgfwol.pretty.css,2948,,.hiw-map .map-path-lit--fading,opacity,0.25,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,opacity 0.25s
+transition,source/css/3q17cp_jgfwol.pretty.css,2951,,.hiw-map .map-path-lit--off,none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,none
+transition,source/css/3q17cp_jgfwol.pretty.css,2981-2983,,.hiw-map .map-medallion,transform,0.2,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.2s, opacity 0.2s"
+transition,source/css/3q17cp_jgfwol.pretty.css,2981-2983,,.hiw-map .map-medallion,opacity,0.2,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.2s, opacity 0.2s"
+transition,source/css/3q17cp_jgfwol.pretty.css,3217,@media (prefers-reduced-motion: reduce),".hiw-map .map-path-lit--lit, .hiw-map .map-path-lit--fading, .hiw-map .map-medallion",none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,none
+transition,source/css/3q17cp_jgfwol.pretty.css,3224,@media (prefers-reduced-motion: reduce),".hiw-play, .hiw-play:hover",none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,none
+transition,source/css/2h1wwdz1nvxwk.pretty.css,187,,.cs-chip,border-color,0.25,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,border-color 0.25s
+transition,source/css/2h1wwdz1nvxwk.pretty.css,591,@media (prefers-reduced-motion: reduce),.cs-chip,none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,none
+transition,source/css/37m388zf6rymp.pretty.css,346-348,,".glod-stage[data-narrow=""1""] .glod-sign",opacity,0.45,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"opacity 0.45s, transform 0.5s"
+transition,source/css/37m388zf6rymp.pretty.css,346-348,,".glod-stage[data-narrow=""1""] .glod-sign",transform,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"opacity 0.45s, transform 0.5s"
+transition,source/css/37m388zf6rymp.pretty.css,356-359,,".glod-stage[data-narrow=""1""].glod-climax .glod-sign",opacity,0.3,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"opacity 0.3s, transform 0.35s, visibility 0s linear 0.35s"
+transition,source/css/37m388zf6rymp.pretty.css,356-359,,".glod-stage[data-narrow=""1""].glod-climax .glod-sign",transform,0.35,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"opacity 0.3s, transform 0.35s, visibility 0s linear 0.35s"
+transition,source/css/37m388zf6rymp.pretty.css,356-359,,".glod-stage[data-narrow=""1""].glod-climax .glod-sign",visibility,0.0,linear,"cubic-bezier(0, 0, 1, 1)",0.35,,,,"opacity 0.3s, transform 0.35s, visibility 0s linear 0.35s"
+transition,source/css/37m388zf6rymp.pretty.css,437-439,,.glod-mem,opacity,0.25,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"opacity 0.25s, transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.2)"
+transition,source/css/37m388zf6rymp.pretty.css,437-439,,.glod-mem,transform,0.25,"cubic-bezier(0.2, 0.7, 0.3, 1.2)","cubic-bezier(0.2, 0.7, 0.3, 1.2)",0.0,,,,"opacity 0.25s, transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.2)"
+transition,source/css/37m388zf6rymp.pretty.css,535,,.glod-mem-ember,opacity,0.25,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,opacity 0.25s
+transition,source/css/37m388zf6rymp.pretty.css,632,,.glod-active-ember,top,2.6,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,top 2.6s
+transition,source/css/37m388zf6rymp.pretty.css,666-668,,.glod-active-ember-core,transform,0.18,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.18s, box-shadow 0.18s"
+transition,source/css/37m388zf6rymp.pretty.css,666-668,,.glod-active-ember-core,box-shadow,0.18,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.18s, box-shadow 0.18s"
+transition,source/css/37m388zf6rymp.pretty.css,728,,.glod-hearth-box,opacity,0.9,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,opacity 0.9s
+transition,source/css/37m388zf6rymp.pretty.css,806-808,,.glod-book,opacity,1.1,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"opacity 1.1s, transform 1.1s cubic-bezier(0.2, 0.7, 0.3, 1.2)"
+transition,source/css/37m388zf6rymp.pretty.css,806-808,,.glod-book,transform,1.1,"cubic-bezier(0.2, 0.7, 0.3, 1.2)","cubic-bezier(0.2, 0.7, 0.3, 1.2)",0.0,,,,"opacity 1.1s, transform 1.1s cubic-bezier(0.2, 0.7, 0.3, 1.2)"
+transition,source/css/37m388zf6rymp.pretty.css,957-959,,.glod-caption,opacity,0.9,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.2,,,,"opacity 0.9s 0.2s, visibility 0s linear 1.2s"
+transition,source/css/37m388zf6rymp.pretty.css,957-959,,.glod-caption,visibility,0.0,linear,"cubic-bezier(0, 0, 1, 1)",1.2,,,,"opacity 0.9s 0.2s, visibility 0s linear 1.2s"
+transition,source/css/37m388zf6rymp.pretty.css,968,,.glod-caption.show,opacity,0.9,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.2,,,,opacity 0.9s 0.2s
+transition,source/css/37m388zf6rymp.pretty.css,997-1000,,.glod-open,transform,0.25,"cubic-bezier(0.2, 0.7, 0.3, 1.4)","cubic-bezier(0.2, 0.7, 0.3, 1.4)",0.0,,,,"transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, border-color 0.3s"
+transition,source/css/37m388zf6rymp.pretty.css,997-1000,,.glod-open,box-shadow,0.3,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, border-color 0.3s"
+transition,source/css/37m388zf6rymp.pretty.css,997-1000,,.glod-open,border-color,0.3,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, border-color 0.3s"
+transition,source/css/37m388zf6rymp.pretty.css,1058,@media (prefers-reduced-motion: reduce),.glod-active-ember,none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,none
+transition,source/css/37m388zf6rymp.pretty.css,1066,@media (prefers-reduced-motion: reduce),.glod-book,opacity,0.4,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,opacity 0.4s
+transition,source/css/2_gt301v4m-60.pretty.css,72,,.start-flow .field,border-color,0.3,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,border-color 0.3s
+transition,source/css/2_gt301v4m-60.pretty.css,167,,.start-flow .pick,all,0.25,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,all 0.25s
+transition,source/css/2_gt301v4m-60.pretty.css,226,,.start-flow .pframe,border-color,0.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,border-color 0.5s
+transition,source/css/2_gt301v4m-60.pretty.css,304-306,,.start-flow .easel img,filter,1.5,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,"filter 1.5s, transform 1.6s cubic-bezier(0.2, 0.7, 0.3, 1)"
+transition,source/css/2_gt301v4m-60.pretty.css,304-306,,.start-flow .easel img,transform,1.6,"cubic-bezier(0.2, 0.7, 0.3, 1)","cubic-bezier(0.2, 0.7, 0.3, 1)",0.0,,,,"filter 1.5s, transform 1.6s cubic-bezier(0.2, 0.7, 0.3, 1)"
+transition,source/css/2_gt301v4m-60.pretty.css,653,,.start-flow .adv,transform,0.3,"cubic-bezier(0.2, 0.7, 0.3, 1.2)","cubic-bezier(0.2, 0.7, 0.3, 1.2)",0.0,,,,"transform 0.3s cubic-bezier(0.2, 0.7, 0.3, 1.2)"
+transition,source/css/2_gt301v4m-60.pretty.css,717,,.start-flow .stile,all,0.25,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,all 0.25s
+transition,source/css/2_gt301v4m-60.pretty.css,925,@media (prefers-reduced-motion: reduce),".start-flow .adv, .start-flow .adv:hover",none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,none
+transition,source/css/2_gt301v4m-60.pretty.css,933,@media (prefers-reduced-motion: reduce),.start-flow .easel img,opacity,0.2,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,,,,opacity 0.2s
+animation,source/css/3q17cp_jgfwol.pretty.css,644,,.starfield,twinkle,4.6,ease-in-out,"cubic-bezier(0.42, 0, 0.58, 1)",0.0,infinite,normal,none,4.6s ease-in-out infinite twinkle
+animation,source/css/3q17cp_jgfwol.pretty.css,950,,.fb1,float1,7.0,ease-in-out,"cubic-bezier(0.42, 0, 0.58, 1)",0.0,infinite,normal,none,7s ease-in-out infinite float1
+animation,source/css/3q17cp_jgfwol.pretty.css,957,,.fb2,float2,8.0,ease-in-out,"cubic-bezier(0.42, 0, 0.58, 1)",0.0,infinite,normal,none,8s ease-in-out infinite float2
+animation,source/css/3q17cp_jgfwol.pretty.css,995,,.fan .badge,floatBadge,9.0,ease-in-out,"cubic-bezier(0.42, 0, 0.58, 1)",0.0,infinite,normal,none,9s ease-in-out infinite floatBadge
+animation,source/css/3q17cp_jgfwol.pretty.css,1016,,.badge .dotpulse,pulse,2.4,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,infinite,normal,none,2.4s infinite pulse
+animation,source/css/3q17cp_jgfwol.pretty.css,1882,,.reader-link-wait .dotpulse,pulse,2.4,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,infinite,normal,none,2.4s infinite pulse
+animation,source/css/3q17cp_jgfwol.pretty.css,2355,@media (prefers-reduced-motion: reduce),".fb1, .fb2, .badge, .dotpulse, .starfield",none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,none,none
+animation,source/css/3q17cp_jgfwol.pretty.css,3112,,.hiw-memory-tag .dotpulse,pulse,2.4,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,infinite,normal,none,2.4s infinite pulse
+animation,source/css/3q17cp_jgfwol.pretty.css,3220,@media (prefers-reduced-motion: reduce),.hiw-memory-tag .dotpulse,none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,none,none
+animation,source/css/37m388zf6rymp.pretty.css,188,,.glod-pulse-dot,glodPulse,2.6,ease-in-out,"cubic-bezier(0.42, 0, 0.58, 1)",0.0,infinite,normal,none,2.6s ease-in-out infinite glodPulse
+animation,source/css/37m388zf6rymp.pretty.css,293,,.glod-wb-steps li.active .dot,glodPulse,2.6,ease-in-out,"cubic-bezier(0.42, 0, 0.58, 1)",0.0,infinite,normal,none,2.6s ease-in-out infinite glodPulse
+animation,source/css/37m388zf6rymp.pretty.css,449,,.glod-mem.show .glod-mem-float,(longhand animation-play-state),,,,,,,,animation-play-state: paused
+animation,source/css/37m388zf6rymp.pretty.css,452,,.glod-mem-float,glodMemBob,4.8,ease-in-out,"cubic-bezier(0.42, 0, 0.58, 1)",0.0,infinite,normal,none,4.8s ease-in-out infinite glodMemBob
+animation,source/css/37m388zf6rymp.pretty.css,561,,.glod-mem-ember.on .glod-mem-ember-core,glodEmberBreath,2.0,ease-in-out,"cubic-bezier(0.42, 0, 0.58, 1)",0.0,infinite,normal,none,2s ease-in-out infinite glodEmberBreath
+animation,source/css/37m388zf6rymp.pretty.css,669,,.glod-active-ember-core,glodActiveEmberGlow,2.8,ease-in-out,"cubic-bezier(0.42, 0, 0.58, 1)",0.0,infinite,normal,none,2.8s ease-in-out infinite glodActiveEmberGlow
+animation,source/css/37m388zf6rymp.pretty.css,1055,@media (prefers-reduced-motion: reduce),".glod-pulse-dot, .glod-wb-steps li.active .dot",none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,none,none
+animation,source/css/37m388zf6rymp.pretty.css,1063,@media (prefers-reduced-motion: reduce),".glod-active-ember-core, .glod-mem-float, .glod-mem-ember.on .glod-mem-ember-core",none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,none,none
+animation,source/css/2_gt301v4m-60.pretty.css,12,,.start-flow .start-screen,tfStartIn,0.45,"cubic-bezier(0.2, 0.7, 0.3, 1)","cubic-bezier(0.2, 0.7, 0.3, 1)",0.0,1,normal,none,"0.45s cubic-bezier(0.2, 0.7, 0.3, 1) tfStartIn"
+animation,source/css/2_gt301v4m-60.pretty.css,21,,.start-flow .gallery.open,tfStartIn,0.4,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,none,0.4s tfStartIn
+animation,source/css/2_gt301v4m-60.pretty.css,124,,.start-flow .paintpill,tfStartIn,0.4,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,none,0.4s tfStartIn
+animation,source/css/2_gt301v4m-60.pretty.css,132,,.start-flow .paintpill .dotpulse,pulse,2.4,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,infinite,normal,none,2.4s infinite pulse
+animation,source/css/2_gt301v4m-60.pretty.css,251,,.start-flow .pframe .veil svg,tfBrushBob,2.6,ease-in-out,"cubic-bezier(0.42, 0, 0.58, 1)",0.0,infinite,normal,none,2.6s ease-in-out infinite tfBrushBob
+animation,source/css/2_gt301v4m-60.pretty.css,326,,.start-flow .easel.ph2 .sheen,tfSweep,1.3,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,forwards,1.3s forwards tfSweep
+animation,source/css/2_gt301v4m-60.pretty.css,349,,.start-flow .embers.go .ember,tfRise,2.4,ease-out,"cubic-bezier(0, 0, 0.58, 1)",0.0,1,normal,forwards,2.4s ease-out forwards tfRise
+animation,source/css/2_gt301v4m-60.pretty.css,350,,.start-flow .embers.go .ember,(longhand animation-delay),,,,,,,,"animation-delay: var(--d, 0s)"
+animation,source/css/2_gt301v4m-60.pretty.css,374,,.start-flow .easel .veil-glow,tfVeilBreathe,4.6,ease-in-out,"cubic-bezier(0.42, 0, 0.58, 1)",0.0,infinite,normal,none,4.6s ease-in-out infinite tfVeilBreathe
+animation,source/css/2_gt301v4m-60.pretty.css,401,,.start-flow .veil-speck,tfVeilDrift,5.4,ease-in-out,"cubic-bezier(0.42, 0, 0.58, 1)",0.0,infinite,normal,none,5.4s ease-in-out infinite tfVeilDrift
+animation,source/css/2_gt301v4m-60.pretty.css,402,,.start-flow .veil-speck,(longhand animation-delay),,,,,,,,"animation-delay: var(--vd, 0s)"
+animation,source/css/2_gt301v4m-60.pretty.css,435,,.start-flow .veil-caption,tfVeilCaption,4.6,ease-in-out,"cubic-bezier(0.42, 0, 0.58, 1)",0.0,infinite,normal,none,4.6s ease-in-out infinite tfVeilCaption
+animation,source/css/2_gt301v4m-60.pretty.css,467,,.start-flow .reveal-line.on,tfStartIn,0.7,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,none,0.7s tfStartIn
+animation,source/css/2_gt301v4m-60.pretty.css,479,,.start-flow .reveal-name.on,tfStartIn,0.7,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,none,0.7s tfStartIn
+animation,source/css/2_gt301v4m-60.pretty.css,489,,.start-flow .reveal-actions.on,tfStartIn,0.6,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,none,0.6s tfStartIn
+animation,source/css/2_gt301v4m-60.pretty.css,497,,.start-flow .paint-retry,tfStartIn,0.6,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,none,0.6s tfStartIn
+animation,source/css/2_gt301v4m-60.pretty.css,511,,.start-flow .unveil-armed.ready-pop,tfUnveilPop,0.42,"cubic-bezier(0.2, 0.7, 0.3, 1.4)","cubic-bezier(0.2, 0.7, 0.3, 1.4)",0.0,1,normal,none,"0.42s cubic-bezier(0.2, 0.7, 0.3, 1.4) tfUnveilPop"
+animation,source/css/2_gt301v4m-60.pretty.css,770,,.start-flow .sheet,tfStartIn,0.35,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,none,0.35s tfStartIn
+animation,source/css/2_gt301v4m-60.pretty.css,921,@media (prefers-reduced-motion: reduce),".start-flow .start-screen, .start-flow .gallery.open, .start-flow .paintpill, .start-flow .reveal-line.on, .start-flow .reveal-name.on, .start-flow .reveal-actions.on, .start-flow .sheet",none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,none,none
+animation,source/css/2_gt301v4m-60.pretty.css,930,@media (prefers-reduced-motion: reduce),".start-flow .paintpill .dotpulse, .start-flow .pframe .veil svg",none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,none,none
+animation,source/css/2_gt301v4m-60.pretty.css,937,@media (prefers-reduced-motion: reduce),".start-flow .embers.go .ember, .start-flow .unveil-armed.ready-pop",none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,none,none
+animation,source/css/2_gt301v4m-60.pretty.css,941,@media (prefers-reduced-motion: reduce),.start-flow .easel .veil-glow,none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,none,none
+animation,source/css/2_gt301v4m-60.pretty.css,945,@media (prefers-reduced-motion: reduce),.start-flow .veil-speck,none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,none,none
+animation,source/css/2_gt301v4m-60.pretty.css,949,@media (prefers-reduced-motion: reduce),.start-flow .veil-caption,none,0.0,ease (default),"cubic-bezier(0.25, 0.1, 0.25, 1)",0.0,1,normal,none,none

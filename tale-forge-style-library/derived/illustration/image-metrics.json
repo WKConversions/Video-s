@@ -2496,6 +2496,2190 @@
    "detail_mean_abs_laplacian": 6.34,
    "edge_density_grad>4": 0.158,
    "edge_density_grad>10": 0.114
+  },
+  "derived/illustration/fetched/bokmassan/foljde-med/cover.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Valen som bar små berättelser\" (Lysande gouache och papperskonst) page opening",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 25.4,
+   "L_p05": 5.4,
+   "L_p95": 84.3,
+   "C_median": 14.4,
+   "C_p90": 32.3,
+   "share_warm_hue": 0.49,
+   "share_green_hue": 0.002,
+   "share_cool_hue": 0.2,
+   "share_near_neutral_C<10": 0.308,
+   "share_paper_white_L>90_C<12": 0.001,
+   "share_ink_dark_L<20": 0.41,
+   "highlight_decile_lab": [
+    84.7,
+    5.5,
+    26.9
+   ],
+   "highlight_decile_hex": "#F0CEA1",
+   "shadow_decile_lab": [
+    5.2,
+    3.3,
+    -4.3
+   ],
+   "shadow_decile_hex": "#120F17",
+   "luminance_centroid_xy": [
+    0.523,
+    0.462
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    27.4,
+    43.5,
+    31.2
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    38.1,
+    35.4,
+    28.6
+   ],
+   "detail_mean_abs_laplacian": 10.88,
+   "edge_density_grad>4": 0.367,
+   "edge_density_grad>10": 0.134
+  },
+  "derived/illustration/fetched/bokmassan/foljde-med/middle-a.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Valen som bar små berättelser\" (Lysande gouache och papperskonst) page middle-a",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 42.5,
+   "L_p05": 4.5,
+   "L_p95": 89.2,
+   "C_median": 14.1,
+   "C_p90": 40.0,
+   "share_warm_hue": 0.497,
+   "share_green_hue": 0.007,
+   "share_cool_hue": 0.141,
+   "share_near_neutral_C<10": 0.354,
+   "share_paper_white_L>90_C<12": 0.002,
+   "share_ink_dark_L<20": 0.294,
+   "highlight_decile_lab": [
+    89.7,
+    2.1,
+    27.2
+   ],
+   "highlight_decile_hex": "#F8DEAE",
+   "shadow_decile_lab": [
+    4.4,
+    0.8,
+    -4.0
+   ],
+   "shadow_decile_hex": "#0B0E14",
+   "luminance_centroid_xy": [
+    0.494,
+    0.451
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    41.7,
+    49.6,
+    40.4
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    56.8,
+    35.1,
+    39.8
+   ],
+   "detail_mean_abs_laplacian": 13.91,
+   "edge_density_grad>4": 0.43,
+   "edge_density_grad>10": 0.161
+  },
+  "derived/illustration/fetched/bokmassan/foljde-med/middle-b.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Valen som bar små berättelser\" (Lysande gouache och papperskonst) page middle-b",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 33.5,
+   "L_p05": 4.8,
+   "L_p95": 89.3,
+   "C_median": 19.4,
+   "C_p90": 40.1,
+   "share_warm_hue": 0.581,
+   "share_green_hue": 0.005,
+   "share_cool_hue": 0.183,
+   "share_near_neutral_C<10": 0.231,
+   "share_paper_white_L>90_C<12": 0.002,
+   "share_ink_dark_L<20": 0.342,
+   "highlight_decile_lab": [
+    89.7,
+    2.3,
+    26.3
+   ],
+   "highlight_decile_hex": "#F8DEAF",
+   "shadow_decile_lab": [
+    4.5,
+    2.4,
+    -3.6
+   ],
+   "shadow_decile_hex": "#0F0E13",
+   "luminance_centroid_xy": [
+    0.557,
+    0.466
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    31.1,
+    38.4,
+    51.8
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    45.0,
+    43.3,
+    33.1
+   ],
+   "detail_mean_abs_laplacian": 14.55,
+   "edge_density_grad>4": 0.457,
+   "edge_density_grad>10": 0.184
+  },
+  "derived/illustration/fetched/bokmassan/foljde-med/choice.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Valen som bar små berättelser\" (Lysande gouache och papperskonst) page choice",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 34.4,
+   "L_p05": 5.2,
+   "L_p95": 88.8,
+   "C_median": 18.3,
+   "C_p90": 39.7,
+   "share_warm_hue": 0.559,
+   "share_green_hue": 0.004,
+   "share_cool_hue": 0.191,
+   "share_near_neutral_C<10": 0.245,
+   "share_paper_white_L>90_C<12": 0.002,
+   "share_ink_dark_L<20": 0.324,
+   "highlight_decile_lab": [
+    89.2,
+    3.0,
+    26.0
+   ],
+   "highlight_decile_hex": "#F8DDAF",
+   "shadow_decile_lab": [
+    4.9,
+    1.9,
+    -3.0
+   ],
+   "shadow_decile_hex": "#100F14",
+   "luminance_centroid_xy": [
+    0.537,
+    0.453
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    33.0,
+    44.7,
+    46.9
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    49.2,
+    42.4,
+    33.1
+   ],
+   "detail_mean_abs_laplacian": 12.54,
+   "edge_density_grad>4": 0.404,
+   "edge_density_grad>10": 0.156
+  },
+  "derived/illustration/fetched/bokmassan/foljde-med/ending-a.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Valen som bar små berättelser\" (Lysande gouache och papperskonst) page ending-a",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 24.3,
+   "L_p05": 3.4,
+   "L_p95": 87.9,
+   "C_median": 16.7,
+   "C_p90": 42.5,
+   "share_warm_hue": 0.561,
+   "share_green_hue": 0.005,
+   "share_cool_hue": 0.125,
+   "share_near_neutral_C<10": 0.31,
+   "share_paper_white_L>90_C<12": 0.001,
+   "share_ink_dark_L<20": 0.437,
+   "highlight_decile_lab": [
+    88.2,
+    3.5,
+    29.1
+   ],
+   "highlight_decile_hex": "#F8D9A6",
+   "shadow_decile_lab": [
+    3.3,
+    1.6,
+    -1.7
+   ],
+   "shadow_decile_hex": "#0D0B0E",
+   "luminance_centroid_xy": [
+    0.503,
+    0.459
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    32.2,
+    36.4,
+    34.0
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    39.8,
+    34.8,
+    28.0
+   ],
+   "detail_mean_abs_laplacian": 13.15,
+   "edge_density_grad>4": 0.458,
+   "edge_density_grad>10": 0.181
+  },
+  "derived/illustration/fetched/bokmassan/foljde-med/ending-b.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Valen som bar små berättelser\" (Lysande gouache och papperskonst) page ending-b",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 26.8,
+   "L_p05": 4.2,
+   "L_p95": 88.4,
+   "C_median": 15.8,
+   "C_p90": 44.9,
+   "share_warm_hue": 0.495,
+   "share_green_hue": 0.007,
+   "share_cool_hue": 0.175,
+   "share_near_neutral_C<10": 0.323,
+   "share_paper_white_L>90_C<12": 0.002,
+   "share_ink_dark_L<20": 0.382,
+   "highlight_decile_lab": [
+    88.7,
+    2.9,
+    29.4
+   ],
+   "highlight_decile_hex": "#F8DBA7",
+   "shadow_decile_lab": [
+    4.0,
+    2.0,
+    -2.0
+   ],
+   "shadow_decile_hex": "#0F0C10",
+   "luminance_centroid_xy": [
+    0.497,
+    0.454
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    31.4,
+    42.2,
+    31.2
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    41.2,
+    36.3,
+    27.3
+   ],
+   "detail_mean_abs_laplacian": 13.08,
+   "edge_density_grad>4": 0.429,
+   "edge_density_grad>10": 0.166
+  },
+  "derived/illustration/fetched/bokmassan/bokstaven/cover.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Den försvunna bokstaven\" (Lysande glasmosaik) page opening",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 33.1,
+   "L_p05": 1.8,
+   "L_p95": 76.0,
+   "C_median": 26.5,
+   "C_p90": 40.3,
+   "share_warm_hue": 0.173,
+   "share_green_hue": 0.029,
+   "share_cool_hue": 0.638,
+   "share_near_neutral_C<10": 0.159,
+   "share_paper_white_L>90_C<12": 0.009,
+   "share_ink_dark_L<20": 0.279,
+   "highlight_decile_lab": [
+    79.4,
+    2.3,
+    15.6
+   ],
+   "highlight_decile_hex": "#D1C3A7",
+   "shadow_decile_lab": [
+    2.5,
+    4.4,
+    -5.5
+   ],
+   "shadow_decile_hex": "#0A0611",
+   "luminance_centroid_xy": [
+    0.549,
+    0.522
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    27.4,
+    38.2,
+    40.7
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    31.1,
+    37.5,
+    37.6
+   ],
+   "detail_mean_abs_laplacian": 12.33,
+   "edge_density_grad>4": 0.336,
+   "edge_density_grad>10": 0.219
+  },
+  "derived/illustration/fetched/bokmassan/bokstaven/choice.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Den försvunna bokstaven\" (Lysande glasmosaik) page choice",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 30.3,
+   "L_p05": 2.3,
+   "L_p95": 72.3,
+   "C_median": 23.5,
+   "C_p90": 36.0,
+   "share_warm_hue": 0.181,
+   "share_green_hue": 0.028,
+   "share_cool_hue": 0.618,
+   "share_near_neutral_C<10": 0.173,
+   "share_paper_white_L>90_C<12": 0.006,
+   "share_ink_dark_L<20": 0.307,
+   "highlight_decile_lab": [
+    75.6,
+    3.6,
+    17.1
+   ],
+   "highlight_decile_hex": "#CAB79B",
+   "shadow_decile_lab": [
+    2.9,
+    4.4,
+    -5.3
+   ],
+   "shadow_decile_hex": "#0C0712",
+   "luminance_centroid_xy": [
+    0.524,
+    0.524
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    26.7,
+    40.5,
+    32.2
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    29.2,
+    34.6,
+    35.7
+   ],
+   "detail_mean_abs_laplacian": 11.17,
+   "edge_density_grad>4": 0.328,
+   "edge_density_grad>10": 0.197
+  },
+  "derived/illustration/fetched/bokmassan/bokstaven/ending-a.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Den försvunna bokstaven\" (Lysande glasmosaik) page ending-a",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 22.4,
+   "L_p05": 1.4,
+   "L_p95": 84.4,
+   "C_median": 20.7,
+   "C_p90": 45.3,
+   "share_warm_hue": 0.404,
+   "share_green_hue": 0.002,
+   "share_cool_hue": 0.334,
+   "share_near_neutral_C<10": 0.26,
+   "share_paper_white_L>90_C<12": 0.023,
+   "share_ink_dark_L<20": 0.469,
+   "highlight_decile_lab": [
+    84.7,
+    4.0,
+    20.0
+   ],
+   "highlight_decile_hex": "#E8D0AE",
+   "shadow_decile_lab": [
+    1.5,
+    2.1,
+    -4.0
+   ],
+   "shadow_decile_hex": "#06040C",
+   "luminance_centroid_xy": [
+    0.491,
+    0.457
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    25.2,
+    43.6,
+    22.9
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    34.4,
+    32.9,
+    24.4
+   ],
+   "detail_mean_abs_laplacian": 11.15,
+   "edge_density_grad>4": 0.367,
+   "edge_density_grad>10": 0.178
+  },
+  "derived/illustration/fetched/bokmassan/bokstaven/ending-b.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Den försvunna bokstaven\" (Lysande glasmosaik) page ending-b",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 30.4,
+   "L_p05": 2.5,
+   "L_p95": 70.2,
+   "C_median": 24.3,
+   "C_p90": 35.4,
+   "share_warm_hue": 0.184,
+   "share_green_hue": 0.019,
+   "share_cool_hue": 0.639,
+   "share_near_neutral_C<10": 0.159,
+   "share_paper_white_L>90_C<12": 0.006,
+   "share_ink_dark_L<20": 0.318,
+   "highlight_decile_lab": [
+    74.3,
+    5.1,
+    12.2
+   ],
+   "highlight_decile_hex": "#C6B3A1",
+   "shadow_decile_lab": [
+    3.1,
+    5.4,
+    -6.6
+   ],
+   "shadow_decile_hex": "#0D0714",
+   "luminance_centroid_xy": [
+    0.551,
+    0.514
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    24.6,
+    36.4,
+    37.4
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    29.1,
+    36.0,
+    33.3
+   ],
+   "detail_mean_abs_laplacian": 11.09,
+   "edge_density_grad>4": 0.321,
+   "edge_density_grad>10": 0.195
+  },
+  "derived/illustration/fetched/bokmassan/tysta-platsen/cover.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Den tysta platsen\" (Pappersteater) page opening",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 29.8,
+   "L_p05": 5.4,
+   "L_p95": 79.5,
+   "C_median": 22.6,
+   "C_p90": 47.7,
+   "share_warm_hue": 0.422,
+   "share_green_hue": 0.004,
+   "share_cool_hue": 0.514,
+   "share_near_neutral_C<10": 0.06,
+   "share_paper_white_L>90_C<12": 0.0,
+   "share_ink_dark_L<20": 0.374,
+   "highlight_decile_lab": [
+    81.3,
+    11.9,
+    35.2
+   ],
+   "highlight_decile_hex": "#F3C088",
+   "shadow_decile_lab": [
+    5.0,
+    4.4,
+    -10.8
+   ],
+   "shadow_decile_hex": "#0E0F1F",
+   "luminance_centroid_xy": [
+    0.478,
+    0.491
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    40.1,
+    30.1,
+    36.6
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    34.3,
+    40.3,
+    32.2
+   ],
+   "detail_mean_abs_laplacian": 5.07,
+   "edge_density_grad>4": 0.186,
+   "edge_density_grad>10": 0.06
+  },
+  "derived/illustration/fetched/bokmassan/tysta-platsen/choice.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Den tysta platsen\" (Pappersteater) page choice",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 24.1,
+   "L_p05": 7.8,
+   "L_p95": 72.9,
+   "C_median": 22.9,
+   "C_p90": 35.0,
+   "share_warm_hue": 0.255,
+   "share_green_hue": 0.001,
+   "share_cool_hue": 0.72,
+   "share_near_neutral_C<10": 0.024,
+   "share_paper_white_L>90_C<12": 0.0,
+   "share_ink_dark_L<20": 0.402,
+   "highlight_decile_lab": [
+    74.9,
+    16.0,
+    31.3
+   ],
+   "highlight_decile_hex": "#E6AC7F",
+   "shadow_decile_lab": [
+    7.3,
+    6.4,
+    -15.4
+   ],
+   "shadow_decile_hex": "#11142B",
+   "luminance_centroid_xy": [
+    0.454,
+    0.527
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    37.8,
+    28.9,
+    24.0
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    24.0,
+    35.0,
+    31.7
+   ],
+   "detail_mean_abs_laplacian": 3.07,
+   "edge_density_grad>4": 0.141,
+   "edge_density_grad>10": 0.038
+  },
+  "derived/illustration/fetched/bokmassan/tysta-platsen/ending-a.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Den tysta platsen\" (Pappersteater) page ending-a",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 32.0,
+   "L_p05": 8.5,
+   "L_p95": 77.5,
+   "C_median": 26.4,
+   "C_p90": 59.0,
+   "share_warm_hue": 0.454,
+   "share_green_hue": 0.024,
+   "share_cool_hue": 0.432,
+   "share_near_neutral_C<10": 0.09,
+   "share_paper_white_L>90_C<12": 0.0,
+   "share_ink_dark_L<20": 0.273,
+   "highlight_decile_lab": [
+    79.9,
+    13.5,
+    42.4
+   ],
+   "highlight_decile_hex": "#F4BB75",
+   "shadow_decile_lab": [
+    7.8,
+    4.0,
+    -8.0
+   ],
+   "shadow_decile_hex": "#141521",
+   "luminance_centroid_xy": [
+    0.515,
+    0.478
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    34.4,
+    40.6,
+    38.9
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    38.8,
+    44.1,
+    31.1
+   ],
+   "detail_mean_abs_laplacian": 6.73,
+   "edge_density_grad>4": 0.251,
+   "edge_density_grad>10": 0.088
+  },
+  "derived/illustration/fetched/bokmassan/tysta-platsen/ending-b.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Den tysta platsen\" (Pappersteater) page ending-b",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 21.2,
+   "L_p05": 6.2,
+   "L_p95": 63.1,
+   "C_median": 21.4,
+   "C_p90": 33.2,
+   "share_warm_hue": 0.238,
+   "share_green_hue": 0.002,
+   "share_cool_hue": 0.716,
+   "share_near_neutral_C<10": 0.044,
+   "share_paper_white_L>90_C<12": 0.0,
+   "share_ink_dark_L<20": 0.469,
+   "highlight_decile_lab": [
+    65.4,
+    17.6,
+    24.7
+   ],
+   "highlight_decile_hex": "#CA9273",
+   "shadow_decile_lab": [
+    5.9,
+    5.7,
+    -14.7
+   ],
+   "shadow_decile_hex": "#0E1127",
+   "luminance_centroid_xy": [
+    0.489,
+    0.534
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    26.0,
+    28.2,
+    22.6
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    20.3,
+    28.8,
+    27.7
+   ],
+   "detail_mean_abs_laplacian": 2.94,
+   "edge_density_grad>4": 0.131,
+   "edge_density_grad>10": 0.03
+  },
+  "derived/illustration/fetched/bokmassan/felknut/cover.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Drakens felknut\" (Leranimering) page opening",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 38.8,
+   "L_p05": 11.1,
+   "L_p95": 77.9,
+   "C_median": 29.3,
+   "C_p90": 48.8,
+   "share_warm_hue": 0.624,
+   "share_green_hue": 0.004,
+   "share_cool_hue": 0.283,
+   "share_near_neutral_C<10": 0.089,
+   "share_paper_white_L>90_C<12": 0.001,
+   "share_ink_dark_L<20": 0.172,
+   "highlight_decile_lab": [
+    79.7,
+    11.0,
+    38.7
+   ],
+   "highlight_decile_hex": "#EDBC7B",
+   "shadow_decile_lab": [
+    10.0,
+    6.1,
+    -2.4
+   ],
+   "shadow_decile_hex": "#21181E",
+   "luminance_centroid_xy": [
+    0.508,
+    0.495
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    40.1,
+    41.7,
+    41.7
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    41.9,
+    40.3,
+    41.3
+   ],
+   "detail_mean_abs_laplacian": 4.63,
+   "edge_density_grad>4": 0.245,
+   "edge_density_grad>10": 0.057
+  },
+  "derived/illustration/fetched/bokmassan/felknut/choice.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Drakens felknut\" (Leranimering) page choice",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 38.0,
+   "L_p05": 8.6,
+   "L_p95": 79.0,
+   "C_median": 32.6,
+   "C_p90": 52.4,
+   "share_warm_hue": 0.644,
+   "share_green_hue": 0.004,
+   "share_cool_hue": 0.277,
+   "share_near_neutral_C<10": 0.075,
+   "share_paper_white_L>90_C<12": 0.001,
+   "share_ink_dark_L<20": 0.187,
+   "highlight_decile_lab": [
+    80.3,
+    11.7,
+    40.1
+   ],
+   "highlight_decile_hex": "#F1BE7A",
+   "shadow_decile_lab": [
+    8.4,
+    6.2,
+    -3.8
+   ],
+   "shadow_decile_hex": "#1D151C",
+   "luminance_centroid_xy": [
+    0.497,
+    0.497
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    41.6,
+    41.7,
+    38.3
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    41.7,
+    39.1,
+    40.9
+   ],
+   "detail_mean_abs_laplacian": 4.69,
+   "edge_density_grad>4": 0.258,
+   "edge_density_grad>10": 0.059
+  },
+  "derived/illustration/fetched/bokmassan/felknut/ending-a.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Drakens felknut\" (Leranimering) page ending-a",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 37.4,
+   "L_p05": 13.1,
+   "L_p95": 75.7,
+   "C_median": 25.9,
+   "C_p90": 47.4,
+   "share_warm_hue": 0.53,
+   "share_green_hue": 0.008,
+   "share_cool_hue": 0.395,
+   "share_near_neutral_C<10": 0.067,
+   "share_paper_white_L>90_C<12": 0.001,
+   "share_ink_dark_L<20": 0.156,
+   "highlight_decile_lab": [
+    77.5,
+    14.1,
+    39.1
+   ],
+   "highlight_decile_hex": "#EDB475",
+   "shadow_decile_lab": [
+    11.7,
+    7.1,
+    -5.1
+   ],
+   "shadow_decile_hex": "#241B25",
+   "luminance_centroid_xy": [
+    0.48,
+    0.527
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    44.5,
+    39.1,
+    36.1
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    34.7,
+    42.6,
+    42.4
+   ],
+   "detail_mean_abs_laplacian": 4.61,
+   "edge_density_grad>4": 0.238,
+   "edge_density_grad>10": 0.069
+  },
+  "derived/illustration/fetched/bokmassan/felknut/ending-b.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Drakens felknut\" (Leranimering) page ending-b",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 34.7,
+   "L_p05": 11.1,
+   "L_p95": 74.6,
+   "C_median": 27.9,
+   "C_p90": 50.9,
+   "share_warm_hue": 0.607,
+   "share_green_hue": 0.005,
+   "share_cool_hue": 0.342,
+   "share_near_neutral_C<10": 0.047,
+   "share_paper_white_L>90_C<12": 0.001,
+   "share_ink_dark_L<20": 0.233,
+   "highlight_decile_lab": [
+    76.7,
+    14.7,
+    35.8
+   ],
+   "highlight_decile_hex": "#EAB27B",
+   "shadow_decile_lab": [
+    10.3,
+    8.2,
+    -8.1
+   ],
+   "shadow_decile_hex": "#201826",
+   "luminance_centroid_xy": [
+    0.528,
+    0.521
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    33.5,
+    40.4,
+    41.8
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    33.4,
+    42.1,
+    40.1
+   ],
+   "detail_mean_abs_laplacian": 4.47,
+   "edge_density_grad>4": 0.226,
+   "edge_density_grad>10": 0.067
+  },
+  "derived/illustration/fetched/bokmassan/glasspinnen/cover.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Glasspinnens stora rymning\" (Färgstarkt bläck) page opening",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 46.8,
+   "L_p05": 11.5,
+   "L_p95": 95.9,
+   "C_median": 52.2,
+   "C_p90": 80.5,
+   "share_warm_hue": 0.4,
+   "share_green_hue": 0.091,
+   "share_cool_hue": 0.449,
+   "share_near_neutral_C<10": 0.06,
+   "share_paper_white_L>90_C<12": 0.005,
+   "share_ink_dark_L<20": 0.106,
+   "highlight_decile_lab": [
+    96.2,
+    -5.1,
+    26.0
+   ],
+   "highlight_decile_hex": "#FDF5C1",
+   "shadow_decile_lab": [
+    11.2,
+    10.4,
+    -13.1
+   ],
+   "shadow_decile_hex": "#1A1930",
+   "luminance_centroid_xy": [
+    0.554,
+    0.548
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    43.5,
+    50.2,
+    65.4
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    42.2,
+    56.4,
+    60.5
+   ],
+   "detail_mean_abs_laplacian": 13.22,
+   "edge_density_grad>4": 0.339,
+   "edge_density_grad>10": 0.163
+  },
+  "derived/illustration/fetched/bokmassan/glasspinnen/choice.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Glasspinnens stora rymning\" (Färgstarkt bläck) page choice",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 47.2,
+   "L_p05": 4.0,
+   "L_p95": 97.2,
+   "C_median": 53.9,
+   "C_p90": 80.3,
+   "share_warm_hue": 0.352,
+   "share_green_hue": 0.13,
+   "share_cool_hue": 0.409,
+   "share_near_neutral_C<10": 0.109,
+   "share_paper_white_L>90_C<12": 0.025,
+   "share_ink_dark_L<20": 0.169,
+   "highlight_decile_lab": [
+    97.4,
+    -8.0,
+    29.6
+   ],
+   "highlight_decile_hex": "#FCFBBB",
+   "shadow_decile_lab": [
+    4.7,
+    6.5,
+    -6.4
+   ],
+   "shadow_decile_hex": "#0F0B17",
+   "luminance_centroid_xy": [
+    0.532,
+    0.498
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    46.1,
+    45.5,
+    61.7
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    50.2,
+    55.0,
+    48.1
+   ],
+   "detail_mean_abs_laplacian": 21.84,
+   "edge_density_grad>4": 0.51,
+   "edge_density_grad>10": 0.264
+  },
+  "derived/illustration/fetched/bokmassan/glasspinnen/ending-a.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Glasspinnens stora rymning\" (Färgstarkt bläck) page ending-a",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 41.1,
+   "L_p05": 6.1,
+   "L_p95": 97.2,
+   "C_median": 51.8,
+   "C_p90": 77.1,
+   "share_warm_hue": 0.377,
+   "share_green_hue": 0.082,
+   "share_cool_hue": 0.445,
+   "share_near_neutral_C<10": 0.096,
+   "share_paper_white_L>90_C<12": 0.013,
+   "share_ink_dark_L<20": 0.151,
+   "highlight_decile_lab": [
+    96.8,
+    -5.1,
+    24.1
+   ],
+   "highlight_decile_hex": "#FDF7C4",
+   "shadow_decile_lab": [
+    6.8,
+    8.0,
+    -6.5
+   ],
+   "shadow_decile_hex": "#16101C",
+   "luminance_centroid_xy": [
+    0.497,
+    0.517
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    51.1,
+    46.8,
+    49.0
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    41.2,
+    58.0,
+    47.6
+   ],
+   "detail_mean_abs_laplacian": 17.64,
+   "edge_density_grad>4": 0.415,
+   "edge_density_grad>10": 0.217
+  },
+  "derived/illustration/fetched/bokmassan/glasspinnen/ending-b.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Glasspinnens stora rymning\" (Färgstarkt bläck) page ending-b",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 46.3,
+   "L_p05": 6.5,
+   "L_p95": 97.0,
+   "C_median": 51.0,
+   "C_p90": 78.2,
+   "share_warm_hue": 0.356,
+   "share_green_hue": 0.119,
+   "share_cool_hue": 0.433,
+   "share_near_neutral_C<10": 0.093,
+   "share_paper_white_L>90_C<12": 0.016,
+   "share_ink_dark_L<20": 0.14,
+   "highlight_decile_lab": [
+    97.1,
+    -9.5,
+    36.9
+   ],
+   "highlight_decile_hex": "#FDFAA9",
+   "shadow_decile_lab": [
+    7.2,
+    9.7,
+    -8.0
+   ],
+   "shadow_decile_hex": "#17101F",
+   "luminance_centroid_xy": [
+    0.52,
+    0.502
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    47.4,
+    49.5,
+    54.9
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    49.4,
+    53.9,
+    48.5
+   ],
+   "detail_mean_abs_laplacian": 19.16,
+   "edge_density_grad>4": 0.446,
+   "edge_density_grad>10": 0.232
+  },
+  "derived/illustration/fetched/bokmassan/matthavet/cover.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"När mattan blev hav\" (Nordiskt träsnitt) page opening",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 38.7,
+   "L_p05": 4.2,
+   "L_p95": 82.2,
+   "C_median": 19.8,
+   "C_p90": 37.8,
+   "share_warm_hue": 0.332,
+   "share_green_hue": 0.02,
+   "share_cool_hue": 0.514,
+   "share_near_neutral_C<10": 0.134,
+   "share_paper_white_L>90_C<12": 0.013,
+   "share_ink_dark_L<20": 0.247,
+   "highlight_decile_lab": [
+    84.4,
+    5.3,
+    20.7
+   ],
+   "highlight_decile_hex": "#E9CEAC",
+   "shadow_decile_lab": [
+    4.5,
+    4.5,
+    -7.9
+   ],
+   "shadow_decile_hex": "#0D0C19",
+   "luminance_centroid_xy": [
+    0.496,
+    0.482
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    38.5,
+    46.9,
+    37.4
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    43.1,
+    40.4,
+    39.4
+   ],
+   "detail_mean_abs_laplacian": 17.35,
+   "edge_density_grad>4": 0.467,
+   "edge_density_grad>10": 0.283
+  },
+  "derived/illustration/fetched/bokmassan/matthavet/choice.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"När mattan blev hav\" (Nordiskt träsnitt) page choice",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 41.3,
+   "L_p05": 4.7,
+   "L_p95": 88.7,
+   "C_median": 22.0,
+   "C_p90": 38.7,
+   "share_warm_hue": 0.498,
+   "share_green_hue": 0.039,
+   "share_cool_hue": 0.323,
+   "share_near_neutral_C<10": 0.14,
+   "share_paper_white_L>90_C<12": 0.009,
+   "share_ink_dark_L<20": 0.289,
+   "highlight_decile_lab": [
+    89.3,
+    -0.2,
+    30.6
+   ],
+   "highlight_decile_hex": "#F4DFA6",
+   "shadow_decile_lab": [
+    4.5,
+    4.7,
+    -4.6
+   ],
+   "shadow_decile_hex": "#110C14",
+   "luminance_centroid_xy": [
+    0.491,
+    0.448
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    41.8,
+    49.9,
+    37.0
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    52.7,
+    42.4,
+    33.6
+   ],
+   "detail_mean_abs_laplacian": 22.81,
+   "edge_density_grad>4": 0.542,
+   "edge_density_grad>10": 0.335
+  },
+  "derived/illustration/fetched/bokmassan/matthavet/ending-a.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"När mattan blev hav\" (Nordiskt träsnitt) page ending-a",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 31.4,
+   "L_p05": 4.6,
+   "L_p95": 89.1,
+   "C_median": 25.6,
+   "C_p90": 57.0,
+   "share_warm_hue": 0.45,
+   "share_green_hue": 0.017,
+   "share_cool_hue": 0.419,
+   "share_near_neutral_C<10": 0.114,
+   "share_paper_white_L>90_C<12": 0.007,
+   "share_ink_dark_L<20": 0.375,
+   "highlight_decile_lab": [
+    89.6,
+    0.4,
+    32.2
+   ],
+   "highlight_decile_hex": "#F6DFA3",
+   "shadow_decile_lab": [
+    4.3,
+    3.6,
+    -10.9
+   ],
+   "shadow_decile_hex": "#070D1D",
+   "luminance_centroid_xy": [
+    0.478,
+    0.502
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    43.8,
+    36.7,
+    35.8
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    36.6,
+    43.7,
+    36.0
+   ],
+   "detail_mean_abs_laplacian": 28.62,
+   "edge_density_grad>4": 0.682,
+   "edge_density_grad>10": 0.374
+  },
+  "derived/illustration/fetched/bokmassan/matthavet/ending-b.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"När mattan blev hav\" (Nordiskt träsnitt) page ending-b",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 36.5,
+   "L_p05": 5.6,
+   "L_p95": 93.1,
+   "C_median": 25.7,
+   "C_p90": 49.7,
+   "share_warm_hue": 0.432,
+   "share_green_hue": 0.037,
+   "share_cool_hue": 0.45,
+   "share_near_neutral_C<10": 0.081,
+   "share_paper_white_L>90_C<12": 0.01,
+   "share_ink_dark_L<20": 0.325,
+   "highlight_decile_lab": [
+    93.0,
+    -2.9,
+    26.9
+   ],
+   "highlight_decile_hex": "#F8EBB7",
+   "shadow_decile_lab": [
+    5.4,
+    4.2,
+    -14.7
+   ],
+   "shadow_decile_hex": "#061025",
+   "luminance_centroid_xy": [
+    0.512,
+    0.491
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    38.5,
+    47.3,
+    41.4
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    42.4,
+    44.9,
+    40.0
+   ],
+   "detail_mean_abs_laplacian": 27.96,
+   "edge_density_grad>4": 0.642,
+   "edge_density_grad>10": 0.36
+  },
+  "derived/illustration/fetched/bokmassan/nattaget/cover.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Nattåget från blå mattan\" (Lekfull leranimation) page opening",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 25.2,
+   "L_p05": 2.6,
+   "L_p95": 69.6,
+   "C_median": 18.0,
+   "C_p90": 33.5,
+   "share_warm_hue": 0.408,
+   "share_green_hue": 0.017,
+   "share_cool_hue": 0.334,
+   "share_near_neutral_C<10": 0.242,
+   "share_paper_white_L>90_C<12": 0.004,
+   "share_ink_dark_L<20": 0.391,
+   "highlight_decile_lab": [
+    71.5,
+    9.3,
+    25.6
+   ],
+   "highlight_decile_hex": "#CDA97F",
+   "shadow_decile_lab": [
+    2.8,
+    1.9,
+    0.0
+   ],
+   "shadow_decile_hex": "#0D0909",
+   "luminance_centroid_xy": [
+    0.507,
+    0.502
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    26.6,
+    27.8,
+    29.9
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    27.9,
+    29.6,
+    26.8
+   ],
+   "detail_mean_abs_laplacian": 5.28,
+   "edge_density_grad>4": 0.257,
+   "edge_density_grad>10": 0.079
+  },
+  "derived/illustration/fetched/bokmassan/nattaget/middle-a.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Nattåget från blå mattan\" (Lekfull leranimation) page middle-a",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 16.6,
+   "L_p05": 1.6,
+   "L_p95": 66.3,
+   "C_median": 12.4,
+   "C_p90": 29.8,
+   "share_warm_hue": 0.265,
+   "share_green_hue": 0.005,
+   "share_cool_hue": 0.313,
+   "share_near_neutral_C<10": 0.417,
+   "share_paper_white_L>90_C<12": 0.001,
+   "share_ink_dark_L<20": 0.572,
+   "highlight_decile_lab": [
+    67.1,
+    8.5,
+    20.8
+   ],
+   "highlight_decile_hex": "#BE9D7D",
+   "shadow_decile_lab": [
+    1.6,
+    0.3,
+    0.7
+   ],
+   "shadow_decile_hex": "#070504",
+   "luminance_centroid_xy": [
+    0.517,
+    0.501
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    17.4,
+    25.0,
+    20.4
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    20.6,
+    24.2,
+    17.9
+   ],
+   "detail_mean_abs_laplacian": 5.0,
+   "edge_density_grad>4": 0.252,
+   "edge_density_grad>10": 0.07
+  },
+  "derived/illustration/fetched/bokmassan/nattaget/middle-b.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Nattåget från blå mattan\" (Lekfull leranimation) page middle-b",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 25.7,
+   "L_p05": 4.0,
+   "L_p95": 72.7,
+   "C_median": 18.6,
+   "C_p90": 31.7,
+   "share_warm_hue": 0.423,
+   "share_green_hue": 0.012,
+   "share_cool_hue": 0.363,
+   "share_near_neutral_C<10": 0.202,
+   "share_paper_white_L>90_C<12": 0.003,
+   "share_ink_dark_L<20": 0.377,
+   "highlight_decile_lab": [
+    75.2,
+    7.2,
+    24.4
+   ],
+   "highlight_decile_hex": "#D5B48C",
+   "shadow_decile_lab": [
+    3.8,
+    2.3,
+    -6.3
+   ],
+   "shadow_decile_hex": "#0B0C15",
+   "luminance_centroid_xy": [
+    0.527,
+    0.51
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    25.4,
+    35.7,
+    31.7
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    29.1,
+    34.2,
+    29.5
+   ],
+   "detail_mean_abs_laplacian": 4.84,
+   "edge_density_grad>4": 0.256,
+   "edge_density_grad>10": 0.074
+  },
+  "derived/illustration/fetched/bokmassan/nattaget/choice.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Nattåget från blå mattan\" (Lekfull leranimation) page choice",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 26.4,
+   "L_p05": 4.0,
+   "L_p95": 71.8,
+   "C_median": 20.7,
+   "C_p90": 30.7,
+   "share_warm_hue": 0.44,
+   "share_green_hue": 0.003,
+   "share_cool_hue": 0.381,
+   "share_near_neutral_C<10": 0.176,
+   "share_paper_white_L>90_C<12": 0.001,
+   "share_ink_dark_L<20": 0.334,
+   "highlight_decile_lab": [
+    72.6,
+    8.4,
+    22.6
+   ],
+   "highlight_decile_hex": "#CFAC89",
+   "shadow_decile_lab": [
+    4.0,
+    2.5,
+    -3.5
+   ],
+   "shadow_decile_hex": "#0D0C11",
+   "luminance_centroid_xy": [
+    0.535,
+    0.463
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    28.1,
+    27.5,
+    36.7
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    36.0,
+    32.1,
+    24.4
+   ],
+   "detail_mean_abs_laplacian": 6.07,
+   "edge_density_grad>4": 0.264,
+   "edge_density_grad>10": 0.096
+  },
+  "derived/illustration/fetched/bokmassan/nattaget/ending-a.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Nattåget från blå mattan\" (Lekfull leranimation) page ending-a",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 41.1,
+   "L_p05": 7.6,
+   "L_p95": 90.2,
+   "C_median": 19.8,
+   "C_p90": 37.9,
+   "share_warm_hue": 0.625,
+   "share_green_hue": 0.05,
+   "share_cool_hue": 0.107,
+   "share_near_neutral_C<10": 0.218,
+   "share_paper_white_L>90_C<12": 0.01,
+   "share_ink_dark_L<20": 0.172,
+   "highlight_decile_lab": [
+    90.4,
+    2.3,
+    25.2
+   ],
+   "highlight_decile_hex": "#F9E1B4",
+   "shadow_decile_lab": [
+    7.6,
+    2.3,
+    0.2
+   ],
+   "shadow_decile_hex": "#171514",
+   "luminance_centroid_xy": [
+    0.573,
+    0.424
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    31.0,
+    46.0,
+    59.4
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    59.8,
+    45.1,
+    31.6
+   ],
+   "detail_mean_abs_laplacian": 4.7,
+   "edge_density_grad>4": 0.243,
+   "edge_density_grad>10": 0.062
+  },
+  "derived/illustration/fetched/bokmassan/nattaget/ending-b.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Nattåget från blå mattan\" (Lekfull leranimation) page ending-b",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 85.1,
+   "L_p05": 29.2,
+   "L_p95": 93.5,
+   "C_median": 7.8,
+   "C_p90": 19.3,
+   "share_warm_hue": 0.274,
+   "share_green_hue": 0.002,
+   "share_cool_hue": 0.042,
+   "share_near_neutral_C<10": 0.682,
+   "share_paper_white_L>90_C<12": 0.165,
+   "share_ink_dark_L<20": 0.032,
+   "highlight_decile_lab": [
+    94.0,
+    3.8,
+    9.8
+   ],
+   "highlight_decile_hex": "#FDEBDB",
+   "shadow_decile_lab": [
+    27.6,
+    9.6,
+    7.2
+   ],
+   "shadow_decile_hex": "#533C36",
+   "luminance_centroid_xy": [
+    0.479,
+    0.498
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    87.7,
+    72.4,
+    73.5
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    83.4,
+    66.7,
+    83.5
+   ],
+   "detail_mean_abs_laplacian": 1.77,
+   "edge_density_grad>4": 0.096,
+   "edge_density_grad>10": 0.029
+  },
+  "derived/illustration/fetched/bokmassan/ravens-hem/cover.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Rävens nya hem\" (Mjuk filtillustration) page opening",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 23.6,
+   "L_p05": 0.9,
+   "L_p95": 78.0,
+   "C_median": 21.1,
+   "C_p90": 34.8,
+   "share_warm_hue": 0.54,
+   "share_green_hue": 0.027,
+   "share_cool_hue": 0.201,
+   "share_near_neutral_C<10": 0.232,
+   "share_paper_white_L>90_C<12": 0.003,
+   "share_ink_dark_L<20": 0.432,
+   "highlight_decile_lab": [
+    79.7,
+    8.6,
+    21.6
+   ],
+   "highlight_decile_hex": "#E3BF9E",
+   "shadow_decile_lab": [
+    1.1,
+    1.4,
+    0.9
+   ],
+   "shadow_decile_hex": "#080302",
+   "luminance_centroid_xy": [
+    0.497,
+    0.496
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    32.8,
+    32.1,
+    31.2
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    35.5,
+    27.6,
+    33.0
+   ],
+   "detail_mean_abs_laplacian": 4.99,
+   "edge_density_grad>4": 0.201,
+   "edge_density_grad>10": 0.063
+  },
+  "derived/illustration/fetched/bokmassan/ravens-hem/middle-a.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Rävens nya hem\" (Mjuk filtillustration) page middle-a",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 42.6,
+   "L_p05": 1.0,
+   "L_p95": 86.1,
+   "C_median": 18.3,
+   "C_p90": 34.3,
+   "share_warm_hue": 0.696,
+   "share_green_hue": 0.03,
+   "share_cool_hue": 0.049,
+   "share_near_neutral_C<10": 0.224,
+   "share_paper_white_L>90_C<12": 0.008,
+   "share_ink_dark_L<20": 0.28,
+   "highlight_decile_lab": [
+    87.2,
+    3.0,
+    14.4
+   ],
+   "highlight_decile_hex": "#EBD7BF",
+   "shadow_decile_lab": [
+    1.3,
+    1.0,
+    0.9
+   ],
+   "shadow_decile_hex": "#080402",
+   "luminance_centroid_xy": [
+    0.573,
+    0.43
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    25.2,
+    57.4,
+    51.7
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    59.3,
+    40.3,
+    34.8
+   ],
+   "detail_mean_abs_laplacian": 3.94,
+   "edge_density_grad>4": 0.179,
+   "edge_density_grad>10": 0.05
+  },
+  "derived/illustration/fetched/bokmassan/ravens-hem/middle-b.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Rävens nya hem\" (Mjuk filtillustration) page middle-b",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 64.8,
+   "L_p05": 4.4,
+   "L_p95": 85.4,
+   "C_median": 26.1,
+   "C_p90": 36.4,
+   "share_warm_hue": 0.832,
+   "share_green_hue": 0.036,
+   "share_cool_hue": 0.033,
+   "share_near_neutral_C<10": 0.1,
+   "share_paper_white_L>90_C<12": 0.027,
+   "share_ink_dark_L<20": 0.167,
+   "highlight_decile_lab": [
+    88.1,
+    4.2,
+    21.9
+   ],
+   "highlight_decile_hex": "#F4D9B4",
+   "shadow_decile_lab": [
+    4.6,
+    3.7,
+    0.9
+   ],
+   "shadow_decile_hex": "#140C0C",
+   "luminance_centroid_xy": [
+    0.504,
+    0.467
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    53.4,
+    53.4,
+    55.6
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    65.9,
+    47.2,
+    49.4
+   ],
+   "detail_mean_abs_laplacian": 3.22,
+   "edge_density_grad>4": 0.147,
+   "edge_density_grad>10": 0.045
+  },
+  "derived/illustration/fetched/bokmassan/ravens-hem/choice.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Rävens nya hem\" (Mjuk filtillustration) page choice",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 22.3,
+   "L_p05": 0.8,
+   "L_p95": 73.5,
+   "C_median": 20.0,
+   "C_p90": 33.5,
+   "share_warm_hue": 0.44,
+   "share_green_hue": 0.027,
+   "share_cool_hue": 0.264,
+   "share_near_neutral_C<10": 0.269,
+   "share_paper_white_L>90_C<12": 0.0,
+   "share_ink_dark_L<20": 0.443,
+   "highlight_decile_lab": [
+    75.0,
+    9.8,
+    25.1
+   ],
+   "highlight_decile_hex": "#DAB18B",
+   "shadow_decile_lab": [
+    1.0,
+    0.5,
+    0.8
+   ],
+   "shadow_decile_hex": "#050302",
+   "luminance_centroid_xy": [
+    0.524,
+    0.486
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    24.2,
+    31.5,
+    31.2
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    33.9,
+    24.7,
+    28.4
+   ],
+   "detail_mean_abs_laplacian": 3.68,
+   "edge_density_grad>4": 0.155,
+   "edge_density_grad>10": 0.046
+  },
+  "derived/illustration/fetched/bokmassan/ravens-hem/ending-a.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Rävens nya hem\" (Mjuk filtillustration) page ending-a",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 21.4,
+   "L_p05": 2.7,
+   "L_p95": 73.1,
+   "C_median": 21.7,
+   "C_p90": 30.5,
+   "share_warm_hue": 0.514,
+   "share_green_hue": 0.022,
+   "share_cool_hue": 0.335,
+   "share_near_neutral_C<10": 0.129,
+   "share_paper_white_L>90_C<12": 0.001,
+   "share_ink_dark_L<20": 0.454,
+   "highlight_decile_lab": [
+    75.2,
+    9.5,
+    25.4
+   ],
+   "highlight_decile_hex": "#DAB28B",
+   "shadow_decile_lab": [
+    3.1,
+    2.3,
+    -0.1
+   ],
+   "shadow_decile_hex": "#0E0909",
+   "luminance_centroid_xy": [
+    0.514,
+    0.521
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    30.7,
+    32.9,
+    33.3
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    34.9,
+    23.6,
+    38.4
+   ],
+   "detail_mean_abs_laplacian": 2.82,
+   "edge_density_grad>4": 0.127,
+   "edge_density_grad>10": 0.039
+  },
+  "derived/illustration/fetched/bokmassan/ravens-hem/ending-b.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Rävens nya hem\" (Mjuk filtillustration) page ending-b",
+   "native_size": [
+    1376,
+    768
+   ],
+   "measured_at": [
+    1024,
+    572
+   ],
+   "L_median": 26.9,
+   "L_p05": 1.2,
+   "L_p95": 80.4,
+   "C_median": 19.9,
+   "C_p90": 36.5,
+   "share_warm_hue": 0.563,
+   "share_green_hue": 0.026,
+   "share_cool_hue": 0.201,
+   "share_near_neutral_C<10": 0.21,
+   "share_paper_white_L>90_C<12": 0.002,
+   "share_ink_dark_L<20": 0.382,
+   "highlight_decile_lab": [
+    81.3,
+    8.2,
+    24.0
+   ],
+   "highlight_decile_hex": "#E9C39E",
+   "shadow_decile_lab": [
+    1.5,
+    1.5,
+    1.3
+   ],
+   "shadow_decile_hex": "#0A0402",
+   "luminance_centroid_xy": [
+    0.499,
+    0.477
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    34.1,
+    34.7,
+    33.4
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    40.3,
+    28.7,
+    33.2
+   ],
+   "detail_mean_abs_laplacian": 4.18,
+   "edge_density_grad>4": 0.191,
+   "edge_density_grad>10": 0.058
+  },
+  "derived/illustration/fetched/bokmassan/stjarnan/cover.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Stjärnan som inte vågade lysa\" (Filmisk gouache) page opening",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 33.4,
+   "L_p05": 10.8,
+   "L_p95": 84.0,
+   "C_median": 35.5,
+   "C_p90": 56.8,
+   "share_warm_hue": 0.47,
+   "share_green_hue": 0.008,
+   "share_cool_hue": 0.477,
+   "share_near_neutral_C<10": 0.045,
+   "share_paper_white_L>90_C<12": 0.0,
+   "share_ink_dark_L<20": 0.272,
+   "highlight_decile_lab": [
+    84.6,
+    6.9,
+    37.8
+   ],
+   "highlight_decile_hex": "#F6CD8A",
+   "shadow_decile_lab": [
+    10.1,
+    9.9,
+    -20.1
+   ],
+   "shadow_decile_hex": "#141837",
+   "luminance_centroid_xy": [
+    0.534,
+    0.503
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    34.8,
+    40.1,
+    46.8
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    35.2,
+    49.4,
+    37.0
+   ],
+   "detail_mean_abs_laplacian": 6.58,
+   "edge_density_grad>4": 0.259,
+   "edge_density_grad>10": 0.07
+  },
+  "derived/illustration/fetched/bokmassan/stjarnan/choice.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Stjärnan som inte vågade lysa\" (Filmisk gouache) page choice",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 29.5,
+   "L_p05": 10.0,
+   "L_p95": 80.7,
+   "C_median": 39.8,
+   "C_p90": 60.7,
+   "share_warm_hue": 0.458,
+   "share_green_hue": 0.007,
+   "share_cool_hue": 0.489,
+   "share_near_neutral_C<10": 0.046,
+   "share_paper_white_L>90_C<12": 0.0,
+   "share_ink_dark_L<20": 0.321,
+   "highlight_decile_lab": [
+    82.1,
+    9.4,
+    43.4
+   ],
+   "highlight_decile_hex": "#F5C479",
+   "shadow_decile_lab": [
+    9.4,
+    11.6,
+    -21.5
+   ],
+   "shadow_decile_hex": "#111638",
+   "luminance_centroid_xy": [
+    0.501,
+    0.501
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    35.9,
+    40.6,
+    37.3
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    32.9,
+    46.0,
+    34.9
+   ],
+   "detail_mean_abs_laplacian": 7.21,
+   "edge_density_grad>4": 0.282,
+   "edge_density_grad>10": 0.081
+  },
+  "derived/illustration/fetched/bokmassan/stjarnan/ending-a.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Stjärnan som inte vågade lysa\" (Filmisk gouache) page ending-a",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 35.2,
+   "L_p05": 14.2,
+   "L_p95": 77.0,
+   "C_median": 30.5,
+   "C_p90": 43.8,
+   "share_warm_hue": 0.405,
+   "share_green_hue": 0.003,
+   "share_cool_hue": 0.552,
+   "share_near_neutral_C<10": 0.039,
+   "share_paper_white_L>90_C<12": 0.0,
+   "share_ink_dark_L<20": 0.186,
+   "highlight_decile_lab": [
+    78.6,
+    13.3,
+    34.5
+   ],
+   "highlight_decile_hex": "#EDB882",
+   "shadow_decile_lab": [
+    13.6,
+    10.5,
+    -21.3
+   ],
+   "shadow_decile_hex": "#1D1F41",
+   "luminance_centroid_xy": [
+    0.518,
+    0.511
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    36.9,
+    39.0,
+    44.4
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    34.2,
+    47.6,
+    38.5
+   ],
+   "detail_mean_abs_laplacian": 3.82,
+   "edge_density_grad>4": 0.166,
+   "edge_density_grad>10": 0.043
+  },
+  "derived/illustration/fetched/bokmassan/stjarnan/ending-b.webp": {
+   "family": "bokmassan",
+   "role": "fair story \"Stjärnan som inte vågade lysa\" (Filmisk gouache) page ending-b",
+   "native_size": [
+    1536,
+    1024
+   ],
+   "measured_at": [
+    1024,
+    683
+   ],
+   "L_median": 32.7,
+   "L_p05": 10.6,
+   "L_p95": 83.4,
+   "C_median": 38.4,
+   "C_p90": 60.2,
+   "share_warm_hue": 0.481,
+   "share_green_hue": 0.011,
+   "share_cool_hue": 0.473,
+   "share_near_neutral_C<10": 0.035,
+   "share_paper_white_L>90_C<12": 0.001,
+   "share_ink_dark_L<20": 0.287,
+   "highlight_decile_lab": [
+    84.6,
+    7.3,
+    41.2
+   ],
+   "highlight_decile_hex": "#F8CC84",
+   "shadow_decile_lab": [
+    9.9,
+    12.9,
+    -24.9
+   ],
+   "shadow_decile_hex": "#0F173E",
+   "luminance_centroid_xy": [
+    0.526,
+    0.486
+   ],
+   "L_mean_by_vertical_thirds_left_mid_right": [
+    38.0,
+    37.3,
+    44.7
+   ],
+   "L_mean_by_horizontal_thirds_top_mid_bottom": [
+    38.1,
+    46.7,
+    35.2
+   ],
+   "detail_mean_abs_laplacian": 7.15,
+   "edge_density_grad>4": 0.27,
+   "edge_density_grad>10": 0.083
   }
  }
 }

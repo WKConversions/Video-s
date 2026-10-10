@@ -1,0 +1,945 @@
+{
+ "icons": [
+  {
+   "id": "ui-theme-moon",
+   "name": "Theme toggle: moon (Natt)",
+   "group": "chrome",
+   "context": "Theme switch `.tt` > `.tt-opt.night`, every page, nav right. Label 'Natt' / 'Night'.",
+   "sources": [
+    "assets/svg-inline/404__tt-opt__80ee85dd.svg",
+    "source/js/390j9gbq0u9ce.js@28685",
+    "source/rendered/dom__home__sv.html (nav)"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:801-820 (.tt-opt, .tt-opt svg 15x15, active colour); :2290-2295 (<=560px: icon only)",
+   "size": "15 px",
+   "colour": "--ghost-ink (inactive); --btn-ink when active, sitting on the gold/violet --btn-grad thumb",
+   "sheet_colour": "var(--ghost-ink)",
+   "plate": "ghost",
+   "lineage": "Feather `moon` re-scaled: Feather is `M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z`; Tale Forge rounds to one decimal and shrinks the outer arc radius 9 -> 8.5.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2.2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M21 12.8A8.5 8.5 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z\"/>",
+   "file": "svg/ui-theme-moon.svg"
+  },
+  {
+   "id": "ui-theme-sun",
+   "name": "Theme toggle: sun (Morgon)",
+   "group": "chrome",
+   "context": "Theme switch `.tt` > `.tt-opt.day`, every page. Label 'Morgon' / 'Morning'.",
+   "sources": [
+    "assets/svg-inline/404__tt-opt__ddbc3897.svg",
+    "source/js/390j9gbq0u9ce.js@28966"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:801-820",
+   "size": "15 px",
+   "colour": "--ghost-ink (inactive) / --btn-ink (active)",
+   "sheet_colour": "var(--ghost-ink)",
+   "plate": "ghost",
+   "lineage": "Lucide/Feather `sun` geometry re-tuned: core circle r 4 (Lucide) / 5 (Feather) -> 4.2, rays 2 long -> 2.4 long, diagonals 1.41 -> 1.7. No stroke-linejoin attribute (the only stroked icon without one; irrelevant for straight rays).",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2.2",
+    "stroke-linecap": "round"
+   },
+   "inner": "<circle cx=\"12\" cy=\"12\" r=\"4.2\"/><path d=\"M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7\"/>",
+   "file": "svg/ui-theme-sun.svg"
+  },
+  {
+   "id": "ui-kicker-sparkle-burst",
+   "name": "Hero kicker: sparkle burst (home)",
+   "group": "chrome",
+   "context": "Home hero kicker chip `.kicker`: 'Exempel: Alvas värld · 2 böcker' [Example: Alva's world · 2 books].",
+   "sources": [
+    "assets/svg-inline/home__kicker__822f9609.svg",
+    "source/html/home.sv.html (server component; not in client JS)"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:835-854 (.kicker, .kicker svg 14x14)",
+   "size": "14 px",
+   "colour": "--chip-ink",
+   "sheet_colour": "var(--chip-ink)",
+   "plate": "chip",
+   "lineage": "Custom. Eight detached rays with an empty centre (structure of Lucide `loader`, but shorter 3-unit rays and no rotation). Reads as a twinkle/burst.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2.4",
+    "stroke-linecap": "round"
+   },
+   "inner": "<path d=\"M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1\"/>",
+   "file": "svg/ui-kicker-sparkle-burst.svg"
+  },
+  {
+   "id": "ui-kicker-star-start",
+   "name": "Hero kicker: star (/start)",
+   "group": "chrome",
+   "context": "/start hero kicker `.kicker`: 'Riktiga bilderböcker, upplästa på svenska' [Real picture books, read aloud in Swedish].",
+   "sources": [
+    "assets/svg-inline/start__kicker__ad275afb.svg",
+    "source/js/0ad0wel9cyv30.js@18893"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:835-854",
+   "size": "14 px",
+   "colour": "--chip-ink",
+   "sheet_colour": "var(--chip-ink)",
+   "plate": "chip",
+   "lineage": "Custom five-point star, wider and squatter than Feather `star` (which is `polygon 12 2 15.09 8.26 22 9.27 ...`). Hand-placed one-decimal points.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M12 3l1.9 5.6L20 10l-5 3.6 1.6 6L12 16l-4.6 3.6L9 13.6 4 10l6.1-1.4z\"/>",
+   "file": "svg/ui-kicker-star-start.svg"
+  },
+  {
+   "id": "motif-four-point-sparkle",
+   "name": "Four-point sparkle (.hiw-star)",
+   "group": "motif",
+   "context": "Bullet before each 'micro' reassurance line in How-it-works steps 1-4 and the last step (5 instances on home).",
+   "sources": [
+    "assets/svg-inline/home__hiw-star__700fa96f.svg",
+    "source/js/3d9nxlx1n5pdy.js@14639"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:2655-2660 (.hiw-star 14x14, color --gold-soft); :2645-2654 (.hiw-micro)",
+   "size": "14 px",
+   "colour": "--gold-soft #f5c542 in BOTH themes",
+   "sheet_colour": "var(--gold-soft)",
+   "plate": "page",
+   "lineage": "Custom. Concave four-point 'twinkle' built from four quadratic-like cubic arcs (`c.7 5.6 4.4 9.3 10 10`). Same silhouette family as the four sparkles in the logo (assets/assets/tf-logo.webp).",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "currentColor"
+   },
+   "inner": "<path d=\"M12 2c.7 5.6 4.4 9.3 10 10-5.6.7-9.3 4.4-10 10-.7-5.6-4.4-9.3-10-10 5.6-.7 9.3-4.4 10-10z\"/>",
+   "file": "svg/motif-four-point-sparkle.svg"
+  },
+  {
+   "id": "ui-play-hiw",
+   "name": "Play (narrator sample button)",
+   "group": "chrome",
+   "context": "`.hiw-play` pill button 'Hör berättarrösten' [Hear the narrator], How-it-works step 3.",
+   "sources": [
+    "assets/svg-inline/home__hiw-play__2ef55bb7.svg",
+    "source/js/3d9nxlx1n5pdy.js@15498"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:2804-2833 (.hiw-play, svg 16x16)",
+   "size": "16 px",
+   "colour": "--btn-ink on --btn-grad",
+   "sheet_colour": "var(--btn-ink)",
+   "plate": "btn",
+   "lineage": "Material `play_arrow` (`M8 5v14l11-7z`) nudged: starts at y 5.5, height 13, apex at 12. Filled, no stroke.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "currentColor"
+   },
+   "inner": "<path d=\"M8 5.5v13l11-6.5z\"/>",
+   "file": "svg/ui-play-hiw.svg"
+  },
+  {
+   "id": "ui-pause-hiw",
+   "name": "Pause (narrator sample, playing)",
+   "group": "chrome",
+   "context": "Same `.hiw-play` button while the sample plays (label switches to playingLabel).",
+   "sources": [
+    "source/js/3d9nxlx1n5pdy.js@15340"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:2829-2833",
+   "size": "16 px",
+   "colour": "--btn-ink on --btn-grad",
+   "sheet_colour": "var(--btn-ink)",
+   "plate": "btn",
+   "lineage": "Custom: two square-cornered 4x14 bars (Material pause is 4x14 at x 6 and 14; this one sits at x 7 and 13, so the gap is narrower).",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "currentColor"
+   },
+   "inner": "<path d=\"M7 5h4v14H7zM13 5h4v14h-4z\"/>",
+   "file": "svg/ui-pause-hiw.svg"
+  },
+  {
+   "id": "ui-pen-fab",
+   "name": "Pen (portrait edit FAB)",
+   "group": "chrome",
+   "context": "`.builder-pic .fab` 42 px round gold button on the hero portrait in the home 'builder' section (link to /start).",
+   "sources": [
+    "assets/svg-inline/home__fab__9184410d.svg",
+    "source/html/home.sv.html (server component)"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:1185-1209 (.fab 42x42 --btn-grad, svg 18x18, hover scale 1.1)",
+   "size": "18 px in a 42 px disc",
+   "colour": "--btn-ink on --btn-grad",
+   "sheet_colour": "var(--btn-ink)",
+   "plate": "btn",
+   "lineage": "Feather `edit-3` almost verbatim (Feather: `M12 20h9` + `M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z`); Tale Forge rounds 2.121 -> 2.1 and closes with z.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2.2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z\"/>",
+   "file": "svg/ui-pen-fab.svg"
+  },
+  {
+   "id": "ui-camera-home",
+   "name": "Camera (photo upload, home)",
+   "group": "chrome",
+   "context": "`.upload .cam` 46 px tile in the home builder card ('Ladda upp ett foto' upload row).",
+   "sources": [
+    "assets/svg-inline/home__cam__a7a7e275.svg",
+    "source/html/home.sv.html (server component)"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:1260-1274 (.cam 46x46 radius 14 --chip-bg, svg 22x22)",
+   "size": "22 px in a 46 px rounded tile",
+   "colour": "--chip-ink",
+   "sheet_colour": "var(--chip-ink)",
+   "plate": "chip",
+   "lineage": "Custom redraw of Feather/Lucide `camera`: body 20x12 with 2-unit corner arcs, a short bumped top, lens r 3.4 at y 13.5.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M4 8h2.4l1.4-2.2A2 2 0 0 1 9.5 5h5a2 2 0 0 1 1.7.8L17.6 8H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2z\"/><circle cx=\"12\" cy=\"13.5\" r=\"3.4\"/>",
+   "file": "svg/ui-camera-home.svg"
+  },
+  {
+   "id": "ui-plus-friend-add",
+   "name": "Plus (add a friend)",
+   "group": "chrome",
+   "context": "`.friend-add` dashed button 'Lägg till en vän' [Add a friend] in the home friends card; also used in /create customise.",
+   "sources": [
+    "assets/svg-inline/home__friend-add__b68ae682.svg",
+    "source/html/home.sv.html (server component)"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:1325-1348 (.friend-add 2px dashed --dash-line, svg 18x18); :2461-2463",
+   "size": "18 px",
+   "colour": "--chip-ink",
+   "sheet_colour": "var(--chip-ink)",
+   "plate": "card",
+   "lineage": "Identical geometry to Lucide/Feather `plus` (`M12 5v14` + `M5 12h14`), merged into one path, heavier 2.4 stroke.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2.4",
+    "stroke-linecap": "round"
+   },
+   "inner": "<path d=\"M12 5v14M5 12h14\"/>",
+   "file": "svg/ui-plus-friend-add.svg"
+  },
+  {
+   "id": "ui-camera-start",
+   "name": "Camera (photo upload, /start step 2)",
+   "group": "app",
+   "context": "/start step 2 'Fotot' upload button `.upload` > `span.cam` (hidden once a photo is chosen).",
+   "sources": [
+    "source/js/0ad0wel9cyv30.js@24336"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:1271-1274 (svg 22x22); source/css/2_gt301v4m-60.pretty.css:93-95 (hidden when chosen)",
+   "size": "22 px",
+   "colour": "--chip-ink",
+   "sheet_colour": "var(--chip-ink)",
+   "plate": "chip",
+   "lineage": "Custom; a second, thinner (1.8) camera with a flatter top (`M4 8h3l2-2.5h6L17 8h3`) and 1.5-unit corners. Note: two different camera drawings ship.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "1.8",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M4 8h3l2-2.5h6L17 8h3a1.5 1.5 0 0 1 1.5 1.5V18a1.5 1.5 0 0 1-1.5 1.5H4A1.5 1.5 0 0 1 2.5 18V9.5A1.5 1.5 0 0 1 4 8z\"/><circle cx=\"12\" cy=\"13.4\" r=\"3.4\"/>",
+   "file": "svg/ui-camera-start.svg"
+  },
+  {
+   "id": "ui-shield-privacy",
+   "name": "Shield (photo privacy note)",
+   "group": "app",
+   "context": "/start step 2 `.privacy` line under the upload (privacy reassurance).",
+   "sources": [
+    "source/js/0ad0wel9cyv30.js@24997"
+   ],
+   "css": "source/css/2_gt301v4m-60.pretty.css:99-113 (.privacy svg 16x16, color --gold-chip-ink)",
+   "size": "16 px",
+   "colour": "--gold-chip-ink",
+   "sheet_colour": "var(--gold-chip-ink)",
+   "plate": "card",
+   "lineage": "Custom shield (flat top shoulders at y 6, point at y 21). Feather `shield` is `M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z`.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6z\"/>",
+   "file": "svg/ui-shield-privacy.svg"
+  },
+  {
+   "id": "ui-brush-painting",
+   "name": "Paint brush (portrait being painted)",
+   "group": "app",
+   "context": "/start hero card `.pframe .veil`: shown over the portrait while the AI paints it; bobs with `tfBrushBob` 2.6 s.",
+   "sources": [
+    "source/js/0ad0wel9cyv30.js@27730"
+   ],
+   "css": "source/css/2_gt301v4m-60.pretty.css:236-262 (.veil gradient #9b87f58c->#f2b22e66, color #fff7e9; svg 30x30; @keyframes tfBrushBob rotate -8deg..6deg, translateY -5px)",
+   "size": "30 px",
+   "colour": "#fff7e9 literal on a violet-to-gold veil",
+   "sheet_colour": "#fff7e9",
+   "plate": "veil",
+   "lineage": "Custom brush: handle line + ferrule square rotated 45deg + a teardrop tip with a flick.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "1.8",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M19 4l-8.5 8.5M9 15.5c-1 1-1.2 3-3.4 3.4.4-2.2 1-3.8 2-4.8\"/><path d=\"M17.5 2.5l4 4-2 2-4-4z\"/>",
+   "file": "svg/ui-brush-painting.svg"
+  },
+  {
+   "id": "ui-speaker-reveal",
+   "name": "Speaker (portrait reveal line)",
+   "group": "app",
+   "context": "/start `.reveal-line` after the portrait is revealed (the narrator 'says' a line).",
+   "sources": [
+    "source/js/0ad0wel9cyv30.js@31686"
+   ],
+   "css": "source/css/2_gt301v4m-60.pretty.css:459-465 (svg 19x19, color --accent)",
+   "size": "19 px",
+   "colour": "--accent (gold-soft natt / violet morgon)",
+   "sheet_colour": "var(--accent)",
+   "plate": "card",
+   "lineage": "Custom variant of Feather `volume-2` (cone 3..11 wide with a slanted top `L6.5 8.5`; arcs r 4.2 and 8).",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M11 5L6.5 8.5H3v7h3.5L11 19z\"/><path d=\"M15 9a4.2 4.2 0 0 1 0 6M17.8 6.5a8 8 0 0 1 0 11\"/>",
+   "file": "svg/ui-speaker-reveal.svg"
+  },
+  {
+   "id": "ui-play-voice-sample",
+   "name": "Play (narrator voice chip)",
+   "group": "app",
+   "context": "/start voice picker: each `.trait.voice` chip starts with this triangle; clicking plays a sample.",
+   "sources": [
+    "source/js/0ad0wel9cyv30.js@42695"
+   ],
+   "css": "source/css/2_gt301v4m-60.pretty.css:741-749 (.voice svg 13x13)",
+   "size": "13 px",
+   "colour": "inherits chip: --trait-ink / --trait-on-ink when chosen",
+   "sheet_colour": "var(--trait-ink)",
+   "plate": "card",
+   "lineage": "Custom filled triangle `M7 4.5l12 7.5-12 7.5z` (a third distinct play triangle).",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "currentColor"
+   },
+   "inner": "<path d=\"M7 4.5l12 7.5-12 7.5z\"/>",
+   "file": "svg/ui-play-voice-sample.svg"
+  },
+  {
+   "id": "ui-chevron-back",
+   "name": "Chevron left (step back)",
+   "group": "app",
+   "context": "/start step strip: back button (34x34, 1px --card-line border, radius 12) left of the step dots.",
+   "sources": [
+    "source/js/0ad0wel9cyv30.js@49744"
+   ],
+   "css": "inline React style in source/js/0ad0wel9cyv30.js@49744 (width/height 34px, borderRadius 12px, color var(--card-ink))",
+   "size": "16 px in a 34 px square",
+   "colour": "--card-ink",
+   "sheet_colour": "var(--card-ink)",
+   "plate": "card",
+   "lineage": "Custom: a taller chevron (14 units, `M15 5l-7 7 7 7`) than Lucide `chevron-left` (12 units, `m15 18-6-6 6-6`).",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2.4",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M15 5l-7 7 7 7\"/>",
+   "file": "svg/ui-chevron-back.svg"
+  },
+  {
+   "id": "ui-mail",
+   "name": "Envelope (email field)",
+   "group": "auth",
+   "context": "/login and /signup email input, absolutely placed 14 px from the left inside the field.",
+   "sources": [
+    "assets/svg-inline/login__svg__b5c88077.svg",
+    "source/js/1hcx0qn-qjgfn.js@8841"
+   ],
+   "css": "inline style `position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--card-sub)`",
+   "size": "18 px",
+   "colour": "--card-sub",
+   "sheet_colour": "var(--card-sub)",
+   "plate": "card",
+   "lineage": "Custom simplification: Lucide `mail` is `rect 20x16 at 2,4` + a flap with a rounded bottom; Tale Forge uses an 18x14 rect and a plain V flap `m3 7 9 6 9-6`.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"m3 7 9 6 9-6\"/>",
+   "file": "svg/ui-mail.svg"
+  },
+  {
+   "id": "ui-lock",
+   "name": "Padlock (password field)",
+   "group": "auth",
+   "context": "/login and /signup password input, same placement as the envelope.",
+   "sources": [
+    "assets/svg-inline/login__svg__25d1a9b6.svg",
+    "source/js/1hcx0qn-qjgfn.js@9505"
+   ],
+   "css": "inline style (18x18, --card-sub)",
+   "size": "18 px",
+   "colour": "--card-sub",
+   "sheet_colour": "var(--card-sub)",
+   "plate": "card",
+   "lineage": "Feather/Lucide `lock` shrunk: body 16x10 (vs 18x11), shackle radius 4 (vs 5).",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<rect x=\"4\" y=\"10\" width=\"16\" height=\"10\" rx=\"2\"/><path d=\"M8 10V7a4 4 0 0 1 8 0v3\"/>",
+   "file": "svg/ui-lock.svg"
+  },
+  {
+   "id": "ui-eye",
+   "name": "Eye (show password)",
+   "group": "auth",
+   "context": "Password visibility toggle, 44x44 hit area at the right of the field (auth pages and /start account step).",
+   "sources": [
+    "assets/svg-inline/login__svg__12e05ebd.svg",
+    "source/js/1hcx0qn-qjgfn.js@10825",
+    "source/js/0ad0wel9cyv30.js@38146"
+   ],
+   "css": "inline React style (button 44x44, color var(--card-sub)); svg width/height 18",
+   "size": "18 px in a 44 px button",
+   "colour": "--card-sub",
+   "sheet_colour": "var(--card-sub)",
+   "plate": "card",
+   "lineage": "Feather `eye` scaled in from the edges: Feather `M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z` -> `M2 12s3-8 10-8 ...`.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M2 12s3-8 10-8 10 8 10 8-3 8-10 8-10-8-10-8z\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/>",
+   "file": "svg/ui-eye.svg"
+  },
+  {
+   "id": "ui-eye-off",
+   "name": "Eye with slash (hide password)",
+   "group": "auth",
+   "context": "Same toggle while the password is visible.",
+   "sources": [
+    "source/js/1hcx0qn-qjgfn.js@10421",
+    "source/js/0ad0wel9cyv30.js@37742"
+   ],
+   "css": "inline React style (as ui-eye)",
+   "size": "18 px",
+   "colour": "--card-sub",
+   "sheet_colour": "var(--card-sub)",
+   "plate": "card",
+   "lineage": "Feather `eye-off` edited: keeps Feather's literal numbers `M9.9 4.24A9.1 9.1 0 0 1 12 4` and `a18.5 18.5 0 0 1-2.16 3.19` but narrows the eye (10 instead of 11) and draws the slash 2,2 -> 22,22.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M9.9 4.24A9.1 9.1 0 0 1 12 4c7 0 10 8 10 8a18.5 18.5 0 0 1-2.16 3.19M6.6 6.6A18.5 18.5 0 0 0 2 12s3 8 10 8a9.1 9.1 0 0 0 5.4-1.6\"/><path d=\"M9.9 9.9a3 3 0 0 0 4.2 4.2M2 2l20 20\"/>",
+   "file": "svg/ui-eye-off.svg"
+  },
+  {
+   "id": "brand-google-g",
+   "name": "Google 'G' (sign-in provider)",
+   "group": "auth",
+   "context": "'Fortsätt med Google' [Continue with Google] ghost button on /login and /signup. The only identity provider.",
+   "sources": [
+    "assets/svg-inline/login__btn__ee8ffa17.svg",
+    "source/js/1hcx0qn-qjgfn.js@7505"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:886-924 (.btn, .btn-ghost); svg width/height 18",
+   "size": "18 px",
+   "colour": "fixed brand colours #4285F4 #34A853 #FBBC05 #EA4335 (only icon not using currentColor)",
+   "sheet_colour": "inherit",
+   "plate": "ghost",
+   "lineage": "The standard four-path Google 'G' mark (third-party brand asset, not Tale Forge styling).",
+   "root": {
+    "viewBox": "0 0 24 24"
+   },
+   "inner": "<path fill=\"#4285F4\" d=\"M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z\"/><path fill=\"#34A853\" d=\"M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z\"/><path fill=\"#FBBC05\" d=\"M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z\"/><path fill=\"#EA4335\" d=\"M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z\"/>",
+   "file": "svg/brand-google-g.svg"
+  },
+  {
+   "id": "ui-nav-bookshelf",
+   "name": "Book (nav: Bokhylla / Bookshelf)",
+   "group": "chrome",
+   "context": "Signed-in nav pill 'Bokhylla' [Bookshelf] linking to /. Pills: min-height 44, 1.5px --card-line border, .82rem 700.",
+   "sources": [
+    "source/js/390j9gbq0u9ce.js@24934"
+   ],
+   "css": "inline React style object `d` in source/js/390j9gbq0u9ce.js (gap 7px, color var(--card-sub)); svg width/height 16",
+   "size": "16 px",
+   "colour": "--card-sub",
+   "sheet_colour": "var(--card-sub)",
+   "plate": "page",
+   "lineage": "Feather `book`, verbatim.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M4 19.5A2.5 2.5 0 0 1 6.5 17H20\"/><path d=\"M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z\"/>",
+   "file": "svg/ui-nav-bookshelf.svg"
+  },
+  {
+   "id": "ui-nav-account",
+   "name": "Person (nav: Konto / Account)",
+   "group": "chrome",
+   "context": "Signed-in nav pill 'Konto' [Account] linking to /konto.",
+   "sources": [
+    "source/js/390j9gbq0u9ce.js@25344"
+   ],
+   "css": "as ui-nav-bookshelf",
+   "size": "16 px",
+   "colour": "--card-sub",
+   "sheet_colour": "var(--card-sub)",
+   "plate": "page",
+   "lineage": "Feather `user`, verbatim.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2\"/><circle cx=\"12\" cy=\"7\" r=\"4\"/>",
+   "file": "svg/ui-nav-account.svg"
+  },
+  {
+   "id": "companion-rufus-fox",
+   "name": "Companion: Rufus the fox",
+   "group": "companion",
+   "context": "/start step 3 'Sällskapet' [The company]: ready-made friend picker `.pick` tile 'Rufus räven' [Rufus the fox].",
+   "sources": [
+    "source/js/0ad0wel9cyv30.js@3520 (map C.rufus)"
+   ],
+   "css": "source/css/2_gt301v4m-60.pretty.css:154-181 (.pick, svg 34x34; 28x28 at <=480px :883-891)",
+   "size": "34 px (28 px on phones)",
+   "colour": "--trait-ink; --trait-on-ink when chosen",
+   "sheet_colour": "var(--trait-ink)",
+   "plate": "card",
+   "lineage": "Custom mascot glyph: fox mask with pointed ears, dot eyes (`h.01` zero-length strokes) and a small triangle nose.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "1.7",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M5 4l4 4h6l4-4v6c0 5-3.4 9-7 9s-7-4-7-9z\"/><path d=\"M9.4 11h.01M14.6 11h.01\"/><path d=\"M12 14l-1.1 1.5h2.2z\"/>",
+   "file": "svg/companion-rufus-fox.svg"
+  },
+  {
+   "id": "companion-luna-owl",
+   "name": "Companion: Luna the owl",
+   "group": "companion",
+   "context": "/start step 3 friend picker 'Luna ugglan' [Luna the owl].",
+   "sources": [
+    "source/js/0ad0wel9cyv30.js@3852 (map C.luna)"
+   ],
+   "css": "as companion-rufus-fox",
+   "size": "34 px (28 px on phones)",
+   "colour": "--trait-ink / --trait-on-ink",
+   "sheet_colour": "var(--trait-ink)",
+   "plate": "card",
+   "lineage": "Custom: round head r 7, two ring eyes r 1.5, triangle beak, two ear tufts.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "1.7",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<circle cx=\"12\" cy=\"13\" r=\"7\"/><circle cx=\"9.4\" cy=\"11.6\" r=\"1.5\"/><circle cx=\"14.6\" cy=\"11.6\" r=\"1.5\"/><path d=\"M12 14.6l-1.2 1.6h2.4z\"/><path d=\"M5.6 8.4L8 5.6M18.4 8.4L16 5.6\"/>",
+   "file": "svg/companion-luna-owl.svg"
+  },
+  {
+   "id": "companion-bo-dragon",
+   "name": "Companion: Bo the dragon",
+   "group": "companion",
+   "context": "/start step 3 friend picker 'Bo draken' [Bo the dragon].",
+   "sources": [
+    "source/js/0ad0wel9cyv30.js@4269 (map C.bo)"
+   ],
+   "css": "as companion-rufus-fox",
+   "size": "34 px (28 px on phones)",
+   "colour": "--trait-ink / --trait-on-ink",
+   "sheet_colour": "var(--trait-ink)",
+   "plate": "card",
+   "lineage": "Custom: a flame/egg teardrop with a smile; reads as a friendly little fire-breather rather than a literal dragon.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "1.7",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M12 3c3.2 3.1 6 5.7 6 9.2A6 6 0 0 1 6 12.2C6 8.7 8.8 6.1 12 3z\"/><path d=\"M10 14a2 2 0 0 0 4 0\"/>",
+   "file": "svg/companion-bo-dragon.svg"
+  },
+  {
+   "id": "ui-retry-arrows",
+   "name": "Circular arrows (retry)",
+   "group": "app",
+   "context": "Book-generation job status (failed / gated / stuck): underlined link 'Försök igen' style retry to /create.",
+   "sources": [
+    "source/js/2j_-r8q4tgdka.js@5231"
+   ],
+   "css": "inline React style (link gap 9px, .9rem 700, color var(--chip-ink)); svg 18x18",
+   "size": "18 px",
+   "colour": "--chip-ink",
+   "sheet_colour": "var(--chip-ink)",
+   "plate": "card",
+   "lineage": "Simplified Lucide `refresh-cw`: same arrowheads `M21 3v5h-5` / `M3 21v-5h5`, but the arcs are single `a9 9` arcs instead of Lucide's two-segment arcs.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2.2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M3 12a9 9 0 0 1 15-6.7L21 8\"/><path d=\"M21 3v5h-5\"/><path d=\"M21 12a9 9 0 0 1-15 6.7L3 16\"/><path d=\"M3 21v-5h5\"/>",
+   "file": "svg/ui-retry-arrows.svg"
+  },
+  {
+   "id": "ui-spinner",
+   "name": "Spinner (job running)",
+   "group": "app",
+   "context": "Book-generation job status card `.glass` role=status, next to the Lora 1.35rem title.",
+   "sources": [
+    "source/js/2j_-r8q4tgdka.js@5762"
+   ],
+   "css": "inline SVG attributes: stroke var(--accent), 2.4, animateTransform rotate 0.8 s linear infinite",
+   "size": "26 px",
+   "colour": "--accent (stroke set directly to var(--accent))",
+   "sheet_colour": "var(--accent)",
+   "plate": "card",
+   "lineage": "Custom 270-degree arc (`M12 3a9 9 0 1 0 9 9`) spun with SMIL `animateTransform`, not CSS. Comparable to Lucide `loader-circle`.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2.4",
+    "stroke-linecap": "round"
+   },
+   "inner": "<path d=\"M12 3a9 9 0 1 0 9 9\"><animateTransform attributeName=\"transform\" type=\"rotate\" from=\"0 12 12\" to=\"360 12 12\" dur=\"0.8s\" repeatCount=\"indefinite\"/></path>",
+   "file": "svg/ui-spinner.svg"
+  },
+  {
+   "id": "ui-palette-placeholder",
+   "name": "Palette (missing style preview)",
+   "group": "app",
+   "context": "Art-style picker tile fallback when a preview image is missing: centred on var(--choice-bg).",
+   "sources": [
+    "source/js/2j_-r8q4tgdka.js@25842"
+   ],
+   "css": "inline React style (grid centre, background var(--choice-bg), color var(--card-sub)); svg 26x26",
+   "size": "26 px",
+   "colour": "--card-sub; dots filled currentColor",
+   "sheet_colour": "var(--card-sub)",
+   "plate": "choice",
+   "lineage": "Simplified redraw of Lucide `palette` (Lucide has 4 dots of r .5; this has 3 dots of r 1 with fill and no stroke).",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "1.8",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M12 3a9 9 0 1 0 0 18c1 0 1.6-.8 1.6-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.1 0-.9.8-1.7 1.7-1.7H16a5 5 0 0 0 5-5c0-3.9-4-7.3-9-7.3z\"/><circle cx=\"7.5\" cy=\"10.5\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"12\" cy=\"7.5\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/><circle cx=\"16.5\" cy=\"10.5\" r=\"1\" fill=\"currentColor\" stroke=\"none\"/>",
+   "file": "svg/ui-palette-placeholder.svg"
+  },
+  {
+   "id": "ui-sound-on",
+   "name": "Speaker with waves (ambient sound on)",
+   "group": "app",
+   "context": "Waiting-room chip `.chip.glod-sound` and reader `.chip.sound-toggle` 'Bakgrundsljud' [Background sound].",
+   "sources": [
+    "source/js/2j_-r8q4tgdka.js@36176",
+    "source/js/36tbz-w9v-p8v.js@6140"
+   ],
+   "css": "source/css/37m388zf6rymp.pretty.css:788-796 (.glod-sound svg 15x15; pressed: --pill-bg/--pill-ink/--violet-soft); source/css/3q17cp_jgfwol.pretty.css:1951-1958 (.sound-toggle svg 15x15)",
+   "size": "15 px",
+   "colour": "inherits the chip (pressed: --pill-ink)",
+   "sheet_colour": "var(--pill-ink)",
+   "plate": "card",
+   "lineage": "Feather `volume-2` redrawn: speaker polygon `11 5 6 9 2 9 ...` becomes path `M11 5 6 9H3v6h3l5 4V5z`; wave arcs r 5 and r 8.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M11 5 6 9H3v6h3l5 4V5z\"/><path d=\"M15.5 8.5a5 5 0 0 1 0 7M18.5 6a8 8 0 0 1 0 12\"/>",
+   "file": "svg/ui-sound-on.svg"
+  },
+  {
+   "id": "ui-sound-off",
+   "name": "Speaker with cross (ambient sound off)",
+   "group": "app",
+   "context": "Same waiting-room chip when the ambient bed is off.",
+   "sources": [
+    "source/js/2j_-r8q4tgdka.js@36460"
+   ],
+   "css": "source/css/37m388zf6rymp.pretty.css:788-791",
+   "size": "15 px",
+   "colour": "inherits the chip",
+   "sheet_colour": "var(--chip-ink)",
+   "plate": "card",
+   "lineage": "Feather `volume-x` cross (`22 9 -> 16 15`, `16 9 -> 22 15`) on the redrawn speaker.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M11 5 6 9H3v6h3l5 4V5z\"/><path d=\"m16 9 6 6M22 9l-6 6\"/>",
+   "file": "svg/ui-sound-off.svg"
+  },
+  {
+   "id": "ui-reader-play",
+   "name": "Reader: play narration",
+   "group": "reader",
+   "context": "Story reader `.reader-audio-control` 44x44 square button (radius 8), aria-label 'Spela upp berättelsen'-style.",
+   "sources": [
+    "source/js/36tbz-w9v-p8v.js@4103"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:2040-2066 (svg 20x20; fill+stroke currentColor, stroke 2, round; paths other than the two triangles get fill:none)",
+   "size": "20 px in a 44 px button",
+   "colour": "--choice-ink on --choice-bg",
+   "sheet_colour": "var(--choice-ink)",
+   "plate": "choice",
+   "lineage": "Material `play_arrow` path verbatim (`M8 5v14l11-7z`); styled by CSS with fill AND a 2px round stroke, which rounds the triangle's corners.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "currentColor",
+    "stroke": "currentColor",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M8 5v14l11-7z\"/>",
+   "file": "svg/ui-reader-play.svg"
+  },
+  {
+   "id": "ui-reader-pause",
+   "name": "Reader: pause narration",
+   "group": "reader",
+   "context": "Same button while narration plays.",
+   "sources": [
+    "source/js/36tbz-w9v-p8v.js@3908"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:2053-2066 (rects keep fill currentColor + 2px stroke)",
+   "size": "20 px",
+   "colour": "--choice-ink",
+   "sheet_colour": "var(--choice-ink)",
+   "plate": "choice",
+   "lineage": "Lucide `pause` rects verbatim (x 6 / 14, 4x16, rx 1), thickened by the CSS 2px stroke.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "currentColor",
+    "stroke": "currentColor",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<rect x=\"6\" y=\"4\" width=\"4\" height=\"16\" rx=\"1\"/><rect x=\"14\" y=\"4\" width=\"4\" height=\"16\" rx=\"1\"/>",
+   "file": "svg/ui-reader-pause.svg"
+  },
+  {
+   "id": "ui-reader-replay",
+   "name": "Reader: restart narration",
+   "group": "reader",
+   "context": "`.reader-audio-control` 'narration-replay' button next to play/pause.",
+   "sources": [
+    "source/js/36tbz-w9v-p8v.js@4477"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:2053-2066 (paths get fill:none, stroke 2)",
+   "size": "20 px",
+   "colour": "--choice-ink",
+   "sheet_colour": "var(--choice-ink)",
+   "plate": "choice",
+   "lineage": "Custom counter-clockwise arrow: `M4 7v5h5` arrowhead + an r 8 arc `M5.5 16a8 8 0 1 0 .5-9l-2 5` (the tail kinks back into the arrowhead). Loosely Lucide `rotate-ccw`.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "2",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M4 7v5h5\"/><path d=\"M5.5 16a8 8 0 1 0 .5-9l-2 5\"/>",
+   "file": "svg/ui-reader-replay.svg"
+  },
+  {
+   "id": "motif-flame-glod",
+   "name": "Flame (waiting-room book cover)",
+   "group": "motif",
+   "context": "Gold flame stamped on the little book cover in the generation waiting room ('glöd' = ember). Extracted from illus-glod-book-art.",
+   "sources": [
+    "source/js/2j_-r8q4tgdka.js@32230 (inner <g transform=translate(66.5,28) scale(1.15)>)"
+   ],
+   "css": "inline: stroke #f5c542, 1.7, round caps/joins",
+   "size": "about 28 px on the 160x122 art",
+   "colour": "#f5c542 literal (gold-soft)",
+   "sheet_colour": "var(--gold-soft)",
+   "plate": "page",
+   "lineage": "Custom flame with an inner tongue; same 24-grid stroke language as the UI icons.",
+   "root": {
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": "1.7",
+    "stroke-linecap": "round",
+    "stroke-linejoin": "round"
+   },
+   "inner": "<path d=\"M12 2.6c.5 3.1-1.8 4.5-1.8 7a4.6 4.6 0 0 0 2.1 3.9c-.2-1.6.6-2.6 1.5-3.4.2 2.6 3.1 3 3.1 6.2A5.4 5.4 0 0 1 6.2 17c0-4.3 4.7-5.6 5.8-14.4z\"/>",
+   "file": "svg/motif-flame-glod.svg"
+  }
+ ],
+ "map_parts": [
+  {
+   "id": "map-choice-diamond",
+   "name": "Map: choice diamond ('guldstjärna')",
+   "context": "Branch node on the endings map: a 26x26 rounded square (rx 6) rotated 45deg with an up/down chevron pair. 22x22 rx 5 on the mobile map.",
+   "sources": [
+    "assets/svg-inline/home__hiw-map-desktop__d942793a.svg",
+    "source/js/3d9nxlx1n5pdy.js@9744 (diamonds, diamondHalf 13 / 11, diamondRx 6 / 5)"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:2960-2970 (.map-choice fill --gold-chip-bg stroke --gold-soft 1.5; .map-choice-glyph stroke --gold-chip-ink 1.6 round)",
+   "viewBox": "-20 -20 40 40",
+   "inner": "<rect class=\"map-choice\" x=\"-13\" y=\"-13\" width=\"26\" height=\"26\" rx=\"6\" transform=\"rotate(45)\"/><path class=\"map-choice-glyph\" d=\"M -5 -2 L 0 -7 L 5 -2 M -5 2 L 0 7 L 5 2\" fill=\"none\"/>",
+   "file": "svg/map-choice-diamond.svg"
+  },
+  {
+   "id": "map-page-dot",
+   "name": "Map: page dot with halo",
+   "context": "One per page/beat on the endings map: r 6 dot over an r 11 halo at 18% opacity (r 5 / 9 on mobile).",
+   "sources": [
+    "source/js/3d9nxlx1n5pdy.js@9744 (dotR 6, haloR 11; mobile 5 / 9)"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:2953-2959 (.map-dot fill --map-dot; .map-dot-halo opacity .18)",
+   "viewBox": "-14 -14 28 28",
+   "inner": "<circle class=\"map-dot-halo\" cx=\"0\" cy=\"0\" r=\"11\"/><circle class=\"map-dot\" cx=\"0\" cy=\"0\" r=\"6\"/>",
+   "file": "svg/map-page-dot.svg"
+  },
+  {
+   "id": "map-medallion",
+   "name": "Map: ending medallion with number chip",
+   "context": "Ending node: 84 px circular crop of the ending illustration, a gradient ring r 44 (gold -> violet), a 22x18 pill with the ending number.",
+   "sources": [
+    "source/js/3d9nxlx1n5pdy.js@9744 (medallionImageR 42, medallionRingR 44, numChipY = y+50)",
+    "assets/landing/iris/ending-1.webp"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:2977-3004 (drop-shadow 0 0 18px --map-glow; ring 2px, 3px + scale 1.05 when active; dimmed .55; chip --gold-chip-bg; number 11px 700 --gold-chip-ink)",
+   "viewBox": "-52 -52 104 120",
+   "inner": "<defs><linearGradient id=\"ring\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f5c542\"/><stop offset=\"1\" stop-color=\"#6D4FE0\"/></linearGradient><clipPath id=\"m0\"><circle cx=\"0\" cy=\"0\" r=\"42\"/></clipPath></defs><g class=\"map-medallion is-active\"><image href=\"../../../assets/landing/iris/ending-1.webp\" x=\"-42\" y=\"-42\" width=\"84\" height=\"84\" clip-path=\"url(#m0)\" preserveAspectRatio=\"xMidYMid slice\"/><circle class=\"map-medallion-ring\" cx=\"0\" cy=\"0\" r=\"44\" fill=\"none\" stroke=\"url(#ring)\"/><rect class=\"map-num-bg\" x=\"-11\" y=\"50\" width=\"22\" height=\"18\" rx=\"9\"/><text class=\"map-num\" x=\"0\" y=\"63\" text-anchor=\"middle\">1</text></g>",
+   "file": "svg/map-medallion.svg"
+  },
+  {
+   "id": "map-dotted-path",
+   "name": "Map: dotted trail + lit gradient trail",
+   "context": "Unlit branches: round-capped dots (dasharray 0.1 8, 1.6 px). Lit route: 2.4 px stroke with a gold -> violet-soft gradient, drawn on via stroke-dashoffset (pathLength 1).",
+   "sources": [
+    "assets/svg-inline/home__hiw-map-desktop__d942793a.svg (paths)"
+   ],
+   "css": "source/css/3q17cp_jgfwol.pretty.css:2931-2952",
+   "viewBox": "0 0 240 60",
+   "inner": "<defs><linearGradient id=\"lit\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#f5c542\"/><stop offset=\"1\" stop-color=\"#9b87f5\"/></linearGradient></defs><path class=\"map-path\" d=\"M 10 18 L 230 18\"/><path class=\"map-path-lit\" d=\"M 10 44 C 60 44 80 44 230 44\" stroke=\"url(#lit)\" opacity=\"0.9\" fill=\"none\"/>",
+   "file": "svg/map-dotted-path.svg"
+  }
+ ],
+ "tokens_for_maps": {
+  "natt": {
+   "--dash-line": "#ffecbe59",
+   "--map-dot": "#9b87f5",
+   "--map-glow": "#f5c54240",
+   "--gold-chip-bg": "#f2b22e29",
+   "--gold-chip-ink": "#ffd98f",
+   "--gold-soft": "#f5c542",
+   "--page-sub": "#d9cfee",
+   "--card-line": "#9b87f542"
+  },
+  "morgon": {
+   "--dash-line": "#6d4fe059",
+   "--map-dot": "#6d4fe0",
+   "--map-glow": "#6d4fe033",
+   "--gold-chip-bg": "#f2b22e26",
+   "--gold-chip-ink": "#8f6a12",
+   "--gold-soft": "#f5c542",
+   "--page-sub": "#5f5878",
+   "--card-line": "#ffffffe6"
+  }
+ }
+}

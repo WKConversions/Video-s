@@ -1,0 +1,3709 @@
+{
+ "files": {
+  "source/css/3q17cp_jgfwol.pretty.css": "global stylesheet (every page): tokens, nav, home/landing, reader, account",
+  "source/css/2h1wwdz1nvxwk.pretty.css": "route CSS on /start",
+  "source/css/37m388zf6rymp.pretty.css": "route CSS on /start and /share: glöd (ember) hearth stage, waiting room",
+  "source/css/2_gt301v4m-60.pretty.css": "route CSS on /start: start flow, create flow, veil/unveil"
+ },
+ "keyframes": [
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "name": "twinkle",
+   "start": 648,
+   "end": 656,
+   "context": "",
+   "verbatim": "@keyframes twinkle {\n  0%,\n  to {\n    opacity: 0.95;\n  }\n  50% {\n    opacity: 0.55;\n  }\n}"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "name": "float1",
+   "start": 962,
+   "end": 970,
+   "context": "",
+   "verbatim": "@keyframes float1 {\n  0%,\n  to {\n    transform: rotate(-8deg) translateY(0);\n  }\n  50% {\n    transform: rotate(-8.6deg) translateY(-12px);\n  }\n}"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "name": "float2",
+   "start": 971,
+   "end": 979,
+   "context": "",
+   "verbatim": "@keyframes float2 {\n  0%,\n  to {\n    transform: rotate(7deg) translateY(0);\n  }\n  50% {\n    transform: rotate(7.6deg) translateY(-16px);\n  }\n}"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "name": "floatBadge",
+   "start": 1001,
+   "end": 1009,
+   "context": "",
+   "verbatim": "@keyframes floatBadge {\n  0%,\n  to {\n    transform: rotate(2.5deg) translateY(0);\n  }\n  50% {\n    transform: rotate(3deg) translateY(-7px);\n  }\n}"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "name": "pulse",
+   "start": 1019,
+   "end": 1029,
+   "context": "",
+   "verbatim": "@keyframes pulse {\n  0% {\n    box-shadow: 0 0 #f2b22e73;\n  }\n  70% {\n    box-shadow: 0 0 0 12px #f2b22e00;\n  }\n  to {\n    box-shadow: 0 0 #f2b22e00;\n  }\n}"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "name": "glodPulse",
+   "start": 191,
+   "end": 201,
+   "context": "",
+   "verbatim": "@keyframes glodPulse {\n  0%,\n  to {\n    opacity: 0.85;\n    transform: scale(1);\n  }\n  50% {\n    opacity: 1;\n    transform: scale(1.25);\n  }\n}"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "name": "glodMemBob",
+   "start": 455,
+   "end": 463,
+   "context": "",
+   "verbatim": "@keyframes glodMemBob {\n  0%,\n  to {\n    transform: translateY(0) rotate(0);\n  }\n  50% {\n    transform: translateY(-5px) rotate(0.4deg);\n  }\n}"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "name": "glodEmberBreath",
+   "start": 563,
+   "end": 579,
+   "context": "",
+   "verbatim": "@keyframes glodEmberBreath {\n  0%,\n  to {\n    transform: scale(1);\n    box-shadow:\n      0 0 10px 3px #ffc373f2,\n      0 0 26px 9px #ff983e8c,\n      0 0 52px 20px #ff823240;\n  }\n  50% {\n    transform: scale(1.25);\n    box-shadow:\n      0 0 12px 4px #ffcd7d,\n      0 0 34px 12px #ffa044a6,\n      0 0 64px 26px #ff84344d;\n  }\n}"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "name": "glodActiveEmberGlow",
+   "start": 695,
+   "end": 705,
+   "context": "",
+   "verbatim": "@keyframes glodActiveEmberGlow {\n  0%,\n  to {\n    opacity: 0.88;\n    filter: brightness(0.96);\n  }\n  50% {\n    opacity: 1;\n    filter: brightness(1.2);\n  }\n}"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "name": "tfStartIn",
+   "start": 1,
+   "end": 10,
+   "context": "",
+   "verbatim": "@keyframes tfStartIn {\n  0% {\n    opacity: 0;\n    transform: translateY(22px);\n  }\n  to {\n    opacity: 1;\n    transform: none;\n  }\n}"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "name": "tfBrushBob",
+   "start": 253,
+   "end": 261,
+   "context": "",
+   "verbatim": "@keyframes tfBrushBob {\n  0%,\n  to {\n    transform: rotate(-8deg) translateY(0);\n  }\n  50% {\n    transform: rotate(6deg) translateY(-5px);\n  }\n}"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "name": "tfSweep",
+   "start": 328,
+   "end": 332,
+   "context": "",
+   "verbatim": "@keyframes tfSweep {\n  to {\n    transform: translate(130%);\n  }\n}"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "name": "tfRise",
+   "start": 352,
+   "end": 364,
+   "context": "",
+   "verbatim": "@keyframes tfRise {\n  0% {\n    opacity: 0;\n    transform: translate(0);\n  }\n  12% {\n    opacity: 0.95;\n  }\n  to {\n    opacity: 0;\n    transform: translate(var(--x, 0), var(--y, -180px));\n  }\n}"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "name": "tfVeilBreathe",
+   "start": 378,
+   "end": 388,
+   "context": "",
+   "verbatim": "@keyframes tfVeilBreathe {\n  0%,\n  to {\n    opacity: 0.42;\n    transform: scale(1);\n  }\n  50% {\n    opacity: 0.9;\n    transform: scale(1.06);\n  }\n}"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "name": "tfVeilDrift",
+   "start": 407,
+   "end": 426,
+   "context": "",
+   "verbatim": "@keyframes tfVeilDrift {\n  0% {\n    opacity: 0;\n    transform: translateY(0) scale(0.75);\n  }\n  20% {\n    opacity: 0.55;\n  }\n  50% {\n    opacity: 0.7;\n    transform: translateY(-28px) scale(1);\n  }\n  80% {\n    opacity: 0.3;\n  }\n  to {\n    opacity: 0;\n    transform: translateY(-56px) scale(0.7);\n  }\n}"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "name": "tfVeilCaption",
+   "start": 437,
+   "end": 445,
+   "context": "",
+   "verbatim": "@keyframes tfVeilCaption {\n  0%,\n  to {\n    opacity: 0.72;\n  }\n  50% {\n    opacity: 1;\n  }\n}"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "name": "tfUnveilPop",
+   "start": 513,
+   "end": 526,
+   "context": "",
+   "verbatim": "@keyframes tfUnveilPop {\n  0% {\n    transform: scale(0.92);\n    box-shadow: 0 0 #f5c54200;\n  }\n  45% {\n    transform: scale(1.06);\n    box-shadow: 0 0 26px #f5c5428c;\n  }\n  to {\n    transform: scale(1);\n    box-shadow: 0 0 #f5c54200;\n  }\n}"
+  }
+ ],
+ "animations": [
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "644",
+   "context": "",
+   "selector": ".starfield",
+   "raw": "4.6s ease-in-out infinite twinkle",
+   "name": "twinkle",
+   "duration_s": 4.6,
+   "delay_s": 0.0,
+   "easing": "ease-in-out",
+   "iteration": "infinite",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.42, 0, 0.58, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "950",
+   "context": "",
+   "selector": ".fb1",
+   "raw": "7s ease-in-out infinite float1",
+   "name": "float1",
+   "duration_s": 7.0,
+   "delay_s": 0.0,
+   "easing": "ease-in-out",
+   "iteration": "infinite",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.42, 0, 0.58, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "957",
+   "context": "",
+   "selector": ".fb2",
+   "raw": "8s ease-in-out infinite float2",
+   "name": "float2",
+   "duration_s": 8.0,
+   "delay_s": 0.0,
+   "easing": "ease-in-out",
+   "iteration": "infinite",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.42, 0, 0.58, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "995",
+   "context": "",
+   "selector": ".fan .badge",
+   "raw": "9s ease-in-out infinite floatBadge",
+   "name": "floatBadge",
+   "duration_s": 9.0,
+   "delay_s": 0.0,
+   "easing": "ease-in-out",
+   "iteration": "infinite",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.42, 0, 0.58, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1016",
+   "context": "",
+   "selector": ".badge .dotpulse",
+   "raw": "2.4s infinite pulse",
+   "name": "pulse",
+   "duration_s": 2.4,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "infinite",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1882",
+   "context": "",
+   "selector": ".reader-link-wait .dotpulse",
+   "raw": "2.4s infinite pulse",
+   "name": "pulse",
+   "duration_s": 2.4,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "infinite",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2355",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".fb1, .fb2, .badge, .dotpulse, .starfield",
+   "raw": "none",
+   "name": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "3112",
+   "context": "",
+   "selector": ".hiw-memory-tag .dotpulse",
+   "raw": "2.4s infinite pulse",
+   "name": "pulse",
+   "duration_s": 2.4,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "infinite",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "3220",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".hiw-memory-tag .dotpulse",
+   "raw": "none",
+   "name": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "188",
+   "context": "",
+   "selector": ".glod-pulse-dot",
+   "raw": "2.6s ease-in-out infinite glodPulse",
+   "name": "glodPulse",
+   "duration_s": 2.6,
+   "delay_s": 0.0,
+   "easing": "ease-in-out",
+   "iteration": "infinite",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.42, 0, 0.58, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "293",
+   "context": "",
+   "selector": ".glod-wb-steps li.active .dot",
+   "raw": "2.6s ease-in-out infinite glodPulse",
+   "name": "glodPulse",
+   "duration_s": 2.6,
+   "delay_s": 0.0,
+   "easing": "ease-in-out",
+   "iteration": "infinite",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.42, 0, 0.58, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "449",
+   "context": "",
+   "selector": ".glod-mem.show .glod-mem-float",
+   "raw": "animation-play-state: paused",
+   "name": "(longhand animation-play-state)",
+   "duration_s": "",
+   "delay_s": "",
+   "easing": "",
+   "easing_bezier": "",
+   "iteration": "",
+   "direction": "",
+   "fill": "",
+   "play_state": ""
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "452",
+   "context": "",
+   "selector": ".glod-mem-float",
+   "raw": "4.8s ease-in-out infinite glodMemBob",
+   "name": "glodMemBob",
+   "duration_s": 4.8,
+   "delay_s": 0.0,
+   "easing": "ease-in-out",
+   "iteration": "infinite",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.42, 0, 0.58, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "561",
+   "context": "",
+   "selector": ".glod-mem-ember.on .glod-mem-ember-core",
+   "raw": "2s ease-in-out infinite glodEmberBreath",
+   "name": "glodEmberBreath",
+   "duration_s": 2.0,
+   "delay_s": 0.0,
+   "easing": "ease-in-out",
+   "iteration": "infinite",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.42, 0, 0.58, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "669",
+   "context": "",
+   "selector": ".glod-active-ember-core",
+   "raw": "2.8s ease-in-out infinite glodActiveEmberGlow",
+   "name": "glodActiveEmberGlow",
+   "duration_s": 2.8,
+   "delay_s": 0.0,
+   "easing": "ease-in-out",
+   "iteration": "infinite",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.42, 0, 0.58, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "1055",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".glod-pulse-dot, .glod-wb-steps li.active .dot",
+   "raw": "none",
+   "name": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "1063",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".glod-active-ember-core, .glod-mem-float, .glod-mem-ember.on .glod-mem-ember-core",
+   "raw": "none",
+   "name": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "12",
+   "context": "",
+   "selector": ".start-flow .start-screen",
+   "raw": "0.45s cubic-bezier(0.2, 0.7, 0.3, 1) tfStartIn",
+   "name": "tfStartIn",
+   "duration_s": 0.45,
+   "delay_s": 0.0,
+   "easing": "cubic-bezier(0.2, 0.7, 0.3, 1)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.2, 0.7, 0.3, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "21",
+   "context": "",
+   "selector": ".start-flow .gallery.open",
+   "raw": "0.4s tfStartIn",
+   "name": "tfStartIn",
+   "duration_s": 0.4,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "124",
+   "context": "",
+   "selector": ".start-flow .paintpill",
+   "raw": "0.4s tfStartIn",
+   "name": "tfStartIn",
+   "duration_s": 0.4,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "132",
+   "context": "",
+   "selector": ".start-flow .paintpill .dotpulse",
+   "raw": "2.4s infinite pulse",
+   "name": "pulse",
+   "duration_s": 2.4,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "infinite",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "251",
+   "context": "",
+   "selector": ".start-flow .pframe .veil svg",
+   "raw": "2.6s ease-in-out infinite tfBrushBob",
+   "name": "tfBrushBob",
+   "duration_s": 2.6,
+   "delay_s": 0.0,
+   "easing": "ease-in-out",
+   "iteration": "infinite",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.42, 0, 0.58, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "326",
+   "context": "",
+   "selector": ".start-flow .easel.ph2 .sheen",
+   "raw": "1.3s forwards tfSweep",
+   "name": "tfSweep",
+   "duration_s": 1.3,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "forwards",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "349",
+   "context": "",
+   "selector": ".start-flow .embers.go .ember",
+   "raw": "2.4s ease-out forwards tfRise",
+   "name": "tfRise",
+   "duration_s": 2.4,
+   "delay_s": 0.0,
+   "easing": "ease-out",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "forwards",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0, 0, 0.58, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "350",
+   "context": "",
+   "selector": ".start-flow .embers.go .ember",
+   "raw": "animation-delay: var(--d, 0s)",
+   "name": "(longhand animation-delay)",
+   "duration_s": "",
+   "delay_s": "",
+   "easing": "",
+   "easing_bezier": "",
+   "iteration": "",
+   "direction": "",
+   "fill": "",
+   "play_state": ""
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "374",
+   "context": "",
+   "selector": ".start-flow .easel .veil-glow",
+   "raw": "4.6s ease-in-out infinite tfVeilBreathe",
+   "name": "tfVeilBreathe",
+   "duration_s": 4.6,
+   "delay_s": 0.0,
+   "easing": "ease-in-out",
+   "iteration": "infinite",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.42, 0, 0.58, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "401",
+   "context": "",
+   "selector": ".start-flow .veil-speck",
+   "raw": "5.4s ease-in-out infinite tfVeilDrift",
+   "name": "tfVeilDrift",
+   "duration_s": 5.4,
+   "delay_s": 0.0,
+   "easing": "ease-in-out",
+   "iteration": "infinite",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.42, 0, 0.58, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "402",
+   "context": "",
+   "selector": ".start-flow .veil-speck",
+   "raw": "animation-delay: var(--vd, 0s)",
+   "name": "(longhand animation-delay)",
+   "duration_s": "",
+   "delay_s": "",
+   "easing": "",
+   "easing_bezier": "",
+   "iteration": "",
+   "direction": "",
+   "fill": "",
+   "play_state": ""
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "435",
+   "context": "",
+   "selector": ".start-flow .veil-caption",
+   "raw": "4.6s ease-in-out infinite tfVeilCaption",
+   "name": "tfVeilCaption",
+   "duration_s": 4.6,
+   "delay_s": 0.0,
+   "easing": "ease-in-out",
+   "iteration": "infinite",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.42, 0, 0.58, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "467",
+   "context": "",
+   "selector": ".start-flow .reveal-line.on",
+   "raw": "0.7s tfStartIn",
+   "name": "tfStartIn",
+   "duration_s": 0.7,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "479",
+   "context": "",
+   "selector": ".start-flow .reveal-name.on",
+   "raw": "0.7s tfStartIn",
+   "name": "tfStartIn",
+   "duration_s": 0.7,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "489",
+   "context": "",
+   "selector": ".start-flow .reveal-actions.on",
+   "raw": "0.6s tfStartIn",
+   "name": "tfStartIn",
+   "duration_s": 0.6,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "497",
+   "context": "",
+   "selector": ".start-flow .paint-retry",
+   "raw": "0.6s tfStartIn",
+   "name": "tfStartIn",
+   "duration_s": 0.6,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "511",
+   "context": "",
+   "selector": ".start-flow .unveil-armed.ready-pop",
+   "raw": "0.42s cubic-bezier(0.2, 0.7, 0.3, 1.4) tfUnveilPop",
+   "name": "tfUnveilPop",
+   "duration_s": 0.42,
+   "delay_s": 0.0,
+   "easing": "cubic-bezier(0.2, 0.7, 0.3, 1.4)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.2, 0.7, 0.3, 1.4)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "770",
+   "context": "",
+   "selector": ".start-flow .sheet",
+   "raw": "0.35s tfStartIn",
+   "name": "tfStartIn",
+   "duration_s": 0.35,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "921",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".start-flow .start-screen, .start-flow .gallery.open, .start-flow .paintpill, .start-flow .reveal-line.on, .start-flow .reveal-name.on, .start-flow .reveal-actions.on, .start-flow .sheet",
+   "raw": "none",
+   "name": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "930",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".start-flow .paintpill .dotpulse, .start-flow .pframe .veil svg",
+   "raw": "none",
+   "name": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "937",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".start-flow .embers.go .ember, .start-flow .unveil-armed.ready-pop",
+   "raw": "none",
+   "name": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "941",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".start-flow .easel .veil-glow",
+   "raw": "none",
+   "name": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "945",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".start-flow .veil-speck",
+   "raw": "none",
+   "name": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "949",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".start-flow .veil-caption",
+   "raw": "none",
+   "name": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "iteration": "1",
+   "direction": "normal",
+   "fill": "none",
+   "play_state": "running",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  }
+ ],
+ "transitions": [
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "602-605",
+   "context": "",
+   "selector": "body",
+   "raw": "background-color var(--theme-transition-duration) var(--theme-transition-easing), color var(--theme-transition-duration) var(--theme-transition-easing)",
+   "property": "background-color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "602-605",
+   "context": "",
+   "selector": "body",
+   "raw": "background-color var(--theme-transition-duration) var(--theme-transition-easing), color var(--theme-transition-duration) var(--theme-transition-easing)",
+   "property": "color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "616-617",
+   "context": "",
+   "selector": ".bg",
+   "raw": "opacity var(--theme-transition-duration) var(--theme-transition-easing)",
+   "property": "opacity",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "708",
+   "context": "",
+   "selector": ".logo",
+   "raw": "color 0.5s",
+   "property": "color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "741-744",
+   "context": "",
+   "selector": ".nav-cta",
+   "raw": "background 0.5s, color 0.5s, border-color 0.5s",
+   "property": "background",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "741-744",
+   "context": "",
+   "selector": ".nav-cta",
+   "raw": "background 0.5s, color 0.5s, border-color 0.5s",
+   "property": "color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "741-744",
+   "context": "",
+   "selector": ".nav-cta",
+   "raw": "background 0.5s, color 0.5s, border-color 0.5s",
+   "property": "border-color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "776-778",
+   "context": "",
+   "selector": ".tt",
+   "raw": "background var(--theme-transition-duration) var(--theme-transition-easing), border-color var(--theme-transition-duration) var(--theme-transition-easing)",
+   "property": "background",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "776-778",
+   "context": "",
+   "selector": ".tt",
+   "raw": "background var(--theme-transition-duration) var(--theme-transition-easing), border-color var(--theme-transition-duration) var(--theme-transition-easing)",
+   "property": "border-color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "789-791",
+   "context": "",
+   "selector": ".tt-thumb",
+   "raw": "transform var(--theme-transition-duration) cubic-bezier(0.2, 0.7, 0.3, 1.2), background var(--theme-transition-duration) var(--theme-transition-easing)",
+   "property": "transform",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "cubic-bezier(0.2, 0.7, 0.3, 1.2)",
+   "easing_bezier": "cubic-bezier(0.2, 0.7, 0.3, 1.2)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "789-791",
+   "context": "",
+   "selector": ".tt-thumb",
+   "raw": "transform var(--theme-transition-duration) cubic-bezier(0.2, 0.7, 0.3, 1.2), background var(--theme-transition-duration) var(--theme-transition-easing)",
+   "property": "background",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "804-805",
+   "context": "",
+   "selector": ".tt-opt",
+   "raw": "color var(--theme-transition-duration) var(--theme-transition-easing)",
+   "property": "color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "848",
+   "context": "",
+   "selector": ".kicker",
+   "raw": "all 0.5s",
+   "property": "all",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "865",
+   "context": "",
+   "selector": "h1",
+   "raw": "color 0.5s",
+   "property": "color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "869",
+   "context": "",
+   "selector": "h1 .grad",
+   "raw": "color 0.5s",
+   "property": "color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "878",
+   "context": "",
+   "selector": ".lede",
+   "raw": "color 0.5s",
+   "property": "color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "897-901",
+   "context": "",
+   "selector": ".btn",
+   "raw": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, background 0.5s, color 0.5s",
+   "property": "transform",
+   "duration_s": 0.25,
+   "delay_s": 0.0,
+   "easing": "cubic-bezier(0.2, 0.7, 0.3, 1.4)",
+   "easing_bezier": "cubic-bezier(0.2, 0.7, 0.3, 1.4)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "897-901",
+   "context": "",
+   "selector": ".btn",
+   "raw": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, background 0.5s, color 0.5s",
+   "property": "box-shadow",
+   "duration_s": 0.3,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "897-901",
+   "context": "",
+   "selector": ".btn",
+   "raw": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, background 0.5s, color 0.5s",
+   "property": "background",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "897-901",
+   "context": "",
+   "selector": ".btn",
+   "raw": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, background 0.5s, color 0.5s",
+   "property": "color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "933-935",
+   "context": "",
+   "selector": ".fan .fbook",
+   "raw": "transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1.2), border-color 0.5s",
+   "property": "transform",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "cubic-bezier(0.2, 0.7, 0.3, 1.2)",
+   "easing_bezier": "cubic-bezier(0.2, 0.7, 0.3, 1.2)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "933-935",
+   "context": "",
+   "selector": ".fan .fbook",
+   "raw": "transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1.2), border-color 0.5s",
+   "property": "border-color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "992-994",
+   "context": "",
+   "selector": ".fan .badge",
+   "raw": "background 0.5s, color 0.5s",
+   "property": "background",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "992-994",
+   "context": "",
+   "selector": ".fan .badge",
+   "raw": "background 0.5s, color 0.5s",
+   "property": "color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1061",
+   "context": "",
+   "selector": "h2",
+   "raw": "color 0.5s",
+   "property": "color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1071",
+   "context": "",
+   "selector": ".create-title, .page-title",
+   "raw": "color 0.5s",
+   "property": "color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1097",
+   "context": "",
+   "selector": ".sec-chip",
+   "raw": "all 0.5s",
+   "property": "all",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1101-1103",
+   "context": "",
+   "selector": ".reveal",
+   "raw": "opacity 0.7s cubic-bezier(0.2, 0.7, 0.3, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1)",
+   "property": "opacity",
+   "duration_s": 0.7,
+   "delay_s": 0.0,
+   "easing": "cubic-bezier(0.2, 0.7, 0.3, 1)",
+   "easing_bezier": "cubic-bezier(0.2, 0.7, 0.3, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1101-1103",
+   "context": "",
+   "selector": ".reveal",
+   "raw": "opacity 0.7s cubic-bezier(0.2, 0.7, 0.3, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1)",
+   "property": "transform",
+   "duration_s": 0.7,
+   "delay_s": 0.0,
+   "easing": "cubic-bezier(0.2, 0.7, 0.3, 1)",
+   "easing_bezier": "cubic-bezier(0.2, 0.7, 0.3, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1118-1122",
+   "context": "",
+   "selector": ".glass",
+   "raw": "background 0.5s, border-color 0.5s, color 0.5s, box-shadow 0.4s",
+   "property": "background",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1118-1122",
+   "context": "",
+   "selector": ".glass",
+   "raw": "background 0.5s, border-color 0.5s, color 0.5s, box-shadow 0.4s",
+   "property": "border-color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1118-1122",
+   "context": "",
+   "selector": ".glass",
+   "raw": "background 0.5s, border-color 0.5s, color 0.5s, box-shadow 0.4s",
+   "property": "color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1118-1122",
+   "context": "",
+   "selector": ".glass",
+   "raw": "background 0.5s, border-color 0.5s, color 0.5s, box-shadow 0.4s",
+   "property": "box-shadow",
+   "duration_s": 0.4,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1172",
+   "context": "",
+   "selector": ".builder-pic .pframe",
+   "raw": "border-color 0.5s",
+   "property": "border-color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1195-1197",
+   "context": "",
+   "selector": ".builder-pic .fab",
+   "raw": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), background 0.5s",
+   "property": "transform",
+   "duration_s": 0.25,
+   "delay_s": 0.0,
+   "easing": "cubic-bezier(0.2, 0.7, 0.3, 1.4)",
+   "easing_bezier": "cubic-bezier(0.2, 0.7, 0.3, 1.4)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1195-1197",
+   "context": "",
+   "selector": ".builder-pic .fab",
+   "raw": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), background 0.5s",
+   "property": "background",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1236",
+   "context": "",
+   "selector": ".trait",
+   "raw": "all 0.25s",
+   "property": "all",
+   "duration_s": 0.25,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1254",
+   "context": "",
+   "selector": ".upload",
+   "raw": "border-color 0.3s",
+   "property": "border-color",
+   "duration_s": 0.3,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1307",
+   "context": "",
+   "selector": ".friend .avatar",
+   "raw": "border-color 0.5s",
+   "property": "border-color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1339",
+   "context": "",
+   "selector": ".friend-add",
+   "raw": "border-color 0.3s",
+   "property": "border-color",
+   "duration_s": 0.3,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1439",
+   "context": "",
+   "selector": ".comp-chosen",
+   "raw": "opacity 0.25s",
+   "property": "opacity",
+   "duration_s": 0.25,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1456",
+   "context": "",
+   "selector": ".companion-pic",
+   "raw": "border-color 0.5s",
+   "property": "border-color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1492-1497",
+   "context": "",
+   "selector": ".book",
+   "raw": "transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1.2), box-shadow 0.35s, background 0.5s, border-color 0.5s, color 0.5s",
+   "property": "transform",
+   "duration_s": 0.35,
+   "delay_s": 0.0,
+   "easing": "cubic-bezier(0.2, 0.7, 0.3, 1.2)",
+   "easing_bezier": "cubic-bezier(0.2, 0.7, 0.3, 1.2)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1492-1497",
+   "context": "",
+   "selector": ".book",
+   "raw": "transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1.2), box-shadow 0.35s, background 0.5s, border-color 0.5s, color 0.5s",
+   "property": "box-shadow",
+   "duration_s": 0.35,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1492-1497",
+   "context": "",
+   "selector": ".book",
+   "raw": "transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1.2), box-shadow 0.35s, background 0.5s, border-color 0.5s, color 0.5s",
+   "property": "background",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1492-1497",
+   "context": "",
+   "selector": ".book",
+   "raw": "transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1.2), box-shadow 0.35s, background 0.5s, border-color 0.5s, color 0.5s",
+   "property": "border-color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1492-1497",
+   "context": "",
+   "selector": ".book",
+   "raw": "transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1.2), box-shadow 0.35s, background 0.5s, border-color 0.5s, color 0.5s",
+   "property": "color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1541",
+   "context": "",
+   "selector": ".adv",
+   "raw": "transform 0.3s cubic-bezier(0.2, 0.7, 0.3, 1.2)",
+   "property": "transform",
+   "duration_s": 0.3,
+   "delay_s": 0.0,
+   "easing": "cubic-bezier(0.2, 0.7, 0.3, 1.2)",
+   "easing_bezier": "cubic-bezier(0.2, 0.7, 0.3, 1.2)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1821",
+   "context": "",
+   "selector": ".reader-title",
+   "raw": "color 0.5s",
+   "property": "color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1832",
+   "context": "",
+   "selector": ".prose",
+   "raw": "color 0.5s",
+   "property": "color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1918-1921",
+   "context": "",
+   "selector": ".choice",
+   "raw": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.2), box-shadow 0.25s, border-color 0.2s",
+   "property": "transform",
+   "duration_s": 0.25,
+   "delay_s": 0.0,
+   "easing": "cubic-bezier(0.2, 0.7, 0.3, 1.2)",
+   "easing_bezier": "cubic-bezier(0.2, 0.7, 0.3, 1.2)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1918-1921",
+   "context": "",
+   "selector": ".choice",
+   "raw": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.2), box-shadow 0.25s, border-color 0.2s",
+   "property": "box-shadow",
+   "duration_s": 0.25,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1918-1921",
+   "context": "",
+   "selector": ".choice",
+   "raw": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.2), box-shadow 0.25s, border-color 0.2s",
+   "property": "border-color",
+   "duration_s": 0.2,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1942",
+   "context": "",
+   "selector": ".foot",
+   "raw": "color 0.5s",
+   "property": "color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2000-2003",
+   "context": "",
+   "selector": ".sound-bed",
+   "raw": "border-color 0.2s, background 0.2s, color 0.2s",
+   "property": "border-color",
+   "duration_s": 0.2,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2000-2003",
+   "context": "",
+   "selector": ".sound-bed",
+   "raw": "border-color 0.2s, background 0.2s, color 0.2s",
+   "property": "background",
+   "duration_s": 0.2,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2000-2003",
+   "context": "",
+   "selector": ".sound-bed",
+   "raw": "border-color 0.2s, background 0.2s, color 0.2s",
+   "property": "color",
+   "duration_s": 0.2,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2087-2089",
+   "context": "@media (prefers-reduced-motion: no-preference)",
+   "selector": ".reader-img",
+   "raw": "width 0.3s, aspect-ratio 0.3s",
+   "property": "width",
+   "duration_s": 0.3,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2087-2089",
+   "context": "@media (prefers-reduced-motion: no-preference)",
+   "selector": ".reader-img",
+   "raw": "width 0.3s, aspect-ratio 0.3s",
+   "property": "aspect-ratio",
+   "duration_s": 0.3,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2362",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": "body, .bg, .tt, .tt-thumb, .tt-opt",
+   "raw": "none",
+   "property": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2366",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".reveal",
+   "raw": "none",
+   "property": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2370",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".comp-chosen",
+   "raw": "none",
+   "property": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2396-2398",
+   "context": "",
+   "selector": ".create-customize",
+   "raw": "border-color 0.3s, box-shadow 0.3s",
+   "property": "border-color",
+   "duration_s": 0.3,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2396-2398",
+   "context": "",
+   "selector": ".create-customize",
+   "raw": "border-color 0.3s, box-shadow 0.3s",
+   "property": "box-shadow",
+   "duration_s": 0.3,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2441",
+   "context": "",
+   "selector": ".create-customize > summary:after",
+   "raw": "transform 0.25s",
+   "property": "transform",
+   "duration_s": 0.25,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2820-2822",
+   "context": "",
+   "selector": ".hiw-play",
+   "raw": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s",
+   "property": "transform",
+   "duration_s": 0.25,
+   "delay_s": 0.0,
+   "easing": "cubic-bezier(0.2, 0.7, 0.3, 1.4)",
+   "easing_bezier": "cubic-bezier(0.2, 0.7, 0.3, 1.4)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2820-2822",
+   "context": "",
+   "selector": ".hiw-play",
+   "raw": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s",
+   "property": "box-shadow",
+   "duration_s": 0.3,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2943-2945",
+   "context": "",
+   "selector": ".hiw-map .map-path-lit--lit",
+   "raw": "stroke-dashoffset 0.9s ease-out, opacity 0.2s",
+   "property": "stroke-dashoffset",
+   "duration_s": 0.9,
+   "delay_s": 0.0,
+   "easing": "ease-out",
+   "easing_bezier": "cubic-bezier(0, 0, 0.58, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2943-2945",
+   "context": "",
+   "selector": ".hiw-map .map-path-lit--lit",
+   "raw": "stroke-dashoffset 0.9s ease-out, opacity 0.2s",
+   "property": "opacity",
+   "duration_s": 0.2,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2948",
+   "context": "",
+   "selector": ".hiw-map .map-path-lit--fading",
+   "raw": "opacity 0.25s",
+   "property": "opacity",
+   "duration_s": 0.25,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2951",
+   "context": "",
+   "selector": ".hiw-map .map-path-lit--off",
+   "raw": "none",
+   "property": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2981-2983",
+   "context": "",
+   "selector": ".hiw-map .map-medallion",
+   "raw": "transform 0.2s, opacity 0.2s",
+   "property": "transform",
+   "duration_s": 0.2,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2981-2983",
+   "context": "",
+   "selector": ".hiw-map .map-medallion",
+   "raw": "transform 0.2s, opacity 0.2s",
+   "property": "opacity",
+   "duration_s": 0.2,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "3217",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".hiw-map .map-path-lit--lit, .hiw-map .map-path-lit--fading, .hiw-map .map-medallion",
+   "raw": "none",
+   "property": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "3224",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".hiw-play, .hiw-play:hover",
+   "raw": "none",
+   "property": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2h1wwdz1nvxwk.pretty.css",
+   "lines": "187",
+   "context": "",
+   "selector": ".cs-chip",
+   "raw": "border-color 0.25s",
+   "property": "border-color",
+   "duration_s": 0.25,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2h1wwdz1nvxwk.pretty.css",
+   "lines": "591",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".cs-chip",
+   "raw": "none",
+   "property": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "346-348",
+   "context": "",
+   "selector": ".glod-stage[data-narrow=\"1\"] .glod-sign",
+   "raw": "opacity 0.45s, transform 0.5s",
+   "property": "opacity",
+   "duration_s": 0.45,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "346-348",
+   "context": "",
+   "selector": ".glod-stage[data-narrow=\"1\"] .glod-sign",
+   "raw": "opacity 0.45s, transform 0.5s",
+   "property": "transform",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "356-359",
+   "context": "",
+   "selector": ".glod-stage[data-narrow=\"1\"].glod-climax .glod-sign",
+   "raw": "opacity 0.3s, transform 0.35s, visibility 0s linear 0.35s",
+   "property": "opacity",
+   "duration_s": 0.3,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "356-359",
+   "context": "",
+   "selector": ".glod-stage[data-narrow=\"1\"].glod-climax .glod-sign",
+   "raw": "opacity 0.3s, transform 0.35s, visibility 0s linear 0.35s",
+   "property": "transform",
+   "duration_s": 0.35,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "356-359",
+   "context": "",
+   "selector": ".glod-stage[data-narrow=\"1\"].glod-climax .glod-sign",
+   "raw": "opacity 0.3s, transform 0.35s, visibility 0s linear 0.35s",
+   "property": "visibility",
+   "duration_s": 0.0,
+   "delay_s": 0.35,
+   "easing": "linear",
+   "easing_bezier": "cubic-bezier(0, 0, 1, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "437-439",
+   "context": "",
+   "selector": ".glod-mem",
+   "raw": "opacity 0.25s, transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.2)",
+   "property": "opacity",
+   "duration_s": 0.25,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "437-439",
+   "context": "",
+   "selector": ".glod-mem",
+   "raw": "opacity 0.25s, transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.2)",
+   "property": "transform",
+   "duration_s": 0.25,
+   "delay_s": 0.0,
+   "easing": "cubic-bezier(0.2, 0.7, 0.3, 1.2)",
+   "easing_bezier": "cubic-bezier(0.2, 0.7, 0.3, 1.2)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "535",
+   "context": "",
+   "selector": ".glod-mem-ember",
+   "raw": "opacity 0.25s",
+   "property": "opacity",
+   "duration_s": 0.25,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "632",
+   "context": "",
+   "selector": ".glod-active-ember",
+   "raw": "top 2.6s",
+   "property": "top",
+   "duration_s": 2.6,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "666-668",
+   "context": "",
+   "selector": ".glod-active-ember-core",
+   "raw": "transform 0.18s, box-shadow 0.18s",
+   "property": "transform",
+   "duration_s": 0.18,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "666-668",
+   "context": "",
+   "selector": ".glod-active-ember-core",
+   "raw": "transform 0.18s, box-shadow 0.18s",
+   "property": "box-shadow",
+   "duration_s": 0.18,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "728",
+   "context": "",
+   "selector": ".glod-hearth-box",
+   "raw": "opacity 0.9s",
+   "property": "opacity",
+   "duration_s": 0.9,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "806-808",
+   "context": "",
+   "selector": ".glod-book",
+   "raw": "opacity 1.1s, transform 1.1s cubic-bezier(0.2, 0.7, 0.3, 1.2)",
+   "property": "opacity",
+   "duration_s": 1.1,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "806-808",
+   "context": "",
+   "selector": ".glod-book",
+   "raw": "opacity 1.1s, transform 1.1s cubic-bezier(0.2, 0.7, 0.3, 1.2)",
+   "property": "transform",
+   "duration_s": 1.1,
+   "delay_s": 0.0,
+   "easing": "cubic-bezier(0.2, 0.7, 0.3, 1.2)",
+   "easing_bezier": "cubic-bezier(0.2, 0.7, 0.3, 1.2)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "957-959",
+   "context": "",
+   "selector": ".glod-caption",
+   "raw": "opacity 0.9s 0.2s, visibility 0s linear 1.2s",
+   "property": "opacity",
+   "duration_s": 0.9,
+   "delay_s": 0.2,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "957-959",
+   "context": "",
+   "selector": ".glod-caption",
+   "raw": "opacity 0.9s 0.2s, visibility 0s linear 1.2s",
+   "property": "visibility",
+   "duration_s": 0.0,
+   "delay_s": 1.2,
+   "easing": "linear",
+   "easing_bezier": "cubic-bezier(0, 0, 1, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "968",
+   "context": "",
+   "selector": ".glod-caption.show",
+   "raw": "opacity 0.9s 0.2s",
+   "property": "opacity",
+   "duration_s": 0.9,
+   "delay_s": 0.2,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "997-1000",
+   "context": "",
+   "selector": ".glod-open",
+   "raw": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, border-color 0.3s",
+   "property": "transform",
+   "duration_s": 0.25,
+   "delay_s": 0.0,
+   "easing": "cubic-bezier(0.2, 0.7, 0.3, 1.4)",
+   "easing_bezier": "cubic-bezier(0.2, 0.7, 0.3, 1.4)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "997-1000",
+   "context": "",
+   "selector": ".glod-open",
+   "raw": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, border-color 0.3s",
+   "property": "box-shadow",
+   "duration_s": 0.3,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "997-1000",
+   "context": "",
+   "selector": ".glod-open",
+   "raw": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, border-color 0.3s",
+   "property": "border-color",
+   "duration_s": 0.3,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "1058",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".glod-active-ember",
+   "raw": "none",
+   "property": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "1066",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".glod-book",
+   "raw": "opacity 0.4s",
+   "property": "opacity",
+   "duration_s": 0.4,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "72",
+   "context": "",
+   "selector": ".start-flow .field",
+   "raw": "border-color 0.3s",
+   "property": "border-color",
+   "duration_s": 0.3,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "167",
+   "context": "",
+   "selector": ".start-flow .pick",
+   "raw": "all 0.25s",
+   "property": "all",
+   "duration_s": 0.25,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "226",
+   "context": "",
+   "selector": ".start-flow .pframe",
+   "raw": "border-color 0.5s",
+   "property": "border-color",
+   "duration_s": 0.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "304-306",
+   "context": "",
+   "selector": ".start-flow .easel img",
+   "raw": "filter 1.5s, transform 1.6s cubic-bezier(0.2, 0.7, 0.3, 1)",
+   "property": "filter",
+   "duration_s": 1.5,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "304-306",
+   "context": "",
+   "selector": ".start-flow .easel img",
+   "raw": "filter 1.5s, transform 1.6s cubic-bezier(0.2, 0.7, 0.3, 1)",
+   "property": "transform",
+   "duration_s": 1.6,
+   "delay_s": 0.0,
+   "easing": "cubic-bezier(0.2, 0.7, 0.3, 1)",
+   "easing_bezier": "cubic-bezier(0.2, 0.7, 0.3, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "653",
+   "context": "",
+   "selector": ".start-flow .adv",
+   "raw": "transform 0.3s cubic-bezier(0.2, 0.7, 0.3, 1.2)",
+   "property": "transform",
+   "duration_s": 0.3,
+   "delay_s": 0.0,
+   "easing": "cubic-bezier(0.2, 0.7, 0.3, 1.2)",
+   "easing_bezier": "cubic-bezier(0.2, 0.7, 0.3, 1.2)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "717",
+   "context": "",
+   "selector": ".start-flow .stile",
+   "raw": "all 0.25s",
+   "property": "all",
+   "duration_s": 0.25,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "925",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".start-flow .adv, .start-flow .adv:hover",
+   "raw": "none",
+   "property": "none",
+   "duration_s": 0.0,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "933",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".start-flow .easel img",
+   "raw": "opacity 0.2s",
+   "property": "opacity",
+   "duration_s": 0.2,
+   "delay_s": 0.0,
+   "easing": "ease (default)",
+   "easing_bezier": "cubic-bezier(0.25, 0.1, 0.25, 1)"
+  }
+ ],
+ "states": [
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "486-488",
+   "context": "",
+   "selector": ".skip-link:not(:focus)",
+   "decls": [
+    {
+     "prop": "visibility",
+     "value": "hidden",
+     "line": 487
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "489-492",
+   "context": "",
+   "selector": ".skip-link:focus",
+   "decls": [
+    {
+     "prop": "visibility",
+     "value": "visible",
+     "line": 490
+    },
+    {
+     "prop": "transform",
+     "value": "translateY(0)",
+     "line": 491
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "798-800",
+   "context": "",
+   "selector": "body[data-theme=\"morgon\"] .tt-thumb",
+   "decls": [
+    {
+     "prop": "transform",
+     "value": "translate(100%)",
+     "line": 799
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "822-826",
+   "context": "",
+   "selector": ".tt:focus-visible",
+   "decls": [
+    {
+     "prop": "outline",
+     "value": "3px solid var(--accent)",
+     "line": 823
+    },
+    {
+     "prop": "box-shadow",
+     "value": "0 0 0 6px color-mix(in srgb, var(--card) 88%, transparent)",
+     "line": 825
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "904-906",
+   "context": "",
+   "selector": ".btn:active",
+   "decls": [
+    {
+     "prop": "transform",
+     "value": "scale(0.96)",
+     "line": 905
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "914-917",
+   "context": "",
+   "selector": ".btn-primary:hover",
+   "decls": [
+    {
+     "prop": "box-shadow",
+     "value": "var(--btn-shadow-hover)",
+     "line": 915
+    },
+    {
+     "prop": "transform",
+     "value": "translateY(-3px)",
+     "line": 916
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1106-1109",
+   "context": "",
+   "selector": ".reveal.in",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "1",
+     "line": 1107
+    },
+    {
+     "prop": "transform",
+     "value": "none",
+     "line": 1108
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1203-1205",
+   "context": "",
+   "selector": ".builder-pic .fab:hover",
+   "decls": [
+    {
+     "prop": "transform",
+     "value": "scale(1.1)",
+     "line": 1204
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1239-1243",
+   "context": "",
+   "selector": ".trait.on",
+   "decls": [
+    {
+     "prop": "background",
+     "value": "var(--trait-on-bg)",
+     "line": 1240
+    },
+    {
+     "prop": "border-color",
+     "value": "var(--trait-on-line)",
+     "line": 1241
+    },
+    {
+     "prop": "color",
+     "value": "var(--trait-on-ink)",
+     "line": 1242
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1244-1246",
+   "context": "",
+   "selector": ".trait:hover",
+   "decls": [
+    {
+     "prop": "border-color",
+     "value": "var(--trait-on-line)",
+     "line": 1245
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1257-1259",
+   "context": "",
+   "selector": ".upload:hover",
+   "decls": [
+    {
+     "prop": "border-color",
+     "value": "var(--accent)",
+     "line": 1258
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1342-1344",
+   "context": "",
+   "selector": ".friend-add:hover",
+   "decls": [
+    {
+     "prop": "border-color",
+     "value": "var(--accent)",
+     "line": 1343
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1349-1351",
+   "context": "",
+   "selector": ".comp-tile:hover",
+   "decls": [
+    {
+     "prop": "border-color",
+     "value": "var(--trait-on-line)",
+     "line": 1350
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1441-1443",
+   "context": "",
+   "selector": "[aria-selected=\"true\"] .comp-chosen",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "1",
+     "line": 1442
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1501-1503",
+   "context": "",
+   "selector": ".book:hover",
+   "decls": [
+    {
+     "prop": "transform",
+     "value": "translateY(-10px) rotate(-1deg)",
+     "line": 1502
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1544-1546",
+   "context": "",
+   "selector": ".adv:hover",
+   "decls": [
+    {
+     "prop": "transform",
+     "value": "translateY(-6px)",
+     "line": 1545
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1656-1658",
+   "context": "@media (max-width: 760px)",
+   "selector": ".mobile-adv:hover",
+   "decls": [
+    {
+     "prop": "transform",
+     "value": "none",
+     "line": 1657
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1727-1732",
+   "context": "@media (max-width: 760px)",
+   "selector": ".mobile-adv .btn:disabled",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "0.5",
+     "line": 1729
+    },
+    {
+     "prop": "box-shadow",
+     "value": "none",
+     "line": 1730
+    },
+    {
+     "prop": "transform",
+     "value": "none",
+     "line": 1731
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1850-1856",
+   "context": "",
+   "selector": ".reader-body .btn:disabled, .choice:disabled",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "0.5",
+     "line": 1852
+    },
+    {
+     "prop": "box-shadow",
+     "value": "none",
+     "line": 1854
+    },
+    {
+     "prop": "transform",
+     "value": "none",
+     "line": 1855
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1857-1864",
+   "context": "",
+   "selector": ".reader-body .btn:disabled:hover, .reader-body .btn:disabled:active, .choice:disabled:hover, .choice:disabled:active",
+   "decls": [
+    {
+     "prop": "box-shadow",
+     "value": "none",
+     "line": 1861
+    },
+    {
+     "prop": "border-color",
+     "value": "var(--choice-line)",
+     "line": 1862
+    },
+    {
+     "prop": "transform",
+     "value": "none",
+     "line": 1863
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1923-1927",
+   "context": "",
+   "selector": ".choice:hover",
+   "decls": [
+    {
+     "prop": "border-color",
+     "value": "var(--violet-soft)",
+     "line": 1924
+    },
+    {
+     "prop": "transform",
+     "value": "translateY(-3px)",
+     "line": 1925
+    },
+    {
+     "prop": "box-shadow",
+     "value": "0 14px 30px #6d4fe02e",
+     "line": 1926
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "1928-1932",
+   "context": "",
+   "selector": ".choice:focus-visible",
+   "decls": [
+    {
+     "prop": "outline",
+     "value": "3px solid var(--accent)",
+     "line": 1929
+    },
+    {
+     "prop": "border-color",
+     "value": "var(--accent)",
+     "line": 1931
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2006-2008",
+   "context": "",
+   "selector": ".sound-bed:hover",
+   "decls": [
+    {
+     "prop": "border-color",
+     "value": "var(--violet-soft)",
+     "line": 2007
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2009-2013",
+   "context": "",
+   "selector": ".sound-bed[aria-pressed=\"true\"]",
+   "decls": [
+    {
+     "prop": "border-color",
+     "value": "var(--violet-soft)",
+     "line": 2010
+    },
+    {
+     "prop": "background",
+     "value": "var(--pill-bg)",
+     "line": 2011
+    },
+    {
+     "prop": "color",
+     "value": "var(--pill-ink)",
+     "line": 2012
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2067-2069",
+   "context": "",
+   "selector": ".reader-audio-control:hover",
+   "decls": [
+    {
+     "prop": "border-color",
+     "value": "var(--violet-soft)",
+     "line": 2068
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2092-2096",
+   "context": "",
+   "selector": ".reader-replay:focus-visible, .reader-illustration-toggle:focus-visible",
+   "decls": [
+    {
+     "prop": "outline",
+     "value": "3px solid var(--accent)",
+     "line": 2094
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2183-2187",
+   "context": "",
+   "selector": ".friend-mode-option[aria-pressed=\"true\"]",
+   "decls": [
+    {
+     "prop": "border-color",
+     "value": "var(--violet-soft)",
+     "line": 2184
+    },
+    {
+     "prop": "background",
+     "value": "var(--pill-bg)",
+     "line": 2185
+    },
+    {
+     "prop": "box-shadow",
+     "value": "0 10px 26px #6d4fe024",
+     "line": 2186
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2231-2236",
+   "context": "",
+   "selector": ".friend-photo-step > .btn:disabled",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "0.48",
+     "line": 2232
+    },
+    {
+     "prop": "box-shadow",
+     "value": "none",
+     "line": 2234
+    },
+    {
+     "prop": "transform",
+     "value": "none",
+     "line": 2235
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2373-2378",
+   "context": "",
+   "selector": "input:focus-visible, textarea:focus-visible, select:focus-visible",
+   "decls": [
+    {
+     "prop": "outline",
+     "value": "2px solid var(--accent)",
+     "line": 2376
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2400-2404",
+   "context": "",
+   "selector": ".create-customize:hover, .create-customize[open]",
+   "decls": [
+    {
+     "prop": "border-color",
+     "value": "var(--trait-on-line)",
+     "line": 2402
+    },
+    {
+     "prop": "box-shadow",
+     "value": "0 6px 24px -14px var(--accent)",
+     "line": 2403
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2444-2446",
+   "context": "",
+   "selector": ".create-customize[open] > summary:after",
+   "decls": [
+    {
+     "prop": "transform",
+     "value": "rotate(45deg)",
+     "line": 2445
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2493-2495",
+   "context": "@media (max-width: 600px)",
+   "selector": ".advs > .adv:hover",
+   "decls": [
+    {
+     "prop": "transform",
+     "value": "none",
+     "line": 2494
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2825-2828",
+   "context": "",
+   "selector": ".hiw-play:hover",
+   "decls": [
+    {
+     "prop": "box-shadow",
+     "value": "var(--btn-shadow-hover)",
+     "line": 2826
+    },
+    {
+     "prop": "transform",
+     "value": "translateY(-2px)",
+     "line": 2827
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2942-2946",
+   "context": "",
+   "selector": ".hiw-map .map-path-lit--lit",
+   "decls": [
+    {
+     "prop": "transition",
+     "value": "stroke-dashoffset 0.9s ease-out, opacity 0.2s",
+     "line": 2943
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2947-2949",
+   "context": "",
+   "selector": ".hiw-map .map-path-lit--fading",
+   "decls": [
+    {
+     "prop": "transition",
+     "value": "opacity 0.25s",
+     "line": 2948
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2950-2952",
+   "context": "",
+   "selector": ".hiw-map .map-path-lit--off",
+   "decls": [
+    {
+     "prop": "transition",
+     "value": "none",
+     "line": 2951
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2988-2990",
+   "context": "",
+   "selector": ".hiw-map .map-medallion.is-active",
+   "decls": [
+    {
+     "prop": "transform",
+     "value": "scale(1.05)",
+     "line": 2989
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "2994-2996",
+   "context": "",
+   "selector": ".hiw-map .map-medallion.is-dimmed",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "0.55",
+     "line": 2995
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "3019-3022",
+   "context": "",
+   "selector": ".hiw-map-btn:focus-visible",
+   "decls": [
+    {
+     "prop": "outline",
+     "value": "3px solid var(--accent)",
+     "line": 3020
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "3214-3218",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".hiw-map .map-path-lit--lit, .hiw-map .map-path-lit--fading, .hiw-map .map-medallion",
+   "decls": [
+    {
+     "prop": "transition",
+     "value": "none",
+     "line": 3217
+    }
+   ]
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "lines": "3222-3226",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".hiw-play, .hiw-play:hover",
+   "decls": [
+    {
+     "prop": "transition",
+     "value": "none",
+     "line": 3224
+    },
+    {
+     "prop": "transform",
+     "value": "none",
+     "line": 3225
+    }
+   ]
+  },
+  {
+   "file": "source/css/2h1wwdz1nvxwk.pretty.css",
+   "lines": "53-55",
+   "context": "",
+   "selector": ".cs-andra:hover",
+   "decls": [
+    {
+     "prop": "color",
+     "value": "var(--card-ink)",
+     "line": 54
+    }
+   ]
+  },
+  {
+   "file": "source/css/2h1wwdz1nvxwk.pretty.css",
+   "lines": "191-193",
+   "context": "",
+   "selector": ".cs-chip:hover",
+   "decls": [
+    {
+     "prop": "border-color",
+     "value": "var(--trait-on-line)",
+     "line": 192
+    }
+   ]
+  },
+  {
+   "file": "source/css/2h1wwdz1nvxwk.pretty.css",
+   "lines": "286-288",
+   "context": "",
+   "selector": ".cs-sheet-title:focus",
+   "decls": [
+    {
+     "prop": "outline",
+     "value": "none",
+     "line": 287
+    }
+   ]
+  },
+  {
+   "file": "source/css/2h1wwdz1nvxwk.pretty.css",
+   "lines": "302-304",
+   "context": "",
+   "selector": ".cs-sheet-close:hover",
+   "decls": [
+    {
+     "prop": "border-color",
+     "value": "var(--trait-on-line)",
+     "line": 303
+    }
+   ]
+  },
+  {
+   "file": "source/css/2h1wwdz1nvxwk.pretty.css",
+   "lines": "427-432",
+   "context": "",
+   "selector": ".cs-door .btn:disabled",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "0.5",
+     "line": 428
+    },
+    {
+     "prop": "box-shadow",
+     "value": "none",
+     "line": 430
+    },
+    {
+     "prop": "transform",
+     "value": "none",
+     "line": 431
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "244-247",
+   "context": "",
+   "selector": ".glod-wb-action:disabled",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "0.72",
+     "line": 246
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "285-289",
+   "context": "",
+   "selector": ".glod-wb-steps li.active",
+   "decls": [
+    {
+     "prop": "color",
+     "value": "#fbeed2",
+     "line": 286
+    },
+    {
+     "prop": "opacity",
+     "value": "1",
+     "line": 287
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "290-295",
+   "context": "",
+   "selector": ".glod-wb-steps li.active .dot",
+   "decls": [
+    {
+     "prop": "background",
+     "value": "radial-gradient(circle at 40% 35%, #ffe9b0, #f5c542 70%, #d98f26)",
+     "line": 291
+    },
+    {
+     "prop": "border-color",
+     "value": "#0000",
+     "line": 292
+    },
+    {
+     "prop": "animation",
+     "value": "2.6s ease-in-out infinite glodPulse",
+     "line": 293
+    },
+    {
+     "prop": "box-shadow",
+     "value": "0 0 10px 2px #ffc45a80",
+     "line": 294
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "296-298",
+   "context": "",
+   "selector": ".glod-wb-steps li.done",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "0.95",
+     "line": 297
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "299-302",
+   "context": "",
+   "selector": ".glod-wb-steps li.done .dot",
+   "decls": [
+    {
+     "prop": "background",
+     "value": "linear-gradient(135deg, #ffe08a, #f5c542)",
+     "line": 300
+    },
+    {
+     "prop": "border-color",
+     "value": "#0000",
+     "line": 301
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "352-361",
+   "context": "",
+   "selector": ".glod-stage[data-narrow=\"1\"].glod-climax .glod-sign",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "0",
+     "line": 353
+    },
+    {
+     "prop": "visibility",
+     "value": "hidden",
+     "line": 354
+    },
+    {
+     "prop": "transition",
+     "value": "opacity 0.3s, transform 0.35s, visibility 0s linear 0.35s",
+     "line": 356
+    },
+    {
+     "prop": "transform",
+     "value": "translateY(-130%) scale(0.92)",
+     "line": 360
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "443-447",
+   "context": "",
+   "selector": ".glod-mem.show",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "1",
+     "line": 444
+    },
+    {
+     "prop": "transform",
+     "value": "scale(1) translateY(0)",
+     "line": 446
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "448-450",
+   "context": "",
+   "selector": ".glod-mem.show .glod-mem-float",
+   "decls": [
+    {
+     "prop": "animation-play-state",
+     "value": "paused",
+     "line": 449
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "493-495",
+   "context": "",
+   "selector": ".glod-mem-close:hover",
+   "decls": [
+    {
+     "prop": "background",
+     "value": "#5c3a141a",
+     "line": 494
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "496-499",
+   "context": "",
+   "selector": ".glod-mem-close:focus-visible",
+   "decls": [
+    {
+     "prop": "outline",
+     "value": "3px solid #7a3f0c",
+     "line": 498
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "557-559",
+   "context": "",
+   "selector": ".glod-mem-ember.on",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "1",
+     "line": 558
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "560-562",
+   "context": "",
+   "selector": ".glod-mem-ember.on .glod-mem-ember-core",
+   "decls": [
+    {
+     "prop": "animation",
+     "value": "2s ease-in-out infinite glodEmberBreath",
+     "line": 561
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "607-610",
+   "context": "",
+   "selector": ".glod-mem-carry[aria-pressed=\"true\"]",
+   "decls": [
+    {
+     "prop": "background",
+     "value": "#31543d",
+     "line": 608
+    },
+    {
+     "prop": "border-color",
+     "value": "#24422e",
+     "line": 609
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "682-690",
+   "context": "",
+   "selector": ".glod-active-ember:hover .glod-active-ember-core, .glod-active-ember:active .glod-active-ember-core, .glod-active-ember:focus-visible .glod-active-ember-core",
+   "decls": [
+    {
+     "prop": "transform",
+     "value": "scale(1.22)",
+     "line": 685
+    },
+    {
+     "prop": "box-shadow",
+     "value": "0 0 13px 5px #ffd782, 0 0 34px 14px #ffa546b8, 0 0 62px 27px #ff84344d",
+     "line": 686
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "691-694",
+   "context": "",
+   "selector": ".glod-active-ember:focus-visible",
+   "decls": [
+    {
+     "prop": "outline",
+     "value": "3px solid #fff1bf",
+     "line": 693
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "709-711",
+   "context": "",
+   "selector": ".glod-stage[data-fire-level=\"high\"] .glod-active-ember",
+   "decls": [
+    {
+     "prop": "top",
+     "value": "48%",
+     "line": 710
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "712-714",
+   "context": "",
+   "selector": ".glod-stage[data-fire-level=\"low\"] .glod-active-ember",
+   "decls": [
+    {
+     "prop": "top",
+     "value": "60%",
+     "line": 713
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "715-717",
+   "context": "",
+   "selector": ".glod-stage[data-fire-level=\"unlit\"] .glod-active-ember",
+   "decls": [
+    {
+     "prop": "top",
+     "value": "66%",
+     "line": 716
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "735-737",
+   "context": "",
+   "selector": ".glod-hearth-box.on",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "1",
+     "line": 736
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "762-764",
+   "context": "",
+   "selector": ".glod-stage.glod-climax .glod-hearth-box",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "0",
+     "line": 763
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "792-796",
+   "context": "",
+   "selector": ".glod-sound[aria-pressed=\"true\"]",
+   "decls": [
+    {
+     "prop": "background",
+     "value": "var(--pill-bg)",
+     "line": 793
+    },
+    {
+     "prop": "color",
+     "value": "var(--pill-ink)",
+     "line": 794
+    },
+    {
+     "prop": "border-color",
+     "value": "var(--violet-soft)",
+     "line": 795
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "812-815",
+   "context": "",
+   "selector": ".glod-book.show",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "1",
+     "line": 813
+    },
+    {
+     "prop": "transform",
+     "value": "scale(1) rotate(-1.2deg)",
+     "line": 814
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "964-969",
+   "context": "",
+   "selector": ".glod-caption.show",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "1",
+     "line": 965
+    },
+    {
+     "prop": "visibility",
+     "value": "visible",
+     "line": 966
+    },
+    {
+     "prop": "transition",
+     "value": "opacity 0.9s 0.2s",
+     "line": 968
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "1040-1048",
+   "context": "",
+   "selector": ".glod-open:hover",
+   "decls": [
+    {
+     "prop": "border-color",
+     "value": "#3a2408",
+     "line": 1041
+    },
+    {
+     "prop": "transform",
+     "value": "rotate(-0.6deg) translateY(-3px)",
+     "line": 1042
+    },
+    {
+     "prop": "box-shadow",
+     "value": "0 18px 38px #04030c99, 0 0 44px #ffb45047, inset 0 1px #ffd8a059, inset 0 -3px #0006",
+     "line": 1043
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "1049-1051",
+   "context": "",
+   "selector": ".glod-open:active",
+   "decls": [
+    {
+     "prop": "transform",
+     "value": "rotate(-0.6deg) scale(0.97)",
+     "line": 1050
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "1053-1056",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".glod-pulse-dot, .glod-wb-steps li.active .dot",
+   "decls": [
+    {
+     "prop": "animation",
+     "value": "none",
+     "line": 1055
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "1060-1064",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".glod-active-ember-core, .glod-mem-float, .glod-mem-ember.on .glod-mem-ember-core",
+   "decls": [
+    {
+     "prop": "animation",
+     "value": "none",
+     "line": 1063
+    }
+   ]
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "lines": "1069-1071",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".glod-book.show",
+   "decls": [
+    {
+     "prop": "transform",
+     "value": "none",
+     "line": 1070
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "20-23",
+   "context": "",
+   "selector": ".start-flow .gallery.open",
+   "decls": [
+    {
+     "prop": "animation",
+     "value": "0.4s tfStartIn",
+     "line": 21
+    },
+    {
+     "prop": "display",
+     "value": "grid",
+     "line": 22
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "55-60",
+   "context": "",
+   "selector": ".start-flow .stepcard .btn:disabled",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "0.5",
+     "line": 56
+    },
+    {
+     "prop": "box-shadow",
+     "value": "none",
+     "line": 58
+    },
+    {
+     "prop": "transform",
+     "value": "none",
+     "line": 59
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "74-76",
+   "context": "",
+   "selector": ".start-flow .field:focus",
+   "decls": [
+    {
+     "prop": "border-color",
+     "value": "var(--accent)",
+     "line": 75
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "93-95",
+   "context": "",
+   "selector": ".start-flow .upload.chosen .cam svg",
+   "decls": [
+    {
+     "prop": "display",
+     "value": "none",
+     "line": 94
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "96-98",
+   "context": "",
+   "selector": ".start-flow .upload.chosen .cam img",
+   "decls": [
+    {
+     "prop": "display",
+     "value": "block",
+     "line": 97
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "174-178",
+   "context": "",
+   "selector": ".start-flow .pick.on",
+   "decls": [
+    {
+     "prop": "background",
+     "value": "var(--trait-on-bg)",
+     "line": 175
+    },
+    {
+     "prop": "border-color",
+     "value": "var(--trait-on-line)",
+     "line": 176
+    },
+    {
+     "prop": "color",
+     "value": "var(--trait-on-ink)",
+     "line": 177
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "179-181",
+   "context": "",
+   "selector": ".start-flow .pick:hover",
+   "decls": [
+    {
+     "prop": "border-color",
+     "value": "var(--trait-on-line)",
+     "line": 180
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "318-320",
+   "context": "",
+   "selector": ".start-flow .easel.ph1 img",
+   "decls": [
+    {
+     "prop": "filter",
+     "value": "blur(20px) brightness(0.5) saturate(0.15)",
+     "line": 319
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "321-323",
+   "context": "",
+   "selector": ".start-flow .easel.ph2 img",
+   "decls": [
+    {
+     "prop": "filter",
+     "value": "blur(7px) brightness(0.85) saturate(0.7)",
+     "line": 322
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "324-327",
+   "context": "",
+   "selector": ".start-flow .easel.ph2 .sheen",
+   "decls": [
+    {
+     "prop": "opacity",
+     "value": "1",
+     "line": 325
+    },
+    {
+     "prop": "animation",
+     "value": "1.3s forwards tfSweep",
+     "line": 326
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "333-336",
+   "context": "",
+   "selector": ".start-flow .easel.ph3 img",
+   "decls": [
+    {
+     "prop": "filter",
+     "value": "none",
+     "line": 334
+    },
+    {
+     "prop": "transform",
+     "value": "scale(1)",
+     "line": 335
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "348-351",
+   "context": "",
+   "selector": ".start-flow .embers.go .ember",
+   "decls": [
+    {
+     "prop": "animation",
+     "value": "2.4s ease-out forwards tfRise",
+     "line": 349
+    },
+    {
+     "prop": "animation-delay",
+     "value": "var(--d, 0s)",
+     "line": 350
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "466-469",
+   "context": "",
+   "selector": ".start-flow .reveal-line.on",
+   "decls": [
+    {
+     "prop": "animation",
+     "value": "0.7s tfStartIn",
+     "line": 467
+    },
+    {
+     "prop": "display",
+     "value": "flex",
+     "line": 468
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "478-481",
+   "context": "",
+   "selector": ".start-flow .reveal-name.on",
+   "decls": [
+    {
+     "prop": "animation",
+     "value": "0.7s tfStartIn",
+     "line": 479
+    },
+    {
+     "prop": "display",
+     "value": "block",
+     "line": 480
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "488-491",
+   "context": "",
+   "selector": ".start-flow .reveal-actions.on",
+   "decls": [
+    {
+     "prop": "animation",
+     "value": "0.6s tfStartIn",
+     "line": 489
+    },
+    {
+     "prop": "display",
+     "value": "flex",
+     "line": 490
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "510-512",
+   "context": "",
+   "selector": ".start-flow .unveil-armed.ready-pop",
+   "decls": [
+    {
+     "prop": "animation",
+     "value": "0.42s cubic-bezier(0.2, 0.7, 0.3, 1.4) tfUnveilPop",
+     "line": 511
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "586-591",
+   "context": "",
+   "selector": ".start-flow .wslot.done",
+   "decls": [
+    {
+     "prop": "border-color",
+     "value": "var(--trait-on-line)",
+     "line": 588
+    },
+    {
+     "prop": "background",
+     "value": "var(--trait-on-bg)",
+     "line": 589
+    },
+    {
+     "prop": "color",
+     "value": "var(--trait-on-ink)",
+     "line": 590
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "656-658",
+   "context": "",
+   "selector": ".start-flow .adv:hover",
+   "decls": [
+    {
+     "prop": "transform",
+     "value": "translateY(-6px)",
+     "line": 657
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "731-735",
+   "context": "",
+   "selector": ".start-flow .stile.on",
+   "decls": [
+    {
+     "prop": "border-color",
+     "value": "var(--trait-on-line)",
+     "line": 732
+    },
+    {
+     "prop": "background",
+     "value": "var(--trait-on-bg)",
+     "line": 733
+    },
+    {
+     "prop": "color",
+     "value": "var(--trait-on-ink)",
+     "line": 734
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "761-763",
+   "context": "",
+   "selector": ".start-flow .sheetwrap.on",
+   "decls": [
+    {
+     "prop": "display",
+     "value": "grid",
+     "line": 762
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "914-922",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".start-flow .start-screen, .start-flow .gallery.open, .start-flow .paintpill, .start-flow .reveal-line.on, .start-flow .reveal-name.on, .start-flow .reveal-actions.on, .start-flow .sheet",
+   "decls": [
+    {
+     "prop": "animation",
+     "value": "none",
+     "line": 921
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "923-927",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".start-flow .adv, .start-flow .adv:hover",
+   "decls": [
+    {
+     "prop": "transition",
+     "value": "none",
+     "line": 925
+    },
+    {
+     "prop": "transform",
+     "value": "none",
+     "line": 926
+    }
+   ]
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "lines": "935-938",
+   "context": "@media (prefers-reduced-motion: reduce)",
+   "selector": ".start-flow .embers.go .ember, .start-flow .unveil-armed.ready-pop",
+   "decls": [
+    {
+     "prop": "animation",
+     "value": "none",
+     "line": 937
+    }
+   ]
+  }
+ ],
+ "reduced_motion": [
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "prelude": "@media (prefers-reduced-motion: no-preference)",
+   "start": 2085,
+   "end": 2091,
+   "verbatim": "@media (prefers-reduced-motion: no-preference) {\n  .reader-img {\n    transition:\n      width 0.3s,\n      aspect-ratio 0.3s;\n  }\n}"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "prelude": "@media (prefers-reduced-motion: reduce)",
+   "start": 2349,
+   "end": 2372,
+   "verbatim": "@media (prefers-reduced-motion: reduce) {\n  .fb1,\n  .fb2,\n  .badge,\n  .dotpulse,\n  .starfield {\n    animation: none;\n  }\n  body,\n  .bg,\n  .tt,\n  .tt-thumb,\n  .tt-opt {\n    transition: none;\n  }\n  .reveal {\n    opacity: 1;\n    transition: none;\n    transform: none;\n  }\n  .comp-chosen {\n    transition: none;\n  }\n}"
+  },
+  {
+   "file": "source/css/3q17cp_jgfwol.pretty.css",
+   "prelude": "@media (prefers-reduced-motion: reduce)",
+   "start": 3213,
+   "end": 3227,
+   "verbatim": "@media (prefers-reduced-motion: reduce) {\n  .hiw-map .map-path-lit--lit,\n  .hiw-map .map-path-lit--fading,\n  .hiw-map .map-medallion {\n    transition: none;\n  }\n  .hiw-memory-tag .dotpulse {\n    animation: none;\n  }\n  .hiw-play,\n  .hiw-play:hover {\n    transition: none;\n    transform: none;\n  }\n}"
+  },
+  {
+   "file": "source/css/2h1wwdz1nvxwk.pretty.css",
+   "prelude": "@media (prefers-reduced-motion: reduce)",
+   "start": 589,
+   "end": 593,
+   "verbatim": "@media (prefers-reduced-motion: reduce) {\n  .cs-chip {\n    transition: none;\n  }\n}"
+  },
+  {
+   "file": "source/css/37m388zf6rymp.pretty.css",
+   "prelude": "@media (prefers-reduced-motion: reduce)",
+   "start": 1052,
+   "end": 1072,
+   "verbatim": "@media (prefers-reduced-motion: reduce) {\n  .glod-pulse-dot,\n  .glod-wb-steps li.active .dot {\n    animation: none;\n  }\n  .glod-active-ember {\n    transition: none;\n  }\n  .glod-active-ember-core,\n  .glod-mem-float,\n  .glod-mem-ember.on .glod-mem-ember-core {\n    animation: none;\n  }\n  .glod-book {\n    transition: opacity 0.4s;\n    transform: none;\n  }\n  .glod-book.show {\n    transform: none;\n  }\n}"
+  },
+  {
+   "file": "source/css/2_gt301v4m-60.pretty.css",
+   "prelude": "@media (prefers-reduced-motion: reduce)",
+   "start": 913,
+   "end": 951,
+   "verbatim": "@media (prefers-reduced-motion: reduce) {\n  .start-flow .start-screen,\n  .start-flow .gallery.open,\n  .start-flow .paintpill,\n  .start-flow .reveal-line.on,\n  .start-flow .reveal-name.on,\n  .start-flow .reveal-actions.on,\n  .start-flow .sheet {\n    animation: none;\n  }\n  .start-flow .adv,\n  .start-flow .adv:hover {\n    transition: none;\n    transform: none;\n  }\n  .start-flow .paintpill .dotpulse,\n  .start-flow .pframe .veil svg {\n    animation: none;\n  }\n  .start-flow .easel img {\n    transition: opacity 0.2s;\n  }\n  .start-flow .embers.go .ember,\n  .start-flow .unveil-armed.ready-pop {\n    animation: none;\n  }\n  .start-flow .easel .veil-glow {\n    opacity: 0.6;\n    animation: none;\n  }\n  .start-flow .veil-speck {\n    opacity: 0.4;\n    animation: none;\n  }\n  .start-flow .veil-caption {\n    opacity: 1;\n    animation: none;\n  }\n}"
+  }
+ ]
+}
