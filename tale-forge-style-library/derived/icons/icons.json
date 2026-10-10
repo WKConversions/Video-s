@@ -107,7 +107,7 @@
    "id": "motif-four-point-sparkle",
    "name": "Four-point sparkle (.hiw-star)",
    "group": "motif",
-   "context": "Bullet before each 'micro' reassurance line in How-it-works steps 1-4 and the last step (5 instances on home).",
+   "context": "Bullet before each of the five `.hiw-micro` reassurance lines in How it works (e.g. 'Porträttet styr både bilderna och berättelsen.' [The portrait steers both the pictures and the story.]).",
    "sources": [
     "assets/svg-inline/home__hiw-star__700fa96f.svg",
     "source/js/3d9nxlx1n5pdy.js@14639"
@@ -198,7 +198,7 @@
    "id": "ui-camera-home",
    "name": "Camera (photo upload, home)",
    "group": "chrome",
-   "context": "`.upload .cam` 46 px tile in the home builder card ('Ladda upp ett foto' upload row).",
+   "context": "`.upload .cam` 46 px tile in the home builder card, beside 'Bli din egen hjälte' [Be your own hero] / 'Ladda upp en bild, så målar vi dig i bokens stil.' [Upload a picture and we will paint you in the book's style].",
    "sources": [
     "assets/svg-inline/home__cam__a7a7e275.svg",
     "source/html/home.sv.html (server component)"

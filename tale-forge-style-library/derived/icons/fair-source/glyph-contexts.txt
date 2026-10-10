@@ -1,0 +1,164 @@
+# Every icon-like glyph occurrence (glyph, file@char-offset, context). live-fetch:* files were fetched from tale-forge.app on 2026-10-10; copies of the HTML, CSS and reader chunk are in this folder.
+U+00B7 MIDDLE DOT	source/js/0ad0wel9cyv30.js@579	:"Läs en exempelbok först",badgeTitle:"Exempelbok",badgeSub:"Iris och den sparade platsen · på svenska",sampleAction:"Läs exempelb
+U+00B7 MIDDLE DOT	source/js/0ad0wel9cyv30.js@1091	Read a sample book first",badgeTitle:"Sample book",badgeSub:"Iris och den sparade platsen · Swedish",sampleAction:"Read the Swedis
+U+00B7 MIDDLE DOT	source/js/0ad0wel9cyv30.js@16505	0","s1","s2","s3","s4","s5","s6","s7","s8"],eo={sv:{s0:null,s1:{step:1,title:"Steg 1 av 4 · Hjälten",sub:"Inget konto och inget ko
+U+00B7 MIDDLE DOT	source/js/0ad0wel9cyv30.js@16608	b:"Inget konto och inget kort ännu. Ni börjar med barnet."},s2:{step:2,title:"Steg 2 av 4 · Fotot",sub:"Ett foto räcker för porträ
+U+00B7 MIDDLE DOT	source/js/0ad0wel9cyv30.js@16718	to räcker för porträttet, och det går bra att hoppa över."},s3:{step:3,title:"Steg 3 av 4 · Sällskapet",sub:"Porträttet målas i ba
+U+00B7 MIDDLE DOT	source/js/0ad0wel9cyv30.js@16824	b:"Porträttet målas i bakgrunden medan ni väljer."},s4:null,s5:{step:4,title:"Steg 4 av 4 · Kontot",sub:"Hjälten och porträttet sp
+U+00B7 MIDDLE DOT	source/js/0ad0wel9cyv30.js@17136	ger sig i bokhyllan när den är klar."},s8:null},en:{s0:null,s1:{step:1,title:"Step 1 of 4 · The hero",sub:"No account and no card 
+U+00B7 MIDDLE DOT	source/js/0ad0wel9cyv30.js@17240	b:"No account and no card yet. You start with your child."},s2:{step:2,title:"Step 2 of 4 · The photo",sub:"One photo is enough fo
+U+00B7 MIDDLE DOT	source/js/0ad0wel9cyv30.js@17350	e photo is enough for the portrait, and skipping is fine."},s3:{step:3,title:"Step 3 of 4 · The company",sub:"The portrait is pain
+U+00B7 MIDDLE DOT	source/js/0ad0wel9cyv30.js@17470	it is painted in the background while you choose."},s4:null,s5:{step:4,title:"Step 4 of 4 · The account",sub:"The hero and the por
+U+00B7 MIDDLE DOT	source/js/0ad0wel9cyv30.js@19991	-platsen/assets/cover.webp",alt:n.sampleCoverAlt}),(0,t.jsxs)("figcaption",{children:[s," · ",n.sampleAction]})]})})}):null]}),(0,
+U+2726 BLACK FOUR POINTED STAR	source/js/0ad0wel9cyv30.js@26510	:[(0,t.jsx)("span",{"aria-hidden":"true",style:{fontSize:"1.3rem",lineHeight:1},children:"✦"}),(0,t.jsxs)("span",{className:"pick-
+U+2713 CHECK MARK	source/js/2j_-r8q4tgdka.js@7276	-btn-ink)":"var(--chip-ink)",border:a||n?"none":"1px solid var(--chip-line)"},children:a?"✓":r+1}),e]},e)})})]})}e.s(["JOB_STATUS_
+U+2726 BLACK FOUR POINTED STAR	source/js/2j_-r8q4tgdka.js@16612	id":"surprise-art-fallback",children:(0,t.jsx)("span",{className:"cs-door-star",children:"✦"})}):(0,t.jsx)("img",{src:"/images/cre
+U+00D7 MULTIPLICATION SIGN	source/js/2j_-r8q4tgdka.js@21828	,"aria-label":g.close,onClick:b,children:(0,t.jsx)("span",{"aria-hidden":"true",children:"×"})})]}),(0,t.jsx)("div",{className:"cs
+U+2713 CHECK MARK	source/js/2j_-r8q4tgdka.js@29101	done":void 0,children:[(0,t.jsx)("span",{className:"dot","aria-hidden":"true",children:n?"✓":""}),e]},e)})})]}):b?(0,t.jsxs)("div"
+U+00D7 MULTIPLICATION SIGN	source/js/2j_-r8q4tgdka.js@31094	oseMemory,disabled:!e,onClick:u,children:(0,t.jsx)("span",{"aria-hidden":"true",children:"×"})}),(0,t.jsxs)("p",{id:p,className:"g
+U+00AB LEFT-POINTING DOUBLE ANGLE QUOTATION MARK	source/js/390j9gbq0u9ce.js@18057	ction(){return a}});let n=e.r(43476),a=()=>"u">typeof window?null:(0,n.jsx)("meta",{name:"«nxt-icon»"})},91915,(e,t,r)=>{"use stri
+U+00BB RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK	source/js/390j9gbq0u9ce.js@18066	eturn a}});let n=e.r(43476),a=()=>"u">typeof window?null:(0,n.jsx)("meta",{name:"«nxt-icon»"})},91915,(e,t,r)=>{"use strict";funct
+U+00B7 MIDDLE DOT	source/js/3d9nxlx1n5pdy.js@1618	s värld är Noah och räven Sixten med i varje bok.",rows:[{name:"Noah",sub:"bästa kompisen · med i 2 böcker"},{name:"Sixten",sub:"f
+U+00B7 MIDDLE DOT	source/js/3d9nxlx1n5pdy.js@1668	,rows:[{name:"Noah",sub:"bästa kompisen · med i 2 böcker"},{name:"Sixten",sub:"fjällräven · följer med i varje bok"}]},adventure:{
+U+00B7 MIDDLE DOT	source/js/3d9nxlx1n5pdy.js@4408	's world, Noah and Sixten the fox are in every book.",rows:[{name:"Noah",sub:"best friend · in 2 books"},{name:"Sixten",sub:"the m
+U+00B7 MIDDLE DOT	source/js/3d9nxlx1n5pdy.js@4460	",rows:[{name:"Noah",sub:"best friend · in 2 books"},{name:"Sixten",sub:"the mountain fox · comes along in every book"}]},adventur
+U+00B7 MIDDLE DOT	source/js/3sehtyhn4u4zd.js@35949	\⿯\、-\퟿\豈-\﷏\ﷰ-\�][:A-Z_a-z\À-\Ö\Ø-\ö\ø-\˿\Ͱ-\ͽ\Ϳ-\῿\‌-\‍\⁰-\↏\Ⰰ-\⿯\、-\퟿\豈-\﷏\ﷰ-\�\\-.0-9\·\̀-\ͯ\‿-\⁀]*$"),tl={},ta={},to=!1;funct
+U+00B7 MIDDLE DOT	source/html/404.en.html@6298	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 Sep 2026</span></div><span data-tes
+U+00B7 MIDDLE DOT	source/html/404.en.html@14956	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 Sep 2026\"}]]}],[\"$\",\"span\",nul
+U+00B7 MIDDLE DOT	source/html/404.sv.html@6298	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 sep. 2026</span></div><span data-te
+U+00B7 MIDDLE DOT	source/html/404.sv.html@14956	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 sep. 2026\"}]]}],[\"$\",\"span\",nu
+U+00B7 MIDDLE DOT	source/html/home.en.html@5926	.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"></path></svg>Demo: Alva&#x27;s world · 2 books</span><h1>A world that <span c
+U+00B7 MIDDLE DOT	source/html/home.en.html@9162	mg src="/assets/avatar-noah.jpg" alt="" loading="lazy"/><div><b>Noah</b><span>best friend · in 2 books</span></div></div><div clas
+U+00B7 MIDDLE DOT	source/html/home.en.html@9322	assets/avatar-sixten.jpg" alt="" loading="lazy"/><div><b>Sixten</b><span>the mountain fox · comes along in every book</span></div>
+U+00B7 MIDDLE DOT	source/html/home.en.html@31167	vatar"><img src="/assets/avatar-noah.jpg" alt=""/></div><div><b>Noah</b><span>best friend · in 2 books</span></div></div><div clas
+U+00B7 MIDDLE DOT	source/html/home.en.html@31330	mg src="/assets/avatar-sixten.jpg" alt=""/></div><div><b>Sixten</b><span>the mountain fox · comes along in every book</span></div>
+U+00B7 MIDDLE DOT	source/html/home.en.html@32846	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 Sep 2026</span></div><span data-tes
+U+00B7 MIDDLE DOT	source/html/home.en.html@41660	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 Sep 2026\"}]]}],[\"$\",\"span\",nul
+U+00B7 MIDDLE DOT	source/html/home.en.html@44786	l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1\"}]}],\"Demo: Alva's world · 2 books\"]}],[\"$\",\"h1\",null,{\"chi
+U+00B7 MIDDLE DOT	source/html/home.en.html@50375	"$\",\"b\",null,{\"children\":\"Noah\"}],[\"$\",\"span\",null,{\"children\":\"best friend · in 2 books\"}]]}]]}],[\"$\",\"div\",\"
+U+00B7 MIDDLE DOT	source/html/home.en.html@50735	b\",null,{\"children\":\"Sixten\"}],[\"$\",\"span\",null,{\"children\":\"the mountain fox · comes along in every book\"}]]}]]}]],[
+U+00B7 MIDDLE DOT	source/html/home.sv.html@5929	M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"></path></svg>Exempel: Alvas värld · 2 böcker</span><h1>En värld som <span 
+U+00B7 MIDDLE DOT	source/html/home.sv.html@9095	src="/assets/avatar-noah.jpg" alt="" loading="lazy"/><div><b>Noah</b><span>bästa kompisen · med i 2 böcker</span></div></div><div 
+U+00B7 MIDDLE DOT	source/html/home.sv.html@9253	src="/assets/avatar-sixten.jpg" alt="" loading="lazy"/><div><b>Sixten</b><span>fjällräven · följer med i varje bok</span></div></d
+U+00B7 MIDDLE DOT	source/html/home.sv.html@30890	ar"><img src="/assets/avatar-noah.jpg" alt=""/></div><div><b>Noah</b><span>bästa kompisen · med i 2 böcker</span></div></div><div 
+U+00B7 MIDDLE DOT	source/html/home.sv.html@31051	ar"><img src="/assets/avatar-sixten.jpg" alt=""/></div><div><b>Sixten</b><span>fjällräven · följer med i varje bok</span></div></d
+U+00B7 MIDDLE DOT	source/html/home.sv.html@32536	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 sep. 2026</span></div><span data-te
+U+00B7 MIDDLE DOT	source/html/home.sv.html@41350	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 sep. 2026\"}]]}],[\"$\",\"span\",nu
+U+00B7 MIDDLE DOT	source/html/home.sv.html@44488	.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1\"}]}],\"Exempel: Alvas värld · 2 böcker\"]}],[\"$\",\"h1\",null,{\"ch
+U+00B7 MIDDLE DOT	source/html/home.sv.html@50053	",\"b\",null,{\"children\":\"Noah\"}],[\"$\",\"span\",null,{\"children\":\"bästa kompisen · med i 2 böcker\"}]]}]]}]\n1b:[\"$\",\"
+U+00B7 MIDDLE DOT	source/html/home.sv.html@50415	$\",\"b\",null,{\"children\":\"Sixten\"}],[\"$\",\"span\",null,{\"children\":\"fjällräven · följer med i varje bok\"}]]}]]}]\n1c:[
+U+00B7 MIDDLE DOT	source/html/integritet.en.html@22084	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 Sep 2026</span></div><span data-tes
+U+00B7 MIDDLE DOT	source/html/integritet.en.html@31275	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 Sep 2026\"}]]}],[\"$\",\"span\",nul
+U+00B7 MIDDLE DOT	source/html/integritet.sv.html@22076	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 sep. 2026</span></div><span data-te
+U+00B7 MIDDLE DOT	source/html/integritet.sv.html@31267	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 sep. 2026\"}]]}],[\"$\",\"span\",nu
+U+00B7 MIDDLE DOT	source/html/login.en.html@10334	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 Sep 2026</span></div><span data-tes
+U+00B7 MIDDLE DOT	source/html/login.en.html@19882	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 Sep 2026\"}]]}],[\"$\",\"span\",nul
+U+00B7 MIDDLE DOT	source/html/login.sv.html@10344	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 sep. 2026</span></div><span data-te
+U+00B7 MIDDLE DOT	source/html/login.sv.html@19892	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 sep. 2026\"}]]}],[\"$\",\"span\",nu
+U+00B7 MIDDLE DOT	source/html/share_iris-sparade-platsen.404.sv.html@11910	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 sep. 2026\"}]]}],[\"$\",\"span\",nu
+U+00B7 MIDDLE DOT	source/html/signup.en.html@11018	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 Sep 2026</span></div><span data-tes
+U+00B7 MIDDLE DOT	source/html/signup.en.html@20568	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 Sep 2026\"}]]}],[\"$\",\"span\",nul
+U+00B7 MIDDLE DOT	source/html/signup.sv.html@10994	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 sep. 2026</span></div><span data-te
+U+00B7 MIDDLE DOT	source/html/signup.sv.html@20544	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 sep. 2026\"}]]}],[\"$\",\"span\",nu
+U+00B7 MIDDLE DOT	source/html/start.en.html@7089	"><span class="dotpulse"></span><div><b>Sample book</b><span>Iris och den sparade platsen · Swedish</span></div></div></div></div>
+U+00B7 MIDDLE DOT	source/html/start.en.html@7696	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 Sep 2026</span></div><span data-tes
+U+00B7 MIDDLE DOT	source/html/start.en.html@18187	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 Sep 2026\"}]]}],[\"$\",\"span\",nul
+U+00B7 MIDDLE DOT	source/html/start.sv.html@7083	e"><span class="dotpulse"></span><div><b>Exempelbok</b><span>Iris och den sparade platsen · på svenska</span></div></div></div></d
+U+00B7 MIDDLE DOT	source/html/start.sv.html@7682	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 sep. 2026</span></div><span data-te
+U+00B7 MIDDLE DOT	source/html/start.sv.html@18173	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 sep. 2026\"}]]}],[\"$\",\"span\",nu
+U+00B7 MIDDLE DOT	source/html/uppgradera.en.html@12666	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 Sep 2026</span></div><span data-tes
+U+00B7 MIDDLE DOT	source/html/uppgradera.en.html@21988	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 Sep 2026\"}]]}],[\"$\",\"span\",nul
+U+00B7 MIDDLE DOT	source/html/uppgradera.sv.html@12671	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 sep. 2026</span></div><span data-te
+U+00B7 MIDDLE DOT	source/html/uppgradera.sv.html@21993	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 sep. 2026\"}]]}],[\"$\",\"span\",nu
+U+00B7 MIDDLE DOT	source/html/villkor.en.html@19863	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 Sep 2026</span></div><span data-tes
+U+00B7 MIDDLE DOT	source/html/villkor.en.html@29048	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 Sep 2026\"}]]}],[\"$\",\"span\",nul
+U+00B7 MIDDLE DOT	source/html/villkor.sv.html@19861	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 sep. 2026</span></div><span data-te
+U+00B7 MIDDLE DOT	source/html/villkor.sv.html@29046	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 sep. 2026\"}]]}],[\"$\",\"span\",nu
+U+00B7 MIDDLE DOT	live-fetch:bokmassan_berattelser.html@6295	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 sep. 2026</span></div><span data-te
+U+00B7 MIDDLE DOT	live-fetch:bokmassan_berattelser.html@14803	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 sep. 2026\"}]]}],[\"$\",\"span\",nu
+U+00B7 MIDDLE DOT	live-fetch:bokmassan_saga.html@9750	s="chooser-module__TUtL9G__intro"><span class="chooser-module__TUtL9G__kicker">Tale Forge · Bokmässan</span><h1>Vad vill ni göra f
+U+2192 RIGHTWARDS ARROW	live-fetch:bokmassan_saga.html@12082	ga med bilder, uppläsning och ett val.</p><strong>Skapa vår saga <span aria-hidden="true">→</span></strong></div></a><a class="cho
+U+2192 RIGHTWARDS ARROW	live-fetch:bokmassan_saga.html@14331	enska och bestäm hur berättelsen slutar.</p><strong>Välj en saga <span aria-hidden="true">→</span></strong></div></a><a class="cho
+U+2192 RIGHTWARDS ARROW	live-fetch:bokmassan_saga.html@16357	l. 18.00 och hör av oss via mejl.</p><strong>Var med i tävlingen <span aria-hidden="true">→</span></strong></div></a></div></main>
+U+00B7 MIDDLE DOT	live-fetch:bokmassan_saga.html@16937	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 sep. 2026</span></div><span data-te
+U+00B7 MIDDLE DOT	live-fetch:bokmassan_saga.html@23602	\"span\",null,{\"className\":\"chooser-module__TUtL9G__kicker\",\"children\":\"Tale Forge · Bokmässan\"}],[\"$\",\"h1\",null,{\"ch
+U+2192 RIGHTWARDS ARROW	live-fetch:bokmassan_saga.html@24991	dren\":[\"Skapa vår saga \",[\"$\",\"span\",null,{\"aria-hidden\":\"true\",\"children\":\"→\"}]]}]]}]]}],[\"$\",\"$Lf\",null,{\"cl
+U+2192 RIGHTWARDS ARROW	live-fetch:bokmassan_saga.html@26036	ildren\":[\"Välj en saga \",[\"$\",\"span\",null,{\"aria-hidden\":\"true\",\"children\":\"→\"}]]}]]}]]}],[\"$\",\"a\",null,{\"clas
+U+2192 RIGHTWARDS ARROW	live-fetch:bokmassan_saga.html@27060	":[\"Var med i tävlingen \",[\"$\",\"span\",null,{\"aria-hidden\":\"true\",\"children\":\"→\"}]]}]]}]]}]]}]]}]\n11:I[60824,[\"/_ne
+U+00B7 MIDDLE DOT	live-fetch:bokmassan_saga.html@31166	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 sep. 2026\"}]]}],[\"$\",\"span\",nu
+U+2190 LEFTWARDS ARROW	live-fetch:reader.html@7114	e__0dpsSW__readerTrail" aria-label="Saganavigering"><a href="/bokmassan/saga/berattelser">← Alla sagor</a><span aria-hidden="true"
+U+2726 BLACK FOUR POINTED STAR	live-fetch:reader.html@7155	avigering"><a href="/bokmassan/saga/berattelser">← Alla sagor</a><span aria-hidden="true">✦</span><span>Att förstå varandra</span>
+U+2190 LEFTWARDS ARROW	live-fetch:reader.html@7692	="curated-module__0dpsSW__readerNav" aria-label="Sidor"><button type="button" disabled="">← Föregående</button><div class="curated
+U+2192 RIGHTWARDS ARROW	live-fetch:reader.html@8072	-current="false"></i><i data-current="false"></i></span></div><button type="button">Nästa →</button></div><main class="curated-mod
+U+2727 WHITE FOUR POINTED STAR	live-fetch:reader.html@10180	ck bildledtråd: Det lilla hörnet" title="Upptäck en bildledtråd"><span aria-hidden="true">✧</span></button></div><p class="curated
+U+266B BEAMED EIGHTH NOTES	live-fetch:reader.html@11156	 henne.</p></div><div class="curated-module__0dpsSW__audioPanel"><span aria-hidden="true">♫</span><div><strong>Lyssna på sidan</st
+U+2192 RIGHTWARDS ARROW	live-fetch:reader.html@11495	class="curated-module__0dpsSW__forwardAction">Fortsätt äventyret <span aria-hidden="true">→</span></button></section></main></div>
+U+00B7 MIDDLE DOT	live-fetch:reader.html@12075	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 sep. 2026</span></div><span data-te
+U+00B7 MIDDLE DOT	live-fetch:reader.html@27279	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 sep. 2026\"}]]}],[\"$\",\"span\",nu
+U+2190 LEFTWARDS ARROW	live-fetch:saga_berattelser.html@7249	__0dpsSW__galleryHero"><a class="curated-module__0dpsSW__backLink" href="/bokmassan/saga">← Till Berättarstugan</a><div class="cur
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@7342	ill Berättarstugan</a><div class="curated-module__0dpsSW__heroSparkle" aria-hidden="true">✦</div><p class="curated-module__0dpsSW_
+U+00B7 MIDDLE DOT	live-fetch:saga_berattelser.html@7402	roSparkle" aria-hidden="true">✦</div><p class="curated-module__0dpsSW__kicker">Tale Forge · Bokmässan</p><h1>Välj en saga att kliv
+U+2727 WHITE FOUR POINTED STAR	live-fetch:saga_berattelser.html@7700	.</p><div class="curated-module__0dpsSW__heroMeta" aria-label="Så fungerar sagorna"><span>✧ Illustrerade scener</span><span>♫ Uppl
+U+266B BEAMED EIGHTH NOTES	live-fetch:saga_berattelser.html@7734	dpsSW__heroMeta" aria-label="Så fungerar sagorna"><span>✧ Illustrerade scener</span><span>♫ Upplästa på svenska</span><span>◇ Olik
+U+25C7 WHITE DIAMOND	live-fetch:saga_berattelser.html@7768	ngerar sagorna"><span>✧ Illustrerade scener</span><span>♫ Upplästa på svenska</span><span>◇ Olika slut</span></div></header><secti
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@9890	7BMxHMDGP7rAXoCjG"/><span class="curated-module__0dpsSW__coverGlimmer" aria-hidden="true">✦</span></div><div class="curated-module
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@10261	</p><span class="curated-module__0dpsSW__bookAction">Öppna sagan <span aria-hidden="true">→</span></span></div></a><a class="curat
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@12295	7BMxHMDGP7rAXoCjG"/><span class="curated-module__0dpsSW__coverGlimmer" aria-hidden="true">✦</span></div><div class="curated-module
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@12654	</p><span class="curated-module__0dpsSW__bookAction">Öppna sagan <span aria-hidden="true">→</span></span></div></a><a class="curat
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@14686	7BMxHMDGP7rAXoCjG"/><span class="curated-module__0dpsSW__coverGlimmer" aria-hidden="true">✦</span></div><div class="curated-module
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@15045	</p><span class="curated-module__0dpsSW__bookAction">Öppna sagan <span aria-hidden="true">→</span></span></div></a><a class="curat
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@17086	7BMxHMDGP7rAXoCjG"/><span class="curated-module__0dpsSW__coverGlimmer" aria-hidden="true">✦</span></div><div class="curated-module
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@17444	</p><span class="curated-module__0dpsSW__bookAction">Öppna sagan <span aria-hidden="true">→</span></span></div></a><a class="curat
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@19516	7BMxHMDGP7rAXoCjG"/><span class="curated-module__0dpsSW__coverGlimmer" aria-hidden="true">✦</span></div><div class="curated-module
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@19851	</p><span class="curated-module__0dpsSW__bookAction">Öppna sagan <span aria-hidden="true">→</span></span></div></a><a class="curat
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@21853	7BMxHMDGP7rAXoCjG"/><span class="curated-module__0dpsSW__coverGlimmer" aria-hidden="true">✦</span></div><div class="curated-module
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@22184	</p><span class="curated-module__0dpsSW__bookAction">Öppna sagan <span aria-hidden="true">→</span></span></div></a><a class="curat
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@24252	7BMxHMDGP7rAXoCjG"/><span class="curated-module__0dpsSW__coverGlimmer" aria-hidden="true">✦</span></div><div class="curated-module
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@24591	</p><span class="curated-module__0dpsSW__bookAction">Öppna sagan <span aria-hidden="true">→</span></span></div></a><a class="curat
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@26632	7BMxHMDGP7rAXoCjG"/><span class="curated-module__0dpsSW__coverGlimmer" aria-hidden="true">✦</span></div><div class="curated-module
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@26980	</p><span class="curated-module__0dpsSW__bookAction">Öppna sagan <span aria-hidden="true">→</span></span></div></a><a class="curat
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@29013	7BMxHMDGP7rAXoCjG"/><span class="curated-module__0dpsSW__coverGlimmer" aria-hidden="true">✦</span></div><div class="curated-module
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@29360	</p><span class="curated-module__0dpsSW__bookAction">Öppna sagan <span aria-hidden="true">→</span></span></div></a></section><foot
+U+00B7 MIDDLE DOT	live-fetch:saga_berattelser.html@30055	oter-version" style="color:var(--card-sub);opacity:0.85;font-size:.8rem">Version 16ab1756 · 26 sep. 2026</span></div><span data-te
+U+2190 LEFTWARDS ARROW	live-fetch:saga_berattelser.html@35163	f\":\"/bokmassan/saga\",\"className\":\"curated-module__0dpsSW__backLink\",\"children\":\"← Till Berättarstugan\"}],[\"$\",\"div\"
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@35304	assName\":\"curated-module__0dpsSW__heroSparkle\",\"aria-hidden\":\"true\",\"children\":\"✦\"}],[\"$\",\"p\",null,{\"className\":\
+U+00B7 MIDDLE DOT	live-fetch:saga_berattelser.html@35404	\",\"p\",null,{\"className\":\"curated-module__0dpsSW__kicker\",\"children\":\"Tale Forge · Bokmässan\"}],[\"$\",\"h1\",null,{\"ch
+U+2727 WHITE FOUR POINTED STAR	live-fetch:saga_berattelser.html@35853	\"aria-label\":\"Så fungerar sagorna\",\"children\":[[\"$\",\"span\",null,{\"children\":\"✧ Illustrerade scener\"}],[\"$\",\"span\
+U+266B BEAMED EIGHTH NOTES	live-fetch:saga_berattelser.html@35916	pan\",null,{\"children\":\"✧ Illustrerade scener\"}],[\"$\",\"span\",null,{\"children\":\"♫ Upplästa på svenska\"}],[\"$\",\"span\
+U+25C7 WHITE DIAMOND	live-fetch:saga_berattelser.html@35979	pan\",null,{\"children\":\"♫ Upplästa på svenska\"}],[\"$\",\"span\",null,{\"children\":\"◇ Olika slut\"}]]}]]}],[\"$\",\"section\
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@36775	ssName\":\"curated-module__0dpsSW__coverGlimmer\",\"aria-hidden\":\"true\",\"children\":\"✦\"}]]}],[\"$\",\"div\",null,{\"classNam
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@37365	hildren\":[\"Öppna sagan \",[\"$\",\"span\",null,{\"aria-hidden\":\"true\",\"children\":\"→\"}]]}]]}]]}],[\"$\",\"$L5\",\"ravens-n
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@38008	ssName\":\"curated-module__0dpsSW__coverGlimmer\",\"aria-hidden\":\"true\",\"children\":\"✦\"}]]}],[\"$\",\"div\",null,{\"classNam
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@39644	hildren\":[\"Öppna sagan \",[\"$\",\"span\",null,{\"aria-hidden\":\"true\",\"children\":\"→\"}]]}]\na:[\"$\",\"$L5\",\"nattaget-fr
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@40312	ssName\":\"curated-module__0dpsSW__coverGlimmer\",\"aria-hidden\":\"true\",\"children\":\"✦\"}]]}],[\"$\",\"div\",null,{\"classNam
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@40890	hildren\":[\"Öppna sagan \",[\"$\",\"span\",null,{\"aria-hidden\":\"true\",\"children\":\"→\"}]]}]]}]]}]\nb:[\"$\",\"$L5\",\"stjar
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@41578	ssName\":\"curated-module__0dpsSW__coverGlimmer\",\"aria-hidden\":\"true\",\"children\":\"✦\"}]]}],[\"$\",\"div\",null,{\"classNam
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@42155	hildren\":[\"Öppna sagan \",[\"$\",\"span\",null,{\"aria-hidden\":\"true\",\"children\":\"→\"}]]}]]}]]}]\nc:[\"$\",\"$L5\",\"den-t
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@42812	ssName\":\"curated-module__0dpsSW__coverGlimmer\",\"aria-hidden\":\"true\",\"children\":\"✦\"}]]}],[\"$\",\"div\",null,{\"classNam
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@43366	hildren\":[\"Öppna sagan \",[\"$\",\"span\",null,{\"aria-hidden\":\"true\",\"children\":\"→\"}]]}]]}]]}]\nd:[\"$\",\"$L5\",\"drake
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@44011	ssName\":\"curated-module__0dpsSW__coverGlimmer\",\"aria-hidden\":\"true\",\"children\":\"✦\"}]]}],[\"$\",\"div\",null,{\"classNam
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@44561	hildren\":[\"Öppna sagan \",[\"$\",\"span\",null,{\"aria-hidden\":\"true\",\"children\":\"→\"}]]}]]}]]}]\ne:[\"$\",\"$L5\",\"glass
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@45243	ssName\":\"curated-module__0dpsSW__coverGlimmer\",\"aria-hidden\":\"true\",\"children\":\"✦\"}]]}],[\"$\",\"div\",null,{\"classNam
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@45801	hildren\":[\"Öppna sagan \",[\"$\",\"span\",null,{\"aria-hidden\":\"true\",\"children\":\"→\"}]]}]]}]]}]\nf:[\"$\",\"$L5\",\"den-f
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@46473	ssName\":\"curated-module__0dpsSW__coverGlimmer\",\"aria-hidden\":\"true\",\"children\":\"✦\"}]]}],[\"$\",\"div\",null,{\"classNam
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@47040	hildren\":[\"Öppna sagan \",[\"$\",\"span\",null,{\"aria-hidden\":\"true\",\"children\":\"→\"}]]}]]}]]}]\n10:[\"$\",\"$L5\",\"nar-
+U+2726 BLACK FOUR POINTED STAR	live-fetch:saga_berattelser.html@47701	ssName\":\"curated-module__0dpsSW__coverGlimmer\",\"aria-hidden\":\"true\",\"children\":\"✦\"}]]}],[\"$\",\"div\",null,{\"classNam
+U+2192 RIGHTWARDS ARROW	live-fetch:saga_berattelser.html@48267	hildren\":[\"Öppna sagan \",[\"$\",\"span\",null,{\"aria-hidden\":\"true\",\"children\":\"→\"}]]}]]}]]}]\n11:[\"$\",\"footer\",nul
+U+00B7 MIDDLE DOT	live-fetch:saga_berattelser.html@53498	ar(--card-sub)\",\"opacity\":0.85,\"fontSize\":\".8rem\"},\"children\":\"Version 16ab1756 · 26 sep. 2026\"}]]}],[\"$\",\"span\",nu
+U+2190 LEFTWARDS ARROW	live-fetch:0rxc8jrwvgkmc.js@18760	ganavigering",children:[(0,t.jsx)(l.default,{href:"/bokmassan/saga/berattelser",children:"← Alla sagor"}),(0,t.jsx)("span",{"aria-
+U+2726 BLACK FOUR POINTED STAR	live-fetch:0rxc8jrwvgkmc.js@18825	a/berattelser",children:"← Alla sagor"}),(0,t.jsx)("span",{"aria-hidden":"true",children:"✦"}),(0,t.jsx)("span",{children:e.kind})
+U+2190 LEFTWARDS ARROW	live-fetch:0rxc8jrwvgkmc.js@19436	t.jsx)("button",{type:"button",onClick:()=>d(e=>Math.max(0,e-1)),disabled:0===n,children:"← Föregående"}),(0,t.jsxs)("div",{classN
+U+2192 RIGHTWARDS ARROW	live-fetch:0rxc8jrwvgkmc.js@19897	type:"button",onClick:()=>d(e=>Math.min(S,e+1)),disabled:n===S||n===v&&!o,children:"Nästa →"})]}),(0,t.jsxs)("main",{className:i.d
+U+2727 WHITE FOUR POINTED STAR	live-fetch:0rxc8jrwvgkmc.js@20495	,title:"Upptäck en bildledtråd",children:(0,t.jsx)("span",{"aria-hidden":"true",children:"✧"})}):null]}),C?(0,t.jsx)("p",{classNam
+U+266B BEAMED EIGHTH NOTES	live-fetch:0rxc8jrwvgkmc.js@21271	className:i.default.audioPanel,children:[(0,t.jsx)("span",{"aria-hidden":"true",children:"♫"}),(0,t.jsxs)("div",{children:[(0,t.js
+U+2192 RIGHTWARDS ARROW	live-fetch:0rxc8jrwvgkmc.js@21876	()=>d(1),children:["Fortsätt äventyret ",(0,t.jsx)("span",{"aria-hidden":"true",children:"→"})]}):null,n===v?(0,t.jsxs)("fieldset"
+U+2726 BLACK FOUR POINTED STAR	live-fetch:0rxc8jrwvgkmc.js@22242	utton,"data-selected":o===e.id,children:[(0,t.jsx)("span",{"aria-hidden":"true",children:"✦"}),e.label,(0,t.jsx)("span",{"aria-hid
+U+2192 RIGHTWARDS ARROW	live-fetch:0rxc8jrwvgkmc.js@22304	ia-hidden":"true",children:"✦"}),e.label,(0,t.jsx)("span",{"aria-hidden":"true",children:"→"})]},e.id))})]}):null,n===S?(0,t.jsxs)
+U+2192 RIGHTWARDS ARROW	live-fetch:0rxc8jrwvgkmc.js@22564	ut"}),(0,t.jsx)(l.default,{href:"/bokmassan/saga/berattelser",children:"Läs en annan saga →"})]}):null]})]}),c&&C?(0,t.jsx)("div",
+U+00D7 MULTIPLICATION SIGN	live-fetch:0rxc8jrwvgkmc.js@22953	ton",{ref:h,className:i.default.clueClose,type:"button",onClick:()=>f(!1),children:"Stäng ×"}),(0,t.jsx)("div",{className:i.defaul
+U+2727 WHITE FOUR POINTED STAR	live-fetch:0rxc8jrwvgkmc.js@23231	,{className:i.default.clueCopy,children:[(0,t.jsx)("span",{"aria-hidden":"true",children:"✧ Bildledtråd"}),(0,t.jsx)("h2",{id:"cur
+U+00B7 MIDDLE DOT	live-fetch:1t3sbyck_6532.js@368953	efault.intro,children:[(0,o.jsx)("span",{className:cO.default.eyebrow,children:"Bokmässan · Berättarstugan"}),(0,o.jsx)("h1",{chil
+U+2726 BLACK FOUR POINTED STAR	live-fetch:1t3sbyck_6532.js@369370	ildren:[(0,o.jsx)("span",{className:cO.default.curatedIcon,"aria-hidden":"true",children:"✦"}),(0,o.jsxs)("span",{children:[(0,o.j
+U+2192 RIGHTWARDS ARROW	live-fetch:1t3sbyck_6532.js@369669	"})]}),(0,o.jsx)("span",{className:cO.default.curatedArrow,"aria-hidden":"true",children:"→"})]}),eM?(0,o.jsxs)("section",{classNa
+U+2190 LEFTWARDS ARROW	live-fetch:1t3sbyck_6532.js@372246	hildren:[(0,o.jsx)("button",{type:"button",disabled:0===B,onClick:()=>W(e=>e-1),children:"← Föregående sida"}),(0,o.jsxs)("span",{
+U+2192 RIGHTWARDS ARROW	live-fetch:1t3sbyck_6532.js@372422	tton",{type:"button",disabled:2===B||1===B&&!G,onClick:()=>W(e=>e+1),children:"Nästa sida →"})]}),(0,o.jsxs)("div",{className:cO.d

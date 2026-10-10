@@ -1,0 +1,449 @@
+{
+ "U+00B7 MIDDLE DOT": {
+  "count_main": 67,
+  "count_fair": 13,
+  "count_vendor": 0,
+  "uses": [
+   {
+    "file": "source/js/0ad0wel9cyv30.js",
+    "offset": 579,
+    "context": ":\"Läs en exempelbok först\",badgeTitle:\"Exempelbok\",badgeSub:\"Iris och den sparade platsen · på svenska\",sampleAction:\"Läs exempelb"
+   },
+   {
+    "file": "source/js/0ad0wel9cyv30.js",
+    "offset": 1091,
+    "context": "Read a sample book first\",badgeTitle:\"Sample book\",badgeSub:\"Iris och den sparade platsen · Swedish\",sampleAction:\"Read the Swedis"
+   },
+   {
+    "file": "source/js/0ad0wel9cyv30.js",
+    "offset": 16505,
+    "context": "0\",\"s1\",\"s2\",\"s3\",\"s4\",\"s5\",\"s6\",\"s7\",\"s8\"],eo={sv:{s0:null,s1:{step:1,title:\"Steg 1 av 4 · Hjälten\",sub:\"Inget konto och inget ko"
+   },
+   {
+    "file": "source/js/0ad0wel9cyv30.js",
+    "offset": 16608,
+    "context": "b:\"Inget konto och inget kort ännu. Ni börjar med barnet.\"},s2:{step:2,title:\"Steg 2 av 4 · Fotot\",sub:\"Ett foto räcker för porträ"
+   },
+   {
+    "file": "source/js/0ad0wel9cyv30.js",
+    "offset": 16718,
+    "context": "to räcker för porträttet, och det går bra att hoppa över.\"},s3:{step:3,title:\"Steg 3 av 4 · Sällskapet\",sub:\"Porträttet målas i ba"
+   },
+   {
+    "file": "source/js/0ad0wel9cyv30.js",
+    "offset": 16824,
+    "context": "b:\"Porträttet målas i bakgrunden medan ni väljer.\"},s4:null,s5:{step:4,title:\"Steg 4 av 4 · Kontot\",sub:\"Hjälten och porträttet sp"
+   },
+   {
+    "file": "source/js/0ad0wel9cyv30.js",
+    "offset": 17136,
+    "context": "ger sig i bokhyllan när den är klar.\"},s8:null},en:{s0:null,s1:{step:1,title:\"Step 1 of 4 · The hero\",sub:\"No account and no card "
+   },
+   {
+    "file": "source/js/0ad0wel9cyv30.js",
+    "offset": 17240,
+    "context": "b:\"No account and no card yet. You start with your child.\"},s2:{step:2,title:\"Step 2 of 4 · The photo\",sub:\"One photo is enough fo"
+   },
+   {
+    "file": "source/js/0ad0wel9cyv30.js",
+    "offset": 17350,
+    "context": "e photo is enough for the portrait, and skipping is fine.\"},s3:{step:3,title:\"Step 3 of 4 · The company\",sub:\"The portrait is pain"
+   },
+   {
+    "file": "source/js/0ad0wel9cyv30.js",
+    "offset": 17470,
+    "context": "it is painted in the background while you choose.\"},s4:null,s5:{step:4,title:\"Step 4 of 4 · The account\",sub:\"The hero and the por"
+   },
+   {
+    "file": "source/js/0ad0wel9cyv30.js",
+    "offset": 19991,
+    "context": "-platsen/assets/cover.webp\",alt:n.sampleCoverAlt}),(0,t.jsxs)(\"figcaption\",{children:[s,\" · \",n.sampleAction]})]})})}):null]}),(0,"
+   },
+   {
+    "file": "source/js/3d9nxlx1n5pdy.js",
+    "offset": 1618,
+    "context": "s värld är Noah och räven Sixten med i varje bok.\",rows:[{name:\"Noah\",sub:\"bästa kompisen · med i 2 böcker\"},{name:\"Sixten\",sub:\"f"
+   },
+   {
+    "file": "source/js/3d9nxlx1n5pdy.js",
+    "offset": 1668,
+    "context": ",rows:[{name:\"Noah\",sub:\"bästa kompisen · med i 2 böcker\"},{name:\"Sixten\",sub:\"fjällräven · följer med i varje bok\"}]},adventure:{"
+   },
+   {
+    "file": "source/js/3d9nxlx1n5pdy.js",
+    "offset": 4408,
+    "context": "'s world, Noah and Sixten the fox are in every book.\",rows:[{name:\"Noah\",sub:\"best friend · in 2 books\"},{name:\"Sixten\",sub:\"the m"
+   }
+  ],
+  "char": "·"
+ },
+ "U+2192 RIGHTWARDS ARROW": {
+  "count_main": 0,
+  "count_fair": 32,
+  "count_vendor": 1,
+  "uses": [
+   {
+    "file": "live-fetch:bokmassan_saga.html",
+    "offset": 12082,
+    "context": "ga med bilder, uppläsning och ett val.</p><strong>Skapa vår saga <span aria-hidden=\"true\">→</span></strong></div></a><a class=\"cho"
+   },
+   {
+    "file": "live-fetch:bokmassan_saga.html",
+    "offset": 14331,
+    "context": "enska och bestäm hur berättelsen slutar.</p><strong>Välj en saga <span aria-hidden=\"true\">→</span></strong></div></a><a class=\"cho"
+   },
+   {
+    "file": "live-fetch:bokmassan_saga.html",
+    "offset": 16357,
+    "context": "l. 18.00 och hör av oss via mejl.</p><strong>Var med i tävlingen <span aria-hidden=\"true\">→</span></strong></div></a></div></main>"
+   },
+   {
+    "file": "live-fetch:bokmassan_saga.html",
+    "offset": 24991,
+    "context": "dren\\\":[\\\"Skapa vår saga \\\",[\\\"$\\\",\\\"span\\\",null,{\\\"aria-hidden\\\":\\\"true\\\",\\\"children\\\":\\\"→\\\"}]]}]]}]]}],[\\\"$\\\",\\\"$Lf\\\",null,{\\\"cl"
+   },
+   {
+    "file": "live-fetch:bokmassan_saga.html",
+    "offset": 26036,
+    "context": "ildren\\\":[\\\"Välj en saga \\\",[\\\"$\\\",\\\"span\\\",null,{\\\"aria-hidden\\\":\\\"true\\\",\\\"children\\\":\\\"→\\\"}]]}]]}]]}],[\\\"$\\\",\\\"a\\\",null,{\\\"clas"
+   },
+   {
+    "file": "live-fetch:bokmassan_saga.html",
+    "offset": 27060,
+    "context": "\":[\\\"Var med i tävlingen \\\",[\\\"$\\\",\\\"span\\\",null,{\\\"aria-hidden\\\":\\\"true\\\",\\\"children\\\":\\\"→\\\"}]]}]]}]]}]]}]]}]\\n11:I[60824,[\\\"/_ne"
+   },
+   {
+    "file": "live-fetch:reader.html",
+    "offset": 8072,
+    "context": "-current=\"false\"></i><i data-current=\"false\"></i></span></div><button type=\"button\">Nästa →</button></div><main class=\"curated-mod"
+   },
+   {
+    "file": "live-fetch:reader.html",
+    "offset": 11495,
+    "context": "class=\"curated-module__0dpsSW__forwardAction\">Fortsätt äventyret <span aria-hidden=\"true\">→</span></button></section></main></div>"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 10261,
+    "context": "</p><span class=\"curated-module__0dpsSW__bookAction\">Öppna sagan <span aria-hidden=\"true\">→</span></span></div></a><a class=\"curat"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 12654,
+    "context": "</p><span class=\"curated-module__0dpsSW__bookAction\">Öppna sagan <span aria-hidden=\"true\">→</span></span></div></a><a class=\"curat"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 15045,
+    "context": "</p><span class=\"curated-module__0dpsSW__bookAction\">Öppna sagan <span aria-hidden=\"true\">→</span></span></div></a><a class=\"curat"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 17444,
+    "context": "</p><span class=\"curated-module__0dpsSW__bookAction\">Öppna sagan <span aria-hidden=\"true\">→</span></span></div></a><a class=\"curat"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 19851,
+    "context": "</p><span class=\"curated-module__0dpsSW__bookAction\">Öppna sagan <span aria-hidden=\"true\">→</span></span></div></a><a class=\"curat"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 22184,
+    "context": "</p><span class=\"curated-module__0dpsSW__bookAction\">Öppna sagan <span aria-hidden=\"true\">→</span></span></div></a><a class=\"curat"
+   }
+  ],
+  "char": "→"
+ },
+ "U+2726 BLACK FOUR POINTED STAR": {
+  "count_main": 2,
+  "count_fair": 24,
+  "count_vendor": 0,
+  "uses": [
+   {
+    "file": "source/js/0ad0wel9cyv30.js",
+    "offset": 26510,
+    "context": ":[(0,t.jsx)(\"span\",{\"aria-hidden\":\"true\",style:{fontSize:\"1.3rem\",lineHeight:1},children:\"✦\"}),(0,t.jsxs)(\"span\",{className:\"pick-"
+   },
+   {
+    "file": "source/js/2j_-r8q4tgdka.js",
+    "offset": 16612,
+    "context": "id\":\"surprise-art-fallback\",children:(0,t.jsx)(\"span\",{className:\"cs-door-star\",children:\"✦\"})}):(0,t.jsx)(\"img\",{src:\"/images/cre"
+   },
+   {
+    "file": "live-fetch:reader.html",
+    "offset": 7155,
+    "context": "avigering\"><a href=\"/bokmassan/saga/berattelser\">← Alla sagor</a><span aria-hidden=\"true\">✦</span><span>Att förstå varandra</span>"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 7342,
+    "context": "ill Berättarstugan</a><div class=\"curated-module__0dpsSW__heroSparkle\" aria-hidden=\"true\">✦</div><p class=\"curated-module__0dpsSW_"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 9890,
+    "context": "7BMxHMDGP7rAXoCjG\"/><span class=\"curated-module__0dpsSW__coverGlimmer\" aria-hidden=\"true\">✦</span></div><div class=\"curated-module"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 12295,
+    "context": "7BMxHMDGP7rAXoCjG\"/><span class=\"curated-module__0dpsSW__coverGlimmer\" aria-hidden=\"true\">✦</span></div><div class=\"curated-module"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 14686,
+    "context": "7BMxHMDGP7rAXoCjG\"/><span class=\"curated-module__0dpsSW__coverGlimmer\" aria-hidden=\"true\">✦</span></div><div class=\"curated-module"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 17086,
+    "context": "7BMxHMDGP7rAXoCjG\"/><span class=\"curated-module__0dpsSW__coverGlimmer\" aria-hidden=\"true\">✦</span></div><div class=\"curated-module"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 19516,
+    "context": "7BMxHMDGP7rAXoCjG\"/><span class=\"curated-module__0dpsSW__coverGlimmer\" aria-hidden=\"true\">✦</span></div><div class=\"curated-module"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 21853,
+    "context": "7BMxHMDGP7rAXoCjG\"/><span class=\"curated-module__0dpsSW__coverGlimmer\" aria-hidden=\"true\">✦</span></div><div class=\"curated-module"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 24252,
+    "context": "7BMxHMDGP7rAXoCjG\"/><span class=\"curated-module__0dpsSW__coverGlimmer\" aria-hidden=\"true\">✦</span></div><div class=\"curated-module"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 26632,
+    "context": "7BMxHMDGP7rAXoCjG\"/><span class=\"curated-module__0dpsSW__coverGlimmer\" aria-hidden=\"true\">✦</span></div><div class=\"curated-module"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 29013,
+    "context": "7BMxHMDGP7rAXoCjG\"/><span class=\"curated-module__0dpsSW__coverGlimmer\" aria-hidden=\"true\">✦</span></div><div class=\"curated-module"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 35304,
+    "context": "assName\\\":\\\"curated-module__0dpsSW__heroSparkle\\\",\\\"aria-hidden\\\":\\\"true\\\",\\\"children\\\":\\\"✦\\\"}],[\\\"$\\\",\\\"p\\\",null,{\\\"className\\\":\\"
+   }
+  ],
+  "char": "✦"
+ },
+ "U+2190 LEFTWARDS ARROW": {
+  "count_main": 0,
+  "count_fair": 7,
+  "count_vendor": 0,
+  "uses": [
+   {
+    "file": "live-fetch:reader.html",
+    "offset": 7114,
+    "context": "e__0dpsSW__readerTrail\" aria-label=\"Saganavigering\"><a href=\"/bokmassan/saga/berattelser\">← Alla sagor</a><span aria-hidden=\"true\""
+   },
+   {
+    "file": "live-fetch:reader.html",
+    "offset": 7692,
+    "context": "=\"curated-module__0dpsSW__readerNav\" aria-label=\"Sidor\"><button type=\"button\" disabled=\"\">← Föregående</button><div class=\"curated"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 7249,
+    "context": "__0dpsSW__galleryHero\"><a class=\"curated-module__0dpsSW__backLink\" href=\"/bokmassan/saga\">← Till Berättarstugan</a><div class=\"cur"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 35163,
+    "context": "f\\\":\\\"/bokmassan/saga\\\",\\\"className\\\":\\\"curated-module__0dpsSW__backLink\\\",\\\"children\\\":\\\"← Till Berättarstugan\\\"}],[\\\"$\\\",\\\"div\\\""
+   },
+   {
+    "file": "live-fetch:0rxc8jrwvgkmc.js",
+    "offset": 18760,
+    "context": "ganavigering\",children:[(0,t.jsx)(l.default,{href:\"/bokmassan/saga/berattelser\",children:\"← Alla sagor\"}),(0,t.jsx)(\"span\",{\"aria-"
+   },
+   {
+    "file": "live-fetch:0rxc8jrwvgkmc.js",
+    "offset": 19436,
+    "context": "t.jsx)(\"button\",{type:\"button\",onClick:()=>d(e=>Math.max(0,e-1)),disabled:0===n,children:\"← Föregående\"}),(0,t.jsxs)(\"div\",{classN"
+   },
+   {
+    "file": "live-fetch:1t3sbyck_6532.js",
+    "offset": 372246,
+    "context": "hildren:[(0,o.jsx)(\"button\",{type:\"button\",disabled:0===B,onClick:()=>W(e=>e-1),children:\"← Föregående sida\"}),(0,o.jsxs)(\"span\",{"
+   }
+  ],
+  "char": "←"
+ },
+ "U+2727 WHITE FOUR POINTED STAR": {
+  "count_main": 0,
+  "count_fair": 5,
+  "count_vendor": 0,
+  "uses": [
+   {
+    "file": "live-fetch:reader.html",
+    "offset": 10180,
+    "context": "ck bildledtråd: Det lilla hörnet\" title=\"Upptäck en bildledtråd\"><span aria-hidden=\"true\">✧</span></button></div><p class=\"curated"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 7700,
+    "context": ".</p><div class=\"curated-module__0dpsSW__heroMeta\" aria-label=\"Så fungerar sagorna\"><span>✧ Illustrerade scener</span><span>♫ Uppl"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 35853,
+    "context": "\\\"aria-label\\\":\\\"Så fungerar sagorna\\\",\\\"children\\\":[[\\\"$\\\",\\\"span\\\",null,{\\\"children\\\":\\\"✧ Illustrerade scener\\\"}],[\\\"$\\\",\\\"span\\"
+   },
+   {
+    "file": "live-fetch:0rxc8jrwvgkmc.js",
+    "offset": 20495,
+    "context": ",title:\"Upptäck en bildledtråd\",children:(0,t.jsx)(\"span\",{\"aria-hidden\":\"true\",children:\"✧\"})}):null]}),C?(0,t.jsx)(\"p\",{classNam"
+   },
+   {
+    "file": "live-fetch:0rxc8jrwvgkmc.js",
+    "offset": 23231,
+    "context": ",{className:i.default.clueCopy,children:[(0,t.jsx)(\"span\",{\"aria-hidden\":\"true\",children:\"✧ Bildledtråd\"}),(0,t.jsx)(\"h2\",{id:\"cur"
+   }
+  ],
+  "char": "✧"
+ },
+ "U+266B BEAMED EIGHTH NOTES": {
+  "count_main": 0,
+  "count_fair": 4,
+  "count_vendor": 0,
+  "uses": [
+   {
+    "file": "live-fetch:reader.html",
+    "offset": 11156,
+    "context": " henne.</p></div><div class=\"curated-module__0dpsSW__audioPanel\"><span aria-hidden=\"true\">♫</span><div><strong>Lyssna på sidan</st"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 7734,
+    "context": "dpsSW__heroMeta\" aria-label=\"Så fungerar sagorna\"><span>✧ Illustrerade scener</span><span>♫ Upplästa på svenska</span><span>◇ Olik"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 35916,
+    "context": "pan\\\",null,{\\\"children\\\":\\\"✧ Illustrerade scener\\\"}],[\\\"$\\\",\\\"span\\\",null,{\\\"children\\\":\\\"♫ Upplästa på svenska\\\"}],[\\\"$\\\",\\\"span\\"
+   },
+   {
+    "file": "live-fetch:0rxc8jrwvgkmc.js",
+    "offset": 21271,
+    "context": "className:i.default.audioPanel,children:[(0,t.jsx)(\"span\",{\"aria-hidden\":\"true\",children:\"♫\"}),(0,t.jsxs)(\"div\",{children:[(0,t.js"
+   }
+  ],
+  "char": "♫"
+ },
+ "U+00D7 MULTIPLICATION SIGN": {
+  "count_main": 2,
+  "count_fair": 1,
+  "count_vendor": 0,
+  "uses": [
+   {
+    "file": "source/js/2j_-r8q4tgdka.js",
+    "offset": 21828,
+    "context": ",\"aria-label\":g.close,onClick:b,children:(0,t.jsx)(\"span\",{\"aria-hidden\":\"true\",children:\"×\"})})]}),(0,t.jsx)(\"div\",{className:\"cs"
+   },
+   {
+    "file": "source/js/2j_-r8q4tgdka.js",
+    "offset": 31094,
+    "context": "oseMemory,disabled:!e,onClick:u,children:(0,t.jsx)(\"span\",{\"aria-hidden\":\"true\",children:\"×\"})}),(0,t.jsxs)(\"p\",{id:p,className:\"g"
+   },
+   {
+    "file": "live-fetch:0rxc8jrwvgkmc.js",
+    "offset": 22953,
+    "context": "ton\",{ref:h,className:i.default.clueClose,type:\"button\",onClick:()=>f(!1),children:\"Stäng ×\"}),(0,t.jsx)(\"div\",{className:i.defaul"
+   }
+  ],
+  "char": "×"
+ },
+ "U+2713 CHECK MARK": {
+  "count_main": 2,
+  "count_fair": 0,
+  "count_vendor": 0,
+  "uses": [
+   {
+    "file": "source/js/2j_-r8q4tgdka.js",
+    "offset": 7276,
+    "context": "-btn-ink)\":\"var(--chip-ink)\",border:a||n?\"none\":\"1px solid var(--chip-line)\"},children:a?\"✓\":r+1}),e]},e)})})]})}e.s([\"JOB_STATUS_"
+   },
+   {
+    "file": "source/js/2j_-r8q4tgdka.js",
+    "offset": 29101,
+    "context": "done\":void 0,children:[(0,t.jsx)(\"span\",{className:\"dot\",\"aria-hidden\":\"true\",children:n?\"✓\":\"\"}),e]},e)})})]}):b?(0,t.jsxs)(\"div\""
+   }
+  ],
+  "char": "✓"
+ },
+ "U+25C7 WHITE DIAMOND": {
+  "count_main": 0,
+  "count_fair": 2,
+  "count_vendor": 0,
+  "uses": [
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 7768,
+    "context": "ngerar sagorna\"><span>✧ Illustrerade scener</span><span>♫ Upplästa på svenska</span><span>◇ Olika slut</span></div></header><secti"
+   },
+   {
+    "file": "live-fetch:saga_berattelser.html",
+    "offset": 35979,
+    "context": "pan\\\",null,{\\\"children\\\":\\\"♫ Upplästa på svenska\\\"}],[\\\"$\\\",\\\"span\\\",null,{\\\"children\\\":\\\"◇ Olika slut\\\"}]]}]]}],[\\\"$\\\",\\\"section\\"
+   }
+  ],
+  "char": "◇"
+ },
+ "U+00AB LEFT-POINTING DOUBLE ANGLE QUOTATION MARK": {
+  "count_main": 1,
+  "count_fair": 0,
+  "count_vendor": 0,
+  "uses": [
+   {
+    "file": "source/js/390j9gbq0u9ce.js",
+    "offset": 18057,
+    "context": "ction(){return a}});let n=e.r(43476),a=()=>\"u\">typeof window?null:(0,n.jsx)(\"meta\",{name:\"«nxt-icon»\"})},91915,(e,t,r)=>{\"use stri"
+   }
+  ],
+  "char": "«"
+ },
+ "U+00BB RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK": {
+  "count_main": 1,
+  "count_fair": 0,
+  "count_vendor": 0,
+  "uses": [
+   {
+    "file": "source/js/390j9gbq0u9ce.js",
+    "offset": 18066,
+    "context": "eturn a}});let n=e.r(43476),a=()=>\"u\">typeof window?null:(0,n.jsx)(\"meta\",{name:\"«nxt-icon»\"})},91915,(e,t,r)=>{\"use strict\";funct"
+   }
+  ],
+  "char": "»"
+ },
+ "U+26A0 WARNING SIGN": {
+  "count_main": 0,
+  "count_fair": 0,
+  "count_vendor": 2,
+  "uses": [],
+  "char": "⚠"
+ },
+ "U+2716 HEAVY MULTIPLICATION X": {
+  "count_main": 0,
+  "count_fair": 0,
+  "count_vendor": 1,
+  "uses": [],
+  "char": "✖"
+ },
+ "_note": {
+  "emoji_in_ui": 0,
+  "method": "Scanned harvested JS (\\\\u escapes decoded), server HTML and pretty CSS, plus the live-fetched /bokmassan pages and chunks (derived/icons/fair-source). Server HTML repeats strings in the RSC payload, so counts include duplicates. Vendor chunks counted separately.",
+  "vendor_files": {
+   "3b8x_a43l2l_h.js": "Supabase client (console banner)",
+   "328_qbrzd7ea7.js": "analytics/logging vendor",
+   "0c0hxoamwjsbw.js": "core-js / polyfills",
+   "1t3sbyck_6532.js": "zod locale tables (fair chunk)"
+  }
+ }
+}

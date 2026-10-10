@@ -39,7 +39,7 @@ This file collects the literal material: verbatim CSS and JS, axe-core results f
 | Skip link | Present on every page (`#main-content`). It cannot be focused, because `visibility: hidden` takes it out of the tab order | **Broken** |
 | Landmarks | `nav`, `main#main-content`. Footer is a `div.foot` outside all landmarks: axe `region` fails on all 36 runs | Partial |
 | Headings | One `h1` per content page. 404 and share route have only an `h2`. Legal pages jump h1→h3 | Partial |
-| Focus styling | 3 custom `:focus-visible` rules in the global CSS. All other links and buttons show Chromium's default `auto` ring | Partial |
+| Focus styling | 5 custom `:focus-visible` rules in the global CSS: switch, map medallions, form fields, reader controls, story choices. All other links and buttons show Chromium's default `auto` ring | Partial |
 | ARIA widgets | switch, toggle buttons (`aria-pressed`), `aria-expanded`, dialogs with focus trap and Escape, `role=status/alert` | Good |
 | Targets | Nav, switch and language buttons are ≥44 px. 0 failures of WCAG 2.5.8 (24 px). 51 desktop / 46 mobile targets miss 44 × 44 | Good (AA), mixed (AAA) |
 | Reduced motion | 6 → 2 running animations under `reduce`. `.fan .badge` float and its `.dotpulse` keep running (specificity bug) | Mostly good, 1 bug |
@@ -211,13 +211,14 @@ select:focus-visible {
 Route stylesheets:
 
 ```css
-/* source/css/2_gt301v4m-60.pretty.css:74-76 — /start name field */
+/* source/css/2_gt301v4m-60.pretty.css:61-73 + 74-76 — /start name field: outline removed, border recoloured instead */
+.start-flow .field { … border: 2px solid var(--field-line, var(--card-line)); border-radius: 16px; outline: none; … transition: border-color 0.3s; }
 .start-flow .field:focus { border-color: var(--accent); }
 
 /* source/css/2h1wwdz1nvxwk.pretty.css:286-288 — sheet title receives programmatic focus, ring suppressed */
 .cs-sheet-title:focus { outline: none; }
 
-/* source/css/37m388zf6rymp.pretty.css:496-499, 684-694 — the "glöd" (ember) stage */
+/* source/css/37m388zf6rymp.pretty.css:496-499, 682-694 — the "glöd" (ember) stage */
 .glod-mem-close:focus-visible { outline-offset: 1px; outline: 3px solid #7a3f0c; }
 .glod-active-ember:hover .glod-active-ember-core,
 .glod-active-ember:active .glod-active-ember-core,
@@ -228,7 +229,7 @@ Route stylesheets:
 .glod-active-ember:focus-visible { outline-offset: 3px; outline: 3px solid #fff1bf; }
 ```
 
-**The house focus formula** is `outline: 3px solid var(--accent); outline-offset: 2–3px`: 3 px for buttons, 2 px for fields. `--accent` is `var(--gold-soft)` = `#f5c542` at night and `#6d4fe0` in the morning (:496, :545). The ring therefore follows the theme, as the CTA does: gold at night, violet in the morning. The glöd stage swaps in its own warm literals (`#7a3f0c` umber, `#fff1bf` candle-cream) to suit its firelit palette. **No rule anywhere removes the default outline** except the programmatically focused sheet title.
+**The house focus formula** is `outline: 3px solid var(--accent); outline-offset: 2–3px`: 3 px for buttons, 2 px for fields. `--accent` is `var(--gold-soft)` = `#f5c542` at night and `#6d4fe0` in the morning (:496, :545). The ring therefore follows the theme, as the CTA does: gold at night, violet in the morning. The glöd stage swaps in its own warm literals (`#7a3f0c` umber, `#fff1bf` candle-cream) to suit its firelit palette. Only two rules remove the outline. One is the programmatically focused sheet title. The other is the /start name field, where `.start-flow .field` (specificity 0-2-0) beats the global `input:focus-visible` (0-1-1), so its only focus cue is the 2 px border turning `--accent`, a colour-only change.
 
 ### 5.2 Measured Tab order, home (sv, desktop)
 
@@ -257,7 +258,7 @@ From [focus/home__natt/focus-order.json](../derived/a11y/focus/home__natt/focus-
 
 - Login adds, in order: "Fortsätt med Google" [Continue with Google], the email field, the password field, "Visa lösenord" (44 × 44), "Glömt lösenordet?" (120 × 24), "Logga in" and "Skapa ett" ([login__natt/focus-order.json](../derived/a11y/focus/login__natt/focus-order.json)). Fields get the 2 px accent ring.
 - The order follows the visual reading order everywhere. Source order equals visual order, with no positive `tabindex`.
-- `UA auto` is Chromium's default two-tone ring: a dark `rgb(16,16,16)` outer ring with a white inner ring, 1 px offset. Its dark ring alone has only 1.41:1 against the median natt plate `#282d46`, but the paired white ring has 13.51:1. It stays visible in both themes, as the crops show, but it is the browser's ring, not the brand's.
+- `UA auto` is Chromium's default two-tone ring: a dark `rgb(16,16,16)` ring paired with a thin white ring, 1 px offset (0 px on the language buttons). Its dark ring alone has only 1.41:1 against the median natt plate `#282d46`, but the paired white ring has 13.51:1. It stays visible in both themes, as the crops show, but it is the browser's ring, not the brand's.
 
 ### 5.3 What focus looks like
 
@@ -285,7 +286,7 @@ Key crops:
   ```
   On open it locks body scroll (`document.body.style.overflow="hidden"`) and focuses the title (`v.current?.focus()`, which is why `.cs-sheet-title:focus{outline:none}` exists). Escape closes it (`"Escape"===e.key&&b()`). On close it restores focus to the opener (`t?.isConnected&&t.fo[cus()]`).
 - The start launch sheet (`.sheet.glass`, [source/js/0ad0wel9cyv30.js](../source/js/0ad0wel9cyv30.js)) is `role:"dialog","aria-modal":"true","aria-labelledby":"start-launch-sheet-heading"`.
-- The glöd memory card is `role:"dialog","aria-modal":"false","aria-labelledby":…,"aria-live":"polite"`. It is a non-modal, announced pop-over with its own close button (`aria-label: closeMemory`). Escape also closes it.
+- The glöd memory card is `role:"dialog","aria-modal":"false","aria-labelledby":…,"aria-live":"polite"`. It is a non-modal, announced pop-over with its own close button (`aria-label: closeMemory`). On open, focus moves to that button (`f.current?.focus()`), and Escape closes it (`"Escape"===e.key&&(e.preventDefault(),u())`). While closed, the note wrapper is `aria-hidden` (`id:"glod-memory-note"`, [2j_-r8q4tgdka.js](../source/js/2j_-r8q4tgdka.js)).
 
 ---
 
@@ -311,7 +312,7 @@ with `aria:"Byt tema"` (sv) / `aria:"Switch theme"` (en), and visible labels `ni
 
 - **Semantics:** "checked" means *morgon*. The server HTML ships `data-theme="natt"`. An inline pre-paint script then applies the stored choice before first render, so a returning morning user never sees a night flash:
   `<script>(function(){try{var t=localStorage.getItem('tf-theme');if(t==='natt'||t==='morgon'){document.body.dataset.theme=t;}}catch(e){}})();</script>` ([source/html/home.sv.html](../source/html/home.sv.html)).
-- The OS setting is ignored. No site CSS uses `prefers-color-scheme`. The one occurrence in the JS chunks (`36s0t0o8ux5as.js`) is inside a framework stylesheet string, not the theme logic. Night is the default for everyone.
+- The OS setting is ignored. No site CSS uses `prefers-color-scheme`. The one occurrence in the JS chunks is an embedded CSS string (`@media (prefers-color-scheme: dark) {`) in `36s0t0o8ux5as.js`, not the theme logic. Night is the default for everyone.
 - axe reports `label-content-name-mismatch` as **incomplete** on `.tt` in all 36 runs, because the visible text "Natt Morgon" is not part of the name "Byt tema". Read: for a switch whose visible text names both states, this is defensible, but a voice-control user who says "click Morgon" will not hit it.
 
 ### 6.2 Language switcher: `role="group"` + `aria-pressed`
@@ -334,7 +335,7 @@ The buttons are labelled by their visible "SV" and "EN". The pressed state shows
 | Map explanation for AT | A `.hiw-visually-hidden` `<p>` carries: "Boken börjar likadant för alla. Vid två tillfällen väljer barnet mellan två vägar. Två val ger fyra olika slut." [The book starts the same for everyone. At two points the child chooses between two paths. Two choices give four different endings.] The SVG map itself is `aria-hidden="true" focusable="false"` | same; CSS :2920-2930 |
 | Password visibility | `"aria-label":P?x.hidePassword:x.showPassword` → "Visa lösenord" / "Dölj lösenord" [Show / Hide password]. The label swaps; no `aria-pressed` | [source/js/1hcx0qn-qjgfn.js](../source/js/1hcx0qn-qjgfn.js) |
 | Auth fields | `<label for="auth-email">E-post</label>` + `<input id="auth-email" type="email" autocomplete="email" required>`; password `autocomplete="current-password"` on login and `"new-password"` with `minlength="6"` on signup | [static-inventory.json](../derived/a11y/static-inventory.json) |
-| Signup consent | `<label for="signup-attest">Jag är barnets förälder eller vårdnadshavare och g…</label>` + checkbox (24 × 24). The submit button is `disabled` until it is checked | same |
+| Signup consent | `<label for="signup-attest">` "Jag är barnets förälder eller vårdnadshavare och godkänner integritetspolicyn." [I am the child's parent or guardian and I accept the privacy notice.] + checkbox (24 × 24). The "Skapa konto" submit renders `disabled` | same |
 | Disclosure | `/start` "Läs en exempelbok först" and uppgradera "För skolor" use `aria-expanded` | same |
 | Billing toggle | uppgradera "Månadsvis" / "Årsvis" [Monthly / Yearly] are `button.trait` with `aria-pressed` | same |
 | Live feedback | 12 `role:"status"` and 15 `role:"alert"` in 4–5 chunks: field errors (`<p role="alert" class="field-error">`), the "trial line", pipeline failure cards, reader feedback "thanks" | `grep` over [source/js/](../source/js/) |
@@ -362,7 +363,7 @@ Home has 21 `<img>`: **19 with `alt=""`, 2 with text** (sv, hydrated). Every ima
 | `avatar-noah.jpg`, `avatar-sixten.jpg`, `cards/pick-1..3`, `voice/narrator-morfar.webp`, `cover-next-book.webp`, ending thumbs | `""` | Adjacent text carries the meaning. Read: acceptable, though the three adventure cards (`pick-1..3`) are pictures a sighted parent "reads" |
 | uppgradera sample cover (`next/image`) | "Omslag till exempelboken Iris och den sparade platsen" [Cover of the sample book Iris and the saved place] | Described |
 
-**Inline SVG.** Home has 14 inline `<svg>`. 12 are `aria-hidden="true"` and 7 of those also carry `focusable="false"`: the two map SVGs, five `.hiw-star` sparkles, and the kicker icon. The other 2 are the sun and moon glyphs inside the theme switch. They inherit presentational status from `role="switch"`, whose children are presentational in ARIA 1.2. The 16 unique inline SVGs are extracted in [assets/svg-inline/](../assets/svg-inline/), for example [home__hiw-star__700fa96f.svg](../assets/svg-inline/home__hiw-star__700fa96f.svg). The JS chunks contain 83 `aria-hidden` occurrences across 6 files. Purely decorative spans are hidden too: `span.tt-thumb`, `span.hiw-node` (the 1–6 rail numbers), and `i.glod-rope`.
+**Inline SVG.** Home has 14 inline `<svg>`. 12 are `aria-hidden="true"` and 8 of those also carry `focusable="false"`: the two map SVGs, five `.hiw-star` sparkles, and the filled play icon inside `.hiw-play`. The other 4 hidden ones are stroke icons such as the kicker sparkle ([home__kicker__822f9609.svg](../assets/svg-inline/home__kicker__822f9609.svg)). The other 2 are the sun and moon glyphs inside the theme switch. They inherit presentational status from `role="switch"`, whose children are presentational in ARIA 1.2. The 16 unique inline SVGs are extracted in [assets/svg-inline/](../assets/svg-inline/), for example [home__hiw-star__700fa96f.svg](../assets/svg-inline/home__hiw-star__700fa96f.svg). The JS chunks contain 83 `aria-hidden` occurrences across 6 files. Purely decorative spans are hidden too: `span.tt-thumb`, `span.hiw-node` (the 1–6 rail numbers), and `i.glod-rope`.
 
 ---
 
@@ -374,7 +375,7 @@ Home has 21 `<img>`: **19 with `alt=""`, 2 with text** (sv, hydrated). Every ima
 |---|---|
 | `.tt` theme switch | `min-height: 44px` ([3q17cp_jgfwol.pretty.css:768-771](../source/css/3q17cp_jgfwol.pretty.css)) |
 | `.hiw-map-btn` medallions | `width: 9.6%; min-width: 44px; min-height: 44px` (:3006-3018) |
-| `.sound-toggle` (reader) | `min-height: 44px` (:1953-1955) |
+| `.sound-toggle` (reader) | `min-height: 44px` (:1951-1954) |
 | Other global rules | `min-height: 44px` at :1079, :1232, :1683, :1996, :2072, :2077, :2218, :2524, :2730; `width/height: 44px` at :2042-2043 |
 | Language buttons | inline `minHeight:"44px",minWidth:"44px"` ([390j9gbq0u9ce.js](../source/js/390j9gbq0u9ce.js)) |
 | Route CSS | `.cs-sheet-close {width:44px;height:44px}` ([2h1wwdz1nvxwk.pretty.css:289-300](../source/css/2h1wwdz1nvxwk.pretty.css)); `min-height: 44px` at :423, :499, :537; glöd `min-height: 44px` ([37m388zf6rymp.pretty.css:596, :781](../source/css/37m388zf6rymp.pretty.css)) |
@@ -456,7 +457,7 @@ The opposite gate is :2085-2091: the reader image's resize transition is only **
 
 Route CSS:
 
-- [2_gt301v4m-60.pretty.css:913-951](../source/css/2_gt301v4m-60.pretty.css) (/start) stops 12 animations: screens, gallery, paint pill, reveal lines, embers, veil. Two cases are worth noting. The easel image keeps `transition: opacity 0.2s` (a fade, not motion), and the veil glow freezes at `opacity: 0.6` rather than vanishing.
+- [2_gt301v4m-60.pretty.css:913-951](../source/css/2_gt301v4m-60.pretty.css) (/start) sets `animation: none` on 14 selectors (screens, gallery, paint pill and its dot, reveal lines, sheet, embers, veil glow, specks and caption) and removes the `.adv` card hover lift. Two cases are worth noting. The easel image keeps `transition: opacity 0.2s` (a fade, not motion), and the veil glow freezes at `opacity: 0.6` rather than vanishing.
 - [2h1wwdz1nvxwk.pretty.css:589-593](../source/css/2h1wwdz1nvxwk.pretty.css) stops `.cs-chip` transitions.
 - [37m388zf6rymp.pretty.css:1052-1072](../source/css/37m388zf6rymp.pretty.css) (glöd) stops the pulse dots, ember transitions and floating memory. `.glod-book` keeps a 0.4 s opacity fade with `transform: none`.
 
@@ -492,7 +493,7 @@ A copy of all reduce rules is in [derived/motion/reduced-motion.css](../derived/
 
 ## 10. Colour contrast: token × surface matrix
 
-[contrast.csv](../derived/a11y/contrast.csv) has 884 rows. Its columns are: `text_token`, `text_value` (with alpha), `surface`, `surface_layers`, `plate_blur_px`, the composited surface on body and on the median plate, seven ratios (`body`, and `desktop_`/`mobile_` × `p05`/`p50`/`p95`), `ratio_min`, `worst_case_backdrop`, AA normal / AA large / AAA verdicts at the minimum, and `typical_pair`. Tokens are verbatim from :493-586.
+[contrast.csv](../derived/a11y/contrast.csv) has 884 rows. Its columns are: `text_token`, `text_value` (with alpha), `surface`, `surface_layers`, `plate_blur_px`, the composited surface on body and on the median plate, seven ratios (`body`, and `desktop_`/`mobile_` × `p05`/`p50`/`p95`), `ratio_min`, `worst_case_backdrop`, AA normal / AA large / AAA verdicts at the minimum, and `typical_pair`. Tokens are verbatim from :493-590.
 
 **Measured plate samples** (content column; [contrast-backdrop-samples.json](../derived/a11y/contrast-backdrop-samples.json)):
 
@@ -532,8 +533,8 @@ A copy of all reduce rules is in [derived/motion/reduced-motion.css](../derived/
 
 **Reading the matrix.**
 
-- **Everything inside a card passes AA comfortably in both themes**: glass, prose, choice buttons and pills, with minimums of 5.65–14.6. Glass does its job: a 68 % (natt, `#0f1628ad`) or 80 % (morgon, `#fffc`) tint flattens whatever the plate does underneath.
-- **Text set straight on the plate is where margins shrink.** On the median plate every typical page token passes AA in both themes, apart from the footer meta and the morgon logo/accent `#6d4fe0` (4.52, which is large display type). Over the brightest 5 % of the night nebula `--page-sub` falls to 4.49, `--micro-ink` to 3.74 and `--chip-ink` (kicker chip) to 3.96. Over the darkest pink-lilac watercolour patches in the morning, `--page-sub` falls to 4.19. Read: the hero lede and microcopy are only as safe as where the layout lands them. The live per-element measurements in [derived/color/contrast.csv](../derived/color/contrast.csv) show where they actually land.
+- **Card text, prose, choice buttons and pills pass AA comfortably in both themes**, with minimums of 5.65–15.88. The tinted morgon chips are the exception (below). Glass does its job: a 68 % (natt, `#0f1628ad`) or 80 % (morgon, `#fffc`) tint flattens whatever the plate does underneath.
+- **Text set straight on the plate is where margins shrink.** On the median plate every typical page token passes AA in both themes. The exceptions are the morgon footer meta lines (3.63, 4.02) and the morgon logo/accent `#6d4fe0` (4.52, used for large display type). Over the brightest 5 % of the night nebula `--page-sub` falls to 4.49, `--micro-ink` to 3.74 and `--chip-ink` (kicker chip) to 3.96. Over the darkest pink-lilac watercolour patches in the morning, `--page-sub` falls to 4.19. Read: the hero lede and microcopy are only as safe as where the layout lands them. The live per-element measurements in [derived/color/contrast.csv](../derived/color/contrast.csv) show where they actually land.
 - **The real AA failures are deliberate de-emphasis.** The footer "Beta" pill (`opacity:0.8`, `.7rem` = 11.2 px) and the version / company lines (`opacity:0.85`, 12.8 / 14.4 px) sit at 3.66 and 4.04:1 on the morgon body colour. These are exactly the three nodes axe reports as **violations** in 10 morgon runs: `#7b7591` / `#746e8b` on `#ede9f6`.
 - **Morgon chip inks are tuned to the edge.** `--gold-chip-ink #8f6a12` reaches 4.37 and `--coral-chip-ink #c23a2b` 4.53 on their tinted chips over a card. Both are AA large only, and they are used at UI sizes.
 - **Morgon needs `--accent-ink`.** The night theme has one gold for everything. The morning theme splits violet into `--accent #6d4fe0` (fills, rings, 4.57 on body) and the darker `--accent-ink #5b3fc7` for text (5.90). That split is a contrast decision written into the tokens.
@@ -547,12 +548,12 @@ Per-run counts are in [axe-summary.json](../derived/a11y/axe-summary.json) (`cou
 | Rule | Impact | WCAG | Violation runs | Incomplete runs | Nodes / what |
 |---|---|---|---|---|---|
 | `region` | moderate | best-practice | **36 / 36** | 0 | `.foot`: footer outside landmarks |
-| `color-contrast` | serious | 1.4.3 AA | 10 (morgon: home, integritet, signup, uppgradera, villkor × sv/en) | 36 | Violations: footer Beta / version / company (3.66, 4.04, 4.04). Incomplete: 25–61 nodes per run that axe cannot resolve over the image plate (`bgGradient`, `pseudoContent`, `imgNode`), hence §10 |
+| `color-contrast` | serious | 1.4.3 AA | 10 (morgon: home, integritet, signup, uppgradera, villkor × sv/en) | 36 | Violations: footer Beta / version / company (3.66, 4.04, 4.04). Incomplete: 16–61 nodes per run that axe cannot resolve over the image plate (`bgGradient`, `pseudoContent`, `imgNode`), hence §10 |
 | `heading-order` | moderate | best-practice | 8 (integritet, villkor) | 0 | h1 → h3 "I korthet" / "In short" |
 | `page-has-heading-one` | moderate | best-practice | 8 (404, share route) | 0 | only an h2 "Sidan finns inte" |
 | `label-content-name-mismatch` | serious | 2.5.3 A | 4 (uppgradera) | 36 | `.upgrade-sample-link` (violation); `.tt` (incomplete) |
 
-No failures for: `image-alt`, `label`, `link-name`, `button-name`, `aria-*` validity, `html-has-lang`, `html-lang-valid`, `document-title`, `duplicate-id`, `list`, `listitem`, `meta-viewport`, `landmark-one-main`, `bypass` (axe sees the skip link in the DOM, so it passes this rule even though the link cannot be focused). Full pass lists are in each raw JSON under `passes`.
+Passed rules include `image-alt`, `link-name`, `button-name`, `aria-allowed-attr` / `aria-required-attr` / `aria-valid-attr-value` / `aria-roles` / `aria-hidden-focus`, `nested-interactive`, `html-has-lang`, `html-lang-valid`, `document-title`, `list` / `listitem`, `meta-viewport`, `landmark-one-main` and `bypass`. On the auth pages they also include `label`, `autocomplete-valid`, `form-field-multiple-labels` and `link-in-text-block`. `bypass` passes because axe finds the skip link in the DOM, even though it cannot be focused. Full pass lists are under `passes` in each raw JSON (for example [home__natt.json](../derived/a11y/axe/home__natt.json), [login__natt.json](../derived/a11y/axe/login__natt.json)).
 
 ---
 
@@ -560,7 +561,7 @@ No failures for: `image-alt`, `label`, `link-name`, `button-name`, `aria-*` vali
 
 - `<meta name="viewport" content="width=device-width, initial-scale=1"/>`. There is no `maximum-scale` and no `user-scalable=no`, so pinch zoom works ([source/html/home.sv.html](../source/html/home.sv.html)).
 - **320 px reflow** (WCAG 1.4.10): at 320 × 640, all 8 routes report `scrollWidth == clientWidth == 320`, with no non-fixed element extending past the right edge ([reflow-320.json](../derived/a11y/reflow-320.json)). `body { overflow-x: hidden }` (:598-608) is also set as a safety net.
-- Type is set in `rem` throughout (for example `.foot { font-size: 0.9rem }` :1933-1944), so browser text-size settings scale it.
+- Most type is set in `rem` (for example `.foot { font-size: 0.9rem }` :1933-1944), so browser text-size settings scale it. A few display sizes are fixed px, for example `font-size: 44px` at [2h1wwdz1nvxwk.pretty.css:455](../source/css/2h1wwdz1nvxwk.pretty.css).
 - No `<meta name="theme-color">` and no `color-scheme` declaration. Browser chrome and form controls do not follow the two themes.
 
 ---
@@ -681,6 +682,7 @@ From [page-weights.csv](../derived/a11y/page-weights.csv). Values are encoded by
 | 9 | `scroll-behavior: smooth` not reduced | §9.2 | Wrap in `no-preference` |
 | 10 | `.upgrade-sample-link` name ≠ visible text | §6.4 | Start the `aria-label` with the visible text |
 | 11 | FAB 42 × 42 under the site's own 44 px rule | §8 | 44 px |
+| 12 | /start name field: `outline: none`; focus shown only by border colour | §5.1 | Let `input:focus-visible` apply (drop `outline:none`) |
 
 ---
 
