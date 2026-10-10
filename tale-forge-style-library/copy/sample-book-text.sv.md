@@ -1,7 +1,7 @@
 # Sample book text: "Iris och den sparade platsen"
 
 The complete text of the sample book that the landing page links to ("Läs exempelboken" / "Read the sample book"), verbatim from [source/sample-book.iris-och-den-sparade-platsen.json](../source/sample-book.iris-och-den-sparade-platsen.json) (`beats[].prose`, `beats[].choice`). Swedish only: the book exists in one language and the English site still calls it "the Swedish sample". 14 beats, 1514 words in all; one path through the book (S1, S2, S3, S4, S5, S6) is six beats.
-Each beat links its painted spread (WebP) and its narration (MP3, narrator persona `grandpa`). The share route /share/iris-sparade-platsen itself returned 404 when harvested, see [pages/share_iris-sparade-platsen.404.md](pages/share_iris-sparade-platsen.404.md). Story structure, illustration briefs and style prompt belong to the story/illustration analyses; this file is the literal text only.
+Each beat links its painted spread (WebP) and its narration (MP3, narrator persona `grandpa`). The share route /share/iris-sparade-platsen itself returned 404 when harvested, see [pages/share_iris-sparade-platsen.404.md](pages/share_iris-sparade-platsen.404.md). Story structure, illustration briefs and style prompt belong to the story/illustration analyses; this file is the literal text only. Per-path reading copies with English glosses, and the verbatim briefs and canon, are in [sample-book/](sample-book/README.md) (written by the story dimension).
 
 ## Contents
 

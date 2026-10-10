@@ -149,7 +149,7 @@ Source: [390j9gbq0u9ce.js](../source/js/390j9gbq0u9ce.js) offset 27839, module 2
 
 ### `s0Pitch`
 
-Source: [0ad0wel9cyv30.js](../source/js/0ad0wel9cyv30.js) offset 196, module 9181 (exports: SCREEN_ORDER, StartFlow). /start screen s0 (server-rendered pitch). h1 = h1Lead + gradient h1Grad.
+Source: [0ad0wel9cyv30.js](../source/js/0ad0wel9cyv30.js) offset 196, module 9181 (exports: SCREEN_ORDER, StartFlow). /start screen s0 (server-rendered pitch). h1 = h1Lead + span.grad(h1Grad) + "."; span.grad is a solid accent colour, not a gradient.
 
 | Key | Svenska | English |
 |---|---|---|

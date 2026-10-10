@@ -140,7 +140,7 @@ Source: `source/js/3d9nxlx1n5pdy.js` module 29416 (pretty copy: [../derived/stor
 | steps.hero.artChip | "Skapad med AI" | "Created with AI" | @1283 |
 | steps.hero.portraitAlt | "Iris, den målade hjälten i exempelboken" | "Iris, the painted hero of the sample book" | @1311 |
 | steps.friend.micro | "I Alvas värld är Noah och räven Sixten med i varje bok." | "In Alva's world, Noah and Sixten the fox are in every book." | — |
-| steps.friend.rows | "Noah — bästa kompisen · med i 2 böcker"; "Sixten — fjällräven · följer med i varje bok" | "Noah — best friend · in 2 books"; "Sixten — the mountain fox · comes along in every book" | — |
+| steps.friend.rows | `{ name: "Noah", sub: "bästa kompisen · med i 2 böcker" }`, `{ name: "Sixten", sub: "fjällräven · följer med i varje bok" }` | `{ name: "Noah", sub: "best friend · in 2 books" }`, `{ name: "Sixten", sub: "the mountain fox · comes along in every book" }` | — |
 | steps.adventure.body | "… Sedan skriver, målar och läser vi in hela boken på en gång. Det tar ungefär tio minuter …" | "… Then we write, paint, and narrate the whole book in one go. It takes about ten minutes …" | — |
 | steps.adventure.micro | "Lagom tid för tandborstning och pyjamas." | — | @1930 |
 | steps.read.micro | "Inga låtsasval. Båda vägarna är skrivna, målade och inlästa." | "No pretend choices. Both paths are written, painted, and narrated." | @2218 |

@@ -46,7 +46,7 @@ No JSON-LD structured data on this page.
 
 ## 2. Body copy in reading order
 
-Legend: `tag.class` is the element; **bold** marks `<b>`/`<strong>` or the gold gradient phrase `span.grad`; `[text](href)` is an inline link; `→` is a link target; " / " separates adjacent child elements with no space between them in the markup; flags in the tail say when CSS shows the text in capitals or when it is hidden from sight or from screen readers. The contact `mailto:` is shortened to `…@tale-forge.app` (it is a personal first-name mailbox; the full address is in the DOM file).
+Legend: `tag.class` is the element; **bold** marks `<b>`/`<strong>` or the emphasised h1 phrase `span.grad` (a solid accent colour, gold in natt and violet in morgon, not a CSS gradient); `[text](href)` is an inline link; `→` is a link target; " / " separates adjacent child elements with no space between them in the markup; flags in the tail say when CSS shows the text in capitals or when it is hidden from sight or from screen readers. The contact `mailto:` is shortened to `…@tale-forge.app` (it is a personal first-name mailbox; the full address is in the DOM file).
 - `img` — alt="" (decorative) · src `/assets/nebula-hero.webp`
 - `img` — alt="" (decorative) · src `/assets/morgon-aurora-desktop.webp`
 - `a.skip-link` — Skip to content · → `#main-content`

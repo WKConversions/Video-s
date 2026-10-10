@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" class="hiw-map-desktop" viewBox="0 0 960 540" width="960" height="540" role="img">
 <title>Tale Forge endings map (desktop, natt, sv): sample book "Iris och den sparade platsen", route AA lit</title>
-<!-- Source: assets/svg-inline/home__hiw-map-desktop__d942793a.svg (server-rendered, state AA lit, medallion 1 active). Geometry: source/js/3d9nxlx1n5pdy.js@7140-9744. CSS: source/css/3q17cp_jgfwol.pretty.css:2931-3004 with the natt tokens from :493-593 inlined below. Image hrefs rewritten to library-relative paths. -->
+<!-- Source: assets/svg-inline/home__hiw-map-desktop__d942793a.svg (server-rendered, state AA lit, medallion 1 active). Geometry: source/js/3d9nxlx1n5pdy.js@7140-9744. CSS: source/css/3q17cp_jgfwol.pretty.css:2931-3005 with the natt tokens from :493-593 inlined below. Image hrefs rewritten to library-relative paths. -->
 <style>
   @font-face { font-family: "Schibsted Grotesk"; src: url(../../../assets/fonts/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2) format("woff2"); font-weight: 400 800; }
   svg { --dash-line: #ffecbe59; --map-dot: #9b87f5; --map-glow: #f5c54240; --gold-chip-bg: #f2b22e29; --gold-chip-ink: #ffd98f; --gold-soft: #f5c542; --page-sub: #d9cfee; --card-line: #9b87f542; }

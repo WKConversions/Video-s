@@ -1,0 +1,95 @@
+{
+ "no-preference": {
+  "https://tale-forge.app/": {
+   "anims": [
+    "twinkle @ starfield",
+    "float1 @ fbook fb1",
+    "float2 @ fbook fb2",
+    "floatBadge @ badge",
+    "pulse @ dotpulse",
+    "pulse @ dotpulse"
+   ],
+   "map_before_scroll": [
+    "off:1px/0",
+    "off:1px/0",
+    "off:1px/0",
+    "off:1px/0"
+   ],
+   "reveal": [
+    "reveal in hiw op=1 tr=none",
+    "reveal in op=1 tr=none",
+    "reveal in op=1 tr=none"
+   ],
+   "btn_transition": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, background 0.5s, color 0.5s",
+   "html_scroll_behavior": "smooth",
+   "map_after_scroll_2500ms": [
+    "lit:0px/0.9",
+    "off:1px/0",
+    "off:1px/0",
+    "off:1px/0"
+   ],
+   "map_after_scroll_7500ms": [
+    "off",
+    "lit",
+    "off",
+    "off"
+   ]
+  },
+  "https://tale-forge.app/start": {
+   "anims": [
+    "twinkle @ starfield",
+    "float1 @ fbook fb1",
+    "float2 @ fbook fb2",
+    "floatBadge @ badge",
+    "pulse @ dotpulse"
+   ],
+   "map_before_scroll": null,
+   "reveal": [],
+   "btn_transition": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, background 0.5s, color 0.5s",
+   "html_scroll_behavior": "smooth"
+  }
+ },
+ "reduce": {
+  "https://tale-forge.app/": {
+   "anims": [
+    "floatBadge @ badge",
+    "pulse @ dotpulse"
+   ],
+   "map_before_scroll": [
+    "lit:0px/0.9",
+    "off:1px/0",
+    "off:1px/0",
+    "off:1px/0"
+   ],
+   "reveal": [
+    "reveal in hiw op=1 tr=none",
+    "reveal in op=1 tr=none",
+    "reveal in op=1 tr=none"
+   ],
+   "btn_transition": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, background 0.5s, color 0.5s",
+   "html_scroll_behavior": "smooth",
+   "map_after_scroll_2500ms": [
+    "lit:0px/0.9",
+    "off:1px/0",
+    "off:1px/0",
+    "off:1px/0"
+   ],
+   "map_after_scroll_7500ms": [
+    "lit",
+    "off",
+    "off",
+    "off"
+   ]
+  },
+  "https://tale-forge.app/start": {
+   "anims": [
+    "floatBadge @ badge",
+    "pulse @ dotpulse"
+   ],
+   "map_before_scroll": null,
+   "reveal": [],
+   "btn_transition": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s, background 0.5s, color 0.5s",
+   "html_scroll_behavior": "smooth"
+  }
+ }
+}

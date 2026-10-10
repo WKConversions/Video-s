@@ -98,7 +98,7 @@ The brand name is a forge, and the app spells that metaphor out in Swedish: smed
 | integritetspolicyn | the privacy notice | English avoids "policy". | [app-strings.md#authfields](app-strings.md#authfields) |
 | Till dig som vuxen | For grown-ups | Header of the parent-only feedback block after a book. | [app-strings.md#feedbackform](app-strings.md#feedbackform) |
 | Sidan finns inte | Page not found | 404: "Den här sidan har vandrat iväg i sagovärlden." (This page wandered off into the story world.) | [pages/404.sv.md](pages/404.sv.md) |
-| Bokmässans snabb-saga | the Book Fair quick story | Legal pages only: a separate anonymous quick-story flow used at the Gothenburg Book Fair (Bokmässan). | [pages/integritet.sv.md](pages/integritet.sv.md) |
+| Bokmässans snabb-saga | the Book Fair quick story | Legal pages only: a separate anonymous quick-story flow for Bokmässan (the book fair). The flow itself is not on the public site. | [pages/integritet.sv.md](pages/integritet.sv.md) |
 
 ## 6. Plans and money
 
@@ -182,4 +182,4 @@ Title formula (observed in all three book titles): `{Hero} och {definite noun ph
 | "149 kr i månaden" | "$14.99 a month" | Currency follows the language, not the market. |
 | "org.nr", "Värnamo, Sverige" | "reg. no.", "Varnamo, Sweden" | English footer drops the ä in Värnamo; the legal text keeps "Värnamo". |
 | "Vi håller sagorna snälla och trygga." | "Let's keep our stories kind and safe!" | The only exclamation marks on the site are these six English moderation messages; Swedish is a calm statement. |
-| personalized / cozy / favorite / color / pajamas | (US spelling) | English UI is US-spelled, with exceptions: "colour" in `s4Unveil.paintFailedLead`, "personalised" and "organisations" in the legal pages. `og:locale` is `en_US`. |
+| personalized / cozy / favorite / color / pajamas | (US spelling) | English UI is US-spelled, with exceptions: "colour" in `s4Unveil.paintFailedLead`, and "personalised" and "organisations" in the legal pages. `og:locale` is `en_US`. |

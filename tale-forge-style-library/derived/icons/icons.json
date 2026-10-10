@@ -10,7 +10,7 @@
     "source/js/390j9gbq0u9ce.js@28685",
     "source/rendered/dom__home__sv.html (nav)"
    ],
-   "css": "source/css/3q17cp_jgfwol.pretty.css:801-820 (.tt-opt, .tt-opt svg 15x15, active colour); :2290-2295 (<=560px: icon only)",
+   "css": "source/css/3q17cp_jgfwol.pretty.css:801-821 (.tt-opt, .tt-opt svg 15x15, active colour); :2290-2294 (<=560px: icon only)",
    "size": "15 px",
    "colour": "--ghost-ink (inactive); --btn-ink when active, sitting on the gold/violet --btn-grad thumb",
    "sheet_colour": "var(--ghost-ink)",
@@ -36,7 +36,7 @@
     "assets/svg-inline/404__tt-opt__ddbc3897.svg",
     "source/js/390j9gbq0u9ce.js@28966"
    ],
-   "css": "source/css/3q17cp_jgfwol.pretty.css:801-820",
+   "css": "source/css/3q17cp_jgfwol.pretty.css:801-821",
    "size": "15 px",
    "colour": "--ghost-ink (inactive) / --btn-ink (active)",
    "sheet_colour": "var(--ghost-ink)",
@@ -303,7 +303,7 @@
    "sources": [
     "source/js/0ad0wel9cyv30.js@27730"
    ],
-   "css": "source/css/2_gt301v4m-60.pretty.css:236-262 (.veil gradient #9b87f58c->#f2b22e66, color #fff7e9; svg 30x30; @keyframes tfBrushBob rotate -8deg..6deg, translateY -5px)",
+   "css": "source/css/2_gt301v4m-60.pretty.css:238-261 (.veil gradient #9b87f58c->#f2b22e66, color #fff7e9; svg 30x30; @keyframes tfBrushBob rotate -8deg..6deg, translateY -5px)",
    "size": "30 px",
    "colour": "#fff7e9 literal on a violet-to-gold veil",
    "sheet_colour": "#fff7e9",
@@ -775,7 +775,7 @@
    "sources": [
     "source/js/36tbz-w9v-p8v.js@4103"
    ],
-   "css": "source/css/3q17cp_jgfwol.pretty.css:2040-2066 (svg 20x20; fill+stroke currentColor, stroke 2, round; paths other than the two triangles get fill:none)",
+   "css": "source/css/3q17cp_jgfwol.pretty.css:2039-2066 (svg 20x20; fill+stroke currentColor, stroke 2, round; paths other than the two triangles get fill:none)",
    "size": "20 px in a 44 px button",
    "colour": "--choice-ink on --choice-bg",
    "sheet_colour": "var(--choice-ink)",
@@ -944,7 +944,7 @@
     "source/js/3d9nxlx1n5pdy.js@9744 (medallionImageR 42, medallionRingR 44, numChipY = y+50)",
     "assets/landing/iris/ending-1.webp"
    ],
-   "css": "source/css/3q17cp_jgfwol.pretty.css:2977-3004 (drop-shadow 0 0 18px --map-glow; ring 2px, 3px + scale 1.05 when active; dimmed .55; chip --gold-chip-bg; number 11px 700 --gold-chip-ink)",
+   "css": "source/css/3q17cp_jgfwol.pretty.css:2977-3005 (drop-shadow 0 0 18px --map-glow; ring 2px, 3px + scale 1.05 when active; dimmed .55; chip --gold-chip-bg; number 11px 700 --gold-chip-ink)",
    "viewBox": "-58 -58 116 132",
    "inner": "<defs><linearGradient id=\"ring\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f5c542\"/><stop offset=\"1\" stop-color=\"#6D4FE0\"/></linearGradient><clipPath id=\"m0\"><circle cx=\"0\" cy=\"0\" r=\"42\"/></clipPath></defs><g class=\"map-medallion is-active\"><image href=\"../../../assets/landing/iris/ending-1.webp\" x=\"-42\" y=\"-42\" width=\"84\" height=\"84\" clip-path=\"url(#m0)\" preserveAspectRatio=\"xMidYMid slice\"/><circle class=\"map-medallion-ring\" cx=\"0\" cy=\"0\" r=\"44\" fill=\"none\" stroke=\"url(#ring)\"/><rect class=\"map-num-bg\" x=\"-11\" y=\"50\" width=\"22\" height=\"18\" rx=\"9\"/><text class=\"map-num\" x=\"0\" y=\"63\" text-anchor=\"middle\">1</text></g>",
    "file": "svg/map-medallion.svg"

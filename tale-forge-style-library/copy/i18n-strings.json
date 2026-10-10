@@ -347,7 +347,7 @@
       "offset": 196,
       "shape": "svEnObject"
      },
-     "note": "/start screen s0 (server-rendered pitch). h1 = h1Lead + gradient h1Grad.",
+     "note": "/start screen s0 (server-rendered pitch). h1 = h1Lead + span.grad(h1Grad) + \".\"; span.grad is a solid accent colour, not a gradient.",
      "value": {
       "sv": {
        "kicker": "Riktiga bilderböcker, upplästa på svenska",
