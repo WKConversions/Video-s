@@ -1,0 +1,66 @@
+[
+ {
+  "page": "home",
+  "viewport": "320x640",
+  "clientWidth": 320,
+  "scrollWidth": 320,
+  "bodyOverflowX": "hidden",
+  "overflowingEls": []
+ },
+ {
+  "page": "start",
+  "viewport": "320x640",
+  "clientWidth": 320,
+  "scrollWidth": 320,
+  "bodyOverflowX": "hidden",
+  "overflowingEls": []
+ },
+ {
+  "page": "uppgradera",
+  "viewport": "320x640",
+  "clientWidth": 320,
+  "scrollWidth": 320,
+  "bodyOverflowX": "hidden",
+  "overflowingEls": []
+ },
+ {
+  "page": "login",
+  "viewport": "320x640",
+  "clientWidth": 320,
+  "scrollWidth": 320,
+  "bodyOverflowX": "hidden",
+  "overflowingEls": []
+ },
+ {
+  "page": "signup",
+  "viewport": "320x640",
+  "clientWidth": 320,
+  "scrollWidth": 320,
+  "bodyOverflowX": "hidden",
+  "overflowingEls": []
+ },
+ {
+  "page": "integritet",
+  "viewport": "320x640",
+  "clientWidth": 320,
+  "scrollWidth": 320,
+  "bodyOverflowX": "hidden",
+  "overflowingEls": []
+ },
+ {
+  "page": "villkor",
+  "viewport": "320x640",
+  "clientWidth": 320,
+  "scrollWidth": 320,
+  "bodyOverflowX": "hidden",
+  "overflowingEls": []
+ },
+ {
+  "page": "404",
+  "viewport": "320x640",
+  "clientWidth": 320,
+  "scrollWidth": 320,
+  "bodyOverflowX": "hidden",
+  "overflowingEls": []
+ }
+]

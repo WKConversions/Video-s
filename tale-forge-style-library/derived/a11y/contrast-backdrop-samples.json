@@ -1,0 +1,397 @@
+{
+ "method": "WCAG contrast matrix: every text token x every surface token, both themes.\nTranslucent surfaces are composited over MEASURED backdrop colours: the live .bg plate\n(derived/color/backdrop-layer__<theme>__<vp>.png, captured with all content hidden), sampled at\nits darkest 5th / median / lightest 95th luminance percentile inside the content column, plus the\nsolid body colour. Glass surfaces (backdrop-filter) are sampled from a Gaussian-blurred plate.\nRun: python3 -I contrast_matrix.py <library_root>\nWrites derived/a11y/contrast.csv and derived/a11y/contrast-backdrop-samples.json\n",
+ "plates": {
+  "natt|desktop|blur0": {
+   "p05": "#0e1329",
+   "p50": "#282d46",
+   "p95": "#555778"
+  },
+  "natt|desktop|blur14": {
+   "p05": "#0f152b",
+   "p50": "#292e47",
+   "p95": "#4f5275"
+  },
+  "natt|desktop|blur22": {
+   "p05": "#10152b",
+   "p50": "#292e48",
+   "p95": "#4d5175"
+  },
+  "natt|desktop|blur24": {
+   "p05": "#10162b",
+   "p50": "#292e48",
+   "p95": "#4d5174"
+  },
+  "natt|mobile|blur0": {
+   "p05": "#121931",
+   "p50": "#2d324d",
+   "p95": "#5a5a73"
+  },
+  "natt|mobile|blur14": {
+   "p05": "#141a30",
+   "p50": "#30344d",
+   "p95": "#4f536c"
+  },
+  "natt|mobile|blur22": {
+   "p05": "#141b30",
+   "p50": "#31344e",
+   "p95": "#4a5276"
+  },
+  "natt|mobile|blur24": {
+   "p05": "#141b30",
+   "p50": "#32344d",
+   "p95": "#485277"
+  },
+  "morgon|desktop|blur0": {
+   "p05": "#e8ccd5",
+   "p50": "#f0e7ee",
+   "p95": "#f6edee"
+  },
+  "morgon|desktop|blur14": {
+   "p05": "#f8ccc6",
+   "p50": "#f1e7ee",
+   "p95": "#f4ecee"
+  },
+  "morgon|desktop|blur22": {
+   "p05": "#eaccd5",
+   "p50": "#f1e7ee",
+   "p95": "#f4ebee"
+  },
+  "morgon|desktop|blur24": {
+   "p05": "#e9ccd7",
+   "p50": "#f1e7ee",
+   "p95": "#f4ebee"
+  },
+  "morgon|mobile|blur0": {
+   "p05": "#e3c5d4",
+   "p50": "#f1e5ec",
+   "p95": "#f8ede8"
+  },
+  "morgon|mobile|blur14": {
+   "p05": "#e2c8dc",
+   "p50": "#f0e5ed",
+   "p95": "#f7eae6"
+  },
+  "morgon|mobile|blur22": {
+   "p05": "#e2c7db",
+   "p50": "#f1e5ed",
+   "p95": "#f7eae5"
+  },
+  "morgon|mobile|blur24": {
+   "p05": "#e2c7dc",
+   "p50": "#f1e5ed",
+   "p95": "#f7e9e6"
+  }
+ },
+ "body": {
+  "natt": "#171232",
+  "morgon": "#ede9f6"
+ },
+ "composited_surfaces": {
+  "natt | page (plate, no surface)": {
+   "body": "#171232",
+   "desktop_p05": "#0e1329",
+   "desktop_p50": "#282d46",
+   "desktop_p95": "#555778",
+   "mobile_p05": "#121931",
+   "mobile_p50": "#2d324d",
+   "mobile_p95": "#5a5a73"
+  },
+  "natt | --card glass": {
+   "body": "#12152b",
+   "desktop_p05": "#0f1629",
+   "desktop_p50": "#171e32",
+   "desktop_p95": "#232941",
+   "mobile_p05": "#11182b",
+   "mobile_p50": "#1a2034",
+   "mobile_p95": "#222941"
+  },
+  "natt | --chip-bg on plate": {
+   "body": "#2f2a45",
+   "desktop_p05": "#272a3d",
+   "desktop_p50": "#3e4257",
+   "desktop_p95": "#666884",
+   "mobile_p05": "#2a3044",
+   "mobile_p50": "#42465d",
+   "mobile_p95": "#6b6a7f"
+  },
+  "natt | --chip-bg on --card": {
+   "body": "#2a2c3f",
+   "desktop_p05": "#282d3d",
+   "desktop_p50": "#2f3445",
+   "desktop_p95": "#393e52",
+   "mobile_p05": "#292f3e",
+   "mobile_p50": "#313647",
+   "mobile_p95": "#393e53"
+  },
+  "natt | --pill-bg on --card": {
+   "body": "#28274c",
+   "desktop_p05": "#26284a",
+   "desktop_p50": "#2d2f52",
+   "desktop_p95": "#36385e",
+   "mobile_p05": "#272a4b",
+   "mobile_p50": "#2f3053",
+   "mobile_p95": "#35385e"
+  },
+  "natt | --ghost-bg (blur 14px) on plate": {
+   "body": "#2f2a45",
+   "desktop_p05": "#272c3f",
+   "desktop_p50": "#3f4358",
+   "desktop_p95": "#616381",
+   "mobile_p05": "#2c3143",
+   "mobile_p50": "#45485d",
+   "mobile_p95": "#616479"
+  },
+  "natt | --choice-bg on --card": {
+   "body": "#202238",
+   "desktop_p05": "#1d2336",
+   "desktop_p50": "#252b3e",
+   "desktop_p95": "#30364c",
+   "mobile_p05": "#1f2537",
+   "mobile_p50": "#272d40",
+   "mobile_p95": "#2f364c"
+  },
+  "natt | --gold-chip-bg on --card": {
+   "body": "#362e2c",
+   "desktop_p05": "#342f2a",
+   "desktop_p50": "#3b3632",
+   "desktop_p95": "#443f3e",
+   "mobile_p05": "#35302b",
+   "mobile_p50": "#3d3733",
+   "mobile_p95": "#433f3e"
+  },
+  "natt | --gold-chip-bg on plate": {
+   "body": "#3a2c31",
+   "desktop_p05": "#332d2a",
+   "desktop_p50": "#484242",
+   "desktop_p95": "#6e666c",
+   "mobile_p05": "#363231",
+   "mobile_p50": "#4d4748",
+   "mobile_p95": "#726868"
+  },
+  "natt | --coral-chip-bg on --card": {
+   "body": "#331f31",
+   "desktop_p05": "#31202f",
+   "desktop_p50": "#382737",
+   "desktop_p95": "#423143",
+   "mobile_p05": "#322230",
+   "mobile_p50": "#3a2939",
+   "mobile_p95": "#413144"
+  },
+  "natt | --trait-on-bg on --card": {
+   "body": "#2d2c54",
+   "desktop_p05": "#2b2c52",
+   "desktop_p50": "#323359",
+   "desktop_p95": "#3b3c65",
+   "mobile_p05": "#2c2e53",
+   "mobile_p50": "#34345b",
+   "mobile_p95": "#3a3c65"
+  },
+  "natt | --bar-bg on --card": {
+   "body": "#333649",
+   "desktop_p05": "#313747",
+   "desktop_p50": "#383e4f",
+   "desktop_p95": "#42475c",
+   "mobile_p05": "#323849",
+   "mobile_p50": "#3a3f51",
+   "mobile_p95": "#41475c"
+  },
+  "natt | --frame (solid)": {
+   "body": "#101a30",
+   "desktop_p05": "#101a30",
+   "desktop_p50": "#101a30",
+   "desktop_p95": "#101a30",
+   "mobile_p05": "#101a30",
+   "mobile_p50": "#101a30",
+   "mobile_p95": "#101a30"
+  },
+  "natt | --btn-grad start (solid)": {
+   "body": "#ffe08a",
+   "desktop_p05": "#ffe08a",
+   "desktop_p50": "#ffe08a",
+   "desktop_p95": "#ffe08a",
+   "mobile_p05": "#ffe08a",
+   "mobile_p50": "#ffe08a",
+   "mobile_p95": "#ffe08a"
+  },
+  "natt | --btn-grad end (solid)": {
+   "body": "#f5c542",
+   "desktop_p05": "#f5c542",
+   "desktop_p50": "#f5c542",
+   "desktop_p95": "#f5c542",
+   "mobile_p05": "#f5c542",
+   "mobile_p50": "#f5c542",
+   "mobile_p95": "#f5c542"
+  },
+  "natt | --accent (solid, e.g. active SV/EN)": {
+   "body": "#f5c542",
+   "desktop_p05": "#f5c542",
+   "desktop_p50": "#f5c542",
+   "desktop_p95": "#f5c542",
+   "mobile_p05": "#f5c542",
+   "mobile_p50": "#f5c542",
+   "mobile_p95": "#f5c542"
+  },
+  "natt | --gold #f2b22e (skip-link, solid)": {
+   "body": "#f2b22e",
+   "desktop_p05": "#f2b22e",
+   "desktop_p50": "#f2b22e",
+   "desktop_p95": "#f2b22e",
+   "mobile_p05": "#f2b22e",
+   "mobile_p50": "#f2b22e",
+   "mobile_p95": "#f2b22e"
+  },
+  "morgon | page (plate, no surface)": {
+   "body": "#ede9f6",
+   "desktop_p05": "#e8ccd5",
+   "desktop_p50": "#f0e7ee",
+   "desktop_p95": "#f6edee",
+   "mobile_p05": "#e3c5d4",
+   "mobile_p50": "#f1e5ec",
+   "mobile_p95": "#f8ede8"
+  },
+  "morgon | --card glass": {
+   "body": "#fbfbfd",
+   "desktop_p05": "#fbf5f7",
+   "desktop_p50": "#fcfafc",
+   "desktop_p95": "#fdfbfc",
+   "mobile_p05": "#f9f4f8",
+   "mobile_p50": "#fcfafb",
+   "mobile_p95": "#fdfbfa"
+  },
+  "morgon | --chip-bg on plate": {
+   "body": "#e3ddf4",
+   "desktop_p05": "#dec2d6",
+   "desktop_p50": "#e6dbed",
+   "desktop_p95": "#ebe1ed",
+   "mobile_p05": "#dabcd5",
+   "mobile_p50": "#e7d9eb",
+   "mobile_p95": "#ede1e7"
+  },
+  "morgon | --chip-bg on --card": {
+   "body": "#f0edfb",
+   "desktop_p05": "#efe8f5",
+   "desktop_p50": "#f1edf9",
+   "desktop_p95": "#f2eef9",
+   "mobile_p05": "#eee7f6",
+   "mobile_p50": "#f1ecf9",
+   "mobile_p95": "#f2edf8"
+  },
+  "morgon | --pill-bg on --card": {
+   "body": "#ede9fa",
+   "desktop_p05": "#ece4f5",
+   "desktop_p50": "#eee9f9",
+   "desktop_p95": "#eee9f9",
+   "mobile_p05": "#ebe3f6",
+   "mobile_p50": "#eee8f9",
+   "mobile_p95": "#efe9f7"
+  },
+  "morgon | --ghost-bg (blur 14px) on plate": {
+   "body": "#faf9fc",
+   "desktop_p05": "#fdf1ef",
+   "desktop_p50": "#fbf8fa",
+   "desktop_p95": "#fcfafa",
+   "mobile_p05": "#f7f0f5",
+   "mobile_p50": "#fbf8fa",
+   "mobile_p95": "#fdf9f8"
+  },
+  "morgon | --choice-bg on --card": {
+   "body": "#ffffff",
+   "desktop_p05": "#ffffff",
+   "desktop_p50": "#ffffff",
+   "desktop_p95": "#ffffff",
+   "mobile_p05": "#ffffff",
+   "mobile_p50": "#ffffff",
+   "mobile_p95": "#ffffff"
+  },
+  "morgon | --gold-chip-bg on --card": {
+   "body": "#faf0de",
+   "desktop_p05": "#f9ebd9",
+   "desktop_p50": "#fbefdd",
+   "desktop_p95": "#fbf0dd",
+   "mobile_p05": "#f8eada",
+   "mobile_p50": "#fbefdd",
+   "mobile_p95": "#fcf0dc"
+  },
+  "morgon | --gold-chip-bg on plate": {
+   "body": "#eee1d8",
+   "desktop_p05": "#e9c8bc",
+   "desktop_p50": "#f0dfd1",
+   "desktop_p95": "#f5e4d1",
+   "mobile_p05": "#e5c2bb",
+   "mobile_p50": "#f1ddd0",
+   "mobile_p95": "#f7e4cc"
+  },
+  "morgon | --coral-chip-bg on --card": {
+   "body": "#fce8e9",
+   "desktop_p05": "#fbe3e3",
+   "desktop_p50": "#fde8e7",
+   "desktop_p95": "#fde8e7",
+   "mobile_p05": "#fae2e4",
+   "mobile_p50": "#fde7e7",
+   "mobile_p95": "#fee8e6"
+  },
+  "morgon | --trait-on-bg on --card": {
+   "body": "#eae6fa",
+   "desktop_p05": "#e9e1f4",
+   "desktop_p50": "#ebe5f8",
+   "desktop_p95": "#ebe6f8",
+   "mobile_p05": "#e8e0f5",
+   "mobile_p50": "#ebe5f8",
+   "mobile_p95": "#ece6f7"
+  },
+  "morgon | --bar-bg on --card": {
+   "body": "#ebe9ed",
+   "desktop_p05": "#eae4e8",
+   "desktop_p50": "#ebe9ec",
+   "desktop_p95": "#eceaec",
+   "mobile_p05": "#e8e3e9",
+   "mobile_p50": "#ebe9ec",
+   "mobile_p95": "#ece9eb"
+  },
+  "morgon | --frame (solid)": {
+   "body": "#ffffff",
+   "desktop_p05": "#ffffff",
+   "desktop_p50": "#ffffff",
+   "desktop_p95": "#ffffff",
+   "mobile_p05": "#ffffff",
+   "mobile_p50": "#ffffff",
+   "mobile_p95": "#ffffff"
+  },
+  "morgon | --btn-grad start (solid)": {
+   "body": "#6d4fe0",
+   "desktop_p05": "#6d4fe0",
+   "desktop_p50": "#6d4fe0",
+   "desktop_p95": "#6d4fe0",
+   "mobile_p05": "#6d4fe0",
+   "mobile_p50": "#6d4fe0",
+   "mobile_p95": "#6d4fe0"
+  },
+  "morgon | --btn-grad end (solid)": {
+   "body": "#5b3fc7",
+   "desktop_p05": "#5b3fc7",
+   "desktop_p50": "#5b3fc7",
+   "desktop_p95": "#5b3fc7",
+   "mobile_p05": "#5b3fc7",
+   "mobile_p50": "#5b3fc7",
+   "mobile_p95": "#5b3fc7"
+  },
+  "morgon | --accent (solid, e.g. active SV/EN)": {
+   "body": "#6d4fe0",
+   "desktop_p05": "#6d4fe0",
+   "desktop_p50": "#6d4fe0",
+   "desktop_p95": "#6d4fe0",
+   "mobile_p05": "#6d4fe0",
+   "mobile_p50": "#6d4fe0",
+   "mobile_p95": "#6d4fe0"
+  },
+  "morgon | --gold #f2b22e (skip-link, solid)": {
+   "body": "#f2b22e",
+   "desktop_p05": "#f2b22e",
+   "desktop_p50": "#f2b22e",
+   "desktop_p95": "#f2b22e",
+   "mobile_p05": "#f2b22e",
+   "mobile_p50": "#f2b22e",
+   "mobile_p95": "#f2b22e"
+  }
+ }
+}

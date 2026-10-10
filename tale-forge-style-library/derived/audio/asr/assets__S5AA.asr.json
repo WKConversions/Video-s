@@ -1,0 +1,629 @@
+{
+ "note": "MACHINE TRANSCRIPT (faster-whisper 'medium', int8, CPU, beam 5, language forced from file name). Not a site asset; may contain recognition errors. For sample-book beats the authoritative text is beats[].prose in source/sample-book.iris-och-den-sparade-platsen.json.",
+ "source_audio": "assets/share/iris-sparade-platsen/assets/S5AA.mp3",
+ "model": "Systran/faster-whisper-medium",
+ "language": "sv",
+ "duration_s": 62.28,
+ "text": "Iris lät Mosa rita månen. Hon sköt silverpennan över bordet tills den låg framför tassarna och pekade på den öppna platsen ovanför stigarna. Mosa tog pennan med båda tassarna. Hallstuken släpade genom mossan medan han ritade en rund måne. Iris höll kartan stilla, utan att täcka träden eller platsen bredvid dem. Amina tittade på den tomma platsen där fågen kunde ha varit. Hon knackade en gång mot bordet och drog sedan fingret längs sina träd. Mosa slöt månens ring. Silvermånen blinkade till fast ingen rörde pappret. Iris rätade på ryggen. Hon hade inte ryckt åt sig pennan. Kartan bar Mosas mån och någon silverfågel fanns inte där.",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 3.36,
+   "text": "Iris lät Mosa rita månen.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 0.0,
+     "e": 1.0
+    },
+    {
+     "w": " lät",
+     "s": 1.0,
+     "e": 1.4
+    },
+    {
+     "w": " Mosa",
+     "s": 1.4,
+     "e": 1.96
+    },
+    {
+     "w": " rita",
+     "s": 1.96,
+     "e": 2.6
+    },
+    {
+     "w": " månen.",
+     "s": 2.6,
+     "e": 3.36
+    }
+   ]
+  },
+  {
+   "start": 3.9,
+   "end": 8.52,
+   "text": "Hon sköt silverpennan över bordet tills den låg framför tassarna",
+   "words": [
+    {
+     "w": " Hon",
+     "s": 3.9,
+     "e": 4.12
+    },
+    {
+     "w": " sköt",
+     "s": 4.12,
+     "e": 4.6
+    },
+    {
+     "w": " silverpennan",
+     "s": 4.6,
+     "e": 5.68
+    },
+    {
+     "w": " över",
+     "s": 5.68,
+     "e": 5.94
+    },
+    {
+     "w": " bordet",
+     "s": 5.94,
+     "e": 6.78
+    },
+    {
+     "w": " tills",
+     "s": 6.78,
+     "e": 6.94
+    },
+    {
+     "w": " den",
+     "s": 6.94,
+     "e": 7.1
+    },
+    {
+     "w": " låg",
+     "s": 7.1,
+     "e": 7.46
+    },
+    {
+     "w": " framför",
+     "s": 7.46,
+     "e": 7.8
+    },
+    {
+     "w": " tassarna",
+     "s": 7.8,
+     "e": 8.52
+    }
+   ]
+  },
+  {
+   "start": 8.52,
+   "end": 12.34,
+   "text": "och pekade på den öppna platsen ovanför stigarna.",
+   "words": [
+    {
+     "w": " och",
+     "s": 8.52,
+     "e": 9.08
+    },
+    {
+     "w": " pekade",
+     "s": 9.08,
+     "e": 9.7
+    },
+    {
+     "w": " på",
+     "s": 9.7,
+     "e": 9.86
+    },
+    {
+     "w": " den",
+     "s": 9.86,
+     "e": 10.0
+    },
+    {
+     "w": " öppna",
+     "s": 10.0,
+     "e": 10.56
+    },
+    {
+     "w": " platsen",
+     "s": 10.56,
+     "e": 11.12
+    },
+    {
+     "w": " ovanför",
+     "s": 11.12,
+     "e": 11.6
+    },
+    {
+     "w": " stigarna.",
+     "s": 11.6,
+     "e": 12.34
+    }
+   ]
+  },
+  {
+   "start": 13.6,
+   "end": 16.5,
+   "text": "Mosa tog pennan med båda tassarna.",
+   "words": [
+    {
+     "w": " Mosa",
+     "s": 13.6,
+     "e": 13.98
+    },
+    {
+     "w": " tog",
+     "s": 13.98,
+     "e": 14.32
+    },
+    {
+     "w": " pennan",
+     "s": 14.32,
+     "e": 14.78
+    },
+    {
+     "w": " med",
+     "s": 14.78,
+     "e": 15.04
+    },
+    {
+     "w": " båda",
+     "s": 15.04,
+     "e": 15.6
+    },
+    {
+     "w": " tassarna.",
+     "s": 15.6,
+     "e": 16.5
+    }
+   ]
+  },
+  {
+   "start": 17.0,
+   "end": 22.24,
+   "text": "Hallstuken släpade genom mossan medan han ritade en rund måne.",
+   "words": [
+    {
+     "w": " Hallstuken",
+     "s": 17.0,
+     "e": 17.88
+    },
+    {
+     "w": " släpade",
+     "s": 17.88,
+     "e": 18.62
+    },
+    {
+     "w": " genom",
+     "s": 18.62,
+     "e": 18.9
+    },
+    {
+     "w": " mossan",
+     "s": 18.9,
+     "e": 19.74
+    },
+    {
+     "w": " medan",
+     "s": 19.74,
+     "e": 20.0
+    },
+    {
+     "w": " han",
+     "s": 20.0,
+     "e": 20.18
+    },
+    {
+     "w": " ritade",
+     "s": 20.18,
+     "e": 20.7
+    },
+    {
+     "w": " en",
+     "s": 20.7,
+     "e": 21.0
+    },
+    {
+     "w": " rund",
+     "s": 21.0,
+     "e": 21.5
+    },
+    {
+     "w": " måne.",
+     "s": 21.5,
+     "e": 22.24
+    }
+   ]
+  },
+  {
+   "start": 23.32,
+   "end": 28.7,
+   "text": "Iris höll kartan stilla, utan att täcka träden eller platsen bredvid dem.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 23.32,
+     "e": 23.68
+    },
+    {
+     "w": " höll",
+     "s": 23.68,
+     "e": 23.92
+    },
+    {
+     "w": " kartan",
+     "s": 23.92,
+     "e": 24.52
+    },
+    {
+     "w": " stilla,",
+     "s": 24.52,
+     "e": 25.34
+    },
+    {
+     "w": " utan",
+     "s": 25.52,
+     "e": 25.82
+    },
+    {
+     "w": " att",
+     "s": 25.82,
+     "e": 26.08
+    },
+    {
+     "w": " täcka",
+     "s": 26.08,
+     "e": 26.38
+    },
+    {
+     "w": " träden",
+     "s": 26.38,
+     "e": 27.12
+    },
+    {
+     "w": " eller",
+     "s": 27.12,
+     "e": 27.42
+    },
+    {
+     "w": " platsen",
+     "s": 27.42,
+     "e": 28.0
+    },
+    {
+     "w": " bredvid",
+     "s": 28.0,
+     "e": 28.4
+    },
+    {
+     "w": " dem.",
+     "s": 28.4,
+     "e": 28.7
+    }
+   ]
+  },
+  {
+   "start": 30.12,
+   "end": 35.38,
+   "text": "Amina tittade på den tomma platsen där fågen kunde ha varit.",
+   "words": [
+    {
+     "w": " Amina",
+     "s": 30.12,
+     "e": 31.04
+    },
+    {
+     "w": " tittade",
+     "s": 31.04,
+     "e": 31.64
+    },
+    {
+     "w": " på",
+     "s": 31.64,
+     "e": 31.8
+    },
+    {
+     "w": " den",
+     "s": 31.8,
+     "e": 32.04
+    },
+    {
+     "w": " tomma",
+     "s": 32.04,
+     "e": 32.58
+    },
+    {
+     "w": " platsen",
+     "s": 32.58,
+     "e": 33.32
+    },
+    {
+     "w": " där",
+     "s": 33.32,
+     "e": 33.68
+    },
+    {
+     "w": " fågen",
+     "s": 33.68,
+     "e": 34.16
+    },
+    {
+     "w": " kunde",
+     "s": 34.16,
+     "e": 34.64
+    },
+    {
+     "w": " ha",
+     "s": 34.64,
+     "e": 34.92
+    },
+    {
+     "w": " varit.",
+     "s": 34.92,
+     "e": 35.38
+    }
+   ]
+  },
+  {
+   "start": 36.16,
+   "end": 41.98,
+   "text": "Hon knackade en gång mot bordet och drog sedan fingret längs sina träd.",
+   "words": [
+    {
+     "w": " Hon",
+     "s": 36.16,
+     "e": 36.4
+    },
+    {
+     "w": " knackade",
+     "s": 36.4,
+     "e": 37.04
+    },
+    {
+     "w": " en",
+     "s": 37.04,
+     "e": 37.42
+    },
+    {
+     "w": " gång",
+     "s": 37.42,
+     "e": 37.56
+    },
+    {
+     "w": " mot",
+     "s": 37.56,
+     "e": 37.82
+    },
+    {
+     "w": " bordet",
+     "s": 37.82,
+     "e": 38.62
+    },
+    {
+     "w": " och",
+     "s": 38.62,
+     "e": 38.96
+    },
+    {
+     "w": " drog",
+     "s": 38.96,
+     "e": 39.34
+    },
+    {
+     "w": " sedan",
+     "s": 39.34,
+     "e": 39.64
+    },
+    {
+     "w": " fingret",
+     "s": 39.64,
+     "e": 40.18
+    },
+    {
+     "w": " längs",
+     "s": 40.18,
+     "e": 40.52
+    },
+    {
+     "w": " sina",
+     "s": 40.52,
+     "e": 40.78
+    },
+    {
+     "w": " träd.",
+     "s": 40.78,
+     "e": 41.98
+    }
+   ]
+  },
+  {
+   "start": 42.9,
+   "end": 45.18,
+   "text": "Mosa slöt månens ring.",
+   "words": [
+    {
+     "w": " Mosa",
+     "s": 42.9,
+     "e": 43.42
+    },
+    {
+     "w": " slöt",
+     "s": 43.42,
+     "e": 44.04
+    },
+    {
+     "w": " månens",
+     "s": 44.04,
+     "e": 44.74
+    },
+    {
+     "w": " ring.",
+     "s": 44.74,
+     "e": 45.18
+    }
+   ]
+  },
+  {
+   "start": 46.06,
+   "end": 50.06,
+   "text": "Silvermånen blinkade till fast ingen rörde pappret.",
+   "words": [
+    {
+     "w": " Silvermånen",
+     "s": 46.06,
+     "e": 46.94
+    },
+    {
+     "w": " blinkade",
+     "s": 46.94,
+     "e": 47.64
+    },
+    {
+     "w": " till",
+     "s": 47.64,
+     "e": 48.08
+    },
+    {
+     "w": " fast",
+     "s": 48.08,
+     "e": 48.46
+    },
+    {
+     "w": " ingen",
+     "s": 48.46,
+     "e": 48.92
+    },
+    {
+     "w": " rörde",
+     "s": 48.92,
+     "e": 49.46
+    },
+    {
+     "w": " pappret.",
+     "s": 49.46,
+     "e": 50.06
+    }
+   ]
+  },
+  {
+   "start": 51.3,
+   "end": 55.82,
+   "text": "Iris rätade på ryggen. Hon hade inte ryckt åt sig pennan.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 51.3,
+     "e": 51.62
+    },
+    {
+     "w": " rätade",
+     "s": 51.62,
+     "e": 52.3
+    },
+    {
+     "w": " på",
+     "s": 52.3,
+     "e": 52.5
+    },
+    {
+     "w": " ryggen.",
+     "s": 52.5,
+     "e": 53.36
+    },
+    {
+     "w": " Hon",
+     "s": 53.52,
+     "e": 53.66
+    },
+    {
+     "w": " hade",
+     "s": 53.66,
+     "e": 53.82
+    },
+    {
+     "w": " inte",
+     "s": 53.82,
+     "e": 54.16
+    },
+    {
+     "w": " ryckt",
+     "s": 54.16,
+     "e": 54.44
+    },
+    {
+     "w": " åt",
+     "s": 54.44,
+     "e": 54.78
+    },
+    {
+     "w": " sig",
+     "s": 54.78,
+     "e": 54.94
+    },
+    {
+     "w": " pennan.",
+     "s": 54.94,
+     "e": 55.82
+    }
+   ]
+  },
+  {
+   "start": 55.82,
+   "end": 61.92,
+   "text": "Kartan bar Mosas mån och någon silverfågel fanns inte där.",
+   "words": [
+    {
+     "w": " Kartan",
+     "s": 55.82,
+     "e": 57.06
+    },
+    {
+     "w": " bar",
+     "s": 57.06,
+     "e": 57.46
+    },
+    {
+     "w": " Mosas",
+     "s": 57.46,
+     "e": 57.98
+    },
+    {
+     "w": " mån",
+     "s": 57.98,
+     "e": 58.92
+    },
+    {
+     "w": " och",
+     "s": 58.92,
+     "e": 59.24
+    },
+    {
+     "w": " någon",
+     "s": 59.24,
+     "e": 59.46
+    },
+    {
+     "w": " silverfågel",
+     "s": 59.46,
+     "e": 60.58
+    },
+    {
+     "w": " fanns",
+     "s": 60.58,
+     "e": 61.12
+    },
+    {
+     "w": " inte",
+     "s": 61.12,
+     "e": 61.5
+    },
+    {
+     "w": " där.",
+     "s": 61.5,
+     "e": 61.92
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,139 @@
+{
+ "note": "MACHINE TRANSCRIPT (faster-whisper 'medium', int8, CPU, beam 5, language forced from file name). Not a site asset; may contain recognition errors. For sample-book beats the authoritative text is beats[].prose in source/sample-book.iris-och-den-sparade-platsen.json.",
+ "source_audio": "derived/audio/fetched/voices/female-en.mp3",
+ "model": "Systran/faster-whisper-medium",
+ "language": "en",
+ "duration_s": 9.16,
+ "text": "Hello there! I have a brand new story just for you, and I cannot wait to begin. Shall we see where it goes?",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 6.62,
+   "text": "Hello there! I have a brand new story just for you, and I cannot wait to begin.",
+   "words": [
+    {
+     "w": " Hello",
+     "s": 0.0,
+     "e": 0.76
+    },
+    {
+     "w": " there!",
+     "s": 0.76,
+     "e": 1.32
+    },
+    {
+     "w": " I",
+     "s": 1.8,
+     "e": 1.96
+    },
+    {
+     "w": " have",
+     "s": 1.96,
+     "e": 2.16
+    },
+    {
+     "w": " a",
+     "s": 2.16,
+     "e": 2.46
+    },
+    {
+     "w": " brand",
+     "s": 2.46,
+     "e": 2.88
+    },
+    {
+     "w": " new",
+     "s": 2.88,
+     "e": 3.22
+    },
+    {
+     "w": " story",
+     "s": 3.22,
+     "e": 3.62
+    },
+    {
+     "w": " just",
+     "s": 3.62,
+     "e": 4.16
+    },
+    {
+     "w": " for",
+     "s": 4.16,
+     "e": 4.42
+    },
+    {
+     "w": " you,",
+     "s": 4.42,
+     "e": 4.72
+    },
+    {
+     "w": " and",
+     "s": 5.08,
+     "e": 5.16
+    },
+    {
+     "w": " I",
+     "s": 5.16,
+     "e": 5.42
+    },
+    {
+     "w": " cannot",
+     "s": 5.42,
+     "e": 5.7
+    },
+    {
+     "w": " wait",
+     "s": 5.7,
+     "e": 6.04
+    },
+    {
+     "w": " to",
+     "s": 6.04,
+     "e": 6.26
+    },
+    {
+     "w": " begin.",
+     "s": 6.26,
+     "e": 6.62
+    }
+   ]
+  },
+  {
+   "start": 7.38,
+   "end": 8.74,
+   "text": "Shall we see where it goes?",
+   "words": [
+    {
+     "w": " Shall",
+     "s": 7.38,
+     "e": 7.54
+    },
+    {
+     "w": " we",
+     "s": 7.54,
+     "e": 7.82
+    },
+    {
+     "w": " see",
+     "s": 7.82,
+     "e": 8.02
+    },
+    {
+     "w": " where",
+     "s": 8.02,
+     "e": 8.22
+    },
+    {
+     "w": " it",
+     "s": 8.22,
+     "e": 8.32
+    },
+    {
+     "w": " goes?",
+     "s": 8.32,
+     "e": 8.74
+    }
+   ]
+  }
+ ]
+}

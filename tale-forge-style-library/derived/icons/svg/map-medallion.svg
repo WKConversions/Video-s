@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-52 -52 104 120" width="104" height="120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-58 -58 116 132" width="116" height="132">
   <title>Map: ending medallion with number chip</title>
   <!-- Tale Forge endings-map part. Ending node: 84 px circular crop of the ending illustration, a gradient ring r 44 (gold -&gt; violet), a 22x18 pill with the ending number. Source: source/js/3d9nxlx1n5pdy.js@9744 (medallionImageR 42, medallionRingR 44, numChipY = y+50); assets/landing/iris/ending-1.webp. CSS: source/css/3q17cp_jgfwol.pretty.css:2977-3004 (drop-shadow 0 0 18px --map-glow; ring 2px, 3px + scale 1.05 when active; dimmed .55; chip --gold-chip-bg; number 11px 700 --gold-chip-ink). Tokens below are the Natt values; swap in TOKENS from the Morgon theme to re-theme. -->
   <style>

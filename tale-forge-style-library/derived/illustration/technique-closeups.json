@@ -1,0 +1,92 @@
+[
+ {
+  "source": "assets/share/iris-sparade-platsen/assets/cover.webp",
+  "x": 225,
+  "y": 261,
+  "w": 300,
+  "h": 300,
+  "label": "cover \u2014 hood, curls",
+  "family": "storybook"
+ },
+ {
+  "source": "assets/share/iris-sparade-platsen/assets/S3B.webp",
+  "x": 250,
+  "y": 30,
+  "w": 300,
+  "h": 300,
+  "label": "S3B \u2014 curls, pencil strands",
+  "family": "storybook"
+ },
+ {
+  "source": "assets/share/iris-sparade-platsen/assets/S5BA.webp",
+  "x": 645,
+  "y": 543,
+  "w": 300,
+  "h": 300,
+  "label": "S5BA \u2014 silver star on paper",
+  "family": "storybook"
+ },
+ {
+  "source": "assets/share/iris-sparade-platsen/assets/S4A.webp",
+  "x": 440,
+  "y": 420,
+  "w": 300,
+  "h": 300,
+  "label": "S4A (pale) \u2014 moss map, trees",
+  "family": "storybook"
+ },
+ {
+  "source": "assets/landing/iris/hero-portrait.webp",
+  "x": 150,
+  "y": 60,
+  "w": 300,
+  "h": 300,
+  "label": "hero-portrait \u2014 face",
+  "family": "storybook vignette"
+ },
+ {
+  "source": "assets/assets/cover-tornet.webp",
+  "x": 210,
+  "y": 480,
+  "w": 300,
+  "h": 300,
+  "label": "cover-tornet \u2014 ink line + wash",
+  "family": "Alva ink-and-wash"
+ },
+ {
+  "source": "assets/assets/nebula-hero.webp",
+  "x": 650,
+  "y": 330,
+  "w": 300,
+  "h": 300,
+  "label": "nebula-hero \u2014 astronaut",
+  "family": "cinematic backdrop"
+ },
+ {
+  "source": "assets/landing/cards/pick-1.webp",
+  "x": 60,
+  "y": 60,
+  "w": 300,
+  "h": 300,
+  "label": "pick-1 \u2014 empty lantern hook",
+  "family": "painterly card"
+ },
+ {
+  "source": "assets/assets/morgon-aurora-desktop.webp",
+  "x": 2250,
+  "y": 900,
+  "w": 300,
+  "h": 300,
+  "label": "morgon-aurora \u2014 wash edge, sprigs",
+  "family": "atmospheric wash"
+ },
+ {
+  "source": "assets/landing/cover-next-book.webp",
+  "x": 0,
+  "y": 400,
+  "w": 300,
+  "h": 300,
+  "label": "cover-next-book \u2014 deckle, spine",
+  "family": "atmospheric wash"
+ }
+]

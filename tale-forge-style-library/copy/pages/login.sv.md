@@ -108,7 +108,7 @@ After pressing the eye button in the password field.
 ### State: `login-recovery`
 
 After pressing "Glömt lösenordet?/Forgot password?": the reset form.
-Screenshot: [../states/login-recovery__sv.png](../states/login-recovery__sv.png)
+Screenshot: [../states/login-recovery__sv.webp](../states/login-recovery__sv.webp)
 
 - `h1.page-title` — Återställ lösenordet
 - `p.lede` — Ange e-postadressen till ditt konto så skickar vi en säker återställningslänk.

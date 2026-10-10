@@ -1,0 +1,1062 @@
+{
+ "title": "Tale Forge content taxonomy (story dimension)",
+ "note": "Every label is verbatim from the cited source. Swedish (sv) and English (en) as shipped. \"excerpt\" points to a prettier-formatted verbatim copy of the Turbopack module in this library. Values marked \"observed\" come from the sample book or the live server HTML, not from an enumeration in code.",
+ "ageGroups": {
+  "source": {
+   "chunk": "source/js/2x2s34sgoij7z.js",
+   "module": "32123",
+   "excerpt": "derived/story/js-excerpts/age-groups.2x2s34sgoij7z.m32123.pretty.js"
+  },
+  "values": [
+   {
+    "value": "4-5",
+    "band": "A",
+    "sv": "4 till 5 år",
+    "en": "4 to 5 years"
+   },
+   {
+    "value": "6-7",
+    "band": "B",
+    "sv": "6 till 7 år",
+    "en": "6 to 7 years"
+   },
+   {
+    "value": "8-9",
+    "band": "C",
+    "sv": "8 till 9 år",
+    "en": "8 to 9 years"
+   }
+  ],
+  "defaultBand": {
+   "value": "B",
+   "source": {
+    "chunk": "source/js/390j9gbq0u9ce.js",
+    "module": "33570",
+    "excerpt": "derived/story/js-excerpts/start-draft.390j9gbq0u9ce.m33570.pretty.js"
+   },
+   "code": "return { ageBand: \"B\", currentScreen: \"s0\" };"
+  },
+  "sampleBookBand": {
+   "value": "B",
+   "source": "source/sample-book.iris-och-den-sparade-platsen.json#band (spec.child.ageBand = \"B\"; hero look \"sjuårig flicka\" = seven-year-old girl)"
+  }
+ },
+ "registers": {
+  "source": {
+   "chunk": "source/js/2j_-r8q4tgdka.js",
+   "module": "16335",
+   "excerpt": "derived/story/js-excerpts/assemble-cards.2j_-r8q4tgdka.m16335.pretty.js"
+  },
+  "order": [
+   "cozy",
+   "adventure",
+   "silly",
+   "wonder"
+  ],
+  "values": [
+   {
+    "id": "cozy",
+    "title": {
+     "sv": "Ett mysigt äventyr",
+     "en": "A cozy adventure"
+    },
+    "invitation": {
+     "sv": "Nästa gång, ett lugnt och mysigt äventyr nära hemma.",
+     "en": "Next time, a quiet, cozy adventure close to home."
+    },
+    "whyLine": {
+     "sv": "Samma hjälte, ny stämning: väljer ni det här blir nästa bok stilla och trygg.",
+     "en": "Same hero, new mood: pick this and the next book turns calm and snug."
+    },
+    "doorLabel": "godnatt"
+   },
+   {
+    "id": "adventure",
+    "title": {
+     "sv": "Ett stort äventyr",
+     "en": "A big adventure"
+    },
+    "invitation": {
+     "sv": "Nästa gång, ett större äventyr ute i världen.",
+     "en": "Next time, a bigger adventure out in the world."
+    },
+    "whyLine": {
+     "sv": "Samma hjälte, ny stämning: väljer ni det här blir nästa bok modig och vild.",
+     "en": "Same hero, new mood: pick this and the next book turns bold and wild."
+    },
+    "doorLabel": "aventyr"
+   },
+   {
+    "id": "silly",
+    "title": {
+     "sv": "Ett larvigt äventyr",
+     "en": "A silly adventure"
+    },
+    "invitation": {
+     "sv": "Nästa gång, ett larvigt äventyr att skratta åt.",
+     "en": "Next time, a silly, laugh-out-loud adventure."
+    },
+    "whyLine": {
+     "sv": "Samma hjälte, ny stämning: väljer ni det här blir nästa bok tokig och full av fniss.",
+     "en": "Same hero, new mood: pick this and the next book turns silly and full of giggles."
+    },
+    "doorLabel": "godnatt"
+   },
+   {
+    "id": "wonder",
+    "title": {
+     "sv": "Ett underbart äventyr",
+     "en": "A wonder-filled adventure"
+    },
+    "invitation": {
+     "sv": "Nästa gång, ett äventyr fullt av under och magi.",
+     "en": "Next time, an adventure full of wonder and magic."
+    },
+    "whyLine": {
+     "sv": "Samma hjälte, ny stämning: väljer ni det här fylls nästa bok av stilla magi.",
+     "en": "Same hero, new mood: pick this and the next book fills with quiet magic."
+    },
+    "doorLabel": "aventyr"
+   }
+  ],
+  "sampleBookRegister": "wonder (spec.register)"
+ },
+ "doorLabels": {
+  "source": {
+   "chunk": "source/js/2j_-r8q4tgdka.js",
+   "module": "83876",
+   "excerpt": "derived/story/js-excerpts/doors-recipe-worldband.2j_-r8q4tgdka.m83876.pretty.js"
+  },
+  "mapping": "competency card -> vanskap; register adventure|wonder -> aventyr; register cozy|silly -> godnatt; other register card -> aventyr; else godnatt",
+  "values": [
+   {
+    "id": "godnatt",
+    "sv": "Godnatt",
+    "en": "Bedtime"
+   },
+   {
+    "id": "aventyr",
+    "sv": "Äventyr",
+    "en": "Adventure"
+   },
+   {
+    "id": "vanskap",
+    "sv": "Vänskap",
+    "en": "Friendship"
+   }
+  ],
+  "pickButton": {
+   "sv": "Välj den här",
+   "en": "Pick this one"
+  },
+  "gridHeading": {
+   "sv": "Välj kvällens äventyr",
+   "en": "Choose tonight's adventure"
+  }
+ },
+ "cardKinds": {
+  "source": {
+   "chunk": "source/js/2j_-r8q4tgdka.js",
+   "module": "16335",
+   "excerpt": "derived/story/js-excerpts/assemble-cards.2j_-r8q4tgdka.m16335.pretty.js"
+  },
+  "values": [
+   {
+    "kind": "ember",
+    "title": {
+     "sv": "En saga som spinner vidare",
+     "en": "A story that carries on"
+    },
+    "role": "continues a thread (ember) from the last book; highlighted"
+   },
+   {
+    "kind": "register",
+    "title": "one of registers[].title",
+    "role": "same hero, new mood"
+   },
+   {
+    "kind": "competency",
+    "title": {
+     "sv": "En saga steg längre",
+     "en": "A story one step further"
+    },
+    "invitation": {
+     "sv": "Nästa saga smyger in något nytt att öva, mitt i äventyret.",
+     "en": "The next story tucks something new to practice inside the adventure."
+    },
+    "role": "next social-emotional skill step"
+   }
+  ],
+  "emberInvitationTemplate": {
+   "sv": "Ur er förra saga: \"${hook}\"",
+   "en": "From your last story: \"${hook}\""
+  },
+  "emberFallbackInvitation": {
+   "sv": "En tråd från er förra saga kan bli nästa bok.",
+   "en": "A thread from your last story could become the next book."
+  },
+  "competencyWhyLineFirst": {
+   "sv": "Ett första steg${ för NAME}, sparat till nästa bok.",
+   "en": "A first step${ for NAME}, saved for the next book."
+  },
+  "competencyWhyLineLater": {
+   "sv": "Nästa steg${ för NAME}, valt för att bygga vidare på sagan.",
+   "en": "The next step${ for NAME}, chosen to build on the story so far."
+  },
+  "cardsShown": 3,
+  "note": "assembleCards() always returns 3 cards: [ember?, register, competency] or [register, register, competency]; register rotates by shelf length modulo 4."
+ },
+ "firstRunAdventures": {
+  "source": {
+   "chunk": "source/js/0ad0wel9cyv30.js",
+   "module": "9181",
+   "excerpt": "derived/story/js-excerpts/start-flow.0ad0wel9cyv30.m9181.pretty.js"
+  },
+  "values": [
+   {
+    "id": "first-run-ember",
+    "kind": "ember",
+    "register": "cozy",
+    "premiseId": "lost-lantern-home-lanes",
+    "domainId": "sel.self-regulation",
+    "title": {
+     "sv": "Den försvunna lyktan",
+     "en": "The Lost Lantern"
+    },
+    "invitation": {
+     "sv": "En godnattsaga där kvällens ljus behöver hittas igen.",
+     "en": "A bedtime story where tonight's light needs finding again."
+    },
+    "whyLine": {
+     "sv": "En mjuk start, vald för er allra första bok.",
+     "en": "A gentle start, chosen for your very first book."
+    },
+    "doorShown": "GODNATT",
+    "art": "/cards/generated/lost-lantern-v1.webp (not harvested); same scene as assets/landing/cards/pick-1.webp"
+   },
+   {
+    "id": "first-run-register",
+    "kind": "register",
+    "register": "adventure",
+    "premiseId": "tower-in-the-clouds-stair",
+    "domainId": "sel.self-regulation",
+    "title": {
+     "sv": "Tornet i molnen",
+     "en": "The Tower in the Clouds"
+    },
+    "invitation": {
+     "sv": "Ett större äventyr högt uppe bland molnen.",
+     "en": "A bigger adventure high up among the clouds."
+    },
+    "whyLine": {
+     "sv": "För kvällar när modet vill växa.",
+     "en": "For evenings when courage wants to grow."
+    },
+    "doorShown": "ÄVENTYR",
+    "art": "/cards/generated/tower-clouds-v1.webp (not harvested); same scene as assets/landing/cards/pick-3.webp"
+   },
+   {
+    "id": "first-run-competency",
+    "kind": "competency",
+    "premiseId": "starry-night-hilltop-meadow",
+    "domainId": "sel.self-regulation",
+    "title": {
+     "sv": "Stjärnnatten",
+     "en": "The Starry Night"
+    },
+    "invitation": {
+     "sv": "En saga om vänskap under natthimlen.",
+     "en": "A story about friendship under the night sky."
+    },
+    "whyLine": {
+     "sv": "Ett första steg, sparat till nästa bok.",
+     "en": "A first step, saved for the next book."
+    },
+    "doorShown": "VÄNSKAP",
+    "art": "/cards/generated/starry-friendship-v1.webp (not harvested); same scene as assets/landing/cards/pick-2.webp"
+   }
+  ],
+  "screenshot": "screenshots/components/app/start-s6-door-grid__natt__desktop.webp"
+ },
+ "surpriseUs": {
+  "source": {
+   "chunk": "source/js/2j_-r8q4tgdka.js",
+   "module": "83876",
+   "excerpt": "derived/story/js-excerpts/doors-recipe-worldband.2j_-r8q4tgdka.m83876.pretty.js"
+  },
+  "sv": {
+   "cap": "Överraska",
+   "title": "Överraska oss",
+   "bodyLead": "Vi väljer äventyr, bildstil och röst utifrån",
+   "bodyTail": "ålder.",
+   "button": "Överraska oss"
+  },
+  "en": {
+   "cap": "Surprise",
+   "title": "Surprise us",
+   "bodyLead": "We pick the adventure, art style and voice for",
+   "bodyTail": "age.",
+   "button": "Surprise us"
+  },
+  "renderedExample": "sv rendered with genitive(\"Iris\") -> \"Vi väljer äventyr, bildstil och röst utifrån Iris ålder.\" (screenshots/components/app/start-s6-door-grid__natt__desktop.webp)",
+  "art": "assets/images/create/surprise-us.webp (fallback glyph \"✦\")",
+  "enqueueBehaviour": "POST /create/enqueue sends no premiseId/register when surprise is picked (start-flow excerpt, s6 handler)",
+  "alwaysAvailable": {
+   "sv": "Ett äventyrsval startar bygget. Överraska oss går alltid att välja.",
+   "en": "Picking an adventure starts the build. Surprise us is always an option."
+  }
+ },
+ "domains": {
+  "observed": [
+   "sel.self-regulation"
+  ],
+  "sources": [
+   "source/sample-book.iris-och-den-sparade-platsen.json#spec.domainId",
+   "derived/story/js-excerpts/start-flow.0ad0wel9cyv30.m9181.pretty.js (all three first-run cards)"
+  ],
+  "note": "No other domainId appears anywhere in the harvested JS (grep \"sel\\.\" over source/js). The prefix \"sel.\" = social-emotional learning.",
+  "sampleBookFills": {
+   "need": "a huge feeling will pass if you can hold steady through it",
+   "rubric": {
+    "preferred": "pause, breathe, go slow, try again gently",
+    "unpreferred": "force it, rush, run away, give up"
+   }
+  }
+ },
+ "starterCompanions": {
+  "source": {
+   "chunk": "source/js/0ad0wel9cyv30.js",
+   "module": "9181",
+   "excerpt": "derived/story/js-excerpts/start-flow.0ad0wel9cyv30.m9181.pretty.js"
+  },
+  "default": {
+   "id": "story",
+   "sv": "Sagan väljer",
+   "en": "The story chooses",
+   "hint": {
+    "sv": "Du behöver inte välja en färdig vän. Sagan hittar någon när det passar.",
+    "en": "You do not need to pick a ready-made friend. The story finds one when it fits."
+   }
+  },
+  "heading": {
+   "sv": "Vem följer med",
+   "en": "Who comes along with"
+  },
+  "values": [
+   {
+    "id": "rufus",
+    "short": "Rufus",
+    "sv": "Rufus räven",
+    "en": "Rufus the fox",
+    "clause": {
+     "sv": "och räven Rufus log",
+     "en": "and Rufus the fox smiled"
+    }
+   },
+   {
+    "id": "luna",
+    "short": "Luna",
+    "sv": "Luna ugglan",
+    "en": "Luna the owl",
+    "clause": {
+     "sv": "och ugglan Luna blinkade långsamt",
+     "en": "and Luna the owl blinked slowly"
+    }
+   },
+   {
+    "id": "bo",
+    "short": "Bo",
+    "sv": "Bo draken",
+    "en": "Bo the dragon",
+    "clause": {
+     "sv": "och draken Bo blåste en liten rökring",
+     "en": "and Bo the dragon blew a small smoke ring"
+    }
+   }
+  ],
+  "sampleBookCompanion": {
+   "spec.companion": "Mossa, en talande skogsmus",
+   "companionMode": "locked"
+  },
+  "landingFriends": {
+   "source": "source/html/home.sv.html / home.en.html",
+   "values": [
+    {
+     "name": "Noah",
+     "sv": "bästa kompisen · med i 2 böcker",
+     "en": "best friend · in 2 books"
+    },
+    {
+     "name": "Sixten",
+     "sv": "fjällräven · följer med i varje bok",
+     "en": "the mountain fox · comes along in every book"
+    }
+   ]
+  }
+ },
+ "keepsakeObjects": {
+  "source": {
+   "chunk": "source/js/0ad0wel9cyv30.js",
+   "module": "9181",
+   "excerpt": "derived/story/js-excerpts/start-flow.0ad0wel9cyv30.m9181.pretty.js"
+  },
+  "heading": {
+   "sv": "Något kärt att ta med?",
+   "en": "Something dear to bring?"
+  },
+  "values": [
+   {
+    "id": "halsduk",
+    "sv": "Röd halsduk",
+    "en": "Red scarf",
+    "clause": {
+     "sv": "drog åt sin röda halsduk",
+     "en": "pulled the red scarf tight"
+    }
+   },
+   {
+    "id": "lykta",
+    "sv": "Gammal lykta",
+    "en": "Old lantern",
+    "clause": {
+     "sv": "höll lyktan högt",
+     "en": "held the lantern high"
+    }
+   },
+   {
+    "id": "svard",
+    "sv": "Träsvärd",
+    "en": "Wooden sword",
+    "clause": {
+     "sv": "lyfte träsvärdet mot stjärnorna",
+     "en": "raised the wooden sword to the stars"
+    }
+   }
+  ],
+  "note": "The default (first) keepsake is halsduk: function I(e) returns w[0] when no id matches."
+ },
+ "heroTraitChips": {
+  "source": "source/html/home.sv.html and source/html/home.en.html (server-rendered landing demo \"Din hjälte\" / \"Your hero\", hero Alva)",
+  "observed": true,
+  "values": [
+   {
+    "sv": "Modig",
+    "en": "Brave",
+    "on": true
+   },
+   {
+    "sv": "Fnissig",
+    "en": "Giggly",
+    "on": true
+   },
+   {
+    "sv": "Djurvän",
+    "en": "Animal lover",
+    "on": true
+   },
+   {
+    "sv": "Nyfiken",
+    "en": "Curious",
+    "on": false
+   },
+   {
+    "sv": "Envis",
+    "en": "Stubborn",
+    "on": false
+   },
+   {
+    "sv": "+ Fler",
+    "en": "+ More",
+    "on": false
+   }
+  ],
+  "genderWord": {
+   "source": "derived/story/js-excerpts/start-flow.0ad0wel9cyv30.m9181.pretty.js",
+   "hint": {
+    "sv": "Vilket ord ska sagan använda?",
+    "en": "Which word should the story use?"
+   },
+   "options": [
+    {
+     "sv": "Han",
+     "en": "He"
+    },
+    {
+     "sv": "Hon",
+     "en": "She"
+    }
+   ]
+  }
+ },
+ "moodLabels": {
+  "source": "source/html/home.sv.html / home.en.html (landing \"Bokhyllan\" / \"The bookshelf\")",
+  "observed": true,
+  "values": [
+   {
+    "book": {
+     "sv": "Alva och fyraljuset i tornet",
+     "en": "Alva and the Fourth Candle in the Tower"
+    },
+    "sv": "Stora känslor",
+    "en": "Big feelings",
+    "cover": "assets/assets/cover-tornet.webp"
+   },
+   {
+    "book": {
+     "sv": "Alva och filten vid elementet",
+     "en": "Alva and the Blanket by the Radiator"
+    },
+    "sv": "Mysigt äventyr",
+    "en": "Cozy adventure",
+    "cover": "assets/assets/cover-filten.webp"
+   }
+  ]
+ },
+ "bookFairKinds": {
+  "source": "derived/illustration/fetched/bokmassan/stories-image-meta.json (live /bokmassan/saga/berattelser, curated fair stories, sv only)",
+  "observed": true,
+  "values": [
+   "Mod och gemenskap",
+   "En bildgåta",
+   "Att förstå varandra",
+   "Att göra det bra igen",
+   "En rolig röra",
+   "Ett stort äventyr",
+   "Ett tokigt äventyr",
+   "Trygghet och mod",
+   "Mod och känslor"
+  ],
+  "shape": "one choice, two endings (pages opening[, middle-a, middle-b], choice, ending-a, ending-b)"
+ },
+ "narratorVoices": {
+  "source": {
+   "chunk": "source/js/390j9gbq0u9ce.js",
+   "module": "99026",
+   "excerpt": "derived/story/js-excerpts/narrator-voices.390j9gbq0u9ce.m99026.pretty.js"
+  },
+  "default": "grandpa",
+  "values": [
+   {
+    "id": "grandpa",
+    "sv": "Morfar Erik",
+    "en": "Grandpa Erik",
+    "descriptionSv": "En varm, vis berättare med en mysig godnattstämma",
+    "descriptionEn": "A warm, wise storyteller with a cozy bedtime voice"
+   },
+   {
+    "id": "female",
+    "sv": "Berättaren Lily",
+    "en": "Storyteller Lily",
+    "descriptionSv": "En livfull, uttrycksfull berättare fylld av förundran",
+    "descriptionEn": "A bright, expressive narrator full of wonder"
+   },
+   {
+    "id": "male",
+    "sv": "Berättaren Marcus",
+    "en": "Narrator Marcus",
+    "descriptionSv": "En trygg, äventyrlig röst för spännande berättelser",
+    "descriptionEn": "A steady, adventurous voice for exciting tales"
+   },
+   {
+    "id": "young",
+    "sv": "Unga Saga",
+    "en": "Young Saga",
+    "descriptionSv": "En entusiastisk ung röst som känns som en kompis",
+    "descriptionEn": "An enthusiastic young voice that feels like a friend"
+   }
+  ],
+  "sampleBook": {
+   "narratorPersona": "grandpa",
+   "ttsProvider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+   "landingVoiceChip": {
+    "sv": "Morfar",
+    "en": "Grandpa Erik"
+   }
+  },
+  "bookFairVoices": [
+   "Brage",
+   "Mira",
+   "Janne",
+   "Johnny",
+   "Sanna"
+  ]
+ },
+ "artStyles": {
+  "source": {
+   "chunk": "source/js/390j9gbq0u9ce.js",
+   "module": "67711",
+   "excerpt": "derived/story/js-excerpts/style-presets.390j9gbq0u9ce.m67711.pretty.js"
+  },
+  "default": "neon",
+  "values": [
+   {
+    "id": "watercolor",
+    "sv": "Mjuk akvarell",
+    "en": "Soft Watercolor",
+    "description": "Warm painted scenes like a feature animation"
+   },
+   {
+    "id": "inkaccent",
+    "sv": "New Yorker-tusch, en accent",
+    "en": "New Yorker ink, one accent",
+    "description": "Bold black ink on white, one pop of color"
+   },
+   {
+    "id": "comic",
+    "sv": "Seriestil",
+    "en": "Comic book",
+    "description": "Punchy inked panels with action energy"
+   },
+   {
+    "id": "crayon",
+    "sv": "Kritteckning",
+    "en": "Crayon, drawn by a kid",
+    "description": "Wobbly wax-crayon charm, taped to the fridge"
+   },
+   {
+    "id": "neon",
+    "sv": "Lysande magi",
+    "en": "Glowing magic",
+    "description": "Glowing neon light on any scene"
+   },
+   {
+    "id": "pixel",
+    "sv": "Retrospel-pixel",
+    "en": "Retro game pixel art",
+    "description": "Chunky 16-bit pixels like a beloved old game"
+   },
+   {
+    "id": "clay",
+    "sv": "Lera-animation",
+    "en": "Claymation",
+    "description": "Stop-motion clay characters with fingerprints and seams"
+   },
+   {
+    "id": "screenprint",
+    "sv": "Vintage screentryck",
+    "en": "Vintage screen-print",
+    "description": "1960s poster colors, bold shapes, print texture"
+   }
+  ],
+  "sampleBookStyleBlock": "Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image."
+ },
+ "languages": {
+  "source": {
+   "chunk": "source/js/0ad0wel9cyv30.js",
+   "module": "9181",
+   "excerpt": "derived/story/js-excerpts/start-flow.0ad0wel9cyv30.m9181.pretty.js"
+  },
+  "values": [
+   {
+    "id": "sv",
+    "label": "Svenska"
+   },
+   {
+    "id": "en",
+    "label": "English"
+   }
+  ],
+  "recipeLabel": {
+   "sv": "svenska",
+   "en": "English"
+  }
+ },
+ "ambientBeds": {
+  "source": {
+   "chunk": "source/js/1pgfdvt65g9p-.js",
+   "module": "77147",
+   "excerpt": "derived/story/js-excerpts/ambient-beds.1pgfdvt65g9p-.m77147.pretty.js"
+  },
+  "values": [
+   {
+    "id": "hearth",
+    "group": "ambience",
+    "sv": "Brasa",
+    "en": "Fireplace",
+    "file": "assets/audio/atmosphere/v1/hearth.mp3"
+   },
+   {
+    "id": "rain",
+    "group": "ambience",
+    "sv": "Fönsterregn",
+    "en": "Window rain",
+    "file": "assets/audio/atmosphere/v1/rain.mp3"
+   },
+   {
+    "id": "forest",
+    "group": "ambience",
+    "sv": "Sagoskogen",
+    "en": "Enchanted forest",
+    "file": "assets/audio/atmosphere/v1/forest.mp3"
+   },
+   {
+    "id": "musicbox",
+    "group": "music",
+    "sv": "Speldosa",
+    "en": "Music box",
+    "file": "assets/audio/atmosphere/v1/musicbox.mp3"
+   },
+   {
+    "id": "harp",
+    "group": "music",
+    "sv": "Månharpa",
+    "en": "Moonlit harp",
+    "file": "assets/audio/atmosphere/v1/harp.mp3"
+   },
+   {
+    "id": "fire",
+    "group": "music",
+    "sv": "Glödljus",
+    "en": "Ember glow",
+    "file": "assets/audio/atmosphere/v1/fire.mp3"
+   }
+  ],
+  "groupLabels": {
+   "ambience": {
+    "sv": "Stämning",
+    "en": "Ambience"
+   },
+   "music": {
+    "sv": "Musik",
+    "en": "Music"
+   }
+  }
+ },
+ "bookShape": {
+  "source": "source/sample-book.iris-och-den-sparade-platsen.json; landing copy in derived/story/js-excerpts/landing-explainer.3d9nxlx1n5pdy.m29416.pretty.js",
+  "slots": 6,
+  "pagesPerReading": 6,
+  "uniqueBeats": 14,
+  "choicePoints": 2,
+  "optionsPerChoice": 2,
+  "endings": 4,
+  "choiceAfterSlots": [
+   2,
+   4
+  ],
+  "choiceKinds": [
+   "path",
+   "ordeal"
+  ],
+  "cover": "2:3 portrait (1024x1536)",
+  "pageImage": "3:2 landscape (1536x1024; S1 and S4A 1264x848)",
+  "landingClaim": {
+   "sv": "Två gånger i varje bok stannar berättelsen: ert barn väljer, och valet ändrar det som händer sedan. På riktigt.",
+   "en": "Twice in every book the story stops: your child chooses, and the choice changes what happens next. For real."
+  },
+  "endingsClaim": {
+   "sv": "Två val ger fyra vägar genom samma bok.",
+   "en": "Two choices make four paths through the same book."
+  },
+  "noPretendChoices": {
+   "sv": "Inga låtsasval. Båda vägarna är skrivna, målade och inlästa.",
+   "en": "No pretend choices. Both paths are written, painted, and narrated."
+  },
+  "mapLabels": {
+   "choice": {
+    "sv": [
+     "Val 1",
+     "Val 2"
+    ],
+    "en": [
+     "Choice 1",
+     "Choice 2"
+    ]
+   },
+   "ending": {
+    "sv": "Slut ${n} av 4, visa vägen dit",
+    "en": "Ending ${n} of 4, show the path there"
+   }
+  },
+  "theEndButton": {
+   "sv": "Slut",
+   "en": "The End"
+  }
+ },
+ "generation": {
+  "waitPhrase": {
+   "source": {
+    "chunk": "source/js/2j_-r8q4tgdka.js",
+    "module": "56020",
+    "excerpt": "derived/story/js-excerpts/wait-phrase.2j_-r8q4tgdka.m56020.pretty.js"
+   },
+   "sv": "några minuter",
+   "en": "a few minutes"
+  },
+  "landingWait": {
+   "sv": "Det tar ungefär tio minuter, och det säger vi hellre ärligt än låtsas att det går på en sekund.",
+   "en": "It takes about ten minutes, and we would rather say that honestly than pretend it takes a second."
+  },
+  "buildSteps": {
+   "source": {
+    "chunk": "source/js/2j_-r8q4tgdka.js",
+    "module": "78128",
+    "excerpt": "derived/story/js-excerpts/job-status.2j_-r8q4tgdka.m78128.pretty.js"
+   },
+   "sv": [
+    "Berättelsen planeras",
+    "Orden skrivs",
+    "Rollerna målas",
+    "Boken görs redo att öppnas"
+   ],
+   "en": [
+    "The story is planned",
+    "The words are written",
+    "The cast is painted",
+    "The book is made ready to open"
+   ]
+  },
+  "rewriting": {
+   "sv": "Vår redaktör skickade tillbaka utkastet, så berättaren skriver ett nytt. Bra böcker behöver en omskrivning ibland.",
+   "en": "Our editor sent the draft back, so the storyteller is writing a fresh one. Good books take a rewrite or two."
+  },
+  "sampleBookEngine": {
+   "engineVersion": "causal-foundry-v1",
+   "textEngine": "causal-foundry-v1",
+   "validation": {
+    "passed": true,
+    "hardFindings": [],
+    "softFindings": [],
+    "judgeNotes": []
+   }
+  }
+ },
+ "worldMemory": {
+  "source": "source/sample-book.iris-och-den-sparade-platsen.json#spec.world; UI copy in derived/story/js-excerpts/doors-recipe-worldband.2j_-r8q4tgdka.m83876.pretty.js and job-status excerpt",
+  "fields": [
+   "child",
+   "keepsakes",
+   "skills",
+   "shelf",
+   "embers",
+   "places",
+   "friends",
+   "cast",
+   "readJourneys",
+   "hero"
+  ],
+  "memoryLead": {
+   "sv": "Världen minns:",
+   "en": "The world remembers:"
+  },
+  "worldTitle": {
+   "sv": "${genitive(name)} sagovärld",
+   "en": "${name}'s story world"
+  },
+  "fallbackTitle": {
+   "sv": "Er sagovärld",
+   "en": "Your storyworld"
+  },
+  "landingStep": {
+   "sv": "Världen minns",
+   "en": "The world remembers"
+  },
+  "landingBody": {
+   "sv": "Nästa bok vet vem hjälten är, vilka vänner som var med och vilka platser ni har varit på. Ni fyller inte en hylla med lösa sagor. Ni bygger en värld.",
+   "en": "The next book knows who the hero is, which friends came along, and the places you have been. You are not filling a shelf with loose stories. You are building a world."
+  },
+  "memoryTag": {
+   "sv": "Sixten minns tornet",
+   "en": "Sixten remembers the tower"
+  },
+  "carryThread": {
+   "sv": "Spara till nästa saga",
+   "en": "Save for the next book"
+  },
+  "ceremonyCarries": {
+   "sv": "Vad ${name} bär med sig",
+   "en": "What ${name} carries forward"
+  },
+  "ceremonyFinished": {
+   "sv": "Läst ända till slutet. Den här boken bor nu i ${genitive(name)} värld.",
+   "en": "Read to the end. This book now lives in ${name}'s world."
+  },
+  "emberHeading": {
+   "sv": "Nästa gång, kanske...",
+   "en": "Next time, maybe..."
+  }
+ },
+ "readerFeedbackTags": {
+  "source": {
+   "chunk": "source/js/36tbz-w9v-p8v.js",
+   "module": "88374",
+   "excerpt": "derived/story/js-excerpts/reader.36tbz-w9v-p8v.m88374.pretty.js"
+  },
+  "question": {
+   "sv": "Skulle er familj välja ett nytt äventyr som det här?",
+   "en": "Would your family choose another adventure like this?"
+  },
+  "values": [
+   {
+    "tag": "confusing",
+    "sv": "Något var otydligt",
+    "en": "Something was unclear"
+   },
+   {
+    "tag": "choices_felt_same",
+    "sv": "Valen kändes för lika",
+    "en": "Choices felt too similar"
+   },
+   {
+    "tag": "wait_too_long",
+    "sv": "Väntan var för lång",
+    "en": "The wait was too long"
+   },
+   {
+    "tag": "not_engaging",
+    "sv": "Fångade inte vårt intresse",
+    "en": "Did not hold our attention"
+   },
+   {
+    "tag": "image_issue",
+    "sv": "Problem med en bild",
+    "en": "Issue with an image"
+   },
+   {
+    "tag": "audio_issue",
+    "sv": "Problem med ljudet",
+    "en": "Issue with the audio"
+   },
+   {
+    "tag": "safety_concern",
+    "sv": "Oro kring trygghet",
+    "en": "Safety concern"
+   },
+   {
+    "tag": "privacy_concern",
+    "sv": "Oro kring integritet",
+    "en": "Privacy concern"
+   },
+   {
+    "tag": "technical_problem",
+    "sv": "Tekniskt problem",
+    "en": "Technical problem"
+   }
+  ]
+ },
+ "moderation": {
+  "source": {
+   "chunk": "source/js/2x2s34sgoij7z.js",
+   "module": "40070",
+   "excerpt": "derived/story/js-excerpts/moderation.2x2s34sgoij7z.m40070.pretty.js"
+  },
+  "categories": [
+   "injection",
+   "blockedWord",
+   "email",
+   "phone",
+   "address",
+   "personnummer"
+  ],
+  "blockedWordMessage": {
+   "sv": "Vi håller sagorna snälla och trygga. Prova gärna andra ord.",
+   "en": "Let's keep our stories kind and safe! Please try different words."
+  }
+ },
+ "onboardingSteps": {
+  "source": {
+   "chunk": "source/js/0ad0wel9cyv30.js",
+   "module": "9181",
+   "excerpt": "derived/story/js-excerpts/start-flow.0ad0wel9cyv30.m9181.pretty.js"
+  },
+  "screens": [
+   "s0",
+   "s1",
+   "s2",
+   "s3",
+   "s4",
+   "s5",
+   "s6",
+   "s7",
+   "s8"
+  ],
+  "titled": [
+   {
+    "screen": "s1",
+    "sv": "Steg 1 av 4 · Hjälten",
+    "en": "Step 1 of 4 · The hero"
+   },
+   {
+    "screen": "s2",
+    "sv": "Steg 2 av 4 · Fotot",
+    "en": "Step 2 of 4 · The photo"
+   },
+   {
+    "screen": "s3",
+    "sv": "Steg 3 av 4 · Sällskapet",
+    "en": "Step 3 of 4 · The company"
+   },
+   {
+    "screen": "s5",
+    "sv": "Steg 4 av 4 · Kontot",
+    "en": "Step 4 of 4 · The account"
+   },
+   {
+    "screen": "s6",
+    "sv": "Sista valet före boken",
+    "en": "The last choice before the book"
+   },
+   {
+    "screen": "s7",
+    "sv": "Boken skapas",
+    "en": "The book is being made"
+   }
+  ]
+ },
+ "landingHowItWorks": {
+  "source": {
+   "chunk": "source/js/3d9nxlx1n5pdy.js",
+   "module": "29416",
+   "excerpt": "derived/story/js-excerpts/landing-explainer.3d9nxlx1n5pdy.m29416.pretty.js"
+  },
+  "steps": [
+   {
+    "n": 1,
+    "sv": "Bygg er hjälte",
+    "en": "Build your hero"
+   },
+   {
+    "n": 2,
+    "sv": "Ta med en vän",
+    "en": "Bring a friend"
+   },
+   {
+    "n": 3,
+    "sv": "Välj kvällens äventyr",
+    "en": "Pick tonight's adventure"
+   },
+   {
+    "n": 4,
+    "sv": "Läs och välj",
+    "en": "Read and choose"
+   },
+   {
+    "n": 5,
+    "sv": "Fyra olika slut",
+    "en": "Four different endings"
+   },
+   {
+    "n": 6,
+    "sv": "Världen minns",
+    "en": "The world remembers"
+   }
+  ]
+ },
+ "plans": {
+  "source": "source/rendered/dom__uppgradera__sv.html / __en.html",
+  "observed": true,
+  "family": {
+   "sv": "3 nya böcker varje månad, oanvända följer med",
+   "en": "3 new books every month, unused roll over"
+  },
+  "children": {
+   "sv": "Plats för upp till 4 barn med Familj och 30 i Skola",
+   "en": "Space for up to 4 children with Family and 30 with School"
+  }
+ },
+ "_verification": {
+  "stringsChecked": 303,
+  "missing": [],
+  "method": "Each sv/en/label/description string searched verbatim in derived/story/js-excerpts, source/js (\\xNN and \\uNNNN unescaped), home HTML, uppgradera DOM, sample-book JSON and bokmassan meta. Template strings containing ${...} are not checked."
+ }
+}

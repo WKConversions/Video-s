@@ -1,0 +1,679 @@
+{
+ "note": "MACHINE TRANSCRIPT (faster-whisper 'medium', int8, CPU, beam 5, language forced from file name). Not a site asset; may contain recognition errors. For sample-book beats the authoritative text is beats[].prose in source/sample-book.iris-och-den-sparade-platsen.json.",
+ "source_audio": "assets/share/iris-sparade-platsen/assets/S2.mp3",
+ "model": "Systran/faster-whisper-medium",
+ "language": "sv",
+ "duration_s": 67.44,
+ "text": "Iris gick in mellan fönsterbänken och mattan och låg det ritpappret på ett lågt bord. Planen för den sparade platsen gällde inte längre. Nu väntade Mossa på mattan medan Amina ville rita med Iris i fönsterljuset. När Iris ritade med någon annan brukade hon börja på ena sidan. Då blev det en riktig plats kvar för den andras idé, inte bara en smal kant. Hon drog fingertoppen genom luften över pappret. Här kunde hennes bild vara. Där kunde någon annans ta vid. – Kom nu, sa Mossa, jag har ju tre krokiga stigar i huvudet! Amina knackade på fönsterbänken. – Ljuset är fint just här! Sagoboken låg redan fram. När ritstunden var slut skulle bibliotekarien öppna den.",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 8.2,
+   "text": "Iris gick in mellan fönsterbänken och mattan och låg det ritpappret på ett lågt bord.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 0.0,
+     "e": 1.14
+    },
+    {
+     "w": " gick",
+     "s": 1.14,
+     "e": 1.44
+    },
+    {
+     "w": " in",
+     "s": 1.44,
+     "e": 1.72
+    },
+    {
+     "w": " mellan",
+     "s": 1.72,
+     "e": 2.16
+    },
+    {
+     "w": " fönsterbänken",
+     "s": 2.16,
+     "e": 3.3
+    },
+    {
+     "w": " och",
+     "s": 3.3,
+     "e": 3.52
+    },
+    {
+     "w": " mattan",
+     "s": 3.52,
+     "e": 4.52
+    },
+    {
+     "w": " och",
+     "s": 4.52,
+     "e": 4.92
+    },
+    {
+     "w": " låg",
+     "s": 4.92,
+     "e": 5.24
+    },
+    {
+     "w": " det",
+     "s": 5.24,
+     "e": 5.54
+    },
+    {
+     "w": " ritpappret",
+     "s": 5.54,
+     "e": 6.48
+    },
+    {
+     "w": " på",
+     "s": 6.48,
+     "e": 6.9
+    },
+    {
+     "w": " ett",
+     "s": 6.9,
+     "e": 7.22
+    },
+    {
+     "w": " lågt",
+     "s": 7.22,
+     "e": 7.7
+    },
+    {
+     "w": " bord.",
+     "s": 7.7,
+     "e": 8.2
+    }
+   ]
+  },
+  {
+   "start": 9.1,
+   "end": 12.0,
+   "text": "Planen för den sparade platsen gällde inte längre.",
+   "words": [
+    {
+     "w": " Planen",
+     "s": 9.1,
+     "e": 9.6
+    },
+    {
+     "w": " för",
+     "s": 9.6,
+     "e": 9.72
+    },
+    {
+     "w": " den",
+     "s": 9.72,
+     "e": 10.08
+    },
+    {
+     "w": " sparade",
+     "s": 10.08,
+     "e": 10.64
+    },
+    {
+     "w": " platsen",
+     "s": 10.64,
+     "e": 11.32
+    },
+    {
+     "w": " gällde",
+     "s": 11.32,
+     "e": 11.7
+    },
+    {
+     "w": " inte",
+     "s": 11.7,
+     "e": 11.96
+    },
+    {
+     "w": " längre.",
+     "s": 11.96,
+     "e": 12.39
+    }
+   ]
+  },
+  {
+   "start": 12.94,
+   "end": 20.24,
+   "text": "Nu väntade Mossa på mattan medan Amina ville rita med Iris i fönsterljuset.",
+   "words": [
+    {
+     "w": " Nu",
+     "s": 12.94,
+     "e": 13.06
+    },
+    {
+     "w": " väntade",
+     "s": 13.06,
+     "e": 13.9
+    },
+    {
+     "w": " Mossa",
+     "s": 13.9,
+     "e": 14.48
+    },
+    {
+     "w": " på",
+     "s": 14.48,
+     "e": 14.82
+    },
+    {
+     "w": " mattan",
+     "s": 14.82,
+     "e": 15.94
+    },
+    {
+     "w": " medan",
+     "s": 15.94,
+     "e": 16.48
+    },
+    {
+     "w": " Amina",
+     "s": 16.48,
+     "e": 17.18
+    },
+    {
+     "w": " ville",
+     "s": 17.18,
+     "e": 17.64
+    },
+    {
+     "w": " rita",
+     "s": 17.64,
+     "e": 18.1
+    },
+    {
+     "w": " med",
+     "s": 18.1,
+     "e": 18.46
+    },
+    {
+     "w": " Iris",
+     "s": 18.46,
+     "e": 18.78
+    },
+    {
+     "w": " i",
+     "s": 18.78,
+     "e": 19.08
+    },
+    {
+     "w": " fönsterljuset.",
+     "s": 19.08,
+     "e": 20.24
+    }
+   ]
+  },
+  {
+   "start": 21.4,
+   "end": 27.16,
+   "text": "När Iris ritade med någon annan brukade hon börja på ena sidan.",
+   "words": [
+    {
+     "w": " När",
+     "s": 21.4,
+     "e": 21.78
+    },
+    {
+     "w": " Iris",
+     "s": 21.78,
+     "e": 22.3
+    },
+    {
+     "w": " ritade",
+     "s": 22.3,
+     "e": 22.82
+    },
+    {
+     "w": " med",
+     "s": 22.82,
+     "e": 22.98
+    },
+    {
+     "w": " någon",
+     "s": 22.98,
+     "e": 23.14
+    },
+    {
+     "w": " annan",
+     "s": 23.14,
+     "e": 24.42
+    },
+    {
+     "w": " brukade",
+     "s": 24.42,
+     "e": 24.82
+    },
+    {
+     "w": " hon",
+     "s": 24.82,
+     "e": 24.94
+    },
+    {
+     "w": " börja",
+     "s": 24.94,
+     "e": 25.3
+    },
+    {
+     "w": " på",
+     "s": 25.3,
+     "e": 25.58
+    },
+    {
+     "w": " ena",
+     "s": 25.58,
+     "e": 26.26
+    },
+    {
+     "w": " sidan.",
+     "s": 26.26,
+     "e": 27.16
+    }
+   ]
+  },
+  {
+   "start": 27.16,
+   "end": 32.92,
+   "text": "Då blev det en riktig plats kvar för den andras idé, inte bara en smal kant.",
+   "words": [
+    {
+     "w": " Då",
+     "s": 27.16,
+     "e": 27.44
+    },
+    {
+     "w": " blev",
+     "s": 27.44,
+     "e": 27.7
+    },
+    {
+     "w": " det",
+     "s": 27.7,
+     "e": 27.86
+    },
+    {
+     "w": " en",
+     "s": 27.86,
+     "e": 28.02
+    },
+    {
+     "w": " riktig",
+     "s": 28.02,
+     "e": 28.6
+    },
+    {
+     "w": " plats",
+     "s": 28.6,
+     "e": 28.96
+    },
+    {
+     "w": " kvar",
+     "s": 28.96,
+     "e": 29.4
+    },
+    {
+     "w": " för",
+     "s": 29.4,
+     "e": 29.64
+    },
+    {
+     "w": " den",
+     "s": 29.64,
+     "e": 29.88
+    },
+    {
+     "w": " andras",
+     "s": 29.88,
+     "e": 30.3
+    },
+    {
+     "w": " idé,",
+     "s": 30.3,
+     "e": 30.68
+    },
+    {
+     "w": " inte",
+     "s": 31.04,
+     "e": 31.32
+    },
+    {
+     "w": " bara",
+     "s": 31.32,
+     "e": 31.6
+    },
+    {
+     "w": " en",
+     "s": 31.6,
+     "e": 31.98
+    },
+    {
+     "w": " smal",
+     "s": 31.98,
+     "e": 32.42
+    },
+    {
+     "w": " kant.",
+     "s": 32.42,
+     "e": 32.92
+    }
+   ]
+  },
+  {
+   "start": 34.0,
+   "end": 37.72,
+   "text": "Hon drog fingertoppen genom luften över pappret.",
+   "words": [
+    {
+     "w": " Hon",
+     "s": 34.0,
+     "e": 34.16
+    },
+    {
+     "w": " drog",
+     "s": 34.16,
+     "e": 34.74
+    },
+    {
+     "w": " fingertoppen",
+     "s": 34.74,
+     "e": 35.74
+    },
+    {
+     "w": " genom",
+     "s": 35.74,
+     "e": 36.02
+    },
+    {
+     "w": " luften",
+     "s": 36.02,
+     "e": 36.7
+    },
+    {
+     "w": " över",
+     "s": 36.7,
+     "e": 37.0
+    },
+    {
+     "w": " pappret.",
+     "s": 37.0,
+     "e": 37.72
+    }
+   ]
+  },
+  {
+   "start": 38.5,
+   "end": 43.52,
+   "text": "Här kunde hennes bild vara. Där kunde någon annans ta vid.",
+   "words": [
+    {
+     "w": " Här",
+     "s": 38.5,
+     "e": 39.0
+    },
+    {
+     "w": " kunde",
+     "s": 39.0,
+     "e": 39.42
+    },
+    {
+     "w": " hennes",
+     "s": 39.42,
+     "e": 40.0
+    },
+    {
+     "w": " bild",
+     "s": 40.0,
+     "e": 40.28
+    },
+    {
+     "w": " vara.",
+     "s": 40.28,
+     "e": 40.66
+    },
+    {
+     "w": " Där",
+     "s": 41.44,
+     "e": 41.9
+    },
+    {
+     "w": " kunde",
+     "s": 41.9,
+     "e": 42.42
+    },
+    {
+     "w": " någon",
+     "s": 42.42,
+     "e": 42.64
+    },
+    {
+     "w": " annans",
+     "s": 42.64,
+     "e": 43.02
+    },
+    {
+     "w": " ta",
+     "s": 43.02,
+     "e": 43.22
+    },
+    {
+     "w": " vid.",
+     "s": 43.22,
+     "e": 43.52
+    }
+   ]
+  },
+  {
+   "start": 44.84,
+   "end": 50.98,
+   "text": "– Kom nu, sa Mossa, jag har ju tre krokiga stigar i huvudet!",
+   "words": [
+    {
+     "w": " –",
+     "s": 44.84,
+     "e": 44.84
+    },
+    {
+     "w": " Kom",
+     "s": 44.84,
+     "e": 45.36
+    },
+    {
+     "w": " nu,",
+     "s": 45.36,
+     "e": 45.84
+    },
+    {
+     "w": " sa",
+     "s": 46.2,
+     "e": 46.34
+    },
+    {
+     "w": " Mossa,",
+     "s": 46.34,
+     "e": 46.82
+    },
+    {
+     "w": " jag",
+     "s": 47.36,
+     "e": 47.52
+    },
+    {
+     "w": " har",
+     "s": 47.52,
+     "e": 47.68
+    },
+    {
+     "w": " ju",
+     "s": 47.68,
+     "e": 48.04
+    },
+    {
+     "w": " tre",
+     "s": 48.04,
+     "e": 48.62
+    },
+    {
+     "w": " krokiga",
+     "s": 48.62,
+     "e": 49.42
+    },
+    {
+     "w": " stigar",
+     "s": 49.42,
+     "e": 50.0
+    },
+    {
+     "w": " i",
+     "s": 50.0,
+     "e": 50.16
+    },
+    {
+     "w": " huvudet!",
+     "s": 50.16,
+     "e": 50.98
+    }
+   ]
+  },
+  {
+   "start": 52.14,
+   "end": 54.82,
+   "text": "Amina knackade på fönsterbänken.",
+   "words": [
+    {
+     "w": " Amina",
+     "s": 52.14,
+     "e": 52.96
+    },
+    {
+     "w": " knackade",
+     "s": 52.96,
+     "e": 53.68
+    },
+    {
+     "w": " på",
+     "s": 53.68,
+     "e": 53.86
+    },
+    {
+     "w": " fönsterbänken.",
+     "s": 53.86,
+     "e": 54.82
+    }
+   ]
+  },
+  {
+   "start": 54.82,
+   "end": 57.98,
+   "text": "– Ljuset är fint just här!",
+   "words": [
+    {
+     "w": " –",
+     "s": 54.82,
+     "e": 54.82
+    },
+    {
+     "w": " Ljuset",
+     "s": 54.82,
+     "e": 56.28
+    },
+    {
+     "w": " är",
+     "s": 56.28,
+     "e": 56.54
+    },
+    {
+     "w": " fint",
+     "s": 56.54,
+     "e": 56.84
+    },
+    {
+     "w": " just",
+     "s": 56.84,
+     "e": 57.28
+    },
+    {
+     "w": " här!",
+     "s": 57.28,
+     "e": 57.98
+    }
+   ]
+  },
+  {
+   "start": 59.4,
+   "end": 61.54,
+   "text": "Sagoboken låg redan fram.",
+   "words": [
+    {
+     "w": " Sagoboken",
+     "s": 59.4,
+     "e": 60.32
+    },
+    {
+     "w": " låg",
+     "s": 60.32,
+     "e": 60.84
+    },
+    {
+     "w": " redan",
+     "s": 60.84,
+     "e": 61.24
+    },
+    {
+     "w": " fram.",
+     "s": 61.24,
+     "e": 61.54
+    }
+   ]
+  },
+  {
+   "start": 62.4,
+   "end": 67.14,
+   "text": "När ritstunden var slut skulle bibliotekarien öppna den.",
+   "words": [
+    {
+     "w": " När",
+     "s": 62.4,
+     "e": 62.68
+    },
+    {
+     "w": " ritstunden",
+     "s": 62.68,
+     "e": 63.48
+    },
+    {
+     "w": " var",
+     "s": 63.48,
+     "e": 63.82
+    },
+    {
+     "w": " slut",
+     "s": 63.82,
+     "e": 64.4
+    },
+    {
+     "w": " skulle",
+     "s": 64.4,
+     "e": 65.0
+    },
+    {
+     "w": " bibliotekarien",
+     "s": 65.0,
+     "e": 66.22
+    },
+    {
+     "w": " öppna",
+     "s": 66.22,
+     "e": 66.92
+    },
+    {
+     "w": " den.",
+     "s": 66.92,
+     "e": 67.14
+    }
+   ]
+  }
+ ]
+}

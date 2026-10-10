@@ -1,0 +1,514 @@
+{
+ "source": "source/sample-book.iris-och-den-sparade-platsen.json",
+ "note": "Derived by tools/story/graph_and_motifs.py. All strings verbatim from the source JSON; framing = first sentence(s) of beats[].illustrationBrief.",
+ "title": "Iris och den sparade platsen",
+ "entryBeat": "S1",
+ "cover": "/share/iris-sparade-platsen/assets/cover.webp",
+ "slots": 6,
+ "choicePoints": 2,
+ "optionsPerChoice": 2,
+ "endings": 4,
+ "uniqueBeats": 14,
+ "pagesPerReading": 6,
+ "paths": {
+  "AA": {
+   "beats": [
+    "S1",
+    "S2",
+    "S3A",
+    "S4A",
+    "S5AA",
+    "S6AA"
+   ],
+   "landingEnding": 1,
+   "landingMedallion": "assets/landing/iris/ending-1.webp"
+  },
+  "AB": {
+   "beats": [
+    "S1",
+    "S2",
+    "S3A",
+    "S4A",
+    "S5AB",
+    "S6AB"
+   ],
+   "landingEnding": 2,
+   "landingMedallion": "assets/landing/iris/ending-2.webp"
+  },
+  "BA": {
+   "beats": [
+    "S1",
+    "S2",
+    "S3B",
+    "S4B",
+    "S5BA",
+    "S6BA"
+   ],
+   "landingEnding": 3,
+   "landingMedallion": "assets/landing/iris/ending-3.webp"
+  },
+  "BB": {
+   "beats": [
+    "S1",
+    "S2",
+    "S3B",
+    "S4B",
+    "S5BB",
+    "S6BB"
+   ],
+   "landingEnding": 4,
+   "landingMedallion": "assets/landing/iris/ending-4.webp"
+  }
+ },
+ "nodes": [
+  {
+   "beatId": "S1",
+   "slot": 1,
+   "pathTag": "neutral",
+   "onPaths": [
+    "AA",
+    "AB",
+    "BA",
+    "BB"
+   ],
+   "image": "assets/share/iris-sparade-platsen/assets/S1.webp",
+   "imageSize": [
+    1264,
+    848
+   ],
+   "audio": "assets/share/iris-sparade-platsen/assets/S1.mp3",
+   "audioDurationS_file": 67.08,
+   "audioMetaMs_json": 34596,
+   "ttsProvider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+   "framing": "Wide establishing frame in kvartersbiblioteket.",
+   "hasChoice": false,
+   "terminal": false,
+   "endingNumberOnLanding": null
+  },
+  {
+   "beatId": "S2",
+   "slot": 2,
+   "pathTag": "neutral",
+   "onPaths": [
+    "AA",
+    "AB",
+    "BA",
+    "BB"
+   ],
+   "image": "assets/share/iris-sparade-platsen/assets/S2.webp",
+   "imageSize": [
+    1536,
+    1024
+   ],
+   "audio": "assets/share/iris-sparade-platsen/assets/S2.mp3",
+   "audioDurationS_file": 67.46,
+   "audioMetaMs_json": 41457,
+   "ttsProvider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+   "framing": "Pre-choice. A balanced overhead-three-quarter frame at the low table: Iris’s fingertips hover over the blank stort ritpapper, visibly leaving broad open space on each side.",
+   "hasChoice": true,
+   "terminal": false,
+   "endingNumberOnLanding": null
+  },
+  {
+   "beatId": "S3A",
+   "slot": 3,
+   "pathTag": "neutral",
+   "onPaths": [
+    "AA",
+    "AB"
+   ],
+   "image": "assets/share/iris-sparade-platsen/assets/S3A.webp",
+   "imageSize": [
+    1536,
+    1024
+   ],
+   "audio": "assets/share/iris-sparade-platsen/assets/S3A.mp3",
+   "audioDurationS_file": 64.32,
+   "audioMetaMs_json": 40515,
+   "ttsProvider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+   "framing": "High three-quarter view on the green rug.",
+   "hasChoice": false,
+   "terminal": false,
+   "endingNumberOnLanding": null
+  },
+  {
+   "beatId": "S3B",
+   "slot": 3,
+   "pathTag": "neutral",
+   "onPaths": [
+    "BA",
+    "BB"
+   ],
+   "image": "assets/share/iris-sparade-platsen/assets/S3B.webp",
+   "imageSize": [
+    1536,
+    1024
+   ],
+   "audio": "assets/share/iris-sparade-platsen/assets/S3B.mp3",
+   "audioDurationS_file": 66.12,
+   "audioMetaMs_json": 28008,
+   "ttsProvider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+   "framing": "Intimate window-bench frame in warm evening light.",
+   "hasChoice": false,
+   "terminal": false,
+   "endingNumberOnLanding": null
+  },
+  {
+   "beatId": "S4A",
+   "slot": 4,
+   "pathTag": "neutral",
+   "onPaths": [
+    "AA",
+    "AB"
+   ],
+   "image": "assets/share/iris-sparade-platsen/assets/S4A.webp",
+   "imageSize": [
+    1264,
+    848
+   ],
+   "audio": "assets/share/iris-sparade-platsen/assets/S4A.mp3",
+   "audioDurationS_file": 53.3,
+   "audioMetaMs_json": 28627,
+   "ttsProvider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+   "framing": "Pre-choice. Tight tabletop frame at the low table by the wall.",
+   "hasChoice": true,
+   "terminal": false,
+   "endingNumberOnLanding": null
+  },
+  {
+   "beatId": "S4B",
+   "slot": 4,
+   "pathTag": "neutral",
+   "onPaths": [
+    "BA",
+    "BB"
+   ],
+   "image": "assets/share/iris-sparade-platsen/assets/S4B.webp",
+   "imageSize": [
+    1536,
+    1024
+   ],
+   "audio": "assets/share/iris-sparade-platsen/assets/S4B.mp3",
+   "audioDurationS_file": 57.26,
+   "audioMetaMs_json": 28805,
+   "ttsProvider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+   "framing": "Pre-choice tight three-quarter view of the low table.",
+   "hasChoice": true,
+   "terminal": false,
+   "endingNumberOnLanding": null
+  },
+  {
+   "beatId": "S5AA",
+   "slot": 5,
+   "pathTag": "neutral",
+   "onPaths": [
+    "AA"
+   ],
+   "image": "assets/share/iris-sparade-platsen/assets/S5AA.webp",
+   "imageSize": [
+    1536,
+    1024
+   ],
+   "audio": "assets/share/iris-sparade-platsen/assets/S5AA.mp3",
+   "audioDurationS_file": 62.3,
+   "audioMetaMs_json": 26155,
+   "ttsProvider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+   "framing": "Settled result, close view of the finished mosskarta on the low table.",
+   "hasChoice": false,
+   "terminal": false,
+   "endingNumberOnLanding": null
+  },
+  {
+   "beatId": "S5AB",
+   "slot": 5,
+   "pathTag": "neutral",
+   "onPaths": [
+    "AB"
+   ],
+   "image": "assets/share/iris-sparade-platsen/assets/S5AB.webp",
+   "imageSize": [
+    1536,
+    1024
+   ],
+   "audio": "assets/share/iris-sparade-platsen/assets/S5AB.mp3",
+   "audioDurationS_file": 63.24,
+   "audioMetaMs_json": 29967,
+   "ttsProvider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+   "framing": "Settled result, close view of the finished mosskarta.",
+   "hasChoice": false,
+   "terminal": false,
+   "endingNumberOnLanding": null
+  },
+  {
+   "beatId": "S5BA",
+   "slot": 5,
+   "pathTag": "neutral",
+   "onPaths": [
+    "BA"
+   ],
+   "image": "assets/share/iris-sparade-platsen/assets/S5BA.webp",
+   "imageSize": [
+    1536,
+    1024
+   ],
+   "audio": "assets/share/iris-sparade-platsen/assets/S5BA.mp3",
+   "audioDurationS_file": 69.19,
+   "audioMetaMs_json": 32139,
+   "ttsProvider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+   "framing": "Settled result in a tight tabletop crop.",
+   "hasChoice": false,
+   "terminal": false,
+   "endingNumberOnLanding": null
+  },
+  {
+   "beatId": "S5BB",
+   "slot": 5,
+   "pathTag": "neutral",
+   "onPaths": [
+    "BB"
+   ],
+   "image": "assets/share/iris-sparade-platsen/assets/S5BB.webp",
+   "imageSize": [
+    1536,
+    1024
+   ],
+   "audio": "assets/share/iris-sparade-platsen/assets/S5BB.mp3",
+   "audioDurationS_file": 65.06,
+   "audioMetaMs_json": 35581,
+   "ttsProvider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+   "framing": "Settled result in a tight two-child tabletop crop.",
+   "hasChoice": false,
+   "terminal": false,
+   "endingNumberOnLanding": null
+  },
+  {
+   "beatId": "S6AA",
+   "slot": 6,
+   "pathTag": "neutral",
+   "onPaths": [
+    "AA"
+   ],
+   "image": "assets/share/iris-sparade-platsen/assets/S6AA.webp",
+   "imageSize": [
+    1536,
+    1024
+   ],
+   "audio": "assets/share/iris-sparade-platsen/assets/S6AA.mp3",
+   "audioDurationS_file": 63.62,
+   "audioMetaMs_json": 27419,
+   "ttsProvider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+   "framing": "Final wide return image during sagostunden.",
+   "hasChoice": false,
+   "terminal": true,
+   "endingNumberOnLanding": 1
+  },
+  {
+   "beatId": "S6AB",
+   "slot": 6,
+   "pathTag": "neutral",
+   "onPaths": [
+    "AB"
+   ],
+   "image": "assets/share/iris-sparade-platsen/assets/S6AB.webp",
+   "imageSize": [
+    1536,
+    1024
+   ],
+   "audio": "assets/share/iris-sparade-platsen/assets/S6AB.mp3",
+   "audioDurationS_file": 65.64,
+   "audioMetaMs_json": 30485,
+   "ttsProvider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+   "framing": "Final warm medium close-up on the green rug.",
+   "hasChoice": false,
+   "terminal": true,
+   "endingNumberOnLanding": 2
+  },
+  {
+   "beatId": "S6BA",
+   "slot": 6,
+   "pathTag": "neutral",
+   "onPaths": [
+    "BA"
+   ],
+   "image": "assets/share/iris-sparade-platsen/assets/S6BA.webp",
+   "imageSize": [
+    1536,
+    1024
+   ],
+   "audio": "assets/share/iris-sparade-platsen/assets/S6BA.mp3",
+   "audioDurationS_file": 58.56,
+   "audioMetaMs_json": 27711,
+   "ttsProvider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+   "framing": "Final warm window-side sagostund frame.",
+   "hasChoice": false,
+   "terminal": true,
+   "endingNumberOnLanding": 3
+  },
+  {
+   "beatId": "S6BB",
+   "slot": 6,
+   "pathTag": "neutral",
+   "onPaths": [
+    "BB"
+   ],
+   "image": "assets/share/iris-sparade-platsen/assets/S6BB.webp",
+   "imageSize": [
+    1536,
+    1024
+   ],
+   "audio": "assets/share/iris-sparade-platsen/assets/S6BB.mp3",
+   "audioDurationS_file": 72.55,
+   "audioMetaMs_json": 30740,
+   "ttsProvider": "vertex-gemini-tts:gemini-3.1-flash-tts-preview:Enceladus",
+   "framing": "Final close return image at the edge of the green rug.",
+   "hasChoice": false,
+   "terminal": true,
+   "endingNumberOnLanding": 4
+  }
+ ],
+ "edges": [
+  {
+   "from": "S1",
+   "to": "S2",
+   "kind": "next"
+  },
+  {
+   "from": "S2",
+   "to": "S3A",
+   "kind": "choice",
+   "choiceKind": "path",
+   "afterSlot": 2,
+   "optionId": "A",
+   "label": "Gå med Mossa till den gröna mattan.",
+   "rubricTag": "neutral",
+   "effects": {
+    "set": {
+     "consequence.S2.gain": "en sista ritstund med Mossa på den gröna mattan",
+     "consequence.S2.cost": "en sista ritstund med det nya barnet i fönsterljuset",
+     "history.choice.S2": "S2:A"
+    }
+   },
+   "prompt": "Det hettade i Iris händer; de ville rycka i stolen. Före sagostunden hinner hon bara rita på ett ställe. Vad gör hon?"
+  },
+  {
+   "from": "S2",
+   "to": "S3B",
+   "kind": "choice",
+   "choiceKind": "path",
+   "afterSlot": 2,
+   "optionId": "B",
+   "label": "Stanna och rita med det nya barnet i fönsterljuset.",
+   "rubricTag": "neutral",
+   "effects": {
+    "set": {
+     "consequence.S2.gain": "en sista ritstund med det nya barnet i fönsterljuset",
+     "consequence.S2.cost": "en sista ritstund med Mossa på den gröna mattan",
+     "history.choice.S2": "S2:B"
+    }
+   },
+   "prompt": "Det hettade i Iris händer; de ville rycka i stolen. Före sagostunden hinner hon bara rita på ett ställe. Vad gör hon?"
+  },
+  {
+   "from": "S3A",
+   "to": "S4A",
+   "kind": "next"
+  },
+  {
+   "from": "S3B",
+   "to": "S4B",
+   "kind": "next"
+  },
+  {
+   "from": "S4A",
+   "to": "S5AA",
+   "kind": "choice",
+   "choiceKind": "ordeal",
+   "afterSlot": 4,
+   "optionId": "A",
+   "label": "Låt Mossa rita månen.",
+   "rubricTag": "neutral",
+   "effects": {
+    "set": {
+     "consequence.S4A.gain": "Mossas måne får bli mosskartans sista silvertecken",
+     "consequence.S4A.cost": "det nya barnets fågel får bli mosskartans sista silvertecken",
+     "history.choice.S4A": "S4A:A"
+    }
+   },
+   "prompt": "Mosskartan ska hängas upp, och bara en tur med silverpennan återstår. Vem får rita kartans sista tecken?"
+  },
+  {
+   "from": "S4A",
+   "to": "S5AB",
+   "kind": "choice",
+   "choiceKind": "ordeal",
+   "afterSlot": 4,
+   "optionId": "B",
+   "label": "Låt det nya barnet rita fågeln.",
+   "rubricTag": "neutral",
+   "effects": {
+    "set": {
+     "consequence.S4A.gain": "det nya barnets fågel får bli mosskartans sista silvertecken",
+     "consequence.S4A.cost": "Mossas måne får bli mosskartans sista silvertecken",
+     "history.choice.S4A": "S4A:B"
+    }
+   },
+   "prompt": "Mosskartan ska hängas upp, och bara en tur med silverpennan återstår. Vem får rita kartans sista tecken?"
+  },
+  {
+   "from": "S4B",
+   "to": "S5BA",
+   "kind": "choice",
+   "choiceKind": "ordeal",
+   "afterSlot": 4,
+   "optionId": "A",
+   "label": "Låt Mossa rita stjärnan.",
+   "rubricTag": "neutral",
+   "effects": {
+    "set": {
+     "consequence.S4B.gain": "Mossas stjärna får bli solfågelbildens sista silvertecken",
+     "consequence.S4B.cost": "det nya barnets bo får bli solfågelbildens sista silvertecken",
+     "history.choice.S4B": "S4B:A"
+    }
+   },
+   "prompt": "Solfågelbilden ska hängas upp, och bara en tur med silverpennan återstår. Vem får rita bildens sista tecken?"
+  },
+  {
+   "from": "S4B",
+   "to": "S5BB",
+   "kind": "choice",
+   "choiceKind": "ordeal",
+   "afterSlot": 4,
+   "optionId": "B",
+   "label": "Låt det nya barnet rita boet.",
+   "rubricTag": "neutral",
+   "effects": {
+    "set": {
+     "consequence.S4B.gain": "det nya barnets bo får bli solfågelbildens sista silvertecken",
+     "consequence.S4B.cost": "Mossas stjärna får bli solfågelbildens sista silvertecken",
+     "history.choice.S4B": "S4B:B"
+    }
+   },
+   "prompt": "Solfågelbilden ska hängas upp, och bara en tur med silverpennan återstår. Vem får rita bildens sista tecken?"
+  },
+  {
+   "from": "S5AA",
+   "to": "S6AA",
+   "kind": "next"
+  },
+  {
+   "from": "S5AB",
+   "to": "S6AB",
+   "kind": "next"
+  },
+  {
+   "from": "S5BA",
+   "to": "S6BA",
+   "kind": "next"
+  },
+  {
+   "from": "S5BB",
+   "to": "S6BB",
+   "kind": "next"
+  }
+ ]
+}

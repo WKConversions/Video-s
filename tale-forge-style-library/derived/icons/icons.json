@@ -458,7 +458,7 @@
    "colour": "--card-sub",
    "sheet_colour": "var(--card-sub)",
    "plate": "card",
-   "lineage": "Feather `eye` scaled in from the edges: Feather `M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z` -> `M2 12s3-8 10-8 ...`.",
+   "lineage": "Between the two libraries: starts at x 2 with 3/10 arms like Lucide `eye` (`M2 12s3-7 10-7 ...`) but keeps Feather's 8-unit height (`M1 12s4-8 11-8 ...`).",
    "root": {
     "viewBox": "0 0 24 24",
     "fill": "none",
@@ -484,7 +484,7 @@
    "colour": "--card-sub",
    "sheet_colour": "var(--card-sub)",
    "plate": "card",
-   "lineage": "Feather `eye-off` edited: keeps Feather's literal numbers `M9.9 4.24A9.1 9.1 0 0 1 12 4` and `a18.5 18.5 0 0 1-2.16 3.19` but narrows the eye (10 instead of 11) and draws the slash 2,2 -> 22,22.",
+   "lineage": "Hybrid: the top lid keeps Feather `eye-off` numbers (`M9.9 4.24A9.12 9.12 0 0 1 12 4` rounded to 9.1, `a18.5 18.5 0 0 1-2.16 3.19`); the lower lid, inner arc and slash follow Lucide (`M6.61 6.61A13.526 ...`, `a9.74 9.74 0 0 0 5.39-1.61`, `M9.88 9.88a3 3 0 ... 4.24 4.24`, slash 2,2 -> 22,22), rounded to one decimal.",
    "root": {
     "viewBox": "0 0 24 24",
     "fill": "none",
@@ -755,7 +755,7 @@
    "colour": "inherits the chip",
    "sheet_colour": "var(--chip-ink)",
    "plate": "card",
-   "lineage": "Feather `volume-x` cross (`22 9 -> 16 15`, `16 9 -> 22 15`) on the redrawn speaker.",
+   "lineage": "Lucide `volume-x` cross coordinates (x 16..22; Feather uses 17..23) on the redrawn speaker.",
    "root": {
     "viewBox": "0 0 24 24",
     "fill": "none",
@@ -866,6 +866,48 @@
    },
    "inner": "<path d=\"M12 2.6c.5 3.1-1.8 4.5-1.8 7a4.6 4.6 0 0 0 2.1 3.9c-.2-1.6.6-2.6 1.5-3.4.2 2.6 3.1 3 3.1 6.2A5.4 5.4 0 0 1 6.2 17c0-4.3 4.7-5.6 5.8-14.4z\"/>",
    "file": "svg/motif-flame-glod.svg"
+  },
+  {
+   "id": "brand-fair-contest-book-stars",
+   "name": "Book-fair contest logo: open book + three stars",
+   "group": "fair",
+   "context": "/bokmassan/tavling (stand-alone contest page with its own inline stylesheet): `.site-header svg`, 34 px tall, left of the CINZEL wordmark 'Tale Forge'. The only drawn logo in SVG anywhere on the site.",
+   "sources": [
+    "derived/icons/fair-source/bokmassan-tavling.sv.html"
+   ],
+   "css": "derived/icons/fair-source/bokmassan-tavling.sv.html (inline <style>: `.site-header svg{height:34px;width:auto;flex:none}`; page bg #102e4c + atmosphere image)",
+   "size": "34 px tall (36.3 px wide)",
+   "colour": "#e7c98b literal (pale gold; not a token)",
+   "sheet_colour": "#e7c98b",
+   "plate": "fair",
+   "lineage": "Custom. Open book drawn as two curved page fans meeting at a spine (x 32), a ground line `M3 57c11-2 20-2 29 0 9-2 18-2 29 0`, and three filled four-point stars (`m31 4 3 10 10 3-10 3-3 10-3-10-10-3 10-3Z` is a straight-sided diamond-star, unlike the concave .hiw-star). Same idea as the raster logo's book + sparkles, minus the anvil and quill.",
+   "root": {
+    "viewBox": "0 0 64 60",
+    "fill": "none"
+   },
+   "inner": "<g stroke=\"#e7c98b\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M6 38c9-3 18-1 26 9 8-10 17-12 26-9l-3 15c-9-2-15-2-23 1-8-3-14-3-23-1L6 38Z\"/><path d=\"M10 34c9 0 16 5 22 13 6-8 13-13 22-13M12 43c7 0 12 3 16 6m8 0c4-3 9-6 16-6M3 57c11-2 20-2 29 0 9-2 18-2 29 0M32 47v7\"/><path d=\"m31 4 3 10 10 3-10 3-3 10-3-10-10-3 10-3Z\" fill=\"#e7c98b\" stroke=\"none\"/><path d=\"m48 23 2 6 6 2-6 2-2 6-2-6-6-2 6-2Z\" fill=\"#e7c98b\" stroke=\"none\"/><path d=\"m13 22 1 4 4 1-4 1-1 4-1-4-4-1 4-1Z\" fill=\"#e7c98b\" stroke=\"none\"/></g>",
+   "file": "svg/brand-fair-contest-book-stars.svg"
+  },
+  {
+   "id": "framework-next-error-triangle",
+   "name": "Next.js error page warning triangle (framework, not Tale Forge)",
+   "group": "framework",
+   "context": "Next.js built-in global-error screen (`style:a.icon`, colours from --next-error-* variables). Ships in every page's framework chunk; not part of the Tale Forge design.",
+   "sources": [
+    "source/js/36s0t0o8ux5as.js@2960"
+   ],
+   "css": "inline: fill var(--next-error-title) (#ededed dark / #171717 light per Next defaults in the same chunk)",
+   "size": "32 px",
+   "colour": "var(--next-error-title)",
+   "sheet_colour": "var(--page-sub)",
+   "plate": "page",
+   "lineage": "Next.js / Vercel Geist warning glyph (filled, 5-decimal coordinates; a different drawing tradition from every Tale Forge icon).",
+   "root": {
+    "viewBox": "-0.2 -1.5 32 32",
+    "fill": "none"
+   },
+   "inner": "<path d=\"M16.9328 0C18.0839 0.000116771 19.1334 0.658832 19.634 1.69531L31.4299 26.1309C32.0708 27.4588 31.1036 28.9999 29.6291 29H2.00215C0.527541 29 -0.439628 27.4588 0.201371 26.1309L11.9973 1.69531C12.4979 0.658823 13.5474 7.75066e-05 14.6984 0H16.9328ZM3.59493 26H28.0363L16.9328 3H14.6984L3.59493 26ZM15.8156 19C16.9202 19.0001 17.8156 19.8955 17.8156 21C17.8156 22.1045 16.9202 22.9999 15.8156 23C14.7111 23 13.8156 22.1046 13.8156 21C13.8156 19.8954 14.7111 19 15.8156 19ZM17.3156 16.5H14.3156V8.5H17.3156V16.5Z\" fill=\"currentColor\"/>",
+   "file": "svg/framework-next-error-triangle.svg"
   }
  ],
  "map_parts": [
@@ -903,20 +945,21 @@
     "assets/landing/iris/ending-1.webp"
    ],
    "css": "source/css/3q17cp_jgfwol.pretty.css:2977-3004 (drop-shadow 0 0 18px --map-glow; ring 2px, 3px + scale 1.05 when active; dimmed .55; chip --gold-chip-bg; number 11px 700 --gold-chip-ink)",
-   "viewBox": "-52 -52 104 120",
+   "viewBox": "-58 -58 116 132",
    "inner": "<defs><linearGradient id=\"ring\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f5c542\"/><stop offset=\"1\" stop-color=\"#6D4FE0\"/></linearGradient><clipPath id=\"m0\"><circle cx=\"0\" cy=\"0\" r=\"42\"/></clipPath></defs><g class=\"map-medallion is-active\"><image href=\"../../../assets/landing/iris/ending-1.webp\" x=\"-42\" y=\"-42\" width=\"84\" height=\"84\" clip-path=\"url(#m0)\" preserveAspectRatio=\"xMidYMid slice\"/><circle class=\"map-medallion-ring\" cx=\"0\" cy=\"0\" r=\"44\" fill=\"none\" stroke=\"url(#ring)\"/><rect class=\"map-num-bg\" x=\"-11\" y=\"50\" width=\"22\" height=\"18\" rx=\"9\"/><text class=\"map-num\" x=\"0\" y=\"63\" text-anchor=\"middle\">1</text></g>",
    "file": "svg/map-medallion.svg"
   },
   {
    "id": "map-dotted-path",
    "name": "Map: dotted trail + lit gradient trail",
-   "context": "Unlit branches: round-capped dots (dasharray 0.1 8, 1.6 px). Lit route: 2.4 px stroke with a gold -> violet-soft gradient, drawn on via stroke-dashoffset (pathLength 1).",
+   "context": "A fork as on the map: unlit branches are round-capped dots (dasharray 0.1 8, 1.6 px, --dash-line). The lit route is a 2.4 px stroke with a gold -> violet-soft gradient (objectBoundingBox x1 0 -> x2 1), drawn on via stroke-dashoffset 1 -> 0 (pathLength 1). Geometry uses the map's own curve recipe: horizontal run, then a cubic with both handles horizontal (C x+43.2 y, x+64.8 y2, x+108 y2 on the desktop map).",
    "sources": [
-    "assets/svg-inline/home__hiw-map-desktop__d942793a.svg (paths)"
+    "assets/svg-inline/home__hiw-map-desktop__d942793a.svg (paths)",
+    "source/js/3d9nxlx1n5pdy.js@8366 (paths per ending)"
    ],
    "css": "source/css/3q17cp_jgfwol.pretty.css:2931-2952",
-   "viewBox": "0 0 240 60",
-   "inner": "<defs><linearGradient id=\"lit\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#f5c542\"/><stop offset=\"1\" stop-color=\"#9b87f5\"/></linearGradient></defs><path class=\"map-path\" d=\"M 10 18 L 230 18\"/><path class=\"map-path-lit\" d=\"M 10 44 C 60 44 80 44 230 44\" stroke=\"url(#lit)\" opacity=\"0.9\" fill=\"none\"/>",
+   "viewBox": "0 0 240 64",
+   "inner": "<defs><linearGradient id=\"lit\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0\" stop-color=\"#f5c542\"/><stop offset=\"1\" stop-color=\"#9b87f5\"/></linearGradient></defs><path class=\"map-path\" d=\"M 10 32 L 70 32 C 98 32 112 12 140 12 L 230 12\"/><path class=\"map-path\" d=\"M 70 32 C 98 32 112 52 140 52 L 230 52\"/><path class=\"map-path-lit\" d=\"M 10 32 L 70 32 C 98 32 112 12 140 12 L 230 12\" stroke=\"url(#lit)\" opacity=\"0.9\" fill=\"none\"/>",
    "file": "svg/map-dotted-path.svg"
   }
  ],

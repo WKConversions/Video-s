@@ -1,0 +1,404 @@
+{
+ "source": "source/sample-book.iris-och-den-sparade-platsen.json",
+ "method": "Regex families counted over beats[].prose (Swedish). Families are the library author's interpretive groupings; counts are exact for the regexes given.",
+ "families": {
+  "space_plats": "\\b\\w*plats\\w*\\b",
+  "leave_or_make_room": "\\b(lämna\\w*|lämnat|ryms|öppning|öppna|öppen|fria)\\b",
+  "silver": "\\bsilver\\w*\\b",
+  "light": "\\b\\w*(ljus|ljuset|lyste|lysa|glimmade|blinkade|blank\\w*)\\b",
+  "hands_body": "\\b(hand\\w*|händer\\w*|fingr\\w*|finger\\w*|fingertopp\\w*|tass\\w*|knä\\w*|rygg\\w*|armar|huvud\\w*)\\b",
+  "heat_urge": "\\b(hettade|brände|rycka|ryckt|gripa|fara|hinna|först|knuffa)\\b",
+  "waiting_pause": "\\b(vänta\\w*|väntade|stilla|stadigt|långsamt|stanna\\w*)\\b",
+  "mossa_scarf_mannerism": "\\bhalsduk\\w*\\b",
+  "amina_tap_mannerism": "\\bknack\\w*\\b",
+  "time_pressure": "\\b(sista|bara|före|direkt|tur|turen|hinner|återstår)\\b",
+  "story_time_frame": "\\b(sagostund\\w*|sagobok\\w*|sagomatt\\w*|bibliotekarien)\\b"
+ },
+ "totals": {
+  "space_plats": 29,
+  "leave_or_make_room": 24,
+  "silver": 32,
+  "light": 23,
+  "hands_body": 28,
+  "heat_urge": 13,
+  "waiting_pause": 12,
+  "mossa_scarf_mannerism": 8,
+  "amina_tap_mannerism": 3,
+  "time_pressure": 32,
+  "story_time_frame": 23
+ },
+ "perBeat": {
+  "S1": {
+   "space_plats": 3,
+   "leave_or_make_room": 1,
+   "silver": 0,
+   "light": 2,
+   "hands_body": 0,
+   "heat_urge": 1,
+   "waiting_pause": 0,
+   "mossa_scarf_mannerism": 1,
+   "amina_tap_mannerism": 0,
+   "time_pressure": 4,
+   "story_time_frame": 1
+  },
+  "S2": {
+   "space_plats": 2,
+   "leave_or_make_room": 1,
+   "silver": 0,
+   "light": 2,
+   "hands_body": 2,
+   "heat_urge": 0,
+   "waiting_pause": 1,
+   "mossa_scarf_mannerism": 0,
+   "amina_tap_mannerism": 1,
+   "time_pressure": 1,
+   "story_time_frame": 2
+  },
+  "S3A": {
+   "space_plats": 2,
+   "leave_or_make_room": 3,
+   "silver": 3,
+   "light": 2,
+   "hands_body": 1,
+   "heat_urge": 0,
+   "waiting_pause": 1,
+   "mossa_scarf_mannerism": 0,
+   "amina_tap_mannerism": 0,
+   "time_pressure": 5,
+   "story_time_frame": 1
+  },
+  "S3B": {
+   "space_plats": 1,
+   "leave_or_make_room": 2,
+   "silver": 3,
+   "light": 2,
+   "hands_body": 1,
+   "heat_urge": 0,
+   "waiting_pause": 1,
+   "mossa_scarf_mannerism": 1,
+   "amina_tap_mannerism": 0,
+   "time_pressure": 6,
+   "story_time_frame": 1
+  },
+  "S4A": {
+   "space_plats": 3,
+   "leave_or_make_room": 1,
+   "silver": 1,
+   "light": 0,
+   "hands_body": 2,
+   "heat_urge": 3,
+   "waiting_pause": 1,
+   "mossa_scarf_mannerism": 0,
+   "amina_tap_mannerism": 0,
+   "time_pressure": 3,
+   "story_time_frame": 2
+  },
+  "S4B": {
+   "space_plats": 3,
+   "leave_or_make_room": 3,
+   "silver": 2,
+   "light": 1,
+   "hands_body": 1,
+   "heat_urge": 3,
+   "waiting_pause": 2,
+   "mossa_scarf_mannerism": 0,
+   "amina_tap_mannerism": 0,
+   "time_pressure": 3,
+   "story_time_frame": 2
+  },
+  "S5AA": {
+   "space_plats": 3,
+   "leave_or_make_room": 1,
+   "silver": 3,
+   "light": 1,
+   "hands_body": 4,
+   "heat_urge": 1,
+   "waiting_pause": 1,
+   "mossa_scarf_mannerism": 1,
+   "amina_tap_mannerism": 1,
+   "time_pressure": 0,
+   "story_time_frame": 0
+  },
+  "S5AB": {
+   "space_plats": 2,
+   "leave_or_make_room": 2,
+   "silver": 4,
+   "light": 0,
+   "hands_body": 2,
+   "heat_urge": 0,
+   "waiting_pause": 2,
+   "mossa_scarf_mannerism": 1,
+   "amina_tap_mannerism": 0,
+   "time_pressure": 1,
+   "story_time_frame": 0
+  },
+  "S5BA": {
+   "space_plats": 2,
+   "leave_or_make_room": 2,
+   "silver": 2,
+   "light": 2,
+   "hands_body": 1,
+   "heat_urge": 2,
+   "waiting_pause": 0,
+   "mossa_scarf_mannerism": 1,
+   "amina_tap_mannerism": 0,
+   "time_pressure": 2,
+   "story_time_frame": 0
+  },
+  "S5BB": {
+   "space_plats": 3,
+   "leave_or_make_room": 1,
+   "silver": 4,
+   "light": 0,
+   "hands_body": 4,
+   "heat_urge": 2,
+   "waiting_pause": 3,
+   "mossa_scarf_mannerism": 1,
+   "amina_tap_mannerism": 0,
+   "time_pressure": 2,
+   "story_time_frame": 0
+  },
+  "S6AA": {
+   "space_plats": 2,
+   "leave_or_make_room": 1,
+   "silver": 1,
+   "light": 5,
+   "hands_body": 1,
+   "heat_urge": 0,
+   "waiting_pause": 0,
+   "mossa_scarf_mannerism": 0,
+   "amina_tap_mannerism": 0,
+   "time_pressure": 1,
+   "story_time_frame": 3
+  },
+  "S6AB": {
+   "space_plats": 1,
+   "leave_or_make_room": 2,
+   "silver": 3,
+   "light": 2,
+   "hands_body": 1,
+   "heat_urge": 0,
+   "waiting_pause": 0,
+   "mossa_scarf_mannerism": 1,
+   "amina_tap_mannerism": 0,
+   "time_pressure": 1,
+   "story_time_frame": 3
+  },
+  "S6BA": {
+   "space_plats": 1,
+   "leave_or_make_room": 3,
+   "silver": 3,
+   "light": 2,
+   "hands_body": 4,
+   "heat_urge": 1,
+   "waiting_pause": 0,
+   "mossa_scarf_mannerism": 0,
+   "amina_tap_mannerism": 0,
+   "time_pressure": 2,
+   "story_time_frame": 4
+  },
+  "S6BB": {
+   "space_plats": 1,
+   "leave_or_make_room": 1,
+   "silver": 3,
+   "light": 2,
+   "hands_body": 4,
+   "heat_urge": 0,
+   "waiting_pause": 0,
+   "mossa_scarf_mannerism": 1,
+   "amina_tap_mannerism": 1,
+   "time_pressure": 1,
+   "story_time_frame": 4
+  }
+ },
+ "familyExamples": {
+  "space_plats": {
+   "platsen": 17,
+   "plats": 5,
+   "platser": 4,
+   "fönsterplatsen": 3
+  },
+  "leave_or_make_room": {
+   "öppna": 8,
+   "lämnade": 8,
+   "lämnat": 3,
+   "öppen": 2,
+   "ryms": 1,
+   "fria": 1,
+   "öppning": 1
+  },
+  "light": {
+   "fönsterljuset": 9,
+   "lyste": 3,
+   "kvällsljuset": 2,
+   "silverblank": 2,
+   "lysa": 2,
+   "blinkade": 2,
+   "glimmade": 2,
+   "ljuset": 1
+  },
+  "heat_urge": {
+   "först": 4,
+   "hinna": 2,
+   "brände": 1,
+   "rycka": 1,
+   "hettade": 1,
+   "gripa": 1,
+   "fara": 1,
+   "ryckt": 1,
+   "knuffa": 1
+  },
+  "mossa_scarf_mannerism": {
+   "halsduken": 8
+  },
+  "time_pressure": {
+   "sista": 16,
+   "tur": 7,
+   "bara": 5,
+   "före": 2,
+   "direkt": 2
+  },
+  "story_time_frame": {
+   "bibliotekarien": 11,
+   "sagostunden": 5,
+   "sagoboken": 4,
+   "sagomattan": 2,
+   "sagobokens": 1
+  },
+  "hands_body": {
+   "handen": 3,
+   "händerna": 3,
+   "tassarna": 3,
+   "finger": 2,
+   "fingret": 2,
+   "ryggen": 2,
+   "handflatan": 2,
+   "knät": 2,
+   "fingertoppen": 1,
+   "huvudet": 1,
+   "fingertopparna": 1,
+   "fingrarna": 1
+  },
+  "waiting_pause": {
+   "väntade": 4,
+   "stilla": 4,
+   "stannade": 1,
+   "vänta": 1,
+   "långsamt": 1,
+   "stadigt": 1
+  },
+  "amina_tap_mannerism": {
+   "knackade": 3
+  },
+  "silver": {
+   "silverpennan": 11,
+   "silverfågel": 3,
+   "silverbo": 3,
+   "silverstjärna": 3,
+   "silverblank": 2,
+   "silvermåne": 2,
+   "silverboet": 2,
+   "silvermånen": 1,
+   "silvervingarna": 1,
+   "silverstreck": 1,
+   "silvertecken": 1,
+   "silverfågeln": 1
+  }
+ },
+ "speechVerbs": {
+  "sa": 10,
+  "viskade": 2,
+  "frågade": 1,
+  "mumlade": 1
+ },
+ "longWordsAtLeast11Letters": {
+  "bibliotekarien": 11,
+  "silverpennan": 11,
+  "fönsterljuset": 9,
+  "sagostunden": 5,
+  "fönsterbänken": 5,
+  "fönsterplatsen": 3,
+  "solfågelbilden": 3,
+  "silverfågel": 3,
+  "silverstjärna": 3,
+  "kvällsljuset": 2,
+  "bibliotekets": 2,
+  "silverblank": 2,
+  "kvartersbiblioteket": 1,
+  "fingertoppen": 1,
+  "fingertopparna": 1,
+  "silvermånen": 1,
+  "silvervingarna": 1,
+  "silverstreck": 1,
+  "fortfarande": 1,
+  "silvertecken": 1,
+  "berättelsen": 1,
+  "silverfågeln": 1,
+  "silverstjärnan": 1
+ },
+ "choiceLabels": [
+  {
+   "beat": "S2",
+   "option": "A",
+   "label": "Gå med Mossa till den gröna mattan.",
+   "firstWord": "Gå",
+   "words": 7
+  },
+  {
+   "beat": "S2",
+   "option": "B",
+   "label": "Stanna och rita med det nya barnet i fönsterljuset.",
+   "firstWord": "Stanna",
+   "words": 9
+  },
+  {
+   "beat": "S4A",
+   "option": "A",
+   "label": "Låt Mossa rita månen.",
+   "firstWord": "Låt",
+   "words": 4
+  },
+  {
+   "beat": "S4A",
+   "option": "B",
+   "label": "Låt det nya barnet rita fågeln.",
+   "firstWord": "Låt",
+   "words": 6
+  },
+  {
+   "beat": "S4B",
+   "option": "A",
+   "label": "Låt Mossa rita stjärnan.",
+   "firstWord": "Låt",
+   "words": 4
+  },
+  {
+   "beat": "S4B",
+   "option": "B",
+   "label": "Låt det nya barnet rita boet.",
+   "firstWord": "Låt",
+   "words": 6
+  }
+ ],
+ "sentenceLengthHistogram": {
+  "2": 1,
+  "3": 3,
+  "4": 14,
+  "5": 22,
+  "6": 18,
+  "7": 23,
+  "8": 15,
+  "9": 15,
+  "10": 13,
+  "11": 14,
+  "12": 19,
+  "13": 9,
+  "14": 4,
+  "15": 3,
+  "16": 3,
+  "17": 1,
+  "18": 1
+ },
+ "sentenceCount": 178,
+ "shareSentencesAtMost10Words": 0.697
+}

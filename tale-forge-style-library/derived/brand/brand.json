@@ -88,7 +88,7 @@
  "wordmark": {
   "font": "Cinzel 700 (var(--wordmark): var(--font-cinzel), \"Playfair Display\", Georgia, serif) — 3q17cp_jgfwol.pretty.css:469",
   "font_file": "assets/fonts/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2 (latin subset, preloaded on every page)",
-  "fallback": "Cinzel Fallback = local(Times New Roman), size-adjust 136.86%, ascent 71.31%, descent 27.18% (3q17cp_jgfwol.pretty.css:22-30)",
+  "fallback": "Cinzel Fallback = local(Times New Roman), size-adjust 136.86%, ascent 71.31%, descent 27.18% (3q17cp_jgfwol.pretty.css:22-29)",
   "desktop": {
    "font_size": "1.72rem = 27.52px",
    "letter_spacing": "3px",

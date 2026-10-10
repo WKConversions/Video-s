@@ -271,7 +271,7 @@ Rendered ends of the primary button, sampled: natt `#fddb7d` → `#f7c94e`, morg
 | Trait border | `all .25s` | `:1223-1238` |
 | Dashed border hover (upload, friend-add) | `border-color .3s` | `:1247-1256`, `:1325-1341` |
 | Map path draw | `stroke-dashoffset .9s ease-out` | `:2942-2946` |
-| Idle float (covers 7 s / 8 s, badge 9 s), pulse 2.4 s | `ease-in-out infinite` | `:948-1029` |
+| Idle float (covers 7 s / 8 s, badge 9 s); pulse 2.4 s | floats `ease-in-out infinite`; pulse `infinite` with the default `ease` | `:948-1029` |
 
 ---
 

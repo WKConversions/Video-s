@@ -333,7 +333,7 @@ Rendered px come from the computed-style captures: desktop = 1440×900 (`compute
 
 | Role | Selector | Size | Desktop | Mobile | Tracking | Transform | Copy | Source |
 |---|---|---|---|---|---|---|---|---|
-| Nav wordmark | `.logo` | 1.72rem; 1.05rem ≤560px | 27.52px | 16.8px | 3px; 1.5px ≤560px | uppercase | source `Tale Forge` → `TALE FORGE` | G:696-710, 747-751 |
+| Nav wordmark | `.logo` | 1.72rem; 1.05rem ≤560px | 27.52px | 16.8px | 3px; 1.5px ≤560px | uppercase | source `Tale Forge` → `TALE FORGE` | G:696-710, 746-751 |
 | Reader book title | `.reader-title` (an `h1`, so 700) | 2rem; 1.55rem ≤560px | 32px | 24.8px | 0 | uppercase, lh 1.18 | `IRIS OCH DEN SPARADE PLATSEN` *css-only* | G:1810-1822 |
 | End-of-book title | `.reader-ceremony-title` | 2rem; 1.35rem ≤560px | 32px | 21.6px | 0 | uppercase, lh 1.18 | *css-only* | G:2119-2131 |
 | Hearth sign kicker | `.glod-wb-kicker` | 0.64rem (0.72 ≥1800px, 0.58 narrow) | 10.24px | 9.28px | 0.13em | uppercase | `Väntelden` [The waiting fire] | H:157-166 |
@@ -522,7 +522,7 @@ h2 {
   transition: color 0.5s;
   display: flex;
 }
-/* 3q17cp_jgfwol.pretty.css:747-751 */
+/* 3q17cp_jgfwol.pretty.css:746-751 (excerpt) */
 @media (max-width: 560px) {
   .logo {
     letter-spacing: 1.5px;
@@ -766,7 +766,7 @@ Distinct values (selectors only, `@font-face` excluded):
 - **`font` shorthand:** 5. `700 1.45rem/1 var(--ui)` (`.cs-sheet-close`), `700 0.84rem/1.35 var(--ui)` (`.cs-companion-manage`), `0.86rem/1.5 var(--ui)` (`.cs-inline-friend-head p`), `700 0.86rem/1.35 var(--ui)` ×2 (`.cs-inline-field`, `.cs-inline-options legend`), `700 0.76rem/1.4 var(--ui)` (`.start-flow .pick-divider`).
 - **text-wrap:** `balance` ×2. **font-feature-settings / font-variant / font-kerning / hyphens:** none. Figures are therefore the fonts' defaults: proportional lining. `tnum` exists in Lora, Source Serif and Grotesk but is never switched on.
 - **Measures (`max-width` in ch):** `.lede` 46ch, `.cs-lede` 46ch, `.hiw-step-copy` 52ch, `.companion-sub` 56ch, `.hiw-lede` 56ch, `.honest` 60ch, `.sec-intro` 62ch, `.hiw-caption` 72ch, `.veil-caption` 26ch, `.reveal-line` 34ch.
-- **Canvas text** (waiting-fire stage, story titles painted on logs): `e.font = \`italic 700 ${Math.max(13, Math.round(14*d))}px Georgia, serif\``. It is filled `rgba(255,232,166,1)` (active) or `rgba(255,214,150,0.98)` over a copy offset 1.2px in `rgba(24,10,2,0.92)`, and truncated with `...` to fit ([../source/js/1pgfdvt65g9p-.js](../source/js/1pgfdvt65g9p-.js), search `e.font=`). This is the only place the site draws in Georgia on purpose.
+- **Canvas text** (waiting-fire stage, story titles painted on logs): `let l=Math.max(13,Math.round(14*d));e.font=\`italic 700 ${l}px Georgia, serif\``. It is filled `rgba(255,232,166,1)` (active) or `rgba(255,214,150,0.98)` over a copy offset 1.2px in `rgba(24,10,2,0.92)`, and truncated with `...` to fit ([../source/js/1pgfdvt65g9p-.js](../source/js/1pgfdvt65g9p-.js), search `e.font=`). This is the only place the site draws in Georgia on purpose.
 - **Not brand:** the Next.js error overlay styles in [../source/js/36s0t0o8ux5as.js](../source/js/36s0t0o8ux5as.js) use `system-ui` 24px/32px 500 −0.02em and `ui-monospace` 12px.
 
 ---
@@ -815,7 +815,7 @@ Footer links are underlined in the default style, with `text-decoration-color: v
 | `.start-flow .forge .inputs` | 1.02rem / 1.6 | | S:822-829 |
 | `.cs-memtag` | 0.78rem / 1.45, `rotate(-1deg)` paper tag | `Världen minns: …` [The world remembers: …] | C:95-109 |
 | `.glod-mem-from` | 0.9rem | `från '{title}'` | H:587-592 |
-| `.glod-hearth-box` (all `p`) | `clamp(0.85rem, 1.3vw, 0.98rem)` / 1.55 | hearth narration | H:718-734 |
+| `.glod-hearth-box` (all `p`) | `clamp(0.85rem, 1.3vw, 0.98rem)` / 1.55 | hearth narration | H:718-734, 744-751, 759-761 |
 
 All are `--serif` with `font-style: italic`. With no italic face loaded, Chromium draws an oblique roman ([../derived/typography/sheets/scale-natt.png](../derived/typography/sheets/scale-natt.png), row "Synthetic italic"). Read: the italic voice is used for the *narrator* and for *memory*: what the storyteller says, what the world remembers. That is a consistent semantic, even if the letterforms are fake.
 

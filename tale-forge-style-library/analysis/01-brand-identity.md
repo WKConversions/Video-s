@@ -69,7 +69,7 @@ This file covers literal material (CSS, copy, numbers, files) and then, under **
 | Footer tagline | `Tale Forge, sagor som minns er värld.` | Schibsted Grotesk 400, 0.9rem | `--foot-ink` (`#b7a9d6` natt / `#5f5878` morgon) | 3q17cp_jgfwol.pretty.css:1933-1947 |
 | Footer legal line | `Tale Forge AB, org.nr 559543-1122, Värnamo, Sverige` | Schibsted Grotesk | `var(--card-sub)`, opacity 0.85 | inline style, footer |
 | Running copy | `Tale Forge skriver, målar och läser in en riktig bilderbok…` (/start lede) | Source Serif 4 | `--page-sub` | [../source/rendered/dom__start__sv.html](../source/rendered/dom__start__sv.html) |
-| Colophon on a finished ("forged") book in the waiting screen | `TALE FORGE` | Cinzel 700, 0.58rem, tracking 0.22em | `#f7e7c38c` | [../source/css/37m388zf6rymp.pretty.css](../source/css/37m388zf6rymp.pretty.css):936-946; JS `className:"glod-book-colophon",children:"Tale Forge"` in [../source/js/2j_-r8q4tgdka.js](../source/js/2j_-r8q4tgdka.js) |
+| Colophon on a finished ("forged") book in the waiting screen | `TALE FORGE` | Cinzel 700, 0.58rem, tracking 0.22em | `#f7e7c38c` | [../source/css/37m388zf6rymp.pretty.css](../source/css/37m388zf6rymp.pretty.css):936-946; JS `className:"glod-book-colophon","aria-hidden":"true",children:"Tale Forge"` in [../source/js/2j_-r8q4tgdka.js](../source/js/2j_-r8q4tgdka.js) |
 | `<title>` | `Tale Forge` on home, start, login, signup, 404. Sub-pages use the bare page name: `Uppgradera`, `Integritetspolicy`, `Användarvillkor` (en: `Upgrade`, `Privacy notice`, `Terms of service`), with no brand suffix | `../source/html/*.html` |
 | PWA | `name` and `short_name` both `Tale Forge` | manifest |
 
@@ -86,7 +86,7 @@ All eight treatments side by side, rendered with the site's own font files: [../
 | Path | [../assets/assets/tf-logo.webp](../assets/assets/tf-logo.webp) (served at `/assets/tf-logo.webp`, `<link rel="preload" as="image">` on every page) |
 | Format | WebP, 512×512, RGBA, 46,378 bytes |
 | Alpha | 256 alpha levels, i.e. anti-aliased cut-out on transparent. Opaque-ish pixels (α > 0): 37,823; fully opaque: 9,874 |
-| Visible bbox | x 121–386, y 36–456 (α > 0) |
+| Visible bbox | x 121–385, y 36–455 inclusive (α > 0) |
 | Vector original | none published (`/assets/tf-logo.svg`, `/assets/tf-logo.png`, `/logo.svg`, `/assets/logo.svg`, `/icon.svg`, `/safari-pinned-tab.svg` all return 404 when probed on 2026-10-09) |
 | Use on site | nav only (42 px / 28 px). Every icon and the OG image are this same artwork scaled (section 6, 7) |
 
@@ -204,7 +204,7 @@ body[data-theme="morgon"] {
 }
 ```
 
-Font face (3q17cp_jgfwol.pretty.css:12-38): Cinzel is declared only at weight 700, as two unicode-range subsets. The Latin file `fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2` ([../assets/fonts/](../assets/fonts/)) is **preloaded on every page** through the HTTP `link` header (see [../source/meta/home-response-headers.txt](../source/meta/home-response-headers.txt)), alongside the Lora, Source Serif 4 and Schibsted Grotesk Latin files. The metric-matched fallback is `Cinzel Fallback` = `local(Times New Roman)` with `size-adjust: 136.86%`, `ascent-override: 71.31%`, `descent-override: 27.18%` (lines 22-30).
+Font face (3q17cp_jgfwol.pretty.css:1-38): Cinzel is declared only at weight 700, as two unicode-range subsets. The Latin file `fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2` ([../assets/fonts/](../assets/fonts/)) is **preloaded on every page** through the HTTP `link` header (see [../source/meta/home-response-headers.txt](../source/meta/home-response-headers.txt)), alongside the Lora, Source Serif 4 and Schibsted Grotesk Latin files. The metric-matched fallback is `Cinzel Fallback` = `local(Times New Roman)` with `size-adjust: 136.86%`, `ascent-override: 71.31%`, `descent-override: 27.18%` (lines 22-29).
 
 ### 4.2 Measured (live, Playwright, 2026-10-09)
 
@@ -255,7 +255,7 @@ Read: at 42 px the logo's own `TALE FORGE` is a 4 px-high smudge, so the nav eff
 
 | Selector | Use | CSS |
 |---|---|---|
-| `.reader-title` | Book title in the reader, Cinzel uppercase 2rem, `letter-spacing: 0`, colour `--logo-ink`, shadow `--logo-shadow` | 3q17cp_jgfwol.pretty.css:1810-1822 |
+| `.reader-title` | Book title in the reader, Cinzel uppercase 2rem, `letter-spacing: 0`, colour `--logo-ink`, shadow `--logo-shadow` | 3q17cp_jgfwol.pretty.css:1810-1823 |
 | `.reader-ceremony-title` | Title on the end-of-book "ceremony" with the keepsake cover | 3q17cp_jgfwol.pretty.css:2119-2131 |
 | `.glod-wb-kicker` | `Väntelden` / `The waiting fire`, the kicker on a nailed wooden sign on the waiting screen: Cinzel 0.64rem, tracking 0.13em, `#e4cfa4` | 37m388zf6rymp.pretty.css:157-166 |
 | `.glod-book-colophon` | `Tale Forge` colophon on the forged book, Cinzel 0.58rem, tracking 0.22em, `#f7e7c38c` | 37m388zf6rymp.pretty.css:936-946 |
@@ -325,7 +325,7 @@ There is no `og:image:alt`. The `?…png` hash query is how Next.js serves a sta
 | Layer | Measurement | How it was established |
 |---|---|---|
 | Background | [../assets/assets/nebula-hero.webp](../assets/assets/nebula-hero.webp) (2400×1340) scaled to 50% (1200×670), top 40 px cropped (bottom-aligned) | luminance correlation r = 0.994 at scale 0.5, offset (0, 40) |
-| Darkening | per channel `out ≈ 0.445 · src + (5, 8, 16)`, uniform across 15 regions | equals a flat `#0b0f1e` layer at ~55% opacity. `#0b0f1e` is the site's own scrim colour (`.bg-night .scrim`, 3q17cp_jgfwol.pretty.css:631-634, where it runs 38% → 50% → 74%). No vignette. |
+| Darkening | per channel `out ≈ 0.445 · src + (5, 8, 16)`, uniform across 15 regions | equals a flat `#0b0f1e` layer at ~55% opacity. `#0b0f1e` is the site's own scrim colour (`.bg-night .scrim`, 3q17cp_jgfwol.pretty.css:631-635, where it runs `#0b0f1e` 38% → 50%, ending on the near-identical `#0d1122` at 74%). No vignette. |
 | Logo | tf-logo.webp at ~149 px square, box ≈ (70,161)–(219,310). Visible gold (106,172)–(181,292) | gold-pixel bbox ÷ the logo's known content ratio |
 | Title | `Tale Forge`, mixed case, **DejaVu Serif Bold at 84 px**, flat `#f5c542` (= `--gold-soft`), no shadow. Ink bbox (71,301)–(556,382), left edge on the logo column x ≈ 70, 9 px below the logo's visible bottom | all 7 glyph runs match DejaVu Serif Bold 84 px within ±1 px, mask IoU 0.91. [../derived/brand/og-font-match.png](../derived/brand/og-font-match.png) |
 | Card A | [../assets/assets/cover-tornet.webp](../assets/assets/cover-tornet.webp), box (616,101)–(891,508), 276×408 | r = 0.995 against the cover |
@@ -408,7 +408,7 @@ The footer appears identically on every captured page (home, start, uppgradera, 
 | id (`body[data-theme]`) | sv label | en label | Icon | Notes |
 |---|---|---|---|---|
 | `natt` (default) | Natt | Night | crescent moon ([../assets/svg-inline/404__tt-opt__80ee85dd.svg](../assets/svg-inline/404__tt-opt__80ee85dd.svg)) | nebula photo + scrim + starfield. Gold accents. Persisted in `localStorage 'tf-theme'` |
-| `morgon` | Morgon | Morning | sun with 8 rays | watercolour aurora (`morgon-aurora-*.webp`). Violet accents |
+| `morgon` | Morgon | Morning | sun with 8 rays ([../assets/svg-inline/404__tt-opt__ddbc3897.svg](../assets/svg-inline/404__tt-opt__ddbc3897.svg)) | watercolour aurora (`morgon-aurora-*.webp`). Violet accents |
 
 The toggle is `aria-label="Byt tema"` / `"Switch theme"`, `role="switch"`. The language switch is `aria-label="Byt språk"` / `"Change language"`, buttons `SV` / `EN`.
 Read: the pair is "Night" and "Morning", not "dark" and "light". Both name times of a child's day around reading: bedtime and waking.
@@ -474,7 +474,7 @@ Observed facts:
 
 | Cue | Evidence |
 |---|---|
-| Swedish-first | Default locale `sv` (cookie `tf_locale`, no URL change); `og:locale sv_SE`; Swedish route slugs `/uppgradera`, `/integritet`, `/villkor`, `/konto`, `/valkommen` ([../source/meta/robots.txt](../source/meta/robots.txt)); the only sample book is Swedish, and the English /start page labels it `Iris och den sparade platsen · Swedish`. The Swedish /start kicker promises `upplästa på svenska` [narrated in Swedish]; the English one says only `read aloud`. |
+| Swedish-first | Default locale `sv` (cookie `tf_locale`, no URL change); `og:locale sv_SE`; Swedish route slugs `/uppgradera`, `/integritet`, `/villkor`, `/konto`, `/valkommen` ([../source/meta/sitemap.xml](../source/meta/sitemap.xml); the last two are `Disallow`ed in [../source/meta/robots.txt](../source/meta/robots.txt)); the only sample book is Swedish, and the English /start page labels it `Iris och den sparade platsen · Swedish`. The Swedish /start kicker promises `upplästa på svenska` [narrated in Swedish]; the English one says only `read aloud`. |
 | Local, small, founder-run | `Tale Forge AB … Värnamo` (a small town in Småland); `ett litet svenskt företag` [a small Swedish company]; Beta badge; a personal first-name contact mailbox; a short commit hash shown in the footer. |
 | Cultural detail | *Morfar*; *fjällräv*; *fyraljuset* (the fourth Advent candle: "Alva and the Fourth Candle"); *elementet* (the radiator); *kvartersbiblioteket*; *Bokmässan* (Göteborg Book Fair, a "snabb-saga" mode for the fair with an anonymous account); "Lagom tid för tandborstning och pyjamas." [Just enough time for toothbrushing and pajamas.] |
 | Price | Family: 149 kr/month or 1490 kr/year (124 kr/month billed yearly), 3 books/month (unused roll over), up to 4 children. School: 249 kr/month or 2490 kr/year, 6 books/month, up to 30 children. USD 14.99/149 and EUR 13.99/139 for Family; USD 24.99/249 and EUR 22.99/229 for School. The billing toggle defaults to yearly. ([../source/js/26ye0kuppitcn.js](../source/js/26ye0kuppitcn.js)) |

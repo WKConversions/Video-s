@@ -309,7 +309,7 @@ There are **no spacing custom properties**. All of the following are literal px.
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | CSS uses | 3 | 8 | 4 | 23 | 10 | 21 | 11 | **44** | 18 | 33 | 5 | **48** | 11 | **46** | 8 | 29 | 1 | 28 | 1 | 9 | 26 | 9 | 10 | 8 | 5 | 1 | 4 | 4 | 1 | 2 | 1 |
 
-Inline styles add 168 tokens from the hydrated DOM and 102 from JS style objects, with the same shape: 10, 12, 14 and 18 dominate ([inventory/html-inline-layout-styles.csv](../derived/layout/inventory/html-inline-layout-styles.csv), [js-inline-layout-styles.csv](../derived/layout/inventory/js-inline-layout-styles.csv)).
+Inline styles add 168 tokens from the hydrated DOM and 102 from JS style objects. In the JS styles 10, 12, 14 and 18 dominate; in the DOM inline styles 10 leads (21), followed by small badge/pill paddings 2 (17) and 7 (16) ([inventory/html-inline-layout-styles.csv](../derived/layout/inventory/html-inline-layout-styles.csv), [js-inline-layout-styles.csv](../derived/layout/inventory/js-inline-layout-styles.csv)).
 
 **Scale to use: 4 · 6 · 8 · 10 · 12 · 14 · 16 · 18 · 20 · 22 · 24 · 26 · 28 · 30 · 34 · 36 · 40 · 44.** Odd values (7, 9, 11, 13, 15) appear almost only inside pill and chip padding (`.trait 8px 15px`, `.chip 6px 13px`, `.hiw-ai-chip 5px 11px`), as optical corrections.
 
@@ -340,7 +340,7 @@ Read: cards pad inside on a 22-34 band that grows with the card's importance (st
 |---|---|---|
 | **999px** | every pill: buttons, chips, kicker, traits, toggle, nav links, language switch, `.hiw-choice`, `.book-sub` | 26 CSS uses, plus all inline nav pills ([radius-inventory.csv](../derived/layout/inventory/radius-inventory.csv)) |
 | **50%** | dots, step nodes, FAB, avatars (hiw), map hotspots | `.dotpulse`, `.hiw-node`, `.fab`, `.hiw-friend-row img` |
-| 6 | skip link, paper props on the hearth | [3q17cp:478](../source/css/3q17cp_jgfwol.pretty.css), [37m:221, :238, :600](../source/css/37m388zf6rymp.pretty.css) |
+| 6 | skip link, small hearth buttons and tags | [3q17cp:478](../source/css/3q17cp_jgfwol.pretty.css), [37m:221, :238, :601, :643](../source/css/37m388zf6rymp.pretty.css) |
 | 8 | icon buttons, spine, compact adv art | `.reader-audio-control` [3q17cp:2046](../source/css/3q17cp_jgfwol.pretty.css) |
 | 12 | tags, signboard, inline inputs | `.cs-memtag` [2h1:100](../source/css/2h1wwdz1nvxwk.pretty.css), `.glod-board` [37m:93](../source/css/37m388zf6rymp.pretty.css) |
 | 14 | small covers, inputs, camera tile, invite slot | `.hiw-fan-card`, `.hiw-cover`, `.upload .cam`, login inputs (inline) |
@@ -592,7 +592,7 @@ Two options for 16:9:
 
 For **9:16**, do not crop the desktop hero. At 1080x1920 the site keeps the 2-column hero (1080 > 880), but 64vh makes the hero 1229 tall, with about 400px of empty sky above and below the copy ([film-frames-guides.png](../derived/layout/film-frames-guides.png)). Use the ≤880 composition instead. Scaling the 390 mobile layout to the frame width (×2.769) gives gutter 78, h1 120px (2 lines) and cards 426 wide, but a 1920-tall frame then shows only 693 CSS px of the page: kicker to CTAs (y 141-620) plus the top of the fan. The full kicker-to-fan stack is 867 CSS px (y 141-1008 at 390), so to hold copy and books together scale by about 2.2 (1920/867). The 390 layout then becomes 858px wide (content 735), which leaves 111px spare on each side of a 1080 frame. The effective gutter is therefore about 173px (the scaled 62 plus 111).
 
-Motion: rotations stay fixed while elements bob vertically (-12 / -16 / -7px, i.e. 3.6% / 4.8% / 10.6% of each element's height) on 7, 8 and 9 s sine-like `ease-in-out` loops ([:962-1009](../source/css/3q17cp_jgfwol.pretty.css)). Sections enter with `opacity 0 → 1, translateY(26px) → 0` over 0.7 s `cubic-bezier(0.2, 0.7, 0.3, 1)` ([:1099-1109](../source/css/3q17cp_jgfwol.pretty.css)).
+Motion: rotations sway by only 0.5-0.6° (-8 → -8.6°, 7 → 7.6°, 2.5 → 3°) while elements bob vertically (-12 / -16 / -7px, i.e. 3.6% / 4.8% / 10.6% of each element's height) on 7, 8 and 9 s sine-like `ease-in-out` loops ([:962-1009](../source/css/3q17cp_jgfwol.pretty.css)). Sections enter with `opacity 0 → 1, translateY(26px) → 0` over 0.7 s `cubic-bezier(0.2, 0.7, 0.3, 1)` ([:1099-1109](../source/css/3q17cp_jgfwol.pretty.css)).
 
 ## 20. Caveats and open questions
 

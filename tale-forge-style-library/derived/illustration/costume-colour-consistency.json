@@ -1,0 +1,241 @@
+{
+ "method": "For each crop box in character-crops.json: pixels with CIELAB hue angle in the window, chroma >= min, L* in range; report median sRGB hex, median L*/C*/h, and the share of crop pixels matched. Windows: {\"Iris raincoat (raspberry red)\": [[10, 38], 38, [25, 62]], \"Amina top (orange)\": [[48, 72], 45, [45, 75]]}",
+ "garments": {
+  "Iris raincoat (raspberry red)": [
+   {
+    "image": "cover",
+    "share": 0.132,
+    "hex": "#C22B28",
+    "L": 43.3,
+    "C": 69.7,
+    "h": 34.1
+   },
+   {
+    "image": "hero-portrait",
+    "share": 0.216,
+    "hex": "#DF4043",
+    "L": 51.6,
+    "C": 69.9,
+    "h": 29.7
+   },
+   {
+    "image": "S1",
+    "share": 0.13,
+    "hex": "#C93B43",
+    "L": 46.9,
+    "C": 61.5,
+    "h": 27.3
+   },
+   {
+    "image": "S2",
+    "share": 0.252,
+    "hex": "#B82D2A",
+    "L": 41.6,
+    "C": 64.2,
+    "h": 33.5
+   },
+   {
+    "image": "S3A",
+    "share": 0.214,
+    "hex": "#AA231E",
+    "L": 37.5,
+    "C": 64.7,
+    "h": 35.3
+   },
+   {
+    "image": "S3B",
+    "share": 0.153,
+    "hex": "#A4201A",
+    "L": 36.1,
+    "C": 64.4,
+    "h": 36.3
+   },
+   {
+    "image": "S4A",
+    "share": 0.404,
+    "hex": "#C84039",
+    "L": 47.3,
+    "C": 61.4,
+    "h": 33.3
+   },
+   {
+    "image": "S4B",
+    "share": 0.266,
+    "hex": "#B62F2D",
+    "L": 41.5,
+    "C": 62.5,
+    "h": 32.5
+   },
+   {
+    "image": "S5AA",
+    "share": 0.193,
+    "hex": "#9D2121",
+    "L": 34.7,
+    "C": 58.8,
+    "h": 32.8
+   },
+   {
+    "image": "S5AB",
+    "share": 0.306,
+    "hex": "#B42B29",
+    "L": 40.7,
+    "C": 63.9,
+    "h": 33.0
+   },
+   {
+    "image": "S5BA",
+    "share": 0.046,
+    "hex": "#90231E",
+    "L": 32.4,
+    "C": 55.0,
+    "h": 34.9
+   },
+   {
+    "image": "S5BB",
+    "share": 0.199,
+    "hex": "#B42827",
+    "L": 40.2,
+    "C": 65.6,
+    "h": 33.3
+   },
+   {
+    "image": "S6AA",
+    "share": 0.156,
+    "hex": "#B32622",
+    "L": 39.7,
+    "C": 65.3,
+    "h": 34.6
+   },
+   {
+    "image": "S6AB",
+    "share": 0.187,
+    "hex": "#B9312F",
+    "L": 42.4,
+    "C": 62.7,
+    "h": 32.3
+   },
+   {
+    "image": "S6BA",
+    "share": 0.142,
+    "hex": "#BB2422",
+    "L": 41.1,
+    "C": 69.2,
+    "h": 34.8
+   },
+   {
+    "image": "S6BB",
+    "share": 0.084,
+    "hex": "#B62A24",
+    "L": 40.8,
+    "C": 65.1,
+    "h": 35.0
+   }
+  ],
+  "Amina top (orange)": [
+   {
+    "image": "S1",
+    "share": 0.108,
+    "hex": "#DC7D35",
+    "L": 62.1,
+    "C": 65.3,
+    "h": 57.5
+   },
+   {
+    "image": "S2",
+    "share": 0.146,
+    "hex": "#C57933",
+    "L": 57.8,
+    "C": 52.7,
+    "h": 64.3
+   },
+   {
+    "image": "S3A",
+    "share": 0.182,
+    "hex": "#CB6815",
+    "L": 54.6,
+    "C": 66.6,
+    "h": 58.8
+   },
+   {
+    "image": "S3B",
+    "share": 0.233,
+    "hex": "#CD712C",
+    "L": 56.6,
+    "C": 61.0,
+    "h": 59.8
+   },
+   {
+    "image": "S4A",
+    "share": 0.192,
+    "hex": "#CE732D",
+    "L": 57.5,
+    "C": 62.1,
+    "h": 58.8
+   },
+   {
+    "image": "S4B",
+    "share": 0.294,
+    "hex": "#C86D20",
+    "L": 55.4,
+    "C": 62.6,
+    "h": 59.9
+   },
+   {
+    "image": "S5AA",
+    "share": 0.217,
+    "hex": "#D36D25",
+    "L": 57.2,
+    "C": 61.3,
+    "h": 58.5
+   },
+   {
+    "image": "S5AB",
+    "share": 0.293,
+    "hex": "#CD6B26",
+    "L": 55.9,
+    "C": 64.0,
+    "h": 57.1
+   },
+   {
+    "image": "S5BB",
+    "share": 0.332,
+    "hex": "#D27020",
+    "L": 57.4,
+    "C": 63.0,
+    "h": 60.2
+   },
+   {
+    "image": "S6AA",
+    "share": 0.113,
+    "hex": "#C95D19",
+    "L": 52.2,
+    "C": 65.1,
+    "h": 54.4
+   },
+   {
+    "image": "S6AB",
+    "share": 0.183,
+    "hex": "#D17529",
+    "L": 58.4,
+    "C": 59.7,
+    "h": 60.5
+   },
+   {
+    "image": "S6BA",
+    "share": 0.283,
+    "hex": "#D46E1E",
+    "L": 57.5,
+    "C": 65.0,
+    "h": 60.1
+   },
+   {
+    "image": "S6BB",
+    "share": 0.244,
+    "hex": "#CB6D24",
+    "L": 54.8,
+    "C": 57.1,
+    "h": 62.0
+   }
+  ]
+ }
+}

@@ -1,0 +1,46 @@
+page,src,alt,width,height,loading,decoding,fetchpriority,sizes,srcset,aria_hidden,draggable,class,parent
+404,/assets/nebula-hero.webp,,,,,,,,,,,,div.bg.bg-night
+404,/assets/morgon-aurora-desktop.webp,,,,,,,,,,,,picture.
+404,/assets/tf-logo.webp,,,,,,,,,,,,a.logo
+home,/assets/nebula-hero.webp,,,,,,,,,,,,div.bg.bg-night
+home,/assets/morgon-aurora-desktop.webp,,,,,,,,,,,,picture.
+home,/assets/tf-logo.webp,,,,,,,,,,,,a.logo
+home,/assets/cover-tornet.webp,,,,,,,,,,,,a.
+home,/assets/cover-filten.webp,,,,,,,,,,,,a.
+home,/landing/iris/hero-portrait.webp,"Iris, den målade hjälten i exempelboken",,,,,,,,,,,div.hiw-frame
+home,/assets/avatar-noah.jpg,,,,lazy,,,,,,,,div.hiw-friend-row
+home,/assets/avatar-sixten.jpg,,,,lazy,,,,,,,,div.hiw-friend-row
+home,/landing/cards/pick-1.webp,,,,lazy,,,,,,,hiw-fan-card hiw-fan-1,div.hiw-fan
+home,/landing/cards/pick-2.webp,,,,lazy,,,,,,,hiw-fan-card hiw-fan-2,div.hiw-fan
+home,/landing/cards/pick-3.webp,,,,lazy,,,,,,,hiw-fan-card hiw-fan-3,div.hiw-fan
+home,/landing/voice/narrator-morfar.webp,,,,lazy,,,,,,,,span.hiw-voice-chip
+home,/landing/iris/scene-choice.webp,"Uppslag ur exempelboken, sidan före det första valet",,,lazy,,,,,,,,div.glass.hiw-card.hiw-reader-mock
+home,/landing/cover-next-book.webp,,,,lazy,,,,,,,hiw-cover hiw-cover-next,div.hiw-bookfan
+home,/assets/cover-tornet.webp,,,,lazy,,,,,,,hiw-cover hiw-cover-1,div.hiw-bookfan
+home,/assets/cover-filten.webp,,,,lazy,,,,,,,hiw-cover hiw-cover-2,div.hiw-bookfan
+home,/assets/cover-filten.webp,,,,,,,,,,,,div.pframe
+home,/assets/avatar-noah.jpg,,,,,,,,,,,,div.avatar
+home,/assets/avatar-sixten.jpg,,,,,,,,,,,,div.avatar
+home,/assets/cover-tornet.webp,,,,,,,,,,,,a.book
+home,/assets/cover-filten.webp,,,,,,,,,,,,a.book
+integritet,/assets/nebula-hero.webp,,,,,,,,,,,,div.bg.bg-night
+integritet,/assets/morgon-aurora-desktop.webp,,,,,,,,,,,,picture.
+integritet,/assets/tf-logo.webp,,,,,,,,,,,,a.logo
+login,/assets/nebula-hero.webp,,,,,,,,,,,,div.bg.bg-night
+login,/assets/morgon-aurora-desktop.webp,,,,,,,,,,,,picture.
+login,/assets/tf-logo.webp,,,,,,,,,,,,a.logo
+signup,/assets/nebula-hero.webp,,,,,,,,,,,,div.bg.bg-night
+signup,/assets/morgon-aurora-desktop.webp,,,,,,,,,,,,picture.
+signup,/assets/tf-logo.webp,,,,,,,,,,,,a.logo
+start,/assets/nebula-hero.webp,,,,,,,,,,,,div.bg.bg-night
+start,/assets/morgon-aurora-desktop.webp,,,,,,,,,,,,picture.
+start,/assets/tf-logo.webp,,,,,,,,,,,,a.logo
+start,/assets/cover-filten.webp,,,,,,,,,,,,div.fbook.fb1
+start,/assets/cover-tornet.webp,,,,,,,,,,,,div.fbook.fb2
+uppgradera,/assets/nebula-hero.webp,,,,,,,,,,,,div.bg.bg-night
+uppgradera,/assets/morgon-aurora-desktop.webp,,,,,,,,,,,,picture.
+uppgradera,/assets/tf-logo.webp,,,,,,,,,,,,a.logo
+uppgradera,/_next/image?url=%2Fshare%2Firis-sparade-platsen%2Fassets%2Fcover.webp&w=3840&q=75&dpl=dpl_5Vpduq8opRp7BMxHMDGP7rAXoCjG,Omslag till exempelboken Iris och den sparade platsen,112,168,lazy,async,,"(max-width: 600px) 128px, 112px",/_next/image?url=%2Fshare%2Firis-sparade-platsen%2Fassets%2Fcover.webp&w=32&q=75&dpl=dpl_5Vpduq8opRp7BMxHMDGP7rAXoCjG 32,,,,figure.upgrade-sample-figure
+villkor,/assets/nebula-hero.webp,,,,,,,,,,,,div.bg.bg-night
+villkor,/assets/morgon-aurora-desktop.webp,,,,,,,,,,,,picture.
+villkor,/assets/tf-logo.webp,,,,,,,,,,,,a.logo

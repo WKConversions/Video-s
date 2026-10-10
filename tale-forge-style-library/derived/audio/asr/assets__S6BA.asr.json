@@ -1,0 +1,607 @@
+{
+ "note": "MACHINE TRANSCRIPT (faster-whisper 'medium', int8, CPU, beam 5, language forced from file name). Not a site asset; may contain recognition errors. For sample-book beats the authoritative text is beats[].prose in source/sample-book.iris-och-den-sparade-platsen.json.",
+ "source_audio": "assets/share/iris-sparade-platsen/assets/S6BA.mp3",
+ "model": "Systran/faster-whisper-medium",
+ "language": "sv",
+ "duration_s": 58.52,
+ "text": "Bibliotekarien hängde upp solfågelbilden och sagostunden började. Iris och Amina hade fått sin sista ritstund i fönsterljuset. Mossa hade inte fått rita med Iris på gröna mattan. Över molnen lysste hans silverskärna. Mellan Aminas vingar fanns inget silverbo. Iris gick först i sagomattan. Hon valde en plats nära fönstret och lämnade en liten öppning mellan sig och Amina. Mossa tassade in i den och lutade ryggen mot deras armar. Här syns stjärnan ju bäst, sa han. Amina kupade händerna som ett låtsas bo åt hans svans. Iris slog och höll sagoboken öppen. Ovanför de hoppade silverskärnan till, precis som när Mossa ritade sista spetsen.",
+ "segments": [
+  {
+   "start": 1.14,
+   "end": 7.1,
+   "text": "Bibliotekarien hängde upp solfågelbilden och sagostunden började.",
+   "words": [
+    {
+     "w": " Bibliotekarien",
+     "s": 1.14,
+     "e": 2.02
+    },
+    {
+     "w": " hängde",
+     "s": 2.02,
+     "e": 2.48
+    },
+    {
+     "w": " upp",
+     "s": 2.48,
+     "e": 2.84
+    },
+    {
+     "w": " solfågelbilden",
+     "s": 2.84,
+     "e": 4.5
+    },
+    {
+     "w": " och",
+     "s": 4.5,
+     "e": 4.9
+    },
+    {
+     "w": " sagostunden",
+     "s": 4.9,
+     "e": 5.86
+    },
+    {
+     "w": " började.",
+     "s": 5.86,
+     "e": 7.1
+    }
+   ]
+  },
+  {
+   "start": 7.88,
+   "end": 12.78,
+   "text": "Iris och Amina hade fått sin sista ritstund i fönsterljuset.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 7.88,
+     "e": 8.18
+    },
+    {
+     "w": " och",
+     "s": 8.18,
+     "e": 8.48
+    },
+    {
+     "w": " Amina",
+     "s": 8.48,
+     "e": 9.0
+    },
+    {
+     "w": " hade",
+     "s": 9.0,
+     "e": 9.32
+    },
+    {
+     "w": " fått",
+     "s": 9.32,
+     "e": 9.54
+    },
+    {
+     "w": " sin",
+     "s": 9.54,
+     "e": 9.86
+    },
+    {
+     "w": " sista",
+     "s": 9.86,
+     "e": 10.36
+    },
+    {
+     "w": " ritstund",
+     "s": 10.36,
+     "e": 11.04
+    },
+    {
+     "w": " i",
+     "s": 11.04,
+     "e": 11.3
+    },
+    {
+     "w": " fönsterljuset.",
+     "s": 11.3,
+     "e": 12.78
+    }
+   ]
+  },
+  {
+   "start": 13.28,
+   "end": 17.06,
+   "text": "Mossa hade inte fått rita med Iris på gröna mattan.",
+   "words": [
+    {
+     "w": " Mossa",
+     "s": 13.28,
+     "e": 13.6
+    },
+    {
+     "w": " hade",
+     "s": 13.6,
+     "e": 13.84
+    },
+    {
+     "w": " inte",
+     "s": 13.84,
+     "e": 14.08
+    },
+    {
+     "w": " fått",
+     "s": 14.08,
+     "e": 14.26
+    },
+    {
+     "w": " rita",
+     "s": 14.26,
+     "e": 14.66
+    },
+    {
+     "w": " med",
+     "s": 14.66,
+     "e": 14.92
+    },
+    {
+     "w": " Iris",
+     "s": 14.92,
+     "e": 15.26
+    },
+    {
+     "w": " på",
+     "s": 15.26,
+     "e": 15.56
+    },
+    {
+     "w": " gröna",
+     "s": 15.56,
+     "e": 15.96
+    },
+    {
+     "w": " mattan.",
+     "s": 15.96,
+     "e": 17.06
+    }
+   ]
+  },
+  {
+   "start": 17.64,
+   "end": 24.14,
+   "text": "Över molnen lysste hans silverskärna. Mellan Aminas vingar fanns inget silverbo.",
+   "words": [
+    {
+     "w": " Över",
+     "s": 17.64,
+     "e": 17.96
+    },
+    {
+     "w": " molnen",
+     "s": 17.96,
+     "e": 18.6
+    },
+    {
+     "w": " lysste",
+     "s": 18.6,
+     "e": 19.1
+    },
+    {
+     "w": " hans",
+     "s": 19.1,
+     "e": 19.3
+    },
+    {
+     "w": " silverskärna.",
+     "s": 19.3,
+     "e": 20.66
+    },
+    {
+     "w": " Mellan",
+     "s": 20.88,
+     "e": 21.32
+    },
+    {
+     "w": " Aminas",
+     "s": 21.32,
+     "e": 21.84
+    },
+    {
+     "w": " vingar",
+     "s": 21.84,
+     "e": 22.64
+    },
+    {
+     "w": " fanns",
+     "s": 22.64,
+     "e": 23.1
+    },
+    {
+     "w": " inget",
+     "s": 23.1,
+     "e": 23.4
+    },
+    {
+     "w": " silverbo.",
+     "s": 23.4,
+     "e": 24.14
+    }
+   ]
+  },
+  {
+   "start": 25.4,
+   "end": 28.02,
+   "text": "Iris gick först i sagomattan.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 25.4,
+     "e": 26.2
+    },
+    {
+     "w": " gick",
+     "s": 26.2,
+     "e": 26.54
+    },
+    {
+     "w": " först",
+     "s": 26.54,
+     "e": 26.92
+    },
+    {
+     "w": " i",
+     "s": 26.92,
+     "e": 27.14
+    },
+    {
+     "w": " sagomattan.",
+     "s": 27.14,
+     "e": 28.02
+    }
+   ]
+  },
+  {
+   "start": 28.48,
+   "end": 33.92,
+   "text": "Hon valde en plats nära fönstret och lämnade en liten öppning mellan sig och Amina.",
+   "words": [
+    {
+     "w": " Hon",
+     "s": 28.48,
+     "e": 28.6
+    },
+    {
+     "w": " valde",
+     "s": 28.6,
+     "e": 28.94
+    },
+    {
+     "w": " en",
+     "s": 28.94,
+     "e": 29.16
+    },
+    {
+     "w": " plats",
+     "s": 29.16,
+     "e": 29.38
+    },
+    {
+     "w": " nära",
+     "s": 29.38,
+     "e": 29.72
+    },
+    {
+     "w": " fönstret",
+     "s": 29.72,
+     "e": 30.34
+    },
+    {
+     "w": " och",
+     "s": 30.34,
+     "e": 30.78
+    },
+    {
+     "w": " lämnade",
+     "s": 30.78,
+     "e": 31.22
+    },
+    {
+     "w": " en",
+     "s": 31.22,
+     "e": 31.38
+    },
+    {
+     "w": " liten",
+     "s": 31.38,
+     "e": 31.64
+    },
+    {
+     "w": " öppning",
+     "s": 31.64,
+     "e": 32.2
+    },
+    {
+     "w": " mellan",
+     "s": 32.2,
+     "e": 32.5
+    },
+    {
+     "w": " sig",
+     "s": 32.5,
+     "e": 32.84
+    },
+    {
+     "w": " och",
+     "s": 32.84,
+     "e": 33.06
+    },
+    {
+     "w": " Amina.",
+     "s": 33.06,
+     "e": 33.92
+    }
+   ]
+  },
+  {
+   "start": 34.64,
+   "end": 38.76,
+   "text": "Mossa tassade in i den och lutade ryggen mot deras armar.",
+   "words": [
+    {
+     "w": " Mossa",
+     "s": 34.64,
+     "e": 35.0
+    },
+    {
+     "w": " tassade",
+     "s": 35.0,
+     "e": 35.52
+    },
+    {
+     "w": " in",
+     "s": 35.52,
+     "e": 35.8
+    },
+    {
+     "w": " i",
+     "s": 35.8,
+     "e": 35.96
+    },
+    {
+     "w": " den",
+     "s": 35.96,
+     "e": 36.18
+    },
+    {
+     "w": " och",
+     "s": 36.18,
+     "e": 36.6
+    },
+    {
+     "w": " lutade",
+     "s": 36.6,
+     "e": 37.14
+    },
+    {
+     "w": " ryggen",
+     "s": 37.14,
+     "e": 37.62
+    },
+    {
+     "w": " mot",
+     "s": 37.62,
+     "e": 37.78
+    },
+    {
+     "w": " deras",
+     "s": 37.78,
+     "e": 38.16
+    },
+    {
+     "w": " armar.",
+     "s": 38.16,
+     "e": 38.76
+    }
+   ]
+  },
+  {
+   "start": 39.74,
+   "end": 42.66,
+   "text": "Här syns stjärnan ju bäst, sa han.",
+   "words": [
+    {
+     "w": " Här",
+     "s": 39.74,
+     "e": 40.22
+    },
+    {
+     "w": " syns",
+     "s": 40.22,
+     "e": 40.62
+    },
+    {
+     "w": " stjärnan",
+     "s": 40.62,
+     "e": 41.1
+    },
+    {
+     "w": " ju",
+     "s": 41.1,
+     "e": 41.42
+    },
+    {
+     "w": " bäst,",
+     "s": 41.42,
+     "e": 42.04
+    },
+    {
+     "w": " sa",
+     "s": 42.24,
+     "e": 42.3
+    },
+    {
+     "w": " han.",
+     "s": 42.3,
+     "e": 42.66
+    }
+   ]
+  },
+  {
+   "start": 43.9,
+   "end": 47.9,
+   "text": "Amina kupade händerna som ett låtsas bo åt hans svans.",
+   "words": [
+    {
+     "w": " Amina",
+     "s": 43.9,
+     "e": 44.46
+    },
+    {
+     "w": " kupade",
+     "s": 44.46,
+     "e": 45.12
+    },
+    {
+     "w": " händerna",
+     "s": 45.12,
+     "e": 45.72
+    },
+    {
+     "w": " som",
+     "s": 45.72,
+     "e": 45.9
+    },
+    {
+     "w": " ett",
+     "s": 45.9,
+     "e": 46.06
+    },
+    {
+     "w": " låtsas",
+     "s": 46.06,
+     "e": 46.72
+    },
+    {
+     "w": " bo",
+     "s": 46.72,
+     "e": 46.92
+    },
+    {
+     "w": " åt",
+     "s": 46.92,
+     "e": 47.12
+    },
+    {
+     "w": " hans",
+     "s": 47.12,
+     "e": 47.36
+    },
+    {
+     "w": " svans.",
+     "s": 47.36,
+     "e": 47.9
+    }
+   ]
+  },
+  {
+   "start": 48.72,
+   "end": 51.86,
+   "text": "Iris slog och höll sagoboken öppen.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 48.72,
+     "e": 49.12
+    },
+    {
+     "w": " slog",
+     "s": 49.12,
+     "e": 49.58
+    },
+    {
+     "w": " och",
+     "s": 49.58,
+     "e": 49.92
+    },
+    {
+     "w": " höll",
+     "s": 49.92,
+     "e": 50.24
+    },
+    {
+     "w": " sagoboken",
+     "s": 50.24,
+     "e": 50.96
+    },
+    {
+     "w": " öppen.",
+     "s": 50.96,
+     "e": 51.86
+    }
+   ]
+  },
+  {
+   "start": 51.86,
+   "end": 58.24,
+   "text": "Ovanför de hoppade silverskärnan till, precis som när Mossa ritade sista spetsen.",
+   "words": [
+    {
+     "w": " Ovanför",
+     "s": 51.86,
+     "e": 53.08
+    },
+    {
+     "w": " de",
+     "s": 53.08,
+     "e": 53.28
+    },
+    {
+     "w": " hoppade",
+     "s": 53.28,
+     "e": 53.86
+    },
+    {
+     "w": " silverskärnan",
+     "s": 53.86,
+     "e": 54.72
+    },
+    {
+     "w": " till,",
+     "s": 54.72,
+     "e": 55.14
+    },
+    {
+     "w": " precis",
+     "s": 55.76,
+     "e": 55.98
+    },
+    {
+     "w": " som",
+     "s": 55.98,
+     "e": 56.16
+    },
+    {
+     "w": " när",
+     "s": 56.16,
+     "e": 56.3
+    },
+    {
+     "w": " Mossa",
+     "s": 56.3,
+     "e": 56.68
+    },
+    {
+     "w": " ritade",
+     "s": 56.68,
+     "e": 57.26
+    },
+    {
+     "w": " sista",
+     "s": 57.26,
+     "e": 57.72
+    },
+    {
+     "w": " spetsen.",
+     "s": 57.72,
+     "e": 58.24
+    }
+   ]
+  }
+ ]
+}

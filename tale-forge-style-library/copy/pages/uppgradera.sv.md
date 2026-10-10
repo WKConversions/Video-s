@@ -121,7 +121,7 @@ Captured live on 2026-10-09 with Playwright (desktop 1440×900, natt). Only clie
 ### State: `uppgradera-monthly-schools`
 
 After pressing "Månadsvis/Monthly" and "För skolor/For schools": monthly prices and the School plan.
-Screenshot: [../states/uppgradera-monthly-schools__sv.png](../states/uppgradera-monthly-schools__sv.png)
+Screenshot: [../states/uppgradera-monthly-schools__sv.webp](../states/uppgradera-monthly-schools__sv.webp)
 
 - `button.trait.on` — Månadsvis · aria-pressed="true" · type="button"
 - `button.trait` — Årsvis · aria-pressed="false" · type="button"

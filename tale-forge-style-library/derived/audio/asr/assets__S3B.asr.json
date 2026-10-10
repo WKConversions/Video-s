@@ -1,0 +1,603 @@
+{
+ "note": "MACHINE TRANSCRIPT (faster-whisper 'medium', int8, CPU, beam 5, language forced from file name). Not a site asset; may contain recognition errors. For sample-book beats the authoritative text is beats[].prose in source/sample-book.iris-och-den-sparade-platsen.json.",
+ "source_audio": "assets/share/iris-sparade-platsen/assets/S3B.mp3",
+ "model": "Systran/faster-whisper-medium",
+ "language": "sv",
+ "duration_s": 66.08,
+ "text": "Iris stannade och ritade med Amina i fönsterljuset. Hon lyfte upp ritpappret på fönsterbänken och satte sig bredvid. Mossa kom efter, men den sista ritstunden på gröna mattan var förbi. Jaha, sa han, och snurrade halsduken. Då får väl molnen flyga hit. Iris ritade en rund solfågel på ena sidan och lämnade öppna platser runt den. Mossa ritade molnen. Han ville använda bibliotekets sista tur med silverpennan till en stjärna. Amina ritade solfågens vingar och ville använda samma sista tur till ett bo. Bibliotekarien lade silverpennan på fönsterbänken och höll upp ett finger. Efter nästa tecken skulle bilden hängas upp. Bara en idé kunde bli silverblank.",
+ "segments": [
+  {
+   "start": 1.0,
+   "end": 11.08,
+   "text": "Iris stannade och ritade med Amina i fönsterljuset. Hon lyfte upp ritpappret på fönsterbänken och satte sig bredvid.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 1.0,
+     "e": 1.9
+    },
+    {
+     "w": " stannade",
+     "s": 1.9,
+     "e": 2.72
+    },
+    {
+     "w": " och",
+     "s": 2.72,
+     "e": 2.92
+    },
+    {
+     "w": " ritade",
+     "s": 2.92,
+     "e": 3.54
+    },
+    {
+     "w": " med",
+     "s": 3.54,
+     "e": 3.82
+    },
+    {
+     "w": " Amina",
+     "s": 3.82,
+     "e": 4.32
+    },
+    {
+     "w": " i",
+     "s": 4.32,
+     "e": 4.72
+    },
+    {
+     "w": " fönsterljuset.",
+     "s": 4.72,
+     "e": 6.06
+    },
+    {
+     "w": " Hon",
+     "s": 6.54,
+     "e": 6.68
+    },
+    {
+     "w": " lyfte",
+     "s": 6.68,
+     "e": 7.1
+    },
+    {
+     "w": " upp",
+     "s": 7.1,
+     "e": 7.46
+    },
+    {
+     "w": " ritpappret",
+     "s": 7.46,
+     "e": 8.24
+    },
+    {
+     "w": " på",
+     "s": 8.24,
+     "e": 8.44
+    },
+    {
+     "w": " fönsterbänken",
+     "s": 8.44,
+     "e": 9.44
+    },
+    {
+     "w": " och",
+     "s": 9.44,
+     "e": 9.74
+    },
+    {
+     "w": " satte",
+     "s": 9.74,
+     "e": 10.16
+    },
+    {
+     "w": " sig",
+     "s": 10.16,
+     "e": 10.4
+    },
+    {
+     "w": " bredvid.",
+     "s": 10.4,
+     "e": 11.08
+    }
+   ]
+  },
+  {
+   "start": 11.9,
+   "end": 17.66,
+   "text": "Mossa kom efter, men den sista ritstunden på gröna mattan var förbi.",
+   "words": [
+    {
+     "w": " Mossa",
+     "s": 11.9,
+     "e": 12.36
+    },
+    {
+     "w": " kom",
+     "s": 12.36,
+     "e": 12.6
+    },
+    {
+     "w": " efter,",
+     "s": 12.6,
+     "e": 13.16
+    },
+    {
+     "w": " men",
+     "s": 13.72,
+     "e": 13.9
+    },
+    {
+     "w": " den",
+     "s": 13.9,
+     "e": 14.18
+    },
+    {
+     "w": " sista",
+     "s": 14.18,
+     "e": 14.66
+    },
+    {
+     "w": " ritstunden",
+     "s": 14.66,
+     "e": 15.5
+    },
+    {
+     "w": " på",
+     "s": 15.5,
+     "e": 15.76
+    },
+    {
+     "w": " gröna",
+     "s": 15.76,
+     "e": 16.2
+    },
+    {
+     "w": " mattan",
+     "s": 16.2,
+     "e": 16.84
+    },
+    {
+     "w": " var",
+     "s": 16.84,
+     "e": 17.06
+    },
+    {
+     "w": " förbi.",
+     "s": 17.06,
+     "e": 17.66
+    }
+   ]
+  },
+  {
+   "start": 18.58,
+   "end": 25.06,
+   "text": "Jaha, sa han, och snurrade halsduken. Då får väl molnen flyga hit.",
+   "words": [
+    {
+     "w": " Jaha,",
+     "s": 18.58,
+     "e": 19.24
+    },
+    {
+     "w": " sa",
+     "s": 19.54,
+     "e": 19.74
+    },
+    {
+     "w": " han,",
+     "s": 19.74,
+     "e": 20.04
+    },
+    {
+     "w": " och",
+     "s": 20.38,
+     "e": 20.54
+    },
+    {
+     "w": " snurrade",
+     "s": 20.54,
+     "e": 21.06
+    },
+    {
+     "w": " halsduken.",
+     "s": 21.06,
+     "e": 21.88
+    },
+    {
+     "w": " Då",
+     "s": 22.88,
+     "e": 23.16
+    },
+    {
+     "w": " får",
+     "s": 23.16,
+     "e": 23.42
+    },
+    {
+     "w": " väl",
+     "s": 23.42,
+     "e": 23.66
+    },
+    {
+     "w": " molnen",
+     "s": 23.66,
+     "e": 24.26
+    },
+    {
+     "w": " flyga",
+     "s": 24.26,
+     "e": 24.72
+    },
+    {
+     "w": " hit.",
+     "s": 24.72,
+     "e": 25.06
+    }
+   ]
+  },
+  {
+   "start": 26.38,
+   "end": 34.1,
+   "text": "Iris ritade en rund solfågel på ena sidan och lämnade öppna platser runt den.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 26.38,
+     "e": 27.38
+    },
+    {
+     "w": " ritade",
+     "s": 27.38,
+     "e": 28.06
+    },
+    {
+     "w": " en",
+     "s": 28.06,
+     "e": 28.36
+    },
+    {
+     "w": " rund",
+     "s": 28.36,
+     "e": 28.72
+    },
+    {
+     "w": " solfågel",
+     "s": 28.72,
+     "e": 29.84
+    },
+    {
+     "w": " på",
+     "s": 29.84,
+     "e": 30.1
+    },
+    {
+     "w": " ena",
+     "s": 30.1,
+     "e": 30.46
+    },
+    {
+     "w": " sidan",
+     "s": 30.46,
+     "e": 31.1
+    },
+    {
+     "w": " och",
+     "s": 31.1,
+     "e": 31.38
+    },
+    {
+     "w": " lämnade",
+     "s": 31.38,
+     "e": 31.86
+    },
+    {
+     "w": " öppna",
+     "s": 31.86,
+     "e": 32.42
+    },
+    {
+     "w": " platser",
+     "s": 32.42,
+     "e": 32.92
+    },
+    {
+     "w": " runt",
+     "s": 32.92,
+     "e": 33.12
+    },
+    {
+     "w": " den.",
+     "s": 33.12,
+     "e": 34.1
+    }
+   ]
+  },
+  {
+   "start": 34.7,
+   "end": 43.2,
+   "text": "Mossa ritade molnen. Han ville använda bibliotekets sista tur med silverpennan till en stjärna.",
+   "words": [
+    {
+     "w": " Mossa",
+     "s": 34.7,
+     "e": 35.0
+    },
+    {
+     "w": " ritade",
+     "s": 35.0,
+     "e": 35.7
+    },
+    {
+     "w": " molnen.",
+     "s": 35.7,
+     "e": 36.48
+    },
+    {
+     "w": " Han",
+     "s": 37.26,
+     "e": 37.4
+    },
+    {
+     "w": " ville",
+     "s": 37.4,
+     "e": 37.62
+    },
+    {
+     "w": " använda",
+     "s": 37.62,
+     "e": 38.46
+    },
+    {
+     "w": " bibliotekets",
+     "s": 38.46,
+     "e": 39.38
+    },
+    {
+     "w": " sista",
+     "s": 39.38,
+     "e": 39.94
+    },
+    {
+     "w": " tur",
+     "s": 39.94,
+     "e": 40.26
+    },
+    {
+     "w": " med",
+     "s": 40.26,
+     "e": 40.52
+    },
+    {
+     "w": " silverpennan",
+     "s": 40.52,
+     "e": 41.4
+    },
+    {
+     "w": " till",
+     "s": 41.4,
+     "e": 41.7
+    },
+    {
+     "w": " en",
+     "s": 41.7,
+     "e": 42.0
+    },
+    {
+     "w": " stjärna.",
+     "s": 42.0,
+     "e": 43.2
+    }
+   ]
+  },
+  {
+   "start": 44.18,
+   "end": 50.64,
+   "text": "Amina ritade solfågens vingar och ville använda samma sista tur till ett bo.",
+   "words": [
+    {
+     "w": " Amina",
+     "s": 44.18,
+     "e": 44.78
+    },
+    {
+     "w": " ritade",
+     "s": 44.78,
+     "e": 45.52
+    },
+    {
+     "w": " solfågens",
+     "s": 45.52,
+     "e": 46.38
+    },
+    {
+     "w": " vingar",
+     "s": 46.38,
+     "e": 47.24
+    },
+    {
+     "w": " och",
+     "s": 47.24,
+     "e": 47.58
+    },
+    {
+     "w": " ville",
+     "s": 47.58,
+     "e": 47.78
+    },
+    {
+     "w": " använda",
+     "s": 47.78,
+     "e": 48.46
+    },
+    {
+     "w": " samma",
+     "s": 48.46,
+     "e": 48.86
+    },
+    {
+     "w": " sista",
+     "s": 48.86,
+     "e": 49.36
+    },
+    {
+     "w": " tur",
+     "s": 49.36,
+     "e": 49.72
+    },
+    {
+     "w": " till",
+     "s": 49.72,
+     "e": 49.98
+    },
+    {
+     "w": " ett",
+     "s": 49.98,
+     "e": 50.3
+    },
+    {
+     "w": " bo.",
+     "s": 50.3,
+     "e": 50.64
+    }
+   ]
+  },
+  {
+   "start": 52.64,
+   "end": 57.3,
+   "text": "Bibliotekarien lade silverpennan på fönsterbänken och höll upp ett finger.",
+   "words": [
+    {
+     "w": " Bibliotekarien",
+     "s": 52.64,
+     "e": 53.54
+    },
+    {
+     "w": " lade",
+     "s": 53.54,
+     "e": 53.92
+    },
+    {
+     "w": " silverpennan",
+     "s": 53.92,
+     "e": 54.7
+    },
+    {
+     "w": " på",
+     "s": 54.7,
+     "e": 54.86
+    },
+    {
+     "w": " fönsterbänken",
+     "s": 54.86,
+     "e": 55.72
+    },
+    {
+     "w": " och",
+     "s": 55.72,
+     "e": 56.16
+    },
+    {
+     "w": " höll",
+     "s": 56.16,
+     "e": 56.46
+    },
+    {
+     "w": " upp",
+     "s": 56.46,
+     "e": 56.58
+    },
+    {
+     "w": " ett",
+     "s": 56.58,
+     "e": 56.78
+    },
+    {
+     "w": " finger.",
+     "s": 56.78,
+     "e": 57.3
+    }
+   ]
+  },
+  {
+   "start": 58.44,
+   "end": 61.42,
+   "text": "Efter nästa tecken skulle bilden hängas upp.",
+   "words": [
+    {
+     "w": " Efter",
+     "s": 58.44,
+     "e": 58.88
+    },
+    {
+     "w": " nästa",
+     "s": 58.88,
+     "e": 59.34
+    },
+    {
+     "w": " tecken",
+     "s": 59.34,
+     "e": 59.92
+    },
+    {
+     "w": " skulle",
+     "s": 59.92,
+     "e": 60.3
+    },
+    {
+     "w": " bilden",
+     "s": 60.3,
+     "e": 60.74
+    },
+    {
+     "w": " hängas",
+     "s": 60.74,
+     "e": 61.14
+    },
+    {
+     "w": " upp.",
+     "s": 61.14,
+     "e": 61.42
+    }
+   ]
+  },
+  {
+   "start": 62.6,
+   "end": 65.58,
+   "text": "Bara en idé kunde bli silverblank.",
+   "words": [
+    {
+     "w": " Bara",
+     "s": 62.6,
+     "e": 63.08
+    },
+    {
+     "w": " en",
+     "s": 63.08,
+     "e": 63.56
+    },
+    {
+     "w": " idé",
+     "s": 63.56,
+     "e": 64.0
+    },
+    {
+     "w": " kunde",
+     "s": 64.0,
+     "e": 64.46
+    },
+    {
+     "w": " bli",
+     "s": 64.46,
+     "e": 64.72
+    },
+    {
+     "w": " silverblank.",
+     "s": 64.72,
+     "e": 65.58
+    }
+   ]
+  }
+ ]
+}

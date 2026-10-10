@@ -1,0 +1,583 @@
+{
+ "note": "MACHINE TRANSCRIPT (faster-whisper 'medium', int8, CPU, beam 5, language forced from file name). Not a site asset; may contain recognition errors. For sample-book beats the authoritative text is beats[].prose in source/sample-book.iris-och-den-sparade-platsen.json.",
+ "source_audio": "assets/share/iris-sparade-platsen/assets/S4B.mp3",
+ "model": "Systran/faster-whisper-medium",
+ "language": "sv",
+ "duration_s": 57.24,
+ "text": "Bibliotekarien bar solfågelbilden till det låga bordet vid väggen. Iris höll pappret stilla. Mossa stod vid den öppna platsen ovanför molnen. Amina satt vid den öppna platsen mellan vingarna. Silvepennan låg mitt emellan dem. Min stjärna skulle lysa över molnen, sa Mossa. Mitt bo skulle höra ihop med vingarna, sa Amina. Båda tecknen skulle ta en hel tur. Bibliotekarien väntade med klämmorna och skulle hänga upp bilden direkt efter nästa tecken. Iris hade lämnat plats för båda idéerna, men silvepennan räckte bara till en. Det hettade i händerna. De ville gripa pennan och fara över pappret fortare än någon han säger stopp.",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 9.14,
+   "text": "Bibliotekarien bar solfågelbilden till det låga bordet vid väggen. Iris höll pappret stilla.",
+   "words": [
+    {
+     "w": " Bibliotekarien",
+     "s": 0.0,
+     "e": 1.62
+    },
+    {
+     "w": " bar",
+     "s": 1.62,
+     "e": 2.1
+    },
+    {
+     "w": " solfågelbilden",
+     "s": 2.1,
+     "e": 3.7
+    },
+    {
+     "w": " till",
+     "s": 3.7,
+     "e": 3.92
+    },
+    {
+     "w": " det",
+     "s": 3.92,
+     "e": 4.16
+    },
+    {
+     "w": " låga",
+     "s": 4.16,
+     "e": 4.7
+    },
+    {
+     "w": " bordet",
+     "s": 4.7,
+     "e": 5.18
+    },
+    {
+     "w": " vid",
+     "s": 5.18,
+     "e": 5.3
+    },
+    {
+     "w": " väggen.",
+     "s": 5.3,
+     "e": 6.46
+    },
+    {
+     "w": " Iris",
+     "s": 6.84,
+     "e": 7.14
+    },
+    {
+     "w": " höll",
+     "s": 7.14,
+     "e": 7.52
+    },
+    {
+     "w": " pappret",
+     "s": 7.52,
+     "e": 8.0
+    },
+    {
+     "w": " stilla.",
+     "s": 8.0,
+     "e": 9.14
+    }
+   ]
+  },
+  {
+   "start": 9.66,
+   "end": 17.74,
+   "text": "Mossa stod vid den öppna platsen ovanför molnen. Amina satt vid den öppna platsen mellan vingarna.",
+   "words": [
+    {
+     "w": " Mossa",
+     "s": 9.66,
+     "e": 10.08
+    },
+    {
+     "w": " stod",
+     "s": 10.08,
+     "e": 10.54
+    },
+    {
+     "w": " vid",
+     "s": 10.54,
+     "e": 10.72
+    },
+    {
+     "w": " den",
+     "s": 10.72,
+     "e": 10.98
+    },
+    {
+     "w": " öppna",
+     "s": 10.98,
+     "e": 11.54
+    },
+    {
+     "w": " platsen",
+     "s": 11.54,
+     "e": 12.16
+    },
+    {
+     "w": " ovanför",
+     "s": 12.16,
+     "e": 12.74
+    },
+    {
+     "w": " molnen.",
+     "s": 12.74,
+     "e": 13.32
+    },
+    {
+     "w": " Amina",
+     "s": 14.0,
+     "e": 14.62
+    },
+    {
+     "w": " satt",
+     "s": 14.62,
+     "e": 15.0
+    },
+    {
+     "w": " vid",
+     "s": 15.0,
+     "e": 15.16
+    },
+    {
+     "w": " den",
+     "s": 15.16,
+     "e": 15.34
+    },
+    {
+     "w": " öppna",
+     "s": 15.34,
+     "e": 15.76
+    },
+    {
+     "w": " platsen",
+     "s": 15.76,
+     "e": 16.46
+    },
+    {
+     "w": " mellan",
+     "s": 16.46,
+     "e": 16.84
+    },
+    {
+     "w": " vingarna.",
+     "s": 16.84,
+     "e": 17.74
+    }
+   ]
+  },
+  {
+   "start": 18.52,
+   "end": 21.12,
+   "text": "Silvepennan låg mitt emellan dem.",
+   "words": [
+    {
+     "w": " Silvepennan",
+     "s": 18.52,
+     "e": 19.48
+    },
+    {
+     "w": " låg",
+     "s": 19.48,
+     "e": 19.94
+    },
+    {
+     "w": " mitt",
+     "s": 19.94,
+     "e": 20.24
+    },
+    {
+     "w": " emellan",
+     "s": 20.24,
+     "e": 20.92
+    },
+    {
+     "w": " dem.",
+     "s": 20.92,
+     "e": 21.12
+    }
+   ]
+  },
+  {
+   "start": 22.36,
+   "end": 26.82,
+   "text": "Min stjärna skulle lysa över molnen, sa Mossa.",
+   "words": [
+    {
+     "w": " Min",
+     "s": 22.36,
+     "e": 22.86
+    },
+    {
+     "w": " stjärna",
+     "s": 22.86,
+     "e": 23.52
+    },
+    {
+     "w": " skulle",
+     "s": 23.52,
+     "e": 23.84
+    },
+    {
+     "w": " lysa",
+     "s": 23.84,
+     "e": 24.5
+    },
+    {
+     "w": " över",
+     "s": 24.5,
+     "e": 24.86
+    },
+    {
+     "w": " molnen,",
+     "s": 24.86,
+     "e": 25.72
+    },
+    {
+     "w": " sa",
+     "s": 25.82,
+     "e": 25.92
+    },
+    {
+     "w": " Mossa.",
+     "s": 25.92,
+     "e": 26.82
+    }
+   ]
+  },
+  {
+   "start": 26.82,
+   "end": 31.98,
+   "text": "Mitt bo skulle höra ihop med vingarna, sa Amina.",
+   "words": [
+    {
+     "w": " Mitt",
+     "s": 26.82,
+     "e": 27.92
+    },
+    {
+     "w": " bo",
+     "s": 27.92,
+     "e": 28.44
+    },
+    {
+     "w": " skulle",
+     "s": 28.44,
+     "e": 28.78
+    },
+    {
+     "w": " höra",
+     "s": 28.78,
+     "e": 29.18
+    },
+    {
+     "w": " ihop",
+     "s": 29.18,
+     "e": 29.56
+    },
+    {
+     "w": " med",
+     "s": 29.56,
+     "e": 29.8
+    },
+    {
+     "w": " vingarna,",
+     "s": 29.8,
+     "e": 30.6
+    },
+    {
+     "w": " sa",
+     "s": 30.78,
+     "e": 30.96
+    },
+    {
+     "w": " Amina.",
+     "s": 30.96,
+     "e": 31.98
+    }
+   ]
+  },
+  {
+   "start": 32.68,
+   "end": 35.32,
+   "text": "Båda tecknen skulle ta en hel tur.",
+   "words": [
+    {
+     "w": " Båda",
+     "s": 32.68,
+     "e": 33.14
+    },
+    {
+     "w": " tecknen",
+     "s": 33.14,
+     "e": 33.68
+    },
+    {
+     "w": " skulle",
+     "s": 33.68,
+     "e": 33.94
+    },
+    {
+     "w": " ta",
+     "s": 33.94,
+     "e": 34.18
+    },
+    {
+     "w": " en",
+     "s": 34.18,
+     "e": 34.5
+    },
+    {
+     "w": " hel",
+     "s": 34.5,
+     "e": 34.96
+    },
+    {
+     "w": " tur.",
+     "s": 34.96,
+     "e": 35.32
+    }
+   ]
+  },
+  {
+   "start": 36.62,
+   "end": 42.4,
+   "text": "Bibliotekarien väntade med klämmorna och skulle hänga upp bilden direkt efter nästa tecken.",
+   "words": [
+    {
+     "w": " Bibliotekarien",
+     "s": 36.62,
+     "e": 37.4
+    },
+    {
+     "w": " väntade",
+     "s": 37.4,
+     "e": 38.02
+    },
+    {
+     "w": " med",
+     "s": 38.02,
+     "e": 38.28
+    },
+    {
+     "w": " klämmorna",
+     "s": 38.28,
+     "e": 39.02
+    },
+    {
+     "w": " och",
+     "s": 39.02,
+     "e": 39.18
+    },
+    {
+     "w": " skulle",
+     "s": 39.18,
+     "e": 39.42
+    },
+    {
+     "w": " hänga",
+     "s": 39.42,
+     "e": 39.8
+    },
+    {
+     "w": " upp",
+     "s": 39.8,
+     "e": 40.18
+    },
+    {
+     "w": " bilden",
+     "s": 40.18,
+     "e": 40.64
+    },
+    {
+     "w": " direkt",
+     "s": 40.64,
+     "e": 41.18
+    },
+    {
+     "w": " efter",
+     "s": 41.18,
+     "e": 41.62
+    },
+    {
+     "w": " nästa",
+     "s": 41.62,
+     "e": 41.98
+    },
+    {
+     "w": " tecken.",
+     "s": 41.98,
+     "e": 42.4
+    }
+   ]
+  },
+  {
+   "start": 43.56,
+   "end": 49.14,
+   "text": "Iris hade lämnat plats för båda idéerna, men silvepennan räckte bara till en.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 43.56,
+     "e": 43.84
+    },
+    {
+     "w": " hade",
+     "s": 43.84,
+     "e": 44.1
+    },
+    {
+     "w": " lämnat",
+     "s": 44.1,
+     "e": 44.5
+    },
+    {
+     "w": " plats",
+     "s": 44.5,
+     "e": 44.86
+    },
+    {
+     "w": " för",
+     "s": 44.86,
+     "e": 45.2
+    },
+    {
+     "w": " båda",
+     "s": 45.2,
+     "e": 45.7
+    },
+    {
+     "w": " idéerna,",
+     "s": 45.7,
+     "e": 46.44
+    },
+    {
+     "w": " men",
+     "s": 46.68,
+     "e": 46.92
+    },
+    {
+     "w": " silvepennan",
+     "s": 46.92,
+     "e": 47.88
+    },
+    {
+     "w": " räckte",
+     "s": 47.88,
+     "e": 48.28
+    },
+    {
+     "w": " bara",
+     "s": 48.28,
+     "e": 48.54
+    },
+    {
+     "w": " till",
+     "s": 48.54,
+     "e": 48.8
+    },
+    {
+     "w": " en.",
+     "s": 48.8,
+     "e": 49.14
+    }
+   ]
+  },
+  {
+   "start": 50.02,
+   "end": 56.96,
+   "text": "Det hettade i händerna. De ville gripa pennan och fara över pappret fortare än någon han säger stopp.",
+   "words": [
+    {
+     "w": " Det",
+     "s": 50.02,
+     "e": 50.48
+    },
+    {
+     "w": " hettade",
+     "s": 50.48,
+     "e": 50.94
+    },
+    {
+     "w": " i",
+     "s": 50.94,
+     "e": 51.12
+    },
+    {
+     "w": " händerna.",
+     "s": 51.12,
+     "e": 51.84
+    },
+    {
+     "w": " De",
+     "s": 52.04,
+     "e": 52.14
+    },
+    {
+     "w": " ville",
+     "s": 52.14,
+     "e": 52.34
+    },
+    {
+     "w": " gripa",
+     "s": 52.34,
+     "e": 53.1
+    },
+    {
+     "w": " pennan",
+     "s": 53.1,
+     "e": 53.58
+    },
+    {
+     "w": " och",
+     "s": 53.58,
+     "e": 53.78
+    },
+    {
+     "w": " fara",
+     "s": 53.78,
+     "e": 54.34
+    },
+    {
+     "w": " över",
+     "s": 54.34,
+     "e": 54.5
+    },
+    {
+     "w": " pappret",
+     "s": 54.5,
+     "e": 54.98
+    },
+    {
+     "w": " fortare",
+     "s": 54.98,
+     "e": 55.66
+    },
+    {
+     "w": " än",
+     "s": 55.66,
+     "e": 55.8
+    },
+    {
+     "w": " någon",
+     "s": 55.8,
+     "e": 55.98
+    },
+    {
+     "w": " han",
+     "s": 55.98,
+     "e": 56.2
+    },
+    {
+     "w": " säger",
+     "s": 56.2,
+     "e": 56.42
+    },
+    {
+     "w": " stopp.",
+     "s": 56.42,
+     "e": 56.96
+    }
+   ]
+  }
+ ]
+}

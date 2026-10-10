@@ -1,0 +1,10 @@
+Wordless portrait 2:3 book cover in warm evening light at kvartersbiblioteket. Iris, a seven-year-old girl with dark curls, a raspberry-red raincoat, and yellow boots, stands decisively between the broad window bench and the soft green rug, holding exactly one stort ritpapper under her arm. Mossa, a small brown forest mouse with round ears and a green scarf, points toward the rug from Iris's yellow boot. On a low table between them lies exactly one silverpenna, catching the window light. Low bookcases frame the scene; no typography.
+
+Appearance reference for entities already named in the shot above. Never add a character, object, flower, or prop merely because it is listed here:
+Hero Iris, barnhjälte: sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar
+Companion Mossa, talande skogsmus: liten brun skogsmus med grön halsduk och runda öron
+Place kvartersbiblioteket: låga bokhyllor, en bred fönsterbänk och en mjuk grön matta
+Object stort ritpapper: ett brett vitt ritpapper med plats för flera tecknare
+Object silverpenna: en vanlig tjock penna som lämnar blanka silverstreck
+
+Style: Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.

@@ -1,0 +1,646 @@
+{
+ "note": "MACHINE TRANSCRIPT (faster-whisper 'medium', int8, CPU, beam 5, language forced from file name). Not a site asset; may contain recognition errors. For sample-book beats the authoritative text is beats[].prose in source/sample-book.iris-och-den-sparade-platsen.json.",
+ "source_audio": "assets/share/iris-sparade-platsen/assets/S5BB.mp3",
+ "model": "Systran/faster-whisper-medium",
+ "language": "sv",
+ "duration_s": 65.04,
+ "text": "Iris lät Amina rita boet. Amina sträckte sig efter silverpennan. Då lade Iris snabbt handen över den öppna platsen mellan vingarna. – Vänta! – sa hon. Händerna ville fortfarande hinna först. Men under handflatan fanns platsen hon hade sparat åt någon annans idé. Iris flyttade handen till papprets kant och sköt pennan mot Amina. Amina ritade ett runt bo mellan vingarna. Mossa satt vid molnen och såg på platsen där stjärnan inte skulle komma. Han snurrade halsduken långsamt. När sista kvisten var ritad puffade silverboet upp sig som om en osynlig fågel landat där. Iris höll pappret stadigt. Boet blev bildens sista silvertecken. Någon silverskärna fanns inte ovanför molnen.",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 6.14,
+   "text": "Iris lät Amina rita boet. Amina sträckte sig efter silverpennan.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 0.0,
+     "e": 0.86
+    },
+    {
+     "w": " lät",
+     "s": 0.86,
+     "e": 1.28
+    },
+    {
+     "w": " Amina",
+     "s": 1.28,
+     "e": 1.98
+    },
+    {
+     "w": " rita",
+     "s": 1.98,
+     "e": 2.36
+    },
+    {
+     "w": " boet.",
+     "s": 2.36,
+     "e": 3.06
+    },
+    {
+     "w": " Amina",
+     "s": 3.7,
+     "e": 4.14
+    },
+    {
+     "w": " sträckte",
+     "s": 4.14,
+     "e": 4.84
+    },
+    {
+     "w": " sig",
+     "s": 4.84,
+     "e": 5.04
+    },
+    {
+     "w": " efter",
+     "s": 5.04,
+     "e": 5.28
+    },
+    {
+     "w": " silverpennan.",
+     "s": 5.28,
+     "e": 6.14
+    }
+   ]
+  },
+  {
+   "start": 6.96,
+   "end": 10.76,
+   "text": "Då lade Iris snabbt handen över den öppna platsen mellan vingarna.",
+   "words": [
+    {
+     "w": " Då",
+     "s": 6.96,
+     "e": 7.12
+    },
+    {
+     "w": " lade",
+     "s": 7.12,
+     "e": 7.38
+    },
+    {
+     "w": " Iris",
+     "s": 7.38,
+     "e": 7.86
+    },
+    {
+     "w": " snabbt",
+     "s": 7.86,
+     "e": 8.42
+    },
+    {
+     "w": " handen",
+     "s": 8.42,
+     "e": 8.94
+    },
+    {
+     "w": " över",
+     "s": 8.94,
+     "e": 9.16
+    },
+    {
+     "w": " den",
+     "s": 9.16,
+     "e": 9.32
+    },
+    {
+     "w": " öppna",
+     "s": 9.32,
+     "e": 9.7
+    },
+    {
+     "w": " platsen",
+     "s": 9.7,
+     "e": 10.1
+    },
+    {
+     "w": " mellan",
+     "s": 10.1,
+     "e": 10.3
+    },
+    {
+     "w": " vingarna.",
+     "s": 10.3,
+     "e": 10.76
+    }
+   ]
+  },
+  {
+   "start": 11.4,
+   "end": 13.02,
+   "text": "– Vänta! – sa hon.",
+   "words": [
+    {
+     "w": " –",
+     "s": 11.4,
+     "e": 11.44
+    },
+    {
+     "w": " Vänta!",
+     "s": 11.44,
+     "e": 12.34
+    },
+    {
+     "w": " –",
+     "s": 12.46,
+     "e": 12.46
+    },
+    {
+     "w": " sa",
+     "s": 12.46,
+     "e": 12.6
+    },
+    {
+     "w": " hon.",
+     "s": 12.6,
+     "e": 13.02
+    }
+   ]
+  },
+  {
+   "start": 14.24,
+   "end": 16.42,
+   "text": "Händerna ville fortfarande hinna först.",
+   "words": [
+    {
+     "w": " Händerna",
+     "s": 14.24,
+     "e": 14.76
+    },
+    {
+     "w": " ville",
+     "s": 14.76,
+     "e": 14.98
+    },
+    {
+     "w": " fortfarande",
+     "s": 14.98,
+     "e": 15.74
+    },
+    {
+     "w": " hinna",
+     "s": 15.74,
+     "e": 16.06
+    },
+    {
+     "w": " först.",
+     "s": 16.06,
+     "e": 16.42
+    }
+   ]
+  },
+  {
+   "start": 17.46,
+   "end": 22.42,
+   "text": "Men under handflatan fanns platsen hon hade sparat åt någon annans idé.",
+   "words": [
+    {
+     "w": " Men",
+     "s": 17.46,
+     "e": 17.64
+    },
+    {
+     "w": " under",
+     "s": 17.64,
+     "e": 18.12
+    },
+    {
+     "w": " handflatan",
+     "s": 18.12,
+     "e": 19.06
+    },
+    {
+     "w": " fanns",
+     "s": 19.06,
+     "e": 19.58
+    },
+    {
+     "w": " platsen",
+     "s": 19.58,
+     "e": 20.06
+    },
+    {
+     "w": " hon",
+     "s": 20.06,
+     "e": 20.16
+    },
+    {
+     "w": " hade",
+     "s": 20.16,
+     "e": 20.42
+    },
+    {
+     "w": " sparat",
+     "s": 20.42,
+     "e": 20.94
+    },
+    {
+     "w": " åt",
+     "s": 20.94,
+     "e": 21.18
+    },
+    {
+     "w": " någon",
+     "s": 21.18,
+     "e": 21.5
+    },
+    {
+     "w": " annans",
+     "s": 21.5,
+     "e": 22.06
+    },
+    {
+     "w": " idé.",
+     "s": 22.06,
+     "e": 22.42
+    }
+   ]
+  },
+  {
+   "start": 23.84,
+   "end": 28.52,
+   "text": "Iris flyttade handen till papprets kant och sköt pennan mot Amina.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 23.84,
+     "e": 24.36
+    },
+    {
+     "w": " flyttade",
+     "s": 24.36,
+     "e": 25.0
+    },
+    {
+     "w": " handen",
+     "s": 25.0,
+     "e": 25.44
+    },
+    {
+     "w": " till",
+     "s": 25.44,
+     "e": 25.62
+    },
+    {
+     "w": " papprets",
+     "s": 25.62,
+     "e": 26.1
+    },
+    {
+     "w": " kant",
+     "s": 26.1,
+     "e": 26.44
+    },
+    {
+     "w": " och",
+     "s": 26.44,
+     "e": 27.02
+    },
+    {
+     "w": " sköt",
+     "s": 27.02,
+     "e": 27.46
+    },
+    {
+     "w": " pennan",
+     "s": 27.46,
+     "e": 27.88
+    },
+    {
+     "w": " mot",
+     "s": 27.88,
+     "e": 28.08
+    },
+    {
+     "w": " Amina.",
+     "s": 28.08,
+     "e": 28.52
+    }
+   ]
+  },
+  {
+   "start": 30.18,
+   "end": 34.38,
+   "text": "Amina ritade ett runt bo mellan vingarna.",
+   "words": [
+    {
+     "w": " Amina",
+     "s": 30.18,
+     "e": 31.02
+    },
+    {
+     "w": " ritade",
+     "s": 31.02,
+     "e": 31.56
+    },
+    {
+     "w": " ett",
+     "s": 31.56,
+     "e": 31.9
+    },
+    {
+     "w": " runt",
+     "s": 31.9,
+     "e": 32.36
+    },
+    {
+     "w": " bo",
+     "s": 32.36,
+     "e": 32.72
+    },
+    {
+     "w": " mellan",
+     "s": 32.72,
+     "e": 33.12
+    },
+    {
+     "w": " vingarna.",
+     "s": 33.12,
+     "e": 34.38
+    }
+   ]
+  },
+  {
+   "start": 34.94,
+   "end": 39.44,
+   "text": "Mossa satt vid molnen och såg på platsen där stjärnan inte skulle komma.",
+   "words": [
+    {
+     "w": " Mossa",
+     "s": 34.94,
+     "e": 35.34
+    },
+    {
+     "w": " satt",
+     "s": 35.34,
+     "e": 35.66
+    },
+    {
+     "w": " vid",
+     "s": 35.66,
+     "e": 35.84
+    },
+    {
+     "w": " molnen",
+     "s": 35.84,
+     "e": 36.42
+    },
+    {
+     "w": " och",
+     "s": 36.42,
+     "e": 36.6
+    },
+    {
+     "w": " såg",
+     "s": 36.6,
+     "e": 36.9
+    },
+    {
+     "w": " på",
+     "s": 36.9,
+     "e": 37.14
+    },
+    {
+     "w": " platsen",
+     "s": 37.14,
+     "e": 37.56
+    },
+    {
+     "w": " där",
+     "s": 37.56,
+     "e": 37.7
+    },
+    {
+     "w": " stjärnan",
+     "s": 37.7,
+     "e": 38.24
+    },
+    {
+     "w": " inte",
+     "s": 38.24,
+     "e": 38.82
+    },
+    {
+     "w": " skulle",
+     "s": 38.82,
+     "e": 39.1
+    },
+    {
+     "w": " komma.",
+     "s": 39.1,
+     "e": 39.44
+    }
+   ]
+  },
+  {
+   "start": 40.88,
+   "end": 43.36,
+   "text": "Han snurrade halsduken långsamt.",
+   "words": [
+    {
+     "w": " Han",
+     "s": 40.88,
+     "e": 41.1
+    },
+    {
+     "w": " snurrade",
+     "s": 41.1,
+     "e": 41.64
+    },
+    {
+     "w": " halsduken",
+     "s": 41.64,
+     "e": 42.4
+    },
+    {
+     "w": " långsamt.",
+     "s": 42.4,
+     "e": 43.36
+    }
+   ]
+  },
+  {
+   "start": 45.72,
+   "end": 52.92,
+   "text": "När sista kvisten var ritad puffade silverboet upp sig som om en osynlig fågel landat där.",
+   "words": [
+    {
+     "w": " När",
+     "s": 45.72,
+     "e": 45.9
+    },
+    {
+     "w": " sista",
+     "s": 45.9,
+     "e": 46.34
+    },
+    {
+     "w": " kvisten",
+     "s": 46.34,
+     "e": 46.76
+    },
+    {
+     "w": " var",
+     "s": 46.76,
+     "e": 46.94
+    },
+    {
+     "w": " ritad",
+     "s": 46.94,
+     "e": 47.76
+    },
+    {
+     "w": " puffade",
+     "s": 47.76,
+     "e": 48.6
+    },
+    {
+     "w": " silverboet",
+     "s": 48.6,
+     "e": 49.32
+    },
+    {
+     "w": " upp",
+     "s": 49.32,
+     "e": 49.64
+    },
+    {
+     "w": " sig",
+     "s": 49.64,
+     "e": 49.92
+    },
+    {
+     "w": " som",
+     "s": 49.92,
+     "e": 50.34
+    },
+    {
+     "w": " om",
+     "s": 50.34,
+     "e": 50.48
+    },
+    {
+     "w": " en",
+     "s": 50.48,
+     "e": 50.74
+    },
+    {
+     "w": " osynlig",
+     "s": 50.74,
+     "e": 51.6
+    },
+    {
+     "w": " fågel",
+     "s": 51.6,
+     "e": 52.1
+    },
+    {
+     "w": " landat",
+     "s": 52.1,
+     "e": 52.54
+    },
+    {
+     "w": " där.",
+     "s": 52.54,
+     "e": 52.92
+    }
+   ]
+  },
+  {
+   "start": 53.92,
+   "end": 56.9,
+   "text": "Iris höll pappret stadigt.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 53.92,
+     "e": 54.64
+    },
+    {
+     "w": " höll",
+     "s": 54.64,
+     "e": 55.0
+    },
+    {
+     "w": " pappret",
+     "s": 55.0,
+     "e": 55.44
+    },
+    {
+     "w": " stadigt.",
+     "s": 55.44,
+     "e": 56.9
+    }
+   ]
+  },
+  {
+   "start": 57.38,
+   "end": 60.36,
+   "text": "Boet blev bildens sista silvertecken.",
+   "words": [
+    {
+     "w": " Boet",
+     "s": 57.38,
+     "e": 57.74
+    },
+    {
+     "w": " blev",
+     "s": 57.74,
+     "e": 57.96
+    },
+    {
+     "w": " bildens",
+     "s": 57.96,
+     "e": 58.72
+    },
+    {
+     "w": " sista",
+     "s": 58.72,
+     "e": 59.38
+    },
+    {
+     "w": " silvertecken.",
+     "s": 59.38,
+     "e": 60.36
+    }
+   ]
+  },
+  {
+   "start": 61.82,
+   "end": 64.66,
+   "text": "Någon silverskärna fanns inte ovanför molnen.",
+   "words": [
+    {
+     "w": " Någon",
+     "s": 61.82,
+     "e": 62.08
+    },
+    {
+     "w": " silverskärna",
+     "s": 62.08,
+     "e": 63.12
+    },
+    {
+     "w": " fanns",
+     "s": 63.12,
+     "e": 63.58
+    },
+    {
+     "w": " inte",
+     "s": 63.58,
+     "e": 63.76
+    },
+    {
+     "w": " ovanför",
+     "s": 63.76,
+     "e": 64.24
+    },
+    {
+     "w": " molnen.",
+     "s": 64.24,
+     "e": 64.66
+    }
+   ]
+  }
+ ]
+}

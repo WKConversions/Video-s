@@ -1,0 +1,381 @@
+{
+ "url": "https://tale-forge.app/",
+ "viewport": "1440x900",
+ "lang": "sv",
+ "capturedAt": "2026-10-10T15:40:13.656Z",
+ "note": "Playwright reducedMotion emulation; animations counted with document.getAnimations() after a full scroll-through. beforeScroll = state of .reveal sections before any scrolling.",
+ "runs": {
+  "natt__no-preference": {
+   "beforeScroll": {
+    "reveal": [
+     {
+      "cls": "reveal in hiw",
+      "opacity": "1",
+      "transform": "none",
+      "transition": "opacity 0.7s cubic-bezier(0.2, 0.7, 0.3, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1)"
+     },
+     {
+      "cls": "reveal in",
+      "opacity": "1",
+      "transform": "none",
+      "transition": "opacity 0.7s cubic-bezier(0.2, 0.7, 0.3, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1)"
+     },
+     {
+      "cls": "reveal in",
+      "opacity": "1",
+      "transform": "none",
+      "transition": "opacity 0.7s cubic-bezier(0.2, 0.7, 0.3, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1)"
+     }
+    ]
+   },
+   "matchesReduce": false,
+   "runningAnimations": [
+    {
+     "type": "CSSAnimation",
+     "name": "twinkle",
+     "target": "div.starfield",
+     "playState": "running"
+    },
+    {
+     "type": "CSSAnimation",
+     "name": "float1",
+     "target": "div.fbook.fb1",
+     "playState": "running"
+    },
+    {
+     "type": "CSSAnimation",
+     "name": "float2",
+     "target": "div.fbook.fb2",
+     "playState": "running"
+    },
+    {
+     "type": "CSSAnimation",
+     "name": "floatBadge",
+     "target": "div.badge",
+     "playState": "running"
+    },
+    {
+     "type": "CSSAnimation",
+     "name": "pulse",
+     "target": "span.dotpulse",
+     "playState": "running"
+    },
+    {
+     "type": "CSSAnimation",
+     "name": "pulse",
+     "target": "span.dotpulse",
+     "playState": "running"
+    }
+   ],
+   "count": 6,
+   "computed": {
+    ".fb1": {
+     "animation": "7s ease-in-out 0s infinite normal none running float1",
+     "transition": "transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1.2), border-color 0.5s"
+    },
+    ".fb2": {
+     "animation": "8s ease-in-out 0s infinite normal none running float2",
+     "transition": "transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1.2), border-color 0.5s"
+    },
+    ".badge": {
+     "animation": "9s ease-in-out 0s infinite normal none running floatBadge",
+     "transition": "background 0.5s, color 0.5s"
+    },
+    ".dotpulse": {
+     "animation": "2.4s ease 0s infinite normal none running pulse",
+     "transition": "all"
+    },
+    ".starfield": {
+     "animation": "4.6s ease-in-out 0s infinite normal none running twinkle",
+     "transition": "all"
+    },
+    "body": {
+     "animation": "none 0s ease 0s 1 normal none running",
+     "transition": "background-color 0.5s, color 0.5s"
+    },
+    ".bg": {
+     "animation": "none 0s ease 0s 1 normal none running",
+     "transition": "opacity 0.5s"
+    },
+    ".tt-thumb": {
+     "animation": "none 0s ease 0s 1 normal none running",
+     "transition": "transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1.2), background 0.5s"
+    },
+    ".hiw-play": {
+     "animation": "none 0s ease 0s 1 normal none running",
+     "transition": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s"
+    },
+    "html(scroll-behavior)": {
+     "scrollBehavior": "smooth"
+    }
+   }
+  },
+  "natt__reduce": {
+   "beforeScroll": {
+    "reveal": [
+     {
+      "cls": "reveal in hiw",
+      "opacity": "1",
+      "transform": "none",
+      "transition": "none"
+     },
+     {
+      "cls": "reveal in",
+      "opacity": "1",
+      "transform": "none",
+      "transition": "none"
+     },
+     {
+      "cls": "reveal in",
+      "opacity": "1",
+      "transform": "none",
+      "transition": "none"
+     }
+    ]
+   },
+   "matchesReduce": true,
+   "runningAnimations": [
+    {
+     "type": "CSSAnimation",
+     "name": "floatBadge",
+     "target": "div.badge",
+     "playState": "running"
+    },
+    {
+     "type": "CSSAnimation",
+     "name": "pulse",
+     "target": "span.dotpulse",
+     "playState": "running"
+    }
+   ],
+   "count": 2,
+   "computed": {
+    ".fb1": {
+     "animation": "0s ease 0s 1 normal none running none",
+     "transition": "transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1.2), border-color 0.5s"
+    },
+    ".fb2": {
+     "animation": "0s ease 0s 1 normal none running none",
+     "transition": "transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1.2), border-color 0.5s"
+    },
+    ".badge": {
+     "animation": "9s ease-in-out 0s infinite normal none running floatBadge",
+     "transition": "background 0.5s, color 0.5s"
+    },
+    ".dotpulse": {
+     "animation": "2.4s ease 0s infinite normal none running pulse",
+     "transition": "all"
+    },
+    ".starfield": {
+     "animation": "0s ease 0s 1 normal none running none",
+     "transition": "all"
+    },
+    "body": {
+     "animation": "none 0s ease 0s 1 normal none running",
+     "transition": "none"
+    },
+    ".bg": {
+     "animation": "none 0s ease 0s 1 normal none running",
+     "transition": "none"
+    },
+    ".tt-thumb": {
+     "animation": "none 0s ease 0s 1 normal none running",
+     "transition": "none"
+    },
+    ".hiw-play": {
+     "animation": "none 0s ease 0s 1 normal none running",
+     "transition": "none"
+    },
+    "html(scroll-behavior)": {
+     "scrollBehavior": "smooth"
+    }
+   }
+  },
+  "morgon__no-preference": {
+   "beforeScroll": {
+    "reveal": [
+     {
+      "cls": "reveal in hiw",
+      "opacity": "1",
+      "transform": "none",
+      "transition": "opacity 0.7s cubic-bezier(0.2, 0.7, 0.3, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1)"
+     },
+     {
+      "cls": "reveal in",
+      "opacity": "1",
+      "transform": "none",
+      "transition": "opacity 0.7s cubic-bezier(0.2, 0.7, 0.3, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1)"
+     },
+     {
+      "cls": "reveal in",
+      "opacity": "1",
+      "transform": "none",
+      "transition": "opacity 0.7s cubic-bezier(0.2, 0.7, 0.3, 1), transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1)"
+     }
+    ]
+   },
+   "matchesReduce": false,
+   "runningAnimations": [
+    {
+     "type": "CSSAnimation",
+     "name": "twinkle",
+     "target": "div.starfield",
+     "playState": "running"
+    },
+    {
+     "type": "CSSAnimation",
+     "name": "float1",
+     "target": "div.fbook.fb1",
+     "playState": "running"
+    },
+    {
+     "type": "CSSAnimation",
+     "name": "float2",
+     "target": "div.fbook.fb2",
+     "playState": "running"
+    },
+    {
+     "type": "CSSAnimation",
+     "name": "floatBadge",
+     "target": "div.badge",
+     "playState": "running"
+    },
+    {
+     "type": "CSSAnimation",
+     "name": "pulse",
+     "target": "span.dotpulse",
+     "playState": "running"
+    },
+    {
+     "type": "CSSAnimation",
+     "name": "pulse",
+     "target": "span.dotpulse",
+     "playState": "running"
+    }
+   ],
+   "count": 6,
+   "computed": {
+    ".fb1": {
+     "animation": "7s ease-in-out 0s infinite normal none running float1",
+     "transition": "transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1.2), border-color 0.5s"
+    },
+    ".fb2": {
+     "animation": "8s ease-in-out 0s infinite normal none running float2",
+     "transition": "transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1.2), border-color 0.5s"
+    },
+    ".badge": {
+     "animation": "9s ease-in-out 0s infinite normal none running floatBadge",
+     "transition": "background 0.5s, color 0.5s"
+    },
+    ".dotpulse": {
+     "animation": "2.4s ease 0s infinite normal none running pulse",
+     "transition": "all"
+    },
+    ".starfield": {
+     "animation": "4.6s ease-in-out 0s infinite normal none running twinkle",
+     "transition": "all"
+    },
+    "body": {
+     "animation": "none 0s ease 0s 1 normal none running",
+     "transition": "background-color 0.5s, color 0.5s"
+    },
+    ".bg": {
+     "animation": "none 0s ease 0s 1 normal none running",
+     "transition": "opacity 0.5s"
+    },
+    ".tt-thumb": {
+     "animation": "none 0s ease 0s 1 normal none running",
+     "transition": "transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1.2), background 0.5s"
+    },
+    ".hiw-play": {
+     "animation": "none 0s ease 0s 1 normal none running",
+     "transition": "transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1.4), box-shadow 0.3s"
+    },
+    "html(scroll-behavior)": {
+     "scrollBehavior": "smooth"
+    }
+   }
+  },
+  "morgon__reduce": {
+   "beforeScroll": {
+    "reveal": [
+     {
+      "cls": "reveal in hiw",
+      "opacity": "1",
+      "transform": "none",
+      "transition": "none"
+     },
+     {
+      "cls": "reveal in",
+      "opacity": "1",
+      "transform": "none",
+      "transition": "none"
+     },
+     {
+      "cls": "reveal in",
+      "opacity": "1",
+      "transform": "none",
+      "transition": "none"
+     }
+    ]
+   },
+   "matchesReduce": true,
+   "runningAnimations": [
+    {
+     "type": "CSSAnimation",
+     "name": "floatBadge",
+     "target": "div.badge",
+     "playState": "running"
+    },
+    {
+     "type": "CSSAnimation",
+     "name": "pulse",
+     "target": "span.dotpulse",
+     "playState": "running"
+    }
+   ],
+   "count": 2,
+   "computed": {
+    ".fb1": {
+     "animation": "0s ease 0s 1 normal none running none",
+     "transition": "transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1.2), border-color 0.5s"
+    },
+    ".fb2": {
+     "animation": "0s ease 0s 1 normal none running none",
+     "transition": "transform 0.5s cubic-bezier(0.2, 0.7, 0.3, 1.2), border-color 0.5s"
+    },
+    ".badge": {
+     "animation": "9s ease-in-out 0s infinite normal none running floatBadge",
+     "transition": "background 0.5s, color 0.5s"
+    },
+    ".dotpulse": {
+     "animation": "2.4s ease 0s infinite normal none running pulse",
+     "transition": "all"
+    },
+    ".starfield": {
+     "animation": "0s ease 0s 1 normal none running none",
+     "transition": "all"
+    },
+    "body": {
+     "animation": "none 0s ease 0s 1 normal none running",
+     "transition": "none"
+    },
+    ".bg": {
+     "animation": "none 0s ease 0s 1 normal none running",
+     "transition": "none"
+    },
+    ".tt-thumb": {
+     "animation": "none 0s ease 0s 1 normal none running",
+     "transition": "none"
+    },
+    ".hiw-play": {
+     "animation": "none 0s ease 0s 1 normal none running",
+     "transition": "none"
+    },
+    "html(scroll-behavior)": {
+     "scrollBehavior": "smooth"
+    }
+   }
+  }
+ }
+}

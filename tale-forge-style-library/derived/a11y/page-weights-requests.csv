@@ -1,0 +1,587 @@
+page,theme,type,status,bytes_body_transfer,content_type,content_encoding,cache_control,url
+home,natt,document,200,11528,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/
+home,natt,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+home,natt,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+home,natt,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+home,natt,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+home,natt,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+home,natt,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+home,natt,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+home,natt,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+home,natt,image,200,164494,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/cover-tornet.webp
+home,natt,image,200,23526,image/jpeg,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/avatar-noah.jpg
+home,natt,image,200,32450,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/iris/hero-portrait.webp
+home,natt,image,200,24027,image/jpeg,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/avatar-sixten.jpg
+home,natt,image,200,143522,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/cover-filten.webp
+home,natt,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+home,natt,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+home,natt,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+home,natt,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+home,natt,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+home,natt,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+home,natt,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+home,natt,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+home,natt,script,200,16600,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3d9nxlx1n5pdy.js
+home,natt,image,200,16250,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/iris/ending-2.webp
+home,natt,image,200,6612,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/iris/cover-thumb.webp
+home,natt,image,200,15698,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/iris/ending-1.webp
+home,natt,image,200,15864,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/iris/ending-3.webp
+home,natt,image,200,15796,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/iris/ending-4.webp
+home,natt,image,200,70054,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/cards/pick-1.webp
+home,natt,image,200,74272,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/cards/pick-2.webp
+home,natt,image,200,57010,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/cards/pick-3.webp
+home,natt,image,200,11874,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/voice/narrator-morfar.webp
+home,natt,image,200,43750,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/iris/scene-choice.webp
+home,natt,image,200,129482,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/cover-next-book.webp
+home,natt,fetch,200,1035,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=tXyZJ52UQVBCVsD3
+home,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=5CB68i4pnAekjehf
+home,natt,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+home,natt,fetch,200,139,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=5CB68i4pnAekjehf
+home,natt,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+home,natt,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+home,natt,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+home,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=tXyZJ52UQVBCVsD3
+home,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=tXyZJ52UQVBCVsD3
+home,natt,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+home,natt,fetch,200,247,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+home,morgon,document,200,11528,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/
+home,morgon,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+home,morgon,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+home,morgon,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+home,morgon,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+home,morgon,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+home,morgon,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+home,morgon,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+home,morgon,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+home,morgon,image,200,164494,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/cover-tornet.webp
+home,morgon,image,200,143522,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/cover-filten.webp
+home,morgon,image,200,23526,image/jpeg,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/avatar-noah.jpg
+home,morgon,image,200,32450,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/iris/hero-portrait.webp
+home,morgon,image,200,24027,image/jpeg,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/avatar-sixten.jpg
+home,morgon,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+home,morgon,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+home,morgon,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+home,morgon,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+home,morgon,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+home,morgon,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+home,morgon,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+home,morgon,script,200,16600,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3d9nxlx1n5pdy.js
+home,morgon,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+home,morgon,image,200,6612,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/iris/cover-thumb.webp
+home,morgon,image,200,16250,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/iris/ending-2.webp
+home,morgon,image,200,15864,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/iris/ending-3.webp
+home,morgon,image,200,15698,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/iris/ending-1.webp
+home,morgon,image,200,15796,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/iris/ending-4.webp
+home,morgon,image,200,70054,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/cards/pick-1.webp
+home,morgon,image,200,11874,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/voice/narrator-morfar.webp
+home,morgon,image,200,57010,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/cards/pick-3.webp
+home,morgon,image,200,43750,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/iris/scene-choice.webp
+home,morgon,image,200,74272,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/cards/pick-2.webp
+home,morgon,image,200,129482,image/webp,,"public, max-age=14400, must-revalidate",https://tale-forge.app/landing/cover-next-book.webp
+home,morgon,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+home,morgon,fetch,200,139,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=5CB68i4pnAekjehf
+home,morgon,fetch,200,143,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=5CB68i4pnAekjehf
+home,morgon,fetch,200,1029,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=tXyZJ52UQVBCVsD3
+home,morgon,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+home,morgon,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+home,morgon,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+home,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=tXyZJ52UQVBCVsD3
+home,morgon,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+home,morgon,fetch,200,245,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+home,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=tXyZJ52UQVBCVsD3
+start,natt,document,200,5754,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/start
+start,natt,stylesheet,200,5313,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/37m388zf6rymp.css
+start,natt,stylesheet,200,2695,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/2h1wwdz1nvxwk.css
+start,natt,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+start,natt,stylesheet,200,3876,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/2_gt301v4m-60.css
+start,natt,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+start,natt,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+start,natt,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+start,natt,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+start,natt,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+start,natt,image,200,143522,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/cover-filten.webp
+start,natt,image,200,164494,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/cover-tornet.webp
+start,natt,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+start,natt,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+start,natt,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+start,natt,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+start,natt,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+start,natt,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+start,natt,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+start,natt,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+start,natt,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+start,natt,script,200,3975,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/2x2s34sgoij7z.js
+start,natt,script,200,14344,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/1pgfdvt65g9p-.js
+start,natt,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+start,natt,script,200,17188,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/0ad0wel9cyv30.js
+start,natt,script,200,19265,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/2j_-r8q4tgdka.js
+start,natt,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+start,natt,fetch,200,143,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=pTSI3JhkgIOf7eAs
+start,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=pTSI3JhkgIOf7eAs
+start,natt,fetch,200,135,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=pTSI3JhkgIOf7eAs
+start,natt,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+start,natt,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+start,natt,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+start,natt,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+start,natt,fetch,200,248,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+start,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=JoKQ21_dgH1d4F3z
+start,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=JoKQ21_dgH1d4F3z
+start,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=JoKQ21_dgH1d4F3z
+start,morgon,document,200,5754,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/start
+start,morgon,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+start,morgon,stylesheet,200,2695,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/2h1wwdz1nvxwk.css
+start,morgon,stylesheet,200,3876,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/2_gt301v4m-60.css
+start,morgon,stylesheet,200,5313,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/37m388zf6rymp.css
+start,morgon,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+start,morgon,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+start,morgon,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+start,morgon,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+start,morgon,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+start,morgon,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+start,morgon,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+start,morgon,image,200,164494,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/cover-tornet.webp
+start,morgon,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+start,morgon,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+start,morgon,image,200,143522,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/cover-filten.webp
+start,morgon,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+start,morgon,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+start,morgon,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+start,morgon,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+start,morgon,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+start,morgon,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+start,morgon,script,200,3975,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/2x2s34sgoij7z.js
+start,morgon,script,200,14344,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/1pgfdvt65g9p-.js
+start,morgon,script,200,17188,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/0ad0wel9cyv30.js
+start,morgon,script,200,19265,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/2j_-r8q4tgdka.js
+start,morgon,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+start,morgon,fetch,200,135,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=pTSI3JhkgIOf7eAs
+start,morgon,fetch,200,143,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=pTSI3JhkgIOf7eAs
+start,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=pTSI3JhkgIOf7eAs
+start,morgon,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+start,morgon,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+start,morgon,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+start,morgon,fetch,200,248,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+start,morgon,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+start,morgon,fetch,200,1029,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=JoKQ21_dgH1d4F3z
+start,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=JoKQ21_dgH1d4F3z
+start,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=JoKQ21_dgH1d4F3z
+uppgradera,natt,document,200,6809,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera
+uppgradera,natt,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+uppgradera,natt,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+uppgradera,natt,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+uppgradera,natt,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+uppgradera,natt,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+uppgradera,natt,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+uppgradera,natt,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+uppgradera,natt,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+uppgradera,natt,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+uppgradera,natt,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+uppgradera,natt,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+uppgradera,natt,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+uppgradera,natt,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+uppgradera,natt,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+uppgradera,natt,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+uppgradera,natt,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+uppgradera,natt,script,200,10089,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/26ye0kuppitcn.js
+uppgradera,natt,image,200,4906,image/webp,,"public, max-age=0, must-revalidate",https://tale-forge.app/_next/image?url=%2Fshare%2Firis-sparade-platsen%2Fassets%2Fcover.webp&w=128&q=75&dpl=dpl_5Vpduq8opRp7BMxHMDGP7rAXoCjG
+uppgradera,natt,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+uppgradera,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=cADGjhP9Fub4s7R2
+uppgradera,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=cADGjhP9Fub4s7R2
+uppgradera,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=9PaEVmWYgbVw6FeL
+uppgradera,natt,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+uppgradera,natt,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+uppgradera,natt,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+uppgradera,natt,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+uppgradera,natt,fetch,200,249,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+uppgradera,natt,fetch,200,1036,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=9PaEVmWYgbVw6FeL
+uppgradera,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=9PaEVmWYgbVw6FeL
+uppgradera,morgon,document,200,6809,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera
+uppgradera,morgon,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+uppgradera,morgon,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+uppgradera,morgon,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+uppgradera,morgon,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+uppgradera,morgon,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+uppgradera,morgon,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+uppgradera,morgon,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+uppgradera,morgon,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+uppgradera,morgon,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+uppgradera,morgon,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+uppgradera,morgon,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+uppgradera,morgon,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+uppgradera,morgon,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+uppgradera,morgon,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+uppgradera,morgon,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+uppgradera,morgon,script,200,10089,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/26ye0kuppitcn.js
+uppgradera,morgon,image,200,4906,image/webp,,"public, max-age=0, must-revalidate",https://tale-forge.app/_next/image?url=%2Fshare%2Firis-sparade-platsen%2Fassets%2Fcover.webp&w=128&q=75&dpl=dpl_5Vpduq8opRp7BMxHMDGP7rAXoCjG
+uppgradera,morgon,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+uppgradera,morgon,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+uppgradera,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=cADGjhP9Fub4s7R2
+uppgradera,morgon,fetch,200,1040,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=9PaEVmWYgbVw6FeL
+uppgradera,morgon,fetch,200,135,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=cADGjhP9Fub4s7R2
+uppgradera,morgon,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+uppgradera,morgon,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+uppgradera,morgon,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+uppgradera,morgon,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+uppgradera,morgon,fetch,200,246,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+uppgradera,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=9PaEVmWYgbVw6FeL
+uppgradera,morgon,fetch,200,1033,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=9PaEVmWYgbVw6FeL
+login,natt,document,200,6460,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login
+login,natt,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+login,natt,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+login,natt,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+login,natt,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+login,natt,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+login,natt,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+login,natt,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+login,natt,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+login,natt,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+login,natt,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+login,natt,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+login,natt,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+login,natt,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+login,natt,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+login,natt,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+login,natt,script,200,6491,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/1hcx0qn-qjgfn.js
+login,natt,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+login,natt,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+login,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=_H_fFy2_Q06N8BA7
+login,natt,fetch,200,143,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=_H_fFy2_Q06N8BA7
+login,natt,fetch,200,1042,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=sW2A7HEmFQnSVIMx
+login,natt,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+login,natt,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+login,natt,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+login,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/signup?_rsc=_H_fFy2_Q06N8BA7
+login,natt,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+login,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=sW2A7HEmFQnSVIMx
+login,natt,fetch,200,245,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+login,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/signup?_rsc=sW2A7HEmFQnSVIMx
+login,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=sW2A7HEmFQnSVIMx
+login,morgon,document,200,6460,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login
+login,morgon,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+login,morgon,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+login,morgon,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+login,morgon,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+login,morgon,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+login,morgon,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+login,morgon,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+login,morgon,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+login,morgon,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+login,morgon,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+login,morgon,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+login,morgon,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+login,morgon,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+login,morgon,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+login,morgon,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+login,morgon,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+login,morgon,script,200,6491,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/1hcx0qn-qjgfn.js
+login,morgon,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+login,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=_H_fFy2_Q06N8BA7
+login,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=_H_fFy2_Q06N8BA7
+login,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/signup?_rsc=_H_fFy2_Q06N8BA7
+login,morgon,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+login,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=sW2A7HEmFQnSVIMx
+login,morgon,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+login,morgon,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+login,morgon,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+login,morgon,fetch,200,249,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+login,morgon,fetch,200,1042,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=sW2A7HEmFQnSVIMx
+login,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=sW2A7HEmFQnSVIMx
+login,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/signup?_rsc=sW2A7HEmFQnSVIMx
+signup,natt,document,200,6697,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/signup
+signup,natt,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+signup,natt,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+signup,natt,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+signup,natt,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+signup,natt,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+signup,natt,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+signup,natt,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+signup,natt,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+signup,natt,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+signup,natt,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+signup,natt,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+signup,natt,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+signup,natt,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+signup,natt,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+signup,natt,script,200,6491,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/1hcx0qn-qjgfn.js
+signup,natt,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+signup,natt,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+signup,natt,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+signup,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=CnS1fQ4cBrkKy5Lu
+signup,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=CnS1fQ4cBrkKy5Lu
+signup,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=CnS1fQ4cBrkKy5Lu
+signup,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/integritet?_rsc=CnS1fQ4cBrkKy5Lu
+signup,natt,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+signup,natt,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+signup,natt,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+signup,natt,fetch,200,247,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+signup,natt,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+signup,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=x75wzsg_NPcEQdn1
+signup,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/integritet?_rsc=x75wzsg_NPcEQdn1
+signup,natt,fetch,200,1039,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=x75wzsg_NPcEQdn1
+signup,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=x75wzsg_NPcEQdn1
+signup,morgon,document,200,6697,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/signup
+signup,morgon,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+signup,morgon,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+signup,morgon,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+signup,morgon,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+signup,morgon,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+signup,morgon,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+signup,morgon,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+signup,morgon,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+signup,morgon,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+signup,morgon,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+signup,morgon,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+signup,morgon,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+signup,morgon,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+signup,morgon,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+signup,morgon,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+signup,morgon,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+signup,morgon,script,200,6491,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/1hcx0qn-qjgfn.js
+signup,morgon,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+signup,morgon,fetch,200,135,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=CnS1fQ4cBrkKy5Lu
+signup,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=CnS1fQ4cBrkKy5Lu
+signup,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=CnS1fQ4cBrkKy5Lu
+signup,morgon,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+signup,morgon,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+signup,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/integritet?_rsc=CnS1fQ4cBrkKy5Lu
+signup,morgon,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+signup,morgon,fetch,200,1042,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=x75wzsg_NPcEQdn1
+signup,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=x75wzsg_NPcEQdn1
+signup,morgon,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+signup,morgon,fetch,200,245,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+signup,morgon,fetch,200,1041,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=x75wzsg_NPcEQdn1
+signup,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/integritet?_rsc=x75wzsg_NPcEQdn1
+integritet,natt,document,200,11459,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/integritet
+integritet,natt,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+integritet,natt,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+integritet,natt,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+integritet,natt,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+integritet,natt,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+integritet,natt,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+integritet,natt,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+integritet,natt,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+integritet,natt,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+integritet,natt,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+integritet,natt,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+integritet,natt,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+integritet,natt,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+integritet,natt,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+integritet,natt,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+integritet,natt,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+integritet,natt,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+integritet,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=6xtAxR3h4TSqkAn3
+integritet,natt,fetch,200,143,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=6xtAxR3h4TSqkAn3
+integritet,natt,fetch,200,135,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=6xtAxR3h4TSqkAn3
+integritet,natt,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+integritet,natt,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+integritet,natt,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+integritet,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=h0bMcg7ZbwluV45B
+integritet,natt,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+integritet,natt,fetch,200,248,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+integritet,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=h0bMcg7ZbwluV45B
+integritet,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=h0bMcg7ZbwluV45B
+integritet,morgon,document,200,11459,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/integritet
+integritet,morgon,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+integritet,morgon,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+integritet,morgon,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+integritet,morgon,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+integritet,morgon,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+integritet,morgon,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+integritet,morgon,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+integritet,morgon,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+integritet,morgon,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+integritet,morgon,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+integritet,morgon,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+integritet,morgon,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+integritet,morgon,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+integritet,morgon,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+integritet,morgon,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+integritet,morgon,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+integritet,morgon,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+integritet,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=6xtAxR3h4TSqkAn3
+integritet,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=6xtAxR3h4TSqkAn3
+integritet,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=6xtAxR3h4TSqkAn3
+integritet,morgon,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+integritet,morgon,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+integritet,morgon,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+integritet,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=h0bMcg7ZbwluV45B
+integritet,morgon,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+integritet,morgon,fetch,200,245,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+integritet,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=h0bMcg7ZbwluV45B
+integritet,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=h0bMcg7ZbwluV45B
+villkor,natt,document,200,10136,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/villkor
+villkor,natt,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+villkor,natt,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+villkor,natt,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+villkor,natt,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+villkor,natt,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+villkor,natt,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+villkor,natt,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+villkor,natt,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+villkor,natt,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+villkor,natt,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+villkor,natt,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+villkor,natt,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+villkor,natt,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+villkor,natt,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+villkor,natt,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+villkor,natt,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+villkor,natt,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+villkor,natt,fetch,200,135,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=MQXtCGOJ8lztzyQS
+villkor,natt,fetch,200,139,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=MQXtCGOJ8lztzyQS
+villkor,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=MQXtCGOJ8lztzyQS
+villkor,natt,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+villkor,natt,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+villkor,natt,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+villkor,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=YTJW651BKbzuI4Pq
+villkor,natt,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+villkor,natt,fetch,200,249,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+villkor,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=YTJW651BKbzuI4Pq
+villkor,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=YTJW651BKbzuI4Pq
+villkor,morgon,document,200,10136,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/villkor
+villkor,morgon,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+villkor,morgon,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+villkor,morgon,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+villkor,morgon,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+villkor,morgon,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+villkor,morgon,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+villkor,morgon,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+villkor,morgon,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+villkor,morgon,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+villkor,morgon,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+villkor,morgon,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+villkor,morgon,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+villkor,morgon,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+villkor,morgon,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+villkor,morgon,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+villkor,morgon,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+villkor,morgon,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+villkor,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=MQXtCGOJ8lztzyQS
+villkor,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=MQXtCGOJ8lztzyQS
+villkor,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=MQXtCGOJ8lztzyQS
+villkor,morgon,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+villkor,morgon,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+villkor,morgon,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+villkor,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=YTJW651BKbzuI4Pq
+villkor,morgon,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+villkor,morgon,fetch,200,247,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+villkor,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=YTJW651BKbzuI4Pq
+villkor,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=YTJW651BKbzuI4Pq
+404,natt,document,404,5091,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/this-page-does-not-exist
+404,natt,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+404,natt,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+404,natt,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+404,natt,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+404,natt,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+404,natt,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+404,natt,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+404,natt,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+404,natt,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+404,natt,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+404,natt,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+404,natt,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+404,natt,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+404,natt,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+404,natt,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+404,natt,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+404,natt,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+404,natt,fetch,200,135,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=OXEfaXsCQr9qpu4a
+404,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=OXEfaXsCQr9qpu4a
+404,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=OXEfaXsCQr9qpu4a
+404,natt,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+404,natt,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+404,natt,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+404,natt,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+404,natt,fetch,200,244,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+404,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=242tnRB5_IlegzMX
+404,natt,fetch,200,1041,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=242tnRB5_IlegzMX
+404,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=242tnRB5_IlegzMX
+404,morgon,document,404,5091,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/this-page-does-not-exist
+404,morgon,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+404,morgon,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+404,morgon,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+404,morgon,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+404,morgon,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+404,morgon,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+404,morgon,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+404,morgon,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+404,morgon,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+404,morgon,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+404,morgon,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+404,morgon,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+404,morgon,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+404,morgon,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+404,morgon,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+404,morgon,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+404,morgon,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+404,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=OXEfaXsCQr9qpu4a
+404,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=OXEfaXsCQr9qpu4a
+404,morgon,fetch,200,135,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=OXEfaXsCQr9qpu4a
+404,morgon,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+404,morgon,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+404,morgon,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+404,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=242tnRB5_IlegzMX
+404,morgon,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+404,morgon,fetch,200,248,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+404,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=242tnRB5_IlegzMX
+404,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=242tnRB5_IlegzMX
+share-sample,natt,document,404,4219,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/share/iris-sparade-platsen
+share-sample,natt,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+share-sample,natt,stylesheet,200,5313,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/37m388zf6rymp.css
+share-sample,natt,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+share-sample,natt,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+share-sample,natt,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+share-sample,natt,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+share-sample,natt,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+share-sample,natt,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+share-sample,natt,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+share-sample,natt,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+share-sample,natt,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+share-sample,natt,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+share-sample,natt,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+share-sample,natt,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+share-sample,natt,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+share-sample,natt,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+share-sample,natt,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+share-sample,natt,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+share-sample,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=edz1bC5ZUhUVaHNn
+share-sample,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=edz1bC5ZUhUVaHNn
+share-sample,natt,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+share-sample,natt,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+share-sample,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=edz1bC5ZUhUVaHNn
+share-sample,natt,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+share-sample,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=znMUH9zEnxvgkMnX
+share-sample,natt,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+share-sample,natt,fetch,200,247,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+share-sample,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=znMUH9zEnxvgkMnX
+share-sample,natt,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=znMUH9zEnxvgkMnX
+share-sample,morgon,document,404,4219,text/html; charset=utf-8,zstd,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/share/iris-sparade-platsen
+share-sample,morgon,stylesheet,200,13226,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3q17cp_jgfwol.css
+share-sample,morgon,stylesheet,200,5313,text/css; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/37m388zf6rymp.css
+share-sample,morgon,font,200,46864,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2
+share-sample,morgon,font,200,50924,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2
+share-sample,morgon,font,200,37792,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2
+share-sample,morgon,script,200,3783,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/36s0t0o8ux5as.js
+share-sample,morgon,font,200,15224,font/woff2,,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/media/fd5073be3e923c20-s.p.0bu2vpnzs5p12.woff2
+share-sample,morgon,script,200,8916,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/22z1pob1pifku.js
+share-sample,morgon,script,200,73138,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3sehtyhn4u4zd.js
+share-sample,morgon,script,200,43345,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3fiu7rxb0vmhg.js
+share-sample,morgon,script,200,4040,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/turbopack-2mqzya3f0625m.js
+share-sample,morgon,script,200,11569,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/390j9gbq0u9ce.js
+share-sample,morgon,script,200,68239,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/3b8x_a43l2l_h.js
+share-sample,morgon,image,200,114554,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/nebula-hero.webp
+share-sample,morgon,script,200,91098,application/javascript; charset=utf-8,br,"public, max-age=31536000, immutable",https://tale-forge.app/_next/static/immutable/chunks/328_qbrzd7ea7.js
+share-sample,morgon,image,200,46378,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/tf-logo.webp
+share-sample,morgon,script,200,496,application/javascript,gzip,"public, max-age=14400",https://tale-forge.app/ph/array/phc_sRfYTSBDQKKAkfuF3xyKtHnqeQee447jy6PzUCZAz5VF/config.js
+share-sample,morgon,image,200,96062,image/webp,,"public, max-age=31536000, immutable",https://tale-forge.app/assets/morgon-aurora-desktop.webp
+share-sample,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=edz1bC5ZUhUVaHNn
+share-sample,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=edz1bC5ZUhUVaHNn
+share-sample,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=edz1bC5ZUhUVaHNn
+share-sample,morgon,fetch,308,0,text/plain,,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags/?v=2
+share-sample,morgon,fetch,200,246,application/json,gzip,"public, max-age=0, must-revalidate",https://tale-forge.app/ph/flags?v=2
+share-sample,morgon,script,200,6744,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/web-vitals-with-attribution.js
+share-sample,morgon,script,200,34403,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/surveys.js
+share-sample,morgon,script,200,2459,application/javascript,br,"public, max-age=31536000, immutable",https://tale-forge.app/ph/static/1.423.2/logs.js
+share-sample,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/?_rsc=znMUH9zEnxvgkMnX
+share-sample,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/uppgradera?_rsc=znMUH9zEnxvgkMnX
+share-sample,morgon,fetch,200,0,text/x-component,br,"private, no-cache, no-store, max-age=0, must-revalidate",https://tale-forge.app/login?_rsc=znMUH9zEnxvgkMnX

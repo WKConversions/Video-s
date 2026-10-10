@@ -102,14 +102,14 @@ Captured live on 2026-10-09 with Playwright (desktop 1440×900, natt). Only clie
 ### State: `start-s0-gallery`
 
 After clicking "Read a sample book first": the sample-book gallery opens under the CTAs.
-Screenshot: [../states/start-s0-gallery__en.png](../states/start-s0-gallery__en.png)
+Screenshot: [../states/start-s0-gallery__en.webp](../states/start-s0-gallery__en.webp)
 
 - `a` — [img alt="Cover of the Swedish sample book Iris och den sparade platsen"] Iris och den sparade platsen · Read the Swedish sample · → `/share/iris-sparade-platsen` · aria-label="Read the Swedish sample: Iris och den sparade platsen" · contains img alt="Cover of the Swedish sample book Iris och den sparade platsen"
 
 ### State: `start-s1`
 
 After clicking the primary CTA: step 1 of 4 (name, age band, pronoun).
-Screenshot: [../states/start-s1__en.png](../states/start-s1__en.png)
+Screenshot: [../states/start-s1__en.webp](../states/start-s1__en.webp)
 
 - `button` — *(no visible text)* · aria-label="Back" · type="button"
 - `b` — Step 1 of 4 · The hero
@@ -127,7 +127,7 @@ Screenshot: [../states/start-s1__en.png](../states/start-s1__en.png)
 ### State: `start-s1-moderation-email`
 
 Step 1 with an email address typed as the name and "Vidare/Next" pressed: the client-side moderation message.
-Screenshot: [../states/start-s1-moderation-email__en.png](../states/start-s1-moderation-email__en.png)
+Screenshot: [../states/start-s1-moderation-email__en.webp](../states/start-s1-moderation-email__en.webp)
 
 - `button` — *(no visible text)* · aria-label="Back" · type="button"
 - `b` — Step 1 of 4 · The hero
@@ -146,7 +146,7 @@ Screenshot: [../states/start-s1-moderation-email__en.png](../states/start-s1-mod
 ### State: `start-s2`
 
 Step 2 of 4 (photo) after a valid name. Nothing was uploaded..
-Screenshot: [../states/start-s2__en.png](../states/start-s2__en.png)
+Screenshot: [../states/start-s2__en.webp](../states/start-s2__en.webp)
 
 - `button` — *(no visible text)* · aria-label="Back" · type="button"
 - `b` — Step 2 of 4 · The photo

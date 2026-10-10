@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" width="240" height="64">
   <title>Map: dotted trail + lit gradient trail</title>
-  <!-- Tale Forge endings-map part. Unlit branches: round-capped dots (dasharray 0.1 8, 1.6 px). Lit route: 2.4 px stroke with a gold -&gt; violet-soft gradient, drawn on via stroke-dashoffset (pathLength 1). Source: assets/svg-inline/home__hiw-map-desktop__d942793a.svg (paths). CSS: source/css/3q17cp_jgfwol.pretty.css:2931-2952. Tokens below are the Natt values; swap in TOKENS from the Morgon theme to re-theme. -->
+  <!-- Tale Forge endings-map part. A fork as on the map: unlit branches are round-capped dots (dasharray 0.1 8, 1.6 px, --dash-line). The lit route is a 2.4 px stroke with a gold -&gt; violet-soft gradient (objectBoundingBox x1 0 -&gt; x2 1), drawn on via stroke-dashoffset 1 -&gt; 0 (pathLength 1). Geometry uses the map&#x27;s own curve recipe: horizontal run, then a cubic with both handles horizontal (C x+43.2 y, x+64.8 y2, x+108 y2 on the desktop map). Source: assets/svg-inline/home__hiw-map-desktop__d942793a.svg (paths); source/js/3d9nxlx1n5pdy.js@8366 (paths per ending). CSS: source/css/3q17cp_jgfwol.pretty.css:2931-2952. Tokens below are the Natt values; swap in TOKENS from the Morgon theme to re-theme. -->
   <style>
   @font-face { font-family: "Schibsted Grotesk"; src: url(../../../assets/fonts/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2) format("woff2"); font-weight: 400 800; }
   svg { --dash-line: #ffecbe59; --map-dot: #9b87f5; --map-glow: #f5c54240; --gold-chip-bg: #f2b22e29; --gold-chip-ink: #ffd98f; --gold-soft: #f5c542; --page-sub: #d9cfee; --card-line: #9b87f542; }
@@ -28,6 +28,7 @@
       <stop offset="1" stop-color="#9b87f5"/>
     </linearGradient>
   </defs>
-  <path class="map-path" d="M 10 18 L 230 18"/>
-  <path class="map-path-lit" d="M 10 44 C 60 44 80 44 230 44" stroke="url(#lit)" opacity="0.9" fill="none"/>
+  <path class="map-path" d="M 10 32 L 70 32 C 98 32 112 12 140 12 L 230 12"/>
+  <path class="map-path" d="M 70 32 C 98 32 112 52 140 52 L 230 52"/>
+  <path class="map-path-lit" d="M 10 32 L 70 32 C 98 32 112 12 140 12 L 230 12" stroke="url(#lit)" opacity="0.9" fill="none"/>
 </svg>

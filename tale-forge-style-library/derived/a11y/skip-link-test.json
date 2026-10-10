@@ -1,0 +1,34 @@
+{
+ "url": "https://tale-forge.app/",
+ "capturedAt": "2026-10-10T15:40:18.279Z",
+ "note": "webkit uses Alt+Tab (macOS-style link tabbing).",
+ "results": [
+  {
+   "engine": "chromium",
+   "available": true,
+   "skipLinkAtRest": {
+    "text": "Hoppa till innehållet",
+    "href": "#main-content",
+    "visibility": "hidden",
+    "transform": "matrix(1, 0, 0, 1, 0, -64)",
+    "position": "fixed"
+   },
+   "firstTabStop": {
+    "tag": "A",
+    "cls": "logo",
+    "text": "TALE FORGE"
+   },
+   "programmaticFocusSucceeds": false
+  },
+  {
+   "engine": "firefox",
+   "available": false,
+   "error": "Error: browserType.launch: Executable doesn't exist at /opt/pw-browsers/firefox-1495/firefox/firefox\n╔══════════════════"
+  },
+  {
+   "engine": "webkit",
+   "available": false,
+   "error": "Error: browserType.launch: Executable doesn't exist at /opt/pw-browsers/webkit-2215/pw_run.sh\n╔═════════════════════════"
+  }
+ ]
+}

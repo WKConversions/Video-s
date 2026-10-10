@@ -550,7 +550,7 @@
    "portrait frame": "28-32",
    "small cover thumbs": 14,
    "icon button": 8,
-   "skip link / paper props": 6,
+   "skip link / small hearth buttons": 6,
    "art top": "25px 25px 0 0 (card radius minus 1px border)"
   },
   "source": "derived/layout/inventory/radius-inventory.csv"

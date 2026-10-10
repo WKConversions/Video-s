@@ -102,14 +102,14 @@ Captured live on 2026-10-09 with Playwright (desktop 1440×900, natt). Only clie
 ### State: `start-s0-gallery`
 
 After clicking "Läs en exempelbok först": the sample-book gallery opens under the CTAs.
-Screenshot: [../states/start-s0-gallery__sv.png](../states/start-s0-gallery__sv.png)
+Screenshot: [../states/start-s0-gallery__sv.webp](../states/start-s0-gallery__sv.webp)
 
 - `a` — [img alt="Omslag till exempelboken Iris och den sparade platsen"] Iris och den sparade platsen · Läs exempelboken · → `/share/iris-sparade-platsen` · aria-label="Läs exempelboken: Iris och den sparade platsen" · contains img alt="Omslag till exempelboken Iris och den sparade platsen"
 
 ### State: `start-s1`
 
 After clicking the primary CTA: step 1 of 4 (name, age band, pronoun).
-Screenshot: [../states/start-s1__sv.png](../states/start-s1__sv.png)
+Screenshot: [../states/start-s1__sv.webp](../states/start-s1__sv.webp)
 
 - `button` — *(no visible text)* · aria-label="Tillbaka" · type="button"
 - `b` — Steg 1 av 4 · Hjälten
@@ -127,7 +127,7 @@ Screenshot: [../states/start-s1__sv.png](../states/start-s1__sv.png)
 ### State: `start-s1-moderation-email`
 
 Step 1 with an email address typed as the name and "Vidare/Next" pressed: the client-side moderation message.
-Screenshot: [../states/start-s1-moderation-email__sv.png](../states/start-s1-moderation-email__sv.png)
+Screenshot: [../states/start-s1-moderation-email__sv.webp](../states/start-s1-moderation-email__sv.webp)
 
 - `button` — *(no visible text)* · aria-label="Tillbaka" · type="button"
 - `b` — Steg 1 av 4 · Hjälten
@@ -146,7 +146,7 @@ Screenshot: [../states/start-s1-moderation-email__sv.png](../states/start-s1-mod
 ### State: `start-s2`
 
 Step 2 of 4 (photo) after a valid name. Nothing was uploaded..
-Screenshot: [../states/start-s2__sv.png](../states/start-s2__sv.png)
+Screenshot: [../states/start-s2__sv.webp](../states/start-s2__sv.webp)
 
 - `button` — *(no visible text)* · aria-label="Tillbaka" · type="button"
 - `b` — Steg 2 av 4 · Fotot

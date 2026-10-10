@@ -1,0 +1,245 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1130" width="1600" height="1130" font-family="'Schibsted Grotesk','DejaVu Sans','Segoe UI',system-ui,sans-serif">
+  <title>Tale Forge: site map, routes and flows (logged-out view)</title>
+  <desc>Hand-written diagram for analysis/13-pages-ia-and-flows.md. Colours are Tale Forge's own: background #171232 (manifest theme_color), ink #fff7e9, gold #f5c542, violet-soft #9b87f5, coral #ff6154. Evidence: derived/ia/routes.csv, derived/ia/link-graph.json, derived/ia/flows.csv.</desc>
+  <defs>
+    <marker id="aGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#f5c542"/></marker>
+    <marker id="aViolet" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#9b87f5"/></marker>
+    <marker id="aCoral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#ff6154"/></marker>
+    <style>
+      .t { fill: #fff7e9; font-size: 13px; }
+      .s { fill: #c9c1e8; font-size: 12px; }
+      .m { font-family: 'DejaVu Sans Mono', ui-monospace, monospace; font-weight: 700; font-size: 16px; }
+      .mg { fill: #f5c542; } .mv { fill: #9b87f5; } .mc { fill: #ff6154; } .mx { fill: #b9b2d6; }
+      .lab { font-size: 12px; font-weight: 700; }
+      .h { fill: #f5c542; font-size: 15px; font-weight: 700; letter-spacing: .08em; }
+      .pub { fill: #221b45; stroke: #f5c542; stroke-width: 1.6; }
+      .state { fill: #1d173d; stroke: #f5c542; stroke-width: 1.4; stroke-dasharray: 6 4; }
+      .gate { fill: #1f1a40; stroke: #9b87f5; stroke-width: 1.6; stroke-dasharray: 7 4; }
+      .nf { fill: #2a1830; stroke: #ff6154; stroke-width: 1.6; }
+      .un { fill: #1b1838; stroke: #8a83b0; stroke-width: 1.2; stroke-dasharray: 3 4; }
+      .shell { fill: #1b1538; stroke: #6d4fe0; stroke-width: 1.4; }
+      .eg { stroke: #f5c542; stroke-width: 3; fill: none; }
+      .ev { stroke: #9b87f5; stroke-width: 1.8; fill: none; }
+      .ec { stroke: #ff6154; stroke-width: 1.8; fill: none; stroke-dasharray: 6 4; }
+    </style>
+  </defs>
+  <rect width="1600" height="1130" fill="#171232"/>
+
+  <!-- Title + legend -->
+  <text x="40" y="44" fill="#fff7e9" font-size="24" font-weight="800" font-family="Lora,'DejaVu Serif',Georgia,serif">Tale Forge · site map and flows</text>
+  <text x="40" y="66" class="s">Logged-out view, probed 2026-10-09/10. Language = cookie tf_locale, theme = localStorage tf-theme: the URL never changes.</text>
+  <g transform="translate(900,24)">
+    <rect x="0" y="0" width="30" height="16" rx="5" class="pub"/><text x="38" y="13" class="s">public page (in sitemap.xml)</text>
+    <rect x="235" y="0" width="30" height="16" rx="5" class="state"/><text x="273" y="13" class="s">screen state inside one URL</text>
+    <rect x="480" y="0" width="30" height="16" rx="5" class="gate"/><text x="518" y="13" class="s">gated</text>
+    <rect x="0" y="26" width="30" height="16" rx="5" class="nf"/><text x="38" y="39" class="s">404</text>
+    <rect x="235" y="26" width="30" height="16" rx="5" class="un"/><text x="273" y="39" class="s">unlisted / alias / meta</text>
+    <line x1="480" y1="34" x2="510" y2="34" class="eg"/><text x="518" y="39" class="s">main journey</text>
+  </g>
+
+  <!-- Global shell band -->
+  <rect x="40" y="84" width="1520" height="74" rx="14" class="shell"/>
+  <text x="58" y="108" class="h">EVERY PAGE · .shell (min(1120px,100%), padding 0 28px)</text>
+  <text x="58" y="130" class="t">nav: [logo TALE FORGE → /]   [Logga in → /login]   [Priser → /uppgradera]   [SV | EN → cookie tf_locale, router.refresh()]   [Natt | Morgon → localStorage tf-theme]</text>
+  <text x="58" y="149" class="s">signed in: [Bokhylla → /] [Konto → /konto] · anonymous on /start: no account links · foot: tagline + Beta + version · Tale Forge AB, org.nr · [Kontakt mailto] [Integritet → /integritet] [Villkor → /villkor]</text>
+
+  <!-- Row A: the journey -->
+  <text x="40" y="190" class="h">JOURNEY</text>
+  <rect x="40" y="200" width="280" height="130" rx="14" class="pub"/>
+  <text x="56" y="226"><tspan class="m mg">/</tspan><tspan class="t" dx="10">Hem · landing</tspan></text>
+  <text x="56" y="248" class="t">h1 «En värld som minns henne.»</text>
+  <text x="56" y="268" class="s">hero · Så funkar det (6 steps) ·</text>
+  <text x="56" y="284" class="s">Din hjälte · Bokhyllan · foot</text>
+  <text x="56" y="306" class="s">4994 px tall @1440 · 7848 px @390</text>
+  <text x="56" y="322" class="s">covers, shelf, upload, + vän → /signup</text>
+
+  <rect x="380" y="200" width="280" height="130" rx="14" class="pub"/>
+  <text x="396" y="226"><tspan class="m mg">/start</tspan><tspan class="t" dx="10">s0 → s1 → s2</tspan></text>
+  <text x="396" y="248" class="t">s0 h1 «Ikväll är hjälten ert barn.»</text>
+  <text x="396" y="268" class="s">s1 Hjälten: name · age band · han/hon</text>
+  <text x="396" y="284" class="s">s2 Fotot: guardian attest · photo</text>
+  <text x="396" y="306" class="s">no account or card yet · URL never changes</text>
+  <text x="396" y="322" class="s">draft in localStorage tf-start-draft</text>
+
+  <rect x="720" y="200" width="300" height="130" rx="14" class="state"/>
+  <text x="736" y="226"><tspan class="m mg">/start</tspan><tspan class="t" dx="10">s3 → s8 (backend)</tspan></text>
+  <text x="736" y="248" class="s">s3 Sällskapet · s4 easel and unveil</text>
+  <text x="736" y="266" class="s">s5 Kontot: the account is made here</text>
+  <text x="736" y="284" class="s">s6 «Sista valet före boken» · four doors</text>
+  <text x="736" y="302" class="s">s7 «Boken skapas» · Glödvakten fire</text>
+  <text x="736" y="320" class="s">not reached live: needs upload / session</text>
+
+  <rect x="1080" y="200" width="250" height="130" rx="14" class="gate"/>
+  <text x="1096" y="226" class="m mv">/reader/{id}</text>
+  <text x="1096" y="248" class="t">StoryReader (page, choice,</text>
+  <text x="1096" y="266" class="t">end ceremony)</text>
+  <text x="1096" y="288" class="s">s8 → ?from=create</text>
+  <text x="1096" y="306" class="s">end → /create · /</text>
+  <text x="1096" y="322" class="s">logged out: 307 → /login</text>
+
+  <rect x="1390" y="200" width="170" height="130" rx="14" class="gate"/>
+  <text x="1406" y="226" class="m mv">/create</text>
+  <text x="1406" y="248" class="t">next book</text>
+  <text x="1406" y="270" class="s">s8 fallback when</text>
+  <text x="1406" y="286" class="s">no artifact id;</text>
+  <text x="1406" y="302" class="s">reader «next</text>
+  <text x="1406" y="318" class="s">adventure»</text>
+
+  <!-- journey edges -->
+  <path d="M320 250 H374" class="eg" marker-end="url(#aGold)"/>
+  <text x="326" y="240" class="lab" fill="#f5c542">Skapa er</text>
+  <text x="326" y="276" class="lab" fill="#f5c542">hjälte</text>
+  <path d="M660 250 H714" class="eg" marker-end="url(#aGold)" stroke-dasharray="8 5"/>
+  <text x="664" y="240" class="lab" fill="#f5c542">Vidare</text>
+  <path d="M1020 250 H1074" class="eg" marker-end="url(#aGold)"/>
+  <text x="1026" y="240" class="lab" fill="#f5c542">s8</text>
+  <path d="M1330 250 H1384" class="ev" marker-end="url(#aViolet)"/>
+
+  <!-- Row B: the quiet pages -->
+  <text x="40" y="412" class="h">QUIET PAGES · one glass card centred in the column</text>
+  <rect x="40" y="420" width="240" height="130" rx="14" class="pub"/>
+  <text x="56" y="446" class="m mg">/uppgradera</text>
+  <text x="56" y="468" class="t">h1 «Uppgradera» · 560 px</text>
+  <text x="56" y="488" class="s">Månadsvis | Årsvis toggle</text>
+  <text x="56" y="504" class="s">Familj 149 kr/mån · 1490 kr/år</text>
+  <text x="56" y="520" class="s">För skolor → Skola 249 kr/mån</text>
+  <text x="56" y="538" class="s">tab title «Uppgradera»</text>
+
+  <rect x="420" y="420" width="200" height="130" rx="14" class="pub"/>
+  <text x="436" y="446" class="m mg">/login</text>
+  <text x="436" y="468" class="t">h1 «Logga in» · 440 px</text>
+  <text x="436" y="488" class="s">Google · e-post · lösenord</text>
+  <text x="436" y="504" class="s">Glömt lösenordet? (in place)</text>
+  <text x="436" y="522" class="s">after sign-in → returnTo</text>
+  <text x="436" y="538" class="s">or /</text>
+
+  <rect x="700" y="420" width="210" height="130" rx="14" class="pub"/>
+  <text x="716" y="446" class="m mg">/signup</text>
+  <text x="716" y="468" class="t">h1 «Skapa konto» · 440 px</text>
+  <text x="716" y="488" class="s">Google · e-post · lösenord</text>
+  <text x="716" y="504" class="s">+ guardian attestation</text>
+  <text x="716" y="522" class="s">after sign-up → returnTo</text>
+  <text x="716" y="538" class="s">or /start</text>
+
+  <rect x="990" y="420" width="270" height="130" rx="14" class="pub"/>
+  <text x="1006" y="446" class="m mg">/integritet</text>
+  <text x="1006" y="468" class="t">h1 «Integritetspolicy» · 760 px</text>
+  <text x="1006" y="488" class="s">7 h3 sections, sv first; en in</text>
+  <text x="1006" y="504" class="s">&lt;details&gt; «Read in English»</text>
+  <text x="1006" y="522" class="s">(en cookie: en first, «Läs på</text>
+  <text x="1006" y="538" class="s">svenska»)</text>
+
+  <rect x="1300" y="420" width="260" height="130" rx="14" class="pub"/>
+  <text x="1316" y="446" class="m mg">/villkor</text>
+  <text x="1316" y="468" class="t">h1 «Användarvillkor» · 760 px</text>
+  <text x="1316" y="488" class="s">10 h3 sections, same bilingual</text>
+  <text x="1316" y="504" class="s">&lt;details&gt; pattern</text>
+  <text x="1316" y="522" class="s">links → /konto, /integritet,</text>
+  <text x="1316" y="538" class="s">mailto</text>
+
+  <!-- quiet-page edges -->
+  <path d="M280 470 H414" class="ev" marker-end="url(#aViolet)"/>
+  <text x="290" y="462" class="lab" fill="#9b87f5">Prova gratis i 14</text>
+  <text x="290" y="490" class="s">logged out:</text>
+  <text x="290" y="505" class="s">?returnTo=</text>
+  <text x="290" y="520" class="s">%2Fuppgradera</text>
+  <path d="M620 470 H694" class="ev" marker-end="url(#aViolet)" marker-start="url(#aViolet)"/>
+  <text x="628" y="462" class="lab" fill="#9b87f5">Skapa ett</text>
+  <text x="628" y="490" class="lab" fill="#9b87f5">Logga in</text>
+  <text x="628" y="506" class="s">keeps</text>
+  <text x="628" y="520" class="s">returnTo</text>
+  <path d="M910 470 H984" class="ev" marker-end="url(#aViolet)"/>
+  <text x="916" y="462" class="lab" fill="#9b87f5">Läs integ-</text>
+  <text x="916" y="490" class="lab" fill="#9b87f5">ritetspol.</text>
+  <!-- home → signup (many links) -->
+  <path d="M220 330 V372 H805 V414" class="ev" marker-end="url(#aViolet)"/>
+  <text x="560" y="366" class="lab" fill="#9b87f5">home: covers · Bokhyllan · «Bli din egen hjälte» · «Lägg till en vän» → /signup</text>
+  <!-- home fab → login -->
+  <path d="M110 330 V392 H470 V414" class="ev" marker-end="url(#aViolet)"/>
+  <text x="118" y="388" class="s">«Ändra utseende» (fab) → /login</text>
+
+  <!-- Row C -->
+  <text x="40" y="632" class="h">404 · GATED · ALIASES · UNLISTED</text>
+  <rect x="40" y="640" width="470" height="200" rx="14" class="nf"/>
+  <text x="56" y="666" class="m mc">404 card «Sidan finns inte»</text>
+  <text x="56" y="688" class="t">«Den här sidan har vandrat iväg i sagovärlden.»</text>
+  <text x="56" y="706" class="t">one CTA «Till startsidan» → /  · 440 px card, h2 (no h1)</text>
+  <text x="56" y="732" class="m mc" style="font-size:13px">/share/iris-sparade-platsen</text>
+  <text x="56" y="750" class="s">sample-book link · HTTP 404 · server shell __next_error__ + noindex</text>
+  <text x="56" y="766" class="s">tab title after hydration «Iris och den sparade platsen | Tale Forge»</text>
+  <text x="56" y="790" class="m mc" style="font-size:12px">/reader  /voice-test  /en  /share/x  any unknown</text>
+  <text x="56" y="812" class="s">same card; nav and footer intact; theme and language kept</text>
+  <text x="56" y="830" class="s">canonical echoes the requested path</text>
+
+  <rect x="550" y="640" width="400" height="200" rx="14" class="gate"/>
+  <text x="566" y="666" class="m mv">Gated → 307 /login?returnTo=…</text>
+  <text x="566" y="692" class="m mx" style="font-size:12.5px;font-weight:400">/konto        → ?returnTo=%2Fkonto</text>
+  <text x="566" y="712" class="m mx" style="font-size:12.5px;font-weight:400">/create       → ?returnTo=%2Fcreate</text>
+  <text x="566" y="732" class="m mx" style="font-size:12.5px;font-weight:400">/valkommen    → ?returnTo=%2Fvalkommen</text>
+  <text x="566" y="752" class="m mx" style="font-size:12.5px;font-weight:400">/reader/{id}  → ?returnTo=%2Freader%2F{id}</text>
+  <text x="566" y="772" class="m mx" style="font-size:12.5px;font-weight:400">/konto/x      → ?returnTo=%2Fkonto%2Fx</text>
+  <text x="566" y="796" class="s">server-side redirect; the login page looks identical (no</text>
+  <text x="566" y="812" class="s">"please log in to continue" line). robots.txt disallows</text>
+  <text x="566" y="828" class="s">/konto /valkommen /create /reader /voice-test /api/</text>
+  <path d="M600 640 V556" class="ev" marker-end="url(#aViolet)"/>
+
+  <rect x="990" y="640" width="250" height="200" rx="14" class="un"/>
+  <text x="1006" y="666" class="m mx">Aliases</text>
+  <text x="1006" y="690" class="m mx" style="font-size:12.5px;font-weight:400">/priser  → 307 /uppgradera</text>
+  <text x="1006" y="710" class="m mx" style="font-size:12.5px;font-weight:400">/pricing → 307 /uppgradera</text>
+  <text x="1006" y="730" class="m mx" style="font-size:12.5px;font-weight:400">/auth/callback → /login</text>
+  <text x="1006" y="756" class="s">Slugs are Swedish in both</text>
+  <text x="1006" y="772" class="s">languages: EN nav «Pricing»</text>
+  <text x="1006" y="788" class="s">still goes to /uppgradera.</text>
+  <text x="1006" y="812" class="s">No /en or /sv prefixes.</text>
+
+  <rect x="1280" y="640" width="280" height="200" rx="14" class="un"/>
+  <text x="1296" y="666" class="m mx">Unlisted campaign</text>
+  <text x="1296" y="690" class="m mx" style="font-size:12.5px;font-weight:400">/bokmassan → /bokmassan/saga</text>
+  <text x="1296" y="710" class="s">«Berättarstugan» chooser (3 cards)</text>
+  <text x="1296" y="730" class="m mx" style="font-size:12.5px;font-weight:400">/bokmassan/saga/berattelser</text>
+  <text x="1296" y="750" class="s">9 curated fair stories + reader</text>
+  <text x="1296" y="770" class="m mx" style="font-size:12.5px;font-weight:400">/bokmassan/tavling</text>
+  <text x="1296" y="790" class="s">stand-alone contest page</text>
+  <text x="1296" y="812" class="s">nav-right hidden · not in sitemap</text>
+  <text x="1296" y="828" class="s">see analysis/05b §11</text>
+
+  <!-- coral edges into the 404 box -->
+  <path d="M40 300 H22 V700 H34" class="ec" marker-end="url(#aCoral)"/>
+  <text x="26" y="600" class="lab" fill="#ff6154" transform="rotate(-90 26 600)">home «Läs exempelboken» ×2</text>
+  <path d="M400 330 V352 H350 V634" class="ec" marker-end="url(#aCoral)"/>
+  <text x="356" y="600" class="lab" fill="#ff6154">/start gallery</text>
+  <text x="356" y="615" class="lab" fill="#ff6154">sample book</text>
+  <path d="M160 550 V634" class="ec" marker-end="url(#aCoral)"/>
+  <text x="168" y="590" class="lab" fill="#ff6154">«Exempelbok» cover</text>
+
+  <!-- Row D: /start screens strip -->
+  <text x="40" y="882" class="h">/start SCREENS (one URL, SCREEN_ORDER s0…s8)</text>
+  <g font-size="12">
+    <rect x="40" y="892" width="160" height="110" rx="10" class="pub"/>
+    <text x="52" y="914" class="m mg" style="font-size:14px">s0</text><text x="52" y="934" class="s">hero «Ikväll är</text><text x="52" y="950" class="s">hjälten ert barn.»</text><text x="52" y="968" class="s">+ gallery toggle</text><text x="52" y="990" class="s">LIVE</text>
+    <rect x="210" y="892" width="160" height="110" rx="10" class="pub"/>
+    <text x="222" y="914" class="m mg" style="font-size:14px">s1</text><text x="222" y="934" class="s">Steg 1 av 4 ·</text><text x="222" y="950" class="s">Hjälten</text><text x="222" y="968" class="s">«Vem blir hjälten?»</text><text x="222" y="990" class="s">LIVE</text>
+    <rect x="380" y="892" width="160" height="110" rx="10" class="pub"/>
+    <text x="392" y="914" class="m mg" style="font-size:14px">s2</text><text x="392" y="934" class="s">Steg 2 av 4 ·</text><text x="392" y="950" class="s">Fotot</text><text x="392" y="968" class="s">«Gör Iris till hjälten.»</text><text x="392" y="990" class="s">LIVE (stop here)</text>
+    <rect x="550" y="892" width="160" height="110" rx="10" class="state"/>
+    <text x="562" y="914" class="m mg" style="font-size:14px">s3</text><text x="562" y="934" class="s">Steg 3 av 4 ·</text><text x="562" y="950" class="s">Sällskapet</text><text x="562" y="968" class="s">friends, keepsake</text><text x="562" y="990" class="s">INJECTED (05b)</text>
+    <rect x="720" y="892" width="160" height="110" rx="10" class="state"/>
+    <text x="732" y="914" class="m mg" style="font-size:14px">s4</text><text x="732" y="934" class="s">(no strip)</text><text x="732" y="950" class="s">easel, portrait</text><text x="732" y="968" class="s">unveil</text><text x="732" y="990" class="s">INJECTED (05b)</text>
+    <rect x="890" y="892" width="160" height="110" rx="10" class="state"/>
+    <text x="902" y="914" class="m mg" style="font-size:14px">s5</text><text x="902" y="934" class="s">Steg 4 av 4 ·</text><text x="902" y="950" class="s">Kontot</text><text x="902" y="968" class="s">save the hero</text><text x="902" y="990" class="s">INJECTED (05b)</text>
+    <rect x="1060" y="892" width="160" height="110" rx="10" class="state"/>
+    <text x="1072" y="914" class="m mg" style="font-size:14px">s6</text><text x="1072" y="934" class="s">Sista valet</text><text x="1072" y="950" class="s">före boken</text><text x="1072" y="968" class="s">four doors</text><text x="1072" y="990" class="s">INJECTED (05b)</text>
+    <rect x="1230" y="892" width="160" height="110" rx="10" class="state"/>
+    <text x="1242" y="914" class="m mg" style="font-size:14px">s7</text><text x="1242" y="934" class="s">Boken skapas</text><text x="1242" y="950" class="s">Glödvakten fire,</text><text x="1242" y="968" class="s">≥1800 px variant</text><text x="1242" y="990" class="s">INJECTED (05b)</text>
+    <rect x="1400" y="892" width="160" height="110" rx="10" class="state"/>
+    <text x="1412" y="914" class="m mg" style="font-size:14px">s8</text><text x="1412" y="934" class="s">hand-off</text><text x="1412" y="950" class="s">→ /reader/{id}</text><text x="1412" y="968" class="s">?from=create</text><text x="1412" y="990" class="s">INJECTED (05b)</text>
+  </g>
+
+  <!-- Row E: meta -->
+  <rect x="40" y="1030" width="1520" height="74" rx="14" class="un"/>
+  <text x="58" y="1054" class="h">META</text>
+  <text x="130" y="1054" class="s">sitemap.xml: / /start /integritet /villkor /login /signup /uppgradera (changefreq monthly) · robots.txt: Allow / ; Disallow /api/ /konto /valkommen /create /reader /voice-test</text>
+  <text x="130" y="1074" class="s">Every page: og:title «Tale Forge», og:image /opengraph-image.png 1200×630, twitter summary_large_image. Only 3 routes set their own tab title: Uppgradera/Upgrade, Integritetspolicy/Privacy notice,</text>
+  <text x="130" y="1092" class="s">Användarvillkor/Terms of service (+ own descriptions on the legal pages). manifest: standalone, theme/background #171232, start_url /.</text>
+</svg>

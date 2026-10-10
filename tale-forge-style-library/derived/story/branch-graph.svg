@@ -1,0 +1,200 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 2920 1760" width="2920" height="1760">
+<title>Iris och den sparade platsen: branching graph</title>
+<desc>Sample book of tale-forge.app: 14 beats in 6 slots, 2 choices, 4 endings. Thumbnails are the shipped page illustrations. Built by the Tale Forge style library (story dimension) from source/sample-book.iris-och-den-sparade-platsen.json.</desc>
+<defs><style>
+@font-face{font-family:'Lora';font-weight:600 700;src:url('../../assets/fonts/8c2eb9ceedecfc8e-s.p.1c4v1kyduoipm.woff2') format('woff2')}
+@font-face{font-family:'Source Serif 4';font-weight:400 600;src:url('../../assets/fonts/68d403cf9f2c68c5-s.p.42000xkkqj0am.woff2') format('woff2')}
+@font-face{font-family:'Schibsted Grotesk';font-weight:400 800;src:url('../../assets/fonts/31a9145ccb84606d-s.p.1_j-vbs-91rji.woff2') format('woff2')}
+.t{font-family:'Lora',Georgia,serif;font-weight:700;fill:#f2eeff} .s{font-family:'Source Serif 4',Georgia,serif;fill:#f2eeff} .u{font-family:'Schibsted Grotesk',Arial,sans-serif;fill:#b5acd3} .cap{font-family:'Schibsted Grotesk',Arial,sans-serif;font-weight:800;letter-spacing:.12em;fill:#ffd98f} .en{font-family:'Schibsted Grotesk',Arial,sans-serif;fill:#b5acd3;font-style:italic}
+</style>
+<radialGradient id="glow" cx="50%" cy="45%" r="70%"><stop offset="0" stop-color="#2a2160"/><stop offset="1" stop-color="#171232"/></radialGradient>
+<linearGradient id="trunk" x1="0" x2="1"><stop offset="0" stop-color="#f2b22e"/><stop offset="1" stop-color="#f5c542"/></linearGradient>
+<clipPath id="r12"><rect width="240" height="160" rx="12"/></clipPath>
+<clipPath id="rc"><rect width="120" height="180" rx="10"/></clipPath>
+</defs>
+<rect width="2920" height="1760" fill="#171232"/><rect width="2920" height="1760" fill="url(#glow)" opacity=".9"/>
+<text class="cap" x="60" y="62" font-size="15">TALE FORGE · SAMPLE BOOK · BRANCHING GRAPH</text>
+<text class="t" x="60" y="112" font-size="44">Iris och den sparade platsen</text>
+<text class="en" x="690" y="112" font-size="22">[Iris and the Saved Place — Tale Forge&#8217;s own English title]</text>
+<text class="u" x="60" y="148" font-size="17">storyId causal-e2e-DC-KERNEL-SV-18-MEDIA · engineVersion causal-foundry-v1 · language sv · band B (6–7 år) · register wonder · domainId sel.self-regulation · narratorPersona grandpa · companion Mossa (locked)</text>
+<text class="u" x="60" y="174" font-size="17">14 beats in 6 slots · choice after slot 2 (kind "path") and after slot 4 (kind "ordeal") · 2 options each · 4 endings · every reading is 6 pages + cover. Gold = shared trunk, violet = branches.</text>
+<text class="cap" x="200" y="222" font-size="13">SLOT 1 · SETUP</text>
+<text class="u" x="200" y="242" font-size="13">wide establishing frame</text>
+<text class="cap" x="470" y="222" font-size="13">SLOT 2 · TOOL PLANTED</text>
+<text class="u" x="470" y="242" font-size="13">pre-choice · overhead ¾</text>
+<text class="cap" x="1110" y="222" font-size="13">SLOT 3 · CONSEQUENCE</text>
+<text class="u" x="1110" y="242" font-size="13">high ¾ / intimate frame</text>
+<text class="cap" x="1390" y="222" font-size="13">SLOT 4 · ORDEAL</text>
+<text class="u" x="1390" y="242" font-size="13">pre-choice · tight tabletop</text>
+<text class="cap" x="2030" y="222" font-size="13">SLOT 5 · SETTLED RESULT</text>
+<text class="u" x="2030" y="242" font-size="13">close · the silver mark wakes</text>
+<text class="cap" x="2310" y="222" font-size="13">SLOT 6 · RETURN</text>
+<text class="u" x="2310" y="242" font-size="13">final return image · story time</text>
+<text class="cap" x="760" y="222" font-size="13" fill="#f2b22e">VAL 1</text><text class="u" x="760" y="242" font-size="13">choice · path</text>
+<text class="cap" x="1680" y="222" font-size="13" fill="#f2b22e">VAL 2</text><text class="u" x="1680" y="242" font-size="13">choice · ordeal</text>
+<text class="cap" x="2580" y="222" font-size="13">ENDING · OUTCOME</text><text class="u" x="2580" y="242" font-size="13">from choice effects</text>
+<path d="M 160 810 C 180.0 810 180.0 810 200 810" fill="none" stroke="url(#trunk)" stroke-width="5" stroke-linecap="round" opacity="1"/>
+<path d="M 440 810 C 455.0 810 455.0 810 470 810" fill="none" stroke="#f2b22e" stroke-width="5" stroke-linecap="round" opacity="1"/>
+<path d="M 710 810 C 742.0 810 742.0 810 774 810" fill="none" stroke="#f2b22e" stroke-width="5" stroke-linecap="round" opacity="1"/>
+<path d="M 826 810 C 968.0 810 968.0 490 1110 490" fill="none" stroke="#9b87f5" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<path d="M 1350 490 C 1370.0 490 1370.0 490 1390 490" fill="none" stroke="#9b87f5" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<path d="M 1630 490 C 1662.0 490 1662.0 490 1694 490" fill="none" stroke="#9b87f5" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<path d="M 1746 490 C 1888.0 490 1888.0 330 2030 330" fill="none" stroke="#9b87f5" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<path d="M 2270 330 C 2290.0 330 2290.0 330 2310 330" fill="none" stroke="#9b87f5" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<path d="M 1746 490 C 1888.0 490 1888.0 650 2030 650" fill="none" stroke="#9b87f5" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<path d="M 2270 650 C 2290.0 650 2290.0 650 2310 650" fill="none" stroke="#9b87f5" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<path d="M 826 810 C 968.0 810 968.0 1130 1110 1130" fill="none" stroke="#9b87f5" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<path d="M 1350 1130 C 1370.0 1130 1370.0 1130 1390 1130" fill="none" stroke="#9b87f5" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<path d="M 1630 1130 C 1662.0 1130 1662.0 1130 1694 1130" fill="none" stroke="#9b87f5" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<path d="M 1746 1130 C 1888.0 1130 1888.0 970 2030 970" fill="none" stroke="#9b87f5" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<path d="M 2270 970 C 2290.0 970 2290.0 970 2310 970" fill="none" stroke="#9b87f5" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<path d="M 1746 1130 C 1888.0 1130 1888.0 1290 2030 1290" fill="none" stroke="#9b87f5" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<path d="M 2270 1290 C 2290.0 1290 2290.0 1290 2310 1290" fill="none" stroke="#9b87f5" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+<g transform="translate(40,720)"><image href="../../assets/share/iris-sparade-platsen/assets/cover.webp" width="120" height="180" preserveAspectRatio="xMidYMid slice" clip-path="url(#rc)"/><rect width="120" height="180" rx="10" fill="none" stroke="#f2b22e" stroke-width="2"/></g>
+<text class="cap" x="40" y="926" font-size="12">COVER · 2:3</text><text class="u" x="40" y="944" font-size="12">entryBeat S1</text>
+<g transform="translate(200,730)"><image href="../../assets/share/iris-sparade-platsen/assets/S1.webp" width="240" height="160" preserveAspectRatio="xMidYMid slice" clip-path="url(#r12)"/><rect width="240" height="160" rx="12" fill="none" stroke="#9b87f5" stroke-opacity=".75" stroke-width="2"/><rect x="8" y="8" width="34" height="24" rx="12" fill="#171232" fill-opacity=".85"/><text class="cap" x="25" y="25" font-size="13" text-anchor="middle" letter-spacing="0.06em">S1</text></g>
+<text class="s" x="200" y="912" font-size="15.5">Men ett nytt barn hade hunnit</text>
+<text class="s" x="200" y="931" font-size="15.5">sätta sig där först.</text>
+<text class="en" x="200" y="952" font-size="13">[But a new child had got there first.]</text>
+<g transform="translate(470,730)"><image href="../../assets/share/iris-sparade-platsen/assets/S2.webp" width="240" height="160" preserveAspectRatio="xMidYMid slice" clip-path="url(#r12)"/><rect width="240" height="160" rx="12" fill="none" stroke="#9b87f5" stroke-opacity=".75" stroke-width="2"/><rect x="8" y="8" width="34" height="24" rx="12" fill="#171232" fill-opacity=".85"/><text class="cap" x="25" y="25" font-size="13" text-anchor="middle" letter-spacing="0.06em">S2</text></g>
+<text class="s" x="470" y="912" font-size="15.5">Här kunde hennes bild vara. Där</text>
+<text class="s" x="470" y="931" font-size="15.5">kunde någon annans ta vid.</text>
+<text class="en" x="470" y="952" font-size="13">[Her picture could go here. Someone</text>
+<text class="en" x="470" y="969" font-size="13">else&#x27;s could take over there.]</text>
+<g transform="translate(1110,410)"><image href="../../assets/share/iris-sparade-platsen/assets/S3A.webp" width="240" height="160" preserveAspectRatio="xMidYMid slice" clip-path="url(#r12)"/><rect width="240" height="160" rx="12" fill="none" stroke="#9b87f5" stroke-opacity=".75" stroke-width="2"/><rect x="8" y="8" width="44" height="24" rx="12" fill="#171232" fill-opacity=".85"/><text class="cap" x="30" y="25" font-size="13" text-anchor="middle" letter-spacing="0.06em">S3A</text></g>
+<text class="s" x="1110" y="592" font-size="15.5">Iris gick med Mossa till den gröna</text>
+<text class="s" x="1110" y="611" font-size="15.5">mattan.</text>
+<text class="en" x="1110" y="632" font-size="13">[Iris went with Mossa to the green rug.]</text>
+<g transform="translate(1390,410)"><image href="../../assets/share/iris-sparade-platsen/assets/S4A.webp" width="240" height="160" preserveAspectRatio="xMidYMid slice" clip-path="url(#r12)"/><rect width="240" height="160" rx="12" fill="none" stroke="#9b87f5" stroke-opacity=".75" stroke-width="2"/><rect x="8" y="8" width="44" height="24" rx="12" fill="#171232" fill-opacity=".85"/><text class="cap" x="30" y="25" font-size="13" text-anchor="middle" letter-spacing="0.06em">S4A</text></g>
+<text class="s" x="1390" y="592" font-size="15.5">Det brände i fingertopparna.</text>
+<text class="en" x="1390" y="613" font-size="13">[Her fingertips burned.]</text>
+<g transform="translate(1110,1050)"><image href="../../assets/share/iris-sparade-platsen/assets/S3B.webp" width="240" height="160" preserveAspectRatio="xMidYMid slice" clip-path="url(#r12)"/><rect width="240" height="160" rx="12" fill="none" stroke="#9b87f5" stroke-opacity=".75" stroke-width="2"/><rect x="8" y="8" width="44" height="24" rx="12" fill="#171232" fill-opacity=".85"/><text class="cap" x="30" y="25" font-size="13" text-anchor="middle" letter-spacing="0.06em">S3B</text></g>
+<text class="s" x="1110" y="1232" font-size="15.5">Iris stannade och ritade med Amina</text>
+<text class="s" x="1110" y="1251" font-size="15.5">i fönsterljuset.</text>
+<text class="en" x="1110" y="1272" font-size="13">[Iris stayed and drew with Amina in the</text>
+<text class="en" x="1110" y="1289" font-size="13">window light.]</text>
+<g transform="translate(1390,1050)"><image href="../../assets/share/iris-sparade-platsen/assets/S4B.webp" width="240" height="160" preserveAspectRatio="xMidYMid slice" clip-path="url(#r12)"/><rect width="240" height="160" rx="12" fill="none" stroke="#9b87f5" stroke-opacity=".75" stroke-width="2"/><rect x="8" y="8" width="44" height="24" rx="12" fill="#171232" fill-opacity=".85"/><text class="cap" x="30" y="25" font-size="13" text-anchor="middle" letter-spacing="0.06em">S4B</text></g>
+<text class="s" x="1390" y="1232" font-size="15.5">Det hettade i händerna.</text>
+<text class="en" x="1390" y="1253" font-size="13">[Her hands felt hot.]</text>
+<g transform="translate(2030,250)"><image href="../../assets/share/iris-sparade-platsen/assets/S5AA.webp" width="240" height="160" preserveAspectRatio="xMidYMid slice" clip-path="url(#r12)"/><rect width="240" height="160" rx="12" fill="none" stroke="#9b87f5" stroke-opacity=".75" stroke-width="2"/><rect x="8" y="8" width="54" height="24" rx="12" fill="#171232" fill-opacity=".85"/><text class="cap" x="35" y="25" font-size="13" text-anchor="middle" letter-spacing="0.06em">S5AA</text></g>
+<text class="s" x="2030" y="432" font-size="15.5">Silvermånen blinkade till fast</text>
+<text class="s" x="2030" y="451" font-size="15.5">ingen rörde pappret.</text>
+<text class="en" x="2030" y="472" font-size="13">[The silver moon blinked, though no one</text>
+<text class="en" x="2030" y="489" font-size="13">touched the paper.]</text>
+<g transform="translate(2310,250)"><image href="../../assets/share/iris-sparade-platsen/assets/S6AA.webp" width="240" height="160" preserveAspectRatio="xMidYMid slice" clip-path="url(#r12)"/><rect width="240" height="160" rx="12" fill="none" stroke="#9b87f5" stroke-opacity=".75" stroke-width="2"/><rect x="8" y="8" width="54" height="24" rx="12" fill="#171232" fill-opacity=".85"/><text class="cap" x="35" y="25" font-size="13" text-anchor="middle" letter-spacing="0.06em">S6AA</text></g>
+<text class="s" x="2310" y="432" font-size="15.5">fönsterplatsen stod tom i</text>
+<text class="s" x="2310" y="451" font-size="15.5">kvällsljuset</text>
+<text class="en" x="2310" y="472" font-size="13">[the window seat stood empty in the</text>
+<text class="en" x="2310" y="489" font-size="13">evening light]</text>
+<g transform="translate(2030,570)"><image href="../../assets/share/iris-sparade-platsen/assets/S5AB.webp" width="240" height="160" preserveAspectRatio="xMidYMid slice" clip-path="url(#r12)"/><rect width="240" height="160" rx="12" fill="none" stroke="#9b87f5" stroke-opacity=".75" stroke-width="2"/><rect x="8" y="8" width="54" height="24" rx="12" fill="#171232" fill-opacity=".85"/><text class="cap" x="35" y="25" font-size="13" text-anchor="middle" letter-spacing="0.06em">S5AB</text></g>
+<text class="s" x="2030" y="752" font-size="15.5">flaxade silvervingarna en enda</text>
+<text class="s" x="2030" y="771" font-size="15.5">gång</text>
+<text class="en" x="2030" y="792" font-size="13">[the silver wings flapped a single time]</text>
+<g transform="translate(2310,570)"><image href="../../assets/share/iris-sparade-platsen/assets/S6AB.webp" width="240" height="160" preserveAspectRatio="xMidYMid slice" clip-path="url(#r12)"/><rect width="240" height="160" rx="12" fill="none" stroke="#9b87f5" stroke-opacity=".75" stroke-width="2"/><rect x="8" y="8" width="54" height="24" rx="12" fill="#171232" fill-opacity=".85"/><text class="cap" x="35" y="25" font-size="13" text-anchor="middle" letter-spacing="0.06em">S6AB</text></g>
+<text class="s" x="2310" y="752" font-size="15.5">på kartan fick natten vara utan</text>
+<text class="s" x="2310" y="771" font-size="15.5">måne</text>
+<text class="en" x="2310" y="792" font-size="13">[on the map the night was allowed to</text>
+<text class="en" x="2310" y="809" font-size="13">have no moon]</text>
+<g transform="translate(2030,890)"><image href="../../assets/share/iris-sparade-platsen/assets/S5BA.webp" width="240" height="160" preserveAspectRatio="xMidYMid slice" clip-path="url(#r12)"/><rect width="240" height="160" rx="12" fill="none" stroke="#9b87f5" stroke-opacity=".75" stroke-width="2"/><rect x="8" y="8" width="54" height="24" rx="12" fill="#171232" fill-opacity=".85"/><text class="cap" x="35" y="25" font-size="13" text-anchor="middle" letter-spacing="0.06em">S5BA</text></g>
+<text class="s" x="2030" y="1072" font-size="15.5">glimmade stjärnan och hoppade till</text>
+<text class="s" x="2030" y="1091" font-size="15.5">på pappret</text>
+<text class="en" x="2030" y="1112" font-size="13">[the star glimmered and gave a jump on</text>
+<text class="en" x="2030" y="1129" font-size="13">the paper]</text>
+<g transform="translate(2310,890)"><image href="../../assets/share/iris-sparade-platsen/assets/S6BA.webp" width="240" height="160" preserveAspectRatio="xMidYMid slice" clip-path="url(#r12)"/><rect width="240" height="160" rx="12" fill="none" stroke="#9b87f5" stroke-opacity=".75" stroke-width="2"/><rect x="8" y="8" width="54" height="24" rx="12" fill="#171232" fill-opacity=".85"/><text class="cap" x="35" y="25" font-size="13" text-anchor="middle" letter-spacing="0.06em">S6BA</text></g>
+<text class="s" x="2310" y="1072" font-size="15.5">&quot;Här syns stjärnan ju bäst&quot;</text>
+<text class="en" x="2310" y="1093" font-size="13">[&quot;This is where the star shows best&quot;]</text>
+<g transform="translate(2030,1210)"><image href="../../assets/share/iris-sparade-platsen/assets/S5BB.webp" width="240" height="160" preserveAspectRatio="xMidYMid slice" clip-path="url(#r12)"/><rect width="240" height="160" rx="12" fill="none" stroke="#9b87f5" stroke-opacity=".75" stroke-width="2"/><rect x="8" y="8" width="54" height="24" rx="12" fill="#171232" fill-opacity=".85"/><text class="cap" x="35" y="25" font-size="13" text-anchor="middle" letter-spacing="0.06em">S5BB</text></g>
+<text class="s" x="2030" y="1392" font-size="15.5">puffade silverboet upp sig</text>
+<text class="en" x="2030" y="1413" font-size="13">[the silver nest puffed itself up]</text>
+<g transform="translate(2310,1210)"><image href="../../assets/share/iris-sparade-platsen/assets/S6BB.webp" width="240" height="160" preserveAspectRatio="xMidYMid slice" clip-path="url(#r12)"/><rect width="240" height="160" rx="12" fill="none" stroke="#9b87f5" stroke-opacity=".75" stroke-width="2"/><rect x="8" y="8" width="54" height="24" rx="12" fill="#171232" fill-opacity=".85"/><text class="cap" x="35" y="25" font-size="13" text-anchor="middle" letter-spacing="0.06em">S6BB</text></g>
+<text class="s" x="2310" y="1392" font-size="15.5">&quot;Moln behöver väl inte alltid en</text>
+<text class="s" x="2310" y="1411" font-size="15.5">stjärna&quot;</text>
+<text class="en" x="2310" y="1432" font-size="13">[&quot;Clouds don&#x27;t always need a star&quot;]</text>
+<circle cx="2546" cy="254" r="19" fill="#171232" stroke="#f2b22e" stroke-width="3"/><text class="t" x="2546" y="261" font-size="19" text-anchor="middle" fill="#ffd98f">1</text>
+<text class="cap" x="2580" y="278" font-size="13">SLUT 1 AV 4 · PATH AA</text>
+<text class="t" x="2580" y="310" font-size="24">Mossas måne</text>
+<text class="u" x="2580" y="336" font-size="14">moss map · silver moon is the last silver mark</text>
+<text class="en" x="2580" y="362" font-size="13">gives up: drawing with Amina in the</text>
+<text class="en" x="2580" y="380" font-size="13">window light; her silver bird</text>
+<circle cx="2546" cy="574" r="19" fill="#171232" stroke="#f2b22e" stroke-width="3"/><text class="t" x="2546" y="581" font-size="19" text-anchor="middle" fill="#ffd98f">2</text>
+<text class="cap" x="2580" y="598" font-size="13">SLUT 2 AV 4 · PATH AB</text>
+<text class="t" x="2580" y="630" font-size="24">Aminas fågel</text>
+<text class="u" x="2580" y="656" font-size="14">moss map · silver bird is the last silver mark</text>
+<text class="en" x="2580" y="682" font-size="13">gives up: drawing with Amina in the</text>
+<text class="en" x="2580" y="700" font-size="13">window light; Mossa’s moon</text>
+<circle cx="2546" cy="894" r="19" fill="#171232" stroke="#f2b22e" stroke-width="3"/><text class="t" x="2546" y="901" font-size="19" text-anchor="middle" fill="#ffd98f">3</text>
+<text class="cap" x="2580" y="918" font-size="13">SLUT 3 AV 4 · PATH BA</text>
+<text class="t" x="2580" y="950" font-size="24">Mossas stjärna</text>
+<text class="u" x="2580" y="976" font-size="14">sun-bird picture · silver star is the last silver mark</text>
+<text class="en" x="2580" y="1002" font-size="13">gives up: drawing with Mossa on the rug;</text>
+<text class="en" x="2580" y="1020" font-size="13">Amina’s nest</text>
+<circle cx="2546" cy="1214" r="19" fill="#171232" stroke="#f2b22e" stroke-width="3"/><text class="t" x="2546" y="1221" font-size="19" text-anchor="middle" fill="#ffd98f">4</text>
+<text class="cap" x="2580" y="1238" font-size="13">SLUT 4 AV 4 · PATH BB</text>
+<text class="t" x="2580" y="1270" font-size="24">Aminas bo</text>
+<text class="u" x="2580" y="1296" font-size="14">sun-bird picture · silver nest is the last silver mark</text>
+<text class="en" x="2580" y="1322" font-size="13">gives up: drawing with Mossa on the rug;</text>
+<text class="en" x="2580" y="1340" font-size="13">Mossa’s star</text>
+<g transform="translate(800,810) rotate(45)"><rect x="-19" y="-19" width="38" height="38" rx="7" fill="#2a2350" stroke="#f2b22e" stroke-width="3.5"/><rect x="-7" y="-7" width="14" height="14" rx="3" fill="none" stroke="#f2b22e" stroke-width="2.5"/></g>
+<text class="u" x="800" y="860" font-size="15" text-anchor="middle" font-weight="700" fill="#f2eeff">Val 1</text>
+<g transform="translate(1720,490) rotate(45)"><rect x="-19" y="-19" width="38" height="38" rx="7" fill="#2a2350" stroke="#f2b22e" stroke-width="3.5"/><rect x="-7" y="-7" width="14" height="14" rx="3" fill="none" stroke="#f2b22e" stroke-width="2.5"/></g>
+<text class="u" x="1720" y="540" font-size="15" text-anchor="middle" font-weight="700" fill="#f2eeff">Val 2</text>
+<g transform="translate(1720,1130) rotate(45)"><rect x="-19" y="-19" width="38" height="38" rx="7" fill="#2a2350" stroke="#f2b22e" stroke-width="3.5"/><rect x="-7" y="-7" width="14" height="14" rx="3" fill="none" stroke="#f2b22e" stroke-width="2.5"/></g>
+<text class="u" x="1720" y="1180" font-size="15" text-anchor="middle" font-weight="700" fill="#f2eeff">Val 2</text>
+<rect x="830.0" y="604.5" width="250" height="71" rx="12" fill="#1d1740" stroke="#f2b22e" stroke-opacity=".55" stroke-width="1.5"/>
+<circle cx="830.0" cy="604.5" r="13" fill="#f2b22e"/><text class="t" x="830.0" y="610.5" font-size="15" text-anchor="middle" fill="#171232">A</text>
+<text class="s" x="846.0" y="630.5" font-size="15" font-weight="600">Gå med Mossa till den gröna</text>
+<text class="s" x="846.0" y="649.5" font-size="15" font-weight="600">mattan.</text>
+<text class="en" x="846.0" y="668.5" font-size="12.5">[Go with Mossa to the green rug.]</text>
+<rect x="830.0" y="936.0" width="250" height="88" rx="12" fill="#1d1740" stroke="#f2b22e" stroke-opacity=".55" stroke-width="1.5"/>
+<circle cx="830.0" cy="936.0" r="13" fill="#f2b22e"/><text class="t" x="830.0" y="942.0" font-size="15" text-anchor="middle" fill="#171232">B</text>
+<text class="s" x="846.0" y="962.0" font-size="15" font-weight="600">Stanna och rita med det nya</text>
+<text class="s" x="846.0" y="981.0" font-size="15" font-weight="600">barnet i fönsterljuset.</text>
+<text class="en" x="846.0" y="1000.0" font-size="12.5">[Stay and draw with the new child</text>
+<text class="en" x="846.0" y="1017.0" font-size="12.5">in the window light.]</text>
+<rect x="1775.0" y="376.0" width="210" height="52" rx="12" fill="#1d1740" stroke="#f2b22e" stroke-opacity=".55" stroke-width="1.5"/>
+<circle cx="1775.0" cy="376.0" r="13" fill="#f2b22e"/><text class="t" x="1775.0" y="382.0" font-size="15" text-anchor="middle" fill="#171232">A</text>
+<text class="s" x="1791.0" y="402.0" font-size="15" font-weight="600">Låt Mossa rita månen.</text>
+<text class="en" x="1791.0" y="421.0" font-size="12.5">[Let Mossa draw the moon.]</text>
+<rect x="1775.0" y="534.0" width="210" height="88" rx="12" fill="#1d1740" stroke="#f2b22e" stroke-opacity=".55" stroke-width="1.5"/>
+<circle cx="1775.0" cy="534.0" r="13" fill="#f2b22e"/><text class="t" x="1775.0" y="540.0" font-size="15" text-anchor="middle" fill="#171232">B</text>
+<text class="s" x="1791.0" y="560.0" font-size="15" font-weight="600">Låt det nya barnet rita</text>
+<text class="s" x="1791.0" y="579.0" font-size="15" font-weight="600">fågeln.</text>
+<text class="en" x="1791.0" y="598.0" font-size="12.5">[Let the new child draw the</text>
+<text class="en" x="1791.0" y="615.0" font-size="12.5">bird.]</text>
+<rect x="1775.0" y="1016.0" width="210" height="52" rx="12" fill="#1d1740" stroke="#f2b22e" stroke-opacity=".55" stroke-width="1.5"/>
+<circle cx="1775.0" cy="1016.0" r="13" fill="#f2b22e"/><text class="t" x="1775.0" y="1022.0" font-size="15" text-anchor="middle" fill="#171232">A</text>
+<text class="s" x="1791.0" y="1042.0" font-size="15" font-weight="600">Låt Mossa rita stjärnan.</text>
+<text class="en" x="1791.0" y="1061.0" font-size="12.5">[Let Mossa draw the star.]</text>
+<rect x="1775.0" y="1174.0" width="210" height="88" rx="12" fill="#1d1740" stroke="#f2b22e" stroke-opacity=".55" stroke-width="1.5"/>
+<circle cx="1775.0" cy="1174.0" r="13" fill="#f2b22e"/><text class="t" x="1775.0" y="1180.0" font-size="15" text-anchor="middle" fill="#171232">B</text>
+<text class="s" x="1791.0" y="1200.0" font-size="15" font-weight="600">Låt det nya barnet rita</text>
+<text class="s" x="1791.0" y="1219.0" font-size="15" font-weight="600">boet.</text>
+<text class="en" x="1791.0" y="1238.0" font-size="12.5">[Let the new child draw the</text>
+<text class="en" x="1791.0" y="1255.0" font-size="12.5">nest.]</text>
+<line x1="60" x2="2860" y1="1460" y2="1460" stroke="#9b87f5" stroke-opacity=".35"/>
+<rect x="60" y="1486" width="900" height="232" rx="18" fill="#0f1628" fill-opacity=".68" stroke="#9b87f5" stroke-opacity=".26"/>
+<text class="cap" x="84" y="1518" font-size="13">VAL 1 · S2 · kind &quot;path&quot; · afterSlot 2 · rubricTag "neutral" on both options</text>
+<text class="s" x="84" y="1550" font-size="18">Det hettade i Iris händer; de ville rycka i stolen. Före sagostunden hinner hon bara rita på</text>
+<text class="s" x="84" y="1574" font-size="18">ett ställe. Vad gör hon?</text>
+<text class="en" x="84" y="1598" font-size="13.5">[Iris&#x27;s hands felt hot; they wanted to tug at the chair. Before story time she only has time to draw in one</text>
+<text class="en" x="84" y="1617" font-size="13.5">place. What does she do?]</text>
+<text class="u" x="84" y="1644" font-size="15" fill="#f2eeff"><tspan fill="#ffd98f" font-weight="800">A → S3A</tspan>  Gå med Mossa till den gröna mattan.</text>
+<text class="u" x="84" y="1666" font-size="15" fill="#f2eeff"><tspan fill="#ffd98f" font-weight="800">B → S3B</tspan>  Stanna och rita med det nya barnet i fönsterljuset.</text>
+<rect x="1000" y="1486" width="900" height="232" rx="18" fill="#0f1628" fill-opacity=".68" stroke="#9b87f5" stroke-opacity=".26"/>
+<text class="cap" x="1024" y="1518" font-size="13">VAL 2 · S4A · kind &quot;ordeal&quot; · afterSlot 4 · rubricTag "neutral" on both options</text>
+<text class="s" x="1024" y="1550" font-size="18">Mosskartan ska hängas upp, och bara en tur med silverpennan återstår. Vem får rita kartans</text>
+<text class="s" x="1024" y="1574" font-size="18">sista tecken?</text>
+<text class="en" x="1024" y="1598" font-size="13.5">[The moss map is to be hung up, and only one turn with the silver pen is left. Who gets to draw the map&#x27;s last</text>
+<text class="en" x="1024" y="1617" font-size="13.5">mark?]</text>
+<text class="u" x="1024" y="1644" font-size="15" fill="#f2eeff"><tspan fill="#ffd98f" font-weight="800">A → S5AA</tspan>  Låt Mossa rita månen.</text>
+<text class="u" x="1024" y="1666" font-size="15" fill="#f2eeff"><tspan fill="#ffd98f" font-weight="800">B → S5AB</tspan>  Låt det nya barnet rita fågeln.</text>
+<rect x="1940" y="1486" width="900" height="232" rx="18" fill="#0f1628" fill-opacity=".68" stroke="#9b87f5" stroke-opacity=".26"/>
+<text class="cap" x="1964" y="1518" font-size="13">VAL 2 · S4B · kind &quot;ordeal&quot; · afterSlot 4 · rubricTag "neutral" on both options</text>
+<text class="s" x="1964" y="1550" font-size="18">Solfågelbilden ska hängas upp, och bara en tur med silverpennan återstår. Vem får rita</text>
+<text class="s" x="1964" y="1574" font-size="18">bildens sista tecken?</text>
+<text class="en" x="1964" y="1598" font-size="13.5">[The sun-bird picture is to be hung up, and only one turn with the silver pen is left. Who gets to draw the</text>
+<text class="en" x="1964" y="1617" font-size="13.5">picture&#x27;s last mark?]</text>
+<text class="u" x="1964" y="1644" font-size="15" fill="#f2eeff"><tspan fill="#ffd98f" font-weight="800">A → S5BA</tspan>  Låt Mossa rita stjärnan.</text>
+<text class="u" x="1964" y="1666" font-size="15" fill="#f2eeff"><tspan fill="#ffd98f" font-weight="800">B → S5BB</tspan>  Låt det nya barnet rita boet.</text>
+<text class="u" x="60" y="1736" font-size="13">Sources: source/sample-book.iris-och-den-sparade-platsen.json (beats, choices, effects) · thumbnails assets/share/iris-sparade-platsen/assets/*.webp · ending numbers as on the landing endings map (AA=1, AB=2, BA=3, BB=4). Swedish verbatim; bracketed English is the library author's gloss, except the two Val 1 option glosses, which are Tale Forge's own English (landing-explainer en.steps.read.choiceLabels).</text>
+</svg>

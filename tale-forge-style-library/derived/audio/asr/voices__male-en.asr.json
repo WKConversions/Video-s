@@ -1,0 +1,119 @@
+{
+ "note": "MACHINE TRANSCRIPT (faster-whisper 'medium', int8, CPU, beam 5, language forced from file name). Not a site asset; may contain recognition errors. For sample-book beats the authoritative text is beats[].prose in source/sample-book.iris-och-den-sparade-platsen.json.",
+ "source_audio": "derived/audio/fetched/voices/male-en.mp3",
+ "model": "Systran/faster-whisper-medium",
+ "language": "en",
+ "duration_s": 10.24,
+ "text": "Welcome, adventurer. Your story is ready, and it starts the moment you are. Take a breath. Here we go.",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 6.88,
+   "text": "Welcome, adventurer. Your story is ready, and it starts the moment you are.",
+   "words": [
+    {
+     "w": " Welcome,",
+     "s": 0.0,
+     "e": 1.22
+    },
+    {
+     "w": " adventurer.",
+     "s": 1.8,
+     "e": 2.38
+    },
+    {
+     "w": " Your",
+     "s": 3.08,
+     "e": 3.32
+    },
+    {
+     "w": " story",
+     "s": 3.32,
+     "e": 3.7
+    },
+    {
+     "w": " is",
+     "s": 3.7,
+     "e": 4.04
+    },
+    {
+     "w": " ready,",
+     "s": 4.04,
+     "e": 4.32
+    },
+    {
+     "w": " and",
+     "s": 4.76,
+     "e": 4.86
+    },
+    {
+     "w": " it",
+     "s": 4.86,
+     "e": 5.14
+    },
+    {
+     "w": " starts",
+     "s": 5.14,
+     "e": 5.42
+    },
+    {
+     "w": " the",
+     "s": 5.42,
+     "e": 5.82
+    },
+    {
+     "w": " moment",
+     "s": 5.82,
+     "e": 6.2
+    },
+    {
+     "w": " you",
+     "s": 6.2,
+     "e": 6.54
+    },
+    {
+     "w": " are.",
+     "s": 6.54,
+     "e": 6.88
+    }
+   ]
+  },
+  {
+   "start": 7.8,
+   "end": 9.9,
+   "text": "Take a breath. Here we go.",
+   "words": [
+    {
+     "w": " Take",
+     "s": 7.8,
+     "e": 8.02
+    },
+    {
+     "w": " a",
+     "s": 8.02,
+     "e": 8.2
+    },
+    {
+     "w": " breath.",
+     "s": 8.2,
+     "e": 8.44
+    },
+    {
+     "w": " Here",
+     "s": 9.36,
+     "e": 9.5
+    },
+    {
+     "w": " we",
+     "s": 9.5,
+     "e": 9.68
+    },
+    {
+     "w": " go.",
+     "s": 9.68,
+     "e": 9.9
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,139 @@
+{
+ "method": "Source (optionally cropped) resized to the small image size with Lanczos, then mean absolute RGB difference (0-255) and normalised cross-correlation of luma. MAD of a few units = same picture re-encoded; shifted boxes show the centre crop is the best fit.",
+ "results": [
+  {
+   "small": "assets/landing/iris/scene-choice.webp",
+   "small_size": [
+    640,
+    427
+   ],
+   "source": "assets/share/iris-sparade-platsen/assets/S2.webp",
+   "source_size": [
+    1536,
+    1024
+   ],
+   "crop_box_px": "full frame",
+   "scale_factor": 2.4,
+   "mean_abs_diff_0_255": 3.16,
+   "ncc_luma": 0.9979,
+   "mad_if_box_shifted_by_px": {}
+  },
+  {
+   "small": "assets/landing/iris/cover-thumb.webp",
+   "small_size": [
+    128,
+    192
+   ],
+   "source": "assets/share/iris-sparade-platsen/assets/cover.webp",
+   "source_size": [
+    1024,
+    1536
+   ],
+   "crop_box_px": "full frame",
+   "scale_factor": 8.0,
+   "mean_abs_diff_0_255": 5.0,
+   "ncc_luma": 0.9964,
+   "mad_if_box_shifted_by_px": {}
+  },
+  {
+   "small": "assets/landing/iris/ending-1.webp",
+   "small_size": [
+    256,
+    256
+   ],
+   "source": "assets/share/iris-sparade-platsen/assets/S6AA.webp",
+   "source_size": [
+    1536,
+    1024
+   ],
+   "crop_box_px": [
+    256,
+    0,
+    1280,
+    1024
+   ],
+   "scale_factor": 4.0,
+   "mean_abs_diff_0_255": 4.61,
+   "ncc_luma": 0.9935,
+   "mad_if_box_shifted_by_px": {
+    "-64": 28.42,
+    "64": 27.81
+   }
+  },
+  {
+   "small": "assets/landing/iris/ending-2.webp",
+   "small_size": [
+    256,
+    256
+   ],
+   "source": "assets/share/iris-sparade-platsen/assets/S6AB.webp",
+   "source_size": [
+    1536,
+    1024
+   ],
+   "crop_box_px": [
+    256,
+    0,
+    1280,
+    1024
+   ],
+   "scale_factor": 4.0,
+   "mean_abs_diff_0_255": 4.11,
+   "ncc_luma": 0.9965,
+   "mad_if_box_shifted_by_px": {
+    "-64": 32.41,
+    "64": 33.13
+   }
+  },
+  {
+   "small": "assets/landing/iris/ending-3.webp",
+   "small_size": [
+    256,
+    256
+   ],
+   "source": "assets/share/iris-sparade-platsen/assets/S6BA.webp",
+   "source_size": [
+    1536,
+    1024
+   ],
+   "crop_box_px": [
+    256,
+    0,
+    1280,
+    1024
+   ],
+   "scale_factor": 4.0,
+   "mean_abs_diff_0_255": 4.62,
+   "ncc_luma": 0.9976,
+   "mad_if_box_shifted_by_px": {
+    "-64": 37.26,
+    "64": 36.88
+   }
+  },
+  {
+   "small": "assets/landing/iris/ending-4.webp",
+   "small_size": [
+    256,
+    256
+   ],
+   "source": "assets/share/iris-sparade-platsen/assets/S6BB.webp",
+   "source_size": [
+    1536,
+    1024
+   ],
+   "crop_box_px": [
+    256,
+    0,
+    1280,
+    1024
+   ],
+   "scale_factor": 4.0,
+   "mean_abs_diff_0_255": 4.09,
+   "ncc_luma": 0.997,
+   "mad_if_box_shifted_by_px": {
+    "-64": 35.44,
+    "64": 33.86
+   }
+  }
+ ]
+}

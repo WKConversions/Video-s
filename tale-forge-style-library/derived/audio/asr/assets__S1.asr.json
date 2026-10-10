@@ -1,0 +1,763 @@
+{
+ "note": "MACHINE TRANSCRIPT (faster-whisper 'medium', int8, CPU, beam 5, language forced from file name). Not a site asset; may contain recognition errors. For sample-book beats the authoritative text is beats[].prose in source/sample-book.iris-och-den-sparade-platsen.json.",
+ "source_audio": "assets/share/iris-sparade-platsen/assets/S1.mp3",
+ "model": "Systran/faster-whisper-medium",
+ "language": "sv",
+ "duration_s": 67.04,
+ "text": "Iris kom till kvartersbiblioteket med ett stort ritpapper under armen. Hon hade sparat fönsterplatsen åt Mossa. Där skulle kvällsljuset räcka över hela deras teckning. Men ett nytt barn hade hunnit sätta sig där först. Flickan heter Amina och höll en grön penna redo. – Kan vi ta en sista ritstund här i fönsterljuset? – frågade hon. Mossa kikade fram ur Iris' luva och snurrade halsduken ett varv. – Det var ju platsen vi skulle ha, sa han. Sedan såg han på Amina. – Fast nu sitter du där och jag vill inte tränga bort dig. Iris, kan vi ta vår sista ritstund på gröna mattan istället, där ryms en karta stor som en skog? Iris såg från den tagna fönsterplatsen till mattan. Före sagostunden fanns det bara tid för en ritstund.",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 6.2,
+   "text": "Iris kom till kvartersbiblioteket med ett stort ritpapper under armen.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 0.0,
+     "e": 0.96
+    },
+    {
+     "w": " kom",
+     "s": 0.96,
+     "e": 1.34
+    },
+    {
+     "w": " till",
+     "s": 1.34,
+     "e": 1.52
+    },
+    {
+     "w": " kvartersbiblioteket",
+     "s": 1.52,
+     "e": 3.22
+    },
+    {
+     "w": " med",
+     "s": 3.22,
+     "e": 3.48
+    },
+    {
+     "w": " ett",
+     "s": 3.48,
+     "e": 3.82
+    },
+    {
+     "w": " stort",
+     "s": 3.82,
+     "e": 4.22
+    },
+    {
+     "w": " ritpapper",
+     "s": 4.22,
+     "e": 5.1
+    },
+    {
+     "w": " under",
+     "s": 5.1,
+     "e": 5.46
+    },
+    {
+     "w": " armen.",
+     "s": 5.46,
+     "e": 6.2
+    }
+   ]
+  },
+  {
+   "start": 6.86,
+   "end": 9.42,
+   "text": "Hon hade sparat fönsterplatsen åt Mossa.",
+   "words": [
+    {
+     "w": " Hon",
+     "s": 6.86,
+     "e": 7.0
+    },
+    {
+     "w": " hade",
+     "s": 7.0,
+     "e": 7.32
+    },
+    {
+     "w": " sparat",
+     "s": 7.32,
+     "e": 7.8
+    },
+    {
+     "w": " fönsterplatsen",
+     "s": 7.8,
+     "e": 8.84
+    },
+    {
+     "w": " åt",
+     "s": 8.84,
+     "e": 9.0
+    },
+    {
+     "w": " Mossa.",
+     "s": 9.0,
+     "e": 9.42
+    }
+   ]
+  },
+  {
+   "start": 10.12,
+   "end": 14.08,
+   "text": "Där skulle kvällsljuset räcka över hela deras teckning.",
+   "words": [
+    {
+     "w": " Där",
+     "s": 10.12,
+     "e": 10.4
+    },
+    {
+     "w": " skulle",
+     "s": 10.4,
+     "e": 10.8
+    },
+    {
+     "w": " kvällsljuset",
+     "s": 10.8,
+     "e": 11.74
+    },
+    {
+     "w": " räcka",
+     "s": 11.74,
+     "e": 12.14
+    },
+    {
+     "w": " över",
+     "s": 12.14,
+     "e": 12.54
+    },
+    {
+     "w": " hela",
+     "s": 12.54,
+     "e": 13.06
+    },
+    {
+     "w": " deras",
+     "s": 13.06,
+     "e": 13.5
+    },
+    {
+     "w": " teckning.",
+     "s": 13.5,
+     "e": 14.08
+    }
+   ]
+  },
+  {
+   "start": 15.46,
+   "end": 18.26,
+   "text": "Men ett nytt barn hade hunnit sätta sig där först.",
+   "words": [
+    {
+     "w": " Men",
+     "s": 15.46,
+     "e": 15.64
+    },
+    {
+     "w": " ett",
+     "s": 15.64,
+     "e": 16.04
+    },
+    {
+     "w": " nytt",
+     "s": 16.04,
+     "e": 16.4
+    },
+    {
+     "w": " barn",
+     "s": 16.4,
+     "e": 16.64
+    },
+    {
+     "w": " hade",
+     "s": 16.64,
+     "e": 16.86
+    },
+    {
+     "w": " hunnit",
+     "s": 16.86,
+     "e": 17.18
+    },
+    {
+     "w": " sätta",
+     "s": 17.18,
+     "e": 17.48
+    },
+    {
+     "w": " sig",
+     "s": 17.48,
+     "e": 17.62
+    },
+    {
+     "w": " där",
+     "s": 17.62,
+     "e": 17.92
+    },
+    {
+     "w": " först.",
+     "s": 17.92,
+     "e": 18.26
+    }
+   ]
+  },
+  {
+   "start": 19.28,
+   "end": 23.2,
+   "text": "Flickan heter Amina och höll en grön penna redo.",
+   "words": [
+    {
+     "w": " Flickan",
+     "s": 19.28,
+     "e": 19.68
+    },
+    {
+     "w": " heter",
+     "s": 19.68,
+     "e": 19.94
+    },
+    {
+     "w": " Amina",
+     "s": 19.94,
+     "e": 20.8
+    },
+    {
+     "w": " och",
+     "s": 20.8,
+     "e": 21.32
+    },
+    {
+     "w": " höll",
+     "s": 21.32,
+     "e": 21.5
+    },
+    {
+     "w": " en",
+     "s": 21.5,
+     "e": 21.84
+    },
+    {
+     "w": " grön",
+     "s": 21.84,
+     "e": 22.38
+    },
+    {
+     "w": " penna",
+     "s": 22.38,
+     "e": 22.84
+    },
+    {
+     "w": " redo.",
+     "s": 22.84,
+     "e": 23.2
+    }
+   ]
+  },
+  {
+   "start": 24.42,
+   "end": 29.0,
+   "text": "– Kan vi ta en sista ritstund här i fönsterljuset? – frågade hon.",
+   "words": [
+    {
+     "w": " –",
+     "s": 24.42,
+     "e": 24.64
+    },
+    {
+     "w": " Kan",
+     "s": 24.64,
+     "e": 24.86
+    },
+    {
+     "w": " vi",
+     "s": 24.86,
+     "e": 25.02
+    },
+    {
+     "w": " ta",
+     "s": 25.02,
+     "e": 25.22
+    },
+    {
+     "w": " en",
+     "s": 25.22,
+     "e": 25.54
+    },
+    {
+     "w": " sista",
+     "s": 25.54,
+     "e": 26.0
+    },
+    {
+     "w": " ritstund",
+     "s": 26.0,
+     "e": 26.74
+    },
+    {
+     "w": " här",
+     "s": 26.74,
+     "e": 26.9
+    },
+    {
+     "w": " i",
+     "s": 26.9,
+     "e": 27.06
+    },
+    {
+     "w": " fönsterljuset?",
+     "s": 27.06,
+     "e": 28.4
+    },
+    {
+     "w": " –",
+     "s": 28.5,
+     "e": 28.5
+    },
+    {
+     "w": " frågade",
+     "s": 28.5,
+     "e": 28.84
+    },
+    {
+     "w": " hon.",
+     "s": 28.84,
+     "e": 29.0
+    }
+   ]
+  },
+  {
+   "start": 30.44,
+   "end": 35.84,
+   "text": "Mossa kikade fram ur Iris' luva och snurrade halsduken ett varv.",
+   "words": [
+    {
+     "w": " Mossa",
+     "s": 30.44,
+     "e": 31.16
+    },
+    {
+     "w": " kikade",
+     "s": 31.16,
+     "e": 31.82
+    },
+    {
+     "w": " fram",
+     "s": 31.82,
+     "e": 32.1
+    },
+    {
+     "w": " ur",
+     "s": 32.1,
+     "e": 32.3
+    },
+    {
+     "w": " Iris'",
+     "s": 32.3,
+     "e": 32.68
+    },
+    {
+     "w": " luva",
+     "s": 32.84,
+     "e": 33.36
+    },
+    {
+     "w": " och",
+     "s": 33.36,
+     "e": 33.76
+    },
+    {
+     "w": " snurrade",
+     "s": 33.76,
+     "e": 34.46
+    },
+    {
+     "w": " halsduken",
+     "s": 34.46,
+     "e": 35.32
+    },
+    {
+     "w": " ett",
+     "s": 35.32,
+     "e": 35.54
+    },
+    {
+     "w": " varv.",
+     "s": 35.54,
+     "e": 35.9
+    }
+   ]
+  },
+  {
+   "start": 37.02,
+   "end": 40.42,
+   "text": "– Det var ju platsen vi skulle ha, sa han.",
+   "words": [
+    {
+     "w": " –",
+     "s": 37.02,
+     "e": 37.02
+    },
+    {
+     "w": " Det",
+     "s": 37.02,
+     "e": 37.24
+    },
+    {
+     "w": " var",
+     "s": 37.24,
+     "e": 37.44
+    },
+    {
+     "w": " ju",
+     "s": 37.44,
+     "e": 37.76
+    },
+    {
+     "w": " platsen",
+     "s": 37.76,
+     "e": 38.26
+    },
+    {
+     "w": " vi",
+     "s": 38.26,
+     "e": 38.6
+    },
+    {
+     "w": " skulle",
+     "s": 38.6,
+     "e": 38.92
+    },
+    {
+     "w": " ha,",
+     "s": 38.92,
+     "e": 39.5
+    },
+    {
+     "w": " sa",
+     "s": 39.7,
+     "e": 39.86
+    },
+    {
+     "w": " han.",
+     "s": 39.86,
+     "e": 40.42
+    }
+   ]
+  },
+  {
+   "start": 41.28,
+   "end": 42.78,
+   "text": "Sedan såg han på Amina.",
+   "words": [
+    {
+     "w": " Sedan",
+     "s": 41.28,
+     "e": 41.54
+    },
+    {
+     "w": " såg",
+     "s": 41.54,
+     "e": 41.84
+    },
+    {
+     "w": " han",
+     "s": 41.84,
+     "e": 41.92
+    },
+    {
+     "w": " på",
+     "s": 41.92,
+     "e": 42.14
+    },
+    {
+     "w": " Amina.",
+     "s": 42.14,
+     "e": 42.78
+    }
+   ]
+  },
+  {
+   "start": 43.6,
+   "end": 47.84,
+   "text": "– Fast nu sitter du där och jag vill inte tränga bort dig.",
+   "words": [
+    {
+     "w": " –",
+     "s": 43.6,
+     "e": 43.6
+    },
+    {
+     "w": " Fast",
+     "s": 43.6,
+     "e": 44.06
+    },
+    {
+     "w": " nu",
+     "s": 44.06,
+     "e": 44.56
+    },
+    {
+     "w": " sitter",
+     "s": 44.56,
+     "e": 45.0
+    },
+    {
+     "w": " du",
+     "s": 45.0,
+     "e": 45.32
+    },
+    {
+     "w": " där",
+     "s": 45.32,
+     "e": 45.68
+    },
+    {
+     "w": " och",
+     "s": 45.68,
+     "e": 46.04
+    },
+    {
+     "w": " jag",
+     "s": 46.04,
+     "e": 46.34
+    },
+    {
+     "w": " vill",
+     "s": 46.34,
+     "e": 46.5
+    },
+    {
+     "w": " inte",
+     "s": 46.5,
+     "e": 46.8
+    },
+    {
+     "w": " tränga",
+     "s": 46.8,
+     "e": 47.22
+    },
+    {
+     "w": " bort",
+     "s": 47.22,
+     "e": 47.58
+    },
+    {
+     "w": " dig.",
+     "s": 47.58,
+     "e": 47.84
+    }
+   ]
+  },
+  {
+   "start": 48.94,
+   "end": 53.62,
+   "text": "Iris, kan vi ta vår sista ritstund på gröna mattan istället,",
+   "words": [
+    {
+     "w": " Iris,",
+     "s": 48.94,
+     "e": 49.4
+    },
+    {
+     "w": " kan",
+     "s": 49.78,
+     "e": 49.94
+    },
+    {
+     "w": " vi",
+     "s": 49.94,
+     "e": 50.1
+    },
+    {
+     "w": " ta",
+     "s": 50.1,
+     "e": 50.32
+    },
+    {
+     "w": " vår",
+     "s": 50.32,
+     "e": 50.52
+    },
+    {
+     "w": " sista",
+     "s": 50.52,
+     "e": 51.0
+    },
+    {
+     "w": " ritstund",
+     "s": 51.0,
+     "e": 51.52
+    },
+    {
+     "w": " på",
+     "s": 51.52,
+     "e": 51.84
+    },
+    {
+     "w": " gröna",
+     "s": 51.84,
+     "e": 52.48
+    },
+    {
+     "w": " mattan",
+     "s": 52.48,
+     "e": 53.04
+    },
+    {
+     "w": " istället,",
+     "s": 53.04,
+     "e": 53.62
+    }
+   ]
+  },
+  {
+   "start": 54.1,
+   "end": 56.84,
+   "text": "där ryms en karta stor som en skog?",
+   "words": [
+    {
+     "w": " där",
+     "s": 54.1,
+     "e": 54.3
+    },
+    {
+     "w": " ryms",
+     "s": 54.3,
+     "e": 54.54
+    },
+    {
+     "w": " en",
+     "s": 54.54,
+     "e": 54.9
+    },
+    {
+     "w": " karta",
+     "s": 54.9,
+     "e": 55.44
+    },
+    {
+     "w": " stor",
+     "s": 55.44,
+     "e": 55.74
+    },
+    {
+     "w": " som",
+     "s": 55.74,
+     "e": 55.92
+    },
+    {
+     "w": " en",
+     "s": 55.92,
+     "e": 56.4
+    },
+    {
+     "w": " skog?",
+     "s": 56.4,
+     "e": 56.84
+    }
+   ]
+  },
+  {
+   "start": 58.18,
+   "end": 61.92,
+   "text": "Iris såg från den tagna fönsterplatsen till mattan.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 58.18,
+     "e": 58.94
+    },
+    {
+     "w": " såg",
+     "s": 58.94,
+     "e": 59.32
+    },
+    {
+     "w": " från",
+     "s": 59.32,
+     "e": 59.48
+    },
+    {
+     "w": " den",
+     "s": 59.48,
+     "e": 59.76
+    },
+    {
+     "w": " tagna",
+     "s": 59.76,
+     "e": 60.08
+    },
+    {
+     "w": " fönsterplatsen",
+     "s": 60.08,
+     "e": 61.28
+    },
+    {
+     "w": " till",
+     "s": 61.28,
+     "e": 61.54
+    },
+    {
+     "w": " mattan.",
+     "s": 61.54,
+     "e": 61.92
+    }
+   ]
+  },
+  {
+   "start": 63.26,
+   "end": 66.74,
+   "text": "Före sagostunden fanns det bara tid för en ritstund.",
+   "words": [
+    {
+     "w": " Före",
+     "s": 63.26,
+     "e": 63.64
+    },
+    {
+     "w": " sagostunden",
+     "s": 63.64,
+     "e": 64.38
+    },
+    {
+     "w": " fanns",
+     "s": 64.38,
+     "e": 64.82
+    },
+    {
+     "w": " det",
+     "s": 64.82,
+     "e": 64.92
+    },
+    {
+     "w": " bara",
+     "s": 64.92,
+     "e": 65.16
+    },
+    {
+     "w": " tid",
+     "s": 65.16,
+     "e": 65.34
+    },
+    {
+     "w": " för",
+     "s": 65.34,
+     "e": 65.66
+    },
+    {
+     "w": " en",
+     "s": 65.66,
+     "e": 66.06
+    },
+    {
+     "w": " ritstund.",
+     "s": 66.06,
+     "e": 66.74
+    }
+   ]
+  }
+ ]
+}

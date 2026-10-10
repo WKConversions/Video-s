@@ -1,0 +1,104 @@
+{
+ "title": "Iris och den sparade platsen",
+ "language": "sv",
+ "band": "B",
+ "narratorPersona": "grandpa",
+ "throughline": "Iris vill dela sin sista ritstund före sagostunden, men fönsterplatsen hon sparat åt Mossa är tagen; nu måste hon välja var hon ritar och vem som får bildens sista silvertecken.",
+ "styleBlock": "Warm watercolor and colored-pencil children's-book illustration style, soft light, rounded shapes, expressive small gestures. Absolutely no text, no letters, no numbers, no labels, no signage anywhere in the image.",
+ "canon": {
+  "hero": {
+   "name": "Iris",
+   "kind": "barnhjälte",
+   "look": "sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar",
+   "mannerism": "lämnar alltid lite plats på sidan när hon ritar med någon annan"
+  },
+  "companion": {
+   "name": "Mossa",
+   "kind": "talande skogsmus",
+   "look": "liten brun skogsmus med grön halsduk och runda öron",
+   "mannerism": "snurrar halsduken ett varv när han tänker"
+  },
+  "others": [
+   {
+    "name": "Amina",
+    "kind": "barn",
+    "look": "sjuårig flicka med två mörka flätor, orange tröja och blå byxor",
+    "mannerism": "knackar lätt med pekfingret mot pappret när hon får en idé",
+    "emberHook": "ritar gärna fåglar och letar efter nya ritkompisar",
+    "gender": "girl"
+   }
+  ],
+  "place": {
+   "name": "kvartersbiblioteket",
+   "look": "låga bokhyllor, en bred fönsterbänk och en mjuk grön matta"
+  },
+  "objects": [
+   {
+    "id": "stort-ritpapper",
+    "name": "stort ritpapper",
+    "look": "ett brett vitt ritpapper med plats för flera tecknare",
+    "role": "prop",
+    "states": [
+     {
+      "slot": 1,
+      "state": "tomt under Iris arm"
+     },
+     {
+      "slot": 3,
+      "state": "förvandlat till en gemensam bild med öppna ritplatser"
+     },
+     {
+      "slot": 5,
+      "state": "färdigt och upphängt med ett enda sista silvertecken"
+     }
+    ]
+   },
+   {
+    "id": "silverpenna",
+    "name": "silverpenna",
+    "look": "en vanlig tjock penna som lämnar blanka silverstreck",
+    "role": "tool",
+    "states": [
+     {
+      "slot": 3,
+      "state": "ligger bredvid bilden med en ritningstur kvar"
+     },
+     {
+      "slot": 5,
+      "state": "har använts till bildens sista tecken"
+     }
+    ]
+   }
+  ]
+ },
+ "portraits": {
+  "hero": {
+   "kind": "image",
+   "path": "/share/iris-sparade-platsen/assets/refs/hero.png",
+   "provider": "azure-images:gpt-image-2"
+  },
+  "companion": {
+   "kind": "image",
+   "path": "/share/iris-sparade-platsen/assets/refs/companion.png",
+   "provider": "azure-images:gpt-image-2"
+  }
+ },
+ "cover": {
+  "kind": "image",
+  "path": "/share/iris-sparade-platsen/assets/cover.webp",
+  "provider": "azure-images:gpt-image-2",
+  "meta": {
+   "ms": 57340
+  }
+ },
+ "entryBeat": "S1",
+ "_source": "source/sample-book.iris-och-den-sparade-platsen.json (verbatim subset: keys title, language, band, narratorPersona, throughline, styleBlock, canon, portraits, cover, entryBeat; plus spec.world.hero)",
+ "spec.world.hero": {
+  "name": "Iris",
+  "kind": "barnhjälte",
+  "look": "sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar",
+  "mannerism": "lämnar alltid lite plats på sidan när hon ritar med någon annan"
+ },
+ "spec.companion": "Mossa, en talande skogsmus",
+ "spec.setting": "kvartersbiblioteket"
+}

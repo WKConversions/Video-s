@@ -39,7 +39,7 @@ No JSON-LD structured data on this page.
 
 ## Rendered copy, Svenska (Swedish) (live render, HTTP 404)
 
-Screenshot: [../states/share-iris__sv.png](../states/share-iris__sv.png). `<title>`: Iris och den sparade platsen | Tale Forge; `<html lang>`: sv.
+Screenshot: [../states/share-iris__sv.webp](../states/share-iris__sv.webp). `<title>`: Iris och den sparade platsen | Tale Forge; `<html lang>`: sv.
 - `img` — alt="" (decorative) · src `/assets/nebula-hero.webp`
 - `img` — alt="" (decorative) · src `/assets/morgon-aurora-desktop.webp`
 - `a.skip-link` — Hoppa till innehållet · → `#main-content`
@@ -78,7 +78,7 @@ Screenshot: [../states/share-iris__sv.png](../states/share-iris__sv.png). `<titl
 
 ## Rendered copy, English (live render, HTTP 404)
 
-Screenshot: [../states/share-iris__en.png](../states/share-iris__en.png). `<title>`: Iris och den sparade platsen | Tale Forge; `<html lang>`: en.
+Screenshot: [../states/share-iris__en.webp](../states/share-iris__en.webp). `<title>`: Iris och den sparade platsen | Tale Forge; `<html lang>`: en.
 - `img` — alt="" (decorative) · src `/assets/nebula-hero.webp`
 - `img` — alt="" (decorative) · src `/assets/morgon-aurora-desktop.webp`
 - `a.skip-link` — Skip to content · → `#main-content`

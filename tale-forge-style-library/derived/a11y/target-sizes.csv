@@ -1,0 +1,257 @@
+page,viewport,tag,cls,role,name,w,h,display,inline,nearestOtherTargetPx,wcag258_AA_24px,wcag255_AAA_44px
+home,desktop,a,logo,,TALE FORGE,261,42,flex,false,447.3,pass,fail
+home,desktop,a,,,Logga in,74.5,44,flex,false,49.3,pass,pass
+home,desktop,a,,,Priser,61.3,44,flex,false,42.6,pass,pass
+home,desktop,button,,,SV,44,44,block,false,24,pass,pass
+home,desktop,button,,,EN,44,44,block,false,24,pass,pass
+home,desktop,button,tt,switch,Byt tema,199.2,45,flex,false,71,pass,pass
+home,desktop,a,btn btn-primary,,Skapa er hjälte,182.7,54,flex,false,68,pass,pass
+home,desktop,a,btn btn-ghost,,Se hur det funkar,202.9,56,flex,false,69,pass,pass
+home,desktop,a,,,Alva och fyraljuset i tornet,259,348.8,inline,false,71.2,pass,pass
+home,desktop,a,,,Alva och filten vid elementet,254.2,346,inline,false,68.8,pass,pass
+home,desktop,button,hiw-play,,Hör berättarrösten,210.2,48,flex,false,1095.8,pass,pass
+home,desktop,button,hiw-map-btn hiw-map-btn-1,,"Slut 1 av 4, visa vägen dit",88.5,88.5,block,false,82.8,pass,pass
+home,desktop,button,hiw-map-btn hiw-map-btn-2,,"Slut 2 av 4, visa vägen dit",88.5,88.5,block,false,82.3,pass,pass
+home,desktop,button,hiw-map-btn hiw-map-btn-3,,"Slut 3 av 4, visa vägen dit",88.5,88.5,block,false,82.3,pass,pass
+home,desktop,button,hiw-map-btn hiw-map-btn-4,,"Slut 4 av 4, visa vägen dit",88.5,88.5,block,false,82.8,pass,pass
+home,desktop,a,btn btn-ghost,,Läs exempelboken,215.5,56,inline-flex,false,470.7,pass,pass
+home,desktop,a,btn btn-primary,,Skapa er hjälte,182.7,54,flex,false,105.3,pass,pass
+home,desktop,a,btn btn-ghost,,Läs exempelboken,215.5,56,flex,false,121.8,pass,pass
+home,desktop,a,fab,,Ändra utseende,42,42,grid,false,39.9,pass,fail
+home,desktop,a,upload,,"Bli din egen hjälte Ladda upp en bild, så målar vi",358.3,94.4,flex,false,189.2,pass,pass
+home,desktop,a,friend-add,,Lägg till en vän,397.7,53,flex,false,270.8,pass,pass
+home,desktop,a,book,,Alva och fyraljuset i tornet STORA KÄNSLOR,249.5,468,block,false,146.8,pass,pass
+home,desktop,a,book,,Alva och filten vid elementet MYSIGT ÄVENTYR,249.5,468,block,false,146.8,pass,pass
+home,desktop,a,,,Kontakt,51.1,18,block,false,41.6,pass-spacing,fail
+home,desktop,a,,,Integritet,60.7,18,block,false,46.4,pass-spacing,fail
+home,desktop,a,,,Villkor,42.5,18,block,false,37.3,pass-spacing,fail
+home,mobile,a,logo,,TALE FORGE,158.3,28,flex,false,26,pass,fail
+home,mobile,a,,,Logga in,74.5,44,flex,false,34,pass,pass
+home,mobile,a,,,Priser,61.3,44,flex,false,34,pass,pass
+home,mobile,button,,,SV,44,44,block,false,24,pass,pass
+home,mobile,button,,,EN,44,44,block,false,24,pass,pass
+home,mobile,button,tt,switch,Byt tema,72,44,flex,false,46,pass,pass
+home,mobile,a,btn btn-primary,,Skapa er hjälte,182.7,54,flex,false,85,pass,pass
+home,mobile,a,btn btn-ghost,,Se hur det funkar,202.9,56,flex,false,79.6,pass,pass
+home,mobile,a,,,Alva och fyraljuset i tornet,173.5,234.1,inline,false,51.3,pass,pass
+home,mobile,a,,,Alva och filten vid elementet,170.6,232.4,inline,false,49.9,pass,pass
+home,mobile,button,hiw-play,,Hör berättarrösten,290,48,flex,false,1215.7,pass,pass
+home,mobile,button,hiw-map-btn hiw-map-btn-1,,"Slut 1 av 4, visa vägen dit",50.2,50.2,block,false,37.5,pass,pass
+home,mobile,button,hiw-map-btn hiw-map-btn-2,,"Slut 2 av 4, visa vägen dit",50.2,50.2,block,false,37.5,pass,pass
+home,mobile,button,hiw-map-btn hiw-map-btn-3,,"Slut 3 av 4, visa vägen dit",50.2,50.2,block,false,37.5,pass,pass
+home,mobile,button,hiw-map-btn hiw-map-btn-4,,"Slut 4 av 4, visa vägen dit",50.2,50.2,block,false,37.5,pass,pass
+home,mobile,a,btn btn-ghost,,Läs exempelboken,215.5,56,inline-flex,false,272.3,pass,pass
+home,mobile,a,btn btn-primary,,Skapa er hjälte,182.7,54,flex,false,41,pass,pass
+home,mobile,a,btn btn-ghost,,Läs exempelboken,215.5,56,flex,false,42,pass,pass
+home,mobile,a,fab,,Ändra utseende,42,42,grid,false,225,pass,fail
+home,mobile,a,upload,,"Bli din egen hjälte Ladda upp en bild, så målar vi",280,94.4,flex,false,255.2,pass,pass
+home,mobile,a,friend-add,,Lägg till en vän,280,53,flex,false,158.5,pass,pass
+home,mobile,a,book,,Alva och fyraljuset i tornet STORA KÄNSLOR,334,574.4,block,false,309.2,pass,pass
+home,mobile,a,book,,Alva och filten vid elementet MYSIGT ÄVENTYR,334,574.4,block,false,309.2,pass,pass
+home,mobile,a,,,Kontakt,51.1,18,block,false,41.6,pass-spacing,fail
+home,mobile,a,,,Integritet,60.7,18,block,false,46.4,pass-spacing,fail
+home,mobile,a,,,Villkor,42.5,18,block,false,37.3,pass-spacing,fail
+start,desktop,a,logo,,TALE FORGE,261,42,flex,false,464.5,pass,fail
+start,desktop,a,,,Logga in,74.5,44,flex,false,49.3,pass,pass
+start,desktop,a,,,Priser,61.3,44,flex,false,42.6,pass,pass
+start,desktop,button,,,SV,44,44,block,false,24,pass,pass
+start,desktop,button,,,EN,44,44,block,false,24,pass,pass
+start,desktop,button,tt,switch,Byt tema,199.2,45,flex,false,115.6,pass,pass
+start,desktop,button,btn btn-primary,,Skapa er hjälte,182.7,54,flex,false,103.3,pass,pass
+start,desktop,button,btn btn-ghost,,Läs en exempelbok först,261.9,56,flex,false,143,pass,pass
+start,desktop,a,,,Kontakt,51.1,18,block,false,41.6,pass-spacing,fail
+start,desktop,a,,,Integritet,60.7,18,block,false,46.4,pass-spacing,fail
+start,desktop,a,,,Villkor,42.5,18,block,false,37.3,pass-spacing,fail
+start,mobile,a,logo,,TALE FORGE,158.3,28,flex,false,26,pass,fail
+start,mobile,a,,,Logga in,74.5,44,flex,false,34,pass,pass
+start,mobile,a,,,Priser,61.3,44,flex,false,34,pass,pass
+start,mobile,button,,,SV,44,44,block,false,24,pass,pass
+start,mobile,button,,,EN,44,44,block,false,24,pass,pass
+start,mobile,button,tt,switch,Byt tema,72,44,flex,false,46,pass,pass
+start,mobile,button,btn btn-primary,,Skapa er hjälte,182.7,54,flex,false,39,pass,pass
+start,mobile,button,btn btn-ghost,,Läs en exempelbok först,261.9,56,flex,false,40,pass,pass
+start,mobile,a,,,Kontakt,51.1,18,block,false,41.6,pass-spacing,fail
+start,mobile,a,,,Integritet,60.7,18,block,false,46.4,pass-spacing,fail
+start,mobile,a,,,Villkor,42.5,18,block,false,37.3,pass-spacing,fail
+uppgradera,desktop,a,logo,,TALE FORGE,261,42,flex,false,464.5,pass,fail
+uppgradera,desktop,a,,,Logga in,74.5,44,flex,false,49.3,pass,pass
+uppgradera,desktop,a,,,Priser,61.3,44,flex,false,42.6,pass,pass
+uppgradera,desktop,button,,,SV,44,44,block,false,24,pass,pass
+uppgradera,desktop,button,,,EN,44,44,block,false,24,pass,pass
+uppgradera,desktop,button,tt,switch,Byt tema,199.2,45,flex,false,115.6,pass,pass
+uppgradera,desktop,a,upgrade-sample-link,,Exempelbok: Öppna exempelboken,112,226.5,block,false,322.7,pass,pass
+uppgradera,desktop,button,trait,,Månadsvis,109,44,flex,false,63.5,pass,pass
+uppgradera,desktop,button,trait on,,Årsvis,78,44,flex,false,48,pass,pass
+uppgradera,desktop,button,btn btn-primary,,Prova gratis i 14 dagar,238.7,54,inline-flex,false,88.2,pass,pass
+uppgradera,desktop,button,trait,,För skolor,103.5,44,flex,false,71,pass,pass
+uppgradera,desktop,a,,,Kontakt,51.1,18,block,false,41.6,pass-spacing,fail
+uppgradera,desktop,a,,,Integritet,60.7,18,block,false,46.4,pass-spacing,fail
+uppgradera,desktop,a,,,Villkor,42.5,18,block,false,37.3,pass-spacing,fail
+uppgradera,mobile,a,logo,,TALE FORGE,158.3,28,flex,false,26,pass,fail
+uppgradera,mobile,a,,,Logga in,74.5,44,flex,false,34,pass,pass
+uppgradera,mobile,a,,,Priser,61.3,44,flex,false,34,pass,pass
+uppgradera,mobile,button,,,SV,44,44,block,false,24,pass,pass
+uppgradera,mobile,button,,,EN,44,44,block,false,24,pass,pass
+uppgradera,mobile,button,tt,switch,Byt tema,72,44,flex,false,46,pass,pass
+uppgradera,mobile,a,upgrade-sample-link,,Exempelbok: Öppna exempelboken,128,233.7,block,false,362.8,pass,pass
+uppgradera,mobile,button,trait,,Månadsvis,109,44,flex,false,63.5,pass,pass
+uppgradera,mobile,button,trait on,,Årsvis,78,44,flex,false,48,pass,pass
+uppgradera,mobile,button,btn btn-primary,,Prova gratis i 14 dagar,238.7,54,inline-flex,false,76,pass,pass
+uppgradera,mobile,button,trait,,För skolor,103.5,44,flex,false,71,pass,pass
+uppgradera,mobile,a,,,Kontakt,51.1,18,block,false,41.6,pass-spacing,fail
+uppgradera,mobile,a,,,Integritet,60.7,18,block,false,46.4,pass-spacing,fail
+uppgradera,mobile,a,,,Villkor,42.5,18,block,false,37.3,pass-spacing,fail
+login,desktop,a,logo,,TALE FORGE,261,42,flex,false,301.1,pass,fail
+login,desktop,a,,,Logga in,74.5,44,flex,false,49.3,pass,pass
+login,desktop,a,,,Priser,61.3,44,flex,false,42.6,pass,pass
+login,desktop,button,,,SV,44,44,block,false,24,pass,pass
+login,desktop,button,,,EN,44,44,block,false,24,pass,pass
+login,desktop,button,tt,switch,Byt tema,199.2,45,flex,false,115.6,pass,pass
+login,desktop,button,btn btn-ghost,,Fortsätt med Google,370,56,inline-flex,false,111,pass,pass
+login,desktop,input,,,du@exempel.se,370,50,inline-block,false,67,pass,pass
+login,desktop,input,,,Ditt lösenord,370,50,inline-block,false,67,pass,pass
+login,desktop,button,,,Visa lösenord,44,44,grid,false,0,pass,pass
+login,desktop,button,,,Glömt lösenordet?,120,24,inline-block,false,22,pass,fail
+login,desktop,button,btn btn-primary,,Logga in,370,54,inline-flex,false,59.4,pass,pass
+login,desktop,a,,,Skapa ett,68.4,18,inline,true,31,exempt-inline,fail
+login,desktop,a,,,Kontakt,51.1,18,block,false,41.6,pass-spacing,fail
+login,desktop,a,,,Integritet,60.7,18,block,false,46.4,pass-spacing,fail
+login,desktop,a,,,Villkor,42.5,18,block,false,37.3,pass-spacing,fail
+login,mobile,a,logo,,TALE FORGE,158.3,28,flex,false,26,pass,fail
+login,mobile,a,,,Logga in,74.5,44,flex,false,34,pass,pass
+login,mobile,a,,,Priser,61.3,44,flex,false,34,pass,pass
+login,mobile,button,,,SV,44,44,block,false,24,pass,pass
+login,mobile,button,,,EN,44,44,block,false,24,pass,pass
+login,mobile,button,tt,switch,Byt tema,72,44,flex,false,46,pass,pass
+login,mobile,button,btn btn-ghost,,Fortsätt med Google,264,56,inline-flex,false,111,pass,pass
+login,mobile,input,,,du@exempel.se,264,50,inline-block,false,67,pass,pass
+login,mobile,input,,,Ditt lösenord,264,50,inline-block,false,37,pass,pass
+login,mobile,button,,,Visa lösenord,44,44,grid,false,0,pass,pass
+login,mobile,button,,,Glömt lösenordet?,120,24,inline-block,false,22,pass,fail
+login,mobile,button,btn btn-primary,,Logga in,264,54,inline-flex,false,50.5,pass,pass
+login,mobile,a,,,Skapa ett,68.4,18,inline,true,31,exempt-inline,fail
+login,mobile,a,,,Kontakt,51.1,18,block,false,41.6,pass-spacing,fail
+login,mobile,a,,,Integritet,60.7,18,block,false,46.4,pass-spacing,fail
+login,mobile,a,,,Villkor,42.5,18,block,false,37.3,pass-spacing,fail
+signup,desktop,a,logo,,TALE FORGE,261,42,flex,false,360.7,pass,fail
+signup,desktop,a,,,Logga in,74.5,44,flex,false,49.3,pass,pass
+signup,desktop,a,,,Priser,61.3,44,flex,false,42.6,pass,pass
+signup,desktop,button,,,SV,44,44,block,false,24,pass,pass
+signup,desktop,button,,,EN,44,44,block,false,24,pass,pass
+signup,desktop,button,tt,switch,Byt tema,199.2,45,flex,false,115.6,pass,pass
+signup,desktop,button,btn btn-ghost,,Fortsätt med Google,370,56,inline-flex,false,111,pass,pass
+signup,desktop,input,,,du@exempel.se,370,50,inline-block,false,67,pass,pass
+signup,desktop,input,,,Ditt lösenord,370,50,inline-block,false,67,pass,pass
+signup,desktop,button,,,Visa lösenord,44,44,grid,false,0,pass,pass
+signup,desktop,input,,,,24,24,block,false,25.2,pass,fail
+signup,desktop,a,,,Läs integritetspolicyn,160.1,44,inline-flex,false,38,pass,pass
+signup,desktop,button,btn btn-primary,,Skapa konto,370,54,inline-flex,false,49.7,pass,pass
+signup,desktop,a,,,Logga in,59,18,inline,true,31,exempt-inline,fail
+signup,desktop,a,,,Kontakt,51.1,18,block,false,41.6,pass-spacing,fail
+signup,desktop,a,,,Integritet,60.7,18,block,false,46.4,pass-spacing,fail
+signup,desktop,a,,,Villkor,42.5,18,block,false,37.3,pass-spacing,fail
+signup,mobile,a,logo,,TALE FORGE,158.3,28,flex,false,26,pass,fail
+signup,mobile,a,,,Logga in,74.5,44,flex,false,34,pass,pass
+signup,mobile,a,,,Priser,61.3,44,flex,false,34,pass,pass
+signup,mobile,button,,,SV,44,44,block,false,24,pass,pass
+signup,mobile,button,,,EN,44,44,block,false,24,pass,pass
+signup,mobile,button,tt,switch,Byt tema,72,44,flex,false,46,pass,pass
+signup,mobile,button,btn btn-ghost,,Fortsätt med Google,264,56,inline-flex,false,111,pass,pass
+signup,mobile,input,,,du@exempel.se,264,50,inline-block,false,67,pass,pass
+signup,mobile,input,,,Ditt lösenord,264,50,inline-block,false,67,pass,pass
+signup,mobile,button,,,Visa lösenord,44,44,grid,false,0,pass,pass
+signup,mobile,input,,,,24,24,block,false,36.8,pass,fail
+signup,mobile,a,,,Läs integritetspolicyn,160.1,44,inline-flex,false,38,pass,pass
+signup,mobile,button,btn btn-primary,,Skapa konto,264,54,inline-flex,false,43,pass,pass
+signup,mobile,a,,,Logga in,59,18,inline,true,31,exempt-inline,fail
+signup,mobile,a,,,Kontakt,51.1,18,block,false,41.6,pass-spacing,fail
+signup,mobile,a,,,Integritet,60.7,18,block,false,46.4,pass-spacing,fail
+signup,mobile,a,,,Villkor,42.5,18,block,false,37.3,pass-spacing,fail
+integritet,desktop,a,logo,,TALE FORGE,261,42,flex,false,464.5,pass,fail
+integritet,desktop,a,,,Logga in,74.5,44,flex,false,49.3,pass,pass
+integritet,desktop,a,,,Priser,61.3,44,flex,false,42.6,pass,pass
+integritet,desktop,button,,,SV,44,44,block,false,24,pass,pass
+integritet,desktop,button,,,EN,44,44,block,false,24,pass,pass
+integritet,desktop,button,tt,switch,Byt tema,199.2,45,flex,false,115.6,pass,pass
+integritet,desktop,a,,,ert konto,74.1,23,inline,true,274,exempt-inline,fail
+integritet,desktop,a,,,kevin@tale-forge.app,172.9,23,inline,true,323.4,exempt-inline,fail
+integritet,desktop,summary,,,Read in English,690,44,flex,false,370,pass,pass
+integritet,desktop,a,,,,106.6,23,inline,false,280,pass-spacing,fail
+integritet,desktop,a,,,,172.9,23,inline,false,313.1,pass-spacing,fail
+integritet,desktop,a,,,Kontakt,51.1,18,block,false,41.6,pass-spacing,fail
+integritet,desktop,a,,,Integritet,60.7,18,block,false,46.4,pass-spacing,fail
+integritet,desktop,a,,,Villkor,42.5,18,block,false,37.3,pass-spacing,fail
+integritet,mobile,a,logo,,TALE FORGE,158.3,28,flex,false,26,pass,fail
+integritet,mobile,a,,,Logga in,74.5,44,flex,false,34,pass,pass
+integritet,mobile,a,,,Priser,61.3,44,flex,false,34,pass,pass
+integritet,mobile,button,,,SV,44,44,block,false,24,pass,pass
+integritet,mobile,button,,,EN,44,44,block,false,24,pass,pass
+integritet,mobile,button,tt,switch,Byt tema,72,44,flex,false,46,pass,pass
+integritet,mobile,a,,,ert konto,74.1,23,inline,true,23.2,exempt-inline,fail
+integritet,mobile,a,,,kevin@tale-forge.app,172.9,23,inline,true,67.4,exempt-inline,fail
+integritet,mobile,summary,,,Read in English,264,44,flex,false,230,pass,pass
+integritet,mobile,a,,,,106.6,23,inline,false,45.6,pass-spacing,fail
+integritet,mobile,a,,,,172.9,23,inline,false,52.8,pass-spacing,fail
+integritet,mobile,a,,,Kontakt,51.1,18,block,false,41.6,pass-spacing,fail
+integritet,mobile,a,,,Integritet,60.7,18,block,false,46.4,pass-spacing,fail
+integritet,mobile,a,,,Villkor,42.5,18,block,false,37.3,pass-spacing,fail
+villkor,desktop,a,logo,,TALE FORGE,261,42,flex,false,462.6,pass,fail
+villkor,desktop,a,,,Logga in,74.5,44,flex,false,49.3,pass,pass
+villkor,desktop,a,,,Priser,61.3,44,flex,false,42.6,pass,pass
+villkor,desktop,button,,,SV,44,44,block,false,24,pass,pass
+villkor,desktop,button,,,EN,44,44,block,false,24,pass,pass
+villkor,desktop,button,tt,switch,Byt tema,199.2,45,flex,false,115.6,pass,pass
+villkor,desktop,a,,,kevin@tale-forge.app,172.9,23,inline,true,182.7,exempt-inline,fail
+villkor,desktop,a,,,integritetspolicy,134.6,23,inline,true,169.6,exempt-inline,fail
+villkor,desktop,a,,,ert konto,74.1,23,inline,true,372.3,exempt-inline,fail
+villkor,desktop,a,,,kevin@tale-forge.app,172.9,23,inline,true,436.1,exempt-inline,fail
+villkor,desktop,a,,,ert konto,74.1,23,inline,true,436,exempt-inline,fail
+villkor,desktop,summary,,,Read in English,690,44,flex,false,279.8,pass,pass
+villkor,desktop,a,,,,172.9,23,inline,false,143.9,pass-spacing,fail
+villkor,desktop,a,,,,115.7,23,inline,false,133.3,pass-spacing,fail
+villkor,desktop,a,,,,106.6,23,inline,false,213.8,pass-spacing,fail
+villkor,desktop,a,,,,172.9,23,inline,false,213.8,pass-spacing,fail
+villkor,desktop,a,,,,106.6,23,inline,false,612.9,pass-spacing,fail
+villkor,desktop,a,,,Kontakt,51.1,18,block,false,41.6,pass-spacing,fail
+villkor,desktop,a,,,Integritet,60.7,18,block,false,46.4,pass-spacing,fail
+villkor,desktop,a,,,Villkor,42.5,18,block,false,37.3,pass-spacing,fail
+villkor,mobile,a,logo,,TALE FORGE,158.3,28,flex,false,26,pass,fail
+villkor,mobile,a,,,Logga in,74.5,44,flex,false,34,pass,pass
+villkor,mobile,a,,,Priser,61.3,44,flex,false,34,pass,pass
+villkor,mobile,button,,,SV,44,44,block,false,24,pass,pass
+villkor,mobile,button,,,EN,44,44,block,false,24,pass,pass
+villkor,mobile,button,tt,switch,Byt tema,72,44,flex,false,46,pass,pass
+villkor,mobile,a,,,kevin@tale-forge.app,172.9,23,inline,true,242.3,exempt-inline,fail
+villkor,mobile,a,,,integritetspolicy,134.6,23,inline,true,242.3,exempt-inline,fail
+villkor,mobile,a,,,ert konto,74.1,23,inline,true,442.2,exempt-inline,fail
+villkor,mobile,a,,,kevin@tale-forge.app,220.5,51.5,inline,true,458.1,pass,pass
+villkor,mobile,a,,,ert konto,250,51.5,inline,true,821.4,pass,pass
+villkor,mobile,summary,,,Read in English,264,44,flex,false,230,pass,pass
+villkor,mobile,a,,,,233.4,51.5,inline,false,141.1,pass,pass
+villkor,mobile,a,,,,115.7,23,inline,false,242.3,pass-spacing,fail
+villkor,mobile,a,,,,224.7,51.5,inline,false,513.5,pass,pass
+villkor,mobile,a,,,,213.2,51.5,inline,false,513.5,pass,pass
+villkor,mobile,a,,,,106.6,23,inline,false,807.1,pass-spacing,fail
+villkor,mobile,a,,,Kontakt,51.1,18,block,false,41.6,pass-spacing,fail
+villkor,mobile,a,,,Integritet,60.7,18,block,false,46.4,pass-spacing,fail
+villkor,mobile,a,,,Villkor,42.5,18,block,false,37.3,pass-spacing,fail
+404,desktop,a,logo,,TALE FORGE,261,42,flex,false,384.1,pass,fail
+404,desktop,a,,,Logga in,74.5,44,flex,false,49.3,pass,pass
+404,desktop,a,,,Priser,61.3,44,flex,false,42.6,pass,pass
+404,desktop,button,,,SV,44,44,block,false,24,pass,pass
+404,desktop,button,,,EN,44,44,block,false,24,pass,pass
+404,desktop,button,tt,switch,Byt tema,199.2,45,flex,false,115.6,pass,pass
+404,desktop,a,btn btn-primary,,Till startsidan,174.1,54,inline-flex,false,234.2,pass,pass
+404,desktop,a,,,Kontakt,51.1,18,block,false,41.6,pass-spacing,fail
+404,desktop,a,,,Integritet,60.7,18,block,false,46.4,pass-spacing,fail
+404,desktop,a,,,Villkor,42.5,18,block,false,37.3,pass-spacing,fail
+404,mobile,a,logo,,TALE FORGE,158.3,28,flex,false,26,pass,fail
+404,mobile,a,,,Logga in,74.5,44,flex,false,34,pass,pass
+404,mobile,a,,,Priser,61.3,44,flex,false,34,pass,pass
+404,mobile,button,,,SV,44,44,block,false,24,pass,pass
+404,mobile,button,,,EN,44,44,block,false,24,pass,pass
+404,mobile,button,tt,switch,Byt tema,72,44,flex,false,46,pass,pass
+404,mobile,a,btn btn-primary,,Till startsidan,174.1,54,inline-flex,false,236.1,pass,pass
+404,mobile,a,,,Kontakt,51.1,18,block,false,41.6,pass-spacing,fail
+404,mobile,a,,,Integritet,60.7,18,block,false,46.4,pass-spacing,fail
+404,mobile,a,,,Villkor,42.5,18,block,false,37.3,pass-spacing,fail

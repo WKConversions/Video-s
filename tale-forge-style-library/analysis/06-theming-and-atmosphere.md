@@ -33,7 +33,7 @@ Observed facts cite a library path, with CSS line numbers in [source/css/3q17cp_
 | Fact | Value | Source |
 |---|---|---|
 | Switch | `body[data-theme="natt" \| "morgon"]` | [source/html/home.sv.html](../source/html/home.sv.html), :493, :542 |
-| Default | `natt`, shipped in every server HTML; also the fallback for a missing or invalid stored value | all [source/html/*.html](../source/html/); measured (§3.3) |
+| Default | `natt`, shipped in every server HTML (except the share-route 404, whose `<body>` has no `data-theme` and no backdrop); also the fallback for a missing or invalid stored value | all [source/html/*.html](../source/html/); measured (§3.3) |
 | Persistence | `localStorage['tf-theme']`, per device; no cookie, no account setting | inline script; `ThemeToggle` in [source/js/390j9gbq0u9ce.js](../source/js/390j9gbq0u9ce.js) |
 | OS dark/light preference | ignored: no `prefers-color-scheme` anywhere | grep of all CSS/JS |
 | Tokens swapped | 47 custom properties, same names in the same order in both sets | :493-541, :542-590; [token-diff.csv](../derived/theming/token-diff.csv) |
@@ -88,7 +88,7 @@ Every page ships `natt` and corrects itself before first paint. The script is th
 <body data-theme="natt"><div hidden=""><!--$--><!--/$--></div><script>(function(){try{var t=localStorage.getItem('tf-theme');if(t==='natt'||t==='morgon'){document.body.dataset.theme=t;}}catch(e){}})();</script><div class="bg bg-night">…
 ```
 
-The same string sits in the React Server Component payload as `dangerouslySetInnerHTML`, so React re-renders it on hydration. That is why the script appears twice per file (`grep -c` = 2 on every page except the share 404).
+The same string sits in the React Server Component payload as `dangerouslySetInnerHTML`, so React re-renders it on hydration. That is why the script appears twice per file (two occurrences of `tf-theme` per file, counted with `grep -o … | wc -l`; on most files both sit on one line, so `grep -c` reports 1). The share 404 has it once.
 
 ### 3.2 The toggle component (`ThemeToggle`)
 
@@ -806,7 +806,7 @@ At night it reads as a faint double hairline. In the morning, on white glass, it
 |---|---|---|---|
 | Wordmark `--logo-shadow` | `0 2px 6px #050814cc, 0 0 34px #f5c54273`: dark drop + gold halo | `0 1px 2px #241f352e, 0 0 24px #6d4fe052`: hairline plum drop + violet halo | :696-710, :538/:587 |
 | Logo mark | `filter: drop-shadow(0 0 14px #f5c54280)`, gold, **both themes** | same | :711-716 |
-| Primary button | `0 14px 40px #f5c54247` → hover `0 20px 55px #f5c5426b`, plus `inset 0 1px 0 #ffffff73` | `0 14px 34px #6d4fe059` → hover `0 22px 48px #6d4fe073` | :907-917, :530-531/:579-580 |
+| Primary button | `0 14px 40px #f5c54247` plus `inset 0 1px 0 #ffffff73` at rest → hover `0 20px 55px #f5c5426b` (the hover rule replaces the whole `box-shadow`, so the inset highlight drops out) | `0 14px 34px #6d4fe059` → hover `0 22px 48px #6d4fe073` | :907-917, :530-531/:579-580 |
 | Toggle thumb, `.fab`, `.hiw-play` | `var(--btn-shadow)` | same token | :788, :1191, :2810 |
 | h1 | `--h1-shadow: 0 2px 30px #0c082859` (a dark halo, not light) | `none` | :860, :511/:560 |
 | Hero cover fan | `0 24px 50px #0a072066, 0 0 44px #f5c5421f`: navy drop + faint gold halo, **both themes** | same | :929-940 |

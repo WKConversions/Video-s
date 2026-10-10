@@ -1,0 +1,654 @@
+{
+ "note": "MACHINE TRANSCRIPT (faster-whisper 'medium', int8, CPU, beam 5, language forced from file name). Not a site asset; may contain recognition errors. For sample-book beats the authoritative text is beats[].prose in source/sample-book.iris-och-den-sparade-platsen.json.",
+ "source_audio": "assets/share/iris-sparade-platsen/assets/S3A.mp3",
+ "model": "Systran/faster-whisper-medium",
+ "language": "sv",
+ "duration_s": 64.28,
+ "text": "Iris gick med mossa till den gröna mattan. Hon bar dit ritpappret och lade det mitt framför dem. Amina lämnade fönsterbänken och satte sig vid papprets andra kant. – Då blir det ingen ritstund i fönsterljuset, sa hon. – Men jag vill gärna hjälpa till här. Iris ritade gröna mossöar på ena sidan och lämnade öppna platser intill. Mossa ritade kartans stikar. Han ville använda bibliotekets sista tur med silverpennan till en måne. Amina ritade träden och ville använda samma sista tur till en fågel. Bibliotekarien lade silverpennan bredvid pappret och höll upp ett finger. Efter nästa tecken skulle mosskartan hängas upp. Två tomma platser väntade, men bara en kunde bli silverblank.",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 4.04,
+   "text": "Iris gick med mossa till den gröna mattan.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 0.0,
+     "e": 0.84
+    },
+    {
+     "w": " gick",
+     "s": 0.84,
+     "e": 1.22
+    },
+    {
+     "w": " med",
+     "s": 1.22,
+     "e": 1.46
+    },
+    {
+     "w": " mossa",
+     "s": 1.46,
+     "e": 1.94
+    },
+    {
+     "w": " till",
+     "s": 1.94,
+     "e": 2.3
+    },
+    {
+     "w": " den",
+     "s": 2.3,
+     "e": 2.54
+    },
+    {
+     "w": " gröna",
+     "s": 2.54,
+     "e": 3.12
+    },
+    {
+     "w": " mattan.",
+     "s": 3.12,
+     "e": 4.04
+    }
+   ]
+  },
+  {
+   "start": 4.42,
+   "end": 8.26,
+   "text": "Hon bar dit ritpappret och lade det mitt framför dem.",
+   "words": [
+    {
+     "w": " Hon",
+     "s": 4.42,
+     "e": 4.56
+    },
+    {
+     "w": " bar",
+     "s": 4.56,
+     "e": 4.8
+    },
+    {
+     "w": " dit",
+     "s": 4.8,
+     "e": 5.14
+    },
+    {
+     "w": " ritpappret",
+     "s": 5.14,
+     "e": 6.1
+    },
+    {
+     "w": " och",
+     "s": 6.1,
+     "e": 6.48
+    },
+    {
+     "w": " lade",
+     "s": 6.48,
+     "e": 6.82
+    },
+    {
+     "w": " det",
+     "s": 6.82,
+     "e": 7.16
+    },
+    {
+     "w": " mitt",
+     "s": 7.16,
+     "e": 7.42
+    },
+    {
+     "w": " framför",
+     "s": 7.42,
+     "e": 8.0
+    },
+    {
+     "w": " dem.",
+     "s": 8.0,
+     "e": 8.26
+    }
+   ]
+  },
+  {
+   "start": 9.26,
+   "end": 13.92,
+   "text": "Amina lämnade fönsterbänken och satte sig vid papprets andra kant.",
+   "words": [
+    {
+     "w": " Amina",
+     "s": 9.26,
+     "e": 9.76
+    },
+    {
+     "w": " lämnade",
+     "s": 9.76,
+     "e": 10.34
+    },
+    {
+     "w": " fönsterbänken",
+     "s": 10.34,
+     "e": 11.3
+    },
+    {
+     "w": " och",
+     "s": 11.3,
+     "e": 11.68
+    },
+    {
+     "w": " satte",
+     "s": 11.68,
+     "e": 12.02
+    },
+    {
+     "w": " sig",
+     "s": 12.02,
+     "e": 12.22
+    },
+    {
+     "w": " vid",
+     "s": 12.22,
+     "e": 12.4
+    },
+    {
+     "w": " papprets",
+     "s": 12.4,
+     "e": 12.92
+    },
+    {
+     "w": " andra",
+     "s": 12.92,
+     "e": 13.56
+    },
+    {
+     "w": " kant.",
+     "s": 13.56,
+     "e": 13.92
+    }
+   ]
+  },
+  {
+   "start": 14.84,
+   "end": 18.92,
+   "text": "– Då blir det ingen ritstund i fönsterljuset, sa hon.",
+   "words": [
+    {
+     "w": " –",
+     "s": 14.84,
+     "e": 14.96
+    },
+    {
+     "w": " Då",
+     "s": 14.96,
+     "e": 15.24
+    },
+    {
+     "w": " blir",
+     "s": 15.24,
+     "e": 15.46
+    },
+    {
+     "w": " det",
+     "s": 15.46,
+     "e": 15.66
+    },
+    {
+     "w": " ingen",
+     "s": 15.66,
+     "e": 15.92
+    },
+    {
+     "w": " ritstund",
+     "s": 15.92,
+     "e": 16.78
+    },
+    {
+     "w": " i",
+     "s": 16.78,
+     "e": 17.02
+    },
+    {
+     "w": " fönsterljuset,",
+     "s": 17.02,
+     "e": 18.44
+    },
+    {
+     "w": " sa",
+     "s": 18.6,
+     "e": 18.68
+    },
+    {
+     "w": " hon.",
+     "s": 18.68,
+     "e": 18.92
+    }
+   ]
+  },
+  {
+   "start": 19.46,
+   "end": 21.72,
+   "text": "– Men jag vill gärna hjälpa till här.",
+   "words": [
+    {
+     "w": " –",
+     "s": 19.46,
+     "e": 19.56
+    },
+    {
+     "w": " Men",
+     "s": 19.56,
+     "e": 19.74
+    },
+    {
+     "w": " jag",
+     "s": 19.74,
+     "e": 19.92
+    },
+    {
+     "w": " vill",
+     "s": 19.92,
+     "e": 20.18
+    },
+    {
+     "w": " gärna",
+     "s": 20.18,
+     "e": 20.66
+    },
+    {
+     "w": " hjälpa",
+     "s": 20.66,
+     "e": 21.08
+    },
+    {
+     "w": " till",
+     "s": 21.08,
+     "e": 21.3
+    },
+    {
+     "w": " här.",
+     "s": 21.3,
+     "e": 21.72
+    }
+   ]
+  },
+  {
+   "start": 22.72,
+   "end": 30.24,
+   "text": "Iris ritade gröna mossöar på ena sidan och lämnade öppna platser intill.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 22.72,
+     "e": 23.74
+    },
+    {
+     "w": " ritade",
+     "s": 23.74,
+     "e": 24.52
+    },
+    {
+     "w": " gröna",
+     "s": 24.52,
+     "e": 25.28
+    },
+    {
+     "w": " mossöar",
+     "s": 25.28,
+     "e": 26.24
+    },
+    {
+     "w": " på",
+     "s": 26.24,
+     "e": 26.54
+    },
+    {
+     "w": " ena",
+     "s": 26.54,
+     "e": 27.02
+    },
+    {
+     "w": " sidan",
+     "s": 27.02,
+     "e": 27.58
+    },
+    {
+     "w": " och",
+     "s": 27.58,
+     "e": 27.9
+    },
+    {
+     "w": " lämnade",
+     "s": 27.9,
+     "e": 28.38
+    },
+    {
+     "w": " öppna",
+     "s": 28.38,
+     "e": 28.9
+    },
+    {
+     "w": " platser",
+     "s": 28.9,
+     "e": 29.44
+    },
+    {
+     "w": " intill.",
+     "s": 29.44,
+     "e": 30.24
+    }
+   ]
+  },
+  {
+   "start": 30.96,
+   "end": 33.84,
+   "text": "Mossa ritade kartans stikar.",
+   "words": [
+    {
+     "w": " Mossa",
+     "s": 30.96,
+     "e": 31.32
+    },
+    {
+     "w": " ritade",
+     "s": 31.32,
+     "e": 32.12
+    },
+    {
+     "w": " kartans",
+     "s": 32.12,
+     "e": 32.84
+    },
+    {
+     "w": " stikar.",
+     "s": 32.84,
+     "e": 33.84
+    }
+   ]
+  },
+  {
+   "start": 34.28,
+   "end": 39.62,
+   "text": "Han ville använda bibliotekets sista tur med silverpennan till en måne.",
+   "words": [
+    {
+     "w": " Han",
+     "s": 34.28,
+     "e": 34.48
+    },
+    {
+     "w": " ville",
+     "s": 34.48,
+     "e": 34.72
+    },
+    {
+     "w": " använda",
+     "s": 34.72,
+     "e": 35.32
+    },
+    {
+     "w": " bibliotekets",
+     "s": 35.32,
+     "e": 36.24
+    },
+    {
+     "w": " sista",
+     "s": 36.24,
+     "e": 36.82
+    },
+    {
+     "w": " tur",
+     "s": 36.82,
+     "e": 37.06
+    },
+    {
+     "w": " med",
+     "s": 37.06,
+     "e": 37.34
+    },
+    {
+     "w": " silverpennan",
+     "s": 37.34,
+     "e": 38.2
+    },
+    {
+     "w": " till",
+     "s": 38.2,
+     "e": 38.42
+    },
+    {
+     "w": " en",
+     "s": 38.42,
+     "e": 38.78
+    },
+    {
+     "w": " måne.",
+     "s": 38.78,
+     "e": 39.62
+    }
+   ]
+  },
+  {
+   "start": 40.64,
+   "end": 46.7,
+   "text": "Amina ritade träden och ville använda samma sista tur till en fågel.",
+   "words": [
+    {
+     "w": " Amina",
+     "s": 40.64,
+     "e": 41.16
+    },
+    {
+     "w": " ritade",
+     "s": 41.16,
+     "e": 41.92
+    },
+    {
+     "w": " träden",
+     "s": 41.92,
+     "e": 42.72
+    },
+    {
+     "w": " och",
+     "s": 42.72,
+     "e": 43.16
+    },
+    {
+     "w": " ville",
+     "s": 43.16,
+     "e": 43.36
+    },
+    {
+     "w": " använda",
+     "s": 43.36,
+     "e": 44.0
+    },
+    {
+     "w": " samma",
+     "s": 44.0,
+     "e": 44.4
+    },
+    {
+     "w": " sista",
+     "s": 44.4,
+     "e": 44.94
+    },
+    {
+     "w": " tur",
+     "s": 44.94,
+     "e": 45.28
+    },
+    {
+     "w": " till",
+     "s": 45.28,
+     "e": 45.66
+    },
+    {
+     "w": " en",
+     "s": 45.66,
+     "e": 45.98
+    },
+    {
+     "w": " fågel.",
+     "s": 45.98,
+     "e": 46.7
+    }
+   ]
+  },
+  {
+   "start": 48.1,
+   "end": 53.12,
+   "text": "Bibliotekarien lade silverpennan bredvid pappret och höll upp ett finger.",
+   "words": [
+    {
+     "w": " Bibliotekarien",
+     "s": 48.1,
+     "e": 49.02
+    },
+    {
+     "w": " lade",
+     "s": 49.02,
+     "e": 49.52
+    },
+    {
+     "w": " silverpennan",
+     "s": 49.52,
+     "e": 50.42
+    },
+    {
+     "w": " bredvid",
+     "s": 50.42,
+     "e": 50.84
+    },
+    {
+     "w": " pappret",
+     "s": 50.84,
+     "e": 51.38
+    },
+    {
+     "w": " och",
+     "s": 51.38,
+     "e": 51.72
+    },
+    {
+     "w": " höll",
+     "s": 51.72,
+     "e": 51.96
+    },
+    {
+     "w": " upp",
+     "s": 51.96,
+     "e": 52.24
+    },
+    {
+     "w": " ett",
+     "s": 52.24,
+     "e": 52.52
+    },
+    {
+     "w": " finger.",
+     "s": 52.52,
+     "e": 53.12
+    }
+   ]
+  },
+  {
+   "start": 54.1,
+   "end": 57.62,
+   "text": "Efter nästa tecken skulle mosskartan hängas upp.",
+   "words": [
+    {
+     "w": " Efter",
+     "s": 54.1,
+     "e": 54.46
+    },
+    {
+     "w": " nästa",
+     "s": 54.46,
+     "e": 55.0
+    },
+    {
+     "w": " tecken",
+     "s": 55.0,
+     "e": 55.58
+    },
+    {
+     "w": " skulle",
+     "s": 55.58,
+     "e": 56.04
+    },
+    {
+     "w": " mosskartan",
+     "s": 56.04,
+     "e": 56.88
+    },
+    {
+     "w": " hängas",
+     "s": 56.88,
+     "e": 57.32
+    },
+    {
+     "w": " upp.",
+     "s": 57.32,
+     "e": 57.62
+    }
+   ]
+  },
+  {
+   "start": 58.64,
+   "end": 63.9,
+   "text": "Två tomma platser väntade, men bara en kunde bli silverblank.",
+   "words": [
+    {
+     "w": " Två",
+     "s": 58.64,
+     "e": 59.12
+    },
+    {
+     "w": " tomma",
+     "s": 59.12,
+     "e": 59.64
+    },
+    {
+     "w": " platser",
+     "s": 59.64,
+     "e": 60.04
+    },
+    {
+     "w": " väntade,",
+     "s": 60.04,
+     "e": 60.76
+    },
+    {
+     "w": " men",
+     "s": 61.08,
+     "e": 61.28
+    },
+    {
+     "w": " bara",
+     "s": 61.28,
+     "e": 61.7
+    },
+    {
+     "w": " en",
+     "s": 61.7,
+     "e": 62.28
+    },
+    {
+     "w": " kunde",
+     "s": 62.28,
+     "e": 62.66
+    },
+    {
+     "w": " bli",
+     "s": 62.66,
+     "e": 62.92
+    },
+    {
+     "w": " silverblank.",
+     "s": 62.92,
+     "e": 63.9
+    }
+   ]
+  }
+ ]
+}

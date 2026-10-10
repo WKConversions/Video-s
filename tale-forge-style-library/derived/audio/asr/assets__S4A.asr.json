@@ -1,0 +1,575 @@
+{
+ "note": "MACHINE TRANSCRIPT (faster-whisper 'medium', int8, CPU, beam 5, language forced from file name). Not a site asset; may contain recognition errors. For sample-book beats the authoritative text is beats[].prose in source/sample-book.iris-och-den-sparade-platsen.json.",
+ "source_audio": "assets/share/iris-sparade-platsen/assets/S4A.mp3",
+ "model": "Systran/faster-whisper-medium",
+ "language": "sv",
+ "duration_s": 53.28,
+ "text": "Bibliotekarien bar mosskartan till det låga bordet vid väggen. Iris lade handen på ena hörnet så att pappret låg stilla. Mossa stod vid platsen ovanför stigarna. Amina satt vid platsen bredvid träden. Silverpennan låg mitt emellan dem. Månen visar ju vägen genom minskog, sa Mossa. Och fågen kan visa vad träden slutar, sa Amina. Båda tecknen skulle fylla en hel tur. Bibliotekarien höll redan upp klämmorna som kartan skulle hänga sig direkt efter nästa tur. Iris såg de två platser hon lämnat. Det brände i fingertopparna. Hon ville rycka åt sig pennan och försöka hinna allt på en gång.",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 5.0,
+   "text": "Bibliotekarien bar mosskartan till det låga bordet vid väggen.",
+   "words": [
+    {
+     "w": " Bibliotekarien",
+     "s": 0.0,
+     "e": 1.5
+    },
+    {
+     "w": " bar",
+     "s": 1.5,
+     "e": 1.86
+    },
+    {
+     "w": " mosskartan",
+     "s": 1.86,
+     "e": 2.94
+    },
+    {
+     "w": " till",
+     "s": 2.94,
+     "e": 3.16
+    },
+    {
+     "w": " det",
+     "s": 3.16,
+     "e": 3.34
+    },
+    {
+     "w": " låga",
+     "s": 3.34,
+     "e": 3.86
+    },
+    {
+     "w": " bordet",
+     "s": 3.86,
+     "e": 4.36
+    },
+    {
+     "w": " vid",
+     "s": 4.36,
+     "e": 4.46
+    },
+    {
+     "w": " väggen.",
+     "s": 4.46,
+     "e": 5.0
+    }
+   ]
+  },
+  {
+   "start": 6.0,
+   "end": 10.0,
+   "text": "Iris lade handen på ena hörnet så att pappret låg stilla.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 6.0,
+     "e": 6.24
+    },
+    {
+     "w": " lade",
+     "s": 6.24,
+     "e": 6.62
+    },
+    {
+     "w": " handen",
+     "s": 6.62,
+     "e": 7.1
+    },
+    {
+     "w": " på",
+     "s": 7.1,
+     "e": 7.28
+    },
+    {
+     "w": " ena",
+     "s": 7.28,
+     "e": 7.68
+    },
+    {
+     "w": " hörnet",
+     "s": 7.68,
+     "e": 8.16
+    },
+    {
+     "w": " så",
+     "s": 8.16,
+     "e": 8.48
+    },
+    {
+     "w": " att",
+     "s": 8.48,
+     "e": 8.68
+    },
+    {
+     "w": " pappret",
+     "s": 8.68,
+     "e": 9.04
+    },
+    {
+     "w": " låg",
+     "s": 9.04,
+     "e": 9.42
+    },
+    {
+     "w": " stilla.",
+     "s": 9.42,
+     "e": 10.0
+    }
+   ]
+  },
+  {
+   "start": 11.0,
+   "end": 17.4,
+   "text": "Mossa stod vid platsen ovanför stigarna. Amina satt vid platsen bredvid träden.",
+   "words": [
+    {
+     "w": " Mossa",
+     "s": 11.0,
+     "e": 11.34
+    },
+    {
+     "w": " stod",
+     "s": 11.34,
+     "e": 11.68
+    },
+    {
+     "w": " vid",
+     "s": 11.68,
+     "e": 11.9
+    },
+    {
+     "w": " platsen",
+     "s": 11.9,
+     "e": 12.44
+    },
+    {
+     "w": " ovanför",
+     "s": 12.44,
+     "e": 13.02
+    },
+    {
+     "w": " stigarna.",
+     "s": 13.02,
+     "e": 13.7
+    },
+    {
+     "w": " Amina",
+     "s": 14.52,
+     "e": 14.94
+    },
+    {
+     "w": " satt",
+     "s": 14.94,
+     "e": 15.18
+    },
+    {
+     "w": " vid",
+     "s": 15.18,
+     "e": 15.36
+    },
+    {
+     "w": " platsen",
+     "s": 15.36,
+     "e": 15.9
+    },
+    {
+     "w": " bredvid",
+     "s": 15.9,
+     "e": 16.3
+    },
+    {
+     "w": " träden.",
+     "s": 16.3,
+     "e": 17.4
+    }
+   ]
+  },
+  {
+   "start": 18.2,
+   "end": 20.72,
+   "text": "Silverpennan låg mitt emellan dem.",
+   "words": [
+    {
+     "w": " Silverpennan",
+     "s": 18.2,
+     "e": 19.0
+    },
+    {
+     "w": " låg",
+     "s": 19.0,
+     "e": 19.4
+    },
+    {
+     "w": " mitt",
+     "s": 19.4,
+     "e": 19.74
+    },
+    {
+     "w": " emellan",
+     "s": 19.74,
+     "e": 20.36
+    },
+    {
+     "w": " dem.",
+     "s": 20.36,
+     "e": 20.72
+    }
+   ]
+  },
+  {
+   "start": 22.3,
+   "end": 26.08,
+   "text": "Månen visar ju vägen genom minskog, sa Mossa.",
+   "words": [
+    {
+     "w": " Månen",
+     "s": 22.3,
+     "e": 22.86
+    },
+    {
+     "w": " visar",
+     "s": 22.86,
+     "e": 23.34
+    },
+    {
+     "w": " ju",
+     "s": 23.34,
+     "e": 23.52
+    },
+    {
+     "w": " vägen",
+     "s": 23.52,
+     "e": 23.82
+    },
+    {
+     "w": " genom",
+     "s": 23.82,
+     "e": 24.1
+    },
+    {
+     "w": " minskog,",
+     "s": 24.1,
+     "e": 25.22
+    },
+    {
+     "w": " sa",
+     "s": 25.56,
+     "e": 25.64
+    },
+    {
+     "w": " Mossa.",
+     "s": 25.64,
+     "e": 26.08
+    }
+   ]
+  },
+  {
+   "start": 27.0,
+   "end": 32.22,
+   "text": "Och fågen kan visa vad träden slutar, sa Amina.",
+   "words": [
+    {
+     "w": " Och",
+     "s": 27.0,
+     "e": 27.72
+    },
+    {
+     "w": " fågen",
+     "s": 27.72,
+     "e": 28.22
+    },
+    {
+     "w": " kan",
+     "s": 28.22,
+     "e": 28.4
+    },
+    {
+     "w": " visa",
+     "s": 28.4,
+     "e": 28.72
+    },
+    {
+     "w": " vad",
+     "s": 28.72,
+     "e": 28.98
+    },
+    {
+     "w": " träden",
+     "s": 28.98,
+     "e": 29.48
+    },
+    {
+     "w": " slutar,",
+     "s": 29.48,
+     "e": 30.28
+    },
+    {
+     "w": " sa",
+     "s": 30.88,
+     "e": 30.98
+    },
+    {
+     "w": " Amina.",
+     "s": 30.98,
+     "e": 32.22
+    }
+   ]
+  },
+  {
+   "start": 33.28,
+   "end": 35.7,
+   "text": "Båda tecknen skulle fylla en hel tur.",
+   "words": [
+    {
+     "w": " Båda",
+     "s": 33.28,
+     "e": 33.72
+    },
+    {
+     "w": " tecknen",
+     "s": 33.72,
+     "e": 34.14
+    },
+    {
+     "w": " skulle",
+     "s": 34.14,
+     "e": 34.36
+    },
+    {
+     "w": " fylla",
+     "s": 34.36,
+     "e": 34.66
+    },
+    {
+     "w": " en",
+     "s": 34.66,
+     "e": 34.92
+    },
+    {
+     "w": " hel",
+     "s": 34.92,
+     "e": 35.3
+    },
+    {
+     "w": " tur.",
+     "s": 35.3,
+     "e": 35.7
+    }
+   ]
+  },
+  {
+   "start": 36.88,
+   "end": 42.36,
+   "text": "Bibliotekarien höll redan upp klämmorna som kartan skulle hänga sig direkt efter nästa tur.",
+   "words": [
+    {
+     "w": " Bibliotekarien",
+     "s": 36.88,
+     "e": 37.6
+    },
+    {
+     "w": " höll",
+     "s": 37.6,
+     "e": 37.8
+    },
+    {
+     "w": " redan",
+     "s": 37.8,
+     "e": 38.16
+    },
+    {
+     "w": " upp",
+     "s": 38.16,
+     "e": 38.48
+    },
+    {
+     "w": " klämmorna",
+     "s": 38.48,
+     "e": 39.26
+    },
+    {
+     "w": " som",
+     "s": 39.26,
+     "e": 39.46
+    },
+    {
+     "w": " kartan",
+     "s": 39.46,
+     "e": 39.9
+    },
+    {
+     "w": " skulle",
+     "s": 39.9,
+     "e": 40.12
+    },
+    {
+     "w": " hänga",
+     "s": 40.12,
+     "e": 40.52
+    },
+    {
+     "w": " sig",
+     "s": 40.52,
+     "e": 40.7
+    },
+    {
+     "w": " direkt",
+     "s": 40.7,
+     "e": 41.22
+    },
+    {
+     "w": " efter",
+     "s": 41.22,
+     "e": 41.66
+    },
+    {
+     "w": " nästa",
+     "s": 41.66,
+     "e": 42.04
+    },
+    {
+     "w": " tur.",
+     "s": 42.04,
+     "e": 42.36
+    }
+   ]
+  },
+  {
+   "start": 43.64,
+   "end": 48.92,
+   "text": "Iris såg de två platser hon lämnat. Det brände i fingertopparna.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 43.64,
+     "e": 43.94
+    },
+    {
+     "w": " såg",
+     "s": 43.94,
+     "e": 44.38
+    },
+    {
+     "w": " de",
+     "s": 44.38,
+     "e": 44.62
+    },
+    {
+     "w": " två",
+     "s": 44.62,
+     "e": 44.94
+    },
+    {
+     "w": " platser",
+     "s": 44.94,
+     "e": 45.42
+    },
+    {
+     "w": " hon",
+     "s": 45.42,
+     "e": 45.56
+    },
+    {
+     "w": " lämnat.",
+     "s": 45.56,
+     "e": 46.06
+    },
+    {
+     "w": " Det",
+     "s": 46.66,
+     "e": 46.92
+    },
+    {
+     "w": " brände",
+     "s": 46.92,
+     "e": 47.5
+    },
+    {
+     "w": " i",
+     "s": 47.5,
+     "e": 47.8
+    },
+    {
+     "w": " fingertopparna.",
+     "s": 47.8,
+     "e": 48.92
+    }
+   ]
+  },
+  {
+   "start": 49.26,
+   "end": 52.92,
+   "text": "Hon ville rycka åt sig pennan och försöka hinna allt på en gång.",
+   "words": [
+    {
+     "w": " Hon",
+     "s": 49.26,
+     "e": 49.38
+    },
+    {
+     "w": " ville",
+     "s": 49.38,
+     "e": 49.58
+    },
+    {
+     "w": " rycka",
+     "s": 49.58,
+     "e": 50.0
+    },
+    {
+     "w": " åt",
+     "s": 50.0,
+     "e": 50.32
+    },
+    {
+     "w": " sig",
+     "s": 50.32,
+     "e": 50.5
+    },
+    {
+     "w": " pennan",
+     "s": 50.5,
+     "e": 50.96
+    },
+    {
+     "w": " och",
+     "s": 50.96,
+     "e": 51.12
+    },
+    {
+     "w": " försöka",
+     "s": 51.12,
+     "e": 51.48
+    },
+    {
+     "w": " hinna",
+     "s": 51.48,
+     "e": 51.9
+    },
+    {
+     "w": " allt",
+     "s": 51.9,
+     "e": 52.14
+    },
+    {
+     "w": " på",
+     "s": 52.14,
+     "e": 52.4
+    },
+    {
+     "w": " en",
+     "s": 52.4,
+     "e": 52.68
+    },
+    {
+     "w": " gång.",
+     "s": 52.68,
+     "e": 52.92
+    }
+   ]
+  }
+ ]
+}

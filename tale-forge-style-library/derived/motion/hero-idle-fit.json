@@ -1,0 +1,38 @@
+{
+ "natt:fb1 (float1 7s)": {
+  "period_s": 7.0,
+  "css_amplitude_px": -12.0,
+  "measured_p2p_px": 11.68,
+  "rms_residual_px_with_clock_fit": 0.135,
+  "video_clock_factor": 0.88,
+  "apparent_period_in_video_s": 7.95,
+  "phase_s": 1.16
+ },
+ "natt:fb2 (float2 8s)": {
+  "period_s": 8.0,
+  "css_amplitude_px": -16.0,
+  "measured_p2p_px": 15.72,
+  "rms_residual_px_with_clock_fit": 0.117,
+  "video_clock_factor": 0.88,
+  "apparent_period_in_video_s": 9.09,
+  "phase_s": 1.16
+ },
+ "natt:badge (floatBadge 9s)": {
+  "period_s": 9.0,
+  "css_amplitude_px": -7.0,
+  "measured_p2p_px": 6.95,
+  "rms_residual_px_with_clock_fit": 0.05,
+  "video_clock_factor": 0.88,
+  "apparent_period_in_video_s": 10.23,
+  "phase_s": 1.14
+ },
+ "morgon:fb2 (float2 8s)": {
+  "period_s": 8.0,
+  "css_amplitude_px": -16.0,
+  "measured_p2p_px": 15.61,
+  "rms_residual_px_with_clock_fit": 0.132,
+  "video_clock_factor": 0.885,
+  "apparent_period_in_video_s": 9.04,
+  "phase_s": 1.08
+ }
+}

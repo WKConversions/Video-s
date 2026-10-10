@@ -1,0 +1,756 @@
+{
+ "_meta": {
+  "source": "copy/i18n-strings.json (JS dictionaries + server-rendered page pairs)",
+  "script": "scratchpad tools/copy/metrics.py",
+  "corpora": {
+   "marketing": "home, /start s0, /uppgradera page copy",
+   "app": "all JS dictionaries except landing/nav/helpers",
+   "auth": "login, signup pages",
+   "legal": "integritet, villkor (main-language half only)",
+   "system": "404",
+   "chrome": "nav + footer (counted once)"
+  },
+  "dedupe": "identical sv/en pairs counted once per corpus",
+  "sentenceSplit": "split after . ! ? … followed by space and a capital/quote/digit; link markup stripped",
+  "items": 588
+ },
+ "sentenceLength": {
+  "sv": {
+   "marketing.headline": {
+    "sentences": 14,
+    "words": 41,
+    "meanWordsPerSentence": 2.9,
+    "median": 3,
+    "max": 5,
+    "shareUpTo8Words": 1.0
+   },
+   "marketing.body": {
+    "sentences": 56,
+    "words": 468,
+    "meanWordsPerSentence": 8.4,
+    "median": 7,
+    "max": 19,
+    "shareUpTo8Words": 0.66
+   },
+   "app.headline": {
+    "sentences": 42,
+    "words": 142,
+    "meanWordsPerSentence": 3.4,
+    "median": 3,
+    "max": 7,
+    "shareUpTo8Words": 1.0
+   },
+   "app.body": {
+    "sentences": 206,
+    "words": 1677,
+    "meanWordsPerSentence": 8.1,
+    "median": 7,
+    "max": 23,
+    "shareUpTo8Words": 0.62
+   },
+   "auth": {
+    "sentences": 15,
+    "words": 62,
+    "meanWordsPerSentence": 4.1,
+    "median": 2,
+    "max": 15,
+    "shareUpTo8Words": 0.8
+   },
+   "legal.body": {
+    "sentences": 107,
+    "words": 1392,
+    "meanWordsPerSentence": 13.0,
+    "median": 12,
+    "max": 27,
+    "shareUpTo8Words": 0.26
+   },
+   "allNonLegal": {
+    "sentences": 625,
+    "words": 3155,
+    "meanWordsPerSentence": 5.0,
+    "median": 4,
+    "max": 23,
+    "shareUpTo8Words": 0.84
+   }
+  },
+  "en": {
+   "marketing.headline": {
+    "sentences": 14,
+    "words": 42,
+    "meanWordsPerSentence": 3.0,
+    "median": 3,
+    "max": 6,
+    "shareUpTo8Words": 1.0
+   },
+   "marketing.body": {
+    "sentences": 56,
+    "words": 494,
+    "meanWordsPerSentence": 8.8,
+    "median": 8,
+    "max": 18,
+    "shareUpTo8Words": 0.54
+   },
+   "app.headline": {
+    "sentences": 42,
+    "words": 166,
+    "meanWordsPerSentence": 4.0,
+    "median": 3,
+    "max": 7,
+    "shareUpTo8Words": 1.0
+   },
+   "app.body": {
+    "sentences": 206,
+    "words": 1810,
+    "meanWordsPerSentence": 8.8,
+    "median": 8,
+    "max": 26,
+    "shareUpTo8Words": 0.58
+   },
+   "auth": {
+    "sentences": 15,
+    "words": 69,
+    "meanWordsPerSentence": 4.6,
+    "median": 2,
+    "max": 16,
+    "shareUpTo8Words": 0.8
+   },
+   "legal.body": {
+    "sentences": 105,
+    "words": 1568,
+    "meanWordsPerSentence": 14.9,
+    "median": 14,
+    "max": 34,
+    "shareUpTo8Words": 0.21
+   },
+   "allNonLegal": {
+    "sentences": 626,
+    "words": 3478,
+    "meanWordsPerSentence": 5.6,
+    "median": 4,
+    "max": 26,
+    "shareUpTo8Words": 0.81
+   }
+  }
+ },
+ "punctuationNonLegal": {
+  "sv": {
+   "! (exclamation)": 0,
+   "? (question)": 13,
+   "· (middle dot)": 10,
+   "... (three dots)": 12,
+   "… (ellipsis char)": 0,
+   "\" (straight double quote)": 4,
+   "“ (left curly double)": 0,
+   "” (right curly double)": 0,
+   "« (guillemet)": 0,
+   "' (straight apostrophe/single)": 6,
+   "’ (curly apostrophe)": 0,
+   "– (en dash)": 0,
+   "— (em dash)": 0,
+   "; (semicolon)": 4,
+   ": (colon)": 12,
+   "( (parenthesis)": 0,
+   "& (ampersand)": 0,
+   "+ (plus)": 3
+  },
+  "en": {
+   "! (exclamation)": 6,
+   "? (question)": 13,
+   "· (middle dot)": 10,
+   "... (three dots)": 12,
+   "… (ellipsis char)": 0,
+   "\" (straight double quote)": 4,
+   "“ (left curly double)": 0,
+   "” (right curly double)": 0,
+   "« (guillemet)": 0,
+   "' (straight apostrophe/single)": 40,
+   "’ (curly apostrophe)": 0,
+   "– (en dash)": 0,
+   "— (em dash)": 0,
+   "; (semicolon)": 4,
+   ": (colon)": 12,
+   "( (parenthesis)": 0,
+   "& (ampersand)": 0,
+   "+ (plus)": 3
+  }
+ },
+ "punctuationLegal": {
+  "sv": {
+   "! (exclamation)": 0,
+   "? (question)": 0,
+   "· (middle dot)": 0,
+   "... (three dots)": 0,
+   "… (ellipsis char)": 0,
+   "\" (straight double quote)": 0,
+   "“ (left curly double)": 0,
+   "” (right curly double)": 0,
+   "« (guillemet)": 0,
+   "' (straight apostrophe/single)": 1,
+   "’ (curly apostrophe)": 0,
+   "– (en dash)": 0,
+   "— (em dash)": 0,
+   "; (semicolon)": 7,
+   ": (colon)": 9,
+   "( (parenthesis)": 13,
+   "& (ampersand)": 0,
+   "+ (plus)": 0
+  },
+  "en": {
+   "! (exclamation)": 0,
+   "? (question)": 0,
+   "· (middle dot)": 0,
+   "... (three dots)": 0,
+   "… (ellipsis char)": 0,
+   "\" (straight double quote)": 0,
+   "“ (left curly double)": 0,
+   "” (right curly double)": 0,
+   "« (guillemet)": 0,
+   "' (straight apostrophe/single)": 18,
+   "’ (curly apostrophe)": 0,
+   "– (en dash)": 0,
+   "— (em dash)": 0,
+   "; (semicolon)": 9,
+   ": (colon)": 8,
+   "( (parenthesis)": 14,
+   "& (ampersand)": 0,
+   "+ (plus)": 0
+  }
+ },
+ "exclamationContexts": {
+  "sv": [],
+  "en": [
+   "create-flow.s5Account.moderationFallback: Let's keep our stories kind and safe! Please try different words.",
+   "moderation.moderationMessages.address: Let's keep our stories kind and safe! Please don't include addresses.",
+   "moderation.moderationMessages.email: Let's keep our stories kind and safe! Please don't include email addresses.",
+   "moderation.moderationMessages.injection: Let's keep our stories kind and safe! Please use only plain text.",
+   "moderation.moderationMessages.personnummer: Let's keep our stories kind and safe! Please don't include personal ID numbers.",
+   "moderation.moderationMessages.phone: Let's keep our stories kind and safe! Please don't include phone numbers."
+  ]
+ },
+ "middleDotContexts": [
+  "create-flow.s0Pitch.badgeSub: Iris och den sparade platsen · på svenska",
+  "create-flow.stepHeaders.s1.title: Steg 1 av 4 · Hjälten",
+  "create-flow.stepHeaders.s2.title: Steg 2 av 4 · Fotot",
+  "create-flow.stepHeaders.s3.title: Steg 3 av 4 · Sällskapet",
+  "create-flow.stepHeaders.s5.title: Steg 4 av 4 · Kontot",
+  "home:span.kicker: Exempel: Alvas värld · 2 böcker",
+  "home:span: Version 16ab1756 · 26 sep. 2026",
+  "home:span: bästa kompisen · med i 2 böcker",
+  "home:span: fjällräven · följer med i varje bok",
+  "start:span: Iris och den sparade platsen · på svenska"
+ ],
+ "semicolonContexts": {
+  "sv": [
+   "auth.authForms.signup.subtitle: Personliga sagoböcker där ert barn är hjälten, med bilder och uppläsning. Ett konto för hela familjen; sen bygger ni ert barns hjälte och den första boken.",
+   "signup:p.lede: Personliga sagoböcker där ert barn är hjälten, med bilder och uppläsning. Ett konto för hela familjen; sen bygger ni ert barns hjälte och den första boken.",
+   "waiting-fire.GLOD_COPY.forgeUnavailable.body: Er saga står kvar och är sparad. Ingen annan familj står före er; smedjan är bara tom för stunden. Boken börjar av sig själv så snart en smed är tillbaka, och lägger sig i bokhyllan när den är klar. Ni kan stänga sidan.",
+   "waiting-fire.JOB_STATUS_COPY.queuedBody: Er saga väntar på att börja. Den startar av sig själv när sagosmedjan är redo. Ni kan stänga sidan; boken lägger sig i bokhyllan när den är klar."
+  ],
+  "en": [
+   "auth.authForms.signup.subtitle: Personalized picture books where your child is the hero, with art and narration. One account for the whole family; then you build your child's hero and their first book.",
+   "signup:p.lede: Personalized picture books where your child is the hero, with art and narration. One account for the whole family; then you build your child's hero and their first book.",
+   "waiting-fire.GLOD_COPY.forgeUnavailable.body: Your story is saved and still here. No other family is ahead of you; the workshop is simply empty for the moment. The book starts by itself as soon as a smith is back, and lands on the bookshelf when it is ready. You can close this page.",
+   "waiting-fire.JOB_STATUS_COPY.queuedBody: Your story is waiting to begin. It starts automatically when the forge is ready. You can close this page; the book lands on the bookshelf when it is ready."
+  ]
+ },
+ "straightQuoteContexts": [
+  "home:span: från \"Alva och fyraljuset\"",
+  "next-book-cards.emberWhyLineWithTitle.: Hämtad ur \"${e.storyTitle}\". Väljer ni det här växer nästa bok ur just den tråden."
+ ],
+ "singleQuoteContexts": [
+  "integritet:p.lede: Hur vi tar hand om uppgifterna om ert barn. Samma text finns på svenska och engelska nedan. How we look after your child's information. The same text appears in Swedish and in English below.",
+  "waiting-fire.GLOD_COPY.memFrom: från '{title}'",
+  "waiting-fire.GLOD_COPY.revisitEmber: Minns igen från '{title}'",
+  "waiting-fire.GLOD_COPY.sourceReturned: Glöden lyser nu i '{title}'."
+ ],
+ "svAddressForms": {
+  "ni/er/ert/era": {
+   "chrome": 1,
+   "marketing": 15,
+   "auth": 3,
+   "legal": 63,
+   "system": 0,
+   "app": 63
+  },
+  "du/dig/din/ditt/dina": {
+   "chrome": 0,
+   "marketing": 6,
+   "auth": 2,
+   "legal": 0,
+   "system": 0,
+   "app": 33
+  }
+ },
+ "svDuContextsNonLegal": [
+  "auth.authErrors.email_not_confirmed: Bekräfta din e-postadress först. Kolla inkorgen efter vårt mejl.",
+  "auth.authErrors.user_banned: Det här kontot är tillfälligt avstängt. Kontakta oss om du tror att det är fel.",
+  "auth.authFields.attestRequiredError: Du behöver godkänna integritetspolicyn för att skapa ett konto.",
+  "auth.authFields.confirmNotice: Kolla din e-post för att bekräfta kontot.",
+  "auth.authFields.emailPlaceholder: du@exempel.se",
+  "auth.authFields.recoverySubtitle: Ange e-postadressen till ditt konto så skickar vi en säker återställningslänk.",
+  "auth.authForms.login.footPrompt: Har du inget konto?",
+  "auth.authForms.signup.footPrompt: Har du redan ett konto?",
+  "create-flow.s3Company.storyChoosesHint: Du behöver inte välja en färdig vän. Sagan hittar någon när det passar.",
+  "create-flow.s5Account.confirmNotice: Kolla din e-post för att bekräfta kontot, sen fortsätter ni här.",
+  "create-flow.s5Account.emailPlaceholder: Din mejladress",
+  "create-flow.s5Account.existingAccountLead: Du har redan ett konto med den här adressen. Du behöver inte minnas lösenordet, vi mejlar dig en länk som loggar in dig direkt.",
+  "create-flow.s5Account.passwordPlaceholder: Ditt lösenord",
+  "home:b: Bli din egen hjälte",
+  "home:h2: Din hjälte",
+  "home:span: Ladda upp en bild, så målar vi dig i bokens stil.",
+  "login:p: Har du inget konto? [Skapa ett](/signup)",
+  "reader.adventureVote.error: Det gick inte att skicka ditt svar just nu. Försök igen.",
+  "reader.feedbackForm.commentLabel: Är det något mer du vill berätta? Valfritt, upp till 1000 tecken.",
+  "reader.feedbackForm.error: Det gick inte att skicka din feedback just nu. Försök igen.",
+  "reader.feedbackForm.grownUp: Till dig som vuxen",
+  "reader.feedbackForm.issueLegend: Vad gjorde att det inte kändes rätt än? Välj upp till 6 om du vill.",
+  "reader.feedbackForm.thanks: Tack för att du berättade.",
+  "signup:p: Har du redan ett konto? [Logga in](/login)",
+  "upgrade.upgradePanel.currentPlan: Din nuvarande plan",
+  "upgrade.upgradePanel.familyTrialLine: 14 dagar gratis, avsluta när du vill. Kort krävs.",
+  "upgrade.upgradePanel.introBody: Nya personliga böcker varje månad, i en värld som minns. Ingen bindningstid, avsluta när du vill.",
+  "upgrade.upgradePanel.proofCancel: Avsluta när du vill",
+  "upgrade.upgradePanel.schoolLine: Ingen bindningstid, avsluta när du vill.",
+  "uppgradera:li: Avsluta när du vill",
+  "uppgradera:p: 14 dagar gratis, avsluta när du vill. Kort krävs.",
+  "uppgradera:p: Nya personliga böcker varje månad, i en värld som minns. Ingen bindningstid, avsluta när du vill.",
+  "waiting-fire.GLOD_COPY.finaleLine: Elden har smitt klart din saga.",
+  "waiting-fire.JOB_STATUS_COPY.expectation: En riktig bilderbok tar ${i.WAIT_PHRASE.sv}. Du kan stanna här, den öppnas av sig själv när den är klar. Stänger du sidan är boken kvar, den lägger sig i bokhyllan när den är klar.",
+  "waiting-fire.JOB_STATUS_COPY.inProgress: Din saga växer fram",
+  "waiting-fire.JOB_STATUS_COPY.queuedHeading: Din saga står i kö",
+  "waiting-fire.JOB_STATUS_COPY.stuck: Vi kunde inte hitta din färdiga saga. Välj ett annat äventyr."
+ ],
+ "svDigitsNonLegal": [
+  "0",
+  "1",
+  "1 av 4",
+  "1000 tecken",
+  "1122",
+  "124 kr",
+  "14 dagar",
+  "149 kr",
+  "1490 kr",
+  "2",
+  "2 ",
+  "2 av 4",
+  "2 böcker",
+  "2026",
+  "26 ",
+  "3",
+  "3 ",
+  "3 av 4",
+  "30 ",
+  "30 barn",
+  "4",
+  "4 ",
+  "4 av 4",
+  "4 barn",
+  "5",
+  "5 år",
+  "559543",
+  "6",
+  "6 ",
+  "7 år",
+  "8 ",
+  "8 tecken",
+  "9 år"
+ ],
+ "svSpelledNumbersNonLegal": [
+  "home:p.hiw-caption: Kartan över exempelboken Iris och den sparade platsen. Varje prick är en sida, varje guldstjärna ett val, varje medaljong ett slut. Alla fyra finns på riktigt.",
+  "home:p.hiw-lede: Från ett foto till en uppläst bilderbok med fyra olika slut. Så här går en kväll till.",
+  "home:p.hiw-step-copy: Två val ger fyra vägar genom samma bok. Er kväll kan sluta på ett sätt, och samma bok kan sluta helt annorlunda hemma hos en annan familj. Läs igen, välj annorlunda och hitta en väg ni inte har sett.",
+  "home:p.hiw-step-copy: Välj tema och känsla. Sedan skriver, målar och läser vi in hela boken på en gång. Det tar ungefär tio minuter, och det säger vi hellre ärligt än låtsas att det går på en sekund.",
+  "home:p.hiw-visually-hidden: Boken börjar likadant för alla. Vid två tillfällen väljer barnet mellan två vägar. Två val ger fyra olika slut.",
+  "home:span.hiw-bake-line: Boken bakas. Ungefär tio minuter kvar."
+ ],
+ "aiMentions": [
+  "create-flow.s2Photo.privacy: Fotot används bara för att måla porträttet. Det tränar aldrig någon AI, och ni kan radera det när som helst. || The photo is only used to paint the portrait. It never trains any AI, and you can delete it whenever you like.",
+  "home:span.hiw-ai-chip: Skapad med AI || Created with AI",
+  "home:span: Skapad med AI || Made with AI",
+  "integritet:h3: AI-innehåll || AI content",
+  "integritet:li: Microsoft Azure, AI-tjänster som skriver berättelserna och i första hand målar snabb-sagans scenbilder. || Microsoft Azure, AI services that write the stories and are the first choice for illustrating quick-story scenes.",
+  "integritet:p.prose-plain: Berättelserna, illustrationerna och porträtten skapas med AI. Vi berättar det öppet, så att ni och barnet vet att det är datorn som har hjälpt till att rita och skriva. || The stories, illustrations and portraits are generated with AI. We say so openly, so you and your child know a computer helped draw and write them.",
+  "integritet:p.prose-plain: Ni berättar ett förnamn, ett åldersspann och ett språk, och kan om ni vill beskriva hur hjälten ser ut och ladda upp ett foto. Vi använder AI-tjänster för att skriva och illustrera. Med ett vanligt konto kan ni se och radera era uppgifter där. Bokmässans snabb-saga använder ett separat anonymt konto utan e-postadress. För frågor om uppgifter från ett sådant besök kan ni mejla oss. Vi säljer aldrig era uppgifter. || You tell us a first name, an age range and a language, and you can optionally describe how the hero looks and upload a photo. We use AI services to write and illustrate. With a regular account, you can access and erase your data there. The Book Fair quick story uses a separate anonymous account without an email address. Email us about data from such a visit. We never sell your data.",
+  "reader.readerCover.madeWithAi: Skapad med AI. || Made with AI.",
+  "villkor:h3: AI-innehåll || AI content",
+  "villkor:p.prose-plain: Berättelserna och bilderna skapas med AI, och ibland blir något konstigt eller fel. Läs gärna tillsammans med barnet, och berätta om en bok blev tokig så gör vi motorn bättre. || The stories and pictures are generated with AI, and sometimes something comes out odd or wrong. Read together with your child, and tell us if a book went sideways so we can make the engine better.",
+  "villkor:p.prose-plain: Vi är Tale Forge AB, ett litet svenskt företag i Värnamo (org.nr 559543-1122). Tjänsten skapar personliga bilderböcker för ert barn, skrivna och illustrerade med AI. De här villkoren gäller mellan er och oss när ni använder appen. Undrar ni något, mejla [kevin@tale-forge.app](mailto:…@tale-forge.app). || We are Tale Forge AB, a small Swedish company in Värnamo (org. no. 559543-1122). The service creates personalised picture books for your child, written and illustrated with AI. These terms apply between you and us when you use the app. Questions: email [kevin@tale-forge.app](mailto:…@tale-forge.app)."
+ ],
+ "headlineEndings": {
+  "note": "h1-h3 on marketing/auth/404 pages + JS keys ending in heading/headline/title",
+  "count": 59,
+  "sv": {
+   "full stop": 3,
+   "none": 51,
+   "question mark": 4,
+   "ellipsis": 1
+  },
+  "en": {
+   "full stop": 3,
+   "none": 51,
+   "question mark": 4,
+   "ellipsis": 1
+  }
+ },
+ "headlines": [
+  {
+   "where": "home:h1",
+   "sv": "En värld som minns henne.",
+   "en": "A world that remembers her."
+  },
+  {
+   "where": "home:h2.hiw-headline",
+   "sv": "Äventyr värda att prata om.",
+   "en": "Adventures worth talking about."
+  },
+  {
+   "where": "home:h3",
+   "sv": "Bygg er hjälte",
+   "en": "Build your hero"
+  },
+  {
+   "where": "home:h3",
+   "sv": "Ta med en vän",
+   "en": "Bring a friend"
+  },
+  {
+   "where": "home:h3",
+   "sv": "Välj kvällens äventyr",
+   "en": "Pick tonight's adventure"
+  },
+  {
+   "where": "home:h3",
+   "sv": "Läs och välj",
+   "en": "Read and choose"
+  },
+  {
+   "where": "home:h3",
+   "sv": "Fyra olika slut",
+   "en": "Four different endings"
+  },
+  {
+   "where": "home:h3",
+   "sv": "Världen minns",
+   "en": "The world remembers"
+  },
+  {
+   "where": "home:h2",
+   "sv": "Din hjälte",
+   "en": "Your hero"
+  },
+  {
+   "where": "home:h2",
+   "sv": "Bokhyllan",
+   "en": "The bookshelf"
+  },
+  {
+   "where": "start:h1",
+   "sv": "Ikväll är hjälten ert barn.",
+   "en": "Tonight the hero is your child."
+  },
+  {
+   "where": "uppgradera:h1.page-title",
+   "sv": "Uppgradera",
+   "en": "Upgrade"
+  },
+  {
+   "where": "uppgradera:h2#included-heading",
+   "sv": "Det här ingår",
+   "en": "What is included"
+  },
+  {
+   "where": "uppgradera:h2",
+   "sv": "Familj",
+   "en": "Family"
+  },
+  {
+   "where": "login:h1.page-title",
+   "sv": "Logga in",
+   "en": "Log in"
+  },
+  {
+   "where": "signup:h1.page-title",
+   "sv": "Skapa konto",
+   "en": "Create account"
+  },
+  {
+   "where": "404:h2",
+   "sv": "Sidan finns inte",
+   "en": "Page not found"
+  },
+  {
+   "where": "create-flow.s0Pitch.badgeTitle",
+   "sv": "Exempelbok",
+   "en": "Sample book"
+  },
+  {
+   "where": "create-flow.s1Hero.heading",
+   "sv": "Vem blir hjälten?",
+   "en": "Who becomes the hero?"
+  },
+  {
+   "where": "create-flow.s3Company.objectHeading",
+   "sv": "Något kärt att ta med?",
+   "en": "Something dear to bring?"
+  },
+  {
+   "where": "create-flow.s2Photo.uploadTitle",
+   "sv": "Välj ett foto",
+   "en": "Choose a photo"
+  },
+  {
+   "where": "create-flow.s6Launch.sheetHeading",
+   "sv": "Redo att tända glöden?",
+   "en": "Ready to light the ember?"
+  },
+  {
+   "where": "create-flow.s6Launch.companionHeading",
+   "sv": "Vem följer med?",
+   "en": "Who comes along?"
+  },
+  {
+   "where": "create-flow.stepHeaders.s1.title",
+   "sv": "Steg 1 av 4 · Hjälten",
+   "en": "Step 1 of 4 · The hero"
+  },
+  {
+   "where": "create-flow.stepHeaders.s2.title",
+   "sv": "Steg 2 av 4 · Fotot",
+   "en": "Step 2 of 4 · The photo"
+  },
+  {
+   "where": "create-flow.stepHeaders.s3.title",
+   "sv": "Steg 3 av 4 · Sällskapet",
+   "en": "Step 3 of 4 · The company"
+  },
+  {
+   "where": "create-flow.stepHeaders.s5.title",
+   "sv": "Steg 4 av 4 · Kontot",
+   "en": "Step 4 of 4 · The account"
+  },
+  {
+   "where": "create-flow.stepHeaders.s6.title",
+   "sv": "Sista valet före boken",
+   "en": "The last choice before the book"
+  },
+  {
+   "where": "create-flow.stepHeaders.s7.title",
+   "sv": "Boken skapas",
+   "en": "The book is being made"
+  },
+  {
+   "where": "create-flow-doors.firstRunDoorCards.0.title",
+   "sv": "Den försvunna lyktan",
+   "en": "The Lost Lantern"
+  },
+  {
+   "where": "create-flow-doors.firstRunDoorCards.1.title",
+   "sv": "Tornet i molnen",
+   "en": "The Tower in the Clouds"
+  },
+  {
+   "where": "create-flow-doors.firstRunDoorCards.2.title",
+   "sv": "Stjärnnatten",
+   "en": "The Starry Night"
+  },
+  {
+   "where": "create-flow-doors.surpriseDoor.title",
+   "sv": "Överraska oss",
+   "en": "Surprise us"
+  },
+  {
+   "where": "create-flow-doors.doorGridHeading.heading",
+   "sv": "Välj kvällens äventyr",
+   "en": "Choose tonight's adventure"
+  },
+  {
+   "where": "create-flow-doors.recipeLine.recipeTitle",
+   "sv": "Bokens recept",
+   "en": "Book recipe"
+  },
+  {
+   "where": "create-flow-doors.recipeLine.styleTitle",
+   "sv": "Bildstil",
+   "en": "Art style"
+  },
+  {
+   "where": "create-flow-doors.recipeLine.voiceTitle",
+   "sv": "Berättarröst",
+   "en": "Narrator voice"
+  },
+  {
+   "where": "create-flow-doors.recipeLine.languageTitle",
+   "sv": "Bokens språk",
+   "en": "The book's language"
+  },
+  {
+   "where": "create-flow-doors.worldBand.fallbackTitle",
+   "sv": "Er sagovärld",
+   "en": "Your storyworld"
+  },
+  {
+   "where": "waiting-fire.JOB_STATUS_COPY.queuedHeading",
+   "sv": "Din saga står i kö",
+   "en": "Your story is in line"
+  },
+  {
+   "where": "waiting-fire.JOB_STATUS_COPY.firstBookQueuedHeading",
+   "sv": "{names} allra första saga står i kö",
+   "en": "{names} very first story is in line"
+  },
+  {
+   "where": "waiting-fire.JOB_STATUS_COPY.firstBookHeading",
+   "sv": "{names} allra första bok smids nu",
+   "en": "{names} very first book is being made"
+  },
+  {
+   "where": "waiting-fire.GLOD_COPY.forgeUnavailable.title",
+   "sv": "Smedjan är tom just nu",
+   "en": "The smithy is empty right now"
+  },
+  {
+   "where": "waiting-fire.GLOD_COPY.terminal.failed.title",
+   "sv": "Elden kunde inte slutföra sagan",
+   "en": "The fire could not finish this story"
+  },
+  {
+   "where": "waiting-fire.GLOD_COPY.terminal.gated.title",
+   "sv": "Den här sagan blev inte redo",
+   "en": "This story was not ready"
+  },
+  {
+   "where": "waiting-fire.GLOD_COPY.terminal.stuck.title",
+   "sv": "Vi letar efter er saga",
+   "en": "We are finding your story"
+  },
+  {
+   "where": "waiting-fire.GLOD_COPY.finaleTitle",
+   "sv": "En ny saga om {name}",
+   "en": "A new story about {name}"
+  },
+  {
+   "where": "next-book-cards.registerCards.cozy.title",
+   "sv": "Ett mysigt äventyr",
+   "en": "A cozy adventure"
+  },
+  {
+   "where": "next-book-cards.registerCards.adventure.title",
+   "sv": "Ett stort äventyr",
+   "en": "A big adventure"
+  },
+  {
+   "where": "next-book-cards.registerCards.silly.title",
+   "sv": "Ett larvigt äventyr",
+   "en": "A silly adventure"
+  },
+  {
+   "where": "next-book-cards.registerCards.wonder.title",
+   "sv": "Ett underbart äventyr",
+   "en": "A wonder-filled adventure"
+  },
+  {
+   "where": "next-book-cards.competencyCard.title",
+   "sv": "En saga steg längre",
+   "en": "A story one step further"
+  },
+  {
+   "where": "next-book-cards.emberCard.title",
+   "sv": "En saga som spinner vidare",
+   "en": "A story that carries on"
+  },
+  {
+   "where": "reader.soundMenu.soundTitle",
+   "sv": "Bakgrundsljud",
+   "en": "Background sound"
+  },
+  {
+   "where": "reader.endingCeremony.emberHeading",
+   "sv": "Nästa gång, kanske...",
+   "en": "Next time, maybe..."
+  },
+  {
+   "where": "auth.authForms.login.heading",
+   "sv": "Logga in",
+   "en": "Log in"
+  },
+  {
+   "where": "auth.authFields.recoveryHeading",
+   "sv": "Återställ lösenordet",
+   "en": "Reset your password"
+  },
+  {
+   "where": "upgrade.upgradePanel.heading",
+   "sv": "Uppgradera",
+   "en": "Upgrade"
+  },
+  {
+   "where": "upgrade.upgradePanel.includedHeading",
+   "sv": "Det här ingår",
+   "en": "What is included"
+  }
+ ],
+ "enToSvCharLengthRatio": {
+  "pairs": 264,
+  "median": 1.05,
+  "p10": 0.89,
+  "p90": 1.22
+ },
+ "termCountsNonLegal": {
+  "sv": {
+   "hjälte*": 39,
+   "värld*": 13,
+   "sagovärld*": 4,
+   "minns": 13,
+   "saga/sagor*": 53,
+   "sago- compounds": 19,
+   "berättelse*": 11,
+   "bilderbok*": 6,
+   "bok/böcker*": 76,
+   "bokhylla*": 17,
+   "lägger sig i bokhyllan": 12,
+   "äventyr*": 28,
+   "kväll*/ikväll": 14,
+   "val/valet/valen": 13,
+   "välj*": 36,
+   "slut": 5,
+   "måla*/målad*": 23,
+   "porträtt*": 12,
+   "glöd*/gnista": 10,
+   "eld*": 8,
+   "smed*/smid*": 16,
+   "kvar (still there/safe)": 10,
+   "allt ni (just) byggt": 4,
+   "försök igen": 18,
+   "något gick fel": 3,
+   "riktig*": 7,
+   "på riktigt": 2,
+   "gratis": 8,
+   "tillsammans": 4,
+   "vän*/kompis": 25,
+   "mejl*": 6,
+   "e-post*": 10,
+   "AI": 4
+  },
+  "en": {
+   "hero": 41,
+   "world": 17,
+   "remember*": 12,
+   "story/stories": 65,
+   "book*": 96,
+   "bookshelf": 17,
+   "lands on the bookshelf": 12,
+   "adventure*": 28,
+   "tonight*/evening*": 15,
+   "choice*/choose*/pick*": 49,
+   "paint*": 22,
+   "ember*/spark*": 10,
+   "fire": 14,
+   "forge*/smith*": 18,
+   "please": 23,
+   "safe": 12,
+   "try again": 21,
+   "for real/real": 6,
+   "free": 8
+  }
+ }
+}

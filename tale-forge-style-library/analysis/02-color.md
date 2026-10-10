@@ -55,7 +55,7 @@ The five primitives (`:root`, [3q17cp_jgfwol.pretty.css:460-472](../source/css/3
 | `--violet-soft` | `#9b87f5` | 62 / 62 / 302° | 10 | night structure colour (lines, pills, traits, map dots), the alpha-ladder base |
 | `--gold` | `#f2b22e` | 77 / 72 / 80° | 9 | status gold: pulse dots, skip link, left rules |
 | `--gold-soft` | `#f5c542` | 82 / 69 / 86° | 8 | night accent, logo, button end stop |
-| `--coral` | `#ff6154` | 62 / 71 / 34° | 0 | defined but never `var()`-referenced; appears only as raw alpha hex |
+| `--coral` | `#ff6154` | 62 / 71 / 33° | 0 | defined but never `var()`-referenced; appears only as raw alpha hex |
 
 ![Primitives, canvas colours and the alpha ladders](../derived/color/primitives.png)
 

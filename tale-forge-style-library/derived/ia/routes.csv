@@ -1,0 +1,31 @@
+route,http_status,redirect_to,in_sitemap,robots_txt,kind,notes
+/,200,,yes,,public page,"Landing. Signed-in users get nav ""Bokhylla"" -> / (bookshelf) and ""Konto"" -> /konto instead of ""Logga in""/""Priser""."
+/start,200,,yes,,public page,Onboarding s0..s8 in one URL; screens in localStorage tf-start-draft.
+/uppgradera,200,,yes,,public page,"Pricing. Nav label ""Priser""/""Pricing""."
+/priser,307,/uppgradera,no,,alias,Swedish alias.
+/pricing,307,/uppgradera,no,,alias,English alias.
+/login,200,,yes,,public page,"Auth card, mode login."
+/signup,200,,yes,,public page,"Auth card, mode signup."
+/auth/callback,307,/login,no,,auth plumbing,OAuth/e-mail confirmation return; bare hit bounces to /login.
+/integritet,200,,yes,,public page,"Privacy notice, sv + en in one page."
+/villkor,200,,yes,,public page,"Terms, sv + en in one page."
+/konto,307,/login?returnTo=%2Fkonto,no,Disallow: /konto,gated,Account.
+/konto/x,307,/login?returnTo=%2Fkonto%2Fx,no,Disallow: /konto,gated,Sub-paths keep the full returnTo.
+/create,307,/login?returnTo=%2Fcreate,no,Disallow: /create,gated,Create a further book.
+/valkommen,307,/login?returnTo=%2Fvalkommen,no,Disallow: /valkommen,gated,Welcome (post-signup).
+/reader/{id},307,/login?returnTo=%2Freader%2F{id},no,Disallow: /reader,gated,StoryReader.
+/reader,404,,no,Disallow: /reader,not found,No index route.
+/share/iris-sparade-platsen,404,,no,,broken public link,"Linked from home (x2), /start gallery, /uppgradera. Server: __next_error__ shell, robots noindex; client: 404 card; tab title after hydration ""Iris och den sparade platsen | Tale Forge""."
+/share/{other},404,,no,,not found,
+/voice-test,404,,no,Disallow: /voice-test,not found,Named in robots.txt only.
+/api/,308,/api,no,Disallow: /api/,backend,Not explored.
+/bokmassan,307,/bokmassan/saga,no,,unlisted campaign,Book-fair kiosk; see analysis/05b §11.
+/bokmassan/saga,200,,no,,unlisted campaign,"""Berättarstugan"" chooser; nav-right hidden."
+/bokmassan/saga/berattelser,200,,no,,unlisted campaign,Curated gallery of 9 fair stories.
+/bokmassan/tavling,200,,no,,unlisted campaign,Stand-alone contest page with its own stylesheet.
+/en,404,,no,,not found,No locale prefix routes; language is a cookie.
+/this-page-does-not-exist,404,,no,,not found,Site 404 card.
+/robots.txt,200,,,,meta,source/meta/robots.txt
+/sitemap.xml,200,,,,meta,"source/meta/sitemap.xml (7 URLs, changefreq monthly)"
+/manifest.webmanifest,200,,,,meta,source/meta/manifest.webmanifest
+/opengraph-image.png,200,,,,meta,assets/brand/opengraph-image.png (1200x630)

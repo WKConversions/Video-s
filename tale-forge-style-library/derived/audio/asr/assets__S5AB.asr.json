@@ -1,0 +1,557 @@
+{
+ "note": "MACHINE TRANSCRIPT (faster-whisper 'medium', int8, CPU, beam 5, language forced from file name). Not a site asset; may contain recognition errors. For sample-book beats the authoritative text is beats[].prose in source/sample-book.iris-och-den-sparade-platsen.json.",
+ "source_audio": "assets/share/iris-sparade-platsen/assets/S5AB.mp3",
+ "model": "Systran/faster-whisper-medium",
+ "language": "sv",
+ "duration_s": 63.2,
+ "text": "Iris lät Amina rita fågeln. Hon räckte fram silvepennan, men fingrarna knep kvar om mitten. Pennan rördes inte. Amina höll i andra änden och väntade. Mossa snurrade halstuken ett varv. Iris såg platsen bredvid träden, den som hon skejv hade lämnat öppen. Hon släppte pennan och lade handflatan på kartans kant istället. Amina ritade en liten fågel med utbredda vingar. När näbben blev klar flaxade silvervingarna en enda gång fast pappret låg stilla. Mossa tittade upp mot platsen ovanför stigarna. Ingen silvermåne fanns där. Iris drog inte tillbaka pennan. Fågen fick kartans sista silversträck och Amina låg så att flätona gungade.",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 11.04,
+   "text": "Iris lät Amina rita fågeln. Hon räckte fram silvepennan, men fingrarna knep kvar om mitten. Pennan rördes inte.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 0.0,
+     "e": 1.02
+    },
+    {
+     "w": " lät",
+     "s": 1.02,
+     "e": 1.46
+    },
+    {
+     "w": " Amina",
+     "s": 1.46,
+     "e": 2.18
+    },
+    {
+     "w": " rita",
+     "s": 2.18,
+     "e": 2.62
+    },
+    {
+     "w": " fågeln.",
+     "s": 2.62,
+     "e": 3.58
+    },
+    {
+     "w": " Hon",
+     "s": 3.98,
+     "e": 4.14
+    },
+    {
+     "w": " räckte",
+     "s": 4.14,
+     "e": 4.56
+    },
+    {
+     "w": " fram",
+     "s": 4.56,
+     "e": 4.88
+    },
+    {
+     "w": " silvepennan,",
+     "s": 4.88,
+     "e": 5.96
+    },
+    {
+     "w": " men",
+     "s": 6.22,
+     "e": 6.66
+    },
+    {
+     "w": " fingrarna",
+     "s": 6.66,
+     "e": 7.38
+    },
+    {
+     "w": " knep",
+     "s": 7.38,
+     "e": 7.6
+    },
+    {
+     "w": " kvar",
+     "s": 7.6,
+     "e": 8.18
+    },
+    {
+     "w": " om",
+     "s": 8.18,
+     "e": 8.48
+    },
+    {
+     "w": " mitten.",
+     "s": 8.48,
+     "e": 9.12
+    },
+    {
+     "w": " Pennan",
+     "s": 9.8,
+     "e": 10.2
+    },
+    {
+     "w": " rördes",
+     "s": 10.2,
+     "e": 10.7
+    },
+    {
+     "w": " inte.",
+     "s": 10.7,
+     "e": 11.04
+    }
+   ]
+  },
+  {
+   "start": 12.26,
+   "end": 24.34,
+   "text": "Amina höll i andra änden och väntade. Mossa snurrade halstuken ett varv. Iris såg platsen bredvid träden, den som hon skejv hade lämnat öppen.",
+   "words": [
+    {
+     "w": " Amina",
+     "s": 12.26,
+     "e": 12.8
+    },
+    {
+     "w": " höll",
+     "s": 12.8,
+     "e": 13.12
+    },
+    {
+     "w": " i",
+     "s": 13.12,
+     "e": 13.38
+    },
+    {
+     "w": " andra",
+     "s": 13.38,
+     "e": 13.62
+    },
+    {
+     "w": " änden",
+     "s": 13.62,
+     "e": 14.16
+    },
+    {
+     "w": " och",
+     "s": 14.16,
+     "e": 14.34
+    },
+    {
+     "w": " väntade.",
+     "s": 14.34,
+     "e": 15.44
+    },
+    {
+     "w": " Mossa",
+     "s": 16.24,
+     "e": 16.7
+    },
+    {
+     "w": " snurrade",
+     "s": 16.7,
+     "e": 17.32
+    },
+    {
+     "w": " halstuken",
+     "s": 17.32,
+     "e": 18.1
+    },
+    {
+     "w": " ett",
+     "s": 18.1,
+     "e": 18.44
+    },
+    {
+     "w": " varv.",
+     "s": 18.44,
+     "e": 19.2
+    },
+    {
+     "w": " Iris",
+     "s": 19.68,
+     "e": 20.08
+    },
+    {
+     "w": " såg",
+     "s": 20.08,
+     "e": 20.46
+    },
+    {
+     "w": " platsen",
+     "s": 20.46,
+     "e": 21.0
+    },
+    {
+     "w": " bredvid",
+     "s": 21.0,
+     "e": 21.34
+    },
+    {
+     "w": " träden,",
+     "s": 21.34,
+     "e": 22.08
+    },
+    {
+     "w": " den",
+     "s": 22.26,
+     "e": 22.46
+    },
+    {
+     "w": " som",
+     "s": 22.46,
+     "e": 22.62
+    },
+    {
+     "w": " hon",
+     "s": 22.62,
+     "e": 22.86
+    },
+    {
+     "w": " skejv",
+     "s": 22.86,
+     "e": 23.2
+    },
+    {
+     "w": " hade",
+     "s": 23.2,
+     "e": 23.36
+    },
+    {
+     "w": " lämnat",
+     "s": 23.36,
+     "e": 23.68
+    },
+    {
+     "w": " öppen.",
+     "s": 23.68,
+     "e": 24.34
+    }
+   ]
+  },
+  {
+   "start": 24.34,
+   "end": 36.26,
+   "text": "Hon släppte pennan och lade handflatan på kartans kant istället. Amina ritade en liten fågel med utbredda vingar.",
+   "words": [
+    {
+     "w": " Hon",
+     "s": 24.34,
+     "e": 25.26
+    },
+    {
+     "w": " släppte",
+     "s": 25.26,
+     "e": 25.9
+    },
+    {
+     "w": " pennan",
+     "s": 25.9,
+     "e": 26.62
+    },
+    {
+     "w": " och",
+     "s": 26.62,
+     "e": 26.98
+    },
+    {
+     "w": " lade",
+     "s": 26.98,
+     "e": 27.32
+    },
+    {
+     "w": " handflatan",
+     "s": 27.32,
+     "e": 28.22
+    },
+    {
+     "w": " på",
+     "s": 28.22,
+     "e": 28.48
+    },
+    {
+     "w": " kartans",
+     "s": 28.48,
+     "e": 29.08
+    },
+    {
+     "w": " kant",
+     "s": 29.08,
+     "e": 29.42
+    },
+    {
+     "w": " istället.",
+     "s": 29.42,
+     "e": 31.26
+    },
+    {
+     "w": " Amina",
+     "s": 31.98,
+     "e": 32.46
+    },
+    {
+     "w": " ritade",
+     "s": 32.46,
+     "e": 33.04
+    },
+    {
+     "w": " en",
+     "s": 33.04,
+     "e": 33.18
+    },
+    {
+     "w": " liten",
+     "s": 33.18,
+     "e": 33.56
+    },
+    {
+     "w": " fågel",
+     "s": 33.56,
+     "e": 34.24
+    },
+    {
+     "w": " med",
+     "s": 34.24,
+     "e": 34.66
+    },
+    {
+     "w": " utbredda",
+     "s": 34.66,
+     "e": 35.46
+    },
+    {
+     "w": " vingar.",
+     "s": 35.46,
+     "e": 36.26
+    }
+   ]
+  },
+  {
+   "start": 36.96,
+   "end": 43.34,
+   "text": "När näbben blev klar flaxade silvervingarna en enda gång fast pappret låg stilla.",
+   "words": [
+    {
+     "w": " När",
+     "s": 36.96,
+     "e": 37.24
+    },
+    {
+     "w": " näbben",
+     "s": 37.24,
+     "e": 37.7
+    },
+    {
+     "w": " blev",
+     "s": 37.7,
+     "e": 37.92
+    },
+    {
+     "w": " klar",
+     "s": 37.92,
+     "e": 38.48
+    },
+    {
+     "w": " flaxade",
+     "s": 38.48,
+     "e": 39.6
+    },
+    {
+     "w": " silvervingarna",
+     "s": 39.6,
+     "e": 40.46
+    },
+    {
+     "w": " en",
+     "s": 40.46,
+     "e": 40.9
+    },
+    {
+     "w": " enda",
+     "s": 40.9,
+     "e": 41.28
+    },
+    {
+     "w": " gång",
+     "s": 41.28,
+     "e": 41.82
+    },
+    {
+     "w": " fast",
+     "s": 41.82,
+     "e": 42.42
+    },
+    {
+     "w": " pappret",
+     "s": 42.42,
+     "e": 42.84
+    },
+    {
+     "w": " låg",
+     "s": 42.84,
+     "e": 43.12
+    },
+    {
+     "w": " stilla.",
+     "s": 43.12,
+     "e": 43.69
+    }
+   ]
+  },
+  {
+   "start": 45.13,
+   "end": 55.71,
+   "text": "Mossa tittade upp mot platsen ovanför stigarna. Ingen silvermåne fanns där. Iris drog inte tillbaka pennan.",
+   "words": [
+    {
+     "w": " Mossa",
+     "s": 45.13,
+     "e": 46.21
+    },
+    {
+     "w": " tittade",
+     "s": 46.21,
+     "e": 46.79
+    },
+    {
+     "w": " upp",
+     "s": 46.79,
+     "e": 47.05
+    },
+    {
+     "w": " mot",
+     "s": 47.05,
+     "e": 47.27
+    },
+    {
+     "w": " platsen",
+     "s": 47.27,
+     "e": 47.81
+    },
+    {
+     "w": " ovanför",
+     "s": 47.81,
+     "e": 48.35
+    },
+    {
+     "w": " stigarna.",
+     "s": 48.35,
+     "e": 49.29
+    },
+    {
+     "w": " Ingen",
+     "s": 50.19,
+     "e": 50.51
+    },
+    {
+     "w": " silvermåne",
+     "s": 50.51,
+     "e": 51.21
+    },
+    {
+     "w": " fanns",
+     "s": 51.21,
+     "e": 51.53
+    },
+    {
+     "w": " där.",
+     "s": 51.53,
+     "e": 52.05
+    },
+    {
+     "w": " Iris",
+     "s": 53.19,
+     "e": 53.51
+    },
+    {
+     "w": " drog",
+     "s": 53.51,
+     "e": 53.83
+    },
+    {
+     "w": " inte",
+     "s": 53.83,
+     "e": 54.17
+    },
+    {
+     "w": " tillbaka",
+     "s": 54.17,
+     "e": 54.77
+    },
+    {
+     "w": " pennan.",
+     "s": 54.77,
+     "e": 55.71
+    }
+   ]
+  },
+  {
+   "start": 56.31,
+   "end": 62.65,
+   "text": "Fågen fick kartans sista silversträck och Amina låg så att flätona gungade.",
+   "words": [
+    {
+     "w": " Fågen",
+     "s": 56.31,
+     "e": 56.69
+    },
+    {
+     "w": " fick",
+     "s": 56.69,
+     "e": 57.01
+    },
+    {
+     "w": " kartans",
+     "s": 57.01,
+     "e": 57.61
+    },
+    {
+     "w": " sista",
+     "s": 57.61,
+     "e": 58.15
+    },
+    {
+     "w": " silversträck",
+     "s": 58.15,
+     "e": 59.13
+    },
+    {
+     "w": " och",
+     "s": 59.13,
+     "e": 59.79
+    },
+    {
+     "w": " Amina",
+     "s": 59.79,
+     "e": 60.31
+    },
+    {
+     "w": " låg",
+     "s": 60.31,
+     "e": 61.01
+    },
+    {
+     "w": " så",
+     "s": 61.01,
+     "e": 61.23
+    },
+    {
+     "w": " att",
+     "s": 61.23,
+     "e": 61.55
+    },
+    {
+     "w": " flätona",
+     "s": 61.55,
+     "e": 62.23
+    },
+    {
+     "w": " gungade.",
+     "s": 62.23,
+     "e": 62.65
+    }
+   ]
+  }
+ ]
+}

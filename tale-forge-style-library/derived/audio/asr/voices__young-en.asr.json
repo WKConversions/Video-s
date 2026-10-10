@@ -1,0 +1,123 @@
+{
+ "note": "MACHINE TRANSCRIPT (faster-whisper 'medium', int8, CPU, beam 5, language forced from file name). Not a site asset; may contain recognition errors. For sample-book beats the authoritative text is beats[].prose in source/sample-book.iris-och-den-sparade-platsen.json.",
+ "source_audio": "derived/audio/fetched/voices/young-en.mp3",
+ "model": "Systran/faster-whisper-medium",
+ "language": "en",
+ "duration_s": 9.12,
+ "text": "Hi! Guess what? This story is all about you. I love this part, right before everything begins.",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 0.7,
+   "text": "Hi!",
+   "words": [
+    {
+     "w": " Hi!",
+     "s": 0.0,
+     "e": 0.7
+    }
+   ]
+  },
+  {
+   "start": 1.26,
+   "end": 1.82,
+   "text": "Guess what?",
+   "words": [
+    {
+     "w": " Guess",
+     "s": 1.26,
+     "e": 1.46
+    },
+    {
+     "w": " what?",
+     "s": 1.46,
+     "e": 1.82
+    }
+   ]
+  },
+  {
+   "start": 2.32,
+   "end": 4.9,
+   "text": "This story is all about you.",
+   "words": [
+    {
+     "w": " This",
+     "s": 2.32,
+     "e": 2.56
+    },
+    {
+     "w": " story",
+     "s": 2.56,
+     "e": 3.0
+    },
+    {
+     "w": " is",
+     "s": 3.0,
+     "e": 3.58
+    },
+    {
+     "w": " all",
+     "s": 3.58,
+     "e": 4.04
+    },
+    {
+     "w": " about",
+     "s": 4.04,
+     "e": 4.5
+    },
+    {
+     "w": " you.",
+     "s": 4.5,
+     "e": 4.9
+    }
+   ]
+  },
+  {
+   "start": 5.6,
+   "end": 8.68,
+   "text": "I love this part, right before everything begins.",
+   "words": [
+    {
+     "w": " I",
+     "s": 5.6,
+     "e": 5.84
+    },
+    {
+     "w": " love",
+     "s": 5.84,
+     "e": 6.06
+    },
+    {
+     "w": " this",
+     "s": 6.06,
+     "e": 6.36
+    },
+    {
+     "w": " part,",
+     "s": 6.36,
+     "e": 6.58
+    },
+    {
+     "w": " right",
+     "s": 6.94,
+     "e": 7.18
+    },
+    {
+     "w": " before",
+     "s": 7.18,
+     "e": 7.68
+    },
+    {
+     "w": " everything",
+     "s": 7.68,
+     "e": 8.14
+    },
+    {
+     "w": " begins.",
+     "s": 8.14,
+     "e": 8.68
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "note": "wall-clock ms since context start (video starts at about the same time; Playwright screencast timing can drift)",
+ "marks": [
+  {
+   "t_ms": 3514,
+   "event": "loaded"
+  },
+  {
+   "t_ms": 5106,
+   "event": "hover primary CTA"
+  },
+  {
+   "t_ms": 7484,
+   "event": "hover ghost CTA (no hover style)"
+  },
+  {
+   "t_ms": 9939,
+   "event": "hover theme toggle"
+  },
+  {
+   "t_ms": 13104,
+   "event": "press primary (mouse down, no click release on target)"
+  },
+  {
+   "t_ms": 15780,
+   "event": "hover .trait:not(.on)"
+  },
+  {
+   "t_ms": 18789,
+   "event": "hover .fab"
+  },
+  {
+   "t_ms": 21886,
+   "event": "hover .book"
+  },
+  {
+   "t_ms": 24924,
+   "event": "hover hiw-play"
+  }
+ ]
+}

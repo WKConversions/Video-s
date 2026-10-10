@@ -1,0 +1,636 @@
+{
+ "note": "MACHINE TRANSCRIPT (faster-whisper 'medium', int8, CPU, beam 5, language forced from file name). Not a site asset; may contain recognition errors. For sample-book beats the authoritative text is beats[].prose in source/sample-book.iris-och-den-sparade-platsen.json.",
+ "source_audio": "assets/share/iris-sparade-platsen/assets/S5BA.mp3",
+ "model": "Systran/faster-whisper-medium",
+ "language": "sv",
+ "duration_s": 69.16,
+ "text": "Iris lät Mossa rita stjärnan. Hon vände pappret en aning på det låga bordet så att platsen ovanför molnen låg framför honom. Sedan rullade hon silverpennan över bordet till hans tassar. Mossa satte ena foten på pennan och styrde med hela kroppen. Först kom ett streck, sedan fem spetsar. Iris höll kvar sin solfågel på ena sidan och lämnade Aminas vingar fria på den andra. Amina följde den tomma platsen mellan vingarna med blicken. Där blev inget silverbo. När Mossa ritade sista spetsen glimmade stjärnan och hoppade till på pappret. Mossa tappade nästan halsduken av förvåning. Iris skrattade till. Hon hade valt utan att knuffa sig före och stjärnan lysste över deras gemensamma bild.",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 12.46,
+   "text": "Iris lät Mossa rita stjärnan. Hon vände pappret en aning på det låga bordet så att platsen ovanför molnen låg framför honom.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 0.0,
+     "e": 1.66
+    },
+    {
+     "w": " lät",
+     "s": 1.66,
+     "e": 2.1
+    },
+    {
+     "w": " Mossa",
+     "s": 2.1,
+     "e": 2.68
+    },
+    {
+     "w": " rita",
+     "s": 2.68,
+     "e": 3.22
+    },
+    {
+     "w": " stjärnan.",
+     "s": 3.22,
+     "e": 4.16
+    },
+    {
+     "w": " Hon",
+     "s": 4.98,
+     "e": 5.1
+    },
+    {
+     "w": " vände",
+     "s": 5.1,
+     "e": 5.58
+    },
+    {
+     "w": " pappret",
+     "s": 5.58,
+     "e": 6.1
+    },
+    {
+     "w": " en",
+     "s": 6.1,
+     "e": 6.3
+    },
+    {
+     "w": " aning",
+     "s": 6.3,
+     "e": 6.66
+    },
+    {
+     "w": " på",
+     "s": 6.66,
+     "e": 6.84
+    },
+    {
+     "w": " det",
+     "s": 6.84,
+     "e": 6.94
+    },
+    {
+     "w": " låga",
+     "s": 6.94,
+     "e": 7.34
+    },
+    {
+     "w": " bordet",
+     "s": 7.34,
+     "e": 8.1
+    },
+    {
+     "w": " så",
+     "s": 8.1,
+     "e": 8.26
+    },
+    {
+     "w": " att",
+     "s": 8.26,
+     "e": 8.52
+    },
+    {
+     "w": " platsen",
+     "s": 8.52,
+     "e": 9.1
+    },
+    {
+     "w": " ovanför",
+     "s": 9.1,
+     "e": 9.82
+    },
+    {
+     "w": " molnen",
+     "s": 9.82,
+     "e": 10.48
+    },
+    {
+     "w": " låg",
+     "s": 10.48,
+     "e": 10.9
+    },
+    {
+     "w": " framför",
+     "s": 10.9,
+     "e": 11.4
+    },
+    {
+     "w": " honom.",
+     "s": 11.4,
+     "e": 12.46
+    }
+   ]
+  },
+  {
+   "start": 13.18,
+   "end": 17.48,
+   "text": "Sedan rullade hon silverpennan över bordet till hans tassar.",
+   "words": [
+    {
+     "w": " Sedan",
+     "s": 13.18,
+     "e": 13.68
+    },
+    {
+     "w": " rullade",
+     "s": 13.68,
+     "e": 14.24
+    },
+    {
+     "w": " hon",
+     "s": 14.24,
+     "e": 14.52
+    },
+    {
+     "w": " silverpennan",
+     "s": 14.52,
+     "e": 15.54
+    },
+    {
+     "w": " över",
+     "s": 15.54,
+     "e": 15.8
+    },
+    {
+     "w": " bordet",
+     "s": 15.8,
+     "e": 16.28
+    },
+    {
+     "w": " till",
+     "s": 16.28,
+     "e": 16.44
+    },
+    {
+     "w": " hans",
+     "s": 16.44,
+     "e": 16.68
+    },
+    {
+     "w": " tassar.",
+     "s": 16.68,
+     "e": 17.48
+    }
+   ]
+  },
+  {
+   "start": 18.88,
+   "end": 29.6,
+   "text": "Mossa satte ena foten på pennan och styrde med hela kroppen. Först kom ett streck, sedan fem spetsar.",
+   "words": [
+    {
+     "w": " Mossa",
+     "s": 18.88,
+     "e": 19.78
+    },
+    {
+     "w": " satte",
+     "s": 19.78,
+     "e": 20.22
+    },
+    {
+     "w": " ena",
+     "s": 20.22,
+     "e": 20.8
+    },
+    {
+     "w": " foten",
+     "s": 20.8,
+     "e": 21.16
+    },
+    {
+     "w": " på",
+     "s": 21.16,
+     "e": 21.36
+    },
+    {
+     "w": " pennan",
+     "s": 21.36,
+     "e": 21.86
+    },
+    {
+     "w": " och",
+     "s": 21.86,
+     "e": 22.28
+    },
+    {
+     "w": " styrde",
+     "s": 22.28,
+     "e": 22.82
+    },
+    {
+     "w": " med",
+     "s": 22.82,
+     "e": 23.1
+    },
+    {
+     "w": " hela",
+     "s": 23.1,
+     "e": 23.56
+    },
+    {
+     "w": " kroppen.",
+     "s": 23.56,
+     "e": 24.7
+    },
+    {
+     "w": " Först",
+     "s": 25.28,
+     "e": 25.64
+    },
+    {
+     "w": " kom",
+     "s": 25.64,
+     "e": 25.84
+    },
+    {
+     "w": " ett",
+     "s": 25.84,
+     "e": 26.24
+    },
+    {
+     "w": " streck,",
+     "s": 26.24,
+     "e": 27.2
+    },
+    {
+     "w": " sedan",
+     "s": 27.32,
+     "e": 27.98
+    },
+    {
+     "w": " fem",
+     "s": 27.98,
+     "e": 28.54
+    },
+    {
+     "w": " spetsar.",
+     "s": 28.54,
+     "e": 29.6
+    }
+   ]
+  },
+  {
+   "start": 31.18,
+   "end": 38.0,
+   "text": "Iris höll kvar sin solfågel på ena sidan och lämnade Aminas vingar fria på den andra.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 31.18,
+     "e": 31.52
+    },
+    {
+     "w": " höll",
+     "s": 31.52,
+     "e": 31.86
+    },
+    {
+     "w": " kvar",
+     "s": 31.86,
+     "e": 32.22
+    },
+    {
+     "w": " sin",
+     "s": 32.22,
+     "e": 32.5
+    },
+    {
+     "w": " solfågel",
+     "s": 32.5,
+     "e": 33.34
+    },
+    {
+     "w": " på",
+     "s": 33.34,
+     "e": 33.62
+    },
+    {
+     "w": " ena",
+     "s": 33.62,
+     "e": 34.08
+    },
+    {
+     "w": " sidan",
+     "s": 34.08,
+     "e": 34.64
+    },
+    {
+     "w": " och",
+     "s": 34.64,
+     "e": 35.0
+    },
+    {
+     "w": " lämnade",
+     "s": 35.0,
+     "e": 35.48
+    },
+    {
+     "w": " Aminas",
+     "s": 35.48,
+     "e": 36.12
+    },
+    {
+     "w": " vingar",
+     "s": 36.12,
+     "e": 36.8
+    },
+    {
+     "w": " fria",
+     "s": 36.8,
+     "e": 37.24
+    },
+    {
+     "w": " på",
+     "s": 37.24,
+     "e": 37.42
+    },
+    {
+     "w": " den",
+     "s": 37.42,
+     "e": 37.6
+    },
+    {
+     "w": " andra.",
+     "s": 37.6,
+     "e": 38.0
+    }
+   ]
+  },
+  {
+   "start": 39.74,
+   "end": 47.16,
+   "text": "Amina följde den tomma platsen mellan vingarna med blicken. Där blev inget silverbo.",
+   "words": [
+    {
+     "w": " Amina",
+     "s": 39.74,
+     "e": 40.78
+    },
+    {
+     "w": " följde",
+     "s": 40.78,
+     "e": 41.36
+    },
+    {
+     "w": " den",
+     "s": 41.36,
+     "e": 41.6
+    },
+    {
+     "w": " tomma",
+     "s": 41.6,
+     "e": 42.24
+    },
+    {
+     "w": " platsen",
+     "s": 42.24,
+     "e": 42.74
+    },
+    {
+     "w": " mellan",
+     "s": 42.74,
+     "e": 42.94
+    },
+    {
+     "w": " vingarna",
+     "s": 42.94,
+     "e": 43.48
+    },
+    {
+     "w": " med",
+     "s": 43.48,
+     "e": 43.68
+    },
+    {
+     "w": " blicken.",
+     "s": 43.68,
+     "e": 44.46
+    },
+    {
+     "w": " Där",
+     "s": 45.02,
+     "e": 45.36
+    },
+    {
+     "w": " blev",
+     "s": 45.36,
+     "e": 45.76
+    },
+    {
+     "w": " inget",
+     "s": 45.76,
+     "e": 46.4
+    },
+    {
+     "w": " silverbo.",
+     "s": 46.4,
+     "e": 47.16
+    }
+   ]
+  },
+  {
+   "start": 49.08,
+   "end": 55.38,
+   "text": "När Mossa ritade sista spetsen glimmade stjärnan och hoppade till på pappret.",
+   "words": [
+    {
+     "w": " När",
+     "s": 49.08,
+     "e": 49.46
+    },
+    {
+     "w": " Mossa",
+     "s": 49.46,
+     "e": 49.84
+    },
+    {
+     "w": " ritade",
+     "s": 49.84,
+     "e": 50.46
+    },
+    {
+     "w": " sista",
+     "s": 50.46,
+     "e": 50.98
+    },
+    {
+     "w": " spetsen",
+     "s": 50.98,
+     "e": 51.86
+    },
+    {
+     "w": " glimmade",
+     "s": 51.86,
+     "e": 52.6
+    },
+    {
+     "w": " stjärnan",
+     "s": 52.6,
+     "e": 53.1
+    },
+    {
+     "w": " och",
+     "s": 53.1,
+     "e": 53.42
+    },
+    {
+     "w": " hoppade",
+     "s": 53.42,
+     "e": 53.92
+    },
+    {
+     "w": " till",
+     "s": 53.92,
+     "e": 54.24
+    },
+    {
+     "w": " på",
+     "s": 54.24,
+     "e": 54.48
+    },
+    {
+     "w": " pappret.",
+     "s": 54.48,
+     "e": 55.38
+    }
+   ]
+  },
+  {
+   "start": 56.38,
+   "end": 59.6,
+   "text": "Mossa tappade nästan halsduken av förvåning.",
+   "words": [
+    {
+     "w": " Mossa",
+     "s": 56.38,
+     "e": 56.84
+    },
+    {
+     "w": " tappade",
+     "s": 56.84,
+     "e": 57.32
+    },
+    {
+     "w": " nästan",
+     "s": 57.32,
+     "e": 57.76
+    },
+    {
+     "w": " halsduken",
+     "s": 57.76,
+     "e": 58.6
+    },
+    {
+     "w": " av",
+     "s": 58.6,
+     "e": 58.8
+    },
+    {
+     "w": " förvåning.",
+     "s": 58.8,
+     "e": 59.6
+    }
+   ]
+  },
+  {
+   "start": 59.6,
+   "end": 68.8,
+   "text": "Iris skrattade till. Hon hade valt utan att knuffa sig före och stjärnan lysste över deras gemensamma bild.",
+   "words": [
+    {
+     "w": " Iris",
+     "s": 59.6,
+     "e": 61.0
+    },
+    {
+     "w": " skrattade",
+     "s": 61.0,
+     "e": 61.7
+    },
+    {
+     "w": " till.",
+     "s": 61.7,
+     "e": 61.98
+    },
+    {
+     "w": " Hon",
+     "s": 62.56,
+     "e": 62.68
+    },
+    {
+     "w": " hade",
+     "s": 62.68,
+     "e": 62.96
+    },
+    {
+     "w": " valt",
+     "s": 62.96,
+     "e": 63.38
+    },
+    {
+     "w": " utan",
+     "s": 63.38,
+     "e": 63.82
+    },
+    {
+     "w": " att",
+     "s": 63.82,
+     "e": 64.08
+    },
+    {
+     "w": " knuffa",
+     "s": 64.08,
+     "e": 64.52
+    },
+    {
+     "w": " sig",
+     "s": 64.52,
+     "e": 64.66
+    },
+    {
+     "w": " före",
+     "s": 64.66,
+     "e": 65.18
+    },
+    {
+     "w": " och",
+     "s": 65.18,
+     "e": 65.68
+    },
+    {
+     "w": " stjärnan",
+     "s": 65.68,
+     "e": 66.24
+    },
+    {
+     "w": " lysste",
+     "s": 66.24,
+     "e": 66.88
+    },
+    {
+     "w": " över",
+     "s": 66.88,
+     "e": 67.12
+    },
+    {
+     "w": " deras",
+     "s": 67.12,
+     "e": 67.54
+    },
+    {
+     "w": " gemensamma",
+     "s": 67.54,
+     "e": 68.52
+    },
+    {
+     "w": " bild.",
+     "s": 68.52,
+     "e": 68.8
+    }
+   ]
+  }
+ ]
+}

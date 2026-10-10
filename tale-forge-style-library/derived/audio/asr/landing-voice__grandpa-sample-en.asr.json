@@ -1,0 +1,134 @@
+{
+ "note": "MACHINE TRANSCRIPT (faster-whisper 'medium', int8, CPU, beam 5, language forced from file name). Not a site asset; may contain recognition errors. For sample-book beats the authoritative text is beats[].prose in source/sample-book.iris-och-den-sparade-platsen.json.",
+ "source_audio": "assets/audio/landing-voice/grandpa-sample-en.mp3",
+ "model": "Systran/faster-whisper-medium",
+ "language": "en",
+ "duration_s": 12.0,
+ "text": "Come close my friend. Tonight, I am telling a story that belongs to you alone, and I will keep every word warm.",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 2.0,
+   "text": "Come close my friend.",
+   "words": [
+    {
+     "w": " Come",
+     "s": 0.0,
+     "e": 0.76
+    },
+    {
+     "w": " close",
+     "s": 0.76,
+     "e": 1.38
+    },
+    {
+     "w": " my",
+     "s": 1.38,
+     "e": 1.78
+    },
+    {
+     "w": " friend.",
+     "s": 1.78,
+     "e": 2.2
+    }
+   ]
+  },
+  {
+   "start": 3.38,
+   "end": 11.56,
+   "text": "Tonight, I am telling a story that belongs to you alone, and I will keep every word warm.",
+   "words": [
+    {
+     "w": " Tonight,",
+     "s": 3.38,
+     "e": 3.48
+    },
+    {
+     "w": " I",
+     "s": 3.92,
+     "e": 4.0
+    },
+    {
+     "w": " am",
+     "s": 4.0,
+     "e": 4.22
+    },
+    {
+     "w": " telling",
+     "s": 4.22,
+     "e": 4.56
+    },
+    {
+     "w": " a",
+     "s": 4.56,
+     "e": 4.92
+    },
+    {
+     "w": " story",
+     "s": 4.92,
+     "e": 5.26
+    },
+    {
+     "w": " that",
+     "s": 5.26,
+     "e": 5.6
+    },
+    {
+     "w": " belongs",
+     "s": 5.6,
+     "e": 6.2
+    },
+    {
+     "w": " to",
+     "s": 6.2,
+     "e": 6.7
+    },
+    {
+     "w": " you",
+     "s": 6.7,
+     "e": 7.12
+    },
+    {
+     "w": " alone,",
+     "s": 7.12,
+     "e": 7.88
+    },
+    {
+     "w": " and",
+     "s": 8.42,
+     "e": 8.7
+    },
+    {
+     "w": " I",
+     "s": 8.7,
+     "e": 8.9
+    },
+    {
+     "w": " will",
+     "s": 8.9,
+     "e": 9.14
+    },
+    {
+     "w": " keep",
+     "s": 9.14,
+     "e": 9.54
+    },
+    {
+     "w": " every",
+     "s": 9.54,
+     "e": 10.34
+    },
+    {
+     "w": " word",
+     "s": 10.34,
+     "e": 10.88
+    },
+    {
+     "w": " warm.",
+     "s": 10.88,
+     "e": 11.56
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,596 @@
+{
+ "note": "Fractional crop boxes [x0,y0,x1,y1] (0..1 of the source image) used for character-reference-sheet.webp; picked by eye, approx +-3%.",
+ "rows": [
+  {
+   "character": "Iris (hero)",
+   "canon_or_note": "canon: \"sjuårig flicka med mörka lockar, hallonröd regnjacka och gula stövlar\" [seven-year-old girl, dark curls, raspberry-red raincoat, yellow boots]",
+   "crops": [
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/cover.webp",
+     "label": "cover",
+     "box": [
+      0.08,
+      0.02,
+      0.62,
+      0.88
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/landing/iris/hero-portrait.webp",
+     "label": "hero-portrait",
+     "box": [
+      0.18,
+      0.02,
+      0.84,
+      0.99
+     ],
+     "note": "reference pose"
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S1.webp",
+     "label": "S1",
+     "box": [
+      0.36,
+      0.17,
+      0.6,
+      0.9
+     ],
+     "note": "rolled paper"
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S2.webp",
+     "label": "S2",
+     "box": [
+      0.27,
+      0.0,
+      0.63,
+      0.62
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S3A.webp",
+     "label": "S3A",
+     "box": [
+      0.0,
+      0.0,
+      0.37,
+      0.72
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S3B.webp",
+     "label": "S3B",
+     "box": [
+      0.07,
+      0.0,
+      0.49,
+      0.62
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S4A.webp",
+     "label": "S4A",
+     "box": [
+      0.48,
+      0.0,
+      0.8,
+      0.42
+     ],
+     "note": "face cropped out"
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S4B.webp",
+     "label": "S4B",
+     "box": [
+      0.62,
+      0.0,
+      1.0,
+      0.75
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S5AA.webp",
+     "label": "S5AA",
+     "box": [
+      0.0,
+      0.0,
+      0.38,
+      0.62
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S5AB.webp",
+     "label": "S5AB",
+     "box": [
+      0.45,
+      0.0,
+      0.86,
+      0.62
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S5BA.webp",
+     "label": "S5BA",
+     "box": [
+      0.5,
+      0.0,
+      1.0,
+      0.6
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S5BB.webp",
+     "label": "S5BB",
+     "box": [
+      0.45,
+      0.0,
+      0.92,
+      0.7
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S6AA.webp",
+     "label": "S6AA",
+     "box": [
+      0.38,
+      0.12,
+      0.74,
+      0.98
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S6AB.webp",
+     "label": "S6AB",
+     "box": [
+      0.04,
+      0.0,
+      0.46,
+      0.72
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S6BA.webp",
+     "label": "S6BA",
+     "box": [
+      0.1,
+      0.12,
+      0.52,
+      0.98
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S6BB.webp",
+     "label": "S6BB",
+     "box": [
+      0.08,
+      0.0,
+      0.52,
+      0.98
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "character": "Mossa (companion)",
+   "canon_or_note": "canon: \"liten brun skogsmus med grön halsduk och runda öron\" [small brown forest mouse, green scarf, round ears]. Note on each crop = apparent scale.",
+   "crops": [
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/cover.webp",
+     "label": "cover",
+     "box": [
+      0.58,
+      0.5,
+      0.96,
+      0.82
+     ],
+     "note": "knee-high"
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S1.webp",
+     "label": "S1",
+     "box": [
+      0.16,
+      0.72,
+      0.32,
+      0.96
+     ],
+     "note": "boot-high (true)"
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S2.webp",
+     "label": "S2",
+     "box": [
+      0.07,
+      0.2,
+      0.23,
+      0.62
+     ],
+     "note": "knee-high"
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S3A.webp",
+     "label": "S3A",
+     "box": [
+      0.37,
+      0.08,
+      0.63,
+      0.6
+     ],
+     "note": "head-size"
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S3B.webp",
+     "label": "S3B",
+     "box": [
+      0.72,
+      0.28,
+      0.97,
+      0.7
+     ],
+     "note": "head-size"
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S4A.webp",
+     "label": "S4A",
+     "box": [
+      0.19,
+      0.0,
+      0.35,
+      0.38
+     ],
+     "note": "palm-size"
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S4B.webp",
+     "label": "S4B",
+     "box": [
+      0.37,
+      0.22,
+      0.53,
+      0.5
+     ],
+     "note": "palm-size"
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S5AA.webp",
+     "label": "S5AA",
+     "box": [
+      0.4,
+      0.08,
+      0.65,
+      0.6
+     ],
+     "note": "head-size"
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S5AB.webp",
+     "label": "S5AB",
+     "box": [
+      0.79,
+      0.38,
+      1.0,
+      0.95
+     ],
+     "note": "head-size"
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S5BA.webp",
+     "label": "S5BA",
+     "box": [
+      0.2,
+      0.12,
+      0.42,
+      0.72
+     ],
+     "note": "palm-size (true)"
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S5BB.webp",
+     "label": "S5BB",
+     "box": [
+      0.78,
+      0.48,
+      1.0,
+      1.0
+     ],
+     "note": "head-size"
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S6AA.webp",
+     "label": "S6AA",
+     "box": [
+      0.68,
+      0.38,
+      0.86,
+      1.0
+     ],
+     "note": "on boot, large"
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S6AB.webp",
+     "label": "S6AB",
+     "box": [
+      0.41,
+      0.5,
+      0.59,
+      0.74
+     ],
+     "note": "peeking (true)"
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S6BA.webp",
+     "label": "S6BA",
+     "box": [
+      0.43,
+      0.4,
+      0.64,
+      0.88
+     ],
+     "note": "head-size"
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S6BB.webp",
+     "label": "S6BB",
+     "box": [
+      0.38,
+      0.38,
+      0.6,
+      0.7
+     ],
+     "note": "head-size"
+    }
+   ]
+  },
+  {
+   "character": "Amina (other child)",
+   "canon_or_note": "canon: \"sjuårig flicka med två mörka flätor, orange tröja och blå byxor\" [seven-year-old girl, two dark braids, orange top, blue trousers]",
+   "crops": [
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S1.webp",
+     "label": "S1",
+     "box": [
+      0.7,
+      0.18,
+      0.93,
+      0.78
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S2.webp",
+     "label": "S2",
+     "box": [
+      0.65,
+      0.05,
+      0.98,
+      0.62
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S3A.webp",
+     "label": "S3A",
+     "box": [
+      0.62,
+      0.0,
+      1.0,
+      0.62
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S3B.webp",
+     "label": "S3B",
+     "box": [
+      0.45,
+      0.0,
+      0.78,
+      0.62
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S4A.webp",
+     "label": "S4A",
+     "box": [
+      0.74,
+      0.18,
+      1.0,
+      0.98
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S4B.webp",
+     "label": "S4B",
+     "box": [
+      0.0,
+      0.0,
+      0.33,
+      0.75
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S5AA.webp",
+     "label": "S5AA",
+     "box": [
+      0.65,
+      0.05,
+      1.0,
+      0.65
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S5AB.webp",
+     "label": "S5AB",
+     "box": [
+      0.0,
+      0.0,
+      0.42,
+      0.62
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S5BB.webp",
+     "label": "S5BB",
+     "box": [
+      0.0,
+      0.0,
+      0.48,
+      0.75
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S6AA.webp",
+     "label": "S6AA",
+     "box": [
+      0.12,
+      0.22,
+      0.42,
+      0.85
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S6AB.webp",
+     "label": "S6AB",
+     "box": [
+      0.55,
+      0.05,
+      0.96,
+      0.75
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S6BA.webp",
+     "label": "S6BA",
+     "box": [
+      0.58,
+      0.18,
+      0.94,
+      0.9
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/share/iris-sparade-platsen/assets/S6BB.webp",
+     "label": "S6BB",
+     "box": [
+      0.48,
+      0.1,
+      0.86,
+      0.72
+     ],
+     "note": ""
+    }
+   ]
+  },
+  {
+   "character": "Alva (demo hero, other world)",
+   "canon_or_note": "from the two demo covers; costume changes per book, braids + rosy cheeks persist. The avatar the landing labels \"Noah\" wears Alva's cover-tornet costume.",
+   "crops": [
+    {
+     "source": "assets/assets/cover-tornet.webp",
+     "label": "cover-tornet",
+     "box": [
+      0.12,
+      0.38,
+      0.7,
+      0.99
+     ],
+     "note": "red knit hat, green coat"
+    },
+    {
+     "source": "assets/assets/cover-filten.webp",
+     "label": "cover-filten",
+     "box": [
+      0.12,
+      0.14,
+      0.74,
+      0.94
+     ],
+     "note": "blue hat, red puffer"
+    },
+    {
+     "source": "assets/assets/avatar-noah.jpg",
+     "label": "avatar-noah.jpg",
+     "box": [
+      0,
+      0,
+      1,
+      1
+     ],
+     "note": "labelled \"Noah\" in UI"
+    }
+   ]
+  },
+  {
+   "character": "Sixten (arctic fox) + narrator",
+   "canon_or_note": "Sixten: \"fjällräven · följer med i varje bok\" [the arctic fox, comes along in every book]. Morfar = narrator chip (vignette on white).",
+   "crops": [
+    {
+     "source": "assets/assets/cover-tornet.webp",
+     "label": "cover-tornet",
+     "box": [
+      0.64,
+      0.7,
+      0.96,
+      0.99
+     ],
+     "note": ""
+    },
+    {
+     "source": "assets/assets/cover-filten.webp",
+     "label": "cover-filten",
+     "box": [
+      0.62,
+      0.6,
+      0.93,
+      0.94
+     ],
+     "note": "eyes closed"
+    },
+    {
+     "source": "assets/assets/avatar-sixten.jpg",
+     "label": "avatar-sixten.jpg",
+     "box": [
+      0,
+      0,
+      1,
+      1
+     ],
+     "note": "friend avatar"
+    },
+    {
+     "source": "assets/landing/voice/narrator-morfar.webp",
+     "label": "narrator-morfar",
+     "box": [
+      0,
+      0,
+      1,
+      1
+     ],
+     "note": "Morfar Erik"
+    }
+   ]
+  }
+ ]
+}

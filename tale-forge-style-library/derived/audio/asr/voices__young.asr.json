@@ -1,0 +1,151 @@
+{
+ "note": "MACHINE TRANSCRIPT (faster-whisper 'medium', int8, CPU, beam 5, language forced from file name). Not a site asset; may contain recognition errors. For sample-book beats the authoritative text is beats[].prose in source/sample-book.iris-och-den-sparade-platsen.json.",
+ "source_audio": "derived/audio/fetched/voices/young.mp3",
+ "model": "Systran/faster-whisper-medium",
+ "language": "sv",
+ "duration_s": 15.24,
+ "text": "Kev vinsmög närmare det gamla äppelträdet. Där, mellan två rötter, låg en liten durr på glänt. Kom, viskade Miro. Den har väntat på oss.",
+ "segments": [
+  {
+   "start": 0.0,
+   "end": 3.92,
+   "text": "Kev vinsmög närmare det gamla äppelträdet.",
+   "words": [
+    {
+     "w": " Kev",
+     "s": 0.0,
+     "e": 0.96
+    },
+    {
+     "w": " vinsmög",
+     "s": 0.96,
+     "e": 1.64
+    },
+    {
+     "w": " närmare",
+     "s": 1.64,
+     "e": 2.26
+    },
+    {
+     "w": " det",
+     "s": 2.26,
+     "e": 2.44
+    },
+    {
+     "w": " gamla",
+     "s": 2.44,
+     "e": 2.9
+    },
+    {
+     "w": " äppelträdet.",
+     "s": 2.9,
+     "e": 3.92
+    }
+   ]
+  },
+  {
+   "start": 4.54,
+   "end": 9.74,
+   "text": "Där, mellan två rötter, låg en liten durr på glänt.",
+   "words": [
+    {
+     "w": " Där,",
+     "s": 4.54,
+     "e": 5.2
+    },
+    {
+     "w": " mellan",
+     "s": 5.76,
+     "e": 5.96
+    },
+    {
+     "w": " två",
+     "s": 5.96,
+     "e": 6.3
+    },
+    {
+     "w": " rötter,",
+     "s": 6.3,
+     "e": 7.32
+    },
+    {
+     "w": " låg",
+     "s": 7.54,
+     "e": 7.92
+    },
+    {
+     "w": " en",
+     "s": 7.92,
+     "e": 8.1
+    },
+    {
+     "w": " liten",
+     "s": 8.1,
+     "e": 8.58
+    },
+    {
+     "w": " durr",
+     "s": 8.58,
+     "e": 9.0
+    },
+    {
+     "w": " på",
+     "s": 9.0,
+     "e": 9.18
+    },
+    {
+     "w": " glänt.",
+     "s": 9.18,
+     "e": 9.74
+    }
+   ]
+  },
+  {
+   "start": 10.78,
+   "end": 14.96,
+   "text": "Kom, viskade Miro. Den har väntat på oss.",
+   "words": [
+    {
+     "w": " Kom,",
+     "s": 10.78,
+     "e": 11.6
+    },
+    {
+     "w": " viskade",
+     "s": 12.14,
+     "e": 12.46
+    },
+    {
+     "w": " Miro.",
+     "s": 12.46,
+     "e": 12.82
+    },
+    {
+     "w": " Den",
+     "s": 13.4,
+     "e": 13.56
+    },
+    {
+     "w": " har",
+     "s": 13.56,
+     "e": 13.9
+    },
+    {
+     "w": " väntat",
+     "s": 13.9,
+     "e": 14.52
+    },
+    {
+     "w": " på",
+     "s": 14.52,
+     "e": 14.8
+    },
+    {
+     "w": " oss.",
+     "s": 14.8,
+     "e": 14.96
+    }
+   ]
+  }
+ ]
+}

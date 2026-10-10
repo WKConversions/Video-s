@@ -176,7 +176,7 @@ The app reuses the landing's trait pill as its universal toggle: billing period,
 /* ≤880px: .trait-row { justify-content: center } (:2261-2263) */
 ```
 
-In the app, `.trait` is a real `<button aria-pressed>`, while on the landing page it is inert (see 05a §15). The "on" state is a 20 % violet tint (`#9b87f533` natt, `#6d4fe01f` morgon) with a 60 % / 42 % violet ring. Measured: "Årsvis" is 78×44 and "Månadsvis" 109×44 at 14.08 px ([`computed-styles__uppgradera__sv__natt__desktop.json`](../source/rendered/computed-styles__uppgradera__sv__natt__desktop.json)).
+In the app, `.trait` is a real `<button aria-pressed>`, while on the landing page it is inert (see 05a §15). The "on" state is a violet tint, 20 % in Natt (`#9b87f533`) and 12 % in Morgon (`#6d4fe01f`), with a 60 % / 42 % violet ring. Measured: "Årsvis" is 78×44 and "Månadsvis" 109×44 at 14.08 px ([`computed-styles__uppgradera__sv__natt__desktop.json`](../source/rendered/computed-styles__uppgradera__sv__natt__desktop.json)).
 
 ### 2.4 Chips
 
@@ -646,7 +646,7 @@ div.build-grid  (1.15fr .85fr, gap 18; ≤880 → 1fr)
 
 Companion icons (stroke 1.7, 24 viewBox): fox `M5 4l4 4h6l4-4v6c0 5-3.4 9-7 9s-7-4-7-9z` + eyes `M9.4 11h.01M14.6 11h.01` + nose `M12 14l-1.1 1.5h2.2z`. Owl: `circle(12,13,7)`, two `circle r 1.5` eyes, beak, ear tufts `M5.6 8.4L8 5.6M18.4 8.4L16 5.6`. Dragon: a flame-drop `M12 3c3.2 3.1 6 5.7 6 9.2A6 6 0 0 1 6 12.2C6 8.7 8.8 6.1 12 3z` with a smile.
 
-**The veiled portrait.** While the portrait is painted, the photo sits under a frosted gradient veil (lavender→gold, 8 px backdrop blur) and a paintbrush icon rocks ±7° on a 2.6 s loop ([`start-s3-pframe-veil`](../screenshots/components/app/start-s3-pframe-veil__natt__desktop.png)). This veil is the first appearance of the flow's "behind the cloth" metaphor, which s4 pays off.
+**The veiled portrait.** While the portrait is painted, the photo sits under a frosted gradient veil (lavender→gold, 8 px backdrop blur) and a paintbrush icon rocks between −8° and +6° (and bobs up 5 px) on a 2.6 s loop ([`start-s3-pframe-veil`](../screenshots/components/app/start-s3-pframe-veil__natt__desktop.png)). This veil is the first appearance of the flow's "behind the cloth" metaphor, which s4 pays off.
 
 Files: [`start-s3-build`](../screenshots/components/app/start-s3-build__natt__desktop.webp) (Rufus chosen), [`start-s3-build--story-chooses`](../screenshots/components/app/start-s3-build--story-chooses__morgon__desktop.png), [`start-s3-pick-row`](../screenshots/components/app/start-s3-pick-row__natt__desktop.png), [`start-s3-pick-row--hover`](../screenshots/components/app/start-s3-pick-row--hover__natt__desktop.png), [`start-s3-herocard`](../screenshots/components/app/start-s3-herocard__morgon__desktop.png), [`start-s3-paintpill`](../screenshots/components/app/start-s3-paintpill__natt__desktop.png); mobile stacking: [`start-s3-build__natt__mobile`](../screenshots/components/app/start-s3-build__natt__mobile.png).
 
@@ -1051,7 +1051,7 @@ Book geometry (from the scene code `ev()`, [`1pgfdvt65g9p-.js @23845`](../source
 The DOM book is pure CSS cloth binding:
 
 ```css
-/* 37m388zf6rymp.pretty.css:801-946 (visual rules) */
+/* 37m388zf6rymp.pretty.css:801-981 (visual rules) */
 .glod-book { z-index: 7; opacity: 0; filter: drop-shadow(0 26px 44px #04030c99) drop-shadow(0 0 42px #ffb45a42);
   transition: opacity 1.1s, transform 1.1s cubic-bezier(0.2, 0.7, 0.3, 1.2); position: absolute; transform: scale(0.92) rotate(-1.2deg); }
 .glod-book.show { opacity: 1; transform: scale(1) rotate(-1.2deg); }
@@ -1170,7 +1170,7 @@ div.glass.reader[data-testid=reader-beat] > div.reader-grid[.reader-grid--illust
 ```
 
 ```css
-/* 3q17cp_jgfwol.pretty.css:1823-1932 */
+/* 3q17cp_jgfwol.pretty.css:1823-1932, 2039-2056 */
 .prose { font-family: var(--serif); color: var(--prose-ink); overflow-wrap: anywhere; font-optical-sizing: auto; flex: 1; min-width: 0;
   font-size: 1.2rem; line-height: 1.85; transition: color 0.5s; }
 .prose:first-letter { float: left; color: var(--accent); padding: 4px 10px 0 0; font-size: 2.5em; font-weight: 600; line-height: 0.9; }

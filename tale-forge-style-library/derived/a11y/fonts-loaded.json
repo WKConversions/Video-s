@@ -1,0 +1,156 @@
+{
+ "home__natt": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ],
+ "home__morgon": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ],
+ "start__natt": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ],
+ "start__morgon": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ],
+ "uppgradera__natt": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ],
+ "uppgradera__morgon": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ],
+ "login__natt": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ],
+ "login__morgon": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ],
+ "signup__natt": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ],
+ "signup__morgon": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ],
+ "integritet__natt": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ],
+ "integritet__morgon": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ],
+ "villkor__natt": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ],
+ "villkor__morgon": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ],
+ "404__natt": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ],
+ "404__morgon": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ],
+ "share-sample__natt": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ],
+ "share-sample__morgon": [
+  "Cinzel 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Lora 600 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Source Serif 4 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 400 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 700 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]",
+  "Schibsted Grotesk 800 normal [U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2]"
+ ]
+}
