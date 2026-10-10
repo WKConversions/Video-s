@@ -75,7 +75,7 @@ Sizes are measured CSS px, sv, Natt (W×H). Rotated items report the axis-aligne
 | 05 | Nav link "Priser" | `nav a[href="/uppgradera"]` | 61.3×44 | 61.3×44 | link | [05](../screenshots/components/landing/05-nav-link-pricing__natt__desktop.png) |
 | 06 | Language switcher SV/EN | `.language-switcher` | 98×52 | 98×52 | 2 buttons | [06](../screenshots/components/landing/06-language-switcher__natt__desktop.png) |
 | 07 | Theme toggle Natt/Morgon | `.tt` | 199.2×45 | 72×44 (icons only) | switch | [07](../screenshots/components/landing/07-theme-toggle__natt__desktop.png) |
-| 08 | Hero (whole) | `header.hero` | 1064×576 | 334×909 | | [08](../screenshots/components/landing/08-hero__natt__desktop.png) |
+| 08 | Hero (whole) | `header.hero` | 1064×576 | 334×909 | | [08](../screenshots/components/landing/08-hero__natt__desktop.webp) |
 | 09 | Kicker chip with sparkle | `.hero .kicker` | 263×35 | 263×35 | | [09](../screenshots/components/landing/09-hero-kicker-chip__natt__desktop.png) |
 | 10 | H1 with `.grad` span | `.hero h1` | 538×149 | 334×92 | | [10](../screenshots/components/landing/10-hero-h1__natt__desktop.png) |
 | 11 | Lede | `.hero .lede` | 498×101 | 334×114 | | [11](../screenshots/components/landing/11-hero-lede__natt__desktop.png) |
@@ -83,38 +83,38 @@ Sizes are measured CSS px, sv, Natt (W×H). Rotated items report the axis-aligne
 | 13 | Primary CTA "Skapa er hjälte" | `.btn.btn-primary` | 182.7×54 | 182.7×54 | link `/start` | [13](../screenshots/components/landing/13-btn-primary__natt__desktop.png) |
 | 14 | Price microcopy | `.cta-microcopy` | 413×17 | 334×34 | | [14](../screenshots/components/landing/14-cta-microcopy__natt__desktop.png) |
 | 15 | Ghost CTA "Se hur det funkar" | `.btn.btn-ghost` | 202.9×56 | 202.9×56 | link `#sa-funkar-det` | [15](../screenshots/components/landing/15-btn-ghost__natt__desktop.png) |
-| 16 | Tilted cover fan | `.hero .fan` | 486×522 | 334×340 | 2 links | [16](../screenshots/components/landing/16-hero-cover-fan__natt__desktop.png) |
-| 17 | One fan cover card | `.fan .fb2` | 262×355 (bbox) | 180×243 | link `/signup` | [17](../screenshots/components/landing/17-fan-cover-card__natt__desktop.png) |
+| 16 | Tilted cover fan | `.hero .fan` | 486×522 | 334×340 | 2 links | [16](../screenshots/components/landing/16-hero-cover-fan__natt__desktop.webp) |
+| 17 | One fan cover card | `.fan .fb2` | 262×355 (bbox) | 180×243 | link `/signup` | [17](../screenshots/components/landing/17-fan-cover-card__natt__desktop.webp) |
 | 18 | Memory badge "Sixten minns tornet" | `.fan .badge` | 207×75 | 207×75 | | [18](../screenshots/components/landing/18-memory-badge__natt__desktop.png) |
-| 19 | HIW section head | `.hiw-head` | 1064×173 | 334×226 | | [19](../screenshots/components/landing/19-hiw-section-head__natt__desktop.png) |
+| 19 | HIW section head | `.hiw-head` | 1064×173 | 334×226 | | [19](../screenshots/components/landing/19-hiw-section-head__natt__desktop.webp) |
 | 20 | Eyebrow pill "SÅ FUNGERAR DET" | `.hiw-kicker` | 181×30 | 181×30 | | [20](../screenshots/components/landing/20-hiw-eyebrow-pill__natt__desktop.png) |
-| 21 | Step 1 (whole row) | `li.hiw-step` #1 | 1064×410 | 334×617 | | [21](../screenshots/components/landing/21-hiw-step-1-hero__natt__desktop.png) |
+| 21 | Step 1 (whole row) | `li.hiw-step` #1 | 1064×410 | 334×617 | | [21](../screenshots/components/landing/21-hiw-step-1-hero__natt__desktop.webp) |
 | 22 | Step number node | `.hiw-node` | 40×40 | 32×32 | | [22](../screenshots/components/landing/22-hiw-node__natt__desktop.png) |
 | 23 | Micro line with star | `.hiw-micro` | 473×18 | 290×36 | | [23](../screenshots/components/landing/23-hiw-micro-line__natt__desktop.png) |
-| 24 | Portrait card | `.hiw-portrait-card` | 473×410 | 290×401 | | [24](../screenshots/components/landing/24-portrait-card__natt__desktop.png) |
+| 24 | Portrait card | `.hiw-portrait-card` | 473×410 | 290×401 | | [24](../screenshots/components/landing/24-portrait-card__natt__desktop.webp) |
 | 25 | "Skapad med AI" chip | `.hiw-ai-chip` | 115×27 | 115×27 | | [25](../screenshots/components/landing/25-ai-chip__natt__desktop.png) |
-| 26 | Step 2 (row) | `li.hiw-step` #2 (flip) | 1064×190 | 334×421 | | [26](../screenshots/components/landing/26-hiw-step-2-friend__natt__desktop.png) |
+| 26 | Step 2 (row) | `li.hiw-step` #2 (flip) | 1064×190 | 334×421 | | [26](../screenshots/components/landing/26-hiw-step-2-friend__natt__desktop.webp) |
 | 27 | Friend card (mini) | `.hiw-friend-card` | 473×190 | 290×205 | | [27](../screenshots/components/landing/27-friend-card__natt__desktop.png) |
-| 28 | Step 3 (row) | `li.hiw-step` #3 | 1064×214 | 334×415 | | [28](../screenshots/components/landing/28-hiw-step-3-adventure__natt__desktop.png) |
-| 29 | Adventure card (fan + bake bar) | `.hiw-adventure-card` | 473×214 | 290×170 | | [29](../screenshots/components/landing/29-adventure-card__natt__desktop.png) |
+| 28 | Step 3 (row) | `li.hiw-step` #3 | 1064×214 | 334×415 | | [28](../screenshots/components/landing/28-hiw-step-3-adventure__natt__desktop.webp) |
+| 29 | Adventure card (fan + bake bar) | `.hiw-adventure-card` | 473×214 | 290×170 | | [29](../screenshots/components/landing/29-adventure-card__natt__desktop.webp) |
 | 30 | "Book baking" progress | `.hiw-bake` | 427×33 | 244×33 | | [30](../screenshots/components/landing/30-bake-progress__natt__desktop.png) |
-| 31 | Step 4 (row) | `li.hiw-step` #4 (flip) | 1064×597 | 334×879 | | [31](../screenshots/components/landing/31-hiw-step-4-read__natt__desktop.png) |
-| 32 | Read widget | `.hiw-read-visual` | 473×597 | 290×635 | | [32](../screenshots/components/landing/32-read-visual__natt__desktop.png) |
+| 31 | Step 4 (row) | `li.hiw-step` #4 (flip) | 1064×597 | 334×879 | | [31](../screenshots/components/landing/31-hiw-step-4-read__natt__desktop.webp) |
+| 32 | Read widget | `.hiw-read-visual` | 473×597 | 290×635 | | [32](../screenshots/components/landing/32-read-visual__natt__desktop.webp) |
 | 33 | Narrator play pill | `.hiw-play` | 210×48 | 290×48 | button (audio) | [33](../screenshots/components/landing/33-play-pill__natt__desktop.png) |
 | 34 | Voice chip "Morfar" | `.hiw-voice-chip` | 101×40 | 101×40 | | [34](../screenshots/components/landing/34-voice-chip__natt__desktop.png) |
-| 35 | Reader mock | `.hiw-reader-mock` | 473×535 | 290×521 | | [35](../screenshots/components/landing/35-reader-mock__natt__desktop.png) |
+| 35 | Reader mock | `.hiw-reader-mock` | 473×535 | 290×521 | | [35](../screenshots/components/landing/35-reader-mock__natt__desktop.webp) |
 | 36 | Mock choice button | `.hiw-choice` | 208.5×78 | 244×60 | no (span) | [36](../screenshots/components/landing/36-mock-choice__natt__desktop.png) |
-| 37 | Step 5 (row, wide) | `li.hiw-step--wide` | 1064×887 | 334×920 | | [37](../screenshots/components/landing/37-hiw-step-5-endings__natt__desktop.png) |
-| 38 | Four-endings map | `.hiw-map` | 976×573 | 290×489 | 4 buttons | [38](../screenshots/components/landing/38-endings-map__natt__desktop.png) |
-| 39 | Map caption + "Läs exempelboken" | `.hiw-caption`, `.hiw-map-cta` | 976×119 | 290×192 | link | [39](../screenshots/components/landing/39-map-caption-cta__natt__desktop.png) |
-| 40 | Step 6 (row, last) | `li.hiw-step--last` | 1064×347 | 334×488 | | [40](../screenshots/components/landing/40-hiw-step-6-memory__natt__desktop.png) |
-| 41 | Next-book memory card | `.hiw-memory-card` | 473×347 | 290×243 | | [41](../screenshots/components/landing/41-memory-card__natt__desktop.png) |
+| 37 | Step 5 (row, wide) | `li.hiw-step--wide` | 1064×887 | 334×920 | | [37](../screenshots/components/landing/37-hiw-step-5-endings__natt__desktop.webp) |
+| 38 | Four-endings map | `.hiw-map` | 976×573 | 290×489 | 4 buttons | [38](../screenshots/components/landing/38-endings-map__natt__desktop.webp) |
+| 39 | Map caption + "Läs exempelboken" | `.hiw-caption`, `.hiw-map-cta` | 976×119 | 290×192 | link | [39](../screenshots/components/landing/39-map-caption-cta__natt__desktop.webp) |
+| 40 | Step 6 (row, last) | `li.hiw-step--last` | 1064×347 | 334×488 | | [40](../screenshots/components/landing/40-hiw-step-6-memory__natt__desktop.webp) |
+| 41 | Next-book memory card | `.hiw-memory-card` | 473×347 | 290×243 | | [41](../screenshots/components/landing/41-memory-card__natt__desktop.webp) |
 | 42 | Memory tag | `.hiw-memory-tag` | 186×62 | 186×62 | | [42](../screenshots/components/landing/42-memory-tag__natt__desktop.png) |
 | 43 | Closing CTAs | `.hiw-closing` | 1064×56 | 334×124 | 2 links | [43](../screenshots/components/landing/43-hiw-closing-ctas__natt__desktop.png) |
 | 44 | Section head "Din hjälte" + intro | `.sec-head` + `p` | 1064×73 | 334×63 | | [44](../screenshots/components/landing/44-sec-head-din-hjalte__natt__desktop.png) |
 | 45 | Section chip "barnens favorit" | `.sec-chip` | 122×30 | 122×30 | | [45](../screenshots/components/landing/45-sec-chip__natt__desktop.png) |
-| 46 | Builder grid (two cards) | `.builder-grid` | 1064×308 | 334×826 | | [46](../screenshots/components/landing/46-builder-grid__natt__desktop.png) |
-| 47 | Hero builder card | `.glass.builder` | 594×308 | 334×518 | | [47](../screenshots/components/landing/47-hero-builder-card__natt__desktop.png) |
+| 46 | Builder grid (two cards) | `.builder-grid` | 1064×308 | 334×826 | | [46](../screenshots/components/landing/46-builder-grid__natt__desktop.webp) |
+| 47 | Hero builder card | `.glass.builder` | 594×308 | 334×518 | | [47](../screenshots/components/landing/47-hero-builder-card__natt__desktop.webp) |
 | 48 | Portrait frame + FAB + caption | `.builder > div:first-child` | 158×186 | 158×186 | FAB link `/login` | [48](../screenshots/components/landing/48-builder-portrait-fab__natt__desktop.png) |
 | 49 | Name + trait row | `.builder-name`, `.trait-row` | 358×142 | 280×142 | | [49](../screenshots/components/landing/49-builder-name-traits__natt__desktop.png) |
 | 50 | Trait chip, on | `.trait.on` | 77×44 | 77×44 | no (span) | [50](../screenshots/components/landing/50-trait-on__natt__desktop.png) |
@@ -124,9 +124,9 @@ Sizes are measured CSS px, sv, Natt (W×H). Rotated items report the axis-aligne
 | 54 | Friends card | `.glass.friends` | 452×308 | 334×290 | | [54](../screenshots/components/landing/54-friends-card__natt__desktop.png) |
 | 55 | Friend row | `.friend` | 398×58 | 280×58 | | [55](../screenshots/components/landing/55-friend-row__natt__desktop.png) |
 | 56 | "Lägg till en vän" | `.friend-add` | 398×53 | 280×53 | link `/signup` | [56](../screenshots/components/landing/56-friend-add__natt__desktop.png) |
-| 57 | Shelf section | `main > section:nth-of-type(3)` | 1064×583 | 334×1276 | | [57](../screenshots/components/landing/57-shelf-section__natt__desktop.png) |
+| 57 | Shelf section | `main > section:nth-of-type(3)` | 1064×583 | 334×1276 | | [57](../screenshots/components/landing/57-shelf-section__natt__desktop.webp) |
 | 58 | Section head "Bokhyllan" | `.sec-head` #2 | 1064×41 | 334×31 | | [58](../screenshots/components/landing/58-sec-head-bokhyllan__natt__desktop.png) |
-| 59 | Book card | `.book` | 249.5×468 | 334×574 | link `/signup` | [59](../screenshots/components/landing/59-book-card__natt__desktop.png) |
+| 59 | Book card | `.book` | 249.5×468 | 334×574 | link `/signup` | [59](../screenshots/components/landing/59-book-card__natt__desktop.webp) |
 | 60 | Genre tag "STORA KÄNSLOR" | `.book-sub` | 127×22 | 127×22 | | [60](../screenshots/components/landing/60-book-genre-tag__natt__desktop.png) |
 | 61 | Footer | `.foot` | 1064×103 | 334×189 | | [61](../screenshots/components/landing/61-footer__natt__desktop.png) |
 | 62 | Beta badge | `[data-testid=beta-build-label]` | 41×20 | 41×20 | | [62](../screenshots/components/landing/62-beta-badge__natt__desktop.png) |
@@ -594,7 +594,7 @@ body[data-theme="morgon"] .tt-opt.day {
 
 ## 5. Hero
 
-![Hero anatomy, natt desktop](../screenshots/components/landing/_anatomy-hero__natt__desktop.png)
+![Hero anatomy, natt desktop](../screenshots/components/landing/_anatomy-hero__natt__desktop.webp)
 
 ### 5.1 Layout
 
@@ -611,7 +611,7 @@ body[data-theme="morgon"] .tt-opt.day {
 ```
 
 * **Desktop:** two columns, 537.6 | 486.4 px with a 40 px gap. The hero is 576 px tall, with `min-height: 64vh` = 576 at a 900 px viewport and padding 36/18.
-* **≤880 px:** one column. The fan drops below the CTAs at 340 px tall ([mobile crop](../screenshots/components/landing/08-hero__natt__mobile.png)):
+* **≤880 px:** one column. The fan drops below the CTAs at 340 px tall ([mobile crop](../screenshots/components/landing/08-hero__natt__mobile.webp)):
 
 ```css
 /* source/css/3q17cp_jgfwol.pretty.css:2244-2252 (inside @media (max-width: 880px)) */
@@ -802,7 +802,7 @@ Crops: [natt](../screenshots/components/landing/10-hero-h1__natt__desktop.png), 
 | Ghost | 202.9×56 | 2 px taller than primary because of its 1 px border |
 | Microcopy | 413×17 | 13.6 px |
 
-On desktop the primary column is 413 px wide because the microcopy line sets its width. 413 + 14 + 203 > 537.6, so **the ghost CTA wraps onto its own line under the microcopy**, also at 1440 px wide. Every fold shot shows this ([hero crop](../screenshots/components/landing/08-hero__natt__desktop.png), [cluster crop](../screenshots/components/landing/12-hero-cta-row__natt__desktop.png)).
+On desktop the primary column is 413 px wide because the microcopy line sets its width. 413 + 14 + 203 > 537.6, so **the ghost CTA wraps onto its own line under the microcopy**, also at 1440 px wide. Every fold shot shows this ([hero crop](../screenshots/components/landing/08-hero__natt__desktop.webp), [cluster crop](../screenshots/components/landing/12-hero-cta-row__natt__desktop.png)).
 
 **Copy.**
 
@@ -912,9 +912,9 @@ The ghost fill is `--ghost-bg` with a 14 px blur:
 * Live timing is in [`source/rendered/running-animations__home.json`](../source/rendered/running-animations__home.json).
 * Under reduced motion the animations stop but the static tilts remain.
 
-**Focus.** Keyboard focus lands on the inner `<a>`, but `.fbook{overflow:hidden}` clips the UA outline, so **the focused cover shows no visible ring** ([tab09](../screenshots/components/landing/17-fan-cover-card--focus-visible-tab09__natt__desktop.png), [tab10](../screenshots/components/landing/17-fan-cover-card--focus-visible-tab10__natt__desktop.png)).
+**Focus.** Keyboard focus lands on the inner `<a>`, but `.fbook{overflow:hidden}` clips the UA outline, so **the focused cover shows no visible ring** ([tab09](../screenshots/components/landing/17-fan-cover-card--focus-visible-tab09__natt__desktop.webp), [tab10](../screenshots/components/landing/17-fan-cover-card--focus-visible-tab10__natt__desktop.webp)).
 
-**Crops.** [Fan natt](../screenshots/components/landing/16-hero-cover-fan__natt__desktop.png) · [fan morgon](../screenshots/components/landing/16-hero-cover-fan__morgon__desktop.png) · [single card](../screenshots/components/landing/17-fan-cover-card__natt__desktop.png) · [mobile](../screenshots/components/landing/16-hero-cover-fan__natt__mobile.png).
+**Crops.** [Fan natt](../screenshots/components/landing/16-hero-cover-fan__natt__desktop.webp) · [fan morgon](../screenshots/components/landing/16-hero-cover-fan__morgon__desktop.webp) · [single card](../screenshots/components/landing/17-fan-cover-card__natt__desktop.webp) · [mobile](../screenshots/components/landing/16-hero-cover-fan__natt__mobile.webp).
 
 ### 5.7 Memory badge ("Sixten minns tornet")
 
@@ -1067,11 +1067,11 @@ The badge uses ASCII straight quotes, not Swedish ”…”.
 
 **Lede.** sv `Från ett foto till en uppläst bilderbok med fyra olika slut. Så här går en kväll till.` [From a photo to a narrated picture book with four different endings. This is how an evening goes.]; en `From one photo to a narrated picture book with four different endings. Here is how an evening works.` Serif 17.6 px, leading 1.7.
 
-Crop: [head, natt](../screenshots/components/landing/19-hiw-section-head__natt__desktop.png).
+Crop: [head, natt](../screenshots/components/landing/19-hiw-section-head__natt__desktop.webp).
 
 ### 6.2 The step scaffold: rail, node, text, micro line
 
-![Step anatomy, natt desktop](../screenshots/components/landing/_anatomy-hiw-step-1__natt__desktop.png)
+![Step anatomy, natt desktop](../screenshots/components/landing/_anatomy-hiw-step-1__natt__desktop.webp)
 
 ```css
 /* source/css/3q17cp_jgfwol.pretty.css:2569-2666 */
@@ -1227,7 +1227,7 @@ The micro line is led by a 14 px **four-point sparkle star** in `--gold-soft` (b
 }
 ```
 
-The rail becomes 44 px and the node 32 px. The body collapses to one column, with the text always above the visual ([step 1 mobile](../screenshots/components/landing/21-hiw-step-1-hero__natt__mobile.png)).
+The rail becomes 44 px and the node 32 px. The body collapses to one column, with the text always above the visual ([step 1 mobile](../screenshots/components/landing/21-hiw-step-1-hero__natt__mobile.webp)).
 
 **The six steps (copy).**
 
@@ -1290,7 +1290,7 @@ The English bodies are in `3d9nxlx1n5pdy.js` at byte 3761 onward, and verbatim i
 
 **Hover.** None ([states hover pair](../screenshots/states/sv__natt/06_hiw-ai-chip_Skapad_med_AI__hover.png)).
 
-**Crops.** [Card natt](../screenshots/components/landing/24-portrait-card__natt__desktop.png) · [morgon](../screenshots/components/landing/24-portrait-card__morgon__desktop.png) · [tag](../screenshots/components/landing/25-ai-chip__natt__desktop.png).
+**Crops.** [Card natt](../screenshots/components/landing/24-portrait-card__natt__desktop.webp) · [morgon](../screenshots/components/landing/24-portrait-card__morgon__desktop.png) · [tag](../screenshots/components/landing/25-ai-chip__natt__desktop.png).
 
 ### 6.4 Step 2 widget: mini friend card
 
@@ -1417,11 +1417,11 @@ The English bodies are in `3d9nxlx1n5pdy.js` at byte 3761 onward, and verbatim i
 
 No animation runs on the bar.
 
-**Crops.** [Card natt](../screenshots/components/landing/29-adventure-card__natt__desktop.png) · [morgon](../screenshots/components/landing/29-adventure-card__morgon__desktop.png) · [bar](../screenshots/components/landing/30-bake-progress__natt__desktop.png).
+**Crops.** [Card natt](../screenshots/components/landing/29-adventure-card__natt__desktop.webp) · [morgon](../screenshots/components/landing/29-adventure-card__morgon__desktop.png) · [bar](../screenshots/components/landing/30-bake-progress__natt__desktop.png).
 
 ### 6.6 Step 4 widget: narrator pill, voice chip, reader mock
 
-![Read widget anatomy](../screenshots/components/landing/_anatomy-read-visual__natt__desktop.png)
+![Read widget anatomy](../screenshots/components/landing/_anatomy-read-visual__natt__desktop.webp)
 
 ```css
 /* source/css/3q17cp_jgfwol.pretty.css:2793-2896 */
@@ -1568,7 +1568,7 @@ The choices are `<span>`s, not buttons.
 | Choice 1 | `Gå med Mossa till den gröna mattan.` [Go with Mossa to the green rug.] | `Go with Mossa to the green rug.` |
 | Choice 2 | `Stanna och rita med det nya barnet i fönsterljuset.` [Stay and draw with the new child in the window light.] | `Stay and draw with the new child in the window light.` |
 
-**Crops.** [Widget natt](../screenshots/components/landing/32-read-visual__natt__desktop.png) · [morgon](../screenshots/components/landing/32-read-visual__morgon__desktop.png) · [mobile](../screenshots/components/landing/32-read-visual__natt__mobile.png) · [mock morgon](../screenshots/components/landing/35-reader-mock__morgon__desktop.png) · [choice](../screenshots/components/landing/36-mock-choice__natt__desktop.png) · [voice chip](../screenshots/components/landing/34-voice-chip__natt__desktop.png) · [mobile anatomy](../screenshots/components/landing/_anatomy-hiw-step-4__natt__mobile.png).
+**Crops.** [Widget natt](../screenshots/components/landing/32-read-visual__natt__desktop.webp) · [morgon](../screenshots/components/landing/32-read-visual__morgon__desktop.webp) · [mobile](../screenshots/components/landing/32-read-visual__natt__mobile.webp) · [mock morgon](../screenshots/components/landing/35-reader-mock__morgon__desktop.webp) · [choice](../screenshots/components/landing/36-mock-choice__natt__desktop.png) · [voice chip](../screenshots/components/landing/34-voice-chip__natt__desktop.png) · [mobile anatomy](../screenshots/components/landing/_anatomy-hiw-step-4__natt__mobile.webp).
 
 ### 6.7 Step 5 widget: the four-endings map
 
@@ -1771,25 +1771,25 @@ Measured transitions after switching to ending 3 ([`_data/map-draw-transitions.j
 
 | State | natt | morgon |
 |---|---|---|
-| Auto-cycle | [crop](../screenshots/components/landing/38-endings-map__natt__desktop.png) | [crop](../screenshots/components/landing/38-endings-map__morgon__desktop.png) |
-| Ending 1 engaged | [crop](../screenshots/components/landing/38-endings-map--ending-1-engaged__natt__desktop.png) | [crop](../screenshots/components/landing/38-endings-map--ending-1-engaged__morgon__desktop.png) |
-| Ending 2 engaged | [crop](../screenshots/components/landing/38-endings-map--ending-2-engaged__natt__desktop.png) | [crop](../screenshots/components/landing/38-endings-map--ending-2-engaged__morgon__desktop.png) |
-| Ending 3 engaged | [crop](../screenshots/components/landing/38-endings-map--ending-3-engaged__natt__desktop.png) | [crop](../screenshots/components/landing/38-endings-map--ending-3-engaged__morgon__desktop.png) |
-| Ending 4 engaged | [crop](../screenshots/components/landing/38-endings-map--ending-4-engaged__natt__desktop.png) | [crop](../screenshots/components/landing/38-endings-map--ending-4-engaged__morgon__desktop.png) |
+| Auto-cycle | [crop](../screenshots/components/landing/38-endings-map__natt__desktop.webp) | [crop](../screenshots/components/landing/38-endings-map__morgon__desktop.webp) |
+| Ending 1 engaged | [crop](../screenshots/components/landing/38-endings-map--ending-1-engaged__natt__desktop.webp) | [crop](../screenshots/components/landing/38-endings-map--ending-1-engaged__morgon__desktop.webp) |
+| Ending 2 engaged | [crop](../screenshots/components/landing/38-endings-map--ending-2-engaged__natt__desktop.webp) | [crop](../screenshots/components/landing/38-endings-map--ending-2-engaged__morgon__desktop.webp) |
+| Ending 3 engaged | [crop](../screenshots/components/landing/38-endings-map--ending-3-engaged__natt__desktop.webp) | [crop](../screenshots/components/landing/38-endings-map--ending-3-engaged__morgon__desktop.webp) |
+| Ending 4 engaged | [crop](../screenshots/components/landing/38-endings-map--ending-4-engaged__natt__desktop.webp) | [crop](../screenshots/components/landing/38-endings-map--ending-4-engaged__morgon__desktop.webp) |
 | Mobile | [crop](../screenshots/components/landing/38-endings-map__natt__mobile.png) | [crop](../screenshots/components/landing/38-endings-map__morgon__mobile.png) |
 
-**Draw frames.** To get exact frames, the CSS transitions were paused through `document.getAnimations()` and their `currentTime` set to each value: `38-endings-map--draw-t{000,100,200,300,450,600,900}ms__{natt,morgon}__desktop.png`. One example: [t = 200 ms](../screenshots/components/landing/38-endings-map--draw-t200ms__natt__desktop.png).
+**Draw frames.** To get exact frames, the CSS transitions were paused through `document.getAnimations()` and their `currentTime` set to each value: `38-endings-map--draw-t{000,100,200,300,450,600,900}ms__{natt,morgon}__desktop.png`. One example: [t = 200 ms](../screenshots/components/landing/38-endings-map--draw-t200ms__natt__desktop.webp).
 
 **Caption and CTA.**
 
 * Caption, serif 15.2 px in `--page-sub`, max 72 ch: sv `Kartan över exempelboken Iris och den sparade platsen. Varje prick är en sida, varje guldstjärna ett val, varje medaljong ett slut. Alla fyra finns på riktigt.` [The map of the sample book Iris and the Saved Place. Every dot is a page, every gold star a choice, every medallion an ending. All four really exist.]
 * The caption says **"guldstjärna" (gold star)**, but the choice markers are drawn as gold **diamonds** with chevrons. The only stars on the page are the micro-line sparkles.
 * Under the caption sits a ghost button: `Läs exempelboken` [Read the sample book] → `/share/iris-sparade-platsen`. That route returns 404 on the server ([`source/html/share_iris-sparade-platsen.404.sv.html`](../source/html/share_iris-sparade-platsen.404.sv.html)).
-* Crop: [caption + CTA](../screenshots/components/landing/39-map-caption-cta__natt__desktop.png).
+* Crop: [caption + CTA](../screenshots/components/landing/39-map-caption-cta__natt__desktop.webp).
 
 ### 6.8 Step 6 widget: next-book memory card
 
-![Memory card anatomy](../screenshots/components/landing/_anatomy-memory-card__natt__desktop.png)
+![Memory card anatomy](../screenshots/components/landing/_anatomy-memory-card__natt__desktop.webp)
 
 ```css
 /* source/css/3q17cp_jgfwol.pretty.css:3039-3123 */
@@ -1887,7 +1887,7 @@ Measured transitions after switching to ending 3 ([`_data/map-draw-transitions.j
 * **The label `nästa bok`** [next book] (en `next book`): uppercase 11.52 px/700 with 0.05 em tracking, **hard-coded** cream `#fff7e9` on near-black `#0a0c188c` in both themes.
 * **The memory tag:** the hero badge's little sibling. It is a glass card with radius 16 and a **static** 2.5° tilt, a 9 px `.dotpulse`, and the text `Sixten minns tornet` / `från "Alva och fyraljuset"` at 13.6 px and 12 px. 186×62 (en 240×64).
 
-**Crops.** [natt](../screenshots/components/landing/41-memory-card__natt__desktop.png) · [morgon](../screenshots/components/landing/41-memory-card__morgon__desktop.png) · [tag](../screenshots/components/landing/42-memory-tag__natt__desktop.png) · [mobile](../screenshots/components/landing/41-memory-card__morgon__mobile.png).
+**Crops.** [natt](../screenshots/components/landing/41-memory-card__natt__desktop.webp) · [morgon](../screenshots/components/landing/41-memory-card__morgon__desktop.webp) · [tag](../screenshots/components/landing/42-memory-tag__natt__desktop.png) · [mobile](../screenshots/components/landing/41-memory-card__morgon__mobile.png).
 
 ### 6.9 Closing CTAs
 
@@ -1968,7 +1968,7 @@ Chip sizes: 122×30 (en 139×30). The second section head is `Bokhyllan` [The bo
 
 ### 7.2 Builder card: portrait frame, pencil FAB, name
 
-![Builder anatomy](../screenshots/components/landing/_anatomy-builder__natt__desktop.png)
+![Builder anatomy](../screenshots/components/landing/_anatomy-builder__natt__desktop.webp)
 
 ```css
 /* source/css/3q17cp_jgfwol.pretty.css:1148-1216 */
@@ -2055,7 +2055,7 @@ To the right, the name `Alva` is set in Lora 25.6 px/700.
 
 **FAB hover.** `scale(1.1)` on the springy 0.25 s curve ([hover](../screenshots/components/landing/48-builder-portrait-fab--hover__natt__desktop.png)).
 
-**Crops.** [Card natt](../screenshots/components/landing/47-hero-builder-card__natt__desktop.png) · [morgon](../screenshots/components/landing/47-hero-builder-card__morgon__desktop.png) · [mobile morgon](../screenshots/components/landing/47-hero-builder-card__morgon__mobile.png) · [portrait + FAB](../screenshots/components/landing/48-builder-portrait-fab__natt__desktop.png).
+**Crops.** [Card natt](../screenshots/components/landing/47-hero-builder-card__natt__desktop.webp) · [morgon](../screenshots/components/landing/47-hero-builder-card__morgon__desktop.png) · [mobile morgon](../screenshots/components/landing/47-hero-builder-card__morgon__mobile.webp) · [portrait + FAB](../screenshots/components/landing/48-builder-portrait-fab__natt__desktop.png).
 
 ### 7.3 Trait chips (`.trait` vs `.trait.on`) and the upload tile
 
@@ -2262,7 +2262,7 @@ On hover the dashed border turns `--accent`: solid gold `#f5c542` in natt, `#6d4
 
 ## 8. "Bokhyllan" (the bookshelf)
 
-![Book card anatomy](../screenshots/components/landing/_anatomy-book__natt__desktop.png)
+![Book card anatomy](../screenshots/components/landing/_anatomy-book__natt__desktop.webp)
 
 ```css
 /* source/css/3q17cp_jgfwol.pretty.css:1480-1531 */
@@ -2329,7 +2329,7 @@ On hover the dashed border turns `--accent`: solid gold `#f5c542` in natt, `#6d4
 * the title in Lora 16.32 px/700 at 1.25 leading;
 * an uppercase **genre tag** pill: 11.52 px/800, 0.04 em tracking, `--pill-bg`/`--pill-ink`.
 
-**Hover.** `translateY(-10px) rotate(-1deg)` on a 0.35 s spring: the book lifts off the shelf and tips slightly ([hover natt](../screenshots/components/landing/59-book-card--hover__natt__desktop.png)). Focus shows the UA ring around the whole card ([tab22](../screenshots/components/landing/59-book-card--focus-visible-tab22__natt__desktop.png)).
+**Hover.** `translateY(-10px) rotate(-1deg)` on a 0.35 s spring: the book lifts off the shelf and tips slightly ([hover natt](../screenshots/components/landing/59-book-card--hover__natt__desktop.webp)). Focus shows the UA ring around the whole card ([tab22](../screenshots/components/landing/59-book-card--focus-visible-tab22__natt__desktop.webp)).
 
 **Copy.**
 
@@ -2342,7 +2342,7 @@ On hover the dashed border turns `--accent`: solid gold `#f5c542` in natt, `#6d4
 
 The book 2 title wraps to two lines and book 1 does not. Both cards stretch to the row height, so book 1 has spare space at the bottom.
 
-**Crops.** [Shelf natt](../screenshots/components/landing/57-shelf-section__natt__desktop.png) · [morgon](../screenshots/components/landing/57-shelf-section__morgon__desktop.png) · [card natt](../screenshots/components/landing/59-book-card__natt__desktop.png) · [card morgon](../screenshots/components/landing/59-book-card__morgon__desktop.png) · [tag](../screenshots/components/landing/60-book-genre-tag__natt__desktop.png) · [mobile](../screenshots/components/landing/57-shelf-section__natt__mobile.png).
+**Crops.** [Shelf natt](../screenshots/components/landing/57-shelf-section__natt__desktop.webp) · [morgon](../screenshots/components/landing/57-shelf-section__morgon__desktop.webp) · [card natt](../screenshots/components/landing/59-book-card__natt__desktop.webp) · [card morgon](../screenshots/components/landing/59-book-card__morgon__desktop.webp) · [tag](../screenshots/components/landing/60-book-genre-tag__natt__desktop.png) · [mobile](../screenshots/components/landing/57-shelf-section__natt__mobile.webp).
 
 ---
 
@@ -2568,7 +2568,7 @@ These are all strings the landing components carry, in DOM order. Sources: [`dom
 Each of these was observed live; the evidence is linked.
 
 1. **The skip link is unreachable.** `.skip-link:not(:focus){visibility:hidden}` makes it unfocusable, so `:focus` never applies. The first Tab goes to the logo ([`_data/skip-link.json`](../screenshots/components/landing/_data/skip-link.json), `:473-492`). The fix is to use `opacity`/`transform` or a clip pattern instead of `visibility`.
-2. **The hero cover links have an invisible focus ring.** The parent `.fbook` has `overflow:hidden` ([tab09](../screenshots/components/landing/17-fan-cover-card--focus-visible-tab09__natt__desktop.png)).
+2. **The hero cover links have an invisible focus ring.** The parent `.fbook` has `overflow:hidden` ([tab09](../screenshots/components/landing/17-fan-cover-card--focus-visible-tab09__natt__desktop.webp)).
 3. **The primary button press is swallowed under a mouse.** `.btn-primary:hover` (`:914-917`) overrides `.btn:active` (`:904-906`) at equal specificity. The hover state also drops the inset highlight, because `box-shadow` is replaced rather than extended.
 4. **The ghost buttons, nav pills, language buttons, theme switch and footer links have no hover feedback at all.** Only the gradient, dashed and book components react to the pointer.
 5. **Trait chips advertise interactivity** (`cursor:pointer`, hover border) but are inert spans, outside the tab order. "+ Fler" looks like a button and does nothing.

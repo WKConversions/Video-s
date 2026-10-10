@@ -2919,13 +2919,13 @@
    "from": "/start s0",
    "control": "button.btn-primary \"Skapa er hjälte\"",
    "to": "/start s1 (same URL, screen state in localStorage tf-start-draft)",
-   "evidence": "screenshots/flows/journey__04-start-s1__natt__desktop.png"
+   "evidence": "screenshots/flows/journey__04-start-s1__natt__desktop.webp"
   },
   {
    "from": "/start s0",
    "control": "button.btn-ghost \"Läs en exempelbok först\" (aria-expanded)",
    "to": "toggles the sample-book gallery in place; its card links to /share/iris-sparade-platsen (404)",
-   "evidence": "screenshots/flows/start-gallery__02-gallery-open__natt__desktop.png"
+   "evidence": "screenshots/flows/start-gallery__02-gallery-open__natt__desktop.webp"
   },
   {
    "from": "/start s5 (account step)",
@@ -2943,7 +2943,7 @@
    "from": "/uppgradera (logged out)",
    "control": "button.btn-primary \"Prova gratis i 14 dagar\" / \"Uppgradera till Skola\"",
    "to": "/login?returnTo=%2Fuppgradera",
-   "evidence": "source/js/26ye0kuppitcn.js: if(!h)return void _(`/login?returnTo=${encodeURIComponent(\"/uppgradera\")}`); screenshots/flows/upgrade__06-cta-logged-out__natt__desktop.png"
+   "evidence": "source/js/26ye0kuppitcn.js: if(!h)return void _(`/login?returnTo=${encodeURIComponent(\"/uppgradera\")}`); screenshots/flows/upgrade__06-cta-logged-out__natt__desktop.webp"
   },
   {
    "from": "/uppgradera (logged in)",
@@ -2961,13 +2961,13 @@
    "from": "/login, /signup",
    "control": "foot link \"Skapa ett\" / \"Logga in\"",
    "to": "/signup or /login, carrying ?returnTo= when present",
-   "evidence": "source/js/1hcx0qn-qjgfn.js: D=\"/\"!==b?`${y.footHref}?returnTo=${encodeURIComponent(b)}`:y.footHref; screenshots/flows/gated__09-returnTo-carried__natt__desktop.png"
+   "evidence": "source/js/1hcx0qn-qjgfn.js: D=\"/\"!==b?`${y.footHref}?returnTo=${encodeURIComponent(b)}`:y.footHref; screenshots/flows/gated__09-returnTo-carried__natt__desktop.webp"
   },
   {
    "from": "/login",
    "control": "button \"Glömt lösenordet?\"",
    "to": "same card switches to password-recovery mode (client-side)",
-   "evidence": "screenshots/flows/auth__05-login-forgot__natt__desktop.png"
+   "evidence": "screenshots/flows/auth__05-login-forgot__natt__desktop.webp"
   },
   {
    "from": "/login, /signup",

@@ -216,7 +216,7 @@ All 47 tokens, verbatim. Line numbers are in G (natt block 493-541, morgon block
 | `--map-dot` | `var(--violet-soft)` = `#9b87f5` | `var(--violet)` = `#6d4fe0` | 539 / 588 |
 | `--map-glow` | `#f5c54240` | `#6d4fe033` | 540 / 589 |
 
-Opaque "flat" equivalents of every translucent token (composited over the measured plate medians) are in [02 §3](analysis/02-color.md#3-every-semantic-token-both-themes) and in section 5 of [tokens/color.css](tokens/color.css). Token sheets: [derived/color/semantic-natt.png](derived/color/semantic-natt.png), [derived/color/semantic-morgon.png](derived/color/semantic-morgon.png).
+Opaque "flat" equivalents of every translucent token (composited over the measured plate medians) are in [02 §3](analysis/02-color.md#3-every-semantic-token-both-themes) and in section 5 of [tokens/color.css](tokens/color.css). Token sheets: [derived/color/semantic-natt.webp](derived/color/semantic-natt.webp), [derived/color/semantic-morgon.webp](derived/color/semantic-morgon.webp).
 
 ### 4.3 How the colours behave
 
@@ -245,7 +245,7 @@ Opaque "flat" equivalents of every translucent token (composited over the measur
 
 ## 5. Typography
 
-Full analysis: [analysis/03-typography.md](analysis/03-typography.md). Tokens: [tokens/typography.json](tokens/typography.json). Specimens: [derived/typography/specimen-natt.png](derived/typography/specimen-natt.png), [specimen-morgon.png](derived/typography/specimen-morgon.png).
+Full analysis: [analysis/03-typography.md](analysis/03-typography.md). Tokens: [tokens/typography.json](tokens/typography.json). Specimens: [derived/typography/specimen-natt.webp](derived/typography/specimen-natt.webp), [specimen-morgon.webp](derived/typography/specimen-morgon.webp).
 
 ### 5.1 Families and roles (G:460-472)
 
@@ -338,7 +338,7 @@ Full analysis: [analysis/06-theming-and-atmosphere.md](analysis/06-theming-and-a
 
 - **Scrim:** `linear-gradient(#0b0f1e61 0%, #0b0f1e80 45%, #0d1122bd 100%)` (G:631-635). It cuts bright patches behind the hero by about 70% and lifts the lede from 1.63:1 to 4.65:1 at the 90th percentile ([06 §11](analysis/06-theming-and-atmosphere.md#11-how-text-stays-legible-over-the-paintings)).
 - **Starfield:** six radial-gradient dots, 1-1.6 px, in the top quarter: `#ffe9b0e6`, `#f5f0e8cc`, `#f5c542d9`, `#f5f0e8b3`, `#ffe9b0bf`, `#9b87f599`, twinkling opacity 0.95 ↔ 0.55 over `4.6s ease-in-out infinite` (G:636-656). The painting supplies all other stars.
-- Plates for compositing (live captures of the `.bg` layer alone): [derived/color/backdrop-layer__natt__desktop.png](derived/color/backdrop-layer__natt__desktop.png), [backdrop-layer__morgon__desktop.png](derived/color/backdrop-layer__morgon__desktop.png).
+- Plates for compositing (live captures of the `.bg` layer alone): [derived/color/backdrop-layer__natt__desktop.webp](derived/color/backdrop-layer__natt__desktop.webp), [backdrop-layer__morgon__desktop.webp](derived/color/backdrop-layer__morgon__desktop.webp).
 
 ### 7.2 Glass (G:1110-1147)
 
@@ -587,7 +587,7 @@ Observed on the live site or in shipped code. Treat these as things **not** to c
 | 2 | The skip link can never be focused | G:486-488; [14 §4](analysis/14-accessibility-and-craft.md#4-the-skip-link-hoppa-till-innehållet) |
 | 3 | Footer `Version 16ab1756` names a different commit from `<meta name="tf-release-sha" content="4be07efd…">` | [source/html/home.sv.html](source/html/home.sv.html) |
 | 4 | Three typefaces carry the name: Cinzel (nav), Trajan-style lettering in the logo raster, DejaVu Serif Bold in the OG image | [01 §13](analysis/01-brand-identity.md#13-inconsistencies-and-gaps) |
-| 5 | The logo gold (`#d8a216`) matches no CSS gold (`#f2b22e`, `#f5c542`); the emblem never adapts to Morgon (under 2:1 on lilac) and has no small-size variant | [derived/brand/logo-on-themes.png](derived/brand/logo-on-themes.png) |
+| 5 | The logo gold (`#d8a216`) matches no CSS gold (`#f2b22e`, `#f5c542`); the emblem never adapts to Morgon (under 2:1 on lilac) and has no small-size variant | [derived/brand/logo-on-themes.webp](derived/brand/logo-on-themes.webp) |
 | 6 | Offer mismatch: "Första boken är gratis, inget kort behövs." [first book free, no card needed] vs "14 dagar gratis, avsluta när du vill. Kort krävs." [14 days free … Card required.] | [10 §7](analysis/10-copy-voice-and-tone.md#7-price-and-free-trial-phrasing) |
 | 7 | `.grad` is a flat colour, not a gradient (G:867-870) | [03 §15](analysis/03-typography.md#15-inconsistencies-and-gaps) |
 | 8 | Phantom weights (Grotesk 600 → 700, 500 → 400), synthetic italics, 62 literal font sizes and no size or spacing tokens | [03 §4](analysis/03-typography.md#4-weights-declared-vs-drawn-measured), [04 §8](analysis/04-layout-spacing-responsive.md#8-the-de-facto-spacing-scale) |

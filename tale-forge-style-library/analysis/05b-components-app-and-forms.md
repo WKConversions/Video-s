@@ -148,7 +148,7 @@ Measured (natt, desktop): `background-color: rgba(15, 22, 40, 0.68)` (= `--card 
 
 (tokens: `3q17cp_jgfwol.pretty.css:493-590`)
 
-Measured: every app button has the base height of 54 px (16.8 px Schibsted Grotesk 700 + 17 px padding). Full-width variants set `style="width:100%;justify-content:center"` inline (auth). **The `.btn` class has no `justify-content`**, so a full-width button that is stretched by a flex column (the start step cards) keeps its label **left-aligned**. See "Vidare" in [`start-s1-stepcard--filled__natt__desktop.png`](../screenshots/components/app/start-s1-stepcard--filled__natt__desktop.png).
+Measured: every app button has the base height of 54 px (16.8 px Schibsted Grotesk 700 + 17 px padding). Full-width variants set `style="width:100%;justify-content:center"` inline (auth). **The `.btn` class has no `justify-content`**, so a full-width button that is stretched by a flex column (the start step cards) keeps its label **left-aligned**. See "Vidare" in [`start-s1-stepcard--filled__natt__desktop.webp`](../screenshots/components/app/start-s1-stepcard--filled__natt__desktop.webp).
 
 The disabled state is not defined globally. It exists only in scoped rules, and they all use the same recipe:
 
@@ -225,9 +225,9 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px
 
 One component, `AuthForm({mode, locale})`, renders both pages and the password-recovery mode ([`1hcx0qn-qjgfn.js @3984`](../source/js/1hcx0qn-qjgfn.js)). It uses no route CSS. All styling is the global classes plus three inline style objects. Evidence: LIVE. The server answers (wrong password, account exists, confirmation sent, reset sent) were **mocked locally** so the error and notice boxes could be photographed.
 
-![login states sheet](../screenshots/components/app/auth-states-sheet__natt__desktop.png)
+![login states sheet](../screenshots/components/app/auth-states-sheet__natt__desktop.webp)
 
-*[auth-states-sheet__natt__desktop.png](../screenshots/components/app/auth-states-sheet__natt__desktop.png): nine states side by side ([Morgon version](../screenshots/components/app/auth-states-sheet__morgon__desktop.png)).*
+*[auth-states-sheet__natt__desktop.webp](../screenshots/components/app/auth-states-sheet__natt__desktop.webp): nine states side by side ([Morgon version](../screenshots/components/app/auth-states-sheet__morgon__desktop.webp)).*
 
 ### 3.1 Anatomy
 
@@ -317,7 +317,7 @@ Google is the only provider. It is styled as the **ghost** button, so the brand 
 
 | State | How it was produced | What changes | Files (natt desktop; all exist for natt/morgon × desktop/mobile unless noted) |
 |---|---|---|---|
-| Rest | load | — | [`login-card`](../screenshots/components/app/login-card__natt__desktop.png), [`signup-card`](../screenshots/components/app/signup-card__natt__desktop.png), English: [`login-card-en`](../screenshots/components/app/login-card-en__natt__desktop.png), [`signup-card-en`](../screenshots/components/app/signup-card-en__natt__desktop.png) (+ `-en__morgon__mobile`) |
+| Rest | load | — | [`login-card`](../screenshots/components/app/login-card__natt__desktop.webp), [`signup-card`](../screenshots/components/app/signup-card__natt__desktop.webp), English: [`login-card-en`](../screenshots/components/app/login-card-en__natt__desktop.webp), [`signup-card-en`](../screenshots/components/app/signup-card-en__natt__desktop.webp) (+ `-en__morgon__mobile`) |
 | Empty submit | click submit with both fields empty | **Native constraint validation only.** The browser focuses `#auth-email` and shows its own bubble, which a page screenshot cannot capture. Chromium's message was "Please fill out this field." (browser language, not the site's). The only page-visible change is the focus ring. | [`login-form--empty-submit`](../screenshots/components/app/login-form--empty-submit__natt__desktop.png) |
 | Malformed e-mail | `iris@` + submit | Native message "Please enter a part following '@'. 'iris@' is incomplete." No styling for `:invalid` exists. | [`login-form--malformed-email`](../screenshots/components/app/login-form--malformed-email__natt__desktop.png) |
 | Focus (keyboard) | Tab into the password field | `outline: 2px solid var(--accent); outline-offset: 2px` (gold in Natt, violet in Morgon), radius follows the 14 px field | [`login-field--focus`](../screenshots/components/app/login-field--focus__natt__desktop.png) |
@@ -325,15 +325,15 @@ Google is the only provider. It is styled as the **ghost** button, so the brand 
 | Hover: Google | pointer over | **No change.** `.btn-ghost` has no hover rule | [`login-google-button--hover`](../screenshots/components/app/login-google-button--hover__natt__desktop.png) (desktop) |
 | Hover: submit | pointer over | lifts 3 px, glow grows to `--btn-shadow-hover` | [`login-submit--hover`](../screenshots/components/app/login-submit--hover__natt__desktop.png) (desktop) |
 | Hover: forgot link | pointer over | no change | [`login-forgot-link--hover`](../screenshots/components/app/login-forgot-link--hover__natt__desktop.png) (desktop) |
-| Submitting | submit, mock delayed 4 s | label becomes "Loggar in..." and all controls are disabled. **No visual disabled style**, so only the label changes. | [`login-card--submitting`](../screenshots/components/app/login-card--submitting__natt__desktop.png) |
-| Wrong credentials | mocked `400 {error_code:"invalid_credentials"}` | coral box above the Google button: "Fel e-postadress eller lösenord." | [`login-card--error`](../screenshots/components/app/login-card--error__natt__desktop.png) |
+| Submitting | submit, mock delayed 4 s | label becomes "Loggar in..." and all controls are disabled. **No visual disabled style**, so only the label changes. | [`login-card--submitting`](../screenshots/components/app/login-card--submitting__natt__desktop.webp) |
+| Wrong credentials | mocked `400 {error_code:"invalid_credentials"}` | coral box above the Google button: "Fel e-postadress eller lösenord." | [`login-card--error`](../screenshots/components/app/login-card--error__natt__desktop.webp) |
 | Recovery mode | click "Glömt lösenordet?" | title "Återställ lösenordet". Google button, divider, password field, forgot link and footer link are removed. Submit becomes "Skicka återställningslänk", plus a full-width ghost "Tillbaka till inloggning" | [`login-recovery`](../screenshots/components/app/login-recovery__natt__desktop.png) |
-| Recovery, invalid e-mail | `iris@exempel` (passes native `type=email`, fails the JS regex `/^[^\s@]+@[^\s@]+\.[^\s@]+$/`) | coral box "Ange en giltig e-postadress." (**client-side**, no request) | [`login-recovery--invalid-email`](../screenshots/components/app/login-recovery--invalid-email__natt__desktop.png) |
-| Recovery sent | mocked `200` | gold box "Om adressen hör till ett konto kommer ett mejl med en återställningslänk." | [`login-recovery--sent`](../screenshots/components/app/login-recovery--sent__natt__desktop.png) |
+| Recovery, invalid e-mail | `iris@exempel` (passes native `type=email`, fails the JS regex `/^[^\s@]+@[^\s@]+\.[^\s@]+$/`) | coral box "Ange en giltig e-postadress." (**client-side**, no request) | [`login-recovery--invalid-email`](../screenshots/components/app/login-recovery--invalid-email__natt__desktop.webp) |
+| Recovery sent | mocked `200` | gold box "Om adressen hör till ett konto kommer ett mejl med en återställningslänk." | [`login-recovery--sent`](../screenshots/components/app/login-recovery--sent__natt__desktop.webp) |
 | Signup, attest unchecked → checked | tick the box | submit goes from `disabled` to enabled. **Both look identical**, because there is no disabled style | [`signup-attest--unchecked`](../screenshots/components/app/signup-attest--unchecked__natt__desktop.png), [`signup-attest--checked`](../screenshots/components/app/signup-attest--checked__natt__desktop.png) |
 | Signup, short password | `abc` | native: "Please lengthen this text to 6 characters or more (you are currently using 3 characters)." (`minlength=6`) | (bubble only) |
-| Signup, account exists | mocked `422 user_already_exists` | coral "Det finns redan ett konto med den här e-postadressen. Logga in istället." | [`signup-card--error-exists`](../screenshots/components/app/signup-card--error-exists__natt__desktop.png) |
-| Signup, confirm e-mail | mocked `200`, no session | gold "Kolla din e-post för att bekräfta kontot." | [`signup-card--confirm-notice`](../screenshots/components/app/signup-card--confirm-notice__natt__desktop.png) |
+| Signup, account exists | mocked `422 user_already_exists` | coral "Det finns redan ett konto med den här e-postadressen. Logga in istället." | [`signup-card--error-exists`](../screenshots/components/app/signup-card--error-exists__natt__desktop.webp) |
+| Signup, confirm e-mail | mocked `200`, no session | gold "Kolla din e-post för att bekräfta kontot." | [`signup-card--confirm-notice`](../screenshots/components/app/signup-card--confirm-notice__natt__desktop.webp) |
 
 **Code-only.** `attestRequiredError` "Du behöver godkänna integritetspolicyn för att skapa ett konto." can only fire if the form is submitted without the checkbox. The disabled submit prevents that. `googleError` "Kunde inte starta Google-inloggning." When signup succeeds with a session, the client PUTs `/account/profile {consentVersion:"2026-07-06", parentAttestation:true}` ([`2x2s34sgoij7z.js`](../source/js/2x2s34sgoij7z.js), `CONSENT_VERSION`) and routes to `/start`.
 
@@ -435,7 +435,7 @@ The yearly price is set in Lora 700 at 1.6 rem. It is the only Lora-set number i
 | State | Files |
 |---|---|
 | Intro card | [`uppgradera-intro-card__{natt,morgon}__{desktop,mobile}.png`](../screenshots/components/app/uppgradera-intro-card__natt__desktop.png) |
-| Included card + figure | [`uppgradera-included-card…`](../screenshots/components/app/uppgradera-included-card__natt__desktop.png), [`uppgradera-sample-figure…`](../screenshots/components/app/uppgradera-sample-figure__morgon__mobile.png) |
+| Included card + figure | [`uppgradera-included-card…`](../screenshots/components/app/uppgradera-included-card__natt__desktop.webp), [`uppgradera-sample-figure…`](../screenshots/components/app/uppgradera-sample-figure__morgon__mobile.png) |
 | Billing toggle yearly (default) / monthly / hover | [`uppgradera-billing-toggle--yearly`](../screenshots/components/app/uppgradera-billing-toggle--yearly__natt__desktop.png), [`--monthly`](../screenshots/components/app/uppgradera-billing-toggle--monthly__natt__desktop.png), [`--hover-monthly`](../screenshots/components/app/uppgradera-billing-toggle--hover-monthly__natt__desktop.png) (hover only darkens the ring to `--trait-on-line`) |
 | Family plan yearly / monthly | [`uppgradera-plan-family--yearly`](../screenshots/components/app/uppgradera-plan-family--yearly__natt__desktop.png), [`--monthly`](../screenshots/components/app/uppgradera-plan-family--monthly__natt__desktop.png) (the "per månad vid årsbetalning" line disappears) |
 | CTA hover | [`uppgradera-plan-cta--hover`](../screenshots/components/app/uppgradera-plan-cta--hover__natt__desktop.png) |
@@ -458,9 +458,9 @@ The yearly price is set in Lora 700 at 1.6 rem. It is the only Lora-set number i
 .start-flow .start-screen { animation: 0.45s cubic-bezier(0.2, 0.7, 0.3, 1) tfStartIn; }
 ```
 
-![flow map](../screenshots/components/app/start-flow-map__natt__desktop.png)
+![flow map](../screenshots/components/app/start-flow-map__natt__desktop.webp)
 
-*[start-flow-map__natt__desktop.png](../screenshots/components/app/start-flow-map__natt__desktop.png): s0 to s8 in order ([Morgon](../screenshots/components/app/start-flow-map__morgon__desktop.png)).*
+*[start-flow-map__natt__desktop.webp](../screenshots/components/app/start-flow-map__natt__desktop.webp): s0 to s8 in order ([Morgon](../screenshots/components/app/start-flow-map__morgon__desktop.webp)).*
 
 | Screen | Strip title (sv) | Strip sub-line (sv) | Content | Evidence |
 |---|---|---|---|---|
@@ -529,7 +529,7 @@ s0 reuses the landing hero recipe without changes: `.hero` (1.05fr/0.95fr grid),
 </div>
 ```
 
-Measured: the gallery is 538 px wide on desktop, so one `.gbook` takes one of three tracks, **170 × 315** (image 170×255 at 2:3 + caption). The other two tracks stay empty. On mobile the book is 105 px wide. The frame is 4 px `--frame` (`#101a30` natt, `#fff` morgon) with a 16 px radius (the hero fan uses 5 px / 20 px). The caption is a solid `--card` strip. Hovering changes nothing, because `.gbook` has no hover rule ([`start-gbook--hover__natt__desktop.png`](../screenshots/components/app/start-gbook--hover__natt__desktop.png)). Files: [`start-gallery-open`](../screenshots/components/app/start-gallery-open__natt__desktop.png), [`start-gbook`](../screenshots/components/app/start-gbook__morgon__desktop.png), [`start-hero-left--gallery-open`](../screenshots/components/app/start-hero-left--gallery-open__natt__mobile.png), viewport [`start-s0-viewport--gallery-open`](../screenshots/components/app/start-s0-viewport--gallery-open__natt__desktop.webp). Hero parts: [`start-hero`](../screenshots/components/app/start-hero__natt__desktop.webp), [`start-kicker`](../screenshots/components/app/start-kicker__natt__desktop.png), [`start-fan`](../screenshots/components/app/start-fan__natt__desktop.webp), [`start-badge`](../screenshots/components/app/start-badge__natt__desktop.png), [`start-cta-row`](../screenshots/components/app/start-cta-row__natt__desktop.png), [`start-cta-row--primary-hover`](../screenshots/components/app/start-cta-row--primary-hover__natt__desktop.png).
+Measured: the gallery is 538 px wide on desktop, so one `.gbook` takes one of three tracks, **170 × 315** (image 170×255 at 2:3 + caption). The other two tracks stay empty. On mobile the book is 105 px wide. The frame is 4 px `--frame` (`#101a30` natt, `#fff` morgon) with a 16 px radius (the hero fan uses 5 px / 20 px). The caption is a solid `--card` strip. Hovering changes nothing, because `.gbook` has no hover rule ([`start-gbook--hover__natt__desktop.png`](../screenshots/components/app/start-gbook--hover__natt__desktop.png)). Files: [`start-gallery-open`](../screenshots/components/app/start-gallery-open__natt__desktop.webp), [`start-gbook`](../screenshots/components/app/start-gbook__morgon__desktop.png), [`start-hero-left--gallery-open`](../screenshots/components/app/start-hero-left--gallery-open__natt__mobile.webp), viewport [`start-s0-viewport--gallery-open`](../screenshots/components/app/start-s0-viewport--gallery-open__natt__desktop.webp). Hero parts: [`start-hero`](../screenshots/components/app/start-hero__natt__desktop.webp), [`start-kicker`](../screenshots/components/app/start-kicker__natt__desktop.png), [`start-fan`](../screenshots/components/app/start-fan__natt__desktop.webp), [`start-badge`](../screenshots/components/app/start-badge__natt__desktop.png), [`start-cta-row`](../screenshots/components/app/start-cta-row__natt__desktop.png), [`start-cta-row--primary-hover`](../screenshots/components/app/start-cta-row--primary-hover__natt__desktop.png).
 
 **Read:** "A sample book" is presented as one physical, framed book that appears under the button, like a book laid on the table. The 3-column grid with one occupant suggests the gallery was meant to hold three books.
 
@@ -564,7 +564,7 @@ div.stepcard.glass
 └─ button.btn.btn-primary "Vidare" (disabled until a name and a pronoun exist)   / Next
 ```
 
-"Vidare" first runs `moderateInput(name)` locally ([`2x2s34sgoij7z.js @7725`](../source/js/2x2s34sgoij7z.js)). It checks against an injection pattern, a ~100-word blocklist (English and Swedish, including "fan", "död", "kniv", "svärdet"), e-mail, phone, street-address and Swedish personnummer patterns. A hit shows a coral `.field-error` such as "Vi håller sagorna snälla och trygga. Prova gärna andra ord." [We keep the stories kind and safe. Please try other words.] (§12). Captured by typing a blocked word: [`start-s1-stepcard--moderation-error`](../screenshots/components/app/start-s1-stepcard--moderation-error__natt__desktop.png). Other files: [`start-s1-stepcard`](../screenshots/components/app/start-s1-stepcard__natt__desktop.png) (rest, disabled button at opacity .5), [`--filled`](../screenshots/components/app/start-s1-stepcard--filled__morgon__desktop.png), [`start-s1-field--focus`](../screenshots/components/app/start-s1-field--focus__morgon__mobile.png), [`start-s1-age-row--hover`](../screenshots/components/app/start-s1-age-row--hover__natt__desktop.png).
+"Vidare" first runs `moderateInput(name)` locally ([`2x2s34sgoij7z.js @7725`](../source/js/2x2s34sgoij7z.js)). It checks against an injection pattern, a ~100-word blocklist (English and Swedish, including "fan", "död", "kniv", "svärdet"), e-mail, phone, street-address and Swedish personnummer patterns. A hit shows a coral `.field-error` such as "Vi håller sagorna snälla och trygga. Prova gärna andra ord." [We keep the stories kind and safe. Please try other words.] (§12). Captured by typing a blocked word: [`start-s1-stepcard--moderation-error`](../screenshots/components/app/start-s1-stepcard--moderation-error__natt__desktop.webp). Other files: [`start-s1-stepcard`](../screenshots/components/app/start-s1-stepcard__natt__desktop.webp) (rest, disabled button at opacity .5), [`--filled`](../screenshots/components/app/start-s1-stepcard--filled__morgon__desktop.png), [`start-s1-field--focus`](../screenshots/components/app/start-s1-field--focus__morgon__mobile.png), [`start-s1-age-row--hover`](../screenshots/components/app/start-s1-age-row--hover__natt__desktop.png).
 
 ### 5.4 s2: attest, photo upload, privacy, paint pill
 
@@ -598,7 +598,7 @@ div.stepcard.glass
 
 Icons: camera `M4 8h3l2-2.5h6L17 8h3a1.5 1.5 0 0 1 1.5 1.5V18a1.5 1.5 0 0 1-1.5 1.5H4A1.5 1.5 0 0 1 2.5 18V9.5A1.5 1.5 0 0 1 4 8z` + `circle(12,13.4,r 3.4)`; shield `M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6z`.
 
-The disabled upload tile and the disabled "Vidare" (half opacity) are visible together in [`start-s2-stepcard__natt__desktop.png`](../screenshots/components/app/start-s2-stepcard__natt__desktop.png). Ticking the box enables the tile and the skip button: [`start-s2-stepcard--attested`](../screenshots/components/app/start-s2-stepcard--attested__natt__desktop.png). Hover on the tile turns the dashed border gold/violet: [`start-s2-upload--hover`](../screenshots/components/app/start-s2-upload--hover__natt__desktop.png). Privacy line: [`start-s2-privacy`](../screenshots/components/app/start-s2-privacy__morgon__mobile.png). **Neither the upload nor "Hoppa över" was clicked**: both create a child and a portrait job on the server.
+The disabled upload tile and the disabled "Vidare" (half opacity) are visible together in [`start-s2-stepcard__natt__desktop.webp`](../screenshots/components/app/start-s2-stepcard__natt__desktop.webp). Ticking the box enables the tile and the skip button: [`start-s2-stepcard--attested`](../screenshots/components/app/start-s2-stepcard--attested__natt__desktop.webp). Hover on the tile turns the dashed border gold/violet: [`start-s2-upload--hover`](../screenshots/components/app/start-s2-upload--hover__natt__desktop.png). Privacy line: [`start-s2-privacy`](../screenshots/components/app/start-s2-privacy__morgon__mobile.png). **Neither the upload nor "Hoppa över" was clicked**: both create a child and a portrait job on the server.
 
 ### 5.5 s3: companion picks, keepsake object and the hero card (LIVE·INJECTED)
 
@@ -648,7 +648,7 @@ Companion icons (stroke 1.7, 24 viewBox): fox `M5 4l4 4h6l4-4v6c0 5-3.4 9-7 9s-7
 
 **The veiled portrait.** While the portrait is painted, the photo sits under a frosted gradient veil (lavender→gold, 8 px backdrop blur) and a paintbrush icon rocks between −8° and +6° (and bobs up 5 px) on a 2.6 s loop ([`start-s3-pframe-veil`](../screenshots/components/app/start-s3-pframe-veil__natt__desktop.png)). This veil is the first appearance of the flow's "behind the cloth" metaphor, which s4 pays off.
 
-Files: [`start-s3-build`](../screenshots/components/app/start-s3-build__natt__desktop.webp) (Rufus chosen), [`start-s3-build--story-chooses`](../screenshots/components/app/start-s3-build--story-chooses__morgon__desktop.png), [`start-s3-pick-row`](../screenshots/components/app/start-s3-pick-row__natt__desktop.png), [`start-s3-pick-row--hover`](../screenshots/components/app/start-s3-pick-row--hover__natt__desktop.png), [`start-s3-herocard`](../screenshots/components/app/start-s3-herocard__morgon__desktop.png), [`start-s3-paintpill`](../screenshots/components/app/start-s3-paintpill__natt__desktop.png); mobile stacking: [`start-s3-build__natt__mobile`](../screenshots/components/app/start-s3-build__natt__mobile.png).
+Files: [`start-s3-build`](../screenshots/components/app/start-s3-build__natt__desktop.webp) (Rufus chosen), [`start-s3-build--story-chooses`](../screenshots/components/app/start-s3-build--story-chooses__morgon__desktop.webp), [`start-s3-pick-row`](../screenshots/components/app/start-s3-pick-row__natt__desktop.png), [`start-s3-pick-row--hover`](../screenshots/components/app/start-s3-pick-row--hover__natt__desktop.png), [`start-s3-herocard`](../screenshots/components/app/start-s3-herocard__morgon__desktop.png), [`start-s3-paintpill`](../screenshots/components/app/start-s3-paintpill__natt__desktop.png); mobile stacking: [`start-s3-build__natt__mobile`](../screenshots/components/app/start-s3-build__natt__mobile.webp).
 
 ### 5.6 s4: the easel and the portrait unveil (LIVE·INJECTED)
 
@@ -740,9 +740,9 @@ Stills (fake clock, so each phase is clean): [`start-s4-stage--waiting`](../scre
 
 **Real-time motion:** [`start-s4-unveil__natt__desktop.webm`](../screenshots/components/app/start-s4-unveil__natt__desktop.webm) and [`__morgon__desktop.webm`](../screenshots/components/app/start-s4-unveil__morgon__desktop.webm) (1440×900, 25 fps). The strip below samples it, with the click frame found from the luminance drop when the veil glow disappears (±1 frame; screen events lag the JS timers by about 0.2 s under recording load):
 
-![unveil strip](../screenshots/components/app/start-s4-unveil-strip__natt__desktop.png)
+![unveil strip](../screenshots/components/app/start-s4-unveil-strip__natt__desktop.webp)
 
-*[start-s4-unveil-strip__natt__desktop.png](../screenshots/components/app/start-s4-unveil-strip__natt__desktop.png) ([Morgon](../screenshots/components/app/start-s4-unveil-strip__morgon__desktop.png)): 16 frames from t = 0 to 5000 ms.*
+*[start-s4-unveil-strip__natt__desktop.webp](../screenshots/components/app/start-s4-unveil-strip__natt__desktop.webp) ([Morgon](../screenshots/components/app/start-s4-unveil-strip__morgon__desktop.webp)): 16 frames from t = 0 to 5000 ms.*
 
 ### 5.7 s5: save the hero (account step, LIVE·INJECTED)
 
@@ -762,7 +762,7 @@ div.stepcard.glass (max-width 600px)
 .start-flow .trial-line { font-family: var(--serif); color: var(--card-sub); margin: 0; font-size: 0.98rem; line-height: 1.6; }
 ```
 
-Unlike AuthForm, this form uses the bold `.field` inputs with **no labels and no icons**, placeholders only (with `aria-label`). Google sits **below** the e-mail form here, while it sits above in AuthForm. The heading uses a Swedish genitive helper (`Iris` → "Iris"; names ending in s/x/z take no extra s; [`2x2s34sgoij7z.js @5304`](../source/js/2x2s34sgoij7z.js)). Files: [`start-s5-account`](../screenshots/components/app/start-s5-account__natt__desktop.png), [`--attested-focus`](../screenshots/components/app/start-s5-account--attested-focus__morgon__desktop.png). Code-only branches: "Du har redan ett konto med den här adressen…" + "Mejla mig en inloggningslänk", a moderation block with "Ändra beskrivningen", and the "Spara hjälten" one-button variant for signed-in users.
+Unlike AuthForm, this form uses the bold `.field` inputs with **no labels and no icons**, placeholders only (with `aria-label`). Google sits **below** the e-mail form here, while it sits above in AuthForm. The heading uses a Swedish genitive helper (`Iris` → "Iris"; names ending in s/x/z take no extra s; [`2x2s34sgoij7z.js @5304`](../source/js/2x2s34sgoij7z.js)). Files: [`start-s5-account`](../screenshots/components/app/start-s5-account__natt__desktop.webp), [`--attested-focus`](../screenshots/components/app/start-s5-account--attested-focus__morgon__desktop.png). Code-only branches: "Du har redan ett konto med den här adressen…" + "Mejla mig en inloggningslänk", a moderation block with "Ändra beskrivningen", and the "Spara hjälten" one-button variant for signed-in users.
 
 ### 5.8 s6: world band, book recipe, sheets and the four doors (LIVE·INJECTED)
 
@@ -830,7 +830,7 @@ The sheet is `div.glass.cs-sheet[role=dialog][aria-modal=true][data-sheet]`, wit
   All eight previews show the **same two children** (a girl in a yellow raincoat and a boy in a green striped jumper) re-rendered in each style. **Read:** this is a controlled style comparison, useful as a reference set for "the same character across looks".
 - **Berättarröst** [Narrator voice] ([`start-s6-sheet-voice`](../screenshots/components/app/start-s6-sheet-voice__natt__desktop.webp)): `.voices` (flex wrap, gap 9) of `.trait.voice` pills with a 13 px filled play triangle `M7 4.5l12 7.5-12 7.5z`. Tapping one selects it and plays its sample. Voices ([`390j9gbq0u9ce.js @32464`](../source/js/390j9gbq0u9ce.js)): **Morfar Erik** (default, "En varm, vis berättare med en mysig godnattstämma"), Berättaren Lily, Berättaren Marcus, Unga Saga.
 - **Bokens språk** [The book's language] ([`start-s6-sheet-language`](../screenshots/components/app/start-s6-sheet-language__natt__desktop.webp)): two `.trait` pills "Svenska" / "English". The PATCH is not sent here; it was not exercised.
-- Mobile: the sheets become bottom sheets ([`start-s6-sheet-style__natt__mobile`](../screenshots/components/app/start-s6-sheet-style__natt__mobile.png)).
+- Mobile: the sheets become bottom sheets ([`start-s6-sheet-style__natt__mobile`](../screenshots/components/app/start-s6-sheet-style__natt__mobile.webp)).
 
 **Doors** (`DoorGrid`, [`@17473`](../source/js/2j_-r8q4tgdka.js)): an h2 `.cs-h2` "Välj kvällens äventyr" (Lora 700 1.2 rem) and a `.cs-doors` grid (4 columns gap 13; 2 at ≤1000; 1 at ≤520).
 
@@ -862,7 +862,7 @@ article.glass.cs-door
 
 (first-run cards: [`0ad0wel9cyv30.js @38791`](../source/js/0ad0wel9cyv30.js)) If the surprise image fails, `.cs-door-face--fallback` draws a "✦" at 44 px in `--logo-ink` on a dark gradient (`linear-gradient(160deg,#140f28e6,#281e46d9)`; morgon `#ded5f5→#c9bcf0`) inside an 18 px inset hairline frame (`2h1wwdz1nvxwk.pretty.css:433-486`, CODE-ONLY).
 
-Files: [`start-s6-world-band`](../screenshots/components/app/start-s6-world-band__natt__desktop.png), [`start-s6-recipe`](../screenshots/components/app/start-s6-recipe__morgon__desktop.png), [`start-s6-recipe--chip-hover`](../screenshots/components/app/start-s6-recipe--chip-hover__natt__desktop.png), [`start-s6-door-grid`](../screenshots/components/app/start-s6-door-grid__natt__desktop.webp), [`start-s6-door-card`](../screenshots/components/app/start-s6-door-card__natt__desktop.png), [`start-s6-door-surprise`](../screenshots/components/app/start-s6-door-surprise__morgon__desktop.png), [`start-s6-door-card--button-hover`](../screenshots/components/app/start-s6-door-card--button-hover__natt__desktop.png), mobile column [`start-s6-launch__natt__mobile`](../screenshots/components/app/start-s6-launch__natt__mobile.webp).
+Files: [`start-s6-world-band`](../screenshots/components/app/start-s6-world-band__natt__desktop.webp), [`start-s6-recipe`](../screenshots/components/app/start-s6-recipe__morgon__desktop.png), [`start-s6-recipe--chip-hover`](../screenshots/components/app/start-s6-recipe--chip-hover__natt__desktop.png), [`start-s6-door-grid`](../screenshots/components/app/start-s6-door-grid__natt__desktop.webp), [`start-s6-door-card`](../screenshots/components/app/start-s6-door-card__natt__desktop.png), [`start-s6-door-surprise`](../screenshots/components/app/start-s6-door-surprise__morgon__desktop.png), [`start-s6-door-card--button-hover`](../screenshots/components/app/start-s6-door-card--button-hover__natt__desktop.png), mobile column [`start-s6-launch__natt__mobile`](../screenshots/components/app/start-s6-launch__natt__mobile.webp).
 
 **Launch sheet.** Choosing a door opens `.sheetwrap.on > .sheet.glass[role=dialog]` (`2_gt301v4m-60.pretty.css:750-805`: overlay `#0a081980` + blur 6, sheet max 440 px, padding 28 26, gap 16):
 
@@ -899,9 +899,9 @@ While the book is written, painted and narrated (a few minutes), the user waits 
 
 Evidence: LIVE·INJECTED. The draft was seeded at s7 with a job id, and the two endpoints the component polls (`/jobs/story/{id}/progress` every 2.5 s, `/jobs/capacity-health` every 20 s) were answered by a local mock that stepped through the states.
 
-![glod states](../screenshots/components/app/start-s7-glod-states-sheet__natt__desktop.png)
+![glod states](../screenshots/components/app/start-s7-glod-states-sheet__natt__desktop.webp)
 
-*[start-s7-glod-states-sheet__natt__desktop.png](../screenshots/components/app/start-s7-glod-states-sheet__natt__desktop.png): queued, making, nearlyReady, failed, stuck, the forced finale, the forced memory note, and the scene plate with UI hidden ([Morgon](../screenshots/components/app/start-s7-glod-states-sheet__morgon__desktop.png), mobile [natt](../screenshots/components/app/start-s7-glod-states-sheet__natt__mobile.png) / [morgon](../screenshots/components/app/start-s7-glod-states-sheet__morgon__mobile.png)).*
+*[start-s7-glod-states-sheet__natt__desktop.webp](../screenshots/components/app/start-s7-glod-states-sheet__natt__desktop.webp): queued, making, nearlyReady, failed, stuck, the forced finale, the forced memory note, and the scene plate with UI hidden ([Morgon](../screenshots/components/app/start-s7-glod-states-sheet__morgon__desktop.webp), mobile [natt](../screenshots/components/app/start-s7-glod-states-sheet__natt__mobile.webp) / [morgon](../screenshots/components/app/start-s7-glod-states-sheet__morgon__mobile.webp)).*
 
 ### 6.1 Stage, takeover and layers
 
@@ -978,7 +978,7 @@ The board is **theme-invariant**. Wood, brass and parchment are the same in Natt
 |---|---|---|---|
 | queued (pending) | kicker VÄNTELDEN · pulse dot · "Iris allra första saga står i kö" · "Er saga väntar på att börja. Den startar av sig själv när sagosmedjan är redo. Ni kan stänga sidan; boken lägger sig i bokhyllan när den är klar." · 4 empty steps | low | [`start-s7-glod-sign--queued`](../screenshots/components/app/start-s7-glod-sign--queued__natt__desktop.png) |
 | making | "Iris allra första bok smids nu" · "En riktig bilderbok tar några minuter. Du kan stanna här, den öppnas av sig själv när den är klar. Stänger du sidan är boken kvar, den lägger sig i bokhyllan när den är klar." · step 1 ✓, step 2 active | mid | [`start-s7-glod-sign--making`](../screenshots/components/app/start-s7-glod-sign--making__natt__desktop.png) |
-| nearlyReady | same text, steps 1–3 ✓, step 4 active | high | [`start-s7-glod-sign--nearly`](../screenshots/components/app/start-s7-glod-sign--nearly__morgon__desktop.png) |
+| nearlyReady | same text, steps 1–3 ✓, step 4 active | high | [`start-s7-glod-sign--nearly`](../screenshots/components/app/start-s7-glod-sign--nearly__morgon__desktop.webp) |
 | failed | `.glod-terminal`: alert dot · "Elden kunde inte slutföra sagan" · "Den ofärdiga sagan lades inte i bokhyllan. Gå tillbaka och välj ett nytt äventyr, så försöker vi igen." · gold plank button "Välj ett nytt äventyr" | low | [`start-s7-glod-sign--failed`](../screenshots/components/app/start-s7-glod-sign--failed__natt__desktop.png) |
 | stuck (4 failed polls) | "Vi letar efter er saga" · "Den här sidan når inte väntelden just nu. Elden fortsätter att smida er bok hos oss, och boken lägger sig i bokhyllan när den är klar, även om ni stänger sidan." · "Kontrollera igen" | mid | [`start-s7-glod-sign--stuck`](../screenshots/components/app/start-s7-glod-sign--stuck__natt__mobile.png) |
 | gated | "Den här sagan blev inte redo" / "Vi stoppade den innan den nådde bokhyllan. Välj ett nytt äventyr, så smider vi en helt ny saga." | low | CODE-ONLY |
@@ -1094,7 +1094,7 @@ The cover art (`.glod-book-art`) is an inline SVG vignette: a night sky `#0d0a24
 .glod-open:active { transform: rotate(-0.6deg) scale(0.97); }
 ```
 
-**In the shipped /start flow this finale is never seen.** The effect that starts the climax also calls `onFinaleSettled` in the same tick ([`2j_-r8q4tgdka.js @40128`](../source/js/2j_-r8q4tgdka.js), `R.current?.startClimax(),er.current()`), and `/start` answers by switching straight to s8. Recorded: the stage jumps to the hand-off within one frame. See the sequence strip below and [`start-s8-after-glod-done`](../screenshots/components/app/start-s8-after-glod-done__natt__desktop.webp). On `/create` the same call does `router.replace('/reader/…')`, so the finale can show only while the reader route loads (not observable here). The book and caption were therefore captured FORCED: classes `show`/`glod-climax` were added and geometry was set with the formula above, on a live stage in the nearlyReady state ([`start-s7-glod-finale--forced`](../screenshots/components/app/start-s7-glod-finale--forced__natt__desktop.webp), [`start-s7-glod-book--forced`](../screenshots/components/app/start-s7-glod-book--forced__natt__desktop.png), [`start-s7-glod-caption--forced`](../screenshots/components/app/start-s7-glod-caption--forced__morgon__desktop.png), hover [`start-s7-glod-open--hover--forced`](../screenshots/components/app/start-s7-glod-open--hover--forced__natt__desktop.png)). The spark choreography could not be captured, because it runs only together with the hand-off.
+**In the shipped /start flow this finale is never seen.** The effect that starts the climax also calls `onFinaleSettled` in the same tick ([`2j_-r8q4tgdka.js @40128`](../source/js/2j_-r8q4tgdka.js), `R.current?.startClimax(),er.current()`), and `/start` answers by switching straight to s8. Recorded: the stage jumps to the hand-off within one frame. See the sequence strip below and [`start-s8-after-glod-done`](../screenshots/components/app/start-s8-after-glod-done__natt__desktop.webp). On `/create` the same call does `router.replace('/reader/…')`, so the finale can show only while the reader route loads (not observable here). The book and caption were therefore captured FORCED: classes `show`/`glod-climax` were added and geometry was set with the formula above, on a live stage in the nearlyReady state ([`start-s7-glod-finale--forced`](../screenshots/components/app/start-s7-glod-finale--forced__natt__desktop.webp), [`start-s7-glod-book--forced`](../screenshots/components/app/start-s7-glod-book--forced__natt__desktop.webp), [`start-s7-glod-caption--forced`](../screenshots/components/app/start-s7-glod-caption--forced__morgon__desktop.png), hover [`start-s7-glod-open--hover--forced`](../screenshots/components/app/start-s7-glod-open--hover--forced__natt__desktop.png)). The spark choreography could not be captured, because it runs only together with the hand-off.
 
 ![finale forced](../screenshots/components/app/start-s7-glod-finale--forced__natt__desktop.webp)
 
@@ -1104,13 +1104,13 @@ The cover art (`.glod-book-art`) is an inline SVG vignette: a night sky `#0d0a24
 
 [`start-s7-glod-sequence__natt__desktop.webm`](../screenshots/components/app/start-s7-glod-sequence__natt__desktop.webm) and [`__morgon__desktop.webm`](../screenshots/components/app/start-s7-glod-sequence__morgon__desktop.webm) (1440×900, 25 fps, about 35 s) record the mocked job going queued (3 s) → making (7 s) → nearlyReady (7 s) → done. The fire visibly grows from the low to the high level, the board's dots advance, and then the screen cuts to s8.
 
-![glod sequence](../screenshots/components/app/start-s7-glod-sequence-strip__natt__desktop.png)
+![glod sequence](../screenshots/components/app/start-s7-glod-sequence-strip__natt__desktop.webp)
 
-*[start-s7-glod-sequence-strip__natt__desktop.png](../screenshots/components/app/start-s7-glod-sequence-strip__natt__desktop.png) ([Morgon](../screenshots/components/app/start-s7-glod-sequence-strip__morgon__desktop.png)).*
+*[start-s7-glod-sequence-strip__natt__desktop.webp](../screenshots/components/app/start-s7-glod-sequence-strip__natt__desktop.webp) ([Morgon](../screenshots/components/app/start-s7-glod-sequence-strip__morgon__desktop.webp)).*
 
 ### 6.8 JobStatus: the plain (non-fire) progress card
 
-`JobStatus` without `renderActive` renders a plain glass card. `Glodvakten` always supplies `renderActive`, so on `/start` the plain card appears only in its terminal fallback. RECON: [`recon-create-jobstatus__natt__desktop.png`](../screenshots/components/app/recon-create-jobstatus__natt__desktop.png), [`recon-create-jobstatus-failed`](../screenshots/components/app/recon-create-jobstatus-failed__morgon__desktop.png).
+`JobStatus` without `renderActive` renders a plain glass card. `Glodvakten` always supplies `renderActive`, so on `/start` the plain card appears only in its terminal fallback. RECON: [`recon-create-jobstatus__natt__desktop.webp`](../screenshots/components/app/recon-create-jobstatus__natt__desktop.webp), [`recon-create-jobstatus-failed`](../screenshots/components/app/recon-create-jobstatus-failed__morgon__desktop.png).
 
 ```js
 // 2j_-r8q4tgdka.js @2270 — container styles
@@ -1192,7 +1192,7 @@ div.glass.reader[data-testid=reader-beat] > div.reader-grid[.reader-grid--illust
 - **Choices.** The prompt is a centred bold serif box. The two answers are serif buttons that lift 3 px with a violet glow on hover. The sample's S2 prompt and options are "Det hettade i Iris händer; de ville rycka i stolen. Före sagostunden hinner hon bara rita på ett ställe. Vad gör hon?" → "Gå med Mossa till den gröna mattan." / "Stanna och rita med det nya barnet i fönsterljuset." (JSON `beats[1].choice`).
 - **Narration controls.** Square 44 px buttons with **8 px radius**, the only square controls in the product, so they read as transport controls. Icons: play `M8 5v14l11-7z` (filled), pause = two 4×16 rects, restart `M4 7v5h5` + `M5.5 16a8 8 0 1 0 .5-9l-2 5`. In listen mode the page auto-advances 900 ms after narration ends.
 
-Files: [`recon-reader-beat-choice`](../screenshots/components/app/recon-reader-beat-choice__morgon__mobile.png), [`-beat-illustration-only`](../screenshots/components/app/recon-reader-beat-illustration-only__natt__desktop.webp), [`-beat-next-wait`](../screenshots/components/app/recon-reader-beat-next-wait__natt__desktop.webp) ("Nästa sida" + "Nästa sida målas fortfarande."), [`-beat-the-end`](../screenshots/components/app/recon-reader-beat-the-end__morgon__desktop.webp) ("Slut"), [`-page-waiting`](../screenshots/components/app/recon-reader-page-waiting__natt__desktop.png) ("Den här sidan målas fortfarande."), [`-page-failed`](../screenshots/components/app/recon-reader-page-failed__natt__desktop.png) ("Den här sidan blev inte klar. Resten av boken är kvar." + "Tillbaka till bokhyllan").
+Files: [`recon-reader-beat-choice`](../screenshots/components/app/recon-reader-beat-choice__morgon__mobile.webp), [`-beat-illustration-only`](../screenshots/components/app/recon-reader-beat-illustration-only__natt__desktop.webp), [`-beat-next-wait`](../screenshots/components/app/recon-reader-beat-next-wait__natt__desktop.webp) ("Nästa sida" + "Nästa sida målas fortfarande."), [`-beat-the-end`](../screenshots/components/app/recon-reader-beat-the-end__morgon__desktop.webp) ("Slut"), [`-page-waiting`](../screenshots/components/app/recon-reader-page-waiting__natt__desktop.png) ("Den här sidan målas fortfarande."), [`-page-failed`](../screenshots/components/app/recon-reader-page-failed__natt__desktop.png) ("Den här sidan blev inte klar. Resten av boken är kvar." + "Tillbaka till bokhyllan").
 
 ### 7.3 Background-sound panel
 
@@ -1300,7 +1300,7 @@ Measured (natt desktop): the article is 760 × 2714 (mobile 334 × 5898). Body p
 | /integritet | I korthet · Vad vi samlar in · Fotot · Vem behandlar uppgifterna · AI-innehåll · Era rättigheter · Lagring och gallring |
 | /villkor | I korthet · Konto och samtycke · Planer, provperiod och uppsägning · Ångerrätt · För skolor · Så får tjänsten användas · Era böcker och vår motor · AI-innehåll · Vårt ansvar · Ändringar och lag |
 
-The English pages (`tf_locale=en`) invert the order: English first, "Läs på svenska" in the `<details>`. Files: [`integritet-article-head`](../screenshots/components/app/integritet-article-head__natt__desktop.png), [`integritet-section-with-list`](../screenshots/components/app/integritet-section-with-list__natt__desktop.png), [`integritet-section-with-links`](../screenshots/components/app/integritet-section-with-links__morgon__desktop.png), [`integritet-inline-link--hover`](../screenshots/components/app/integritet-inline-link--hover__natt__desktop.png) (no hover change), [`integritet-language-details--closed`](../screenshots/components/app/integritet-language-details--closed__natt__desktop.png), [`--open`](../screenshots/components/app/integritet-language-details--open__natt__desktop.png); and the same set for `villkor-*`.
+The English pages (`tf_locale=en`) invert the order: English first, "Läs på svenska" in the `<details>`. Files: [`integritet-article-head`](../screenshots/components/app/integritet-article-head__natt__desktop.webp), [`integritet-section-with-list`](../screenshots/components/app/integritet-section-with-list__natt__desktop.webp), [`integritet-section-with-links`](../screenshots/components/app/integritet-section-with-links__morgon__desktop.png), [`integritet-inline-link--hover`](../screenshots/components/app/integritet-inline-link--hover__natt__desktop.png) (no hover change), [`integritet-language-details--closed`](../screenshots/components/app/integritet-language-details--closed__natt__desktop.png), [`--open`](../screenshots/components/app/integritet-language-details--open__natt__desktop.png); and the same set for `villkor-*`.
 
 **Read:** the legal text is set as a calm letter. Body copy is in the muted lilac `--card-sub` rather than the brighter `--prose-ink`, and headings are small bold grotesk rather than display serif. The plain-language tone ("Vi är Tale Forge AB, ett litet svenskt företag i Värnamo") and the honest disclosures ("Vi kan inte lova en bestämd raderingstid", "dela bara boklänkar med personer ni litar på") are part of the brand voice.
 
@@ -1324,10 +1324,10 @@ English: "Page not found" / "This page wandered off into the story world." / "Ba
 
 | Route | Title | What it is | Files |
 |---|---|---|---|
-| `/bokmassan/saga` | Berättarstugan | **Chooser**: kicker "TALE FORGE · BOKMÄSSAN", h1 "Vad vill ni göra först?", three tall picture cards: "SKAPA TILLSAMMANS / Gör er egen saga", "BÖRJA DIREKT / Läs en färdig saga", "TÄVLA / Vinn 3 månader". Each opens in a new tab. | [`bokmassan-chooser-viewport`](../screenshots/components/app/bokmassan-chooser-viewport__natt__desktop.webp), [`bokmassan-chooser-paths`](../screenshots/components/app/bokmassan-chooser-paths__morgon__desktop.webp), [`bokmassan-chooser-path-card-1--hover`](../screenshots/components/app/bokmassan-chooser-path-card-1--hover__natt__desktop.png) |
-| `/bokmassan/saga/berattelser` | Sagor från Bokmässan | **Curated gallery** of 9 hand-made fair stories ("Valen som bar små berättelser", "Rävens nya hem", "Nattåget från blå mattan", "Stjärnan som inte vågade lysa", "Den tysta platsen", "Drakens felknut", "Glasspinnens stora rymning", "Den försvunna bokstaven", "När mattan blev hav"), with a starry hero banner and 3:2 cover cards | [`bokmassan-gallery-viewport`](../screenshots/components/app/bokmassan-gallery-viewport__natt__desktop.webp), [`bokmassan-gallery-book-card`](../screenshots/components/app/bokmassan-gallery-book-card__natt__desktop.png), [`--hover`](../screenshots/components/app/bokmassan-gallery-book-card--hover__morgon__desktop.png) |
-| `/bokmassan/saga/berattelser/{slug}` | (story title) | **Curated reader** (live). Hero banner, sticky page nav with gold progress dots, a picture + text spread, a pulsing **clue pin** on the image that opens a zoom dialog, an audio panel ("Lyssna på sidan · Berättad av Sanna"), the pill "Fortsätt äventyret →", a gold-tinted choice box, ending actions | [`bokmassan-reader-viewport`](../screenshots/components/app/bokmassan-reader-viewport__natt__desktop.webp), [`-reader-head`](../screenshots/components/app/bokmassan-reader-head__natt__desktop.png), [`-reader-nav`](../screenshots/components/app/bokmassan-reader-nav__morgon__desktop.png), [`-reader-spread`](../screenshots/components/app/bokmassan-reader-spread__natt__desktop.webp), [`-reader-art-clue`](../screenshots/components/app/bokmassan-reader-art-clue__natt__desktop.webp), [`-reader-clue-dialog`](../screenshots/components/app/bokmassan-reader-clue-dialog__natt__desktop.webp), [`-reader-audio-panel`](../screenshots/components/app/bokmassan-reader-audio-panel__natt__desktop.png), [`-reader-forward`](../screenshots/components/app/bokmassan-reader-forward__natt__desktop.png), [`-reader-choice-box`](../screenshots/components/app/bokmassan-reader-choice-box__natt__desktop.png), [`--hover`](../screenshots/components/app/bokmassan-reader-choice-box--hover__natt__desktop.png), [`-reader-after-choice`](../screenshots/components/app/bokmassan-reader-after-choice__natt__desktop.webp), [`-reader-ending-actions`](../screenshots/components/app/bokmassan-reader-ending-actions__natt__desktop.png) |
-| `/bokmassan/saga?view=skapa` | Berättarstugan | **Fair create form**: child name, age band, adult name and relation, photo mode, camera capture, two consent checkboxes, an optional "Anpassa sagan" (wish, 6 fair-only art styles: Filmisk gouache, Pappersteater, Leranimering, Färgstarkt bläck, Lysande glasmosaik, Nordiskt träsnitt; 5 voices: Sanna, Brage, Johnny, Mira, Janne). Submitting empty triggers native "Please fill out this field." on the first required input. **Never submitted** (it creates an anonymous account and a paid generation). | [`bokmassan-create-viewport`](../screenshots/components/app/bokmassan-create-viewport__natt__desktop.webp), [`bokmassan-create-form`](../screenshots/components/app/bokmassan-create-form__natt__desktop.png), [`bokmassan-create-empty-submit`](../screenshots/components/app/bokmassan-create-empty-submit__natt__desktop.png) |
+| `/bokmassan/saga` | Berättarstugan | **Chooser**: kicker "TALE FORGE · BOKMÄSSAN", h1 "Vad vill ni göra först?", three tall picture cards: "SKAPA TILLSAMMANS / Gör er egen saga", "BÖRJA DIREKT / Läs en färdig saga", "TÄVLA / Vinn 3 månader". Each opens in a new tab. | [`bokmassan-chooser-viewport`](../screenshots/components/app/bokmassan-chooser-viewport__natt__desktop.webp), [`bokmassan-chooser-paths`](../screenshots/components/app/bokmassan-chooser-paths__morgon__desktop.webp), [`bokmassan-chooser-path-card-1--hover`](../screenshots/components/app/bokmassan-chooser-path-card-1--hover__natt__desktop.webp) |
+| `/bokmassan/saga/berattelser` | Sagor från Bokmässan | **Curated gallery** of 9 hand-made fair stories ("Valen som bar små berättelser", "Rävens nya hem", "Nattåget från blå mattan", "Stjärnan som inte vågade lysa", "Den tysta platsen", "Drakens felknut", "Glasspinnens stora rymning", "Den försvunna bokstaven", "När mattan blev hav"), with a starry hero banner and 3:2 cover cards | [`bokmassan-gallery-viewport`](../screenshots/components/app/bokmassan-gallery-viewport__natt__desktop.webp), [`bokmassan-gallery-book-card`](../screenshots/components/app/bokmassan-gallery-book-card__natt__desktop.webp), [`--hover`](../screenshots/components/app/bokmassan-gallery-book-card--hover__morgon__desktop.webp) |
+| `/bokmassan/saga/berattelser/{slug}` | (story title) | **Curated reader** (live). Hero banner, sticky page nav with gold progress dots, a picture + text spread, a pulsing **clue pin** on the image that opens a zoom dialog, an audio panel ("Lyssna på sidan · Berättad av Sanna"), the pill "Fortsätt äventyret →", a gold-tinted choice box, ending actions | [`bokmassan-reader-viewport`](../screenshots/components/app/bokmassan-reader-viewport__natt__desktop.webp), [`-reader-head`](../screenshots/components/app/bokmassan-reader-head__natt__desktop.webp), [`-reader-nav`](../screenshots/components/app/bokmassan-reader-nav__morgon__desktop.png), [`-reader-spread`](../screenshots/components/app/bokmassan-reader-spread__natt__desktop.webp), [`-reader-art-clue`](../screenshots/components/app/bokmassan-reader-art-clue__natt__desktop.webp), [`-reader-clue-dialog`](../screenshots/components/app/bokmassan-reader-clue-dialog__natt__desktop.webp), [`-reader-audio-panel`](../screenshots/components/app/bokmassan-reader-audio-panel__natt__desktop.png), [`-reader-forward`](../screenshots/components/app/bokmassan-reader-forward__natt__desktop.png), [`-reader-choice-box`](../screenshots/components/app/bokmassan-reader-choice-box__natt__desktop.png), [`--hover`](../screenshots/components/app/bokmassan-reader-choice-box--hover__natt__desktop.png), [`-reader-after-choice`](../screenshots/components/app/bokmassan-reader-after-choice__natt__desktop.webp), [`-reader-ending-actions`](../screenshots/components/app/bokmassan-reader-ending-actions__natt__desktop.png) |
+| `/bokmassan/saga?view=skapa` | Berättarstugan | **Fair create form**: child name, age band, adult name and relation, photo mode, camera capture, two consent checkboxes, an optional "Anpassa sagan" (wish, 6 fair-only art styles: Filmisk gouache, Pappersteater, Leranimering, Färgstarkt bläck, Lysande glasmosaik, Nordiskt träsnitt; 5 voices: Sanna, Brage, Johnny, Mira, Janne). Submitting empty triggers native "Please fill out this field." on the first required input. **Never submitted** (it creates an anonymous account and a paid generation). | [`bokmassan-create-viewport`](../screenshots/components/app/bokmassan-create-viewport__natt__desktop.webp), [`bokmassan-create-form`](../screenshots/components/app/bokmassan-create-form__natt__desktop.webp), [`bokmassan-create-empty-submit`](../screenshots/components/app/bokmassan-create-empty-submit__natt__desktop.png) |
 | `/bokmassan/tavling` | Tale Forge – Äventyr värda att prata om | **Contest landing**, a separate stand-alone page with its own inline stylesheet, its own icon logo (an open book with stars) and its own tokens. Name + e-mail form "Var med i tävlingen" (empty submit → native validation on "name"). | [`bokmassan-contest-viewport`](../screenshots/components/app/bokmassan-contest-viewport__natt__desktop.webp), [`bokmassan-contest-form`](../screenshots/components/app/bokmassan-contest-form__natt__desktop.png), [`--empty-submit`](../screenshots/components/app/bokmassan-contest-form--empty-submit__natt__mobile.png) |
 
 Key CSS from the fair modules (class prefixes shortened: `chooser-module__TUtL9G__` → `ch-`, `curated-module__0dpsSW__` → `c-`):
@@ -1472,7 +1472,7 @@ All app animations above are disabled or flattened under `prefers-reduced-motion
 
 Observed facts; consequences are marked **Read:**.
 
-1. **Full-width buttons with left-aligned labels.** `.btn` sets no `justify-content`. In the onboarding step cards the primary "Vidare" is stretched by the flex column, and its label sits at the left edge ([`start-s1-stepcard--filled__natt__desktop.png`](../screenshots/components/app/start-s1-stepcard--filled__natt__desktop.png), [`start-s2-stepcard--attested`](../screenshots/components/app/start-s2-stepcard--attested__natt__desktop.png), [`start-s3-build`](../screenshots/components/app/start-s3-build__natt__desktop.webp)). AuthForm avoids this with inline `justify-content:center`.
+1. **Full-width buttons with left-aligned labels.** `.btn` sets no `justify-content`. In the onboarding step cards the primary "Vidare" is stretched by the flex column, and its label sits at the left edge ([`start-s1-stepcard--filled__natt__desktop.webp`](../screenshots/components/app/start-s1-stepcard--filled__natt__desktop.webp), [`start-s2-stepcard--attested`](../screenshots/components/app/start-s2-stepcard--attested__natt__desktop.webp), [`start-s3-build`](../screenshots/components/app/start-s3-build__natt__desktop.webp)). AuthForm avoids this with inline `justify-content:center`.
 2. **No disabled look for auth/upgrade buttons.** The signup submit is `disabled` until the attestation is ticked, but it looks identical either way. The same holds for "Loggar in..." while submitting. Only the onboarding, door, reader and friend-photo scopes define `.btn:disabled`.
 3. **`.chip` on `<button>` shows the UA button face.** "Eldljud" (Glödvakten) and "Bakgrundsljud" (reader) render as light-grey/white pills with black uppercase text until pressed ([`start-s7-glod-sound-chip__natt__desktop.png`](../screenshots/components/app/start-s7-glod-sound-chip__natt__desktop.png)). **Read:** almost certainly unintended. The pressed state (violet pill) shows the intended look.
 4. **"Glömt lösenordet?" is 13.33 px**, the UA default for buttons, because its inline style sets no font size. Every other link-like control is ≥14.4 px.
@@ -1515,7 +1515,7 @@ The numbers below are taken from the shipped CSS/JS and are given at 30 fps for 
 | 99 | line | italic Source Serif 18.9 px, speaker icon in accent, fade-up over 21 f |
 | 123 | buttons | primary + ghost pills, fade-up over 18 f |
 
-Frame: 330×440 (3:4), 6 px `--frame` border, r 26, shadow `0 30px 70px #0508148c, 0 0 60px #f5c54224`, inner background `#1a1430`. Reference video: [`start-s4-unveil__natt__desktop.webm`](../screenshots/components/app/start-s4-unveil__natt__desktop.webm). Strip: [`start-s4-unveil-strip__natt__desktop.png`](../screenshots/components/app/start-s4-unveil-strip__natt__desktop.png).
+Frame: 330×440 (3:4), 6 px `--frame` border, r 26, shadow `0 30px 70px #0508148c, 0 0 60px #f5c54224`, inner background `#1a1430`. Reference video: [`start-s4-unveil__natt__desktop.webm`](../screenshots/components/app/start-s4-unveil__natt__desktop.webm). Strip: [`start-s4-unveil-strip__natt__desktop.webp`](../screenshots/components/app/start-s4-unveil-strip__natt__desktop.webp).
 
 ### 16.2 "The waiting fire" (book baking)
 
@@ -1550,28 +1550,28 @@ All files are in [`../screenshots/components/app/`](../screenshots/components/ap
 
 | File stem | Variants | Format |
 |---|---|---|
-| [`auth-states-sheet`](../screenshots/components/app/auth-states-sheet__natt__desktop.png) | morgon/desktop, natt/desktop | png |
-| [`start-flow-map`](../screenshots/components/app/start-flow-map__natt__desktop.png) | morgon/desktop, natt/desktop | png |
-| [`start-s4-unveil-strip`](../screenshots/components/app/start-s4-unveil-strip__natt__desktop.png) | morgon/desktop, natt/desktop | png |
-| [`start-s7-glod-sequence-strip`](../screenshots/components/app/start-s7-glod-sequence-strip__natt__desktop.png) | morgon/desktop, natt/desktop | png |
-| [`start-s7-glod-states-sheet`](../screenshots/components/app/start-s7-glod-states-sheet__natt__desktop.png) | ×4 | png |
+| [`auth-states-sheet`](../screenshots/components/app/auth-states-sheet__natt__desktop.webp) | morgon/desktop, natt/desktop | png |
+| [`start-flow-map`](../screenshots/components/app/start-flow-map__natt__desktop.webp) | morgon/desktop, natt/desktop | png |
+| [`start-s4-unveil-strip`](../screenshots/components/app/start-s4-unveil-strip__natt__desktop.webp) | morgon/desktop, natt/desktop | png |
+| [`start-s7-glod-sequence-strip`](../screenshots/components/app/start-s7-glod-sequence-strip__natt__desktop.webp) | morgon/desktop, natt/desktop | png |
+| [`start-s7-glod-states-sheet`](../screenshots/components/app/start-s7-glod-states-sheet__natt__desktop.webp) | ×4 | png |
 
 **/login**
 
 | File stem | Variants | Format |
 |---|---|---|
-| [`login-card--error`](../screenshots/components/app/login-card--error__natt__desktop.png) | ×4 | png |
-| [`login-card--submitting`](../screenshots/components/app/login-card--submitting__natt__desktop.png) | ×4 | png |
-| [`login-card-en`](../screenshots/components/app/login-card-en__natt__desktop.png) | morgon/mobile, natt/desktop | png |
-| [`login-card`](../screenshots/components/app/login-card__natt__desktop.png) | ×4 | png |
+| [`login-card--error`](../screenshots/components/app/login-card--error__natt__desktop.webp) | ×4 | png |
+| [`login-card--submitting`](../screenshots/components/app/login-card--submitting__natt__desktop.webp) | ×4 | png |
+| [`login-card-en`](../screenshots/components/app/login-card-en__natt__desktop.webp) | morgon/mobile, natt/desktop | png |
+| [`login-card`](../screenshots/components/app/login-card__natt__desktop.webp) | ×4 | png |
 | [`login-field--focus`](../screenshots/components/app/login-field--focus__natt__desktop.png) | ×4 | png |
 | [`login-forgot-link--hover`](../screenshots/components/app/login-forgot-link--hover__natt__desktop.png) | morgon/desktop, natt/desktop | png |
 | [`login-form--empty-submit`](../screenshots/components/app/login-form--empty-submit__natt__desktop.png) | ×4 | png |
 | [`login-form--malformed-email`](../screenshots/components/app/login-form--malformed-email__natt__desktop.png) | ×4 | png |
 | [`login-google-button--hover`](../screenshots/components/app/login-google-button--hover__natt__desktop.png) | morgon/desktop, natt/desktop | png |
 | [`login-password--revealed`](../screenshots/components/app/login-password--revealed__natt__desktop.png) | ×4 | png |
-| [`login-recovery--invalid-email`](../screenshots/components/app/login-recovery--invalid-email__natt__desktop.png) | ×4 | png |
-| [`login-recovery--sent`](../screenshots/components/app/login-recovery--sent__natt__desktop.png) | ×4 | png |
+| [`login-recovery--invalid-email`](../screenshots/components/app/login-recovery--invalid-email__natt__desktop.webp) | ×4 | png |
+| [`login-recovery--sent`](../screenshots/components/app/login-recovery--sent__natt__desktop.webp) | ×4 | png |
 | [`login-recovery`](../screenshots/components/app/login-recovery__natt__desktop.png) | ×4 | png |
 | [`login-submit--hover`](../screenshots/components/app/login-submit--hover__natt__desktop.png) | morgon/desktop, natt/desktop | png |
 
@@ -1581,10 +1581,10 @@ All files are in [`../screenshots/components/app/`](../screenshots/components/ap
 |---|---|---|
 | [`signup-attest--checked`](../screenshots/components/app/signup-attest--checked__natt__desktop.png) | ×4 | png |
 | [`signup-attest--unchecked`](../screenshots/components/app/signup-attest--unchecked__natt__desktop.png) | ×4 | png |
-| [`signup-card--confirm-notice`](../screenshots/components/app/signup-card--confirm-notice__natt__desktop.png) | ×4 | png |
-| [`signup-card--error-exists`](../screenshots/components/app/signup-card--error-exists__natt__desktop.png) | ×4 | png |
-| [`signup-card-en`](../screenshots/components/app/signup-card-en__natt__desktop.png) | morgon/mobile, natt/desktop | png |
-| [`signup-card`](../screenshots/components/app/signup-card__natt__desktop.png) | ×4 | png |
+| [`signup-card--confirm-notice`](../screenshots/components/app/signup-card--confirm-notice__natt__desktop.webp) | ×4 | png |
+| [`signup-card--error-exists`](../screenshots/components/app/signup-card--error-exists__natt__desktop.webp) | ×4 | png |
+| [`signup-card-en`](../screenshots/components/app/signup-card-en__natt__desktop.webp) | morgon/mobile, natt/desktop | png |
+| [`signup-card`](../screenshots/components/app/signup-card__natt__desktop.webp) | ×4 | png |
 
 **/uppgradera**
 
@@ -1594,7 +1594,7 @@ All files are in [`../screenshots/components/app/`](../screenshots/components/ap
 | [`uppgradera-billing-toggle--monthly`](../screenshots/components/app/uppgradera-billing-toggle--monthly__natt__desktop.png) | ×4 | png |
 | [`uppgradera-billing-toggle--yearly`](../screenshots/components/app/uppgradera-billing-toggle--yearly__natt__desktop.png) | ×4 | png |
 | [`uppgradera-column--schools-open`](../screenshots/components/app/uppgradera-column--schools-open__natt__desktop.webp) | ×4 | png/webp |
-| [`uppgradera-included-card`](../screenshots/components/app/uppgradera-included-card__natt__desktop.png) | ×4 | png |
+| [`uppgradera-included-card`](../screenshots/components/app/uppgradera-included-card__natt__desktop.webp) | ×4 | png |
 | [`uppgradera-intro-card`](../screenshots/components/app/uppgradera-intro-card__natt__desktop.png) | ×4 | png |
 | [`uppgradera-plan-cta--hover`](../screenshots/components/app/uppgradera-plan-cta--hover__natt__desktop.png) | morgon/desktop, natt/desktop | png |
 | [`uppgradera-plan-family--monthly`](../screenshots/components/app/uppgradera-plan-family--monthly__natt__desktop.png) | ×4 | png |
@@ -1612,7 +1612,7 @@ All files are in [`../screenshots/components/app/`](../screenshots/components/ap
 | [`start-cta-row--primary-hover`](../screenshots/components/app/start-cta-row--primary-hover__natt__desktop.png) | morgon/desktop, natt/desktop | png |
 | [`start-cta-row`](../screenshots/components/app/start-cta-row__natt__desktop.png) | ×4 | png |
 | [`start-fan`](../screenshots/components/app/start-fan__natt__desktop.webp) | ×4 | png/webp |
-| [`start-gallery-open`](../screenshots/components/app/start-gallery-open__natt__desktop.png) | ×4 | png |
+| [`start-gallery-open`](../screenshots/components/app/start-gallery-open__natt__desktop.webp) | ×4 | png |
 | [`start-gbook--hover`](../screenshots/components/app/start-gbook--hover__natt__desktop.png) | morgon/desktop, natt/desktop | png |
 | [`start-gbook`](../screenshots/components/app/start-gbook__natt__desktop.png) | ×4 | png |
 | [`start-hero-left--gallery-open`](../screenshots/components/app/start-hero-left--gallery-open__natt__desktop.webp) | ×4 | png/webp |
@@ -1621,12 +1621,12 @@ All files are in [`../screenshots/components/app/`](../screenshots/components/ap
 | [`start-s0-viewport--gallery-open`](../screenshots/components/app/start-s0-viewport--gallery-open__natt__desktop.webp) | ×4 | webp |
 | [`start-s1-age-row--hover`](../screenshots/components/app/start-s1-age-row--hover__natt__desktop.png) | morgon/desktop, natt/desktop | png |
 | [`start-s1-field--focus`](../screenshots/components/app/start-s1-field--focus__natt__desktop.png) | ×4 | png |
-| [`start-s1-stepcard--filled`](../screenshots/components/app/start-s1-stepcard--filled__natt__desktop.png) | ×4 | png |
-| [`start-s1-stepcard--moderation-error`](../screenshots/components/app/start-s1-stepcard--moderation-error__natt__desktop.png) | ×4 | png |
-| [`start-s1-stepcard`](../screenshots/components/app/start-s1-stepcard__natt__desktop.png) | ×4 | png |
+| [`start-s1-stepcard--filled`](../screenshots/components/app/start-s1-stepcard--filled__natt__desktop.webp) | ×4 | png |
+| [`start-s1-stepcard--moderation-error`](../screenshots/components/app/start-s1-stepcard--moderation-error__natt__desktop.webp) | ×4 | png |
+| [`start-s1-stepcard`](../screenshots/components/app/start-s1-stepcard__natt__desktop.webp) | ×4 | png |
 | [`start-s2-privacy`](../screenshots/components/app/start-s2-privacy__natt__desktop.png) | ×4 | png |
-| [`start-s2-stepcard--attested`](../screenshots/components/app/start-s2-stepcard--attested__natt__desktop.png) | ×4 | png |
-| [`start-s2-stepcard`](../screenshots/components/app/start-s2-stepcard__natt__desktop.png) | ×4 | png |
+| [`start-s2-stepcard--attested`](../screenshots/components/app/start-s2-stepcard--attested__natt__desktop.webp) | ×4 | png |
+| [`start-s2-stepcard`](../screenshots/components/app/start-s2-stepcard__natt__desktop.webp) | ×4 | png |
 | [`start-s2-upload--hover`](../screenshots/components/app/start-s2-upload--hover__natt__desktop.png) | morgon/desktop, natt/desktop | png |
 | [`start-strip--s1`](../screenshots/components/app/start-strip--s1__natt__desktop.png) | ×4 | png |
 | [`start-strip--s2`](../screenshots/components/app/start-strip--s2__natt__desktop.png) | ×4 | png |
@@ -1656,8 +1656,8 @@ All files are in [`../screenshots/components/app/`](../screenshots/components/ap
 | [`start-s4-unveil-5-revealed`](../screenshots/components/app/start-s4-unveil-5-revealed__natt__desktop.webp) | ×4 | png/webp |
 | [`start-s4-unveil-button--ready-pop`](../screenshots/components/app/start-s4-unveil-button--ready-pop__natt__desktop.png) | ×4 | png |
 | [`start-s4-unveil`](../screenshots/components/app/start-s4-unveil__natt__desktop.webm) | morgon/desktop, natt/desktop | webm |
-| [`start-s5-account--attested-focus`](../screenshots/components/app/start-s5-account--attested-focus__natt__desktop.png) | ×4 | png |
-| [`start-s5-account`](../screenshots/components/app/start-s5-account__natt__desktop.png) | ×4 | png |
+| [`start-s5-account--attested-focus`](../screenshots/components/app/start-s5-account--attested-focus__natt__desktop.webp) | ×4 | png |
+| [`start-s5-account`](../screenshots/components/app/start-s5-account__natt__desktop.webp) | ×4 | png |
 | [`start-s6-door-card--button-hover`](../screenshots/components/app/start-s6-door-card--button-hover__natt__desktop.png) | morgon/desktop, natt/desktop | png |
 | [`start-s6-door-card`](../screenshots/components/app/start-s6-door-card__natt__desktop.png) | ×4 | png |
 | [`start-s6-door-grid`](../screenshots/components/app/start-s6-door-grid__natt__desktop.webp) | ×4 | webp |
@@ -1666,14 +1666,14 @@ All files are in [`../screenshots/components/app/`](../screenshots/components/ap
 | [`start-s6-launch-sheet`](../screenshots/components/app/start-s6-launch-sheet__natt__desktop.webp) | ×4 | png/webp |
 | [`start-s6-launch`](../screenshots/components/app/start-s6-launch__natt__desktop.webp) | ×4 | webp |
 | [`start-s6-recipe--chip-hover`](../screenshots/components/app/start-s6-recipe--chip-hover__natt__desktop.png) | morgon/desktop, natt/desktop | png |
-| [`start-s6-recipe`](../screenshots/components/app/start-s6-recipe__natt__desktop.png) | ×4 | png |
+| [`start-s6-recipe`](../screenshots/components/app/start-s6-recipe__natt__desktop.webp) | ×4 | png |
 | [`start-s6-sheet-language--panel`](../screenshots/components/app/start-s6-sheet-language--panel__natt__desktop.png) | ×4 | png |
 | [`start-s6-sheet-language`](../screenshots/components/app/start-s6-sheet-language__natt__desktop.webp) | ×4 | png/webp |
 | [`start-s6-sheet-style--panel`](../screenshots/components/app/start-s6-sheet-style--panel__natt__desktop.webp) | ×4 | png/webp |
 | [`start-s6-sheet-style`](../screenshots/components/app/start-s6-sheet-style__natt__desktop.webp) | ×4 | png/webp |
 | [`start-s6-sheet-voice--panel`](../screenshots/components/app/start-s6-sheet-voice--panel__natt__desktop.png) | ×4 | png |
 | [`start-s6-sheet-voice`](../screenshots/components/app/start-s6-sheet-voice__natt__desktop.webp) | ×4 | png/webp |
-| [`start-s6-world-band`](../screenshots/components/app/start-s6-world-band__natt__desktop.png) | ×4 | png |
+| [`start-s6-world-band`](../screenshots/components/app/start-s6-world-band__natt__desktop.webp) | ×4 | png |
 | [`start-s8-after-glod-done`](../screenshots/components/app/start-s8-after-glod-done__natt__desktop.webp) | ×4 | png/webp |
 | [`start-s8-handoff`](../screenshots/components/app/start-s8-handoff__natt__desktop.webp) | ×4 | png/webp |
 
@@ -1681,7 +1681,7 @@ All files are in [`../screenshots/components/app/`](../screenshots/components/ap
 
 | File stem | Variants | Format |
 |---|---|---|
-| [`start-s7-glod-book--forced`](../screenshots/components/app/start-s7-glod-book--forced__natt__desktop.png) | ×4 | png |
+| [`start-s7-glod-book--forced`](../screenshots/components/app/start-s7-glod-book--forced__natt__desktop.webp) | ×4 | png |
 | [`start-s7-glod-caption--forced`](../screenshots/components/app/start-s7-glod-caption--forced__natt__desktop.png) | ×4 | png |
 | [`start-s7-glod-finale--forced`](../screenshots/components/app/start-s7-glod-finale--forced__natt__desktop.webp) | ×4 | png/webp |
 | [`start-s7-glod-memory-note--forced`](../screenshots/components/app/start-s7-glod-memory-note--forced__natt__desktop.webp) | ×4 | webp |
@@ -1708,7 +1708,7 @@ All files are in [`../screenshots/components/app/`](../screenshots/components/ap
 | File stem | Variants | Format |
 |---|---|---|
 | [`recon-create-jobstatus-failed`](../screenshots/components/app/recon-create-jobstatus-failed__natt__desktop.png) | ×4 | png |
-| [`recon-create-jobstatus`](../screenshots/components/app/recon-create-jobstatus__natt__desktop.png) | ×4 | png |
+| [`recon-create-jobstatus`](../screenshots/components/app/recon-create-jobstatus__natt__desktop.webp) | ×4 | png |
 | [`recon-create-worldband-memory`](../screenshots/components/app/recon-create-worldband-memory__natt__desktop.webp) | ×4 | png/webp |
 | [`recon-reader-beat-choice`](../screenshots/components/app/recon-reader-beat-choice__natt__desktop.webp) | ×4 | png/webp |
 | [`recon-reader-beat-illustration-only`](../screenshots/components/app/recon-reader-beat-illustration-only__natt__desktop.webp) | ×4 | png/webp |
@@ -1725,13 +1725,13 @@ All files are in [`../screenshots/components/app/`](../screenshots/components/ap
 
 | File stem | Variants | Format |
 |---|---|---|
-| [`integritet-article-head`](../screenshots/components/app/integritet-article-head__natt__desktop.png) | ×4 | png |
+| [`integritet-article-head`](../screenshots/components/app/integritet-article-head__natt__desktop.webp) | ×4 | png |
 | [`integritet-inline-link--hover`](../screenshots/components/app/integritet-inline-link--hover__natt__desktop.png) | natt/desktop | png |
 | [`integritet-language-details--closed`](../screenshots/components/app/integritet-language-details--closed__natt__desktop.png) | ×4 | png |
 | [`integritet-language-details--open`](../screenshots/components/app/integritet-language-details--open__natt__desktop.png) | ×4 | png |
 | [`integritet-section-with-links`](../screenshots/components/app/integritet-section-with-links__natt__desktop.png) | ×4 | png |
-| [`integritet-section-with-list`](../screenshots/components/app/integritet-section-with-list__natt__desktop.png) | ×4 | png |
-| [`villkor-article-head`](../screenshots/components/app/villkor-article-head__natt__desktop.png) | ×4 | png |
+| [`integritet-section-with-list`](../screenshots/components/app/integritet-section-with-list__natt__desktop.webp) | ×4 | png |
+| [`villkor-article-head`](../screenshots/components/app/villkor-article-head__natt__desktop.webp) | ×4 | png |
 | [`villkor-inline-link--hover`](../screenshots/components/app/villkor-inline-link--hover__natt__desktop.png) | natt/desktop | png |
 | [`villkor-language-details--closed`](../screenshots/components/app/villkor-language-details--closed__natt__desktop.png) | ×4 | png |
 | [`villkor-language-details--open`](../screenshots/components/app/villkor-language-details--open__natt__desktop.png) | ×4 | png |
@@ -1747,17 +1747,17 @@ All files are in [`../screenshots/components/app/`](../screenshots/components/ap
 
 | File stem | Variants | Format |
 |---|---|---|
-| [`bokmassan-chooser-path-card-1--hover`](../screenshots/components/app/bokmassan-chooser-path-card-1--hover__natt__desktop.png) | morgon/desktop, natt/desktop | png |
+| [`bokmassan-chooser-path-card-1--hover`](../screenshots/components/app/bokmassan-chooser-path-card-1--hover__natt__desktop.webp) | morgon/desktop, natt/desktop | png |
 | [`bokmassan-chooser-paths`](../screenshots/components/app/bokmassan-chooser-paths__natt__desktop.webp) | ×4 | webp |
 | [`bokmassan-chooser-viewport`](../screenshots/components/app/bokmassan-chooser-viewport__natt__desktop.webp) | ×4 | webp |
 | [`bokmassan-contest-form--empty-submit`](../screenshots/components/app/bokmassan-contest-form--empty-submit__natt__desktop.png) | morgon/desktop, natt/desktop, natt/mobile | png |
 | [`bokmassan-contest-form`](../screenshots/components/app/bokmassan-contest-form__natt__desktop.png) | morgon/desktop, natt/desktop, natt/mobile | png |
 | [`bokmassan-contest-viewport`](../screenshots/components/app/bokmassan-contest-viewport__natt__desktop.webp) | morgon/desktop, natt/desktop, natt/mobile | png/webp |
 | [`bokmassan-create-empty-submit`](../screenshots/components/app/bokmassan-create-empty-submit__natt__desktop.png) | morgon/desktop, natt/desktop, natt/mobile | png |
-| [`bokmassan-create-form`](../screenshots/components/app/bokmassan-create-form__natt__desktop.png) | morgon/desktop, natt/desktop, natt/mobile | png |
+| [`bokmassan-create-form`](../screenshots/components/app/bokmassan-create-form__natt__desktop.webp) | morgon/desktop, natt/desktop, natt/mobile | png |
 | [`bokmassan-create-viewport`](../screenshots/components/app/bokmassan-create-viewport__natt__desktop.webp) | morgon/desktop, natt/desktop, natt/mobile | png/webp |
-| [`bokmassan-gallery-book-card--hover`](../screenshots/components/app/bokmassan-gallery-book-card--hover__natt__desktop.png) | morgon/desktop, natt/desktop | png |
-| [`bokmassan-gallery-book-card`](../screenshots/components/app/bokmassan-gallery-book-card__natt__desktop.png) | ×4 | png |
+| [`bokmassan-gallery-book-card--hover`](../screenshots/components/app/bokmassan-gallery-book-card--hover__natt__desktop.webp) | morgon/desktop, natt/desktop | png |
+| [`bokmassan-gallery-book-card`](../screenshots/components/app/bokmassan-gallery-book-card__natt__desktop.webp) | ×4 | png |
 | [`bokmassan-gallery-viewport`](../screenshots/components/app/bokmassan-gallery-viewport__natt__desktop.webp) | ×4 | webp |
 | [`bokmassan-reader-after-choice`](../screenshots/components/app/bokmassan-reader-after-choice__natt__desktop.webp) | ×4 | png/webp |
 | [`bokmassan-reader-art-clue`](../screenshots/components/app/bokmassan-reader-art-clue__natt__desktop.webp) | ×4 | png/webp |
@@ -1767,7 +1767,7 @@ All files are in [`../screenshots/components/app/`](../screenshots/components/ap
 | [`bokmassan-reader-clue-dialog`](../screenshots/components/app/bokmassan-reader-clue-dialog__natt__desktop.webp) | ×4 | png/webp |
 | [`bokmassan-reader-ending-actions`](../screenshots/components/app/bokmassan-reader-ending-actions__natt__desktop.png) | ×4 | png |
 | [`bokmassan-reader-forward`](../screenshots/components/app/bokmassan-reader-forward__natt__desktop.png) | ×4 | png |
-| [`bokmassan-reader-head`](../screenshots/components/app/bokmassan-reader-head__natt__desktop.png) | ×4 | png |
+| [`bokmassan-reader-head`](../screenshots/components/app/bokmassan-reader-head__natt__desktop.webp) | ×4 | png |
 | [`bokmassan-reader-nav`](../screenshots/components/app/bokmassan-reader-nav__natt__desktop.png) | ×4 | png |
 | [`bokmassan-reader-spread`](../screenshots/components/app/bokmassan-reader-spread__natt__desktop.webp) | ×4 | png/webp |
 | [`bokmassan-reader-viewport`](../screenshots/components/app/bokmassan-reader-viewport__natt__desktop.webp) | ×4 | webp |

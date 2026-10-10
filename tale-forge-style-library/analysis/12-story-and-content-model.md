@@ -549,9 +549,9 @@ The English reader mock is hard-coded (`:122-138`), and that is where the only o
 
 ### 10.1 The endings map
 
-![Endings map](../screenshots/components/landing/38-endings-map__natt__desktop.png)
+![Endings map](../screenshots/components/landing/38-endings-map__natt__desktop.webp)
 
-*[`38-endings-map__natt__desktop.png`](../screenshots/components/landing/38-endings-map__natt__desktop.png): cover thumbnail, then dots (pages), gold diamonds (choices, labelled "Val 1"/"Val 2") and medallions (endings 1–4). Path AA is lit. Engaged states: [`--ending-1-engaged`](../screenshots/components/landing/38-endings-map--ending-1-engaged__natt__desktop.png) … [`--ending-4-engaged`](../screenshots/components/landing/38-endings-map--ending-4-engaged__natt__desktop.png).*
+*[`38-endings-map__natt__desktop.webp`](../screenshots/components/landing/38-endings-map__natt__desktop.webp): cover thumbnail, then dots (pages), gold diamonds (choices, labelled "Val 1"/"Val 2") and medallions (endings 1–4). Path AA is lit. Engaged states: [`--ending-1-engaged`](../screenshots/components/landing/38-endings-map--ending-1-engaged__natt__desktop.webp) … [`--ending-4-engaged`](../screenshots/components/landing/38-endings-map--ending-4-engaged__natt__desktop.webp).*
 
 Geometry, verbatim from the desktop object `g` ([`landing-explainer…pretty.js:184-245`](../derived/story/js-excerpts/landing-explainer.3d9nxlx1n5pdy.m29416.pretty.js)): `viewBox: "0 0 960 540"`, `cover: { x: 50, y: 236, w: 52, h: 68, rx: 8 }`, `dotR: 6`, `haloR: 11`, ten `dots`, three `diamonds` at `[312,270]`, `[576,138]`, `[576,402]` (`diamondHalf: 13`, `diamondRx: 6`), four `medallions` at x 856 (`medallionImageR: 42`, `medallionRingR: 44`). The mobile object `u` uses `viewBox: "0 0 360 620"` and runs top to bottom (`:246-306`).
 

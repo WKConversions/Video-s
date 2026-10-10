@@ -43,9 +43,9 @@ Observed facts cite a library path, with CSS line numbers in [source/css/3q17cp_
 | Glass | `--card` navy at 68% + `blur(22px)` in natt; white at 80% + `blur(24px)` in morgon; plus a 1 px violet→gold→coral rim | :498-500, :547-549, :1110-1147 |
 | Accent | gold `#f5c542` at night, violet `#6d4fe0` / `#5b3fc7` in the morning | :496-497, :545-546 |
 
-![All pages, natt vs morgon](../derived/theming/compare/_overview__all-pages-folds.png)
+![All pages, natt vs morgon](../derived/theming/compare/_overview__all-pages-folds.webp)
 
-*[derived/theming/compare/_overview__all-pages-folds.png](../derived/theming/compare/_overview__all-pages-folds.png): the first viewport of every harvested route (sv) in both themes, desktop and mobile. Each route uses the same backdrop stack, nav and toggle.*
+*[derived/theming/compare/_overview__all-pages-folds.webp](../derived/theming/compare/_overview__all-pages-folds.webp): the first viewport of every harvested route (sv) in both themes, desktop and mobile. Each route uses the same backdrop stack, nav and toggle.*
 
 ---
 
@@ -388,9 +388,9 @@ body[data-theme="morgon"] .bg-night {
 
 Both `.bg` layers are `position: fixed`, so the plate never scrolls. Every section of the long home page is read over the same picture ([04 §1](04-layout-spacing-responsive.md)). The height is `100lvh` (the *large* viewport height): on mobile the plate already fills the screen with the browser bars collapsed, so it never jumps when they hide. `.bg-day` comes later in the DOM and paints over `.bg-night`, so a switch fades the day layer in or out over the night layer.
 
-![Night stack, desktop](../derived/theming/night-stack/layers__desktop.png)
+![Night stack, desktop](../derived/theming/night-stack/layers__desktop.webp)
 
-*[derived/theming/night-stack/layers__desktop.png](../derived/theming/night-stack/layers__desktop.png): live captures with `.wrap` hidden and layers removed by injected CSS. (A) image only, (B) + scrim, (C) as shipped, (D) image + stars without the scrim, (E) the scrim alone over `#808080` with its rendered values at 0/45/100%, (F) the starfield alone on black, with dots re-drawn and circled (at tile scale the real 1 px stars vanish). Mobile: [layers__mobile.png](../derived/theming/night-stack/layers__mobile.png).*
+*[derived/theming/night-stack/layers__desktop.webp](../derived/theming/night-stack/layers__desktop.webp): live captures with `.wrap` hidden and layers removed by injected CSS. (A) image only, (B) + scrim, (C) as shipped, (D) image + stars without the scrim, (E) the scrim alone over `#808080` with its rendered values at 0/45/100%, (F) the starfield alone on black, with dots re-drawn and circled (at tile scale the real 1 px stars vanish). Mobile: [layers__mobile.png](../derived/theming/night-stack/layers__mobile.png).*
 
 ### 5.4 The scrim
 
@@ -430,14 +430,14 @@ Live captures, content hidden, looping animations frozen at t = 0 (starfield at 
 
 | Variant | Desktop 1440×900 | Mobile 390×844 @2× |
 |---|---|---|
-| Image only | [plate__image-only__desktop.png](../derived/theming/night-stack/plate__image-only__desktop.png) | [mobile](../derived/theming/night-stack/plate__image-only__mobile.png) |
-| Image + scrim | [plate__image+scrim__desktop.png](../derived/theming/night-stack/plate__image+scrim__desktop.png) | [mobile](../derived/theming/night-stack/plate__image+scrim__mobile.png) |
-| Image + starfield (no scrim) | [plate__image+starfield__desktop.png](../derived/theming/night-stack/plate__image+starfield__desktop.png) | [mobile](../derived/theming/night-stack/plate__image+starfield__mobile.png) |
-| Full stack (as shipped) | [plate__full-stack__desktop.png](../derived/theming/night-stack/plate__full-stack__desktop.png) | [mobile](../derived/theming/night-stack/plate__full-stack__mobile.png) |
+| Image only | [plate__image-only__desktop.webp](../derived/theming/night-stack/plate__image-only__desktop.webp) | [mobile](../derived/theming/night-stack/plate__image-only__mobile.webp) |
+| Image + scrim | [plate__image+scrim__desktop.webp](../derived/theming/night-stack/plate__image+scrim__desktop.webp) | [mobile](../derived/theming/night-stack/plate__image+scrim__mobile.webp) |
+| Image + starfield (no scrim) | [plate__image+starfield__desktop.webp](../derived/theming/night-stack/plate__image+starfield__desktop.webp) | [mobile](../derived/theming/night-stack/plate__image+starfield__mobile.webp) |
+| Full stack (as shipped) | [plate__full-stack__desktop.webp](../derived/theming/night-stack/plate__full-stack__desktop.webp) | [mobile](../derived/theming/night-stack/plate__full-stack__mobile.webp) |
 | Starfield alone on black | [plate__starfield-only-on-black__desktop.png](../derived/theming/night-stack/plate__starfield-only-on-black__desktop.png) | [mobile](../derived/theming/night-stack/plate__starfield-only-on-black__mobile.png) |
 | Scrim alone over `#808080` | [plate__scrim-only-over-808080__desktop.png](../derived/theming/night-stack/plate__scrim-only-over-808080__desktop.png) | [mobile](../derived/theming/night-stack/plate__scrim-only-over-808080__mobile.png) |
 
-The morning plate as rendered (no layers to remove) was captured by the colour agent: [derived/color/backdrop-layer__morgon__desktop.png](../derived/color/backdrop-layer__morgon__desktop.png), [__mobile.png](../derived/color/backdrop-layer__morgon__mobile.png).
+The morning plate as rendered (no layers to remove) was captured by the colour agent: [derived/color/backdrop-layer__morgon__desktop.webp](../derived/color/backdrop-layer__morgon__desktop.webp), [__mobile.png](../derived/color/backdrop-layer__morgon__mobile.webp).
 
 ---
 
@@ -445,9 +445,9 @@ The morning plate as rendered (no layers to remove) was captured by the colour a
 
 ### 6.1 Night: `nebula-hero.webp`
 
-![Nebula anatomy](../derived/theming/paintings/nebula-anatomy.png)
+![Nebula anatomy](../derived/theming/paintings/nebula-anatomy.webp)
 
-*[derived/theming/paintings/nebula-anatomy.png](../derived/theming/paintings/nebula-anatomy.png): the source image with the area visible at each viewport (desktop gold, tablet blue, mobile red) and the main elements labelled (positions by eye).*
+*[derived/theming/paintings/nebula-anatomy.webp](../derived/theming/paintings/nebula-anatomy.webp): the source image with the area visible at each viewport (desktop gold, tablet blue, mobile red) and the main elements labelled (positions by eye).*
 
 **Subject.** An astronaut in a white-grey suit sits on top of a tall pile of old books. He holds an open book in his lap, and the book glows. Around him is a violet-blue nebula with teal wisps, a field of tiny stars, and large defocused gold bokeh orbs. Hills of more books stretch to the left and into the foreground. A billowing violet cloud bank rises on the right.
 
@@ -474,7 +474,7 @@ Median L* is 30.9 and median chroma 23.8. Nearly all chromatic mass is blue-viol
 **What each viewport shows** (`object-position: center 30%`; vertical crop is always zero because `cover` scales to height; image x-ranges in [crop-windows.json](../derived/theming/paintings/crop-windows.json)):
 - **Desktop 1440×900** shows x 128-2272: the whole scene minus thin side strips.
 - **Tablet 834×1112** shows x 698-1702: the astronaut's front half, the book and the nebula core.
-- **Mobile 390×844** shows x 890-1510: only the glowing book and the astronaut's legs at the left edge, then the nebula core with bokeh. On a phone the night plate is mostly gas and gold specks ([plate__image-only__mobile.png](../derived/theming/night-stack/plate__image-only__mobile.png)).
+- **Mobile 390×844** shows x 890-1510: only the glowing book and the astronaut's legs at the left edge, then the nebula core with bokeh. On a phone the night plate is mostly gas and gold specks ([plate__image-only__mobile.webp](../derived/theming/night-stack/plate__image-only__mobile.webp)).
 
 **Read:**
 - This is a cinematic 3D-render or photographic plate (volumetric clouds, bokeh, depth of field), not an illustration.
@@ -483,9 +483,9 @@ Median L* is 30.9 and median chroma 23.8. Nearly all chromatic mass is blue-viol
 
 ### 6.2 Morning: `morgon-aurora-desktop.webp`
 
-![Morning anatomy](../derived/theming/paintings/morgon-desktop-anatomy.png)
+![Morning anatomy](../derived/theming/paintings/morgon-desktop-anatomy.webp)
 
-*[derived/theming/paintings/morgon-desktop-anatomy.png](../derived/theming/paintings/morgon-desktop-anatomy.png): the desktop morning painting with the desktop and tablet windows and the main elements labelled.*
+*[derived/theming/paintings/morgon-desktop-anatomy.webp](../derived/theming/paintings/morgon-desktop-anatomy.webp): the desktop morning painting with the desktop and tablet windows and the main elements labelled.*
 
 **Subject.** A dawn sky painted wet-on-wet in watercolour on textured cold-press paper (the grain is visible across the pale centre). There is no figure and no object, only weather and plants.
 
@@ -510,9 +510,9 @@ Median chroma is only 7.0.
 
 ### 6.3 Morning, portrait: `morgon-aurora-mobile.webp`
 
-![Morning mobile anatomy](../derived/theming/paintings/morgon-mobile-anatomy.png)
+![Morning mobile anatomy](../derived/theming/paintings/morgon-mobile-anatomy.webp)
 
-*[derived/theming/paintings/morgon-mobile-anatomy.png](../derived/theming/paintings/morgon-mobile-anatomy.png).*
+*[derived/theming/paintings/morgon-mobile-anatomy.webp](../derived/theming/paintings/morgon-mobile-anatomy.webp).*
 
 This is a separate painting in the same hand and palette, not a crop:
 - The sun-burst and the sprigs move to the top band.
@@ -523,9 +523,9 @@ At 390×844 the visible window is x 128-1312 of 1440 (full height). Palette: `#F
 
 ### 6.4 Where text can sit: measured busyness
 
-![Text-safe zones](../derived/theming/paintings/text-safe-zones.png)
+![Text-safe zones](../derived/theming/paintings/text-safe-zones.webp)
 
-*[derived/theming/paintings/text-safe-zones.png](../derived/theming/paintings/text-safe-zones.png): a heat map of local contrast (standard deviation of L* in a 25×25 CSS-px window) over each rendered plate, with the home page's text and control boxes on top. Numbers are in [text-safe-zones.json](../derived/theming/paintings/text-safe-zones.json).*
+*[derived/theming/paintings/text-safe-zones.webp](../derived/theming/paintings/text-safe-zones.webp): a heat map of local contrast (standard deviation of L* in a 25×25 CSS-px window) over each rendered plate, with the home page's text and control boxes on top. Numbers are in [text-safe-zones.json](../derived/theming/paintings/text-safe-zones.json).*
 
 Mean local std of L* behind each element (lower = calmer) against the plate average:
 
@@ -570,9 +570,9 @@ The harvested frames in [screenshots/motion/](../screenshots/motion/) (`theme-to
 
 `getComputedStyle` was sampled at every frame. Both directions were captured, on desktop and mobile. Data: [crossfade-measurements.json](../derived/theming/crossfade/crossfade-measurements.json).
 
-![Natt to morgon, desktop](../derived/theming/crossfade/filmstrip__natt-to-morgon__desktop.png)
+![Natt to morgon, desktop](../derived/theming/crossfade/filmstrip__natt-to-morgon__desktop.webp)
 
-*[filmstrip__natt-to-morgon__desktop.png](../derived/theming/crossfade/filmstrip__natt-to-morgon__desktop.png): before the click, then every 50 ms. Also [morgon → natt, desktop](../derived/theming/crossfade/filmstrip__morgon-to-natt__desktop.png), [natt → morgon, mobile](../derived/theming/crossfade/filmstrip__natt-to-morgon__mobile.png), [morgon → natt, mobile](../derived/theming/crossfade/filmstrip__morgon-to-natt__mobile.png). Real-time videos (60 fps, 4 s: 1 s night, switch, 1 s morning, switch back, 1 s night): [desktop mp4](../derived/theming/crossfade/theme-switch__natt-morgon-natt__desktop__60fps.mp4), [mobile mp4](../derived/theming/crossfade/theme-switch__natt-morgon-natt__mobile__60fps.mp4).*
+*[filmstrip__natt-to-morgon__desktop.webp](../derived/theming/crossfade/filmstrip__natt-to-morgon__desktop.webp): before the click, then every 50 ms. Also [morgon → natt, desktop](../derived/theming/crossfade/filmstrip__morgon-to-natt__desktop.webp), [natt → morgon, mobile](../derived/theming/crossfade/filmstrip__natt-to-morgon__mobile.webp), [morgon → natt, mobile](../derived/theming/crossfade/filmstrip__morgon-to-natt__mobile.webp). Real-time videos (60 fps, 4 s: 1 s night, switch, 1 s morning, switch back, 1 s night): [desktop mp4](../derived/theming/crossfade/theme-switch__natt-morgon-natt__desktop__60fps.mp4), [mobile mp4](../derived/theming/crossfade/theme-switch__natt-morgon-natt__mobile__60fps.mp4).*
 
 ### 7.1 Timing
 
@@ -586,9 +586,9 @@ The harvested frames in [screenshots/motion/](../screenshots/motion/) (`theme-to
 
 ### 7.2 What fades and what snaps
 
-![Snap vs fade](../derived/theming/crossfade/snap-vs-fade__t150ms__desktop.png)
+![Snap vs fade](../derived/theming/crossfade/snap-vs-fade__t150ms__desktop.webp)
 
-*[snap-vs-fade__t150ms__desktop.png](../derived/theming/crossfade/snap-vs-fade__t150ms__desktop.png): the desktop fold at 150 ms into natt → morgon. Red boxes have no transition and already show their morning values. Green boxes are mid-fade.*
+*[snap-vs-fade__t150ms__desktop.webp](../derived/theming/crossfade/snap-vs-fade__t150ms__desktop.webp): the desktop fold at 150 ms into natt → morgon. Red boxes have no transition and already show their morning values. Green boxes are mid-fade.*
 
 On the home page, 1,534 computed property values change. 388 of them **snap** (already at the final value at t = 0) and the rest fade, including colour inherited from fading parents. Every element-and-property pair is listed in `snaps_by_element_property` in the [measurements](../derived/theming/crossfade/crossfade-measurements.json).
 
@@ -616,7 +616,7 @@ On the home page, 1,534 computed property values change. 388 of them **snap** (a
 
 **Read:**
 - For a tenth of a second the hero text all but disappears. The text and the plate both pass through the same mid-grey at the same moment, because both run on the same curve.
-- The snapped elements (violet button, dark microcopy, nav pills) meanwhile already show morning colours on a half-dark plate. Frames 6-12 therefore look unfinished: [frame at 150 ms](../derived/theming/crossfade/snap-vs-fade__t150ms__desktop.png).
+- The snapped elements (violet button, dark microcopy, nav pills) meanwhile already show morning colours on a half-dark plate. Frames 6-12 therefore look unfinished: [frame at 150 ms](../derived/theming/crossfade/snap-vs-fade__t150ms__desktop.webp).
 - In real time (0.5 s) this reads as a soft dissolve, and the snaps are hardly noticed.
 - A film should not copy the mixed state. Either dissolve the two finished frames (which is how the plate behaves), or stagger: plate first, then text.
 
@@ -624,9 +624,9 @@ On the home page, 1,534 computed property values change. 388 of them **snap** (a
 
 ## 8. The theme toggle
 
-![Toggle](../derived/theming/toggle/toggle-states-and-slide.png)
+![Toggle](../derived/theming/toggle/toggle-states-and-slide.webp)
 
-*[derived/theming/toggle/toggle-states-and-slide.png](../derived/theming/toggle/toggle-states-and-slide.png): states (rest, hover, `:focus-visible`, English labels, mobile icon-only), then the thumb slide every 50 ms in both directions on desktop and natt → morgon on mobile, with the measured thumb offset under each frame.*
+*[derived/theming/toggle/toggle-states-and-slide.webp](../derived/theming/toggle/toggle-states-and-slide.webp): states (rest, hover, `:focus-visible`, English labels, mobile icon-only), then the thumb slide every 50 ms in both directions on desktop and natt → morgon on mobile, with the measured thumb offset under each frame.*
 
 **Markup (sv, server HTML):**
 
@@ -765,9 +765,9 @@ Image blurs that are not backdrop filters: the reader's `.art-bg` (a blurred cop
 
 ### 9.3 Decomposed and measured
 
-![Glass, natt](../derived/theming/glass/glass-decomposed__natt.png)
+![Glass, natt](../derived/theming/glass/glass-decomposed__natt.webp)
 
-*[glass-decomposed__natt.png](../derived/theming/glass/glass-decomposed__natt.png) (and [__morgon](../derived/theming/glass/glass-decomposed__morgon.png)). For each surface: the backdrop behind it (element at opacity 0), fill only, fill + blur, and as shipped. Live crops at 2×.*
+*[glass-decomposed__natt.webp](../derived/theming/glass/glass-decomposed__natt.webp) (and [__morgon](../derived/theming/glass/glass-decomposed__morgon.webp)). For each surface: the backdrop behind it (element at opacity 0), fill only, fill + blur, and as shipped. Live crops at 2×.*
 
 "Texture" below is the standard deviation of L* inside the element with its contents hidden (inset 0.6 × radius). The percentage is how much of the backdrop's texture is removed ([glass-measurements.json](../derived/theming/glass/glass-measurements.json)):
 
@@ -798,9 +798,9 @@ At night it reads as a faint double hairline. In the morning, on white glass, it
 
 ## 10. Glows
 
-![Glows on/off](../derived/theming/glows/glows-on-off.png)
+![Glows on/off](../derived/theming/glows/glows-on-off.webp)
 
-*[derived/theming/glows/glows-on-off.png](../derived/theming/glows/glows-on-off.png): each glow switched off by injected CSS beside the shipped state, in both themes (and hover for the primary button). Live crops at 2×, scaled.*
+*[derived/theming/glows/glows-on-off.webp](../derived/theming/glows/glows-on-off.webp): each glow switched off by injected CSS beside the shipped state, in both themes (and hover for the primary button). Live crops at 2×, scaled.*
 
 | Glow | natt | morgon | Rule |
 |---|---|---|---|
@@ -836,15 +836,15 @@ Measured with the home page's text boxes over the live plates. Contrast is WCAG,
 | **mobile** h1 | 4.06 / 2.63 | 8.46 / 6.41 |
 | **mobile** lede | 2.86 / 1.83 | 6.45 / 4.82 |
 
-![Hero legibility](../derived/theming/night-stack/legibility__hero__desktop.png)
+![Hero legibility](../derived/theming/night-stack/legibility__hero__desktop.webp)
 
-*[legibility__hero__desktop.png](../derived/theming/night-stack/legibility__hero__desktop.png) (and [mobile](../derived/theming/night-stack/legibility__hero__mobile.png)): the night hero as shipped, without the h1-shadow, without the scrim, and without both. Without the scrim the lede runs straight across the lit astronaut and the book stacks.*
+*[legibility__hero__desktop.webp](../derived/theming/night-stack/legibility__hero__desktop.webp) (and [mobile](../derived/theming/night-stack/legibility__hero__mobile.webp)): the night hero as shipped, without the h1-shadow, without the scrim, and without both. Without the scrim the lede runs straight across the lit astronaut and the book stacks.*
 
 The night theme uses six tactics, in order of strength:
 
 1. **The scrim** (§5.4). It cuts the luminance of the bright patches behind the hero by about 70% (h1 box p90 L 0.272 → 0.084) and turns a failing lede (1.63:1 at p90) into an AA pass (4.65:1).
 2. **Pale, warm ink on a cool plate.** `--page-ink #fff7e9` (L* 97.5) and `--page-sub #d9cfee` (L* 84.8). The cream sits apart from the blue-violet painting in hue as well as in value.
-3. **`--h1-shadow: 0 2px 30px #0c082859`.** A wide, faint dark halo under the headline. Measured, it lowers the mean backdrop luminance around the glyphs by about 7% (max 19 RGB levels darker). Compare *glow off* with *as shipped* in [glows-on-off.png](../derived/theming/glows/glows-on-off.png).
+3. **`--h1-shadow: 0 2px 30px #0c082859`.** A wide, faint dark halo under the headline. Measured, it lowers the mean backdrop luminance around the glyphs by about 7% (max 19 RGB levels darker). Compare *glow off* with *as shipped* in [glows-on-off.webp](../derived/theming/glows/glows-on-off.webp).
 4. **Frosted glass behind all small text** (§9). Card copy never touches the painting directly.
 5. **10-14px blur behind chips and ghost buttons**, so their thin fills hold together.
 6. **Large type.** The h1 is `clamp(2.7rem, 5.4vw, 4.4rem)` Lora 700 (:855-866), so the strokes are thick enough to survive a busy ground.
@@ -891,26 +891,26 @@ Side-by-side images stitched from the harvested screenshots (sv). Each has a hea
 
 | Page | Desktop (shown at 75%) | Mobile (shown at 50%) |
 |---|---|---|
-| / (home) | [fold__home__desktop.png](../derived/theming/compare/fold__home__desktop.png) | [fold__home__mobile.png](../derived/theming/compare/fold__home__mobile.png) · tablet: [fold__home__tablet.png](../derived/theming/compare/fold__home__tablet.png) |
-| /start | [fold__start__desktop.png](../derived/theming/compare/fold__start__desktop.png) | [fold__start__mobile.png](../derived/theming/compare/fold__start__mobile.png) |
-| /uppgradera (pricing) | [fold__uppgradera__desktop.png](../derived/theming/compare/fold__uppgradera__desktop.png) | [fold__uppgradera__mobile.png](../derived/theming/compare/fold__uppgradera__mobile.png) |
-| /login | [fold__login__desktop.png](../derived/theming/compare/fold__login__desktop.png) | [fold__login__mobile.png](../derived/theming/compare/fold__login__mobile.png) |
-| /signup | [fold__signup__desktop.png](../derived/theming/compare/fold__signup__desktop.png) | [fold__signup__mobile.png](../derived/theming/compare/fold__signup__mobile.png) |
-| /integritet (privacy) | [fold__integritet__desktop.png](../derived/theming/compare/fold__integritet__desktop.png) | [fold__integritet__mobile.png](../derived/theming/compare/fold__integritet__mobile.png) |
-| /villkor (terms) | [fold__villkor__desktop.png](../derived/theming/compare/fold__villkor__desktop.png) | [fold__villkor__mobile.png](../derived/theming/compare/fold__villkor__mobile.png) |
-| 404 | [fold__404__desktop.png](../derived/theming/compare/fold__404__desktop.png) | [fold__404__mobile.png](../derived/theming/compare/fold__404__mobile.png) |
+| / (home) | [fold__home__desktop.webp](../derived/theming/compare/fold__home__desktop.webp) | [fold__home__mobile.webp](../derived/theming/compare/fold__home__mobile.webp) · tablet: [fold__home__tablet.webp](../derived/theming/compare/fold__home__tablet.webp) |
+| /start | [fold__start__desktop.webp](../derived/theming/compare/fold__start__desktop.webp) | [fold__start__mobile.webp](../derived/theming/compare/fold__start__mobile.webp) |
+| /uppgradera (pricing) | [fold__uppgradera__desktop.webp](../derived/theming/compare/fold__uppgradera__desktop.webp) | [fold__uppgradera__mobile.webp](../derived/theming/compare/fold__uppgradera__mobile.webp) |
+| /login | [fold__login__desktop.webp](../derived/theming/compare/fold__login__desktop.webp) | [fold__login__mobile.webp](../derived/theming/compare/fold__login__mobile.webp) |
+| /signup | [fold__signup__desktop.webp](../derived/theming/compare/fold__signup__desktop.webp) | [fold__signup__mobile.webp](../derived/theming/compare/fold__signup__mobile.webp) |
+| /integritet (privacy) | [fold__integritet__desktop.webp](../derived/theming/compare/fold__integritet__desktop.webp) | [fold__integritet__mobile.webp](../derived/theming/compare/fold__integritet__mobile.webp) |
+| /villkor (terms) | [fold__villkor__desktop.webp](../derived/theming/compare/fold__villkor__desktop.webp) | [fold__villkor__mobile.webp](../derived/theming/compare/fold__villkor__mobile.webp) |
+| 404 | [fold__404__desktop.webp](../derived/theming/compare/fold__404__desktop.webp) | [fold__404__mobile.webp](../derived/theming/compare/fold__404__mobile.webp) |
 
-![Home fold, natt vs morgon](../derived/theming/compare/fold__home__desktop.png)
+![Home fold, natt vs morgon](../derived/theming/compare/fold__home__desktop.webp)
 
 **Home sections** (from [screenshots/home-sections/](../screenshots/home-sections/)):
 
 | Section | Desktop | Mobile (50%) |
 |---|---|---|
 | 01 nav | [home-section__01-nav__desktop.png](../derived/theming/compare/home-section__01-nav__desktop.png) | [mobile](../derived/theming/compare/home-section__01-nav__mobile.png) |
-| 02 hero | [home-section__02-header__desktop.png](../derived/theming/compare/home-section__02-header__desktop.png) | [mobile](../derived/theming/compare/home-section__02-header__mobile.png) |
-| 03 "Så fungerar det" [How it works] | [home-section__03-section-sa-funkar-det__desktop.png](../derived/theming/compare/home-section__03-section-sa-funkar-det__desktop.png) (60%) | [mobile](../derived/theming/compare/home-section__03-section-sa-funkar-det__mobile.png) |
-| 04 "Din hjälte" [Your hero] | [home-section__04-section__desktop.png](../derived/theming/compare/home-section__04-section__desktop.png) | [mobile](../derived/theming/compare/home-section__04-section__mobile.png) |
-| 05 "Bokhyllan" [The bookshelf] | [home-section__05-section__desktop.png](../derived/theming/compare/home-section__05-section__desktop.png) | [mobile](../derived/theming/compare/home-section__05-section__mobile.png) |
+| 02 hero | [home-section__02-header__desktop.webp](../derived/theming/compare/home-section__02-header__desktop.webp) | [mobile](../derived/theming/compare/home-section__02-header__mobile.webp) |
+| 03 "Så fungerar det" [How it works] | [home-section__03-section-sa-funkar-det__desktop.webp](../derived/theming/compare/home-section__03-section-sa-funkar-det__desktop.webp) (60%) | [mobile](../derived/theming/compare/home-section__03-section-sa-funkar-det__mobile.webp) |
+| 04 "Din hjälte" [Your hero] | [home-section__04-section__desktop.webp](../derived/theming/compare/home-section__04-section__desktop.webp) | [mobile](../derived/theming/compare/home-section__04-section__mobile.png) |
+| 05 "Bokhyllan" [The bookshelf] | [home-section__05-section__desktop.webp](../derived/theming/compare/home-section__05-section__desktop.webp) | [mobile](../derived/theming/compare/home-section__05-section__mobile.webp) |
 
 Caveat: in the long section 03 crops, everything below the first ~900 CSS px sits on flat canvas (`#171232` / `#ede9f6`). The element capture does not repaint the fixed plate; a scrolling viewer always sees the plate.
 
@@ -945,7 +945,7 @@ Caveat: in the long section 03 crops, everything below the first ~900 CSS px sit
 
 Open it from inside the library; `?theme=morgon` forces a theme and `?bare` hides the content.
 
-**Verification:** rendered with `?bare` at 1440×900 @1× and 390×844 @2× and compared against the live captures. The mean absolute pixel difference is **0.0, max 0**, in all four theme/viewport combinations: the backdrop stack is reproduced exactly. Previews with content: [preview__natt__desktop.png](../derived/theming/recreate/preview__natt__desktop.png), [preview__morgon__desktop.png](../derived/theming/recreate/preview__morgon__desktop.png), [preview__natt__mobile.png](../derived/theming/recreate/preview__natt__mobile.png), [preview__morgon__mobile.png](../derived/theming/recreate/preview__morgon__mobile.png).
+**Verification:** rendered with `?bare` at 1440×900 @1× and 390×844 @2× and compared against the live captures. The mean absolute pixel difference is **0.0, max 0**, in all four theme/viewport combinations: the backdrop stack is reproduced exactly. Previews with content: [preview__natt__desktop.webp](../derived/theming/recreate/preview__natt__desktop.webp), [preview__morgon__desktop.webp](../derived/theming/recreate/preview__morgon__desktop.webp), [preview__natt__mobile.webp](../derived/theming/recreate/preview__natt__mobile.webp), [preview__morgon__mobile.webp](../derived/theming/recreate/preview__morgon__mobile.webp).
 
 ### 14.2 In a film (Remotion, 1920×1080)
 
@@ -1008,31 +1008,31 @@ All under [derived/theming/](../derived/theming/). Capture and build scripts liv
 | [token-diff.png](../derived/theming/token-diff.png) | the same as a swatch chart, both themes side by side |
 | [theme-scoped-rules.csv](../derived/theming/theme-scoped-rules.csv) | the non-token rules (14 selectors) and 2 JS-driven differences that change by theme |
 | [theme-system.json](../derived/theming/theme-system.json) | machine-readable summary: mechanism, layers, stars, timing, crop windows, film conversions |
-| [compare/_overview__all-pages-folds.png](../derived/theming/compare/_overview__all-pages-folds.png) | all 8 routes × 2 themes × desktop/mobile on one sheet |
+| [compare/_overview__all-pages-folds.webp](../derived/theming/compare/_overview__all-pages-folds.webp) | all 8 routes × 2 themes × desktop/mobile on one sheet |
 | `compare/fold__<page>__<desktop\|mobile\|tablet>.png` (17 files, §13) | natt \| morgon side by side, first viewport of each page |
 | `compare/home-section__NN-…__<desktop\|mobile>.png` (10 files, §13) | natt \| morgon side by side for nav, hero and the three home sections |
-| [night-stack/layers__desktop.png](../derived/theming/night-stack/layers__desktop.png), [layers__mobile.png](../derived/theming/night-stack/layers__mobile.png) | the night backdrop built up layer by layer: image, + scrim, as shipped, no scrim, scrim alone, stars alone |
+| [night-stack/layers__desktop.webp](../derived/theming/night-stack/layers__desktop.webp), [layers__mobile.png](../derived/theming/night-stack/layers__mobile.png) | the night backdrop built up layer by layer: image, + scrim, as shipped, no scrim, scrim alone, stars alone |
 | `night-stack/plate__*.png` (12 files, §5.6) | full-resolution plates for each layer combination, desktop and mobile |
 | [night-stack/starfield-detail.png](../derived/theming/night-stack/starfield-detail.png) | the six CSS stars at 4× device scale, alone and in place, with values and positions |
 | `night-stack/element__scrim-rgba__{1920x1080,3840x2160}.png` | exact scrim gradient as RGBA overlays for compositing |
 | `night-stack/element__starfield-rgba__{1920x1080,3840x2160}__peak-opacity.png` | the six stars as RGBA overlays |
 | [night-stack/legibility-measurements.json](../derived/theming/night-stack/legibility-measurements.json) | hero text contrast over image-only / scrim / full stack; h1-shadow effect |
-| [night-stack/legibility__hero__desktop.png](../derived/theming/night-stack/legibility__hero__desktop.png), [__mobile.png](../derived/theming/night-stack/legibility__hero__mobile.png) | the night hero with scrim and/or h1-shadow switched off |
-| [paintings/nebula-anatomy.png](../derived/theming/paintings/nebula-anatomy.png) | night painting with viewport windows and labelled elements |
-| [paintings/morgon-desktop-anatomy.png](../derived/theming/paintings/morgon-desktop-anatomy.png), [morgon-mobile-anatomy.png](../derived/theming/paintings/morgon-mobile-anatomy.png) | morning paintings, same treatment |
+| [night-stack/legibility__hero__desktop.webp](../derived/theming/night-stack/legibility__hero__desktop.webp), [__mobile.png](../derived/theming/night-stack/legibility__hero__mobile.webp) | the night hero with scrim and/or h1-shadow switched off |
+| [paintings/nebula-anatomy.webp](../derived/theming/paintings/nebula-anatomy.webp) | night painting with viewport windows and labelled elements |
+| [paintings/morgon-desktop-anatomy.webp](../derived/theming/paintings/morgon-desktop-anatomy.webp), [morgon-mobile-anatomy.webp](../derived/theming/paintings/morgon-mobile-anatomy.webp) | morning paintings, same treatment |
 | [paintings/crop-windows.json](../derived/theming/paintings/crop-windows.json) | visible image rectangles per viewport and for 1920×1080 |
-| [paintings/text-safe-zones.png](../derived/theming/paintings/text-safe-zones.png), [.json](../derived/theming/paintings/text-safe-zones.json) | busyness heat maps of the rendered plates with text boxes; per-element numbers |
-| [crossfade/filmstrip__natt-to-morgon__desktop.png](../derived/theming/crossfade/filmstrip__natt-to-morgon__desktop.png) (+ morgon-to-natt, + mobile ×2) | the switch every 50 ms, full viewport |
+| [paintings/text-safe-zones.webp](../derived/theming/paintings/text-safe-zones.webp), [.json](../derived/theming/paintings/text-safe-zones.json) | busyness heat maps of the rendered plates with text boxes; per-element numbers |
+| [crossfade/filmstrip__natt-to-morgon__desktop.webp](../derived/theming/crossfade/filmstrip__natt-to-morgon__desktop.webp) (+ morgon-to-natt, + mobile ×2) | the switch every 50 ms, full viewport |
 | [crossfade/theme-switch__natt-morgon-natt__desktop__60fps.mp4](../derived/theming/crossfade/theme-switch__natt-morgon-natt__desktop__60fps.mp4), [__mobile__60fps.mp4](../derived/theming/crossfade/theme-switch__natt-morgon-natt__mobile__60fps.mp4) | real-time video of night → morning → night, assembled from deterministic frames |
-| [crossfade/snap-vs-fade__t150ms__desktop.png](../derived/theming/crossfade/snap-vs-fade__t150ms__desktop.png) | annotated mid-switch frame: what fades, what snaps |
+| [crossfade/snap-vs-fade__t150ms__desktop.webp](../derived/theming/crossfade/snap-vs-fade__t150ms__desktop.webp) | annotated mid-switch frame: what fades, what snaps |
 | [crossfade/motion-curves.png](../derived/theming/crossfade/motion-curves.png) | measured backdrop dissolve, thumb overshoot and twinkle against their CSS curves |
 | [crossfade/crossfade-measurements.json](../derived/theming/crossfade/crossfade-measurements.json) | all transitions (element, property, duration, easing), snap list, per-frame computed values |
 | [crossfade/legibility-during-switch.json](../derived/theming/crossfade/legibility-during-switch.json) | h1 and lede contrast per frame through the switch |
-| [toggle/toggle-states-and-slide.png](../derived/theming/toggle/toggle-states-and-slide.png) | toggle states and the thumb slide frame by frame |
-| [glass/glass-decomposed__natt.png](../derived/theming/glass/glass-decomposed__natt.png), [__morgon.png](../derived/theming/glass/glass-decomposed__morgon.png) | six glass surfaces: backdrop, fill only, fill + blur, shipped |
+| [toggle/toggle-states-and-slide.webp](../derived/theming/toggle/toggle-states-and-slide.webp) | toggle states and the thumb slide frame by frame |
+| [glass/glass-decomposed__natt.webp](../derived/theming/glass/glass-decomposed__natt.webp), [__morgon.png](../derived/theming/glass/glass-decomposed__morgon.webp) | six glass surfaces: backdrop, fill only, fill + blur, shipped |
 | [glass/glass-rim-zoom.png](../derived/theming/glass/glass-rim-zoom.png) | the `.glass:before` gradient rim magnified, both themes |
 | [glass/glass-measurements.json](../derived/theming/glass/glass-measurements.json) | texture suppression and lightness per surface |
-| [glows/glows-on-off.png](../derived/theming/glows/glows-on-off.png) | eight glows/shadows switched off vs shipped, both themes |
+| [glows/glows-on-off.webp](../derived/theming/glows/glows-on-off.webp) | eight glows/shadows switched off vs shipped, both themes |
 | [recreate/theme-stack.html](../derived/theming/recreate/theme-stack.html) | offline reconstruction of the theme system (pixel-identical backdrop) |
 | `recreate/preview__{natt,morgon}__{desktop,mobile}.png` | screenshots of the reconstruction with demo content |
 

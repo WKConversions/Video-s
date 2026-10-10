@@ -1219,7 +1219,7 @@ export const ASSETS = {
     "scrimRgba3840": "derived/theming/night-stack/element__scrim-rgba__3840x2160.png",
     "starfieldRgba1920": "derived/theming/night-stack/element__starfield-rgba__1920x1080__peak-opacity.png",
     "starfieldRgba3840": "derived/theming/night-stack/element__starfield-rgba__3840x2160__peak-opacity.png",
-    "nattFullStack1440": "derived/theming/night-stack/plate__full-stack__desktop.png"
+    "nattFullStack1440": "derived/theming/night-stack/plate__full-stack__desktop.webp"
   },
   "logo": {
     "mark": "assets/assets/tf-logo.webp",

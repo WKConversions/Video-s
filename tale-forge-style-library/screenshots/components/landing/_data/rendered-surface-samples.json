@@ -3,7 +3,7 @@
  "data": {
   "natt": [
    {
-    "crop": "38-endings-map__natt__desktop.png",
+    "crop": "38-endings-map__natt__desktop.webp",
     "what": "glass card interior (map card, top-left)",
     "css_px": [
      64,
@@ -13,7 +13,7 @@
     "patch_std": 0.0
    },
    {
-    "crop": "47-hero-builder-card__natt__desktop.png",
+    "crop": "47-hero-builder-card__natt__desktop.webp",
     "what": "glass card interior (builder, lower-left)",
     "css_px": [
      39,
@@ -165,7 +165,7 @@
   ],
   "morgon": [
    {
-    "crop": "38-endings-map__morgon__desktop.png",
+    "crop": "38-endings-map__morgon__desktop.webp",
     "what": "glass card interior (map card, top-left)",
     "css_px": [
      64,

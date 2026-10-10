@@ -177,7 +177,7 @@ Identical on every page. Copy is from the server HTML, verbatim. The contact add
 | Left, line 2 | «Version 16ab1756 · 26 sep. 2026» (`data-testid="footer-version"`, 0.8rem, `var(--card-sub)`, opacity .85) |
 | Right | «Tale Forge AB, org.nr 559543-1122, Värnamo, Sverige» · links `Kontakt` (mailto) · `Integritet` → `/integritet` · `Villkor` → `/villkor`. The links are coloured `var(--card-sub)` with the underline in `var(--accent)` |
 
-English: «Tale Forge, storybooks that remember your world.», «Tale Forge AB, reg. no. 559543-1122, Varnamo, Sweden», links Contact / Privacy / Terms ([`start-resume__02-after-en__natt__desktop.png`](../screenshots/flows/start-resume__02-after-en__natt__desktop.png)).
+English: «Tale Forge, storybooks that remember your world.», «Tale Forge AB, reg. no. 559543-1122, Varnamo, Sweden», links Contact / Privacy / Terms ([`start-resume__02-after-en__natt__desktop.webp`](../screenshots/flows/start-resume__02-after-en__natt__desktop.webp)).
 
 The server HTML ships the contact link as a Cloudflare `/cdn-cgi/l/email-protection#…` link, which client JS rewrites to `mailto:` ([`copy/pages/start.sv.md` §4](../copy/pages/start.sv.md)).
 
@@ -289,7 +289,7 @@ Verbatim copy for every page is in the per-page copy decks in [`copy/pages/`](..
   - From s1 on, a glass progress strip sits under the nav: back chevron, four dots, title, sub-line ([05b §5.1](05b-components-app-and-forms.md#51-the-progress-strip)).
   - Below the strip is a 560 px `.stepcard` with `padding: 30px 28px 28px; gap: 20px` ([`2_gt301v4m-60.pretty.css:44-51`](../source/css/2_gt301v4m-60.pretty.css)).
   - The name field is a 2 px-bordered, 16 px-radius input at 1.15rem/700 ([`:61-73`](../source/css/2_gt301v4m-60.pretty.css)).
-  - A disabled «Vidare» drops to opacity .5 ([`:55-60`](../source/css/2_gt301v4m-60.pretty.css)): the dull gold bar in [`journey__04-start-s1__natt__desktop.png`](../screenshots/flows/journey__04-start-s1__natt__desktop.png).
+  - A disabled «Vidare» drops to opacity .5 ([`:55-60`](../source/css/2_gt301v4m-60.pretty.css)): the dull gold bar in [`journey__04-start-s1__natt__desktop.webp`](../screenshots/flows/journey__04-start-s1__natt__desktop.webp).
 - **Route CSS** (the only page besides the share route that loads more than the global sheet):
   - [`2_gt301v4m-60`](../source/css/2_gt301v4m-60.pretty.css) (`.start-flow`, 951 lines)
   - [`2h1wwdz1nvxwk`](../source/css/2h1wwdz1nvxwk.pretty.css) (`.cs-` companion/world band, 609 lines)
@@ -363,7 +363,7 @@ w=k?b:"signup"===e?"/start":"/"
   - `btn-primary` «Skapa konto»
   - foot line «Har du redan ett konto? Logga in»
 - **After sign-up.** Goes to `returnTo`, else `/start`.
-- Read: the visible submit looks the same whether or not the box is ticked ([`auth__07-signup-attested__natt__desktop.png`](../screenshots/flows/auth__07-signup-attested__natt__desktop.png)).
+- Read: the visible submit looks the same whether or not the box is ticked ([`auth__07-signup-attested__natt__desktop.webp`](../screenshots/flows/auth__07-signup-attested__natt__desktop.webp)).
 
 ### 5.6 `/integritet` and `/villkor` (legal)
 
@@ -396,7 +396,7 @@ w=k?b:"signup"===e?"/start":"/"
   - There is no h1.
   - The canonical echoes the requested path (`https://tale-forge.app/this-page-does-not-exist`, [`404.sv.html`](../source/html/404.sv.html)).
 - **Pixel check.** The `/reader`, `/share/iris-sparade-platsen` and unknown-path captures differ from each other by at most 4 pixels at a >40 threshold. The differences are starfield twinkle (NumPy diff of the natt desktop PNGs).
-- **Screenshots:** [`not-found__01-404__natt__desktop.png`](../screenshots/flows/not-found__01-404__natt__desktop.png), [`not-found__01-404__morgon__mobile.png`](../screenshots/flows/not-found__01-404__morgon__mobile.png).
+- **Screenshots:** [`not-found__01-404__natt__desktop.webp`](../screenshots/flows/not-found__01-404__natt__desktop.webp), [`not-found__01-404__morgon__mobile.webp`](../screenshots/flows/not-found__01-404__morgon__mobile.webp).
 
 ### 5.8 `/share/iris-sparade-platsen` (the broken sample-book link)
 
@@ -408,7 +408,7 @@ w=k?b:"signup"===e?"/start":"/"
 
 ### 5.9 Gated routes, aliases, unlisted pages
 
-- **Gated.** `/konto`, `/create`, `/valkommen`, `/reader/{id}` and any sub-path answer a server-side **307** to `/login?returnTo=<url-encoded path>`. The login page then looks pixel-identical to a plain `/login`: the [`gated__01-konto`](../screenshots/flows/gated__01-konto__natt__desktop.png) vs [`auth__01-login-rest`](../screenshots/flows/auth__01-login-rest__natt__desktop.png) diff is 2 px (starfield). Nothing tells the visitor why they landed there.
+- **Gated.** `/konto`, `/create`, `/valkommen`, `/reader/{id}` and any sub-path answer a server-side **307** to `/login?returnTo=<url-encoded path>`. The login page then looks pixel-identical to a plain `/login`: the [`gated__01-konto`](../screenshots/flows/gated__01-konto__natt__desktop.webp) vs [`auth__01-login-rest`](../screenshots/flows/auth__01-login-rest__natt__desktop.webp) diff is 2 px (starfield). Nothing tells the visitor why they landed there.
 - **Aliases.** `/priser` and `/pricing` → 307 `/uppgradera`. `/auth/callback` → 307 `/login` when hit directly.
 - **Unlisted.** `/bokmassan/…` (the Gothenburg Book Fair kiosk "Berättarstugan", 24–27 September) is public but outside the sitemap and the nav. It is documented with screenshots in [05b §11](05b-components-app-and-forms.md#11-discovered-the-unlisted-bokmässan-book-fair-kiosk).
 
@@ -466,13 +466,13 @@ Each flow has a contact sheet in [`derived/ia/flow-sheets/`](../derived/ia/flow-
 
 | Step | What happens | URL after | Capture |
 |---|---|---|---|
-| 01 home-landing | Landing, hero in view | `/` | [png](../screenshots/flows/journey__01-home-landing__natt__desktop.png) |
-| 02 home-cta-hover | Hover on «Skapa er hjälte»: lifts 3 px, stronger shadow (`.btn-primary:hover`, [`:914-917`](../source/css/3q17cp_jgfwol.pretty.css)) | `/` | [png](../screenshots/flows/journey__02-home-cta-hover__natt__desktop.png) |
-| 03 start-s0 | Click: client-side navigation to `/start` s0 | `/start` | [png](../screenshots/flows/journey__03-start-s0__natt__desktop.png) |
-| 04 start-s1 | «Skapa er hjälte» → s1, empty name, «Vidare» disabled | `/start` | [png](../screenshots/flows/journey__04-start-s1__natt__desktop.png) |
-| 05 start-s1-filled | Name «Iris» typed, a pronoun chosen; «Vidare» enabled | `/start` | [png](../screenshots/flows/journey__05-start-s1-filled__natt__desktop.png) |
-| 06 start-s2 | «Vidare» → s2 «Gör Iris till hjälten.». Both «Vidare» (dull gold, sampled `rgb(143,124,77)` vs `rgb(250,211,104)` when enabled on s1) and «Hoppa över, måla en hjälte åt oss» are disabled | `/start` | [png](../screenshots/flows/journey__06-start-s2__natt__desktop.png) |
-| 07 start-s2-attested | Attestation ticked (local only): the checkbox fills gold and «Hoppa över…» becomes enabled; «Vidare» stays disabled until a photo is chosen. The flow stops: the next click calls the backend | `/start` | [png](../screenshots/flows/journey__07-start-s2-attested__natt__desktop.png) |
+| 01 home-landing | Landing, hero in view | `/` | [png](../screenshots/flows/journey__01-home-landing__natt__desktop.webp) |
+| 02 home-cta-hover | Hover on «Skapa er hjälte»: lifts 3 px, stronger shadow (`.btn-primary:hover`, [`:914-917`](../source/css/3q17cp_jgfwol.pretty.css)) | `/` | [png](../screenshots/flows/journey__02-home-cta-hover__natt__desktop.webp) |
+| 03 start-s0 | Click: client-side navigation to `/start` s0 | `/start` | [png](../screenshots/flows/journey__03-start-s0__natt__desktop.webp) |
+| 04 start-s1 | «Skapa er hjälte» → s1, empty name, «Vidare» disabled | `/start` | [png](../screenshots/flows/journey__04-start-s1__natt__desktop.webp) |
+| 05 start-s1-filled | Name «Iris» typed, a pronoun chosen; «Vidare» enabled | `/start` | [png](../screenshots/flows/journey__05-start-s1-filled__natt__desktop.webp) |
+| 06 start-s2 | «Vidare» → s2 «Gör Iris till hjälten.». Both «Vidare» (dull gold, sampled `rgb(143,124,77)` vs `rgb(250,211,104)` when enabled on s1) and «Hoppa över, måla en hjälte åt oss» are disabled | `/start` | [png](../screenshots/flows/journey__06-start-s2__natt__desktop.webp) |
+| 07 start-s2-attested | Attestation ticked (local only): the checkbox fills gold and «Hoppa över…» becomes enabled; «Vidare» stays disabled until a photo is chosen. The flow stops: the next click calls the backend | `/start` | [png](../screenshots/flows/journey__07-start-s2-attested__natt__desktop.webp) |
 
 ### 7.2 `home-paths`
 
@@ -480,11 +480,11 @@ Each flow has a contact sheet in [`derived/ia/flow-sheets/`](../derived/ia/flow-
 
 | Step | What happens | URL after | Capture |
 |---|---|---|---|
-| 01 how-anchor | «Se hur det funkar» smooth-scrolls to the chapter | `/#sa-funkar-det` (scrollY 648) | [png](../screenshots/flows/home-paths__01-how-anchor__natt__desktop.png) |
-| 02 closing-ctas | End of the chapter: closing pair «Skapa er hjälte» / «Läs exempelboken» | same | [png](../screenshots/flows/home-paths__02-closing-ctas__natt__desktop.png) |
-| 03 footer | Page bottom: Bokhyllan + footer | same | [png](../screenshots/flows/home-paths__03-footer__natt__desktop.png) |
-| 04 sample-link-404 | «Läs exempelboken» → 404 card; tab title «Iris och den sparade platsen \| Tale Forge» | `/share/iris-sparade-platsen` | [png](../screenshots/flows/home-paths__04-sample-link-404__natt__desktop.png) |
-| 05 hero-cover-to-signup | Hero cover (it floats constantly, so the click had to be forced) → `/signup` | `/signup` | [png](../screenshots/flows/home-paths__05-hero-cover-to-signup__natt__desktop.png) |
+| 01 how-anchor | «Se hur det funkar» smooth-scrolls to the chapter | `/#sa-funkar-det` (scrollY 648) | [png](../screenshots/flows/home-paths__01-how-anchor__natt__desktop.webp) |
+| 02 closing-ctas | End of the chapter: closing pair «Skapa er hjälte» / «Läs exempelboken» | same | [png](../screenshots/flows/home-paths__02-closing-ctas__natt__desktop.webp) |
+| 03 footer | Page bottom: Bokhyllan + footer | same | [png](../screenshots/flows/home-paths__03-footer__natt__desktop.webp) |
+| 04 sample-link-404 | «Läs exempelboken» → 404 card; tab title «Iris och den sparade platsen \| Tale Forge» | `/share/iris-sparade-platsen` | [png](../screenshots/flows/home-paths__04-sample-link-404__natt__desktop.webp) |
+| 05 hero-cover-to-signup | Hero cover (it floats constantly, so the click had to be forced) → `/signup` | `/signup` | [png](../screenshots/flows/home-paths__05-hero-cover-to-signup__natt__desktop.webp) |
 
 ### 7.3 `start-gallery`
 
@@ -492,11 +492,11 @@ Each flow has a contact sheet in [`derived/ia/flow-sheets/`](../derived/ia/flow-
 
 | Step | What happens | Capture |
 |---|---|---|
-| 01 s0-rest | `/start` s0, toggle `aria-expanded="false"` | [png](../screenshots/flows/start-gallery__01-s0-rest__natt__desktop.png) |
-| 02 gallery-open | «Läs en exempelbok först» opens the gallery: one framed cover (4 px `var(--frame)` border, 16 px radius, 2:3) taking one of three grid columns; page grows 900 → 1093 px | [png](../screenshots/flows/start-gallery__02-gallery-open__natt__desktop.png) |
-| 03 gbook-hover | Hover on the cover: no change (no hover rule exists for `.gbook`) | [png](../screenshots/flows/start-gallery__03-gbook-hover__natt__desktop.png) |
-| 04 gallery-closed | Toggled again: removed | [png](../screenshots/flows/start-gallery__04-gallery-closed__natt__desktop.png) |
-| 05 gbook-click-404 | Click on the cover → `/share/iris-sparade-platsen` → 404 | [png](../screenshots/flows/start-gallery__05-gbook-click-404__natt__desktop.png) |
+| 01 s0-rest | `/start` s0, toggle `aria-expanded="false"` | [png](../screenshots/flows/start-gallery__01-s0-rest__natt__desktop.webp) |
+| 02 gallery-open | «Läs en exempelbok först» opens the gallery: one framed cover (4 px `var(--frame)` border, 16 px radius, 2:3) taking one of three grid columns; page grows 900 → 1093 px | [png](../screenshots/flows/start-gallery__02-gallery-open__natt__desktop.webp) |
+| 03 gbook-hover | Hover on the cover: no change (no hover rule exists for `.gbook`) | [png](../screenshots/flows/start-gallery__03-gbook-hover__natt__desktop.webp) |
+| 04 gallery-closed | Toggled again: removed | [png](../screenshots/flows/start-gallery__04-gallery-closed__natt__desktop.webp) |
+| 05 gbook-click-404 | Click on the cover → `/share/iris-sparade-platsen` → 404 | [png](../screenshots/flows/start-gallery__05-gbook-click-404__natt__desktop.webp) |
 
 ### 7.4 `start-resume`
 
@@ -504,8 +504,8 @@ Each flow has a contact sheet in [`derived/ia/flow-sheets/`](../derived/ia/flow-
 
 | Step | What happens | `tf-start-draft` after | Capture |
 |---|---|---|---|
-| 01 after-reload | s0 → s1, «Iris» typed, then **reload**: s1 comes back with an empty name and **no back chevron** | `{"ageBand":"B","currentScreen":"s1"}` | [png](../screenshots/flows/start-resume__01-after-reload__natt__desktop.png) |
-| 02 after-en | **EN** pressed: s1 re-renders in English («Step 1 of 4 · The hero», «Who becomes the hero?»), same screen, same URL | unchanged | [png](../screenshots/flows/start-resume__02-after-en__natt__desktop.png) |
+| 01 after-reload | s0 → s1, «Iris» typed, then **reload**: s1 comes back with an empty name and **no back chevron** | `{"ageBand":"B","currentScreen":"s1"}` | [png](../screenshots/flows/start-resume__01-after-reload__natt__desktop.webp) |
+| 02 after-en | **EN** pressed: s1 re-renders in English («Step 1 of 4 · The hero», «Who becomes the hero?»), same screen, same URL | unchanged | [png](../screenshots/flows/start-resume__02-after-en__natt__desktop.webp) |
 
 ### 7.5 `upgrade`
 
@@ -513,12 +513,12 @@ Each flow has a contact sheet in [`derived/ia/flow-sheets/`](../derived/ia/flow-
 
 | Step | What happens | URL after | Capture |
 |---|---|---|---|
-| 01 rest | `/uppgradera`, Årsvis preselected | `/uppgradera` | [png](../screenshots/flows/upgrade__01-rest__natt__desktop.png) |
-| 02 yearly-plan | Toggle + Familj card: «1490 kr per år» | | [png](../screenshots/flows/upgrade__02-yearly-plan__natt__desktop.png) |
-| 03 monthly-plan | «Månadsvis» pressed: «149 kr per månad» | | [png](../screenshots/flows/upgrade__03-monthly-plan__natt__desktop.png) |
-| 04 schools-open | «För skolor» pressed: the Skola card appears and the toggle is removed | | [png](../screenshots/flows/upgrade__04-schools-open__natt__desktop.png) |
-| 05 page-bottom | Bottom of the expanded page (1575 px) | | [png](../screenshots/flows/upgrade__05-page-bottom__natt__desktop.png) |
-| 06 cta-logged-out | «Prova gratis i 14 dagar» while logged out | `/login?returnTo=%2Fuppgradera` | [png](../screenshots/flows/upgrade__06-cta-logged-out__natt__desktop.png) |
+| 01 rest | `/uppgradera`, Årsvis preselected | `/uppgradera` | [png](../screenshots/flows/upgrade__01-rest__natt__desktop.webp) |
+| 02 yearly-plan | Toggle + Familj card: «1490 kr per år» | | [png](../screenshots/flows/upgrade__02-yearly-plan__natt__desktop.webp) |
+| 03 monthly-plan | «Månadsvis» pressed: «149 kr per månad» | | [png](../screenshots/flows/upgrade__03-monthly-plan__natt__desktop.webp) |
+| 04 schools-open | «För skolor» pressed: the Skola card appears and the toggle is removed | | [png](../screenshots/flows/upgrade__04-schools-open__natt__desktop.webp) |
+| 05 page-bottom | Bottom of the expanded page (1575 px) | | [png](../screenshots/flows/upgrade__05-page-bottom__natt__desktop.webp) |
+| 06 cta-logged-out | «Prova gratis i 14 dagar» while logged out | `/login?returnTo=%2Fuppgradera` | [png](../screenshots/flows/upgrade__06-cta-logged-out__natt__desktop.webp) |
 
 ### 7.6 `auth` (login and signup)
 
@@ -526,14 +526,14 @@ Each flow has a contact sheet in [`derived/ia/flow-sheets/`](../derived/ia/flow-
 
 | Step | What happens | URL after | Capture |
 |---|---|---|---|
-| 01 login-rest | `/login` | `/login` | [png](../screenshots/flows/auth__01-login-rest__natt__desktop.png) |
-| 02 login-typed | Dummy values typed (never sent); password masked | | [png](../screenshots/flows/auth__02-login-typed__natt__desktop.png) |
-| 03 login-password-shown | Eye pressed: password visible, label → «Dölj lösenord» | | [png](../screenshots/flows/auth__03-login-password-shown__natt__desktop.png) |
-| 04 login-empty-submit | Empty submit: native validation only, nothing styled by the site | | [png](../screenshots/flows/auth__04-login-empty-submit__natt__desktop.png) |
-| 05 login-forgot | «Glömt lösenordet?»: same card becomes «Återställ lösenordet» | `/login` | [png](../screenshots/flows/auth__05-login-forgot__natt__desktop.png) |
-| 06 signup-via-footlink | «Skapa ett» → `/signup` (client-side) | `/signup` | [png](../screenshots/flows/auth__06-signup-via-footlink__natt__desktop.png) |
-| 07 signup-attested | Attestation ticked; submit unchanged | | [png](../screenshots/flows/auth__07-signup-attested__natt__desktop.png) |
-| 08 login-via-footlink | «Logga in» → back to `/login` | `/login` | [png](../screenshots/flows/auth__08-login-via-footlink__natt__desktop.png) |
+| 01 login-rest | `/login` | `/login` | [png](../screenshots/flows/auth__01-login-rest__natt__desktop.webp) |
+| 02 login-typed | Dummy values typed (never sent); password masked | | [png](../screenshots/flows/auth__02-login-typed__natt__desktop.webp) |
+| 03 login-password-shown | Eye pressed: password visible, label → «Dölj lösenord» | | [png](../screenshots/flows/auth__03-login-password-shown__natt__desktop.webp) |
+| 04 login-empty-submit | Empty submit: native validation only, nothing styled by the site | | [png](../screenshots/flows/auth__04-login-empty-submit__natt__desktop.webp) |
+| 05 login-forgot | «Glömt lösenordet?»: same card becomes «Återställ lösenordet» | `/login` | [png](../screenshots/flows/auth__05-login-forgot__natt__desktop.webp) |
+| 06 signup-via-footlink | «Skapa ett» → `/signup` (client-side) | `/signup` | [png](../screenshots/flows/auth__06-signup-via-footlink__natt__desktop.webp) |
+| 07 signup-attested | Attestation ticked; submit unchanged | | [png](../screenshots/flows/auth__07-signup-attested__natt__desktop.webp) |
+| 08 login-via-footlink | «Logga in» → back to `/login` | `/login` | [png](../screenshots/flows/auth__08-login-via-footlink__natt__desktop.webp) |
 
 ### 7.7 `gated`: redirects and 404s
 
@@ -541,21 +541,21 @@ Each flow has a contact sheet in [`derived/ia/flow-sheets/`](../derived/ia/flow-
 
 | Step | Request | Final URL | Final HTTP | Capture |
 |---|---|---|---|---|
-| 01 konto | `/konto` | `/login?returnTo=%2Fkonto` | 200 | [png](../screenshots/flows/gated__01-konto__natt__desktop.png) |
-| 02 create | `/create` | `/login?returnTo=%2Fcreate` | 200 | [png](../screenshots/flows/gated__02-create__natt__desktop.png) |
-| 03 valkommen | `/valkommen` | `/login?returnTo=%2Fvalkommen` | 200 | [png](../screenshots/flows/gated__03-valkommen__natt__desktop.png) |
-| 04 reader-id | `/reader/exempel` | `/login?returnTo=%2Freader%2Fexempel` | 200 | [png](../screenshots/flows/gated__04-reader-id__natt__desktop.png) |
-| 05 reader-bare | `/reader` | `/reader` (404 card) | 404 | [png](../screenshots/flows/gated__05-reader-bare__natt__desktop.png) |
-| 06 share-sample | `/share/iris-sparade-platsen` | same (404 card, book title in tab) | 404 | [png](../screenshots/flows/gated__06-share-sample__natt__desktop.png) |
-| 07 unknown | `/this-page-does-not-exist` | same (404 card) | 404 | [png](../screenshots/flows/gated__07-unknown__natt__desktop.png) |
-| 08 priser-alias | `/priser` | `/uppgradera` | 200 | [png](../screenshots/flows/gated__08-priser-alias__natt__desktop.png) |
-| 09 returnTo-carried | On `/login?returnTo=%2Fkonto` the foot link is `/signup?returnTo=%2Fkonto` | `/signup?returnTo=%2Fkonto` | 200 | [png](../screenshots/flows/gated__09-returnTo-carried__natt__desktop.png) |
+| 01 konto | `/konto` | `/login?returnTo=%2Fkonto` | 200 | [png](../screenshots/flows/gated__01-konto__natt__desktop.webp) |
+| 02 create | `/create` | `/login?returnTo=%2Fcreate` | 200 | [png](../screenshots/flows/gated__02-create__natt__desktop.webp) |
+| 03 valkommen | `/valkommen` | `/login?returnTo=%2Fvalkommen` | 200 | [png](../screenshots/flows/gated__03-valkommen__natt__desktop.webp) |
+| 04 reader-id | `/reader/exempel` | `/login?returnTo=%2Freader%2Fexempel` | 200 | [png](../screenshots/flows/gated__04-reader-id__natt__desktop.webp) |
+| 05 reader-bare | `/reader` | `/reader` (404 card) | 404 | [png](../screenshots/flows/gated__05-reader-bare__natt__desktop.webp) |
+| 06 share-sample | `/share/iris-sparade-platsen` | same (404 card, book title in tab) | 404 | [png](../screenshots/flows/gated__06-share-sample__natt__desktop.webp) |
+| 07 unknown | `/this-page-does-not-exist` | same (404 card) | 404 | [png](../screenshots/flows/gated__07-unknown__natt__desktop.webp) |
+| 08 priser-alias | `/priser` | `/uppgradera` | 200 | [png](../screenshots/flows/gated__08-priser-alias__natt__desktop.webp) |
+| 09 returnTo-carried | On `/login?returnTo=%2Fkonto` the foot link is `/signup?returnTo=%2Fkonto` | `/signup?returnTo=%2Fkonto` | 200 | [png](../screenshots/flows/gated__09-returnTo-carried__natt__desktop.webp) |
 
 ### 7.8 `not-found`
 
 ![not-found](../derived/ia/flow-sheets/not-found.webp)
 
-Steps: 01 the 404 card at rest ([png](../screenshots/flows/not-found__01-404__natt__desktop.png)); 02 hover on «Till startsidan» ([png](../screenshots/flows/not-found__02-cta-hover__natt__desktop.png)); 03 click → `/` ([png](../screenshots/flows/not-found__03-back-home__natt__desktop.png)).
+Steps: 01 the 404 card at rest ([png](../screenshots/flows/not-found__01-404__natt__desktop.webp)); 02 hover on «Till startsidan» ([png](../screenshots/flows/not-found__02-cta-hover__natt__desktop.webp)); 03 click → `/` ([png](../screenshots/flows/not-found__03-back-home__natt__desktop.webp)).
 
 ### 7.9 `legal`
 
@@ -563,10 +563,10 @@ Steps: 01 the 404 card at rest ([png](../screenshots/flows/not-found__01-404__na
 
 | Step | What happens | URL after | Capture |
 |---|---|---|---|
-| 01 integritet-from-signup | «Läs integritetspolicyn» on `/signup` opens `/integritet` in the **same tab** (no `target`). Any typed form data is left behind; on `/start` s2 the same link opens a new tab | `/integritet` | [png](../screenshots/flows/legal__01-integritet-from-signup__natt__desktop.png) |
-| 02 integritet-english-open | «Read in English» opened: the page grows 2985 → 5431 px | | [png](../screenshots/flows/legal__02-integritet-english-open__natt__desktop.png) |
-| 03 villkor-via-footer | Footer «Villkor» | `/villkor` | [png](../screenshots/flows/legal__03-villkor-via-footer__natt__desktop.png) |
-| 04 villkor-english-open | English opened: 2469 → 4399 px | | [png](../screenshots/flows/legal__04-villkor-english-open__natt__desktop.png) |
+| 01 integritet-from-signup | «Läs integritetspolicyn» on `/signup` opens `/integritet` in the **same tab** (no `target`). Any typed form data is left behind; on `/start` s2 the same link opens a new tab | `/integritet` | [png](../screenshots/flows/legal__01-integritet-from-signup__natt__desktop.webp) |
+| 02 integritet-english-open | «Read in English» opened: the page grows 2985 → 5431 px | | [png](../screenshots/flows/legal__02-integritet-english-open__natt__desktop.webp) |
+| 03 villkor-via-footer | Footer «Villkor» | `/villkor` | [png](../screenshots/flows/legal__03-villkor-via-footer__natt__desktop.webp) |
+| 04 villkor-english-open | English opened: 2469 → 4399 px | | [png](../screenshots/flows/legal__04-villkor-english-open__natt__desktop.webp) |
 
 ### 7.10 `lang-switch`
 
@@ -574,10 +574,10 @@ Steps: 01 the 404 card at rest ([png](../screenshots/flows/not-found__01-404__na
 
 | Step | What happens | URL | `<html lang>` / cookie / title | Capture |
 |---|---|---|---|---|
-| 01 home-sv | Default | `/` | sv / `tf_locale=sv` / Tale Forge | [png](../screenshots/flows/lang-switch__01-home-sv__natt__desktop.png) |
-| 02 home-en | **EN** pressed: same URL, page re-rendered in English (h1 «A world that remembers her.») | `/` | en / `tf_locale=en` | [png](../screenshots/flows/lang-switch__02-home-en__natt__desktop.png) |
-| 03 uppgradera-en | Nav «Pricing» → still `/uppgradera` | `/uppgradera` | en / en / **Upgrade** | [png](../screenshots/flows/lang-switch__03-uppgradera-en__natt__desktop.png) |
-| 04 uppgradera-sv | **SV** pressed: back to Swedish, same URL | `/uppgradera` | sv / sv / **Uppgradera** | [png](../screenshots/flows/lang-switch__04-uppgradera-sv__natt__desktop.png) |
+| 01 home-sv | Default | `/` | sv / `tf_locale=sv` / Tale Forge | [png](../screenshots/flows/lang-switch__01-home-sv__natt__desktop.webp) |
+| 02 home-en | **EN** pressed: same URL, page re-rendered in English (h1 «A world that remembers her.») | `/` | en / `tf_locale=en` | [png](../screenshots/flows/lang-switch__02-home-en__natt__desktop.webp) |
+| 03 uppgradera-en | Nav «Pricing» → still `/uppgradera` | `/uppgradera` | en / en / **Upgrade** | [png](../screenshots/flows/lang-switch__03-uppgradera-en__natt__desktop.webp) |
+| 04 uppgradera-sv | **SV** pressed: back to Swedish, same URL | `/uppgradera` | sv / sv / **Uppgradera** | [png](../screenshots/flows/lang-switch__04-uppgradera-sv__natt__desktop.webp) |
 
 The switch, verbatim from `LanguageSwitcher` ([`390j9gbq0u9ce.js`](../source/js/390j9gbq0u9ce.js); `LOCALE_COOKIE` = `"tf_locale"`):
 
@@ -598,11 +598,11 @@ style:{padding:"5px 11px",borderRadius:"999px",border:"none",background:a?"var(-
 
 | Step | What happens | `body[data-theme]` / `tf-theme` (start natt) | Capture |
 |---|---|---|---|
-| 01 home-start | Home in the starting theme | natt / natt | [png](../screenshots/flows/theme-persist__01-home-start__natt__desktop.png) |
-| 02 home-toggled | Theme switch pressed: 0.5 s crossfade ([06 §7](06-theming-and-atmosphere.md#7-the-crossfade-between-themes-measured)) | morgon / morgon | [png](../screenshots/flows/theme-persist__02-home-toggled__natt__desktop.png) |
-| 03 login-after-nav | Nav «Logga in»: client-side, theme kept | morgon / morgon | [png](../screenshots/flows/theme-persist__03-login-after-nav__natt__desktop.png) |
-| 04 login-after-reload | Reload: the inline script at the top of `<body>` re-applies the stored theme before the backdrop paints | morgon / morgon | [png](../screenshots/flows/theme-persist__04-login-after-reload__natt__desktop.png) |
-| 05 new-tab-villkor | New tab, same profile, `/villkor`: kept | morgon / morgon | [png](../screenshots/flows/theme-persist__05-new-tab-villkor__natt__desktop.png) |
+| 01 home-start | Home in the starting theme | natt / natt | [png](../screenshots/flows/theme-persist__01-home-start__natt__desktop.webp) |
+| 02 home-toggled | Theme switch pressed: 0.5 s crossfade ([06 §7](06-theming-and-atmosphere.md#7-the-crossfade-between-themes-measured)) | morgon / morgon | [png](../screenshots/flows/theme-persist__02-home-toggled__natt__desktop.webp) |
+| 03 login-after-nav | Nav «Logga in»: client-side, theme kept | morgon / morgon | [png](../screenshots/flows/theme-persist__03-login-after-nav__natt__desktop.webp) |
+| 04 login-after-reload | Reload: the inline script at the top of `<body>` re-applies the stored theme before the backdrop paints | morgon / morgon | [png](../screenshots/flows/theme-persist__04-login-after-reload__natt__desktop.webp) |
+| 05 new-tab-villkor | New tab, same profile, `/villkor`: kept | morgon / morgon | [png](../screenshots/flows/theme-persist__05-new-tab-villkor__natt__desktop.webp) |
 
 The pre-paint script, verbatim. It is the first script in `<body>`, right after an empty hidden `div`, in every page's server HTML (e.g. [`home.sv.html`](../source/html/home.sv.html)):
 
@@ -724,7 +724,7 @@ Home (sv) captured live on 2026-10-10, both themes, viewport and full page. The 
 | 4 | `og:title` is «Tale Forge» everywhere, and the legal pages' own descriptions are not used for `og:description` | §6 |
 | 5 | Login reached through a gated redirect gives no reason ("log in to see your account") | §5.9 |
 | 6 | No current-page state in the nav | §3.1 |
-| 7 | `/start` s0 badge says «Iris och den sparade platsen» while the two covers above it are the Alva books | [`journey__03-start-s0__natt__desktop.png`](../screenshots/flows/journey__03-start-s0__natt__desktop.png) |
+| 7 | `/start` s0 badge says «Iris och den sparade platsen» while the two covers above it are the Alva books | [`journey__03-start-s0__natt__desktop.webp`](../screenshots/flows/journey__03-start-s0__natt__desktop.webp) |
 | 8 | `/start` reload keeps the screen but drops the typed name and the back chevron | §7.4 |
 | 9 | «Läs integritetspolicyn» on `/signup` navigates away in the same tab, while the same link on `/start` s2 opens a new tab (`target:"_blank",rel:"noopener noreferrer"`, [`0ad0wel9cyv30.js`](../source/js/0ad0wel9cyv30.js)) | `legal` 01 |
 | 10 | Footer «Version 16ab1756» does not match `<meta name="tf-release-sha" content="4be07efd…">` | §3.2, §6 |

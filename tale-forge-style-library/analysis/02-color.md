@@ -35,7 +35,7 @@ Everything below is either copied from the shipped CSS and JS, with line numbers
 | Role | natt (night, default) | morgon (morning) | Source |
 |---|---|---|---|
 | Canvas (`body` background) | `#171232` deep indigo | `#ede9f6` pale lavender | [3q17cp_jgfwol.pretty.css:606, :610](../source/css/3q17cp_jgfwol.pretty.css) |
-| Backdrop plate (fixed, full viewport) | [nebula-hero.webp](../assets/assets/nebula-hero.webp) + dark scrim + 6 star dots; rendered median `#262a41` | [morgon-aurora-desktop.webp](../assets/assets/morgon-aurora-desktop.webp) (mobile: [-mobile](../assets/assets/morgon-aurora-mobile.webp)); rendered median `#f1e4eb` | :612-676; [backdrop-layer__natt__desktop.png](../derived/color/backdrop-layer__natt__desktop.png), [__morgon__](../derived/color/backdrop-layer__morgon__desktop.png) |
+| Backdrop plate (fixed, full viewport) | [nebula-hero.webp](../assets/assets/nebula-hero.webp) + dark scrim + 6 star dots; rendered median `#262a41` | [morgon-aurora-desktop.webp](../assets/assets/morgon-aurora-desktop.webp) (mobile: [-mobile](../assets/assets/morgon-aurora-mobile.webp)); rendered median `#f1e4eb` | :612-676; [backdrop-layer__natt__desktop.webp](../derived/color/backdrop-layer__natt__desktop.webp), [__morgon__](../derived/color/backdrop-layer__morgon__desktop.webp) |
 | Page ink (headlines) | `#fff7e9` warm cream | `#241f35` plum-black | `--page-ink` :494 / :543 |
 | Secondary ink (ledes, body copy) | `#d9cfee` lilac-grey | `#5f5878` dusk violet-grey | `--page-sub` :495 / :544 |
 | Accent (links, focus, drop caps, logo) | `#f5c542` gold-soft | `#6d4fe0` violet | `--accent` :496 / :545 |
@@ -286,13 +286,13 @@ Columns give the raw value, the resolved value when it is a `var()`, the alpha, 
 | `--map-dot` | `var(--violet-soft)` = `#9b87f5` [:539] | `var(--violet)` = `#6d4fe0` [:588] | Dots on the how-it-works story map. |
 | `--map-glow` | `#f5c54240` (α 0.25; flat `#5a5141`) [:540] | `#6d4fe033` (α 0.20; flat `#d7c6e9`) [:589] | Glow behind map medallions and the "next book" cover. |
 
-![Semantic tokens, natt](../derived/color/semantic-natt.png)
+![Semantic tokens, natt](../derived/color/semantic-natt.webp)
 
-*[derived/color/semantic-natt.png](../derived/color/semantic-natt.png): all 47 natt tokens. Each tile shows the raw value over a checkerboard (left; reveals alpha) and the token in context (right). Context means composited through the surfaces it sits on (card blurred, chip over card, and so on) over the measured night backdrop, with the WCAG ratio in that context.*
+*[derived/color/semantic-natt.webp](../derived/color/semantic-natt.webp): all 47 natt tokens. Each tile shows the raw value over a checkerboard (left; reveals alpha) and the token in context (right). Context means composited through the surfaces it sits on (card blurred, chip over card, and so on) over the measured night backdrop, with the WCAG ratio in that context.*
 
-![Semantic tokens, morgon](../derived/color/semantic-morgon.png)
+![Semantic tokens, morgon](../derived/color/semantic-morgon.webp)
 
-*[derived/color/semantic-morgon.png](../derived/color/semantic-morgon.png): the same 47 tokens for morgon.*
+*[derived/color/semantic-morgon.webp](../derived/color/semantic-morgon.webp): the same 47 tokens for morgon.*
 
 ---
 
@@ -395,17 +395,17 @@ What this means, measured:
   - The nebula ([nebula-hero.webp](../assets/assets/nebula-hero.webp), 2400×1340) shows an astronaut reading a glowing book on stacks of books in a violet-blue nebula with gold bokeh. Its k-means palette is `#101B3F` 26%, `#38446E` 24%, `#746F8E` 15%, `#352D3A` 11%, `#6E7DB6` 9%, `#7B5E58` 6%, `#ACA1CB` 6%, `#CBA181` 4%. 90% of its chromatic pixels are blue-violet.
   - The scrim darkens it top to bottom with `#0b0f1e` at 38% → 50% (at 45%) → `#0d1122` at 74%.
   - The "starfield" is **six single radial-gradient dots**, 1–1.6 px, at fixed positions in the top quarter. It is not a tiled texture. The colours are `#ffe9b0e6`, `#f5f0e8cc`, `#f5c542d9`, `#f5f0e8b3`, `#ffe9b0bf`, `#9b87f599`, twinkling in opacity 0.95↔0.55 over 4.6 s. The image supplies all the other stars.
-  - As rendered at 1440×900, the layer's median pixel is `#262a41`; in the hero copy column it is `#292d41` ([backdrop-layer__natt__desktop.png](../derived/color/backdrop-layer__natt__desktop.png), captured live with all content hidden). After the scrim, 98% of chromatic pixels are blue-violet and the median L* is 17.9.
+  - As rendered at 1440×900, the layer's median pixel is `#262a41`; in the hero copy column it is `#292d41` ([backdrop-layer__natt__desktop.webp](../derived/color/backdrop-layer__natt__desktop.webp), captured live with all content hidden). After the scrim, 98% of chromatic pixels are blue-violet and the median L* is 17.9.
 - **Morning = watercolour, nothing on top.**
   - [morgon-aurora-desktop.webp](../assets/assets/morgon-aurora-desktop.webp) (2560×1440) is a wet-on-wet watercolour sky: an apricot-yellow-coral burst at top right, lavender cloud masses at the left, lavender and coral sprigs in the corners, and a pale paper-white centre.
   - Its palette is near-neutral pastel: `#F3E9EF` 40%, `#EEE2ED` 24%, `#E4CEDE` 11%, `#FAE0D3` 10%, `#D5BBDC` 7%, `#F8BAB9` 3%, `#B69DD2` 3%, `#FCD8A6` 3%. Median L* is 91.6 and median chroma C* only 7.0.
   - There is no scrim and no stars. The mobile file ([morgon-aurora-mobile.webp](../assets/assets/morgon-aurora-mobile.webp), 1440×2560) is a portrait recomposition with the same palette.
   - Rendered median: `#f1e4eb`.
-- **The plate never scrolls.** `.bg` is `position: fixed; height: 100lvh` (:612-622). Every section of the long home page is read over the same fixed plate, as the scrolled live captures behind the [contrast sheets](../derived/color/contrast-measurement-sheet__natt.png) show.
+- **The plate never scrolls.** `.bg` is `position: fixed; height: 100lvh` (:612-622). Every section of the long home page is read over the same fixed plate, as the scrolled live captures behind the [contrast sheets](../derived/color/contrast-measurement-sheet__natt.webp) show.
   - Caveat for anyone using the harvested full-page screenshots: in [home__sv__natt__desktop__full.webp](../screenshots/pages/home/home__sv__natt__desktop__full.webp) everything below the first 900 px sits on flat `#171232` (and `#ede9f6` in morgon). That is an artefact of full-page capture, not what a scrolling viewer sees.
 - **The canvas colours are the dark and light extremes of the plates.** `#171232` (L* 8, C* 24, hue 302°) is a saturated indigo darker than any large cluster of the nebula. `#ede9f6` (L* 93, C* 7, hue 302°) is the lavender paper of the watercolour. Both share the 302° violet hue axis with `--violet-soft`.
 
-Plates for compositing: [backdrop-layer__natt__desktop.png](../derived/color/backdrop-layer__natt__desktop.png), [backdrop-layer__morgon__desktop.png](../derived/color/backdrop-layer__morgon__desktop.png), [backdrop-layer__natt__mobile.png](../derived/color/backdrop-layer__natt__mobile.png), [backdrop-layer__morgon__mobile.png](../derived/color/backdrop-layer__morgon__mobile.png). These are live captures of only the `.bg` layer (`.wrap` hidden), at 1440×900 and at 390×844@2x.
+Plates for compositing: [backdrop-layer__natt__desktop.webp](../derived/color/backdrop-layer__natt__desktop.webp), [backdrop-layer__morgon__desktop.webp](../derived/color/backdrop-layer__morgon__desktop.webp), [backdrop-layer__natt__mobile.webp](../derived/color/backdrop-layer__natt__mobile.webp), [backdrop-layer__morgon__mobile.webp](../derived/color/backdrop-layer__morgon__mobile.webp). These are live captures of only the `.bg` layer (`.wrap` hidden), at 1440×900 and at 390×844@2x.
 
 **Read:** the night plate is a photographic, cinematic image: shallow depth of field, bokeh, volumetric clouds. The morning plate is a flat illustrated paper texture. The two themes therefore differ in medium as well as brightness: night is "film", morning is "watercolour". The UI on top is identical geometry in both.
 
@@ -413,9 +413,9 @@ Plates for compositing: [backdrop-layer__natt__desktop.png](../derived/color/bac
 
 ## 5. The gold and violet accent swap
 
-![Accent swap](../derived/color/accent-swap.png)
+![Accent swap](../derived/color/accent-swap.webp)
 
-*[derived/color/accent-swap.png](../derived/color/accent-swap.png): each accent-bearing token rendered in its own theme over that theme's backdrop. Left: natt. Right: morgon.*
+*[derived/color/accent-swap.webp](../derived/color/accent-swap.webp): each accent-bearing token rendered in its own theme over that theme's backdrop. Left: natt. Right: morgon.*
 
 | Token | natt | morgon |
 |---|---|---|
@@ -545,9 +545,9 @@ For film and print, [tokens/color.css](../tokens/color.css) section 5 lists ever
 
 ## 7. Gradients (and why `.grad` is not one)
 
-![All gradients](../derived/color/gradients.png)
+![All gradients](../derived/color/gradients.webp)
 
-*[derived/color/gradients.png](../derived/color/gradients.png): every gradient that ships (CSS and JS/SVG), rendered from its own CSS text with a numpy renderer that matches Chromium within 0.4/255 mean error. Each tile shows the CSS text and source line. Multi-layer backgrounds are stacked as in CSS. The underlay is either a checkerboard (to show alpha) or the surface the gradient really sits on.*
+*[derived/color/gradients.webp](../derived/color/gradients.webp): every gradient that ships (CSS and JS/SVG), rendered from its own CSS text with a numpy renderer that matches Chromium within 0.4/255 mean error. Each tile shows the CSS text and source line. Multi-layer backgrounds are stacked as in CSS. The underlay is either a checkerboard (to show alpha) or the surface the gradient really sits on.*
 
 **The primary button, `--btn-grad`.** It is the only gradient token:
 
@@ -906,9 +906,9 @@ Resolved colours of visible elements, summed over the desktop computed-style dum
 
 The result is 150 measured rows (home desktop and mobile, /login and /start desktop, both themes) and 119 computed rows: [derived/color/contrast.csv](../derived/color/contrast.csv).
 
-![Contrast measurement natt](../derived/color/contrast-measurement-sheet__natt.png)
+![Contrast measurement natt](../derived/color/contrast-measurement-sheet__natt.webp)
 
-*[derived/color/contrast-measurement-sheet__natt.png](../derived/color/contrast-measurement-sheet__natt.png) and [contrast-measurement-sheet__morgon.png](../derived/color/contrast-measurement-sheet__morgon.png): every measured element. Each tile shows the crop of what is behind its text (live, text hidden), the text redrawn in its real colour on the median surface, and the median / worst-5% ratios. Red marks an AA failure.*
+*[derived/color/contrast-measurement-sheet__natt.webp](../derived/color/contrast-measurement-sheet__natt.webp) and [contrast-measurement-sheet__morgon.webp](../derived/color/contrast-measurement-sheet__morgon.webp): every measured element. Each tile shows the crop of what is behind its text (live, text hidden), the text redrawn in its real colour on the median surface, and the median / worst-5% ratios. Red marks an AA failure.*
 
 **Findings.**
 
@@ -1044,15 +1044,15 @@ Measured facts:
 
 ## 15. Image palettes (k-means, CIELAB, k=8)
 
-Method: the repository convention (`films/clearscaler/scripts/brand_measure.py`), re-implemented in numpy because OpenCV is not installed. Each image is thumbnailed to 480 px, pixels with alpha ≤200 are dropped, and k-means++ runs in CIELAB (k=8, 4 attempts, 30 iterations, eps 0.5). Each cluster is reported as its **median pixel**, with the same background/text/accent role heuristic as the original. Extra per-image statistics: median L* and C*, and the hue mass of chromatic pixels (C*>10). Output shape follows [films/clearscaler/brand.json](../../films/clearscaler/brand.json): [derived/color/image-palettes.json](../derived/color/image-palettes.json), and the sheet [derived/color/image-palettes.png](../derived/color/image-palettes.png).
+Method: the repository convention (`films/clearscaler/scripts/brand_measure.py`), re-implemented in numpy because OpenCV is not installed. Each image is thumbnailed to 480 px, pixels with alpha ≤200 are dropped, and k-means++ runs in CIELAB (k=8, 4 attempts, 30 iterations, eps 0.5). Each cluster is reported as its **median pixel**, with the same background/text/accent role heuristic as the original. Extra per-image statistics: median L* and C*, and the hue mass of chromatic pixels (C*>10). Output shape follows [films/clearscaler/brand.json](../../films/clearscaler/brand.json): [derived/color/image-palettes.json](../derived/color/image-palettes.json), and the sheet [derived/color/image-palettes.webp](../derived/color/image-palettes.webp).
 
 | Image | k=8 palette (median pixel per cluster, share) | roles (bg / text / accent) | L* med | C* med | warm / blue-violet |
 |---|---|---|---|---|---|
 | [nebula-hero.webp](../assets/assets/nebula-hero.webp) | `#101B3F` 26% `#38446E` 24% `#746F8E` 15% `#352D3A` 11% `#6E7DB6` 9% `#7B5E58` 6% `#ACA1CB` 6% `#CBA181` 4% | `#101B3F` / `#CBA181` / `#6E7DB6` | 30.9 | 23.8 | 10% / 90% |
 | [morgon-aurora-desktop.webp](../assets/assets/morgon-aurora-desktop.webp) | `#F3E9EF` 40% `#EEE2ED` 24% `#E4CEDE` 11% `#FAE0D3` 10% `#D5BBDC` 7% `#F8BAB9` 3% `#B69DD2` 3% `#FCD8A6` 3% | `#F3E9EF` / `#B69DD2` / `#B69DD2` | 91.6 | 7.0 | 44% / 56% |
 | [morgon-aurora-mobile.webp](../assets/assets/morgon-aurora-mobile.webp) | `#F2E6ED` 51% `#F9EAE1` 16% `#EAD5E8` 11% `#F6DAD9` 7% `#D0B4DC` 5% `#FBE1C0` 4% `#AE99D2` 3% `#F7C6BE` 3% | `#F2E6ED` / `#AE99D2` / `#AE99D2` | 91.9 | 6.6 | 43% / 57% |
-| [backdrop-layer__natt__desktop.png](../derived/color/backdrop-layer__natt__desktop.png) | `#0F152C` 25% `#212943` 22% `#2F3859` 12% `#454259` 12% `#201E2C` 11% `#4B5378` 9% `#3B3137` 6% `#60524E` 3% | `#0F152C` / `#60524E` / `None` | 17.9 | 17.0 | 2% / 98% |
-| [backdrop-layer__morgon__desktop.png](../derived/color/backdrop-layer__morgon__desktop.png) | `#F2E9EE` 47% `#EDE1ED` 23% `#FAE1D2` 10% `#DBC3DE` 8% `#F0CCD0` 5% `#FCD7A3` 3% `#BEA6D6` 3% `#F9B3A7` 2% | `#F2E9EE` / `#BEA6D6` / `#FCD7A3` | 91.8 | 6.9 | 50% / 50% |
+| [backdrop-layer__natt__desktop.webp](../derived/color/backdrop-layer__natt__desktop.webp) | `#0F152C` 25% `#212943` 22% `#2F3859` 12% `#454259` 12% `#201E2C` 11% `#4B5378` 9% `#3B3137` 6% `#60524E` 3% | `#0F152C` / `#60524E` / `None` | 17.9 | 17.0 | 2% / 98% |
+| [backdrop-layer__morgon__desktop.webp](../derived/color/backdrop-layer__morgon__desktop.webp) | `#F2E9EE` 47% `#EDE1ED` 23% `#FAE1D2` 10% `#DBC3DE` 8% `#F0CCD0` 5% `#FCD7A3` 3% `#BEA6D6` 3% `#F9B3A7` 2% | `#F2E9EE` / `#BEA6D6` / `#FCD7A3` | 91.8 | 6.9 | 50% / 50% |
 | [home__sv__natt__desktop__fold.png](../screenshots/pages/home/home__sv__natt__desktop__fold.png) | `#11172C` 30% `#252A44` 25% `#444460` 18% `#3B3236` 11% `#7D6A51` 5% `#716E7E` 4% `#D7DDDA` 4% `#F6CC76` 4% | `#11172C` / `#D7DDDA` / `#F6CC76` | 19.3 | 16.2 | 10% / 88% |
 | [home__sv__morgon__desktop__fold.png](../screenshots/pages/home/home__sv__morgon__desktop__fold.png) | `#F1E7EE` 53% `#E0C9DB` 19% `#F9DDCE` 11% `#C0A9D7` 6% `#857760` 4% `#F9D596` 4% `#3D3537` 2% `#6548D1` 2% | `#F1E7EE` / `#3D3537` / `#6548D1` | 90.3 | 7.7 | 44% / 52% |
 | [home__sv__natt__mobile__fold.png](../screenshots/pages/home/home__sv__natt__mobile__fold.png) | `#1E2A45` 33% `#3F4A6B` 23% `#463C40` 17% `#6C5E4F` 9% `#D9E0DE` 5% `#908F9A` 5% `#F9CE59` 4% `#E9CC8F` 4% | `#463C40` / `#D9E0DE` / `#F9CE59` | 28.5 | 17.6 | 18% / 79% |
@@ -1078,9 +1078,9 @@ Method: the repository convention (`films/clearscaler/scripts/brand_measure.py`)
 | [opengraph-image.png](../assets/brand/opengraph-image.png) | `#14182E` 43% `#33364D` 19% `#877E64` 10% `#4E443B` 10% `#D7E1DD` 9% `#EFD08E` 6% `#F5C542` 2% `#8A3E34` 2% | `#14182E` / `#D7E1DD` / `#F5C542` | 20.3 | 16.2 | 24% / 72% |
 | pooled: all 15 sample-book images (S1..S6BB + cover) | `#EBCB9E` 18% `#654619` 17% `#907330` 16% `#D59E56` 15% `#B96B24` 13% `#291E0F` 12% `#AB2923` 7% `#495050` 3% | `#EBCB9E` / `#291E0F` / `#AB2923` | 49.8 | 36.3 | 95% / 0% |
 
-![Image palettes](../derived/color/image-palettes.png)
+![Image palettes](../derived/color/image-palettes.webp)
 
-*[derived/color/image-palettes.png](../derived/color/image-palettes.png): one row per image. Thumbnail, path, L*/C*, warm versus blue-violet share and roles, then the 8 clusters as bars sized by share with hex and percentage.*
+*[derived/color/image-palettes.webp](../derived/color/image-palettes.webp): one row per image. Thumbnail, path, L*/C*, warm versus blue-violet share and roles, then the 8 clusters as bars sized by share with hex and percentage.*
 
 Notes on the measurements:
 
@@ -1184,7 +1184,7 @@ Use [tokens/color.css](../tokens/color.css) for HTML/CSS mock-ups and [tokens/co
 **A natt frame.**
 
 1. **Plate:** [nebula-hero.webp](../assets/assets/nebula-hero.webp), cover-fit with focus at 50% horizontal and 30% vertical.
-2. **Scrim:** a vertical gradient `#0b0f1e` at 38% (top) → 50% (45%) → `#0d1122` at 74% (bottom). A rendered reference is [backdrop-layer__natt__desktop.png](../derived/color/backdrop-layer__natt__desktop.png).
+2. **Scrim:** a vertical gradient `#0b0f1e` at 38% (top) → 50% (45%) → `#0d1122` at 74% (bottom). A rendered reference is [backdrop-layer__natt__desktop.webp](../derived/color/backdrop-layer__natt__desktop.webp).
 3. **Stars:** optionally 6 tiny dots in the top quarter, twinkling 0.95↔0.55 over 4.6 s: cream `#ffe9b0` / `#f5f0e8`, one gold `#f5c542`, one violet `#9b87f5`.
 4. **Headline:** Lora 700 in `#fff7e9`, highlight words in `#f5c542`, with a soft `0 2px 30px` shadow of `#0c0828` at 35%.
 5. **Body text:** `#d9cfee`. Keep it off the brightest part of the plate. Measured worst case, over the astronaut, is 3.6:1.
@@ -1232,13 +1232,13 @@ Use [tokens/color.css](../tokens/color.css) for HTML/CSS mock-ups and [tokens/co
 | [derived/color/glod-canvas-palettes.json](../derived/color/glod-canvas-palettes.json) | The glöd canvas painter's natt, morgon and ambient landscape palettes, flame layers, fire levels and warm-light `rgba` family, converted verbatim to JSON |
 | [derived/color/computed-colour-usage.json](../derived/color/computed-colour-usage.json) | Census of resolved colours (`color`, `background-color`, border, shadows, gradients) per theme across all desktop dumps, mapped back to tokens |
 | [derived/color/contrast.csv](../derived/color/contrast.csv) | 269 rows: 150 live-measured (median and worst-5% ratio, predicted versus measured surface), 100 token composites, 19 literal pairs |
-| [derived/color/contrast-measurement-sheet__natt.png](../derived/color/contrast-measurement-sheet__natt.png), [__morgon.png](../derived/color/contrast-measurement-sheet__morgon.png) | Visual proof for every measured desktop element: what is behind the text, the text on its median surface, and ratios |
-| [derived/color/backdrop-layer__natt__desktop.png](../derived/color/backdrop-layer__natt__desktop.png), [__morgon__desktop](../derived/color/backdrop-layer__morgon__desktop.png), [__natt__mobile](../derived/color/backdrop-layer__natt__mobile.png), [__morgon__mobile](../derived/color/backdrop-layer__morgon__mobile.png) | Live captures of the fixed `.bg` layer alone (nebula + scrim + stars / aurora), usable as plates |
-| [derived/color/image-palettes.json](../derived/color/image-palettes.json), [image-palettes.png](../derived/color/image-palettes.png) | k=8 CIELAB palettes, roles and hue/lightness statistics for 28 rasters plus the pooled sample book, in the brand.json shape |
+| [derived/color/contrast-measurement-sheet__natt.webp](../derived/color/contrast-measurement-sheet__natt.webp), [__morgon.png](../derived/color/contrast-measurement-sheet__morgon.webp) | Visual proof for every measured desktop element: what is behind the text, the text on its median surface, and ratios |
+| [derived/color/backdrop-layer__natt__desktop.webp](../derived/color/backdrop-layer__natt__desktop.webp), [__morgon__desktop](../derived/color/backdrop-layer__morgon__desktop.webp), [__natt__mobile](../derived/color/backdrop-layer__natt__mobile.webp), [__morgon__mobile](../derived/color/backdrop-layer__morgon__mobile.webp) | Live captures of the fixed `.bg` layer alone (nebula + scrim + stars / aurora), usable as plates |
+| [derived/color/image-palettes.json](../derived/color/image-palettes.json), [image-palettes.webp](../derived/color/image-palettes.webp) | k=8 CIELAB palettes, roles and hue/lightness statistics for 28 rasters plus the pooled sample book, in the brand.json shape |
 | [derived/color/primitives.png](../derived/color/primitives.png) | Primitive swatches with numeric data, canvas/ink/gradient partners and the alpha ladders over both canvases |
-| [derived/color/semantic-natt.png](../derived/color/semantic-natt.png), [semantic-morgon.png](../derived/color/semantic-morgon.png) | All 47 tokens per theme: raw over checkerboard plus in context over the measured backdrop, with ratio, CSS-use count and line |
-| [derived/color/gradients.png](../derived/color/gradients.png) | Every gradient rendered from its CSS (52 tiles in six groups), with CSS text and source |
-| [derived/color/accent-swap.png](../derived/color/accent-swap.png) | The gold↔violet swap, token by token, natt beside morgon |
+| [derived/color/semantic-natt.webp](../derived/color/semantic-natt.webp), [semantic-morgon.webp](../derived/color/semantic-morgon.webp) | All 47 tokens per theme: raw over checkerboard plus in context over the measured backdrop, with ratio, CSS-use count and line |
+| [derived/color/gradients.webp](../derived/color/gradients.webp) | Every gradient rendered from its CSS (52 tiles in six groups), with CSS text and source |
+| [derived/color/accent-swap.webp](../derived/color/accent-swap.webp) | The gold↔violet swap, token by token, natt beside morgon |
 | [derived/color/glod-scene-palette.png](../derived/color/glod-scene-palette.png) | The glöd canvas palettes as schematic landscapes plus labelled values and flame layers |
 | [derived/color/illustration-vs-ui.png](../derived/color/illustration-vs-ui.png) | a*b* plot of illustration clusters, backdrop clusters and UI tokens, with hue-mass table |
 | [derived/color/theme-crossfade.png](../derived/color/theme-crossfade.png), [theme-crossfade.json](../derived/color/theme-crossfade.json) | The natt→morgon switch captured at 50× slow-down: frames, colour-versus-time bands, opacity versus ease, per-frame computed values |

@@ -254,7 +254,7 @@ Long dark hair in two braids, a centre parting, warm brown skin, an orange crew-
 
 ### 8.7 Narrator portraits
 
-Five grown-up faces exist (Morfar/Grandpa Erik, Lily, Marcus, Saga). All are loose watercolour vignettes on white, half-length, warm and smiling. They are a cousin of the storybook style but airier, with 37–51 % white paper. See [../derived/brand/narrator-cast.png](../derived/brand/narrator-cast.png) (brand dimension).
+Five grown-up faces exist (Morfar/Grandpa Erik, Lily, Marcus, Saga). All are loose watercolour vignettes on white, half-length, warm and smiling. They are a cousin of the storybook style but airier, with 37–51 % white paper. See [../derived/brand/narrator-cast.webp](../derived/brand/narrator-cast.webp) (brand dimension).
 
 ---
 
@@ -570,7 +570,7 @@ Style: Warm watercolor and colored-pencil children's-book illustration style, so
 - **Letterbox like the reader.** The reader's blurred-copy fill (`blur(26px) saturate(1.08)`, `scale(1.18)`) is a ready-made way to put 3:2 storybook frames into 16:9 or 9:16 without cropping faces.
 - **Push-ins work best on the shoulder-to-shoulder compositions** (§7). The faces sit in the top half and the shared object in the lower half: a slow tilt from object to faces tells each beat.
 - **Watch continuity.** Expect jumps in window side, time of day and Mossa's size between consecutive scenes. Either regenerate with the §15.3 kit or cut so the jumps fall at choice points.
-- **The unveil.** In /start the hero portrait is revealed from a blurred dark veil to sharp over about 3.8 s ([../screenshots/components/app/start-s4-unveil-strip__natt__desktop.png](../screenshots/components/app/start-s4-unveil-strip__natt__desktop.png)). This is a strong on-brand reveal for a film title or a "your hero" moment. The timing belongs to the motion dimension.
+- **The unveil.** In /start the hero portrait is revealed from a blurred dark veil to sharp over about 3.8 s ([../screenshots/components/app/start-s4-unveil-strip__natt__desktop.webp](../screenshots/components/app/start-s4-unveil-strip__natt__desktop.webp)). This is a strong on-brand reveal for a film title or a "your hero" moment. The timing belongs to the motion dimension.
 
 ---
 

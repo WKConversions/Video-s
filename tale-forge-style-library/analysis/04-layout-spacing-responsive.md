@@ -33,7 +33,7 @@ Everything below is copied from the shipped CSS with line numbers, read from the
 
 ## 1. Layout character (Read)
 
-- **One centred column on a fixed plate.** All content lives in `.shell` (max 1120, content 1064), which scrolls over a `position: fixed` backdrop 100lvh tall ([3q17cp_jgfwol.pretty.css:612-622](../source/css/3q17cp_jgfwol.pretty.css), [:681-688](../source/css/3q17cp_jgfwol.pretty.css)). Mid-page the nebula is still behind the cards ([home-desktop-scrolled-1700__viewport.png](../derived/layout/home-desktop-scrolled-1700__viewport.png)). Read: the page feels like a lit stage set, and the cards are props in front of it.
+- **One centred column on a fixed plate.** All content lives in `.shell` (max 1120, content 1064), which scrolls over a `position: fixed` backdrop 100lvh tall ([3q17cp_jgfwol.pretty.css:612-622](../source/css/3q17cp_jgfwol.pretty.css), [:681-688](../source/css/3q17cp_jgfwol.pretty.css)). Mid-page the nebula is still behind the cards ([home-desktop-scrolled-1700__viewport.webp](../derived/layout/home-desktop-scrolled-1700__viewport.webp)). Read: the page feels like a lit stage set, and the cards are props in front of it.
 - **Airy, but with a steady beat.** Sections open with 44px of air and close with 8px. Steps are 36px apart. Section heads sit 22px above their content. At 1440 the hero takes 64vh, so the first section's headline "Äventyr värda att prata om." ["Adventures worth talking about."] already shows in the fold ([home__sv__natt__desktop__fold.png](../screenshots/pages/home/home__sv__natt__desktop__fold.png)). Read: generous, but never empty. The rhythm units repeat (22, 36, 44), so long scrolls feel calm.
 - **Editorial, near-even splits.** The column ratios are 1.05/0.95 (hero), 1/1 (steps), 1.25/0.95 (builder) and 1.15/0.85 (start builder). None is 2/1 or 1/3. Read: two-page-spread proportions. Text and picture weigh about the same, and text gets a slight edge.
 - **Zig-zag storytelling.** The six "Så fungerar det" ["How it works"] steps alternate text|picture and picture|text (`.hiw-step--flip`). A dashed vertical rail with numbered gold nodes ties them together like a path through the book ([:2577-2630](../source/css/3q17cp_jgfwol.pretty.css)).
@@ -46,20 +46,20 @@ Everything below is copied from the shipped CSS with line numbers, read from the
 | File | What it is |
 |---|---|
 | [tokens/layout.json](../tokens/layout.json) | Machine-readable layout tokens: containers, spacing (scale, frequencies, semantic map), grids, breakpoints (explicit + implicit), radii, elevation (natt/morgon/fixed), z-index, blur, aspect ratios, tap targets, transforms, frames, measured rhythm. Every entry cites its source. |
-| [derived/layout/home-desktop-annotated.png](../derived/layout/home-desktop-annotated.png) | Full home page at 1440 (1870 x 5324 including header and gutter). Shows the container and content box, the 28px gutters, nav, the hero's 1.05/0.95 columns and 40 gap, the hero text stack spacings, the fan's rotated cards with z-order, section bounds and paddings, the HIW rail, step columns, 36px step gaps and per-step notes, the builder 1.25/0.95 split, the shelf's four auto-fill tracks and the foot, plus a vertical-rhythm table. |
-| [derived/layout/home-mobile-annotated.png](../derived/layout/home-mobile-annotated.png) | Full home page at 390 (captured @2x, drawn @1x), cut into five columns at section boundaries. Shows the 28px gutters, the two-row nav, the stacked hero, the 340px fan with tilted cards, the 44px rail, text-above-visual steps, the mobile map SVG, stacked CTAs, the centred builder, the single-track shelf, and numbered stacking order. |
-| [derived/layout/home-tablet-annotated.png](../derived/layout/home-tablet-annotated.png) | Home at 834 (y 0-2111): the phone structure in a 778px column. Single-line h1, wide 340px fan whose cards drift apart, 734px step bodies. |
-| [derived/layout/uppgradera-annotated.png](../derived/layout/uppgradera-annotated.png) | /uppgradera at 1440 and 390 side by side: the centred `min(560px,100%)` column, glass cards (padding 28, mb 20, r 26), the `minmax(0,1fr) 112px` proof grid and its 600px collapse, pill toggles, and the pinned foot. |
-| [derived/layout/tilt-geometry.png](../derived/layout/tilt-geometry.png) | Rotation geometry of the hero fan, the step 3 card fan and the step 6 book fan (rotated vs unrotated outlines, centres, angle arcs), plus a table of every resting rotation in the CSS. |
-| [derived/layout/home-reflow-strip.png](../derived/layout/home-reflow-strip.png) | The home fold at 1920, 1440, 1120, 1024, 881, 880, 834, 768, 720, 560, 390 and 320, all at the same height. |
+| [derived/layout/home-desktop-annotated.webp](../derived/layout/home-desktop-annotated.webp) | Full home page at 1440 (1870 x 5324 including header and gutter). Shows the container and content box, the 28px gutters, nav, the hero's 1.05/0.95 columns and 40 gap, the hero text stack spacings, the fan's rotated cards with z-order, section bounds and paddings, the HIW rail, step columns, 36px step gaps and per-step notes, the builder 1.25/0.95 split, the shelf's four auto-fill tracks and the foot, plus a vertical-rhythm table. |
+| [derived/layout/home-mobile-annotated.webp](../derived/layout/home-mobile-annotated.webp) | Full home page at 390 (captured @2x, drawn @1x), cut into five columns at section boundaries. Shows the 28px gutters, the two-row nav, the stacked hero, the 340px fan with tilted cards, the 44px rail, text-above-visual steps, the mobile map SVG, stacked CTAs, the centred builder, the single-track shelf, and numbered stacking order. |
+| [derived/layout/home-tablet-annotated.webp](../derived/layout/home-tablet-annotated.webp) | Home at 834 (y 0-2111): the phone structure in a 778px column. Single-line h1, wide 340px fan whose cards drift apart, 734px step bodies. |
+| [derived/layout/uppgradera-annotated.webp](../derived/layout/uppgradera-annotated.webp) | /uppgradera at 1440 and 390 side by side: the centred `min(560px,100%)` column, glass cards (padding 28, mb 20, r 26), the `minmax(0,1fr) 112px` proof grid and its 600px collapse, pill toggles, and the pinned foot. |
+| [derived/layout/tilt-geometry.webp](../derived/layout/tilt-geometry.webp) | Rotation geometry of the hero fan, the step 3 card fan and the step 6 book fan (rotated vs unrotated outlines, centres, angle arcs), plus a table of every resting rotation in the CSS. |
+| [derived/layout/home-reflow-strip.webp](../derived/layout/home-reflow-strip.webp) | The home fold at 1920, 1440, 1120, 1024, 881, 880, 834, 768, 720, 560, 390 and 320, all at the same height. |
 | [derived/layout/breakpoint-map.png](../derived/layout/breakpoint-map.png) | One lane per component across viewport widths 300-1920. Each lane shows the layout states and what changes, including fluid-type ranges, intrinsic shelf tracks and the measured nav-row thresholds. |
-| [derived/layout/film-frames-guides.png](../derived/layout/film-frames-guides.png) | The live site captured at 1920x1080 and 1080x1920, with the column, hero and fan guides given as % of frame. |
+| [derived/layout/film-frames-guides.webp](../derived/layout/film-frames-guides.webp) | The live site captured at 1920x1080 and 1080x1920, with the column, hero and fan guides given as % of frame. |
 | [derived/layout/spacing-scale.png](../derived/layout/spacing-scale.png) | Frequency bar chart of every px value in gap/padding/margin, plus the 4-44 ladder with each value's CSS-use count and example selectors. |
-| [derived/layout/radius-scale.png](../derived/layout/radius-scale.png) | The radius ladder drawn at true size as natt glass tiles, labelled by role and selector. |
-| [derived/layout/elevation-scale__natt.png](../derived/layout/elevation-scale__natt.png), [__morgon](../derived/layout/elevation-scale__morgon.png) | Each shadow rendered on the real backdrop, with its literal value. |
-| [derived/layout/backdrop-blur-scale.png](../derived/layout/backdrop-blur-scale.png) | Glass tiles at each backdrop-filter value (0-24px) over the nebula. |
-| [derived/layout/z-index-layers.png](../derived/layout/z-index-layers.png) | The z-index ladder (-1 to 1000) with the selectors on each level. |
-| [derived/layout/home-desktop-scrolled-1700__viewport.png](../derived/layout/home-desktop-scrolled-1700__viewport.png) | Viewport at scrollY 1700. It shows the fixed backdrop and that the nav is not sticky. |
+| [derived/layout/radius-scale.webp](../derived/layout/radius-scale.webp) | The radius ladder drawn at true size as natt glass tiles, labelled by role and selector. |
+| [derived/layout/elevation-scale__natt.webp](../derived/layout/elevation-scale__natt.webp), [__morgon](../derived/layout/elevation-scale__morgon.webp) | Each shadow rendered on the real backdrop, with its literal value. |
+| [derived/layout/backdrop-blur-scale.webp](../derived/layout/backdrop-blur-scale.webp) | Glass tiles at each backdrop-filter value (0-24px) over the nebula. |
+| [derived/layout/z-index-layers.webp](../derived/layout/z-index-layers.webp) | The z-index ladder (-1 to 1000) with the selectors on each level. |
+| [derived/layout/home-desktop-scrolled-1700__viewport.webp](../derived/layout/home-desktop-scrolled-1700__viewport.webp) | Viewport at scrollY 1700. It shows the fixed backdrop and that the nav is not sticky. |
 | [derived/layout/css-layout-declarations.csv](../derived/layout/css-layout-declarations.csv) | All 1,981 layout-relevant declarations (display, position, box model, grid/flex, radius, shadow, z, filters, transforms, aspect) with `file:line`, at-rule and selector. |
 | [derived/layout/media-queries.csv](../derived/layout/media-queries.csv) | All 31 `@media` blocks: file, line range, query, selectors, and every declaration inside. |
 | [derived/layout/responsive-sweep.csv](../derived/layout/responsive-sweep.csv) | Key metrics measured on home at 35 widths from 1920 to 320. |
@@ -106,7 +106,7 @@ Foot ([:1933-1944](../source/css/3q17cp_jgfwol.pretty.css)):
 ```
 
 Observed:
-- The **nav is static**. It scrolls away with the page and is never sticky ([home-desktop-scrolled-1700__viewport.png](../derived/layout/home-desktop-scrolled-1700__viewport.png)). It is 96px tall at desktop (22 + 52 + 22). The right cluster has gap 12 and contains, inline-styled per [source/js/390j9gbq0u9ce.js](../source/js/390j9gbq0u9ce.js): two 44px-high pill links ("Logga in" ["Log in"], "Priser" ["Pricing"]; `padding:0 10px; border:1.5px solid var(--card-line); border-radius:999px`), the language switcher (`padding:3px; gap:2px`, two 44x44 buttons) and the theme toggle `.tt` (`min-height:44px; padding:4px`, thumb `calc(50% - 4px)`) ([:768-826](../source/css/3q17cp_jgfwol.pretty.css)).
+- The **nav is static**. It scrolls away with the page and is never sticky ([home-desktop-scrolled-1700__viewport.webp](../derived/layout/home-desktop-scrolled-1700__viewport.webp)). It is 96px tall at desktop (22 + 52 + 22). The right cluster has gap 12 and contains, inline-styled per [source/js/390j9gbq0u9ce.js](../source/js/390j9gbq0u9ce.js): two 44px-high pill links ("Logga in" ["Log in"], "Priser" ["Pricing"]; `padding:0 10px; border:1.5px solid var(--card-line); border-radius:999px`), the language switcher (`padding:3px; gap:2px`, two 44x44 buttons) and the theme toggle `.tt` (`min-height:44px; padding:4px`, thumb `calc(50% - 4px)`) ([:768-826](../source/css/3q17cp_jgfwol.pretty.css)).
 - The **foot** is pushed to the bottom of short pages by `margin-top:auto` inside the 100dvh flex column. On /login at 1440 the foot gets a 37.7px auto margin and on /start 73px ([measurements/login__sv__natt__1440.json](../derived/layout/measurements/login__sv__natt__1440.json), [start__sv__natt__1440.json](../derived/layout/measurements/start__sv__natt__1440.json)).
 - **Full-page screenshot artefact.** The `.bg` plate is fixed and 100lvh tall, so in full-page captures it only covers the first viewport and the rest of the page shows flat `#171232`/`#ede9f6` (e.g. [home__sv__natt__desktop__full.webp](../screenshots/pages/home/home__sv__natt__desktop__full.webp)). On a live screen the plate is always behind the content.
 - **Theme has no effect on layout.** natt and morgon give identical page heights for every page and viewport (all `screenshots/pages/*/*__full.webp` pairs). Only `--card-blur` (22 vs 24px) and the shadow tokens differ ([:500, :549](../source/css/3q17cp_jgfwol.pretty.css)).
@@ -132,7 +132,7 @@ Observed:
 
 ## 5. Home, section by section (desktop 1440)
 
-![Home desktop annotated](../derived/layout/home-desktop-annotated.png)
+![Home desktop annotated](../derived/layout/home-desktop-annotated.webp)
 
 All numbers below come from [measurements/home__sv__natt__1440.json](../derived/layout/measurements/home__sv__natt__1440.json) unless a CSS line is cited. Coordinates are `[x, y, w, h]` in document CSS px.
 
@@ -175,7 +175,7 @@ Read: the CTA wrap at 1440 is a by-product of the microcopy column, not a design
               display: flex; position: absolute; bottom: 23%; right: 9%; }                              /* :980-1000 */
 ```
 
-Measured at rest: each card is 224x331 (offset size, border included), so the image is 214x321. The rotated bounding boxes are fb1 [773, 170, 268, 359] and fb2 [970, 130, 262, 355]. The badge is 204x66, rotated 2.5°. Computed matrices give exactly -8.00°, +7.00° and +2.50°. Geometry: [tilt-geometry.png](../derived/layout/tilt-geometry.png).
+Measured at rest: each card is 224x331 (offset size, border included), so the image is 214x321. The rotated bounding boxes are fb1 [773, 170, 268, 359] and fb2 [970, 130, 262, 355]. The badge is 204x66, rotated 2.5°. Computed matrices give exactly -8.00°, +7.00° and +2.50°. Geometry: [tilt-geometry.webp](../derived/layout/tilt-geometry.webp).
 
 ### 5.4 "Så fungerar det" (section.hiw, y 672-3855)
 
@@ -263,7 +263,7 @@ Read: three nested beats. 44-52 marks a new chapter, 36-40 a new step, and 18-22
 
 ## 7. The single-column pages: /uppgradera, /login, /signup, legal, 404, /start
 
-![uppgradera annotated](../derived/layout/uppgradera-annotated.png)
+![uppgradera annotated](../derived/layout/uppgradera-annotated.webp)
 
 All of these pages use one inline-styled template:
 
@@ -334,7 +334,7 @@ Read: cards pad inside on a 22-34 band that grows with the card's importance (st
 
 ## 9. Border-radius scale
 
-![Radius scale](../derived/layout/radius-scale.png)
+![Radius scale](../derived/layout/radius-scale.webp)
 
 | Radius | Role | Selectors (examples) |
 |---|---|---|
@@ -357,8 +357,8 @@ Read: **radius grows with object size**, from 6-8 for small chips and icon butto
 
 ## 10. Elevation: shadows and hover lifts
 
-![Elevation natt](../derived/layout/elevation-scale__natt.png)
-![Elevation morgon](../derived/layout/elevation-scale__morgon.png)
+![Elevation natt](../derived/layout/elevation-scale__natt.webp)
+![Elevation morgon](../derived/layout/elevation-scale__morgon.webp)
 
 Theme tokens ([3q17cp:511, :530-531, :536, :538 / :560, :579-580, :585, :587](../source/css/3q17cp_jgfwol.pretty.css)):
 
@@ -388,7 +388,7 @@ Read: shadows always fall straight down (x-offset 0) with a long blur, about 2-3
 
 ## 11. Z-index layers
 
-![Z-index layers](../derived/layout/z-index-layers.png)
+![Z-index layers](../derived/layout/z-index-layers.webp)
 
 | z | Selectors | Source |
 |---|---|---|
@@ -406,7 +406,7 @@ Read: two global planes (backdrop 0, page 1) plus small local stacks counted 1-2
 
 ## 12. Backdrop blur
 
-![Backdrop blur scale](../derived/layout/backdrop-blur-scale.png)
+![Backdrop blur scale](../derived/layout/backdrop-blur-scale.webp)
 
 | Blur | Where | Source |
 |---|---|---|
@@ -438,7 +438,7 @@ The sample-book scene art (`assets/share/iris-sparade-platsen/assets/S1.webp` �
 
 ## 14. Tilt and rotation: the "physical book" vocabulary
 
-![Tilt geometry](../derived/layout/tilt-geometry.png)
+![Tilt geometry](../derived/layout/tilt-geometry.webp)
 
 | Rotation | Object | Source |
 |---|---|---|
@@ -510,7 +510,7 @@ The approach is desktop-first. Every query is `max-width` in px except the glöd
 
 ## 17. Responsive reflow, measured (desktop, tablet, mobile)
 
-![Home reflow strip](../derived/layout/home-reflow-strip.png)
+![Home reflow strip](../derived/layout/home-reflow-strip.webp)
 
 Selected rows from [responsive-sweep.csv](../derived/layout/responsive-sweep.csv) (home, sv, natt; height 900, or 844 below 600 wide):
 
@@ -533,8 +533,8 @@ Observed effects:
 - **880 → 881 is the one big switch.** Hero, steps, builder, reader and the start builder all change at once, and page height jumps by +1931 (4843 → 6774). Nothing in between (no 3-column or 2-column hero variants).
 - **The fan gets bigger as the screen gets smaller.** Just below 880 the card width returns to its 240 cap (46% of a wide stage) on a 340-tall stage. The cards overflow the stage bottom by up to about 60px (64px measured at 834) and drift to the far edges (left 6%, right 8%). See the tablet overlay. At 390 the cards are 154 wide.
 - **At 720/721 the map flips** to the vertical SVG and the page grows by about 680px.
-- **Stacking order on mobile** ([home-mobile-annotated.png](../derived/layout/home-mobile-annotated.png)): 1 logo row → 2 controls row → 3 kicker → h1 → lede → primary CTA + microcopy → ghost CTA → 4 fan (two books + badge) → 5 HIW kicker / headline / lede → 6 steps 1-6, each node + title + copy + micro line, *then* the visual (flip order reset) → 7 closing CTAs stacked and centred → 8 "Din hjälte" head → builder card (portrait centred, name, centred traits, upload) → friends card → 9 "Bokhyllan" → book 1 → book 2 (each 334 wide, about 486-tall cover) → 10 foot (brand, company, links on separate rows).
-- **Tablet (834)** ([home-tablet-annotated.png](../derived/layout/home-tablet-annotated.png)) is the phone structure in a 778 column. The h1 fits on one line (45px), the nav stays on one row, and the portrait frame stays 250 wide centred in a 734 card, which leaves a lot of air either side.
+- **Stacking order on mobile** ([home-mobile-annotated.webp](../derived/layout/home-mobile-annotated.webp)): 1 logo row → 2 controls row → 3 kicker → h1 → lede → primary CTA + microcopy → ghost CTA → 4 fan (two books + badge) → 5 HIW kicker / headline / lede → 6 steps 1-6, each node + title + copy + micro line, *then* the visual (flip order reset) → 7 closing CTAs stacked and centred → 8 "Din hjälte" head → builder card (portrait centred, name, centred traits, upload) → friends card → 9 "Bokhyllan" → book 1 → book 2 (each 334 wide, about 486-tall cover) → 10 foot (brand, company, links on separate rows).
+- **Tablet (834)** ([home-tablet-annotated.webp](../derived/layout/home-tablet-annotated.webp)) is the phone structure in a 778 column. The h1 fits on one line (45px), the nav stays on one row, and the portrait frame stays 250 wide centred in a 734 card, which leaves a lot of air either side.
 - **Mobile hero arithmetic:** 25.3 (3vh) + 479 text + 40 gap + 8 + 340 fan + 16.9 (2vh) = 909.
 
 ## 18. App screens we can only read from CSS
@@ -572,7 +572,7 @@ section { padding: 44px 0 8px; }
 
 ### 19.2 Film framing
 
-![Film frame guides](../derived/layout/film-frames-guides.png)
+![Film frame guides](../derived/layout/film-frames-guides.webp)
 
 Measured on the live site at 1920x1080 ([measurements/home__sv__natt__1920.json](../derived/layout/measurements/home__sv__natt__1920.json)):
 
@@ -590,7 +590,7 @@ Two options for 16:9:
 1. **True-to-site:** use the numbers above. The 400px side margins are empty nebula, which suits a film that wants a lot of sky.
 2. **Fill the frame:** scale the 1440x900 composition by 1.3333 (1440 → 1920). Margins become 250 (13.1%), content 1419, text 717 | 53 | 648, nav 128, hero 768, cards 299x441. The 16:10 source is then 1200 tall, so crop 120px from the bottom (the HIW kicker peeking into the fold).
 
-For **9:16**, do not crop the desktop hero. At 1080x1920 the site keeps the 2-column hero (1080 > 880), but 64vh makes the hero 1229 tall, with about 400px of empty sky above and below the copy ([film-frames-guides.png](../derived/layout/film-frames-guides.png)). Use the ≤880 composition instead. Scaling the 390 mobile layout to the frame width (×2.769) gives gutter 78, h1 120px (2 lines) and cards 426 wide, but a 1920-tall frame then shows only 693 CSS px of the page: kicker to CTAs (y 141-620) plus the top of the fan. The full kicker-to-fan stack is 867 CSS px (y 141-1008 at 390), so to hold copy and books together scale by about 2.2 (1920/867). The 390 layout then becomes 858px wide (content 735), which leaves 111px spare on each side of a 1080 frame. The effective gutter is therefore about 173px (the scaled 62 plus 111).
+For **9:16**, do not crop the desktop hero. At 1080x1920 the site keeps the 2-column hero (1080 > 880), but 64vh makes the hero 1229 tall, with about 400px of empty sky above and below the copy ([film-frames-guides.webp](../derived/layout/film-frames-guides.webp)). Use the ≤880 composition instead. Scaling the 390 mobile layout to the frame width (×2.769) gives gutter 78, h1 120px (2 lines) and cards 426 wide, but a 1920-tall frame then shows only 693 CSS px of the page: kicker to CTAs (y 141-620) plus the top of the fan. The full kicker-to-fan stack is 867 CSS px (y 141-1008 at 390), so to hold copy and books together scale by about 2.2 (1920/867). The 390 layout then becomes 858px wide (content 735), which leaves 111px spare on each side of a 1080 frame. The effective gutter is therefore about 173px (the scaled 62 plus 111).
 
 Motion: rotations sway by only 0.5-0.6° (-8 → -8.6°, 7 → 7.6°, 2.5 → 3°) while elements bob vertically (-12 / -16 / -7px, i.e. 3.6% / 4.8% / 10.6% of each element's height) on 7, 8 and 9 s sine-like `ease-in-out` loops ([:962-1009](../source/css/3q17cp_jgfwol.pretty.css)). Sections enter with `opacity 0 → 1, translateY(26px) → 0` over 0.7 s `cubic-bezier(0.2, 0.7, 0.3, 1)` ([:1099-1109](../source/css/3q17cp_jgfwol.pretty.css)).
 

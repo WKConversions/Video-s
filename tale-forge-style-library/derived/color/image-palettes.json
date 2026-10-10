@@ -300,7 +300,7 @@
     "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
    }
   },
-  "derived/color/backdrop-layer__natt__desktop.png": {
+  "derived/color/backdrop-layer__natt__desktop.webp": {
    "group": "Theme backgrounds as rendered (fixed .bg layer only, live capture)",
    "palette": [
     {
@@ -398,7 +398,7 @@
     "note": "CIELAB LCh(ab) hue angles: ~40 red, ~90 yellow, ~140 green, ~230 blue-cyan, ~300 violet; chromatic = C*>10"
    }
   },
-  "derived/color/backdrop-layer__morgon__desktop.png": {
+  "derived/color/backdrop-layer__morgon__desktop.webp": {
    "group": "Theme backgrounds as rendered (fixed .bg layer only, live capture)",
    "palette": [
     {

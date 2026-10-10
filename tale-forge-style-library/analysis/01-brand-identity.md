@@ -73,7 +73,7 @@ This file covers literal material (CSS, copy, numbers, files) and then, under **
 | `<title>` | `Tale Forge` on home, start, login, signup, 404. Sub-pages use the bare page name: `Uppgradera`, `Integritetspolicy`, `Användarvillkor` (en: `Upgrade`, `Privacy notice`, `Terms of service`), with no brand suffix | `../source/html/*.html` |
 | PWA | `name` and `short_name` both `Tale Forge` | manifest |
 
-All eight treatments side by side, rendered with the site's own font files: [../derived/brand/wordmark-specimen.png](../derived/brand/wordmark-specimen.png).
+All eight treatments side by side, rendered with the site's own font files: [../derived/brand/wordmark-specimen.webp](../derived/brand/wordmark-specimen.webp).
 
 ---
 
@@ -133,7 +133,7 @@ Method: pixels with α ≥ 250 (n = 24,574), k-means in CIELAB (k = 8, k-means++
 ### 3.5 The wordmark inside the logo
 
 - The letters are Roman inscriptional capitals (the Trajan family look): flared wedge serifs, moderate stroke contrast (stem 10–11 px against hairline 3–4 px at 50–52 px cap height), pointed A apex, R with a straight diagonal leg.
-- Measured against the site's Cinzel 700 at the same cap height, glyph widths agree within about ±3 px (logo L 42 / E 42 / F 37 / O 54 / E 39 px against Cinzel 39 / 39 / 35 / 55 / 40 px) and the stem-to-cap ratio is the same (~0.2). The logo letters are spaced slightly wider. Comparison: [../derived/brand/wordmark-specimen.png](../derived/brand/wordmark-specimen.png), row 1.
+- Measured against the site's Cinzel 700 at the same cap height, glyph widths agree within about ±3 px (logo L 42 / E 42 / F 37 / O 54 / E 39 px against Cinzel 39 / 39 / 35 / 55 / 40 px) and the stem-to-cap ratio is the same (~0.2). The logo letters are spaced slightly wider. Comparison: [../derived/brand/wordmark-specimen.webp](../derived/brand/wordmark-specimen.webp), row 1.
 - Read: the logo was very probably set in Cinzel (or a near-identical Trajan-style face) and then gilded together with the mark, which matches the nav's `--wordmark: Cinzel`. This is not proven: no font metadata survives in a raster.
 
 ### 3.6 Read: what the logo says
@@ -229,7 +229,7 @@ Position: `.shell` is `width: min(1120px, 100%)` with `padding: 0 28px` (3q17cp_
 - **No hover state.** The rest and hover captures in `screenshots/states/<lang>__<theme>/01_logo_TALE_FORGE__{rest,hover}.png` are pixel-identical in morgon. In natt the maximum difference is 16 levels, which comes from the starfield twinkle behind the logo, not from the logo.
 - **No animation.** `document.getAnimations()` on home lists only `twinkle`, `float1`, `float2`, `floatBadge` and `pulse` ([../source/rendered/running-animations__home.json](../source/rendered/running-animations__home.json)).
 - **Theme switch:** the text colour cross-fades gold ↔ violet over `0.5s` (`transition: color 0.5s`). The image does **not** change: it stays gold, with the same gold `drop-shadow`, in both themes.
-- In the morning theme, the mean logo gold `#d8a216` against the flat `#ede9f6` gives 1.93:1 contrast (1.76:1 over the aurora art). The violet text gives 4.57:1. Natt: `#f5c542` on `#171232` gives 11.08:1. See [../derived/brand/logo-on-themes.png](../derived/brand/logo-on-themes.png).
+- In the morning theme, the mean logo gold `#d8a216` against the flat `#ede9f6` gives 1.93:1 contrast (1.76:1 over the aurora art). The violet text gives 4.57:1. Natt: `#f5c542` on `#171232` gives 11.08:1. See [../derived/brand/logo-on-themes.webp](../derived/brand/logo-on-themes.webp).
 
 ### 4.4 Captures (deviceScaleFactor 3)
 
@@ -301,7 +301,7 @@ Observed:
 
 ## 7. OG / Twitter share image
 
-[../assets/brand/opengraph-image.png](../assets/brand/opengraph-image.png) and [../assets/brand/twitter-image.png](../assets/brand/twitter-image.png) are **byte-identical** (md5 `dcd913b929b9d82890c1c26312b21ab3`): 1200×630, 8-bit palette PNG (256 colours), 307,416 bytes. One image serves both languages. Annotated: [../derived/brand/og-image-annotated.png](../derived/brand/og-image-annotated.png).
+[../assets/brand/opengraph-image.png](../assets/brand/opengraph-image.png) and [../assets/brand/twitter-image.png](../assets/brand/twitter-image.png) are **byte-identical** (md5 `dcd913b929b9d82890c1c26312b21ab3`): 1200×630, 8-bit palette PNG (256 colours), 307,416 bytes. One image serves both languages. Annotated: [../derived/brand/og-image-annotated.webp](../derived/brand/og-image-annotated.webp).
 
 Meta tags (home, sv), verbatim:
 
@@ -395,7 +395,7 @@ Swedish is the default; English is shown when `tf_locale=en`. Sources: `<head>` 
 
 (The `mailto:` is a personal first-name address at tale-forge.app. It is shortened here, but the full address is in the DOM files.) English footer: `Tale Forge, storybooks that remember your world.` · `Version 16ab1756 · 26 Sep 2026` · `Tale Forge AB, reg. no. 559543-1122, Varnamo, Sweden` (written without the diacritics: "Varnamo") · `Contact` `Privacy` `Terms`.
 
-`.foot` CSS (3q17cp_jgfwol.pretty.css:1933-1947): `border-top: 1px solid var(--card-line); color: var(--foot-ink); justify-content: space-between; gap: 16px; padding: 26px 0 34px; font-size: 0.9rem; margin-top: auto`. Footer links are underlined in `--accent`: gold at night, violet in the morning. Capture: [../derived/brand/lockups/footer-brand-strip__sv__natt__desktop@3x.png](../derived/brand/lockups/footer-brand-strip__sv__natt__desktop@3x.png).
+`.foot` CSS (3q17cp_jgfwol.pretty.css:1933-1947): `border-top: 1px solid var(--card-line); color: var(--foot-ink); justify-content: space-between; gap: 16px; padding: 26px 0 34px; font-size: 0.9rem; margin-top: auto`. Footer links are underlined in `--accent`: gold at night, violet in the morning. Capture: [../derived/brand/lockups/footer-brand-strip__sv__natt__desktop@3x.webp](../derived/brand/lockups/footer-brand-strip__sv__natt__desktop@3x.webp).
 
 The footer appears identically on every captured page (home, start, uppgradera, login, signup, integritet, villkor, 404).
 
@@ -424,7 +424,7 @@ Read: the pair is "Night" and "Morning", not "dark" and "light". Both name times
 
 - Landing voice chip: sv `Morfar`, en `Grandpa Erik`. Image [../assets/landing/voice/narrator-morfar.webp](../assets/landing/voice/narrator-morfar.webp) is the same painting as `portrait-grandpa.jpg` (r = 0.998). Sample audio: [../assets/audio/landing-voice/](../assets/audio/landing-voice/).
 - The sample book's `narratorPersona` is `"grandpa"` ([../source/sample-book.iris-och-den-sparade-platsen.json](../source/sample-book.iris-och-den-sparade-platsen.json)).
-- Portraits (400×400, fetched from `/voices/portrait-<id>.jpg`): [../derived/brand/narrators/](../derived/brand/narrators/). Sheet: [../derived/brand/narrator-cast.png](../derived/brand/narrator-cast.png). All four are watercolour and coloured-pencil vignettes on cream paper, in the books' illustration style. Erik: white hair and beard, round glasses, mustard cable cardigan over a blue check shirt, holding a small book with an acorn on the cover. Lily: dark curls in a bun with a gold star clip, blue scarf, mustard top. Marcus: salt-and-pepper stubble, olive field jacket, a rolled map in the pocket. Saga: ginger ponytail, freckles, coral hoodie, striped tee.
+- Portraits (400×400, fetched from `/voices/portrait-<id>.jpg`): [../derived/brand/narrators/](../derived/brand/narrators/). Sheet: [../derived/brand/narrator-cast.webp](../derived/brand/narrator-cast.webp). All four are watercolour and coloured-pencil vignettes on cream paper, in the books' illustration style. Erik: white hair and beard, round glasses, mustard cable cardigan over a blue check shirt, holding a small book with an acorn on the cover. Lily: dark curls in a bun with a gold star clip, blue scarf, mustard top. Marcus: salt-and-pepper stubble, olive field jacket, a rolled map in the pocket. Saga: ginger ponytail, freckles, coral hoodie, striped tee.
 - Read: *Morfar* (mother's father) is a specifically Scandinavian kinship word and the warmest default a Swedish parent could pick. *Saga* is a common Swedish girl's name that also means "fairy tale".
 
 ### 9.3 Ambient beds (`AMBIENT_BEDS`, [../source/js/1pgfdvt65g9p-.js](../source/js/1pgfdvt65g9p-.js))
@@ -561,7 +561,7 @@ Gold is the shared currency. It is the colour of the emblem, of firelight, of th
 | Observation | Evidence |
 |---|---|
 | Three different typefaces carry the name: Cinzel (nav), the Trajan-style emblem lettering, and DejaVu Serif Bold (share image) | sections 3.5, 7 |
-| The emblem is never adapted to the morning theme. The gold image sits at under 2:1 contrast on the lilac background while the wordmark next to it turns violet. | [logo-on-themes.png](../derived/brand/logo-on-themes.png) |
+| The emblem is never adapted to the morning theme. The gold image sits at under 2:1 contrast on the lilac background while the wordmark next to it turns violet. | [logo-on-themes.webp](../derived/brand/logo-on-themes.webp) |
 | No small-size mark: the favicon and 42 px nav image include an illegible wordmark | [icon-sheet.png](../derived/brand/icon-sheet.png) |
 | Logo gold (`#d8a216`) does not match any CSS gold (`#f2b22e`, `#f5c542`) | section 3.4 |
 | Offer mismatch: "first book free, no card needed" (home) vs "14 days free … Card required" (upgrade) | section 10 |
@@ -578,14 +578,14 @@ Gold is the shared currency. It is the colour of the emblem, of firelight, of th
 
 | File | What it shows |
 |---|---|
-| [logo-on-themes.png](../derived/brand/logo-on-themes.png) (2248×1640) | Row 1: tf-logo at 520 px on the flat Natt background `#171232`, over the nebula with the site scrim, on the flat Morgon background `#ede9f6`, and over the morning aurora, each with the measured contrast of the mean gold. Rows 2–3: the live nav lockups at 3× (desktop, mobile) and 1× in both themes, plus contrast notes. |
+| [logo-on-themes.webp](../derived/brand/logo-on-themes.webp) (2248×1640) | Row 1: tf-logo at 520 px on the flat Natt background `#171232`, over the nebula with the site scrim, on the flat Morgon background `#ede9f6`, and over the morning aurora, each with the measured contrast of the mean gold. Rows 2–3: the live nav lockups at 3× (desktop, mobile) and 1× in both themes, plus contrast notes. |
 | [logo-anatomy.png](../derived/brand/logo-anatomy.png) (1900×1280) | Logo at 2× with every component boxed and labelled (quill, 4 sparkles, dots, book, anvil, TALE, FORGE) with source-pixel coordinates, the canvas centre line, margins and proportions. |
 | [logo-colour-sheet.png](../derived/brand/logo-colour-sheet.png) (1600×1250) | CIELAB k-means palette (8 swatches with share and L\*), mean, brightest and darkest; the per-column horizontal sheen strip; per-element left-to-right fifths; comparison with the CSS tokens. |
-| [wordmark-specimen.png](../derived/brand/wordmark-specimen.png) (2800×2768) | All the ways "Tale Forge" is set: logo raster vs Cinzel at the same cap height, nav lockup in Natt and Morgon, OG DejaVu title, reader title, glöd colophon (true size and 3×), the Lora display headline for contrast, and the name in footer and lede text. Rendered with the site's own woff2 files. |
-| [og-image-annotated.png](../derived/brand/og-image-annotated.png) (1856×1146) | OG image at 1:1 with numbered boxes (logo, title, two cards), layout guides, a legend with all measurements, and enlarged details (logo gap, title, card corner, gutter). |
+| [wordmark-specimen.webp](../derived/brand/wordmark-specimen.webp) (2800×2768) | All the ways "Tale Forge" is set: logo raster vs Cinzel at the same cap height, nav lockup in Natt and Morgon, OG DejaVu title, reader title, glöd colophon (true size and 3×), the Lora display headline for contrast, and the name in footer and lede text. Rendered with the site's own woff2 files. |
+| [og-image-annotated.webp](../derived/brand/og-image-annotated.webp) (1856×1146) | OG image at 1:1 with numbered boxes (logo, title, two cards), layout guides, a legend with all measurements, and enlarged details (logo gap, title, card corner, gutter). |
 | [og-font-match.png](../derived/brand/og-font-match.png) (1500×1322) | Evidence that the OG title is DejaVu Serif Bold 84 px: the published crop, a pixel overlay (white = both, red / blue = mismatch), a glyph-run table (±1 px), and candidate fonts (DejaVu, Cinzel, Lora, Liberation Serif) set to the same width. |
 | [icon-sheet.png](../derived/brand/icon-sheet.png) (1900×1238) | favicon.ico frames 16/32/48 at 1× on dark and light tabs and at 8×; icon.png (on a checkerboard), apple-icon, icon-192 and icon-512 at 1:1 with content boxes, and the maskable safe circle. |
-| [narrator-cast.png](../derived/brand/narrator-cast.png) (1632×750) | The four narrator portraits with sv/en names, ids and descriptions; Morfar Erik marked as default. |
+| [narrator-cast.webp](../derived/brand/narrator-cast.webp) (1632×750) | The four narrator portraits with sv/en names, ids and descriptions; Morfar Erik marked as default. |
 | [narrators/portrait-{grandpa,female,male,young}.jpg](../derived/brand/narrators/) | Original 400×400 portraits fetched from `https://tale-forge.app/voices/portrait-<id>.jpg` |
 | [logo-parts/](../derived/brand/logo-parts/) | Lossless RGBA crops of tf-logo.webp: `tf-logo__mark-only.png`, `tf-logo__wordmark-only.png`, `tf-logo__trimmed.png` |
 | [lockups/](../derived/brand/lockups/) | Live Playwright captures at deviceScaleFactor 3 (section 4.4) + `_capture-meta.json` (computed values and font-load state per capture) |

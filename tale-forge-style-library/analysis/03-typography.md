@@ -43,7 +43,7 @@ This file covers literal material (verbatim CSS with line numbers, tables, measu
 | OpenType features set in CSS | none (no `font-feature-settings`, no `font-variant-*`) | [../derived/typography/css-type-declarations.csv](../derived/typography/css-type-declarations.csv) |
 | `text-wrap` | `balance` on `h1` and `.start-flow .stepcard h2` only | 3q17cp_jgfwol.pretty.css:858; 2_gt301v4m-60.pretty.css:53 |
 | Licence | SIL OFL 1.1 for all four (in-file name ID 14 + Google Fonts METADATA) | §11 |
-| Specimen | [../derived/typography/specimen.html](../derived/typography/specimen.html) → [specimen-natt.png](../derived/typography/specimen-natt.png), [specimen-morgon.png](../derived/typography/specimen-morgon.png) | |
+| Specimen | [../derived/typography/specimen.html](../derived/typography/specimen.html) → [specimen-natt.webp](../derived/typography/specimen-natt.webp), [specimen-morgon.webp](../derived/typography/specimen-morgon.webp) | |
 
 ![Specimen sheet: the four families (Natt)](../derived/typography/sheets/families-natt.png)
 
@@ -303,7 +303,7 @@ Consequences on the live site:
 
 ## 5. The type scale by role
 
-Rendered px come from the computed-style captures: desktop = 1440×900 (`computed-styles__<page>__sv__natt__desktop.json`), mobile = 390×844 (`…__mobile.json`). "Tablet" is the clamp evaluated at 834 px. Rows marked *css-only* style screens that are not publicly reachable: the reader (`/reader` is in robots `Disallow`), the start flow beyond its first screen, the waiting-fire stage and `/create`. Their values come from the CSS alone. The full machine-readable version is [../tokens/typography.json](../tokens/typography.json) (`roles`). The visual version with real copy is the specimen ([../derived/typography/sheets/scale-natt.png](../derived/typography/sheets/scale-natt.png)).
+Rendered px come from the computed-style captures: desktop = 1440×900 (`computed-styles__<page>__sv__natt__desktop.json`), mobile = 390×844 (`…__mobile.json`). "Tablet" is the clamp evaluated at 834 px. Rows marked *css-only* style screens that are not publicly reachable: the reader (`/reader` is in robots `Disallow`), the start flow beyond its first screen, the waiting-fire stage and `/create`. Their values come from the CSS alone. The full machine-readable version is [../tokens/typography.json](../tokens/typography.json) (`roles`). The visual version with real copy is the specimen ([../derived/typography/sheets/scale-natt.webp](../derived/typography/sheets/scale-natt.webp)).
 
 ### 5.1 Display: Lora (`--display`)
 
@@ -817,7 +817,7 @@ Footer links are underlined in the default style, with `text-decoration-color: v
 | `.glod-mem-from` | 0.9rem | `från '{title}'` | H:587-592 |
 | `.glod-hearth-box` (all `p`) | `clamp(0.85rem, 1.3vw, 0.98rem)` / 1.55 | hearth narration | H:718-734, 744-751, 759-761 |
 
-All are `--serif` with `font-style: italic`. With no italic face loaded, Chromium draws an oblique roman ([../derived/typography/sheets/scale-natt.png](../derived/typography/sheets/scale-natt.png), row "Synthetic italic"). Read: the italic voice is used for the *narrator* and for *memory*: what the storyteller says, what the world remembers. That is a consistent semantic, even if the letterforms are fake.
+All are `--serif` with `font-style: italic`. With no italic face loaded, Chromium draws an oblique roman ([../derived/typography/sheets/scale-natt.webp](../derived/typography/sheets/scale-natt.webp), row "Synthetic italic"). Read: the italic voice is used for the *narrator* and for *memory*: what the storyteller says, what the world remembers. That is a consistent semantic, even if the letterforms are fake.
 
 ---
 
@@ -974,7 +974,7 @@ To animate weight (a variable-font "forge" effect, for example), declare a range
 
 ### 13.4 Scale for a 1920×1080 frame
 
-The site's desktop viewport is 1440 wide, so ×4/3 maps it to a 1920 frame. [../derived/typography/film-title-card.html](../derived/typography/film-title-card.html) does exactly that: the site's hero rules at `zoom: 4/3` inside 5 % safe margins. Rendered: [film-title-card-natt.png](../derived/typography/film-title-card-natt.png), [film-title-card-morgon.png](../derived/typography/film-title-card-morgon.png).
+The site's desktop viewport is 1440 wide, so ×4/3 maps it to a 1920 frame. [../derived/typography/film-title-card.html](../derived/typography/film-title-card.html) does exactly that: the site's hero rules at `zoom: 4/3` inside 5 % safe margins. Rendered: [film-title-card-natt.webp](../derived/typography/film-title-card-natt.webp), [film-title-card-morgon.webp](../derived/typography/film-title-card-morgon.webp).
 
 | Role | Site desktop px | ×4/3 at 1080p | Suggested film minimum (Read) |
 |---|---|---|---|
@@ -991,7 +991,7 @@ The site's desktop viewport is 1440 wide, so ×4/3 maps it to a 1920 frame. [../
 
 Rules for transposing (Read): keep tracking in **em**, not px. The site's two px trackings (logo 3px at 27.52px = 0.109em; eyebrow 2px at 13.12px = 0.152em) should become em values. Keep the h1's 1.06 leading but watch Å/Ä/Ö on line 2 (§10). Keep the accent phrase last and the full stop in page ink. Use Natt inks on dark plates and Morgon inks on light plates (§9). The h1's Natt halo (`0 2px 30px #0c082859`) is what keeps cream text legible on the busy nebula; reproduce it on any illustrated background.
 
-![1080p title card, Morgon](../derived/typography/film-title-card-morgon.png)
+![1080p title card, Morgon](../derived/typography/film-title-card-morgon.webp)
 
 ---
 
@@ -1039,7 +1039,7 @@ Detailed timing is the motion dimension's job.
 | [html-inline-type-styles.csv](../derived/typography/html-inline-type-styles.csv) | 28 inline `style=""` attributes with type properties in the hydrated DOM |
 | [computed-type-usage.csv](../derived/typography/computed-type-usage.csv) | 1,051 distinct text elements × typographic values × Natt/Morgon colour |
 | [specimen.html](../derived/typography/specimen.html) | Self-contained specimen: site CSS copied verbatim with line citations, fonts from `fonts/`, real copy, both themes (`#natt` / `#morgon`) |
-| [specimen-natt.png](../derived/typography/specimen-natt.png), [specimen-morgon.png](../derived/typography/specimen-morgon.png) | Full renders, 1440 px wide (≈12,400 px tall) |
+| [specimen-natt.webp](../derived/typography/specimen-natt.webp), [specimen-morgon.webp](../derived/typography/specimen-morgon.webp) | Full renders, 1440 px wide (≈12,400 px tall) |
 | [sheets/hero-*.png](../derived/typography/sheets/) | The site nav and hero rebuilt from DOM + CSS on the real backdrop |
 | [sheets/families-*.png](../derived/typography/sheets/) | Four family cards: alphabet with ÅÄÖ, figures, declared weights, roles, licence |
 | [sheets/scale-*.png](../derived/typography/sheets/) | The full type scale with real copy and spec column (≈5,500 px tall) |
@@ -1050,6 +1050,6 @@ Detailed timing is the motion dimension's job.
 | [sheets/weights-*.png](../derived/typography/sheets/) | Requested vs drawn weights, rendered |
 | [sheets/legal-*.png](../derived/typography/sheets/) | Legal page head and the footer |
 | [crops/](../derived/typography/crops/) | Type cut from the harvested screenshots, Natt and Morgon: `wordmark`, `hero-type` (sv desktop, en desktop, sv mobile @2x), `hiw-head`, `hiw-step`, `mock-prose-dropcap`, `section-h2-builder`, `book-meta`, `map-caption`, `footer`, `legal-prose`, `upgrade-price` |
-| [film-title-card.html](../derived/typography/film-title-card.html), [film-title-card-natt.png](../derived/typography/film-title-card-natt.png), [film-title-card-morgon.png](../derived/typography/film-title-card-morgon.png) | Derived demonstration: the site hero type at ×4/3 in a 1920×1080 frame with 5 % safe margins (not a site screenshot) |
+| [film-title-card.html](../derived/typography/film-title-card.html), [film-title-card-natt.webp](../derived/typography/film-title-card-natt.webp), [film-title-card-morgon.webp](../derived/typography/film-title-card-morgon.webp) | Derived demonstration: the site hero type at ×4/3 in a 1920×1080 frame with 5 % safe margins (not a site screenshot) |
 
 Token file: [../tokens/typography.json](../tokens/typography.json): families (stacks, metrics, fallback faces), weight resolution, 58 roles with size/line-height/tracking/transform, rendered px and sources, responsive rules, letter-spacing and line-height maps, measures, treatments, diacritics.

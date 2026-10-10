@@ -260,7 +260,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "08-hero-en__natt__desktop.png",
+    "file": "08-hero-en__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 96,
@@ -596,7 +596,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "16-hero-cover-fan-en__natt__desktop.png",
+    "file": "16-hero-cover-fan-en__natt__desktop.webp",
     "css_box": {
      "x": 766,
      "y": 132,
@@ -638,7 +638,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "17-fan-cover-card-en__natt__desktop.png",
+    "file": "17-fan-cover-card-en__natt__desktop.webp",
     "css_box": {
      "x": 970,
      "y": 130,
@@ -722,7 +722,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "19-hiw-section-head-en__natt__desktop.png",
+    "file": "19-hiw-section-head-en__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 716,
@@ -806,7 +806,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "21-hiw-step-1-hero-en__natt__desktop.png",
+    "file": "21-hiw-step-1-hero-en__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 925,
@@ -932,7 +932,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "24-portrait-card-en__natt__desktop.png",
+    "file": "24-portrait-card-en__natt__desktop.webp",
     "css_box": {
      "x": 779,
      "y": 925,
@@ -1016,7 +1016,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "26-hiw-step-2-friend-en__natt__desktop.png",
+    "file": "26-hiw-step-2-friend-en__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 1371,
@@ -1100,7 +1100,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "28-hiw-step-3-adventure-en__natt__desktop.png",
+    "file": "28-hiw-step-3-adventure-en__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 1597,
@@ -1142,7 +1142,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "29-adventure-card-en__natt__desktop.png",
+    "file": "29-adventure-card-en__natt__desktop.webp",
     "css_box": {
      "x": 779,
      "y": 1597,
@@ -1226,7 +1226,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "31-hiw-step-4-read-en__natt__desktop.png",
+    "file": "31-hiw-step-4-read-en__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 1847,
@@ -1268,7 +1268,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "32-read-visual-en__natt__desktop.png",
+    "file": "32-read-visual-en__natt__desktop.webp",
     "css_box": {
      "x": 276,
      "y": 1847,
@@ -1394,7 +1394,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "35-reader-mock-en__natt__desktop.png",
+    "file": "35-reader-mock-en__natt__desktop.webp",
     "css_box": {
      "x": 276,
      "y": 1909,
@@ -1478,7 +1478,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "37-hiw-step-5-endings-en__natt__desktop.png",
+    "file": "37-hiw-step-5-endings-en__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 2480,
@@ -1520,7 +1520,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "38-endings-map-en__natt__desktop.png",
+    "file": "38-endings-map-en__natt__desktop.webp",
     "css_box": {
      "x": 276,
      "y": 2662,
@@ -1562,7 +1562,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "39-map-caption-cta-en__natt__desktop.png",
+    "file": "39-map-caption-cta-en__natt__desktop.webp",
     "css_box": {
      "x": 276,
      "y": 3249,
@@ -1604,7 +1604,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "40-hiw-step-6-memory-en__natt__desktop.png",
+    "file": "40-hiw-step-6-memory-en__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 3404,
@@ -1646,7 +1646,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "41-memory-card-en__natt__desktop.png",
+    "file": "41-memory-card-en__natt__desktop.webp",
     "css_box": {
      "x": 779,
      "y": 3404,
@@ -1856,7 +1856,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "46-builder-grid-en__natt__desktop.png",
+    "file": "46-builder-grid-en__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 3992,
@@ -1898,7 +1898,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "47-hero-builder-card-en__natt__desktop.png",
+    "file": "47-hero-builder-card-en__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 3992,
@@ -2318,7 +2318,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "57-shelf-section-en__natt__desktop.png",
+    "file": "57-shelf-section-en__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 4308,
@@ -2402,7 +2402,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "en",
-    "file": "59-book-card-en__natt__desktop.png",
+    "file": "59-book-card-en__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 4415,
@@ -2866,7 +2866,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "en",
-    "file": "08-hero-en__natt__mobile.png",
+    "file": "08-hero-en__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 116,
@@ -3202,7 +3202,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "en",
-    "file": "16-hero-cover-fan-en__natt__mobile.png",
+    "file": "16-hero-cover-fan-en__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 668,
@@ -3412,7 +3412,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "en",
-    "file": "21-hiw-step-1-hero-en__natt__mobile.png",
+    "file": "21-hiw-step-1-hero-en__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 1330,
@@ -3622,7 +3622,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "en",
-    "file": "26-hiw-step-2-friend-en__natt__mobile.png",
+    "file": "26-hiw-step-2-friend-en__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 1984,
@@ -3706,7 +3706,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "en",
-    "file": "28-hiw-step-3-adventure-en__natt__mobile.png",
+    "file": "28-hiw-step-3-adventure-en__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 2441,
@@ -3832,7 +3832,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "en",
-    "file": "31-hiw-step-4-read-en__natt__mobile.png",
+    "file": "31-hiw-step-4-read-en__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 2937,
@@ -3874,7 +3874,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "en",
-    "file": "32-read-visual-en__natt__mobile.png",
+    "file": "32-read-visual-en__natt__mobile.webp",
     "css_box": {
      "x": 72,
      "y": 3182,
@@ -4000,7 +4000,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "en",
-    "file": "35-reader-mock-en__natt__mobile.png",
+    "file": "35-reader-mock-en__natt__mobile.webp",
     "css_box": {
      "x": 72,
      "y": 3296,
@@ -4084,7 +4084,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "en",
-    "file": "37-hiw-step-5-endings-en__natt__mobile.png",
+    "file": "37-hiw-step-5-endings-en__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 3852,
@@ -4210,7 +4210,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "en",
-    "file": "40-hiw-step-6-memory-en__natt__mobile.png",
+    "file": "40-hiw-step-6-memory-en__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 4812,
@@ -4462,7 +4462,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "en",
-    "file": "46-builder-grid-en__natt__mobile.png",
+    "file": "46-builder-grid-en__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 5599,
@@ -4504,7 +4504,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "en",
-    "file": "47-hero-builder-card-en__natt__mobile.png",
+    "file": "47-hero-builder-card-en__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 5599,
@@ -4924,7 +4924,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "en",
-    "file": "57-shelf-section-en__natt__mobile.png",
+    "file": "57-shelf-section-en__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 6486,
@@ -5008,7 +5008,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "en",
-    "file": "59-book-card-en__natt__mobile.png",
+    "file": "59-book-card-en__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 6583,
@@ -5472,7 +5472,7 @@
     "theme": "morgon",
     "vp": "desktop",
     "lang": "sv",
-    "file": "08-hero__morgon__desktop.png",
+    "file": "08-hero__morgon__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 96,
@@ -5808,7 +5808,7 @@
     "theme": "morgon",
     "vp": "desktop",
     "lang": "sv",
-    "file": "16-hero-cover-fan__morgon__desktop.png",
+    "file": "16-hero-cover-fan__morgon__desktop.webp",
     "css_box": {
      "x": 766,
      "y": 132,
@@ -5850,7 +5850,7 @@
     "theme": "morgon",
     "vp": "desktop",
     "lang": "sv",
-    "file": "17-fan-cover-card__morgon__desktop.png",
+    "file": "17-fan-cover-card__morgon__desktop.webp",
     "css_box": {
      "x": 970,
      "y": 130,
@@ -6018,7 +6018,7 @@
     "theme": "morgon",
     "vp": "desktop",
     "lang": "sv",
-    "file": "21-hiw-step-1-hero__morgon__desktop.png",
+    "file": "21-hiw-step-1-hero__morgon__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 925,
@@ -6312,7 +6312,7 @@
     "theme": "morgon",
     "vp": "desktop",
     "lang": "sv",
-    "file": "28-hiw-step-3-adventure__morgon__desktop.png",
+    "file": "28-hiw-step-3-adventure__morgon__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 1597,
@@ -6438,7 +6438,7 @@
     "theme": "morgon",
     "vp": "desktop",
     "lang": "sv",
-    "file": "31-hiw-step-4-read__morgon__desktop.png",
+    "file": "31-hiw-step-4-read__morgon__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 1847,
@@ -6480,7 +6480,7 @@
     "theme": "morgon",
     "vp": "desktop",
     "lang": "sv",
-    "file": "32-read-visual__morgon__desktop.png",
+    "file": "32-read-visual__morgon__desktop.webp",
     "css_box": {
      "x": 276,
      "y": 1847,
@@ -6606,7 +6606,7 @@
     "theme": "morgon",
     "vp": "desktop",
     "lang": "sv",
-    "file": "35-reader-mock__morgon__desktop.png",
+    "file": "35-reader-mock__morgon__desktop.webp",
     "css_box": {
      "x": 276,
      "y": 1909,
@@ -6690,7 +6690,7 @@
     "theme": "morgon",
     "vp": "desktop",
     "lang": "sv",
-    "file": "37-hiw-step-5-endings__morgon__desktop.png",
+    "file": "37-hiw-step-5-endings__morgon__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 2480,
@@ -6732,7 +6732,7 @@
     "theme": "morgon",
     "vp": "desktop",
     "lang": "sv",
-    "file": "38-endings-map__morgon__desktop.png",
+    "file": "38-endings-map__morgon__desktop.webp",
     "css_box": {
      "x": 276,
      "y": 2662,
@@ -6816,7 +6816,7 @@
     "theme": "morgon",
     "vp": "desktop",
     "lang": "sv",
-    "file": "40-hiw-step-6-memory__morgon__desktop.png",
+    "file": "40-hiw-step-6-memory__morgon__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 3404,
@@ -6858,7 +6858,7 @@
     "theme": "morgon",
     "vp": "desktop",
     "lang": "sv",
-    "file": "41-memory-card__morgon__desktop.png",
+    "file": "41-memory-card__morgon__desktop.webp",
     "css_box": {
      "x": 779,
      "y": 3404,
@@ -7068,7 +7068,7 @@
     "theme": "morgon",
     "vp": "desktop",
     "lang": "sv",
-    "file": "46-builder-grid__morgon__desktop.png",
+    "file": "46-builder-grid__morgon__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 3992,
@@ -7530,7 +7530,7 @@
     "theme": "morgon",
     "vp": "desktop",
     "lang": "sv",
-    "file": "57-shelf-section__morgon__desktop.png",
+    "file": "57-shelf-section__morgon__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 4308,
@@ -7614,7 +7614,7 @@
     "theme": "morgon",
     "vp": "desktop",
     "lang": "sv",
-    "file": "59-book-card__morgon__desktop.png",
+    "file": "59-book-card__morgon__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 4415,
@@ -8078,7 +8078,7 @@
     "theme": "morgon",
     "vp": "mobile",
     "lang": "sv",
-    "file": "08-hero__morgon__mobile.png",
+    "file": "08-hero__morgon__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 116,
@@ -8414,7 +8414,7 @@
     "theme": "morgon",
     "vp": "mobile",
     "lang": "sv",
-    "file": "16-hero-cover-fan__morgon__mobile.png",
+    "file": "16-hero-cover-fan__morgon__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 668,
@@ -8624,7 +8624,7 @@
     "theme": "morgon",
     "vp": "mobile",
     "lang": "sv",
-    "file": "21-hiw-step-1-hero__morgon__mobile.png",
+    "file": "21-hiw-step-1-hero__morgon__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 1330,
@@ -8918,7 +8918,7 @@
     "theme": "morgon",
     "vp": "mobile",
     "lang": "sv",
-    "file": "28-hiw-step-3-adventure__morgon__mobile.png",
+    "file": "28-hiw-step-3-adventure__morgon__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 2441,
@@ -9044,7 +9044,7 @@
     "theme": "morgon",
     "vp": "mobile",
     "lang": "sv",
-    "file": "31-hiw-step-4-read__morgon__mobile.png",
+    "file": "31-hiw-step-4-read__morgon__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 2892,
@@ -9086,7 +9086,7 @@
     "theme": "morgon",
     "vp": "mobile",
     "lang": "sv",
-    "file": "32-read-visual__morgon__mobile.png",
+    "file": "32-read-visual__morgon__mobile.webp",
     "css_box": {
      "x": 72,
      "y": 3136,
@@ -9212,7 +9212,7 @@
     "theme": "morgon",
     "vp": "mobile",
     "lang": "sv",
-    "file": "35-reader-mock__morgon__mobile.png",
+    "file": "35-reader-mock__morgon__mobile.webp",
     "css_box": {
      "x": 72,
      "y": 3250,
@@ -9296,7 +9296,7 @@
     "theme": "morgon",
     "vp": "mobile",
     "lang": "sv",
-    "file": "37-hiw-step-5-endings__morgon__mobile.png",
+    "file": "37-hiw-step-5-endings__morgon__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 3807,
@@ -9422,7 +9422,7 @@
     "theme": "morgon",
     "vp": "mobile",
     "lang": "sv",
-    "file": "40-hiw-step-6-memory__morgon__mobile.png",
+    "file": "40-hiw-step-6-memory__morgon__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 4762,
@@ -9674,7 +9674,7 @@
     "theme": "morgon",
     "vp": "mobile",
     "lang": "sv",
-    "file": "46-builder-grid__morgon__mobile.png",
+    "file": "46-builder-grid__morgon__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 5549,
@@ -9716,7 +9716,7 @@
     "theme": "morgon",
     "vp": "mobile",
     "lang": "sv",
-    "file": "47-hero-builder-card__morgon__mobile.png",
+    "file": "47-hero-builder-card__morgon__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 5549,
@@ -10136,7 +10136,7 @@
     "theme": "morgon",
     "vp": "mobile",
     "lang": "sv",
-    "file": "57-shelf-section__morgon__mobile.png",
+    "file": "57-shelf-section__morgon__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 6384,
@@ -10220,7 +10220,7 @@
     "theme": "morgon",
     "vp": "mobile",
     "lang": "sv",
-    "file": "59-book-card__morgon__mobile.png",
+    "file": "59-book-card__morgon__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 6481,
@@ -10684,7 +10684,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "08-hero__natt__desktop.png",
+    "file": "08-hero__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 96,
@@ -11020,7 +11020,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "16-hero-cover-fan__natt__desktop.png",
+    "file": "16-hero-cover-fan__natt__desktop.webp",
     "css_box": {
      "x": 766,
      "y": 132,
@@ -11062,7 +11062,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "17-fan-cover-card__natt__desktop.png",
+    "file": "17-fan-cover-card__natt__desktop.webp",
     "css_box": {
      "x": 970,
      "y": 130,
@@ -11146,7 +11146,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "19-hiw-section-head__natt__desktop.png",
+    "file": "19-hiw-section-head__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 716,
@@ -11230,7 +11230,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "21-hiw-step-1-hero__natt__desktop.png",
+    "file": "21-hiw-step-1-hero__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 925,
@@ -11356,7 +11356,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "24-portrait-card__natt__desktop.png",
+    "file": "24-portrait-card__natt__desktop.webp",
     "css_box": {
      "x": 779,
      "y": 925,
@@ -11440,7 +11440,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "26-hiw-step-2-friend__natt__desktop.png",
+    "file": "26-hiw-step-2-friend__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 1371,
@@ -11524,7 +11524,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "28-hiw-step-3-adventure__natt__desktop.png",
+    "file": "28-hiw-step-3-adventure__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 1597,
@@ -11566,7 +11566,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "29-adventure-card__natt__desktop.png",
+    "file": "29-adventure-card__natt__desktop.webp",
     "css_box": {
      "x": 779,
      "y": 1597,
@@ -11650,7 +11650,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "31-hiw-step-4-read__natt__desktop.png",
+    "file": "31-hiw-step-4-read__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 1847,
@@ -11692,7 +11692,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "32-read-visual__natt__desktop.png",
+    "file": "32-read-visual__natt__desktop.webp",
     "css_box": {
      "x": 276,
      "y": 1847,
@@ -11818,7 +11818,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "35-reader-mock__natt__desktop.png",
+    "file": "35-reader-mock__natt__desktop.webp",
     "css_box": {
      "x": 276,
      "y": 1909,
@@ -11902,7 +11902,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "37-hiw-step-5-endings__natt__desktop.png",
+    "file": "37-hiw-step-5-endings__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 2480,
@@ -11944,7 +11944,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "38-endings-map__natt__desktop.png",
+    "file": "38-endings-map__natt__desktop.webp",
     "css_box": {
      "x": 276,
      "y": 2662,
@@ -11986,7 +11986,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "39-map-caption-cta__natt__desktop.png",
+    "file": "39-map-caption-cta__natt__desktop.webp",
     "css_box": {
      "x": 276,
      "y": 3249,
@@ -12028,7 +12028,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "40-hiw-step-6-memory__natt__desktop.png",
+    "file": "40-hiw-step-6-memory__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 3404,
@@ -12070,7 +12070,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "41-memory-card__natt__desktop.png",
+    "file": "41-memory-card__natt__desktop.webp",
     "css_box": {
      "x": 779,
      "y": 3404,
@@ -12280,7 +12280,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "46-builder-grid__natt__desktop.png",
+    "file": "46-builder-grid__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 3992,
@@ -12322,7 +12322,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "47-hero-builder-card__natt__desktop.png",
+    "file": "47-hero-builder-card__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 3992,
@@ -12742,7 +12742,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "57-shelf-section__natt__desktop.png",
+    "file": "57-shelf-section__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 4308,
@@ -12826,7 +12826,7 @@
     "theme": "natt",
     "vp": "desktop",
     "lang": "sv",
-    "file": "59-book-card__natt__desktop.png",
+    "file": "59-book-card__natt__desktop.webp",
     "css_box": {
      "x": 188,
      "y": 4415,
@@ -13290,7 +13290,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "sv",
-    "file": "08-hero__natt__mobile.png",
+    "file": "08-hero__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 116,
@@ -13626,7 +13626,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "sv",
-    "file": "16-hero-cover-fan__natt__mobile.png",
+    "file": "16-hero-cover-fan__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 668,
@@ -13836,7 +13836,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "sv",
-    "file": "21-hiw-step-1-hero__natt__mobile.png",
+    "file": "21-hiw-step-1-hero__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 1330,
@@ -14046,7 +14046,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "sv",
-    "file": "26-hiw-step-2-friend__natt__mobile.png",
+    "file": "26-hiw-step-2-friend__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 1984,
@@ -14130,7 +14130,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "sv",
-    "file": "28-hiw-step-3-adventure__natt__mobile.png",
+    "file": "28-hiw-step-3-adventure__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 2441,
@@ -14256,7 +14256,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "sv",
-    "file": "31-hiw-step-4-read__natt__mobile.png",
+    "file": "31-hiw-step-4-read__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 2892,
@@ -14298,7 +14298,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "sv",
-    "file": "32-read-visual__natt__mobile.png",
+    "file": "32-read-visual__natt__mobile.webp",
     "css_box": {
      "x": 72,
      "y": 3136,
@@ -14424,7 +14424,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "sv",
-    "file": "35-reader-mock__natt__mobile.png",
+    "file": "35-reader-mock__natt__mobile.webp",
     "css_box": {
      "x": 72,
      "y": 3250,
@@ -14508,7 +14508,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "sv",
-    "file": "37-hiw-step-5-endings__natt__mobile.png",
+    "file": "37-hiw-step-5-endings__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 3807,
@@ -14634,7 +14634,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "sv",
-    "file": "40-hiw-step-6-memory__natt__mobile.png",
+    "file": "40-hiw-step-6-memory__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 4762,
@@ -14886,7 +14886,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "sv",
-    "file": "46-builder-grid__natt__mobile.png",
+    "file": "46-builder-grid__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 5549,
@@ -14928,7 +14928,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "sv",
-    "file": "47-hero-builder-card__natt__mobile.png",
+    "file": "47-hero-builder-card__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 5549,
@@ -15348,7 +15348,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "sv",
-    "file": "57-shelf-section__natt__mobile.png",
+    "file": "57-shelf-section__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 6384,
@@ -15432,7 +15432,7 @@
     "theme": "natt",
     "vp": "mobile",
     "lang": "sv",
-    "file": "59-book-card__natt__mobile.png",
+    "file": "59-book-card__natt__mobile.webp",
     "css_box": {
      "x": 28,
      "y": 6481,
