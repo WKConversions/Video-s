@@ -249,7 +249,7 @@ Long dark hair in two braids, a centre parting, warm brown skin, an orange crew-
 
 - **Alva** appears on both demo covers. She has brown braids, round rosy cheeks, dot-like eyes and a round nose, drawn in **ink outline + wash**, a clearly different hand from the Iris book. Her costume changes per book: a red cable-knit hat with a green anorak (*"Alva och fyraljuset i tornet"* [Alva and the Fourth Candle in the Tower]), then a blue knit hat with a red puffer (*"Alva och filten vid elementet"* [Alva and the Blanket by the Radiator]).
 - **Sixten**, "fjällräven · följer med i varje bok" [the arctic fox · comes along in every book], is a white arctic fox with a grey eye patch and a bushy tail. He appears on both covers (eyes closed and smiling on cover-filten) and as [avatar-sixten.jpg](../assets/assets/avatar-sixten.jpg).
-- **"Noah"**, "bästa kompisen · med i 2 böcker" [best friend · in 2 books]: the image the site uses, [avatar-noah.jpg](../assets/assets/avatar-noah.jpg), shows a child in a red cable-knit hat, brown braids and a green zip jacket. That is the same costume Alva wears on cover-tornet. A coarse search for it inside cover-tornet found no match (best normalised cross-correlation 0.43). **Read:** it is probably a crop from another Alva-world illustration used as a placeholder, so on the landing page "Noah" looks like Alva.
+- **"Noah"**, "bästa kompisen · med i 2 böcker" [best friend · in 2 books]: the image the site uses, [avatar-noah.jpg](../assets/assets/avatar-noah.jpg), shows a child in a red cable-knit hat, brown braids and a green zip jacket. That is the same costume Alva wears on cover-tornet. It is not a crop of that cover: the hat, braids and jacket match, but the face is a different, larger, more frontal drawing. Compare the first and third crops in the Alva row of the character sheet. **Read:** it is probably a crop from another Alva-world illustration used as a placeholder, so on the landing page "Noah" looks like Alva.
 - The landing builder card shows "Alva" with a portrait that is `cover-filten.webp` scaled 1.7× and positioned at `47% 18%` (`source/css/3q17cp_jgfwol.pretty.css:1177-1184`).
 
 ### 8.7 Narrator portraits
@@ -532,7 +532,7 @@ To reproduce the *look* and not just the prompt, add to the style line or the re
 - "golden evening window light, warm brown shadows, no blue fill; palette of ochre, amber, cream, moss green and one accent red"
 - "big dark round eyes with a white catchlight, stippled rosy cheeks, small nose, gentle closed-mouth smiles"
 - "low, rounded wooden furniture, braided moss-green rug, pine shelves"
-- Target numbers (§5): L\* median about 45–55; chroma median 30–45; at least 85 % warm-hued pixels; highlights around `#F5D6A0`; shadows around `#2B1E10`.
+- Target numbers (§5; medians over cover + 14 scenes): L\* median about 45–55 (median of medians 48.3); chroma median 30–45 (36.9); warm-hued pixels 85–95 % (median 87.7 %); highlights near `#F5D6A0`; shadows near `#2B1E10`.
 
 ### 15.3 Consistency kit (lessons from §8 and §10)
 
