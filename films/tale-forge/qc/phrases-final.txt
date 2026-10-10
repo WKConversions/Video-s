@@ -1,0 +1,40 @@
+         1.00– 2.14s  tone   5.9%  structure  0.7%  some days
+         2.14– 3.82s  tone  46.1%  structure  2.6%  a child comes home
+         3.94– 5.32s  tone  45.1%  structure  2.7%  didn't they let me play
+         5.32– 7.74s  tone  10.4%  structure  1.1%  with more on their mind than they know how
+         7.74– 8.62s  tone   7.1%  structure  0.5%  to say
+         8.62– 9.84s  tone  13.8%  structure  0.5%  and sometimes
+         9.86–11.92s  tone   9.7%  structure  1.2%  the best way into that feeling
+        11.92–13.54s  tone   7.5%  structure  1.1%  isn't another question
+        13.56–15.10s  tone  28.4%  structure  0.9%  it's a story
+        15.18–18.20s  tone  83.5%  structure  1.9%  with tale forge a small moment from today
+        18.20–19.80s  tone   8.9%  structure  1.1%  can become a personalised
+        19.80–20.46s  tone  42.9%  structure  7.7%  illustrated
+        20.46–21.10s  tone  83.1%  structure  9.3%  adventure
+        21.10–23.62s  tone  51.8%  structure  1.2%  where your child is the hero
+        23.62–24.46s  tone  83.4%  structure  3.8%  inside
+        24.46–25.44s  tone  90.0%  structure  0.6%  they meet characters
+        25.44–28.30s  tone  69.2%  structure  5.8%  with stories of their own they can listen
+        28.30–29.08s  tone  33.0%  structure  0.3%  read
+        29.08–30.10s  tone  26.9%  structure  0.0%  look closer
+        30.10–32.80s  tone  38.4%  structure  1.9%  and decide what they want to do because their
+        32.80–34.20s  tone  12.0%  structure  0.7%  choices matter
+        34.24–37.62s  tone  76.8%  structure  3.7%  one small decision can change what happens next
+        37.62–39.00s  tone  86.5%  structure 16.6%  and sometimes a
+        39.00–41.42s  tone  42.6%  structure  2.1%  story helps us see things differently
+        41.42–43.72s  tone  87.0%  structure  1.3%  a story they can return to
+        43.72–45.50s  tone  54.9%  structure  2.2%  and when the adventure ends
+        45.50–47.36s  tone  64.6%  structure  3.2%  what do you think our friend needed
+        47.36–48.42s  tone   7.2%  structure  0.5%  the conversation
+        48.42–51.46s  tone  34.3%  structure  1.3%  doesn't have to a quiet moment together
+        51.46–54.56s  tone  82.5%  structure  4.9%  and more adventures waiting to be discovered one
+        54.56–55.90s  tone  35.8%  structure  0.6%  story tonight
+        56.00–58.14s  tone  66.2%  structure 14.0%  a whole world to explore
+        58.32–60.72s  tone  98.4%  structure  2.6%  another adventure waiting for tomorrow
+        60.88–61.96s  tone  10.8%  structure  1.3%  tale forge
+        62.00–64.08s  tone   3.6%  structure  2.0%  adventures worth talking about
+        64.08–65.98s  tone   1.3%  structure  1.2%  a world they belong to
+        65.98–67.70s  tone   2.0%  structure  1.1%  a story you share
+37 of 37 phrases bring a new visual (target: all; 6% of the frame changed or 0.6% new structure)
+longest voice without a new visual: 0.0 s (target 2.5 s or less)
+exit 0

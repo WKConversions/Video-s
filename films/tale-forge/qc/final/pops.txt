@@ -1,0 +1,22 @@
+POP at 1.30 s (frame 39): 9.7× the change around it, tiles r3c5
+POP at 4.13 s (frame 124): 4.3× the change around it, tiles r4c0
+POP at 5.70 s (frame 171): 4.6× the change around it, tiles r1c1, r1c2
+POP at 14.53 s (frame 436): 4.2× the change around it, tiles r3c4
+POP at 14.93 s (frame 448): 12.5× the change around it, tiles r1c6, r3c4, r4c2
+POP at 15.47 s (frame 464): 7.7× the change around it, tiles r2c3
+POP at 15.83 s (frame 475): 14.5× the change around it, tiles r4c4
+POP at 15.97 s (frame 479): 8.4× the change around it, tiles r0c6
+POP at 17.03 s (frame 511): 14.2× the change around it, tiles r1c3
+POP at 18.80 s (frame 564): 27.7× the change around it, tiles r2c2
+POP at 19.17 s (frame 575): 4.9× the change around it, tiles r0c1
+POP at 19.33 s (frame 580): 5.0× the change around it, tiles r4c5
+cut at 24.77 s (frame 743): 35.8× the change around it, tiles r0c0, r0c1, r0c2, r0c3, r0c4, r0c5, r0c6, r0c7 …
+cut at 24.80 s (frame 744): 73.3× the change around it, tiles r0c0, r0c1, r0c2, r0c3, r0c4, r0c5, r0c6, r0c7 …
+POP at 28.03 s (frame 841): 9.7× the change around it, tiles r3c3, r3c4
+POP at 40.93 s (frame 1228): 5.5× the change around it, tiles r0c0
+POP at 51.53 s (frame 1546): 4.3× the change around it, tiles r4c7
+POP at 51.73 s (frame 1552): 16.3× the change around it, tiles r3c2
+POP at 51.77 s (frame 1553): 8.3× the change around it, tiles r3c7, r4c7
+17 pops; the strongest at frames 564, 1552, 475, 511, 448. Look at each strip: a designed
+text change can show here; a blink, a jump in size or a layer appearing without a move is a bug.
+strips: qc/final/pops/pop_*.png (frames 39, 124, 171, 436, 448, 464, 475, 479, 511, 564, 575, 580, 841, 1228, 1546, 1552, 1553)

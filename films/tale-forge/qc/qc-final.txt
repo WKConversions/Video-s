@@ -1,0 +1,15 @@
+== 1 motion
+moving in 83% of frames (target 90+), median 0.5% of the frame in motion (information, not a target: K.B v3, approved, 1.7; references 0.5–6.6), longest still 0.93 s (target 0.8 or less)
+== 2 shake
+no shake; the 'look' lines are small irregular jumps: check them in a transition strip (a rolling number or a repeating pattern can cause them)
+== 3 pops
+POP at 51.77 s (frame 1553): 8.3× the change around it, tiles r3c7, r4c7
+17 pops; the strongest at frames 564, 1552, 475, 511, 448. Look at each strip: a designed
+text change can show here; a blink, a jump in size or a layer appearing without a move is a bug.
+strips: qc/final/pops/pop_*.png (frames 39, 124, 171, 436, 448, 464, 475, 479, 511, 564, 575, 580, 841, 1228, 1546, 1552, 1553)
+== 4 busy
+things on screen: median 3 (references 3–7, median 4); 8 or more for 27% of the time (references median 25%, limit 35%); frame covered 56% (references median 26%)
+== 5 strips
+24 strips in qc/final/strips: frames 112, 462, 559, 601, 626, 647, 716, 745, 784, 839, 870, 912, 990, 1030, 1138, 1176, 1228, 1251, 1329, 1364, 1548, 1616, 1686, 1790
+== result: no shake, pops to look at, clear — details in qc/final/
+qc exit 0
