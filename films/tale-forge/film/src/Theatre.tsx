@@ -164,7 +164,7 @@ const Talk: React.FC<{ color: string }> = ({ color }) => (
 );
 
 /** The Tale Forge book, closed or open (cover = the sample book's own cover painting). open 0..1. */
-export const Book: React.FC<{ x: number; y: number; w: number; open: number; glow?: number; right?: React.ReactNode; left?: React.ReactNode; title?: boolean; name?: string; rotZ?: number }> = ({ x, y, w, open, glow = 0, right, left, title = true, name = "Book", rotZ = 0 }) => {
+export const Book: React.FC<{ x: number; y: number; w: number; open: number; glow?: number; right?: React.ReactNode; left?: React.ReactNode; title?: boolean; name?: string; rotZ?: number; coverSrc?: string }> = ({ x, y, w, open, glow = 0, right, left, title = true, name = "Book", rotZ = 0, coverSrc = "cover.webp" }) => {
   const h = w * 1.5;
   const ang = -180 * SOFT(clamp01(open));
   const spreadShift = (w / 2) * SOFT(clamp01(open)); // the book slides so the spread is centred when open
@@ -178,7 +178,7 @@ export const Book: React.FC<{ x: number; y: number; w: number; open: number; glo
       {/* the cover, hinged on the spine (left edge); its back is the left page */}
       <div style={{ position: "absolute", inset: 0, transformOrigin: "0% 50%", transform: `rotateY(${ang}deg)`, transformStyle: "preserve-3d" }}>
         <div style={{ position: "absolute", inset: 0, backfaceVisibility: "hidden", borderRadius: "4px 12px 12px 4px", overflow: "hidden", boxShadow: "0 18px 44px rgba(5,8,20,0.45)" }}>
-          <Img src={img("cover.webp")} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          <Img src={img(coverSrc)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(23,18,50,0.55) 0%, rgba(23,18,50,0) 30%)" }} />
           <div style={{ position: "absolute", left: 0, top: 0, width: "6%", height: "100%", background: "linear-gradient(90deg, rgba(0,0,0,0.35), rgba(0,0,0,0))" }} />
           {title && <div style={{ position: "absolute", left: "8%", right: "8%", top: "5%", textAlign: "center", fontFamily: F.display, fontWeight: 700, fontSize: w * 0.105, lineHeight: 1.05, color: C.warm, textShadow: "0 2px 10px rgba(12,8,40,0.6)" }}>Iris and the Saved Place</div>}
