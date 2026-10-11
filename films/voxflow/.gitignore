@@ -1,0 +1,3 @@
+node_modules
+# downloaded candidate footage (large; URLs and licences in references/footage-candidates/README.md)
+references/footage-candidates/*.mp4

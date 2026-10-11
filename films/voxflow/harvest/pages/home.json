@@ -1,0 +1,551 @@
+{
+ "title": "VoxFlow | AI-receptionist die 24/7 opneemt voor bedrijven",
+ "body": {
+  "font": "Geist, system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif",
+  "size": "16px",
+  "weight": "400",
+  "color": "rgb(22, 34, 31)",
+  "bg": "rgb(244, 242, 235)",
+  "ls": "normal"
+ },
+ "h1": {
+  "font": "Inter, Geist, system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif",
+  "size": "48px",
+  "weight": "800",
+  "color": "rgb(22, 34, 31)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "ls": "-0.96px"
+ },
+ "h2": {
+  "font": "Geist, system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif",
+  "size": "48px",
+  "weight": "700",
+  "color": "rgb(22, 34, 31)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "ls": "-0.96px"
+ },
+ "p": {
+  "font": "Geist, system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif",
+  "size": "10px",
+  "weight": "400",
+  "color": "rgb(84, 99, 94)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "ls": "0.5px"
+ },
+ "a": {
+  "font": "Geist, system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif",
+  "size": "16px",
+  "weight": "400",
+  "color": "rgb(22, 34, 31)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "ls": "normal"
+ },
+ "button": {
+  "font": "Geist, system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif",
+  "size": "14px",
+  "weight": "600",
+  "color": "rgb(22, 34, 31)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "ls": "normal"
+ },
+ "nav": {
+  "font": "Geist, system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif",
+  "size": "16px",
+  "weight": "400",
+  "color": "rgb(22, 34, 31)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "ls": "normal"
+ },
+ "colors": [
+  [
+   "rgb(22, 34, 31)",
+   111931485.25750513
+  ],
+  [
+   "rgba(0, 0, 0, 0)",
+   49829623.782250956
+  ],
+  [
+   "rgb(244, 242, 235)",
+   29643860.25
+  ],
+  [
+   "rgb(244, 241, 234)",
+   28111937.92633125
+  ],
+  [
+   "rgb(252, 250, 246)",
+   3982315.3610819876
+  ],
+  [
+   "IMG radial-gradient(rgba(22, 33, 30, 0.05) 1px, rgba(0, 0, 0, 0) 1px)",
+   3133935
+  ],
+  [
+   "rgb(255, 255, 255)",
+   1348378.1723632812
+  ],
+  [
+   "rgb(85, 99, 94)",
+   558274.4551818371
+  ],
+  [
+   "rgb(84, 99, 94)",
+   555438.6728515625
+  ],
+  [
+   "IMG linear-gradient(90deg, rgba(22, 33, 30, 0.03) 0%, rgba(22, 33, 30, 0) 55%, rgba(22, 33, 30, 0.12) 100%), linear-gradient(rgba(244, 241, 234, 0.04) 0%, rgba(22, 33, 30, 0) 62%, rgba(22, 33, 30, 0.16) 1",
+   445896.65625
+  ],
+  [
+   "rgb(22, 33, 30)",
+   265907.4357958287
+  ],
+  [
+   "rgb(107, 118, 114)",
+   249110.875
+  ],
+  [
+   "rgb(10, 79, 74)",
+   245301.75
+  ],
+  [
+   "rgb(219, 235, 233)",
+   176419.2510021925
+  ],
+  [
+   "oklab(0.494094 -0.0806703 -0.0133887 / 0.1)",
+   147035.25
+  ],
+  [
+   "rgba(15, 110, 106, 0.07)",
+   142266.875
+  ],
+  [
+   "IMG linear-gradient(to top, rgb(244, 241, 234), rgba(0, 0, 0, 0))",
+   115200
+  ],
+  [
+   "rgba(22, 33, 30, 0.05)",
+   111984.84375
+  ],
+  [
+   "rgb(15, 110, 106)",
+   98002.96875
+  ],
+  [
+   "oklab(0.238724 -0.0168291 0.00101775 / 0.9)",
+   61638.890625
+  ],
+  [
+   "IMG linear-gradient(rgb(15, 110, 106) 0%, rgb(15, 110, 106) 55%, rgb(10, 79, 74) 100%)",
+   41600
+  ],
+  [
+   "oklab(0.960225 0.000458241 0.00934887 / 0.75)",
+   37632
+  ],
+  [
+   "oklab(0.960225 0.000458241 0.00934887 / 0.7)",
+   32091.25
+  ],
+  [
+   "rgba(22, 33, 30, 0.03)",
+   30081.151195317507
+  ],
+  [
+   "rgba(21, 122, 75, 0.1)",
+   15925.273874998093
+  ],
+  [
+   "rgb(15, 112, 107)",
+   15512.8125
+  ],
+  [
+   "rgba(21, 122, 75, 0.08)",
+   15040.575597658753
+  ],
+  [
+   "oklab(0.238724 -0.0168291 0.00101775 / 0.8)",
+   13317.28125
+  ],
+  [
+   "rgba(15, 110, 106, 0.1)",
+   11732.09375
+  ],
+  [
+   "IMG linear-gradient(135deg, rgb(15, 110, 106) 0%, rgb(10, 79, 74) 100%)",
+   11663.75
+  ]
+ ],
+ "imgs": [
+  {
+   "tag": "IMG",
+   "src": "https://voxflow.nl/voxflow-wordmark.png",
+   "alt": "VoxFlow",
+   "cls": "",
+   "w": 95.140625,
+   "h": 44,
+   "svg": ""
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-chevron-down w-4 h-4 transition-transform text",
+   "w": 16,
+   "h": 16,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevron-down w-4 h-4 transition-transform text-foreground\" aria-hidden=\"true\" style=\"transform:none\"><path d=\"m6 9 6 6 6-6\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-arrow-right w-4 h-4 ml-2",
+   "w": 16,
+   "h": 16,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-right w-4 h-4 ml-2\" aria-hidden=\"true\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-menu w-5 h-5",
+   "w": 0,
+   "h": 0,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-menu w-5 h-5\" aria-hidden=\"true\"><path d=\"M4 5h16\"></path><path d=\"M4 12h16\"></path><path d=\"M4 19h16\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-stethoscope w-3.5 h-3.5 opacity-80",
+   "w": 0,
+   "h": 0,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-stethoscope w-3.5 h-3.5 opacity-80\" aria-hidden=\"true\"><path d=\"M11 2v2\"></path><path d=\"M5 2v2\"></path><path d=\"M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1\"></path><path d=\"M8 15a6 6 0 0 0 12 0v-3\"></path><circle cx=\"20\" cy=\"10\" r=\"2\"></circle></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-activity w-3.5 h-3.5 opacity-80",
+   "w": 0,
+   "h": 0,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-activity w-3.5 h-3.5 opacity-80\" aria-hidden=\"true\"><path d=\"M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-house w-3.5 h-3.5 opacity-80",
+   "w": 0,
+   "h": 0,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-house w-3.5 h-3.5 opacity-80\" aria-hidden=\"true\"><path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\"></path><path d=\"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-wrench w-3.5 h-3.5 opacity-80",
+   "w": 0,
+   "h": 0,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-wrench w-3.5 h-3.5 opacity-80\" aria-hidden=\"true\"><path d=\"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-arrow-right w-4 h-4 ml-2",
+   "w": 0,
+   "h": 0,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-right w-4 h-4 ml-2\" aria-hidden=\"true\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-arrow-right w-4 h-4 ml-2",
+   "w": 16,
+   "h": 16,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-right w-4 h-4 ml-2\" aria-hidden=\"true\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-arrow-right w-4 h-4 mr-2",
+   "w": 16,
+   "h": 16,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-arrow-right w-4 h-4 mr-2\" aria-hidden=\"true\"><path d=\"M5 12h14\"></path><path d=\"m12 5 7 7-7 7\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-check w-2.5 h-2.5 text-[#FFFFFF]",
+   "w": 10,
+   "h": 10,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check w-2.5 h-2.5 text-[#FFFFFF]\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-check w-2.5 h-2.5 text-[#FFFFFF]",
+   "w": 10,
+   "h": 10,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check w-2.5 h-2.5 text-[#FFFFFF]\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-check w-2.5 h-2.5 text-[#FFFFFF]",
+   "w": 10,
+   "h": 10,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-check w-2.5 h-2.5 text-[#FFFFFF]\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"></path></svg>"
+  },
+  {
+   "tag": "IMG",
+   "src": "https://voxflow.nl/assets/voxflow-ai-receptionist-cutout-CWFP0Dgr.png",
+   "alt": "VoxFlow AI-receptionist met headset",
+   "cls": "receptionist-visual__portrait absolute inset-0 h-full w-full",
+   "w": 553.171875,
+   "h": 686.6875,
+   "svg": ""
+  },
+  {
+   "tag": "IMG",
+   "src": "https://flagcdn.com/w80/nl.png",
+   "alt": "",
+   "cls": "w-6 h-[1.05rem] object-cover rounded-[3px] shadow-[0_0_0_1px",
+   "w": 24,
+   "h": 15.890625,
+   "svg": ""
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-chevrons-up-down w-3.5 h-3.5",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-chevrons-up-down w-3.5 h-3.5\" aria-hidden=\"true\" style=\"color:#6B7672\"><path d=\"m7 15 5 5 5-5\"></path><path d=\"m7 9 5-5 5 5\"></path></svg>"
+  },
+  {
+   "tag": "IMG",
+   "src": "https://voxflow.nl/__l5e/assets-v1/68bf03fc-5fb4-411c-9401-64fe27b37b9d/control-forwarding-photo.png",
+   "alt": "Medewerker in een lichte showroom neemt aandachtig een doorgeschakeld telefoongesprek aan.",
+   "cls": "absolute inset-0 h-full w-full object-cover",
+   "w": 730.173828125,
+   "h": 625.416015625,
+   "svg": ""
+  },
+  {
+   "tag": "IMG",
+   "src": "https://voxflow.nl/__l5e/assets-v1/8c0b860e-e4d4-44c8-9a8a-2263eb9dc86c/control-followup-sms-photo.png",
+   "alt": "Bovenaanzicht van een hand met iPhone waarop een sms-herinnering voor een afspraak openstaat.",
+   "cls": "absolute inset-0 h-full w-full object-cover",
+   "w": 730.173828125,
+   "h": 625.416015625,
+   "svg": ""
+  },
+  {
+   "tag": "IMG",
+   "src": "https://voxflow.nl/__l5e/assets-v1/fd8b6aaa-5634-4a3a-bd05-d1106c7098c5/control-calendar-photo.png",
+   "alt": "Medewerker met headset van achteren gezien bij een computerscherm met een volle Outlook-agenda.",
+   "cls": "absolute inset-0 h-full w-full object-cover",
+   "w": 721.515625,
+   "h": 618,
+   "svg": ""
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-focus w-4 h-4",
+   "w": 16,
+   "h": 16,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-focus w-4 h-4\" aria-hidden=\"true\" style=\"color: rgb(255, 255, 255);\"><circle cx=\"12\" cy=\"12\" r=\"3\"></circle><path d=\"M3 7V5a2 2 0 0 1 2-2h2\"></path><path d=\"M17 3h2a2 2 0 0 1 2 2v2\"></path><path d=\"M21 17v2a2 2 0 0 1-2 2h-2\"></path><path d=\"M7 21H5a2 2 0 0 1-2-2v-2\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-users w-4 h-4",
+   "w": 16,
+   "h": 16,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-users w-4 h-4\" aria-hidden=\"true\" style=\"color: rgb(15, 110, 106);\"><path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"></path><path d=\"M16 3.128a4 4 0 0 1 0 7.744\"></path><path d=\"M22 21v-2a4 4 0 0 0-3-3.87\"></path><circle cx=\"9\" cy=\"7\" r=\"4\"></circle></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-focus w-4 h-4",
+   "w": 15.3599853515625,
+   "h": 15.35986328125,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-focus w-4 h-4\" aria-hidden=\"true\" style=\"color: rgb(15, 110, 106);\"><circle cx=\"12\" cy=\"12\" r=\"3\"></circle><path d=\"M3 7V5a2 2 0 0 1 2-2h2\"></path><path d=\"M17 3h2a2 2 0 0 1 2 2v2\"></path><path d=\"M21 17v2a2 2 0 0 1-2 2h-2\"></path><path d=\"M7 21H5a2 2 0 0 1-2-2v-2\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-phone-incoming w-4 h-4",
+   "w": 15.36004638671875,
+   "h": 15.35986328125,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-phone-incoming w-4 h-4\" aria-hidden=\"true\" style=\"color: rgb(15, 110, 106);\"><path d=\"M16 2v6h6\"></path><path d=\"m22 2-6 6\"></path><path d=\"M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "w-full h-full -rotate-90",
+   "w": 61.44000244140625,
+   "h": 61.43994140625,
+   "svg": "<svg viewBox=\"0 0 36 36\" class=\"w-full h-full -rotate-90\"><circle cx=\"18\" cy=\"18\" r=\"15\" fill=\"none\" stroke=\"#E4E0D6\" stroke-width=\"3\"></circle><circle cx=\"18\" cy=\"18\" r=\"15\" fill=\"none\" stroke=\"url(#capGrad)\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-dasharray=\"94.2 94.2\" class=\"vf-ring\"></circle><defs><linearGradient id=\"capGrad\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"1\"><stop offset=\"0%\" stop-color=\"#0F6E6A\"></stop><stop offset=\"100%\" stop-color=\"#0A4F4A\"></stop></linearGradient></defs></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-list-checks w-4 h-4",
+   "w": 15.3599853515625,
+   "h": 15.35986328125,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-list-checks w-4 h-4\" aria-hidden=\"true\" style=\"color: rgb(15, 110, 106);\"><path d=\"M13 5h8\"></path><path d=\"M13 12h8\"></path><path d=\"M13 19h8\"></path><path d=\"m3 17 2 2 4-4\"></path><path d=\"m3 7 2 2 4-4\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-message-circle w-4 h-4",
+   "w": 15.36004638671875,
+   "h": 15.35986328125,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-message-circle w-4 h-4\" aria-hidden=\"true\" style=\"color: rgb(15, 110, 106);\"><path d=\"M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-quote mb-5 size-8 text-primary/25 sm:size-9",
+   "w": 36,
+   "h": 36,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-quote mb-5 size-8 text-primary/25 sm:size-9\" aria-hidden=\"true\"><path d=\"M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z\"></path><path d=\"M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z\"></path></svg>"
+  },
+  {
+   "tag": "IMG",
+   "src": "/__l5e/assets-v1/0775640c-5aea-4575-b64c-abb59f0ed2f7/avatar-taylan.png",
+   "alt": "Foto van Taylan Kaya, Google Review",
+   "cls": "size-11 shrink-0 rounded-full object-cover",
+   "w": 44,
+   "h": 44,
+   "svg": ""
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-star size-3.5 fill-primary text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-star size-3.5 fill-primary text-primary\" aria-hidden=\"true\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-star size-3.5 fill-primary text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-star size-3.5 fill-primary text-primary\" aria-hidden=\"true\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-star size-3.5 fill-primary text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-star size-3.5 fill-primary text-primary\" aria-hidden=\"true\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-star size-3.5 fill-primary text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-star size-3.5 fill-primary text-primary\" aria-hidden=\"true\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-star size-3.5 fill-primary text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-star size-3.5 fill-primary text-primary\" aria-hidden=\"true\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-quote mb-5 size-8 text-primary/25 sm:size-9",
+   "w": 36,
+   "h": 36,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-quote mb-5 size-8 text-primary/25 sm:size-9\" aria-hidden=\"true\"><path d=\"M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z\"></path><path d=\"M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z\"></path></svg>"
+  },
+  {
+   "tag": "IMG",
+   "src": "https://voxflow.nl/__l5e/assets-v1/e1e0aa50-9211-44e8-b592-2c38d479dc35/avatar-danielle.png",
+   "alt": "Foto van Danielle Timmermans, Google Review",
+   "cls": "size-11 shrink-0 rounded-full object-cover",
+   "w": 44,
+   "h": 44,
+   "svg": ""
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-star size-3.5 fill-primary text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-star size-3.5 fill-primary text-primary\" aria-hidden=\"true\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-star size-3.5 fill-primary text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-star size-3.5 fill-primary text-primary\" aria-hidden=\"true\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-star size-3.5 fill-primary text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-star size-3.5 fill-primary text-primary\" aria-hidden=\"true\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"></path></svg>"
+  },
+  {
+   "tag": "svg",
+   "src": "",
+   "alt": "",
+   "cls": "lucide lucide-star size-3.5 fill-primary text-primary",
+   "w": 14,
+   "h": 14,
+   "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-star size-3.5 fill-primary text-primary\" aria-hidden=\"true\"><path d=\"M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z\"></path></svg>"
+  }
+ ],
+ "fonts": [
+  "Geist, system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif",
+  "Inter, Geist, system-ui, -apple-system, \"Segoe UI\", Roboto, Arial, sans-serif"
+ ],
+ "links": [
+  "https://voxflow.nl/assets/styles-8PgFBj1M.css",
+  "https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+ ]
+}

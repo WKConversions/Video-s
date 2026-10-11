@@ -1,0 +1,476 @@
+[
+{
+"word": "mis",
+"key": "mis",
+"start": 0.42,
+"end": 0.69
+},
+{
+"word": "geen",
+"key": "geen",
+"start": 0.74,
+"end": 0.99
+},
+{
+"word": "enkel",
+"key": "enkel",
+"start": 1.07,
+"end": 1.45
+},
+{
+"word": "telefoontje",
+"key": "telefoontje",
+"start": 1.46,
+"end": 2.06
+},
+{
+"word": "meer",
+"key": "meer",
+"start": 2.06,
+"end": 2.27
+},
+{
+"word": "met",
+"key": "met",
+"start": 2.7,
+"end": 2.85
+},
+{
+"word": "VoxFlow",
+"key": "voxflow",
+"start": 2.9,
+"end": 3.39
+},
+{
+"word": "staat",
+"key": "staat",
+"start": 3.44,
+"end": 3.66
+},
+{
+"word": "er",
+"key": "er",
+"start": 3.66,
+"end": 3.79
+},
+{
+"word": "altijd",
+"key": "altijd",
+"start": 3.89,
+"end": 4.29
+},
+{
+"word": "iemand",
+"key": "iemand",
+"start": 4.32,
+"end": 4.58
+},
+{
+"word": "klaar",
+"key": "klaar",
+"start": 4.58,
+"end": 4.82
+},
+{
+"word": "voor",
+"key": "voor",
+"start": 4.82,
+"end": 4.98
+},
+{
+"word": "je",
+"key": "je",
+"start": 4.98,
+"end": 5.08
+},
+{
+"word": "klanten",
+"key": "klanten",
+"start": 5.08,
+"end": 5.43
+},
+{
+"word": "onze",
+"key": "onze",
+"start": 5.93,
+"end": 6.19
+},
+{
+"word": "slimme",
+"key": "slimme",
+"start": 6.22,
+"end": 6.55
+},
+{
+"word": "AI",
+"key": "ai",
+"start": 6.64,
+"end": 6.87
+},
+{
+"word": "receptionist",
+"key": "receptionist",
+"start": 6.9,
+"end": 7.64
+},
+{
+"word": "neemt",
+"key": "neemt",
+"start": 7.72,
+"end": 7.96
+},
+{
+"word": "24",
+"key": "vierentwintig",
+"start": 8.09,
+"end": 8.69
+},
+{
+"word": "7",
+"key": "zeven",
+"start": 8.75,
+"end": 9.01
+},
+{
+"word": "de",
+"key": "de",
+"start": 9.01,
+"end": 9.14
+},
+{
+"word": "telefoon",
+"key": "telefoon",
+"start": 9.15,
+"end": 9.63
+},
+{
+"word": "op",
+"key": "op",
+"start": 9.63,
+"end": 9.78
+},
+{
+"word": "beantwoordt",
+"key": "beantwoordt",
+"start": 10.09,
+"end": 10.57
+},
+{
+"word": "vragen",
+"key": "vragen",
+"start": 10.57,
+"end": 11.0
+},
+{
+"word": "en",
+"key": "en",
+"start": 11.31,
+"end": 11.44
+},
+{
+"word": "plant",
+"key": "plant",
+"start": 11.55,
+"end": 11.78
+},
+{
+"word": "afspraken",
+"key": "afspraken",
+"start": 11.85,
+"end": 12.36
+},
+{
+"word": "automatisch",
+"key": "automatisch",
+"start": 12.41,
+"end": 13.08
+},
+{
+"word": "in",
+"key": "in",
+"start": 13.11,
+"end": 13.24
+},
+{
+"word": "zo",
+"key": "zo",
+"start": 13.77,
+"end": 13.92
+},
+{
+"word": "hoef",
+"key": "hoef",
+"start": 13.93,
+"end": 14.14
+},
+{
+"word": "jij",
+"key": "jij",
+"start": 14.15,
+"end": 14.32
+},
+{
+"word": "niet",
+"key": "niet",
+"start": 14.33,
+"end": 14.52
+},
+{
+"word": "constant",
+"key": "constant",
+"start": 14.59,
+"end": 14.99
+},
+{
+"word": "je",
+"key": "je",
+"start": 14.99,
+"end": 15.11
+},
+{
+"word": "telefoon",
+"key": "telefoon",
+"start": 15.11,
+"end": 15.58
+},
+{
+"word": "in",
+"key": "in",
+"start": 15.59,
+"end": 15.67
+},
+{
+"word": "de",
+"key": "de",
+"start": 15.67,
+"end": 15.79
+},
+{
+"word": "gaten",
+"key": "gaten",
+"start": 15.79,
+"end": 16.09
+},
+{
+"word": "te",
+"key": "te",
+"start": 16.09,
+"end": 16.21
+},
+{
+"word": "houden",
+"key": "houden",
+"start": 16.21,
+"end": 16.5
+},
+{
+"word": "en",
+"key": "en",
+"start": 16.7,
+"end": 16.87
+},
+{
+"word": "kun",
+"key": "kun",
+"start": 16.87,
+"end": 17.02
+},
+{
+"word": "je",
+"key": "je",
+"start": 17.03,
+"end": 17.18
+},
+{
+"word": "volledig",
+"key": "volledig",
+"start": 17.19,
+"end": 17.7
+},
+{
+"word": "focussen",
+"key": "focussen",
+"start": 17.75,
+"end": 18.17
+},
+{
+"word": "op",
+"key": "op",
+"start": 18.17,
+"end": 18.28
+},
+{
+"word": "je",
+"key": "je",
+"start": 18.29,
+"end": 18.39
+},
+{
+"word": "bedrijf",
+"key": "bedrijf",
+"start": 18.39,
+"end": 18.78
+},
+{
+"word": "VoxFlow",
+"key": "voxflow",
+"start": 19.3,
+"end": 19.8
+},
+{
+"word": "werkt",
+"key": "werkt",
+"start": 19.83,
+"end": 20.06
+},
+{
+"word": "professioneel",
+"key": "professioneel",
+"start": 20.09,
+"end": 20.76
+},
+{
+"word": "snel",
+"key": "snel",
+"start": 21.04,
+"end": 21.44
+},
+{
+"word": "en",
+"key": "en",
+"start": 21.74,
+"end": 21.9
+},
+{
+"word": "zonder",
+"key": "zonder",
+"start": 21.97,
+"end": 22.28
+},
+{
+"word": "pauzes",
+"key": "pauzes",
+"start": 22.29,
+"end": 22.72
+},
+{
+"word": "geef",
+"key": "geef",
+"start": 23.25,
+"end": 23.53
+},
+{
+"word": "iedere",
+"key": "iedere",
+"start": 23.62,
+"end": 23.95
+},
+{
+"word": "klant",
+"key": "klant",
+"start": 23.96,
+"end": 24.21
+},
+{
+"word": "direct",
+"key": "direct",
+"start": 24.32,
+"end": 24.7
+},
+{
+"word": "de",
+"key": "de",
+"start": 24.7,
+"end": 24.85
+},
+{
+"word": "aandacht",
+"key": "aandacht",
+"start": 24.88,
+"end": 25.2
+},
+{
+"word": "die",
+"key": "die",
+"start": 25.2,
+"end": 25.34
+},
+{
+"word": "ze",
+"key": "ze",
+"start": 25.34,
+"end": 25.46
+},
+{
+"word": "verdienen",
+"key": "verdienen",
+"start": 25.46,
+"end": 25.85
+},
+{
+"word": "en",
+"key": "en",
+"start": 26.13,
+"end": 26.25
+},
+{
+"word": "haal",
+"key": "haal",
+"start": 26.26,
+"end": 26.47
+},
+{
+"word": "meer",
+"key": "meer",
+"start": 26.56,
+"end": 26.81
+},
+{
+"word": "uit",
+"key": "uit",
+"start": 26.88,
+"end": 27.03
+},
+{
+"word": "ieder",
+"key": "ieder",
+"start": 27.12,
+"end": 27.36
+},
+{
+"word": "telefoontje",
+"key": "telefoontje",
+"start": 27.36,
+"end": 27.99
+},
+{
+"word": "start",
+"key": "start",
+"start": 28.42,
+"end": 28.71
+},
+{
+"word": "vandaag",
+"key": "vandaag",
+"start": 28.72,
+"end": 29.07
+},
+{
+"word": "nog",
+"key": "nog",
+"start": 29.1,
+"end": 29.27
+},
+{
+"word": "met",
+"key": "met",
+"start": 29.46,
+"end": 29.63
+},
+{
+"word": "VoxFlow",
+"key": "voxflow",
+"start": 29.68,
+"end": 30.17
+}
+]

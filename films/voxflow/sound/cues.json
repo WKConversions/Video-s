@@ -1,0 +1,629 @@
+{
+ "fps": 30,
+ "frames": 960,
+ "library": "lib",
+ "vo": {
+  "file": "../vo/vo-from-draft.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "music/the-great-wall-fit.wav",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.3,
+  "fade_out": 0.8,
+  "note": "The Great Wall (Michael Ramir C., Mixkit), fitted: entry 2.67, breakdown 12.0\u201315.7, final chord 30.55"
+ },
+ "sfx": [
+  {
+   "id": "gen-ring",
+   "frame": 9,
+   "note": "a call rings in the practice",
+   "db": 2
+  },
+  {
+   "id": "gen-missed",
+   "frame": 32,
+   "note": "nobody can answer: missed",
+   "db": 2
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 42,
+   "note": "another missed call lands on the pile",
+   "db": -5,
+   "pitch": 0
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 49,
+   "note": "another missed call lands on the pile",
+   "db": -5,
+   "pitch": 1
+  },
+  {
+   "id": "gen-pop-soft-3",
+   "frame": 56,
+   "note": "another missed call lands on the pile",
+   "db": -5,
+   "pitch": 0
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 64,
+   "note": "another missed call lands on the pile",
+   "db": -5,
+   "pitch": 1
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 71,
+   "note": "another missed call lands on the pile",
+   "db": -5,
+   "pitch": 0
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 76,
+   "note": "the words leave",
+   "db": -6
+  },
+  {
+   "id": "gen-pop-soft-3",
+   "frame": 78,
+   "note": "another missed call lands on the pile",
+   "db": -5,
+   "pitch": 1
+  },
+  {
+   "id": "gen-riser-soft-1s",
+   "frame": 81,
+   "note": "into the turn",
+   "db": -4
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 84,
+   "note": "the VoxFlow wordmark",
+   "db": -7
+  },
+  {
+   "id": "gen-swell-low",
+   "frame": 104,
+   "note": "the practice becomes the receptionist's square",
+   "db": -6
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 104,
+   "note": "a missed call flips to answered",
+   "db": -3,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 107,
+   "note": "a missed call flips to answered",
+   "db": -3,
+   "pitch": 1
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 109,
+   "note": "a missed call flips to answered",
+   "db": -3,
+   "pitch": 2
+  },
+  {
+   "id": "gen-success-soft",
+   "frame": 109,
+   "note": "answered",
+   "db": -4
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 112,
+   "note": "a missed call flips to answered",
+   "db": -3,
+   "pitch": 3
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 114,
+   "note": "Altijd bereikbaar",
+   "db": -5
+  },
+  {
+   "id": "gen-appear",
+   "frame": 129,
+   "note": "the receptionist rises",
+   "db": -2
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 138,
+   "note": "the calls fold into one",
+   "db": -8
+  },
+  {
+   "id": "gen-blip",
+   "frame": 153,
+   "note": "in conversation with your customer",
+   "db": -4
+  },
+  {
+   "id": "gen-whoosh-soft-medium",
+   "frame": 176,
+   "note": "she glides left",
+   "db": -5
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 212,
+   "note": "the underline",
+   "db": -5
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 242,
+   "note": "24/7",
+   "db": -3
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 245,
+   "note": "the hours roll",
+   "db": -4,
+   "pitch": 0
+  },
+  {
+   "id": "gen-swell-low",
+   "frame": 246,
+   "note": "night falls",
+   "db": -4
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 249,
+   "note": "the hours roll",
+   "db": -4,
+   "pitch": 1
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 253,
+   "note": "the hours roll",
+   "db": -4,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 256,
+   "note": "the hours roll",
+   "db": -4,
+   "pitch": 3
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 260,
+   "note": "the hours roll",
+   "db": -4,
+   "pitch": 4
+  },
+  {
+   "id": "gen-ring",
+   "frame": 262,
+   "note": "a call at 03:20",
+   "db": -1
+  },
+  {
+   "id": "gen-tap-soft",
+   "frame": 273,
+   "note": "accept",
+   "db": 0
+  },
+  {
+   "id": "gen-pickup",
+   "frame": 286,
+   "note": "picked up within 3 seconds",
+   "db": -3
+  },
+  {
+   "id": "gen-swell",
+   "frame": 298,
+   "note": "the white field grows out of the call",
+   "db": -7
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 309,
+   "note": "the caller asks",
+   "db": -4
+  },
+  {
+   "id": "gen-typing-run",
+   "frame": 324,
+   "note": "the answer types",
+   "db": -2
+  },
+  {
+   "id": "gen-typing-run",
+   "frame": 340,
+   "note": "the answer types",
+   "db": -3
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 349,
+   "note": "the agenda arrives",
+   "db": -5
+  },
+  {
+   "id": "gen-send",
+   "frame": 358,
+   "note": "10:00 lifts out of the answer",
+   "db": -3
+  },
+  {
+   "id": "gen-pop-soft-3",
+   "frame": 370,
+   "note": "it lands on Tuesday 10:00",
+   "db": -1
+  },
+  {
+   "id": "gen-chime-soft",
+   "frame": 371,
+   "note": "booked",
+   "db": -5
+  },
+  {
+   "id": "gen-success-soft",
+   "frame": 391,
+   "note": "the check",
+   "db": -5
+  },
+  {
+   "id": "gen-whoosh-whip",
+   "frame": 410,
+   "note": "the whip",
+   "db": -3
+  },
+  {
+   "id": "gen-note",
+   "frame": 438,
+   "note": "a handled call on the lock screen",
+   "db": -1,
+   "pitch": 0
+  },
+  {
+   "id": "gen-note",
+   "frame": 443,
+   "note": "a handled call on the lock screen",
+   "db": -1,
+   "pitch": 2
+  },
+  {
+   "id": "gen-note",
+   "frame": 449,
+   "note": "a handled call on the lock screen",
+   "db": -1,
+   "pitch": 4
+  },
+  {
+   "id": "gen-ring-short",
+   "frame": 451,
+   "note": "a call comes in",
+   "db": -1
+  },
+  {
+   "id": "gen-note",
+   "frame": 454,
+   "note": "a handled call on the lock screen",
+   "db": -1,
+   "pitch": 2
+  },
+  {
+   "id": "gen-note",
+   "frame": 459,
+   "note": "a handled call on the lock screen",
+   "db": -1,
+   "pitch": 5
+  },
+  {
+   "id": "gen-pickup",
+   "frame": 463,
+   "note": "VoxFlow neemt op",
+   "db": 0
+  },
+  {
+   "id": "gen-swell-low",
+   "frame": 473,
+   "note": "the screen dims",
+   "db": -8
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 507,
+   "note": "the phone goes",
+   "db": -6
+  },
+  {
+   "id": "gen-swell",
+   "frame": 532,
+   "note": "the focus pulls to the practice",
+   "db": -6
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 549,
+   "note": "calls handled",
+   "db": -3
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 559,
+   "note": "2",
+   "db": -7,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 569,
+   "note": "3",
+   "db": -3,
+   "pitch": 4
+  },
+  {
+   "id": "gen-swell-low",
+   "frame": 573,
+   "note": "the teal field grows out of her face",
+   "db": -6
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 577,
+   "note": "the wordmark",
+   "db": -8
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 597,
+   "note": "professioneel drops in",
+   "db": -6
+  },
+  {
+   "id": "gen-typing-run",
+   "frame": 611,
+   "note": "the greeting types",
+   "db": -4
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 625,
+   "note": "snel drops through",
+   "db": -10,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick-soft-hi",
+   "frame": 653,
+   "note": "the ring closes on <3 sec",
+   "db": -2
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 653,
+   "note": "zonder pauzes drops through",
+   "db": -6,
+   "pitch": 4
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 660,
+   "note": "a day lights up",
+   "db": -5,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 662,
+   "note": "a day lights up",
+   "db": -5,
+   "pitch": 1
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 665,
+   "note": "a day lights up",
+   "db": -5,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 667,
+   "note": "a day lights up",
+   "db": -5,
+   "pitch": 3
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 669,
+   "note": "a day lights up",
+   "db": -5,
+   "pitch": 4
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 671,
+   "note": "a day lights up",
+   "db": -5,
+   "pitch": 5
+  },
+  {
+   "id": "gen-tap",
+   "frame": 672,
+   "note": "pauzes struck",
+   "db": -2
+  },
+  {
+   "id": "gen-tick-soft",
+   "frame": 673,
+   "note": "a day lights up",
+   "db": -5,
+   "pitch": 6
+  },
+  {
+   "id": "gen-swell-low",
+   "frame": 689,
+   "note": "cream grows out of Sunday",
+   "db": -7
+  },
+  {
+   "id": "gen-ring-short",
+   "frame": 697,
+   "note": "five calls ring at once",
+   "db": -4,
+   "pitch": 0
+  },
+  {
+   "id": "gen-ring-short",
+   "frame": 706,
+   "note": "five calls ring at once",
+   "db": -4,
+   "pitch": 2
+  },
+  {
+   "id": "gen-ring-short",
+   "frame": 715,
+   "note": "five calls ring at once",
+   "db": -4,
+   "pitch": 4
+  },
+  {
+   "id": "gen-success-soft",
+   "frame": 729,
+   "note": "all answered, directly",
+   "db": -2
+  },
+  {
+   "id": "gen-whoosh-soft-medium",
+   "frame": 750,
+   "note": "the middle call opens into the customer's phone",
+   "db": -6
+  },
+  {
+   "id": "gen-note",
+   "frame": 763,
+   "note": "the confirmation",
+   "db": 0,
+   "pitch": 3
+  },
+  {
+   "id": "gen-whoosh-whip",
+   "frame": 779,
+   "note": "the whip",
+   "db": -3
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 797,
+   "note": "an appointment drops in",
+   "db": -6,
+   "pitch": 0
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 800,
+   "note": "an appointment drops in",
+   "db": -6,
+   "pitch": 1
+  },
+  {
+   "id": "gen-pop-soft-3",
+   "frame": 803,
+   "note": "an appointment drops in",
+   "db": -6,
+   "pitch": 2
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 807,
+   "note": "an appointment drops in",
+   "db": -6,
+   "pitch": 3
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 810,
+   "note": "an appointment drops in",
+   "db": -6,
+   "pitch": 4
+  },
+  {
+   "id": "gen-pop-soft-3",
+   "frame": 813,
+   "note": "an appointment drops in",
+   "db": -6,
+   "pitch": 5
+  },
+  {
+   "id": "gen-whoosh-soft-short",
+   "frame": 818,
+   "note": "the page turns to next week",
+   "db": -6
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 829,
+   "note": "next week fills",
+   "db": -7,
+   "pitch": 2
+  },
+  {
+   "id": "gen-pop-soft-3",
+   "frame": 832,
+   "note": "next week fills",
+   "db": -7,
+   "pitch": 3
+  },
+  {
+   "id": "gen-pop-soft-1",
+   "frame": 835,
+   "note": "next week fills",
+   "db": -7,
+   "pitch": 4
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 838,
+   "note": "next week fills",
+   "db": -7,
+   "pitch": 5
+  },
+  {
+   "id": "gen-pop-soft-3",
+   "frame": 841,
+   "note": "next week fills",
+   "db": -7,
+   "pitch": 6
+  },
+  {
+   "id": "gen-whoosh-soft-medium",
+   "frame": 855,
+   "note": "an appointment lifts out and becomes the button",
+   "db": -6
+  },
+  {
+   "id": "gen-impact-logo",
+   "frame": 891,
+   "note": "the wordmark",
+   "db": -3
+  },
+  {
+   "id": "gen-click",
+   "frame": 915,
+   "note": "Start gratis is pressed",
+   "db": -2
+  }
+ ]
+}

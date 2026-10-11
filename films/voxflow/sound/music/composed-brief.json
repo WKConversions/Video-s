@@ -1,0 +1,62 @@
+{
+ "_comment": "VoxFlow composed bed. Bar 1.9714 s at 121.739 BPM; rendered 1.242857 s early and that lead-in trimmed, so bar k lands at film -1.2429 + k*1.9714: bar 2 = 2.70 (the turn), bar 8 = 14.53, bar 10 = 18.47, bar 12 = 22.41, bar 15 = 28.33 (CTA 'Start' 28.42), bar 16 = 30.30 (end chord). Chords one per bar: IV V into I on the turn, V-I cadence into the end card.",
+ "bpm": 121.739,
+ "key": "D",
+ "mode": "major",
+ "length": 33.242857,
+ "vibe": "tech-minimal",
+ "progression": [
+  "IV",
+  "V",
+  "I",
+  "V",
+  "vi",
+  "IV",
+  "I",
+  "V",
+  "vi",
+  "IV",
+  "I",
+  "V",
+  "vi",
+  "IV",
+  "I",
+  "V",
+  "I"
+ ],
+ "sections": [
+  [
+   0,
+   0
+  ],
+  [
+   1,
+   1
+  ],
+  [
+   2,
+   2
+  ],
+  [
+   8,
+   1
+  ],
+  [
+   10,
+   3
+  ],
+  [
+   12,
+   2
+  ],
+  [
+   15,
+   3
+  ],
+  [
+   16,
+   "end"
+  ]
+ ],
+ "trim_start_s": 1.242857
+}
