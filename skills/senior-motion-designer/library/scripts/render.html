@@ -1,0 +1,33 @@
+<!doctype html><meta charset="utf-8">
+<style>
+  /* one @font-face per family and weight you use */
+  @font-face { font-family: "Display"; src: url(node_modules/@fontsource/inter-tight/files/inter-tight-latin-800-normal.woff2); font-weight: 800 }
+  html, body { margin: 0 }
+  #stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #F7F7F8; perspective: 2400px }
+  #cam { position: absolute; inset: 0; transform-origin: 50% 50% }   /* the camera, transformed every frame */
+  .abs { position: absolute; left: 0; top: 0; transform-origin: 0 0 }
+</style>
+<div id="stage"><div id="cam"><!-- absolutely positioned elements --></div></div>
+<script>
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x)), lerp = (a, b, t) => a + (b - a) * t;
+function bez(x1, y1, x2, y2) {            // CSS cubic-bezier(x1,y1,x2,y2) as a function of progress
+  const cx = 3 * x1, bx = 3 * (x2 - x1) - cx, ax = 1 - cx - bx, cy = 3 * y1, by = 3 * (y2 - y1) - cy, ay = 1 - cy - by;
+  const X = t => ((ax * t + bx) * t + cx) * t, Y = t => ((ay * t + by) * t + cy) * t, dX = t => (3 * ax * t + 2 * bx) * t + cx;
+  return x => {
+    if (x <= 0) return 0; if (x >= 1) return 1;
+    let t = x;
+    for (let i = 0; i < 8; i++) { const e = X(t) - x, d = dX(t); if (Math.abs(e) < 1e-6 && t >= 0 && t <= 1) return Y(t); if (Math.abs(d) < 1e-6) break; t -= e / d; }
+    let lo = 0, hi = 1; t = x;
+    for (let i = 0; i < 40; i++) { if (X(t) < x) lo = t; else hi = t; t = (lo + hi) / 2; }
+    return Y(t);
+  };
+}
+const E = { arrive: bez(.22, 1, .36, 1), depart: bez(.64, 0, .78, 0), move: bez(.65, 0, .35, 1), lin: t => t };
+const P = (f, start, dur, ease = E.arrive) => ease(clamp((f - start) / dur));  // 0→1 progress of a tween at frame f
+function setup() { /* measure text, build paths: runs once */ }
+function render(f) { /* f may be fractional (motion blur): set #cam's transform, then every element's transform, opacity, etc. from f alone */ }
+window.render = render;
+const FONTS = ['800 100px Display'];       // one entry per family and weight in the @font-face rules
+window.__ready = Promise.all(FONTS.map(f => document.fonts.load(f))).then(() => document.fonts.ready)
+  .then(() => { setup(); render(0); return true; });
+</script>

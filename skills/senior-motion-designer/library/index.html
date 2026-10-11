@@ -1,0 +1,510 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Senior Motion Designer Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: the WKConversions page system. Workflow in order, then a shelf of modules beside a reader, then the style frames. */
+:root{
+  --page:#F7F7F8; --dot:#DDE0E5; --card:#FFFFFF; --line:#E2E3E6; --ink:#050F19; --txt-2:#575E68; --txt-3:#838A94;
+  --blue:#3F8CE8; --blue-ink:#1266C9; --blue-soft:#E6F0FD; --code:#EFF0F2; --frame-edge:rgba(5,15,25,.10);
+  --display:"Inter Tight","Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --page:#050F19; --dot:#13222F; --card:#0C1A28; --line:rgba(246,246,246,.13); --ink:#F6F6F6; --txt-2:#B3BAC4; --txt-3:#8C94A0;
+    --blue:#5AA2F2; --blue-ink:#8CC0F8; --blue-soft:#12304F; --code:#132535; --frame-edge:rgba(246,246,246,.14); color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --page:#050F19; --dot:#13222F; --card:#0C1A28; --line:rgba(246,246,246,.13); --ink:#F6F6F6; --txt-2:#B3BAC4; --txt-3:#8C94A0;
+  --blue:#5AA2F2; --blue-ink:#8CC0F8; --blue-soft:#12304F; --code:#132535; --frame-edge:rgba(246,246,246,.14); color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--page);background-image:radial-gradient(var(--dot) 1px,transparent 1.3px);background-size:22px 22px;
+  color:var(--ink);font:400 16px/1.6 var(--body);padding-inline:20px;padding-block:0 88px}
+.wrap{max-width:1180px;margin-inline:auto;display:grid;gap:64px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+
+/* header */
+header{padding-block:56px 0;display:grid;gap:18px}
+.kicker,.label{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--txt-3)}
+h1,h2{font-family:var(--display);font-weight:800;letter-spacing:-.045em;line-height:1;margin:0;text-wrap:balance}
+h1{font-size:clamp(40px,6.2vw,70px)}
+h1 span,h2 span{color:var(--blue)}
+.lede{font-size:18px;color:var(--txt-2);max-width:66ch;margin:0}
+nav{display:flex;flex-wrap:wrap;gap:8px}
+nav a{font:500 14px/1 var(--body);color:var(--ink);text-decoration:none;background:var(--card);border:1px solid var(--line);
+  padding:10px 14px;border-radius:999px}
+nav a:hover{border-color:var(--blue);color:var(--blue-ink)}
+section{display:grid;gap:24px;scroll-margin-top:24px}
+.sechead{display:grid;gap:10px}
+.sechead h2{font-size:clamp(28px,3.4vw,40px)}
+.sechead p{margin:0;color:var(--txt-2);max-width:68ch}
+
+/* chips that open a module */
+.chip{display:inline-flex;align-items:center;font:500 12.5px/1 var(--mono);color:var(--blue-ink);background:var(--blue-soft);
+  border:1px solid transparent;border-radius:999px;padding:6px 10px;cursor:pointer}
+.chip:hover{border-color:var(--blue)}
+.chips{display:flex;flex-wrap:wrap;align-items:flex-start;gap:6px}
+
+/* workflow */
+.before{margin:0;font-size:15px;color:var(--txt-2);display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;
+  background:var(--card);border:1px solid var(--line);border-radius:22px;padding:8px 26px}
+.step{display:grid;grid-template-columns:34px minmax(0,1fr);align-content:start;gap:4px 12px;padding-block:16px;border-bottom:1px solid var(--line)}
+.step:nth-last-child(-n+2){border-bottom:0}
+.step .n{font:500 13px/1.5 var(--mono);color:var(--txt-3);font-variant-numeric:tabular-nums;padding-top:2px}
+.step h3{margin:0;font:700 18px/1.3 var(--display);letter-spacing:-.02em}
+.step p{margin:0;font-size:14.5px;line-height:1.5;color:var(--txt-2)}
+.step .chips{grid-column:2;margin-top:6px}
+
+/* library: shelf + reader */
+.lib{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:28px;align-items:start}
+.shelf{display:grid;gap:22px}
+.group{display:grid;gap:6px}
+.group .label{padding-inline:12px}
+.mod{display:grid;gap:3px;text-align:left;width:100%;background:transparent;border:1px solid transparent;border-radius:14px;
+  padding:10px 12px;cursor:pointer}
+.mod:hover{background:var(--card);border-color:var(--line)}
+.mod[aria-current="true"]{background:var(--blue-soft);border-color:transparent}
+.mod b{font:500 13px/1.4 var(--mono);color:var(--ink);overflow-wrap:anywhere}
+.mod span{font-size:13.5px;line-height:1.45;color:var(--txt-2)}
+.reader{position:sticky;top:calc(env(safe-area-inset-top, 0px) + 16px);max-height:calc(100vh - 32px);overflow:auto;
+  background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px 30px 34px;min-width:0}
+.rhead{display:grid;gap:6px;padding-bottom:16px;margin-bottom:20px;border-bottom:1px solid var(--line)}
+.rhead code{font:500 13px/1.4 var(--mono);color:var(--blue-ink);overflow-wrap:anywhere}
+.rhead p{margin:0;font-size:14px;color:var(--txt-3)}
+.md{display:flex;flex-direction:column;gap:12px;max-width:74ch}
+.md>*{margin:0}
+.md h2{font-size:30px;letter-spacing:-.04em}
+.md h3{font:700 21px/1.25 var(--display);letter-spacing:-.02em;margin-top:18px}
+.md h4{font:700 17px/1.3 var(--display);margin-top:10px}
+.md p,.md li{font-size:15.5px;line-height:1.62}
+.md ul,.md ol{padding-left:22px;display:grid;gap:6px}
+.md li>ul,.md li>ol{margin-top:6px}
+.md strong{font-weight:600}
+.md code{font:400 13px/1.5 var(--mono);background:var(--code);padding:1px 5px;border-radius:6px;overflow-wrap:anywhere}
+.md pre{background:var(--code);border-radius:12px;padding:14px 16px;overflow-x:auto;font:400 12.5px/1.55 var(--mono)}
+.md pre code{background:none;padding:0;font-size:inherit;overflow-wrap:normal;white-space:pre}
+.tbl{overflow-x:auto}
+.md table{border-collapse:collapse;font-size:14px;line-height:1.45;min-width:100%}
+.md th,.md td{border-bottom:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.md th{font-weight:600;font-size:13px;color:var(--txt-2)}
+.ref{display:inline;background:none;border:0;padding:0;cursor:pointer}
+.ref code{color:var(--blue-ink)}
+.ref:hover code{text-decoration:underline}
+.muted{color:var(--txt-3)}
+
+/* styles gallery */
+.rule{margin:0;padding:14px 18px;border-radius:14px;background:var(--blue-soft);color:var(--ink);max-width:78ch;font-size:15px}
+.style{display:grid;gap:18px;scroll-margin-top:24px}
+.head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start;
+  background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px}
+.head h3{margin:0;font:800 clamp(24px,3vw,34px)/1.05 var(--display);letter-spacing:-.04em;text-wrap:balance}
+.head p{margin:12px 0 0;color:var(--txt-2);max-width:52ch}
+.head .chips{margin-top:16px}
+.traits{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.traits li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;font-size:15px;line-height:1.5}
+.traits li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue);margin-top:7px}
+.files{grid-column:1/-1;font:400 12.5px/1.5 var(--mono);color:var(--txt-3);border-top:1px solid var(--line);padding-top:14px;overflow-wrap:anywhere}
+.files b{font-weight:500;color:var(--txt-2)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+figure{margin:0;display:grid;gap:6px}
+figure img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:1672/941;border-radius:12px;border:1px solid var(--frame-edge);background:var(--card)}
+figcaption{font:400 12px/1 var(--mono);color:var(--txt-3)}
+footer{font-size:14px;color:var(--txt-3);max-width:70ch}
+
+@media (max-width:900px){
+  .lib{grid-template-columns:minmax(0,1fr)}
+  .reader{position:static;max-height:none}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .step:nth-last-child(2){border-bottom:1px solid var(--line)}
+}
+@media (max-width:760px){
+  .head{grid-template-columns:minmax(0,1fr);padding:22px}
+  .grid{grid-template-columns:minmax(0,1fr)}
+  .reader{padding:22px 18px 28px}
+  .steps{padding:4px 18px}
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="kicker">senior-motion-designer · library</div>
+    <h1>What the motion skill knows, <span>module by module.</span></h1>
+    <p class="lede">The skill's own instructions run the workflow and read these modules one step at a time, only when a step needs them. Every rule lives in exactly one module. The three visual directions the skill starts from, and their reference frames, are here too.</p>
+    <nav aria-label="Sections">
+      <a href="#workflow">Workflow</a>
+      <a href="#modules">Modules</a>
+      <a href="#styles">Directions</a>
+      <a href="#speed">Speed graphs</a>
+    </nav>
+  </header>
+
+  <section id="workflow" aria-labelledby="h-workflow">
+    <div class="sechead">
+      <div class="label">The order of work</div>
+      <h2 id="h-workflow">From script to <span>finished film.</span></h2>
+      <p>Each step lists the modules it reads. Steps 3 to 12 are planning; only the revised storyboard goes to Karl for approval.</p>
+    </div>
+    <p class="before">Before step 1, read the recurring lessons in <button type="button" class="chip" data-open="examples/corrections.md">corrections</button></p>
+    <ol class="steps" id="steps"></ol>
+  </section>
+
+  <section id="modules" aria-labelledby="h-modules">
+    <div class="sechead">
+      <div class="label">The modules</div>
+      <h2 id="h-modules">Read any module <span>in place.</span></h2>
+      <p>Pick a module to read it here. Paths in the text open the module they name.</p>
+    </div>
+    <div class="lib">
+      <div class="shelf" id="shelf"></div>
+      <article class="reader" id="reader" aria-live="polite">
+        <div class="rhead"><code id="rpath">planning/visual-strategy.md</code><p id="rdesc"></p></div>
+        <div class="md" id="rbody"><p class="muted">Loading the module…</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="styles" aria-labelledby="h-styles">
+    <div class="sechead">
+      <div class="label">Visual directions</div>
+      <h2 id="h-styles">Three directions, <span>never a template.</span></h2>
+      <p>The reference frames behind the library's three visual directions. Clients no longer pick one: the skill decides each film's direction from the business, the script and the brand, starts from the direction that fits (or sets a new one) and adapts it. It views that direction's contact sheet to calibrate the feel, never as a template.</p>
+    </div>
+    <p class="rule"><b>Reference only.</b> Client videos never reuse these frames' products, data, people, headlines or layouts. The frames show a look; the client supplies everything in it.</p>
+
+    <div class="style" id="minimal-user-interface">
+      <div class="head">
+        <div>
+          <h3>Minimal User Interface Style</h3>
+          <p>The client's own product interface is the hero: rebuilt interface cards on a near-white canvas beside a bold two-color headline.</p>
+          <div class="chips"><button type="button" class="chip" data-open="styles/minimal-user-interface.md">Read the definition</button></div>
+        </div>
+        <ul class="traits">
+          <li>Flat, straight-on cards with large radii and very soft shadows.</li>
+          <li>Black, one accent color and its tints; pale halo circles, a thin line circle and a small spark mark.</li>
+          <li>The interface does the moving: counters, charts, toggles, a cursor.</li>
+          <li>The references share one split layout; client films don't.</li>
+        </ul>
+        <div class="files"><b>Files</b> styles/minimal-user-interface/sheet.jpg · 01.jpg – 10.jpg</div>
+      </div>
+      <div class="grid">
+        <figure><img src="styles/minimal-user-interface/01.jpg" alt="Minimal User Interface Style, reference frame 1 of 10" width="1672" height="941"><figcaption>01</figcaption></figure>
+        <figure><img src="styles/minimal-user-interface/02.jpg" alt="Minimal User Interface Style, reference frame 2 of 10" width="1672" height="941"><figcaption>02</figcaption></figure>
+        <figure><img src="styles/minimal-user-interface/03.jpg" alt="Minimal User Interface Style, reference frame 3 of 10" width="1672" height="941"><figcaption>03</figcaption></figure>
+        <figure><img src="styles/minimal-user-interface/04.jpg" alt="Minimal User Interface Style, reference frame 4 of 10" width="1672" height="941"><figcaption>04</figcaption></figure>
+        <figure><img src="styles/minimal-user-interface/05.jpg" alt="Minimal User Interface Style, reference frame 5 of 10" width="1672" height="941"><figcaption>05</figcaption></figure>
+        <figure><img src="styles/minimal-user-interface/06.jpg" alt="Minimal User Interface Style, reference frame 6 of 10" width="1672" height="941"><figcaption>06</figcaption></figure>
+        <figure><img src="styles/minimal-user-interface/07.jpg" alt="Minimal User Interface Style, reference frame 7 of 10" width="1672" height="941"><figcaption>07</figcaption></figure>
+        <figure><img src="styles/minimal-user-interface/08.jpg" alt="Minimal User Interface Style, reference frame 8 of 10" width="1672" height="941"><figcaption>08</figcaption></figure>
+        <figure><img src="styles/minimal-user-interface/09.jpg" alt="Minimal User Interface Style, reference frame 9 of 10" width="1672" height="941"><figcaption>09</figcaption></figure>
+        <figure><img src="styles/minimal-user-interface/10.jpg" alt="Minimal User Interface Style, reference frame 10 of 10" width="1672" height="941"><figcaption>10</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="style" id="minimal-single-visual">
+      <div class="head">
+        <div>
+          <h3>Minimal Single Visual Style</h3>
+          <p>One idea per scene, acted out by one calm abstract form, with a short statement in bold type.</p>
+          <div class="chips"><button type="button" class="chip" data-open="styles/minimal-single-visual.md">Read the definition</button></div>
+        </div>
+        <ul class="traits">
+          <li>Frosted glass shapes on a bright studio floor with soft reflections.</li>
+          <li>A change from start to finish: pale and many, then one saturated shape.</li>
+          <li>The key word in the accent color; one accent, no second hue.</li>
+          <li>Slow, smooth transformations; one scene's final shape can start the next.</li>
+        </ul>
+        <div class="files"><b>Files</b> styles/minimal-single-visual/sheet.jpg · 01.jpg – 10.jpg</div>
+      </div>
+      <div class="grid">
+        <figure><img src="styles/minimal-single-visual/01.jpg" alt="Minimal Single Visual Style, reference frame 1 of 10" width="1672" height="941"><figcaption>01</figcaption></figure>
+        <figure><img src="styles/minimal-single-visual/02.jpg" alt="Minimal Single Visual Style, reference frame 2 of 10" width="1672" height="941"><figcaption>02</figcaption></figure>
+        <figure><img src="styles/minimal-single-visual/03.jpg" alt="Minimal Single Visual Style, reference frame 3 of 10" width="1672" height="941"><figcaption>03</figcaption></figure>
+        <figure><img src="styles/minimal-single-visual/04.jpg" alt="Minimal Single Visual Style, reference frame 4 of 10" width="1672" height="941"><figcaption>04</figcaption></figure>
+        <figure><img src="styles/minimal-single-visual/05.jpg" alt="Minimal Single Visual Style, reference frame 5 of 10" width="1672" height="941"><figcaption>05</figcaption></figure>
+        <figure><img src="styles/minimal-single-visual/06.jpg" alt="Minimal Single Visual Style, reference frame 6 of 10" width="1672" height="941"><figcaption>06</figcaption></figure>
+        <figure><img src="styles/minimal-single-visual/07.jpg" alt="Minimal Single Visual Style, reference frame 7 of 10" width="1672" height="941"><figcaption>07</figcaption></figure>
+        <figure><img src="styles/minimal-single-visual/08.jpg" alt="Minimal Single Visual Style, reference frame 8 of 10" width="1672" height="941"><figcaption>08</figcaption></figure>
+        <figure><img src="styles/minimal-single-visual/09.jpg" alt="Minimal Single Visual Style, reference frame 9 of 10" width="1672" height="941"><figcaption>09</figcaption></figure>
+        <figure><img src="styles/minimal-single-visual/10.jpg" alt="Minimal Single Visual Style, reference frame 10 of 10" width="1672" height="941"><figcaption>10</figcaption></figure>
+      </div>
+    </div>
+
+    <div class="style" id="minimal-gradient-saas">
+      <div class="head">
+        <div>
+          <h3>Minimal Gradient SaaS Style</h3>
+          <p>A soft, grainy multi-hue gradient, a gradient-filled headline, and frosted tiles, cables and app windows showing things flowing into one result.</p>
+          <div class="chips"><button type="button" class="chip" data-open="styles/minimal-gradient-saas.md">Read the definition</button></div>
+        </div>
+        <ul class="traits">
+          <li>Glass tiles, curved cables, a glowing hub and a tilted app window.</li>
+          <li>A palette of two or three neighboring hues built from the client's brand color.</li>
+          <li>The motion is flow: cables draw, pulses travel, the hub lights up, the window fills.</li>
+          <li>The references lean on one hub diagram; client films use it only when a line is about connecting.</li>
+        </ul>
+        <div class="files"><b>Files</b> styles/minimal-gradient-saas/sheet.jpg · 01.jpg – 10.jpg</div>
+      </div>
+      <div class="grid">
+        <figure><img src="styles/minimal-gradient-saas/01.jpg" alt="Minimal Gradient SaaS Style, reference frame 1 of 10" width="1672" height="941"><figcaption>01</figcaption></figure>
+        <figure><img src="styles/minimal-gradient-saas/02.jpg" alt="Minimal Gradient SaaS Style, reference frame 2 of 10" width="1672" height="941"><figcaption>02</figcaption></figure>
+        <figure><img src="styles/minimal-gradient-saas/03.jpg" alt="Minimal Gradient SaaS Style, reference frame 3 of 10" width="1672" height="941"><figcaption>03</figcaption></figure>
+        <figure><img src="styles/minimal-gradient-saas/04.jpg" alt="Minimal Gradient SaaS Style, reference frame 4 of 10" width="1672" height="941"><figcaption>04</figcaption></figure>
+        <figure><img src="styles/minimal-gradient-saas/05.jpg" alt="Minimal Gradient SaaS Style, reference frame 5 of 10" width="1672" height="941"><figcaption>05</figcaption></figure>
+        <figure><img src="styles/minimal-gradient-saas/06.jpg" alt="Minimal Gradient SaaS Style, reference frame 6 of 10" width="1672" height="941"><figcaption>06</figcaption></figure>
+        <figure><img src="styles/minimal-gradient-saas/07.jpg" alt="Minimal Gradient SaaS Style, reference frame 7 of 10" width="1672" height="941"><figcaption>07</figcaption></figure>
+        <figure><img src="styles/minimal-gradient-saas/08.jpg" alt="Minimal Gradient SaaS Style, reference frame 8 of 10" width="1672" height="941"><figcaption>08</figcaption></figure>
+        <figure><img src="styles/minimal-gradient-saas/09.jpg" alt="Minimal Gradient SaaS Style, reference frame 9 of 10" width="1672" height="941"><figcaption>09</figcaption></figure>
+        <figure><img src="styles/minimal-gradient-saas/10.jpg" alt="Minimal Gradient SaaS Style, reference frame 10 of 10" width="1672" height="941"><figcaption>10</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="speed" aria-labelledby="h-speed">
+    <div class="sechead">
+      <div class="label">Speed graphs</div>
+      <h2 id="h-speed">Twenty-four ways <span>to move.</span></h2>
+      <p>The speed graphs Karl approved in October 2026: seven read from his After Effects file, seventeen beyond it. Each card shows the graph, the distance covered on each frame and an onion skin, with the moment it suits. The written version is <button type="button" class="chip" data-open="motion/speed-graphs.md">motion/speed-graphs.md</button>.</p>
+    </div>
+    <div style="display:grid;gap:18px">
+      <figure><img src="motion/speed-graphs/sheet_A.png" alt="Speed graphs A1 to A7, read from Karl's Training.aep" width="1900" height="2887" style="width:100%;height:auto;aspect-ratio:1900/2887"><figcaption>A · from Karl’s Training.aep</figcaption></figure>
+      <figure><img src="motion/speed-graphs/sheet_B1.png" alt="Speed graphs B1 to B9: moving and arriving" width="1900" height="2480" style="width:100%;height:auto;aspect-ratio:1900/2480"><figcaption>B1–B9 · moving and arriving</figcaption></figure>
+      <figure><img src="motion/speed-graphs/sheet_B2.png" alt="Speed graphs B10 to B17: continuous, rhythm and transitions" width="1900" height="2533" style="width:100%;height:auto;aspect-ratio:1900/2533"><figcaption>B10–B17 · continuous, rhythm and transitions</figcaption></figure>
+    </div>
+  </section>
+
+  <footer>To change a module or add reference frames, ask Claude to update this library. The skill reads every file from these same paths, so its own instructions don't need to change.</footer>
+</div>
+
+<script>
+const GROUPS = [
+  ['Planning', [
+    ['planning/intake.md', 'Intake-form submissions: reading them (no style question), deciding the direction after the harvest, format and timing, the approval stop, the project brief.'],
+    ['planning/script-analysis.md', 'Beats, and for each: core meaning, what the viewer must understand, importance, tone, nouns, verbs and beat type.'],
+    ['planning/storytelling.md', 'The film as a whole: arc, hook, energy curve, setup and payoff, callbacks, the call to action.'],
+    ['planning/phrase-by-phrase.md', 'Every phrase gets its own visual on one continuous stage: never a presentation; the idea list, object-born transitions, showing the voice in text, the measurement.'],
+    ['planning/visual-strategy.md', 'Literal meaning, choosing a strategy, beat type to method, the catalog of methods, variety.'],
+    ['planning/voice-over.md', 'A recorded voice-over: identifying takes, word timings, placing lines, retiming the picture.']]],
+  ['Design', [
+    ['design/visual-hierarchy.md', 'Primary, secondary and detail; hierarchy, reduction, contrast; readable sizes.'],
+    ['design/composition.md', 'Styleframes, grid, space, scale, crop, depth; the variety check and its budget.'],
+    ['design/typography.md', 'When words appear, line breaks, word builds, no overlapping type, kinetic type, how long text holds.'],
+    ['design/ui-product.md', 'Product demonstrations: focus, simplification, interaction hierarchy, cursor, cards.'],
+    ['design/asset-strategy.md', 'What scenes are made of, imagery rules, harvesting a client site into facts, missing and a measured brand DNA, sourcing royalty-free photos and footage, asset requests.'],
+    ['design/anti-ai-design.md', 'AI motion-design fingerprints, principles, the technique budget.'],
+    ['design/three-d.md', 'Real 3D with three.js: when it earns its place, the kit (studio, logo tile, devices with live screens, panels), look, rendering.'],
+    ['design/maps.md', 'Map animations, Karl’s favourite way to show place: when a map is the right picture, the dot map and the country map, how they move, building one.']]],
+  ['Motion', [
+    ['motion/motion-identity.md', 'The film’s motion personality, its three constants, intensity by moment, staging and depth, emotion to motion, weight.'],
+    ['motion/animation-grammar.md', 'Cause, motion, consequence; hierarchy, layers, arcs, overlap, each property’s own timing in a move, entrances, blur, working holds, the end card.'],
+    ['motion/camera.md', 'A camera that never stops and never wanders; depth, cuts, atmosphere.'],
+    ['motion/timing.md', 'Durations, the brief’s tone and its motion targets, distance and weight, stagger budget, the shape of a move, holds, rhythm, sync.'],
+    ['motion/speed-graphs.md', 'The 24 speed graphs Karl approved (A1–A7 from his Training.aep, B1–B17 beyond it): the moment each fits, what to avoid, After Effects and Remotion settings; curves measured on his 11 October references.'],
+    ['motion/easing.md', 'Easing by intent, the three named curves, springs, material, velocity continuity (Karl’s speed-matched cuts).'],
+    ['motion/transitions.md', 'Transition families (with the speed-matched whip through a cut), making a morph look good, a small family per film, what to avoid.'],
+    ['motion/continuity.md', 'The continuity table and the hand-off rules.'],
+    ['motion/sound.md', 'Hearing a sound before choosing it, the sound each speed graph takes, which sound for which moment, sync, density by vibe, palettes from the references, levels, music, the workflow.']]],
+  ['References', [
+    ['references/reading-references.md', 'Style, content and motion references; what to analyze; the record; capturing frames from video.'],
+    ['references/benchmarks.md', 'Karl’s motion benchmark and his 11 October 2026 set (voice-over and text, smoothness), measured and broken down frame by frame.'],
+    ['references/technique-catalogue.md', 'Fifty-one techniques from 31 reference films Karl selected, with their timing; the kit component for 1–20.'],
+    ['references/visual-dictionary.md', 'How the references show what the voice says, by kind of line, and how long a visual holds against the words; for a vague line.']]],
+  ['Examples', [
+    ['examples/corrections.md', 'Karl’s corrections by category, and how to add one.'],
+    ['examples/bad-vs-good.md', 'Weak and stronger solutions, including approved scenes.'],
+    ['examples/scene-examples.md', 'Two scenes written out in the full production format.']]],
+  ['Evaluation', [
+    ['evaluation/art-director.md', 'The critic’s questions; independent reviews, cold eyes, decisions and the stop rule; the scorecard.'],
+    ['evaluation/quality-check.md', 'Seven passes, motion gaps, hand-offs, motion targets, severity, delivery checks, red flags.'],
+    ['evaluation/troubleshooting.md', 'Symptom, cause and fix; the Before / After / Why report row.'],
+    ['evaluation/tells.md', 'Defaults the thesis never asked for, in four families; the thesis and its allowed patterns.']]],
+  ['Production', [
+    ['production/output-format.md', 'Project direction, the scene spec, precision, the storyboard page.'],
+    ['production/remotion.md', 'The default coded build: a Remotion project Karl can edit in Studio; timing by labels; 3D when it earns its place.'],
+    ['production/coded-render.md', 'The fallback coded build: timing to the voice, the render page, test frames, render, encode.'],
+    ['production/after-effects.md', 'After Effects builds and hand-offs: naming, construction, blur, curves, previews.'],
+    ['production/build-gotchas.md', 'Where coded builds went wrong: hand-offs, fonts, pixel snapping, audio, encode, tools, render times.'],
+    ['production/tool-requests.md', 'The tools a session has, and requests for the ones it lacks.'],
+    ['production/mcp-tools.md', 'The MCP servers (reference videos, web search, library docs, browser, rough cuts, memory) and the bridge that reaches them from any session.']]],
+  ['Sound', [
+    ['sound/catalogue.md', 'Karl’s sound effects (both packs) and Kenney’s CC0 interface sounds by role, each with its character, sync point and licence; the generated ones.'],
+    ['sound/categories.json', 'The role and character judged for every sound: tap, pop, whoosh and riser through gear, money, data, glitch and error.']]],
+  ['Directions and brand', [
+    ['styles/README.md', 'Deciding each film’s direction (which fits which case, a new one when none does), never literal; loading one; the copy check.'],
+    ['data/font-pairings.csv', 'Google Fonts pairings by mood, for brands without a usable face (ui-ux-pro-max, MIT).'],
+    ['styles/minimal-user-interface.md', 'Minimal User Interface Style: the product’s own interface does the explaining.'],
+    ['styles/minimal-single-visual.md', 'Minimal Single Visual Style: one calm form acts out each claim.'],
+    ['styles/minimal-gradient-saas.md', 'Minimal Gradient SaaS Style: things connecting and flowing into a result.'],
+    ['brands/wkconversions-brand.md', 'WKConversions’ colors, type, shapes, layout and motion.']]],
+  ['Scripts', [
+    ['scripts/index.md', 'What each script does and how to run it.'],
+    ['scripts/render.html', 'Render-page skeleton: stage, camera, easing helpers, font loading.'],
+    ['scripts/render.mjs', 'Renders test frames, or every frame with motion blur.'],
+    ['scripts/contact_sheet.py', 'Tiles test frames into one labelled sheet.'],
+    ['scripts/motion_check.py', 'Measures how constantly and how much a video moves.'],
+    ['scripts/motion_graph.py', 'The movement graph Karl gets with every film: how much of the picture moves and how fast, through the whole film.'],
+    ['scripts/reference_frames.js', 'Captures frames of an online video inside its page.'],
+    ['scripts/site_extract.js', 'Extracts brand values, logo, images and text from a client site.'],
+    ['scripts/grab.js', 'Downloads a file from inside a page as base64.'],
+    ['scripts/stills.mjs', 'Renders a list of test frames from a Remotion project, bundled once.'],
+    ['scripts/cut_match.py', 'Compares the carried object across a cut.'],
+    ['scripts/vo_align.py', 'Transcribes voice-over files and force-aligns the script.'],
+    ['scripts/vo_whisper.py', 'Word timings with faster-whisper, the script as prompt.'],
+    ['scripts/brand_measure.py', 'Measures brand colours, checks frames against them, computes contrast.'],
+    ['scripts/film_tells.py', 'Reports a film’s tells against its facts file and thesis.'],
+    ['scripts/timeline.ts', 'A film’s timing as labels and relative placements, for Remotion.'],
+    ['scripts/kinetic.tsx', 'The kinetic kit: words on the voice with marks, rolls, masks out of objects, the breathing camera, keyed tracks, and the approved speed graphs.'],
+    ['scripts/motion_probe.py', 'The motion probe: every element’s box per frame, and the camera spikes, lurches, pops past size, flying and busy moments in it.'],
+    ['scripts/motion_probe.mjs', 'Renders a Remotion film without pixels for the motion probe.'],
+    ['scripts/probe.tsx', 'The wrapper the motion probe renders the film inside.'],
+    ['scripts/busy_check.py', 'Counts the separate things on screen; busy against Karl’s references.'],
+    ['scripts/ae_read.py', 'Reads an After Effects project: keyframes, eases, speed graphs, hand-offs.'],
+    ['scripts/map_make.py', 'Map data fitted to the frame: dot maps and country shapes, with cities.'],
+    ['scripts/maps.tsx', 'Map components: DotMap, CountryMap, Pin, Route.'],
+    ['scripts/three_kit.tsx', 'The 3D kit: studio, camera, logo tile, laptop, phone and panels with live screens.'],
+    ['scripts/sfx_hear.py', 'Hears the sound library: tone scales, style fit, what each sound is; picks by vibe.'],
+    ['scripts/ref_sound.py', 'Hears a reference’s sound design: the music bed and the sound on each big move.'],
+    ['scripts/ref_lookup.py', 'Finds how the references showed similar words, as a sheet of frames.'],
+    ['scripts/phrase_check.py', 'The voice-over as phrases, and a render measured for a new visual on every one.'],
+    ['scripts/storybook_kit.tsx', 'The storybook kit: paintings, light pools, blooms, page turns, rack focus, grain.'],
+    ['scripts/three_card.tsx', 'A tested 3D scene for Remotion.'],
+    ['scripts/render_chunks.sh', 'Renders a Remotion film in contiguous chunks, one tab each, and lays the mix under it.'],
+    ['scripts/qc.sh', 'Runs the motion, shake, pop, busy and strip checks on an encode, and draws the movement graph.'],
+    ['scripts/jitter_check.py', 'Finds shake: motion that moves in steps instead of gliding.'],
+    ['scripts/handoff_check.py', 'Finds pops: a place that changes in one frame.'],
+    ['scripts/strips.py', 'Strips of frames around every transition, or around given frames.'],
+    ['scripts/stock.py', 'Searches royalty-free footage and photos, measures them, keeps the credits.'],
+    ['scripts/sound_mix.py', 'Mixes voice-over, music and effects from a cue sheet, each effect on its frame.'],
+    ['scripts/music_find.py', 'Finds royalty-free music by mood and tempo and measures it.'],
+    ['scripts/music_fit.py', 'Cuts a found track to the film: a lift on the turn, its ending on the end card.'],
+    ['scripts/music_make.py', 'Composes a music bed to a brief: tempo, key, vibe, sections by bar.'],
+    ['scripts/score_sampled.py', 'Composes an original score on a sampled CC0 orchestra, cut to the picture.'],
+    ['scripts/score_check.py', 'Checks a score without listening: chord tones, stem levels, clicks.'],
+    ['scripts/cues_from_labels.py', 'Writes the cue sheet from the film\'s timing labels and VO words.'],
+    ['scripts/ref_sheet.py', 'Contact sheets of a reference video with true timecodes.'],
+    ['scripts/audio_look.py', 'A sound file as a spectrogram over its loudness curve.'],
+    ['scripts/sfx_index.py', 'Measures sound effects from their waveforms and draws them.'],
+    ['scripts/sfx_build.py', 'Trims and files Karl’s sounds by role, with the index and catalogue.'],
+    ['scripts/sfx_synth.py', 'Generates whooshes, risers, impacts and swells with exact sync points.'],
+    ['scripts/sfx_kit.py', 'A storybook effects kit: recorded CC0 instruments and generated foley.'],
+    ['scripts/sfx_fairy.py', 'Generated fairytale twinkles, magic dust and a night ambience.']]]
+];
+const STEPS = [
+  ['Brief', 'Deliverable, audience, message, format and timing; intake-form submissions read (no style question).', ['planning/intake.md']],
+  ['Look and material', 'The client’s website and brand; then the film’s direction and tone, decided and adapted, never literal.', ['design/asset-strategy.md', 'brands/wkconversions-brand.md', 'styles/README.md']],
+  ['Script analysis', 'Beats, and what the viewer must understand in each.', ['planning/script-analysis.md']],
+  ['The whole film', 'The core message as spine, the hook, the energy curve, the call to action.', ['planning/storytelling.md']],
+  ['Art direction', 'The thesis and its allowed patterns; the visual world, motion personality and transition family; mixed media decided once.', ['evaluation/tells.md', 'motion/motion-identity.md', 'design/anti-ai-design.md', 'design/asset-strategy.md', 'motion/animation-grammar.md', 'motion/transitions.md']],
+  ['Visual strategy', 'The phrases listed; a thread object; two or three candidates per beat, then a visual event for every phrase.', ['planning/phrase-by-phrase.md', 'planning/visual-strategy.md', 'references/technique-catalogue.md', 'references/visual-dictionary.md', 'design/maps.md', 'examples/bad-vs-good.md', 'references/reading-references.md']],
+  ['Composition', 'A styleframe per key scene: primary, secondary, detail.', ['design/visual-hierarchy.md', 'design/composition.md', 'design/typography.md', 'design/ui-product.md']],
+  ['Variety check', 'The whole storyboard against the variety budget.', ['design/composition.md']],
+  ['Motion and continuity', 'Cause and consequence, camera, timing at the brief’s tone, a speed graph for each move, hand-offs, sound.', ['motion/animation-grammar.md', 'motion/camera.md', 'motion/timing.md', 'motion/speed-graphs.md', 'motion/easing.md', 'motion/continuity.md', 'motion/transitions.md', 'motion/sound.md']],
+  ['Assets', 'What each scene is made of; royalty-free photos and footage sourced and credited; requests for the rest.', ['design/asset-strategy.md', 'production/tool-requests.md', 'production/mcp-tools.md']],
+  ['First storyboard', 'Every scene specified, condensed into the storyboard with frames from the build.', ['production/output-format.md', 'production/remotion.md', 'examples/scene-examples.md']],
+  ['Art-director pass', 'Independent reviews, then cold eyes; notes become decisions; revise until the stop rule.', ['evaluation/art-director.md', 'evaluation/tells.md']],
+  ['Final plan and approval', 'The production plan and its storyboard; Karl approves before anything is built; music and voice-over asked.', ['production/output-format.md', 'planning/intake.md', 'motion/sound.md']],
+  ['Build', 'Remotion, After Effects, the plain coded render, or a hand-off; the sound mixed from a cue sheet.', ['production/remotion.md', 'production/build-gotchas.md', 'planning/voice-over.md', 'motion/sound.md', 'production/after-effects.md', 'production/coded-render.md', 'scripts/index.md']],
+  ['Quality check', 'Test frames, then the encode; the automatic checks and the mix report; the scorecard; the movement graph for Karl.', ['evaluation/quality-check.md', 'evaluation/troubleshooting.md', 'scripts/motion_graph.py']],
+  ['Learn', 'Karl’s feedback becomes corrections; approved solutions become examples.', ['examples/corrections.md']]
+];
+const DESC = new Map(GROUPS.flatMap(g => g[1]));
+const token = p => p.replace(/\//g, '.').replace(/\.md$/, '');
+const BY_TOKEN = new Map([...DESC.keys()].map(p => [token(p), p]));
+const esc = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const short = p => p.split('/').pop().replace(/\.md$/, '');
+
+document.getElementById('steps').innerHTML = STEPS.map((s, i) =>
+  `<li class="step"><span class="n">${String(i + 1).padStart(2, '0')}</span><div><h3>${esc(s[0])}</h3><p>${esc(s[1])}</p></div>` +
+  `<div class="chips">${s[2].map(p => `<button type="button" class="chip" data-open="${esc(p)}" title="${esc(p)}">${esc(short(p))}</button>`).join('')}</div></li>`).join('');
+document.getElementById('shelf').innerHTML = GROUPS.map(([name, items]) =>
+  `<div class="group"><div class="label">${esc(name)}</div>${items.map(([p, d]) =>
+    `<button type="button" class="mod" data-open="${esc(p)}" aria-current="false"><b>${esc(p)}</b><span>${esc(d)}</span></button>`).join('')}</div>`).join('');
+
+function inline(s) {
+  return s.split('`').map((part, i) => {
+    if (i % 2) return DESC.has(part) ? `<button type="button" class="ref" data-open="${esc(part)}"><code>${esc(part)}</code></button>` : `<code>${esc(part)}</code>`;
+    return esc(part).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  }).join('');
+}
+function table(rows) {
+  const cells = r => r.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map(c => c.trim());
+  const head = cells(rows[0]), body = rows.slice(2).map(cells);
+  return `<div class="tbl"><table><thead><tr>${head.map(c => `<th>${inline(c)}</th>`).join('')}</tr></thead><tbody>` +
+    body.map(r => `<tr>${r.map(c => `<td>${inline(c)}</td>`).join('')}</tr>`).join('') + '</tbody></table></div>';
+}
+function list(lines, i) {
+  const items = [];
+  for (; i < lines.length; i++) {
+    const m = lines[i].match(/^(\s*)([-*]|(\d+)\.)\s+(.*)/);
+    if (m) { items.push({ ind: m[1].length, ord: !!m[3], num: +m[3] || 1, text: m[4] }); continue; }
+    if (lines[i].trim() && /^\s/.test(lines[i]) && items.length) { items[items.length - 1].text += ' ' + lines[i].trim(); continue; }
+    break;
+  }
+  let html = ''; const stack = [];
+  for (const it of items) {
+    while (stack.length && it.ind < stack[stack.length - 1].ind) html += `</li></${stack.pop().ord ? 'ol' : 'ul'}>`;
+    if (!stack.length || it.ind > stack[stack.length - 1].ind) {
+      stack.push(it); html += it.ord ? `<ol${it.num > 1 ? ` start="${it.num}"` : ''}><li>` : '<ul><li>';
+    } else html += '</li><li>';
+    html += inline(it.text);
+  }
+  while (stack.length) html += `</li></${stack.pop().ord ? 'ol' : 'ul'}>`;
+  return { html, i };
+}
+function markdown(src) {
+  const lines = src.replace(/\r/g, '').split('\n'); let html = '', para = [], i = 0;
+  const flush = () => { if (para.length) { html += `<p>${inline(para.join(' '))}</p>`; para = []; } };
+  while (i < lines.length) {
+    const l = lines[i];
+    if (/^```/.test(l)) { flush(); const buf = []; i++; while (i < lines.length && !/^```/.test(lines[i])) buf.push(lines[i++]); i++; html += `<pre><code>${esc(buf.join('\n'))}</code></pre>`; continue; }
+    const h = l.match(/^(#{1,3})\s+(.*)/);
+    if (h) { flush(); const n = h[1].length + 1; html += `<h${n}>${inline(h[2])}</h${n}>`; i++; continue; }
+    if (/^\s*\|/.test(l)) { flush(); const rows = []; while (i < lines.length && /^\s*\|/.test(lines[i])) rows.push(lines[i++]); html += table(rows); continue; }
+    if (/^\s*([-*]|\d+\.)\s+/.test(l)) { flush(); const r = list(lines, i); html += r.html; i = r.i; continue; }
+    if (!l.trim()) { flush(); i++; continue; }
+    para.push(l.trim()); i++;
+  }
+  flush(); return html;
+}
+
+const reader = document.getElementById('reader'), rbody = document.getElementById('rbody');
+const cache = new Map(); let current = null;
+async function openModule(path, scroll) {
+  if (!DESC.has(path)) return;
+  current = path;
+  document.querySelectorAll('.mod').forEach(b => b.setAttribute('aria-current', String(b.dataset.open === path)));
+  document.getElementById('rpath').textContent = path;
+  document.getElementById('rdesc').textContent = DESC.get(path);
+  try { history.replaceState(null, '', '#' + token(path)); } catch (e) {}
+  if (scroll) {
+    const top = reader.getBoundingClientRect().top;
+    if (top < 0 || top > innerHeight * 0.5) reader.scrollIntoView({ block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  }
+  reader.scrollTop = 0;
+  try {
+    let text = cache.get(path);
+    if (text == null) {
+      rbody.innerHTML = '<p class="muted">Loading the module…</p>';
+      const r = await fetch(path); if (!r.ok) throw new Error('HTTP ' + r.status);
+      text = await r.text(); cache.set(path, text);
+    }
+    if (current !== path) return;
+    rbody.innerHTML = /\.md$/.test(path) ? markdown(text) : `<pre><code>${esc(text)}</code></pre>`;
+  } catch (e) {
+    if (current === path) rbody.innerHTML = `<p class="muted">This module couldn't be loaded here (${esc(String(e.message || e))}). It is published at <code>${esc(path)}</code>.</p>`;
+  }
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-open]');
+  if (b) { e.preventDefault(); openModule(b.dataset.open, true); }
+});
+openModule(BY_TOKEN.get(location.hash.slice(1)) || 'planning/visual-strategy.md', false);
+</script>
+
+</body></html>
