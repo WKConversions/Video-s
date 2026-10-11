@@ -2,6 +2,7 @@
 // force-aligned VO (vo/words.json → src/words.json, "w:word" keys, repeats numbered: w:story2). Beats are named moves.
 import { timeline } from "./timeline";
 import WORDS from "./words.json";
+import { V2 } from "./v2/labels";
 
 export const FPS = 30;
 export const VO_AT = 1.0;
@@ -32,5 +33,6 @@ export const BEATS: Record<string, number> = {
   logoEnd: 60.75, tag: 61.9, line2: 63.95, line3: 65.85, url: 66.9, end: 70.0,
 };
 
-export const T = timeline(FPS, { ...BEATS, ...(WORDS as Record<string, number>) });
+// v2-only labels are added underneath (v1 labels win where both exist), so shared parts (Say, rise) resolve both films' labels.
+export const T = timeline(FPS, { ...V2, ...BEATS, ...(WORDS as Record<string, number>) });
 export const f = T.f;
