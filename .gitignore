@@ -6,3 +6,6 @@ films/*/film/src/__probe*.tsx
 *.log
 .DS_Store
 films/*/sound/music/find*/
+
+# working copy of the skill while it is being trained (the result is committed under skills/)
+skill-staging/
