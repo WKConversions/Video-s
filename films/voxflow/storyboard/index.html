@@ -1,0 +1,123 @@
+<title>VoxFlow Storyboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800&family=Geist:wght@400;500;600;700&display=swap">
+<style>
+/* One reading column: the film first, then the direction, then a frame per phrase in a wrapping grid. */
+:root {
+  --paper: #F4F2EB; --surface: #FCFAF6; --ink: #16221F; --muted: #54635E; --line: #E4E0D6;
+  --blue: #0F6E6A; --tint: #DBEBE9; --sand: #FCFAF6; --sage: #FCFAF6;
+  --display: "Inter", system-ui, sans-serif; --body: "Geist", "Inter", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #0F1513; --surface: #161E1B; --ink: #E5ECE9; --muted: #9AA8A3; --line: #27322E;
+  --blue: #62BDB5; --tint: #1C2F2C; --sand: #161E1B; --sage: #161E1B; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #0F1513; --surface: #161E1B; --ink: #E5ECE9; --muted: #9AA8A3; --line: #27322E;
+  --blue: #62BDB5; --tint: #1C2F2C; --sand: #161E1B; --sage: #161E1B; color-scheme: dark }
+body { background: var(--paper); color: var(--ink); font: 16px/1.6 var(--body); margin: 0; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; padding-block: 48px 96px; display: grid; gap: 56px; }
+header { display: grid; gap: 14px; }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); display: flex; align-items: center; gap: 10px; }
+.eyebrow::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 5px color-mix(in srgb, var(--blue) 18%, transparent); }
+h1 { font: 800 clamp(36px, 5.6vw, 64px)/1.02 var(--display); letter-spacing: -0.05em; margin: 0; text-wrap: balance; }
+h1 em, .cap em { font-style: normal; color: var(--blue); }
+h2 { font: 800 28px/1.15 var(--display); letter-spacing: -0.04em; margin: 0 0 18px; text-wrap: balance; }
+h3 { font: 700 21px/1.25 var(--display); letter-spacing: -0.03em; margin: 0; }
+.lede { color: var(--muted); max-width: 70ch; margin: 0; }
+video { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; background: var(--surface); display: block; border: 1px solid var(--line); }
+.qc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.qc span { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 5px 13px; font-size: 13.5px; color: var(--muted); }
+.qc b { color: var(--ink); font-weight: 700; font-variant-numeric: tabular-nums; }
+.dir { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+.dir div { background: var(--paper); padding: 16px 18px; min-width: 0; font-size: 15px; }
+.dir b { display: block; font-size: 12.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.beat { display: grid; gap: 16px; padding-top: 28px; border-top: 1px solid var(--line); }
+.beat-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.tc { font-size: 13px; font-weight: 700; color: var(--blue); font-variant-numeric: tabular-nums; }
+.cap { font: 800 24px/1.25 var(--display); letter-spacing: -0.04em; text-wrap: balance; }
+.idea { color: var(--muted); max-width: 82ch; margin: 0; }
+.frames { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 20px; }
+.fr { display: grid; gap: 6px; min-width: 0; align-content: start; }
+.fr img { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); display: block; }
+.fr .t { font-size: 12.5px; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
+.fr .s { font-size: 14.5px; line-height: 1.45; }
+.fr .m { font-size: 13px; color: var(--muted); }
+ul { margin: 0; padding-left: 20px; display: grid; gap: 8px; max-width: 90ch; }
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 16px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; min-width: 760px; }
+th, td { text-align: left; vertical-align: top; padding: 11px 14px; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: 0; }
+th { font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 700; background: var(--surface); }
+.credits { font-size: 14px; color: var(--muted); max-width: 90ch; display: grid; gap: 6px; }
+a { color: var(--blue); }
+a:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-radius: 4px; }
+@media (max-width: 520px) { .wrap { padding-inline: 16px; gap: 40px; } .cap { font-size: 20px; } }
+</style>
+<div class="wrap">
+<header><div class="eyebrow">WKConversions · VoxFlow · 1080p, music and sound</div><h1>Mis geen enkel <em>telefoontje</em> meer.</h1><p class="lede">The VoxFlow explainer rebuilt at 1920×1080 from the approved storyboard, with royalty-free music and 63 sound effects, at the 4% motion norm, and without decorative movement: nothing drifts, nothing with text on it slides across the frame. Everything moves for a reason: calls ring and pile up, the receptionist answers, the caller asks, the agenda fills, the practice keeps working.</p></header>
+<section><video controls playsinline preload="metadata" poster="frames/f0945.jpg" src="film.mp4"></video>
+<div class="qc"><span><b>4.1%</b> median frame motion (norm 4%)</span><span><b>99%</b> of frames moving, longest still 0.13 s</span><span><b>19 of 19</b> phrases get a new visual</span><span><b>median 4</b> things on screen (references median 4)</span><span><b>−15.0 LUFS</b> mix, true peak −1.1 dB</span><span><b>1080p30</b> H.264, BT.709, AAC 48 kHz</span></div>
+</section>
+<section><h2>Direction</h2><div class="dir"><div><b>Purpose</b>A website and social explainer for VoxFlow, the AI receptionist for Dutch small businesses: every call answered, questions handled, appointments booked, while you keep working.</div><div><b>Format</b>16:9, 1920×1080, 30 fps, 32.0 s. Dutch voice-over (ElevenLabs, Vincent), force-aligned word by word; music and effects mixed to −15 LUFS.</div><div><b>Look</b>voxflow.nl&#x27;s own: warm cream, deep teal #0F6E6A, white cards with soft wide shadows, Inter 800 headlines with the key word in teal, Geist for the interface, the site&#x27;s receptionist portrait, wordmark and photography; free-licensed footage of a practice and a caller.</div><div><b>Motion</b>No drifting layers. Things appear where they live, on their word; colour fields grow out of objects; the two scene changes that travel are whips that move both scenes on one curve. The camera never sways: one push per shot on what the line is about (at most about 5%/s), let go only while the whole frame changes. Median frame motion 4.1% on the draft.</div><div><b>Thread</b>One call: it rings in a busy practice and is missed, the missed calls pile up, VoxFlow flips them to answered, the receptionist takes them, the caller asks for tomorrow, the appointment lands in the agenda, and an appointment finally becomes “Start gratis”.</div><div><b>Sound</b>Generated phone sounds (a soft ring, a missed call, a pick-up, a notification) and the WKConversions effects library, one sound per event and never on a key word; the bed ducks under the voice and dips 4 dB under the call to action.</div></div></section>
+<section><h2>Storyboard</h2><p class="lede" style="margin-bottom:8px">A frame per phrase, taken from the finished film. Times are seconds into the film; the picture leads each spoken word by about four frames.</p>
+<div class="beat"><div class="beat-head"><span class="tc">01 · 0.0–2.7 s</span><h3>Hook</h3></div>
+<div class="cap">Mis geen enkel <em>telefoontje</em> meer.</div><p class="idea">A call rings in a dentist&#x27;s practice (both hands busy) and turns to “Gemiste oproep” on “enkel”; the missed calls keep coming in at the top of the list and push the older ones down as the day goes by.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0020.jpg" alt="The call rings in the practice."><div class="t">0.7 s</div><div class="s">The call rings in the practice.</div><div class="m">Rings pulse; the camera pulls back from the practice.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0045.jpg" alt="Missed."><div class="t">1.5 s</div><div class="s">Missed.</div><div class="m">The card rolls to Gemiste oproep 09:12.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0075.jpg" alt="The missed calls pile up."><div class="t">2.5 s</div><div class="s">The missed calls pile up.</div><div class="m">New calls enter at the top and push the list down.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">02 · 2.7–5.9 s</span><h3>The turn</h3></div>
+<div class="cap">Met <em>VoxFlow</em> staat er <em>altijd</em> iemand klaar voor je klanten.</div><p class="idea">The words leave; the wordmark draws in on “VoxFlow”; the same missed calls flip edge-on to “Opgenomen door VoxFlow”; the practice window becomes the site&#x27;s pale-teal portrait and the receptionist rises out of it on “iemand”; the calls fold into one, “In gesprek met je klant”.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0100.jpg" alt="VoxFlow; the calls flip to answered."><div class="t">3.3 s</div><div class="s">VoxFlow; the calls flip to answered.</div><div class="m">Wordmark draws; cards flip edge-on.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0140.jpg" alt="The receptionist rises."><div class="t">4.7 s</div><div class="s">The receptionist rises.</div><div class="m">She rises out of the square; the camera pushes in on her.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0165.jpg" alt="In conversation with your customer."><div class="t">5.5 s</div><div class="s">In conversation with your customer.</div><div class="m">The calls fold into one; a live waveform.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">03 · 5.9–9.9 s</span><h3>The AI receptionist, 24/7</h3></div>
+<div class="cap">Onze slimme <em>AI-receptionist</em> neemt <em>24/7</em> de telefoon op,</div><p class="idea">The words take the left where the wordmark was; then 24/7, and the hours roll from morning to 03:20 as the frame goes dark; at 03:20 a call comes in and is accepted on “telefoon”, “Opgenomen binnen 3 sec” on “op”.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0215.jpg" alt="Onze slimme AI-receptionist."><div class="t">7.2 s</div><div class="s">Onze slimme AI-receptionist.</div><div class="m">Words build; the underline sweeps.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0262.jpg" alt="24/7, night falls, 03:20."><div class="t">8.7 s</div><div class="s">24/7, night falls, 03:20.</div><div class="m">The hours roll; the frame darkens; a call rings.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0290.jpg" alt="Picked up within 3 seconds."><div class="t">9.7 s</div><div class="s">Picked up within 3 seconds.</div><div class="m">Accept pressed; the card rolls; the voice is live.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">04 · 9.9–13.6 s</span><h3>Questions answered, appointments booked</h3></div>
+<div class="cap">beantwoordt <em>vragen</em> en plant <em>afspraken</em> <em>automatisch</em> in.</div><p class="idea">A white field grows out of the answered call; the caller herself (footage) asks “Hebben jullie morgen nog plek?”; the answer types; the agenda appears (today is Monday); “10:00” lifts out of the answer and lands on tomorrow, Tuesday 10:00, on “automatisch”; a check on “in”.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0330.jpg" alt="The caller asks, the receptionist answers."><div class="t">11.0 s</div><div class="s">The caller asks, the receptionist answers.</div><div class="m">The answer types; the caller talks.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0372.jpg" alt="10:00 lands on Tuesday."><div class="t">12.4 s</div><div class="s">10:00 lands on Tuesday.</div><div class="m">The token arcs into the agenda and becomes the appointment.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0395.jpg" alt="Booked."><div class="t">13.2 s</div><div class="s">Booked.</div><div class="m">The check; the camera pushes in on the appointment.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">05 · 13.6–16.6 s</span><h3>Your phone</h3></div>
+<div class="cap">Zo hoef jij niet constant je <em>telefoon</em> in de gaten te houden</div><p class="idea">A whip to the practice at work, the owner&#x27;s phone beside it: what VoxFlow handled arrives on the lock screen (Monday 12 October), a call comes in and “VoxFlow neemt op”; on “gaten” the screen dims: no need to look.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0440.jpg" alt="Handled calls on the lock screen."><div class="t">14.7 s</div><div class="s">Handled calls on the lock screen.</div><div class="m">Notifications arrive at the top and push down.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0470.jpg" alt="VoxFlow takes the call."><div class="t">15.7 s</div><div class="s">VoxFlow takes the call.</div><div class="m">The banner rolls; the screen dims.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">06 · 16.6–18.9 s</span><h3>Focus</h3></div>
+<div class="cap">en kun je volledig <em>focussen</em> op je bedrijf.</div><p class="idea">The phone goes; the practice window opens up; on “focussen” the focus pulls to the practice; “Gesprekken afgehandeld” counts on.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0520.jpg" alt="The practice opens up."><div class="t">17.3 s</div><div class="s">The practice opens up.</div><div class="m">The phone drops away; the window grows.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0560.jpg" alt="In focus; calls handled."><div class="t">18.7 s</div><div class="s">In focus; calls handled.</div><div class="m">Rack focus; the count climbs.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">07 · 18.9–22.9 s</span><h3>Three qualities</h3></div>
+<div class="cap">VoxFlow werkt <em>professioneel,</em> <em>snel</em> en <em>zonder</em> <em>pauzes.</em></div><p class="idea">A pale-teal field grows out of the receptionist&#x27;s face; “VoxFlow werkt” and, on the right, the caller now at ease; one word at a time with its picture: the greeting typed in full, the ring closing on the site&#x27;s “&lt;3 sec”, the seven days lit and “pauzes” struck through.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0610.jpg" alt="Professioneel: the greeting."><div class="t">20.3 s</div><div class="s">Professioneel: the greeting.</div><div class="m">The greeting types; the caller smiles.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0640.jpg" alt="Snel: &lt;3 sec."><div class="t">21.3 s</div><div class="s">Snel: &lt;3 sec.</div><div class="m">The ring closes.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0680.jpg" alt="Zonder pauzes."><div class="t">22.7 s</div><div class="s">Zonder pauzes.</div><div class="m">Seven days light up; pauzes is struck.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">08 · 22.9–25.8 s</span><h3>Every customer, at once</h3></div>
+<div class="cap">Geef <em>iedere</em> klant <em>direct</em> de aandacht die ze verdienen</div><p class="idea">Cream grows out of Sunday; five different callers ring at once (the site&#x27;s “Onbeperkt gelijktijdige gesprekken”); on “direct” all five are answered and in conversation; the middle one opens into the customer&#x27;s phone (the site&#x27;s photo): “Afspraakbevestiging verstuurd”.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0715.jpg" alt="Five callers ring."><div class="t">23.8 s</div><div class="s">Five callers ring.</div><div class="m">They appear in place, ringing.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0740.jpg" alt="All answered, directly."><div class="t">24.7 s</div><div class="s">All answered, directly.</div><div class="m">They flip together; five live conversations.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0768.jpg" alt="The confirmation."><div class="t">25.6 s</div><div class="s">The confirmation.</div><div class="m">The middle call opens into the customer&#x27;s phone.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">09 · 25.8–28.2 s</span><h3>More from every call</h3></div>
+<div class="cap">en haal <em>meer</em> uit ieder telefoontje.</div><p class="idea">A whip to the agenda: this week fills up on “meer”, the page turns to next week on “ieder”, and next week fills too.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0805.jpg" alt="This week fills."><div class="t">26.8 s</div><div class="s">This week fills.</div><div class="m">Appointments drop in.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0830.jpg" alt="Next week fills too."><div class="t">27.7 s</div><div class="s">Next week fills too.</div><div class="m">The page turns; more appointments.</div></div>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="tc">10 · 28.2–32.0 s</span><h3>Call to action</h3></div>
+<div class="cap">Start vandaag nog met <em>VoxFlow.</em></div><p class="idea">An appointment lifts out of the agenda and becomes “Start gratis”; the wordmark draws on “VoxFlow”; the site&#x27;s own line builds word by word; the button is pressed; voxflow.nl. Only one slow push moves.</p><div class="frames">
+<div class="fr"><img loading="lazy" src="frames/f0860.jpg" alt="The appointment becomes the button."><div class="t">28.7 s</div><div class="s">The appointment becomes the button.</div><div class="m">It lifts out and morphs; the agenda falls back.</div></div>
+<div class="fr"><img loading="lazy" src="frames/f0945.jpg" alt="The end card."><div class="t">31.5 s</div><div class="s">The end card.</div><div class="m">One slow push.</div></div>
+</div></div>
+</section>
+<section><h2>Revision log</h2><div class="tbl"><table><tr><th>Before</th><th>After</th><th>Why</th></tr><tr><td>720p draft, no music, no effects.</td><td>1920×1080, music (Mixkit, Free licence) and 63 effects, mixed to −15 LUFS.</td><td>Karl: 1080p, suitable royalty-free music and effects.</td></tr><tr><td>Working holds: layers drifting 1–2.6 px a frame, the headline drifting right.</td><td>Nothing drifts; no text slides across the frame; arrivals in place; whips move both scenes on one curve.</td><td>Karl: no useless animations, e.g. text obviously moving left and right.</td></tr><tr><td>Median frame motion 2.3%.</td><td>4.1% (draft), from purposeful motion: streams of calls, live voices, footage of the practice and the caller, one camera push per shot.</td><td>Karl&#x27;s 4% norm.</td></tr><tr><td>Physio clip Mixkit 18256.</td><td>Dentist clip Mixkit 12146 (Free licence) for the practice.</td><td>18256 is under Mixkit&#x27;s Restricted (personal-use) licence: not allowed in business marketing.</td></tr><tr><td>Every call from 06 12 34 56 78.</td><td>Every caller a different, masked number.</td><td>Five identical numbers read as one person calling five times, not as every customer.</td></tr><tr><td>“Morgen” booked onto today (di highlighted), lock screen “dinsdag 14 oktober”.</td><td>Today is Monday (ma highlighted, maandag 12 oktober); the appointment is tomorrow, Tuesday 10:00.</td><td>The core demo contradicted itself; 14 October 2026 is a Wednesday.</td></tr><tr><td>The answer and the greeting were cut off mid-sentence; the agenda covered the answer.</td><td>Both type in full before the next thing comes; the agenda appears in its own space.</td><td>Independent review.</td></tr><tr><td>94 effects, a ring still ringing after the call was answered.</td><td>63 effects, one per event, none on a key word; the bed dips 4 dB under the call to action.</td><td>Independent review of the mix.</td></tr></table></div></section>
+<section><h2>Open questions</h2><ul><li>The voice-over is taken from the approved draft&#x27;s audio (AAC, 124 kbps, mono). If you still have the original ElevenLabs file, send it and the final mix is rebuilt at full quality.</li><li>The lock screen shows VoxFlow notifications on the owner&#x27;s phone (as in the approved storyboard). voxflow.nl mentions the dashboard summary, not push notifications: please confirm VoxFlow notifies the owner, or the phone shows only the call being taken.</li><li>An original composed alternative to the music is in sound/music/composed-fit.wav if you prefer music with no third-party licence at all.</li></ul></section>
+<section class="credits"><h2>Credits</h2><div>Voice: ElevenLabs, Vincent (warm and enthusiastic), from the approved draft. Music: “The Great Wall” by Michael Ramir C., Mixkit (Mixkit Stock Music Free License: commercial use, no credit required), fitted to the film: its entry lands on “Met VoxFlow”, its final chord on the end card. Effects: generated for this film (royalty-free).</div><div>Footage: Mixkit 12146 (dentist), 49933 and 49920 (the caller), Mixkit Stock Video Free License (commercial use, no credit required). Photo: voxflow.nl.</div><div>Wordmark, the AI receptionist portrait, photography, fonts (Inter, Geist), colours and copy: voxflow.nl, as the site shows them. Made with Remotion by WKConversions.</div></section>
+</div>
