@@ -1,0 +1,794 @@
+{
+ "measurement": {
+  "method": "k-means in CIELAB, median pixel per cluster",
+  "k": 8
+ },
+ "images": {
+  "assets/site/home-s06.png": {
+   "palette": [
+    {
+     "hex": "#F7F7F7",
+     "share": 0.5269,
+     "lab": [
+      97.23,
+      0.01,
+      -0.01
+     ]
+    },
+    {
+     "hex": "#EBECF4",
+     "share": 0.3962,
+     "lab": [
+      93.53,
+      1.12,
+      -3.99
+     ]
+    },
+    {
+     "hex": "#96979B",
+     "share": 0.0216,
+     "lab": [
+      62.49,
+      0.43,
+      -2.23
+     ]
+    },
+    {
+     "hex": "#B2B2B6",
+     "share": 0.0189,
+     "lab": [
+      72.68,
+      0.76,
+      -2.04
+     ]
+    },
+    {
+     "hex": "#CDCED4",
+     "share": 0.0176,
+     "lab": [
+      82.85,
+      0.77,
+      -3.1
+     ]
+    },
+    {
+     "hex": "#99DCF9",
+     "share": 0.0065,
+     "lab": [
+      84.24,
+      -13.68,
+      -21.01
+     ]
+    },
+    {
+     "hex": "#232323",
+     "share": 0.0063,
+     "lab": [
+      13.71,
+      0.0,
+      -0.0
+     ]
+    },
+    {
+     "hex": "#5F5F60",
+     "share": 0.006,
+     "lab": [
+      40.35,
+      0.21,
+      -0.58
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#F7F7F7",
+    "text": "#232323",
+    "accent": "#99DCF9"
+   }
+  },
+  "assets/site/home-s08.png": {
+   "palette": [
+    {
+     "hex": "#F7F7F7",
+     "share": 0.7279,
+     "lab": [
+      97.23,
+      0.01,
+      -0.01
+     ]
+    },
+    {
+     "hex": "#EBECF4",
+     "share": 0.2217,
+     "lab": [
+      93.53,
+      1.12,
+      -3.99
+     ]
+    },
+    {
+     "hex": "#CACCD2",
+     "share": 0.0188,
+     "lab": [
+      82.05,
+      0.44,
+      -3.22
+     ]
+    },
+    {
+     "hex": "#ADAEB4",
+     "share": 0.0162,
+     "lab": [
+      71.18,
+      0.8,
+      -3.2
+     ]
+    },
+    {
+     "hex": "#38C8FF",
+     "share": 0.011,
+     "lab": [
+      75.68,
+      -19.44,
+      -37.63
+     ]
+    },
+    {
+     "hex": "#707073",
+     "share": 0.0018,
+     "lab": [
+      47.33,
+      0.62,
+      -1.67
+     ]
+    },
+    {
+     "hex": "#303638",
+     "share": 0.0016,
+     "lab": [
+      22.09,
+      -2.25,
+      -2.2
+     ]
+    },
+    {
+     "hex": "#227A9C",
+     "share": 0.0011,
+     "lab": [
+      47.81,
+      -13.65,
+      -25.31
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#F7F7F7",
+    "text": "#303638",
+    "accent": "#38C8FF"
+   }
+  },
+  "assets/site/home-s11.png": {
+   "palette": [
+    {
+     "hex": "#293A51",
+     "share": 0.4927,
+     "lab": [
+      23.97,
+      0.35,
+      -16.12
+     ]
+    },
+    {
+     "hex": "#F7F7F7",
+     "share": 0.453,
+     "lab": [
+      97.23,
+      0.01,
+      -0.01
+     ]
+    },
+    {
+     "hex": "#5B6879",
+     "share": 0.0153,
+     "lab": [
+      43.51,
+      -0.8,
+      -11.13
+     ]
+    },
+    {
+     "hex": "#38495E",
+     "share": 0.0121,
+     "lab": [
+      30.43,
+      -0.69,
+      -14.51
+     ]
+    },
+    {
+     "hex": "#727F8D",
+     "share": 0.0095,
+     "lab": [
+      52.6,
+      -1.61,
+      -9.17
+     ]
+    },
+    {
+     "hex": "#E8E9EB",
+     "share": 0.0067,
+     "lab": [
+      92.32,
+      0.03,
+      -1.1
+     ]
+    },
+    {
+     "hex": "#939DA7",
+     "share": 0.0054,
+     "lab": [
+      64.25,
+      -1.48,
+      -6.43
+     ]
+    },
+    {
+     "hex": "#C0C6CC",
+     "share": 0.0053,
+     "lab": [
+      79.59,
+      -0.91,
+      -3.72
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#F7F7F7",
+    "text": "#293A51",
+    "accent": null
+   }
+  },
+  "assets/site/home-footer.png": {
+   "palette": [
+    {
+     "hex": "#293A51",
+     "share": 0.907,
+     "lab": [
+      23.97,
+      0.35,
+      -16.12
+     ]
+    },
+    {
+     "hex": "#304157",
+     "share": 0.022,
+     "lab": [
+      27.01,
+      -0.19,
+      -15.31
+     ]
+    },
+    {
+     "hex": "#6F7B8A",
+     "share": 0.0213,
+     "lab": [
+      51.13,
+      -1.02,
+      -9.64
+     ]
+    },
+    {
+     "hex": "#5B687A",
+     "share": 0.0166,
+     "lab": [
+      43.53,
+      -0.68,
+      -11.4
+     ]
+    },
+    {
+     "hex": "#47566A",
+     "share": 0.0146,
+     "lab": [
+      36.05,
+      -0.53,
+      -13.39
+     ]
+    },
+    {
+     "hex": "#87919E",
+     "share": 0.0102,
+     "lab": [
+      59.77,
+      -0.83,
+      -8.09
+     ]
+    },
+    {
+     "hex": "#B9BFC6",
+     "share": 0.0054,
+     "lab": [
+      77.07,
+      -0.72,
+      -4.24
+     ]
+    },
+    {
+     "hex": "#F6F6F7",
+     "share": 0.0029,
+     "lab": [
+      97.03,
+      -0.07,
+      -0.31
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#293A51",
+    "text": "#F6F6F7",
+    "accent": null
+   }
+  },
+  "assets/logo/favicon-512x512.png": {
+   "palette": [
+    {
+     "hex": "#3C5573",
+     "share": 0.3227,
+     "lab": [
+      35.39,
+      -0.52,
+      -20.06
+     ]
+    },
+    {
+     "hex": "#39516E",
+     "share": 0.3191,
+     "lab": [
+      33.73,
+      -0.44,
+      -19.53
+     ]
+    },
+    {
+     "hex": "#364D69",
+     "share": 0.2731,
+     "lab": [
+      32.06,
+      -0.35,
+      -18.99
+     ]
+    },
+    {
+     "hex": "#FFFFFF",
+     "share": 0.0756,
+     "lab": [
+      100.0,
+      0.01,
+      -0.01
+     ]
+    },
+    {
+     "hex": "#4E637E",
+     "share": 0.0032,
+     "lab": [
+      41.32,
+      -0.46,
+      -17.89
+     ]
+    },
+    {
+     "hex": "#D6DBE1",
+     "share": 0.0031,
+     "lab": [
+      87.19,
+      -0.57,
+      -3.53
+     ]
+    },
+    {
+     "hex": "#8392A4",
+     "share": 0.0016,
+     "lab": [
+      59.95,
+      -1.37,
+      -11.28
+     ]
+    },
+    {
+     "hex": "#A5B0BE",
+     "share": 0.0016,
+     "lab": [
+      71.4,
+      -0.97,
+      -8.45
+     ]
+    }
+   ],
+   "roles": {
+    "background": "#3C5573",
+    "text": "#FFFFFF",
+    "accent": null
+   }
+  }
+ },
+ "palette": [
+  {
+   "hex": "#F7F7F7",
+   "lab": [
+    97.23,
+    0.01,
+    -0.01
+   ]
+  },
+  {
+   "hex": "#EBECF4",
+   "lab": [
+    93.53,
+    1.12,
+    -3.99
+   ]
+  },
+  {
+   "hex": "#96979B",
+   "lab": [
+    62.49,
+    0.43,
+    -2.23
+   ]
+  },
+  {
+   "hex": "#B2B2B6",
+   "lab": [
+    72.68,
+    0.76,
+    -2.04
+   ]
+  },
+  {
+   "hex": "#CDCED4",
+   "lab": [
+    82.85,
+    0.77,
+    -3.1
+   ]
+  },
+  {
+   "hex": "#99DCF9",
+   "lab": [
+    84.24,
+    -13.68,
+    -21.01
+   ]
+  },
+  {
+   "hex": "#232323",
+   "lab": [
+    13.71,
+    0.0,
+    -0.0
+   ]
+  },
+  {
+   "hex": "#5F5F60",
+   "lab": [
+    40.35,
+    0.21,
+    -0.58
+   ]
+  },
+  {
+   "hex": "#F7F7F7",
+   "lab": [
+    97.23,
+    0.01,
+    -0.01
+   ]
+  },
+  {
+   "hex": "#EBECF4",
+   "lab": [
+    93.53,
+    1.12,
+    -3.99
+   ]
+  },
+  {
+   "hex": "#CACCD2",
+   "lab": [
+    82.05,
+    0.44,
+    -3.22
+   ]
+  },
+  {
+   "hex": "#ADAEB4",
+   "lab": [
+    71.18,
+    0.8,
+    -3.2
+   ]
+  },
+  {
+   "hex": "#38C8FF",
+   "lab": [
+    75.68,
+    -19.44,
+    -37.63
+   ]
+  },
+  {
+   "hex": "#293A51",
+   "lab": [
+    23.97,
+    0.35,
+    -16.12
+   ]
+  },
+  {
+   "hex": "#F7F7F7",
+   "lab": [
+    97.23,
+    0.01,
+    -0.01
+   ]
+  },
+  {
+   "hex": "#5B6879",
+   "lab": [
+    43.51,
+    -0.8,
+    -11.13
+   ]
+  },
+  {
+   "hex": "#38495E",
+   "lab": [
+    30.43,
+    -0.69,
+    -14.51
+   ]
+  },
+  {
+   "hex": "#727F8D",
+   "lab": [
+    52.6,
+    -1.61,
+    -9.17
+   ]
+  },
+  {
+   "hex": "#E8E9EB",
+   "lab": [
+    92.32,
+    0.03,
+    -1.1
+   ]
+  },
+  {
+   "hex": "#939DA7",
+   "lab": [
+    64.25,
+    -1.48,
+    -6.43
+   ]
+  },
+  {
+   "hex": "#C0C6CC",
+   "lab": [
+    79.59,
+    -0.91,
+    -3.72
+   ]
+  },
+  {
+   "hex": "#293A51",
+   "lab": [
+    23.97,
+    0.35,
+    -16.12
+   ]
+  },
+  {
+   "hex": "#304157",
+   "lab": [
+    27.01,
+    -0.19,
+    -15.31
+   ]
+  },
+  {
+   "hex": "#6F7B8A",
+   "lab": [
+    51.13,
+    -1.02,
+    -9.64
+   ]
+  },
+  {
+   "hex": "#5B687A",
+   "lab": [
+    43.53,
+    -0.68,
+    -11.4
+   ]
+  },
+  {
+   "hex": "#47566A",
+   "lab": [
+    36.05,
+    -0.53,
+    -13.39
+   ]
+  },
+  {
+   "hex": "#87919E",
+   "lab": [
+    59.77,
+    -0.83,
+    -8.09
+   ]
+  },
+  {
+   "hex": "#B9BFC6",
+   "lab": [
+    77.07,
+    -0.72,
+    -4.24
+   ]
+  },
+  {
+   "hex": "#F6F6F7",
+   "lab": [
+    97.03,
+    -0.07,
+    -0.31
+   ]
+  },
+  {
+   "hex": "#3C5573",
+   "lab": [
+    35.39,
+    -0.52,
+    -20.06
+   ]
+  },
+  {
+   "hex": "#39516E",
+   "lab": [
+    33.73,
+    -0.44,
+    -19.53
+   ]
+  },
+  {
+   "hex": "#364D69",
+   "lab": [
+    32.06,
+    -0.35,
+    -18.99
+   ]
+  },
+  {
+   "hex": "#FFFFFF",
+   "lab": [
+    100.0,
+    0.01,
+    -0.01
+   ]
+  },
+  {
+   "hex": "#4E637E",
+   "lab": [
+    41.32,
+    -0.46,
+    -17.89
+   ]
+  },
+  {
+   "hex": "#D6DBE1",
+   "lab": [
+    87.19,
+    -0.57,
+    -3.53
+   ]
+  }
+ ],
+ "client": "K.B (kruslockbosconsultancy.com)",
+ "name_rule": "On screen and in VO say only 'K.B' (site also uses 'K.B Tech Partner'). Never 'Consultancy' / 'Kruslock Bos Consultancy'.",
+ "css": {
+  "source": "https://kruslockbosconsultancy.com/_next/static/chunks/1r6vlw8moi03d.css (Tailwind v4 :root,:host theme, shadcn-style tokens), read 2026-10-08",
+  "--color-background": "#f7f7f7",
+  "--color-foreground": "#252525",
+  "--color-primary": "#38c8ff",
+  "--color-primary-foreground": "#000",
+  "--color-accent": "#38c8ff",
+  "--color-accent-foreground": "#000",
+  "--color-secondary": "#293a51",
+  "--color-secondary-foreground": "#fff",
+  "--color-muted": "#f1f5f9",
+  "--color-muted-foreground": "#49525b",
+  "--color-card": "#ebecf4",
+  "--color-card-foreground": "#252525",
+  "--color-border": "#e2e8f0",
+  "--color-input": "#293a51",
+  "--color-ring": "#2563eb",
+  "--color-destructive": "#ef4444",
+  "--color-slate-500": "#62748e",
+  "--radius": ".5rem",
+  "--radius-xl": ".75rem",
+  "--radius-2xl": "1rem",
+  "--radius-3xl": "1.5rem",
+  "--ease-in-out": "cubic-bezier(.4, 0, .2, 1)",
+  "--default-transition-duration": ".15s",
+  "manifest theme_color/background_color": "#2A3A51",
+  "font-family": "Montserrat (body, headings, nav, buttons); .logo { font-family: Copperplate } -> @font-face 'copperplate' = CopperplateCC_Heavy.otf"
+ },
+ "tokens": {
+  "canvas": "#F7F7F7",
+  "ink": "#252525",
+  "navy": "#293A51",
+  "accent": "#38C8FF",
+  "muted": "#49525B",
+  "line": "#E2E8F0",
+  "pale": "#EBECF4",
+  "paleCool": "#F1F5F9",
+  "white": "#FFFFFF",
+  "kb": "#394F6D",
+  "kbLeft": "#354C67",
+  "kbRight": "#3D5574",
+  "onNavyMuted": "#BCC2C9"
+ },
+ "accent": "#38C8FF",
+ "contrast": {
+  "#252525 on #F7F7F7": "14.3:1 body ok",
+  "#293A51 on #F7F7F7": "10.8:1 body ok",
+  "#49525B on #F7F7F7": "7.4:1 body ok",
+  "#252525 on #EBECF4": "13.0:1 body ok",
+  "#49525B on #EBECF4": "6.8:1 body ok",
+  "#293A51 on #EBECF4": "9.8:1 body ok",
+  "#FFFFFF on #293A51": "11.5:1 body ok",
+  "#F1F5F9 on #293A51": "10.5:1 body ok",
+  "#BCC2C9 on #293A51": "6.4:1 body ok",
+  "#38C8FF on #293A51": "6.0:1 body ok",
+  "#FFFFFF on #394F6D (logo tile)": "8.4:1 body ok",
+  "#000000 on #38C8FF": "10.9:1 body ok",
+  "#293A51 on #38C8FF": "6.0:1 body ok",
+  "#38C8FF on #F7F7F7": "1.8:1 FAILS",
+  "#FFFFFF on #38C8FF": "1.9:1 FAILS"
+ },
+ "rule": "Text: ink/navy/muted on canvas or pale; white/paleCool/onNavyMuted/accent on navy or kb tile; on an accent (#38C8FF) fill only black or navy text. Never cyan text on light grounds or white text on cyan; cyan on light = shapes, rules, dots, fills only.",
+ "type": {
+  "display": {
+   "family": "Montserrat",
+   "weight": 700,
+   "note": "site h1/h2 are Montserrat 700, tracking normal, sentence case; 800 available for big kinetic words"
+  },
+  "body": {
+   "family": "Montserrat",
+   "weights": [
+    400,
+    500,
+    600
+   ],
+   "note": "body 400 muted-foreground; buttons 600; nav labels 500-600 UPPERCASE tracking-wide"
+  },
+  "logotype": {
+   "family": "Copperplate CC (Heavy)",
+   "file": "film/public/fonts/copperplate-cc-heavy.otf",
+   "note": "'K.B' set in Copperplate CC Heavy; lowercase are small caps. Licence SIL OFL 1.1 (Cowboy Collective, 2020)."
+  },
+  "files": {
+   "montserrat": "film/public/fonts/montserrat-var-latin.woff2 (+ -latin-ext), variable wght 100-900, OFL",
+   "copperplate": "film/public/fonts/copperplate-cc-heavy.otf"
+  }
+ },
+ "logo": {
+  "description": "White 'K.B' (Copperplate CC Heavy, round period) centred on a rounded-square tile with a subtle left->right navy gradient #354C67 -> #3D5574 (mid #394F6D); corner radius ~38/512 (7.4%). Letters span 72% of tile width, cap height ~29% of tile.",
+  "nav": "On the site header the mark is a 44px navy (#293A51 @85%, backdrop blur, shadow-lg) circle with 'K.B' in Copperplate, colour #F1F5F9; on hover the pill widens to 'K.B  TECH PARTNER'.",
+  "files": [
+   "assets/logo/favicon-512x512.png (original)",
+   "assets/logo/kb-logo-tile.svg (vector rebuild from font outlines, IoU 0.94 vs original)",
+   "assets/logo/kb-logo-tile-2048.png",
+   "assets/logo/kb-wordmark.svg (letters only, currentColor)"
+  ]
+ }
+}

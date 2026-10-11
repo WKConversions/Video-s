@@ -1,0 +1,7 @@
+prior/
+film/node_modules/
+film/out/
+*.pyc
+__pycache__/
+sound/music/candidates/
+sound/music/candidates2/

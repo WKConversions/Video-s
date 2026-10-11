@@ -1,0 +1,487 @@
+{
+ "source": "vo/kb-vo-elevenlabs.mp3",
+ "model": "small.en",
+ "duration": 37.7991875,
+ "words": [
+  {
+   "word": "One",
+   "start": 0.0,
+   "end": 0.32,
+   "p": 0.694
+  },
+  {
+   "word": "business",
+   "start": 0.32,
+   "end": 0.8,
+   "p": 0.976
+  },
+  {
+   "word": ".Countless",
+   "start": 0.8,
+   "end": 1.8,
+   "p": 0.379
+  },
+  {
+   "word": "tools",
+   "start": 1.8,
+   "end": 2.18,
+   "p": 0.988
+  },
+  {
+   "word": ".And",
+   "start": 2.18,
+   "end": 2.86,
+   "p": 0.597
+  },
+  {
+   "word": "hundreds",
+   "start": 2.86,
+   "end": 3.32,
+   "p": 0.922
+  },
+  {
+   "word": "of",
+   "start": 3.32,
+   "end": 3.56,
+   "p": 0.992
+  },
+  {
+   "word": "tasks",
+   "start": 3.56,
+   "end": 3.94,
+   "p": 0.992
+  },
+  {
+   "word": "connecting",
+   "start": 3.94,
+   "end": 4.36,
+   "p": 0.99
+  },
+  {
+   "word": "them.",
+   "start": 4.36,
+   "end": 4.78,
+   "p": 0.993
+  },
+  {
+   "word": "unavoidWhat",
+   "start": 5.32,
+   "end": 5.44,
+   "p": 0.0
+  },
+  {
+   "word": "if",
+   "start": 5.44,
+   "end": 5.58,
+   "p": 0.964
+  },
+  {
+   "word": "everything",
+   "start": 5.58,
+   "end": 6.06,
+   "p": 0.983
+  },
+  {
+   "word": "just",
+   "start": 6.06,
+   "end": 6.38,
+   "p": 0.971
+  },
+  {
+   "word": "worked",
+   "start": 6.38,
+   "end": 6.74,
+   "p": 0.93
+  },
+  {
+   "word": "together?",
+   "start": 6.74,
+   "end": 7.22,
+   "p": 0.993
+  },
+  {
+   "word": "horizontMeet",
+   "start": 7.96,
+   "end": 8.08,
+   "p": 0.163
+  },
+  {
+   "word": "K",
+   "start": 8.08,
+   "end": 8.42,
+   "p": 0.032
+  },
+  {
+   "word": ".B.,your",
+   "start": 8.42,
+   "end": 9.32,
+   "p": 0.486
+  },
+  {
+   "word": "technology",
+   "start": 9.32,
+   "end": 9.8,
+   "p": 0.983
+  },
+  {
+   "word": "partner,",
+   "start": 9.8,
+   "end": 10.3,
+   "p": 0.974
+  },
+  {
+   "word": "built",
+   "start": 10.68,
+   "end": 10.82,
+   "p": 0.222
+  },
+  {
+   "word": "around",
+   "start": 10.82,
+   "end": 11.24,
+   "p": 0.993
+  },
+  {
+   "word": "your",
+   "start": 11.24,
+   "end": 11.62,
+   "p": 0.95
+  },
+  {
+   "word": "business.",
+   "start": 11.62,
+   "end": 12.08,
+   "p": 0.99
+  },
+  {
+   "word": "horizontConnect",
+   "start": 12.74,
+   "end": 12.86,
+   "p": 0.39
+  },
+  {
+   "word": "your",
+   "start": 12.86,
+   "end": 13.08,
+   "p": 0.984
+  },
+  {
+   "word": "tools.",
+   "start": 13.08,
+   "end": 13.44,
+   "p": 0.991
+  },
+  {
+   "word": "Automate",
+   "start": 13.98,
+   "end": 14.34,
+   "p": 0.855
+  },
+  {
+   "word": "workflows",
+   "start": 14.34,
+   "end": 14.82,
+   "p": 0.978
+  },
+  {
+   "word": ".Simplify",
+   "start": 14.82,
+   "end": 15.98,
+   "p": 0.776
+  },
+  {
+   "word": "operations.",
+   "start": 15.98,
+   "end": 16.62,
+   "p": 0.98
+  },
+  {
+   "word": "horizontFrom",
+   "start": 17.32,
+   "end": 17.44,
+   "p": 0.48
+  },
+  {
+   "word": "intelligent",
+   "start": 17.44,
+   "end": 17.96,
+   "p": 0.879
+  },
+  {
+   "word": "AI",
+   "start": 17.96,
+   "end": 18.34,
+   "p": 0.709
+  },
+  {
+   "word": "agents",
+   "start": 18.34,
+   "end": 18.74,
+   "p": 0.992
+  },
+  {
+   "word": "to",
+   "start": 18.74,
+   "end": 19.04,
+   "p": 0.953
+  },
+  {
+   "word": "custom",
+   "start": 19.04,
+   "end": 19.42,
+   "p": 0.985
+  },
+  {
+   "word": "software,",
+   "start": 19.42,
+   "end": 19.98,
+   "p": 0.99
+  },
+  {
+   "word": "everything",
+   "start": 20.42,
+   "end": 20.76,
+   "p": 0.925
+  },
+  {
+   "word": "works",
+   "start": 20.76,
+   "end": 21.28,
+   "p": 0.994
+  },
+  {
+   "word": "together.",
+   "start": 21.28,
+   "end": 21.7,
+   "p": 0.999
+  },
+  {
+   "word": "horizontWe",
+   "start": 22.12,
+   "end": 22.34,
+   "p": 0.495
+  },
+  {
+   "word": "analyze",
+   "start": 22.34,
+   "end": 22.7,
+   "p": 0.989
+  },
+  {
+   "word": "your",
+   "start": 22.7,
+   "end": 22.92,
+   "p": 0.987
+  },
+  {
+   "word": "processes,",
+   "start": 22.92,
+   "end": 23.38,
+   "p": 0.986
+  },
+  {
+   "word": "build",
+   "start": 24.0,
+   "end": 24.12,
+   "p": 0.838
+  },
+  {
+   "word": "alongside",
+   "start": 24.12,
+   "end": 24.42,
+   "p": 0.992
+  },
+  {
+   "word": "your",
+   "start": 24.42,
+   "end": 24.82,
+   "p": 0.997
+  },
+  {
+   "word": "team,",
+   "start": 24.82,
+   "end": 25.16,
+   "p": 0.998
+  },
+  {
+   "word": "and",
+   "start": 25.44,
+   "end": 25.62,
+   "p": 0.885
+  },
+  {
+   "word": "keep",
+   "start": 25.62,
+   "end": 25.84,
+   "p": 0.997
+  },
+  {
+   "word": "your",
+   "start": 25.84,
+   "end": 26.04,
+   "p": 0.996
+  },
+  {
+   "word": "systems",
+   "start": 26.04,
+   "end": 26.38,
+   "p": 0.984
+  },
+  {
+   "word": "running.",
+   "start": 26.38,
+   "end": 26.76,
+   "p": 0.997
+  },
+  {
+   "word": "horizontNo",
+   "start": 27.26,
+   "end": 27.52,
+   "p": 0.467
+  },
+  {
+   "word": "unnecessary",
+   "start": 27.52,
+   "end": 28.22,
+   "p": 0.98
+  },
+  {
+   "word": "complexity.",
+   "start": 28.22,
+   "end": 28.88,
+   "p": 0.795
+  },
+  {
+   "word": "Just",
+   "start": 29.52,
+   "end": 29.6,
+   "p": 0.986
+  },
+  {
+   "word": "technology",
+   "start": 29.6,
+   "end": 30.02,
+   "p": 0.998
+  },
+  {
+   "word": "that",
+   "start": 30.02,
+   "end": 30.44,
+   "p": 0.996
+  },
+  {
+   "word": "works",
+   "start": 30.44,
+   "end": 30.68,
+   "p": 0.999
+  },
+  {
+   "word": "the",
+   "start": 30.68,
+   "end": 30.86,
+   "p": 0.998
+  },
+  {
+   "word": "way",
+   "start": 30.86,
+   "end": 31.0,
+   "p": 1.0
+  },
+  {
+   "word": "you",
+   "start": 31.0,
+   "end": 31.22,
+   "p": 0.998
+  },
+  {
+   "word": "do.",
+   "start": 31.22,
+   "end": 31.48,
+   "p": 0.998
+  },
+  {
+   "word": "dividLess",
+   "start": 32.0,
+   "end": 32.12,
+   "p": 0.0
+  },
+  {
+   "word": "manual",
+   "start": 32.12,
+   "end": 32.48,
+   "p": 0.958
+  },
+  {
+   "word": "work.",
+   "start": 32.48,
+   "end": 32.88,
+   "p": 0.994
+  },
+  {
+   "word": "More",
+   "start": 33.34,
+   "end": 33.48,
+   "p": 0.906
+  },
+  {
+   "word": "time",
+   "start": 33.48,
+   "end": 33.7,
+   "p": 0.989
+  },
+  {
+   "word": "to",
+   "start": 33.7,
+   "end": 33.88,
+   "p": 0.996
+  },
+  {
+   "word": "grow.",
+   "start": 33.88,
+   "end": 34.14,
+   "p": 0.996
+  },
+  {
+   "word": "kb.",
+   "start": 34.94,
+   "end": 34.94,
+   "p": 0.0
+  },
+  {
+   "word": "Your",
+   "start": 35.6,
+   "end": 35.7,
+   "p": 0.874
+  },
+  {
+   "word": "tech",
+   "start": 35.7,
+   "end": 35.96,
+   "p": 0.957
+  },
+  {
+   "word": "team,",
+   "start": 35.96,
+   "end": 36.26,
+   "p": 0.99
+  },
+  {
+   "word": "without",
+   "start": 36.68,
+   "end": 36.94,
+   "p": 0.983
+  },
+  {
+   "word": "the",
+   "start": 36.94,
+   "end": 37.1,
+   "p": 0.996
+  },
+  {
+   "word": "hiring.",
+   "start": 37.1,
+   "end": 37.38,
+   "p": 0.995
+  }
+ ]
+}

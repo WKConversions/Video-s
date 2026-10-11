@@ -1,0 +1,482 @@
+[
+{
+"key": "w:one",
+"word": "One",
+"start": 0.7,
+"end": 0.82
+},
+{
+"key": "w:business",
+"word": "business.",
+"start": 0.88,
+"end": 1.28
+},
+{
+"key": "w:countless",
+"word": "Countless",
+"start": 1.841,
+"end": 2.341
+},
+{
+"key": "w:tools",
+"word": "tools.",
+"start": 2.401,
+"end": 2.741
+},
+{
+"key": "w:and",
+"word": "And",
+"start": 3.241,
+"end": 3.321
+},
+{
+"key": "w:hundreds",
+"word": "hundreds",
+"start": 3.542,
+"end": 3.922
+},
+{
+"key": "w:of",
+"word": "of",
+"start": 3.962,
+"end": 4.002
+},
+{
+"key": "w:tasks",
+"word": "tasks",
+"start": 4.102,
+"end": 4.522
+},
+{
+"key": "w:connecting",
+"word": "connecting",
+"start": 4.622,
+"end": 5.022
+},
+{
+"key": "w:them",
+"word": "them.",
+"start": 5.082,
+"end": 5.182
+},
+{
+"key": "w:what",
+"word": "What",
+"start": 5.823,
+"end": 5.943
+},
+{
+"key": "w:if",
+"word": "if",
+"start": 6.003,
+"end": 6.043
+},
+{
+"key": "w:everything",
+"word": "everything",
+"start": 6.223,
+"end": 6.603
+},
+{
+"key": "w:just",
+"word": "just",
+"start": 6.703,
+"end": 6.903
+},
+{
+"key": "w:worked",
+"word": "worked",
+"start": 7.083,
+"end": 7.303
+},
+{
+"key": "w:together",
+"word": "together?",
+"start": 7.323,
+"end": 7.724
+},
+{
+"key": "w:meet",
+"word": "Meet",
+"start": 8.404,
+"end": 8.584
+},
+{
+"key": "w:kb",
+"word": "K.B.",
+"start": 8.744,
+"end": 9.224
+},
+{
+"key": "w:your",
+"word": "Your",
+"start": 9.665,
+"end": 9.825
+},
+{
+"key": "w:technology",
+"word": "technology",
+"start": 9.905,
+"end": 10.445
+},
+{
+"key": "w:partner",
+"word": "partner,",
+"start": 10.505,
+"end": 10.805
+},
+{
+"key": "w:built",
+"word": "built",
+"start": 11.185,
+"end": 11.386
+},
+{
+"key": "w:around",
+"word": "around",
+"start": 11.566,
+"end": 11.806
+},
+{
+"key": "w:your2",
+"word": "your",
+"start": 11.926,
+"end": 12.146
+},
+{
+"key": "w:business2",
+"word": "business.",
+"start": 12.226,
+"end": 12.606
+},
+{
+"key": "w:connect",
+"word": "Connect",
+"start": 13.166,
+"end": 13.427
+},
+{
+"key": "w:your3",
+"word": "your",
+"start": 13.487,
+"end": 13.607
+},
+{
+"key": "w:tools2",
+"word": "tools.",
+"start": 13.647,
+"end": 13.987
+},
+{
+"key": "w:automate",
+"word": "Automate",
+"start": 14.527,
+"end": 14.847
+},
+{
+"key": "w:workflows",
+"word": "workflows.",
+"start": 14.907,
+"end": 15.388
+},
+{
+"key": "w:simplify",
+"word": "Simplify",
+"start": 15.928,
+"end": 16.468
+},
+{
+"key": "w:operations",
+"word": "operations.",
+"start": 16.648,
+"end": 17.269
+},
+{
+"key": "w:from",
+"word": "From",
+"start": 17.809,
+"end": 17.929
+},
+{
+"key": "w:intelligent",
+"word": "intelligent",
+"start": 18.009,
+"end": 18.509
+},
+{
+"key": "w:ai",
+"word": "AI",
+"start": 18.629,
+"end": 18.849
+},
+{
+"key": "w:agents",
+"word": "agents",
+"start": 19.009,
+"end": 19.33
+},
+{
+"key": "w:to",
+"word": "to",
+"start": 19.45,
+"end": 19.53
+},
+{
+"key": "w:custom",
+"word": "custom",
+"start": 19.61,
+"end": 19.95
+},
+{
+"key": "w:software",
+"word": "software,",
+"start": 20.05,
+"end": 20.53
+},
+{
+"key": "w:everything2",
+"word": "everything",
+"start": 20.99,
+"end": 21.431
+},
+{
+"key": "w:works",
+"word": "works",
+"start": 21.611,
+"end": 21.811
+},
+{
+"key": "w:together2",
+"word": "together.",
+"start": 21.891,
+"end": 22.231
+},
+{
+"key": "w:we",
+"word": "We",
+"start": 22.751,
+"end": 22.831
+},
+{
+"key": "w:analyze",
+"word": "analyze",
+"start": 22.951,
+"end": 23.272
+},
+{
+"key": "w:your4",
+"word": "your",
+"start": 23.332,
+"end": 23.432
+},
+{
+"key": "w:processes",
+"word": "processes,",
+"start": 23.472,
+"end": 24.052
+},
+{
+"key": "w:build",
+"word": "build",
+"start": 24.452,
+"end": 24.652
+},
+{
+"key": "w:alongside",
+"word": "alongside",
+"start": 24.752,
+"end": 25.173
+},
+{
+"key": "w:your5",
+"word": "your",
+"start": 25.213,
+"end": 25.333
+},
+{
+"key": "w:team",
+"word": "team,",
+"start": 25.393,
+"end": 25.653
+},
+{
+"key": "w:and2",
+"word": "and",
+"start": 26.033,
+"end": 26.113
+},
+{
+"key": "w:keep",
+"word": "keep",
+"start": 26.213,
+"end": 26.373
+},
+{
+"key": "w:your6",
+"word": "your",
+"start": 26.433,
+"end": 26.553
+},
+{
+"key": "w:systems",
+"word": "systems",
+"start": 26.613,
+"end": 26.953
+},
+{
+"key": "w:running",
+"word": "running.",
+"start": 27.053,
+"end": 27.314
+},
+{
+"key": "w:no",
+"word": "No",
+"start": 27.874,
+"end": 27.994
+},
+{
+"key": "w:unnecessary",
+"word": "unnecessary",
+"start": 28.214,
+"end": 28.834
+},
+{
+"key": "w:complexity",
+"word": "complexity.",
+"start": 28.894,
+"end": 29.455
+},
+{
+"key": "w:just2",
+"word": "Just",
+"start": 29.935,
+"end": 30.115
+},
+{
+"key": "w:technology2",
+"word": "technology",
+"start": 30.155,
+"end": 30.735
+},
+{
+"key": "w:that",
+"word": "that",
+"start": 30.855,
+"end": 30.955
+},
+{
+"key": "w:works2",
+"word": "works",
+"start": 31.036,
+"end": 31.256
+},
+{
+"key": "w:the",
+"word": "the",
+"start": 31.316,
+"end": 31.376
+},
+{
+"key": "w:way",
+"word": "way",
+"start": 31.436,
+"end": 31.516
+},
+{
+"key": "w:you",
+"word": "you",
+"start": 31.596,
+"end": 31.696
+},
+{
+"key": "w:do",
+"word": "do.",
+"start": 31.776,
+"end": 31.876
+},
+{
+"key": "w:less",
+"word": "Less",
+"start": 32.476,
+"end": 32.656
+},
+{
+"key": "w:manual",
+"word": "manual",
+"start": 32.736,
+"end": 33.057
+},
+{
+"key": "w:work",
+"word": "work.",
+"start": 33.157,
+"end": 33.337
+},
+{
+"key": "w:more",
+"word": "More",
+"start": 33.837,
+"end": 34.017
+},
+{
+"key": "w:time",
+"word": "time",
+"start": 34.077,
+"end": 34.257
+},
+{
+"key": "w:to2",
+"word": "to",
+"start": 34.317,
+"end": 34.377
+},
+{
+"key": "w:grow",
+"word": "grow.",
+"start": 34.437,
+"end": 34.637
+},
+{
+"key": "w:kb2",
+"word": "K.B.",
+"start": 35.178,
+"end": 35.658
+},
+{
+"key": "w:your7",
+"word": "Your",
+"start": 36.078,
+"end": 36.218
+},
+{
+"key": "w:tech",
+"word": "tech",
+"start": 36.318,
+"end": 36.498
+},
+{
+"key": "w:team2",
+"word": "team,",
+"start": 36.558,
+"end": 36.718
+},
+{
+"key": "w:without",
+"word": "without",
+"start": 37.239,
+"end": 37.499
+},
+{
+"key": "w:the2",
+"word": "the",
+"start": 37.559,
+"end": 37.619
+},
+{
+"key": "w:hiring",
+"word": "hiring.",
+"start": 37.659,
+"end": 37.999
+}
+]

@@ -1,0 +1,19 @@
+{
+ "@id": "Cat Walk",
+ "@type": "MusicRecording",
+ "name": "Cat Walk",
+ "genre": "House",
+ "byArtist": "Arulo",
+ "duration": "PT2M4S",
+ "url": "https://assets.mixkit.co/music/371/371.mp3",
+ "waveformUrl": "https://assets.mixkit.co/music/371/371-waveform.json",
+ "copyrightNotice": "Mixkit Stock Music Free License",
+ "encodingFormat": "audio/mpeg",
+ "isAccessibleForFree": true,
+ "license": "https://mixkit.co/license/#musicFree",
+ "publisher": {
+  "@id": "https://mixkit.co/#organization"
+ },
+ "datePublished": "2020-01-28",
+ "retrieved": "2026-10-11 from https://mixkit.co/free-stock-music/mood/corporate/ (schema.org record)"
+}
