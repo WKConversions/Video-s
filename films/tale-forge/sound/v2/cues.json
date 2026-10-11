@@ -431,6 +431,12 @@
    "note": "Mossa's label"
   },
   {
+   "id": "chimes-twinkle",
+   "frame": 800,
+   "db": -5,
+   "note": "characters with stories of their own"
+  },
+  {
    "id": "tap-soft",
    "frame": 825,
    "db": -6,
@@ -473,6 +479,12 @@
    "db": -6,
    "pitch": 3,
    "note": "choice B"
+  },
+  {
+   "id": "magic-dust-short",
+   "frame": 933,
+   "db": -11,
+   "note": "what they want to do"
   },
   {
    "id": "tap-soft",
