@@ -29,18 +29,18 @@ export const Card: React.FC<{ w: number; h?: number; r?: number; pad?: number; s
       boxSizing: "border-box", border: `1.5px solid ${rgba(C.navy, 0.06)}`, position: "relative", overflow: "hidden", ...style }}>{children}</div>
   );
 
-/** The pointer: an arrow cursor, about 90 px. `press` 0..1 shrinks it into the click; `fill` the arrow on hover. */
-export const Cursor: React.FC<{ size?: number; press?: number; color?: string; label?: string; labelBg?: string }> =
-  ({ size = 84, press = 0, color = C.ink, label, labelBg = C.navy }) => {
-    const sc = 1 - 0.18 * Math.sin(Math.PI * clamp01(press));
+/** The pointer: an arrow cursor, about 90 px, its tip at (0.19, 0.11) of its box. `press` 0..1 is how far it is squeezed into the click. */
+export const Cursor: React.FC<{ size?: number; press?: number; color?: string; label?: string; labelBg?: string; labelColor?: string; labelFont?: string }> =
+  ({ size = 84, press = 0, color = C.ink, label, labelBg = C.cyan, labelColor = C.navy, labelFont }) => {
+    const sc = 1 - 0.16 * clamp01(press);
     return (
       <div style={{ position: "relative", width: size, height: size, transform: `scale(${sc})`, transformOrigin: "10% 8%" }}>
         <svg width={size} height={size} viewBox="0 0 32 32" style={{ filter: "drop-shadow(0 6px 10px rgba(41,58,81,0.25))" }}>
           <path d="M6 3.5l19 11.2-8.3 1.7 4.9 9.1-3.6 1.9-4.9-9.2-6.1 5.8z" fill={color} stroke="#fff" strokeWidth={1.8} strokeLinejoin="round" />
         </svg>
         {label && (
-          <div style={{ position: "absolute", left: size * 0.62, top: size * 0.78, background: labelBg, color: "#fff", fontFamily: F.ui,
-            fontWeight: 600, fontSize: size * 0.3, padding: `${size * 0.07}px ${size * 0.16}px`, borderRadius: size * 0.12, whiteSpace: "nowrap" }}>{label}</div>
+          <div style={{ position: "absolute", left: size * 0.62, top: size * 0.78, background: labelBg, color: labelColor, fontFamily: labelFont ?? F.ui,
+            fontWeight: labelFont ? 800 : 600, fontSize: size * 0.3, padding: `${size * 0.07}px ${size * 0.16}px`, borderRadius: size * 0.12, whiteSpace: "nowrap" }}>{label}</div>
         )}
       </div>
     );

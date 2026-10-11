@@ -1,0 +1,86 @@
+POP at 0.63 s (frame 19): 52.3× the change around it, tiles r2c1, r2c2
+POP at 0.80 s (frame 24): 57.1× the change around it, tiles r2c2, r2c3, r2c4
+POP at 1.53 s (frame 46): 4.7× the change around it, tiles r2c4
+POP at 1.80 s (frame 54): 19.0× the change around it, tiles r2c1, r2c2, r3c1, r3c2, r3c3
+POP at 1.97 s (frame 59): 4.7× the change around it, tiles r2c6
+POP at 2.93 s (frame 88): 4.6× the change around it, tiles r3c4
+POP at 3.13 s (frame 94): 4.7× the change around it, tiles r1c2
+POP at 3.37 s (frame 101): 6.2× the change around it, tiles r4c3, r4c4
+POP at 3.63 s (frame 109): 4.9× the change around it, tiles r4c3, r4c4
+POP at 3.90 s (frame 117): 5.1× the change around it, tiles r4c3, r4c4
+POP at 4.73 s (frame 142): 4.4× the change around it, tiles r0c5
+POP at 4.80 s (frame 144): 27.1× the change around it, tiles r1c0, r1c1, r4c2
+POP at 5.23 s (frame 157): 7.4× the change around it, tiles r4c7
+POP at 5.33 s (frame 160): 6.0× the change around it, tiles r2c3
+POP at 5.50 s (frame 165): 7.0× the change around it, tiles r4c1, r4c2
+POP at 5.80 s (frame 174): 4.2× the change around it, tiles r2c1, r2c3, r2c6
+POP at 5.93 s (frame 178): 6.0× the change around it, tiles r2c2, r2c5
+POP at 6.53 s (frame 196): 6.8× the change around it, tiles r2c5
+POP at 6.97 s (frame 209): 4.3× the change around it, tiles r4c2
+POP at 7.60 s (frame 228): 4.2× the change around it, tiles r3c3
+POP at 8.17 s (frame 245): 4.7× the change around it, tiles r2c2
+POP at 8.53 s (frame 256): 4.7× the change around it, tiles r2c0
+POP at 8.70 s (frame 261): 4.5× the change around it, tiles r0c3, r0c4, r2c4
+POP at 9.37 s (frame 281): 10.8× the change around it, tiles r2c3, r2c4
+cut at 10.10 s (frame 303): 510.2× the change around it, tiles r0c0, r0c1, r0c2, r0c3, r0c4, r0c5, r0c6, r0c7 …
+cut at 10.13 s (frame 304): 486.1× the change around it, tiles r0c0, r0c1, r0c2, r0c3, r0c4, r0c5, r0c6, r0c7 …
+POP at 11.10 s (frame 333): 9.7× the change around it, tiles r3c2, r3c3, r3c5
+POP at 11.23 s (frame 337): 6.1× the change around it, tiles r1c4
+POP at 11.40 s (frame 342): 5.7× the change around it, tiles r3c6
+POP at 11.53 s (frame 346): 6.2× the change around it, tiles r2c2, r2c3
+POP at 11.83 s (frame 355): 4.6× the change around it, tiles r4c2
+POP at 12.17 s (frame 365): 5.0× the change around it, tiles r1c1
+POP at 14.93 s (frame 448): 4.5× the change around it, tiles r3c4
+POP at 15.37 s (frame 461): 16.4× the change around it, tiles r0c6
+POP at 15.40 s (frame 462): 6.5× the change around it, tiles r3c3
+POP at 15.70 s (frame 471): 16.1× the change around it, tiles r0c6
+POP at 15.80 s (frame 474): 4.1× the change around it, tiles r3c5
+POP at 15.87 s (frame 476): 4.2× the change around it, tiles r1c3
+POP at 15.90 s (frame 477): 8.0× the change around it, tiles r4c3, r4c4
+POP at 16.77 s (frame 503): 6.5× the change around it, tiles r2c2, r2c3
+POP at 16.97 s (frame 509): 5.2× the change around it, tiles r2c5, r2c6
+POP at 17.40 s (frame 522): 4.9× the change around it, tiles r2c5, r2c6
+POP at 17.60 s (frame 528): 4.3× the change around it, tiles r2c1
+POP at 17.93 s (frame 538): 24.7× the change around it, tiles r2c1, r2c2, r2c3, r2c4, r2c5
+POP at 20.27 s (frame 608): 4.4× the change around it, tiles r1c6
+POP at 20.87 s (frame 626): 8.6× the change around it, tiles r4c0, r4c1, r4c2, r4c3, r4c4, r4c5, r4c6, r4c7
+POP at 21.13 s (frame 634): 10.3× the change around it, tiles r3c1, r3c3, r3c4, r3c5, r3c6
+POP at 21.63 s (frame 649): 4.3× the change around it, tiles r3c2
+cut at 21.97 s (frame 659): 227.4× the change around it, tiles r0c1, r0c2, r0c3, r0c4, r0c5, r0c6, r1c0, r1c1 …
+cut at 22.60 s (frame 678): 230.0× the change around it, tiles r1c0, r1c1, r1c2, r1c3, r1c4, r1c5, r1c6, r1c7 …
+POP at 23.03 s (frame 691): 6.3× the change around it, tiles r2c1
+POP at 23.43 s (frame 703): 8.0× the change around it, tiles r1c3
+POP at 24.20 s (frame 726): 21.9× the change around it, tiles r1c5, r1c6, r1c7, r2c1, r2c2, r2c3, r2c4, r2c5 …
+POP at 24.43 s (frame 733): 8.2× the change around it, tiles r3c3
+POP at 24.73 s (frame 742): 4.4× the change around it, tiles r3c4
+POP at 27.03 s (frame 811): 10.2× the change around it, tiles r3c1, r3c2, r3c3, r3c4, r3c5, r4c1, r4c2, r4c3 …
+POP at 27.93 s (frame 838): 6.8× the change around it, tiles r3c2
+POP at 28.23 s (frame 847): 5.6× the change around it, tiles r4c2, r4c3
+POP at 28.27 s (frame 848): 5.8× the change around it, tiles r3c6
+POP at 28.37 s (frame 851): 5.0× the change around it, tiles r3c6
+POP at 28.57 s (frame 857): 5.7× the change around it, tiles r4c6
+POP at 28.67 s (frame 860): 5.1× the change around it, tiles r4c6
+POP at 29.60 s (frame 888): 339.9× the change around it, tiles r0c5, r1c5, r2c5, r3c5
+cut at 29.83 s (frame 895): 210.0× the change around it, tiles r0c0, r0c1, r0c2, r0c3, r0c4, r0c5, r0c6, r0c7 …
+POP at 30.10 s (frame 903): 11.7× the change around it, tiles r2c3, r2c4, r2c5
+POP at 30.80 s (frame 924): 16.1× the change around it, tiles r3c0, r3c1
+POP at 30.97 s (frame 929): 19.1× the change around it, tiles r3c1, r3c2
+POP at 31.23 s (frame 937): 25.5× the change around it, tiles r3c3
+POP at 31.33 s (frame 940): 4.5× the change around it, tiles r1c3
+POP at 31.37 s (frame 941): 38.1× the change around it, tiles r3c4
+POP at 31.70 s (frame 951): 9.9× the change around it, tiles r3c7
+POP at 32.23 s (frame 967): 10.7× the change around it, tiles r0c3
+POP at 32.33 s (frame 970): 7.7× the change around it, tiles r3c3, r3c4
+POP at 33.53 s (frame 1006): 4.1× the change around it, tiles r1c4
+POP at 36.00 s (frame 1080): 23.6× the change around it, tiles r3c2, r3c3
+POP at 36.27 s (frame 1088): 27.7× the change around it, tiles r3c3, r3c4
+POP at 36.50 s (frame 1095): 38.8× the change around it, tiles r3c4, r3c5
+POP at 36.60 s (frame 1098): 5.8× the change around it, tiles r3c3, r3c4
+POP at 37.17 s (frame 1115): 30.6× the change around it, tiles r3c2, r3c3
+POP at 37.50 s (frame 1125): 17.0× the change around it, tiles r3c3, r3c4
+POP at 37.60 s (frame 1128): 20.3× the change around it, tiles r3c4, r3c5
+POP at 37.87 s (frame 1136): 4.2× the change around it, tiles r3c3
+POP at 38.40 s (frame 1152): 8.4× the change around it, tiles r3c3, r3c4, r3c5
+78 pops; the strongest at frames 888, 24, 19, 1095, 941. Look at each strip: a designed
+text change can show here; a blink, a jump in size or a layer appearing without a move is a bug.
+strips: qc/pops/pop_*.png (frames 19, 24, 46, 54, 59, 88, 94, 101, 109, 117, 142, 144, 157, 160, 165, 174, 178, 196, 209, 228, 245, 256, 261, 281, 333, 337, 342, 346, 355, 365, 448, 461, 462, 471, 474, 476, 477, 503, 509, 522, 528, 538, 608, 626, 634, 649, 691, 703, 726, 733, 742, 811, 838, 847, 848, 851, 857, 860, 888, 903, 924, 929, 937, 940, 941, 951, 967, 970, 1006, 1080, 1088, 1095, 1098, 1115, 1125, 1128, 1136, 1152)

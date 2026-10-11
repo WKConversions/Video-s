@@ -31,6 +31,11 @@ export const ICONS: Record<string, React.FC<P>> = {
   arrowUp: (p) => <Svg {...p}><path d="M12 19V5M6 11l6-6 6 6" /></Svg>,
   clock: (p) => <Svg {...p}><circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" /></Svg>,
   pulse: (p) => <Svg {...p}><path d="M3 12h4l2.5-6 4 12 2.5-6h5" /></Svg>,
+  building: (p) => <Svg {...p}><rect x="5" y="3.5" width="14" height="17" rx="2" /><path d="M9 7.5h2M13 7.5h2M9 11h2M13 11h2M9 14.5h2M13 14.5h2M10.5 20.5v-3h3v3" /></Svg>,
+  link: (p) => <Svg {...p}><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1" /><path d="M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1" /></Svg>,
+  shield: (p) => <Svg {...p}><path d="M12 3.5l7 2.8v5.2c0 4.3-3 7.7-7 9-4-1.3-7-4.7-7-9V6.3z" /></Svg>,
+  refresh: (p) => <Svg {...p}><path d="M19.5 12a7.5 7.5 0 01-13.2 4.9M4.5 12a7.5 7.5 0 0113.2-4.9" /><path d="M18 3.5v3.8h-3.8M6 20.5v-3.8h3.8" /></Svg>,
+  grid: (p) => <Svg {...p}><rect x="4" y="4" width="7" height="7" rx="1.5" /><rect x="13" y="4" width="7" height="7" rx="1.5" /><rect x="4" y="13" width="7" height="7" rx="1.5" /><rect x="13" y="13" width="7" height="7" rx="1.5" /></Svg>,
   grow: (p) => <Svg {...p}><path d="M4 17l5.5-5.5 3.5 3.5L20 8" /><path d="M14.5 8H20v5.5" /></Svg>,
 };
 export type IconName = keyof typeof ICONS;

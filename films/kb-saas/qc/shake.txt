@@ -1,0 +1,9 @@
+SHAKE 0.03–1.60 s (frames 1–48): 5 jumps of up to 1.8 px in 20 frames (many tiles), tiles r0c4, r1c5, r3c5, r4c4, r4c5, r4c6
+look  2.30–3.80 s (frames 69–114): 5 jumps of up to 1.8 px in 20 frames (irregular, one place), tiles r2c6
+look  3.30–4.03 s (frames 99–121): 3 jumps of up to 1.5 px in 20 frames (irregular, one place), tiles r1c2
+look  8.73–9.50 s (frames 262–285): 3 jumps of up to 10.0 px in 20 frames (irregular, one place), tiles r2c4, r3c3
+look  17.60–18.73 s (frames 528–562): 3 jumps of up to 1.5 px in 20 frames (irregular, one place), tiles r2c3
+SHAKE 25.70–26.87 s (frames 771–806): 3 jumps of up to 4.1 px in 20 frames (regular steps), tiles r3c3
+SHAKE 29.37–31.17 s (frames 881–935): 7 jumps of up to 7.1 px in 20 frames (many tiles), tiles r0c4, r0c5, r0c6, r0c7, r1c6, r1c7, r2c4, r2c6 …
+SHAKE 30.57–32.20 s (frames 917–966): 4 jumps of up to 5.4 px in 20 frames (many tiles), tiles r0c3, r0c7, r1c6, r1c7, r2c6, r3c7, r4c1, r4c3 …
+look  33.50–34.30 s (frames 1005–1029): 3 jumps of up to 7.3 px in 20 frames (irregular, one place), tiles r2c5

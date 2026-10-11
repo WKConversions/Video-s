@@ -50,3 +50,18 @@ export const at = (x: number, y: number, sc = 1, o = 1, extra = ""): React.CSSPr
   ({ position: "absolute", left: 0, top: 0, transform: `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%) scale(${sc}) ${extra}`, opacity: o });
 export const SHADOW = "0 40px 80px -40px rgba(41,58,81,0.35), 0 2px 8px rgba(41,58,81,0.06)";
 export const SHADOW_SOFT = "0 24px 50px -30px rgba(41,58,81,0.30), 0 1px 3px rgba(41,58,81,0.05)";
+
+/** A push from rest that gets to speed in about 3 f and then decays: chat-scroll pushes on things already on screen. */
+export const PUSH = Easing.bezier(0.3, 0, 0.1, 1);
+/** Frame of a label (or label±s). */
+export const W = (pos: string, d = 0) => T.f(pos) + Math.round(d * 30);
+/** 0..1 between two frames, eased. */
+export const pr = (g: number, a: number, n: number, ease: (t: number) => number = ARRIVE) => ease(clamp01((g - a) / Math.max(1, n)));
+/** Exponential arrival between frames (starts at speed). */
+export const px = (g: number, a: number, n: number, r = 0.8) => expoOut(n, r)(clamp01((g - a) / n));
+/** Accelerating exit between frames. */
+export const pxi = (g: number, a: number, n: number, r = 0.8) => expoIn(n, r)(clamp01((g - a) / n));
+/** A click: squeezed in 4 f, held 2 f, released in 3 f, from frame a. */
+export const press = (g: number, a: number) => g < a ? 0 : g < a + 4 ? (g - a) / 4 : g < a + 6 ? 1 : g < a + 9 ? 1 - (g - a - 6) / 3 : 0;
+/** Cursor tip offset for a cursor of size s (the tip sits at 19%, 11% of the box). */
+export const tip = (s: number) => ({ dx: -0.19 * s, dy: -0.11 * s });

@@ -1,7 +1,7 @@
 [
  {
   "id": "gen-tick",
-  "file": "ticker/gen-tick.wav",
+  "file": "sfx/ticker/gen-tick.wav",
   "category": "ticker",
   "character": "generated ticker",
   "licence": "generated",
@@ -45,7 +45,7 @@
  },
  {
   "id": "gen-tap",
-  "file": "tap/gen-tap.wav",
+  "file": "sfx/tap/gen-tap.wav",
   "category": "tap",
   "character": "generated tap",
   "licence": "generated",
@@ -89,7 +89,7 @@
  },
  {
   "id": "gen-pop",
-  "file": "pop/gen-pop.wav",
+  "file": "sfx/pop/gen-pop.wav",
   "category": "pop",
   "character": "generated pop",
   "licence": "generated",
@@ -133,7 +133,7 @@
  },
  {
   "id": "gen-chime",
-  "file": "chime/gen-chime.wav",
+  "file": "sfx/chime/gen-chime.wav",
   "category": "chime",
   "character": "generated chime",
   "licence": "generated",
@@ -177,7 +177,7 @@
  },
  {
   "id": "gen-success",
-  "file": "success/gen-success.wav",
+  "file": "sfx/success/gen-success.wav",
   "category": "success",
   "character": "generated success",
   "licence": "generated",
@@ -221,7 +221,7 @@
  },
  {
   "id": "gen-appear",
-  "file": "appear-rise/gen-appear.wav",
+  "file": "sfx/appear-rise/gen-appear.wav",
   "category": "appear-rise",
   "character": "generated appear-rise",
   "licence": "generated",
@@ -265,7 +265,7 @@
  },
  {
   "id": "gen-whoosh-short",
-  "file": "whoosh/gen-whoosh-short.wav",
+  "file": "sfx/whoosh/gen-whoosh-short.wav",
   "category": "whoosh",
   "character": "short, soft pass: a card or a word flying in",
   "licence": "generated",
@@ -308,7 +308,7 @@
  },
  {
   "id": "gen-whoosh-medium",
-  "file": "whoosh/gen-whoosh-medium.wav",
+  "file": "sfx/whoosh/gen-whoosh-medium.wav",
   "category": "whoosh",
   "character": "medium pass: a camera move, a page pan",
   "licence": "generated",
@@ -351,7 +351,7 @@
  },
  {
   "id": "gen-whoosh-whip",
-  "file": "whoosh/gen-whoosh-whip.wav",
+  "file": "sfx/whoosh/gen-whoosh-whip.wav",
   "category": "whoosh",
   "character": "fast, bright: a whip pan",
   "licence": "generated",
@@ -394,7 +394,7 @@
  },
  {
   "id": "gen-whoosh-deep",
-  "file": "whoosh/gen-whoosh-deep.wav",
+  "file": "sfx/whoosh/gen-whoosh-deep.wav",
   "category": "whoosh",
   "character": "slow, low: a big pull-back or zoom",
   "licence": "generated",
@@ -437,7 +437,7 @@
  },
  {
   "id": "gen-riser-1s",
-  "file": "riser/gen-riser-1s.wav",
+  "file": "sfx/riser/gen-riser-1s.wav",
   "category": "riser",
   "character": "one second into a reveal",
   "licence": "generated",
@@ -480,7 +480,7 @@
  },
  {
   "id": "gen-riser-2s",
-  "file": "riser/gen-riser-2s.wav",
+  "file": "sfx/riser/gen-riser-2s.wav",
   "category": "riser",
   "character": "two seconds of build into a reveal",
   "licence": "generated",
@@ -523,7 +523,7 @@
  },
  {
   "id": "gen-impact-soft",
-  "file": "impact/gen-impact-soft.wav",
+  "file": "sfx/impact/gen-impact-soft.wav",
   "category": "impact",
   "character": "soft low thump: a landing, a lock-in",
   "licence": "generated",
@@ -566,7 +566,7 @@
  },
  {
   "id": "gen-impact-deep",
-  "file": "impact/gen-impact-deep.wav",
+  "file": "sfx/impact/gen-impact-deep.wav",
   "category": "impact",
   "character": "deeper, longer: a logo, the end card",
   "licence": "generated",
@@ -609,7 +609,7 @@
  },
  {
   "id": "gen-stamp",
-  "file": "impact/gen-stamp.wav",
+  "file": "sfx/impact/gen-stamp.wav",
   "category": "impact",
   "character": "thud with a paper slap: a stamp",
   "licence": "generated",
@@ -652,7 +652,7 @@
  },
  {
   "id": "gen-shimmer",
-  "file": "stinger/gen-shimmer.wav",
+  "file": "sfx/stinger/gen-shimmer.wav",
   "category": "stinger",
   "character": "bright sparkle: a reveal, a brand moment",
   "licence": "generated",
@@ -695,7 +695,7 @@
  },
  {
   "id": "gen-swell",
-  "file": "swipe/gen-swell.wav",
+  "file": "sfx/swipe/gen-swell.wav",
   "category": "swipe",
   "character": "soft air swelling: a slow push, a scene breathing in",
   "licence": "generated",
@@ -738,7 +738,7 @@
  },
  {
   "id": "gen-whoosh-soft-short",
-  "file": "whoosh/gen-whoosh-soft-short.wav",
+  "file": "sfx/whoosh/gen-whoosh-soft-short.wav",
   "category": "whoosh",
   "character": "soft, short pass (0.3 s): a card or a word arriving; no hiss",
   "licence": "generated",
@@ -781,7 +781,7 @@
  },
  {
   "id": "gen-whoosh-soft-medium",
-  "file": "whoosh/gen-whoosh-soft-medium.wav",
+  "file": "sfx/whoosh/gen-whoosh-soft-medium.wav",
   "category": "whoosh",
   "character": "soft whip (0.6 s): a quick camera whip or a panel flying, rounded",
   "licence": "generated",
@@ -824,7 +824,7 @@
  },
  {
   "id": "gen-pop-soft-1",
-  "file": "pop/gen-pop-soft-1.wav",
+  "file": "sfx/pop/gen-pop-soft-1.wav",
   "category": "pop",
   "character": "soft rounded pop, A5: a tile, badge or pin landing (first of a run)",
   "licence": "generated",
@@ -867,7 +867,7 @@
  },
  {
   "id": "gen-pop-soft-2",
-  "file": "pop/gen-pop-soft-2.wav",
+  "file": "sfx/pop/gen-pop-soft-2.wav",
   "category": "pop",
   "character": "soft rounded pop, C#6: the second of a run",
   "licence": "generated",
@@ -910,7 +910,7 @@
  },
  {
   "id": "gen-pop-soft-3",
-  "file": "pop/gen-pop-soft-3.wav",
+  "file": "sfx/pop/gen-pop-soft-3.wav",
   "category": "pop",
   "character": "soft rounded pop, E6: the third of a run",
   "licence": "generated",
@@ -953,7 +953,7 @@
  },
  {
   "id": "gen-click",
-  "file": "tap/gen-click.wav",
+  "file": "sfx/tap/gen-click.wav",
   "category": "tap",
   "character": "crisp cursor click: the product's UI voice, a button pressed",
   "licence": "generated",
@@ -997,7 +997,7 @@
  },
  {
   "id": "gen-tap-soft",
-  "file": "tap/gen-tap-soft.wav",
+  "file": "sfx/tap/gen-tap-soft.wav",
   "category": "tap",
   "character": "soft finger tap: a touch on a phone screen, round and muted",
   "licence": "generated",
@@ -1040,7 +1040,7 @@
  },
  {
   "id": "gen-tick-soft",
-  "file": "ticker/gen-tick-soft.wav",
+  "file": "sfx/ticker/gen-tick-soft.wav",
   "category": "ticker",
   "character": "soft tick, a 2 ms breath of noise like a quiet clock: a counter step, a stepped list item",
   "licence": "generated",
@@ -1083,7 +1083,7 @@
  },
  {
   "id": "gen-tick-soft-hi",
-  "file": "ticker/gen-tick-soft-hi.wav",
+  "file": "sfx/ticker/gen-tick-soft-hi.wav",
   "category": "ticker",
   "character": "soft tick, brighter: alternate with gen-tick-soft",
   "licence": "generated",
@@ -1126,7 +1126,7 @@
  },
  {
   "id": "gen-typing-run",
-  "file": "ticker/gen-typing-run.wav",
+  "file": "sfx/ticker/gen-typing-run.wav",
   "category": "ticker",
   "character": "a few laptop keys at a human pace (6 keys in 0.5 s): a type-on's start",
   "licence": "generated",
@@ -1174,7 +1174,7 @@
  },
  {
   "id": "gen-key",
-  "file": "tap/gen-key.wav",
+  "file": "sfx/tap/gen-key.wav",
   "category": "tap",
   "character": "one soft laptop key",
   "licence": "generated",
@@ -1217,7 +1217,7 @@
  },
  {
   "id": "gen-send",
-  "file": "swipe/gen-send.wav",
+  "file": "sfx/swipe/gen-send.wav",
   "category": "swipe",
   "character": "message sent: an airy rising swoosh, peaks at the send",
   "licence": "generated",
@@ -1260,7 +1260,7 @@
  },
  {
   "id": "gen-chime-soft",
-  "file": "chime/gen-chime-soft.wav",
+  "file": "sfx/chime/gen-chime-soft.wav",
   "category": "chime",
   "character": "soft two-note glass-mallet chime (E6 up to A6): a message arriving",
   "licence": "generated",
@@ -1303,7 +1303,7 @@
  },
  {
   "id": "gen-success-soft",
-  "file": "success/gen-success-soft.wav",
+  "file": "sfx/success/gen-success-soft.wav",
   "category": "success",
   "character": "soft success: three rising mallet notes (C#6 E6 A6) over a warm chord; syncs on the first",
   "licence": "generated",
@@ -1346,7 +1346,7 @@
  },
  {
   "id": "gen-riser-soft-1s",
-  "file": "riser/gen-riser-soft-1s.wav",
+  "file": "sfx/riser/gen-riser-soft-1s.wav",
   "category": "riser",
   "character": "soft riser, 1 s: air climbing into a reveal; sync = the reveal",
   "licence": "generated",
@@ -1389,7 +1389,7 @@
  },
  {
   "id": "gen-riser-soft-2s",
-  "file": "riser/gen-riser-soft-2s.wav",
+  "file": "sfx/riser/gen-riser-soft-2s.wav",
   "category": "riser",
   "character": "soft riser, 2 s: a longer airy build into a reveal",
   "licence": "generated",
@@ -1432,7 +1432,7 @@
  },
  {
   "id": "gen-impact-logo",
-  "file": "impact/gen-impact-logo.wav",
+  "file": "sfx/impact/gen-impact-logo.wav",
   "category": "impact",
   "character": "soft deep landing for the logo: sub thump, muffled body, no click",
   "licence": "generated",
@@ -1475,7 +1475,7 @@
  },
  {
   "id": "gen-sparkle",
-  "file": "stinger/gen-sparkle.wav",
+  "file": "sfx/stinger/gen-sparkle.wav",
   "category": "stinger",
   "character": "soft sparkle: pentatonic glints rising and fading (a brand moment)",
   "licence": "generated",
@@ -1518,7 +1518,7 @@
  },
  {
   "id": "gen-data-blips",
-  "file": "data/gen-data-blips.wav",
+  "file": "sfx/data/gen-data-blips.wav",
   "category": "data",
   "character": "a scan: 7 soft blips 65 ms apart (data found, an AI working)",
   "licence": "generated",
@@ -1567,7 +1567,7 @@
  },
  {
   "id": "gen-blip",
-  "file": "data/gen-blip.wav",
+  "file": "sfx/data/gen-blip.wav",
   "category": "data",
   "character": "one soft data blip",
   "licence": "generated",
@@ -1610,7 +1610,7 @@
  },
  {
   "id": "gen-swell-low",
-  "file": "swipe/gen-swell-low.wav",
+  "file": "sfx/swipe/gen-swell-low.wav",
   "category": "swipe",
   "character": "low swell: warm low air and sub breathing up to 1.2 s (a slow push, a scene opening)",
   "licence": "generated",
