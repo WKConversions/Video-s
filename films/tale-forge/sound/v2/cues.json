@@ -1,0 +1,813 @@
+{
+ "fps": 30,
+ "frames": 2100,
+ "library": "lib",
+ "vo": {
+  "file": "../../vo/vo-en__elevenlabs-spuds-oxley-grandpa.mp3",
+  "at": 1.0
+ },
+ "music": {
+  "file": "music/score.wav",
+  "at": 0,
+  "duck_db": 4,
+  "fade_in": 0.0,
+  "fade_out": 0.6
+ },
+ "sfx": [
+  {
+   "id": "night-crickets",
+   "frame": 0,
+   "db": -13,
+   "note": "a quiet night under the opening",
+   "auto_level": false
+  },
+  {
+   "id": "crayon-long",
+   "frame": 5,
+   "db": -3,
+   "note": "the moon and the ground are drawn"
+  },
+  {
+   "id": "crayon-mid",
+   "frame": 17,
+   "db": -5,
+   "pitch": 2,
+   "note": "the house walls and roof"
+  },
+  {
+   "id": "tap-soft",
+   "frame": 22,
+   "db": -9,
+   "note": "the path is dabbed on, dot by dot"
+  },
+  {
+   "id": "glock-ding",
+   "frame": 23,
+   "db": -7,
+   "pitch": 7,
+   "note": "the moon fills with light"
+  },
+  {
+   "id": "crayon-short",
+   "frame": 27,
+   "db": -6,
+   "note": "the chimney"
+  },
+  {
+   "id": "tap-soft",
+   "frame": 30,
+   "db": -10
+  },
+  {
+   "id": "crayon-short",
+   "frame": 34,
+   "db": -7,
+   "pitch": 3,
+   "note": "the door and the smoke"
+  },
+  {
+   "id": "tap-soft",
+   "frame": 38,
+   "db": -10
+  },
+  {
+   "id": "vibe-ring",
+   "frame": 40,
+   "db": -4,
+   "note": "the window lights up"
+  },
+  {
+   "id": "magic-dust-short",
+   "frame": 41,
+   "db": -11
+  },
+  {
+   "id": "tap-soft",
+   "frame": 45,
+   "db": -11
+  },
+  {
+   "id": "triangle",
+   "frame": 50,
+   "db": -12,
+   "note": "the big star fills"
+  },
+  {
+   "id": "glock-ding",
+   "frame": 55,
+   "db": -9,
+   "pitch": 9,
+   "note": "the small star fills"
+  },
+  {
+   "id": "pizz-step",
+   "frame": 57,
+   "db": -3,
+   "note": "Iris hops: landing 1"
+  },
+  {
+   "id": "pizz-step",
+   "frame": 71,
+   "db": -3,
+   "pitch": 2,
+   "note": "landing 2"
+  },
+  {
+   "id": "door-creak",
+   "frame": 81,
+   "db": -6,
+   "note": "the door creaks open"
+  },
+  {
+   "id": "chimes-rise",
+   "frame": 83,
+   "db": -3,
+   "note": "warm light pours out of the door"
+  },
+  {
+   "id": "pizz-step",
+   "frame": 84,
+   "db": -3,
+   "pitch": 4,
+   "note": "landing 3"
+  },
+  {
+   "id": "magic-dust",
+   "frame": 86,
+   "db": -9,
+   "note": "sparks from the doorway"
+  },
+  {
+   "id": "pizz-step",
+   "frame": 98,
+   "db": -4,
+   "pitch": 5,
+   "note": "landing 4, at the door"
+  },
+  {
+   "id": "whoosh-air",
+   "frame": 106,
+   "db": -7,
+   "note": "through the door, to Iris's face"
+  },
+  {
+   "id": "crayon-scribble",
+   "frame": 159,
+   "db": -4,
+   "note": "the children playing in a ring are drawn"
+  },
+  {
+   "id": "crayon-mid",
+   "frame": 169,
+   "db": -6,
+   "pitch": 2
+  },
+  {
+   "id": "crayon-short",
+   "frame": 174,
+   "db": -7,
+   "note": "their smiles"
+  },
+  {
+   "id": "crayon-mid",
+   "frame": 180,
+   "db": -5,
+   "pitch": -2,
+   "note": "one child apart, head down"
+  },
+  {
+   "id": "pop-up",
+   "frame": 183,
+   "db": -7,
+   "pitch": 5,
+   "note": "their ball fills in gold"
+  },
+  {
+   "id": "harp-pluck",
+   "frame": 189,
+   "db": -11,
+   "pitch": -5,
+   "note": "a single low note for the child alone"
+  },
+  {
+   "id": "crayon-circle",
+   "frame": 194,
+   "db": -5,
+   "note": "a little rain cloud"
+  },
+  {
+   "id": "drop",
+   "frame": 206,
+   "db": -8,
+   "note": "rain drops"
+  },
+  {
+   "id": "drop",
+   "frame": 213,
+   "db": -9,
+   "pitch": -2
+  },
+  {
+   "id": "drop",
+   "frame": 221,
+   "db": -9,
+   "pitch": 3
+  },
+  {
+   "id": "drop",
+   "frame": 227,
+   "db": -10,
+   "pitch": -1
+  },
+  {
+   "id": "whoosh-flick",
+   "frame": 231,
+   "db": -8,
+   "note": "the doodles fly into a knot"
+  },
+  {
+   "id": "crayon-tangle",
+   "frame": 233,
+   "db": -2,
+   "note": "the tangle over her head"
+  },
+  {
+   "id": "glock-ding",
+   "frame": 258,
+   "db": -11,
+   "pitch": -5,
+   "note": "the picture warms"
+  },
+  {
+   "id": "glock-drift",
+   "frame": 294,
+   "db": -4,
+   "note": "the tangle unwinds into a gold thread"
+  },
+  {
+   "id": "crayon-long",
+   "frame": 296,
+   "db": -10,
+   "pitch": 4
+  },
+  {
+   "id": "pluck-question",
+   "frame": 356,
+   "db": -3,
+   "note": "question 1 pops up"
+  },
+  {
+   "id": "pluck-question",
+   "frame": 365,
+   "db": -3,
+   "pitch": 2,
+   "note": "question 2"
+  },
+  {
+   "id": "pluck-question",
+   "frame": 377,
+   "db": -3,
+   "pitch": 4,
+   "note": "question 3"
+  },
+  {
+   "id": "glock-fall",
+   "frame": 390,
+   "db": -12
+  },
+  {
+   "id": "whoosh-puff",
+   "frame": 391,
+   "db": -7,
+   "note": "the questions blow away"
+  },
+  {
+   "id": "whoosh-deep",
+   "frame": 400,
+   "db": -9,
+   "note": "night falls; the book rises"
+  },
+  {
+   "id": "magic-dust",
+   "frame": 424,
+   "db": -4,
+   "note": "sparkles burst from its pages"
+  },
+  {
+   "id": "belltree",
+   "frame": 426,
+   "db": -1,
+   "note": "the book opens into light"
+  },
+  {
+   "id": "nepal-bells",
+   "frame": 435,
+   "db": -7,
+   "note": "the second burst"
+  },
+  {
+   "id": "whoosh-air",
+   "frame": 460,
+   "db": -8,
+   "pitch": -3,
+   "note": "the open book comes forward"
+  },
+  {
+   "id": "glock-ding",
+   "frame": 464,
+   "db": -5,
+   "note": "the Tale Forge mark appears on the page"
+  },
+  {
+   "id": "chimes-twinkle",
+   "frame": 465,
+   "db": -11
+  },
+  {
+   "id": "crayon-scribble",
+   "frame": 498,
+   "db": -6,
+   "pitch": 2,
+   "note": "today's moment is drawn on the page"
+  },
+  {
+   "id": "crayon-short",
+   "frame": 509,
+   "db": -8
+  },
+  {
+   "id": "crayon-short",
+   "frame": 516,
+   "db": -8,
+   "pitch": 3,
+   "note": "the child apart"
+  },
+  {
+   "id": "pop-up",
+   "frame": 520,
+   "db": -8,
+   "pitch": 7,
+   "note": "the ball fills"
+  },
+  {
+   "id": "stamp",
+   "frame": 523,
+   "db": -2,
+   "note": "stamped TODAY"
+  },
+  {
+   "id": "crayon-mid",
+   "frame": 558,
+   "db": -9,
+   "pitch": 5,
+   "note": "Iris is drawn in gold line"
+  },
+  {
+   "id": "page-turn",
+   "frame": 559,
+   "db": 0,
+   "note": "the page turns"
+  },
+  {
+   "id": "magic-dust-short",
+   "frame": 567,
+   "db": -9
+  },
+  {
+   "id": "bubbles",
+   "frame": 576,
+   "db": -3,
+   "note": "she is painted in watercolour"
+  },
+  {
+   "id": "chimes-twinkle",
+   "frame": 579,
+   "db": -8,
+   "note": "sparkles off the paint"
+  },
+  {
+   "id": "bubbles-2",
+   "frame": 591,
+   "db": -5,
+   "note": "the painting blooms across the spread"
+  },
+  {
+   "id": "whoosh-deep",
+   "frame": 618,
+   "db": -4,
+   "note": "we fall into the picture"
+  },
+  {
+   "id": "pop-up",
+   "frame": 657,
+   "db": -9,
+   "pitch": 4,
+   "note": "Iris, the hero: her label"
+  },
+  {
+   "id": "chimes-twinkle",
+   "frame": 682,
+   "db": -4,
+   "note": "your child is the hero"
+  },
+  {
+   "id": "bubbles-2",
+   "frame": 718,
+   "db": -6,
+   "note": "the next page blooms out of Iris"
+  },
+  {
+   "id": "pizz-step",
+   "frame": 736,
+   "db": -8,
+   "pitch": 12,
+   "note": "Mossa, the mouse, appears"
+  },
+  {
+   "id": "pop-up",
+   "frame": 772,
+   "db": -9,
+   "pitch": 7,
+   "note": "Mossa's label"
+  },
+  {
+   "id": "tap-soft",
+   "frame": 825,
+   "db": -6,
+   "note": "Listen: hear the narrator"
+  },
+  {
+   "id": "glock-ding",
+   "frame": 826,
+   "db": -11,
+   "pitch": 4
+  },
+  {
+   "id": "whoosh-air",
+   "frame": 838,
+   "db": -6,
+   "pitch": 2,
+   "note": "the page becomes the reader"
+  },
+  {
+   "id": "crayon-mid",
+   "frame": 848,
+   "db": -7,
+   "note": "the line is highlighted as it is read"
+  },
+  {
+   "id": "triangle",
+   "frame": 870,
+   "db": -6,
+   "note": "look closer: the lens"
+  },
+  {
+   "id": "pop-up",
+   "frame": 904,
+   "db": -6,
+   "note": "choice A"
+  },
+  {
+   "id": "pop-up",
+   "frame": 908,
+   "db": -6,
+   "pitch": 3,
+   "note": "choice B"
+  },
+  {
+   "id": "tap-soft",
+   "frame": 979,
+   "db": -3,
+   "note": "the child's touch on B"
+  },
+  {
+   "id": "harp-pluck",
+   "frame": 984,
+   "db": -4,
+   "pitch": 4,
+   "note": "the choice is taken"
+  },
+  {
+   "id": "glock-sparkle",
+   "frame": 998,
+   "db": -4,
+   "note": "the gold star bursts"
+  },
+  {
+   "id": "magic-dust-short",
+   "frame": 999,
+   "db": -8
+  },
+  {
+   "id": "whoosh-flick",
+   "frame": 1032,
+   "db": -6,
+   "note": "the star flies to the map"
+  },
+  {
+   "id": "glock-ding",
+   "frame": 1041,
+   "db": -6,
+   "pitch": 4,
+   "note": "it lands on choice 1"
+  },
+  {
+   "id": "crayon-long",
+   "frame": 1059,
+   "db": -7,
+   "note": "the gold path builds to the ending"
+  },
+  {
+   "id": "chimes-rise",
+   "frame": 1104,
+   "db": -4,
+   "note": "the ending lights up"
+  },
+  {
+   "id": "bubbles",
+   "frame": 1138,
+   "db": -5,
+   "note": "the found ending blooms out of the branch"
+  },
+  {
+   "id": "chimes-twinkle",
+   "frame": 1140,
+   "db": -9
+  },
+  {
+   "id": "whoosh-air",
+   "frame": 1170,
+   "db": -9,
+   "note": "the before card arrives"
+  },
+  {
+   "id": "page-turn-2",
+   "frame": 1230,
+   "db": -3,
+   "note": "the card turns: after"
+  },
+  {
+   "id": "glock-ding",
+   "frame": 1232,
+   "db": -8,
+   "pitch": 7
+  },
+  {
+   "id": "whoosh-flick",
+   "frame": 1252,
+   "db": -5,
+   "pitch": -2,
+   "note": "the picture returns to its page"
+  },
+  {
+   "id": "book-close",
+   "frame": 1276,
+   "db": -2,
+   "note": "the book closes"
+  },
+  {
+   "id": "book-land",
+   "frame": 1295,
+   "db": -11,
+   "note": "it stands on the shelf"
+  },
+  {
+   "id": "triangle",
+   "frame": 1308,
+   "db": -7,
+   "note": "the ending's medal"
+  },
+  {
+   "id": "chimes-rise",
+   "frame": 1330,
+   "db": -5,
+   "note": "the ending opens"
+  },
+  {
+   "id": "vibe-ring",
+   "frame": 1362,
+   "db": -8,
+   "note": "the medallion opens into the picture"
+  },
+  {
+   "id": "whoosh-air",
+   "frame": 1372,
+   "db": -10,
+   "pitch": -3
+  },
+  {
+   "id": "crayon-circle",
+   "frame": 1392,
+   "db": -4,
+   "note": "our friend is ringed in gold crayon"
+  },
+  {
+   "id": "triangle",
+   "frame": 1410,
+   "db": -9,
+   "note": "a star"
+  },
+  {
+   "id": "glock-ding",
+   "frame": 1414,
+   "db": -12,
+   "pitch": 7,
+   "note": "a second star"
+  },
+  {
+   "id": "pop-up",
+   "frame": 1417,
+   "db": -3,
+   "note": "Iris's bubble"
+  },
+  {
+   "id": "harp-pluck",
+   "frame": 1418,
+   "db": -8
+  },
+  {
+   "id": "pop-up",
+   "frame": 1445,
+   "db": -3,
+   "pitch": 2,
+   "note": "Amina's bubble"
+  },
+  {
+   "id": "harp-pluck",
+   "frame": 1446,
+   "db": -8,
+   "pitch": 4
+  },
+  {
+   "id": "pop-up",
+   "frame": 1466,
+   "db": -3,
+   "pitch": 4,
+   "note": "Iris again"
+  },
+  {
+   "id": "harp-pluck",
+   "frame": 1467,
+   "db": -8,
+   "pitch": 7
+  },
+  {
+   "id": "pop-up",
+   "frame": 1484,
+   "db": -3,
+   "pitch": 5,
+   "note": "Amina again"
+  },
+  {
+   "id": "harp-pluck",
+   "frame": 1485,
+   "db": -8,
+   "pitch": 9
+  },
+  {
+   "id": "magic-dust",
+   "frame": 1498,
+   "db": -7,
+   "note": "the bubbles rise and become stars"
+  },
+  {
+   "id": "glock-rise",
+   "frame": 1518,
+   "db": -5
+  },
+  {
+   "id": "chimes-slow",
+   "frame": 1542,
+   "db": -5,
+   "note": "into the sky of adventures"
+  },
+  {
+   "id": "whoosh-flick",
+   "frame": 1574,
+   "db": -10,
+   "note": "the adventures fly in"
+  },
+  {
+   "id": "glock-ding",
+   "frame": 1575,
+   "db": -7,
+   "note": "adventure 1"
+  },
+  {
+   "id": "glock-ding",
+   "frame": 1582,
+   "db": -7,
+   "pitch": 4,
+   "note": "adventure 2"
+  },
+  {
+   "id": "glock-ding",
+   "frame": 1588,
+   "db": -7,
+   "pitch": 7,
+   "note": "adventure 3"
+  },
+  {
+   "id": "glock-ding",
+   "frame": 1595,
+   "db": -7,
+   "pitch": 12,
+   "note": "adventure 4"
+  },
+  {
+   "id": "belltree-2",
+   "frame": 1617,
+   "db": -5,
+   "note": "one story tonight: the book glows"
+  },
+  {
+   "id": "magic-dust",
+   "frame": 1680,
+   "db": -4,
+   "note": "the world blooms out of the book"
+  },
+  {
+   "id": "whoosh-deep",
+   "frame": 1686,
+   "db": -8
+  },
+  {
+   "id": "chimes-rise",
+   "frame": 1698,
+   "db": -6
+  },
+  {
+   "id": "tap-soft",
+   "frame": 1754,
+   "db": -3,
+   "note": "the Natt / Morgon switch appears"
+  },
+  {
+   "id": "tap-soft",
+   "frame": 1770,
+   "db": -9,
+   "note": "the switch flips to Morgon"
+  },
+  {
+   "id": "pop-up",
+   "frame": 1771,
+   "db": -10,
+   "pitch": 7
+  },
+  {
+   "id": "chimes-rise",
+   "frame": 1773,
+   "db": -4,
+   "note": "dawn"
+  },
+  {
+   "id": "morning-birds",
+   "frame": 1776,
+   "db": -12,
+   "note": "morning birds",
+   "auto_level": false
+  },
+  {
+   "id": "timp-soft",
+   "frame": 1822,
+   "db": -9,
+   "note": "the logo arrives"
+  },
+  {
+   "id": "belltree",
+   "frame": 1828,
+   "db": -4
+  },
+  {
+   "id": "magic-dust-short",
+   "frame": 1858,
+   "db": -7,
+   "note": "Adventures worth talking about."
+  },
+  {
+   "id": "nepal-bells-2",
+   "frame": 1920,
+   "db": -11,
+   "note": "A world they belong to."
+  },
+  {
+   "id": "chimes-twinkle",
+   "frame": 1977,
+   "db": -7,
+   "note": "A story you share."
+  },
+  {
+   "id": "glock-ding",
+   "frame": 2008,
+   "db": -9,
+   "pitch": 7,
+   "note": "the address"
+  },
+  {
+   "id": "magic-dust",
+   "frame": 2034,
+   "db": -10,
+   "note": "a last sparkle on the final chord"
+  }
+ ]
+}

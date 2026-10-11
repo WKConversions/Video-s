@@ -139,7 +139,7 @@ def main():
         start = c["frame"] / fps - sync
         # make it heard, not just felt: lift it (up to 4 dB) until it clears the bed under it by 3 dB, but
         # never closer than 4 dB to the voice it lands on
-        if cue.get("auto_level", True):
+        if cue.get("auto_level", True) and c.get("auto_level", True):   # a bed (ambience) keeps its written level
             solo = np.zeros((int(0.6 * SR), 2)); place(solo, x, -sync + 0.1)
             e, m, v = momentary(solo, 0.1), bed(mu_bus, start + sync), momentary(vo_bus, start + sync)
             up = min(4.0, max(0.0, m + 3.3 - e))

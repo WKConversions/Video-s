@@ -1,0 +1,452 @@
+[
+ {
+  "id": "glock-rise",
+  "file": "sfx/appear-rise/glock-rise.wav",
+  "category": "appear-rise",
+  "character": "a glockenspiel runs up a pentatonic scale; lands on its top note",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.66,
+  "length": 3.2
+ },
+ {
+  "id": "glock-rise-2",
+  "file": "sfx/appear-rise/glock-rise-2.wav",
+  "category": "appear-rise",
+  "character": "a second take of the pentatonic run up",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.59,
+  "length": 3.2
+ },
+ {
+  "id": "glock-fall",
+  "file": "sfx/dismiss-fall/glock-fall.wav",
+  "category": "dismiss-fall",
+  "character": "a glockenspiel tumbles down a pentatonic scale",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.0815,
+  "length": 3.0
+ },
+ {
+  "id": "glock-sparkle",
+  "file": "sfx/appear-rise/glock-sparkle.wav",
+  "category": "appear-rise",
+  "character": "a fast chromatic glockenspiel sparkle upwards",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.29,
+  "length": 2.6
+ },
+ {
+  "id": "glock-drift",
+  "file": "sfx/appear-rise/glock-drift.wav",
+  "category": "appear-rise",
+  "character": "a slow glockenspiel climb, like a thread being drawn",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.0741,
+  "length": 4.0
+ },
+ {
+  "id": "chimes-rise",
+  "file": "sfx/chime/chimes-rise.wav",
+  "category": "chime",
+  "character": "wind chimes brushed upwards",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.3285,
+  "length": 3.4
+ },
+ {
+  "id": "chimes-slow",
+  "file": "sfx/chime/chimes-slow.wav",
+  "category": "chime",
+  "character": "wind chimes brushed slowly, a shimmer that keeps going",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.0719,
+  "length": 4.2
+ },
+ {
+  "id": "chimes-fall",
+  "file": "sfx/chime/chimes-fall.wav",
+  "category": "chime",
+  "character": "wind chimes brushed downwards",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.2102,
+  "length": 3.4
+ },
+ {
+  "id": "chimes-twinkle",
+  "file": "sfx/chime/chimes-twinkle.wav",
+  "category": "chime",
+  "character": "a few wind chimes touched at random",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.0073,
+  "length": 3.0
+ },
+ {
+  "id": "belltree",
+  "file": "sfx/chime/belltree.wav",
+  "category": "chime",
+  "character": "a bell tree stroke: the classic magic shimmer",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.7282,
+  "length": 3.4
+ },
+ {
+  "id": "belltree-2",
+  "file": "sfx/chime/belltree-2.wav",
+  "category": "chime",
+  "character": "a longer bell-tree stroke",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.1869,
+  "length": 3.6
+ },
+ {
+  "id": "nepal-bells",
+  "file": "sfx/chime/nepal-bells.wav",
+  "category": "chime",
+  "character": "little Nepalese bells shaken once",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.0,
+  "length": 2.0
+ },
+ {
+  "id": "nepal-bells-2",
+  "file": "sfx/chime/nepal-bells-2.wav",
+  "category": "chime",
+  "character": "little Nepalese bells, another shake",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.0,
+  "length": 2.0
+ },
+ {
+  "id": "triangle",
+  "file": "sfx/chime/triangle.wav",
+  "category": "chime",
+  "character": "a soft triangle ting",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.0,
+  "length": 2.6
+ },
+ {
+  "id": "vibe-ring",
+  "file": "sfx/chime/vibe-ring.wav",
+  "category": "chime",
+  "character": "a vibraphone bar left to ring, warm and round",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.0381,
+  "length": 1.6
+ },
+ {
+  "id": "bubbles",
+  "file": "sfx/swipe/bubbles.wav",
+  "category": "swipe",
+  "character": "water bubbling: wet watercolour paint",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.0,
+  "length": 2.6
+ },
+ {
+  "id": "bubbles-2",
+  "file": "sfx/swipe/bubbles-2.wav",
+  "category": "swipe",
+  "character": "a shorter bubble, paint spreading in water",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.0586,
+  "length": 2.0
+ },
+ {
+  "id": "timp-soft",
+  "file": "sfx/impact/timp-soft.wav",
+  "category": "impact",
+  "character": "a soft timpani tap",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.0,
+  "length": 2.4
+ },
+ {
+  "id": "cymbal-swell",
+  "file": "sfx/riser/cymbal-swell.wav",
+  "category": "riser",
+  "character": "a suspended cymbal rolled up to a peak, then let go",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 1.432,
+  "length": 3.007
+ },
+ {
+  "id": "pizz-step",
+  "file": "sfx/tap/pizz-step.wav",
+  "category": "tap",
+  "character": "a violin pizzicato, D5: a puppet's hop (pitch steps it up the scale)",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.004,
+  "length": 0.674
+ },
+ {
+  "id": "pizz-low",
+  "file": "sfx/tap/pizz-low.wav",
+  "category": "tap",
+  "character": "a lower pizzicato, D4",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.004,
+  "length": 0.749
+ },
+ {
+  "id": "harp-pluck",
+  "file": "sfx/pop/harp-pluck.wav",
+  "category": "pop",
+  "character": "a harp string, D5, let ring",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.004,
+  "length": 2.674
+ },
+ {
+  "id": "glock-ding",
+  "file": "sfx/chime/glock-ding.wav",
+  "category": "chime",
+  "character": "one glockenspiel bar, D6",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.004,
+  "length": 2.317
+ },
+ {
+  "id": "harp-gliss-up",
+  "file": "sfx/riser/harp-gliss-up.wav",
+  "category": "riser",
+  "character": "a harp glissando up the D major scale; lands on its top string",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.75,
+  "length": 3.35
+ },
+ {
+  "id": "harp-gliss-down",
+  "file": "sfx/dismiss-fall/harp-gliss-down.wav",
+  "category": "dismiss-fall",
+  "character": "a harp glissando down the scale",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.004,
+  "length": 3.35
+ },
+ {
+  "id": "pluck-question",
+  "file": "sfx/pop/pluck-question.wav",
+  "category": "pop",
+  "character": "a pizzicato that bends up a fifth: a little question",
+  "licence": "cc0 (VSCO 2 Community Edition, public domain)",
+  "sync": 0.004,
+  "length": 0.6
+ },
+ {
+  "id": "crayon-short",
+  "file": "sfx/swipe/crayon-short.wav",
+  "category": "swipe",
+  "character": "one short crayon stroke on paper",
+  "licence": "generated",
+  "sync": 0.012,
+  "length": 0.28
+ },
+ {
+  "id": "crayon-mid",
+  "file": "sfx/swipe/crayon-mid.wav",
+  "category": "swipe",
+  "character": "a crayon line drawn at a child's pace",
+  "licence": "generated",
+  "sync": 0.012,
+  "length": 0.55
+ },
+ {
+  "id": "crayon-long",
+  "file": "sfx/swipe/crayon-long.wav",
+  "category": "swipe",
+  "character": "a long crayon line, drawn and re-drawn",
+  "licence": "generated",
+  "sync": 0.012,
+  "length": 1.0
+ },
+ {
+  "id": "crayon-scribble",
+  "file": "sfx/swipe/crayon-scribble.wav",
+  "category": "swipe",
+  "character": "fast back-and-forth crayon scribbling",
+  "licence": "generated",
+  "sync": 0.012,
+  "length": 0.75
+ },
+ {
+  "id": "crayon-circle",
+  "file": "sfx/swipe/crayon-circle.wav",
+  "category": "swipe",
+  "character": "a crayon drawing a circle in one go",
+  "licence": "generated",
+  "sync": 0.012,
+  "length": 0.55
+ },
+ {
+  "id": "crayon-tangle",
+  "file": "sfx/swipe/crayon-tangle.wav",
+  "category": "swipe",
+  "character": "a frantic crayon tangle",
+  "licence": "generated",
+  "sync": 0.012,
+  "length": 0.67
+ },
+ {
+  "id": "whoosh-air",
+  "file": "sfx/whoosh/whoosh-air.wav",
+  "category": "whoosh",
+  "character": "a soft air whoosh passing left to right",
+  "licence": "generated",
+  "sync": 0.3985,
+  "length": 0.7
+ },
+ {
+  "id": "whoosh-deep",
+  "file": "sfx/whoosh/whoosh-deep.wav",
+  "category": "whoosh",
+  "character": "a deeper, slower whoosh: falling into a picture",
+  "licence": "generated",
+  "sync": 0.5872,
+  "length": 1.1
+ },
+ {
+  "id": "whoosh-flick",
+  "file": "sfx/whoosh/whoosh-flick.wav",
+  "category": "whoosh",
+  "character": "a quick light flick of air",
+  "licence": "generated",
+  "sync": 0.2707,
+  "length": 0.45
+ },
+ {
+  "id": "whoosh-puff",
+  "file": "sfx/whoosh/whoosh-puff.wav",
+  "category": "whoosh",
+  "character": "a puff of wind that blows things away",
+  "licence": "generated",
+  "sync": 0.414,
+  "length": 0.9
+ },
+ {
+  "id": "page-turn",
+  "file": "sfx/swipe/page-turn.wav",
+  "category": "swipe",
+  "character": "a storybook page turning, a flutter and a soft landing",
+  "licence": "generated",
+  "sync": 0.32,
+  "length": 0.75
+ },
+ {
+  "id": "page-turn-2",
+  "file": "sfx/swipe/page-turn-2.wav",
+  "category": "swipe",
+  "character": "another page turning",
+  "licence": "generated",
+  "sync": 0.32,
+  "length": 0.75
+ },
+ {
+  "id": "book-close",
+  "file": "sfx/impact/book-close.wav",
+  "category": "impact",
+  "character": "a storybook closing: a papery soft thump",
+  "licence": "generated",
+  "sync": 0.004,
+  "length": 0.35
+ },
+ {
+  "id": "stamp",
+  "file": "sfx/impact/stamp.wav",
+  "category": "impact",
+  "character": "a rubber stamp pressed on paper",
+  "licence": "generated",
+  "sync": 0.004,
+  "length": 0.22
+ },
+ {
+  "id": "book-land",
+  "file": "sfx/impact/book-land.wav",
+  "category": "impact",
+  "character": "the book settling, felt more than heard",
+  "licence": "generated",
+  "sync": 0.004,
+  "length": 0.6
+ },
+ {
+  "id": "pop-up",
+  "file": "sfx/pop/pop-up.wav",
+  "category": "pop",
+  "character": "a round bubble pop that rises: blip",
+  "licence": "generated",
+  "sync": 0.003,
+  "length": 0.12
+ },
+ {
+  "id": "pop-down",
+  "file": "sfx/pop/pop-down.wav",
+  "category": "pop",
+  "character": "a cork-like pop that falls",
+  "licence": "generated",
+  "sync": 0.003,
+  "length": 0.12
+ },
+ {
+  "id": "drop",
+  "file": "sfx/pop/drop.wav",
+  "category": "pop",
+  "character": "a raindrop: a bright little plip",
+  "licence": "generated",
+  "sync": 0.002,
+  "length": 0.11
+ },
+ {
+  "id": "door-creak",
+  "file": "sfx/swipe/door-creak.wav",
+  "category": "swipe",
+  "character": "a small wooden door creaking open, with its latch",
+  "licence": "generated",
+  "sync": 0.02,
+  "length": 0.67
+ },
+ {
+  "id": "magic-dust",
+  "file": "sfx/chime/magic-dust.wav",
+  "category": "chime",
+  "character": "a cloud of tiny high bells: fairy dust",
+  "licence": "generated",
+  "sync": 0.004,
+  "length": 1.9
+ },
+ {
+  "id": "magic-dust-short",
+  "file": "sfx/chime/magic-dust-short.wav",
+  "category": "chime",
+  "character": "a pinch of fairy dust",
+  "licence": "generated",
+  "sync": 0.004,
+  "length": 1.0
+ },
+ {
+  "id": "tap-soft",
+  "file": "sfx/tap/tap-soft.wav",
+  "category": "tap",
+  "character": "a soft wooden tap on a page",
+  "licence": "generated",
+  "sync": 0.002,
+  "length": 0.06
+ },
+ {
+  "id": "night-crickets",
+  "file": "sfx/ambience/night-crickets.wav",
+  "category": "ambience",
+  "character": "a quiet night: three crickets and soft air",
+  "licence": "generated",
+  "sync": 0.0,
+  "length": 15.0
+ },
+ {
+  "id": "morning-birds",
+  "file": "sfx/ambience/morning-birds.wav",
+  "category": "ambience",
+  "character": "morning: small birds answering each other",
+  "licence": "generated",
+  "sync": 0.15,
+  "length": 8.0
+ }
+]
