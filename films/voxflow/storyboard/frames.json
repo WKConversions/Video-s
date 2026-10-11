@@ -1,0 +1,325 @@
+{
+ "title": "VoxFlow Storyboard",
+ "eyebrow": "WKConversions · VoxFlow · 1080p, music and sound",
+ "headline": "Mis geen enkel <em>telefoontje</em> meer.",
+ "subtitle": "The VoxFlow explainer rebuilt at 1920×1080 from the approved storyboard, with royalty-free music and 63 sound effects, at the 4% motion norm, and without decorative movement: nothing drifts, nothing with text on it slides across the frame. Everything moves for a reason: calls ring and pile up, the receptionist answers, the caller asks, the agenda fills, the practice keeps working.",
+ "film": "film.mp4",
+ "poster": "frames/f0945.jpg",
+ "music_credit": "Music: “The Great Wall” by Michael Ramir C., Mixkit (Mixkit Stock Music Free License: commercial use, no credit required), fitted to the film: its entry lands on “Met VoxFlow”, its final chord on the end card.",
+ "footage_credit": "Footage: Mixkit 12146 (dentist), 49933 and 49920 (the caller), Mixkit Stock Video Free License (commercial use, no credit required). Photo: voxflow.nl.",
+ "direction": {
+  "Purpose": "A website and social explainer for VoxFlow, the AI receptionist for Dutch small businesses: every call answered, questions handled, appointments booked, while you keep working.",
+  "Format": "16:9, 1920×1080, 30 fps, 32.0 s. Dutch voice-over (ElevenLabs, Vincent), force-aligned word by word; music and effects mixed to −15 LUFS.",
+  "Look": "voxflow.nl's own: warm cream, deep teal #0F6E6A, white cards with soft wide shadows, Inter 800 headlines with the key word in teal, Geist for the interface, the site's receptionist portrait, wordmark and photography; free-licensed footage of a practice and a caller.",
+  "Motion": "No drifting layers. Things appear where they live, on their word; colour fields grow out of objects; the two scene changes that travel are whips that move both scenes on one curve. The camera never sways: one push per shot on what the line is about (at most about 5%/s), let go only while the whole frame changes. Median frame motion 4.1% on the draft.",
+  "Thread": "One call: it rings in a busy practice and is missed, the missed calls pile up, VoxFlow flips them to answered, the receptionist takes them, the caller asks for tomorrow, the appointment lands in the agenda, and an appointment finally becomes “Start gratis”.",
+  "Sound": "Generated phone sounds (a soft ring, a missed call, a pick-up, a notification) and the WKConversions effects library, one sound per event and never on a key word; the bed ducks under the voice and dips 4 dB under the call to action."
+ },
+ "beats": [
+  {
+   "id": "01",
+   "time": "0.0–2.7 s",
+   "title": "Hook",
+   "caption": "Mis geen enkel telefoontje meer.",
+   "key": [
+    "telefoontje"
+   ],
+   "idea": "A call rings in a dentist's practice (both hands busy) and turns to “Gemiste oproep” on “enkel”; the missed calls keep coming in at the top of the list and push the older ones down as the day goes by.",
+   "frames": [
+    {
+     "frame": 20,
+     "shows": "The call rings in the practice.",
+     "moves": "Rings pulse; the camera pulls back from the practice."
+    },
+    {
+     "frame": 45,
+     "shows": "Missed.",
+     "moves": "The card rolls to Gemiste oproep 09:12."
+    },
+    {
+     "frame": 75,
+     "shows": "The missed calls pile up.",
+     "moves": "New calls enter at the top and push the list down."
+    }
+   ]
+  },
+  {
+   "id": "02",
+   "time": "2.7–5.9 s",
+   "title": "The turn",
+   "caption": "Met VoxFlow staat er altijd iemand klaar voor je klanten.",
+   "key": [
+    "VoxFlow",
+    "altijd"
+   ],
+   "idea": "The words leave; the wordmark draws in on “VoxFlow”; the same missed calls flip edge-on to “Opgenomen door VoxFlow”; the practice window becomes the site's pale-teal portrait and the receptionist rises out of it on “iemand”; the calls fold into one, “In gesprek met je klant”.",
+   "frames": [
+    {
+     "frame": 100,
+     "shows": "VoxFlow; the calls flip to answered.",
+     "moves": "Wordmark draws; cards flip edge-on."
+    },
+    {
+     "frame": 140,
+     "shows": "The receptionist rises.",
+     "moves": "She rises out of the square; the camera pushes in on her."
+    },
+    {
+     "frame": 165,
+     "shows": "In conversation with your customer.",
+     "moves": "The calls fold into one; a live waveform."
+    }
+   ]
+  },
+  {
+   "id": "03",
+   "time": "5.9–9.9 s",
+   "title": "The AI receptionist, 24/7",
+   "caption": "Onze slimme AI-receptionist neemt 24/7 de telefoon op,",
+   "key": [
+    "AI-receptionist",
+    "24/7"
+   ],
+   "idea": "The words take the left where the wordmark was; then 24/7, and the hours roll from morning to 03:20 as the frame goes dark; at 03:20 a call comes in and is accepted on “telefoon”, “Opgenomen binnen 3 sec” on “op”.",
+   "frames": [
+    {
+     "frame": 215,
+     "shows": "Onze slimme AI-receptionist.",
+     "moves": "Words build; the underline sweeps."
+    },
+    {
+     "frame": 262,
+     "shows": "24/7, night falls, 03:20.",
+     "moves": "The hours roll; the frame darkens; a call rings."
+    },
+    {
+     "frame": 290,
+     "shows": "Picked up within 3 seconds.",
+     "moves": "Accept pressed; the card rolls; the voice is live."
+    }
+   ]
+  },
+  {
+   "id": "04",
+   "time": "9.9–13.6 s",
+   "title": "Questions answered, appointments booked",
+   "caption": "beantwoordt vragen en plant afspraken automatisch in.",
+   "key": [
+    "vragen",
+    "afspraken",
+    "automatisch"
+   ],
+   "idea": "A white field grows out of the answered call; the caller herself (footage) asks “Hebben jullie morgen nog plek?”; the answer types; the agenda appears (today is Monday); “10:00” lifts out of the answer and lands on tomorrow, Tuesday 10:00, on “automatisch”; a check on “in”.",
+   "frames": [
+    {
+     "frame": 330,
+     "shows": "The caller asks, the receptionist answers.",
+     "moves": "The answer types; the caller talks."
+    },
+    {
+     "frame": 372,
+     "shows": "10:00 lands on Tuesday.",
+     "moves": "The token arcs into the agenda and becomes the appointment."
+    },
+    {
+     "frame": 395,
+     "shows": "Booked.",
+     "moves": "The check; the camera pushes in on the appointment."
+    }
+   ]
+  },
+  {
+   "id": "05",
+   "time": "13.6–16.6 s",
+   "title": "Your phone",
+   "caption": "Zo hoef jij niet constant je telefoon in de gaten te houden",
+   "key": [
+    "telefoon"
+   ],
+   "idea": "A whip to the practice at work, the owner's phone beside it: what VoxFlow handled arrives on the lock screen (Monday 12 October), a call comes in and “VoxFlow neemt op”; on “gaten” the screen dims: no need to look.",
+   "frames": [
+    {
+     "frame": 440,
+     "shows": "Handled calls on the lock screen.",
+     "moves": "Notifications arrive at the top and push down."
+    },
+    {
+     "frame": 470,
+     "shows": "VoxFlow takes the call.",
+     "moves": "The banner rolls; the screen dims."
+    }
+   ]
+  },
+  {
+   "id": "06",
+   "time": "16.6–18.9 s",
+   "title": "Focus",
+   "caption": "en kun je volledig focussen op je bedrijf.",
+   "key": [
+    "focussen"
+   ],
+   "idea": "The phone goes; the practice window opens up; on “focussen” the focus pulls to the practice; “Gesprekken afgehandeld” counts on.",
+   "frames": [
+    {
+     "frame": 520,
+     "shows": "The practice opens up.",
+     "moves": "The phone drops away; the window grows."
+    },
+    {
+     "frame": 560,
+     "shows": "In focus; calls handled.",
+     "moves": "Rack focus; the count climbs."
+    }
+   ]
+  },
+  {
+   "id": "07",
+   "time": "18.9–22.9 s",
+   "title": "Three qualities",
+   "caption": "VoxFlow werkt professioneel, snel en zonder pauzes.",
+   "key": [
+    "professioneel,",
+    "snel",
+    "zonder",
+    "pauzes."
+   ],
+   "idea": "A pale-teal field grows out of the receptionist's face; “VoxFlow werkt” and, on the right, the caller now at ease; one word at a time with its picture: the greeting typed in full, the ring closing on the site's “<3 sec”, the seven days lit and “pauzes” struck through.",
+   "frames": [
+    {
+     "frame": 610,
+     "shows": "Professioneel: the greeting.",
+     "moves": "The greeting types; the caller smiles."
+    },
+    {
+     "frame": 640,
+     "shows": "Snel: <3 sec.",
+     "moves": "The ring closes."
+    },
+    {
+     "frame": 680,
+     "shows": "Zonder pauzes.",
+     "moves": "Seven days light up; pauzes is struck."
+    }
+   ]
+  },
+  {
+   "id": "08",
+   "time": "22.9–25.8 s",
+   "title": "Every customer, at once",
+   "caption": "Geef iedere klant direct de aandacht die ze verdienen",
+   "key": [
+    "iedere",
+    "direct"
+   ],
+   "idea": "Cream grows out of Sunday; five different callers ring at once (the site's “Onbeperkt gelijktijdige gesprekken”); on “direct” all five are answered and in conversation; the middle one opens into the customer's phone (the site's photo): “Afspraakbevestiging verstuurd”.",
+   "frames": [
+    {
+     "frame": 715,
+     "shows": "Five callers ring.",
+     "moves": "They appear in place, ringing."
+    },
+    {
+     "frame": 740,
+     "shows": "All answered, directly.",
+     "moves": "They flip together; five live conversations."
+    },
+    {
+     "frame": 768,
+     "shows": "The confirmation.",
+     "moves": "The middle call opens into the customer's phone."
+    }
+   ]
+  },
+  {
+   "id": "09",
+   "time": "25.8–28.2 s",
+   "title": "More from every call",
+   "caption": "en haal meer uit ieder telefoontje.",
+   "key": [
+    "meer"
+   ],
+   "idea": "A whip to the agenda: this week fills up on “meer”, the page turns to next week on “ieder”, and next week fills too.",
+   "frames": [
+    {
+     "frame": 805,
+     "shows": "This week fills.",
+     "moves": "Appointments drop in."
+    },
+    {
+     "frame": 830,
+     "shows": "Next week fills too.",
+     "moves": "The page turns; more appointments."
+    }
+   ]
+  },
+  {
+   "id": "10",
+   "time": "28.2–32.0 s",
+   "title": "Call to action",
+   "caption": "Start vandaag nog met VoxFlow.",
+   "key": [
+    "VoxFlow."
+   ],
+   "idea": "An appointment lifts out of the agenda and becomes “Start gratis”; the wordmark draws on “VoxFlow”; the site's own line builds word by word; the button is pressed; voxflow.nl. Only one slow push moves.",
+   "frames": [
+    {
+     "frame": 860,
+     "shows": "The appointment becomes the button.",
+     "moves": "It lifts out and morphs; the agenda falls back."
+    },
+    {
+     "frame": 945,
+     "shows": "The end card.",
+     "moves": "One slow push."
+    }
+   ]
+  }
+ ],
+ "revisions": [
+  [
+   "720p draft, no music, no effects.",
+   "1920×1080, music (Mixkit, Free licence) and 63 effects, mixed to −15 LUFS.",
+   "Karl: 1080p, suitable royalty-free music and effects."
+  ],
+  [
+   "Working holds: layers drifting 1–2.6 px a frame, the headline drifting right.",
+   "Nothing drifts; no text slides across the frame; arrivals in place; whips move both scenes on one curve.",
+   "Karl: no useless animations, e.g. text obviously moving left and right."
+  ],
+  [
+   "Median frame motion 2.3%.",
+   "4.1% (draft), from purposeful motion: streams of calls, live voices, footage of the practice and the caller, one camera push per shot.",
+   "Karl's 4% norm."
+  ],
+  [
+   "Physio clip Mixkit 18256.",
+   "Dentist clip Mixkit 12146 (Free licence) for the practice.",
+   "18256 is under Mixkit's Restricted (personal-use) licence: not allowed in business marketing."
+  ],
+  [
+   "Every call from 06 12 34 56 78.",
+   "Every caller a different, masked number.",
+   "Five identical numbers read as one person calling five times, not as every customer."
+  ],
+  [
+   "“Morgen” booked onto today (di highlighted), lock screen “dinsdag 14 oktober”.",
+   "Today is Monday (ma highlighted, maandag 12 oktober); the appointment is tomorrow, Tuesday 10:00.",
+   "The core demo contradicted itself; 14 October 2026 is a Wednesday."
+  ],
+  [
+   "The answer and the greeting were cut off mid-sentence; the agenda covered the answer.",
+   "Both type in full before the next thing comes; the agenda appears in its own space.",
+   "Independent review."
+  ],
+  [
+   "94 effects, a ring still ringing after the call was answered.",
+   "63 effects, one per event, none on a key word; the bed dips 4 dB under the call to action.",
+   "Independent review of the mix."
+  ]
+ ],
+ "open": [
+  "The voice-over is taken from the approved draft's audio (AAC, 124 kbps, mono). If you still have the original ElevenLabs file, send it and the final mix is rebuilt at full quality.",
+  "The lock screen shows VoxFlow notifications on the owner's phone (as in the approved storyboard). voxflow.nl mentions the dashboard summary, not push notifications: please confirm VoxFlow notifies the owner, or the phone shows only the call being taken.",
+  "An original composed alternative to the music is in sound/music/composed-fit.wav if you prefer music with no third-party licence at all."
+ ]
+}

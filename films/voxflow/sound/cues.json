@@ -12,68 +12,53 @@
   "duck_db": 6,
   "fade_in": 0.3,
   "fade_out": 0.8,
+  "dips": [
+   [
+    26.3,
+    30.2,
+    -4
+   ]
+  ],
   "note": "The Great Wall (Michael Ramir C., Mixkit), fitted: entry 2.67, breakdown 12.0\u201315.7, final chord 30.55"
  },
  "sfx": [
   {
-   "id": "gen-ring",
-   "frame": 9,
+   "id": "gen-ring-short",
+   "frame": 4,
    "note": "a call rings in the practice",
-   "db": 2
+   "db": -2
+  },
+  {
+   "id": "gen-ring-short",
+   "frame": 16,
+   "note": "it keeps ringing",
+   "db": -2,
+   "pitch": -1
   },
   {
    "id": "gen-missed",
    "frame": 32,
    "note": "nobody can answer: missed",
-   "db": 2
+   "db": 1
   },
   {
    "id": "gen-pop-soft-1",
-   "frame": 42,
-   "note": "another missed call lands on the pile",
-   "db": -5,
-   "pitch": 0
-  },
-  {
-   "id": "gen-pop-soft-2",
    "frame": 49,
-   "note": "another missed call lands on the pile",
-   "db": -5,
-   "pitch": 1
-  },
-  {
-   "id": "gen-pop-soft-3",
-   "frame": 56,
-   "note": "another missed call lands on the pile",
-   "db": -5,
-   "pitch": 0
-  },
-  {
-   "id": "gen-pop-soft-1",
-   "frame": 64,
-   "note": "another missed call lands on the pile",
-   "db": -5,
-   "pitch": 1
+   "note": "missed calls pile up",
+   "db": -5
   },
   {
    "id": "gen-pop-soft-2",
-   "frame": 71,
-   "note": "another missed call lands on the pile",
-   "db": -5,
-   "pitch": 0
+   "frame": 73,
+   "note": "and more",
+   "db": -7,
+   "pitch": 2
   },
   {
    "id": "gen-whoosh-soft-short",
    "frame": 76,
    "note": "the words leave",
    "db": -6
-  },
-  {
-   "id": "gen-pop-soft-3",
-   "frame": 78,
-   "note": "another missed call lands on the pile",
-   "db": -5,
-   "pitch": 1
   },
   {
    "id": "gen-riser-soft-1s",
@@ -95,37 +80,15 @@
   },
   {
    "id": "gen-tick-soft",
-   "frame": 104,
-   "note": "a missed call flips to answered",
-   "db": -3,
-   "pitch": 0
-  },
-  {
-   "id": "gen-tick-soft-hi",
-   "frame": 107,
-   "note": "a missed call flips to answered",
-   "db": -3,
-   "pitch": 1
-  },
-  {
-   "id": "gen-tick-soft",
-   "frame": 109,
-   "note": "a missed call flips to answered",
-   "db": -3,
-   "pitch": 2
+   "frame": 105,
+   "note": "the missed calls flip to answered",
+   "db": -3
   },
   {
    "id": "gen-success-soft",
    "frame": 109,
    "note": "answered",
    "db": -4
-  },
-  {
-   "id": "gen-tick-soft-hi",
-   "frame": 112,
-   "note": "a missed call flips to answered",
-   "db": -3,
-   "pitch": 3
   },
   {
    "id": "gen-pop-soft-2",
@@ -152,12 +115,6 @@
    "db": -4
   },
   {
-   "id": "gen-whoosh-soft-medium",
-   "frame": 176,
-   "note": "she glides left",
-   "db": -5
-  },
-  {
    "id": "gen-tick-soft-hi",
    "frame": 212,
    "note": "the underline",
@@ -165,16 +122,9 @@
   },
   {
    "id": "gen-impact-soft",
-   "frame": 242,
+   "frame": 239,
    "note": "24/7",
-   "db": -3
-  },
-  {
-   "id": "gen-tick-soft",
-   "frame": 245,
-   "note": "the hours roll",
-   "db": -4,
-   "pitch": 0
+   "db": -6
   },
   {
    "id": "gen-swell-low",
@@ -184,36 +134,21 @@
   },
   {
    "id": "gen-tick-soft",
-   "frame": 249,
+   "frame": 248,
    "note": "the hours roll",
-   "db": -4,
-   "pitch": 1
+   "db": -4
   },
   {
    "id": "gen-tick-soft",
-   "frame": 253,
-   "note": "the hours roll",
+   "frame": 259,
+   "note": "to 03:20",
    "db": -4,
    "pitch": 2
   },
   {
-   "id": "gen-tick-soft",
-   "frame": 256,
-   "note": "the hours roll",
-   "db": -4,
-   "pitch": 3
-  },
-  {
-   "id": "gen-tick-soft",
+   "id": "gen-ring-short",
    "frame": 260,
-   "note": "the hours roll",
-   "db": -4,
-   "pitch": 4
-  },
-  {
-   "id": "gen-ring",
-   "frame": 262,
-   "note": "a call at 03:20",
+   "note": "a call at 03:20, until it is accepted",
    "db": -1
   },
   {
@@ -224,55 +159,49 @@
   },
   {
    "id": "gen-pickup",
-   "frame": 286,
-   "note": "picked up within 3 seconds",
-   "db": -3
+   "frame": 294,
+   "note": "picked up within 3 seconds (after 'op')",
+   "db": -6
   },
   {
    "id": "gen-swell",
    "frame": 298,
    "note": "the white field grows out of the call",
-   "db": -7
+   "db": -11
   },
   {
    "id": "gen-pop-soft-1",
-   "frame": 309,
-   "note": "the caller asks",
-   "db": -4
+   "frame": 301,
+   "note": "the caller appears",
+   "db": -5
   },
   {
    "id": "gen-typing-run",
-   "frame": 324,
-   "note": "the answer types",
-   "db": -2
-  },
-  {
-   "id": "gen-typing-run",
-   "frame": 340,
+   "frame": 321,
    "note": "the answer types",
    "db": -3
   },
   {
-   "id": "gen-whoosh-soft-short",
-   "frame": 349,
-   "note": "the agenda arrives",
-   "db": -5
+   "id": "gen-appear",
+   "frame": 344,
+   "note": "the agenda appears",
+   "db": -2
   },
   {
    "id": "gen-send",
-   "frame": 358,
+   "frame": 357,
    "note": "10:00 lifts out of the answer",
    "db": -3
   },
   {
    "id": "gen-pop-soft-3",
-   "frame": 370,
+   "frame": 371,
    "note": "it lands on Tuesday 10:00",
    "db": -1
   },
   {
    "id": "gen-chime-soft",
-   "frame": 371,
+   "frame": 372,
    "note": "booked",
    "db": -5
   },
@@ -284,30 +213,15 @@
   },
   {
    "id": "gen-whoosh-whip",
-   "frame": 410,
+   "frame": 411,
    "note": "the whip",
    "db": -3
   },
   {
    "id": "gen-note",
-   "frame": 438,
-   "note": "a handled call on the lock screen",
-   "db": -1,
-   "pitch": 0
-  },
-  {
-   "id": "gen-note",
-   "frame": 443,
-   "note": "a handled call on the lock screen",
-   "db": -1,
-   "pitch": 2
-  },
-  {
-   "id": "gen-note",
-   "frame": 449,
-   "note": "a handled call on the lock screen",
-   "db": -1,
-   "pitch": 4
+   "frame": 436,
+   "note": "what VoxFlow handled, on the lock screen",
+   "db": -8
   },
   {
    "id": "gen-ring-short",
@@ -316,36 +230,22 @@
    "db": -1
   },
   {
-   "id": "gen-note",
-   "frame": 454,
-   "note": "a handled call on the lock screen",
-   "db": -1,
-   "pitch": 2
-  },
-  {
-   "id": "gen-note",
-   "frame": 459,
-   "note": "a handled call on the lock screen",
-   "db": -1,
-   "pitch": 5
-  },
-  {
    "id": "gen-pickup",
    "frame": 463,
    "note": "VoxFlow neemt op",
-   "db": 0
+   "db": -3
   },
   {
    "id": "gen-swell-low",
    "frame": 473,
    "note": "the screen dims",
-   "db": -8
+   "db": -10
   },
   {
    "id": "gen-whoosh-soft-short",
    "frame": 507,
    "note": "the phone goes",
-   "db": -6
+   "db": -8
   },
   {
    "id": "gen-swell",
@@ -357,20 +257,13 @@
    "id": "gen-pop-soft-1",
    "frame": 549,
    "note": "calls handled",
-   "db": -3
-  },
-  {
-   "id": "gen-tick-soft-hi",
-   "frame": 559,
-   "note": "2",
-   "db": -7,
-   "pitch": 2
+   "db": -9
   },
   {
    "id": "gen-tick-soft-hi",
    "frame": 569,
-   "note": "3",
-   "db": -3,
+   "note": "the count",
+   "db": -5,
    "pitch": 4
   },
   {
@@ -383,94 +276,51 @@
    "id": "gen-shimmer",
    "frame": 577,
    "note": "the wordmark",
-   "db": -8
-  },
-  {
-   "id": "gen-whoosh-soft-short",
-   "frame": 597,
-   "note": "professioneel drops in",
-   "db": -6
+   "db": -9
   },
   {
    "id": "gen-typing-run",
-   "frame": 611,
+   "frame": 590,
    "note": "the greeting types",
    "db": -4
   },
   {
-   "id": "gen-whoosh-soft-short",
-   "frame": 625,
-   "note": "snel drops through",
-   "db": -10,
+   "id": "gen-pop-soft-2",
+   "frame": 599,
+   "note": "professioneel",
+   "db": -9
+  },
+  {
+   "id": "gen-pop-soft-2",
+   "frame": 628,
+   "note": "snel",
+   "db": -11,
    "pitch": 2
   },
   {
    "id": "gen-tick-soft-hi",
-   "frame": 653,
+   "frame": 651,
    "note": "the ring closes on <3 sec",
-   "db": -2
+   "db": -3
   },
   {
-   "id": "gen-whoosh-soft-short",
-   "frame": 653,
-   "note": "zonder pauzes drops through",
-   "db": -6,
+   "id": "gen-pop-soft-2",
+   "frame": 656,
+   "note": "zonder pauzes",
+   "db": -11,
    "pitch": 4
   },
   {
-   "id": "gen-tick-soft",
+   "id": "gen-data-blips",
    "frame": 660,
-   "note": "a day lights up",
-   "db": -5,
-   "pitch": 0
-  },
-  {
-   "id": "gen-tick-soft",
-   "frame": 662,
-   "note": "a day lights up",
-   "db": -5,
-   "pitch": 1
-  },
-  {
-   "id": "gen-tick-soft",
-   "frame": 665,
-   "note": "a day lights up",
-   "db": -5,
-   "pitch": 2
-  },
-  {
-   "id": "gen-tick-soft",
-   "frame": 667,
-   "note": "a day lights up",
-   "db": -5,
-   "pitch": 3
-  },
-  {
-   "id": "gen-tick-soft",
-   "frame": 669,
-   "note": "a day lights up",
-   "db": -5,
-   "pitch": 4
-  },
-  {
-   "id": "gen-tick-soft",
-   "frame": 671,
-   "note": "a day lights up",
-   "db": -5,
-   "pitch": 5
+   "note": "the seven days light up",
+   "db": -6
   },
   {
    "id": "gen-tap",
    "frame": 672,
    "note": "pauzes struck",
    "db": -2
-  },
-  {
-   "id": "gen-tick-soft",
-   "frame": 673,
-   "note": "a day lights up",
-   "db": -5,
-   "pitch": 6
   },
   {
    "id": "gen-swell-low",
@@ -480,23 +330,23 @@
   },
   {
    "id": "gen-ring-short",
-   "frame": 697,
+   "frame": 695,
    "note": "five calls ring at once",
-   "db": -4,
+   "db": -5,
    "pitch": 0
   },
   {
    "id": "gen-ring-short",
-   "frame": 706,
+   "frame": 704,
    "note": "five calls ring at once",
-   "db": -4,
+   "db": -5,
    "pitch": 2
   },
   {
    "id": "gen-ring-short",
-   "frame": 715,
+   "frame": 713,
    "note": "five calls ring at once",
-   "db": -4,
+   "db": -5,
    "pitch": 4
   },
   {
@@ -515,56 +365,20 @@
    "id": "gen-note",
    "frame": 763,
    "note": "the confirmation",
-   "db": 0,
+   "db": -7,
    "pitch": 3
   },
   {
    "id": "gen-whoosh-whip",
-   "frame": 779,
+   "frame": 782,
    "note": "the whip",
    "db": -3
   },
   {
    "id": "gen-pop-soft-1",
-   "frame": 797,
-   "note": "an appointment drops in",
-   "db": -6,
-   "pitch": 0
-  },
-  {
-   "id": "gen-pop-soft-2",
-   "frame": 800,
-   "note": "an appointment drops in",
-   "db": -6,
-   "pitch": 1
-  },
-  {
-   "id": "gen-pop-soft-3",
-   "frame": 803,
-   "note": "an appointment drops in",
-   "db": -6,
-   "pitch": 2
-  },
-  {
-   "id": "gen-pop-soft-1",
-   "frame": 807,
-   "note": "an appointment drops in",
-   "db": -6,
-   "pitch": 3
-  },
-  {
-   "id": "gen-pop-soft-2",
-   "frame": 810,
-   "note": "an appointment drops in",
-   "db": -6,
-   "pitch": 4
-  },
-  {
-   "id": "gen-pop-soft-3",
-   "frame": 813,
-   "note": "an appointment drops in",
-   "db": -6,
-   "pitch": 5
+   "frame": 798,
+   "note": "this week fills",
+   "db": -5
   },
   {
    "id": "gen-whoosh-soft-short",
@@ -573,39 +387,11 @@
    "db": -6
   },
   {
-   "id": "gen-pop-soft-2",
-   "frame": 829,
+   "id": "gen-pop-soft-3",
+   "frame": 830,
    "note": "next week fills",
-   "db": -7,
+   "db": -6,
    "pitch": 2
-  },
-  {
-   "id": "gen-pop-soft-3",
-   "frame": 832,
-   "note": "next week fills",
-   "db": -7,
-   "pitch": 3
-  },
-  {
-   "id": "gen-pop-soft-1",
-   "frame": 835,
-   "note": "next week fills",
-   "db": -7,
-   "pitch": 4
-  },
-  {
-   "id": "gen-pop-soft-2",
-   "frame": 838,
-   "note": "next week fills",
-   "db": -7,
-   "pitch": 5
-  },
-  {
-   "id": "gen-pop-soft-3",
-   "frame": 841,
-   "note": "next week fills",
-   "db": -7,
-   "pitch": 6
   },
   {
    "id": "gen-whoosh-soft-medium",
@@ -615,7 +401,7 @@
   },
   {
    "id": "gen-impact-logo",
-   "frame": 891,
+   "frame": 884,
    "note": "the wordmark",
    "db": -3
   },

@@ -38,8 +38,8 @@ export const Rings: React.FC<{ t: number; r: number; color?: string; on?: number
   <>
     {[0, 0.5].map((ph) => {
       const p = ((t * 1.25 + ph) % 1 + 1) % 1;
-      return <div key={ph} style={{ position: "absolute", left: "50%", top: "50%", width: r * 2, height: r * 2, borderRadius: "50%", border: `3px solid ${color}`,
-        transform: `translate(-50%, -50%) scale(${1 + p * 1.25})`, opacity: on * (1 - p) * 0.55 }} />;
+      return <div key={ph} style={{ position: "absolute", left: "50%", top: "50%", width: r * 2, height: r * 2, borderRadius: "50%", border: `4px solid ${color}`, background: `${color}22`,
+        transform: `translate(-50%, -50%) scale(${1 + p * 1.9})`, opacity: on * (1 - p) * 0.7 }} />;
     })}
   </>
 );
@@ -51,11 +51,11 @@ const callFace = (s: CallState, t: number, time?: string) => {
     case "missed": return { label: "Gemiste oproep", lc: C.red, right: "time" as const, left: "missed" as const, time };
     case "answered": return { label: "Opgenomen door VoxFlow", lc: C.teal, right: "check" as const, left: "face" as const, time };
     case "talk": return { label: "In gesprek met je klant", lc: C.teal, right: "wave" as const, left: "face" as const, time };
-    case "picked": return { label: "Opgenomen binnen 3 sec", lc: C.teal, right: "check" as const, left: "face" as const, time };
+    case "picked": return { label: "Opgenomen binnen 3 sec", lc: C.teal, right: "wave" as const, left: "face" as const, time };
   }
 };
 /** One face of a call card (the card rolls between faces). */
-const CallFace: React.FC<{ s: CallState; t: number; time?: string; ring?: number; press?: number }> = ({ s, t, time, ring = 1, press = 0 }) => {
+const CallFace: React.FC<{ s: CallState; t: number; time?: string; ring?: number; press?: number; caller?: string }> = ({ s, t, time, ring = 1, press = 0, caller = "06 12 34 56 78" }) => {
   const f = callFace(s, t, time);
   return (
     <div style={{ height: 116, display: "flex", alignItems: "center", gap: 20, padding: "0 26px 0 22px" }}>
@@ -65,10 +65,10 @@ const CallFace: React.FC<{ s: CallState; t: number; time?: string; ring?: number
         {f.left === "face" && <Avatar size={64} />}
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 4, flex: 1, minWidth: 0 }}>
-        <div style={{ fontFamily: F.ui, fontWeight: 600, fontSize: 21, color: f.lc, whiteSpace: "nowrap" }}>{f.label}</div>
-        <div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 31, color: C.ink, letterSpacing: "-0.01em", whiteSpace: "nowrap" }}>06 12 34 56 78</div>
+        <div style={{ fontFamily: F.ui, fontWeight: 600, fontSize: 25, color: f.lc, whiteSpace: "nowrap" }}>{f.label}</div>
+        <div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 31, color: C.ink, letterSpacing: "-0.01em", whiteSpace: "nowrap", fontVariantNumeric: "tabular-nums" }}>{caller}</div>
       </div>
-      {f.right === "time" && <div style={{ fontFamily: F.ui, fontWeight: 500, fontSize: 22, color: C.red, fontVariantNumeric: "tabular-nums" }}>{f.time}</div>}
+      {f.right === "time" && <div style={{ fontFamily: F.ui, fontWeight: 600, fontSize: 25, color: C.red, fontVariantNumeric: "tabular-nums" }}>{f.time}</div>}
       {f.right === "accept" && <div style={{ width: 62, height: 62, borderRadius: "50%", background: C.teal, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${1 - 0.12 * Math.sin(Math.PI * clamp01(press))})`,
         boxShadow: `0 0 0 ${10 * Math.sin(Math.PI * clamp01(press))}px ${mix(C.tealSoft, C.white, 0.2)}` }}><Icon name="phone" size={28} color="#fff" /></div>}
       {f.right === "check" && <div style={{ width: 44, height: 44, borderRadius: "50%", background: C.teal, display: "flex", alignItems: "center", justifyContent: "center" }}><Icon name="check" size={26} color="#fff" stroke={3} /></div>}
@@ -77,11 +77,11 @@ const CallFace: React.FC<{ s: CallState; t: number; time?: string; ring?: number
   );
 };
 /** A call card that rolls from one face to the next (k 0..1), on the site's white card. */
-export const CallCard: React.FC<{ a: CallState; b?: CallState; k?: number; t: number; time?: string; timeB?: string; w?: number; ring?: number; press?: number; style?: React.CSSProperties }> = ({ a, b, k = 0, t, time, timeB, w = 580, ring, press, style }) => (
+export const CallCard: React.FC<{ a: CallState; b?: CallState; k?: number; t: number; time?: string; timeB?: string; w?: number; ring?: number; press?: number; caller?: string; style?: React.CSSProperties }> = ({ a, b, k = 0, t, time, timeB, w = 600, ring, press, caller, style }) => (
   <div style={{ width: w, height: 116, borderRadius: 26, background: C.white, boxShadow: SHADOW, overflow: "hidden", position: "relative", ...style }}>
     <div style={{ transform: `translateY(${-k * 116}px)`, filter: k > 0.02 && k < 0.98 ? `blur(${Math.sin(k * Math.PI) * 4}px)` : undefined }}>
-      <CallFace s={a} t={t} time={time} ring={ring} press={press} />
-      {b && <CallFace s={b} t={t} time={timeB ?? time} />}
+      <CallFace s={a} t={t} time={time} ring={ring} press={press} caller={caller} />
+      {b && <CallFace s={b} t={t} time={timeB ?? time} caller={caller} />}
     </div>
   </div>
 );
@@ -108,18 +108,18 @@ export const AG = { w: 1180, h: 700, colX: 150, colW: 196, rowY: 170, rowH: 104 
 /** Where an agenda cell's centre is, in the agenda's own pixels (top-left origin). */
 export const cell = (day: number, hour: number): [number, number] => [AG.colX + AG.colW * day + AG.colW / 2, AG.rowY + AG.rowH * hour + AG.rowH / 2];
 export const BUSY: [number, number][] = [[0, 0], [2, 0], [3, 0], [3, 1], [2, 2], [0, 3], [4, 3]];
-export const Agenda: React.FC<{ hilite?: number; children?: React.ReactNode; busy?: [number, number][]; label?: string; flat?: boolean }> = ({ hilite = 1, children, busy = BUSY, label = "deze week", flat = false }) => (
+export const Agenda: React.FC<{ hilite?: number; children?: React.ReactNode; busy?: [number, number][]; label?: string; flat?: boolean }> = ({ hilite = 0, children, busy = BUSY, label = "deze week", flat = false }) => (
   <div style={{ width: AG.w, height: AG.h, borderRadius: 34, background: C.white, boxShadow: flat ? undefined : SHADOW, position: "relative", fontFamily: F.ui, flex: "none" }}>
     <div style={{ position: "absolute", left: 50, top: 38, fontWeight: 700, fontSize: 38, color: C.ink, letterSpacing: "-0.02em" }}>Agenda</div>
-    <div style={{ position: "absolute", right: 50, top: 46, fontWeight: 500, fontSize: 24, color: C.txt3 }}>{label}</div>
+    <div style={{ position: "absolute", right: 50, top: 44, fontWeight: 500, fontSize: 28, color: C.txt3 }}>{label}</div>
     {DAYS.map((d, i) => (
       <div key={d} style={{ position: "absolute", left: AG.colX + AG.colW * i, width: AG.colW, top: 112, display: "flex", justifyContent: "center" }}>
-        <div style={{ padding: "4px 16px", borderRadius: 99, fontWeight: 600, fontSize: 24, background: i === hilite ? C.teal : "transparent", color: i === hilite ? "#fff" : C.txt2 }}>{d}</div>
+        <div style={{ padding: "4px 18px", borderRadius: 99, fontWeight: 600, fontSize: 30, background: i === hilite ? C.teal : "transparent", color: i === hilite ? "#fff" : C.txt2 }}>{d}</div>
       </div>
     ))}
     {HOURS.map((h, j) => (
       <React.Fragment key={h}>
-        <div style={{ position: "absolute", left: 44, top: AG.rowY + AG.rowH * j + 10, fontSize: 22, fontWeight: 500, color: C.txt3, fontVariantNumeric: "tabular-nums" }}>{h}</div>
+        <div style={{ position: "absolute", left: 36, top: AG.rowY + AG.rowH * j + 8, fontSize: 27, fontWeight: 500, color: C.txt3, fontVariantNumeric: "tabular-nums" }}>{h}</div>
         <div style={{ position: "absolute", left: AG.colX, right: 40, top: AG.rowY + AG.rowH * j, height: 2, background: C.line }} />
       </React.Fragment>
     ))}
@@ -133,9 +133,9 @@ export const Agenda: React.FC<{ hilite?: number; children?: React.ReactNode; bus
 /** An appointment block in a cell. */
 export const Appt: React.FC<{ time: string; w?: number; h?: number; glow?: number }> = ({ time, w = AG.colW - 20, h = AG.rowH - 20, glow = 0 }) => (
   <div style={{ width: w, height: h, borderRadius: 16, background: C.teal, color: "#fff", fontFamily: F.ui, padding: "12px 16px", boxSizing: "border-box",
-    boxShadow: `0 16px 30px -18px rgba(10,79,74,0.7), 0 0 0 ${glow * 8}px rgba(15,110,106,${0.18 * glow})`, display: "flex", flexDirection: "column", justifyContent: "center", gap: 2 }}>
-    <div style={{ fontWeight: 700, fontSize: 24 }}>Afspraak</div>
-    <div style={{ fontWeight: 500, fontSize: 21, opacity: 0.85, fontVariantNumeric: "tabular-nums" }}>{time}</div>
+    boxShadow: `0 16px 30px -18px rgba(10,79,74,0.7), 0 0 0 ${glow * 8}px rgba(15,110,106,${0.18 * glow})`, display: "flex", alignItems: "center", justifyContent: "center", gap: 10 }}>
+    <svg width={26} height={26} viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round" style={{ flex: "none", opacity: 0.85 }}><path d="M8 2v4" /><path d="M16 2v4" /><rect width="18" height="18" x="3" y="4" rx="2" /><path d="M3 10h18" /></svg>
+    <div style={{ fontWeight: 700, fontSize: 32, fontVariantNumeric: "tabular-nums" }}>{time}</div>
   </div>
 );
 
@@ -149,12 +149,12 @@ export const Phone: React.FC<{ w: number; h: number; screen?: string; children?:
   </div>
 );
 /** A notification on the phone's lock screen. */
-export const Note: React.FC<{ title: string; sub: string; w: number; when?: string }> = ({ title, sub, w, when = "nu" }) => (
-  <div style={{ width: w, borderRadius: 26, background: "rgba(255,255,255,0.92)", boxShadow: "0 10px 24px -16px rgba(22,34,31,0.35)", padding: "16px 18px", boxSizing: "border-box", display: "flex", alignItems: "center", gap: 14, fontFamily: F.ui }}>
-    <Avatar size={46} />
+export const Note: React.FC<{ title: string; sub: string; w: number }> = ({ title, sub, w }) => (
+  <div style={{ width: w, borderRadius: 28, background: "rgba(255,255,255,0.94)", boxShadow: "0 10px 24px -16px rgba(22,34,31,0.35)", padding: "18px 18px", boxSizing: "border-box", display: "flex", alignItems: "center", gap: 14, fontFamily: F.ui }}>
+    <Avatar size={52} />
     <div style={{ flex: 1, minWidth: 0 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", fontWeight: 700, fontSize: 21, color: C.ink }}><span>{title}</span><span style={{ fontWeight: 500, fontSize: 17, color: C.txt3 }}>{when}</span></div>
-      <div style={{ fontWeight: 500, fontSize: 19, color: C.txt2, whiteSpace: "nowrap" }}>{sub}</div>
+      <div style={{ fontWeight: 700, fontSize: 26, color: C.ink, lineHeight: 1.15 }}>{title}</div>
+      <div style={{ fontWeight: 500, fontSize: 25, color: C.txt2, whiteSpace: "nowrap", lineHeight: 1.2 }}>{sub}</div>
     </div>
   </div>
 );

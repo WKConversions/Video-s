@@ -5,7 +5,7 @@
 # cues.json (paths relative to the cue file; "library" points at library/sound):
 #   {"fps": 30, "frames": 1110, "library": "../../../library/sound",
 #    "vo":    {"file": "audio/vo.mp3", "at": 0},
-#    "music": {"file": "audio/music.wav", "at": 0, "duck_db": 6, "fade_in": 0.5, "fade_out": 2.0},
+#    "music": {"file": "audio/music.wav", "at": 0, "duck_db": 6, "fade_in": 0.5, "fade_out": 2.0, "dips": [[26.3, 30.2, -4]]},
 #    "sfx":   [{"id": "u-o8xh7gwsrj-app-interface-click-2", "frame": 526}, {"id": "gen-whoosh-medium", "frame": 790, "db": -2}]}
 # An effect's "frame" is the picture event: a tap lands on the touch, a whoosh passes at the middle of the
 # move, a riser ends on the reveal, an impact hits the landing. "db" nudges one cue against its role level;
@@ -124,6 +124,9 @@ def main():
         mu_bus *= np.clip(t / max(fi, 1e-3), 0, 1)[:, None] * np.clip((n / SR - t) / max(fo, 1e-3), 0, 1)[:, None]
         if "vo" in cue and m.get("duck_db", 6):
             mu_bus *= (10 ** (-m.get("duck_db", 6) * envelope(vo_bus) / 20))[:, None]
+        for d0, d1, db in m.get("dips", []):   # extra dips of the bed: [start s, end s, dB], 0.3 s ramps (VoxFlow, Oct 2026)
+            ramp = np.clip(np.minimum((t - d0) / 0.3 + 1, (d1 - t) / 0.3 + 1), 0, 1)
+            mu_bus *= (10 ** (db * ramp / 20))[:, None]
     placed, lifted = [], []
     for c in cue.get("sfx", []):
         o = index[c["id"]]

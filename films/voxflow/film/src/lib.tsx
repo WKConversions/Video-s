@@ -18,6 +18,11 @@ export const MOVE = Easing.bezier(0.65, 0, 0.35, 1);
 export const SOFT = Easing.bezier(0.45, 0, 0.25, 1);       // a soft start for colour fields
 export const DEPART = Easing.bezier(0.55, 0, 0.9, 0.4);
 export const LIN = (t: number) => t;
+/** A camera push: a short ramp up, a constant middle, a short ramp down (peak speed only 1/(1-a) of the average). */
+export const RAMP = (a = 0.2) => (t: number) => {
+  const v = 1 / (1 - a), c = Math.min(1, Math.max(0, t));
+  return c < a ? (v * c * c) / (2 * a) : c > 1 - a ? 1 - (v * (1 - c) * (1 - c)) / (2 * a) : v * (c - a / 2);
+};
 export const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 export const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 export const sec = (g: number) => g / 30;
