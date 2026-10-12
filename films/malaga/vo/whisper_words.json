@@ -1,0 +1,529 @@
+{
+ "source": "vo/malaga-vo.wav",
+ "model": "small.en",
+ "duration": 44.64,
+ "words": [
+  {
+   "word": "One",
+   "start": 0.0,
+   "end": 0.28,
+   "p": 0.612
+  },
+  {
+   "word": "property.",
+   "start": 0.28,
+   "end": 0.82,
+   "p": 0.975
+  },
+  {
+   "word": "A",
+   "start": 1.34,
+   "end": 1.48,
+   "p": 0.577
+  },
+  {
+   "word": "hundred",
+   "start": 1.48,
+   "end": 1.92,
+   "p": 0.946
+  },
+  {
+   "word": "moving",
+   "start": 1.92,
+   "end": 2.28,
+   "p": 0.998
+  },
+  {
+   "word": "parts.",
+   "start": 2.28,
+   "end": 2.82,
+   "p": 0.998
+  },
+  {
+   "word": "Bookings.",
+   "start": 3.44,
+   "end": 3.84,
+   "p": 0.992
+  },
+  {
+   "word": "Check",
+   "start": 4.42,
+   "end": 4.48,
+   "p": 0.987
+  },
+  {
+   "word": "-ins.",
+   "start": 4.48,
+   "end": 4.78,
+   "p": 0.892
+  },
+  {
+   "word": "Cleaning.",
+   "start": 5.32,
+   "end": 5.84,
+   "p": 0.995
+  },
+  {
+   "word": "Repairs.",
+   "start": 6.12,
+   "end": 6.54,
+   "p": 0.988
+  },
+  {
+   "word": "Guest",
+   "start": 7.1,
+   "end": 7.24,
+   "p": 0.966
+  },
+  {
+   "word": "messages.",
+   "start": 7.24,
+   "end": 7.68,
+   "p": 0.974
+  },
+  {
+   "word": "You're",
+   "start": 8.38,
+   "end": 8.72,
+   "p": 0.971
+  },
+  {
+   "word": "miles",
+   "start": 8.72,
+   "end": 9.0,
+   "p": 0.992
+  },
+  {
+   "word": "away.",
+   "start": 9.0,
+   "end": 9.42,
+   "p": 0.999
+  },
+  {
+   "word": "rhythmsWe",
+   "start": 13.14,
+   "end": 13.86,
+   "p": 0.0
+  },
+  {
+   "word": "manage",
+   "start": 13.86,
+   "end": 16.22,
+   "p": 0.721
+  },
+  {
+   "word": "reservations,",
+   "start": 16.22,
+   "end": 16.9,
+   "p": 0.96
+  },
+  {
+   "word": "coordinate",
+   "start": 17.36,
+   "end": 17.66,
+   "p": 0.94
+  },
+  {
+   "word": "guest",
+   "start": 17.66,
+   "end": 18.02,
+   "p": 0.891
+  },
+  {
+   "word": "arrivals,",
+   "start": 18.02,
+   "end": 18.48,
+   "p": 0.99
+  },
+  {
+   "word": "arrange",
+   "start": 18.94,
+   "end": 19.08,
+   "p": 0.988
+  },
+  {
+   "word": "cleaning,",
+   "start": 19.08,
+   "end": 19.48,
+   "p": 0.988
+  },
+  {
+   "word": "and",
+   "start": 19.8,
+   "end": 19.98,
+   "p": 0.977
+  },
+  {
+   "word": "handle",
+   "start": 19.98,
+   "end": 20.32,
+   "p": 0.997
+  },
+  {
+   "word": "maintenance,",
+   "start": 20.32,
+   "end": 20.72,
+   "p": 0.994
+  },
+  {
+   "word": "keeping",
+   "start": 21.2,
+   "end": 21.32,
+   "p": 0.986
+  },
+  {
+   "word": "your",
+   "start": 21.32,
+   "end": 21.66,
+   "p": 0.995
+  },
+  {
+   "word": "property",
+   "start": 21.66,
+   "end": 22.12,
+   "p": 0.996
+  },
+  {
+   "word": "ready",
+   "start": 22.12,
+   "end": 22.44,
+   "p": 0.995
+  },
+  {
+   "word": "for",
+   "start": 22.44,
+   "end": 22.7,
+   "p": 0.998
+  },
+  {
+   "word": "every",
+   "start": 22.7,
+   "end": 23.1,
+   "p": 0.993
+  },
+  {
+   "word": "stay.",
+   "start": 23.1,
+   "end": 23.44,
+   "p": 0.962
+  },
+  {
+   "word": "Not",
+   "start": 24.0,
+   "end": 24.14,
+   "p": 0.927
+  },
+  {
+   "word": "renting",
+   "start": 24.14,
+   "end": 24.4,
+   "p": 0.997
+  },
+  {
+   "word": "it",
+   "start": 24.4,
+   "end": 24.56,
+   "p": 0.998
+  },
+  {
+   "word": "out",
+   "start": 24.56,
+   "end": 24.78,
+   "p": 0.997
+  },
+  {
+   "word": "?Our",
+   "start": 24.78,
+   "end": 25.36,
+   "p": 0.5
+  },
+  {
+   "word": "keyholding",
+   "start": 25.36,
+   "end": 25.88,
+   "p": 0.596
+  },
+  {
+   "word": "and",
+   "start": 25.88,
+   "end": 26.14,
+   "p": 0.977
+  },
+  {
+   "word": "property",
+   "start": 26.14,
+   "end": 26.5,
+   "p": 0.979
+  },
+  {
+   "word": "support",
+   "start": 26.5,
+   "end": 26.84,
+   "p": 0.985
+  },
+  {
+   "word": "services",
+   "start": 26.84,
+   "end": 27.36,
+   "p": 0.998
+  },
+  {
+   "word": "keep",
+   "start": 27.36,
+   "end": 27.66,
+   "p": 0.98
+  },
+  {
+   "word": "things",
+   "start": 27.66,
+   "end": 27.9,
+   "p": 0.998
+  },
+  {
+   "word": "covered",
+   "start": 27.9,
+   "end": 28.28,
+   "p": 0.998
+  },
+  {
+   "word": "while",
+   "start": 28.28,
+   "end": 28.5,
+   "p": 0.985
+  },
+  {
+   "word": "you're",
+   "start": 28.5,
+   "end": 28.7,
+   "p": 0.99
+  },
+  {
+   "word": "away",
+   "start": 28.7,
+   "end": 28.98,
+   "p": 0.998
+  },
+  {
+   "word": ".With",
+   "start": 28.98,
+   "end": 29.68,
+   "p": 0.664
+  },
+  {
+   "word": "clear",
+   "start": 29.68,
+   "end": 29.98,
+   "p": 0.823
+  },
+  {
+   "word": "agreements,",
+   "start": 29.98,
+   "end": 30.52,
+   "p": 0.166
+  },
+  {
+   "word": "personal",
+   "start": 30.9,
+   "end": 31.16,
+   "p": 0.999
+  },
+  {
+   "word": "communication,",
+   "start": 31.16,
+   "end": 31.72,
+   "p": 0.988
+  },
+  {
+   "word": "and",
+   "start": 32.2,
+   "end": 32.28,
+   "p": 0.998
+  },
+  {
+   "word": "services",
+   "start": 32.28,
+   "end": 32.72,
+   "p": 0.998
+  },
+  {
+   "word": "tailored",
+   "start": 32.72,
+   "end": 33.08,
+   "p": 0.997
+  },
+  {
+   "word": "to",
+   "start": 33.08,
+   "end": 33.38,
+   "p": 0.999
+  },
+  {
+   "word": "your",
+   "start": 33.38,
+   "end": 33.62,
+   "p": 0.986
+  },
+  {
+   "word": "home,",
+   "start": 33.62,
+   "end": 33.98,
+   "p": 0.998
+  },
+  {
+   "word": "you're",
+   "start": 34.24,
+   "end": 34.6,
+   "p": 0.982
+  },
+  {
+   "word": "always",
+   "start": 34.6,
+   "end": 34.94,
+   "p": 0.999
+  },
+  {
+   "word": "in",
+   "start": 34.94,
+   "end": 35.14,
+   "p": 0.998
+  },
+  {
+   "word": "the",
+   "start": 35.14,
+   "end": 35.24,
+   "p": 0.99
+  },
+  {
+   "word": "loop.",
+   "start": 35.24,
+   "end": 35.46,
+   "p": 0.996
+  },
+  {
+   "word": "<-Less",
+   "start": 36.02,
+   "end": 36.16,
+   "p": 0.004
+  },
+  {
+   "word": "to",
+   "start": 36.16,
+   "end": 36.32,
+   "p": 0.986
+  },
+  {
+   "word": "manage.",
+   "start": 36.32,
+   "end": 36.58,
+   "p": 0.947
+  },
+  {
+   "word": "More",
+   "start": 37.1,
+   "end": 37.3,
+   "p": 0.302
+  },
+  {
+   "word": "freedom",
+   "start": 37.3,
+   "end": 37.68,
+   "p": 0.989
+  },
+  {
+   "word": "to",
+   "start": 37.68,
+   "end": 37.96,
+   "p": 0.995
+  },
+  {
+   "word": "enjoy",
+   "start": 37.96,
+   "end": 38.28,
+   "p": 0.994
+  },
+  {
+   "word": "your",
+   "start": 38.28,
+   "end": 38.5,
+   "p": 0.991
+  },
+  {
+   "word": "investment.",
+   "start": 38.5,
+   "end": 38.9,
+   "p": 0.983
+  },
+  {
+   "word": "Madagascar",
+   "start": 39.52,
+   "end": 39.82,
+   "p": 0.0
+  },
+  {
+   "word": "Hideaway.",
+   "start": 39.82,
+   "end": 40.44,
+   "p": 0.855
+  },
+  {
+   "word": "Your",
+   "start": 40.98,
+   "end": 41.08,
+   "p": 0.969
+  },
+  {
+   "word": "home",
+   "start": 41.08,
+   "end": 41.28,
+   "p": 0.993
+  },
+  {
+   "word": "in",
+   "start": 41.28,
+   "end": 41.46,
+   "p": 0.985
+  },
+  {
+   "word": "M\u00e1laga,",
+   "start": 41.46,
+   "end": 41.76,
+   "p": 0.63
+  },
+  {
+   "word": "in",
+   "start": 42.16,
+   "end": 42.26,
+   "p": 0.947
+  },
+  {
+   "word": "good",
+   "start": 42.26,
+   "end": 42.46,
+   "p": 0.961
+  },
+  {
+   "word": "hands.",
+   "start": 42.46,
+   "end": 42.9,
+   "p": 0.999
+  },
+  {
+   "word": "Request",
+   "start": 43.44,
+   "end": 43.64,
+   "p": 0.248
+  },
+  {
+   "word": "your",
+   "start": 43.64,
+   "end": 43.86,
+   "p": 0.994
+  },
+  {
+   "word": "proposal.",
+   "start": 43.86,
+   "end": 44.18,
+   "p": 0.974
+  }
+ ]
+}

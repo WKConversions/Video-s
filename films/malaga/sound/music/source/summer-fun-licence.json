@@ -1,0 +1,19 @@
+{
+ "@id": "Summer Fun",
+ "@type": "MusicRecording",
+ "name": "Summer Fun",
+ "genre": "Folk Pop",
+ "byArtist": "Ahjay Stelino",
+ "duration": "PT2M19S",
+ "url": "https://assets.mixkit.co/music/13/13.mp3",
+ "waveformUrl": "https://assets.mixkit.co/music/13/13-waveform.json",
+ "copyrightNotice": "Mixkit Stock Music Free License",
+ "encodingFormat": "audio/mpeg",
+ "isAccessibleForFree": true,
+ "license": "https://mixkit.co/license/#musicFree",
+ "publisher": {
+  "@id": "https://mixkit.co/#organization"
+ },
+ "datePublished": "2020-01-28",
+ "_checked": "2026-10-12, schema.org record on https://mixkit.co/free-stock-music/mood/travel/"
+}

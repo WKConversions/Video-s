@@ -1,0 +1,94 @@
+{
+  "brand": "Málaga Hideaway",
+  "url": "https://malagahideaway.com/en/",
+  "measured_from": [
+    "harvest/css/inline_et-critical-inline-css.css (Divi page CSS inlined in home HTML)",
+    "harvest/css/et-core-unified-tb-45-tb-49-deferred-26.min.css (Divi theme-builder header/footer + page modules)",
+    "harvest/css/inline_noid15.css, inline_noid17.css, inline_noid23.css (custom keyholding card, vacancy card, AVVAPRO badge)",
+    "assets/logo/malaga-hideaway-logo-white-original.png (pixel measurement: glyphs pure #FFFFFF, soft dark drop shadow baked in)"
+  ],
+  "method": "CSS values counted per property and mapped to selectors; no --e-global / Divi global colour variables exist on this site (WordPress core presets only, unused). Colours below are the exact CSS hex values.",
+  "colours": [
+    {"hex": "#0090DA", "role": "primary / accent blue", "evidence": "Header bar background (.et_pb_section_1_tb_header), dropdown menu bg, all H1-H4 in text modules (color:#0090DA!important), links + underline, button hover, blue band sections (.et_pb_section_2), footer gradient end, keyholding price + border. Most frequent brand colour (20+ uses)."},
+    {"hex": "#575757", "role": "text / dark neutral, primary button fill", "evidence": "body color, default h1-h6 color, buttons background-color (.et_pb_button_*, .mh-kh__btn), Gravity Forms submit button; hover turns #0090DA."},
+    {"hex": "#F4EEE0", "role": "warm sand background", "evidence": ".et_pb_section_0/1/8-11 background-color:#f4eee0!important; footer gradient linear-gradient(180deg,#f4eee0 30%,#0090da 100%)."},
+    {"hex": "#FFFFFF", "role": "white: logo, text on blue, cards", "evidence": "Logo glyphs, button text, menu text on blue header, cards (.mh-kh)."},
+    {"hex": "#DDEEF7", "role": "light blue tint panel", "evidence": ".et_pb_column_0 background-color (rounded 15px card on hero)."},
+    {"hex": "#E6F4FC", "role": "pale blue tag pill", "evidence": ".mh-kh__tag background (\"New\" tag on Keyholding card)."},
+    {"hex": "#F5FAFD", "role": "near-white blue side panel", "evidence": ".mh-kh__side background (price box)."},
+    {"hex": "#112337", "role": "deep navy, small dark labels", "evidence": ".mh-vu__chips li, .mh-avvapro__naam (custom HTML blocks only)."},
+    {"hex": "#637F89", "role": "slate (used at 19% alpha for borders/pagination)", "evidence": "rgba(99,127,137,0.19) border-color on buttons, pagination colour."},
+    {"hex": "#D4AF37", "role": "minor gold accent", "evidence": "FAQ expand symbol colour only (2 uses). Not a core brand colour."}
+  ],
+  "colours_ignored": {
+    "#2EA3F2, #666666, #333333": "Divi framework defaults (not overridden brand values)",
+    "#580473": "Divi default #main-header colour, not rendered (theme-builder header is #0090DA)",
+    "#A82400": "Instagram social icon background",
+    "wp--preset--color--*": "WordPress core palette, unused"
+  },
+  "gradient": {"css": "linear-gradient(180deg, #F4EEE0 30%, #0090DA 100%)", "where": "footer section background"},
+  "contrast_wcag": {
+    "#FFFFFF on #0090DA": "3.5:1 - large type only (>= 24px / bold 19px); fine for film titles, not small captions",
+    "#575757 on #F4EEE0": "6.2:1 - body ok",
+    "#0090DA on #F4EEE0": "3.0:1 - large type only",
+    "#0090DA on #FFFFFF": "3.5:1 - large type only",
+    "#FFFFFF on #575757": "7.2:1 - body ok",
+    "#112337 on #F4EEE0": "13.8:1 - body ok",
+    "#0090DA on #DDEEF7": "2.9:1 - FAILS, avoid"
+  },
+  "fonts": [
+    {
+      "family": "Montserrat",
+      "role": "body text, default headings (h1-h6 base), buttons (letter-spacing 0.08em), blockquotes at weight 800",
+      "weights_used_on_site": [400, 600, 700, 800],
+      "notes": "weight 800 is the most used explicit weight (18x); custom card headings/prices 800; uppercase tags 800 with 1.2-1.4px tracking",
+      "files": [
+        "assets/fonts/Montserrat-Variable-100-900-latin.woff2",
+        "assets/fonts/Montserrat-Variable-100-900-latin-ext.woff2"
+      ],
+      "file_type": "variable font, wght axis 100-900 (one file covers all weights; latin subset includes Á U+00C1)",
+      "source": "Google Fonts (fonts.gstatic.com/s/montserrat/v31)",
+      "licence": "SIL Open Font License 1.1",
+      "licence_file": "assets/fonts/OFL-Montserrat.txt"
+    },
+    {
+      "family": "Calistoga",
+      "role": "display headings: h1 96px, h2 60px, h3 40px, h4 28px, small kicker h5/h6 18-22px (soft, rounded serif-ish display)",
+      "weights_used_on_site": [400],
+      "files": [
+        "assets/fonts/Calistoga-Regular-latin.woff2",
+        "assets/fonts/Calistoga-Regular-latin-ext.woff2"
+      ],
+      "source": "Google Fonts (fonts.gstatic.com/s/calistoga/v18)",
+      "licence": "SIL Open Font License 1.1",
+      "licence_file": "assets/fonts/OFL-Calistoga.txt"
+    }
+  ],
+  "logo_wordmark_typeface": "The logo lettering is NOT Montserrat or Calistoga: a heavy rounded geometric display face (rounded-bottom W, curly y). Closest open font by eye: Righteous (Google Fonts, OFL) - unverified. Always use the PNG for the wordmark; never retype it.",
+  "logo": {
+    "description": "House-shaped outline (gable roof) enclosing a block letter H, beside a two-line wordmark 'MÁLAGA' / 'HIDEAWAY'. Supplied by the site only as a WHITE PNG with a baked-in soft dark drop shadow, shown on the #0090DA header bar. No SVG and no coloured version exist on the site.",
+    "files": {
+      "white_original_with_shadow": "assets/logo/malaga-hideaway-logo-white-original.png (3544x1063 RGBA, as uploaded)",
+      "white_2560_with_shadow": "assets/logo/malaga-hideaway-logo-white-2560.png (2560x768, the -scaled file the header uses)",
+      "white_clean": "assets/logo/malaga-hideaway-logo-white-noshadow.png (3426x964, shadow removed, tight crop)",
+      "blue_clean": "assets/logo/malaga-hideaway-logo-blue.png (#0090DA, derived by recolouring the glyph alpha)",
+      "gray_clean": "assets/logo/malaga-hideaway-logo-gray.png (#575757, derived)",
+      "mark_only": ["assets/logo/malaga-hideaway-mark-white.png", "assets/logo/malaga-hideaway-mark-blue.png", "assets/logo/malaga-hideaway-mark-gray.png"],
+      "wordmark_only": ["assets/logo/malaga-hideaway-wordmark-white.png", "assets/logo/malaga-hideaway-wordmark-blue.png", "assets/logo/malaga-hideaway-wordmark-gray.png"]
+    },
+    "derived_note": "blue/gray/no-shadow/mark/wordmark files are derived from the official white PNG (alpha kept, colour swapped to measured brand hex); shapes unchanged.",
+    "favicon": {
+      "files": ["assets/logo/favicon-32.jpg", "assets/logo/favicon-192.jpg", "assets/logo/site-icon-stad-malaga-original.jpg (512x512)"],
+      "note": "The favicon is a photo of the Málaga city flag (purple/green with coat of arms), not a brand mark - do not use as a logo."
+    }
+  },
+  "ui_shapes": {
+    "button_radius_px": 15,
+    "card_radius_px": [10, 12, 15, 20],
+    "pill_radius": "999px tags (uppercase, 12px, weight 800, tracking 1.2px)",
+    "card_shadow": "0 6px 22px rgba(0,0,0,.08)",
+    "card_accent": "6px solid #0090DA left border on keyholding card"
+  },
+  "photos_manifest": "assets/photos/manifest.json",
+  "photo_contact_sheet": "assets/photos/sheet.jpg"
+}

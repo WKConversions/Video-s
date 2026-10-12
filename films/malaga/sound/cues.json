@@ -1,0 +1,325 @@
+{
+ "fps": 30,
+ "frames": 1380,
+ "library": "lib",
+ "vo": {
+  "file": "../film/public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "music/summer-fun-fit.wav",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.3,
+  "fade_out": 0.6,
+  "note": "Summer Fun (Ahjay Stelino, Mixkit, Mixkit Stock Music Free License), fitted: lift at 11.00 on 'M\u00e1laga Hideaway', last hit 42.93 on 'in good hands'"
+ },
+ "sfx": [
+  {
+   "id": "mh-home",
+   "frame": 17,
+   "note": "the home arrives",
+   "db": -3
+  },
+  {
+   "id": "mh-swarm",
+   "frame": 51,
+   "note": "the parts stream out",
+   "db": -2
+  },
+  {
+   "id": "mh-bookings",
+   "frame": 119,
+   "note": "Bookings",
+   "db": -4
+  },
+  {
+   "id": "mh-keys",
+   "frame": 150,
+   "note": "Check-ins",
+   "db": -3
+  },
+  {
+   "id": "mh-sparkle",
+   "frame": 178,
+   "note": "Cleaning",
+   "db": -4
+  },
+  {
+   "id": "mh-repair",
+   "frame": 200,
+   "note": "Repairs",
+   "db": 0
+  },
+  {
+   "id": "mh-messages",
+   "frame": 229,
+   "note": "Guest messages",
+   "db": -4
+  },
+  {
+   "id": "mh-shrink",
+   "frame": 270,
+   "note": "the pile shrinks onto M\u00e1laga",
+   "db": -5
+  },
+  {
+   "id": "mh-pin-malaga",
+   "frame": 276,
+   "note": "M\u00e1laga pin",
+   "db": -5
+  },
+  {
+   "id": "mh-route",
+   "frame": 283,
+   "note": "the route north",
+   "db": -6
+  },
+  {
+   "id": "mh-pin-you",
+   "frame": 294,
+   "note": "You",
+   "db": -8
+  },
+  {
+   "id": "mh-travel",
+   "frame": 295,
+   "note": "the chores travel up the route",
+   "db": -11
+  },
+  {
+   "id": "mh-map",
+   "frame": 306,
+   "note": "the map spreads out of M\u00e1laga",
+   "db": -7
+  },
+  {
+   "id": "mh-mark",
+   "frame": 328,
+   "note": "the house mark lands",
+   "db": -3
+  },
+  {
+   "id": "mh-brand",
+   "frame": 342,
+   "note": "the blue opens, the logo comes in",
+   "db": -2
+  },
+  {
+   "id": "mh-wordmark",
+   "frame": 353,
+   "note": "the name writes out",
+   "db": -6
+  },
+  {
+   "id": "mh-location",
+   "frame": 391,
+   "note": "M\u00e1laga, Costa del Sol",
+   "db": -5
+  },
+  {
+   "id": "mh-sea",
+   "frame": 399,
+   "note": "M\u00e1laga opens: a wave",
+   "db": -5
+  },
+  {
+   "id": "mh-card-rise",
+   "frame": 428,
+   "note": "the checklist rises",
+   "db": -6
+  },
+  {
+   "id": "mh-checks",
+   "frame": 432,
+   "note": "five chores checked",
+   "db": -3
+  },
+  {
+   "id": "mh-calendar",
+   "frame": 503,
+   "note": "reservations fill the month",
+   "db": -5
+  },
+  {
+   "id": "mh-to-window",
+   "frame": 505,
+   "note": "M\u00e1laga closes into the window",
+   "db": -5
+  },
+  {
+   "id": "mh-arrival",
+   "frame": 533,
+   "note": "guest arrivals",
+   "db": -2
+  },
+  {
+   "id": "mh-linen",
+   "frame": 578,
+   "note": "cleaning",
+   "db": -4
+  },
+  {
+   "id": "mh-fixed",
+   "frame": 626,
+   "note": "maintenance: fixed",
+   "db": -4
+  },
+  {
+   "id": "mh-home-back",
+   "frame": 660,
+   "note": "the home rises over a made room",
+   "db": -7
+  },
+  {
+   "id": "mh-ready",
+   "frame": 681,
+   "note": "Ready for guests",
+   "db": -3
+  },
+  {
+   "id": "mh-stays",
+   "frame": 698,
+   "note": "the next stays",
+   "db": -5
+  },
+  {
+   "id": "mh-switch-chip",
+   "frame": 731,
+   "note": "the rental switch appears",
+   "db": -6
+  },
+  {
+   "id": "mh-switch-off",
+   "frame": 742,
+   "note": "renting out: off",
+   "db": -2
+  },
+  {
+   "id": "mh-list-swap",
+   "frame": 777,
+   "note": "the list turns to keyholding",
+   "db": -6
+  },
+  {
+   "id": "mh-key-hook",
+   "frame": 796,
+   "note": "the key goes onto its hook",
+   "db": -3
+  },
+  {
+   "id": "mh-inspect",
+   "frame": 798,
+   "note": "the property check",
+   "db": -2
+  },
+  {
+   "id": "mh-knock",
+   "frame": 823,
+   "note": "technician: we'll be there",
+   "db": -3
+  },
+  {
+   "id": "mh-covered",
+   "frame": 853,
+   "note": "covered while you're away",
+   "db": -3
+  },
+  {
+   "id": "mh-morph",
+   "frame": 906,
+   "note": "list \u2192 agreement, window \u2192 phone",
+   "db": -5
+  },
+  {
+   "id": "mh-terms",
+   "frame": 907,
+   "note": "the terms tick",
+   "db": -5
+  },
+  {
+   "id": "mh-sign",
+   "frame": 916,
+   "note": "signed",
+   "db": -3
+  },
+  {
+   "id": "mh-message-in",
+   "frame": 936,
+   "note": "a personal message",
+   "db": -3
+  },
+  {
+   "id": "mh-message-out",
+   "frame": 966,
+   "note": "your reply",
+   "db": -6
+  },
+  {
+   "id": "mh-card-turn",
+   "frame": 981,
+   "note": "your services",
+   "db": -4
+  },
+  {
+   "id": "mh-toggles",
+   "frame": 986,
+   "note": "switched on for this home",
+   "db": -3
+  },
+  {
+   "id": "mh-updates",
+   "frame": 1045,
+   "note": "updates arrive",
+   "db": -4
+  },
+  {
+   "id": "mh-all-done",
+   "frame": 1098,
+   "note": "All taken care of",
+   "db": -4
+  },
+  {
+   "id": "mh-fold",
+   "frame": 1104,
+   "note": "everything folds into one line",
+   "db": -5
+  },
+  {
+   "id": "mh-freedom",
+   "frame": 1139,
+   "note": "the pool opens",
+   "db": -4
+  },
+  {
+   "id": "mh-logo",
+   "frame": 1202,
+   "note": "the logo",
+   "db": -3
+  },
+  {
+   "id": "mh-to-card",
+   "frame": 1205,
+   "note": "the pool closes into the home card",
+   "db": -6
+  },
+  {
+   "id": "mh-hands",
+   "frame": 1287,
+   "note": "In good hands",
+   "db": -6
+  },
+  {
+   "id": "mh-button",
+   "frame": 1313,
+   "note": "Request your proposal",
+   "db": -3
+  },
+  {
+   "id": "mh-url",
+   "frame": 1321,
+   "note": "the address",
+   "db": -7
+  }
+ ]
+}

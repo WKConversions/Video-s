@@ -1,0 +1,512 @@
+[
+ {
+  "id": "mh-home",
+  "file": "sfx/malaga/mh-home.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 2.801,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the home arrives: a soft wooden knock under a warm E-minor chord"
+ },
+ {
+  "id": "mh-swarm",
+  "file": "sfx/malaga/mh-swarm.wav",
+  "category": "data",
+  "sync": 0.0,
+  "length": 3.001,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "twenty-eight small parts stream out: a rising patter of ticks and tiny notes"
+ },
+ {
+  "id": "mh-bookings",
+  "file": "sfx/malaga/mh-bookings.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "Bookings: a calendar card lands and three stays fill in"
+ },
+ {
+  "id": "mh-keys",
+  "file": "sfx/malaga/mh-keys.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "Check-ins: a jingle of keys"
+ },
+ {
+  "id": "mh-sparkle",
+  "file": "sfx/malaga/mh-sparkle.wav",
+  "category": "swipe",
+  "sync": 0.1,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "Cleaning: a bright swish with glints"
+ },
+ {
+  "id": "mh-repair",
+  "file": "sfx/malaga/mh-repair.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "Repairs: a ratchet, then a two-blip alert, slightly sour"
+ },
+ {
+  "id": "mh-messages",
+  "file": "sfx/malaga/mh-messages.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "Guest messages: three message bubbles, each higher"
+ },
+ {
+  "id": "mh-shrink",
+  "file": "sfx/malaga/mh-shrink.wav",
+  "category": "whoosh",
+  "sync": 0.4,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the whole pile shrinks onto M\u00e1laga"
+ },
+ {
+  "id": "mh-map",
+  "file": "sfx/malaga/mh-map.wav",
+  "category": "riser",
+  "sync": 1.0,
+  "length": 2.601,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the map opens out of M\u00e1laga: an airy swell"
+ },
+ {
+  "id": "mh-pin-malaga",
+  "file": "sfx/malaga/mh-pin-malaga.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the M\u00e1laga pin lands"
+ },
+ {
+  "id": "mh-route",
+  "file": "sfx/malaga/mh-route.wav",
+  "category": "whoosh",
+  "sync": 0.4,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the route stretches north, far away"
+ },
+ {
+  "id": "mh-travel",
+  "file": "sfx/malaga/mh-travel.wav",
+  "category": "data",
+  "sync": 0.0,
+  "length": 3.001,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the chores keep travelling north to you: ten soft passing ticks"
+ },
+ {
+  "id": "mh-pin-you",
+  "file": "sfx/malaga/mh-pin-you.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.701,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "'You': a lower, farther pin"
+ },
+ {
+  "id": "mh-mark",
+  "file": "sfx/malaga/mh-mark.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the house mark lands on M\u00e1laga"
+ },
+ {
+  "id": "mh-brand",
+  "file": "sfx/malaga/mh-brand.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 3.601,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "M\u00e1laga Hideaway comes in: the blue opens out of the pin, a full warm chord"
+ },
+ {
+  "id": "mh-wordmark",
+  "file": "sfx/malaga/mh-wordmark.wav",
+  "category": "stinger",
+  "sync": 0.0,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the name writes itself out: a falling glint"
+ },
+ {
+  "id": "mh-sea",
+  "file": "sfx/malaga/mh-sea.wav",
+  "category": "riser",
+  "sync": 0.6,
+  "length": 3.001,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "a circle opens into M\u00e1laga: a wave on the shore"
+ },
+ {
+  "id": "mh-location",
+  "file": "sfx/malaga/mh-location.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.251,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "'M\u00e1laga, Costa del Sol'"
+ },
+ {
+  "id": "mh-card-rise",
+  "file": "sfx/malaga/mh-card-rise.wav",
+  "category": "appear-rise",
+  "sync": 0.25,
+  "length": 1.451,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the checklist rises"
+ },
+ {
+  "id": "mh-checks",
+  "file": "sfx/malaga/mh-checks.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.601,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "five chores checked off, one note each, rising"
+ },
+ {
+  "id": "mh-to-window",
+  "file": "sfx/malaga/mh-to-window.wav",
+  "category": "whoosh",
+  "sync": 0.8,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "M\u00e1laga closes into the home's window, the list steps aside"
+ },
+ {
+  "id": "mh-calendar",
+  "file": "sfx/malaga/mh-calendar.wav",
+  "category": "ticker",
+  "sync": 0.13,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "reservations: four stays fill the month, marimba-like"
+ },
+ {
+  "id": "mh-arrival",
+  "file": "sfx/malaga/mh-arrival.wav",
+  "category": "swipe",
+  "sync": 0.0,
+  "length": 2.401,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "guest arrivals: suitcase wheels roll up, the lock clicks open"
+ },
+ {
+  "id": "mh-linen",
+  "file": "sfx/malaga/mh-linen.wav",
+  "category": "swipe",
+  "sync": 0.0,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "cleaning: fresh linen shaken out, then a clean glint"
+ },
+ {
+  "id": "mh-fixed",
+  "file": "sfx/malaga/mh-fixed.wav",
+  "category": "success",
+  "sync": 0.42,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "maintenance: two turns of a wrench, then a clean fifth: fixed"
+ },
+ {
+  "id": "mh-home-back",
+  "file": "sfx/malaga/mh-home-back.wav",
+  "category": "appear-rise",
+  "sync": 0.45,
+  "length": 2.401,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the home itself returns to the window"
+ },
+ {
+  "id": "mh-ready",
+  "file": "sfx/malaga/mh-ready.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.601,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "'Ready for guests': an E-minor arpeggio that settles"
+ },
+ {
+  "id": "mh-stays",
+  "file": "sfx/malaga/mh-stays.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the next stays line up, three wooden pops"
+ },
+ {
+  "id": "mh-switch-chip",
+  "file": "sfx/malaga/mh-switch-chip.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.201,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the 'Renting out' switch appears"
+ },
+ {
+  "id": "mh-switch-off",
+  "file": "sfx/malaga/mh-switch-off.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "renting out: off; the stays drop away, three notes down"
+ },
+ {
+  "id": "mh-list-swap",
+  "file": "sfx/malaga/mh-list-swap.wav",
+  "category": "swipe",
+  "sync": 0.2,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the list turns to keyholding and property support"
+ },
+ {
+  "id": "mh-key-hook",
+  "file": "sfx/malaga/mh-key-hook.wav",
+  "category": "impact",
+  "sync": 0.74,
+  "length": 2.601,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the key on its tag drops onto the hook and swings"
+ },
+ {
+  "id": "mh-inspect",
+  "file": "sfx/malaga/mh-inspect.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the property check ticks through as the rooms are walked: doors, water, post, air-con"
+ },
+ {
+  "id": "mh-knock",
+  "file": "sfx/malaga/mh-knock.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "'Technician Tue 10:00': a knock at the door, we're there"
+ },
+ {
+  "id": "mh-covered",
+  "file": "sfx/malaga/mh-covered.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.301,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "'Covered while you're away': a warm closed chord"
+ },
+ {
+  "id": "mh-morph",
+  "file": "sfx/malaga/mh-morph.wav",
+  "category": "whoosh",
+  "sync": 0.45,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the list becomes the agreement, the window your phone"
+ },
+ {
+  "id": "mh-terms",
+  "file": "sfx/malaga/mh-terms.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the three terms tick"
+ },
+ {
+  "id": "mh-sign",
+  "file": "sfx/malaga/mh-sign.wav",
+  "category": "swipe",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the signature: a quick pen scribble"
+ },
+ {
+  "id": "mh-message-in",
+  "file": "sfx/malaga/mh-message-in.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "a personal message from M\u00e1laga, with a photo of the house"
+ },
+ {
+  "id": "mh-message-out",
+  "file": "sfx/malaga/mh-message-out.wav",
+  "category": "swipe",
+  "sync": 0.16,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "your reply goes out"
+ },
+ {
+  "id": "mh-card-turn",
+  "file": "sfx/malaga/mh-card-turn.wav",
+  "category": "swipe",
+  "sync": 0.18,
+  "length": 1.351,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the agreement turns into your services"
+ },
+ {
+  "id": "mh-toggles",
+  "file": "sfx/malaga/mh-toggles.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "three services switched on for this home"
+ },
+ {
+  "id": "mh-updates",
+  "file": "sfx/malaga/mh-updates.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 2.601,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "always in the loop: four updates, four soft notification notes"
+ },
+ {
+  "id": "mh-fold",
+  "file": "sfx/malaga/mh-fold.wav",
+  "category": "whoosh",
+  "sync": 0.5,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "everything folds into one line"
+ },
+ {
+  "id": "mh-all-done",
+  "file": "sfx/malaga/mh-all-done.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "'All taken care of'"
+ },
+ {
+  "id": "mh-freedom",
+  "file": "sfx/malaga/mh-freedom.wav",
+  "category": "riser",
+  "sync": 0.5,
+  "length": 3.601,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "more freedom: the circle opens onto a sunny pool, a long breath of water"
+ },
+ {
+  "id": "mh-to-card",
+  "file": "sfx/malaga/mh-to-card.wav",
+  "category": "whoosh",
+  "sync": 0.82,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the pool closes into the home card"
+ },
+ {
+  "id": "mh-logo",
+  "file": "sfx/malaga/mh-logo.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 2.601,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "M\u00e1laga Hideaway: the logo lands"
+ },
+ {
+  "id": "mh-hands",
+  "file": "sfx/malaga/mh-hands.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 3.001,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "'In good hands' lands with the song's last hit"
+ },
+ {
+  "id": "mh-button",
+  "file": "sfx/malaga/mh-button.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "'Request your proposal'"
+ },
+ {
+  "id": "mh-url",
+  "file": "sfx/malaga/mh-url.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.121,
+  "licence": "generated",
+  "source": "generated for the M\u00e1laga Hideaway film (malaga_sfx.py), royalty-free",
+  "character": "the address"
+ }
+]

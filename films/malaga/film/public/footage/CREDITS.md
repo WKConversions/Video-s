@@ -1,0 +1,13 @@
+# Credits
+
+| file | title | source | licence | used for |
+|---|---|---|---|---|
+| malaga-street-2595.mp4 | [Sunny streets of a small tourist town](https://mixkit.co/free-stock-video/sunny-streets-of-a-small-tourist-town-2595/) | Mixkit | Mixkit Stock Video Free License (data-license="videoFree" on the clip page, checked 12 Oct 2026) | One local partner (a bougainvillea lane), until the first service |
+| arrival-front-door-8729.mp4 | [Mother coming home after picking up her daughter from school](https://mixkit.co/free-stock-video/mother-coming-home-after-picking-up-her-daughter-from-school-8729/) | Mixkit | Mixkit Stock Video Free License (data-license="videoFree" on the clip page, checked 12 Oct 2026) | coordinate guest arrivals |
+| cleaning-living-room-43373.mp4 | [Cleaning the house dancing with music](https://mixkit.co/free-stock-video/cleaning-the-house-dancing-with-music-43373/) | Mixkit | Mixkit Stock Video Free License (data-license="videoFree" on the clip page, checked 12 Oct 2026) | arrange cleaning |
+| maintenance-painting-2296.mp4 | [Painting a wall in a new house](https://mixkit.co/free-stock-video/painting-a-wall-in-a-new-house-2296/) | Mixkit | Mixkit Stock Video Free License (data-license="videoFree" on the clip page, checked 12 Oct 2026) | handle maintenance |
+| ready-room-terrace-4029.mp4 | [Interior of a room with terrace](https://mixkit.co/free-stock-video/interior-of-a-room-with-terrace-4029/) | Mixkit | Mixkit Stock Video Free License (data-license="videoFree" on the clip page, checked 12 Oct 2026) | ready for every stay; not renting it out |
+| keyholding-white-room-4046.mp4 | [White luxury boutique hotel room](https://mixkit.co/free-stock-video/white-luxury-boutique-hotel-room-4046/) | Mixkit | Mixkit Stock Video Free License (data-license="videoFree" on the clip page, checked 12 Oct 2026) | keyholding |
+| check-room-pan-4198.mp4 | [Pan shot of the interior of a hotel room](https://mixkit.co/free-stock-video/pan-shot-of-the-interior-of-a-hotel-room-4198/) | Mixkit | Mixkit Stock Video Free License (data-license="videoFree" on the clip page, checked 12 Oct 2026) | property support: the property check |
+| owner-at-home-660.mp4 | [Woman sipping from a mug at home](https://mixkit.co/free-stock-video/woman-sipping-from-a-mug-at-home-660/) | Mixkit | Mixkit Stock Video Free License (data-license="videoFree" on the clip page, checked 12 Oct 2026) | the owner, at home far away, in the loop |
+| freedom-pool-3175.mp4 | [Woman enjoying summer sun at a pool](https://mixkit.co/free-stock-video/woman-enjoying-summer-sun-at-a-pool-3175/) | Mixkit | Mixkit Stock Video Free License (data-license="videoFree" on the clip page, checked 12 Oct 2026) | more freedom to enjoy your investment |
