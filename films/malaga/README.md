@@ -5,6 +5,7 @@ copyright-free music and effects over the whole film, the 4% motion norm.
 
 | Path | What |
 |---|---|
+| `deliver/malaga-hideaway-46s-1080p-share.mp4` | The same film, compressed to 24 MB for sending (CRF 21). |
 | `deliver/malaga-hideaway-46s-1080p.mp4` | The film: 1920×1080, 30 fps, 46.0 s, H.264 BT.709 TV range, AAC 48 kHz, mix −15.2 LUFS. Median 4.2% of the frame in motion, 92% of frames moving; 32 of 32 phrases bring a new visual. Rendered without motion blur. |
 | `storyboard/plan.md` | Brief, thesis, thread object (the home card), a visual event for every phrase. |
 | `harvest/`, `brand.json`, `assets/` | The site (home, keyholding, application, property pages), its CSS, the facts; logo, fonts (Calistoga, Montserrat, SIL OFL), the client's own property photos. |
