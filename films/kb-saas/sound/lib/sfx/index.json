@@ -1650,5 +1650,525 @@
     "a rising sweep"
    ]
   }
+ },
+ {
+  "id": "kb-air-open",
+  "file": "sfx/kb/kb-air-open.wav",
+  "category": "riser",
+  "sync": 0.6,
+  "length": 3.401,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "a soft E-minor air that opens the film under 'One business.'"
+ },
+ {
+  "id": "kb-chips-cascade",
+  "file": "sfx/kb/kb-chips-cascade.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "eight tiny wooden notes as the tool chips settle around the business"
+ },
+ {
+  "id": "kb-air-away",
+  "file": "sfx/kb/kb-air-away.wav",
+  "category": "whoosh",
+  "sync": 0.3,
+  "length": 1.551,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "a low soft air as the words ease away and the tools line up"
+ },
+ {
+  "id": "kb-tasks-flutter",
+  "file": "sfx/kb/kb-tasks-flutter.wav",
+  "category": "data",
+  "sync": 0.0,
+  "length": 3.001,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "soft paper flicks, denser and denser, as the tasks pile up"
+ },
+ {
+  "id": "kb-links-chirp",
+  "file": "sfx/kb/kb-links-chirp.wav",
+  "category": "data",
+  "sync": 0.0,
+  "length": 1.701,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "fast upward chirps as the dashed links draw"
+ },
+ {
+  "id": "kb-bar-rise",
+  "file": "sfx/kb/kb-bar-rise.wav",
+  "category": "appear-rise",
+  "sync": 0.3,
+  "length": 1.451,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the prompt bar rises into place"
+ },
+ {
+  "id": "kb-keys",
+  "file": "sfx/kb/kb-keys.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 2.301,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the question typed: a natural run of keys"
+ },
+ {
+  "id": "kb-fan-in",
+  "file": "sfx/kb/kb-fan-in.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "four plucked notes as the tools' lines reach the question"
+ },
+ {
+  "id": "kb-glow",
+  "file": "sfx/kb/kb-glow.wav",
+  "category": "stinger",
+  "sync": 0.02,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "a glassy glow as the lines turn solid on 'together'"
+ },
+ {
+  "id": "kb-click-send",
+  "file": "sfx/kb/kb-click-send.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.091,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the send click (crisp)"
+ },
+ {
+  "id": "kb-send",
+  "file": "sfx/kb/kb-send.wav",
+  "category": "swipe",
+  "sync": 0.25,
+  "length": 1.351,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the question leaves, an upward swish"
+ },
+ {
+  "id": "kb-reveal",
+  "file": "sfx/kb/kb-reveal.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 3.601,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "Meet K.B: a warm E-minor bloom over a soft landing"
+ },
+ {
+  "id": "kb-pill-open",
+  "file": "sfx/kb/kb-pill-open.wav",
+  "category": "swipe",
+  "sync": 0.05,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the pill widens: 'Tech', then 'Partner'"
+ },
+ {
+  "id": "kb-click-pill",
+  "file": "sfx/kb/kb-click-pill.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.091,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the pill is clicked (rounder)"
+ },
+ {
+  "id": "kb-card-bloom",
+  "file": "sfx/kb/kb-card-bloom.wav",
+  "category": "appear-rise",
+  "sync": 0.25,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the workspace grows around the tasks"
+ },
+ {
+  "id": "kb-note-business",
+  "file": "sfx/kb/kb-note-business.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.701,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "'Your business' lands"
+ },
+ {
+  "id": "kb-lift",
+  "file": "sfx/kb/kb-lift.wav",
+  "category": "whoosh",
+  "sync": 0.15,
+  "length": 1.301,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "CRM updates lifts out"
+ },
+ {
+  "id": "kb-connect",
+  "file": "sfx/kb/kb-connect.wav",
+  "category": "success",
+  "sync": 0.42,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the link is drawn like a zip, then 'Connected'"
+ },
+ {
+  "id": "kb-data",
+  "file": "sfx/kb/kb-data.wav",
+  "category": "data",
+  "sync": 0.0,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "data capsules crossing"
+ },
+ {
+  "id": "kb-message",
+  "file": "sfx/kb/kb-message.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.501,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the request message arrives"
+ },
+ {
+  "id": "kb-toggle",
+  "file": "sfx/kb/kb-toggle.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the workflow switches on"
+ },
+ {
+  "id": "kb-run",
+  "file": "sfx/kb/kb-run.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "woodblock ticks as the workflow runs its steps"
+ },
+ {
+  "id": "kb-gather",
+  "file": "sfx/kb/kb-gather.wav",
+  "category": "whoosh",
+  "sync": 0.55,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "everything gathers into one deck"
+ },
+ {
+  "id": "kb-ops",
+  "file": "sfx/kb/kb-ops.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "Operations: one line, a bright G chord"
+ },
+ {
+  "id": "kb-panel-open",
+  "file": "sfx/kb/kb-panel-open.wav",
+  "category": "swipe",
+  "sync": 0.25,
+  "length": 1.501,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the line opens into the agent panel"
+ },
+ {
+  "id": "kb-agent-work",
+  "file": "sfx/kb/kb-agent-work.wav",
+  "category": "data",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "a soft glitter while the agent works"
+ },
+ {
+  "id": "kb-stream",
+  "file": "sfx/kb/kb-stream.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 1.501,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the reply streams in"
+ },
+ {
+  "id": "kb-done",
+  "file": "sfx/kb/kb-done.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "Done"
+ },
+ {
+  "id": "kb-dash-rise",
+  "file": "sfx/kb/kb-dash-rise.wav",
+  "category": "appear-rise",
+  "sync": 0.42,
+  "length": 1.701,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the dashboard rises"
+ },
+ {
+  "id": "kb-develop",
+  "file": "sfx/kb/kb-develop.wav",
+  "category": "stinger",
+  "sync": 0.0,
+  "length": 2.401,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the dashboard develops into true colour"
+ },
+ {
+  "id": "kb-zoom-out",
+  "file": "sfx/kb/kb-zoom-out.wav",
+  "category": "whoosh",
+  "sync": 0.3,
+  "length": 1.501,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the dashboard zooms out into the stack"
+ },
+ {
+  "id": "kb-rewrite",
+  "file": "sfx/kb/kb-rewrite.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the question rewrites itself"
+ },
+ {
+  "id": "kb-flood",
+  "file": "sfx/kb/kb-flood.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 3.601,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the answer floods cyan: the film's biggest chord"
+ },
+ {
+  "id": "kb-scan",
+  "file": "sfx/kb/kb-scan.wav",
+  "category": "riser",
+  "sync": 1.25,
+  "length": 2.501,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the scan sweeps the business"
+ },
+ {
+  "id": "kb-friction",
+  "file": "sfx/kb/kb-friction.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "two muted knocks: Friction"
+ },
+ {
+  "id": "kb-click-kb",
+  "file": "sfx/kb/kb-click-kb.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.091,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the K.B cursor clicks"
+ },
+ {
+  "id": "kb-auto-1",
+  "file": "sfx/kb/kb-auto-1.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "a step automated"
+ },
+ {
+  "id": "kb-click-team",
+  "file": "sfx/kb/kb-click-team.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.091,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "your team clicks"
+ },
+ {
+  "id": "kb-auto-2",
+  "file": "sfx/kb/kb-auto-2.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "a second step automated"
+ },
+ {
+  "id": "kb-run-all",
+  "file": "sfx/kb/kb-run-all.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "every step runs"
+ },
+ {
+  "id": "kb-monitor",
+  "file": "sfx/kb/kb-monitor.wav",
+  "category": "data",
+  "sync": 0.0,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "a soft heartbeat: uptime and monitoring"
+ },
+ {
+  "id": "kb-unfold",
+  "file": "sfx/kb/kb-unfold.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the maintenance rows unfold"
+ },
+ {
+  "id": "kb-handled",
+  "file": "sfx/kb/kb-handled.wav",
+  "category": "data",
+  "sync": 0.0,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "K.B takes each one"
+ },
+ {
+  "id": "kb-fold",
+  "file": "sfx/kb/kb-fold.wav",
+  "category": "whoosh",
+  "sync": 0.6,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "it folds away behind the card"
+ },
+ {
+  "id": "kb-settle",
+  "file": "sfx/kb/kb-settle.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the card settles into your business"
+ },
+ {
+  "id": "kb-claim",
+  "file": "sfx/kb/kb-claim.wav",
+  "category": "riser",
+  "sync": 0.35,
+  "length": 2.801,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "a warm swell as the business comes back behind the claim"
+ },
+ {
+  "id": "kb-you",
+  "file": "sfx/kb/kb-you.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "'you'"
+ },
+ {
+  "id": "kb-card-rise",
+  "file": "sfx/kb/kb-card-rise.wav",
+  "category": "appear-rise",
+  "sync": 0.25,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the Manual work card rises"
+ },
+ {
+  "id": "kb-checklist",
+  "file": "sfx/kb/kb-checklist.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the manual tasks check off, one note each"
+ },
+ {
+  "id": "kb-grow",
+  "file": "sfx/kb/kb-grow.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.601,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "Time to grow: three rising notes"
+ },
+ {
+  "id": "kb-exit",
+  "file": "sfx/kb/kb-exit.wav",
+  "category": "whoosh",
+  "sync": 0.3,
+  "length": 1.451,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "the card leaves for the sign-off"
+ },
+ {
+  "id": "kb-final",
+  "file": "sfx/kb/kb-final.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 4.201,
+  "licence": "generated",
+  "source": "generated for the K.B film (kb_sfx.py), royalty-free",
+  "character": "K.B: the closing chord"
  }
 ]

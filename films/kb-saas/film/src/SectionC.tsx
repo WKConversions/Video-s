@@ -144,7 +144,7 @@ const Process: React.FC<{ g: number; s: number; y: number; fade: number }> = ({ 
 /** The process card's push (one slow push over its life), shared by the card and the cursors that point into it. */
 const procScale = (g: number) => {
   const exitP = W("w:no", -0.53);
-  return 1 + 0.1 * pr(g, CONTRACT.a() + 14, exitP - CONTRACT.a() - 14, (x) => x);
+  return 1 + 0.18 * pr(g, CONTRACT.a() + 14, exitP - CONTRACT.a() - 14, (x) => x);
 };
 const inCard = (x: number, y: number, s: number) => ({ x: PC.x + (x - PC.x) * s, y: PC.y + (y - PC.y) * s });
 
@@ -218,7 +218,7 @@ const line2 = () => {
   return { words, ws, xs, sp };
 };
 
-const claimScale = (g: number) => 1 + 0.12 * pr(g, W("w:just2", -0.07), 66, (x) => x);
+const claimScale = (g: number) => 1 + 0.2 * pr(g, W("w:just2", -0.07), 66, (x) => x);
 const PillThread: React.FC<{ g: number; collapse: number }> = ({ g, collapse }) => {
   const youF = W("w:you", -0.3), swapF = W("w:you", -0.12), exit = W("w:less", -0.55);
   if (collapse <= 0 || g > exit + 10) return null;
@@ -298,7 +298,7 @@ const ManualWork: React.FC<{ g: number }> = ({ g }) => {
   const line = pr(g, grow + 2, 24, MOVE);
   const more = W("w:more", -0.08);
   const wipe = px(g, more, 14, 0.8);
-  const mpush = 1 + 0.08 * pr(g, a + 10, exit - a - 10, (x) => x);
+  const mpush = 1 + 0.15 * pr(g, a + 10, exit - a - 10, (x) => x);
   return (
     <div style={{ position: "absolute", left: MW.x - MW.w / 2, top, width: MW.w, height: h, borderRadius: 44, background: C.white, boxShadow: SHADOW,
       border: `1.5px solid ${rgba(C.navy, 0.06)}`, overflow: "hidden", transform: `scale(${mpush})` }}>
@@ -356,7 +356,7 @@ const SignOff: React.FC<{ g: number }> = ({ g }) => {
   if (g < a) return null;
   const e = px(g, a, 20, 0.85);
   const y = lerp(1300, 400, e);
-  const sp = 1 + 0.06 * pr(g, a + 10, 100, (x) => x);
+  const sp = 1 + 0.1 * pr(g, a + 10, 100, (x) => x);
   return (
     <div style={{ position: "absolute", inset: 0, transform: `scale(${sp})`, transformOrigin: "960px 600px" }}>
       <div style={at(960, y)}><KBTile size={240} /></div>
@@ -373,20 +373,23 @@ export const SectionC: React.FC<{ g: number }> = ({ g }) => {
   const exitP = W("w:no", -0.53);            // the card makes room for the maintenance rows in the pause
   const m = pr(g, exitP, 12, MOVE);
   const ppush = procScale(g);
-  const s = ppush * lerp(1, 0.72 / 1.1, m), y = lerp(PC.y, 330, m);
+  const s = ppush * lerp(1, 0.72 / 1.18, m), y = lerp(PC.y, 330, m);
   const coll = W("w:complexity", 0.0) + 20;  // collapse in the pause before "Just"
   const cp = pr(g, coll, 10, MOVE);
   const cardBottom = y + (PC.h / 2) * s;
   const showProcess = g >= ca + 8 && cp < 1;
   // collapse: the card's rectangle closes into the business pill
   const pw = 120 * 0.16 + 120 * 0.68 + 120 * 0.22 + tw("Your business", 43.2, 600) + 120 * 0.22 + tw("Running", 32, 600) + 32 * 1.6 + 120 * 0.36;
+  const cz = 1 + 0.1 * pr(g, W("w:no", -0.1), 40, MOVE) * (1 - cp);   // pushed into the maintenance as it unfolds
   return (
     <>
+      <div style={{ position: "absolute", inset: 0, transform: `scale(${cz})`, transformOrigin: "960px 560px" }}>
       <Complexity g={g} cardBottom={cardBottom} />
       {showProcess && (cp <= 0 ? <Process g={g} s={s} y={y} fade={1} /> : (
         <div style={{ position: "absolute", left: lerp(960 - PC.w * s / 2, 960 - pw / 2, cp), top: lerp(y - PC.h * s / 2, 300 - 60, cp),
           width: lerp(PC.w * s, pw, cp), height: lerp(PC.h * s, 120, cp), borderRadius: lerp(40, 36, cp), background: C.white, boxShadow: SHADOW }} />
       ))}
+      </div>
       <ProcessCursors g={g} />
       <ClaimFootage g={g} />
       <PillThread g={g} collapse={cp} />

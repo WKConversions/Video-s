@@ -6,11 +6,12 @@ the site's hero video, the 4% motion norm.
 
 | Path | What |
 |---|---|
-| `deliver/kb-saas-40s-1080p.mp4` | The film: 1920×1080, 30 fps, 40.0 s, H.264 BT.709 TV range, AAC 48 kHz, mix −15.2 LUFS. Median 4.05% of the frame in motion, 95% of frames moving; 29 of 29 phrases bring a new visual, 0.0 s of voice over a held frame. Rendered without motion blur (Karl asked for the film straight away). |
+| `deliver/kb-saas-40s-1080p-v2.mp4` | **v2 (12 Oct), after Karl's notes:** smooth intro (words ease in, "One business." stays, tool chips settle around the business instead of the rolling names), the tools fan into the question and are pulled into the send button, one continuous bar-to-K.B morph with the button's navy flooding the bar, the workspace card grows around the tasks (no outline), a properly sized chat bubble, one continuous Operations-to-agent move, 52 purpose-made sounds each used once (`sound/kb_sfx.py`). Median motion 4.1%, 98% of frames moving, 29/29 phrases. |
+| `deliver/kb-saas-40s-1080p.mp4` | v1. The film: 1920×1080, 30 fps, 40.0 s, H.264 BT.709 TV range, AAC 48 kHz, mix −15.2 LUFS. Median 4.05% of the frame in motion, 95% of frames moving; 29 of 29 phrases bring a new visual, 0.0 s of voice over a held frame. Rendered without motion blur (Karl asked for the film straight away). |
 | `storyboard/plan.md` | The plan: thesis, motion identity, a visual event for every phrase. `storyboard/concepts/` holds concepts A and B; `context.md` the brief, phrases and facts the planning used. |
 | `harvest/` | K.B's facts (re-checked live on 11 Oct), the page dumps. `brand.json`, `assets/`: brand tokens, the K.B tile rebuilt as vectors, fonts. |
 | `vo/` | The voice-over and its word timings (CTC forced alignment of the script, film time = file time + 0.50 s). |
-| `sound/` | `make_cues.py` → `cues.json` (81 effects keyed to the words), the generated effects library, `music/` (Cat Walk fitted: the drop on "Meet K.B.", the last hit on the closing "K.B."). |
+| `sound/` | `kb_sfx.py` (52 sounds made for this film, in the music's key), `make_cues.py` → `cues.json` (52 cues, every sound used once), `music/` (Cat Walk fitted: the drop on "Meet K.B.", the last hit on the closing "K.B."). |
 | `film/` | The Remotion project: `src/SectionA.tsx` (hook, question, K.B), `SectionB.tsx` (workspace, connect, automate, agent, dashboard, the question rewriting itself), `SectionC.tsx` (Diagnose/Build/Run, complexity, claim, manual work, sign-off), `Fields.tsx` (colour fields grown out of objects), `clock.ts` (labels on the voice's words). |
 
 Render: `cd film && bash scripts/render_chunks.sh Film out/final_master.mp4 '{"blurSamples":1,"audio":"none"}' 0,300,600,900,1200 public/audio/mix.wav`

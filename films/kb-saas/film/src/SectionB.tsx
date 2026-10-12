@@ -16,46 +16,40 @@ const ROW_Y = (i: number) => 372 + i * 104;
 const ROW_X = 380;
 
 const Workspace: React.FC<{ g: number }> = ({ g }) => {
-  const built = W("w:built", -0.1), around = W("w:around", -0.12), biz = W("w:business2", -0.08), lift = W("w:business2", 0.45);
+  const built = W("w:built", -0.1), around = W("w:around", -0.1), biz = W("w:business2", -0.08), lift = W("w:business2", 0.45);
   if (g < built || g > lift + 12) return null;
   const out = pxi(g, lift, 9, 0.75);
   const oy = -1150 * out;
-  const open = px(g, built + 3, 18, 0.8);
   const mv = pr(g, built, 16, MOVE);
   const ps = pillState(g);
   const pillX = lerp(960, 1450, mv), pillY = lerp(540, 268, mv), pillS = lerp(ps.push, 0.49, mv);
-  const wpush = 1 + 0.12 * pr(g, W("w:around", 0.1), 34, MOVE);
-  const widths = HOOK_TASKS.map((t) => tw(t, 44, 600) + 44 * 3.2);
-  // the outline around the ragged right edge of the task pills
-  const m = 26, hh = 92 / 2;
-  let d = `M ${ROW_X - m} ${ROW_Y(0) - hh - m}`;
-  widths.forEach((w, i) => {
-    const r = ROW_X + w + m, t0 = ROW_Y(i) - hh - m, b0 = ROW_Y(i) + hh + m;
-    d += ` L ${r} ${i === 0 ? t0 : t0 + 2 * m - 6} L ${r} ${i === widths.length - 1 ? b0 : b0 - 2 * m + 6}`;
-  });
-  d += ` L ${ROW_X - m} ${ROW_Y(4) + hh + m} Z`;
-  const draw = pr(g, around + 8, 20, MOVE);
+  const wpush = 1 + 0.2 * pr(g, W("w:around", 0.1), 34, MOVE);
+  // the workspace is built around the business's tasks: the card grows out from around them to its full size
+  const widths = HOOK_TASKS.map((tk) => tw(tk, 44, 600) + 44 * 3.2);
+  const bx0 = ROW_X - 30, bx1 = ROW_X + Math.max(...widths) + 30, by0 = ROW_Y(0) - 46 - 30, by1 = ROW_Y(4) + 46 + 30;
+  const grow = pr(g, around, 22, ARRIVE);
+  const L = lerp(bx0, CARD.x - CARD.w / 2, grow), R = lerp(bx1, CARD.x + CARD.w / 2, grow);
+  const T0 = lerp(by0, CARD.top, grow), B = lerp(by1, CARD.top + CARD.h, grow);
+  const edge = clamp01((g - around) / 6) * (1 - clamp01((grow - 0.6) / 0.4));
   return (
     <div style={{ position: "absolute", inset: 0, transform: `translateY(${oy}px) scale(${wpush})`, transformOrigin: "760px 520px" }}>
-      <div style={{ position: "absolute", left: CARD.x - CARD.w / 2, top: CARD.top, width: CARD.w, height: CARD.h * open, borderRadius: 40,
-        background: C.white, boxShadow: SHADOW, border: `1.5px solid ${rgba(C.navy, 0.06)}`, opacity: open > 0.02 ? 1 : 0 }}>
-        <div style={{ position: "absolute", left: 0, right: 0, top: 156, height: 1.5, background: C.line, opacity: open }} />
-      </div>
-      {HOOK_TASKS.map((t, i) => {
-        if (i === 1 && g >= lift) return null;                     // CRM updates lifts out (Connect)
-        const a = around + i * 3;
-        if (g < a) return null;
-        const e = px(g, a, 12, 0.8);
-        return <div key={i} style={{ position: "absolute", left: ROW_X, top: ROW_Y(i) - 46 + 90 * (1 - e) }}><TaskPill label={t} size={44} /></div>;
-      })}
-      {draw > 0 && (
-        <svg style={{ position: "absolute", left: 0, top: 0 }} width={1920} height={1080}>
-          <path d={d} fill="none" stroke={C.cyan} strokeWidth={5} strokeLinejoin="round" strokeLinecap="round" pathLength={1}
-            strokeDasharray={`${draw} 1`} />
-        </svg>
+      {g >= around && (
+        <div style={{ position: "absolute", left: L, top: T0, width: R - L, height: B - T0, borderRadius: lerp(30, 40, grow), background: C.white,
+          boxShadow: SHADOW, border: `${lerp(1.5, 3, edge)}px solid ${mix(rgba(C.navy, 0.06), C.cyan, edge)}`, boxSizing: "border-box",
+          opacity: clamp01((g - around) / 5) }}>
+          <div style={{ position: "absolute", left: 0, right: 0, top: CARD.top + 156 - T0, height: 1.5, background: C.line, opacity: clamp01((grow - 0.7) / 0.3) }} />
+        </div>
       )}
+      {HOOK_TASKS.map((tk, i) => {
+        if (i === 1 && g >= lift) return null;                     // CRM updates lifts out (Connect)
+        const a = built + 10 + i * 3;
+        if (g < a) return null;
+        const k = clamp01((g - a) / 14);
+        return <div key={i} style={{ position: "absolute", left: ROW_X, top: ROW_Y(i) - 46 + 30 * (1 - ARRIVE(k)), opacity: clamp01((g - a) / 8) }}>
+          <TaskPill label={tk} size={44} /></div>;
+      })}
       {g >= biz && (
-        <div style={{ position: "absolute", left: 360, top: 268 - 50 + 24 * (1 - px(g, biz, 10, 0.8)) }}><BusinessChip h={100} /></div>
+        <div style={{ position: "absolute", left: 360, top: 268 - 50 + 24 * (1 - ARRIVE(clamp01((g - biz) / 14))), opacity: clamp01((g - biz) / 8) }}><BusinessChip h={100} /></div>
       )}
       <div style={at(pillX, pillY, pillS)}><KBMark h={ps.h} m={1} open={ps.open} words={ps.words} /></div>
     </div>
@@ -107,22 +101,22 @@ const Systems: React.FC<{ g: number }> = ({ g }) => {
   const pushY = -470 * pr(g, push, 18, PUSH);
   R1 = { ...R1, y: R1.y + pushY };
   // the request bubble, then the workflow card landing on it
-  const reqW = tw("Automate our follow-ups", 52, 500) + 52 * 1.4;
+  const reqW = 18 + 68 + 22 + tw("Automate our follow-ups", 46, 500) + 50;
   const reqE = px(g, req, 18, 0.8);
   const recede = pr(g, wf + 8, 12, MOVE);
-  let R2: Rect = { x: 1600 - reqW / 2, y: lerp(1260, 330, reqE) - 34 * recede, w: reqW * (1 - 0.08 * recede), h: 116 * (1 - 0.08 * recede), r: 58 };
+  let R2: Rect = { x: 1600 - reqW / 2, y: lerp(1260, 330, reqE) - 34 * recede, w: reqW * (1 - 0.08 * recede), h: 104 * (1 - 0.08 * recede), r: 52 };
   const wfE = px(g, wf, 18, 0.8);
   let R3: Rect = { x: 960, y: lerp(1400, 668, wfE), w: 1320, h: 430, r: 40 };
   // simplify: everything gathers into one deck; operations: the deck flattens into one line
-  const sp = pr(g, simp, 16, MOVE), op = pr(g, ops, 14, MOVE);
+  const sp = pr(g, simp - 2, 22, MOVE), op = pr(g, ops, 14, MOVE);
   const D1: Rect = { x: 960, y: 452, w: 980, h: 300, r: 40 }, D2: Rect = { x: 960, y: 488, w: 1040, h: 300, r: 40 }, D3: Rect = { x: 960, y: 540, w: 1100, h: 320, r: 40 };
   const ROW: Rect = { x: 960, y: 540, w: 1100, h: 132, r: 66 };
   if (sp > 0) { R1 = rl(R1, D1, sp); R2 = rl(R2, D2, sp); R3 = rl(R3, D3, sp); }
   if (op > 0) { R1 = rl(R1, ROW, op); R2 = rl(R2, ROW, op); R3 = rl(R3, ROW, op); }
   const fadeIn = 1 - clamp01(sp * 2.2);                       // contents leave as the deck gathers
-  const push1 = lerp(1 + 0.24 * pr(g, tools - 2, 24, MOVE), 1, sp);
-  const push3 = lerp(1 + 0.14 * pr(g, wf + 14, 30, MOVE), 1, sp);
-  const opPush = 1 + 0.38 * pr(g, ops + 4, 30, MOVE);
+  const push1 = lerp(1 + 0.3 * pr(g, conn - 2, 40, MOVE), 1, sp);
+  const push3 = lerp(1 + 0.24 * pr(g, wf + 10, 36, MOVE), 1, sp);
+  const opPush = 1;
   // connection contents
   const chipsOut = px(g, lift + 12, 12, 0.8);
   const lineOn = g >= lift + 18;
@@ -176,8 +170,12 @@ const Systems: React.FC<{ g: number }> = ({ g }) => {
       {showReq && (
         <div style={{ position: "absolute", inset: 0, transform: `scale(${opPush})`, transformOrigin: "960px 540px" }}>
         <Box R={R2} bg={mix(C.pale, C.white, sp)} shadow={sp > 0 ? SHADOW : "none"}>
-          <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", opacity: fadeIn,
-            fontFamily: F.ui, fontWeight: 500, fontSize: 52, color: C.ink, whiteSpace: "nowrap" }}>Automate our follow-ups</div>
+          <div style={{ position: "absolute", left: 0, top: 0, width: reqW, height: 104, display: "flex", alignItems: "center", gap: 22, paddingLeft: 18,
+            opacity: fadeIn, transform: `scale(${R2.w / reqW})`, transformOrigin: "0 0", boxSizing: "border-box" }}>
+            <div style={{ width: 68, height: 68, borderRadius: 34, background: C.white, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}>
+              <Icon name="users" size={38} color={C.navy} stroke={2.1} /></div>
+            <span style={{ fontFamily: F.ui, fontWeight: 500, fontSize: 46, color: C.ink, whiteSpace: "nowrap" }}>Automate our follow-ups</span>
+          </div>
         </Box>
         </div>
       )}
@@ -233,11 +231,11 @@ const OpsRow: React.FC<{ g: number; a: number }> = ({ g, a }) => (
 const Agent: React.FC<{ g: number }> = ({ g }) => {
   const a = W("w:operations", 0.75), intel = W("w:intelligent", -0.07), ai = W("w:ai", -0.1), agents = W("w:agents", -0.05), out = W("w:to", -0.1);
   if (g < a || g > out + 10) return null;
-  const up = pr(g, a - 1, 12, MOVE);
-  const open = px(g, a + 5, 14, 0.8);
+  const mv = pr(g, a, 20, MOVE);                            // the line rises and opens into the panel in one move
+  const up = mv, open = mv;
   const ex = pxi(g, out, 8, 0.72);
-  const w = lerp(1100, 1260, open), h = lerp(132, 560, open);
-  const apush = lerp(1.38, 1, open) * (1 + 0.14 * pr(g, ai + 2, 26, MOVE));
+  const w = 1100, h = lerp(132, 560, open);
+  const apush = 1 + 0.16 * pr(g, intel, 46, MOVE);              // pushed to as the agent works and answers
   const top = lerp(540 - 66, 300 - 66, up) - 1300 * ex;
   const bodyE = px(g, intel, 10, 0.8);
   const words = ["CRM updated", "Follow-ups sent"];
@@ -251,8 +249,9 @@ const Agent: React.FC<{ g: number }> = ({ g }) => {
         <div style={{ width: 72, height: 72, borderRadius: 36, background: C.cyan, display: "flex", alignItems: "center", justifyContent: "center" }}>
           <Icon name="check" size={46} color={C.navy} stroke={3.2} /></div>
         <span style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 68, color: C.ink }}>Operations</span>
+        <div style={{ marginLeft: "auto", marginRight: 40 }}><Chip text="Runs smoothly" tone="green" size={32} /></div>
       </div>
-      <div style={{ position: "absolute", left: 40, right: 40, top: 150, height: 1.5, background: C.line, opacity: open }} />
+      <div style={{ position: "absolute", left: 40, right: 40, top: 150, height: 1.5, background: C.line, opacity: clamp01((open - 0.5) / 0.5) }} />
       {g >= intel && (
         <div style={{ position: "absolute", left: 50, top: 200 + 30 * (1 - bodyE), display: "flex", alignItems: "center", gap: 30 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14, background: C.navy, color: "#fff", borderRadius: 40, padding: "16px 30px 16px 22px" }}>
@@ -294,12 +293,12 @@ const AgentInputs: React.FC<{ g: number; a: number; end: number }> = ({ g, a, en
   const ICONS_IN = ["mail", "crm", "sheet", "form", "invoice", "calendar", "chat", "mail", "crm", "sheet"];
   const fade = 1 - clamp01((g - end) / 8);
   return (
-    <div style={{ position: "absolute", left: 0, top: 300, width: 1260, height: 240, opacity: fade, overflow: "hidden" }}>
+    <div style={{ position: "absolute", left: 0, top: 300, width: 1100, height: 240, opacity: fade, overflow: "hidden" }}>
       {ICONS_IN.map((ic, i) => {
         const s0 = a - 6 + i * 3;
         if (g < s0) return null;
         const tt = g - s0;
-        const x = 1180 - tt * 34;                 // already moving, at constant speed, towards the agent chip
+        const x = 1040 - tt * 32;                 // already moving, at constant speed, towards the agent chip
         if (x < 120) return null;
         const o = clamp01((x - 120) / 120);
         return (
@@ -369,7 +368,7 @@ const Software: React.FC<{ g: number }> = ({ g }) => {
   const chart = pr(g, sw + 2, 30, MOVE);
   // into the stack: shrinks and rises as the back card
   const s = pr(g, shrink, 14, MOVE);
-  const dpush = 1 + 0.2 * pr(g, sw + 4, 26, MOVE);
+  const dpush = 1 + 0.3 * pr(g, sw - 6, 36, MOVE);
   const sc = lerp(dpush, 0.36, s), y = lerp(lerp(1500, 560, rise), 344, s);
   return <div style={{ ...at(960, y, sc), transformOrigin: s > 0 ? "50% 50%" : "60% 66%" }}><Dashboard g={g} dev={dev} chart={chart} band={band} /></div>;
 };
@@ -389,6 +388,7 @@ const Together: React.FC<{ g: number; layer: "back" | "front" }> = ({ g, layer }
   const size = lerp(78, 108, big);
   const ex = pxi(g, exit, 8, 0.75);
   const qy = lerp(lerp(1300, 760, qE), 540, big) - 1000 * ex;
+  const qz = 1 + 0.16 * pr(g, qa + 8, 30, MOVE) * (1 - big);
   const words: { t: string; w: number }[] = [
     { t: "What", w: 1 - col }, { t: "if", w: 1 - col }, { t: col > 0.5 ? "Everything" : "everything", w: 1 }, { t: "just", w: 1 - col },
     { t: col > 0.5 ? "works" : "worked", w: 1 }, { t: g >= tog ? "together." : "together?", w: 1 },
@@ -419,7 +419,7 @@ const Together: React.FC<{ g: number; layer: "back" | "front" }> = ({ g, layer }
     <>
       {flood > 0 && <div style={{ position: "absolute", inset: 0, background: C.cyan, clipPath: `circle(${flood}px at 960px 760px)` }} />}
       {g >= qa && (
-        <div style={at(960, qy)}>
+        <div style={at(960, qy, qz)}>
           <div style={{ position: "relative", width: total + 2 * padX, height: size * 1.24 + 2 * padY, borderRadius: size * 0.8,
             background: big > 0 ? rgba(C.pale, 1 - clamp01(big * 3)) : C.pale }}>
             {words.map((wd, i) => {
