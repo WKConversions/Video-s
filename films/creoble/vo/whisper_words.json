@@ -1,0 +1,613 @@
+{
+ "source": "vo/creoble-vo-elevenlabs.mp3",
+ "model": "small",
+ "duration": 41.32575,
+ "words": [
+  {
+   "word": "Hvad",
+   "start": 0.0,
+   "end": 0.2,
+   "p": 0.771
+  },
+  {
+   "word": "nu,",
+   "start": 0.2,
+   "end": 0.4,
+   "p": 0.945
+  },
+  {
+   "word": "hvis",
+   "start": 0.52,
+   "end": 0.64,
+   "p": 0.989
+  },
+  {
+   "word": "du",
+   "start": 0.64,
+   "end": 0.78,
+   "p": 0.995
+  },
+  {
+   "word": "kunne",
+   "start": 0.78,
+   "end": 0.94,
+   "p": 0.851
+  },
+  {
+   "word": "se",
+   "start": 0.94,
+   "end": 1.18,
+   "p": 0.972
+  },
+  {
+   "word": "resultatet",
+   "start": 1.18,
+   "end": 1.96,
+   "p": 0.991
+  },
+  {
+   "word": "f\u00f8r",
+   "start": 1.96,
+   "end": 2.22,
+   "p": 0.987
+  },
+  {
+   "word": "du",
+   "start": 2.22,
+   "end": 2.42,
+   "p": 0.99
+  },
+  {
+   "word": "betaler?",
+   "start": 2.42,
+   "end": 2.82,
+   "p": 0.966
+  },
+  {
+   "word": "Normalt",
+   "start": 3.5,
+   "end": 3.92,
+   "p": 0.897
+  },
+  {
+   "word": "begynder",
+   "start": 3.92,
+   "end": 4.32,
+   "p": 0.948
+  },
+  {
+   "word": "en",
+   "start": 4.32,
+   "end": 4.52,
+   "p": 0.812
+  },
+  {
+   "word": "ny",
+   "start": 4.52,
+   "end": 4.68,
+   "p": 0.984
+  },
+  {
+   "word": "hjemmeside",
+   "start": 4.68,
+   "end": 5.24,
+   "p": 0.964
+  },
+  {
+   "word": "med",
+   "start": 5.24,
+   "end": 5.44,
+   "p": 0.952
+  },
+  {
+   "word": "et",
+   "start": 5.44,
+   "end": 5.54,
+   "p": 0.852
+  },
+  {
+   "word": "tilbud,",
+   "start": 5.54,
+   "end": 5.96,
+   "p": 0.324
+  },
+  {
+   "word": "et",
+   "start": 6.28,
+   "end": 6.4,
+   "p": 0.943
+  },
+  {
+   "word": "depositum",
+   "start": 6.4,
+   "end": 7.18,
+   "p": 0.499
+  },
+  {
+   "word": "og",
+   "start": 7.18,
+   "end": 7.4,
+   "p": 0.815
+  },
+  {
+   "word": "en",
+   "start": 7.4,
+   "end": 7.56,
+   "p": 0.958
+  },
+  {
+   "word": "masse",
+   "start": 7.56,
+   "end": 7.92,
+   "p": 0.961
+  },
+  {
+   "word": "ubesvarede",
+   "start": 7.92,
+   "end": 8.68,
+   "p": 0.591
+  },
+  {
+   "word": "sp\u00f8rgsm\u00e5l.",
+   "start": 8.68,
+   "end": 9.28,
+   "p": 0.981
+  },
+  {
+   "word": "Creoble",
+   "start": 9.8,
+   "end": 10.36,
+   "p": 0.107
+  },
+  {
+   "word": "vender",
+   "start": 10.36,
+   "end": 10.64,
+   "p": 0.44
+  },
+  {
+   "word": "processen",
+   "start": 10.64,
+   "end": 11.22,
+   "p": 0.943
+  },
+  {
+   "word": "p\u00e5",
+   "start": 11.22,
+   "end": 11.4,
+   "p": 0.994
+  },
+  {
+   "word": "hovedet.",
+   "start": 11.4,
+   "end": 11.86,
+   "p": 0.946
+  },
+  {
+   "word": "Fort\u00e6l",
+   "start": 12.38,
+   "end": 12.7,
+   "p": 0.565
+  },
+  {
+   "word": "os",
+   "start": 12.7,
+   "end": 12.82,
+   "p": 0.81
+  },
+  {
+   "word": "lidt",
+   "start": 12.82,
+   "end": 13.0,
+   "p": 0.863
+  },
+  {
+   "word": "om",
+   "start": 13.0,
+   "end": 13.16,
+   "p": 0.998
+  },
+  {
+   "word": "din",
+   "start": 13.16,
+   "end": 13.28,
+   "p": 0.983
+  },
+  {
+   "word": "virksomhed.",
+   "start": 13.28,
+   "end": 13.86,
+   "p": 0.968
+  },
+  {
+   "word": "P\u00e5",
+   "start": 14.44,
+   "end": 14.54,
+   "p": 0.978
+  },
+  {
+   "word": "f\u00e5",
+   "start": 14.54,
+   "end": 14.78,
+   "p": 0.329
+  },
+  {
+   "word": "minutter",
+   "start": 14.78,
+   "end": 15.24,
+   "p": 0.88
+  },
+  {
+   "word": "forvandler",
+   "start": 15.24,
+   "end": 15.76,
+   "p": 0.899
+  },
+  {
+   "word": "Creoble",
+   "start": 15.76,
+   "end": 16.34,
+   "p": 0.988
+  },
+  {
+   "word": "din",
+   "start": 16.34,
+   "end": 16.54,
+   "p": 0.991
+  },
+  {
+   "word": "beskrivelse",
+   "start": 16.54,
+   "end": 17.22,
+   "p": 0.968
+  },
+  {
+   "word": "til",
+   "start": 17.22,
+   "end": 17.46,
+   "p": 0.988
+  },
+  {
+   "word": "en",
+   "start": 17.46,
+   "end": 17.56,
+   "p": 0.992
+  },
+  {
+   "word": "f\u00e6rdig",
+   "start": 17.56,
+   "end": 18.02,
+   "p": 0.951
+  },
+  {
+   "word": "hjemmeside.",
+   "start": 18.02,
+   "end": 18.56,
+   "p": 0.992
+  },
+  {
+   "word": "Udforsk",
+   "start": 19.12,
+   "end": 19.68,
+   "p": 0.697
+  },
+  {
+   "word": "siderne,",
+   "start": 19.68,
+   "end": 20.16,
+   "p": 0.698
+  },
+  {
+   "word": "se",
+   "start": 20.5,
+   "end": 20.56,
+   "p": 0.89
+  },
+  {
+   "word": "designet",
+   "start": 20.56,
+   "end": 21.22,
+   "p": 0.922
+  },
+  {
+   "word": "og",
+   "start": 21.22,
+   "end": 21.4,
+   "p": 0.957
+  },
+  {
+   "word": "fort\u00e6l",
+   "start": 21.4,
+   "end": 21.78,
+   "p": 0.863
+  },
+  {
+   "word": "hvad",
+   "start": 21.78,
+   "end": 21.92,
+   "p": 0.718
+  },
+  {
+   "word": "du",
+   "start": 21.92,
+   "end": 22.02,
+   "p": 0.999
+  },
+  {
+   "word": "gerne",
+   "start": 22.02,
+   "end": 22.22,
+   "p": 0.934
+  },
+  {
+   "word": "vil",
+   "start": 22.22,
+   "end": 22.4,
+   "p": 0.994
+  },
+  {
+   "word": "\u00e6ndre.",
+   "start": 22.4,
+   "end": 22.74,
+   "p": 0.984
+  },
+  {
+   "word": "Kan",
+   "start": 23.28,
+   "end": 23.38,
+   "p": 0.916
+  },
+  {
+   "word": "du",
+   "start": 23.38,
+   "end": 23.5,
+   "p": 0.999
+  },
+  {
+   "word": "lide",
+   "start": 23.5,
+   "end": 23.66,
+   "p": 0.939
+  },
+  {
+   "word": "resultatet?",
+   "start": 23.66,
+   "end": 24.32,
+   "p": 0.997
+  },
+  {
+   "word": "S\u00e5",
+   "start": 24.7,
+   "end": 24.84,
+   "p": 0.965
+  },
+  {
+   "word": "er",
+   "start": 24.84,
+   "end": 25.0,
+   "p": 0.992
+  },
+  {
+   "word": "hjemmesiden",
+   "start": 25.0,
+   "end": 25.42,
+   "p": 0.984
+  },
+  {
+   "word": "din",
+   "start": 25.42,
+   "end": 25.74,
+   "p": 0.899
+  },
+  {
+   "word": "for",
+   "start": 25.74,
+   "end": 26.0,
+   "p": 0.896
+  },
+  {
+   "word": "kun",
+   "start": 26.0,
+   "end": 26.2,
+   "p": 0.99
+  },
+  {
+   "word": "499",
+   "start": 26.2,
+   "end": 27.36,
+   "p": 0.554
+  },
+  {
+   "word": "kroner.",
+   "start": 27.36,
+   "end": 28.12,
+   "p": 0.733
+  },
+  {
+   "word": "En",
+   "start": 28.12,
+   "end": 28.66,
+   "p": 0.49
+  },
+  {
+   "word": "betaling.",
+   "start": 28.66,
+   "end": 29.18,
+   "p": 0.966
+  },
+  {
+   "word": "Entet",
+   "start": 29.52,
+   "end": 29.88,
+   "p": 0.558
+  },
+  {
+   "word": "abonnement",
+   "start": 29.88,
+   "end": 30.4,
+   "p": 0.779
+  },
+  {
+   "word": "for",
+   "start": 30.4,
+   "end": 30.64,
+   "p": 0.969
+  },
+  {
+   "word": "at",
+   "start": 30.64,
+   "end": 30.76,
+   "p": 0.902
+  },
+  {
+   "word": "ejere",
+   "start": 30.76,
+   "end": 31.04,
+   "p": 0.646
+  },
+  {
+   "word": "den.",
+   "start": 31.04,
+   "end": 31.1,
+   "p": 0.981
+  },
+  {
+   "word": "Klar",
+   "start": 31.56,
+   "end": 31.76,
+   "p": 0.485
+  },
+  {
+   "word": "til",
+   "start": 31.76,
+   "end": 31.96,
+   "p": 0.914
+  },
+  {
+   "word": "at",
+   "start": 31.96,
+   "end": 32.04,
+   "p": 0.995
+  },
+  {
+   "word": "g\u00e5",
+   "start": 32.04,
+   "end": 32.14,
+   "p": 0.99
+  },
+  {
+   "word": "online?",
+   "start": 32.14,
+   "end": 32.46,
+   "p": 0.979
+  },
+  {
+   "word": "Tilf\u00f8j",
+   "start": 33.08,
+   "end": 33.44,
+   "p": 0.698
+  },
+  {
+   "word": "hosting,",
+   "start": 33.44,
+   "end": 33.76,
+   "p": 0.935
+  },
+  {
+   "word": "dom\u00e6ne",
+   "start": 34.1,
+   "end": 34.6,
+   "p": 0.853
+  },
+  {
+   "word": "og",
+   "start": 34.6,
+   "end": 34.78,
+   "p": 0.982
+  },
+  {
+   "word": "e",
+   "start": 34.78,
+   "end": 35.0,
+   "p": 0.445
+  },
+  {
+   "word": "-mail",
+   "start": 35.0,
+   "end": 35.24,
+   "p": 0.989
+  },
+  {
+   "word": "samlet",
+   "start": 35.24,
+   "end": 35.78,
+   "p": 0.943
+  },
+  {
+   "word": "\u00e9t",
+   "start": 35.78,
+   "end": 36.06,
+   "p": 0.47
+  },
+  {
+   "word": "sted.",
+   "start": 36.06,
+   "end": 36.38,
+   "p": 0.972
+  },
+  {
+   "word": "Ingen",
+   "start": 36.88,
+   "end": 37.12,
+   "p": 0.948
+  },
+  {
+   "word": "kode,",
+   "start": 37.12,
+   "end": 37.48,
+   "p": 0.903
+  },
+  {
+   "word": "ingen",
+   "start": 37.9,
+   "end": 38.06,
+   "p": 0.996
+  },
+  {
+   "word": "usikkerhed.",
+   "start": 38.06,
+   "end": 38.76,
+   "p": 0.969
+  },
+  {
+   "word": "Pr\u00f8v",
+   "start": 39.18,
+   "end": 39.48,
+   "p": 0.996
+  },
+  {
+   "word": "Creoble",
+   "start": 39.48,
+   "end": 39.98,
+   "p": 0.085
+  },
+  {
+   "word": "gratis",
+   "start": 39.98,
+   "end": 40.68,
+   "p": 0.959
+  },
+  {
+   "word": "i",
+   "start": 40.68,
+   "end": 40.82,
+   "p": 0.92
+  },
+  {
+   "word": "dag.",
+   "start": 40.82,
+   "end": 40.98,
+   "p": 0.998
+  }
+ ]
+}

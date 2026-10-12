@@ -1,0 +1,608 @@
+[
+{
+"key": "w:hvad",
+"word": "Hvad",
+"start": 0.5,
+"end": 0.7
+},
+{
+"key": "w:nu",
+"word": "nu,",
+"start": 0.7,
+"end": 0.9
+},
+{
+"key": "w:hvis",
+"word": "hvis",
+"start": 1.02,
+"end": 1.14
+},
+{
+"key": "w:du",
+"word": "du",
+"start": 1.14,
+"end": 1.28
+},
+{
+"key": "w:kunne",
+"word": "kunne",
+"start": 1.28,
+"end": 1.44
+},
+{
+"key": "w:se",
+"word": "se",
+"start": 1.44,
+"end": 1.68
+},
+{
+"key": "w:resultatet",
+"word": "resultatet",
+"start": 1.68,
+"end": 2.46
+},
+{
+"key": "w:foer",
+"word": "f\u00f8r",
+"start": 2.46,
+"end": 2.72
+},
+{
+"key": "w:du2",
+"word": "du",
+"start": 2.72,
+"end": 2.92
+},
+{
+"key": "w:betaler",
+"word": "betaler?",
+"start": 2.92,
+"end": 3.32
+},
+{
+"key": "w:normalt",
+"word": "Normalt",
+"start": 4.0,
+"end": 4.42
+},
+{
+"key": "w:begynder",
+"word": "begynder",
+"start": 4.42,
+"end": 4.82
+},
+{
+"key": "w:en",
+"word": "en",
+"start": 4.82,
+"end": 5.02
+},
+{
+"key": "w:ny",
+"word": "ny",
+"start": 5.02,
+"end": 5.18
+},
+{
+"key": "w:hjemmeside",
+"word": "hjemmeside",
+"start": 5.18,
+"end": 5.74
+},
+{
+"key": "w:med",
+"word": "med",
+"start": 5.74,
+"end": 5.94
+},
+{
+"key": "w:et",
+"word": "et",
+"start": 5.94,
+"end": 6.04
+},
+{
+"key": "w:tilbud",
+"word": "tilbud,",
+"start": 6.04,
+"end": 6.46
+},
+{
+"key": "w:et2",
+"word": "et",
+"start": 6.78,
+"end": 6.9
+},
+{
+"key": "w:depositum",
+"word": "depositum",
+"start": 6.9,
+"end": 7.68
+},
+{
+"key": "w:og",
+"word": "og",
+"start": 7.68,
+"end": 7.9
+},
+{
+"key": "w:en2",
+"word": "en",
+"start": 7.9,
+"end": 8.06
+},
+{
+"key": "w:masse",
+"word": "masse",
+"start": 8.06,
+"end": 8.42
+},
+{
+"key": "w:ubesvarede",
+"word": "ubesvarede",
+"start": 8.42,
+"end": 9.18
+},
+{
+"key": "w:spoergsmaal",
+"word": "sp\u00f8rgsm\u00e5l.",
+"start": 9.18,
+"end": 9.78
+},
+{
+"key": "w:creoble",
+"word": "Creoble",
+"start": 10.3,
+"end": 10.86
+},
+{
+"key": "w:vender",
+"word": "vender",
+"start": 10.86,
+"end": 11.14
+},
+{
+"key": "w:processen",
+"word": "processen",
+"start": 11.14,
+"end": 11.72
+},
+{
+"key": "w:paa",
+"word": "p\u00e5",
+"start": 11.72,
+"end": 11.9
+},
+{
+"key": "w:hovedet",
+"word": "hovedet.",
+"start": 11.9,
+"end": 12.36
+},
+{
+"key": "w:fortael",
+"word": "Fort\u00e6l",
+"start": 12.88,
+"end": 13.2
+},
+{
+"key": "w:os",
+"word": "os",
+"start": 13.2,
+"end": 13.32
+},
+{
+"key": "w:lidt",
+"word": "lidt",
+"start": 13.32,
+"end": 13.5
+},
+{
+"key": "w:om",
+"word": "om",
+"start": 13.5,
+"end": 13.66
+},
+{
+"key": "w:din",
+"word": "din",
+"start": 13.66,
+"end": 13.78
+},
+{
+"key": "w:virksomhed",
+"word": "virksomhed.",
+"start": 13.78,
+"end": 14.36
+},
+{
+"key": "w:paa2",
+"word": "P\u00e5",
+"start": 14.94,
+"end": 15.04
+},
+{
+"key": "w:faa",
+"word": "f\u00e5",
+"start": 15.04,
+"end": 15.28
+},
+{
+"key": "w:minutter",
+"word": "minutter",
+"start": 15.28,
+"end": 15.74
+},
+{
+"key": "w:forvandler",
+"word": "forvandler",
+"start": 15.74,
+"end": 16.26
+},
+{
+"key": "w:creoble2",
+"word": "Creoble",
+"start": 16.26,
+"end": 16.84
+},
+{
+"key": "w:din2",
+"word": "din",
+"start": 16.84,
+"end": 17.04
+},
+{
+"key": "w:beskrivelse",
+"word": "beskrivelse",
+"start": 17.04,
+"end": 17.72
+},
+{
+"key": "w:til",
+"word": "til",
+"start": 17.72,
+"end": 17.96
+},
+{
+"key": "w:en3",
+"word": "en",
+"start": 17.96,
+"end": 18.06
+},
+{
+"key": "w:faerdig",
+"word": "f\u00e6rdig",
+"start": 18.06,
+"end": 18.52
+},
+{
+"key": "w:hjemmeside2",
+"word": "hjemmeside.",
+"start": 18.52,
+"end": 19.06
+},
+{
+"key": "w:udforsk",
+"word": "Udforsk",
+"start": 19.62,
+"end": 20.18
+},
+{
+"key": "w:siderne",
+"word": "siderne,",
+"start": 20.18,
+"end": 20.66
+},
+{
+"key": "w:se2",
+"word": "se",
+"start": 21.0,
+"end": 21.06
+},
+{
+"key": "w:designet",
+"word": "designet",
+"start": 21.06,
+"end": 21.72
+},
+{
+"key": "w:og2",
+"word": "og",
+"start": 21.72,
+"end": 21.9
+},
+{
+"key": "w:fortael2",
+"word": "fort\u00e6l",
+"start": 21.9,
+"end": 22.28
+},
+{
+"key": "w:hvad2",
+"word": "hvad",
+"start": 22.28,
+"end": 22.42
+},
+{
+"key": "w:du3",
+"word": "du",
+"start": 22.42,
+"end": 22.52
+},
+{
+"key": "w:gerne",
+"word": "gerne",
+"start": 22.52,
+"end": 22.72
+},
+{
+"key": "w:vil",
+"word": "vil",
+"start": 22.72,
+"end": 22.9
+},
+{
+"key": "w:aendre",
+"word": "\u00e6ndre.",
+"start": 22.9,
+"end": 23.24
+},
+{
+"key": "w:kan",
+"word": "Kan",
+"start": 23.78,
+"end": 23.88
+},
+{
+"key": "w:du4",
+"word": "du",
+"start": 23.88,
+"end": 24.0
+},
+{
+"key": "w:lide",
+"word": "lide",
+"start": 24.0,
+"end": 24.16
+},
+{
+"key": "w:resultatet2",
+"word": "resultatet?",
+"start": 24.16,
+"end": 24.82
+},
+{
+"key": "w:saa",
+"word": "S\u00e5",
+"start": 25.2,
+"end": 25.34
+},
+{
+"key": "w:er",
+"word": "er",
+"start": 25.34,
+"end": 25.5
+},
+{
+"key": "w:hjemmesiden",
+"word": "hjemmesiden",
+"start": 25.5,
+"end": 25.92
+},
+{
+"key": "w:din3",
+"word": "din",
+"start": 25.92,
+"end": 26.24
+},
+{
+"key": "w:for",
+"word": "for",
+"start": 26.24,
+"end": 26.5
+},
+{
+"key": "w:kun",
+"word": "kun",
+"start": 26.5,
+"end": 26.7
+},
+{
+"key": "w:499",
+"word": "499",
+"start": 26.7,
+"end": 27.86
+},
+{
+"key": "w:kroner",
+"word": "kroner.",
+"start": 27.86,
+"end": 28.62
+},
+{
+"key": "w:en4",
+"word": "En",
+"start": 28.62,
+"end": 29.16
+},
+{
+"key": "w:betaling",
+"word": "betaling.",
+"start": 29.16,
+"end": 29.68
+},
+{
+"key": "w:entet",
+"word": "Entet",
+"start": 30.02,
+"end": 30.38
+},
+{
+"key": "w:abonnement",
+"word": "abonnement",
+"start": 30.38,
+"end": 30.9
+},
+{
+"key": "w:for2",
+"word": "for",
+"start": 30.9,
+"end": 31.14
+},
+{
+"key": "w:at",
+"word": "at",
+"start": 31.14,
+"end": 31.26
+},
+{
+"key": "w:ejere",
+"word": "ejere",
+"start": 31.26,
+"end": 31.54
+},
+{
+"key": "w:den",
+"word": "den.",
+"start": 31.54,
+"end": 31.6
+},
+{
+"key": "w:klar",
+"word": "Klar",
+"start": 32.06,
+"end": 32.26
+},
+{
+"key": "w:til2",
+"word": "til",
+"start": 32.26,
+"end": 32.46
+},
+{
+"key": "w:at2",
+"word": "at",
+"start": 32.46,
+"end": 32.54
+},
+{
+"key": "w:gaa",
+"word": "g\u00e5",
+"start": 32.54,
+"end": 32.64
+},
+{
+"key": "w:online",
+"word": "online?",
+"start": 32.64,
+"end": 32.96
+},
+{
+"key": "w:tilfoej",
+"word": "Tilf\u00f8j",
+"start": 33.58,
+"end": 33.94
+},
+{
+"key": "w:hosting",
+"word": "hosting,",
+"start": 33.94,
+"end": 34.26
+},
+{
+"key": "w:domaene",
+"word": "dom\u00e6ne",
+"start": 34.6,
+"end": 35.1
+},
+{
+"key": "w:og3",
+"word": "og",
+"start": 35.1,
+"end": 35.28
+},
+{
+"key": "w:e",
+"word": "e",
+"start": 35.28,
+"end": 35.5
+},
+{
+"key": "w:mail",
+"word": "-mail",
+"start": 35.5,
+"end": 35.74
+},
+{
+"key": "w:samlet",
+"word": "samlet",
+"start": 35.74,
+"end": 36.28
+},
+{
+"key": "w:et3",
+"word": "\u00e9t",
+"start": 36.28,
+"end": 36.56
+},
+{
+"key": "w:sted",
+"word": "sted.",
+"start": 36.56,
+"end": 36.88
+},
+{
+"key": "w:ingen",
+"word": "Ingen",
+"start": 37.38,
+"end": 37.62
+},
+{
+"key": "w:kode",
+"word": "kode,",
+"start": 37.62,
+"end": 37.98
+},
+{
+"key": "w:ingen2",
+"word": "ingen",
+"start": 38.4,
+"end": 38.56
+},
+{
+"key": "w:usikkerhed",
+"word": "usikkerhed.",
+"start": 38.56,
+"end": 39.26
+},
+{
+"key": "w:proev",
+"word": "Pr\u00f8v",
+"start": 39.68,
+"end": 39.98
+},
+{
+"key": "w:creoble3",
+"word": "Creoble",
+"start": 39.98,
+"end": 40.48
+},
+{
+"key": "w:gratis",
+"word": "gratis",
+"start": 40.48,
+"end": 41.18
+},
+{
+"key": "w:i",
+"word": "i",
+"start": 41.18,
+"end": 41.32
+},
+{
+"key": "w:dag",
+"word": "dag.",
+"start": 41.32,
+"end": 41.48
+}
+]

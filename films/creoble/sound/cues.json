@@ -1,0 +1,337 @@
+{
+ "fps": 30,
+ "frames": 1320,
+ "library": "lib",
+ "vo": {
+  "file": "../film/public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "music/jkw-fit.wav",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.3,
+  "fade_out": 1.2,
+  "note": "Just Keep Walking (Michael Ramir C., Mixkit, Mixkit Stock Music Free License), fitted: lift at 10.20 on 'Creoble', last hit 41.45 on 'i dag'"
+ },
+ "sfx": [
+  {
+   "id": "cr-cafe-open",
+   "frame": 15,
+   "note": "the caf\u00e9 opens the film",
+   "db": -5
+  },
+  {
+   "id": "cr-into-site",
+   "frame": 62,
+   "note": "the caf\u00e9 closes into the website's hero",
+   "db": -4
+  },
+  {
+   "id": "cr-foer",
+   "frame": 72,
+   "note": "'f\u00f8r' lands in terracotta",
+   "db": -5
+  },
+  {
+   "id": "cr-words-away",
+   "frame": 111,
+   "note": "the question eases away",
+   "db": -7
+  },
+  {
+   "id": "cr-lock",
+   "frame": 125,
+   "note": "the site locks behind a blur",
+   "db": -4
+  },
+  {
+   "id": "cr-paper-quote",
+   "frame": 182,
+   "note": "the quote slides in",
+   "db": -4
+  },
+  {
+   "id": "cr-paper-deposit",
+   "frame": 207,
+   "note": "the deposit slip",
+   "db": -4
+  },
+  {
+   "id": "cr-questions",
+   "frame": 231,
+   "note": "the questions rise, one bubble each",
+   "db": -1
+  },
+  {
+   "id": "cr-old-drop",
+   "frame": 299,
+   "note": "the old way falls away",
+   "db": -5
+  },
+  {
+   "id": "cr-brand",
+   "frame": 308,
+   "note": "Creoble",
+   "db": -3
+  },
+  {
+   "id": "cr-steps-in",
+   "frame": 319,
+   "note": "the three steps",
+   "db": -5
+  },
+  {
+   "id": "cr-turn",
+   "frame": 347,
+   "note": "the order turns on its head",
+   "db": -3
+  },
+  {
+   "id": "cr-steps-out",
+   "frame": 378,
+   "note": "the steps make way",
+   "db": -6
+  },
+  {
+   "id": "cr-keys-name",
+   "frame": 389,
+   "note": "'Caf\u00e9 Salvie' typed",
+   "db": -3
+  },
+  {
+   "id": "cr-cafe-behind",
+   "frame": 400,
+   "note": "the caf\u00e9 opens behind the form",
+   "db": -6
+  },
+  {
+   "id": "cr-dropdown",
+   "frame": 413,
+   "note": "the branche list opens",
+   "db": -3
+  },
+  {
+   "id": "cr-pick",
+   "frame": 425,
+   "note": "'Restaurant / Caf\u00e9' picked",
+   "db": -4
+  },
+  {
+   "id": "cr-click-build",
+   "frame": 435,
+   "note": "'Byg min side'",
+   "db": -2
+  },
+  {
+   "id": "cr-generating",
+   "frame": 450,
+   "note": "Creoble builds",
+   "db": -5
+  },
+  {
+   "id": "cr-description-to-site",
+   "frame": 464,
+   "note": "the description becomes the website",
+   "db": -3
+  },
+  {
+   "id": "cr-build-menu",
+   "frame": 492,
+   "note": "the menu develops",
+   "db": -6
+  },
+  {
+   "id": "cr-build-about",
+   "frame": 510,
+   "note": "the about section develops",
+   "db": -6
+  },
+  {
+   "id": "cr-build-contact",
+   "frame": 524,
+   "note": "the contact band develops",
+   "db": -6
+  },
+  {
+   "id": "cr-site-ready",
+   "frame": 554,
+   "note": "'Din hjemmeside er f\u00e6rdig'",
+   "db": -3
+  },
+  {
+   "id": "cr-scroll-down",
+   "frame": 600,
+   "note": "the pages are explored",
+   "db": -5
+  },
+  {
+   "id": "cr-scroll-up",
+   "frame": 629,
+   "note": "back up to the design",
+   "db": -6
+  },
+  {
+   "id": "cr-theme-terra",
+   "frame": 635,
+   "note": "terracotta",
+   "db": -3
+  },
+  {
+   "id": "cr-theme-forest",
+   "frame": 647,
+   "note": "forest",
+   "db": -6
+  },
+  {
+   "id": "cr-keys-change",
+   "frame": 656,
+   "note": "the change is typed",
+   "db": -4
+  },
+  {
+   "id": "cr-change-bar",
+   "frame": 658,
+   "note": "the change bar rises",
+   "db": -6
+  },
+  {
+   "id": "cr-send-change",
+   "frame": 691,
+   "note": "sent; the headline grows",
+   "db": -3
+  },
+  {
+   "id": "cr-like-rise",
+   "frame": 716,
+   "note": "the question card rises",
+   "db": -6
+  },
+  {
+   "id": "cr-click-yes",
+   "frame": 747,
+   "note": "'Ja, den er min'",
+   "db": -2
+  },
+  {
+   "id": "cr-price-in",
+   "frame": 768,
+   "note": "the site steps aside for the price",
+   "db": -5
+  },
+  {
+   "id": "cr-499",
+   "frame": 801,
+   "note": "499 kr",
+   "db": -2
+  },
+  {
+   "id": "cr-one-payment",
+   "frame": 856,
+   "note": "\u00c9n betaling",
+   "db": -13
+  },
+  {
+   "id": "cr-no-sub",
+   "frame": 898,
+   "note": "Intet abonnement",
+   "db": -5
+  },
+  {
+   "id": "cr-strike",
+   "frame": 914,
+   "note": "kr/md struck through",
+   "db": -4
+  },
+  {
+   "id": "cr-yours",
+   "frame": 934,
+   "note": "Siden er din",
+   "db": -3
+  },
+  {
+   "id": "cr-back-to-top",
+   "frame": 966,
+   "note": "the site runs back to the top",
+   "db": -6
+  },
+  {
+   "id": "cr-go-online",
+   "frame": 979,
+   "note": "Online",
+   "db": -2
+  },
+  {
+   "id": "cr-keys-url",
+   "frame": 983,
+   "note": "cafesalvie.dk",
+   "db": -6
+  },
+  {
+   "id": "cr-card-hosting",
+   "frame": 1016,
+   "note": "Hosting",
+   "db": -4
+  },
+  {
+   "id": "cr-card-domain",
+   "frame": 1036,
+   "note": "Dom\u00e6ne",
+   "db": -4
+  },
+  {
+   "id": "cr-card-mail",
+   "frame": 1056,
+   "note": "E-mail",
+   "db": -4
+  },
+  {
+   "id": "cr-gather",
+   "frame": 1087,
+   "note": "the three gather into one",
+   "db": -5
+  },
+  {
+   "id": "cr-one-place",
+   "frame": 1097,
+   "note": "Samlet \u00e9t sted",
+   "db": -6
+  },
+  {
+   "id": "cr-lift-off",
+   "frame": 1118,
+   "note": "the site lifts away",
+   "db": -5
+  },
+  {
+   "id": "cr-no-code",
+   "frame": 1136,
+   "note": "the code sign is crossed out",
+   "db": -3
+  },
+  {
+   "id": "cr-certain",
+   "frame": 1169,
+   "note": "the question mark becomes a check",
+   "db": -6
+  },
+  {
+   "id": "cr-signoff-air",
+   "frame": 1199,
+   "note": "the sign-off breathes in",
+   "db": -6
+  },
+  {
+   "id": "cr-button",
+   "frame": 1237,
+   "note": "'Byg din side gratis' arrives on 'i dag'",
+   "db": -5
+  },
+  {
+   "id": "cr-final",
+   "frame": 1244,
+   "note": "the closing chord with the music's last hit",
+   "db": -4
+  }
+ ]
+}

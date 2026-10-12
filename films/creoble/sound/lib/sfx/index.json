@@ -1,0 +1,532 @@
+[
+ {
+  "id": "cr-cafe-open",
+  "file": "sfx/creoble/cr-cafe-open.wav",
+  "category": "riser",
+  "sync": 0.5,
+  "length": 3.601,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "a warm E-major air with a breath of steam as the caf\u00e9 opens the film"
+ },
+ {
+  "id": "cr-into-site",
+  "file": "sfx/creoble/cr-into-site.wav",
+  "category": "whoosh",
+  "sync": 0.68,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the caf\u00e9 closes into the website's hero, a soft landing"
+ },
+ {
+  "id": "cr-foer",
+  "file": "sfx/creoble/cr-foer.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'f\u00f8r' lands in terracotta"
+ },
+ {
+  "id": "cr-words-away",
+  "file": "sfx/creoble/cr-words-away.wav",
+  "category": "whoosh",
+  "sync": 0.25,
+  "length": 1.501,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the question eases away"
+ },
+ {
+  "id": "cr-lock",
+  "file": "sfx/creoble/cr-lock.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the site blurs behind a lock: a muted, slightly flat knock"
+ },
+ {
+  "id": "cr-paper-quote",
+  "file": "sfx/creoble/cr-paper-quote.wav",
+  "category": "swipe",
+  "sync": 0.2,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the quote slides in (paper)"
+ },
+ {
+  "id": "cr-paper-deposit",
+  "file": "sfx/creoble/cr-paper-deposit.wav",
+  "category": "swipe",
+  "sync": 0.2,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the deposit slip lands with a small metallic tick"
+ },
+ {
+  "id": "cr-questions",
+  "file": "sfx/creoble/cr-questions.wav",
+  "category": "data",
+  "sync": 0.0,
+  "length": 3.201,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "fourteen small rising bubbles, one per question"
+ },
+ {
+  "id": "cr-old-drop",
+  "file": "sfx/creoble/cr-old-drop.wav",
+  "category": "whoosh",
+  "sync": 0.3,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the old way falls out of frame"
+ },
+ {
+  "id": "cr-brand",
+  "file": "sfx/creoble/cr-brand.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 3.201,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "Creoble: a clear E-major bloom"
+ },
+ {
+  "id": "cr-steps-in",
+  "file": "sfx/creoble/cr-steps-in.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "three step cards: three soft wooden notes"
+ },
+ {
+  "id": "cr-turn",
+  "file": "sfx/creoble/cr-turn.wav",
+  "category": "swipe",
+  "sync": 0.5,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the process turns on its head: a rising orbit, notes stepping down as the order flips"
+ },
+ {
+  "id": "cr-steps-out",
+  "file": "sfx/creoble/cr-steps-out.wav",
+  "category": "whoosh",
+  "sync": 0.25,
+  "length": 1.451,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the steps make way for the builder"
+ },
+ {
+  "id": "cr-cafe-behind",
+  "file": "sfx/creoble/cr-cafe-behind.wav",
+  "category": "riser",
+  "sync": 0.9,
+  "length": 2.601,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the caf\u00e9 opens behind the form, a soft A-major swell"
+ },
+ {
+  "id": "cr-keys-name",
+  "file": "sfx/creoble/cr-keys-name.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'Caf\u00e9 Salvie' typed"
+ },
+ {
+  "id": "cr-dropdown",
+  "file": "sfx/creoble/cr-dropdown.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the branche list opens"
+ },
+ {
+  "id": "cr-pick",
+  "file": "sfx/creoble/cr-pick.wav",
+  "category": "ticker",
+  "sync": 0.24,
+  "length": 1.701,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the highlight steps down the list and 'Restaurant / Caf\u00e9' is picked"
+ },
+ {
+  "id": "cr-click-build",
+  "file": "sfx/creoble/cr-click-build.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.151,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'Byg min side' is clicked"
+ },
+ {
+  "id": "cr-description-to-site",
+  "file": "sfx/creoble/cr-description-to-site.wav",
+  "category": "whoosh",
+  "sync": 0.72,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the caf\u00e9 closes into the hero: the description becomes the website"
+ },
+ {
+  "id": "cr-generating",
+  "file": "sfx/creoble/cr-generating.wav",
+  "category": "data",
+  "sync": 0.0,
+  "length": 4.001,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "a fine glitter while Creoble builds the site"
+ },
+ {
+  "id": "cr-build-menu",
+  "file": "sfx/creoble/cr-build-menu.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the menu develops"
+ },
+ {
+  "id": "cr-build-about",
+  "file": "sfx/creoble/cr-build-about.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the about section develops"
+ },
+ {
+  "id": "cr-build-contact",
+  "file": "sfx/creoble/cr-build-contact.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the contact band develops"
+ },
+ {
+  "id": "cr-site-ready",
+  "file": "sfx/creoble/cr-site-ready.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.801,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'Din hjemmeside er f\u00e6rdig': an E-major arpeggio"
+ },
+ {
+  "id": "cr-scroll-down",
+  "file": "sfx/creoble/cr-scroll-down.wav",
+  "category": "whoosh",
+  "sync": 0.35,
+  "length": 1.701,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the pages are explored: a long scroll down"
+ },
+ {
+  "id": "cr-scroll-up",
+  "file": "sfx/creoble/cr-scroll-up.wav",
+  "category": "whoosh",
+  "sync": 0.2,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "and back up to the design"
+ },
+ {
+  "id": "cr-theme-terra",
+  "file": "sfx/creoble/cr-theme-terra.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the first colour is picked: warm terracotta"
+ },
+ {
+  "id": "cr-theme-forest",
+  "file": "sfx/creoble/cr-theme-forest.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the second colour: deep forest"
+ },
+ {
+  "id": "cr-change-bar",
+  "file": "sfx/creoble/cr-change-bar.wav",
+  "category": "appear-rise",
+  "sync": 0.25,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the change bar rises"
+ },
+ {
+  "id": "cr-keys-change",
+  "file": "sfx/creoble/cr-keys-change.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'G\u00f8r overskriften st\u00f8rre' typed, quicker and lighter"
+ },
+ {
+  "id": "cr-send-change",
+  "file": "sfx/creoble/cr-send-change.wav",
+  "category": "success",
+  "sync": 0.22,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "sent, and the headline grows: '\u00c6ndret'"
+ },
+ {
+  "id": "cr-like-rise",
+  "file": "sfx/creoble/cr-like-rise.wav",
+  "category": "appear-rise",
+  "sync": 0.25,
+  "length": 1.451,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the question card rises"
+ },
+ {
+  "id": "cr-click-yes",
+  "file": "sfx/creoble/cr-click-yes.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.351,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'Ja, den er min'"
+ },
+ {
+  "id": "cr-price-in",
+  "file": "sfx/creoble/cr-price-in.wav",
+  "category": "swipe",
+  "sync": 0.3,
+  "length": 1.551,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the site steps aside for the price"
+ },
+ {
+  "id": "cr-499",
+  "file": "sfx/creoble/cr-499.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 3.201,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "499 kr: a warm landing"
+ },
+ {
+  "id": "cr-one-payment",
+  "file": "sfx/creoble/cr-one-payment.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 2.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "\u00c9n betaling: a single cup-and-saucer ring, struck once"
+ },
+ {
+  "id": "cr-no-sub",
+  "file": "sfx/creoble/cr-no-sub.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "Intet abonnement"
+ },
+ {
+  "id": "cr-strike",
+  "file": "sfx/creoble/cr-strike.wav",
+  "category": "swipe",
+  "sync": 0.0,
+  "length": 1.501,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'kr/md' struck through: a quick pen stroke"
+ },
+ {
+  "id": "cr-yours",
+  "file": "sfx/creoble/cr-yours.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "Siden er din: a warm low E, it's yours"
+ },
+ {
+  "id": "cr-back-to-top",
+  "file": "sfx/creoble/cr-back-to-top.wav",
+  "category": "whoosh",
+  "sync": 0.3,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the price leaves, the site runs back to the top"
+ },
+ {
+  "id": "cr-go-online",
+  "file": "sfx/creoble/cr-go-online.wav",
+  "category": "success",
+  "sync": 0.08,
+  "length": 2.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the switch flips: Online"
+ },
+ {
+  "id": "cr-keys-url",
+  "file": "sfx/creoble/cr-keys-url.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 1.501,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "cafesalvie.dk types into the address bar"
+ },
+ {
+  "id": "cr-card-hosting",
+  "file": "sfx/creoble/cr-card-hosting.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.301,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "Hosting"
+ },
+ {
+  "id": "cr-card-domain",
+  "file": "sfx/creoble/cr-card-domain.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.301,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "Dom\u00e6ne"
+ },
+ {
+  "id": "cr-card-mail",
+  "file": "sfx/creoble/cr-card-mail.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.301,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "E-mail"
+ },
+ {
+  "id": "cr-gather",
+  "file": "sfx/creoble/cr-gather.wav",
+  "category": "whoosh",
+  "sync": 0.5,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the three cards gather into one"
+ },
+ {
+  "id": "cr-one-place",
+  "file": "sfx/creoble/cr-one-place.wav",
+  "category": "stinger",
+  "sync": 0.0,
+  "length": 2.601,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "Samlet \u00e9t sted: an open A chord"
+ },
+ {
+  "id": "cr-lift-off",
+  "file": "sfx/creoble/cr-lift-off.wav",
+  "category": "whoosh",
+  "sync": 0.25,
+  "length": 1.451,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the site lifts away"
+ },
+ {
+  "id": "cr-no-code",
+  "file": "sfx/creoble/cr-no-code.wav",
+  "category": "swipe",
+  "sync": 0.0,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the code sign is crossed out: a dry stroke"
+ },
+ {
+  "id": "cr-certain",
+  "file": "sfx/creoble/cr-certain.wav",
+  "category": "success",
+  "sync": 0.12,
+  "length": 2.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the question mark resolves into a check: D# to E"
+ },
+ {
+  "id": "cr-signoff-air",
+  "file": "sfx/creoble/cr-signoff-air.wav",
+  "category": "riser",
+  "sync": 1.0,
+  "length": 2.601,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the sign-off breathes in"
+ },
+ {
+  "id": "cr-button",
+  "file": "sfx/creoble/cr-button.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the 'Byg din side gratis' button arrives"
+ },
+ {
+  "id": "cr-final",
+  "file": "sfx/creoble/cr-final.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 4.201,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "Byg din side gratis: the closing E-major chord with a last cup ring"
+ }
+]
