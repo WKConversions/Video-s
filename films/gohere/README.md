@@ -2,7 +2,8 @@
 
 The client's feedback on their 36.9 s film (`source/gohere-v1.mp4`): replace "APPS BY" on the end card
 with "A selection of our clients" and add more clients (12 logos sent in a zip, `assets/logos/`). Karl:
-keep the audio; anything added gets sound too.
+keep the audio; anything added gets sound too. Then (round 2): add sound effects and music to the whole
+film, all copyright-free.
 
 There is no project for this film, only the render, so the end card's old row is replaced in the render
 itself: the box under the button and left of the phone (x 0–1210, y 752–1080) is pure white in the source
@@ -15,13 +16,13 @@ new row enters on the original row's frames with its measured settle (32 px left
 ## Deliveries
 | File | What |
 |---|---|
-| `deliver/gohere-clients-names-40s.mp4` | **A — with names.** 40.07 s. The label on its own line, two rows of tile + name in the film's style. Page 1: the film's four (original timing) with the client's first four under them; then each slot hands over to the next client (a name never appears where another is still fading) and page 2, the other eight, holds to the end. A soft pop as each new client lands (12), rising a scale; the film's own four stay silent, as they were. |
-| `deliver/gohere-clients-logos-37s.mp4` | **B — logo wall.** 36.87 s, the source's exact length. The label, then all 16 app icons in one row (same tiles, no names), cascading in one frame apart; four soft ticks on the cascade, after the voice's last word. |
+| `deliver/gohere-clients-names-40s.mp4` | **A — with names.** 40.07 s. The label on its own line, two rows of tile + name in the film's style. Page 1: the film's four (original timing) with the client's first four under them; then each slot hands over to the next client (a name never appears where another is still fading) and page 2, the other eight, holds to the end. The film's warm pop as each new client lands (12), rising a scale. 51 effects. |
+| `deliver/gohere-clients-logos-37s.mp4` | **B — logo wall.** 36.87 s, the source's exact length. The label, then all 16 app icons in one row (same tiles, no names), cascading in one frame apart; four soft ticks on the cascade, after the voice's last word. 43 effects. |
 
-Both: 1920×1080, 30 fps, H.264 High yuv420p (untagged, like the source), AAC 256 kb/s 48 kHz. Frames
-0–1013 are the source re-encoded (crf 15, PSNR ≥ 48 dB against it). The voice-over is the source track,
-in sync (lag 0) and unchanged in level (−22.3 LUFS integrated, peak −6.4 dBFS, as the source); it is
-re-encoded, not stream-copied. A holds the source's last frame (1105) for 3.2 s while page 2 arrives;
+Both: 1920×1080, 30 fps, H.264 High yuv420p (untagged, like the source), AAC 256 kb/s 48 kHz, mixed to
+−15 LUFS integrated, peaks under −1.4 dBFS. Frames 0–1013 are the source re-encoded (crf 15, PSNR ≥ 48 dB
+against it). The voice-over is the source's own track, in sync (lag 0), brought up to the studio's voice
+level (−16 LUFS; the source sat at −22.3) and otherwise unchanged. A holds the source's last frame (1105) for 3.2 s while page 2 arrives;
 by then the source's own movement has stopped, so nothing visibly freezes.
 
 Client order: the film's four, then the email's order. Names: as in the stores and the email
@@ -32,6 +33,33 @@ Valencia Tips, Wereldstadgidsen, VakantieXperts, Honeyguide, Freely, BCN Hacks).
 package `app.gohere.bcndiscount`) and the logo file is named that, so the film says BCN Hacks. The zip also
 held **GoHere Tanzania**, which is not in the email's list, so it is left out. In B, Sevilla by Mandy's own
 icon (beige on cream) reads faintly at tile size; a higher-contrast version would help.
+
+## Sound (round 2)
+- **Music:** "I'm Going Home" by Michael Ramir C. (Mixkit, folk pop, 104 BPM), Mixkit Stock Music Free
+  License: free for commercial use, no credit required (`sound/music/im-going-home.mp3`, from
+  assets.mixkit.co/music/832). Picked from 32 measured candidates (`sound/music/candidates.png`,
+  `more/candidates.png`; Incompetech left out because its licence needs a credit line): a soft 9 s intro,
+  then the band enters, a gentle build and a real ending. Cut on its bar grid (`scripts/music_fit.py`) so
+  the band enters at 10.0 s, the frame GoHere's phone first appears, and the song's own ending lands on the
+  end card (`sound/music/bed-37.wav`, `bed-40.wav`, sheets `fit-*.png`). Under the voice it sits at −27 LUFS
+  and ducks 6 dB more while she speaks; after the last word it comes up for the end card.
+- **Effects:** an effect on every picture event that carries meaning, each on the frame it happens, read
+  from the source frame by frame (`scripts/cues.py`, the cue sheet with a note per cue; `sound/cues-*.json`):
+  a soft whoosh on the big moves (the photo blurring away, the website and brochure flying in, the phone
+  fanning into four and closing, the scene turns, the portal sliding in and out); one warm pop that rises a
+  scale wherever places land (the five photos, the four logos, the four map pins, the tile, the button and,
+  on the end card, the clients); taps where a finger touches (a tile picked, a pin, Route), a click for the
+  portal's cursor, a rising blip when a card or the share sheet opens, one chime for the first chat
+  message, one success for the saved place, a shimmer for the colours and for the GoHere logo. The film's
+  own four end-card apps stay silent, under the voice's last word, as before.
+- **Sources, all copyright-free:** Kenney "Interface Sounds" 1.0 (kenney.nl), CC0 public domain
+  (`kenney-*`: taps, click, pop, tick, rising blip; `scripts/add_kenney.py`), and the studio's own
+  generated effects (`gen-*`: whooshes, chime, success, shimmer, appear; `scripts/sfx_synth.py`). Library:
+  `sound/lib/sfx/` with `index.json`.
+- **Mix** (`scripts/sound_mix.py`): voice −16, music −27 ducked, effects by role; master −15 LUFS. Every
+  effect clears the music by 3 dB or more; one whoosh (frame 451, the phones closing) lands in a breath of
+  the voice and sits 3.5–3.9 dB under it, just inside the studio's 4 dB margin. Sheets: `sound/mix-A.png`,
+  `sound/mix-B.png`.
 
 ## QC
 - Independent review panel (compositing, spec, motion, sound, art direction) with every medium+ finding
@@ -44,7 +72,8 @@ icon (beige on cream) reads faintly at tile size; a higher-contrast version woul
 - Automatic checks on both encodes: no shake, look or pop from frame 1014 on (the source's own
   earlier flags are unchanged and outside the edit); A's final hold changes 0 pixels from frame to frame;
   the box's edges match the source to ≤ 3 levels.
-- Not checked by ear: the effects were placed and levelled from the waveform; Karl's ear has the final say.
+- Not checked by ear: the music was chosen and the effects placed and levelled from measurements and the
+  waveform; Karl's ear has the final say.
 
 ## Rebuild
 ```
@@ -55,11 +84,12 @@ bash scripts/build.sh A deliver/gohere-clients-names-40s.mp4
 bash scripts/build.sh B deliver/gohere-clients-logos-37s.mp4
 python3 scripts/stills.py A 1060,1140,1201 sheet.png    # test stills
 ```
-- `overlay/index.html`: the row, both layouts, all timing (frame numbers of the film) and the sound cues.
+- `overlay/index.html`: the row, both layouts, all timing (frame numbers of the film) and the end card's cues.
 - `overlay/render.mjs`: renders the overlay box per frame (`SS=4` for the build), or the calibration row.
-- `scripts/sound.py`: the source track plus the synthesized pops/ticks on their cue frames.
-- `scripts/build.sh`: overlay frames + mix → the delivery encode.
+- `scripts/cues.py` → `sound/cues-*.json`, `scripts/sound_mix.py` → the mix (voice, music, effects).
+- `scripts/build.sh`: overlay frames + cue sheet + mix → the delivery encode.
 
 ## Credits
 Client logos and app names: GoHere (supplied by the client). Fonts: Nunito and Nunito Sans (SIL OFL).
-Sound effects synthesized for this film.
+Music: "I'm Going Home", Michael Ramir C., Mixkit Stock Music Free License (no credit required). Sound
+effects: Kenney Interface Sounds (CC0) and the studio's generated effects.

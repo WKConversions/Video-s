@@ -1,0 +1,349 @@
+{
+ "fps": 30,
+ "frames": 1202,
+ "library": "lib",
+ "vo": {
+  "file": "../source/gohere-v1.mp4",
+  "at": 0
+ },
+ "music": {
+  "file": "music/bed-40.wav",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.3,
+  "fade_out": 1.5
+ },
+ "sfx": [
+  {
+   "frame": 92,
+   "id": "gen-whoosh-medium",
+   "db": -3,
+   "note": "the photo blurs away into the white stage"
+  },
+  {
+   "frame": 126,
+   "id": "kenney-drop-003",
+   "db": -5,
+   "note": "photo 1 lands"
+  },
+  {
+   "frame": 130,
+   "id": "kenney-drop-003",
+   "db": -5,
+   "pitch": 2,
+   "note": "photo 2"
+  },
+  {
+   "frame": 136,
+   "id": "kenney-drop-003",
+   "db": -5,
+   "pitch": 4,
+   "note": "photo 3"
+  },
+  {
+   "frame": 140,
+   "id": "kenney-drop-003",
+   "db": -5,
+   "pitch": 7,
+   "note": "photo 4"
+  },
+  {
+   "frame": 146,
+   "id": "kenney-drop-003",
+   "db": -5,
+   "pitch": 9,
+   "note": "photo 5"
+  },
+  {
+   "frame": 168,
+   "id": "gen-whoosh-short",
+   "db": 0,
+   "note": "the website slides in (fastest frame)"
+  },
+  {
+   "frame": 192,
+   "id": "gen-whoosh-short",
+   "db": -1,
+   "pitch": 2,
+   "note": "the brochure flies in"
+  },
+  {
+   "frame": 232,
+   "id": "gen-chime",
+   "db": -2,
+   "note": "the first chat bubble is readable"
+  },
+  {
+   "frame": 303,
+   "id": "gen-appear",
+   "db": 0,
+   "note": "the phone forms: GoHere's first appearance (the music opens up at 300)"
+  },
+  {
+   "frame": 371,
+   "id": "gen-whoosh-medium",
+   "db": 0,
+   "note": "one phone fans out into four"
+  },
+  {
+   "frame": 393,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "note": "Terschelling logo"
+  },
+  {
+   "frame": 397,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "pitch": 2,
+   "note": "Transavia logo"
+  },
+  {
+   "frame": 401,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "pitch": 4,
+   "note": "Ciao Tutti logo"
+  },
+  {
+   "frame": 405,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "pitch": 7,
+   "note": "BarcelonaTips logo"
+  },
+  {
+   "frame": 429,
+   "id": "gen-shimmer",
+   "db": -5,
+   "note": "the colours sweep through the four apps"
+  },
+  {
+   "frame": 451,
+   "id": "gen-whoosh-medium",
+   "db": -9,
+   "note": "the four phones close back into one"
+  },
+  {
+   "frame": 482,
+   "id": "kenney-select-002",
+   "db": 0,
+   "note": "a tile is picked from the list"
+  },
+  {
+   "frame": 488,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "pitch": 3,
+   "note": "the tile flies to the phone"
+  },
+  {
+   "frame": 498,
+   "id": "kenney-drop-003",
+   "db": -2,
+   "note": "the tile lands in the grid"
+  },
+  {
+   "frame": 536,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "note": "pin 1"
+  },
+  {
+   "frame": 540,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "pitch": 2,
+   "note": "pin 2"
+  },
+  {
+   "frame": 554,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "pitch": 4,
+   "note": "pin 3"
+  },
+  {
+   "frame": 558,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "pitch": 7,
+   "note": "pin 4"
+  },
+  {
+   "frame": 591,
+   "id": "kenney-select-002",
+   "db": 0,
+   "note": "a pin is tapped"
+  },
+  {
+   "frame": 596,
+   "id": "kenney-maximize-009",
+   "db": -2,
+   "note": "the place card slides up"
+  },
+  {
+   "frame": 616,
+   "id": "gen-whoosh-short",
+   "db": -2,
+   "note": "the card opens into the place page"
+  },
+  {
+   "frame": 678,
+   "id": "kenney-select-001",
+   "db": -3,
+   "note": "opening hours light up"
+  },
+  {
+   "frame": 698,
+   "id": "kenney-select-002",
+   "db": 0,
+   "note": "Route is tapped"
+  },
+  {
+   "frame": 749,
+   "id": "gen-whoosh-medium",
+   "db": -4,
+   "note": "the phone turns to the next scene"
+  },
+  {
+   "frame": 761,
+   "id": "gen-whoosh-short",
+   "db": -5,
+   "pitch": 2,
+   "note": "the bucket list slides in"
+  },
+  {
+   "frame": 778,
+   "id": "gen-success",
+   "db": -3,
+   "note": "the saved place joins the list"
+  },
+  {
+   "frame": 803,
+   "id": "kenney-maximize-009",
+   "db": -1,
+   "note": "the share sheet opens"
+  },
+  {
+   "frame": 826,
+   "id": "gen-whoosh-medium",
+   "db": 0,
+   "note": "the portal slides in"
+  },
+  {
+   "frame": 858,
+   "id": "kenney-click-001",
+   "db": 0,
+   "note": "a click on a row in the portal"
+  },
+  {
+   "frame": 872,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "pitch": 4,
+   "note": "the tile moves in the phone"
+  },
+  {
+   "frame": 914,
+   "id": "gen-whoosh-short",
+   "db": -2,
+   "note": "the portal slides away"
+  },
+  {
+   "frame": 960,
+   "id": "gen-shimmer",
+   "db": -3,
+   "note": "the GoHere logo appears"
+  },
+  {
+   "frame": 1009,
+   "id": "kenney-drop-003",
+   "db": -3,
+   "pitch": 2,
+   "note": "the button lands"
+  },
+  {
+   "frame": 1044,
+   "id": "kenney-drop-003",
+   "db": 3,
+   "note": "alicante lands"
+  },
+  {
+   "frame": 1048,
+   "id": "kenney-drop-003",
+   "db": 3,
+   "pitch": 2,
+   "note": "raadsheer lands"
+  },
+  {
+   "frame": 1052,
+   "id": "kenney-drop-003",
+   "db": 3,
+   "pitch": 4,
+   "note": "malagatips lands"
+  },
+  {
+   "frame": 1056,
+   "id": "kenney-drop-003",
+   "db": 3,
+   "pitch": 7,
+   "note": "clubrondreizen lands"
+  },
+  {
+   "frame": 1122,
+   "id": "kenney-drop-003",
+   "db": 3,
+   "note": "sevillabymandy lands"
+  },
+  {
+   "frame": 1126,
+   "id": "kenney-drop-003",
+   "db": 3,
+   "pitch": 2,
+   "note": "stouteschoenen lands"
+  },
+  {
+   "frame": 1130,
+   "id": "kenney-drop-003",
+   "db": 3,
+   "pitch": 4,
+   "note": "valenciatips lands"
+  },
+  {
+   "frame": 1134,
+   "id": "kenney-drop-003",
+   "db": 3,
+   "pitch": 7,
+   "note": "wereldstadgidsen lands"
+  },
+  {
+   "frame": 1138,
+   "id": "kenney-drop-003",
+   "db": 3,
+   "pitch": 9,
+   "note": "vakantiexperts lands"
+  },
+  {
+   "frame": 1142,
+   "id": "kenney-drop-003",
+   "db": 3,
+   "pitch": 12,
+   "note": "honeyguide lands"
+  },
+  {
+   "frame": 1146,
+   "id": "kenney-drop-003",
+   "db": 3,
+   "pitch": 14,
+   "note": "freely lands"
+  },
+  {
+   "frame": 1150,
+   "id": "kenney-drop-003",
+   "db": 3,
+   "pitch": 16,
+   "note": "bcnhacks lands"
+  }
+ ]
+}

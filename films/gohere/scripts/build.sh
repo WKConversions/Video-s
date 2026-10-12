@@ -4,7 +4,8 @@
 # Frames 0-1013 are the source untouched. From 1014 the box left of the phone and under the button
 # (x 0-1210, y 752-1080; pure white in the source except the old "APPS BY" row) is replaced by the
 # overlay, rendered on white (at 4x, scaled down). After the source's last frame (1105) its picture holds while the new
-# row finishes. The sound is scripts/sound.py: the source track plus the new section's effects.
+# row finishes. The sound: scripts/cues.py writes the cue sheet (the client's voice-over, the music bed,
+# effects on the picture's events) and scripts/sound_mix.py mixes it to -15 LUFS.
 set -euo pipefail
 MODE=$1; OUT=$2
 cd "$(dirname "$0")/.."
@@ -16,7 +17,8 @@ echo "$MODE: $END frames ($(python3 -c "print(f'{$END/30:.2f}')") s), holding th
 
 # drawn at 4x and scaled down (box filter): slow moves glide in quarter pixels
 SS=4 node overlay/render.mjs frames "$MODE" 1014 $((END - 1)) "$WORK/ov" 6
-python3 scripts/sound.py "$MODE" "$WORK/mix.wav"
+python3 scripts/cues.py "$MODE"
+python3 scripts/sound_mix.py "sound/cues-$MODE.json" "$WORK/mix.wav" --sheet "sound/mix-$MODE.png" | tail -3
 
 ffmpeg -v error -y \
   -i source/gohere-v1.mp4 \
