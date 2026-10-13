@@ -1,0 +1,1102 @@
+[
+ {
+  "id": "cl-field",
+  "file": "sfx/creoble/cl-field.wav",
+  "category": "whoosh",
+  "sync": 0.12,
+  "length": 1.701,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the ball field zooms in"
+ },
+ {
+  "id": "cl-mange",
+  "file": "sfx/creoble/cl-mange.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.201,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'Mange' in its ball"
+ },
+ {
+  "id": "cl-icon",
+  "file": "sfx/creoble/cl-icon.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.351,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the code icon spins in"
+ },
+ {
+  "id": "cl-caret",
+  "file": "sfx/creoble/cl-caret.wav",
+  "category": "appear-rise",
+  "sync": 0.0,
+  "length": 1.251,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the gradient caret grows"
+ },
+ {
+  "id": "cl-type1",
+  "file": "sfx/creoble/cl-type1.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 1.621,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "for at bygge hjemmesider: typed"
+ },
+ {
+  "id": "cl-brackets",
+  "file": "sfx/creoble/cl-brackets.wav",
+  "category": "whoosh",
+  "sync": 0.25,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the brackets close in"
+ },
+ {
+  "id": "cl-nu",
+  "file": "sfx/creoble/cl-nu.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'nu'"
+ },
+ {
+  "id": "cl-mod",
+  "file": "sfx/creoble/cl-mod.wav",
+  "category": "riser",
+  "sync": 0.45,
+  "length": 1.451,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "M\u00f8d sharpens"
+ },
+ {
+  "id": "cl-logo",
+  "file": "sfx/creoble/cl-logo.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 2.491,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "Creoble: the logo on its arc"
+ },
+ {
+  "id": "cl-riser",
+  "file": "sfx/creoble/cl-riser.wav",
+  "category": "riser",
+  "sync": 1.45,
+  "length": 2.451,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the rise into the drop (the music drops out under the logo)"
+ },
+ {
+  "id": "cl-drop",
+  "file": "sfx/creoble/cl-drop.wav",
+  "category": "impact",
+  "sync": 0.05,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the drop: the dark spheres"
+ },
+ {
+  "id": "cl-ai",
+  "file": "sfx/creoble/cl-ai.wav",
+  "category": "swipe",
+  "sync": 0.12,
+  "length": 1.301,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'AI bygger'"
+ },
+ {
+  "id": "cl-sites",
+  "file": "sfx/creoble/cl-sites.wav",
+  "category": "swipe",
+  "sync": 0.12,
+  "length": 1.301,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'hjemmesider'"
+ },
+ {
+  "id": "cl-fast",
+  "file": "sfx/creoble/cl-fast.wav",
+  "category": "whoosh",
+  "sync": 0.18,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'hurtigere': a zip"
+ },
+ {
+  "id": "cl-hele",
+  "file": "sfx/creoble/cl-hele.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.351,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'Hele'"
+ },
+ {
+  "id": "cl-slide",
+  "file": "sfx/creoble/cl-slide.wav",
+  "category": "swipe",
+  "sync": 0.14,
+  "length": 1.321,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the line slides on: 'processen tager'"
+ },
+ {
+  "id": "cl-under",
+  "file": "sfx/creoble/cl-under.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.301,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'under'"
+ },
+ {
+  "id": "cl-count",
+  "file": "sfx/creoble/cl-count.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the minutes count down to 5"
+ },
+ {
+  "id": "cl-five",
+  "file": "sfx/creoble/cl-five.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.101,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "5"
+ },
+ {
+  "id": "cl-wave",
+  "file": "sfx/creoble/cl-wave.wav",
+  "category": "whoosh",
+  "sync": 0.2,
+  "length": 1.551,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the wave draws to the dot"
+ },
+ {
+  "id": "cl-min",
+  "file": "sfx/creoble/cl-min.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.161,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'minutter. Ingen'"
+ },
+ {
+  "id": "cl-kode",
+  "file": "sfx/creoble/cl-kode.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.251,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'kode'"
+ },
+ {
+  "id": "cl-noedv",
+  "file": "sfx/creoble/cl-noedv.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'n\u00f8dvendig'"
+ },
+ {
+  "id": "cl-bloom",
+  "file": "sfx/creoble/cl-bloom.wav",
+  "category": "riser",
+  "sync": 0.4,
+  "length": 1.501,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the flower opens"
+ },
+ {
+  "id": "cl-star",
+  "file": "sfx/creoble/cl-star.wav",
+  "category": "whoosh",
+  "sync": 0.3,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the star opens onto a website"
+ },
+ {
+  "id": "cl-collage",
+  "file": "sfx/creoble/cl-collage.wav",
+  "category": "whoosh",
+  "sync": 0.25,
+  "length": 1.701,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the sites zoom out into a wall"
+ },
+ {
+  "id": "cl-push",
+  "file": "sfx/creoble/cl-push.wav",
+  "category": "whoosh",
+  "sync": 0.55,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the push into Caf\u00e9 Gaden"
+ },
+ {
+  "id": "cl-cafe",
+  "file": "sfx/creoble/cl-cafe.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.351,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "Caf\u00e9 Gaden fills the frame"
+ },
+ {
+  "id": "cl-laptop",
+  "file": "sfx/creoble/cl-laptop.wav",
+  "category": "whoosh",
+  "sync": 0.3,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the laptop on the stone"
+ },
+ {
+  "id": "cl-pill",
+  "file": "sfx/creoble/cl-pill.wav",
+  "category": "riser",
+  "sync": 0.2,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the glowing prompt"
+ },
+ {
+  "id": "cl-type2",
+  "file": "sfx/creoble/cl-type2.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 2.501,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'Lav en hjemmeside til blomsterbutikken': typed"
+ },
+ {
+  "id": "cl-zoomout",
+  "file": "sfx/creoble/cl-zoomout.wav",
+  "category": "whoosh",
+  "sync": 0.2,
+  "length": 1.501,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the camera pulls back from the prompt"
+ },
+ {
+  "id": "cl-send",
+  "file": "sfx/creoble/cl-send.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.161,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "send"
+ },
+ {
+  "id": "cl-fold",
+  "file": "sfx/creoble/cl-fold.wav",
+  "category": "dismiss-fall",
+  "sync": 0.2,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the pill folds to a bar"
+ },
+ {
+  "id": "cl-expand",
+  "file": "sfx/creoble/cl-expand.wav",
+  "category": "whoosh",
+  "sync": 0.25,
+  "length": 1.701,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the bar opens into the builder"
+ },
+ {
+  "id": "cl-steps",
+  "file": "sfx/creoble/cl-steps.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 2.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the builder answers its questions, step by step"
+ },
+ {
+  "id": "cl-built",
+  "file": "sfx/creoble/cl-built.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.441,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the site is built"
+ },
+ {
+  "id": "cl-closeup",
+  "file": "sfx/creoble/cl-closeup.wav",
+  "category": "camera",
+  "sync": 0.2,
+  "length": 1.501,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "close on the prompt box"
+ },
+ {
+  "id": "cl-type3",
+  "file": "sfx/creoble/cl-type3.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 2.701,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'Ret farverne\u2026': typed"
+ },
+ {
+  "id": "cl-send2",
+  "file": "sfx/creoble/cl-send2.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.141,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "send"
+ },
+ {
+  "id": "cl-msg-me",
+  "file": "sfx/creoble/cl-msg-me.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.141,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "your message rises into the chat"
+ },
+ {
+  "id": "cl-msg-ai",
+  "file": "sfx/creoble/cl-msg-ai.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.161,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "Creoble answers"
+ },
+ {
+  "id": "cl-tilt",
+  "file": "sfx/creoble/cl-tilt.wav",
+  "category": "whoosh",
+  "sync": 0.2,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the builder tilts back"
+ },
+ {
+  "id": "cl-recolor",
+  "file": "sfx/creoble/cl-recolor.wav",
+  "category": "riser",
+  "sync": 0.3,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the site recolours in a sweep"
+ },
+ {
+  "id": "cl-done",
+  "file": "sfx/creoble/cl-done.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.151,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "F\u00e6rdig: the brand's colours"
+ },
+ {
+  "id": "cl-chatbot",
+  "file": "sfx/creoble/cl-chatbot.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.301,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'Tilf\u00f8j din chatbot'"
+ },
+ {
+  "id": "cl-ptr1",
+  "file": "sfx/creoble/cl-ptr1.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.101,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the Kunde pointer"
+ },
+ {
+  "id": "cl-ptr2",
+  "file": "sfx/creoble/cl-ptr2.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.101,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the Chatbot pointer"
+ },
+ {
+  "id": "cl-click-chat",
+  "file": "sfx/creoble/cl-click-chat.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.091,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "click: Chatbot"
+ },
+ {
+  "id": "cl-card",
+  "file": "sfx/creoble/cl-card.wav",
+  "category": "appear-rise",
+  "sync": 0.15,
+  "length": 1.351,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the set-up card rises"
+ },
+ {
+  "id": "cl-type4",
+  "file": "sfx/creoble/cl-type4.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the welcome message: typed"
+ },
+ {
+  "id": "cl-learnt",
+  "file": "sfx/creoble/cl-learnt.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "L\u00e6rt, L\u00e6rt, L\u00e6rt"
+ },
+ {
+  "id": "cl-save",
+  "file": "sfx/creoble/cl-save.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.501,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "Gem \u2192 Gemt"
+ },
+ {
+  "id": "cl-zoomin",
+  "file": "sfx/creoble/cl-zoomin.wav",
+  "category": "camera",
+  "sync": 0.25,
+  "length": 1.451,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the zoom onto the message"
+ },
+ {
+  "id": "cl-tiles",
+  "file": "sfx/creoble/cl-tiles.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "what the bot knows, tile by tile"
+ },
+ {
+  "id": "cl-fly",
+  "file": "sfx/creoble/cl-fly.wav",
+  "category": "whoosh",
+  "sync": 0.3,
+  "length": 1.551,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the tiles fly into the top bar"
+ },
+ {
+  "id": "cl-zoomout2",
+  "file": "sfx/creoble/cl-zoomout2.wav",
+  "category": "whoosh",
+  "sync": 0.25,
+  "length": 1.701,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "back out to the builder"
+ },
+ {
+  "id": "cl-hi",
+  "file": "sfx/creoble/cl-hi.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.161,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the chat button says hello"
+ },
+ {
+  "id": "cl-med",
+  "file": "sfx/creoble/cl-med.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.351,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'Med'"
+ },
+ {
+  "id": "cl-klik",
+  "file": "sfx/creoble/cl-klik.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.141,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'\u00e9t klik'"
+ },
+ {
+  "id": "cl-power",
+  "file": "sfx/creoble/cl-power.wav",
+  "category": "appear-rise",
+  "sync": 0.2,
+  "length": 1.701,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the power icon on the gradient"
+ },
+ {
+  "id": "cl-chips",
+  "file": "sfx/creoble/cl-chips.wav",
+  "category": "camera",
+  "sync": 0.2,
+  "length": 1.501,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "out to the chips"
+ },
+ {
+  "id": "cl-activate",
+  "file": "sfx/creoble/cl-activate.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.121,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "Aktiv\u00e9r \u2192 Aktiv"
+ },
+ {
+  "id": "cl-open-chat",
+  "file": "sfx/creoble/cl-open-chat.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.091,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "click: the chat button"
+ },
+ {
+  "id": "cl-chat-open",
+  "file": "sfx/creoble/cl-chat-open.wav",
+  "category": "appear-rise",
+  "sync": 0.15,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the chat window opens"
+ },
+ {
+  "id": "cl-bot1",
+  "file": "sfx/creoble/cl-bot1.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.161,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the bot's welcome"
+ },
+ {
+  "id": "cl-type5",
+  "file": "sfx/creoble/cl-type5.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 1.851,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'Kan I levere\u2026': typed"
+ },
+ {
+  "id": "cl-send3",
+  "file": "sfx/creoble/cl-send3.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.181,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "send"
+ },
+ {
+  "id": "cl-me1",
+  "file": "sfx/creoble/cl-me1.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.131,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the question"
+ },
+ {
+  "id": "cl-bot2",
+  "file": "sfx/creoble/cl-bot2.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.161,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the bot answers: yes, tomorrow"
+ },
+ {
+  "id": "cl-type6",
+  "file": "sfx/creoble/cl-type6.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 1.751,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'Hvad koster\u2026': typed"
+ },
+ {
+  "id": "cl-send4",
+  "file": "sfx/creoble/cl-send4.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.181,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "send"
+ },
+ {
+  "id": "cl-me2",
+  "file": "sfx/creoble/cl-me2.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.131,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the second question"
+ },
+ {
+  "id": "cl-bot3",
+  "file": "sfx/creoble/cl-bot3.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.161,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the bot answers with a bouquet"
+ },
+ {
+  "id": "cl-card2",
+  "file": "sfx/creoble/cl-card2.wav",
+  "category": "appear-rise",
+  "sync": 0.12,
+  "length": 1.301,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the product card"
+ },
+ {
+  "id": "cl-zoom-card",
+  "file": "sfx/creoble/cl-zoom-card.wav",
+  "category": "camera",
+  "sync": 0.35,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "close on the card"
+ },
+ {
+  "id": "cl-order",
+  "file": "sfx/creoble/cl-order.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.091,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "click: Bestil"
+ },
+ {
+  "id": "cl-ordered",
+  "file": "sfx/creoble/cl-ordered.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.301,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "Bestilt"
+ },
+ {
+  "id": "cl-bot4",
+  "file": "sfx/creoble/cl-bot4.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.151,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the bot: we'll call you"
+ },
+ {
+  "id": "cl-zoomout3",
+  "file": "sfx/creoble/cl-zoomout3.wav",
+  "category": "whoosh",
+  "sync": 0.3,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "out to the builder with the chat open"
+ },
+ {
+  "id": "cl-se",
+  "file": "sfx/creoble/cl-se.wav",
+  "category": "whoosh",
+  "sync": 0.25,
+  "length": 1.351,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'Se resultatet'"
+ },
+ {
+  "id": "cl-helt",
+  "file": "sfx/creoble/cl-helt.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'helt'"
+ },
+ {
+  "id": "cl-gratis",
+  "file": "sfx/creoble/cl-gratis.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 1.961,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'gratis'"
+ },
+ {
+  "id": "cl-foer",
+  "file": "sfx/creoble/cl-foer.wav",
+  "category": "swipe",
+  "sync": 0.15,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'f\u00f8r du betaler noget'"
+ },
+ {
+  "id": "cl-click-buy",
+  "file": "sfx/creoble/cl-click-buy.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.091,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "click: K\u00f8b \u00b7 499 kr."
+ },
+ {
+  "id": "cl-buycard",
+  "file": "sfx/creoble/cl-buycard.wav",
+  "category": "appear-rise",
+  "sync": 0.18,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the purchase card"
+ },
+ {
+  "id": "cl-type7",
+  "file": "sfx/creoble/cl-type7.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 1.751,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the preview link: typed"
+ },
+ {
+  "id": "cl-pay",
+  "file": "sfx/creoble/cl-pay.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.091,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "click: K\u00f8b nu"
+ },
+ {
+  "id": "cl-paid",
+  "file": "sfx/creoble/cl-paid.wav",
+  "category": "money",
+  "sync": 0.0,
+  "length": 2.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "Betalt: 499 kr."
+ },
+ {
+  "id": "cl-browser",
+  "file": "sfx/creoble/cl-browser.wav",
+  "category": "whoosh",
+  "sync": 0.3,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the browser swings out"
+ },
+ {
+  "id": "cl-shop",
+  "file": "sfx/creoble/cl-shop.wav",
+  "category": "camera",
+  "sync": 0.25,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the laptop on the shop's counter"
+ },
+ {
+  "id": "cl-oplev",
+  "file": "sfx/creoble/cl-oplev.wav",
+  "category": "riser",
+  "sync": 0.5,
+  "length": 1.501,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'Oplev' blurs in"
+ },
+ {
+  "id": "cl-hosting",
+  "file": "sfx/creoble/cl-hosting.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 2.481,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'nem hosting'"
+ },
+ {
+  "id": "cl-toggle",
+  "file": "sfx/creoble/cl-toggle.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.091,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "click: the hosting switch"
+ },
+ {
+  "id": "cl-glow",
+  "file": "sfx/creoble/cl-glow.wav",
+  "category": "appear-rise",
+  "sync": 0.15,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the switch glows on"
+ },
+ {
+  "id": "cl-panel",
+  "file": "sfx/creoble/cl-panel.wav",
+  "category": "whoosh",
+  "sync": 0.35,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "out to the hosting panel"
+ },
+ {
+  "id": "cl-type8",
+  "file": "sfx/creoble/cl-type8.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 1.661,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the domain: typed"
+ },
+ {
+  "id": "cl-connect",
+  "file": "sfx/creoble/cl-connect.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.091,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "Forbind"
+ },
+ {
+  "id": "cl-checks",
+  "file": "sfx/creoble/cl-checks.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 2.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "domain, SSL, hosting, online: checked"
+ },
+ {
+  "id": "cl-online",
+  "file": "sfx/creoble/cl-online.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the address goes live"
+ },
+ {
+  "id": "cl-gaa",
+  "file": "sfx/creoble/cl-gaa.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 1.451,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'G\u00e5 online'"
+ },
+ {
+  "id": "cl-move",
+  "file": "sfx/creoble/cl-move.wav",
+  "category": "swipe",
+  "sync": 0.2,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the line moves to the corner"
+ },
+ {
+  "id": "cl-domain",
+  "file": "sfx/creoble/cl-domain.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.181,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'med dit eget dom\u00e6ne'"
+ },
+ {
+  "id": "cl-uden",
+  "file": "sfx/creoble/cl-uden.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.301,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'uden teknisk b\u00f8vl' with the wrench"
+ },
+ {
+  "id": "cl-glow-c",
+  "file": "sfx/creoble/cl-glow-c.wav",
+  "category": "riser",
+  "sync": 0.6,
+  "length": 3.501,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the warm glow of the mark"
+ },
+ {
+  "id": "cl-starter",
+  "file": "sfx/creoble/cl-starter.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.181,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'Din hjemmeside starter her'"
+ },
+ {
+  "id": "cl-skabe",
+  "file": "sfx/creoble/cl-skabe.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 2.561,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'Hvad vil du skabe?'"
+ },
+ {
+  "id": "cl-mark",
+  "file": "sfx/creoble/cl-mark.wav",
+  "category": "impact",
+  "sync": 0.4,
+  "length": 1.501,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the gradient mark"
+ },
+ {
+  "id": "cl-wordmark",
+  "file": "sfx/creoble/cl-wordmark.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 3.201,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "Creoble."
+ },
+ {
+  "id": "cl-url",
+  "file": "sfx/creoble/cl-url.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.121,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "creoble.dk"
+ }
+]

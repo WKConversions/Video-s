@@ -1,0 +1,674 @@
+{
+ "fps": 30,
+ "frames": 2415,
+ "library": "lib",
+ "music": {
+  "file": "music/expressive-courage-fit.wav",
+  "at": 0,
+  "fade_in": 0.0,
+  "fade_out": 0.4,
+  "note": "Expressive Courage (Diego Nava, Mixkit, Mixkit Stock Music Free License), cut to the reference: drops at 8.8 and 54.15 s, stop at 49.4 s, last hit 78.25 s"
+ },
+ "sfx": [
+  {
+   "id": "cl-field",
+   "frame": 2,
+   "note": "the ball field zooms in",
+   "db": -3
+  },
+  {
+   "id": "cl-mange",
+   "frame": 12,
+   "note": "Mange",
+   "db": -4
+  },
+  {
+   "id": "cl-icon",
+   "frame": 62,
+   "note": "the code icon",
+   "db": -5
+  },
+  {
+   "id": "cl-caret",
+   "frame": 76,
+   "note": "the caret grows",
+   "db": -6
+  },
+  {
+   "id": "cl-type1",
+   "frame": 86,
+   "note": "typed",
+   "db": -1
+  },
+  {
+   "id": "cl-brackets",
+   "frame": 110,
+   "note": "the brackets close",
+   "db": -3
+  },
+  {
+   "id": "cl-nu",
+   "frame": 165,
+   "note": "nu",
+   "db": -8
+  },
+  {
+   "id": "cl-mod",
+   "frame": 188,
+   "note": "M\u00f8d",
+   "db": -4
+  },
+  {
+   "id": "cl-logo",
+   "frame": 211,
+   "note": "the logo",
+   "db": -1
+  },
+  {
+   "id": "cl-riser",
+   "frame": 263,
+   "note": "into the drop",
+   "db": -3
+  },
+  {
+   "id": "cl-drop",
+   "frame": 264,
+   "note": "the drop",
+   "db": -2
+  },
+  {
+   "id": "cl-ai",
+   "frame": 270,
+   "note": "AI bygger",
+   "db": -7
+  },
+  {
+   "id": "cl-sites",
+   "frame": 285,
+   "note": "hjemmesider",
+   "db": -7
+  },
+  {
+   "id": "cl-fast",
+   "frame": 302,
+   "note": "hurtigere",
+   "db": -3
+  },
+  {
+   "id": "cl-hele",
+   "frame": 378,
+   "note": "Hele",
+   "db": -6
+  },
+  {
+   "id": "cl-slide",
+   "frame": 407,
+   "note": "processen tager",
+   "db": -2
+  },
+  {
+   "id": "cl-under",
+   "frame": 420,
+   "note": "under",
+   "db": -5
+  },
+  {
+   "id": "cl-count",
+   "frame": 450,
+   "note": "the count",
+   "db": -3
+  },
+  {
+   "id": "cl-wave",
+   "frame": 456,
+   "note": "the wave",
+   "db": -3
+  },
+  {
+   "id": "cl-five",
+   "frame": 470,
+   "note": "5",
+   "db": -3
+  },
+  {
+   "id": "cl-min",
+   "frame": 495,
+   "note": "minutter",
+   "db": -8
+  },
+  {
+   "id": "cl-kode",
+   "frame": 510,
+   "note": "kode",
+   "db": -6
+  },
+  {
+   "id": "cl-noedv",
+   "frame": 525,
+   "note": "n\u00f8dvendig",
+   "db": -3
+  },
+  {
+   "id": "cl-bloom",
+   "frame": 548,
+   "note": "the flower",
+   "db": -2
+  },
+  {
+   "id": "cl-star",
+   "frame": 558,
+   "note": "the star opens",
+   "db": 0
+  },
+  {
+   "id": "cl-collage",
+   "frame": 592,
+   "note": "the wall of sites",
+   "db": -1
+  },
+  {
+   "id": "cl-push",
+   "frame": 622,
+   "note": "into Caf\u00e9 Gaden",
+   "db": -1
+  },
+  {
+   "id": "cl-cafe",
+   "frame": 630,
+   "note": "Caf\u00e9",
+   "db": -6
+  },
+  {
+   "id": "cl-laptop",
+   "frame": 652,
+   "note": "the laptop",
+   "db": 0
+  },
+  {
+   "id": "cl-pill",
+   "frame": 694,
+   "note": "the glowing prompt",
+   "db": -5
+  },
+  {
+   "id": "cl-type2",
+   "frame": 698,
+   "note": "typed",
+   "db": -1
+  },
+  {
+   "id": "cl-zoomout",
+   "frame": 748,
+   "note": "pull back",
+   "db": -1
+  },
+  {
+   "id": "cl-send",
+   "frame": 758,
+   "note": "send",
+   "db": -2
+  },
+  {
+   "id": "cl-fold",
+   "frame": 770,
+   "note": "the pill folds",
+   "db": -2
+  },
+  {
+   "id": "cl-expand",
+   "frame": 786,
+   "note": "the builder opens",
+   "db": 0
+  },
+  {
+   "id": "cl-steps",
+   "frame": 788,
+   "note": "the questions answered",
+   "db": -3
+  },
+  {
+   "id": "cl-built",
+   "frame": 836,
+   "note": "built",
+   "db": -3
+  },
+  {
+   "id": "cl-closeup",
+   "frame": 843,
+   "note": "close on the prompt",
+   "db": -4
+  },
+  {
+   "id": "cl-type3",
+   "frame": 856,
+   "note": "typed",
+   "db": 0
+  },
+  {
+   "id": "cl-send2",
+   "frame": 917,
+   "note": "send",
+   "db": -2
+  },
+  {
+   "id": "cl-msg-me",
+   "frame": 921,
+   "note": "your message",
+   "db": -6
+  },
+  {
+   "id": "cl-msg-ai",
+   "frame": 934,
+   "note": "Creoble answers",
+   "db": -6
+  },
+  {
+   "id": "cl-tilt",
+   "frame": 950,
+   "note": "the tilt",
+   "db": -2
+  },
+  {
+   "id": "cl-recolor",
+   "frame": 960,
+   "note": "the recolour sweep",
+   "db": -3
+  },
+  {
+   "id": "cl-done",
+   "frame": 985,
+   "note": "F\u00e6rdig",
+   "db": -3
+  },
+  {
+   "id": "cl-chatbot",
+   "frame": 1020,
+   "note": "Tilf\u00f8j din chatbot",
+   "db": -5
+  },
+  {
+   "id": "cl-ptr1",
+   "frame": 1026,
+   "note": "Kunde",
+   "db": -8
+  },
+  {
+   "id": "cl-ptr2",
+   "frame": 1032,
+   "note": "Chatbot",
+   "db": -8
+  },
+  {
+   "id": "cl-click-chat",
+   "frame": 1063,
+   "note": "click Chatbot",
+   "db": -1
+  },
+  {
+   "id": "cl-card",
+   "frame": 1082,
+   "note": "the card",
+   "db": -5
+  },
+  {
+   "id": "cl-type4",
+   "frame": 1084,
+   "note": "typed",
+   "db": -1
+  },
+  {
+   "id": "cl-learnt",
+   "frame": 1086,
+   "note": "L\u00e6rt \u00d73",
+   "db": -2
+  },
+  {
+   "id": "cl-save",
+   "frame": 1104,
+   "note": "Gem",
+   "db": -2
+  },
+  {
+   "id": "cl-zoomin",
+   "frame": 1116,
+   "note": "zoom in",
+   "db": -3
+  },
+  {
+   "id": "cl-tiles",
+   "frame": 1125,
+   "note": "the tiles",
+   "db": -1
+  },
+  {
+   "id": "cl-fly",
+   "frame": 1160,
+   "note": "into the bar",
+   "db": -1
+  },
+  {
+   "id": "cl-zoomout2",
+   "frame": 1178,
+   "note": "out to the builder",
+   "db": -1
+  },
+  {
+   "id": "cl-hi",
+   "frame": 1196,
+   "note": "hello",
+   "db": -5
+  },
+  {
+   "id": "cl-med",
+   "frame": 1260,
+   "note": "Med",
+   "db": -5
+  },
+  {
+   "id": "cl-klik",
+   "frame": 1273,
+   "note": "\u00e9t klik",
+   "db": -4
+  },
+  {
+   "id": "cl-power",
+   "frame": 1283,
+   "note": "the power icon",
+   "db": 1
+  },
+  {
+   "id": "cl-chips",
+   "frame": 1298,
+   "note": "the chips",
+   "db": -3
+  },
+  {
+   "id": "cl-activate",
+   "frame": 1318,
+   "note": "Aktiv\u00e9r",
+   "db": 0
+  },
+  {
+   "id": "cl-open-chat",
+   "frame": 1371,
+   "note": "open the chat",
+   "db": -2
+  },
+  {
+   "id": "cl-chat-open",
+   "frame": 1382,
+   "note": "the chat opens",
+   "db": -5
+  },
+  {
+   "id": "cl-bot1",
+   "frame": 1388,
+   "note": "welcome",
+   "db": -6
+  },
+  {
+   "id": "cl-type5",
+   "frame": 1394,
+   "note": "typed",
+   "db": 2
+  },
+  {
+   "id": "cl-send3",
+   "frame": 1418,
+   "note": "send",
+   "db": -3
+  },
+  {
+   "id": "cl-me1",
+   "frame": 1421,
+   "note": "question",
+   "db": -6
+  },
+  {
+   "id": "cl-bot2",
+   "frame": 1438,
+   "note": "answer",
+   "db": -5
+  },
+  {
+   "id": "cl-type6",
+   "frame": 1450,
+   "note": "typed",
+   "db": 1
+  },
+  {
+   "id": "cl-send4",
+   "frame": 1472,
+   "note": "send",
+   "db": -3
+  },
+  {
+   "id": "cl-me2",
+   "frame": 1475,
+   "note": "question",
+   "db": -6
+  },
+  {
+   "id": "cl-bot3",
+   "frame": 1490,
+   "note": "answer",
+   "db": -5
+  },
+  {
+   "id": "cl-card2",
+   "frame": 1498,
+   "note": "the bouquet card",
+   "db": -6
+  },
+  {
+   "id": "cl-zoom-card",
+   "frame": 1511,
+   "note": "close on the card",
+   "db": -3
+  },
+  {
+   "id": "cl-order",
+   "frame": 1522,
+   "note": "Bestil",
+   "db": -1
+  },
+  {
+   "id": "cl-ordered",
+   "frame": 1525,
+   "note": "Bestilt",
+   "db": -3
+  },
+  {
+   "id": "cl-bot4",
+   "frame": 1538,
+   "note": "we'll call",
+   "db": -6
+  },
+  {
+   "id": "cl-zoomout3",
+   "frame": 1568,
+   "note": "out to the builder",
+   "db": -1
+  },
+  {
+   "id": "cl-se",
+   "frame": 1622,
+   "note": "Se resultatet",
+   "db": 0
+  },
+  {
+   "id": "cl-helt",
+   "frame": 1635,
+   "note": "helt",
+   "db": -3
+  },
+  {
+   "id": "cl-gratis",
+   "frame": 1650,
+   "note": "gratis",
+   "db": -2
+  },
+  {
+   "id": "cl-foer",
+   "frame": 1670,
+   "note": "f\u00f8r du betaler noget",
+   "db": -2
+  },
+  {
+   "id": "cl-click-buy",
+   "frame": 1723,
+   "note": "click K\u00f8b",
+   "db": -1
+  },
+  {
+   "id": "cl-buycard",
+   "frame": 1742,
+   "note": "the purchase card",
+   "db": -5
+  },
+  {
+   "id": "cl-type7",
+   "frame": 1744,
+   "note": "typed",
+   "db": -2
+  },
+  {
+   "id": "cl-pay",
+   "frame": 1782,
+   "note": "K\u00f8b nu",
+   "db": -1
+  },
+  {
+   "id": "cl-paid",
+   "frame": 1786,
+   "note": "Betalt",
+   "db": -2
+  },
+  {
+   "id": "cl-browser",
+   "frame": 1810,
+   "note": "the browser",
+   "db": -1
+  },
+  {
+   "id": "cl-shop",
+   "frame": 1862,
+   "note": "in the shop",
+   "db": 0
+  },
+  {
+   "id": "cl-oplev",
+   "frame": 1900,
+   "note": "Oplev",
+   "db": -1
+  },
+  {
+   "id": "cl-hosting",
+   "frame": 1920,
+   "note": "nem hosting",
+   "db": -1
+  },
+  {
+   "id": "cl-toggle",
+   "frame": 1966,
+   "note": "the switch",
+   "db": -1
+  },
+  {
+   "id": "cl-glow",
+   "frame": 1970,
+   "note": "it glows",
+   "db": -3
+  },
+  {
+   "id": "cl-type8",
+   "frame": 2000,
+   "note": "typed",
+   "db": -2
+  },
+  {
+   "id": "cl-panel",
+   "frame": 2008,
+   "note": "out to the panel",
+   "db": -1
+  },
+  {
+   "id": "cl-connect",
+   "frame": 2026,
+   "note": "Forbind",
+   "db": -2
+  },
+  {
+   "id": "cl-checks",
+   "frame": 2034,
+   "note": "checks",
+   "db": 1
+  },
+  {
+   "id": "cl-online",
+   "frame": 2060,
+   "note": "online",
+   "db": -2
+  },
+  {
+   "id": "cl-gaa",
+   "frame": 2100,
+   "note": "G\u00e5 online",
+   "db": -3
+  },
+  {
+   "id": "cl-move",
+   "frame": 2122,
+   "note": "to the corner",
+   "db": -2
+  },
+  {
+   "id": "cl-domain",
+   "frame": 2130,
+   "note": "med dit eget dom\u00e6ne",
+   "db": -6
+  },
+  {
+   "id": "cl-uden",
+   "frame": 2148,
+   "note": "uden teknisk b\u00f8vl",
+   "db": -5
+  },
+  {
+   "id": "cl-glow-c",
+   "frame": 2190,
+   "note": "the glow",
+   "db": -5
+  },
+  {
+   "id": "cl-starter",
+   "frame": 2190,
+   "note": "Din hjemmeside starter her",
+   "db": -7
+  },
+  {
+   "id": "cl-skabe",
+   "frame": 2238,
+   "note": "Hvad vil du skabe?",
+   "db": -3
+  },
+  {
+   "id": "cl-mark",
+   "frame": 2282,
+   "note": "the mark",
+   "db": -2
+  },
+  {
+   "id": "cl-wordmark",
+   "frame": 2312,
+   "note": "Creoble.",
+   "db": 0
+  },
+  {
+   "id": "cl-url",
+   "frame": 2355,
+   "note": "creoble.dk",
+   "db": -4
+  }
+ ]
+}
