@@ -37,8 +37,8 @@ export const Grain: React.FC<{ o?: number }> = ({ o = 0.055 }) => (
 /** Frosted glass: the style's tile and window surface (faked without backdrop-filter, which renders slowly). */
 export const glass = (glow = G.a, o = 1): React.CSSProperties => ({
   background: `linear-gradient(160deg, rgba(255,255,255,${0.9 * o}) 0%, rgba(255,255,255,${0.72 * o}) 100%)`,
-  border: "1.5px solid rgba(255,255,255,0.95)",
-  boxShadow: `0 1px 0 rgba(255,255,255,0.9) inset, 0 30px 60px -18px ${glow}66, 0 18px 40px rgba(18,38,30,0.10)`,
+  border: "1px solid rgba(23,39,31,0.09)",
+  boxShadow: `0 1px 0 rgba(255,255,255,0.9) inset, 0 30px 60px -26px ${glow}55, 0 16px 40px rgba(23,39,31,0.08)`,
 });
 
 /** A positioned box (transform placement, so slow moves glide instead of stepping a pixel at a time). */
@@ -55,7 +55,7 @@ export const Win: React.FC<{ x: number; y: number; w: number; h: number; s?: num
   z?: number; style?: React.CSSProperties; children?: React.ReactNode }> = ({ x, y, w, h, s = 1, o = 1, rot = 0, blur = 0, title, glow, z, style, children }) => (
   <Box x={x} y={y} w={w} h={h} s={s} o={o} rot={rot} blur={blur} r={26} z={z} style={{ ...glass(glow), overflow: "hidden", ...style }}>
     <div style={{ position: "absolute", left: 22, top: 20, display: "flex", gap: 9 }}>
-      {["#FF6159", "#FFBD2E", "#28C941"].map((c) => <div key={c} style={{ width: 13, height: 13, borderRadius: 7, background: c, opacity: 0.85 }} />)}
+      {[0, 1, 2].map((c) => <div key={c} style={{ width: 11, height: 11, borderRadius: 6, background: "#DDE5DB" }} />)}
     </div>
     {title && <div style={{ position: "absolute", left: 0, right: 0, top: 15, textAlign: "center", fontFamily: C.font, fontWeight: 600, fontSize: 18, color: C.muted, letterSpacing: "0.01em" }}>{title}</div>}
     <div style={{ position: "absolute", left: 0, right: 0, top: 52, height: 1, background: "rgba(20,40,32,0.06)" }} />
@@ -88,7 +88,7 @@ export const Cable: React.FC<{ d: string; k: number; orb?: number; w?: number; c
           <><stop offset="0" stopColor={C.orange} /><stop offset="0.3" stopColor={C.amber} /><stop offset="0.62" stopColor={C.lime} /><stop offset="1" stopColor={C.green} /></>}</linearGradient>
         <filter id={`gl-${id}`} x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6" /></filter>
       </defs>
-      <path id={`p-${id}`} d={d} fill="none" stroke={`url(#cg-${id})`} strokeWidth={w} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - k} />
+      <path id={`p-${id}`} d={d} fill="none" stroke={`url(#cg-${id})`} strokeWidth={w} strokeLinecap="round" pathLength={1} strokeDasharray="1 2" strokeDashoffset={1 - k} />
       {orb !== undefined && orb > 0 && orb < 1 && <Orb pathId={`p-${id}`} d={d} t={orb} id={id} />}
     </svg>
   );
@@ -149,7 +149,7 @@ export const Icon: React.FC<{ name: string; size?: number; color?: string; sw?: 
 /** A round avatar with initials on the palette gradient (no invented faces). */
 export const Avatar: React.FC<{ i: string; size?: number; hue?: number; style?: React.CSSProperties }> = ({ i, size = 64, hue = 0, style }) => (
   <div style={{ width: size, height: size, borderRadius: size, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: C.font, fontWeight: 700,
-    fontSize: size * 0.36, color: "#FFFFFF", background: `linear-gradient(135deg, ${[G.deep, G.a, G.c, G.b][hue % 4]}, ${[G.a, G.c, G.b, G.deep][hue % 4]})`,
+    fontSize: size * 0.36, color: hue % 4 === 3 ? C.ink : "#FFFFFF", background: [G.deep, "#C24E00", G.c, G.b][hue % 4],
     border: "3px solid #FFFFFF", boxShadow: "0 8px 20px rgba(18,38,30,0.14)", ...style }}>{i}</div>
 );
 
