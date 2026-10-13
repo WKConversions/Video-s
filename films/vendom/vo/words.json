@@ -1,0 +1,606 @@
+{
+ "offset": 0.5,
+ "source": "vo/vendom-vo.wav (ElevenLabs Christina, supplied by Karl), CTC forced alignment of the script (wav2vec2-base-960h)",
+ "words": [
+  {
+   "key": "w:your",
+   "word": "Your",
+   "start": 0.6,
+   "end": 0.72
+  },
+  {
+   "key": "w:next",
+   "word": "next",
+   "start": 0.82,
+   "end": 1.02
+  },
+  {
+   "key": "w:escape",
+   "word": "escape",
+   "start": 1.12,
+   "end": 1.5
+  },
+  {
+   "key": "w:might",
+   "word": "might",
+   "start": 1.681,
+   "end": 1.841
+  },
+  {
+   "key": "w:be",
+   "word": "be",
+   "start": 1.901,
+   "end": 1.961
+  },
+  {
+   "key": "w:closer",
+   "word": "closer",
+   "start": 2.061,
+   "end": 2.381
+  },
+  {
+   "key": "w:than",
+   "word": "than",
+   "start": 2.441,
+   "end": 2.541
+  },
+  {
+   "key": "w:you",
+   "word": "you",
+   "start": 2.601,
+   "end": 2.661
+  },
+  {
+   "key": "w:think",
+   "word": "think.",
+   "start": 2.741,
+   "end": 2.981
+  },
+  {
+   "key": "w:meet",
+   "word": "Meet",
+   "start": 3.601,
+   "end": 3.781
+  },
+  {
+   "key": "w:vendom",
+   "word": "Vendom.",
+   "start": 3.962,
+   "end": 4.322
+  },
+  {
+   "key": "w:a",
+   "word": "A",
+   "start": 4.822,
+   "end": 4.842
+  },
+  {
+   "key": "w:smarter",
+   "word": "smarter",
+   "start": 4.962,
+   "end": 5.322
+  },
+  {
+   "key": "w:way",
+   "word": "way",
+   "start": 5.402,
+   "end": 5.562
+  },
+  {
+   "key": "w:to",
+   "word": "to",
+   "start": 5.662,
+   "end": 5.722
+  },
+  {
+   "key": "w:bring",
+   "word": "bring",
+   "start": 5.782,
+   "end": 5.922
+  },
+  {
+   "key": "w:wellness",
+   "word": "wellness",
+   "start": 6.022,
+   "end": 6.383
+  },
+  {
+   "key": "w:home",
+   "word": "home.",
+   "start": 6.463,
+   "end": 6.683
+  },
+  {
+   "key": "w:start",
+   "word": "Start",
+   "start": 7.363,
+   "end": 7.563
+  },
+  {
+   "key": "w:with",
+   "word": "with",
+   "start": 7.623,
+   "end": 7.723
+  },
+  {
+   "key": "w:your2",
+   "word": "your",
+   "start": 7.763,
+   "end": 7.863
+  },
+  {
+   "key": "w:space",
+   "word": "space.",
+   "start": 7.903,
+   "end": 8.263
+  },
+  {
+   "key": "w:discover",
+   "word": "Discover",
+   "start": 8.764,
+   "end": 9.164
+  },
+  {
+   "key": "w:a2",
+   "word": "a",
+   "start": 9.324,
+   "end": 9.344
+  },
+  {
+   "key": "w:range",
+   "word": "range",
+   "start": 9.464,
+   "end": 9.724
+  },
+  {
+   "key": "w:of",
+   "word": "of",
+   "start": 9.784,
+   "end": 9.824
+  },
+  {
+   "key": "w:spas",
+   "word": "spas,",
+   "start": 9.904,
+   "end": 10.264
+  },
+  {
+   "key": "w:from",
+   "word": "from",
+   "start": 10.544,
+   "end": 10.664
+  },
+  {
+   "key": "w:compact",
+   "word": "compact",
+   "start": 10.784,
+   "end": 11.185
+  },
+  {
+   "key": "w:designs",
+   "word": "designs",
+   "start": 11.225,
+   "end": 11.685
+  },
+  {
+   "key": "w:to2",
+   "word": "to",
+   "start": 11.805,
+   "end": 11.905
+  },
+  {
+   "key": "w:spacious",
+   "word": "spacious",
+   "start": 12.005,
+   "end": 12.445
+  },
+  {
+   "key": "w:swim",
+   "word": "swim",
+   "start": 12.545,
+   "end": 12.745
+  },
+  {
+   "key": "w:spas2",
+   "word": "spas.",
+   "start": 12.825,
+   "end": 13.145
+  },
+  {
+   "key": "w:choose",
+   "word": "Choose",
+   "start": 13.726,
+   "end": 14.006
+  },
+  {
+   "key": "w:your3",
+   "word": "your",
+   "start": 14.046,
+   "end": 14.166
+  },
+  {
+   "key": "w:experience",
+   "word": "experience.",
+   "start": 14.226,
+   "end": 14.826
+  },
+  {
+   "key": "w:targeted",
+   "word": "Targeted",
+   "start": 15.306,
+   "end": 15.707
+  },
+  {
+   "key": "w:hydromassage",
+   "word": "hydromassage",
+   "start": 15.787,
+   "end": 16.487
+  },
+  {
+   "key": "w:jets",
+   "word": "jets",
+   "start": 16.567,
+   "end": 16.827
+  },
+  {
+   "key": "w:help",
+   "word": "help",
+   "start": 16.927,
+   "end": 17.087
+  },
+  {
+   "key": "w:release",
+   "word": "release",
+   "start": 17.167,
+   "end": 17.467
+  },
+  {
+   "key": "w:tension",
+   "word": "tension,",
+   "start": 17.567,
+   "end": 17.928
+  },
+  {
+   "key": "w:while",
+   "word": "while",
+   "start": 18.288,
+   "end": 18.448
+  },
+  {
+   "key": "w:advanced",
+   "word": "advanced",
+   "start": 18.528,
+   "end": 18.868
+  },
+  {
+   "key": "w:insulation",
+   "word": "insulation",
+   "start": 18.948,
+   "end": 19.528
+  },
+  {
+   "key": "w:helps",
+   "word": "helps",
+   "start": 19.688,
+   "end": 19.888
+  },
+  {
+   "key": "w:keep",
+   "word": "keep",
+   "start": 19.948,
+   "end": 20.089
+  },
+  {
+   "key": "w:the",
+   "word": "the",
+   "start": 20.169,
+   "end": 20.229
+  },
+  {
+   "key": "w:warmth",
+   "word": "warmth",
+   "start": 20.289,
+   "end": 20.549
+  },
+  {
+   "key": "w:in",
+   "word": "in",
+   "start": 20.849,
+   "end": 20.889
+  },
+  {
+   "key": "w:and",
+   "word": "and",
+   "start": 21.069,
+   "end": 21.129
+  },
+  {
+   "key": "w:energy",
+   "word": "energy",
+   "start": 21.269,
+   "end": 21.529
+  },
+  {
+   "key": "w:use",
+   "word": "use",
+   "start": 21.669,
+   "end": 21.789
+  },
+  {
+   "key": "w:down",
+   "word": "down.",
+   "start": 21.869,
+   "end": 22.109
+  },
+  {
+   "key": "w:then",
+   "word": "Then",
+   "start": 22.61,
+   "end": 22.79
+  },
+  {
+   "key": "w:leave",
+   "word": "leave",
+   "start": 23.11,
+   "end": 23.27
+  },
+  {
+   "key": "w:the2",
+   "word": "the",
+   "start": 23.33,
+   "end": 23.39
+  },
+  {
+   "key": "w:details",
+   "word": "details",
+   "start": 23.45,
+   "end": 23.85
+  },
+  {
+   "key": "w:to3",
+   "word": "to",
+   "start": 23.91,
+   "end": 23.99
+  },
+  {
+   "key": "w:the3",
+   "word": "the",
+   "start": 24.03,
+   "end": 24.09
+  },
+  {
+   "key": "w:experts",
+   "word": "experts.",
+   "start": 24.21,
+   "end": 24.61
+  },
+  {
+   "key": "w:from2",
+   "word": "From",
+   "start": 25.031,
+   "end": 25.151
+  },
+  {
+   "key": "w:choosing",
+   "word": "choosing",
+   "start": 25.231,
+   "end": 25.551
+  },
+  {
+   "key": "w:the4",
+   "word": "the",
+   "start": 25.591,
+   "end": 25.651
+  },
+  {
+   "key": "w:right",
+   "word": "right",
+   "start": 25.711,
+   "end": 25.851
+  },
+  {
+   "key": "w:model",
+   "word": "model",
+   "start": 25.931,
+   "end": 26.171
+  },
+  {
+   "key": "w:to4",
+   "word": "to",
+   "start": 26.291,
+   "end": 26.371
+  },
+  {
+   "key": "w:delivery",
+   "word": "delivery,",
+   "start": 26.451,
+   "end": 26.931
+  },
+  {
+   "key": "w:installation",
+   "word": "installation,",
+   "start": 27.172,
+   "end": 27.772
+  },
+  {
+   "key": "w:and2",
+   "word": "and",
+   "start": 27.932,
+   "end": 28.012
+  },
+  {
+   "key": "w:ongoing",
+   "word": "ongoing",
+   "start": 28.172,
+   "end": 28.472
+  },
+  {
+   "key": "w:support",
+   "word": "support,",
+   "start": 28.532,
+   "end": 28.892
+  },
+  {
+   "key": "w:vendom2",
+   "word": "Vendom",
+   "start": 29.433,
+   "end": 29.753
+  },
+  {
+   "key": "w:guides",
+   "word": "guides",
+   "start": 29.873,
+   "end": 30.153
+  },
+  {
+   "key": "w:every",
+   "word": "every",
+   "start": 30.373,
+   "end": 30.593
+  },
+  {
+   "key": "w:step",
+   "word": "step.",
+   "start": 30.673,
+   "end": 30.913
+  },
+  {
+   "key": "w:less",
+   "word": "Less",
+   "start": 31.413,
+   "end": 31.614
+  },
+  {
+   "key": "w:planning",
+   "word": "planning.",
+   "start": 31.674,
+   "end": 32.054
+  },
+  {
+   "key": "w:more",
+   "word": "More",
+   "start": 32.474,
+   "end": 32.654
+  },
+  {
+   "key": "w:relaxing",
+   "word": "relaxing.",
+   "start": 32.714,
+   "end": 33.234
+  },
+  {
+   "key": "w:and3",
+   "word": "And",
+   "start": 33.694,
+   "end": 33.754
+  },
+  {
+   "key": "w:a3",
+   "word": "a",
+   "start": 33.814,
+   "end": 33.834
+  },
+  {
+   "key": "w:personal",
+   "word": "personal",
+   "start": 33.915,
+   "end": 34.295
+  },
+  {
+   "key": "w:wellness2",
+   "word": "wellness",
+   "start": 34.375,
+   "end": 34.695
+  },
+  {
+   "key": "w:space2",
+   "word": "space",
+   "start": 34.735,
+   "end": 35.035
+  },
+  {
+   "key": "w:thats",
+   "word": "that's",
+   "start": 35.115,
+   "end": 35.295
+  },
+  {
+   "key": "w:always",
+   "word": "always",
+   "start": 35.515,
+   "end": 35.815
+  },
+  {
+   "key": "w:ready",
+   "word": "ready",
+   "start": 35.915,
+   "end": 36.115
+  },
+  {
+   "key": "w:when",
+   "word": "when",
+   "start": 36.175,
+   "end": 36.276
+  },
+  {
+   "key": "w:you2",
+   "word": "you",
+   "start": 36.336,
+   "end": 36.436
+  },
+  {
+   "key": "w:are",
+   "word": "are.",
+   "start": 36.596,
+   "end": 36.656
+  },
+  {
+   "key": "w:all",
+   "word": "All",
+   "start": 37.176,
+   "end": 37.296
+  },
+  {
+   "key": "w:year",
+   "word": "year",
+   "start": 37.356,
+   "end": 37.496
+  },
+  {
+   "key": "w:round",
+   "word": "round.",
+   "start": 37.556,
+   "end": 37.816
+  },
+  {
+   "key": "w:vendom3",
+   "word": "Vendom.",
+   "start": 38.396,
+   "end": 38.737
+  },
+  {
+   "key": "w:make",
+   "word": "Make",
+   "start": 39.277,
+   "end": 39.437
+  },
+  {
+   "key": "w:room",
+   "word": "room",
+   "start": 39.537,
+   "end": 39.737
+  },
+  {
+   "key": "w:for",
+   "word": "for",
+   "start": 39.897,
+   "end": 40.017
+  },
+  {
+   "key": "w:wellbeing",
+   "word": "wellbeing.",
+   "start": 40.097,
+   "end": 40.617
+  }
+ ]
+}

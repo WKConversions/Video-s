@@ -1,0 +1,277 @@
+{
+ "fps": 30,
+ "frames": 1260,
+ "library": "lib",
+ "vo": {
+  "file": "../film/public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "music/pop-05-fit.wav",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.3,
+  "fade_out": 1.0,
+  "note": "Pop 05 (Grigoriy Nuzhny, Mixkit, Mixkit Stock Music Free License), fitted: lift at 3.60 on 'Meet Vendom', last hit 39.06"
+ },
+ "sfx": [
+  {
+   "id": "vd-flaps",
+   "frame": 20,
+   "note": "the destination flaps flip",
+   "db": -6
+  },
+  {
+   "id": "vd-garden",
+   "frame": 62,
+   "note": "Your garden, 0 km",
+   "db": -6
+  },
+  {
+   "id": "vd-logo",
+   "frame": 107,
+   "note": "Vendom",
+   "db": -2
+  },
+  {
+   "id": "vd-to-bubble",
+   "frame": 109,
+   "note": "the card closes into a bubble",
+   "db": -5
+  },
+  {
+   "id": "vd-wordmark",
+   "frame": 116,
+   "note": "the name writes out",
+   "db": -6
+  },
+  {
+   "id": "vd-bubbles-open",
+   "frame": 117,
+   "note": "the bubbles open the frame",
+   "db": -6
+  },
+  {
+   "id": "vd-home-rise",
+   "frame": 154,
+   "note": "the spa at home rises in",
+   "db": -6
+  },
+  {
+   "id": "vd-roof",
+   "frame": 189,
+   "note": "the roof rises: home",
+   "db": -4
+  },
+  {
+   "id": "vd-draw",
+   "frame": 228,
+   "note": "the terrace is drawn",
+   "db": -5
+  },
+  {
+   "id": "vd-water-open",
+   "frame": 231,
+   "note": "water opens around the plan",
+   "db": -8
+  },
+  {
+   "id": "vd-plan",
+   "frame": 240,
+   "note": "the plan of your space",
+   "db": -9
+  },
+  {
+   "id": "vd-range",
+   "frame": 279,
+   "note": "six spas",
+   "db": -2
+  },
+  {
+   "id": "vd-compact",
+   "frame": 342,
+   "note": "a compact spa settles",
+   "db": -4
+  },
+  {
+   "id": "vd-swim",
+   "frame": 383,
+   "note": "the swim spa slides in",
+   "db": -4
+  },
+  {
+   "id": "vd-options",
+   "frame": 416,
+   "note": "the two experiences rise",
+   "db": -6
+  },
+  {
+   "id": "vd-toggles",
+   "frame": 427,
+   "note": "hydromassage on, insulation on",
+   "db": -3
+  },
+  {
+   "id": "vd-jets-in",
+   "frame": 461,
+   "note": "the jet and the spa",
+   "db": -6
+  },
+  {
+   "id": "vd-targets",
+   "frame": 471,
+   "note": "three jet targets",
+   "db": -4
+  },
+  {
+   "id": "vd-release",
+   "frame": 518,
+   "note": "release: a rush of bubbles",
+   "db": -7
+  },
+  {
+   "id": "vd-relieved",
+   "frame": 524,
+   "note": "Tension released",
+   "db": -8
+  },
+  {
+   "id": "vd-swap",
+   "frame": 550,
+   "note": "winter and the insulation",
+   "db": -6
+  },
+  {
+   "id": "vd-wrap",
+   "frame": 565,
+   "note": "the insulation wraps the water",
+   "db": -2
+  },
+  {
+   "id": "vd-warmth",
+   "frame": 615,
+   "note": "the warmth turns back in",
+   "db": -5
+  },
+  {
+   "id": "vd-energy-down",
+   "frame": 637,
+   "note": "energy use down",
+   "db": -2
+  },
+  {
+   "id": "vd-project",
+   "frame": 680,
+   "note": "your spa project",
+   "db": -6
+  },
+  {
+   "id": "vd-experts",
+   "frame": 722,
+   "note": "Vendom experts",
+   "db": -3
+  },
+  {
+   "id": "vd-details",
+   "frame": 728,
+   "note": "the details are taken",
+   "db": -6
+  },
+  {
+   "id": "vd-step-model",
+   "frame": 755,
+   "note": "the right model",
+   "db": -3
+  },
+  {
+   "id": "vd-path",
+   "frame": 757,
+   "note": "the path draws",
+   "db": -6
+  },
+  {
+   "id": "vd-step-delivery",
+   "frame": 792,
+   "note": "delivery",
+   "db": -3
+  },
+  {
+   "id": "vd-step-install",
+   "frame": 814,
+   "note": "installation",
+   "db": -3
+  },
+  {
+   "id": "vd-step-support",
+   "frame": 854,
+   "note": "ongoing support",
+   "db": -3
+  },
+  {
+   "id": "vd-guides",
+   "frame": 911,
+   "note": "Vendom guides every step",
+   "db": -4
+  },
+  {
+   "id": "vd-arranged",
+   "frame": 941,
+   "note": "All arranged",
+   "db": -4
+  },
+  {
+   "id": "vd-fold",
+   "frame": 951,
+   "note": "less planning",
+   "db": -5
+  },
+  {
+   "id": "vd-relax",
+   "frame": 988,
+   "note": "more relaxing",
+   "db": -4
+  },
+  {
+   "id": "vd-panel",
+   "frame": 1017,
+   "note": "your spa's panel",
+   "db": -6
+  },
+  {
+   "id": "vd-temp",
+   "frame": 1018,
+   "note": "the water warms to 38\u00b0",
+   "db": -8
+  },
+  {
+   "id": "vd-ready",
+   "frame": 1074,
+   "note": "Ready",
+   "db": -3
+  },
+  {
+   "id": "vd-seasons",
+   "frame": 1114,
+   "note": "all year round",
+   "db": -2
+  },
+  {
+   "id": "vd-final",
+   "frame": 1149,
+   "note": "Vendom",
+   "db": -3
+  },
+  {
+   "id": "vd-sign-open",
+   "frame": 1150,
+   "note": "the sign-off opens",
+   "db": -6
+  },
+  {
+   "id": "vd-url",
+   "frame": 1218,
+   "note": "the address",
+   "db": -10
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+film/node_modules
+film/out/
+stock/
+sound/music/candidates/
+sound/music/mine/
+sound/music/mine2/
+*.pyc
+__pycache__/
