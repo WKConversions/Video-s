@@ -13,7 +13,7 @@ DM Sans), with Karl's Danish script on screen and Creoble's own story in the dem
   "Med ét klik", activation, the bot answering a customer down to an order), `D.tsx` 54–80.49 s (free preview, 499 kr.,
   hosting and domain, the close and creoble.dk). `src/Story.tsx` is the shot list.
 - `sound/` the music cut (`music_splice.py`: Expressive Courage cut to the reference's structure — the drop-out under
-  the logo, drops at 8.8 s and 54.15 s, the hard stop at 49.4 s, the track's own ending on the logo), the film's 123
+  the logo, drops at 8.8 s and 54.15 s, the hard stop at 49.4 s, the track's own ending on the logo), the film's 122
   generated effects (`creoble_sfx.py`, each used once), the cue sheet (`make_cues.py`) and the mix sheet.
 - `deliver/` the 1080p film and a share copy under 30 MB.
 
@@ -25,4 +25,4 @@ Sound: `cd sound && python3 creoble_sfx.py && python3 make_cues.py && python3 ..
 
 Render: `cd film && bash out/render3.sh 0,800,1620,2415`, join `out/parts/p{0,800,1620}.mp4` with ffmpeg's concat
 demuxer, then mux `public/audio/mix.wav` with the delivery encode (TV-range BT.709, x264 CRF 17, AAC 256k, faststart;
-the share copy at CRF 22).
+the share copy two-pass at 2.75 Mb/s, under 30 MB).
