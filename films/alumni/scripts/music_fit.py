@@ -12,6 +12,11 @@
 # and its ring-out may end up to --max-early seconds before the film ends, or be faded at the film's end. It writes the wav (48 kHz stereo), prints the
 # plan (start, joins, tempo, where each section lands in the film) and, with --sheet, draws the cut.
 # Constant-tempo tracks only (DAW-made library music is); check the join by ear or with audio_look.py.
+# Alumni copy: the full-band tempo comb can lock onto a side lobe in four-on-the-floor tracks (Mixkit
+# "Take this Higher" reads 122.81 BPM, really 124.02), so a kick-band comb is checked too, and the downbeat
+# is the beat where sections step up rather than the beat with the most kick (every beat has one in EDM).
+#        [--bpm 124.02 --downbeat 3.88]   force the grid: tempo, and any downbeat time in the track
+#        [--entry 3.88]                   force which entry (track time, snapped to a bar) lands on --lift
 import subprocess, sys, wave
 import numpy as np
 
@@ -55,6 +60,18 @@ def tempo(onset):
     best = max((comb(b)[0], b) for b in np.arange(best - 0.06, best + 0.06, 0.005))[1]
     return best, -comb(best)[1] % (60 / best)
 
+def tempo_low(low):
+    """Tempo from the kick/bass band alone; returns (bpm, phase, clean) where clean means one dominant peak."""
+    fps = A_SR / HOP
+    lowc = low - np.convolve(low, np.ones(32) / 32, "same")
+    t = np.arange(len(lowc)) / fps
+    bs = np.arange(90, 140, 0.02)
+    c = np.array([abs((lowc * np.exp(2j * np.pi * (t % (60 / b)) / (60 / b))).sum()) for b in bs])
+    peaks = [i for i in range(1, len(bs) - 1) if c[i] >= c[i - 1] and c[i] >= c[i + 1] and c[i] > 0.5 * c.max()]
+    best = int(np.argmax(c)); clean = len([i for i in peaks if c[i] > 0.8 * c[best]]) == 1
+    p = 60 / bs[best]; z = (lowc * np.exp(2j * np.pi * (t % p) / p)).sum()
+    return float(bs[best]), (-np.angle(z) / (2 * np.pi)) % 1 * p, clean
+
 def main():
     src, out = sys.argv[1], sys.argv[2]
     L = float(arg("--length")); lift = float(arg("--lift")) if arg("--lift") else None
@@ -63,6 +80,12 @@ def main():
     onset, low, rms, bands = features(x)
     fps = A_SR / HOP
     bpm, phase = tempo(onset)
+    lb, lph, clean = tempo_low(low)
+    if clean and abs(lb - bpm) > 0.3 and abs(lb / bpm - round(lb / bpm)) < 0.05:
+        print(f"tempo: kick comb {lb:.2f} BPM replaces full-band {bpm:.2f}")
+        bpm, phase = lb, lph
+    if arg("--bpm"):
+        bpm = float(arg("--bpm")); phase = (float(arg("--downbeat", 0)) % (60 / bpm))
     beat = 60 / bpm
     db = 20 * np.log10(rms / rms.max() + 1e-9)
     loud = np.where(db > -35)[0]
@@ -72,7 +95,12 @@ def main():
     beats = np.arange(phase, len(x) / A_SR, beat)
     # the downbeat: the beat of the four that carries the most kick and bass
     lowb = np.array([low[int(b * fps)] if int(b * fps) < len(low) else 0 for b in beats])
-    down = int(np.argmax([lowb[k::4].mean() for k in range(4)]))
+    # the downbeat: the beat of four where sections step up (louder over the 4 beats after than before)
+    bdb_ = np.array([20 * np.log10(rms[min(len(rms) - 1, int(b * fps)):max(int(b * fps) + 1, int((b + beat) * fps))].mean() + 1e-9) for b in beats])
+    stp = np.array([max(0.0, bdb_[j:j + 4].mean() - bdb_[j - 4:j].mean()) if 4 <= j < len(beats) - 4 else 0 for j in range(len(beats))])
+    down = int(np.argmax([float((stp[k::4] ** 2).sum()) for k in range(4)]))
+    if arg("--downbeat"):
+        down = int(np.argmin(np.abs(beats - float(arg("--downbeat"))))) % 4
     bars = beats[down::4]; bar = 4 * beat
     # the ending's timing is locked to the bar grid, so it may fall up to a bar either side of L: early by up
     # to --max-early (silence after the ring-out) or late (the ring-out is faded at the film's end)
@@ -87,6 +115,9 @@ def main():
     for i in range(2, len(bars) - 2):
         step[i] = (bdb[i:i + 2].mean() - bdb[i - 2:i].mean()) + 4 * np.maximum(0, bb[i:i + 2].mean(0) - bb[i - 2:i].mean(0)).sum()
     entries = [i for i in np.argsort(-step) if step[i] > 0.8 and bars[i] < E - 8][:8]
+    if arg("--entry"):                                     # force the entry (track time) that lands on --lift
+        forced = int(np.argmin(np.abs(bars - float(arg("--entry")))))
+        entries = [forced] + [i for i in entries if i != forced]; step[forced] = max(step[forced], step.max() + 1)
 
     # where the edit starts (track time s, on a bar) and when it starts in the film (at, 0..a bar)
     if lift is not None and entries:
@@ -95,7 +126,7 @@ def main():
             for k in range(0, 64):
                 s = bars[e] - k * bar
                 at = lift - (bars[e] - s)
-                if s >= t_first - 0.05 and 0 <= at < bar:
+                if s >= min(t_first - 0.05, 0.0) - 0.02 and 0 <= at < bar:
                     plans.append((-(step[e]), at, s, e)); break
         _, at, s, e_used = min(plans) if plans else (0, 0, bars[0], None)
     else:

@@ -17,4 +17,4 @@ export const Film: React.FC<{ blurSamples: number; audio: string }> = ({ blurSam
 );
 
 export { Story };
-export const FILM_DURATION = 1155;
+export const FILM_DURATION = 1170;

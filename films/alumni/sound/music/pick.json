@@ -1,0 +1,14 @@
+{
+ "title": "Take this Higher", "artist": "Michael Ramir C.", "file": "/home/user/Video-s/films/alumni/sound/music/take-this-higher.mp3",
+ "source": "https://assets.mixkit.co/music/1012/1012.mp3", "listed_on": "https://mixkit.co/free-stock-music/mood/positive/",
+ "licence": "Mixkit Stock Music Free License (commercial use, no credit needed) https://mixkit.co/license/#musicFree",
+ "bpm": 124.02, "beat_s": 0.4838, "bar_s": 1.9352, "first_downbeat_s": 0.011, "bar_formula": "0.011 + n * 1.9352",
+ "bars_s_first_32": [0.01, 1.95, 3.88, 5.82, 7.75, 9.69, 11.62, 13.56, 15.49, 17.43, 19.36, 21.30, 23.23, 25.17, 27.10, 29.04, 30.97],
+ "bars_s_last": [85.16, 87.09, 89.03, 90.96],
+ "soft_intro_s": [0.0, 3.88],
+ "beat_entries_s": {"3.88": "kick + bass enter (transient 3.86, 16th pickup ~3.75)", "5.82": "second layer", "7.75": "fuller band (-4 dB vs body)", "29.04": "the drop after a break at 27.57-29.0 (strongest entry)", "30.97": "drop, second bar"},
+ "last_full_beat_s": 90.48, "final_hit_s": 90.97, "final_hit_is_downbeat": true,
+ "ring_out": {"minus20dB_s": 92.0, "minus35dB_s": 92.74},
+ "vocals": "none (faster-whisper small + VAD on 0-30 s and 57-87 s: no words)",
+ "fit_test": {"cmd": "python3 scripts/music_fit.py sound/music/take-this-higher.mp3 out.wav --length 39 --lift 5.0 --entry 3.88", "start": "track 0.01 s at film 1.13 s", "join": "film 10.81 s: track 9.69 -> 63.87 s", "final_hit_film_s": 37.91, "wav": "/home/user/Video-s/films/alumni/sound/music/take-this-higher_fit-test_39s.wav"}
+}

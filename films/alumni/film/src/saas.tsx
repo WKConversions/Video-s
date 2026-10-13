@@ -18,7 +18,7 @@ export const Mesh: React.FC<{ g: number; tint?: number; bloom?: number }> = ({ g
   return (
     <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, overflow: "hidden", background: C.paper }}>
       {blobs.map((b, i) => {
-        const x = b.x * 1920 + Math.sin(t * 0.35 + b.p) * b.sx, y = b.y * 1080 + Math.cos(t * 0.3 + b.p * 1.3) * b.sy;
+        const x = b.x * 1920 + Math.sin(t * 0.55 + b.p) * b.sx * 2.2, y = b.y * 1080 + Math.cos(t * 0.45 + b.p * 1.3) * b.sy * 2.2;
         return <div key={i} style={{ position: "absolute", left: 0, top: 0, width: b.r * 2, height: b.r * 2, borderRadius: "50%",
           transform: `translate(${x - b.r}px, ${y - b.r}px)`, opacity: 0.9 * bloom,
           background: `radial-gradient(circle at 50% 50%, ${b.c} 0%, ${b.c}CC 22%, ${b.c}55 48%, ${b.c}00 70%)` }} />;

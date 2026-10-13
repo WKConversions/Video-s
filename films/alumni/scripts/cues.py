@@ -8,7 +8,7 @@ import json, os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 W = json.load(open(os.path.join(ROOT, "film", "src", "words.json")))
-FPS, END = 30, 38.5
+FPS, END = 30, 39.0
 L = dict(W)
 L.update({"hook": 0.0, "ask": W["w:so"] - 0.2, "meet": W["w:meet"] - 0.15, "connect": W["w:connecting"] - 0.15, "start": W["w:start"] - 0.2,
           "brings": W["w:alumni2"] - 0.15, "grads": W["w:for2"] - 0.2, "biz": W["w:for3"] - 0.2, "agency": W["w:and3"] - 0.2,
@@ -91,7 +91,7 @@ cue("w:abroad", 0.35, OPEN, -5, note="the call to action")
 
 out = {"fps": FPS, "frames": round(END * FPS), "library": "lib",
        "vo": {"file": "../vo/vo.mp3", "at": 0, "compress": True},
-       "music": {"file": "bed.wav", "at": 0, "lufs": -23, "duck_db": 6, "fade_in": 0.2, "fade_out": 0.6, "lifts": []},
+       "music": {"file": "bed.wav", "at": 0, "lufs": -23, "duck_db": 6, "fade_in": 0.2, "fade_out": 0.8, "lifts": [[0, 4.3, 5]]},
        "sfx": sorted(cues, key=lambda c: c["frame"])}
 json.dump(out, open(os.path.join(ROOT, "sound", "cues.json"), "w"), indent=1)
 print(len(cues), "cues")

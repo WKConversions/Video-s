@@ -45,6 +45,20 @@ def tempo(onset):
     best = max((comb(b)[0], b) for b in np.arange(best - 0.06, best + 0.06, 0.005))[1]
     return best, -comb(best)[1] % (60 / best)
 
+def tempo_low(low):
+    """Tempo from the low band alone (kick and bass): in four-on-the-floor tracks the full-band onset curve
+    can lock onto a side lobe (busy off-beat hats and stabs); the kick comb then has one clean peak."""
+    fps = A_SR / HOP
+    lowc = low - np.convolve(low, np.ones(32) / 32, "same")
+    t = np.arange(len(lowc)) / fps
+    bs = np.arange(90, 140, 0.02)
+    c = np.array([abs((lowc * np.exp(2j * np.pi * (t % (60 / b)) / (60 / b))).sum()) for b in bs])
+    peaks = [i for i in range(1, len(bs) - 1) if c[i] >= c[i - 1] and c[i] >= c[i + 1] and c[i] > 0.5 * c.max()]
+    peaks = [i for i in peaks if not any(abs(bs[i] - bs[j]) < 0.3 and c[j] > c[i] for j in peaks)]
+    best = int(np.argmax(c)); clean = len([i for i in peaks if c[i] > 0.8 * c[best]]) == 1
+    p = 60 / bs[best]; z = (lowc * np.exp(2j * np.pi * (t % p) / p)).sum()
+    return float(bs[best]), (-np.angle(z) / (2 * np.pi)) % 1 * p, clean
+
 def vocals(path, x, model):
     """Transcribe the loudest 30 s of the track's middle; return the words whisper hears."""
     fps = A_SR / HOP
@@ -53,27 +67,47 @@ def vocals(path, x, model):
     lo, hi = int(min(10, dur * 0.1)), int(max(11, dur - 40))
     win = np.convolve(r, np.ones(30), "valid")
     s0 = lo + int(np.argmax(win[lo:hi])) if hi > lo and len(win) > lo else 0
-    a = load(path, 16000)[:, 0].astype(np.float32)[s0 * 16000:(s0 + 30) * 16000]
-    segs, info = model.transcribe(a, language="en", vad_filter=True, word_timestamps=True, beam_size=5, condition_on_previous_text=False)
-    words = [(w.word.strip(), round(w.probability, 2)) for s in segs for w in (s.words or [])]
-    good = [w for w, p in words if p >= 0.5 and len(w.strip(" .,!?'-")) > 1]
-    return {"excerpt_s": [s0, s0 + 30], "words": words, "confident_words": good, "vocals": "yes" if len(good) >= 4 else ("maybe" if good else "no")}
+    full = load(path, 16000)[:, 0].astype(np.float32)
+    words, spans = [], []
+    for a0 in sorted({0, s0}):                      # the opening 30 s (what sits under the first lines) and the loudest 30 s
+        a = full[a0 * 16000:(a0 + 30) * 16000]
+        segs, info = model.transcribe(a, language="en", vad_filter=True, word_timestamps=True, beam_size=5, condition_on_previous_text=False)
+        words += [(w.word.strip(), round(w.probability, 2), round(a0 + w.start, 2)) for s in segs for w in (s.words or [])]
+        spans.append([a0, a0 + 30])
+    good = [w for w, p, t in words if p >= 0.5 and len(w.strip(" .,!?'-")) > 1]
+    return {"excerpts_s": spans, "words": words, "confident_words": good, "vocals": "yes" if len(good) >= 4 else ("maybe" if good else "no")}
 
 def detail(path, model=None):
     x = load(path, A_SR)[:, 0]
     onset, low, rms, bands = features(x)
     fps = A_SR / HOP
     bpm, phase = tempo(onset)
+    tempo_note = "full-band comb"
+    if "--no-kick-check" not in sys.argv:
+        lb, lph, clean = tempo_low(low)
+        while lb < 80: lb *= 2
+        if clean and abs(lb - bpm) > 0.3 and abs(lb / bpm - round(lb / bpm)) < 0.05:
+            tempo_note = f"kick comb {lb:.2f} BPM replaces full-band {bpm:.2f} (full-band comb locked to a side lobe)"
+            bpm, phase = lb, lph
+        else:
+            tempo_note += f" (kick comb {lb:.2f}, {'clean' if clean else 'ambiguous'})"
     beat = 60 / bpm; bar = 4 * beat
     db = 20 * np.log10(rms / rms.max() + 1e-9)
     loud = np.where(db > -35)[0]
     t_first, E = loud[0] / fps, loud[-1] / fps
     beats = np.arange(phase, len(x) / A_SR, beat)
     lowb = np.array([low[int(b * fps)] if int(b * fps) < len(low) else 0 for b in beats])
-    down = int(np.argmax([lowb[k::4].mean() for k in range(4)]))
+    down_kick = int(np.argmax([lowb[k::4].mean() for k in range(4)]))
+    # sections start on downbeats: the beat of four where the music steps up (louder 4 beats after than
+    # before) most often and most strongly; the kick heuristic above is ambiguous in four-on-the-floor
+    bdb_ = np.array([20 * np.log10(rms[min(len(rms) - 1, int(b * fps)):max(int(b * fps) + 1, int((b + beat) * fps))].mean() + 1e-9) for b in beats])
+    stp = np.array([max(0.0, bdb_[j:j + 4].mean() - bdb_[j - 4:j].mean()) if 4 <= j < len(beats) - 4 else 0 for j in range(len(beats))])
+    score = [float((stp[k::4] ** 2).sum()) for k in range(4)]
+    down = int(np.argmax(score))
+    down_note = f"section steps (kick heuristic {'agrees' if down == down_kick else 'says beat ' + str((down_kick - down) % 4 + 1)})"
     bars = beats[down::4]
     if bars[0] - bar > t_first - 0.1 and bars[0] - bar >= 0: bars = np.concatenate([[bars[0] - bar], bars])
-    bars = bars[bars >= 0]
+    bars = bars[(bars >= 0) & (bars < len(rms) / fps - bar)]
     def at_bar(arr, b0, b1):
         i0, i1 = int(b0 * fps), max(int(b0 * fps) + 1, int(b1 * fps))
         return arr[i0:i1].mean(axis=0)
@@ -99,10 +133,10 @@ def detail(path, model=None):
     sm = np.convolve(env, np.ones(25) / 25, "same")                              # 250 ms level
     full = np.percentile(sm, 75)
     held = np.where(sm > full * 10 ** (-3 / 20))[0]
-    decay_start = held[-1] / 100 if len(held) else E
-    att = [i for i in range(5, len(env)) if env[i] > 1.58 * env[i - 5:i - 1].max() and env[i] > 0.3 * env.max() and i / 100 <= decay_start + 0.3]
-    attacks = [i for i in range(5, len(env)) if env[i] > 1.58 * env[i - 5:i - 1].max() and env[i] > 0.3 * env.max()]
-    hit2 = (att[-1] / 100) if att else last_hit
+    FR = A_SR / 220                                                              # envelope frames per second
+    decay_start = held[-1] / FR if len(held) else E
+    att = [i for i in range(5, len(env)) if env[i] > 1.58 * env[i - 5:i - 1].max() and env[i] > 0.3 * env.max() and i / FR <= decay_start + 0.3]
+    hit2 = (att[-1] / FR) if att else last_hit
     bt = beats[int(np.argmin(np.abs(beats - hit2)))]
     on_beat = abs(bt - hit2) <= 0.06
     on_bar = on_beat and np.min(np.abs(bars - bt)) < 0.05
@@ -119,7 +153,7 @@ def detail(path, model=None):
         i, w = int(t * fps), int(0.06 * fps)
         return (max(0, i - w) + int(np.argmax(onset[max(0, i - w):i + w + 1]))) / fps
     decay_to_m20 = next((t - hit2 for t, v in tail if t >= hit2 and v < -20), None)
-    res = {"file": path, "bpm": round(bpm, 2), "beat_s": round(beat, 4), "bar_s": round(bar, 4), "first_downbeat_s": round(float(bars[0]), 3),
+    res = {"file": path, "bpm": round(bpm, 3), "tempo_note": tempo_note, "downbeat_note": down_note, "beat_s": round(beat, 4), "bar_s": round(bar, 4), "first_downbeat_s": round(float(bars[0]), 3),
            "music_starts_s": round(t_first, 2), "rings_out_to_s": round(E, 2), "duration_s": round(len(x) / A_SR, 2),
            "intro_bars": [round(float(b), 2) for b in bars[: max(1, (kick or 1) + 1)]],
            "kick_in_bar_s": round(float(bars[kick]), 2) if kick is not None else None,
@@ -168,11 +202,11 @@ def main():
             import os; os.makedirs(arg("--sheet"), exist_ok=True)
             sheet(r, x, onset, bars, early, os.path.join(arg("--sheet"), os.path.basename(f).rsplit(".", 1)[0] + "_detail.png"))
         v = r.get("vocal_check", {})
-        print(f"{f.split('/')[-1]}: {r['bpm']} BPM, bar {r['bar_s']} s, first downbeat {r['first_downbeat_s']} s, music {r['music_starts_s']}-{r['rings_out_to_s']} s")
+        print(f"{f.split('/')[-1]}: {r['bpm']} BPM [{r['tempo_note']}], bar {r['bar_s']} s, first downbeat {r['first_downbeat_s']} s, music {r['music_starts_s']}-{r['rings_out_to_s']} s")
         print(f"  kick in at bar {r['kick_in_bar_s']} s; entries: " + ", ".join(f"{e['bar_s']} s (bar {e['bar_no']}, +{e['step']})" for e in r["entries"]))
         print(f"  final hit {r['final_hit_s']} s (beat {r['final_hit_beat_s']} s, on beat {r['final_hit_on_beat']}, on bar {r['final_hit_on_bar']}); level holds to {r['decay_start_s']} s, -20 dB {r['decay_to_-20dB_s']} s after the hit")
         print("  first bars (s, dB vs body): " + "  ".join(f"{t}:{v:+.0f}" for t, v in r["intro_bar_db"]))
-        if v: print(f"  vocals: {v['vocals']} (excerpt {v['excerpt_s']}): {' '.join(w for w, p in v['words'])[:200]}")
+        if v: print(f"  vocals: {v['vocals']} (excerpts {v['excerpts_s']}): {' '.join(w for w, p, t in v['words'])[:200]}")
         json.dump(res, open(out, "w"), indent=1)
 
 main()

@@ -55,6 +55,16 @@ const AL: React.FC<{ x: number; y: number; h: number; a: number; l: number; foot
   );
 };
 
+/** A photo inside a window or tile (the style's only place for imagery): a crop with a slow push and pan. */
+const Shot: React.FC<{ src: string; w: number | string; h: number | string; pos: string; zoom: number; px?: number; py?: number; r?: number; style?: React.CSSProperties; children?: React.ReactNode }> = ({
+  src, w, h, pos, zoom, px = 0, py = 0, r = 18, style, children }) => (
+  <div style={{ position: "absolute", width: w, height: h, borderRadius: r, overflow: "hidden", ...style }}>
+    <Img src={staticFile(src)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: pos, transform: `translate(${px}px, ${py}px) scale(${zoom})` }} />
+    {children}
+  </div>
+);
+const SPLIT = "img/career-abroad.jpg", LISBON = "img/new-perspectives.jpg";
+
 /* ---------- 1 · hook: the internship completes, and the line keeps going ---------- */
 const INTERN = { x: 1390, y: 560, w: 760, h: 440 };
 const Hook: React.FC<{ g: number }> = ({ g }) => {
@@ -63,20 +73,21 @@ const Hook: React.FC<{ g: number }> = ({ g }) => {
   const leave = k(g, "ask-0.25", 0.5, DEPART);
   const fill = mix(0.42, 1, k(g, "w:internship", 1.5, MOVE));        // the bar fills to 100% by "beginning"
   const done = k(g, "w:beginning-0.05", 0.4, SMALLPOP);
-  const dx = drift(g, "w:your", 26);
+  const dx = drift(g, "w:your", 55);
   const wx = INTERN.x - dx - leave * 700, wy = INTERN.y - (1 - win) * 60;
   // the bar's end: in frame coordinates (the bar sits 60 px in from the window's left, 250 px down)
   const bx0 = wx - INTERN.w / 2 + 60, by = wy - INTERN.h / 2 + 277, bw = INTERN.w - 120;
   const run = k(g, "w:beginning+0.15", 0.8, MOVE);                    // past 100%: the line runs on out of the card
   return (
     <AbsoluteFill>
-      <Words g={g} x={150 - drift(g, "w:your", 22)} y={250} size={98} out="ask-0.3" words={[{ t: "Your", at: "w:your" }, { t: "internship", at: "w:internship" }]} />
-      <Words g={g} x={150 - drift(g, "w:your", 22)} y={362} size={98} out="ask-0.25" words={[{ t: "was", at: "w:was" }, { t: "just", at: "w:just" }]} />
-      <Words g={g} x={150 - drift(g, "w:your", 22)} y={474} size={98} out="ask-0.2" words={[{ t: "the", at: "w:the", grad: true }, { t: "beginning.", at: "w:beginning", grad: true }]} />
+      <Words g={g} x={150 + drift(g, "w:your", 40)} y={250} size={98} out="ask-0.3" words={[{ t: "Your", at: "w:your" }, { t: "internship", at: "w:internship" }]} />
+      <Words g={g} x={150 + drift(g, "w:your", 40)} y={362} size={98} out="ask-0.25" words={[{ t: "was", at: "w:was" }, { t: "just", at: "w:just" }]} />
+      <Words g={g} x={150 + drift(g, "w:your", 40)} y={474} size={98} out="ask-0.2" words={[{ t: "the", at: "w:the", grad: true }, { t: "beginning.", at: "w:beginning", grad: true }]} />
       <Win x={wx} y={wy} w={INTERN.w} h={INTERN.h} o={win * (1 - leave)} s={0.92 + 0.08 * win} blur={leave * 10} title="Internship" glow={C.lime}>
-        <div style={{ position: "absolute", left: 60, top: 92, display: "flex", alignItems: "center", gap: 22 }}>
-          <div style={{ width: 76, height: 76, borderRadius: 20, background: "#EEF5EA", display: "flex", alignItems: "center", justifyContent: "center" }}><Icon name="briefcase" size={44} color={C.deep} /></div>
-          <div><Eyebrow text="Your internship" size={17} /><Skel w={300} h={16} style={{ marginTop: 14 }} /><Skel w={210} h={12} style={{ marginTop: 10 }} /></div>
+        <Shot src={LISBON} w={250} h={170} pos="30% 70%" zoom={1.18 + drift(g, "w:your", 0.12)} px={-drift(g, "w:your", 30)} r={16} style={{ left: 40, top: 74 }} />
+        <div style={{ position: "absolute", left: 318, top: 92 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}><Icon name="briefcase" size={34} color={C.deep} /><Eyebrow text="Your internship" size={17} /></div>
+          <Skel w={300} h={16} style={{ marginTop: 18 }} /><Skel w={220} h={12} style={{ marginTop: 12 }} /><Skel w={260} h={12} style={{ marginTop: 10 }} />
         </div>
         <div style={{ position: "absolute", left: 60, top: 270, width: bw, height: 14, borderRadius: 6, background: "rgba(20,48,38,0.08)" }} />
         <div style={{ position: "absolute", left: 60, top: 270, width: bw * fill, height: 14, borderRadius: 7, background: `linear-gradient(90deg, ${GRAD})`, backgroundSize: `${bw}px 14px` }} />
@@ -96,8 +107,8 @@ const Ask: React.FC<{ g: number }> = ({ g }) => {
   const shrink = k(g, "meet-0.05", 0.45, MOVE);                         // the bar closes into the mark on "Meet"
   const q = "What comes next?";
   const typed = Math.max(0, Math.min(q.length, Math.floor(((g - f("w:so")) / 30) * 15.5)));
-  const w = mix(1000, 130, shrink), h = 130, x = 960, y = 520 - drift(g, "ask", 14);
-  const sug = [{ i: "globe", w: 360 }, { i: "briefcase", w: 300 }, { i: "users", w: 330 }];
+  const w = mix(1000, 130, shrink), h = 130, x = 960 - drift(g, "ask", 30) * (1 - shrink), y = 520 - drift(g, "ask", 22);
+  const sug = [{ i: "globe", t: "Working abroad" }, { i: "briefcase", t: "A new career" }, { i: "users", t: "A new colleague" }];
   return (
     <AbsoluteFill>
       <Box x={x} y={y + (1 - inn) * 80} w={w} h={h} r={65} s={0.9 + 0.1 * inn} o={inn * (1 - k(g, "meet+0.25", 0.3, DEPART))} style={{ ...glass(C.orange), overflow: "hidden" }}>
@@ -109,9 +120,9 @@ const Ask: React.FC<{ g: number }> = ({ g }) => {
       {sug.map((sg, i) => {
         const a = k(g, off("w:comes", i * 0.12), 0.45), b = k(g, "meet-0.15", 0.3, DEPART);
         return (
-          <Box key={i} x={960 - 210 + i * 30 + drift(g, "w:comes", 20 + i * 8)} y={y + 140 + i * 82 + (1 - a) * 40} w={700} h={64} r={20} o={a * (1 - b) * (0.95 - i * 0.18)} style={{ ...glass(C.lime, 0.85) }}>
+          <Box key={i} x={960 - 210 + i * 30 + drift(g, "w:comes", 50 + i * 16)} y={y + 140 + i * 82 + (1 - a) * 40} w={700} h={64} r={20} o={a * (1 - b) * (0.95 - i * 0.18)} style={{ ...glass(C.lime, 0.85) }}>
             <div style={{ position: "absolute", left: 22, top: 13 }}><Icon name={sg.i} size={36} color={C.muted} /></div>
-            <Skel w={sg.w} h={14} style={{ position: "absolute", left: 80, top: 25 }} />
+            <div style={{ position: "absolute", left: 80, top: 14, fontFamily: C.font, fontWeight: 700, fontSize: 30, color: C.muted, whiteSpace: "nowrap" }}>{sg.t}</div>
           </Box>
         );
       })}
@@ -127,7 +138,7 @@ const Meet: React.FC<{ g: number }> = ({ g }) => {
   const name = k(g, "w:alumni-0.05", 0.5);
   const toHub = k(g, "connect", 0.7, MOVE);                            // into the hub tile of the next line
   const hx = mix(MEET_LOGO.x, 960, toHub), hy = mix(MEET_LOGO.y, 600, toHub), hh = mix(MEET_LOGO.h, 104, toHub);
-  const push = 1 + drift(g, "meet+0.6", 0.03) * (1 - toHub);
+  const push = 1 + drift(g, "meet+0.5", 0.1) * (1 - toHub);
   return (
     <AbsoluteFill>
       <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transform: `scale(${push})`, transformOrigin: "960px 540px" }}>
@@ -143,29 +154,29 @@ const Meet: React.FC<{ g: number }> = ({ g }) => {
 const HUB = { x: 960, y: 600 };
 const GRADT = { x: 400, y: 600, w: 360, h: 210 };
 const OPPS = [
-  { x: 1530, y: 360, img: "img/career-abroad.jpg", pos: "60% 40%", at: "w:international" },
-  { x: 1580, y: 610, img: "img/new-perspectives.jpg", pos: "50% 60%", at: "w:career" },
-  { x: 1530, y: 860, img: "img/career-abroad.jpg", pos: "88% 80%", at: "w:opportunities" },
+  { x: 1520, y: 350, img: "img/career-abroad.jpg", pos: "60% 40%", at: "w:international" },
+  { x: 1570, y: 612, img: "img/new-perspectives.jpg", pos: "50% 60%", at: "w:career" },
+  { x: 1520, y: 874, img: "img/career-abroad.jpg", pos: "88% 80%", at: "w:opportunities" },
 ];
 const Connect: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("connect") || g > f("start+1.0")) return null;
   const hub = k(g, "connect+0.2", 0.5);
   const leave = k(g, "start", 0.5, DEPART);                          // hub and opportunities step back for the profile
   const gt = k(g, "w:graduates-0.1", 0.5);
-  const d = drift(g, "connect", 18);
+  const d = drift(g, "connect", 42);
   const gx = GRADT.x + d * 0.6 - leave * 0, gy = GRADT.y;
   const c0 = k(g, "w:graduates+0.1", 0.55, MOVE);
   return (
     <AbsoluteFill style={{ opacity: 1 }}>
-      <Words g={g} y={92} size={66} center out="start-0.1" words={[{ t: "Connecting", at: "w:connecting" }, { t: "graduates", at: "w:graduates" }, { t: "with", at: "w:with" }]} />
-      <Words g={g} y={172} size={66} center out="start-0.05" words={[{ t: "international", at: "w:international", grad: true }, { t: "career", at: "w:career", grad: true }, { t: "opportunities.", at: "w:opportunities", grad: true }]} />
+      <Words g={g} x={-d * 0.6} y={92} size={66} center out="start-0.1" words={[{ t: "Connecting", at: "w:connecting" }, { t: "graduates", at: "w:graduates" }, { t: "with", at: "w:with" }]} />
+      <Words g={g} x={-d * 0.6} y={172} size={66} center out="start-0.05" words={[{ t: "international", at: "w:international", grad: true }, { t: "career", at: "w:career", grad: true }, { t: "opportunities.", at: "w:opportunities", grad: true }]} />
       {/* cables: graduate → hub → each opportunity, an orb travelling along each */}
       <Cable id="c-g" d={`M ${gx + GRADT.w / 2} ${gy} C ${gx + 330} ${gy}, ${HUB.x - 260} ${HUB.y}, ${HUB.x - 120} ${HUB.y}`} k={c0} w={4} o={1 - leave}
         orb={c0 >= 1 ? ((g - f("w:graduates+0.65")) / 36) % 1 : undefined} />
       {OPPS.map((o, i) => {
         const ck = k(g, off(o.at, -0.05), 0.5, MOVE);
         const ox = o.x - d * (1 + i * 0.3) + (1 - k(g, o.at, 0.55)) * 300;
-        const path = `M ${HUB.x + 120} ${HUB.y} C ${HUB.x + 300} ${HUB.y}, ${ox - 420} ${o.y}, ${ox - 210} ${o.y}`;
+        const path = `M ${HUB.x + 120} ${HUB.y} C ${HUB.x + 300} ${HUB.y}, ${ox - 440} ${o.y}, ${ox - 235} ${o.y}`;
         return <Cable key={i} id={`c-o${i}`} d={path} k={ck} w={4} o={1 - leave} orb={ck >= 1 ? ((g - f(off(o.at, 0.5)) + i * 9) / 33) % 1 : undefined} />;
       })}
       {/* the graduate */}
@@ -184,13 +195,11 @@ const Connect: React.FC<{ g: number }> = ({ g }) => {
         const a = k(g, o.at, 0.55);
         const ox = o.x - d * (1 + i * 0.3) + (1 - a) * 300;
         return (
-          <Win key={i} x={ox} y={o.y} w={420} h={200} o={a * (1 - leave)} s={0.85 + 0.15 * a} blur={(1 - a) * 8} glow={[C.orange, C.lime, C.green][i]}>
-            <div style={{ position: "absolute", left: 22, top: 66, width: 150, height: 112, borderRadius: 16, overflow: "hidden" }}>
-              <Img src={staticFile(o.img)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: o.pos, transform: `scale(${1.1 + drift(g, o.at, 0.04)})` }} />
-            </div>
-            <div style={{ position: "absolute", left: 192, top: 72, display: "flex", alignItems: "center", gap: 10 }}><Icon name="briefcase" size={30} color={C.deep} /><Skel w={150} h={14} /></div>
-            <Skel w={180} h={11} style={{ position: "absolute", left: 194, top: 118 }} />
-            <div style={{ position: "absolute", left: 192, top: 140 }}><Chip text="Abroad" size={17} icon={<Icon name="globe" size={18} color={C.deep} sw={2.6} />} /></div>
+          <Win key={i} x={ox} y={o.y} w={470} h={226} o={a * (1 - leave)} s={0.85 + 0.15 * a} blur={(1 - a) * 8} glow={[C.orange, C.lime, C.green][i]}>
+            <Shot src={o.img} w={200} h={150} pos={o.pos} zoom={1.15 + drift(g, o.at, 0.12)} px={-drift(g, o.at, 22)} r={16} style={{ left: 20, top: 62 }} />
+            <div style={{ position: "absolute", left: 240, top: 74, display: "flex", alignItems: "center", gap: 10 }}><Icon name="briefcase" size={32} color={C.deep} /><Skel w={150} h={14} /></div>
+            <Skel w={190} h={11} style={{ position: "absolute", left: 242, top: 124 }} />
+            <div style={{ position: "absolute", left: 240, top: 152 }}><Chip text="Abroad" size={18} icon={<Icon name="globe" size={19} color={C.deep} sw={2.6} />} /></div>
           </Win>
         );
       })}
@@ -199,64 +208,66 @@ const Connect: React.FC<{ g: number }> = ({ g }) => {
 };
 
 /* ---------- 5 · start with your experience, your ambitions, and where you want to go: the profile ---------- */
-const PROF = { x: 960, y: 590, w: 1300, h: 720 };
+const PROF = { x: 960, y: 560, w: 1300, h: 820 };
 const Profile: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("start-0.1") || g > f("brings+1.0")) return null;
   const grow = k(g, "start", 0.65, MOVE);                            // the graduate tile opens into the profile
   const fold = k(g, "brings", 0.6, MOVE);                            // and folds back into a tile for the next line
-  const gx0 = GRADT.x + drift(f("start"), "connect", 18) * 0.6;
+  const gx0 = GRADT.x + drift(f("start"), "connect", 42) * 0.6;
   const cx = mix(mix(gx0, PROF.x, grow), 330, fold), cy = mix(mix(GRADT.y, PROF.y, grow), 610, fold);
-  const w = mix(mix(GRADT.w, PROF.w, grow), 360, fold), h = mix(mix(GRADT.h, PROF.h, grow), 230, fold);
-  const push = 1 + drift(g, "start+0.6", 0.012);
+  const w = mix(mix(GRADT.w, PROF.w, grow), 360, fold), h = mix(mix(GRADT.h, PROF.h, grow), 270, fold);
+  const push = 1 + drift(g, "start+0.6", 0.035);
   const exp = [k(g, "w:experience", 0.4), k(g, "w:experience+0.18", 0.4)];
   const amb = ["Work abroad", "Grow in my field", "A new team"].map((_, i) => k(g, off("w:ambitions", i * 0.14), 0.45));
   const dest = k(g, "w:where", 0.5), route = k(g, "w:want", 0.6, MOVE), pick = k(g, "w:go", 0.35, SMALLPOP);
   const inner = clamp01((grow - 0.6) / 0.4) * (1 - clamp01(fold * 3));
   return (
     <AbsoluteFill style={{ opacity: 1 - clamp01((fold - 0.85) / 0.15) }}>
-      <Win x={cx - drift(g, "start+0.6", 10) * (1 - fold)} y={cy} w={w} h={h} s={mix(push, 1, fold)} title={inner > 0.5 ? "Your profile" : undefined} glow={C.lime}>
+      <Win x={cx - drift(g, "start+0.6", 36) * (1 - fold)} y={cy} w={w} h={h} s={mix(push, 1, fold)} title={inner > 0.5 ? "Your profile" : undefined} glow={C.lime}>
         <div style={{ position: "absolute", inset: 0, opacity: inner }}>
-          <div style={{ position: "absolute", left: 60, top: 86 }}><Eyebrow text="01 · Introduce" size={18} style={{ color: C.deep }} /></div>
-          <div style={{ position: "absolute", left: 60, top: 120, fontFamily: C.font, fontWeight: 900, fontSize: 52, color: C.ink, letterSpacing: "-0.02em" }}>Start with your experience.</div>
+          <Shot src={SPLIT} w={1272} h={170} pos="60% 62%" zoom={1.25 + drift(g, "start", 0.03)} px={-drift(g, "start", 34)} style={{ left: 14, top: 54 }} />
+          <div style={{ position: "absolute", left: 56, top: 168 }}><Avatar i="You" size={112} hue={1} style={{ fontSize: 32, border: "5px solid #FFFFFF" }} /></div>
+          <div style={{ position: "absolute", left: 196, top: 236 }}><Eyebrow text="01 · Introduce" size={18} style={{ color: C.deep }} /></div>
+          <div style={{ position: "absolute", left: 196, top: 262, fontFamily: C.font, fontWeight: 900, fontSize: 44, color: C.ink, letterSpacing: "-0.02em" }}>Start with your experience.</div>
           {/* experience */}
-          <div style={{ position: "absolute", left: 60, top: 236, width: 1180, height: 1, background: C.line }} />
-          <div style={{ position: "absolute", left: 60, top: 262, fontFamily: C.font, fontWeight: 700, fontSize: 26, color: C.muted }}>Experience</div>
+          <div style={{ position: "absolute", left: 60, top: 330, width: 1180, height: 1, background: C.line }} />
+          <div style={{ position: "absolute", left: 60, top: 352, fontFamily: C.font, fontWeight: 700, fontSize: 26, color: C.muted }}>Experience</div>
           {["Qualification", "Internship"].map((t, i) => (
-            <div key={t} style={{ position: "absolute", left: 300 + i * 330, top: 248, display: "flex", alignItems: "center", gap: 14, opacity: exp[i], transform: `translateX(${(1 - exp[i]) * 40}px)` }}>
+            <div key={t} style={{ position: "absolute", left: 300 + i * 330, top: 338, display: "flex", alignItems: "center", gap: 14, opacity: exp[i], transform: `translateX(${(1 - exp[i]) * 40}px)` }}>
               <div style={{ width: 54, height: 54, borderRadius: 16, background: "#E8F4EC", display: "flex", alignItems: "center", justifyContent: "center" }}><Icon name={i ? "briefcase" : "cap"} size={32} color={C.green} /></div>
               <div style={{ fontFamily: C.font, fontWeight: 700, fontSize: 30, color: C.ink }}>{t}</div>
               <div style={{ width: 34, height: 34, borderRadius: 17, background: C.green, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${k(g, off("w:experience", 0.25 + i * 0.18), 0.35, SMALLPOP)})` }}><Icon name="check" size={22} color="#FFFFFF" sw={4} /></div>
             </div>
           ))}
           {/* ambitions */}
-          <div style={{ position: "absolute", left: 60, top: 348, width: 1180, height: 1, background: C.line }} />
-          <div style={{ position: "absolute", left: 60, top: 374, fontFamily: C.font, fontWeight: 700, fontSize: 26, color: C.muted }}>Ambitions</div>
-          <div style={{ position: "absolute", left: 300, top: 362, display: "flex", gap: 14 }}>
+          <div style={{ position: "absolute", left: 60, top: 432, width: 1180, height: 1, background: C.line }} />
+          <div style={{ position: "absolute", left: 60, top: 456, fontFamily: C.font, fontWeight: 700, fontSize: 26, color: C.muted }}>Ambitions</div>
+          <div style={{ position: "absolute", left: 300, top: 444, display: "flex", gap: 14 }}>
             {["Work abroad", "Grow in my field", "A new team"].map((t, i) => (
               <div key={t} style={{ opacity: amb[i], transform: `translateY(${(1 - amb[i]) * 30}px) scale(${0.9 + 0.1 * amb[i]})` }}><Chip text={t} size={26} on={i === 0 ? k(g, "w:ambitions+0.5", 0.3) : 0} /></div>
             ))}
           </div>
           {/* where you want to go */}
-          <div style={{ position: "absolute", left: 60, top: 460, width: 1180, height: 1, background: C.line }} />
-          <div style={{ position: "absolute", left: 60, top: 486, fontFamily: C.font, fontWeight: 700, fontSize: 26, color: C.muted }}>Destination</div>
+          <div style={{ position: "absolute", left: 60, top: 536, width: 1180, height: 1, background: C.line }} />
+          <div style={{ position: "absolute", left: 60, top: 560, fontFamily: C.font, fontWeight: 700, fontSize: 26, color: C.muted }}>Destination</div>
           {[{ img: "img/new-perspectives.jpg", pos: "50% 55%" }, { img: "img/career-abroad.jpg", pos: "70% 60%" }].map((p, i) => {
             const L0 = 470;
             const a = k(g, off("w:where", i * 0.15), 0.5);
             return (
-              <div key={i} style={{ position: "absolute", left: L0 + i * 330, top: 486, width: 300, height: 170, borderRadius: 20, overflow: "hidden", opacity: a,
+              <div key={i} style={{ position: "absolute", left: L0 + i * 330, top: 572, width: 300, height: 170, borderRadius: 20, overflow: "hidden", opacity: a,
                 transform: `translateY(${(1 - a) * 40}px)`, boxShadow: i === 1 ? `0 0 0 ${6 * pick}px ${C.orange}, 0 14px 30px rgba(18,38,30,0.16)` : "0 14px 30px rgba(18,38,30,0.12)" }}>
-                <Img src={staticFile(p.img)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: p.pos, transform: `scale(${1.12 + drift(g, "w:where", 0.03)})` }} />
+                <Img src={staticFile(p.img)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: p.pos, transform: `scale(${1.12 + drift(g, "w:where", 0.09)})` }} />
                 <div style={{ position: "absolute", right: 14, top: 12, opacity: i === 1 ? pick : 0 }}><Icon name="pin" size={38} color="#FFFFFF" sw={3.4} /></div>
               </div>
             );
           })}
           {/* the route: from you to where you want to go */}
-          <svg width={1300} height={720} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
+          <svg width={1300} height={820} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
             <defs><linearGradient id="rt" x1="0" x2="1"><stop offset="0" stopColor={C.orange} /><stop offset="0.35" stopColor={C.amber} /><stop offset="0.7" stopColor={C.lime} /><stop offset="1" stopColor={C.green} /></linearGradient></defs>
-            <path d="M 334 560 C 470 430, 900 420, 1092 498" fill="none" stroke="url(#rt)" strokeWidth={5} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - route} />
+            <path d="M 334 646 C 470 516, 900 506, 1092 584" fill="none" stroke="url(#rt)" strokeWidth={5} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - route} />
           </svg>
-          <div style={{ position: "absolute", left: 1100, top: 452, transform: `scale(${route >= 1 ? pick : 0}) rotate(-10deg)` }}><Icon name="plane" size={58} color={C.deep} sw={2.8} /></div>
-          <div style={{ position: "absolute", left: 300, top: 560, width: 68, height: 68, opacity: dest, transform: `scale(${0.7 + 0.3 * dest})` }}><Avatar i="You" size={68} hue={1} style={{ fontSize: 20 }} /></div>
+          <div style={{ position: "absolute", left: 1100, top: 538, transform: `scale(${route >= 1 ? pick : 0}) rotate(-10deg)` }}><Icon name="plane" size={58} color={C.deep} sw={2.8} /></div>
+          <div style={{ position: "absolute", left: 300, top: 646, width: 68, height: 68, opacity: dest, transform: `scale(${0.7 + 0.3 * dest})` }}><Avatar i="You" size={68} hue={1} style={{ fontSize: 20 }} /></div>
         </div>
       </Win>
     </AbsoluteFill>
@@ -268,52 +279,55 @@ const Closer: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("brings") || g > f("grads+0.8")) return null;
   const tile = k(g, "brings+0.2", 0.6);
   const closer = k(g, "w:closer-0.1", 1.0, MOVE);                   // the distance shrinks: both sides move in
-  const leave = k(g, "grads-0.1", 0.55, DEPART);
+  const leave = k(g, "grads-0.25", 0.45, DEPART);
   const hub = k(g, "w:brings-0.1", 0.5);
-  const px = mix(330, 520, closer) - leave * 600, py = 610;
-  const rx = mix(1640, 1430, closer) + leave * 600;
+  const near = drift(g, "w:closer+0.9", 24);
+  const px = mix(330, 520, closer) + near - leave * 600, py = 610;
+  const rx = mix(1640, 1430, closer) - near + leave * 600;
   const emp = k(g, "w:employers-0.05", 0.5), ag = k(g, "w:recruitment-0.05", 0.5);
   const talent = k(g, "w:emerging", 0.45, SMALLPOP);
   const looking = k(g, "w:looking", 0.4);
   const ce = k(g, "w:employers+0.15", 0.5, MOVE), ca = k(g, "w:agencies", 0.5, MOVE), cp = k(g, "w:brings", 0.6, MOVE);
-  const d = drift(g, "brings", 12);
-  const Stack: React.FC<{ y: number; a: number; dot: string; icon: string; label: string; sub: string }> = ({ y, a, dot, icon, label, sub }) => (
+  const d = drift(g, "brings", 36);
+  const Stack: React.FC<{ y: number; a: number; fan: number; dot: string; icon: string; label: string; sub: string; img: string; pos: string }> = ({ y, a, fan, dot, icon, label, sub, img, pos }) => (
     <>
       {[1, 0].map((j) => (
-        <Box key={j} x={rx + j * 26 - d} y={y - j * 22 + (1 - a) * 50} w={430} h={190} r={26} s={(0.86 + 0.14 * a) * (1 - j * 0.06)} o={a * (1 - leave) * (j ? 0.6 : 1)} blur={(1 - a) * 8}
-          style={{ ...glass(dot) }}>
+        <Box key={j} x={rx + j * 40 * fan - d} y={y - j * 34 * fan + (1 - a) * 50} w={430} h={236} r={26} s={(0.86 + 0.14 * a) * (1 - j * 0.06)} o={a * (1 - leave) * (j ? 0.75 * fan : 1)} blur={(1 - a) * 8}
+          rot={j * 3 * fan} style={{ ...glass(dot) }}>
           {j === 0 && <>
-            <div style={{ position: "absolute", left: 28, top: 30, width: 76, height: 76, borderRadius: 22, background: "#F3F6F2", display: "flex", alignItems: "center", justifyContent: "center" }}><Icon name={icon} size={46} color={C.ink} /></div>
-            <div style={{ position: "absolute", left: 124, top: 30, display: "flex", alignItems: "center", gap: 10 }}><div style={{ width: 12, height: 12, borderRadius: 6, background: dot }} /><div style={{ fontFamily: C.font, fontWeight: 900, fontSize: 32, color: C.ink, whiteSpace: "nowrap" }}>{label}</div></div>
-            <div style={{ position: "absolute", left: 126, top: 80, fontFamily: C.font, fontWeight: 700, fontSize: 20, color: C.muted }}>{sub}</div>
-            <div style={{ position: "absolute", left: 28, top: 132, display: "flex", alignItems: "center", gap: 10, opacity: looking }}><Icon name="search" size={26} color={C.deep} sw={3} /><Skel w={200} h={12} /></div>
+            <Shot src={img} w={406} h={70} pos={pos} zoom={1.3 + drift(g, "brings", 0.05)} px={-drift(g, "brings", 26)} r={16} style={{ left: 12, top: 12 }} />
+            <div style={{ position: "absolute", left: 26, top: 96, width: 72, height: 72, borderRadius: 22, background: "#F3F6F2", border: "3px solid #FFFFFF", display: "flex", alignItems: "center", justifyContent: "center" }}><Icon name={icon} size={44} color={C.ink} /></div>
+            <div style={{ position: "absolute", left: 116, top: 98, display: "flex", alignItems: "center", gap: 10 }}><div style={{ width: 12, height: 12, borderRadius: 6, background: dot }} /><div style={{ fontFamily: C.font, fontWeight: 900, fontSize: 30, color: C.ink, whiteSpace: "nowrap" }}>{label}</div></div>
+            <div style={{ position: "absolute", left: 118, top: 142, fontFamily: C.font, fontWeight: 700, fontSize: 20, color: C.muted }}>{sub}</div>
+            <div style={{ position: "absolute", left: 28, top: 190, display: "flex", alignItems: "center", gap: 10, opacity: looking }}><Icon name="search" size={26} color={C.deep} sw={3} /><Skel w={200} h={12} /></div>
           </>}
         </Box>
       ))}
     </>
   );
-  const ey = 420, ay = 800;
+  const ey = 400, ay = 810;
   return (
     <AbsoluteFill>
-      <Words g={g} y={96} size={70} center out="grads-0.15" words={[{ t: "Alumni", at: "w:alumni2" }, { t: "brings", at: "w:brings" }, { t: "you", at: "w:you2" }, { t: "closer.", at: "w:closer", grad: true }]} />
-      <Cable id="cp" d={`M ${px + 180} ${py} C ${px + 300} ${py}, ${880 - 120} 610, ${960 - 80} 610`} k={cp} w={4} o={1 - leave} orb={cp >= 1 ? ((g - f("w:brings+0.6")) / 30) % 1 : undefined} />
+      <Words g={g} x={d * 0.8} y={96} size={70} center out="grads-0.15" words={[{ t: "Alumni", at: "w:alumni2" }, { t: "brings", at: "w:brings" }, { t: "you", at: "w:you2" }, { t: "closer.", at: "w:closer", grad: true }]} />
+      <Cable id="cp" d={`M ${px + 180} ${py + 20} C ${px + 300} ${py}, ${880 - 120} 610, ${960 - 80} 610`} k={cp} w={4} o={1 - leave} orb={cp >= 1 ? ((g - f("w:brings+0.6")) / 30) % 1 : undefined} />
       <Cable id="ce" d={`M ${960 + 80} 610 C ${1120} 610, ${rx - 360 - d} ${ey}, ${rx - 215 - d} ${ey}`} k={ce} w={4} o={1 - leave} orb={ce >= 1 ? 1 - (((g - f("w:looking")) / 30) % 1) : undefined} />
       <Cable id="ca" d={`M ${960 + 80} 610 C ${1120} 610, ${rx - 360 - d} ${ay}, ${rx - 215 - d} ${ay}`} k={ca} w={4} o={1 - leave} orb={ca >= 1 ? 1 - (((g - f("w:looking+0.5")) / 30) % 1) : undefined} />
       <Box x={960} y={610} w={170} h={170} r={44} s={0.8 + 0.2 * hub} o={hub * (1 - leave)} style={{ ...glass(C.orange) }}>
         <div style={{ position: "absolute", left: 0, top: 0 }}><AL x={85} y={85} h={78} a={1} l={1} foot={1} /></div>
       </Box>
       {/* you: the profile, folded into a tile */}
-      <Box x={px} y={py} w={360} h={230} r={28} s={0.9 + 0.1 * tile} o={tile * (1 - leave)} style={{ ...glass(C.lime), boxShadow: `0 0 ${50 * talent}px rgba(106,187,36,${0.45 * talent}), 0 18px 40px rgba(18,38,30,0.10)` }}>
-        <div style={{ position: "absolute", left: 28, top: 30 }}><Avatar i="You" size={80} hue={1} style={{ fontSize: 24 }} /></div>
-        <div style={{ position: "absolute", left: 128, top: 36, fontFamily: C.font, fontWeight: 900, fontSize: 32, color: C.ink }}>Graduate</div>
-        <div style={{ position: "absolute", left: 130, top: 84, display: "flex", gap: 6 }}><Icon name="cap" size={26} color={C.green} /><Icon name="briefcase" size={26} color={C.green} /><Icon name="globe" size={26} color={C.green} /></div>
-        <div style={{ position: "absolute", left: 28, top: 146, transform: `scale(${talent})`, transformOrigin: "0% 50%" }}>
+      <Box x={px} y={py} w={360} h={270} r={28} s={0.9 + 0.1 * tile} o={tile * (1 - leave)} style={{ ...glass(C.lime), boxShadow: `0 0 ${50 * talent}px rgba(106,187,36,${0.45 * talent}), 0 18px 40px rgba(18,38,30,0.10)` }}>
+        <Shot src={SPLIT} w={336} h={84} pos="60% 62%" zoom={1.3 + drift(g, "brings", 0.04)} px={-drift(g, "brings", 30)} r={16} style={{ left: 12, top: 12 }} />
+        <div style={{ position: "absolute", left: 26, top: 60 }}><Avatar i="You" size={78} hue={1} style={{ fontSize: 24, border: "4px solid #FFFFFF" }} /></div>
+        <div style={{ position: "absolute", left: 120, top: 104, fontFamily: C.font, fontWeight: 900, fontSize: 32, color: C.ink }}>Graduate</div>
+        <div style={{ position: "absolute", left: 122, top: 146, display: "flex", gap: 6 }}><Icon name="cap" size={26} color={C.green} /><Icon name="briefcase" size={26} color={C.green} /><Icon name="globe" size={26} color={C.green} /></div>
+        <div style={{ position: "absolute", left: 26, top: 196, transform: `scale(${talent})`, transformOrigin: "0% 50%" }}>
           <div style={{ display: "inline-flex", alignItems: "center", gap: 10, padding: "12px 20px", borderRadius: 40, background: `linear-gradient(90deg, ${GRAD})`, color: "#FFFFFF",
             fontFamily: C.font, fontWeight: 900, fontSize: 24, whiteSpace: "nowrap", boxShadow: "0 10px 24px rgba(254,108,2,0.3)" }}><Icon name="spark" size={24} color="#FFFFFF" sw={2.6} />Emerging talent</div>
         </div>
       </Box>
-      <Stack y={ey} a={emp} dot={C.orange} icon="building" label="Employers" sub="Your next colleague" />
-      <Stack y={ay} a={ag} dot={C.lime} icon="users" label="Recruitment agencies" sub="Your next talent connection" />
+      <Stack y={ey} a={emp} fan={k(g, "w:employers+0.3", 0.45)} dot={C.orange} icon="building" label="Employers" sub="Your next colleague" img={SPLIT} pos="20% 30%" />
+      <Stack y={ay} a={ag} fan={k(g, "w:agencies", 0.45)} dot={C.lime} icon="users" label="Recruitment agencies" sub="Your next talent connection" img={LISBON} pos="70% 45%" />
     </AbsoluteFill>
   );
 };
@@ -329,13 +343,13 @@ const Panels: React.FC<{ g: number }> = ({ g }) => {
   // the track slides one panel to the left on each audience
   const pos = k(g, "biz", 0.7, MOVE) + k(g, "agency", 0.7, MOVE);
   const leave = k(g, "newc-0.3", 0.42, DEPART);
-  const inn = k(g, "grads-0.1", 0.6);
+  const inn = k(g, "grads+0.12", 0.6);
   return (
     <AbsoluteFill>
       {PANELS.map((p, i) => {
         const rel = i - pos;                                            // 0 = in focus
         const foc = 1 - Math.min(1, Math.abs(rel));
-        const x = 960 + rel * 1180 - drift(g, "grads", 14) - leave * 900, y = 560 + (1 - inn) * 60;
+        const x = 960 + rel * 1180 - drift(g, "grads", 44) * (1 + Math.abs(rel) * 0.4) - leave * 900, y = 560 + (1 - inn) * 60;
         const sc = 0.84 + 0.16 * foc;
         return (
           <Win key={i} x={x} y={y} w={1180} h={680} s={sc * (0.94 + 0.06 * inn)} o={(0.45 + 0.55 * foc) * inn * (1 - leave)} blur={(1 - foc) * 3 + leave * 10} glow={p.dot}>
@@ -344,7 +358,11 @@ const Panels: React.FC<{ g: number }> = ({ g }) => {
             </div>
             <div style={{ position: "absolute", left: 70, top: 152, fontFamily: C.font, fontWeight: 900, fontSize: 44, color: C.deep, letterSpacing: "-0.01em" }}>{p.sub}</div>
             <div style={{ position: "absolute", left: 0, top: 0 }}>{p.lines.map((ln, j) => <Words key={j} g={g} x={70} y={280 + j * 100} size={84} words={ln as Wd[]} />)}</div>
-            <div style={{ position: "absolute", right: 70, top: 120, width: 420, height: 420 }}>
+            <Shot src={[SPLIT, LISBON, LISBON][i]} w={500} h={540} r={22} pos={["68% 70%", "18% 88%", "45% 48%"][i]} zoom={1.15 + drift(g, p.at, 0.07)} px={-drift(g, p.at, 18)}
+              style={{ right: 40, top: 92, boxShadow: "0 16px 40px rgba(18,38,30,0.14)" }}>
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(23,39,31,0.05), rgba(23,39,31,0.35))" }} />
+            </Shot>
+            <div style={{ position: "absolute", right: 80, top: 152, width: 420, height: 420 }}>
               {i === 0 && <Guidance g={g} />}
               {i === 1 && <Pros g={g} />}
               {i === 2 && <Conn g={g} />}
@@ -360,6 +378,7 @@ const Guidance: React.FC<{ g: number }> = ({ g }) => {
   const p = k(g, "w:path-0.05", 0.7, MOVE), hd = k(g, "w:forward", 0.35, SMALLPOP);
   return (
     <svg width={420} height={420} viewBox="0 0 120 120" style={{ overflow: "visible" }}>
+      <path d="M17 100V53q0-25 25-25h60" fill="none" stroke="#FFFFFF" strokeWidth={15} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - p} />
       <path d="M17 100V53q0-25 25-25h60" fill="none" stroke={C.orange} strokeWidth={9} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - p} />
       <path d="m84 12 22 16-22 17" fill="none" stroke={C.orange} strokeWidth={9} strokeLinecap="round" strokeLinejoin="round" opacity={hd} transform={`translate(${(1 - hd) * -10} 0)`} />
       <circle cx={17} cy={100} r={7} fill={C.green} opacity={k(g, "w:path-0.1", 0.3)} />
@@ -387,6 +406,8 @@ const Conn: React.FC<{ g: number }> = ({ g }) => {
   const w = 7 + 7 * st;
   return (
     <svg width={420} height={420} viewBox="0 0 120 120" style={{ overflow: "visible" }}>
+      <path d="M8 34h27q25 0 25 25v25" fill="none" stroke="#FFFFFF" strokeWidth={w + 6} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - a} />
+      <path d="M112 84H85q-25 0-25-25V34" fill="none" stroke="#FFFFFF" strokeWidth={w + 6} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - b} />
       <path d="M8 34h27q25 0 25 25v25" fill="none" stroke={C.orange} strokeWidth={w} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - a} />
       <path d="M112 84H85q-25 0-25-25V34" fill="none" stroke={C.green} strokeWidth={w} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - b} />
       <circle cx={60} cy={59} r={9 + 4 * node} fill={C.lime} opacity={b >= 1 ? 1 : 0} transform={`translate(60 59) scale(${0.4 + 0.6 * node}) translate(-60 -59)`} />
@@ -398,9 +419,9 @@ const Conn: React.FC<{ g: number }> = ({ g }) => {
 /* ---------- 10 · new countries, new colleagues, new possibilities ---------- */
 const NewWorld: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("newc-0.2") || g > f("sign+1.0")) return null;
-  const leave = k(g, "sign-0.1", 0.55, DEPART);
+  const leave = k(g, "sign-0.25", 0.45, DEPART);
   const c1 = k(g, "w:new2", 0.6), c2 = k(g, "w:new3", 0.6), c3 = k(g, "w:new4", 0.6);
-  const d = drift(g, "newc", 16);
+  const d = drift(g, "newc", 40);
   const arc = k(g, "w:countries", 0.9, MOVE);
   const arcD = `M 1090 560 C 1260 330, 1500 280, 1760 300`;
   const plane = arc > 0 && arc < 1 ? pointAt(arcD, arc) : null;
@@ -408,21 +429,21 @@ const NewWorld: React.FC<{ g: number }> = ({ g }) => {
   const typed = Math.max(0, Math.min(msg.length, Math.floor(((g - f("w:colleagues")) / 30) * 26)));
   return (
     <AbsoluteFill style={{ opacity: 1 - leave }}>
-      <div style={{ transform: `translateX(${-leave * 200}px)` }}>
+      <div style={{ transform: `translateX(${-leave * 200 + d * 0.5}px)` }}>
         <Words g={g} x={130} y={250} size={80} words={[{ t: "New", at: "w:new2", grad: true }, { t: "countries.", at: "w:countries" }]} />
         <Words g={g} x={130} y={370} size={80} words={[{ t: "New", at: "w:new3", grad: true }, { t: "colleagues.", at: "w:colleagues" }]} />
         <Words g={g} x={130} y={490} size={80} words={[{ t: "New", at: "w:new4", grad: true }, { t: "possibilities.", at: "w:possibilities" }]} />
       </div>
       {/* a new country: the site's harbour town, with the flight in */}
-      <Win x={1420 + d + (1 - c1) * 500} y={400} w={760} h={480} o={c1} s={0.9 + 0.1 * c1} blur={(1 - c1) * 8 + leave * 8} title="New countries" glow={C.orange}>
+      <Win x={1420 + (1 - c1) * 500} y={420 - d * 0.8} w={760} h={480} o={c1} s={0.9 + 0.1 * c1} blur={(1 - c1) * 8 + leave * 8} title="New countries" glow={C.orange}>
         <div style={{ position: "absolute", left: 14, right: 14, top: 64, bottom: 14, borderRadius: 18, overflow: "hidden" }}>
-          <Img src={staticFile("img/career-abroad.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "55% 45%", transform: `scale(${1.08 + drift(g, "w:new2", 0.05)})` }} />
+          <Img src={staticFile("img/career-abroad.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "55% 45%", transform: `scale(${1.08 + drift(g, "w:new2", 0.1)})` }} />
         </div>
       </Win>
       <Cable id="arc" d={arcD} k={arc * (1 - leave)} w={5} />
       {plane && <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${plane.x - 30}px, ${plane.y - 30}px) rotate(${-20 + arc * 30}deg)` }}><Icon name="plane" size={60} color={C.deep} sw={3} /></div>}
       {/* new colleagues: a team says hello */}
-      <Win x={1530 + d * 1.3 + (1 - c2) * 400} y={815} w={600} h={250} o={c2} s={0.9 + 0.1 * c2} blur={(1 - c2) * 8 + leave * 8} title="Team" glow={C.lime} z={2}>
+      <Win x={1530 + (1 - c2) * 400} y={835 - d * 1.15} w={600} h={250} o={c2} s={0.9 + 0.1 * c2} blur={(1 - c2) * 8 + leave * 8} title="Team" glow={C.lime} z={2}>
         <div style={{ position: "absolute", left: 30, top: 80, display: "flex" }}>
           {["EM", "LU", "KO", "PA"].map((n, i) => {
             const a = k(g, off("w:colleagues", i * 0.1), 0.4, SMALLPOP);
@@ -433,9 +454,9 @@ const NewWorld: React.FC<{ g: number }> = ({ g }) => {
           opacity: typed > 0 ? 1 : 0, whiteSpace: "nowrap" }}>{msg.slice(0, typed) || " "}</div>
       </Win>
       {/* new possibilities: the site's opportunity shape, and a second city */}
-      <Win x={1010 + d * 0.7} y={830 + (1 - c3) * 300} w={420} h={300} o={c3} s={0.9 + 0.1 * c3} blur={(1 - c3) * 8 + leave * 8} title="Look beyond borders" glow={C.green} z={1}>
+      <Win x={1010} y={850 - d * 0.9 + (1 - c3) * 300} w={420} h={300} o={c3} s={0.9 + 0.1 * c3} blur={(1 - c3) * 8 + leave * 8} title="Look beyond borders" glow={C.green} z={1}>
         <div style={{ position: "absolute", left: 14, top: 64, width: 392, height: 222, borderRadius: 16, overflow: "hidden" }}>
-          <Img src={staticFile("img/new-perspectives.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 60%", transform: `scale(${1.1 + drift(g, "w:new4", 0.05)})` }} />
+          <Img src={staticFile("img/new-perspectives.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 60%", transform: `scale(${1.1 + drift(g, "w:new4", 0.1)})` }} />
         </div>
         <svg width={120} height={100} viewBox="0 0 120 100" style={{ position: "absolute", right: 22, top: 80, overflow: "visible" }}>
           <path d="M17 82 59 15M59 82l42-67" fill="none" stroke="#FFFFFF" strokeWidth={9} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - k(g, "w:possibilities", 0.5, MOVE)} />
@@ -450,11 +471,11 @@ const NewWorld: React.FC<{ g: number }> = ({ g }) => {
 const SIGN = { x: 960, y: 400, h: 230 };
 const Sign: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("sign-0.1") || g > f("end")) return null;
-  const a = k(g, "sign", 0.5), lift = k(g, "chapter-0.25", 0.6, MOVE);
+  const a = k(g, "sign+0.2", 0.5), lift = k(g, "chapter-0.25", 0.6, MOVE);
   const ll = k(g, "w:to4-0.1", 0.7, MOVE);
   const out = k(g, "chapter-0.3", 0.35, DEPART);
   const y = mix(SIGN.y, 210, lift), h = mix(SIGN.h, 120, lift);
-  const push = 1 + drift(g, "sign+0.4", 0.02) * (1 - lift);
+  const push = 1 + drift(g, "sign+0.3", 0.06) * (1 - lift);
   return (
     <AbsoluteFill>
       <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transform: `scale(${push})`, transformOrigin: "960px 500px" }}>
@@ -476,15 +497,15 @@ const Chapter: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("chapter-0.1")) return null;
   const cta = k(g, "w:abroad+0.3", 0.6);
   const p1 = k(g, "chapter+0.2", 0.8), p2 = k(g, "chapter+0.45", 0.8);
-  const d = drift(g, "chapter", 14);
+  const d = drift(g, "chapter", 36);
   return (
     <AbsoluteFill>
       {/* the site's two cities, floating at the sides */}
       <Box x={300 + d * 0.8 - (1 - p1) * 400} y={760 - d * 0.5} w={420} h={300} r={26} o={p1} rot={-4} blur={(1 - p1) * 8} style={{ ...glass(C.orange), padding: 12, boxSizing: "border-box" }}>
-        <div style={{ width: "100%", height: "100%", borderRadius: 16, overflow: "hidden" }}><Img src={staticFile("img/career-abroad.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${1.1 + drift(g, "chapter", 0.04)})` }} /></div>
+        <div style={{ width: "100%", height: "100%", borderRadius: 16, overflow: "hidden" }}><Img src={staticFile("img/career-abroad.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${1.1 + drift(g, "chapter", 0.09)})` }} /></div>
       </Box>
       <Box x={1680 - d * 0.8 + (1 - p2) * 400} y={250 + d * 0.5} w={400} h={290} r={26} o={p2} rot={4} blur={(1 - p2) * 8} style={{ ...glass(C.green), padding: 12, boxSizing: "border-box" }}>
-        <div style={{ width: "100%", height: "100%", borderRadius: 16, overflow: "hidden" }}><Img src={staticFile("img/new-perspectives.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${1.1 + drift(g, "chapter", 0.04)})` }} /></div>
+        <div style={{ width: "100%", height: "100%", borderRadius: 16, overflow: "hidden" }}><Img src={staticFile("img/new-perspectives.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${1.1 + drift(g, "chapter", 0.09)})` }} /></div>
       </Box>
       <Eyebrow text="From graduation to working abroad" size={22} style={{ position: "absolute", left: 0, top: 0, width: 1920, textAlign: "center", transform: `translateY(${325}px)`, opacity: k(g, "w:next2+0.1", 0.5), color: C.deep }} />
       <Words g={g} y={375} size={110} center words={[{ t: "Your", at: "w:your4" }, { t: "next", at: "w:next2" }, { t: "chapter", at: "w:chapter" }]} />
