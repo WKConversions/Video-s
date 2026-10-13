@@ -8,6 +8,7 @@ import { AbsoluteFill } from "remotion";
 import { C, F, GRAD, GRAD_V, MOVE, SOFT, clamp01, expoOut, lerp, mix, pr, px } from "./lib";
 import { At, Flow, Glow, Grain, Icon, Mark, Words, tw } from "./kit";
 import { BASE_H, BASE_W, SITES, SiteCard, Scaled } from "./sites";
+import { Laptop3D } from "./laptop";
 
 const DARK_TEXT = "linear-gradient(180deg, #2A2522 30%, #7A6C64 100%)";
 const LIGHT_TEXT = "linear-gradient(180deg, #FFFFFF 20%, #FCE6CF 100%)";
@@ -442,43 +443,15 @@ export const A14: React.FC<{ g: number }> = ({ g }) => {
   return <LaptopRock g={g} />;
 };
 
-/** A laptop in 3D: the screen leans back from the hinge, the keyboard deck lies flat towards the camera, seen from above. */
-export const Laptop: React.FC<{ w: number; children: React.ReactNode; yaw?: number; pitch?: number }> = ({ w, children, yaw = 15, pitch = 22 }) => {
-  const sh = w * 0.63, depth = w * 0.56, bez = w * 0.02;
-  const keys: React.ReactNode[] = [];
-  for (let r = 0; r < 5; r++) for (let c = 0; c < 14; c++) {
-    const kw = (w * 0.86) / 14;
-    keys.push(<div key={`${r}-${c}`} style={{ position: "absolute", left: w * 0.09 + c * kw, top: depth * 0.08 + r * kw * 1.02, width: kw * 0.86, height: kw * 0.86, borderRadius: kw * 0.16, background: "#2A2C2C",
-      boxShadow: "inset 0 -2px 0 rgba(0,0,0,0.5)" }} />);
-  }
-  return (
-    <div style={{ perspective: 2600, width: w, height: sh }}>
-      <div style={{ position: "relative", width: w, height: sh, transformStyle: "preserve-3d", transform: `rotateX(${pitch}deg) rotateY(${yaw}deg)`, transformOrigin: "50% 100%" }}>
-        <div style={{ position: "absolute", left: -w * 0.03, top: sh, width: w * 1.06, height: depth, transformOrigin: "50% 0", transform: "rotateX(90deg)",
-          background: "linear-gradient(180deg, #8F9292 0%, #C4C7C7 30%, #D6D8D8 100%)", borderRadius: `${w * 0.01}px ${w * 0.01}px ${w * 0.035}px ${w * 0.035}px`, boxShadow: "0 0 0 2px #6E7171 inset" }}>
-          {keys}
-          <div style={{ position: "absolute", left: w * 0.35, top: depth * 0.6, width: w * 0.36, height: depth * 0.32, borderRadius: w * 0.012, background: "#B7BABA", boxShadow: "inset 0 0 0 1.5px #9EA1A1" }} />
-        </div>
-        <div style={{ position: "absolute", left: 0, top: 0, width: w, height: sh, transformOrigin: "50% 100%", transform: "rotateX(-10deg)", background: "#0D0E0E", borderRadius: w * 0.025,
-          padding: bez, boxSizing: "border-box", boxShadow: "inset 0 0 0 2px #3A3C3B" }}>
-          <div style={{ width: w - bez * 2, height: sh - bez * 2, overflow: "hidden", borderRadius: w * 0.008, position: "relative" }}>
-            <Scaled w={w - bez * 2} r={0}>{children}</Scaled>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 const LaptopRock: React.FC<{ g: number }> = ({ g }) => {
-  // opens close and high, the top of the screen cropped, pulls back by 21.9 s, then creeps in while the angle drifts
+  // opens close and high, the top of the screen cropped, pulls back by 21.9 s, then creeps in while the angle drifts; the
+  // laptop sits on a dark stone floor under a soft top light, seen from above with the lid wide open
   const back = expoOut(12, 0.8)(clamp01((g - 645) / 12)), drift = pr(g, 657, 33, SOFT);
-  const sc = lerp(1.6, 1.0, back) * lerp(1, 1.03, drift), y = lerp(640, 470, back);
+  const sc = lerp(1.55, 1.0, back) * lerp(1, 1.03, drift);
   return (
-    <AbsoluteFill style={{ background: "radial-gradient(ellipse 80% 70% at 45% 20%, #55605B 0%, #262B29 55%, #101211 100%)", overflow: "hidden" }}>
-      <div style={{ position: "absolute", left: 140, top: 640, width: 1500, height: 700, borderRadius: "46% 54% 40% 60% / 55% 50% 50% 45%",
-        background: "radial-gradient(ellipse 60% 50% at 45% 25%, #4A504C 0%, #2B302D 45%, #151816 100%)", filter: "blur(1.5px)", boxShadow: "inset 0 30px 60px rgba(255,255,255,0.06)" }} />
-      <At x={880} y={y} s={sc}><Laptop w={1000} yaw={lerp(16, 11, drift)} pitch={17}><SiteCard s={SITES[7]} /></Laptop></At>
-      <Grain opacity={0.32} seed={9} />
+    <AbsoluteFill style={{ background: "radial-gradient(ellipse 90% 75% at 50% 10%, #39423E 0%, #1C211F 55%, #101311 100%)", overflow: "hidden" }}>
+      <Laptop3D w={700} x={920} y={lerp(700, 610, back)} s={sc} yaw={lerp(19, 13, drift)} elev={24} open={115} floor="stone"><SiteCard s={SITES[7]} /></Laptop3D>
+      <Grain opacity={0.26} seed={9} />
     </AbsoluteFill>
   );
 };

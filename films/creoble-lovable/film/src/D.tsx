@@ -7,7 +7,8 @@ import React from "react";
 import { AbsoluteFill, OffthreadVideo, Sequence, staticFile } from "remotion";
 import { C, F, GRAD, MOVE, SOFT, clamp01, expoOut, lerp, path, pr, press } from "./lib";
 import { At, Btn, Caret, Check, Cursor, Flow, Glow, Grain, Icon, Mark, Switch, Words, Wordmark, tw } from "./kit";
-import { Gradient, Laptop } from "./A";
+import { Gradient } from "./A";
+import { Laptop3D } from "./laptop";
 import { Peach, TopBarClose } from "./C";
 import { Halo } from "./B";
 import { BTN_BUY, Builder, PREVIEW, WH, WW, centre } from "./ui";
@@ -68,17 +69,6 @@ const BuyCard: React.FC<{ g: number }> = ({ g }) => {
     </div>
   );
 };
-/** A ceramic vase with greenery, for the desk (the reference's props). */
-const Vase: React.FC = () => (
-  <div style={{ position: "relative", width: 300, height: 620 }}>
-    {([[-28, 190, 380, C.gTeal], [-8, 160, 420, "#5E8A6C"], [14, 200, 360, "#3F6E57"], [30, 170, 330, "#7FA88A"], [-40, 150, 300, "#4E7A60"]] as [number, number, number, string][]).map(([rot, w, h, col], i) => (
-      <div key={i} style={{ position: "absolute", left: 150 - w / 2, top: 360 - h, width: w, height: h, borderRadius: "50% 50% 46% 54% / 70% 70% 30% 30%",
-        background: col, transform: `rotate(${rot}deg)`, transformOrigin: "50% 100%", opacity: 0.92 }} />
-    ))}
-    <div style={{ position: "absolute", left: 40, top: 330, width: 220, height: 290, borderRadius: "40% 40% 30% 30% / 30% 30% 22% 22%", background: "linear-gradient(90deg, #C9B497 0%, #EBDCC6 45%, #D6C3A6 100%)",
-      boxShadow: "inset -20px 0 40px rgba(90,60,30,0.2)" }} />
-  </div>
-);
 export const D2: React.FC<{ g: number }> = ({ g }) => {
   if (g < 1734) {
     const bc = centre(BTN_BUY), Z = 4.4, ox = 960 - ((1236 + 1404 + 180) / 2) * Z, oy = 380 - 41 * Z;
@@ -117,16 +107,12 @@ export const D2: React.FC<{ g: number }> = ({ g }) => {
       </Peach>
     );
   }
-  // the laptop on the shop's counter: close, easing back, a 3/4 view from above, a vase on the right
+  // the laptop on the shop's wooden counter, the shop itself out of focus behind: close, easing back, a 3/4 view from above
   const back = expoOut(27, 0.88)(clamp01((g - 1848) / 27)), sc = lerp(1.25, 1.0, back) * lerp(1, 1.02, pr(g, 1875, 15, SOFT));
   return (
     <AbsoluteFill style={{ background: "#2A2422", overflow: "hidden" }}>
-      <Sequence from={1830} layout="none"><OffthreadVideo src={staticFile("footage/flower-shop-4742.mp4")} muted style={{ position: "absolute", inset: -40, width: 2000, height: 1160, objectFit: "cover", filter: "blur(16px) brightness(0.9)" }} /></Sequence>
-      <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 360, background: "linear-gradient(180deg, #C9A988 0%, #A78163 60%, #8A6A50 100%)", boxShadow: "0 -2px 0 rgba(255,255,255,0.25)" }} />
-      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transform: `scale(${sc})`, transformOrigin: "760px 560px" }}>
-        <div style={{ position: "absolute", left: 1500, top: 240 }}><Vase /></div>
-        <At x={800} y={500}><Laptop w={1100} yaw={-22} pitch={18}><FlowerSite brand={1} video={false} /></Laptop></At>
-      </div>
+      <Sequence from={1830} layout="none"><OffthreadVideo src={staticFile("footage/flower-shop-4742.mp4")} muted style={{ position: "absolute", inset: -40, width: 2000, height: 1160, objectFit: "cover", filter: "blur(18px) brightness(0.92)" }} /></Sequence>
+      <Laptop3D w={740} x={930} y={630} s={sc} yaw={-20} elev={23} open={115} floor="wood" floorBack={0.85}><FlowerSite brand={1} video={false} /></Laptop3D>
       <Grain opacity={0.12} seed={43} />
     </AbsoluteFill>
   );
