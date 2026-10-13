@@ -1,0 +1,101 @@
+{
+ "palette": [
+  {
+   "hex": "#FFFFFF",
+   "share": 0.5989,
+   "lab": [
+    100.0,
+    0.01,
+    -0.01
+   ]
+  },
+  {
+   "hex": "#EFEDED",
+   "share": 0.2207,
+   "lab": [
+    93.9,
+    0.67,
+    0.23
+   ]
+  },
+  {
+   "hex": "#77756F",
+   "share": 0.0597,
+   "lab": [
+    49.24,
+    -0.4,
+    3.57
+   ]
+  },
+  {
+   "hex": "#4F4938",
+   "share": 0.0441,
+   "lab": [
+    31.14,
+    -0.63,
+    11.11
+   ]
+  },
+  {
+   "hex": "#CCC8C6",
+   "share": 0.04,
+   "lab": [
+    80.86,
+    1.03,
+    1.48
+   ]
+  },
+  {
+   "hex": "#D2020C",
+   "share": 0.0152,
+   "lab": [
+    43.9,
+    69.12,
+    54.29
+   ]
+  },
+  {
+   "hex": "#A38F6E",
+   "share": 0.0124,
+   "lab": [
+    60.39,
+    2.4,
+    20.33
+   ]
+  },
+  {
+   "hex": "#EFA6AB",
+   "share": 0.0089,
+   "lab": [
+    75.18,
+    27.6,
+    8.32
+   ]
+  }
+ ],
+ "tokens": {
+  "red": "#D2020C",
+  "white": "#FFFFFF",
+  "warm": "#F4F1EE",
+  "grey": "#EFEDED",
+  "ink": "#2B2A28",
+  "text": "#545454",
+  "pink": "#F54A86",
+  "terracotta": "#DB8D3D",
+  "sand": "#D8C7BD",
+  "leaf": "#C5E499",
+  "check": "#1A936F"
+ },
+ "accent": "#D2020C",
+ "fonts": {
+  "display": "Roboto 900/700",
+  "text": "Roboto 500/400",
+  "wordmark": "the logo's own lettering (image)"
+ },
+ "radii": {
+  "site_buttons": 0,
+  "film_cards": 28
+ },
+ "style": "Bright, sunny, Mediterranean: white and warm grey pages, the logo's red as the one accent, real photos of students in M\u00e1laga, flat illustrations of white Andalusian towns with bougainvillea. Voice: informal, friendly, 'jij'.",
+ "effects": "Elementor site: no motion beyond carousels; the film borrows nothing animated from it."
+}

@@ -1,0 +1,737 @@
+[
+ {
+  "i": 0,
+  "word": "Jouw",
+  "key": "w:jouw",
+  "start": 0.16,
+  "end": 0.3
+ },
+ {
+  "i": 1,
+  "word": "stage",
+  "key": "w:stage",
+  "start": 0.3,
+  "end": 0.5
+ },
+ {
+  "i": 2,
+  "word": "in",
+  "key": "w:in",
+  "start": 0.5,
+  "end": 0.78
+ },
+ {
+  "i": 3,
+  "word": "Spanje",
+  "key": "w:spanje",
+  "start": 0.78,
+  "end": 1.26
+ },
+ {
+  "i": 4,
+  "word": "begint",
+  "key": "w:begint",
+  "start": 1.26,
+  "end": 1.64
+ },
+ {
+  "i": 5,
+  "word": "al",
+  "key": "w:al",
+  "start": 1.64,
+  "end": 1.82
+ },
+ {
+  "i": 6,
+  "word": "voordat",
+  "key": "w:voordat",
+  "start": 1.82,
+  "end": 2.3
+ },
+ {
+  "i": 7,
+  "word": "je",
+  "key": "w:je",
+  "start": 2.3,
+  "end": 2.44
+ },
+ {
+  "i": 8,
+  "word": "je",
+  "key": "w:je2",
+  "start": 2.44,
+  "end": 2.58
+ },
+ {
+  "i": 9,
+  "word": "koffer",
+  "key": "w:koffer",
+  "start": 2.58,
+  "end": 2.84
+ },
+ {
+  "i": 10,
+  "word": "pakt.",
+  "key": "w:pakt",
+  "start": 2.84,
+  "end": 3.1
+ },
+ {
+  "i": 11,
+  "word": "Met",
+  "key": "w:met",
+  "start": 3.68,
+  "end": 3.82
+ },
+ {
+  "i": 12,
+  "word": "JongLeren",
+  "key": "w:jongleren",
+  "start": 3.82,
+  "end": 4.32
+ },
+ {
+  "i": 13,
+  "word": "wordt",
+  "key": "w:wordt",
+  "start": 4.32,
+  "end": 4.62
+ },
+ {
+  "i": 14,
+  "word": "alles",
+  "key": "w:alles",
+  "start": 4.62,
+  "end": 5.08
+ },
+ {
+  "i": 15,
+  "word": "een",
+  "key": "w:een",
+  "start": 5.08,
+  "end": 5.28
+ },
+ {
+  "i": 16,
+  "word": "stuk",
+  "key": "w:stuk",
+  "start": 5.28,
+  "end": 5.58
+ },
+ {
+  "i": 17,
+  "word": "makkelijker.",
+  "key": "w:makkelijker",
+  "start": 5.58,
+  "end": 6.08
+ },
+ {
+  "i": 18,
+  "word": "Eerst",
+  "key": "w:eerst",
+  "start": 6.66,
+  "end": 6.94
+ },
+ {
+  "i": 19,
+  "word": "plannen",
+  "key": "w:plannen",
+  "start": 6.94,
+  "end": 7.2
+ },
+ {
+  "i": 20,
+  "word": "we",
+  "key": "w:we",
+  "start": 7.2,
+  "end": 7.34
+ },
+ {
+  "i": 21,
+  "word": "een",
+  "key": "w:een2",
+  "start": 7.34,
+  "end": 7.48
+ },
+ {
+  "i": 22,
+  "word": "intakegesprek.",
+  "key": "w:intakegesprek",
+  "start": 7.48,
+  "end": 8.32
+ },
+ {
+  "i": 23,
+  "word": "Je",
+  "key": "w:je3",
+  "start": 8.76,
+  "end": 8.86
+ },
+ {
+  "i": 24,
+  "word": "vertelt",
+  "key": "w:vertelt",
+  "start": 8.86,
+  "end": 9.14
+ },
+ {
+  "i": 25,
+  "word": "wat",
+  "key": "w:wat",
+  "start": 9.14,
+  "end": 9.32
+ },
+ {
+  "i": 26,
+  "word": "je",
+  "key": "w:je4",
+  "start": 9.32,
+  "end": 9.44
+ },
+ {
+  "i": 27,
+  "word": "studeert,",
+  "key": "w:studeert",
+  "start": 9.44,
+  "end": 9.92
+ },
+ {
+  "i": 28,
+  "word": "wat",
+  "key": "w:wat2",
+  "start": 10.22,
+  "end": 10.3
+ },
+ {
+  "i": 29,
+  "word": "je",
+  "key": "w:je5",
+  "start": 10.3,
+  "end": 10.46
+ },
+ {
+  "i": 30,
+  "word": "zoekt",
+  "key": "w:zoekt",
+  "start": 10.46,
+  "end": 10.74
+ },
+ {
+  "i": 31,
+  "word": "en",
+  "key": "w:en",
+  "start": 10.74,
+  "end": 11.2
+ },
+ {
+  "i": 32,
+  "word": "welke",
+  "key": "w:welke",
+  "start": 11.2,
+  "end": 11.58
+ },
+ {
+  "i": 33,
+  "word": "eisen",
+  "key": "w:eisen",
+  "start": 11.58,
+  "end": 11.88
+ },
+ {
+  "i": 34,
+  "word": "jouw",
+  "key": "w:jouw2",
+  "start": 11.88,
+  "end": 12.32
+ },
+ {
+  "i": 35,
+  "word": "school",
+  "key": "w:school",
+  "start": 12.32,
+  "end": 12.32
+ },
+ {
+  "i": 36,
+  "word": "stelt.",
+  "key": "w:stelt",
+  "start": 12.32,
+  "end": 12.66
+ },
+ {
+  "i": 37,
+  "word": "Vervolgens",
+  "key": "w:vervolgens",
+  "start": 13.34,
+  "end": 13.82
+ },
+ {
+  "i": 38,
+  "word": "download",
+  "key": "w:download",
+  "start": 13.82,
+  "end": 14.2
+ },
+ {
+  "i": 39,
+  "word": "je",
+  "key": "w:je6",
+  "start": 14.2,
+  "end": 14.4
+ },
+ {
+  "i": 40,
+  "word": "onze",
+  "key": "w:onze",
+  "start": 14.4,
+  "end": 14.58
+ },
+ {
+  "i": 41,
+  "word": "app,",
+  "key": "w:app",
+  "start": 14.58,
+  "end": 14.92
+ },
+ {
+  "i": 42,
+  "word": "waarin",
+  "key": "w:waarin",
+  "start": 15.2,
+  "end": 15.42
+ },
+ {
+  "i": 43,
+  "word": "je",
+  "key": "w:je7",
+  "start": 15.42,
+  "end": 15.5
+ },
+ {
+  "i": 44,
+  "word": "iedere",
+  "key": "w:iedere",
+  "start": 15.5,
+  "end": 15.9
+ },
+ {
+  "i": 45,
+  "word": "stap",
+  "key": "w:stap",
+  "start": 15.9,
+  "end": 16.16
+ },
+ {
+  "i": 46,
+  "word": "kunt",
+  "key": "w:kunt",
+  "start": 16.16,
+  "end": 16.36
+ },
+ {
+  "i": 47,
+  "word": "volgen.",
+  "key": "w:volgen",
+  "start": 16.36,
+  "end": 16.74
+ },
+ {
+  "i": 48,
+  "word": "Wij",
+  "key": "w:wij",
+  "start": 17.3,
+  "end": 17.46
+ },
+ {
+  "i": 49,
+  "word": "zoeken",
+  "key": "w:zoeken",
+  "start": 17.46,
+  "end": 17.76
+ },
+ {
+  "i": 50,
+  "word": "een",
+  "key": "w:een3",
+  "start": 17.76,
+  "end": 17.9
+ },
+ {
+  "i": 51,
+  "word": "passende",
+  "key": "w:passende",
+  "start": 17.9,
+  "end": 18.26
+ },
+ {
+  "i": 52,
+  "word": "stageplek",
+  "key": "w:stageplek",
+  "start": 18.26,
+  "end": 18.96
+ },
+ {
+  "i": 53,
+  "word": "en",
+  "key": "w:en2",
+  "start": 18.96,
+  "end": 19.38
+ },
+ {
+  "i": 54,
+  "word": "regelen",
+  "key": "w:regelen",
+  "start": 19.38,
+  "end": 19.76
+ },
+ {
+  "i": 55,
+  "word": "een",
+  "key": "w:een4",
+  "start": 19.76,
+  "end": 19.92
+ },
+ {
+  "i": 56,
+  "word": "kennismakingsgesprek",
+  "key": "w:kennismakingsgesprek",
+  "start": 19.92,
+  "end": 21.02
+ },
+ {
+  "i": 57,
+  "word": "met",
+  "key": "w:met2",
+  "start": 21.02,
+  "end": 21.14
+ },
+ {
+  "i": 58,
+  "word": "het",
+  "key": "w:het",
+  "start": 21.14,
+  "end": 21.24
+ },
+ {
+  "i": 59,
+  "word": "bedrijf.",
+  "key": "w:bedrijf",
+  "start": 21.24,
+  "end": 21.72
+ },
+ {
+  "i": 60,
+  "word": "Ben",
+  "key": "w:ben",
+  "start": 22.24,
+  "end": 22.36
+ },
+ {
+  "i": 61,
+  "word": "je",
+  "key": "w:je8",
+  "start": 22.36,
+  "end": 22.46
+ },
+ {
+  "i": 62,
+  "word": "aangenomen?",
+  "key": "w:aangenomen",
+  "start": 22.46,
+  "end": 23.02
+ },
+ {
+  "i": 63,
+  "word": "Dan",
+  "key": "w:dan",
+  "start": 23.48,
+  "end": 23.68
+ },
+ {
+  "i": 64,
+  "word": "helpen",
+  "key": "w:helpen",
+  "start": 23.68,
+  "end": 24.04
+ },
+ {
+  "i": 65,
+  "word": "we",
+  "key": "w:we2",
+  "start": 24.04,
+  "end": 24.1
+ },
+ {
+  "i": 66,
+  "word": "je",
+  "key": "w:je9",
+  "start": 24.1,
+  "end": 24.26
+ },
+ {
+  "i": 67,
+  "word": "indien",
+  "key": "w:indien",
+  "start": 24.26,
+  "end": 24.58
+ },
+ {
+  "i": 68,
+  "word": "nodig",
+  "key": "w:nodig",
+  "start": 24.58,
+  "end": 24.88
+ },
+ {
+  "i": 69,
+  "word": "ook",
+  "key": "w:ook",
+  "start": 24.88,
+  "end": 25.38
+ },
+ {
+  "i": 70,
+  "word": "met",
+  "key": "w:met3",
+  "start": 25.38,
+  "end": 25.56
+ },
+ {
+  "i": 71,
+  "word": "het",
+  "key": "w:het2",
+  "start": 25.56,
+  "end": 25.68
+ },
+ {
+  "i": 72,
+  "word": "vinden",
+  "key": "w:vinden",
+  "start": 25.68,
+  "end": 25.88
+ },
+ {
+  "i": 73,
+  "word": "van",
+  "key": "w:van",
+  "start": 25.88,
+  "end": 26.08
+ },
+ {
+  "i": 74,
+  "word": "huisvesting.",
+  "key": "w:huisvesting",
+  "start": 26.08,
+  "end": 26.74
+ },
+ {
+  "i": 75,
+  "word": "En",
+  "key": "w:en3",
+  "start": 27.29,
+  "end": 27.44
+ },
+ {
+  "i": 76,
+  "word": "eenmaal",
+  "key": "w:eenmaal",
+  "start": 27.44,
+  "end": 27.78
+ },
+ {
+  "i": 77,
+  "word": "in",
+  "key": "w:in2",
+  "start": 27.78,
+  "end": 27.92
+ },
+ {
+  "i": 78,
+  "word": "Spanje?",
+  "key": "w:spanje2",
+  "start": 27.92,
+  "end": 28.32
+ },
+ {
+  "i": 79,
+  "word": "Ook",
+  "key": "w:ook2",
+  "start": 28.76,
+  "end": 28.9
+ },
+ {
+  "i": 80,
+  "word": "dan",
+  "key": "w:dan2",
+  "start": 28.9,
+  "end": 29.24
+ },
+ {
+  "i": 81,
+  "word": "staan",
+  "key": "w:staan",
+  "start": 29.24,
+  "end": 29.46
+ },
+ {
+  "i": 82,
+  "word": "we",
+  "key": "w:we3",
+  "start": 29.46,
+  "end": 29.62
+ },
+ {
+  "i": 83,
+  "word": "voor",
+  "key": "w:voor",
+  "start": 29.62,
+  "end": 29.76
+ },
+ {
+  "i": 84,
+  "word": "je",
+  "key": "w:je10",
+  "start": 29.76,
+  "end": 29.88
+ },
+ {
+  "i": 85,
+  "word": "klaar.",
+  "key": "w:klaar",
+  "start": 29.88,
+  "end": 30.22
+ },
+ {
+  "i": 86,
+  "word": "Met",
+  "key": "w:met4",
+  "start": 30.56,
+  "end": 30.62
+ },
+ {
+  "i": 87,
+  "word": "persoonlijke",
+  "key": "w:persoonlijke",
+  "start": 30.6,
+  "end": 31.16
+ },
+ {
+  "i": 88,
+  "word": "begeleiding,",
+  "key": "w:begeleiding",
+  "start": 31.16,
+  "end": 31.74
+ },
+ {
+  "i": 89,
+  "word": "coaching",
+  "key": "w:coaching",
+  "start": 32.0,
+  "end": 32.4
+ },
+ {
+  "i": 90,
+  "word": "en",
+  "key": "w:en4",
+  "start": 32.4,
+  "end": 32.8
+ },
+ {
+  "i": 91,
+  "word": "activiteiten.",
+  "key": "w:activiteiten",
+  "start": 32.8,
+  "end": 33.66
+ },
+ {
+  "i": 92,
+  "word": "Van",
+  "key": "w:van2",
+  "start": 34.06,
+  "end": 34.16
+ },
+ {
+  "i": 93,
+  "word": "je",
+  "key": "w:je11",
+  "start": 34.16,
+  "end": 34.3
+ },
+ {
+  "i": 94,
+  "word": "eerste",
+  "key": "w:eerste",
+  "start": 34.3,
+  "end": 34.6
+ },
+ {
+  "i": 95,
+  "word": "vraag",
+  "key": "w:vraag",
+  "start": 34.6,
+  "end": 34.98
+ },
+ {
+  "i": 96,
+  "word": "tot",
+  "key": "w:tot",
+  "start": 34.98,
+  "end": 35.38
+ },
+ {
+  "i": 97,
+  "word": "je",
+  "key": "w:je12",
+  "start": 35.38,
+  "end": 35.54
+ },
+ {
+  "i": 98,
+  "word": "laatste",
+  "key": "w:laatste",
+  "start": 35.54,
+  "end": 35.98
+ },
+ {
+  "i": 99,
+  "word": "stagedag.",
+  "key": "w:stagedag",
+  "start": 35.98,
+  "end": 36.54
+ },
+ {
+  "i": 100,
+  "word": "JongLeren.",
+  "key": "w:jongleren2",
+  "start": 37.21,
+  "end": 37.82
+ },
+ {
+  "i": 101,
+  "word": "Jouw",
+  "key": "w:jouw3",
+  "start": 38.25,
+  "end": 38.54
+ },
+ {
+  "i": 102,
+  "word": "stage,",
+  "key": "w:stage2",
+  "start": 38.54,
+  "end": 38.78
+ },
+ {
+  "i": 103,
+  "word": "volledig",
+  "key": "w:volledig",
+  "start": 39.2,
+  "end": 39.8
+ },
+ {
+  "i": 104,
+  "word": "begeleid.",
+  "key": "w:begeleid",
+  "start": 39.8,
+  "end": 40.34
+ }
+]

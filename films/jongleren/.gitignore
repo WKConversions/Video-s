@@ -1,0 +1,7 @@
+# raw site downloads (re-fetched by scripts/harvest.mjs and the download step; the film uses the copies in film/public/img)
+assets/site/
+# full-page screenshots (large); the first-screen shots, texts and brand values are kept
+harvest/pages/*-full.png
+# music candidates other than the chosen track
+sound/music/*.mp3
+!sound/music/spanish-heart.mp3

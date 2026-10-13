@@ -1,0 +1,371 @@
+{
+ "title": "Taalles - JongLeren",
+ "url": "https://jongleren.es/taalles/",
+ "vars": {
+  "--ast-post-nav-space": "0",
+  "--ast-container-default-xlg-padding": "2.5em",
+  "--ast-container-default-lg-padding": "2.5em",
+  "--ast-container-default-slg-padding": "2em",
+  "--ast-container-default-md-padding": "2.5em",
+  "--ast-container-default-sm-padding": "2.5em",
+  "--ast-container-default-xs-padding": "2.4em",
+  "--ast-container-default-xxs-padding": "1.8em",
+  "--ast-code-block-background": "#ECEFF3",
+  "--ast-comment-inputs-background": "#FFF",
+  "--ast-normal-container-width": "1200px",
+  "--ast-narrow-container-width": "750px",
+  "--ast-blog-title-font-weight": "600",
+  "--ast-blog-meta-weight": "600",
+  "--ast-global-color-0": "#d2020c",
+  "--ast-global-color-1": "#545454",
+  "--ast-global-color-2": "#efeded",
+  "--ast-global-color-3": "#000000",
+  "--ast-global-color-4": "#efeded",
+  "--ast-global-color-5": "#ffffff",
+  "--ast-global-color-6": "#010101",
+  "--ast-global-color-7": "#010101",
+  "--ast-global-color-8": "#000000",
+  "--ast-border-color": "var(--ast-global-color-6)",
+  "--e-global-color-astglobalcolor0": "#d2020c",
+  "--e-global-color-astglobalcolor1": "#545454",
+  "--e-global-color-astglobalcolor2": "#efeded",
+  "--e-global-color-astglobalcolor3": "#000000",
+  "--e-global-color-astglobalcolor4": "#efeded",
+  "--e-global-color-astglobalcolor5": "#ffffff",
+  "--e-global-color-astglobalcolor6": "#010101",
+  "--e-global-color-astglobalcolor7": "#010101",
+  "--e-global-color-astglobalcolor8": "#000000",
+  "--wp--preset--aspect-ratio--square": "1",
+  "--wp--preset--aspect-ratio--4-3": "4/3",
+  "--wp--preset--aspect-ratio--3-4": "3/4",
+  "--wp--preset--aspect-ratio--3-2": "3/2",
+  "--wp--preset--aspect-ratio--2-3": "2/3",
+  "--wp--preset--aspect-ratio--16-9": "16/9",
+  "--wp--preset--aspect-ratio--9-16": "9/16",
+  "--wp--preset--color--black": "#000000",
+  "--wp--preset--color--cyan-bluish-gray": "#abb8c3",
+  "--wp--preset--color--white": "#ffffff",
+  "--wp--preset--color--pale-pink": "#f78da7",
+  "--wp--preset--color--vivid-red": "#cf2e2e",
+  "--wp--preset--color--luminous-vivid-orange": "#ff6900",
+  "--wp--preset--color--luminous-vivid-amber": "#fcb900",
+  "--wp--preset--color--light-green-cyan": "#7bdcb5",
+  "--wp--preset--color--vivid-green-cyan": "#00d084",
+  "--wp--preset--color--pale-cyan-blue": "#8ed1fc",
+  "--wp--preset--color--vivid-cyan-blue": "#0693e3",
+  "--wp--preset--color--vivid-purple": "#9b51e0",
+  "--wp--preset--color--ast-global-color-0": "var(--ast-global-color-0)",
+  "--wp--preset--color--ast-global-color-1": "var(--ast-global-color-1)",
+  "--wp--preset--color--ast-global-color-2": "var(--ast-global-color-2)",
+  "--wp--preset--color--ast-global-color-3": "var(--ast-global-color-3)",
+  "--wp--preset--color--ast-global-color-4": "var(--ast-global-color-4)",
+  "--wp--preset--color--ast-global-color-5": "var(--ast-global-color-5)",
+  "--wp--preset--color--ast-global-color-6": "var(--ast-global-color-6)",
+  "--wp--preset--color--ast-global-color-7": "var(--ast-global-color-7)",
+  "--wp--preset--color--ast-global-color-8": "var(--ast-global-color-8)",
+  "--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple": "linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%)",
+  "--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan": "linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%)",
+  "--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange": "linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%)",
+  "--wp--preset--gradient--luminous-vivid-orange-to-vivid-red": "linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%)",
+  "--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray": "linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%)",
+  "--wp--preset--gradient--cool-to-warm-spectrum": "linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%)",
+  "--wp--preset--gradient--blush-light-purple": "linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%)",
+  "--wp--preset--gradient--blush-bordeaux": "linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%)",
+  "--wp--preset--gradient--luminous-dusk": "linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%)",
+  "--wp--preset--gradient--pale-ocean": "linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%)",
+  "--wp--preset--gradient--electric-grass": "linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%)",
+  "--wp--preset--gradient--midnight": "linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%)",
+  "--wp--preset--font-size--small": "13px",
+  "--wp--preset--font-size--medium": "20px",
+  "--wp--preset--font-size--large": "36px",
+  "--wp--preset--font-size--x-large": "42px",
+  "--wp--preset--spacing--20": "0.44rem",
+  "--wp--preset--spacing--30": "0.67rem",
+  "--wp--preset--spacing--40": "1rem",
+  "--wp--preset--spacing--50": "1.5rem",
+  "--wp--preset--spacing--60": "2.25rem",
+  "--wp--preset--spacing--70": "3.38rem",
+  "--wp--preset--spacing--80": "5.06rem",
+  "--wp--preset--shadow--natural": "6px 6px 9px rgba(0, 0, 0, 0.2)",
+  "--wp--preset--shadow--deep": "12px 12px 50px rgba(0, 0, 0, 0.4)",
+  "--wp--preset--shadow--sharp": "6px 6px 0px rgba(0, 0, 0, 0.2)",
+  "--wp--preset--shadow--outlined": "6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0)",
+  "--wp--preset--shadow--crisp": "6px 6px 0px rgb(0, 0, 0)",
+  "--wp--style--global--content-size": "var(--wp--custom--ast-content-width-size)",
+  "--wp--style--global--wide-size": "var(--wp--custom--ast-wide-width-size)",
+  "--wp--style--block-gap": "24px",
+  "--direction-multiplier": "1",
+  "--page-title-display": "block"
+ },
+ "colors": [
+  [
+   "rgb(0, 0, 0)",
+   513
+  ],
+  [
+   "rgb(122, 122, 122)",
+   144
+  ],
+  [
+   "rgb(84, 89, 95)",
+   74
+  ],
+  [
+   "rgb(84, 84, 84)",
+   44
+  ],
+  [
+   "rgb(255, 255, 255)",
+   22
+  ],
+  [
+   "rgb(105, 114, 125)",
+   20
+  ],
+  [
+   "rgb(210, 2, 12)",
+   18
+  ],
+  [
+   "rgb(209, 1, 10)",
+   10
+  ],
+  [
+   "rgb(239, 237, 237)",
+   9
+  ],
+  [
+   "rgb(68, 68, 68)",
+   6
+  ],
+  [
+   "rgba(84, 89, 95, 0)",
+   5
+  ],
+  [
+   "rgb(26, 147, 111)",
+   3
+  ],
+  [
+   "rgba(97, 206, 112, 0)",
+   1
+  ],
+  [
+   "rgb(250, 250, 250)",
+   1
+  ],
+  [
+   "rgb(119, 119, 119)",
+   1
+  ]
+ ],
+ "fonts": [
+  [
+   "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+   275
+  ],
+  [
+   "Roboto, sans-serif",
+   140
+  ],
+  [
+   "Arial, sans-serif",
+   11
+  ]
+ ],
+ "eases": [
+  [
+   "ease, ease, ease, ease, ease",
+   52
+  ],
+  [
+   "linear",
+   26
+  ],
+  [
+   "ease",
+   25
+  ],
+  [
+   "ease, ease, ease, ease",
+   6
+  ],
+  [
+   "ease, ease, ease",
+   2
+  ]
+ ],
+ "h1": {
+  "sel": "h1",
+  "text": "Taalles",
+  "font": "Roboto, sans-serif",
+  "size": "55px",
+  "weight": "700",
+  "tracking": "normal",
+  "color": "rgb(255, 255, 255)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "radius": "0px"
+ },
+ "h2": {
+  "sel": "h2",
+  "text": "Verbreed jouw talenkennis!​",
+  "font": "Roboto, sans-serif",
+  "size": "22px",
+  "weight": "600",
+  "tracking": "normal",
+  "color": "rgb(209, 1, 10)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "radius": "0px"
+ },
+ "body": {
+  "sel": "body",
+  "text": "Ga naar de inhoud\nDownload de JongLeren.es app!\nZakelijk\nOver ons\nContact\nFAQ\nHome\nStudent\nStagevacatures\nBlogs\nErvaring",
+  "font": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+  "size": "16px",
+  "weight": "400",
+  "tracking": "normal",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgb(255, 255, 255)",
+  "radius": "0px"
+ },
+ "button": {
+  "sel": "a[class*=\"btn\" i], button, a[class*=\"button\" i]",
+  "text": "Meer over Instituto Picasso",
+  "font": "Roboto, sans-serif",
+  "size": "13px",
+  "weight": "500",
+  "tracking": "normal",
+  "color": "rgb(84, 89, 95)",
+  "bg": "rgb(239, 237, 237)",
+  "radius": "2px"
+ },
+ "logos": [
+  {
+   "type": "svg",
+   "markup": "<svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-caret-down\" viewBox=\"0 0 320 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z\"></path></svg>"
+  },
+  {
+   "type": "svg",
+   "markup": "<svg aria-hidden=\"true\" role=\"presentation\" class=\"elementor-menu-toggle__icon--open e-font-icon-svg e-eicon-menu-bar\" viewBox=\"0 0 1000 1000\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M104 333H896C929 333 958 304 958 271S929 208 896 208H104C71 208 42 237 42 271S71 333 104 333ZM104 583H896C929 583 958 554 958 521S929 458 896 458H104C71 458 42 487 42 521S71 583 104 583ZM104 833H896C929 833 958 804 958 771S929 708 896 708H104C71 708 42 737 42 771S71 833 104 833Z\"></path></svg>"
+  },
+  {
+   "type": "svg",
+   "markup": "<svg aria-hidden=\"true\" role=\"presentation\" class=\"elementor-menu-toggle__icon--close e-font-icon-svg e-eicon-close\" viewBox=\"0 0 1000 1000\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M742 167L500 408 258 167C246 154 233 150 217 150 196 150 179 158 167 167 154 179 150 196 150 212 150 229 154 242 171 254L408 500 167 742C138 771 138 800 167 829 196 858 225 858 254 829L496 587 738 829C750 842 767 846 783 846 800 846 817 842 829 829 842 817 846 804 846 783 846 767 842 750 829 737L588 500 833 258C863 229 863 200 833 171 804 137 775 137 742 167Z\"></path></svg>"
+  },
+  {
+   "type": "svg",
+   "markup": "<svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-caret-down\" viewBox=\"0 0 320 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z\"></path></svg>"
+  },
+  {
+   "type": "img",
+   "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMTUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IHgxPSI1MCUiIHkxPSIwJSIgeDI9IjUwJSIgeTI9IjEwMCUiIGlkPSJhIj48c3RvcCBzdG9wLWNvbG9yPSIjRkZGIiBvZmZzZXQ9IjAlIi8+PHN0b3Agc3RvcC1jb2xvcj0iI0YwRjBGMCIgb2Zmc2V0PSIxMDAlIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSIgaWQ9ImIiPjxzdG9wIHN0b3AtY29sb3I9IiNDQTJCMzkiIG9mZnNldD0iMCUiLz48c3RvcCBzdG9wLWNvbG9yPSIjQUMxRjJDIiBvZmZzZXQ9IjEwMCUiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCB4MT0iNTAlIiB5MT0iMCUiIHgyPSI1MCUiIHkyPSIxMDAlIiBpZD0iYyI+PHN0b3Agc3RvcC1jb2xvcj0iIzJDNTZBMiIgb2Zmc2V0PSIwJSIvPjxzdG9wIHN0b3AtY29sb3I9IiMyNDQ4ODkiIG9mZnNldD0iMTAwJSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZmlsbD0idXJsKCNhKSIgZD0iTTAgMGgyMXYxNUgweiIvPjxwYXRoIGZpbGw9InVybCgjYikiIGQ9Ik0wIDBoMjF2NUgweiIvPjxwYXRoIGZpbGw9InVybCgjYykiIGQ9Ik0wIDEwaDIxdjVIMHoiLz48cGF0aCBmaWxsPSJ1cmwoI2EpIiBkPSJNMCA1aDIxdjVIMHoiLz48L2c+PC9zdmc+",
+   "alt": "Nederlands"
+  },
+  {
+   "type": "img",
+   "src": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEiIGhlaWdodD0iMTUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IHgxPSI1MCUiIHkxPSIwJSIgeDI9IjUwJSIgeTI9IjEwMCUiIGlkPSJhIj48c3RvcCBzdG9wLWNvbG9yPSIjRkZGIiBvZmZzZXQ9IjAlIi8+PHN0b3Agc3RvcC1jb2xvcj0iI0YwRjBGMCIgb2Zmc2V0PSIxMDAlIi8+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSIgaWQ9ImIiPjxzdG9wIHN0b3AtY29sb3I9IiMwQTE3QTciIG9mZnNldD0iMCUiLz48c3RvcCBzdG9wLWNvbG9yPSIjMDMwRTg4IiBvZmZzZXQ9IjEwMCUiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCB4MT0iNTAlIiB5MT0iMCUiIHgyPSI1MCUiIHkyPSIxMDAlIiBpZD0iYyI+PHN0b3Agc3RvcC1jb2xvcj0iI0U2MjczRSIgb2Zmc2V0PSIwJSIvPjxzdG9wIHN0b3AtY29sb3I9IiNDRjE1MkIiIG9mZnNldD0iMTAwJSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZmlsbD0idXJsKCNhKSIgZD0iTTAgMGgyMXYxNUgweiIvPjxwYXRoIGZpbGw9InVybCgjYikiIGQ9Ik0tLjAwMiAwaDIxdjE1aC0yMXoiLz48cGF0aCBkPSJNNS4wMDMgMTBILS4wMDJWNWg1LjAwNUwtMi4wODIuMjJsMS4xMTgtMS42NTcgOC45NjIgNi4wNDVWLTFoNXY1LjYwOGw4Ljk2Mi02LjA0NUwyMy4wNzguMjIgMTUuOTkzIDVoNS4wMDV2NWgtNS4wMDVsNy4wODUgNC43OC0xLjExOCAxLjY1Ny04Ljk2Mi02LjA0NVYxNmgtNXYtNS42MDhsLTguOTYyIDYuMDQ1LTEuMTE4LTEuNjU4TDUuMDAzIDEweiIgZmlsbD0idXJsKCNhKSIvPjxwYXRoIGQ9Ik0xNC4xMzYgNC45NThsOS41LTYuMjVhLjI1LjI1IDAgMDAtLjI3NS0uNDE3bC05LjUgNi4yNWEuMjUuMjUgMCAxMC4yNzUuNDE3em0uNzMyIDUuNTIybDguNTE1IDUuNzRhLjI1LjI1IDAgMTAuMjgtLjQxNWwtOC41MTYtNS43NGEuMjUuMjUgMCAwMC0uMjc5LjQxNXpNNi4xNDIgNC41MjZMLTIuNzQtMS40NjFhLjI1LjI1IDAgMDAtLjI4LjQxNUw1Ljg2MyA0Ljk0YS4yNS4yNSAwIDAwLjI3OS0uNDE0em0uNjg1IDUuNDY5bC05Ljg0NSA2LjUzYS4yNS4yNSAwIDEwLjI3Ni40MTZsOS44NDYtNi41MjlhLjI1LjI1IDAgMDAtLjI3Ny0uNDE3eiIgZmlsbD0iI0RCMUYzNSIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZmlsbD0idXJsKCNjKSIgZD0iTS0uMDAyIDloOXY2aDNWOWg5VjZoLTlWMGgtM3Y2aC05eiIvPjwvZz48L3N2Zz4=",
+   "alt": "English"
+  }
+ ],
+ "icons": [
+  "https://jongleren.es/wp-content/uploads/elementor/thumbs/Screenshot-2023-04-11-at-13.13.21-qwpztq0l3l1ominyaeemgdhg8fy1i59ithwofx5708.png",
+  "https://jongleren.es/wp-content/uploads/2023/04/cropped-128-1-150x150.jpg",
+  "https://jongleren.es/wp-content/uploads/2023/04/cropped-128-1-300x300.jpg",
+  "https://jongleren.es/wp-content/uploads/2023/04/cropped-128-1-300x300.jpg"
+ ],
+ "images": [
+  {
+   "src": "https://jongleren.es/wp-content/uploads/2023/03/Elementen-website-2023-1-768x977-1.webp",
+   "alt": "algemene voorwaarden",
+   "w": 768,
+   "h": 977
+  },
+  {
+   "src": "https://jongleren.es/wp-content/uploads/2023/03/Elementen-website-2023-1-768x977-1.webp",
+   "alt": "algemene voorwaarden",
+   "w": 768,
+   "h": 977
+  },
+  {
+   "src": "https://jongleren.es/wp-content/uploads/2023/03/Elementen-website-2023-1-768x977-1.webp",
+   "alt": "algemene voorwaarden",
+   "w": 768,
+   "h": 977
+  },
+  {
+   "src": "https://jongleren.es/wp-content/uploads/elementor/thumbs/Screenshot-2023-04-11-at-13.13.21-qwpztq0l3l1ominyaeemgdhg8fy1i59ithwofx5708.png",
+   "alt": "Screenshot 2023-04-11 at 13.13.21",
+   "w": 400,
+   "h": 300
+  },
+  {
+   "src": "https://jongleren.es/wp-content/uploads/elementor/thumbs/Screenshot-2023-04-11-at-13.15.39-qwpztgm778otef1ltaccrfuual8dd687g7dtn5j4qg.png",
+   "alt": "Screenshot 2023-04-11 at 13.15.39",
+   "w": 400,
+   "h": 300
+  },
+  {
+   "src": "https://jongleren.es/wp-content/uploads/elementor/thumbs/Screenshot-2023-04-11-at-13.19.06-qwpztlbe5ev90gus1udhlwo59il7fnqv4un91jc5vc.png",
+   "alt": "Screenshot 2023-04-11 at 13.19.06",
+   "w": 400,
+   "h": 300
+  },
+  {
+   "src": "https://jongleren.es/wp-content/uploads/elementor/thumbs/colegio-maravillas-spanish-language-school-benalmadena-malaga-1-y0l-rarrlq1luhr3gne4gqisxs2b9ogcrafjaa2ewoevnc.jpg",
+   "alt": "colegio-maravillas-spanish-language-school-benalmadena-malaga-1-y0l",
+   "w": 400,
+   "h": 300
+  },
+  {
+   "src": "https://jongleren.es/wp-content/uploads/elementor/thumbs/Screenshot-2023-06-14-at-14.53.44-qwq0vopx4p0ljjiqlt665slnyotqe1z8pego88urp4.png",
+   "alt": "Screenshot 2023-06-14 at 14.53.44",
+   "w": 400,
+   "h": 300
+  },
+  {
+   "src": "https://jongleren.es/wp-content/uploads/2023/03/JL-Logo.es_-1536x1536.png",
+   "alt": "",
+   "w": 1439,
+   "h": 1439
+  },
+  {
+   "src": "https://jongleren.es/wp-content/uploads/2023/03/Your-Life-Your-Choices-27-1-e1686554683918-1024x538.png",
+   "alt": "Footer",
+   "w": 1024,
+   "h": 538
+  },
+  {
+   "src": "https://jongleren.es/wp-content/uploads/2023/03/JL-Logo.es_-1536x1536.png",
+   "alt": "",
+   "w": 1439,
+   "h": 1439
+  },
+  {
+   "src": "https://jongleren.es/wp-content/uploads/2023/03/Your-Life-Your-Choices-27-1-e1686554683918-1024x538.png",
+   "alt": "Footer",
+   "w": 1024,
+   "h": 538
+  },
+  {
+   "src": "https://jongleren.es/wp-content/uploads/2023/03/JL-Logo.es_-1536x1536.png",
+   "alt": "",
+   "w": 1439,
+   "h": 1439
+  },
+  {
+   "src": "https://jongleren.es/wp-content/uploads/2023/03/Your-Life-Your-Choices-27-1-e1686554683918-1024x538.png",
+   "alt": "Footer",
+   "w": 1024,
+   "h": 538
+  }
+ ],
+ "headings": [
+  "Taalles",
+  "Verbreed jouw talenkennis!​",
+  "Taalscholen in Málaga",
+  "Taalscholen op andere locaties",
+  "Taallessen online",
+  "Had jij wat anders in gedachten?"
+ ],
+ "text": "Ga naar de inhoud\nDownload de JongLeren.es app!\nZakelijk\nOver ons\nContact\nFAQ\nHome\nStudent\nStagevacatures\nBlogs\nErvaringen\nPlan je intake!\nTaalles\nVerbreed jouw talenkennis!​\nWil je jouw buitenlandervaring optimaal maken door de lokale taal te beheersen? Dan zit je goed! Via verschillende partners bieden wij namelijk taallessen aan in zowel Málaga, Marbella als Benálmadena of privélessen online. Je kan kiezen uit Spaanse of Engelse lessen.\nJe kan je direct aanmelden door op één van de onderstaande taalscholen te klikken. Wil je eerst meer informatie of advies ontvangen? Dan kun je per mail of telefonisch contact met ons opnemen.\nGa snel naar…\nTaalscholen in Málaga\nTaalscholen op Andere locaties\nOnline taalles\nTaalscholen in Málaga\nInstituto Picasso - Málaga\nDe taalschool Instituto Picasso is gevestigd midden in het centrum van Málaga. Zij bieden met name intensieve taalcursussen aan die je voor één of meerdere weken kunt volgen, 4 uur per dag. Voorafgaand aan de les vragen ze je om een korte taalles te maken en op basis daarvan wordt je ingedeeld op het juiste niveau, van A1 tot C2.\nNaast de intensieve cursussen zijn er ook mogelijkheden voor taalles op maat.\nBuiten de lessen om organiseren ze ook wekelijks leuke acitviteiten en uitstapjes!\nMeer over Instituto Picasso\nClic - Málaga\nOnze partnerschool CLIC is gelegen in Málaga, vlakbij de beroemde hoofdstraat Calle Larios. Als je Spaans wil leren in het centrum van deze levendige stad aan de Costa del Sol is dit dus de perfecte locatie!\nMet nog 2 andere vestigingen (in Cádiz en Sevilla) heeft deze school al de nodige ervaring met het aanbieden van taalcursussen van hoge kwaliteit. Na de lessen worden er bovendien leuke activiteiten georganiseerd om de stad en de omgeving beter te leren kennen.\nMeer over Clic\nTaalscholen op andere locaties\nTaalschool Enforex - Marbella​​​\nTaalschool Enforex in Marbella is gevestigd in de hoofdstraat van Marbella op slechts 5 minuten van het strand verwijderd. Het is een modern gebouw met 17 leslokalen, een bibliotheek, een gemeenschappelijke ruimte, computers (met internet) en een groot terras.\nHoewel het strand veel aantrekkingskracht zal hebben op de meeste cursisten organiseert de school allerlei activiteiten waaronder stadsbezichtigingen in Marbella en bezoeken aan steden als Sevilla, Ronda, Granada en Málaga.\nMeer over Enforex\nTaalschool Maravillas - Benalmádena​​\nOp 18 kilometer van Málaga vinden we de bekende badplaats Benalmádena met zijn vele restaurantjes, terrassen en winkels. Een leuke plaats voor een stage, taalreis of strandvakantie. Het instituut ligt in het centrum en heeft 13 leslokalen, een multimediaruimte, een bibliotheek en een gezellig terras.\nNaast de standaardprogramma’s van 20 lessen per week zijn er veel bijzondere opties: Andalusisch ambachtswerk, flamenco, Spaans koken en golfen.\nMeer over Maravillas\nTaallessen online\nOnline Taalles\nWil jij vanuit thuis, bijvoorbeeld ter voorbereiding op je stage, aan de slag gaan met het ontwikkelen van je Spaans? Instituto Picasso geeft nu online Spaanse groepslessen, hoe leuk is dat?\nJe krijgt les in het Spaans en met handen en voeten leer je stapsgewijs de taal. Er zullen studenten van over de hele wereld aangesloten zijn bij de groepslessen, zo krijg je toch verschillende meningen, situaties en benaderingen over de onderwerpen die besproken worden.\nMeer over online taalles\nHad jij wat anders in gedachten?\nStaat er niks tussen dat bij jou aansluit? Dat kan. Wij bieden alleen de meeste gekozen opties aan in Zuid-Spanje. Druk op de knop voor meer taalscholen.\nOntdek meer\nStudent:\nStage\nStagevacatures\nTaalles\nCoaching\nBlogs\nErvaringen\nPlan je intake!\nFAQ\nZakelijk:\nOnderwijsprojecten\nStagebedrijf\nIBPV\nContact:\nCalle Peña 21 local\n29012 Málaga\nMálaga, Spanje\nT: +34663157784\nE: info@jongleren.es\nKvK: 95383808\nSchrijf je in voor onze nieuwsbrief & ‘stay tuned’!\nVanaf nu beschikbaar: de JongLeren.es app!\nYoutube\nLinkedin\nTiktok\nInstagram\nWhatsapp\nCopyright © 2026\nDisclaimer\nAlgemene voorwaarden\nPrivacy Policy\nOp onze website maken wij gebruik van cookies, voor het bijhouden van statistieken en voor marketingdoeleinden. Door op 'dat is oké' te klikken geef je aan deze cookies te accepteren. Liever geen cookies? Klik dan op 'ik weiger'.\nLaat me kiezen\nIk weigerDat is oké"
+}
