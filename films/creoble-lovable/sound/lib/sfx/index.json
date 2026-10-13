@@ -1010,16 +1010,6 @@
   "character": "'G\u00e5 online'"
  },
  {
-  "id": "cl-move",
-  "file": "sfx/creoble/cl-move.wav",
-  "category": "swipe",
-  "sync": 0.2,
-  "length": 1.401,
-  "licence": "generated",
-  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
-  "character": "the line moves to the corner"
- },
- {
   "id": "cl-domain",
   "file": "sfx/creoble/cl-domain.wav",
   "category": "pop",

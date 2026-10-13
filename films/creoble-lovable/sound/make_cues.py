@@ -48,7 +48,7 @@ c("cl-oplev", 1893, "Oplev", -4); c("cl-hosting", 1912, "nem hosting", -1); c("c
 c("cl-toggle", 1964, "the switch", -1); c("cl-glow", 1970, "it glows", -3)
 c("cl-panel", 1995, "out to the panel", -5); c("cl-flipview", 2016, "the hosting view wipes in", -6); c("cl-type8", 2019, "typed", -5)
 c("cl-connect", 2034, "Forbind", -2); c("cl-checks", 2038, "checks", -5); c("cl-online", 2071, "online", -2)
-c("cl-gaa", 2077, "Gå online", -3); c("cl-type11", 2077, "typed", -5); c("cl-move", 2108, "to the corner", -7)
+c("cl-gaa", 2077, "Gå online", -3); c("cl-type11", 2077, "typed", -5)
 c("cl-domain", 2130, "med dit eget domæne", -6); c("cl-uden", 2145, "uden teknisk bøvl", -5)
 c("cl-glow-c", 2190, "the glow", -5); c("cl-starter", 2190, "Din hjemmeside starter her", -7); c("cl-skabe", 2231, "Hvad vil du skabe?", -3)
 c("cl-mark", 2285, "the mark", -2); c("cl-wordmark", 2312, "Creoble.", 0); c("cl-url", 2355, "creoble.dk", -4)
@@ -57,7 +57,7 @@ c("cl-mark", 2285, "the mark", -2); c("cl-wordmark", 2312, "Creoble.", 0); c("cl
 BOOST = {"cl-slide": 5, "cl-count": 3, "cl-wave": 3, "cl-bloom": 3, "cl-star": 3, "cl-collage": 3, "cl-push": 4, "cl-laptop": 5, "cl-zoomout": 4, "cl-fold": 4,
          "cl-expand": 3, "cl-steps": 3, "cl-closeup": 3, "cl-type3": 4, "cl-tilt": 4, "cl-learnt": 5, "cl-zoomin": 3, "cl-tiles": 3, "cl-fly": 4, "cl-zoomout2": 4,
          "cl-power": 4, "cl-chips": 3, "cl-type5": 6, "cl-type6": 5, "cl-zoom-card": 3, "cl-zoomout3": 3, "cl-se": 4, "cl-foer": 5, "cl-browser": 3, "cl-shop": 5,
-         "cl-oplev": 3, "cl-type8": 6, "cl-panel": 6, "cl-checks": 6, "cl-move": 8, "cl-type1": 3, "cl-type2": 3, "cl-type4": 3, "cl-type7": 3, "cl-type9": 6, "cl-type10": 3, "cl-type11": 3, "cl-pullback": 3, "cl-snap": 3, "cl-swing": 3, "cl-flipview": 6, "cl-dissolve": 5, "cl-sheen": 5, "cl-swing": 5}
+         "cl-oplev": 3, "cl-type8": 6, "cl-panel": 6, "cl-checks": 6, "cl-type1": 3, "cl-type2": 3, "cl-type4": 3, "cl-type7": 3, "cl-type9": 6, "cl-type10": 3, "cl-type11": 3, "cl-pullback": 3, "cl-snap": 3, "cl-swing": 3, "cl-flipview": 6, "cl-dissolve": 5, "cl-sheen": 5, "cl-swing": 5}
 for e in cues:
     if e["id"] in BOOST: e["db"] = e.get("db", 0) + BOOST[e["id"]]
 

@@ -269,18 +269,16 @@ export const D6: React.FC<{ g: number }> = ({ g }) => {
   const icon = <div style={{ width: 96, height: 96, borderRadius: 48, background: "#F6F3EE", display: "flex", alignItems: "center", justifyContent: "center", transform: "translateY(14px)" }}><Icon name="wrench" size={56} color={C.night} stroke={2.2} /></div>;
   if (g < 2130) {
     const size = 210, n = Math.max(1, Math.min(GAA.length, Math.floor((g - 2077) * GAA.length / 14) + 1)), full = tw(GAA, size, 600);
-    const mv = pr(g, 2104, 12, MOVE);
     return (
       <Night g={g} a={2077} seed={61}>
-        <div style={{ position: "absolute", inset: 0, transform: `translate(${lerp(0, -470, mv)}px, ${lerp(0, -330, mv)}px) scale(${lerp(1, 0.62, mv)})`, transformOrigin: "960px 560px" }}>
-          <div style={{ position: "absolute", left: 960 - full / 2, top: 560 - size * 0.66, fontFamily: F.serif, fontWeight: 600, fontSize: size, color: "#F6F3EE", whiteSpace: "pre", lineHeight: 1.24 }}>
-            {GAA.slice(0, n)}<span style={{ color: C.gTerra, opacity: n < GAA.length || Math.floor(g / 8) % 2 === 0 ? 1 : 0 }}>_</span></div>
-        </div>
+        <div style={{ position: "absolute", left: 960 - full / 2, top: 560 - size * 0.66, fontFamily: F.serif, fontWeight: 600, fontSize: size, color: "#F6F3EE", whiteSpace: "pre", lineHeight: 1.24 }}>
+          {GAA.slice(0, n)}<span style={{ color: C.gTerra, opacity: n < GAA.length || Math.floor(g / 8) % 2 === 0 ? 1 : 0 }}>_</span></div>
       </Night>
     );
   }
-  if (g < 2145) return <Night g={g} a={2077} seed={62}><Flow g={g} size={112} y={260} color="#F6F3EE" words={[{ t: "med", f: 2130 }, { t: "dit", f: 2132 }, { t: "eget", f: 2135 }, { t: "domæne", f: 2138, italic: true }]} /></Night>;
-  const y = lerp(260, 540, pr(g, 2150, 25, MOVE));
+  // hard cuts, every line centred like the reference's "right on the spot" / "or in Github"
+  if (g < 2145) return <Night g={g} a={2077} seed={62}><Flow g={g} size={112} y={540} color="#F6F3EE" words={[{ t: "med", f: 2130 }, { t: "dit", f: 2132 }, { t: "eget", f: 2135 }, { t: "domæne", f: 2138, italic: true }]} /></Night>;
+  const y = 540;
   return <Night g={g} a={2077} seed={63}><Words g={g} size={112} x={960} y={y} color="#F6F3EE" words={[{ t: "uden", f: 2145 }, { t: "", f: 2148, icon, iconW: 96 }, { t: "teknisk", f: 2151 }, { t: "bøvl", f: 2154 }]} n={8} /></Night>;
 };
 

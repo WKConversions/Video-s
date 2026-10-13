@@ -255,7 +255,6 @@ for k, nn in enumerate(["Db5", "Eb5", "F5", "Ab5"]): place(y, tone(NOTE[nn], 0.3
 S("cl-checks", y, "ticker", 0.0, "domain, SSL, hosting, online: checked", rev=0.25)
 S("cl-online", chime(["Bb4", "F5", "Bb5", "Db6"], 0.05, 1.2, 0.5, 0.25), "success", 0.0, "the address goes live", rev=0.4)
 S("cl-gaa", add(thump(95, 50, 0.45, 0.1) * 0.7, whoosh(0.3, 600, 2000, 1.8, 100, 1.2) * 0.3), "impact", 0.0, "'Gå online'", rev=0.2)
-S("cl-move", whoosh(0.4, 2400, 900, 2.0, 101, 1.3), "swipe", 0.2, "the line moves to the corner")
 S("cl-domain", pop(NOTE["F5"], 0.18, 0.3, 102) * 0.7, "pop", 0.0, "'med dit eget domæne'")
 S("cl-uden", add(pop(NOTE["Db5"], 0.18, 0.3, 103) * 0.5, metal(2800, 0.3, 103) * 0.15), "pop", 0.0, "'uden teknisk bøvl' with the wrench")
 S("cl-glow-c", add(tone(NOTE["Bb3"], 2.5, ((1, 1), (1.5, 0.4), (2, 0.3)), d=4) * arc(2.5, 0.7) * 0.4, shimmer(2.0, 104, 2000, 6000, 30) * 0.3), "riser", 0.6, "the warm glow of the mark", rev=0.5)
