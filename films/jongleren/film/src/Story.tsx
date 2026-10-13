@@ -5,7 +5,7 @@
 import React from "react";
 import { AbsoluteFill, Img, staticFile, useCurrentFrame } from "remotion";
 import { T } from "./clock";
-import { Ball, C, CARRY, clamp01, EXPO, LEAVE, mix, Photo, Pill, SMALLPOP, Tick } from "./lib";
+import { Ball, C, CARRY, clamp01, EXPO, GROW, LEAVE, mix, Photo, Pill, SMALLPOP, Tick } from "./lib";
 import { Bloom, breathe, centred, Flip, Iris, Line, off } from "./kinetic";
 import LOGO from "./logo.json";
 
@@ -26,16 +26,18 @@ const routeMid = (i: number) => ({ x: 330 + i * 315, y: 560 });
 // when each dot is ticked
 const TICK = ["w:stelt+0.35", "w:volgen", "w:stageplek+0.35", "w:aangenomen+0.25", "w:spanje2"];
 
-/** A white word line for red fields and photos (the kit's Line is for the white pages). */
-const WhiteLine: React.FC<{ g: number; words: { t: string; at: string; under?: string; mark?: string }[]; x: number; y: number; size: number; weight?: number; out?: string; shadow?: boolean }> = ({ g, words, x, y, size, weight = 900, out, shadow }) => (
-  <div style={{ position: "absolute", left: x, top: y, display: "flex", gap: size * 0.26, whiteSpace: "nowrap", fontFamily: "Roboto", fontWeight: weight, fontSize: size, lineHeight: 1,
+// ink → white, for a word whose red mark grows behind it
+const inkToWhite = (u: number) => { const a = [0x26, 0x23, 0x1f], v = a.map((c) => Math.round(c + (255 - c) * clamp01(u * 1.4))); return `rgb(${v.join(",")})`; };
+/** A white word line for red fields and photos (the kit's Line is for the white pages); ink: dark words for a bright photo. */
+const WhiteLine: React.FC<{ g: number; words: { t: string; at: string; under?: string; mark?: string }[]; x: number; y: number; size: number; weight?: number; out?: string; shadow?: boolean; ink?: boolean }> = ({ g, words, x, y, size, weight = 900, out, shadow, ink }) => (
+  <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${x}px, ${y}px)`, display: "flex", gap: size * 0.26, whiteSpace: "nowrap", fontFamily: "Roboto", fontWeight: weight, fontSize: size, lineHeight: 1,
     letterSpacing: "-0.03em", color: C.white, textShadow: shadow ? "0 4px 24px rgba(0,0,0,0.35)" : undefined }}>
     {words.map((w, i) => {
       const kk = T.k(g, w.at, 0.42);
       const o = out ? T.k(g, off(out, i * 0.035), 0.3, LEAVE) : 0;
       const m = w.mark ? T.k(g, w.mark, 0.32, CARRY) : 0;
       return (
-        <span key={i} style={{ position: "relative", isolation: "isolate", display: "inline-block", opacity: Math.min(1, kk * 1.7) * (1 - o),
+        <span key={i} style={{ position: "relative", isolation: "isolate", display: "inline-block", opacity: Math.min(1, kk * 1.7) * (1 - o), color: ink ? (w.mark ? inkToWhite(m) : C.ink) : undefined,
           transform: `translateY(${((1 - kk) * 0.32 - o * 0.3) * size}px)`, filter: kk < 1 || o > 0 ? `blur(${(1 - kk) * 9 + o * 9}px)` : undefined }}>
           {w.mark && <span style={{ position: "absolute", zIndex: -1, left: -size * 0.1, right: -size * 0.1, top: size * 0.04, bottom: -size * 0.12, borderRadius: size * 0.1,
             background: C.red, transformOrigin: "0 50%", transform: `scaleX(${m})` }} />}
@@ -134,7 +136,7 @@ const turnBall = (i: number) => {
 
 const Turn: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("turn") || g > f("w:plannen+0.4")) return null;
-  const field = k(g, "w:jongleren-0.12", 0.6);                    // the red field grows out of the start ball
+  const field = k(g, "w:jongleren-0.22", 0.75, GROW);             // the red field grows out of the start ball
   const recede = k(g, "intake", 0.5, CARRY);                      // and closes into the first step dot
   const r = field * 2400 * (1 - recede) + (recede > 0 ? 0 : 0);
   const markIn = k(g, "w:jongleren", 0.55);
@@ -143,8 +145,8 @@ const Turn: React.FC<{ g: number }> = ({ g }) => {
   return (
     <AbsoluteFill>
       <Iris x={mix(150, routeBottom(0).x, recede)} y={mix(760, routeBottom(0).y, recede)} r={r} bg={C.red}>
-        <div style={{ position: "absolute", left: TURN_MARK.cx - (900 * sTurn) / 2, top: TURN_MARK.cy - TURN_MARK.h / 2 + (1 - markIn) * 90 - drift(g, "w:jongleren+0.5", 40),
-          opacity: markIn * (1 - markOut), transform: `scale(${(0.9 + 0.1 * markIn + drift(g, "w:jongleren+0.5", 0.05)) * (1 - markOut * 0.3)})` }}>
+        <div style={{ position: "absolute", left: 0, top: 0,
+          opacity: markIn * (1 - markOut), transform: `translate(${TURN_MARK.cx - (900 * sTurn) / 2}px, ${TURN_MARK.cy - TURN_MARK.h / 2 + (1 - markIn) * 90 - drift(g, "w:jongleren+0.5", 40)}px) scale(${(0.9 + 0.1 * markIn + drift(g, "w:jongleren+0.5", 0.05)) * (1 - markOut * 0.3)})` }}>
           <Img src={staticFile("img/jl-mark-white-noballs.png")} style={{ height: TURN_MARK.h }} />
         </div>
         <WhiteLine g={g} x={150 + drift(g, "w:alles+0.4", 50)} y={870} size={76} out="intake-0.1"
@@ -202,7 +204,7 @@ const Route: React.FC<{ g: number; top?: boolean }> = ({ g, top }) => {
   const p0 = pos(0), p4 = pos(4);
   // the red progress follows the ticks; in the summary it draws again from the first question to the last day
   const ticked = TICK.map((t) => k(g, t, 0.35, SMALLPOP));
-  const prog = ticked.slice(0, 4).reduce((a, b) => a + Math.min(1, b), 0) / 4;
+  const prog = TICK.slice(0, 4).reduce((a, t) => a + k(g, off(t, -0.1), 0.55, CARRY), 0) / 4;
   const summary = k(g, "w:tot-0.1", 1.1, CARRY);
   const progShown = g >= f("journey") ? summary : prog;
   return (
@@ -250,8 +252,8 @@ const Intake: React.FC<{ g: number }> = ({ g }) => {
   const talk = (n: number) => 10 + Math.abs(Math.sin(g / 3.1 + n * 1.7)) * 34 * k(g, "w:vertelt-0.2", 0.3) * (1 - k(g, "w:stelt+0.2", 0.3));
   const studyAt = (i: number) => (i === 0 ? "w:wat" : i === 1 ? "w:je4" : "w:studeert");
   return (
-    <div style={{ position: "absolute", left: x - W / 2, top: y - H / 2, width: W, height: H, borderRadius: mix(30, 64, morph), background: mix(0, 1, morph) > 0.5 ? "#1E1C1B" : C.white,
-      transform: `scale(${s * mix(1.08 + dz, 1, morph)})`, boxShadow: "0 40px 90px rgba(38,35,31,0.20)", overflow: "hidden" }}>
+    <div style={{ position: "absolute", left: 0, top: 0, width: W, height: H, borderRadius: mix(30, 64, morph), background: mix(0, 1, morph) > 0.5 ? "#1E1C1B" : C.white,
+      transform: `translate(${x - W / 2}px, ${y - H / 2}px) scale(${s * mix(1.08 + dz, 1, morph)})`, boxShadow: "0 40px 90px rgba(38,35,31,0.20)", overflow: "hidden" }}>
       <div style={{ position: "absolute", inset: mix(0, 14, morph), borderRadius: mix(30, 52, morph), background: C.white, overflow: "hidden", opacity: 1 }}>
         <div style={{ opacity: fade, position: "absolute", inset: 0 }}>
           {/* header */}
@@ -261,10 +263,14 @@ const Intake: React.FC<{ g: number }> = ({ g }) => {
           <div style={{ position: "absolute", left: 48, top: 180, display: "flex", gap: 22, opacity: 1 - call, transform: `translateY(${-call * 60}px)` }}>
             {days.map((d, i) => {
               const on = i === 3 ? pick : 0;
-              return <div key={d} style={{ width: 154, height: 150, borderRadius: 26, background: on > 0.5 ? C.red : C.grey, color: on > 0.5 ? C.white : C.ink,
+              return <div key={d} style={{ position: "relative", width: 154, height: 150, borderRadius: 26, background: C.grey, color: on > 0 ? inkToWhite(on) : C.ink, overflow: "hidden",
                 display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", fontFamily: "Roboto", transform: `scale(${1 + Math.sin(on * Math.PI) * 0.08})` }}>
-                <div style={{ fontWeight: 700, fontSize: 30, opacity: 0.7 }}>{d}</div>
-                <div style={{ fontWeight: 900, fontSize: 48 }}>{on > 0.5 ? "10:00" : "·"}</div>
+                {on > 0 && <div style={{ position: "absolute", inset: 0, background: C.red, clipPath: `circle(${on * 110}px at 50% 50%)` }} />}
+                <div style={{ position: "relative", fontWeight: 700, fontSize: 30, opacity: 0.7 }}>{d}</div>
+                <div style={{ position: "relative", height: 56, width: 154 }}>
+                  <div style={{ position: "absolute", left: 0, right: 0, textAlign: "center", fontWeight: 900, fontSize: 48, opacity: 1 - clamp01(on * 2.5) }}>·</div>
+                  <div style={{ position: "absolute", left: 0, right: 0, textAlign: "center", fontWeight: 900, fontSize: 48, opacity: clamp01(on * 2 - 0.5), transform: `translateY(${(1 - on) * 14}px)` }}>10:00</div>
+                </div>
               </div>;
             })}
           </div>
@@ -320,8 +326,8 @@ const School: React.FC<{ g: number }> = ({ g }) => {
   const inn = k(g, "w:welke-0.15", 0.5), out = k(g, "w:vervolgens-0.1", 0.3, LEAVE);
   const rows = ["w:eisen", "w:jouw2", "w:school+0.12"];
   return (
-    <div style={{ position: "absolute", left: 1210 + (1 - inn) * 900 + out * 900 - drift(g, "w:welke+0.35", 30), top: 330 - drift(g, "w:welke+0.35", 14), width: 520, height: 420, borderRadius: 30, background: C.white,
-      boxShadow: "0 40px 90px rgba(38,35,31,0.22)", transform: `rotate(${3 - inn * 1}deg)`, filter: inn < 0.7 || out > 0 ? `blur(${(0.7 - Math.min(inn, 0.7)) * 12 + out * 14}px)` : undefined }}>
+    <div style={{ position: "absolute", left: 0, top: 0, width: 520, height: 420, borderRadius: 30, background: C.white,
+      boxShadow: "0 40px 90px rgba(38,35,31,0.22)", transform: `translate(${1210 + (1 - inn) * 900 + out * 900 - drift(g, "w:welke+0.35", 30)}px, ${330 - drift(g, "w:welke+0.35", 14)}px) rotate(${3 - inn * 1}deg)`, filter: inn < 0.7 || out > 0 ? `blur(${(0.7 - Math.min(inn, 0.7)) * 12 + out * 14}px)` : undefined }}>
       <div style={{ position: "absolute", left: 40, top: 34, display: "flex", alignItems: "center", gap: 18 }}>
         <svg width="56" height="56" viewBox="0 0 64 64"><path d="M32 10 L60 24 L32 38 L4 24 Z" fill={C.red} /><path d="M16 31 V44 C22 51 42 51 48 44 V31 L32 39 Z" fill={C.red} opacity="0.8" /></svg>
         <div style={{ fontFamily: "Roboto", fontWeight: 900, fontSize: 40, color: C.ink, letterSpacing: "-0.02em" }}>Eisen van school</div>
@@ -364,7 +370,7 @@ const AppPhone: React.FC<{ g: number }> = ({ g }) => {
         <Img src={staticFile("img/jl-mark-white.png")} style={{ height: 130 }} />
       </div>
     )}
-    <div style={{ position: "absolute", left: cx - PHONE.w / 2, top: cy - PHONE.h / 2, width: PHONE.w, height: PHONE.h, transform: `scale(${sc})`,
+    <div style={{ position: "absolute", left: 0, top: 0, width: PHONE.w, height: PHONE.h, transform: `translate(${cx - PHONE.w / 2}px, ${cy - PHONE.h / 2}px) scale(${sc})`,
       borderRadius: 64, background: "#1E1C1B", boxShadow: "0 50px 100px rgba(38,35,31,0.28)", filter: leave > 0 ? `blur(${leave * 14}px)` : undefined }}>
       <div style={{ position: "absolute", inset: 14, borderRadius: 52, background: C.white, overflow: "hidden" }}>
         {/* the store: icon, name, download → ring */}
@@ -387,12 +393,13 @@ const AppPhone: React.FC<{ g: number }> = ({ g }) => {
         {/* the app opens out of its icon: their home screen */}
         {open > 0 && (
           <div style={{ position: "absolute", inset: 0, clipPath: `circle(${open * 900}px at ${icon.x}px ${icon.y}px)` }}>
-            <Img src={staticFile("img/app.png")} style={{ position: "absolute", left: -58, top: -70 - drift(g, "w:app+0.3", 70), width: 508 }} />
+            <Img src={staticFile("img/app.png")} style={{ position: "absolute", left: -58, top: -70, width: 508, transform: `translateY(${-drift(g, "w:app+0.3", 70)}px)` }} />
           </div>
         )}
         {/* a notification: step 2 done */}
         <div style={{ position: "absolute", left: 18, right: 18, top: 18, height: 96, borderRadius: 26, background: C.white, boxShadow: "0 16px 34px rgba(38,35,31,0.22)", zIndex: 3,
-          display: "flex", alignItems: "center", gap: 16, paddingLeft: 18, transform: `translateY(${(1 - k(g, "w:volgen-0.1", 0.45)) * -150 - k(g, "w:wij-0.1", 0.35, LEAVE) * 150}px)` }}>
+          display: "flex", alignItems: "center", gap: 16, paddingLeft: 18, opacity: g >= f("w:volgen-0.1") && g < f("w:wij+0.25") ? 1 : 0,
+          transform: `translateY(${(1 - k(g, "w:volgen-0.1", 0.45)) * -150 - k(g, "w:wij-0.1", 0.35, LEAVE) * 150}px)` }}>
           <div style={{ width: 56, height: 56, borderRadius: 16, background: C.red, display: "flex", alignItems: "center", justifyContent: "center" }}><Tick k={k(g, "w:volgen+0.2", 0.35)} size={44} /></div>
           <div style={{ fontFamily: "Roboto", fontWeight: 700, fontSize: 26, color: C.ink, lineHeight: 1.15 }}>Stap 2 voltooid<br /><span style={{ fontWeight: 500, color: C.soft, fontSize: 22 }}>Volgende: zoektocht</span></div>
         </div>
@@ -455,8 +462,8 @@ const Search: React.FC<{ g: number }> = ({ g }) => {
       <Confetti g={g} />
       {/* the passende stageplek: lands, rings, turns into the invitation, opens into the company */}
       {g >= f(off("w:zoeken", last * gap - 0.05)) && (
-        <div style={{ position: "absolute", left: cx - W / 2 - away * 1500 + (1 - k(g, off("w:zoeken", last * gap - 0.05), 0.45)) * 900, top: cy - H / 2 - away * 260,
-          width: W, height: H, transform: `scale(${(1 - away * 0.45) * (1 + 0.36 * k(g, "w:regelen", 1.9, CARRY) * (1 - expand))})`, transformOrigin: "50% 50%", filter: away > 0 ? `blur(${away * 14}px)` : undefined }}>
+        <div style={{ position: "absolute", left: 0, top: 0,
+          width: W, height: H, transform: `translate(${cx - W / 2 - away * 1500 + (1 - k(g, off("w:zoeken", last * gap - 0.05), 0.45)) * 900}px, ${cy - H / 2 - away * 260}px) scale(${(1 - away * 0.45) * (1 + 0.36 * k(g, "w:regelen", 1.9, CARRY) * (1 - expand))})`, transformOrigin: "50% 50%", filter: away > 0 ? `blur(${away * 14}px)` : undefined }}>
           <Flip k={expand > 0 ? 1 : flip} style={{ width: "100%", height: "100%" }}
             a={<VacancyCard title={VACANCIES[last][0]} city={VACANCIES[last][1]} x={W / 2} y={H / 2} w={W} h={H} ring={ring} />}
             b={<Invite g={g} w={W} h={H} link={link} expand={expand} stamp={stamp} />} />
@@ -468,16 +475,16 @@ const Search: React.FC<{ g: number }> = ({ g }) => {
 
 const Confetti: React.FC<{ g: number }> = ({ g }) => {
   const t = (g - f("w:aangenomen+0.15")) / 30;
-  if (t <= 0 || t > 1.6) return null;
+  if (t <= 0 || t > 1.05) return null;
   const cols = [C.red, C.pink, C.terracotta, C.white, C.leaf];
   return (
     <>
-      {Array.from({ length: 44 }, (_, i) => {
+      {Array.from({ length: 22 }, (_, i) => {
         const a = (i * 137.5 * Math.PI) / 180, sp = 700 + ((i * 53) % 9) * 110;
         const vx = Math.cos(a) * sp, vy = -Math.abs(Math.sin(a)) * sp - 300;
         const x = 1480 + vx * t, y = 160 + vy * t + 0.5 * 1500 * t * t;
-        return <div key={i} style={{ position: "absolute", left: x, top: y, width: 18, height: 11, borderRadius: 3, background: cols[i % cols.length],
-          transform: `rotate(${i * 47 + t * 720 * (i % 2 ? 1 : -1)}deg)`, opacity: 1 - clamp01((t - 1.0) / 0.6), boxShadow: "0 2px 4px rgba(0,0,0,0.12)" }} />;
+        return <div key={i} style={{ position: "absolute", left: x, top: y, width: 24, height: 14, borderRadius: 4, background: cols[i % cols.length],
+          transform: `rotate(${i * 47 + t * 720 * (i % 2 ? 1 : -1)}deg)`, opacity: 1 - clamp01((t - 0.6) / 0.45), boxShadow: "0 2px 4px rgba(0,0,0,0.12)" }} />;
       })}
     </>
   );
@@ -558,8 +565,8 @@ const Housing: React.FC<{ g: number }> = ({ g }) => {
         <AbsoluteFill style={{ background: `rgba(255,255,255,${veil})` }} />
         <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 34%)", opacity: k(g, "w:vinden-0.05", 0.5) }} />
       </AbsoluteFill>
-      <div style={{ position: "absolute", left: 960 - 560, top: 540 - 110 + (1 - inn) * 500 - dy, width: 1120, height: 220, borderRadius: 34, background: C.white, opacity: inn * (1 - out),
-        boxShadow: "0 40px 90px rgba(38,35,31,0.22)", display: "flex", alignItems: "center", gap: 30, paddingLeft: 44, boxSizing: "border-box", transform: `scale(${1 - out * 0.2})` }}>
+      <div style={{ position: "absolute", left: 0, top: 0, width: 1120, height: 220, borderRadius: 34, background: C.white, opacity: inn * (1 - out),
+        boxShadow: "0 40px 90px rgba(38,35,31,0.22)", display: "flex", alignItems: "center", gap: 30, paddingLeft: 44, boxSizing: "border-box", transform: `translate(${960 - 560}px, ${540 - 110 + (1 - inn) * 500 - dy}px) scale(${1 - out * 0.2})` }}>
         <div style={{ width: 110, height: 110, borderRadius: 55, background: C.red, display: "flex", alignItems: "center", justifyContent: "center" }}>
           <svg width="60" height="60" viewBox="0 0 60 60"><path d="M30 8 L54 28 H47 V52 H13 V28 H6 Z" fill={C.white} /><rect x="25" y="36" width="10" height="16" fill={C.red} /></svg>
         </div>
@@ -568,12 +575,12 @@ const Housing: React.FC<{ g: number }> = ({ g }) => {
           <div style={{ fontFamily: "Roboto", fontWeight: 500, fontSize: 30, color: C.soft, marginTop: 6 }}>Indien nodig</div>
         </div>
       </div>
-      <div style={{ position: "absolute", left: 1404 - 74, top: 540 - 42 + (1 - inn) * 500 - dy, width: 148, height: 84, borderRadius: 42, background: on > 0.5 ? C.red : "#D7D2CD", opacity: inn * (1 - out) }} />
+      <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${1404 - 74}px, ${540 - 42 + (1 - inn) * 500 - dy}px)`, width: 148, height: 84, borderRadius: 42, background: on > 0.5 ? C.red : "#D7D2CD", opacity: inn * (1 - out) }} />
       <Ball x={knob.x} y={540 + (1 - inn) * 500 - dy} r={34} color={C.white} style={{ opacity: inn * (1 - out), boxShadow: "0 4px 10px rgba(0,0,0,0.18)" }} />
       <Line g={g} x={150} y={110} size={84} weight={900}
         words={[{ t: "Huisvesting", at: "w:huisvesting", accent: true }, { t: "in", at: "w:huisvesting+0.15" }, { t: "de", at: "w:huisvesting+0.22" }, { t: "buurt.", at: "w:huisvesting+0.3", under: "w:huisvesting+0.45" }]} />
       {/* the key pin lands on the house */}
-      <div style={{ position: "absolute", left: hp.x - 50, top: hp.y - 136 - (1 - pin) * 320, opacity: pin > 0 ? 1 : 0, transform: `scale(${0.6 + 0.4 * pin})`, transformOrigin: "50% 100%" }}>
+      <div style={{ position: "absolute", left: 0, top: 0, opacity: pin > 0 ? 1 : 0, transform: `translate(${hp.x - 50}px, ${hp.y - 136 - (1 - pin) * 320}px) scale(${0.6 + 0.4 * pin})`, transformOrigin: "50% 100%" }}>
         <svg width="100" height="136" viewBox="0 0 88 120"><path d="M44 0 C20 0 0 20 0 44 C0 78 44 120 44 120 C44 120 88 78 88 44 C88 20 68 0 44 0 Z" fill={C.red} /><path d="M44 22 L66 41 H60 V62 H28 V41 H22 Z" fill={C.white} /></svg>
       </div>
     </AbsoluteFill>
@@ -607,8 +614,8 @@ const Spain: React.FC<{ g: number }> = ({ g }) => {
     <AbsoluteFill>
       <Iris x={pinX} y={pinY} r={open * 2400} bg={C.warm}>
         <Bloom g={g} x={1500} y={220} r={380} color="#F9D5D6" k={shrink} />
-        <div style={{ position: "absolute", left: cx - cw / 2, top: cy - ch / 2, width: cw, height: ch, overflow: "hidden", borderRadius: shrink * 28,
-          boxShadow: shrink > 0 ? `0 40px 90px rgba(38,35,31,${0.22 * shrink})` : undefined, transform: `rotate(${-2 * shrink}deg)`, filter: dealOut > 0 ? `blur(${dealOut * 12}px)` : undefined }}>
+        <div style={{ position: "absolute", left: 0, top: 0, width: cw, height: ch, overflow: "hidden", borderRadius: shrink * 28,
+          boxShadow: shrink > 0 ? `0 40px 90px rgba(38,35,31,${0.22 * shrink})` : undefined, transform: `translate(${cx - cw / 2}px, ${cy - ch / 2}px) rotate(${-2 * shrink}deg)`, filter: dealOut > 0 ? `blur(${dealOut * 12}px)` : undefined }}>
           <Img src={staticFile("img/hero.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 62%",
             transform: `scale(${z})`, transformOrigin: `${(HERO_ORIGIN[0] / 1920) * 100}% ${(HERO_ORIGIN[1] / 1080) * 100}%` }} />
           {/* the suitcase from the hook, arrived: ringed (only while the photo is full frame) */}
@@ -617,10 +624,10 @@ const Spain: React.FC<{ g: number }> = ({ g }) => {
               pathLength={1} strokeDasharray={1} strokeDashoffset={1 - ring} />
           </svg>
         </div>
-        <WhiteLine g={g} x={140} y={130} size={110} shadow out="w:ook2-0.1" words={[{ t: "Eenmaal", at: "w:eenmaal" }, { t: "in", at: "w:in2" }, { t: "Spanje?", at: "w:spanje2", mark: "w:spanje2+0.15" }]} />
+        <WhiteLine g={g} x={140} y={130} size={110} ink out="w:ook2-0.1" words={[{ t: "Eenmaal", at: "w:eenmaal" }, { t: "in", at: "w:in2" }, { t: "Spanje?", at: "w:spanje2", mark: "w:spanje2+0.15" }]} />
         {/* the team beside you */}
         <Photo src="img/team.jpg" w={760} h={560} pos="50% 40%" zoom={1.04 + 0.04 * team + drift(g, "w:staan", 0.035)}
-          style={{ left: 1380 - 380 + (1 - team) * 900 - dealOut * 1700 + drift(g, "w:staan+0.4", 30) * (1 - dealOut), top: 560 - 280 - dealOut * 200, transform: `rotate(${2 - dealOut * 4}deg)`, opacity: team > 0 ? 1 : 0,
+          style={{ left: 0, top: 0, transform: `translate(${1380 - 380 + (1 - team) * 900 - dealOut * 2100 + drift(g, "w:staan+0.4", 30) * (1 - dealOut)}px, ${560 - 280 - dealOut * 200}px) rotate(${2 - dealOut * 4}deg)`, opacity: team > 0 && dealOut < 1 ? 1 : 0,
             filter: team < 0.6 || dealOut > 0 ? `blur(${(0.6 - Math.min(team, 0.6)) * 14 + dealOut * 12}px)` : undefined }}>
           <div style={{ position: "absolute", left: 24, bottom: 22 }}><Pill text="Team JongLeren · Málaga" size={26} style={{ position: "relative" }} /></div>
         </Photo>
@@ -649,11 +656,12 @@ const Support: React.FC<{ g: number }> = ({ g }) => {
         const w = mix(500, 180, toDot), h = mix(600, 180, toDot);
         const up = drift(g, T.s(c.at) + 0.55, 40 + i * 10);
         const hide = k(g, off("close", -0.2 + i * 0.05), 0.35, LEAVE);
-        const x = mix(c.x + (1 - d) * 1100, dot.x, toDot), y = mix(c.y + (1 - d) * 500 - up, dot.y, toDot) - hide * 160;
+        const row = 270 * (2 - k(g, SUPPORT[1].at, 0.6, CARRY) - k(g, SUPPORT[2].at, 0.6, CARRY));   // 1 card: centred; 2: a pair; 3: the row
+        const x = mix(c.x + row + (1 - d) * 1100, dot.x, toDot), y = mix(c.y + (1 - d) * 500 - up, dot.y, toDot) - hide * 160;
         if (d <= 0) return null;
         return (
-          <div key={c.label} style={{ position: "absolute", left: x - w / 2, top: y - h / 2, width: w, height: h, borderRadius: mix(28, 90, toDot), overflow: "hidden", background: C.white,
-            transform: `rotate(${mix(c.r + (1 - d) * 12, 0, toDot)}deg) scale(${1 + 0.18 * Math.sin(Math.PI * k(g, off("w:tot", -0.1 + (2 + i) * 0.22), 0.3))})`,
+          <div key={c.label} style={{ position: "absolute", left: 0, top: 0, width: w, height: h, borderRadius: mix(28, 90, toDot), overflow: "hidden", background: C.white,
+            transform: `translate(${x - w / 2}px, ${y - h / 2}px) rotate(${mix(c.r + (1 - d) * 12, 0, toDot)}deg) scale(${1 + 0.18 * Math.sin(Math.PI * k(g, off("w:tot", -0.1 + (2 + i) * 0.22), 0.3))})`,
             boxShadow: toDot > 0.9 ? `0 20px 40px rgba(38,35,31,0.22), 0 0 0 ${8 * k(g, off("w:tot", -0.1 + (2 + i) * 0.22), 0.3, SMALLPOP)}px ${C.red}` : "0 40px 80px rgba(38,35,31,0.22)", opacity: 1 - hide,
             filter: d < 0.6 ? `blur(${(0.6 - d) * 16}px)` : undefined }}>
             <Img src={staticFile(c.src)} style={{ position: "absolute", left: 0, top: 0, width: "100%", height: mix(470, 180, toDot), objectFit: "cover", objectPosition: c.pos,
@@ -716,7 +724,7 @@ const Close: React.FC<{ g: number }> = ({ g }) => {
       </AbsoluteFill>
       <div style={{ position: "absolute", left: 960 - 560, top: 150, width: 1120, height: 650, borderRadius: 40, background: C.white,
         boxShadow: "0 50px 120px rgba(38,35,31,0.30)", transform: `scale(${mix(0.85, 1, card)})`, opacity: card }} />
-      <div style={{ position: "absolute", left, top: top + (1 - mark) * 50, opacity: mark, transform: `scale(${0.94 + 0.06 * mark})` }}>
+      <div style={{ position: "absolute", left: 0, top: 0, opacity: mark, transform: `translate(${left}px, ${top + (1 - mark) * 50}px) scale(${0.94 + 0.06 * mark})` }}>
         <Img src={staticFile("img/jl-mark.png")} style={{ height: END_MARK.h }} />
       </div>
       {LOGO.balls.map((b, i) => {
@@ -728,7 +736,7 @@ const Close: React.FC<{ g: number }> = ({ g }) => {
         const r = mix(26, b[2] * s, u);
         return <Ball key={i} x={x} y={y} r={r} color={u > 0.85 ? C.white : C.red} />;
       })}
-      <Img src={staticFile("img/jl-word.png")} style={{ position: "absolute", left: 960 - 200, top: 548 + (1 - word) * 30, width: 400, opacity: word }} />
+      <Img src={staticFile("img/jl-word.png")} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${960 - 200}px, ${548 + (1 - word) * 30}px)`, width: 400, opacity: word }} />
       <Line g={g} x={centred(TAG, 66, 960, 700)} y={660} size={66} weight={700} dy={0.6} words={TAG} />
     </AbsoluteFill>
   );

@@ -36,7 +36,7 @@ export type W = { t: string; at: string; accent?: boolean; color?: string; serif
  *  into a blur (Qwilr's "It's both." exit). Words, not sentences: six or fewer to a line. */
 export const Line: React.FC<{ g: number; words: W[]; x: number; y: number; size: number; weight?: number; color?: string; out?: string; outDur?: number;
   dy?: number; ls?: number; split?: boolean; style?: React.CSSProperties }> = ({ g, words, x, y, size, weight = 500, color = KIT.ink, out, outDur = 0.3, dy = 0.32, ls = -0.045, split = false, style }) => (
-  <div style={{ position: "absolute", left: x, top: y, display: "flex", gap: size * 0.26, whiteSpace: "nowrap", fontFamily: KIT.font, fontWeight: weight, fontSize: size,
+  <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${x}px, ${y}px)`, display: "flex", gap: size * 0.26, whiteSpace: "nowrap", fontFamily: KIT.font, fontWeight: weight, fontSize: size,
     lineHeight: 1, letterSpacing: `${ls}em`, ...style }}>
     {words.map((w, i) => {
       const k = T.k(g, w.at, 0.42);

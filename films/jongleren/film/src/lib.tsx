@@ -14,6 +14,8 @@ export const KIT = { font: "Roboto", serif: "Roboto", ink: C.ink, word: C.red, m
 // Motion identity: signature arrival (expo-out), carried moves, departures; a small overshoot for small things.
 export const EXPO = Easing.bezier(0.16, 1, 0.3, 1);
 export const CARRY = Easing.bezier(0.65, 0, 0.35, 1);
+// a colour field growing out of a ball: starts slow enough to be seen leaving the ball, then fills
+export const GROW = Easing.bezier(0.45, 0, 0.2, 1);
 export const LEAVE = Easing.bezier(0.55, 0, 0.9, 0.4);
 export const SMALLPOP = Easing.bezier(0.3, 1.35, 0.6, 1);
 
