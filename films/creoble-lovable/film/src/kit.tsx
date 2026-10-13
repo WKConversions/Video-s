@@ -43,12 +43,17 @@ export const Glow: React.FC<{ x: number; y: number; w: number; h?: number; color
   };
 
 export type Word = { t: string; f: number; color?: string; italic?: boolean; grad?: string; icon?: React.ReactNode; iconW?: number };
+/** Words start easing in this many frames before their frame, so a word is readable on its frame and a shot opens on
+ *  type already forming (the reference never cuts to an empty frame). */
+export const LEAD = 4;
+const lead = (ws: Word[]) => ws.map((w) => ({ ...w, f: w.f - LEAD }));
 /** A line of words laid out where the whole line will stand; each word blurs in and settles over `n` frames. */
 export const Words: React.FC<{ g: number; words: Word[]; size: number; x: number; y: number; color?: string; family?: string; weight?: number;
   align?: "center" | "left"; n?: number; rise?: number; blur?: number; grad?: string; opacity?: number; spacing?: number; shadow?: string; gap?: number }> =
-  ({ g, words, size, x, y, color = C.ink, family = F.serif, weight = 500, align = "center", n = 9, rise = 0.16, blur = 14, grad, opacity = 1, spacing = -0.02, shadow, gap }) => {
+  ({ g, words: raw, size, x, y, color = C.ink, family = F.serif, weight = 500, align = "center", n = 9, rise = 0.16, blur = 14, grad, opacity = 1, spacing = -0.02, shadow, gap }) => {
+    const words = lead(raw);
     const sp = gap ?? tw(" ", size, weight, family) * 1.0;
-    const ws = words.map((w) => w.icon ? (w.iconW ?? size) : tw(w.t, size, weight, family, w.italic) * (1 + spacing * 0) + spacing * size * w.t.length);
+    const ws = words.map((w) => w.icon || w.iconW ? (w.iconW ?? size) : tw(w.t, size, weight, family, w.italic) + spacing * size * w.t.length);
     const total = ws.reduce((a, b) => a + b, 0) + sp * (words.length - 1);
     let cx = align === "center" ? x - total / 2 : x;
     const x0 = cx;
@@ -147,7 +152,8 @@ export const gradText = (grad = GRAD): React.CSSProperties => ({ backgroundImage
 
 /** A centred line that grows word by word: the words already there slide to make room (7 f), the new one blurs in. */
 export const Flow: React.FC<{ g: number; words: Word[]; size: number; x?: number; y: number; color?: string; family?: string; weight?: number; grad?: string; n?: number; shadow?: string }> =
-  ({ g, words, size, x = 960, y, color = C.ink, family = F.serif, weight = 500, grad, n = 9, shadow }) => {
+  ({ g, words: raw, size, x = 960, y, color = C.ink, family = F.serif, weight = 500, grad, n = 9, shadow }) => {
+    const words = lead(raw);
     const vis = words.filter((w) => g >= w.f);
     if (!vis.length) return null;
     const sp = tw(" ", size, weight, family);

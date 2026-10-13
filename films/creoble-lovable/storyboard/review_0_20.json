@@ -1,0 +1,197 @@
+[
+ {
+  "time": "1.37-1.60",
+  "severity": "high",
+  "kind": "mismatch-with-reference",
+  "issue": "The \"Mange\" close-up hard-cuts in one frame (about 1.47 s) to a dot grid you can barely see. The reference does a continuous pull-back over about 0.3 s: the neighbouring spheres fade to pale, the camera zooms out, and the hero sphere shrinks to a small saturated dot. That dot sits in an edge-to-edge grid of pale dots that clears from the centre, and it then becomes the inline icon of the next line. In the replica the grid is at roughly 8% opacity, stops short of the frame edges, and its centre dot is pale sand, so 1.5 s reads as a near-blank frame.",
+  "fix": "Animate a zoom-out from the Mange sphere (scale about 6x to 1x, 1.25 to 1.55 s, ease-in-out) instead of cutting. Draw the grid edge to edge at 35-60% opacity in pale terracotta and sage. Keep the centre sphere saturated terracotta and shrink it to icon size, then carry or morph it into the <> disc that sits after \"kode\" in \"tror de skal kunne kode ● først\", so the sphere-to-icon match cut survives."
+ },
+ {
+  "time": "2.45-2.85",
+  "severity": "high",
+  "kind": "bug",
+  "issue": "The line \"tror de skal kunne kode først\" disappears at about 2.45 s. The reference holds its line until about 2.72 s. The replica then shows about 0.4 s of empty cream with only a gradient caret, which fades in, grows and shrinks again before the first letter appears. This is an empty frame the reference does not have.",
+  "fix": "Hold the \"tror … først\" line until about 2.72 s, then cut straight to the first typed letter with the caret (\"f|\"). Remove the caret-only beat and its grow/shrink animation."
+ },
+ {
+  "time": "2.75-3.20",
+  "severity": "high",
+  "kind": "mismatch-with-reference",
+  "issue": "The extreme close-up of the typing is missing. The reference types \"k → know → knows → knows how\" at huge scale (x-height about 20% of frame height, camera tracking the caret), then snaps out to normal size at about 3.2 s for \"knows how to|\". The replica types \"for at bygge…\" at its final small size the whole time (cap height about 6% of frame), so the camera move never happens.",
+  "fix": "Type \"for at\" and \"for at bygge\" at about 3.5x scale, with the camera panning to keep the caret about 60% across the frame. At about 3.2 s, snap or zoom out quickly (2-3 frames) to the normal-size line for \"hjem…\". Keep the sage-terracotta caret at the matching big scale while zoomed in."
+ },
+ {
+  "time": "7.00-8.75",
+  "severity": "high",
+  "kind": "mismatch-with-reference",
+  "issue": "The Creoble logo lockup is far smaller than the reference: about 39% of frame width at 7.5 s and 46-49% at 8.0-8.5 s, against 70-83% for the reference lockup. On entry at 7.0 s the whole logo fades in at low opacity. The reference lockup is large from the first frame, its letters ripple in one by one, rising from below with blur, and the icon turns in 3D at about 7.75-7.9 s.",
+  "fix": "Scale the C mark and the \"Creoble.\" wordmark about 1.7x, so the lockup spans about 75% of width at 7.5 s and pushes in to about 82% by 8.6 s. Bring the letters in staggered from left to right (about 0.2 s total), each rising about 20 px with blur from 8 to 0, while the C mark is already at full opacity. Add a Y-axis flip of the C mark around 7.8 s. Make the mint-to-terracotta arc rise higher, to about 70-80% of frame height by 8.0 s, as in the reference."
+ },
+ {
+  "time": "8.75-9.65",
+  "severity": "high",
+  "kind": "bug",
+  "issue": "The cut to the dark scene happens at 8.75 s, slightly early, and the first frames are empty (only the two sphere glows). \"AI\" appears faint and blurred at about 9.0 s and is only crisp at about 9.2 s. \"hjemmesider\" is likewise an unreadable blur at 9.5 s. The reference lands on crisp \"Start building\" on the cut frame (8.85 s) and swaps words with hard cuts every 0.25 s and no blur, so the script cues (\"AI bygger\" at 9.0, \"hjemmesider\" at 9.5) are missed by about 0.2 s each.",
+  "fix": "Cut at about 8.85 s directly to \"AI bygger\" at full opacity and fully sharp, and hard-cut to \"hjemmesider\" at 9.5 s. Drop the blur-in or limit it to 1-2 frames. Hold the logo until about 8.83 s, with the reference's slight scale-down at 8.6-8.8 s."
+ },
+ {
+  "time": "4.97-5.25",
+  "severity": "medium",
+  "kind": "bug",
+  "issue": "After the chevrons there is a fully blank cream frame at about 5.0 s. The edge gradients then fade in from flat cream, and \"men\" blurs in at very low contrast, so 5.0-5.2 s is effectively empty. The reference cuts at about 4.9 s straight to crisp \"but that's about\" (the first three words at once), with the gradient-edge background already in place.",
+  "fix": "Cut at about 4.9 s directly to \"men det ændrer\" at full ink, with the terracotta, sand and sage edge blobs already visible. Then bring \"sig\" in rising from below, as the reference does with \"to\", and fade \"nu\" in from grey, as the reference does with \"change\"."
+ },
+ {
+  "time": "5.60-6.00",
+  "severity": "medium",
+  "kind": "mismatch-with-reference",
+  "issue": "The payoff word \"nu\" stays light grey (about 40% ink) and never reaches full ink. The whole line then hard-cuts out at about 5.98 s, with another blank frame. In the reference, \"change\" goes from grey to full black by about 5.85 s, holds, and the line then scales down as it exits (about 6.0-6.15 s) while \"Meet\" begins. The replica line is also undersized: about 39% of frame width and cap height about 6%, against about 64% and 9% in the reference.",
+  "fix": "Ease \"nu\" to full ink by 5.85 s and hold it. Exit with a scale to about 85% plus a fade over 5.95-6.15 s that overlaps the Mød blur-in, with no blank frame. Scale the whole 5-6 s line up about 1.5x so it spans about 60% of the frame width."
+ },
+ {
+  "time": "6.25-6.95",
+  "severity": "medium",
+  "kind": "mismatch-with-reference",
+  "issue": "\"Mød\" is small (about 28% of frame width) and static: its size is identical at 6.5 and 6.875 s. The reference \"Meet\" fills about 52% of the width when it settles and shrinks steadily by about 25% between 6.4 and 6.9 s, a slow pull-out, after its letters arrive one by one with blur.",
+  "fix": "Scale \"Mød\" up about 1.8x, to about 50% of the frame width at 6.45 s. Add a continuous ease-out scale-down to about 75% by 6.95 s. Keep the per-letter blur entrance and the sage-to-terracotta gradient fill."
+ },
+ {
+  "time": "0.00-1.00",
+  "severity": "medium",
+  "kind": "mismatch-with-reference",
+  "issue": "The opening sphere field does not match. The reference opens on a dense, irregularly scattered field of about 35 small spheres, each with a two-tone gradient. It holds that wide shot for about 0.25 s, then zooms into a tightly packed cluster where the spheres almost touch and fill the frame. The replica uses a regular 3-row grid of about 16 single-colour spheres and is already zoomed in at 0.125 s. Its zoomed view is sparse: one centre sphere, two side spheres, large cream gaps, and the outer spheres heavily defocused.",
+  "fix": "Randomise sphere positions and sizes, and use about 30-35 smaller spheres with terracotta-to-sand and sage-to-cream internal gradients. Hold the wide shot to about 0.25 s, then zoom. Pack the zoomed cluster at about 1.1x diameter spacing, so 10-12 spheres fill the frame edge to edge, and reduce the blur on the outer spheres to a light softness like the reference's."
+ },
+ {
+  "time": "8.75-10.00",
+  "severity": "medium",
+  "kind": "mismatch-with-reference",
+  "issue": "The dark scene is composed more weakly than the reference. The reference spheres are large: their visible chords are about 55% of frame width, with crisp lit rims, and they drift apart diagonally while growing. Its background has a coloured haze (deep purple from the bottom right, a red glow at the top left). The replica spheres are about 35-38% chord with a soft halo, on a flat near-black green. The words are also small (\"AI bygger\" is about 18% of width against about 32% for \"Start building\") and light in weight.",
+  "fix": "Enlarge both spheres about 1.5x and give them a sharp rim highlight instead of a halo. Add a forest-green haze from the bottom right and a dim terracotta glow at the top left. Scale the words about 1.4x and set them in Fraunces at weight 500-600, so they carry like the bold reference words on dark."
+ },
+ {
+  "time": "3.60-4.90",
+  "severity": "low",
+  "kind": "mismatch-with-reference",
+  "issue": "The < > chevrons span only about 50% of frame height; the reference braces span about 82%. The reference also gives the braces a quick shrink and inward pull at about 4.7-4.85 s just before the cut. The replica chevrons hold static into the cut.",
+  "fix": "Scale the chevrons so they span about 80% of frame height, keeping the slow inward drift. Add a scale-down of about 15% with a move inward over 4.7-4.9 s before cutting to \"men det ændrer\"."
+ },
+ {
+  "time": "3.30-3.55",
+  "severity": "low",
+  "kind": "mismatch-with-reference",
+  "issue": "The reference typing has a glitch-scramble character at the caret before the last letters resolve (\"co}|\", \"cod#|\", in accent colour). The replica types cleanly, with no scramble.",
+  "fix": "On the last 2-3 letters of \"hjemmesider\", show a random glyph (#, }, <) in terracotta at the caret for 1-2 frames before the real letter appears."
+ },
+ {
+  "time": "9.75-10.00",
+  "severity": "low",
+  "kind": "mismatch-with-reference",
+  "issue": "The replica hard-cuts from the dark sphere scene to the orange \"hurtigere\" gradient at 10.0 s. In the reference, the two spheres keep growing and drifting toward each other and meet with a white starburst lens flare (about 10.3 s), which motivates the cut.",
+  "fix": "From 9.75 s, grow the sage and terracotta spheres toward the frame centre so their edges meet at about 10.0 s. Flash a cream four-point starburst at the contact point (3-4 frames) and transition into the \"hurtigere\" gradient from that flash."
+ },
+ {
+  "summary": "The 0–10 s window follows the reference beat order and the Creoble re-theming works: sage, terracotta and cream; Fraunces; a gradient caret; < > in place of { }; the Mød → Creoble logo → dark sphere scene. The weak points are transitions and scale. Several transitions are hard cuts or near-empty frames where the reference moves continuously: the sphere pull-back at 1.47 s, a caret-only gap at 2.45–2.85 s, a blank frame at about 5.0 s, a blank frame at about 5.98 s, and an empty dark frame at 8.75–9.0 s. The extreme close-up typing at 2.75–3.2 s is missing. The key type and logo moments are undersized at about 50–60% of reference scale (the 5–6 s line, \\\"Mød\\\", and the logo lockup at 7–8.7 s). The dark-scene words blur in instead of hard-cutting, so \\\"AI bygger\\\" and \\\"hjemmesider\\\" are unreadable at their script cues (9.0 and 9.5 s). All script text is present and spelled correctly, and the inline <> icon after \\\"kode\\\" is there. I checked this against 8 fps paired sheets and 30 fps tiles cut from /home/user/Video-s/films/creoble-lovable/film/out/draft.mp4 and ref/lovable-2.mp4."
+ },
+ {
+  "time": "9.95-10.47",
+  "severity": "high",
+  "kind": "mismatch-with-reference",
+  "issue": "The replica cuts from the dark sphere shot to the orange gradient at about 9.95 s, roughly 0.5 s early. The reference holds the sphere shot until 10.4: the two spheres drift together, touch, and throw a white 4-point flare at the contact point (10.40–10.43). It then bursts into the gradient through an expanding star-shaped flash (10.47). The replica has no collision, flare or star burst. It is a plain cut, followed by about 3 frames of empty orange gradient (9.97–10.03).",
+  "fix": "Keep the sage and terracotta spheres converging until about 10.4 s. Add a cream/white 4-point lens flare where they touch at 10.40. Reveal the terracotta gradient through an expanding 4-point star burst at 10.43–10.47, with the sphere colours in the corners as in the reference, instead of the hard cut at 9.95."
+ },
+ {
+  "time": "10.0-10.5",
+  "severity": "high",
+  "kind": "mismatch-with-reference",
+  "issue": "\"hurtigere\" is crisp for only about 0.25 s (10.2–10.43) and then vanishes between 10.43 and 10.47 without easing (it pops off). It is followed by about 0.15 s of empty gradient. It is also smaller and higher than the reference hero word: about 45% of frame width at y≈40%. The reference \"Faster\" is the hero beat: about 60% of frame width, vertically centred, held 10.47–11.15 with a slow scale-up.",
+  "fix": "Bring \"hurtigere\" in on the star burst at about 10.45. Scale it to about 60% of frame width, centre it vertically, and hold it to about 11.1 with a slow 1.0→1.05 push. Remove the hard pop-off at 10.45 and cut or fade it out only when the next phrase starts."
+ },
+ {
+  "time": "10.6-11.6",
+  "severity": "medium",
+  "kind": "mismatch-with-reference",
+  "issue": "\"end\" sits alone, small and thin, on an otherwise empty gradient for about 1 s (10.6–11.55). In the reference the hero word fills this time, and the small-phrase build (\"than\" → \"than ever\" → \"than ever before\") only starts at 11.2. In the replica this stretch reads as dead air.",
+  "fix": "Fill 10.45–11.1 with the enlarged \"hurtigere\" hold, then start the build: \"end\" ≈11.15, \"du\" ≈11.5, \"troede\" ≈11.8, \"muligt\" ≈12.0. That keeps \"du troede muligt\" on its 11.5–12.5 script cue. If \"end\" has to stay on its 10.5 cue, bring it in under the still-visible \"hurtigere\" rather than on an empty frame."
+ },
+ {
+  "time": "10.6-12.45",
+  "severity": "low",
+  "kind": "readability",
+  "issue": "\"end du troede muligt\" is set in a light/regular-weight Fraunces at about 70% of the reference phrase size, cream on mid-terracotta. Contrast and weight are noticeably weaker than the reference's bold white \"than ever before\".",
+  "fix": "Raise the Fraunces weight to about 500–600 and increase the size by about 30% to match the reference phrase's cap height. Optionally add a faint darker glow behind the text so it holds on the orange."
+ },
+ {
+  "time": "12.43-12.65",
+  "severity": "high",
+  "kind": "bug",
+  "issue": "The replica hard-cuts from the orange gradient to an empty cream frame at about 12.45, and the frame stays blank for about 5 frames (12.47–12.6) before \"Hele\" blurs in. In the reference, the gradient's bottom glow blooms upward into white over 12.35–12.5 and washes out \"than ever before\" as it drifts up. \"Join\" then rises from below the frame centre into position (12.5–12.65) with motion blur.",
+  "fix": "Replace the cut with a cream bloom: expand the bottom cream glow of the terracotta gradient upward over 12.30–12.50 while \"end du troede muligt\" drifts up and fades. Slide \"Hele\" up from about +30% frame height with motion blur to centre by 12.65, so no blank frame remains."
+ },
+ {
+  "time": "13.55-13.9",
+  "severity": "high",
+  "kind": "bug",
+  "issue": "Overlapping text: \"tager\" slides in on top of \"processen\". At 13.70 the \"t\" collides with the final \"n\", and at 13.77 the line reads \"processentager\" with no word space. The full line \"Hele processen tager\" is never on screen at once, because \"Hele\" fades out (13.5–13.6) as \"tager\" enters. The reference shows the complete line \"Join other builders\" at 13.3–13.55, then dissolves its letters from both outer ends toward the centre (13.6–13.85).",
+  "fix": "Lay out \"Hele processen tager\" as one centred line with normal word spacing, with \"tager\" fully in by about 13.35. Hold the full line to about 13.55, then fade or blur its letters out from both ends inward over 13.6–13.85, matching the reference's exit. Do not slide \"tager\" over \"processen\"."
+ },
+ {
+  "time": "13.93-14.2",
+  "severity": "medium",
+  "kind": "mismatch-with-reference",
+  "issue": "At 14.0 the frame is blank, then \"under\" just blurs in place. The reference builds \"creating\" from the centre outward with a staggered per-letter vertical bounce (\"rea\" 13.93 → \"reati\" 14.0 → \"creatin\" with letters on different baselines at 14.0). It settles by about 14.2.",
+  "fix": "Animate \"under\" letter by letter from the centre (\"d\") outward. Give each letter a ±10–15 px vertical offset that springs to the baseline with a slight overshoot, staggered about 25 ms apart, starting at 13.9 and settled by 14.2. Remove the empty frame at 14.0."
+ },
+ {
+  "time": "14.8-16.45",
+  "severity": "medium",
+  "kind": "mismatch-with-reference",
+  "issue": "The counter starts about 0.2 s late (the reference cuts to the counter and a partly drawn line at 14.8; the replica holds \"under\" to 14.95 and its line starts as a stub at 15.0). The countdown also lands on \"5\" at 15.6, and the number and line then freeze for about 0.8 s, with the line stopped at about 55% width. In the reference the number keeps ticking with an ease-out until 16.3, and the line's glowing head keeps travelling right to about 85% width until 16.4.",
+  "fix": "Cut to the counter at 14.8 with the line already about 20% drawn. Spread the 51→5 count over 14.8–16.25 with a strong ease-out (fast at first, then slowing so the last steps 7→6→5 land around 15.9–16.25). Keep drawing the line until 16.4 so its head ends at about 85% of frame width, under the number."
+ },
+ {
+  "time": "14.8-16.45",
+  "severity": "low",
+  "kind": "style",
+  "issue": "The replica's line graph is much lighter than the reference's: a thin stroke (about half the reference's thickness), a tiny dot head, and no coloured haze. The reference has a thick glowing stroke, a bright white glowing dot at the head, and a soft colour glow filling the area under the curve in the lower left.",
+  "fix": "Roughly double the stroke width and keep the sage→terracotta gradient. Add a soft blurred sage/terracotta glow fill under the curve from the left edge, and make the head a cream dot with an outer glow (about 2× the current size)."
+ },
+ {
+  "time": "17.85-18.15",
+  "severity": "high",
+  "kind": "mismatch-with-reference",
+  "issue": "The camera push into the last word is missing. In the reference, \"day\" scales up hard over 17.85–18.1, a pink sparkle appears inside the counter of the \"a\", and that counter becomes the window the flower appears in (18.2). The replica holds \"nødvendig\" static and hard-cuts at about 17.95 to a finished flower on a sage background.",
+  "fix": "From about 17.85, scale \"nødvendig\" up quickly with an ease-in (about 1×→3× by 18.1), centred on a letter counter (the bowl of \"d\" or the \"ø\"). Fade a small terracotta 4-point sparkle into that counter, then use the counter as the mask that opens onto the terracotta flower at about 18.15–18.2 instead of cutting."
+ },
+ {
+  "time": "18.0-18.4",
+  "severity": "high",
+  "kind": "bug",
+  "issue": "The flower stays at about 50% of frame height and barely grows from 18.0 to 18.33. At about 18.35 it is hard-cut away to a flat peach background with a small dark star, so the flower pops off without easing. In the reference the flower keeps growing until its petals push past the frame edges (18.37–18.43). The star grows on top of the flower's pale centre, which becomes the backdrop for the star.",
+  "fix": "Scale the flower continuously from about 0.6× to about 1.8× frame height over 18.15–18.5 with an ease-in, so its petals leave the frame. Let the cream/peach centre of the flower become the background the star sits on. Delete the cut to the flat peach plate."
+ },
+ {
+  "time": "18.4-19.0",
+  "severity": "medium",
+  "kind": "mismatch-with-reference",
+  "issue": "The star-mask reveal runs about 0.25–0.3 s early: the replica shows the website inside the star from 18.4–18.5 and the site is full-frame by 18.7. In the reference the star first grows on the flower (18.4–18.55), opens onto the website only from about 18.6, and expands until the site fills the frame at about 19.0.",
+  "fix": "Grow the star (solid) on the flower over 18.4–18.55. Start the website reveal inside it at about 18.6, and expand the star mask with an ease-in so the site reaches full frame at about 19.0."
+ },
+ {
+  "time": "18.7-19.4",
+  "severity": "low",
+  "kind": "mismatch-with-reference",
+  "issue": "The showcase site's hero is static: \"Ro mellem træerne\", the subtitle and the button are all fully visible from the moment the site is revealed. In the reference the hero headline animates in, with the first line fading up and the second line (\"Innovation\") fading in 19.0–19.2.",
+  "fix": "Fade in the site hero after the reveal: \"Ro mellem\" 18.85–19.0, \"træerne\" 19.0–19.2 with a small upward drift, then the subtitle and button about 0.1 s later."
+ },
+ {
+  "time": "19.45-20.0",
+  "severity": "high",
+  "kind": "mismatch-with-reference",
+  "issue": "The zoom-out starts too early and goes too far, and the grid repeats sites. By 19.5 the replica has shrunk the site to about 0.9× with a dark border. By 19.7 it is a uniform 3×3 grid of equal cards, and by 19.9 the hero is just one of nine equal tiles. Duplicate sites are visible at the same time: Nordskov Hytter \"Ro mellem træerne\" appears twice (centre and middle-right) and \"Rengøring du kan stole på\" twice. In the reference the hero is still almost full frame at 19.5 and only shrinks to about 50% width by 19.9, staying the dominant top-layer centre card. The sites around it form a mixed-size masonry collage of all different sites, cropped at the frame edges.",
+  "fix": "Hold the hero at full frame until about 19.5, then ease the zoom-out so the hero card is about 50% of frame width at 19.9, layered above the others with a soft shadow. Arrange the surrounding sites as a varied masonry collage (different card sizes, some cropped at the edges) and give every visible tile a different site, with no repeats in view."
+ },
+ {
+  "summary": "The 10–20 s window follows the script's text and timing well. The Danish words are correct and land close to their cues. The main problems are transitions that the replica turns into hard cuts, plus one overlapping-text bug.\n\n- **Missing transitions, each replaced by a cut:**\n  - At 9.95 there is no sphere collision, flare or star burst.\n  - At 12.45 there is no cream bloom and no slide-up for \"Hele\"; about 5 blank cream frames appear instead.\n  - At 17.95 there is no push into the letter counter of the last word.\n  - At 18.35 the flower is cut away instead of growing out of frame.\n- **\"hurtigere\" (10.0–10.5):** it is the hero word but is too small and too brief, and it pops off at 10.45. \"end\" then sits alone on an empty gradient for about 1 s.\n- **Overlapping text (13.6–13.8):** \"tager\" slides over \"processen\" and reads \"processentager\". The full line \"Hele processen tager\" is never on screen at once, and the reference's dissolve from both ends inward is missing.\n- **\"under\" entrance (13.9–14.2):** it blurs in place instead of the reference's centre-out, per-letter bounce.\n- **Counter (14.8–16.45):** it starts about 0.2 s late, lands on 5 at 15.6 and then freezes for about 0.8 s, while the reference keeps counting with an ease-out to 16.3. The line graph is thinner and has no glow.\n- **Showcase (18.4–20.0):** the star reveal runs about 0.3 s early. The zoom-out starts too early and goes too far, into a uniform 3×3 grid with duplicate sites (Nordskov Hytter twice, \"Rengøring\" twice). The reference keeps a dominant hero card at about 50% width inside a varied masonry collage.\n\nI checked these at 10 fps and on 30 fps frames around each transition, extracted from /home/user/Video-s/films/creoble-lovable/film/out/video.mp4 against ref/lovable-2.mp4."
+ }
+]

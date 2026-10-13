@@ -1,0 +1,1 @@
+moving in 99% of frames (target 90+), median 4.5% of the frame in motion (information, not a target: K.B v3, approved, 1.7; references 0.5–6.6), longest still 0.27 s (target 0.8 or less)

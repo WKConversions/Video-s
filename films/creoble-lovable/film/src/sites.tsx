@@ -123,7 +123,7 @@ export const SiteCard: React.FC<{ s: SiteSpec }> = ({ s }) => {
       {nav}
       <div style={{ position: "absolute", left: 40, right: 40, top: 110, ...head, fontSize: 230, lineHeight: 0.9, color: s.accent, letterSpacing: -10, whiteSpace: "nowrap" }}>{s.name.split(" ")[0]}</div>
       <div style={{ position: "absolute", right: 60, bottom: 60, width: 760, height: 420, borderRadius: 30, overflow: "hidden" }}><Media src={s.img} /></div>
-      <div style={{ position: "absolute", left: 60, bottom: 90, width: 520, fontSize: 30, color: s.ink, fontWeight: 600, lineHeight: 1.25 }}>{s.line}</div>
+      <div style={{ position: "absolute", left: 60, bottom: 160, width: 520, fontSize: 30, color: s.ink, fontWeight: 600, lineHeight: 1.25 }}>{s.line}</div>
     </div>
   );
   return (

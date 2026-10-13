@@ -12,43 +12,55 @@
  "sfx": [
   {
    "id": "cl-field",
-   "frame": 2,
+   "frame": 7,
    "note": "the ball field zooms in",
    "db": -3
   },
   {
    "id": "cl-mange",
-   "frame": 12,
+   "frame": 10,
    "note": "Mange",
    "db": -4
   },
   {
+   "id": "cl-pullback",
+   "frame": 41,
+   "note": "the field pulls back",
+   "db": -3
+  },
+  {
    "id": "cl-icon",
-   "frame": 62,
-   "note": "the code icon",
+   "frame": 58,
+   "note": "the dot becomes the code icon",
    "db": -5
   },
   {
    "id": "cl-caret",
-   "frame": 76,
+   "frame": 82,
    "note": "the caret grows",
    "db": -6
   },
   {
    "id": "cl-type1",
-   "frame": 86,
+   "frame": 82,
    "note": "typed",
    "db": -1
   },
   {
+   "id": "cl-snap",
+   "frame": 96,
+   "note": "the close-up snaps back",
+   "db": -2
+  },
+  {
    "id": "cl-brackets",
-   "frame": 110,
+   "frame": 106,
    "note": "the brackets close",
    "db": -3
   },
   {
    "id": "cl-nu",
-   "frame": 165,
+   "frame": 166,
    "note": "nu",
    "db": -8
   },
@@ -65,6 +77,12 @@
    "db": -1
   },
   {
+   "id": "cl-flip",
+   "frame": 235,
+   "note": "the mark flips",
+   "db": -6
+  },
+  {
    "id": "cl-riser",
    "frame": 263,
    "note": "into the drop",
@@ -72,81 +90,105 @@
   },
   {
    "id": "cl-drop",
-   "frame": 264,
+   "frame": 265,
    "note": "the drop",
    "db": -2
   },
   {
    "id": "cl-ai",
-   "frame": 270,
+   "frame": 267,
    "note": "AI bygger",
    "db": -7
   },
   {
    "id": "cl-sites",
-   "frame": 285,
+   "frame": 288,
    "note": "hjemmesider",
    "db": -7
   },
   {
+   "id": "cl-flare",
+   "frame": 299,
+   "note": "the spheres meet",
+   "db": -4
+  },
+  {
    "id": "cl-fast",
-   "frame": 302,
+   "frame": 300,
    "note": "hurtigere",
    "db": -3
   },
   {
+   "id": "cl-cream",
+   "frame": 372,
+   "note": "the cream bloom",
+   "db": -6
+  },
+  {
    "id": "cl-hele",
-   "frame": 378,
+   "frame": 375,
    "note": "Hele",
    "db": -6
   },
   {
    "id": "cl-slide",
-   "frame": 407,
+   "frame": 395,
    "note": "processen tager",
    "db": -2
   },
   {
+   "id": "cl-dissolve",
+   "frame": 406,
+   "note": "the line dissolves",
+   "db": -1
+  },
+  {
    "id": "cl-under",
-   "frame": 420,
+   "frame": 415,
    "note": "under",
    "db": -5
   },
   {
-   "id": "cl-count",
-   "frame": 450,
-   "note": "the count",
-   "db": -3
-  },
-  {
    "id": "cl-wave",
-   "frame": 456,
+   "frame": 444,
    "note": "the wave",
    "db": -3
   },
   {
+   "id": "cl-count",
+   "frame": 444,
+   "note": "the count",
+   "db": -3
+  },
+  {
    "id": "cl-five",
-   "frame": 470,
+   "frame": 487,
    "note": "5",
    "db": -3
   },
   {
    "id": "cl-min",
-   "frame": 495,
+   "frame": 496,
    "note": "minutter",
    "db": -8
   },
   {
    "id": "cl-kode",
-   "frame": 510,
+   "frame": 511,
    "note": "kode",
    "db": -6
   },
   {
    "id": "cl-noedv",
-   "frame": 525,
+   "frame": 526,
    "note": "n\u00f8dvendig",
    "db": -3
+  },
+  {
+   "id": "cl-letter",
+   "frame": 546,
+   "note": "through the d",
+   "db": -4
   },
   {
    "id": "cl-bloom",
@@ -162,7 +204,7 @@
   },
   {
    "id": "cl-collage",
-   "frame": 592,
+   "frame": 590,
    "note": "the wall of sites",
    "db": -1
   },
@@ -180,7 +222,7 @@
   },
   {
    "id": "cl-laptop",
-   "frame": 652,
+   "frame": 650,
    "note": "the laptop",
    "db": 0
   },
@@ -192,7 +234,7 @@
   },
   {
    "id": "cl-type2",
-   "frame": 698,
+   "frame": 700,
    "note": "typed",
    "db": -1
   },
@@ -209,32 +251,38 @@
    "db": -2
   },
   {
+   "id": "cl-sheen",
+   "frame": 767,
+   "note": "the sheen",
+   "db": -2
+  },
+  {
    "id": "cl-fold",
-   "frame": 770,
+   "frame": 780,
    "note": "the pill folds",
    "db": -2
   },
   {
    "id": "cl-expand",
-   "frame": 786,
+   "frame": 797,
    "note": "the builder opens",
    "db": 0
   },
   {
    "id": "cl-steps",
-   "frame": 788,
+   "frame": 798,
    "note": "the questions answered",
    "db": -3
   },
   {
    "id": "cl-built",
-   "frame": 836,
+   "frame": 834,
    "note": "built",
    "db": -3
   },
   {
    "id": "cl-closeup",
-   "frame": 843,
+   "frame": 840,
    "note": "close on the prompt",
    "db": -4
   },
@@ -264,37 +312,43 @@
   },
   {
    "id": "cl-tilt",
-   "frame": 950,
+   "frame": 945,
    "note": "the tilt",
    "db": -2
   },
   {
    "id": "cl-recolor",
-   "frame": 960,
+   "frame": 966,
    "note": "the recolour sweep",
    "db": -3
   },
   {
    "id": "cl-done",
-   "frame": 985,
+   "frame": 988,
    "note": "F\u00e6rdig",
    "db": -3
   },
   {
+   "id": "cl-swing",
+   "frame": 1012,
+   "note": "the builder swings away",
+   "db": 0
+  },
+  {
    "id": "cl-chatbot",
-   "frame": 1020,
+   "frame": 1016,
    "note": "Tilf\u00f8j din chatbot",
    "db": -5
   },
   {
    "id": "cl-ptr1",
-   "frame": 1026,
+   "frame": 1022,
    "note": "Kunde",
    "db": -8
   },
   {
    "id": "cl-ptr2",
-   "frame": 1032,
+   "frame": 1026,
    "note": "Chatbot",
    "db": -8
   },
@@ -306,13 +360,13 @@
   },
   {
    "id": "cl-card",
-   "frame": 1082,
+   "frame": 1080,
    "note": "the card",
    "db": -5
   },
   {
    "id": "cl-type4",
-   "frame": 1084,
+   "frame": 1081,
    "note": "typed",
    "db": -1
   },
@@ -324,19 +378,19 @@
   },
   {
    "id": "cl-save",
-   "frame": 1104,
+   "frame": 1100,
    "note": "Gem",
    "db": -2
   },
   {
    "id": "cl-zoomin",
-   "frame": 1116,
+   "frame": 1110,
    "note": "zoom in",
    "db": -3
   },
   {
    "id": "cl-tiles",
-   "frame": 1125,
+   "frame": 1117,
    "note": "the tiles",
    "db": -1
   },
@@ -348,7 +402,7 @@
   },
   {
    "id": "cl-zoomout2",
-   "frame": 1178,
+   "frame": 1190,
    "note": "out to the builder",
    "db": -1
   },
@@ -360,25 +414,25 @@
   },
   {
    "id": "cl-med",
-   "frame": 1260,
+   "frame": 1249,
    "note": "Med",
    "db": -5
   },
   {
    "id": "cl-klik",
-   "frame": 1273,
+   "frame": 1261,
    "note": "\u00e9t klik",
    "db": -4
   },
   {
    "id": "cl-power",
-   "frame": 1283,
+   "frame": 1275,
    "note": "the power icon",
    "db": 1
   },
   {
    "id": "cl-chips",
-   "frame": 1298,
+   "frame": 1292,
    "note": "the chips",
    "db": -3
   },
@@ -390,19 +444,19 @@
   },
   {
    "id": "cl-open-chat",
-   "frame": 1371,
+   "frame": 1366,
    "note": "open the chat",
    "db": -2
   },
   {
    "id": "cl-chat-open",
-   "frame": 1382,
+   "frame": 1370,
    "note": "the chat opens",
    "db": -5
   },
   {
    "id": "cl-bot1",
-   "frame": 1388,
+   "frame": 1375,
    "note": "welcome",
    "db": -6
   },
@@ -456,13 +510,13 @@
   },
   {
    "id": "cl-card2",
-   "frame": 1498,
+   "frame": 1497,
    "note": "the bouquet card",
    "db": -6
   },
   {
    "id": "cl-zoom-card",
-   "frame": 1511,
+   "frame": 1508,
    "note": "close on the card",
    "db": -3
   },
@@ -486,32 +540,38 @@
   },
   {
    "id": "cl-zoomout3",
-   "frame": 1568,
-   "note": "out to the builder",
+   "frame": 1575,
+   "note": "the whip out to the builder",
    "db": -1
   },
   {
    "id": "cl-se",
-   "frame": 1622,
+   "frame": 1625,
    "note": "Se resultatet",
    "db": 0
   },
   {
    "id": "cl-helt",
-   "frame": 1635,
+   "frame": 1638,
    "note": "helt",
    "db": -3
   },
   {
    "id": "cl-gratis",
-   "frame": 1650,
+   "frame": 1652,
    "note": "gratis",
    "db": -2
   },
   {
+   "id": "cl-type9",
+   "frame": 1667,
+   "note": "f\u00f8r du betaler noget, typed",
+   "db": 1
+  },
+  {
    "id": "cl-foer",
-   "frame": 1670,
-   "note": "f\u00f8r du betaler noget",
+   "frame": 1706,
+   "note": "the bloom",
    "db": -2
   },
   {
@@ -522,13 +582,13 @@
   },
   {
    "id": "cl-buycard",
-   "frame": 1742,
+   "frame": 1737,
    "note": "the purchase card",
    "db": -5
   },
   {
    "id": "cl-type7",
-   "frame": 1744,
+   "frame": 1738,
    "note": "typed",
    "db": -2
   },
@@ -546,31 +606,37 @@
   },
   {
    "id": "cl-browser",
-   "frame": 1810,
-   "note": "the browser",
+   "frame": 1815,
+   "note": "the browser pulls back",
    "db": -1
   },
   {
    "id": "cl-shop",
-   "frame": 1862,
-   "note": "in the shop",
+   "frame": 1852,
+   "note": "the laptop on the desk",
    "db": 0
   },
   {
    "id": "cl-oplev",
-   "frame": 1900,
+   "frame": 1893,
    "note": "Oplev",
    "db": -1
   },
   {
    "id": "cl-hosting",
-   "frame": 1920,
+   "frame": 1912,
    "note": "nem hosting",
    "db": -1
   },
   {
+   "id": "cl-type10",
+   "frame": 1912,
+   "note": "typed",
+   "db": -2
+  },
+  {
    "id": "cl-toggle",
-   "frame": 1966,
+   "frame": 1964,
    "note": "the switch",
    "db": -1
   },
@@ -581,46 +647,58 @@
    "db": -3
   },
   {
-   "id": "cl-type8",
-   "frame": 2000,
-   "note": "typed",
-   "db": -2
+   "id": "cl-panel",
+   "frame": 1995,
+   "note": "out to the panel",
+   "db": 1
   },
   {
-   "id": "cl-panel",
-   "frame": 2008,
-   "note": "out to the panel",
-   "db": -1
+   "id": "cl-flipview",
+   "frame": 2016,
+   "note": "the hosting view wipes in",
+   "db": 0
+  },
+  {
+   "id": "cl-type8",
+   "frame": 2019,
+   "note": "typed",
+   "db": 1
   },
   {
    "id": "cl-connect",
-   "frame": 2026,
+   "frame": 2034,
    "note": "Forbind",
    "db": -2
   },
   {
    "id": "cl-checks",
-   "frame": 2034,
+   "frame": 2038,
    "note": "checks",
    "db": 1
   },
   {
    "id": "cl-online",
-   "frame": 2060,
+   "frame": 2071,
    "note": "online",
    "db": -2
   },
   {
    "id": "cl-gaa",
-   "frame": 2100,
+   "frame": 2077,
    "note": "G\u00e5 online",
    "db": -3
   },
   {
-   "id": "cl-move",
-   "frame": 2122,
-   "note": "to the corner",
+   "id": "cl-type11",
+   "frame": 2077,
+   "note": "typed",
    "db": -2
+  },
+  {
+   "id": "cl-move",
+   "frame": 2108,
+   "note": "to the corner",
+   "db": 1
   },
   {
    "id": "cl-domain",
@@ -630,7 +708,7 @@
   },
   {
    "id": "cl-uden",
-   "frame": 2148,
+   "frame": 2145,
    "note": "uden teknisk b\u00f8vl",
    "db": -5
   },
@@ -648,13 +726,13 @@
   },
   {
    "id": "cl-skabe",
-   "frame": 2238,
+   "frame": 2231,
    "note": "Hvad vil du skabe?",
    "db": -3
   },
   {
    "id": "cl-mark",
-   "frame": 2282,
+   "frame": 2285,
    "note": "the mark",
    "db": -2
   },

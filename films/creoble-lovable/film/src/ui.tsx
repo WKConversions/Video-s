@@ -22,8 +22,8 @@ export const PromptBox: React.FC<{ g: number; text?: string; placeholder?: strin
   ({ g, text = "", placeholder = "Spørg Creoble…", caret = true, sendPress = 0, w = PROMPT.w, h = PROMPT.h, dark = false }) => (
     <div style={{ width: w, height: h, borderRadius: 18, background: dark ? C.panel : "#FFFFFF", border: `1.5px solid ${dark ? "#33403B" : C.line}`, boxSizing: "border-box",
       boxShadow: "0 10px 30px -18px rgba(20,30,26,0.4)", position: "relative", fontFamily: F.ui }}>
-      <div style={{ position: "absolute", left: 20, top: 18, right: 20, fontSize: 20, lineHeight: 1.4, color: text ? (dark ? "#F2F1EC" : C.ink) : C.faint }}>
-        {text || placeholder}{caret && <Caret g={g} h={22} color={dark ? "#fff" : C.sageDeep} />}
+      <div style={{ position: "absolute", left: 20, top: 18, right: 20, fontSize: 20, lineHeight: 1.4, color: text ? (dark ? "#F2F1EC" : C.ink) : "#8E8B85" }}>
+        {!text && caret && <Caret g={g} h={22} color={dark ? "#fff" : C.sageDeep} />}{text || placeholder}{text && caret && <Caret g={g} h={22} color={dark ? "#fff" : C.sageDeep} />}
       </div>
       <div style={{ position: "absolute", left: 16, bottom: 16, display: "flex", gap: 8, alignItems: "center", fontSize: 15, color: dark ? "#C9CFCB" : C.muted }}>
         <div style={{ width: 34, height: 34, borderRadius: 17, border: `1.5px solid ${dark ? "#46524D" : C.line}`, display: "flex", alignItems: "center", justifyContent: "center" }}><Icon name="plus" size={18} color={dark ? "#C9CFCB" : C.muted} /></div>
@@ -113,15 +113,17 @@ const TopIcons: React.FC<{ k: number }> = ({ k }) => (
 
 /** The chat window on the shop's site. */
 export type Bubble = { from: "bot" | "me"; text: React.ReactNode; k: number; card?: number; cardPress?: number; done?: number };
-export const ChatWindow: React.FC<{ g: number; bubbles: Bubble[]; input?: string; caret?: boolean; dots?: number; sendPress?: number; w?: number; h?: number }> =
-  ({ g, bubbles, input = "", caret = false, dots = 0, sendPress = 0, w = 560, h = 760 }) => (
+export const ChatWindow: React.FC<{ g: number; bubbles: Bubble[]; input?: string; caret?: boolean; dots?: number; sendPress?: number; w?: number; h?: number; top?: boolean }> =
+  ({ g, bubbles, input = "", caret = false, dots = 0, sendPress = 0, w = 560, h = 760, top = false }) => (
     <div style={{ width: w, height: h, borderRadius: 28, background: "#FFFFFF", overflow: "hidden", position: "relative", fontFamily: F.ui, boxShadow: "0 40px 90px -30px rgba(60,20,30,0.45), 0 2px 8px rgba(0,0,0,0.08)" }}>
       <div style={{ height: 96, background: C.rose, display: "flex", alignItems: "center", gap: 14, padding: "0 24px", color: "#fff" }}>
         <div style={{ width: 52, height: 52, borderRadius: 26, background: "rgba(255,255,255,0.18)", display: "flex", alignItems: "center", justifyContent: "center" }}><Icon name="flower" size={30} color="#fff" stroke={2} /></div>
         <div><div style={{ fontFamily: F.serif, fontSize: 24, fontWeight: 500 }}>Blomsterhuset Rosa</div>
           <div style={{ fontSize: 15, opacity: 0.85, display: "flex", alignItems: "center", gap: 6 }}><span style={{ width: 9, height: 9, borderRadius: 5, background: "#9BE3B5", display: "inline-block" }} />Svarer med det samme</div></div>
       </div>
-      <div style={{ position: "absolute", left: 20, right: 20, top: 110, bottom: 96, display: "flex", flexDirection: "column", justifyContent: "flex-end", gap: 12 }}>
+      <div style={{ position: "absolute", left: 20, right: 20, top: 110, bottom: 96, overflow: "hidden" }}>
+      {/* starts at the top; once it overflows, the newest message stays in view (anchored at the bottom, at least as tall as the area) */}
+      <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, minHeight: "100%", display: "flex", flexDirection: "column", justifyContent: top ? "flex-start" : "flex-end", gap: 12 }}>
         {bubbles.filter((b) => b.k > 0).map((b, i) => (
           <div key={i} style={{ alignSelf: b.from === "me" ? "flex-end" : "flex-start", maxWidth: w * 0.78, opacity: clamp01(b.k * 1.6), transform: `translateY(${(1 - clamp01(b.k)) * 18}px)` }}>
             <div style={{ padding: "13px 17px", borderRadius: 20, borderBottomRightRadius: b.from === "me" ? 6 : 20, borderBottomLeftRadius: b.from === "bot" ? 6 : 20,
@@ -131,6 +133,7 @@ export const ChatWindow: React.FC<{ g: number; bubbles: Bubble[]; input?: string
         ))}
         {dots > 0 && <div style={{ alignSelf: "flex-start", padding: "16px 20px", borderRadius: 20, background: C.blush, display: "flex", gap: 7 }}>
           {[0, 1, 2].map((i) => <div key={i} style={{ width: 10, height: 10, borderRadius: 5, background: C.rose, opacity: 0.35 + 0.65 * Math.max(0, Math.sin(g * 0.45 - i * 0.9)) }} />)}</div>}
+      </div>
       </div>
       <div style={{ position: "absolute", left: 16, right: 16, bottom: 16, height: 64, borderRadius: 32, background: "#F6F1EF", display: "flex", alignItems: "center", padding: "0 10px 0 22px", gap: 10 }}>
         <div style={{ flex: 1, fontSize: 18, color: input ? C.plum : "#A8999C" }}>{input || "Skriv en besked…"}{caret && <Caret g={g} h={20} color={C.rose} />}</div>

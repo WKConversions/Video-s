@@ -1098,5 +1098,135 @@
   "licence": "generated",
   "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
   "character": "creoble.dk"
+ },
+ {
+  "id": "cl-pullback",
+  "file": "sfx/creoble/cl-pullback.wav",
+  "category": "whoosh",
+  "sync": 0.18,
+  "length": 1.451,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the camera pulls back into the dot grid"
+ },
+ {
+  "id": "cl-snap",
+  "file": "sfx/creoble/cl-snap.wav",
+  "category": "swipe",
+  "sync": 0.1,
+  "length": 1.221,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the close-up snaps back to the line"
+ },
+ {
+  "id": "cl-flip",
+  "file": "sfx/creoble/cl-flip.wav",
+  "category": "swipe",
+  "sync": 0.12,
+  "length": 1.301,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the mark turns in 3D"
+ },
+ {
+  "id": "cl-flare",
+  "file": "sfx/creoble/cl-flare.wav",
+  "category": "riser",
+  "sync": 0.28,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the spheres meet in a flare"
+ },
+ {
+  "id": "cl-cream",
+  "file": "sfx/creoble/cl-cream.wav",
+  "category": "riser",
+  "sync": 0.42,
+  "length": 1.451,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the gradient blooms into cream"
+ },
+ {
+  "id": "cl-dissolve",
+  "file": "sfx/creoble/cl-dissolve.wav",
+  "category": "swipe",
+  "sync": 0.12,
+  "length": 1.351,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the line dissolves from its ends"
+ },
+ {
+  "id": "cl-letter",
+  "file": "sfx/creoble/cl-letter.wav",
+  "category": "riser",
+  "sync": 0.36,
+  "length": 1.381,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the push through the d onto the flower"
+ },
+ {
+  "id": "cl-sheen",
+  "file": "sfx/creoble/cl-sheen.wav",
+  "category": "swipe",
+  "sync": 0.12,
+  "length": 1.301,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "a sheen wipes the prompt"
+ },
+ {
+  "id": "cl-swing",
+  "file": "sfx/creoble/cl-swing.wav",
+  "category": "whoosh",
+  "sync": 0.25,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the builder swings away"
+ },
+ {
+  "id": "cl-flipview",
+  "file": "sfx/creoble/cl-flipview.wav",
+  "category": "swipe",
+  "sync": 0.1,
+  "length": 1.301,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "the preview turns into the hosting view"
+ },
+ {
+  "id": "cl-type9",
+  "file": "sfx/creoble/cl-type9.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 1.701,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'f\u00f8r du betaler noget': typed"
+ },
+ {
+  "id": "cl-type10",
+  "file": "sfx/creoble/cl-type10.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 1.501,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'nem hosting': typed, heavy keys"
+ },
+ {
+  "id": "cl-type11",
+  "file": "sfx/creoble/cl-type11.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 1.501,
+  "licence": "generated",
+  "source": "generated for the Creoble film (creoble_sfx.py), royalty-free",
+  "character": "'G\u00e5 online': typed"
  }
 ]

@@ -265,6 +265,22 @@ S("cl-mark", add(swell(0.4, NOTE["Bb4"], 107) * 0.6, thump(80, 40, 0.5, 0.15) * 
 S("cl-wordmark", add(shimmer(0.8, 108, 3000, 9000, 70, True) * 0.5, chime(["Bb4", "Db5", "F5", "Bb5", "F6"], 0.04, 2.0, 0.9, 0.25) * 0.5), "success", 0.0, "Creoble.", rev=0.55)
 S("cl-url", add(click(5600, 2600, 0.008, 109) * 0.5, blip(NOTE["Bb5"], 0.12, 0.2) * 0.3), "tap", 0.0, "creoble.dk", rev=0.2)
 
+# ---- the transitions the reference runs as one move (added with the frame-by-frame rebuild)
+S("cl-pullback", add(whoosh(0.45, 2600, 500, 1.6, 120, 1.3) * 0.8, shimmer(0.35, 120, 3000, 7000, 40) * 0.25), "whoosh", 0.18, "the camera pulls back into the dot grid", rev=0.2)
+S("cl-snap", whoosh(0.22, 3200, 900, 2.2, 121, 1.1), "swipe", 0.1, "the close-up snaps back to the line")
+S("cl-flip", add(whoosh(0.3, 1200, 3600, 2.4, 122, 1.2) * 0.6, blip(NOTE["F5"], 0.12, 0.3) * 0.3), "swipe", 0.12, "the mark turns in 3D", rev=0.2)
+S("cl-flare", add(shimmer(0.45, 123, 4000, 11000, 140, True) * 0.7, tone(NOTE["Bb5"], 0.6, ((1, 1), (2, 0.3)), d=0.25) * 0.3, whoosh(0.3, 800, 6000, 1.2, 123, 1.0, 0.3) * 0.5),
+  "riser", 0.28, "the spheres meet in a flare", rev=0.35)
+S("cl-cream", add(swell(0.45, NOTE["Ab4"], 124) * 0.7, hp(np.random.default_rng(124).standard_normal(int(0.45 * SR)), 4000) * (t_(0.45) / 0.45) ** 2 * 0.15), "riser", 0.42, "the gradient blooms into cream", rev=0.35)
+S("cl-dissolve", add(shimmer(0.35, 125, 2500, 6000, 70) * 0.6, whoosh(0.35, 2400, 1200, 2.2, 125, 1.3) * 0.3), "swipe", 0.12, "the line dissolves from its ends", rev=0.2)
+S("cl-letter", add(riser(0.38, NOTE["F3"], NOTE["F4"], 126) * 0.6, whoosh(0.38, 300, 4500, 1.2, 126, 1.6) * 0.6), "riser", 0.36, "the push through the d onto the flower", rev=0.2)
+S("cl-sheen", add(shimmer(0.3, 127, 5000, 11000, 90, True) * 0.6, hp(sweep_noise(0.3, 3000, 9000, 1.5, 127), 2500) * arc(0.3, 1.2) * 0.3), "swipe", 0.12, "a sheen wipes the prompt", rev=0.25)
+S("cl-swing", whoosh(0.4, 2000, 500, 1.6, 128, 1.6), "whoosh", 0.25, "the builder swings away", rev=0.2)
+S("cl-flipview", add(whoosh(0.3, 900, 2600, 2.0, 129, 1.2) * 0.6, click(3800, 1600, 0.02, 129) * 0.4), "swipe", 0.1, "the preview turns into the hosting view", rev=0.15)
+S("cl-type9", typing(0.7, 130, 3300, 5300, (0.028, 0.03)), "ticker", 0.0, "'før du betaler noget': typed", rev=0.1)
+S("cl-type10", typing(0.5, 131, 2600, 4200, (0.04, 0.03)) * 1.1, "ticker", 0.0, "'nem hosting': typed, heavy keys", rev=0.15)
+S("cl-type11", typing(0.5, 132, 2800, 4600, (0.045, 0.03)), "ticker", 0.0, "'Gå online': typed", rev=0.12)
+
 idx_path = "lib/sfx/index.json"
 idx = [x for x in (json.load(open(idx_path)) if os.path.exists(idx_path) else []) if not x["id"].startswith("cl-")]
 json.dump(idx + items, open(idx_path, "w"), indent=1)
