@@ -28,15 +28,16 @@ from Alumni's own brand.
 - The end card is the site's own hero line, eyebrow and calls to action, so the film hands over to the page.
 
 ## Motion (the 5% norm)
-Measured on the final render with `scripts/motion_check.py`: MOTION_LINE.
+Measured on the final render with `scripts/motion_check.py`: something moves in 100% of frames, the median frame has 5.0% of its area in motion (the 5% norm), and the longest still is 0.03 s.
 - **Where the motion comes from:** the content, not the camera.
   - Windows and headlines drift at 35–55 px/s in parallax.
   - The site's two city photos push and pan inside windows (the style allows photos only inside windows).
   - Cables draw, with orbs travelling along them, and type builds word by word.
 - **Camera:** it only breathes, with one slow push into the end card.
-- **Phrases:** PHRASE_LINE
-- **Motion probe:** PROBE_LINE
-- **Shake check:** SHAKE_LINE
+- **Phrases:** all 29 phrases of the voice-over bring a new visual (`phrase_check.py`), and the voice never runs without one.
+- **Motion probe:** clean (`motion_probe.py --style energetic`): no camera spikes, lurches, overshoot, flying or busy stretches.
+- **Shake check:** none (`jitter_check.py`). Slowly moving text gets its own layer, rendered in contiguous chunks.
+- **Render:** motion blur at 4 samples, 180° shutter.
 
 ## Sound
 - **Voice-over:** the supplied file, in sync (lag 0), with a gentle 2.5:1 compressor on its peaks.
@@ -47,13 +48,13 @@ Measured on the final render with `scripts/motion_check.py`: MOTION_LINE.
   - It was picked from 65 analysed Mixkit tracks (`sound/music/candidates.*`, shortlist in
     `sound/music/shortlist/`).
   - It is cut on its bar grid (`scripts/music_fit.py`): the kick and bass enter exactly on "Meet Alumni"
-    (4.35 s), and the song's real final hit lands on the end card (37.7 s).
+    (4.35 s), and the song's real final hit lands on the end card (37.3 s).
   - It plays at −23 LUFS (about 12 dB under the voice) and ducks under speech.
-- **Effects:** 69 cues, each on its picture event (`scripts/cues.py`), using clean UI sounds:
+- **Effects:** 67 cues, each on its picture event (`scripts/cues.py`), using clean UI sounds:
   - taps and keys for the typing, soft pops where things land, airy swishes on the bigger moves;
   - one shimmer for the brand.
   - Sources, all copyright-free: Kenney "Interface Sounds" (CC0) and the studio's own generated sounds.
-- **Mix:** MIX_LINE
+- **Mix:** −15.4 LUFS integrated, peak −1.4 dBFS, the voice a median 11.5 dB over the music, with a 5 ms fade-in so there's no click at the start
 
 ## Truth: what is on screen, and where it comes from
 - **From the site (`harvest/facts.md`):**
@@ -81,8 +82,9 @@ Remotion 4 (`film/`): `src/Story.tsx` is one continuous stage on the words of th
 cables with orbs, and gradient type.
 ```
 cd films/alumni
+python3 scripts/music_fit.py sound/music/take-this-higher.mp3 sound/bed.wav --length 39 --lift 4.35 --entry 3.88 --bpm 124.02 --downbeat 3.88
 python3 scripts/cues.py && python3 scripts/sound_mix.py sound/cues.json film/public/audio/mix.wav --sheet sound/mix.png
-cd film && bash ../scripts/render_chunks.sh Film out/final.mp4 '{"blurSamples":4,"audio":"none"}' 0,290,580,870,1170 public/audio/mix.wav
+cd film && bash ../scripts/render_chunks.sh Film out/final.mp4 '{"blurSamples":4,"audio":"none"}' 0,260,560,870,1170 public/audio/mix.wav
 ```
 
 ## Assumptions
