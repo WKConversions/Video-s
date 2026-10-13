@@ -20,7 +20,7 @@ export const off = (pos: string, ...d: number[]) => T.s(pos) + d.reduce((a, b) =
 
 let ctx: CanvasRenderingContext2D | null = null;
 /** Width of a run of type (after fonts load), so a mark, a morph or a centred line starts from the word's exact box. */
-export const measure = (t: string, size: number, weight = 500, ls = -0.045, serif = false) => {
+export const measure = (t: string, size: number, weight = 500, ls = -0.03, serif = false) => {
   ctx = ctx ?? document.createElement("canvas").getContext("2d")!;
   ctx.font = serif ? `italic ${weight} ${size}px ${KIT.serif}` : `${weight} ${size}px ${KIT.font}`;
   (ctx as unknown as { letterSpacing: string }).letterSpacing = `${ls * size}px`;
@@ -35,7 +35,7 @@ export type W = { t: string; at: string; accent?: boolean; color?: string; serif
  *  (with `out`) upward into a blur, staggered; with `split` the words leave sideways, apart from the centre,
  *  into a blur (Qwilr's "It's both." exit). Words, not sentences: six or fewer to a line. */
 export const Line: React.FC<{ g: number; words: W[]; x: number; y: number; size: number; weight?: number; color?: string; out?: string; outDur?: number;
-  dy?: number; ls?: number; split?: boolean; style?: React.CSSProperties }> = ({ g, words, x, y, size, weight = 500, color = KIT.ink, out, outDur = 0.3, dy = 0.32, ls = -0.045, split = false, style }) => (
+  dy?: number; ls?: number; split?: boolean; style?: React.CSSProperties }> = ({ g, words, x, y, size, weight = 500, color = KIT.ink, out, outDur = 0.3, dy = 0.32, ls = -0.03, split = false, style }) => (
   <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${x}px, ${y}px)`, display: "flex", gap: size * 0.26, whiteSpace: "nowrap", fontFamily: KIT.font, fontWeight: weight, fontSize: size,
     lineHeight: 1, letterSpacing: `${ls}em`, ...style }}>
     {words.map((w, i) => {

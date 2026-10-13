@@ -6,7 +6,7 @@ import { loadFont } from "@remotion/fonts";
 
 export const C = {
   red: "#D2020C", redDeep: "#B30109", white: "#FFFFFF", warm: "#F4F1EE", grey: "#EFEDED",
-  ink: "#26231F", text: "#545454", soft: "#8A8580", line: "#D9D4CF",
+  ink: "#26231F", text: "#545454", soft: "#545454", line: "#D9D4CF",
   pink: "#F54A86", terracotta: "#DB8D3D", sand: "#E9DCCF", leaf: "#C5E499", sky: "#DCEBF5",
 };
 export const KIT = { font: "Roboto", serif: "Roboto", ink: C.ink, word: C.red, mark: "#F9D5D6", under: C.red, strike: C.red };

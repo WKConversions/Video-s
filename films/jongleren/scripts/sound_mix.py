@@ -6,6 +6,9 @@
 #   {"fps": 30, "frames": 1110, "library": "../../../library/sound",
 #    "vo":    {"file": "audio/vo.mp3", "at": 0},
 #    "music": {"file": "audio/music.wav", "at": 0, "duck_db": 6, "fade_in": 0.5, "fade_out": 2.0},
+#             optional: "lufs" (the bed's level, default −27), "lifts": [[t0, t1, dB], ...] (0.25 s ramps)
+#    "vo" may set "compress": true (a gentle 2.5:1 on its loudest syllables, so the master limiter doesn't have to);
+#    an effect may set "auto_level": false to keep its level as written.
 #    "sfx":   [{"id": "u-o8xh7gwsrj-app-interface-click-2", "frame": 526}, {"id": "gen-whoosh-medium", "frame": 790, "db": -2}]}
 # An effect's "frame" is the picture event: a tap lands on the touch, a whoosh passes at the middle of the
 # move, a riser ends on the reveal, an impact hits the landing. "db" nudges one cue against its role level;
@@ -103,6 +106,18 @@ def report(vo, mu, fx, cues, fps):
     print(f"levels: {len(cues) - len(masked)} of {len(cues)} effects clear the music by 3 dB or more" + ("" if not masked else "; masked: " + ", ".join(masked)))
     if loud: print("too close to the voice: " + ", ".join(loud))
 
+def compress(x, ratio=2.5, over_db=6.0):
+    """A gentle compressor on a voice: 2.5:1 above a threshold set over its typical syllable level."""
+    a = np.abs(x).max(1)
+    env = np.zeros_like(a); att, rel = np.exp(-1 / (0.005 * SR)), np.exp(-1 / (0.12 * SR)); e = 0.0
+    for i, v in enumerate(a):
+        e = att * e + (1 - att) * v if v > e else rel * e + (1 - rel) * v
+        env[i] = e
+    db = 20 * np.log10(env + 1e-9)
+    thr = np.percentile(db[db > db.max() - 40], 70) + over_db
+    gain = np.where(db > thr, (thr - db) * (1 - 1 / ratio), 0.0)
+    return x * (10 ** (gain / 20))[:, None]
+
 def main():
     cue_path, out = sys.argv[1], sys.argv[2]
     base = os.path.dirname(os.path.abspath(cue_path))
@@ -113,13 +128,18 @@ def main():
     index = {o["id"]: o for o in json.load(open(os.path.join(lib, "sfx", "index.json")))}
     vo_bus, mu_bus, fx_bus = np.zeros((n, 2)), np.zeros((n, 2)), np.zeros((n, 2))
     if "vo" in cue:
-        place(vo_bus, to_lufs(load(os.path.join(base, cue["vo"]["file"])), VO_LUFS), cue["vo"].get("at", 0))
+        v = load(os.path.join(base, cue["vo"]["file"]))
+        if cue["vo"].get("compress"): v = compress(v)
+        place(vo_bus, to_lufs(v, VO_LUFS), cue["vo"].get("at", 0))
     if "--music" in sys.argv:                 # the same cues over another bed, to compare
         cue.setdefault("music", {})["file"] = os.path.relpath(os.path.abspath(sys.argv[sys.argv.index("--music") + 1]), base)
     if "music" in cue:
-        m = cue["music"]; x = to_lufs(load(os.path.join(base, m["file"])), MUSIC_LUFS)
+        m = cue["music"]; x = to_lufs(load(os.path.join(base, m["file"])), m.get("lufs", MUSIC_LUFS))
         place(mu_bus, x, m.get("at", 0))
         t = np.arange(n) / SR
+        for t0, t1, db in m.get("lifts", []):     # where the bed itself dips, or the picture wants it up
+            ramp = np.clip(np.minimum(t - t0, t1 - t) / 0.25 + 0.5, 0, 1)
+            mu_bus *= (10 ** (db * ramp / 20))[:, None]
         fi, fo = m.get("fade_in", 0.3), m.get("fade_out", 2.0)
         mu_bus *= np.clip(t / max(fi, 1e-3), 0, 1)[:, None] * np.clip((n / SR - t) / max(fo, 1e-3), 0, 1)[:, None]
         if "vo" in cue and m.get("duck_db", 6):
@@ -139,7 +159,7 @@ def main():
         start = c["frame"] / fps - sync
         # make it heard, not just felt: lift it (up to 4 dB) until it clears the bed under it by 3 dB, but
         # never closer than 4 dB to the voice it lands on
-        if cue.get("auto_level", True):
+        if cue.get("auto_level", True) and c.get("auto_level", True):
             solo = np.zeros((int(0.6 * SR), 2)); place(solo, x, -sync + 0.1)
             e, m, v = momentary(solo, 0.1), bed(mu_bus, start + sync), momentary(vo_bus, start + sync)
             up = min(4.0, max(0.0, m + 3.3 - e))
@@ -149,6 +169,8 @@ def main():
         place(fx_bus, x, start); placed.append((c["frame"], c["id"], o["category"]))
     if lifted: print("lifted over the bed: " + ", ".join(lifted))
     report(vo_bus, mu_bus, fx_bus, cue.get("sfx", []), fps)
+    if "--stems" in sys.argv:                 # the three busses, for measuring voice over music
+        np.savez(sys.argv[sys.argv.index("--stems") + 1], vo=vo_bus, mu=mu_bus, fx=fx_bus)
     mix = vo_bus + mu_bus + fx_bus
     mix = to_lufs(mix, MASTER_LUFS)
     mix = limit(mix, CEILING_DB)

@@ -29,7 +29,7 @@ const TICK = ["w:stelt+0.35", "w:volgen", "w:stageplek+0.35", "w:aangenomen+0.25
 // ink → white, for a word whose red mark grows behind it
 const inkToWhite = (u: number) => { const a = [0x26, 0x23, 0x1f], v = a.map((c) => Math.round(c + (255 - c) * clamp01(u * 1.4))); return `rgb(${v.join(",")})`; };
 /** A white word line for red fields and photos (the kit's Line is for the white pages); ink: dark words for a bright photo. */
-const WhiteLine: React.FC<{ g: number; words: { t: string; at: string; under?: string; mark?: string }[]; x: number; y: number; size: number; weight?: number; out?: string; shadow?: boolean; ink?: boolean }> = ({ g, words, x, y, size, weight = 900, out, shadow, ink }) => (
+const WhiteLine: React.FC<{ g: number; words: { t: string; at: string; under?: string; mark?: string }[]; x: number; y: number; size: number; weight?: number; out?: string; shadow?: boolean; ink?: boolean }> = ({ g, words, x, y, size, weight = 700, out, shadow, ink }) => (
   <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${x}px, ${y}px)`, display: "flex", gap: size * 0.26, whiteSpace: "nowrap", fontFamily: "Roboto", fontWeight: weight, fontSize: size, lineHeight: 1,
     letterSpacing: "-0.03em", color: C.white, textShadow: shadow ? "0 4px 24px rgba(0,0,0,0.35)" : undefined }}>
     {words.map((w, i) => {
@@ -51,30 +51,29 @@ const WhiteLine: React.FC<{ g: number; words: { t: string; at: string; under?: s
 );
 
 /* ---------- 1 · hook: the route starts before the suitcase is packed ---------- */
-// what goes in the suitcase: each flies in from outside the frame on a word and lands in the open case
+// what goes in the suitcase: the case waits open and empty while the route already runs ("begint al voordat"),
+// then on "koffer pakt" everything flies in from outside the frame, one after the other, and the lid shuts
 const PACK = [
-  { at: "w:stage+0.1", c: C.pink, x: 40, y: 50, w: 190, h: 86, r: -6, from: [-900, -500] },          // a shirt
-  { at: "w:spanje+0.05", c: C.terracotta, x: 30, y: 150, w: 250, h: 70, r: 4, from: [700, -700] },   // a towel
-  { at: "w:begint", c: C.sky, x: 60, y: 232, w: 160, h: 78, r: -3, from: [900, 300] },              // shorts
-  { at: "w:al", c: "#F6F3EE", x: 190, y: 300, w: 110, h: 60, r: 8, from: [-1100, 200] },          // sneakers
-  { at: "w:voordat", c: C.red, x: 214, y: 70, w: 86, h: 116, r: 10, from: [400, -800] },          // the passport
-  { at: "w:je2", c: "#2D2B2A", x: 56, y: 330, w: 120, h: 38, r: -10, from: [-600, 700] },         // sunglasses
-  { at: "w:koffer", c: C.leaf, x: 150, y: 120, w: 130, h: 64, r: 6, from: [900, -300] },          // a cap
-  { at: "w:koffer+0.12", c: "#F3D7A6", x: 120, y: 250, w: 150, h: 54, r: -5, from: [-800, -600] }, // a sunhat
+  { at: "w:je2+0.02", c: C.pink, x: 40, y: 50, w: 190, h: 86, r: -6, from: [-900, -500] },          // a shirt
+  { at: "w:je2+0.1", c: C.terracotta, x: 30, y: 150, w: 250, h: 70, r: 4, from: [700, -700] },     // a towel
+  { at: "w:koffer+0.02", c: C.sky, x: 60, y: 232, w: 160, h: 78, r: -3, from: [900, 300] },        // shorts
+  { at: "w:koffer+0.1", c: C.red, x: 214, y: 70, w: 86, h: 116, r: 10, from: [400, -800] },        // the passport
+  { at: "w:koffer+0.18", c: "#2D2B2A", x: 56, y: 330, w: 120, h: 38, r: -10, from: [-600, 700] },  // sunglasses
+  { at: "w:pakt-0.02", c: C.leaf, x: 150, y: 120, w: 130, h: 64, r: 6, from: [900, -300] },        // a cap
 ];
 const Suitcase: React.FC<{ g: number }> = ({ g }) => {
   const enter = k(g, "w:jouw", 0.6);                             // slides in from the right with the first word
-  const close = k(g, "w:pakt-0.04", 0.32, CARRY);                 // the lid swings down onto the base
+  const close = k(g, "w:pakt+0.22", 0.32, CARRY);                 // the lid swings down onto the base
   const W = 340, H = 420;
   const x = 1540 + (1 - enter) * 900 + drift(g, "w:jouw+0.6", 30), y = 790;
-  const tag = k(g, "w:pakt+0.2", 0.5);
+  const tag = k(g, "w:pakt+0.45", 0.45);
   return (
     <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${x - W / 2}px, ${y - H - 30}px)`, width: W, height: H, opacity: enter > 0 ? 1 : 0,
       filter: enter < 0.6 ? `blur(${(0.6 - enter) * 16}px)` : undefined }}>
       <div style={{ position: "absolute", inset: 0, borderRadius: 40, background: "#2D2B2A", boxShadow: "0 30px 50px rgba(38,35,31,0.25)" }} />
       <div style={{ position: "absolute", left: 20, top: 20, right: 20, bottom: 20, borderRadius: 26, background: "#E9E3DC" }} />
       {PACK.map((it, i) => {
-        const d = k(g, T.s(it.at) - 0.3, 0.42, CARRY);
+        const d = k(g, T.s(it.at) - 0.3, 0.4, CARRY);
         if (d <= 0) return null;
         const arc = Math.sin(d * Math.PI) * -160;
         return <div key={i} style={{ position: "absolute", left: it.x, top: it.y, width: it.w, height: it.h, borderRadius: 12, background: it.c,
@@ -103,9 +102,9 @@ const Hook: React.FC<{ g: number }> = ({ g }) => {
   return (
     <AbsoluteFill>
       <Bloom g={g} x={1500} y={260} r={420} color="#F9D5D6" />
-      <Line g={g} x={150 - drift(g, "w:jouw", 52)} y={230} size={112} weight={900} dy={0.6} out="turn+0.05"
+      <Line g={g} x={200 - drift(g, "w:jouw", 20)} y={230} size={112} weight={700} dy={0.6} out="turn+0.05"
         words={[{ t: "Jouw", at: "w:jouw" }, { t: "stage", at: "w:stage" }, { t: "in", at: "w:in" }, { t: "Spanje", at: "w:spanje", accent: true, under: "w:spanje+0.3" }]} />
-      <Line g={g} x={150 - drift(g, "w:begint", 52)} y={372} size={112} weight={900} dy={0.6} out="turn+0.1" color={C.ink}
+      <Line g={g} x={200 - drift(g, "w:jouw", 20)} y={372} size={112} weight={700} dy={0.6} out="turn+0.1" color={C.ink}
         words={[{ t: "begint", at: "w:begint" }, { t: "al.", at: "w:al" }]} />
       <div style={{ position: "absolute", left: 150, top: 787, width: 1620, height: 6, transformOrigin: "0 50%", transform: `scaleX(${lineK})`,
         backgroundImage: `repeating-linear-gradient(90deg, ${C.line} 0 22px, transparent 22px 38px)` }} />
@@ -120,18 +119,44 @@ const Hook: React.FC<{ g: number }> = ({ g }) => {
 
 /* ---------- 2 · turn: JongLeren juggles it all ---------- */
 const TODOS = [
-  { t: "Stageplek", from: [-300, 180], heap: [1240, 380, -14] },
-  { t: "Eisen school", from: [2200, 120], heap: [1330, 520, 9] },
-  { t: "Huisvesting", from: [2300, 980], heap: [1190, 640, -6] },
-  { t: "Gesprekken", from: [-320, 1000], heap: [1420, 760, 15] },
-  { t: "Documenten", from: [1000, -200], heap: [1600, 300, 7] },
-  { t: "Afspraken", from: [1300, 1300], heap: [1620, 620, -11] },
+  { t: "Stageplek", from: [-300, 180], heap: [1260, 360, -14] },
+  { t: "Schooleisen", from: [2200, 120], heap: [1420, 500, 9] },
+  { t: "Huisvesting", from: [2300, 980], heap: [1210, 630, -6] },
+  { t: "Gesprekken", from: [1300, 1300], heap: [1460, 760, 12] },
 ];
 // the logo, large, while it juggles: centred at (700, 520), 460 px tall
 const TURN_MARK = { cx: 700, cy: 500, h: 470 };
-const turnBall = (i: number) => {
-  const s = TURN_MARK.h / 1120, b = LOGO.balls[i];
-  return { x: TURN_MARK.cx - (900 * s) / 2 + b[0] * s, y: TURN_MARK.cy - TURN_MARK.h / 2 + b[1] * s };
+// the mark's own move (rises, settles, slowly grows), so the juggled balls stay in the bull's hands
+const turnMark = (g: number) => {
+  const markIn = k(g, "w:jongleren", 0.55), markOut = k(g, "intake-0.05", 0.4, LEAVE);
+  return { markIn, markOut, cy: TURN_MARK.cy + (1 - markIn) * 90 - drift(g, "w:jongleren+0.5", 40),
+    sc: (0.9 + 0.1 * markIn + drift(g, "w:jongleren+0.5", 0.05)) * (1 - markOut * 0.3) };
+};
+// a point of the logo image (900 x 1120) in the frame
+const turnPoint = (g: number, p: number[]) => {
+  const s = TURN_MARK.h / 1120, m = turnMark(g);
+  return { x: TURN_MARK.cx + (p[0] - 450) * s * m.sc, y: m.cy + (p[1] - 560) * s * m.sc };
+};
+// the cascade, in logo coordinates: up from the left hand (205, 460) along the arc of the logo's own four balls,
+// over the head, down into the right hand (660, 390); then a quick low pass back to the left hand
+const cascade = (u: number) => {
+  const c = [430, 420], rx = 255, ry = 355, a0 = Math.PI * 1.03, a1 = -Math.PI * 0.03;
+  const at = (th: number) => [c[0] + rx * Math.cos(th), c[1] - ry * Math.sin(th)];
+  if (u < 0.78) return at(mix(a0, a1, u / 0.78));
+  const v = (u - 0.78) / 0.22, p = at(a1), q = at(a0);
+  return [mix(p[0], q[0], v), mix(p[1], q[1], v) + Math.sin(v * Math.PI) * 50];
+};
+const JUGGLE_PERIOD = 1.1;
+// a juggled to-do: the logo's red ball, ringed in white so it reads on the white mark and on the red field;
+// a white centre opens once it lands on the route (a step dot)
+const TodoBall: React.FC<{ t: { toBall: number; route: number; x: number; y: number } }> = ({ t }) => {
+  if (t.toBall <= 0.55 || t.route >= 1) return null;
+  const r = mix(19, 22, t.route), c = clamp01((t.route - 0.75) / 0.25);
+  return (
+    <Ball x={t.x} y={t.y} r={r} color={C.red} style={{ opacity: clamp01((t.toBall - 0.55) / 0.25), boxShadow: `0 0 0 ${5 * (1 - t.route)}px ${C.white}` }}>
+      {t.route > 0.75 && <div style={{ width: (r - 6) * 2 * c, height: (r - 6) * 2 * c, borderRadius: "50%", background: C.white }} />}
+    </Ball>
+  );
 };
 
 const Turn: React.FC<{ g: number }> = ({ g }) => {
@@ -139,55 +164,45 @@ const Turn: React.FC<{ g: number }> = ({ g }) => {
   const field = k(g, "w:jongleren-0.22", 0.75, GROW);             // the red field grows out of the start ball
   const recede = k(g, "intake", 0.5, CARRY);                      // and closes into the first step dot
   const r = field * 2400 * (1 - recede) + (recede > 0 ? 0 : 0);
-  const markIn = k(g, "w:jongleren", 0.55);
-  const markOut = k(g, "intake-0.05", 0.4, LEAVE);
+  const { markIn, markOut, cy: markCy, sc: markSc } = turnMark(g);
   const sTurn = TURN_MARK.h / 1120;
+  const todos = TODOS.map((td, i) => {
+    // fly in to a heap on "wordt alles", shrink into a ball on "stuk" and join the juggle
+    const arrive = k(g, off("w:wordt", i * 0.1), 0.5);
+    const toBall = k(g, off("w:stuk", -0.1 + i * 0.05), 0.45, CARRY);
+    // the juggle: four balls a quarter of a cycle apart on the cascade
+    const ph = (((g - f("w:stuk")) / 30 / JUGGLE_PERIOD + 0.6 - i * 0.25) % 1 + 1) % 1;
+    const jp = turnPoint(g, cascade(ph));
+    // then down to the route on "eerst"
+    const route = k(g, off("intake", i * 0.04), 0.6, CARRY);
+    const rp = routeBottom(i);
+    const wob = arrive * (1 - toBall);
+    const x0 = mix(td.from[0], td.heap[0], arrive) + Math.sin(g / 6 + i) * 14 * wob, y0 = mix(td.from[1], td.heap[1], arrive) + Math.cos(g / 7 + i * 1.7) * 12 * wob;
+    const x = mix(mix(x0, jp.x, toBall), rp.x, route), y = mix(mix(y0, jp.y, toBall), rp.y, route);
+    const rot = (td.heap[2] + (1 - arrive) * (i % 2 ? 140 : -140) + Math.sin(g / 5 + i * 2) * 9 * arrive) * (1 - toBall);
+    return { arrive, toBall, route, x, y, rot };
+  }).filter((t) => t.arrive > 0);
   return (
     <AbsoluteFill>
       <Iris x={mix(150, routeBottom(0).x, recede)} y={mix(760, routeBottom(0).y, recede)} r={r} bg={C.red}>
         <div style={{ position: "absolute", left: 0, top: 0,
-          opacity: markIn * (1 - markOut), transform: `translate(${TURN_MARK.cx - (900 * sTurn) / 2}px, ${TURN_MARK.cy - TURN_MARK.h / 2 + (1 - markIn) * 90 - drift(g, "w:jongleren+0.5", 40)}px) scale(${(0.9 + 0.1 * markIn + drift(g, "w:jongleren+0.5", 0.05)) * (1 - markOut * 0.3)})` }}>
-          <Img src={staticFile("img/jl-mark-white-noballs.png")} style={{ height: TURN_MARK.h }} />
+          opacity: markIn * (1 - markOut), transform: `translate(${TURN_MARK.cx - (900 * sTurn) / 2}px, ${markCy - TURN_MARK.h / 2}px) scale(${markSc})` }}>
+          <Img src={staticFile("img/jl-mark-white-blank.png")} style={{ height: TURN_MARK.h }} />
         </div>
         <WhiteLine g={g} x={150 + drift(g, "w:alles+0.4", 50)} y={870} size={76} out="intake-0.1"
           words={[{ t: "Alles", at: "w:alles" }, { t: "een", at: "w:een" }, { t: "stuk", at: "w:stuk" }, { t: "makkelijker.", at: "w:makkelijker", under: "w:makkelijker+0.25" }]} />
       </Iris>
-      {TODOS.map((td, i) => {
-        // fly in to a heap on "alles", shrink into a ball and swing into the juggle on "makkelijker"
-        const arrive = k(g, off("w:wordt", i * 0.1), 0.5);
-        const toBall = k(g, off("w:stuk", -0.1 + i * 0.05), 0.45, CARRY);
-        const hb = i < 4 ? turnBall(i) : { x: TODOS[i].heap[0], y: TODOS[i].heap[1] };
-        // the juggle: after landing, each ball travels a little loop around its place, phased, so the logo juggles
-        const ph = (g / 30) * ((2 * Math.PI) / 1.25) + i * (Math.PI / 2);
-        const jug = k(g, off("w:makkelijker", -0.1), 0.5, CARRY);
-        const mc = { x: TURN_MARK.cx, y: TURN_MARK.cy - TURN_MARK.h * 0.32 };
-        const jx = (mc.x + Math.cos(ph) * 300 - hb.x) * jug, jy = (mc.y - Math.abs(Math.sin(ph)) * 250 + 60 - hb.y) * jug;
-        // then down to the route on "eerst"
-        const route = k(g, off("intake", i * 0.04), 0.6, CARRY);
-        const rp = routeBottom(i);
-        const wob = arrive * (1 - toBall);
-        const x0 = mix(td.from[0], td.heap[0], arrive) + Math.sin(g / 6 + i) * 14 * wob, y0 = mix(td.from[1], td.heap[1], arrive) + Math.cos(g / 7 + i * 1.7) * 12 * wob;
-        const xb = i < 4 ? mix(x0, hb.x + jx, toBall) : x0, yb = i < 4 ? mix(y0, hb.y + jy, toBall) : y0;
-        const x = mix(xb, rp.x, route), y = mix(yb, rp.y, route);
-        const ballR = mix(mix((LOGO.balls[i]?.[2] ?? 27) * (TURN_MARK.h / 1120), 24, jug), 22, route);
-        const color = route > 0.5 ? C.red : C.white;
-        if (arrive <= 0) return null;
-        return (
-          <React.Fragment key={i}>
-            {toBall < 1 && (
-              <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${x}px, ${y}px) translate(-50%, -50%) rotate(${(td.heap[2] + (1 - arrive) * (i % 2 ? 140 : -140) + Math.sin(g / 5 + i * 2) * 9 * arrive) * (1 - toBall)}deg) scale(${1 - toBall * 0.9})`,
-                opacity: 1 - clamp01((toBall - 0.6) / 0.3), filter: arrive < 0.7 ? `blur(${(0.7 - arrive) * 12}px)` : undefined }}>
-                <Pill text={td.t} size={40} style={{ position: "relative" }} />
-              </div>
-            )}
-            {i < 4 && toBall > 0.55 && route < 1 && (
-              <Ball x={x} y={y} r={ballR} color={color} style={{ opacity: clamp01((toBall - 0.55) / 0.25) }}>
-                {route > 0.75 && <div style={{ width: (ballR - 6) * 2 * clamp01((route - 0.75) / 0.25), height: (ballR - 6) * 2 * clamp01((route - 0.75) / 0.25), borderRadius: "50%", background: C.white }} />}
-              </Ball>
-            )}
-          </React.Fragment>
-        );
-      })}
+      {todos.map((t, i) => (
+        <React.Fragment key={i}>
+          {t.toBall < 1 && (
+            <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${t.x}px, ${t.y}px) translate(-50%, -50%) rotate(${t.rot}deg) scale(${1 - t.toBall * 0.9})`,
+              opacity: 1 - clamp01((t.toBall - 0.6) / 0.3), filter: t.arrive < 0.7 ? `blur(${(0.7 - t.arrive) * 12}px)` : undefined }}>
+              <Pill text={TODOS[i].t} size={40} style={{ position: "relative" }} />
+            </div>
+          )}
+          <TodoBall t={t} />
+        </React.Fragment>
+      ))}
     </AbsoluteFill>
   );
 };
@@ -197,7 +212,8 @@ const Route: React.FC<{ g: number; top?: boolean }> = ({ g, top }) => {
   if (g < f("intake") || g > f("close+0.9")) return null;
   if (!top && g >= f("journey")) return null;
   if (top && g < f("journey")) return null;
-  const show = k(g, "intake+0.15", 0.5) * (1 - k(g, "w:vinden-0.2", 0.35, LEAVE)) + k(g, "journey", 0.5) * (1 - k(g, "close+0.3", 0.4, LEAVE));
+  const aside = top ? 0 : k(g, "w:waarin-0.1", 0.4, LEAVE) * (1 - k(g, "w:met2+0.15", 0.5));
+  const show = k(g, "intake+0.15", 0.5) * (1 - k(g, "w:vinden-0.2", 0.35, LEAVE)) * (1 - aside) + k(g, "journey", 0.5) * (1 - k(g, "close+0.3", 0.4, LEAVE));
   const mid = k(g, "journey", 0.6, CARRY);
   const lineDraw = k(g, "intake+0.1", 0.7, CARRY);
   const pos = (i: number) => { const a = routeBottom(i), b = routeMid(i); return { x: mix(a.x, b.x, mid), y: mix(a.y, b.y, mid) }; };
@@ -208,7 +224,7 @@ const Route: React.FC<{ g: number; top?: boolean }> = ({ g, top }) => {
   const summary = k(g, "w:tot-0.1", 1.1, CARRY);
   const progShown = g >= f("journey") ? summary : prog;
   return (
-    <AbsoluteFill style={{ opacity: show }}>
+    <AbsoluteFill style={{ opacity: show, transform: aside > 0 ? `translateY(${aside * 120}px)` : undefined }}>
       <div style={{ position: "absolute", left: p0.x, top: p0.y - 3, width: p4.x - p0.x, height: 6, borderRadius: 3, background: C.line, transformOrigin: "0 50%", transform: `scaleX(${lineDraw})` }} />
       <div style={{ position: "absolute", left: p0.x, top: p0.y - 5, width: p4.x - p0.x, height: 10, borderRadius: 5, background: C.red, transformOrigin: "0 50%", transform: `scaleX(${progShown})` }} />
       {g >= f("journey") && summary > 0 && summary < 1 && <Ball x={p0.x + (p4.x - p0.x) * summary} y={p0.y} r={38} />}
@@ -217,6 +233,7 @@ const Route: React.FC<{ g: number; top?: boolean }> = ({ g, top }) => {
         const tk = g >= f("journey") ? k(g, off("w:tot", -0.1 + i * 0.22), 0.3, SMALLPOP) : ticked[i];
         const appear = i < 4 ? (g >= f(off("intake", 0.6 + i * 0.04)) ? 1 : 0) : k(g, "intake+0.55", 0.4, SMALLPOP);
         const r = (22 + tk * 6) * (g >= f("journey") ? 1 + 0.45 * Math.sin(Math.PI * tk) : 1);
+        if (top && i < 4 && k(g, liftAt(i), 0.65, CARRY) > 0) return null;
         // dots 1-4 rise into the logo's four balls on "JongLeren"; the fifth folds into the mark
         return (
           <React.Fragment key={s}>
@@ -225,8 +242,8 @@ const Route: React.FC<{ g: number; top?: boolean }> = ({ g, top }) => {
               display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 8px 18px rgba(38,35,31,0.12)" }}>
               {tk > 0.05 && <Tick k={tk} size={r * 1.5} />}
             </div>
-            <div style={{ position: "absolute", left: p.x - 150, top: p.y + 40, width: 300, textAlign: "center", fontFamily: "Roboto", fontWeight: 700, fontSize: 28,
-              color: tk > 0.5 ? C.ink : C.soft, opacity: appear * (1 - mid) }}>{s}</div>
+            <div style={{ position: "absolute", left: p.x - 160, top: p.y + 36, width: 320, textAlign: "center", fontFamily: "Roboto", fontWeight: 700, fontSize: 38,
+              color: tk > 0.5 ? C.ink : i === ticked.findIndex((t) => t <= 0.5) ? C.red : C.soft, opacity: appear * (1 - mid) }}>{s}</div>
           </React.Fragment>
         );
       })}
@@ -253,23 +270,23 @@ const Intake: React.FC<{ g: number }> = ({ g }) => {
   const studyAt = (i: number) => (i === 0 ? "w:wat" : i === 1 ? "w:je4" : "w:studeert");
   return (
     <div style={{ position: "absolute", left: 0, top: 0, width: W, height: H, borderRadius: mix(30, 64, morph), background: mix(0, 1, morph) > 0.5 ? "#1E1C1B" : C.white,
-      transform: `translate(${x - W / 2}px, ${y - H / 2}px) scale(${s * mix(1.08 + dz, 1, morph)})`, boxShadow: "0 40px 90px rgba(38,35,31,0.20)", overflow: "hidden" }}>
+      willChange: "transform", transform: `translate(${x - W / 2}px, ${y - H / 2}px) scale(${s * mix(1.08 + dz, 1, morph)})`, boxShadow: "0 40px 90px rgba(38,35,31,0.20)", overflow: "hidden" }}>
       <div style={{ position: "absolute", inset: mix(0, 14, morph), borderRadius: mix(30, 52, morph), background: C.white, overflow: "hidden", opacity: 1 }}>
         <div style={{ opacity: fade, position: "absolute", inset: 0 }}>
           {/* header */}
-          <div style={{ position: "absolute", left: 48, top: 40, fontFamily: "Roboto", fontWeight: 900, fontSize: 52, color: C.ink, letterSpacing: "-0.02em" }}>Intakegesprek</div>
+          <div style={{ position: "absolute", left: 48, top: 40, fontFamily: "Roboto", fontWeight: 700, fontSize: 52, color: C.ink, letterSpacing: "-0.02em" }}>Intakegesprek</div>
           <div style={{ position: "absolute", left: 50, top: 104, fontFamily: "Roboto", fontWeight: 500, fontSize: 28, color: C.soft }}>Online · vrijblijvend</div>
           {/* the week: a day is picked on "plannen" */}
           <div style={{ position: "absolute", left: 48, top: 180, display: "flex", gap: 22, opacity: 1 - call, transform: `translateY(${-call * 60}px)` }}>
             {days.map((d, i) => {
-              const on = i === 3 ? pick : 0;
+              const on = i === 1 ? pick : 0;
               return <div key={d} style={{ position: "relative", width: 154, height: 150, borderRadius: 26, background: C.grey, color: on > 0 ? inkToWhite(on) : C.ink, overflow: "hidden",
                 display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", fontFamily: "Roboto", transform: `scale(${1 + Math.sin(on * Math.PI) * 0.08})` }}>
                 {on > 0 && <div style={{ position: "absolute", inset: 0, background: C.red, clipPath: `circle(${on * 110}px at 50% 50%)` }} />}
                 <div style={{ position: "relative", fontWeight: 700, fontSize: 30, opacity: 0.7 }}>{d}</div>
                 <div style={{ position: "relative", height: 56, width: 154 }}>
-                  <div style={{ position: "absolute", left: 0, right: 0, textAlign: "center", fontWeight: 900, fontSize: 48, opacity: 1 - clamp01(on * 2.5) }}>·</div>
-                  <div style={{ position: "absolute", left: 0, right: 0, textAlign: "center", fontWeight: 900, fontSize: 48, opacity: clamp01(on * 2 - 0.5), transform: `translateY(${(1 - on) * 14}px)` }}>10:00</div>
+                  <div style={{ position: "absolute", left: 0, right: 0, textAlign: "center", fontWeight: 700, fontSize: 48, opacity: 1 - clamp01(on * 2.5) }}>·</div>
+                  <div style={{ position: "absolute", left: 0, right: 0, textAlign: "center", fontWeight: 700, fontSize: 48, opacity: clamp01(on * 2 - 0.5), transform: `translateY(${(1 - on) * 14}px)` }}>14:00</div>
                 </div>
               </div>;
             })}
@@ -327,10 +344,10 @@ const School: React.FC<{ g: number }> = ({ g }) => {
   const rows = ["w:eisen", "w:jouw2", "w:school+0.12"];
   return (
     <div style={{ position: "absolute", left: 0, top: 0, width: 520, height: 420, borderRadius: 30, background: C.white,
-      boxShadow: "0 40px 90px rgba(38,35,31,0.22)", transform: `translate(${1210 + (1 - inn) * 900 + out * 900 - drift(g, "w:welke+0.35", 30)}px, ${330 - drift(g, "w:welke+0.35", 14)}px) rotate(${3 - inn * 1}deg)`, filter: inn < 0.7 || out > 0 ? `blur(${(0.7 - Math.min(inn, 0.7)) * 12 + out * 14}px)` : undefined }}>
+      boxShadow: "0 40px 90px rgba(38,35,31,0.22)", transform: `translate(${1270 + (1 - inn) * 900 + out * 900 - drift(g, "w:welke+0.35", 30)}px, ${330 - drift(g, "w:welke+0.35", 14)}px) rotate(${3 - inn * 1}deg)`, filter: inn < 0.7 || out > 0 ? `blur(${(0.7 - Math.min(inn, 0.7)) * 12 + out * 14}px)` : undefined }}>
       <div style={{ position: "absolute", left: 40, top: 34, display: "flex", alignItems: "center", gap: 18 }}>
         <svg width="56" height="56" viewBox="0 0 64 64"><path d="M32 10 L60 24 L32 38 L4 24 Z" fill={C.red} /><path d="M16 31 V44 C22 51 42 51 48 44 V31 L32 39 Z" fill={C.red} opacity="0.8" /></svg>
-        <div style={{ fontFamily: "Roboto", fontWeight: 900, fontSize: 40, color: C.ink, letterSpacing: "-0.02em" }}>Eisen van school</div>
+        <div style={{ fontFamily: "Roboto", fontWeight: 700, fontSize: 40, color: C.ink, letterSpacing: "-0.02em" }}>Eisen van school</div>
       </div>
       {rows.map((r, i) => {
         const t = k(g, r, 0.35, SMALLPOP);
@@ -338,7 +355,7 @@ const School: React.FC<{ g: number }> = ({ g }) => {
           <div style={{ width: 52, height: 52, borderRadius: 14, background: t > 0.05 ? C.red : C.grey, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${0.9 + 0.1 * t})` }}>
             <Tick k={t} size={44} />
           </div>
-          <div style={{ width: [330, 270, 300][i], height: 18, borderRadius: 9, background: C.line }} />
+          <div style={{ fontFamily: "Roboto", fontWeight: 500, fontSize: 32, color: t > 0.5 ? C.ink : C.soft }}>{["Stageperiode", "Uren per week", "Leerdoelen"][i]}</div>
         </div>;
       })}
     </div>
@@ -348,18 +365,19 @@ const School: React.FC<{ g: number }> = ({ g }) => {
 /* ---------- 4 · the app ---------- */
 const PHONE = { cx: 960, cy: 470, w: 420, h: 820 };
 const AppPhone: React.FC<{ g: number }> = ({ g }) => {
-  if (g < f("w:vervolgens+0.47") || g > f("w:met2+0.5")) return null;
+  if (g < f("w:vervolgens+0.05") || g > f("w:met2+0.5")) return null;
+  const phoneOn = g >= f("w:vervolgens+0.47");
   const toSide = k(g, "search", 0.6, CARRY);
   const leave = k(g, "w:met2-0.2", 0.45, LEAVE);
   const cx = mix(PHONE.cx - drift(g, "w:vervolgens+0.47", 46), 470, toSide) - leave * 900, cy = PHONE.cy, sc = mix(1, 0.92, toSide) + drift(g, "w:vervolgens+0.47", 0.008) * (1 - toSide);
-  const tap = k(g, "w:download", 0.25);
-  const ring = k(g, "w:download+0.15", 0.75, CARRY);
+  const tap = k(g, "w:download+0.12", 0.25);
+  const ring = k(g, "w:download+0.2", 0.55, CARRY);
   const open = k(g, "w:app", 0.5);
   const sheet = k(g, "w:waarin-0.05", 0.5);
-  const rows = ["Intakegesprek", "App installeren", "Zoektocht", "Kennismakingsgesprek", "Stage in Spanje"];
+  const rows = ["Intakegesprek", "Installeer de app", "Zoektocht", "Kennismaking", "Stage in Spanje"];
   const rowTick = ["intake", "w:stap+0.15", "w:stageplek+0.35", "w:aangenomen+0.25", "w:spanje2"];
   const icon = { x: PHONE.w / 2, y: 300 };
-  const fly = k(g, "w:vervolgens+0.45", 0.6);
+  const fly = k(g, "w:vervolgens+0.05", 0.6);
   const slot = { x: cx + (14 + icon.x - PHONE.w / 2) * sc, y: cy + (14 + icon.y - PHONE.h / 2) * sc };
   const fx = mix(-220, slot.x, fly), fy = mix(260, slot.y, fly) - Math.sin(fly * Math.PI) * 140, fs = mix(2.2, sc, fly);
   return (
@@ -370,7 +388,7 @@ const AppPhone: React.FC<{ g: number }> = ({ g }) => {
         <Img src={staticFile("img/jl-mark-white.png")} style={{ height: 130 }} />
       </div>
     )}
-    <div style={{ position: "absolute", left: 0, top: 0, width: PHONE.w, height: PHONE.h, transform: `translate(${cx - PHONE.w / 2}px, ${cy - PHONE.h / 2}px) scale(${sc})`,
+    {phoneOn && <div style={{ position: "absolute", left: 0, top: 0, width: PHONE.w, height: PHONE.h, transform: `translate(${cx - PHONE.w / 2}px, ${cy - PHONE.h / 2}px) scale(${sc})`,
       borderRadius: 64, background: "#1E1C1B", boxShadow: "0 50px 100px rgba(38,35,31,0.28)", filter: leave > 0 ? `blur(${leave * 14}px)` : undefined }}>
       <div style={{ position: "absolute", inset: 14, borderRadius: 52, background: C.white, overflow: "hidden" }}>
         {/* the store: icon, name, download → ring */}
@@ -383,7 +401,7 @@ const AppPhone: React.FC<{ g: number }> = ({ g }) => {
             <circle cx={118} cy={118} r={110} fill="none" stroke={C.grey} strokeWidth={10} opacity={tap > 0 ? 1 : 0} />
             <circle cx={118} cy={118} r={110} fill="none" stroke={C.red} strokeWidth={10} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - ring} transform="rotate(-90 118 118)" />
           </svg>
-          <div style={{ position: "absolute", left: 0, right: 0, top: 440, textAlign: "center", fontFamily: "Roboto", fontWeight: 900, fontSize: 40, color: C.ink }}>JongLeren.es</div>
+          <div style={{ position: "absolute", left: 0, right: 0, top: 440, textAlign: "center", fontFamily: "Roboto", fontWeight: 700, fontSize: 40, color: C.ink }}>JongLeren.es</div>
           <div style={{ position: "absolute", left: 0, right: 0, top: 492, textAlign: "center", fontFamily: "Roboto", fontWeight: 500, fontSize: 24, color: C.soft }}>Jouw stage in Spanje</div>
           <div style={{ position: "absolute", left: 96, top: 580, width: 200, height: 72, borderRadius: 36, background: ring > 0.98 ? C.ink : C.red, color: C.white,
             display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "Roboto", fontWeight: 700, fontSize: 30, transform: `scale(${1 - Math.sin(tap * Math.PI) * 0.08})` }}>
@@ -396,17 +414,10 @@ const AppPhone: React.FC<{ g: number }> = ({ g }) => {
             <Img src={staticFile("img/app.png")} style={{ position: "absolute", left: -58, top: -70, width: 508, transform: `translateY(${-drift(g, "w:app+0.3", 70)}px)` }} />
           </div>
         )}
-        {/* a notification: step 2 done */}
-        <div style={{ position: "absolute", left: 18, right: 18, top: 18, height: 96, borderRadius: 26, background: C.white, boxShadow: "0 16px 34px rgba(38,35,31,0.22)", zIndex: 3,
-          display: "flex", alignItems: "center", gap: 16, paddingLeft: 18, opacity: g >= f("w:volgen-0.1") && g < f("w:wij+0.25") ? 1 : 0,
-          transform: `translateY(${(1 - k(g, "w:volgen-0.1", 0.45)) * -150 - k(g, "w:wij-0.1", 0.35, LEAVE) * 150}px)` }}>
-          <div style={{ width: 56, height: 56, borderRadius: 16, background: C.red, display: "flex", alignItems: "center", justifyContent: "center" }}><Tick k={k(g, "w:volgen+0.2", 0.35)} size={44} /></div>
-          <div style={{ fontFamily: "Roboto", fontWeight: 700, fontSize: 26, color: C.ink, lineHeight: 1.15 }}>Stap 2 voltooid<br /><span style={{ fontWeight: 500, color: C.soft, fontSize: 22 }}>Volgende: zoektocht</span></div>
-        </div>
         {/* the sheet: every step, followed */}
         <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 560, borderRadius: "36px 36px 0 0", background: C.white, boxShadow: "0 -20px 40px rgba(38,35,31,0.15)",
           transform: `translateY(${(1 - sheet) * 600}px)` }}>
-          <div style={{ position: "absolute", left: 32, top: 30, fontFamily: "Roboto", fontWeight: 900, fontSize: 36, color: C.ink }}>Mijn stage</div>
+          <div style={{ position: "absolute", left: 32, top: 30, fontFamily: "Roboto", fontWeight: 700, fontSize: 36, color: C.ink }}>Mijn stage</div>
           <div style={{ position: "absolute", left: 51, top: 118, width: 6, height: 380, background: C.grey }} />
           <div style={{ position: "absolute", left: 51, top: 118, width: 6, height: 380, background: C.red, transformOrigin: "50% 0%",
             transform: `scaleY(${rowTick.slice(0, 4).reduce((a, t) => a + k(g, t, 0.35, CARRY), 0) / 4})` }} />
@@ -424,7 +435,7 @@ const AppPhone: React.FC<{ g: number }> = ({ g }) => {
           })}
         </div>
       </div>
-    </div>
+    </div>}
     </>
   );
 };
@@ -444,7 +455,7 @@ const Search: React.FC<{ g: number }> = ({ g }) => {
   const expand = k(g, "w:met2-0.1", 0.6, CARRY);                     // the invitation opens into the photo
   const away = k(g, "house", 0.6, LEAVE);                            // the photo leaves for the housing option
   const stamp = k(g, "w:aangenomen", 0.42, SMALLPOP);
-  const md = drift(g, "w:stageplek", 96);
+  const md = drift(g, "w:stageplek", 50);
   const W = mix(CARD.w, 1240, expand), H = mix(CARD.h, 820, expand), cx = mix(CARD.cx - md, 960, expand), cy = mix(CARD.cy, 470, expand);
   const ring = k(g, "w:stageplek+0.15", 0.4, CARRY);
   const link = k(g, "w:kennismakingsgesprek", 0.6, CARRY);
@@ -463,7 +474,7 @@ const Search: React.FC<{ g: number }> = ({ g }) => {
       {/* the passende stageplek: lands, rings, turns into the invitation, opens into the company */}
       {g >= f(off("w:zoeken", last * gap - 0.05)) && (
         <div style={{ position: "absolute", left: 0, top: 0,
-          width: W, height: H, transform: `translate(${cx - W / 2 - away * 1500 + (1 - k(g, off("w:zoeken", last * gap - 0.05), 0.45)) * 900}px, ${cy - H / 2 - away * 260}px) scale(${(1 - away * 0.45) * (1 + 0.36 * k(g, "w:regelen", 1.9, CARRY) * (1 - expand))})`, transformOrigin: "50% 50%", filter: away > 0 ? `blur(${away * 14}px)` : undefined }}>
+          width: W, height: H, willChange: "transform", transform: `translate(${cx - W / 2 - away * 1500 + (1 - k(g, off("w:zoeken", last * gap - 0.05), 0.45)) * 900}px, ${cy - H / 2 - away * 260}px) scale(${(1 - away * 0.45) * (1 + 0.16 * k(g, "w:regelen", 1.9, CARRY) * (1 - expand))})`, transformOrigin: "50% 50%", filter: away > 0 ? `blur(${away * 14}px)` : undefined }}>
           <Flip k={expand > 0 ? 1 : flip} style={{ width: "100%", height: "100%" }}
             a={<VacancyCard title={VACANCIES[last][0]} city={VACANCIES[last][1]} x={W / 2} y={H / 2} w={W} h={H} ring={ring} />}
             b={<Invite g={g} w={W} h={H} link={link} expand={expand} stamp={stamp} />} />
@@ -482,7 +493,7 @@ const Confetti: React.FC<{ g: number }> = ({ g }) => {
       {Array.from({ length: 22 }, (_, i) => {
         const a = (i * 137.5 * Math.PI) / 180, sp = 700 + ((i * 53) % 9) * 110;
         const vx = Math.cos(a) * sp, vy = -Math.abs(Math.sin(a)) * sp - 300;
-        const x = 1480 + vx * t, y = 160 + vy * t + 0.5 * 1500 * t * t;
+        const x = 640 + vx * t, y = 760 + vy * t + 0.5 * 1500 * t * t;
         return <div key={i} style={{ position: "absolute", left: x, top: y, width: 24, height: 14, borderRadius: 4, background: cols[i % cols.length],
           transform: `rotate(${i * 47 + t * 720 * (i % 2 ? 1 : -1)}deg)`, opacity: 1 - clamp01((t - 0.6) / 0.45), boxShadow: "0 2px 4px rgba(0,0,0,0.12)" }} />;
       })}
@@ -494,7 +505,7 @@ const VacancyCard: React.FC<{ title: string; city: string; x: number; y: number;
   <div style={{ position: "absolute", left: x - w / 2, top: y - h / 2, width: w, height: h, borderRadius: 30, background: C.white, transform: `rotate(${rot}deg)`,
     boxShadow: `0 40px 80px rgba(38,35,31,0.18)${ring > 0 ? `, 0 0 0 ${ring * 10}px ${C.red}` : ""}`, filter: blur > 0.5 ? `blur(${blur}px)` : undefined }}>
     <div style={{ position: "absolute", left: 40, top: 38 }}><Pill text="Stagevacature" size={24} bg={C.grey} color={C.ink} style={{ position: "relative", boxShadow: "none" }} /></div>
-    <div style={{ position: "absolute", left: 40, top: 118, fontFamily: "Roboto", fontWeight: 900, fontSize: 44, color: C.ink, letterSpacing: "-0.02em", width: w - 80, lineHeight: 1.05 }}>{title}</div>
+    <div style={{ position: "absolute", left: 40, top: 118, fontFamily: "Roboto", fontWeight: 700, fontSize: 44, color: C.ink, letterSpacing: "-0.02em", width: w - 80, lineHeight: 1.05 }}>{title}</div>
     <div style={{ position: "absolute", left: 40, bottom: 40, display: "flex", alignItems: "center", gap: 12, fontFamily: "Roboto", fontWeight: 700, fontSize: 30, color: C.red }}>
       <svg width="26" height="34" viewBox="0 0 26 34"><path d="M13 0 C6 0 0 6 0 13 C0 23 13 34 13 34 C13 34 26 23 26 13 C26 6 20 0 13 0 Z" fill={C.red} /><circle cx="13" cy="13" r="5" fill={C.white} /></svg>
       {city}
@@ -511,12 +522,12 @@ const Invite: React.FC<{ g: number; w: number; h: number; link: number; expand: 
   <div style={{ position: "absolute", inset: 0, borderRadius: 30, background: C.white, overflow: "hidden", boxShadow: "0 40px 80px rgba(38,35,31,0.20)" }}>
     <div style={{ position: "absolute", inset: 0, opacity: 1 - clamp01(expand * 1.6) }}>
       <div style={{ position: "absolute", left: 40, top: 36 }}><Pill text="Uitnodiging" size={24} bg={C.red} color={C.white} style={{ position: "relative", boxShadow: "none" }} /></div>
-      <div style={{ position: "absolute", left: 40, top: 110, fontFamily: "Roboto", fontWeight: 900, fontSize: 42, color: C.ink, letterSpacing: "-0.02em" }}>Kennismakingsgesprek</div>
+      <div style={{ position: "absolute", left: 40, top: 110, fontFamily: "Roboto", fontWeight: 700, fontSize: 42, color: C.ink, letterSpacing: "-0.02em" }}>Kennismakingsgesprek</div>
       <div style={{ position: "absolute", right: 40, top: 36, transform: `translateX(${(1 - k(g, "w:regelen+0.05", 0.5, CARRY)) * 700}px)` }}>
         <Pill text="do · 10:00" size={24} bg={C.grey} color={C.ink} style={{ position: "relative", boxShadow: "none" }} /></div>
       {/* you and the company, joined by the red line */}
       <div style={{ position: "absolute", left: 60, top: 210, width: 100, height: 100, borderRadius: 50, background: C.warm, display: "flex", alignItems: "center", justifyContent: "center",
-        fontFamily: "Roboto", fontWeight: 900, fontSize: 30, color: C.ink }}>Jij</div>
+        fontFamily: "Roboto", fontWeight: 700, fontSize: 30, color: C.ink }}>Jij</div>
       <div style={{ position: "absolute", left: 170, top: 255, width: w - 400, height: 10, borderRadius: 5, background: C.red, transformOrigin: "0 50%", transform: `scaleX(${link})` }} />
       <div style={{ position: "absolute", left: w - 210, top: 210, width: 100, height: 100, borderRadius: 50, background: C.red, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${0.8 + 0.2 * link})` }}>
         <svg width="54" height="54" viewBox="0 0 54 54"><rect x="10" y="8" width="34" height="40" rx="3" fill={C.white} /><g fill={C.red}>{[0, 1, 2].map((r) => [0, 1].map((c) => <rect key={`${r}${c}`} x={17 + c * 12} y={14 + r * 10} width="7" height="6" />))}</g><rect x="23" y="38" width="8" height="10" fill={C.red} /></svg>
@@ -530,10 +541,10 @@ const Invite: React.FC<{ g: number; w: number; h: number; link: number; expand: 
       </div>
     )}
     {stamp > 0 && (
-      <div style={{ position: "absolute", right: 50, top: 50, transform: `rotate(${-7 + (1 - stamp) * 10}deg) scale(${mix(1.8, 1, stamp)})`, opacity: clamp01(stamp * 3),
+      <div style={{ position: "absolute", left: 50, bottom: 50, transform: `rotate(${-5 + (1 - stamp) * 10}deg) scale(${mix(1.8, 1, stamp)})`, opacity: clamp01(stamp * 3),
         display: "flex", alignItems: "center", gap: 18, padding: "22px 34px", borderRadius: 26, background: C.red, boxShadow: "0 20px 50px rgba(120,0,6,0.35)" }}>
         <div style={{ width: 60, height: 60, borderRadius: 30, background: C.white, display: "flex", alignItems: "center", justifyContent: "center" }}><Tick k={stamp} size={48} color={C.red} /></div>
-        <div style={{ fontFamily: "Roboto", fontWeight: 900, fontSize: 64, color: C.white, letterSpacing: "-0.02em" }}>Aangenomen!</div>
+        <div style={{ fontFamily: "Roboto", fontWeight: 700, fontSize: 64, color: C.white, letterSpacing: "-0.02em" }}>Aangenomen!</div>
       </div>
     )}
   </div>
@@ -563,7 +574,7 @@ const Housing: React.FC<{ g: number }> = ({ g }) => {
       <AbsoluteFill style={{ opacity: photo }}>
         <Img src={staticFile("img/house.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${houseZoom(g)})` }} />
         <AbsoluteFill style={{ background: `rgba(255,255,255,${veil})` }} />
-        <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0) 34%)", opacity: k(g, "w:vinden-0.05", 0.5) }} />
+        <AbsoluteFill style={{ background: "linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.82) 22%, rgba(255,255,255,0) 42%)", opacity: k(g, "w:vinden-0.05", 0.5) }} />
       </AbsoluteFill>
       <div style={{ position: "absolute", left: 0, top: 0, width: 1120, height: 220, borderRadius: 34, background: C.white, opacity: inn * (1 - out),
         boxShadow: "0 40px 90px rgba(38,35,31,0.22)", display: "flex", alignItems: "center", gap: 30, paddingLeft: 44, boxSizing: "border-box", transform: `translate(${960 - 560}px, ${540 - 110 + (1 - inn) * 500 - dy}px) scale(${1 - out * 0.2})` }}>
@@ -571,14 +582,14 @@ const Housing: React.FC<{ g: number }> = ({ g }) => {
           <svg width="60" height="60" viewBox="0 0 60 60"><path d="M30 8 L54 28 H47 V52 H13 V28 H6 Z" fill={C.white} /><rect x="25" y="36" width="10" height="16" fill={C.red} /></svg>
         </div>
         <div>
-          <div style={{ fontFamily: "Roboto", fontWeight: 900, fontSize: 52, color: C.ink, letterSpacing: "-0.02em" }}>Huisvesting regelen?</div>
+          <div style={{ fontFamily: "Roboto", fontWeight: 700, fontSize: 52, color: C.ink, letterSpacing: "-0.02em" }}>Huisvesting regelen?</div>
           <div style={{ fontFamily: "Roboto", fontWeight: 500, fontSize: 30, color: C.soft, marginTop: 6 }}>Indien nodig</div>
         </div>
       </div>
       <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${1404 - 74}px, ${540 - 42 + (1 - inn) * 500 - dy}px)`, width: 148, height: 84, borderRadius: 42, background: on > 0.5 ? C.red : "#D7D2CD", opacity: inn * (1 - out) }} />
       <Ball x={knob.x} y={540 + (1 - inn) * 500 - dy} r={34} color={C.white} style={{ opacity: inn * (1 - out), boxShadow: "0 4px 10px rgba(0,0,0,0.18)" }} />
-      <Line g={g} x={150} y={110} size={84} weight={900}
-        words={[{ t: "Huisvesting", at: "w:huisvesting", accent: true }, { t: "in", at: "w:huisvesting+0.15" }, { t: "de", at: "w:huisvesting+0.22" }, { t: "buurt.", at: "w:huisvesting+0.3", under: "w:huisvesting+0.45" }]} />
+      <Line g={g} x={150} y={110} size={84} weight={700}
+        words={[{ t: "Huisvesting", at: "w:vinden+0.05", accent: true }, { t: "dicht", at: "w:vinden+0.2" }, { t: "bij", at: "w:vinden+0.27" }, { t: "je", at: "w:vinden+0.34" }, { t: "stage.", at: "w:vinden+0.41", under: "w:huisvesting+0.1" }]} />
       {/* the key pin lands on the house */}
       <div style={{ position: "absolute", left: 0, top: 0, opacity: pin > 0 ? 1 : 0, transform: `translate(${hp.x - 50}px, ${hp.y - 136 - (1 - pin) * 320}px) scale(${0.6 + 0.4 * pin})`, transformOrigin: "50% 100%" }}>
         <svg width="100" height="136" viewBox="0 0 88 120"><path d="M44 0 C20 0 0 20 0 44 C0 78 44 120 44 120 C44 120 88 78 88 44 C88 20 68 0 44 0 Z" fill={C.red} /><path d="M44 22 L66 41 H60 V62 H28 V41 H22 Z" fill={C.white} /></svg>
@@ -623,6 +634,8 @@ const Spain: React.FC<{ g: number }> = ({ g }) => {
             <path d="M120 14 C190 10 232 70 226 136 C220 206 166 248 108 244 C46 240 8 190 14 124 C20 60 70 16 132 18" fill="none" stroke={C.red} strokeWidth="10" strokeLinecap="round"
               pathLength={1} strokeDasharray={1} strokeDashoffset={1 - ring} />
           </svg>
+          {(() => { const t5 = k(g, "w:spanje2+0.45", 0.35, SMALLPOP); return t5 > 0 && (
+            <Ball x={sx + 100} y={sy - 112} r={34} style={{ transform: `translate(${sx + 66}px, ${sy - 146}px) scale(${t5})`, opacity: 1 - clamp01(shrink * 4), boxShadow: "0 8px 18px rgba(38,35,31,0.25)" }}><Tick k={t5} size={50} /></Ball>); })()}
         </div>
         <WhiteLine g={g} x={140} y={130} size={110} ink out="w:ook2-0.1" words={[{ t: "Eenmaal", at: "w:eenmaal" }, { t: "in", at: "w:in2" }, { t: "Spanje?", at: "w:spanje2", mark: "w:spanje2+0.15" }]} />
         {/* the team beside you */}
@@ -631,7 +644,7 @@ const Spain: React.FC<{ g: number }> = ({ g }) => {
             filter: team < 0.6 || dealOut > 0 ? `blur(${(0.6 - Math.min(team, 0.6)) * 14 + dealOut * 12}px)` : undefined }}>
           <div style={{ position: "absolute", left: 24, bottom: 22 }}><Pill text="Team JongLeren · Málaga" size={26} style={{ position: "relative" }} /></div>
         </Photo>
-        <Line g={g} x={150} y={110} size={84} weight={900} out="w:met4-0.1"
+        <Line g={g} x={150} y={110} size={84} weight={700} out="w:persoonlijke+0.4"
           words={[{ t: "We", at: "w:staan" }, { t: "staan", at: "w:we3" }, { t: "voor", at: "w:voor" }, { t: "je", at: "w:je10" }, { t: "klaar.", at: "w:klaar", accent: true, under: "w:klaar+0.2" }]} />
         <Support g={g} />
       </Iris>
@@ -644,7 +657,7 @@ const SUPPORT = [
   { src: "img/coaching.jpg", label: "Coaching", at: "w:coaching-0.1", x: 960, y: 540, r: 1.5, pos: "50% 55%" },
   { src: "img/meetup.jpg", label: "Activiteiten", at: "w:activiteiten-0.1", x: 1500, y: 560, r: 4, pos: "50% 50%" },
 ];
-// in the summary each card shrinks into the route's dot 3, 4, 5
+// in the summary the three cards fold into the route's fifth dot, Spanje, where this support happens
 const Support: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("w:met4-0.2")) return null;
   return (
@@ -652,22 +665,24 @@ const Support: React.FC<{ g: number }> = ({ g }) => {
       {SUPPORT.map((c, i) => {
         const d = k(g, c.at, 0.55);
         const toDot = k(g, off("journey", 0.1 + i * 0.06), 0.6, CARRY);
-        const dot = routeMid(2 + i);
-        const w = mix(500, 180, toDot), h = mix(600, 180, toDot);
+        const dot = routeMid(4);
+        const w = mix(500, 56, toDot), h = mix(600, 56, toDot);
         const up = drift(g, T.s(c.at) + 0.55, 40 + i * 10);
         const hide = k(g, off("close", -0.2 + i * 0.05), 0.35, LEAVE);
         const row = 270 * (2 - k(g, SUPPORT[1].at, 0.6, CARRY) - k(g, SUPPORT[2].at, 0.6, CARRY));   // 1 card: centred; 2: a pair; 3: the row
         const x = mix(c.x + row + (1 - d) * 1100, dot.x, toDot), y = mix(c.y + (1 - d) * 500 - up, dot.y, toDot) - hide * 160;
-        if (d <= 0) return null;
+        if (d <= 0 || toDot >= 1) return null;
         return (
           <div key={c.label} style={{ position: "absolute", left: 0, top: 0, width: w, height: h, borderRadius: mix(28, 90, toDot), overflow: "hidden", background: C.white,
-            transform: `translate(${x - w / 2}px, ${y - h / 2}px) rotate(${mix(c.r + (1 - d) * 12, 0, toDot)}deg) scale(${1 + 0.18 * Math.sin(Math.PI * k(g, off("w:tot", -0.1 + (2 + i) * 0.22), 0.3))})`,
-            boxShadow: toDot > 0.9 ? `0 20px 40px rgba(38,35,31,0.22), 0 0 0 ${8 * k(g, off("w:tot", -0.1 + (2 + i) * 0.22), 0.3, SMALLPOP)}px ${C.red}` : "0 40px 80px rgba(38,35,31,0.22)", opacity: 1 - hide,
+            transform: `translate(${x - w / 2}px, ${y - h / 2}px) rotate(${mix(c.r + (1 - d) * 12, 0, toDot)}deg)`,
+            boxShadow: "0 40px 80px rgba(38,35,31,0.22)", opacity: (1 - hide) * (1 - clamp01((toDot - 0.8) / 0.2)),
             filter: d < 0.6 ? `blur(${(0.6 - d) * 16}px)` : undefined }}>
-            <Img src={staticFile(c.src)} style={{ position: "absolute", left: 0, top: 0, width: "100%", height: mix(470, 180, toDot), objectFit: "cover", objectPosition: c.pos,
-              transform: `scale(${1.08 - 0.06 * d + drift(g, T.s(c.at) + 0.5, 0.09)})` }} />
-            <div style={{ position: "absolute", left: 26, right: 20, top: 492, fontFamily: "Roboto", fontWeight: 900, fontSize: i === 0 ? 33 : 44, color: C.ink, letterSpacing: "-0.02em", opacity: 1 - toDot, lineHeight: 1.05, whiteSpace: "nowrap" }}>
-              {i === 0 ? <>Persoonlijke <span style={{ position: "relative" }}>begeleiding
+            <div style={{ position: "absolute", left: 0, top: 0, width: "100%", height: mix(470, 56, toDot), overflow: "hidden" }}>
+              <Img src={staticFile(c.src)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: c.pos,
+                transform: `scale(${1.08 - 0.06 * d + drift(g, T.s(c.at) + 0.5, 0.09)})` }} />
+            </div>
+            <div style={{ position: "absolute", left: 26, right: 20, top: 492, fontFamily: "Roboto", fontWeight: 700, fontSize: 40, color: C.ink, letterSpacing: "-0.02em", opacity: 1 - toDot, lineHeight: 1.05, whiteSpace: "nowrap" }}>
+              {i === 0 ? <>Persoonlijke<br /><span style={{ position: "relative" }}>begeleiding
                 <span style={{ position: "absolute", left: 0, right: 0, bottom: -6, height: 7, borderRadius: 4, background: C.red, transformOrigin: "0 50%", transform: `scaleX(${k(g, "w:begeleiding", 0.4, CARRY)})` }} /></span></> : c.label}
             </div>
           </div>
@@ -686,33 +701,36 @@ const Journey: React.FC<{ g: number }> = ({ g }) => {
   const a = routeMid(0), b = routeMid(4);
   return (
     <AbsoluteFill style={{ opacity: 1 - out }}>
-      <Line g={g} x={150 + drift(g, "w:van2+0.3", 60)} y={130} size={92} weight={900} dy={0.6} out="close-0.15"
+      <Line g={g} x={150 + drift(g, "w:van2+0.3", 60)} y={130} size={92} weight={700} dy={0.6} out="close-0.15"
         words={[{ t: "Van", at: "w:van2" }, { t: "je", at: "w:je11" }, { t: "eerste", at: "w:eerste" }, { t: "vraag", at: "w:vraag", accent: true }]} />
-      <Line g={g} x={700 - drift(g, "w:tot+0.3", 60)} y={780} size={100} weight={900} dy={0.6} out="close-0.1"
+      <Line g={g} x={700 - drift(g, "w:tot+0.3", 60)} y={780} size={100} weight={700} dy={0.6} out="close-0.1"
         words={[{ t: "tot", at: "w:tot" }, { t: "je", at: "w:je12" }, { t: "laatste", at: "w:laatste" }, { t: "stagedag.", at: "w:stagedag", accent: true }]} />
       {/* the first question */}
       <div style={{ position: "absolute", left: a.x - 210, top: a.y - 150, width: 140, height: 120, transform: `scale(${q})`, transformOrigin: "100% 100%" }}>
         <svg width="140" height="120" viewBox="0 0 140 120"><path d="M20 0 H120 A20 20 0 0 1 140 20 V80 A20 20 0 0 1 120 100 H50 L22 120 L28 100 H20 A20 20 0 0 1 0 80 V20 A20 20 0 0 1 20 0 Z" fill={C.red} /></svg>
-        <div style={{ position: "absolute", left: 0, top: 6, width: 140, textAlign: "center", fontFamily: "Roboto", fontWeight: 900, fontSize: 72, color: C.white }}>?</div>
+        <div style={{ position: "absolute", left: 0, top: 6, width: 140, textAlign: "center", fontFamily: "Roboto", fontWeight: 700, fontSize: 72, color: C.white }}>?</div>
       </div>
       {/* the last day */}
       <div style={{ position: "absolute", left: b.x + 70, top: a.y - 170, width: 150, height: 160, transform: `scale(${end})`, transformOrigin: "0% 100%", borderRadius: 24, background: C.white,
         boxShadow: "0 20px 50px rgba(38,35,31,0.2)", overflow: "hidden" }}>
         <div style={{ height: 46, background: C.red }} />
-        <div style={{ position: "absolute", left: 0, right: 0, top: 54, textAlign: "center", fontFamily: "Roboto", fontWeight: 900, fontSize: 64, color: C.ink }}>✓</div>
+        <div style={{ position: "absolute", left: 0, right: 0, top: 54, textAlign: "center", fontFamily: "Roboto", fontWeight: 700, fontSize: 64, color: C.ink }}>✓</div>
       </div>
     </AbsoluteFill>
   );
 };
 
 /* ---------- 9 · close: the dots become the bull's juggling balls, on a card in Granada ---------- */
-const END_MARK = { cx: 960, cy: 352, h: 330 };
-const TAG = [{ t: "Jouw", at: "w:jouw3" }, { t: "stage,", at: "w:stage2" }, { t: "volledig", at: "w:volledig", accent: true }, { t: "begeleid.", at: "w:begeleid", accent: true, under: "w:begeleid+0.2" }];
+// when route dot i lifts off for the logo (before Granada opens, so the hand-over is seen)
+const liftAt = (i: number) => off("close", -0.05 + i * 0.06);
+const END_MARK = { cx: 960, cy: 390, h: 400 };
+const END_WORD = { w: (END_MARK.h * 900) / 1120, top: END_MARK.cy + END_MARK.h / 2 + (END_MARK.h * 19) / 1122 };
+const TAG = [{ t: "Jouw", at: "w:jouw3" }, { t: "stage,", at: "w:stage2" }, { t: "volledig", at: "w:volledig", accent: true }, { t: "begeleid.", at: "w:begeleid", accent: true }];
 const Close: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("close-0.2")) return null;
   const s = END_MARK.h / 1120, left = END_MARK.cx - (900 * s) / 2, top = END_MARK.cy - END_MARK.h / 2;
-  const bg = k(g, "close-0.1", 0.7);
-  const card = k(g, "close-0.15", 0.6);
+  const bg = k(g, "close+0.12", 0.7);
+  const card = k(g, "close+0.02", 0.6);
   const mark = k(g, "w:jongleren2-0.05", 0.6);
   const word = k(g, "w:jongleren2+0.25", 0.5);
   return (
@@ -729,15 +747,15 @@ const Close: React.FC<{ g: number }> = ({ g }) => {
       </div>
       {LOGO.balls.map((b, i) => {
         // from route dot i, an arc up into the ball: the juggle
-        const u = k(g, off("w:jongleren2", -0.1 + i * 0.06), 0.65, CARRY);
+        const u = k(g, liftAt(i), 0.65, CARRY);
         if (u <= 0) return null;
         const from = routeMid(i), to = { x: left + b[0] * s, y: top + b[1] * s };
         const x = mix(from.x, to.x, u), y = mix(from.y, to.y, u) - Math.sin(u * Math.PI) * 200;
         const r = mix(26, b[2] * s, u);
         return <Ball key={i} x={x} y={y} r={r} color={u > 0.85 ? C.white : C.red} />;
       })}
-      <Img src={staticFile("img/jl-word.png")} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${960 - 200}px, ${548 + (1 - word) * 30}px)`, width: 400, opacity: word }} />
-      <Line g={g} x={centred(TAG, 66, 960, 700)} y={660} size={66} weight={700} dy={0.6} words={TAG} />
+      <Img src={staticFile("img/jl-word.png")} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${960 - END_WORD.w / 2}px, ${END_WORD.top + (1 - word) * 30}px)`, width: END_WORD.w, opacity: word }} />
+      <Line g={g} x={centred(TAG, 54, 960, 700)} y={692} size={54} weight={700} dy={0.6} words={TAG} />
     </AbsoluteFill>
   );
 };

@@ -4,143 +4,157 @@
  "library": "lib",
  "vo": {
   "file": "../vo/vo.mp3",
-  "at": 0
+  "at": 0,
+  "compress": true
  },
  "music": {
   "file": "bed.wav",
   "at": 0,
+  "lufs": -23,
   "duck_db": 6,
   "fade_in": 0.2,
-  "fade_out": 1.2
+  "fade_out": 0.5,
+  "lifts": [
+   [
+    0,
+    3.15,
+    6
+   ],
+   [
+    33.9,
+    37.1,
+    3
+   ],
+   [
+    40.4,
+    42.0,
+    3
+   ]
+  ]
  },
  "sfx": [
   {
    "frame": 12,
    "id": "gen-whoosh-short",
    "db": -3,
-   "note": "the suitcase slides in"
-  },
-  {
-   "frame": 16,
-   "id": "kenney-drop-003",
-   "db": -6,
-   "note": "packed item 1 lands"
-  },
-  {
-   "frame": 28,
-   "id": "kenney-drop-003",
-   "db": -6,
-   "pitch": 2,
-   "note": "packed item 2 lands"
+   "pitch": -2,
+   "note": "the suitcase slides in, open and empty"
   },
   {
    "frame": 40,
    "id": "kenney-drop-003",
-   "db": -8,
+   "db": -6,
    "pitch": -5,
    "note": "the start ball drops onto the route"
   },
   {
-   "frame": 41,
-   "id": "kenney-drop-003",
-   "db": -6,
-   "pitch": 4,
-   "note": "packed item 3 lands"
-  },
-  {
-   "frame": 53,
-   "id": "kenney-drop-003",
-   "db": -6,
-   "pitch": 5,
-   "note": "packed item 4 lands"
-  },
-  {
-   "frame": 58,
-   "id": "kenney-drop-003",
-   "db": -6,
-   "pitch": 7,
-   "note": "packed item 5 lands"
+   "frame": 52,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "pitch": 3,
+   "note": "the red route runs ahead"
   },
   {
    "frame": 77,
    "id": "kenney-drop-003",
-   "db": -6,
-   "pitch": 9,
-   "note": "packed item 6 lands"
+   "db": -10,
+   "note": "packed item 1 lands"
+  },
+  {
+   "frame": 79,
+   "id": "kenney-drop-003",
+   "db": -10,
+   "pitch": 2,
+   "note": "packed item 2 lands"
   },
   {
    "frame": 81,
    "id": "kenney-drop-003",
-   "db": -6,
-   "pitch": 11,
-   "note": "packed item 7 lands"
+   "db": -10,
+   "pitch": 4,
+   "note": "packed item 3 lands"
   },
   {
-   "frame": 85,
+   "frame": 83,
    "id": "kenney-drop-003",
-   "db": -6,
-   "pitch": 12,
-   "note": "packed item 8 lands"
+   "db": -10,
+   "pitch": 7,
+   "note": "packed item 4 lands"
   },
   {
-   "frame": 94,
+   "frame": 86,
+   "id": "kenney-drop-003",
+   "db": -10,
+   "pitch": 9,
+   "note": "packed item 5 lands"
+  },
+  {
+   "frame": 88,
+   "id": "kenney-drop-003",
+   "db": -10,
+   "pitch": 12,
+   "note": "packed item 6 lands"
+  },
+  {
+   "frame": 100,
    "id": "gen-stamp",
    "db": -4,
    "note": "the lid shuts"
   },
   {
-   "frame": 115,
+   "frame": 112,
    "id": "gen-whoosh-medium",
-   "db": -2,
+   "db": -4,
    "note": "the red field grows out of the start ball"
   },
   {
    "frame": 125,
    "id": "gen-appear",
-   "db": 1,
+   "db": -3,
+   "auto_level": false,
    "note": "the logo rises"
   },
   {
    "frame": 137,
-   "id": "gen-whoosh-short",
-   "db": -4,
+   "id": "gen-whoosh-whip",
+   "db": -6,
    "note": "the to-dos tumble in"
   },
   {
    "frame": 168,
    "id": "kenney-select-002",
-   "db": -2,
-   "note": "a to-do is caught as a ball"
+   "db": -6,
+   "note": "a to-do becomes a ball in the bull's juggle"
   },
   {
    "frame": 170,
    "id": "kenney-select-002",
-   "db": -2,
+   "db": -6,
    "pitch": 3,
-   "note": "a to-do is caught as a ball"
+   "note": "a to-do becomes a ball in the bull's juggle"
   },
   {
    "frame": 171,
    "id": "kenney-select-002",
-   "db": -2,
+   "db": -6,
    "pitch": 5,
-   "note": "a to-do is caught as a ball"
+   "note": "a to-do becomes a ball in the bull's juggle"
   },
   {
    "frame": 172,
    "id": "kenney-select-002",
-   "db": -2,
+   "db": -6,
    "pitch": 8,
-   "note": "a to-do is caught as a ball"
+   "note": "a to-do becomes a ball in the bull's juggle"
   },
   {
-   "frame": 211,
-   "id": "kenney-select-002",
-   "db": -5,
-   "note": "the day is picked"
+   "frame": 198,
+   "id": "gen-whoosh-medium",
+   "db": -8,
+   "note": "the red field closes into the first dot"
   },
   {
-   "frame": 212,
+   "frame": 202,
    "id": "kenney-maximize-009",
    "db": -2,
    "note": "the intake card opens out of the first dot"
@@ -148,40 +162,47 @@
   {
    "frame": 213,
    "id": "kenney-drop-003",
-   "db": -5,
+   "db": -8,
    "note": "ball 1 lands on the route"
   },
   {
    "frame": 214,
    "id": "kenney-drop-003",
-   "db": -5,
+   "db": -8,
    "pitch": 2,
    "note": "ball 2 lands on the route"
   },
   {
    "frame": 216,
    "id": "kenney-drop-003",
-   "db": -5,
+   "db": -8,
    "pitch": 4,
    "note": "ball 3 lands on the route"
   },
   {
+   "frame": 216,
+   "id": "kenney-select-002",
+   "db": -5,
+   "note": "the day is picked: red fills the chip"
+  },
+  {
    "frame": 217,
    "id": "kenney-drop-003",
-   "db": -5,
+   "db": -8,
    "pitch": 7,
    "note": "ball 4 lands on the route"
   },
   {
-   "frame": 235,
+   "frame": 260,
    "id": "gen-chime",
    "db": -7,
-   "note": "the call connects"
+   "note": "the call connects (the talk bars start)"
   },
   {
    "frame": 270,
    "id": "gen-whoosh-short",
    "db": -8,
+   "pitch": 2,
    "note": "your tile becomes the big one"
   },
   {
@@ -207,27 +228,28 @@
   {
    "frame": 320,
    "id": "kenney-drop-003",
-   "db": -4,
+   "db": -7,
    "note": "a wish lands"
   },
   {
    "frame": 324,
    "id": "kenney-drop-003",
-   "db": -4,
+   "db": -7,
    "pitch": 3,
    "note": "a wish lands"
   },
   {
    "frame": 328,
    "id": "kenney-drop-003",
-   "db": -4,
+   "db": -7,
    "pitch": 7,
    "note": "a wish lands"
   },
   {
    "frame": 339,
-   "id": "gen-whoosh-short",
-   "db": -4,
+   "id": "gen-whoosh-whip",
+   "db": -6,
+   "pitch": -2,
    "note": "the school's checklist slides in"
   },
   {
@@ -258,35 +280,36 @@
    "note": "step 1 ticked on the route"
   },
   {
-   "frame": 408,
+   "frame": 402,
    "id": "gen-whoosh-medium",
-   "db": -3,
+   "db": -4,
    "note": "the card folds into the phone"
   },
   {
-   "frame": 415,
+   "frame": 406,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "pitch": 3,
+   "note": "the app icon flies in"
+  },
+  {
+   "frame": 412,
+   "id": "kenney-drop-003",
+   "db": -6,
+   "pitch": 7,
+   "note": "the icon lands in the store"
+  },
+  {
+   "frame": 418,
    "id": "kenney-select-002",
    "db": 0,
    "note": "Download tapped"
   },
   {
-   "frame": 419,
+   "frame": 421,
    "id": "gen-riser-1s",
    "db": -10,
    "note": "the download ring fills (ends on 100%)"
-  },
-  {
-   "frame": 423,
-   "id": "gen-whoosh-short",
-   "db": -5,
-   "note": "the app icon flies in"
-  },
-  {
-   "frame": 432,
-   "id": "kenney-drop-003",
-   "db": -3,
-   "pitch": 7,
-   "note": "the icon lands in the store"
   },
   {
    "frame": 446,
@@ -301,81 +324,84 @@
    "note": "the step sheet slides up"
   },
   {
-   "frame": 497,
-   "id": "gen-chime",
-   "db": -10,
-   "note": "step 2 done: the notification"
+   "frame": 483,
+   "id": "kenney-select-001",
+   "db": -4,
+   "pitch": 2,
+   "note": "step 2 ticked in the app's list"
   },
   {
    "frame": 525,
-   "id": "gen-whoosh-short",
-   "db": -5,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "pitch": 2,
    "note": "the phone moves aside"
   },
   {
    "frame": 527,
    "id": "kenney-tick-004",
-   "db": -4,
+   "db": -8,
    "note": "a vacancy card flicks past"
   },
   {
    "frame": 530,
    "id": "kenney-tick-004",
-   "db": -4,
+   "db": -8,
    "pitch": 1,
    "note": "a vacancy card flicks past"
   },
   {
    "frame": 533,
    "id": "kenney-tick-004",
-   "db": -4,
+   "db": -8,
    "pitch": 2,
    "note": "a vacancy card flicks past"
   },
   {
    "frame": 536,
    "id": "kenney-tick-004",
-   "db": -4,
+   "db": -8,
    "pitch": 3,
    "note": "a vacancy card flicks past"
   },
   {
    "frame": 539,
    "id": "kenney-tick-004",
-   "db": -4,
+   "db": -8,
    "note": "a vacancy card flicks past"
   },
   {
    "frame": 542,
    "id": "kenney-tick-004",
-   "db": -4,
+   "db": -8,
    "pitch": 1,
    "note": "a vacancy card flicks past"
   },
   {
    "frame": 545,
    "id": "kenney-tick-004",
-   "db": -4,
+   "db": -8,
    "pitch": 2,
    "note": "a vacancy card flicks past"
   },
   {
    "frame": 548,
    "id": "kenney-tick-004",
-   "db": -4,
+   "db": -8,
    "pitch": 3,
    "note": "a vacancy card flicks past"
   },
   {
    "frame": 560,
    "id": "gen-success",
-   "db": -5,
+   "db": -10,
    "note": "the match rings"
   },
   {
    "frame": 580,
    "id": "gen-whoosh-short",
    "db": -5,
+   "pitch": -2,
    "note": "the match card turns into the invitation"
   },
   {
@@ -398,27 +424,27 @@
    "note": "the invitation opens into the company"
   },
   {
-   "frame": 683,
+   "frame": 680,
    "id": "gen-stamp",
-   "db": -1,
-   "note": "AANGENOMEN stamp lands"
+   "db": -4,
+   "note": "the Aangenomen! stamp lands"
   },
   {
    "frame": 683,
-   "id": "gen-success",
-   "db": -2,
-   "note": "the celebration"
-  },
-  {
-   "frame": 684,
    "id": "gen-shimmer",
-   "db": -8,
+   "db": -11,
    "note": "confetti"
   },
   {
+   "frame": 692,
+   "id": "gen-success",
+   "db": -11,
+   "note": "the celebration, after the word"
+  },
+  {
    "frame": 707,
-   "id": "gen-whoosh-short",
-   "db": -5,
+   "id": "gen-whoosh-whip",
+   "db": -7,
    "note": "the company leaves"
   },
   {
@@ -442,7 +468,7 @@
   {
    "frame": 793,
    "id": "kenney-drop-003",
-   "db": -7,
+   "db": -10,
    "pitch": -3,
    "note": "the pin lands on the house"
   },
@@ -459,6 +485,13 @@
    "note": "the suitcase is ringed"
   },
   {
+   "frame": 853,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "pitch": 12,
+   "note": "step 5 ticked at the suitcase"
+  },
+  {
    "frame": 870,
    "id": "gen-whoosh-medium",
    "db": -4,
@@ -468,12 +501,14 @@
    "frame": 880,
    "id": "gen-whoosh-short",
    "db": -5,
+   "pitch": 2,
    "note": "the team slides in"
   },
   {
    "frame": 921,
-   "id": "gen-whoosh-short",
-   "db": -5,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "pitch": -2,
    "note": "card dealt (persoonlijke)"
   },
   {
@@ -484,14 +519,16 @@
   },
   {
    "frame": 987,
-   "id": "gen-whoosh-short",
-   "db": -5,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "pitch": 2,
    "note": "card dealt (activiteiten)"
   },
   {
    "frame": 1028,
    "id": "gen-whoosh-short",
    "db": -4,
+   "pitch": -2,
    "note": "the cards fly onto the route"
   },
   {
@@ -501,36 +538,43 @@
    "note": "the first question"
   },
   {
+   "frame": 1040,
+   "id": "kenney-drop-003",
+   "db": -6,
+   "pitch": 7,
+   "note": "the three support cards fold into the fifth dot"
+  },
+  {
    "frame": 1051,
    "id": "kenney-select-001",
-   "db": -3,
+   "db": -6,
    "note": "the ball passes step 1"
   },
   {
    "frame": 1058,
    "id": "kenney-select-001",
-   "db": -3,
+   "db": -6,
    "pitch": 2,
    "note": "the ball passes step 2"
   },
   {
    "frame": 1064,
    "id": "kenney-select-001",
-   "db": -3,
+   "db": -6,
    "pitch": 4,
    "note": "the ball passes step 3"
   },
   {
    "frame": 1071,
    "id": "kenney-select-001",
-   "db": -3,
+   "db": -6,
    "pitch": 7,
    "note": "the ball passes step 4"
   },
   {
    "frame": 1077,
    "id": "kenney-select-001",
-   "db": -3,
+   "db": -6,
    "pitch": 9,
    "note": "the ball passes step 5"
   },
@@ -542,10 +586,10 @@
    "note": "the last internship day"
   },
   {
-   "frame": 1113,
+   "frame": 1116,
    "id": "gen-swell",
    "db": -5,
-   "note": "Granada and the card open"
+   "note": "Granada opens behind the card"
   },
   {
    "frame": 1127,
@@ -554,29 +598,29 @@
    "note": "the logo"
   },
   {
-   "frame": 1132,
+   "frame": 1129,
    "id": "kenney-drop-003",
-   "db": -5,
+   "db": -9,
    "note": "ball 1 lands in the logo"
   },
   {
-   "frame": 1134,
+   "frame": 1131,
    "id": "kenney-drop-003",
-   "db": -5,
+   "db": -9,
    "pitch": 4,
    "note": "ball 2 lands in the logo"
   },
   {
-   "frame": 1136,
+   "frame": 1132,
    "id": "kenney-drop-003",
-   "db": -5,
+   "db": -9,
    "pitch": 7,
    "note": "ball 3 lands in the logo"
   },
   {
-   "frame": 1137,
+   "frame": 1134,
    "id": "kenney-drop-003",
-   "db": -5,
+   "db": -9,
    "pitch": 12,
    "note": "ball 4 lands in the logo"
   }
