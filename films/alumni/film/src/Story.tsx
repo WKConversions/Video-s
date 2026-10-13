@@ -95,7 +95,7 @@ const Hook: React.FC<{ g: number }> = ({ g }) => {
       <Words g={g} x={150 + drift(g, "w:your", 40)} y={362} size={98} out="w:so" words={[{ t: "was", at: "w:was" }, { t: "just", at: "w:just" }]} />
       <Words g={g} x={150 + drift(g, "w:your", 40)} y={474} size={98} out="w:so+0.05" words={[{ t: "the", at: "w:the", grad: true }, { t: "beginning.", at: "w:beginning", grad: true }]} />
       <Win x={wx} y={wy} w={INTERN.w} h={INTERN.h} o={win * (1 - leave)} s={0.92 + 0.08 * win} blur={leave * 10} title="Internship" glow={C.lime}>
-        <Shot src={LISBON} w={250} h={170} pos="30% 70%" zoom={1.18 + drift(g, "w:your", 0.12)} px={-drift(g, "w:your", 30)} r={16} style={{ left: 40, top: 74 }} />
+        <Shot src={LISBON} w={250} h={170} pos="30% 70%" zoom={1.18 + drift(g, "w:your", 0.2)} px={-drift(g, "w:your", 50)} r={16} style={{ left: 40, top: 74 }} />
         <div style={{ position: "absolute", left: 318, top: 92 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}><Icon name="briefcase" size={34} color={C.deep} /><Eyebrow text="Your internship" size={17} /></div>
           <Skel w={300} h={16} style={{ marginTop: 18 }} /><Skel w={220} h={12} style={{ marginTop: 12 }} />
@@ -305,7 +305,7 @@ const Closer: React.FC<{ g: number }> = ({ g }) => {
         <Box key={j} x={rx + j * 40 * fan - d} y={y - j * 34 * fan + (1 - a) * 50} w={430} h={236} r={26} s={(0.86 + 0.14 * a) * (1 - j * 0.06)} o={a * (1 - leave) * (j ? 0.75 * fan : 1)} blur={(1 - a) * 8}
           rot={j * 3 * fan} style={{ ...glass(dot) }}>
           {j === 0 && <>
-            <Shot src={img} w={406} h={70} pos={pos} zoom={1.3 + drift(g, "brings", 0.05)} px={-drift(g, "brings", 26)} r={16} style={{ left: 12, top: 12 }} />
+            <Shot src={img} w={406} h={70} pos={pos} zoom={1.3 + drift(g, "brings", 0.08)} px={-drift(g, "brings", 45)} r={16} style={{ left: 12, top: 12 }} />
             <div style={{ position: "absolute", left: 26, top: 96, width: 72, height: 72, borderRadius: 22, background: "#F3F6F2", border: "3px solid #FFFFFF", display: "flex", alignItems: "center", justifyContent: "center" }}><Icon name={icon} size={44} color={C.ink} /></div>
             <div style={{ position: "absolute", left: 116, top: 98, display: "flex", alignItems: "center", gap: 10 }}><div style={{ width: 12, height: 12, borderRadius: 6, background: dot }} /><div style={{ fontFamily: C.font, fontWeight: 900, fontSize: 27, color: C.ink, whiteSpace: "nowrap" }}>{label}</div></div>
             <div style={{ position: "absolute", left: 118, top: 142, fontFamily: C.font, fontWeight: 700, fontSize: 20, color: C.muted }}>{sub}</div>
@@ -328,7 +328,7 @@ const Closer: React.FC<{ g: number }> = ({ g }) => {
       </Box>
       {/* you: the profile, folded into a tile */}
       <Box x={px} y={py} w={360} h={270} r={28} s={0.9 + 0.1 * tile} o={tile * (1 - leave)} style={{ ...glass(C.lime), boxShadow: `0 0 ${50 * talent}px rgba(106,187,36,${0.45 * talent}), 0 18px 40px rgba(18,38,30,0.10)` }}>
-        <Shot src={SPLIT} w={336} h={84} pos="60% 62%" zoom={1.3 + drift(g, "brings", 0.04)} px={-drift(g, "brings", 30)} r={16} style={{ left: 12, top: 12 }} />
+        <Shot src={SPLIT} w={336} h={84} pos="60% 62%" zoom={1.3 + drift(g, "brings", 0.08)} px={-drift(g, "brings", 45)} r={16} style={{ left: 12, top: 12 }} />
         <div style={{ position: "absolute", left: 26, top: 60 }}><Avatar i="You" size={78} hue={1} style={{ fontSize: 24, border: "4px solid #FFFFFF" }} /></div>
         <div style={{ position: "absolute", left: 120, top: 112, fontFamily: C.font, fontWeight: 900, fontSize: 34, color: C.ink }}>Graduate</div>
         <div style={{ position: "absolute", left: 26, top: 196, transform: `scale(${talent})`, transformOrigin: "0% 50%" }}>
@@ -359,7 +359,7 @@ const Panels: React.FC<{ g: number }> = ({ g }) => {
       {PANELS.map((p, i) => {
         const rel = i - pos;                                            // 0 = in focus
         const foc = 1 - Math.min(1, Math.abs(rel));
-        const x = 960 + rel * 1180 - (drift(g, p.at, 34) - 50) - leave * 900, y = 560 + (1 - inn) * 60;
+        const x = 960 + rel * 1180 - (drift(g, p.at, 46) - 70) - leave * 900, y = 560 + (1 - inn) * 60;
         const sc = 0.84 + 0.16 * foc;
         return (
           <Win key={i} x={x} y={y} w={1180} h={680} s={sc * (0.94 + 0.06 * inn)} o={(0.45 + 0.55 * foc) * inn * (1 - leave)} blur={(1 - foc) * 3 + leave * 10} glow={p.dot}>
@@ -368,7 +368,7 @@ const Panels: React.FC<{ g: number }> = ({ g }) => {
             </div>
             <div style={{ position: "absolute", left: 106, top: 160, fontFamily: C.font, fontWeight: 700, fontSize: 28, color: C.muted }}>{p.sub}</div>
             <div style={{ position: "absolute", left: 0, top: 0 }}>{p.lines.map((ln, j) => <Words key={j} g={g} x={70} y={280 + j * 100} size={84} words={ln as Wd[]} />)}</div>
-            <Shot src={[SPLIT, LISBON, LISBON][i]} w={460} h={540} r={22} pos={["68% 70%", "18% 88%", "45% 48%"][i]} zoom={1.15 + drift(g, p.at, 0.07)} px={-drift(g, p.at, 18)}
+            <Shot src={[SPLIT, LISBON, LISBON][i]} w={460} h={540} r={22} pos={["68% 70%", "18% 88%", "45% 48%"][i]} zoom={1.15 + drift(g, p.at, 0.12)} px={-drift(g, p.at, 40)}
               style={{ right: 40, top: 92, boxShadow: "0 16px 40px rgba(18,38,30,0.14)" }}>
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(23,39,31,0.05), rgba(23,39,31,0.35))" }} />
             </Shot>
@@ -516,11 +516,11 @@ const Chapter: React.FC<{ g: number }> = ({ g }) => {
   return (
     <AbsoluteFill>
       {/* the site's two cities, floating at the sides */}
-      <Box x={290 - d * 0.35 - (1 - p1) * 400} y={830} w={380} h={270} r={26} o={p1} rot={-4} blur={(1 - p1) * 8} style={{ ...glass(C.orange), padding: 12, boxSizing: "border-box" }}>
-        <div style={{ width: "100%", height: "100%", borderRadius: 16, overflow: "hidden" }}><Img src={staticFile("img/career-abroad.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${1.1 + drift(g, "chapter", 0.09)})` }} /></div>
+      <Box x={290 - d * 0.8 - (1 - p1) * 400} y={830 + d * 0.4} w={380} h={270} r={26} o={p1} rot={-4} blur={(1 - p1) * 8} style={{ ...glass(C.orange), padding: 12, boxSizing: "border-box" }}>
+        <div style={{ width: "100%", height: "100%", borderRadius: 16, overflow: "hidden" }}><Img src={staticFile("img/career-abroad.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${1.1 + drift(g, "chapter", 0.15)}) translateX(${-drift(g, "chapter", 20)}px)` }} /></div>
       </Box>
-      <Box x={1590 + d * 0.3 + (1 - p2) * 400} y={250} w={380} h={270} r={26} o={p2} rot={4} blur={(1 - p2) * 8} style={{ ...glass(C.green), padding: 12, boxSizing: "border-box" }}>
-        <div style={{ width: "100%", height: "100%", borderRadius: 16, overflow: "hidden" }}><Img src={staticFile("img/new-perspectives.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${1.1 + drift(g, "chapter", 0.09)})` }} /></div>
+      <Box x={1590 + d * 0.7 + (1 - p2) * 400} y={250 - d * 0.4} w={380} h={270} r={26} o={p2} rot={4} blur={(1 - p2) * 8} style={{ ...glass(C.green), padding: 12, boxSizing: "border-box" }}>
+        <div style={{ width: "100%", height: "100%", borderRadius: 16, overflow: "hidden" }}><Img src={staticFile("img/new-perspectives.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${1.1 + drift(g, "chapter", 0.15)}) translateX(${-drift(g, "chapter", 20)}px)` }} /></div>
       </Box>
       <Eyebrow text="From graduation to working abroad" size={22} style={{ position: "absolute", left: 0, top: 0, width: 1920, textAlign: "center", transform: `translateY(${325}px)`, opacity: k(g, "w:next2+0.1", 0.5), color: C.deep }} />
       <Words g={g} y={375} size={110} center words={[{ t: "Your", at: "w:your4" }, { t: "next", at: "w:next2" }, { t: "chapter", at: "w:chapter" }]} />
