@@ -1,0 +1,465 @@
+{
+ "fps": 30,
+ "frames": 1155,
+ "library": "lib",
+ "vo": {
+  "file": "../vo/vo.mp3",
+  "at": 0,
+  "compress": true
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "lufs": -23,
+  "duck_db": 6,
+  "fade_in": 0.2,
+  "fade_out": 0.6,
+  "lifts": []
+ },
+ "sfx": [
+  {
+   "frame": 5,
+   "id": "gen-appear",
+   "db": -6,
+   "note": "the internship card arrives"
+  },
+  {
+   "frame": 50,
+   "id": "gen-riser-1s",
+   "db": -12,
+   "note": "the bar fills (ends on 100%)"
+  },
+  {
+   "frame": 53,
+   "id": "kenney-select-002",
+   "db": -4,
+   "note": "Completed"
+  },
+  {
+   "frame": 63,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": -2,
+   "note": "the line runs on out of the card"
+  },
+  {
+   "frame": 78,
+   "id": "gen-whoosh-whip",
+   "db": -8,
+   "note": "the search bar arrives"
+  },
+  {
+   "frame": 80,
+   "id": "kenney-click-001",
+   "db": -14,
+   "note": "a key"
+  },
+  {
+   "frame": 84,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 88,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 92,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": 3,
+   "note": "a key"
+  },
+  {
+   "frame": 95,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": 1,
+   "note": "a key"
+  },
+  {
+   "frame": 99,
+   "id": "kenney-click-001",
+   "db": -14,
+   "note": "a key"
+  },
+  {
+   "frame": 100,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "note": "a suggestion row"
+  },
+  {
+   "frame": 103,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 103,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 3,
+   "note": "a suggestion row"
+  },
+  {
+   "frame": 107,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": 4,
+   "note": "a key"
+  },
+  {
+   "frame": 107,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 7,
+   "note": "a suggestion row"
+  },
+  {
+   "frame": 124,
+   "id": "gen-whoosh-medium",
+   "db": -5,
+   "note": "the bar closes into a point"
+  },
+  {
+   "frame": 130,
+   "id": "gen-swell",
+   "db": -6,
+   "note": "the A climbs, the L turns"
+  },
+  {
+   "frame": 142,
+   "id": "gen-impact-soft",
+   "db": -7,
+   "note": "the name lands"
+  },
+  {
+   "frame": 145,
+   "id": "gen-shimmer",
+   "db": -8,
+   "note": "the brand"
+  },
+  {
+   "frame": 168,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "note": "the logo becomes the hub"
+  },
+  {
+   "frame": 181,
+   "id": "kenney-maximize-009",
+   "db": -5,
+   "note": "the graduate tile"
+  },
+  {
+   "frame": 206,
+   "id": "kenney-drop-003",
+   "db": -7,
+   "note": "opportunity 1 lands"
+  },
+  {
+   "frame": 230,
+   "id": "kenney-drop-003",
+   "db": -7,
+   "pitch": 4,
+   "note": "opportunity 2 lands"
+  },
+  {
+   "frame": 239,
+   "id": "kenney-drop-003",
+   "db": -7,
+   "pitch": 7,
+   "note": "opportunity 3 lands"
+  },
+  {
+   "frame": 271,
+   "id": "gen-whoosh-medium",
+   "db": -5,
+   "note": "the tile opens into the profile"
+  },
+  {
+   "frame": 299,
+   "id": "kenney-select-001",
+   "db": -5,
+   "note": "a tick"
+  },
+  {
+   "frame": 304,
+   "id": "kenney-select-001",
+   "db": -5,
+   "pitch": 3,
+   "note": "a tick"
+  },
+  {
+   "frame": 327,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "note": "an ambition chip"
+  },
+  {
+   "frame": 331,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 3,
+   "note": "an ambition chip"
+  },
+  {
+   "frame": 335,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 5,
+   "note": "an ambition chip"
+  },
+  {
+   "frame": 361,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 7,
+   "note": "a destination"
+  },
+  {
+   "frame": 365,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 9,
+   "note": "a destination"
+  },
+  {
+   "frame": 374,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "pitch": 2,
+   "note": "the route draws"
+  },
+  {
+   "frame": 382,
+   "id": "kenney-select-002",
+   "db": -4,
+   "note": "the place is picked"
+  },
+  {
+   "frame": 398,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "note": "the profile folds into a tile"
+  },
+  {
+   "frame": 432,
+   "id": "gen-swell",
+   "db": -10,
+   "note": "both sides move in"
+  },
+  {
+   "frame": 443,
+   "id": "kenney-maximize-009",
+   "db": -5,
+   "note": "employers"
+  },
+  {
+   "frame": 464,
+   "id": "kenney-maximize-009",
+   "db": -5,
+   "pitch": 3,
+   "note": "recruitment agencies"
+  },
+  {
+   "frame": 521,
+   "id": "gen-success",
+   "db": -8,
+   "note": "Emerging talent"
+  },
+  {
+   "frame": 559,
+   "id": "gen-whoosh-whip",
+   "db": -8,
+   "pitch": -2,
+   "note": "the first panel rises"
+  },
+  {
+   "frame": 601,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "note": "the path draws"
+  },
+  {
+   "frame": 607,
+   "id": "kenney-select-002",
+   "db": -5,
+   "note": "the arrowhead"
+  },
+  {
+   "frame": 632,
+   "id": "gen-whoosh-medium",
+   "db": -7,
+   "note": "the track slides to employers"
+  },
+  {
+   "frame": 673,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "note": "professional 1"
+  },
+  {
+   "frame": 676,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 2,
+   "note": "professional 2"
+  },
+  {
+   "frame": 680,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 4,
+   "note": "professional 3"
+  },
+  {
+   "frame": 683,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 5,
+   "note": "professional 4"
+  },
+  {
+   "frame": 687,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 7,
+   "note": "professional 5"
+  },
+  {
+   "frame": 691,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 9,
+   "note": "professional 6"
+  },
+  {
+   "frame": 729,
+   "id": "gen-whoosh-medium",
+   "db": -7,
+   "note": "the track slides to agencies"
+  },
+  {
+   "frame": 758,
+   "id": "gen-whoosh-whip",
+   "db": -12,
+   "pitch": 2,
+   "note": "the two paths draw"
+  },
+  {
+   "frame": 800,
+   "id": "gen-impact-soft",
+   "db": -8,
+   "note": "they meet"
+  },
+  {
+   "frame": 802,
+   "id": "gen-chime",
+   "db": -10,
+   "note": "a stronger connection"
+  },
+  {
+   "frame": 826,
+   "id": "gen-whoosh-deep",
+   "db": -6,
+   "note": "the city window"
+  },
+  {
+   "frame": 843,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": -2,
+   "note": "the flight"
+  },
+  {
+   "frame": 860,
+   "id": "kenney-maximize-009",
+   "db": -6,
+   "note": "the team window"
+  },
+  {
+   "frame": 869,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "note": "colleague 1"
+  },
+  {
+   "frame": 872,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 3,
+   "note": "colleague 2"
+  },
+  {
+   "frame": 875,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 5,
+   "note": "colleague 3"
+  },
+  {
+   "frame": 878,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 8,
+   "note": "colleague 4"
+  },
+  {
+   "frame": 878,
+   "id": "kenney-select-001",
+   "db": -8,
+   "note": "the message"
+  },
+  {
+   "frame": 896,
+   "id": "gen-whoosh-whip",
+   "db": -9,
+   "note": "the second city"
+  },
+  {
+   "frame": 914,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "note": "the opportunity shape"
+  },
+  {
+   "frame": 937,
+   "id": "gen-swell",
+   "db": -5,
+   "note": "the logo returns"
+  },
+  {
+   "frame": 943,
+   "id": "gen-shimmer",
+   "db": -8,
+   "note": "Alumni"
+  },
+  {
+   "frame": 1008,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "pitch": 2,
+   "note": "the line from experience to opportunity"
+  },
+  {
+   "frame": 1027,
+   "id": "gen-whoosh-medium",
+   "db": -7,
+   "note": "the logo lifts, the cities float in"
+  },
+  {
+   "frame": 1094,
+   "id": "kenney-maximize-009",
+   "db": -5,
+   "note": "the call to action"
+  }
+ ]
+}

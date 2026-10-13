@@ -1,0 +1,2738 @@
+{
+ "title": "Alumni — From graduation to working abroad",
+ "url": "https://small-salad-e287.raphael-0d6.workers.dev/",
+ "vars": {
+  "--orange": "#fe6c02",
+  "--lime": "#6abb24",
+  "--green": "#028b45",
+  "--green-accessible": "#006b38",
+  "--ink": "#17271f",
+  "--paper": "#f7f8f4",
+  "--white": "#fff",
+  "--muted": "#5b685f",
+  "--line": "#dde5db",
+  "--space-section": "88px",
+  "--radius": "18px",
+  "--ease": "cubic-bezier(.2,.7,.2,1)"
+ },
+ "colors": [
+  [
+   "rgb(23, 39, 31)",
+   195
+  ],
+  [
+   "rgb(91, 104, 95)",
+   82
+  ],
+  [
+   "rgb(255, 255, 255)",
+   49
+  ],
+  [
+   "rgb(0, 107, 56)",
+   49
+  ],
+  [
+   "rgb(196, 212, 199)",
+   18
+  ],
+  [
+   "rgb(189, 206, 194)",
+   15
+  ],
+  [
+   "rgb(221, 229, 219)",
+   5
+  ],
+  [
+   "rgb(254, 108, 2)",
+   4
+  ],
+  [
+   "rgb(247, 248, 244)",
+   4
+  ],
+  [
+   "rgb(248, 250, 245)",
+   4
+  ],
+  [
+   "rgb(203, 220, 195)",
+   4
+  ],
+  [
+   "rgb(215, 239, 200)",
+   4
+  ],
+  [
+   "rgba(255, 255, 255, 0.75)",
+   3
+  ],
+  [
+   "rgba(255, 255, 255, 0.937)",
+   2
+  ],
+  [
+   "rgb(239, 245, 233)",
+   2
+  ],
+  [
+   "rgb(223, 231, 217)",
+   2
+  ]
+ ],
+ "fonts": [
+  [
+   "lato, \"lato Fallback\", Arial, sans-serif",
+   216
+  ]
+ ],
+ "eases": [
+  [
+   "cubic-bezier(0.2, 0.7, 0.2, 1), cubic-bezier(0.2, 0.7, 0.2, 1)",
+   11
+  ],
+  [
+   "ease",
+   8
+  ],
+  [
+   "ease, ease, ease",
+   3
+  ],
+  [
+   "ease, ease",
+   1
+  ]
+ ],
+ "h1": {
+  "sel": "h1",
+  "text": "Your next chapter\nstarts abroad.",
+  "font": "lato, \"lato Fallback\", Arial, sans-serif",
+  "size": "66px",
+  "weight": "900",
+  "tracking": "-1.65px",
+  "color": "rgb(255, 255, 255)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "radius": "0px"
+ },
+ "h2": {
+  "sel": "h2",
+  "text": "From your first experience.\nTo your next opportunity.",
+  "font": "lato, \"lato Fallback\", Arial, sans-serif",
+  "size": "36px",
+  "weight": "700",
+  "tracking": "-0.9px",
+  "color": "rgb(23, 39, 31)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "radius": "0px"
+ },
+ "body": {
+  "sel": "body",
+  "text": "Skip to content\nHome\nAbout Alumni\nWho we help\nOur approach\nLet’s connect\n\nFROM GRADUATION TO WORKING ABROAD\n\nYour next c",
+  "font": "lato, \"lato Fallback\", Arial, sans-serif",
+  "size": "18px",
+  "weight": "400",
+  "tracking": "normal",
+  "color": "rgb(23, 39, 31)",
+  "bg": "rgb(255, 255, 255)",
+  "radius": "0px"
+ },
+ "button": {
+  "sel": "a[class*=\"btn\" i], button, a[class*=\"button\" i]",
+  "text": "",
+  "font": "lato, \"lato Fallback\", Arial, sans-serif",
+  "size": "18px",
+  "weight": "400",
+  "tracking": "normal",
+  "color": "rgb(23, 39, 31)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "radius": "0px"
+ },
+ "logos": [
+  {
+   "type": "img",
+   "src": "https://small-salad-e287.raphael-0d6.workers.dev/brand/alumni-logo.png",
+   "alt": "Alumni AL monogram"
+  },
+  {
+   "type": "svg",
+   "markup": "<svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5 19 19 5M5 5h14v14\"></path></svg>"
+  },
+  {
+   "type": "img",
+   "src": "https://small-salad-e287.raphael-0d6.workers.dev/brand/alumni-logo.png",
+   "alt": "Alumni AL monogram"
+  }
+ ],
+ "icons": [
+  "https://small-salad-e287.raphael-0d6.workers.dev/brand/alumni-logo.png",
+  "https://small-salad-e287.raphael-0d6.workers.dev/brand/alumni-logo.png"
+ ],
+ "images": [
+  {
+   "src": "https://small-salad-e287.raphael-0d6.workers.dev/brand/alumni-logo.png",
+   "alt": "Alumni AL monogram",
+   "w": 1254,
+   "h": 1254
+  },
+  {
+   "src": "https://small-salad-e287.raphael-0d6.workers.dev/images/career-abroad.jpg",
+   "alt": "",
+   "w": 2200,
+   "h": 1250
+  },
+  {
+   "src": "https://small-salad-e287.raphael-0d6.workers.dev/images/new-perspectives.jpg",
+   "alt": "A sunlit European city and river, illustrating a broader perspective on working abroad",
+   "w": 1100,
+   "h": 826
+  },
+  {
+   "src": "https://small-salad-e287.raphael-0d6.workers.dev/brand/alumni-logo.png",
+   "alt": "Alumni AL monogram",
+   "w": 1254,
+   "h": 1254
+  }
+ ],
+ "headings": [
+  "Your next chapter\nstarts abroad.",
+  "From your first experience.\nTo your next opportunity.",
+  "Experience behind you.\nOpportunity ahead.",
+  "Connection",
+  "Growth",
+  "Guidance",
+  "Opportunity",
+  "A new career. A new colleague.\nA good connection.",
+  "Your career abroad",
+  "Your next colleague",
+  "Your next talent connection",
+  "Your experience is a beginning.\nLet’s explore the next step.",
+  "Start with your experience.",
+  "An independent vision.\nBuilt on experience.",
+  "Ready for your next chapter?",
+  "Your next connection\nstarts here.",
+  "Online enquiries will be available soon.",
+  "Discover Alumni",
+  "Your next step",
+  "Let’s connect"
+ ],
+ "text": "Skip to content\nHome\nAbout Alumni\nWho we help\nOur approach\nLet’s connect\nFROM GRADUATION TO WORKING ABROAD\nYour next chapter\nstarts abroad.\nAlumni connects graduates with internship experience to employers and recruitment agencies with opportunities abroad. Your next step starts with a conversation.\nExplore my next step\nFind talent\nFor graduates & former interns\nYour career abroad\nFor employers\nYour next colleague\nFor recruitment agencies\nYour next talent connection\nThe Alumni story\nComing soon\nA new chapter, explained.\nOur brand film is on its way\nGrow together. Go further.\nGet to know Alumni\nFrom your first experience.\nTo your next opportunity.\nThe end of your studies can be the start of something bigger. Meet Alumni: connecting the experience you’ve gained with opportunities to work abroad.\nMore about Alumni\nWhat brings us together\nExperience behind you.\nOpportunity ahead.\nAn internship builds practical experience. Graduation opens a new chapter. Alumni connects people at this turning point with employers and recruitment agencies in international job markets.\nConnection\nBring your experience and ambitions into a conversation with the people looking for their next colleague.\nGrowth\nBuild on your qualification and internship experience as you take your next step into working life.\nGuidance\nA good next step starts with understanding what you bring, what you’re looking for and where you want to go.\nOpportunity\nLook beyond familiar borders. A new role can be a chance to discover a different place, team and perspective.\nWho we help\nA new career. A new colleague.\nA good connection.\nFor graduates ready to explore working abroad, and the employers and recruitment agencies looking to meet them.\nFor graduates & former interns\nYour career abroad\nFinished your studies and ready for working life? Alumni connects graduates with internship experience to job opportunities in foreign labour markets.\nTell us about your background, interests and where you’d like to work. Start a conversation about your next step.\nExplore my next step\nFor employers\nYour next colleague\nLooking for people at the beginning of their careers? Connect with graduates who bring a qualification, internship experience and ambition to their next role.\nTell us about your team, the roles you’re recruiting for and the experience you’re looking for.\nDiscuss a hiring need\nFor recruitment agencies\nYour next talent connection\nRecruiting for international vacancies? Alumni brings recruitment agencies together with graduates entering the labour market.\nLet’s discuss the roles and markets you work with, and explore where there could be a fit.\nExplore a collaboration\nOur approach\nYour experience is a beginning.\nLet’s explore the next step.\nFrom internship to working life.\nA conversation about your future abroad.\n01\nIntroduce\nStart with your experience.\n02\nExplore\nLook beyond borders.\n03\nConnect\nMeet relevant opportunities.\n04\nNext step\nExplore what comes next.\nStart with your experience.\nYour qualification and internship are the starting point. Tell us what you’ve learned and what you’d like to do next.\nEvery opportunity is different. Roles and next steps are discussed individually.\nA broader view of what comes next.\nOur roots\nAn independent vision.\nBuilt on experience.\nAlumni is an independent company, brought together by the people behind JongLeren and K.B. JongLeren’s connection to international internships provides a natural starting point. Alumni focuses on the chapter that follows: graduates entering the labour market and exploring work abroad.\nJongLeren\nA human perspective\nK.B.\nA forward-thinking mindset\nIndependent by design. Connected through people.\nGrow together. Go further.\nReady for your next chapter?\nYou’ve taken the first steps through study and internship.\nLet’s talk about where working life could take you.\nLet’s explore what’s next\nLet’s start a conversation\nYour next connection\nstarts here.\nLooking for work abroad, recruiting for your team or exploring an agency collaboration? Tell us what you have in mind.\nFor graduates & former interns\nFor employers\nFor recruitment agencies\nGrow together. Go further.\nLet’s connect.\nComing soon\nOnline enquiries will be available soon.\nOfficial contact details will be shared here as soon as they’re ready.\nConnecting experience\nwith opportunity.\nDiscover Alumni\nAbout Alumni\nWho we help\nOur approach\nOur roots\nYour next step\nFor graduates & former interns\nFor employers\nFor recruitment agencies\nLet’s connect\nOfficial contact details coming soon.\nGet in touch\n© 2026 Alumni\nAn independent vision, with shared roots.\nPrivacy draft\nLegal draft",
+ "styles": {
+  "body": [
+   {
+    "text": "Skip to content Home About Alumni Who we help Our approach Let’s connect FROM GR",
+    "box": [
+     1440,
+     6333
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "1440px",
+    "height": "6333.2px"
+   }
+  ],
+  "h1": [
+   {
+    "text": "Your next chapter starts abroad.",
+    "id": "hero-title",
+    "box": [
+     850,
+     145
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "66px",
+    "fontWeight": "900",
+    "lineHeight": "72.6px",
+    "letterSpacing": "-1.65px",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "850px",
+    "height": "145.188px"
+   }
+  ],
+  "h1 > span": [
+   {
+    "text": "Your next chapter",
+    "box": [
+     850,
+     73
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "66px",
+    "fontWeight": "900",
+    "lineHeight": "72.6px",
+    "letterSpacing": "-1.65px",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "850px",
+    "height": "72.5938px"
+   },
+   {
+    "text": "starts abroad.",
+    "box": [
+     850,
+     73
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "66px",
+    "fontWeight": "900",
+    "lineHeight": "72.6px",
+    "letterSpacing": "-1.65px",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "850px",
+    "height": "72.5938px"
+   }
+  ],
+  "h2": [
+   {
+    "text": "From your first experience. To your next opportunity.",
+    "id": "film-title",
+    "box": [
+     511,
+     86
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "36px",
+    "fontWeight": "700",
+    "lineHeight": "43.2px",
+    "letterSpacing": "-0.9px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "510.797px",
+    "height": "86.375px"
+   },
+   {
+    "text": "Experience behind you. Opportunity ahead.",
+    "id": "about-title",
+    "box": [
+     850,
+     110
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "46px",
+    "fontWeight": "700",
+    "lineHeight": "55.2px",
+    "letterSpacing": "-1.15px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "850px",
+    "height": "110.375px"
+   },
+   {
+    "text": "A new career. A new colleague. A good connection.",
+    "id": "services-title",
+    "box": [
+     850,
+     110
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "46px",
+    "fontWeight": "700",
+    "lineHeight": "55.2px",
+    "letterSpacing": "-1.15px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "850px",
+    "height": "110.375px"
+   }
+  ],
+  "h3": [
+   {
+    "text": "Connection",
+    "box": [
+     263,
+     30
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "23px",
+    "fontWeight": "700",
+    "lineHeight": "29.9px",
+    "letterSpacing": "-0.345px",
+    "color": "rgb(0, 107, 56)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "262.5px",
+    "height": "29.8906px"
+   },
+   {
+    "text": "Growth",
+    "box": [
+     263,
+     30
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "23px",
+    "fontWeight": "700",
+    "lineHeight": "29.9px",
+    "letterSpacing": "-0.345px",
+    "color": "rgb(0, 107, 56)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "262.5px",
+    "height": "29.8906px"
+   },
+   {
+    "text": "Guidance",
+    "box": [
+     263,
+     30
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "23px",
+    "fontWeight": "700",
+    "lineHeight": "29.9px",
+    "letterSpacing": "-0.345px",
+    "color": "rgb(0, 107, 56)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "262.5px",
+    "height": "29.8906px"
+   }
+  ],
+  ".eyebrow": [
+   {
+    "text": "FROM GRADUATION TO WORKING ABROAD",
+    "box": [
+     1152,
+     17
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "12px",
+    "fontWeight": "700",
+    "lineHeight": "16.8px",
+    "letterSpacing": "1.56px",
+    "textTransform": "uppercase",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "1152px",
+    "height": "16.7969px"
+   },
+   {
+    "text": "Get to know Alumni",
+    "box": [
+     511,
+     18
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "13px",
+    "fontWeight": "700",
+    "lineHeight": "18.2px",
+    "letterSpacing": "0.78px",
+    "color": "rgb(0, 107, 56)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "510.797px",
+    "height": "18.1875px"
+   },
+   {
+    "text": "What brings us together",
+    "box": [
+     850,
+     18
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "13px",
+    "fontWeight": "700",
+    "lineHeight": "18.2px",
+    "letterSpacing": "0.78px",
+    "color": "rgb(0, 107, 56)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "850px",
+    "height": "18.1875px"
+   }
+  ],
+  ".hero-eyebrow": [
+   {
+    "text": "FROM GRADUATION TO WORKING ABROAD",
+    "box": [
+     1152,
+     17
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "12px",
+    "fontWeight": "700",
+    "lineHeight": "16.8px",
+    "letterSpacing": "1.56px",
+    "textTransform": "uppercase",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "1152px",
+    "height": "16.7969px"
+   }
+  ],
+  ".hero-description": [
+   {
+    "text": "Alumni connects graduates with internship experience to employers and recruitmen",
+    "box": [
+     690,
+     94
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "19px",
+    "fontWeight": "400",
+    "lineHeight": "31.35px",
+    "color": "rgba(255, 255, 255, 0.937)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "690px",
+    "height": "94.0312px"
+   }
+  ],
+  "main p": [
+   {
+    "text": "FROM GRADUATION TO WORKING ABROAD",
+    "box": [
+     1152,
+     17
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "12px",
+    "fontWeight": "700",
+    "lineHeight": "16.8px",
+    "letterSpacing": "1.56px",
+    "textTransform": "uppercase",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "1152px",
+    "height": "16.7969px"
+   },
+   {
+    "text": "Alumni connects graduates with internship experience to employers and recruitmen",
+    "box": [
+     690,
+     94
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "19px",
+    "fontWeight": "400",
+    "lineHeight": "31.35px",
+    "color": "rgba(255, 255, 255, 0.937)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "690px",
+    "height": "94.0312px"
+   },
+   {
+    "text": "A new chapter, explained.",
+    "box": [
+     205,
+     30
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "700",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "204.812px",
+    "height": "29.6875px"
+   }
+  ],
+  ".center-heading > p:last-child": [
+   {
+    "text": "An internship builds practical experience. Graduation opens a new chapter. Alumn",
+    "box": [
+     740,
+     89
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(91, 104, 95)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "740px",
+    "height": "89.0625px"
+   },
+   {
+    "text": "For graduates ready to explore working abroad, and the employers and recruitment",
+    "box": [
+     740,
+     59
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(91, 104, 95)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "740px",
+    "height": "59.375px"
+   },
+   {
+    "text": "From internship to working life. A conversation about your future abroad.",
+    "box": [
+     740,
+     59
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(91, 104, 95)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "740px",
+    "height": "59.375px"
+   }
+  ],
+  ".site-header": [
+   {
+    "text": "Home About Alumni Who we help Our approach Let’s connect",
+    "box": [
+     1152,
+     82
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "1152px",
+    "height": "82px"
+   }
+  ],
+  ".nav-shell": [
+   {
+    "text": "Home About Alumni Who we help Our approach Let’s connect",
+    "box": [
+     1152,
+     82
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "999px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgb(255, 255, 255)",
+    "borderTopStyle": "solid",
+    "boxShadow": "rgba(23, 39, 31, 0.082) 0px 4px 22px 0px",
+    "padding": "6px 22px 6px 12px",
+    "width": "1152px",
+    "height": "82px"
+   }
+  ],
+  ".brand-link img": [
+   {
+    "text": "Alumni AL monogram",
+    "box": [
+     72,
+     72
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgba(0, 0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "72px",
+    "height": "72px"
+   }
+  ],
+  ".desktop-nav": [
+   {
+    "text": "Home About Alumni Who we help Our approach",
+    "box": [
+     430,
+     48
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(245, 247, 242)",
+    "borderRadius": "999px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgb(221, 229, 219)",
+    "borderTopStyle": "solid",
+    "padding": "4px",
+    "width": "430.172px",
+    "height": "47.5px"
+   }
+  ],
+  ".desktop-nav a[aria-current]": [
+   {
+    "text": "Home",
+    "box": [
+     69,
+     38
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "13px",
+    "fontWeight": "700",
+    "lineHeight": "19.5px",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(0, 107, 56)",
+    "borderRadius": "999px",
+    "padding": "9px 17px",
+    "width": "69.125px",
+    "height": "37.5px"
+   }
+  ],
+  ".desktop-nav a:not([aria-current])": [
+   {
+    "text": "About Alumni",
+    "box": [
+     115,
+     38
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "13px",
+    "fontWeight": "700",
+    "lineHeight": "19.5px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "999px",
+    "padding": "9px 17px",
+    "width": "114.969px",
+    "height": "37.5px"
+   },
+   {
+    "text": "Who we help",
+    "box": [
+     110,
+     38
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "13px",
+    "fontWeight": "700",
+    "lineHeight": "19.5px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "999px",
+    "padding": "9px 17px",
+    "width": "109.859px",
+    "height": "37.5px"
+   },
+   {
+    "text": "Our approach",
+    "box": [
+     114,
+     38
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "13px",
+    "fontWeight": "700",
+    "lineHeight": "19.5px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "999px",
+    "padding": "9px 17px",
+    "width": "114.219px",
+    "height": "37.5px"
+   }
+  ],
+  ".nav-contact": [
+   {
+    "text": "Let’s connect",
+    "box": [
+     154,
+     45
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "700",
+    "lineHeight": "21px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(254, 108, 2)",
+    "borderRadius": "999px",
+    "padding": "12px 20px",
+    "width": "153.984px",
+    "height": "45px"
+   }
+  ],
+  ".button": [
+   {
+    "text": "Explore my next step",
+    "box": [
+     252,
+     56
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "700",
+    "lineHeight": "24px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(254, 108, 2)",
+    "borderRadius": "999px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgba(0, 0, 0, 0)",
+    "borderTopStyle": "solid",
+    "padding": "13px 29px",
+    "width": "252.141px",
+    "height": "56px"
+   },
+   {
+    "text": "Find talent",
+    "box": [
+     180,
+     56
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "700",
+    "lineHeight": "24px",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(255, 255, 255, 0.04)",
+    "borderRadius": "999px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgba(255, 255, 255, 0.627)",
+    "borderTopStyle": "solid",
+    "padding": "13px 29px",
+    "width": "180.375px",
+    "height": "56px"
+   },
+   {
+    "text": "Let’s explore what’s next",
+    "box": [
+     279,
+     56
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "700",
+    "lineHeight": "24px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(254, 108, 2)",
+    "borderRadius": "999px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgba(0, 0, 0, 0)",
+    "borderTopStyle": "solid",
+    "padding": "13px 29px",
+    "width": "278.766px",
+    "height": "56px"
+   }
+  ],
+  ".button-orange": [
+   {
+    "text": "Explore my next step",
+    "box": [
+     252,
+     56
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "700",
+    "lineHeight": "24px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(254, 108, 2)",
+    "borderRadius": "999px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgba(0, 0, 0, 0)",
+    "borderTopStyle": "solid",
+    "padding": "13px 29px",
+    "width": "252.141px",
+    "height": "56px"
+   },
+   {
+    "text": "Let’s explore what’s next",
+    "box": [
+     279,
+     56
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "700",
+    "lineHeight": "24px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(254, 108, 2)",
+    "borderRadius": "999px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgba(0, 0, 0, 0)",
+    "borderTopStyle": "solid",
+    "padding": "13px 29px",
+    "width": "278.766px",
+    "height": "56px"
+   }
+  ],
+  ".button-outline-light": [
+   {
+    "text": "Find talent",
+    "box": [
+     180,
+     56
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "700",
+    "lineHeight": "24px",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(255, 255, 255, 0.04)",
+    "borderRadius": "999px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgba(255, 255, 255, 0.627)",
+    "borderTopStyle": "solid",
+    "padding": "13px 29px",
+    "width": "180.375px",
+    "height": "56px"
+   }
+  ],
+  ".text-link": [
+   {
+    "text": "More about Alumni",
+    "box": [
+     168,
+     26
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "700",
+    "lineHeight": "26.4px",
+    "color": "rgb(0, 107, 56)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "167.828px",
+    "height": "26.3906px"
+   },
+   {
+    "text": "Explore my next step",
+    "box": [
+     178,
+     26
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "700",
+    "lineHeight": "26.4px",
+    "color": "rgb(0, 107, 56)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "178.141px",
+    "height": "26.3906px"
+   },
+   {
+    "text": "Discuss a hiring need",
+    "box": [
+     178,
+     26
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "700",
+    "lineHeight": "26.4px",
+    "color": "rgb(0, 107, 56)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "177.641px",
+    "height": "26.3906px"
+   }
+  ],
+  ".hero-cover": [
+   {
+    "text": "FROM GRADUATION TO WORKING ABROAD Your next chapter starts abroad. Alumni connec",
+    "box": [
+     1440,
+     660
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(23, 39, 31)",
+    "borderRadius": "0px",
+    "padding": "155px 0px 74px",
+    "width": "1440px",
+    "height": "660px"
+   }
+  ],
+  ".hero-photo": [
+   {
+    "text": "",
+    "box": [
+     1440,
+     660
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgba(0, 0, 0, 0)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "1440px",
+    "height": "660px",
+    "objectPosition": "50% 58%"
+   }
+  ],
+  ".hero-shade": [
+   {
+    "text": "",
+    "box": [
+     1440,
+     660
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "backgroundImage": "linear-gradient(rgba(23, 39, 31, 0.36), rgba(23, 39, 31, 0.55) 45%, rgba(23, 39, 31, 0.64))",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "1440px",
+    "height": "660px"
+   }
+  ],
+  ".hero-audiences": [
+   {
+    "text": "For graduates & former interns Your career abroad For employers Your next collea",
+    "box": [
+     1152,
+     114
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "25px 0px",
+    "width": "1152px",
+    "height": "114px"
+   }
+  ],
+  ".hero-audiences > a": [
+   {
+    "text": "For graduates & former interns Your career abroad",
+    "box": [
+     384,
+     64
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px 27px 0px 0px",
+    "width": "384px",
+    "height": "64px"
+   },
+   {
+    "text": "For employers Your next colleague",
+    "box": [
+     384,
+     64
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px 27px",
+    "width": "384px",
+    "height": "64px"
+   },
+   {
+    "text": "For recruitment agencies Your next talent connection",
+    "box": [
+     384,
+     64
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px 0px 0px 27px",
+    "width": "384px",
+    "height": "64px"
+   }
+  ],
+  ".hero-audiences strong": [
+   {
+    "text": "Your career abroad",
+    "box": [
+     305,
+     24
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "700",
+    "lineHeight": "24.3px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "305px",
+    "height": "24.2969px"
+   },
+   {
+    "text": "Your next colleague",
+    "box": [
+     278,
+     24
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "700",
+    "lineHeight": "24.3px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "278px",
+    "height": "24.2969px"
+   },
+   {
+    "text": "Your next talent connection",
+    "box": [
+     306,
+     24
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "700",
+    "lineHeight": "24.3px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "306px",
+    "height": "24.2969px"
+   }
+  ],
+  ".audience-strip-dot": [
+   {
+    "text": "",
+    "box": [
+     8,
+     8
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(2, 139, 69)",
+    "borderRadius": "50%",
+    "padding": "0px",
+    "width": "8px",
+    "height": "8px"
+   },
+   {
+    "text": "",
+    "box": [
+     8,
+     8
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(254, 108, 2)",
+    "borderRadius": "50%",
+    "padding": "0px",
+    "width": "8px",
+    "height": "8px"
+   },
+   {
+    "text": "",
+    "box": [
+     8,
+     8
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(106, 187, 36)",
+    "borderRadius": "50%",
+    "padding": "0px",
+    "width": "8px",
+    "height": "8px"
+   }
+  ],
+  "main > section": [
+   {
+    "text": "FROM GRADUATION TO WORKING ABROAD Your next chapter starts abroad. Alumni connec",
+    "id": "home",
+    "box": [
+     1440,
+     774
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "1440px",
+    "height": "774px"
+   },
+   {
+    "text": "The Alumni story Coming soon A new chapter, explained. Our brand film is on its ",
+    "id": "film",
+    "box": [
+     1440,
+     501
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(247, 248, 244)",
+    "borderRadius": "0px",
+    "padding": "88px 0px",
+    "width": "1440px",
+    "height": "500.656px"
+   },
+   {
+    "text": "What brings us together Experience behind you. Opportunity ahead. An internship ",
+    "id": "about",
+    "box": [
+     1440,
+     756
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "88px 0px",
+    "width": "1440px",
+    "height": "755.516px"
+   }
+  ],
+  ".section-tint": [
+   {
+    "text": "Who we help A new career. A new colleague. A good connection. For graduates read",
+    "id": "possibilities",
+    "box": [
+     1440,
+     1179
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(247, 248, 244)",
+    "borderRadius": "0px",
+    "padding": "88px 0px",
+    "width": "1440px",
+    "height": "1179px"
+   },
+   {
+    "text": "A broader view of what comes next. Our roots An independent vision. Built on exp",
+    "id": "roots",
+    "box": [
+     1440,
+     686
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(247, 248, 244)",
+    "borderRadius": "0px",
+    "padding": "88px 0px",
+    "width": "1440px",
+    "height": "686px"
+   }
+  ],
+  ".film-section": [
+   {
+    "text": "The Alumni story Coming soon A new chapter, explained. Our brand film is on its ",
+    "id": "film",
+    "box": [
+     1440,
+     501
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(247, 248, 244)",
+    "borderRadius": "0px",
+    "padding": "88px 0px",
+    "width": "1440px",
+    "height": "500.656px"
+   }
+  ],
+  ".film-placeholder": [
+   {
+    "text": "The Alumni story Coming soon A new chapter, explained. Our brand film is on its ",
+    "box": [
+     577,
+     325
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "18px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgb(214, 223, 210)",
+    "borderTopStyle": "solid",
+    "boxShadow": "rgba(23, 39, 31, 0.02) 0px 8px 24px 0px",
+    "padding": "0px",
+    "width": "577.188px",
+    "height": "324.656px"
+   }
+  ],
+  ".film-play": [
+   {
+    "text": "",
+    "box": [
+     64,
+     64
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(240, 245, 235)",
+    "borderRadius": "50%",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgb(200, 216, 192)",
+    "borderTopStyle": "solid",
+    "padding": "0px",
+    "width": "64px",
+    "height": "64px"
+   }
+  ],
+  ".values-grid": [
+   {
+    "text": "Connection Bring your experience and ambitions into a conversation with the peop",
+    "box": [
+     1152,
+     269
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "1152px",
+    "height": "268.891px"
+   }
+  ],
+  ".value-icon": [
+   {
+    "text": "",
+    "box": [
+     90,
+     90
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(248, 250, 245)",
+    "borderRadius": "50%",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgb(203, 220, 195)",
+    "borderTopStyle": "solid",
+    "padding": "0px",
+    "width": "90px",
+    "height": "90px"
+   },
+   {
+    "text": "",
+    "box": [
+     90,
+     90
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(248, 250, 245)",
+    "borderRadius": "50%",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgb(203, 220, 195)",
+    "borderTopStyle": "solid",
+    "padding": "0px",
+    "width": "90px",
+    "height": "90px"
+   },
+   {
+    "text": "",
+    "box": [
+     90,
+     90
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(248, 250, 245)",
+    "borderRadius": "50%",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgb(203, 220, 195)",
+    "borderTopStyle": "solid",
+    "padding": "0px",
+    "width": "90px",
+    "height": "90px"
+   }
+  ],
+  ".value h3": [
+   {
+    "text": "Connection",
+    "box": [
+     263,
+     30
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "23px",
+    "fontWeight": "700",
+    "lineHeight": "29.9px",
+    "letterSpacing": "-0.345px",
+    "color": "rgb(0, 107, 56)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "262.5px",
+    "height": "29.8906px"
+   },
+   {
+    "text": "Growth",
+    "box": [
+     263,
+     30
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "23px",
+    "fontWeight": "700",
+    "lineHeight": "29.9px",
+    "letterSpacing": "-0.345px",
+    "color": "rgb(0, 107, 56)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "262.5px",
+    "height": "29.8906px"
+   },
+   {
+    "text": "Guidance",
+    "box": [
+     263,
+     30
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "23px",
+    "fontWeight": "700",
+    "lineHeight": "29.9px",
+    "letterSpacing": "-0.345px",
+    "color": "rgb(0, 107, 56)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "262.5px",
+    "height": "29.8906px"
+   }
+  ],
+  ".value p": [
+   {
+    "text": "Bring your experience and ambitions into a conversation with the people looking ",
+    "box": [
+     263,
+     84
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "28px",
+    "color": "rgb(91, 104, 95)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "262.5px",
+    "height": "84px"
+   },
+   {
+    "text": "Build on your qualification and internship experience as you take your next step",
+    "box": [
+     263,
+     84
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "28px",
+    "color": "rgb(91, 104, 95)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "262.5px",
+    "height": "84px"
+   },
+   {
+    "text": "A good next step starts with understanding what you bring, what you’re looking f",
+    "box": [
+     263,
+     112
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "16px",
+    "fontWeight": "400",
+    "lineHeight": "28px",
+    "color": "rgb(91, 104, 95)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "262.5px",
+    "height": "112px"
+   }
+  ],
+  ".audience-card": [
+   {
+    "text": "For graduates & former interns Your career abroad Finished your studies and read",
+    "id": "graduates",
+    "box": [
+     564,
+     450
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(237, 244, 232)",
+    "borderRadius": "18px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgb(223, 231, 217)",
+    "borderTopStyle": "solid",
+    "padding": "34px",
+    "width": "564px",
+    "height": "449.75px"
+   },
+   {
+    "text": "For employers Your next colleague Looking for people at the beginning of their c",
+    "id": "employers",
+    "box": [
+     564,
+     450
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(255, 241, 231)",
+    "borderRadius": "18px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgb(241, 227, 216)",
+    "borderTopStyle": "solid",
+    "padding": "34px",
+    "width": "564px",
+    "height": "449.75px"
+   },
+   {
+    "text": "For recruitment agencies Your next talent connection Recruiting for internationa",
+    "id": "agencies",
+    "box": [
+     1152,
+     248
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "18px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgb(223, 231, 217)",
+    "borderTopStyle": "solid",
+    "padding": "34px",
+    "width": "1152px",
+    "height": "248.312px"
+   }
+  ],
+  ".audience-card-icon": [
+   {
+    "text": "",
+    "box": [
+     61,
+     61
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(0, 107, 56)",
+    "backgroundColor": "rgba(255, 255, 255, 0.75)",
+    "borderRadius": "16px",
+    "padding": "0px",
+    "width": "61px",
+    "height": "61px"
+   },
+   {
+    "text": "",
+    "box": [
+     61,
+     61
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(0, 107, 56)",
+    "backgroundColor": "rgba(255, 255, 255, 0.75)",
+    "borderRadius": "16px",
+    "padding": "0px",
+    "width": "61px",
+    "height": "61px"
+   },
+   {
+    "text": "",
+    "box": [
+     61,
+     61
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(0, 107, 56)",
+    "backgroundColor": "rgba(255, 255, 255, 0.75)",
+    "borderRadius": "16px",
+    "padding": "0px",
+    "width": "61px",
+    "height": "61px"
+   }
+  ],
+  ".audience-card h3": [
+   {
+    "text": "Your career abroad",
+    "id": "graduates-title",
+    "box": [
+     494,
+     36
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "28px",
+    "fontWeight": "700",
+    "lineHeight": "36.4px",
+    "letterSpacing": "-0.42px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "494px",
+    "height": "36.3906px"
+   },
+   {
+    "text": "Your next colleague",
+    "id": "employers-title",
+    "box": [
+     494,
+     36
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "28px",
+    "fontWeight": "700",
+    "lineHeight": "36.4px",
+    "letterSpacing": "-0.42px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "494px",
+    "height": "36.3906px"
+   },
+   {
+    "text": "Your next talent connection",
+    "id": "agencies-title",
+    "box": [
+     290,
+     73
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "28px",
+    "fontWeight": "700",
+    "lineHeight": "36.4px",
+    "letterSpacing": "-0.42px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "290px",
+    "height": "72.7812px"
+   }
+  ],
+  ".audience-tag": [
+   {
+    "text": "For graduates & former interns",
+    "box": [
+     494,
+     21
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "13px",
+    "fontWeight": "400",
+    "lineHeight": "21.45px",
+    "color": "rgb(91, 104, 95)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "494px",
+    "height": "21.4375px"
+   },
+   {
+    "text": "For employers",
+    "box": [
+     494,
+     21
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "13px",
+    "fontWeight": "400",
+    "lineHeight": "21.45px",
+    "color": "rgb(91, 104, 95)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "494px",
+    "height": "21.4375px"
+   },
+   {
+    "text": "For recruitment agencies",
+    "box": [
+     419,
+     21
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "13px",
+    "fontWeight": "400",
+    "lineHeight": "21.45px",
+    "color": "rgb(91, 104, 95)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "419.109px",
+    "height": "21.4375px"
+   }
+  ],
+  ".audience-card-wide": [
+   {
+    "text": "For recruitment agencies Your next talent connection Recruiting for internationa",
+    "id": "agencies",
+    "box": [
+     1152,
+     248
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "18px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgb(223, 231, 217)",
+    "borderTopStyle": "solid",
+    "padding": "34px",
+    "width": "1152px",
+    "height": "248.312px"
+   }
+  ],
+  ".journey-tabs button": [
+   {
+    "text": "01 Introduce Start with your experience.",
+    "id": "stage-tab-0",
+    "box": [
+     272,
+     122
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(239, 245, 233)",
+    "borderRadius": "13px",
+    "padding": "12px 8px 20px",
+    "width": "271.5px",
+    "height": "121.984px"
+   },
+   {
+    "text": "02 Explore Look beyond borders.",
+    "id": "stage-tab-1",
+    "box": [
+     272,
+     122
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "13px",
+    "padding": "12px 8px 20px",
+    "width": "271.5px",
+    "height": "121.984px"
+   },
+   {
+    "text": "03 Connect Meet relevant opportunities.",
+    "id": "stage-tab-2",
+    "box": [
+     272,
+     122
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "13px",
+    "padding": "12px 8px 20px",
+    "width": "271.5px",
+    "height": "121.984px"
+   }
+  ],
+  ".journey-tabs [aria-selected=true]": [
+   {
+    "text": "01 Introduce Start with your experience.",
+    "id": "stage-tab-0",
+    "box": [
+     272,
+     122
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(239, 245, 233)",
+    "borderRadius": "13px",
+    "padding": "12px 8px 20px",
+    "width": "271.5px",
+    "height": "121.984px"
+   }
+  ],
+  ".journey-panel": [
+   {
+    "text": "Start with your experience. Your qualification and internship are the starting p",
+    "id": "stage-panel",
+    "box": [
+     850,
+     174
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(247, 249, 244)",
+    "borderRadius": "18px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgb(221, 229, 219)",
+    "borderTopStyle": "solid",
+    "padding": "30px 44px",
+    "width": "850px",
+    "height": "174px"
+   }
+  ],
+  ".journey-route path": [
+   {
+    "text": "",
+    "box": [
+     864,
+     0
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "auto",
+    "height": "auto",
+    "stroke": "rgb(216, 228, 218)",
+    "strokeWidth": "2px",
+    "fill": "none"
+   },
+   {
+    "text": "",
+    "box": [
+     864,
+     0
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "auto",
+    "height": "auto",
+    "stroke": "rgb(2, 139, 69)",
+    "strokeWidth": "2px",
+    "fill": "none"
+   }
+  ],
+  ".roots-image": [
+   {
+    "text": "A broader view of what comes next.",
+    "box": [
+     470,
+     510
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(229, 235, 223)",
+    "borderRadius": "18px",
+    "padding": "0px",
+    "width": "470.359px",
+    "height": "510px"
+   }
+  ],
+  ".photo-caption": [
+   {
+    "text": "A broader view of what comes next.",
+    "box": [
+     426,
+     55
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "23.1px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(255, 255, 255, 0.94)",
+    "borderRadius": "12px",
+    "padding": "16px 20px",
+    "width": "426.359px",
+    "height": "55.0938px"
+   }
+  ],
+  ".organizations > a": [
+   {
+    "text": "JongLeren A human perspective",
+    "box": [
+     293,
+     92
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "12px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgb(221, 229, 219)",
+    "borderTopStyle": "solid",
+    "padding": "18px",
+    "width": "293.312px",
+    "height": "92.0312px"
+   },
+   {
+    "text": "K.B. A forward-thinking mindset",
+    "box": [
+     293,
+     92
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "12px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgb(221, 229, 219)",
+    "borderTopStyle": "solid",
+    "padding": "18px",
+    "width": "293.328px",
+    "height": "92.0312px"
+   }
+  ],
+  ".organizations strong": [
+   {
+    "text": "JongLeren",
+    "box": [
+     107,
+     30
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "23px",
+    "fontWeight": "700",
+    "lineHeight": "29.9px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "106.625px",
+    "height": "29.8906px"
+   },
+   {
+    "text": "K.B.",
+    "box": [
+     133,
+     30
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "23px",
+    "fontWeight": "700",
+    "lineHeight": "29.9px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "132.609px",
+    "height": "29.8906px"
+   }
+  ],
+  ".community-banner": [
+   {
+    "text": "Grow together. Go further. Ready for your next chapter? You’ve taken the first s",
+    "box": [
+     1152,
+     374
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(0, 107, 56)",
+    "borderRadius": "24px",
+    "padding": "61px 32px",
+    "width": "1152px",
+    "height": "374.156px"
+   }
+  ],
+  ".community-banner h2": [
+   {
+    "text": "Ready for your next chapter?",
+    "id": "community-title",
+    "box": [
+     1088,
+     52
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "43px",
+    "fontWeight": "700",
+    "lineHeight": "51.6px",
+    "letterSpacing": "-1.075px",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "0px",
+    "width": "1088px",
+    "height": "51.5938px"
+   }
+  ],
+  ".contact-form-wrap": [
+   {
+    "text": "Let’s connect. Coming soon Online enquiries will be available soon. Official con",
+    "box": [
+     585,
+     383
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgb(247, 248, 244)",
+    "borderRadius": "20px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgb(221, 229, 219)",
+    "borderTopStyle": "solid",
+    "padding": "34px",
+    "width": "585.203px",
+    "height": "382.656px"
+   }
+  ],
+  ".contact-option": [
+   {
+    "text": "For graduates & former interns",
+    "box": [
+     479,
+     58
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "15px",
+    "fontWeight": "400",
+    "lineHeight": "24.75px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "16px 0px",
+    "width": "478.797px",
+    "height": "57.75px"
+   },
+   {
+    "text": "For employers",
+    "box": [
+     479,
+     58
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "15px",
+    "fontWeight": "400",
+    "lineHeight": "24.75px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "16px 0px",
+    "width": "478.797px",
+    "height": "57.75px"
+   },
+   {
+    "text": "For recruitment agencies",
+    "box": [
+     479,
+     58
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "15px",
+    "fontWeight": "400",
+    "lineHeight": "24.75px",
+    "color": "rgb(23, 39, 31)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "padding": "16px 0px",
+    "width": "478.797px",
+    "height": "57.75px"
+   }
+  ],
+  ".footer": [
+   {
+    "text": "Connecting experience with opportunity. Discover Alumni About Alumni Who we help",
+    "box": [
+     1440,
+     363
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(23, 39, 31)",
+    "borderRadius": "0px",
+    "padding": "54px 0px 0px",
+    "width": "1440px",
+    "height": "363.312px"
+   }
+  ],
+  ".footer-logo": [
+   {
+    "text": "",
+    "box": [
+     108,
+     100
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "18px",
+    "fontWeight": "400",
+    "lineHeight": "29.7px",
+    "color": "rgb(255, 255, 255)",
+    "backgroundColor": "rgb(255, 255, 255)",
+    "borderRadius": "12px",
+    "padding": "0px 4px",
+    "width": "108px",
+    "height": "100px"
+   }
+  ],
+  ".footer-bottom": [
+   {
+    "text": "© 2026 Alumni An independent vision, with shared roots. Privacy draft Legal draf",
+    "box": [
+     1152,
+     73
+    ],
+    "fontFamily": "lato, \"lato Fallback\", Arial, sans-serif",
+    "fontSize": "11px",
+    "fontWeight": "400",
+    "lineHeight": "18.15px",
+    "color": "rgb(189, 206, 194)",
+    "backgroundColor": "rgba(0, 0, 0, 0)",
+    "borderRadius": "0px",
+    "borderTopWidth": "1px",
+    "borderTopColor": "rgb(59, 80, 67)",
+    "borderTopStyle": "solid",
+    "padding": "24px 0px",
+    "width": "1152px",
+    "height": "73.1406px"
+   }
+  ]
+ },
+ "links": [
+  {
+   "text": "Skip to content",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#main"
+  },
+  {
+   "text": "",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#home"
+  },
+  {
+   "text": "Home",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#home"
+  },
+  {
+   "text": "About Alumni",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#about"
+  },
+  {
+   "text": "Who we help",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#possibilities"
+  },
+  {
+   "text": "Our approach",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#journey"
+  },
+  {
+   "text": "Let’s connect",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#contact"
+  },
+  {
+   "text": "Explore my next step",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#contact"
+  },
+  {
+   "text": "Find talent",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#contact"
+  },
+  {
+   "text": "For graduates & former interns Your career abroad",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#graduates"
+  },
+  {
+   "text": "For employers Your next colleague",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#employers"
+  },
+  {
+   "text": "For recruitment agencies Your next talent connection",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#agencies"
+  },
+  {
+   "text": "More about Alumni",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#about"
+  },
+  {
+   "text": "Explore my next step",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#contact"
+  },
+  {
+   "text": "Discuss a hiring need",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#contact"
+  },
+  {
+   "text": "Explore a collaboration",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#contact"
+  },
+  {
+   "text": "JongLeren A human perspective",
+   "href": "https://jongleren.es/"
+  },
+  {
+   "text": "K.B. A forward-thinking mindset",
+   "href": "https://kruslockbosconsultancy.com/"
+  },
+  {
+   "text": "Let’s explore what’s next",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#contact"
+  },
+  {
+   "text": "For graduates & former interns",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#contact"
+  },
+  {
+   "text": "For employers",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#contact"
+  },
+  {
+   "text": "For recruitment agencies",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#contact"
+  },
+  {
+   "text": "",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#home"
+  },
+  {
+   "text": "About Alumni",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#about"
+  },
+  {
+   "text": "Who we help",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#possibilities"
+  },
+  {
+   "text": "Our approach",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#journey"
+  },
+  {
+   "text": "Our roots",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#roots"
+  },
+  {
+   "text": "For graduates & former interns",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#contact"
+  },
+  {
+   "text": "For employers",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#contact"
+  },
+  {
+   "text": "For recruitment agencies",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#contact"
+  },
+  {
+   "text": "Get in touch",
+   "href": "https://small-salad-e287.raphael-0d6.workers.dev/#contact"
+  }
+ ],
+ "sections": [
+  {
+   "tag": "section",
+   "id": "home",
+   "cls": "hero",
+   "y": 0,
+   "h": 774,
+   "heading": "Your next chapter starts abroad.",
+   "file": "section-01.png"
+  },
+  {
+   "tag": "section",
+   "id": "film",
+   "cls": "film-section section-space",
+   "y": 774,
+   "h": 501,
+   "heading": "From your first experience. To your next opportunity.",
+   "file": "section-02.png"
+  },
+  {
+   "tag": "section",
+   "id": "about",
+   "cls": "about-section section-space",
+   "y": 1275,
+   "h": 756,
+   "heading": "Experience behind you. Opportunity ahead.",
+   "file": "section-03.png"
+  },
+  {
+   "tag": "section",
+   "id": "possibilities",
+   "cls": "services-section section-space section-tint",
+   "y": 2030,
+   "h": 1179,
+   "heading": "A new career. A new colleague. A good connection.",
+   "file": "section-04.png",
+   "file2": "section-04b.png"
+  },
+  {
+   "tag": "section",
+   "id": "journey",
+   "cls": "journey-section section-space",
+   "y": 3209,
+   "h": 897,
+   "heading": "Your experience is a beginning. Let’s explore the next step.",
+   "file": "section-05.png"
+  },
+  {
+   "tag": "section",
+   "id": "roots",
+   "cls": "roots-section section-space section-tint",
+   "y": 4106,
+   "h": 686,
+   "heading": "An independent vision. Built on experience.",
+   "file": "section-06.png"
+  },
+  {
+   "tag": "section",
+   "id": "",
+   "cls": "community-section section-shell",
+   "y": 4792,
+   "h": 462,
+   "heading": "Ready for your next chapter?",
+   "file": "section-07.png"
+  },
+  {
+   "tag": "section",
+   "id": "contact",
+   "cls": "contact-section section-space",
+   "y": 5254,
+   "h": 716,
+   "heading": "Your next connection starts here.",
+   "file": "section-08.png"
+  },
+  {
+   "tag": "footer",
+   "id": "",
+   "cls": "footer",
+   "y": 5970,
+   "h": 363,
+   "heading": "Discover Alumni",
+   "file": "section-09.png"
+  }
+ ],
+ "journey": [
+  {
+   "tab": [
+    "01",
+    "Introduce",
+    "Start with your experience."
+   ],
+   "panel": {
+    "heading": "Start with your experience.",
+    "text": "Start with your experience.\n\nYour qualification and internship are the starting point. Tell us what you’ve learned and what you’d like to do next."
+   }
+  },
+  {
+   "tab": [
+    "02",
+    "Explore",
+    "Look beyond borders."
+   ],
+   "panel": {
+    "heading": "Look beyond borders.",
+    "text": "Look beyond borders.\n\nConsider the kind of work, environment and destination that interest you. Your ambitions give the conversation direction."
+   }
+  },
+  {
+   "tab": [
+    "03",
+    "Connect",
+    "Meet relevant opportunities."
+   ],
+   "panel": {
+    "heading": "Meet relevant opportunities.",
+    "text": "Meet relevant opportunities.\n\nAlumni connects graduates with employers and recruitment agencies in international job markets. The aim is a relevant connection between experience and opportunity."
+   }
+  },
+  {
+   "tab": [
+    "04",
+    "Next step",
+    "Explore what comes next."
+   ],
+   "panel": {
+    "heading": "Explore what comes next.",
+    "text": "Explore what comes next.\n\nWhen an opportunity fits, explore it further with the people recruiting for the role. Each position has its own requirements and next steps."
+   }
+  }
+ ],
+ "filmModal": "×\nThe Alumni story\nA story worth waiting for.\n\nOur brand film is in the making. It will introduce Alumni and the connection between internship experience and international careers.\n\nKeep exploring",
+ "svgs": [
+  {
+   "k": 0,
+   "owner": "nav-contact",
+   "w": 16,
+   "h": 16,
+   "stroke": "rgb(23, 39, 31)",
+   "color": "rgb(23, 39, 31)",
+   "len": 123
+  },
+  {
+   "k": 1,
+   "owner": "button button-orange",
+   "w": 20,
+   "h": 20,
+   "stroke": "rgb(23, 39, 31)",
+   "color": "rgb(23, 39, 31)",
+   "len": 124
+  },
+  {
+   "k": 2,
+   "owner": "button button-outline-light",
+   "w": 20,
+   "h": 20,
+   "stroke": "rgb(255, 255, 255)",
+   "color": "rgb(255, 255, 255)",
+   "len": 124
+  },
+  {
+   "k": 3,
+   "owner": "hero-audiences section-shell",
+   "w": 17,
+   "h": 17,
+   "stroke": "rgb(23, 39, 31)",
+   "color": "rgb(23, 39, 31)",
+   "len": 123
+  },
+  {
+   "k": 4,
+   "owner": "hero-audiences section-shell",
+   "w": 17,
+   "h": 17,
+   "stroke": "rgb(23, 39, 31)",
+   "color": "rgb(23, 39, 31)",
+   "len": 123
+  },
+  {
+   "k": 5,
+   "owner": "hero-audiences section-shell",
+   "w": 17,
+   "h": 17,
+   "stroke": "rgb(23, 39, 31)",
+   "color": "rgb(23, 39, 31)",
+   "len": 123
+  },
+  {
+   "k": 6,
+   "owner": "text-link",
+   "w": 18,
+   "h": 18,
+   "stroke": "rgb(0, 107, 56)",
+   "color": "rgb(0, 107, 56)",
+   "len": 124
+  },
+  {
+   "k": 7,
+   "owner": "[object SVGAnimatedString]",
+   "w": 53,
+   "h": 49,
+   "stroke": "none",
+   "color": "rgb(23, 39, 31)",
+   "len": 302
+  },
+  {
+   "k": 8,
+   "owner": "[object SVGAnimatedString]",
+   "w": 53,
+   "h": 49,
+   "stroke": "none",
+   "color": "rgb(23, 39, 31)",
+   "len": 238
+  },
+  {
+   "k": 9,
+   "owner": "[object SVGAnimatedString]",
+   "w": 53,
+   "h": 49,
+   "stroke": "none",
+   "color": "rgb(23, 39, 31)",
+   "len": 238
+  },
+  {
+   "k": 10,
+   "owner": "[object SVGAnimatedString]",
+   "w": 53,
+   "h": 49,
+   "stroke": "none",
+   "color": "rgb(23, 39, 31)",
+   "len": 231
+  },
+  {
+   "k": 11,
+   "owner": "audience-card-icon",
+   "w": 31,
+   "h": 31,
+   "stroke": "rgb(0, 107, 56)",
+   "color": "rgb(0, 107, 56)",
+   "len": 313
+  },
+  {
+   "k": 12,
+   "owner": "text-link audience-card-cta",
+   "w": 18,
+   "h": 18,
+   "stroke": "rgb(0, 107, 56)",
+   "color": "rgb(0, 107, 56)",
+   "len": 123
+  },
+  {
+   "k": 13,
+   "owner": "audience-card-icon",
+   "w": 31,
+   "h": 31,
+   "stroke": "rgb(0, 107, 56)",
+   "color": "rgb(0, 107, 56)",
+   "len": 355
+  },
+  {
+   "k": 14,
+   "owner": "text-link audience-card-cta",
+   "w": 18,
+   "h": 18,
+   "stroke": "rgb(0, 107, 56)",
+   "color": "rgb(0, 107, 56)",
+   "len": 123
+  },
+  {
+   "k": 15,
+   "owner": "audience-card-icon",
+   "w": 31,
+   "h": 31,
+   "stroke": "rgb(0, 107, 56)",
+   "color": "rgb(0, 107, 56)",
+   "len": 356
+  },
+  {
+   "k": 16,
+   "owner": "text-link audience-card-cta",
+   "w": 18,
+   "h": 18,
+   "stroke": "rgb(0, 107, 56)",
+   "color": "rgb(0, 107, 56)",
+   "len": 123
+  },
+  {
+   "k": 17,
+   "owner": "journey-route",
+   "w": 1152,
+   "h": 82,
+   "stroke": "none",
+   "color": "rgb(23, 39, 31)",
+   "len": 612
+  },
+  {
+   "k": 18,
+   "owner": "organizations",
+   "w": 16,
+   "h": 16,
+   "stroke": "rgb(23, 39, 31)",
+   "color": "rgb(23, 39, 31)",
+   "len": 123
+  },
+  {
+   "k": 19,
+   "owner": "organizations",
+   "w": 16,
+   "h": 16,
+   "stroke": "rgb(23, 39, 31)",
+   "color": "rgb(23, 39, 31)",
+   "len": 123
+  },
+  {
+   "k": 20,
+   "owner": "button button-orange",
+   "w": 20,
+   "h": 20,
+   "stroke": "rgb(23, 39, 31)",
+   "color": "rgb(23, 39, 31)",
+   "len": 124
+  },
+  {
+   "k": 21,
+   "owner": "contact-option",
+   "w": 17,
+   "h": 17,
+   "stroke": "rgb(23, 39, 31)",
+   "color": "rgb(23, 39, 31)",
+   "len": 124
+  },
+  {
+   "k": 22,
+   "owner": "contact-option",
+   "w": 17,
+   "h": 17,
+   "stroke": "rgb(23, 39, 31)",
+   "color": "rgb(23, 39, 31)",
+   "len": 124
+  },
+  {
+   "k": 23,
+   "owner": "contact-option",
+   "w": 17,
+   "h": 17,
+   "stroke": "rgb(23, 39, 31)",
+   "color": "rgb(23, 39, 31)",
+   "len": 124
+  },
+  {
+   "k": 24,
+   "owner": "form-heading",
+   "w": 20,
+   "h": 20,
+   "stroke": "none",
+   "color": "rgb(23, 39, 31)",
+   "len": 123
+  },
+  {
+   "k": 25,
+   "owner": "text-link",
+   "w": 18,
+   "h": 18,
+   "stroke": "rgb(215, 239, 200)",
+   "color": "rgb(215, 239, 200)",
+   "len": 124
+  }
+ ]
+}

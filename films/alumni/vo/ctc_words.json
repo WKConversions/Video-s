@@ -1,0 +1,492 @@
+[
+ {
+  "text": "Your internship was just the beginning.",
+  "greedy": "YOUR INTERNSHIP WAS JUST THE BEGINNING ",
+  "words": [
+   {
+    "w": "Your",
+    "start": 0.08,
+    "end": 0.221
+   },
+   {
+    "w": "internship",
+    "start": 0.321,
+    "end": 0.883
+   },
+   {
+    "w": "was",
+    "start": 0.963,
+    "end": 1.083
+   },
+   {
+    "w": "just",
+    "start": 1.264,
+    "end": 1.485
+   },
+   {
+    "w": "the",
+    "start": 1.565,
+    "end": 1.645
+   },
+   {
+    "w": "beginning.",
+    "start": 1.685,
+    "end": 2.187
+   }
+  ]
+ },
+ {
+  "text": "So what comes next?",
+  "greedy": "SO WHAT COMES NEXT ",
+  "words": [
+   {
+    "w": "So",
+    "start": 2.665,
+    "end": 2.807
+   },
+   {
+    "w": "what",
+    "start": 3.092,
+    "end": 3.193
+   },
+   {
+    "w": "comes",
+    "start": 3.254,
+    "end": 3.417
+   },
+   {
+    "w": "next?",
+    "start": 3.498,
+    "end": 3.803
+   }
+  ]
+ },
+ {
+  "text": "Meet Alumni.",
+  "greedy": "MEAT A LOMNI ",
+  "words": [
+   {
+    "w": "Meet",
+    "start": 4.391,
+    "end": 4.572
+   },
+   {
+    "w": "Alumni.",
+    "start": 4.733,
+    "end": 5.296
+   }
+  ]
+ },
+ {
+  "text": "Connecting graduates with international career opportunities.",
+  "greedy": "CONNECTING GRADUATES WITH INTERNATIONAL CAREER OPPORTUNITIES ",
+  "words": [
+   {
+    "w": "Connecting",
+    "start": 5.637,
+    "end": 6.04
+   },
+   {
+    "w": "graduates",
+    "start": 6.08,
+    "end": 6.604
+   },
+   {
+    "w": "with",
+    "start": 6.644,
+    "end": 6.765
+   },
+   {
+    "w": "international",
+    "start": 6.906,
+    "end": 7.53
+   },
+   {
+    "w": "career",
+    "start": 7.61,
+    "end": 7.892
+   },
+   {
+    "w": "opportunities.",
+    "start": 7.973,
+    "end": 8.638
+   }
+  ]
+ },
+ {
+  "text": "Start with your experience, your ambitions, and where you want to go.",
+  "greedy": "START WITH YOUR EXPERIENCE YOUR AMBITIONS AND WHERE YOU WANT TO GO ",
+  "words": [
+   {
+    "w": "Start",
+    "start": 9.227,
+    "end": 9.448
+   },
+   {
+    "w": "with",
+    "start": 9.488,
+    "end": 9.588
+   },
+   {
+    "w": "your",
+    "start": 9.628,
+    "end": 9.749
+   },
+   {
+    "w": "experience,",
+    "start": 9.789,
+    "end": 10.432
+   },
+   {
+    "w": "your",
+    "start": 10.693,
+    "end": 10.834
+   },
+   {
+    "w": "ambitions,",
+    "start": 10.914,
+    "end": 11.476
+   },
+   {
+    "w": "and",
+    "start": 11.778,
+    "end": 11.838
+   },
+   {
+    "w": "where",
+    "start": 11.958,
+    "end": 12.139
+   },
+   {
+    "w": "you",
+    "start": 12.199,
+    "end": 12.28
+   },
+   {
+    "w": "want",
+    "start": 12.34,
+    "end": 12.501
+   },
+   {
+    "w": "to",
+    "start": 12.541,
+    "end": 12.601
+   },
+   {
+    "w": "go.",
+    "start": 12.661,
+    "end": 12.943
+   }
+  ]
+ },
+ {
+  "text": "Alumni brings you closer to employers and recruitment agencies looking for emerging talent.",
+  "greedy": "A LUMNI BRINGS YOU CLOSER TO EMPLOYERS AND RECRUIPMENT AGENCIES LOOKING FOR EMERGING TALENT ",
+  "words": [
+   {
+    "w": "Alumni",
+    "start": 13.371,
+    "end": 13.732
+   },
+   {
+    "w": "brings",
+    "start": 13.833,
+    "end": 14.014
+   },
+   {
+    "w": "you",
+    "start": 14.054,
+    "end": 14.134
+   },
+   {
+    "w": "closer",
+    "start": 14.215,
+    "end": 14.576
+   },
+   {
+    "w": "to",
+    "start": 14.656,
+    "end": 14.737
+   },
+   {
+    "w": "employers",
+    "start": 14.837,
+    "end": 15.38
+   },
+   {
+    "w": "and",
+    "start": 15.48,
+    "end": 15.54
+   },
+   {
+    "w": "recruitment",
+    "start": 15.601,
+    "end": 16.063
+   },
+   {
+    "w": "agencies",
+    "start": 16.123,
+    "end": 16.585
+   },
+   {
+    "w": "looking",
+    "start": 16.766,
+    "end": 17.067
+   },
+   {
+    "w": "for",
+    "start": 17.148,
+    "end": 17.268
+   },
+   {
+    "w": "emerging",
+    "start": 17.349,
+    "end": 17.73
+   },
+   {
+    "w": "talent.",
+    "start": 17.811,
+    "end": 18.172
+   }
+  ]
+ },
+ {
+  "text": "For graduates, it's a path forward.",
+  "greedy": "FOR GRADUATES IT'S A PATH FORWARD ",
+  "words": [
+   {
+    "w": "For",
+    "start": 18.655,
+    "end": 18.756
+   },
+   {
+    "w": "graduates,",
+    "start": 18.797,
+    "end": 19.322
+   },
+   {
+    "w": "it's",
+    "start": 19.686,
+    "end": 19.807
+   },
+   {
+    "w": "a",
+    "start": 19.868,
+    "end": 19.888
+   },
+   {
+    "w": "path",
+    "start": 19.908,
+    "end": 20.131
+   },
+   {
+    "w": "forward.",
+    "start": 20.191,
+    "end": 20.575
+   }
+  ]
+ },
+ {
+  "text": "For businesses, it's access to new professionals.",
+  "greedy": "FOR BUSINESSES ITS ACCESS TO NEW PROFESSIONALS ",
+  "words": [
+   {
+    "w": "For",
+    "start": 21.043,
+    "end": 21.143
+   },
+   {
+    "w": "businesses,",
+    "start": 21.204,
+    "end": 21.767
+   },
+   {
+    "w": "it's",
+    "start": 22.129,
+    "end": 22.25
+   },
+   {
+    "w": "access",
+    "start": 22.411,
+    "end": 22.773
+   },
+   {
+    "w": "to",
+    "start": 22.833,
+    "end": 22.914
+   },
+   {
+    "w": "new",
+    "start": 23.035,
+    "end": 23.176
+   },
+   {
+    "w": "professionals.",
+    "start": 23.256,
+    "end": 23.92
+   }
+  ]
+ },
+ {
+  "text": "And for recruitment partners, it's a stronger connection.",
+  "greedy": "AND FOR RECRUITMENT PARTNERS IT'S A STRONGER CONNEXTION ",
+  "words": [
+   {
+    "w": "And",
+    "start": 24.324,
+    "end": 24.404
+   },
+   {
+    "w": "for",
+    "start": 24.444,
+    "end": 24.525
+   },
+   {
+    "w": "recruitment",
+    "start": 24.625,
+    "end": 25.025
+   },
+   {
+    "w": "partners,",
+    "start": 25.065,
+    "end": 25.466
+   },
+   {
+    "w": "it's",
+    "start": 25.847,
+    "end": 25.967
+   },
+   {
+    "w": "a",
+    "start": 26.007,
+    "end": 26.027
+   },
+   {
+    "w": "stronger",
+    "start": 26.127,
+    "end": 26.548
+   },
+   {
+    "w": "connection.",
+    "start": 26.628,
+    "end": 27.149
+   }
+  ]
+ },
+ {
+  "text": "New countries.",
+  "greedy": "NEW COUNTRIES ",
+  "words": [
+   {
+    "w": "New",
+    "start": 27.65,
+    "end": 27.772
+   },
+   {
+    "w": "countries.",
+    "start": 27.833,
+    "end": 28.401
+   }
+  ]
+ },
+ {
+  "text": "New colleagues.",
+  "greedy": "NEW COLLEAGUES ",
+  "words": [
+   {
+    "w": "New",
+    "start": 28.709,
+    "end": 28.83
+   },
+   {
+    "w": "colleagues.",
+    "start": 28.911,
+    "end": 29.459
+   }
+  ]
+ },
+ {
+  "text": "New possibilities.",
+  "greedy": "NEW POSSIBILITIES ",
+  "words": [
+   {
+    "w": "New",
+    "start": 29.871,
+    "end": 30.013
+   },
+   {
+    "w": "possibilities.",
+    "start": 30.135,
+    "end": 30.948
+   }
+  ]
+ },
+ {
+  "text": "Alumni.",
+  "greedy": "ALOMNAI ",
+  "words": [
+   {
+    "w": "Alumni.",
+    "start": 31.436,
+    "end": 31.867
+   }
+  ]
+ },
+ {
+  "text": "From experience to opportunity.",
+  "greedy": "FROM EXPERIENCE TO OPPORTUNITY ",
+  "words": [
+   {
+    "w": "From",
+    "start": 32.341,
+    "end": 32.462
+   },
+   {
+    "w": "experience",
+    "start": 32.542,
+    "end": 33.147
+   },
+   {
+    "w": "to",
+    "start": 33.409,
+    "end": 33.49
+   },
+   {
+    "w": "opportunity.",
+    "start": 33.591,
+    "end": 34.256
+   }
+  ]
+ },
+ {
+  "text": "Your next chapter starts abroad.",
+  "greedy": "YOUR NEXT CHAPTER STARTS ABROAD ",
+  "words": [
+   {
+    "w": "Your",
+    "start": 34.648,
+    "end": 34.808
+   },
+   {
+    "w": "next",
+    "start": 34.889,
+    "end": 35.07
+   },
+   {
+    "w": "chapter",
+    "start": 35.11,
+    "end": 35.472
+   },
+   {
+    "w": "starts",
+    "start": 35.813,
+    "end": 36.074
+   },
+   {
+    "w": "abroad.",
+    "start": 36.155,
+    "end": 36.537
+   }
+  ]
+ }
+]

@@ -1,0 +1,137 @@
+[
+ {
+  "i": 1,
+  "text": "Your internship was just the beginning.",
+  "start": 0.07,
+  "end": 2.187,
+  "pause_after": 0.415,
+  "first_key": "w:your",
+  "last_key": "w:beginning"
+ },
+ {
+  "i": 2,
+  "text": "So what comes next?",
+  "start": 2.602,
+  "end": 3.866,
+  "pause_after": 0.483,
+  "first_key": "w:so",
+  "last_key": "w:next"
+ },
+ {
+  "i": 3,
+  "text": "Meet Alumni.",
+  "start": 4.35,
+  "end": 5.276,
+  "pause_after": 0.36,
+  "first_key": "w:meet",
+  "last_key": "w:alumni"
+ },
+ {
+  "i": 4,
+  "text": "Connecting graduates with international career opportunities.",
+  "start": 5.636,
+  "end": 8.719,
+  "pause_after": 0.467,
+  "first_key": "w:connecting",
+  "last_key": "w:opportunities"
+ },
+ {
+  "i": 5,
+  "text": "Start with your experience, your ambitions, and where you want to go.",
+  "start": 9.186,
+  "end": 12.903,
+  "pause_after": 0.427,
+  "first_key": "w:start",
+  "last_key": "w:go"
+ },
+ {
+  "i": 6,
+  "text": "Alumni brings you closer to employers and recruitment agencies looking for emerging talent.",
+  "start": 13.33,
+  "end": 18.213,
+  "pause_after": 0.461,
+  "first_key": "w:alumni2",
+  "last_key": "w:talent"
+ },
+ {
+  "i": 7,
+  "text": "For graduates, it's a path forward.",
+  "start": 18.674,
+  "end": 20.597,
+  "pause_after": 0.466,
+  "first_key": "w:for2",
+  "last_key": "w:forward"
+ },
+ {
+  "i": 8,
+  "text": "For businesses, it's access to new professionals.",
+  "start": 21.062,
+  "end": 23.961,
+  "pause_after": 0.343,
+  "first_key": "w:for3",
+  "last_key": "w:professionals"
+ },
+ {
+  "i": 9,
+  "text": "And for recruitment partners, it's a stronger connection.",
+  "start": 24.304,
+  "end": 27.149,
+  "pause_after": 0.438,
+  "first_key": "w:and3",
+  "last_key": "w:connection"
+ },
+ {
+  "i": 10,
+  "text": "New countries.",
+  "start": 27.587,
+  "end": 28.464,
+  "pause_after": 0.162,
+  "first_key": "w:new2",
+  "last_key": "w:countries"
+ },
+ {
+  "i": 11,
+  "text": "New colleagues.",
+  "start": 28.626,
+  "end": 29.521,
+  "pause_after": 0.246,
+  "first_key": "w:new3",
+  "last_key": "w:colleagues"
+ },
+ {
+  "i": 12,
+  "text": "New possibilities.",
+  "start": 29.767,
+  "end": 30.991,
+  "pause_after": 0.401,
+  "first_key": "w:new4",
+  "last_key": "w:possibilities"
+ },
+ {
+  "i": 13,
+  "text": "Alumni.",
+  "start": 31.392,
+  "end": 31.952,
+  "pause_after": 0.408,
+  "first_key": "w:alumni3",
+  "last_key": "w:alumni3"
+ },
+ {
+  "i": 14,
+  "text": "From experience to opportunity.",
+  "start": 32.36,
+  "end": 34.237,
+  "pause_after": 0.391,
+  "first_key": "w:from",
+  "last_key": "w:opportunity"
+ },
+ {
+  "i": 15,
+  "text": "Your next chapter starts abroad.",
+  "start": 34.627,
+  "end": 36.497,
+  "pause_after": 0.258,
+  "first_key": "w:your4",
+  "last_key": "w:abroad"
+ }
+]

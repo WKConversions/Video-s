@@ -1,0 +1,206 @@
+{
+  "client": "Alumni",
+  "source": "https://small-salad-e287.raphael-0d6.workers.dev/ (single-page Next.js + Tailwind v4 site, English, noindex preview; no other same-host pages)",
+  "harvested": "2026-10-13",
+  "method": "CSS custom properties and rules from /_next/static/css/8f101df136340a6c.css, computed styles at 1440x900 via Playwright (harvest/pages/home.json -> styles), logo colours measured from the PNG pixels (scripts/brand_measure.py, harvest/brand_measured.json)",
+  "summary": "Light, airy, editorial SaaS look: white and off-white paper sections, deep forest-ink text, one deep green as the working accent, a vivid orange for primary CTAs, lime as a small highlight. Lato everywhere (Black 900 for the hero headline, Bold 700 for headings, Regular 400 for body). Pill buttons and pill nav, 18px card radius, hairline sage borders, almost no shadow. Two-tone headlines: line 1 in ink, line 2 in green.",
+
+  "colors": [
+    { "name": "orange", "hex": "#FE6C02", "css_var": "--orange", "role": "primary CTA / brand accent", "where": "the A of the logo; primary pill buttons (Explore my next step, Let's explore what's next) and the nav 'Let's connect' pill, always with ink text, never white; employer audience dot; active dot on the journey route; Connection and Guidance value shapes. Hover #FF801E" },
+    { "name": "green", "hex": "#028B45", "css_var": "--green", "role": "brand green (graphic)", "where": "foot of the L in the logo; graduates audience dot; journey route progress line; Connection / Growth / Opportunity value shapes" },
+    { "name": "lime", "hex": "#6ABB24", "css_var": "--lime", "role": "highlight (small doses)", "where": "stem of the L in the logo; recruitment-agencies audience dot; the small accent strokes on the value shapes (growth trend line, opportunity cap, connection node); footer focus ring" },
+    { "name": "green-accessible", "hex": "#006B38", "css_var": "--green-accessible", "role": "working accent for text and solid fills", "where": "eyebrows, second line of two-tone headlines, value titles, text links, active nav pill (white text), green buttons, the 'Ready for your next chapter?' banner background, audience-card icons, journey dots, focus rings" },
+    { "name": "ink", "hex": "#17271F", "css_var": "--ink", "role": "text + dark background", "where": "all headings and body text; hero background under the photo; hero gradient shade; footer background; text on orange buttons" },
+    { "name": "paper", "hex": "#F7F8F4", "css_var": "--paper", "role": "off-white section background", "where": "tinted sections (film intro, Who we help, Our roots), contact card; also the theme-color meta" },
+    { "name": "white", "hex": "#FFFFFF", "css_var": "--white", "role": "page background / cards", "where": "body background, nav pill, agencies card, organisation cards, film placeholder card" },
+    { "name": "muted", "hex": "#5B685F", "css_var": "--muted", "role": "secondary text", "where": "paragraphs under headings, card copy, small labels (For employers...), footnotes" },
+    { "name": "line", "hex": "#DDE5DB", "css_var": "--line", "role": "hairline borders", "where": "1px borders of panels, organisation cards, contact rows, nav inner pill, audience strip dividers" }
+  ],
+  "tints": [
+    { "hex": "#EDF4E8", "where": "graduates audience card background (border #DFE7D9)" },
+    { "hex": "#FFF1E7", "where": "employers audience card background (border #F1E3D8)" },
+    { "hex": "#EFF5E9", "where": "selected journey tab; 'Coming soon' chip background" },
+    { "hex": "#F7F9F4", "where": "journey panel background; tab hover" },
+    { "hex": "#F5F7F2", "where": "inner pill of the desktop nav" },
+    { "hex": "#F8FAF5", "where": "value icon circles (border #CBDCC3)" },
+    { "hex": "#F0F5EB", "where": "film play button circle (border #C8D8C0)" },
+    { "hex": "#D6DFD2", "where": "film placeholder card border" },
+    { "hex": "#D8E4DA", "where": "journey route base line (unfilled)" },
+    { "hex": "#E5EBDF", "where": "roots photo placeholder background" },
+    { "hex": "#DDEED1", "where": "text selection highlight" },
+    { "hex": "#D7EFC8", "where": "eyebrow on the green banner; footer link accent" },
+    { "hex": "#E5EFE5", "where": "body text on the green banner" },
+    { "hex": "#C4D4C7", "where": "footer body text on ink" },
+    { "hex": "#BDCEC2", "where": "footer bottom line text" },
+    { "hex": "#3B5043", "where": "footer divider on ink" },
+    { "hex": "#9C2B15", "where": "form error only (not a brand colour)" }
+  ],
+  "audience_color_code": {
+    "graduates & former interns": { "dot": "#028B45", "card": "#EDF4E8" },
+    "employers": { "dot": "#FE6C02", "card": "#FFF1E7" },
+    "recruitment agencies": { "dot": "#6ABB24", "card": "#FFFFFF" },
+    "note": "the hero audience strip and the Who we help cards use this coding consistently"
+  },
+  "contrast_wcag": {
+    "#FFFFFF on #006B38": "6.6:1 ok",
+    "#17271F on #FE6C02": "5.5:1 ok (the site's choice for orange buttons)",
+    "#FFFFFF on #FE6C02": "2.9:1 FAILS - never white text on orange",
+    "#FFFFFF on #028B45": "4.4:1 large type only",
+    "#17271F on #F7F8F4": "14.6:1",
+    "#5B685F on #F7F8F4": "5.5:1",
+    "#006B38 on #F7F8F4": "6.2:1",
+    "#6ABB24 on #17271F": "6.5:1",
+    "#FE6C02 on #17271F": "5.5:1",
+    "#FFFFFF on #17271F": "15.6:1"
+  },
+
+  "fonts": [
+    {
+      "family": "Lato",
+      "css_family": "lato (self-hosted by next/font, CSS variable --font-lato, fallback 'lato Fallback' = Arial with size-adjust 97.84%)",
+      "weights": [400, 700, 900],
+      "files": {
+        "400": "assets/site/fonts/lato-400.woff2",
+        "700": "assets/site/fonts/lato-700.woff2",
+        "900": "assets/site/fonts/lato-900.woff2"
+      },
+      "source_urls": {
+        "400": "/_next/static/media/b7ffde2383bb16ba-s.p.woff2",
+        "700": "/_next/static/media/d5eb20bcdcf5616a-s.p.woff2",
+        "900": "/_next/static/media/d884a71c28eadd37-s.p.woff2"
+      },
+      "verified": "fc-scan: 'Lato Regular', 'Lato Bold', 'Lato Black'; Latin subset (U+20-7E, A0-FF, curly quotes, en/em dash, ellipsis, euro); no italics on the site",
+      "google_fonts": "Lato",
+      "fontsource": "@fontsource/lato",
+      "remotion": "@remotion/google-fonts/Lato (or load the woff2 files above with FontFace)",
+      "used_for": { "900": "hero H1 only", "700": "H2/H3, eyebrows, buttons, nav, labels", "400": "body, descriptions, small labels" }
+    }
+  ],
+  "type_scale_at_1440": {
+    "h1": { "size": 66, "weight": 900, "line_height": 1.1, "letter_spacing": "-0.025em (-1.65px)", "color": "#FFFFFF on photo", "css": "clamp(46px,4.6vw,66px); max-width 850px; two lines ('Your next chapter' / 'starts abroad.')" },
+    "h2_section": { "size": 46, "weight": 700, "line_height": 1.2, "letter_spacing": "-0.025em", "color": "#17271F, second line #006B38", "css": "clamp(34px,3.2vw,46px); white-space: pre-line; centred, max-width 850px" },
+    "h2_banner": { "size": 43, "weight": 700, "color": "#FFFFFF on #006B38" },
+    "h2_split_layout": { "size": 36, "weight": 700 },
+    "h3": { "size": "23-28", "weight": 700, "letter_spacing": "-0.015em", "line_height": 1.3 },
+    "eyebrow": { "size": 13, "weight": 700, "letter_spacing": "0.06em", "case": "sentence case", "color": "#006B38" },
+    "hero_eyebrow": { "size": 12, "weight": 700, "letter_spacing": "0.13em", "case": "UPPERCASE", "color": "#FFFFFF", "text": "FROM GRADUATION TO WORKING ABROAD" },
+    "body": { "size": 18, "weight": 400, "line_height": 1.65, "color": "#17271F; paragraphs under headings #5B685F" },
+    "hero_description": { "size": 19, "line_height": 1.65, "color": "rgba(255,255,255,0.94)", "max_width": 690 },
+    "button": { "size": 16, "weight": 700 },
+    "small_label": { "size": "12-13", "weight": 400, "color": "#5B685F" }
+  },
+
+  "radii": {
+    "pill": "999px (all buttons, nav bar, nav items, chips)",
+    "card": "18px (--radius: audience cards, journey panel, film card, roots photo)",
+    "contact_card": "20px",
+    "banner": "24px (green CTA banner)",
+    "small_card": "12px (organisation cards, photo caption, footer logo tile)",
+    "tab": "13px (journey tabs)",
+    "icon_tile": "16px (audience-card icon tile, white 75%)",
+    "input": "8px",
+    "circle": "50% (logo in header, value icons 90px, play button 64px, audience dots 8px)"
+  },
+  "shadows": {
+    "style": "nearly flat: hairline 1px borders do the separation; shadows are very soft, ink-tinted, never grey-black",
+    "nav_pill": "0 4px 22px rgba(23,39,31,0.08)",
+    "card_soft": "0 8px 24px rgba(23,39,31,0.02) (film placeholder card)",
+    "button_hover": "0 5px 15px rgba(23,39,31,0.07) with translateY(-2px)",
+    "mobile_menu": "0 10px 25px rgba(23,39,31,0.08)",
+    "cards": "none (border only)"
+  },
+  "borders": {
+    "hairline": "1px solid #DDE5DB",
+    "audience_cards": "1px solid #DFE7D9 (green card, agencies card) / #F1E3D8 (orange card)",
+    "outline_button_on_photo": "1px solid rgba(255,255,255,0.63), fill rgba(255,255,255,0.04)",
+    "inputs": "1px solid #CBD5C6"
+  },
+  "gradients": [
+    { "name": "hero-shade", "css": "linear-gradient(180deg, rgba(23,39,31,0.36) 0%, rgba(23,39,31,0.55) 45%, rgba(23,39,31,0.64) 100%)", "where": "over the hero photo, under white type" },
+    { "name": "modal-backdrop", "css": "rgba(16,30,25,0.73) + backdrop-filter blur(4px)", "where": "film / legal modals" },
+    { "note": "no decorative gradients anywhere else; the logo's L is two flat colours (lime #6ABB24 stem overlapped by green #028B45 foot), not a gradient" }
+  ],
+  "motion_on_site": {
+    "ease": "cubic-bezier(.2,.7,.2,1) (--ease)",
+    "reveal": "sections fade in: opacity 0->1 and translateY(18px)->0 over 0.7s",
+    "hover": "buttons lift 2px over 0.25s; arrows inside links shift 3px right",
+    "journey": "a 2px green line fills between four dots as you scroll; the active step is an orange dot (r12, white 4px ring)"
+  },
+  "components": {
+    "nav": "floating white pill 1152x82 at top 18px, logo in a 72px circle at left, inner sage pill (#F5F7F2) with Home / About Alumni / Who we help / Our approach (active = solid #006B38 pill, white text), orange 'Let's connect' pill with an up-right arrow",
+    "buttons": "pill, min-height 56, padding 13px 29px, Lato 700 16px, label + arrow icon (gap 23px). Orange fill + ink text; green #006B38 fill + white text; outline-light on photos",
+    "hero": "full-bleed photo (career-abroad.jpg, object-position centre 58%) under the ink gradient; centred white type; below the photo a white strip with three audience links separated by 1px dividers, each with a coloured 8px dot, a small grey label and a bold line",
+    "cards": "18px radius, 1px sage border, no shadow, 34px padding, a 61px white-75% icon tile with a green line icon",
+    "journey": "4 numbered steps (01-04) on a horizontal route line with dots; selected tab gets a #EFF5E9 tile, title turns #006B38; panel below on #F7F9F4",
+    "icons": "line icons, 1.7px stroke, round caps (graduation cap, briefcase, three linked circles); value shapes are chunky 12px rounded strokes in orange/green/lime (assets/site/svg/)"
+  },
+
+  "logo": {
+    "file": "assets/site/brand/alumni-logo.png",
+    "source_url": "/brand/alumni-logo.png",
+    "pixel_size": [1254, 1254],
+    "format": "PNG, 8-bit RGB, no alpha channel",
+    "background": "near-white #FEFDFD with faint noise (pixel values 252-255), not pure #FFFFFF",
+    "transparent": false,
+    "mark_bbox_px": { "x": 108, "y": 310, "w": 1039, "h": 635, "note": "the mark fills ~83% of the width; the rest is white padding" },
+    "cutout": { "file": "assets/site/brand/alumni-logo-cutout.png", "pixel_size": [1122, 718], "how": "white unmixed to alpha by scripts/assets_prep.py, cropped to the mark + 4% padding; checked on #17271F: clean edges, no white fringe" },
+    "type": "monogram mark only ('AL'); there is no wordmark and no 'Alumni' lettering in the logo. The alt text calls it 'Alumni AL monogram'",
+    "description": "A: a bold orange (#FE6C02) inverted-V / chevron with no crossbar, like a roof or a mountain peak; the apex is softly rounded, the left leg runs diagonally to the baseline, the right leg is shorter: it is sliced off by a vertical edge just left of the L and ends about 120px (19% of the mark height) above the baseline, so the A is open and asymmetric and the L seems to stand where the A's right foot would be. L: a separate letter to the right, built from two overlapping flat colours: a lime (#6ABB24) vertical stem with a rounded top corner, curving at the bottom into the foot, and a deeper green (#028B45) foot that overlaps the stem's lower curve and extends right with a square end. The bottom of the L sits on the same baseline as the A's left leg; the L's top is lower than the A's apex. Reads as 'rising path + grounded step': orange energy, greens for growth.",
+    "own_colors": [
+      { "hex": "#FE6C01", "part": "A", "share_of_mark": "58%" },
+      { "hex": "#6ABC24", "part": "L stem", "share_of_mark": "28%" },
+      { "hex": "#028C45", "part": "L foot", "share_of_mark": "14%" }
+    ],
+    "colors_match_css": "the three logo colours are the site's --orange, --lime and --green (within 1 unit)",
+    "how_the_site_shows_it": "header: inside a 72px white circle (cropped round) on the white nav pill; footer: 100px on a white 12px-radius tile on the ink background; also the favicon and apple-touch-icon",
+    "svg_available": false,
+    "quality_note": "raster only, slight texture/grain in the flat colour areas; at 1080p the mark can be shown up to ~1000px wide from the cutout without upscaling"
+  },
+
+  "photos": [
+    {
+      "file": "assets/site/images/career-abroad.jpg",
+      "source_url": "/images/career-abroad.jpg",
+      "pixel_size": [2200, 1250],
+      "aspect": "1.76:1",
+      "alt_on_site": "(empty; decorative)",
+      "used_on_site": "hero background, full-bleed, object-position centre 58%, under the ink gradient shade",
+      "subject": "Elevated telephoto view over a sunny Mediterranean harbour town that appears to be Split, Croatia (the site does not name it): the palm-lined Riva promenade curving along a sparkling turquoise-blue harbour basin in the lower right, rows of cream limestone buildings with terracotta roofs filling the frame, a Romanesque stone bell tower (St Domnius) at upper centre, out-of-focus pine branches framing the right edge, a couple of white vans at the bottom centre. Tiny, unidentifiable pedestrians on the promenade; no people as subjects.",
+      "palette": "warm sand, beige and terracotta (#7D6C57, #938B80, #AB8E6F, #E7D4B9), olive palm greens (#5F5C27, #2D2A19), sea blue (#7EAFCC)",
+      "light": "bright summer daylight, high sun"
+    },
+    {
+      "file": "assets/site/images/new-perspectives.jpg",
+      "source_url": "/images/new-perspectives.jpg",
+      "pixel_size": [1100, 826],
+      "aspect": "4:3",
+      "alt_on_site": "A sunlit European city and river, illustrating a broader perspective on working abroad",
+      "used_on_site": "Our roots section, 470x510 card with 18px radius, caption 'A broader view of what comes next.'",
+      "subject": "Golden-hour panorama of a hilly European river city that appears to be Lisbon (not named on the site): castle walls with a flag on a wooded hill at left, dense pastel buildings (pink, yellow, white) with red-tile roofs in the foreground, a wide river crossing the middle with a ferry and a few sailboats, the far shore with a red shipyard crane and low hills, a clear pale blue-to-peach sky over the top ~40% of the frame. No people visible.",
+      "palette": "peach-cream sky (#E1C9A3, #E4E0CE), steel-blue water (#BDC6CE), deep shadow browns (#211F19, #423423)",
+      "light": "low warm evening sun",
+      "resolution_note": "only 1100px wide: below 1920, use it inside a card/frame or soften it, not full-frame 1080p"
+    }
+  ],
+  "svg_assets": {
+    "dir": "assets/site/svg/",
+    "files": {
+      "value-connection.svg": "orange path and green path meeting at a lime dot (two routes joining)",
+      "value-growth.svg": "three rising green bars with a thin lime trend line",
+      "value-guidance.svg": "orange path turning right into an arrow",
+      "value-opportunity.svg": "two green diagonal strokes (//) under a lime bar",
+      "icon-graduates.svg": "line icon, graduation cap",
+      "icon-employers.svg": "line icon, briefcase",
+      "icon-agencies.svg": "line icon, three linked circles (network)",
+      "journey-route.svg": "the 4-dot journey line (1120x80 viewBox), last dot orange with white ring",
+      "arrow-right.svg": "button arrow",
+      "arrow-up-right.svg": "link / nav arrow"
+    },
+    "note": "copied from the page's inline SVGs with the CSS variables written in; originals in harvest/svg/"
+  },
+  "screens": {
+    "first_screen": "harvest/pages/home-top.png",
+    "full_page": "harvest/pages/home-full.png",
+    "sections": "harvest/pages/section-01.png ... section-09.png (+ section-04b.png), header hidden; journey-01..04.png = each approach tab; film-modal.png"
+  }
+}

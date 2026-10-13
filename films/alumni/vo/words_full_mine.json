@@ -1,0 +1,482 @@
+[
+ {
+  "w": "Your",
+  "key": "w:your",
+  "start": 0.0,
+  "end": 0.2
+ },
+ {
+  "w": "internship",
+  "key": "w:internship",
+  "start": 0.2,
+  "end": 0.7
+ },
+ {
+  "w": "was",
+  "key": "w:was",
+  "start": 0.7,
+  "end": 1.1
+ },
+ {
+  "w": "just",
+  "key": "w:just",
+  "start": 1.1,
+  "end": 1.42
+ },
+ {
+  "w": "the",
+  "key": "w:the",
+  "start": 1.42,
+  "end": 1.64
+ },
+ {
+  "w": "beginning",
+  "key": "w:beginning",
+  "start": 1.64,
+  "end": 2.19
+ },
+ {
+  "w": "So",
+  "key": "w:so",
+  "start": 2.6,
+  "end": 2.82
+ },
+ {
+  "w": "what",
+  "key": "w:what",
+  "start": 2.82,
+  "end": 3.18
+ },
+ {
+  "w": "comes",
+  "key": "w:comes",
+  "start": 3.18,
+  "end": 3.38
+ },
+ {
+  "w": "next",
+  "key": "w:next",
+  "start": 3.38,
+  "end": 3.87
+ },
+ {
+  "w": "Meet",
+  "key": "w:meet",
+  "start": 4.35,
+  "end": 4.54
+ },
+ {
+  "w": "Alumni",
+  "key": "w:alumni",
+  "start": 4.54,
+  "end": 5.28
+ },
+ {
+  "w": "Connecting",
+  "key": "w:connecting",
+  "start": 5.64,
+  "end": 5.92
+ },
+ {
+  "w": "graduates",
+  "key": "w:graduates",
+  "start": 5.92,
+  "end": 6.48
+ },
+ {
+  "w": "with",
+  "key": "w:with",
+  "start": 6.48,
+  "end": 6.76
+ },
+ {
+  "w": "international",
+  "key": "w:international",
+  "start": 6.76,
+  "end": 7.24
+ },
+ {
+  "w": "career",
+  "key": "w:career",
+  "start": 7.24,
+  "end": 7.8
+ },
+ {
+  "w": "opportunities",
+  "key": "w:opportunities",
+  "start": 7.8,
+  "end": 8.72
+ },
+ {
+  "w": "Start",
+  "key": "w:start",
+  "start": 9.19,
+  "end": 9.4
+ },
+ {
+  "w": "with",
+  "key": "w:with2",
+  "start": 9.4,
+  "end": 9.6
+ },
+ {
+  "w": "your",
+  "key": "w:your2",
+  "start": 9.6,
+  "end": 9.72
+ },
+ {
+  "w": "experience",
+  "key": "w:experience",
+  "start": 9.72,
+  "end": 10.36
+ },
+ {
+  "w": "your",
+  "key": "w:your3",
+  "start": 10.76,
+  "end": 10.82
+ },
+ {
+  "w": "ambitions",
+  "key": "w:ambitions",
+  "start": 10.82,
+  "end": 11.22
+ },
+ {
+  "w": "and",
+  "key": "w:and",
+  "start": 11.74,
+  "end": 11.84
+ },
+ {
+  "w": "where",
+  "key": "w:where",
+  "start": 11.84,
+  "end": 12.08
+ },
+ {
+  "w": "you",
+  "key": "w:you",
+  "start": 12.08,
+  "end": 12.26
+ },
+ {
+  "w": "want",
+  "key": "w:want",
+  "start": 12.26,
+  "end": 12.46
+ },
+ {
+  "w": "to",
+  "key": "w:to",
+  "start": 12.46,
+  "end": 12.62
+ },
+ {
+  "w": "go",
+  "key": "w:go",
+  "start": 12.62,
+  "end": 12.9
+ },
+ {
+  "w": "Alumni",
+  "key": "w:alumni2",
+  "start": 13.33,
+  "end": 13.54
+ },
+ {
+  "w": "brings",
+  "key": "w:brings",
+  "start": 13.54,
+  "end": 13.96
+ },
+ {
+  "w": "you",
+  "key": "w:you2",
+  "start": 13.96,
+  "end": 14.12
+ },
+ {
+  "w": "closer",
+  "key": "w:closer",
+  "start": 14.12,
+  "end": 14.54
+ },
+ {
+  "w": "to",
+  "key": "w:to2",
+  "start": 14.54,
+  "end": 14.72
+ },
+ {
+  "w": "employers",
+  "key": "w:employers",
+  "start": 14.72,
+  "end": 15.2
+ },
+ {
+  "w": "and",
+  "key": "w:and2",
+  "start": 15.2,
+  "end": 15.54
+ },
+ {
+  "w": "recruitment",
+  "key": "w:recruitment",
+  "start": 15.54,
+  "end": 15.9
+ },
+ {
+  "w": "agencies",
+  "key": "w:agencies",
+  "start": 15.9,
+  "end": 16.44
+ },
+ {
+  "w": "looking",
+  "key": "w:looking",
+  "start": 16.44,
+  "end": 16.94
+ },
+ {
+  "w": "for",
+  "key": "w:for",
+  "start": 16.94,
+  "end": 17.24
+ },
+ {
+  "w": "emerging",
+  "key": "w:emerging",
+  "start": 17.24,
+  "end": 17.6
+ },
+ {
+  "w": "talent",
+  "key": "w:talent",
+  "start": 17.6,
+  "end": 18.21
+ },
+ {
+  "w": "For",
+  "key": "w:for2",
+  "start": 18.67,
+  "end": 18.74
+ },
+ {
+  "w": "graduates",
+  "key": "w:graduates2",
+  "start": 18.74,
+  "end": 19.45
+ },
+ {
+  "w": "it's",
+  "key": "w:its",
+  "start": 19.66,
+  "end": 19.78
+ },
+ {
+  "w": "a",
+  "key": "w:a",
+  "start": 19.78,
+  "end": 19.88
+ },
+ {
+  "w": "path",
+  "key": "w:path",
+  "start": 19.88,
+  "end": 20.04
+ },
+ {
+  "w": "forward",
+  "key": "w:forward",
+  "start": 20.04,
+  "end": 20.6
+ },
+ {
+  "w": "For",
+  "key": "w:for3",
+  "start": 21.06,
+  "end": 21.2
+ },
+ {
+  "w": "businesses",
+  "key": "w:businesses",
+  "start": 21.2,
+  "end": 21.92
+ },
+ {
+  "w": "it's",
+  "key": "w:its2",
+  "start": 22.1,
+  "end": 22.24
+ },
+ {
+  "w": "access",
+  "key": "w:access",
+  "start": 22.24,
+  "end": 22.62
+ },
+ {
+  "w": "to",
+  "key": "w:to3",
+  "start": 22.62,
+  "end": 22.92
+ },
+ {
+  "w": "new",
+  "key": "w:new",
+  "start": 22.92,
+  "end": 23.16
+ },
+ {
+  "w": "professionals",
+  "key": "w:professionals",
+  "start": 23.16,
+  "end": 23.52
+ },
+ {
+  "w": "And",
+  "key": "w:and3",
+  "start": 24.3,
+  "end": 24.44
+ },
+ {
+  "w": "for",
+  "key": "w:for4",
+  "start": 24.44,
+  "end": 24.56
+ },
+ {
+  "w": "recruitment",
+  "key": "w:recruitment2",
+  "start": 24.54,
+  "end": 24.9
+ },
+ {
+  "w": "partners",
+  "key": "w:partners",
+  "start": 24.9,
+  "end": 25.58
+ },
+ {
+  "w": "it's",
+  "key": "w:its3",
+  "start": 25.74,
+  "end": 25.96
+ },
+ {
+  "w": "a",
+  "key": "w:a2",
+  "start": 25.96,
+  "end": 26.04
+ },
+ {
+  "w": "stronger",
+  "key": "w:stronger",
+  "start": 26.04,
+  "end": 26.44
+ },
+ {
+  "w": "connection",
+  "key": "w:connection",
+  "start": 26.44,
+  "end": 27.15
+ },
+ {
+  "w": "New",
+  "key": "w:new2",
+  "start": 27.59,
+  "end": 27.84
+ },
+ {
+  "w": "countries",
+  "key": "w:countries",
+  "start": 27.84,
+  "end": 28.46
+ },
+ {
+  "w": "New",
+  "key": "w:new3",
+  "start": 28.63,
+  "end": 28.8
+ },
+ {
+  "w": "colleagues",
+  "key": "w:colleagues",
+  "start": 28.8,
+  "end": 29.52
+ },
+ {
+  "w": "New",
+  "key": "w:new4",
+  "start": 29.77,
+  "end": 30.0
+ },
+ {
+  "w": "possibilities",
+  "key": "w:possibilities",
+  "start": 30.0,
+  "end": 30.99
+ },
+ {
+  "w": "Alumni",
+  "key": "w:alumni3",
+  "start": 31.39,
+  "end": 31.95
+ },
+ {
+  "w": "From",
+  "key": "w:from",
+  "start": 32.36,
+  "end": 32.44
+ },
+ {
+  "w": "experience",
+  "key": "w:experience2",
+  "start": 32.44,
+  "end": 33.02
+ },
+ {
+  "w": "to",
+  "key": "w:to4",
+  "start": 33.02,
+  "end": 33.25
+ },
+ {
+  "w": "opportunity",
+  "key": "w:opportunity",
+  "start": 33.4,
+  "end": 34.24
+ },
+ {
+  "w": "Your",
+  "key": "w:your4",
+  "start": 34.63,
+  "end": 34.78
+ },
+ {
+  "w": "next",
+  "key": "w:next2",
+  "start": 34.78,
+  "end": 34.98
+ },
+ {
+  "w": "chapter",
+  "key": "w:chapter",
+  "start": 34.98,
+  "end": 35.58
+ },
+ {
+  "w": "starts",
+  "key": "w:starts",
+  "start": 35.73,
+  "end": 36.08
+ },
+ {
+  "w": "abroad",
+  "key": "w:abroad",
+  "start": 36.08,
+  "end": 36.5
+ }
+]
