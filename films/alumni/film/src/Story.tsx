@@ -123,7 +123,7 @@ const Ask: React.FC<{ g: number }> = ({ g }) => {
   const sug = [{ i: "globe", t: "Working abroad" }, { i: "briefcase", t: "A new career" }, { i: "link", t: "A good connection" }];
   return (
     <AbsoluteFill>
-      <Box x={x} y={y + (1 - inn) * 80} w={w} h={h} r={65} s={0.9 + 0.1 * inn} o={inn * (1 - k(g, "meet+0.3", 0.25))} style={{ ...glass(C.orange), overflow: "hidden" }}>
+      <Box x={x} y={y + (1 - inn) * 80} w={w} h={h} r={65} s={0.9 + 0.1 * inn} o={inn * (1 - k(g, "meet+0.3", 0.25))} style={{ ...glass(C.orange), overflow: "hidden", willChange: "transform" }}>
         <div style={{ position: "absolute", inset: 0, background: C.orange, opacity: clamp01(shrink * 1.6 - 0.4) }} />
         <div style={{ position: "absolute", left: 44, top: 41, opacity: 1 - shrink }}><Icon name="search" size={48} color={C.deep} sw={3} /></div>
         <div style={{ position: "absolute", left: 118, top: 30, fontFamily: C.font, fontWeight: 700, fontSize: 60, color: C.ink, whiteSpace: "nowrap", letterSpacing: "-0.01em", opacity: 1 - shrink * 2 }}>
@@ -489,7 +489,7 @@ const Sign: React.FC<{ g: number }> = ({ g }) => {
   const push = 1 + drift(g, "sign+0.3", 0.06) * (1 - lift);
   return (
     <AbsoluteFill>
-      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transform: `scale(${push})`, transformOrigin: "960px 500px" }}>
+      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transform: `scale(${push})`, transformOrigin: "960px 500px", willChange: "transform" }}>
         {/* the lockup: the mark and the name, as the site's header has them */}
         <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transform: `translateY(${ly - SIGN.y + (1 - a) * 40}px) scale(${ls * (0.92 + 0.08 * a)})`, transformOrigin: `960px ${SIGN.y}px`, opacity: a,
           filter: a < 1 ? `blur(${(1 - a) * 10}px)` : undefined }}>

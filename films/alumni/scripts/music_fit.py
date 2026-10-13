@@ -169,7 +169,7 @@ def main():
     if segs[0][0] > 0 and segs[0][1] - segs[0][0] >= t_first - 0.05:
         f0, a, b = segs[0]; segs[0] = (0.0, a - f0, b)
     for k, (f0, a, b) in enumerate(segs):
-        if k: a = snap(a)
+        if k: a2 = snap(a); f0 += a2 - a; a = a2      # a join snapped onto its transient moves in film time too: no gap, no beat slip
         if k + 1 < len(segs): b = snap(b)
         ia, ib = int(a * SR), min(len(y), int(b * SR) + xf)
         seg = y[ia:ib].copy()

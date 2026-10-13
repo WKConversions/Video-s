@@ -174,6 +174,7 @@ def main():
     mix = vo_bus + mu_bus + fx_bus
     mix = to_lufs(mix, MASTER_LUFS)
     mix = limit(mix, CEILING_DB)
+    mix[:240] *= np.linspace(0, 1, 240)[:, None]          # a 5 ms fade-in: no click on the first sample
     final_l = loudness(mix)
     pcm = (np.clip(mix, -1, 1) * 32767).astype("<i2")
     import wave

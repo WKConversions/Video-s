@@ -15,30 +15,35 @@ for line in plan:
     m = re.match(r"\s*\d+\s+([0-9.]+)–\s*([0-9.]+)s\s+(.*)", line)
     if m: PHRASES.append((float(m.group(1)), float(m.group(2)), m.group(3).strip()))
 EVENTS = [
-    "The headline builds; the start ball drops and the red route runs ahead of an open, empty suitcase",
-    "Everything flies into the case on \"koffer pakt\"; the lid shuts, a JongLeren tag",
-    "A red field grows out of the start ball; the logo rises; four to-dos become the bull's juggled balls",
-    "The balls land as the route's five steps; the first dot opens into the intake card; a day is picked",
-    "The video call; your tile becomes the big one; the study field rolls",
-    "Wishes land as chips; the school's checklist slides in and ticks; step 1 done",
-    "The card becomes a phone; the app icon flies in; the download ring fills; the app opens out of its icon",
-    "\"Mijn stage\": the app's own step list ticks \"Installeer de app\"",
-    "The phone steps aside; vacancies flick past; one locks with a red ring: Match",
-    "The match card flips into the invitation; you and the company joined by the red line",
-    "The invitation opens into the company: interns with their manager",
-    "\"Aangenomen!\" stamp and confetti; step 4 done",
-    "The housing option over a house photo; the switch flips on \"indien nodig\"",
-    "The photo clears: \"Huisvesting dicht bij je stage.\"; a pin lands on the house",
-    "Spain opens out of the pin: the suitcase from the hook has arrived in Málaga; ringed, step 5 ticked",
-    "The photo becomes a card; the team slides in: \"We staan voor je klaar.\"",
-    "A card deals in: Persoonlijke begeleiding (an internship visit)",
-    "The red mark sweeps under \"begeleiding\"",
-    "Coaching and Activiteiten join the row",
-    "The cards fold into the fifth step; the line runs from the first question to the last day",
-    "The dots lift off and land as the logo's four balls; Granada opens behind the card",
-    "\"Jouw stage,\" builds under the logo",
-    "\"volledig\" in red",
-    "\"begeleid.\" completes the promise; the camera's slow push to the end",
+    "\"Your internship\" builds; the internship window arrives with a photo of where it was",
+    "The bar fills to 100%, \"Completed\"; the line runs on out of the card: the beginning",
+    "A search bar types \"What comes next?\"; the site's next steps appear under it",
+    "The bar closes into an orange point; the A climbs out of it, the L turns; \"Alumni\" lands with the beat",
+    "The logo becomes the hub; the graduates tile is joined to it by the line",
+    "The first place abroad joins the hub",
+    "Two more places join: international career opportunities",
+    "The graduate tile opens into \"Our approach · 01 Introduce\": qualification and internship tick",
+    "Ambitions as chips (the site's \"kind of work, environment\")",
+    "Two destinations; the route draws from you to the one you pick",
+    "The profile folds into a tile; both sides move closer; employers arrive",
+    "The recruitment agencies card arrives",
+    "The agency cards fan out: agencies",
+    "Orbs travel the cables; \"Emerging talent\" lands on you",
+    "Panel \"For graduates · Your career abroad\" rises",
+    "The site's Guidance arrow draws over the harbour promenade: a path forward",
+    "The track slides: \"For employers · Your next colleague\"",
+    "Six professionals arrive over the city",
+    "\"For recruitment agencies\": the site's Connection shape draws",
+    "Its strokes thicken: stronger",
+    "The two paths meet: connection",
+    "\"New countries.\" A city window, a flight across it",
+    "\"New colleagues.\" A team says hello",
+    "\"New possibilities.\" A second city, the site's Opportunity shape",
+    "The windows leave; the AL returns and the name lands beside it",
+    "\"From experience\" in the A's orange",
+    "\"to opportunity.\" in the L's green, the line drawn between them",
+    "The lockup lifts; the site's eyebrow and \"Your next chapter\"",
+    "\"starts abroad.\" with the brand line under it; \"Grow together. Go further.\"; the song's last hit",
 ]
 assert len(EVENTS) == len(PHRASES), (len(EVENTS), len(PHRASES))
 
@@ -50,10 +55,10 @@ def font(size, bold=False):
     for p in ["/usr/share/fonts/truetype/dejavu/DejaVuSans%s.ttf" % ("-Bold" if bold else "")]:
         if os.path.exists(p): return ImageFont.truetype(p, size)
     return ImageFont.load_default()
-d.text((16, 18), "JongLeren.es — \"Jouw stage, volledig begeleid\" · 42 s · one frame per phrase, from the render", fill="#26231F", font=font(22, True))
+d.text((16, 18), "Alumni — \"Your next chapter starts abroad\" · 39 s website hero · one frame per phrase, from the render", fill="#26231F", font=font(22, True))
 tmp = tempfile.mkdtemp()
 for i, ((a, b, text), ev) in enumerate(zip(PHRASES, EVENTS)):
-    t = max(a + 0.3, b - 0.1) if i < len(PHRASES) - 1 else 41.0
+    t = max(a + 0.3, b - 0.1) if i < len(PHRASES) - 1 else 38.0
     fn = os.path.join(tmp, f"p{i:02d}.png")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", f"{t:.3f}", "-i", video, "-frames:v", "1", "-vf", f"scale={tw}:{th}", fn], check=True)
     x, y = 16 + (i % cols) * (tw + 16), 76 + (i // cols) * (th + cap + 16)
