@@ -25,7 +25,12 @@ export const GRAD_V = `linear-gradient(180deg, ${C.gCoral} 0%, ${C.gTerra} 35%, 
 export const clamp01 = (v: number) => Math.min(1, Math.max(0, v));
 export const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 /** Exponential ease-out over n frames, decaying by r per frame (the reference's UI arrivals). */
-export const expoOut = (n: number, r = 0.84) => (t: number) => { const c = clamp01(t); return (1 - Math.pow(r, c * n)) / (1 - Math.pow(r, n)); };
+export const expoOut = (n: number, r = 0.84) => (t: number) => {
+  // cut off at n frames the exponential still moves 1-4 % of its range a frame and stops dead; the cubic term bleeds that speed
+  // off over the last frames, so it lands at rest (same start speed, same end, still monotonic)
+  const c = clamp01(t), q = Math.pow(r, n), v = n * Math.log(1 / r) * q / (1 - q);
+  return (1 - Math.pow(r, c * n)) / (1 - q) + v * c * c * (1 - c);
+};
 export const ARRIVE = Easing.bezier(0.16, 1, 0.3, 1);
 export const MOVE = Easing.bezier(0.65, 0, 0.35, 1);
 export const SOFT = Easing.bezier(0.45, 0, 0.25, 1);

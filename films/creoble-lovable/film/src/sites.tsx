@@ -26,7 +26,7 @@ const pal = (b: number) => ({
 export const FlowerSite: React.FC<{ build?: number; brand?: number; from?: number; video?: boolean; scroll?: number; h?: number }> =
   ({ build = 1, brand = 0, from = 0, video = true, scroll = 0, h = BASE_H }) => {
     const p = pal(brand);
-    const sec = (i: number) => { const k = clamp01(build * 5 - i); return { opacity: k, transform: `translateY(${(1 - k) * 30}px)`, filter: k < 1 ? `blur(${(1 - k) * 8}px)` : undefined }; };
+    const sec = (i: number) => { const t = clamp01(build * 5 - i), k = t * t * (3 - 2 * t); return { opacity: k, transform: `translateY(${(1 - k) * 30}px)`, filter: k < 1 ? `blur(${(1 - k) * 8}px)` : undefined }; };
     return (
       <div style={{ width: BASE_W, height: h, background: p.bg, position: "relative", overflow: "hidden", fontFamily: F.ui, color: p.ink }}>
         <div style={{ position: "absolute", left: 0, top: -scroll, width: BASE_W }}>

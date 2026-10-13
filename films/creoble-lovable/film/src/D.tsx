@@ -21,10 +21,14 @@ const Cut: React.FC<{ g: number; f: number; text: string; size: number; y?: numb
   ({ g, f, text, size, y = 560, italic, weight = 650, shadow }) => {
     if (g < f) return null;
     const k = clamp01((g - f + 1) / 3), e = expoOut(6, 0.75)(clamp01((g - f) / 6));
+    // the move, fade and blur on an outer layer, the gradient-clipped text inside it (background-clip: text on the composited,
+    // filtered layer itself once drew only a sliver of one raster tile: "helt" vanished at 1639)
     return (
-      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, textAlign: "center", transform: `translate3d(${14 * (1 - e)}px, ${y - size * 0.66 + 8 * (1 - e)}px, 0)`, opacity: k,
-        filter: e < 0.6 ? `blur(${4 * (1 - e)}px)` : undefined, fontFamily: F.serif, fontWeight: weight, fontSize: size, fontStyle: italic ? "italic" : "normal", letterSpacing: -size * 0.02,
-        lineHeight: 1.24, whiteSpace: "pre", textShadow: shadow, backgroundImage: LIGHT_TEXT, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>{text}</div>
+      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, transform: `translate3d(${14 * (1 - e)}px, ${y - size * 0.66 + 8 * (1 - e)}px, 0)`, opacity: k,
+        filter: e < 0.6 ? `blur(${4 * (1 - e)}px)` : undefined }}>
+        <div style={{ textAlign: "center", fontFamily: F.serif, fontWeight: weight, fontSize: size, fontStyle: italic ? "italic" : "normal", letterSpacing: -size * 0.02,
+          lineHeight: 1.24, whiteSpace: "pre", textShadow: shadow, backgroundImage: LIGHT_TEXT, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>{text}</div>
+      </div>
     );
   };
 
@@ -75,7 +79,7 @@ export const D2: React.FC<{ g: number }> = ({ g }) => {
     const tx = ox + bc.x * Z + 20, ty = oy + bc.y * Z + 26;
     const cur = path(g, [{ f: 1710, x: 1500, y: 1180 }, { f: 1721, x: tx, y: ty }, { f: 1734, x: tx + 14, y: ty + 20 }]);
     const pk = press(g, 1723);
-    return <TopBarClose g={g} a={1710} buyPress={pk}><Cursor x={cur.x} y={cur.y} vx={cur.vx} h={300} press={pk} /></TopBarClose>;
+    return <TopBarClose g={g} a={1710} buyPress={pk}><Cursor x={cur.x} y={cur.y} vx={cur.vx} vy={cur.vy} h={300} press={pk} /></TopBarClose>;
   }
   if (g < 1806) {
     const k = expoOut(15, 0.84)(clamp01((g - 1734) / 15)), sc = lerp(0.6, 1, k) * lerp(1, 1.03, pr(g, 1749, 57, SOFT));
@@ -87,16 +91,18 @@ export const D2: React.FC<{ g: number }> = ({ g }) => {
         <div style={{ position: "absolute", inset: 0, perspective: 2200 }}>
           <At x={960} y={540} s={sc}><div style={{ transform: `rotateX(${rx}deg) rotateY(${ry}deg)` }}><BuyCard g={g} /></div></At>
         </div>
-        <Cursor x={cur.x} y={cur.y} vx={cur.vx} h={190} press={press(g, 1782)} />
+        <Cursor x={cur.x} y={cur.y} vx={cur.vx} vy={cur.vy} h={190} press={press(g, 1782)} />
       </Peach>
     );
   }
   if (g < 1848) {
-    const e1 = expoOut(39, 0.92)(clamp01((g - 1806) / 39));
+    // the whip-in decays by 0.92 a frame and runs on into the cut at 1848 (it used to stop at full speed at 1845); a blur that decays
+    // with it (about a tenth of its speed, 9 px on the cut) so the first frames, at 80-100 px a frame, don't strobe
+    const e1 = expoOut(60, 0.92)(clamp01((g - 1806) / 60)), focus = 9 * Math.pow(0.92, g - 1806);
     const s = lerp(2.4, 0.92, e1), ry = lerp(-24, -5, e1), rx = lerp(12, 3, e1), fx = lerp(-380, 0, e1), fy = lerp(-340, 0, e1);
     return (
       <Peach g={g} a={1806} v={11}>
-        <div style={{ position: "absolute", inset: 0, perspective: 2400 }}>
+        <div style={{ position: "absolute", inset: 0, perspective: 2400, filter: focus > 0.5 ? `blur(${focus}px)` : undefined }}>
           <div style={{ position: "absolute", left: 960, top: 540, transform: `translate(${-fx * s}px, ${-fy * s}px) scale(${s}) rotateX(${rx}deg) rotateY(${ry}deg)` }}>
             <div style={{ position: "absolute", left: -750, top: -440 }}>
               <Browser w={1500} url="blomsterhuset-rosa.creoble.dk"><div style={{ position: "relative" }}><FlowerSite brand={1} from={1806} />
@@ -185,7 +191,7 @@ export const D4: React.FC<{ g: number }> = ({ g }) => {
         </div>
       </At>
       <Grain opacity={0.14} seed={53} />
-      <Cursor x={cur.x} y={cur.y} vx={cur.vx} h={210} press={press(g, 1964)} />
+      <Cursor x={cur.x} y={cur.y} vx={cur.vx} vy={cur.vy} h={210} press={press(g, 1964)} />
     </AbsoluteFill>
   );
 };
@@ -230,11 +236,15 @@ const HostView: React.FC<{ g: number }> = ({ g }) => {
   );
 };
 export const D5: React.FC<{ g: number }> = ({ g }) => {
-  const out = expoOut(34, 0.9)(clamp01((g - 1986) / 34)), focus = 12 * (1 - clamp01((g - 1986) / 9));
+  // the zoom-out decays over 48 f, so it fades under the push-in from 2020 instead of stopping (and reversing) at full speed there;
+  // the blur lasts while the zoom is still over 3% a frame
+  const out = expoOut(48, 0.9)(clamp01((g - 1986) / 48)), focus = 12 * (1 - clamp01((g - 1986) / 14));
   const s = Math.exp(lerp(Math.log(1.9), Math.log(0.97), out)) * lerp(1, 1.02, pr(g, 2020, 57, SOFT));
   const ax = lerp(960, 980, out), ay = lerp(560, 545, out), wx = lerp(220, 800, out), wy = lerp(380, 500, out);
   const ry = lerp(-18, -8, out), rx = lerp(10, 6, out);
-  const flip = pr(g, 2015, 6), live = g >= 2071 ? 1 : 0;
+  // a soft-edged wipe eased over 8 f (the hard clip jumped from 0 to 69% of the panel in one frame at 2016)
+  const flip = pr(g, 2015, 6), wipe = pr(g, 2015, 8, SOFT) * 140, live = g >= 2071 ? 1 : 0;
+  const wipeMask = `linear-gradient(90deg, #000 ${wipe - 40}%, transparent ${wipe}%)`;
   return (
     <Gradient g={g} a={1986} lift={10} seed={55}>
       <div style={{ position: "absolute", inset: 0, perspective: 2600, filter: focus > 0.2 ? `blur(${focus}px)` : undefined }}>
@@ -242,7 +252,7 @@ export const D5: React.FC<{ g: number }> = ({ g }) => {
           filter: "drop-shadow(0 50px 70px rgba(80,30,20,0.35))" }}>
           <Builder g={g} brand={1} from={1986} side={<HostSide g={g} />} topIcons={1} widget={1} url={live ? DOMAIN : "blomsterhuset-rosa.creoble.dk"} live={live}
             overlay={flip > 0 ? <div style={{ position: "absolute", left: PREVIEW.x, top: PREVIEW.y, width: PREVIEW.w, height: PREVIEW.h, borderRadius: 16, overflow: "hidden",
-              clipPath: `inset(0 ${(1 - flip) * 100}% 0 0)` }}><HostView g={g} /></div> : undefined} />
+              WebkitMaskImage: wipeMask, maskImage: wipeMask }}><HostView g={g} /></div> : undefined} />
         </div>
       </div>
     </Gradient>
@@ -309,12 +319,19 @@ export const D8: React.FC<{ g: number }> = ({ g }) => {
   const total = ms + gap + ww, mv = pr(g, 2310, 16, MOVE);
   const mx = lerp(960, 960 - total / 2 + ms / 2, mv);
   // the mark arrives huge and soft (the reference's heart) and settles small and sharp
-  const k = clamp01((g - 2277) / 14), e = expoOut(14, 0.8)(k), big = lerp(1.35, 1, mv);
+  // the shrink eases out in log scale (lerp(6, 1, e) = 6^((1 - t)²)): the same sizes, but the zoom slows to 0 by 2293 instead of
+  // stopping at 5.7% a frame on 2291
+  const k = clamp01((g - 2277) / 14), e = (6 - Math.pow(6, Math.pow(1 - clamp01((g - 2277) / 16), 2))) / 5, big = lerp(1.35, 1, mv);
   return (
     <AbsoluteFill style={{ background: C.night, overflow: "hidden" }}>
       {glow}<Grain opacity={0.14} seed={81} />
-      <At x={mx} y={540} s={lerp(6, 1, e) * big} o={clamp01(k * 3)}><div style={{ filter: k < 1 ? `blur(${7 * (1 - e)}px)` : undefined }}><Mark size={ms} grad={[C.gSage, C.gCoral, C.gApricot]} id="d8m" /></div></At>
-      {g >= 2310 && <div style={{ position: "absolute", left: 960 - total / 2 + ms + gap, top: 540 - size * 0.58 }}><Wordmark size={size} color="#F6F3EE" dot={C.gSage} reveal={pr(g, 2312, 20, SOFT)} /></div>}
+      {/* the slide left peaks at 66 px a frame: a sideways smear of 0.15 × each frame's travel keeps it from strobing; the word mark rides at
+          the mark's right edge as it slides (as the reference's letters do), so no letter fades in inside the moving mark */}
+      <svg width={0} height={0} style={{ position: "absolute" }}><filter id="d8smear" x="-20%" y="0%" width="140%" height="100%"><feGaussianBlur stdDeviation={`${0.15 * Math.abs(mx - lerp(960, 960 - total / 2 + ms / 2, pr(g - 1, 2310, 16, MOVE)))} 0`} /></filter></svg>
+      <div style={{ position: "absolute", inset: 0, filter: g > 2311 && g < 2326 ? "url(#d8smear)" : undefined }}>
+        <At x={mx} y={540} s={lerp(6, 1, e) * big} o={clamp01(k * 3)}><div style={{ filter: k < 1 ? `blur(${7 * (1 - e)}px)` : undefined }}><Mark size={ms} grad={[C.gSage, C.gCoral, C.gApricot]} id="d8m" /></div></At>
+        {g >= 2310 && <div style={{ position: "absolute", left: 0, top: 540 - size * 0.58, transform: `translate3d(${mx + (ms / 2) * big + gap}px, 0, 0)` }}><Wordmark size={size} color="#F6F3EE" dot={C.gSage} reveal={pr(g, 2312, 20, SOFT)} /></div>}
+      </div>
     </AbsoluteFill>
   );
 };

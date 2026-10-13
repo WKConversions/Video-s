@@ -60,11 +60,13 @@ export const Builder: React.FC<{
             {status && <div style={{ marginTop: 18 }}>{status}</div>}
           </div>
         )}
-        <div style={{ position: "absolute", left: 24, right: 24, bottom: WH - PROMPT.y + 14, display: "flex", flexDirection: "column", gap: 10 }}>
+        <div style={{ position: "absolute", left: 24, right: 24, bottom: WH - PROMPT.y + 14, display: "flex", flexDirection: "column" }}>
           {msgs.filter((m) => m.k > 0).map((m, i) => (
-            <div key={i} style={{ alignSelf: m.from === "me" ? "flex-end" : "flex-start", maxWidth: 300, padding: "11px 15px", borderRadius: 16, fontSize: 16, lineHeight: 1.35,
-              background: m.from === "me" ? C.sage : "#FFFFFF", color: m.from === "me" ? "#fff" : C.ink, border: m.from === "ai" ? `1px solid ${C.line}` : undefined,
-              opacity: clamp01(m.k * 1.5), transform: `translateY(${(1 - clamp01(m.k)) * 16}px)` }}>{m.text}</div>
+            <Grow key={i} k={m.k} gap={i ? 10 : 0} style={{ alignSelf: m.from === "me" ? "flex-end" : "flex-start" }}>
+              <div style={{ maxWidth: 300, padding: "11px 15px", borderRadius: 16, fontSize: 16, lineHeight: 1.35,
+                background: m.from === "me" ? C.sage : "#FFFFFF", color: m.from === "me" ? "#fff" : C.ink, border: m.from === "ai" ? `1px solid ${C.line}` : undefined,
+                opacity: clamp01(m.k * 1.5) }}>{m.text}</div>
+            </Grow>
           ))}
         </div>
         <div style={{ position: "absolute", left: PROMPT.x, top: PROMPT.y }}><PromptBox g={g} text={prompt} caret={caret} sendPress={sendPress} /></div>
@@ -106,10 +108,17 @@ export const TopicTile: React.FC<{ i: number; d: number }> = ({ i, d }) => (
     boxShadow: "0 8px 20px -10px rgba(0,0,0,0.35)" }}><Icon name={TOPICS[i].icon} size={d * 0.46} color="#fff" stroke={2.2} /></div>
 );
 const TopIcons: React.FC<{ k: number }> = ({ k }) => (
-  <div style={{ position: "absolute", left: BTN_CHAT.x - 190, top: 22, display: "flex", opacity: clamp01(k) }}>
-    {TOPICS.map((_, i) => <div key={i} style={{ marginLeft: i ? -10 : 0 }}><TopicTile i={i} d={38} /></div>)}
+  <div style={{ position: "absolute", left: BTN_CHAT.x - 190, top: 22, display: "flex", opacity: clamp01(k), zIndex: 0 }}>
+    {TOPICS.map((_, i) => <div key={i} style={{ marginLeft: i ? -10 : 0, position: "relative", zIndex: 5 - i }}><TopicTile i={i} d={38} /></div>)}
   </div>
 );
+
+/** A message's row in a chat column: it takes k (0..1, smoothstepped) of its height and its gap, so once the column is full the
+ *  messages above glide up instead of jumping a whole message in one frame (the message itself is drawn whole, revealed from the top). */
+const Grow: React.FC<{ k: number; gap?: number; style?: React.CSSProperties; children: React.ReactNode }> = ({ k, gap = 0, style, children }) => {
+  const t = clamp01(k), e = t * t * (3 - 2 * t);
+  return <div style={{ display: "grid", gridTemplateRows: `minmax(0, ${e}fr)`, flex: "none", ...style }}><div style={{ overflow: "hidden", minHeight: 0 }}><div style={{ paddingTop: gap }}>{children}</div></div></div>;
+};
 
 /** The chat window on the shop's site. */
 export type Bubble = { from: "bot" | "me"; text: React.ReactNode; k: number; card?: number; cardPress?: number; done?: number };
@@ -123,16 +132,18 @@ export const ChatWindow: React.FC<{ g: number; bubbles: Bubble[]; input?: string
       </div>
       <div style={{ position: "absolute", left: 20, right: 20, top: 110, bottom: 96, overflow: "hidden" }}>
       {/* starts at the top; once it overflows, the newest message stays in view (anchored at the bottom, at least as tall as the area) */}
-      <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, minHeight: "100%", display: "flex", flexDirection: "column", justifyContent: top ? "flex-start" : "flex-end", gap: 12 }}>
+      <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, minHeight: "100%", display: "flex", flexDirection: "column", justifyContent: top ? "flex-start" : "flex-end" }}>
         {bubbles.filter((b) => b.k > 0).map((b, i) => (
-          <div key={i} style={{ alignSelf: b.from === "me" ? "flex-end" : "flex-start", maxWidth: w * 0.78, opacity: clamp01(b.k * 1.6), transform: `translateY(${(1 - clamp01(b.k)) * 18}px)` }}>
+          <Grow key={i} k={b.k} gap={i ? 12 : 0} style={{ alignSelf: b.from === "me" ? "flex-end" : "flex-start", maxWidth: w * 0.78 }}>
+          <div style={{ opacity: clamp01(b.k * 1.6) }}>
             <div style={{ padding: "13px 17px", borderRadius: 20, borderBottomRightRadius: b.from === "me" ? 6 : 20, borderBottomLeftRadius: b.from === "bot" ? 6 : 20,
               background: b.from === "me" ? C.plum : C.blush, color: b.from === "me" ? "#fff" : C.plum, fontSize: 19, lineHeight: 1.4 }}>{b.text}</div>
-            {b.card !== undefined && b.card > 0 && <ProductCard k={b.card} press={b.cardPress ?? 0} done={b.done ?? 0} />}
+            {b.card !== undefined && b.card > 0 && <Grow k={b.card}><ProductCard k={b.card} press={b.cardPress ?? 0} done={b.done ?? 0} /></Grow>}
           </div>
+          </Grow>
         ))}
-        {dots > 0 && <div style={{ alignSelf: "flex-start", padding: "16px 20px", borderRadius: 20, background: C.blush, display: "flex", gap: 7 }}>
-          {[0, 1, 2].map((i) => <div key={i} style={{ width: 10, height: 10, borderRadius: 5, background: C.rose, opacity: 0.35 + 0.65 * Math.max(0, Math.sin(g * 0.45 - i * 0.9)) }} />)}</div>}
+        {dots > 0 && <Grow k={dots} gap={12} style={{ alignSelf: "flex-start" }}><div style={{ padding: "16px 20px", borderRadius: 20, background: C.blush, display: "flex", gap: 7, width: "fit-content" }}>
+          {[0, 1, 2].map((i) => <div key={i} style={{ width: 10, height: 10, borderRadius: 5, background: C.rose, opacity: 0.35 + 0.65 * Math.max(0, Math.sin(g * 0.45 - i * 0.9)) }} />)}</div></Grow>}
       </div>
       </div>
       <div style={{ position: "absolute", left: 16, right: 16, bottom: 16, height: 64, borderRadius: 32, background: "#F6F1EF", display: "flex", alignItems: "center", padding: "0 10px 0 22px", gap: 10 }}>

@@ -16,9 +16,18 @@ export const SHOTS: Shot[] = [
 ];
 export const DURATION = 2415;
 
+/** Shot changes where the picture carries on (no cut): the creep runs on through them, as restarting it there drops the
+ *  picture 4 % in one frame. 46 the dot grid, 106 the typed line, 180 the haze, 305 the burst into "hurtigere", 546 the
+ *  flower, 793 and 834 the prompt pill opening into the builder. (572 is a join too, but A14 already meets A13's ×1.04.) */
+const JOINS = new Set([46, 106, 180, 305, 546, 793, 834]);
 export const Story: React.FC<{ g: number }> = ({ g }) => {
-  const s = SHOTS.find(([a, b]) => g >= a && g < b) ?? SHOTS[SHOTS.length - 1];
-  const [a, b, S] = s;
+  let i = SHOTS.findIndex(([a, b]) => g >= a && g < b);
+  if (i < 0) i = SHOTS.length - 1;
+  const S = SHOTS[i][2];
+  let r0 = i, r1 = i;
+  while (r0 > 0 && JOINS.has(SHOTS[r0][0])) r0--;
+  while (r1 < SHOTS.length - 1 && JOINS.has(SHOTS[r1 + 1][0])) r1++;
+  const a = SHOTS[r0][0], b = SHOTS[r1][1];
   // the reference never holds still: every shot creeps in at a constant slow rate on top of its own moves
   const k = (g - a) / (b - a);
   return <div style={{ position: "absolute", inset: 0, transform: `scale(${1 + 0.04 * k})`, transformOrigin: "50% 50%" }}><S g={g} /></div>;

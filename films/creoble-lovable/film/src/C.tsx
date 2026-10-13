@@ -73,7 +73,7 @@ export const TopBarClose: React.FC<{ g: number; a: number; chatPress?: number; b
   const s = lerp(1.03, 0.97, pr(g, a, 30, SOFT));
   return (
     <Peach g={g} a={a} v={1}>
-      <div style={{ position: "absolute", inset: 0, transform: `scale(${s})`, transformOrigin: "960px 380px" }}>
+      <div style={{ position: "absolute", inset: 0, transform: `scale(${s})`, transformOrigin: "960px 380px", willChange: "transform" }}>
         <div style={{ position: "absolute", left: OX2, top: OY2, transform: `scale(${Z2})`, transformOrigin: "0 0", filter: "drop-shadow(0 30px 40px rgba(120,60,30,0.18))" }}>
           <Builder g={g} brand={1} from={792} steps={STEPS(g, 0)} chatPress={chatPress} buyPress={buyPress} topIcons={a > 1500 ? 1 : 0} video={false} />
         </div>
@@ -86,7 +86,7 @@ export const C2: React.FC<{ g: number }> = ({ g }) => {
   const bc = centre(BTN_CHAT), tx = OX2 + bc.x * Z2 + 20, ty = OY2 + bc.y * Z2 + 26;
   const cur = path(g, [{ f: 1050, x: 1250, y: 1180 }, { f: 1061, x: tx, y: ty }, { f: 1080, x: tx + 14, y: ty + 20 }]);
   const pk = press(g, 1063);
-  return <TopBarClose g={g} a={1050} chatPress={pk}><Cursor x={cur.x} y={cur.y} vx={cur.vx} h={300} press={pk} /></TopBarClose>;
+  return <TopBarClose g={g} a={1050} chatPress={pk}><Cursor x={cur.x} y={cur.y} vx={cur.vx} vy={cur.vy} h={300} press={pk} /></TopBarClose>;
 };
 
 // ---- 36–37.3 s: the set-up card ---------------------------------------------------------------------------------------------------
@@ -126,7 +126,7 @@ export const C3: React.FC<{ g: number }> = ({ g }) => {
   return (
     <Peach g={g} a={1080} v={2}>
       <At x={960 + ox} y={540 + oy} s={sc}><SetupCard g={g} save={g >= 1102 ? 1 : 0} /></At>
-      <Cursor x={cur.x} y={cur.y} vx={cur.vx} h={lerp(170, 260, zoom)} press={press(g, 1100)} />
+      <Cursor x={cur.x} y={cur.y} vx={cur.vx} vy={cur.vy} h={lerp(170, 260, zoom)} press={press(g, 1100)} />
     </Peach>
   );
 };
@@ -232,7 +232,7 @@ export const C7: React.FC<{ g: number }> = ({ g }) => {
   return (
     <Peach g={g} a={1287} v={6}>
       <div style={{ position: "absolute", left: ox, top: oy, transform: `scale(${s})`, transformOrigin: "0 0" }}><ChipBox g={g} on={on} pk={pk} /></div>
-      {g >= 1298 && <Cursor x={cur.x} y={cur.y} vx={cur.vx} h={220} press={pk} />}
+      {g >= 1298 && <Cursor x={cur.x} y={cur.y} vx={cur.vx} vy={cur.vy} h={220} press={pk} />}
     </Peach>
   );
 };
@@ -272,7 +272,7 @@ export const C8: React.FC<{ g: number }> = ({ g }) => {
             overlay={open > 0 ? <div style={{ position: "absolute", right: 30, bottom: 100, transform: `scale(${0.62 * open})`, transformOrigin: "100% 100%", opacity: clamp01(open * 3) }}>
               <ChatWindow g={g} w={CW} h={CHH} bubbles={bubbles(g)} top /></div> : undefined} />
         </div></At>
-        <Cursor x={cur.x} y={cur.y} vx={cur.vx} h={120} press={press(g, 1366)} />
+        <Cursor x={cur.x} y={cur.y} vx={cur.vx} vy={cur.vy} h={120} press={press(g, 1366)} />
       </Peach>
     );
   }
@@ -300,7 +300,7 @@ export const C8: React.FC<{ g: number }> = ({ g }) => {
             <ChatWindow g={g} w={CW} h={CHH} bubbles={bubbles(g)} input={st.input} caret={st.caret} dots={st.dots} sendPress={st.sendPress} top />
           </div>
         </div>
-        {whip < 0.5 && <Cursor x={cur.x} y={cur.y} vx={cur.vx} h={170 * Math.max(1, s * 0.8)} press={pk} />}
+        {whip < 0.5 && <Cursor x={cur.x} y={cur.y} vx={cur.vx} vy={cur.vy} h={170 * Math.max(1, s * 0.8)} press={pk} />}
       </AbsoluteFill>
     );
   }

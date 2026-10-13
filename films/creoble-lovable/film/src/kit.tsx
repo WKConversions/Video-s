@@ -20,12 +20,18 @@ export const tw = (text: string, size: number, weight = 500, family: string = F.
 };
 
 /** The 3D hand cursor. (x, y) is the fingertip; h the sprite's height in px; press 0..1; lean from the move's speed. */
-export const Cursor: React.FC<{ x: number; y: number; h?: number; press?: number; vx?: number; opacity?: number }> = ({ x, y, h = 130, press = 0, vx = 0, opacity = 1 }) => {
+export const Cursor: React.FC<{ x: number; y: number; h?: number; press?: number; vx?: number; vy?: number; opacity?: number }> = ({ x, y, h = 130, press = 0, vx = 0, vy = 0, opacity = 1 }) => {
   const li = Math.round(clamp01((vx / 26 + 1) / 2) * 4), pi = Math.round(clamp01(press) * 5);
   const key = `c_${li}_${pi}`, [tx, ty] = tips.tips[key], s = h / tips.h;
+  // the render has no motion blur: a fast move is smeared along its own axes, about a half-open shutter's worth of the frame's travel
+  const id = `cb${React.useId().replace(/:/g, "")}`, bx = Math.abs(vx) > 6 ? 0.14 * Math.abs(vx) : 0, by = Math.abs(vy) > 6 ? 0.14 * Math.abs(vy) : 0;
+  const shadow = `drop-shadow(0 ${h * 0.06}px ${h * 0.07}px rgba(0,0,0,0.28))`;
   return (
-    <Img src={staticFile(`img/cursor/${key}.png`)} style={{ position: "absolute", left: 0, top: 0, width: tips.w * s, height: tips.h * s, opacity,
-      transform: `translate3d(${x - tx * s}px, ${y - ty * s}px, 0)`, filter: `drop-shadow(0 ${h * 0.06}px ${h * 0.07}px rgba(0,0,0,0.28))` }} />
+    <>
+      {(bx > 0 || by > 0) && <svg width={0} height={0} style={{ position: "absolute" }}><filter id={id} x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation={`${bx} ${by}`} /></filter></svg>}
+      <Img src={staticFile(`img/cursor/${key}.png`)} style={{ position: "absolute", left: 0, top: 0, width: tips.w * s, height: tips.h * s, opacity,
+        transform: `translate3d(${x - tx * s}px, ${y - ty * s}px, 0)`, filter: bx > 0 || by > 0 ? `url(#${id}) ${shadow}` : shadow }} />
+    </>
   );
 };
 
@@ -70,8 +76,11 @@ export const Words: React.FC<{ g: number; words: Word[]; size: number; x: number
             fontFamily: family, fontWeight: weight, fontSize: size, fontStyle: w.italic ? "italic" : "normal", letterSpacing: spacing * size,
             color: w.color ?? color, whiteSpace: "pre", lineHeight: 1.24, textShadow: shadow,
           };
-          if (fill) Object.assign(st, { backgroundImage: fill, backgroundSize: `${total}px 100%`, backgroundPosition: `${x0 - left}px 0`, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" });
-          return <div key={i} style={st}>{w.icon ?? w.t}</div>;
+          if (!fill) return <div key={i} style={st}>{w.icon ?? w.t}</div>;
+          // a gradient-clipped word never carries its own move, fade and blur (Chromium dropped such a layer from frame 512): the box does
+          const { transform, opacity: fade, filter, ...face } = st;
+          return <div key={i} style={{ position: "absolute", left: 0, top: 0, transform, opacity: fade, filter }}>
+            <div style={{ ...face, position: "relative", transform: undefined, backgroundImage: fill, backgroundSize: `${total}px 100%`, backgroundPosition: `${x0 - left}px 0`, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>{w.icon ?? w.t}</div></div>;
         })}
       </>
     );
@@ -159,20 +168,27 @@ export const Flow: React.FC<{ g: number; words: Word[]; size: number; x?: number
     const sp = tw(" ", size, weight, family);
     const ws = words.map((w) => w.icon ? (w.iconW ?? size) : tw(w.t, size, weight, family, w.italic));
     const lay = (m: number) => { const tot = ws.slice(0, m).reduce((a, b) => a + b, 0) + sp * (m - 1); let cx = x - tot / 2; return ws.slice(0, m).map((w) => { const l = cx; cx += w + sp; return l; }); };
-    const m = vis.length, cur = lay(m), prev = m > 1 ? [...lay(m - 1), 0] : cur;
-    if (m > 1) prev[m - 1] = prev[m - 2] + ws[m - 2] + sp;   // the new word rides in at the end of the sliding line
-    const e = expoOut(8, 0.75)(clamp01((g - words[m - 1].f) / 8));
+    const m = vis.length, cur = lay(m);
+    // each arrival moves the line left by half the new word and a space, easing in and out on its own (smoothstep, 9 f); the
+    // pushes add up, so a word landing while the line still slides carries the slide on, and the new word rides at the line's end
+    const shift = vis.reduce((acc, w, j) => {
+      if (j === 0 || w.f <= words[0].f) return acc;
+      const t = clamp01((g - w.f) / 9);
+      return acc + (1 - t * t * (3 - 2 * t)) * (ws[j] + sp) / 2;
+    }, 0);
     return (
       <>
         {vis.map((w, i) => {
-          const left = lerp(prev[i], cur[i], e);
+          const left = cur[i] + shift;
           const k = clamp01((g - w.f) / n), ee = expoOut(n, 0.78)(k);
           const fill = w.grad ?? grad;
           const st: React.CSSProperties = { position: "absolute", left: 0, top: 0, transform: `translate3d(${left}px, ${y - size * 0.62 + 0.16 * size * (1 - ee)}px, 0)`,
             opacity: clamp01((g - w.f) / (n * 0.6)), filter: k < 1 ? `blur(${14 * (1 - ee)}px)` : undefined, fontFamily: family, fontWeight: weight, fontSize: size,
             fontStyle: w.italic ? "italic" : "normal", color: w.color ?? color, whiteSpace: "pre", lineHeight: 1.24, textShadow: shadow };
-          if (fill) Object.assign(st, { backgroundImage: fill, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" });
-          return <div key={i} style={st}>{w.icon ?? w.t}</div>;
+          if (!fill) return <div key={i} style={st}>{w.icon ?? w.t}</div>;
+          const { transform, opacity: fade, filter, ...face } = st;
+          return <div key={i} style={{ position: "absolute", left: 0, top: 0, transform, opacity: fade, filter }}>
+            <div style={{ ...face, position: "relative", backgroundImage: fill, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>{w.icon ?? w.t}</div></div>;
         })}
       </>
     );

@@ -30,22 +30,29 @@ const ASK = "Lav en hjemmeside til blomsterbutikken";
 const PW = 980, PH = 205, FS = 34, TX = 960 - PW / 2 + 70;              // the pill in world units; its text starts at TX
 export const B1: React.FC<{ g: number }> = ({ g }) => {
   const n = Math.max(0, Math.min(ASK.length, Math.floor((g - 700) * 26 / 30)));
-  const caretW = TX + (n ? measure(ASK.slice(0, n)) : 0);
-  // camera: the pill slides in from the right, the frame follows the caret, then pulls back for the click
-  const Zc = 2.3, enter = expoOut(13, 0.82)(clamp01((g - 690) / 13));
-  const fxClose = Math.max(lerp(579, 712, enter), caretW - (1750 - 960) / Zc);
-  const out = px(g, 744, 16, 0.82);
-  const Z = lerp(Zc, 1, out) * lerp(1, 0.9, pr(g, 760, 33, SOFT)), fx = lerp(fxClose, 960, out), fy = 540;
+  // camera: the pill slides in from the right, the frame follows the caret, then pulls back for the click. The follow
+  // tracks the typing's average pace through a smooth max, so it eases in and never steps with a letter; the pull-back
+  // eases in from rest (SOFT; the exponential started at 10.6 % a frame) and lands at rest on 760, where the drift takes over
+  const Zc = 2.3, pace = measure(ASK) / ASK.length;
+  const cam = (q: number) => {
+    const a = lerp(579, 712, px(q, 690, 13, 0.82)), b = TX + pace * Math.max(0, (q - 700) * 26 / 30) - (1750 - 960) / Zc;
+    const fxClose = (a + b + Math.hypot(a - b, 40)) / 2, out = pr(q, 744, 16, SOFT);
+    return { Z: lerp(Zc, 1, out) * lerp(1, 0.9, pr(q, 760, 33, SOFT)), fx: lerp(fxClose, 960, out) };
+  };
+  const { Z, fx } = cam(g), fy = 540, p = cam(g - 1);
+  // no camera motion blur in this film: blur the camera layer by how far the frame's corners travel this frame
+  const flow = (x: number, y: number) => Math.hypot(x - ((x - 960) / Z + fx - p.fx) * p.Z - 960, (y - 540) * (1 - p.Z / Z));
+  const mb = Math.min(6, Math.max(0, (flow(0, 0) + flow(1920, 0) + flow(0, 1080) + flow(1920, 1080)) / 4 - 25) * 0.025);
   const sx = (wx: number) => (wx - fx) * Z + 960, sy = (wy: number) => (wy - fy) * Z + 540;
-  // the sheen wipe, the squash to a bar, the hold
-  const wipe = pr(g, 763, 8, SOFT), squash = pr(g, 778, 5, MOVE);
+  // the sheen wipe, the squash to a bar (eased over 10 f: in 5 f of MOVE its ends jumped 90 px a frame), the hold
+  const wipe = pr(g, 763, 8, SOFT), squash = pr(g, 776, 10, SOFT);
   const pw = lerp(PW, 600, squash), ph = lerp(PH, 96, squash);
   const sendX = 960 + pw / 2 - 26 - 55;
   const cur = path(g, [{ f: 744, x: 1580, y: 940 }, { f: 756, x: sx(sendX + 6), y: sy(546) }, { f: 776, x: sx(sendX + 6), y: sy(548) }, { f: 784, x: sx(960 + pw / 2 - 10), y: sy(552) }, { f: 793, x: sx(960 + pw / 2 - 8), y: sy(552) }]);
   const pk = press(g, 758);
   return (
     <AbsoluteFill style={{ background: C.night, overflow: "hidden" }}>
-      <div style={{ position: "absolute", inset: 0, transform: `translate(${960 - fx * Z}px, ${540 - fy * Z}px) scale(${Z})`, transformOrigin: "0 0" }}>
+      <div style={{ position: "absolute", inset: 0, transform: `translate(${960 - fx * Z}px, ${540 - fy * Z}px) scale(${Z})`, transformOrigin: "0 0", filter: mb > 0.05 ? `blur(${mb / Z}px)` : undefined }}>
         <Halo x={960} y={540} w={lerp(PW, 760, squash)} h={lerp(PH, 150, squash)} r={lerp(PH, 150, squash) / 2} />
         <div style={{ position: "absolute", left: 960 - pw / 2, top: 540 - ph / 2, width: pw, height: ph, borderRadius: ph / 2, background: "#060908", boxShadow: "inset 0 0 0 1.5px rgba(255,255,255,0.07)",
           transform: `scale(${1 - 0.012 * pk})`, overflow: "hidden" }}>
@@ -54,13 +61,15 @@ export const B1: React.FC<{ g: number }> = ({ g }) => {
             {!n && g < 700 && <Caret g={g} h={FS + 6} color="#F4F2EE" />}
             {n ? ASK.slice(0, n) : "Beskriv din drømmehjemmeside …"}{n > 0 && g < 760 && <Caret g={g} h={FS + 6} color="#F4F2EE" on />}
           </div>
-          {wipe > 0 && wipe < 1 && <div style={{ position: "absolute", top: 0, bottom: 0, left: 70 + (pw - 140) * wipe - 60, width: 120, background: "linear-gradient(90deg, rgba(255,255,255,0), rgba(255,246,236,0.55), rgba(255,255,255,0))", filter: "blur(6px)" }} />}
+          {/* smeared back over this frame's travel (up to 250 px a frame) so it sweeps instead of strobing; faded at both ends */}
+          {wipe > 0 && wipe < 1 && (() => { const v = (pw - 140) * (wipe - pr(g - 1, 763, 8, SOFT)); return <div style={{ position: "absolute", top: 0, bottom: 0, left: 70 + (pw - 140) * wipe - 60 - v, width: 120 + v, opacity: Math.min(1, wipe * 6, (1 - wipe) * 6), background: "linear-gradient(90deg, rgba(255,255,255,0), rgba(255,246,236,0.55), rgba(255,255,255,0))", filter: `blur(${6 + v * 0.08}px)` }} />; })()}
           <div style={{ position: "absolute", right: 26, top: ph / 2 - 55, width: 110, height: 110, borderRadius: 55, background: n > 3 ? `linear-gradient(135deg, ${C.gSage}, ${C.gTeal})` : "#2A3330",
             display: "flex", alignItems: "center", justifyContent: "center", opacity: 1 - squash * 1.5, transform: `scale(${1 - 0.14 * pk})` }}><Icon name="arrowUp" size={52} color="#fff" stroke={2.6} /></div>
         </div>
       </div>
       <Grain opacity={0.12} seed={21} />
-      {g >= 744 && <Cursor x={cur.x} y={cur.y} vx={cur.vx} h={110} press={pk} />}
+      {/* fades in over 4 f as it enters (it used to appear whole, mid-frame, on 744); vy for its motion blur */}
+      {g >= 744 && <Cursor x={cur.x} y={cur.y} vx={cur.vx} vy={cur.vy} h={110} press={pk} opacity={clamp01((g - 743) / 4)} />}
     </AbsoluteFill>
   );
 };

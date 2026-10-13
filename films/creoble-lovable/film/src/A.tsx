@@ -48,8 +48,10 @@ const BALLS = (() => {
   }
   return out;
 })();
-/** The field at camera scale s around the frame centre; `pale` fades the others, `clear` empties a growing hole from the centre. */
-const Field: React.FC<{ s: number; pale: number; clear?: number; centre?: React.ReactNode; hero?: boolean }> = ({ s, pale, clear = 0, centre, hero = true }) => (
+/** The field at camera scale s around the frame centre; `pale` fades the others, `clear` empties a growing hole from the centre;
+ *  `zv` is this frame's zoom (log scale), which smears each ball by a part of its radial travel. Balls are placed and sized by
+ *  transform: left/top/width/height snap to whole pixels, which made the slow creep shake. */
+const Field: React.FC<{ s: number; pale: number; clear?: number; centre?: React.ReactNode; hero?: boolean; zv?: number }> = ({ s, pale, clear = 0, centre, hero = true, zv = 0 }) => (
   <div style={{ position: "absolute", inset: 0 }}>
     {BALLS.map((b, i) => {
       const x = 960 + (b.x - 960) * s, y = 540 + (b.y - 540) * s, d = b.d * s;
@@ -57,22 +59,26 @@ const Field: React.FC<{ s: number; pale: number; clear?: number; centre?: React.
       const dist = Math.hypot((x - 960) / 1.6, y - 540);
       const gone = clamp01((clear - dist) / 120);
       if (gone >= 1) return null;
-      return <div key={i} style={{ position: "absolute", left: x - d / 2, top: y - d / 2, width: d, height: d, borderRadius: "50%", background: BALL[b.p],
-        opacity: (1 - 0.7 * pale) * (1 - gone), filter: s > 1.5 ? "blur(1.5px)" : undefined }} />;
+      const mb = Math.max(s > 1.5 ? 1.5 : 0, Math.min(24, 0.12 * d, 0.3 * Math.abs(zv) * Math.hypot(x - 960, y - 540)));   // px on screen
+      return <div key={i} style={{ position: "absolute", left: 0, top: 0, width: b.d, height: b.d, borderRadius: "50%", background: BALL[b.p],
+        transform: `translate(${x - b.d / 2}px, ${y - b.d / 2}px) scale(${s})`, opacity: (1 - 0.7 * pale) * (1 - gone), filter: mb > 0.2 ? `blur(${mb / s}px)` : undefined }} />;
     })}
-    {hero && <div style={{ position: "absolute", left: 960 - 105 * s, top: 540 - 105 * s, width: 210 * s, height: 210 * s, borderRadius: "50%", background: HERO_BALL,
-      display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 ${8 * s}px ${20 * s}px -${8 * s}px rgba(184,78,45,0.5)` }}>{centre}</div>}
+    {hero && <div style={{ position: "absolute", left: 855, top: 435, width: 210, height: 210, borderRadius: "50%", background: HERO_BALL,
+      transform: `scale(${s})`, boxShadow: "0 8px 20px -8px rgba(184,78,45,0.5)" }} />}
+    {hero && <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>{centre}</div>}
   </div>
 );
 const fieldScale = (g: number) => {
-  const zin = 1 + 1.7 * px(g, 7, 10, 0.8) + 0.18 * clamp01((g - 17) / 20);
-  return g < 37 ? zin : lerp(zin, 0.3, pr(g, 37, 9, MOVE));
+  // in log scale (an even zoom to the eye): the push-in eases up from rest and settles into the creep, and the pull-back to
+  // the grid lands softly instead of stopping dead
+  const zin = Math.exp(Math.log(2.7) * pr(g, 3, 17, SOFT)) * (1 + 0.0667 * clamp01((g - 4) / 33));
+  return g < 37 ? zin : Math.exp(lerp(Math.log(zin), Math.log(0.3), pr(g, 37, 9, SOFT)));
 };
 export const A1: React.FC<{ g: number }> = ({ g }) => {
   const w = clamp01((g - 9) / 7), e = expoOut(7, 0.78)(w), out = pr(g, 36, 5);
   return (
     <AbsoluteFill style={{ background: C.paper }}>
-      <Field s={fieldScale(g)} pale={pr(g, 28, 12)} centre={
+      <Field s={fieldScale(g)} zv={Math.log(fieldScale(g) / fieldScale(g - 1))} pale={pr(g, 28, 12, SOFT)} centre={
         <div style={{ fontFamily: F.serif, fontWeight: 600, fontSize: 48, color: "#fff", opacity: w * (1 - out), filter: w < 1 ? `blur(${8 * (1 - e)}px)` : undefined,
           transform: `translateY(${8 * (1 - e)}px)`, letterSpacing: -0.5 }}>Mange</div>} />
     </AbsoluteFill>
@@ -87,18 +93,24 @@ export const A2: React.FC<{ g: number }> = ({ g }) => {
   const total = ws.reduce((a, b) => a + b, 0) + sp * words.length + iconD + sp + tw(after, size) - 0.02 * size * after.length;
   const left = 960 - total / 2, iconX = left + ws.reduce((a, b) => a + b, 0) + sp * words.length + iconD / 2;
   const zoom = lerp(1.05, 0.93, pr(g, 46, 36, SOFT));
-  const travel = pr(g, 50, 12, MOVE), d = lerp(210 * 0.3, iconD, travel), cx = lerp(960, iconX, travel), cy = lerp(540, 552, travel);
-  const morph = pr(g, 57, 8);
+  // the dot leaves exactly as A1's hero ball stands (its size under this layer's 1.05 zoom, its light pre-rolled for the −140°
+  // turn), glides (sine in-out: 50 px/f at most instead of 80) with a smear along its travel, and cross-fades into the icon
+  const glide = (t: number) => 0.5 - 0.5 * Math.cos(Math.PI * t);
+  const travel = pr(g, 50, 12, glide), d = lerp(210 * 0.3 / 1.05, iconD, travel), cx = lerp(960, iconX, travel), cy = lerp(540, 552, travel);
+  const tv = Math.abs(iconX - 960) * (travel - pr(g - 1, 50, 12, glide));
+  const morph = pr(g, 56, 6, SOFT);
+  const rolled = "radial-gradient(circle at 76% 57%, #F7B79A 0%, #E2754B 45%, #B84E2D 100%)";   // HERO_BALL's light, seen through rotate(−140°)
   return (
     <AbsoluteFill style={{ background: C.paper }}>
-      <Field s={0.3} pale={1} clear={easeIn(clamp01((g - 46) / 16)) * 1700} hero={false} />
+      <Field s={0.3} pale={1} clear={easeIn(clamp01((g - 46) / 16)) * 1700} hero={false} zv={Math.log(0.3 / fieldScale(g - 1))} />
       <div style={{ position: "absolute", inset: 0, transform: `scale(${zoom})`, transformOrigin: "960px 552px" }}>
         <Words g={g} size={size} x={960} y={570} words={[{ t: "tror", f: 52 }, { t: "de", f: 54 }, { t: "skal", f: 56 }, { t: "kunne", f: 58 }, { t: "kode", f: 61 },
           { t: "", f: 999, iconW: iconD }, { t: after, f: 66 }]} />
         <div style={{ position: "absolute", left: cx - d / 2, top: cy - d / 2, width: d, height: d, borderRadius: "50%",
-          background: morph > 0 ? `linear-gradient(135deg, ${mix("#E2754B", C.gSage, morph)}, ${C.gCoral})` : HERO_BALL, display: "flex", alignItems: "center", justifyContent: "center",
-          transform: `rotate(${-140 * (1 - morph)}deg)`, boxShadow: "0 10px 24px -10px rgba(224,111,69,0.6)" }}>
-          <Icon name="code" size={d * 0.56} color="#fff" stroke={2.6} style={{ opacity: morph }} />
+          background: rolled, display: "flex", alignItems: "center", justifyContent: "center", filter: tv > 3 ? `blur(${tv * 0.12}px)` : undefined,
+          transform: `rotate(${-140 * (1 - morph)}deg)`, boxShadow: `0 ${lerp(2.3, 10, travel)}px ${lerp(5.7, 24, travel)}px -${lerp(2.3, 10, travel)}px rgba(224,111,69,0.6)` }}>
+          <div style={{ position: "absolute", inset: 0, borderRadius: "50%", background: `linear-gradient(135deg, ${mix("#E2754B", C.gSage, morph)}, ${C.gCoral})`, opacity: morph }} />
+          <Icon name="code" size={d * 0.56} color="#fff" stroke={2.6} style={{ opacity: morph, position: "relative" }} />
         </div>
       </div>
     </AbsoluteFill>
@@ -114,15 +126,22 @@ export const A3: React.FC<{ g: number }> = ({ g }) => {
   const txt = LINE3.slice(0, n), typedW = tw(txt, S3);
   const scramble = n >= LINE3.length - 3 && n < LINE3.length && g % 2 === 0 ? GLYPHS[g % 4] : "";
   const snap = pr(g, 94, 4, MOVE), z = lerp(3.4, 1, snap);
-  // while close, the caret sits a little right of centre; after the snap the line sits where it will stand
+  // while close, the caret starts a little right of centre and runs ahead; after the snap the line sits where it will stand
   const caretX = left + typedW + (scramble ? tw(scramble, S3) : 0) + 8;
-  const fx = lerp(caretX - 140 / 3.4, 960, snap);
+  // the close-up pans on its own ease-in (about 40 → 95 px a frame, as the reference does) instead of following the caret,
+  // which made the whole line jump 50–150 px a frame with each letter's width
+  const t3 = (g - 82) / 12, first = left + tw(LINE3.slice(0, 1), S3) + 8, reach = tw(LINE3.slice(0, 15), S3) - tw(LINE3.slice(0, 1), S3);
+  const fx = lerp(first + 0.55 * reach * (0.6 * t3 + 0.4 * t3 * t3) - 140 / 3.4, 960, snap);
   const sx = (wx: number) => (wx - fx) * z + 960;
+  // the snap-back zooms 32–47 % a frame: smear it by the frame's zoom so it reads as one whip, not three sharp sizes
+  const zb = 20 * Math.abs(Math.log(z / lerp(3.4, 1, pr(g - 1, 94, 4, MOVE))));
   return (
     <AbsoluteFill style={{ background: C.paper }}>
-      <div style={{ position: "absolute", left: sx(left), top: 540 - S3 * 0.68 * z, fontFamily: F.serif, fontWeight: 500, fontSize: S3 * z, color: C.ink, whiteSpace: "pre", lineHeight: 1.24 }}>
-        {txt}{scramble && <span style={{ color: C.gTerra }}>{scramble}</span>}</div>
-      <div style={{ position: "absolute", left: sx(caretX), top: 540 - 50 * z, width: 9 * z, height: 98 * z, borderRadius: 5 * z, background: GRAD_V }} />
+      <div style={{ position: "absolute", inset: 0, filter: zb > 0.3 ? `blur(${zb}px)` : undefined }}>
+        <div style={{ position: "absolute", left: sx(left), top: 540 - S3 * 0.68 * z, fontFamily: F.serif, fontWeight: 500, fontSize: S3 * z, color: C.ink, whiteSpace: "pre", lineHeight: 1.24 }}>
+          {txt}{scramble && <span style={{ color: C.gTerra }}>{scramble}</span>}</div>
+        <div style={{ position: "absolute", left: sx(caretX), top: 540 - 50 * z, width: 9 * z, height: 98 * z, borderRadius: 5 * z, background: GRAD_V }} />
+      </div>
     </AbsoluteFill>
   );
 };
@@ -140,7 +159,7 @@ export const A4: React.FC<{ g: number }> = ({ g }) => {
   const b = clamp01((g - 104) / 5);
   return (
     <AbsoluteFill style={{ background: C.paper }}>
-      <At x={960} y={540} s={lerp(1, 0.9, pr(g, 108, 39, SOFT))}><div style={{ fontFamily: F.serif, fontWeight: 500, fontSize: S3, color: C.ink, whiteSpace: "pre" }}>{LINE3}</div></At>
+      <At x={960} y={540 - S3 * 0.06} s={lerp(1, 0.9, pr(g, 108, 39, SOFT))}><div style={{ fontFamily: F.serif, fontWeight: 500, fontSize: S3, color: C.ink, whiteSpace: "pre", lineHeight: 1.24 }}>{LINE3}</div></At>
       <At x={xl} y={540} o={b}><div style={{ filter: b < 1 ? `blur(${10 * (1 - b)}px)` : undefined }}><Chevron h={h} id="chl" /></div></At>
       <At x={xr} y={540} o={b}><div style={{ filter: b < 1 ? `blur(${10 * (1 - b)}px)` : undefined }}><Chevron h={h} id="chr" flip /></div></At>
     </AbsoluteFill>
@@ -150,7 +169,7 @@ export const A4: React.FC<{ g: number }> = ({ g }) => {
 // ---- 4.9–6 s: "men det ændrer sig nu" ---------------------------------------------------------------------------------------
 export const A5: React.FC<{ g: number }> = ({ g }) => {
   const nu = mix("#B5B1A9", C.ink, pr(g, 166, 9));
-  const sc = lerp(1.12, 1, px(g, 147, 8)) * lerp(1, 0.88, pr(g, 175, 5, SOFT)), op = 1 - pr(g, 176, 4);
+  const sc = lerp(1.12, 1, px(g, 147, 8)) * lerp(1, 0.88, pr(g, 175, 5, SOFT)), op = 1 - pr(g, 175, 5, SOFT);
   return (
     <Haze g={g} a={130}>
       <div style={{ position: "absolute", inset: 0, transform: `scale(${sc})`, transformOrigin: "960px 560px", opacity: op }}>
@@ -166,7 +185,7 @@ export const A6: React.FC<{ g: number }> = ({ g }) => {
   const pull = lerp(1, 0.76, pr(g, 190, 22, SOFT));
   let cx = 960 - total / 2;
   return (
-    <Haze g={g} a={130} v={1.2}>
+    <Haze g={g} a={130}>
       <div style={{ position: "absolute", inset: 0, transform: `scale(${pull})`, transformOrigin: "960px 540px" }}>
         {word.split("").map((l, i) => {
           const w = tw(l, size, 600), left = cx; cx += w;
@@ -187,7 +206,8 @@ export const A7: React.FC<{ g: number }> = ({ g }) => {
   const t = g - 210, rise = lerp(300, 840, expoOut(36, 0.92)(clamp01(t / 36)));
   const size = 286, ms = size * 0.78, gap = size * 0.24, ww = tw("Creoble.", size) - size * 0.08, total = ms + gap + ww;
   const sc = lerp(1, 1.2, pr(g, 212, 46, SOFT)) * lerp(1, 0.97, pr(g, 258, 7, SOFT));
-  const flip = pr(g, 231, 9, MOVE) * 360;
+  // the spin takes 14 frames round the same middle (9 frames gave up to 108° a frame: four sharp states) and smears with its speed
+  const flip = pr(g, 229, 14, MOVE) * 360, spin = flip - pr(g - 1, 229, 14, MOVE) * 360;
   const letters = "Creoble".split("");
   let lx = 0;
   return (
@@ -196,7 +216,8 @@ export const A7: React.FC<{ g: number }> = ({ g }) => {
         background: `radial-gradient(closest-side, ${C.gApricot} 0%, ${C.gTerra} 38%, ${C.gCoral} 58%, #F6C9B4 74%, rgba(211,235,225,0.95) 86%, rgba(211,235,225,0) 100%)` }} />
       <Grain opacity={0.2} seed={7} />
       <div style={{ position: "absolute", inset: 0, transform: `scale(${sc})`, transformOrigin: "960px 540px" }}>
-        <div style={{ position: "absolute", left: 960 - total / 2, top: 540 - ms / 2, width: ms, height: ms, transform: `perspective(900px) rotateY(${flip}deg)` }}>
+        <div style={{ position: "absolute", left: 960 - total / 2, top: 540 - ms / 2, width: ms, height: ms, transform: `perspective(900px) rotateY(${flip}deg)`,
+          filter: spin > 6 ? `blur(${spin * 0.1}px)` : undefined }}>
           <Mark size={ms} color={C.cream} id="a7m" /></div>
         {letters.concat(["."]).map((l, i) => {
           const left = 960 - total / 2 + ms + gap + lx; lx += tw(l, size) - size * 0.015;
@@ -290,6 +311,8 @@ export const A10: React.FC<{ g: number }> = ({ g }) => {
     const k = expoOut(10, 0.78)(clamp01((g - 373) / 10)), size = 240;
     return (
       <Haze g={g} a={356}>
+        {/* the bloom leaves the frame plain cream: the haze glows fade up out of it (SOFT, 12 f) instead of switching on at full strength */}
+        <div style={{ position: "absolute", inset: 0, background: C.paper, opacity: 1 - pr(g, 374, 12, SOFT) }} />
         <div style={dark({ position: "absolute", left: 0, top: 0, width: 1920, textAlign: "center", fontSize: size, transform: `translateY(${540 - size * 0.66 + 320 * (1 - k)}px)`,
           filter: k < 1 ? `blur(${14 * (1 - k)}px)` : undefined, opacity: clamp01(k * 2) })}>Hele</div>
       </Haze>
@@ -329,7 +352,7 @@ export const A10: React.FC<{ g: number }> = ({ g }) => {
 // ---- 14.8–16.5 s: the count down to 5 ------------------------------------------------------------------------------------------
 export const A11: React.FC<{ g: number }> = ({ g }) => {
   const t = g - 444, p = clamp01(t / 43), v = Math.max(5, Math.round(lerp(60, 5, 1 - Math.pow(1 - p, 2.4))));
-  const label = String(v), size = 540, w = tw(label, size, 600) * 0.92;
+  const label = String(v), size = 540, w = tw("5", size, 600) * 0.92;   // aim the line at the final "5": it no longer jumps whenever the count's width changes
   const dotX = 960 + w / 2 - 16, dotY = 700;
   const draw = lerp(0.2, 1, 1 - Math.pow(1 - clamp01(t / 48), 2));
   const d = `M -80 880 C 220 730 380 1030 660 940 S ${dotX - 190} ${dotY + 60} ${dotX} ${dotY}`;
@@ -347,7 +370,7 @@ export const A11: React.FC<{ g: number }> = ({ g }) => {
       <div style={{ position: "absolute", left: 0, top: 0, width: 1920, textAlign: "center", transform: `translateY(${470 - size * 0.66 + 30 * (1 - expoOut(6, 0.78)(nk))}px)`, opacity: nk,
         fontFamily: F.serif, fontStyle: "italic", fontWeight: 600, fontSize: size, letterSpacing: -12, lineHeight: 1.24, whiteSpace: "pre",
         backgroundImage: DARK_TEXT, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" }}>{label}</div>
-      {draw > 0.95 && <div style={{ position: "absolute", left: dotX - 32, top: dotY - 32, width: 64, height: 64, borderRadius: 32, background: "#FFFDF8",
+      {draw > 0.95 && <div style={{ position: "absolute", left: dotX - 32, top: dotY - 32, width: 64, height: 64, borderRadius: 32, background: "#FFFDF8", opacity: clamp01((draw - 0.95) / 0.04),
         boxShadow: "0 0 36px 14px rgba(255,250,240,0.8), 0 0 70px rgba(239,138,102,0.65)" }} />}
     </Haze>
   );
@@ -358,7 +381,10 @@ const NOED = "nødvendig", SN = 270;
 export const A12: React.FC<{ g: number }> = ({ g }) => {
 
   const cx = 755, cy = 595;                                   // the bowl of the first "d", measured on the rendered frame (a 54 × 115 px oval)
-  const push = g < 535 ? 1 : 1 + 30 * easeIn(clamp01((g - 535) / 11));
+  // the push ends with the bowl's window over the whole frame (push 49 on 545, the shot's last frame), so no piece of the
+  // word is left on screen to vanish at the cut to A13; the zooming word is blurred by its zoom rate (no camera blur in this film)
+  const pushAt = (q: number) => q < 535 ? 1 : 1 + 48 * easeIn(clamp01((q - 535) / 10));
+  const push = pushAt(g), zoomBlur = Math.min(20, 30 * (push / pushAt(g - 1) - 1));
   const spark = pr(g, 536, 5) * (1 - clamp01((push - 2.5) / 3));
   return (
     <AbsoluteFill>
@@ -367,7 +393,7 @@ export const A12: React.FC<{ g: number }> = ({ g }) => {
         {g < 510 && <Words g={g} size={92} x={960} y={572} weight={600} grad={DARK_TEXT} words={[{ t: "minutter.", f: 496 }, { t: "Ingen", f: 499 }]} n={7} />}
         {g >= 510 && g < 525 && <Words g={g} size={170} x={960} y={572} weight={600} grad={DARK_TEXT} words={[{ t: "kode", f: 511 }]} n={7} />}
         {g >= 525 && (
-          <div style={{ position: "absolute", inset: 0, transform: `scale(${push})`, transformOrigin: `${cx}px ${cy}px` }}>
+          <div style={{ position: "absolute", inset: 0, transform: `scale(${push})`, transformOrigin: `${cx}px ${cy}px`, filter: zoomBlur > 0 ? `blur(${zoomBlur / push}px)` : undefined }}>
             <Words g={g} size={SN} x={960} y={560} weight={600} grad={DARK_TEXT} words={[{ t: NOED, f: 526 }]} n={8} />
             {spark > 0 && <div style={{ position: "absolute", left: cx - 18, top: cy - 18, width: 36, height: 36, clipPath: astroid(18 * spark, 18, 18), background: C.gTerra }} />}
           </div>
@@ -390,14 +416,18 @@ const FLOWER = (() => {
 })();
 const FlowerScene: React.FC<{ g: number }> = ({ g }) => {
   // the flower is 0.6 of the frame's height at 18.2 s and grows past the edges by 18.55 s; its pale heart becomes the ground
-  const grow = 0.62 + 1.4 * easeIn(clamp01((g - 546) / 12)), rot = lerp(-10, 12, clamp01((g - 536) / 30));
+  // the growth accelerates until the petals have left the frame (558), then runs on and dies away (x0.7 a frame) instead of
+  // stopping dead at 19 %/frame; while the petal edges are on screen they sweep out at up to 170 px/frame, so they are
+  // blurred by that speed (the film renders without camera blur)
+  const growAt = (q: number) => q < 558 ? 0.62 + 1.4 * easeIn(clamp01((q - 546) / 12)) : 2.02 * Math.pow(1.19, (1 - Math.pow(0.7, q - 558)) / 0.3);
+  const grow = growAt(g), rot = lerp(-10, 12, clamp01((g - 536) / 30));
   const star = pr(g, 552, 6), R = g < 558 ? 0 : 90 * Math.pow(1.36, g - 558);
-  const size = 1080 * grow / 0.82;
+  const size = 1080 * grow / 0.82, petalBlur = g < 558 ? Math.min(16, 63 * (grow - growAt(g - 1))) : 0;
   return (
     <AbsoluteFill style={{ background: "#5C6E67", overflow: "hidden" }}>
       <Glow x={1700} y={150} w={900} h={500} color={C.gCoral} blur={120} opacity={0.6} rot={-20} />
       <div style={{ position: "absolute", left: 960 - size / 2, top: 560 - size / 2, width: size, height: size }}>
-        <svg width={size} height={size} viewBox="0 0 1000 1000" style={{ transform: `rotate(${rot}deg)`, display: "block" }}>
+        <svg width={size} height={size} viewBox="0 0 1000 1000" style={{ transform: `rotate(${rot}deg)`, display: "block", filter: petalBlur > 0.3 ? `blur(${petalBlur}px)` : undefined }}>
           <defs><radialGradient id="pet" cx="0.5" cy="0.5" r="0.62"><stop offset="0" stopColor="#FFF4EC" /><stop offset="0.32" stopColor="#F9D7C8" /><stop offset="0.8" stopColor={C.gCoral} /><stop offset="1" stopColor={C.gTerra} /></radialGradient></defs>
           <path d={FLOWER} fill="url(#pet)" />
         </svg>
