@@ -372,7 +372,7 @@ const AppPhone: React.FC<{ g: number }> = ({ g }) => {
   const cx = mix(PHONE.cx - drift(g, "w:vervolgens+0.47", 46), 470, toSide) - leave * 900, cy = PHONE.cy, sc = mix(1, 0.92, toSide) + drift(g, "w:vervolgens+0.47", 0.008) * (1 - toSide);
   const tap = k(g, "w:download+0.12", 0.25);
   const ring = k(g, "w:download+0.2", 0.55, CARRY);
-  const open = k(g, "w:app", 0.5);
+  const open = k(g, "w:app-0.08", 0.55, GROW);                 // the app grows out of its icon (it filled the screen in a frame: POP 14.6 s)
   const sheet = k(g, "w:waarin-0.05", 0.5);
   const rows = ["Intakegesprek", "Installeer de app", "Zoektocht", "Kennismaking", "Stage in Spanje"];
   const rowTick = ["intake", "w:stap+0.15", "w:stageplek+0.35", "w:aangenomen+0.25", "w:spanje2"];

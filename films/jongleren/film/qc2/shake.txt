@@ -1,0 +1,2 @@
+look  29.50–30.63 s (frames 885–919): 3 jumps of up to 2.2 px in 20 frames (irregular, one place), tiles r0c3
+no shake; the 'look' lines are small irregular jumps: check them in a transition strip (a rolling number or a repeating pattern can cause them)
