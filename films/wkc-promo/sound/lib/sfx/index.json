@@ -1,0 +1,582 @@
+[
+ {
+  "id": "wk-meet-1",
+  "file": "sfx/wkc/wk-meet-1.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 0.364,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "soft airy tick 1 of 5 on the 'Meet' letters (closed-hat-like, 5-12 kHz)"
+ },
+ {
+  "id": "wk-meet-2",
+  "file": "sfx/wkc/wk-meet-2.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 0.401,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "soft airy tick 2 of 5 on the 'Meet' letters (closed-hat-like, 3-12 kHz)"
+ },
+ {
+  "id": "wk-meet-3",
+  "file": "sfx/wkc/wk-meet-3.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 0.352,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "soft airy tick 3 of 5 on the 'Meet' letters (closed-hat-like, 6-12 kHz)"
+ },
+ {
+  "id": "wk-meet-4",
+  "file": "sfx/wkc/wk-meet-4.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 0.394,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "soft airy tick 4 of 5 on the 'Meet' letters (closed-hat-like, 4-12 kHz)"
+ },
+ {
+  "id": "wk-meet-5",
+  "file": "sfx/wkc/wk-meet-5.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 0.382,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "soft airy tick 5 of 5 on the 'Meet' letters (closed-hat-like, 5-12 kHz)"
+ },
+ {
+  "id": "wk-glitch-logo",
+  "file": "sfx/wkc/wk-glitch-logo.wav",
+  "category": "glitch",
+  "sync": 0.15,
+  "length": 1.156,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "glitch swoosh into the wkc monogram + wordmark glow (attack 4.5 f before the flash; chirps 7->4 kHz)"
+ },
+ {
+  "id": "wk-riser-drop1",
+  "file": "sfx/wkc/wk-riser-drop1.wav",
+  "category": "riser",
+  "sync": 1.3,
+  "length": 1.285,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "reverse riser into the drop: rumble swell from 2.0 s, bright noise + sparkles from 2.55 s, hard cut at 3.285 s"
+ },
+ {
+  "id": "wk-drop1",
+  "file": "sfx/wkc/wk-drop1.wav",
+  "category": "impact",
+  "sync": 0.006,
+  "length": 1.164,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "DROP 1 (f99): sub hit on E with a bright wide air burst, 'Motion' lands"
+ },
+ {
+  "id": "wk-pop-that",
+  "file": "sfx/wkc/wk-pop-that.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 0.538,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "bubble blips (9-15 kHz) as 'that makes it' appears"
+ },
+ {
+  "id": "wk-click-word",
+  "file": "sfx/wkc/wk-click-word.wav",
+  "category": "pop",
+  "sync": 0.0167,
+  "length": 0.652,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "a crisp click on 'click' with five bubble pips after it (f122.5-128)"
+ },
+ {
+  "id": "wk-glitch-engage",
+  "file": "sfx/wkc/wk-glitch-engage.wav",
+  "category": "glitch",
+  "sync": 0.15,
+  "length": 1.156,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "glitch swoosh on 'Engage.' (the keyframe snap); chirps 9->5 kHz at f168-171, bubbly blips 10-12 kHz after"
+ },
+ {
+  "id": "wk-tick-convert",
+  "file": "sfx/wkc/wk-tick-convert.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 0.422,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "small bright tick (8-12 kHz), slightly left: 'Convert.' lights"
+ },
+ {
+  "id": "wk-blip-or",
+  "file": "sfx/wkc/wk-blip-or.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 0.613,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "glassy UI blip on 'Or.': a 15 kHz pip, then 14 kHz + 6 kHz two frames later"
+ },
+ {
+  "id": "wk-swish-left",
+  "file": "sfx/wkc/wk-swish-left.wav",
+  "category": "swipe",
+  "sync": 0.0167,
+  "length": 0.763,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "noise swish 1-8 kHz panned left as the dots run out"
+ },
+ {
+  "id": "wk-swish-right",
+  "file": "sfx/wkc/wk-swish-right.wav",
+  "category": "swipe",
+  "sync": 0.0167,
+  "length": 0.697,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "darker swish panned right as the dots keep growing"
+ },
+ {
+  "id": "wk-swish-incredible",
+  "file": "sfx/wkc/wk-swish-incredible.wav",
+  "category": "swipe",
+  "sync": 0.0667,
+  "length": 0.695,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "swish as the line slides left, with a 14 + 6 kHz blip on the cut to 'just look incredible'"
+ },
+ {
+  "id": "wk-sparkle-incredible",
+  "file": "sfx/wkc/wk-sparkle-incredible.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 0.763,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "sparkle pop as 'incredible' snaps bold/3D: transient, pips 10->6 kHz, an F#6 body"
+ },
+ {
+  "id": "wk-boom-brief",
+  "file": "sfx/wkc/wk-boom-brief.wav",
+  "category": "impact",
+  "sync": 0.137,
+  "length": 0.493,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "low boom (B1 -> E1, 62 -> 41 Hz) on the step-14 pickup (9.49 s), ringing through the cut to the brief field (f287)"
+ },
+ {
+  "id": "wk-type-brief",
+  "file": "sfx/wkc/wk-type-brief.wav",
+  "category": "data",
+  "sync": 0.0,
+  "length": 0.749,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "typing data-blips: 8 single pips at random pitches 3.3-15 kHz as the brief is typed"
+ },
+ {
+  "id": "wk-type-done",
+  "file": "sfx/wkc/wk-type-done.wav",
+  "category": "data",
+  "sync": 0.0,
+  "length": 0.471,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "two more data-blips (13.5 and 12 kHz): the arrow lights, the brief is complete"
+ },
+ {
+  "id": "wk-settle-card",
+  "file": "sfx/wkc/wk-settle-card.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 0.538,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "soft low thump with a 9 kHz tick: the brief settles into its card"
+ },
+ {
+  "id": "wk-subdrop-frames",
+  "file": "sfx/wkc/wk-subdrop-frames.wav",
+  "category": "impact",
+  "sync": 0.267,
+  "length": 0.598,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "sub drop: an 808 glide G#1 -> A0 (52 -> 28 Hz) peaking as the storyboard frames fly in"
+ },
+ {
+  "id": "wk-pops-frames",
+  "file": "sfx/wkc/wk-pops-frames.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 0.968,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "ten tiny bubble pops (2 kHz tonal + 10-12 kHz blips) as the storyboard frames populate"
+ },
+ {
+  "id": "wk-swish-tilt",
+  "file": "sfx/wkc/wk-swish-tilt.wav",
+  "category": "swipe",
+  "sync": 0.0667,
+  "length": 0.521,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "short bright swish (2-12 kHz) into the 3D tilt (f429)"
+ },
+ {
+  "id": "wk-pops-panel",
+  "file": "sfx/wkc/wk-pops-panel.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 0.708,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "two small pops (1-2 kHz body + air) as elements pop inside the 3D composition"
+ },
+ {
+  "id": "wk-subdrop-export",
+  "file": "sfx/wkc/wk-subdrop-export.wav",
+  "category": "impact",
+  "sync": 0.2,
+  "length": 0.585,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "sub drop: 808 glide to 28 Hz, the swell peaking on the hard cut to 'Export' (f530)"
+ },
+ {
+  "id": "wk-click-export",
+  "file": "sfx/wkc/wk-click-export.wav",
+  "category": "tap",
+  "sync": 0.02,
+  "length": 0.459,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "the cursor clicks Export: two sharp double-clicks 50 ms apart, slightly left"
+ },
+ {
+  "id": "wk-ring-export",
+  "file": "sfx/wkc/wk-ring-export.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 0.471,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "thin sine ring (G#9, 13.4 kHz), hard left, as the press glow starts"
+ },
+ {
+  "id": "wk-shimmer-drop2",
+  "file": "sfx/wkc/wk-shimmer-drop2.wav",
+  "category": "riser",
+  "sync": 0.8,
+  "length": 0.785,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "shimmer riser: rising noise with twinkling sparkles (4-7 kHz, C# minor) from 18.50 s, cut on the drop-2 downbeat"
+ },
+ {
+  "id": "wk-drop2",
+  "file": "sfx/wkc/wk-drop2.wav",
+  "category": "impact",
+  "sync": 0.006,
+  "length": 1.694,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "DROP 2 (f579): sub hit and a long crash-like air tail into the showcase"
+ },
+ {
+  "id": "wk-glitch-showcase",
+  "file": "sfx/wkc/wk-glitch-showcase.wav",
+  "category": "glitch",
+  "sync": 0.15,
+  "length": 1.186,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "glitch swoosh on the hero cut inside the showcase (f649); chirps 6->3.5 kHz at f650-654"
+ },
+ {
+  "id": "wk-pop-notify",
+  "file": "sfx/wkc/wk-pop-notify.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 0.554,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "small notification pop (5.3 kHz), panned right: a second clip settles"
+ },
+ {
+  "id": "wk-boom-platform",
+  "file": "sfx/wkc/wk-boom-platform.wav",
+  "category": "impact",
+  "sync": 0.133,
+  "length": 0.855,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "low boom on D#2 (78 Hz) on the step-14 pickup (23.894 s) into the cut to the dark 'Made for every platform' (f718)"
+ },
+ {
+  "id": "wk-swish-publish",
+  "file": "sfx/wkc/wk-swish-publish.wav",
+  "category": "swipe",
+  "sync": 0.0,
+  "length": 0.754,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "soft mid swish (2-5 kHz) drifting left as 'Made for every platform' blurs out"
+ },
+ {
+  "id": "wk-blip-web",
+  "file": "sfx/wkc/wk-blip-web.wav",
+  "category": "pop",
+  "sync": 0.0167,
+  "length": 0.557,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "UI blip 15 kHz + 3.5 kHz (A7): the website card is selected"
+ },
+ {
+  "id": "wk-blip-linkedin",
+  "file": "sfx/wkc/wk-blip-linkedin.wav",
+  "category": "pop",
+  "sync": 0.01,
+  "length": 0.56,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "UI blip 14 kHz + 5.8 kHz: the selection jumps to LinkedIn"
+ },
+ {
+  "id": "wk-blip-insta",
+  "file": "sfx/wkc/wk-blip-insta.wav",
+  "category": "pop",
+  "sync": 0.0667,
+  "length": 0.653,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "short reverse swell into a rounder 8.4 kHz ping: the selection jumps to Instagram"
+ },
+ {
+  "id": "wk-ratchet",
+  "file": "sfx/wkc/wk-ratchet.wav",
+  "category": "gear",
+  "sync": 0.02,
+  "length": 0.468,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "six tiny 12-14 kHz ratchet ticks, one per frame, as the versions toggle slides"
+ },
+ {
+  "id": "wk-revswoosh-versions",
+  "file": "sfx/wkc/wk-revswoosh-versions.wav",
+  "category": "whoosh",
+  "sync": 0.35,
+  "length": 0.35,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "reverse swoosh (flat bright noise 2-16 kHz) stopping dead at f823: 'Multiple versions / One project'"
+ },
+ {
+  "id": "wk-subdrop-detail",
+  "file": "sfx/wkc/wk-subdrop-detail.wav",
+  "category": "impact",
+  "sync": 0.0667,
+  "length": 0.669,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "808 glide 54 -> 31 Hz with a bright burst on the cut to 'Detail-driven design' (f908)"
+ },
+ {
+  "id": "wk-blip-clear",
+  "file": "sfx/wkc/wk-blip-clear.wav",
+  "category": "pop",
+  "sync": 0.02,
+  "length": 0.557,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "UI blip 14 + 6 kHz: 'Clear messaging' pops in"
+ },
+ {
+  "id": "wk-blip-smooth",
+  "file": "sfx/wkc/wk-blip-smooth.wav",
+  "category": "pop",
+  "sync": 0.05,
+  "length": 0.574,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "UI blip 15 + 3.5 kHz: 'Smooth transitions' pops in"
+ },
+ {
+  "id": "wk-swish-frame",
+  "file": "sfx/wkc/wk-swish-frame.wav",
+  "category": "swipe",
+  "sync": 0.12,
+  "length": 0.957,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "soft swish (2-10 kHz) as the line blurs into 'Every frame intentional'"
+ },
+ {
+  "id": "wk-swell-founders",
+  "file": "sfx/wkc/wk-swell-founders.wav",
+  "category": "whoosh",
+  "sync": 0.3467,
+  "length": 1.14,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "warm mid swell (300 Hz-2 kHz) as the two founders' portraits blur in"
+ },
+ {
+  "id": "wk-revswoosh-three",
+  "file": "sfx/wkc/wk-revswoosh-three.wav",
+  "category": "whoosh",
+  "sync": 0.43,
+  "length": 0.38,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "dense bright reverse swoosh stopping dead at f1003.5, into the '3' on the f1005 kick"
+ },
+ {
+  "id": "wk-whoosh-formats",
+  "file": "sfx/wkc/wk-whoosh-formats.wav",
+  "category": "whoosh",
+  "sync": 0.0133,
+  "length": 1.457,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "whoosh with a 1.5 kHz (F#6) tonal core as 'Formats for your website and socials' rises in"
+ },
+ {
+  "id": "wk-swish-builtfor",
+  "file": "sfx/wkc/wk-swish-builtfor.wav",
+  "category": "swipe",
+  "sync": 0.2233,
+  "length": 0.545,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "bright swish (2-14 kHz) into the cut to the first 'Built for' (f1065)"
+ },
+ {
+  "id": "wk-built-1",
+  "file": "sfx/wkc/wk-built-1.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 0.424,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "word-swap tick 1 of 6 (bright noise, centroid ~8-9 kHz, with a faint C# ping): 'Built for' statement 1"
+ },
+ {
+  "id": "wk-built-2",
+  "file": "sfx/wkc/wk-built-2.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 0.425,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "word-swap tick 2 of 6 (bright noise, centroid ~8-9 kHz, with a faint D# ping): 'Built for' statement 2"
+ },
+ {
+  "id": "wk-built-3",
+  "file": "sfx/wkc/wk-built-3.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 0.432,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "word-swap tick 3 of 6 (bright noise, centroid ~8-9 kHz, with a faint E ping): 'Built for' statement 3"
+ },
+ {
+  "id": "wk-built-4",
+  "file": "sfx/wkc/wk-built-4.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 0.434,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "word-swap tick 4 of 6 (bright noise, centroid ~8-9 kHz, with a faint F# ping): 'Built for' statement 4"
+ },
+ {
+  "id": "wk-built-5",
+  "file": "sfx/wkc/wk-built-5.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 0.437,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "word-swap tick 5 of 6 (bright noise, centroid ~8-9 kHz, with a faint G# ping): 'Built for' statement 5"
+ },
+ {
+  "id": "wk-built-6",
+  "file": "sfx/wkc/wk-built-6.wav",
+  "category": "ticker",
+  "sync": 0.0,
+  "length": 0.445,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "word-swap tick 6 of 6 (bright noise, centroid ~8-9 kHz, with a faint B ping): 'Built for' statement 6"
+ },
+ {
+  "id": "wk-glitch-wkc",
+  "file": "sfx/wkc/wk-glitch-wkc.wav",
+  "category": "glitch",
+  "sync": 0.133,
+  "length": 1.237,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "glitch swoosh into the WKConversions logo (attack f1149, flash f1153; chirps 6->4 kHz)"
+ },
+ {
+  "id": "wk-sting-logo",
+  "file": "sfx/wkc/wk-sting-logo.wav",
+  "category": "stinger",
+  "sync": 0.0,
+  "length": 3.023,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "logo sting: an open E6/9 chord (wide detuned saws) with a C# minor shimmer; the bright layer cuts at 0.82 s (39.25 s)"
+ },
+ {
+  "id": "wk-blip-cta",
+  "file": "sfx/wkc/wk-blip-cta.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.099,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "soft glassy blip as the 'Let's talk' pill glows on"
+ },
+ {
+  "id": "wk-swell-talk",
+  "file": "sfx/wkc/wk-swell-talk.wav",
+  "category": "riser",
+  "sync": 0.0,
+  "length": 1.576,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "soft warm pad swell (E add9) under 'Let's talk'"
+ },
+ {
+  "id": "wk-swell-url",
+  "file": "sfx/wkc/wk-swell-url.wav",
+  "category": "riser",
+  "sync": 0.0,
+  "length": 1.729,
+  "licence": "generated",
+  "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
+  "character": "second soft pad swell (C#m7) under wkconversions.com"
+ }
+]

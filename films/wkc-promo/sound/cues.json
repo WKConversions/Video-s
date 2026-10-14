@@ -1,0 +1,363 @@
+{
+ "fps": 30,
+ "frames": 1262,
+ "library": "lib",
+ "auto_level": false,
+ "music": {
+  "file": "music/cant-get-you-off-my-mind-fit.wav",
+  "at": 0,
+  "fade_in": 0.0,
+  "fade_out": 0.0,
+  "note": "Can't Get You Off My Mind (Michael Ramirez C., Mixkit, Mixkit Stock Music Free License), 150 BPM, cut to the reference: drop 1 f99, break f531, drop 2 f579, stop f1140, outro pad to 41.95 s"
+ },
+ "sfx": [
+  {
+   "id": "wk-meet-1",
+   "frame": 9,
+   "note": "#1 soft tick on the 'Meet' letters (1/5)",
+   "db": -1
+  },
+  {
+   "id": "wk-meet-2",
+   "frame": 18,
+   "note": "#1 soft tick on the 'Meet' letters (2/5)",
+   "db": -1
+  },
+  {
+   "id": "wk-meet-3",
+   "frame": 21,
+   "note": "#1 soft tick on the 'Meet' letters (3/5)",
+   "db": -1
+  },
+  {
+   "id": "wk-meet-4",
+   "frame": 27,
+   "note": "#1 soft tick on the 'Meet' letters (4/5)",
+   "db": -1
+  },
+  {
+   "id": "wk-meet-5",
+   "frame": 33,
+   "note": "#1 soft tick on the 'Meet' letters (5/5)",
+   "db": -1
+  },
+  {
+   "id": "wk-glitch-logo",
+   "frame": 46,
+   "note": "#2 glitch swoosh, attack f41.5, into the wkc monogram + wordmark glow (flash f46)",
+   "db": 4
+  },
+  {
+   "id": "wk-riser-drop1",
+   "frame": 99,
+   "note": "#3 reverse riser from 2.0 s (noise from f76.5), hard cut at f98.5 before the drop",
+   "db": 1
+  },
+  {
+   "id": "wk-drop1",
+   "frame": 99,
+   "note": "#4 DROP 1: 'Motion' lands on the first kick",
+   "db": -3
+  },
+  {
+   "id": "wk-pop-that",
+   "frame": 116,
+   "note": "#5 bubble blips: 'that makes it'",
+   "db": -5
+  },
+  {
+   "id": "wk-click-word",
+   "frame": 123,
+   "note": "#6 crisp click + bubble pips on 'click' (f122.5)",
+   "db": -1
+  },
+  {
+   "id": "wk-glitch-engage",
+   "frame": 169,
+   "note": "#8 glitch swoosh, attack f164.5: 'Engage.' (keyframe snap)",
+   "db": 5
+  },
+  {
+   "id": "wk-tick-convert",
+   "frame": 201,
+   "note": "#10 small tick, slightly left: 'Convert.' lights",
+   "db": -2
+  },
+  {
+   "id": "wk-blip-or",
+   "frame": 219,
+   "note": "#11 UI blip on the hard cut to 'Or.' (15 kHz, then 14 + 6 kHz at f221)",
+   "db": -1
+  },
+  {
+   "id": "wk-swish-left",
+   "frame": 228,
+   "note": "#12 swish panned left (f227.5): the dots run out",
+   "db": 1
+  },
+  {
+   "id": "wk-swish-right",
+   "frame": 237,
+   "note": "#13 darker swish panned right (f236.5): the dots keep growing",
+   "db": -1
+  },
+  {
+   "id": "wk-swish-incredible",
+   "frame": 245,
+   "note": "#14 swish from f243 + blip at f244.5: the cut to 'just look incredible'",
+   "db": 1
+  },
+  {
+   "id": "wk-sparkle-incredible",
+   "frame": 265,
+   "note": "#15 sparkle pop: 'incredible' snaps bold/3D",
+   "db": 0
+  },
+  {
+   "id": "wk-boom-brief",
+   "frame": 287,
+   "note": "#16 low boom on the step-14 pickup (9.49 s) into the cut to the brief field",
+   "db": -3
+  },
+  {
+   "id": "wk-type-brief",
+   "frame": 291,
+   "note": "#17 typing data-blips: the brief is typed",
+   "db": 2
+  },
+  {
+   "id": "wk-type-done",
+   "frame": 311,
+   "note": "#18 two more data-blips: the brief is complete",
+   "db": 0
+  },
+  {
+   "id": "wk-settle-card",
+   "frame": 347,
+   "note": "#19 soft thump + tick: the brief settles into its card",
+   "db": -4
+  },
+  {
+   "id": "wk-pops-frames",
+   "frame": 384,
+   "note": "#21 tiny bubble pops: the storyboard frames populate",
+   "db": -4
+  },
+  {
+   "id": "wk-subdrop-frames",
+   "frame": 389,
+   "note": "#20 sub drop from f381, peaking as the storyboard frames fly in",
+   "db": -3
+  },
+  {
+   "id": "wk-swish-tilt",
+   "frame": 429,
+   "note": "#22 short bright swish (from f427) into the 3D tilt",
+   "db": 2
+  },
+  {
+   "id": "wk-pops-panel",
+   "frame": 501,
+   "note": "#23 two small pops inside the 3D composition (16.70, 16.87 s)",
+   "db": -5
+  },
+  {
+   "id": "wk-subdrop-export",
+   "frame": 530,
+   "note": "#24 sub drop from f524, peaking on the hard cut to 'Export'",
+   "db": -2
+  },
+  {
+   "id": "wk-click-export",
+   "frame": 549,
+   "note": "#26 the cursor clicks Export (f548.4, second click 50 ms later)",
+   "db": 3
+  },
+  {
+   "id": "wk-ring-export",
+   "frame": 551,
+   "note": "#27 thin 13 kHz ring, hard left: the press glow",
+   "db": -8
+  },
+  {
+   "id": "wk-shimmer-drop2",
+   "frame": 579,
+   "note": "#28 shimmer riser from 18.50 s, cut on the drop-2 downbeat",
+   "db": 1
+  },
+  {
+   "id": "wk-drop2",
+   "frame": 579,
+   "note": "#29 DROP 2: the showcase of client videos",
+   "db": -3
+  },
+  {
+   "id": "wk-glitch-showcase",
+   "frame": 649,
+   "note": "#30 glitch swoosh, attack f644.5: hero cut inside the showcase",
+   "db": 4
+  },
+  {
+   "id": "wk-pop-notify",
+   "frame": 664,
+   "note": "#31 small notification pop, panned right: a second clip settles",
+   "db": -5
+  },
+  {
+   "id": "wk-boom-platform",
+   "frame": 718,
+   "note": "#32 low boom on the step-14 pickup into the dark 'Made for every platform'",
+   "db": -3
+  },
+  {
+   "id": "wk-swish-publish",
+   "frame": 751,
+   "note": "#33 soft mid swish drifting left: 'Made for every platform' blurs out to 'Publish anywhere'",
+   "db": -3
+  },
+  {
+   "id": "wk-blip-web",
+   "frame": 767,
+   "note": "#34 UI blip: the website card is selected (f766.5)",
+   "db": 0
+  },
+  {
+   "id": "wk-blip-linkedin",
+   "frame": 783,
+   "note": "#35 UI blip: the selection jumps to LinkedIn (f782.7)",
+   "db": 0
+  },
+  {
+   "id": "wk-blip-insta",
+   "frame": 799,
+   "note": "#36 reverse swell (from f797) into a rounder ping: Instagram",
+   "db": 2
+  },
+  {
+   "id": "wk-ratchet",
+   "frame": 807,
+   "note": "#37 ratchet ticks (from f806.4): the toggle slides, 'Multiple versions'",
+   "db": -2
+  },
+  {
+   "id": "wk-revswoosh-versions",
+   "frame": 823,
+   "note": "#38 reverse swoosh from f812.5, stopping dead at f823: 'One project'",
+   "db": 1
+  },
+  {
+   "id": "wk-subdrop-detail",
+   "frame": 908,
+   "note": "#40 808 glide (from f906) + bright burst on the cut to 'Detail-driven design'",
+   "db": -3
+  },
+  {
+   "id": "wk-blip-clear",
+   "frame": 918,
+   "note": "#41 UI blip: 'Clear messaging' pops in (f917.4)",
+   "db": 0
+  },
+  {
+   "id": "wk-blip-smooth",
+   "frame": 930,
+   "note": "#42 UI blip: 'Smooth transitions' pops in (f928.5)",
+   "db": -1
+  },
+  {
+   "id": "wk-swish-frame",
+   "frame": 945,
+   "note": "#43 soft swish (from f941.4): the blur into 'Every frame intentional'",
+   "db": -2
+  },
+  {
+   "id": "wk-swell-founders",
+   "frame": 965,
+   "note": "#44 warm mid swell (from f954.6): the two founders' portraits blur in",
+   "db": -1
+  },
+  {
+   "id": "wk-revswoosh-three",
+   "frame": 1005,
+   "note": "#45 reverse swoosh f992-1003.5, stopping dead before the '3' on the f1005 kick",
+   "db": 1
+  },
+  {
+   "id": "wk-whoosh-formats",
+   "frame": 1021,
+   "note": "#47 whoosh with a tonal core (from f1020.6): 'Formats for your website and socials' rises in",
+   "db": 0
+  },
+  {
+   "id": "wk-swish-builtfor",
+   "frame": 1065,
+   "note": "#48 bright swish (f1058-1063) into the cut to the first 'Built for' statement (f1065)",
+   "db": 4
+  },
+  {
+   "id": "wk-built-1",
+   "frame": 1065,
+   "note": "#49 word tick: 'Built for' statement 1 of 6",
+   "db": 3
+  },
+  {
+   "id": "wk-built-2",
+   "frame": 1080,
+   "note": "#49 word tick: 'Built for' statement 2 of 6",
+   "db": 3
+  },
+  {
+   "id": "wk-built-3",
+   "frame": 1095,
+   "note": "#49 word tick: 'Built for' statement 3 of 6",
+   "db": 3
+  },
+  {
+   "id": "wk-built-4",
+   "frame": 1110,
+   "note": "#49 word tick: 'Built for' statement 4 of 6",
+   "db": 3
+  },
+  {
+   "id": "wk-built-5",
+   "frame": 1125,
+   "note": "#49 word tick: 'Built for' statement 5 of 6",
+   "db": 3
+  },
+  {
+   "id": "wk-built-6",
+   "frame": 1140,
+   "note": "#49 word tick: 'Built for' statement 6 of 6 (and the stop of the beat)",
+   "db": 4
+  },
+  {
+   "id": "wk-glitch-wkc",
+   "frame": 1153,
+   "note": "#51 glitch swoosh, attack f1149: the last 'Built for' statement flashes white into the WKConversions logo",
+   "db": 3
+  },
+  {
+   "id": "wk-sting-logo",
+   "frame": 1153,
+   "note": "#52 logo sting: open E6/9 chord + shimmer, bright layer cut at 39.25 s",
+   "db": 0
+  },
+  {
+   "id": "wk-blip-cta",
+   "frame": 1170,
+   "note": "soft blip as the 'Let's talk' pill glows on (the reference's optional cue, audio.md \u00a75)",
+   "db": -6
+  },
+  {
+   "id": "wk-swell-talk",
+   "frame": 1209,
+   "note": "#53 soft pad swell under 'Let's talk' (f1209-1218)",
+   "db": -5
+  },
+  {
+   "id": "wk-swell-url",
+   "frame": 1227,
+   "note": "#53 second soft pad swell under wkconversions.com (f1227-1240)",
+   "db": -5
+  }
+ ]
+}
