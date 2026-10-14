@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # bundle once, render contiguous chunks in parallel (one tab each), join
 set -uo pipefail
-cd /home/user/Video-s/films/creoble-lovable/film
+cd /home/user/Video-s/films/wkc-promo/film
+mkdir -p out/parts
 B=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell
 rm -rf out/bundle && npx remotion bundle src/index.ts --out-dir=out/bundle --log=error >/dev/null
 IFS=, read -ra K <<< "$1"

@@ -6,7 +6,8 @@
 import React, { useLayoutEffect, useRef } from "react";
 import { AbsoluteFill } from "remotion";
 import { clamp01, lerp } from "./lib";
-import { BG } from "./seg4_data";
+import { BG_DELTA } from "./seg4_data";
+import { GRIDS as SEG3_GRIDS } from "./seg3_data";
 import { FilterDefs } from "./seg4_util";
 import { ShotA } from "./seg4_a";
 import { ShotB } from "./seg4_b";
@@ -16,11 +17,13 @@ export const RANGE: [number, number] = [387, 530];
 
 // ------------------------------------------------------------------------------------------- background (§2)
 // The screen-fixed pastel mesh. Same 9 x 7 grid layout and drawing as seg 3's background so the 386|387 cut is
-// seamless: frame 387 is seg 3's frame-386 grid, later grids add the reference's measured colour change (§2),
-// re-coloured with seg 3's map.
+// seamless: frame 387 IS seg 3's frame-386 grid (read from seg3_data), later frames add the reference's measured colour
+// drift (§2, re-coloured with seg 3's map; BG_DELTA).
 const GX = [15, 240, 480, 720, 960, 1200, 1440, 1680, 1905];
 const GY = [15, 180, 360, 540, 720, 900, 1065];
-const GRID_RGB = BG.map(([f, rows]) => [f, rows.map((r) => r.map((h) => [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16))))] as [number, number[][][]]);
+const rgb = (h: string) => [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16));
+const BASE = (SEG3_GRIDS.find(([f]) => f === 386) ?? SEG3_GRIDS[SEG3_GRIDS.length - 1])[1].map((r) => r.map(rgb));
+const GRID_RGB = BG_DELTA.map(([f, d]) => [f, BASE.map((r, j) => r.map((c, i) => c.map((v, ch) => Math.max(0, Math.min(255, v + d[j][i][ch])))))] as [number, number[][][]]);
 const BW = 480, BH = 270;
 const cr = (t: number) => [(-t * t * t + 2 * t * t - t) / 2, (3 * t * t * t - 5 * t * t + 2) / 2, (-3 * t * t * t + 4 * t * t + t) / 2, (t * t * t - t * t) / 2];
 const locate = (ks: number[], v: number): [number, number] => {
