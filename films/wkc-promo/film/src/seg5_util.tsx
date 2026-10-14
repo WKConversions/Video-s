@@ -30,10 +30,36 @@ const cr = (t: number): [number, number, number, number] => {
 };
 
 /**
+ * Colour grid at frame g from keyed grids [[frame, hex], ...]: per-cell cubic Hermite through the keys (tangents from the
+ * neighbouring keys, linear extrapolation outside), so the blobs drift with a continuous velocity instead of the kink a
+ * linear crossfade makes at every key.
+ */
+export const fieldAt = (keys: [number, string][], g: number): Float32Array => {
+  const n = keys.length, T = keys.map((k) => k[0]), P = keys.map((k) => dec(k[1]));
+  const tan = (k: number, c: number) => {
+    const a = Math.max(0, k - 1), b = Math.min(n - 1, k + 1);
+    return (P[b][c] - P[a][c]) / (T[b] - T[a]);
+  };
+  const out = new Float32Array(P[0].length);
+  const cl = (v: number) => (v < 0 ? 0 : v > 255 ? 255 : v);
+  if (g <= T[0] || g >= T[n - 1]) {
+    const k = g <= T[0] ? 0 : n - 1;
+    for (let c = 0; c < out.length; c++) out[c] = cl(P[k][c] + tan(k, c) * (g - T[k]));
+    return out;
+  }
+  let k = 0;
+  while (k < n - 2 && T[k + 1] <= g) k++;
+  const h = T[k + 1] - T[k], u = (g - T[k]) / h, u2 = u * u, u3 = u2 * u;
+  const h00 = 2 * u3 - 3 * u2 + 1, h10 = u3 - 2 * u2 + u, h01 = -2 * u3 + 3 * u2, h11 = u3 - u2;
+  for (let c = 0; c < out.length; c++) out[c] = cl(h00 * P[k][c] + h10 * h * tan(k, c) + h01 * P[k + 1][c] + h11 * h * tan(k + 1, c));
+  return out;
+};
+
+/**
  * A soft colour field: a gx x gy grid of hex colours (cell centres on a 1920x1080 frame), Catmull-Rom interpolated
  * onto a small canvas and stretched to the frame. b/t crossfade to a second grid.
  */
-export const Field: React.FC<{ a: string; b?: string; t?: number; gx?: number; gy?: number; style?: React.CSSProperties }> = ({ a, b, t = 0, gx = 16, gy = 9, style }) => {
+export const Field: React.FC<{ a?: string; b?: string; t?: number; grid?: Float32Array; gx?: number; gy?: number; style?: React.CSSProperties }> = ({ a = "", b, t = 0, grid, gx = 16, gy = 9, style }) => {
   const ref = useRef<HTMLCanvasElement>(null);
   const W = 320, H = 180;
   useLayoutEffect(() => {
@@ -41,7 +67,7 @@ export const Field: React.FC<{ a: string; b?: string; t?: number; gx?: number; g
     if (!cv) return;
     const ctx = cv.getContext("2d");
     if (!ctx) return;
-    const A = dec(a), B = b ? dec(b) : A, k = b ? clamp01(t) : 0;
+    const A = grid ?? dec(a), B = b && !grid ? dec(b) : A, k = b && !grid ? clamp01(t) : 0;
     const G = new Float32Array(A.length);
     for (let i = 0; i < G.length; i++) G[i] = A[i] + (B[i] - A[i]) * k;
     const img = ctx.createImageData(W, H);
@@ -66,7 +92,7 @@ export const Field: React.FC<{ a: string; b?: string; t?: number; gx?: number; g
       }
     }
     ctx.putImageData(img, 0, 0);
-  }, [a, b, t, gx, gy]);
+  }, [a, b, t, grid, gx, gy]);
   return <canvas ref={ref} width={W} height={H} style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, ...style }} />;
 };
 

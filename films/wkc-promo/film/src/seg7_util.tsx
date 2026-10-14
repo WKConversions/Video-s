@@ -10,6 +10,13 @@ export const TRACK = -0.05;
 /** extra word space (em) so the tight brand tracking keeps words apart */
 export const WSP = 0.1;
 
+/**
+ * a hair of rotation (deg) for moving type: under a pure translate / scale Skia rounds glyph baselines to whole pixels (the
+ * rising title stepped 5, 5, 3, 4, 3 px a frame); a rotation makes it place glyphs at sub-pixel y too. It must be clearly
+ * non-zero (0.01 deg was still treated as axis-aligned); 0.05 deg moves a point 500 px from the pivot by 0.4 px.
+ */
+export const NUDGE = 0.05;
+
 /** a per-frame table starting at frame f0 (linear between frames, clamped at the ends) */
 export const seqv = (g: number, f0: number, v: number[]) => {
   const x = g - f0;

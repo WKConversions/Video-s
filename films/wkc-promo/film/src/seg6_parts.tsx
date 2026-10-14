@@ -58,15 +58,44 @@ export const RIM_BIG: Rim = {
   top: [[0, "#FFFFFF", 1], [0.33, "#8DC0FF", 0.85], [0.66, "#1B4FB8", 0.6], [0.9, "#1B4FB8", 0]],
 };
 
+// a box shadow drawn with gradients (separable Gaussian: a vertical erf profile masked by a horizontal one). A CSS box-shadow's
+// blur lands on whole pixels while its box glides, so under a slowly moving card it stepped (+0.9 / +1.8 px a frame);
+// gradients follow sub-pixel positions. soft = { dy: offset, s: sigma (= CSS blur / 2), a: alpha }
+const erf = (x: number) => {
+  const t = 1 / (1 + 0.3275911 * Math.abs(x));
+  const y = 1 - (((((1.061405429 * t - 1.453152027) * t) + 1.421413741) * t - 0.284496736) * t + 0.254829592) * t * Math.exp(-x * x);
+  return x < 0 ? -y : y;
+};
+const ramp = (len: number, s: number, col: (a: number) => string) => {
+  const L = len + 6 * s, st: string[] = [];
+  const F = (y: number) => 0.5 * (erf((y - 3 * s) / (s * Math.SQRT2)) - erf((y - 3 * s - len) / (s * Math.SQRT2)));
+  const ys = [...Array.from({ length: 13 }, (_, k) => 3 * s + (k - 6) * s / 2), ...Array.from({ length: 13 }, (_, k) => 3 * s + len + (k - 6) * s / 2)]
+    .filter((y, j, a) => y >= 0 && y <= L && (j === 0 || y > a[j - 1]));
+  for (const y of ys) st.push(`${col(F(y))} ${((y / L) * 100).toFixed(3)}%`);
+  return st.join(", ");
+};
+export type Soft = { dy: number; s: number; a: number };
+export const SoftShadow: React.FC<{ w: number; h: number; soft: Soft }> = ({ w, h, soft: { dy, s, a } }) => {
+  const m = `linear-gradient(90deg, ${ramp(w, s, (v) => `rgba(0,0,0,${v.toFixed(4)})`)})`;
+  return (
+    <div style={{
+      position: "absolute", left: -3 * s, top: dy - 3 * s, width: w + 6 * s, height: h + 6 * s,
+      background: `linear-gradient(180deg, ${ramp(h, s, (v) => `rgba(1,4,10,${(a * v).toFixed(4)})`)})`, WebkitMaskImage: m, maskImage: m,
+    }} />
+  );
+};
+
 export const Glass: React.FC<{
-  id: string; w: number; h: number; r: number; fill: string; rim: Rim; k?: number; lw?: number; shadow?: string; style?: React.CSSProperties; children?: React.ReactNode;
-}> = ({ id, w, h, r, fill, rim, k = 1, lw = 2.6, shadow = "0 6px 12px rgba(1,4,10,0.55)", style, children }) => {
+  id: string; w: number; h: number; r: number; fill: string; rim: Rim; k?: number; lw?: number; shadow?: string; soft?: Soft; style?: React.CSSProperties; children?: React.ReactNode;
+}> = ({ id, w, h, r, fill, rim, k = 1, lw = 2.6, shadow = "0 6px 12px rgba(1,4,10,0.55)", soft, style, children }) => {
   const i = lw / 2, ri = r - i;
   const left = `M ${r} ${h - i} A ${ri} ${ri} 0 0 1 ${i} ${h - r} L ${i} ${r} A ${ri} ${ri} 0 0 1 ${r} ${i}`;
   const top = `M ${r} ${i} L ${w - r} ${i}`;
   const gid = `s6g-${id}-${Math.round(w)}-${Math.round(h)}`;
   return (
-    <div style={{ position: "absolute", width: w, height: h, borderRadius: r, background: fill, boxShadow: shadow, ...style }}>
+    <div style={{ position: "absolute", width: w, height: h, borderRadius: r, background: soft ? undefined : fill, boxShadow: soft ? undefined : shadow, ...style }}>
+      {soft && <SoftShadow w={w} h={h} soft={soft} />}
+      {soft && <div style={{ position: "absolute", inset: 0, borderRadius: r, background: fill }} />}
       <svg width={w} height={h} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
         <defs>
           <linearGradient id={`${gid}L`} gradientUnits="userSpaceOnUse" x1={0} y1={0} x2={0} y2={h}>
@@ -213,7 +242,8 @@ const GLOW: [number, number][] = [-27, -22.5, -18, -13.5, -9, -4.5, 0, 4.5, 9, 1
 /** a ring of radius r about (cx, cy) with bright comet arcs at the given angles (degrees clockwise from 3 o'clock) */
 export const Ring: React.FC<{ r: number; arcs: { a: number; peak: number }[]; cx?: number; cy?: number }> = ({ r, arcs, cx = 960, cy = 540 }) => {
   if (r > 1160 || r < 5) return null;
-  const R = r + 30;
+  // a whole-pixel box: a box edge at .5 px snaps asymmetrically and moved the ring's centre by 0.5 px on those frames
+  const R = Math.ceil(r + 30);
   const box: React.CSSProperties = { position: "absolute", left: cx - R, top: cy - R, width: 2 * R, height: 2 * R };
   const cm = ringMask(r, R, CORE), gm = ringMask(r, R, GLOW);
   return (

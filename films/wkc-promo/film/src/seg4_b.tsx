@@ -3,12 +3,35 @@
 // the frames toward it (§4.6), and the accelerating orbit with a directional blur into the hard cut (§4.7).
 import React from "react";
 import { C } from "./lib";
-import { PANEL, WALL } from "./seg4_data";
+import { PANEL_SM, WALL_SM } from "./seg4_data";
 import { Arrow, CH, CW, StoryCard } from "./seg4_card";
 import { PH, PW, PanelSides, StudioPanel } from "./seg4_panel";
-import { P2, QuadLayer, applyH, flatQuad, mosaicId, rectToQuadH, rows } from "./seg4_util";
+import { P2, QuadLayer, applyH, flatQuad, mosaicId, rectToQuadH } from "./seg4_util";
 
 const WW = 2279, WH = 1154;
+// The planes are drawn from the smoothed tables (WALL_SM / PANEL_SM in seg4_data): TB1/TB2 used raw are whole-pixel
+// measurements and made the wall, the panel and the dashed lines shake 1-3.8 px frame to frame.
+const WALL = WALL_SM, PANEL = PANEL_SM;
+
+/** monotone cubic (Fritsch-Carlson) through sparse keys [[frame, value]], clamped at both ends: passes every key like the
+ * old linear lookup but without the velocity kinks at the keys, which read as a stutter of the arrowheads */
+const pchip = (K: number[][], g: number): number => {
+  const n = K.length;
+  if (g <= K[0][0]) return K[0][1];
+  if (g >= K[n - 1][0]) return K[n - 1][1];
+  const d = K.slice(0, -1).map((k, i) => (K[i + 1][1] - k[1]) / (K[i + 1][0] - k[0]));
+  const m = K.map((_, i) => {
+    if (i === 0) return d[0];
+    if (i === n - 1) return d[n - 2];
+    if (d[i - 1] * d[i] <= 0) return 0;
+    const h0 = K[i][0] - K[i - 1][0], h1 = K[i + 1][0] - K[i][0];
+    return (3 * (h0 + h1)) / ((2 * h1 + h0) / d[i - 1] + (h1 + 2 * h0) / d[i]);
+  });
+  let i = 0;
+  while (K[i + 1][0] < g) i++;
+  const h = K[i + 1][0] - K[i][0], t = (g - K[i][0]) / h, t2 = t * t, t3 = t2 * t;
+  return (2 * t3 - 3 * t2 + 1) * K[i][1] + (t3 - 2 * t2 + t) * h * m[i] + (-2 * t3 + 3 * t2) * K[i + 1][1] + (t3 - t2) * h * m[i + 1];
+};
 const COLS = [0, 593, 1186, 1779], ROWS = [0, 246, 492, 738, 984];
 const SLOTS: [string, number, number][] = [];
 for (let r = 0; r < 4; r++) for (let c = 0; c < 4; c++) SLOTS.push([`c${c + 1}r${r + 1}`, COLS[c], ROWS[r]]);
@@ -67,7 +90,7 @@ const MotionPaths: React.FC<{ g: number }> = ({ g }) => {
     <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
       {LINES.map((l, i) => {
         if (g < l.appear) return null;
-        const s = rows(l.s, g)[0];
+        const s = pchip(l.s, g);
         const [x0, y0] = at(l, 0), [hx, hy] = at(l, s);
         const len = Math.hypot(hx - x0, hy - y0), ux = (hx - x0) / len, uy = (hy - y0) / len;
         const x1 = hx + ux * 8, y1 = hy + uy * 8; // the tip
@@ -76,7 +99,8 @@ const MotionPaths: React.FC<{ g: number }> = ({ g }) => {
         const ghost = i === 1 && g >= 461 && g <= 480 ? at(l, 1100) : null;
         return (
           <g key={i}>
-            {ghost && <path d={`M${x1} ${y1} L${ghost[0]} ${ghost[1]}`} stroke={C.blue} strokeOpacity={0.5} strokeWidth={3} strokeDasharray={DASH} />}
+            {/* dash phase anchored at the tail (continuing the line's own dashes), so the faint dashes stay put on the path instead of sliding with the head */}
+            {ghost && <path d={`M${x1} ${y1} L${ghost[0]} ${ghost[1]}`} stroke={C.blue} strokeOpacity={0.5} strokeWidth={3} strokeDasharray={DASH} strokeDashoffset={Math.hypot(x1 - x0, y1 - y0)} />}
             <path d={`M${x0} ${y0} L${bx} ${by}`} stroke={C.glowHi} strokeOpacity={0.4} strokeWidth={9} strokeDasharray={DASH} />
             <path d={`M${x0} ${y0} L${bx} ${by}`} stroke={C.blue} strokeWidth={5} strokeDasharray={DASH} />
             <path d={`M${x1} ${y1} L${bx - uy * hw} ${by + ux * hw} L${bx + uy * hw} ${by - ux * hw} Z`} fill={C.blue} stroke={C.glowHi} strokeOpacity={0.4} strokeWidth={2} strokeLinejoin="round" />

@@ -43,12 +43,14 @@ const ink = (text: string, weight: number, size: number, family: string, track: 
 
 /** a typed line: the first n characters, left ink edge at x, baseline at base; opacity(i) per glyph */
 export const TypedText: React.FC<{ text: string; n: number; x: number; base: number; size: number; weight: number; color: string;
-  opacity: (i: number) => number; style?: React.CSSProperties; track?: number }> = ({ text, n, x, base, size, weight, color, opacity, style, track = -0.01 }) => {
+  opacity: (i: number) => number; style?: React.CSSProperties; track?: number; scale?: number }> = ({ text, n, x, base, size, weight, color, opacity, style, track = -0.01, scale }) => {
   if (n <= 0) return null;
-  const origin = x + ink(text[0], weight, size, F.ui, 0).l;
+  const origin = x + ink(text[0], weight, size, F.ui, 0).l * (scale ?? 1);
+  // with scale: laid out once at size and scaled about (origin, base) by a transform (a per-frame font size re-lays the line out)
+  const pos = scale === undefined ? { x: origin, y: base } : { x: 0, y: 0, transform: `translate(${origin} ${base}) scale(${scale})` };
   return (
     <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0, overflow: "visible", ...style }}>
-      <text x={origin} y={base} fontFamily={F.ui} fontWeight={weight} fontSize={size} fill={color} style={{ letterSpacing: `${track}em`, fontKerning: "normal" }}>
+      <text {...pos} fontFamily={F.ui} fontWeight={weight} fontSize={size} fill={color} style={{ letterSpacing: `${track}em`, fontKerning: "normal" }}>
         {text.slice(0, n).split("").map((ch, i) => <tspan key={i} fillOpacity={opacity(i)}>{ch}</tspan>)}
       </text>
     </svg>

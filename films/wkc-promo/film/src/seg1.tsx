@@ -80,6 +80,11 @@ const MosaicDefs: React.FC<{ b: number; id: string }> = ({ b, id }) => (
   </svg>
 );
 
+/** a vanishing rotation (deg; ±0.25 px at the word's ends; 0.02° was too small and still snapped) takes the glyphs off
+ * Skia's axis-aligned text path, which snaps baselines to whole pixels: the rising, shrinking word stepped −2/−1/−2/−1 px
+ * per frame instead of gliding. It sits on the <text> itself, inside every filter: on a filtered group it moves into the
+ * filter's resampled remainder and the glyphs, drawn axis-aligned in the filter's layer, still snap */
+const ANTISNAP = 0.05;
 const MeetShot: React.FC<{ f: number }> = ({ f }) => {
   const S = MEET.size, capFull = MEET.capR * S;
   const cap = 181.0 - 32.3 * Math.pow((f - 5) / 41, 3);
@@ -114,8 +119,9 @@ const MeetShot: React.FC<{ f: number }> = ({ f }) => {
           </defs>
           <g transform={`translate(960 ${mid}) scale(${k})`} filter="url(#s1-mg)">
             {"Meet".split("").map((ch, i) => ops[i] > 0.003 && (
-              <text key={i} x={x0 + xs[i]} y={capFull / 2} fontFamily={F.head} fontWeight={800} fontSize={S} fill={MEET.color} opacity={ops[i]}
-                filter={blur[i] > 0.05 ? `url(#s1-mb${i})` : undefined}>{ch}</text>
+              <g key={i} opacity={ops[i]} filter={blur[i] > 0.05 ? `url(#s1-mb${i})` : undefined}>
+                <text x={x0 + xs[i]} y={capFull / 2} transform={`rotate(${ANTISNAP})`} fontFamily={F.head} fontWeight={800} fontSize={S} fill={MEET.color}>{ch}</text>
+              </g>
             ))}
           </g>
         </svg>
