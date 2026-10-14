@@ -33,9 +33,9 @@ SaaS, and a call to action that makes people want to act. All on-screen text is 
 | 5.78 | Met Costa Connect blijft jouw netwerk dichtbij. | The mark drops into the gap and the line closes (the music opens up here); nodes pop around both sides; the sides move closer |
 | 8.91 | Van gesprekken … praktische zaken: | The windows fold into the hub; four service tiles branch out on their words |
 | 13.18 | wij zijn jouw gezicht op locatie. | The hub becomes Rienk's portrait (the site's photo) on a "Jouw vertegenwoordiger" card; a pin lands on Amsterdam |
-| 15.67 | Jij vertelt wat er speelt. | The card grows into the chat ("Rechtstreeks met Rienk"); your messages type in |
+| 15.67 | Jij vertelt wat er speelt. | The card grows into the chat ("Rechtstreeks met Rienk"); your messages ("Een belangrijk gesprek", "Een bezoek ter plekke") type in |
 | 17.31 | Wij leggen contact, | The line runs out of the chat to the people on location; "Contact gelegd" |
-| 18.49 | schuiven aan tafel | The window grows to the table: "Jij op afstand. Wij aan tafel." (the site's line) |
+| 18.49 | schuiven aan tafel | The window grows to the table, captioned with the site's line "Jij op afstand. Wij aan tafel." |
 | 19.68 | en houden je op de hoogte. | The update flies back across and lands in the chat: "Update over de voortgang" |
 | 21.16 | Geen extra kantoor. Geen gemiste kansen. | An office tile is struck through and drops away; three follow-ups turn to ticks |
 | 24.11 | Korte lijnen, sterke relaties en nieuwe mogelijkheden. | A network around the mark: the lines shorten, thicken, and new nodes grow |
@@ -63,7 +63,7 @@ SaaS, and a call to action that makes people want to act. All on-screen text is 
   - The photos (Nerja, Amsterdam, the meeting, Rienk), the logo, Manrope and the colours.
 - **The script's own words:** the headlines and the four service tiles.
 - **Example content, shown as UI and not as claims:**
-  - The chat messages, taken from the site's situations: "Een belangrijk gesprek", "Iets praktisch regelen".
+  - The chat messages, taken from the site's situations: "Een belangrijk gesprek", "Een bezoek ter plekke".
   - "Contact gelegd" and "Update over de voortgang", the latter from the site's "duidelijke updates over de voortgang".
   - The "Gesprek / Bezoek / Afspraak" follow-ups.
 - **No numbers, client names or promises.**
@@ -77,6 +77,19 @@ python3 scripts/music_fit.py sound/music/reaching-out.mp3 sound/bed.wav --length
 python3 scripts/cues.py && python3 scripts/sound_mix.py sound/cues.json film/public/audio/mix.wav --sheet sound/mix.png
 cd film && bash ../scripts/render_chunks.sh Film out/final.mp4 '{"blurSamples":4,"audio":"none"}' 0,282,563,845,1125 public/audio/mix.wav
 ```
+
+## Checks on the final
+- Phrases: every phrase of the voice-over brings a new visual on its words (`phrase_check.py`).
+- Motion: something moves in every frame; the median frame has about 2% of its area in motion. No motion norm was
+  set for this film.
+- Shake: the camera carries a 3D term so its slow breath doesn't step type a whole pixel at a time (`jitter_check.py`).
+- Frame review: three independent reviews of the final's frames (layout, Dutch copy and truth, story and timing),
+  each serious finding checked again by a skeptic at full resolution. Fixed from it:
+  - The headline hand-overs at 3.6 s and 5.8 s.
+  - The update badge's path and landing at 20 s.
+  - The scene hand-overs at 24 s and 27.8 s.
+  - The logo's lift before "Klaar".
+  - The table caption, Rienk's ring, both coordinates on the opening pins, and the cursor leaving the button.
 
 ## Assumptions
 - 16:9, 37.5 s: the voice-over plus about 2.8 s on the call to action.

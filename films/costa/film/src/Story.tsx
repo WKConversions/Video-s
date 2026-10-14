@@ -91,6 +91,7 @@ const MarkTile: React.FC<{ x: number; y: number; size: number; o?: number; s?: n
       <Img src={staticFile("img/mark.png")} style={{ position: "absolute", left: (size - mw) / 2, top: (size - mh) / 2, width: mw, height: mh, opacity: 1 - face }} />
       {face > 0 && <Img src={staticFile("img/rienk.jpg")} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: face,
         transform: `scale(${1.15 - 0.15 * face})` }} />}
+      {face > 0 && <div style={{ position: "absolute", inset: 0, borderRadius: "50%", boxShadow: `inset 0 0 0 ${Math.max(3, size * 0.022) * face}px ${C.orange}` }} />}
     </Box>
   );
 };
@@ -121,13 +122,13 @@ const Worlds: React.FC<{ g: number }> = ({ g }) => {
   return (
     <AbsoluteFill>
       {/* the headline of the two worlds */}
-      <Words g={g} x={140} y={118} size={92} out="q-0.05" words={[{ t: "Ondernemen", at: "w:ondernemen" }, { t: "vanuit", at: "w:vanuit" }, { t: "Spanje.", at: "w:spanje", grad: true }]} />
-      <Words g={g} x={140} y={230} size={92} out="q" words={[{ t: "Kansen", at: "w:kansen" }, { t: "in", at: "w:in" }, { t: "Nederland.", at: "w:nederland", grad: true }]} />
+      <Words g={g} x={140} y={118} size={92} out="q-0.3" words={[{ t: "Ondernemen", at: "w:ondernemen" }, { t: "vanuit", at: "w:vanuit" }, { t: "Spanje.", at: "w:spanje", grad: true }]} />
+      <Words g={g} x={140} y={230} size={92} out="q-0.25" words={[{ t: "Kansen", at: "w:kansen" }, { t: "in", at: "w:in" }, { t: "Nederland.", at: "w:nederland", grad: true }]} />
       {/* the question, then the answer */}
-      <Words g={g} y={170} size={96} center out="cc-0.05" words={[{ t: "Waarom", at: "w:waarom" }, { t: "zou", at: "w:zou" }, { t: "afstand", at: "w:afstand", grad: true }]} />
-      <Words g={g} y={282} size={96} center out="cc" words={[{ t: "daartussen", at: "w:daartussen" }, { t: "staan?", at: "w:staan" }]} />
-      <Words g={g} y={170} size={92} center out="svc-0.05" words={[{ t: "Met", at: "w:met" }, { t: "Costa", at: "w:costa" }, { t: "Connect", at: "w:connect" }, { t: "blijft", at: "w:blijft" }]} />
-      <Words g={g} y={282} size={92} center out="svc" words={[{ t: "jouw", at: "w:jouw" }, { t: "netwerk", at: "w:netwerk", grad: true }, { t: "dichtbij.", at: "w:dichtbij", grad: true }]} />
+      <Words g={g} y={170} size={96} center out="cc-0.3" words={[{ t: "Waarom", at: "w:waarom" }, { t: "zou", at: "w:zou" }, { t: "afstand", at: "w:afstand", grad: true }]} />
+      <Words g={g} y={282} size={96} center out="cc-0.25" words={[{ t: "daartussen", at: "w:daartussen" }, { t: "staan?", at: "w:staan" }]} />
+      <Words g={g} y={170} size={92} center out="svc-0.25" words={[{ t: "Met", at: "w:met" }, { t: "Costa", at: "w:costa" }, { t: "Connect", at: "w:connect" }, { t: "blijft", at: "w:blijft" }]} />
+      <Words g={g} y={282} size={92} center out="svc-0.2" words={[{ t: "jouw", at: "w:jouw" }, { t: "netwerk", at: "w:netwerk", grad: true }, { t: "dichtbij.", at: "w:dichtbij", grad: true }]} />
       {/* the network around each side */}
       {SPN.map((n, i) => <Cable key={`sc${i}`} id={`sc${i}`} d={`M ${W.sx} ${W.sy} L ${W.sx + n.dx} ${W.sy + n.dy}`} k={net(i)} w={3} c0={C.orange} c1={C.rust} o={fade} />)}
       {NLN.map((n, i) => <Cable key={`nc${i}`} id={`nc${i}`} d={`M ${W.nx} ${W.ny} L ${W.nx + n.dx} ${W.ny + n.dy}`} k={net(i + 2)} w={3} c0={C.slate} c1={C.navy} o={fade} />)}
@@ -141,12 +142,12 @@ const Worlds: React.FC<{ g: number }> = ({ g }) => {
       {/* Spain */}
       <Win x={W.sx} y={W.sy + (1 - sp) * 70} w={SP.w} h={SP.h} s={W.s * (0.94 + 0.06 * sp)} o={sp * fade} blur={(1 - sp) * 10} glow={C.orange} title="Costa del Sol">
         <Shot src="img/nerja.jpg" w={SP.w - 32} h={SP.h - 72} pos="50% 60%" zoom={1.12 + drift(g, 0, 0.022)} px={-drift(g, 0, 7)} r={16} style={{ left: 16, top: 56 }} />
-        <div style={{ position: "absolute", left: 34, bottom: 34 }}><Loc name="Costa del Sol" cc="ES" coord="36°45′ N · 3°52′ W" size={24} pin={k(g, "w:spanje", 0.5)} /></div>
+        <div style={{ position: "absolute", left: 34, bottom: 34 }}><Loc name="Costa del Sol" cc="ES" coord="36°45′ N · 3°52′ W" size={22} pin={k(g, "w:spanje", 0.5)} /></div>
       </Win>
       {/* the Netherlands */}
       <Win x={W.nx} y={W.ny + (1 - nl) * 70} w={NL.w} h={NL.h} s={W.s * (0.94 + 0.06 * nl)} o={nl * fade} blur={(1 - nl) * 10} glow={C.blue} title="Amsterdam">
         <Shot src="img/amsterdam.jpg" w={NL.w - 32} h={NL.h - 72} pos="50% 35%" zoom={1.1 + drift(g, "w:kansen", 0.025)} py={-drift(g, "w:kansen", 6)} r={16} style={{ left: 16, top: 56 }} />
-        <div style={{ position: "absolute", left: 30, bottom: 30 }}><Loc name="Amsterdam" cc="NL" size={24} pin={k(g, "w:nederland", 0.5)} /></div>
+        <div style={{ position: "absolute", left: 24, bottom: 28 }}><Loc name="Amsterdam" cc="NL" coord="52°22′ N · 4°54′ E" size={20} pin={k(g, "w:nederland", 0.5)} /></div>
       </Win>
     </AbsoluteFill>
   );
@@ -185,7 +186,7 @@ const Services: React.FC<{ g: number }> = ({ g }) => {
         const hx = 960 + s.sx * 125, ex = tx - s.sx * 270, mid = (hx + ex) / 2;
         return (
           <React.Fragment key={i}>
-            <Cable id={`sv${i}`} d={`M ${hx} 560 C ${mid} 560, ${mid} ${ty}, ${ex} ${ty}`} k={cab * (1 - r)} w={4} c0={C.navy} c1={C.orange}
+            <Cable id={`sv${i}`} d={`M ${hx} 560 C ${mid} 560, ${mid} ${ty}, ${ex} ${ty}`} k={cab * (1 - r)} w={4} c0={C.navy} c1={C.orange} o={1 - r}
               orb={cab >= 1 && r === 0 ? loop(g, off(s.at, 0.3), 42, i * 0.27) : undefined} />
             <Box x={tx} y={ty + (1 - t) * 30} w={540} h={140} r={34} s={(0.88 + 0.12 * t) * (1 - 0.6 * r)} o={t * (1 - r)} blur={(1 - t) * 8 + r * 6} style={glass(C.orange)}>
               <div style={{ position: "absolute", left: 28, top: 28, width: 84, height: 84, borderRadius: 24, background: C.navy, display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -220,9 +221,12 @@ const Face: React.FC<{ g: number }> = ({ g }) => {
   return (
     <AbsoluteFill>
       <Words g={g} x={140} y={118} size={92} out="tell-0.05" words={[{ t: "Jouw", at: "w:jouw2" }, { t: "gezicht", at: "w:gezicht" }, { t: "op", at: "w:op", grad: true }, { t: "locatie.", at: "w:locatie", grad: true }]} />
-      <Win x={A.x} y={A.y} w={A.w} h={A.h} s={A.s} o={A.p * (1 - A.out)} blur={(1 - A.p) * 10} glow={C.blue} title={A.t > 0.5 ? "Jij op afstand. Wij aan tafel." : "Amsterdam"}>
+      <Win x={A.x} y={A.y} w={A.w} h={A.h} s={A.s} o={A.p * (1 - A.out)} blur={(1 - A.p) * 10} glow={C.blue} title={A.t > 0.5 ? "" : "Amsterdam"}>
         <Shot src="img/amsterdam.jpg" w={A.w - 32} h={A.h - 72} pos="50% 40%" zoom={z} py={-drift(g, "face", 8)} r={16} o={1 - A.t} style={{ left: 16, top: 56 }} />
         <Shot src="img/meeting.jpg" w={A.w - 32} h={A.h - 72} pos="50% 55%" zoom={1.08 + drift(g, "table", 0.04)} px={-drift(g, "table", 10)} r={16} o={A.t} style={{ left: 16, top: 56 }} />
+        <div style={{ position: "absolute", left: 34, bottom: 30, opacity: k(g, "w:tafel-0.15", 0.45), transform: `translateY(${(1 - k(g, "w:tafel-0.15", 0.45)) * 18}px)`,
+          padding: "14px 26px", borderRadius: 40, background: "rgba(255,255,255,0.95)", boxShadow: "0 10px 26px rgba(7,27,64,0.14)",
+          fontFamily: C.font, fontWeight: 800, fontSize: 32, color: C.navy, whiteSpace: "nowrap", letterSpacing: "-0.01em" }}>Jij op afstand. Wij aan tafel.</div>
         {/* the pin lands on location */}
         <div style={{ position: "absolute", left: A.w / 2 - 40, top: A.h / 2 - 90, opacity: pin * (1 - A.t), transform: `translateY(${(1 - pin) * -60}px) scale(${pin})` }}>
           <div style={{ width: 80, height: 80, borderRadius: 40, background: C.orange, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 12px 26px rgba(239,105,37,0.4)", border: "4px solid #FFFFFF" }}>
@@ -270,9 +274,9 @@ const Chat: React.FC<{ g: number; m: number }> = ({ g, m }) => {
       <div style={{ position: "absolute", left: 150, top: 114, fontFamily: C.font, fontWeight: 600, fontSize: 21, color: C.muted }}>Costa Connect · Amsterdam</div>
       <div style={{ position: "absolute", left: 0, right: 0, top: 160, height: 1, background: "rgba(7,27,64,0.06)" }} />
       <Bubble me top={190} k={k(g, "w:vertelt-0.15", 0.35)}>{t1}{t1.length < 22 && <span style={{ width: 3, height: 34, background: "#FFFFFF", opacity: Math.floor(g / 7) % 2 ? 1 : 0.3 }} />}</Bubble>
-      <Bubble me top={282} k={k(g, "w:speelt", 0.4, SMALLPOP)}>Iets praktisch regelen</Bubble>
+      <Bubble me top={282} k={k(g, "w:speelt", 0.4, SMALLPOP)}>Een bezoek ter plekke</Bubble>
       <Bubble top={386} k={k(g, "w:contact-0.1", 0.4, SMALLPOP)}><Icon name="link" size={34} color={C.orange} sw={3} />Contact gelegd</Bubble>
-      <Bubble top={478} k={k(g, "w:houden+0.62", 0.45, SMALLPOP)} tone="#F3F5FA"><Icon name="check" size={34} color={C.orange} sw={3.4} />Update over de voortgang</Bubble>
+      <Bubble top={478} k={k(g, "w:houden+0.5", 0.45, SMALLPOP)} tone="#F3F5FA"><Icon name="check" size={34} color={C.orange} sw={3.4} />Update over de voortgang</Bubble>
     </div>
   );
 };
@@ -305,11 +309,12 @@ const Contact: React.FC<{ g: number }> = ({ g }) => {
 
 // the update leaves the table and flies across to your chat, where it lands as the last message
 const Update: React.FC<{ g: number }> = ({ g }) => {
-  const back = k(g, "w:houden", 0.7, MOVE);
+  const back = k(g, "w:houden-0.05", 0.75, MOVE);
   if (back <= 0 || back >= 1) return null;
-  const q = pointAt("M 1430 470 C 1250 300, 760 560, 420 760", back);
+  const q = pointAt("M 1090 330 C 1010 930, 640 880, 296 774", back);
+  const inn = clamp01(back / 0.12), end = clamp01((back - 0.8) / 0.2);
   return (
-    <Box x={q.x} y={q.y} w={92} h={92} r={46} s={1 - 0.3 * back} style={{ background: C.orange, border: "4px solid #FFFFFF", boxShadow: "0 12px 26px rgba(239,105,37,0.35)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+    <Box x={q.x} y={q.y} w={92} h={92} r={46} s={(0.3 + 0.7 * inn) * (1 - 0.6 * end)} o={inn * (1 - end)} style={{ background: C.orange, border: "4px solid #FFFFFF", boxShadow: "0 12px 26px rgba(239,105,37,0.35)", display: "flex", alignItems: "center", justifyContent: "center" }}>
       <Icon name="check" size={46} color="#FFFFFF" sw={3.4} />
     </Box>
   );
@@ -319,12 +324,12 @@ const Update: React.FC<{ g: number }> = ({ g }) => {
 const Geen: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("geen-0.1") || g > f("korte+0.8")) return null;
   const b = k(g, "w:extrakantoor-0.05", 0.5), st = k(g, "w:extrakantoor+0.4", 0.35, MOVE), drop = k(g, "w:geen2-0.15", 0.45, DEPART);
-  const out = k(g, "korte-0.05", 0.45, DEPART);
+  const out = k(g, "korte-0.32", 0.45, DEPART);
   const chips = [{ t: "Gesprek", i: "chat" }, { t: "Bezoek", i: "pin" }, { t: "Afspraak", i: "users" }];
   return (
     <AbsoluteFill>
-      <Words g={g} y={230} size={112} center out="korte-0.12" words={[{ t: "Geen", at: "w:geen" }, { t: "extra", at: "w:extrakantoor" }, { t: "kantoor.", at: "w:extrakantoor+0.12" }]} />
-      <Words g={g} y={366} size={112} center out="korte-0.06" words={[{ t: "Geen", at: "w:geen2" }, { t: "gemiste", at: "w:gemiste", grad: true }, { t: "kansen.", at: "w:kansen2", grad: true }]} />
+      <Words g={g} y={230} size={112} center out="korte-0.35" words={[{ t: "Geen", at: "w:geen" }, { t: "extra", at: "w:extrakantoor" }, { t: "kantoor.", at: "w:extrakantoor+0.12" }]} />
+      <Words g={g} y={366} size={112} center out="korte-0.3" words={[{ t: "Geen", at: "w:geen2" }, { t: "gemiste", at: "w:gemiste", grad: true }, { t: "kansen.", at: "w:kansen2", grad: true }]} />
       {/* the office that isn't needed: struck through, and gone */}
       <Box x={960} y={720 + drop * 80} w={250} h={250} r={56} s={(0.85 + 0.15 * b) * (1 - 0.2 * drop)} o={b * (1 - drop)} blur={(1 - b) * 8 + drop * 6} style={glass(C.blue)}>
         <div style={{ position: "absolute", left: 55, top: 55 }}><Icon name="building" size={140} color={C.navy} sw={2.2} /></div>
@@ -355,7 +360,7 @@ const R1 = ["users", "building", "chat", "briefcase", "link"];
 // the logo: the mark (left) and the wordmark, placed from the mark's centre and height (logo.jpg geometry)
 const wordmark = (mx: number, my: number, mh: number) => { const u = mh / 496; return { x: mx - 211 * u + 500 * u, y: my - 248 * u + 97 * u, w: 702 * u, h: 251 * u }; };
 const hub2 = (g: number) => {
-  const p = k(g, "korte-0.1", 0.6), m1 = k(g, "twee-0.05", 0.8, MOVE), m2 = k(g, "sign", 0.85, MOVE), m3 = k(g, "cta", 0.8, MOVE);
+  const p = k(g, "korte+0.05", 0.6), m1 = k(g, "twee-0.05", 0.8, MOVE), m2 = k(g, "sign", 0.85, MOVE), m3 = k(g, "cta-0.25", 0.8, MOVE);
   return {
     p, m2,
     x: mix(mix(mix(HUB.x, 960, m1), 739.8, m2), 839, m3), y: mix(mix(mix(HUB.y, 700, m1), 400, m2), 196, m3),
@@ -369,7 +374,7 @@ const Network: React.FC<{ g: number }> = ({ g }) => {
   const rot = (drift(g, "korte", 5) * Math.PI) / 180;
   const R = mix(345, 215, short) * (1 - col);
   const ring1 = R1.map((icon, i) => {
-    const a = -Math.PI / 2 + (i * 2 * Math.PI) / 5 + rot, p = k(g, off("korte", 0.06 + i * 0.06), 0.5, SMALLPOP);
+    const a = -Math.PI / 2 + (i * 2 * Math.PI) / 5 + rot, p = k(g, off("korte", 0.18 + i * 0.06), 0.5, SMALLPOP);
     return { icon, p, x: H.x + Math.cos(a) * R, y: H.y + Math.sin(a) * R, a };
   });
   const R2 = 380 * (1 - col);
@@ -382,9 +387,9 @@ const Network: React.FC<{ g: number }> = ({ g }) => {
   return (
     <AbsoluteFill>
       {live && <>
-        <Words g={g} x={140} y={290} size={80} out="twee-0.1" words={[{ t: "Korte", at: "w:korte" }, { t: "lijnen.", at: "w:lijnen" }]} />
-        <Words g={g} x={140} y={410} size={80} out="twee-0.05" words={[{ t: "Sterke", at: "w:sterke" }, { t: "relaties.", at: "w:relaties" }]} />
-        <Words g={g} x={140} y={530} size={80} out="twee" words={[{ t: "Nieuwe", at: "w:nieuwe2", grad: true }, { t: "mogelijkheden.", at: "w:mogelijkheden", grad: true }]} />
+        <Words g={g} x={140} y={290} size={80} out="twee-0.35" words={[{ t: "Korte", at: "w:korte" }, { t: "lijnen.", at: "w:lijnen" }]} />
+        <Words g={g} x={140} y={410} size={80} out="twee-0.3" words={[{ t: "Sterke", at: "w:sterke" }, { t: "relaties.", at: "w:relaties" }]} />
+        <Words g={g} x={140} y={530} size={80} out="twee-0.25" words={[{ t: "Nieuwe", at: "w:nieuwe2", grad: true }, { t: "mogelijkheden.", at: "w:mogelijkheden", grad: true }]} />
         {ring1.map((n, i) => <Cable key={`r1${i}`} id={`r1${i}`} d={`M ${H.x} ${H.y} L ${n.x} ${n.y}`} k={Math.min(1, n.p)} w={cw} c0={C.navy} c1={cc} o={1 - col}
           orb={n.p >= 1 && col === 0 ? loop(g, off("korte", 0.6), 40, i * 0.2) : undefined} />)}
         {ring2.map((n, i) => <Cable key={`r2${i}`} id={`r2${i}`} d={`M ${ring1[i].x} ${ring1[i].y} L ${n.x} ${n.y}`} k={Math.min(1, n.p)} w={3} c0={cc} c1={C.orange} o={1 - col} />)}
@@ -400,22 +405,22 @@ const Network: React.FC<{ g: number }> = ({ g }) => {
 };
 
 /* ---------- 10 · two countries, one network (the site's own two location cards) ---------- */
-const Country: React.FC<{ x: number; y: number; s: number; o: number; blur: number; src: string; pos: string; eyebrow: string; name: string; cc: string; coord: string; z: number }> = ({
-  x, y, s, o, blur, src, pos, eyebrow, name, cc, coord, z }) => (
+const Country: React.FC<{ x: number; y: number; s: number; o: number; blur: number; src: string; pos: string; eyebrow: string; name: string; cc: string; coord: string; z: number; fine?: number }> = ({
+  x, y, s, o, blur, src, pos, eyebrow, name, cc, coord, z, fine = 1 }) => (
   <Box x={x} y={y} w={600} h={300} r={30} s={s} o={o} blur={blur} style={{ ...glass(cc === "ES" ? C.orange : C.blue), overflow: "hidden" }}>
     <Shot src={src} w={220} h={260} pos={pos} zoom={z} r={20} style={{ left: 20, top: 20 }} />
     <div style={{ position: "absolute", left: 270, top: 46 }}>
-      <Eyebrow text={eyebrow} size={17} style={{ color: cc === "ES" ? C.orange : C.blue }} />
+      <Eyebrow text={eyebrow} size={17} style={{ color: cc === "ES" ? C.orange : C.blue, opacity: fine }} />
       <div style={{ fontFamily: C.font, fontWeight: 800, fontSize: 46, color: C.navy, marginTop: 12, letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>{name}</div>
       <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 18 }}>
         <span style={{ fontFamily: C.font, fontWeight: 800, fontSize: 18, color: "#FFFFFF", background: C.navy, borderRadius: 7, padding: "4px 9px", letterSpacing: "0.06em" }}>{cc}</span>
-        <span style={{ fontFamily: C.font, fontWeight: 600, fontSize: 21, color: C.muted, whiteSpace: "nowrap" }}>{coord}</span>
+        <span style={{ fontFamily: C.font, fontWeight: 600, fontSize: 21, color: C.muted, whiteSpace: "nowrap", opacity: fine }}>{coord}</span>
       </div>
     </div>
   </Box>
 );
 const countries = (g: number) => {
-  const a = k(g, "w:twee", 0.6), b = k(g, "w:landen-0.05", 0.6), m = k(g, "sign", 0.85, MOVE);
+  const a = k(g, "w:twee+0.12", 0.6), b = k(g, "w:landen+0.02", 0.6), m = k(g, "sign", 0.85, MOVE);
   return { a, b, m, ax: mix(450, 300, m), bx: mix(1470, 1620, m), y: mix(720, 905, m), s: mix(1, 0.55, m) };
 };
 const Countries: React.FC<{ g: number }> = ({ g }) => {
@@ -436,8 +441,8 @@ const Countries: React.FC<{ g: number }> = ({ g }) => {
       {/* the call to action: both countries run into the button */}
       <Cable id="ctaL" d={`M ${ar} ${P.y} C ${ar + 150} ${P.y}, 540 650, 612 650`} k={re} w={6} c0={C.orange} c1={C.rust} orb={re >= 1 ? loop(g, "w:connecten+0.75", 32) : undefined} />
       <Cable id="ctaR" d={`M ${bl} ${P.y} C ${bl - 150} ${P.y}, 1380 650, 1308 650`} k={re} w={6} c0={C.navy} c1={C.slate} orb={re >= 1 ? loop(g, "w:connecten+0.75", 32, 0.5) : undefined} />
-      <Country x={P.ax} y={P.y + (1 - P.a) * 60} s={P.s * (0.94 + 0.06 * P.a)} o={P.a} blur={(1 - P.a) * 8} src="img/nerja.jpg" pos="40% 60%" z={z} eyebrow="Jouw thuisbasis" name="Costa del Sol" cc="ES" coord="36°45′ N · 3°52′ W" />
-      <Country x={P.bx} y={P.y + (1 - P.b) * 60} s={P.s * (0.94 + 0.06 * P.b)} o={P.b} blur={(1 - P.b) * 8} src="img/amsterdam.jpg" pos="50% 30%" z={z} eyebrow="Jouw aanwezigheid" name="Amsterdam" cc="NL" coord="52°22′ N · 4°54′ E" />
+      <Country x={P.ax} y={P.y + (1 - P.a) * 60} s={P.s * (0.94 + 0.06 * P.a)} o={P.a} blur={(1 - P.a) * 8} src="img/nerja.jpg" pos="40% 60%" z={z} fine={1 - P.m} eyebrow="Jouw thuisbasis" name="Costa del Sol" cc="ES" coord="36°45′ N · 3°52′ W" />
+      <Country x={P.bx} y={P.y + (1 - P.b) * 60} s={P.s * (0.94 + 0.06 * P.b)} o={P.b} blur={(1 - P.b) * 8} src="img/amsterdam.jpg" pos="50% 30%" z={z} fine={1 - P.m} eyebrow="Jouw aanwezigheid" name="Amsterdam" cc="NL" coord="52°22′ N · 4°54′ E" />
     </AbsoluteFill>
   );
 };
@@ -453,13 +458,14 @@ const SignOff: React.FC<{ g: number }> = ({ g }) => {
   const cur = k(g, "w:connecten+1.0", 0.9, MOVE), press = g >= f("w:connecten+1.95") && g < f("w:connecten+2.15") ? 1 : 0;
   const ring = clamp01((g - f("w:connecten+1.95")) / 18);
   const hover = k(g, "w:connecten+1.7", 0.3);
-  const cx = mix(1560, 1160, cur), cy = mix(1010, 668, cur);
+  const away = k(g, "w:connecten+2.35", 0.6, MOVE);
+  const cx = mix(1560, 1160, cur) + away * 110, cy = mix(1010, 668, cur) + away * 120;
   return (
     <AbsoluteFill>
       <div style={{ position: "absolute", left: 0, top: 0, width: wm.w, height: wm.h, transform: `translate(${wm.x}px, ${wm.y}px)`, clipPath: `inset(0 ${(1 - wipe) * 100}% 0 0)` }}>
         <Img src={staticFile("img/wordmark.png")} style={{ width: "100%", height: "100%", transform: `translateX(${(1 - wipe) * -40}px)` }} />
       </div>
-      <Words g={g} y={618} size={70} center out="cta-0.1" words={[{ t: "Blijf", at: "w:blijf" }, { t: "verbonden,", at: "w:verbonden", grad: true }, { t: "waar", at: "w:waar" }, { t: "je", at: "w:je2" }, { t: "ook", at: "w:ook" }, { t: "onderneemt.", at: "w:onderneemt" }]} />
+      <Words g={g} y={618} size={70} center out="cta-0.32" words={[{ t: "Blijf", at: "w:blijf" }, { t: "verbonden,", at: "w:verbonden", grad: true }, { t: "waar", at: "w:waar" }, { t: "je", at: "w:je2" }, { t: "ook", at: "w:ook" }, { t: "onderneemt.", at: "w:onderneemt" }]} />
       <Words g={g} y={330} size={124} center words={[{ t: "Klaar", at: "w:klaar" }, { t: "om", at: "w:om" }, { t: "te", at: "w:te" }, { t: "connecten?", at: "w:connecten", grad: true }]} />
       {/* the site's call to action */}
       <Box x={960} y={650 + (1 - btn) * 40} w={700} h={124} r={62} s={(0.9 + 0.1 * btn) * (1 - press * 0.035)} o={btn} blur={(1 - btn) * 8}
@@ -474,7 +480,7 @@ const SignOff: React.FC<{ g: number }> = ({ g }) => {
       {ring > 0 && ring < 1 && <div style={{ position: "absolute", left: 0, top: 0, width: 160, height: 160, borderRadius: 80, border: `4px solid ${C.orange}`,
         transform: `translate(${cx - 80}px, ${cy - 80}px) scale(${0.2 + ring})`, opacity: 1 - ring }} />}
       {cur > 0 && (
-        <svg width={56} height={64} viewBox="0 0 28 32" style={{ position: "absolute", left: 0, top: 0, transform: `translate(${cx - 6}px, ${cy - 4}px) scale(${1 - press * 0.12})`, opacity: Math.min(1, cur * 3), overflow: "visible" }}>
+        <svg width={56} height={64} viewBox="0 0 28 32" style={{ position: "absolute", left: 0, top: 0, transform: `translate(${cx - 6}px, ${cy - 4}px) scale(${1 - press * 0.12})`, opacity: Math.min(1, cur * 3) * (1 - away), overflow: "visible" }}>
           <path d="M2 2 L2 26 L8.5 20 L13 30 L17.5 28 L13 18.5 L22 18.5 Z" fill={C.navy} stroke="#FFFFFF" strokeWidth={2} strokeLinejoin="round" />
         </svg>
       )}
