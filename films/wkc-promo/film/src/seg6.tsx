@@ -86,7 +86,7 @@ const SceneA: React.FC<{ t: number; zoom: number; zoomT: number }> = ({ t, zoom,
   const sSub = tab(t, 718, A_SUB_S, true) * kl(t, [[760, 1], [761, 1.01], [762, 1.02], [763, 1.035], [764, 1.06], [765, 1.095], [766, 1.15], [767, 1.23], [768, 1.33]]);
   const aHead = kl(t, [[760, 1], [761, 0.94], [762, 0.82], [763, 0.66], [764, 0.47], [765, 0.31], [766, 0.19], [767, 0.09], [768, 0.02]]);
   const aSub = kl(t, [[761, 1], [762, 0.88], [763, 0.73], [764, 0.47], [765, 0.29], [766, 0.16], [767, 0.07], [768, 0.02]]);
-  const aTile = kl(t, [[762, 1], [763, 0.97], [764, 0.89], [765, 0.75], [766, 0.55], [767, 0.28], [768, 0]]);
+  const aTile = kl(t, [[762, 1], [763, 0.97], [764, 0.89], [765, 0.8], [766, 0.65], [767, 0.45], [768, 0.2]]);
   const rIn = tab(t, 718, A_RING_IN, true);
   const rOut = t < 726 ? rIn * lerp(1.87, 1.889, clamp01((t - 718) / 8)) : t <= 764 ? tab(t, 726, A_RING_OUT) : rIn * (974 / 459) * (1 + 0.03 * (t - 764));
   const a1 = 132 - 1.86 * (t - 750), aA = 141 + 0.65 * (t - 740);
@@ -128,14 +128,14 @@ const SceneA: React.FC<{ t: number; zoom: number; zoomT: number }> = ({ t, zoom,
 };
 
 // blur samples per frame (0.5-frame shutter), extra zoom-blur spread and RGB split (R-B scale difference) after the cut / before the dip
-const A_N: Record<number, number> = { 718: 20, 719: 14, 720: 12, 721: 10, 722: 8, 723: 6, 724: 4, 725: 3, 726: 2, 738: 3, 739: 3, 740: 5, 741: 5, 742: 8, 743: 8, 744: 8,
-  745: 8, 746: 8, 747: 8, 748: 5, 749: 5, 750: 3, 751: 3, 755: 3, 756: 5, 757: 8, 758: 10, 759: 10, 760: 10, 761: 10, 762: 10, 763: 10, 764: 10, 765: 12, 766: 16, 767: 20 };
+// (the reference's spinning tiles stay crisp: no extra spin blur; samples only where the zoom moves fast)
+const A_N: Record<number, number> = { 718: 20, 719: 14, 720: 12, 721: 10, 722: 8, 723: 6, 724: 4, 725: 3, 726: 2, 762: 3, 763: 5, 764: 8, 765: 10, 766: 14, 767: 18 };
 const BG_A = <div style={{ position: "absolute", inset: -300, background: "radial-gradient(ellipse 1100px 700px at 50% 50%, #0A1424 0%, #08111E 70%, #07101C 100%)" }} />;
 const ShotA: React.FC<{ g: number }> = ({ g }) => {
   const n = A_N[g] ?? 1;
   // the reference's settle is blurred harder than a 180-degree shutter: an extra radial spread (tiles/rings zT, text zX)
-  const zT = kl(g, [[718, 0.1], [719, 0.07], [720, 0.05], [721, 0.035], [722, 0.025], [723, 0.015], [724, 0.008], [725, 0.004], [726, 0]]);
-  const zX = kl(g, [[718, 0.08], [719, 0.02], [720, 0.012], [721, 0.01], [722, 0.008], [723, 0.004], [724, 0.002], [725, 0]]);
+  const zT = kl(g, [[718, 0.14], [719, 0.07], [720, 0.05], [721, 0.035], [722, 0.025], [723, 0.015], [724, 0.008], [725, 0.004], [726, 0]]);
+  const zX = kl(g, [[718, 0.12], [719, 0.02], [720, 0.012], [721, 0.01], [722, 0.008], [723, 0.004], [724, 0.002], [725, 0]]);
   const ca = kl(g, [[718, 0.038], [719, 0.009], [720, 0.006], [721, 0.003], [722, 0.0015], [723, 0], [764, 0], [765, 0.0025], [766, 0.004], [767, 0.006]]);
   return <Composite n={n} bg={BG_A} chans={ca > 0.0005 ? rgbSplit(ca) : undefined} fg={(u) => <SceneA t={g + 0.5 * u} zoom={1 + zX * u} zoomT={1 + zT * u} />} />;
 };

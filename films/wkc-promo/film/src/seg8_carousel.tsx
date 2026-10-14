@@ -42,7 +42,7 @@ const MOVES = SWITCHES.map(([k, type]) => (type === "end" ? { a: k - 1, b: k - 0
 /** continuous index of the centred item at film time t */
 const pAt = (t: number) => MOVES.reduce((p, m) => p + m.e(clamp01((t - m.a) / (m.b - m.a))), 0);
 /** Marketing's ease-in slide to the left before the dissolve (group px; measured 968, 962, 945, 917 at 1122-1125) */
-const slideAt = (t: number) => -tv(t, [[1122, 0], [1123, 7], [1124, 28], [1125, 61], [1126, 104]]);
+const slideAt = (t: number) => -tv(t, [[1122, 0], [1123, 7], [1124, 28], [1125, 61], [1126, 122]]);
 
 type St = { x: number; sc: number; op: number; blur: number };
 const layout = (c: number, W: number[]): Record<number, St> => {
@@ -199,7 +199,7 @@ export const Carousel: React.FC<{ g: number }> = ({ g }) => {
   const moving = MOVES.some((m) => m.b > n - 0.5 && m.a < n) || (n >= 1123 && n <= 1126);
   const times = moving ? Array.from({ length: SAMPLES }, (_, i) => n - 0.5 + (0.5 * (i + 0.5)) / SAMPLES) : [n];
   // 1126: Marketing (smeared, still ~85 %) dissolves into the first, still dark frame of the final line
-  const finalOp = n >= 1127 ? 1 : n === 1126 ? 0.35 : 0;
+  const finalOp = n >= 1127 ? 1 : n === 1126 ? 0.15 : 0;
   const trackFade = n >= 1127 ? 0 : n === 1126 ? 0.85 : 1;
   const sc = S(n);
   if (n === 1080 || n === 1141) console.log("S8", n, JSON.stringify({ fs: fs.map((v) => +v.toFixed(1)), W: W.map((v) => +v.toFixed(1)), fin: [+fitFs(FINAL, FIN_FS0, MAXW).toFixed(1), +inkW(FINAL, fitFs(FINAL, FIN_FS0, MAXW)).toFixed(1)] }));

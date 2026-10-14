@@ -150,7 +150,7 @@ const ActionPill: React.FC<{ g: number }> = ({ g }) => {
   const pop = kf(g, [[338, 0.45], [339, 0.62], [340, 0.75], [341, 0.82], [342, 0.87], [343, 0.9], [344, 0.92], [345, 0.945], [346, 0.965], [347, 0.98], [348, 0.995], [349, 1]]);
   const press = kf(g, [[358, 1], [359, 0.97], [360, 0.9], [361, 0.9], [362, 0.925], [363, 0.953], [364, 0.967], [365, 0.981], [366, 0.99], [367, 1]]);
   const hov = kf(g, [[360, 0], [361, 0.2], [364, 0.6], [367, 0.87], [369, 1]]);
-  const cx = kf(g, [[360, 664], [372, 652]]), s = pop * press;
+  const cx = kf(g, [[338, 604], [339, 622], [340, 639], [341, 652], [342, 664], [360, 664], [372, 652]]), s = pop * press * kf(g, [[366, 1], [370, 1.035]]);
   const fs = 19, lw = ink(LABEL, 600, fs, F.ui, 0).w, gap = 7, sp = 6.5;
   const x0 = -(lw + gap + 2 * sp) / 2;
   return (
@@ -194,20 +194,20 @@ const TypedLine: React.FC<{ text: string; n: number; x: number; base: number; op
 /** the card's rim in flat space: a deep-blue line strongest on the left and bottom, fading to the right; the top edge is dark
  *  while the outline settles and turns to a light highlight by 360; the right edge is soft */
 const RIM_C = "#3A62C8";
-const Rim: React.FC<{ top: number; bot: number; rad: number; op: number; dark: number }> = ({ top, bot, rad, op, dark }) => {
-  const r = rad, u = `M0 ${top + r} V${bot - r} A${r} ${r} 0 0 0 ${r} ${bot} H${CW - r} A${r} ${r} 0 0 0 ${CW} ${bot - r} V${top + r}`;
-  const cap = `M0 ${top + r} A${r} ${r} 0 0 1 ${r} ${top} H${CW - r} A${r} ${r} 0 0 1 ${CW} ${top + r}`;
+const Rim: React.FC<{ x0: number; x1: number; top: number; bot: number; rad: number; op: number; dark: number }> = ({ x0, x1, top, bot, rad, op, dark }) => {
+  const r = rad, u = `M${x0} ${top + r} V${bot - r} A${r} ${r} 0 0 0 ${x0 + r} ${bot} H${x1 - r} A${r} ${r} 0 0 0 ${x1} ${bot - r} V${top + r}`;
+  const cap = `M${x0} ${top + r} A${r} ${r} 0 0 1 ${x0 + r} ${top} H${x1 - r} A${r} ${r} 0 0 1 ${x1} ${top + r}`;
   return (
     <svg width={CW} height={CH} style={{ position: "absolute", left: 0, top: 0, overflow: "visible", opacity: op }}>
       <defs>
         <linearGradient id="s3-rim" gradientUnits="userSpaceOnUse" x1={0} x2={CW} y1={0} y2={0}>
-          <stop offset={0} stopColor={RIM_C} stopOpacity={1} /><stop offset={0.5} stopColor={RIM_C} stopOpacity={0.62} /><stop offset={1} stopColor={RIM_C} stopOpacity={0.22} />
+          <stop offset={0} stopColor={RIM_C} stopOpacity={0.9} /><stop offset={0.5} stopColor={RIM_C} stopOpacity={0.45} /><stop offset={1} stopColor={RIM_C} stopOpacity={0.14} />
         </linearGradient>
       </defs>
       <path d={u} fill="none" stroke="url(#s3-rim)" strokeWidth={3} />
       <path d={cap} fill="none" stroke="url(#s3-rim)" strokeWidth={2.5} opacity={dark} />
       <path d={cap} fill="none" stroke="#FFFFFF" strokeOpacity={0.75 * (1 - dark)} strokeWidth={1.5} transform="translate(0 2)" />
-      <path d={`M${CW} ${top + r} V${bot - r}`} fill="none" stroke="#DCE6FA" strokeOpacity={0.5} strokeWidth={7} style={{ filter: "blur(3px)" }} />
+      <path d={`M${x1} ${top + r} V${bot - r}`} fill="none" stroke="#DCE6FA" strokeOpacity={0.5} strokeWidth={7} style={{ filter: "blur(3px)" }} />
     </svg>
   );
 };
@@ -215,8 +215,10 @@ const Rim: React.FC<{ top: number; bot: number; rad: number; op: number; dark: n
 // ------------------------------------------------------------------------------------------------------------------ card
 export const Card: React.FC<{ g: number }> = ({ g }) => {
   if (g < 337 || g > 386) return null;
-  const { q, top, bot, rad } = pose(g);
-  const content = kf(g, [[337, 0], [338, 0.1], [339, 0.2], [340, 0.35], [341, 0.5], [342, 0.6], [344, 0.8], [347, 1]]);
+  const p = pose(g), q = p.q, rad = p.rad;
+  const e = kf(g, [[352, 0], [366, 3], [376, 5.5], [382, 9], [386, 11]]);
+  const x0 = -e, x1 = CW + e, top = p.top - e, bot = p.bot + e * 1.15;
+  const content = kf(g, [[337, 0], [338, 0.07], [339, 0.16], [340, 0.32], [341, 0.5], [342, 0.6], [344, 0.8], [347, 1]]);
   const cBlur = kf(g, [[338, 3], [339, 3], [340, 2], [341, 1], [342, 0]]);
   const rim = kf(g, [[338, 0], [339, 0.25], [340, 0.55], [341, 0.8], [342, 1]]);
   const field = kf(g, [[337, 1], [341, 0]]); // the input field's look fading into the card's
@@ -230,17 +232,19 @@ export const Card: React.FC<{ g: number }> = ({ g }) => {
     <div style={{ position: "absolute", inset: 0, filter: smear ? `url(#s3-smear-${Math.round(smear)})` : undefined }}>
       {smear > 0 && (
         <svg width={0} height={0} style={{ position: "absolute" }}>
-          <filter id={`s3-smear-${Math.round(smear)}`} x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation={`${smear / 2.2} 0`} /></filter>
+          <filter id={`s3-smear-${Math.round(smear)}`} x="0" y="0" width="1" height="1">
+            <feConvolveMatrix order={`${Math.round(smear) + 1} 1`} kernelMatrix={Array(Math.round(smear) + 1).fill(1).join(" ")} edgeMode="none" preserveAlpha="false" />
+          </filter>
         </svg>
       )}
       <div style={{ position: "absolute", left: 0, top: 0, width: CW, height: CH, transformOrigin: "0 0", transform: matrix3d(q) }}>
         {/* glass body: shadow, fill and rim */}
-        <div style={{ position: "absolute", left: 0, top, width: CW, height: H, borderRadius: rad, filter: oBlur ? `blur(${oBlur}px)` : undefined,
+        <div style={{ position: "absolute", left: x0, top, width: x1 - x0, height: H, borderRadius: rad, filter: oBlur ? `blur(${oBlur}px)` : undefined,
           boxShadow: `12px 18px 60px rgba(18,60,130,${0.12 * rim})`,
           background: `linear-gradient(180deg, rgba(255,255,255,${0.1 * (1 - field)}) 0%, rgba(255,255,255,0) 35%), linear-gradient(90deg, rgba(246,250,255,${lerp(0.22, 0.5, field)}) 0%, rgba(246,250,255,${lerp(0.18, 0.36, field)}) 60%, rgba(246,250,255,${lerp(0.15, 0.26, field)}) 100%)` }} />
-        <div style={{ position: "absolute", left: 0, top, width: CW, height: H, borderRadius: rad, boxSizing: "border-box", filter: oBlur ? `blur(${oBlur}px)` : undefined,
+        <div style={{ position: "absolute", left: x0, top, width: x1 - x0, height: H, borderRadius: rad, boxSizing: "border-box", filter: oBlur ? `blur(${oBlur}px)` : undefined,
           border: `1.5px solid rgba(5,15,25,${0.1 * field})` }} />
-        <Rim top={top} bot={bot} rad={rad} op={rim} dark={kf(g, [[342, 0.9], [352, 0.8], [360, 0.12]])} />
+        <Rim x0={x0} x1={x1} top={top} bot={bot} rad={rad} op={rim} dark={0.85} />
         {/* the out-of-focus chip inside the card (top right) */}
         <div style={{ position: "absolute", left: 548, top: 6, width: 254, height: 50, borderRadius: 25, background: "rgba(63,140,232,0.22)", filter: "blur(14px)", opacity: blob }} />
         {/* content: sharp on the left, softer on the right (depth of field) */}
@@ -272,7 +276,7 @@ export const Ghosts: React.FC<{ g: number }> = ({ g }) => {
         <div style={{ position: "absolute", left: w * 0.8, top: w * 0.1, width: w * 0.16, height: w * 0.16, borderRadius: "50%", background: C.glowDeep }} />
       </div>
       {g >= 364 && (
-        <div style={{ position: "absolute", left: bx, top: by - 420, width: bl, height: 420, background: C.glowDeep, opacity: 0.1, filter: "blur(9px)",
+        <div style={{ position: "absolute", left: bx, top: by - 420, width: bl, height: 420, background: C.glowDeep, opacity: 0.16, filter: "blur(9px)",
           transformOrigin: "0 100%", transform: "rotate(-12deg) skewX(-10deg)", borderRadius: 18 }} />
       )}
     </>

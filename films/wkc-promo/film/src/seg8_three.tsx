@@ -116,7 +116,7 @@ const drawRings = (ctx: CanvasRenderingContext2D, n: number) => {
     const outer: El = { cx, cy, a: as[4], b: as[4] * ratio }, inner: El = { cx, cy, a: am, b: am * ratio };
     ctx.save();
     ctx.filter = `blur(${10 * s}px)`;
-    ctx.fillStyle = conic(ctx, outer, (d) => rampRGBA(0.24, 0.6 * Math.pow(lvl(p, d), 0.6)));
+    ctx.fillStyle = conic(ctx, outer, (d) => rampRGBA(0.24, 0.3 * Math.pow(lvl(p, d), 0.6)));
     ctx.beginPath();
     ctx.ellipse(outer.cx, outer.cy, outer.a, outer.b, 0, 0, Math.PI * 2);
     ctx.ellipse(inner.cx, inner.cy, inner.a, inner.b, 0, 0, Math.PI * 2, true);
@@ -272,9 +272,10 @@ export const ThreeShot: React.FC<{ g: number }> = ({ g }) => {
   const g7 = tv(n, [[1002, 1], [1003, 0.84], [1004, 0.65], [1005, 0.48], [1006, 0.31], [1007, 0.16], [1008, 0.07], [1009, 0.02], [1010, 0]]);
   const dark = tv(n, [[1001, 0], [1002, 0.5], [1003, 1], [1004, 1], [1005, 0.7], [1006, 0.35], [1007, 0.1], [1008, 0]]);
   const phase2 = n >= 1032;
-  // extra defocus of the outgoing shot (spec 4A: centre text 1.5 -> 15, cards 4 -> 21, on top of its own depth of field)
-  const blurC = tv(n, [[1002, 0], [1003, 3], [1004, 5], [1005, 8], [1006, 11], [1007, 14], [1008, 14]]);
-  const blurO = tv(n, [[1002, 3], [1003, 8], [1004, 14], [1005, 15], [1008, 15]]);
+  // extra defocus of the outgoing shot: the spec's fitted sigmas (up to 21) are confounded by its zoom and fade; on the
+  // reference frames the cards and the "200+ Clients" text stay readable through 1006, so only a light softening is added
+  const blurC = tv(n, [[1002, 0], [1003, 0.8], [1005, 2], [1007, 4], [1008, 5]]);
+  const blurO = tv(n, [[1002, 1], [1003, 2], [1004, 3], [1008, 4]]);
 
   // "3": opacity / blur entrance, centre (962, y), cap 188*s
   const tOp = n < 1005 ? 0 : tv(n, [[1005, 0.44], [1006, 0.62], [1007, 0.81], [1008, 1]]) * exitOp;
@@ -293,10 +294,10 @@ export const ThreeShot: React.FC<{ g: number }> = ({ g }) => {
               maskImage: "radial-gradient(ellipse 760px 300px at 960px 560px, rgba(0,0,0,0) 30%, #000 100%)" }} />
           )}
           <AbsoluteFill style={{ opacity: dark, background: "linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 100%)" }} />
-          <AbsoluteFill style={{ mixBlendMode: "plus-lighter", opacity: 1 - g7 }}><Ground glow={0.45} /></AbsoluteFill>
+          <AbsoluteFill style={{ mixBlendMode: "plus-lighter", opacity: 1 - g7 }}><Ground glow={0.3} /></AbsoluteFill>
         </>
       ) : (
-        <Ground glow={0.45} corner={smooth(1031, 1038, n)} />
+        <Ground glow={0.3} corner={smooth(1031, 1038, n)} />
       )}
       <AbsoluteFill style={{ opacity: layerIn * exitOp }}>
         <RingLayer n={n} blur={ringBlur} />
