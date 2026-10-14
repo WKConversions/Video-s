@@ -61,6 +61,7 @@ const GlassTile: React.FC<{ t: Tile; s: number }> = ({ t, s }) => {
     body = (
       <>
         <Img src={staticFile(t.src!)} style={{ position: "absolute", left: ins, top: ins, width: w - 2 * ins - 5, height: ph - ins, objectFit: "cover", objectPosition: t.pos, borderRadius: `${r - ins}px ${r - ins}px 12px 12px` }} />
+        <div style={{ position: "absolute", left: ins, top: ins + (ph - ins) * 0.62, width: w - 2 * ins - 5, height: (ph - ins) * 0.38, borderRadius: "0 0 12px 12px", background: "linear-gradient(180deg, rgba(10,22,48,0) 0%, rgba(10,22,48,0.42) 100%)" }} />
         <div style={{ position: "absolute", left: 0, width: w - 5, top: h * 0.82 - 18 - 2.5, textAlign: "center", fontFamily: F.ui, fontWeight: 600, fontSize: 36, lineHeight: "36px", color: "#FFFFFF", letterSpacing: "-0.01em" }}>{t.label}</div>
       </>
     );

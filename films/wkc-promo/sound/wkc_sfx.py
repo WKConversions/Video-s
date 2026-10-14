@@ -10,6 +10,7 @@
 import json, os, wave
 import numpy as np
 from scipy.signal import butter, sosfilt, stft, istft, fftconvolve
+from scipy.ndimage import minimum_filter1d
 
 SR = 48000
 OUT = "lib/sfx/wkc"
@@ -119,16 +120,30 @@ def stereo(x, pan=0.0, width=0.0006):
     return np.stack([L * np.cos(a) * np.sqrt(2), R * np.sin(a) * np.sqrt(2)], 1) if pan else np.stack([L, R], 1)
 def wide(xl, xr): return np.stack([xl[:min(len(xl), len(xr))], xr[:min(len(xl), len(xr))]], 1)
 
+def crest_limit(st, crest_db=13.0, win=0.02, release=0.015):
+    """Keep every peak within crest_db of the sound's loudest 20 ms (RMS): a click or a noise tick keeps its snap but
+    stops spiking 20 dB over its own body, so it can be heard over the beat without pushing the mix into the limiter."""
+    p = np.abs(st).max(1); k = int(win * SR)
+    r = np.sqrt(np.convolve((st ** 2).mean(1), np.ones(k) / k, "same"))
+    need = np.minimum(1.0, r.max() * 10 ** (crest_db / 20) / np.maximum(p, 1e-12))
+    need = minimum_filter1d(need, 2 * int(0.0005 * SR) + 1)
+    g = np.empty_like(need); cur = 1.0; rel = np.exp(-1 / (release * SR))
+    for i in range(len(need)):
+        v = need[i]; cur = v if v < cur else v + (cur - v) * rel; g[i] = cur
+    return st * g[:, None]
+
 items = []
-def save(id, y, cat, sync, note, rev=0.12, length=0.8, decay=0.2, pan=0.0, cut=None, peak=0.7):
+def save(id, y, cat, sync, note, rev=0.12, length=0.8, decay=0.2, pan=0.0, cut=None, peak=0.7, crest=13.0):
     """Write lib/sfx/wkc/<id>.wav. `cut` (s) hard-cuts the file there (2 ms fade): the reverse swooshes and risers."""
     st = y if y.ndim == 2 else stereo(y)
+    if crest: st = crest_limit(st, crest)
     if rev > 0: st = reverb(st, length, rev, decay, seed=len(items) + 3)
     if pan: st = stereo(st, pan)
     if cut is not None:
         k = int(round(cut * SR)); st = st[:k].copy(); f = int(0.002 * SR); st[-f:] *= np.linspace(1, 0, f)[:, None]
     else:                                   # trim the silent tail
         e = np.abs(st).max(1); k = np.nonzero(e > e.max() * 10 ** (-70 / 20))[0]; st = st[: k[-1] + 1 if len(k) else len(st)]
+    if cat in ("tap", "pop", "ticker", "data", "gear"): st = crest_limit(st, 10.0, 0.02, 0.01)   # brief sounds: more body per peak
     st = st / (np.abs(st).max() + 1e-12) * peak
     with wave.open(f"{OUT}/{id}.wav", "wb") as w:
         w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR)
@@ -173,8 +188,8 @@ def uiblip(f_hi, f_lo, seed, n=0.075, d=0.02, hi_amp=0.55, click_amp=0.35):
 # =====================================================================================================================
 S = save
 # ---- 0-3.3 s: "Meet", the wkc logo, the riser into the drop -------------------------------------------------------
-for k, (lo, d, f) in enumerate([(5000, 0.006, None), (3500, 0.008, 9500), (6500, 0.005, None), (4000, 0.007, 11000), (5500, 0.009, None)]):
-    y = tick(100 + k, lo, f, d, 0.05) * 0.9 + band(noise(0.05, 110 + k), 9000, None, 2) * np.exp(-T(0.05) / 0.012) * 0.25
+for k, (lo, d, f) in enumerate([(5000, 0.014, None), (3500, 0.017, 9500), (6500, 0.013, None), (4000, 0.016, 11000), (5500, 0.019, None)]):
+    y = tick(100 + k, lo, f, d, 0.07, 0.002) * 0.9 + band(noise(0.07, 110 + k), 9000, None, 2) * np.exp(-T(0.07) / 0.022) * 0.3
     S(f"wk-meet-{k + 1}", y, "tap", 0.0, f"soft airy tick {k + 1} of 5 on the 'Meet' letters (closed-hat-like, {lo // 1000}-12 kHz)", rev=0.1, length=0.4, decay=0.08)
 S("wk-glitch-logo", glitch(201, 0.52, 0.05, 4, 7000, 4000, 9, 8000, 12000, 48, 6, 0.15), "glitch", 0.15,
   "glitch swoosh into the wkc monogram + wordmark glow (attack 4.5 f before the flash; chirps 7->4 kHz)", rev=0.14, length=0.9)
@@ -207,7 +222,7 @@ S("wk-click-word", y, "pop", 0.0167, "a crisp click on 'click' with five bubble 
 # ---- 5-7.5 s: "Explain. Engage. Convert." --------------------------------------------------------------------------
 S("wk-glitch-engage", glitch(801, 0.52, 0.117, 5, 9000, 5000, 12, 10000, 12000, 62, 4, 0.15), "glitch", 0.15,
   "glitch swoosh on 'Engage.' (the keyframe snap); chirps 9->5 kHz at f168-171, bubbly blips 10-12 kHz after", rev=0.14, length=0.9)
-y = add(tick(1001, 8000, 12000, 0.012, 0.08) * 0.8, ping(hz("D#9"), 0.07, 0.012) * 0.25)
+y = add(tick(1001, 8000, 12000, 0.016, 0.08, 0.001) * 0.8, ping(hz("D#9"), 0.07, 0.014) * 0.25)
 S("wk-tick-convert", y, "tap", 0.0, "small bright tick (8-12 kHz), slightly left: 'Convert.' lights", rev=0.08, length=0.4, pan=-0.3)
 
 # ---- 7.3-10 s: "Or just look incredible." -------------------------------------------------------------------------
@@ -242,9 +257,9 @@ y = add(np.sin(2 * np.pi * np.cumsum(np.linspace(140, 70, int(0.12 * SR))) / SR)
 S("wk-settle-card", y, "tap", 0.0, "soft low thump with a 9 kHz tick: the brief settles into its card", rev=0.1, length=0.5)
 
 # ---- 12.7-18 s: the brief breaks into storyboard frames, the 3D tilt, the Export cut -------------------------------
-n = 0.62; y = sub808(n, hz("G#1"), hz("A0") * 1.0, 0.04, 0.3, 0.01, 0.35, 2.4, 0.8)
+n = 0.62; y = sub808(n, hz("E1"), hz("A0") * 1.0, 0.04, 0.3, 0.01, 0.35, 2.4, 0.8)      # E1, under the track's G#1 808 here
 y *= np.interp(T(n), [0, 0.2, 0.267, 0.62], [0.35, 0.8, 1.0, 0.0]) ** 1.0
-S("wk-subdrop-frames", y, "impact", 0.267, "sub drop: an 808 glide G#1 -> A0 (52 -> 28 Hz) peaking as the storyboard frames fly in", rev=0.0)
+S("wk-subdrop-frames", y, "impact", 0.267, "sub drop: an 808 glide E1 -> A0 (41 -> 28 Hz) peaking as the storyboard frames fly in", rev=0.0)
 r = np.random.default_rng(2101); y = Z(0.56)
 for k in range(10):
     a = 0.012 + 0.048 * k + 0.012 * r.random()
@@ -313,7 +328,7 @@ S("wk-revswoosh-versions", revswoosh(0.35, 3801, 2000, 16000, 0.14), "whoosh", 0
 
 # ---- 29-33.5 s: design details, the founders ------------------------------------------------------------------------
 n = 0.5; y = sub808(n, hz("A1") * 0.95, hz("B0"), 0.0, 0.2, 0.004, 0.2, 2.4)
-y = y * np.interp(T(n), [0, 0.0667, 0.25, 0.5], [0.6, 1.0, 0.5, 0.0]); place(y, tick(4001, 4000, None, 0.006, 0.05) * 1.2, 0.0667)
+y = y * np.interp(T(n), [0, 0.0667, 0.25, 0.5], [0.6, 1.0, 0.5, 0.0]); place(y, tick(4001, 4000, None, 0.008, 0.06, 0.001) * 0.45, 0.0667)
 S("wk-subdrop-detail", y, "impact", 0.0667, "808 glide 54 -> 31 Hz with a bright burst on the cut to 'Detail-driven design' (f908)", rev=0.05, length=0.6)
 S("wk-blip-clear", uiblip(hz("A9") * 1.002, hz("F#8"), 4101, 0.08, 0.022, 0.6, 0.4), "pop", 0.02, "UI blip 14 + 6 kHz: 'Clear messaging' pops in", rev=0.1, length=0.5)
 S("wk-blip-smooth", uiblip(hz("B9") * 0.95, hz("A7") * 1.0, 4201, 0.085, 0.026, 0.45, 0.3), "pop", 0.05, "UI blip 15 + 3.5 kHz: 'Smooth transitions' pops in", rev=0.12, length=0.5)
@@ -332,9 +347,9 @@ S("wk-whoosh-formats", y, "whoosh", 0.0133, "whoosh with a 1.5 kHz (F#6) tonal c
 n = 0.15; y = sweepband(n, 3000, 11000, 2.0, 4801, 0.6) * (T(n) / n) ** 1.6 * np.minimum(1, (n - T(n)) / 0.012)
 S("wk-swish-builtfor", y, "swipe", 0.2233, "bright swish (2-14 kHz) into the cut to the first 'Built for' (f1065)", rev=0.06, length=0.4)
 for k, (note, lo) in enumerate([("C#8", 6500), ("D#8", 7000), ("E8", 7500), ("F#8", 8000), ("G#8", 8500), ("B8", 7200)]):
-    n = 0.075 if k < 5 else 0.11
-    y = add(band(noise(n, 4901 + k), lo, lo * 1.7, 2) * env_ad(n, 0.0008, 0.012 + 0.002 * k), ping(hz(note), n, 0.014) * 0.22,
-            tick(4911 + k, 9000, None, 0.0015, 0.02) * 0.4)
+    n = 0.08 if k < 5 else 0.12
+    y = add(band(noise(n, 4901 + k), lo, lo * 1.7, 2) * env_ad(n, 0.003, 0.032 + 0.003 * k) * np.clip((n - T(n)) / 0.015, 0, 1), ping(hz(note), n, 0.02) * 0.22,
+            tick(4911 + k, 9000, None, 0.002, 0.02) * 0.25)
     S(f"wk-built-{k + 1}", y, "ticker", 0.0, f"word-swap tick {k + 1} of 6 (bright noise, centroid ~8-9 kHz, with a faint {note[:-1]} ping): 'Built for' statement {k + 1}",
       rev=0.06, length=0.4)
 

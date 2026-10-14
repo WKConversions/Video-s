@@ -165,15 +165,15 @@ export const Glyph: React.FC<{ k: string; h: number; color: string; style?: Reac
 // ---------- text with a moving linear opacity ramp (the reference's left-to-right reveal / wipe-out)
 export const BASE = 0.8635; // baseline below the top of a line-height:1 box, in em (Inter / Inter Tight: ascender .969, descender .242)
 export type Wipe = { front?: number; W?: number; tail?: number; Wout?: number };
-export const textBox = (text: string, size: number, weight: number, family: string, track = 0) => {
-  const ls = track * size, w = tw(text, size, weight, family, track);
+export const textBox = (text: string, size: number, weight: number, family: string, track = 0, ws = 0) => {
+  const ls = track * size, w = tw(text, size, weight, family, track) + ws * size * (text.split(" ").length - 1);
   return { w, vis: w - ls, ls };
 };
 export const Txt: React.FC<{
-  text: string; size: number; weight: number; family: string; track?: number; cx: number; base: number; color?: string;
+  text: string; size: number; weight: number; family: string; track?: number; ws?: number; cx: number; base: number; color?: string;
   shadow?: string; wipe?: Wipe; opacity?: number;
-}> = ({ text, size, weight, family, track = 0, cx, base, color = "#FFFFFF", shadow, wipe, opacity = 1 }) => {
-  const { vis, ls } = textBox(text, size, weight, family, track);
+}> = ({ text, size, weight, family, track = 0, ws = 0, cx, base, color = "#FFFFFF", shadow, wipe, opacity = 1 }) => {
+  const { vis, ls } = textBox(text, size, weight, family, track, ws);
   const x0 = cx - vis / 2, P = 70;
   let mask: string | undefined;
   if (wipe) {
@@ -197,7 +197,7 @@ export const Txt: React.FC<{
   return (
     <div style={{
       position: "absolute", left: x0 - P, top: base - BASE * size - P, padding: P, whiteSpace: "nowrap", fontFamily: family, fontWeight: weight,
-      fontSize: size, lineHeight: `${size}px`, letterSpacing: ls, color, textShadow: shadow, opacity, WebkitMaskImage: mask, maskImage: mask,
+      fontSize: size, lineHeight: `${size}px`, letterSpacing: ls, wordSpacing: ws * size, color, textShadow: shadow, opacity, WebkitMaskImage: mask, maskImage: mask,
     }}>{text}</div>
   );
 };
@@ -234,24 +234,39 @@ export const Ring: React.FC<{ r: number; arcs: { a: number; peak: number }[]; cx
   );
 };
 
-// ---------- sample compositor: averages n copies of an opaque frame (plus-lighter, 1/n each) = motion blur;
-// with chans, each copy is split into R, G, B (multiply) under its own transform = RGB split.
+// ---------- sample compositor: n copies of the moving layers averaged with plus-lighter at 1/n each = motion blur
+// (the static background is drawn once, so its dark flat colours are not quantised n times); with chans, the whole
+// picture (background + blurred layers) is split into R, G, B (multiply) under its own transform = RGB split.
 export type Chan = { color: string; tf: string };
-export const Composite: React.FC<{ n: number; render: (u: number) => React.ReactNode; chans?: Chan[] }> = ({ n, render, chans }) => {
-  if (n <= 1 && !chans) return <>{render(0)}</>;
+const PL = "plus-lighter" as React.CSSProperties["mixBlendMode"];
+export const Composite: React.FC<{ n: number; fg: (u: number) => React.ReactNode; bg?: React.ReactNode; chans?: Chan[] }> = ({ n, fg, bg, chans }) => {
   const us = Array.from({ length: Math.max(1, n) }, (_, i) => (n <= 1 ? 0 : (i + 0.5) / n - 0.5));
-  const cs: (Chan | null)[] = chans ?? [null];
+  const moving = us.length === 1 ? fg(0) : (
+    <div style={{ position: "absolute", inset: 0, isolation: "isolate" }}>
+      {us.map((u, i) => <div key={i} style={{ position: "absolute", inset: 0, mixBlendMode: PL, opacity: 1 / us.length }}>{fg(u)}</div>)}
+    </div>
+  );
+  if (!chans) return <>{bg}{moving}</>;
   return (
     <div style={{ position: "absolute", inset: 0, isolation: "isolate" }}>
-      {cs.map((c, ci) => us.map((u, i) => (
-        <div key={`${ci}-${i}`} style={{
-          position: "absolute", inset: 0, isolation: "isolate", mixBlendMode: "plus-lighter" as React.CSSProperties["mixBlendMode"], opacity: 1 / us.length,
-          transform: c?.tf, transformOrigin: "960px 540px",
-        }}>
-          {render(u)}
-          {c && <div style={{ position: "absolute", inset: -400, background: c.color, mixBlendMode: "multiply" }} />}
+      {chans.map((c, i) => (
+        <div key={i} style={{ position: "absolute", inset: 0, isolation: "isolate", mixBlendMode: PL, transform: c.tf, transformOrigin: "960px 540px" }}>
+          {bg}{moving}
+          <div style={{ position: "absolute", inset: -400, background: c.color, mixBlendMode: "multiply" }} />
         </div>
-      )))}
+      ))}
+    </div>
+  );
+};
+/** a vertical box smear of L px made of n translated copies (one moving layer only) */
+export const Smear: React.FC<{ L: number; children: React.ReactNode }> = ({ L, children }) => {
+  const n = Math.min(16, Math.ceil(L / 2.5));
+  if (n <= 1) return <>{children}</>;
+  return (
+    <div style={{ position: "absolute", inset: 0, isolation: "isolate" }}>
+      {Array.from({ length: n }, (_, i) => (
+        <div key={i} style={{ position: "absolute", inset: 0, mixBlendMode: PL, opacity: 1 / n, transform: `translateY(${(((i + 0.5) / n - 0.5) * L).toFixed(2)}px)` }}>{children}</div>
+      ))}
     </div>
   );
 };

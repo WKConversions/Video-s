@@ -77,22 +77,28 @@ c("wk-blip-cta", 1170, "soft blip as the 'Let's talk' pill glows on (the referen
 c("wk-swell-talk", 1209, "#53 soft pad swell under 'Let's talk' (f1209-1218)", -5)
 c("wk-swell-url", 1227, "#53 second soft pad swell under wkconversions.com (f1227-1240)", -5)
 
-# The levels, set with a level check of every effect against the bed over its real span (the frames it sounds, not
-# just after its cue): "prominent" ones about 3 dB under the mix's loudest 100 ms, "medium" about 7, "subtle" about
-# 12, but none less than 3.5 dB over the bed where its body sounds (the mixer's masking rule, measured from where the
-# sound starts rather than from its cue frame, which a riser or a reverse swoosh ends on: heard, not just felt); sub hits lift
-# 30-120 Hz by about 8 dB; the risers, the logo glitch and sting, the last tick and the outro sounds against the
-# beat's plateau. These replace the first guesses above.
-LEVELS = {"wk-meet-1": -8, "wk-meet-2": -4, "wk-meet-3": -2, "wk-meet-4": -1, "wk-meet-5": -2, "wk-glitch-logo": -4,
-          "wk-riser-drop1": -1, "wk-drop1": -1, "wk-pop-that": -7, "wk-click-word": -5, "wk-glitch-engage": -3,
-          "wk-tick-convert": 1, "wk-blip-or": -1, "wk-swish-left": 3, "wk-swish-right": 4, "wk-swish-incredible": -2,
-          "wk-sparkle-incredible": -6, "wk-boom-brief": -2, "wk-type-brief": 9, "wk-type-done": 0, "wk-settle-card": -1,
-          "wk-pops-frames": 7, "wk-subdrop-frames": 4, "wk-swish-tilt": 1, "wk-pops-panel": -3, "wk-subdrop-export": 0,
-          "wk-click-export": -3, "wk-ring-export": -5, "wk-shimmer-drop2": -4, "wk-drop2": 0, "wk-glitch-showcase": 1,
-          "wk-pop-notify": -4, "wk-boom-platform": 2, "wk-swish-publish": 0, "wk-blip-web": 1, "wk-blip-linkedin": -7,
-          "wk-blip-insta": -3, "wk-ratchet": 0, "wk-revswoosh-versions": 7, "wk-subdrop-detail": -3, "wk-blip-clear": -5,
-          "wk-blip-smooth": 1, "wk-swish-frame": 1, "wk-swell-founders": 5, "wk-revswoosh-three": 1, "wk-whoosh-formats": 2,
-          "wk-swish-builtfor": 5, "wk-built-1": 4, "wk-built-2": 2, "wk-built-3": 3, "wk-built-4": 1, "wk-built-5": 5,
+# The levels, set with a level check of every effect against the bed over the frames it really sounds (a riser or a
+# reverse swoosh ends on its cue frame, a glitch swoosh starts 4-5 frames before it):
+#   - first by the reference's classes: "prominent" about 3 dB under the mix's loudest 100 ms, "medium" about 7,
+#     "subtle" about 12; sub hits lift 30-120 Hz by about 8 dB; the logo moment against the beat's plateau
+#   - then heard, not just felt: swooshes, risers and hits at least 3.5 dB over the bed in 100 ms loudness (the mixer's
+#     masking rule); brief sounds (ticks, clicks, blips, pops) lift their own band (2-16 kHz) by 4 to 50 dB, which
+#     is how the ear catches a 20 ms tick (the reference's word ticks lift theirs by 5-7 dB)
+#   - and no effect peaks above the beat around it (brief ones at most level with its peaks, swooshes and hits 2 dB
+#     over them; the "Meet" ticks at -7 to -13 dBFS like the reference's -9 to -14), so the master limiter never
+#     ducks the music for an effect; the sub hits and the storyboard pops, which stack on the track's own kick peaks,
+#     trimmed until the master limiter catches at most ~3 dB on a few drop kicks (0.03 % of the film over 1 dB).
+# These replace the first guesses above.
+LEVELS = {"wk-meet-1": -12, "wk-meet-2": -9, "wk-meet-3": -6, "wk-meet-4": -5, "wk-meet-5": -6, "wk-glitch-logo": -4,
+          "wk-riser-drop1": -1, "wk-drop1": -6, "wk-pop-that": -7, "wk-click-word": -7, "wk-glitch-engage": -3,
+          "wk-tick-convert": -3, "wk-blip-or": 0, "wk-swish-left": 2, "wk-swish-right": 2, "wk-swish-incredible": -2,
+          "wk-sparkle-incredible": -9, "wk-boom-brief": -4, "wk-type-brief": 9, "wk-type-done": 0, "wk-settle-card": -3,
+          "wk-pops-frames": 0, "wk-subdrop-frames": 0, "wk-swish-tilt": 0, "wk-pops-panel": -3, "wk-subdrop-export": 0,
+          "wk-click-export": -7, "wk-ring-export": -5, "wk-shimmer-drop2": -4, "wk-drop2": -5, "wk-glitch-showcase": 1,
+          "wk-pop-notify": -4, "wk-boom-platform": 2, "wk-swish-publish": 0, "wk-blip-web": -1, "wk-blip-linkedin": -3,
+          "wk-blip-insta": -4, "wk-ratchet": -3, "wk-revswoosh-versions": 4, "wk-subdrop-detail": -7, "wk-blip-clear": -5,
+          "wk-blip-smooth": -2, "wk-swish-frame": 1, "wk-swell-founders": 1, "wk-revswoosh-three": 1, "wk-whoosh-formats": 2,
+          "wk-swish-builtfor": 1, "wk-built-1": 1, "wk-built-2": -2, "wk-built-3": 1, "wk-built-4": -2, "wk-built-5": 2,
           "wk-built-6": -6, "wk-glitch-wkc": -4, "wk-sting-logo": -10, "wk-blip-cta": -14, "wk-swell-talk": -13,
           "wk-swell-url": -12}
 for e in cues: e["db"] = LEVELS[e["id"]]
@@ -104,7 +110,7 @@ assert set(ids) == lib, ("unused or missing sounds", lib ^ set(ids))
 assert all(0 <= x["frame"] < 1262 for x in cues)
 doc = {"fps": 30, "frames": 1262, "library": "lib", "auto_level": False,       # levels as written (set by ear-proxy: band lift per effect)
        "music": {"file": "music/cant-get-you-off-my-mind-fit.wav", "at": 0, "fade_in": 0.0, "fade_out": 0.0,
-                 "note": "Can't Get You Off My Mind (Michael Ramirez C., Mixkit, Mixkit Stock Music Free License), 150 BPM, cut to the reference: "
+                 "note": "Can't Get You Off My Mind (Michael Ramir C., Mixkit, Mixkit Stock Music Free License), 150 BPM, cut to the reference: "
                          "drop 1 f99, break f531, drop 2 f579, stop f1140, outro pad to 41.95 s"},
        "sfx": sorted(cues, key=lambda e: e["frame"])}
 json.dump(doc, open("cues.json", "w"), indent=1)

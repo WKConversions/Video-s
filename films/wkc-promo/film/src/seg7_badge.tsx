@@ -53,7 +53,7 @@ const Check: React.FC<{ x: number; y: number; s: number; color: string }> = ({ x
 );
 
 /** the badge drawn about its centre (0, 0) in a (BW + 2 pad) x (BH + 2 pad) SVG */
-export const Badge: React.FC<{ id: string; band: string; value: string; foot: string; valueSize?: number }> = ({ id, band, value, foot, valueSize = 62 }) => {
+export const Badge: React.FC<{ id: string; band: string; value: string; foot: string; valueSize?: number }> = ({ id, band, value, foot, valueSize = 66 }) => {
   const pad = 40, ux = (n: string) => `${id}-${n}`;
   const footSize = 33, footW = tw(foot, footSize, 500, F.ui) + 0.01 * footSize * foot.length, chk = 26, gap = 10;
   return (
@@ -118,7 +118,7 @@ export const Badge: React.FC<{ id: string; band: string; value: string; foot: st
       <g transform={`translate(${-39} ${-170 - 18}) scale(${78 / WKC_VIEW.w})`}>
         <path d={WKC_PATH} fill={`url(#${ux("mark")})`} />
       </g>
-      <text x={0} y={-92} textAnchor="middle" fill="#C8C8C8" style={{ fontFamily: F.ui, fontWeight: 600, fontSize: 29, letterSpacing: "-0.01em" }}>WKConversions</text>
+      <text x={0} y={-92} textAnchor="middle" fill="#C8C8C8" style={{ fontFamily: F.ui, fontWeight: 600, fontSize: 33, letterSpacing: "-0.01em" }}>WKConversions</text>
       {/* band label */}
       <text x={0} y={14} textAnchor="middle" fill="#161616" style={{ fontFamily: F.head, fontWeight: 900, fontSize: 47, letterSpacing: "0.01em" }}>{band}</text>
       {/* big embossed value */}

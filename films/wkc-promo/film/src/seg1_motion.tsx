@@ -103,7 +103,7 @@ const Rings: React.FC<{ f: number }> = ({ f }) => {
   for (const arc of ARCS) {
     const v = arcAt(f, arc.k);
     if (!v) continue;
-    const [s, p, e, lv] = v, L = Math.min(1, lv / 170);
+    const [s, p, e, lv] = v, L = Math.min(1, lv / 155);
     if (L < 0.01 || e - s < 1) continue;
     const r = R[arc.ring], n = Math.max(2, Math.ceil(e - s));
     const pts = Array.from({ length: n + 1 }, (_, i) => pt(r, s + ((e - s) * i) / n));
@@ -140,7 +140,7 @@ const Rings: React.FC<{ f: number }> = ({ f }) => {
         <g filter="url(#s1-rv)">{arcs.map((q, i) => <path key={i} d={q.d} stroke={`url(#s1-b${i})`} strokeWidth={200} strokeOpacity={0.24} />)}</g>
         <g filter="url(#s1-rw)">{arcs.map((q, i) => <path key={i} d={q.d} stroke={`url(#s1-b${i})`} strokeWidth={60} strokeOpacity={0.3} />)}</g>
         <g filter="url(#s1-rg)">{arcs.map((q, i) => <path key={i} d={q.d} stroke={`url(#s1-a${i})`} strokeWidth={7} strokeOpacity={0.55} />)}</g>
-        <g filter="url(#s1-rc)">{arcs.map((q, i) => <path key={i} d={q.d} stroke={`url(#s1-a${i})`} strokeWidth={2.6} />)}</g>
+        <g filter="url(#s1-rc)">{arcs.map((q, i) => <path key={i} d={q.d} stroke={`url(#s1-a${i})`} strokeWidth={2.9} />)}</g>
       </g>
     </svg>
   );

@@ -4,7 +4,7 @@
   "file": "sfx/wkc/wk-meet-1.wav",
   "category": "tap",
   "sync": 0.0,
-  "length": 0.364,
+  "length": 0.385,
   "licence": "generated",
   "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
   "character": "soft airy tick 1 of 5 on the 'Meet' letters (closed-hat-like, 5-12 kHz)"
@@ -14,7 +14,7 @@
   "file": "sfx/wkc/wk-meet-2.wav",
   "category": "tap",
   "sync": 0.0,
-  "length": 0.401,
+  "length": 0.408,
   "licence": "generated",
   "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
   "character": "soft airy tick 2 of 5 on the 'Meet' letters (closed-hat-like, 3-12 kHz)"
@@ -24,7 +24,7 @@
   "file": "sfx/wkc/wk-meet-3.wav",
   "category": "tap",
   "sync": 0.0,
-  "length": 0.352,
+  "length": 0.392,
   "licence": "generated",
   "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
   "character": "soft airy tick 3 of 5 on the 'Meet' letters (closed-hat-like, 6-12 kHz)"
@@ -34,7 +34,7 @@
   "file": "sfx/wkc/wk-meet-4.wav",
   "category": "tap",
   "sync": 0.0,
-  "length": 0.394,
+  "length": 0.407,
   "licence": "generated",
   "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
   "character": "soft airy tick 4 of 5 on the 'Meet' letters (closed-hat-like, 4-12 kHz)"
@@ -44,7 +44,7 @@
   "file": "sfx/wkc/wk-meet-5.wav",
   "category": "tap",
   "sync": 0.0,
-  "length": 0.382,
+  "length": 0.404,
   "licence": "generated",
   "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
   "character": "soft airy tick 5 of 5 on the 'Meet' letters (closed-hat-like, 5-12 kHz)"
@@ -94,7 +94,7 @@
   "file": "sfx/wkc/wk-click-word.wav",
   "category": "pop",
   "sync": 0.0167,
-  "length": 0.652,
+  "length": 0.66,
   "licence": "generated",
   "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
   "character": "a crisp click on 'click' with five bubble pips after it (f122.5-128)"
@@ -114,7 +114,7 @@
   "file": "sfx/wkc/wk-tick-convert.wav",
   "category": "tap",
   "sync": 0.0,
-  "length": 0.422,
+  "length": 0.434,
   "licence": "generated",
   "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
   "character": "small bright tick (8-12 kHz), slightly left: 'Convert.' lights"
@@ -214,10 +214,10 @@
   "file": "sfx/wkc/wk-subdrop-frames.wav",
   "category": "impact",
   "sync": 0.267,
-  "length": 0.598,
+  "length": 0.601,
   "licence": "generated",
   "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
-  "character": "sub drop: an 808 glide G#1 -> A0 (52 -> 28 Hz) peaking as the storyboard frames fly in"
+  "character": "sub drop: an 808 glide E1 -> A0 (41 -> 28 Hz) peaking as the storyboard frames fly in"
  },
  {
   "id": "wk-pops-frames",
@@ -394,7 +394,7 @@
   "file": "sfx/wkc/wk-subdrop-detail.wav",
   "category": "impact",
   "sync": 0.0667,
-  "length": 0.669,
+  "length": 0.652,
   "licence": "generated",
   "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
   "character": "808 glide 54 -> 31 Hz with a bright burst on the cut to 'Detail-driven design' (f908)"
@@ -474,7 +474,7 @@
   "file": "sfx/wkc/wk-built-1.wav",
   "category": "ticker",
   "sync": 0.0,
-  "length": 0.424,
+  "length": 0.462,
   "licence": "generated",
   "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
   "character": "word-swap tick 1 of 6 (bright noise, centroid ~8-9 kHz, with a faint C# ping): 'Built for' statement 1"
@@ -484,7 +484,7 @@
   "file": "sfx/wkc/wk-built-2.wav",
   "category": "ticker",
   "sync": 0.0,
-  "length": 0.425,
+  "length": 0.46,
   "licence": "generated",
   "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
   "character": "word-swap tick 2 of 6 (bright noise, centroid ~8-9 kHz, with a faint D# ping): 'Built for' statement 2"
@@ -494,7 +494,7 @@
   "file": "sfx/wkc/wk-built-3.wav",
   "category": "ticker",
   "sync": 0.0,
-  "length": 0.432,
+  "length": 0.464,
   "licence": "generated",
   "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
   "character": "word-swap tick 3 of 6 (bright noise, centroid ~8-9 kHz, with a faint E ping): 'Built for' statement 3"
@@ -504,7 +504,7 @@
   "file": "sfx/wkc/wk-built-4.wav",
   "category": "ticker",
   "sync": 0.0,
-  "length": 0.434,
+  "length": 0.462,
   "licence": "generated",
   "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
   "character": "word-swap tick 4 of 6 (bright noise, centroid ~8-9 kHz, with a faint F# ping): 'Built for' statement 4"
@@ -514,7 +514,7 @@
   "file": "sfx/wkc/wk-built-5.wav",
   "category": "ticker",
   "sync": 0.0,
-  "length": 0.437,
+  "length": 0.461,
   "licence": "generated",
   "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
   "character": "word-swap tick 5 of 6 (bright noise, centroid ~8-9 kHz, with a faint G# ping): 'Built for' statement 5"
@@ -524,7 +524,7 @@
   "file": "sfx/wkc/wk-built-6.wav",
   "category": "ticker",
   "sync": 0.0,
-  "length": 0.445,
+  "length": 0.498,
   "licence": "generated",
   "source": "generated for the WKConversions promo (wkc_sfx.py), royalty-free",
   "character": "word-swap tick 6 of 6 (bright noise, centroid ~8-9 kHz, with a faint B ping): 'Built for' statement 6"

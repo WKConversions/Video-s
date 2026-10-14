@@ -8,38 +8,38 @@
   "at": 0,
   "fade_in": 0.0,
   "fade_out": 0.0,
-  "note": "Can't Get You Off My Mind (Michael Ramirez C., Mixkit, Mixkit Stock Music Free License), 150 BPM, cut to the reference: drop 1 f99, break f531, drop 2 f579, stop f1140, outro pad to 41.95 s"
+  "note": "Can't Get You Off My Mind (Michael Ramir C., Mixkit, Mixkit Stock Music Free License), 150 BPM, cut to the reference: drop 1 f99, break f531, drop 2 f579, stop f1140, outro pad to 41.95 s"
  },
  "sfx": [
   {
    "id": "wk-meet-1",
    "frame": 9,
    "note": "#1 soft tick on the 'Meet' letters (1/5)",
-   "db": -8
+   "db": -12
   },
   {
    "id": "wk-meet-2",
    "frame": 18,
    "note": "#1 soft tick on the 'Meet' letters (2/5)",
-   "db": -4
+   "db": -9
   },
   {
    "id": "wk-meet-3",
    "frame": 21,
    "note": "#1 soft tick on the 'Meet' letters (3/5)",
-   "db": -2
+   "db": -6
   },
   {
    "id": "wk-meet-4",
    "frame": 27,
    "note": "#1 soft tick on the 'Meet' letters (4/5)",
-   "db": -1
+   "db": -5
   },
   {
    "id": "wk-meet-5",
    "frame": 33,
    "note": "#1 soft tick on the 'Meet' letters (5/5)",
-   "db": -2
+   "db": -6
   },
   {
    "id": "wk-glitch-logo",
@@ -57,7 +57,7 @@
    "id": "wk-drop1",
    "frame": 99,
    "note": "#4 DROP 1: 'Motion' lands on the first kick",
-   "db": -1
+   "db": -6
   },
   {
    "id": "wk-pop-that",
@@ -69,7 +69,7 @@
    "id": "wk-click-word",
    "frame": 123,
    "note": "#6 crisp click + bubble pips on 'click' (f122.5)",
-   "db": -5
+   "db": -7
   },
   {
    "id": "wk-glitch-engage",
@@ -81,25 +81,25 @@
    "id": "wk-tick-convert",
    "frame": 201,
    "note": "#10 small tick, slightly left: 'Convert.' lights",
-   "db": 1
+   "db": -3
   },
   {
    "id": "wk-blip-or",
    "frame": 219,
    "note": "#11 UI blip on the hard cut to 'Or.' (15 kHz, then 14 + 6 kHz at f221)",
-   "db": -1
+   "db": 0
   },
   {
    "id": "wk-swish-left",
    "frame": 228,
    "note": "#12 swish panned left (f227.5): the dots run out",
-   "db": 3
+   "db": 2
   },
   {
    "id": "wk-swish-right",
    "frame": 237,
    "note": "#13 darker swish panned right (f236.5): the dots keep growing",
-   "db": 4
+   "db": 2
   },
   {
    "id": "wk-swish-incredible",
@@ -111,13 +111,13 @@
    "id": "wk-sparkle-incredible",
    "frame": 265,
    "note": "#15 sparkle pop: 'incredible' snaps bold/3D",
-   "db": -6
+   "db": -9
   },
   {
    "id": "wk-boom-brief",
    "frame": 287,
    "note": "#16 low boom on the step-14 pickup (9.49 s) into the cut to the brief field",
-   "db": -2
+   "db": -4
   },
   {
    "id": "wk-type-brief",
@@ -135,25 +135,25 @@
    "id": "wk-settle-card",
    "frame": 347,
    "note": "#19 soft thump + tick: the brief settles into its card",
-   "db": -1
+   "db": -3
   },
   {
    "id": "wk-pops-frames",
    "frame": 384,
    "note": "#21 tiny bubble pops: the storyboard frames populate",
-   "db": 7
+   "db": 0
   },
   {
    "id": "wk-subdrop-frames",
    "frame": 389,
    "note": "#20 sub drop from f381, peaking as the storyboard frames fly in",
-   "db": 4
+   "db": 0
   },
   {
    "id": "wk-swish-tilt",
    "frame": 429,
    "note": "#22 short bright swish (from f427) into the 3D tilt",
-   "db": 1
+   "db": 0
   },
   {
    "id": "wk-pops-panel",
@@ -171,7 +171,7 @@
    "id": "wk-click-export",
    "frame": 549,
    "note": "#26 the cursor clicks Export (f548.4, second click 50 ms later)",
-   "db": -3
+   "db": -7
   },
   {
    "id": "wk-ring-export",
@@ -189,7 +189,7 @@
    "id": "wk-drop2",
    "frame": 579,
    "note": "#29 DROP 2: the showcase of client videos",
-   "db": 0
+   "db": -5
   },
   {
    "id": "wk-glitch-showcase",
@@ -219,37 +219,37 @@
    "id": "wk-blip-web",
    "frame": 767,
    "note": "#34 UI blip: the website card is selected (f766.5)",
-   "db": 1
+   "db": -1
   },
   {
    "id": "wk-blip-linkedin",
    "frame": 783,
    "note": "#35 UI blip: the selection jumps to LinkedIn (f782.7)",
-   "db": -7
+   "db": -3
   },
   {
    "id": "wk-blip-insta",
    "frame": 799,
    "note": "#36 reverse swell (from f797) into a rounder ping: Instagram",
-   "db": -3
+   "db": -4
   },
   {
    "id": "wk-ratchet",
    "frame": 807,
    "note": "#37 ratchet ticks (from f806.4): the toggle slides, 'Multiple versions'",
-   "db": 0
+   "db": -3
   },
   {
    "id": "wk-revswoosh-versions",
    "frame": 823,
    "note": "#38 reverse swoosh from f812.5, stopping dead at f823: 'One project'",
-   "db": 7
+   "db": 4
   },
   {
    "id": "wk-subdrop-detail",
    "frame": 908,
    "note": "#40 808 glide (from f906) + bright burst on the cut to 'Detail-driven design'",
-   "db": -3
+   "db": -7
   },
   {
    "id": "wk-blip-clear",
@@ -261,7 +261,7 @@
    "id": "wk-blip-smooth",
    "frame": 930,
    "note": "#42 UI blip: 'Smooth transitions' pops in (f928.5)",
-   "db": 1
+   "db": -2
   },
   {
    "id": "wk-swish-frame",
@@ -273,7 +273,7 @@
    "id": "wk-swell-founders",
    "frame": 965,
    "note": "#44 warm mid swell (from f954.6): the two founders' portraits blur in",
-   "db": 5
+   "db": 1
   },
   {
    "id": "wk-revswoosh-three",
@@ -291,37 +291,37 @@
    "id": "wk-swish-builtfor",
    "frame": 1065,
    "note": "#48 bright swish (f1058-1063) into the cut to the first 'Built for' statement (f1065)",
-   "db": 5
+   "db": 1
   },
   {
    "id": "wk-built-1",
    "frame": 1065,
    "note": "#49 word tick: 'Built for' statement 1 of 6",
-   "db": 4
+   "db": 1
   },
   {
    "id": "wk-built-2",
    "frame": 1080,
    "note": "#49 word tick: 'Built for' statement 2 of 6",
-   "db": 2
+   "db": -2
   },
   {
    "id": "wk-built-3",
    "frame": 1095,
    "note": "#49 word tick: 'Built for' statement 3 of 6",
-   "db": 3
+   "db": 1
   },
   {
    "id": "wk-built-4",
    "frame": 1110,
    "note": "#49 word tick: 'Built for' statement 4 of 6",
-   "db": 1
+   "db": -2
   },
   {
    "id": "wk-built-5",
    "frame": 1125,
    "note": "#49 word tick: 'Built for' statement 5 of 6",
-   "db": 5
+   "db": 2
   },
   {
    "id": "wk-built-6",

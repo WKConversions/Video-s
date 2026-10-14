@@ -4,7 +4,7 @@ import React, { useLayoutEffect, useRef } from "react";
 import { AbsoluteFill } from "remotion";
 import { F, clamp01, lerp } from "./lib";
 import { tw } from "./kit";
-import { ChromAb, Ground, hex, mix, smooth, tab, tv } from "./seg8_util";
+import { ChromAb, Ground, hex, ink, mix, smooth, tab, tv } from "./seg8_util";
 
 // ---- measured tables (spec seg8 §4A/4B, Table A; 1080p) ----
 /** layer scale s(n) */
@@ -26,11 +26,11 @@ const TY_TAB: [number, number][] = [
 ];
 /** ring centre y (measured 401 at 1020 from the top/bottom crossings) */
 const RY_TAB: [number, number][] = [
-  [1002, 400.5], [1022, 400.5], [1032, 403], [1044, 403], [1045, 405.5], [1046, 406.5], [1047, 408], [1048, 410], [1049, 411], [1050, 412],
-  [1051, 414], [1052, 416.5], [1053, 418.5], [1054, 422], [1055, 425], [1056, 429], [1057, 434], [1058, 441],
+  [1002, 400.5], [1031, 400.5], [1032, 400], [1036, 398], [1040, 403], [1044, 404], [1046, 407], [1048, 409.5], [1050, 412], [1052, 416],
+  [1054, 421], [1055, 425], [1056, 429], [1057, 433.5], [1058, 441],
 ];
-/** ring b/a */
-const RB_TAB: [number, number][] = [[1002, 0.52], [1022, 0.52], [1025, 0.535], [1031, 0.535], [1032, 0.515]];
+/** ring b/a (measured from the top/bottom crossings at x 960) */
+const RB_TAB: [number, number][] = [[1002, 0.52], [1031, 0.522], [1032, 0.525], [1036, 0.53], [1040, 0.523], [1050, 0.524], [1054, 0.519], [1058, 0.519]];
 /** layer exit opacity */
 const OP_TAB: [number, number][] = [[1053, 1], [1054, 0.88], [1055, 0.75], [1056, 0.59], [1057, 0.45], [1058, 0.32]];
 /** subtitle: line-1 box top y and subtitle scale (measured; 1005-1009 from the reference strips) */
@@ -218,9 +218,9 @@ const SubLine: React.FC<{ text: string; times: number[]; n: number; y: number; h
   const words: { w: string; i0: number; t: number }[] = [];
   let i = 0;
   for (const w of text.split(" ")) { words.push({ w, i0: i, t: times[i] }); i += w.length + 1; }
-  const full = tw(text, SUB_FS, 600, F.ui);
+  const k = ink(text, SUB_FS, 600, F.ui);
   const space = tw("a b", SUB_FS, 600, F.ui) - tw("ab", SUB_FS, 600, F.ui);
-  let x = -full / 2, extra = 0;
+  let x = -(k.l + k.r) / 2, extra = 0;
   return (
     <>
       {words.map((wd) => {
@@ -275,6 +275,7 @@ export const ThreeShot: React.FC<{ g: number }> = ({ g }) => {
   const tOp = n < 1005 ? 0 : tv(n, [[1005, 0.44], [1006, 0.62], [1007, 0.81], [1008, 1]]) * exitOp;
   const tBlur = tv(n, [[1005, 10.5], [1006, 9], [1007, 7.5], [1008, 7.5], [1009, 6], [1010, 6], [1011, 4.5], [1012, 4.5], [1013, 3], [1014, 2.25], [1015, 1.5], [1016, 0]]);
   const ty = tv(n, TY_TAB);
+  const k3 = ink("3", THREE_FS, 800, F.head);
 
   const scene = (
     <AbsoluteFill>
@@ -297,7 +298,7 @@ export const ThreeShot: React.FC<{ g: number }> = ({ g }) => {
               <stop offset="0" stopColor="#F7F7F8" /><stop offset="0.55" stopColor="#EEF1F5" /><stop offset="0.8" stopColor="#C3CCD7" /><stop offset="1" stopColor="#9AA6B4" />
             </linearGradient>
           </defs>
-          <text x={962} y={ty + 94 * s} textAnchor="middle" fontFamily={F.head} fontWeight={800} fontSize={THREE_FS * s} fill="url(#s8-three)">3</text>
+          <text x={962 - ((k3.l + k3.r) / 2) * s} y={ty + 94 * s} fontFamily={F.head} fontWeight={800} fontSize={THREE_FS * s} fill="url(#s8-three)">3</text>
         </svg>
       )}
       {n >= 1005 && <Subtitle n={n} op={exitOp} />}
@@ -305,3 +306,10 @@ export const ThreeShot: React.FC<{ g: number }> = ({ g }) => {
   );
   return <ChromAb on={phase2}>{scene}</ChromAb>;
 };
+
+/** the faint ghost of the rings behind the first carousel frames (<= 5 %) */
+export const RingGhost: React.FC<{ op: number }> = ({ op }) => (
+  <AbsoluteFill style={{ opacity: op, transform: "scale(1.7)", transformOrigin: "960px 470px" }}>
+    <RingLayer n={1058} blur={2} />
+  </AbsoluteFill>
+);

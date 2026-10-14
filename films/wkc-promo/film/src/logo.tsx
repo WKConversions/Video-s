@@ -35,18 +35,18 @@ export const spline = (x: number, k: [number, number][]) => {
 // ---------------------------------------------------------------------------------------------------------------
 // Lockup layout (local px, s = 1)
 export const LOGO = {
-  /** wkc mark box: x −564…−296 (268 × 124), vertically centred on the reference cap centre (y +8) */
-  mark: { x: -564, w: 268, cy: 8 },
+  /** wkc mark box: x −555…−287 (268 × 124), vertically centred on the reference cap centre (y +8) */
+  mark: { x: -555, w: 268, cy: 8 },
   /** wordmark baseline and type: "WK" Inter Tight 800, "Conversions" Inter Tight 300, both 116 px */
   base: 64.5,
   size: 116,
-  wk: { left: -261.75, weight: 800, track: -0.05, color: "#FFFFFF" },
-  conv: { left: -44.75, right: 564.25, weight: 300, color: "#F7F7F8" },
+  wk: { left: -252.75, weight: 800, track: -0.05, color: "#FFFFFF" },
+  conv: { left: -53.75, right: 555.25, weight: 300, color: "#F7F7F8" },
 };
 const MARK_H = (LOGO.mark.w * WKC_VIEW.h) / WKC_VIEW.w; // 124.0
 /** ink left side bearings at 116 px (W and C), measured from the rendered font */
 const LSB_W = 0.6, LSB_C = 6.4;
-/** tracking (em) that makes "Conversions" (300) fill its ink box exactly (−44.75 … +564.25) */
+/** tracking (em) that makes "Conversions" (300) fill its ink box exactly (609 px; one word with "WK": no word gap, the lockup centred) */
 const CONV_TRACK = -0.0075;
 
 /** clock value at which the reveal is complete (everything at rest) */
@@ -166,21 +166,27 @@ export const WkcLogo: React.FC<WkcLogoProps> = ({ t = 1e6, x = 966, y = 412, s =
           <feMerge><feMergeNode in="glow" /><feMergeNode in="src" /></feMerge>
         </filter>
         {bloomOn || core > 0.01 ? (
-          <filter id={`${id}-wb`} x="-150%" y="-300%" width="400%" height="700%" colorInterpolationFilters="sRGB">
+          <filter id={`${id}-wb`} x={-900} y={-700} width={1800} height={1400} filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
             <feGaussianBlur in="SourceAlpha" stdDeviation={Math.max(0.01, bs)} result="b" />
-            <feFlood floodColor={bloom} />
-            <feComposite in2="b" operator="in" result="c" />
-            <feComponentTransfer in="c" result="d"><feFuncA type="linear" slope={bloomOn ? bg : 0} /></feComponentTransfer>
+            <feGaussianBlur in="SourceAlpha" stdDeviation={Math.max(0.01, bs * 2.4)} result="b2" />
+            <feFlood floodColor={bloom} result="fl" />
+            <feComposite in="fl" in2="b" operator="in" result="c" />
+            <feComposite in="fl" in2="b2" operator="in" result="c2" />
+            <feComponentTransfer in="c" result="d"><feFuncA type="linear" slope={bloomOn ? bg * 1.3 : 0} /></feComponentTransfer>
+            <feComponentTransfer in="c2" result="d2"><feFuncA type="linear" slope={bloomOn ? bg * 2.2 : 0} /></feComponentTransfer>
             <feGaussianBlur in="SourceGraphic" stdDeviation={Math.max(0, core)} result="s" />
-            <feMerge><feMergeNode in="d" /><feMergeNode in="s" /></feMerge>
+            <feMerge><feMergeNode in="d2" /><feMergeNode in="d" /><feMergeNode in="s" /></feMerge>
           </filter>
         ) : null}
+        {bloomOn && <filter id={`${id}-fw`} x={-1100} y={-800} width={2200} height={1600} filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation={bs * 3.2} /></filter>}
         {ops.map((o, i) => o < 0.9 && <filter key={i} id={`${id}-c${i}`} x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation={(4.5 * clamp01((0.9 - o) / 0.8)) / s} /></filter>)}
       </defs>
       {/* the wkc mark, written on by its brush path */}
       <g transform={`translate(${mx} ${my}) scale(${mk})`} filter={`url(#${id}-mf)`}>
         <path d={WKC_PATH} fill={`url(#${id}-g)`} mask={write < 1 ? `url(#${id}-m)` : undefined} />
       </g>
+      {/* the reveal flash: a very soft light over the reference's bold-word footprint, behind the type */}
+      {bloomOn && <rect x={-340} y={-70} width={500} height={150} rx={75} fill={bloom} opacity={0.32 * bg} filter={`url(#${id}-fw)`} />}
       {/* WK (heavy): blooms and settles */}
       <g filter={bloomOn || core > 0.01 ? `url(#${id}-wb)` : undefined}>
         <text {...font(L.wk.weight)} fill={L.wk.color} x={w0 + wx[0]} y={L.base}

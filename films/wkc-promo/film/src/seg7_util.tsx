@@ -7,6 +7,8 @@ import { F } from "./lib";
 export const CAP = 0.727;
 export const fsCap = (cap: number) => cap / CAP;
 export const TRACK = -0.05;
+/** extra word space (em) so the tight brand tracking keeps words apart */
+export const WSP = 0.1;
 
 /** a per-frame table starting at frame f0 (linear between frames, clamped at the ends) */
 export const seqv = (g: number, f0: number, v: number[]) => {
@@ -20,8 +22,9 @@ export const seqv = (g: number, f0: number, v: number[]) => {
 /** x offsets of each character from the line's left edge and the line width (kerning kept, tracking applied) */
 export const glyphs = (text: string, size: number, weight = 800, family: string = F.head, track = TRACK) => {
   const xs: number[] = [];
-  for (let i = 0; i < text.length; i++) xs.push(tw(text.slice(0, i), size, weight, family) + i * track * size);
-  const w = tw(text, size, weight, family) + (text.length - 1) * track * size;
+  const sp = (t: string) => (t.match(/ /g) || []).length * WSP * size;
+  for (let i = 0; i < text.length; i++) xs.push(tw(text.slice(0, i), size, weight, family) + i * track * size + sp(text.slice(0, i)));
+  const w = tw(text, size, weight, family) + (text.length - 1) * track * size + sp(text);
   return { xs, w };
 };
 

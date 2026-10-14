@@ -62,10 +62,12 @@ const CUR: number[][] = [
   [574, 1655, 384, 0.98, 540, 0], [575, 1648, 382, 0.955, 540, 0], [576, 1634, 381, 0.92, 540, 0], [577, 1609, 382, 0.865, 540, 0],
   [578, 1560, 386, 0.76, 540, 0],
 ];
+/** extra in-plane lean while it tumbles in edge-on (the reference leans it like a backslash) */
+const LEAN: number[][] = [[530, 0], [531, 8], [532, 18], [533, 20], [534, 20], [535, 16], [536, 12], [537, 8], [538, 5], [540, 2], [542, 0]];
 // the shared Pointer (tip at 0,0, 100 units) mapped onto the reference's arrow (tip, right wing, bottom wing at frame 546)
 const M = "matrix(1.5095, 0.0857, -0.1238, 1.6357, 0, 0)";
 const CEN = [50, 63]; // centroid of the dark body relative to the tip, px at scale 1
-const CDEPTH = 26;
+const CDEPTH = 18;
 
 const Cursor: React.FC<{ g: number }> = ({ g }) => {
   const [x, y, s, ry, blur] = tab(g, CUR);
@@ -73,17 +75,18 @@ const Cursor: React.FC<{ g: number }> = ({ g }) => {
     <div key={key} style={{ position: "absolute", left: 0, top: 0, transform: `translateZ(${z}px) translate(${-CEN[0]}px, ${-CEN[1]}px) ${M}`, transformOrigin: "0 0" }}>
       {full ? <Pointer x={0} y={0} h={100} blur={blur} /> : (
         <svg width={100} height={100} viewBox="0 0 100 100" style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
-          <path d="M0 0 L100 40 L54 54 L40 100 Z" fill="#11131C" stroke="#11131C" strokeWidth={1.5} strokeLinejoin="round" />
+          <path d="M0 0 L100 40 L54 54 L40 100 Z" fill="#11131C" stroke="#11131C" strokeWidth={2.2} strokeLinejoin="round" />
         </svg>
       )}
     </div>
   );
   const mids = [];
-  for (let k = 1; k < 16; k++) mids.push(body(CDEPTH / 2 - (CDEPTH * k) / 16, `m${k}`, false));
+  for (let k = 1; k < 40; k++) mids.push(body(CDEPTH / 2 - (CDEPTH * k) / 40, `m${k}`, false));
   const rz = -16 * (1 - Math.cos((ry * Math.PI) / 180)) / 2; // the mirrored pose stands its long edge upright
+  const [lean] = tab(g, LEAN);
   return (
     <div style={{ position: "absolute", left: 0, top: 0, transformStyle: "preserve-3d", transformOrigin: "0 0",
-      transform: `translate(${x}px, ${y}px) perspective(1400px) rotateZ(${rz}deg) rotateY(${ry}deg) scale(${s})` }}>
+      transform: `translate(${x}px, ${y}px) perspective(1400px) rotateZ(${rz + lean}deg) rotateY(${ry}deg) scale(${s})` }}>
       {body(-CDEPTH / 2, "back", true)}
       {mids}
       {body(CDEPTH / 2, "front", true)}
@@ -139,50 +142,47 @@ const segAt = (g: number, rows: number[][]): [number, number, number] | null => 
 
 const Rings: React.FC<{ g: number }> = ({ g }) => {
   const cyanT = clamp01((g - 562) / 6);
-  const glow = `rgb(${Math.round(lerp(230, 160, cyanT))}, ${Math.round(lerp(240, 215, cyanT))}, ${Math.round(lerp(253, 250, cyanT))})`;
+  const glow = `rgb(${Math.round(lerp(230, 170, cyanT))}, ${Math.round(lerp(240, 220, cyanT))}, ${Math.round(lerp(253, 252, cyanT))})`;
   const parts: React.ReactNode[] = [], defs: React.ReactNode[] = [];
+  const cw = lerp(4.5, 13, clamp01((g - 558) / 16)), gw = cw + lerp(8, 18, clamp01((g - 562) / 12));
+  const stroke = (d: string, a: number, key: string, paint = "#FFFFFF") => a > 0.01 && (
+    <g key={key}>
+      <path d={d} fill="none" stroke={paint === "#FFFFFF" ? glow : paint} strokeWidth={gw} strokeOpacity={a * 0.55} filter="url(#s5rglow)" />
+      <path d={d} fill="none" stroke={paint} strokeWidth={cw} strokeOpacity={a} filter="url(#s5rsoft)" />
+    </g>
+  );
+  const fadeGrad = (id: string, x0: number, x1: number, fin: number, fout: number) => {
+    const len = Math.max(1, x1 - x0);
+    defs.push(
+      <linearGradient key={id} id={id} gradientUnits="userSpaceOnUse" x1={x0} y1={0} x2={x1} y2={0}>
+        <stop offset={0} stopColor="#fff" stopOpacity={fin > 0 ? 0 : 1} /><stop offset={Math.min(0.45, fin / len)} stopColor="#fff" stopOpacity={1} />
+        <stop offset={1 - Math.min(0.45, fout / len)} stopColor="#fff" stopOpacity={1} /><stop offset={1} stopColor="#fff" stopOpacity={0} />
+      </linearGradient>,
+    );
+    return `url(#${id})`;
+  };
   for (let k = 0; k < 4; k++) {
     const hh = hhOf(g, k);
     if (hh <= 0) continue;
     const age = g - BIRTH[k], fade = clamp01(age / 2);
     const L = hh * 1.76, x0 = RING_CX - L, x1 = RING_CX + L, yt = RING_CY - hh, yb = RING_CY + hh;
-    const late = clamp01((g - 559) / 9);
-    const aBot = fade * lerp(0.5, 0.78, clamp01(age / 12));
-    const aL = fade * late * (k === 3 ? 0.3 : 0.45), aR = aL * 0.5;
-    const cw = lerp(4.5, 12, clamp01((g - 558) / 18));
-    const stroke = (d: string, a: number, key: string) => a > 0.01 && (
-      <g key={key}>
-        <path d={d} fill="none" stroke={glow} strokeWidth={cw + 10} strokeOpacity={a * 0.5} filter="url(#s5rglow)" />
-        <path d={d} fill="none" stroke="#FFFFFF" strokeWidth={cw} strokeOpacity={a} strokeLinecap="round" filter="url(#s5rsoft)" />
-      </g>
-    );
+    const lStart = SEG_L[k][0][0], arcOn = clamp01((g - lStart + 1) / 6);
+    const aBot = fade * lerp(0.5, 0.8, clamp01(age / 12));
+    const aL = fade * arcOn * (k === 3 ? 0.6 : 0.85), aR = aL * 0.45;
     parts.push(stroke(`M${x0} ${yb} H${x1}`, aBot, `b${k}`));
     parts.push(stroke(`M${x0} ${yb} A${hh} ${hh} 0 0 1 ${x0} ${yt}`, aL, `l${k}`));
     parts.push(stroke(`M${x1} ${yt} A${hh} ${hh} 0 0 1 ${x1} ${yb}`, aR, `r${k}`));
-    ([[SEG_R[k], 0.62, "R"], [SEG_L[k], 0.8, "L"]] as [number[][], number, string][]).forEach(([rows, amp, tag]) => {
-      const sg = segAt(g, rows);
-      if (!sg || sg[1] - sg[0] < 2) return;
-      const [a0, a1, a] = sg, id = `s5seg${tag}${k}`, len = a1 - a0;
-      const e = Math.min(0.35, 60 / len);
-      defs.push(
-        <linearGradient key={id} id={id} gradientUnits="userSpaceOnUse" x1={a0} y1={0} x2={a1} y2={0}>
-          <stop offset={0} stopColor="#fff" stopOpacity={0} /><stop offset={e} stopColor="#fff" stopOpacity={1} />
-          <stop offset={1 - e} stopColor="#fff" stopOpacity={1} /><stop offset={1} stopColor="#fff" stopOpacity={0} />
-        </linearGradient>,
-      );
-      const op = a * amp * fade;
-      parts.push(
-        <g key={id} opacity={op}>
-          <path d={`M${a0} ${yt} H${a1}`} stroke={`url(#${id})`} strokeWidth={cw + 10} strokeOpacity={0.5} filter="url(#s5rglow)" />
-          <path d={`M${a0} ${yt} H${a1}`} stroke={`url(#${id})`} strokeWidth={cw} filter="url(#s5rsoft)" />
-        </g>,
-      );
-    });
+    // the long streak: the top run continuing out of the left arc, its head at the measured x1
+    const sl = g >= lStart ? tab(g, SEG_L[k])[1] : 0;
+    if (sl > x0 + 2) parts.push(stroke(`M${x0 - 1} ${yt} H${sl}`, fade * arcOn * 0.95, `t${k}`, fadeGrad(`s5gl${k}`, x0 - 1, sl, 0, 80)));
+    // the short segment sweeping right over the button and dying at the right end
+    const sr = segAt(g, SEG_R[k]);
+    if (sr && sr[1] - sr[0] > 2) parts.push(stroke(`M${sr[0]} ${yt} H${sr[1]}`, sr[2] * fade * 0.62, `u${k}`, fadeGrad(`s5gr${k}`, sr[0], sr[1], 60, 60)));
   }
   return (
     <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
       <defs>
-        <filter id="s5rglow" filterUnits="userSpaceOnUse" x={-400} y={-400} width={2720} height={1880}><feGaussianBlur stdDeviation={4} /></filter>
+        <filter id="s5rglow" filterUnits="userSpaceOnUse" x={-400} y={-400} width={2720} height={1880}><feGaussianBlur stdDeviation={5} /></filter>
         <filter id="s5rsoft" filterUnits="userSpaceOnUse" x={-400} y={-400} width={2720} height={1880}><feGaussianBlur stdDeviation={1.2} /></filter>
         {defs}
       </defs>
@@ -192,21 +192,21 @@ const Rings: React.FC<{ g: number }> = ({ g }) => {
 };
 
 // ---- halo shockwave behind the button (536-562): a soft ring, its bright lobe travelling counter-clockwise ----
-const HALO_PHI: number[][] = [[536, 80], [537, 65], [538, 45], [540, 20], [542, 5], [544, -20], [546, -42], [548, -60], [550, -72], [552, -78], [556, -80]];
+const HALO_PHI: number[][] = [[536, 134], [537, 112], [538, 90], [540, 46], [542, 2], [544, -42], [546, -86], [548, -130], [550, -136], [552, -140], [556, -142]];
 const Halo: React.FC<{ g: number }> = ({ g }) => {
   if (g < 535.5 || g > 562) return null;
   const env = clamp01((g - 535.5) / 2) * (1 - clamp01((g - 556) / 6));
   const [phi] = tab(g, HALO_PHI);
   const lobe = Array.from({ length: 25 }, (_, i) => {
     const a = i * 15, d = ((a - 90 - phi) * Math.PI) / 180; // conic 0deg = up; phi 0 = right (screen angles, y down)
-    const v = 0.03 + 0.97 * Math.pow((1 + Math.cos(d)) / 2, 0.65);
+    const v = 0.22 + 0.78 * Math.pow((1 + Math.cos(d)) / 2, 0.8);
     return `rgba(0,0,0,${v.toFixed(3)}) ${a}deg`;
   }).join(", ");
-  const ring = "radial-gradient(circle at 852px 518px, rgba(255,255,255,0) 400px, rgba(255,255,255,0.007) 420px, rgba(255,255,255,0.020) 440px, rgba(255,255,255,0.049) 460px, rgba(255,255,255,0.105) 480px, rgba(255,255,255,0.192) 500px, rgba(255,255,255,0.303) 520px, rgba(255,255,255,0.414) 540px, rgba(255,255,255,0.487) 560px, rgba(255,255,255,0.494) 580px, rgba(255,255,255,0.433) 600px, rgba(255,255,255,0.327) 620px, rgba(255,255,255,0.213) 640px, rgba(255,255,255,0.119) 660px, rgba(255,255,255,0.058) 680px, rgba(255,255,255,0.024) 700px, rgba(255,255,255,0.009) 720px, rgba(255,255,255,0.003) 740px, rgba(255,255,255,0) 760px)";
+  const ring = "radial-gradient(circle at 852px 518px, rgba(255,255,255,0) 430px, rgba(255,255,255,0.006) 450px, rgba(255,255,255,0.016) 465px, rgba(255,255,255,0.040) 480px, rgba(255,255,255,0.086) 495px, rgba(255,255,255,0.162) 510px, rgba(255,255,255,0.266) 525px, rgba(255,255,255,0.377) 540px, rgba(255,255,255,0.466) 555px, rgba(255,255,255,0.500) 570px, rgba(255,255,255,0.466) 585px, rgba(255,255,255,0.377) 600px, rgba(255,255,255,0.266) 615px, rgba(255,255,255,0.162) 630px, rgba(255,255,255,0.086) 645px, rgba(255,255,255,0.040) 660px, rgba(255,255,255,0.016) 675px, rgba(255,255,255,0.006) 690px, rgba(255,255,255,0) 720px)";
   const mask = `conic-gradient(from 0deg at 852px 518px, ${lobe})`;
   return (
     <>
-      <div style={{ position: "absolute", inset: 0, opacity: env * 0.6, background: "radial-gradient(circle at 852px 518px, rgba(20,40,90,0) 330px, rgba(20,40,90,0.05) 410px, rgba(20,40,90,0) 470px)" }} />
+      <div style={{ position: "absolute", inset: 0, opacity: env * 0.6, background: "radial-gradient(circle at 852px 518px, rgba(20,40,90,0.035) 0px, rgba(20,40,90,0.035) 470px, rgba(20,40,90,0) 530px)" }} />
       <div style={{ position: "absolute", inset: 0, opacity: env, background: ring, maskImage: mask, WebkitMaskImage: mask }} />
     </>
   );

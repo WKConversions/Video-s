@@ -85,3 +85,21 @@ export const ShutterBlur: React.FC<{ times: number[]; render: (t: number) => Rea
     </AbsoluteFill>
   );
 };
+
+const inkCache: Record<string, { l: number; r: number; w: number }> = {};
+/**
+ * Ink extents of a line drawn from x = 0 (alphabetic start): l = ink left edge, r = ink right edge, w = advance.
+ * Uses a canvas with the same letter / word spacing the SVG text gets.
+ */
+export const ink = (text: string, size: number, weight: number, family: string, letterPx = 0, wordPx = 0) => {
+  const key = `${text}|${size}|${weight}|${family}|${letterPx}|${wordPx}`;
+  if (!inkCache[key]) {
+    const ctx = document.createElement("canvas").getContext("2d") as CanvasRenderingContext2D & { letterSpacing: string; wordSpacing: string };
+    ctx.font = `${weight} ${size}px "${family}"`;
+    ctx.letterSpacing = `${letterPx}px`;
+    ctx.wordSpacing = `${wordPx}px`;
+    const m = ctx.measureText(text);
+    inkCache[key] = { l: -m.actualBoundingBoxLeft, r: m.actualBoundingBoxRight, w: m.width };
+  }
+  return inkCache[key];
+};

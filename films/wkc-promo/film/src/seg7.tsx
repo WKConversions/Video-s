@@ -7,7 +7,7 @@ import { bezier, clamp01, keys } from "./lib";
 import { Badge, BADGE_RINGS, BW, BH } from "./seg7_badge";
 import { Ring } from "./seg7_ring";
 import { ShotF } from "./seg7_f";
-import { Blur, GlyphLine, fsCap, glyphs, seqv } from "./seg7_util";
+import { Blur, GlyphLine, WSP, fsCap, glyphs, seqv } from "./seg7_util";
 
 /** the frames this segment draws (it may overlap its neighbours for a transition) */
 export const RANGE: [number, number] = [866, 1009];
@@ -52,14 +52,17 @@ const TA1 = "Detail-driven", TA2 = "design";
 const FA = fsCap(68);
 
 const NeonLines: React.FC<{ g: number; dx: number; dy: number }> = ({ g, dx, dy }) => {
-  // bottom-left corner: horizontal at y 930 to (270, 930), then down-right; drawn on from the left (length along the path from x = -40)
-  const s1 = keys(g, [[872, 0], [873, 223], [875, 282], [878.5, 310], [880, 360], [883, 430], [884, 470], [885, 500], [886, 560]]);
-  // top-right corner: from above the frame down to (1605, 103), then right, fading out by x ~1740
-  const s2 = keys(g, [[892.4, 0], [893, 179], [894, 227], [895, 257], [896, 280], [899, 326], [902, 352], [905, 380], [908, 400]]);
-  const glow = (d: string, len: number, grad: string, k: string) => (
-    <g key={k}>
-      <path d={d} fill="none" stroke="#1B4FB8" strokeWidth={16} strokeOpacity={0.55} strokeDasharray={`${len} 4000`} filter="url(#s7a-ng)" />
-      <path d={d} fill="none" stroke={`url(#${grad})`} strokeWidth={3.8} strokeDasharray={`${len} 4000`} strokeLinecap="round" />
+  // bottom-left corner (measured on the reference): a slightly tilted horizontal to (272, 938.7), then down-right; drawn on
+  // from the cut (length along the path from x = -40), riding the title's rise
+  const s1 = keys(g, [[866, 159], [867, 185], [868, 208], [869, 232], [870, 252], [871, 273], [872, 294], [873, 314], [874, 333], [875, 358], [877, 398], [879, 444], [881, 475], [883, 495], [885, 520], [887, 560]]);
+  // top-right corner: from above the frame down to (1605, 107), then right with a slight rise, fading out by x ~1860
+  const s2 = keys(g, [[884.6, 0], [885, 41], [886, 60], [887, 82], [888, 106], [889, 124], [890, 139], [891, 157], [892, 174], [893, 199], [894, 215], [895, 238], [896, 254], [898, 285], [900, 338], [903, 395], [906, 430], [908, 450]]);
+  const o1 = keys(g, [[866, 0.5], [871, 0.62], [875, 0.7], [885, 0.8], [900, 0.86]]);
+  const o2 = keys(g, [[885, 0.6], [890, 0.72], [895, 0.8], [900, 0.88]]);
+  const glow = (d: string, len: number, grad: string, k: string, o: number) => (
+    <g key={k} opacity={o}>
+      <path d={d} fill="none" stroke="#1B4FB8" strokeWidth={16} strokeOpacity={0.5} strokeDasharray={`${len} 4000`} filter="url(#s7a-ng)" />
+      <path d={d} fill="none" stroke={`url(#${grad})`} strokeWidth={3.6} strokeDasharray={`${len} 4000`} strokeLinecap="round" />
     </g>
   );
   return (
@@ -67,14 +70,15 @@ const NeonLines: React.FC<{ g: number; dx: number; dy: number }> = ({ g, dx, dy 
       <defs>
         <filter id="s7a-ng" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="5" /></filter>
         <linearGradient id="s7a-l1" gradientUnits="userSpaceOnUse" x1={0} y1={0} x2={300} y2={0}>
-          <stop offset="0" stopColor="#3F8CE8" stopOpacity={0.45} /><stop offset="0.9" stopColor="#3F8CE8" stopOpacity={1} /><stop offset="1" stopColor="#5A9EF0" stopOpacity={1} />
+          <stop offset="0" stopColor="#3F8CE8" stopOpacity={0.5} /><stop offset="0.9" stopColor="#3F8CE8" stopOpacity={1} /><stop offset="1" stopColor="#5A9EF0" stopOpacity={1} />
         </linearGradient>
-        <linearGradient id="s7a-l2" gradientUnits="userSpaceOnUse" x1={1540} y1={0} x2={1745} y2={0}>
-          <stop offset="0" stopColor="#3F8CE8" stopOpacity={0.85} /><stop offset="0.32" stopColor="#5A9EF0" stopOpacity={1} /><stop offset="0.6" stopColor="#3F8CE8" stopOpacity={0.7} /><stop offset="1" stopColor="#3F8CE8" stopOpacity={0} />
+        <linearGradient id="s7a-l2" gradientUnits="userSpaceOnUse" x1={1500} y1={0} x2={1870} y2={0}>
+          <stop offset="0" stopColor="#3F8CE8" stopOpacity={0.85} /><stop offset="0.3" stopColor="#5A9EF0" stopOpacity={1} /><stop offset="0.45" stopColor="#3F8CE8" stopOpacity={0.95} />
+          <stop offset="0.73" stopColor="#3F8CE8" stopOpacity={0.5} /><stop offset="1" stopColor="#3F8CE8" stopOpacity={0} />
         </linearGradient>
       </defs>
-      {s1 > 0 && <g transform={`translate(${dx} ${dy})`}>{glow("M-40 930 L270 930 L374 1080 L420 1146", s1, "s7a-l1", "a")}</g>}
-      {s2 > 0 && <g transform={`translate(${dx} 0)`}>{glow("M1449 -88 L1605 103 L1800 103", s2, "s7a-l2", "b")}</g>}
+      {s1 > 0 && <g transform={`translate(${dx} ${dy})`}>{glow("M-40 929.2 L272 938.7 L374 1080 L420 1144", s1, "s7a-l1", "a", o1)}</g>}
+      {s2 > 0 && <g transform={`translate(${dx} 0)`}>{glow("M1498 -30 L1605 107 L1760 86 L1900 67", s2, "s7a-l2", "b", o2)}</g>}
     </svg>
   );
 };
@@ -116,23 +120,23 @@ const ShotA: React.FC<{ g: number }> = ({ g }) => {
 const Occluder: React.FC<{ g: number }> = ({ g }) => {
   if (g < 907 || g > 912.5) return null;
   // centre x of a ~1500 px wide chrome badge (pointed left/right vertices at y 540), decelerating right to left
-  const cx = keys(g, [[907, 2150], [908, 1150], [909, 240], [910, -150], [911, -455], [912, -665], [913, -900]]);
+  const CXK: [number, number][] = [[906, 3200], [907, 2110], [908, 1110], [909, 330], [910, -100], [911, -390], [912, -600], [913, -900]];
+  const cx = keys(g, CXK), v = Math.abs(keys(g, CXK) - keys(g - 1, CXK));
   const op = keys(g, [[907, 0.62], [908, 1]]);
-  const k = `scale(${1500 / BW} ${1400 / BH})`;
+  const k = `scale(${1500 / BW} ${1900 / BH})`;
   return (
     <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0, overflow: "visible", opacity: op }}>
       <defs>
-        <filter id="s7-occ" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="30" /></filter>
-        <linearGradient id="s7-occb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#5A5A5A" /><stop offset="0.5" stopColor="#3A3A3A" /><stop offset="1" stopColor="#262626" /></linearGradient>
+        <filter id="s7-occ" x="-40%" y="-30%" width="180%" height="160%"><feGaussianBlur stdDeviation={`${44 + 0.035 * v} 44`} /></filter>
+        <linearGradient id="s7-occb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#5A5A5A" /><stop offset="0.5" stopColor="#3E3E3E" /><stop offset="1" stopColor="#2A2A2A" /></linearGradient>
+        <radialGradient id="s7-occf" cx="0.5" cy="0.6" r="0.6"><stop offset="0" stopColor="#111111" /><stop offset="0.45" stopColor="#1C1C1C" /><stop offset="0.75" stopColor="#262626" /><stop offset="1" stopColor="#1E1E1E" /></radialGradient>
       </defs>
       <g filter="url(#s7-occ)">
         <g transform={`translate(${cx} 540) ${k}`}>
           <path d={BADGE_RINGS.outer} fill="url(#s7-occb)" />
-          <path d={BADGE_RINGS.recess} fill="#141414" />
-          <path d={BADGE_RINGS.rim} fill="#3A3A3A" />
-          <path d={BADGE_RINGS.face} fill="#1C1C1C" />
-          <ellipse cx={-120} cy={-60} rx={150} ry={110} fill="none" stroke="#4A4A4A" strokeWidth={22} />
-          <ellipse cx={0} cy={90} rx={90} ry={70} fill="#080808" />
+          <path d={BADGE_RINGS.recess} fill="#181818" />
+          <path d={BADGE_RINGS.rim} fill="#353535" />
+          <path d={BADGE_RINGS.face} fill="url(#s7-occf)" />
         </g>
       </g>
     </svg>
@@ -156,7 +160,7 @@ const TextLine: React.FC<{ l: Line; cx: number; dy?: number; s?: number; o?: num
   const x0 = cx - m.w / 2, y = l.base + dy;
   const px = ox ?? cx, py = oy ?? l.base - l.cap / 2;
   const blur = bx > 0.15 || by > 0.15;
-  const style = { fontFamily: "Inter Tight", fontWeight: 800, fontSize: fs, letterSpacing: `${-0.05 * fs}px` } as const;
+  const style = { fontFamily: "Inter Tight", fontWeight: 800, fontSize: fs, letterSpacing: `${-0.05 * fs}px`, wordSpacing: `${WSP * fs}px` } as const;
   return (
     <g transform={`translate(${px} ${py}) scale(${s}) translate(${-px} ${-py})`} opacity={o}>
       <defs>
@@ -186,6 +190,7 @@ const BOKEH = [
   { src: "clips/robin-bos-16x9.jpg", k: [[949, 956, 1044, 150, 64], [950, 956, 990, 136, 58], [953, 953, 881, 92, 38], [957, 950, 840, 70, 30], [961, 948, 820, 60, 26]] },
   { src: "clips/vendom-1x1.jpg", k: [[953, 640, -60, 130, 70], [954, 668, 8, 110, 56], [955, 740, 65, 96, 48], [957, 788, 168, 80, 40], [960, 833, 263, 64, 32], [961, 845, 285, 60, 30]] },
   { src: "clips/creoble-16x9.jpg", k: [[956, -60, 440, 140, 90], [957, 3, 443, 120, 80], [959, 72, 457, 96, 64], [960, 120, 462, 86, 58], [961, 150, 466, 78, 52]] },
+  { src: "clips/creoble-lovable-1x1.jpg", k: [[956, 1990, 975, 150, 110], [957, 1905, 965, 130, 96], [958, 1800, 952, 110, 82], [961, 1640, 905, 76, 56]] },
 ] as { src: string; k: [number, number, number, number, number][] }[];
 
 const Bokeh: React.FC<{ g: number }> = ({ g }) => (

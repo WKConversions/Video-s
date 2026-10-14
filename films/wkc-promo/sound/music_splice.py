@@ -1,4 +1,4 @@
-# Cuts "Can't Get You Off My Mind" (Michael Ramirez C., Mixkit, Mixkit Stock Music Free License; Future Bass, 150.0 BPM,
+# Cuts "Can't Get You Off My Mind" (Michael Ramir C., Mixkit, Mixkit Stock Music Free License; Future Bass, 150.0 BPM,
 # C# minor) to the reference promo's structure (spec/audio.md), so every bar line and hit sits on the reference's frames:
 #   film downbeats (kick onsets) at 0.094 + 1.6 n s  = frames 3 + 48 n   (the reference measures 0.091-0.097)
 #   track downbeats (kick onsets) at 1.599 + 1.6 m s (measured on 10 bars between 25 and 82 s, all within 4 ms)

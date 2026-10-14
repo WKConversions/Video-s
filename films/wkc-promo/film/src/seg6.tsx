@@ -8,7 +8,7 @@ import { AbsoluteFill } from "remotion";
 import { F, clamp01, lerp } from "./lib";
 import { tw } from "./kit";
 import {
-  Composite, Glass, Glyph, HEAD_GLOW, RIM_BIG, RIM_CARD, RIM_TILE, Ring, Txt, kl, mix, rgbShift, rgbSplit, spline, tab, textBox,
+  Composite, Glass, Glyph, HEAD_GLOW, RIM_BIG, RIM_CARD, RIM_TILE, Ring, Smear, Txt, kl, mix, rgbShift, rgbSplit, spline, tab, textBox,
 } from "./seg6_parts";
 
 /** the frames this segment draws (hard cut in at 717|718, hard cut out at 865|866) */
@@ -16,6 +16,7 @@ export const RANGE: [number, number] = [718, 866];
 
 const easeIn = (t: number) => t * t * t;
 const TRK = -0.05; // headline tracking (em)
+const WS = 0.07; // extra word spacing (em) so the tight headlines keep readable word gaps
 
 // =====================================================================================================================
 // SHOT A (718-767)
@@ -92,12 +93,11 @@ const SceneA: React.FC<{ t: number; zoom: number }> = ({ t, zoom }) => {
   const dark = 0.3 * easeIn(clamp01((t - 759) / 8));
   // headline wipe: the reference's ramp re-expressed against our right edge (same speed, same width)
   const head = "Made for every platform", sub = "From websites to social ads";
-  const hb = textBox(head, 85, 800, F.head, TRK);
+  const hb = textBox(head, 85, 800, F.head, TRK, WS);
   const front = 1185 + 30 * (t - 719) + (958 + hb.vis / 2 - 1326), W = Math.min(960, 735 + 9 * (t - 719));
   const layer = (s: number, rot = 0): React.CSSProperties => ({ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "960px 540px", transform: `rotate(${rot}deg) scale(${s * zoom})` });
   return (
     <AbsoluteFill>
-      <div style={{ position: "absolute", inset: -300, background: "radial-gradient(ellipse 1100px 700px at 50% 50%, #0A1424 0%, #08111E 70%, #07101C 100%)" }} />
       <div style={layer(1)}>
         <Ring r={rIn * zoom} arcs={[{ a: a1, peak: 1 }, { a: a1 + 150, peak: 1 }]} />
         <Ring r={rOut * zoom} arcs={[{ a: aA, peak: 1 }, { a: aA + 179, peak: 0.38 }]} />
@@ -116,7 +116,7 @@ const SceneA: React.FC<{ t: number; zoom: number }> = ({ t, zoom }) => {
         })}
       </div>
       <div style={layer(sHead)}>
-        <Txt text={head} size={85} weight={800} family={F.head} track={TRK} cx={958} base={540} shadow={HEAD_GLOW} wipe={{ front, W }} opacity={aHead} />
+        <Txt text={head} size={85} weight={800} family={F.head} track={TRK} ws={WS} cx={958} base={540} shadow={HEAD_GLOW} wipe={{ front, W }} opacity={aHead} />
       </div>
       <div style={layer(sSub)}>
         <Txt text={sub} size={41} weight={500} family={F.ui} cx={958} base={630} color="#FEFEFF" opacity={aSub} />
@@ -128,11 +128,12 @@ const SceneA: React.FC<{ t: number; zoom: number }> = ({ t, zoom }) => {
 // blur samples per frame (0.5-frame shutter), extra zoom-blur spread and RGB split (R-B scale difference) after the cut / before the dip
 const A_N: Record<number, number> = { 718: 20, 719: 10, 720: 7, 721: 5, 722: 4, 723: 3, 724: 3, 725: 2, 726: 2, 738: 3, 739: 3, 740: 5, 741: 5, 742: 8, 743: 8, 744: 8, 745: 8, 746: 8,
   747: 8, 748: 5, 749: 5, 750: 3, 751: 3, 755: 3, 756: 5, 757: 8, 758: 10, 759: 10, 760: 10, 761: 10, 762: 10, 763: 10, 764: 10, 765: 12, 766: 16, 767: 20 };
+const BG_A = <div style={{ position: "absolute", inset: -300, background: "radial-gradient(ellipse 1100px 700px at 50% 50%, #0A1424 0%, #08111E 70%, #07101C 100%)" }} />;
 const ShotA: React.FC<{ g: number }> = ({ g }) => {
   const n = A_N[g] ?? 1;
   const z = kl(g, [[718, 0.05], [719, 0.01], [720, 0]]);
   const ca = kl(g, [[718, 0.038], [719, 0.006], [720, 0.0025], [721, 0.001], [722, 0], [764, 0], [765, 0.0025], [766, 0.004], [767, 0.006]]);
-  return <Composite n={n} chans={ca > 0.0005 ? rgbSplit(ca) : undefined} render={(u) => <SceneA t={g + 0.5 * u} zoom={1 + z * u} />} />;
+  return <Composite n={n} bg={BG_A} chans={ca > 0.0005 ? rgbSplit(ca) : undefined} fg={(u) => <SceneA t={g + 0.5 * u} zoom={1 + z * u} />} />;
 };
 
 // =====================================================================================================================
@@ -146,56 +147,54 @@ const camB = (t: number) => {
   return { s, ty, roll };
 };
 const poly = (c: number[], d: number) => c[0] + d * (c[1] + d * (c[2] + d * c[3]));
-type CardDef = { label: string; fw: number; fh: number; x: number[]; y: number[]; k: number[]; sel: [number, number][]; w: [number, number][] };
+type CardDef = { label: string; fw: number; fh: number; H: number; dy: number; cs: number; x: number[]; y: number[]; k: number[]; sel: [number, number][]; w: [number, number][] };
 const CARDS: CardDef[] = [
-  { label: "16:9", fw: 118, fh: 66, x: [481.157, 0.675375, -0.00771006, -0.000381291], y: [727.224, -2.09693, 0.030467, 0.00046481], k: [1.00371, -0.00296101, 2.05411e-5, -1.31496e-6],
+  { label: "16:9", fw: 118, fh: 66, H: 330, dy: 0, cs: 1, x: [481.157, 0.675375, -0.00771006, -0.000381291], y: [727.224, -2.09693, 0.030467, 0.00046481], k: [1.00371, -0.00296101, 2.05411e-5, -1.31496e-6],
     sel: [[798, 0], [799, 0.2], [800, 0.55], [801, 0.7], [802, 0.88], [803, 1], [814, 1], [815, 0.75], [816, 0.4], [817, 0.35], [818, 0.35]],
     w: [[799, 0], [800, 0.03], [801, 0.3], [802, 0.59], [803, 0.87], [804, 1], [814, 1], [815, 0.88], [816, 0.6], [817, 0.3], [818, 0.01]] },
-  { label: "1:1", fw: 70, fh: 70, x: [962.053, -0.125613, -0.00371732, 0.000139697], y: [729.978, -1.03148, 0.0127139, -3.85923e-7], k: [0.879672, -0.000717171, 5.92128e-6, 5.86004e-7],
+  { label: "1:1", fw: 70, fh: 70, H: 373, dy: 2.3, cs: 0.89, x: [962.053, -0.125613, -0.00371732, 0.000139697], y: [729.978, -1.03148, 0.0127139, -3.85923e-7], k: [0.879672, -0.000717171, 5.92128e-6, 5.86004e-7],
     sel: [[781, 1], [782, 0.53], [783, 0.07], [784, 0]],
     w: [[780, 1], [781, 0.86], [782, 0.58], [783, 0.23], [784, 0]] },
-  { label: "9:16", fw: 44, fh: 78, x: [1404.91, 0.499562, 0.013619, 0.000185246], y: [709.853, -0.324879, 0.0296261, -0.000522908], k: [0.900998, 0.000344405, 5.54421e-5, -2.62475e-8],
+  { label: "9:16", fw: 44, fh: 78, H: 352, dy: 15, cs: 1, x: [1404.91, 0.499562, 0.013619, 0.000185246], y: [709.853, -0.324879, 0.0296261, -0.000522908], k: [0.900998, 0.000344405, 5.54421e-5, -2.62475e-8],
     sel: [[781, 0], [782, 0.46], [783, 0.65], [784, 0.82], [785, 0.9], [786, 1], [797, 1], [798, 0.75], [799, 0.35], [800, 0]],
     w: [[781, 0.02], [782, 0.2], [783, 0.42], [784, 0.64], [785, 0.86], [786, 0.99], [787, 1], [798, 1], [799, 0.71], [800, 0.42], [801, 0.14], [802, 0]] },
 ];
 const FormatCard: React.FC<{ c: CardDef; t: number; i: number }> = ({ c, t, i }) => {
+  // the frame (per-card measured height and offset) and the content (logo at -70, button at +70) scale about their own centres
   const d = t - 795, w = kl(t, c.w), K = poly(c.k, d) * (1 + 0.2 * kl(t, c.sel));
-  const cx = poly(c.x, d), cy = poly(c.y, d);
+  const cx = poly(c.x, d), cy = poly(c.y, d), Kc = K * c.cs;
   const logo = mix("#5C6573", "#FFFFFF", w);
   return (
-    <Glass id={`c${i}`} w={444} h={330} r={18} fill={mix("#0E1828", "#132138", w, 0.92)} rim={RIM_CARD} k={lerp(0.2, 1, w)} lw={2.8}
-      shadow="0 12px 30px rgba(1,4,10,0.45)" style={{ left: cx - 222, top: cy - 165, transform: `scale(${K})` }}>
-      <div style={{ position: "absolute", left: 0, top: 95, width: 444, display: "flex", flexDirection: "column", alignItems: "center", transform: "translateY(-50%)" }}>
+    <>
+      <Glass id={`c${i}`} w={444} h={c.H} r={18} fill={mix("#0E1828", "#132138", w, 0.85)} rim={RIM_CARD} k={lerp(0.2, 1, w)} lw={2.8}
+        shadow="0 12px 30px rgba(1,4,10,0.45)" style={{ left: cx - 222, top: cy + c.dy * K - c.H / 2, transform: `scale(${K})` }} />
+      <div style={{ position: "absolute", left: cx - 222, top: cy - 70 * K - 60, width: 444, height: 120, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", transform: `scale(${Kc})` }}>
         <div style={{ width: c.fw, height: c.fh, border: `4px solid ${logo}`, borderRadius: 9, boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center" }}>
           <svg width={14} height={16} viewBox="0 0 14 16" style={{ display: "block", marginLeft: 3 }}><path d="M1.5 1.5 L12.5 8 L1.5 14.5 Z" fill={logo} stroke={logo} strokeWidth={2} strokeLinejoin="round" /></svg>
         </div>
         <div style={{ marginTop: 9, fontFamily: F.ui, fontWeight: 600, fontSize: 24, lineHeight: "24px", color: logo, letterSpacing: -0.2 }}>{c.label}</div>
       </div>
       <div style={{
-        position: "absolute", left: 222 - 107, top: 235 - 45, width: 214, height: 90, borderRadius: 45, background: mix("#12284D", "#3F8CE8", w),
+        position: "absolute", left: cx - 107, top: cy + 70 * K - 45, width: 214, height: 90, borderRadius: 45, background: mix("#12284D", "#3F8CE8", w), transform: `scale(${Kc})`,
         boxShadow: `0 0 16px rgba(63,140,232,${(0.55 * w).toFixed(3)})`, display: "flex", alignItems: "center", justifyContent: "center",
         fontFamily: F.ui, fontWeight: 500, fontSize: 24, color: mix("#6F8DB8", "#FFFFFF", w),
       }}>Publish</div>
-    </Glass>
+    </>
   );
 };
 const B_FRONT: [number, number][] = [[768, 1059], [775, 1227], [780, 1319], [786, 1433], [790, 1509], [795, 1586], [797, 1632], [800, 1680], [805, 1750], [810, 1810], [813, 1840], [818, 1880]];
 const SceneB: React.FC<{ t: number; dy: number }> = ({ t, dy }) => {
   const { s, ty, roll } = camB(t);
-  const head = "Publish anywhere", hb = textBox(head, 76, 800, F.head, TRK);
+  const head = "Publish anywhere", hb = textBox(head, 76, 800, F.head, TRK, WS);
   const hx0 = 952 - hb.vis / 2, hx1 = 952 + hb.vis / 2;
   const front = kl(t, B_FRONT) + (hx1 - 1263);
   const tail = t < 798 ? undefined : 633 + 36 * (t - 815) + 4 * Math.max(0, t - 815) ** 2 + (hx0 - 640);
   const knob = kl(t, [[796, -21], [800, -18], [804, -14], [808, -9.5], [812, -4], [815, 2.5], [818, 13], [819, 18]]);
-  const floor = mix("#0E2342", "#123058", (t - 780) / 35);
   return (
     <AbsoluteFill>
-      <div style={{ position: "absolute", inset: -300, background: "#07101C" }} />
-      <div style={{ position: "absolute", inset: 0, background: `radial-gradient(ellipse 760px 640px at 0px 0px, #0B1A30 0%, rgba(11,26,48,0.5) 40%, rgba(11,26,48,0) 100%)` }} />
-      <div style={{ position: "absolute", inset: 0, background: `radial-gradient(ellipse 900px 450px at 960px 1150px, ${floor} 0%, ${floor.replace(",1)", ",0.55)")} 45%, rgba(14,35,66,0) 100%)` }} />
       <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "960px 540px", transform: `translate(0px, ${ty + dy}px) rotate(${roll}deg) scale(${s})` }}>
         <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "952px 201px", transform: "rotate(1.3deg)" }}>
-          <Txt text={head} size={76} weight={800} family={F.head} track={TRK} cx={952} base={228.9} shadow={HEAD_GLOW} wipe={{ front, W: 650, tail, Wout: 645 }} />
+          <Txt text={head} size={76} weight={800} family={F.head} track={TRK} ws={WS} cx={952} base={228.9} shadow={HEAD_GLOW} wipe={{ front, W: 650, tail, Wout: 645 }} />
         </div>
         <Txt text="Every format" size={44} weight={500} family={F.ui} cx={958} base={310.5} color="#FDFEFF" />
         <div style={{ position: "absolute", left: 909, top: 397, width: 100, height: 48, borderRadius: 24, background: "#D6DEE9" }} />
@@ -205,6 +204,16 @@ const SceneB: React.FC<{ t: number; dy: number }> = ({ t, dy }) => {
     </AbsoluteFill>
   );
 };
+const bgB = (t: number) => {
+  const floor = mix("#0E2342", "#123058", (t - 780) / 35);
+  return (
+    <>
+      <div style={{ position: "absolute", inset: -300, background: "#07101C" }} />
+      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 760px 640px at 0px 0px, #0B1A30 0%, rgba(11,26,48,0.5) 40%, rgba(11,26,48,0) 100%)" }} />
+      <div style={{ position: "absolute", inset: 0, background: `radial-gradient(ellipse 900px 450px at 960px 1150px, ${floor} 0%, ${floor.replace(",1)", ",0.55)")} 45%, rgba(14,35,66,0) 100%)` }} />
+    </>
+  );
+};
 const B_SMEAR: [number, number][] = [[768, 24], [769, 9], [771, 9], [772, 4.5], [775, 4.5], [776, 0], [811, 0], [812, 4.5], [815, 4.5], [816, 9], [817, 10.5], [818, 12]];
 const ShotB: React.FC<{ g: number }> = ({ g }) => {
   const L = kl(g, B_SMEAR), n = L > 0 ? Math.max(2, Math.ceil(L / 2)) : 1;
@@ -212,7 +221,7 @@ const ShotB: React.FC<{ g: number }> = ({ g }) => {
   const fade = kl(g, [[768, 0.45], [769, 0.8], [770, 0.88], [772, 0.94], [775, 1]]);
   return (
     <AbsoluteFill style={{ opacity: fade }}>
-      <Composite n={n} chans={ca > 0 ? rgbShift(ca) : undefined} render={(u) => <SceneB t={g} dy={u * L} />} />
+      <Composite n={n} bg={bgB(g)} chans={ca > 0 ? rgbShift(ca) : undefined} fg={(u) => <SceneB t={g} dy={u * L} />} />
     </AbsoluteFill>
   );
 };
@@ -252,7 +261,7 @@ const SceneC: React.FC<{ t: number; dy: number }> = ({ t, dy }) => {
   const exitTf = t > 849 ? `scale(${drift}, ${1 + k})` : undefined;
   // headline: scale fuS about its rest centre (959, 212), carried by the measured left word
   const fuS = T(C_T.fuS), hX = T(C_T.fuX) + fuS * 337, hY = T(C_T.fuY) - 8 * fuS;
-  const head = "Multiple versions", hb = textBox(head, 93, 800, F.head, TRK);
+  const head = "Multiple versions", hb = textBox(head, 93, 800, F.head, TRK, WS);
   const hx0 = 959 - hb.vis / 2, hx1 = 959 + hb.vis / 2;
   const front = Math.max(1116, 1116 + 29.4 * (t - 820)) + (hx1 - 1404);
   const tail = t < 852 ? undefined : kl(t, C_TAIL) + (hx0 - 514);
@@ -261,19 +270,20 @@ const SceneC: React.FC<{ t: number; dy: number }> = ({ t, dy }) => {
   const gS = T(C_T.grp), iconY = T(C_T.iconY), btnY = T(C_T.btnY);
   const cardTop = kl(t, [[819, 562.5], [822, 563], [826, 564], [830, 566], [835, 567.2], [840, 569], [845, 571.5]]);
   const sy = kl(t, [[819, 0.855], [822, 0.865], [826, 0.88], [835, 0.95], [841, 1]]);
-  const ry = kl(t, [[819, -8], [822, -4], [826, 0]]);
+  // the card group: a slight 3D turn on the cut, then on the exit it turns its right side towards us (measured edge ratio 1.10 by 863)
+  const ry = kl(t, [[819, 8], [822, 4], [826, 0]]) + spline(t, [[852, 0], [856, -2], [858, -4], [860, -7], [861, -9], [862, -11], [863, -13.5], [864, -15], [865, -15.5], [866, -16]]);
+  const rz = spline(t, [[854, 0], [860, 0.5], [865, 0.8], [866, 0.9]]);
+  const gcy = cardTop + 289 * sy;
+  const hsm = kl(t, [[858, 0], [860, 8], [862, 30], [863, 40], [866, 40]]);
   const topRot = kl(t, [[831, -5.4], [833, -3.7], [834, -2.2], [835, -1.2], [836, 0]]);
   const lowRot = kl(t, [[826, -5.5], [829, -3.5], [831, -3.5], [833, -2.0], [834, -1.0], [835, -0.4], [836, 0]]);
   const full: React.CSSProperties = { position: "absolute", left: 0, top: 0, width: 1920, height: 1080 };
   return (
     <AbsoluteFill>
-      <div style={{ position: "absolute", inset: -300, background: "#07101C" }} />
-      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 760px 640px at 0px 0px, #0B1A30 0%, rgba(11,26,48,0.5) 40%, rgba(11,26,48,0) 100%)" }} />
-      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 700px 420px at 960px 1150px, #16385F 0%, rgba(22,56,95,0.55) 45%, rgba(22,56,95,0) 100%)" }} />
       <div style={{ ...full, transformOrigin: "960px 1958px", transform: exitTf }}>
         <div style={{ ...full, transform: `translateY(${dy}px)` }}>
           <div style={{ ...full, transformOrigin: "959px 212px", transform: `translate(${hX - 959}px, ${hY - 212}px) scale(${fuS})` }}>
-            <Txt text={head} size={93} weight={800} family={F.head} track={TRK} cx={959} base={246} shadow={HEAD_GLOW} wipe={{ front, W: 900, tail, Wout: 975 }} />
+            <Smear L={hsm}><Txt text={head} size={93} weight={800} family={F.head} track={TRK} ws={WS} cx={959} base={246} shadow={HEAD_GLOW} wipe={{ front, W: 900, tail, Wout: 975 }} /></Smear>
           </div>
           <div style={{ ...full, transformOrigin: "968px 347px", transform: `translate(${T(C_T.subX) - 968}px, ${T(C_T.subY) - 347}px) scale(${subS})` }}>
             <Txt text="One project" size={41} weight={500} family={F.ui} cx={967} base={358.5} />
@@ -282,30 +292,39 @@ const SceneC: React.FC<{ t: number; dy: number }> = ({ t, dy }) => {
             <div style={{ position: "absolute", left: 900, top: 442, width: 120, height: 57, borderRadius: 28.5, background: "#3F8CE8" }} />
             <div style={{ position: "absolute", left: 960 + knobOff - 17.25, top: 470.5 - 17.25, width: 34.5, height: 34.5, borderRadius: 17.25, background: "#FFFFFF" }} />
           </div>
-          <div style={{ ...full, perspective: 1600, perspectiveOrigin: "958.5px 540px" }}>
-            <div style={{ position: "absolute", left: 958.5 - 280.5, top: cardTop, width: 561, height: 578, transformOrigin: "280.5px 0px", transform: `rotateY(${ry}deg) scale(${gS}, ${sy})` }}>
-              <Glass id="srv" w={561} h={578} r={22} fill="linear-gradient(180deg, rgba(21,35,56,0.94) 0%, rgba(26,44,69,0.94) 100%)" rim={RIM_BIG} lw={3} shadow="0 14px 40px rgba(1,4,10,0.45)" style={{ left: 0, top: 0 }} />
+          <div style={{ ...full, perspective: 1600, perspectiveOrigin: "960px 540px" }}>
+            <div style={{ ...full, transformOrigin: `958.5px ${gcy}px`, transform: `rotateZ(${rz}deg) rotateY(${ry}deg)` }}>
+              <div style={{ position: "absolute", left: 958.5 - 280.5, top: cardTop, width: 561, height: 578, transformOrigin: "280.5px 0px", transform: `scale(${gS}, ${sy})` }}>
+                <Glass id="srv" w={561} h={578} r={22} fill="linear-gradient(180deg, rgba(21,35,56,0.94) 0%, rgba(26,44,69,0.94) 100%)" rim={RIM_BIG} lw={3} shadow="0 14px 40px rgba(1,4,10,0.45)" style={{ left: 0, top: 0 }} />
+              </div>
+              <div style={{ position: "absolute", left: 958 - 84, top: iconY - 73.5, width: 168, height: 147, transform: `scale(${gS})` }}>
+                <Bar y={0} rot={topRot} v="V1" p={1} />
+                <Bar y={50} rot={lowRot} v="V2" p={0.7} />
+                <Bar y={100} rot={lowRot} v="V3" p={0.4} />
+              </div>
+              <div style={{
+                position: "absolute", left: 959 - 123, top: btnY - 52, width: 246, height: 104, borderRadius: 52, background: "#3F8CE8", transform: `scale(${gS})`,
+                boxShadow: "0 0 18px rgba(63,140,232,0.35)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: F.ui, fontWeight: 500, fontSize: 37, color: "#FFFFFF",
+              }}>Render all</div>
             </div>
-            <div style={{ position: "absolute", left: 958 - 84, top: iconY - 73.5, width: 168, height: 147, transform: `rotateY(${ry}deg) scale(${gS})` }}>
-              <Bar y={0} rot={topRot} v="V1" p={1} />
-              <Bar y={50} rot={lowRot} v="V2" p={0.7} />
-              <Bar y={100} rot={lowRot} v="V3" p={0.4} />
-            </div>
-            <div style={{
-              position: "absolute", left: 959 - 123, top: btnY - 52, width: 246, height: 104, borderRadius: 52, background: "#3F8CE8", transform: `rotateY(${ry}deg) scale(${gS})`,
-              boxShadow: "0 0 18px rgba(63,140,232,0.35)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: F.ui, fontWeight: 500, fontSize: 37, color: "#FFFFFF",
-            }}>Render all</div>
           </div>
         </div>
       </div>
     </AbsoluteFill>
   );
 };
-const C_N: Record<number, number> = { 855: 2, 856: 2, 857: 3, 858: 3, 859: 4, 860: 5, 861: 6, 862: 8, 863: 10, 864: 14, 865: 18 };
+const BG_C = (
+  <>
+    <div style={{ position: "absolute", inset: -300, background: "#07101C" }} />
+    <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 760px 640px at 0px 0px, #0B1A30 0%, rgba(11,26,48,0.5) 40%, rgba(11,26,48,0) 100%)" }} />
+    <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 700px 420px at 960px 1150px, #16385F 0%, rgba(22,56,95,0.55) 45%, rgba(22,56,95,0) 100%)" }} />
+  </>
+);
+const C_N: Record<number, number> = { 860: 2, 861: 2, 862: 3, 863: 3, 864: 4, 865: 6 };
 const ShotC: React.FC<{ g: number }> = ({ g }) => {
   const L = kl(g, [[819, 10], [820, 6], [821, 3], [822, 1.5], [823, 0]]);
-  if (L > 0) return <Composite n={Math.max(2, Math.ceil(L / 2))} render={(u) => <SceneC t={g} dy={u * L} />} />;
-  return <Composite n={C_N[g] ?? 1} render={(u) => <SceneC t={g + 0.5 * u} dy={0} />} />;
+  if (L > 0) return <Composite n={Math.max(2, Math.ceil(L / 2))} bg={BG_C} fg={(u) => <SceneC t={g} dy={u * L} />} />;
+  return <Composite n={C_N[g] ?? 1} bg={BG_C} fg={(u) => <SceneC t={g + 0.1 * u} dy={0} />} />;
 };
 
 export const Seg6: React.FC<{ g: number }> = ({ g }) => (g < 768 ? <ShotA g={g} /> : g < 819 ? <ShotB g={g} /> : <ShotC g={g} />);
