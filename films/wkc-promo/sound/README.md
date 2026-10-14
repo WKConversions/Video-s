@@ -2,7 +2,7 @@
 
 This folder holds the soundtrack for the 42.07 s (1262 frames, 30 fps) film, which rebuilds the reference promo frame for frame. It covers the music, 58 synthesised effects on the reference's frames, the mix and the master. The spec it follows is `../spec/audio.md`.
 
-Output: `../film/public/audio/mix.wav` (48 kHz stereo, 16-bit, 2,019,200 samples = exactly 1262 frames). It measures **-14.0 LUFS integrated**, **true peak -1.4 dBFS** (ffmpeg ebur128) and LRA 3.3 LU.
+Output: `../film/public/audio/mix.wav` (48 kHz stereo, 16-bit, 2,019,200 samples = exactly 1262 frames). It measures **-14.0 LUFS integrated**, **true peak -1.5 dBFS** (ffmpeg ebur128) and LRA 3.3 LU.
 
 ## Rebuild
 
@@ -25,7 +25,7 @@ The choice of track can be re-run with `python3 -I music_screen.py ../ref/audio.
 
 Mixkit was searched across trap (3 pages), future bass, hip hop (5), dubstep, grime, EDM (2), electronic, moombahton, the energetic and futuristic moods (5) and the technology tag (5). That gave 410 tracks, of which 191 were trap, future bass, hip hop or electronic in style.
 
-Each was measured on a 25 s mid-track excerpt against the reference's main section: tempo, spectrum, chroma, stereo width, sub and air shares, and hat rate (`music/screening.json`). The 18 closest were downloaded in full to `music/candidates/` and looked at as spectrograms and per-bar maps.
+Each was measured on a 25 s mid-track excerpt against the reference's main section: tempo, spectrum, chroma, stereo width, sub and air shares, and hat rate (`music/screening.json`). The 19 closest were downloaded in full to `music/candidates/` and looked at as spectrograms and per-bar maps.
 
 **Choice: "Can't Get You Off My Mind" (Michael Ramir C., Future Bass).** It was the only future-bass track, which is the reference's genre. Measured over the whole track it runs at **150.0 BPM**, the reference's exact tempo: its kick onsets fall within 4 ms of a 1.6 s bar grid from 25 s to 82 s. It is shaped like a library promo track:
 - a filtered intro that builds;
@@ -84,7 +84,7 @@ The effect levels are in `make_cues.py` (`LEVELS`), and the mixer's auto-lift is
 
 - `music_screen.py` measures candidate tracks. Results: `music/screening.json`.
 - `music_splice.py` cuts the track: `music/cant-get-you-off-my-mind-fit.wav`. Credits: `music/CREDITS.md`.
-- `music/candidates/` holds the 18 downloaded Mixkit finalists (untrusted downloads: read them only with `python3 -I`).
+- `music/candidates/` holds the 19 downloaded Mixkit finalists (373 and 375 are byte-identical; untrusted downloads: read them only with `python3 -I`).
 - `wkc_sfx.py` synthesises the effects into `lib/sfx/wkc/` and `lib/sfx/index.json`.
 - `make_cues.py` writes `cues.json`.
 - `../scripts/sound_mix.py` mixes it and draws `mix.png`.

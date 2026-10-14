@@ -97,6 +97,8 @@ const ShotA: React.FC<{ g: number }> = ({ g }) => {
       <AbsoluteFill style={{ background: "radial-gradient(ellipse 1350px 580px at 954px 1032px, rgba(14,34,68,1) 0%, rgba(14,34,68,0.5) 50%, rgba(14,34,68,0) 100%)" }} />
       <AbsoluteFill style={{ background: VIGNETTE }} />
       <NeonLines g={g} dx={dx} dy={dy} />
+      {/* 907: the pass-by's soft leading edge arrives behind the badges as a grey veil */}
+      {g >= 907 && g < 908 && <Occluder g={g} />}
       <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
         <defs><Blur id="s7a-mb" sx={0} sy={mb} /></defs>
         <g filter={mb > 0.2 ? "url(#s7a-mb)" : undefined} transform={`translate(${dx} ${dy})`}>
@@ -122,7 +124,7 @@ const Occluder: React.FC<{ g: number }> = ({ g }) => {
   // centre x of a ~1500 px wide chrome badge (pointed left/right vertices at y 540), decelerating right to left
   const CXK: [number, number][] = [[906, 3200], [907, 2110], [908, 1110], [909, 330], [910, -100], [911, -390], [912, -600], [913, -900]];
   const cx = keys(g, CXK), v = Math.abs(keys(g, CXK) - keys(g - 1, CXK));
-  const op = keys(g, [[907, 0.62], [908, 1]]);
+  const op = keys(g, [[907, 0.8], [908, 1]]);
   const k = `scale(${1500 / BW} ${1900 / BH})`;
   return (
     <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0, overflow: "visible", opacity: op }}>
@@ -267,7 +269,7 @@ export const Seg7: React.FC<{ g: number }> = ({ g }) => {
   return (
     <AbsoluteFill style={{ overflow: "hidden" }}>
       {g <= 908 ? <ShotA g={g} /> : <ShotBE g={g} />}
-      <Occluder g={g} />
+      {g >= 908 && <Occluder g={g} />}
     </AbsoluteFill>
   );
 };
