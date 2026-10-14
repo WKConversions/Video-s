@@ -19,6 +19,10 @@ Commercial American Female", 33.0 s).
   stitching, a needle, scissors, fashion models.
   - **No Gucci product is shown, and none is implied.** The garments and leather in the clips are not Gucci's.
   - The clips are 1280×720 and upscaled. The heavy grade, the letterbox and the grain carry that.
+  - The slow motion is baked into each clip (`scripts/slowmo.sh`): the used window, slowed and motion-interpolated
+    to exactly 30 fps, so no frame repeats. The 24/25 fps sources slowed in the film otherwise stuttered.
+  - The opening is cropped to keep the station's flag and departures board out of frame. The street section was
+    chosen to keep brand badges out of the figure who stands apart, and that figure is now the opening's lone silhouette.
   - For a real campaign, swap in Gucci's own footage: each shot is one `<Clip>` line in `film/src/Story.tsx`.
 - **Type:** Bodoni Moda (OFL), a Didone, for the statements; Manrope for the small tracked capitals.
 
@@ -43,12 +47,12 @@ Commercial American Female", 33.0 s).
 | 5.91 | Since 1921, | Black; "1921" rises digit by digit; Florence |
 | 7.18 | Gucci has turned Italian craftsmanship into a symbol of individuality, prestige, and style. | A seam opens on leather being stitched; "Individuality", "Prestige" and "Style" roll in place over a portrait, leather and a model, each on its word |
 | 12.89 | Every detail has intention. | A thread brought to a needle's eye, in black and white; a fine line drawn on "intention" |
-| 15.13 | Every design carries a legacy. | Scissors through fabric; the Web stripe drawn across on "legacy" |
+| 15.13 | Every design carries a legacy. | Scissors through fabric beside a design sketch; the Web stripe drawn across on "legacy" |
 | 17.47 | From crafted leather goods to distinctive fashion statements, | The frame splits: leather on one side, a model on the other |
 | 20.73 | Gucci offers more than something to wear. | The halves close into one portrait; "More than something to wear." |
 | 22.98 | It offers a presence that cannot be replicated, | A model among mirrors; the picture multiplies into copies on "cannot be replicated", and they fall away |
-| 25.58 | not designed to follow the crowd, but to stand apart from it. | A street crowd; on "stand apart" the crowd parts around one strip, which keeps its colour |
-| 29.65 | Gucci. Beyond fashion. A statement of distinction. | The strip of light becomes a line under the GUCCI wordmark; the Web stripe; the tagline |
+| 25.58 | not designed to follow the crowd, but to stand apart from it. | A street crowd; on "stand apart" it parts, and in the gap stands the lone figure in the light from the opening |
+| 29.65 | Gucci. Beyond fashion. A statement of distinction. | The strip of light narrows to a line that turns and becomes the rule under the GUCCI wordmark, then the Web stripe; the two lines of the tagline; a slow push and a fade to black |
 
 ## Sound
 - **Voice-over:** the supplied file, in sync, with a gentle compressor on its peaks.
@@ -73,6 +77,18 @@ python3 scripts/music_fit.py sound/music/majestic.mp3 sound/bed.wav --length 35.
 python3 scripts/cues.py && python3 scripts/sound_mix.py sound/cues.json film/public/audio/mix.wav --sheet sound/mix.png
 cd film && bash ../scripts/render_chunks.sh Film out/final.mp4 '{"blurSamples":4,"audio":"none"}' 0,270,540,800,1062 public/audio/mix.wav
 ```
+
+## Checks on the final
+- Phrases: every phrase brings a new visual on its words (`phrase_check.py`).
+- Shake: the remaining flags are the handheld crowd footage itself. The check flags the source clips just as
+  much, and stabilising them changed nothing. The judder from repeated frames is gone.
+- Frame review: three independent reviews of the first render (layout, copy and truth, story and tone), each
+  serious finding checked again by a skeptic at full resolution. Fixed from it:
+  - The unreadable "presence" line (now on a scrim).
+  - The white flash where the light should turn into a line (now one 2 px line that turns).
+  - The branded backpack on the figure who stands apart.
+  - The scissors shot popping out.
+  - Plus the crops, curly apostrophes, word collisions, the sweep edges and the end fade.
 
 ## Assumptions
 - 16:9 with a 2.4:1 letterbox, 35.4 s: the voice-over plus about 2.7 s on the end card.
