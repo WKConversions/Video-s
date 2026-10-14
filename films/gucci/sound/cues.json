@@ -1,0 +1,155 @@
+{
+ "fps": 30,
+ "frames": 1062,
+ "library": "../../alumni/sound/lib",
+ "vo": {
+  "file": "../vo/vo.mp3",
+  "at": 0,
+  "compress": true
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0.6,
+  "lufs": -22,
+  "duck_db": 5,
+  "fade_in": 0.3,
+  "fade_out": 0.8,
+  "lifts": [
+   [
+    32.8,
+    35.4,
+    3
+   ]
+  ]
+ },
+ "sfx": [
+  {
+   "frame": 0,
+   "id": "gen-swell",
+   "db": -12,
+   "pitch": -3,
+   "note": "the crowd"
+  },
+  {
+   "frame": 83,
+   "id": "gen-whoosh-deep",
+   "db": -5,
+   "note": "the crowd narrows to one beam"
+  },
+  {
+   "frame": 189,
+   "id": "gen-impact-deep",
+   "db": -3,
+   "note": "1921"
+  },
+  {
+   "frame": 234,
+   "id": "gen-whoosh-medium",
+   "db": -12,
+   "pitch": -2,
+   "note": "the seam opens on the craft"
+  },
+  {
+   "frame": 292,
+   "id": "gen-whoosh-short",
+   "db": -14,
+   "pitch": -2,
+   "note": "individuality"
+  },
+  {
+   "frame": 324,
+   "id": "gen-whoosh-short",
+   "db": -14,
+   "note": "prestige"
+  },
+  {
+   "frame": 349,
+   "id": "gen-whoosh-short",
+   "db": -14,
+   "pitch": 2,
+   "note": "style"
+  },
+  {
+   "frame": 419,
+   "id": "gen-shimmer",
+   "db": -15,
+   "pitch": -4,
+   "note": "the thread"
+  },
+  {
+   "frame": 448,
+   "id": "gen-whoosh-short",
+   "db": -13,
+   "pitch": -3,
+   "note": "the legacy"
+  },
+  {
+   "frame": 487,
+   "id": "gen-riser-1s",
+   "db": -16,
+   "pitch": -3,
+   "note": "the Web stripe draws"
+  },
+  {
+   "frame": 524,
+   "id": "gen-whoosh-short",
+   "db": -14,
+   "pitch": -2,
+   "note": "leather goods"
+  },
+  {
+   "frame": 563,
+   "id": "gen-whoosh-short",
+   "db": -14,
+   "pitch": 1,
+   "note": "fashion"
+  },
+  {
+   "frame": 617,
+   "id": "gen-whoosh-medium",
+   "db": -12,
+   "pitch": -3,
+   "note": "the halves close into one"
+  },
+  {
+   "frame": 718,
+   "id": "gen-whoosh-whip",
+   "db": -13,
+   "pitch": -3,
+   "note": "the copies"
+  },
+  {
+   "frame": 741,
+   "id": "gen-impact-soft",
+   "db": -12,
+   "pitch": -3,
+   "note": "they fall away"
+  },
+  {
+   "frame": 820,
+   "id": "gen-whoosh-deep",
+   "db": -5,
+   "note": "the crowd parts"
+  },
+  {
+   "frame": 854,
+   "id": "gen-riser-2s",
+   "db": -12,
+   "pitch": -2,
+   "note": "the light becomes a line"
+  },
+  {
+   "frame": 888,
+   "id": "gen-impact-deep",
+   "db": -2,
+   "note": "GUCCI"
+  },
+  {
+   "frame": 891,
+   "id": "gen-shimmer",
+   "db": -11,
+   "pitch": -5,
+   "note": "the name"
+  }
+ ]
+}

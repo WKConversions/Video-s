@@ -1,0 +1,15 @@
+# Credits
+
+| file | title | source | licence | credit line |
+|---|---|---|---|---|
+| main-lobby-of-central-station-new-york-4181.mp4 | [Main lobby of central station new york](https://mixkit.co/free-stock-video/main-lobby-of-central-station-new-york-4181/) | mixkit | Mixkit Stock Video Free License (commercial use, no credit needed) | not required |
+| people-walking-in-the-street-in-japan-4437.mp4 | [People walking in the street in japan](https://mixkit.co/free-stock-video/people-walking-in-the-street-in-japan-4437/) | mixkit | Mixkit Stock Video Free License (commercial use, no credit needed) | not required |
+| dancer-in-the-dark-back-view-1038.mp4 | [Dancer in the dark back view](https://mixkit.co/free-stock-video/dancer-in-the-dark-back-view-1038/) | mixkit | Mixkit Stock Video Free License (commercial use, no credit needed) | not required |
+| texture-of-a-brown-leather-surface-close-up-34489.mp4 | [Texture of a brown leather surface close up](https://mixkit.co/free-stock-video/texture-of-a-brown-leather-surface-close-up-34489/) | mixkit | Mixkit Stock Video Free License (commercial use, no credit needed) | not required |
+| stitching-leather-material-24638.mp4 | [Stitching leather material](https://mixkit.co/free-stock-video/stitching-leather-material-24638/) | mixkit | Mixkit Stock Video Free License (commercial use, no credit needed) | not required |
+| threading-a-sewing-machine-needle-11700.mp4 | [Threading a sewing machine needle](https://mixkit.co/free-stock-video/threading-a-sewing-machine-needle-11700/) | mixkit | Mixkit Stock Video Free License (commercial use, no credit needed) | not required |
+| tailor-making-adjustments-on-a-clothing-item-48151.mp4 | [Tailor making adjustments on a clothing item](https://mixkit.co/free-stock-video/tailor-making-adjustments-on-a-clothing-item-48151/) | mixkit | Mixkit Stock Video Free License (commercial use, no credit needed) | not required |
+| cutting-fabric-ready-for-sewing-11698.mp4 | [Cutting fabric ready for sewing](https://mixkit.co/free-stock-video/cutting-fabric-ready-for-sewing-11698/) | mixkit | Mixkit Stock Video Free License (commercial use, no credit needed) | not required |
+| fashion-model-in-front-of-multiple-mirrors-809.mp4 | [Fashion model in front of multiple mirrors](https://mixkit.co/free-stock-video/fashion-model-in-front-of-multiple-mirrors-809/) | mixkit | Mixkit Stock Video Free License (commercial use, no credit needed) | not required |
+| stylish-old-fashion-male-model-putting-on-a-coat-41491.mp4 | [Stylish old fashion male model putting on a coat](https://mixkit.co/free-stock-video/stylish-old-fashion-male-model-putting-on-a-coat-41491/) | mixkit | Mixkit Stock Video Free License (commercial use, no credit needed) | not required |
+| old-fashion-model-smoking-in-an-old-bookstore-41486.mp4 | [Old fashion model smoking in an old bookstore](https://mixkit.co/free-stock-video/old-fashion-model-smoking-in-an-old-bookstore-41486/) | mixkit | Mixkit Stock Video Free License (commercial use, no credit needed) | not required |

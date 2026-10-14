@@ -1,0 +1,974 @@
+[
+ {
+  "source": "mixkit",
+  "title": "Pop 08",
+  "artist": "Grigoriy Nuzhny",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/701/701.mp3",
+  "waveform": "https://assets.mixkit.co/music/701/701-waveform.json",
+  "length": 144,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/fashion/",
+  "queries": [
+   "tag:fashion",
+   "tag:luxury"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 7,
+   "wf_tail_s": 1
+  },
+  "prescore": 2.5
+ },
+ {
+  "source": "mixkit",
+  "title": "Cyberpunk City",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Ambient",
+  "url": "https://assets.mixkit.co/music/140/140.mp3",
+  "waveform": "https://assets.mixkit.co/music/140/140-waveform.json",
+  "length": 100,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic",
+   "mood:mysterious"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 2,
+   "wf_tail_s": 2
+  },
+  "prescore": 2.5
+ },
+ {
+  "source": "mixkit",
+  "title": "Curiosity",
+  "artist": "Diego Nava",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/480/480.mp3",
+  "waveform": "https://assets.mixkit.co/music/480/480-waveform.json",
+  "length": 100,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/fashion/",
+  "queries": [
+   "tag:fashion"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 11,
+   "wf_tail_s": 1
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Majestic",
+  "artist": "Diego Nava",
+  "genre": "Lounge",
+  "url": "https://assets.mixkit.co/music/475/475.mp3",
+  "waveform": "https://assets.mixkit.co/music/475/475-waveform.json",
+  "length": 109,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/fashion/",
+  "queries": [
+   "tag:fashion"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 10,
+   "wf_tail_s": 5
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Skyline",
+  "artist": "Eugenio Mininni",
+  "genre": "Classical",
+  "url": "https://assets.mixkit.co/music/601/601.mp3",
+  "waveform": "https://assets.mixkit.co/music/601/601-waveform.json",
+  "length": 206,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/dramatic/",
+  "queries": [
+   "mood:dramatic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 3,
+   "wf_tail_s": 3
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Romantic 04",
+  "artist": "Lily J",
+  "genre": "Ambient",
+  "url": "https://assets.mixkit.co/music/758/758.mp3",
+  "waveform": "https://assets.mixkit.co/music/758/758-waveform.json",
+  "length": 135,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 4,
+   "wf_tail_s": 1
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Other World",
+  "artist": "Lily J",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/723/723.mp3",
+  "waveform": "https://assets.mixkit.co/music/723/723-waveform.json",
+  "length": 96,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 8,
+   "wf_tail_s": 1
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Santa Claus is Here!",
+  "artist": "Diego Nava",
+  "genre": "Classical",
+  "url": "https://assets.mixkit.co/music/533/533.mp3",
+  "waveform": "https://assets.mixkit.co/music/533/533-waveform.json",
+  "length": 166,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 12,
+   "wf_tail_s": 1
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Forest Treasure",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Ambient",
+  "url": "https://assets.mixkit.co/music/138/138.mp3",
+  "waveform": "https://assets.mixkit.co/music/138/138-waveform.json",
+  "length": 104,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/mysterious/",
+  "queries": [
+   "mood:mysterious"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 3,
+   "wf_tail_s": 3
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Spiritual Moment",
+  "artist": "Diego Nava",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/525/525.mp3",
+  "waveform": "https://assets.mixkit.co/music/525/525-waveform.json",
+  "length": 119,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/mysterious/",
+  "queries": [
+   "mood:mysterious"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 4,
+   "wf_tail_s": 1
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Spirit in the Woods 2",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Ambient",
+  "url": "https://assets.mixkit.co/music/147/147.mp3",
+  "waveform": "https://assets.mixkit.co/music/147/147-waveform.json",
+  "length": 104,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/mysterious/",
+  "queries": [
+   "mood:mysterious"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 3,
+   "wf_tail_s": 3
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Fhloston Paradise Arrival",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Ambient",
+  "url": "https://assets.mixkit.co/music/156/156.mp3",
+  "waveform": "https://assets.mixkit.co/music/156/156-waveform.json",
+  "length": 103,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/mysterious/",
+  "queries": [
+   "mood:mysterious"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 5,
+   "wf_tail_s": 2
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "See Line Funk",
+  "artist": "Alejandro Maga\u00f1a",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/105/105.mp3",
+  "waveform": "https://assets.mixkit.co/music/105/105-waveform.json",
+  "length": 133,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/fashion/",
+  "queries": [
+   "tag:fashion",
+   "tag:luxury"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 5
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "House One",
+  "artist": "Francisco Alvear",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/662/662.mp3",
+  "waveform": "https://assets.mixkit.co/music/662/662-waveform.json",
+  "length": 116,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/fashion/",
+  "queries": [
+   "tag:fashion"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 9,
+   "wf_tail_s": 8
+  },
+  "prescore": 1.75
+ },
+ {
+  "source": "mixkit",
+  "title": "Moon Walk",
+  "artist": "Eugenio Mininni",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/609/609.mp3",
+  "waveform": "https://assets.mixkit.co/music/609/609-waveform.json",
+  "length": 205,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 12,
+   "wf_tail_s": 10
+  },
+  "prescore": 1.75
+ },
+ {
+  "source": "mixkit",
+  "title": "Nature Yoga",
+  "artist": "Arulo",
+  "genre": "Ambient",
+  "url": "https://assets.mixkit.co/music/442/442.mp3",
+  "waveform": "https://assets.mixkit.co/music/442/442-waveform.json",
+  "length": 108,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/mysterious/",
+  "queries": [
+   "mood:mysterious"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 3,
+   "wf_tail_s": 8
+  },
+  "prescore": 1.75
+ },
+ {
+  "source": "mixkit",
+  "title": "Forest Walk",
+  "artist": "Eugenio Mininni",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/607/607.mp3",
+  "waveform": "https://assets.mixkit.co/music/607/607-waveform.json",
+  "length": 174,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic",
+   "mood:mysterious"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 15,
+   "wf_tail_s": 5
+  },
+  "prescore": 1.7
+ },
+ {
+  "source": "mixkit",
+  "title": "Sonor 01",
+  "artist": "Eugenio Mininni",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/558/558.mp3",
+  "waveform": "https://assets.mixkit.co/music/558/558-waveform.json",
+  "length": 299,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic",
+   "mood:mysterious"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 20,
+   "wf_tail_s": 4
+  },
+  "prescore": 1.7
+ },
+ {
+  "source": "mixkit",
+  "title": "Tech House vibes",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/130/130.mp3",
+  "waveform": "https://assets.mixkit.co/music/130/130-waveform.json",
+  "length": 102,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/fashion/",
+  "queries": [
+   "tag:fashion"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 2
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Hazy After Hours",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/132/132.mp3",
+  "waveform": "https://assets.mixkit.co/music/132/132-waveform.json",
+  "length": 127,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/fashion/",
+  "queries": [
+   "tag:fashion"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "New York",
+  "artist": "Arulo",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/427/427.mp3",
+  "waveform": "https://assets.mixkit.co/music/427/427-waveform.json",
+  "length": 96,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/fashion/",
+  "queries": [
+   "tag:fashion"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 4
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Beautiful Dream",
+  "artist": "Diego Nava",
+  "genre": "Jazz",
+  "url": "https://assets.mixkit.co/music/493/493.mp3",
+  "waveform": "https://assets.mixkit.co/music/493/493-waveform.json",
+  "length": 97,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/dramatic/",
+  "queries": [
+   "mood:dramatic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 5
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Vastness",
+  "artist": "Andrew Ev",
+  "genre": "Ambient",
+  "url": "https://assets.mixkit.co/music/184/184.mp3",
+  "waveform": "https://assets.mixkit.co/music/184/184-waveform.json",
+  "length": 230,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Relaxing in Nature",
+  "artist": "Diego Nava",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/522/522.mp3",
+  "waveform": "https://assets.mixkit.co/music/522/522-waveform.json",
+  "length": 97,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 4
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Meditation 05",
+  "artist": "Arulo",
+  "genre": "Ambient",
+  "url": "https://assets.mixkit.co/music/382/382.mp3",
+  "waveform": "https://assets.mixkit.co/music/382/382-waveform.json",
+  "length": 108,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 5
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Papa",
+  "artist": "Michael Ramir C.",
+  "genre": "Jazz",
+  "url": "https://assets.mixkit.co/music/879/879.mp3",
+  "waveform": "https://assets.mixkit.co/music/879/879-waveform.json",
+  "length": 97,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 0
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "These Nights",
+  "artist": "Ahjay Stelino",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/104/104.mp3",
+  "waveform": "https://assets.mixkit.co/music/104/104-waveform.json",
+  "length": 101,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 3
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Hip Hop 01",
+  "artist": "Lily J",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/737/737.mp3",
+  "waveform": "https://assets.mixkit.co/music/737/737-waveform.json",
+  "length": 149,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 1,
+   "wf_tail_s": 2
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Yoga Song",
+  "artist": "Arulo",
+  "genre": "Ambient",
+  "url": "https://assets.mixkit.co/music/444/444.mp3",
+  "waveform": "https://assets.mixkit.co/music/444/444-waveform.json",
+  "length": 98,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/mysterious/",
+  "queries": [
+   "mood:mysterious"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 5
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Serene Moments",
+  "artist": "Ahjay Stelino",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/27/27.mp3",
+  "waveform": "https://assets.mixkit.co/music/27/27-waveform.json",
+  "length": 119,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/mysterious/",
+  "queries": [
+   "mood:mysterious"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 3
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Torn Threads",
+  "artist": "Ahjay Stelino",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/73/73.mp3",
+  "waveform": "https://assets.mixkit.co/music/73/73-waveform.json",
+  "length": 116,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/mysterious/",
+  "queries": [
+   "mood:mysterious"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 0
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Possible Dreams",
+  "artist": "Eugenio Mininni",
+  "genre": "Classical",
+  "url": "https://assets.mixkit.co/music/599/599.mp3",
+  "waveform": "https://assets.mixkit.co/music/599/599-waveform.json",
+  "length": 159,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/dramatic/",
+  "queries": [
+   "mood:dramatic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 20,
+   "wf_tail_s": 3
+  },
+  "prescore": 1.45
+ },
+ {
+  "source": "mixkit",
+  "title": "The 3rd Day",
+  "artist": "Eugenio Mininni",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/557/557.mp3",
+  "waveform": "https://assets.mixkit.co/music/557/557-waveform.json",
+  "length": 184,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 29,
+   "wf_tail_s": 6
+  },
+  "prescore": 1.45
+ },
+ {
+  "source": "mixkit",
+  "title": "What it Takes",
+  "artist": "Eugenio Mininni",
+  "genre": "Ambient",
+  "url": "https://assets.mixkit.co/music/616/616.mp3",
+  "waveform": "https://assets.mixkit.co/music/616/616-waveform.json",
+  "length": 298,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/mysterious/",
+  "queries": [
+   "mood:mysterious"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 95,
+   "wf_tail_s": 3
+  },
+  "prescore": 1.45
+ },
+ {
+  "source": "mixkit",
+  "title": "Romantic Getaway",
+  "artist": "Ahjay Stelino",
+  "genre": "Classical",
+  "url": "https://assets.mixkit.co/music/88/88.mp3",
+  "waveform": "https://assets.mixkit.co/music/88/88-waveform.json",
+  "length": 104,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 4,
+   "wf_tail_s": 20
+  },
+  "prescore": 1.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Valley Sunset",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Ambient",
+  "url": "https://assets.mixkit.co/music/127/127.mp3",
+  "waveform": "https://assets.mixkit.co/music/127/127-waveform.json",
+  "length": 134,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/mysterious/",
+  "queries": [
+   "mood:mysterious"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 6,
+   "wf_tail_s": 14
+  },
+  "prescore": 1.25
+ },
+ {
+  "source": "mixkit",
+  "title": "River Flow",
+  "artist": "Eugenio Mininni",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/594/594.mp3",
+  "waveform": "https://assets.mixkit.co/music/594/594-waveform.json",
+  "length": 270,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/dramatic/",
+  "queries": [
+   "mood:dramatic",
+   "tag:cinematic"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 39,
+   "wf_tail_s": 9
+  },
+  "prescore": 1.2
+ },
+ {
+  "source": "mixkit",
+  "title": "Shame",
+  "artist": "Eugenio Mininni",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/553/553.mp3",
+  "waveform": "https://assets.mixkit.co/music/553/553-waveform.json",
+  "length": 128,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/mysterious/",
+  "queries": [
+   "mood:mysterious"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 1,
+   "wf_tail_s": 9
+  },
+  "prescore": 1.15
+ },
+ {
+  "source": "mixkit",
+  "title": "Relaxation Meditation",
+  "artist": "Arulo",
+  "genre": "Ambient",
+  "url": "https://assets.mixkit.co/music/365/365.mp3",
+  "waveform": "https://assets.mixkit.co/music/365/365-waveform.json",
+  "length": 104,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/mysterious/",
+  "queries": [
+   "mood:mysterious"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 8
+  },
+  "prescore": 1.15
+ },
+ {
+  "source": "mixkit",
+  "title": "Thinking About You",
+  "artist": "Arulo",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/234/234.mp3",
+  "waveform": "https://assets.mixkit.co/music/234/234-waveform.json",
+  "length": 118,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/fashion/",
+  "queries": [
+   "tag:fashion"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 14,
+   "wf_tail_s": 10
+  },
+  "prescore": 0.95
+ },
+ {
+  "source": "mixkit",
+  "title": "Red Lights Adhafera",
+  "artist": "Eugenio Mininni",
+  "genre": "Ambient",
+  "url": "https://assets.mixkit.co/music/563/563.mp3",
+  "waveform": "https://assets.mixkit.co/music/563/563-waveform.json",
+  "length": 299,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 29,
+   "wf_tail_s": 7
+  },
+  "prescore": 0.95
+ },
+ {
+  "source": "mixkit",
+  "title": "Odd Beats 01",
+  "artist": "Lily J",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/722/722.mp3",
+  "waveform": "https://assets.mixkit.co/music/722/722-waveform.json",
+  "length": 95,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 15,
+   "wf_tail_s": 10
+  },
+  "prescore": 0.95
+ },
+ {
+  "source": "mixkit",
+  "title": "Feedback Dreams",
+  "artist": "Eugenio Mininni",
+  "genre": "Ambient",
+  "url": "https://assets.mixkit.co/music/588/588.mp3",
+  "waveform": "https://assets.mixkit.co/music/588/588-waveform.json",
+  "length": 149,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/mysterious/",
+  "queries": [
+   "mood:mysterious"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 24,
+   "wf_tail_s": 10
+  },
+  "prescore": 0.95
+ },
+ {
+  "source": "mixkit",
+  "title": "Spirit in the Woods",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Ambient",
+  "url": "https://assets.mixkit.co/music/139/139.mp3",
+  "waveform": "https://assets.mixkit.co/music/139/139-waveform.json",
+  "length": 113,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/mysterious/",
+  "queries": [
+   "mood:mysterious"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 1,
+   "wf_tail_s": 11
+  },
+  "prescore": 0.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Yoga Tune",
+  "artist": "Arulo",
+  "genre": "Ambient",
+  "url": "https://assets.mixkit.co/music/325/325.mp3",
+  "waveform": "https://assets.mixkit.co/music/325/325-waveform.json",
+  "length": 97,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/mysterious/",
+  "queries": [
+   "mood:mysterious"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 18
+  },
+  "prescore": 0.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Wedding Song 03",
+  "artist": "Arulo",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/389/389.mp3",
+  "waveform": "https://assets.mixkit.co/music/389/389-waveform.json",
+  "length": 96,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/cinematic/",
+  "queries": [
+   "tag:cinematic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 19,
+   "wf_tail_s": 22
+  },
+  "prescore": 0.45
+ }
+]
