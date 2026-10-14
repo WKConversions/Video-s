@@ -58,7 +58,8 @@ export const QuadLayer: React.FC<{ w: number; h: number; q: Quad; children: Reac
 );
 
 // ------------------------------------------------------------------------------------------------ SVG filters
-/** pixel mosaic with b x b blocks: the box-averaged colour sampled once per block, then spread over the block */
+/** pixel mosaic with b x b blocks: the colour at each block centre (lightly pre-filtered) spread over the block, so blocks stay crisp
+ * and high-contrast like the reference's */
 export const mosaicId = (b: number) => `s4px${b}`;
 export const MOSAIC_SIZES = [3, 4, 8, 16];
 export const FilterDefs: React.FC<{ dirBlur?: number }> = ({ dirBlur = 0 }) => (
@@ -68,7 +69,7 @@ export const FilterDefs: React.FC<{ dirBlur?: number }> = ({ dirBlur = 0 }) => (
         const c = Math.floor(b / 2);
         return (
           <filter key={b} id={mosaicId(b)} x="0" y="0" width="1" height="1" colorInterpolationFilters="sRGB">
-            <feGaussianBlur in="SourceGraphic" stdDeviation={b * 0.32} result="avg" />
+            <feGaussianBlur in="SourceGraphic" stdDeviation={Math.max(0.5, b * 0.08)} result="avg" />
             <feFlood x={c} y={c} width={1} height={1} floodColor="#000" floodOpacity={1} />
             <feComposite width={b} height={b} />
             <feTile result="grid" />

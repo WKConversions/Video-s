@@ -174,13 +174,13 @@ const PromptLine: React.FC<{ g: number }> = ({ g }) => {
   if (g < 291 || g > 340) return null;
   const n = at(TYPED, 290, g);
   const appear = (i: number) => 290 + TYPED.findIndex((c) => c > i);
-  const layer = kf(g, [[291, 0.48], [292, 0.51], [293, 0.59], [294, 0.69], [295, 0.82], [296, 0.9], [297, 0.97], [298, 1]]);
-  const exit = kf(g, [[333, 1], [334, 0.84], [335, 0.47], [336, 0.21], [337, 0.085], [338, 0.05], [340, 0.03], [340.5, 0]]);
+  const layer = kf(g, [[291, 0.4], [292, 0.42], [293, 0.5], [294, 0.62], [295, 0.8], [296, 0.9], [297, 0.97], [298, 1]]);
+  const exit = kf(g, [[333, 1], [334, 0.84], [335, 0.38], [336, 0.2], [337, 0.07], [338, 0.035], [339, 0.025], [340, 0.015], [340.5, 0]]);
   const size = 44.7 * capScale(g);
   // 336–340: the faint ghost of the line rides inside the morphing field/card
   const x = g <= 335 ? at(TX, 291, g) : kf(g, [[336, 412], [337, 492], [338, 484], [339, 505], [340, 520]]), base = kf(g, [[291, 554.5], [293, 554], [295, 553.5], [298, 553], [324, 553], [333, 552], [335, 551.5]]);
   const glyph = (i: number) => Math.min(layer, kf(g - appear(i), [[0, 0.75], [1, 0.9], [2, 0.97], [3, 1]]));
-  const blur = kf(g, [[334, 0], [335, 1.2], [336, 1.8], [337, 2], [340, 3]]);
+  const blur = kf(g, [[334, 0], [335, 1.2], [336, 1.8], [337, 2.5], [338, 3.5], [340, 4]]);
   return (
     <TypedText text={LINE} n={n} x={x} base={base} size={size} weight={600} color={C.ink} opacity={glyph} style={{ opacity: g >= 333 ? exit * 0.95 : 1, filter: blur ? `blur(${blur}px)` : undefined }} />
   );
@@ -228,6 +228,7 @@ export const Seg3: React.FC<{ g: number }> = ({ g }) => (
     <Card g={g} />
     <PromptLine g={g} />
     <SendButton g={g} />
-    <Grain opacity={0.36} seed={5} />
+    {/* static grain; its strength follows the reference's (stronger on the held shots, softer in the fast moves) */}
+    <Grain opacity={kf(g, [[287, 0.4], [293, 0.3], [305, 0.3], [314, 0.45], [326, 0.45], [332, 0.3], [341, 0.3], [359, 0.4], [368, 0.3], [377, 0.22], [386, 0.2]])} seed={5} />
   </AbsoluteFill>
 );

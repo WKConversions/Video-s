@@ -150,11 +150,11 @@ const ActionPill: React.FC<{ g: number }> = ({ g }) => {
   const pop = kf(g, [[338, 0.45], [339, 0.62], [340, 0.75], [341, 0.82], [342, 0.87], [343, 0.9], [344, 0.92], [345, 0.945], [346, 0.965], [347, 0.98], [348, 0.995], [349, 1]]);
   const press = kf(g, [[358, 1], [359, 0.97], [360, 0.9], [361, 0.9], [362, 0.925], [363, 0.953], [364, 0.967], [365, 0.981], [366, 0.99], [367, 1]]);
   const hov = kf(g, [[360, 0], [361, 0.2], [364, 0.6], [367, 0.87], [369, 1]]);
-  const cx = kf(g, [[338, 604], [339, 622], [340, 639], [341, 652], [342, 664], [360, 664], [372, 652], [384, 652], [385, 640], [386, 624]]), s = pop * press * kf(g, [[366, 1], [370, 1.035]]);
+  const cx = kf(g, [[338, 604], [339, 622], [340, 639], [341, 652], [342, 664], [360, 664], [372, 652], [384, 652], [385, 640], [386, 624]]), s = pop * press * kf(g, [[366, 1], [370, 1.05]]), cy = kf(g, [[366, 230], [372, 228]]);
   const fs = 19, lw = ink(LABEL, 600, fs, F.ui, 0).w, gap = 7, sp = 6.5;
   const x0 = -(lw + gap + 2 * sp) / 2;
   return (
-    <div style={{ position: "absolute", left: cx - 107.5, top: 230 - 29, width: 215, height: 58, borderRadius: 29, background: mix(C.blueText, C.blue, hov),
+    <div style={{ position: "absolute", left: cx - 107.5, top: cy - 29, width: 215, height: 58, borderRadius: 29, background: mix(C.blueText, C.blue, hov),
       transform: `scale(${s})`, boxShadow: "0 2px 6px rgba(18,60,130,0.18)" }}>
       <svg width={215} height={58} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
         <text x={107.5 + x0} y={29 + 6.8} fontFamily={F.ui} fontWeight={600} fontSize={fs} fill="#FFFFFF">{LABEL}</text>
@@ -223,9 +223,9 @@ export const Card: React.FC<{ g: number }> = ({ g }) => {
   const eb = kf(g, [[352, 0], [366, 3.5], [376, 6.3], [382, 10.4], [384, 10.4], [385, 10], [386, 9]]);
   const x0 = -e, x1 = CW + e, top = p.top - e, bot = p.bot + eb;
   const content = kf(g, [[337, 0], [338, 0.1], [339, 0.2], [340, 0.35], [341, 0.5], [342, 0.6], [344, 0.8], [347, 1]]);
-  const rest = kf(g, [[338, 0.15], [339, 0.4], [340, 0.85], [341, 1]]); // paperclip and icons trail the pill
+  const rest = kf(g, [[338, 0], [339, 0.1], [340, 0.6], [341, 1]]); // paperclip and icons trail the pill
   const cBlur = kf(g, [[338, 3], [339, 3], [340, 2], [341, 1], [342, 0]]);
-  const rim = kf(g, [[338, 0], [339, 0.2], [340, 0.42], [341, 0.65], [342, 0.9], [343, 1]]);
+  const rim = kf(g, [[338, 0], [339, 0.15], [340, 0.3], [341, 0.5], [342, 0.85], [343, 1]]);
   const field = kf(g, [[337, 1], [341, 0]]); // the input field's look fading into the card's
   const oBlur = kf(g, [[336, 1.5], [339, 1.5], [341, 0.5], [342, 0]]);
   const smear = kf(g, [[382, 0], [383, 3], [384, 4], [385, 8], [386, 11]]);
@@ -251,7 +251,7 @@ export const Card: React.FC<{ g: number }> = ({ g }) => {
           border: `1.5px solid rgba(5,15,25,${0.1 * field})` }} />
         <Rim x0={x0} x1={x1} top={top} bot={bot} rad={rad} op={rim} dark={0.85} />
         {/* the out-of-focus chip inside the card (top right) */}
-        <div style={{ position: "absolute", left: 548, top: 6, width: 254, height: 50, borderRadius: 25, background: "rgba(63,140,232,0.22)", filter: "blur(14px)", opacity: blob }} />
+        <div style={{ position: "absolute", left: 548, top: 6, width: 254, height: 50, borderRadius: 25, background: "rgba(63,140,232,0.3)", filter: "blur(14px)", opacity: blob }} />
         {/* content: sharp on the left, softer on the right (depth of field) */}
         <div style={{ position: "absolute", inset: 0, opacity: content, filter: cBlur ? `blur(${cBlur}px)` : undefined }}>
           <div style={{ position: "absolute", inset: 0, WebkitMaskImage: DOF, maskImage: DOF }}><Content g={g} rest={rest} /></div>
@@ -270,10 +270,14 @@ export const Ghosts: React.FC<{ g: number }> = ({ g }) => {
   const cy = kf(g, [[341, 154], [356, 155], [366, 163], [376, 171], [382, 187], [384, 203], [385, 219], [386, 236]]);
   const w = kf(g, [[342, 124], [366, 118], [376, 110], [382, 95], [386, 74]]);
   const chip = kf(g, [[340, 0], [342, 1]]);
-  // storyboard frame edge: bottom-left corner (x, y) and its visible length
-  const bx = kf(g, [[364, 735], [366, 746], [376, 771], [382, 828], [384, 868], [385, 885], [386, 909]]);
-  const by = kf(g, [[364, -20], [366, 24], [376, 40], [382, 89], [384, 114], [385, 130], [386, 154]]);
-  const bl = kf(g, [[366, 330], [376, 420], [386, 330]]);
+  // storyboard frame edge: a band entering from the top; bottom-left corner, bottom-edge angle and length (measured)
+  const K: [number, number][] = [[364, 0], [366, 1], [376, 2], [382, 3], [384, 4], [385, 5], [386, 6]];
+  const tk = (vals: number[]) => kf(g, K.map(([f, i]) => [f, vals[i]] as [number, number]));
+  const bx = tk([735, 745, 768, 830, 868, 885, 908]), by = tk([-12, 20, 40, 85, 114, 130, 150]);
+  const th = (tk([-4.5, -4.7, -6.6, -10.9, -13, -14.3, -15.5]) * Math.PI) / 180, bl = tk([215, 210, 325, 397, 400, 360, 318]);
+  const T = 75, lean = 25;
+  const br: [number, number] = [bx + bl * Math.cos(th), by + bl * Math.sin(th)];
+  const band = [[bx, by], br, [br[0] + lean, br[1] - T], [bx + lean, by - T]].map((p) => p.join(",")).join(" ");
   return (
     <>
       <div style={{ position: "absolute", left: cx - w / 2, top: cy - w * 0.16, opacity: 0.32 * chip, filter: "blur(7px)" }}>
@@ -281,8 +285,9 @@ export const Ghosts: React.FC<{ g: number }> = ({ g }) => {
         <div style={{ position: "absolute", left: w * 0.8, top: w * 0.1, width: w * 0.16, height: w * 0.16, borderRadius: "50%", background: C.glowDeep }} />
       </div>
       {g >= 364 && (
-        <div style={{ position: "absolute", left: bx, top: by - 420, width: bl, height: 420, background: C.glowDeep, opacity: 0.16, filter: "blur(9px)",
-          transformOrigin: "0 100%", transform: "rotate(-12deg) skewX(-10deg)", borderRadius: 18 }} />
+        <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0, overflow: "visible", filter: "blur(5px)" }}>
+          <polygon points={band} fill={C.glowDeep} fillOpacity={0.15} />
+        </svg>
       )}
     </>
   );
