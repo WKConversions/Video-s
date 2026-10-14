@@ -90,7 +90,7 @@ export const Glass: React.FC<{
 
 // ---------- white line glyphs, drawn in a 40-unit-tall box (ar = width / height)
 type GlyphDef = { ar: number; el: (c: string) => React.ReactNode };
-const S = (c: string, w: number): React.SVGProps<SVGPathElement> => ({ fill: "none", stroke: c, strokeWidth: w, strokeLinecap: "round", strokeLinejoin: "round" });
+const S = (c: string, w: number) => ({ fill: "none", stroke: c, strokeWidth: w, strokeLinecap: "round" as const, strokeLinejoin: "round" as const });
 const note = (c: string) => (
   <>
     <path d="M19 5 V27.5" {...S(c, 4.4)} />

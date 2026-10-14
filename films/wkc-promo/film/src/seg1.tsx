@@ -135,7 +135,8 @@ const GCX: [number, number][] = [[46, 968.4], [48, 968.2], [50, 967.8], [52, 967
 const GCY: [number, number][] = [[46, 522.6], [48, 523.3], [50, 524.6], [52, 525.4], [54, 526.0], [56, 526.5], [58, 527.1], [60, 527.3], [80, 527.1], [88, 527.3], [90, 527.6], [92, 528.2], [94, 529.0], [95, 529.5], [96, 530.4], [97, 531.3]];
 /** spotlight background keyframes (reference colours): centre, mid, outer, left base, right base */
 const LOGO_BG: [number, string, string, string, string, string][] = [
-  [46, "#262049", "#1D1641", "#16112E", "#14111F", "#0B0F18"],
+  [46, "#1A1535", "#15112C", "#100E22", "#0F0D1A", "#0A0C18"],
+  [52, "#1C1638", "#16122E", "#110F24", "#100E1B", "#0B0D18"],
   [60, "#262049", "#1D1641", "#16112E", "#14111F", "#0B0F18"],
   [72, "#21194C", "#1C153F", "#15112C", "#14101F", "#0B0E17"],
   [84, "#21194D", "#1C1640", "#131027", "#100E1C", "#0A0C16"],
@@ -144,8 +145,9 @@ const LOGO_BG: [number, string, string, string, string, string][] = [
 ];
 const logoBg = (f: number) => {
   const col = (j: number) => wk(colorAt(f, LOGO_BG.map((r) => [r[0], r[j]] as [number, string])));
+  const k = clamp01((f - 88) / 9), rx = lerp(1000, 760, k * k), ry = lerp(700, 600, k * k);
   return [
-    `radial-gradient(ellipse 1000px 700px at 960px 630px, ${col(1)} 0%, ${col(2)} 36%, ${rgba(col(3), 1)} 70%, ${rgba(col(3), 0)} 100%)`,
+    `radial-gradient(ellipse ${rx}px ${ry}px at 960px 630px, ${col(1)} 0%, ${col(2)} 36%, ${rgba(col(3), 1)} 70%, ${rgba(col(3), 0)} 100%)`,
     `linear-gradient(90deg, ${col(4)} 0%, ${col(4)} 30%, ${col(5)} 100%)`,
   ].join(", ");
 };
@@ -243,14 +245,17 @@ const Streak: React.FC<{ f: number }> = ({ f }) => {
         <linearGradient id="s1-sr" gradientUnits="userSpaceOnUse" x1={0} y1={rc[1]} x2={0} y2={hasR ? rvy : 0}>
           <stop offset={0} stopColor="#5E9BE6" stopOpacity={1} /><stop offset={0.7} stopColor="#3F8CE8" stopOpacity={0.75} /><stop offset={1} stopColor="#3F8CE8" stopOpacity={0.15} />
         </linearGradient>
+        <linearGradient id="s1-se" gradientUnits="userSpaceOnUse" x1={0} y1={hasR ? rvy : 400} x2={0} y2={hasR ? Math.max(0, rvy - 260) : 0}>
+          <stop offset={0} stopColor="#3F8CE8" stopOpacity={0.3} /><stop offset={1} stopColor="#3F8CE8" stopOpacity={0} />
+        </linearGradient>
         <filter id="s1-sg" x={-50} y={-50} width={2020} height={1180} filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation={3} /></filter>
         <filter id="s1-sc" x={-50} y={-50} width={2020} height={1180} filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation={1.1} /></filter>
         <filter id="s1-pb" x={-200} y={-200} width={2400} height={1500} filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation={8} /></filter>
       </defs>
       {hasR && panelK > 0 && (
-        <path d={`M${rcx},${rc[1]} L${rcx + rdx * (ptop - rc[1])},${ptop} L1990,${ptop - 8} L1990,1150 L${rcx},1150 Z`} fill="#3F8CE8" opacity={0.035 * panelK} filter="url(#s1-pb)" />
+        <path d={`M${rcx},${rc[1]} L${rcx + rdx * (ptop - rc[1])},${ptop} L1990,${ptop - 8} L1990,${hy(1990)} Z`} fill="#3F8CE8" opacity={0.035 * panelK} filter="url(#s1-pb)" />
       )}
-      {ext && <path d={ext} stroke="#3F8CE8" strokeWidth={2} opacity={0.12 * I} fill="none" filter="url(#s1-sc)" />}
+      {ext && <path d={ext} stroke="url(#s1-se)" strokeWidth={2} opacity={0.5 * I} fill="none" filter="url(#s1-sc)" />}
       <g opacity={I} fill="none" strokeLinecap="round" strokeLinejoin="round">
         {lines.map((l, i) => <path key={`g${i}`} d={l.d} stroke={`url(#${l.grad})`} strokeWidth={9} opacity={0.3} filter="url(#s1-sg)" />)}
         {lines.map((l, i) => <path key={`c${i}`} d={l.d} stroke={`url(#${l.grad})`} strokeWidth={4} filter="url(#s1-sc)" />)}

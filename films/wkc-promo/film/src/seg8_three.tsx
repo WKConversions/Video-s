@@ -67,7 +67,7 @@ const E_STR: [number, number][] = [[1049, 1], [1050, 0.66], [1051, 0.57], [1052,
 
 // ---- ring drawing (canvas: an ellipse stroked with a conic gradient that follows the measured brightness) ----
 /** level -> colour along WKC's blues: deep blue, brand blue, light blue, white */
-const RAMP: [number, string][] = [[0, "#1B4FB8"], [0.22, "#2C6AD0"], [0.45, "#5AA2F0"], [0.7, "#A9CFF8"], [0.88, "#E6F0FD"], [1, "#FFFFFF"]];
+const RAMP: [number, string][] = [[0, "#0E2658"], [0.1, "#133170"], [0.2, "#1C46A0"], [0.35, "#2D66CC"], [0.5, "#4C8FE6"], [0.7, "#8FBDF5"], [0.88, "#D2E5FB"], [1, "#FFFFFF"]];
 const rampRGBA = (L: number, alpha = 1) => {
   const l = clamp01(L);
   let i = 1;
@@ -133,7 +133,8 @@ const drawRings = (ctx: CanvasRenderingContext2D, n: number) => {
     const e: El = { cx, cy, a: am, b: am * ratio };
     [720, 845, 910].forEach((ra) => {
       const r: El = { cx, cy, a: ra * s, b: ra * s * ratio };
-      strokeEl(ctx, r, conic(ctx, r, (d) => rampRGBA(0.2, 0.55 * clamp01(lvl(p, d) * 3 + 0.25))), 3 * s, 1.5);
+      // faint, and only on the upper left (as measured)
+      strokeEl(ctx, r, conic(ctx, r, (d) => rampRGBA(0.12, 0.22 * Math.exp(-Math.pow((d - 225) / 45, 2)))), 2.5 * s, 1.5);
     });
     const est = tv(n, E_STR);
     [0, 2, 4].forEach((lag, i) => {
@@ -142,11 +143,22 @@ const drawRings = (ctx: CanvasRenderingContext2D, n: number) => {
       const soft = smooth(1042, 1049, n);
       const sp = (d: number) => clamp01(lvl(PROF[7].slice(1), d) * 1.1);
       const k = est * Math.pow(0.82, i);
-      strokeEl(ctx, r, conic(ctx, r, (d) => rampRGBA(sp(d) * (0.55 + 0.25 * soft) * k)), lerp(3.2, 14, soft), lerp(0.6, 7, soft));
-      strokeEl(ctx, r, conic(ctx, r, (d) => rampRGBA(sp(d) * 0.45 * k)), 14, 6, 0.6);
+      strokeEl(ctx, r, conic(ctx, r, (d) => rampRGBA(sp(d) * lerp(0.5, 0.78, soft) * k, lerp(1, 0.55, soft))), lerp(3.2, 18, soft), lerp(0.6, 9, soft));
+      strokeEl(ctx, r, conic(ctx, r, (d) => rampRGBA(Math.min(0.45, sp(d)) * k)), 14, 6, 0.5);
     });
-    strokeEl(ctx, e, conic(ctx, e, (d) => rampRGBA(Math.min(0.55, lvl(p, d)))), 9 * s, 5 * s, 0.6);
-    strokeEl(ctx, e, conic(ctx, e, (d) => rampRGBA(lvl(p, d))), 3 * s);
+    // the merged rim still glows at the impact and thins out over ~8 frames
+    const f = Math.exp(-(n - 1032) / 5);
+    const outer: El = { cx, cy, a: am * (1 + 0.07 * f), b: am * (1 + 0.07 * f) * ratio }, inner: El = { cx, cy, a: am * 0.97, b: am * 0.97 * ratio };
+    ctx.save();
+    ctx.filter = `blur(${8 * s}px)`;
+    ctx.fillStyle = conic(ctx, outer, (d) => rampRGBA(0.22, 0.5 * f * Math.pow(lvl(p, d), 0.6)));
+    ctx.beginPath();
+    ctx.ellipse(outer.cx, outer.cy, outer.a, outer.b, 0, 0, Math.PI * 2);
+    ctx.ellipse(inner.cx, inner.cy, inner.a, inner.b, 0, 0, Math.PI * 2, true);
+    ctx.fill("evenodd");
+    ctx.restore();
+    strokeEl(ctx, e, conic(ctx, e, (d) => rampRGBA(Math.min(0.6, lvl(p, d)))), (9 + 12 * f) * s, (5 + 5 * f) * s, 0.55 + 0.35 * f);
+    strokeEl(ctx, e, conic(ctx, e, (d) => rampRGBA(lvl(p, d))), (3 + 1.5 * f) * s);
   }
 };
 
@@ -184,7 +196,7 @@ const Formats: React.FC<{ n: number; cx: number; cy: number; ratio: number }> = 
         return (
           <g key={f.label} opacity={op}>
             <rect x={x - w / 2} y={y - h / 2} width={w} height={h} rx={rr} fill="none" stroke="#3F8CE8" strokeWidth={8 * k} filter="url(#s8-fglow)" opacity={0.55 + 0.45 * flash} />
-            <rect x={x - w / 2} y={y - h / 2} width={w} height={h} rx={rr} fill="#07111E" fillOpacity={0.9} stroke={stroke} strokeWidth={3 * k} />
+            <rect x={x - w / 2} y={y - h / 2} width={w} height={h} rx={rr} fill="#07111E" fillOpacity={0.85} stroke={stroke} strokeWidth={3 * k} />
             <text x={x} y={y + 8 * k} textAnchor="middle" fontFamily={F.ui} fontWeight={600} fontSize={22 * k} fill="#CFE2FA">{f.label}</text>
           </g>
         );
@@ -253,7 +265,7 @@ export const ThreeShot: React.FC<{ g: number }> = ({ g }) => {
   const cx = 960, cy = tv(n, RY_TAB), ratio = tv(n, RB_TAB);
   const exitOp = tv(n, OP_TAB);
   const layerIn = tv(n, [[1002, 0.6], [1003, 0.85], [1004, 1]]);
-  const ringBlur = tv(n, [[1002, 7], [1003, 5], [1004, 3.5], [1005, 2.5], [1006, 1.5], [1008, 0]]);
+  const ringBlur = tv(n, [[1002, 7], [1003, 5], [1004, 3.5], [1005, 2.5], [1006, 1.8], [1008, 1.2], [1012, 0.6], [1016, 0]]);
   // the previous shot's gain (segment 7 fades its own layer): our ground comes up additively underneath
   const g7 = tv(n, [[1002, 1], [1003, 0.84], [1004, 0.65], [1005, 0.48], [1006, 0.31], [1007, 0.16], [1008, 0.07], [1009, 0.02], [1010, 0]]);
   const dark = tv(n, [[1001, 0], [1002, 0.5], [1003, 1], [1004, 1], [1005, 0.7], [1006, 0.35], [1007, 0.1], [1008, 0]]);
@@ -269,10 +281,10 @@ export const ThreeShot: React.FC<{ g: number }> = ({ g }) => {
       {n < 1009 ? (
         <>
           <AbsoluteFill style={{ opacity: dark, background: "linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 100%)" }} />
-          <AbsoluteFill style={{ mixBlendMode: "plus-lighter", opacity: 1 - g7 }}><Ground corner={1} /></AbsoluteFill>
+          <AbsoluteFill style={{ mixBlendMode: "plus-lighter", opacity: 1 - g7 }}><Ground glow={0.45} /></AbsoluteFill>
         </>
       ) : (
-        <Ground corner={1} />
+        <Ground glow={0.45} corner={smooth(1031, 1038, n)} />
       )}
       <AbsoluteFill style={{ opacity: layerIn * exitOp }}>
         <RingLayer n={n} blur={ringBlur} />

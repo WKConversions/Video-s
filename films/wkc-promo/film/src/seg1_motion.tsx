@@ -114,11 +114,11 @@ const Rings: React.FC<{ f: number }> = ({ f }) => {
     });
     arcs.push({ d: "M" + pts.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join("L"), x1, y1, x2, y2, stops });
   }
-  const outline = wk("#14122A");
+  const outline = "#0B121B";
   return (
     <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0 }}>
       <defs>
-        <filter id="s1-rv" x={-400} y={-400} width={2720} height={1880} filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation={90} /></filter>
+        <filter id="s1-rv" x={-400} y={-400} width={2720} height={1880} filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation={100} /></filter>
         <filter id="s1-rw" x={-300} y={-300} width={2520} height={1680} filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation={36} /></filter>
         <filter id="s1-rg" x={-100} y={-100} width={2120} height={1280} filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation={3.2} /></filter>
         <filter id="s1-rc" x={-100} y={-100} width={2120} height={1280} filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation={0.55} /></filter>
@@ -137,8 +137,8 @@ const Rings: React.FC<{ f: number }> = ({ f }) => {
         <ellipse key={i} cx={r.cx} cy={r.cy} rx={r.rx} ry={r.ry} transform={`rotate(${r.ang} ${r.cx} ${r.cy})`} fill="none" stroke={outline} strokeWidth={2} />
       ))}
       <g style={{ mixBlendMode: "screen" }} fill="none" strokeLinecap="round" strokeLinejoin="round">
-        <g filter="url(#s1-rv)">{arcs.map((q, i) => <path key={i} d={q.d} stroke={`url(#s1-b${i})`} strokeWidth={150} strokeOpacity={0.1} />)}</g>
-        <g filter="url(#s1-rw)">{arcs.map((q, i) => <path key={i} d={q.d} stroke={`url(#s1-b${i})`} strokeWidth={50} strokeOpacity={0.2} />)}</g>
+        <g filter="url(#s1-rv)">{arcs.map((q, i) => <path key={i} d={q.d} stroke={`url(#s1-b${i})`} strokeWidth={200} strokeOpacity={0.24} />)}</g>
+        <g filter="url(#s1-rw)">{arcs.map((q, i) => <path key={i} d={q.d} stroke={`url(#s1-b${i})`} strokeWidth={60} strokeOpacity={0.3} />)}</g>
         <g filter="url(#s1-rg)">{arcs.map((q, i) => <path key={i} d={q.d} stroke={`url(#s1-a${i})`} strokeWidth={7} strokeOpacity={0.55} />)}</g>
         <g filter="url(#s1-rc)">{arcs.map((q, i) => <path key={i} d={q.d} stroke={`url(#s1-a${i})`} strokeWidth={2.6} />)}</g>
       </g>

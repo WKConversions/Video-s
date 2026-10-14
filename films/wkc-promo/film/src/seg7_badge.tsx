@@ -9,7 +9,7 @@ type P = [number, number];
 export const BW = 615, BH = 514;
 
 const hexPts = (W: number, H: number): P[] => {
-  const a = W * 0.305;
+  const a = W * 0.25;
   return [[-W / 2, 0], [-a, -H / 2], [a, -H / 2], [W / 2, 0], [a, H / 2], [-a, H / 2]];
 };
 /** the polygon moved inward by d (clockwise in screen coordinates) */

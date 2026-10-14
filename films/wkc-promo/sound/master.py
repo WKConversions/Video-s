@@ -1,7 +1,8 @@
 # Masters the mixed film sound to about -14 LUFS integrated with true peaks under -1 dBTP (sound_mix.py leaves it at
 # -15 LUFS with a sample-peak ceiling): one gain to the target, then a look-ahead limiter that watches the 4x
-# oversampled (true) peak, then 16-bit with TPDF dither. In place by default.
-#   python3 master.py [../film/public/audio/mix.wav] [--lufs -14] [--tp -1.2]
+# oversampled (true) peak, a fade to silence over 41.80-42.00 s (the reference's own end: silent from 42.0 s, so the
+# effects' reverb tails never stop dead at the last frame), then 16-bit with TPDF dither. In place by default.
+#   python3 master.py [../film/public/audio/mix.wav] [--lufs -14] [--tp -1.5]
 import sys, wave
 import numpy as np, pyloudnorm as pyln
 from scipy.signal import resample_poly
@@ -9,7 +10,7 @@ from scipy.ndimage import minimum_filter1d
 
 def arg(name, default): return float(sys.argv[sys.argv.index(name) + 1]) if name in sys.argv else default
 path = next((a for a in sys.argv[1:] if a.endswith(".wav")), "../film/public/audio/mix.wav")
-TARGET, CEIL = arg("--lufs", -14.0), arg("--tp", -1.2)
+TARGET, CEIL = arg("--lufs", -14.0), arg("--tp", -1.5)
 with wave.open(path) as w:
     SR, n = w.getframerate(), w.getnframes()
     x = np.frombuffer(w.readframes(n), dtype="<i2").reshape(-1, 2).astype(np.float64) / 32768
@@ -33,6 +34,8 @@ def limit(y, ceil_db, look=0.005, release=0.08):
     g = np.minimum(g, np.convolve(g, k, "same"))
     return y * g[:, None]
 
+t = np.arange(len(x)) / SR
+x = x * np.clip((42.0 - t) / 0.2, 0, 1)[:, None]
 l0 = meter.integrated_loudness(x)
 gain = TARGET - l0
 for it in range(4):

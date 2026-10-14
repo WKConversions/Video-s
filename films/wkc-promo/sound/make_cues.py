@@ -77,6 +77,26 @@ c("wk-blip-cta", 1170, "soft blip as the 'Let's talk' pill glows on (the referen
 c("wk-swell-talk", 1209, "#53 soft pad swell under 'Let's talk' (f1209-1218)", -5)
 c("wk-swell-url", 1227, "#53 second soft pad swell under wkconversions.com (f1227-1240)", -5)
 
+# The levels, set with a level check of every effect against the bed over its real span (the frames it sounds, not
+# just after its cue): "prominent" ones about 3 dB under the mix's loudest 100 ms, "medium" about 7, "subtle" about
+# 12, but none less than 3.5 dB over the bed where its body sounds (the mixer's masking rule, measured from where the
+# sound starts rather than from its cue frame, which a riser or a reverse swoosh ends on: heard, not just felt); sub hits lift
+# 30-120 Hz by about 8 dB; the risers, the logo glitch and sting, the last tick and the outro sounds against the
+# beat's plateau. These replace the first guesses above.
+LEVELS = {"wk-meet-1": -8, "wk-meet-2": -4, "wk-meet-3": -2, "wk-meet-4": -1, "wk-meet-5": -2, "wk-glitch-logo": -4,
+          "wk-riser-drop1": -1, "wk-drop1": -1, "wk-pop-that": -7, "wk-click-word": -5, "wk-glitch-engage": -3,
+          "wk-tick-convert": 1, "wk-blip-or": -1, "wk-swish-left": 3, "wk-swish-right": 4, "wk-swish-incredible": -2,
+          "wk-sparkle-incredible": -6, "wk-boom-brief": -2, "wk-type-brief": 9, "wk-type-done": 0, "wk-settle-card": -1,
+          "wk-pops-frames": 7, "wk-subdrop-frames": 4, "wk-swish-tilt": 1, "wk-pops-panel": -3, "wk-subdrop-export": 0,
+          "wk-click-export": -3, "wk-ring-export": -5, "wk-shimmer-drop2": -4, "wk-drop2": 0, "wk-glitch-showcase": 1,
+          "wk-pop-notify": -4, "wk-boom-platform": 2, "wk-swish-publish": 0, "wk-blip-web": 1, "wk-blip-linkedin": -7,
+          "wk-blip-insta": -3, "wk-ratchet": 0, "wk-revswoosh-versions": 7, "wk-subdrop-detail": -3, "wk-blip-clear": -5,
+          "wk-blip-smooth": 1, "wk-swish-frame": 1, "wk-swell-founders": 5, "wk-revswoosh-three": 1, "wk-whoosh-formats": 2,
+          "wk-swish-builtfor": 5, "wk-built-1": 4, "wk-built-2": 2, "wk-built-3": 3, "wk-built-4": 1, "wk-built-5": 5,
+          "wk-built-6": -6, "wk-glitch-wkc": -4, "wk-sting-logo": -10, "wk-blip-cta": -14, "wk-swell-talk": -13,
+          "wk-swell-url": -12}
+for e in cues: e["db"] = LEVELS[e["id"]]
+
 ids = [x["id"] for x in cues]
 assert len(ids) == len(set(ids)), "a sound is used twice"
 lib = {x["id"] for x in json.load(open("lib/sfx/index.json")) if x["id"].startswith("wk-")}
