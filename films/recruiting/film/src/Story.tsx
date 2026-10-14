@@ -336,6 +336,7 @@ const Reward: React.FC<{ g: number; o: number; x: number }> = ({ g, o, x }) => {
   if (o <= 0) return null;
   const sel = k(g, "w:reward", 0.3, SMALLPOP), pub = k(g, "w:publish+0.1", 0.35, SMALLPOP);
   const press = g >= f("w:publish") && g < f("w:publish") + 5 ? 1 : 0;
+  const pubOk = k(g, "w:publish+0.15", 0.45, SMALLPOP);
   return (
     <div style={{ position: "absolute", inset: 0, opacity: o, transform: `translateX(${x}px)` }}>
       <div style={{ position: "absolute", left: 60, top: 34, display: "flex", alignItems: "center", gap: 14, fontFamily: SANS, fontWeight: 700, fontSize: 19, color: C.muted }}>
@@ -364,6 +365,16 @@ const Reward: React.FC<{ g: number; o: number; x: number }> = ({ g, o, x }) => {
         </div>
         <div style={{ position: "absolute", left: 36, top: 384, display: "flex", alignItems: "center", gap: 10, fontFamily: SANS, fontWeight: 700, fontSize: 19, color: C.okText }}><Ico n="check" s={20} c={C.okText} w={3} />Always free until the job starts</div>
       </div>
+      {/* published: a confirmation over the page, which then lifts out as the live vacancy */}
+      {pubOk > 0 && <div style={{ position: "absolute", inset: 0, background: "rgba(253,252,251,0.72)", opacity: Math.min(1, pubOk) }} />}
+      {pubOk > 0 && (
+        <div style={{ ...box(665 - 340, 420 - 150, 680, 300), ...card, borderRadius: 28, opacity: Math.min(1, pubOk * 1.4) * (1 - k(g, "live", 0.25)), transform: `translate(${665 - 340}px, ${420 - 150 + (1 - Math.min(1, pubOk)) * 30}px) scale(${0.86 + 0.14 * pubOk})`,
+          boxShadow: "0 40px 90px -30px rgba(28,25,23,0.45)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12 }}>
+          <div style={{ width: 92, height: 92, borderRadius: 46, background: C.green, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${k(g, "w:publish+0.2", 0.4, SMALLPOP)})` }}><Ico n="check" s={50} c={C.white} w={3.6} /></div>
+          <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 54, color: C.ink, letterSpacing: "-0.01em" }}>Published</div>
+          <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 22, color: C.muted }}>Out to the marketplace after a quick quality check</div>
+        </div>
+      )}
       <div style={{ position: "absolute", right: 60, top: 700, display: "flex", gap: 16 }}>
         <Btn t="Save draft" ghost s={22} />
         <div style={{ position: "relative" }}>
@@ -381,7 +392,7 @@ const Live: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("live") || g > f("arrive+1.2")) return null;
   const up = k(g, "live", 0.7, MOVE), back = k(g, "arrive", 0.7, MOVE);
   const pulse = k(g, "w:live", 0.5, SMALLPOP);
-  const x = mix(960, 1443, back), y = mix(mix(545, 330, up), 153, back), s = mix(mix(0.7, 1, up), 0.31, back);
+  const x = mix(mix(1095, 960, up), 1443, back), y = mix(mix(515, 330, up), 153, back), s = mix(mix(0.72, 1, up), 0.31, back);
   return (
     <AbsoluteFill>
       {/* recruiters take it on */}
