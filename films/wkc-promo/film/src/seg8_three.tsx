@@ -62,7 +62,7 @@ const aMain = (n: number) => 454.5 * sAt(n);
 /** the second ring that contracts onto the main ring; echo k (2..5) = R(n - 2(k-2)) (measured: 575/606/646/698 at 1020) */
 const R = (n: number) => sAt(Math.max(1002, n)) * (454.5 + 306 * Math.exp(-0.1245 * (n - 1005)));
 /** big outer sweep ring (screen px), from 1035 */
-const E_TAB: [number, number][] = [[1034, 900], [1035, 955], [1036, 1007], [1037, 1055], [1038, 1100], [1039, 1124], [1040, 1157], [1041, 1172], [1042, 1196], [1045, 1200], [1058, 1208]];
+const E_TAB: [number, number][] = [[1035, 955], [1036, 1007], [1037, 1055], [1038, 1100], [1039, 1124], [1040, 1157], [1041, 1172], [1042, 1196], [1045, 1200], [1058, 1208]];
 const E_STR: [number, number][] = [[1049, 1], [1050, 0.66], [1051, 0.57], [1052, 0.51], [1053, 0.45], [1054, 0.42], [1055, 0.41], [1056, 0.42], [1057, 0.37], [1058, 0.38]];
 
 // ---- ring drawing (canvas: an ellipse stroked with a conic gradient that follows the measured brightness) ----
@@ -139,7 +139,7 @@ const drawRings = (ctx: CanvasRenderingContext2D, n: number) => {
     });
     const est = tv(n, E_STR);
     [0, 2, 4].forEach((lag, i) => {
-      if (n - lag < 1034) return;
+      if (n - lag < 1035.5) return;
       const a = tv(n - lag, E_TAB), r: El = { cx, cy, a, b: a * ratio };
       const soft = smooth(1042, 1049, n);
       const sp = (d: number) => Math.pow(clamp01(lvl(PROF[7].slice(1), d) * 1.1), 1.5);
@@ -159,6 +159,13 @@ const drawRings = (ctx: CanvasRenderingContext2D, n: number) => {
     ctx.ellipse(inner.cx, inner.cy, inner.a, inner.b, 0, 0, Math.PI * 2, true);
     ctx.fill("evenodd");
     ctx.restore();
+    // the four echoes that just merged into the rim keep glowing on it for a few frames
+    const fm = Math.exp(-(n - 1032) / 3);
+    for (let k = 1; k <= 4 && fm > 0.02; k++) {
+      const ek: El = { cx, cy, a: am * (1 + 0.007 * k), b: am * (1 + 0.007 * k) * ratio }, st = Math.pow(0.95, k) * fm;
+      strokeEl(ctx, ek, conic(ctx, ek, (d) => rampRGBA(Math.min(0.75, lvl(p, d)) * st)), 12 * s, 6 * s, 0.45);
+      strokeEl(ctx, ek, conic(ctx, ek, (d) => rampRGBA(lvl(p, d) * st)), 3.5 * s);
+    }
     strokeEl(ctx, e, conic(ctx, e, (d) => rampRGBA(Math.min(0.6, lvl(p, d)))), (9 + 12 * f) * s, (5 + 5 * f) * s, 0.55 + 0.35 * f);
     strokeEl(ctx, e, conic(ctx, e, (d) => rampRGBA(lvl(p, d))), (3 + 1.5 * f) * s);
   }

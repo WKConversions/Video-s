@@ -150,7 +150,7 @@ const ActionPill: React.FC<{ g: number }> = ({ g }) => {
   const pop = kf(g, [[338, 0.45], [339, 0.62], [340, 0.75], [341, 0.82], [342, 0.87], [343, 0.9], [344, 0.92], [345, 0.945], [346, 0.965], [347, 0.98], [348, 0.995], [349, 1]]);
   const press = kf(g, [[358, 1], [359, 0.97], [360, 0.9], [361, 0.9], [362, 0.925], [363, 0.953], [364, 0.967], [365, 0.981], [366, 0.99], [367, 1]]);
   const hov = kf(g, [[360, 0], [361, 0.2], [364, 0.6], [367, 0.87], [369, 1]]);
-  const cx = kf(g, [[338, 604], [339, 622], [340, 639], [341, 652], [342, 664], [360, 664], [372, 652]]), s = pop * press * kf(g, [[366, 1], [370, 1.035]]);
+  const cx = kf(g, [[338, 604], [339, 622], [340, 639], [341, 652], [342, 664], [360, 664], [372, 652], [384, 652], [385, 640], [386, 624]]), s = pop * press * kf(g, [[366, 1], [370, 1.035]]);
   const fs = 19, lw = ink(LABEL, 600, fs, F.ui, 0).w, gap = 7, sp = 6.5;
   const x0 = -(lw + gap + 2 * sp) / 2;
   return (
@@ -165,18 +165,18 @@ const ActionPill: React.FC<{ g: number }> = ({ g }) => {
   );
 };
 
-const Content: React.FC<{ g: number }> = ({ g }) => {
+const Content: React.FC<{ g: number; rest: number }> = ({ g, rest }) => {
   const n = charsAt(g);
   const glyph = (i: number) => kf(g - appearAt(i), [[0, 0.4], [1, 0.7], [2, 0.9], [3, 1]]);
   const n1 = Math.min(n, L1.length), n2 = Math.max(0, n - L1.length);
   return (
     <>
-      <Paperclip />
+      <div style={{ position: "absolute", inset: 0, opacity: rest }}><Paperclip /></div>
       <svg width={CW} height={CH} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
         <TypedLine text={L1} n={n1} x={112} base={86.5} opacity={glyph} />
         <TypedLine text={L2} n={n2} x={112} base={131} opacity={(i) => glyph(i + L1.length)} />
       </svg>
-      <IconButtons g={g} />
+      <div style={{ position: "absolute", inset: 0, opacity: rest }}><IconButtons g={g} /></div>
       <ActionPill g={g} />
     </>
   );
@@ -201,11 +201,14 @@ const Rim: React.FC<{ x0: number; x1: number; top: number; bot: number; rad: num
     <svg width={CW} height={CH} style={{ position: "absolute", left: 0, top: 0, overflow: "visible", opacity: op }}>
       <defs>
         <linearGradient id="s3-rim" gradientUnits="userSpaceOnUse" x1={0} x2={CW} y1={0} y2={0}>
-          <stop offset={0} stopColor={RIM_C} stopOpacity={0.9} /><stop offset={0.5} stopColor={RIM_C} stopOpacity={0.45} /><stop offset={1} stopColor={RIM_C} stopOpacity={0.14} />
+          <stop offset={0} stopColor={RIM_C} stopOpacity={0.9} /><stop offset={0.5} stopColor={RIM_C} stopOpacity={0.4} /><stop offset={1} stopColor={RIM_C} stopOpacity={0.06} />
+        </linearGradient>
+        <linearGradient id="s3-rim-top" gradientUnits="userSpaceOnUse" x1={0} x2={CW} y1={0} y2={0}>
+          <stop offset={0} stopColor={RIM_C} stopOpacity={0.9} /><stop offset={0.6} stopColor={RIM_C} stopOpacity={0.75} /><stop offset={1} stopColor={RIM_C} stopOpacity={0.35} />
         </linearGradient>
       </defs>
       <path d={u} fill="none" stroke="url(#s3-rim)" strokeWidth={3} />
-      <path d={cap} fill="none" stroke="url(#s3-rim)" strokeWidth={2.5} opacity={dark} />
+      <path d={cap} fill="none" stroke="url(#s3-rim-top)" strokeWidth={2.5} opacity={dark} />
       <path d={cap} fill="none" stroke="#FFFFFF" strokeOpacity={0.75 * (1 - dark)} strokeWidth={1.5} transform="translate(0 2)" />
       <path d={`M${x1} ${top + r} V${bot - r}`} fill="none" stroke="#DCE6FA" strokeOpacity={0.5} strokeWidth={7} style={{ filter: "blur(3px)" }} />
     </svg>
@@ -216,14 +219,16 @@ const Rim: React.FC<{ x0: number; x1: number; top: number; bot: number; rad: num
 export const Card: React.FC<{ g: number }> = ({ g }) => {
   if (g < 337 || g > 386) return null;
   const p = pose(g), q = p.q, rad = p.rad;
-  const e = kf(g, [[352, 0], [366, 3], [376, 5.5], [382, 9], [386, 11]]);
-  const x0 = -e, x1 = CW + e, top = p.top - e, bot = p.bot + e * 1.15;
-  const content = kf(g, [[337, 0], [338, 0.07], [339, 0.16], [340, 0.32], [341, 0.5], [342, 0.6], [344, 0.8], [347, 1]]);
+  const e = kf(g, [[352, 0], [366, 3], [376, 5.5], [382, 9], [384, 9], [385, 6], [386, 2]]);
+  const eb = kf(g, [[352, 0], [366, 3.5], [376, 6.3], [382, 10.4], [384, 10.4], [385, 10], [386, 9]]);
+  const x0 = -e, x1 = CW + e, top = p.top - e, bot = p.bot + eb;
+  const content = kf(g, [[337, 0], [338, 0.1], [339, 0.2], [340, 0.35], [341, 0.5], [342, 0.6], [344, 0.8], [347, 1]]);
+  const rest = kf(g, [[338, 0.15], [339, 0.4], [340, 0.85], [341, 1]]); // paperclip and icons trail the pill
   const cBlur = kf(g, [[338, 3], [339, 3], [340, 2], [341, 1], [342, 0]]);
-  const rim = kf(g, [[338, 0], [339, 0.25], [340, 0.55], [341, 0.8], [342, 1]]);
+  const rim = kf(g, [[338, 0], [339, 0.2], [340, 0.42], [341, 0.65], [342, 0.9], [343, 1]]);
   const field = kf(g, [[337, 1], [341, 0]]); // the input field's look fading into the card's
   const oBlur = kf(g, [[336, 1.5], [339, 1.5], [341, 0.5], [342, 0]]);
-  const smear = kf(g, [[382, 0], [383, 4], [384, 6], [385, 10], [386, 14]]);
+  const smear = kf(g, [[382, 0], [383, 3], [384, 4], [385, 8], [386, 11]]);
   const blob = kf(g, [[340, 0], [341, 1]]);
   const H = bot - top;
   const DOF = "linear-gradient(90deg, #000 0px, #000 560px, transparent 690px)";
@@ -233,7 +238,7 @@ export const Card: React.FC<{ g: number }> = ({ g }) => {
       {smear > 0 && (
         <svg width={0} height={0} style={{ position: "absolute" }}>
           <filter id={`s3-smear-${Math.round(smear)}`} x="0" y="0" width="1" height="1">
-            <feConvolveMatrix order={`${Math.round(smear) + 1} 1`} kernelMatrix={Array(Math.round(smear) + 1).fill(1).join(" ")} edgeMode="none" preserveAlpha="false" />
+            <feConvolveMatrix order={`${Math.round(smear) + 1} 1`} kernelMatrix={Array(Math.round(smear) + 1).fill(1).map((v, i, a) => (i === 0 || i === a.length - 1 ? 2.2 : 1)).join(" ")} edgeMode="none" preserveAlpha="false" />
           </filter>
         </svg>
       )}
@@ -249,8 +254,8 @@ export const Card: React.FC<{ g: number }> = ({ g }) => {
         <div style={{ position: "absolute", left: 548, top: 6, width: 254, height: 50, borderRadius: 25, background: "rgba(63,140,232,0.22)", filter: "blur(14px)", opacity: blob }} />
         {/* content: sharp on the left, softer on the right (depth of field) */}
         <div style={{ position: "absolute", inset: 0, opacity: content, filter: cBlur ? `blur(${cBlur}px)` : undefined }}>
-          <div style={{ position: "absolute", inset: 0, WebkitMaskImage: DOF, maskImage: DOF }}><Content g={g} /></div>
-          <div style={{ position: "absolute", inset: 0, WebkitMaskImage: DOF_INV, maskImage: DOF_INV, filter: "blur(1.6px)" }}><Content g={g} /></div>
+          <div style={{ position: "absolute", inset: 0, WebkitMaskImage: DOF, maskImage: DOF }}><Content g={g} rest={rest} /></div>
+          <div style={{ position: "absolute", inset: 0, WebkitMaskImage: DOF_INV, maskImage: DOF_INV, filter: "blur(1.6px)" }}><Content g={g} rest={rest} /></div>
         </div>
       </div>
     </div>
