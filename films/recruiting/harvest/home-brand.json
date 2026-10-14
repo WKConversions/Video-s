@@ -1,0 +1,654 @@
+{
+ "colors": [
+  [
+   "rgb(28, 25, 23)",
+   330
+  ],
+  [
+   "rgb(119, 112, 105)",
+   70
+  ],
+  [
+   "rgb(40, 126, 97)",
+   68
+  ],
+  [
+   "rgba(0, 0, 0, 0)",
+   58
+  ],
+  [
+   "rgb(255, 255, 255)",
+   20
+  ],
+  [
+   "rgb(224, 164, 88)",
+   18
+  ],
+  [
+   "oklab(0.999994 0.0000455677 0.0000200868 / 0.7)",
+   4
+  ],
+  [
+   "oklab(0.53378 -0.0911805 0.0211799 / 0.4)",
+   3
+  ],
+  [
+   "rgb(11, 31, 58)",
+   3
+  ],
+  [
+   "oklab(0.999994 0.0000455678 0.0000200868 / 0.85)",
+   2
+  ],
+  [
+   "oklab(0 0 0 / 0.85)",
+   2
+  ],
+  [
+   "oklab(0.999994 0.0000455678 0.0000200868 / 0.75)",
+   1
+  ]
+ ],
+ "backgrounds": [
+  [
+   "rgb(255, 255, 255)",
+   3778831.032572329
+  ],
+  [
+   "rgb(248, 246, 245)",
+   3427762.5
+  ],
+  [
+   "linear-gradient(to right, oklab(0.239982 -0.01379 -0.0557221 / 0.92) 0%, oklab(0.239982 -0.01379 -0.0557221 / 0.72) 50%, oklab(0.239982 -0.01379 -0.0557221 / 0.",
+   855040
+  ],
+  [
+   "linear-gradient(to top, oklab(0.239982 -0.01379 -0.0557221 / 0.6) 0%, rgba(0, 0, 0, 0) 50%, oklab(0.239982 -0.01379 -0.0557221 / 0.25) 100%)",
+   855040
+  ],
+  [
+   "linear-gradient(160deg, rgb(11, 31, 58), rgb(27, 56, 70))",
+   538136.625
+  ],
+  [
+   "linear-gradient(oklab(0.239982 -0.01379 -0.0557221 / 0.7) 0%, oklab(0.239982 -0.01379 -0.0557221 / 0.25) 50%, oklab(0.239982 -0.01379 -0.0557221 / 0.55) 100%)",
+   534663.03125
+  ],
+  [
+   "oklab(0.974585 0.00173166 0.00194043 / 0.9)",
+   116640
+  ],
+  [
+   "rgba(255, 255, 255, 0.55)",
+   82432
+  ],
+  [
+   "rgb(11, 31, 58)",
+   51840
+  ],
+  [
+   "oklab(0.999994 0.0000455678 0.0000200868 / 0.95)",
+   49920
+  ],
+  [
+   "rgba(255, 255, 255, 0.2)",
+   23921.125
+  ],
+  [
+   "linear-gradient(to right in oklab, rgb(248, 246, 245) 0%, rgba(0, 0, 0, 0) 100%)",
+   22016
+  ],
+  [
+   "linear-gradient(to left in oklab, rgb(248, 246, 245) 0%, rgba(0, 0, 0, 0) 100%)",
+   22016
+  ],
+  [
+   "oklab(0.746908 -0.0660291 0.00973713 / 0.25)",
+   21821.25468635559
+  ]
+ ],
+ "fonts": [
+  [
+   "Manrope, \"Manrope Fallback\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+   553
+  ],
+  [
+   "Lora, \"Lora Fallback\", Georgia, \"Times New Roman\", serif",
+   26
+  ]
+ ],
+ "vars": {},
+ "imgs": [
+  {
+   "src": "https://www.recruitingrewards.com/logo-icon.svg",
+   "alt": "Recruiting Rewards",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "src": "https://www.recruitingrewards.com/brand/logo-black.svg",
+   "alt": "Recruiting Rewards",
+   "w": 919,
+   "h": 100
+  },
+  {
+   "src": "https://www.recruitingrewards.com/brand/logo-white.svg",
+   "alt": "Recruiting Rewards",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Fphotos%2Fhero-office-conversation.jpg&w=1920&q=75",
+   "alt": "Recruiter laughing with a colleague in a bright office",
+   "w": 1408,
+   "h": 673
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fmembrain.png&w=256&q=75",
+   "alt": "Membrain hires through Recruiting Rewards",
+   "w": 256,
+   "h": 282
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fbrightbid.png&w=256&q=75",
+   "alt": "BrightBid hires through Recruiting Rewards",
+   "w": 256,
+   "h": 71
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fbookea.png&w=256&q=75",
+   "alt": "Bookea hires through Recruiting Rewards",
+   "w": 256,
+   "h": 47
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fcompany4.avif&w=256&q=75",
+   "alt": "Company hires through Recruiting Rewards",
+   "w": 345,
+   "h": 142
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fmembrain.png&w=256&q=75",
+   "alt": "Membrain hires through Recruiting Rewards",
+   "w": 256,
+   "h": 282
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fbrightbid.png&w=256&q=75",
+   "alt": "BrightBid hires through Recruiting Rewards",
+   "w": 256,
+   "h": 71
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fbookea.png&w=256&q=75",
+   "alt": "Bookea hires through Recruiting Rewards",
+   "w": 256,
+   "h": 47
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fcompany4.avif&w=256&q=75",
+   "alt": "Company hires through Recruiting Rewards",
+   "w": 345,
+   "h": 142
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fmembrain.png&w=256&q=75",
+   "alt": "Membrain hires through Recruiting Rewards",
+   "w": 256,
+   "h": 282
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fbrightbid.png&w=256&q=75",
+   "alt": "BrightBid hires through Recruiting Rewards",
+   "w": 256,
+   "h": 71
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fbookea.png&w=256&q=75",
+   "alt": "Bookea hires through Recruiting Rewards",
+   "w": 256,
+   "h": 47
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fcompany4.avif&w=256&q=75",
+   "alt": "Company hires through Recruiting Rewards",
+   "w": 345,
+   "h": 142
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fmembrain.png&w=256&q=75",
+   "alt": "Membrain hires through Recruiting Rewards",
+   "w": 256,
+   "h": 282
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fbrightbid.png&w=256&q=75",
+   "alt": "BrightBid hires through Recruiting Rewards",
+   "w": 256,
+   "h": 71
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fbookea.png&w=256&q=75",
+   "alt": "Bookea hires through Recruiting Rewards",
+   "w": 256,
+   "h": 47
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fcompany4.avif&w=256&q=75",
+   "alt": "Company hires through Recruiting Rewards",
+   "w": 345,
+   "h": 142
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fmembrain.png&w=256&q=75",
+   "alt": "Membrain hires through Recruiting Rewards",
+   "w": 256,
+   "h": 282
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fbrightbid.png&w=256&q=75",
+   "alt": "BrightBid hires through Recruiting Rewards",
+   "w": 256,
+   "h": 71
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fbookea.png&w=256&q=75",
+   "alt": "Bookea hires through Recruiting Rewards",
+   "w": 256,
+   "h": 47
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fcompany4.avif&w=256&q=75",
+   "alt": "Company hires through Recruiting Rewards",
+   "w": 345,
+   "h": 142
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fmembrain.png&w=256&q=75",
+   "alt": "Membrain hires through Recruiting Rewards",
+   "w": 256,
+   "h": 282
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fbrightbid.png&w=256&q=75",
+   "alt": "BrightBid hires through Recruiting Rewards",
+   "w": 256,
+   "h": 71
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fbookea.png&w=256&q=75",
+   "alt": "Bookea hires through Recruiting Rewards",
+   "w": 256,
+   "h": 47
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fcompany4.avif&w=256&q=75",
+   "alt": "Company hires through Recruiting Rewards",
+   "w": 345,
+   "h": 142
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fepiminds.png&w=256&q=75",
+   "alt": "Epiminds hires through Recruiting Rewards",
+   "w": 256,
+   "h": 49
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Femaxmedia.png&w=256&q=75",
+   "alt": "Emax Media hires through Recruiting Rewards",
+   "w": 256,
+   "h": 27
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Ftendavo.avif&w=256&q=75",
+   "alt": "Tendavo hires through Recruiting Rewards",
+   "w": 256,
+   "h": 134
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=https%3A%2F%2Fkriwxdvbgymdldwlosmv.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Flogos%2Fmarketing-customers%2Fbdd9c498-76f7-48a8-8685-018b8071d16f.jpg&w=256&q=75",
+   "alt": "Dib Travel hires through Recruiting Rewards",
+   "w": 256,
+   "h": 242
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fepiminds.png&w=256&q=75",
+   "alt": "Epiminds hires through Recruiting Rewards",
+   "w": 256,
+   "h": 49
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Femaxmedia.png&w=256&q=75",
+   "alt": "Emax Media hires through Recruiting Rewards",
+   "w": 256,
+   "h": 27
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Ftendavo.avif&w=256&q=75",
+   "alt": "Tendavo hires through Recruiting Rewards",
+   "w": 256,
+   "h": 134
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=https%3A%2F%2Fkriwxdvbgymdldwlosmv.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Flogos%2Fmarketing-customers%2Fbdd9c498-76f7-48a8-8685-018b8071d16f.jpg&w=256&q=75",
+   "alt": "Dib Travel hires through Recruiting Rewards",
+   "w": 256,
+   "h": 242
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fepiminds.png&w=256&q=75",
+   "alt": "Epiminds hires through Recruiting Rewards",
+   "w": 256,
+   "h": 49
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Femaxmedia.png&w=256&q=75",
+   "alt": "Emax Media hires through Recruiting Rewards",
+   "w": 256,
+   "h": 27
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Ftendavo.avif&w=256&q=75",
+   "alt": "Tendavo hires through Recruiting Rewards",
+   "w": 256,
+   "h": 134
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=https%3A%2F%2Fkriwxdvbgymdldwlosmv.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Flogos%2Fmarketing-customers%2Fbdd9c498-76f7-48a8-8685-018b8071d16f.jpg&w=256&q=75",
+   "alt": "Dib Travel hires through Recruiting Rewards",
+   "w": 256,
+   "h": 242
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fepiminds.png&w=256&q=75",
+   "alt": "Epiminds hires through Recruiting Rewards",
+   "w": 256,
+   "h": 49
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Femaxmedia.png&w=256&q=75",
+   "alt": "Emax Media hires through Recruiting Rewards",
+   "w": 256,
+   "h": 27
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Ftendavo.avif&w=256&q=75",
+   "alt": "Tendavo hires through Recruiting Rewards",
+   "w": 256,
+   "h": 134
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=https%3A%2F%2Fkriwxdvbgymdldwlosmv.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Flogos%2Fmarketing-customers%2Fbdd9c498-76f7-48a8-8685-018b8071d16f.jpg&w=256&q=75",
+   "alt": "Dib Travel hires through Recruiting Rewards",
+   "w": 256,
+   "h": 242
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fepiminds.png&w=256&q=75",
+   "alt": "Epiminds hires through Recruiting Rewards",
+   "w": 256,
+   "h": 49
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Femaxmedia.png&w=256&q=75",
+   "alt": "Emax Media hires through Recruiting Rewards",
+   "w": 256,
+   "h": 27
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Ftendavo.avif&w=256&q=75",
+   "alt": "Tendavo hires through Recruiting Rewards",
+   "w": 256,
+   "h": 134
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=https%3A%2F%2Fkriwxdvbgymdldwlosmv.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Flogos%2Fmarketing-customers%2Fbdd9c498-76f7-48a8-8685-018b8071d16f.jpg&w=256&q=75",
+   "alt": "Dib Travel hires through Recruiting Rewards",
+   "w": 256,
+   "h": 242
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Fepiminds.png&w=256&q=75",
+   "alt": "Epiminds hires through Recruiting Rewards",
+   "w": 256,
+   "h": 49
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Femaxmedia.png&w=256&q=75",
+   "alt": "Emax Media hires through Recruiting Rewards",
+   "w": 256,
+   "h": 27
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Flogos%2Ftendavo.avif&w=256&q=75",
+   "alt": "Tendavo hires through Recruiting Rewards",
+   "w": 256,
+   "h": 134
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=https%3A%2F%2Fkriwxdvbgymdldwlosmv.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Flogos%2Fmarketing-customers%2Fbdd9c498-76f7-48a8-8685-018b8071d16f.jpg&w=256&q=75",
+   "alt": "Dib Travel hires through Recruiting Rewards",
+   "w": 256,
+   "h": 242
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Ftestimonials%2Fhenning-martensson.jpg&w=640&q=75",
+   "alt": "Henning Mårtensson – frilansare och rekryterare i Göteborg hos Recruiting Rewards",
+   "w": 640,
+   "h": 960
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Ftestimonials%2Fsebastian-almgren.jpeg&w=640&q=75",
+   "alt": "Sebastian Almgren – frilans rekryterare och rekryteringskonsult i Malmö hos Recruiting Rewards",
+   "w": 640,
+   "h": 640
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Ftestimonials%2Fstephanie-santis.jpg&w=3840&q=75",
+   "alt": "Stephanie Santis – frilansare och rekryterare i Uppsala hos Recruiting Rewards",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Ftestimonials%2Felin-sjodahl.jpg&w=3840&q=75",
+   "alt": "Elin Sjödahl – frilans rekryterare och rekryteringskonsult i Göteborg hos Recruiting Rewards",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Ftestimonials%2Fjohan-strom.jpg&w=3840&q=75",
+   "alt": "Johan Ström – frilansare och rekryterare i Malmö hos Recruiting Rewards",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Fphotos%2Faudience-companies.jpg&w=750&q=75",
+   "alt": "Hiring manager and colleague going through candidate material together",
+   "w": 648,
+   "h": 809
+  },
+  {
+   "src": "https://www.recruitingrewards.com/_next/image?url=%2Fmarketing%2Fphotos%2Faudience-recruiters.jpg&w=3840&q=75",
+   "alt": "Two recruiters going through candidates on a laptop",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "src": "https://www.recruitingrewards.com/brand/logo-black.svg",
+   "alt": "Recruiting Rewards",
+   "w": 919,
+   "h": 100
+  },
+  {
+   "src": "https://www.recruitingrewards.com/brand/logo-white.svg",
+   "alt": "Recruiting Rewards",
+   "w": 0,
+   "h": 0
+  }
+ ],
+ "links": [
+  "https://www.recruitingrewards.com/#main-content",
+  "https://www.recruitingrewards.com/why",
+  "https://www.recruitingrewards.com/",
+  "https://www.recruitingrewards.com/companies",
+  "https://www.recruitingrewards.com/recruiters",
+  "https://www.recruitingrewards.com/marketplace",
+  "https://www.recruitingrewards.com/pricing",
+  "https://www.recruitingrewards.com/about",
+  "https://platform.recruitingrewards.com/sign-in",
+  "https://platform.recruitingrewards.com/sign-up",
+  "https://www.recruitingrewards.com/faq",
+  "https://www.recruitingrewards.com/contact-sales",
+  "https://www.recruitingrewards.com/blog",
+  "https://www.recruitingrewards.com/cookie-privacy-policy",
+  "https://www.recruitingrewards.com/terms-conditions",
+  "https://www.recruitingrewards.com/trust",
+  "https://www.linkedin.com/company/recruitingrewards/?viewAsMember=true"
+ ],
+ "heads": [
+  {
+   "tag": "H1",
+   "text": "Match right. Pay on results.",
+   "font": "Lora, \"Lora Fallback\", Georgia, \"Times New Roman\", serif",
+   "size": "64px",
+   "weight": "600",
+   "color": "rgb(255, 255, 255)"
+  },
+  {
+   "tag": "H2",
+   "text": "Companies hiring through us",
+   "font": "Lora, \"Lora Fallback\", Georgia, \"Times New Roman\", serif",
+   "size": "48px",
+   "weight": "600",
+   "color": "rgb(28, 25, 23)"
+  },
+  {
+   "tag": "H2",
+   "text": "Why recruiters value the platform",
+   "font": "Lora, \"Lora Fallback\", Georgia, \"Times New Roman\", serif",
+   "size": "48px",
+   "weight": "600",
+   "color": "rgb(28, 25, 23)"
+  },
+  {
+   "tag": "H3",
+   "text": "Henning Mårtensson",
+   "font": "Lora, \"Lora Fallback\", Georgia, \"Times New Roman\", serif",
+   "size": "48px",
+   "weight": "600",
+   "color": "rgb(28, 25, 23)"
+  },
+  {
+   "tag": "H3",
+   "text": "Sebastian Almgren",
+   "font": "Lora, \"Lora Fallback\", Georgia, \"Times New Roman\", serif",
+   "size": "48px",
+   "weight": "600",
+   "color": "rgb(28, 25, 23)"
+  },
+  {
+   "tag": "H3",
+   "text": "Stephanie Santis",
+   "font": "Lora, \"Lora Fallback\", Georgia, \"Times New Roman\", serif",
+   "size": "48px",
+   "weight": "600",
+   "color": "rgb(28, 25, 23)"
+  },
+  {
+   "tag": "H3",
+   "text": "Elin Sjödahl",
+   "font": "Lora, \"Lora Fallback\", Georgia, \"Times New Roman\", serif",
+   "size": "48px",
+   "weight": "600",
+   "color": "rgb(28, 25, 23)"
+  },
+  {
+   "tag": "H3",
+   "text": "Johan Ström",
+   "font": "Lora, \"Lora Fallback\", Georgia, \"Times New Roman\", serif",
+   "size": "48px",
+   "weight": "600",
+   "color": "rgb(28, 25, 23)"
+  },
+  {
+   "tag": "H2",
+   "text": "Who do you want to hire today?",
+   "font": "Lora, \"Lora Fallback\", Georgia, \"Times New Roman\", serif",
+   "size": "48px",
+   "weight": "600",
+   "color": "rgb(28, 25, 23)"
+  },
+  {
+   "tag": "H2",
+   "text": "Built for both sides in Recruitment",
+   "font": "Lora, \"Lora Fallback\", Georgia, \"Times New Roman\", serif",
+   "size": "48px",
+   "weight": "600",
+   "color": "rgb(28, 25, 23)"
+  },
+  {
+   "tag": "H3",
+   "text": "For Companies",
+   "font": "Lora, \"Lora Fallback\", Georgia, \"Times New Roman\", serif",
+   "size": "36px",
+   "weight": "600",
+   "color": "rgb(28, 25, 23)"
+  },
+  {
+   "tag": "H3",
+   "text": "For Recruiters",
+   "font": "Lora, \"Lora Fallback\", Georgia, \"Times New Roman\", serif",
+   "size": "36px",
+   "weight": "600",
+   "color": "rgb(28, 25, 23)"
+  },
+  {
+   "tag": "H2",
+   "text": "Let's get started",
+   "font": "Lora, \"Lora Fallback\", Georgia, \"Times New Roman\", serif",
+   "size": "48px",
+   "weight": "600",
+   "color": "rgb(255, 255, 255)"
+  },
+  {
+   "tag": "H3",
+   "text": "Product",
+   "font": "Manrope, \"Manrope Fallback\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+   "size": "16px",
+   "weight": "600",
+   "color": "rgb(28, 25, 23)"
+  },
+  {
+   "tag": "H3",
+   "text": "Company",
+   "font": "Manrope, \"Manrope Fallback\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+   "size": "16px",
+   "weight": "600",
+   "color": "rgb(28, 25, 23)"
+  },
+  {
+   "tag": "H3",
+   "text": "Legal",
+   "font": "Manrope, \"Manrope Fallback\", system-ui, -apple-system, \"Segoe UI\", sans-serif",
+   "size": "16px",
+   "weight": "600",
+   "color": "rgb(28, 25, 23)"
+  }
+ ],
+ "fontFaces": [
+  "@font-face { font-family: Lora; font-style: normal; font-weight: 400 700; font-display: swap; src: url(\"../media/e7150917543fc9da-s.071m.n3zzn52i.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
+  "@font-face { font-family: Lora; font-style: normal; font-weight: 400 700; font-display: swap; src: url(\"../media/71fbf9c08529c2a5-s.0s73vwibz65qg.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
+  "@font-face { font-family: Lora; font-style: normal; font-weight: 400 700; font-display: swap; src: url(\"../media/e9457141811d41ae-s.00tq~sneouii2.woff2\") format(\"woff2\"); unicode-range: U+302-303, U+305, U+307-308, U+310, U+312, U+315, U+31A, U+326-327, U+32C, U+32F-330, U+332-333, U+338, U+33A, U+3",
+  "@font-face { font-family: Lora; font-style: normal; font-weight: 400 700; font-display: swap; src: url(\"../media/ac34884600cd8d5d-s.0q61mniqzdjv_.woff2\") format(\"woff2\"); unicode-range: U+1-C, U+E-1F, U+7F-9F, U+20DD-20E0, U+20E2-20E4, U+2150-218F, U+2190, U+2192, U+2194-2199, U+21AF, U+21E6-21F0, U",
+  "@font-face { font-family: Lora; font-style: normal; font-weight: 400 700; font-display: swap; src: url(\"../media/e1ccd2766b08c828-s.0dd-~h-3wf1jt.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329, U",
+  "@font-face { font-family: Lora; font-style: normal; font-weight: 400 700; font-display: swap; src: url(\"../media/507a47c1876d4ec2-s.0vig0aoy18nm3.woff2\") format(\"woff2\"); unicode-range: U+100-2BA, U+2BD-2C5, U+2C7-2CC, U+2CE-2D7, U+2DD-2FF, U+304, U+308, U+329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF,",
+  "@font-face { font-family: Lora; font-style: normal; font-weight: 400 700; font-display: swap; src: url(\"../media/8c2eb9ceedecfc8e-s.0oeo8epbafgia.woff2\") format(\"woff2\"); unicode-range: U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191",
+  "@font-face { font-family: \"Lora Fallback\"; src: local(\"Times New Roman\"); ascent-override: 87.33%; descent-override: 23.78%; line-gap-override: 0%; size-adjust: 115.2%; }",
+  "@font-face { font-family: Manrope; font-style: normal; font-weight: 200 800; font-display: swap; src: url(\"../media/a342834df7752944-s.10ev4cu2inrn-.woff2\") format(\"woff2\"); unicode-range: U+460-52F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F; }",
+  "@font-face { font-family: Manrope; font-style: normal; font-weight: 200 800; font-display: swap; src: url(\"../media/d3fe2f289711ac3f-s.0i6ci0u~g4zml.woff2\") format(\"woff2\"); unicode-range: U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116; }",
+  "@font-face { font-family: Manrope; font-style: normal; font-weight: 200 800; font-display: swap; src: url(\"../media/58c4895d0a0ef7cc-s.0x1a9yg0jkq20.woff2\") format(\"woff2\"); unicode-range: U+370-377, U+37A-37F, U+384-38A, U+38C, U+38E-3A1, U+3A3-3FF; }",
+  "@font-face { font-family: Manrope; font-style: normal; font-weight: 200 800; font-display: swap; src: url(\"../media/bfc7db5c00d21bc5-s.0dyk20wuvya7a.woff2\") format(\"woff2\"); unicode-range: U+102-103, U+110-111, U+128-129, U+168-169, U+1A0-1A1, U+1AF-1B0, U+300-301, U+303-304, U+308-309, U+323, U+329"
+ ],
+ "bodyBg": "rgb(248, 246, 245)",
+ "svgs": 31
+}

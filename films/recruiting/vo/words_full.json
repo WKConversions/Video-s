@@ -1,0 +1,596 @@
+[
+{
+"word": "Hiring,",
+"start": 0.084,
+"end": 0.42,
+"key": "w:hiring"
+},
+{
+"word": "simplified.",
+"start": 0.72,
+"end": 1.26,
+"key": "w:simplified"
+},
+{
+"word": "One",
+"start": 1.958,
+"end": 2.12,
+"key": "w:one"
+},
+{
+"word": "platform.",
+"start": 2.12,
+"end": 2.5,
+"key": "w:platform"
+},
+{
+"word": "More",
+"start": 3.064,
+"end": 3.24,
+"key": "w:more"
+},
+{
+"word": "recruiters.",
+"start": 3.24,
+"end": 3.9,
+"key": "w:recruiters"
+},
+{
+"word": "Better",
+"start": 4.178,
+"end": 4.44,
+"key": "w:better"
+},
+{
+"word": "matches.",
+"start": 4.44,
+"end": 4.82,
+"key": "w:matches"
+},
+{
+"word": "Meet",
+"start": 5.512,
+"end": 5.72,
+"key": "w:meet"
+},
+{
+"word": "Recruiting",
+"start": 5.72,
+"end": 6.34,
+"key": "w:recruiting"
+},
+{
+"word": "Rewards.",
+"start": 6.34,
+"end": 6.76,
+"key": "w:rewards"
+},
+{
+"word": "Create",
+"start": 7.368,
+"end": 7.62,
+"key": "w:create"
+},
+{
+"word": "a",
+"start": 7.62,
+"end": 7.76,
+"key": "w:a"
+},
+{
+"word": "job.",
+"start": 7.76,
+"end": 8.02,
+"key": "w:job"
+},
+{
+"word": "Add",
+"start": 8.476,
+"end": 8.64,
+"key": "w:add"
+},
+{
+"word": "your",
+"start": 8.64,
+"end": 8.76,
+"key": "w:your"
+},
+{
+"word": "requirements.",
+"start": 8.76,
+"end": 9.22,
+"key": "w:requirements"
+},
+{
+"word": "Set",
+"start": 9.75,
+"end": 9.94,
+"key": "w:set"
+},
+{
+"word": "the",
+"start": 9.94,
+"end": 10.12,
+"key": "w:the"
+},
+{
+"word": "reward.",
+"start": 10.12,
+"end": 10.44,
+"key": "w:reward"
+},
+{
+"word": "Hit",
+"start": 10.96,
+"end": 11.1,
+"key": "w:hit"
+},
+{
+"word": "publish.",
+"start": 11.231,
+"end": 11.48,
+"key": "w:publish"
+},
+{
+"word": "Your",
+"start": 12.202,
+"end": 12.3,
+"key": "w:your2"
+},
+{
+"word": "vacancy",
+"start": 12.3,
+"end": 12.68,
+"key": "w:vacancy"
+},
+{
+"word": "goes",
+"start": 12.68,
+"end": 12.94,
+"key": "w:goes"
+},
+{
+"word": "live",
+"start": 12.94,
+"end": 13.26,
+"key": "w:live"
+},
+{
+"word": "and",
+"start": 13.26,
+"end": 13.56,
+"key": "w:and"
+},
+{
+"word": "recruiters",
+"start": 13.56,
+"end": 14.2,
+"key": "w:recruiters2"
+},
+{
+"word": "get",
+"start": 14.2,
+"end": 14.36,
+"key": "w:get"
+},
+{
+"word": "to",
+"start": 14.36,
+"end": 14.54,
+"key": "w:to"
+},
+{
+"word": "work.",
+"start": 14.54,
+"end": 14.76,
+"key": "w:work"
+},
+{
+"word": "As",
+"start": 15.334,
+"end": 15.46,
+"key": "w:as"
+},
+{
+"word": "candidates",
+"start": 15.46,
+"end": 15.78,
+"key": "w:candidates"
+},
+{
+"word": "arrive,",
+"start": 15.78,
+"end": 16.24,
+"key": "w:arrive"
+},
+{
+"word": "see",
+"start": 16.604,
+"end": 16.82,
+"key": "w:see"
+},
+{
+"word": "their",
+"start": 16.82,
+"end": 16.98,
+"key": "w:their"
+},
+{
+"word": "profiles,",
+"start": 16.98,
+"end": 17.42,
+"key": "w:profiles"
+},
+{
+"word": "match",
+"start": 17.9,
+"end": 18.1,
+"key": "w:match"
+},
+{
+"word": "scores,",
+"start": 18.1,
+"end": 18.46,
+"key": "w:scores"
+},
+{
+"word": "and",
+"start": 18.68,
+"end": 18.88,
+"key": "w:and2"
+},
+{
+"word": "applications",
+"start": 18.88,
+"end": 19.32,
+"key": "w:applications"
+},
+{
+"word": "in",
+"start": 19.32,
+"end": 19.8,
+"key": "w:in"
+},
+{
+"word": "one",
+"start": 19.8,
+"end": 20.1,
+"key": "w:one2"
+},
+{
+"word": "clear",
+"start": 20.1,
+"end": 20.48,
+"key": "w:clear"
+},
+{
+"word": "dashboard.",
+"start": 20.48,
+"end": 20.94,
+"key": "w:dashboard"
+},
+{
+"word": "Compare",
+"start": 21.605,
+"end": 21.9,
+"key": "w:compare"
+},
+{
+"word": "candidates",
+"start": 21.9,
+"end": 22.38,
+"key": "w:candidates2"
+},
+{
+"word": "instantly.",
+"start": 22.4,
+"end": 23.0,
+"key": "w:instantly"
+},
+{
+"word": "Shortlist",
+"start": 23.509,
+"end": 24.02,
+"key": "w:shortlist"
+},
+{
+"word": "the",
+"start": 24.02,
+"end": 24.22,
+"key": "w:the2"
+},
+{
+"word": "best.",
+"start": 24.22,
+"end": 24.54,
+"key": "w:best"
+},
+{
+"word": "Message",
+"start": 25.077,
+"end": 25.34,
+"key": "w:message"
+},
+{
+"word": "recruiters.",
+"start": 25.34,
+"end": 26.02,
+"key": "w:recruiters3"
+},
+{
+"word": "Track",
+"start": 26.36,
+"end": 26.6,
+"key": "w:track"
+},
+{
+"word": "interviews.",
+"start": 26.6,
+"end": 27.1,
+"key": "w:interviews"
+},
+{
+"word": "Move",
+"start": 27.818,
+"end": 27.94,
+"key": "w:move"
+},
+{
+"word": "candidates",
+"start": 28.0,
+"end": 28.36,
+"key": "w:candidates3"
+},
+{
+"word": "through",
+"start": 28.36,
+"end": 28.7,
+"key": "w:through"
+},
+{
+"word": "each",
+"start": 28.7,
+"end": 29.02,
+"key": "w:each"
+},
+{
+"word": "stage",
+"start": 29.02,
+"end": 29.38,
+"key": "w:stage"
+},
+{
+"word": "without",
+"start": 29.38,
+"end": 29.9,
+"key": "w:without"
+},
+{
+"word": "losing",
+"start": 29.9,
+"end": 30.28,
+"key": "w:losing"
+},
+{
+"word": "the",
+"start": 30.28,
+"end": 30.42,
+"key": "w:the3"
+},
+{
+"word": "overview.",
+"start": 30.42,
+"end": 30.74,
+"key": "w:overview"
+},
+{
+"word": "And",
+"start": 31.338,
+"end": 31.42,
+"key": "w:and3"
+},
+{
+"word": "when",
+"start": 31.42,
+"end": 31.54,
+"key": "w:when"
+},
+{
+"word": "the",
+"start": 31.54,
+"end": 31.66,
+"key": "w:the4"
+},
+{
+"word": "perfect",
+"start": 31.66,
+"end": 31.98,
+"key": "w:perfect"
+},
+{
+"word": "hire",
+"start": 31.98,
+"end": 32.24,
+"key": "w:hire"
+},
+{
+"word": "starts,",
+"start": 32.24,
+"end": 32.7,
+"key": "w:starts"
+},
+{
+"word": "that's",
+"start": 33.139,
+"end": 33.44,
+"key": "w:thats"
+},
+{
+"word": "when",
+"start": 33.44,
+"end": 33.54,
+"key": "w:when2"
+},
+{
+"word": "you",
+"start": 33.54,
+"end": 33.66,
+"key": "w:you"
+},
+{
+"word": "pay.",
+"start": 33.66,
+"end": 33.88,
+"key": "w:pay"
+},
+{
+"word": "For",
+"start": 34.422,
+"end": 34.5,
+"key": "w:for"
+},
+{
+"word": "recruiters,",
+"start": 34.5,
+"end": 35.12,
+"key": "w:recruiters4"
+},
+{
+"word": "explore",
+"start": 35.509,
+"end": 35.88,
+"key": "w:explore"
+},
+{
+"word": "relevant",
+"start": 35.88,
+"end": 36.28,
+"key": "w:relevant"
+},
+{
+"word": "opportunities,",
+"start": 36.28,
+"end": 36.98,
+"key": "w:opportunities"
+},
+{
+"word": "submit",
+"start": 37.386,
+"end": 37.64,
+"key": "w:submit"
+},
+{
+"word": "qualified",
+"start": 37.64,
+"end": 38.08,
+"key": "w:qualified"
+},
+{
+"word": "talent,",
+"start": 38.08,
+"end": 38.56,
+"key": "w:talent"
+},
+{
+"word": "and",
+"start": 38.792,
+"end": 39.08,
+"key": "w:and4"
+},
+{
+"word": "earn",
+"start": 39.08,
+"end": 39.28,
+"key": "w:earn"
+},
+{
+"word": "rewards",
+"start": 39.28,
+"end": 39.7,
+"key": "w:rewards2"
+},
+{
+"word": "for",
+"start": 39.7,
+"end": 39.92,
+"key": "w:for2"
+},
+{
+"word": "successful",
+"start": 39.92,
+"end": 40.42,
+"key": "w:successful"
+},
+{
+"word": "placements.",
+"start": 40.42,
+"end": 41.02,
+"key": "w:placements"
+},
+{
+"word": "No",
+"start": 41.54,
+"end": 41.72,
+"key": "w:no"
+},
+{
+"word": "scattered",
+"start": 41.72,
+"end": 42.04,
+"key": "w:scattered"
+},
+{
+"word": "inboxes.",
+"start": 42.04,
+"end": 42.78,
+"key": "w:inboxes"
+},
+{
+"word": "No",
+"start": 43.08,
+"end": 43.24,
+"key": "w:no2"
+},
+{
+"word": "upfront",
+"start": 43.24,
+"end": 43.52,
+"key": "w:upfront"
+},
+{
+"word": "costs.",
+"start": 43.52,
+"end": 44.06,
+"key": "w:costs"
+},
+{
+"word": "Just",
+"start": 44.509,
+"end": 44.66,
+"key": "w:just"
+},
+{
+"word": "recruiting.",
+"start": 44.66,
+"end": 45.04,
+"key": "w:recruiting2"
+},
+{
+"word": "Redesigned.",
+"start": 45.533,
+"end": 46.14,
+"key": "w:redesigned"
+},
+{
+"word": "Recruiting",
+"start": 46.638,
+"end": 47.08,
+"key": "w:recruiting3"
+},
+{
+"word": "Rewards.",
+"start": 47.08,
+"end": 47.54,
+"key": "w:rewards3"
+}
+]

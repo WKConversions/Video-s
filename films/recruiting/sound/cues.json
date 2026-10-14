@@ -1,0 +1,942 @@
+{
+ "fps": 30,
+ "frames": 1515,
+ "library": "../../alumni/sound/lib",
+ "vo": {
+  "file": "../vo/vo.mp3",
+  "at": 0,
+  "compress": true
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "lufs": -23,
+  "duck_db": 6,
+  "fade_in": 0.2,
+  "fade_out": 0.6,
+  "lifts": [
+   [
+    48.1,
+    50.5,
+    3
+   ]
+  ]
+ },
+ "sfx": [
+  {
+   "frame": 2,
+   "id": "kenney-drop-003",
+   "db": -13,
+   "pitch": -4,
+   "note": "a message lands"
+  },
+  {
+   "frame": 5,
+   "id": "kenney-drop-003",
+   "db": -13,
+   "pitch": -1,
+   "note": "a message lands"
+  },
+  {
+   "frame": 8,
+   "id": "kenney-drop-003",
+   "db": -13,
+   "pitch": 1,
+   "note": "a message lands"
+  },
+  {
+   "frame": 11,
+   "id": "kenney-drop-003",
+   "db": -13,
+   "pitch": 3,
+   "note": "a message lands"
+  },
+  {
+   "frame": 26,
+   "id": "gen-whoosh-medium",
+   "db": -3,
+   "note": "the mess gathers"
+  },
+  {
+   "frame": 51,
+   "id": "gen-appear",
+   "db": -3,
+   "note": "the platform"
+  },
+  {
+   "frame": 93,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": -5,
+   "note": "recruiter 1"
+  },
+  {
+   "frame": 96,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": -3,
+   "note": "recruiter 2"
+  },
+  {
+   "frame": 98,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": -1,
+   "note": "recruiter 3"
+  },
+  {
+   "frame": 100,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": 1,
+   "note": "recruiter 4"
+  },
+  {
+   "frame": 102,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": 3,
+   "note": "recruiter 5"
+  },
+  {
+   "frame": 125,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "note": "a match score"
+  },
+  {
+   "frame": 130,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "pitch": 3,
+   "note": "a match score"
+  },
+  {
+   "frame": 134,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "pitch": 5,
+   "note": "a match score"
+  },
+  {
+   "frame": 140,
+   "id": "kenney-select-001",
+   "db": -5,
+   "note": "the best match"
+  },
+  {
+   "frame": 162,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "pitch": -2,
+   "note": "the window folds into the mark"
+  },
+  {
+   "frame": 172,
+   "id": "gen-shimmer",
+   "db": -8,
+   "note": "the name"
+  },
+  {
+   "frame": 173,
+   "id": "gen-impact-soft",
+   "db": -3,
+   "note": "the logo"
+  },
+  {
+   "frame": 208,
+   "id": "gen-whoosh-medium",
+   "db": -4,
+   "note": "the window opens"
+  },
+  {
+   "frame": 223,
+   "id": "kenney-click-001",
+   "db": -14,
+   "note": "a key"
+  },
+  {
+   "frame": 226,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 229,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 232,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": 3,
+   "note": "a key"
+  },
+  {
+   "frame": 236,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": 1,
+   "note": "a key"
+  },
+  {
+   "frame": 239,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": -2,
+   "note": "a key"
+  },
+  {
+   "frame": 242,
+   "id": "kenney-click-001",
+   "db": -14,
+   "note": "a key"
+  },
+  {
+   "frame": 246,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 249,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 252,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": 3,
+   "note": "a key"
+  },
+  {
+   "frame": 254,
+   "id": "kenney-select-001",
+   "db": -6,
+   "note": "a criterion detected"
+  },
+  {
+   "frame": 256,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": 1,
+   "note": "a key"
+  },
+  {
+   "frame": 259,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": -2,
+   "note": "a key"
+  },
+  {
+   "frame": 259,
+   "id": "kenney-select-001",
+   "db": -6,
+   "pitch": 2,
+   "note": "a criterion detected"
+  },
+  {
+   "frame": 261,
+   "id": "kenney-select-001",
+   "db": -6,
+   "pitch": 3,
+   "note": "a criterion detected"
+  },
+  {
+   "frame": 262,
+   "id": "kenney-click-001",
+   "db": -14,
+   "note": "a key"
+  },
+  {
+   "frame": 265,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 267,
+   "id": "kenney-select-001",
+   "db": -6,
+   "pitch": 5,
+   "note": "a criterion detected"
+  },
+  {
+   "frame": 269,
+   "id": "kenney-click-001",
+   "db": -14,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 273,
+   "id": "kenney-select-001",
+   "db": -6,
+   "pitch": 7,
+   "note": "a criterion detected"
+  },
+  {
+   "frame": 279,
+   "id": "kenney-select-001",
+   "db": -6,
+   "pitch": 9,
+   "note": "a criterion detected"
+  },
+  {
+   "frame": 286,
+   "id": "gen-whoosh-whip",
+   "db": -8,
+   "note": "the reward page"
+  },
+  {
+   "frame": 304,
+   "id": "kenney-click-001",
+   "db": -1,
+   "note": "click"
+  },
+  {
+   "frame": 304,
+   "id": "kenney-drop-003",
+   "db": -5,
+   "note": "95 000 selected"
+  },
+  {
+   "frame": 337,
+   "id": "kenney-click-001",
+   "db": 0,
+   "note": "click"
+  },
+  {
+   "frame": 340,
+   "id": "gen-success",
+   "db": -5,
+   "note": "published"
+  },
+  {
+   "frame": 365,
+   "id": "gen-whoosh-medium",
+   "db": -3,
+   "note": "the vacancy lifts out"
+  },
+  {
+   "frame": 388,
+   "id": "gen-chime",
+   "db": -6,
+   "note": "Live"
+  },
+  {
+   "frame": 404,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": -4,
+   "note": "recruiter 1"
+  },
+  {
+   "frame": 406,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": -2,
+   "note": "recruiter 2"
+  },
+  {
+   "frame": 408,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "note": "recruiter 3"
+  },
+  {
+   "frame": 410,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": 2,
+   "note": "recruiter 4"
+  },
+  {
+   "frame": 412,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": 4,
+   "note": "recruiter 5"
+  },
+  {
+   "frame": 436,
+   "id": "kenney-tick-004",
+   "db": -10,
+   "note": "working on it"
+  },
+  {
+   "frame": 438,
+   "id": "kenney-tick-004",
+   "db": -10,
+   "pitch": 2,
+   "note": "working on it"
+  },
+  {
+   "frame": 440,
+   "id": "kenney-tick-004",
+   "db": -10,
+   "pitch": 4,
+   "note": "working on it"
+  },
+  {
+   "frame": 442,
+   "id": "kenney-tick-004",
+   "db": -10,
+   "pitch": 6,
+   "note": "working on it"
+  },
+  {
+   "frame": 443,
+   "id": "kenney-tick-004",
+   "db": -10,
+   "pitch": 8,
+   "note": "working on it"
+  },
+  {
+   "frame": 459,
+   "id": "gen-whoosh-short",
+   "db": -5,
+   "pitch": 2,
+   "note": "candidates fly in"
+  },
+  {
+   "frame": 481,
+   "id": "kenney-drop-003",
+   "db": -6,
+   "pitch": -3,
+   "note": "candidate 1 lands"
+  },
+  {
+   "frame": 485,
+   "id": "kenney-drop-003",
+   "db": -6,
+   "note": "candidate 2 lands"
+  },
+  {
+   "frame": 488,
+   "id": "kenney-drop-003",
+   "db": -6,
+   "pitch": 2,
+   "note": "candidate 3 lands"
+  },
+  {
+   "frame": 505,
+   "id": "gen-whoosh-whip",
+   "db": -9,
+   "pitch": -2,
+   "note": "the profile panel"
+  },
+  {
+   "frame": 537,
+   "id": "gen-riser-1s",
+   "db": -12,
+   "note": "the scores fill"
+  },
+  {
+   "frame": 565,
+   "id": "kenney-select-002",
+   "db": -7,
+   "note": "the application"
+  },
+  {
+   "frame": 592,
+   "id": "gen-whoosh-short",
+   "db": -8,
+   "note": "the panel closes onto the dashboard"
+  },
+  {
+   "frame": 597,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": -2,
+   "note": "cards fill the stages"
+  },
+  {
+   "frame": 600,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "note": "cards fill the stages"
+  },
+  {
+   "frame": 603,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 2,
+   "note": "cards fill the stages"
+  },
+  {
+   "frame": 606,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 4,
+   "note": "cards fill the stages"
+  },
+  {
+   "frame": 645,
+   "id": "gen-whoosh-medium",
+   "db": -4,
+   "note": "three candidates side by side"
+  },
+  {
+   "frame": 647,
+   "id": "kenney-maximize-009",
+   "db": -9,
+   "pitch": -2,
+   "note": "card 1"
+  },
+  {
+   "frame": 649,
+   "id": "kenney-maximize-009",
+   "db": -9,
+   "note": "card 2"
+  },
+  {
+   "frame": 651,
+   "id": "kenney-maximize-009",
+   "db": -9,
+   "pitch": 2,
+   "note": "card 3"
+  },
+  {
+   "frame": 672,
+   "id": "gen-chime",
+   "db": -6,
+   "note": "best match"
+  },
+  {
+   "frame": 705,
+   "id": "kenney-click-001",
+   "db": -1,
+   "note": "click"
+  },
+  {
+   "frame": 706,
+   "id": "gen-pop",
+   "db": -4,
+   "note": "the star"
+  },
+  {
+   "frame": 714,
+   "id": "gen-whoosh-whip",
+   "db": -9,
+   "pitch": 2,
+   "note": "into the shortlist"
+  },
+  {
+   "frame": 748,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": -2,
+   "note": "the chat"
+  },
+  {
+   "frame": 754,
+   "id": "kenney-click-001",
+   "db": -15,
+   "note": "a key"
+  },
+  {
+   "frame": 757,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 760,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 763,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 3,
+   "note": "a key"
+  },
+  {
+   "frame": 766,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 1,
+   "note": "a key"
+  },
+  {
+   "frame": 769,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": -2,
+   "note": "a key"
+  },
+  {
+   "frame": 771,
+   "id": "kenney-select-001",
+   "db": -5,
+   "note": "the recruiter replies"
+  },
+  {
+   "frame": 772,
+   "id": "kenney-click-001",
+   "db": -15,
+   "note": "a key"
+  },
+  {
+   "frame": 775,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 789,
+   "id": "kenney-maximize-009",
+   "db": -5,
+   "note": "the interview step"
+  },
+  {
+   "frame": 791,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "note": "a star"
+  },
+  {
+   "frame": 793,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 2,
+   "note": "a star"
+  },
+  {
+   "frame": 794,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 4,
+   "note": "a star"
+  },
+  {
+   "frame": 796,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 5,
+   "note": "a star"
+  },
+  {
+   "frame": 798,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 7,
+   "note": "a star"
+  },
+  {
+   "frame": 818,
+   "id": "kenney-click-001",
+   "db": -5,
+   "note": "send"
+  },
+  {
+   "frame": 820,
+   "id": "gen-whoosh-whip",
+   "db": -13,
+   "note": "into Interview"
+  },
+  {
+   "frame": 851,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 2,
+   "note": "into Tests"
+  },
+  {
+   "frame": 871,
+   "id": "gen-whoosh-whip",
+   "db": -9,
+   "pitch": -2,
+   "note": "into Reference check"
+  },
+  {
+   "frame": 881,
+   "id": "gen-swell",
+   "db": -9,
+   "note": "the whole overview"
+  },
+  {
+   "frame": 959,
+   "id": "gen-whoosh-short",
+   "db": -5,
+   "note": "into Hired"
+  },
+  {
+   "frame": 968,
+   "id": "gen-appear",
+   "db": -4,
+   "note": "the hired dialog"
+  },
+  {
+   "frame": 973,
+   "id": "gen-success",
+   "db": -3,
+   "note": "hired"
+  },
+  {
+   "frame": 1007,
+   "id": "gen-impact-soft",
+   "db": -5,
+   "note": "pay on results"
+  },
+  {
+   "frame": 1028,
+   "id": "gen-whoosh-medium",
+   "db": -4,
+   "note": "the side switches"
+  },
+  {
+   "frame": 1035,
+   "id": "kenney-click-001",
+   "db": -1,
+   "note": "click: For recruiters"
+  },
+  {
+   "frame": 1044,
+   "id": "kenney-drop-003",
+   "db": -10,
+   "pitch": -3,
+   "note": "an assignment 1"
+  },
+  {
+   "frame": 1046,
+   "id": "kenney-drop-003",
+   "db": -10,
+   "pitch": -1,
+   "note": "an assignment 2"
+  },
+  {
+   "frame": 1049,
+   "id": "kenney-drop-003",
+   "db": -10,
+   "pitch": 1,
+   "note": "an assignment 3"
+  },
+  {
+   "frame": 1051,
+   "id": "kenney-drop-003",
+   "db": -10,
+   "pitch": 3,
+   "note": "an assignment 4"
+  },
+  {
+   "frame": 1065,
+   "id": "kenney-tick-004",
+   "db": -12,
+   "note": "hover"
+  },
+  {
+   "frame": 1070,
+   "id": "kenney-tick-004",
+   "db": -12,
+   "pitch": 2,
+   "note": "hover"
+  },
+  {
+   "frame": 1075,
+   "id": "kenney-tick-004",
+   "db": -12,
+   "pitch": 4,
+   "note": "hover"
+  },
+  {
+   "frame": 1076,
+   "id": "kenney-select-002",
+   "db": -5,
+   "note": "Sales"
+  },
+  {
+   "frame": 1114,
+   "id": "gen-whoosh-whip",
+   "db": -9,
+   "pitch": 2,
+   "note": "the submit panel"
+  },
+  {
+   "frame": 1123,
+   "id": "kenney-click-001",
+   "db": -1,
+   "note": "click: Submit"
+  },
+  {
+   "frame": 1125,
+   "id": "gen-success",
+   "db": -6,
+   "note": "submitted"
+  },
+  {
+   "frame": 1129,
+   "id": "kenney-select-001",
+   "db": -7,
+   "note": "interviewed, screened"
+  },
+  {
+   "frame": 1164,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": -2,
+   "note": "earnings"
+  },
+  {
+   "frame": 1178,
+   "id": "gen-riser-1s",
+   "db": -9,
+   "note": "the reward counts up"
+  },
+  {
+   "frame": 1213,
+   "id": "gen-chime",
+   "db": -5,
+   "note": "paid on hire"
+  },
+  {
+   "frame": 1236,
+   "id": "kenney-drop-003",
+   "db": -15,
+   "pitch": -5,
+   "note": "the mess again"
+  },
+  {
+   "frame": 1237,
+   "id": "kenney-drop-003",
+   "db": -15,
+   "pitch": -3,
+   "note": "the mess again"
+  },
+  {
+   "frame": 1239,
+   "id": "kenney-drop-003",
+   "db": -15,
+   "pitch": -1,
+   "note": "the mess again"
+  },
+  {
+   "frame": 1240,
+   "id": "kenney-drop-003",
+   "db": -15,
+   "pitch": 1,
+   "note": "the mess again"
+  },
+  {
+   "frame": 1242,
+   "id": "kenney-drop-003",
+   "db": -15,
+   "pitch": 3,
+   "note": "the mess again"
+  },
+  {
+   "frame": 1243,
+   "id": "kenney-drop-003",
+   "db": -15,
+   "pitch": 5,
+   "note": "the mess again"
+  },
+  {
+   "frame": 1258,
+   "id": "gen-whoosh-deep",
+   "db": -3,
+   "note": "pulled into one place"
+  },
+  {
+   "frame": 1295,
+   "id": "kenney-maximize-009",
+   "db": -5,
+   "note": "the price card"
+  },
+  {
+   "frame": 1297,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 6,
+   "note": "25% counts down to 0"
+  },
+  {
+   "frame": 1301,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 4,
+   "note": "25% counts down to 0"
+  },
+  {
+   "frame": 1306,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 2,
+   "note": "25% counts down to 0"
+  },
+  {
+   "frame": 1306,
+   "id": "kenney-select-001",
+   "db": -7,
+   "note": "a tick 1"
+  },
+  {
+   "frame": 1309,
+   "id": "kenney-select-001",
+   "db": -7,
+   "pitch": 2,
+   "note": "a tick 2"
+  },
+  {
+   "frame": 1310,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "note": "25% counts down to 0"
+  },
+  {
+   "frame": 1313,
+   "id": "kenney-select-001",
+   "db": -7,
+   "pitch": 4,
+   "note": "a tick 3"
+  },
+  {
+   "frame": 1332,
+   "id": "gen-whoosh-medium",
+   "db": -5,
+   "note": "the card leaves"
+  },
+  {
+   "frame": 1366,
+   "id": "gen-shimmer",
+   "db": -5,
+   "note": "redesigned"
+  },
+  {
+   "frame": 1393,
+   "id": "gen-swell",
+   "db": -3,
+   "auto_level": false,
+   "note": "the window folds into the logo"
+  },
+  {
+   "frame": 1401,
+   "id": "gen-shimmer",
+   "db": -4,
+   "auto_level": false,
+   "note": "Recruiting Rewards"
+  },
+  {
+   "frame": 1438,
+   "id": "gen-appear",
+   "db": -4,
+   "note": "Start hiring"
+  }
+ ]
+}
