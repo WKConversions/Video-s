@@ -83,6 +83,8 @@ def main():
                 xs = [p[0] for p in rings[0]]; ys = [p[1] for p in rings[0]]
                 if max(xs) < LON0 - pad or min(xs) > LON1 + pad or max(ys) < LAT0 - pad or min(ys) > LAT1 + pad: continue
                 for r in rings:
+                    if max(p[0] for p in r) - min(p[0] for p in r) > 180:   # crosses the date line (Russia, Fiji): keep it in one piece, east of 180°
+                        r = [(lon + 360 if lon < 0 else lon, lat) for lon, lat in r]
                     pts = [proj(*p) for p in r]
                     d += "M" + "L".join(f"{x:.1f},{y:.1f}" for x, y in pts) + "Z"
             if d: shapes.append({"n": name, "hl": name.lower() in hl, "d": d})

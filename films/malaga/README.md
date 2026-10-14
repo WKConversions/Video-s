@@ -15,12 +15,19 @@ copyright-free music and effects over the whole film, the 4% motion norm.
 
 Render: `cd film && bash scripts/render_chunks.sh Film out/final_master.mp4 '{"blurSamples":1,"audio":"none"}' 0,345,690,1035,1380 public/audio/mix.wav`, then the TV-range BT.709 encode.
 
+Revision 14 Oct 2026 (client feedback): the map at 8.6–12.4 s is now the whole world (`src/map_world.json`, made with
+`scripts/map_make.py countries --bbox=-170,180,-50,74 --frame 960,540,1000`), with routes from Málaga to twelve cities on
+every continent and the chores travelling out along them. Only frames 250–382 were re-rendered (`render_chunks.sh … 250,383`)
+and encoded with the delivery's own x264 settings (CRF 17, medium); they were spliced between the delivery's keyframes at
+8.33 s and 12.77 s, so every other frame and the sound are bit-identical to the first delivery.
+
 ## Truth
 Every claim comes from the site: rental management, guest reception with electronic access (Nuki or key box), cleaning with
 their own laundry service, maintenance through their own service, keyholding (secure key custody, property inspections,
 on site when a technician calls), commission-based and transparent prices, use your home whenever you like, reports,
 photos and updates, personal contact by WhatsApp. Illustrative only: the door code, dates and guest questions; the
-"You" pin sits in northern Europe without naming a city. The home in the film is Happy House (Casa Feliz), El Palo,
+"You" pin sits in northern Europe without naming a city, and the routes to cities on every continent (14 Oct revision, at
+the client's request) show owners anywhere in the world, without naming them. The home in the film is Happy House (Casa Feliz), El Palo,
 a home the company manages (photo from their site).
 
 ## Credits and licences

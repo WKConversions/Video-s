@@ -4,16 +4,16 @@ import React from "react";
 import { ARRIVE, C, F, MOVE, SHADOW_SOFT, SOFT, W, at, clamp01, expoOut, lerp, pr, px, pxi, rgba } from "./lib";
 import { Icon } from "./icons";
 import { CountryMap, Pin, Route } from "./maps";
-import MAP from "./map.json";
+import WORLD from "./map_world.json";
 import { Card, Check, Chip, Field, Head, HomeCard, Logo, MEDIA, Media, Place, rise } from "./shared";
 import { LIST, toList } from "./SceneB";
 
 // ---- the stage geometry ---------------------------------------------------------------------------------------------
 const HOME_W = 560, HOME_H = 700;
-/** The map: Natural Earth, shifted and scaled so Málaga sits low left of centre and "you" far north. */
-const MAP_S = 1.35, M0 = MAP.cities["Málaga"] as number[], A0 = MAP.cities["Amsterdam"] as number[];
-export const MALAGA = [820, 800];
-export const YOU = [MALAGA[0] + MAP_S * (A0[0] - M0[0]), MALAGA[1] + MAP_S * (A0[1] - M0[1])];
+/** The map: the whole world (Natural Earth, Mercator), Málaga in its real place; "you" in northern Europe, owners everywhere. */
+const CITY = WORLD.cities as Record<string, number[]>;
+export const MALAGA = CITY["Málaga"];
+export const YOU = CITY["Amsterdam"];
 
 /** Where the cluster (home, chores, swarm) is shrunk on "You're miles away": 0..1. */
 const shrinkK = (g: number) => pr(g, W("w:youre", -0.3), 24, MOVE);
@@ -148,23 +148,33 @@ const Cluster: React.FC<{ g: number }> = ({ g }) => {
 };
 
 // ---- 3 you're miles away: the map ------------------------------------------------------------------------------------------
-/** A point on the route's arc (the same curve maps.tsx draws), t 0..1 from Málaga to you. */
-const onRoute = (t: number, arc = 0.22) => {
-  const [x0, y0] = MALAGA, [x1, y1] = YOU, mx = (x0 + x1) / 2, my = (y0 + y1) / 2, len = Math.hypot(x1 - x0, y1 - y0);
-  const nx = -(y1 - y0) / len, ny = (x1 - x0) / len, cx = mx + nx * len * arc, cy = my + ny * len * arc;
+/** Owners come from all over the world: a route from Málaga to each, launched one after another on "miles away". */
+/** City and arc: the arcs bow north like flights, spread so routes leaving in the same direction stay apart. */
+const REACH: [string, number][] = [["Amsterdam", -0.2], ["New York", 0.2], ["Dubai", -0.26], ["São Paulo", 0.18], ["Singapore", 0.04], ["Los Angeles", 0.22],
+  ["Cape Town", -0.12], ["Tokyo", -0.2], ["Mumbai", -0.12], ["Mexico City", 0.12], ["Sydney", -0.06], ["Hong Kong", -0.22]];
+const ROUTES = REACH.map(([n, arc], i) => {
+  const to = CITY[n], len = Math.hypot(to[0] - MALAGA[0], to[1] - MALAGA[1]);
+  const a = W("w:miles", -0.25) + Math.round(i * 2.6), dur = Math.round(14 + len / 55);
+  return { n, to, a, dur, arc };
+});
+/** A point on a route's arc (the same curve maps.tsx draws), t 0..1 from Málaga out. */
+const onRoute = (r: (typeof ROUTES)[number], t: number) => {
+  const [x0, y0] = MALAGA, [x1, y1] = r.to, mx = (x0 + x1) / 2, my = (y0 + y1) / 2, len = Math.hypot(x1 - x0, y1 - y0);
+  const nx = -(y1 - y0) / len, ny = (x1 - x0) / len, cx = mx + nx * len * r.arc, cy = my + ny * len * r.arc;
   return [(1 - t) ** 2 * x0 + 2 * (1 - t) * t * cx + t * t * x1, (1 - t) ** 2 * y0 + 2 * (1 - t) * t * cy + t * t * y1];
 };
-/** While you're away the chores still find you: they travel up the route, one after another, until Málaga Hideaway comes in. */
-const TRAVEL: [string, string][] = [["chat", "Guest message"], ["key", "Check-in"], ["wrench", "Repair"], ["calendar", "Booking"], ["sparkle", "Cleaning"],
-  ["phone", "Call"], ["chat", "Guest message"], ["wrench", "Leak"], ["mail", "Post"], ["key", "Late arrival"]];
-const Traveller: React.FC<{ g: number; i: number; icon: string; label: string }> = ({ g, i, icon, label }) => {
-  const a = W("w:miles", 0.3) + i * 4, n = 34, stop = W("w:malaga", -0.12);
+/** While you're away the chores still find you, wherever you are: they travel out along the routes until Málaga Hideaway comes in. */
+const TRAVEL: [string, string, number][] = [["chat", "Guest message", 1], ["key", "Check-in", 7], ["wrench", "Repair", 6], ["calendar", "Booking", 10],
+  ["sparkle", "Cleaning", 3], ["phone", "Call", 11], ["key", "Late arrival", 5], ["wrench", "Leak", 2]];   // each one heads another way
+const Traveller: React.FC<{ g: number; i: number; icon: string; label: string; route: number }> = ({ g, i, icon, label, route }) => {
+  const r = ROUTES[route], len = Math.hypot(r.to[0] - MALAGA[0], r.to[1] - MALAGA[1]);
+  const a = W("w:miles", 0.3) + i * 5, n = Math.round(30 + len / 40), stop = W("w:malaga", -0.12);
   if (g < a || a > stop) return null;
   const t = clamp01((g - a) / n);
   if (t >= 1) return null;
-  const [x, y] = onRoute(0.1 + 0.78 * t);                          // evenly spaced, clear of both labels
+  const [x, y] = onRoute(r, 0.24 + 0.62 * SOFT(t));                    // out in the open: clear of Málaga's chip and the pin it heads for
   return (
-    <div style={{ ...at(x, y, 1.05, Math.min(1, t * 6, (1 - t) * 6)) }}>
+    <div style={{ ...at(x, y, 0.84, Math.min(1, t * 6, (1 - t) * 6)) }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10, height: 56, padding: "0 20px 0 10px", borderRadius: 28, background: C.white, boxShadow: SHADOW_SOFT,
         fontFamily: F.ui, fontWeight: 600, fontSize: 24, color: C.ink, whiteSpace: "nowrap" }}>
         <div style={{ width: 38, height: 38, borderRadius: 19, background: i % 3 === 1 ? C.terraSoft : C.bluePale, display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -175,22 +185,20 @@ const Traveller: React.FC<{ g: number; i: number; icon: string; label: string }>
 const MapScene: React.FC<{ g: number }> = ({ g }) => {
   const a = W("w:youre", -0.3), out = W("w:hideaway", 0.95);
   if (g < a || g > out) return null;
-  // the map spreads out of Málaga like a wave (~1.7 s), the route stretches north and lands on you
+  // the world spreads out of Málaga like a wave (~1.7 s); on "miles away" routes shoot out to every continent, the first lands on you
   const rv = SOFT(clamp01((g - a) / 50));
-  const route = pr(g, W("w:miles", -0.25), 26, (t) => t);
   const youK = pr(g, W("w:away", 0.1), 16);
   const pinK = pr(g, a + 18, 16);
   return (
     <div style={{ position: "absolute", inset: 0, clipPath: rv < 1 ? `circle(${1440 * rv}px at ${MALAGA[0]}px ${MALAGA[1]}px)` : undefined }}>
       <div style={{ position: "absolute", inset: 0, background: C.bluePale }} />
-      <div style={{ position: "absolute", inset: 0, transformOrigin: "0 0", transform: `translate(${MALAGA[0]}px, ${MALAGA[1]}px) scale(${MAP_S}) translate(${-M0[0]}px, ${-M0[1]}px)` }}>
-        <CountryMap data={MAP} land="#FFFDF8" landHi={C.sand} border={C.blueSoft} hl={pr(g, a + 10, 24)} />
-      </div>
-      <Route pts={[MALAGA, YOU]} k={route} color={C.navy} guide={rgba(C.navy, 0.28)} width={7} arc={0.22} />
+      <CountryMap data={WORLD} land="#FFFDF8" landHi={C.sand} border={C.blueSoft} sw={1.3} hl={pr(g, a + 10, 24)} />
+      {ROUTES.map((r) => <Route key={r.n} pts={[MALAGA, r.to]} k={pr(g, r.a, r.dur, SOFT)} color={C.navy} guide={rgba(C.navy, 0.22)} width={5} arc={r.arc} />)}
+      {ROUTES.map((r, i) => i > 0 && <Pin key={r.n} x={r.to[0]} y={r.to[1]} k={pr(g, r.a + r.dur - 3, 14)} color={C.navy} size={18} />)}
       <Pin x={MALAGA[0]} y={MALAGA[1]} k={pinK} color={C.terra} size={30} />
       <div style={{ ...at(MALAGA[0] - 150, MALAGA[1] + 8, 1, pinK) }}>
         <div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 34, color: C.ink, background: C.white, padding: "8px 20px", borderRadius: 30, boxShadow: SHADOW_SOFT }}>Málaga</div></div>
-      {TRAVEL.map(([icon, label], i) => <Traveller key={i} g={g} i={i} icon={icon} label={label} />)}
+      {TRAVEL.map(([icon, label, route], i) => <Traveller key={i} g={g} i={i} icon={icon} label={label} route={route} />)}
       <Pin x={YOU[0]} y={YOU[1]} k={youK} color={C.navy} size={30} />
       {youK > 0 && <div style={{ ...at(YOU[0] + 108, YOU[1], 1, clamp01(youK * 1.5)) }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10, fontFamily: F.ui, fontWeight: 700, fontSize: 34, color: "#fff", background: C.navy, padding: "8px 22px", borderRadius: 30 }}>

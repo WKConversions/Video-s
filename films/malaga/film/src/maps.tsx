@@ -29,10 +29,10 @@ export const DotMap: React.FC<{ data: DotData; reveal: number; from: P; color: s
 };
 
 /** Country shapes; the highlighted ones (map_make --highlight) fill to `landHi` as `hl` goes 0→1 (TopJobsAbroad's Europe). */
-export const CountryMap: React.FC<{ data: CountryData; land: string; landHi: string; border?: string; hl?: number; o?: number; style?: React.CSSProperties }> = ({
-  data, land, landHi, border = "#fff", hl = 1, o = 1, style }) => (
+export const CountryMap: React.FC<{ data: CountryData; land: string; landHi: string; border?: string; sw?: number; hl?: number; o?: number; style?: React.CSSProperties }> = ({
+  data, land, landHi, border = "#fff", sw = 2.2, hl = 1, o = 1, style }) => (
   <svg width={1920} height={1080} viewBox="0 0 1920 1080" style={{ position: "absolute", inset: 0, overflow: "visible", opacity: o, ...style }}>
-    {data.countries.map((c) => <path key={c.n} d={c.d} fill={c.hl && hl > 0 ? mix(land, landHi, hl) : land} stroke={border} strokeWidth={2.2} strokeLinejoin="round" />)}
+    {data.countries.map((c) => <path key={c.n} d={c.d} fill={c.hl && hl > 0 ? mix(land, landHi, hl) : land} stroke={border} strokeWidth={sw} strokeLinejoin="round" />)}
   </svg>
 );
 
