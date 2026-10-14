@@ -1,0 +1,537 @@
+[
+ {
+  "w": "Your",
+  "start": 0.0,
+  "end": 0.2
+ },
+ {
+  "w": "internship",
+  "start": 0.2,
+  "end": 0.6
+ },
+ {
+  "w": "in",
+  "start": 0.6,
+  "end": 0.86
+ },
+ {
+  "w": "Spain",
+  "start": 0.86,
+  "end": 1.18
+ },
+ {
+  "w": "starts",
+  "start": 1.18,
+  "end": 1.6
+ },
+ {
+  "w": "before",
+  "start": 1.6,
+  "end": 2.06
+ },
+ {
+  "w": "you",
+  "start": 2.06,
+  "end": 2.3
+ },
+ {
+  "w": "even",
+  "start": 2.3,
+  "end": 2.64
+ },
+ {
+  "w": "pack",
+  "start": 2.64,
+  "end": 2.92
+ },
+ {
+  "w": "your",
+  "start": 2.92,
+  "end": 3.08
+ },
+ {
+  "w": "bags.",
+  "start": 3.08,
+  "end": 3.46
+ },
+ {
+  "w": "With",
+  "start": 4.02,
+  "end": 4.14
+ },
+ {
+  "w": "JongLeren,",
+  "start": 4.14,
+  "end": 4.64
+ },
+ {
+  "w": "everything",
+  "start": 5.1,
+  "end": 5.42
+ },
+ {
+  "w": "becomes",
+  "start": 5.42,
+  "end": 5.88
+ },
+ {
+  "w": "easier.",
+  "start": 5.88,
+  "end": 6.28
+ },
+ {
+  "w": "First,",
+  "start": 6.84,
+  "end": 7.12
+ },
+ {
+  "w": "we",
+  "start": 7.46,
+  "end": 7.6
+ },
+ {
+  "w": "schedule",
+  "start": 7.6,
+  "end": 7.9
+ },
+ {
+  "w": "an",
+  "start": 7.9,
+  "end": 8.14
+ },
+ {
+  "w": "intake",
+  "start": 8.14,
+  "end": 8.4
+ },
+ {
+  "w": "meeting.",
+  "start": 8.4,
+  "end": 8.8
+ },
+ {
+  "w": "You",
+  "start": 9.26,
+  "end": 9.42
+ },
+ {
+  "w": "tell",
+  "start": 9.42,
+  "end": 9.58
+ },
+ {
+  "w": "us",
+  "start": 9.58,
+  "end": 9.78
+ },
+ {
+  "w": "what",
+  "start": 9.78,
+  "end": 9.92
+ },
+ {
+  "w": "you",
+  "start": 9.92,
+  "end": 10.06
+ },
+ {
+  "w": "study,",
+  "start": 10.06,
+  "end": 10.38
+ },
+ {
+  "w": "what",
+  "start": 10.76,
+  "end": 10.9
+ },
+ {
+  "w": "you're",
+  "start": 10.9,
+  "end": 11.04
+ },
+ {
+  "w": "looking",
+  "start": 11.04,
+  "end": 11.24
+ },
+ {
+  "w": "for,",
+  "start": 11.24,
+  "end": 11.64
+ },
+ {
+  "w": "and",
+  "start": 11.76,
+  "end": 12.08
+ },
+ {
+  "w": "what",
+  "start": 12.08,
+  "end": 12.28
+ },
+ {
+  "w": "your",
+  "start": 12.28,
+  "end": 12.42
+ },
+ {
+  "w": "school",
+  "start": 12.42,
+  "end": 12.64
+ },
+ {
+  "w": "requires.",
+  "start": 12.64,
+  "end": 13.08
+ },
+ {
+  "w": "Next,",
+  "start": 13.68,
+  "end": 13.92
+ },
+ {
+  "w": "you",
+  "start": 14.28,
+  "end": 14.4
+ },
+ {
+  "w": "download",
+  "start": 14.4,
+  "end": 14.7
+ },
+ {
+  "w": "our",
+  "start": 14.7,
+  "end": 14.94
+ },
+ {
+  "w": "app",
+  "start": 14.94,
+  "end": 15.24
+ },
+ {
+  "w": "where",
+  "start": 15.24,
+  "end": 15.52
+ },
+ {
+  "w": "you",
+  "start": 15.52,
+  "end": 15.66
+ },
+ {
+  "w": "can",
+  "start": 15.66,
+  "end": 15.78
+ },
+ {
+  "w": "track",
+  "start": 15.78,
+  "end": 16.06
+ },
+ {
+  "w": "every",
+  "start": 16.06,
+  "end": 16.5
+ },
+ {
+  "w": "step",
+  "start": 16.5,
+  "end": 16.8
+ },
+ {
+  "w": "of",
+  "start": 16.8,
+  "end": 16.96
+ },
+ {
+  "w": "the",
+  "start": 16.96,
+  "end": 17.04
+ },
+ {
+  "w": "process.",
+  "start": 17.04,
+  "end": 17.42
+ },
+ {
+  "w": "We",
+  "start": 17.92,
+  "end": 18.06
+ },
+ {
+  "w": "find",
+  "start": 18.06,
+  "end": 18.3
+ },
+ {
+  "w": "a",
+  "start": 18.3,
+  "end": 18.44
+ },
+ {
+  "w": "suitable",
+  "start": 18.44,
+  "end": 18.64
+ },
+ {
+  "w": "internship",
+  "start": 18.64,
+  "end": 19.14
+ },
+ {
+  "w": "placement",
+  "start": 19.14,
+  "end": 19.56
+ },
+ {
+  "w": "and",
+  "start": 19.56,
+  "end": 20.08
+ },
+ {
+  "w": "arrange",
+  "start": 20.08,
+  "end": 20.38
+ },
+ {
+  "w": "an",
+  "start": 20.38,
+  "end": 20.6
+ },
+ {
+  "w": "introductory",
+  "start": 20.6,
+  "end": 20.86
+ },
+ {
+  "w": "meeting",
+  "start": 20.86,
+  "end": 21.4
+ },
+ {
+  "w": "with",
+  "start": 21.4,
+  "end": 21.58
+ },
+ {
+  "w": "the",
+  "start": 21.58,
+  "end": 21.68
+ },
+ {
+  "w": "company.",
+  "start": 21.68,
+  "end": 21.94
+ },
+ {
+  "w": "Got",
+  "start": 22.44,
+  "end": 22.62
+ },
+ {
+  "w": "accepted?",
+  "start": 22.62,
+  "end": 23.0
+ },
+ {
+  "w": "We'll",
+  "start": 23.44,
+  "end": 23.66
+ },
+ {
+  "w": "also",
+  "start": 23.66,
+  "end": 23.98
+ },
+ {
+  "w": "help",
+  "start": 23.98,
+  "end": 24.18
+ },
+ {
+  "w": "you",
+  "start": 24.18,
+  "end": 24.36
+ },
+ {
+  "w": "find",
+  "start": 24.36,
+  "end": 24.5
+ },
+ {
+  "w": "accommodation",
+  "start": 24.5,
+  "end": 25.12
+ },
+ {
+  "w": "if",
+  "start": 25.12,
+  "end": 25.36
+ },
+ {
+  "w": "needed.",
+  "start": 25.36,
+  "end": 25.62
+ },
+ {
+  "w": "And",
+  "start": 26.08,
+  "end": 26.24
+ },
+ {
+  "w": "once",
+  "start": 26.24,
+  "end": 26.4
+ },
+ {
+  "w": "you're",
+  "start": 26.4,
+  "end": 26.58
+ },
+ {
+  "w": "in",
+  "start": 26.58,
+  "end": 26.66
+ },
+ {
+  "w": "Spain,",
+  "start": 26.66,
+  "end": 26.92
+ },
+ {
+  "w": "we're",
+  "start": 27.42,
+  "end": 27.64
+ },
+ {
+  "w": "still",
+  "start": 27.64,
+  "end": 27.94
+ },
+ {
+  "w": "here",
+  "start": 27.94,
+  "end": 28.24
+ },
+ {
+  "w": "for",
+  "start": 28.24,
+  "end": 28.46
+ },
+ {
+  "w": "you.",
+  "start": 28.46,
+  "end": 28.68
+ },
+ {
+  "w": "With",
+  "start": 28.68,
+  "end": 29.12
+ },
+ {
+  "w": "personal",
+  "start": 29.12,
+  "end": 29.52
+ },
+ {
+  "w": "guidance,",
+  "start": 29.52,
+  "end": 29.9
+ },
+ {
+  "w": "coaching,",
+  "start": 30.24,
+  "end": 30.54
+ },
+ {
+  "w": "and",
+  "start": 30.96,
+  "end": 31.02
+ },
+ {
+  "w": "activities.",
+  "start": 31.02,
+  "end": 31.48
+ },
+ {
+  "w": "From",
+  "start": 32.06,
+  "end": 32.16
+ },
+ {
+  "w": "your",
+  "start": 32.16,
+  "end": 32.28
+ },
+ {
+  "w": "first",
+  "start": 32.28,
+  "end": 32.56
+ },
+ {
+  "w": "question",
+  "start": 32.56,
+  "end": 33.02
+ },
+ {
+  "w": "to",
+  "start": 33.02,
+  "end": 33.34
+ },
+ {
+  "w": "your",
+  "start": 33.34,
+  "end": 33.48
+ },
+ {
+  "w": "final",
+  "start": 33.48,
+  "end": 33.8
+ },
+ {
+  "w": "day",
+  "start": 33.8,
+  "end": 34.1
+ },
+ {
+  "w": "of",
+  "start": 34.1,
+  "end": 34.2
+ },
+ {
+  "w": "your",
+  "start": 34.2,
+  "end": 34.3
+ },
+ {
+  "w": "internship.",
+  "start": 34.3,
+  "end": 34.78
+ },
+ {
+  "w": "JongLeren,",
+  "start": 35.34,
+  "end": 35.9
+ },
+ {
+  "w": "your",
+  "start": 36.26,
+  "end": 36.52
+ },
+ {
+  "w": "internship",
+  "start": 36.52,
+  "end": 37.08
+ },
+ {
+  "w": "fully",
+  "start": 37.08,
+  "end": 37.74
+ },
+ {
+  "w": "supported.",
+  "start": 37.74,
+  "end": 38.18
+ }
+]
