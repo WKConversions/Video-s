@@ -2,7 +2,7 @@
 // "Storyboard" card grows in from the right with a horizontal smear and types its line, the camera settles and pushes
 // in, and the Storyboard card de-rezzes into blocks before the hard cut to shot B (spec §3, §9.2).
 import React from "react";
-import { CAM, QA, SENDQ, TA2 } from "./seg4_data";
+import { CAM_SM, QA, SENDQ_SM, TA2_SM } from "./seg4_data";
 import { Arrow, CH, CW, HH, HW, StoryCard, StoryboardCard } from "./seg4_card";
 import { HBlurDef, P2, Quad, QuadLayer, applyH, flatQuad, invH, mosaicId, rectToQuadH, rows, tab } from "./seg4_util";
 
@@ -12,28 +12,15 @@ const KEY: Record<string, string> = {
 };
 const REST: Record<string, { q: Quad; a: P2 }> = Object.fromEntries(QA.map((c) => [c.slot, { q: c.q as unknown as Quad, a: c.a as unknown as P2 }]));
 
-/** TA1: the frame-420 layout point p at frame g */
+/** TA1 (smoothed, CAM_SM): the frame-420 layout point p at frame g */
 const cam = (g: number, p: P2): P2 => {
-  const [s, rot, tx, ty] = tab(CAM, g);
+  const [s, rot, tx, ty] = tab(CAM_SM, g);
   const th = (rot * Math.PI) / 180, c = Math.cos(th), sn = Math.sin(th), vx = p[0] - 960, vy = p[1] - 540;
   return [960 + s * (c * vx - sn * vy) + tx, 540 + s * (sn * vx + c * vy) + ty];
 };
-/** TA2's mosaic-phase rows that the reference contradicts, re-measured from its card edges (right edge and height, since
- * these three cards slide in from the left partly hidden under their left neighbour): [frame, scale, dx, dy] */
-const FIX: Record<string, number[][]> = {
-  Postgres4: [[391, 0.45, -278, -1], [392, 0.62, -262, -1], [393, 0.72, -246, -1], [394, 0.77, -231, -1], [395, 0.8, -216, -1], [396, 0.83, -202, -1],
-    [397, 0.85, -188, -1], [398, 0.86, -174, -1], [399, 0.87, -159, -1], [400, 0.87, -144, -1]],
-  BigQuery: [[397, 0.28, -122, -5], [398, 0.47, -118, -5], [399, 0.6, -112, -5], [400, 0.7, -103, -5], [401, 0.76, -95, -5], [402, 0.81, -86, -5],
-    [403, 0.84, -77, -5], [404, 0.87, -68, -5], [405, 0.88, -60, -5]],
-  DB2c4: [[398, 0.18, -178, -11], [399, 0.32, -166, -11], [400, 0.44, -155, -11], [401, 0.55, -146, -11], [402, 0.63, -137, -11]],
-};
-const entrance = (key: string) => {
-  const fx = FIX[key];
-  if (!fx) return TA2[key];
-  const last = fx[fx.length - 1][0];
-  return [...fx, ...TA2[key].filter((r) => r[0] > last)];
-};
-const ENT: Record<string, number[][]> = Object.fromEntries(Object.keys(TA2).map((k) => [k, entrance(k)]));
+/** per-card entrance [frame, scale, dx, dy], one row per frame: TA2 (with its re-measured mosaic-phase rows TA2_FIX) smoothed in screen space
+ * against CAM_SM (TA2_SM in seg4_data.tsx); the raw per-frame measurements zigzagged and shook the board */
+const ENT: Record<string, number[][]> = TA2_SM;
 /** a white card's screen quad at frame g (TA2 about the anchor, then TA1, then the screen offset) */
 const cardQuad = (slot: string, g: number): Quad => {
   const { q, a } = REST[slot];
@@ -87,7 +74,7 @@ const typed = (g: number) => { let n = 0; for (const [f, k] of TYPED) if (g >= f
 const SMEAR: Record<number, number> = { 387: 30, 388: 24, 389: 16.5, 390: 12, 391: 7.5, 392: 4.5 };
 
 const SendCard: React.FC<{ g: number }> = ({ g }) => {
-  const q = flatQuad(SENDQ[g] ?? SENDQ[428]);
+  const q = flatQuad(SENDQ_SM[g] ?? SENDQ_SM[428]);
   const card = <QuadLayer w={HW} h={HH} q={q}><StoryboardCard n={typed(g)} /></QuadLayer>;
   const sm = SMEAR[g];
   if (sm) return <><HBlurDef id="s4hz" s={sm / 2.56} /><div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, filter: "url(#s4hz)" }}>{card}</div></>;
