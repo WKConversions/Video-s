@@ -6,7 +6,7 @@ import React from "react";
 import { AbsoluteFill } from "remotion";
 import { F, clamp01, lerp } from "./lib";
 import { spline } from "./logo";
-import { colorAt, glyphs, mix, rgba, wk } from "./seg1_util";
+import { colorAt, glyphs, mix, rgba } from "./seg1_util";
 
 /** rings per frame (Appendix B): f, A cx, cy, rx, ry, angle, B cx, cy, rx, ry, angle (SVG/OpenCV convention) */
 const RINGS: number[][] = [
@@ -211,8 +211,9 @@ const wordState = (i: number, f: number): [string, number] => {
   return ["#F0F4F8", 1];
 };
 
-const BG_BASE: [number, string][] = [[98, "#08090E"], [101, "#0C0B17"], [104, "#110E1F"], [110, "#141024"], [130, "#161127"], [146, "#121024"]];
-const BG_SPOT: [number, string][] = [[98, "#1F183E"], [101, "#201A3D"], [104, "#1D1738"], [110, "#17122F"], [130, "#16122D"], [146, "#16112D"]];
+/** background (WKC colours): base and a broad central lift, fading up from the dark logo shot */
+const BG_BASE: [number, string][] = [[98, "#080B0F"], [101, "#0B0F17"], [104, "#0E151E"], [110, "#101A27"], [130, "#111C2A"], [146, "#111B28"]];
+const BG_SPOT: [number, string][] = [[98, "#172C45"], [101, "#182A3D"], [104, "#172739"], [110, "#14223A"], [130, "#132136"], [146, "#122034"]];
 
 export const MotionShot: React.FC<{ f: number }> = ({ f }) => {
   const cx = spline(f, GX), cy = spline(f, GY), s = spline(f, GS), rz = spline(f, GR);
@@ -224,9 +225,9 @@ export const MotionShot: React.FC<{ f: number }> = ({ f }) => {
   const lefts: number[] = [];
   WORDS.forEach((w, i) => lefts.push(i ? lefts[i - 1] + WORDS[i - 1].ink + LINE.gap : caretF + LINE.afterCaret));
   const slide = SLIDE_BLUR[f] ?? 0, exit = EXIT_BLUR[f] ?? 0;
-  const base = wk(colorAt(f, BG_BASE)), spot = wk(colorAt(f, BG_SPOT));
+  const base = colorAt(f, BG_BASE), spot = colorAt(f, BG_SPOT);
   return (
-    <AbsoluteFill style={{ background: `radial-gradient(ellipse 950px 650px at 960px 640px, ${spot} 0%, ${rgba(base, 0.5)} 60%, ${rgba(base, 0)} 100%), ${base}` }}>
+    <AbsoluteFill style={{ background: `radial-gradient(ellipse 1150px 800px at 960px 600px, ${spot} 0%, ${rgba(spot, 0.45)} 55%, ${rgba(base, 0)} 100%), ${base}` }}>
       <Rings f={f} />
       <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
         <defs>
