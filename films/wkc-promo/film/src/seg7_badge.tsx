@@ -8,8 +8,8 @@ type P = [number, number];
 /** base size of the badge (the left badge at scale 1); hexagon with flat top/bottom and pointed left/right vertices */
 export const BW = 615, BH = 514;
 
-const hexPts = (W: number, H: number): P[] => {
-  const a = W * 0.25;
+const hexPts = (W: number, H: number, k = 0.25): P[] => {
+  const a = W * k;
   return [[-W / 2, 0], [-a, -H / 2], [a, -H / 2], [W / 2, 0], [a, H / 2], [-a, H / 2]];
 };
 /** the polygon moved inward by d (clockwise in screen coordinates) */
@@ -41,19 +41,25 @@ const rounded = (pts: P[], r: number) => {
   return d + "Z";
 };
 
-const OUT = hexPts(BW, BH);
 const R = BW * 0.06;
-export const BADGE_PATH = rounded(OUT, R);
-const P_RECESS = rounded(inset(OUT, 24), R * 0.8);
-const P_RIM = rounded(inset(OUT, 42), R * 0.7);
-const P_FACE = rounded(inset(OUT, 45), R * 0.68);
+/** the badge outlines for a hexagon whose flat top is 2k of the width wide */
+const geo = (k: number) => {
+  const OUT = hexPts(BW, BH, k);
+  return { outer: rounded(OUT, R), recess: rounded(inset(OUT, 24), R * 0.8), rim: rounded(inset(OUT, 42), R * 0.7), face: rounded(inset(OUT, 45), R * 0.68) };
+};
+const GEO: Record<string, ReturnType<typeof geo>> = {};
+const geoK = (k: number) => (GEO[k] ??= geo(k));
+const G0 = geoK(0.25);
+export const BADGE_PATH = G0.outer;
+const P_RECESS = G0.recess, P_RIM = G0.rim, P_FACE = G0.face;
 
 const Check: React.FC<{ x: number; y: number; s: number; color: string }> = ({ x, y, s, color }) => (
   <path d={`M${x} ${y - 0.45 * s} L${x + 0.35 * s} ${y} L${x + 1.0 * s} ${y - 0.95 * s}`} fill="none" stroke={color} strokeWidth={s * 0.11} strokeLinecap="round" strokeLinejoin="round" />
 );
 
 /** the badge drawn about its centre (0, 0) in a (BW + 2 pad) x (BH + 2 pad) SVG */
-export const Badge: React.FC<{ id: string; band: string; value: string; foot: string; valueSize?: number }> = ({ id, band, value, foot, valueSize = 66 }) => {
+export const Badge: React.FC<{ id: string; band: string; value: string; foot: string; valueSize?: number; k?: number }> = ({ id, band, value, foot, valueSize = 66, k = 0.25 }) => {
+  const { outer: BADGE_PATH, recess: P_RECESS, rim: P_RIM, face: P_FACE } = geoK(k);
   const pad = 40, ux = (n: string) => `${id}-${n}`;
   const footSize = 33, footW = tw(foot, footSize, 500, F.ui) + 0.01 * footSize * foot.length, chk = 26, gap = 10;
   return (

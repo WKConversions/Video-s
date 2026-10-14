@@ -122,7 +122,7 @@ const SPARK = "M0,-1 Q0.18,-0.18 1,0 Q0.18,0.18 0,1 Q-0.18,0.18 -1,0 Q-0.18,-0.1
 
 const Paperclip: React.FC = () => (
   <svg width={CW} height={CH} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
-    <g transform="translate(57.5 97) rotate(-6) scale(2.25) translate(-12 -12)" fill="none" stroke={C.ink} strokeWidth={2.15} strokeLinecap="round" strokeLinejoin="round">
+    <g transform="translate(57.5 97) rotate(-10) scale(2.05) translate(-12 -12)" fill="none" stroke={C.ink} strokeWidth={2.4} strokeLinecap="round" strokeLinejoin="round">
       <path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48" />
     </g>
   </svg>
@@ -184,9 +184,31 @@ const Content: React.FC<{ g: number }> = ({ g }) => {
 const TypedLine: React.FC<{ text: string; n: number; x: number; base: number; opacity: (i: number) => number }> = ({ text, n, x, base, opacity }) => {
   if (n <= 0) return null;
   return (
-    <text x={x + ink(text[0], 500, 33, F.ui, 0).l} y={base} fontFamily={F.ui} fontWeight={500} fontSize={33} fill={C.ink} style={{ letterSpacing: "-0.01em" }}>
+    <text x={x + ink(text[0], 600, 33, F.ui, 0).l} y={base} fontFamily={F.ui} fontWeight={600} fontSize={33} fill={C.ink} style={{ letterSpacing: "-0.01em" }}>
       {text.slice(0, n).split("").map((ch, i) => <tspan key={i} fillOpacity={opacity(i)}>{ch}</tspan>)}
     </text>
+  );
+};
+
+
+/** the card's rim in flat space: a deep-blue line strongest on the left and bottom, fading to the right; the top edge is dark
+ *  while the outline settles and turns to a light highlight by 360; the right edge is soft */
+const RIM_C = "#3A62C8";
+const Rim: React.FC<{ top: number; bot: number; rad: number; op: number; dark: number }> = ({ top, bot, rad, op, dark }) => {
+  const r = rad, u = `M0 ${top + r} V${bot - r} A${r} ${r} 0 0 0 ${r} ${bot} H${CW - r} A${r} ${r} 0 0 0 ${CW} ${bot - r} V${top + r}`;
+  const cap = `M0 ${top + r} A${r} ${r} 0 0 1 ${r} ${top} H${CW - r} A${r} ${r} 0 0 1 ${CW} ${top + r}`;
+  return (
+    <svg width={CW} height={CH} style={{ position: "absolute", left: 0, top: 0, overflow: "visible", opacity: op }}>
+      <defs>
+        <linearGradient id="s3-rim" gradientUnits="userSpaceOnUse" x1={0} x2={CW} y1={0} y2={0}>
+          <stop offset={0} stopColor={RIM_C} stopOpacity={1} /><stop offset={0.5} stopColor={RIM_C} stopOpacity={0.62} /><stop offset={1} stopColor={RIM_C} stopOpacity={0.22} />
+        </linearGradient>
+      </defs>
+      <path d={u} fill="none" stroke="url(#s3-rim)" strokeWidth={3} />
+      <path d={cap} fill="none" stroke="url(#s3-rim)" strokeWidth={2.5} opacity={dark} />
+      <path d={cap} fill="none" stroke="#FFFFFF" strokeOpacity={0.75 * (1 - dark)} strokeWidth={1.5} transform="translate(0 2)" />
+      <path d={`M${CW} ${top + r} V${bot - r}`} fill="none" stroke="#DCE6FA" strokeOpacity={0.5} strokeWidth={7} style={{ filter: "blur(3px)" }} />
+    </svg>
   );
 };
 
@@ -215,13 +237,10 @@ export const Card: React.FC<{ g: number }> = ({ g }) => {
         {/* glass body: shadow, fill and rim */}
         <div style={{ position: "absolute", left: 0, top, width: CW, height: H, borderRadius: rad, filter: oBlur ? `blur(${oBlur}px)` : undefined,
           boxShadow: `12px 18px 60px rgba(18,60,130,${0.12 * rim})`,
-          background: `linear-gradient(180deg, rgba(255,255,255,${0.18 * (1 - field)}) 0%, rgba(255,255,255,0) 30%), linear-gradient(90deg, rgba(246,250,255,${0.5 - 0.06 * field}) 0%, rgba(246,250,255,${0.42 - 0.12 * field}) 60%, rgba(246,250,255,${0.34 - 0.1 * field}) 100%)` }} />
+          background: `linear-gradient(180deg, rgba(255,255,255,${0.1 * (1 - field)}) 0%, rgba(255,255,255,0) 35%), linear-gradient(90deg, rgba(246,250,255,${lerp(0.22, 0.5, field)}) 0%, rgba(246,250,255,${lerp(0.18, 0.36, field)}) 60%, rgba(246,250,255,${lerp(0.15, 0.26, field)}) 100%)` }} />
         <div style={{ position: "absolute", left: 0, top, width: CW, height: H, borderRadius: rad, boxSizing: "border-box", filter: oBlur ? `blur(${oBlur}px)` : undefined,
           border: `1.5px solid rgba(5,15,25,${0.1 * field})` }} />
-        <div style={{ position: "absolute", left: 0, top, width: CW, height: H, borderRadius: rad, boxSizing: "border-box", opacity: rim,
-          borderLeft: "2.5px solid #9DB7DD", borderBottom: "2.5px solid #7FA8E6", borderTop: "1.5px solid rgba(164,199,232,0.9)", borderRight: "1.5px solid rgba(157,183,221,0.35)",
-          boxShadow: "inset 0 2px 0 rgba(255,255,255,0.7)",
-          WebkitMaskImage: "linear-gradient(90deg, #000 0%, #000 75%, rgba(0,0,0,0.55) 100%)", maskImage: "linear-gradient(90deg, #000 0%, #000 75%, rgba(0,0,0,0.55) 100%)" }} />
+        <Rim top={top} bot={bot} rad={rad} op={rim} dark={kf(g, [[342, 0.9], [352, 0.8], [360, 0.12]])} />
         {/* the out-of-focus chip inside the card (top right) */}
         <div style={{ position: "absolute", left: 548, top: 6, width: 254, height: 50, borderRadius: 25, background: "rgba(63,140,232,0.22)", filter: "blur(14px)", opacity: blob }} />
         {/* content: sharp on the left, softer on the right (depth of field) */}

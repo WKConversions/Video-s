@@ -181,7 +181,7 @@ const PromptLine: React.FC<{ g: number }> = ({ g }) => {
   const glyph = (i: number) => Math.min(layer, kf(g - appear(i), [[0, 0.75], [1, 0.9], [2, 0.97], [3, 1]]));
   const blur = kf(g, [[334, 0], [335, 1.2], [336, 1.8], [337, 2], [340, 3]]);
   return (
-    <TypedText text={LINE} n={n} x={x} base={base} size={size} weight={500} color={C.ink} opacity={glyph} style={{ opacity: g >= 333 ? exit * 0.95 : 1, filter: blur ? `blur(${blur}px)` : undefined }} />
+    <TypedText text={LINE} n={n} x={x} base={base} size={size} weight={600} color={C.ink} opacity={glyph} style={{ opacity: g >= 333 ? exit * 0.95 : 1, filter: blur ? `blur(${blur}px)` : undefined }} />
   );
 };
 
@@ -227,6 +227,6 @@ export const Seg3: React.FC<{ g: number }> = ({ g }) => (
     <Card g={g} />
     <PromptLine g={g} />
     <SendButton g={g} />
-    <Grain opacity={0.08} seed={5} />
+    <Grain opacity={0.36} seed={5} />
   </AbsoluteFill>
 );

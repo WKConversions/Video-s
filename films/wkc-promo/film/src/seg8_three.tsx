@@ -116,7 +116,7 @@ const drawRings = (ctx: CanvasRenderingContext2D, n: number) => {
     const outer: El = { cx, cy, a: as[4], b: as[4] * ratio }, inner: El = { cx, cy, a: am, b: am * ratio };
     ctx.save();
     ctx.filter = `blur(${10 * s}px)`;
-    ctx.fillStyle = conic(ctx, outer, (d) => rampRGBA(0.22, 0.42 * Math.pow(lvl(p, d), 0.6)));
+    ctx.fillStyle = conic(ctx, outer, (d) => rampRGBA(0.24, 0.6 * Math.pow(lvl(p, d), 0.6)));
     ctx.beginPath();
     ctx.ellipse(outer.cx, outer.cy, outer.a, outer.b, 0, 0, Math.PI * 2);
     ctx.ellipse(inner.cx, inner.cy, inner.a, inner.b, 0, 0, Math.PI * 2, true);
@@ -125,7 +125,8 @@ const drawRings = (ctx: CanvasRenderingContext2D, n: number) => {
     as.forEach((a, k) => {
       const e: El = { cx, cy, a, b: a * ratio }, st = Math.pow(0.95, k);
       const g = conic(ctx, e, (d) => rampRGBA(lvl(p, d) * st));
-      strokeEl(ctx, e, conic(ctx, e, (d) => rampRGBA(Math.min(0.6, lvl(p, d)) * st)), 12 * s, 6 * s, 0.55);
+      strokeEl(ctx, e, conic(ctx, e, (d) => rampRGBA(Math.pow(lvl(p, d), 1.6) * st, 0.8)), 34 * s, 16 * s, 0.14);
+      strokeEl(ctx, e, conic(ctx, e, (d) => rampRGBA(Math.min(0.75, lvl(p, d)) * st)), 12 * s, 6 * s, 0.45);
       strokeEl(ctx, e, g, 4.2 * s);
     });
   } else {
@@ -141,10 +142,11 @@ const drawRings = (ctx: CanvasRenderingContext2D, n: number) => {
       if (n - lag < 1034) return;
       const a = tv(n - lag, E_TAB), r: El = { cx, cy, a, b: a * ratio };
       const soft = smooth(1042, 1049, n);
-      const sp = (d: number) => clamp01(lvl(PROF[7].slice(1), d) * 1.1);
+      const sp = (d: number) => Math.pow(clamp01(lvl(PROF[7].slice(1), d) * 1.1), 1.5);
       const k = est * Math.pow(0.82, i);
-      strokeEl(ctx, r, conic(ctx, r, (d) => rampRGBA(sp(d) * lerp(0.5, 0.78, soft) * k, lerp(1, 0.55, soft))), lerp(3.2, 18, soft), lerp(0.6, 9, soft));
-      strokeEl(ctx, r, conic(ctx, r, (d) => rampRGBA(Math.min(0.45, sp(d)) * k)), 14, 6, 0.5);
+      // a thin blue arc that widens into a soft, near-white band (1042-1049), lit front-left
+      strokeEl(ctx, r, conic(ctx, r, (d) => rampRGBA(sp(d) * lerp(0.5, 0.8, soft), k * lerp(1, 0.42, soft))), lerp(3.2, 26, soft), lerp(0.6, 10, soft));
+      strokeEl(ctx, r, conic(ctx, r, (d) => rampRGBA(sp(d) * 0.6, k * 0.5)), 16, 7);
     });
     // the merged rim still glows at the impact and thins out over ~8 frames
     const f = Math.exp(-(n - 1032) / 5);
@@ -271,8 +273,8 @@ export const ThreeShot: React.FC<{ g: number }> = ({ g }) => {
   const dark = tv(n, [[1001, 0], [1002, 0.5], [1003, 1], [1004, 1], [1005, 0.7], [1006, 0.35], [1007, 0.1], [1008, 0]]);
   const phase2 = n >= 1032;
   // extra defocus of the outgoing shot (spec 4A: centre text 1.5 -> 15, cards 4 -> 21, on top of its own depth of field)
-  const blurC = tv(n, [[1002, 0], [1003, 4], [1004, 5.5], [1005, 8.8], [1006, 12], [1007, 15], [1008, 15]]);
-  const blurO = tv(n, [[1002, 7], [1003, 11], [1004, 17], [1005, 16], [1008, 16]]);
+  const blurC = tv(n, [[1002, 0], [1003, 3], [1004, 5], [1005, 8], [1006, 11], [1007, 14], [1008, 14]]);
+  const blurO = tv(n, [[1002, 3], [1003, 8], [1004, 14], [1005, 15], [1008, 15]]);
 
   // "3": opacity / blur entrance, centre (962, y), cap 188*s
   const tOp = n < 1005 ? 0 : tv(n, [[1005, 0.44], [1006, 0.62], [1007, 0.81], [1008, 1]]) * exitOp;

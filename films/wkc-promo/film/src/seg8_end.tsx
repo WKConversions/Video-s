@@ -55,29 +55,46 @@ const PillPart: React.FC<{ rise: number; glow: number; blur?: number; op: number
     </div>
   );
 
+/** hold shimmer: the edge lights dip with a 37-frame period, the bottom one half a period after the top one */
+const dip = (n: number, centres: number[]) => 1 - 0.3 * centres.reduce((m, c) => Math.max(m, Math.exp(-Math.pow((n - c) / 2.2, 2))), 0);
+const TOP_DIPS = [1179, 1216, 1253], BOT_DIPS = [1198.5, 1235.5];
+const LR = { x0: 790, x1: 1175, y0: 578, y1: 668, mid: 623 };
+const TOP_CLIP = `path(evenodd, "M0 0H1920V${LR.mid}H0Z M${LR.x0} ${LR.y0}H${LR.x1}V${LR.mid}H${LR.x0}Z")`;
+const BOT_CLIP = `path(evenodd, "M0 ${LR.mid}H1920V1080H0Z M${LR.x0} ${LR.mid}H${LR.x1}V${LR.y1}H${LR.x0}Z")`;
+const LAB_CLIP = `inset(${LR.y0}px ${1920 - LR.x1}px ${1080 - LR.y1}px ${LR.x0}px)`;
+
 export const EndShot: React.FC<{ g: number }> = ({ g }) => {
   const n = g;
-  if (n >= SETTLED) return <AbsoluteFill><EndCard /></AbsoluteFill>;
+  if (n >= SETTLED) {
+    // logo.tsx's settled end card; only the pill's edge lights breathe
+    return (
+      <AbsoluteFill>
+        <EndCard pill={0} />
+        <PillPart rise={0} glow={1} op={dip(n, TOP_DIPS)} clip={TOP_CLIP} />
+        <PillPart rise={0} glow={1} op={dip(n, BOT_DIPS)} clip={BOT_CLIP} />
+        <PillPart rise={0} glow={1} op={1} clip={LAB_CLIP} />
+      </AbsoluteFill>
+    );
+  }
   const fMark = inv(spline(n, W_FR), WRITE, 45, 67);
   const brightK = Math.min(4, spline(n, M_BR) / Math.max(0.05, spline(fMark, BRIGHT)));
   const fWk = n <= 1153 ? 50 : n <= 1154 ? 51 : inv(spline(n, WK_G), BLOOM_G, 51, 69);
   const fConv = 51.5 + (n - 1156);
   const rise = spline(n, RISE), glow = spline(n, LENGTH), blur = tv(n, [[1153, 2], [1165, 0]]);
-  const top = spline(n, STREAK), bot = spline(n - 2, STREAK);
+  const top = spline(n, STREAK) * dip(n, TOP_DIPS), bot = spline(n - 2, STREAK) * dip(n, BOT_DIPS);
   // label: soft left-to-right brightness ramp across its ink box
   const k = ink("Let's talk", LABEL.size, LABEL.weight, F.head, LABEL.track * LABEL.size);
   const lx0 = LABEL.cx - (k.r - k.l) / 2, lx1 = LABEL.cx + (k.r - k.l) / 2;
   const A = spline(n, LAB_A), K = spline(n, LAB_K);
   const ramp = [0, 0.25, 0.5, 0.75, 1].map((u) => `rgba(0,0,0,${clamp01(A - K * u * 2.4).toFixed(3)}) ${(lx0 + (lx1 - lx0) * u).toFixed(1)}px`).join(", ");
   const labelMask = `linear-gradient(90deg, ${ramp})`;
-  const LR = { x0: 790, x1: 1175, y0: 578, y1: 668, mid: 623 };
   return (
     <AbsoluteFill>
       <EndCard logoT={-1} pill={0} url={step(n, URL_N) / 17} />
       <WkcLogoParts fMark={fMark} brightK={brightK} markOff={spline(n, M_OFF)} fWk={fWk} fConv={fConv} convOff={0} />
-      <PillPart rise={rise} glow={glow} blur={blur} op={top} clip={`path(evenodd, "M0 0H1920V${LR.mid}H0Z M${LR.x0} ${LR.y0}H${LR.x1}V${LR.mid}H${LR.x0}Z")`} />
-      <PillPart rise={rise} glow={glow} blur={blur} op={bot} clip={`path(evenodd, "M0 ${LR.mid}H1920V1080H0Z M${LR.x0} ${LR.mid}H${LR.x1}V${LR.y1}H${LR.x0}Z")`} />
-      <PillPart rise={rise} glow={glow} blur={blur} op={1} clip={`inset(${LR.y0}px ${1920 - LR.x1}px ${1080 - LR.y1}px ${LR.x0}px)`} mask={labelMask} />
+      <PillPart rise={rise} glow={glow} blur={blur} op={top} clip={TOP_CLIP} />
+      <PillPart rise={rise} glow={glow} blur={blur} op={bot} clip={BOT_CLIP} />
+      <PillPart rise={rise} glow={glow} blur={blur} op={1} clip={LAB_CLIP} mask={labelMask} />
     </AbsoluteFill>
   );
 };

@@ -32,7 +32,7 @@ const HIP_Y = [1328, 1159, 1076, 1011, 961, 919, 882, 848, 818, 791, 766, 744, 7
 const HIP_RZ = [20, 19, 18, 17.3, 16.4, 15.7, 15.0, 14.2, 13.5, 12.8, 12.3, 11.6, 11.0, 10.4, 9.7, 9.1, 8.5, 8.0, 7.4, 6.9, 6.2, 5.6, 5.1, 4.5, 3.9, 3.4, 2.8, 2.3, 1.8, 1.2, 0.7, 0.2, -0.4, -0.9, -1.5, -2.0, -2.5, -3.0, -3.5, -4.0, -4.6, -5.2, -5.8];
 const HIP_K = 1.29; // the right badge is nearer the camera
 
-const socRz = (g: number) => (g <= 886 ? seqv(g, 866, SOC_RZ) : -4.5 + 0.305 * (g - 886));
+const socRz = (g: number) => (g <= 886 ? seqv(g, 866, SOC_RZ) : -4.5 + 0.305 * (g - 886)) + keys(g, [[895, 0], [900, 1.2], [905, 2.8], [908, 3.8]]);
 const hipS = (g: number) => keys(g, [[866, 1.03], [869, 1.015], [880, 1.012], [895, 1.0], [907, 0.98]]);
 
 /** a badge in 3D (perspective 1500 px, vanishing point w of the way from the badge to the frame centre), turning about its own centre */
@@ -106,12 +106,12 @@ const ShotA: React.FC<{ g: number }> = ({ g }) => {
           <GlyphLine text={TA2} size={FA} x0={957 - m2.w / 2} y={621.9} idp="s7a2" i0={TA1.length} op={op} blur={bl} />
         </g>
       </svg>
-      <Placed x={seqv(g, 866, SOC_X) + 7} y={seqv(g, 866, SOC_Y)} w={0} rz={socRz(g)} ry={10} s={seqv(g, 866, SOC_S)} blurY={k < 2 ? 3 - 1.5 * k : 0}>
+      <Placed x={seqv(g, 866, SOC_X) + 7} y={seqv(g, 866, SOC_Y) + keys(g, [[866, -10], [870, -8], [880, -5], [890, 0]])} w={0} rz={socRz(g)} ry={10} s={seqv(g, 866, SOC_S) * keys(g, [[866, 1.02], [872, 1.01], [880, 1]])} blurY={k < 2 ? 3 - 1.5 * k : 0}>
         <Badge id="s7-soc" band="TYPE" value="-0.05em" foot="KERNED" />
       </Placed>
       {hipY < 1500 && (
         <Placed x={seqv(g, 866, HIP_X)} y={hipY + keys(g, [[870, 5], [880, 0], [895, 5], [905, 10]])} w={0.6} rz={seqv(g, 866, HIP_RZ)} ry={-17} s={HIP_K * hipS(g)} blurY={k < 3 ? 4 - 1.4 * k : 0}>
-          <Badge id="s7-hip" band="EASE" value=".22 1 .36 1" foot="TUNED" />
+          <Badge id="s7-hip" band="EASE" value=".22 1 .36 1" foot="TUNED" k={0.29} />
         </Placed>
       )}
     </AbsoluteFill>

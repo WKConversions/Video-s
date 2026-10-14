@@ -111,11 +111,11 @@ const BLOOM: [number, number][] = [[1144, 0], [1145, 0.05], [1146, 0.1], [1147, 
 /** a 4-point concave sparkle, w tip to tip */
 const Star: React.FC<{ x: number; y: number; w: number; color: string; rot?: number }> = ({ x, y, w, color, rot = 0 }) => {
   if (w <= 0.5) return null;
-  const r = w / 2, k = 0.16 * r;
+  const r = w / 2, k = 0.26 * r;
   const d = `M0 ${-r} Q${k} ${-k} ${r} 0 Q${k} ${k} 0 ${r} Q${-k} ${k} ${-r} 0 Q${-k} ${-k} 0 ${-r}Z`;
   return (
     <g transform={`translate(${x} ${y}) rotate(${rot})`}>
-      <path d={d} fill={color} filter="url(#s8-starglow)" opacity={0.6} />
+      <path d={d} fill={color} filter="url(#s8-starglow)" opacity={0.9} transform="scale(1.25)" />
       <path d={d} fill={color} />
     </g>
   );
@@ -140,13 +140,21 @@ const Final: React.FC<{ n: number; op?: number }> = ({ n, op = 1 }) => {
         <linearGradient id="s8-fin" gradientUnits="userSpaceOnUse" x1={x0 + k.l} y1="0" x2={x0 + k.r} y2="0">
           {stops.map((u) => <stop key={u} offset={u} stopColor="#F7F7F8" stopOpacity={Math.max(0.1, reveal(n, u))} />)}
         </linearGradient>
-        <filter id="s8-bloom" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="24" /></filter>
-        <filter id="s8-bloom2" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="9" /></filter>
+        <filter id="s8-bloom" x="-30%" y="-120%" width="160%" height="340%">
+          <feGaussianBlur stdDeviation="24" /><feComponentTransfer><feFuncA type="linear" slope="1.9" /></feComponentTransfer>
+        </filter>
+        <filter id="s8-bloom3" x="-40%" y="-200%" width="180%" height="500%">
+          <feGaussianBlur stdDeviation="62" /><feComponentTransfer><feFuncA type="linear" slope="3.2" /></feComponentTransfer>
+        </filter>
+        <filter id="s8-bloom2" x="-30%" y="-80%" width="160%" height="260%">
+          <feGaussianBlur stdDeviation="8" /><feComponentTransfer><feFuncA type="linear" slope="1.2" /></feComponentTransfer>
+        </filter>
       </defs>
       {bloom > 0 && (
         <g opacity={bloom}>
+          <text x={x0} y={BASE} fontFamily={F.head} fontWeight={800} fontSize={fs} letterSpacing={TRK * fs} wordSpacing={WSP * fs} fill="#DCE8F8" filter="url(#s8-bloom3)" opacity={0.75}>{FINAL}</text>
           <text x={x0} y={BASE} fontFamily={F.head} fontWeight={800} fontSize={fs} letterSpacing={TRK * fs} wordSpacing={WSP * fs} fill="#E6F0FD" filter="url(#s8-bloom)">{FINAL}</text>
-          <text x={x0} y={BASE} fontFamily={F.head} fontWeight={800} fontSize={fs} letterSpacing={TRK * fs} wordSpacing={WSP * fs} fill="#FFFFFF" filter="url(#s8-bloom2)" opacity={0.8}>{FINAL}</text>
+          <text x={x0} y={BASE} fontFamily={F.head} fontWeight={800} fontSize={fs} letterSpacing={TRK * fs} wordSpacing={WSP * fs} fill="#FFFFFF" filter="url(#s8-bloom2)" opacity={0.4}>{FINAL}</text>
         </g>
       )}
       <text x={x0} y={BASE} fontFamily={F.head} fontWeight={800} fontSize={fs} letterSpacing={TRK * fs} wordSpacing={WSP * fs} fill="url(#s8-fin)">{FINAL}</text>
@@ -190,8 +198,9 @@ export const Carousel: React.FC<{ g: number }> = ({ g }) => {
   // a frame needs the shutter only if a move overlaps its half-frame exposure [n - 0.5, n]
   const moving = MOVES.some((m) => m.b > n - 0.5 && m.a < n) || (n >= 1123 && n <= 1126);
   const times = moving ? Array.from({ length: SAMPLES }, (_, i) => n - 0.5 + (0.5 * (i + 0.5)) / SAMPLES) : [n];
-  const finalOp = n >= 1127 ? 1 : n === 1126 ? 0.5 : 0;
-  const trackFade = n >= 1127 ? 0 : n === 1126 ? 0.5 : 1;
+  // 1126: Marketing (smeared, still ~85 %) dissolves into the first, still dark frame of the final line
+  const finalOp = n >= 1127 ? 1 : n === 1126 ? 0.35 : 0;
+  const trackFade = n >= 1127 ? 0 : n === 1126 ? 0.85 : 1;
   const sc = S(n);
   if (n === 1080 || n === 1141) console.log("S8", n, JSON.stringify({ fs: fs.map((v) => +v.toFixed(1)), W: W.map((v) => +v.toFixed(1)), fin: [+fitFs(FINAL, FIN_FS0, MAXW).toFixed(1), +inkW(FINAL, fitFs(FINAL, FIN_FS0, MAXW)).toFixed(1)] }));
   const fsF = fitFs(FINAL, FIN_FS0, MAXW);
@@ -205,6 +214,11 @@ export const Carousel: React.FC<{ g: number }> = ({ g }) => {
         {trackFade > 0 && <ShutterBlur times={times} render={(t) => <Track t={t} dt={moving ? 0.5 / SAMPLES : 0} fs={fs} W={W} fade={trackFade} />} />}
         {finalOp > 0 && <Final n={Math.max(1127, n)} op={finalOp} />}
       </AbsoluteFill>
+      {n >= 1149 && (
+        // the flash building toward the cut: a wide soft light around the line
+        <div style={{ position: "absolute", left: 905 - 760, top: 590 - 300, width: 1520, height: 600, borderRadius: "50%", opacity: tv(n, [[1149, 0.12], [1150, 0.3], [1151, 0.55], [1152, 0.85]]),
+          background: "radial-gradient(closest-side, rgba(214,228,246,0.62) 0%, rgba(214,228,246,0.3) 45%, rgba(214,228,246,0) 100%)" }} />
+      )}
       {n >= 1127 && <Sparkles n={n} dx={dx} />}
     </AbsoluteFill>
   );

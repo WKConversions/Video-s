@@ -81,7 +81,7 @@ const StackMark: React.FC<{ label: string }> = ({ label }) => {
 };
 
 const SceneA: React.FC<{ t: number; zoom: number; zoomT: number }> = ({ t, zoom, zoomT }) => {
-  const sTile = tab(t, 718, A_TILE_S, true), rTile = tab(t, 718, A_TILE_R, true);
+  const sTile = tab(t, 718, A_TILE_S, true) * (1 - 0.009 * Math.pow(2, -(t - 722) / 3)), rTile = tab(t, 718, A_TILE_R, true);
   const sHead = tab(t, 718, A_HEAD_S, true) * kl(t, [[758, 1], [759, 1.005], [760, 1.01], [761, 1.025], [762, 1.035], [763, 1.055], [764, 1.09], [765, 1.13], [766, 1.17], [767, 1.21], [768, 1.26]]);
   const sSub = tab(t, 718, A_SUB_S, true) * kl(t, [[760, 1], [761, 1.01], [762, 1.02], [763, 1.035], [764, 1.06], [765, 1.095], [766, 1.15], [767, 1.23], [768, 1.33]]);
   const aHead = kl(t, [[760, 1], [761, 0.94], [762, 0.82], [763, 0.66], [764, 0.47], [765, 0.31], [766, 0.19], [767, 0.09], [768, 0.02]]);
@@ -95,15 +95,17 @@ const SceneA: React.FC<{ t: number; zoom: number; zoomT: number }> = ({ t, zoom,
   const head = "Made for every platform", sub = "From websites to social ads";
   const hb = textBox(head, 85, 800, F.head, TRK, WS);
   const front = 1185 + 30 * (t - 719) + (958 + hb.vis / 2 - 1326), W = Math.min(960, 735 + 9 * (t - 719));
-  const layer = (s: number, rot = 0, z = zoom): React.CSSProperties => ({ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "960px 540px", transform: `rotate(${rot}deg) scale(${s * z})` });
+  // measured: early on the reference's tile layer and rings sit (-8, +15.5) px off their settled model, decaying with an 8-frame half-life
+  const off = Math.pow(2, -(t - 722) / 8), ox = -8 * off, oy = 15.5 * off;
+  const layer = (s: number, rot = 0, z = zoom, dx = 0, dy = 0): React.CSSProperties => ({ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "960px 540px", transform: `translate(${dx}px, ${dy}px) rotate(${rot}deg) scale(${s * z})` });
   return (
     <AbsoluteFill>
-      <div style={layer(1)}>
+      <div style={layer(1, 0, 1, ox, oy)}>
         <Ring r={rIn * zoomT} arcs={[{ a: a1, peak: 1 }, { a: a1 + 150, peak: 1 }]} />
         <Ring r={rOut * zoomT} arcs={[{ a: aA, peak: 1 }, { a: aA + 179, peak: 0.38 }]} />
       </div>
       {dark > 0 && <div style={{ position: "absolute", inset: -300, background: "#000", opacity: dark }} />}
-      <div style={{ ...layer(sTile, rTile, zoomT), opacity: aTile }}>
+      <div style={{ ...layer(sTile, rTile, zoomT, ox, oy), opacity: aTile }}>
         {TILES.map((d, i) => {
           const [x0, y0, x1, y1] = d.b, w = x1 - x0, h = y1 - y0;
           const spin = d.spin === "T9" ? spline(t, T9_SPIN) : d.spin === "T2" ? spline(t, T2_SPIN) : 0;
@@ -272,7 +274,9 @@ const Bar: React.FC<{ y: number; rot: number; v: string; p: number }> = ({ y, ro
 const SceneC: React.FC<{ t: number; dy: number }> = ({ t, dy }) => {
   const T = (a: number[]) => tab(t, 819, a);
   const k = tab(t, 849, C_K, true), drift = spline(t, [[849, 1], [856, 1.02], [860, 1.04], [864, 1.04], [865, 1.07], [866, 1.1]]);
-  const exitTf = t > 849 ? `scale(${drift}, ${1 + k})` : undefined;
+  const exitTf = t > 849 ? `scale(1, ${1 + k})` : undefined;
+  // horizontal widening on the exit: text by the measured drift, the toggle a little more, the card group not at all (measured)
+  const tgDrift = spline(t, [[849, 1], [856, 1.02], [860, 1.05], [863, 1.1], [865, 1.18], [866, 1.22]]);
   // headline: scale fuS about its rest centre (959, 212), carried by the measured left word
   const fuS = T(C_T.fuS), hX = T(C_T.fuX) + fuS * 337, hY = T(C_T.fuY) - 8 * fuS;
   const head = "Multiple versions", hb = textBox(head, 93, 800, F.head, TRK, WS);
@@ -285,7 +289,11 @@ const SceneC: React.FC<{ t: number; dy: number }> = ({ t, dy }) => {
   const cardTop = kl(t, [[819, 562.5], [822, 563], [826, 564], [830, 566], [835, 567.2], [840, 569], [845, 571.5]]);
   const sy = kl(t, [[819, 0.855], [822, 0.865], [826, 0.88], [835, 0.95], [841, 1]]);
   // the card group: a slight 3D turn on the cut, then on the exit it turns its right side towards us (measured edge ratio 1.10 by 863)
-  const ry = kl(t, [[819, 8], [822, 4], [826, 0]]) + spline(t, [[852, 0], [856, -2], [858, -4], [860, -7], [861, -9], [862, -11], [863, -13.5], [864, -15], [865, -15.5], [866, -16]]);
+  const ry = kl(t, [[819, 8], [822, 4], [826, 0]]) + spline(t, [[852, 0], [856, -2], [858, -4], [860, -7], [862, -10], [863, -12], [864, -13], [865, -13.5], [866, -14]]);
+  // early on, the card reads a little wider and the icon / button a little taller than the group scale (measured 819-845)
+  const gC = gS + kl(t, [[819, 0.012], [822, 0.033], [826, 0.015], [836, 0]]);
+  const vbI = kl(t, [[819, 1.1], [822, 1.12], [826, 1.07], [836, 1.04], [841, 1.02], [845, 1]]);
+  const vbB = kl(t, [[819, 1.1], [822, 1.12], [826, 1.06], [832, 1.02], [836, 1]]);
   const rz = spline(t, [[854, 0], [860, 0.5], [865, 0.8], [866, 0.9]]);
   const gcy = cardTop + 289 * sy;
   const hsm = kl(t, [[858, 0], [860, 8], [862, 30], [863, 40], [866, 40]]);
@@ -296,28 +304,28 @@ const SceneC: React.FC<{ t: number; dy: number }> = ({ t, dy }) => {
     <AbsoluteFill>
       <div style={{ ...full, transformOrigin: "960px 1958px", transform: exitTf }}>
         <div style={{ ...full, transform: `translateY(${dy}px)` }}>
-          <div style={{ ...full, transformOrigin: "959px 212px", transform: `translate(${hX - 959}px, ${hY - 212}px) scale(${fuS})` }}>
+          <div style={{ ...full, transformOrigin: "959px 212px", transform: `translate(${hX - 959}px, ${hY - 212}px) scale(${fuS * drift}, ${fuS})` }}>
             <Smear L={hsm}><Txt text={head} size={93} weight={800} family={F.head} track={TRK} ws={WS} cx={959} base={246} shadow={HEAD_GLOW} wipe={{ front, W: 900, tail, Wout: 975 }} /></Smear>
           </div>
-          <div style={{ ...full, transformOrigin: "968px 347px", transform: `translate(${T(C_T.subX) - 968}px, ${T(C_T.subY) - 347}px) scale(${subS})` }}>
+          <div style={{ ...full, transformOrigin: "968px 347px", transform: `translate(${T(C_T.subX) - 968}px, ${T(C_T.subY) - 347}px) scale(${subS * drift}, ${subS})` }}>
             <Txt text="One project" size={41} weight={500} family={F.ui} cx={967} base={358.5} />
           </div>
-          <div style={{ ...full, transformOrigin: "960px 470.5px", transform: `translate(0px, ${tgY - 470.5}px) scale(${tgS})` }}>
+          <div style={{ ...full, transformOrigin: "960px 470.5px", transform: `translate(0px, ${tgY - 470.5}px) scale(${tgS * tgDrift}, ${tgS})` }}>
             <div style={{ position: "absolute", left: 900, top: 442, width: 120, height: 57, borderRadius: 28.5, background: "#3F8CE8" }} />
             <div style={{ position: "absolute", left: 960 + knobOff - 17.25, top: 470.5 - 17.25, width: 34.5, height: 34.5, borderRadius: 17.25, background: "#FFFFFF" }} />
           </div>
           <div style={{ ...full, perspective: 1600, perspectiveOrigin: "960px 540px" }}>
             <div style={{ ...full, transformOrigin: `958.5px ${gcy}px`, transform: `rotateZ(${rz}deg) rotateY(${ry}deg)` }}>
-              <div style={{ position: "absolute", left: 958.5 - 280.5, top: cardTop, width: 561, height: 578, transformOrigin: "280.5px 0px", transform: `scale(${gS}, ${sy})` }}>
+              <div style={{ position: "absolute", left: 958.5 - 280.5, top: cardTop, width: 561, height: 578, transformOrigin: "280.5px 0px", transform: `scale(${gC}, ${sy})` }}>
                 <Glass id="srv" w={561} h={578} r={22} fill="linear-gradient(180deg, rgba(21,35,56,0.94) 0%, rgba(26,44,69,0.94) 100%)" rim={RIM_BIG} lw={3} shadow="0 14px 40px rgba(1,4,10,0.45)" style={{ left: 0, top: 0 }} />
               </div>
-              <div style={{ position: "absolute", left: 958 - 84, top: iconY - 73.5, width: 168, height: 147, transform: `scale(${gS})` }}>
+              <div style={{ position: "absolute", left: 958 - 84, top: iconY - 73.5, width: 168, height: 147, transform: `scale(${gS}, ${gS * vbI})` }}>
                 <Bar y={0} rot={topRot} v="V1" p={1} />
                 <Bar y={50} rot={lowRot} v="V2" p={0.7} />
                 <Bar y={100} rot={lowRot} v="V3" p={0.4} />
               </div>
               <div style={{
-                position: "absolute", left: 959 - 123, top: btnY - 52, width: 246, height: 104, borderRadius: 52, background: "#3F8CE8", transform: `scale(${gS})`,
+                position: "absolute", left: 959 - 123, top: btnY - 52, width: 246, height: 104, borderRadius: 52, background: "#3F8CE8", transform: `scale(${gS}, ${gS * vbB})`,
                 boxShadow: "0 0 18px rgba(63,140,232,0.35)", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: F.ui, fontWeight: 500, fontSize: 37, color: "#FFFFFF",
               }}>Render all</div>
             </div>
