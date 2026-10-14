@@ -762,29 +762,29 @@
    "note": "Sales"
   },
   {
-   "frame": 1114,
+   "frame": 1108,
    "id": "gen-whoosh-whip",
    "db": -9,
    "pitch": 2,
    "note": "the submit panel"
   },
   {
-   "frame": 1123,
+   "frame": 1129,
+   "id": "kenney-select-001",
+   "db": -7,
+   "note": "interviewed, screened"
+  },
+  {
+   "frame": 1136,
    "id": "kenney-click-001",
    "db": -1,
    "note": "click: Submit"
   },
   {
-   "frame": 1125,
+   "frame": 1139,
    "id": "gen-success",
    "db": -6,
    "note": "submitted"
-  },
-  {
-   "frame": 1129,
-   "id": "kenney-select-001",
-   "db": -7,
-   "note": "interviewed, screened"
   },
   {
    "frame": 1164,
@@ -860,51 +860,30 @@
    "note": "the price card"
   },
   {
-   "frame": 1297,
-   "id": "kenney-tick-004",
-   "db": -9,
-   "pitch": 6,
-   "note": "25% counts down to 0"
-  },
-  {
-   "frame": 1301,
-   "id": "kenney-tick-004",
-   "db": -9,
-   "pitch": 4,
-   "note": "25% counts down to 0"
-  },
-  {
-   "frame": 1306,
-   "id": "kenney-tick-004",
-   "db": -9,
-   "pitch": 2,
-   "note": "25% counts down to 0"
+   "frame": 1296,
+   "id": "gen-pop",
+   "db": -4,
+   "note": "0 SEK"
   },
   {
    "frame": 1306,
    "id": "kenney-select-001",
    "db": -7,
-   "note": "a tick 1"
+   "note": "free to post"
   },
   {
    "frame": 1309,
    "id": "kenney-select-001",
    "db": -7,
    "pitch": 2,
-   "note": "a tick 2"
+   "note": "pay when the candidate starts"
   },
   {
-   "frame": 1310,
-   "id": "kenney-tick-004",
-   "db": -9,
-   "note": "25% counts down to 0"
-  },
-  {
-   "frame": 1313,
-   "id": "kenney-select-001",
-   "db": -7,
+   "frame": 1315,
+   "id": "kenney-drop-003",
+   "db": -4,
    "pitch": 4,
-   "note": "a tick 3"
+   "note": "30\u201345% lower cost than an agency"
   },
   {
    "frame": 1332,

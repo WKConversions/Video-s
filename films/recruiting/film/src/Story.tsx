@@ -60,7 +60,7 @@ const Face: React.FC<{ src: string; s: number; ring?: string; style?: React.CSSP
 );
 const AI: React.FC<{ v: number; s?: number; on?: number }> = ({ v, s = 16, on = 0 }) => (
   <div style={{ display: "inline-flex", alignItems: "center", gap: s * 0.3, padding: `${s * 0.22}px ${s * 0.5}px`, borderRadius: s, fontFamily: SANS, fontWeight: 800, fontSize: s,
-    background: on > 0.5 ? C.okBg : C.amberBg, color: on > 0.5 ? C.okText : C.amberText, border: `1.2px solid ${on > 0.5 ? "#A9E8C1" : C.amberLine}`, whiteSpace: "nowrap", flex: "none" }}>
+    background: on > 0.5 ? C.okBg : C.amberBg, color: on > 0.5 ? C.okText : C.amberText, fontVariantNumeric: "tabular-nums", border: `1.2px solid ${on > 0.5 ? "#A9E8C1" : C.amberLine}`, whiteSpace: "nowrap", flex: "none" }}>
     <span style={{ fontSize: s * 0.78, opacity: 0.8 }}>AI</span>{v.toFixed(1)}
   </div>
 );
@@ -99,11 +99,11 @@ const Head: React.FC<{ g: number; words: Wd[]; y: number; size: number; out?: st
 /* ---------- the cursor ---------- */
 type CK = [string, number, number];   // label, x, y (stage)
 const CURSOR: { from: string; to: string; keys: CK[]; clicks: string[] }[] = [
-  { from: "w:set", to: "w:your2", keys: [["w:set", 1500, 900], ["w:reward-0.2", 1241, 512], ["w:hit", 1241, 512], ["w:publish-0.05", 1595, 828]], clicks: ["w:reward", "w:publish"] },
-  { from: "w:shortlist-0.4", to: "w:message-0.2", keys: [["w:shortlist-0.4", 1450, 700], ["w:shortlist-0.05", 1248, 352]], clicks: ["w:shortlist"] },
-  { from: "w:interviews", to: "w:move", keys: [["w:interviews", 1300, 940], ["w:interviews+0.55", 1312, 742]], clicks: ["w:interviews+0.65"] },
-  { from: "rec-0.25", to: "w:explore-0.2", keys: [["rec-0.25", 1250, 220], ["w:recruiters4-0.05", 1100, 48]], clicks: ["w:recruiters4"] },
-  { from: "w:submit-0.6", to: "w:earn", keys: [["w:submit-0.6", 1500, 760], ["w:submit-0.05", 1643, 446]], clicks: ["w:submit+0.05"] },
+  { from: "w:set", to: "w:publish+0.6", keys: [["w:set", 1500, 900], ["w:reward-0.2", 1241, 492], ["w:reward+0.15", 1241, 492], ["w:reward+0.7", 1420, 700], ["w:publish-0.05", 1595, 828], ["w:publish+0.5", 1650, 900]], clicks: ["w:reward", "w:publish"] },
+  { from: "w:shortlist-0.4", to: "w:message-0.2", keys: [["w:shortlist-0.4", 1450, 700], ["w:shortlist-0.05", 1248, 352], ["w:shortlist+0.1", 1248, 352], ["w:shortlist+0.5", 1340, 470]], clicks: ["w:shortlist"] },
+  { from: "w:interviews", to: "w:move", keys: [["w:interviews", 1300, 940], ["w:interviews+0.55", 1312, 742], ["w:interviews+0.7", 1312, 742], ["w:interviews+1.1", 1400, 830]], clicks: ["w:interviews+0.65"] },
+  { from: "rec-0.25", to: "w:explore", keys: [["rec-0.25", 1250, 260], ["w:recruiters4-0.05", 1100, 78], ["w:recruiters4+0.15", 1100, 78], ["w:recruiters4+0.7", 1240, 200]], clicks: ["w:recruiters4"] },
+  { from: "w:submit-0.2", to: "w:and4", keys: [["w:submit-0.2", 1480, 800], ["w:qualified+0.05", 1643, 486], ["w:talent-0.05", 1643, 486], ["w:talent+0.4", 1740, 580]], clicks: ["w:talent-0.2"] },
 ];
 const Cursor: React.FC<{ g: number }> = ({ g }) => {
   const seg = CURSOR.find((c) => g >= f(c.from) && g < f(c.to));
@@ -172,6 +172,7 @@ const win = (g: number) => {
   const dim = k(g, "w:goes-0.15", 0.5) * (1 - k(g, "arrive+0.2", 0.5));
   let x = mix(ic.x, 960, back), y = mix(ic.y, 545, back), s = mix(0.03, 1, back);
   s = mix(s, 0.7, small); y = mix(y, 650, small);
+  y += 40 * k(g, "rec-0.4", 0.6, MOVE) * (1 - k(g, "inbox", 0.6, MOVE));
   x = mix(x, ie.x, fold); y = mix(y, ie.y, fold); s = mix(s, 0.03, fold);
   return { x, y, s, o: clamp01(back * 3) * (1 - clamp01((fold - 0.6) / 0.4)), dim };
 };
@@ -202,7 +203,7 @@ const Sidebar: React.FC<{ g: number }> = ({ g }) => {
       ))}
       <div style={{ position: "absolute", left: 18, bottom: 22, width: SB - 36, height: 74, borderRadius: 14, background: C.white, border: `1.5px solid ${C.line}`, padding: "14px 16px", boxSizing: "border-box" }}>
         <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 18, color: C.ink }}>Invite team</div>
-        <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 15, color: C.muted, marginTop: 3 }}>Add people to your workspace</div>
+        <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 15, color: C.muted, marginTop: 3 }}>Add your team</div>
       </div>
     </div>
   );
@@ -216,7 +217,7 @@ type Cand = { n: string; t: string; ai: number; hue: number; col: number; slot: 
 const OTHERS: Cand[] = [
   { n: "Julia Berg", t: "Account Executive", ai: 7.5, hue: 2, col: 0, slot: 1, at: "w:arrive+0.25", stars: 3 },
   { n: "Linnea Wallin", t: "Senior AE · SaaS", ai: 8.0, hue: 3, col: 0, slot: 2, at: "w:arrive+0.45", stars: 4 },
-  { n: "Jonas Ferm", t: "Sales Manager", ai: 6.5, hue: 4, col: 0, slot: 3, at: "w:see+0.1", stars: 3 },
+  { n: "Jonas Ferm", t: "Sales Manager", ai: 7.1, hue: 4, col: 0, slot: 3, at: "w:see+0.1", stars: 3 },
   { n: "Fredrik Lindahl", t: "Account Executive", ai: 8.5, hue: 1, col: 1, slot: 1, at: "w:one2-0.1", stars: 4 },
   { n: "Henrik Dalgren", t: "Business Developer", ai: 7.0, hue: 5, col: 2, slot: 1, at: "w:one2", stars: 3 },
   { n: "Moa Novak", t: "Account Executive", ai: 7.5, hue: 2, col: 2, slot: 2, at: "w:one2+0.1", stars: 4 },
@@ -226,13 +227,13 @@ const OTHERS: Cand[] = [
 ];
 const HOME: Cand[] = [   // an existing role's pipeline, at the start
   { n: "Astrid Norling", t: "Account Manager", ai: 8.0, hue: 0, col: 0, slot: 0, at: "w:one", stars: 4 },
-  { n: "Nils Hansen", t: "Sales Manager", ai: 6.5, hue: 2, col: 0, slot: 1, at: "w:one", stars: 3 },
+  { n: "Nils Hansen", t: "Sales Manager", ai: 7.2, hue: 2, col: 0, slot: 1, at: "w:one", stars: 3 },
   { n: "Filip Ranstam", t: "Account Manager", ai: 9.0, hue: 1, col: 1, slot: 0, at: "w:one", stars: 5 },
   { n: "Johanna Ekholm", t: "Key Account Manager", ai: 7.5, hue: 3, col: 1, slot: 1, at: "w:one", stars: 4 },
   { n: "Marcus Lindqvist", t: "Account Manager", ai: 7.0, hue: 4, col: 2, slot: 0, at: "w:one", stars: 3 },
   { n: "Wilma Sundin", t: "Sales Lead", ai: 8.5, hue: 5, col: 3, slot: 0, at: "w:one", stars: 4 },
-  { n: "Rebecka Lundgren", t: "Account Manager", ai: 7.5, hue: 2, col: 4, slot: 0, at: "w:one", stars: 4 },
-  { n: "Anders Pettersson", t: "Sales Manager", ai: 8.0, hue: 0, col: 2, slot: 1, at: "w:one", stars: 4 },
+  { n: "Rebecka Lund", t: "Account Manager", ai: 7.5, hue: 2, col: 4, slot: 0, at: "w:one", stars: 4 },
+  { n: "Anders Holm", t: "Sales Manager", ai: 8.0, hue: 0, col: 2, slot: 1, at: "w:one", stars: 4 },
 ];
 const OSKAR = { n: "Oskar Vinge", t: "Account Executive · SaaS", ai: 9.0, hue: 1 };
 // Oskar's column over time: arrives, shortlisted, interview, tests, reference check, hired
@@ -242,7 +243,7 @@ const oskarCol = (g: number): [number, number, number] => {   // from col, to co
   for (const [at, to] of steps) { const p = k(g, at, 0.6, MOVE); if (p <= 0) return [c, c, 0]; if (p < 1) return [c, to, p]; c = to; }
   return [c, c, 0];
 };
-const CandCard: React.FC<{ c: { n: string; t: string; ai: number; hue: number; stars?: number }; x: number; y: number; o?: number; s?: number; hi?: number; aiOn?: number; aiV?: number; star?: number }> = ({ c, x, y, o = 1, s = 1, hi = 0, aiOn = 0, aiV, star = 0 }) =>
+const CandCard: React.FC<{ c: { n: string; t: string; ai: number; hue: number; stars?: number }; x: number; y: number; o?: number; s?: number; hi?: number; aiOn?: number; aiV?: number; aiO?: number; star?: number }> = ({ c, x, y, o = 1, s = 1, hi = 0, aiOn = 0, aiV, aiO = 1, star = 0 }) =>
   o <= 0.01 ? null : (
     <div style={{ ...box(x, y, COLW, 116), ...card, borderRadius: 14, opacity: o, transform: `translate(${x}px, ${y}px) scale(${s})`, padding: 12, boxSizing: "border-box",
       boxShadow: hi > 0 ? `0 0 0 ${3 * hi}px ${C.green}, 0 16px 34px -14px rgba(40,126,97,0.5)` : card.boxShadow }}>
@@ -253,7 +254,7 @@ const CandCard: React.FC<{ c: { n: string; t: string; ai: number; hue: number; s
           <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 12, color: C.muted, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", marginTop: 2 }}>{c.t}</div>
         </div>
       </div>
-      <div style={{ position: "absolute", right: 10, top: 10 }}><AI v={aiV ?? c.ai} s={13} on={aiOn} /></div>
+      <div style={{ position: "absolute", right: 10, bottom: 26, opacity: aiO }}><AI v={aiV ?? c.ai} s={13} on={aiOn} /></div>
       <div style={{ position: "absolute", left: 12, bottom: 30 }}><Stars n={star > 0 ? 5 : c.stars ?? 4} s={13} /></div>
       <div style={{ position: "absolute", left: 12, bottom: 9, display: "flex", alignItems: "center", gap: 6, fontFamily: SANS, fontWeight: 700, fontSize: 12, color: C.green }}><Ico n="mail" s={14} c={C.green} />New message</div>
     </div>
@@ -269,8 +270,9 @@ const Pipeline: React.FC<{ g: number; set: "home" | "job"; o: number }> = ({ g, 
   const inCompare = g >= f("compare") && g < f("short+0.95");
   const count = (col: number) => cards.filter((c) => c.col === col && k(g, c.at, 0.4) > 0.5).length + (!home && oa > 0.5 && (p > 0.5 ? c1 : c0) === col ? 1 : 0);
   const sweep = home ? 0 : k(g, "w:without", 1.1, MOVE);   // the overview: a light runs along the stages
+  const ov = home ? 0 : k(g, "w:without-0.1", 0.9, MOVE) * (1 - k(g, "w:hire-0.1", 0.6, MOVE));
   return (
-    <div style={{ position: "absolute", inset: 0, opacity: o }}>
+    <div style={{ position: "absolute", inset: 0, opacity: o, transform: `scale(${1 - 0.07 * ov})`, transformOrigin: "50% 42%" }}>
       <div style={{ position: "absolute", left: 44, top: 36, fontFamily: SERIF, fontWeight: 600, fontSize: 44, color: C.ink, letterSpacing: "-0.01em" }}>Candidate pipeline</div>
       <div style={{ position: "absolute", right: 40, top: 40, display: "flex", gap: 12 }}>
         <Pill t={home ? "Account Manager · Denmark" : "Account Executive, SaaS"} icon="briefcase" bg={C.white} border={C.line} s={18} />
@@ -279,11 +281,11 @@ const Pipeline: React.FC<{ g: number; set: "home" | "job"; o: number }> = ({ g, 
       <div style={{ position: "absolute", left: 44, top: 104, width: 820, height: 46, borderRadius: 12, border: `1.5px solid ${C.line}`, background: C.white, display: "flex", alignItems: "center", gap: 10, padding: "0 16px", boxSizing: "border-box",
         fontFamily: SANS, fontWeight: 600, fontSize: 17, color: C.muted }}><Ico n="search" s={18} c={C.muted} />Search candidates…</div>
       {COLS.map((name, i) => {
-        const lit = clamp01(1 - Math.abs(sweep * 7 - 0.5 - i) / 1.2) * (sweep > 0 && sweep < 1 ? 1 : 0);
+        const lit = clamp01(1 - Math.abs(sweep * 7 - 0.5 - i) / 1.0) * (sweep > 0 && sweep < 1 ? 1 : 0);
         return (
           <div key={name} style={{ position: "absolute", left: colX(i), top: 160, width: COLW, display: "flex", alignItems: "center", gap: 8, fontFamily: SANS, fontWeight: 800, fontSize: 15, color: C.ink, whiteSpace: "nowrap" }}>
             <div style={{ width: 9, height: 9, borderRadius: 5, background: i === 5 ? C.okText : [C.blue, C.amber, C.purpText, C.teal, C.clay][i] }} />{name}
-            <span style={{ color: C.muted, fontWeight: 700, padding: "1px 8px", borderRadius: 10, background: lit > 0.05 ? mixC(C.sand, C.greenSoft, lit) : C.sand }}>{count(i)}</span>
+            <span style={{ display: "inline-block", fontWeight: 800, padding: "1px 8px", borderRadius: 10, background: lit > 0.05 ? mixC(C.sand, C.green, lit) : C.sand, color: lit > 0.5 ? C.white : C.muted, transform: `scale(${1 + 0.25 * lit})` }}>{count(i)}</span>
           </div>
         );
       })}
@@ -291,7 +293,7 @@ const Pipeline: React.FC<{ g: number; set: "home" | "job"; o: number }> = ({ g, 
       {cards.map((c, i) => {
         const a = home ? k(g, off(c.at, 0.05 + i * 0.04), 0.45) : k(g, c.at, 0.45);
         const best = home && c.ai >= 9 ? better : 0;
-        return <CandCard key={c.n} c={c} x={colX(c.col)} y={CY0 + 10 + c.slot * SLOT + (1 - a) * 30} o={a} aiV={home ? Math.min(c.ai, c.ai * (0.55 + 0.45 * better)) : undefined} aiOn={best} hi={best} />;
+        return <CandCard key={c.n} c={c} x={colX(c.col)} y={CY0 + 10 + c.slot * SLOT + (1 - a) * 30} o={a} aiV={home ? c.ai * better : undefined} aiO={home ? clamp01(better * 4) : 1} aiOn={best} hi={best} />;
       })}
       {!home && !inCompare && <CandCard c={OSKAR} x={ox} y={oy + 10 + (1 - oa) * 30} o={oa} hi={k(g, "w:profiles-0.1", 0.3) * (1 - k(g, "w:dashboard", 0.4))} star={g >= f("short") ? 1 : 0} />}
     </div>
@@ -387,7 +389,7 @@ const Reward: React.FC<{ g: number; o: number; x: number }> = ({ g, o, x }) => {
 
 /* ---------- live: the job leaves the window for the marketplace, recruiters take it on ---------- */
 const REC = [["img/r-henning.jpg", "Henning"], ["img/r-sebastian.jpg", "Sebastian"], ["img/r-stephanie.jpg", "Stephanie"], ["img/r-elin.jpg", "Elin"], ["img/r-johan.jpg", "Johan"]];
-const recAt = (i: number) => ({ x: 560 + i * 200, y: 700 + (i % 2) * 40 });
+const recAt = (i: number) => ({ x: 460 + i * 200, y: 700 + (i % 2) * 40 });
 const Live: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("live") || g > f("arrive+1.2")) return null;
   const up = k(g, "live", 0.7, MOVE), back = k(g, "arrive", 0.7, MOVE);
@@ -396,7 +398,7 @@ const Live: React.FC<{ g: number }> = ({ g }) => {
   return (
     <AbsoluteFill>
       {/* recruiters take it on */}
-      {REC.map(([src, name], i) => {
+      {[...REC, ["", "Arthur"]].map(([src, name], i) => {
         const a = k(g, off("w:recruiters2", -0.1 + i * 0.07), 0.5, SMALLPOP), w = k(g, off("w:work", i * 0.06), 0.35, SMALLPOP);
         const p = recAt(i), leave = k(g, off("arrive+0.5", i * 0.04), 0.4, DEPART);
         if (a <= 0) return null;
@@ -408,7 +410,7 @@ const Live: React.FC<{ g: number }> = ({ g }) => {
                 strokeDashoffset={1 - lk} strokeLinecap="round" />
             </svg>
             <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${p.x - 64}px, ${p.y - 64 + (1 - a) * 40}px) scale(${Math.min(1.05, a) * (1 - 0.3 * leave)})`, opacity: Math.min(1, a) * (1 - leave) }}>
-              <Face src={src} s={128} />
+              {src ? <Face src={src} s={128} /> : <div style={{ width: 128, height: 128, borderRadius: 64, border: "4px solid #FFFFFF", boxShadow: "0 10px 24px rgba(28,25,23,0.18)", overflow: "hidden" }}><Initials name="Arthur Berg" s={120} hue={4} /></div>}
               <div style={{ position: "absolute", right: 2, top: 4, width: 30, height: 30, borderRadius: 15, background: C.okText, border: "4px solid #FFFFFF", transform: `scale(${w})`, display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <Ico n="bolt" s={14} c={C.white} w={3} />
               </div>
@@ -443,7 +445,7 @@ const Arrive: React.FC<{ g: number }> = ({ g }) => {
   const dst = (slot: number) => ({ x: W.x - (WW / 2) * W.s + (SB + colX(0) + COLW / 2) * W.s, y: W.y - (WH / 2) * W.s + (CY0 + 10 + slot * SLOT + 58) * W.s });
   return (
     <AbsoluteFill>
-      {[[2, 0], [0, 1], [4, 2]].map(([r, slot], i) => {
+      {[[5, 0], [0, 1], [3, 2]].map(([r, slot], i) => {
         const p = k(g, off("arrive", 0.05 + i * 0.12), 0.75, MOVE);
         if (p <= 0 || p >= 1) return null;
         const a = recAt(r), b = dst(slot);
@@ -462,7 +464,7 @@ const Panel: React.FC<{ g: number; o: number; x: number; tab: number; children: 
         <Initials name={OSKAR.n} s={64} hue={1} />
         <div>
           <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 38, color: C.ink, letterSpacing: "-0.01em" }}>Oskar Vinge</div>
-          <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 19, color: C.muted, marginTop: 2 }}>Account Executive · SaaS · Senior</div>
+          <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 19, color: C.muted, marginTop: 2 }}>Account Executive · SaaS</div>
         </div>
       </div>
       <div style={{ position: "absolute", left: 32, right: 32, top: 126, display: "flex", gap: 26, borderBottom: `1.5px solid ${C.line}`, fontFamily: SANS, fontWeight: 700, fontSize: 18, color: C.muted }}>
@@ -479,7 +481,7 @@ const Profile: React.FC<{ g: number }> = ({ g }) => {
   return (
     <Panel g={g} o={inn} x={(1 - inn) * 120 + out * 680} tab={ms > 0.5 && ap < 0.5 ? 1 : 0}>
       <div style={{ position: "absolute", left: 32, top: 184, display: "flex", gap: 10, opacity: pf, transform: `translateY(${(1 - pf) * 16}px)` }}>
-        <Pill t="Stockholm" icon="pin" s={18} /><Pill t="8 years B2B SaaS" icon="briefcase" s={18} /><Pill t="Available 1 November" icon="calendar" s={18} />
+        <Pill t="Stockholm" icon="pin" s={18} /><Pill t="5 years B2B SaaS" icon="briefcase" s={18} /><Pill t="Available 1 November" icon="calendar" s={18} />
       </div>
       <div style={{ position: "absolute", left: 32, top: 252, display: "flex", alignItems: "center", gap: 18, opacity: Math.min(1, ms * 2), transform: `scale(${1 + 0.06 * Math.sin(Math.PI * clamp01(ms))})`, transformOrigin: "0 50%" }}>
         <AI v={9.0 * k(g, "w:match", 0.8, MOVE)} s={30} on={ms > 0.9 ? 1 : 0} />
@@ -503,7 +505,7 @@ const Profile: React.FC<{ g: number }> = ({ g }) => {
 
 /* ---------- compare, shortlist ---------- */
 const CMP = [{ ...OTHERS[3] }, { ...OSKAR, stars: 5 }, { ...OTHERS[1] }];
-const CMPV = [[8, 8, 9], [9, 9, 9], [8, 7, 8]];
+const CMPV = [[8, 8, 9], [9, 9, 8], [8, 7, 8]];
 const Compare: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("compare-0.1") || g > f("msg+0.2")) return null;
   const inn = k(g, "compare", 0.6), best = k(g, "w:instantly", 0.4, SMALLPOP), sl = k(g, "w:shortlist", 0.35, SMALLPOP);
@@ -600,9 +602,9 @@ const Hired: React.FC<{ g: number }> = ({ g }) => {
         <div style={{ position: "absolute", left: 0, right: 0, top: 182, textAlign: "center", fontFamily: SANS, fontWeight: 600, fontSize: 21, color: C.muted }}>Here's what happens next with payment.</div>
         <div style={{ position: "absolute", left: 44, right: 44, top: 240, borderRadius: 16, border: `1.5px solid ${C.line}`, background: "#FCFBFA", padding: "20px 24px" }}>
           <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 15, letterSpacing: "0.08em", color: C.muted }}>INVOICE BREAKDOWN</div>
-          <div style={{ display: "flex", justifyContent: "space-between", marginTop: 14, fontFamily: SANS, fontWeight: 600, fontSize: 21, color: C.muted }}><span>Recruitment reward</span><span>SEK 95 000</span></div>
+          <div style={{ display: "flex", justifyContent: "space-between", marginTop: 14, fontFamily: SANS, fontWeight: 600, fontSize: 21, color: C.muted }}><span>Recruitment reward</span><span>95 000 SEK</span></div>
           <div style={{ display: "flex", justifyContent: "space-between", marginTop: 14, padding: "10px 12px", marginLeft: -12, marginRight: -12, borderRadius: 10, background: pay > 0.5 ? C.greenSoft : "transparent",
-            fontFamily: SANS, fontWeight: 800, fontSize: 24, color: pay > 0.5 ? C.greenStrong : C.ink }}><span>Total to invoice</span><span>SEK 95 000</span></div>
+            fontFamily: SANS, fontWeight: 800, fontSize: 24, color: pay > 0.5 ? C.greenStrong : C.ink }}><span>Total to invoice</span><span>95 000 SEK</span></div>
         </div>
         <div style={{ position: "absolute", left: 44, right: 44, top: 444, display: "flex", gap: 14, alignItems: "flex-start", fontFamily: SANS, fontWeight: 600, fontSize: 20, lineHeight: 1.4, color: C.ink }}>
           <Ico n="calendar" s={26} c={C.green} />The reward is invoiced when the candidate starts the job.
@@ -624,7 +626,7 @@ const JOBS = [
 const Recruiter: React.FC<{ g: number; o: number }> = ({ g, o }) => {
   if (o <= 0) return null;
   const rel = k(g, "w:relevant", 0.4, SMALLPOP);
-  const sub = k(g, "w:submit-0.25", 0.5, MOVE), done = k(g, "w:submit+0.1", 0.3, SMALLPOP), q = k(g, "w:qualified", 0.4, SMALLPOP);
+  const sub = k(g, "w:submit-0.45", 0.5, MOVE), done = k(g, "w:talent-0.12", 0.3, SMALLPOP), q = k(g, "w:qualified", 0.4, SMALLPOP);
   const earn = k(g, "w:and4", 0.55, MOVE), paid = k(g, "w:placements", 0.4, SMALLPOP);
   return (
     <div style={{ position: "absolute", inset: 0, opacity: o }}>
@@ -633,7 +635,7 @@ const Recruiter: React.FC<{ g: number; o: number }> = ({ g, o }) => {
         {["All roles", "Sales", "Tech", "C-level"].map((t, i) => <Pill key={t} t={t} s={19} bg={i === 1 && rel > 0.5 ? C.green : i === 0 && rel <= 0.5 ? C.ink : C.white} fg={(i === 1 && rel > 0.5) || (i === 0 && rel <= 0.5) ? C.white : C.ink} border={C.line} />)}
       </div>
       {JOBS.map((j, i) => {
-        const a = k(g, off("w:recruiters4+0.3", i * 0.08), 0.5), dimmed = !j.hot && rel > 0.5 ? 0.45 : 1;
+        const a = k(g, off("w:recruiters4+0.3", i * 0.08), 0.5), dimmed = !j.tags.includes("Sales") && rel > 0.5 ? 0.45 : 1;
         const hov = clamp01(1 - Math.abs((g - f("w:explore")) / 5 - i) / 0.9) * (g >= f("w:explore") && g < f("w:relevant") + 4 ? 1 : 0);
         return (
           <div key={j.t} style={{ ...box(44, 180 + i * 136, 1240, 118), ...card, background: hov > 0.05 ? mixC("#FFFFFF", "#F4F9F7", hov) : C.white, borderRadius: 18, opacity: a * dimmed, transform: `translate(${44 + (1 - a) * 60 + hov * 10}px, ${180 + i * 136}px)`,
@@ -658,17 +660,17 @@ const Recruiter: React.FC<{ g: number; o: number }> = ({ g, o }) => {
             </div>
             <div style={{ display: "flex", gap: 10, marginTop: 18, opacity: q, transform: `translateY(${(1 - q) * 10}px)` }}><Pill t="Interviewed" icon="check" s={17} bg={C.okBg} fg={C.okText} /><Pill t="Screening answered" icon="check" s={17} bg={C.okBg} fg={C.okText} /></div>
           </div>
-          <div style={{ marginTop: 30, display: "flex", justifyContent: "flex-end" }}><Btn t={done > 0.5 ? "Submitted" : "Submit"} icon={done > 0.5 ? "check" : "send"} s={24} press={g >= f("w:submit+0.05") && g < f("w:submit+0.05") + 5 ? 1 : 0} style={{ background: done > 0.5 ? C.greenStrong : C.green }} /></div>
+          <div style={{ marginTop: 30, display: "flex", justifyContent: "flex-end" }}><Btn t={done > 0.5 ? "Submitted" : "Submit"} icon={done > 0.5 ? "check" : "send"} s={24} press={g >= f("w:talent-0.2") && g < f("w:talent-0.2") + 5 ? 1 : 0} style={{ background: done > 0.5 ? C.greenStrong : C.green }} /></div>
         </div>
         <div style={{ position: "absolute", left: 32, top: 34, right: 32, opacity: earn, transform: `translateX(${(1 - earn) * 60}px)` }}>
-          <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 16, letterSpacing: "0.08em", color: C.muted }}>EARNINGS</div>
+          <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 16, letterSpacing: "0.08em", color: C.muted }}>EARNINGS · ACCOUNT EXECUTIVE, SAAS</div>
           <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 36, color: C.ink, marginTop: 8 }}>Placement reward</div>
           <div style={{ ...card, marginTop: 30, padding: 26, borderRadius: 20 }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <div style={{ fontFamily: SANS, fontWeight: 700, fontSize: 20, color: C.muted }}>Oskar Vinge · hired</div>
               <div style={{ transform: `scale(${paid})`, opacity: Math.min(1, paid) }}><Pill t="Paid on hire" icon="check" s={18} bg={C.okBg} fg={C.okText} /></div>
             </div>
-            <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 64, color: C.ink, marginTop: 14, letterSpacing: "-0.02em" }}>{fmt(Math.round((95000 * k(g, "w:rewards2", 1.0, MOVE)) / 250) * 250)} <span style={{ fontSize: 30, color: C.muted }}>SEK reward</span></div>
+            <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 64, color: C.ink, marginTop: 14, letterSpacing: "-0.02em", fontVariantNumeric: "tabular-nums" }}>{fmt(Math.round((95000 * k(g, "w:rewards2", 1.0, MOVE)) / 250) * 250)} <span style={{ fontSize: 30, color: C.muted }}>SEK reward</span></div>
             <div style={{ marginTop: 18, height: 14, borderRadius: 8, background: C.sand, overflow: "hidden" }}><div style={{ width: `${75 * k(g, "w:for2", 0.8, MOVE)}%`, height: "100%", background: C.green, borderRadius: 8 }} /></div>
             <div style={{ marginTop: 12, fontFamily: SANS, fontWeight: 800, fontSize: 22, color: C.greenStrong }}>70–80% of the reward is yours</div>
           </div>
@@ -712,7 +714,7 @@ const Window: React.FC<{ g: number }> = ({ g }) => {
 const PROOF: [string, string, string, string][] = [   // from, to, figure, text
   ["w:one+0.15", "w:better-0.15", "One", "place for the whole process"],
   ["w:better+0.25", "meet-0.1", "7/10", "match score before a candidate reaches you"],
-  ["w:recruiters2+0.5", "arrive", "Within days", "candidates arrive"],
+  ["w:recruiters2+0.5", "arrive", "Within days,", "candidates arrive"],
 ];
 const Proof: React.FC<{ g: number }> = ({ g }) => (
   <>
@@ -720,7 +722,7 @@ const Proof: React.FC<{ g: number }> = ({ g }) => (
       const i = k(g, a, 0.5), o = k(g, off(b, -0.3), 0.3, DEPART);
       if (i <= 0 || o >= 1) return null;
       return (
-        <div key={a} style={{ position: "absolute", left: 0, top: 0, width: 1920, display: "flex", justifyContent: "center", transform: `translateY(${986 + (1 - i) * 30 + o * 20}px)`, opacity: Math.min(1, i * 1.5) * (1 - o) }}>
+        <div key={a} style={{ position: "absolute", left: 0, top: 0, width: 1920, display: "flex", justifyContent: "center", transform: `translateY(${962 + (1 - i) * 30 + o * 20}px)`, opacity: Math.min(1, i * 1.5) * (1 - o) }}>
           <div style={{ display: "flex", alignItems: "center", gap: 16, padding: "16px 30px", borderRadius: 40, background: C.navy, boxShadow: "0 20px 40px -18px rgba(11,31,58,0.6)", fontFamily: SANS, fontWeight: 700, fontSize: 28, color: C.white, whiteSpace: "nowrap" }}>
             <span style={{ fontWeight: 800, color: C.amber }}>{fig}</span>{t}
           </div>
@@ -734,7 +736,7 @@ const Switch: React.FC<{ g: number }> = ({ g }) => {
   const a = k(g, "rec-0.35", 0.5), o = k(g, "inbox-0.1", 0.4, DEPART), s = k(g, "w:recruiters4", 0.4, MOVE);
   if (a <= 0 || o >= 1) return null;
   return (
-    <div style={{ position: "absolute", left: 960 - 260, top: 14 + (1 - a) * -30, width: 520, height: 64, borderRadius: 32, background: C.white, border: `1.5px solid ${C.line}`, boxShadow: "0 12px 30px -16px rgba(28,25,23,0.35)", opacity: a * (1 - o) }}>
+    <div style={{ position: "absolute", left: 960 - 260, top: 44 + (1 - a) * -30, width: 520, height: 64, borderRadius: 32, background: C.white, border: `1.5px solid ${C.line}`, boxShadow: "0 12px 30px -16px rgba(28,25,23,0.35)", opacity: a * (1 - o) }}>
       <div style={{ position: "absolute", top: 6, left: 6 + s * 254, width: 254, height: 52, borderRadius: 26, background: C.green }} />
       {["For companies", "For recruiters"].map((t, i) => (
         <div key={t} style={{ position: "absolute", top: 0, left: 6 + i * 254, width: 254, height: 64, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: SANS, fontWeight: 800, fontSize: 22,
@@ -758,7 +760,7 @@ const Logo: React.FC<{ x: number; y: number; w: number; o: number; wipe: number 
 const Meet: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("meet") || g > f("create+0.8")) return null;
   const a = k(g, "meet+0.35", 0.4), wipe = k(g, "w:recruiting-0.05", 0.8, MOVE), out = k(g, "create-0.05", 0.5, MOVE);
-  const tag = k(g, "w:rewards+0.25", 0.5);
+  const tag = k(g, "w:recruiting+0.25", 0.5);
   return (
     <AbsoluteFill style={{ opacity: 1 - out, transform: `scale(${1 + out * 0.15})`, transformOrigin: `${iconAt(LOGO).x}px ${LOGO.y}px` }}>
       <Logo x={LOGO.x} y={LOGO.y} w={LOGO.w} o={a} wipe={wipe} />
@@ -788,25 +790,30 @@ const End: React.FC<{ g: number }> = ({ g }) => {
 /* ---------- the closing lines, and the price card ---------- */
 const Closing: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("inbox-0.2") || g > f("end_+0.3")) return null;
-  const card0 = k(g, "w:no2+0.1", 0.55), cardOut = k(g, "just", 0.45, DEPART);
-  const zero = k(g, "w:upfront", 0.6, MOVE);
+  const card0 = k(g, "w:no2+0.05", 0.5), cardOut = k(g, "just+0.45", 0.45, DEPART);
+  const zero = k(g, "w:upfront-0.05", 0.45, SMALLPOP), agency = k(g, "w:costs+0.3", 0.5, SMALLPOP);
   return (
     <AbsoluteFill>
-      <Head g={g} y={70} size={96} out="upfront-0.05" words={[{ t: "No", at: "w:no" }, { t: "scattered", at: "w:scattered" }, { t: "inboxes.", at: "w:inboxes", green: true }]} />
-      <Head g={g} y={70} size={96} out="just-0.05" words={[{ t: "No", at: "w:no2" }, { t: "upfront", at: "w:upfront" }, { t: "costs.", at: "w:costs", green: true }]} />
+      <Head g={g} y={70} size={96} out="upfront-0.32" words={[{ t: "No", at: "w:no" }, { t: "scattered", at: "w:scattered" }, { t: "inboxes.", at: "w:inboxes", green: true }]} />
+      <Head g={g} y={70} size={96} out="just-0.3" words={[{ t: "No", at: "w:no2" }, { t: "upfront", at: "w:upfront" }, { t: "costs.", at: "w:costs", green: true }]} />
       <Head g={g} y={70} size={96} out="end_-0.1" words={[{ t: "Just", at: "w:just" }, { t: "recruiting,", at: "w:recruiting2" }, { t: "redesigned.", at: "w:redesigned", green: true }]} />
       {card0 > 0 && cardOut < 1 && (
-        <div style={{ ...box(1180, 380, 560, 480), ...card, borderRadius: 28, opacity: Math.min(1, card0) * (1 - cardOut), transform: `translate(${1180 + (1 - card0) * 80}px, ${380 - cardOut * 30}px)`, boxShadow: "0 40px 90px -30px rgba(28,25,23,0.45)" }}>
+        <div style={{ ...box(1180, 450, 560, 500), ...card, borderRadius: 28, opacity: Math.min(1, card0) * (1 - cardOut), transform: `translate(${1180 + (1 - card0) * 80}px, ${450 - cardOut * 30}px)`, boxShadow: "0 40px 90px -30px rgba(28,25,23,0.45)" }}>
           <div style={{ position: "absolute", left: 40, top: 36, fontFamily: SANS, fontWeight: 800, fontSize: 18, letterSpacing: "0.08em", color: C.muted }}>UPFRONT COST</div>
-          <div style={{ position: "absolute", left: 40, top: 70, fontFamily: SANS, fontWeight: 800, fontSize: 120, color: C.ink, letterSpacing: "-0.03em" }}>
-            {Math.round(mix(25, 0, zero))}<span style={{ fontSize: 50, color: C.muted }}>{zero < 1 ? "%" : " SEK"}</span>
+          <div style={{ position: "absolute", left: 40, top: 64, fontFamily: SANS, fontWeight: 800, fontSize: 112, color: C.ink, letterSpacing: "-0.03em", transformOrigin: "0 60%", transform: `scale(${zero})`, opacity: Math.min(1, zero * 2) }}>
+            0<span style={{ fontSize: 48, color: C.muted }}> SEK</span>
           </div>
-          <div style={{ position: "absolute", left: 40, right: 40, top: 236, display: "flex", flexDirection: "column", gap: 16 }}>
-            {["Free to post", "Pay when the candidate starts", "30–45% lower cost than an agency"].map((t, i) => {
+          <div style={{ position: "absolute", left: 40, right: 40, top: 222, display: "flex", flexDirection: "column", gap: 14 }}>
+            {["Free to post", "Pay when the candidate starts"].map((t, i) => {
               const a = k(g, off("w:costs", i * 0.12), 0.4);
               return <div key={t} style={{ display: "flex", alignItems: "center", gap: 14, fontFamily: SANS, fontWeight: 700, fontSize: 25, color: C.ink, opacity: a, transform: `translateX(${(1 - a) * 30}px)` }}>
                 <div style={{ width: 34, height: 34, borderRadius: 17, background: C.greenSoft, display: "flex", alignItems: "center", justifyContent: "center" }}><Ico n="check" s={20} c={C.greenStrong} w={3.4} /></div>{t}</div>;
             })}
+          </div>
+          <div style={{ position: "absolute", left: 28, right: 28, bottom: 28, height: 120, borderRadius: 20, background: C.greenSoft, display: "flex", alignItems: "center", gap: 18, padding: "0 24px", boxSizing: "border-box",
+            opacity: Math.min(1, agency), transform: `scale(${0.9 + 0.1 * agency})` }}>
+            <div style={{ fontFamily: SANS, fontWeight: 800, fontSize: 52, color: C.greenStrong, letterSpacing: "-0.02em", whiteSpace: "nowrap" }}>30–45%</div>
+            <div style={{ fontFamily: SANS, fontWeight: 700, fontSize: 23, lineHeight: 1.25, color: C.greenStrong }}>lower cost than an agency</div>
           </div>
         </div>
       )}
@@ -851,9 +858,9 @@ export const Story: React.FC = () => {
         {g >= f("inbox-0.2") && g < f("w:inboxes+0.8") && <Mess g={g} inAt="inbox-0.1" gather="w:inboxes-0.1" to={[960, 650]} low />}
         <Closing g={g} />
         <End g={g} />
-        <Proof g={g} />
         <Cursor g={g} />
       </AbsoluteFill>
+      <Proof g={g} />
       <Grain o={0.035} />
     </AbsoluteFill>
   );
