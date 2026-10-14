@@ -20,16 +20,16 @@ const BTN: number[][] = [
   [570, 960, 0.982, 0], [571, 960, 0.97, 0], [572, 960, 0.955, 0], [573, 960, 0.939, 0], [574, 960, 0.922, 0], [575, 960, 0.898, 0], [576, 960, 0.867, 0],
   [577, 960, 0.826, 0], [578, 960, 0.757, 0],
 ];
-const DEPTH = 48;
+const DEPTH = 100;
 
 const Button: React.FC<{ g: number }> = ({ g }) => {
   const [cx, s, ry] = tab(g, BTN);
   const rx = (ry / 42) * 6;
   const layers = [];
-  for (let d = DEPTH; d >= 1; d -= 1.5) {
+  for (let d = DEPTH; d >= 1; d -= 2) {
     const back = d === DEPTH;
     layers.push(
-      <div key={d} style={{ position: "absolute", inset: 0, borderRadius: FH / 2, background: C.blueSoft, transform: `translateZ(${-d}px)`,
+      <div key={d} style={{ position: "absolute", inset: 0, borderRadius: FH / 2, background: "#F2F7FE", transform: `translateZ(${-d}px)`,
         boxShadow: back ? `0 0 0 1.5px ${C.blueText}` : undefined }} />,
     );
   }

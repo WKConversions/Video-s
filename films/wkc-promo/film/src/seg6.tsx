@@ -36,17 +36,17 @@ const A_RING_OUT = [956, 937, 918, 904, 891, 879, 867, 858, 849, 842, 834, 828, 
 
 type Tile = { b: [number, number, number, number]; glyph?: string; label?: string; rot?: number; spin?: "T2" | "T9"; gh?: number; stack?: boolean; target?: number };
 const TILES: Tile[] = [
-  { b: [426, 122, 644, 243], glyph: "browser", label: "Website" },
-  { b: [1364, 128, 1512, 250], glyph: "infinity", gh: 56, spin: "T2" },
-  { b: [1635, 128, 1851, 232], glyph: "in", label: "LinkedIn" },
-  { b: [84, 380, 222, 510], glyph: "play", gh: 53 },
-  { b: [306, 512, 519, 612], glyph: "camera", label: "Instagram", rot: 2 },
-  { b: [1628, 398, 1846, 518], glyph: "note", label: "TikTok" },
-  { b: [1458, 578, 1596, 698], glyph: "x", gh: 52, rot: -2 },
-  { b: [92, 756, 303, 854], glyph: "megaphone", label: "Google Ads" },
-  { b: [442, 850, 580, 988], glyph: "bag", gh: 66, spin: "T9" },
-  { b: [1218, 880, 1450, 984], glyph: "w", label: "Webflow", target: 165 },
-  { b: [1623, 798, 1797, 927], label: "Vimeo", stack: true },
+  { b: [435, 125.5, 644, 245], glyph: "browser", label: "Website" },
+  { b: [1371, 132, 1512, 252], glyph: "infinity", gh: 56, spin: "T2" },
+  { b: [1642.5, 133, 1851, 234], glyph: "in", label: "LinkedIn" },
+  { b: [90.5, 384.3, 222, 512], glyph: "play", gh: 53 },
+  { b: [312.3, 513.7, 519, 614], glyph: "camera", label: "Instagram", rot: 2 },
+  { b: [1637, 402, 1846, 520], glyph: "note", label: "TikTok" },
+  { b: [1465.7, 587, 1596, 700], glyph: "x", gh: 52, rot: -2 },
+  { b: [94, 758, 303, 856], glyph: "megaphone", label: "Google Ads" },
+  { b: [449, 854, 580, 990], glyph: "bag", gh: 66, spin: "T9" },
+  { b: [1223.3, 883.3, 1450, 986], glyph: "w", label: "Webflow", target: 165 },
+  { b: [1627.3, 801.3, 1797, 929], label: "Vimeo", stack: true },
 ];
 const INK = "#F3F7FC";
 const T9_SPIN: [number, number][] = [[728, 0], [729, 1.5], [730, 4], [732, 9], [734, 17], [736, 28], [738, 45], [740, 68], [742, 102], [744, 162], [746, 232], [748, 280],
@@ -80,7 +80,7 @@ const StackMark: React.FC<{ label: string }> = ({ label }) => {
   );
 };
 
-const SceneA: React.FC<{ t: number; zoom: number }> = ({ t, zoom }) => {
+const SceneA: React.FC<{ t: number; zoom: number; zoomT: number }> = ({ t, zoom, zoomT }) => {
   const sTile = tab(t, 718, A_TILE_S, true), rTile = tab(t, 718, A_TILE_R, true);
   const sHead = tab(t, 718, A_HEAD_S, true) * kl(t, [[758, 1], [759, 1.005], [760, 1.01], [761, 1.025], [762, 1.035], [763, 1.055], [764, 1.09], [765, 1.13], [766, 1.17], [767, 1.21], [768, 1.26]]);
   const sSub = tab(t, 718, A_SUB_S, true) * kl(t, [[760, 1], [761, 1.01], [762, 1.02], [763, 1.035], [764, 1.06], [765, 1.095], [766, 1.15], [767, 1.23], [768, 1.33]]);
@@ -95,15 +95,15 @@ const SceneA: React.FC<{ t: number; zoom: number }> = ({ t, zoom }) => {
   const head = "Made for every platform", sub = "From websites to social ads";
   const hb = textBox(head, 85, 800, F.head, TRK, WS);
   const front = 1185 + 30 * (t - 719) + (958 + hb.vis / 2 - 1326), W = Math.min(960, 735 + 9 * (t - 719));
-  const layer = (s: number, rot = 0): React.CSSProperties => ({ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "960px 540px", transform: `rotate(${rot}deg) scale(${s * zoom})` });
+  const layer = (s: number, rot = 0, z = zoom): React.CSSProperties => ({ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "960px 540px", transform: `rotate(${rot}deg) scale(${s * z})` });
   return (
     <AbsoluteFill>
       <div style={layer(1)}>
-        <Ring r={rIn * zoom} arcs={[{ a: a1, peak: 1 }, { a: a1 + 150, peak: 1 }]} />
-        <Ring r={rOut * zoom} arcs={[{ a: aA, peak: 1 }, { a: aA + 179, peak: 0.38 }]} />
+        <Ring r={rIn * zoomT} arcs={[{ a: a1, peak: 1 }, { a: a1 + 150, peak: 1 }]} />
+        <Ring r={rOut * zoomT} arcs={[{ a: aA, peak: 1 }, { a: aA + 179, peak: 0.38 }]} />
       </div>
       {dark > 0 && <div style={{ position: "absolute", inset: -300, background: "#000", opacity: dark }} />}
-      <div style={{ ...layer(sTile, rTile), opacity: aTile }}>
+      <div style={{ ...layer(sTile, rTile, zoomT), opacity: aTile }}>
         {TILES.map((d, i) => {
           const [x0, y0, x1, y1] = d.b, w = x1 - x0, h = y1 - y0;
           const spin = d.spin === "T9" ? spline(t, T9_SPIN) : d.spin === "T2" ? spline(t, T2_SPIN) : 0;
@@ -126,14 +126,16 @@ const SceneA: React.FC<{ t: number; zoom: number }> = ({ t, zoom }) => {
 };
 
 // blur samples per frame (0.5-frame shutter), extra zoom-blur spread and RGB split (R-B scale difference) after the cut / before the dip
-const A_N: Record<number, number> = { 718: 20, 719: 10, 720: 7, 721: 5, 722: 4, 723: 3, 724: 3, 725: 2, 726: 2, 738: 3, 739: 3, 740: 5, 741: 5, 742: 8, 743: 8, 744: 8, 745: 8, 746: 8,
-  747: 8, 748: 5, 749: 5, 750: 3, 751: 3, 755: 3, 756: 5, 757: 8, 758: 10, 759: 10, 760: 10, 761: 10, 762: 10, 763: 10, 764: 10, 765: 12, 766: 16, 767: 20 };
+const A_N: Record<number, number> = { 718: 20, 719: 14, 720: 12, 721: 10, 722: 8, 723: 6, 724: 4, 725: 3, 726: 2, 738: 3, 739: 3, 740: 5, 741: 5, 742: 8, 743: 8, 744: 8,
+  745: 8, 746: 8, 747: 8, 748: 5, 749: 5, 750: 3, 751: 3, 755: 3, 756: 5, 757: 8, 758: 10, 759: 10, 760: 10, 761: 10, 762: 10, 763: 10, 764: 10, 765: 12, 766: 16, 767: 20 };
 const BG_A = <div style={{ position: "absolute", inset: -300, background: "radial-gradient(ellipse 1100px 700px at 50% 50%, #0A1424 0%, #08111E 70%, #07101C 100%)" }} />;
 const ShotA: React.FC<{ g: number }> = ({ g }) => {
   const n = A_N[g] ?? 1;
-  const z = kl(g, [[718, 0.09], [719, 0.012], [720, 0]]);
-  const ca = kl(g, [[718, 0.038], [719, 0.006], [720, 0.0025], [721, 0.001], [722, 0], [764, 0], [765, 0.0025], [766, 0.004], [767, 0.006]]);
-  return <Composite n={n} bg={BG_A} chans={ca > 0.0005 ? rgbSplit(ca) : undefined} fg={(u) => <SceneA t={g + 0.5 * u} zoom={1 + z * u} />} />;
+  // the reference's settle is blurred harder than a 180-degree shutter: an extra radial spread (tiles/rings zT, text zX)
+  const zT = kl(g, [[718, 0.1], [719, 0.07], [720, 0.05], [721, 0.035], [722, 0.025], [723, 0.015], [724, 0.008], [725, 0.004], [726, 0]]);
+  const zX = kl(g, [[718, 0.08], [719, 0.02], [720, 0.012], [721, 0.01], [722, 0.008], [723, 0.004], [724, 0.002], [725, 0]]);
+  const ca = kl(g, [[718, 0.038], [719, 0.009], [720, 0.006], [721, 0.003], [722, 0.0015], [723, 0], [764, 0], [765, 0.0025], [766, 0.004], [767, 0.006]]);
+  return <Composite n={n} bg={BG_A} chans={ca > 0.0005 ? rgbSplit(ca) : undefined} fg={(u) => <SceneA t={g + 0.5 * u} zoom={1 + zX * u} zoomT={1 + zT * u} />} />;
 };
 
 // =====================================================================================================================
@@ -147,22 +149,22 @@ const camB = (t: number) => {
   return { s, ty, roll };
 };
 const poly = (c: number[], d: number) => c[0] + d * (c[1] + d * (c[2] + d * c[3]));
-type CardDef = { label: string; fw: number; fh: number; H: number; dy: number; cs: number; x: number[]; y: number[]; k: number[]; sel: [number, number][]; w: [number, number][] };
+type CardDef = { label: string; fw: number; fh: number; H: number; dy: number; cs: number; early: number; late: [number, number][]; x: number[]; y: number[]; k: number[]; sel: [number, number][]; w: [number, number][] };
 const CARDS: CardDef[] = [
-  { label: "16:9", fw: 118, fh: 66, H: 330, dy: 0, cs: 1, x: [481.157, 0.675375, -0.00771006, -0.000381291], y: [727.224, -2.09693, 0.030467, 0.00046481], k: [1.00371, -0.00296101, 2.05411e-5, -1.31496e-6],
+  { label: "16:9", fw: 118, fh: 66, H: 330, dy: 0, cs: 1, early: 0, late: [[806, 0], [811, -6]], x: [481.157, 0.675375, -0.00771006, -0.000381291], y: [727.224, -2.09693, 0.030467, 0.00046481], k: [1.00371, -0.00296101, 2.05411e-5, -1.31496e-6],
     sel: [[798, 0], [799, 0.2], [800, 0.55], [801, 0.7], [802, 0.88], [803, 1], [814, 1], [815, 0.75], [816, 0.4], [817, 0.35], [818, 0.35]],
     w: [[799, 0], [800, 0.03], [801, 0.3], [802, 0.59], [803, 0.87], [804, 1], [814, 1], [815, 0.88], [816, 0.6], [817, 0.3], [818, 0.01]] },
-  { label: "1:1", fw: 70, fh: 70, H: 373, dy: 2.3, cs: 0.89, x: [962.053, -0.125613, -0.00371732, 0.000139697], y: [729.978, -1.03148, 0.0127139, -3.85923e-7], k: [0.879672, -0.000717171, 5.92128e-6, 5.86004e-7],
+  { label: "1:1", fw: 70, fh: 70, H: 373, dy: 2.3, cs: 0.89, early: 0, late: [[806, 0], [812, -3]], x: [962.053, -0.125613, -0.00371732, 0.000139697], y: [729.978, -1.03148, 0.0127139, -3.85923e-7], k: [0.879672, -0.000717171, 5.92128e-6, 5.86004e-7],
     sel: [[781, 1], [782, 0.53], [783, 0.07], [784, 0]],
     w: [[780, 1], [781, 0.86], [782, 0.58], [783, 0.23], [784, 0]] },
-  { label: "9:16", fw: 44, fh: 78, H: 352, dy: 15, cs: 1, x: [1404.91, 0.499562, 0.013619, 0.000185246], y: [709.853, -0.324879, 0.0296261, -0.000522908], k: [0.900998, 0.000344405, 5.54421e-5, -2.62475e-8],
+  { label: "9:16", fw: 44, fh: 78, H: 352, dy: 15, cs: 1, early: 0.1, late: [[800, 0]], x: [1404.91, 0.499562, 0.013619, 0.000185246], y: [709.853, -0.324879, 0.0296261, -0.000522908], k: [0.900998, 0.000344405, 5.54421e-5, -2.62475e-8],
     sel: [[781, 0], [782, 0.46], [783, 0.65], [784, 0.82], [785, 0.9], [786, 1], [797, 1], [798, 0.75], [799, 0.35], [800, 0]],
     w: [[781, 0.02], [782, 0.2], [783, 0.42], [784, 0.64], [785, 0.86], [786, 0.99], [787, 1], [798, 1], [799, 0.71], [800, 0.42], [801, 0.14], [802, 0]] },
 ];
 const FormatCard: React.FC<{ c: CardDef; t: number; i: number }> = ({ c, t, i }) => {
   // the frame (per-card measured height and offset) and the content (logo at -70, button at +70) scale about their own centres
-  const d = t - 795, w = kl(t, c.w), K = poly(c.k, d) * (1 + 0.2 * kl(t, c.sel));
-  const cx = poly(c.x, d), cy = poly(c.y, d), Kc = K * c.cs;
+  const d = t - 795, w = kl(t, c.w), K = poly(c.k, d) * (1 + 0.2 * kl(t, c.sel)) * (1 - c.early * Math.pow(2, -(t - 769) / 5));
+  const cx = poly(c.x, d), cy = poly(c.y, d) + kl(t, c.late), Kc = K * c.cs;
   const logo = mix("#5C6573", "#FFFFFF", w);
   return (
     <>
@@ -176,12 +178,22 @@ const FormatCard: React.FC<{ c: CardDef; t: number; i: number }> = ({ c, t, i })
       </div>
       <div style={{
         position: "absolute", left: cx - 107, top: cy + 70 * K - 45, width: 214, height: 90, borderRadius: 45, background: mix("#12284D", "#3F8CE8", w), transform: `scale(${Kc})`,
-        boxShadow: `0 0 16px rgba(63,140,232,${(0.55 * w).toFixed(3)})`, display: "flex", alignItems: "center", justifyContent: "center",
+        boxShadow: `0 0 9px rgba(63,140,232,${(0.45 * w).toFixed(3)})`, display: "flex", alignItems: "center", justifyContent: "center",
         fontFamily: F.ui, fontWeight: 500, fontSize: 24, color: mix("#6F8DB8", "#FFFFFF", w),
       }}>Publish</div>
     </>
   );
 };
+// measured element tracks the single camera does not explain (spec T3, smoothed; frames 768..818):
+// headline offset from the camera model (screen px) and the toggle track's centre y and scale
+const B_HX = [-6.3, -7.4, -8.0, -8.0, -7.9, -7.6, -7.3, -7.2, -7.1, -7.0, -7.2, -7.3, -7.5, -7.2, -6.6, -5.9, -5.2, -4.6, -4.4, -4.0, -3.5, -2.7, -2.0, -1.4, -1.0, -0.9, -0.8, -0.3, 0.1, 0.5,
+  0.5, 0.8, 1.0, 1.4, 2.1, 3.1, 4.2, 5.3, 6.2, 7.0, 7.5, 8.0, 8.4, 8.5, 8.7, 8.4, 8.4, 7.7, 6.8, 5.7, 3.6];
+const B_HY = [-4.3, -5.6, -5.3, -4.7, -3.8, -2.1, -1.1, -0.1, 0.6, 1.4, 2.0, 2.3, 2.5, 2.4, 2.1, 2.0, 1.6, 1.7, 1.8, 1.7, 1.7, 1.6, 1.5, 1.8, 2.0, 2.5, 3.2, 3.7, 4.5, 5.4,
+  6.3, 7.2, 8.0, 8.7, 9.0, 9.1, 9.1, 9.0, 8.6, 8.3, 8.2, 8.0, 7.5, 7.2, 6.6, 5.9, 5.3, 4.9, 4.8, 5.2, 5.9];
+const B_TY = [442, 442, 440.8, 437.8, 435.3, 433.3, 431.7, 430.2, 429.4, 428.6, 427.8, 427.1, 426.4, 425.7, 425.0, 424.4, 423.8, 423.3, 422.8, 422.2, 421.8, 421.3, 421.0, 421.0, 420.9,
+  421.0, 421.0, 421.0, 420.9, 421.0, 421.0, 421.3, 421.8, 422.2, 422.8, 423.4, 423.9, 424.5, 425.1, 425.7, 426.7, 427.6, 428.8, 430.3, 431.6, 433.1, 435.3, 437.8, 441.1, 445.0, 449.8];
+const B_TS = [0.7, 0.735, 0.763, 0.792, 0.819, 0.84, 0.854, 0.866, 0.877, 0.884, 0.895, 0.906, 0.917, 0.923, 0.93, 0.939, 0.943, 0.951, 0.96, 0.968, 0.974, 0.979, 0.983, 0.988, 0.988,
+  0.993, 1.0, 1.006, 1.013, 1.016, 1.02, 1.024, 1.027, 1.034, 1.04, 1.047, 1.052, 1.052, 1.057, 1.06, 1.067, 1.075, 1.084, 1.094, 1.102, 1.108, 1.114, 1.117, 1.12, 1.121, 1.119];
 const B_FRONT: [number, number][] = [[768, 1059], [775, 1227], [780, 1319], [786, 1433], [790, 1509], [795, 1586], [797, 1632], [800, 1680], [805, 1750], [810, 1810], [813, 1840], [818, 1880]];
 const SceneB: React.FC<{ t: number; dy: number }> = ({ t, dy }) => {
   const { s, ty, roll } = camB(t);
@@ -193,13 +205,15 @@ const SceneB: React.FC<{ t: number; dy: number }> = ({ t, dy }) => {
   return (
     <AbsoluteFill>
       <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "960px 540px", transform: `translate(0px, ${ty + dy}px) rotate(${roll}deg) scale(${s})` }}>
-        <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "952px 201px", transform: "rotate(1.3deg)" }}>
+        <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "952px 201px", transform: `translate(${tab(t, 768, B_HX) / s}px, ${tab(t, 768, B_HY) / s}px) rotate(1.3deg)` }}>
           <Txt text={head} size={76} weight={800} family={F.head} track={TRK} ws={WS} cx={952} base={228.9} shadow={HEAD_GLOW} wipe={{ front, W: 650, tail, Wout: 645 }} />
         </div>
         <Txt text="Every format" size={44} weight={500} family={F.ui} cx={958} base={310.5} color="#FDFEFF" />
+        {CARDS.map((c, i) => <FormatCard key={i} c={c} t={t} i={i} />)}
+      </div>
+      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "959px 421px", transform: `translate(0px, ${tab(t, 768, B_TY) - 421 + dy}px) rotate(${roll}deg) scale(${tab(t, 768, B_TS)})` }}>
         <div style={{ position: "absolute", left: 909, top: 397, width: 100, height: 48, borderRadius: 24, background: "#D6DEE9" }} />
         <div style={{ position: "absolute", left: 959 + knob - 15, top: 421 - 15, width: 30, height: 30, borderRadius: 15, background: "#3F8CE8" }} />
-        {CARDS.map((c, i) => <FormatCard key={i} c={c} t={t} i={i} />)}
       </div>
     </AbsoluteFill>
   );

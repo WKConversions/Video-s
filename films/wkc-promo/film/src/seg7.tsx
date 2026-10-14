@@ -28,7 +28,7 @@ const SOC_Y = [322, 388, 421, 446, 466, 484, 500, 513, 526, 537, 547, 557, 565, 
 const SOC_RZ = [-8.5, -8.8, -9.0, -8.9, -8.8, -8.5, -8.3, -8.1, -7.9, -7.6, -7.4, -7.0, -6.9, -6.6, -6.3, -6.1, -5.8, -5.4, -5.1, -4.9, -4.5];
 const SOC_S = [0.993, 0.994, 0.994, 0.995, 0.996, 0.996, 0.996, 0.998, 0.998, 0.998, 0.998, 0.998, 0.999, 1.0, 0.999, 1.0, 1.0, 1.001, 1.002, 1.002, 1.002, 1.001, 1.001, 1.001, 1.002, 1.002, 1.002, 0.999, 1.0, 1.0, 1.0, 0.999, 0.999, 0.997, 0.998, 0.998, 0.996, 0.995, 0.996, 0.994, 0.995, 0.995, 0.994];
 const HIP_X = [1704, 1704, 1704, 1704, 1704, 1704, 1704, 1704, 1704, 1704, 1704, 1704, 1704, 1704, 1704, 1704, 1704, 1704, 1704, 1704, 1704, 1703, 1703, 1702, 1702, 1701, 1700, 1699, 1698, 1696, 1695, 1693, 1690, 1688, 1684, 1681, 1676, 1670, 1663, 1655, 1644, 1629, 1610];
-const HIP_Y = [1300, 1147, 1073, 1011, 961, 919, 882, 848, 818, 791, 766, 744, 723, 703, 685, 669, 653, 639, 625, 613, 601, 590, 580, 571, 562, 554, 547, 540, 534, 528, 523, 518, 514, 510, 506, 503, 500, 498, 496, 494, 493, 492, 491];
+const HIP_Y = [1328, 1159, 1076, 1011, 961, 919, 882, 848, 818, 791, 766, 744, 723, 703, 685, 669, 653, 639, 625, 613, 601, 590, 580, 571, 562, 554, 547, 540, 534, 528, 523, 518, 514, 510, 506, 503, 500, 498, 496, 494, 493, 492, 491];
 const HIP_RZ = [20, 19, 18, 17.3, 16.4, 15.7, 15.0, 14.2, 13.5, 12.8, 12.3, 11.6, 11.0, 10.4, 9.7, 9.1, 8.5, 8.0, 7.4, 6.9, 6.2, 5.6, 5.1, 4.5, 3.9, 3.4, 2.8, 2.3, 1.8, 1.2, 0.7, 0.2, -0.4, -0.9, -1.5, -2.0, -2.5, -3.0, -3.5, -4.0, -4.6, -5.2, -5.8];
 const HIP_K = 1.29; // the right badge is nearer the camera
 
@@ -41,7 +41,7 @@ const Placed: React.FC<{ x: number; y: number; rz: number; ry: number; s: number
   return (
     <AbsoluteFill style={{ perspective: "1500px", perspectiveOrigin: `${x + w * (960 - x)}px ${y + w * (540 - y)}px` }}>
       <div style={{ position: "absolute", left: x - BW / 2 - pad, top: y - BH / 2 - pad, width: BW + 2 * pad, height: BH + 2 * pad,
-        transform: `rotateZ(${rz}deg) rotateY(${ry}deg) scale(${s})`, transformOrigin: "50% 50%", filter: blurY > 0.2 ? `blur(${blurY}px)` : undefined }}>
+        transform: `rotateY(${ry}deg) rotateZ(${rz}deg) scale(${s})`, transformOrigin: "50% 50%", filter: blurY > 0.2 ? `blur(${blurY}px)` : undefined }}>
         {children}
       </div>
     </AbsoluteFill>
@@ -201,9 +201,9 @@ const Bokeh: React.FC<{ g: number }> = ({ g }) => (
       if (g < b.k[0][0] || g > 961) return null;
       const at = (n: number) => keys(g, b.k.map((r) => [r[0], r[n]] as [number, number]));
       const x = at(1), y = at(2), w = at(3), h = at(4);
-      const o = 0.42 * clamp01((g - b.k[0][0] + 1) / 2);
+      const o = 0.3 * clamp01((g - b.k[0][0] + 1) / 2);
       return (
-        <div key={i} style={{ position: "absolute", left: x - w / 2, top: y - h / 2, width: w, height: h, borderRadius: Math.min(w, h) * 0.22, overflow: "hidden", opacity: o, filter: "blur(10px) saturate(0.4)" }}>
+        <div key={i} style={{ position: "absolute", left: x - w / 2, top: y - h / 2, width: w, height: h, borderRadius: Math.min(w, h) * 0.22, overflow: "hidden", opacity: o, filter: "blur(10px) saturate(0.4) brightness(0.75)" }}>
           <Img src={staticFile(b.src)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
         </div>
       );

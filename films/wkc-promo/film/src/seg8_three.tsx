@@ -270,6 +270,9 @@ export const ThreeShot: React.FC<{ g: number }> = ({ g }) => {
   const g7 = tv(n, [[1002, 1], [1003, 0.84], [1004, 0.65], [1005, 0.48], [1006, 0.31], [1007, 0.16], [1008, 0.07], [1009, 0.02], [1010, 0]]);
   const dark = tv(n, [[1001, 0], [1002, 0.5], [1003, 1], [1004, 1], [1005, 0.7], [1006, 0.35], [1007, 0.1], [1008, 0]]);
   const phase2 = n >= 1032;
+  // extra defocus of the outgoing shot (spec 4A: centre text 1.5 -> 15, cards 4 -> 21, on top of its own depth of field)
+  const blurC = tv(n, [[1002, 0], [1003, 4], [1004, 5.5], [1005, 8.8], [1006, 12], [1007, 15], [1008, 15]]);
+  const blurO = tv(n, [[1002, 7], [1003, 11], [1004, 17], [1005, 16], [1008, 16]]);
 
   // "3": opacity / blur entrance, centre (962, y), cap 188*s
   const tOp = n < 1005 ? 0 : tv(n, [[1005, 0.44], [1006, 0.62], [1007, 0.81], [1008, 1]]) * exitOp;
@@ -281,6 +284,12 @@ export const ThreeShot: React.FC<{ g: number }> = ({ g }) => {
     <AbsoluteFill>
       {n < 1009 ? (
         <>
+          {/* the outgoing shot (segment 7, drawn underneath) defocuses: least in the centre, most at the top and bottom */}
+          {blurC > 0.1 && <AbsoluteFill style={{ backdropFilter: `blur(${blurC}px)` }} />}
+          {blurO > 0.1 && (
+            <AbsoluteFill style={{ backdropFilter: `blur(${blurO}px)`, WebkitMaskImage: "radial-gradient(ellipse 760px 300px at 960px 560px, rgba(0,0,0,0) 30%, #000 100%)",
+              maskImage: "radial-gradient(ellipse 760px 300px at 960px 560px, rgba(0,0,0,0) 30%, #000 100%)" }} />
+          )}
           <AbsoluteFill style={{ opacity: dark, background: "linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.6) 100%)" }} />
           <AbsoluteFill style={{ mixBlendMode: "plus-lighter", opacity: 1 - g7 }}><Ground glow={0.45} /></AbsoluteFill>
         </>

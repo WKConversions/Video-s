@@ -94,7 +94,7 @@ const ChatPanel: React.FC = () => {
       {/* the storyboard link bubble (the reference's "External Link Title") at plane y 102..203 */}
       <Bubble top={722} h={101}>
         <div style={{ position: "absolute", left: 16, top: 14, fontFamily: F.ui, fontWeight: 600, fontSize: 17 }}>Storyboard v2</div>
-        <div style={{ position: "absolute", left: 16, top: 38, fontFamily: F.ui, fontSize: 12.5, opacity: 0.8 }}>12 frames · approved</div>
+        <div style={{ position: "absolute", left: 16, top: 38, fontFamily: F.ui, fontSize: 12.5, opacity: 0.8 }}>Approved by the client</div>
         <div style={{ position: "absolute", left: 0, right: 0, top: 62, height: 39, background: "rgba(5,15,25,0.16)" }} />
         <div style={{ position: "absolute", left: 16, top: 72, fontFamily: F.ui, fontSize: 13, opacity: 0.95 }}>wkconversions.com/storyboard</div>
       </Bubble>

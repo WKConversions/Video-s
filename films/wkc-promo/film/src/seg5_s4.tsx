@@ -325,7 +325,7 @@ const Dashboard: React.FC<{ g: number }> = ({ g }) => (
             <g key={lab} transform={`translate(${ox} ${oy}) scale(${k}) translate(${-ox} ${-oy})`}>
               <path d={arc(ox, oy, 86, a0, a0 + sw)} fill={col} stroke="#fff" strokeWidth={3} strokeLinejoin="round" />
               <text x={ox + 52 * Math.sin(mid)} y={oy - 52 * Math.cos(mid)} textAnchor="middle" fontFamily={F.ui} fontWeight={700} fontSize={13} fill={col === "#8CC4F4" ? C.ink : "#fff"}>
-                <tspan x={ox + 52 * Math.sin(mid)} dy={-2}>{pc}%</tspan><tspan x={ox + 52 * Math.sin(mid)} dy={15} fontWeight={500} fontSize={11}>{lab}</tspan>
+                <tspan x={ox + 52 * Math.sin(mid)} dy={5}>{lab}</tspan>
               </text>
             </g>
           );
@@ -363,7 +363,7 @@ const SidePanels: React.FC = () => (
       <div style={{ position: "absolute", inset: 0, opacity: 0.7 }}>
         <div style={abs(250, 26, { width: 26, height: 26, borderRadius: 13, background: "rgba(255,255,255,0.3)" })} />
         <div style={abs(300, 26, { width: 26, height: 26, borderRadius: 13, background: "rgba(255,255,255,0.45)" })} />
-        <div style={abs(84, 86, ui(24, 600, C.white))}>Views</div>
+        <div style={abs(84, 86, ui(24, 600, C.white))}>Formats</div>
         <div style={abs(84, 118, ui(13, 400, "rgba(255,255,255,0.7)"))}>All channels</div>
         {["16:9", "1:1", "9:16", "GIF"].map((t, i) => <div key={t} style={abs(84, 230 + i * 44, { ...ui(12, 600, C.white), padding: "4px 10px", borderRadius: 10, background: "rgba(63,140,232,0.45)" })}>{t}</div>)}
         <div style={abs(180, 340, ui(12, 400, "rgba(255,255,255,0.7)"))}>Last month</div>
@@ -391,7 +391,7 @@ const SidePanels: React.FC = () => (
         <div style={abs(186, 78, ui(13, 500, "#3A4A60"))}>Overview</div>
         <div style={abs(186, 130, { width: 34, height: 34, borderRadius: 17, background: C.blue, opacity: 0.6 })} />
         <div style={abs(186, 180, ui(12, 400, "#3A4A60"))}>In production</div>
-        <div style={abs(186, 200, ui(20, 700, "#1E2A3B"))}>5 films</div>
+        <div style={abs(186, 200, ui(20, 700, "#1E2A3B"))}>GTM film</div>
         <div style={abs(186, 290, ui(13, 600, "#1E2A3B"))}>Project summary</div>
         {["ClearScaler GTM film", "Creoble website film", "Vendom reel", "VoxFlow explainer", "Malaga Hideaway", "Robin Bos explainer"].map((t, i) => (
           <div key={t} style={abs(186, 330 + i * 34, ui(12, 400, "#3A4A60"))}>{t}</div>

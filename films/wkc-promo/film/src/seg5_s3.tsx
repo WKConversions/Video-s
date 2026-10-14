@@ -102,17 +102,17 @@ const Share: React.FC = () => (
   </>
 );
 
-/** CHART -> "Performance" */
+/** CHART -> "Renders" (production details, no performance claims) */
 const BARS = [[0.42, 0.62], [0.55, 0.88], [0.92, 0.7], [0.64, 0.8], [0.3, 0.52], [0.48, 0.66], [0.58, 0.6]];
 const Perf: React.FC = () => (
   <>
     <div style={{ position: "absolute", inset: 0, background: C.white }} />
     <StatusBar dark />
-    <div style={abs(24, 120, ui(13, 400, C.muted2))}>Total views</div>
-    <div style={abs(24, 148, ui(32, 700))}>21,350</div>
-    <div style={abs(24, 228, ui(15, 600))}>Performance</div>
+    <div style={abs(24, 120, ui(13, 400, C.muted2))}>Project</div>
+    <div style={abs(24, 148, ui(32, 700))}>Launch film</div>
+    <div style={abs(24, 228, ui(15, 600))}>Renders</div>
     <div style={abs(300, 226, { ...ui(12, 500, C.muted), padding: "3px 10px", borderRadius: 10, border: `1px solid ${C.line}` })}>Month</div>
-    {["40k", "30k", "20k", "10k", "0k"].map((t, i) => <div key={t} style={abs(24, 284 + i * 43, ui(10, 400, C.muted2))}>{t}</div>)}
+    
     {BARS.map(([a, b], i) => (
       <React.Fragment key={i}>
         <div style={abs(72 + i * 43, 462 - 170 * a, { width: 11, height: 170 * a, borderRadius: 6, background: C.blue })} />
@@ -121,16 +121,16 @@ const Perf: React.FC = () => (
       </React.Fragment>
     ))}
     <div style={abs(26, 516, { display: "flex", gap: 16, ...ui(11, 400, C.muted) })}>
-      <span><span style={{ display: "inline-block", width: 9, height: 9, borderRadius: 2, background: C.ink, marginRight: 6 }} />Views</span>
-      <span><span style={{ display: "inline-block", width: 9, height: 9, borderRadius: 2, background: C.blue, marginRight: 6 }} />Shares</span>
+      <span><span style={{ display: "inline-block", width: 9, height: 9, borderRadius: 2, background: C.ink, marginRight: 6 }} />16:9</span>
+      <span><span style={{ display: "inline-block", width: 9, height: 9, borderRadius: 2, background: C.blue, marginRight: 6 }} />9:16</span>
     </div>
     <div style={abs(24, 568, { width: 162, height: 159, borderRadius: 16, background: C.ink })}>
-      <div style={abs(16, 96, ui(12, 400, "rgba(255,255,255,0.7)"))}>Watch time</div>
-      <div style={abs(16, 116, ui(19, 600, C.white))}>18.5k h</div>
+      <div style={abs(16, 96, ui(12, 400, "rgba(255,255,255,0.7)"))}>Resolution</div>
+      <div style={abs(16, 116, ui(19, 600, C.white))}>1080p</div>
     </div>
     <div style={abs(202, 568, { width: 162, height: 159, borderRadius: 16, background: C.blue })}>
-      <div style={abs(16, 96, ui(12, 400, "rgba(255,255,255,0.8)"))}>CTR</div>
-      <div style={abs(16, 116, ui(19, 600, C.white))}>+14.5 %</div>
+      <div style={abs(16, 96, ui(12, 400, "rgba(255,255,255,0.8)"))}>Frame rate</div>
+      <div style={abs(16, 116, ui(19, 600, C.white))}>30 fps</div>
     </div>
     <div style={abs(165, 730, { width: 60, height: 60, borderRadius: 30, background: C.blue, boxShadow: "0 6px 16px rgba(63,140,232,0.4)" })} />
     {[46, 110, 280, 344].map((x) => <div key={x} style={abs(x - 9, 772, { width: 18, height: 18, borderRadius: 5, border: `1.8px solid ${C.muted2}` })} />)}
