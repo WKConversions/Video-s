@@ -1,7 +1,7 @@
 // Segment 4 helpers: quad -> matrix3d, homographies, per-frame table lookups, the pixel-mosaic and directional-blur
 // SVG filters, and a 24-unit outline icon set.
 import React from "react";
-import { F, clamp01, lerp } from "./lib";
+import { F, lerp } from "./lib";
 
 export type P2 = [number, number];
 export type Quad = [P2, P2, P2, P2]; // TL, TR, BR, BL
@@ -62,7 +62,7 @@ export const QuadLayer: React.FC<{ w: number; h: number; q: Quad; children: Reac
  * and high-contrast like the reference's */
 export const mosaicId = (b: number) => `s4px${b}`;
 export const MOSAIC_SIZES = [3, 4, 8, 16];
-export const FilterDefs: React.FC<{ dirBlur?: number }> = ({ dirBlur = 0 }) => (
+export const FilterDefs: React.FC = () => (
   <svg width={0} height={0} style={{ position: "absolute" }}>
     <defs>
       {MOSAIC_SIZES.map((b) => {
@@ -78,9 +78,6 @@ export const FilterDefs: React.FC<{ dirBlur?: number }> = ({ dirBlur = 0 }) => (
           </filter>
         );
       })}
-      <filter id="s4dir" x="-0.1" y="-0.1" width="1.2" height="1.2" colorInterpolationFilters="sRGB">
-        <feGaussianBlur stdDeviation={`${Math.max(0.01, dirBlur)} 0`} />
-      </filter>
     </defs>
   </svg>
 );
@@ -146,5 +143,3 @@ export const Icon: React.FC<{ k: IconKind; cx: number; cy: number; size: number;
   return <g transform={`translate(${cx - size / 2} ${cy - size / 2}) scale(${size / 24})`}>{body[k]}</g>;
 };
 
-/** expo ease helpers */
-export const sat = clamp01;

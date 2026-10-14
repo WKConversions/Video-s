@@ -1,6 +1,7 @@
 // Segment 4, shot B: the "WKC Studio" panel (the reference's app panel), 1540 x 1000 local px (§4.4, §9.3): sidebar
 // tools, header, the composition preview playing a real WKC client clip, the voice-over clip, a keyframe block, three
 // timeline layer rows with a playhead, and the project column (Raphael Wind, storyboard scenes, recent projects).
+// The measured quad is the front face; the slab's dark sides lie just outside it (PanelSides).
 import React from "react";
 import { Img, OffthreadVideo, Sequence, staticFile } from "remotion";
 import { C, F } from "./lib";
@@ -25,12 +26,17 @@ const WAVE = Array.from({ length: 44 }, (_, i) => {
   return 4 + Math.min(1, v) * 26;
 });
 
+/** the slab's dark sides, seen just outside the front face: top 7, right 16 local px (measured on the reference) */
+export const PanelSides: React.FC = () => (
+  <div style={{ position: "absolute", left: 0, top: -7, width: PW + 16, height: PH + 7, borderRadius: "26px 34px 24px 24px", background: INK }} />
+);
+
+/** the front face, (0,0)-(1540,1000) = the measured quad */
 export const StudioPanel: React.FC = () => (
-  <div style={{ position: "absolute", left: 0, top: 0, width: PW, height: PH, borderRadius: "24px 30px 24px 24px", background: INK }}>
-    {/* the front face; the ink shows as the slab's top (8) and right (16) sides */}
-    <div style={{ position: "absolute", left: 0, top: 8, right: 16, bottom: 0, borderRadius: "20px 22px 24px 24px", background: C.page, overflow: "hidden" }}>
+  <div style={{ position: "absolute", left: 0, top: 0, width: PW, height: PH }}>
+    <div style={{ position: "absolute", left: 0, top: 0, width: PW, height: PH, borderRadius: "24px 28px 24px 24px", background: C.page, overflow: "hidden" }}>
       <div style={{ position: "absolute", left: 0, top: 0, width: 100, bottom: 0, background: C.white, boxShadow: "1px 0 0 #ECEEF1" }} />
-      <div style={{ position: "absolute", left: 1142, top: 0, width: 400, bottom: 0, background: "#FBFBFC", boxShadow: "-1px 0 0 #E8EAED" }} />
+      <div style={{ position: "absolute", left: 1150, top: 0, width: 400, bottom: 0, background: "#FBFBFC", boxShadow: "-1px 0 0 #E8EAED" }} />
     </div>
     {/* content, in panel-local px */}
     <div style={{ position: "absolute", left: 23, top: 28, width: 34, height: 34, borderRadius: 10, background: C.blue, display: "flex", alignItems: "center", justifyContent: "center" }}>

@@ -5,7 +5,7 @@ import React from "react";
 import { C } from "./lib";
 import { PANEL, WALL } from "./seg4_data";
 import { Arrow, CH, CW, StoryCard } from "./seg4_card";
-import { PH, PW, StudioPanel } from "./seg4_panel";
+import { PH, PW, PanelSides, StudioPanel } from "./seg4_panel";
 import { P2, QuadLayer, applyH, flatQuad, mosaicId, rectToQuadH, rows } from "./seg4_util";
 
 const WW = 2279, WH = 1154;
@@ -50,9 +50,12 @@ const Wall: React.FC<{ g: number }> = ({ g }) => {
 
 // ----------------------------------------------------------------------------------------- motion paths (§4.6)
 type Line = { p: P2; d: P2; appear: number; s: number[][] };
+/** heads s (wall-local px from the tail) as in §4.6; the reference's arrowhead tip sits about 8 screen px beyond s. L1 does
+ * not stop at 470: it keeps growing past the panel's top-left corner (tracked on the reference, 470-521) */
 const LINES: Line[] = [
-  { p: [-10, 136], d: [-0.967, 0.256], appear: 458, s: [[458, 98], [460, 299], [462, 378], [464, 448], [466, 501], [468, 558], [470, 610]] },
-  { p: [1340, 126], d: [-0.929, 0.369], appear: 458, s: [[458, 39], [460, 107], [462, 168], [464, 229], [466, 283], [468, 324], [470, 371], [474, 447], [478, 499], [482, 550], [486, 579], [490, 612], [494, 626], [498, 649], [502, 663], [506, 670], [510, 686], [514, 709]] },
+  { p: [-10, 136], d: [-0.967, 0.256], appear: 458, s: [[458, 98], [460, 299], [462, 378], [464, 448], [466, 501], [468, 558], [470, 606], [474, 698], [480, 798],
+    [486, 854], [490, 886], [496, 914], [500, 926], [505, 934], [510, 954], [516, 1022], [518, 1058], [521, 1106]] },
+  { p: [1340, 126], d: [-0.929, 0.369], appear: 458, s: [[458, 39], [460, 107], [462, 168], [464, 229], [466, 283], [468, 324], [470, 371], [474, 447], [478, 499], [482, 550], [486, 579], [490, 612], [494, 626], [498, 649], [502, 663], [506, 670], [510, 686], [514, 709], [518, 740]] },
   { p: [1880, 437], d: [-0.844, 0.536], appear: 471, s: [[471, 32], [472, 68], [474, 140], [476, 180], [478, 219], [482, 364], [486, 423], [490, 470], [494, 504], [498, 518], [502, 542], [506, 562], [510, 579], [514, 601]] },
   { p: [1845, 908], d: [-0.769, 0.639], appear: 462, s: [[462, 50], [475, 50], [476, 92], [480, 139], [484, 170], [488, 210], [490, 380], [494, 455], [498, 519], [502, 540], [506, 590], [510, 665], [514, 701], [518, 767]] },
 ];
@@ -65,8 +68,9 @@ const MotionPaths: React.FC<{ g: number }> = ({ g }) => {
       {LINES.map((l, i) => {
         if (g < l.appear) return null;
         const s = rows(l.s, g)[0];
-        const [x0, y0] = at(l, 0), [x1, y1] = at(l, s);
-        const len = Math.hypot(x1 - x0, y1 - y0), ux = (x1 - x0) / len, uy = (y1 - y0) / len;
+        const [x0, y0] = at(l, 0), [hx, hy] = at(l, s);
+        const len = Math.hypot(hx - x0, hy - y0), ux = (hx - x0) / len, uy = (hy - y0) / len;
+        const x1 = hx + ux * 8, y1 = hy + uy * 8; // the tip
         const hl = 30, hw = 10; // arrowhead length / half-width, screen px
         const bx = x1 - ux * hl, by = y1 - uy * hl;
         const ghost = i === 1 && g >= 461 && g <= 480 ? at(l, 1100) : null;
@@ -85,17 +89,27 @@ const MotionPaths: React.FC<{ g: number }> = ({ g }) => {
 };
 
 // ------------------------------------------------------------------------------------------------- panel (TB2)
+/** defocus while the panel flies in past the lens: Gaussian sigma of the face (calibrated on the reference's face
+ * content, about 0.45 of TB2's fitted values) and of the dark slab edge, which stays crisper in the reference */
+const FACE_BLUR: Record<number, number> = { 455: 9, 456: 9, 457: 10.5, 458: 9.5, 459: 5.5, 460: 4, 461: 2.7, 462: 2, 463: 1, 464: 0.6 };
+const SIDE_BLUR: Record<number, number> = { 455: 7, 456: 6, 457: 3, 458: 3.5, 459: 2, 460: 1.5, 461: 1, 462: 0.8, 463: 0.4 };
+const Blurred: React.FC<{ s?: number; children: React.ReactNode }> = ({ s, children }) =>
+  s ? <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, filter: `blur(${s}px)` }}>{children}</div> : <>{children}</>;
 const Panel: React.FC<{ g: number }> = ({ g }) => {
   const v = PANEL[g];
   if (!v) return null;
-  const blur = v[8];
-  const layer = <QuadLayer w={PW} h={PH} q={flatQuad(v)}><StudioPanel /></QuadLayer>;
-  return blur > 0.05 ? <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, filter: `blur(${blur}px)` }}>{layer}</div> : layer;
+  const q = flatQuad(v);
+  return (
+    <>
+      <Blurred s={SIDE_BLUR[g]}><QuadLayer w={PW} h={PH} q={q}><PanelSides /></QuadLayer></Blurred>
+      <Blurred s={FACE_BLUR[g]}><QuadLayer w={PW} h={PH} q={q}><StudioPanel /></QuadLayer></Blurred>
+    </>
+  );
 };
 
 /** the exit's directional blur: box smear length (px) per frame, along -x tilted 12 degrees up (§4.7; lengths fitted so
  * the edge spreads match the reference's: 2, 4, 8, 7-10, 15 px on the 08 · Mobile card's right edge) */
-const EXIT: Record<number, number> = { 525: 5, 526: 9, 527: 13, 528: 17, 529: 25 };
+const EXIT: Record<number, number> = { 525: 5, 526: 9, 527: 13, 528: 15, 529: 21 };
 const PAD = 500;
 export const ShotB: React.FC<{ g: number }> = ({ g }) => {
   const scene = <><Wall g={g} /><MotionPaths g={g} /><Panel g={g} /></>;

@@ -18,10 +18,26 @@ const cam = (g: number, p: P2): P2 => {
   const th = (rot * Math.PI) / 180, c = Math.cos(th), sn = Math.sin(th), vx = p[0] - 960, vy = p[1] - 540;
   return [960 + s * (c * vx - sn * vy) + tx, 540 + s * (sn * vx + c * vy) + ty];
 };
+/** TA2's mosaic-phase rows that the reference contradicts, re-measured from its card edges (right edge and height, since
+ * these three cards slide in from the left partly hidden under their left neighbour): [frame, scale, dx, dy] */
+const FIX: Record<string, number[][]> = {
+  Postgres4: [[391, 0.45, -278, -1], [392, 0.62, -262, -1], [393, 0.72, -246, -1], [394, 0.77, -231, -1], [395, 0.8, -216, -1], [396, 0.83, -202, -1],
+    [397, 0.85, -188, -1], [398, 0.86, -174, -1], [399, 0.87, -159, -1], [400, 0.87, -144, -1]],
+  BigQuery: [[397, 0.28, -122, -5], [398, 0.47, -118, -5], [399, 0.6, -112, -5], [400, 0.7, -103, -5], [401, 0.76, -95, -5], [402, 0.81, -86, -5],
+    [403, 0.84, -77, -5], [404, 0.87, -68, -5], [405, 0.88, -60, -5]],
+  DB2c4: [[398, 0.18, -178, -11], [399, 0.32, -166, -11], [400, 0.44, -155, -11], [401, 0.55, -146, -11], [402, 0.63, -137, -11]],
+};
+const entrance = (key: string) => {
+  const fx = FIX[key];
+  if (!fx) return TA2[key];
+  const last = fx[fx.length - 1][0];
+  return [...fx, ...TA2[key].filter((r) => r[0] > last)];
+};
+const ENT: Record<string, number[][]> = Object.fromEntries(Object.keys(TA2).map((k) => [k, entrance(k)]));
 /** a white card's screen quad at frame g (TA2 about the anchor, then TA1, then the screen offset) */
 const cardQuad = (slot: string, g: number): Quad => {
   const { q, a } = REST[slot];
-  const [s, dx, dy] = rows(TA2[KEY[slot]], g);
+  const [s, dx, dy] = rows(ENT[KEY[slot]], g);
   return q.map(([x, y]) => {
     const [X, Y] = cam(g, [a[0] + s * (x - a[0]), a[1] + s * (y - a[1])]);
     return [X + dx, Y + dy];
@@ -50,7 +66,7 @@ const Mosaic: React.FC<{ b: number; children: React.ReactNode; clip?: string }> 
   b ? <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, filter: `url(#${mosaicId(b)})`, clipPath: clip }}>{children}</div> : <>{children}</>;
 
 const WhiteCard: React.FC<{ slot: string; g: number }> = ({ slot, g }) => {
-  const f0 = TA2[KEY[slot]][0][0];
+  const f0 = ENT[KEY[slot]][0][0];
   if (g < f0) return null;
   const ar = LOCAL_ARROWS[slot];
   return (
@@ -75,14 +91,18 @@ const SendCard: React.FC<{ g: number }> = ({ g }) => {
   const card = <QuadLayer w={HW} h={HH} q={q}><StoryboardCard n={typed(g)} /></QuadLayer>;
   const sm = SMEAR[g];
   if (sm) return <><HBlurDef id="s4hz" s={sm / 2.56} /><div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, filter: "url(#s4hz)" }}>{card}</div></>;
-  if (g === 426) return <><Mosaic b={4} clip="inset(0 0 50% 0)">{card}</Mosaic><Mosaic b={8} clip="inset(50% 0 0 0)">{card}</Mosaic></>;
+  if (g === 426) {
+    const mid = (q[0][1] + q[1][1] + q[2][1] + q[3][1]) / 4; // upper half 4 px blocks, lower half 8 px (§3.5)
+    return <><Mosaic b={4} clip={`inset(0 0 ${1080 - mid}px 0)`}>{card}</Mosaic><Mosaic b={8} clip={`inset(${mid}px 0 0 0)`}>{card}</Mosaic></>;
+  }
   const b = g >= 427 ? 8 : g >= 424 ? 4 : 0;
   return <Mosaic b={b}>{card}</Mosaic>;
 };
 
 export const ShotA: React.FC<{ g: number }> = ({ g }) => (
   <>
-    {Object.keys(KEY).map((slot) => <WhiteCard key={slot} slot={slot} g={g} />)}
+    {/* right columns first: a card sliding in from the left passes under its left neighbour, as in the reference */}
+    {Object.keys(KEY).sort((a, b) => b.localeCompare(a)).map((slot) => <WhiteCard key={slot} slot={slot} g={g} />)}
     <SendCard g={g} />
   </>
 );
