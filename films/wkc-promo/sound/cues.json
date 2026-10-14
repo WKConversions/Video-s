@@ -289,45 +289,45 @@
   },
   {
    "id": "wk-swish-builtfor",
-   "frame": 1065,
-   "note": "#48 bright swish (f1058-1063) into the cut to the first 'Built for' statement (f1065)",
+   "frame": 1059,
+   "note": "#48 bright swish (f1052-1057) into the cut to the first 'Built for' statement (f1059, as the reference)",
    "db": 1
   },
   {
    "id": "wk-built-1",
-   "frame": 1065,
+   "frame": 1059,
    "note": "#49 word tick: 'Built for' statement 1 of 6",
    "db": 1
   },
   {
    "id": "wk-built-2",
-   "frame": 1080,
+   "frame": 1075,
    "note": "#49 word tick: 'Built for' statement 2 of 6",
    "db": -2
   },
   {
    "id": "wk-built-3",
-   "frame": 1095,
+   "frame": 1087,
    "note": "#49 word tick: 'Built for' statement 3 of 6",
    "db": 1
   },
   {
    "id": "wk-built-4",
-   "frame": 1110,
+   "frame": 1103,
    "note": "#49 word tick: 'Built for' statement 4 of 6",
-   "db": -2
+   "db": 1
   },
   {
    "id": "wk-built-5",
-   "frame": 1125,
+   "frame": 1116,
    "note": "#49 word tick: 'Built for' statement 5 of 6",
    "db": 2
   },
   {
    "id": "wk-built-6",
-   "frame": 1140,
-   "note": "#49 word tick: 'Built for' statement 6 of 6 (and the stop of the beat)",
-   "db": -6
+   "frame": 1127,
+   "note": "#49 word tick: 'Built for' statement 6 of 6 (the final statement's reveal)",
+   "db": -2
   },
   {
    "id": "wk-glitch-wkc",

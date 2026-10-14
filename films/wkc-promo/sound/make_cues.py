@@ -3,7 +3,7 @@
 # (lib/sfx/index.json) puts the right moment of the sound there, so:
 #   glitch swooshes start 4-5 frames before their flash (sync 0.133-0.15 s), reverse swooshes and risers stop dead on
 #   their hit, sub drops peak on their cut, UI blips land on their frame, the "Built for" ticks sit on every swap
-#   (f1065, 1080, 1095, 1110, 1125, 1140: the WKC list is 15 frames per statement, not the reference's 6).
+#   (f1059, 1075, 1087, 1103, 1116, 1127: the picture switches the six statements on the reference's own smear frames).
 # "db" sets each cue against its role level the way the reference balances it against the beat: "prominent" effects
 # (glitch swooshes, the swish into "Built for") well over the beat, "medium" ones (blips, swishes, clicks) clearly on
 # top, "subtle" ones (bubble pops, the ring, the ratchet) felt more than heard. Music at 0, no voice-over.
@@ -67,9 +67,9 @@ c("wk-swell-founders", 965, "#44 warm mid swell (from f954.6): the two founders'
 c("wk-revswoosh-three", 1005, "#45 reverse swoosh f992-1003.5, stopping dead before the '3' on the f1005 kick", 1)
 # 34-38.5 s  formats, "Built for"
 c("wk-whoosh-formats", 1021, "#47 whoosh with a tonal core (from f1020.6): 'Formats for your website and socials' rises in", 0)
-c("wk-swish-builtfor", 1065, "#48 bright swish (f1058-1063) into the cut to the first 'Built for' statement (f1065)", 4)
-for k, f in enumerate([1065, 1080, 1095, 1110, 1125, 1140]):
-    c(f"wk-built-{k + 1}", f, f"#49 word tick: 'Built for' statement {k + 1} of 6" + (" (and the stop of the beat)" if k == 5 else ""), 3 if k < 5 else 4)
+c("wk-swish-builtfor", 1059, "#48 bright swish (f1052-1057) into the cut to the first 'Built for' statement (f1059, as the reference)", 4)
+for k, f in enumerate([1059, 1075, 1087, 1103, 1116, 1127]):   # the picture's switch frames (the reference's own smear frames)
+    c(f"wk-built-{k + 1}", f, f"#49 word tick: 'Built for' statement {k + 1} of 6" + (" (the final statement's reveal)" if k == 5 else ""), 3 if k < 5 else 4)
 # 38-42 s  the stop (f1140), the WKConversions logo (f1153), "Let's talk", wkconversions.com
 c("wk-glitch-wkc", 1153, "#51 glitch swoosh, attack f1149: the last 'Built for' statement flashes white into the WKConversions logo", 3)
 c("wk-sting-logo", 1153, "#52 logo sting: open E6/9 chord + shimmer, bright layer cut at 39.25 s", 0)
@@ -98,8 +98,8 @@ LEVELS = {"wk-meet-1": -12, "wk-meet-2": -9, "wk-meet-3": -6, "wk-meet-4": -5, "
           "wk-pop-notify": -4, "wk-boom-platform": 2, "wk-swish-publish": 0, "wk-blip-web": -1, "wk-blip-linkedin": -3,
           "wk-blip-insta": -4, "wk-ratchet": -3, "wk-revswoosh-versions": 4, "wk-subdrop-detail": -7, "wk-blip-clear": -5,
           "wk-blip-smooth": -2, "wk-swish-frame": 1, "wk-swell-founders": 1, "wk-revswoosh-three": 1, "wk-whoosh-formats": 2,
-          "wk-swish-builtfor": 1, "wk-built-1": 1, "wk-built-2": -2, "wk-built-3": 1, "wk-built-4": -2, "wk-built-5": 2,
-          "wk-built-6": -6, "wk-glitch-wkc": -4, "wk-sting-logo": -10, "wk-blip-cta": -14, "wk-swell-talk": -13,
+          "wk-swish-builtfor": 1, "wk-built-1": 1, "wk-built-2": -2, "wk-built-3": 1, "wk-built-4": 1, "wk-built-5": 2,
+          "wk-built-6": -2, "wk-glitch-wkc": -4, "wk-sting-logo": -10, "wk-blip-cta": -14, "wk-swell-talk": -13,
           "wk-swell-url": -12}
 for e in cues: e["db"] = LEVELS[e["id"]]
 
