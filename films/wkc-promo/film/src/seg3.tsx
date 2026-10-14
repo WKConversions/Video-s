@@ -98,9 +98,9 @@ const RIM_GAIN = 520;
 const PillRim: React.FC<{ g: number }> = ({ g }) => {
   if (g > 334) return null;
   const w = at(PILL_W, 287, g), h = at(PILL_H, 287, g), cx = 960, cy = 539.5;
-  const prof = lerpArr(RIM, 287, Math.min(g, 331));
+  const prof = lerpArr(RIM, 287, Math.min(g, 333));
   const mask = conicMask(outline(w, h, cx, cy, 21, 7), prof.map((m) => m / RIM_GAIN), cx, cy);
-  const op = kf(g, [[331, 1], [332, 0.7], [333, 0.3], [334, 0.08]]);
+  const op = kf(g, [[333, 1], [334, 0.27]]); // the measured masses already hold the 331–333 fade
   const blur = g === 288 ? 3.5 : kf(g, [[330, 0], [331, 1.2], [332, 2], [334, 3]]);
   const d = stadium(cx, cy, w, h);
   return (

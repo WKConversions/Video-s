@@ -141,7 +141,7 @@ const Final: React.FC<{ n: number; op?: number }> = ({ n, op = 1 }) => {
           {stops.map((u) => <stop key={u} offset={u} stopColor="#F7F7F8" stopOpacity={Math.max(0.1, reveal(n, u))} />)}
         </linearGradient>
         <filter id="s8-bloom" x="-30%" y="-120%" width="160%" height="340%">
-          <feGaussianBlur stdDeviation="24" /><feComponentTransfer><feFuncA type="linear" slope="1.9" /></feComponentTransfer>
+          <feGaussianBlur stdDeviation="24" /><feComponentTransfer><feFuncA type="linear" slope="1.4" /></feComponentTransfer>
         </filter>
         <filter id="s8-bloom3" x="-40%" y="-200%" width="180%" height="500%">
           <feGaussianBlur stdDeviation="62" /><feComponentTransfer><feFuncA type="linear" slope="3.2" /></feComponentTransfer>
@@ -154,7 +154,7 @@ const Final: React.FC<{ n: number; op?: number }> = ({ n, op = 1 }) => {
         <g opacity={bloom}>
           <text x={x0} y={BASE} fontFamily={F.head} fontWeight={800} fontSize={fs} letterSpacing={TRK * fs} wordSpacing={WSP * fs} fill="#DCE8F8" filter="url(#s8-bloom3)" opacity={0.75}>{FINAL}</text>
           <text x={x0} y={BASE} fontFamily={F.head} fontWeight={800} fontSize={fs} letterSpacing={TRK * fs} wordSpacing={WSP * fs} fill="#E6F0FD" filter="url(#s8-bloom)">{FINAL}</text>
-          <text x={x0} y={BASE} fontFamily={F.head} fontWeight={800} fontSize={fs} letterSpacing={TRK * fs} wordSpacing={WSP * fs} fill="#FFFFFF" filter="url(#s8-bloom2)" opacity={0.4}>{FINAL}</text>
+          <text x={x0} y={BASE} fontFamily={F.head} fontWeight={800} fontSize={fs} letterSpacing={TRK * fs} wordSpacing={WSP * fs} fill="#FFFFFF" filter="url(#s8-bloom2)" opacity={0.18}>{FINAL}</text>
         </g>
       )}
       <text x={x0} y={BASE} fontFamily={F.head} fontWeight={800} fontSize={fs} letterSpacing={TRK * fs} wordSpacing={WSP * fs} fill="url(#s8-fin)">{FINAL}</text>
@@ -216,7 +216,7 @@ export const Carousel: React.FC<{ g: number }> = ({ g }) => {
       </AbsoluteFill>
       {n >= 1149 && (
         // the flash building toward the cut: a wide soft light around the line
-        <div style={{ position: "absolute", left: 905 - 760, top: 590 - 300, width: 1520, height: 600, borderRadius: "50%", opacity: tv(n, [[1149, 0.12], [1150, 0.3], [1151, 0.55], [1152, 0.85]]),
+        <div style={{ position: "absolute", left: 905 - 560, top: 590 - 300, width: 1120, height: 600, borderRadius: "50%", opacity: tv(n, [[1149, 0.12], [1150, 0.26], [1151, 0.5], [1152, 0.8]]),
           background: "radial-gradient(closest-side, rgba(214,228,246,0.62) 0%, rgba(214,228,246,0.3) 45%, rgba(214,228,246,0) 100%)" }} />
       )}
       {n >= 1127 && <Sparkles n={n} dx={dx} />}

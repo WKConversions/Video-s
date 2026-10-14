@@ -37,7 +37,7 @@
 | **B3** | **462-505** | 44 f | Decelerating orbit: the wall reaches rotY -43°. The panel settles parallel to the wall, about 1290 px in front of it. Dashed lines with travelling arrowheads grow toward the panel | continuous | continuous |
 | **B4** | **505-529** | 25 f | **Accelerating orbit** (ease-in) to rotY -56° with **horizontal motion blur** building over 525-529 | continuous | hard cut |
 
-No crossfades occur: every shot change is a hard cut and all motion happens inside the shots.
+No crossfades occur: every shot change is a hard cut and all motion happens inside the shots. **No cursor** appears anywhere in 384-529, and nothing is clicked: the next cursor is seg5's, already in mid-air at 530.
 
 ---
 
@@ -488,6 +488,8 @@ Keep every sync point of §8:
 ---
 
 ## Appendix: data tables
+
+Machine-readable copies of the same data (if the scratch dir still exists): `/tmp/claude-0/-home-user-Video-s/7c0b2c2d-fb9e-5a4a-bb36-f16fc655f937/scratchpad/wkc-seg4c/wall_final.json` (per frame: `quad`, `H` = local→screen 3x3 homography, `pose`), `panel_final.json` (per frame: `quad`, `pose`, `rel`, `blur`), `cardtab.json` / `entrance.json` (shot A), `arrowheads.json` (dashed-line heads). The overlay checks are `chkA.jpg` (shot A model from these tables, frames 389/395/402/410/418/426) and `chkB.jpg` (shot B).
 
 
 ### TA1 Shot A camera (similarity about the frame centre (960,540); maps the frame-420 layout to frame n)
