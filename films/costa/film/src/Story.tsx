@@ -490,7 +490,7 @@ export const Story: React.FC = () => {
   return (
     <AbsoluteFill style={{ background: C.paper }}>
       <Mesh g={g} tint={tint} />
-      <AbsoluteFill style={{ transform: `translate(${cam.x}px, ${cam.y}px) scale(${cam.s})`, transformOrigin: "50% 50%" }}>
+      <AbsoluteFill style={{ transform: `translate(${cam.x}px, ${cam.y}px) scale(${cam.s}) perspective(4000px) rotateX(0.01deg)`, transformOrigin: "50% 50%" }}>
         <Worlds g={g} />
         <Services g={g} />
         <Contact g={g} />
