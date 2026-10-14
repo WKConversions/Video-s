@@ -41,19 +41,20 @@ const Vignette: React.FC<{ o?: number }> = ({ o = 1 }) => (
 
 /* ---------- type: a statement revealed word by word from under a line (masked rise) ---------- */
 type Wd = { t: string; at: string; it?: boolean };
-const Say: React.FC<{ g: number; words: Wd[]; y: number; size: number; out?: string; x?: number; align?: "center" | "left" | "right"; color?: string; ls?: number; w?: number; roll?: boolean }> = ({
-  g, words, y, size, out, x, align = "center", color = C.ivory, ls = -0.01, w = 1920, roll }) => {
+const Say: React.FC<{ g: number; words: Wd[]; y: number; size: number; out?: string; x?: number; align?: "center" | "left" | "right"; color?: string; ls?: number; w?: number; roll?: boolean; shadow?: boolean }> = ({
+  g, words, y, size, out, x, align = "center", color = C.ivory, ls = -0.01, w = 1920, roll, shadow }) => {
   const ro = roll && out ? k(g, out, 0.9) : 0;
   const o = out && !roll ? k(g, out, 0.6, DEPART) : 0;
   if (o >= 1 || ro >= 1) return null;
   return (
     <div style={{ position: "absolute", left: 0, top: 0, width: x === undefined ? 1920 : w, display: "flex", justifyContent: align === "center" ? "center" : align === "left" ? "flex-start" : "flex-end",
-      gap: size * 0.24, transform: `translate(${x ?? 0}px, ${y - o * 14}px)`, opacity: 1 - o, fontFamily: SERIF, fontWeight: 400, fontSize: size, lineHeight: 1.18, letterSpacing: `${ls}em`, color, whiteSpace: "nowrap" }}>
+      gap: size * 0.24, transform: `translate(${x ?? 0}px, ${y - o * 14}px)`, opacity: 1 - o, fontFamily: SERIF, fontWeight: 400, fontSize: size, lineHeight: 1.18, letterSpacing: `${ls}em`, color, whiteSpace: "nowrap",
+      textShadow: shadow ? "0 0 24px rgba(10,9,8,0.7), 0 1px 3px rgba(10,9,8,0.6)" : undefined }}>
       {words.map((wd, i) => {
         const kk = k(g, wd.at, 0.9);
         return (
           <span key={i} style={{ display: "inline-block", overflow: "hidden", paddingBottom: size * 0.12, marginBottom: -size * 0.12 }}>
-            <span style={{ display: "inline-block", fontStyle: wd.it ? "italic" : "normal", transform: `translateY(${(1 - kk) * 105 - ro * 105}%)`, opacity: Math.min(1, kk * 2) }}>{wd.t}</span>
+            <span style={{ display: "inline-block", fontStyle: wd.it ? "italic" : "normal", transform: `translateY(${(1 - kk) * 105 - ro * 135}%)`, opacity: Math.min(1, kk * 2) * (1 - clamp01((ro - 0.55) / 0.35)) }}>{wd.t}</span>
           </span>
         );
       })}
@@ -85,13 +86,13 @@ const Few: React.FC<{ g: number }> = ({ g }) => {
   const out = k(g, "since-0.15", 0.5, DEPART);
   return (
     <AbsoluteFill style={{ opacity: 1 - out }}>
-      <Clip g={g} src="lobby-s.mp4" from="hook" to="few+1.0" trim={0.625} rate={1} z0={1.6} z1={1.72} pos="50% 96%" grade="grayscale(0.9) contrast(1.18) brightness(0.5)"
+      <Clip g={g} src="lobby-s.mp4" from="hook" to="few+1.0" trim={0.625} rate={1} z0={1.8} z1={1.9} pos="58% 100%" grade="grayscale(0.9) contrast(1.18) brightness(0.5)"
         clip={`inset(0 ${50 - half}% 0 ${50 - half}%)`} o={1 - clamp01((slit - 0.8) / 0.2) * 0.6} />
       <Clip g={g} src="dancer-s.mp4" from="few+0.3" to="since+0.3" trim={0.267} rate={1} z0={1.12} z1={1.2} pos="50% 30%" grade="grayscale(1) contrast(1.25) brightness(0.95)" o={dancer} />
       <Vignette />
       <Say g={g} y={390} size={150} out="few-0.2" words={[{ t: "Exclusivity", at: "w:exclusivity" }]} />
-      <Say g={g} y={590} size={50} out="few-0.15" words={[{ t: "isn't", at: "w:isnt", it: true }, { t: "about", at: "w:about", it: true }, { t: "being", at: "w:being", it: true }, { t: "seen", at: "w:seen", it: true }, { t: "by", at: "w:by", it: true }, { t: "everyone.", at: "w:everyone", it: true }]} />
-      <Say g={g} y={700} size={46} out="since-0.25" words={[{ t: "It's", at: "w:its" }, { t: "about", at: "w:about2" }, { t: "being", at: "w:being2" }]} />
+      <Say g={g} y={590} size={50} out="few-0.15" words={[{ t: "isn’t", at: "w:isnt", it: true }, { t: "about", at: "w:about", it: true }, { t: "being", at: "w:being", it: true }, { t: "seen", at: "w:seen", it: true }, { t: "by", at: "w:by", it: true }, { t: "everyone.", at: "w:everyone", it: true }]} />
+      <Say g={g} y={700} size={46} out="since-0.25" words={[{ t: "It’s", at: "w:its" }, { t: "about", at: "w:about2" }, { t: "being", at: "w:being2" }]} />
       <Say g={g} y={762} size={104} out="since-0.2" words={[{ t: "remembered", at: "w:remembered", it: true }, { t: "by", at: "w:by2", it: true }, { t: "the", at: "w:the", it: true }, { t: "few.", at: "w:few", it: true }]} />
     </AbsoluteFill>
   );
@@ -100,7 +101,7 @@ const Few: React.FC<{ g: number }> = ({ g }) => {
 /* ---------- 3 · since 1921 ---------- */
 const Since: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("since-0.1") || g > f("w:craftsmanship+0.6")) return null;
-  const out = k(g, "w:italian", 0.7, DEPART);
+  const out = k(g, "w:italian-0.45", 0.5, DEPART);
   const rule = k(g, "w:1921+0.3", 1.0, MOVE);
   return (
     <AbsoluteFill style={{ opacity: 1 - out, transform: `scale(${1 + out * 0.04})` }}>
@@ -124,7 +125,7 @@ const Craft: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("w:italian-0.2") || g > f("detail+0.8")) return null;
   const open = k(g, "w:italian-0.05", 1.1, MOVE);           // the stitched seam opens on the craft
   const s1 = sweep(g, "ind"), s2 = sweep(g, "pres"), s3 = sweep(g, "sty");
-  const edge = (p: number) => (p > 0 && p < 1 ? <div style={{ position: "absolute", top: 0, left: 1920 * (1 - p) - 1, width: 2, height: 1080, background: C.ivory, opacity: 0.8 }} /> : null);
+  const edge = (p: number) => (p > 0 && p < 1 ? <div style={{ position: "absolute", top: 0, left: 1920 * (1 - p) - 14, width: 28, height: 1080, background: "linear-gradient(90deg, rgba(242,236,226,0), rgba(242,236,226,0.55), rgba(242,236,226,0))" }} /> : null);
   return (
     <AbsoluteFill>
       <Clip g={g} src="stitch-s.mp4" from="w:italian-0.2" to="sty+0.6" trim={0.429} rate={1} z0={1.1} z1={1.22} pos="50% 50%" grade={WARM} clip={`inset(${(1 - open) * 50}% 0 ${(1 - open) * 50}% 0)`} />
@@ -134,9 +135,9 @@ const Craft: React.FC<{ g: number }> = ({ g }) => {
       <Vignette />
       {edge(s1.p)}{edge(s2.p)}{edge(s3.p)}
       <Caps g={g} t="Italian craftsmanship" at="w:craftsmanship" y={880} x={150} size={22} align="left" out="ind-0.1" />
-      <Say g={g} y={420} size={140} out="w:prestige+0.05" roll words={[{ t: "Individuality", at: "w:individuality+0.05", it: true }]} />
-      <Say g={g} y={420} size={140} out="w:style+0.05" roll words={[{ t: "Prestige", at: "w:prestige+0.05", it: true }]} />
-      <Say g={g} y={420} size={140} out="detail-0.15" words={[{ t: "Style", at: "w:style+0.05", it: true }]} />
+      <Say g={g} y={420} size={140} out="w:prestige+0.05" roll shadow words={[{ t: "Individuality", at: "w:individuality+0.05", it: true }]} />
+      <Say g={g} y={420} size={140} out="w:style+0.05" roll shadow words={[{ t: "Prestige", at: "w:prestige+0.05", it: true }]} />
+      <Say g={g} y={420} size={140} out="detail-0.45" shadow words={[{ t: "Style", at: "w:style+0.05", it: true }]} />
     </AbsoluteFill>
   );
 };
@@ -149,16 +150,16 @@ const Detail: React.FC<{ g: number }> = ({ g }) => {
   const web = k(g, "w:legacy", 1.4, MOVE);
   return (
     <AbsoluteFill>
-      <Clip g={g} src="needle-s.mp4" from="detail" to="legacy+0.6" trim={0.8} rate={1} z0={1.15} z1={1.32} pos="38% 55%" grade="grayscale(1) sepia(0.2) contrast(1.25) brightness(0.8)" o={inn} />
-      <Clip g={g} src="cut-s.mp4" from="legacy" to="goods+0.8" trim={0.667} rate={1} z0={1.12} z1={1.2} pos="45% 50%" grade={WARM} clip={s.clip} />
+      <Clip g={g} src="needle-s.mp4" from="detail" to="legacy+0.6" trim={0.8} rate={1} z0={1.15} z1={1.32} pos="26% 55%" grade="grayscale(1) sepia(0.2) contrast(1.25) brightness(0.8)" o={inn} />
+      <Clip g={g} src="cut-s.mp4" from="legacy" to="goods+0.8" trim={0.3} rate={1} z0={1.08} z1={1.14} pos="60% 40%" grade="saturate(0.72) sepia(0.2) contrast(1.12) brightness(0.95)" clip={s.clip} o={1 - k(g, "goods+0.3", 0.5, DEPART)} />
       <Vignette />
-      {s.p > 0 && s.p < 1 && <div style={{ position: "absolute", top: 0, left: 1920 * (1 - s.p) - 1, width: 2, height: 1080, background: C.ivory, opacity: 0.8 }} />}
+      {s.p > 0 && s.p < 1 && <div style={{ position: "absolute", top: 0, left: 1920 * (1 - s.p) - 14, width: 28, height: 1080, background: "linear-gradient(90deg, rgba(242,236,226,0), rgba(242,236,226,0.55), rgba(242,236,226,0))" }} />}
       <Say g={g} y={400} size={92} x={1060} w={760} align="left" out="legacy-0.32" words={[{ t: "Every", at: "w:every" }, { t: "detail", at: "w:detail" }]} />
       <Say g={g} y={510} size={92} x={1060} w={760} align="left" out="legacy-0.28" words={[{ t: "has", at: "w:has2", it: true }, { t: "intention.", at: "w:intention", it: true }]} />
       {/* the thread: a fine line drawn on "intention" */}
       <div style={{ position: "absolute", left: 1062, top: 640, width: 640, height: 1.5, background: C.ivory, transformOrigin: "0 50%", transform: `scaleX(${thread})`, opacity: 0.8 * (1 - k(g, "legacy-0.1", 0.4)) }} />
-      <Say g={g} y={380} size={92} x={150} w={900} align="left" out="goods-0.15" words={[{ t: "Every", at: "w:every2" }, { t: "design", at: "w:design" }]} />
-      <Say g={g} y={490} size={92} x={150} w={1100} align="left" out="goods-0.1" words={[{ t: "carries", at: "w:carries", it: true }, { t: "a", at: "w:a2", it: true }, { t: "legacy.", at: "w:legacy", it: true }]} />
+      <Say g={g} y={380} size={92} x={150} w={900} align="left" out="goods-0.15" shadow words={[{ t: "Every", at: "w:every2" }, { t: "design", at: "w:design" }]} />
+      <Say g={g} y={490} size={92} x={150} w={1100} align="left" out="goods-0.1" shadow words={[{ t: "carries", at: "w:carries", it: true }, { t: "a", at: "w:a2", it: true }, { t: "legacy.", at: "w:legacy", it: true }]} />
       <Web x={0} y={872} w={1920} k={web} h={7} o={1 - k(g, "goods+0.2", 0.5, DEPART)} />
     </AbsoluteFill>
   );
@@ -167,18 +168,18 @@ const Detail: React.FC<{ g: number }> = ({ g }) => {
 /* ---------- 7–8 · from leather goods to fashion statements; more than something to wear ---------- */
 const Goods: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("goods-0.1") || g > f("presence+0.8")) return null;
-  const l = k(g, "w:crafted-0.1", 0.9, MOVE), r = k(g, "w:distinctive-0.1", 0.9, MOVE);
+  const l = k(g, "w:crafted-0.1", 0.9, MOVE), r = k(g, "w:goods", 0.9, MOVE);
   const close = k(g, "wear", 0.9, MOVE);                     // the two halves close into one portrait
   const lw = mix(960, 0, close), rx = mix(960, 960 - 300, close), rw = mix(960, 600, close);
   return (
     <AbsoluteFill>
-      <Clip g={g} src="stitch-s.mp4" from="goods" to="wear+1.0" trim={5.714} rate={1} z0={1.25} z1={1.35} pos="50% 50%" grade={WARM} clip={`inset(0 ${1920 - lw}px 0 0)`} o={l} />
+      <Clip g={g} src="stitch-s.mp4" from="goods" to="wear+1.0" trim={5.714} rate={1} z0={1.25} z1={1.35} pos="78% 45%" grade={WARM} clip={`inset(0 ${1920 - lw}px 0 0)`} o={l * (1 - close)} />
       <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, clipPath: `inset(${BAR}px ${1920 - rx - rw * r}px ${BAR}px ${rx}px)` }}>
-        <Clip g={g} src="coat-s.mp4" from="w:distinctive-0.1" to="presence+0.8" trim={0.75} rate={1} z0={1} z1={1.06} pos="50% 30%" grade={WARM}
+        <Clip g={g} src="coat-s.mp4" from="w:goods" to="presence+0.8" trim={0.75} rate={1} z0={1} z1={1.06} pos="50% 30%" grade={WARM}
           style={{ left: rx, width: rw, height: 1080 }} />
       </div>
       <Vignette o={0.8} />
-      {close < 1 && <div style={{ position: "absolute", left: 959, top: BAR, width: 2, height: 1080 - 2 * BAR, background: C.ivory, opacity: 0.7 * r * (1 - close) }} />}
+      {close < 1 && <div style={{ position: "absolute", left: 959, top: BAR, width: 2, height: 1080 - 2 * BAR, background: C.ivory, opacity: 0.7 * r * (1 - clamp01(close * 4)) }} />}
       <Caps g={g} t="Leather goods" at="w:leather" y={880} x={150} size={22} align="left" out="wear" />
       <Caps g={g} t="Ready-to-wear" at="w:fashion" y={880} x={1100} size={22} align="left" out="wear" />
       <Say g={g} y={430} size={64} x={150} w={460} align="left" out="presence-0.1" words={[{ t: "More", at: "w:more", it: true }, { t: "than", at: "w:than", it: true }]} />
@@ -211,17 +212,18 @@ const Presence: React.FC<{ g: number }> = ({ g }) => {
         );
       })}
       <Vignette />
-      <Say g={g} y={800} size={56} out="crowd-0.1" words={[{ t: "A", at: "w:a3", it: true }, { t: "presence", at: "w:presence", it: true }, { t: "that", at: "w:that", it: true }, { t: "cannot", at: "w:cannot", it: true }, { t: "be", at: "w:be", it: true }, { t: "replicated.", at: "w:replicated", it: true }]} />
+      <div style={{ position: "absolute", left: 0, top: 690, width: 1920, height: 272, background: "linear-gradient(to bottom, rgba(10,9,8,0) 0%, rgba(10,9,8,0.6) 45%, rgba(10,9,8,0.85) 100%)", opacity: inn }} />
+      <Say g={g} y={800} size={56} out="crowd-0.1" shadow words={[{ t: "A", at: "w:a3", it: true }, { t: "presence", at: "w:presence", it: true }, { t: "that", at: "w:that", it: true }, { t: "cannot", at: "w:cannot", it: true }, { t: "be", at: "w:be", it: true }, { t: "replicated.", at: "w:replicated", it: true }]} />
     </AbsoluteFill>
   );
 };
 
 /* ---------- 10–11 · not the crowd: it parts, one stays; its light becomes a line ---------- */
 const Apart: React.FC<{ g: number }> = ({ g }) => {
-  if (g < f("crowd-0.1") || g > f("brand+0.6")) return null;
+  if (g < f("crowd-0.1") || g > f("brand+1.4")) return null;
   const inn = k(g, "crowd", 0.8);
   const part = k(g, "w:stand-0.05", 1.1, MOVE);             // the crowd parts around the one
-  const thin = k(g, "pause", 0.8, MOVE), turn = k(g, "pause+0.7", 0.7, MOVE);
+  const thin = k(g, "pause", 0.8, MOVE), turn = k(g, "pause+0.75", 0.6, MOVE);
   const cw = 360;                                            // the one: a centre strip
   const side = (left: boolean) => (
     <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, clipPath: left ? `inset(0 ${960 + cw / 2}px 0 0)` : `inset(0 0 0 ${960 + cw / 2}px)`,
@@ -234,14 +236,20 @@ const Apart: React.FC<{ g: number }> = ({ g }) => {
     <AbsoluteFill>
       {side(true)}{side(false)}
       <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, clipPath: `inset(${mix(0, BAR, part)}px ${960 - w / 2}px ${mix(0, BAR, part)}px ${960 - w / 2}px)`,
-        transform: `scale(${1 + part * 0.08})`, opacity: inn * (1 - turn) }}>
-        <Clip g={g} src="street-s.mp4" from="crowd-0.1" to="pause+1.0" trim={0.714} rate={1} z0={1.1} z1={1.16} pos="50% 50%" grade={`grayscale(${mix(0.9, 0.15, part)}) contrast(1.15) brightness(${mix(0.62, 0.95, part)})`} />
+        transform: `scale(${1 + part * 0.08})`, opacity: thin > 0.95 ? 0 : inn }}>
+        <Clip g={g} src="street-s.mp4" from="crowd-0.1" to="pause+1.0" trim={0.714} rate={1} z0={1.1} z1={1.16} pos="50% 50%" grade={COLD} o={1 - clamp01(part * 1.6)} />
+        {/* the one who stands apart is the one from the opening, in the light */}
+        <Clip g={g} src="dancer-s.mp4" from="w:stand-0.1" to="pause+1.0" trim={1.0} rate={1} z0={1.15} z1={1.2} pos="50% 30%" grade="grayscale(1) contrast(1.25) brightness(1.05)" o={clamp01(part * 1.6)} />
         <div style={{ position: "absolute", inset: 0, background: C.ivory, opacity: thin }} />
       </div>
       <Say g={g} y={300} size={56} out="w:stand-0.1" words={[{ t: "Not", at: "w:not", it: true }, { t: "designed", at: "w:designed", it: true }, { t: "to", at: "w:to3", it: true }, { t: "follow", at: "w:follow", it: true }, { t: "the", at: "w:the2", it: true }, { t: "crowd,", at: "w:crowd", it: true }]} />
       <Say g={g} y={760} size={74} out="pause" words={[{ t: "but", at: "w:but", it: true }, { t: "to", at: "w:to4", it: true }, { t: "stand", at: "w:stand", it: true }, { t: "apart", at: "w:apart", it: true }, { t: "from", at: "w:from2", it: true }, { t: "it.", at: "w:it2", it: true }]} />
       {/* the line of light turns and becomes the rule under the name */}
-      {thin > 0.95 && <div style={{ position: "absolute", left: 960 - mix(1, 340, turn), top: mix(BAR, 640, turn), width: mix(2, 680, turn), height: mix(1080 - 2 * BAR, 1.5, turn), background: C.ivory, opacity: 1 - k(g, "brand+0.2", 0.4) }} />}
+      {thin > 0.95 && (() => {
+        const len = mix(1080 - 2 * BAR, 680, turn), cy = mix(540, 550, turn);
+        return <div style={{ position: "absolute", left: 959, top: cy - len / 2, width: 2, height: len, background: C.ivory, transform: `rotate(${mix(0, 90, turn)}deg)`, transformOrigin: "50% 50%",
+          opacity: 1 - k(g, "brand+0.5", 0.8) }} />;
+      })()}
     </AbsoluteFill>
   );
 };
@@ -253,7 +261,7 @@ const Brand: React.FC<{ g: number }> = ({ g }) => {
   const W = 900, H = (W * 150) / 936.15;
   const push = 1 + 0.045 * clamp01((g - f("brand")) / (f("end") - f("brand")));
   return (
-    <AbsoluteFill style={{ transform: `scale(${push})`, transformOrigin: "50% 48%" }}>
+    <AbsoluteFill style={{ transform: `scale(${push})`, transformOrigin: "50% 48%", opacity: 1 - k(g, "end-1.0", 1.0, MOVE) }}>
       <div style={{ position: "absolute", left: 960 - W / 2, top: 420 - H / 2, width: W, height: H, overflow: "hidden" }}>
         <Img src={staticFile("img/gucci-wordmark-ivory.svg")} style={{ width: W, height: H, transform: `translateY(${(1 - wm) * 100}%)`, opacity: Math.min(1, wm * 1.5) }} />
       </div>
