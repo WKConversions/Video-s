@@ -9,3 +9,5 @@ films/*/sound/music/find*/
 
 # working copy of the skill while it is being trained (the result is committed under skills/)
 skill-staging/
+films/wkc-promo/ref/frames/
+films/wkc-promo/ref/audio.wav
