@@ -1,0 +1,538 @@
+{
+ "fps": 30,
+ "frames": 1125,
+ "library": "../../alumni/sound/lib",
+ "vo": {
+  "file": "../vo/vo.mp3",
+  "at": 0,
+  "compress": true
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "lufs": -23,
+  "duck_db": 6,
+  "fade_in": 0.2,
+  "fade_out": 0.5,
+  "lifts": [
+   [
+    34.8,
+    37.5,
+    4
+   ]
+  ]
+ },
+ "sfx": [
+  {
+   "frame": 2,
+   "id": "gen-appear",
+   "db": -3,
+   "note": "the Costa del Sol window"
+  },
+  {
+   "frame": 30,
+   "id": "kenney-select-002",
+   "db": -5,
+   "note": "the pin"
+  },
+  {
+   "frame": 55,
+   "id": "gen-appear",
+   "db": -4,
+   "pitch": 2,
+   "note": "the Amsterdam window"
+  },
+  {
+   "frame": 77,
+   "id": "kenney-select-002",
+   "db": -5,
+   "pitch": 2,
+   "note": "the pin"
+  },
+  {
+   "frame": 105,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "pitch": -2,
+   "note": "the two windows move apart"
+  },
+  {
+   "frame": 124,
+   "id": "kenney-tick-004",
+   "db": -6,
+   "note": "the line stalls in the gap"
+  },
+  {
+   "frame": 173,
+   "id": "gen-impact-soft",
+   "db": -3,
+   "note": "the mark drops into the gap"
+  },
+  {
+   "frame": 178,
+   "id": "gen-shimmer",
+   "db": -6,
+   "note": "the brand"
+  },
+  {
+   "frame": 189,
+   "id": "gen-swell",
+   "db": -5,
+   "note": "the line closes through it"
+  },
+  {
+   "frame": 225,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": -6,
+   "note": "network node 1"
+  },
+  {
+   "frame": 227,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": -3,
+   "note": "network node 2"
+  },
+  {
+   "frame": 230,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": -1,
+   "note": "network node 3"
+  },
+  {
+   "frame": 232,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": 1,
+   "note": "network node 4"
+  },
+  {
+   "frame": 232,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "note": "both sides move closer"
+  },
+  {
+   "frame": 234,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": 3,
+   "note": "network node 5"
+  },
+  {
+   "frame": 264,
+   "id": "gen-whoosh-medium",
+   "db": -3,
+   "note": "the windows fold into the hub"
+  },
+  {
+   "frame": 266,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "note": "the cable draws"
+  },
+  {
+   "frame": 273,
+   "id": "kenney-maximize-009",
+   "db": -4,
+   "pitch": -3,
+   "note": "service tile 1"
+  },
+  {
+   "frame": 292,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 2,
+   "note": "the cable draws"
+  },
+  {
+   "frame": 300,
+   "id": "kenney-maximize-009",
+   "db": -4,
+   "pitch": -1,
+   "note": "service tile 2"
+  },
+  {
+   "frame": 321,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 3,
+   "note": "the cable draws"
+  },
+  {
+   "frame": 328,
+   "id": "kenney-maximize-009",
+   "db": -4,
+   "pitch": 1,
+   "note": "service tile 3"
+  },
+  {
+   "frame": 352,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 5,
+   "note": "the cable draws"
+  },
+  {
+   "frame": 359,
+   "id": "kenney-maximize-009",
+   "db": -4,
+   "pitch": 3,
+   "note": "service tile 4"
+  },
+  {
+   "frame": 392,
+   "id": "gen-whoosh-medium",
+   "db": -3,
+   "note": "the tiles retract, the hub moves"
+  },
+  {
+   "frame": 420,
+   "id": "gen-appear",
+   "db": -3,
+   "note": "Rienk"
+  },
+  {
+   "frame": 439,
+   "id": "kenney-drop-003",
+   "db": -2,
+   "note": "the pin lands"
+  },
+  {
+   "frame": 466,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "pitch": 2,
+   "note": "the card grows into the chat"
+  },
+  {
+   "frame": 476,
+   "id": "kenney-click-001",
+   "db": -12,
+   "note": "a key"
+  },
+  {
+   "frame": 478,
+   "id": "kenney-click-001",
+   "db": -12,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 480,
+   "id": "kenney-click-001",
+   "db": -12,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 482,
+   "id": "kenney-click-001",
+   "db": -12,
+   "pitch": 3,
+   "note": "a key"
+  },
+  {
+   "frame": 484,
+   "id": "kenney-click-001",
+   "db": -12,
+   "pitch": 1,
+   "note": "a key"
+  },
+  {
+   "frame": 487,
+   "id": "kenney-click-001",
+   "db": -12,
+   "note": "a key"
+  },
+  {
+   "frame": 489,
+   "id": "kenney-click-001",
+   "db": -12,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 491,
+   "id": "kenney-click-001",
+   "db": -12,
+   "pitch": -2,
+   "note": "a key"
+  },
+  {
+   "frame": 494,
+   "id": "kenney-select-001",
+   "db": -4,
+   "note": "the second message"
+  },
+  {
+   "frame": 518,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "note": "the line runs to the people on location"
+  },
+  {
+   "frame": 530,
+   "id": "kenney-select-002",
+   "db": -4,
+   "note": "Contact gelegd"
+  },
+  {
+   "frame": 535,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": -4,
+   "note": "contact 1"
+  },
+  {
+   "frame": 538,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": -1,
+   "note": "contact 2"
+  },
+  {
+   "frame": 541,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": 2,
+   "note": "contact 3"
+  },
+  {
+   "frame": 553,
+   "id": "gen-whoosh-deep",
+   "db": -3,
+   "note": "the window grows to the table"
+  },
+  {
+   "frame": 593,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "note": "the update flies back"
+  },
+  {
+   "frame": 611,
+   "id": "gen-chime",
+   "db": -6,
+   "note": "the update lands"
+  },
+  {
+   "frame": 632,
+   "id": "gen-whoosh-medium",
+   "db": -3,
+   "note": "the windows leave"
+  },
+  {
+   "frame": 644,
+   "id": "gen-appear",
+   "db": -5,
+   "note": "the office"
+  },
+  {
+   "frame": 656,
+   "id": "gen-stamp",
+   "db": -5,
+   "note": "struck through"
+  },
+  {
+   "frame": 673,
+   "id": "gen-whoosh-whip",
+   "db": -8,
+   "pitch": -2,
+   "note": "the office drops away"
+  },
+  {
+   "frame": 698,
+   "id": "kenney-select-002",
+   "db": -4,
+   "pitch": -2,
+   "note": "followed up 1"
+  },
+  {
+   "frame": 702,
+   "id": "kenney-select-002",
+   "db": -4,
+   "note": "followed up 2"
+  },
+  {
+   "frame": 705,
+   "id": "kenney-select-002",
+   "db": -4,
+   "pitch": 2,
+   "note": "followed up 3"
+  },
+  {
+   "frame": 717,
+   "id": "gen-whoosh-medium",
+   "db": -4,
+   "note": "the network"
+  },
+  {
+   "frame": 720,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": -7,
+   "note": "node 1"
+  },
+  {
+   "frame": 722,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": -5,
+   "note": "node 2"
+  },
+  {
+   "frame": 724,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": -3,
+   "note": "node 3"
+  },
+  {
+   "frame": 726,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": -1,
+   "note": "node 4"
+  },
+  {
+   "frame": 727,
+   "id": "gen-swell",
+   "db": -7,
+   "note": "the lines shorten"
+  },
+  {
+   "frame": 728,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 1,
+   "note": "node 5"
+  },
+  {
+   "frame": 748,
+   "id": "gen-impact-soft",
+   "db": -7,
+   "note": "the lines thicken"
+  },
+  {
+   "frame": 792,
+   "id": "gen-pop",
+   "db": -8,
+   "pitch": -3,
+   "note": "a new possibility 1"
+  },
+  {
+   "frame": 795,
+   "id": "gen-pop",
+   "db": -8,
+   "pitch": -1,
+   "note": "a new possibility 2"
+  },
+  {
+   "frame": 798,
+   "id": "gen-pop",
+   "db": -8,
+   "pitch": 1,
+   "note": "a new possibility 3"
+  },
+  {
+   "frame": 800,
+   "id": "gen-pop",
+   "db": -8,
+   "pitch": 3,
+   "note": "a new possibility 4"
+  },
+  {
+   "frame": 803,
+   "id": "gen-pop",
+   "db": -8,
+   "pitch": 5,
+   "note": "a new possibility 5"
+  },
+  {
+   "frame": 827,
+   "id": "gen-whoosh-medium",
+   "db": -3,
+   "note": "the network collapses into the hub"
+  },
+  {
+   "frame": 834,
+   "id": "kenney-maximize-009",
+   "db": -5,
+   "note": "Costa del Sol"
+  },
+  {
+   "frame": 841,
+   "id": "kenney-maximize-009",
+   "db": -5,
+   "pitch": 3,
+   "note": "Amsterdam"
+  },
+  {
+   "frame": 863,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "note": "one line"
+  },
+  {
+   "frame": 876,
+   "id": "gen-chime",
+   "db": -11,
+   "note": "one network"
+  },
+  {
+   "frame": 896,
+   "id": "gen-swell",
+   "db": -3,
+   "auto_level": false,
+   "note": "the mark rises into the logo"
+  },
+  {
+   "frame": 900,
+   "id": "gen-shimmer",
+   "db": -5,
+   "auto_level": false,
+   "note": "Costa Connect"
+  },
+  {
+   "frame": 935,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "note": "the cards move to the corners"
+  },
+  {
+   "frame": 1012,
+   "id": "gen-whoosh-medium",
+   "db": -4,
+   "auto_level": false,
+   "note": "the logo lifts"
+  },
+  {
+   "frame": 1033,
+   "id": "gen-whoosh-short",
+   "db": -8,
+   "note": "the lines run into the button"
+  },
+  {
+   "frame": 1034,
+   "id": "gen-appear",
+   "db": -3,
+   "note": "the button"
+  },
+  {
+   "frame": 1087,
+   "id": "kenney-click-001",
+   "db": -2,
+   "auto_level": false,
+   "note": "the click"
+  },
+  {
+   "frame": 1088,
+   "id": "gen-success",
+   "db": -5,
+   "note": "the call answered"
+  }
+ ]
+}
