@@ -80,7 +80,7 @@ const Nav: React.FC<{ on: string }> = ({ on }) => (
 );
 const Pic: React.FC<{ src: string; x: number; y: number; w: number; h: number; pos?: string }> = ({ src, x, y, w, h, pos }) => (
   <div style={{ position: "absolute", left: x, top: y, width: w, height: h, borderRadius: 20, overflow: "hidden", background: SAND }}>
-    <Img src={staticFile(src)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: pos ?? "50% 50%", filter: "saturate(0.82)" }} />
+    <Img src={staticFile(src)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: pos ?? "50% 50%", filter: "saturate(0.5) brightness(1.03)" }} />
   </div>
 );
 const H: React.FC<{ x: number; y: number; size?: number; children: React.ReactNode }> = ({ x, y, size = 58, children }) => (

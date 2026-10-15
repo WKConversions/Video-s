@@ -14,7 +14,7 @@ L.update({"hook": 0.0, "meet": W["w:meet"] - 0.15, "tell": W["w:just"] - 0.25, "
 TAP, TAP2, TICK, CLICK, POP = "kenney-select-002", "kenney-select-001", "kenney-tick-004", "kenney-click-001", "kenney-drop-003"
 cues = []
 def cue(label, off, sid, db=0, pitch=0, note=""):
-    cues.append({"frame": max(0, round((L[label] + off) * FPS)), "id": sid, "db": db, **({"pitch": pitch} if pitch else {}), "note": note})
+    cues.append({"frame": max(0, round((L[label] + off) * FPS)), "id": sid, "db": db + 5, **({"pitch": pitch} if pitch else {}), "note": note})
 def keys(label, off, n, step, db=-20):
     for i in range(n): cue(label, off + i * step, CLICK, db, [0, 2, -1, 3, 1, -2][i % 6], "a key")
 
@@ -47,10 +47,11 @@ cue("w:free", 0.0, "gen-pop", -10, 2, "Free")
 cue("w:happy", 0.0, "gen-whoosh-short", -13, note="the phone turns in")
 cue("w:its", 0.0, CLICK, -8, note="Get it")
 cue("w:yours", 0.0, "gen-pop", -10, 2, "It's yours")
-cue("w:just3", 0.0, "gen-whoosh-medium", -10, note="blue floods the frame")
+cue("w:just3", 0.0, "gen-whoosh-medium", -11, note="the phone clears")
 for i in range(3): cue("w:499", i * 0.12, TICK, -11, [0, 2, 4][i], "a digit lands")
 cue("w:499", 0.35, "gen-impact-soft", -9, note="499")
 cue("w:kroner", 0.0, TAP, -12, 1, "kr.")
+cue("w:need", -0.12, CLICK, -8, note="the cursor clicks into the address bar")
 for i in range(8): cue("w:need", 0.05 + i * 0.07, CLICK, -21, [0, 2, -1, 3, 1, -2, 0, 2][i], "a key")
 cue("w:hosting", 0.1, TAP2, -11, note="Live")
 cue("w:weve", -0.2, "gen-whoosh-medium", -12, note="back to cream, the globe")
@@ -61,10 +62,12 @@ cue("w:just4", -0.1, "gen-whoosh-medium", -11, note="the devices rise")
 cue("brand", -0.2, "gen-whoosh-short", -13, 2, "the devices fold into the dot")
 cue("brand", 0.1, "gen-swell", -7, note="Creoble")
 cue("w:creoble2", 0.3, "gen-shimmer", -9, note="the blue dot")
+cue("w:creoble2", 1.07, CLICK, -6, note="the cursor clicks creoble.dk")
+cue("w:creoble2", 1.1, "gen-pop", -11, 3, "the pill rings")
 
 out = {"fps": FPS, "frames": round(END * FPS), "library": "../../alumni/sound/lib",
        "vo": {"file": "../vo/vo.mp3", "at": 0, "compress": True},
-       "music": {"file": "bed.wav", "at": 0, "lufs": -23, "duck_db": 6, "fade_in": 0.3, "fade_out": 0.6, "lifts": [[33.1, 35.6, 3]]},
+       "music": {"file": "bed.wav", "at": 0, "lufs": -25, "duck_db": 6, "fade_in": 0.3, "fade_out": 0.6, "lifts": [[33.1, 35.6, 3]]},
        "sfx": sorted(cues, key=lambda c: c["frame"])}
 json.dump(out, open(os.path.join(ROOT, "sound", "cues.json"), "w"), indent=1)
 print(len(cues), "cues")

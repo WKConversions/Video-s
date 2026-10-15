@@ -182,7 +182,7 @@ export const Site: React.FC<{ g: number; build: number; edit?: number; scroll?: 
         <div style={{ marginTop: 28, display: "inline-flex", padding: "15px 28px", borderRadius: 999, background: "#2B1E15", color: "#FFFDF9", fontFamily: SANS, fontWeight: 600, fontSize: 18 }}>Order today</div>
       </div>
       <div style={{ ...blk(2), position: "absolute", left: 640, top: 112, width: 584, height: 400, borderRadius: 22, overflow: "hidden" }}>
-        <Img src={staticFile("img/pastry.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${1.08 + 0.03 * build})`, filter: "saturate(0.82)" }} />
+        <Img src={staticFile("img/pastry.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${1.08 + 0.03 * build})`, filter: "saturate(0.5) brightness(1.03)" }} />
       </div>
       {/* the opening hours, added by typing */}
       <div style={{ position: "absolute", left: 56, top: 548, width: 1168, height: mix(0, 64, e2), overflow: "hidden", borderRadius: 14, background: "#F6EEE4", boxShadow: hi(e2), opacity: e2 }}>
@@ -192,7 +192,7 @@ export const Site: React.FC<{ g: number; build: number; edit?: number; scroll?: 
       </div>
       {[["img/flour.jpg", "Sourdough"], ["img/cake.jpg", "Cakes"], ["img/pastry.jpg", "Catering"]].map(([src, t], i) => (
         <div key={t} style={{ ...blk(3 + i * 0.4), position: "absolute", left: 56 + i * 396, top: 548 + mix(0, 84, e2), width: 376, height: 230, borderRadius: 18, overflow: "hidden", background: "#F2EAE0" }}>
-          <Img src={staticFile(src)} style={{ width: "100%", height: 170, objectFit: "cover", objectPosition: i === 2 ? "30% 60%" : "50% 50%", filter: "saturate(0.82)" }} />
+          <Img src={staticFile(src)} style={{ width: "100%", height: 170, objectFit: "cover", objectPosition: i === 2 ? "30% 60%" : "50% 50%", filter: "saturate(0.5) brightness(1.03)" }} />
           <div style={{ padding: "16px 20px", fontFamily: SERIF, fontWeight: 600, fontSize: 22, color: "#2B1E15" }}>{t}</div>
         </div>
       ))}
@@ -206,12 +206,12 @@ export const MobileSite: React.FC<{ g: number; build: number }> = ({ g, build })
   return (
     <div style={{ position: "absolute", inset: 0, background: "#FFFDF9", opacity: build }}>
       <div style={{ position: "absolute", left: 26, top: 74, fontFamily: SERIF, fontWeight: 600, fontSize: 22, color: "#3A2A1E" }}>Bageriet Lund</div>
-      <div style={{ position: "absolute", left: 18, top: 120, width: PW - 36, height: 260, borderRadius: 22, overflow: "hidden" }}><Img src={staticFile("img/pastry.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", filter: "saturate(0.82)" }} /></div>
+      <div style={{ position: "absolute", left: 18, top: 120, width: PW - 36, height: 260, borderRadius: 22, overflow: "hidden" }}><Img src={staticFile("img/pastry.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", filter: "saturate(0.5) brightness(1.03)" }} /></div>
       <div style={{ position: "absolute", left: 26, top: 404, width: PW - 52, fontFamily: SERIF, fontWeight: 500, fontSize: 34, lineHeight: 1.08, color: "#2B1E15" }}>
         <span style={{ opacity: 1 - e0 }}>Fresh sourdough, baked every morning.</span><span style={{ position: "absolute", left: 0, top: 0, opacity: e1 }}>Warm bread, made with love every morning.</span>
       </div>
       <div style={{ position: "absolute", left: 26, top: 560, padding: "13px 24px", borderRadius: 999, background: "#2B1E15", color: "#FFFDF9", fontFamily: SANS, fontWeight: 600, fontSize: 16 }}>Order today</div>
-      <div style={{ position: "absolute", left: 18, top: 640, width: PW - 36, height: 170, borderRadius: 18, overflow: "hidden" }}><Img src={staticFile("img/cake.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", filter: "saturate(0.82)" }} /></div>
+      <div style={{ position: "absolute", left: 18, top: 640, width: PW - 36, height: 170, borderRadius: 18, overflow: "hidden" }}><Img src={staticFile("img/cake.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", filter: "saturate(0.5) brightness(1.03)" }} /></div>
     </div>
   );
 };
@@ -249,8 +249,8 @@ export const AnswerChip: React.FC<{ icon: string; text: string; size?: number; s
 // A macOS-like pointer; its tip is at (x, y). press 0..1 shrinks it a little (a click).
 export const Cursor: React.FC<{ x: number; y: number; s?: number; o?: number; press?: number }> = ({ x, y, s = 1, o = 1, press = 0 }) => (
   <svg width={40 * s} height={52 * s} viewBox="0 0 40 52" style={{ position: "absolute", left: x - 6 * s, top: y - 3 * s, opacity: o, transform: `scale(${1 - 0.12 * press})`, transformOrigin: "6px 3px",
-    filter: "drop-shadow(0 6px 10px rgba(29,29,31,0.25))", overflow: "visible" }}>
-    <path d="M6 3 L6 41 L15.5 32.5 L21.5 47 L28 44.2 L22 30 L34.5 30 Z" fill={C.ink} stroke={C.white} strokeWidth={3} strokeLinejoin="round" />
+    filter: "drop-shadow(0 8px 14px rgba(42,134,224,0.30))", overflow: "visible" }}>
+    <path d="M6 3 L6 41 L15.5 32.5 L21.5 47 L28 44.2 L22 30 L34.5 30 Z" fill={C.blueDeep} stroke={C.white} strokeWidth={3.5} strokeLinejoin="round" />
   </svg>
 );
 // A 3D plane: children laid out in a w x h box centred on (x, y), turned by rx / ry / rz degrees, pushed by z px,
