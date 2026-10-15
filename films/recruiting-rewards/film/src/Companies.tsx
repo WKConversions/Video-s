@@ -1,0 +1,353 @@
+// Film 2, for companies: "No cost until someone is hired." 40 s, no voice-over. The thread object is the role: one
+// sentence becomes a job ad, the ad a marketplace assignment that specialist recruiters work in parallel, the
+// assignment a pipeline, the pipeline a hire, and only the hire an invoice.
+import React from "react";
+import { AbsoluteFill, Img } from "remotion";
+import { C, F, MOVE, SHADOW, SOFT, clamp01, lerp, tw } from "./tokens";
+import { AppShell, Avatar, Button, CandidateCard, Caret, Chip, Cursor, Headline, Icon, JobCard, Kicker, Page, Stars, img, sek, typed, words } from "./ui";
+
+const s = (x: number) => Math.round(x * 30);
+export const K = {
+  hook: 0, turn: s(2.6), post: s(5.0), ad: s(10.2), reward: s(14.8), match: s(19.6), pipe: s(24.4), hire: s(29.4), cta: s(34.0), end: s(40),
+};
+const NAV = [{ icon: "home", label: "Create job ad", on: true }, { icon: "kanban", label: "Pipeline" }, { icon: "briefcase", label: "Jobs" }];
+const SENTENCE = "We're hiring an Account Executive for our SaaS team in Stockholm, hybrid, 3-5 years of B2B sales.";
+const CRIT: [string, number][] = [["Role name", 32], ["Seniority", 84], ["Education", 999], ["Location", 66], ["Industry", 45], ["Skills", 98], ["Company", 51]];
+// the app window: drawn at 1500×880; centred and large for the sentence, then moved right for the ad and the reward
+const APP_W = 1500, APP_H = 880;
+
+const Pills: React.FC<{ g: number; items: [string, string][] }> = ({ g, items }) => {
+  const out = tw(g, K.turn - 12, K.turn + 8, SOFT);
+  return (
+    <div style={{ position: "absolute", left: 0, right: 0, top: 640, display: "flex", justifyContent: "center", gap: 30 }}>
+      {items.map(([icon, t], i) => {
+        const k = tw(g, 6 + i * 10, 22 + i * 10), strike = tw(g, 44 + i * 6, 56 + i * 6, MOVE);
+        return (
+          <div key={i} style={{ position: "relative", opacity: k * (1 - out), transform: `translateY(${(1 - k) * 30 + out * 60}px) scale(${lerp(0.92, 1, k)}) rotate(${out * (i - 1) * 4}deg)` }}>
+            <Chip icon={icon} tone="white" size={44} style={{ padding: "22px 36px", boxShadow: SHADOW.card, color: strike > 0.5 ? C.faint : C.ink }}>{t}</Chip>
+            <div style={{ position: "absolute", left: 18, top: "50%", height: 4, borderRadius: 2, background: C.ink, width: `calc(${strike * 100}% - 36px)` }} />
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+const RECRUITERS = [
+  { ini: "AB", name: "Arthur Berg", tag: "SaaS sales", tone: 2 },
+  { ini: "MH", name: "Maja Holm", tag: "B2B sales", tone: 3 },
+  { ini: "EL", name: "Erik Lund", tag: "Stockholm tech", tone: 4 },
+  { ini: "SN", name: "Sara Nyström", tag: "Account executives", tone: 1 },
+];
+const CANDS = [
+  { name: "Oskar Vinge", ini: "OV", tone: 0, ai: 8, stars: 4 },
+  { name: "Linnea Bäck", ini: "LB", tone: 3, ai: 7, stars: 3 },
+  { name: "Jonas Ek", ini: "JE", tone: 4, ai: 7, stars: 0 },
+  { name: "Ida Sjöberg", ini: "IS", tone: 2, ai: 6, stars: 0 },
+];
+
+export const Companies: React.FC<{ g: number }> = ({ g }) => {
+  const cam = `translate(${5 * Math.sin(g / 70)}px, ${3 * Math.cos(g / 85)}px) scale(${1.006 + 0.004 * Math.sin(g / 120)})`;
+  // ----- the app: centred for the sentence, moved right for the ad and the reward, folded into a card for the match
+  const appIn = tw(g, K.post - 6, K.post + 20);
+  const side = tw(g, K.ad + 2, K.ad + 26, MOVE);
+  const fold = tw(g, K.match - 2, K.match + 22, MOVE);
+  const sc = lerp(0.92, 0.78, side), ax = lerp((1920 - APP_W * 0.92) / 2, 770, side), ay = lerp(150, 170, side);
+  const L = (lx: number, ly: number) => ({ x: ax + sc * lx, y: ay + sc * ly });
+  const typeEnd = K.ad - 22;
+  const n = Math.round(SENTENCE.length * clamp01((g - (K.post + 22)) / (typeEnd - (K.post + 22))));
+  const ticked = CRIT.filter(([, at]) => n >= at).length;
+  const send = tw(g, K.ad - 6, K.ad + 2, SOFT);
+  const adK = tw(g, K.ad + 8, K.ad + 24);
+  const pub = tw(g, K.reward - 4, K.reward + 14, MOVE);
+  const rewardHi = tw(g, K.reward + 16, K.reward + 30);
+  const days = g >= K.reward + 50;
+  const verify = tw(g, K.reward + 104, K.reward + 112, SOFT);
+  const sent = tw(g, K.reward + 114, K.reward + 128);
+  // ----- the match
+  const CARD = { x: 410, y: 300, w: 1100, h: 190 };
+  const rec = RECRUITERS.map((_, i) => tw(g, K.match + 24 + i * 9, K.match + 44 + i * 9));
+  const lines = RECRUITERS.map((_, i) => tw(g, K.match + 34 + i * 9, K.match + 54 + i * 9, MOVE));
+  const matchOut = tw(g, K.pipe - 8, K.pipe + 12, MOVE);
+  // ----- the pipeline
+  const board = tw(g, K.pipe - 2, K.pipe + 20);
+  const drop = CANDS.map((_, i) => tw(g, K.pipe + 16 + i * 8, K.pipe + 34 + i * 8));
+  const mv1 = tw(g, K.pipe + 56, K.pipe + 76, MOVE), mv0 = tw(g, K.pipe + 72, K.pipe + 92, MOVE);
+  const drawer = tw(g, K.pipe + 96, K.pipe + 118, MOVE);
+  const hiredSt = g >= K.hire + 12;
+  const modal = tw(g, K.hire + 18, K.hire + 36);
+  const ctaK = tw(g, K.cta - 2, K.cta + 24, MOVE);
+
+  // pipeline geometry (screen)
+  const COLS = [{ t: "Waiting", c: "#C98A2E", x: 110 }, { t: "In process", c: "#6B5BD6", x: 500 }, { t: "Interview 1", c: C.green, x: 890 }];
+  const COLW = 360, COLY = 250;
+  // where each candidate card sits: column, row
+  const slot = (i: number): [number, number] => {
+    if (i === 0) return mv0 > 0 ? [lerp(0, 2, mv0), lerp(0, 0, mv0)] : [0, 0];
+    if (i === 1) return [lerp(0, 1, mv1), lerp(1, 0, mv1)];
+    return [0, i === 2 ? lerp(2, 1, mv0) : lerp(3, 2, mv0)];
+  };
+
+  return (
+    <AbsoluteFill style={{ overflow: "hidden" }}>
+      <Page g={g} tint={tw(g, K.hire, K.hire + 30, SOFT)} />
+      <AbsoluteFill style={{ transform: cam, transformOrigin: "50% 50%", willChange: "transform" }}>
+        {/* 1 · hook */}
+        {g < K.post + 6 && (
+          <>
+            <Pills g={g} items={[["receipt", "Retainers"], ["calendar", "Monthly fees"], ["briefcase", "Minimum volumes"]]} />
+            <Headline g={g} name="HNoCost" x={960} y={250} size={150} align="center" width={1500} out={K.post - 14} lh={1.02} words={[
+              { t: "No", at: K.turn }, { t: "cost", at: K.turn + 4 }, { t: "until", at: K.turn + 8 }, { t: "someone", at: K.turn + 20, green: true }, { t: "is", at: K.turn + 24, green: true }, { t: "hired.", at: K.turn + 28, green: true },
+            ]} />
+          </>
+        )}
+
+        {/* the app */}
+        {appIn > 0 && fold < 1 && (
+          <div style={{ position: "absolute", left: lerp(ax, CARD.x, fold), top: lerp(ay, CARD.y, fold), width: lerp(APP_W * sc, CARD.w, fold), height: lerp(APP_H * sc, CARD.h, fold), opacity: appIn, transform: `translateY(${(1 - appIn) * 120}px)`, borderRadius: 22 }}>
+            <div style={{ position: "absolute", left: 0, top: 0, transform: `scale(${sc})`, transformOrigin: "0 0", opacity: 1 - tw(g, K.match - 2, K.match + 10, SOFT) }}>
+              <AppShell w={APP_W} h={APP_H} nav={NAV} workspace="Nordvik Systems AB" ws="N">
+                {/* the sentence */}
+                {adK < 1 && (
+                  <div style={{ position: "absolute", inset: 0, opacity: 1 - adK, transform: `translateY(${-adK * 40}px)` }}>
+                    <Img src={img("logo-icon.svg")} style={{ position: "absolute", left: 625 - 38, top: 150, width: 76 }} />
+                    <div style={{ position: "absolute", left: 0, right: 0, top: 250, textAlign: "center", fontFamily: F.display, fontWeight: 600, fontSize: 54, letterSpacing: "-0.02em", color: C.ink }}>
+                      Who do you <span style={{ color: C.green }}>want to hire</span> today?
+                    </div>
+                    <div style={{ position: "absolute", left: 190, width: 870, top: 350, height: 190, borderRadius: 20, background: C.card, border: `2px solid ${n > 0 ? C.greenLine : C.line}`, boxShadow: SHADOW.lift, padding: "22px 26px" }}>
+                      <div style={{ fontFamily: F.ui, fontSize: 26, lineHeight: 1.45, color: n > 0 ? C.ink : C.faint }}>
+                        {n > 0 ? SENTENCE.slice(0, n) : "e.g. find a senior product designer in Stockholm with SaaS background"}<Caret g={g} h={30} on={n > 0 && g < K.ad} />
+                      </div>
+                      <div style={{ position: "absolute", left: 22, bottom: 18, display: "flex", alignItems: "center", gap: 8, padding: "7px 14px", borderRadius: 999, border: `1.5px solid ${C.line}`, fontFamily: F.ui, fontWeight: 600, fontSize: 17, color: C.muted }}>
+                        <Icon n="search" s={18} c={C.muted} />{ticked}/7 criteria detected
+                      </div>
+                      <div style={{ position: "absolute", right: 18, bottom: 14, width: 56, height: 56, borderRadius: 28, background: send > 0.5 ? C.greenDeep : C.green, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${1 - 0.08 * Math.sin(Math.PI * send)})` }}>
+                        <Icon n="arrowup" s={28} c={C.white} w={2.4} />
+                      </div>
+                    </div>
+                    <div style={{ position: "absolute", left: 140, width: 970, top: 572, display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 10 }}>
+                      {CRIT.map(([t, at], i) => {
+                        const on = n >= at, k = tw(g, K.post + 22 + (at / SENTENCE.length) * (typeEnd - K.post - 22), K.post + 30 + (at / SENTENCE.length) * (typeEnd - K.post - 22));
+                        return <div key={i} style={{ transform: `scale(${on ? 1 + 0.08 * Math.sin(Math.PI * k) : 1})` }}><Chip tone={on ? "green" : "line"} icon={on ? "check" : undefined} size={19}>{t}</Chip></div>;
+                      })}
+                    </div>
+                  </div>
+                )}
+                {/* the ad, written by Aifos; then publishing and reward */}
+                {adK > 0 && (
+                  <div style={{ position: "absolute", inset: 0, opacity: adK }}>
+                    <div style={{ position: "absolute", left: 60, top: 34, display: "flex", alignItems: "center", gap: 14, fontFamily: F.ui, fontWeight: 600, fontSize: 18, color: C.ink2 }}>
+                      <div style={{ width: 32, height: 32, borderRadius: 16, background: pub > 0.5 ? C.green : C.card, border: `2px solid ${C.green}`, color: pub > 0.5 ? C.white : C.green, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, fontWeight: 700 }}>{pub > 0.5 ? <Icon n="check" s={18} c={C.white} w={2.6} /> : 1}</div>Write the ad
+                      <div style={{ width: 60, height: 2, background: C.line }} />
+                      <div style={{ width: 32, height: 32, borderRadius: 16, border: `2px solid ${pub > 0.5 ? C.green : C.line}`, color: pub > 0.5 ? C.green : C.muted, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 15, fontWeight: 700 }}>2</div>Publish
+                    </div>
+                    {/* the ad */}
+                    <div style={{ position: "absolute", left: 60, top: 110, width: 760, opacity: 1 - pub, transform: `translateY(${-pub * 30}px)` }}>
+                      <div style={{ fontFamily: F.display, fontWeight: 600, fontSize: 56, color: C.ink, letterSpacing: "-0.02em" }}>{typed("Account Executive, SaaS", g, K.ad + 16, K.ad + 34)}</div>
+                      <div style={{ fontFamily: F.ui, fontSize: 18, color: C.muted, marginTop: 6, opacity: tw(g, K.ad + 34, K.ad + 44) }}>Stockholm · Hybrid · Sales · Mid (3-5 years) · 1 position</div>
+                      {([["About Nordvik Systems AB", "Nordvik Systems AB is building SaaS solutions that help businesses thrive, with a culture of collaboration and real impact for clients."], ["About the role", "We are looking for a driven Account Executive to join our expanding SaaS team in Stockholm, managing the full sales cycle and building strong relationships with B2B clients."], ["What you'll do", "Identify and pursue new business · Run discovery and demos · Close deals and grow accounts"]] as const).map(([h, p], i) => {
+                        const k = tw(g, K.ad + 44 + i * 16, K.ad + 64 + i * 16);
+                        return (
+                          <div key={i} style={{ marginTop: 26, opacity: k, transform: `translateY(${(1 - k) * 16}px)` }}>
+                            <div style={{ fontFamily: F.display, fontWeight: 600, fontSize: 28, color: C.ink }}>{h}</div>
+                            <div style={{ fontFamily: F.ui, fontSize: 19, lineHeight: 1.5, color: C.ink2, marginTop: 6, clipPath: `inset(0 ${(1 - tw(g, K.ad + 48 + i * 16, K.ad + 72 + i * 16, SOFT)) * 100}% 0 0)` }}>{p}</div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                    {/* publishing and reward */}
+                    {pub > 0 && (
+                      <div style={{ position: "absolute", left: 60, top: 110, width: 780, opacity: pub, transform: `translateY(${(1 - pub) * 40}px)` }}>
+                        <div style={{ fontFamily: F.display, fontWeight: 600, fontSize: 44, color: C.ink }}>Publishing and reward</div>
+                        <div style={{ fontFamily: F.ui, fontSize: 18, color: C.muted, marginTop: 6 }}>Set the reward, response time and screening questions before your ad goes live on the marketplace.</div>
+                        <div style={{ marginTop: 34, fontFamily: F.display, fontWeight: 600, fontSize: 32, color: C.ink }}>Reward</div>
+                        <div style={{ marginTop: 10, display: "inline-flex", alignItems: "center", gap: 14, padding: "14px 20px", borderRadius: 14, background: lerp(0, 1, rewardHi) > 0.01 ? C.greenSoft : "transparent", border: `1.5px solid ${rewardHi > 0.01 ? C.greenLine : "transparent"}`, boxShadow: `0 0 0 ${6 * rewardHi}px rgba(40,126,97,0.08)` }}>
+                          <div style={{ fontFamily: F.ui, fontWeight: 800, fontSize: 30, color: C.green }}>SEK 95 000</div>
+                          <div style={{ fontFamily: F.ui, fontSize: 20, color: C.ink2 }}>reward per hired</div>
+                          <Icon n="check" s={22} c={C.green} w={2.4} />
+                        </div>
+                        <div style={{ marginTop: 30, fontFamily: F.display, fontWeight: 600, fontSize: 32, color: C.ink }}>Response time to candidates</div>
+                        <div style={{ display: "flex", gap: 12, marginTop: 14 }}>
+                          {["2 business days", "3 business days", "4 business days", "Custom"].map((t, i) => <Chip key={i} tone={i === 1 && days ? "green" : "white"} size={19}>{t}</Chip>)}
+                        </div>
+                        <div style={{ marginTop: 30, fontFamily: F.display, fontWeight: 600, fontSize: 32, color: C.ink }}>Questions for recruiters</div>
+                        {["Can you share an example of how you've consistently exceeded sales targets?", "What CRM systems are you proficient in?"].map((q, i) => (
+                          <div key={i} style={{ display: "flex", gap: 12, marginTop: 12, fontFamily: F.ui, fontSize: 19, color: C.ink2, opacity: tw(g, K.reward + 60 + i * 8, K.reward + 74 + i * 8) }}><div style={{ width: 8, height: 8, borderRadius: 4, background: C.green, marginTop: 10, flex: "none" }} />{q}</div>
+                        ))}
+                      </div>
+                    )}
+                    {/* Aifos */}
+                    <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: 360, background: C.card, borderLeft: `1.5px solid ${C.lineSoft}`, padding: "30px 26px", transform: `translateX(${(1 - tw(g, K.ad + 20, K.ad + 40, MOVE)) * 360}px)` }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                        <Img src={img("logo-icon.svg")} style={{ width: 42 }} />
+                        <div style={{ fontFamily: F.display, fontWeight: 600, fontSize: 21, color: C.ink, lineHeight: 1.2 }}>Let Aifos help you define your role!</div>
+                      </div>
+                      {["Account Executive confirmed, good to anchor the ad.", "These are some draft screening questions:", "What CRM systems are you proficient in?", "We're ready. Confirmed role title, drafted screening questions and proposed salary details."].map((t, i) => {
+                        const k = tw(g, K.ad + 46 + i * 20, K.ad + 60 + i * 20);
+                        return <div key={i} style={{ marginTop: 18, padding: "12px 14px", borderRadius: 12, background: i === 3 ? C.greenSoft : i === 2 ? C.panel : "transparent", border: i === 3 ? `1.5px solid ${C.greenLine}` : "none", fontFamily: F.ui, fontSize: 17, lineHeight: 1.45, color: i === 3 ? C.greenDeep : C.ink2, opacity: k, transform: `translateY(${(1 - k) * 14}px)` }}>{t}</div>;
+                      })}
+                    </div>
+                    {/* send for verification */}
+                    <div style={{ position: "absolute", left: 60, bottom: 40, display: "flex", gap: 12, opacity: pub }}>
+                      <Button size={20} press={verify}>{sent > 0.5 ? "Sent for verification" : "Send for verification"}</Button>
+                      <Button size={20} ghost>Save draft</Button>
+                    </div>
+                  </div>
+                )}
+              </AppShell>
+            </div>
+          </div>
+        )}
+
+        {/* the match: the ad, folded into its marketplace card; specialist recruiters dock onto it */}
+        {fold > 0 && matchOut < 1 && (
+          <>
+            <div style={{ position: "absolute", left: CARD.x, top: CARD.y, opacity: tw(g, K.match + 6, K.match + 20) * (1 - matchOut), transform: `translateY(${-matchOut * 140}px) scale(${1 - 0.1 * matchOut})` }}>
+              <JobCard j={{ co: "Nordvik Systems AB", ini: "No", title: "Account Executive, SaaS", pos: "1 position", loc: "Stockholm · Hybrid", guar: "Sales · Mid (3-5 years)", hired: 0, proc: Math.round(4 * clamp01(rec[3])), wait: 0, reward: 95000 }} w={CARD.w} highlight={lines[3]} />
+            </div>
+            <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0, opacity: 1 - matchOut }}>
+              {RECRUITERS.map((_, i) => {
+                const x = 300 + i * 440, y0 = 650, x1 = CARD.x + CARD.w / 2 + (i - 1.5) * 120, y1 = CARD.y + CARD.h;
+                const d = `M ${x} ${y0} C ${x} ${y0 - 60} ${x1} ${y1 + 60} ${x1} ${y1}`;
+                return <path key={i} d={d} fill="none" stroke={C.green} strokeWidth={3} strokeDasharray="1 1" pathLength={1} strokeDashoffset={1 - lines[i]} strokeLinecap="round" opacity={0.7} />;
+              })}
+            </svg>
+            {RECRUITERS.map((r, i) => (
+              <div key={i} style={{ position: "absolute", left: 300 + i * 440 - 190, top: 650, width: 380, opacity: rec[i] * (1 - matchOut), transform: `translateY(${(1 - rec[i]) * 60 + matchOut * 80}px)` }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 14, padding: "18px 20px", borderRadius: 18, background: C.card, border: `1.5px solid ${C.lineSoft}`, boxShadow: SHADOW.card }}>
+                  <Avatar t={r.ini} s={54} tone={r.tone} />
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 21, color: C.ink }}>{r.name}</div>
+                    <div style={{ marginTop: 6 }}><Chip tone="green" size={14}>{r.tag}</Chip></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </>
+        )}
+
+        {/* the pipeline */}
+        {board > 0 && ctaK < 1 && (
+          <div style={{ position: "absolute", inset: 0, opacity: board * (1 - ctaK) }}>
+            {COLS.map((c, ci) => (
+              <div key={ci} style={{ position: "absolute", left: c.x, top: COLY, width: COLW, height: 760, borderRadius: 20, background: "rgba(243,240,236,0.8)", border: `1.5px solid ${C.lineSoft}`, transform: `translateY(${(1 - board) * 60}px)` }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "18px 20px", fontFamily: F.ui, fontWeight: 700, fontSize: 19, color: C.ink }}>
+                  <div style={{ width: 11, height: 11, borderRadius: 6, background: c.c }} />{c.t}
+                </div>
+              </div>
+            ))}
+            {CANDS.map((cd, i) => {
+              const [col, row] = slot(i);
+              const x = 110 + col * 390 + 15, y = COLY + 64 + row * 150;
+              const isHero = i === 0;
+              return (
+                <div key={i} style={{ position: "absolute", left: x, top: y, opacity: drop[i], transform: `translateY(${(1 - drop[i]) * -70}px)` }}>
+                  <CandidateCard name={cd.name} role={"Account Executive · " + RECRUITERS[i].name} ini={cd.ini} tone={cd.tone} ai={cd.ai} stars={cd.stars || undefined} glow={isHero ? tw(g, K.pipe + 92, K.pipe + 100) : 0} />
+                </div>
+              );
+            })}
+            {/* the candidate profile */}
+            {drawer > 0 && (
+              <div style={{ position: "absolute", left: 1290 + (1 - drawer) * 700, top: 150, width: 560, height: 860, borderRadius: 24, background: C.card, border: `1.5px solid ${C.line}`, boxShadow: SHADOW.window, padding: "30px 32px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+                  <Avatar t="OV" s={58} tone={0} />
+                  <div style={{ flex: 1 }}>
+                    <div style={{ fontFamily: F.display, fontWeight: 600, fontSize: 32, color: C.ink }}>Oskar Vinge</div>
+                    <div style={{ fontFamily: F.ui, fontSize: 16, color: C.muted }}>Account Executive · Mid</div>
+                  </div>
+                  <div style={{ position: "relative" }}>
+                    <Chip tone={hiredSt ? "green" : "amber"} icon={hiredSt ? "check" : undefined} size={17}>{hiredSt ? "Hired" : "Interview 1"}</Chip>
+                  </div>
+                </div>
+                <div style={{ display: "flex", gap: 22, marginTop: 26, fontFamily: F.ui, fontWeight: 600, fontSize: 16, color: C.muted, borderBottom: `1.5px solid ${C.lineSoft}`, paddingBottom: 12 }}>
+                  <span style={{ color: C.green }}>Info</span><span>AI score</span><span>Q&A</span><span>Chat</span>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: 14, marginTop: 22 }}>
+                  <div style={{ padding: "8px 12px", borderRadius: 12, background: C.amberSoft, color: "#9A6418", fontFamily: F.ui, fontWeight: 800, fontSize: 20 }}>AI 8</div>
+                  <div><div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 13, letterSpacing: "0.1em", color: C.muted }}>AI SCORE</div><div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 18, color: C.ink }}>8 / 10</div></div>
+                </div>
+                <div style={{ marginTop: 20, fontFamily: F.ui, fontWeight: 700, fontSize: 13, letterSpacing: "0.1em", color: C.muted }}>RATING</div>
+                <div style={{ marginTop: 8 }}><Stars n={4} s={26} fill={tw(g, K.pipe + 120, K.pipe + 140, SOFT)} /></div>
+                <div style={{ marginTop: 22, display: "flex", alignItems: "center", gap: 10, fontFamily: F.ui, fontSize: 18, color: C.ink2 }}><Icon n="users" s={20} /> Recruiter <b style={{ color: C.ink }}>Arthur Berg</b></div>
+                <div style={{ marginTop: 24, fontFamily: F.ui, fontWeight: 700, fontSize: 13, letterSpacing: "0.1em", color: C.muted }}>RECRUITER MOTIVATION</div>
+                <div style={{ marginTop: 10, fontFamily: F.ui, fontSize: 19, lineHeight: 1.5, color: C.ink2 }}>Five years of B2B SaaS sales in the Nordics. Runs the full cycle from first call to signed contract, and was the first name his references mentioned.</div>
+                <div style={{ marginTop: 22, fontFamily: F.ui, fontWeight: 700, fontSize: 13, letterSpacing: "0.1em", color: C.muted }}>SALARY EXPECTATION</div>
+                <div style={{ marginTop: 8, fontFamily: F.ui, fontSize: 18, color: C.ink2 }}>Base salary · 52 000 SEK per month</div>
+              </div>
+            )}
+          </div>
+        )}
+        <Cursor g={g} show={[K.post + 10, K.hire + 22]} clicks={[K.ad - 6, K.reward + 48, K.reward + 104, K.hire + 6]} path={[
+          [K.post + 10, 1400, 900], [K.ad - 30, 1400, 900], [K.ad - 8, L(250 + 1060 - 46, 350 + 190 - 42).x, L(250 + 1060 - 46, 350 + 190 - 42).y],
+          [K.ad + 26, 1500, 820], [K.reward + 30, 1500, 820], [K.reward + 46, L(250 + 60 + 300, 110 + 360).x, L(250 + 60 + 300, 110 + 360).y],
+          [K.reward + 84, L(250 + 60 + 300, 110 + 360).x, L(250 + 60 + 300, 110 + 360).y], [K.reward + 102, L(250 + 60 + 120, 880 - 40 - 26).x, L(250 + 60 + 120, 880 - 40 - 26).y],
+          [K.hire - 20, 1700, 300], [K.hire + 4, 1760, 207],
+        ]} />
+
+        {/* the hire */}
+        {modal > 0 && ctaK < 1 && (
+          <>
+            <AbsoluteFill style={{ background: "rgba(28,25,23,0.32)", opacity: modal * (1 - ctaK) }} />
+            <div style={{ position: "absolute", left: 960 - 340, top: 210, width: 680, padding: "40px 44px", borderRadius: 26, background: C.card, boxShadow: SHADOW.window, opacity: modal * (1 - ctaK), transform: `translateY(${(1 - modal) * 40}px) scale(${lerp(0.96, 1, modal)})` }}>
+              <div style={{ display: "flex", justifyContent: "center" }}><div style={{ width: 58, height: 58, borderRadius: 29, border: `3px solid ${C.green}`, display: "flex", alignItems: "center", justifyContent: "center" }}><Icon n="check" s={32} c={C.green} w={2.6} /></div></div>
+              <div style={{ marginTop: 16, textAlign: "center", fontFamily: F.display, fontWeight: 600, fontSize: 36, color: C.ink }}>Congrats, Oskar Vinge is hired!</div>
+              <div style={{ marginTop: 6, textAlign: "center", fontFamily: F.ui, fontSize: 19, color: C.muted }}>Here's what happens next with payment.</div>
+              <div style={{ display: "flex", gap: 8, marginTop: 24 }}>{[1, 1, 0, 0].map((on, i) => <div key={i} style={{ flex: 1, height: 6, borderRadius: 3, background: on ? C.green : C.lineSoft }} />)}</div>
+              <div style={{ marginTop: 8, textAlign: "center", fontFamily: F.ui, fontSize: 15, color: C.muted }}>Step 2 of 4 · Invoicing</div>
+              <div style={{ marginTop: 22, padding: "20px 22px", borderRadius: 16, border: `1.5px solid ${C.lineSoft}`, background: "#FCFBFA" }}>
+                <div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 13, letterSpacing: "0.1em", color: C.muted }}>INVOICE BREAKDOWN</div>
+                <div style={{ display: "flex", justifyContent: "space-between", marginTop: 12, fontFamily: F.ui, fontSize: 20, color: C.ink2 }}><span>Recruitment reward</span><span>{sek(95000)}</span></div>
+                <div style={{ height: 1.5, background: C.lineSoft, margin: "12px 0" }} />
+                <div style={{ display: "flex", justifyContent: "space-between", fontFamily: F.ui, fontWeight: 800, fontSize: 24, color: C.ink }}><span>Total to invoice</span><span>{sek(95000)}</span></div>
+              </div>
+              {[["mail", "We'll email you the invoice when the time comes."], ["file", "The reward is invoiced when the candidate starts the job."]].map(([ic, t], i) => (
+                <div key={i} style={{ display: "flex", gap: 12, marginTop: 16, fontFamily: F.ui, fontSize: 19, color: C.ink2, opacity: tw(g, K.hire + 40 + i * 8, K.hire + 54 + i * 8) }}><Icon n={ic} s={22} c={C.green} />{t}</div>
+              ))}
+            </div>
+          </>
+        )}
+
+        {/* headlines */}
+        <Kicker g={g} at={K.post} n={1} text="Post assignment" x={110} y={70} out={K.ad - 4} />
+        <Kicker g={g} at={K.ad} n={1} text="Post assignment" x={110} y={250} out={K.match - 8} />
+        <Headline g={g} name="HAd" x={110} y={310} size={66} width={600} out={K.reward - 8} words={words("One sentence. |A full job ad.", K.ad + 8)} />
+        <div style={{ position: "absolute", left: 110, top: 470, width: 560, fontFamily: F.ui, fontSize: 23, lineHeight: 1.5, color: C.muted, opacity: tw(g, K.ad + 40, K.ad + 54) * (1 - tw(g, K.reward - 8, K.reward, SOFT)) }}>Aifos writes the ad, then only asks for what it still needs.</div>
+        <Headline g={g} name="HReward" x={110} y={310} size={66} width={600} out={K.match - 8} words={words("Free to post. |Pay on the hire.", K.reward + 6)} />
+        <div style={{ position: "absolute", left: 110, top: 470, width: 560, fontFamily: F.ui, fontSize: 23, lineHeight: 1.5, color: C.muted, opacity: tw(g, K.reward + 36, K.reward + 50) * (1 - tw(g, K.match - 8, K.match, SOFT)) }}>No retainer, no monthly fee, no minimum volume.</div>
+        <Kicker g={g} at={K.match + 6} n={2} text="Get matched" x={110} y={90} out={K.pipe - 8} />
+        <Headline g={g} name="HMatch" x={110} y={140} size={60} width={1700} out={K.pipe - 8} words={words("Specialist recruiters |work your role in parallel.", K.match + 12)} />
+        <Kicker g={g} at={K.pipe} n={3} text="Collaborate" x={110} y={90} out={K.hire - 8} />
+        <Headline g={g} name="HPipe" x={110} y={140} size={60} width={1200} out={K.hire - 8} words={words("Screened candidates, |straight to your pipeline.", K.pipe + 6)} />
+        <Kicker g={g} at={K.hire} n={4} text="Reward" x={110} y={90} out={K.cta - 8} />
+        <Headline g={g} name="HHire" x={110} y={140} size={60} width={1200} out={K.cta - 8} words={words("You pay |when they start.", K.hire + 6)} />
+      </AbsoluteFill>
+
+      {/* the call to action: the navy panel grows out of the hire */}
+      {ctaK > 0 && (
+        <div style={{ position: "absolute", left: lerp(620, 0, ctaK), top: lerp(210, 0, ctaK), width: lerp(680, 1920, ctaK), height: lerp(640, 1080, ctaK), borderRadius: lerp(26, 0, ctaK), background: C.navy, overflow: "hidden" }}>
+          <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, opacity: tw(g, K.cta + 16, K.cta + 30) }}>
+            <div style={{ position: "absolute", left: -200, top: -300, width: 1200, height: 1000, borderRadius: "50%", background: "radial-gradient(circle, rgba(40,126,97,0.35) 0%, rgba(40,126,97,0) 65%)" }} />
+            <Img src={img("logo-white.svg")} style={{ position: "absolute", left: 960 - 230, top: 160, width: 460, opacity: tw(g, K.cta + 18, K.cta + 32) }} />
+            <Headline g={g} name="HCta" x={960} y={310} size={100} align="center" width={1700} color={C.white} words={[
+              { t: "No", at: K.cta + 26 }, { t: "cost", at: K.cta + 29 }, { t: "until", at: K.cta + 32 }, { t: "someone", at: K.cta + 38 }, { t: "is", at: K.cta + 41 }, { t: "hired.", at: K.cta + 44 },
+            ]} />
+            <div style={{ position: "absolute", left: 0, right: 0, top: 480, display: "flex", justifyContent: "center", gap: 14 }}>
+              {["Free to post", "30–45% lower cost than a traditional agency", "Pay only on result"].map((t, i) => {
+                const k = tw(g, K.cta + 52 + i * 6, K.cta + 66 + i * 6);
+                return (
+                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 22px", borderRadius: 999, background: "rgba(255,255,255,0.08)", border: "1.5px solid rgba(255,255,255,0.16)", fontFamily: F.ui, fontWeight: 600, fontSize: 23, color: C.white, opacity: k, transform: `translateY(${(1 - k) * 16}px)` }}>
+                    <Icon n="check" s={20} c="#7FD1AE" w={2.4} />{t}
+                  </div>
+                );
+              })}
+            </div>
+            <div style={{ position: "absolute", left: 0, right: 0, top: 610, display: "flex", justifyContent: "center", opacity: tw(g, K.cta + 72, K.cta + 86), transform: `translateY(${(1 - tw(g, K.cta + 72, K.cta + 86)) * 16}px)` }}>
+              <Button size={30} iconRight="arrow" press={tw(g, K.cta + 124, K.cta + 134, SOFT)}>Start hiring</Button>
+            </div>
+            <div style={{ position: "absolute", left: 0, right: 0, top: 750, textAlign: "center", fontFamily: F.ui, fontWeight: 600, fontSize: 26, color: "rgba(255,255,255,0.6)", opacity: tw(g, K.cta + 84, K.cta + 98) }}>recruitingrewards.com</div>
+          </div>
+        </div>
+      )}
+    </AbsoluteFill>
+  );
+};
