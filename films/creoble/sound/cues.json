@@ -1,0 +1,506 @@
+{
+ "fps": 30,
+ "frames": 1068,
+ "library": "../../alumni/sound/lib",
+ "vo": {
+  "file": "../vo/vo.mp3",
+  "at": 0,
+  "compress": true
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "lufs": -23,
+  "duck_db": 6,
+  "fade_in": 0.3,
+  "fade_out": 0.6,
+  "lifts": [
+   [
+    33.1,
+    35.6,
+    3
+   ]
+  ]
+ },
+ "sfx": [
+  {
+   "frame": 88,
+   "id": "gen-swell",
+   "db": -10,
+   "pitch": -2,
+   "note": "Meet"
+  },
+  {
+   "frame": 106,
+   "id": "gen-pop",
+   "db": -8,
+   "pitch": 3,
+   "note": "the blue dot"
+  },
+  {
+   "frame": 128,
+   "id": "gen-whoosh-medium",
+   "db": -11,
+   "pitch": -2,
+   "note": "the laptop rises"
+  },
+  {
+   "frame": 187,
+   "id": "kenney-select-001",
+   "db": -12,
+   "pitch": 2,
+   "note": "the field focuses"
+  },
+  {
+   "frame": 190,
+   "id": "kenney-click-001",
+   "db": -20,
+   "note": "a key"
+  },
+  {
+   "frame": 193,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 196,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 199,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": 3,
+   "note": "a key"
+  },
+  {
+   "frame": 202,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": 1,
+   "note": "a key"
+  },
+  {
+   "frame": 205,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": -2,
+   "note": "a key"
+  },
+  {
+   "frame": 208,
+   "id": "kenney-click-001",
+   "db": -20,
+   "note": "a key"
+  },
+  {
+   "frame": 211,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 214,
+   "id": "kenney-select-001",
+   "db": -12,
+   "pitch": 2,
+   "note": "the field focuses"
+  },
+  {
+   "frame": 217,
+   "id": "kenney-click-001",
+   "db": -20,
+   "note": "a key"
+  },
+  {
+   "frame": 220,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 223,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 226,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": 3,
+   "note": "a key"
+  },
+  {
+   "frame": 229,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": 1,
+   "note": "a key"
+  },
+  {
+   "frame": 232,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": -2,
+   "note": "a key"
+  },
+  {
+   "frame": 235,
+   "id": "kenney-click-001",
+   "db": -20,
+   "note": "a key"
+  },
+  {
+   "frame": 238,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 254,
+   "id": "kenney-select-001",
+   "db": -12,
+   "pitch": 2,
+   "note": "the field focuses"
+  },
+  {
+   "frame": 257,
+   "id": "kenney-click-001",
+   "db": -20,
+   "note": "a key"
+  },
+  {
+   "frame": 260,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 263,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 266,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": 3,
+   "note": "a key"
+  },
+  {
+   "frame": 269,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": 1,
+   "note": "a key"
+  },
+  {
+   "frame": 272,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": -2,
+   "note": "a key"
+  },
+  {
+   "frame": 275,
+   "id": "kenney-click-001",
+   "db": -20,
+   "note": "a key"
+  },
+  {
+   "frame": 278,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 316,
+   "id": "kenney-click-001",
+   "db": -6,
+   "note": "Build my website"
+  },
+  {
+   "frame": 319,
+   "id": "gen-shimmer",
+   "db": -12,
+   "note": "AI at work"
+  },
+  {
+   "frame": 326,
+   "id": "kenney-tick-004",
+   "db": -12,
+   "note": "step 1 done"
+  },
+  {
+   "frame": 336,
+   "id": "kenney-tick-004",
+   "db": -12,
+   "pitch": 3,
+   "note": "step 2 done"
+  },
+  {
+   "frame": 347,
+   "id": "kenney-tick-004",
+   "db": -12,
+   "pitch": 5,
+   "note": "step 3 done"
+  },
+  {
+   "frame": 368,
+   "id": "gen-whoosh-short",
+   "db": -13,
+   "note": "the site assembles"
+  },
+  {
+   "frame": 377,
+   "id": "kenney-drop-003",
+   "db": -15,
+   "pitch": -2,
+   "note": "block 1"
+  },
+  {
+   "frame": 391,
+   "id": "kenney-drop-003",
+   "db": -15,
+   "note": "block 2"
+  },
+  {
+   "frame": 404,
+   "id": "kenney-drop-003",
+   "db": -15,
+   "pitch": 2,
+   "note": "block 3"
+  },
+  {
+   "frame": 418,
+   "id": "kenney-drop-003",
+   "db": -15,
+   "pitch": 4,
+   "note": "block 4"
+  },
+  {
+   "frame": 443,
+   "id": "kenney-select-002",
+   "db": -11,
+   "note": "ready"
+  },
+  {
+   "frame": 459,
+   "id": "gen-whoosh-medium",
+   "db": -11,
+   "note": "laptop and phone"
+  },
+  {
+   "frame": 493,
+   "id": "gen-appear",
+   "db": -13,
+   "note": "the prompt"
+  },
+  {
+   "frame": 530,
+   "id": "kenney-click-001",
+   "db": -21,
+   "note": "a key"
+  },
+  {
+   "frame": 532,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 534,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 537,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": 3,
+   "note": "a key"
+  },
+  {
+   "frame": 539,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": 1,
+   "note": "a key"
+  },
+  {
+   "frame": 542,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": -2,
+   "note": "a key"
+  },
+  {
+   "frame": 544,
+   "id": "kenney-click-001",
+   "db": -21,
+   "note": "a key"
+  },
+  {
+   "frame": 545,
+   "id": "kenney-click-001",
+   "db": -7,
+   "note": "send"
+  },
+  {
+   "frame": 546,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 549,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 550,
+   "id": "gen-shimmer",
+   "db": -13,
+   "pitch": 3,
+   "note": "the site changes"
+  },
+  {
+   "frame": 551,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": 3,
+   "note": "a key"
+  },
+  {
+   "frame": 554,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": 1,
+   "note": "a key"
+  },
+  {
+   "frame": 556,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": -2,
+   "note": "a key"
+  },
+  {
+   "frame": 567,
+   "id": "kenney-select-002",
+   "db": -11,
+   "note": "Preview for free"
+  },
+  {
+   "frame": 577,
+   "id": "gen-whoosh-short",
+   "db": -15,
+   "pitch": -3,
+   "note": "the page scrolls"
+  },
+  {
+   "frame": 626,
+   "id": "gen-whoosh-medium",
+   "db": -12,
+   "pitch": -2,
+   "note": "the site comes to the centre"
+  },
+  {
+   "frame": 672,
+   "id": "gen-pop",
+   "db": -9,
+   "pitch": 2,
+   "note": "It's yours"
+  },
+  {
+   "frame": 702,
+   "id": "gen-impact-soft",
+   "db": -9,
+   "note": "499 kr."
+  },
+  {
+   "frame": 756,
+   "id": "gen-whoosh-short",
+   "db": -12,
+   "note": "hosting"
+  },
+  {
+   "frame": 778,
+   "id": "kenney-select-001",
+   "db": -11,
+   "note": "Live"
+  },
+  {
+   "frame": 800,
+   "id": "kenney-tick-004",
+   "db": -12,
+   "note": "included 1"
+  },
+  {
+   "frame": 805,
+   "id": "kenney-tick-004",
+   "db": -12,
+   "pitch": 3,
+   "note": "included 2"
+  },
+  {
+   "frame": 811,
+   "id": "kenney-tick-004",
+   "db": -12,
+   "pitch": 5,
+   "note": "included 3"
+  },
+  {
+   "frame": 833,
+   "id": "gen-whoosh-short",
+   "db": -13,
+   "pitch": -2,
+   "note": "no coding"
+  },
+  {
+   "frame": 863,
+   "id": "gen-whoosh-short",
+   "db": -14,
+   "pitch": 1,
+   "note": "no complexity"
+  },
+  {
+   "frame": 898,
+   "id": "gen-whoosh-medium",
+   "db": -11,
+   "note": "the devices return"
+  },
+  {
+   "frame": 969,
+   "id": "gen-swell",
+   "db": -7,
+   "note": "Creoble"
+  },
+  {
+   "frame": 982,
+   "id": "gen-shimmer",
+   "db": -9,
+   "note": "the blue dot"
+  }
+ ]
+}
