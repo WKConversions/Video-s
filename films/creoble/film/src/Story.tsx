@@ -19,7 +19,7 @@ const Say: React.FC<{ g: number; words: Wd[]; y: number; size: number; out?: str
   const o = out ? k(g, out, 0.6, DEPART) : 0;
   if (o >= 1) return null;
   return (
-    <div style={{ position: "absolute", left: 0, top: 0, width: 1920, display: "flex", justifyContent: "center", gap: size * 0.26, transform: `translate(${x ?? 0}px, ${y - o * 20}px)`,
+    <div style={{ position: "absolute", left: 0, top: 0, width: 1920, display: "flex", justifyContent: "center", gap: size * 0.26, transform: `translate(${x ?? 0}px, ${y - o * 20}px) perspective(4000px) rotateX(0.01deg)`,
       opacity: 1 - o, filter: o > 0 ? `blur(${o * 8}px)` : undefined, fontFamily: SANS, fontWeight: weight, fontSize: size, letterSpacing: "-0.035em", lineHeight: 1.08, color, whiteSpace: "nowrap" }}>
       {words.map((w, i) => {
         const kk = k(g, w.at, 0.9);
@@ -245,7 +245,7 @@ const Badge: React.FC<{ g: number }> = ({ g }) => {
 };
 const Price: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("happy") || g > f("host+0.8")) return null;
-  const n = k(g, "w:499", 0.9), kr = k(g, "w:kroner-0.05", 0.7), sub = k(g, "w:kroner+0.25", 0.7), out = k(g, "host-0.1", 0.45, MOVE);
+  const n = k(g, "w:499", 0.9), kr = k(g, "w:kroner-0.05", 0.7), sub = k(g, "w:kroner+0.1", 0.6), out = k(g, "host-0.1", 0.45, MOVE);
   return (
     <AbsoluteFill style={{ opacity: 1 - out, filter: out > 0 ? `blur(${out * 8}px)` : undefined }}>
       <Say g={g} y={110} size={56} weight={600} color={C.gray} words={[{ t: "Happy", at: "w:happy" }, { t: "with", at: "w:with" }, { t: "the", at: "w:the2" }, { t: "result?", at: "w:result" }]} />
@@ -254,7 +254,7 @@ const Price: React.FC<{ g: number }> = ({ g }) => {
         <span style={{ opacity: n, filter: n < 1 ? `blur(${(1 - n) * 12}px)` : undefined }}>499</span>
         <span style={{ display: "inline-block", maxWidth: mix(0, 250, kr), overflow: "hidden", whiteSpace: "pre", fontSize: 120, fontWeight: 600, letterSpacing: "-0.03em", transform: `translateY(-15px)`,
           opacity: kr, filter: kr < 1 ? `blur(${(1 - kr) * 10}px)` : undefined }}> kr.</span></div>
-      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, textAlign: "center", transform: `translateY(${820 + (1 - sub) * 16}px)`, opacity: sub, fontFamily: SANS, fontWeight: 500, fontSize: 32, color: C.gray, letterSpacing: "-0.01em" }}>
+      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, textAlign: "center", transform: `translateY(${820 + (1 - sub) * 16}px)`, opacity: sub, fontFamily: SANS, fontWeight: 500, fontSize: 36, color: C.gray, letterSpacing: "-0.01em" }}>
         One payment. No subscription. <span style={{ color: C.blue }}>Yours.</span></div>
     </AbsoluteFill>
   );
