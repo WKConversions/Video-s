@@ -83,7 +83,13 @@ cd film && bash ../scripts/render_chunks.sh Film out/final.mp4 '{"blurSamples":8
   - "Want to change something?": the prompt rises and the headline is selected.
   - "kroner": "kr." joins the number.
   - "No coding.": the code tile is struck through.
-- Shake: none (`jitter_check.py`). The statements and the devices carry a 3D term so slow moves don't step on the pixel grid.
+- Shake: the statements and the devices carry a 3D term, so slow moves glide instead of stepping on the pixel grid.
+  `jitter_check.py` still flags 14.2–15.3 s, as the laptop slides left for the phone. Measured edge by edge:
+  - The horizontal move is smooth.
+  - The laptop's bottom edge steps by at most 1 px at the slow start and end of its shrink. Chrome snaps a
+    scaling layer's box edges to whole pixels; a compositor layer changed nothing.
+  - The flag's 5.3 px comes from the hinge notch leaving the measured tile.
+  - Invisible at normal viewing.
 - Frame review: three independent reviews of the first final (layout, copy and truth, story and tone), each serious
   finding checked again by a skeptic at full resolution. Fixed from it:
   - Every hand-off that stacked text on text: the question under the wordmark, "Meet" and the wordmark crossing,
