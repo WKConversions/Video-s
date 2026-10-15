@@ -24,6 +24,47 @@
  },
  "sfx": [
   {
+   "frame": 15,
+   "id": "kenney-drop-003",
+   "db": -18,
+   "pitch": -2,
+   "note": "a clutter card"
+  },
+  {
+   "frame": 21,
+   "id": "kenney-drop-003",
+   "db": -18,
+   "note": "a clutter card"
+  },
+  {
+   "frame": 26,
+   "id": "kenney-drop-003",
+   "db": -18,
+   "pitch": 2,
+   "note": "a clutter card"
+  },
+  {
+   "frame": 38,
+   "id": "kenney-drop-003",
+   "db": -18,
+   "pitch": 1,
+   "note": "a clutter card"
+  },
+  {
+   "frame": 46,
+   "id": "kenney-drop-003",
+   "db": -18,
+   "pitch": 3,
+   "note": "a clutter card"
+  },
+  {
+   "frame": 54,
+   "id": "gen-whoosh-short",
+   "db": -12,
+   "pitch": 2,
+   "note": "the clutter collapses into the dot"
+  },
+  {
    "frame": 88,
    "id": "gen-swell",
    "db": -10,
@@ -31,48 +72,40 @@
    "note": "Meet"
   },
   {
-   "frame": 106,
-   "id": "gen-pop",
-   "db": -8,
-   "pitch": 3,
-   "note": "the blue dot"
+   "frame": 102,
+   "id": "gen-shimmer",
+   "db": -12,
+   "pitch": 2,
+   "note": "the wordmark grows from the dot"
   },
   {
-   "frame": 122,
-   "id": "gen-whoosh-short",
-   "db": -16,
-   "pitch": -3,
-   "note": "Meet Creoble leaves"
-  },
-  {
-   "frame": 128,
+   "frame": 121,
    "id": "gen-whoosh-medium",
    "db": -11,
    "pitch": -2,
-   "note": "the laptop rises"
+   "note": "the logo flies to the window"
   },
   {
-   "frame": 187,
-   "id": "kenney-select-001",
-   "db": -12,
-   "pitch": 2,
-   "note": "the field focuses"
+   "frame": 185,
+   "id": "gen-whoosh-short",
+   "db": -15,
+   "note": "a field lifts"
   },
   {
-   "frame": 190,
+   "frame": 191,
    "id": "kenney-click-001",
    "db": -20,
    "note": "a key"
   },
   {
-   "frame": 193,
+   "frame": 194,
    "id": "kenney-click-001",
    "db": -20,
    "pitch": 2,
    "note": "a key"
   },
   {
-   "frame": 196,
+   "frame": 197,
    "id": "kenney-click-001",
    "db": -20,
    "pitch": -1,
@@ -106,41 +139,48 @@
    "note": "a key"
   },
   {
-   "frame": 211,
+   "frame": 210,
    "id": "kenney-click-001",
    "db": -20,
    "pitch": 2,
    "note": "a key"
   },
   {
-   "frame": 214,
-   "id": "kenney-select-001",
-   "db": -12,
-   "pitch": 2,
-   "note": "the field focuses"
-  },
-  {
-   "frame": 217,
-   "id": "kenney-click-001",
-   "db": -20,
-   "note": "a key"
-  },
-  {
-   "frame": 220,
-   "id": "kenney-click-001",
-   "db": -20,
-   "pitch": 2,
-   "note": "a key"
-  },
-  {
-   "frame": 223,
+   "frame": 213,
    "id": "kenney-click-001",
    "db": -20,
    "pitch": -1,
    "note": "a key"
   },
   {
-   "frame": 226,
+   "frame": 213,
+   "id": "gen-whoosh-short",
+   "db": -15,
+   "pitch": 1,
+   "note": "a field lifts"
+  },
+  {
+   "frame": 219,
+   "id": "kenney-click-001",
+   "db": -20,
+   "note": "a key"
+  },
+  {
+   "frame": 221,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 224,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 227,
    "id": "kenney-click-001",
    "db": -20,
    "pitch": 3,
@@ -174,27 +214,34 @@
    "note": "a key"
   },
   {
-   "frame": 254,
-   "id": "kenney-select-001",
-   "db": -12,
-   "pitch": 2,
-   "note": "the field focuses"
+   "frame": 240,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": -1,
+   "note": "a key"
   },
   {
-   "frame": 257,
+   "frame": 252,
+   "id": "gen-whoosh-short",
+   "db": -15,
+   "pitch": 2,
+   "note": "a field lifts"
+  },
+  {
+   "frame": 258,
    "id": "kenney-click-001",
    "db": -20,
    "note": "a key"
   },
   {
-   "frame": 260,
+   "frame": 261,
    "id": "kenney-click-001",
    "db": -20,
    "pitch": 2,
    "note": "a key"
   },
   {
-   "frame": 263,
+   "frame": 264,
    "id": "kenney-click-001",
    "db": -20,
    "pitch": -1,
@@ -222,16 +269,23 @@
    "note": "a key"
   },
   {
-   "frame": 275,
+   "frame": 274,
    "id": "kenney-click-001",
    "db": -20,
    "note": "a key"
   },
   {
-   "frame": 278,
+   "frame": 277,
    "id": "kenney-click-001",
    "db": -20,
    "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 280,
+   "id": "kenney-click-001",
+   "db": -20,
+   "pitch": -1,
    "note": "a key"
   },
   {
@@ -243,86 +297,120 @@
   {
    "frame": 319,
    "id": "gen-shimmer",
-   "db": -12,
-   "note": "AI at work"
+   "db": -11,
+   "note": "the AI orb"
   },
   {
-   "frame": 333,
+   "frame": 327,
    "id": "kenney-tick-004",
    "db": -12,
-   "note": "step 1 done"
+   "note": "task 1"
   },
   {
-   "frame": 344,
+   "frame": 339,
    "id": "kenney-tick-004",
    "db": -12,
    "pitch": 3,
-   "note": "step 2 done"
+   "note": "task 2"
   },
   {
-   "frame": 354,
+   "frame": 342,
    "id": "kenney-tick-004",
    "db": -12,
    "pitch": 5,
-   "note": "step 3 done"
+   "note": "task 3"
   },
   {
    "frame": 363,
-   "id": "gen-whoosh-short",
-   "db": -13,
-   "note": "the site assembles"
+   "id": "gen-whoosh-medium",
+   "db": -11,
+   "note": "the layers burst out"
   },
   {
-   "frame": 368,
+   "frame": 366,
    "id": "kenney-drop-003",
-   "db": -15,
-   "pitch": -2,
-   "note": "block 1"
+   "db": -16,
+   "note": "a layer"
+  },
+  {
+   "frame": 369,
+   "id": "kenney-drop-003",
+   "db": -16,
+   "pitch": 1,
+   "note": "a layer"
+  },
+  {
+   "frame": 372,
+   "id": "kenney-drop-003",
+   "db": -16,
+   "pitch": 2,
+   "note": "a layer"
   },
   {
    "frame": 374,
    "id": "kenney-drop-003",
-   "db": -15,
-   "note": "block 2"
+   "db": -16,
+   "pitch": 3,
+   "note": "a layer"
   },
   {
-   "frame": 380,
+   "frame": 377,
    "id": "kenney-drop-003",
-   "db": -15,
-   "pitch": 2,
-   "note": "block 3"
-  },
-  {
-   "frame": 387,
-   "id": "kenney-drop-003",
-   "db": -15,
+   "db": -16,
    "pitch": 4,
-   "note": "block 4"
+   "note": "a layer"
+  },
+  {
+   "frame": 398,
+   "id": "kenney-select-002",
+   "db": -13,
+   "note": "an answer lands"
+  },
+  {
+   "frame": 408,
+   "id": "kenney-select-002",
+   "db": -13,
+   "pitch": 1,
+   "note": "an answer lands"
+  },
+  {
+   "frame": 420,
+   "id": "kenney-select-002",
+   "db": -13,
+   "pitch": 2,
+   "note": "an answer lands"
+  },
+  {
+   "frame": 422,
+   "id": "gen-whoosh-short",
+   "db": -12,
+   "note": "the stack collapses"
   },
   {
    "frame": 443,
-   "id": "kenney-select-002",
+   "id": "kenney-select-001",
    "db": -11,
-   "note": "ready"
+   "note": "the laptop forms"
   },
   {
    "frame": 459,
-   "id": "gen-whoosh-medium",
-   "db": -11,
-   "note": "laptop and phone"
+   "id": "gen-whoosh-short",
+   "db": -13,
+   "note": "the phone joins"
   },
   {
    "frame": 493,
-   "id": "gen-appear",
+   "id": "gen-whoosh-medium",
    "db": -13,
-   "note": "the prompt"
+   "pitch": -3,
+   "note": "push into the headline"
   },
   {
    "frame": 500,
    "id": "kenney-select-002",
-   "db": -14,
+   "db": -13,
    "pitch": 2,
-   "note": "the headline selected"
+   "note": "selected"
   },
   {
    "frame": 503,
@@ -366,7 +454,7 @@
    "note": "a key"
   },
   {
-   "frame": 518,
+   "frame": 519,
    "id": "kenney-click-001",
    "db": -21,
    "note": "a key"
@@ -386,7 +474,7 @@
    "note": "a key"
   },
   {
-   "frame": 526,
+   "frame": 527,
    "id": "kenney-click-001",
    "db": -21,
    "pitch": 3,
@@ -420,6 +508,20 @@
    "note": "a key"
   },
   {
+   "frame": 540,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 542,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": 3,
+   "note": "a key"
+  },
+  {
    "frame": 545,
    "id": "kenney-click-001",
    "db": -7,
@@ -430,37 +532,74 @@
    "id": "gen-shimmer",
    "db": -13,
    "pitch": 3,
-   "note": "the site changes"
+   "note": "the headline rewrites"
   },
   {
-   "frame": 572,
+   "frame": 567,
    "id": "kenney-select-002",
-   "db": -11,
-   "note": "Preview for free"
+   "db": -12,
+   "note": "preview"
   },
   {
    "frame": 577,
-   "id": "gen-whoosh-short",
-   "db": -15,
-   "pitch": -3,
-   "note": "the page scrolls"
-  },
-  {
-   "frame": 626,
    "id": "gen-whoosh-medium",
    "db": -12,
-   "pitch": -2,
-   "note": "the site comes to the centre"
+   "note": "the pages fan out"
+  },
+  {
+   "frame": 605,
+   "id": "gen-pop",
+   "db": -10,
+   "pitch": 2,
+   "note": "Free"
+  },
+  {
+   "frame": 632,
+   "id": "gen-whoosh-short",
+   "db": -13,
+   "note": "the phone turns in"
   },
   {
    "frame": 672,
+   "id": "kenney-click-001",
+   "db": -8,
+   "note": "Get it"
+  },
+  {
+   "frame": 677,
    "id": "gen-pop",
-   "db": -9,
+   "db": -10,
    "pitch": 2,
    "note": "It's yours"
   },
   {
-   "frame": 702,
+   "frame": 692,
+   "id": "gen-whoosh-medium",
+   "db": -10,
+   "note": "blue floods the frame"
+  },
+  {
+   "frame": 703,
+   "id": "kenney-tick-004",
+   "db": -11,
+   "note": "a digit lands"
+  },
+  {
+   "frame": 707,
+   "id": "kenney-tick-004",
+   "db": -11,
+   "pitch": 2,
+   "note": "a digit lands"
+  },
+  {
+   "frame": 711,
+   "id": "kenney-tick-004",
+   "db": -11,
+   "pitch": 4,
+   "note": "a digit lands"
+  },
+  {
+   "frame": 714,
    "id": "gen-impact-soft",
    "db": -9,
    "note": "499"
@@ -470,80 +609,120 @@
    "id": "kenney-select-002",
    "db": -12,
    "pitch": 1,
-   "note": "kr. joins"
+   "note": "kr."
   },
   {
-   "frame": 759,
-   "id": "gen-whoosh-short",
-   "db": -12,
-   "note": "hosting"
+   "frame": 761,
+   "id": "kenney-click-001",
+   "db": -21,
+   "note": "a key"
   },
   {
-   "frame": 772,
+   "frame": 763,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 765,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 766,
    "id": "kenney-select-001",
    "db": -11,
    "note": "Live"
   },
   {
-   "frame": 788,
-   "id": "kenney-tick-004",
-   "db": -12,
-   "note": "included 1"
+   "frame": 767,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": 3,
+   "note": "a key"
   },
   {
-   "frame": 793,
+   "frame": 769,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": 1,
+   "note": "a key"
+  },
+  {
+   "frame": 771,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": -2,
+   "note": "a key"
+  },
+  {
+   "frame": 773,
+   "id": "kenney-click-001",
+   "db": -21,
+   "note": "a key"
+  },
+  {
+   "frame": 775,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 782,
+   "id": "gen-whoosh-medium",
+   "db": -12,
+   "note": "back to cream, the globe"
+  },
+  {
+   "frame": 790,
+   "id": "kenney-tick-004",
+   "db": -12,
+   "note": "feature 1"
+  },
+  {
+   "frame": 795,
    "id": "kenney-tick-004",
    "db": -12,
    "pitch": 3,
-   "note": "included 2"
+   "note": "feature 2"
   },
   {
-   "frame": 797,
+   "frame": 799,
    "id": "kenney-tick-004",
    "db": -12,
    "pitch": 5,
-   "note": "included 3"
-  },
-  {
-   "frame": 827,
-   "id": "gen-whoosh-short",
-   "db": -14,
-   "pitch": -3,
-   "note": "hosting leaves"
+   "note": "feature 3"
   },
   {
    "frame": 836,
-   "id": "kenney-select-001",
-   "db": -14,
+   "id": "gen-whoosh-short",
+   "db": -13,
    "pitch": -2,
    "note": "no coding"
   },
   {
-   "frame": 845,
-   "id": "kenney-tick-004",
-   "db": -13,
-   "pitch": -3,
-   "note": "code struck through"
-  },
-  {
    "frame": 863,
    "id": "gen-whoosh-short",
-   "db": -14,
+   "db": -13,
    "pitch": 1,
    "note": "no complexity"
   },
   {
-   "frame": 901,
+   "frame": 898,
    "id": "gen-whoosh-medium",
    "db": -11,
-   "note": "the devices return"
+   "note": "the devices rise"
   },
   {
-   "frame": 955,
+   "frame": 960,
    "id": "gen-whoosh-short",
-   "db": -15,
-   "pitch": -3,
-   "note": "the devices leave"
+   "db": -13,
+   "pitch": 2,
+   "note": "the devices fold into the dot"
   },
   {
    "frame": 969,
