@@ -3,7 +3,7 @@
 import React from "react";
 import { Img, staticFile } from "remotion";
 import { measureText } from "@remotion/layout-utils";
-import { C, DEPART, EASE, F, MOVE, W, at, clamp01, float, lerp, pr } from "./lib";
+import { C, DEPART, EASE, F, MOVE, W, at, clamp01, float, lerp, pr, rise } from "./lib";
 import { Ambient, Body, Button, Eyebrow, Icon, Shell, Tag, Wordmark } from "./kit";
 import { Intelligence } from "./hero";
 
@@ -32,7 +32,7 @@ const TopLine: React.FC<{ g: number }> = ({ g }) => (
       const next = BEATS[i + 1]?.[0] ?? 99999;
       if (g < a - 2 || g > next + 10) return null;
       const kin = i === 0 ? pr(g, 6, 22) : pr(g, a + 10, 18), kout = pr(g, next, 9, DEPART);
-      const st = { opacity: kin * (1 - kout), transform: `translate3d(0, ${10 * (1 - kin)}px, 0)` };
+      const st = { opacity: kin * (1 - kout), transform: rise(10 * (1 - kin)) };
       return (
         <React.Fragment key={i}>
           <div style={{ position: "absolute", left: 104, top: 86, ...st }}><Eyebrow text={left} size={15} color={C.label} style={{ fontWeight: 600, letterSpacing: 2.8 }} /></div>
@@ -230,10 +230,10 @@ const BusinessContent: React.FC<{ w: number }> = ({ w }) => (
   </div>
 );
 
-const PortraitContent: React.FC<{ w: number; h: number; k: number }> = ({ w, h, k }) => (
+const PortraitContent: React.FC<{ w: number; h: number; k: number; push: number }> = ({ w, h, k, push }) => (
   <div style={{ position: "absolute", left: 12, top: 12, width: w - 24, height: h - 24, borderRadius: 30, overflow: "hidden", background: "#DADAD6" }}>
     <Img src={staticFile("img/adrian-tineo.jpg")} style={{ position: "absolute", width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 30%",
-      filter: "grayscale(1)", transform: `scale(${1.08 - 0.08 * k})` }} />
+      filter: "grayscale(1)", transform: `scale(${1.08 - 0.08 * k + 0.05 * push})`, transformOrigin: "50% 35%" }} />
     <div style={{ position: "absolute", left: 30, top: 30, fontFamily: F.ui, fontWeight: 650, fontSize: 13, letterSpacing: 2.6, color: "#707068", textTransform: "uppercase" }}>
       The expertise behind your next step</div>
     <div style={{ position: "absolute", left: 24, right: 24, bottom: 24, height: 104, borderRadius: 18, background: "rgba(255,255,255,0.93)", display: "flex",
@@ -263,21 +263,21 @@ const ThreadCard: React.FC<{ g: number; id: string }> = ({ g, id }) => {
       <div style={{ position: "absolute", inset: 0, borderRadius: 32, background: C.white, border: "2px solid #fff", boxSizing: "border-box",
         boxShadow: `0 ${32 + 20 * lift}px ${70 + 30 * lift}px rgba(0,0,0,${0.04 + 0.04 * lift}), 0 2px 6px rgba(0,0,0,0.03)`, overflow: "hidden" }}>
         {bizK > 0 && <div style={{ opacity: bizK }}><BusinessContent w={G.w} /></div>}
-        {portK > 0 && <div style={{ opacity: portK }}><PortraitContent w={G.w} h={G.h} k={pr(g, K.meet + 8, 30)} /></div>}
+        {portK > 0 && <div style={{ opacity: portK }}><PortraitContent w={G.w} h={G.h} k={pr(g, K.meet + 8, 30)} push={pr(g, K.meet + 8, K.from - K.meet, (t) => t)} /></div>}
         {s.pics.map((p, j) => {
           const o = win(g, p.from, p.to, 14, 10);
           if (o <= 0) return null;
           return (
             <div key={j} style={{ position: "absolute", left: 12, top: 12, width: G.w - 24, height: wellH, borderRadius: 22, background: C.well, overflow: "hidden", opacity: o }}>
               <Img src={staticFile(`img/${p.src}.svg`)} style={{ position: "absolute", left: "50%", top: "50%", width: Math.max(G.w - 24, wellH * 1.2) * (p.scale ?? 1), mixBlendMode: "multiply",
-                transform: `translate(-50%, calc(-50% + ${(p.dy ?? 0)}px)) scale(${1 + 0.06 * lift})` }} />
+                transform: `translate(-50%, calc(-50% + ${(p.dy ?? 0) + float(g, 9, -16, ORDER.indexOf(id) * 2.3 + j)}px)) scale(${1 + 0.06 * lift}) rotate(${float(g, 9, 1.5, ORDER.indexOf(id) * 2.3 + j)}deg)` }} />
             </div>
           );
         })}
         {s.texts.map((t, j) => {
           const o = win(g, t.from, t.to, 12, 8);
           if (o <= 0) return null;
-          return <div key={j} style={{ opacity: o, transform: `translate3d(0, ${12 * (1 - pr(g, t.from, 16))}px, 0)` }}>
+          return <div key={j} style={{ opacity: o, transform: rise(12 * (1 - pr(g, t.from, 16))) }}>
             {t.num && <span style={{ position: "absolute", left: 40, top: 40, fontFamily: F.ui, fontSize: 16, color: C.num, fontWeight: 500, zIndex: 2 }}>{t.num}</span>}
             <ServiceText t={t} w={G.w} h={G.h} wellH={wellH} lift={lift} />
           </div>;
@@ -293,7 +293,7 @@ const MeetText: React.FC<{ g: number }> = ({ g }) => {
   const out = (d: number) => pr(g, K.from - 2 + d, 12, DEPART);
   const line = (a: number, d: number): React.CSSProperties => {
     const k = pr(g, a, 26), o = out(d);
-    return { opacity: k * (1 - o), transform: `translate3d(${-50 * o}px, ${34 * (1 - k)}px, 0)` };
+    return { opacity: k * (1 - o), transform: rise(34 * (1 - k), -50 * o) };
   };
   const sz = 112;
   const H: React.CSSProperties = { fontFamily: F.ui, fontWeight: 650, fontSize: sz, letterSpacing: -0.054 * sz, lineHeight: 1.08, whiteSpace: "nowrap" };
@@ -364,7 +364,7 @@ const Statement: React.FC<{ g: number }> = ({ g }) => {
         const t = "Just practical AI.", k = pr(g, Math.max(K.practical - 2, K.just + 12), 26), w = lineW(t, STATE_SZ);
         return <div style={{ ...at(140 + (w * SMALL) / 2, y0l + 2 * lh * SMALL + 26 + 34 * (1 - k), SMALL, k), ...H, color: C.ink }}>{t}</div>;
       })()}
-      <div style={{ position: "absolute", left: 140, top: y0l + 3 * lh * SMALL + 30, width: 620, ...{ opacity: pr(g, K.built, 26), transform: `translate3d(0, ${24 * (1 - pr(g, K.built, 26))}px, 0)` } }}>
+      <div style={{ position: "absolute", left: 140, top: y0l + 3 * lh * SMALL + 30, width: 620, ...{ opacity: pr(g, K.built, 26), transform: rise(24 * (1 - pr(g, K.built, 26))) } }}>
         <Body size={30} color={C.desc}>Clear strategy. Hands-on engineering. Built around your business.</Body>
       </div>
     </div>
@@ -391,7 +391,7 @@ const Panel: React.FC<{ g: number }> = ({ g }) => {
   if (g < K.ready - 4) return null;
   const k = pr(g, K.ready - 2, 32, EASE);
   const clr = pr(g, END_OF_SIGN, 14, DEPART);                          // the panel's copy clears for the sign-off
-  const L = (a: number, d = 34): React.CSSProperties => { const q = pr(g, a, 26); return { opacity: q * (1 - clr), transform: `translate3d(0, ${d * (1 - q)}px, 0)` }; };
+  const L = (a: number, d = 34): React.CSSProperties => { const q = pr(g, a, 26); return { opacity: q * (1 - clr), transform: rise(d * (1 - q)) }; };
   const sz = 150, H: React.CSSProperties = { fontFamily: F.ui, fontWeight: 650, fontSize: sz, letterSpacing: -0.052 * sz, lineHeight: 1.1, whiteSpace: "nowrap" };
   // the button: under the headline, then the centre of the sign-off
   const bm = pr(g, END_OF_SIGN + 4, 26, MOVE), press = pr(g, K.talk + 2, 8) * (1 - pr(g, K.talk + 14, 10));

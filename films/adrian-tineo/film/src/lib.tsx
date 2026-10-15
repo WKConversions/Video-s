@@ -49,7 +49,9 @@ export const mix = (a: string, b: string, t: number) => {
 };
 /** Absolute placement by centre, on transforms only (no left/top under a scale: no pixel snapping). */
 export const at = (x: number, y: number, sc = 1, o = 1, extra = ""): React.CSSProperties =>
-  ({ position: "absolute", left: 0, top: 0, transform: `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%) scale(${sc}) ${extra}`, opacity: o });
+  ({ position: "absolute", left: 0, top: 0, transform: `perspective(2000px) translate3d(${x}px, ${y}px, 0) translate(-50%, -50%) scale(${sc}) ${extra} rotateX(0.01deg)`, opacity: o });
+/** A vertical offset that glides at sub-pixel steps (no whole-pixel snapping on slow text). */
+export const rise = (dy: number, dx = 0) => `perspective(2000px) translate3d(${dx}px, ${dy}px, 0) rotateX(0.01deg)`;
 
 /** The site's reveal (.js-motion .reveal): opacity 0→1 and a rise of `dy` px → 0 over 0.85 s on its curve, after `delay` frames. */
 export const reveal = (g: number, a: number, delay = 0, dy = 34, dur = 26): React.CSSProperties => {
