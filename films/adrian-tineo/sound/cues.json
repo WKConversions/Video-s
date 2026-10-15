@@ -1,0 +1,289 @@
+{
+ "fps": 30,
+ "frames": 1170,
+ "library": "lib",
+ "vo": {
+  "file": "../film/public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "music/digital-clouds-fit.wav",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.3,
+  "fade_out": 0.6,
+  "note": "Digital Clouds (Alejandro Maga\u00f1a, Mixkit, Mixkit Stock Music Free License), fitted: lift at 6.90 s on 'Meet', last hit 37.29 s"
+ },
+ "sfx": [
+  {
+   "id": "at-shell",
+   "frame": 10,
+   "note": "the shell rises",
+   "db": -6
+  },
+  {
+   "id": "at-ai",
+   "frame": 20,
+   "note": "AI",
+   "db": -2
+  },
+  {
+   "id": "at-bloom",
+   "frame": 49,
+   "note": "the tags bloom out",
+   "db": -1
+  },
+  {
+   "id": "at-card",
+   "frame": 108,
+   "note": "the Your business card",
+   "db": -4
+  },
+  {
+   "id": "at-pile",
+   "frame": 142,
+   "note": "the tags crowd onto the card",
+   "db": -2
+  },
+  {
+   "id": "at-tangle",
+   "frame": 150,
+   "note": "the hairlines tangle",
+   "db": -6
+  },
+  {
+   "id": "at-complicated",
+   "frame": 169,
+   "note": "complicated",
+   "db": -6.5
+  },
+  {
+   "id": "at-drop",
+   "frame": 209,
+   "note": "the pile drops away",
+   "db": -6
+  },
+  {
+   "id": "at-name",
+   "frame": 217,
+   "note": "Adrian Tineo.",
+   "db": -6
+  },
+  {
+   "id": "at-portrait",
+   "frame": 220,
+   "note": "the card opens into Adrian",
+   "db": -3
+  },
+  {
+   "id": "at-independent",
+   "frame": 255,
+   "note": "Independent / AI expert.",
+   "db": -8
+  },
+  {
+   "id": "at-handson",
+   "frame": 286,
+   "note": "Business-minded, hands-on",
+   "db": -7
+  },
+  {
+   "id": "at-morph1",
+   "frame": 331,
+   "note": "portrait to opportunity",
+   "db": -7
+  },
+  {
+   "id": "at-direction",
+   "frame": 345,
+   "note": "A clear direction",
+   "db": -6
+  },
+  {
+   "id": "at-arrow",
+   "frame": 372,
+   "note": "the arrow draws",
+   "db": -8
+  },
+  {
+   "id": "at-solution",
+   "frame": 376,
+   "note": "the solution card",
+   "db": -5
+  },
+  {
+   "id": "at-advantage",
+   "frame": 398,
+   "note": "A real-world advantage",
+   "db": -6
+  },
+  {
+   "id": "at-three",
+   "frame": 444,
+   "note": "three cards",
+   "db": -7
+  },
+  {
+   "id": "at-strategy",
+   "frame": 457,
+   "note": "strategy",
+   "db": -5
+  },
+  {
+   "id": "at-connect",
+   "frame": 465,
+   "note": "the rule draws",
+   "db": -8
+  },
+  {
+   "id": "at-engineering",
+   "frame": 481,
+   "note": "engineering",
+   "db": -5
+  },
+  {
+   "id": "at-execution",
+   "frame": 512,
+   "note": "execution",
+   "db": -6.5
+  },
+  {
+   "id": "at-grid",
+   "frame": 541,
+   "note": "four service cards",
+   "db": -6
+  },
+  {
+   "id": "at-lift1",
+   "frame": 548,
+   "note": "Explore use cases",
+   "db": -5
+  },
+  {
+   "id": "at-lift2",
+   "frame": 597,
+   "note": "Develop and integrate AI",
+   "db": -5
+  },
+  {
+   "id": "at-lift3",
+   "frame": 660,
+   "note": "Evaluate performance",
+   "db": -5
+  },
+  {
+   "id": "at-lift4",
+   "frame": 713,
+   "note": "Bring expert leadership",
+   "db": -5
+  },
+  {
+   "id": "at-team",
+   "frame": 775,
+   "note": "Expertise, when you need it",
+   "db": -7
+  },
+  {
+   "id": "at-clear",
+   "frame": 795,
+   "note": "the cards drop away",
+   "db": -7
+  },
+  {
+   "id": "at-nohype",
+   "frame": 806,
+   "note": "No hype.",
+   "db": -2
+  },
+  {
+   "id": "at-noguess",
+   "frame": 831,
+   "note": "No guesswork.",
+   "db": -3
+  },
+  {
+   "id": "at-left",
+   "frame": 858,
+   "note": "the statement steps left",
+   "db": -8
+  },
+  {
+   "id": "at-orb",
+   "frame": 866,
+   "note": "the chrome core",
+   "db": -5
+  },
+  {
+   "id": "at-base",
+   "frame": 908,
+   "note": "the base slab",
+   "db": -5
+  },
+  {
+   "id": "at-mid",
+   "frame": 916,
+   "note": "the silver slab",
+   "db": -5
+  },
+  {
+   "id": "at-tag3",
+   "frame": 921,
+   "note": "A clear direction",
+   "db": -8
+  },
+  {
+   "id": "at-top",
+   "frame": 926,
+   "note": "the top slab",
+   "db": -4
+  },
+  {
+   "id": "at-tag4",
+   "frame": 931,
+   "note": "A real-world advantage",
+   "db": -8
+  },
+  {
+   "id": "at-panel",
+   "frame": 976,
+   "note": "the dark panel lands",
+   "db": -3
+  },
+  {
+   "id": "at-potential",
+   "frame": 990,
+   "note": "AI potential.",
+   "db": -5
+  },
+  {
+   "id": "at-impact",
+   "frame": 1044,
+   "note": "Business impact.",
+   "db": -3
+  },
+  {
+   "id": "at-button",
+   "frame": 1067,
+   "note": "the button",
+   "db": -6
+  },
+  {
+   "id": "at-click",
+   "frame": 1081,
+   "note": "the button pressed",
+   "db": -4
+  },
+  {
+   "id": "at-wordmark",
+   "frame": 1112,
+   "note": "the wordmark",
+   "db": -3
+  },
+  {
+   "id": "at-dot",
+   "frame": 1128,
+   "note": "the dot",
+   "db": -6
+  }
+ ]
+}

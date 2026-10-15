@@ -1,0 +1,452 @@
+[
+ {
+  "id": "at-shell",
+  "file": "sfx/adrian/at-shell.wav",
+  "category": "whoosh",
+  "sync": 0.6,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the site shell rises out of the dark field: a soft low swell of air"
+ },
+ {
+  "id": "at-ai",
+  "file": "sfx/adrian/at-ai.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the first tag, AI: a fingertip tap on glass, A-flat"
+ },
+ {
+  "id": "at-bloom",
+  "file": "sfx/adrian/at-bloom.wav",
+  "category": "data",
+  "sync": 0.0,
+  "length": 2.601,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "eight tags bloom out across the frame: a quick rising run of tiny glass notes"
+ },
+ {
+  "id": "at-card",
+  "file": "sfx/adrian/at-card.wav",
+  "category": "appear-rise",
+  "sync": 0.32,
+  "length": 1.921,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the Your business card rises and settles: a paper slide into a soft low note"
+ },
+ {
+  "id": "at-pile",
+  "file": "sfx/adrian/at-pile.wav",
+  "category": "data",
+  "sync": 0.2,
+  "length": 2.601,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the tags crowd onto the card: clustered ticks over a close, slightly crowded chord"
+ },
+ {
+  "id": "at-tangle",
+  "file": "sfx/adrian/at-tangle.wav",
+  "category": "swipe",
+  "sync": 0.1,
+  "length": 2.401,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "hairlines tangle between them: six quick pencil scribbles"
+ },
+ {
+  "id": "at-complicated",
+  "file": "sfx/adrian/at-complicated.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 2.021,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the card tilts under the weight: a soft low thud and a crowded chord"
+ },
+ {
+  "id": "at-drop",
+  "file": "sfx/adrian/at-drop.wav",
+  "category": "dismiss-fall",
+  "sync": 0.25,
+  "length": 1.701,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the pile drops away: falling air and a few ticks fading down"
+ },
+ {
+  "id": "at-portrait",
+  "file": "sfx/adrian/at-portrait.wav",
+  "category": "stinger",
+  "sync": 0.35,
+  "length": 3.401,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the card opens into Adrian's portrait: a warm A-flat add-9 bloom"
+ },
+ {
+  "id": "at-name",
+  "file": "sfx/adrian/at-name.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "his name rises: one plucked A-flat"
+ },
+ {
+  "id": "at-independent",
+  "file": "sfx/adrian/at-independent.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the grey line, Independent / AI expert: two soft ticks, one per line"
+ },
+ {
+  "id": "at-handson",
+  "file": "sfx/adrian/at-handson.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the tag Business-minded, hands-on: a light glass C"
+ },
+ {
+  "id": "at-morph1",
+  "file": "sfx/adrian/at-morph1.wav",
+  "category": "swipe",
+  "sync": 0.3,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the portrait card slides into the opportunity card: a long paper slide"
+ },
+ {
+  "id": "at-direction",
+  "file": "sfx/adrian/at-direction.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "A clear direction: a bright glass E-flat"
+ },
+ {
+  "id": "at-arrow",
+  "file": "sfx/adrian/at-arrow.wav",
+  "category": "appear-rise",
+  "sync": 0.6,
+  "length": 1.851,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the arrow draws from opportunity to solution: a soft rising glide"
+ },
+ {
+  "id": "at-solution",
+  "file": "sfx/adrian/at-solution.wav",
+  "category": "appear-rise",
+  "sync": 0.0,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the solution card buds out: two plucked notes, F and C"
+ },
+ {
+  "id": "at-advantage",
+  "file": "sfx/adrian/at-advantage.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "A real-world advantage (the dark tile): a deeper glass B-flat with a small body"
+ },
+ {
+  "id": "at-three",
+  "file": "sfx/adrian/at-three.wav",
+  "category": "swipe",
+  "sync": 0.2,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the cards make room for a third: two quick paper slides"
+ },
+ {
+  "id": "at-connect",
+  "file": "sfx/adrian/at-connect.wav",
+  "category": "appear-rise",
+  "sync": 0.7,
+  "length": 2.101,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the connecting rule draws: a smooth sine rising over a second"
+ },
+ {
+  "id": "at-strategy",
+  "file": "sfx/adrian/at-strategy.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "strategy: its dot turns sage, a felt A-flat"
+ },
+ {
+  "id": "at-engineering",
+  "file": "sfx/adrian/at-engineering.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "engineering: a felt C"
+ },
+ {
+  "id": "at-execution",
+  "file": "sfx/adrian/at-execution.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.001,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "execution: a felt E-flat with a glass edge, the run completes"
+ },
+ {
+  "id": "at-grid",
+  "file": "sfx/adrian/at-grid.wav",
+  "category": "swipe",
+  "sync": 0.1,
+  "length": 2.401,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "three cards become the four-card grid: a shuffle of slides, the fourth lands"
+ },
+ {
+  "id": "at-lift1",
+  "file": "sfx/adrian/at-lift1.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "service card lifts (the site's hover): a felt F under a tiny tick"
+ },
+ {
+  "id": "at-lift2",
+  "file": "sfx/adrian/at-lift2.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "service card lifts (the site's hover): a felt Ab under a tiny tick"
+ },
+ {
+  "id": "at-lift3",
+  "file": "sfx/adrian/at-lift3.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "service card lifts (the site's hover): a felt Bb under a tiny tick"
+ },
+ {
+  "id": "at-lift4",
+  "file": "sfx/adrian/at-lift4.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "service card lifts (the site's hover): a felt C under a tiny tick"
+ },
+ {
+  "id": "at-team",
+  "file": "sfx/adrian/at-team.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 1.901,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "Expertise, when you need it: two glass notes, F over C"
+ },
+ {
+  "id": "at-clear",
+  "file": "sfx/adrian/at-clear.wav",
+  "category": "dismiss-fall",
+  "sync": 0.3,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the cards drop away: a falling breath of air"
+ },
+ {
+  "id": "at-nohype",
+  "file": "sfx/adrian/at-nohype.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 2.201,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "No hype.: a clean low statement, a soft sub thud under an A-flat"
+ },
+ {
+  "id": "at-noguess",
+  "file": "sfx/adrian/at-noguess.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 2.101,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "No guesswork.: the answer, a fifth higher"
+ },
+ {
+  "id": "at-left",
+  "file": "sfx/adrian/at-left.wav",
+  "category": "whoosh",
+  "sync": 0.3,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the statement steps to the left: a soft slide"
+ },
+ {
+  "id": "at-orb",
+  "file": "sfx/adrian/at-orb.wav",
+  "category": "appear-rise",
+  "sync": 0.0,
+  "length": 2.601,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the chrome orb, AI at the core: a small crystalline shimmer"
+ },
+ {
+  "id": "at-base",
+  "file": "sfx/adrian/at-base.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the dark glass base rises: a soft weighted landing with a chrome edge"
+ },
+ {
+  "id": "at-mid",
+  "file": "sfx/adrian/at-mid.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the silver slab rises onto it: a soft weighted landing with a chrome edge"
+ },
+ {
+  "id": "at-top",
+  "file": "sfx/adrian/at-top.wav",
+  "category": "impact",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the top slab settles over the core: a soft weighted landing with a chrome edge"
+ },
+ {
+  "id": "at-tag3",
+  "file": "sfx/adrian/at-tag3.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 1.701,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "A clear direction returns: a high glass A-flat"
+ },
+ {
+  "id": "at-tag4",
+  "file": "sfx/adrian/at-tag4.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 1.801,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "A real-world advantage returns: a glass F with a small body"
+ },
+ {
+  "id": "at-panel",
+  "file": "sfx/adrian/at-panel.wav",
+  "category": "whoosh",
+  "sync": 0.62,
+  "length": 2.521,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the dark contact panel rises over the page and lands: deep air into a low soft landing"
+ },
+ {
+  "id": "at-potential",
+  "file": "sfx/adrian/at-potential.wav",
+  "category": "chime",
+  "sync": 0.0,
+  "length": 2.401,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "AI potential.: a felt C over a low A-flat fifth"
+ },
+ {
+  "id": "at-impact",
+  "file": "sfx/adrian/at-impact.wav",
+  "category": "success",
+  "sync": 0.0,
+  "length": 2.601,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "Business impact.: a felt E-flat over B-flat, the line resolves upward"
+ },
+ {
+  "id": "at-button",
+  "file": "sfx/adrian/at-button.wav",
+  "category": "pop",
+  "sync": 0.0,
+  "length": 1.501,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the Let's talk button appears: a soft pop"
+ },
+ {
+  "id": "at-click",
+  "file": "sfx/adrian/at-click.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.401,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the button pressed on talk: a crisp two-part UI click"
+ },
+ {
+  "id": "at-wordmark",
+  "file": "sfx/adrian/at-wordmark.wav",
+  "category": "stinger",
+  "sync": 0.3,
+  "length": 3.601,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the wordmark: a resolved A-flat chord"
+ },
+ {
+  "id": "at-dot",
+  "file": "sfx/adrian/at-dot.wav",
+  "category": "tap",
+  "sync": 0.0,
+  "length": 1.601,
+  "licence": "generated",
+  "source": "generated for the Adrian Tineo film (adrian_sfx.py), royalty-free",
+  "character": "the wordmark's dot lands: the smallest glass tap"
+ }
+]
