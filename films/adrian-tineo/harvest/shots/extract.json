@@ -1,0 +1,243 @@
+{
+ "title": "Adrian Tineo — AI expertise. Business impact.",
+ "url": "http://127.0.0.1:8765/",
+ "vars": {
+  "--paper": "#f4f4f2",
+  "--ink": "#151514",
+  "--muted": "#71716e",
+  "--line": "#ddddd8",
+  "--accent": "#a5beb8",
+  "--radius": "22px",
+  "--ease": "cubic-bezier(.22,1,.36,1)"
+ },
+ "colors": [
+  [
+   "rgb(21, 21, 20)",
+   281
+  ],
+  [
+   "rgb(113, 113, 110)",
+   64
+  ],
+  [
+   "rgb(92, 92, 89)",
+   20
+  ],
+  [
+   "rgb(255, 255, 255)",
+   17
+  ],
+  [
+   "rgb(119, 119, 112)",
+   14
+  ],
+  [
+   "rgb(245, 245, 242)",
+   14
+  ],
+  [
+   "rgb(117, 117, 113)",
+   8
+  ],
+  [
+   "rgb(136, 136, 130)",
+   8
+  ],
+  [
+   "rgb(114, 114, 109)",
+   8
+  ],
+  [
+   "rgb(134, 134, 125)",
+   6
+  ],
+  [
+   "rgb(206, 206, 199)",
+   6
+  ],
+  [
+   "rgb(233, 233, 231)",
+   4
+  ],
+  [
+   "rgb(234, 234, 230)",
+   4
+  ],
+  [
+   "rgb(243, 243, 240)",
+   4
+  ],
+  [
+   "rgb(136, 136, 127)",
+   4
+  ],
+  [
+   "rgb(143, 143, 135)",
+   4
+  ]
+ ],
+ "fonts": [
+  [
+   "Manrope, Arial, sans-serif",
+   245
+  ],
+  [
+   "Georgia, serif",
+   1
+  ]
+ ],
+ "eases": [
+  [
+   "cubic-bezier(0.22, 1, 0.36, 1), cubic-bezier(0.22, 1, 0.36, 1)",
+   22
+  ],
+  [
+   "ease",
+   4
+  ],
+  [
+   "cubic-bezier(0.22, 1, 0.36, 1)",
+   4
+  ],
+  [
+   "ease, ease",
+   4
+  ],
+  [
+   "cubic-bezier(0.22, 1, 0.36, 1), ease, ease",
+   3
+  ]
+ ],
+ "h1": {
+  "sel": "h1",
+  "text": "AI expertise.\nBusiness impact.",
+  "font": "Manrope, Arial, sans-serif",
+  "size": "74px",
+  "weight": "650",
+  "tracking": "-4px",
+  "color": "rgb(21, 21, 20)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "radius": "0px"
+ },
+ "h2": {
+  "sel": "h2",
+  "text": "Big possibilities.\nPractical next steps.",
+  "font": "Manrope, Arial, sans-serif",
+  "size": "52px",
+  "weight": "650",
+  "tracking": "-2.5px",
+  "color": "rgb(21, 21, 20)",
+  "bg": "rgba(0, 0, 0, 0)",
+  "radius": "0px"
+ },
+ "body": {
+  "sel": "body",
+  "text": "Skip to content\nAdrian Tineo\nExpertise\nApproach\nConnections\nLet’s talk\n\nINDEPENDENT AI CONSULTING\n\nAI expertise.\nBusines",
+  "font": "Manrope, Arial, sans-serif",
+  "size": "14px",
+  "weight": "400",
+  "tracking": "normal",
+  "color": "rgb(21, 21, 20)",
+  "bg": "rgb(36, 36, 35)",
+  "radius": "0px"
+ },
+ "button": {
+  "sel": "a[class*=\"btn\" i], button, a[class*=\"button\" i]",
+  "text": "",
+  "font": "Manrope, Arial, sans-serif",
+  "size": "14px",
+  "weight": "400",
+  "tracking": "normal",
+  "color": "rgb(0, 0, 0)",
+  "bg": "rgb(239, 239, 239)",
+  "radius": "0px"
+ },
+ "logos": [
+  {
+   "type": "svg",
+   "markup": "<svg aria-hidden=\"true\"><use href=\"#arrow-up-right\"></use></svg>"
+  },
+  {
+   "type": "svg",
+   "markup": "<svg viewBox=\"0 0 40 28\" aria-hidden=\"true\"><path d=\"M15 4h21v21H15z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"></path><path d=\"M2 14C12 1 26 1 35 14c-8 11-20 12-28 2 6-8 15-9 20-2-4 6-10 6-13 1 2-3 4-3 6 0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"></path></svg>"
+  },
+  {
+   "type": "svg",
+   "markup": "<svg viewBox=\"0 0 32 32\" aria-hidden=\"true\"><path d=\"m5 23 9-14 5 8 8-12M19 5h8v8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"></path></svg>"
+  }
+ ],
+ "icons": [
+  "http://127.0.0.1:8765/assets/social-preview.png",
+  "http://127.0.0.1:8765/assets/favicon.svg",
+  "http://127.0.0.1:8765/assets/apple-touch-icon.png"
+ ],
+ "images": [
+  {
+   "src": "http://127.0.0.1:8765/assets/hero-intelligence.svg",
+   "alt": "",
+   "w": 800,
+   "h": 800
+  },
+  {
+   "src": "http://127.0.0.1:8765/assets/service-strategy.svg",
+   "alt": "Sculptural blocks forming a clear path",
+   "w": 600,
+   "h": 500
+  },
+  {
+   "src": "http://127.0.0.1:8765/assets/service-build.svg",
+   "alt": "Precision layers forming an integrated system",
+   "w": 600,
+   "h": 500
+  },
+  {
+   "src": "http://127.0.0.1:8765/assets/service-performance.svg",
+   "alt": "Rising metallic forms representing improvement",
+   "w": 600,
+   "h": 500
+  },
+  {
+   "src": "http://127.0.0.1:8765/assets/service-enablement.svg",
+   "alt": "Connected silver rings representing shared expertise",
+   "w": 600,
+   "h": 500
+  },
+  {
+   "src": "http://127.0.0.1:8765/assets/ateam-website.png",
+   "alt": "A.Team website: Grow at the speed of culture",
+   "w": 1265,
+   "h": 712
+  },
+  {
+   "src": "http://127.0.0.1:8765/assets/malaga-website.png",
+   "alt": "Málaga AI community website",
+   "w": 1265,
+   "h": 712
+  },
+  {
+   "src": "http://127.0.0.1:8765/assets/adrian-tineo.jpg",
+   "alt": "Adrian Tineo, independent AI consultant",
+   "w": 3950,
+   "h": 2933
+  }
+ ],
+ "headings": [
+  "AI expertise.\nBusiness impact.",
+  "Big possibilities.\nPractical next steps.",
+  "AI strategy\n& direction",
+  "AI development\n& integration",
+  "Evaluation\n& performance",
+  "Fractional AI\nleadership",
+  "Start with your business.\nBuild what matters.",
+  "Understand the opportunity.",
+  "Prove the potential.",
+  "Put it into practice.",
+  "Expertise grows\nthrough connection.",
+  "A.Team\nAI CONSULTANT",
+  "Málaga AI\nCO-FOUNDER & PRESIDENT",
+  "A direct line\nto deep expertise.",
+  "Good questions.\nClear answers.",
+  "What could AI\ndo for your business?"
+ ],
+ "text": "Skip to content\nAdrian Tineo\nExpertise\nApproach\nConnections\nLet’s talk\nINDEPENDENT AI CONSULTING\nAI expertise.\nBusiness impact.\nTurn the possibilities of AI into something\nyour business can actually use.\nClear strategy. Hands-on engineering. The right expertise\nalongside your team, from the first question to what’s next.\nLet’s explore your opportunity\nExplore expertise\nAdrian Tineo, PhD / Fractional AI Consultant\nINTELLIGENCE, APPLIED.\n01 — AT\n↗\nA clear direction\n✳\nA real-world advantage\nYOUR AMBITION\nAPPLIED AI\nEXPERIENCE THAT SPANS\nENTERPRISE & STARTUPS\nGoldman\nSachs\ntelepass\n»\nNVIDIA\nGTC SPEAKER\nSeries A\n& BEYOND\nEXPERTISE, BUILT AROUND YOU\nBig possibilities.\nPractical next steps.\nWherever you are with AI, move forward with clarity.\nSupport that connects business thinking with technical depth.\n01\nFIND THE RIGHT OPPORTUNITY\nAI strategy\n& direction\nIdentify where AI can make a meaningful difference. Build a focused roadmap around your goals, data and team.\nFrom possibility to a plan\n02\nMAKE THE IDEA WORK\nAI development\n& integration\nTurn a promising use case into a working solution. Connect models, data and workflows with hands-on engineering.\nFrom concept to capability\n03\nKNOW WHAT WORKS\nEvaluation\n& performance\nMake informed model choices. Understand the trade-offs in quality, speed and cost before you commit to scale.\nFrom assumptions to evidence\n04\nBRING YOUR PEOPLE WITH YOU\nFractional AI\nleadership\nBring senior AI expertise into your team. Get a thought partner for technical decisions and a practical path forward.\nExpertise, when you need it\nOne focused challenge or an ongoing collaboration. Let’s find the right fit ↗\nTHE WAY FORWARD\nStart with your business.\nBuild what matters.\nGood AI work starts with the right questions.\nThen it turns into something useful.\nTalk through your challenge\n01\nUnderstand the opportunity.\nGet clear on your business challenge, the people it affects and what a better outcome would look like.\n↗\n02\nProve the potential.\nTest the idea against real constraints. Explore the data, build a focused prototype and learn what works.\n✳\n03\nPut it into practice.\nBring the solution into your workflows, support your team and create a foundation you can keep building on.\n↗\nCONNECTED TO THE WORLD OF AI\nExpertise grows\nthrough connection.\nBuilding with exceptional people.\nSharing knowledge with a wider community.\nTwo connections that shape the work.\nA GLOBAL NETWORK OF BUILDERS\na.team\nExplore A.Team\nA.Team\nAI CONSULTANT\nPart of a global network bringing experienced engineers and AI specialists together to build for ambitious businesses.\nKNOWLEDGE, SHARED OPENLY\nmalaga-ai.community\nExplore Málaga AI\nMálaga AI\nCO-FOUNDER & PRESIDENT\nBringing people together to learn, exchange ideas and explore the possibilities of AI through a diverse, active community.\nAdrian Tineo\nPhD in Computer Science\nTHE EXPERTISE BEHIND YOUR NEXT STEP\nTECHNICAL DEPTH. HUMAN CONNECTION.\nA direct line\nto deep expertise.\nWork directly with an AI specialist who connects research, engineering and the realities of business.\nAdrian brings experience across fintech, proptech, edutech and sports analytics, working with enterprises including Goldman Sachs and Telepass, as well as Series A startups.\nHis work on open-source generative model performance has been featured at NVIDIA’s GTC. As co-founder and president of Málaga AI, he helps make AI knowledge more accessible.\nPhD in Computer Science\nBusiness-minded, hands-on\nConnect with Adrian on LinkedIn\nA LITTLE MORE CLARITY\nGood questions.\nClear answers.\nThinking about your next step with AI?\nHere’s a place to start.\nWe’re early in our AI journey. Where do we start?\nWhat does fractional AI consulting mean?\nCan you work alongside our existing team?\nDo we need to know which AI model to use?\nYOUR NEXT CHAPTER WITH AI\n↗\nWhat could AI\ndo for your business?\nBring a challenge, an idea or an open question.\nLet’s find a useful way forward.\nStart a conversation\nConnect directly with Adrian on LinkedIn.\nA GOOD CONVERSATION STARTS WITH\n“Here’s what we’re\ntrying to achieve.”\nYou bring the ambition.\nLet’s explore the possibilities.\nAdrian Tineo\nIndependent expertise. Shared ambition.\nLinkedIn\n↗\nBack to top\n↑\n© 2026 Adrian Tineo"
+}

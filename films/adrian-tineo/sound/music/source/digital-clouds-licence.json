@@ -1,0 +1,19 @@
+{
+ "@id": "Digital Clouds",
+ "@type": "MusicRecording",
+ "name": "Digital Clouds",
+ "genre": "Chillout",
+ "byArtist": "Alejandro Magaña (A. M.)",
+ "duration": "PT1M41S",
+ "url": "https://assets.mixkit.co/music/175/175.mp3",
+ "waveformUrl": "https://assets.mixkit.co/music/175/175-waveform.json",
+ "copyrightNotice": "Mixkit Stock Music Free License",
+ "encodingFormat": "audio/mpeg",
+ "isAccessibleForFree": true,
+ "license": "https://mixkit.co/license/#musicFree",
+ "publisher": {
+  "@id": "https://mixkit.co/#organization"
+ },
+ "datePublished": "2020-01-28",
+ "_checked": "2026-10-15, schema.org record on https://mixkit.co/free-stock-music/mood/futuristic/"
+}

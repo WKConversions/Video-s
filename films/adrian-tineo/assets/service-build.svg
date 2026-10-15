@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="500" viewBox="0 0 600 500">
+  <defs>
+    <radialGradient id="bg"><stop stop-color="#F9F9F9"/><stop offset="1" stop-color="#E8E8E8"/></radialGradient>
+    <linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff"/><stop offset=".38" stop-color="#EDEDED"/><stop offset=".75" stop-color="#B3B3B3"/><stop offset="1" stop-color="#E4E4E4"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#757575"/><stop offset=".28" stop-color="#D3D3D3"/><stop offset=".48" stop-color="#8D8D8D"/><stop offset=".5" stop-color="#666666"/><stop offset=".7" stop-color="#B4B4B4"/><stop offset="1" stop-color="#6F6F6F"/></linearGradient>
+    <linearGradient id="black" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#686868"/><stop offset=".22" stop-color="#383838"/><stop offset=".6" stop-color="#181818"/><stop offset="1" stop-color="#060606"/></linearGradient>
+    <linearGradient id="blackedge"><stop stop-color="#212121"/><stop offset=".48" stop-color="#111111"/><stop offset=".5" stop-color="#060606"/><stop offset="1" stop-color="#353535"/></linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="17"/></filter>
+    <filter id="shadow" x="-30%" y="-60%" width="160%" height="230%"><feDropShadow dx="0" dy="18" stdDeviation="13" flood-color="#242424" flood-opacity=".22"/></filter>
+    <g id="slab">
+      <path d="M-164-4V15Q-164 21-154 27L-12 109Q0 116 12 109L154 27Q164 21 164 15V-4Z" fill="url(#edge)"/>
+      <path d="M-154-13-12-95Q0-102 12-95L154-13Q173-2 154 9L12 91Q0 98-12 91L-154 9Q-173-2-154-13Z" fill="url(#top)"/>
+      <path d="M-154-10-12-92Q0-99 12-92L154-10M-154 8-12 90Q0 97 12 90L154 8" fill="none" stroke="#fff" stroke-opacity=".66" stroke-width="1.5"/>
+    </g>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h600v500H0z"/>
+  <ellipse cx="300" cy="405" rx="153" ry="26" fill="#525252" opacity=".2" filter="url(#blur)"/>
+  <g fill="none" stroke="#9F9F9F" stroke-dasharray="3 6" opacity=".58">
+    <path d="M300 155v207M180 220v80M420 220v80"/>
+  </g>
+  <use href="#slab" transform="translate(300 302)" filter="url(#shadow)"/>
+  <use href="#slab" transform="translate(300 228)" filter="url(#shadow)"/>
+  <g transform="translate(300 150)" filter="url(#shadow)">
+    <path d="M-164-4V15Q-164 21-154 27L-12 109Q0 116 12 109L154 27Q164 21 164 15V-4Z" fill="url(#blackedge)"/>
+    <path d="M-154-13-12-95Q0-102 12-95L154-13Q173-2 154 9L12 91Q0 98-12 91L-154 9Q-173-2-154-13Z" fill="url(#black)"/>
+    <path d="M-154-10-12-92Q0-99 12-92L154-10M-154 8-12 90Q0 97 12 90L154 8" fill="none" stroke="#fff" stroke-opacity=".27" stroke-width="1.5"/>
+    <path d="m-70-5 65-37q5-3 10 0L70-5q9 5 0 10L5 42q-5 3-10 0L-70 5q-9-5 0-10Z" fill="none" stroke="#767676" stroke-width="1"/>
+    <path d="m-26-3 22-13q4-2 8 0L26-3q5 3 0 6L4 16q-4 2-8 0L-26 3q-5-3 0-6Z" fill="#DBDBDB"/>
+  </g>
+</svg>

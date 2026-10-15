@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="500" viewBox="0 0 600 500">
+  <defs>
+    <radialGradient id="bg"><stop stop-color="#F9F9F9"/><stop offset="1" stop-color="#E8E8E8"/></radialGradient>
+    <linearGradient id="chrome" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#535353"/><stop offset=".12" stop-color="#FBFBFB"/><stop offset=".25" stop-color="#B2B2B2"/><stop offset=".43" stop-color="#707070"/><stop offset=".48" stop-color="#E1E1E1"/><stop offset=".63" stop-color="#fff"/><stop offset=".76" stop-color="#AAAAAA"/><stop offset=".9" stop-color="#585858"/><stop offset="1" stop-color="#C9C9C9"/></linearGradient>
+    <linearGradient id="inner" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F9F9F9"/><stop offset=".2" stop-color="#717171"/><stop offset=".4" stop-color="#D1D1D1"/><stop offset=".63" stop-color="#3C3C3C"/><stop offset=".83" stop-color="#F2F2F2"/><stop offset="1" stop-color="#6E6E6E"/></linearGradient>
+    <linearGradient id="black" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#656565"/><stop offset=".18" stop-color="#252525"/><stop offset=".4" stop-color="#0C0C0C"/><stop offset=".57" stop-color="#565656"/><stop offset=".73" stop-color="#171717"/><stop offset="1" stop-color="#080808"/></linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="15"/></filter>
+    <filter id="shadow" x="-60%" y="-50%" width="220%" height="220%"><feDropShadow dx="1" dy="14" stdDeviation="9" flood-color="#232323" flood-opacity=".22"/></filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h600v500H0z"/>
+  <ellipse cx="299" cy="383" rx="177" ry="26" fill="#525252" opacity=".18" filter="url(#blur)"/>
+  <g transform="rotate(-24 300 250)" fill="none" stroke-linecap="round">
+    <ellipse cx="193" cy="250" rx="65" ry="100" stroke="url(#inner)" stroke-width="33" filter="url(#shadow)"/>
+    <ellipse cx="193" cy="247" rx="65" ry="100" stroke="url(#chrome)" stroke-width="24"/>
+    <ellipse cx="300" cy="250" rx="65" ry="100" stroke="url(#black)" stroke-width="33" filter="url(#shadow)"/>
+    <ellipse cx="407" cy="250" rx="65" ry="100" stroke="url(#inner)" stroke-width="33" filter="url(#shadow)"/>
+    <ellipse cx="407" cy="247" rx="65" ry="100" stroke="url(#chrome)" stroke-width="24"/>
+    <path d="M246 192a65 100 0 0 1 9 78" stroke="url(#inner)" stroke-width="33"/>
+    <path d="M246 189a65 100 0 0 1 9 78" stroke="url(#chrome)" stroke-width="24"/>
+    <path d="M354 306a65 100 0 0 1-13-75" stroke="url(#black)" stroke-width="33"/>
+    <path d="M151 175a65 100 0 0 1 30-25M378 162a65 100 0 0 1 42-10" stroke="#fff" stroke-opacity=".72" stroke-width="3"/>
+    <path d="M270 162a65 100 0 0 1 42-10" stroke="#D8D8D8" stroke-opacity=".6" stroke-width="2"/>
+  </g>
+</svg>

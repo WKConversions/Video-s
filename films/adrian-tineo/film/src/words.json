@@ -1,0 +1,452 @@
+[
+ {
+  "key": "w:ai",
+  "word": "AI",
+  "start": 0.68,
+  "end": 1.14
+ },
+ {
+  "key": "w:is",
+  "word": "is",
+  "start": 1.32,
+  "end": 1.38
+ },
+ {
+  "key": "w:everywhere",
+  "word": "everywhere.",
+  "start": 1.68,
+  "end": 2.14
+ },
+ {
+  "key": "w:but",
+  "word": "But",
+  "start": 2.7,
+  "end": 2.8
+ },
+ {
+  "key": "w:making",
+  "word": "making",
+  "start": 2.86,
+  "end": 3.1
+ },
+ {
+  "key": "w:it",
+  "word": "it",
+  "start": 3.16,
+  "end": 3.2
+ },
+ {
+  "key": "w:work",
+  "word": "work",
+  "start": 3.24,
+  "end": 3.36
+ },
+ {
+  "key": "w:for",
+  "word": "for",
+  "start": 3.42,
+  "end": 3.501
+ },
+ {
+  "key": "w:your",
+  "word": "your",
+  "start": 3.561,
+  "end": 3.661
+ },
+ {
+  "key": "w:business",
+  "word": "business?",
+  "start": 3.741,
+  "end": 4.121
+ },
+ {
+  "key": "w:thats",
+  "word": "That's",
+  "start": 4.741,
+  "end": 4.981
+ },
+ {
+  "key": "w:where",
+  "word": "where",
+  "start": 5.021,
+  "end": 5.161
+ },
+ {
+  "key": "w:things",
+  "word": "things",
+  "start": 5.221,
+  "end": 5.401
+ },
+ {
+  "key": "w:get",
+  "word": "get",
+  "start": 5.441,
+  "end": 5.561
+ },
+ {
+  "key": "w:complicated",
+  "word": "complicated.",
+  "start": 5.641,
+  "end": 6.201
+ },
+ {
+  "key": "w:meet",
+  "word": "Meet",
+  "start": 6.901,
+  "end": 7.061
+ },
+ {
+  "key": "w:adrian",
+  "word": "Adrian",
+  "start": 7.221,
+  "end": 7.541
+ },
+ {
+  "key": "w:tineo",
+  "word": "Tineo,",
+  "start": 7.621,
+  "end": 8.021
+ },
+ {
+  "key": "w:your2",
+  "word": "your",
+  "start": 8.301,
+  "end": 8.441
+ },
+ {
+  "key": "w:independent",
+  "word": "independent",
+  "start": 8.561,
+  "end": 9.101
+ },
+ {
+  "key": "w:ai2",
+  "word": "AI",
+  "start": 9.261,
+  "end": 9.482
+ },
+ {
+  "key": "w:expert",
+  "word": "expert.",
+  "start": 9.662,
+  "end": 10.002
+ },
+ {
+  "key": "w:from",
+  "word": "From",
+  "start": 10.562,
+  "end": 10.682
+ },
+ {
+  "key": "w:uncovering",
+  "word": "uncovering",
+  "start": 10.822,
+  "end": 11.322
+ },
+ {
+  "key": "w:the",
+  "word": "the",
+  "start": 11.382,
+  "end": 11.462
+ },
+ {
+  "key": "w:right",
+  "word": "right",
+  "start": 11.582,
+  "end": 11.742
+ },
+ {
+  "key": "w:opportunities",
+  "word": "opportunities",
+  "start": 11.802,
+  "end": 12.462
+ },
+ {
+  "key": "w:to",
+  "word": "to",
+  "start": 12.602,
+  "end": 12.682
+ },
+ {
+  "key": "w:building",
+  "word": "building",
+  "start": 12.722,
+  "end": 12.982
+ },
+ {
+  "key": "w:real",
+  "word": "real",
+  "start": 13.142,
+  "end": 13.322
+ },
+ {
+  "key": "w:solutions",
+  "word": "solutions,",
+  "start": 13.402,
+  "end": 13.942
+ },
+ {
+  "key": "w:adrian2",
+  "word": "Adrian",
+  "start": 14.482,
+  "end": 14.782
+ },
+ {
+  "key": "w:connects",
+  "word": "connects",
+  "start": 14.882,
+  "end": 15.163
+ },
+ {
+  "key": "w:strategy",
+  "word": "strategy,",
+  "start": 15.223,
+  "end": 15.723
+ },
+ {
+  "key": "w:engineering",
+  "word": "engineering,",
+  "start": 16.043,
+  "end": 16.563
+ },
+ {
+  "key": "w:and",
+  "word": "and",
+  "start": 16.843,
+  "end": 16.943
+ },
+ {
+  "key": "w:execution",
+  "word": "execution.",
+  "start": 17.063,
+  "end": 17.583
+ },
+ {
+  "key": "w:explore",
+  "word": "Explore",
+  "start": 18.263,
+  "end": 18.663
+ },
+ {
+  "key": "w:use",
+  "word": "use",
+  "start": 18.803,
+  "end": 18.923
+ },
+ {
+  "key": "w:cases",
+  "word": "cases.",
+  "start": 18.983,
+  "end": 19.363
+ },
+ {
+  "key": "w:develop",
+  "word": "Develop",
+  "start": 19.903,
+  "end": 20.303
+ },
+ {
+  "key": "w:and2",
+  "word": "and",
+  "start": 20.443,
+  "end": 20.523
+ },
+ {
+  "key": "w:integrate",
+  "word": "integrate",
+  "start": 20.603,
+  "end": 21.004
+ },
+ {
+  "key": "w:ai3",
+  "word": "AI.",
+  "start": 21.124,
+  "end": 21.384
+ },
+ {
+  "key": "w:evaluate",
+  "word": "Evaluate",
+  "start": 21.984,
+  "end": 22.524
+ },
+ {
+  "key": "w:performance",
+  "word": "performance.",
+  "start": 22.584,
+  "end": 23.144
+ },
+ {
+  "key": "w:bring",
+  "word": "Bring",
+  "start": 23.764,
+  "end": 23.924
+ },
+ {
+  "key": "w:expert2",
+  "word": "expert",
+  "start": 24.144,
+  "end": 24.424
+ },
+ {
+  "key": "w:leadership",
+  "word": "leadership",
+  "start": 24.484,
+  "end": 24.904
+ },
+ {
+  "key": "w:directly",
+  "word": "directly",
+  "start": 25.024,
+  "end": 25.544
+ },
+ {
+  "key": "w:into",
+  "word": "into",
+  "start": 25.644,
+  "end": 25.804
+ },
+ {
+  "key": "w:your3",
+  "word": "your",
+  "start": 25.864,
+  "end": 25.984
+ },
+ {
+  "key": "w:team",
+  "word": "team.",
+  "start": 26.024,
+  "end": 26.224
+ },
+ {
+  "key": "w:no",
+  "word": "No",
+  "start": 26.865,
+  "end": 26.965
+ },
+ {
+  "key": "w:hype",
+  "word": "hype.",
+  "start": 27.045,
+  "end": 27.305
+ },
+ {
+  "key": "w:no2",
+  "word": "No",
+  "start": 27.685,
+  "end": 27.785
+ },
+ {
+  "key": "w:guesswork",
+  "word": "guesswork.",
+  "start": 27.885,
+  "end": 28.305
+ },
+ {
+  "key": "w:just",
+  "word": "Just",
+  "start": 28.605,
+  "end": 28.765
+ },
+ {
+  "key": "w:practical",
+  "word": "practical",
+  "start": 28.925,
+  "end": 29.365
+ },
+ {
+  "key": "w:ai4",
+  "word": "AI,",
+  "start": 29.545,
+  "end": 29.865
+ },
+ {
+  "key": "w:built",
+  "word": "built",
+  "start": 30.125,
+  "end": 30.345
+ },
+ {
+  "key": "w:around",
+  "word": "around",
+  "start": 30.485,
+  "end": 30.685
+ },
+ {
+  "key": "w:your4",
+  "word": "your",
+  "start": 30.825,
+  "end": 31.005
+ },
+ {
+  "key": "w:business2",
+  "word": "business.",
+  "start": 31.085,
+  "end": 31.465
+ },
+ {
+  "key": "w:ready",
+  "word": "Ready",
+  "start": 32.145,
+  "end": 32.325
+ },
+ {
+  "key": "w:to2",
+  "word": "to",
+  "start": 32.385,
+  "end": 32.445
+ },
+ {
+  "key": "w:turn",
+  "word": "turn",
+  "start": 32.505,
+  "end": 32.685
+ },
+ {
+  "key": "w:ai5",
+  "word": "AI",
+  "start": 32.846,
+  "end": 33.026
+ },
+ {
+  "key": "w:potential",
+  "word": "potential",
+  "start": 33.126,
+  "end": 33.586
+ },
+ {
+  "key": "w:into2",
+  "word": "into",
+  "start": 33.726,
+  "end": 33.886
+ },
+ {
+  "key": "w:meaningful",
+  "word": "meaningful",
+  "start": 34.006,
+  "end": 34.406
+ },
+ {
+  "key": "w:business3",
+  "word": "business",
+  "start": 34.486,
+  "end": 34.806
+ },
+ {
+  "key": "w:impact",
+  "word": "impact?",
+  "start": 34.866,
+  "end": 35.186
+ },
+ {
+  "key": "w:lets",
+  "word": "Let's",
+  "start": 35.686,
+  "end": 35.846
+ },
+ {
+  "key": "w:talk",
+  "word": "talk.",
+  "start": 35.906,
+  "end": 36.126
+ }
+]
