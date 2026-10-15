@@ -4,11 +4,13 @@
 // 2 · 31.75–32.3: the devices flatten, fly to the centre and shrink, each turning into a blue disc: one blue dot,
 //     the dot that started the film. The line leaves.
 // 3 · "Creoble." grows out of the dot exactly as in scene A (the dot slides right to become its full stop, the letters
-//     unfurl right to left), then "Build your website for free at creoble.dk" builds under it. A slow push to the end.
+//     unfurl right to left). Then the end card: "Build your website for free" builds under it (gray) and a frosted
+//     white pill "creoble.dk →" rises below; at 33.5 the blue guide cursor glides in from the lower right and clicks it
+//     (the pill dips 2%, a soft blue ring widens, the arrow nudges), then drifts a little away. A slow push to the end.
 import React from "react";
 import { AbsoluteFill, Easing } from "remotion";
 import { ARRIVE, C, MOVE, clamp01, mix } from "../lib";
-import { Laptop, MobileSite, Phone, SANS, SERIF, Say, Site, SW, SH, PW, PH, f, k } from "../shared";
+import { Cursor, Ico, Laptop, MobileSite, Phone, SANS, SERIF, Say, Site, SW, SH, PW, PH, f, k } from "../shared";
 
 const sec = (g: number) => g / 30;
 const ss = (a: number, b: number, x: number) => { const t = clamp01((x - a) / (b - a)); return t * t * (3 - 2 * t); };
@@ -23,7 +25,7 @@ const PWB = PW + 26, PHB = PH + 26;                     // the phone's body
 const FOLD = 31.75, FOLD_D = 0.55;                     // the fold into the dot
 
 /* ---------- the end card (A's numbers, at 200 px, drawn at 0.95 → 190 px) ---------- */
-const WM = 200, WM_Y = 500, DOT_DX = 296, DOT_DY = 60, DOT_D = 26;
+const WM = 200, WM_Y = 456, DOT_DX = 296, DOT_DY = 60, DOT_D = 26;
 const MS = 0.95;                                       // mark scale
 const REVEAL = 32.24;                                  // the dot starts pulling the word out (just before "creoble")
 const push = (t: number) => { const x = clamp01((t - 31.9) / 3.7); return 0.96 + 0.1 * (1 - Math.pow(1 - x, 1.5)); };
@@ -50,7 +52,61 @@ const Bloom: React.FC<{ x: number; y: number; r0: number; r1: number; k: number;
     background: "radial-gradient(circle, rgba(74,163,245,0) 48%, rgba(74,163,245,0.26) 64%, rgba(74,163,245,0.10) 78%, rgba(74,163,245,0) 92%)" }} />;
 };
 
-const TAG: { t: string; blue?: boolean }[] = [{ t: "Build" }, { t: "your" }, { t: "website" }, { t: "for" }, { t: "free" }, { t: "at" }, { t: "creoble.dk", blue: true }];
+/* ---------- the end card: a gray line, then the pill the guide cursor clicks (container space, pushed with P) ---------- */
+const TAG = ["Build", "your", "website", "for", "free"];
+const TAG_Y = 616, PILL_Y = 726, PILL_H = 88;          // centres
+const CLICK = 33.5;                                    // the press (0.1 s down-and-up, then the ring)
+const GLIDE = Easing.bezier(0.22, 0.1, 0.18, 1);       // the cursor's glide in: quick, then a soft landing
+const pressAt = (t: number) => {                       // 0..1..0 around the click
+  const d = t - CLICK;
+  if (d < -0.05 || d > 0.14) return 0;
+  return d < 0 ? ARRIVE(clamp01((d + 0.05) / 0.05)) : 1 - ARRIVE(clamp01(d / 0.14));
+};
+
+const EndCard: React.FC<{ g: number; t: number; P: number }> = ({ g, t, P }) => {
+  if (t < 32.8) return null;
+  const pin = k(g, 33.0, 0.75);                          // the pill rises
+  const pr = pressAt(t);
+  const after = ss(CLICK + 0.02, CLICK + 0.5, t);        // the pill's focus state after the click
+  const ring = clamp01((t - (CLICK + 0.02)) / 0.85);
+  const nudge = Math.sin(Math.PI * clamp01((t - (CLICK + 0.02)) / 0.55)) * (1 - clamp01((t - (CLICK + 0.02)) / 0.55) * 0.4);
+  // the guide cursor: from the lower right to "creoble.dk", press, then a slow drift a little away
+  const ci = clamp01((t - 32.98) / 0.5), cg = GLIDE(ci), cy2 = Easing.bezier(0.35, 0, 0.15, 1)(ci);
+  const tipX = 1004, tipY = PILL_Y + 25;               // under "le.d", clear of the letters
+  const dr = MOVE(clamp01((t - (CLICK + 0.2)) / 1.3));
+  const cx = mix(1760, tipX, cg) + 74 * dr, cy = mix(1180, tipY, cy2) + 84 * dr;
+  return (
+    <AbsoluteFill style={{ transform: `scale(${P})`, transformOrigin: "960px 540px" }}>
+      {/* the line */}
+      <div style={{ position: "absolute", left: 0, top: TAG_Y - 22, width: 1920, height: 44, display: "flex", justifyContent: "center", alignItems: "center", gap: 34 * 0.27,
+        fontFamily: SANS, fontWeight: 500, fontSize: 34, letterSpacing: "-0.015em", lineHeight: 1.2, color: C.gray, whiteSpace: "nowrap" }}>
+        {TAG.map((w, i) => {
+          const kk = k(g, 32.88 + i * 0.05, 0.8);
+          return <span key={i} style={{ display: "inline-block", opacity: Math.min(1, kk * 1.4), transform: `translateY(${(1 - kk) * 12}px)`, filter: kk < 1 ? `blur(${(1 - kk) * 8}px)` : undefined }}>{w}</span>;
+        })}
+      </div>
+      {/* the pill */}
+      {pin > 0 && (
+        <div style={{ position: "absolute", left: 0, top: PILL_Y - PILL_H / 2, width: 1920, height: PILL_H, display: "flex", justifyContent: "center",
+          opacity: Math.min(1, pin * 1.5), transform: `translateY(${(1 - pin) * 26}px) scale(${(0.94 + 0.06 * pin) * (1 - 0.02 * pr)})`, transformOrigin: `960px ${PILL_H / 2}px` }}>
+          <div style={{ position: "relative", height: PILL_H, borderRadius: PILL_H / 2, display: "flex", alignItems: "center", gap: 14, padding: "0 38px 0 46px",
+            background: pr > 0 ? `rgba(${mix(255, 234, pr)}, ${mix(255, 244, pr)}, ${mix(255, 254, pr)}, 0.9)` : "rgba(255,255,255,0.84)",
+            backdropFilter: "blur(10px) saturate(1.3)", border: `1px solid rgba(${mix(29, 74, after)}, ${mix(29, 163, after)}, ${mix(31, 245, after)}, ${mix(0.08, 0.32, after)})`,
+            boxShadow: `0 28px 56px -26px rgba(29,29,31,${0.26 * pin}), 0 3px 10px rgba(29,29,31,0.04), inset 0 1px 0 rgba(255,255,255,0.95), 0 0 0 ${5 * after}px rgba(74,163,245,${0.1 * after})` }}>
+            {ring > 0 && ring < 1 && (
+              <div style={{ position: "absolute", inset: -26 * ARRIVE(ring), borderRadius: PILL_H / 2 + 26 * ARRIVE(ring), border: `2.5px solid rgba(74,163,245,${0.55 * Math.pow(1 - ring, 1.3)})`,
+                boxShadow: `0 0 22px rgba(74,163,245,${0.28 * Math.pow(1 - ring, 1.3)})` }} />
+            )}
+            <span style={{ fontFamily: SANS, fontWeight: 600, fontSize: 38, letterSpacing: "-0.012em", color: C.blueDeep, lineHeight: 1, whiteSpace: "nowrap" }}>creoble.dk</span>
+            <div style={{ transform: `translateX(${7 * nudge}px)` }}><Ico n="arrow" s={32} c={C.blueDeep} w={2.7} /></div>
+          </div>
+        </div>
+      )}
+      {/* the guide cursor */}
+      {ci > 0 && <Cursor x={cx} y={cy} s={1.3} o={Math.min(1, ci * 4)} press={pr} />}
+    </AbsoluteFill>
+  );
+};
 
 export const SceneF: React.FC<{ g: number }> = ({ g }) => {
   if (g < f(29.9) || g > f(35.6)) return null;
@@ -128,7 +184,7 @@ export const SceneF: React.FC<{ g: number }> = ({ g }) => {
       )}
 
       {t >= REVEAL && (() => { const h = ss(REVEAL + 0.3, REVEAL + 1.6, t), R = mix(380, 620, clamp01((t - REVEAL) / 3.4)); return (
-        <div style={{ position: "absolute", left: 960 - R * 1.6, top: 520 - R, width: R * 3.2, height: R * 2, borderRadius: "50%", opacity: 0.55 * h,
+        <div style={{ position: "absolute", left: 960 - R * 1.6, top: WM_Y + 20 - R, width: R * 3.2, height: R * 2, borderRadius: "50%", opacity: 0.55 * h,
           background: "radial-gradient(ellipse at center, rgba(74,163,245,0.16) 0%, rgba(74,163,245,0.06) 45%, rgba(74,163,245,0) 70%)" }} />); })()}
 
       {/* 3 · Creoble. — out of the dot, letter by letter, right to left (as in scene A) */}
@@ -150,17 +206,8 @@ export const SceneF: React.FC<{ g: number }> = ({ g }) => {
         </AbsoluteFill>
       )}
 
-      {/* 3 · the call to action */}
-      {t >= 32.8 && (
-        <div style={{ position: "absolute", left: 0, top: 0, width: 1920, display: "flex", justifyContent: "center", gap: 36 * 0.27, transformOrigin: "960px 540px",
-          transform: `scale(${P}) translateY(${672}px)`, fontFamily: SANS, fontWeight: 500, fontSize: 36, letterSpacing: "-0.015em", lineHeight: 1.2, color: C.gray, whiteSpace: "nowrap" }}>
-          {TAG.map((w, i) => {
-            const kk = k(g, 32.88 + i * 0.045, 0.8);
-            return <span key={i} style={{ display: "inline-block", color: w.blue ? C.blueDeep : undefined, fontWeight: w.blue ? 600 : 500, opacity: Math.min(1, kk * 1.4),
-              transform: `translateY(${(1 - kk) * 12}px)`, filter: kk < 1 ? `blur(${(1 - kk) * 8}px)` : undefined }}>{w.t}</span>;
-          })}
-        </div>
-      )}
+      {/* 3 · the end card: the line, the pill and the guide cursor's click */}
+      <EndCard g={g} t={t} P={P} />
     </AbsoluteFill>
   );
 };

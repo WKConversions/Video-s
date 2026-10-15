@@ -612,46 +612,40 @@
    "note": "kr."
   },
   {
-   "frame": 755,
+   "frame": 765,
    "id": "kenney-click-001",
    "db": -3,
    "note": "the cursor clicks into the address bar"
   },
   {
-   "frame": 761,
+   "frame": 766,
    "id": "kenney-click-001",
    "db": -16,
    "note": "a key"
   },
   {
-   "frame": 763,
+   "frame": 767,
    "id": "kenney-click-001",
    "db": -16,
    "pitch": 2,
    "note": "a key"
   },
   {
-   "frame": 765,
+   "frame": 768,
    "id": "kenney-click-001",
    "db": -16,
    "pitch": -1,
    "note": "a key"
   },
   {
-   "frame": 766,
-   "id": "kenney-select-001",
-   "db": -6,
-   "note": "Live"
-  },
-  {
-   "frame": 767,
+   "frame": 769,
    "id": "kenney-click-001",
    "db": -16,
    "pitch": 3,
    "note": "a key"
   },
   {
-   "frame": 769,
+   "frame": 770,
    "id": "kenney-click-001",
    "db": -16,
    "pitch": 1,
@@ -665,17 +659,23 @@
    "note": "a key"
   },
   {
-   "frame": 773,
+   "frame": 772,
    "id": "kenney-click-001",
    "db": -16,
    "note": "a key"
   },
   {
-   "frame": 775,
+   "frame": 773,
    "id": "kenney-click-001",
    "db": -16,
    "pitch": 2,
    "note": "a key"
+  },
+  {
+   "frame": 774,
+   "id": "kenney-select-001",
+   "db": -6,
+   "note": "Live"
   },
   {
    "frame": 782,

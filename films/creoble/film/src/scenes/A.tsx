@@ -1,7 +1,7 @@
 // Scene A (0–4.85 s): "What if building a website was this simple?" / "Meet Creoble." See ../../../plan/v2-storyboard.md.
-// 1 · The question builds word by word while website-building clutter swims in around it in shallow 3D, every piece
-//     busy with its own fiddly task (code typing, a font being tweaked, swatches being picked, sliders nudged).
-// 2 · On "simple" the clutter implodes: each card folds into a blue droplet and is drawn into the "?", becoming its dot.
+// 1 · The question builds word by word while five calm, light cards (type, colour, layout, image, code) swim in around
+//     it, one per word, and drift slowly in shallow 3D in the open space above and below the type (v3: no dark cards).
+// 2 · On "simple" the pieces collapse: each card folds into a blue droplet and is drawn into the "?", becoming its dot.
 // 3 · The question rises away; the dot glides to the centre and glows; "Meet" tracks in above it.
 // 4 · On "creoble" the wordmark swings open out of the dot (hinged at its full stop), letter by letter, while the dot
 //     slides right to become that full stop and settles; the word tightens its tracking; a push and a slow truck.
@@ -18,11 +18,9 @@ import { Ico, SANS, SERIF, Wordmark, k } from "../shared";
 const sec = (g: number) => g / 30;
 const ss = (a: number, b: number, x: number) => { const t = clamp01((x - a) / (b - a)); return t * t * (3 - 2 * t); };
 const lerpLog = (a: number, b: number, t: number) => Math.exp(mix(Math.log(a), Math.log(b), t));
-const IN = Easing.bezier(0.4, 0, 0.75, 0.45);         // the clutter accelerates into the dot
+const IN = Easing.bezier(0.4, 0, 0.75, 0.45);         // the pieces accelerate into the dot
 const LAND = Easing.bezier(0.33, 0, 0.12, 1);          // the dot's carry to its place as the full stop
 const SWING = Easing.bezier(0.3, 0.25, 0.25, 1);        // the wordmark's swing: opens steadily, settles long
-const LIGHTBLUE = "#9DCCF8";                           // a paler step of the accent (syntax strings, inside the code card)
-const MONO = "'DejaVu Sans Mono', 'Liberation Mono', monospace";
 
 /* ---------- the question ---------- */
 const QS = 108;                                        // the question's size
@@ -52,184 +50,86 @@ const QLine: React.FC<{ g: number; words: QW[]; y: number; out: number; stagger:
   </div>
 );
 
-/* ---------- the clutter: website-building pieces, each busy ---------- */
-type Piece = { id: string; x: number; y: number; z: number; w: number; h: number; rx: number; ry: number; rz: number; at: string; ph: number; ord: number; r: number; bg: string };
+/* ---------- the pieces: five calm, light cards, one idea each ---------- */
+// White, frosted, hairline-edged cards with a soft shadow. Each carries one idea and one blue detail (type, colour,
+// layout, image, code), with at most one gentle change after it lands. They drift slowly in shallow 3D around the
+// question, in the open space above and below it, never over the type.
+type Piece = { id: string; x: number; y: number; z: number; w: number; h: number; rx: number; ry: number; rz: number; at: string; ph: number; ord: number; r: number };
 const PIECES: Piece[] = [
-  { id: "code", x: 330, y: 205, z: 40, w: 360, h: 210, rx: 8, ry: 16, rz: -3, at: "w:building", ph: 0.0, ord: 1, r: 22, bg: C.ink },
-  { id: "layout", x: 1600, y: 860, z: 30, w: 300, h: 210, rx: -10, ry: -18, rz: 3, at: "w:building+0.14", ph: 1.3, ord: 8, r: 22, bg: C.white },
-  { id: "type", x: 1650, y: 215, z: -100, w: 200, h: 200, rx: 10, ry: -20, rz: 4, at: "w:a", ph: 2.1, ord: 4, r: 26, bg: C.white },
-  { id: "palette", x: 340, y: 870, z: 0, w: 300, h: 116, rx: -12, ry: 14, rz: -2, at: "w:website", ph: 0.7, ord: 2, r: 26, bg: C.white },
-  { id: "image", x: 1150, y: 170, z: -180, w: 250, h: 184, rx: 12, ry: -8, rz: 2, at: "w:website+0.12", ph: 2.8, ord: 5, r: 22, bg: C.white },
-  { id: "sliders", x: 190, y: 560, z: -60, w: 214, h: 170, rx: 4, ry: 24, rz: -4, at: "w:was", ph: 1.9, ord: 0, r: 22, bg: C.white },
-  { id: "toggle", x: 1020, y: 920, z: 70, w: 264, h: 84, rx: -14, ry: 8, rz: 2, at: "w:was+0.12", ph: 0.4, ord: 7, r: 42, bg: C.white },
-  { id: "picker", x: 1700, y: 600, z: 40, w: 168, h: 150, rx: 4, ry: -22, rz: 2, at: "w:this", ph: 3.3, ord: 6, r: 22, bg: C.white },
-  { id: "tile", x: 700, y: 150, z: -240, w: 110, h: 110, rx: 14, ry: 10, rz: -6, at: "w:this+0.1", ph: 1.1, ord: 3, r: 30, bg: C.blueTint },
+  { id: "type", x: 440, y: 205, z: 30, w: 196, h: 196, rx: 7, ry: 12, rz: -2, at: "w:building", ph: 0.0, ord: 0, r: 40 },
+  { id: "code", x: 1110, y: 175, z: -120, w: 140, h: 140, rx: 8, ry: -6, rz: 3, at: "w:a", ph: 2.1, ord: 2, r: 34 },
+  { id: "colour", x: 1560, y: 230, z: 0, w: 292, h: 132, rx: 8, ry: -13, rz: 2, at: "w:website", ph: 1.3, ord: 3, r: 40 },
+  { id: "layout", x: 520, y: 875, z: -50, w: 292, h: 204, rx: -7, ry: 12, rz: 2, at: "w:was", ph: 0.7, ord: 1, r: 30 },
+  { id: "image", x: 1520, y: 845, z: 30, w: 276, h: 196, rx: -8, ry: -12, rz: -2, at: "w:this", ph: 2.8, ord: 4, r: 30 },
 ];
-const F = 1800;                                        // the clutter camera's focal length (px)
-const COLLAPSE = 1.78, C_STAGGER = 0.012;              // on "simple"; the far pieces leave first and take longer
-const cDur = (p: Piece) => 0.3 + 0.14 * clamp01(Math.hypot(p.x - Q_DOT.x, p.y - Q_DOT.y) / 1150);
+const F = 1800;                                        // the pieces' camera focal length (px)
+const COLLAPSE = 1.78, C_STAGGER = 0.025;              // on "simple"; the far pieces leave first and take longer
+const cDur = (p: Piece) => 0.32 + 0.14 * clamp01(Math.hypot(p.x - Q_DOT.x, p.y - Q_DOT.y) / 1150);
 const collapseLin = (t: number, p: Piece) => clamp01((t - (COLLAPSE + p.ord * C_STAGGER)) / cDur(p));
 const C_DONE = Math.max(...PIECES.map((p) => COLLAPSE + p.ord * C_STAGGER + cDur(p)));
+const PALE = "#CFE6FC";                                // a paler step of the accent
 
-// A value that steps through a list on a beat, each step a short MOVE (UI state changing, never a jump).
-const hop = (t: number, period: number, n: number, ph = 0) => {
-  const u = t / period + ph, i = Math.floor(u), fr = MOVE(clamp01((u - i) / 0.45));
-  return { a: ((i % n) + n) % n, b: (((i + 1) % n) + n) % n, t: fr };
-};
-
-const CODE: [string, string][][] = [
-  [[C.blue, "<nav"], [C.light, " class="], [LIGHTBLUE, '"menu"'], [C.blue, ">"]],
-  [[C.blue, "  <a"], [C.light, " href="], [LIGHTBLUE, '"/"'], [C.blue, ">"], ["#F2F2F0", "Home"], [C.blue, "</a>"]],
-  [[C.blue, "  <a"], [C.light, " href="], [LIGHTBLUE, '"/shop"'], [C.blue, ">"], ["#F2F2F0", "Shop"], [C.blue, "</a>"]],
-  [[C.blue, "</nav>"]],
-  [["#F2F2F0", ".menu"], [C.light, " { "], [LIGHTBLUE, "gap"], [C.light, ": "], ["#F2F2F0", "24px"], [C.light, " }"]],
-];
-
-const PieceBody: React.FC<{ p: Piece; t: number; t0: number }> = ({ p, t, t0 }) => {
-  const lt = t - t0;                                   // seconds since it arrived
-  if (p.id === "code") {
-    let n = Math.floor(Math.max(0, lt) * 72);
+const PieceBody: React.FC<{ p: Piece; lt: number }> = ({ p, lt }) => {
+  const d = (at: number, dur = 0.6) => ARRIVE(clamp01((lt - at) / dur));   // the card's one gentle change, after it lands
+  if (p.id === "type") {
     return (
-      <div style={{ position: "absolute", inset: 0, padding: "18px 22px", boxSizing: "border-box" }}>
-        <div style={{ display: "flex", gap: 8, marginBottom: 14 }}>{[0, 1, 2].map((i) => <div key={i} style={{ width: 11, height: 11, borderRadius: 6, background: "#3A3A3E" }} />)}</div>
-        {CODE.map((line, li) => {
-          const segs: React.ReactNode[] = [];
-          let caretHere = false;
-          for (let si = 0; si < line.length; si++) {
-            const [col, txt] = line[si];
-            const take = Math.max(0, Math.min(txt.length, n));
-            n -= take;
-            if (take > 0) segs.push(<span key={si} style={{ color: col }}>{txt.slice(0, take)}</span>);
-            if (take < txt.length && !caretHere) { caretHere = true; break; }
-          }
-          return (
-            <div key={li} style={{ height: 26, display: "flex", alignItems: "center", fontFamily: MONO, fontSize: 16, whiteSpace: "pre" }}>
-              {segs}{caretHere && segs.length > 0 && <span style={{ width: 2, height: 19, marginLeft: 1, background: C.blue }} />}
-            </div>
-          );
-        })}
+      <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: SANS, fontWeight: 600, fontSize: 92, letterSpacing: "-0.03em", color: C.ink, lineHeight: 1, paddingBottom: 6, boxSizing: "border-box" }}>
+        A<span style={{ color: C.blue }}>a</span>
+      </div>
+    );
+  }
+  if (p.id === "code") {
+    return <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}><Ico n="code" s={64} c={C.blueDeep} w={2.1} /></div>;
+  }
+  if (p.id === "colour") {
+    const ring = d(0.5, 0.7);                           // the middle swatch is picked
+    const S = 58, GAP = 26, x0 = (p.w - (3 * S + 2 * GAP)) / 2;
+    return (
+      <div style={{ position: "absolute", inset: 0 }}>
+        {[C.blueTint, C.blue, C.blueDeep].map((c, i) => (
+          <div key={i} style={{ position: "absolute", left: x0 + i * (S + GAP), top: p.h / 2 - S / 2, width: S, height: S, borderRadius: S / 2, background: c, boxShadow: i === 0 ? `inset 0 0 0 1px ${PALE}` : undefined }} />
+        ))}
+        <div style={{ position: "absolute", left: x0 + S + GAP - 7, top: p.h / 2 - S / 2 - 7, width: S + 14, height: S + 14, borderRadius: (S + 14) / 2, border: `2.5px solid ${C.blue}`, boxSizing: "border-box",
+          opacity: ring, transform: `scale(${1.18 - 0.18 * ring})` }} />
       </div>
     );
   }
   if (p.id === "layout") {
-    const r = 0.5 + 0.13 * Math.sin(t * 2.4 + p.ph);
-    const W = p.w - 32, hx = 16, hy = 42, hh = 84, colY = 140, colH = 52;
-    const rects = [[hx, hy, W * r - 6, hh], [hx + W * r + 6, hy, W * (1 - r) - 6, hh], [hx, colY, W / 3 - 8, colH], [hx + W / 3 + 4, colY, W / 3 - 8, colH], [hx + (2 * W) / 3 + 8, colY, W / 3 - 8, colH]];
-    const h = hop(t, 0.42, rects.length, p.ph);
-    const A = rects[h.a], B = rects[h.b];
-    const sel = [0, 1, 2, 3].map((i) => mix(A[i], B[i], h.t));
+    const hero = d(0.35, 0.8);                          // the hero block draws itself across the page
+    const W = p.w - 40;
     return (
       <div style={{ position: "absolute", inset: 0 }}>
-        <div style={{ position: "absolute", left: 16, top: 16, width: W, height: 14, borderRadius: 7, background: "#ECECEA", display: "flex", alignItems: "center", gap: 5, paddingLeft: 7, boxSizing: "border-box" }}>
-          {[0, 1, 2].map((i) => <div key={i} style={{ width: 5, height: 5, borderRadius: 3, background: C.light }} />)}</div>
-        <div style={{ position: "absolute", left: rects[0][0], top: hy, width: rects[0][2], height: hh, borderRadius: 10, background: C.fill, padding: 12, boxSizing: "border-box" }}>
-          {[0.9, 0.7, 0.45].map((wd, i) => <div key={i} style={{ width: `${wd * 100}%`, height: i === 0 ? 11 : 7, borderRadius: 4, background: i === 0 ? "#D8D8D6" : "#E3E3E1", marginBottom: 8 }} />)}</div>
-        <div style={{ position: "absolute", left: rects[1][0], top: hy, width: rects[1][2], height: hh, borderRadius: 10, background: C.blueTint, display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <Ico n="image" s={30} c={C.blue} w={2} /></div>
-        {[2, 3, 4].map((i) => <div key={i} style={{ position: "absolute", left: rects[i][0], top: colY, width: rects[i][2], height: colH, borderRadius: 9, background: C.fill }} />)}
-        <div style={{ position: "absolute", left: sel[0] - 4, top: sel[1] - 4, width: sel[2] + 8, height: sel[3] + 8, borderRadius: 12, border: `2.5px solid ${C.blue}`, boxSizing: "border-box" }} />
+        <div style={{ position: "absolute", left: 20, top: 20, width: W * 0.42, height: 10, borderRadius: 5, background: C.line }} />
+        <div style={{ position: "absolute", left: 20, top: 46, width: mix(W * 0.3, W, hero), height: 72, borderRadius: 14, background: C.blueTint, boxShadow: `inset 0 0 0 1.5px ${C.blue}` }} />
+        {[0, 1].map((i) => <div key={i} style={{ position: "absolute", left: 20 + i * (W / 2 + 6), top: 130, width: W / 2 - 6, height: 54, borderRadius: 12, background: C.fill }} />)}
       </div>
     );
   }
-  if (p.id === "type") {
-    const wv = 0.5 + 0.5 * Math.sin(t * 3.0 + p.ph);
-    return (
-      <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", paddingTop: 22, boxSizing: "border-box" }}>
-        <div style={{ fontFamily: SERIF, fontWeight: Math.round(mix(330, 680, wv)), fontSize: 90, lineHeight: 1, color: C.ink, letterSpacing: "-0.02em", height: 96 }}>Aa</div>
-        <div style={{ fontFamily: SANS, fontWeight: 500, fontSize: 15, color: C.gray, marginTop: 10 }}>Weight {Math.round(mix(300, 700, wv) / 10) * 10}</div>
-        <div style={{ position: "relative", width: 140, height: 4, borderRadius: 2, background: C.line, marginTop: 14 }}>
-          <div style={{ position: "absolute", left: 0, top: 0, width: 140 * wv, height: 4, borderRadius: 2, background: C.blue }} />
-          <div style={{ position: "absolute", left: 140 * wv - 9, top: -7, width: 18, height: 18, borderRadius: 9, background: C.white, boxShadow: "0 0 0 1px rgba(29,29,31,0.1), 0 2px 5px rgba(29,29,31,0.2)" }} />
-        </div>
-      </div>
-    );
-  }
-  if (p.id === "palette") {
-    const sw = [C.blue, C.blueDeep, C.blueTint, C.ink, "#CFE6FC"];
-    const h = hop(t, 0.46, sw.length, p.ph);
-    const x0 = 96, gap = 40;
-    const sx = mix(x0 + h.a * gap, x0 + h.b * gap, h.t);
-    return (
-      <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", paddingLeft: 22, boxSizing: "border-box" }}>
-        <div style={{ width: 56, height: 56, borderRadius: 16, background: C.blueTint, display: "flex", alignItems: "center", justifyContent: "center" }}><Ico n="palette" s={30} c={C.blueDeep} w={2.2} /></div>
-        {sw.map((c, i) => <div key={i} style={{ position: "absolute", left: x0 + i * gap, top: p.h / 2 - 14, width: 28, height: 28, borderRadius: 14, background: c, boxShadow: c === C.blueTint || c === "#CFE6FC" ? `inset 0 0 0 1px ${C.line}` : undefined }} />)}
-        <div style={{ position: "absolute", left: sx - 5, top: p.h / 2 - 19, width: 38, height: 38, borderRadius: 19, border: `2.5px solid ${C.blue}`, boxSizing: "border-box" }} />
-      </div>
-    );
-  }
-  if (p.id === "image") {
-    const up = ss(0, 1.4, lt);
-    return (
-      <div style={{ position: "absolute", inset: 0, padding: 14, boxSizing: "border-box" }}>
-        <div style={{ height: 108, borderRadius: 14, background: C.blueTint, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", position: "relative" }}>
-          <Ico n="image" s={46} c={C.blue} w={2} />
-          <div style={{ position: "absolute", left: 0, top: 0, width: `${up * 100}%`, height: "100%", background: "linear-gradient(90deg, rgba(74,163,245,0) 0%, rgba(74,163,245,0.16) 100%)" }} />
-        </div>
-        <div style={{ display: "flex", justifyContent: "space-between", fontFamily: SANS, fontWeight: 500, fontSize: 15, color: C.gray, marginTop: 12 }}><span>hero.jpg</span><span>{Math.round(up * 100)}%</span></div>
-        <div style={{ height: 5, borderRadius: 3, background: C.fill, marginTop: 8 }}><div style={{ width: `${up * 100}%`, height: 5, borderRadius: 3, background: C.blue }} /></div>
-      </div>
-    );
-  }
-  if (p.id === "sliders") {
-    return (
-      <div style={{ position: "absolute", inset: 0, padding: "20px 22px", boxSizing: "border-box" }}>
-        {["Size", "Spacing", "Radius"].map((lab, i) => {
-          const v = 0.5 + 0.36 * Math.sin(t * (2.1 + i * 0.7) + p.ph + i * 1.9);
-          return (
-            <div key={lab} style={{ marginBottom: 14 }}>
-              <div style={{ fontFamily: SANS, fontWeight: 500, fontSize: 14, color: C.gray, marginBottom: 8 }}>{lab}</div>
-              <div style={{ position: "relative", height: 4, borderRadius: 2, background: C.line }}>
-                <div style={{ position: "absolute", left: 0, top: 0, width: `${v * 100}%`, height: 4, borderRadius: 2, background: C.blue }} />
-                <div style={{ position: "absolute", left: `calc(${v * 100}% - 8px)`, top: -6, width: 16, height: 16, borderRadius: 8, background: C.white, boxShadow: "0 0 0 1px rgba(29,29,31,0.1), 0 2px 5px rgba(29,29,31,0.2)" }} />
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    );
-  }
-  if (p.id === "toggle") {
-    const on = ss(-0.35, 0.35, Math.sin(t * 4.4 + p.ph));
-    return (
-      <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 18px 0 30px", boxSizing: "border-box" }}>
-        <span style={{ fontFamily: SANS, fontWeight: 600, fontSize: 21, color: C.ink, letterSpacing: "-0.01em" }}>Sticky header</span>
-        <div style={{ position: "relative", width: 60, height: 36, borderRadius: 18, background: on > 0.5 ? C.blue : C.line, transition: "none" }}>
-          <div style={{ position: "absolute", inset: 0, borderRadius: 18, background: C.blue, opacity: on }} />
-          <div style={{ position: "absolute", left: mix(3, 27, on), top: 3, width: 30, height: 30, borderRadius: 15, background: C.white, boxShadow: "0 2px 6px rgba(29,29,31,0.22)" }} />
-        </div>
-      </div>
-    );
-  }
-  if (p.id === "picker") {
-    const u = 0.5 + 0.38 * Math.sin(t * 2.3 + p.ph), v = 0.5 + 0.34 * Math.sin(t * 3.1 + p.ph * 2);
-    const hv = 0.5 + 0.4 * Math.sin(t * 1.7 + p.ph);
-    return (
-      <div style={{ position: "absolute", inset: 0, padding: 13, boxSizing: "border-box" }}>
-        <div style={{ position: "relative", height: 92, borderRadius: 12, overflow: "hidden", background: `linear-gradient(90deg, ${C.white} 0%, ${C.blue} 100%)` }}>
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(42,134,224,0) 0%, rgba(26,82,140,0.85) 100%)" }} />
-          <div style={{ position: "absolute", left: u * 142 - 9, top: v * 92 - 9, width: 18, height: 18, borderRadius: 9, border: `3px solid ${C.white}`, boxSizing: "border-box", boxShadow: "0 1px 4px rgba(29,29,31,0.35)" }} />
-        </div>
-        <div style={{ position: "relative", height: 10, borderRadius: 5, marginTop: 14, background: `linear-gradient(90deg, ${C.blueTint} 0%, ${C.blue} 55%, ${C.blueDeep} 100%)` }}>
-          <div style={{ position: "absolute", left: hv * 142 - 9, top: -4, width: 18, height: 18, borderRadius: 9, background: C.white, boxShadow: "0 0 0 1px rgba(29,29,31,0.1), 0 2px 5px rgba(29,29,31,0.25)" }} />
-        </div>
-      </div>
-    );
-  }
-  // tile: the code sign
-  return <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}><Ico n="code" s={54} c={C.blueDeep} w={2.2} /></div>;
+  // image: a soft, blue-only photograph whose sun rises a little
+  const sun = d(0.2, 1.4);
+  const iw = p.w - 28, ih = p.h - 28;
+  return (
+    <div style={{ position: "absolute", left: 14, top: 14, width: iw, height: ih, borderRadius: 18, overflow: "hidden", background: `linear-gradient(180deg, ${C.blueTint} 0%, ${PALE} 100%)` }}>
+      <div style={{ position: "absolute", left: iw * 0.64, top: mix(ih * 0.42, ih * 0.2, sun), width: 34, height: 34, borderRadius: 17, background: C.white, boxShadow: "0 0 24px 6px rgba(255,255,255,0.7)" }} />
+      <svg width={iw} height={ih} viewBox={`0 0 ${iw} ${ih}`} style={{ position: "absolute", left: 0, top: 0 }}>
+        <path d={`M0 ${ih * 0.74} C ${iw * 0.22} ${ih * 0.5}, ${iw * 0.4} ${ih * 0.52}, ${iw * 0.62} ${ih * 0.72} S ${iw * 0.9} ${ih * 0.7}, ${iw} ${ih * 0.62} V ${ih} H 0 Z`} fill={C.blue} opacity={0.45} />
+        <path d={`M0 ${ih * 0.86} C ${iw * 0.3} ${ih * 0.72}, ${iw * 0.6} ${ih * 0.8}, ${iw} ${ih * 0.76} V ${ih} H 0 Z`} fill={C.blueDeep} opacity={0.75} />
+      </svg>
+    </div>
+  );
 };
 
 const PieceView: React.FC<{ g: number; p: Piece; tgt: [number, number] }> = ({ g, p, tgt }) => {
   const t = sec(g);
-  const a = k(g, p.at, 0.9);
+  const a = k(g, p.at, 1.0);
   const cl = collapseLin(t, p);
   if (a <= 0 || cl >= 1) return null;
   const c = IN(cl);
-  // where it floats: projected from its depth, with the slow dolly and a drift
-  const cz = 150 * clamp01(t / 1.9);
-  const zz = p.z - (1 - a) * 480 + cz;
+  // where it floats: projected from its depth, with a slow dolly and a slow drift
+  const cz = 130 * clamp01(t / 1.9);
+  const zz = p.z - (1 - a) * 360 + cz;
   const sp = F / (F - zz);
-  const dx = 12 * Math.sin(t * 0.8 + p.ph * 2), dy = 9 * Math.sin(t * 0.65 + p.ph * 3 + 1);
+  const dx = 10 * Math.sin(t * 0.7 + p.ph * 2), dy = 8 * Math.sin(t * 0.55 + p.ph * 3 + 1);
   const px = 960 + (p.x + dx - 960) * sp, py = 540 + (p.y + dy - 540) * sp;
   // where it goes: a gentle curve into the dot of the "?"
   const vx = tgt[0] - px, vy = tgt[1] - py, L = Math.max(1, Math.hypot(vx, vy));
@@ -237,26 +137,26 @@ const PieceView: React.FC<{ g: number; p: Piece; tgt: [number, number] }> = ({ g
   const x = (1 - c) * (1 - c) * px + 2 * (1 - c) * c * qx + c * c * tgt[0];
   const y = (1 - c) * (1 - c) * py + 2 * (1 - c) * c * qy + c * c * tgt[1];
   const flat = 1 - ss(0, 0.45, cl);
-  const rx = (p.rx + 3.5 * Math.sin(t * 0.5 + p.ph * 1.7) + (1 - a) * 14) * flat;
-  const ry = (p.ry + 5 * Math.sin(t * 0.55 + p.ph) + (1 - a) * 26 * (p.ry < 0 ? -1 : 1)) * flat;
+  const rx = (p.rx + 2.5 * Math.sin(t * 0.45 + p.ph * 1.7) + (1 - a) * 12) * flat;
+  const ry = (p.ry + 3.5 * Math.sin(t * 0.5 + p.ph) + (1 - a) * 20 * (p.ry < 0 ? -1 : 1)) * flat;
   const rz = p.rz * flat;
   // it folds into a blue droplet
   const m = ss(0.08, 0.5, cl), d = Math.min(p.w, p.h);
   const sw = mix(p.w, d, m), sh = mix(p.h, d, m), rr = mix(p.r, d / 2, m);
   const sc = lerpLog(sp, 11 / d, Math.pow(c, 0.8));      // it shrinks as it travels: big while slow, a droplet when fast
   const onScreen = Math.max(sw, sh) * sc;               // it turns blue only once it is small: a droplet, not a blue card
-  const dark = p.bg === C.ink;
-  const blur = (1 - a) * (dark ? 5 : 8) + (p.z < -150 ? 1.2 : 0) * (1 - c);
-  const o = Math.min(1, a * (dark ? 2.4 : 1.6)) * (1 - ss(0.94, 1, cl));
+  const blur = (1 - a) * 8 + (p.z < -150 ? 0.8 : 0) * (1 - c);
+  const o = Math.min(1, a * 1.6) * (1 - ss(0.94, 1, cl));
   return (
     <div style={{ position: "absolute", left: x - p.w / 2, top: y - p.h / 2, width: p.w, height: p.h, opacity: o,
       transform: `perspective(1400px) rotateX(${rx + 0.01}deg) rotateY(${ry}deg) rotateZ(${rz}deg) scale(${sc})`, filter: blur > 0.3 ? `blur(${blur}px)` : undefined }}>
-      <div style={{ position: "absolute", left: (p.w - sw) / 2, top: (p.h - sh) / 2, width: sw, height: sh, borderRadius: rr, overflow: "hidden", background: p.bg,
-        boxShadow: `0 0 0 1px rgba(29,29,31,${0.05 * (1 - m)}), 0 24px 48px -24px rgba(29,29,31,${0.32 * (1 - m)})` }}>
+      <div style={{ position: "absolute", left: (p.w - sw) / 2, top: (p.h - sh) / 2, width: sw, height: sh, borderRadius: rr, overflow: "hidden",
+        background: "linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.86) 100%)",
+        boxShadow: `inset 0 1px 0 rgba(255,255,255,${1 - m}), 0 0 0 1px rgba(29,29,31,${0.06 * (1 - m)}), 0 30px 60px -30px rgba(29,29,31,${0.26 * (1 - m)}), 0 8px 20px -14px rgba(29,29,31,${0.12 * (1 - m)})` }}>
         <div style={{ position: "absolute", left: -(p.w - sw) / 2, top: -(p.h - sh) / 2, width: p.w, height: p.h, opacity: 1 - ss(0, 0.28, cl) }}>
-          <PieceBody p={p} t={Math.min(t, COLLAPSE + p.ord * C_STAGGER)} t0={T.s(p.at)} />
+          <PieceBody p={p} lt={Math.min(t, COLLAPSE + p.ord * C_STAGGER) - T.s(p.at)} />
         </div>
-        <div style={{ position: "absolute", inset: 0, background: C.blue, opacity: Math.max(1 - ss(30, 110, onScreen), dark ? ss(0.04, 0.3, cl) : ss(0.12, 0.48, cl)) }} />
+        <div style={{ position: "absolute", inset: 0, background: C.blue, opacity: Math.max(1 - ss(30, 110, onScreen), ss(0.12, 0.48, cl)) }} />
       </div>
     </div>
   );
@@ -332,7 +232,7 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
 
   return (
     <AbsoluteFill style={{ zIndex: 3, pointerEvents: "none" }}>
-      {/* 1 · the clutter, behind the question */}
+      {/* 1 · the pieces, behind the question */}
       {t < 2.5 && PIECES.map((p) => <PieceView key={p.id} g={g} p={p} tgt={qdot} />)}
 
       {/* 1 · the question */}

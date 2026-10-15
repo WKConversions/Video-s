@@ -1,41 +1,49 @@
-// Scene E (25.20–30.20 s): "Need hosting? We've got that covered too." / "No coding. No complexity."
-// From D's flat blue field a white address bar rises; bagerietlund.dk types on and goes Live on "hosting". The blue
-// field then contracts into the bar (an iris closing onto it) and the bar carries up onto cream. A dotted globe turns
-// in below it, Denmark lit; three feature chips fly out of the globe and land on "we've", "got", "that"; the hosting
-// price arrives on "covered". The picture leaves, "No coding." builds over a scrolling block of HTML/CSS that wipes
-// away line by line on "coding"; "No complexity." builds as line 2 while a messy cluster of technical cards (DNS,
-// server, plugins, templates) folds away on "complexity". Both lines blur-rise out; clean cream by frame 905.
-// See ../../../plan/v2-storyboard.md.
+// Scene E (25.30–30.15 s): "Need hosting? We've got that covered too." / "No coding. No complexity."   (v3)
+// Cream throughout. On "Need hosting?" a white address bar rises on clean cream; the blue guide cursor glides in and
+// clicks into it (a focus ring, a soft ripple), the pointer hides and bagerietlund.dk types on; it goes Live with a
+// gentle pulse. The bar carries up, a dotted globe turns in below it, Denmark lit; three feature chips fly out of the
+// globe on "we've", "got", "that"; the hosting price arrives on "covered". The picture leaves. "No coding." builds big
+// with ONE small, light code card under it (four short lines of HTML) that dissolves line by line on "coding".
+// "No complexity." builds as line 2 while two light technical cards (DNS records, Server settings) rise under it and
+// fold away on "complexity". Both lines blur-rise out; clean cream by frame 905.
+// See ../../../plan/v3-changes.md and ../../../plan/v2-storyboard.md.
 import React from "react";
 import { AbsoluteFill } from "remotion";
 import { ARRIVE, C, DEPART, MOVE, clamp01, mix } from "../lib";
-import { AnswerChip, Ico, Plane, SANS, Say, f, k, typed } from "../shared";
+import { AnswerChip, Cursor, Ico, Plane, SANS, Say, f, k } from "../shared";
 
 const MONO = "'DejaVu Sans Mono', 'Liberation Mono', ui-monospace, monospace";
 const bump = (g: number, at: number, dur: number) => Math.sin(Math.PI * clamp01((g - f(at)) / (dur * 30)));
 
-/* ---------- the address bar ---------- */
+/* ---------- the address bar (on cream) and the guide cursor that clicks into it ---------- */
 const BW = 1100, BH = 124;
 const DOMAIN = "bagerietlund.dk";
+const RISE = 25.3, CLICK = 25.5, TYPE = 25.53, CPS = 56, LIVE = 25.8, UP = 25.95;
 const bar = (g: number) => {
-  const rise = k(g, 25.2, 0.75, ARRIVE);
-  const up = k(g, 25.92, 0.85, MOVE);
+  const rise = k(g, RISE, 0.6, ARRIVE);
+  const up = k(g, UP, 0.85, MOVE);
   const out = k(g, 27.28, 0.45, DEPART);
-  const push = 0.012 * clamp01((g - f(25.3)) / 25);            // a tiny breath while it types on blue
+  const push = 0.03 * MOVE(clamp01((g - f(RISE)) / 32));        // a slow breath while it types
   return { x: 960, y: mix(540 + 140 * (1 - rise), 205, up) - 40 * out, s: mix(0.95 + 0.05 * rise + push, 0.8, up), o: rise * (1 - out), blur: out * 8, up };
 };
 const AddressBar: React.FC<{ g: number }> = ({ g }) => {
   const b = bar(g);
   if (b.o <= 0.005) return null;
-  const txt = typed(g, "w:need", DOMAIN, 38), done = txt.length === DOMAIN.length;
-  const live = k(g, "w:hosting+0.26", 0.55, ARRIVE);
-  const caret = done ? 1 - k(g, "w:hosting+0.3", 0.3) : Math.floor(g / 7) % 2 ? 1 : 0.35;
-  const pulse = ((g - f("w:hosting+0.3")) % 36) / 36, pulseOn = g >= f("w:hosting+0.3");
-  const onBlue = 1 - k(g, 25.85, 0.45, MOVE);
+  const n = Math.max(0, Math.min(DOMAIN.length, Math.floor(((g - f(TYPE)) / 30) * CPS)));
+  const txt = DOMAIN.slice(0, n), done = n === DOMAIN.length, clicked = g >= f(CLICK);
+  const live = k(g, LIVE, 0.55, ARRIVE);
+  const focus = k(g, CLICK, 0.22) * (1 - k(g, LIVE + 0.05, 0.45));
+  const caret = !clicked ? 0 : done ? 1 - k(g, LIVE, 0.3) : 1;
+  const pulse = ((g - f(LIVE + 0.04)) % 36) / 36, pulseOn = g >= f(LIVE + 0.04);
+  const bloom = live * (1 - 0.7 * b.up) * b.o;                  // a soft blue light wakes behind the bar as it goes Live
   return (
+    <>
+    {bloom > 0.005 && <div style={{ position: "absolute", left: b.x - 760, top: b.y - 250, width: 1520, height: 500, borderRadius: "50%", opacity: bloom,
+      transform: `scale(${(0.75 + 0.25 * live + 0.06 * clamp01((g - f(LIVE)) / 30)) * b.s})`,
+      background: "radial-gradient(ellipse at center, rgba(74,163,245,0.20) 0%, rgba(74,163,245,0.08) 40%, rgba(74,163,245,0) 70%)" }} />}
     <div style={{ position: "absolute", left: b.x - BW / 2, top: b.y - BH / 2, width: BW, height: BH, transform: `scale(${b.s}) perspective(4000px) rotateX(0.01deg)`, transformOrigin: "50% 50%",
       opacity: b.o, filter: b.blur > 0.05 ? `blur(${b.blur}px)` : undefined, borderRadius: BH / 2, background: C.white,
-      boxShadow: `0 0 0 1px rgba(29,29,31,${0.05 * (1 - onBlue)}), 0 36px 70px -30px rgba(${Math.round(mix(29, 12, onBlue))},${Math.round(mix(29, 60, onBlue))},${Math.round(mix(31, 120, onBlue))},${mix(0.32, 0.55, onBlue)})` }}>
+      boxShadow: `0 0 0 ${2 * focus}px rgba(74,163,245,${0.9 * focus}), 0 0 0 ${10 * focus}px rgba(74,163,245,${0.13 * focus}), 0 0 0 1px rgba(29,29,31,0.05), 0 36px 70px -30px rgba(29,29,31,0.32)` }}>
       <div style={{ position: "absolute", left: 44, top: 0, height: BH, display: "flex", alignItems: "center", gap: 22 }}>
         <Ico n="lock" s={42} c={C.gray} w={2.4} />
         <div style={{ fontFamily: SANS, fontWeight: 500, fontSize: 52, letterSpacing: "-0.02em", color: C.ink, whiteSpace: "nowrap", display: "flex", alignItems: "center" }}>
@@ -45,7 +53,7 @@ const AddressBar: React.FC<{ g: number }> = ({ g }) => {
       {live > 0 && (
         <div style={{ position: "absolute", right: 30, top: (BH - 66) / 2, height: 66, padding: "0 30px 0 26px", borderRadius: 33, background: C.blueTint, display: "flex", alignItems: "center", gap: 14,
           opacity: live, transform: `translateX(${(1 - live) * 24}px) scale(${0.92 + 0.08 * live})`, fontFamily: SANS, fontWeight: 600, fontSize: 32, color: C.blueDeep, letterSpacing: "-0.01em",
-          boxShadow: `0 0 0 ${6 * bump(g, 25.68, 0.6)}px rgba(74,163,245,0.18)` }}>
+          boxShadow: `0 0 0 ${6 * bump(g, LIVE + 0.04, 0.6)}px rgba(74,163,245,0.18)` }}>
           <div style={{ position: "relative", width: 18, height: 18 }}>
             {pulseOn && <div style={{ position: "absolute", left: 9 - 9 * (1 + 1.6 * pulse), top: 9 - 9 * (1 + 1.6 * pulse), width: 18 * (1 + 1.6 * pulse), height: 18 * (1 + 1.6 * pulse), borderRadius: "50%", background: C.blue, opacity: 0.45 * (1 - pulse) }} />}
             <div style={{ position: "absolute", inset: 0, borderRadius: "50%", background: C.blue }} />
@@ -54,16 +62,26 @@ const AddressBar: React.FC<{ g: number }> = ({ g }) => {
         </div>
       )}
     </div>
+    </>
   );
 };
-
-/* ---------- the blue field: flat from 25.20, then it contracts into the bar ---------- */
-const BlueField: React.FC<{ g: number }> = ({ g }) => {
-  const t = k(g, 25.85, 0.45, MOVE);
-  if (t >= 1) return null;
-  const b = bar(g), w = BW * b.s, h = BH * b.s;
-  const L = mix(0, b.x - w / 2, t), T = mix(0, b.y - h / 2, t), W = mix(1920, w, t), H = mix(1080, h, t);
-  return <div style={{ position: "absolute", left: L, top: T, width: W, height: H, borderRadius: mix(0, h / 2, Math.pow(t, 0.6)), background: C.blue, opacity: 1 - clamp01((t - 0.85) / 0.15) }} />;
+// The guide: glides in with the rising bar, clicks into the field on "hosting", then hides as typing starts (as macOS does).
+const Guide: React.FC<{ g: number }> = ({ g }) => {
+  if (g < f(RISE) || g > f(CLICK + 0.5)) return null;
+  const b = bar(g);
+  const tx = b.x + 70 * b.s, ty = b.y + 10 * b.s;               // the click point, riding on the bar
+  const a = k(g, RISE, CLICK - RISE, MOVE), vis = k(g, RISE, 0.12);
+  const hide = k(g, CLICK + 0.12, 0.3, DEPART);
+  const x = tx + 150 * (1 - a) + 14 * hide, y = ty + 120 * (1 - a) + 10 * hide;
+  const press = bump(g, CLICK - 0.02, 0.18);
+  const rip = clamp01((g - f(CLICK)) / 12);
+  return (
+    <>
+      {g >= f(CLICK) && rip < 1 && <div style={{ position: "absolute", left: tx - 10 - 40 * rip, top: ty - 10 - 40 * rip, width: 20 + 80 * rip, height: 20 + 80 * rip, borderRadius: "50%",
+        background: "rgba(74,163,245,0.22)", opacity: 1 - rip }} />}
+      <Cursor x={x} y={y} s={1.3} o={vis * (1 - hide)} press={press} />
+    </>
+  );
 };
 
 /* ---------- the dotted globe (drawn in code) ---------- */
@@ -156,73 +174,67 @@ const Hosting: React.FC<{ g: number }> = ({ g }) => {
   );
 };
 
-/* ---------- "No coding.": the code block that scrolls and wipes away ---------- */
-const CODE = [
-  "<!doctype html>", "<html lang=\"da\">", "<head>", "  <meta name=\"viewport\" content=\"width=device-width\">", "  <link rel=\"stylesheet\" href=\"/css/style.css\">", "</head>",
-  "<body class=\"home\">", "  <nav class=\"nav\"><a href=\"/\">Bageriet Lund</a></nav>", "  <section class=\"hero\">", "    <h1>Fresh sourdough, baked every morning.</h1>",
-  ".hero { display: grid; gap: 48px;", "  grid-template-columns: 1fr 1fr; }", ".hero h1 { font: 500 56px/1.06 serif; }", "@media (max-width: 768px) {",
-  "  .hero { grid-template-columns: 1fr; } }", "const menu = document.querySelector('.menu');", "menu.addEventListener('click', toggleNav);",
-  "fetch('/api/hours').then((r) => r.json())", "  .then(renderHours).catch(console.error);",
+/* ---------- "No coding.": one small, light code card that dissolves line by line ---------- */
+const CODE: [string, string][] = [            // [markup (lighter), text (a touch darker)]
+  ['<header class="hero">', ""],
+  ["  <h1>", "Bageriet Lund"],
+  ['  <a href="/order">', "Order"],
+  ["</header>", ""],
 ];
-const Code: React.FC<{ g: number }> = ({ g }) => {
-  const inn = k(g, 27.55, 0.7, ARRIVE);
-  if (inn <= 0 || g > f("w:coding+1.3")) return null;
-  const scroll = (g - f(27.55)) * 2.2;
+const CODE_CLOSE = ["", "</h1>", "</a>", ""];
+const CARD_Y = 752;
+const CodeCard: React.FC<{ g: number }> = ({ g }) => {
+  const inn = k(g, 27.74, 0.7, ARRIVE);
+  const out = k(g, "w:coding+0.2", 0.24, DEPART);
+  if (inn <= 0 || out >= 1) return null;
+  const turn = clamp01((g - f(27.74)) / 30);                    // a slow, calm turn while it is on
   return (
-    <AbsoluteFill style={{ opacity: inn }}>
-      {CODE.map((ln, i) => {
-        const w = k(g, `w:coding+${(0.06 + i * 0.024).toFixed(3)}`, 0.42, MOVE);
-        if (w >= 1) return null;
-        const y = 120 + i * 46 - scroll + (1 - inn) * 60;
-        return <div key={i} style={{ position: "absolute", left: 300, top: y, fontFamily: MONO, fontSize: 27, color: i >= 10 && i < 15 ? "#B4B4BA" : "#BDBDC2", whiteSpace: "pre",
-          opacity: 1 - w, transform: `translateX(${w * 260}px)`, filter: w > 0 ? `blur(${w * 8}px)` : undefined }}>{ln}</div>;
-      })}
-    </AbsoluteFill>
+    <Plane x={960} y={CARD_Y + 50 * (1 - inn) - 14 * turn + 16 * out} w={540} h={232} rx={mix(14, 6, inn) - 2 * turn} ry={mix(-7, -2, turn)} s={(0.94 + 0.06 * inn) * (1 - 0.04 * out)} o={Math.min(1, inn * 1.4) * (1 - out)}>
+      <div style={{ position: "absolute", inset: 0, borderRadius: 26, background: C.white, boxShadow: "0 0 0 1px rgba(29,29,31,0.05), 0 30px 60px -28px rgba(29,29,31,0.30)", padding: "34px 44px", boxSizing: "border-box" }}>
+        {CODE.map(([m, t], i) => {
+          const w = k(g, `w:coding+${(0.04 + i * 0.045).toFixed(3)}`, 0.3, MOVE);
+          return (
+            <div key={i} style={{ height: 41, fontFamily: MONO, fontSize: 25, lineHeight: "41px", whiteSpace: "pre", color: "#BDBDC2", opacity: 1 - w,
+              transform: `translate(${w * 26}px, ${-w * 8}px)`, filter: w > 0.02 ? `blur(${w * 7}px)` : undefined }}>
+              {m}<span style={{ color: C.light }}>{t}</span>{CODE_CLOSE[i]}
+            </div>
+          );
+        })}
+      </div>
+    </Plane>
   );
 };
 
-/* ---------- "No complexity.": a messy cluster of technical cards that folds away ---------- */
-const Row: React.FC<{ a: string; b: string; mono?: boolean }> = ({ a, b, mono }) => (
-  <div style={{ display: "flex", justifyContent: "space-between", padding: "9px 0", borderTop: `1px solid ${C.line}`, fontFamily: mono ? MONO : SANS, fontSize: mono ? 16 : 18, color: C.gray, whiteSpace: "nowrap" }}>
-    <span style={{ color: C.ink }}>{a}</span><span>{b}</span>
+/* ---------- "No complexity.": two light technical cards that fold away ---------- */
+const Toggle: React.FC<{ on: boolean }> = ({ on }) => (
+  <div style={{ width: 44, height: 26, borderRadius: 13, background: on ? C.blueTint : C.line, position: "relative" }}>
+    <div style={{ position: "absolute", top: 3, left: on ? 21 : 3, width: 20, height: 20, borderRadius: 10, background: on ? C.blue : C.white, opacity: on ? 0.55 : 1 }} /></div>
+);
+const RowT: React.FC<{ a: string; children: React.ReactNode }> = ({ a, children }) => (
+  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", height: 50, borderTop: `1px solid ${C.line}`, fontFamily: SANS, fontWeight: 500, fontSize: 21, color: C.gray, whiteSpace: "nowrap" }}>
+    <span>{a}</span>{children}
   </div>
 );
-const Toggle: React.FC<{ on: boolean }> = ({ on }) => (
-  <div style={{ width: 40, height: 24, borderRadius: 12, background: on ? C.light : C.line, position: "relative" }}><div style={{ position: "absolute", top: 3, left: on ? 19 : 3, width: 18, height: 18, borderRadius: 9, background: C.white }} /></div>
-);
-const CARDS: { t: string; icon: string; x: number; y: number; rx: number; ry: number; rz: number; from: [number, number]; body: React.ReactNode }[] = [
-  { t: "DNS records", icon: "globe", x: 350, y: 205, rx: 10, ry: 18, rz: -7, from: [-260, -120], body: <>
-    <Row mono a="A      @" b="185.21.4.12" /><Row mono a="CNAME  www" b="bagerietlund.dk" /><Row mono a="MX     @" b="10 mx1.mail.eu" /><Row mono a="TXT    @" b="v=spf1 include:…" /></> },
-  { t: "Server settings", icon: "sliders", x: 1570, y: 200, rx: 14, ry: -16, rz: 6, from: [260, -120], body: <>
-    {[["PHP version", "8.2 ▾"], ["SSL certificate", ""], ["Page cache", ""], ["Max upload", "64 MB"]].map(([a, b], i) => (
-      <div key={a} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 0", borderTop: `1px solid ${C.line}`, fontFamily: SANS, fontSize: 18, color: C.ink }}>
-        {a}{b ? <span style={{ color: C.gray }}>{b}</span> : <Toggle on={i === 1} />}</div>))}</> },
-  { t: "Plugins (14)", icon: "code", x: 360, y: 870, rx: -12, ry: 16, rz: 5, from: [-260, 140], body: <>
-    {["SEO Toolkit Pro", "Cache Booster", "Contact Forms 7", "Security Shield", "Backup Manager"].map((p, i) => (
-      <div key={p} style={{ display: "flex", alignItems: "center", gap: 12, padding: "6px 0", borderTop: `1px solid ${C.line}`, fontFamily: SANS, fontSize: 18, color: C.ink }}>
-        <div style={{ width: 18, height: 18, borderRadius: 5, border: `2px solid ${C.light}`, background: i % 2 ? C.light : "transparent" }} />{p}
-        <span style={{ marginLeft: "auto", fontSize: 14, color: C.light }}>{i % 3 === 0 ? "Update" : "v" + (2 + i) + ".1"}</span></div>))}</> },
-  { t: "Choose a template", icon: "layout", x: 1560, y: 875, rx: -10, ry: -18, rz: -6, from: [260, 140], body: (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10, paddingTop: 6 }}>
-      {Array.from({ length: 6 }, (_, i) => <div key={i} style={{ height: 66, borderRadius: 8, background: C.fill, border: `1px solid ${C.line}`, position: "relative", overflow: "hidden" }}>
-        <div style={{ position: "absolute", left: 8, top: 8, right: 8, height: 8, borderRadius: 4, background: C.line }} />
-        <div style={{ position: "absolute", left: 8, top: 22, width: "50%", height: 30, borderRadius: 4, background: i === 2 ? "#DCDCE0" : C.line }} /></div>)}
-    </div>) },
+const val = (t: string) => <span style={{ fontFamily: MONO, fontSize: 19, color: C.light }}>{t}</span>;
+const TECH = [
+  { t: "DNS records", icon: "globe", x: 700, ry: 9, rz: -1.2, body: <><RowT a="A record">{val("185.21.4.12")}</RowT><RowT a="CNAME">{val("bagerietlund.dk")}</RowT></> },
+  { t: "Server settings", icon: "sliders", x: 1220, ry: -9, rz: 1.2, body: <><RowT a="SSL certificate"><Toggle on /></RowT><RowT a="PHP version">{val("8.2")}</RowT></> },
 ];
-const Cards: React.FC<{ g: number }> = ({ g }) => {
-  if (g < f("w:no2-0.3") || g > f("w:complexity+1.2")) return null;
-  return <>{CARDS.map((c, i) => {
-    const inn = k(g, `w:no2-${(0.24 - i * 0.05).toFixed(2)}`, 0.75, ARRIVE);
-    const fold = k(g, `w:complexity+${(0.08 + [0, 2, 1, 3][i] * 0.06).toFixed(2)}`, 0.6, MOVE);
-    if (fold >= 1 || inn <= 0) return null;
-    const drift = (g - f("w:no2")) * 0.06;
+const TECH_Y = 862;
+const Tech: React.FC<{ g: number }> = ({ g }) => {
+  if (g < f("w:no2-0.45") || g > f("w:complexity+1.0")) return null;
+  return <>{TECH.map((c, i) => {
+    const inn = k(g, `w:no2-${(0.26 - i * 0.06).toFixed(2)}`, 0.7, ARRIVE);
+    const fold = k(g, `w:complexity+${(0.1 + i * 0.07).toFixed(2)}`, 0.55, MOVE);
+    if (inn <= 0 || fold >= 1) return null;
+    const drift = (g - f("w:no2")) * 0.05 * Math.sign(c.ry);
     return (
-      <Plane key={c.t} x={c.x + c.from[0] * (1 - inn) + c.from[0] * 0.9 * fold} y={c.y + c.from[1] * (1 - inn) + c.from[1] * 0.6 * fold} w={420} h={262}
-        rx={c.rx * (1 + 0.4 * (1 - inn)) + (c.rx > 0 ? -1 : 1) * 0 + mix(0, c.y < 540 ? -88 : 88, fold)} ry={c.ry + drift * Math.sign(c.ry)} rz={c.rz * (1 + 0.6 * (1 - inn)) + 10 * fold * Math.sign(c.rz)}
-        s={(0.9 + 0.1 * inn) * (1 - 0.25 * fold)} o={Math.min(1, inn * 1.5) * (1 - clamp01((fold - 0.45) / 0.55))}>
-        <div style={{ position: "absolute", inset: 0, borderRadius: 22, background: C.white, boxShadow: "0 0 0 1px rgba(29,29,31,0.06), 0 30px 60px -28px rgba(29,29,31,0.35)", padding: "20px 24px", boxSizing: "border-box", overflow: "hidden" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 12, fontFamily: SANS, fontWeight: 600, fontSize: 22, color: C.ink, letterSpacing: "-0.01em", marginBottom: 10 }}>
-            <Ico n={c.icon} s={24} c={C.gray} w={2.2} />{c.t}</div>
+      <Plane key={c.t} x={c.x + (c.x - 960) * 0.08 * (1 - inn)} y={TECH_Y + 60 * (1 - inn) + 40 * fold} w={440} h={196}
+        rx={mix(16, 4, inn) + 84 * fold} ry={c.ry + drift} rz={c.rz} s={(0.94 + 0.06 * inn) * (1 - 0.08 * fold)}
+        o={Math.min(1, inn * 1.4) * (1 - clamp01((fold - 0.35) / 0.6))}>
+        <div style={{ position: "absolute", inset: 0, borderRadius: 24, background: C.white, boxShadow: "0 0 0 1px rgba(29,29,31,0.05), 0 30px 60px -28px rgba(29,29,31,0.30)", padding: "24px 30px 0", boxSizing: "border-box" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, fontFamily: SANS, fontWeight: 600, fontSize: 24, color: C.ink, letterSpacing: "-0.015em", height: 40, marginBottom: 10 }}>
+            <Ico n={c.icon} s={26} c={C.light} w={2.2} />{c.t}</div>
           {c.body}
         </div>
       </Plane>
@@ -234,19 +246,21 @@ const Cards: React.FC<{ g: number }> = ({ g }) => {
 export const SceneE: React.FC<{ g: number }> = ({ g }) => {
   if (g < 759 || g > 905) return null;
   const lift = k(g, "w:no2-0.45", 0.6, MOVE);
-  const y1 = mix(462, 362, lift);
-  const halo = k(g, 27.6, 0.6) * (1 - k(g, "w:coding+0.6", 0.5));
+  const y1 = mix(392, 362, lift);
+  const push = 1 + 0.045 * clamp01((g - f("w:no")) / (f(30.1) - f("w:no")));   // a slow push under the two lines
   return (
     <AbsoluteFill>
-      <BlueField g={g} />
       <Hosting g={g} />
       <AddressBar g={g} />
-      <Code g={g} />
-      {halo > 0 && <div style={{ position: "absolute", left: 360, top: y1 - 110, width: 1200, height: 380, borderRadius: "50%", opacity: halo,
-        background: "radial-gradient(ellipse at center, rgba(250,250,247,1) 0%, rgba(250,250,247,0.92) 45%, rgba(250,250,247,0) 72%)" }} />}
-      <Cards g={g} />
-      {g >= f("w:no") - 1 && <Say g={g} words={[{ t: "No", at: "w:no" }, { t: "coding.", at: "w:coding" }]} y={y1} size={144} out="simple-0.39" />}
-      {g >= f("w:no2") - 1 && <Say g={g} words={[{ t: "No", at: "w:no2" }, { t: "complexity.", at: "w:complexity", blue: true }]} y={540} size={144} out="simple-0.32" />}
+      <Guide g={g} />
+      <CodeCard g={g} />
+      <Tech g={g} />
+      {g >= f("w:no") - 1 && (
+        <AbsoluteFill style={{ transform: `scale(${push})`, transformOrigin: "960px 520px" }}>
+          <Say g={g} words={[{ t: "No", at: "w:no" }, { t: "coding.", at: "w:coding" }]} y={y1} size={144} out="simple-0.39" />
+          {g >= f("w:no2") - 1 && <Say g={g} words={[{ t: "No", at: "w:no2" }, { t: "complexity.", at: "w:complexity", blue: true }]} y={540} size={144} out="simple-0.32" />}
+        </AbsoluteFill>
+      )}
     </AbsoluteFill>
   );
 };

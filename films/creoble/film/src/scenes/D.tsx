@@ -4,13 +4,16 @@
 //   19.24  "everything": the screen's page lifts out and the site's five pages fan out as a 3D cover flow that glides
 //   20.18  "Preview everything. Free." with "Free." in blue
 //   20.9   the pages gather into one and fly into a phone that turns in; "Happy with the result?" builds on the left
-//   21.5   a checkout sheet slides up the phone; on "it's" the button is tapped, it becomes a check and "It's yours"
-//   23.0   a blue iris grows out of the button and floods the frame; "499" rolls in as a slot counter; " kr." joins
-//   24.95  the group blur-rises out (gone by 759); flat C.blue to the end
+//   21.5   a checkout sheet slides up the phone; the blue guide cursor glides in and taps "Get it for 499 kr" on "it's"
+//          (a 0.1 s press, a soft ripple); the button becomes a check and "It's yours"
+//   23.0   "for just": the stage tilts up and away (the phone rises and fades, the lines blur-rise out word by word)
+//   23.44  on cream, a huge ink "499" rolls in as a slot counter over a soft light-blue bloom; slow push
+//   24.2   " kr." joins in blue, "One payment. No subscription." arrives under it in gray
+//   24.8   the group blur-rises out (gone by 756); D draws nothing from 757 (v3: no blue field, E starts on cream)
 import React from "react";
 import { AbsoluteFill, Easing, Img, staticFile } from "remotion";
 import { ARRIVE, C, DEPART, MOVE, clamp01, mix } from "../lib";
-import { Ico, Laptop, MobileSite, PH, PW, Phone, SANS, SERIF, SH, SW, Site, f } from "../shared";
+import { Cursor, Ico, Laptop, MobileSite, PH, PW, Phone, SANS, SERIF, SH, SW, Site, f } from "../shared";
 
 type Ease = (t: number) => number;
 const LIN: Ease = (t) => t;
@@ -25,19 +28,22 @@ const GATHER = 620;               // the pages gather (20.8 s)
 const PHONE_IN = 632;
 const SHEET = 644;                // the checkout sheet slides up (21.47 s)
 const TAP = W("w:its");           // 671
-const IRIS = 689;                 // the iris starts (22.97 s); full by 702
-const FULL = 702;
-const OUT = 745;                  // the 499 group leaves; gone by 757
+const CLEAR = W("w:just3");       // 692: the stage tilts up and away
+const PRICE = W("w:499");         // 703
+const KR = W("w:kroner");         // 726
+const OUT = 743;                  // the 499 group blur-rises out; gone by 756
+const END = 757;                  // D draws nothing from here: clean cream at 758
+const pressAt = (g: number) => Math.sin(Math.PI * kf(g, TAP - 2, 3, LIN));   // a 0.1 s press
 
 /* ---------- small statement lines (words rise, fade, sharpen) ---------- */
 type BW = { t: string; at: string; blue?: boolean };
-const Line: React.FC<{ g: number; words: BW[]; x?: number; y: number; size: number; out: number; color?: string; align?: "center" | "left"; weight?: number }> = ({ g, words, x = 0, y, size, out, color = C.ink, align = "center", weight = 600 }) => {
+const Line: React.FC<{ g: number; words: BW[]; x?: number; y: number; size: number; out: number; od?: number; color?: string; align?: "center" | "left"; weight?: number }> = ({ g, words, x = 0, y, size, out, od = 12, color = C.ink, align = "center", weight = 600 }) => {
   if (g > out + 30) return null;
   return (
     <div style={{ position: "absolute", left: align === "center" ? 0 : x, top: y, width: align === "center" ? 1920 : undefined, display: "flex", justifyContent: align === "center" ? "center" : "flex-start",
       fontFamily: SANS, fontWeight: weight, fontSize: size, letterSpacing: "-0.035em", lineHeight: 1.1, color, whiteSpace: "nowrap" }}>
       {words.map((w, i) => {
-        const a = kf(g, W(w.at), 24), o = kf(g, out + i * 1.5, 12, DEPART);
+        const a = kf(g, W(w.at), 24), o = kf(g, out + i * 1.5, od, DEPART);
         const bl = (1 - a) * 10 + o * 8;
         return <span key={i} style={{ display: "inline-block", marginLeft: i === 0 ? 0 : size * 0.26, color: w.blue ? C.blue : undefined, opacity: Math.min(1, a * 1.4) * (1 - o),
           transform: `translateY(${(1 - a) * size * 0.3 - o * size * 0.32}px)`, filter: bl > 0.05 ? `blur(${bl}px)` : undefined }}>{w.t}</span>;
@@ -192,7 +198,7 @@ const btnOnScreen = (g: number) => {
 const Sheet: React.FC<{ g: number }> = ({ g }) => {
   const a = kf(g, SHEET, 22);
   if (a <= 0) return null;
-  const press = Math.sin(Math.PI * kf(g, TAP - 2, 6, LIN));
+  const press = pressAt(g);
   const done = kf(g, TAP + 2, 10, MOVE);
   const rip = kf(g, TAP, 18, LIN);
   const SHT = 380;
@@ -213,7 +219,7 @@ const Sheet: React.FC<{ g: number }> = ({ g }) => {
         <div style={{ position: "absolute", left: 22, top: SHT - 96 - 36, width: PW - 44, height: 72 }}>
           {rip > 0 && rip < 1 && <div style={{ position: "absolute", left: (PW - 44) / 2 - 40, top: -4, width: 80, height: 80, borderRadius: 40, background: "rgba(255,255,255,0.32)",
             opacity: 1 - rip, transform: `scale(${0.6 + 2.6 * ARRIVE(rip)})`, zIndex: 2 }} />}
-          <div style={{ position: "absolute", inset: 0, borderRadius: 36, background: C.blue, transform: `scale(${1 - 0.05 * press})`, boxShadow: `0 14px 30px -14px ${C.blueGlow}`,
+          <div style={{ position: "absolute", inset: 0, borderRadius: 36, background: press > 0.3 ? C.blueDeep : C.blue, transform: `scale(${1 - 0.05 * press})`, boxShadow: `0 14px 30px -14px ${C.blueGlow}`,
             display: "flex", alignItems: "center", justifyContent: "center", color: C.white, fontWeight: 600, fontSize: 26, letterSpacing: "-0.015em", overflow: "hidden" }}>
             <span style={{ position: "absolute", opacity: 1 - done, transform: `translateY(${-done * 20}px)` }}>Get it for 499 kr</span>
             <span style={{ position: "absolute", display: "flex", alignItems: "center", gap: 10, opacity: done, transform: `translateY(${(1 - done) * 20}px)` }}>
@@ -229,11 +235,12 @@ const Sheet: React.FC<{ g: number }> = ({ g }) => {
 };
 const PhoneShot: React.FC<{ g: number }> = ({ g }) => {
   const a = kf(g, PHONE_IN, 30);
-  if (a <= 0 || g > FULL) return null;
+  const gone = kf(g, CLEAR - 2, 11, DEPART);
+  if (a <= 0 || gone >= 1) return null;
   const ry = phoneRy(g);
   const x = mix(PX + 260, PX, a) - 30 * kf(g, PHONE_IN + 20, 70, LIN), y = PY + mix(60, 0, a) - 22 * kf(g, PHONE_IN + 20, 70, LIN);
   return (
-    <div style={{ position: "absolute", inset: 0, transformOrigin: `${x}px ${y}px`, transform: `perspective(2200px) rotateY(${ry}deg)`, opacity: clamp01(a * 2) }}>
+    <div style={{ position: "absolute", inset: 0, transformOrigin: `${x}px ${y}px`, transform: `perspective(2200px) rotateY(${ry}deg) scale(${1 - 0.06 * gone})`, opacity: clamp01(a * 2) * (1 - gone) }}>
       <div style={{ position: "absolute", left: x - 340, top: y + 400, width: 680, height: 90, borderRadius: "50%", background: "radial-gradient(ellipse at center, rgba(29,29,31,0.18) 0%, rgba(29,29,31,0) 70%)" }} />
       <Phone x={x} y={y} s={PS}>
         <MobileSite g={g} build={1} />
@@ -243,15 +250,40 @@ const PhoneShot: React.FC<{ g: number }> = ({ g }) => {
   );
 };
 
+/* ---------- the guide cursor: glides in, taps "Get it for 499 kr", drifts away ---------- */
+const GLIDE: Ease = Easing.bezier(0.3, 0, 0.12, 1);
+const Guide: React.FC<{ g: number }> = ({ g }) => {
+  const t0 = TAP - 22;
+  if (g < t0 || g > TAP + 26) return null;
+  const b = btnOnScreen(g);
+  const tx = b.x + 66, ty = b.y + 8;                         // the tip lands on the button, right of centre
+  const e = kf(g, t0, 19, GLIDE);
+  const sx = 1700, sy = 1150;
+  const x = mix(sx, tx, e) + 60 * Math.sin(Math.PI * e), y = mix(sy, ty, e) - 20 * Math.sin(Math.PI * e);
+  const leave = kf(g, TAP + 9, 16, Easing.bezier(0.5, 0, 0.8, 0.4));
+  const rip = kf(g, TAP - 1, 22, LIN);
+  return (
+    <>
+      {rip > 0 && rip < 1 && (
+        <div style={{ position: "absolute", left: tx - 120, top: ty - 120, width: 240, height: 240, borderRadius: "50%", opacity: 0.9 * (1 - rip),
+          transform: `scale(${0.18 + 0.82 * ARRIVE(rip)})`, border: `2px solid rgba(74,163,245,${0.55 * (1 - rip)})`, boxSizing: "border-box",
+          background: "radial-gradient(circle, rgba(74,163,245,0.22) 0%, rgba(74,163,245,0.10) 55%, rgba(74,163,245,0) 72%)" }} />
+      )}
+      <Cursor x={x + 120 * leave} y={y + 70 * leave} s={1.3} o={clamp01(kf(g, t0, 6, LIN) * 1.2) * (1 - leave)} press={pressAt(g)} />
+    </>
+  );
+};
+
 /* ---------- the slot-machine price ---------- */
-const DIG = 320, CELL = 1.12;
+const DIG = 300, CELL = 1.12, PRICE_Y = 486;
+const ROLL: Ease = Easing.bezier(0.2, 0.6, 0.25, 1);
 const Digit: React.FC<{ g: number; d: number; i: number }> = ({ g, d, i }) => {
-  const start = W("w:499") - 3 + i * 2.2, dur = 13 + i * 0.4;
-  const p = kf(g, start, dur, Easing.bezier(0.2, 0.6, 0.25, 1));
+  const start = PRICE - 3 + i * 2.2, dur = 13 + i * 0.4;
+  const p = kf(g, start, dur, ROLL);
   const N = 9 + i * 2;
   const seq = Array.from({ length: N }, (_, j) => (j === N - 1 ? d : (d + 3 + j * 7 + i * 3) % 10));
   const pos = (N - 1) * p;                          // in cells; the strip rolls up
-  const vel = (N - 1) * (kf(g + 0.5, start, dur, Easing.bezier(0.2, 0.6, 0.25, 1)) - kf(g - 0.5, start, dur, Easing.bezier(0.2, 0.6, 0.25, 1)));
+  const vel = (N - 1) * (kf(g + 0.5, start, dur, ROLL) - kf(g - 0.5, start, dur, ROLL));
   const o = clamp01((g - start + 1) / 3);
   return (
     <div style={{ position: "relative", width: "0.62em", height: `${CELL}em`, overflow: "hidden", opacity: o,
@@ -263,24 +295,34 @@ const Digit: React.FC<{ g: number; d: number; i: number }> = ({ g, d, i }) => {
   );
 };
 const Price: React.FC<{ g: number }> = ({ g }) => {
-  if (g < W("w:499") - 4 || g >= 758) return null;
-  const kr = kf(g, W("w:kroner") - 1, 18), sub = kf(g, W("w:kroner") + 5, 20);
-  const push = 1 + 0.09 * kf(g, FULL, 56, LIN);
-  const out = kf(g, OUT, 12, DEPART);
+  if (g < CLEAR || g >= END) return null;
+  const kr = kf(g, KR - 1, 18), sub = kf(g, KR + 3, 18);
+  const rise = kf(g, PRICE - 4, 26);
+  const push = 1 + 0.07 * kf(g, PRICE - 4, END - PRICE + 4, LIN);
+  const out = kf(g, OUT, 13, DEPART);
+  const bloom = kf(g, CLEAR + 2, 26) * (1 - kf(g, OUT - 2, 14, DEPART));
+  const breathe = 1 + 0.04 * Math.sin((g - CLEAR) / 14);
   const KRW = 0.98 * DIG;
   return (
-    <div style={{ position: "absolute", inset: 0, transform: `scale(${push}) translateY(${-out * 40}px)`, transformOrigin: "960px 520px", opacity: 1 - out, filter: out > 0 ? `blur(${out * 10}px)` : undefined }}>
-      <div style={{ position: "absolute", left: 0, top: 520 - (CELL * DIG) / 2 - 30, width: 1920, display: "flex", justifyContent: "center", alignItems: "center", fontFamily: SANS, fontWeight: 700,
-        fontSize: DIG, letterSpacing: "-0.04em", color: C.white, fontVariantNumeric: "tabular-nums" }}>
-        {[4, 9, 9].map((d, i) => <Digit key={i} g={g} d={d} i={i} />)}
-        <div style={{ width: mix(0, KRW, MOVE(kr)), height: `${CELL}em`, position: "relative", overflow: "visible" }}>
-          <span style={{ position: "absolute", left: 0.2 * DIG, top: 0, lineHeight: `${CELL}em`, whiteSpace: "nowrap", opacity: kr, fontWeight: 600,
-            transform: `translateY(${(1 - kr) * 60}px)`, filter: kr < 0.98 ? `blur(${(1 - kr) * 10}px)` : undefined }}>kr.</span>
+    <div style={{ position: "absolute", inset: 0, transform: `scale(${push}) translateY(${(1 - rise) * 80 - out * 44}px)`, transformOrigin: `960px ${PRICE_Y}px` }}>
+      {/* the soft light-blue bloom behind the number */}
+      {bloom > 0.005 && (
+        <div style={{ position: "absolute", left: 960 - 820, top: PRICE_Y - 470, width: 1640, height: 940, borderRadius: "50%", opacity: bloom, transform: `scale(${mix(0.7, 1, bloom) * breathe})`,
+          background: "radial-gradient(ellipse at center, rgba(74,163,245,0.26) 0%, rgba(74,163,245,0.12) 34%, rgba(74,163,245,0.04) 56%, rgba(74,163,245,0) 70%)" }} />
+      )}
+      <div style={{ position: "absolute", inset: 0, opacity: 1 - out, filter: out > 0 ? `blur(${out * 10}px)` : undefined }}>
+        <div style={{ position: "absolute", left: 0, top: PRICE_Y - (CELL * DIG) / 2, width: 1920, display: "flex", justifyContent: "center", alignItems: "center", fontFamily: SANS, fontWeight: 700,
+          fontSize: DIG, letterSpacing: "-0.04em", color: C.ink, fontVariantNumeric: "tabular-nums" }}>
+          {[4, 9, 9].map((d, i) => <Digit key={i} g={g} d={d} i={i} />)}
+          <div style={{ width: mix(0, KRW, MOVE(kr)), height: `${CELL}em`, position: "relative", overflow: "visible" }}>
+            <span style={{ position: "absolute", left: 0.2 * DIG, top: 0, lineHeight: `${CELL}em`, whiteSpace: "nowrap", opacity: kr, color: C.blue,
+              transform: `translateY(${(1 - kr) * 60}px)`, filter: kr < 0.98 ? `blur(${(1 - kr) * 10}px)` : undefined }}>kr.</span>
+          </div>
         </div>
-      </div>
-      <div style={{ position: "absolute", left: 0, top: 800, width: 1920, textAlign: "center", fontFamily: SANS, fontWeight: 500, fontSize: 40, letterSpacing: "-0.02em",
-        color: "rgba(255,255,255,0.92)", opacity: sub, transform: `translateY(${(1 - sub) * 24}px)`, filter: sub < 0.98 ? `blur(${(1 - sub) * 8}px)` : undefined }}>
-        One payment. No subscription.
+        <div style={{ position: "absolute", left: 0, top: PRICE_Y + 200, width: 1920, textAlign: "center", fontFamily: SANS, fontWeight: 500, fontSize: 40, letterSpacing: "-0.02em",
+          color: C.gray, opacity: sub, transform: `translateY(${(1 - sub) * 24}px)`, filter: sub < 0.98 ? `blur(${(1 - sub) * 8}px)` : undefined }}>
+          One payment. No subscription.
+        </div>
       </div>
     </div>
   );
@@ -288,7 +330,7 @@ const Price: React.FC<{ g: number }> = ({ g }) => {
 
 /* ---------- the scene ---------- */
 export const SceneD: React.FC<{ g: number }> = ({ g }) => {
-  if (g < HAND || g > f(25.45)) return null;
+  if (g < HAND || g >= END) return null;
 
   // the laptop: a slow push while the bar arrives, then it sinks away as its page lifts out
   const push = kf(g, HAND, 30, INOUT);
@@ -298,14 +340,12 @@ export const SceneD: React.FC<{ g: number }> = ({ g }) => {
   const lo = 1 - kf(g, FAN + 4, 16, DEPART);
   const bar = g > HAND;
 
-  // the iris
-  const iris = kf(g, IRIS, FULL - IRIS, Easing.bezier(0.55, 0, 0.45, 1));
-  const b = btnOnScreen(g);
-  const R = mix(34, 2300, iris);
+  // "for just": the stage tilts up and away, so the price arrives on clean cream
+  const clr = kf(g, CLEAR - 4, 18, MOVE);
 
   return (
     <AbsoluteFill>
-      {g < FULL && <>
+      {g < CLEAR + 30 && <>
         {lo > 0.01 && (
           <Laptop x={960} y={ly} s={ls} o={lo}>
             {g < FAN ? (
@@ -319,25 +359,18 @@ export const SceneD: React.FC<{ g: number }> = ({ g }) => {
           </Laptop>
         )}
         <Flow g={g} />
-        <PhoneShot g={g} />
 
         {/* "Preview everything. Free." */}
         <Line g={g} y={96} size={76} out={GATHER + 2} words={[{ t: "Preview", at: "w:preview" }, { t: "everything.", at: "w:everything" }, { t: "Free.", at: "w:free", blue: true }]} />
 
-        {/* "Happy with the result?" / "It's yours." on the left of the phone */}
-        <Line g={g} align="left" x={190} y={392} size={64} color={C.gray} weight={600} out={FULL} words={[{ t: "Happy", at: "w:happy" }, { t: "with", at: "w:with" }, { t: "the", at: "w:the2" }, { t: "result?", at: "w:result" }]} />
-        <Line g={g} align="left" x={186} y={480} size={128} out={FULL} words={[{ t: "It's", at: "w:its" }, { t: "yours.", at: "w:yours", blue: true }]} />
+        {/* the checkout stage: the phone, the guide cursor, "Happy with the result?" / "It's yours." */}
+        <AbsoluteFill style={{ transform: `translateY(${-230 * clr}px)` }}>
+          <PhoneShot g={g} />
+          <Line g={g} align="left" x={190} y={392} size={64} color={C.gray} weight={600} out={CLEAR - 7} od={9} words={[{ t: "Happy", at: "w:happy" }, { t: "with", at: "w:with" }, { t: "the", at: "w:the2" }, { t: "result?", at: "w:result" }]} />
+          <Line g={g} align="left" x={186} y={480} size={128} out={CLEAR - 4} od={9} words={[{ t: "It's", at: "w:its" }, { t: "yours.", at: "w:yours", blue: true }]} />
+          <Guide g={g} />
+        </AbsoluteFill>
       </>}
-
-      {/* the iris grows out of the button and floods the frame */}
-      {iris > 0 && iris < 1 && (
-        <div style={{ position: "absolute", left: b.x - R, top: b.y - R, width: 2 * R, height: 2 * R, borderRadius: "50%", background: C.blue }} />
-      )}
-      {g >= FULL && <AbsoluteFill style={{ background: C.blue }} />}
-      {g >= FULL - 2 && g < OUT + 4 && (
-        <div style={{ position: "absolute", left: 960 - 900, top: 520 - 600, width: 1800, height: 1200, borderRadius: "50%", opacity: 0.5 * kf(g, FULL - 2, 20) * (1 - kf(g, OUT - 16, 12, DEPART)),
-          background: "radial-gradient(ellipse at center, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.06) 40%, rgba(255,255,255,0) 70%)" }} />
-      )}
       <Price g={g} />
     </AbsoluteFill>
   );
