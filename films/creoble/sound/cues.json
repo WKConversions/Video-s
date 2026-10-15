@@ -38,6 +38,13 @@
    "note": "the blue dot"
   },
   {
+   "frame": 122,
+   "id": "gen-whoosh-short",
+   "db": -16,
+   "pitch": -3,
+   "note": "Meet Creoble leaves"
+  },
+  {
    "frame": 128,
    "id": "gen-whoosh-medium",
    "db": -11,
@@ -240,20 +247,20 @@
    "note": "AI at work"
   },
   {
-   "frame": 326,
+   "frame": 333,
    "id": "kenney-tick-004",
    "db": -12,
    "note": "step 1 done"
   },
   {
-   "frame": 336,
+   "frame": 344,
    "id": "kenney-tick-004",
    "db": -12,
    "pitch": 3,
    "note": "step 2 done"
   },
   {
-   "frame": 347,
+   "frame": 354,
    "id": "kenney-tick-004",
    "db": -12,
    "pitch": 5,
@@ -318,50 +325,98 @@
    "note": "the headline selected"
   },
   {
-   "frame": 530,
+   "frame": 503,
    "id": "kenney-click-001",
    "db": -21,
    "note": "a key"
   },
   {
-   "frame": 532,
+   "frame": 505,
    "id": "kenney-click-001",
    "db": -21,
    "pitch": 2,
    "note": "a key"
   },
   {
-   "frame": 534,
+   "frame": 508,
    "id": "kenney-click-001",
    "db": -21,
    "pitch": -1,
    "note": "a key"
   },
   {
-   "frame": 537,
+   "frame": 511,
    "id": "kenney-click-001",
    "db": -21,
    "pitch": 3,
    "note": "a key"
   },
   {
-   "frame": 539,
+   "frame": 513,
    "id": "kenney-click-001",
    "db": -21,
    "pitch": 1,
    "note": "a key"
   },
   {
-   "frame": 542,
+   "frame": 516,
    "id": "kenney-click-001",
    "db": -21,
    "pitch": -2,
    "note": "a key"
   },
   {
-   "frame": 544,
+   "frame": 518,
    "id": "kenney-click-001",
    "db": -21,
+   "note": "a key"
+  },
+  {
+   "frame": 521,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": 2,
+   "note": "a key"
+  },
+  {
+   "frame": 524,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 526,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": 3,
+   "note": "a key"
+  },
+  {
+   "frame": 529,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": 1,
+   "note": "a key"
+  },
+  {
+   "frame": 532,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": -2,
+   "note": "a key"
+  },
+  {
+   "frame": 534,
+   "id": "kenney-click-001",
+   "db": -21,
+   "note": "a key"
+  },
+  {
+   "frame": 537,
+   "id": "kenney-click-001",
+   "db": -21,
+   "pitch": 2,
    "note": "a key"
   },
   {
@@ -371,20 +426,6 @@
    "note": "send"
   },
   {
-   "frame": 546,
-   "id": "kenney-click-001",
-   "db": -21,
-   "pitch": 2,
-   "note": "a key"
-  },
-  {
-   "frame": 549,
-   "id": "kenney-click-001",
-   "db": -21,
-   "pitch": -1,
-   "note": "a key"
-  },
-  {
    "frame": 550,
    "id": "gen-shimmer",
    "db": -13,
@@ -392,28 +433,7 @@
    "note": "the site changes"
   },
   {
-   "frame": 551,
-   "id": "kenney-click-001",
-   "db": -21,
-   "pitch": 3,
-   "note": "a key"
-  },
-  {
-   "frame": 554,
-   "id": "kenney-click-001",
-   "db": -21,
-   "pitch": 1,
-   "note": "a key"
-  },
-  {
-   "frame": 556,
-   "id": "kenney-click-001",
-   "db": -21,
-   "pitch": -2,
-   "note": "a key"
-  },
-  {
-   "frame": 567,
+   "frame": 572,
    "id": "kenney-select-002",
    "db": -11,
    "note": "Preview for free"
@@ -453,41 +473,48 @@
    "note": "kr. joins"
   },
   {
-   "frame": 756,
+   "frame": 759,
    "id": "gen-whoosh-short",
    "db": -12,
    "note": "hosting"
   },
   {
-   "frame": 778,
+   "frame": 772,
    "id": "kenney-select-001",
    "db": -11,
    "note": "Live"
   },
   {
-   "frame": 800,
+   "frame": 788,
    "id": "kenney-tick-004",
    "db": -12,
    "note": "included 1"
   },
   {
-   "frame": 805,
+   "frame": 793,
    "id": "kenney-tick-004",
    "db": -12,
    "pitch": 3,
    "note": "included 2"
   },
   {
-   "frame": 811,
+   "frame": 797,
    "id": "kenney-tick-004",
    "db": -12,
    "pitch": 5,
    "note": "included 3"
   },
   {
-   "frame": 834,
+   "frame": 827,
    "id": "gen-whoosh-short",
-   "db": -13,
+   "db": -14,
+   "pitch": -3,
+   "note": "hosting leaves"
+  },
+  {
+   "frame": 836,
+   "id": "kenney-select-001",
+   "db": -14,
    "pitch": -2,
    "note": "no coding"
   },
@@ -506,10 +533,17 @@
    "note": "no complexity"
   },
   {
-   "frame": 898,
+   "frame": 901,
    "id": "gen-whoosh-medium",
    "db": -11,
    "note": "the devices return"
+  },
+  {
+   "frame": 955,
+   "id": "gen-whoosh-short",
+   "db": -15,
+   "pitch": -3,
+   "note": "the devices leave"
   },
   {
    "frame": 969,

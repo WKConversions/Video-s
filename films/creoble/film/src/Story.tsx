@@ -97,13 +97,13 @@ const FIELDS = [
   { q: "What makes you different?", a: "Organic flour, baked fresh every morning", at: "w:what4" },
 ];
 const Tell: React.FC<{ g: number }> = ({ g }) => {
-  const btn = k(g, "w:let", 0.5), press = g >= f("w:ai") && g < f("w:ai") + 5 ? 1 : 0;
-  const working = k(g, "w:ai+0.15", 0.5);
+  const btn = k(g, "w:let", 0.5), press = g >= f("w:ai") && g < f("w:ai") + 8 ? 1 : 0;
+  const formOut = k(g, "w:ai+0.1", 0.25, MOVE), working = k(g, "w:ai+0.3", 0.4);
   return (
     <div style={{ position: "absolute", inset: 0, background: "#F7F7F4" }}>
       <AppBar right={<div style={{ fontFamily: SANS, fontWeight: 500, fontSize: 16, color: C.gray }}>Step 1 of 2</div>} />
       <div style={{ position: "absolute", left: SW / 2 - 400, top: 110, width: 800, height: 610, borderRadius: 28, background: C.white, boxShadow: "0 1px 2px rgba(0,0,0,0.04), 0 24px 60px -30px rgba(29,29,31,0.25)" }}>
-        <div style={{ position: "absolute", left: 52, top: 44, opacity: 1 - working }}>
+        <div style={{ position: "absolute", left: 52, top: 44, opacity: 1 - formOut }}>
           <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 36, color: C.ink, letterSpacing: "-0.025em" }}>Tell us about your business</div>
           <div style={{ fontFamily: SANS, fontWeight: 400, fontSize: 19, color: C.gray, marginTop: 8 }}>A few sentences is all it takes.</div>
           {FIELDS.map((fl, i) => {
@@ -118,8 +118,8 @@ const Tell: React.FC<{ g: number }> = ({ g }) => {
               </div>
             );
           })}
-          <div style={{ marginTop: 30, display: "inline-flex", alignItems: "center", gap: 10, padding: "16px 28px", borderRadius: 999, background: C.blue, color: C.white, fontFamily: SANS, fontWeight: 600, fontSize: 20,
-            opacity: 0.35 + 0.65 * btn, transform: `scale(${1 - press * 0.04})`, boxShadow: btn > 0.5 ? `0 12px 28px -12px ${C.blueGlow}` : undefined }}><Ico n="spark" s={20} c={C.white} />Build my website</div>
+          <div style={{ marginTop: 30, display: "inline-flex", alignItems: "center", gap: 10, padding: "16px 28px", borderRadius: 999, background: press ? C.blueDeep : C.blue, color: C.white, fontFamily: SANS, fontWeight: 600, fontSize: 20,
+            opacity: 0.35 + 0.65 * btn, transform: `scale(${1 - press * 0.06})`, boxShadow: press ? `0 0 0 6px ${C.blueTint}` : btn > 0.5 ? `0 12px 28px -12px ${C.blueGlow}` : undefined }}><Ico n="spark" s={20} c={C.white} />Build my website</div>
         </div>
         {/* AI at work */}
         {working > 0 && (
@@ -129,7 +129,7 @@ const Tell: React.FC<{ g: number }> = ({ g }) => {
             <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 30, color: C.ink, marginTop: 30, letterSpacing: "-0.02em" }}>Building your website</div>
             <div style={{ marginTop: 26, display: "flex", flexDirection: "column", gap: 14 }}>
               {["Writing your texts", "Choosing colours and fonts", "Building your pages"].map((s, i) => {
-                const d = k(g, off("w:do2", i * 0.35), 0.4);
+                const d = k(g, off("w:do2", 0.25 + i * 0.35), 0.4);
                 return <div key={s} style={{ display: "flex", alignItems: "center", gap: 12, fontFamily: SANS, fontWeight: 500, fontSize: 20, color: d > 0.5 ? C.ink : C.light }}>
                   <div style={{ width: 26, height: 26, borderRadius: 13, background: d > 0.5 ? C.blue : C.fill, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${0.8 + 0.2 * d})` }}><Ico n="check" s={16} c={C.white} w={3.2} /></div>{s}</div>;
               })}
@@ -146,65 +146,67 @@ const Site: React.FC<{ g: number; build: number; edit: number; scroll?: number }
   const part = (i: number) => clamp01(build * 5 - i * 0.8);       // blocks fall into place one by one
   const blk = (i: number): React.CSSProperties => ({ opacity: part(i), transform: `translateY(${(1 - part(i)) * 40}px)` });
   const hi = (p: number) => (p > 0 && p < 1 ? `0 0 0 ${3 * Math.sin(Math.PI * p)}px ${C.blue}` : undefined);
-  const e1 = k(g, "w:it", 0.6), e2 = k(g, "w:it+0.25", 0.6);
-  const sel = k(g, "w:change", 0.4) * (1 - k(g, "w:it", 0.4, DEPART));   // the headline selected, ready to change
+  const e0 = k(g, "w:it", 0.25, MOVE), e1 = k(g, "w:it+0.2", 0.45), e2 = k(g, "w:it+0.25", 0.6);
+  const sel = k(g, "w:change", 0.4) * (1 - k(g, "w:it+0.45", 0.4, DEPART));   // the headline selected, ready to change
   return (
-    <div style={{ position: "absolute", inset: 0, background: "#FFFDF9", transform: `translateY(${-scroll}px)` }}>
+    <div style={{ position: "absolute", left: 0, top: 0, width: SW, height: SH + 260, background: "#FFFDF9", transform: `translateY(${-scroll}px)` }}>
       <div style={{ ...blk(0), position: "absolute", left: 0, top: 0, width: SW, height: 72, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 56px", boxSizing: "border-box" }}>
         <div style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 28, color: "#3A2A1E" }}>Bageriet Lund</div>
         <div style={{ display: "flex", gap: 34, fontFamily: SANS, fontWeight: 500, fontSize: 17, color: "#5A4A3E" }}><span>Bread</span><span>Cakes</span><span>Catering</span><span>Visit</span></div>
       </div>
-      <div style={{ ...blk(1), position: "absolute", left: 56, top: 132, width: 520, borderRadius: 14, boxShadow: hi(e1) }}>
+      <div style={{ ...blk(1), position: "absolute", left: 56, top: 132, width: 520, borderRadius: 14 }}>
         <div style={{ fontFamily: SERIF, fontWeight: 500, fontSize: 56, lineHeight: 1.06, color: "#2B1E15", letterSpacing: "-0.02em", position: "relative" }}>
           {sel > 0 && <div style={{ position: "absolute", left: -14, top: -12, right: -14, bottom: -12, border: `3px solid ${C.blue}`, borderRadius: 10, opacity: sel }}>
             {[[-7, -7], [-7, null], [null, -7], [null, null]].map(([l, t], i) => <div key={i} style={{ position: "absolute", width: 12, height: 12, borderRadius: 3, background: C.white, border: `3px solid ${C.blue}`,
               left: l ?? undefined, right: l === null ? -7 : undefined, top: t ?? undefined, bottom: t === null ? -7 : undefined }} />)}
             <div style={{ position: "absolute", left: -3, top: -44, padding: "6px 12px", borderRadius: 8, background: C.blue, color: C.white, fontFamily: SANS, fontWeight: 600, fontSize: 18, letterSpacing: 0 }}>Headline</div>
           </div>}
-          <span style={{ opacity: 1 - e1 }}>Fresh sourdough, baked every morning.</span>
-          <span style={{ position: "absolute", left: 0, top: 0, opacity: e1 }}>Warm bread, made with love every morning.</span>
+          <span style={{ opacity: 1 - e0 }}>Fresh sourdough, baked every morning.</span>
+          <span style={{ position: "absolute", left: 0, top: 0, opacity: e1, transform: `translateY(${(1 - e1) * 10}px)` }}>Warm bread, made with love every morning.</span>
         </div>
         <div style={{ fontFamily: SANS, fontWeight: 400, fontSize: 19, lineHeight: 1.5, color: "#6B5B4E", marginTop: 22 }}>Organic flour, slow dough and a family recipe, in the heart of Aarhus.</div>
         <div style={{ marginTop: 28, display: "inline-flex", padding: "15px 28px", borderRadius: 999, background: "#2B1E15", color: "#FFFDF9", fontFamily: SANS, fontWeight: 600, fontSize: 18 }}>Order today</div>
       </div>
       <div style={{ ...blk(2), position: "absolute", left: 640, top: 112, width: 584, height: 400, borderRadius: 22, overflow: "hidden" }}>
-        <Img src={staticFile("img/pastry.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${1.08 + 0.03 * build})` }} />
+        <Img src={staticFile("img/pastry.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${1.08 + 0.03 * build})`, filter: "saturate(0.82)" }} />
       </div>
       {/* the opening hours, added by typing */}
       <div style={{ position: "absolute", left: 56, top: 548, width: 1168, height: mix(0, 64, e2), overflow: "hidden", borderRadius: 14, background: "#F6EEE4", boxShadow: hi(e2), opacity: e2 }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", height: 64, padding: "0 26px", fontFamily: SANS, fontWeight: 600, fontSize: 18, color: "#3A2A1E" }}>
-          <span>Opening hours</span><span style={{ fontWeight: 500, color: "#6B5B4E" }}>Mon–Fri 6–18 · Sat–Sun 7–15</span>
+          <span>Opening hours</span><span style={{ fontWeight: 500, color: "#6B5B4E" }}>Mon–Fri 6–18</span>
         </div>
       </div>
       {[["img/flour.jpg", "Sourdough"], ["img/cake.jpg", "Cakes"], ["img/pastry.jpg", "Catering"]].map(([src, t], i) => (
         <div key={t} style={{ ...blk(3 + i * 0.4), position: "absolute", left: 56 + i * 396, top: 548 + mix(0, 84, e2), width: 376, height: 230, borderRadius: 18, overflow: "hidden", background: "#F2EAE0" }}>
-          <Img src={staticFile(src)} style={{ width: "100%", height: 170, objectFit: "cover", objectPosition: i === 2 ? "30% 60%" : "50% 50%" }} />
+          <Img src={staticFile(src)} style={{ width: "100%", height: 170, objectFit: "cover", objectPosition: i === 2 ? "30% 60%" : "50% 50%", filter: "saturate(0.82)" }} />
           <div style={{ padding: "16px 20px", fontFamily: SERIF, fontWeight: 600, fontSize: 22, color: "#2B1E15" }}>{t}</div>
         </div>
       ))}
+      <div style={{ ...blk(4.2), position: "absolute", left: 56, top: 902 + mix(0, 84, e2) - 84, width: 1168, paddingTop: 22, borderTop: "1px solid #EADFD2", display: "flex", justifyContent: "space-between",
+        fontFamily: SANS, fontWeight: 500, fontSize: 17, color: "#6B5B4E" }}><span style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 20, color: "#3A2A1E" }}>Bageriet Lund</span><span>Aarhus · Order today</span></div>
     </div>
   );
 };
 const MobileSite: React.FC<{ g: number; build: number }> = ({ g, build }) => {
-  const e1 = k(g, "w:it", 0.6);
+  const e0 = k(g, "w:it", 0.25, MOVE), e1 = k(g, "w:it+0.2", 0.45);
   return (
     <div style={{ position: "absolute", inset: 0, background: "#FFFDF9", opacity: build }}>
       <div style={{ position: "absolute", left: 26, top: 74, fontFamily: SERIF, fontWeight: 600, fontSize: 22, color: "#3A2A1E" }}>Bageriet Lund</div>
-      <div style={{ position: "absolute", left: 18, top: 120, width: PW - 36, height: 260, borderRadius: 22, overflow: "hidden" }}><Img src={staticFile("img/pastry.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover" }} /></div>
+      <div style={{ position: "absolute", left: 18, top: 120, width: PW - 36, height: 260, borderRadius: 22, overflow: "hidden" }}><Img src={staticFile("img/pastry.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", filter: "saturate(0.82)" }} /></div>
       <div style={{ position: "absolute", left: 26, top: 404, width: PW - 52, fontFamily: SERIF, fontWeight: 500, fontSize: 34, lineHeight: 1.08, color: "#2B1E15" }}>
-        <span style={{ opacity: 1 - e1 }}>Fresh sourdough, baked every morning.</span><span style={{ position: "absolute", left: 0, top: 0, opacity: e1 }}>Warm bread, made with love every morning.</span>
+        <span style={{ opacity: 1 - e0 }}>Fresh sourdough, baked every morning.</span><span style={{ position: "absolute", left: 0, top: 0, opacity: e1 }}>Warm bread, made with love every morning.</span>
       </div>
       <div style={{ position: "absolute", left: 26, top: 560, padding: "13px 24px", borderRadius: 999, background: "#2B1E15", color: "#FFFDF9", fontFamily: SANS, fontWeight: 600, fontSize: 16 }}>Order today</div>
-      <div style={{ position: "absolute", left: 18, top: 640, width: PW - 36, height: 170, borderRadius: 18, overflow: "hidden" }}><Img src={staticFile("img/cake.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover" }} /></div>
+      <div style={{ position: "absolute", left: 18, top: 640, width: PW - 36, height: 170, borderRadius: 18, overflow: "hidden" }}><Img src={staticFile("img/cake.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", filter: "saturate(0.82)" }} /></div>
     </div>
   );
 };
 
 /* ---------- where the devices are (a slow, Apple-like camera on the product) ---------- */
 type Key = [string, number, number, number];   // label, x, y, scale (the laptop)
-const LKEYS: Key[] = [["tell", 960, 1500, 0.8], ["tell+0.9", 960, 560, 0.8], ["w:what2-0.3", 960, 560, 0.8], ["w:what2+0.9", 960, 530, 0.98], ["w:then-0.2", 960, 530, 0.98],
-  ["w:then+0.8", 960, 560, 0.8], ["w:complete-0.2", 960, 560, 0.8], ["w:website2-0.1", 780, 560, 0.74], ["happy", 780, 560, 0.74], ["happy+0.9", 960, 560, 0.56],
-  ["w:499-0.35", 960, 560, 0.56], ["w:499+0.4", 960, 420, 0.46], ["host+0.4", 960, -500, 0.46], ["simple-0.1", 820, 1500, 0.66], ["simple+0.9", 820, 600, 0.66], ["brand-0.3", 820, 600, 0.68], ["brand+0.5", 820, 1500, 0.66]];
+const LKEYS: Key[] = [["tell", 960, 1250, 0.8], ["tell+1.1", 960, 560, 0.8], ["w:what2-0.3", 960, 560, 0.8], ["w:what2+0.9", 960, 530, 0.98], ["w:then-0.6", 960, 530, 0.98],
+  ["w:then+0.4", 960, 560, 0.8], ["w:complete-0.2", 960, 560, 0.8], ["w:website2-0.1", 780, 560, 0.74], ["happy", 780, 560, 0.74], ["happy+0.9", 960, 560, 0.56],
+  ["w:499-0.5", 960, 560, 0.56], ["w:499-0.1", 960, 545, 0.54], ["simple-0.2", 820, 1150, 0.66], ["simple+0.15", 820, 1150, 0.66], ["simple+1.25", 820, 600, 0.66], ["brand-0.4", 820, 590, 0.68]];
 const keyed = (g: number, keys: Key[]) => {
   let x = keys[0][1], y = keys[0][2], s = keys[0][3];
   for (let i = 1; i < keys.length; i++) {
@@ -218,12 +220,12 @@ const keyed = (g: number, keys: Key[]) => {
 
 /* ---------- the edit prompt, the free preview, the price, hosting ---------- */
 const Prompt: React.FC<{ g: number }> = ({ g }) => {
-  const a = k(g, "w:want", 0.7), o = k(g, "preview", 0.5, DEPART);
+  const a = k(g, "w:want", 0.7), o = k(g, "w:it+0.35", 0.45, MOVE);
   if (a <= 0 || o >= 1) return null;
-  const t = typed(g, "w:just2-0.05", "Make the headline warmer and add our opening hours", 40);
+  const t = typed(g, "w:change+0.1", "Make the headline warmer and add our hours: Mon–Fri 6–18", 46);
   const sent = g >= f("w:it-0.05");
   return (
-    <div style={{ position: "absolute", left: 780 - 470, top: 0, width: 940, height: 84, borderRadius: 42, transform: `translateY(${880 + (1 - a) * 40}px)`, opacity: a * (1 - o),
+    <div style={{ position: "absolute", left: 780 - 470, top: 0, width: 940, height: 84, borderRadius: 42, transform: `translateY(${905 + (1 - a) * 40}px)`, opacity: a * (1 - o),
       background: "rgba(255,255,255,0.96)", boxShadow: "0 0 0 1px rgba(29,29,31,0.06), 0 30px 60px -24px rgba(29,29,31,0.35)", display: "flex", alignItems: "center", gap: 16, padding: "0 14px 0 30px", boxSizing: "border-box" }}>
       <Ico n="spark" s={26} c={C.blue} />
       <div style={{ flex: 1, fontFamily: SANS, fontWeight: 500, fontSize: 24, color: t ? C.ink : C.light, whiteSpace: "nowrap", overflow: "hidden" }}>{t || "Describe a change…"}</div>
@@ -232,13 +234,13 @@ const Prompt: React.FC<{ g: number }> = ({ g }) => {
   );
 };
 const Badge: React.FC<{ g: number }> = ({ g }) => {
-  const a = k(g, "w:preview", 0.6), o = k(g, "happy-0.35", 0.4, DEPART);
+  const a = k(g, "w:preview+0.15", 0.6), o = k(g, "happy-0.35", 0.4, DEPART);
   if (a <= 0 || o >= 1) return null;
   return (
     <div style={{ position: "absolute", left: 0, top: 0, width: 1920, display: "flex", justifyContent: "center", transform: `translateY(${110 + (1 - a) * 20}px)`, opacity: a * (1 - o) }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "14px 26px", borderRadius: 999, background: C.white, boxShadow: "0 0 0 1px rgba(29,29,31,0.06), 0 16px 40px -20px rgba(29,29,31,0.3)",
-        fontFamily: SANS, fontWeight: 600, fontSize: 24, color: C.ink }}>
-        <Ico n="eye" s={26} c={C.blue} />Preview <span style={{ color: C.blue }}>for free</span>
+      <div style={{ display: "flex", alignItems: "center", gap: 14, padding: "18px 34px", borderRadius: 999, background: C.white, boxShadow: "0 0 0 1px rgba(29,29,31,0.06), 0 16px 40px -20px rgba(29,29,31,0.3)",
+        fontFamily: SANS, fontWeight: 600, fontSize: 34, letterSpacing: "-0.015em", color: C.ink }}>
+        <Ico n="eye" s={36} c={C.blue} />Preview <span style={{ color: C.blueDeep }}>for free</span>
       </div>
     </div>
   );
@@ -260,8 +262,8 @@ const Price: React.FC<{ g: number }> = ({ g }) => {
   );
 };
 const Hosting: React.FC<{ g: number }> = ({ g }) => {
-  if (g < f("host-0.1") || g > f("w:no+0.7")) return null;
-  const bar = k(g, "w:hosting", 0.8), live = k(g, "w:hosting+0.5", 0.5), out = k(g, "w:no-0.05", 0.6, DEPART);
+  if (g < f("host-0.1") || g > f("w:no+0.2")) return null;
+  const bar = k(g, "w:need+0.05", 0.8), live = k(g, "w:hosting+0.3", 0.5), out = k(g, "w:no-0.35", 0.45, MOVE);
   const ticks = [["globe", "Your own domain"], ["mail", "Email included"], ["server", "European servers"]];
   return (
     <AbsoluteFill style={{ opacity: 1 - out, filter: out > 0 ? `blur(${out * 8}px)` : undefined }}>
@@ -275,15 +277,15 @@ const Hosting: React.FC<{ g: number }> = ({ g }) => {
       </div>
       <div style={{ position: "absolute", left: 0, top: 540, width: 1920, display: "flex", justifyContent: "center", gap: 80 }}>
         {ticks.map(([ic, t], i) => {
-          const a = k(g, off("w:covered", -0.1 + i * 0.18), 0.6);
+          const a = k(g, off("w:weve", i * 0.15), 0.6);
           return <div key={t} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 18, opacity: a, transform: `translateY(${(1 - a) * 24}px)` }}>
             <div style={{ width: 92, height: 92, borderRadius: 26, background: C.blueTint, display: "flex", alignItems: "center", justifyContent: "center" }}><Ico n={ic} s={46} c={C.blueDeep} w={2.2} /></div>
             <div style={{ fontFamily: SANS, fontWeight: 600, fontSize: 28, color: C.ink, letterSpacing: "-0.015em" }}>{t}</div>
           </div>;
         })}
       </div>
-      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, textAlign: "center", transform: `translateY(${800 + (1 - k(g, "w:too", 0.6)) * 14}px)`, opacity: k(g, "w:too", 0.6), fontFamily: SANS, fontWeight: 500, fontSize: 30, color: C.gray }}>
-        From 83 kr/month. Domain and email included.</div>
+      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, textAlign: "center", transform: `translateY(${800 + (1 - k(g, "w:covered", 0.6)) * 14}px)`, opacity: k(g, "w:covered", 0.6), fontFamily: SANS, fontWeight: 500, fontSize: 30, color: C.gray }}>
+        From 83 kr/month, billed yearly.</div>
     </AbsoluteFill>
   );
 };
@@ -292,38 +294,39 @@ export const Story: React.FC = () => {
   const g = useCurrentFrame();
   const L = keyed(g, LKEYS);
   const build = k(g, "w:in-0.05", 2.6, Easing.bezier(0.3, 0.5, 0.35, 1));
-  const siteOn = k(g, "w:in-0.1", 0.5);
-  const phoneIn = k(g, "w:website2-0.1", 0.9, MOVE) * (1 - k(g, "happy", 0.6, DEPART)) + k(g, "simple+0.2", 0.9, MOVE) * (1 - k(g, "brand", 0.6, DEPART));
+  const siteOn = k(g, "w:in-0.25", 0.3, MOVE);
+  const devOut = k(g, "brand-0.4", 0.5, MOVE);          // laptop and phone leave together, before the name
+  const phoneIn = k(g, "w:website2-0.1", 1.1, MOVE) * (1 - k(g, "happy", 0.6, DEPART)) + k(g, "simple+0.3", 1.1, MOVE);
   const scroll = mix(0, 180, k(g, "w:everything", 1.4, MOVE)) * (1 - k(g, "happy", 0.6, MOVE));
-  const lo = 1 - k(g, "w:499-0.35", 0.5, DEPART) + k(g, "simple-0.1", 0.6);
-  const meetOut = k(g, "tell-0.1", 0.5, MOVE);
+  const lo = k(g, "tell", 0.5) - k(g, "w:499-0.5", 0.4, MOVE) + k(g, "simple+0.15", 0.6) - devOut;
+  const meetOut = k(g, "tell-0.1", 0.6, DEPART);
   return (
     <AbsoluteFill style={{ background: C.cream }}>
-      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 55% at 50% 48%, #FFFFFF 0%, rgba(255,255,255,0) 70%)" }} />
       {/* 1 · the question */}
-      <Say g={g} y={380} size={104} out="meet-0.1" words={[{ t: "What", at: "w:what" }, { t: "if", at: "w:if" }, { t: "building", at: "w:building" }, { t: "a", at: "w:a" }, { t: "website", at: "w:website" }]} />
-      <Say g={g} y={510} size={104} out="meet-0.05" words={[{ t: "was", at: "w:was" }, { t: "this", at: "w:this" }, { t: "simple?", at: "w:simple", blue: true }]} />
+      <Say g={g} y={380} size={104} out="meet-0.45" words={[{ t: "What", at: "w:what" }, { t: "if", at: "w:if" }, { t: "building", at: "w:building" }, { t: "a", at: "w:a" }, { t: "website", at: "w:website" }]} />
+      <Say g={g} y={510} size={104} out="meet-0.4" words={[{ t: "was", at: "w:was" }, { t: "this", at: "w:this" }, { t: "simple?", at: "w:simple", blue: true }]} />
       {/* 2 · Meet Creoble. */}
       {g >= f("meet") && g < f("tell+0.8") && <>
         <Say g={g} y={330} size={48} weight={500} color={C.gray} out="tell-0.1" words={[{ t: "Meet", at: "w:meet" }]} />
-        <Wordmark x={960} y={mix(520, 210, meetOut)} size={mix(210, 60, meetOut)} o={k(g, "w:creoble-0.35", 0.9) * (1 - clamp01((meetOut - 0.7) / 0.3))} dot={k(g, "w:creoble+0.15", 0.6)} />
+        <div style={{ position: "absolute", inset: 0, opacity: 1 - meetOut, transform: `translateY(${-meetOut * 20}px) perspective(4000px) rotateX(0.01deg)`, filter: meetOut > 0 ? `blur(${meetOut * 8}px)` : undefined }}>
+          <Wordmark x={960} y={520} size={210} o={k(g, "w:creoble-0.2", 0.9)} dot={k(g, "w:creoble+0.15", 0.6)} /></div>
       </>}
       {/* 3–8 · the product */}
-      <Laptop x={L.x} y={L.y} s={L.s} o={clamp01(lo) * (g < f("host+0.6") || g > f("simple-0.2") ? 1 : 0)}>
+      <Laptop x={L.x} y={L.y + devOut * 40} s={L.s} o={clamp01(lo) * (g < f("host+0.6") || g > f("simple-0.2") ? 1 : 0)}>
         {g >= f("w:in-0.15") && <Site g={g} build={build} edit={0} scroll={scroll} />}
-        {g < f("w:minutes+0.5") && <div style={{ position: "absolute", inset: 0, opacity: 1 - siteOn }}><Tell g={g} /></div>}
+        {g < f("w:in+0.3") && <div style={{ position: "absolute", inset: 0, opacity: 1 - siteOn }}><Tell g={g} /></div>}
       </Laptop>
-      <Phone x={mix(2300, 1530, phoneIn)} y={600} s={0.7} o={clamp01(phoneIn * 1.5)}><MobileSite g={g} build={1} /></Phone>
+      <Phone x={mix(1900, 1530, phoneIn)} y={600 + devOut * 40} s={0.7} o={clamp01(phoneIn * 1.5) * (1 - devOut)}><MobileSite g={g} build={1} /></Phone>
       <Say g={g} y={92} size={60} out="w:what2-0.2" words={[{ t: "Just", at: "w:just" }, { t: "tell", at: "w:tell" }, { t: "us", at: "w:us" }, { t: "about", at: "w:about" }, { t: "your", at: "w:your" }, { t: "business.", at: "w:business", blue: true }]} />
       <Say g={g} y={92} size={60} out="w:in-0.1" words={[{ t: "Then", at: "w:then" }, { t: "let", at: "w:let" }, { t: "AI", at: "w:ai", blue: true }, { t: "do", at: "w:do2" }, { t: "the", at: "w:the" }, { t: "rest.", at: "w:rest" }]} />
-      <Say g={g} y={92} size={60} out="w:want" words={[{ t: "A", at: "w:complete-0.1" }, { t: "complete", at: "w:complete" }, { t: "website,", at: "w:complete+0.15" }, { t: "in", at: "w:ready" }, { t: "minutes.", at: "w:ready+0.12", blue: true }]} />
-      <Say g={g} y={92} size={60} out="preview-0.05" words={[{ t: "Just", at: "w:just2" }, { t: "describe", at: "w:describe" }, { t: "it.", at: "w:it", blue: true }]} />
+      <Say g={g} y={92} size={60} out="w:want" words={[{ t: "A", at: "w:complete-0.1" }, { t: "complete,", at: "w:complete" }, { t: "ready-to-use", at: "w:ready", blue: true }, { t: "website.", at: "w:website2" }]} />
+      <Say g={g} y={92} size={60} out="w:it+0.3" words={[{ t: "Just", at: "w:just2" }, { t: "describe", at: "w:describe" }, { t: "it.", at: "w:it", blue: true }]} />
       <Prompt g={g} />
       <Badge g={g} />
       {/* it's yours: a mark on the finished site */}
       {g >= f("w:its-0.1") && g < f("w:499+0.4") && (() => {
-        const a = k(g, "w:its", 0.6), o = k(g, "w:499-0.35", 0.45, DEPART);
-        return <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${960 + 300}px, ${330 + (1 - a) * 20}px) scale(${0.8 + 0.2 * a})`, opacity: a * (1 - o) }}>
+        const a = k(g, "w:its", 0.6), o = k(g, "w:499-0.5", 0.4, MOVE);
+        return <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(1135px, ${248 + (1 - a) * 20}px) scale(${0.8 + 0.2 * a})`, opacity: a * (1 - o) }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, padding: "14px 24px", borderRadius: 999, background: C.blue, color: C.white, fontFamily: SANS, fontWeight: 600, fontSize: 26,
             boxShadow: `0 16px 34px -14px ${C.blueGlow}` }}><Ico n="check" s={26} c={C.white} w={3.2} />It’s yours</div>
         </div>;
@@ -341,11 +344,11 @@ export const Story: React.FC = () => {
             <div style={{ position: "absolute", left: 22, top: 61, width: 84, height: 6, borderRadius: 3, background: C.white, boxShadow: `0 0 0 3px ${C.blue}`, transform: `rotate(-40deg) scaleX(${x})`, opacity: x > 0 ? 1 : 0 }} />
           </div>;
         })()}
-        <Say g={g} y={372} size={128} out="simple-0.1" words={[{ t: "No", at: "w:no" }, { t: "coding.", at: "w:coding" }]} />
-        <Say g={g} y={520} size={128} out="simple-0.05" words={[{ t: "No", at: "w:no2" }, { t: "complexity.", at: "w:complexity", blue: true }]} />
+        <Say g={g} y={372} size={128} out="simple-0.25" words={[{ t: "No", at: "w:no" }, { t: "coding.", at: "w:coding" }]} />
+        <Say g={g} y={520} size={128} out="simple-0.2" words={[{ t: "No", at: "w:no2" }, { t: "complexity.", at: "w:complexity", blue: true }]} />
       </>}
       {/* 12 · made simple */}
-      <Say g={g} y={92} size={64} out="brand-0.1" words={[{ t: "Just", at: "w:just4" }, { t: "your", at: "w:your3" }, { t: "website,", at: "w:website3" }, { t: "made", at: "w:made" }, { t: "simple.", at: "w:simple2", blue: true }]} />
+      <Say g={g} y={92} size={64} out="brand-0.45" words={[{ t: "Just", at: "w:just4" }, { t: "your", at: "w:your3" }, { t: "website,", at: "w:website3" }, { t: "made", at: "w:made" }, { t: "simple.", at: "w:simple2", blue: true }]} />
       {/* 13 · Creoble. */}
       {g >= f("brand") && <>
         <Wordmark x={960} y={500} size={190} o={k(g, "brand+0.15", 1.0)} dot={k(g, "w:creoble2+0.3", 0.6)} />
