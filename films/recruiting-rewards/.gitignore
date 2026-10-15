@@ -3,3 +3,7 @@ sound/music/*.mp3
 harvest/assets/demo/*.mp4
 harvest/shots/
 harvest/raw/
+sound/fit/
+sound/music-*.wav
+deliver/*.mp4
+!deliver/*-preview.mp4

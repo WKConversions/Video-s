@@ -49,6 +49,7 @@ export const Headline: React.FC<{ g: number; words: Word[]; x: number; y: number
   return (
     <div data-name={name} style={{ position: "absolute", left: align === "center" ? x - width / 2 : x, top: y, width, textAlign: align, fontFamily: F.display, fontWeight: weight, fontSize: size, lineHeight: lh, letterSpacing: "-0.02em", color, opacity: 1 - o, transform: `translateY(${-o * 14}px)` }}>
       {words.map((w, i) => {
+        if (w.t === "\n") return <br key={i} />;
         const k = tw(g, w.at, w.at + 14);
         return (
           <span key={i} style={{ display: "inline-block", whiteSpace: "pre", opacity: k, transform: `translateY(${(1 - k) * 0.32 * size}px)`, filter: k < 1 ? `blur(${(1 - k) * 8}px)` : undefined, color: w.green ? C.green : undefined }}>
@@ -59,11 +60,12 @@ export const Headline: React.FC<{ g: number; words: Word[]; x: number; y: number
     </div>
   );
 };
-/** split "Real assignments, |already on the platform." into words; the part after | is green */
+/** split "Real assignments, |already on the platform." into words; the part after | is green, a lone / breaks the line */
 export const words = (s: string, start: number, step = 3): Word[] => {
   const [a, b = ""] = s.split("|");
   const wa = a.trim() ? a.trim().split(/\s+/) : [], wb = b.trim() ? b.trim().split(/\s+/) : [];
-  return [...wa.map((t, i) => ({ t, at: start + i * step })), ...wb.map((t, i) => ({ t, at: start + (wa.length + i) * step, green: true }))];
+  const nl = (t: string) => (t === "/" ? "\n" : t);
+  return [...wa.map((t, i) => ({ t: nl(t), at: start + i * step })), ...wb.map((t, i) => ({ t: nl(t), at: start + (wa.length + i) * step, green: true }))];
 };
 
 /** "STEP 1 · Pick assignments": the site's numbered node and small caps kicker. */
@@ -205,17 +207,17 @@ export const Bar: React.FC<{ label: string; v: number; k: number; w?: number }> 
 );
 
 // ------------------------------------------------------------------------------------------------ pipeline
-export const CandidateCard: React.FC<{ name: string; role: string; ini: string; tone?: number; ai?: number; stars?: number; w?: number; style?: React.CSSProperties; glow?: number }> = ({ name, role, ini, tone = 0, ai, stars, w = 330, style, glow = 0 }) => (
-  <div style={{ width: w, padding: "16px 18px", borderRadius: 16, background: C.card, border: `1.5px solid ${glow > 0 ? `rgba(40,126,97,${0.3 + 0.6 * glow})` : C.lineSoft}`, boxShadow: SHADOW.card, display: "flex", flexDirection: "column", gap: 10, ...style }}>
-    <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-      <Avatar t={ini} s={40} tone={tone} />
+export const CandidateCard: React.FC<{ name: string; role: string; ini: string; tone?: number; ai?: number; stars?: number; w?: number; style?: React.CSSProperties; glow?: number; k?: number }> = ({ name, role, ini, tone = 0, ai, stars, w = 330, style, glow = 0, k = 1 }) => (
+  <div style={{ width: w, padding: `${16 * k}px ${18 * k}px`, borderRadius: 16 * k, background: C.card, border: `1.5px solid ${glow > 0 ? `rgba(40,126,97,${0.3 + 0.6 * glow})` : C.lineSoft}`, boxShadow: SHADOW.card, display: "flex", flexDirection: "column", gap: 10 * k, ...style }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 12 * k }}>
+      <Avatar t={ini} s={40 * k} tone={tone} />
       <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 16, color: C.ink, whiteSpace: "nowrap" }}>{name}</div>
-        <div style={{ fontFamily: F.ui, fontWeight: 500, fontSize: 13, color: C.muted, whiteSpace: "nowrap" }}>{role}</div>
+        <div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 16 * k, color: C.ink, whiteSpace: "nowrap" }}>{name}</div>
+        <div style={{ fontFamily: F.ui, fontWeight: 500, fontSize: 13 * k, color: C.muted, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{role}</div>
       </div>
-      {ai !== undefined && <div style={{ padding: "4px 9px", borderRadius: 999, background: C.amberSoft, color: "#9A6418", fontFamily: F.ui, fontWeight: 700, fontSize: 13 }}>AI {ai}</div>}
+      {ai !== undefined && <div style={{ padding: `${4 * k}px ${9 * k}px`, borderRadius: 999, background: C.amberSoft, color: "#9A6418", fontFamily: F.ui, fontWeight: 700, fontSize: 13 * k }}>AI {ai}</div>}
     </div>
-    {stars !== undefined && <Stars n={stars} s={17} />}
+    {stars !== undefined && <Stars n={stars} s={17 * k} />}
   </div>
 );
 

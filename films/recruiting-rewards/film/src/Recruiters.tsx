@@ -20,16 +20,17 @@ const NAV = [{ icon: "home", label: "Open Jobs", on: true }, { icon: "kanban", l
 const HL = { x: 110, w: 640 };
 // the app is drawn at 1500×880 and scaled into the right of the frame; the first card's rectangle on screen, and the
 // panel it grows into
-const A = 0.78, AX = 770, AY = 170;
+const A = 0.75, AX = 760, AY = 205;
 const CARD0 = { x: AX + A * 300, y: AY + A * (36 - 40 + 46 + 18 + 33 + 22), w: A * 1150, h: A * 178 };
 const PANEL = { x: 790, y: 150, w: 1040, h: 790 };
+const REWARD = { x: 820, y: 660, w: 980, h: 170 };
 const at = (lx: number, ly: number) => ({ x: AX + A * lx, y: AY + A * ly });
 
 /** the opening: the sales chores, struck through */
 const Chores: React.FC<{ g: number; items: [string, string][] }> = ({ g, items }) => {
   const out = tw(g, R.turn - 12, R.turn + 8, SOFT);
   return (
-    <div style={{ position: "absolute", left: 0, right: 0, top: 640, display: "flex", justifyContent: "center", gap: 30 }}>
+    <div style={{ position: "absolute", left: 0, right: 0, top: 490, display: "flex", justifyContent: "center", gap: 30 }}>
       {items.map(([icon, t], i) => {
         const k = tw(g, 6 + i * 10, 22 + i * 10), strike = tw(g, 44 + i * 6, 56 + i * 6, MOVE);
         return (
@@ -77,7 +78,7 @@ export const Recruiters: React.FC<{ g: number }> = ({ g }) => {
         {g < R.market + 6 && (
           <>
             <Chores g={g} items={[["phone", "Cold calls"], ["calendar", "Meeting booking"], ["deck", "Pitch decks"]]} />
-            <Headline g={g} name="HStop" x={960} y={250} size={150} align="center" width={1060} out={R.market - 14} words={[
+            <Headline g={g} name="HStop" x={960} y={330} size={150} align="center" width={1060} out={R.market - 14} words={[
               { t: "Stop", at: R.turn }, { t: "selling.", at: R.turn + 5 }, { t: "Start", at: R.turn + 18, green: true }, { t: "recruiting.", at: R.turn + 24, green: true },
             ]} lh={1.02} />
           </>
@@ -85,7 +86,7 @@ export const Recruiters: React.FC<{ g: number }> = ({ g }) => {
 
         {/* the app, scaled into the right of the frame; it steps back when the chosen card grows into the brief */}
         {appIn > 0 && appOut < 1 && (
-          <div style={{ position: "absolute", left: 770, top: 170, opacity: appIn * (1 - appOut) * (1 - 0.6 * panel), transform: `translate(${appOut * 220}px, ${(1 - appIn) * 120}px) scale(${A * (1 - 0.05 * panel)})`, transformOrigin: "0 0", filter: panel > 0 ? `blur(${2.5 * panel}px)` : undefined, willChange: "transform" }}>
+          <div style={{ position: "absolute", left: AX, top: AY, opacity: appIn * (1 - appOut) * (1 - 0.6 * panel), transform: `translate(${appOut * 220}px, ${(1 - appIn) * 120}px) scale(${A * (1 - 0.05 * panel)})`, transformOrigin: "0 0", filter: panel > 0 ? `blur(${2.5 * panel}px)` : undefined, willChange: "transform" }}>
             <AppShell w={1500} h={880} nav={NAV} workspace="RR">
               <div style={{ position: "absolute", left: 50, top: 36 + listScroll, width: 1150 }}>
                 <div style={{ fontFamily: F.display, fontWeight: 600, fontSize: 38, color: C.ink, letterSpacing: "-0.01em" }}>Find roles to work on</div>
@@ -142,43 +143,43 @@ export const Recruiters: React.FC<{ g: number }> = ({ g }) => {
                   {/* the recommendation form */}
                   {form > 0 && (
                     <div style={{ position: "absolute", left: 46, right: 46, top: 40, opacity: form * (1 - aiK), transform: `translateY(${(1 - form) * 40 - aiK * 60}px)` }}>
-                      <div style={{ fontFamily: F.display, fontWeight: 600, fontSize: 40, color: C.ink }}>Recommend a candidate</div>
-                      <div style={{ fontFamily: F.ui, fontSize: 17, color: C.muted, marginTop: 6 }}>Senior Backend Engineer · Nordvik Systems AB</div>
+                      <div style={{ fontFamily: F.display, fontWeight: 600, fontSize: 46, color: C.ink }}>Recommend a candidate</div>
+                      <div style={{ fontFamily: F.ui, fontSize: 20, color: C.muted, marginTop: 6 }}>Senior Backend Engineer · Nordvik Systems AB</div>
                       <div style={{ marginTop: 28, display: "flex", alignItems: "center", gap: 16, padding: "16px 18px", borderRadius: 16, border: `1.5px solid ${C.greenLine}`, background: C.greenSoft }}>
-                        <Avatar t="KS" s={52} tone={3} />
+                        <Avatar t="KS" s={58} tone={3} />
                         <div style={{ flex: 1 }}>
-                          <div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 20, color: C.ink }}>Karla S.</div>
-                          <div style={{ fontFamily: F.ui, fontSize: 15, color: C.muted }}>Backend Engineer · 9 years · Stockholm</div>
+                          <div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 24, color: C.ink }}>Karla S.</div>
+                          <div style={{ fontFamily: F.ui, fontSize: 18, color: C.muted }}>Backend Engineer · 9 years · Stockholm</div>
                         </div>
-                        <Chip icon="file" tone="white" size={15}>CV attached</Chip>
+                        <Chip icon="file" tone="white" size={18}>CV attached</Chip>
                       </div>
-                      <div style={{ marginTop: 28, fontFamily: F.ui, fontWeight: 700, fontSize: 18, color: C.ink }}>Which part of the backend stack has the candidate owned in production, and for how long? <span style={{ color: C.red }}>*</span></div>
-                      <div style={{ marginTop: 12, minHeight: 130, padding: "16px 18px", borderRadius: 14, border: `1.5px solid ${C.green}`, background: C.card, fontFamily: F.ui, fontSize: 20, lineHeight: 1.5, color: C.ink, boxShadow: "0 0 0 4px rgba(40,126,97,0.10)" }}>
-                        {typed(questionT, g, R.submit + 34, R.submit + 118)}<Caret g={g} h={24} on={g < R.ai} />
+                      <div style={{ marginTop: 30, fontFamily: F.ui, fontWeight: 700, fontSize: 22, lineHeight: 1.35, color: C.ink }}>Which part of the backend stack has the candidate owned in production, and for how long? <span style={{ color: C.red }}>*</span></div>
+                      <div style={{ marginTop: 12, minHeight: 150, padding: "18px 20px", borderRadius: 14, border: `1.5px solid ${C.green}`, background: C.card, fontFamily: F.ui, fontSize: 25, lineHeight: 1.5, color: C.ink, boxShadow: "0 0 0 4px rgba(40,126,97,0.10)" }}>
+                        {typed(questionT, g, R.submit + 34, R.submit + 118)}<Caret g={g} h={30} on={g < R.ai} />
                       </div>
-                      <div style={{ marginTop: 22, fontFamily: F.ui, fontWeight: 700, fontSize: 18, color: C.ink }}>Your motivation</div>
-                      <div style={{ marginTop: 12, height: 90, padding: "16px 18px", borderRadius: 14, border: `1.5px solid ${C.line}`, fontFamily: F.ui, fontSize: 19, color: C.muted }}>Your own assessment, read next to the CV.</div>
+                      <div style={{ marginTop: 26, fontFamily: F.ui, fontWeight: 700, fontSize: 22, color: C.ink }}>Your motivation</div>
+                      <div style={{ marginTop: 12, height: 76, padding: "18px 20px", borderRadius: 14, border: `1.5px solid ${C.line}`, fontFamily: F.ui, fontSize: 22, color: C.muted }}>Your own assessment, read next to the CV.</div>
                     </div>
                   )}
                   {/* AI match analysis */}
                   {aiK > 0 && (
                     <div style={{ position: "absolute", left: 46, right: 46, top: 40, opacity: aiK, transform: `translateY(${(1 - aiK) * 60}px)` }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: 12 }}><Icon n="sparkle" s={34} c={C.green} /><div style={{ fontFamily: F.display, fontWeight: 600, fontSize: 40, color: C.ink }}>AI Match Analysis</div></div>
-                      <div style={{ fontFamily: F.ui, fontSize: 17, color: C.muted, marginTop: 6 }}>Karla S. against the requirement profile</div>
+                      <div style={{ display: "flex", alignItems: "center", gap: 12 }}><Icon n="sparkle" s={38} c={C.green} /><div style={{ fontFamily: F.display, fontWeight: 600, fontSize: 46, color: C.ink }}>AI Match Analysis</div></div>
+                      <div style={{ fontFamily: F.ui, fontSize: 20, color: C.muted, marginTop: 6 }}>Karla S. against the requirement profile</div>
                       <div style={{ display: "flex", alignItems: "center", gap: 34, marginTop: 34 }}>
-                        <ScoreRing v={9} s={150} k={ring} />
+                        <ScoreRing v={9} s={184} k={ring} />
                         <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
-                          <Bar label="Domain and language fit" v={9} k={bars[0]} w={300} />
-                          <Bar label="Relevant senior experience" v={9} k={bars[1]} w={300} />
-                          <Bar label="Strong technical alignment" v={9.5} k={bars[2]} w={300} />
+                          <Bar label="Domain and language fit" v={9} k={bars[0]} w={350} />
+                          <Bar label="Relevant senior experience" v={9} k={bars[1]} w={350} />
+                          <Bar label="Strong technical alignment" v={9.5} k={bars[2]} w={350} />
                         </div>
                       </div>
                       <div style={{ marginTop: 32, display: "flex", alignItems: "center", gap: 12, padding: "16px 20px", borderRadius: 14, background: C.greenSoft, border: `1.5px solid ${C.greenLine}`, opacity: pass, transform: `scale(${lerp(0.96, 1, pass)})`, transformOrigin: "left center" }}>
-                        <Icon n="check" s={24} c={C.green} w={2.4} /><div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 20, color: C.greenDeep }}>Meets the quality threshold (9/7)</div>
+                        <Icon n="check" s={24} c={C.green} w={2.4} /><div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 24, color: C.greenDeep }}>Meets the quality threshold (9/7)</div>
                       </div>
                       <div style={{ marginTop: 22, fontFamily: F.ui, fontWeight: 700, fontSize: 14, letterSpacing: "0.12em", color: C.muted, opacity: pass }}>KEY SIGNALS</div>
                       {["Proven track record of splitting monoliths and running event-driven Kafka services", "Deep PostgreSQL expertise", "Native Swedish and professional English"].map((t, i) => (
-                        <div key={i} style={{ display: "flex", gap: 12, marginTop: 12, fontFamily: F.ui, fontSize: 20, color: C.ink2, opacity: tw(g, R.ai + 70 + i * 6, R.ai + 84 + i * 6) }}><div style={{ width: 8, height: 8, borderRadius: 4, background: C.green, marginTop: 9, flex: "none" }} />{t}</div>
+                        <div key={i} style={{ display: "flex", gap: 12, marginTop: 12, fontFamily: F.ui, fontSize: 23, color: C.ink2, opacity: tw(g, R.ai + 70 + i * 6, R.ai + 84 + i * 6) }}><div style={{ width: 8, height: 8, borderRadius: 4, background: C.green, marginTop: 9, flex: "none" }} />{t}</div>
                       ))}
                       
                     </div>
@@ -203,13 +204,13 @@ export const Recruiters: React.FC<{ g: number }> = ({ g }) => {
 
         {/* the thread and the reward */}
         {thread > 0 && g < R.cta + 26 && (
-          <div style={{ position: "absolute", left: 820, top: 150, width: 980, opacity: thread * (1 - ctaK), transform: `translateY(${(1 - thread) * 80}px) scale(${1 - 0.06 * ctaK})` }}>
+          <div style={{ position: "absolute", left: 820, top: 226, width: 980, opacity: thread * (1 - ctaK), transform: `translateY(${(1 - thread) * 80}px) scale(${1 - 0.06 * ctaK})` }}>
             <div style={{ padding: "30px 34px", borderRadius: 24, background: C.card, border: `1.5px solid ${C.line}`, boxShadow: SHADOW.window }}>
               <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-                <Avatar t="KS" s={64} tone={3} />
+                <Avatar t="KS" s={72} tone={3} />
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: F.display, fontWeight: 600, fontSize: 34, color: C.ink }}>Karla S.</div>
-                  <div style={{ fontFamily: F.ui, fontSize: 17, color: C.muted }}>Senior Backend Engineer · Nordvik Systems AB</div>
+                  <div style={{ fontFamily: F.display, fontWeight: 600, fontSize: 40, color: C.ink }}>Karla S.</div>
+                  <div style={{ fontFamily: F.ui, fontSize: 20, color: C.muted }}>Senior Backend Engineer · Nordvik Systems AB</div>
                 </div>
                 <div style={{ position: "relative" }}>
                   {(["Submitted", "Interview 1", "Interview 2", "Hired"] as const).map((t, i) => {
@@ -217,7 +218,7 @@ export const Recruiters: React.FC<{ g: number }> = ({ g }) => {
                     const k = i === 0 ? 1 : tw(g, [0, R.collab + 26, R.collab + 92, R.reward + 8][i], [0, R.collab + 36, R.collab + 102, R.reward + 18][i]);
                     return on ? (
                       <div key={i} style={{ position: i === 0 ? "relative" : "absolute", right: 0, top: 0, transform: `scale(${lerp(0.8, 1, k)})`, opacity: k }}>
-                        <Chip tone={i === 3 ? "green" : i === 0 ? "line" : "amber"} icon={i === 3 ? "check" : undefined} size={19}>{t}</Chip>
+                        <Chip tone={i === 3 ? "green" : i === 0 ? "line" : "amber"} icon={i === 3 ? "check" : undefined} size={22}>{t}</Chip>
                       </div>
                     ) : null;
                   })}
@@ -226,52 +227,52 @@ export const Recruiters: React.FC<{ g: number }> = ({ g }) => {
               <div style={{ height: 1.5, background: C.lineSoft, margin: "24px 0" }} />
               {/* the company's feedback */}
               <div style={{ display: "flex", gap: 14, opacity: msg, transform: `translateY(${(1 - msg) * 20}px)` }}>
-                <Avatar t="No" s={46} tone={0} />
+                <Avatar t="No" s={52} tone={0} />
                 <div style={{ flex: 1 }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}><div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 17, color: C.ink }}>Nordvik Systems AB</div><Stars n={4} s={20} fill={rating} /></div>
-                  <div style={{ marginTop: 8, padding: "14px 18px", borderRadius: "4px 16px 16px 16px", background: C.panel, fontFamily: F.ui, fontSize: 20, color: C.ink2, lineHeight: 1.45 }}>Strong first interview. Let's book a second round with the tech lead.</div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 12 }}><div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 21, color: C.ink }}>Nordvik Systems AB</div><Stars n={4} s={24} fill={rating} /></div>
+                  <div style={{ marginTop: 8, padding: "14px 18px", borderRadius: "4px 16px 16px 16px", background: C.panel, fontFamily: F.ui, fontSize: 24, color: C.ink2, lineHeight: 1.45 }}>Strong first interview. Let's book a second round with the tech lead.</div>
                 </div>
               </div>
               <div style={{ display: "flex", gap: 14, marginTop: 18, flexDirection: "row-reverse", opacity: reply, transform: `translateY(${(1 - reply) * 20}px)` }}>
-                <Avatar t="RR" s={46} tone={2} />
-                <div style={{ padding: "14px 18px", borderRadius: "16px 4px 16px 16px", background: C.greenSoft, fontFamily: F.ui, fontSize: 20, color: C.greenDeep, lineHeight: 1.45 }}>Great. She can do Thursday or Friday.</div>
+                <Avatar t="RR" s={52} tone={2} />
+                <div style={{ padding: "14px 18px", borderRadius: "16px 4px 16px 16px", background: C.greenSoft, fontFamily: F.ui, fontSize: 24, color: C.greenDeep, lineHeight: 1.45 }}>Great. She can do Thursday or Friday.</div>
               </div>
             </div>
             {/* the reward */}
-            <div style={{ marginTop: 26, padding: "30px 34px", borderRadius: 24, background: C.card, border: `1.5px solid ${C.greenLine}`, boxShadow: SHADOW.window, opacity: rewardK, transform: `translateY(${(1 - rewardK) * 50}px)`, display: "flex", alignItems: "center", gap: 26 }}>
+            <div style={{ position: "absolute", left: 0, top: REWARD.y - 226, width: REWARD.w, height: REWARD.h, boxSizing: "border-box", padding: "0 34px", borderRadius: 24, background: C.card, border: `1.5px solid ${C.greenLine}`, boxShadow: SHADOW.window, opacity: rewardK, transform: `translateY(${(1 - rewardK) * 50}px)`, display: "flex", alignItems: "center", gap: 26 }}>
               <div style={{ width: 76, height: 76, borderRadius: 22, background: C.greenSoft, display: "flex", alignItems: "center", justifyContent: "center" }}><Icon n="coins" s={40} c={C.green} /></div>
               <div style={{ flex: 1 }}>
                 <div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 15, letterSpacing: "0.12em", color: C.muted }}>YOUR REWARD</div>
                 <div style={{ fontFamily: F.ui, fontWeight: 800, fontSize: 60, color: C.green, letterSpacing: "-0.01em", fontVariantNumeric: "tabular-nums" }}>{sek(rewardV)}</div>
               </div>
-              <div style={{ fontFamily: F.ui, fontSize: 18, color: C.muted, width: 300, lineHeight: 1.4, opacity: tw(g, R.reward + 60, R.reward + 74) }}>Invoiced when Karla starts, paid on the terms you accepted.</div>
+              <div style={{ fontFamily: F.ui, fontSize: 21, color: C.muted, width: 320, lineHeight: 1.4, opacity: tw(g, R.reward + 60, R.reward + 74) }}>Invoiced when Karla starts, paid on the terms you accepted.</div>
             </div>
           </div>
         )}
 
         {/* headlines and kickers (left column) */}
-        <Headline g={g} name="HMarket" x={HL.x} y={300} size={72} width={HL.w} out={R.pick - 10} words={words("Real assignments, |already on the platform.", R.market + 8)} />
-        <div style={{ position: "absolute", left: HL.x, top: 560, width: 560, fontFamily: F.ui, fontSize: 24, lineHeight: 1.5, color: C.muted, opacity: tw(g, R.market + 40, R.market + 54) * (1 - tw(g, R.pick - 10, R.pick, SOFT)) }}>
+        <Headline g={g} name="HMarket" x={HL.x} y={330} size={72} width={HL.w} out={R.pick - 10} words={words("Real assignments, |already on the platform.", R.market + 8)} />
+        <div style={{ position: "absolute", left: HL.x, top: 590, width: 560, fontFamily: F.ui, fontSize: 24, lineHeight: 1.5, color: C.muted, opacity: tw(g, R.market + 40, R.market + 54) * (1 - tw(g, R.pick - 10, R.pick, SOFT)) }}>
           Companies publish the brief and the reward. You decide what to take on.
         </div>
-        <Kicker g={g} at={R.pick} n={1} text="Pick assignments" x={HL.x} y={250} out={R.submit - 8} />
-        <Headline g={g} name="HPick" x={HL.x} y={310} size={64} width={560} out={R.submit - 8} words={words("Pick the ones that |fit your niche.", R.pick + 6)} />
-        <Kicker g={g} at={R.submit} n={2} text="Submit candidates" x={HL.x} y={250} out={R.ai - 8} />
-        <Headline g={g} name="HSubmit" x={HL.x} y={310} size={64} width={560} out={R.ai - 8} words={words("Present your candidate, |in your own words.", R.submit + 6)} />
-        <Kicker g={g} at={R.ai} text="AI-screened before sending" x={HL.x} y={250} out={R.collab - 8} />
-        <Headline g={g} name="HAi" x={HL.x} y={310} size={64} width={560} out={R.collab - 8} words={words("A clear score |and a clear why.", R.ai + 6)} />
-        <div style={{ position: "absolute", left: HL.x, top: 520, width: 520, fontFamily: F.ui, fontSize: 23, lineHeight: 1.5, color: C.muted, opacity: tw(g, R.ai + 40, R.ai + 54) * (1 - tw(g, R.collab - 8, R.collab, SOFT)) }}>
+        <Kicker g={g} at={R.pick} n={1} text="Pick assignments" x={HL.x} y={316} out={R.submit - 8} />
+        <Headline g={g} name="HPick" x={HL.x} y={376} size={68} width={600} out={R.submit - 8} words={words("Pick the ones that |fit your niche.", R.pick + 6)} />
+        <Kicker g={g} at={R.submit} n={2} text="Submit candidates" x={HL.x} y={316} out={R.ai - 8} />
+        <Headline g={g} name="HSubmit" x={HL.x} y={376} size={68} width={600} out={R.ai - 8} words={words("Present your candidate, |in your own words.", R.submit + 6)} />
+        <Kicker g={g} at={R.ai} text="AI-screened before sending" x={HL.x} y={316} out={R.collab - 8} />
+        <Headline g={g} name="HAi" x={HL.x} y={376} size={68} width={600} out={R.collab - 8} words={words("A clear score |and a clear why.", R.ai + 6)} />
+        <div style={{ position: "absolute", left: HL.x, top: 600, width: 540, fontFamily: F.ui, fontSize: 25, lineHeight: 1.5, color: C.muted, opacity: tw(g, R.ai + 40, R.ai + 54) * (1 - tw(g, R.collab - 8, R.collab, SOFT)) }}>
           Below the threshold, it cannot be sent.
         </div>
-        <Kicker g={g} at={R.collab} n={3} text="Collaborate" x={HL.x} y={250} out={R.reward - 8} />
-        <Headline g={g} name="HCollab" x={HL.x} y={310} size={64} width={600} out={R.reward - 8} words={words("Feedback and status, |in one thread.", R.collab + 6)} />
-        <Kicker g={g} at={R.reward} n={4} text="Get rewarded" x={HL.x} y={250} out={R.cta - 8} />
-        <Headline g={g} name="HReward" x={HL.x} y={310} size={64} width={600} out={R.cta - 8} words={words("Paid |when your candidate starts.", R.reward + 6)} />
+        <Kicker g={g} at={R.collab} n={3} text="Collaborate" x={HL.x} y={316} out={R.reward - 8} />
+        <Headline g={g} name="HCollab" x={HL.x} y={376} size={68} width={620} out={R.reward - 8} words={words("Feedback and status, |in one thread.", R.collab + 6)} />
+        <Kicker g={g} at={R.reward} n={4} text="Get rewarded" x={HL.x} y={316} out={R.cta - 8} />
+        <Headline g={g} name="HReward" x={HL.x} y={376} size={68} width={620} out={R.cta - 8} words={words("Paid |when your candidate starts.", R.reward + 6)} />
       </AbsoluteFill>
 
       {/* the call to action: the navy panel grows out of the reward card */}
       {ctaK > 0 && (
-        <div style={{ position: "absolute", left: lerp(820, 0, ctaK), top: lerp(560, 0, ctaK), width: lerp(980, 1920, ctaK), height: lerp(170, 1080, ctaK), borderRadius: lerp(24, 0, ctaK), background: C.navy, overflow: "hidden" }}>
+        <div style={{ position: "absolute", left: lerp(REWARD.x, 0, ctaK), top: lerp(REWARD.y, 0, ctaK), width: lerp(REWARD.w, 1920, ctaK), height: lerp(REWARD.h, 1080, ctaK), borderRadius: lerp(24, 0, ctaK), background: C.navy, overflow: "hidden" }}>
           <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, opacity: tw(g, R.cta + 16, R.cta + 30) }}>
             <div style={{ position: "absolute", left: -200, top: -300, width: 1200, height: 1000, borderRadius: "50%", background: "radial-gradient(circle, rgba(40,126,97,0.35) 0%, rgba(40,126,97,0) 65%)" }} />
             <Img src={img("logo-white.svg")} style={{ position: "absolute", left: 960 - 230, top: 170, width: 460, opacity: tw(g, R.cta + 18, R.cta + 32), transform: `translateY(${(1 - tw(g, R.cta + 18, R.cta + 32)) * 20}px)` }} />

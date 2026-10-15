@@ -119,7 +119,7 @@ def main():
     if "--music" in sys.argv:                 # the same cues over another bed, to compare
         cue.setdefault("music", {})["file"] = os.path.relpath(os.path.abspath(sys.argv[sys.argv.index("--music") + 1]), base)
     if "music" in cue:
-        m = cue["music"]; x = to_lufs(load(os.path.join(base, m["file"])), MUSIC_LUFS)
+        m = cue["music"]; x = to_lufs(load(os.path.join(base, m["file"])), MUSIC_LUFS + m.get("db", 0))
         place(mu_bus, x, m.get("at", 0))
         t = np.arange(n) / SR
         fi, fo = m.get("fade_in", 0.3), m.get("fade_out", 2.0)
