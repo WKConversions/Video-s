@@ -58,7 +58,7 @@ const Laptop: React.FC<{ x: number; y: number; s: number; o?: number; children: 
   const B = 16, W = SW + 2 * B, H = SH + 2 * B;
   if (o <= 0.01) return null;
   return (
-    <div style={{ position: "absolute", left: 0, top: 0, width: W, height: H + 30, transform: `translate(${x - W / 2}px, ${y - H / 2}px) scale(${s})`, transformOrigin: `${W / 2}px ${H / 2}px`, opacity: o }}>
+    <div style={{ position: "absolute", left: 0, top: 0, width: W, height: H + 30, transform: `translate(${x - W / 2}px, ${y - H / 2}px) scale(${s}) perspective(4000px) rotateX(0.01deg)`, transformOrigin: `${W / 2}px ${H / 2}px`, opacity: o }}>
       <div style={{ position: "absolute", left: W / 2 - 900, top: H + 4, width: 1800, height: 120, borderRadius: "50%", background: "radial-gradient(ellipse at center, rgba(29,29,31,0.22) 0%, rgba(29,29,31,0) 70%)" }} />
       <div style={{ position: "absolute", left: 0, top: 0, width: W, height: H, borderRadius: 30, background: "#141416", boxShadow: "0 0 0 2px #C9CACE, 0 40px 90px -40px rgba(29,29,31,0.5)" }}>
         <div style={{ position: "absolute", left: B, top: B, width: SW, height: SH, borderRadius: 14, overflow: "hidden", background: C.white }}>{children}</div>
@@ -75,7 +75,7 @@ const Phone: React.FC<{ x: number; y: number; s: number; o?: number; children: R
   const B = 13, W = PW + 2 * B, H = PH + 2 * B;
   if (o <= 0.01) return null;
   return (
-    <div style={{ position: "absolute", left: 0, top: 0, width: W, height: H, transform: `translate(${x - W / 2}px, ${y - H / 2}px) scale(${s})`, transformOrigin: "50% 50%", opacity: o }}>
+    <div style={{ position: "absolute", left: 0, top: 0, width: W, height: H, transform: `translate(${x - W / 2}px, ${y - H / 2}px) scale(${s}) perspective(4000px) rotateX(0.01deg)`, transformOrigin: "50% 50%", opacity: o }}>
       <div style={{ position: "absolute", inset: 0, borderRadius: 66, background: "#141416", boxShadow: "0 0 0 2px #C9CACE, 0 50px 90px -40px rgba(29,29,31,0.55)" }}>
         <div style={{ position: "absolute", left: B, top: B, width: PW, height: PH, borderRadius: 54, overflow: "hidden", background: C.white }}>{children}</div>
         <div style={{ position: "absolute", left: W / 2 - 62, top: 26, width: 124, height: 36, borderRadius: 18, background: "#0A0A0B" }} />

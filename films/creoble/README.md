@@ -83,7 +83,7 @@ cd film && bash ../scripts/render_chunks.sh Film out/final.mp4 '{"blurSamples":8
   - "Want to change something?": the prompt rises and the headline is selected.
   - "kroner": "kr." joins the number.
   - "No coding.": the code tile is struck through.
-- Shake: none (`jitter_check.py`). The statements carry a 3D term so slow moves don't step on the pixel grid.
+- Shake: none (`jitter_check.py`). The statements and the devices carry a 3D term so slow moves don't step on the pixel grid.
 - Frame review: three independent reviews of the first final (layout, copy and truth, story and tone), each serious
   finding checked again by a skeptic at full resolution. Fixed from it:
   - Every hand-off that stacked text on text: the question under the wordmark, "Meet" and the wordmark crossing,
