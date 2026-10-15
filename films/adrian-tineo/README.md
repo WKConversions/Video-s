@@ -6,8 +6,7 @@ lines need them.
 
 | Path | What |
 |---|---|
-| `deliver/adrian-tineo-39s-1080p.mp4` | The film: 1920×1080, 30 fps, 39.0 s, H.264 BT.709 TV range, AAC 48 kHz, mix −15.2 LUFS. |
-| `deliver/adrian-tineo-39s-1080p-share.mp4` | The same film, compressed for sending. |
+| `deliver/adrian-tineo-39s-1080p.mp4` | The film: 1920×1080, 30 fps, 39.0 s, H.264 BT.709 TV range, AAC 48 kHz, mix −15.2 LUFS, 7 MB (small enough to send as is). Calm like the site: moving in 72% of frames, median 0.4% of the frame in motion, longest still 1.3 s; no shake. |
 | `storyboard/plan.md` | Thesis, thread object, the phrase table (a visual event on every phrase), sound plan. `concept-A/B/C.md` are the three drafts it was taken from. |
 | `harvest/` | The site (HTML, CSS, text), screenshots at three widths, `facts.md` (every on-screen claim comes from it). |
 | `assets/` | The site's own files: Manrope (SIL OFL), the chrome sculpture SVGs, the portrait. |
