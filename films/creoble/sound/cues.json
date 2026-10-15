@@ -260,33 +260,33 @@
    "note": "step 3 done"
   },
   {
-   "frame": 368,
+   "frame": 363,
    "id": "gen-whoosh-short",
    "db": -13,
    "note": "the site assembles"
   },
   {
-   "frame": 377,
+   "frame": 368,
    "id": "kenney-drop-003",
    "db": -15,
    "pitch": -2,
    "note": "block 1"
   },
   {
-   "frame": 391,
+   "frame": 374,
    "id": "kenney-drop-003",
    "db": -15,
    "note": "block 2"
   },
   {
-   "frame": 404,
+   "frame": 380,
    "id": "kenney-drop-003",
    "db": -15,
    "pitch": 2,
    "note": "block 3"
   },
   {
-   "frame": 418,
+   "frame": 387,
    "id": "kenney-drop-003",
    "db": -15,
    "pitch": 4,
@@ -309,6 +309,13 @@
    "id": "gen-appear",
    "db": -13,
    "note": "the prompt"
+  },
+  {
+   "frame": 500,
+   "id": "kenney-select-002",
+   "db": -14,
+   "pitch": 2,
+   "note": "the headline selected"
   },
   {
    "frame": 530,
@@ -436,7 +443,14 @@
    "frame": 702,
    "id": "gen-impact-soft",
    "db": -9,
-   "note": "499 kr."
+   "note": "499"
+  },
+  {
+   "frame": 726,
+   "id": "kenney-select-002",
+   "db": -12,
+   "pitch": 1,
+   "note": "kr. joins"
   },
   {
    "frame": 756,
@@ -471,11 +485,18 @@
    "note": "included 3"
   },
   {
-   "frame": 833,
+   "frame": 834,
    "id": "gen-whoosh-short",
    "db": -13,
    "pitch": -2,
    "note": "no coding"
+  },
+  {
+   "frame": 845,
+   "id": "kenney-tick-004",
+   "db": -13,
+   "pitch": -3,
+   "note": "code struck through"
   },
   {
    "frame": 863,

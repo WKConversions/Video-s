@@ -3,7 +3,7 @@
 // AI builds the site → the website on laptop and phone → change it by typing → preview for free → 499 kr → hosting
 // with domain included. One light-blue accent; no orange.
 import React from "react";
-import { AbsoluteFill, Img, staticFile, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Easing, Img, staticFile, useCurrentFrame } from "remotion";
 import { T } from "./clock";
 import { ARRIVE, C, DEPART, MOVE, clamp01, mix } from "./lib";
 import { off } from "./kinetic";
@@ -147,6 +147,7 @@ const Site: React.FC<{ g: number; build: number; edit: number; scroll?: number }
   const blk = (i: number): React.CSSProperties => ({ opacity: part(i), transform: `translateY(${(1 - part(i)) * 40}px)` });
   const hi = (p: number) => (p > 0 && p < 1 ? `0 0 0 ${3 * Math.sin(Math.PI * p)}px ${C.blue}` : undefined);
   const e1 = k(g, "w:it", 0.6), e2 = k(g, "w:it+0.25", 0.6);
+  const sel = k(g, "w:change", 0.4) * (1 - k(g, "w:it", 0.4, DEPART));   // the headline selected, ready to change
   return (
     <div style={{ position: "absolute", inset: 0, background: "#FFFDF9", transform: `translateY(${-scroll}px)` }}>
       <div style={{ ...blk(0), position: "absolute", left: 0, top: 0, width: SW, height: 72, display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 56px", boxSizing: "border-box" }}>
@@ -155,6 +156,11 @@ const Site: React.FC<{ g: number; build: number; edit: number; scroll?: number }
       </div>
       <div style={{ ...blk(1), position: "absolute", left: 56, top: 132, width: 520, borderRadius: 14, boxShadow: hi(e1) }}>
         <div style={{ fontFamily: SERIF, fontWeight: 500, fontSize: 56, lineHeight: 1.06, color: "#2B1E15", letterSpacing: "-0.02em", position: "relative" }}>
+          {sel > 0 && <div style={{ position: "absolute", left: -14, top: -12, right: -14, bottom: -12, border: `3px solid ${C.blue}`, borderRadius: 10, opacity: sel }}>
+            {[[-7, -7], [-7, null], [null, -7], [null, null]].map(([l, t], i) => <div key={i} style={{ position: "absolute", width: 12, height: 12, borderRadius: 3, background: C.white, border: `3px solid ${C.blue}`,
+              left: l ?? undefined, right: l === null ? -7 : undefined, top: t ?? undefined, bottom: t === null ? -7 : undefined }} />)}
+            <div style={{ position: "absolute", left: -3, top: -44, padding: "6px 12px", borderRadius: 8, background: C.blue, color: C.white, fontFamily: SANS, fontWeight: 600, fontSize: 18, letterSpacing: 0 }}>Headline</div>
+          </div>}
           <span style={{ opacity: 1 - e1 }}>Fresh sourdough, baked every morning.</span>
           <span style={{ position: "absolute", left: 0, top: 0, opacity: e1 }}>Warm bread, made with love every morning.</span>
         </div>
@@ -212,7 +218,7 @@ const keyed = (g: number, keys: Key[]) => {
 
 /* ---------- the edit prompt, the free preview, the price, hosting ---------- */
 const Prompt: React.FC<{ g: number }> = ({ g }) => {
-  const a = k(g, "change", 0.7), o = k(g, "preview", 0.5, DEPART);
+  const a = k(g, "w:want", 0.7), o = k(g, "preview", 0.5, DEPART);
   if (a <= 0 || o >= 1) return null;
   const t = typed(g, "w:just2-0.05", "Make the headline warmer and add our opening hours", 40);
   const sent = g >= f("w:it-0.05");
@@ -239,20 +245,23 @@ const Badge: React.FC<{ g: number }> = ({ g }) => {
 };
 const Price: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("happy") || g > f("host+0.8")) return null;
-  const n = k(g, "w:499", 0.9), sub = k(g, "w:kroner+0.1", 0.7), out = k(g, "host", 0.6, DEPART);
+  const n = k(g, "w:499", 0.9), kr = k(g, "w:kroner-0.05", 0.7), sub = k(g, "w:kroner+0.25", 0.7), out = k(g, "host-0.1", 0.45, MOVE);
   return (
     <AbsoluteFill style={{ opacity: 1 - out, filter: out > 0 ? `blur(${out * 8}px)` : undefined }}>
       <Say g={g} y={110} size={56} weight={600} color={C.gray} words={[{ t: "Happy", at: "w:happy" }, { t: "with", at: "w:with" }, { t: "the", at: "w:the2" }, { t: "result?", at: "w:result" }]} />
-      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, textAlign: "center", transform: `translateY(${560 + (1 - n) * 40}px)`, opacity: n, filter: n < 1 ? `blur(${(1 - n) * 12}px)` : undefined,
-        fontFamily: SANS, fontWeight: 700, fontSize: 230, letterSpacing: "-0.05em", color: C.ink, lineHeight: 1 }}>499<span style={{ fontSize: 120, fontWeight: 600, letterSpacing: "-0.03em" }}> kr.</span></div>
+      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, display: "flex", justifyContent: "center", alignItems: "flex-end", transform: `translateY(${560 + (1 - n) * 40}px)`,
+        fontFamily: SANS, fontWeight: 700, fontSize: 230, letterSpacing: "-0.05em", color: C.ink, lineHeight: 1 }}>
+        <span style={{ opacity: n, filter: n < 1 ? `blur(${(1 - n) * 12}px)` : undefined }}>499</span>
+        <span style={{ display: "inline-block", maxWidth: mix(0, 250, kr), overflow: "hidden", whiteSpace: "pre", fontSize: 120, fontWeight: 600, letterSpacing: "-0.03em", transform: `translateY(-15px)`,
+          opacity: kr, filter: kr < 1 ? `blur(${(1 - kr) * 10}px)` : undefined }}> kr.</span></div>
       <div style={{ position: "absolute", left: 0, top: 0, width: 1920, textAlign: "center", transform: `translateY(${820 + (1 - sub) * 16}px)`, opacity: sub, fontFamily: SANS, fontWeight: 500, fontSize: 32, color: C.gray, letterSpacing: "-0.01em" }}>
         One payment. No subscription. <span style={{ color: C.blue }}>Yours.</span></div>
     </AbsoluteFill>
   );
 };
 const Hosting: React.FC<{ g: number }> = ({ g }) => {
-  if (g < f("host-0.1") || g > f("nocode+0.8")) return null;
-  const bar = k(g, "w:hosting", 0.8), live = k(g, "w:hosting+0.5", 0.5), out = k(g, "nocode", 0.6, DEPART);
+  if (g < f("host-0.1") || g > f("w:no+0.7")) return null;
+  const bar = k(g, "w:hosting", 0.8), live = k(g, "w:hosting+0.5", 0.5), out = k(g, "w:no-0.05", 0.6, DEPART);
   const ticks = [["globe", "Your own domain"], ["mail", "Email included"], ["server", "European servers"]];
   return (
     <AbsoluteFill style={{ opacity: 1 - out, filter: out > 0 ? `blur(${out * 8}px)` : undefined }}>
@@ -282,8 +291,8 @@ const Hosting: React.FC<{ g: number }> = ({ g }) => {
 export const Story: React.FC = () => {
   const g = useCurrentFrame();
   const L = keyed(g, LKEYS);
-  const build = k(g, "w:minutes", 2.3, MOVE);
-  const siteOn = k(g, "w:minutes-0.15", 0.5);
+  const build = k(g, "w:in-0.05", 2.6, Easing.bezier(0.3, 0.5, 0.35, 1));
+  const siteOn = k(g, "w:in-0.1", 0.5);
   const phoneIn = k(g, "w:website2-0.1", 0.9, MOVE) * (1 - k(g, "happy", 0.6, DEPART)) + k(g, "simple+0.2", 0.9, MOVE) * (1 - k(g, "brand", 0.6, DEPART));
   const scroll = mix(0, 180, k(g, "w:everything", 1.4, MOVE)) * (1 - k(g, "happy", 0.6, MOVE));
   const lo = 1 - k(g, "w:499-0.35", 0.5, DEPART) + k(g, "simple-0.1", 0.6);
@@ -301,13 +310,13 @@ export const Story: React.FC = () => {
       </>}
       {/* 3–8 · the product */}
       <Laptop x={L.x} y={L.y} s={L.s} o={clamp01(lo) * (g < f("host+0.6") || g > f("simple-0.2") ? 1 : 0)}>
-        {g >= f("w:minutes-0.2") && <Site g={g} build={build} edit={0} scroll={scroll} />}
+        {g >= f("w:in-0.15") && <Site g={g} build={build} edit={0} scroll={scroll} />}
         {g < f("w:minutes+0.5") && <div style={{ position: "absolute", inset: 0, opacity: 1 - siteOn }}><Tell g={g} /></div>}
       </Laptop>
       <Phone x={mix(2300, 1530, phoneIn)} y={600} s={0.7} o={clamp01(phoneIn * 1.5)}><MobileSite g={g} build={1} /></Phone>
       <Say g={g} y={92} size={60} out="w:what2-0.2" words={[{ t: "Just", at: "w:just" }, { t: "tell", at: "w:tell" }, { t: "us", at: "w:us" }, { t: "about", at: "w:about" }, { t: "your", at: "w:your" }, { t: "business.", at: "w:business", blue: true }]} />
       <Say g={g} y={92} size={60} out="w:in-0.1" words={[{ t: "Then", at: "w:then" }, { t: "let", at: "w:let" }, { t: "AI", at: "w:ai", blue: true }, { t: "do", at: "w:do2" }, { t: "the", at: "w:the" }, { t: "rest.", at: "w:rest" }]} />
-      <Say g={g} y={92} size={60} out="change-0.1" words={[{ t: "A", at: "w:complete-0.1" }, { t: "complete", at: "w:complete" }, { t: "website,", at: "w:complete+0.15" }, { t: "in", at: "w:ready" }, { t: "minutes.", at: "w:ready+0.12", blue: true }]} />
+      <Say g={g} y={92} size={60} out="w:want" words={[{ t: "A", at: "w:complete-0.1" }, { t: "complete", at: "w:complete" }, { t: "website,", at: "w:complete+0.15" }, { t: "in", at: "w:ready" }, { t: "minutes.", at: "w:ready+0.12", blue: true }]} />
       <Say g={g} y={92} size={60} out="preview-0.05" words={[{ t: "Just", at: "w:just2" }, { t: "describe", at: "w:describe" }, { t: "it.", at: "w:it", blue: true }]} />
       <Prompt g={g} />
       <Badge g={g} />
@@ -323,9 +332,17 @@ export const Story: React.FC = () => {
       <Hosting g={g} />
       {/* 11 · no coding, no complexity */}
       {g >= f("nocode-0.1") && g < f("simple+0.6") && <>
-        <div style={{ position: "absolute", left: 960 - 60, top: 230, opacity: 0.12 * k(g, "w:no", 0.8) * (1 - k(g, "w:no2", 0.8)), transform: `scale(${1 + 0.2 * k(g, "w:no", 2)})` }}><Ico n="code" s={120} c={C.ink} w={1.5} /></div>
-        <Say g={g} y={400} size={110} out="simple-0.1" words={[{ t: "No", at: "w:no" }, { t: "coding.", at: "w:coding" }]} />
-        <Say g={g} y={540} size={110} out="simple-0.05" words={[{ t: "No", at: "w:no2" }, { t: "complexity.", at: "w:complexity", blue: true }]} />
+        {(() => {
+          const a = k(g, "w:no", 0.8), x = k(g, "w:coding", 0.5, MOVE), o = k(g, "w:no2", 0.8);
+          return <div style={{ position: "absolute", left: 960 - 64, top: 196, width: 128, height: 128, borderRadius: 32, background: C.blue, boxShadow: `0 20px 40px -18px ${C.blueGlow}`,
+            display: "flex", alignItems: "center", justifyContent: "center", opacity: a * (1 - o), filter: o > 0 ? `blur(${o * 8}px)` : undefined, transform: `translateY(${(1 - a) * 24}px) scale(${0.9 + 0.1 * a})` }}>
+            <Ico n="code" s={64} c={C.white} w={2.4} />
+            {/* struck through on "coding" */}
+            <div style={{ position: "absolute", left: 22, top: 61, width: 84, height: 6, borderRadius: 3, background: C.white, boxShadow: `0 0 0 3px ${C.blue}`, transform: `rotate(-40deg) scaleX(${x})`, opacity: x > 0 ? 1 : 0 }} />
+          </div>;
+        })()}
+        <Say g={g} y={372} size={128} out="simple-0.1" words={[{ t: "No", at: "w:no" }, { t: "coding.", at: "w:coding" }]} />
+        <Say g={g} y={520} size={128} out="simple-0.05" words={[{ t: "No", at: "w:no2" }, { t: "complexity.", at: "w:complexity", blue: true }]} />
       </>}
       {/* 12 · made simple */}
       <Say g={g} y={92} size={64} out="brand-0.1" words={[{ t: "Just", at: "w:just4" }, { t: "your", at: "w:your3" }, { t: "website,", at: "w:website3" }, { t: "made", at: "w:made" }, { t: "simple.", at: "w:simple2", blue: true }]} />
