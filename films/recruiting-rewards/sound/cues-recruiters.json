@@ -83,7 +83,7 @@
   },
   {
    "id": "soundreality-ui-pop-up",
-   "frame": 328,
+   "frame": 331,
    "note": "the list narrows",
    "db": -4
   },
@@ -133,13 +133,13 @@
   },
   {
    "id": "ui-typing",
-   "frame": 470,
+   "frame": 481,
    "note": "typing the answer",
    "db": -3
   },
   {
    "id": "ui-typing",
-   "frame": 528,
+   "frame": 517,
    "note": "typing the answer",
    "db": -4
   },

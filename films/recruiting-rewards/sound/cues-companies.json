@@ -71,7 +71,7 @@
   },
   {
    "id": "gen-whoosh-short",
-   "frame": 154,
+   "frame": 146,
    "note": "the app rises",
    "db": -5
   },
@@ -278,9 +278,30 @@
   },
   {
    "id": "floraphonic-ui-pop-up-15",
-   "frame": 854,
+   "frame": 858,
    "note": "the rating fills",
    "db": -4
+  },
+  {
+   "id": "floraphonic-ui-pop-up-15",
+   "frame": 861,
+   "note": "a star lights",
+   "db": -8,
+   "pitch": 1
+  },
+  {
+   "id": "floraphonic-ui-pop-up-15",
+   "frame": 864,
+   "note": "a star lights",
+   "db": -8,
+   "pitch": 2
+  },
+  {
+   "id": "floraphonic-ui-pop-up-15",
+   "frame": 867,
+   "note": "a star lights",
+   "db": -8,
+   "pitch": 3
   },
   {
    "id": "existentialtaco-confirm-tap",
