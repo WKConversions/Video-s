@@ -60,8 +60,13 @@ export const Companies: React.FC<{ g: number }> = ({ g }) => {
   const side = tw(g, K.ad + 2, K.ad + 26, MOVE);
   const fold = tw(g, K.match - 2, K.match + 18, MOVE);
   // the job card's content appears inside the folded frame; the frame stays under it until the card is opaque
-  const jobK = tw(g, K.match + 16, K.match + 26);
+  // (eased in and out, so its first frames are faint while the frame lands, and there is no jump in opacity)
+  const jobK = tw(g, K.match + 12, K.match + 26, SOFT);
   const sc = lerp(0.92, 0.74, side), ax = lerp((1920 - APP_W * 0.92) / 2, 760, side), ay = lerp(150, 214, side);
+  // while folding, the window's own drop shadow and border (clipped from then on) are carried by the frame and eased into the card's
+  const fl = (a: number, b: number) => lerp(a, b, fold);
+  const foldBw = fl(1.5 * sc, 1.5);
+  const foldShadow = `0 ${fl(2 * sc, 1)}px ${fl(6 * sc, 2)}px rgba(28,25,23,${fl(0.05, 0.04) * (1 - jobK)}), 0 ${fl(40 * sc, 12)}px ${fl(90 * sc, 32)}px ${fl(-30 * sc, -12)}px rgba(28,25,23,${fl(0.32, 0.16) * (1 - jobK)})`;
   const L = (lx: number, ly: number) => ({ x: ax + sc * lx, y: ay + sc * ly });
   const typeEnd = K.ad - 22;
   const n = Math.round(SENTENCE.length * clamp01((g - (K.post + 22)) / (typeEnd - (K.post + 22))));
@@ -123,8 +128,8 @@ export const Companies: React.FC<{ g: number }> = ({ g }) => {
         {appIn > 0 && jobK < 1 && (
           <div style={{ position: "absolute", left: lerp(ax, CARD.x, fold), top: lerp(ay, CARD.y, fold), width: lerp(APP_W * sc, CARD.w, fold), height: lerp(APP_H * sc, CARD.h, fold), opacity: appIn, transform: `translateY(${(1 - appIn) * 120}px)`, borderRadius: lerp(22 * sc, 18 * 1.35, fold),
             // while it folds, the window itself becomes the card: card styling, its content clipped and fading early
-            ...(fold > 0 ? { boxSizing: "border-box" as const, overflow: "hidden", background: C.card, border: `1.5px solid ${C.lineSoft}`, boxShadow: `0 1px 2px rgba(28,25,23,${0.04 * (1 - jobK)}), 0 12px 32px -12px rgba(28,25,23,${0.16 * (1 - jobK)})` } : {}) }}>
-            <div style={{ position: "absolute", left: fold > 0 ? -1.5 : 0, top: fold > 0 ? -1.5 : 0, transform: `scale(${sc})`, transformOrigin: "0 0", opacity: 1 - tw(g, K.match - 2, K.match + 10, SOFT) }}>
+            ...(fold > 0 ? { boxSizing: "border-box" as const, overflow: "hidden", background: C.card, border: `${foldBw}px solid ${interpolateColors(fold, [0, 1], [C.line, C.lineSoft])}`, boxShadow: foldShadow } : {}) }}>
+            <div style={{ position: "absolute", left: fold > 0 ? -foldBw : 0, top: fold > 0 ? -foldBw : 0, transform: `scale(${sc})`, transformOrigin: "0 0", opacity: 1 - tw(g, K.match - 2, K.match + 10, SOFT) }}>
               <AppShell w={APP_W} h={APP_H} nav={NAV} workspace="Nordvik Systems AB" ws="N">
                 {/* the sentence */}
                 {adK < 1 && (
@@ -152,11 +157,16 @@ export const Companies: React.FC<{ g: number }> = ({ g }) => {
                         <Icon n="arrowup" s={28} c={C.white} w={2.4} />
                       </div>
                     </div>
-                    <div style={{ position: "absolute", left: 90, width: 1070, top: 660, display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12 }}>
-                      {CRIT.map(([t, at], i) => {
-                        const on = n >= at, k = tw(g, K.post + 22 + (at / SENTENCE.length) * (typeEnd - K.post - 22), K.post + 30 + (at / SENTENCE.length) * (typeEnd - K.post - 22));
-                        return <div key={i} style={{ transform: `scale(${on ? 1 + 0.08 * Math.sin(Math.PI * k) : 1})` }}><Chip tone={on ? "green" : "line"} icon={on ? "check" : undefined} size={23}>{t}</Chip></div>;
-                      })}
+                    {/* two fixed rows, six and one, as in the real UI: no chip reflows to the next line as ticks widen the row */}
+                    <div style={{ position: "absolute", left: 90, width: 1070, top: 660, display: "flex", flexDirection: "column", alignItems: "center", gap: 12 }}>
+                      {[CRIT.slice(0, 6), CRIT.slice(6)].map((row, r) => (
+                        <div key={r} style={{ display: "flex", justifyContent: "center", gap: 12 }}>
+                          {row.map(([t, at], i) => {
+                            const on = n >= at, k = tw(g, K.post + 22 + (at / SENTENCE.length) * (typeEnd - K.post - 22), K.post + 30 + (at / SENTENCE.length) * (typeEnd - K.post - 22));
+                            return <div key={i} style={{ transform: `scale(${on ? 1 + 0.08 * Math.sin(Math.PI * k) : 1})` }}><Chip tone={on ? "green" : "line"} icon={on ? "check" : undefined} size={23}>{t}</Chip></div>;
+                          })}
+                        </div>
+                      ))}
                     </div>
                   </div>
                 )}

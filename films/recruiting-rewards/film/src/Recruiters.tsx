@@ -67,6 +67,9 @@ export const Recruiters: React.FC<{ g: number }> = ({ g }) => {
   const panel = tw(g, R.pick + 60, R.pick + 84, MOVE);
   const form = tw(g, R.submit + 12, R.submit + 30, MOVE);
   const aiK = tw(g, R.ai - 6, R.ai + 16, MOVE);
+  // the in-panel cross-fades run on time, not on the eased move: outgoing half, then incoming half, each soft
+  const fOut = tw(g, R.submit + 12, R.submit + 22, SOFT), fIn = tw(g, R.submit + 21, R.submit + 32, SOFT);
+  const aOut = tw(g, R.ai - 6, R.ai + 4, SOFT), aIn = tw(g, R.ai + 3, R.ai + 16, SOFT);
   const ring = tw(g, R.ai + 10, R.ai + 50, SOFT);
   const bars = [0, 1, 2].map((i) => tw(g, R.ai + 18 + i * 8, R.ai + 50 + i * 8, SOFT));
   const pass = tw(g, R.ai + 62, R.ai + 74);
@@ -74,6 +77,10 @@ export const Recruiters: React.FC<{ g: number }> = ({ g }) => {
   const toast = tw(g, R.ai + 108, R.ai + 122) * (1 - tw(g, R.collab - 14, R.collab - 4, SOFT));
   // ----- thread and reward
   const thread = tw(g, R.collab + 4, R.collab + 18, SOFT);
+  // the panel's content leaves before the shell shrinks far enough to clip it; the shell's shadow hands over to the
+  // thread card's shadow as the thread dissolves in, so no doubled shadow vanishes when the shell unmounts
+  const panelOut = tw(g, R.collab - 12, R.collab + 1, SOFT);
+  const shellShadow = SHADOW.window.replace(/rgba\(([^)]*),\s*([\d.]+)\)/g, (_m, c, a) => `rgba(${c}, ${(+a * (1 - thread)).toFixed(3)})`);
   const st1 = g >= R.collab + 26, st2 = g >= R.collab + 92, hired = g >= R.reward + 8;
   const msg = tw(g, R.collab + 40, R.collab + 56), rating = tw(g, R.collab + 52, R.collab + 76, SOFT);
   const reply = tw(g, R.collab + 100, R.collab + 116);
@@ -112,7 +119,7 @@ export const Recruiters: React.FC<{ g: number }> = ({ g }) => {
                     const k = tw(g, R.market + 10 + i * 6, R.market + 28 + i * 6);
                     const gone = i === 2 ? collapse : 0; // the compliance role leaves on "Tech"
                     return (
-                      <div key={i} style={{ opacity: k * (1 - gone) * (i === 0 ? 1 - panel : 1), transform: `translateY(${(1 - k) * 40}px)`, height: gone > 0 ? lerp(CARD_H, 0, gone) : undefined, marginBottom: gone > 0 ? lerp(0, -16, gone) : 0, overflow: gone > 0 ? "hidden" : undefined }}>
+                      <div key={i} style={{ opacity: k * (1 - gone) * (i === 0 ? 1 - panel : 1), transform: `translateY(${(1 - k) * 40}px)`, willChange: "transform", height: gone > 0 ? lerp(CARD_H, 0, gone) : undefined, marginBottom: gone > 0 ? lerp(0, -16, gone) : 0, overflow: gone > 0 ? "hidden" : undefined }}>
                         <JobCard j={j} tone={i} highlight={i === 0 ? tw(g, R.pick + 50, R.pick + 58) : 0} w={1150} fs={1.3} />
                       </div>
                     );
@@ -125,10 +132,10 @@ export const Recruiters: React.FC<{ g: number }> = ({ g }) => {
         {/* the chosen card grows into one panel: the brief, the recommendation form, the AI match analysis */}
         {panel > 0 && g < R.collab + 18 && (
           <div style={{ position: "absolute", left: lerp(lerp(CARD0.x, PANEL.x, panel), TH.x, appOut), top: lerp(lerp(CARD0.y, PANEL.y, panel), TH.y, appOut), width: lerp(lerp(CARD0.w, PANEL.w, panel), TH.w, appOut), height: lerp(lerp(CARD0.h, PANEL.h, panel), TH.h, appOut),
-            borderRadius: lerp(lerp(14, 26, panel), 24, appOut), background: C.card, border: `1.5px solid ${C.line}`, boxShadow: SHADOW.window, overflow: "hidden", opacity: tw(g, R.pick + 60, R.pick + 64, SOFT) }}>
-            <div style={{ position: "absolute", left: 0, top: 0, width: PANEL.w, height: PANEL.h, padding: "44px 52px", opacity: tw(g, R.pick + 63, R.pick + 76) * (1 - clamp01(appOut * 2)) }}>
+            borderRadius: lerp(lerp(14, 26, panel), 24, appOut), background: C.card, border: `1.5px solid ${C.line}`, boxShadow: shellShadow, overflow: "hidden", opacity: tw(g, R.pick + 60, R.pick + 64, SOFT) }}>
+            <div style={{ position: "absolute", left: 0, top: 0, width: PANEL.w, height: PANEL.h, padding: "44px 52px", opacity: tw(g, R.pick + 63, R.pick + 76) * (1 - panelOut) }}>
                   {/* the brief */}
-                  <div style={{ position: "absolute", left: 46, right: 46, top: 40, opacity: 1 - clamp01(form * 2), transform: `translateY(${-form * 30}px)` }}>
+                  <div style={{ position: "absolute", left: 46, right: 46, top: 40, opacity: 1 - fOut, transform: `translateY(${-form * 30}px)` }}>
                     <div style={{ fontFamily: F.ui, fontWeight: 600, fontSize: 18, color: C.muted }}>Nordvik Systems AB</div>
                     <div style={{ fontFamily: F.display, fontWeight: 600, fontSize: 48, color: C.ink, letterSpacing: "-0.015em" }}>Senior Backend Engineer</div>
                     <div style={{ display: "flex", alignItems: "baseline", gap: 12, marginTop: 14 }}>
@@ -142,8 +149,9 @@ export const Recruiters: React.FC<{ g: number }> = ({ g }) => {
                         return <div key={i} style={{ opacity: k, transform: `scale(${lerp(0.85, 1, k)})` }}><Chip icon={ic || undefined} tone="line" size={20}>{t}</Chip></div>;
                       })}
                     </div>
-                    <div style={{ marginTop: 32, fontFamily: F.ui, fontWeight: 700, fontSize: 15, letterSpacing: "0.12em", color: C.muted }}>QUESTIONS YOU'LL ANSWER ABOUT THE CANDIDATE</div>
-                    <div style={{ marginTop: 8, fontFamily: F.ui, fontSize: 19, color: C.muted }}>Make sure to cover these in your interview before submitting the candidate.</div>
+                    {/* the questions section reveals after the chips above it, just before its two questions */}
+                    <div style={{ marginTop: 32, fontFamily: F.ui, fontWeight: 700, fontSize: 15, letterSpacing: "0.12em", color: C.muted, opacity: tw(g, R.pick + 92, R.pick + 104) }}>QUESTIONS YOU'LL ANSWER ABOUT THE CANDIDATE</div>
+                    <div style={{ marginTop: 8, fontFamily: F.ui, fontSize: 19, color: C.muted, opacity: tw(g, R.pick + 94, R.pick + 106) }}>Make sure to cover these in your interview before submitting the candidate.</div>
                     {["Which part of the backend stack has the candidate owned in production, and for how long?", "Describe a time someone gave you hard feedback. How did you react?"].map((q, i) => (
                       <div key={i} style={{ display: "flex", gap: 12, marginTop: i === 0 ? 14 : 10, padding: "12px 18px", borderRadius: 14, border: `1.5px solid ${C.lineSoft}`, background: C.page, fontFamily: F.ui, fontWeight: 500, fontSize: 22, color: C.ink2, lineHeight: 1.4, opacity: tw(g, R.pick + 100 + i * 6, R.pick + 114 + i * 6) }}>
                         <div style={{ width: 8, height: 8, borderRadius: 4, background: C.green, marginTop: 11, flex: "none" }} />{q}
@@ -152,7 +160,7 @@ export const Recruiters: React.FC<{ g: number }> = ({ g }) => {
                   </div>
                   {/* the recommendation form */}
                   {form > 0 && (
-                    <div style={{ position: "absolute", left: 46, right: 46, top: 40, opacity: clamp01(form * 2 - 1) * (1 - clamp01(aiK * 2)), transform: `translateY(${(1 - form) * 40 - aiK * 60}px)` }}>
+                    <div style={{ position: "absolute", left: 46, right: 46, top: 40, opacity: fIn * (1 - aOut), transform: `translateY(${(1 - form) * 40 - aiK * 60}px)` }}>
                       <div style={{ fontFamily: F.display, fontWeight: 600, fontSize: 46, color: C.ink }}>Recommend a candidate</div>
                       <div style={{ fontFamily: F.ui, fontSize: 20, color: C.muted, marginTop: 6 }}>Senior Backend Engineer · Nordvik Systems AB</div>
                       <div style={{ marginTop: 28, display: "flex", alignItems: "center", gap: 16, padding: "16px 18px", borderRadius: 16, border: `1.5px solid ${C.greenLine}`, background: C.greenSoft }}>
@@ -173,7 +181,7 @@ export const Recruiters: React.FC<{ g: number }> = ({ g }) => {
                   )}
                   {/* AI match analysis */}
                   {aiK > 0 && (
-                    <div style={{ position: "absolute", left: 46, right: 46, top: 40, opacity: clamp01(aiK * 2 - 1), transform: `translateY(${(1 - aiK) * 60}px)` }}>
+                    <div style={{ position: "absolute", left: 46, right: 46, top: 40, opacity: aIn, transform: `translateY(${(1 - aiK) * 60}px)` }}>
                       <div style={{ display: "flex", alignItems: "center", gap: 12 }}><Icon n="sparkle" s={38} c={C.green} /><div style={{ fontFamily: F.display, fontWeight: 600, fontSize: 46, color: C.ink }}>AI Match Analysis</div></div>
                       <div style={{ marginTop: 30, display: "flex", alignItems: "center", gap: 12, padding: "16px 20px", borderRadius: 14, background: C.greenSoft, border: `1.5px solid ${C.greenLine}`, opacity: pass, transform: `scale(${lerp(0.96, 1, pass)})`, transformOrigin: "left center" }}>
                         <Icon n="check" s={24} c={C.green} w={2.4} /><div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 24, color: C.greenDeep }}>Meets the quality threshold (9/7)</div>
@@ -193,8 +201,8 @@ export const Recruiters: React.FC<{ g: number }> = ({ g }) => {
                       
                     </div>
                   )}
-              <div style={{ position: "absolute", left: 46, bottom: 40, opacity: 1 - clamp01(form * 2) }}><Button icon="userplus" size={22} press={tw(g, R.submit, R.submit + 8)}>Recommend a candidate</Button></div>
-              <div style={{ position: "absolute", left: 46, bottom: 40, opacity: clamp01(aiK * 2 - 1) }}><Button icon="send" size={22} press={submitPress}>Submit Candidate</Button></div>
+              <div style={{ position: "absolute", left: 46, bottom: 40, opacity: 1 - fOut }}><Button icon="userplus" size={22} press={tw(g, R.submit, R.submit + 8)}>Recommend a candidate</Button></div>
+              <div style={{ position: "absolute", left: 46, bottom: 40, opacity: aIn }}><Button icon="send" size={22} press={submitPress}>Submit Candidate</Button></div>
               {toast > 0 && (
                 <div style={{ position: "absolute", right: 40, bottom: 36, display: "flex", alignItems: "center", gap: 12, padding: "16px 22px", borderRadius: 14, background: C.card, border: `1.5px solid ${C.line}`, boxShadow: SHADOW.lift, opacity: toast, transform: `translateY(${(1 - toast) * 30}px)` }}>
                   <div style={{ width: 26, height: 26, borderRadius: 13, background: C.green, display: "flex", alignItems: "center", justifyContent: "center" }}><Icon n="check" s={18} c={C.white} w={2.6} /></div>
