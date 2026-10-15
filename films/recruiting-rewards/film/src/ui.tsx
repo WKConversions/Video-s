@@ -30,7 +30,7 @@ const P: Record<string, string> = {
   star: "M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8-4.2-4.1 5.9-.9z",
   message: "M4 5h16v11H9l-5 4z",
   search: "M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14M20 20l-4-4",
-  coins: "M9 8a5 3 0 1 0 0-.01M4 8v4c0 1.7 2.2 3 5 3M14 11c2.8 0 5 1.3 5 3v4c0 1.7-2.2 3-5 3s-5-1.3-5-3v-4c0-1.7 2.2-3 5-3M9 15v.0",
+  coins: "M14 8A6 6 0 1 1 2 8a6 6 0 0 1 12 0M18.09 10.37A6 6 0 1 1 10.34 18M7 6h1v4M16.71 13.88l.7.71-2.82 2.82",
   clip: "M20 11.5l-8 8a5 5 0 0 1-7-7l8-8a3.5 3.5 0 0 1 5 5l-8 8a2 2 0 0 1-3-3l7.5-7.5",
   receipt: "M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6",
 };
@@ -53,7 +53,7 @@ export const Headline: React.FC<{ g: number; words: Word[]; x: number; y: number
         const k = tw(g, w.at, w.at + 14);
         return (
           <span key={i} style={{ display: "inline-block", whiteSpace: "pre", opacity: k, transform: `translateY(${(1 - k) * 0.32 * size}px)`, filter: k < 1 ? `blur(${(1 - k) * 8}px)` : undefined, color: w.green ? C.green : undefined }}>
-            {w.t}{i < words.length - 1 && !w.t.endsWith("\n") ? " " : ""}
+            {w.t}{i < words.length - 1 && words[i + 1].t !== "\n" ? " " : ""}
           </span>
         );
       })}
@@ -75,14 +75,14 @@ export const Kicker: React.FC<{ g: number; at: number; n?: number; text: string;
   return (
     <div style={{ position: "absolute", left: x, top: y, display: "flex", alignItems: "center", gap: 14, opacity: k * (1 - o), transform: `translateY(${(1 - k) * 16}px)` }}>
       {n !== undefined && <div style={{ width: 40, height: 40, borderRadius: 20, background: C.green, color: C.white, fontFamily: F.ui, fontWeight: 700, fontSize: 19, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 6px 16px -6px rgba(40,126,97,0.6)" }}>{n}</div>}
-      <div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 17, letterSpacing: "0.14em", textTransform: "uppercase", color: C.green }}>{text}</div>
+      <div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 22, letterSpacing: "0.13em", textTransform: "uppercase", color: C.green }}>{text}</div>
     </div>
   );
 };
 
 // ------------------------------------------------------------------------------------------------ small UI
-export const Chip: React.FC<{ children: React.ReactNode; icon?: string; tone?: "line" | "green" | "amber" | "white"; size?: number; style?: React.CSSProperties }> = ({ children, icon, tone = "line", size = 15, style }) => {
-  const t = { line: { bg: C.card, bd: C.line, fg: C.muted }, green: { bg: C.greenSoft, bd: C.greenLine, fg: C.greenDeep }, amber: { bg: C.amberSoft, bd: "#F1D9B5", fg: "#9A6418" }, white: { bg: C.card, bd: C.line, fg: C.ink2 } }[tone];
+export const Chip: React.FC<{ children: React.ReactNode; icon?: string; tone?: "line" | "green" | "amber" | "white" | "blue"; size?: number; style?: React.CSSProperties }> = ({ children, icon, tone = "line", size = 15, style }) => {
+  const t = { line: { bg: C.card, bd: C.line, fg: C.muted }, green: { bg: C.greenSoft, bd: C.greenLine, fg: C.greenDeep }, amber: { bg: C.amberSoft, bd: "#F1D9B5", fg: "#9A6418" }, white: { bg: C.card, bd: C.line, fg: C.ink2 }, blue: { bg: "#E8EEFA", bd: "#C9D6F2", fg: "#2F55A4" } }[tone];
   return (
     <div style={{ display: "inline-flex", alignItems: "center", gap: size * 0.45, padding: `${size * 0.42}px ${size * 0.8}px`, borderRadius: 999, background: t.bg, border: `1.5px solid ${t.bd}`, color: t.fg, fontFamily: F.ui, fontWeight: 600, fontSize: size, whiteSpace: "nowrap", ...style }}>
       {icon && <Icon n={icon} s={size * 1.15} c={t.fg} />}{children}
@@ -157,28 +157,28 @@ export const AppShell: React.FC<{ w: number; h: number; nav: { icon: string; lab
 
 // ------------------------------------------------------------------------------------------------ marketplace job card
 export type Job = { co: string; ini: string; title: string; pos: string; loc: string; guar: string; hired: number; proc: number; wait: number; reward: number };
-export const JobCard: React.FC<{ j: Job; w?: number; press?: number; highlight?: number; tone?: number }> = ({ j, w = 1100, press = 0, highlight = 0, tone = 0 }) => (
-  <div style={{ width: w, padding: "22px 28px", borderRadius: 18, background: C.card, border: `1.5px solid ${highlight > 0 ? `rgba(40,126,97,${0.25 + 0.6 * highlight})` : C.lineSoft}`, boxShadow: highlight > 0 ? `0 0 0 ${5 * highlight}px rgba(40,126,97,0.10), ${SHADOW.card}` : SHADOW.card, display: "flex", flexDirection: "column", gap: 14 }}>
-    <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-      <Avatar t={j.ini} s={50} tone={tone} />
+export const JobCard: React.FC<{ j: Job; w?: number; press?: number; highlight?: number; tone?: number; fs?: number }> = ({ j, w = 1100, press = 0, highlight = 0, tone = 0, fs = 1 }) => (
+  <div style={{ width: w, padding: `${22 * fs}px ${28 * fs}px`, borderRadius: 18 * fs, background: C.card, border: `1.5px solid ${highlight > 0 ? `rgba(40,126,97,${0.25 + 0.6 * highlight})` : C.lineSoft}`, boxShadow: highlight > 0 ? `0 0 0 ${5 * highlight}px rgba(40,126,97,0.10), ${SHADOW.card}` : SHADOW.card, display: "flex", flexDirection: "column", gap: 14 * fs }}>
+    <div style={{ display: "flex", alignItems: "flex-start", gap: 18 * fs }}>
+      <Avatar t={j.ini} s={50 * fs} tone={tone} />
       <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ fontFamily: F.ui, fontWeight: 600, fontSize: 14, color: C.muted }}>{j.co}</div>
-        <div style={{ fontFamily: F.display, fontWeight: 600, fontSize: 28, color: C.ink, letterSpacing: "-0.01em", marginTop: 2 }}>{j.title}</div>
-        <div style={{ display: "flex", gap: 8, marginTop: 10 }}>
-          <Chip icon="building" size={13}>{j.pos}</Chip><Chip icon="pin" size={13}>{j.loc}</Chip><Chip icon="shield" size={13}>{j.guar}</Chip>
+        <div style={{ fontFamily: F.ui, fontWeight: 600, fontSize: 14 * fs, color: C.muted }}>{j.co}</div>
+        <div style={{ fontFamily: F.display, fontWeight: 600, fontSize: 28 * fs, color: C.ink, letterSpacing: "-0.01em", marginTop: 2, whiteSpace: "nowrap" }}>{j.title}</div>
+        <div style={{ display: "flex", gap: 8 * fs, marginTop: 10 * fs }}>
+          <Chip icon="building" size={13 * fs}>{j.pos}</Chip><Chip icon="pin" size={13 * fs}>{j.loc}</Chip><Chip icon="shield" size={13 * fs}>{j.guar}</Chip>
         </div>
       </div>
       <div style={{ textAlign: "right" }}>
-        <div style={{ fontFamily: F.ui, fontWeight: 800, fontSize: 30, color: C.green, letterSpacing: "-0.01em" }}>{sek(j.reward)}</div>
-        <div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 11.5, letterSpacing: "0.1em", color: C.muted }}>REWARD PER HIRED</div>
+        <div style={{ fontFamily: F.ui, fontWeight: 800, fontSize: 30 * fs, color: C.green, letterSpacing: "-0.01em" }}>{sek(j.reward)}</div>
+        <div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 11.5 * fs, letterSpacing: "0.1em", color: C.muted }}>REWARD PER HIRED</div>
       </div>
     </div>
-    <div style={{ display: "flex", alignItems: "center", gap: 30, paddingLeft: 68 }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 30 * fs, paddingLeft: 68 * fs }}>
       {([[j.hired, "HIRED", C.green], [j.proc, "IN PROCESS", C.green], [j.wait, "WAITING", "#C98A2E"]] as const).map(([v, l, c], i) => (
-        <div key={i} style={{ fontFamily: F.ui, fontSize: 13, fontWeight: 700, letterSpacing: "0.06em", color: C.muted }}><span style={{ color: c, fontSize: 16, marginRight: 6 }}>{v}</span>{l}</div>
+        <div key={i} style={{ fontFamily: F.ui, fontSize: 13 * fs, fontWeight: 700, letterSpacing: "0.06em", color: C.muted }}><span style={{ color: c, fontSize: 16 * fs, marginRight: 6 }}>{v}</span>{l}</div>
       ))}
       <div style={{ flex: 1 }} />
-      <Button icon="userplus" size={16} press={press}>Recommend</Button>
+      <Button icon="userplus" size={16 * fs} press={press}>Recommend</Button>
     </div>
   </div>
 );
@@ -215,7 +215,7 @@ export const CandidateCard: React.FC<{ name: string; role: string; ini: string; 
         <div style={{ fontFamily: F.ui, fontWeight: 700, fontSize: 16 * k, color: C.ink, whiteSpace: "nowrap" }}>{name}</div>
         <div style={{ fontFamily: F.ui, fontWeight: 500, fontSize: 13 * k, color: C.muted, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{role}</div>
       </div>
-      {ai !== undefined && <div style={{ padding: `${4 * k}px ${9 * k}px`, borderRadius: 999, background: C.amberSoft, color: "#9A6418", fontFamily: F.ui, fontWeight: 700, fontSize: 13 * k }}>AI {ai}</div>}
+      {ai !== undefined && <div style={{ padding: `${4 * k}px ${9 * k}px`, borderRadius: 999, background: ai >= 7.5 ? C.greenSoft : C.amberSoft, color: ai >= 7.5 ? C.greenDeep : "#9A6418", fontFamily: F.ui, fontWeight: 700, fontSize: 13 * k }}>AI {ai}</div>}
     </div>
     {stars !== undefined && <Stars n={stars} s={17 * k} />}
   </div>

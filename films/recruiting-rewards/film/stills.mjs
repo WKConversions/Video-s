@@ -14,9 +14,10 @@ const shells = fs.existsSync("/opt/pw-browsers") ? fs.readdirSync("/opt/pw-brows
 const browserExecutable = process.env.BROWSER || (shells[0] ? `/opt/pw-browsers/${shells[0]}/chrome-linux/headless_shell` : undefined);
 const serveUrl = await bundle({ entryPoint: path.resolve("src/index.ts") });
 const composition = await selectComposition({ serveUrl, id, inputProps, browserExecutable });
-fs.mkdirSync("out/test", { recursive: true });
+const outDir = process.env.OUT || "out/test";
+fs.mkdirSync(outDir, { recursive: true });
 for (const frame of frames) {
-  await renderStill({ serveUrl, composition, frame, inputProps, browserExecutable, output: `out/test/f${String(frame).padStart(4, "0")}.png` });
+  await renderStill({ serveUrl, composition, frame, inputProps, browserExecutable, output: `${outDir}/f${String(frame).padStart(4, "0")}.png` });
   process.stdout.write(`${frame} `);
 }
 console.log("done");
