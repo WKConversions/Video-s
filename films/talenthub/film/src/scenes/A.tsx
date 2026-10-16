@@ -4,16 +4,18 @@
 // the white "th" builds; the field then contracts back into the mark, which lands red, size 150, at (960, 540).
 import React from "react";
 import { AbsoluteFill } from "remotion";
-import { ARRIVE, Avatar, C, CARD, FONT, Ico, MOVE, POP, Say, THMark, clamp01, f, k, mix, typed } from "../shared";
+import { ARRIVE, Avatar, C, CARD, FONT, Ico, MOVE, POP, Say, THMark, clamp01, f, k, mix, tx, typed } from "../shared";
 import { TH } from "../thpaths";
 
 const rnd = (i: number, s: number) => { const x = Math.sin(i * 127.1 + s * 311.7) * 43758.5453; return x - Math.floor(x); };
 const HUB = { x: 960, y: 540 };
-const SW = { x: 1530, y: 548 };                       // the swirl's centre, right of the statement
+const SW = { x: tx(1530, 1600), y: 548 };            // the swirl's centre, right of the statement (the Dutch line is longer)
 const RMAX = Math.hypot(960, 540) + 4;
-const CONV = 55;                                      // the talent starts streaming in just before "Meet" (1.99)
-const DISC = 66;                                      // the dot grows into the field from here
-const BUILD = 66, BUILT = 85, END = 93;               // the mark builds on "Talent Hub", contracts, lands at 93
+// all on the voice's words, so the Dutch build retimes with its voice-over (EN frames in brackets)
+const CONV = f("w:meet") - 5;                         // the talent starts streaming in just before "Meet" (55)
+const DISC = f("w:meet") + 6;                         // the dot grows into the field from here (66)
+const BUILD = Math.min(f("w:talent2"), DISC + 12), END = f("s1"), BUILT = END - 8;   // the mark builds on "Talent Hub", contracts, lands on s1 (66, 85, 93)
+const QUERY = tx("qualified talent", "gekwalificeerd talent");
 
 const PEOPLE = Array.from({ length: 58 }, (_, i) => {
   const depth = rnd(i, 1);
@@ -38,9 +40,9 @@ const convK = (g: number, delay: number) => MOVE(clamp01((g - CONV - delay) / 11
 
 // the red search lens: sweeps a figure-eight over the cloud, then drops to the hub and fills into the red dot
 const lens = (g: number) => {
-  const t = clamp01((g - 6) / 50), ph = mix(-2.3, 1.7, (1 - Math.cos(t * Math.PI)) / 2);
+  const t = clamp01((g - 6) / (CONV - 5)), ph = mix(-2.3, 1.7, (1 - Math.cos(t * Math.PI)) / 2);
   const sweep = { x: SW.x + 250 * Math.sin(ph), y: SW.y + 210 * Math.sin(2 * ph) };
-  const m = MOVE(clamp01((g - 56) / 8));
+  const m = MOVE(clamp01((g - CONV - 1) / 8));
   return { x: mix(sweep.x, HUB.x, m), y: mix(sweep.y, HUB.y, m), r: mix(84, 28, m), fill: m, handle: 1 - m, s: POP(clamp01((g - 4) / 9)) };
 };
 
@@ -64,8 +66,8 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
 
   // the statement and the search field
   const fieldInK = ARRIVE(clamp01((g + 3) / 12));
-  const q = typed(g, 0.38, "qualified talent", 17);
-  const typing = q.length > 0 && q.length < 16;
+  const q = typed(g, "w:qualified-0.14", QUERY, 17);
+  const typing = q.length > 0 && q.length < QUERY.length;
   const caret = typing || Math.floor(g / 8) % 2 === 0;
 
   // the people in the swirl (and their streaks as they stream in)
@@ -85,8 +87,8 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
   return (
     <AbsoluteFill>
       {/* the statement: left, two lines, "talent?" red */}
-      <Say g={g} y={262} size={116} out="w:meet-0.1" words={[{ t: "Looking", at: "w:looking" }, { t: "for", at: "w:for" }]} />
-      <Say g={g} y={392} size={116} out="w:meet-0.1" words={[{ t: "qualified", at: "w:qualified" }, { t: "talent?", at: "w:talent", red: true }]} />
+      <Say g={g} y={262} size={tx(116, 100)} out="w:meet-0.1" words={tx([{ t: "Looking", at: "w:looking" }, { t: "for", at: "w:for" }], [{ t: "Op", at: "w:nl_op" }, { t: "zoek", at: "w:nl_zoek" }, { t: "naar", at: "w:nl_naar" }])} />
+      <Say g={g} y={tx(392, 374)} size={tx(116, 100)} out="w:meet-0.1" words={tx([{ t: "qualified", at: "w:qualified" }, { t: "talent?", at: "w:talent", red: true }], [{ t: "gekwalificeerd", at: "w:nl_gekwalificeerd" }, { t: "talent?", at: "w:nl_talent", red: true }])} />
 
       {/* the search field types the query */}
       {out < 1 && (
@@ -94,7 +96,7 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
           opacity: fieldInK * (1 - out), transform: `translateY(${(1 - fieldInK) * 40 - out * 26}px)`, filter: out > 0 ? `blur(${out * 8}px)` : undefined }}>
           <Ico n="search" s={46} c={C.red} w={3} />
           <div style={{ fontFamily: FONT, fontWeight: 700, fontSize: 44, color: C.ink, letterSpacing: "-0.01em", whiteSpace: "nowrap" }}>
-            {q || <span style={{ color: C.light, fontWeight: 400 }}>Search candidates</span>}
+            {q || <span style={{ color: C.light, fontWeight: 400 }}>{tx("Search candidates", "Zoek kandidaten")}</span>}
           </div>
           {q && <div style={{ width: 4, height: 50, borderRadius: 2, background: C.red, marginLeft: -16, opacity: caret ? 1 : 0 }} />}
         </div>

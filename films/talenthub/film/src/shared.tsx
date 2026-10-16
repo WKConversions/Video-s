@@ -7,6 +7,8 @@ import { Img, staticFile } from "remotion";
 import { T } from "./clock";
 import { ARRIVE, C, DEPART, MOVE, POP, SNAP, clamp01, mix } from "./lib";
 import { TH } from "./thpaths";
+import { tx } from "./lang";
+export { tx };
 
 export const k = (g: number, at: string | number, dur: number, ease = ARRIVE) => T.k(g, at, dur, ease);
 export const f = (at: string | number) => T.f(at);
@@ -128,40 +130,89 @@ export const Avatar: React.FC<{ size: number; initials?: string; unlocked?: numb
 );
 
 /* ---------- candidates (example data; the platform shows an anonymised pool) ---------- */
-export type Cand = { id: string; role: string; field: string; skills: string[]; exp: number; edu: string; lang: string; city: string; name: string; initials: string };
+export type Cand = { id: string; role: string; field: string; skills: string[]; exp: number; edu: string; lang: string; city: string; name: string; initials: string; jl?: boolean };
+// jl = a JongLeren alumnus/alumna: internship work experience in Spain, verified by the partner (the USP).
 export const CANDIDATES: Cand[] = [
-  { id: "2481", role: "Marketing Graduate", field: "Marketing", skills: ["Social media", "Spanish", "SEO"], exp: 2, edu: "Bachelor", lang: "EN · ES · NL", city: "Málaga", name: "Sofia de Vries", initials: "SV" },
-  { id: "1907", role: "Business Graduate", field: "Business", skills: ["Sales", "Excel", "English"], exp: 1, edu: "Bachelor", lang: "EN · NL", city: "Valencia", name: "Daan Bakker", initials: "DB" },
-  { id: "3125", role: "Tourism Graduate", field: "Hospitality", skills: ["Guest relations", "Spanish"], exp: 2, edu: "Bachelor", lang: "EN · ES", city: "Sevilla", name: "Lotte Jansen", initials: "LJ" },
+  { jl: true, id: "2481", role: "Marketing Graduate", field: "Marketing", skills: ["Social media", "Spanish", "SEO"], exp: 2, edu: "Bachelor", lang: "EN · ES · NL", city: "Málaga", name: "Sofia de Vries", initials: "SV" },
+  { jl: true, id: "1907", role: "Business Graduate", field: "Business", skills: ["Sales", "Excel", "English"], exp: 1, edu: "Bachelor", lang: "EN · NL", city: "Valencia", name: "Daan Bakker", initials: "DB" },
+  { jl: true, id: "3125", role: "Tourism Graduate", field: "Hospitality", skills: ["Guest relations", "Spanish"], exp: 2, edu: "Bachelor", lang: "EN · ES", city: "Sevilla", name: "Lotte Jansen", initials: "LJ" },
   { id: "2210", role: "IT Graduate", field: "IT", skills: ["React", "SQL", "English"], exp: 1, edu: "Bachelor", lang: "EN · NL", city: "Madrid", name: "Noah Visser", initials: "NV" },
-  { id: "4402", role: "HR Graduate", field: "HR", skills: ["Recruitment", "German"], exp: 1, edu: "Bachelor", lang: "EN · DE", city: "Berlin", name: "Emma Smit", initials: "ES" },
-  { id: "1388", role: "Design Graduate", field: "Design", skills: ["Figma", "Branding"], exp: 2, edu: "Bachelor", lang: "EN · NL", city: "Barcelona", name: "Milan Peters", initials: "MP" },
-  { id: "2954", role: "Finance Graduate", field: "Finance", skills: ["Excel", "Reporting"], exp: 3, edu: "Master", lang: "EN · NL", city: "Amsterdam", name: "Julia Mulder", initials: "JM" },
-  { id: "3367", role: "Marketing Graduate", field: "Marketing", skills: ["Content", "Spanish"], exp: 1, edu: "Bachelor", lang: "EN · ES", city: "Alicante", name: "Sem de Boer", initials: "SB" },
-  { id: "1742", role: "Logistics Graduate", field: "Logistics", skills: ["Planning", "SAP"], exp: 2, edu: "Bachelor", lang: "EN · NL", city: "Rotterdam", name: "Sara Hendriks", initials: "SH" },
-  { id: "2678", role: "Event Graduate", field: "Events", skills: ["Planning", "Spanish"], exp: 1, edu: "Bachelor", lang: "EN · ES", city: "Málaga", name: "Luuk Vos", initials: "LV" },
+  { jl: true, id: "4402", role: "HR Graduate", field: "HR", skills: ["Recruitment", "German"], exp: 1, edu: "Bachelor", lang: "EN · DE", city: "Berlin", name: "Emma Smit", initials: "ES" },
+  { jl: true, id: "1388", role: "Design Graduate", field: "Design", skills: ["Figma", "Branding"], exp: 2, edu: "Bachelor", lang: "EN · NL", city: "Barcelona", name: "Milan Peters", initials: "MP" },
+  { jl: true, id: "2954", role: "Finance Graduate", field: "Finance", skills: ["Excel", "Reporting"], exp: 3, edu: "Master", lang: "EN · NL", city: "Amsterdam", name: "Julia Mulder", initials: "JM" },
+  { jl: true, id: "3367", role: "Marketing Graduate", field: "Marketing", skills: ["Content", "Spanish"], exp: 1, edu: "Bachelor", lang: "EN · ES", city: "Alicante", name: "Sem de Boer", initials: "SB" },
+  { jl: true, id: "1742", role: "Logistics Graduate", field: "Logistics", skills: ["Planning", "SAP"], exp: 2, edu: "Bachelor", lang: "EN · NL", city: "Rotterdam", name: "Sara Hendriks", initials: "SH" },
+  { jl: true, id: "2678", role: "Event Graduate", field: "Events", skills: ["Planning", "Spanish"], exp: 1, edu: "Bachelor", lang: "EN · ES", city: "Málaga", name: "Luuk Vos", initials: "LV" },
   { id: "3591", role: "Sales Graduate", field: "Sales", skills: ["CRM", "English"], exp: 2, edu: "Bachelor", lang: "EN · NL", city: "Dublin", name: "Eva Dekker", initials: "ED" },
   { id: "1265", role: "Data Graduate", field: "Data", skills: ["Python", "SQL"], exp: 1, edu: "Master", lang: "EN · NL", city: "Lisbon", name: "Thijs Meijer", initials: "TM" },
 ];
 // The candidate card as it shows in the pool: anonymised (silhouette, role, skills, experience, education) until
 // unlocked; then the name and contact details appear. w is the card width (height ≈ 0.62 w). match = a % badge.
-export const CandidateCard: React.FC<{ c: Cand; w?: number; unlocked?: number; match?: number; hi?: number; style?: React.CSSProperties }> = ({ c, w = 300, unlocked = 0, match, hi = 0, style }) => {
+// verified 0..1 shows the "JongLeren verified" badge on JongLeren alumni (c.jl).
+// Dutch role names for the example candidates.
+const ROLES_NL: Record<string, string> = { "Marketing Graduate": "Afgestudeerd · Marketing", "Business Graduate": "Afgestudeerd · Business", "Tourism Graduate": "Afgestudeerd · Toerisme",
+  "IT Graduate": "Afgestudeerd · IT", "HR Graduate": "Afgestudeerd · HR", "Design Graduate": "Afgestudeerd · Design", "Finance Graduate": "Afgestudeerd · Finance",
+  "Logistics Graduate": "Afgestudeerd · Logistiek", "Event Graduate": "Afgestudeerd · Events", "Sales Graduate": "Afgestudeerd · Sales", "Data Graduate": "Afgestudeerd · Data" };
+export const roleTx = (r: string) => tx(r, ROLES_NL[r] ?? r);
+const SKILLS_NL: Record<string, string> = { Spanish: "Spaans", English: "Engels", German: "Duits", "Guest relations": "Gastvrijheid", Reporting: "Rapportage", Planning: "Planning", Sales: "Sales" };
+export const skillTx = (t: string) => tx(t, SKILLS_NL[t] ?? t);
+export const cityTx = (t: string) => tx(t, ({ Lisbon: "Lissabon" } as Record<string, string>)[t] ?? t);
+export const CandidateCard: React.FC<{ c: Cand; w?: number; unlocked?: number; match?: number; hi?: number; verified?: number; style?: React.CSSProperties }> = ({ c, w = 300, unlocked = 0, match, hi = 0, verified = 0, style }) => {
   const s = w / 300;
   return (
-    <div style={{ ...CARD, width: w, padding: 18 * s, boxSizing: "border-box", borderRadius: 20 * s, boxShadow: hi > 0 ? `0 0 0 ${3 * s * hi}px ${C.red}, 0 26px 56px -26px rgba(25,27,32,0.35)` : CARD.boxShadow, ...style }}>
+    <div style={{ ...CARD, position: "relative", width: w, padding: 18 * s, boxSizing: "border-box", borderRadius: 20 * s, boxShadow: hi > 0 ? `0 0 0 ${3 * s * hi}px ${C.red}, 0 26px 56px -26px rgba(25,27,32,0.35)` : CARD.boxShadow, ...style }}>
       <div style={{ display: "flex", alignItems: "center", gap: 12 * s }}>
         <Avatar size={52 * s} initials={c.initials} unlocked={unlocked} />
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 19 * s, color: C.ink, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{unlocked > 0.5 ? c.name : c.role}</div>
-          <div style={{ fontFamily: FONT, fontWeight: 400, fontSize: 15 * s, color: C.gray }}>{unlocked > 0.5 ? c.role : `Candidate #${c.id}`}</div>
+          <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 19 * s, color: C.ink, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{unlocked > 0.5 ? c.name : roleTx(c.role)}</div>
+          <div style={{ fontFamily: FONT, fontWeight: 400, fontSize: 15 * s, color: C.gray }}>{unlocked > 0.5 ? roleTx(c.role) : `${tx("Candidate", "Kandidaat")} #${c.id}`}</div>
         </div>
         {match !== undefined && <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 15 * s, color: C.red, background: C.rose, borderRadius: 999, padding: `${4 * s}px ${9 * s}px` }}>{match}%</div>}
       </div>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 6 * s, marginTop: 14 * s }}>
-        {c.skills.map((t) => <Chip key={t} text={t} size={13 * s} />)}
+        {c.skills.map((t) => <Chip key={t} text={skillTx(t)} size={13 * s} />)}
       </div>
       <div style={{ display: "flex", gap: 14 * s, marginTop: 12 * s, fontFamily: FONT, fontWeight: 700, fontSize: 14 * s, color: C.gray }}>
-        <span>{c.exp} yr{c.exp > 1 ? "s" : ""} exp.</span><span>{c.edu}</span><span>{c.lang}</span>
+        <span>{tx(`${c.exp} yr${c.exp > 1 ? "s" : ""} exp.`, `${c.exp} jr ervaring`)}</span><span>{c.edu}</span><span>{c.lang}</span>
+      </div>
+      {c.jl && verified > 0 && <div style={{ position: "absolute", right: 12 * s, top: -12 * s, transform: `scale(${0.7 + 0.3 * verified})`, transformOrigin: "100% 50%", opacity: clamp01(verified * 2) }}><JLBadge size={12 * s} /></div>}
+    </div>
+  );
+};
+
+/* ---------- JongLeren: the verified partner (the USP: candidates with internship work experience via JongLeren) ---------- */
+// The JongLeren mark (the juggling bull, red; white = for red grounds). h = height in px (the mark is 900×1120).
+export const JLMark: React.FC<{ h: number; white?: boolean; style?: React.CSSProperties }> = ({ h, white, style }) => (
+  <Img src={staticFile(white ? "img/jl-mark-white.png" : "img/jl-mark.png")} style={{ height: h, width: (h * 900) / 1120, display: "block", ...style }} />
+);
+// The JongLeren wordmark ("JongLeren.es", red). w = width in px (900×140).
+export const JLWord: React.FC<{ w: number; style?: React.CSSProperties }> = ({ w, style }) => (
+  <Img src={staticFile("img/jl-word.png")} style={{ width: w, height: (w * 140) / 900, display: "block", ...style }} />
+);
+// A small "JongLeren verified" badge (rose pill, the mark, a check), for a candidate card or profile. size = font px.
+export const JLBadge: React.FC<{ size?: number; text?: string; style?: React.CSSProperties }> = ({ size = 16, text, style }) => (
+  <div style={{ display: "inline-flex", alignItems: "center", gap: size * 0.4, padding: `${size * 0.25}px ${size * 0.6}px ${size * 0.25}px ${size * 0.3}px`, borderRadius: 999, background: C.rose,
+    color: C.red, fontFamily: FONT, fontWeight: 900, fontSize: size, whiteSpace: "nowrap", ...style }}>
+    <div style={{ width: size * 1.5, height: size * 1.5, borderRadius: "50%", background: C.white, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}><JLMark h={size * 1.25} /></div>
+    {text ?? tx("JongLeren verified", "JongLeren geverifieerd")}
+    <Ico n="check" s={size} c={C.red} w={3.2} />
+  </div>
+);
+// The partner seal: a round stamp "Verified partner" around the JongLeren mark. size = diameter in px. p 0..1 stamps it.
+export const PartnerSeal: React.FC<{ size: number; p?: number; style?: React.CSSProperties }> = ({ size, p = 1, style }) => {
+  const text = tx("VERIFIED PARTNER · VERIFIED PARTNER · ", "GEVERIFIEERDE PARTNER · GEVERIFIEERDE PARTNER · ");
+  const id = React.useId().replace(/:/g, "");
+  return (
+    <div style={{ position: "relative", width: size, height: size, transform: `scale(${0.6 + 0.4 * p}) rotate(${(1 - p) * -25}deg)`, opacity: clamp01(p * 2), ...style }}>
+      <svg width={size} height={size} viewBox="0 0 200 200" style={{ position: "absolute", inset: 0 }}>
+        <circle cx="100" cy="100" r="97" fill={C.white} stroke={C.red} strokeWidth="4" />
+        <circle cx="100" cy="100" r="70" fill={C.rose} />
+        <defs><path id={`seal-${id}`} d="M100,100 m-83,0 a83,83 0 1,1 166,0 a83,83 0 1,1 -166,0" /></defs>
+        <text fontFamily={FONT} fontWeight={900} fontSize="15" letterSpacing="2.2" fill={C.red}><textPath href={`#seal-${id}`}>{text}</textPath></text>
+      </svg>
+      <div style={{ position: "absolute", left: size * 0.5, top: size * 0.5, transform: "translate(-50%, -54%)" }}><JLMark h={size * 0.5} /></div>
+      <div style={{ position: "absolute", right: size * 0.02, bottom: size * 0.06, width: size * 0.26, height: size * 0.26, borderRadius: "50%", background: C.red, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 0 0 ${size * 0.02}px ${C.white}` }}>
+        <Ico n="check" s={size * 0.15} c={C.white} w={3.4} />
       </div>
     </div>
   );
@@ -173,28 +224,37 @@ export const CandidateCard: React.FC<{ c: Cand; w?: number; unlocked?: number; m
 // content box starts at (rail + 32, bar + 28) inside the window). count = the results counter; credits = the
 // client's credits. filters = 0..1 on-states of the three filter groups (skills, experience, qualifications).
 export const DASH = { x: 160, y: 120, w: 1600, h: 860, bar: 78, rail: 300 };
-export const Dashboard: React.FC<{ x?: number; y?: number; w?: number; h?: number; s?: number; o?: number; count: number; credits?: number; filters?: [number, number, number]; children?: React.ReactNode; style?: React.CSSProperties }> = ({
+export const Dashboard: React.FC<{ x?: number; y?: number; w?: number; h?: number; s?: number; o?: number; count: number; credits?: number; filters?: [number, number, number] | [number, number, number, number]; children?: React.ReactNode; style?: React.CSSProperties }> = ({
   x = DASH.x, y = DASH.y, w = DASH.w, h = DASH.h, s = 1, o = 1, count, credits = 10, filters = [0, 0, 0], children, style }) => {
   if (o <= 0.005) return null;
-  const groups: [string, string, string[]][] = [["Skills", "sliders", ["Spanish", "Marketing", "Social media"]], ["Experience", "briefcase", ["1–3 years"]], ["Qualifications", "cap", ["Bachelor's degree"]]];
+  const groups: [string, string, string[]][] = [[tx("Skills", "Vaardigheden"), "sliders", [tx("Spanish", "Spaans"), "Marketing", "Social media"]], [tx("Experience", "Werkervaring"), "briefcase", [tx("1–3 years", "1–3 jaar")]],
+    [tx("Qualifications", "Kwalificaties"), "cap", [tx("Bachelor's degree", "Bachelor")]]];
   return (
     <div style={{ position: "absolute", left: x, top: y, width: w, height: h, opacity: o, transform: `scale(${s})`, transformOrigin: "50% 50%", ...CARD, borderRadius: 30, overflow: "hidden", ...style }}>
       <div style={{ position: "absolute", left: 0, top: 0, width: w, height: DASH.bar, display: "flex", alignItems: "center", gap: 22, padding: "0 30px", boxSizing: "border-box", borderBottom: `1px solid ${C.line}` }}>
         <THMark size={52} />
-        <div style={{ flex: 1, height: 46, borderRadius: 999, background: C.cloud, display: "flex", alignItems: "center", gap: 12, padding: "0 20px", fontFamily: FONT, fontSize: 20, color: C.gray }}><Ico n="search" s={22} c={C.gray} />Search candidates</div>
+        <div style={{ flex: 1, height: 46, borderRadius: 999, background: C.cloud, display: "flex", alignItems: "center", gap: 12, padding: "0 20px", fontFamily: FONT, fontSize: 20, color: C.gray }}><Ico n="search" s={22} c={C.gray} />{tx("Search candidates", "Zoek kandidaten")}</div>
         <div style={{ display: "flex", alignItems: "center", gap: 10, fontFamily: FONT, fontWeight: 700, fontSize: 20, color: C.ink, background: C.rose, borderRadius: 999, padding: "10px 18px" }}><Ico n="coin" s={24} c={C.red} />{credits} credits</div>
       </div>
       <div style={{ position: "absolute", left: 0, top: DASH.bar, width: DASH.rail, bottom: 0, background: C.ivory, borderRight: `1px solid ${C.line}`, padding: "26px 24px", boxSizing: "border-box" }}>
-        <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 24, color: C.ink, display: "flex", alignItems: "center", gap: 10 }}><Ico n="filter" s={24} c={C.red} />Filters</div>
+        <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 24, color: C.ink, display: "flex", alignItems: "center", gap: 10 }}><Ico n="filter" s={24} c={C.red} />{tx("Filters", "Filters")}</div>
         {groups.map(([name, icon, chips], i) => (
           <div key={name} style={{ marginTop: 26 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: FONT, fontWeight: 700, fontSize: 18, color: C.gray }}><Ico n={icon} s={20} c={C.gray} />{name}</div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 10 }}>{chips.map((t) => <Chip key={t} text={t} size={16} on={filters[i]} />)}</div>
           </div>
         ))}
+        {/* the verified partner filter: internship experience verified by JongLeren */}
+        <div style={{ marginTop: 26 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: FONT, fontWeight: 700, fontSize: 18, color: C.gray }}><Ico n="check" s={20} c={C.gray} />{tx("Verified partner", "Geverifieerde partner")}</div>
+          <div style={{ marginTop: 10, display: "inline-flex", alignItems: "center", gap: 8, padding: "5px 12px 5px 6px", borderRadius: 999, background: (filters[3] ?? 0) > 0.5 ? C.rose : C.cloud,
+            boxShadow: (filters[3] ?? 0) > 0.5 ? `inset 0 0 0 2px ${C.red}` : undefined, fontFamily: FONT, fontWeight: 700, fontSize: 16, color: (filters[3] ?? 0) > 0.5 ? C.red : C.ink }}>
+            <div style={{ width: 24, height: 24, borderRadius: "50%", background: C.white, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}><JLMark h={20} /></div>JongLeren
+          </div>
+        </div>
       </div>
       <div style={{ position: "absolute", left: DASH.rail + 32, top: DASH.bar + 22, fontFamily: FONT, fontWeight: 900, fontSize: 26, color: C.ink }}>
-        {count.toLocaleString("en-US")} <span style={{ fontWeight: 400, color: C.gray }}>candidates</span>
+        {count.toLocaleString(tx("en-US", "nl-NL"))} <span style={{ fontWeight: 400, color: C.gray }}>{tx("candidates", "kandidaten")}</span>
       </div>
       <div style={{ position: "absolute", left: DASH.rail + 32, top: DASH.bar + 72, right: 32, bottom: 0 }}>{children}</div>
     </div>
@@ -232,9 +292,13 @@ export const Link: React.FC<{ x1: number; y1: number; x2: number; y2: number; p:
 };
 
 /* ---------- example opportunities (graduates' side) ---------- */
-export const JOBS = [
+export const JOBS = tx([
   { title: "Marketing Assistant", city: "Madrid", country: "Spain" }, { title: "Junior Account Manager", city: "Berlin", country: "Germany" },
   { title: "Hotel Operations Trainee", city: "Lisbon", country: "Portugal" }, { title: "Business Analyst", city: "Dublin", country: "Ireland" },
   { title: "Content Creator", city: "Barcelona", country: "Spain" }, { title: "HR Coordinator", city: "Amsterdam", country: "Netherlands" },
-];
+], [
+  { title: "Marketingassistent", city: "Madrid", country: "Spanje" }, { title: "Junior accountmanager", city: "Berlijn", country: "Duitsland" },
+  { title: "Trainee hotelbeheer", city: "Lissabon", country: "Portugal" }, { title: "Business analist", city: "Dublin", country: "Ierland" },
+  { title: "Contentcreator", city: "Barcelona", country: "Spanje" }, { title: "HR-coördinator", city: "Amsterdam", country: "Nederland" },
+]);
 export { ARRIVE, C, DEPART, MOVE, POP, SNAP, clamp01, mix };

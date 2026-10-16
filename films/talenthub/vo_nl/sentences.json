@@ -1,0 +1,92 @@
+[
+ {
+  "i": 1,
+  "text": "Op zoek naar gekwalificeerd talent?",
+  "start": 0.075,
+  "end": 1.699,
+  "pause_after": 0.521,
+  "first_key": "w:op",
+  "last_key": "w:talent"
+ },
+ {
+  "i": 2,
+  "text": "Maak kennis met Talent Hub.",
+  "start": 2.22,
+  "end": 3.74,
+  "pause_after": 0.447,
+  "first_key": "w:maak",
+  "last_key": "w:hub"
+ },
+ {
+  "i": 3,
+  "text": "Het platform dat afgestudeerden verbindt met internationale carri\u00e8remogelijkheden.",
+  "start": 4.187,
+  "end": 8.456,
+  "pause_after": 0.563,
+  "first_key": "w:het",
+  "last_key": "w:carriremogelijkheden"
+ },
+ {
+  "i": 4,
+  "text": "Ontdek een database vol gekwalificeerde kandidaten, overzichtelijk verzameld in \u00e9\u00e9n dashboard.",
+  "start": 9.019,
+  "end": 14.381,
+  "pause_after": 0.459,
+  "first_key": "w:ontdek",
+  "last_key": "w:dashboard"
+ },
+ {
+  "i": 5,
+  "text": "Filter op vaardigheden, werkervaring en kwalificaties om de juiste match te vinden.",
+  "start": 14.84,
+  "end": 19.541,
+  "pause_after": 0.459,
+  "first_key": "w:filter",
+  "last_key": "w:vinden"
+ },
+ {
+  "i": 6,
+  "text": "Bekijk kandidaatprofielen, ontgrendel contactgegevens en kom direct in contact met potenti\u00eble werknemers.",
+  "start": 20.0,
+  "end": 25.94,
+  "pause_after": 0.46,
+  "first_key": "w:bekijk",
+  "last_key": "w:werknemers"
+ },
+ {
+  "i": 7,
+  "text": "Voor afgestudeerden opent Talent Hub de deur naar nieuwe kansen in het buitenland.",
+  "start": 26.4,
+  "end": 30.338,
+  "pause_after": 0.423,
+  "first_key": "w:voor",
+  "last_key": "w:buitenland"
+ },
+ {
+  "i": 8,
+  "text": "Voor werkgevers en recruiters wordt talent vinden eenvoudiger.",
+  "start": 30.762,
+  "end": 34.049,
+  "pause_after": 0.56,
+  "first_key": "w:voor2",
+  "last_key": "w:eenvoudiger"
+ },
+ {
+  "i": 9,
+  "text": "Talent Hub.",
+  "start": 34.609,
+  "end": 35.126,
+  "pause_after": 0.449,
+  "first_key": "w:talent5",
+  "last_key": "w:hub3"
+ },
+ {
+  "i": 10,
+  "text": "Jouw volgende connectie begint hier.",
+  "start": 35.574,
+  "end": 37.557,
+  "pause_after": 0.243,
+  "first_key": "w:jouw",
+  "last_key": "w:hier"
+ }
+]

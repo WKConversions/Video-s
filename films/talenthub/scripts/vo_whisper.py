@@ -7,7 +7,7 @@ model_name = sys.argv[3] if len(sys.argv) > 3 else "small"
 raw = subprocess.run(["ffmpeg", "-v", "error", "-i", src, "-f", "f32le", "-ac", "1", "-ar", "16000", "-"], capture_output=True, check=True).stdout
 audio = np.frombuffer(raw, np.float32).copy()
 m = WhisperModel(model_name, device="cpu", compute_type="int8", cpu_threads=2)
-segs, info = m.transcribe(audio, language="en", word_timestamps=True, vad_filter=False, beam_size=5)
+segs, info = m.transcribe(audio, language=(sys.argv[4] if len(sys.argv) > 4 else "en"), word_timestamps=True, vad_filter=False, beam_size=5)
 words = []
 for s in segs:
     for w in s.words:

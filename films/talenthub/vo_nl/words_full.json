@@ -1,0 +1,488 @@
+[
+ {
+  "w": "Op",
+  "key": "w:op",
+  "start": 0.075,
+  "end": 0.2
+ },
+ {
+  "w": "zoek",
+  "key": "w:zoek",
+  "start": 0.2,
+  "end": 0.4
+ },
+ {
+  "w": "naar",
+  "key": "w:naar",
+  "start": 0.4,
+  "end": 0.52
+ },
+ {
+  "w": "gekwalificeerd",
+  "key": "w:gekwalificeerd",
+  "start": 0.52,
+  "end": 1.24
+ },
+ {
+  "w": "talent?",
+  "key": "w:talent",
+  "start": 1.24,
+  "end": 1.699
+ },
+ {
+  "w": "Maak",
+  "key": "w:maak",
+  "start": 2.22,
+  "end": 2.34
+ },
+ {
+  "w": "kennis",
+  "key": "w:kennis",
+  "start": 2.34,
+  "end": 2.78
+ },
+ {
+  "w": "met",
+  "key": "w:met",
+  "start": 2.78,
+  "end": 3.025
+ },
+ {
+  "w": "Talent",
+  "key": "w:talent2",
+  "start": 3.163,
+  "end": 3.36
+ },
+ {
+  "w": "Hub.",
+  "key": "w:hub",
+  "start": 3.36,
+  "end": 3.74
+ },
+ {
+  "w": "Het",
+  "key": "w:het",
+  "start": 4.187,
+  "end": 4.28
+ },
+ {
+  "w": "platform",
+  "key": "w:platform",
+  "start": 4.28,
+  "end": 4.72
+ },
+ {
+  "w": "dat",
+  "key": "w:dat",
+  "start": 4.72,
+  "end": 4.94
+ },
+ {
+  "w": "afgestudeerden",
+  "key": "w:afgestudeerden",
+  "start": 4.94,
+  "end": 5.8
+ },
+ {
+  "w": "verbindt",
+  "key": "w:verbindt",
+  "start": 5.8,
+  "end": 6.28
+ },
+ {
+  "w": "met",
+  "key": "w:met2",
+  "start": 6.28,
+  "end": 6.386
+ },
+ {
+  "w": "internationale",
+  "key": "w:internationale",
+  "start": 6.516,
+  "end": 7.26
+ },
+ {
+  "w": "carri\u00e8remogelijkheden.",
+  "key": "w:carriremogelijkheden",
+  "start": 7.26,
+  "end": 8.456
+ },
+ {
+  "w": "Ontdek",
+  "key": "w:ontdek",
+  "start": 9.019,
+  "end": 9.26
+ },
+ {
+  "w": "een",
+  "key": "w:een",
+  "start": 9.26,
+  "end": 9.4
+ },
+ {
+  "w": "database",
+  "key": "w:database",
+  "start": 9.4,
+  "end": 9.88
+ },
+ {
+  "w": "vol",
+  "key": "w:vol",
+  "start": 9.88,
+  "end": 10.5
+ },
+ {
+  "w": "gekwalificeerde",
+  "key": "w:gekwalificeerde",
+  "start": 10.5,
+  "end": 11.12
+ },
+ {
+  "w": "kandidaten,",
+  "key": "w:kandidaten",
+  "start": 11.12,
+  "end": 11.746
+ },
+ {
+  "w": "overzichtelijk",
+  "key": "w:overzichtelijk",
+  "start": 12.086,
+  "end": 12.74
+ },
+ {
+  "w": "verzameld",
+  "key": "w:verzameld",
+  "start": 12.74,
+  "end": 13.28
+ },
+ {
+  "w": "in",
+  "key": "w:in",
+  "start": 13.28,
+  "end": 13.521
+ },
+ {
+  "w": "\u00e9\u00e9n",
+  "key": "w:n",
+  "start": 13.666,
+  "end": 13.8
+ },
+ {
+  "w": "dashboard.",
+  "key": "w:dashboard",
+  "start": 13.8,
+  "end": 14.381
+ },
+ {
+  "w": "Filter",
+  "key": "w:filter",
+  "start": 14.84,
+  "end": 15.04
+ },
+ {
+  "w": "op",
+  "key": "w:op2",
+  "start": 15.04,
+  "end": 15.28
+ },
+ {
+  "w": "vaardigheden,",
+  "key": "w:vaardigheden",
+  "start": 15.28,
+  "end": 16.01
+ },
+ {
+  "w": "werkervaring",
+  "key": "w:werkervaring",
+  "start": 16.207,
+  "end": 16.88
+ },
+ {
+  "w": "en",
+  "key": "w:en",
+  "start": 16.88,
+  "end": 17.18
+ },
+ {
+  "w": "kwalificaties",
+  "key": "w:kwalificaties",
+  "start": 17.18,
+  "end": 18.04
+ },
+ {
+  "w": "om",
+  "key": "w:om",
+  "start": 18.04,
+  "end": 18.28
+ },
+ {
+  "w": "de",
+  "key": "w:de",
+  "start": 18.28,
+  "end": 18.4
+ },
+ {
+  "w": "juiste",
+  "key": "w:juiste",
+  "start": 18.4,
+  "end": 18.78
+ },
+ {
+  "w": "match",
+  "key": "w:match",
+  "start": 18.78,
+  "end": 19.04
+ },
+ {
+  "w": "te",
+  "key": "w:te",
+  "start": 19.04,
+  "end": 19.22
+ },
+ {
+  "w": "vinden.",
+  "key": "w:vinden",
+  "start": 19.22,
+  "end": 19.541
+ },
+ {
+  "w": "Bekijk",
+  "key": "w:bekijk",
+  "start": 20.0,
+  "end": 20.24
+ },
+ {
+  "w": "kandidaatprofielen,",
+  "key": "w:kandidaatprofielen",
+  "start": 20.24,
+  "end": 21.277
+ },
+ {
+  "w": "ontgrendel",
+  "key": "w:ontgrendel",
+  "start": 21.609,
+  "end": 22.06
+ },
+ {
+  "w": "contactgegevens",
+  "key": "w:contactgegevens",
+  "start": 22.06,
+  "end": 22.94
+ },
+ {
+  "w": "en",
+  "key": "w:en2",
+  "start": 22.94,
+  "end": 23.019
+ },
+ {
+  "w": "kom",
+  "key": "w:kom",
+  "start": 23.18,
+  "end": 23.4
+ },
+ {
+  "w": "direct",
+  "key": "w:direct",
+  "start": 23.4,
+  "end": 23.82
+ },
+ {
+  "w": "in",
+  "key": "w:in2",
+  "start": 23.82,
+  "end": 24.02
+ },
+ {
+  "w": "contact",
+  "key": "w:contact",
+  "start": 24.02,
+  "end": 24.34
+ },
+ {
+  "w": "met",
+  "key": "w:met3",
+  "start": 24.34,
+  "end": 24.573
+ },
+ {
+  "w": "potenti\u00eble",
+  "key": "w:potentile",
+  "start": 24.707,
+  "end": 25.22
+ },
+ {
+  "w": "werknemers.",
+  "key": "w:werknemers",
+  "start": 25.22,
+  "end": 25.94
+ },
+ {
+  "w": "Voor",
+  "key": "w:voor",
+  "start": 26.4,
+  "end": 26.54
+ },
+ {
+  "w": "afgestudeerden",
+  "key": "w:afgestudeerden2",
+  "start": 26.56,
+  "end": 27.34
+ },
+ {
+  "w": "opent",
+  "key": "w:opent",
+  "start": 27.34,
+  "end": 27.6
+ },
+ {
+  "w": "Talent",
+  "key": "w:talent3",
+  "start": 27.6,
+  "end": 27.96
+ },
+ {
+  "w": "Hub",
+  "key": "w:hub2",
+  "start": 27.96,
+  "end": 28.2
+ },
+ {
+  "w": "de",
+  "key": "w:de2",
+  "start": 28.2,
+  "end": 28.38
+ },
+ {
+  "w": "deur",
+  "key": "w:deur",
+  "start": 28.38,
+  "end": 28.66
+ },
+ {
+  "w": "naar",
+  "key": "w:naar2",
+  "start": 28.66,
+  "end": 28.78
+ },
+ {
+  "w": "nieuwe",
+  "key": "w:nieuwe",
+  "start": 28.78,
+  "end": 29.12
+ },
+ {
+  "w": "kansen",
+  "key": "w:kansen",
+  "start": 29.12,
+  "end": 29.56
+ },
+ {
+  "w": "in",
+  "key": "w:in3",
+  "start": 29.56,
+  "end": 29.66
+ },
+ {
+  "w": "het",
+  "key": "w:het2",
+  "start": 29.66,
+  "end": 29.76
+ },
+ {
+  "w": "buitenland.",
+  "key": "w:buitenland",
+  "start": 29.76,
+  "end": 30.338
+ },
+ {
+  "w": "Voor",
+  "key": "w:voor2",
+  "start": 30.762,
+  "end": 30.84
+ },
+ {
+  "w": "werkgevers",
+  "key": "w:werkgevers",
+  "start": 30.84,
+  "end": 31.5
+ },
+ {
+  "w": "en",
+  "key": "w:en3",
+  "start": 31.5,
+  "end": 31.64
+ },
+ {
+  "w": "recruiters",
+  "key": "w:recruiters",
+  "start": 31.64,
+  "end": 32.269
+ },
+ {
+  "w": "wordt",
+  "key": "w:wordt",
+  "start": 32.48,
+  "end": 32.62
+ },
+ {
+  "w": "talent",
+  "key": "w:talent4",
+  "start": 32.62,
+  "end": 32.88
+ },
+ {
+  "w": "vinden",
+  "key": "w:vinden2",
+  "start": 32.88,
+  "end": 33.24
+ },
+ {
+  "w": "eenvoudiger.",
+  "key": "w:eenvoudiger",
+  "start": 33.24,
+  "end": 34.049
+ },
+ {
+  "w": "Talent",
+  "key": "w:talent5",
+  "start": 34.609,
+  "end": 34.76
+ },
+ {
+  "w": "Hub.",
+  "key": "w:hub3",
+  "start": 34.76,
+  "end": 35.126
+ },
+ {
+  "w": "Jouw",
+  "key": "w:jouw",
+  "start": 35.574,
+  "end": 35.88
+ },
+ {
+  "w": "volgende",
+  "key": "w:volgende",
+  "start": 35.88,
+  "end": 36.22
+ },
+ {
+  "w": "connectie",
+  "key": "w:connectie",
+  "start": 36.22,
+  "end": 36.8
+ },
+ {
+  "w": "begint",
+  "key": "w:begint",
+  "start": 36.928,
+  "end": 37.26
+ },
+ {
+  "w": "hier.",
+  "key": "w:hier",
+  "start": 37.26,
+  "end": 37.557
+ }
+]

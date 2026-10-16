@@ -1,14 +1,19 @@
 # The Talent Hub film's cue sheet: the supplied voice-over, the music bed and quiet, precise interface sounds on the picture
 # events (an Apple-style film: soft keys, clean clicks, a few airy swishes, one shimmer for the brand).
-#   python3 scripts/cues.py            (run from films/creoble; writes sound/cues.json)
+#   python3 scripts/cues.py [nl]       (run from films/talenthub; writes sound/cues.json, or sound/cues_nl.json)
 #   python3 scripts/sound_mix.py sound/cues.json film/public/audio/mix.wav --sheet sound/mix.png
-import json, os
+#   python3 scripts/sound_mix.py sound/cues_nl.json film/public/audio/mix_nl.wav --sheet sound/mix_nl.png
+# The Dutch build uses film/src/words_nl.json: the same labels on the Dutch voice-over's words, so every cue follows.
+import json, os, sys
 
+NL = len(sys.argv) > 1 and sys.argv[1] == "nl"
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-W = json.load(open(os.path.join(ROOT, "film", "src", "words.json")))
-FPS, END = 30, 36.0
+W = json.load(open(os.path.join(ROOT, "film", "src", "words_nl.json" if NL else "words.json")))
+FPS = 30
 L = dict(W)
-L.update({"s1": 3.1, "s2": 12.2, "s3": 22.7, "s4": 30.5})
+# the hand-offs, as in src/clock.ts
+L.update({"s1": L["w:the"] - 0.31, "s2": L["w:filter"] - 0.25, "s3": L["w:for2"] - 0.27, "s4": L["w:talent4"] - 0.28})
+END = L["w:here"] + 3.0
 TAP, TAP2, TICK, CLICK, POP = "kenney-select-002", "kenney-select-001", "kenney-tick-004", "kenney-click-001", "kenney-drop-003"
 cues = []
 def cue(label, off, sid, db=0, pitch=0, note=""):
@@ -65,8 +70,8 @@ cue("w:connection", 0.1, TICK, -10, 4, "the connection line")
 cue("w:here", 0.3, "gen-swell", -11, note="end card")
 
 out = {"fps": FPS, "frames": round(END * FPS), "library": "../../alumni/sound/lib",
-       "vo": {"file": "../vo/vo.mp3", "at": 0, "compress": True},
-       "music": {"file": "bed.wav", "at": 0, "lufs": -24, "duck_db": 6, "fade_in": 0.3, "fade_out": 0.6, "lifts": [[33.0, 36.0, 3]]},
+       "vo": {"file": "../vo_nl/vo.mp3" if NL else "../vo/vo.mp3", "at": 0, "compress": True},
+       "music": {"file": "bed_nl.wav" if NL else "bed.wav", "at": 0, "lufs": -24, "duck_db": 6, "fade_in": 0.3, "fade_out": 0.6, "lifts": [[L["w:here"], END, 3]]},
        "sfx": sorted(cues, key=lambda c: c["frame"])}
-json.dump(out, open(os.path.join(ROOT, "sound", "cues.json"), "w"), indent=1)
+json.dump(out, open(os.path.join(ROOT, "sound", "cues_nl.json" if NL else "cues.json"), "w"), indent=1)
 print(len(cues), "cues")
