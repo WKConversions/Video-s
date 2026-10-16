@@ -195,7 +195,7 @@ export const JLBadge: React.FC<{ size?: number; text?: string; style?: React.CSS
   <div style={{ display: "inline-flex", alignItems: "center", gap: size * 0.4, padding: `${size * 0.25}px ${size * 0.6}px ${size * 0.25}px ${size * 0.3}px`, borderRadius: 999, background: C.rose,
     color: C.red, fontFamily: FONT, fontWeight: 900, fontSize: size, whiteSpace: "nowrap", ...style }}>
     <div style={{ width: size * 1.5, height: size * 1.5, borderRadius: "50%", background: C.white, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}><JLMark h={size * 1.25} /></div>
-    {text ?? tx("JongLeren verified", "JongLeren geverifieerd")}
+    {text ?? tx("JongLeren verified", "JongLeren-geverifieerd")}
     <Ico n="check" s={size} c={C.red} w={3.2} />
   </div>
 );
@@ -301,7 +301,7 @@ export const JOBS = tx([
   { title: "Content Creator", city: "Barcelona", country: "Spain" }, { title: "HR Coordinator", city: "Amsterdam", country: "Netherlands" },
 ], [
   { title: "Marketingassistent", city: "Madrid", country: "Spanje" }, { title: "Junior accountmanager", city: "Berlijn", country: "Duitsland" },
-  { title: "Trainee hotelbeheer", city: "Lissabon", country: "Portugal" }, { title: "Business analist", city: "Dublin", country: "Ierland" },
+  { title: "Trainee hotelbeheer", city: "Lissabon", country: "Portugal" }, { title: "Businessanalist", city: "Dublin", country: "Ierland" },
   { title: "Contentcreator", city: "Barcelona", country: "Spanje" }, { title: "HR-coördinator", city: "Amsterdam", country: "Nederland" },
 ]);
 export { ARRIVE, C, DEPART, MOVE, POP, SNAP, clamp01, mix };

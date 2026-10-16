@@ -126,7 +126,7 @@ const Profile: React.FC<{ g: number }> = ({ g }) => {
   const a = k(g, "w:graduates2", 0.6, ARRIVE), out = k(g, GOUT, 0.4, DEPART);
   if (a <= 0 || out >= 1) return null;
   const pct = k(g, "w:graduates2+0.23", 1.25, MOVE);
-  const items = [tx("Skills & languages", "Vaardigheden & talen"), tx("Internship · JongLeren, Málaga", "Stage · JongLeren, Málaga"), tx("Education", "Opleiding")];
+  const items = [tx("Skills & languages", "Vaardigheden & talen"), tx("Internship via JongLeren", "Stage via JongLeren"), tx("Education", "Opleiding")];
   const badge = k(g, "w:graduates2+0.9", 0.45, POP);
   return (
     <div style={{ position: "absolute", left: PX, top: PY, width: PW, ...CARD, padding: 28, boxSizing: "border-box", opacity: a * (1 - out),
@@ -308,7 +308,7 @@ const Cursor: React.FC<{ g: number }> = ({ g }) => {
 const RX = 1010, RY = 625, RR = 250;
 const CL = [
   { y: 300, icon: "users", title: tx("Agency recruiter", "Recruitmentbureau"), sub: tx("Recruits for its clients", "Werft voor zijn klanten"), at: "w:employers+0.05", post: TM.post[0], job: JOBS[0] },
-  { y: 500, icon: "building", title: tx("Direct employer", "Directe werkgever"), sub: tx("Hires for its own team", "Neemt aan voor het eigen team"), at: "w:and3-0.14", post: TM.post[1], job: JOBS[3] },
+  { y: 500, icon: "building", title: tx("Direct employer", "Directe werkgever"), sub: tx("Hires for its own team", "Werft voor het eigen team"), at: "w:and3-0.14", post: TM.post[1], job: JOBS[3] },
 ];
 // the sweep turns steadily while the pool gathers, then faster from the scan beat
 const sweepA = (g: number) => (g < TM.scan ? 12 * (g - TM.e0) : 12 * (TM.scan - TM.e0) + 14 * (g - TM.scan));

@@ -24,47 +24,13 @@
  },
  "sfx": [
   {
-   "frame": 4,
+   "frame": 13,
    "id": "kenney-click-001",
    "db": -15,
    "note": "search keys"
   },
   {
-   "frame": 6,
-   "id": "kenney-click-001",
-   "db": -15,
-   "pitch": 2,
-   "note": "search keys"
-  },
-  {
-   "frame": 8,
-   "id": "kenney-click-001",
-   "db": -15,
-   "pitch": -1,
-   "note": "search keys"
-  },
-  {
-   "frame": 10,
-   "id": "kenney-click-001",
-   "db": -15,
-   "pitch": 3,
-   "note": "search keys"
-  },
-  {
-   "frame": 12,
-   "id": "kenney-click-001",
-   "db": -15,
-   "pitch": 1,
-   "note": "search keys"
-  },
-  {
-   "frame": 14,
-   "id": "kenney-click-001",
-   "db": -15,
-   "note": "search keys"
-  },
-  {
-   "frame": 16,
+   "frame": 15,
    "id": "kenney-click-001",
    "db": -15,
    "pitch": 2,
@@ -78,24 +44,125 @@
    "note": "the talent cloud swirls"
   },
   {
-   "frame": 18,
+   "frame": 17,
    "id": "kenney-click-001",
    "db": -15,
    "pitch": -1,
    "note": "search keys"
   },
   {
-   "frame": 20,
+   "frame": 18,
    "id": "kenney-click-001",
    "db": -15,
    "pitch": 3,
    "note": "search keys"
   },
   {
-   "frame": 23,
+   "frame": 20,
    "id": "kenney-click-001",
    "db": -15,
    "pitch": 1,
+   "note": "search keys"
+  },
+  {
+   "frame": 22,
+   "id": "kenney-click-001",
+   "db": -15,
+   "note": "search keys"
+  },
+  {
+   "frame": 24,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 2,
+   "note": "search keys"
+  },
+  {
+   "frame": 26,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": -1,
+   "note": "search keys"
+  },
+  {
+   "frame": 27,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 3,
+   "note": "search keys"
+  },
+  {
+   "frame": 29,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 1,
+   "note": "search keys"
+  },
+  {
+   "frame": 31,
+   "id": "kenney-click-001",
+   "db": -15,
+   "note": "search keys"
+  },
+  {
+   "frame": 33,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 2,
+   "note": "search keys"
+  },
+  {
+   "frame": 34,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": -1,
+   "note": "search keys"
+  },
+  {
+   "frame": 36,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 3,
+   "note": "search keys"
+  },
+  {
+   "frame": 40,
+   "id": "kenney-click-001",
+   "db": -15,
+   "note": "search keys"
+  },
+  {
+   "frame": 41,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 2,
+   "note": "search keys"
+  },
+  {
+   "frame": 43,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": -1,
+   "note": "search keys"
+  },
+  {
+   "frame": 45,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 3,
+   "note": "search keys"
+  },
+  {
+   "frame": 47,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 1,
+   "note": "search keys"
+  },
+  {
+   "frame": 48,
+   "id": "kenney-click-001",
+   "db": -15,
    "note": "search keys"
   },
   {
@@ -106,14 +173,14 @@
    "note": "talent converges, red field"
   },
   {
-   "frame": 96,
+   "frame": 86,
    "id": "gen-pop",
    "db": -3,
    "pitch": 1,
    "note": "the t rises"
   },
   {
-   "frame": 101,
+   "frame": 92,
    "id": "gen-pop",
    "db": -3,
    "pitch": 4,
@@ -351,7 +418,7 @@
    "note": "verified by JongLeren legend"
   },
   {
-   "frame": 395,
+   "frame": 381,
    "id": "gen-whoosh-short",
    "db": -7,
    "note": "the cards snap into the dashboard"
@@ -445,6 +512,13 @@
    "note": "the VERIFIED PARTNER seal stamps"
   },
   {
+   "frame": 632,
+   "id": "kenney-click-001",
+   "db": -7,
+   "pitch": -5,
+   "note": "the stamp's slap (small speakers)"
+  },
+  {
    "frame": 648,
    "id": "kenney-click-001",
    "db": -1,
@@ -458,7 +532,7 @@
    "note": "a credit flies"
   },
   {
-   "frame": 662,
+   "frame": 661,
    "id": "gen-pop",
    "db": -3,
    "pitch": 5,
@@ -486,7 +560,7 @@
    "note": "the message travels"
   },
   {
-   "frame": 747,
+   "frame": 763,
    "id": "gen-pop",
    "db": -5,
    "pitch": 4,
@@ -553,20 +627,20 @@
    "note": "an opportunity flies in"
   },
   {
-   "frame": 893,
+   "frame": 877,
    "id": "kenney-click-001",
    "db": -3,
    "note": "Apply"
   },
   {
-   "frame": 897,
+   "frame": 881,
    "id": "kenney-select-001",
    "db": -5,
    "pitch": 4,
    "note": "Applied"
   },
   {
-   "frame": 903,
+   "frame": 899,
    "id": "gen-success",
    "db": -10,
    "note": "career abroad checked"
@@ -578,46 +652,46 @@
    "note": "for employers"
   },
   {
-   "frame": 949,
+   "frame": 951,
    "id": "kenney-drop-003",
    "db": -7,
-   "note": "a client type"
+   "note": "a vacancy posted"
   },
   {
-   "frame": 955,
+   "frame": 964,
    "id": "kenney-drop-003",
    "db": -7,
    "pitch": 2,
-   "note": "a client type"
+   "note": "a vacancy posted"
   },
   {
-   "frame": 986,
+   "frame": 973,
    "id": "gen-whoosh-short",
    "db": -7,
    "note": "the scan sweep"
   },
   {
-   "frame": 1006,
+   "frame": 992,
    "id": "kenney-tick-004",
    "db": -7,
    "note": "a match ranked"
   },
   {
-   "frame": 1010,
+   "frame": 998,
    "id": "kenney-tick-004",
    "db": -7,
    "pitch": 2,
    "note": "a match ranked"
   },
   {
-   "frame": 1013,
+   "frame": 1004,
    "id": "kenney-tick-004",
    "db": -7,
    "pitch": 4,
    "note": "a match ranked"
   },
   {
-   "frame": 1017,
+   "frame": 1010,
    "id": "kenney-tick-004",
    "db": -7,
    "pitch": 6,
@@ -677,9 +751,9 @@
    "note": "the verified check lands"
   },
   {
-   "frame": 1140,
+   "frame": 1151,
    "id": "gen-appear",
-   "db": -10,
+   "db": -7,
    "note": "the partner lockup"
   }
  ]

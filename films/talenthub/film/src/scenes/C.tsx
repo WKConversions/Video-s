@@ -26,7 +26,7 @@ const F_FIND = f("w:find"), F_RIGHT = f("w:right"), F_MATCH = f("w:match");
 const F_DISC = f("w:discover"), F_CAND = f("w:candidate"), F_PROF = f("w:profiles");
 const F_UNLOCK = f("w:unlock");
 const F_AND2 = f("w:and2"), F_CONNECT = f("w:connect"), F_DIRECTLY = f("w:directly"), F_WITH2 = f("w:with2"), F_HIRES = f("w:hires");
-const F_HIT = F_UNLOCK + 18;               // the coin reaches the lock
+const F_HIT = F_UNLOCK + 12;               // the coin reaches the lock
 const F_SEAL = F_PROF + 4, F_STAMP = F_SEAL + 7;   // the partner seal drops, and presses onto the profile
 const F_BTN = Math.min(F_PROF + 12, F_UNLOCK - 14);
 const F_TOCONNECT = Math.min(F_HIT + 18, F_AND2 - 10);
@@ -216,7 +216,7 @@ const Panel: React.FC<{ g: number }> = ({ g }) => {
   const lockIn = kf(g, F_PROF, 10, POP);
   const hit = kf(g, F_HIT, 5, SNAP) * (1 - kf(g, F_HIT + 5, 8));
   const open = kf(g, F_HIT + 1, 9, POP);
-  const lockOut = kf(g, F_HIT + 14, 10, MOVE);
+  const lockOut = kf(g, F_HIT + 10, 8, MOVE);
   const btn = kf(g, F_BTN, 10, POP);
   const press = kf(g, F_UNLOCK - 4, 4, SNAP) * (1 - kf(g, F_UNLOCK, 6)) + kf(g, F_AND2 - 3, 3, SNAP) * (1 - kf(g, F_AND2, 5));
   const toConnect = kf(g, F_TOCONNECT, 8);
@@ -268,7 +268,7 @@ const Panel: React.FC<{ g: number }> = ({ g }) => {
         <JLMark h={25} />
       </div>
       <div style={{ position: "absolute", left: 101, top: 480, ...rise(jlRow, 12) }}>
-        <div style={{ fontFamily: FONT, fontWeight: 700, fontSize: 26, color: C.ink, whiteSpace: "nowrap" }}>{tx("Marketing internship · JongLeren, Málaga", "Marketingstage · JongLeren, Málaga")}</div>
+        <div style={{ fontFamily: FONT, fontWeight: 700, fontSize: 26, color: C.ink, whiteSpace: "nowrap" }}>{tx("Marketing internship, Málaga · via JongLeren", "Marketingstage in Málaga · via JongLeren")}</div>
         <div style={{ display: "flex", alignItems: "center", gap: 14, marginTop: 2, whiteSpace: "nowrap" }}>
           <span style={{ fontFamily: FONT, fontSize: 22, color: C.gray }}>{tx("2022 – 2023 · 6 months", "2022 – 2023 · 6 maanden")}</span>
           <JLBadge size={17} style={{ transform: `scale(${badge})`, transformOrigin: "0 50%", opacity: clamp01(badge * 2) }} />
@@ -292,7 +292,7 @@ const Panel: React.FC<{ g: number }> = ({ g }) => {
           <Ico n="check" s={22} c={C.green} w={3.2} />{tx("Unlocked", "Ontgrendeld")}
         </div>
         {rows.map(([ic, t], i) => {
-          const b = 1 - kf(g, F_HIT + 4 + i * 4, 16, MOVE), p = kf(g, F_CAND + 10 + i * 3, 12);
+          const b = 1 - kf(g, F_HIT + 1 + i * 2, 10, MOVE), p = kf(g, F_CAND + 10 + i * 3, 12);
           return (
             <div key={ic} style={{ position: "absolute", left: 32, top: 96 + i * 72, display: "flex", alignItems: "center", gap: 18, ...rise(p, 10) }}>
               <div style={{ width: 50, height: 50, borderRadius: "50%", background: C.rose, display: "flex", alignItems: "center", justifyContent: "center" }}><Ico n={ic} s={26} c={C.red} /></div>
@@ -374,7 +374,7 @@ const PersonCard: React.FC<{ who: "emp" | "sof"; g: number }> = ({ who }) => (
 const JLCHIP = { x: 186, y: 612, w: 122, h: 31, mx: 202 };
 
 export const SceneC: React.FC<{ g: number }> = ({ g }) => {
-  if (g < F0 || g > F_END) return null;
+  if (g < F0 || g > F_END - 2) return null;   // D's red field covers from s3+2
 
   /* the dashboard: sharp through the filtering, recedes behind the profile, fades for the connection */
   const recede = kf(g, F_DISC - 2, 20, MOVE);
@@ -404,7 +404,7 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
         const cw = s.w ?? W, cs = cw / 300;
         return (
           <div key={id} style={{ position: "absolute", left: s.x, top: s.y, opacity: s.o * (1 - 0.55 * d), transform: `scale(${s.sc * (isMatch ? 1 + 0.05 * hi : 1 - 0.12 * sink)}) rotate(${s.rot}deg)`, transformOrigin: "50% 50%" }}>
-            <CandidateCard c={POOL[id]} w={cw} match={mv} hi={isMatch ? hi : 0} verified={1 + 1.1 * bump} />
+            <CandidateCard c={POOL[id]} w={cw} match={mv} hi={isMatch ? hi : 0} verified={(1 + 1.1 * bump) * (isMatch ? 1 : 1 - Math.max(d, clamp01(hi)))} />
             {isMatch && pillP > 0 && (
               <div style={{ position: "absolute", left: 41 * cs, top: 70 * cs, transform: `translate(-50%, -50%) scale(${pillP})`, opacity: clamp01(pillP * 2) }}><MatchPill size={8.6 * cs} /></div>
             )}
@@ -447,7 +447,7 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
 
   /* the profile: the card grows out of the grid into the panel; later it folds into Sofia's contact card */
   const grow = kf(g, F_DISC - 2, 18, MOVE);
-  const fold = kf(g, F_AND2 + 1, 16, SNAP);
+  const fold = kf(g, F_AND2 + tx(1, 4), 16, SNAP);
   const card0 = { x: RX, y: RY, w: W2 * 1.05, h: CH2 * 1.05 };
   let px = mix(card0.x - W2 * 0.025, PNL.x, grow), py = mix(card0.y - CH2 * 0.025, PNL.y, grow), pw = mix(card0.w, PNL.w, grow), ph = mix(card0.h, PNL.h, grow);
   px = mix(px, SOF.x, fold); py = mix(py, SOF.y, fold); pw = mix(pw, SOF.w, fold); ph = mix(ph, SOF.h, fold);
@@ -457,7 +457,7 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
   /* credits counter (kept sharp above the receded dashboard) and the coin */
   const lift = kf(g, F_UNLOCK - 6, 6) * (1 - kf(g, F_UNLOCK + 14, 10));
   const roll = kf(g, F_UNLOCK + 2, 8, MOVE);
-  const coinP = kf(g, F_UNLOCK, 18, MOVE);
+  const coinP = kf(g, F_UNLOCK, F_HIT - F_UNLOCK, MOVE);
   const coinOn = g >= F_UNLOCK && g < F_HIT + 1;
 
   /* the connection */
@@ -557,7 +557,7 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
       )}
       {coinOn && [6, 5, 4, 3, 2, 1, 0].map((j) => {
         const t = clamp01(coinP - j * 0.045);
-        const p = qb(COIN0, { x: 1560, y: 30 }, LOCK, t);
+        const p = qb(COIN0, { x: 1760, y: 420 }, LOCK, t);   // round the right, clear of the partner seal
         const s = 1 + 0.5 * Math.sin(Math.PI * t);
         return (
           <div key={j} style={{ position: "absolute", left: p.x - 30, top: p.y - 30, width: 60, height: 60, borderRadius: "50%", background: C.red, opacity: j ? 0.18 : 1,

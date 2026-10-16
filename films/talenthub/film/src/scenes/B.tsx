@@ -177,7 +177,7 @@ const SourceCard: React.FC = () => (
     <JLMark h={78} />
     <div>
       <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 34, color: C.ink, lineHeight: 1.05, letterSpacing: "-0.01em" }}>JongLeren</div>
-      <Pill text={tx("Verified partner", "Geverifieerde partner")} size={18} icon="check" filled style={{ marginTop: 8 }} />
+      <Pill text={tx("Verified internship partner", "Geverifieerde stagepartner")} size={22} icon="check" filled style={{ marginTop: 8 }} />
     </div>
   </div>
 );
@@ -408,7 +408,7 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
   // the window: assembles small and low (caption room), then grows to the hand-off geometry, landing on END
   const { s, dy } = winAt(g);
   // the counter: header → the dashboard's counter
-  const cf = kf(g, GATH + 1, 14, MOVE), cn = Math.round(1248 * kf(g, OPEN + 2, 58, MOVE)), co = kf(g, OPEN + 17, 10);
+  const cf = kf(g, Math.max(GATH + 1, SNAP_ - 12), 14, MOVE), cn = Math.round(1248 * kf(g, OPEN + 2, 58, MOVE)), co = kf(g, OPEN + 17, 10);
   const headPill = kf(g, DB, 10) * (1 - kf(g, GATH, 8));
   // "qualified": the legend for the badges (the USP): internship experience, verified by JongLeren
   const leg = kf(g, QUAL - 2, 12, POP) * (1 - kf(g, GATH, 8)), legAge = g - (QUAL - 2);
@@ -427,6 +427,12 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
           <div style={{ display: "flex", flexWrap: "wrap", gap: 24 }}>{CANDIDATES.slice(0, 8).map((c) => <CandidateCard key={c.id} c={c} w={CW} verified={1} />)}</div>
         </Dashboard>
       )}
+      {/* the counter flies onto the panel under the cards, so it never prints over a card */}
+      {co > 0 && g < SNAP_ + 2 && (
+        <div style={{ position: "absolute", left: mix(CNT0.x, CNT1.x, cf), top: mix(CNT0.y, CNT1.y, cf), fontFamily: FONT, fontWeight: 900, fontSize: mix(CNT0.fs, CNT1.fs, cf), color: C.ink, whiteSpace: "nowrap", opacity: co }}>
+          {cn.toLocaleString(LOCALE)} <span style={{ fontWeight: 400, color: C.gray }}>{tx("candidates", "kandidaten")}</span>
+        </div>
+      )}
       {g >= OPEN && g < SWITCH && <Cards g={g} />}
       {(headPill > 0 || leg > 0) && (
         <div style={{ position: "absolute", right: 202, top: 165, height: 50, display: "flex", alignItems: "center", gap: 22 }}>
@@ -435,11 +441,6 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
             <JLBadge size={21} text={tx("Internship experience verified by JongLeren", "Stage-ervaring geverifieerd door JongLeren")} />
           </div>
           <div style={{ opacity: headPill, transform: `translateY(${(1 - headPill) * 14}px)` }}><Pill text={tx("Candidate database", "Kandidatendatabase")} icon="grid" size={24} /></div>
-        </div>
-      )}
-      {co > 0 && g < SNAP_ + 2 && (
-        <div style={{ position: "absolute", left: mix(CNT0.x, CNT1.x, cf), top: mix(CNT0.y, CNT1.y, cf), fontFamily: FONT, fontWeight: 900, fontSize: mix(CNT0.fs, CNT1.fs, cf), color: C.ink, whiteSpace: "nowrap", opacity: co }}>
-          {cn.toLocaleString(LOCALE)} <span style={{ fontWeight: 400, color: C.gray }}>{tx("candidates", "kandidaten")}</span>
         </div>
       )}
       {g < SNAP_ + 12 && <div style={{ position: "absolute", left: m.x - m.s / 2, top: m.y - (m.s * THR) / 2 }}><THMark size={m.s} /></div>}
