@@ -1,3 +1,34 @@
+# Talent Hub — v2 (October 2026): JongLeren as verified partner, English and Dutch
+
+## Delivery (v2)
+- `deliver/talenthub-v2-en-36s.mp4`: English, 36.0 s (voice-over "Christina").
+- `deliver/talenthub-v2-nl-40s.mp4`: Dutch, 40.3 s (voice-over "Vincent", `vo_nl/vo.mp3`); all on-screen text Dutch.
+- Both 1920×1080, 30 fps, H.264 High BT.709, AAC 48 kHz, about −15 LUFS.
+- v1 (`deliver/talenthub-36s.mp4`) stays as delivered.
+
+## What v2 changes (the client's feedback)
+"The connection with JongLeren must be clearer: it is a USP that the candidates already have internship work
+experience through JongLeren. Bring JongLeren in literally, as a kind of verified partner." The idea: **qualified =
+internship experience, verified by JongLeren** (`plan/v2-jongleren-nl.md`). Scene A still opens on its own.
+- **B:** the graduates come out of a "JongLeren · Verified internship partner" card; on "qualified" the JongLeren
+  alumni get the "JongLeren verified" badge, with the legend "Internship experience verified by JongLeren".
+- **C:** a 4th filter "Verified partner · JongLeren" and a verified scan; the profile shows "Marketing internship,
+  Málaga · via JongLeren" and the round VERIFIED PARTNER seal stamps onto it.
+- **D:** the graduate's path: internship in Spain (JongLeren) → Talent Hub → career abroad; the employers' ranked
+  matches carry the badge.
+- **E:** under the wide logo and tagline, a "Verified talent partner" lockup with the JongLeren mark and wordmark.
+
+## Two languages, one project
+- `film/src/lang.ts` (`LANG`, `tx(en, nl)`): every on-screen string has both languages.
+- `film/src/clock.ts` reads `words.json` (English) or `words_nl.json` (Dutch: the same labels on the Dutch words,
+  built by `scripts/words_nl.py` from `vo_nl/`), so every scene, hand-off and sound cue retimes to the Dutch voice.
+- The Dutch build is `work/NL` (`bash scripts/sync_nl.sh` copies `film/src` and sets `LANG = "nl"`); sound:
+  `python3 scripts/cues.py nl` → `sound/cues_nl.json` → `film/public/audio/mix_nl.wav` (music `sound/bed_nl.wav`,
+  fitted so the last hit lands on "Hub").
+- QC: clipcheck on both drafts (EN moving 100%, typical change 6.1%; NL 100%, 6.2%; every phrase gets a new
+  visual), then a four-lens review (JongLeren clarity and truth, Dutch copy and fit, continuity, sound sync) with an
+  adversarial verify; its 20 confirmed findings are fixed.
+
 # Talent Hub — "Your next connection starts here." (36.0 s, English, SaaS explainer)
 
 A launch film for Talent Hub, a graduate-talent platform still in development (no website yet), so the film
