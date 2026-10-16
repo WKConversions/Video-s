@@ -42,17 +42,18 @@ export const Say: React.FC<{ g: number; words: Wd[]; x?: number; y: number; size
 export const THMark: React.FC<{ size: number; p?: number; color?: string; style?: React.CSSProperties }> = ({ size, p = 1, color = C.red, style }) => {
   const h = size * TH.h / TH.w;
   const tp = SNAP(clamp01(p / 0.45)), hp = SNAP(clamp01((p - 0.2) / 0.45)), ap = ARRIVE(clamp01((p - 0.45) / 0.55));
+  const id = React.useId().replace(/:/g, "");             // unique clip ids per mark, so marks in different build states never share a clip
   return (
     <svg width={size} height={h} viewBox={`0 0 ${TH.w} ${TH.h}`} style={{ display: "block", overflow: "visible", ...style }}>
       <defs>
-        <clipPath id="th-t"><rect x={-20} y={TH.h * (1 - tp)} width={300} height={TH.h + 40} /></clipPath>
-        <clipPath id="th-h"><rect x={280} y={-20} width={520} height={(TH.h + 40) * hp} /></clipPath>
-        <clipPath id="th-arch"><path d={`M 480 ${TH.h} L 480 0 L ${480 + 300 * ap} 0 L ${480 + 300 * ap} ${TH.h} Z`} /></clipPath>
+        <clipPath id={`th-t-${id}`}><rect x={-20} y={TH.h * (1 - tp)} width={300} height={TH.h + 40} /></clipPath>
+        <clipPath id={`th-h-${id}`}><rect x={280} y={-20} width={520} height={(TH.h + 40) * hp} /></clipPath>
+        <clipPath id={`th-arch-${id}`}><path d={`M 480 ${TH.h} L 480 0 L ${480 + 300 * ap} 0 L ${480 + 300 * ap} ${TH.h} Z`} /></clipPath>
       </defs>
-      <g clipPath="url(#th-t)"><path d={TH.t} fill={color} /></g>
-      <g clipPath="url(#th-h)">
+      <g clipPath={`url(#th-t-${id})`}><path d={TH.t} fill={color} /></g>
+      <g clipPath={`url(#th-h-${id})`}>
         {/* the h's stem shows as it drops; its arch is revealed left to right after */}
-        <g clipPath={ap < 1 ? "url(#th-arch)" : undefined}><path d={TH.hh} fill={color} /></g>
+        <g clipPath={ap < 1 ? `url(#th-arch-${id})` : undefined}><path d={TH.hh} fill={color} /></g>
         {ap < 1 && <rect x={287} y={0} width={193} height={TH.h} fill={color} />}
       </g>
     </svg>
