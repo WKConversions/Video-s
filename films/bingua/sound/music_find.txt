@@ -1,0 +1,50 @@
+26 tracks after the genre/length filter
+3.69  Pop Track 03                    107.7 BPM  2.5/s   443 Hz intro  4 beat 4 end real       hit 91.95 / 97 s  Electronic
+2.24  Kodama Night Town               139.7 BPM  2.0/s  1304 Hz intro 13 beat 10 end real       hit 173.15 / 185 s  Electronic
+2.66  Jungle Voices                   129.2 BPM  2.9/s  2751 Hz intro 30 beat 30 end real       hit 87.79 / 98 s  Electronic
+3.48  Swings and Slides               112.3 BPM  2.5/s  1817 Hz intro  9 beat 0 end real       hit 130.05 / 134 s  Pop
+2.70  Sci-Fi Score                    117.5 BPM  3.4/s   661 Hz intro 14 beat 17 end real       hit 89.51 / 97 s  Electronic
+3.53  Anthem #01                      129.2 BPM  2.3/s  1932 Hz intro  7 beat 7 end real       hit 169.37 / 177 s  EDM
+2.20  I Believe in Us                  86.1 BPM  1.7/s  1044 Hz intro  0 beat 2 end real       hit 155.27 / 168 s  Pop
+3.37  Yeah Yeah                       107.7 BPM  2.4/s  2141 Hz intro  2 beat 29 end real       hit 90.53 / 100 s  Pop
+3.01  Techno Fest Vibes               123.0 BPM  3.3/s  2547 Hz intro  0 beat 0 end real       hit 122.42 / 134 s  EDM
+1.87  Cinematic Jazz                   92.3 BPM  4.0/s   660 Hz intro  0 beat 0 end real       hit 138.69 / 144 s  Electronic
+2.54  Baten Kaitos                    129.2 BPM  3.1/s  1782 Hz intro 18 beat 18 end real       hit 208.93 / 216 s  EDM
+2.32  Happy Home                      139.7 BPM  2.4/s  1480 Hz intro  2 beat 1 end real       hit 107.97 / 110 s  Pop
+2.56  At the Playhouse                147.7 BPM  3.0/s  2046 Hz intro  9 beat 4 end real       hit 87.05 / 91 s  Pop
+1.77  Infected Mushroom Vibes         143.6 BPM  2.9/s  1610 Hz intro  0 beat 0 end real       hit 85.91 / 90 s  EDM
+1.58  Techno Fest Feel                126.0 BPM  3.2/s  2135 Hz intro 14 beat 0 end fade       hit 90.23 / 114 s  EDM
+3.03  Workout 02                      112.3 BPM  2.7/s  1446 Hz intro  0 beat 0 end real       hit 100.98 / 105 s  Funk
+2.17  Follow Me Home                  132.5 BPM  1.6/s   862 Hz intro  0 beat 1 end real       hit 70.77 / 74 s  Pop
+3.11  Happy Times                     117.5 BPM  2.6/s  2071 Hz intro  0 beat 0 end real       hit 93.51 / 100 s  Pop
+2.90  House Fest                      123.0 BPM  3.4/s  2560 Hz intro  0 beat 0 end real       hit 122.42 / 136 s  EDM
+1.78  Golden Storm                    126.0 BPM  2.7/s  1736 Hz intro  0 beat 0 end fade       hit 75.09 / 95 s  EDM
+2.78  Gear                            126.0 BPM  2.0/s  1169 Hz intro  0 beat 0 end real       hit 240.51 / 246 s  EDM
+2.72  Summer Dream                    129.2 BPM  2.8/s  2240 Hz intro  0 beat 0 end real       hit 168.86 / 176 s  EDM
+1.74  Nights With Ga                   80.7 BPM  3.0/s  1894 Hz intro  0 beat 0 end real       hit 180.47 / 194 s  EDM
+2.46  Clumsy Daddy                    132.5 BPM  1.8/s  1845 Hz intro 30 beat 16 end real       hit 88.35 / 93 s  Pop
+---
+3.69  Pop Track 03                   Lily J                107.7 BPM  2.5/s   443 Hz intro  4 beat 4 end real       tail 1 97 s  Electronic
+3.53  Anthem #01                     Eugenio Mininni       129.2 BPM  2.3/s  1932 Hz intro  7 beat 7 end real       tail 1 177 s  EDM
+3.48  Swings and Slides              Ahjay Stelino         112.3 BPM  2.5/s  1817 Hz intro  9 beat 0 end real       tail 2 134 s  Pop
+3.37  Yeah Yeah                      Michael Ramir C.      107.7 BPM  2.4/s  2141 Hz intro  2 beat 29 end real       tail 3 100 s  Pop
+3.11  Happy Times                    Alejandro Magaña (A.  117.5 BPM  2.6/s  2071 Hz intro  0 beat 0 end real       tail 2 100 s  Pop
+3.03  Workout 02                     Lily J                112.3 BPM  2.7/s  1446 Hz intro  0 beat 0 end real       tail 2 105 s  Funk
+3.01  Techno Fest Vibes              Alejandro Magaña (A.  123.0 BPM  3.3/s  2547 Hz intro  0 beat 0 end real       tail 2 134 s  EDM
+2.90  House Fest                     Alejandro Magaña (A.  123.0 BPM  3.4/s  2560 Hz intro  0 beat 0 end real       tail 1 136 s  EDM
+2.78  Gear                           Andrew Ev             126.0 BPM  2.0/s  1169 Hz intro  0 beat 0 end real       tail 4 246 s  EDM
+2.72  Summer Dream                   Eugenio Mininni       129.2 BPM  2.8/s  2240 Hz intro  0 beat 0 end real       tail 2 176 s  EDM
+2.70  Sci-Fi Score                   Arulo                 117.5 BPM  3.4/s   661 Hz intro 14 beat 17 end real       tail 5 97 s  Electronic
+2.66  Jungle Voices                  Diego Nava            129.2 BPM  2.9/s  2751 Hz intro 30 beat 30 end real       tail 6 98 s  Electronic
+2.56  At the Playhouse               Michael Ramir C.      147.7 BPM  3.0/s  2046 Hz intro  9 beat 4 end real       tail 1 91 s  Pop
+2.54  Baten Kaitos                   Eugenio Mininni       129.2 BPM  3.1/s  1782 Hz intro 18 beat 18 end real       tail 3 216 s  EDM
+2.46  Clumsy Daddy                   Michael Ramir C.      132.5 BPM  1.8/s  1845 Hz intro 30 beat 16 end real       tail 1 93 s  Pop
+2.32  Happy Home                     Michael Ramir C.      139.7 BPM  2.4/s  1480 Hz intro  2 beat 1 end real       tail 1 110 s  Pop
+2.24  Kodama Night Town              Alejandro Magaña (A.  139.7 BPM  2.0/s  1304 Hz intro 13 beat 10 end real       tail 4 185 s  Electronic
+2.20  I Believe in Us                Michael Ramir C.       86.1 BPM  1.7/s  1044 Hz intro  0 beat 2 end real       tail 6 168 s  Pop
+2.17  Follow Me Home                 Arulo                 132.5 BPM  1.6/s   862 Hz intro  0 beat 1 end real       tail 1 74 s  Pop
+1.87  Cinematic Jazz                 Francisco Alvear       92.3 BPM  4.0/s   660 Hz intro  0 beat 0 end real       tail 1 144 s  Electronic
+1.78  Golden Storm                   Diego Nava            126.0 BPM  2.7/s  1736 Hz intro  0 beat 0 end fade       tail 16 95 s  EDM
+1.77  Infected Mushroom Vibes        Alejandro Magaña (A.  143.6 BPM  2.9/s  1610 Hz intro  0 beat 0 end real       tail 2 90 s  EDM
+1.74  Nights With Ga                 Eugenio Mininni        80.7 BPM  3.0/s  1894 Hz intro  0 beat 0 end real       tail 1 194 s  EDM
+1.58  Techno Fest Feel               Alejandro Magaña (A.  126.0 BPM  3.2/s  2135 Hz intro 14 beat 0 end fade       tail 17 114 s  EDM

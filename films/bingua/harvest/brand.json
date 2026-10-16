@@ -1,0 +1,74 @@
+{
+ "colors": [
+  [
+   "rgb(0, 0, 0)",
+   42484
+  ],
+  [
+   "rgba(60, 60, 67, 0.76)",
+   5148
+  ],
+  [
+   "rgb(10, 100, 154)",
+   348
+  ],
+  [
+   "rgb(11, 45, 70)",
+   10
+  ]
+ ],
+ "backgrounds": [
+  [
+   "rgb(242, 242, 247)",
+   22579965
+  ],
+  [
+   "rgb(255, 255, 255)",
+   2499653
+  ],
+  [
+   "rgb(0, 0, 0)",
+   193771.875
+  ],
+  [
+   "rgb(28, 28, 30)",
+   175253.75
+  ],
+  [
+   "rgb(229, 229, 234)",
+   8000
+  ],
+  [
+   "rgb(47, 175, 238)",
+   2022.75
+  ]
+ ],
+ "fonts": [
+  [
+   "\"Inter Variable\" 400",
+   177
+  ],
+  [
+   "\"Inter Variable\" 600",
+   41
+  ],
+  [
+   "\"Inter Variable\" 700",
+   12
+  ]
+ ],
+ "images": [
+  "https://bingua.app/favicon.ico",
+  "https://bingua.app/icon-96.png",
+  "https://bingua.app/apple-touch-icon.png",
+  "https://bingua.app/_astro/BinguaRoundedLogo.DEyuMzdY_Z1vTBR5.webp",
+  "https://bingua.app/_astro/app-store-badge-black.CVyK0T4N.svg",
+  "https://bingua.app/_astro/app-store-badge-white.DpjR1r1e.svg",
+  "https://bingua.app/_astro/Only_Screenshot1.PZj2wLbK_2hwbUf.webp",
+  "https://bingua.app/_astro/Only_Screenshot2.JbJi-64A_Z1dfxFQ.webp",
+  "https://bingua.app/_astro/Only_Screenshot3.BYfpn8CZ_ZFnair.webp",
+  "https://bingua.app/_astro/Only_Screenshot4.UF8XGPif_23s6Rh.webp"
+ ],
+ "vars": {},
+ "title": "Bingua: Learn Languages from Real Native-Speaker Videos"
+}

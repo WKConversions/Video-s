@@ -1,0 +1,580 @@
+{
+ "fps": 30,
+ "frames": 1128,
+ "library": "../../alumni/sound/lib",
+ "vo": {
+  "file": "../vo/vo.mp3",
+  "at": 0,
+  "compress": true
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "lufs": -24,
+  "duck_db": 6,
+  "fade_in": 0.3,
+  "fade_out": 0.6,
+  "lifts": [
+   [
+    34.6,
+    37.6,
+    3
+   ]
+  ]
+ },
+ "sfx": [
+  {
+   "frame": 2,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "note": "a feed flick"
+  },
+  {
+   "frame": 8,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 2,
+   "note": "a feed flick"
+  },
+  {
+   "frame": 42,
+   "id": "kenney-select-002",
+   "db": -5,
+   "pitch": 2,
+   "note": "the word lights up"
+  },
+  {
+   "frame": 51,
+   "id": "gen-pop",
+   "db": -7,
+   "pitch": 3,
+   "note": "the word chip"
+  },
+  {
+   "frame": 61,
+   "id": "gen-whoosh-short",
+   "db": -8,
+   "pitch": -2,
+   "note": "the card becomes the logo"
+  },
+  {
+   "frame": 74,
+   "id": "gen-pop",
+   "db": -4,
+   "pitch": 2,
+   "note": "the play triangle"
+  },
+  {
+   "frame": 82,
+   "id": "gen-shimmer",
+   "db": -7,
+   "pitch": 2,
+   "note": "the wordmark"
+  },
+  {
+   "frame": 99,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "pitch": -1,
+   "note": "feed swipe"
+  },
+  {
+   "frame": 112,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "note": "a greeting bubble"
+  },
+  {
+   "frame": 116,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 1,
+   "note": "a greeting bubble"
+  },
+  {
+   "frame": 118,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 2,
+   "note": "a greeting bubble"
+  },
+  {
+   "frame": 118,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 3,
+   "note": "a greeting bubble"
+  },
+  {
+   "frame": 121,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 4,
+   "note": "a greeting bubble"
+  },
+  {
+   "frame": 124,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 5,
+   "note": "a greeting bubble"
+  },
+  {
+   "frame": 143,
+   "id": "gen-whoosh-short",
+   "db": -8,
+   "note": "the video row"
+  },
+  {
+   "frame": 176,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 3,
+   "note": "a speech bubble"
+  },
+  {
+   "frame": 180,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 2,
+   "note": "a speech bubble"
+  },
+  {
+   "frame": 188,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 1,
+   "note": "a speech bubble"
+  },
+  {
+   "frame": 188,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": -1,
+   "note": "a speech bubble"
+  },
+  {
+   "frame": 193,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "note": "a speech bubble"
+  },
+  {
+   "frame": 232,
+   "id": "gen-whoosh-short",
+   "db": -8,
+   "note": "one video comes forward"
+  },
+  {
+   "frame": 254,
+   "id": "kenney-select-001",
+   "db": -8,
+   "note": "translations slide in"
+  },
+  {
+   "frame": 287,
+   "id": "kenney-click-001",
+   "db": -1,
+   "note": "tap the word"
+  },
+  {
+   "frame": 290,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 2,
+   "note": "the word pop-up"
+  },
+  {
+   "frame": 321,
+   "id": "gen-whoosh-short",
+   "db": -8,
+   "pitch": 2,
+   "note": "swipe the line"
+  },
+  {
+   "frame": 328,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "note": "a chunk"
+  },
+  {
+   "frame": 332,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "pitch": 2,
+   "note": "a chunk"
+  },
+  {
+   "frame": 336,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "pitch": 4,
+   "note": "a chunk"
+  },
+  {
+   "frame": 357,
+   "id": "kenney-select-002",
+   "db": -5,
+   "pitch": 4,
+   "note": "it clicks"
+  },
+  {
+   "frame": 375,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "pitch": -1,
+   "note": "feed swipe"
+  },
+  {
+   "frame": 398,
+   "id": "kenney-select-001",
+   "db": -7,
+   "note": "the word marked"
+  },
+  {
+   "frame": 415,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": 2,
+   "note": "the word lifts"
+  },
+  {
+   "frame": 439,
+   "id": "kenney-click-001",
+   "db": 0,
+   "note": "+ Save"
+  },
+  {
+   "frame": 441,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 3,
+   "note": "Saved"
+  },
+  {
+   "frame": 451,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 2,
+   "note": "into the cards"
+  },
+  {
+   "frame": 461,
+   "id": "kenney-tick-004",
+   "db": -4,
+   "pitch": 5,
+   "note": "badge 15"
+  },
+  {
+   "frame": 496,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "note": "a saved word gathers"
+  },
+  {
+   "frame": 499,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 1,
+   "note": "a saved word gathers"
+  },
+  {
+   "frame": 503,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 2,
+   "note": "a saved word gathers"
+  },
+  {
+   "frame": 506,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 3,
+   "note": "a saved word gathers"
+  },
+  {
+   "frame": 541,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "note": "the cards stack"
+  },
+  {
+   "frame": 552,
+   "id": "kenney-select-001",
+   "db": -6,
+   "pitch": 2,
+   "note": "a card flips"
+  },
+  {
+   "frame": 563,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "note": "a quiz tile"
+  },
+  {
+   "frame": 566,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": 2,
+   "note": "a quiz tile"
+  },
+  {
+   "frame": 569,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": 4,
+   "note": "a quiz tile"
+  },
+  {
+   "frame": 572,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": 6,
+   "note": "a quiz tile"
+  },
+  {
+   "frame": 586,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "note": "the curve"
+  },
+  {
+   "frame": 596,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "note": "a review bumps the curve"
+  },
+  {
+   "frame": 603,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "pitch": 2,
+   "note": "a review bumps the curve"
+  },
+  {
+   "frame": 611,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "pitch": 4,
+   "note": "a review bumps the curve"
+  },
+  {
+   "frame": 616,
+   "id": "kenney-select-002",
+   "db": -3,
+   "pitch": 4,
+   "note": "it sticks"
+  },
+  {
+   "frame": 634,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "pitch": -1,
+   "note": "feed swipe"
+  },
+  {
+   "frame": 648,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "pitch": -3,
+   "note": "the endless list"
+  },
+  {
+   "frame": 675,
+   "id": "kenney-tick-004",
+   "db": -3,
+   "pitch": -2,
+   "note": "struck through"
+  },
+  {
+   "frame": 695,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "pitch": -2,
+   "note": "the worksheets"
+  },
+  {
+   "frame": 733,
+   "id": "kenney-tick-004",
+   "db": -3,
+   "pitch": -2,
+   "note": "crossed out"
+  },
+  {
+   "frame": 773,
+   "id": "gen-whoosh-medium",
+   "db": -7,
+   "note": "the video row"
+  },
+  {
+   "frame": 794,
+   "id": "gen-pop",
+   "db": -4,
+   "pitch": 3,
+   "note": "a heart"
+  },
+  {
+   "frame": 821,
+   "id": "kenney-click-001",
+   "db": -11,
+   "note": "the counter climbs"
+  },
+  {
+   "frame": 824,
+   "id": "kenney-click-001",
+   "db": -11,
+   "pitch": 1,
+   "note": "the counter climbs"
+  },
+  {
+   "frame": 828,
+   "id": "kenney-click-001",
+   "db": -11,
+   "pitch": 2,
+   "note": "the counter climbs"
+  },
+  {
+   "frame": 832,
+   "id": "kenney-click-001",
+   "db": -11,
+   "pitch": 3,
+   "note": "the counter climbs"
+  },
+  {
+   "frame": 835,
+   "id": "kenney-click-001",
+   "db": -11,
+   "pitch": 4,
+   "note": "the counter climbs"
+  },
+  {
+   "frame": 839,
+   "id": "kenney-click-001",
+   "db": -11,
+   "pitch": 5,
+   "note": "the counter climbs"
+  },
+  {
+   "frame": 867,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "note": "a video adds XP"
+  },
+  {
+   "frame": 876,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "pitch": 2,
+   "note": "a video adds XP"
+  },
+  {
+   "frame": 885,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "pitch": 4,
+   "note": "a video adds XP"
+  },
+  {
+   "frame": 894,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "pitch": 6,
+   "note": "a video adds XP"
+  },
+  {
+   "frame": 911,
+   "id": "kenney-select-002",
+   "db": -4,
+   "pitch": 5,
+   "note": "goal reached"
+  },
+  {
+   "frame": 933,
+   "id": "kenney-click-001",
+   "db": -5,
+   "note": "speed toggles"
+  },
+  {
+   "frame": 941,
+   "id": "kenney-click-001",
+   "db": -5,
+   "pitch": 2,
+   "note": "speed toggles"
+  },
+  {
+   "frame": 948,
+   "id": "kenney-click-001",
+   "db": -5,
+   "pitch": 4,
+   "note": "speed toggles"
+  },
+  {
+   "frame": 956,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "pitch": -1,
+   "note": "feed swipe"
+  },
+  {
+   "frame": 973,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 2,
+   "note": "the logo"
+  },
+  {
+   "frame": 982,
+   "id": "gen-shimmer",
+   "db": -5,
+   "pitch": 3,
+   "note": "the wordmark"
+  },
+  {
+   "frame": 1040,
+   "id": "gen-swell",
+   "db": -6,
+   "note": "the end card"
+  },
+  {
+   "frame": 1052,
+   "id": "kenney-drop-003",
+   "db": -12,
+   "note": "a language chip"
+  },
+  {
+   "frame": 1054,
+   "id": "kenney-drop-003",
+   "db": -12,
+   "pitch": 1,
+   "note": "a language chip"
+  },
+  {
+   "frame": 1056,
+   "id": "kenney-drop-003",
+   "db": -12,
+   "pitch": 2,
+   "note": "a language chip"
+  },
+  {
+   "frame": 1058,
+   "id": "kenney-drop-003",
+   "db": -12,
+   "pitch": 3,
+   "note": "a language chip"
+  },
+  {
+   "frame": 1060,
+   "id": "kenney-drop-003",
+   "db": -12,
+   "pitch": 4,
+   "note": "a language chip"
+  },
+  {
+   "frame": 1062,
+   "id": "kenney-drop-003",
+   "db": -12,
+   "pitch": 5,
+   "note": "a language chip"
+  }
+ ]
+}

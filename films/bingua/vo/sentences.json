@@ -1,0 +1,110 @@
+[
+ {
+  "i": 1,
+  "text": "Turn scrolling into learning.",
+  "start": 0.075,
+  "end": 1.93,
+  "pause_after": 0.496,
+  "first_key": "w:turn",
+  "last_key": "w:learning"
+ },
+ {
+  "i": 2,
+  "text": "Meet Bingua.",
+  "start": 2.426,
+  "end": 3.302,
+  "pause_after": 0.45,
+  "first_key": "w:meet",
+  "last_key": "w:bingua"
+ },
+ {
+  "i": 3,
+  "text": "Learn languages through real videos and everyday conversations.",
+  "start": 3.751,
+  "end": 7.261,
+  "pause_after": 0.454,
+  "first_key": "w:learn",
+  "last_key": "w:conversations"
+ },
+ {
+  "i": 4,
+  "text": "Follow along with translations that make unfamiliar words and sentences easy to understand.",
+  "start": 7.715,
+  "end": 12.487,
+  "pause_after": 0.477,
+  "first_key": "w:follow",
+  "last_key": "w:understand"
+ },
+ {
+  "i": 5,
+  "text": "See a word you want to remember?",
+  "start": 12.963,
+  "end": 14.299,
+  "pause_after": 0.329,
+  "first_key": "w:see",
+  "last_key": "w:remember"
+ },
+ {
+  "i": 6,
+  "text": "Save it instantly.",
+  "start": 14.628,
+  "end": 15.658,
+  "pause_after": 0.409,
+  "first_key": "w:save",
+  "last_key": "w:instantly"
+ },
+ {
+  "i": 7,
+  "text": "Bingua turns your discoveries into smart flashcards and quizzes, helping new vocabulary stick.",
+  "start": 16.067,
+  "end": 21.236,
+  "pause_after": 0.369,
+  "first_key": "w:bingua2",
+  "last_key": "w:stick"
+ },
+ {
+  "i": 8,
+  "text": "No endless word lists.",
+  "start": 21.605,
+  "end": 23.041,
+  "pause_after": 0.135,
+  "first_key": "w:no",
+  "last_key": "w:lists"
+ },
+ {
+  "i": 9,
+  "text": "No repetitive textbook exercises.",
+  "start": 23.176,
+  "end": 25.337,
+  "pause_after": 0.419,
+  "first_key": "w:no2",
+  "last_key": "w:exercises"
+ },
+ {
+  "i": 10,
+  "text": "Just content you enjoy, a growing vocabulary, and more confidence with every video, at your own pace.",
+  "start": 25.756,
+  "end": 32.019,
+  "pause_after": 0.526,
+  "first_key": "w:just",
+  "last_key": "w:pace"
+ },
+ {
+  "i": 11,
+  "text": "Bingua.",
+  "start": 32.545,
+  "end": 33.04,
+  "pause_after": 0.391,
+  "first_key": "w:bingua3",
+  "last_key": "w:bingua3"
+ },
+ {
+  "i": 12,
+  "text": "Learn languages by scrolling.",
+  "start": 33.431,
+  "end": 35.065,
+  "pause_after": 0.252,
+  "first_key": "w:learn2",
+  "last_key": "w:scrolling2"
+ }
+]

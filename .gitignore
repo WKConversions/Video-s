@@ -6,3 +6,8 @@ films/*/film/src/__probe*.tsx
 .DS_Store
 __pycache__/
 films/creoble/work/
+films/bingua/work/
+films/bingua/stock/
+films/bingua/sound/music/candidates/
+films/bingua/film/out/
+films/bingua/harvest/pages/home-full.png

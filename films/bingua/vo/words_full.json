@@ -1,0 +1,482 @@
+[
+ {
+  "w": "Turn",
+  "key": "w:turn",
+  "start": 0.075,
+  "end": 0.28
+ },
+ {
+  "w": "scrolling",
+  "key": "w:scrolling",
+  "start": 0.28,
+  "end": 0.84
+ },
+ {
+  "w": "into",
+  "key": "w:into",
+  "start": 0.84,
+  "end": 1.36
+ },
+ {
+  "w": "learning.",
+  "key": "w:learning",
+  "start": 1.36,
+  "end": 1.93
+ },
+ {
+  "w": "Meet",
+  "key": "w:meet",
+  "start": 2.426,
+  "end": 2.64
+ },
+ {
+  "w": "Bingua.",
+  "key": "w:bingua",
+  "start": 2.64,
+  "end": 3.302
+ },
+ {
+  "w": "Learn",
+  "key": "w:learn",
+  "start": 3.751,
+  "end": 3.92
+ },
+ {
+  "w": "languages",
+  "key": "w:languages",
+  "start": 3.92,
+  "end": 4.4
+ },
+ {
+  "w": "through",
+  "key": "w:through",
+  "start": 4.4,
+  "end": 4.76
+ },
+ {
+  "w": "real",
+  "key": "w:real",
+  "start": 4.76,
+  "end": 5.12
+ },
+ {
+  "w": "videos",
+  "key": "w:videos",
+  "start": 5.12,
+  "end": 5.52
+ },
+ {
+  "w": "and",
+  "key": "w:and",
+  "start": 5.52,
+  "end": 5.86
+ },
+ {
+  "w": "everyday",
+  "key": "w:everyday",
+  "start": 5.86,
+  "end": 6.28
+ },
+ {
+  "w": "conversations.",
+  "key": "w:conversations",
+  "start": 6.28,
+  "end": 7.261
+ },
+ {
+  "w": "Follow",
+  "key": "w:follow",
+  "start": 7.715,
+  "end": 7.88
+ },
+ {
+  "w": "along",
+  "key": "w:along",
+  "start": 7.88,
+  "end": 8.24
+ },
+ {
+  "w": "with",
+  "key": "w:with",
+  "start": 8.24,
+  "end": 8.4
+ },
+ {
+  "w": "translations",
+  "key": "w:translations",
+  "start": 8.4,
+  "end": 8.88
+ },
+ {
+  "w": "that",
+  "key": "w:that",
+  "start": 8.88,
+  "end": 9.32
+ },
+ {
+  "w": "make",
+  "key": "w:make",
+  "start": 9.32,
+  "end": 9.48
+ },
+ {
+  "w": "unfamiliar",
+  "key": "w:unfamiliar",
+  "start": 9.48,
+  "end": 10.0
+ },
+ {
+  "w": "words",
+  "key": "w:words",
+  "start": 10.0,
+  "end": 10.5
+ },
+ {
+  "w": "and",
+  "key": "w:and2",
+  "start": 10.5,
+  "end": 10.7
+ },
+ {
+  "w": "sentences",
+  "key": "w:sentences",
+  "start": 10.7,
+  "end": 11.14
+ },
+ {
+  "w": "easy",
+  "key": "w:easy",
+  "start": 11.14,
+  "end": 11.68
+ },
+ {
+  "w": "to",
+  "key": "w:to",
+  "start": 11.68,
+  "end": 11.84
+ },
+ {
+  "w": "understand.",
+  "key": "w:understand",
+  "start": 11.84,
+  "end": 12.487
+ },
+ {
+  "w": "See",
+  "key": "w:see",
+  "start": 12.963,
+  "end": 13.14
+ },
+ {
+  "w": "a",
+  "key": "w:a",
+  "start": 13.14,
+  "end": 13.26
+ },
+ {
+  "w": "word",
+  "key": "w:word",
+  "start": 13.26,
+  "end": 13.42
+ },
+ {
+  "w": "you",
+  "key": "w:you",
+  "start": 13.42,
+  "end": 13.56
+ },
+ {
+  "w": "want",
+  "key": "w:want",
+  "start": 13.56,
+  "end": 13.7
+ },
+ {
+  "w": "to",
+  "key": "w:to2",
+  "start": 13.7,
+  "end": 13.82
+ },
+ {
+  "w": "remember?",
+  "key": "w:remember",
+  "start": 13.82,
+  "end": 14.299
+ },
+ {
+  "w": "Save",
+  "key": "w:save",
+  "start": 14.628,
+  "end": 14.88
+ },
+ {
+  "w": "it",
+  "key": "w:it",
+  "start": 14.88,
+  "end": 15.02
+ },
+ {
+  "w": "instantly.",
+  "key": "w:instantly",
+  "start": 15.02,
+  "end": 15.658
+ },
+ {
+  "w": "Bingua",
+  "key": "w:bingua2",
+  "start": 16.067,
+  "end": 16.3
+ },
+ {
+  "w": "turns",
+  "key": "w:turns",
+  "start": 16.3,
+  "end": 16.66
+ },
+ {
+  "w": "your",
+  "key": "w:your",
+  "start": 16.66,
+  "end": 16.82
+ },
+ {
+  "w": "discoveries",
+  "key": "w:discoveries",
+  "start": 16.82,
+  "end": 17.28
+ },
+ {
+  "w": "into",
+  "key": "w:into2",
+  "start": 17.28,
+  "end": 17.64
+ },
+ {
+  "w": "smart",
+  "key": "w:smart",
+  "start": 17.64,
+  "end": 18.04
+ },
+ {
+  "w": "flashcards",
+  "key": "w:flashcards",
+  "start": 18.04,
+  "end": 18.62
+ },
+ {
+  "w": "and",
+  "key": "w:and3",
+  "start": 18.62,
+  "end": 18.78
+ },
+ {
+  "w": "quizzes,",
+  "key": "w:quizzes",
+  "start": 18.78,
+  "end": 19.309
+ },
+ {
+  "w": "helping",
+  "key": "w:helping",
+  "start": 19.527,
+  "end": 19.74
+ },
+ {
+  "w": "new",
+  "key": "w:new",
+  "start": 19.74,
+  "end": 20.06
+ },
+ {
+  "w": "vocabulary",
+  "key": "w:vocabulary",
+  "start": 20.06,
+  "end": 20.54
+ },
+ {
+  "w": "stick.",
+  "key": "w:stick",
+  "start": 20.54,
+  "end": 21.236
+ },
+ {
+  "w": "No",
+  "key": "w:no",
+  "start": 21.605,
+  "end": 21.86
+ },
+ {
+  "w": "endless",
+  "key": "w:endless",
+  "start": 21.86,
+  "end": 22.18
+ },
+ {
+  "w": "word",
+  "key": "w:word2",
+  "start": 22.18,
+  "end": 22.5
+ },
+ {
+  "w": "lists.",
+  "key": "w:lists",
+  "start": 22.5,
+  "end": 23.041
+ },
+ {
+  "w": "No",
+  "key": "w:no2",
+  "start": 23.176,
+  "end": 23.44
+ },
+ {
+  "w": "repetitive",
+  "key": "w:repetitive",
+  "start": 23.44,
+  "end": 23.98
+ },
+ {
+  "w": "textbook",
+  "key": "w:textbook",
+  "start": 23.98,
+  "end": 24.44
+ },
+ {
+  "w": "exercises.",
+  "key": "w:exercises",
+  "start": 24.44,
+  "end": 25.337
+ },
+ {
+  "w": "Just",
+  "key": "w:just",
+  "start": 25.756,
+  "end": 25.9
+ },
+ {
+  "w": "content",
+  "key": "w:content",
+  "start": 25.9,
+  "end": 26.26
+ },
+ {
+  "w": "you",
+  "key": "w:you2",
+  "start": 26.26,
+  "end": 26.46
+ },
+ {
+  "w": "enjoy,",
+  "key": "w:enjoy",
+  "start": 26.46,
+  "end": 27.014
+ },
+ {
+  "w": "a",
+  "key": "w:a2",
+  "start": 27.261,
+  "end": 27.36
+ },
+ {
+  "w": "growing",
+  "key": "w:growing",
+  "start": 27.36,
+  "end": 27.64
+ },
+ {
+  "w": "vocabulary,",
+  "key": "w:vocabulary2",
+  "start": 27.64,
+  "end": 28.22
+ },
+ {
+  "w": "and",
+  "key": "w:and4",
+  "start": 28.22,
+  "end": 28.507
+ },
+ {
+  "w": "more",
+  "key": "w:more",
+  "start": 28.734,
+  "end": 29.1
+ },
+ {
+  "w": "confidence",
+  "key": "w:confidence",
+  "start": 29.1,
+  "end": 29.54
+ },
+ {
+  "w": "with",
+  "key": "w:with2",
+  "start": 29.54,
+  "end": 29.887
+ },
+ {
+  "w": "every",
+  "key": "w:every",
+  "start": 30.046,
+  "end": 30.26
+ },
+ {
+  "w": "video,",
+  "key": "w:video",
+  "start": 30.26,
+  "end": 30.773
+ },
+ {
+  "w": "at",
+  "key": "w:at",
+  "start": 31.108,
+  "end": 31.2
+ },
+ {
+  "w": "your",
+  "key": "w:your2",
+  "start": 31.2,
+  "end": 31.34
+ },
+ {
+  "w": "own",
+  "key": "w:own",
+  "start": 31.34,
+  "end": 31.52
+ },
+ {
+  "w": "pace.",
+  "key": "w:pace",
+  "start": 31.52,
+  "end": 32.019
+ },
+ {
+  "w": "Bingua.",
+  "key": "w:bingua3",
+  "start": 32.545,
+  "end": 33.04
+ },
+ {
+  "w": "Learn",
+  "key": "w:learn2",
+  "start": 33.431,
+  "end": 33.62
+ },
+ {
+  "w": "languages",
+  "key": "w:languages2",
+  "start": 33.62,
+  "end": 34.04
+ },
+ {
+  "w": "by",
+  "key": "w:by",
+  "start": 34.04,
+  "end": 34.46
+ },
+ {
+  "w": "scrolling.",
+  "key": "w:scrolling2",
+  "start": 34.46,
+  "end": 35.065
+ }
+]

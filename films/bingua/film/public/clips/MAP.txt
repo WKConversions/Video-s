@@ -1,0 +1,7 @@
+v1 = close-up-of-a-woman-talking-with-her-friend-43251
+v2 = friends-having-a-conversation-at-the-coffee-shop-23015
+v3 = portrait-of-an-influencer-talking-to-the-camera-42323
+v4 = therapist-in-his-office-talking-to-the-camera-4834
+v5 = woman-eating-fast-food-in-the-street-26219
+v6 = women-having-a-conversation-in-the-cafeteria-24397
+v7 = youtuber-vlogging-in-his-studio-41272
