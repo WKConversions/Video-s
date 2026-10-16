@@ -69,6 +69,15 @@ cue("w:your", 0.0, "gen-whoosh-short", -12, note="the wide logo")
 cue("w:connection", 0.1, TICK, -10, 4, "the connection line")
 cue("w:here", 0.3, "gen-swell", -11, note="end card")
 
+# v2: JongLeren as the verified partner (plan/v2-jongleren-nl.md)
+cue("w:graduates", -0.1, TAP, -13, 1, "the JongLeren partner card")
+cue("w:qualified2", 0.35, "gen-shimmer", -16, 2, "verified by JongLeren legend")
+cue("w:its", 0.0, TICK, -12, 3, "the path reaches Talent Hub")
+cue("w:abroad", 0.35, "gen-success", -15, 0, "career abroad checked")
+cue("w:here", 0.18, TICK, -13, 2, "the thread drops")
+cue("w:here", 0.57, "gen-tap", -11, 3, "the verified check lands")
+cue("w:here", 0.75, "gen-appear", -15, 0, "the partner lockup")
+
 out = {"fps": FPS, "frames": round(END * FPS), "library": "../../alumni/sound/lib",
        "vo": {"file": "../vo_nl/vo.mp3" if NL else "../vo/vo.mp3", "at": 0, "compress": True},
        "music": {"file": "bed_nl.wav" if NL else "bed.wav", "at": 0, "lufs": -24, "duck_db": 6, "fade_in": 0.3, "fade_out": 0.6, "lifts": [[L["w:here"], END, 3]]},
