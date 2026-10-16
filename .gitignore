@@ -11,3 +11,4 @@ films/bingua/stock/
 films/bingua/sound/music/candidates/
 films/bingua/film/out/
 films/bingua/harvest/pages/home-full.png
+films/*/film/node_modules

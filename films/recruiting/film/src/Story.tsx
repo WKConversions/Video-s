@@ -388,7 +388,8 @@ const Reward: React.FC<{ g: number; o: number; x: number }> = ({ g, o, x }) => {
 };
 
 /* ---------- live: the job leaves the window for the marketplace, recruiters take it on ---------- */
-const REC = [["img/r-henning.jpg", "Henning"], ["img/r-sebastian.jpg", "Sebastian"], ["img/r-stephanie.jpg", "Stephanie"], ["img/r-elin.jpg", "Elin"], ["img/r-johan.jpg", "Johan"]];
+// anonymous stock portraits (Pexels), not the site's real recruiters: the client asked for the people to stay anonymous
+const REC = [["img/r-1.jpg", "Erik"], ["img/r-2.jpg", "Viktor"], ["img/r-3.jpg", "Sofia"], ["img/r-4.jpg", "Emma"], ["img/r-5.jpg", "Daniel"]];
 const recAt = (i: number) => ({ x: 460 + i * 200, y: 700 + (i % 2) * 40 });
 const Live: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("live") || g > f("arrive+1.2")) return null;

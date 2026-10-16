@@ -38,14 +38,14 @@ voice-over ("Christina – Energetic Commercial American Female", 48.0 s). The b
 |---|---|---|
 | 0.08 | Hiring, simplified. | Scattered emails, CVs and spreadsheets around "Hiring, simplified."; they gather into one point |
 | 1.96 | One platform. | The platform window opens out of it (the candidate pipeline); "One place for the whole process" |
-| 3.06 | More recruiters. | The site's five recruiters appear around the platform, connected to it |
+| 3.06 | More recruiters. | Five recruiters appear around the platform, connected to it (anonymous stock portraits) |
 | 4.18 | Better matches. | The AI match scores appear and count up (all 7.0 or higher); the best match lights up; "7/10 match score before a candidate reaches you" |
 | 5.51 | Meet Recruiting Rewards. | The window folds into the logo; "The AI hiring marketplace" |
 | 7.37 | Create a job. | The window opens on "Who do you want to hire today?"; the role is typed in one sentence |
 | 8.48 | Add your requirements. | The criteria are detected one by one (6/7) |
 | 9.75 | Set the reward. | Publishing and reward: the recommended 95 000 SEK is clicked; "Always free until the job starts" |
 | 10.96 | Hit publish. | Publish is clicked: a "Published" confirmation rises ("Out to the marketplace after a quick quality check", the demo's line) |
-| 12.20 | Your vacancy goes live, and recruiters get to work. | The vacancy grows out of the confirmation and goes Live; the recruiters (the site's five, and the demo's Arthur Berg) connect to it, "Working on it"; "Within days, candidates arrive" |
+| 12.20 | Your vacancy goes live, and recruiters get to work. | The vacancy grows out of the confirmation and goes Live; the recruiters (the five, and the demo's Arthur Berg) connect to it, "Working on it"; "Within days, candidates arrive" |
 | 15.33 | As candidates arrive, | Candidates fly from the recruiters into the pipeline (Oskar from Arthur, his recruiter); the vacancy shrinks into the pipeline's job chip |
 | 16.60 | see their profiles, match scores, and applications in one clear dashboard. | The profile panel: facts, then the AI match score and its bars, then the application; it closes onto the full dashboard |
 | 21.61 | Compare candidates instantly. | Three candidates side by side; the best match is marked |
@@ -125,3 +125,9 @@ cd film && bash ../scripts/render_chunks.sh Film out/final.mp4 '{"blurSamples":4
 ## Assumptions
 - 16:9, 50.5 s: the voice-over plus about 2.5 s on the end card.
 - The script is used exactly as written.
+
+## Recruiter portraits
+The client asked for the people in the film to be anonymous, so the five recruiter portraits are royalty-free stock photos
+of random people from Pexels (Pexels licence: free for commercial use, no credit needed), not the recruiters from the
+site, and they carry generic first names (Erik, Viktor, Sofia, Emma, Daniel). Sources, cropped and lightly warmed in
+`film/public/img/r-1..5.jpg`: pexels.com/photo/3778603, /3785079, /1181690, /3763188, /2182970.
