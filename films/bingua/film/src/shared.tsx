@@ -17,11 +17,12 @@ export const typed = (g: number, at: string | number, text: string, cps = 34) =>
 // A scene wraps its content in <Feed g in="s1" out="s2">: it scrolls up into place at its "in" swipe and scrolls
 // away upward at its "out" swipe (0.45 s, MOVE). Both scenes of a swipe move together, so the join is one scroll.
 export const SWIPE = 0.45;
-export const feedY = (g: number, inAt?: string, outAt?: string) =>
-  (inAt ? (1 - k(g, inAt, SWIPE, MOVE)) * 1080 : 0) - (outAt ? k(g, outAt, SWIPE, MOVE) * 1080 : 0);
-export const Feed: React.FC<{ g: number; in?: string; out?: string; children: React.ReactNode }> = ({ g, in: inAt, out, children }) => {
-  const y = feedY(g, inAt, out);
-  if (Math.abs(y) >= 1080) return null;
+// h = the frame height: 1080 for the 16:9 film, 1920 for the portrait version.
+export const feedY = (g: number, inAt?: string, outAt?: string, h = 1080) =>
+  (inAt ? (1 - k(g, inAt, SWIPE, MOVE)) * h : 0) - (outAt ? k(g, outAt, SWIPE, MOVE) * h : 0);
+export const Feed: React.FC<{ g: number; in?: string; out?: string; h?: number; children: React.ReactNode }> = ({ g, in: inAt, out, h = 1080, children }) => {
+  const y = feedY(g, inAt, out, h);
+  if (Math.abs(y) >= h) return null;
   return <div style={{ position: "absolute", inset: 0, transform: `translateY(${y}px)` }}>{children}</div>;
 };
 
