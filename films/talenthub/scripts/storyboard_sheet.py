@@ -3,12 +3,11 @@
 import subprocess, sys
 from PIL import Image, ImageDraw, ImageFont
 film, out = sys.argv[1], sys.argv[2]
-SHOTS = [(1.7, "Turn scrolling into learning."), (3.0, "Meet Bingua."), (4.3, "Learn languages…"), (6.8, "…through real videos and everyday conversations."),
-         (9.2, "Follow along with translations…"), (10.4, "…that make unfamiliar words…"), (12.2, "…and sentences easy to understand."),
-         (14.2, "See a word you want to remember?"), (15.6, "Save it instantly."), (18.4, "Bingua turns your discoveries into smart flashcards…"),
-         (19.3, "…and quizzes,"), (21.0, "helping new vocabulary stick."), (22.8, "No endless word lists."), (24.8, "No repetitive textbook exercises."),
-         (26.9, "Just content you enjoy,"), (28.1, "a growing vocabulary,"), (30.6, "and more confidence with every video,"), (31.75, "at your own pace."),
-         (33.0, "Bingua."), (36.0, "Learn languages by scrolling.")]
+SHOTS = [(1.2, "Looking for qualified talent?"), (2.7, "Meet Talent Hub."), (4.9, "The platform connecting graduates…"), (6.6, "…with international career opportunities."),
+         (9.0, "Browse a database of qualified candidates,"), (11.6, "all in one intuitive dashboard."), (13.3, "Filter by skills,"), (15.0, "experience, and qualifications…"),
+         (16.4, "…to find the right match."), (18.3, "Discover candidate profiles,"), (19.9, "unlock contact details,"), (21.9, "and connect directly with potential hires."),
+         (24.6, "For graduates, it's a gateway…"), (26.0, "…to exciting opportunities abroad."), (27.8, "For employers and recruiters,"), (29.9, "it's a smarter way to discover talent."),
+         (31.3, "Talent Hub."), (35.0, "Your next connection starts here.")]
 frames = [round(t * 30) for t, _ in SHOTS]
 subprocess.run(["node", "stills.mjs", ",".join(map(str, frames)), "1"], cwd=film, check=True, capture_output=True)
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 17)

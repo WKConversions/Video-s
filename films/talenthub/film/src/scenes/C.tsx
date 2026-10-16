@@ -24,7 +24,7 @@ const F_HIT = F_UNLOCK + 18;             // the coin reaches the lock
 const F_IRIS = 674, F_END = 686;
 
 /* ---------- the results grid (the B→C hand-off geometry) ---------- */
-const W = 290, GAP = 24, CH = 152;
+const W = 290, GAP = 24, CH = 149;   // the measured height of a w-290 CandidateCard (matches scene B at the join)
 const RX = DASH.x + DASH.rail + 32, RY = DASH.y + DASH.bar + 72;   // results area, screen coords
 const slot = (i: number) => ({ x: (i % 4) * (W + GAP), y: Math.floor(i / 4) * (CH + GAP) });
 
