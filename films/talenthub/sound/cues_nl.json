@@ -140,6 +140,13 @@
    "note": "a link draws"
   },
   {
+   "frame": 145,
+   "id": "kenney-select-002",
+   "db": -8,
+   "pitch": 1,
+   "note": "the JongLeren partner card"
+  },
+  {
    "frame": 148,
    "id": "kenney-drop-003",
    "db": -9,
@@ -337,6 +344,13 @@
    "note": "qualified checks"
   },
   {
+   "frame": 326,
+   "id": "gen-shimmer",
+   "db": -11,
+   "pitch": 2,
+   "note": "verified by JongLeren legend"
+  },
+  {
    "frame": 395,
    "id": "gen-whoosh-short",
    "db": -7,
@@ -398,6 +412,20 @@
    "note": "non-matches drop out"
   },
   {
+   "frame": 526,
+   "id": "kenney-click-001",
+   "db": -4,
+   "pitch": 4,
+   "note": "the JongLeren filter on"
+  },
+  {
+   "frame": 530,
+   "id": "gen-whoosh-short",
+   "db": -11,
+   "pitch": 3,
+   "note": "the verified scan sweeps the grid"
+  },
+  {
    "frame": 563,
    "id": "gen-pop",
    "db": -3,
@@ -409,6 +437,12 @@
    "id": "gen-whoosh-medium",
    "db": -7,
    "note": "the profile expands"
+  },
+  {
+   "frame": 632,
+   "id": "gen-stamp",
+   "db": -3,
+   "note": "the VERIFIED PARTNER seal stamps"
   },
   {
    "frame": 648,
@@ -471,6 +505,13 @@
    "note": "for graduates"
   },
   {
+   "frame": 820,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "pitch": 3,
+   "note": "the path reaches Talent Hub"
+  },
+  {
    "frame": 851,
    "id": "gen-whoosh-medium",
    "db": -6,
@@ -523,6 +564,12 @@
    "db": -5,
    "pitch": 4,
    "note": "Applied"
+  },
+  {
+   "frame": 903,
+   "id": "gen-success",
+   "db": -10,
+   "note": "career abroad checked"
   },
   {
    "frame": 925,
@@ -610,10 +657,30 @@
    "note": "the connection line"
   },
   {
+   "frame": 1123,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "pitch": 2,
+   "note": "the thread drops"
+  },
+  {
    "frame": 1127,
    "id": "gen-swell",
    "db": -6,
    "note": "end card"
+  },
+  {
+   "frame": 1135,
+   "id": "gen-tap",
+   "db": -6,
+   "pitch": 3,
+   "note": "the verified check lands"
+  },
+  {
+   "frame": 1140,
+   "id": "gen-appear",
+   "db": -10,
+   "note": "the partner lockup"
   }
  ]
 }

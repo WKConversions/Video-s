@@ -149,10 +149,11 @@ export const CANDIDATES: Cand[] = [
 // The candidate card as it shows in the pool: anonymised (silhouette, role, skills, experience, education) until
 // unlocked; then the name and contact details appear. w is the card width (height ≈ 0.62 w). match = a % badge.
 // verified 0..1 shows the "JongLeren verified" badge on JongLeren alumni (c.jl).
-// Dutch role names for the example candidates.
-const ROLES_NL: Record<string, string> = { "Marketing Graduate": "Afgestudeerd · Marketing", "Business Graduate": "Afgestudeerd · Business", "Tourism Graduate": "Afgestudeerd · Toerisme",
-  "IT Graduate": "Afgestudeerd · IT", "HR Graduate": "Afgestudeerd · HR", "Design Graduate": "Afgestudeerd · Design", "Finance Graduate": "Afgestudeerd · Finance",
-  "Logistics Graduate": "Afgestudeerd · Logistiek", "Event Graduate": "Afgestudeerd · Events", "Sales Graduate": "Afgestudeerd · Sales", "Data Graduate": "Afgestudeerd · Data" };
+// Dutch role names for the example candidates (the field first, so a truncated name still says it).
+const ROLES_NL: Record<string, string> = { "Marketing Graduate": "Marketing · afgestudeerd", "Business Graduate": "Business · afgestudeerd", "Tourism Graduate": "Toerisme · afgestudeerd",
+  "IT Graduate": "IT · afgestudeerd", "HR Graduate": "HR · afgestudeerd", "Design Graduate": "Design · afgestudeerd", "Finance Graduate": "Finance · afgestudeerd",
+  "Logistics Graduate": "Logistiek · afgestudeerd", "Event Graduate": "Events · afgestudeerd", "Sales Graduate": "Sales · afgestudeerd", "Data Graduate": "Data · afgestudeerd",
+  "Media Graduate": "Media · afgestudeerd" };
 export const roleTx = (r: string) => tx(r, ROLES_NL[r] ?? r);
 const SKILLS_NL: Record<string, string> = { Spanish: "Spaans", English: "Engels", German: "Duits", "Guest relations": "Gastvrijheid", Reporting: "Rapportage", Planning: "Planning", Sales: "Sales" };
 export const skillTx = (t: string) => tx(t, SKILLS_NL[t] ?? t);
@@ -208,11 +209,13 @@ export const PartnerSeal: React.FC<{ size: number; p?: number; style?: React.CSS
         <circle cx="100" cy="100" r="97" fill={C.white} stroke={C.red} strokeWidth="4" />
         <circle cx="100" cy="100" r="70" fill={C.rose} />
         <defs><path id={`seal-${id}`} d="M100,100 m-83,0 a83,83 0 1,1 166,0 a83,83 0 1,1 -166,0" /></defs>
-        <text fontFamily={FONT} fontWeight={900} fontSize="15" letterSpacing="2.2" fill={C.red}><textPath href={`#seal-${id}`}>{text}</textPath></text>
+        {/* the phrase twice, spread over the whole ring */}
+        <text fontFamily={FONT} fontWeight={900} fontSize={tx(15, 13.5)} letterSpacing={tx(2.2, 1.4)} fill={C.red}><textPath href={`#seal-${id}`} textLength={518} lengthAdjust="spacing">{text}</textPath></text>
       </svg>
       <div style={{ position: "absolute", left: size * 0.5, top: size * 0.5, transform: "translate(-50%, -54%)" }}><JLMark h={size * 0.5} /></div>
-      <div style={{ position: "absolute", right: size * 0.02, bottom: size * 0.06, width: size * 0.26, height: size * 0.26, borderRadius: "50%", background: C.red, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 0 0 ${size * 0.02}px ${C.white}` }}>
-        <Ico n="check" s={size * 0.15} c={C.white} w={3.4} />
+      {/* the check sits inside the rose disc, clear of the ring text */}
+      <div style={{ position: "absolute", left: size * (0.5 + 0.184 - 0.1), top: size * (0.5 + 0.184 - 0.1), width: size * 0.2, height: size * 0.2, borderRadius: "50%", background: C.red, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 0 0 ${size * 0.018}px ${C.white}` }}>
+        <Ico n="check" s={size * 0.12} c={C.white} w={3.4} />
       </div>
     </div>
   );
