@@ -1,16 +1,19 @@
-// Scene B (2.9–12.4 s): "The platform connecting graduates with international career opportunities. Browse a database
-// of qualified candidates, all in one intuitive dashboard." See ../../../plan/storyboard.md.
-// 1) the network: the th hub node; graduates pop in on the left, a dotted Europe map lights up pin by pin on the right,
-//    job cards pop by the pins, and red links draw graduate → hub → pin with pulses running along them.
+// Scene B (s1 → s2): "The platform connecting graduates with international career opportunities. Browse a database
+// of qualified candidates, all in one intuitive dashboard." See ../../../plan/storyboard.md and v2-jongleren-nl.md.
+// 1) the network: the th hub node; on "graduates" a "JongLeren · Verified partner" source card pops in at the top
+//    left and the graduates pop out of it into a loose column (each with a small JongLeren badge); a dotted Europe
+//    map lights up pin by pin on the right, job cards pop by the pins, and red links draw graduate → hub → pin.
 // 2) the database: everything pours into the hub, which opens into a grid of anonymised candidate cards flowing out
-//    of it; a counter runs to 1,248 and each card gets a check on "qualified".
+//    of it; a counter runs to 1,248; on "qualified" the JongLeren alumni get the "JongLeren verified" badge card by
+//    card (a rose pulse each), explained by a legend: internship experience, verified by JongLeren.
 // 3) the dashboard: the cards gather and snap into the dashboard window as it assembles around them (the hub becomes
-//    its logo, the counter lands), then settle into the exact B→C hand-off state at frame 366.
+//    its logo, the counter lands), then settle into the exact B→C hand-off state at s2.
+// Every time is a label (s1, s2, "w:…"), so the Dutch build retimes with its voice-over; strings go through tx().
 import React from "react";
 import { AbsoluteFill } from "remotion";
 import {
-  ARRIVE, Avatar, C, CANDIDATES, CARD, Cand, CandidateCard, Chip, DASH, Dashboard, DEPART, FONT, Ico, JOBS, Link, MOVE, POP, Pill, SNAP, Say,
-  THMark, clamp01, f, mix,
+  ARRIVE, Avatar, C, CANDIDATES, CARD, Cand, CandidateCard, Chip, DASH, Dashboard, DEPART, FONT, Ico, JLBadge, JLMark, JOBS, Link, MOVE, POP, Pill, SNAP,
+  Say, THMark, clamp01, f, mix, tx,
 } from "../shared";
 
 type Ease = (t: number) => number;
@@ -20,14 +23,17 @@ const OUTC: Ease = (t) => 1 - Math.pow(1 - t, 2.4);
 const OUTQ: Ease = (t) => 1 - Math.pow(1 - t, 1.4);
 const THR = 596 / 764;
 
-/* ---------- beats (frames) ---------- */
-const START = 93, END = f("s2"); // 93 = the A→B hand-off, 366 = the B→C hand-off
+/* ---------- beats (frames, all from labels; EN values in brackets) ---------- */
+const START = f("s1"), END = f("s2"); // the A→B hand-off [93] and the B→C hand-off [366]
 const CONN = f("w:connecting"), GRAD = f("w:graduates"), INTL = f("w:international"), CAREER = f("w:career");
 const BROWSE = f("w:browse"), DB = f("w:database"), QUAL = f("w:qualified2"), ALL = f("w:all"), ONE = f("w:one");
 const PIN0 = INTL + 1;           // pins light one by one from here
-const OPEN = 240;                // the hub opens into cards
-const SWITCH = 335;              // the assembled window becomes the shared Dashboard itself
-const SETTLE = 328;              // the window grows to its hand-off geometry, landing on END
+const OPEN = BROWSE + 13;        // the hub opens into cards, as the network has poured in [240]
+const SWITCH = END - 31;         // the assembled window becomes the shared Dashboard itself [335]
+const SETTLE = END - 38;         // the window grows to its hand-off geometry, landing on END [328]
+const GATH = ALL;                // "all …": the scattered cards gather, the window fades in [299]
+const SNAP_ = Math.min(ONE, SWITCH - 23); // "one": the chosen cards snap into their slots, done before SWITCH [312]
+const LOCALE = tx("en-US", "nl-NL");
 
 /* ---------- the network ---------- */
 const HX = 960, HY = 540;
@@ -42,8 +48,11 @@ const CITIES = [
   { n: "Madrid", lon: -3.7, lat: 40.42, job: 0, left: false, ax: 1300, ay: 790 },
   { n: "Lisbon", lon: -9.14, lat: 38.72, job: 2, left: true, ax: 1146, ay: 832 },
 ].map((c) => ({ ...c, x: MX(c.lon), y: MY(c.lat) }));
-const gradAt = (i: number) => GRAD + i * 3;
-const gLinkAt = (i: number) => GRAD + 2 + i * 4;
+const gradAt = (i: number) => GRAD + 1 + i * 3.2;   // pops out of the JongLeren card …
+const GFLY = 15;                                     // … and flies to its place in the column
+const gLinkAt = (i: number) => GRAD + 11 + i * 4;
+// the JongLeren source card (top left, the head of the graduate column); graduates leave it from SRC_OUT
+const SRC = { x: 120, y: 56 }, SRC_OUT: [number, number] = [292, 130];
 const pinAt = (i: number) => PIN0 + i * 5;
 const pLinkAt = (i: number) => PIN0 + 3 + i * 6;
 const jobAt = (i: number) => CAREER + i * 4;
@@ -136,10 +145,12 @@ const cardData = (j: number): Cand => {
 const winAt = (g: number) => { const st = OUTQ(clamp01((g - SETTLE) / (END - SETTLE))); return { s: mix(SI, 1, st), dy: mix(DYI, 0, st) }; };
 const dsSlot = (i: number, g: number) => { const { s, dy } = winAt(g); return { x: 960 + (DASH.rail + 32 + (i % 4) * (CW + 24) - 800) * s, y: 550 + dy + (DASH.bar + 72 + Math.floor(i / 4) * (CH + 24) - 430) * s, s }; };
 const launchAt = (j: number) => OPEN + 4 + RANK[j] * 1.95;
+// the JongLeren verified badge lands on each alumnus card: on "qualified", card by card (or as the card lands)
+const verAt = (j: number) => Math.max(launchAt(j) + 18, QUAL + 2 + RANK[j] * 0.8);
 
 // the hub mark: centre stage, then the database header, then the dashboard's logo
 const markAt = (g: number) => {
-  const a = kf(g, 243, 16, MOVE), b = kf(g, 308, 16, MOVE);
+  const a = kf(g, OPEN + 3, 16, MOVE), b = kf(g, SNAP_ - 4, 16, MOVE);
   const pulse = 1 + 0.1 * Math.sin(Math.PI * clamp01((g - (OPEN - 2)) / 8));
   return { x: mix(mix(HX, HEAD.x, a), BARM.x, b), y: mix(mix(HY, HEAD.y, a), BARM.y, b), s: mix(mix(150 * pulse, HEAD.s, a), BARM.s, b) };
 };
@@ -160,18 +171,49 @@ const JobCard: React.FC<{ title: string; city: string; country: string }> = ({ t
     </div>
   </div>
 );
-const Badge: React.FC<{ p: number }> = ({ p }) => p <= 0 ? null : (
-  <div style={{ position: "absolute", left: CW - 26, top: -14, width: 40, height: 40, borderRadius: "50%", background: C.red, display: "flex", alignItems: "center", justifyContent: "center",
-    boxShadow: `0 0 0 4px ${C.white}`, transform: `scale(${p})` }}><Ico n="check" s={26} c={C.white} w={3.4} /></div>
+// The source of the graduates: JongLeren, Talent Hub's verified partner.
+const SourceCard: React.FC = () => (
+  <div style={{ ...CARD, borderRadius: 24, display: "flex", alignItems: "center", gap: 18, padding: "14px 26px 14px 16px", whiteSpace: "nowrap" }}>
+    <JLMark h={78} />
+    <div>
+      <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 34, color: C.ink, lineHeight: 1.05, letterSpacing: "-0.01em" }}>JongLeren</div>
+      <Pill text={tx("Verified partner", "Geverifieerde partner")} size={18} icon="check" filled style={{ marginTop: 8 }} />
+    </div>
+  </div>
 );
+// The small JongLeren badge on a graduate's ring (white disc, the red mark).
+const GradBadge: React.FC<{ p: number }> = ({ p }) => p <= 0 ? null : (
+  <div style={{ position: "absolute", right: -10, bottom: -6, width: 40, height: 40, borderRadius: "50%", background: C.white, display: "flex", alignItems: "center", justifyContent: "center",
+    boxShadow: `0 0 0 3px ${C.red}, 0 6px 14px -6px rgba(25,27,32,0.4)`, transform: `scale(${p})`, overflow: "hidden" }}><JLMark h={30} /></div>
+);
+// A card's "verified" moment: a rose halo round the card and a ripple where the badge lands (drawn behind the card).
+const VerPulse: React.FC<{ t: number }> = ({ t }) => {
+  if (t <= 0 || t >= 1) return null;
+  const r = 12 + 58 * ARRIVE(t), bx = CW - 12 - 84;
+  return (
+    <>
+      <div style={{ position: "absolute", left: 0, top: 0, width: CW, height: CH, borderRadius: 20, boxShadow: `0 0 0 ${4 + 14 * ARRIVE(t)}px rgba(252,230,231,${1 - t})` }} />
+      <div style={{ position: "absolute", left: bx - r, top: -r, width: 2 * r, height: 2 * r, borderRadius: "50%", background: `rgba(252,230,231,${0.9 * (1 - t)})`, border: `3px solid rgba(207,20,30,${0.45 * (1 - t)})` }} />
+    </>
+  );
+};
 
 /* ---------- 1: the network ---------- */
 const Network: React.FC<{ g: number }> = ({ g }) => {
-  const disc = kf(g, START + 1, 16) * (1 - kf(g, 244, 10, MOVE));
+  const disc = kf(g, START + 1, 16) * (1 - kf(g, OPEN + 4, 10, MOVE));
   const discPulse = 1 + 0.08 * Math.sin(Math.PI * clamp01((g - (OPEN - 2)) / 8));
   const guide = kf(g, CONN, 10) * (1 - kf(g, BROWSE - 6, 8));
   const tag = kf(g, GRAD, 12) * (1 - kf(g, BROWSE - 6, 10)), tag2 = kf(g, CAREER, 14);
-  const gpos = (i: number): [number, number] => { const e = kf(g, collapseAt(i), 14, MOVE); return [mix(GR[i][0], HX, e), mix(GR[i][1], HY, e)]; };
+  // a graduate's place: out of the JongLeren card (a slight arc) into the column, later poured into the hub
+  const gpos = (i: number): [number, number] => {
+    const t = kf(g, gradAt(i), GFLY), e = kf(g, collapseAt(i), 14, MOVE);
+    const dx = GR[i][0] - SRC_OUT[0], dy = GR[i][1] - SRC_OUT[1], len = Math.hypot(dx, dy), arc = 46 * Math.sin(Math.PI * t) * (i % 2 ? 1 : -1);
+    const x = mix(SRC_OUT[0], GR[i][0], t) - (dy / len) * arc, y = mix(SRC_OUT[1], GR[i][1], t) + (dx / len) * arc;
+    return [mix(x, HX, e), mix(y, HY, e)];
+  };
+  // the JongLeren card: pops in on "graduates", gives a little pump as each graduate leaves it, pours into the hub on "browse"
+  const src = kf(g, GRAD - 4, 12, POP), srcE = kf(g, BROWSE + 1, 15, MOVE);
+  const pump = GR.reduce((a, _, i) => a + 0.035 * Math.sin(Math.PI * clamp01((g - gradAt(i)) / 7)), 0);
   const pinE = (i: number) => kf(g, collapseAt(i) + 3, 14, MOVE);
   const flows = { grads: [] as React.ReactNode[], pings: [] as React.ReactNode[] };
   GR.forEach((_, i) => {
@@ -259,34 +301,36 @@ const Network: React.FC<{ g: number }> = ({ g }) => {
           </div>
         );
       })}
-      {/* graduates */}
+      {/* graduates: out of the JongLeren card, each with the partner's badge on its ring */}
       {GR.map((_, i) => {
-        const p = kf(g, gradAt(i), 12, POP), e = kf(g, collapseAt(i), 14, MOVE);
-        if (p <= 0 || e >= 1) return null;
+        const p = kf(g, gradAt(i), GFLY, POP), e = kf(g, collapseAt(i), 14, MOVE);
+        if (g < gradAt(i) || e >= 1) return null;
         const [x, y] = gpos(i);
         return (
-          <div key={`gr${i}`} style={{ position: "absolute", left: x - 46, top: y - 46, width: 92, height: 92, transform: `scale(${p * (1 - 0.75 * e)})`, opacity: 1 - clamp01((e - 0.7) / 0.3) }}>
+          <div key={`gr${i}`} style={{ position: "absolute", left: x - 46, top: y - 46, width: 92, height: 92, transform: `scale(${mix(0.3, 1, p) * (1 - 0.75 * e)})`, opacity: 1 - clamp01((e - 0.7) / 0.3) }}>
             <Avatar size={92} ring={C.rose} />
-            <div style={{ position: "absolute", right: -10, bottom: -6, width: 38, height: 38, borderRadius: "50%", background: C.red, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 0 0 3px ${C.white}` }}>
-              <Ico n="cap" s={24} c={C.white} w={2.6} />
-            </div>
+            <GradBadge p={kf(g, gradAt(i) + GFLY - 4, 10, POP)} />
           </div>
         );
       })}
       {/* the hub node */}
       {disc > 0 && <div style={{ position: "absolute", left: HX - 112, top: HY - 112, width: 224, height: 224, borderRadius: "50%", background: C.white,
         boxShadow: `0 0 0 10px ${C.rose}, 0 30px 60px -24px rgba(25,27,32,0.30)`, transform: `scale(${disc * discPulse})` }} />}
-      {/* the small caption tag */}
-      {tag > 0 && (
-        <div style={{ position: "absolute", left: 120, top: 72, display: "flex", alignItems: "center", padding: "12px 24px", borderRadius: 999, background: C.white, opacity: tag,
-          transform: `translateY(${(1 - tag) * 16}px)`, boxShadow: "0 0 0 1px rgba(25,27,32,0.06), 0 14px 30px -16px rgba(25,27,32,0.30)", fontFamily: FONT, fontWeight: 700, fontSize: 26, color: C.ink, whiteSpace: "nowrap" }}>
-          <Ico n="cap" s={28} c={C.red} /><span style={{ marginLeft: 10 }}>Graduates</span>
-          <div style={{ display: "flex", alignItems: "center", overflow: "hidden", maxWidth: 280 * tag2, opacity: tag2 }}>
-            <span style={{ margin: "0 12px", display: "flex" }}><Ico n="arrow" s={26} c={C.red} w={2.8} /></span>
-            <Ico n="globe" s={26} c={C.red} /><span style={{ marginLeft: 10 }}>Careers abroad</span>
+      {/* top left: the JongLeren source card, and beside it the small caption tag */}
+      {(src > 0 && srcE < 1) || tag > 0 ? (
+        <div style={{ position: "absolute", left: SRC.x, top: SRC.y, display: "flex", alignItems: "center", gap: 34 }}>
+          <div style={{ opacity: Math.min(1, src * 2) * (1 - clamp01((srcE - 0.6) / 0.4)), transformOrigin: "50% 50%",
+            transform: `translate(${(HX - SRC.x - 190) * srcE}px, ${(HY - SRC.y - 55) * srcE}px) scale(${(0.6 + 0.4 * src + pump) * (1 - 0.8 * srcE)})` }}><SourceCard /></div>
+          <div style={{ display: "flex", alignItems: "center", padding: "12px 24px", borderRadius: 999, background: C.white, opacity: tag,
+            transform: `translateY(${(1 - tag) * 16}px)`, boxShadow: "0 0 0 1px rgba(25,27,32,0.06), 0 14px 30px -16px rgba(25,27,32,0.30)", fontFamily: FONT, fontWeight: 700, fontSize: 26, color: C.ink, whiteSpace: "nowrap" }}>
+            <Ico n="cap" s={28} c={C.red} /><span style={{ marginLeft: 10 }}>{tx("Graduates", "Afgestudeerden")}</span>
+            <div style={{ display: "flex", alignItems: "center", overflow: "hidden", maxWidth: tx(300, 470) * tag2, opacity: tag2 }}>
+              <span style={{ margin: "0 12px", display: "flex" }}><Ico n="arrow" s={26} c={C.red} w={2.8} /></span>
+              <Ico n="globe" s={26} c={C.red} /><span style={{ marginLeft: 10 }}>{tx("Careers abroad", "Carrière in het buitenland")}</span>
+            </div>
           </div>
         </div>
-      )}
+      ) : null}
     </>
   );
 };
@@ -302,18 +346,20 @@ const Cards: React.FC<{ g: number }> = ({ g }) => {
     const dx = sl.cx - src.x, dy = sl.cy - src.y, len = Math.hypot(dx, dy) || 1, arc = 70 * Math.sin(Math.PI * a) * (j % 2 ? 1 : -1);
     const cx = mix(src.x, sl.cx, a) - (dy / len) * arc, cy = mix(src.y, sl.cy, a) + (dx / len) * arc;
     let x = cx - (CW / 2) * sc0, y = cy - (CH / 2) * sc0, s = sc0, o = clamp01(a * 4);
-    const ci = CHOSEN[j];
-    const badge = kf(g, Math.max(L + 18, QUAL + RANK[j] * 0.7), 9, POP) * (1 - kf(g, ALL + 4, 8, MOVE));
+    const ci = CHOSEN[j], cd = cardData(j);
+    // "qualified": JongLeren alumni get the verified badge (kept into the dashboard: the hand-off has verified={1})
+    const V = verAt(j), ver = cd.jl ? kf(g, V, 10, POP) : 0, pulse = cd.jl ? (g - V) / 18 : 0;
+    const card = <><VerPulse t={pulse} /><CandidateCard c={cd} w={CW} verified={ver} /></>;
     if (ci !== undefined) {
-      const b = kf(g, ONE + ci * 1.2, 14, SNAP), t = dsSlot(ci, g), lift = Math.sin(Math.PI * kf(g, ALL, 26, LIN)) * 0.04;
+      const b = kf(g, SNAP_ + ci * 1.2, 14, SNAP), t = dsSlot(ci, g), lift = Math.sin(Math.PI * kf(g, GATH, 26, LIN)) * 0.04;
       x = mix(x, t.x, b); y = mix(y, t.y, b); s = mix(s, t.s, b) * (1 + lift);
       if (g >= SWITCH) return;
-      chosen.push(<div key={j} style={{ position: "absolute", left: x, top: y, transform: `scale(${s}) rotate(${rot}deg)`, transformOrigin: "0 0", opacity: o }}><CandidateCard c={cardData(j)} w={CW} /><Badge p={badge} /></div>);
+      chosen.push(<div key={j} style={{ position: "absolute", left: x, top: y, transform: `scale(${s}) rotate(${rot}deg)`, transformOrigin: "0 0", opacity: o }}>{card}</div>);
     } else {
-      const m = FILL_IDX[j], b = kf(g, ALL + m * 0.45, 15, MOVE), t = dsSlot(m % 8, g), off = 9 * (1 + Math.floor(m / 8));
-      x = mix(x, t.x + off, b); y = mix(y, t.y + off, b); s = mix(s, t.s * 0.97, b); o *= 1 - kf(g, 318, 12, MOVE);
+      const m = FILL_IDX[j], b = kf(g, GATH + m * 0.45, 15, MOVE), t = dsSlot(m % 8, g), off = 9 * (1 + Math.floor(m / 8));
+      x = mix(x, t.x + off, b); y = mix(y, t.y + off, b); s = mix(s, t.s * 0.97, b); o *= 1 - kf(g, SNAP_ + 6, 12, MOVE);
       if (o <= 0.003) return;
-      fillers.push(<div key={j} style={{ position: "absolute", left: x, top: y, transform: `scale(${s}) rotate(${rot}deg)`, transformOrigin: "0 0", opacity: o }}><CandidateCard c={cardData(j)} w={CW} /><Badge p={badge} /></div>);
+      fillers.push(<div key={j} style={{ position: "absolute", left: x, top: y, transform: `scale(${s}) rotate(${rot}deg)`, transformOrigin: "0 0", opacity: o }}>{card}</div>);
     }
   });
   return <>{fillers}{chosen}</>;
@@ -322,27 +368,35 @@ const Cards: React.FC<{ g: number }> = ({ g }) => {
 // The dashboard window while it assembles: the shared Dashboard's markup, with its parts animated in.
 const DashShell: React.FC<{ s: number; dy: number; panel: number; bar: number; rail: number; logo: boolean; counter: boolean }> = ({ s, dy, panel, bar, rail, logo, counter }) => {
   const { x, w, h } = DASH, y = DASH.y + dy;
-  const groups: [string, string, string[]][] = [["Skills", "sliders", ["Spanish", "Marketing", "Social media"]], ["Experience", "briefcase", ["1–3 years"]], ["Qualifications", "cap", ["Bachelor's degree"]]];
+  const groups: [string, string, string[]][] = [[tx("Skills", "Vaardigheden"), "sliders", [tx("Spanish", "Spaans"), "Marketing", "Social media"]], [tx("Experience", "Werkervaring"), "briefcase", [tx("1–3 years", "1–3 jaar")]],
+    [tx("Qualifications", "Kwalificaties"), "cap", [tx("Bachelor's degree", "Bachelor")]]];
   return (
     <div style={{ position: "absolute", left: x, top: y, width: w, height: h, opacity: panel, transform: `scale(${s * mix(0.94, 1, panel)})`, transformOrigin: "50% 50%", ...CARD, borderRadius: 30, overflow: "hidden" }}>
       <div style={{ position: "absolute", left: 0, top: 0, width: w, height: DASH.bar, display: "flex", alignItems: "center", gap: 22, padding: "0 30px", boxSizing: "border-box", borderBottom: `1px solid ${C.line}`,
         transform: `translateY(${-(1 - bar) * (DASH.bar + 4)}px)` }}>
         <THMark size={52} style={{ opacity: logo ? 1 : 0 }} />
-        <div style={{ flex: 1, height: 46, borderRadius: 999, background: C.cloud, display: "flex", alignItems: "center", gap: 12, padding: "0 20px", fontFamily: FONT, fontSize: 20, color: C.gray }}><Ico n="search" s={22} c={C.gray} />Search candidates</div>
+        <div style={{ flex: 1, height: 46, borderRadius: 999, background: C.cloud, display: "flex", alignItems: "center", gap: 12, padding: "0 20px", fontFamily: FONT, fontSize: 20, color: C.gray }}><Ico n="search" s={22} c={C.gray} />{tx("Search candidates", "Zoek kandidaten")}</div>
         <div style={{ display: "flex", alignItems: "center", gap: 10, fontFamily: FONT, fontWeight: 700, fontSize: 20, color: C.ink, background: C.rose, borderRadius: 999, padding: "10px 18px" }}><Ico n="coin" s={24} c={C.red} />10 credits</div>
       </div>
       <div style={{ position: "absolute", left: 0, top: DASH.bar, width: DASH.rail, bottom: 0, background: C.ivory, borderRight: `1px solid ${C.line}`, padding: "26px 24px", boxSizing: "border-box",
         transform: `translateX(${-(1 - rail) * (DASH.rail + 4)}px)` }}>
-        <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 24, color: C.ink, display: "flex", alignItems: "center", gap: 10 }}><Ico n="filter" s={24} c={C.red} />Filters</div>
+        <div style={{ fontFamily: FONT, fontWeight: 900, fontSize: 24, color: C.ink, display: "flex", alignItems: "center", gap: 10 }}><Ico n="filter" s={24} c={C.red} />{tx("Filters", "Filters")}</div>
         {groups.map(([name, icon, chips]) => (
           <div key={name} style={{ marginTop: 26 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: FONT, fontWeight: 700, fontSize: 18, color: C.gray }}><Ico n={icon} s={20} c={C.gray} />{name}</div>
             <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginTop: 10 }}>{chips.map((t) => <Chip key={t} text={t} size={16} on={0} />)}</div>
           </div>
         ))}
+        {/* the verified partner filter (as in the shared Dashboard), off */}
+        <div style={{ marginTop: 26 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 8, fontFamily: FONT, fontWeight: 700, fontSize: 18, color: C.gray }}><Ico n="check" s={20} c={C.gray} />{tx("Verified partner", "Geverifieerde partner")}</div>
+          <div style={{ marginTop: 10, display: "inline-flex", alignItems: "center", gap: 8, padding: "5px 12px 5px 6px", borderRadius: 999, background: C.cloud, fontFamily: FONT, fontWeight: 700, fontSize: 16, color: C.ink }}>
+            <div style={{ width: 24, height: 24, borderRadius: "50%", background: C.white, display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}><JLMark h={20} /></div>JongLeren
+          </div>
+        </div>
       </div>
       <div style={{ position: "absolute", left: DASH.rail + 32, top: DASH.bar + 22, fontFamily: FONT, fontWeight: 900, fontSize: 26, color: C.ink, opacity: counter ? 1 : 0 }}>
-        {(1248).toLocaleString("en-US")} <span style={{ fontWeight: 400, color: C.gray }}>candidates</span>
+        {(1248).toLocaleString(LOCALE)} <span style={{ fontWeight: 400, color: C.gray }}>{tx("candidates", "kandidaten")}</span>
       </div>
     </div>
   );
@@ -354,32 +408,44 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
   // the window: assembles small and low (caption room), then grows to the hand-off geometry, landing on END
   const { s, dy } = winAt(g);
   // the counter: header → the dashboard's counter
-  const cf = kf(g, 300, 14, MOVE), cn = Math.round(1248 * kf(g, OPEN + 2, 58, MOVE)), co = kf(g, 257, 10);
-  const headPill = kf(g, DB, 10) * (1 - kf(g, ALL, 8));
+  const cf = kf(g, GATH + 1, 14, MOVE), cn = Math.round(1248 * kf(g, OPEN + 2, 58, MOVE)), co = kf(g, OPEN + 17, 10);
+  const headPill = kf(g, DB, 10) * (1 - kf(g, GATH, 8));
+  // "qualified": the legend for the badges (the USP): internship experience, verified by JongLeren
+  const leg = kf(g, QUAL - 2, 12, POP) * (1 - kf(g, GATH, 8)), legAge = g - (QUAL - 2);
+  const PUMP0 = OPEN + 16;
   return (
     <AbsoluteFill>
-      {g < 252 && <Network g={g} />}
+      {g < OPEN + 12 && <Network g={g} />}
       {/* the hub keeps pumping while the cards flow out of it */}
-      {g >= 256 && g < 304 && [0, 1, 2, 3, 4].map((n) => {
-        const age = (g - 256 + n * 10) % 50, r = 44 + age * 5;
-        return <div key={n} style={{ position: "absolute", left: HEAD.x - r, top: HEAD.y - r, width: 2 * r, height: 2 * r, borderRadius: "50%", border: `3px solid rgba(207,20,30,${0.32 * (1 - age / 50) * (1 - kf(g, 294, 10))})` }} />;
+      {g >= PUMP0 && g < GATH + 5 && [0, 1, 2, 3, 4].map((n) => {
+        const age = (g - PUMP0 + n * 10) % 50, r = 44 + age * 5;
+        return <div key={n} style={{ position: "absolute", left: HEAD.x - r, top: HEAD.y - r, width: 2 * r, height: 2 * r, borderRadius: "50%", border: `3px solid rgba(207,20,30,${0.32 * (1 - age / 50) * (1 - kf(g, GATH - 5, 10))})` }} />;
       })}
-      {g >= 300 && g < SWITCH && <DashShell s={s} dy={dy} panel={kf(g, 300, 16)} bar={kf(g, 314, 13, SNAP)} rail={kf(g, 316, 14, SNAP)} logo={g >= 324} counter={g >= 314} />}
+      {g >= GATH + 1 && g < SWITCH && <DashShell s={s} dy={dy} panel={kf(g, GATH + 1, 16)} bar={kf(g, SNAP_ + 2, 13, SNAP)} rail={kf(g, SNAP_ + 4, 14, SNAP)} logo={g >= SNAP_ + 12} counter={g >= SNAP_ + 2} />}
       {g >= SWITCH && (
-        <Dashboard y={DASH.y + dy} s={s} count={1248} credits={10} filters={[0, 0, 0]}>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 24 }}>{CANDIDATES.slice(0, 8).map((c) => <CandidateCard key={c.id} c={c} w={CW} />)}</div>
+        <Dashboard y={DASH.y + dy} s={s} count={1248} credits={10} filters={[0, 0, 0, 0]}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 24 }}>{CANDIDATES.slice(0, 8).map((c) => <CandidateCard key={c.id} c={c} w={CW} verified={1} />)}</div>
         </Dashboard>
       )}
       {g >= OPEN && g < SWITCH && <Cards g={g} />}
-      {headPill > 0 && <div style={{ position: "absolute", right: 202, top: 165, opacity: headPill, transform: `translateY(${(1 - headPill) * 14}px)` }}><Pill text="Candidate database" icon="grid" size={24} /></div>}
-      {co > 0 && g < 314 && (
-        <div style={{ position: "absolute", left: mix(CNT0.x, CNT1.x, cf), top: mix(CNT0.y, CNT1.y, cf), fontFamily: FONT, fontWeight: 900, fontSize: mix(CNT0.fs, CNT1.fs, cf), color: C.ink, whiteSpace: "nowrap", opacity: co }}>
-          {cn.toLocaleString("en-US")} <span style={{ fontWeight: 400, color: C.gray }}>candidates</span>
+      {(headPill > 0 || leg > 0) && (
+        <div style={{ position: "absolute", right: 202, top: 165, height: 50, display: "flex", alignItems: "center", gap: 22 }}>
+          <div style={{ position: "relative", opacity: clamp01(leg * 2), transform: `scale(${0.7 + 0.3 * leg})`, transformOrigin: "100% 50%" }}>
+            {legAge >= 0 && legAge < 20 && <div style={{ position: "absolute", inset: -4 - legAge * 1.4, borderRadius: 999, border: `3px solid rgba(207,20,30,${0.4 * (1 - legAge / 20)})` }} />}
+            <JLBadge size={21} text={tx("Internship experience verified by JongLeren", "Stage-ervaring geverifieerd door JongLeren")} />
+          </div>
+          <div style={{ opacity: headPill, transform: `translateY(${(1 - headPill) * 14}px)` }}><Pill text={tx("Candidate database", "Kandidatendatabase")} icon="grid" size={24} /></div>
         </div>
       )}
-      {g < 324 && <div style={{ position: "absolute", left: m.x - m.s / 2, top: m.y - (m.s * THR) / 2 }}><THMark size={m.s} /></div>}
-      <Say g={g} x={DASH.x} y={28} size={72} out="w:dashboard+0.4"
-        words={[{ t: "All", at: "w:intuitive" }, { t: "in", at: "w:intuitive+0.07" }, { t: "one", at: "w:intuitive+0.14" }, { t: "dashboard.", at: "w:dashboard", red: true }]} />
+      {co > 0 && g < SNAP_ + 2 && (
+        <div style={{ position: "absolute", left: mix(CNT0.x, CNT1.x, cf), top: mix(CNT0.y, CNT1.y, cf), fontFamily: FONT, fontWeight: 900, fontSize: mix(CNT0.fs, CNT1.fs, cf), color: C.ink, whiteSpace: "nowrap", opacity: co }}>
+          {cn.toLocaleString(LOCALE)} <span style={{ fontWeight: 400, color: C.gray }}>{tx("candidates", "kandidaten")}</span>
+        </div>
+      )}
+      {g < SNAP_ + 12 && <div style={{ position: "absolute", left: m.x - m.s / 2, top: m.y - (m.s * THR) / 2 }}><THMark size={m.s} /></div>}
+      <Say g={g} x={DASH.x} y={28} size={72} out={tx("w:dashboard+0.4", "w:nl_dashboard+0.35")}
+        words={tx([{ t: "All", at: "w:intuitive" }, { t: "in", at: "w:intuitive+0.07" }, { t: "one", at: "w:intuitive+0.14" }, { t: "dashboard.", at: "w:dashboard", red: true }],
+          [{ t: "Overzichtelijk", at: "w:nl_overzichtelijk" }, { t: "in", at: "w:nl_in" }, { t: "één", at: "w:nl_n" }, { t: "dashboard.", at: "w:nl_dashboard", red: true }])} />
     </AbsoluteFill>
   );
 };
