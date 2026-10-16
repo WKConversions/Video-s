@@ -1,0 +1,254 @@
+[
+ {
+  "source": "mixkit",
+  "title": "I Believe in Us",
+  "artist": "Michael Ramir C.",
+  "genre": "Pop",
+  "url": "https://assets.mixkit.co/music/1030/1030.mp3",
+  "waveform": "https://assets.mixkit.co/music/1030/1030-waveform.json",
+  "length": 168,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/uplifting/",
+  "queries": [
+   "mood:uplifting"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 2,
+   "wf_tail_s": 5
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Yeah Yeah",
+  "artist": "Michael Ramir C.",
+  "genre": "Pop",
+  "url": "https://assets.mixkit.co/music/923/923.mp3",
+  "waveform": "https://assets.mixkit.co/music/923/923-waveform.json",
+  "length": 100,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/uplifting/",
+  "queries": [
+   "mood:uplifting"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 2,
+   "wf_tail_s": 3
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Pop Track 03",
+  "artist": "Lily J",
+  "genre": "Electronic",
+  "url": "https://assets.mixkit.co/music/729/729.mp3",
+  "waveform": "https://assets.mixkit.co/music/729/729-waveform.json",
+  "length": 97,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 4,
+   "wf_tail_s": 1
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Kodama Night Town",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Electronic",
+  "url": "https://assets.mixkit.co/music/114/114.mp3",
+  "waveform": "https://assets.mixkit.co/music/114/114-waveform.json",
+  "length": 185,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 9,
+   "wf_tail_s": 4
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Jungle Voices",
+  "artist": "Diego Nava",
+  "genre": "Electronic",
+  "url": "https://assets.mixkit.co/music/517/517.mp3",
+  "waveform": "https://assets.mixkit.co/music/517/517-waveform.json",
+  "length": 98,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 7,
+   "wf_tail_s": 6
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Swings and Slides",
+  "artist": "Ahjay Stelino",
+  "genre": "Pop",
+  "url": "https://assets.mixkit.co/music/14/14.mp3",
+  "waveform": "https://assets.mixkit.co/music/14/14-waveform.json",
+  "length": 134,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/happy/",
+  "queries": [
+   "mood:happy"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 2,
+   "wf_tail_s": 2
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Follow Me Home",
+  "artist": "Arulo",
+  "genre": "Pop",
+  "url": "https://assets.mixkit.co/music/350/350.mp3",
+  "waveform": "https://assets.mixkit.co/music/350/350-waveform.json",
+  "length": 74,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/uplifting/",
+  "queries": [
+   "mood:uplifting"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Happy Times",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Pop",
+  "url": "https://assets.mixkit.co/music/158/158.mp3",
+  "waveform": "https://assets.mixkit.co/music/158/158-waveform.json",
+  "length": 100,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/uplifting/",
+  "queries": [
+   "mood:uplifting"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 0
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Cinematic Jazz",
+  "artist": "Francisco Alvear",
+  "genre": "Electronic",
+  "url": "https://assets.mixkit.co/music/653/653.mp3",
+  "waveform": "https://assets.mixkit.co/music/653/653-waveform.json",
+  "length": 144,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Happy Home",
+  "artist": "Michael Ramir C.",
+  "genre": "Pop",
+  "url": "https://assets.mixkit.co/music/801/801.mp3",
+  "waveform": "https://assets.mixkit.co/music/801/801-waveform.json",
+  "length": 110,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/happy/",
+  "queries": [
+   "mood:happy"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 1,
+   "wf_tail_s": 0
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "At the Playhouse",
+  "artist": "Michael Ramir C.",
+  "genre": "Pop",
+  "url": "https://assets.mixkit.co/music/821/821.mp3",
+  "waveform": "https://assets.mixkit.co/music/821/821-waveform.json",
+  "length": 91,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/happy/",
+  "queries": [
+   "mood:happy"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 0
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Clumsy Daddy",
+  "artist": "Michael Ramir C.",
+  "genre": "Pop",
+  "url": "https://assets.mixkit.co/music/827/827.mp3",
+  "waveform": "https://assets.mixkit.co/music/827/827-waveform.json",
+  "length": 93,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/happy/",
+  "queries": [
+   "mood:happy"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 13,
+   "wf_tail_s": 0
+  },
+  "prescore": 1.45
+ }
+]

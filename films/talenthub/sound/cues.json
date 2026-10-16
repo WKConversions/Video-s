@@ -1,0 +1,619 @@
+{
+ "fps": 30,
+ "frames": 1080,
+ "library": "../../alumni/sound/lib",
+ "vo": {
+  "file": "../vo/vo.mp3",
+  "at": 0,
+  "compress": true
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "lufs": -24,
+  "duck_db": 6,
+  "fade_in": 0.3,
+  "fade_out": 0.6,
+  "lifts": [
+   [
+    33.0,
+    36.0,
+    3
+   ]
+  ]
+ },
+ "sfx": [
+  {
+   "frame": 5,
+   "id": "kenney-click-001",
+   "db": -15,
+   "note": "search keys"
+  },
+  {
+   "frame": 7,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 2,
+   "note": "search keys"
+  },
+  {
+   "frame": 9,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": -1,
+   "note": "search keys"
+  },
+  {
+   "frame": 11,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 3,
+   "note": "search keys"
+  },
+  {
+   "frame": 13,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 1,
+   "note": "search keys"
+  },
+  {
+   "frame": 15,
+   "id": "kenney-click-001",
+   "db": -15,
+   "note": "search keys"
+  },
+  {
+   "frame": 16,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "pitch": -2,
+   "note": "the talent cloud swirls"
+  },
+  {
+   "frame": 17,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 2,
+   "note": "search keys"
+  },
+  {
+   "frame": 19,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": -1,
+   "note": "search keys"
+  },
+  {
+   "frame": 21,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 3,
+   "note": "search keys"
+  },
+  {
+   "frame": 23,
+   "id": "kenney-click-001",
+   "db": -15,
+   "pitch": 1,
+   "note": "search keys"
+  },
+  {
+   "frame": 58,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "pitch": 2,
+   "note": "talent converges, red field"
+  },
+  {
+   "frame": 68,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 1,
+   "note": "the t rises"
+  },
+  {
+   "frame": 76,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 4,
+   "note": "the h drops in"
+  },
+  {
+   "frame": 81,
+   "id": "gen-shimmer",
+   "db": -6,
+   "pitch": 3,
+   "note": "the mark completes"
+  },
+  {
+   "frame": 93,
+   "id": "gen-whoosh-short",
+   "db": -8,
+   "pitch": -1,
+   "note": "the mark becomes the hub"
+  },
+  {
+   "frame": 118,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "note": "a link draws"
+  },
+  {
+   "frame": 128,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "pitch": 1,
+   "note": "a link draws"
+  },
+  {
+   "frame": 130,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "note": "a graduate"
+  },
+  {
+   "frame": 133,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 1,
+   "note": "a graduate"
+  },
+  {
+   "frame": 136,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 2,
+   "note": "a graduate"
+  },
+  {
+   "frame": 137,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "pitch": 2,
+   "note": "a link draws"
+  },
+  {
+   "frame": 139,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 3,
+   "note": "a graduate"
+  },
+  {
+   "frame": 147,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "pitch": 3,
+   "note": "a link draws"
+  },
+  {
+   "frame": 154,
+   "id": "kenney-select-001",
+   "db": -10,
+   "note": "a pin lights"
+  },
+  {
+   "frame": 157,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "pitch": 4,
+   "note": "a link draws"
+  },
+  {
+   "frame": 158,
+   "id": "kenney-select-001",
+   "db": -10,
+   "pitch": 2,
+   "note": "a pin lights"
+  },
+  {
+   "frame": 161,
+   "id": "kenney-select-001",
+   "db": -10,
+   "pitch": 4,
+   "note": "a pin lights"
+  },
+  {
+   "frame": 165,
+   "id": "kenney-select-001",
+   "db": -10,
+   "pitch": 6,
+   "note": "a pin lights"
+  },
+  {
+   "frame": 169,
+   "id": "kenney-select-001",
+   "db": -10,
+   "pitch": 8,
+   "note": "a pin lights"
+  },
+  {
+   "frame": 180,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": 3,
+   "note": "a job card"
+  },
+  {
+   "frame": 184,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": 4,
+   "note": "a job card"
+  },
+  {
+   "frame": 189,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": 5,
+   "note": "a job card"
+  },
+  {
+   "frame": 227,
+   "id": "gen-whoosh-medium",
+   "db": -7,
+   "note": "the hub opens into the pool"
+  },
+  {
+   "frame": 238,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "note": "a card flows in"
+  },
+  {
+   "frame": 240,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 1,
+   "note": "a card flows in"
+  },
+  {
+   "frame": 243,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 2,
+   "note": "a card flows in"
+  },
+  {
+   "frame": 246,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 3,
+   "note": "a card flows in"
+  },
+  {
+   "frame": 248,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 4,
+   "note": "a card flows in"
+  },
+  {
+   "frame": 251,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "note": "a card flows in"
+  },
+  {
+   "frame": 254,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 1,
+   "note": "a card flows in"
+  },
+  {
+   "frame": 255,
+   "id": "kenney-tick-004",
+   "db": -10,
+   "note": "qualified checks"
+  },
+  {
+   "frame": 256,
+   "id": "kenney-drop-003",
+   "db": -11,
+   "pitch": 2,
+   "note": "a card flows in"
+  },
+  {
+   "frame": 257,
+   "id": "kenney-tick-004",
+   "db": -10,
+   "pitch": 1,
+   "note": "qualified checks"
+  },
+  {
+   "frame": 260,
+   "id": "kenney-tick-004",
+   "db": -10,
+   "pitch": 2,
+   "note": "qualified checks"
+  },
+  {
+   "frame": 262,
+   "id": "kenney-tick-004",
+   "db": -10,
+   "pitch": 3,
+   "note": "qualified checks"
+  },
+  {
+   "frame": 309,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "note": "the cards snap into the dashboard"
+  },
+  {
+   "frame": 338,
+   "id": "kenney-select-002",
+   "db": -6,
+   "pitch": 2,
+   "note": "the dashboard lands"
+  },
+  {
+   "frame": 374,
+   "id": "kenney-click-001",
+   "db": -4,
+   "note": "filters"
+  },
+  {
+   "frame": 385,
+   "id": "kenney-click-001",
+   "db": -3,
+   "pitch": 2,
+   "note": "a filter on"
+  },
+  {
+   "frame": 389,
+   "id": "gen-whoosh-short",
+   "db": -10,
+   "pitch": -2,
+   "note": "non-matches drop out"
+  },
+  {
+   "frame": 407,
+   "id": "kenney-click-001",
+   "db": -3,
+   "pitch": 2,
+   "note": "a filter on"
+  },
+  {
+   "frame": 410,
+   "id": "gen-whoosh-short",
+   "db": -10,
+   "pitch": -2,
+   "note": "non-matches drop out"
+  },
+  {
+   "frame": 436,
+   "id": "kenney-click-001",
+   "db": -3,
+   "pitch": 2,
+   "note": "a filter on"
+  },
+  {
+   "frame": 439,
+   "id": "gen-whoosh-short",
+   "db": -10,
+   "pitch": -2,
+   "note": "non-matches drop out"
+  },
+  {
+   "frame": 485,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 4,
+   "note": "the match"
+  },
+  {
+   "frame": 512,
+   "id": "gen-whoosh-medium",
+   "db": -7,
+   "note": "the profile expands"
+  },
+  {
+   "frame": 566,
+   "id": "kenney-click-001",
+   "db": -1,
+   "note": "Unlock profile"
+  },
+  {
+   "frame": 570,
+   "id": "kenney-tick-004",
+   "db": -4,
+   "pitch": 3,
+   "note": "a credit flies"
+  },
+  {
+   "frame": 572,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 5,
+   "note": "the lock springs open"
+  },
+  {
+   "frame": 585,
+   "id": "gen-shimmer",
+   "db": -7,
+   "pitch": 3,
+   "note": "the details are revealed"
+  },
+  {
+   "frame": 614,
+   "id": "kenney-tick-004",
+   "db": -6,
+   "pitch": 2,
+   "note": "the connection line"
+  },
+  {
+   "frame": 625,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 3,
+   "note": "the message travels"
+  },
+  {
+   "frame": 652,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 4,
+   "note": "the reply"
+  },
+  {
+   "frame": 678,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "note": "red iris"
+  },
+  {
+   "frame": 691,
+   "id": "kenney-select-002",
+   "db": -6,
+   "note": "for graduates"
+  },
+  {
+   "frame": 722,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "pitch": 2,
+   "note": "the gateway opens"
+  },
+  {
+   "frame": 736,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "note": "an opportunity flies in"
+  },
+  {
+   "frame": 740,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 1,
+   "note": "an opportunity flies in"
+  },
+  {
+   "frame": 743,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 2,
+   "note": "an opportunity flies in"
+  },
+  {
+   "frame": 747,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 3,
+   "note": "an opportunity flies in"
+  },
+  {
+   "frame": 751,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "pitch": 4,
+   "note": "an opportunity flies in"
+  },
+  {
+   "frame": 771,
+   "id": "kenney-click-001",
+   "db": -3,
+   "note": "Apply"
+  },
+  {
+   "frame": 775,
+   "id": "kenney-select-001",
+   "db": -5,
+   "pitch": 4,
+   "note": "Applied"
+  },
+  {
+   "frame": 807,
+   "id": "kenney-select-002",
+   "db": -6,
+   "note": "for employers"
+  },
+  {
+   "frame": 826,
+   "id": "kenney-drop-003",
+   "db": -7,
+   "note": "a client type"
+  },
+  {
+   "frame": 832,
+   "id": "kenney-drop-003",
+   "db": -7,
+   "pitch": 2,
+   "note": "a client type"
+  },
+  {
+   "frame": 858,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "note": "the scan sweep"
+  },
+  {
+   "frame": 883,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "note": "a match ranked"
+  },
+  {
+   "frame": 887,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "pitch": 2,
+   "note": "a match ranked"
+  },
+  {
+   "frame": 890,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "pitch": 4,
+   "note": "a match ranked"
+  },
+  {
+   "frame": 894,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "pitch": 6,
+   "note": "a match ranked"
+  },
+  {
+   "frame": 915,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "note": "red iris"
+  },
+  {
+   "frame": 923,
+   "id": "gen-pop",
+   "db": -2,
+   "pitch": 2,
+   "note": "the logo builds"
+  },
+  {
+   "frame": 934,
+   "id": "gen-shimmer",
+   "db": -4,
+   "pitch": 3,
+   "note": "the mark completes"
+  },
+  {
+   "frame": 953,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "note": "the wide logo"
+  },
+  {
+   "frame": 966,
+   "id": "kenney-tick-004",
+   "db": -5,
+   "pitch": 4,
+   "note": "the connection line"
+  },
+  {
+   "frame": 999,
+   "id": "gen-swell",
+   "db": -6,
+   "note": "end card"
+  }
+ ]
+}

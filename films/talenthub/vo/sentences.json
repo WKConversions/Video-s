@@ -1,0 +1,92 @@
+[
+ {
+  "i": 1,
+  "text": "Looking for qualified talent?",
+  "start": 0.1,
+  "end": 1.571,
+  "pause_after": 0.421,
+  "first_key": "w:looking",
+  "last_key": "w:talent"
+ },
+ {
+  "i": 2,
+  "text": "Meet Talent Hub.",
+  "start": 1.992,
+  "end": 2.949,
+  "pause_after": 0.458,
+  "first_key": "w:meet",
+  "last_key": "w:hub"
+ },
+ {
+  "i": 3,
+  "text": "The platform connecting graduates with international career opportunities.",
+  "start": 3.406,
+  "end": 7.121,
+  "pause_after": 0.447,
+  "first_key": "w:the",
+  "last_key": "w:opportunities"
+ },
+ {
+  "i": 4,
+  "text": "Browse a database of qualified candidates, all in one intuitive dashboard.",
+  "start": 7.568,
+  "end": 11.969,
+  "pause_after": 0.478,
+  "first_key": "w:browse",
+  "last_key": "w:dashboard"
+ },
+ {
+  "i": 5,
+  "text": "Filter by skills, experience, and qualifications to find the right match.",
+  "start": 12.447,
+  "end": 16.666,
+  "pause_after": 0.409,
+  "first_key": "w:filter",
+  "last_key": "w:match"
+ },
+ {
+  "i": 6,
+  "text": "Discover candidate profiles, unlock contact details, and connect directly with potential hires.",
+  "start": 17.076,
+  "end": 22.502,
+  "pause_after": 0.466,
+  "first_key": "w:discover",
+  "last_key": "w:hires"
+ },
+ {
+  "i": 7,
+  "text": "For graduates, it's a gateway to exciting opportunities abroad.",
+  "start": 22.968,
+  "end": 26.348,
+  "pause_after": 0.501,
+  "first_key": "w:for2",
+  "last_key": "w:abroad"
+ },
+ {
+  "i": 8,
+  "text": "For employers and recruiters, it's a smarter way to discover talent.",
+  "start": 26.848,
+  "end": 30.295,
+  "pause_after": 0.489,
+  "first_key": "w:for3",
+  "last_key": "w:talent3"
+ },
+ {
+  "i": 9,
+  "text": "Talent Hub.",
+  "start": 30.784,
+  "end": 31.399,
+  "pause_after": 0.382,
+  "first_key": "w:talent4",
+  "last_key": "w:hub2"
+ },
+ {
+  "i": 10,
+  "text": "Your next connection starts here.",
+  "start": 31.78,
+  "end": 33.46,
+  "pause_after": 0.264,
+  "first_key": "w:your",
+  "last_key": "w:here"
+ }
+]
