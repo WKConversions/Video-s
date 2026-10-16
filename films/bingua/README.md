@@ -7,10 +7,11 @@ Made from the client's script and the supplied ElevenLabs voice-over ("Christina
 - "SaaS style" in the animation and the way it explains, not in gradients.
 
 ## Delivery
-`deliver/bingua-38s.mp4`:
-- 1920×1080, 30 fps, 37.6 s;
-- H.264 High, BT.709;
-- AAC 48 kHz, −15.2 LUFS.
+- `deliver/bingua-38s.mp4` (16:9) and `deliver/bingua-38s-portrait.mp4` (portrait, for Reels, TikTok and Shorts).
+- **16:9:** 1920×1080.
+- **Portrait:** 1080×1920. The same film re-laid out vertically: the same scenes, words, timings and sound.
+  Text and key UI sit inside the safe area (x 60–1020, y 220–1640).
+- **Both:** 30 fps, 37.6 s, H.264 High, BT.709, AAC 48 kHz, −15.2 LUFS.
 
 ## Look (measured on bingua.app)
 - **Ground and surfaces:** iOS light grey #F2F2F7 with white cards and hairlines.
@@ -52,6 +53,7 @@ Remotion 4 (`film/`): five scenes in `film/src/scenes/` on the voice-over's word
 `src/shared.tsx`.
 ```
 cd films/bingua/film && bash ../scripts/render_chunks.sh Film out/final.mp4 '{"blurSamples":8,"audio":"none"}' 0,282,564,846,1128 public/audio/mix.wav
+bash ../scripts/render_chunks.sh Portrait out/portrait.mp4 '{"blurSamples":8,"audio":"none"}' 0,282,564,846,1128 public/audio/mix.wav   # src/portrait/
 ```
 
 ## Checks on the final
