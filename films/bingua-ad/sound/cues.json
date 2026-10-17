@@ -1,0 +1,609 @@
+{
+ "fps": 30,
+ "frames": 1215,
+ "library": "lib",
+ "vo": {
+  "file": "../film/public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.05,
+  "fade_out": 0.8
+ },
+ "sfx": [
+  {
+   "id": "gen-whoosh-whip",
+   "frame": 1,
+   "db": -3,
+   "note": "frame 0: the feed is already rushing"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 9,
+   "db": -9,
+   "note": "posts scroll past"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 18,
+   "db": -9,
+   "pitch": 2,
+   "note": "posts scroll past"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 27,
+   "db": -9,
+   "pitch": 4,
+   "note": "posts scroll past"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 36,
+   "db": -9,
+   "pitch": 2,
+   "note": "posts scroll past"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 45,
+   "db": -9,
+   "note": "posts scroll past"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 98,
+   "db": -7,
+   "note": "another flick"
+  },
+  {
+   "id": "gen-appear",
+   "frame": 109,
+   "db": -6,
+   "note": "your plans card"
+  },
+  {
+   "id": "gen-stamp",
+   "frame": 139,
+   "db": -8,
+   "note": "ON HOLD"
+  },
+  {
+   "id": "gen-stamp",
+   "frame": 143,
+   "db": -8,
+   "pitch": 1,
+   "note": "ON HOLD"
+  },
+  {
+   "id": "gen-stamp",
+   "frame": 146,
+   "db": -8,
+   "pitch": 2,
+   "note": "ON HOLD"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 168,
+   "db": -6,
+   "note": "the counter comes in"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 174,
+   "db": -10,
+   "note": "minutes run"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 180,
+   "db": -10,
+   "pitch": 1,
+   "note": "minutes run"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 187,
+   "db": -10,
+   "pitch": 2,
+   "note": "minutes run"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 194,
+   "db": -10,
+   "pitch": 3,
+   "note": "minutes run"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 200,
+   "db": -10,
+   "pitch": 4,
+   "note": "minutes run"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 207,
+   "db": -10,
+   "note": "minutes run"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 213,
+   "db": -10,
+   "pitch": 1,
+   "note": "minutes run"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 174,
+   "db": -10,
+   "pitch": -2,
+   "note": "scrolling on"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 183,
+   "db": -10,
+   "pitch": -2,
+   "note": "scrolling on"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 192,
+   "db": -10,
+   "pitch": -2,
+   "note": "scrolling on"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 201,
+   "db": -10,
+   "pitch": -2,
+   "note": "scrolling on"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 210,
+   "db": -10,
+   "pitch": -2,
+   "note": "scrolling on"
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 210,
+   "db": -4,
+   "pitch": -3,
+   "note": "1 hour"
+  },
+  {
+   "id": "gen-appear",
+   "frame": 244,
+   "db": -6,
+   "pitch": -2,
+   "note": "today's stats"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 269,
+   "db": -8,
+   "pitch": -3,
+   "note": "zero"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 278,
+   "db": -8,
+   "pitch": -3,
+   "note": "zero"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 286,
+   "db": -8,
+   "pitch": -3,
+   "note": "zero"
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 311,
+   "db": -3,
+   "note": "blue floods out"
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 320,
+   "db": -5,
+   "note": ""
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 316,
+   "db": -7,
+   "note": "Bingua"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 347,
+   "db": -6,
+   "note": "pours back into the phone"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 349,
+   "db": -8,
+   "note": "swipe"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 363,
+   "db": -8,
+   "pitch": 1,
+   "note": "swipe"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 376,
+   "db": -8,
+   "pitch": 2,
+   "note": "swipe"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 390,
+   "db": -8,
+   "pitch": 3,
+   "note": "swipe"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 403,
+   "db": -8,
+   "pitch": 4,
+   "note": "swipe"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 417,
+   "db": -8,
+   "pitch": 5,
+   "note": "swipe"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 364,
+   "db": -9,
+   "pitch": 2,
+   "note": "a word collected"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 377,
+   "db": -9,
+   "pitch": 3,
+   "note": "a word collected"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 391,
+   "db": -9,
+   "pitch": 4,
+   "note": "a word collected"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 404,
+   "db": -9,
+   "pitch": 5,
+   "note": "a word collected"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 418,
+   "db": -9,
+   "pitch": 6,
+   "note": "a word collected"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 431,
+   "db": -9,
+   "pitch": 7,
+   "note": "a word collected"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 442,
+   "db": -5,
+   "note": "the words fly home to their countries"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 448,
+   "db": -8,
+   "note": "flag pin lands"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 453,
+   "db": -8,
+   "pitch": 1,
+   "note": "flag pin lands"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 459,
+   "db": -8,
+   "pitch": 2,
+   "note": "flag pin lands"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 464,
+   "db": -8,
+   "pitch": 3,
+   "note": "flag pin lands"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 470,
+   "db": -8,
+   "pitch": 4,
+   "note": "flag pin lands"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 475,
+   "db": -8,
+   "pitch": 5,
+   "note": "flag pin lands"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 476,
+   "db": -6,
+   "note": "back to the app"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 536,
+   "db": -2,
+   "note": "tap famoso"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 539,
+   "db": -6,
+   "pitch": 3,
+   "note": "word card"
+  },
+  {
+   "id": "gen-chime",
+   "frame": 545,
+   "db": -7,
+   "note": "translation"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 573,
+   "db": -7,
+   "pitch": -1,
+   "note": "the conversation plays on"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 644,
+   "db": -7,
+   "pitch": 1,
+   "note": "swipe"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 682,
+   "db": -3,
+   "note": "heart"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 684,
+   "db": -5,
+   "pitch": 5,
+   "note": ""
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 665,
+   "db": -7,
+   "pitch": 2,
+   "note": "swipe"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 711,
+   "db": -5,
+   "pitch": -1,
+   "note": "the map returns"
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 764,
+   "db": -5,
+   "note": "zoom to Europe"
+  },
+  {
+   "id": "gen-swell",
+   "frame": 763,
+   "db": -9,
+   "note": "the flight"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 774,
+   "db": -7,
+   "pitch": 2,
+   "note": "Barcelona"
+  },
+  {
+   "id": "gen-appear",
+   "frame": 795,
+   "db": -7,
+   "pitch": -2,
+   "note": "others' feed"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 849,
+   "db": -5,
+   "note": "the park"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 872,
+   "db": -5,
+   "pitch": 4,
+   "note": "\u00a1Hola!"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 893,
+   "db": -5,
+   "pitch": 6,
+   "note": "\u00a1Soy de Holanda!"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 915,
+   "db": -6,
+   "note": "the balcony"
+  },
+  {
+   "id": "gen-success",
+   "frame": 927,
+   "db": -5,
+   "note": "+3 new friends"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 946,
+   "db": -6,
+   "pitch": 1,
+   "note": "Ibiza"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 952,
+   "db": -8,
+   "pitch": 3,
+   "note": "a city"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 968,
+   "db": -8,
+   "pitch": 4,
+   "note": "a city"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 977,
+   "db": -8,
+   "pitch": 5,
+   "note": "a city"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 984,
+   "db": -8,
+   "pitch": 7,
+   "note": "a city"
+  },
+  {
+   "id": "gen-riser-1s",
+   "frame": 1019,
+   "db": -8,
+   "note": "into the screen"
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 1031,
+   "db": -4,
+   "note": "out of the screen"
+  },
+  {
+   "id": "gen-impact-deep",
+   "frame": 1045,
+   "db": -6,
+   "note": "life, full frame"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 1082,
+   "db": -5,
+   "note": "the end card"
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 1082,
+   "db": -6,
+   "note": "Bingua"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1089,
+   "db": -11,
+   "note": "flags"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1094,
+   "db": -11,
+   "pitch": 1,
+   "note": "flags"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1098,
+   "db": -11,
+   "pitch": 2,
+   "note": "flags"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1102,
+   "db": -11,
+   "pitch": 3,
+   "note": "flags"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1106,
+   "db": -11,
+   "pitch": 4,
+   "note": "flags"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1110,
+   "db": -11,
+   "pitch": 5,
+   "note": "flags"
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 1154,
+   "db": -5,
+   "note": "connections."
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1163,
+   "db": -7,
+   "pitch": 3,
+   "note": "App Store badge"
+  }
+ ]
+}
