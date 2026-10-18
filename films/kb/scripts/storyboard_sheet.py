@@ -1,30 +1,22 @@
 # Renders one still per voice-over line from the Remotion project and lays them out as a labelled storyboard sheet.
-#   python3 storyboard_sheet.py <film dir> <out.jpg> [nl]
-# nl: the Dutch build (set LANG = "nl" in src/lang.ts first); each shot moves to the same moment of the Dutch
-# voice-over (the English labels' times mapped onto src/words_nl.json) and is captioned with the Dutch line.
+#   python3 storyboard_sheet.py <film dir> <out.jpg>
 import json, subprocess, sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 film, out = sys.argv[1], sys.argv[2]
-SHOTS = [(1.2, "Looking for qualified talent?"), (2.7, "Meet Talent Hub."), (4.9, "The platform connecting graduates…"), (6.6, "…with international career opportunities."),
-         (9.0, "Browse a database of qualified candidates,"), (11.6, "all in one intuitive dashboard."), (13.3, "Filter by skills,"), (15.0, "experience, and qualifications…"),
-         (16.4, "…to find the right match."), (18.3, "Discover candidate profiles,"), (19.9, "unlock contact details,"), (21.9, "and connect directly with potential hires."),
-         (24.6, "For graduates, it's a gateway…"), (26.0, "…to exciting opportunities abroad."), (27.8, "For employers and recruiters,"), (29.9, "it's a smarter way to discover talent."),
-         (31.3, "Talent Hub."), (35.0, "Your next connection starts here.")]
-if len(sys.argv) > 3 and sys.argv[3] == "nl":
-    en, nl = json.load(open(f"{film}/src/words.json")), json.load(open(f"{film}/src/words_nl.json"))
-    pairs = sorted((en[k], nl[k]) for k in en)
-    xs, ys = [0.0] + [a for a, _ in pairs] + [en["w:here"] + 3.0], [0.0] + [b for _, b in pairs] + [nl["w:here"] + 3.0]
-    NL_LINES = ["Op zoek naar gekwalificeerd talent?", "Maak kennis met Talent Hub.", "Het platform dat afgestudeerden verbindt…", "…met internationale carrièremogelijkheden.",
-                "Ontdek een database vol gekwalificeerde kandidaten,", "overzichtelijk verzameld in één dashboard.", "Filter op vaardigheden,", "werkervaring en kwalificaties…",
-                "…om de juiste match te vinden.", "Bekijk kandidaatprofielen,", "ontgrendel contactgegevens,", "en kom direct in contact met potentiële werknemers.",
-                "Voor afgestudeerden opent Talent Hub de deur…", "…naar nieuwe kansen in het buitenland.", "Voor werkgevers en recruiters…", "…wordt talent vinden eenvoudiger.",
-                "Talent Hub.", "Jouw volgende connectie begint hier."]
-    SHOTS = [(float(np.interp(t, xs, ys)), line) for (t, _), line in zip(SHOTS, NL_LINES)]
-frames = [round(t * 30) for t, _ in SHOTS]
+SHOTS = [(1.6, "K.B. Network Intelligence is a system…"), (3.6, "…that turns everyday information…"), (5.6, "…into real business opportunities."), (7.3, "Here's how it works."),
+         (9.4, "First, conversations,"), (10.3, "meetings,"), (11.5, "emails, and documents…"), (12.6, "…are collected."),
+         (14.2, "Claude processes this information…"), (15.9, "…into structured summaries."), (17.3, "Once approved,"), (19.9, "everything is stored in a central knowledge base,"),
+         (22.0, "connected to K.B.'s client ecosystem."), (24.2, "AI then analyzes this knowledge…"), (26.4, "…alongside external data,"), (28.5, "identifying potential partnerships,"),
+         (29.5, "referrals,"), (30.4, "investments,"), (33.0, "and opportunities within existing clients."), (35.3, "Specialized agents develop these opportunities…"),
+         (37.5, "…into actionable proposals."), (39.8, "Management reviews each stage…"), (41.9, "…before personalized outreach is prepared,"), (42.9, "approved,"),
+         (43.6, "sent,"), (44.4, "and tracked."), (45.5, "For example,"), (48.0, "when a client mentions launching a new business,"),
+         (50.2, "the system can recognize potential needs,"), (52.2, "identify relevant connections,"), (54.0, "and suggest the next steps."), (56.8, "Every outcome feeds back into the knowledge base,"),
+         (58.6, "continuously improving the information…"), (60.6, "…available for future decisions."), (62.6, "End card"), (64.2, "Last frame")]
+frames = [min(round(t * 30), 1932) for t, _ in SHOTS]
 subprocess.run(["node", "stills.mjs", ",".join(map(str, frames)), "1"], cwd=film, check=True, capture_output=True)
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 17)
-W, H, cols = 480, 270, 4
+W, H, cols = 480, 270, 6
 rows = (len(SHOTS) + cols - 1) // cols
 sheet = Image.new("RGB", (cols * W, rows * (H + 34)), (15, 26, 41))
 for i, ((t, text), fr) in enumerate(zip(SHOTS, frames)):
