@@ -47,7 +47,7 @@ const Breath: React.FC<{ g: number; x: number; y: number; d: number; o: number; 
       {rings.map((t, i) => {
         const r = d * (0.56 + 0.5 * t);
         return <div key={i} style={{ position: "absolute", left: x - r, top: y - r, width: 2 * r, height: 2 * r, borderRadius: "50%", boxSizing: "border-box",
-          border: `3.5px solid rgba(33,138,179,${0.36 * o * (1 - t) * Math.min(1, t * 5)})` }} />;
+          border: `5px solid rgba(33,138,179,${0.4 * o * (1 - t) * Math.min(1, t * 5)})` }} />;
       })}
       {ht >= 0 && ht < 1.4 && (() => {
         const t = ht / 1.4, r = d * (0.55 + 0.75 * ARRIVE(t));
@@ -68,20 +68,24 @@ export const SceneH: React.FC<{ g: number }> = ({ g }) => {
     if (r.kind === "layer") rows[r.n - 1] = v; else gates[r.n - 1] = v;
   });
 
-  /* ---- camera: settle in, lean towards layer 3 on "improving", release, then pull back into the end card ---- */
-  const intro = kf(g, S5, 24, ARRIVE), lean = k(g, "w:improving-0.1", 0.9, MOVE), rel = kf(g, f("w:available"), f("w:decisions") - f("w:available"), MOVE);
-  const pull = k(g, "w:decisions+0.15", 0.9, MOVE);
-  const follow = kf(g, f("w:feeds"), f("w:continuously") - f("w:feeds"), MOVE);                              // follow the outcome round the loop
-  let cs = 1, ox = 960, oy = 540;
-  if (g < S5 + 24) cs = mix(1.08, 1, intro);
-  else if (pull > 0) cs = mix(1, 0.42, pull);
-  else {
-    cs = (1 + 0.04 * follow + 0.03 * lean) * (1 - rel) + rel;              // 1 → 1.04 → 1.07, released before the pull
-    ox = mix(1300, 1100, lean); oy = mix(620, 480, lean);
-  }
-  const tx = ox * (1 - cs), ty = oy * (1 - cs);
+  /* ---- camera (world point F at screen point Ctr, scale cs): settle in, push toward layer 7 on "outcome", follow the
+     dot up the loop, back out for the gates, lean toward layer 3 on "improving", release, then collapse into the mark ---- */
+  let cs = mix(1.12, 1, kf(g, S5, f("w:outcome-0.1") - S5, ARRIVE)), fx = 960, fy = 540, cx = 960, cy = 540;
+  const c2 = k(g, "w:outcome-0.1", 0.75, MOVE);
+  cs = mix(cs, 1.22, c2); fx = mix(fx, 1280, c2); fy = mix(fy, 760, c2);
+  const c3 = kf(g, f("w:feeds"), f("w:base2") - f("w:feeds"), MOVE);
+  cs = mix(cs, 1.18, c3); fx = mix(fx, 1330, c3); fy = mix(fy, 480, c3);
+  const c4 = kf(g, f("w:base2+0.1"), f("w:continuously+0.3") - f("w:base2+0.1"), MOVE);
+  cs = mix(cs, 1, c4); fx = mix(fx, 960, c4); fy = mix(fy, 540, c4);
+  const c5 = kf(g, f("w:improving-0.1"), f("w:available") - f("w:improving-0.1"), MOVE);
+  cs = mix(cs, 1.07, c5); fy = mix(fy, 465, c5);
+  const c6 = kf(g, f("w:available"), f("w:decisions") - f("w:available"), MOVE);
+  cs = mix(cs, 1, c6); fy = mix(fy, 540, c6);
+  const pull = k(g, "w:decisions+0.15", 0.85, MOVE);                     // the map collapses into the mark
+  cs = cs * Math.pow(0.1, pull); fx = mix(fx, 955, pull); fy = mix(fy, 515, pull); cy = mix(540, 432, pull);
+  const tx = cx - fx * cs, ty = cy - fy * cs;
   const scr = (x: number, y: number) => ({ x: tx + x * cs, y: ty + y * cs });
-  const worldO = 1 - clamp01(pull * 2);
+  const worldO = 1 - clamp01((pull - 0.6) / 0.38);
 
   /* ---- the outcome: the dot drops to layer 7, then draws the loop into layer 3 ---- */
   const drop = k(g, "w:outcome-0.1", 0.55, MOVE);
@@ -117,8 +121,8 @@ export const SceneH: React.FC<{ g: number }> = ({ g }) => {
   const replied = k(g, "w:outcome+0.35", 0.4, ARRIVE) * (1 - k(g, "w:continuously-0.2", 0.35, MOVE));
 
   /* ---- the end card ---- */
-  const card = k(g, "w:decisions+0.55", 0.5, ARRIVE);
-  const settle = kf(g, f("w:decisions+0.55"), f("end") - f("w:decisions+0.55"), LIN);
+  const card = k(g, "w:decisions+0.5", 0.4, ARRIVE);
+  const settle = kf(g, f("w:decisions+0.5"), f("end") - f("w:decisions+0.5"), LIN);
   const HIT = f("w:decisions+2.05");
 
   const kbx = mapNodeX(3, 0), y3 = Y3, pillW = 330;
@@ -175,18 +179,18 @@ export const SceneH: React.FC<{ g: number }> = ({ g }) => {
       {/* the outcome dot (screen space, so it is exactly the s5 dot at the first frame) */}
       {dr > 0.3 && worldO > 0 && (
         <>
-          <Packet x={g === S5 ? 960 : dot.x} y={g === S5 ? 540 : dot.y} r={g === S5 ? 14 : dr} color={C.navy} o={1 - cyan} />
-          {cyan > 0 && <Packet x={dot.x} y={dot.y} r={dr} color={C.cyan} o={cyan} />}
+          <Packet x={g === S5 ? 960 : dot.x} y={g === S5 ? 540 : dot.y} r={g === S5 ? 14 : dr * mix(1, cs, c2)} color={C.navy} o={1 - cyan} />
+          {cyan > 0 && <Packet x={dot.x} y={dot.y} r={dr * mix(1, cs, c2)} color={C.cyan} o={cyan} />}
         </>
       )}
 
       {/* the end card */}
       {card > 0 && (
-        <div style={{ position: "absolute", inset: 0, transform: `scale(${mix(0.94, 1, card) * (1 + 0.025 * settle)})`, transformOrigin: "960px 520px" }}>
-          <Breath g={g} x={960} y={451} d={190} o={k(g, "w:decisions+0.7", 0.8)} from={f("w:decisions+0.7")} hit={HIT} />
-          <KBMark size={168} p={kf(g, f("w:decisions+0.55"), 30, LIN)} style={{ position: "absolute", left: 960 - 84, top: 367 }} />
-          <Say g={g} y={575} size={64} words={[{ t: "Network", at: "w:decisions+0.85" }, { t: "Intelligence", at: "w:decisions+1.0" }]} />
-          <Say g={g} y={672} size={36} slateColor={C.slate} words={[
+        <div style={{ position: "absolute", inset: 0, transform: `scale(${(1 + 0.04 * settle)})`, transformOrigin: "960px 520px" }}>
+          <Breath g={g} x={960} y={432} d={230} o={k(g, "w:decisions+0.6", 0.8)} from={f("w:decisions+0.6")} hit={HIT} />
+          <KBMark size={200} p={kf(g, f("w:decisions+0.5"), 18, LIN)} style={{ position: "absolute", left: 960 - 100, top: 332 }} />
+          <Say g={g} y={572} size={96} words={[{ t: "Network", at: "w:decisions+0.75" }, { t: "Intelligence", at: "w:decisions+0.92" }]} />
+          <Say g={g} y={702} size={40} slateColor={C.slate} words={[
             { t: "From", at: "w:decisions+1.3", slate: true }, { t: "everyday", at: "w:decisions+1.4", slate: true }, { t: "information", at: "w:decisions+1.5", slate: true },
             { t: "to", at: "w:decisions+1.62", slate: true }, { t: "real", at: "w:decisions+1.72", slate: true }, { t: "opportunities.", at: "w:decisions+1.93", slate: true },
           ]} />
