@@ -15,3 +15,5 @@ films/*/film/node_modules
 films/talenthub/work/
 films/talenthub/sound/music/candidates/
 films/talenthub/film/out/
+films/kb/work/
+films/kb/harvest/*.png

@@ -1,0 +1,92 @@
+[
+ {
+  "i": 1,
+  "text": "KB Network Intelligence is a system that turns everyday information into real business opportunities.",
+  "start": 0.075,
+  "end": 6.114,
+  "pause_after": 0.517,
+  "first_key": "w:kb",
+  "last_key": "w:opportunities"
+ },
+ {
+  "i": 2,
+  "text": "Here's how it works.",
+  "start": 6.631,
+  "end": 7.474,
+  "pause_after": 0.509,
+  "first_key": "w:heres",
+  "last_key": "w:works"
+ },
+ {
+  "i": 3,
+  "text": "First, conversations, meetings, emails, and documents are collected.",
+  "start": 7.983,
+  "end": 12.493,
+  "pause_after": 0.507,
+  "first_key": "w:first",
+  "last_key": "w:collected"
+ },
+ {
+  "i": 4,
+  "text": "Claude processes this information into structured summaries.",
+  "start": 13.0,
+  "end": 16.184,
+  "pause_after": 0.481,
+  "first_key": "w:claude",
+  "last_key": "w:summaries"
+ },
+ {
+  "i": 5,
+  "text": "Once approved, everything is stored in a central knowledge base, connected to KB's client ecosystem.",
+  "start": 16.665,
+  "end": 22.447,
+  "pause_after": 0.482,
+  "first_key": "w:once",
+  "last_key": "w:ecosystem"
+ },
+ {
+  "i": 6,
+  "text": "AI then analyzes this knowledge alongside external data, identifying potential partnerships, referrals, investments, and opportunities within existing clients.",
+  "start": 22.929,
+  "end": 33.255,
+  "pause_after": 0.5,
+  "first_key": "w:ai",
+  "last_key": "w:clients"
+ },
+ {
+  "i": 7,
+  "text": "Specialized agents develop these opportunities into actionable proposals.",
+  "start": 33.755,
+  "end": 37.833,
+  "pause_after": 0.479,
+  "first_key": "w:specialized",
+  "last_key": "w:proposals"
+ },
+ {
+  "i": 8,
+  "text": "Management reviews each stage before personalized outreach is prepared, approved, sent, and tracked.",
+  "start": 38.312,
+  "end": 44.365,
+  "pause_after": 0.549,
+  "first_key": "w:management",
+  "last_key": "w:tracked"
+ },
+ {
+  "i": 9,
+  "text": "For example, when a client mentions launching a new business, the system can recognize potential needs, identify relevant connections, and suggest the next steps.",
+  "start": 44.914,
+  "end": 54.015,
+  "pause_after": 0.477,
+  "first_key": "w:for",
+  "last_key": "w:steps"
+ },
+ {
+  "i": 10,
+  "text": "Every outcome feeds back into the knowledge base, continuously improving the information available for future decisions.",
+  "start": 54.493,
+  "end": 61.073,
+  "pause_after": 0.236,
+  "first_key": "w:every",
+  "last_key": "w:decisions"
+ }
+]

@@ -1,0 +1,764 @@
+[
+ {
+  "w": "KB",
+  "key": "w:kb",
+  "start": 0.075,
+  "end": 0.36
+ },
+ {
+  "w": "Network",
+  "key": "w:network",
+  "start": 0.36,
+  "end": 0.74
+ },
+ {
+  "w": "Intelligence",
+  "key": "w:intelligence",
+  "start": 0.74,
+  "end": 1.28
+ },
+ {
+  "w": "is",
+  "key": "w:is",
+  "start": 1.28,
+  "end": 1.72
+ },
+ {
+  "w": "a",
+  "key": "w:a",
+  "start": 1.72,
+  "end": 1.88
+ },
+ {
+  "w": "system",
+  "key": "w:system",
+  "start": 1.88,
+  "end": 2.16
+ },
+ {
+  "w": "that",
+  "key": "w:that",
+  "start": 2.16,
+  "end": 2.44
+ },
+ {
+  "w": "turns",
+  "key": "w:turns",
+  "start": 2.44,
+  "end": 2.72
+ },
+ {
+  "w": "everyday",
+  "key": "w:everyday",
+  "start": 2.72,
+  "end": 3.2
+ },
+ {
+  "w": "information",
+  "key": "w:information",
+  "start": 3.2,
+  "end": 3.88
+ },
+ {
+  "w": "into",
+  "key": "w:into",
+  "start": 3.88,
+  "end": 4.32
+ },
+ {
+  "w": "real",
+  "key": "w:real",
+  "start": 4.32,
+  "end": 4.8
+ },
+ {
+  "w": "business",
+  "key": "w:business",
+  "start": 4.8,
+  "end": 5.2
+ },
+ {
+  "w": "opportunities.",
+  "key": "w:opportunities",
+  "start": 5.2,
+  "end": 6.114
+ },
+ {
+  "w": "Here's",
+  "key": "w:heres",
+  "start": 6.631,
+  "end": 6.84
+ },
+ {
+  "w": "how",
+  "key": "w:how",
+  "start": 6.84,
+  "end": 6.96
+ },
+ {
+  "w": "it",
+  "key": "w:it",
+  "start": 6.96,
+  "end": 7.08
+ },
+ {
+  "w": "works.",
+  "key": "w:works",
+  "start": 7.08,
+  "end": 7.474
+ },
+ {
+  "w": "First,",
+  "key": "w:first",
+  "start": 7.983,
+  "end": 8.418
+ },
+ {
+  "w": "conversations,",
+  "key": "w:conversations",
+  "start": 8.702,
+  "end": 9.82
+ },
+ {
+  "w": "meetings,",
+  "key": "w:meetings",
+  "start": 9.82,
+  "end": 10.54
+ },
+ {
+  "w": "emails,",
+  "key": "w:emails",
+  "start": 10.54,
+  "end": 11.06
+ },
+ {
+  "w": "and",
+  "key": "w:and",
+  "start": 11.06,
+  "end": 11.18
+ },
+ {
+  "w": "documents",
+  "key": "w:documents",
+  "start": 11.18,
+  "end": 11.6
+ },
+ {
+  "w": "are",
+  "key": "w:are",
+  "start": 11.6,
+  "end": 11.94
+ },
+ {
+  "w": "collected.",
+  "key": "w:collected",
+  "start": 11.94,
+  "end": 12.493
+ },
+ {
+  "w": "Claude",
+  "key": "w:claude",
+  "start": 13.0,
+  "end": 13.3
+ },
+ {
+  "w": "processes",
+  "key": "w:processes",
+  "start": 13.3,
+  "end": 13.8
+ },
+ {
+  "w": "this",
+  "key": "w:this",
+  "start": 13.8,
+  "end": 14.1
+ },
+ {
+  "w": "information",
+  "key": "w:information2",
+  "start": 14.1,
+  "end": 14.6
+ },
+ {
+  "w": "into",
+  "key": "w:into2",
+  "start": 14.6,
+  "end": 14.96
+ },
+ {
+  "w": "structured",
+  "key": "w:structured",
+  "start": 14.96,
+  "end": 15.4
+ },
+ {
+  "w": "summaries.",
+  "key": "w:summaries",
+  "start": 15.4,
+  "end": 16.184
+ },
+ {
+  "w": "Once",
+  "key": "w:once",
+  "start": 16.665,
+  "end": 16.8
+ },
+ {
+  "w": "approved,",
+  "key": "w:approved",
+  "start": 16.8,
+  "end": 17.427
+ },
+ {
+  "w": "everything",
+  "key": "w:everything",
+  "start": 17.755,
+  "end": 18.0
+ },
+ {
+  "w": "is",
+  "key": "w:is2",
+  "start": 18.0,
+  "end": 18.28
+ },
+ {
+  "w": "stored",
+  "key": "w:stored",
+  "start": 18.28,
+  "end": 18.54
+ },
+ {
+  "w": "in",
+  "key": "w:in",
+  "start": 18.54,
+  "end": 18.78
+ },
+ {
+  "w": "a",
+  "key": "w:a2",
+  "start": 18.78,
+  "end": 18.88
+ },
+ {
+  "w": "central",
+  "key": "w:central",
+  "start": 18.88,
+  "end": 19.22
+ },
+ {
+  "w": "knowledge",
+  "key": "w:knowledge",
+  "start": 19.22,
+  "end": 19.64
+ },
+ {
+  "w": "base,",
+  "key": "w:base",
+  "start": 19.64,
+  "end": 20.138
+ },
+ {
+  "w": "connected",
+  "key": "w:connected",
+  "start": 20.305,
+  "end": 20.54
+ },
+ {
+  "w": "to",
+  "key": "w:to",
+  "start": 20.54,
+  "end": 20.9
+ },
+ {
+  "w": "KB's",
+  "key": "w:kbs",
+  "start": 20.9,
+  "end": 21.36
+ },
+ {
+  "w": "client",
+  "key": "w:client",
+  "start": 21.36,
+  "end": 21.64
+ },
+ {
+  "w": "ecosystem.",
+  "key": "w:ecosystem",
+  "start": 21.64,
+  "end": 22.447
+ },
+ {
+  "w": "AI",
+  "key": "w:ai",
+  "start": 22.929,
+  "end": 23.1
+ },
+ {
+  "w": "then",
+  "key": "w:then",
+  "start": 23.1,
+  "end": 23.6
+ },
+ {
+  "w": "analyzes",
+  "key": "w:analyzes",
+  "start": 23.6,
+  "end": 24.32
+ },
+ {
+  "w": "this",
+  "key": "w:this2",
+  "start": 24.32,
+  "end": 24.54
+ },
+ {
+  "w": "knowledge",
+  "key": "w:knowledge2",
+  "start": 24.54,
+  "end": 24.88
+ },
+ {
+  "w": "alongside",
+  "key": "w:alongside",
+  "start": 24.88,
+  "end": 25.34
+ },
+ {
+  "w": "external",
+  "key": "w:external",
+  "start": 25.34,
+  "end": 26.06
+ },
+ {
+  "w": "data,",
+  "key": "w:data",
+  "start": 26.06,
+  "end": 26.524
+ },
+ {
+  "w": "identifying",
+  "key": "w:identifying",
+  "start": 26.885,
+  "end": 27.3
+ },
+ {
+  "w": "potential",
+  "key": "w:potential",
+  "start": 27.3,
+  "end": 27.82
+ },
+ {
+  "w": "partnerships,",
+  "key": "w:partnerships",
+  "start": 27.82,
+  "end": 28.88
+ },
+ {
+  "w": "referrals,",
+  "key": "w:referrals",
+  "start": 28.88,
+  "end": 29.593
+ },
+ {
+  "w": "investments,",
+  "key": "w:investments",
+  "start": 29.723,
+  "end": 30.368
+ },
+ {
+  "w": "and",
+  "key": "w:and2",
+  "start": 30.726,
+  "end": 30.9
+ },
+ {
+  "w": "opportunities",
+  "key": "w:opportunities2",
+  "start": 30.9,
+  "end": 31.52
+ },
+ {
+  "w": "within",
+  "key": "w:within",
+  "start": 31.52,
+  "end": 32.04
+ },
+ {
+  "w": "existing",
+  "key": "w:existing",
+  "start": 32.04,
+  "end": 32.62
+ },
+ {
+  "w": "clients.",
+  "key": "w:clients",
+  "start": 32.62,
+  "end": 33.255
+ },
+ {
+  "w": "Specialized",
+  "key": "w:specialized",
+  "start": 33.755,
+  "end": 34.34
+ },
+ {
+  "w": "agents",
+  "key": "w:agents",
+  "start": 34.34,
+  "end": 34.68
+ },
+ {
+  "w": "develop",
+  "key": "w:develop",
+  "start": 34.68,
+  "end": 35.12
+ },
+ {
+  "w": "these",
+  "key": "w:these",
+  "start": 35.12,
+  "end": 35.42
+ },
+ {
+  "w": "opportunities",
+  "key": "w:opportunities3",
+  "start": 35.42,
+  "end": 36.02
+ },
+ {
+  "w": "into",
+  "key": "w:into3",
+  "start": 36.02,
+  "end": 36.4
+ },
+ {
+  "w": "actionable",
+  "key": "w:actionable",
+  "start": 36.4,
+  "end": 37.02
+ },
+ {
+  "w": "proposals.",
+  "key": "w:proposals",
+  "start": 37.02,
+  "end": 37.833
+ },
+ {
+  "w": "Management",
+  "key": "w:management",
+  "start": 38.312,
+  "end": 38.56
+ },
+ {
+  "w": "reviews",
+  "key": "w:reviews",
+  "start": 38.56,
+  "end": 39.06
+ },
+ {
+  "w": "each",
+  "key": "w:each",
+  "start": 39.06,
+  "end": 39.54
+ },
+ {
+  "w": "stage",
+  "key": "w:stage",
+  "start": 39.54,
+  "end": 39.94
+ },
+ {
+  "w": "before",
+  "key": "w:before",
+  "start": 39.94,
+  "end": 40.32
+ },
+ {
+  "w": "personalized",
+  "key": "w:personalized",
+  "start": 40.32,
+  "end": 40.98
+ },
+ {
+  "w": "outreach",
+  "key": "w:outreach",
+  "start": 40.98,
+  "end": 41.46
+ },
+ {
+  "w": "is",
+  "key": "w:is3",
+  "start": 41.46,
+  "end": 41.68
+ },
+ {
+  "w": "prepared,",
+  "key": "w:prepared",
+  "start": 41.68,
+  "end": 42.268
+ },
+ {
+  "w": "approved,",
+  "key": "w:approved2",
+  "start": 42.456,
+  "end": 43.021
+ },
+ {
+  "w": "sent,",
+  "key": "w:sent",
+  "start": 43.213,
+  "end": 43.629
+ },
+ {
+  "w": "and",
+  "key": "w:and3",
+  "start": 43.807,
+  "end": 43.94
+ },
+ {
+  "w": "tracked.",
+  "key": "w:tracked",
+  "start": 43.94,
+  "end": 44.365
+ },
+ {
+  "w": "For",
+  "key": "w:for",
+  "start": 44.914,
+  "end": 45.0
+ },
+ {
+  "w": "example,",
+  "key": "w:example",
+  "start": 45.0,
+  "end": 45.513
+ },
+ {
+  "w": "when",
+  "key": "w:when",
+  "start": 45.844,
+  "end": 45.94
+ },
+ {
+  "w": "a",
+  "key": "w:a3",
+  "start": 45.94,
+  "end": 46.04
+ },
+ {
+  "w": "client",
+  "key": "w:client2",
+  "start": 46.04,
+  "end": 46.3
+ },
+ {
+  "w": "mentions",
+  "key": "w:mentions",
+  "start": 46.3,
+  "end": 46.72
+ },
+ {
+  "w": "launching",
+  "key": "w:launching",
+  "start": 46.72,
+  "end": 47.12
+ },
+ {
+  "w": "a",
+  "key": "w:a4",
+  "start": 47.12,
+  "end": 47.3
+ },
+ {
+  "w": "new",
+  "key": "w:new",
+  "start": 47.3,
+  "end": 47.4
+ },
+ {
+  "w": "business,",
+  "key": "w:business2",
+  "start": 47.4,
+  "end": 47.84
+ },
+ {
+  "w": "the",
+  "key": "w:the",
+  "start": 47.84,
+  "end": 48.071
+ },
+ {
+  "w": "system",
+  "key": "w:system2",
+  "start": 48.291,
+  "end": 48.66
+ },
+ {
+  "w": "can",
+  "key": "w:can",
+  "start": 48.66,
+  "end": 48.9
+ },
+ {
+  "w": "recognize",
+  "key": "w:recognize",
+  "start": 48.9,
+  "end": 49.38
+ },
+ {
+  "w": "potential",
+  "key": "w:potential2",
+  "start": 49.38,
+  "end": 49.76
+ },
+ {
+  "w": "needs,",
+  "key": "w:needs",
+  "start": 49.76,
+  "end": 50.431
+ },
+ {
+  "w": "identify",
+  "key": "w:identify",
+  "start": 50.729,
+  "end": 51.14
+ },
+ {
+  "w": "relevant",
+  "key": "w:relevant",
+  "start": 51.14,
+  "end": 51.54
+ },
+ {
+  "w": "connections,",
+  "key": "w:connections",
+  "start": 51.54,
+  "end": 52.355
+ },
+ {
+  "w": "and",
+  "key": "w:and4",
+  "start": 52.514,
+  "end": 52.7
+ },
+ {
+  "w": "suggest",
+  "key": "w:suggest",
+  "start": 52.7,
+  "end": 53.06
+ },
+ {
+  "w": "the",
+  "key": "w:the2",
+  "start": 53.06,
+  "end": 53.34
+ },
+ {
+  "w": "next",
+  "key": "w:next",
+  "start": 53.34,
+  "end": 53.5
+ },
+ {
+  "w": "steps.",
+  "key": "w:steps",
+  "start": 53.5,
+  "end": 54.015
+ },
+ {
+  "w": "Every",
+  "key": "w:every",
+  "start": 54.493,
+  "end": 54.72
+ },
+ {
+  "w": "outcome",
+  "key": "w:outcome",
+  "start": 54.72,
+  "end": 55.18
+ },
+ {
+  "w": "feeds",
+  "key": "w:feeds",
+  "start": 55.18,
+  "end": 55.6
+ },
+ {
+  "w": "back",
+  "key": "w:back",
+  "start": 55.6,
+  "end": 55.96
+ },
+ {
+  "w": "into",
+  "key": "w:into4",
+  "start": 55.96,
+  "end": 56.2
+ },
+ {
+  "w": "the",
+  "key": "w:the3",
+  "start": 56.2,
+  "end": 56.34
+ },
+ {
+  "w": "knowledge",
+  "key": "w:knowledge3",
+  "start": 56.34,
+  "end": 56.6
+ },
+ {
+  "w": "base,",
+  "key": "w:base2",
+  "start": 56.6,
+  "end": 57.079
+ },
+ {
+  "w": "continuously",
+  "key": "w:continuously",
+  "start": 57.252,
+  "end": 57.8
+ },
+ {
+  "w": "improving",
+  "key": "w:improving",
+  "start": 57.8,
+  "end": 58.38
+ },
+ {
+  "w": "the",
+  "key": "w:the4",
+  "start": 58.38,
+  "end": 58.64
+ },
+ {
+  "w": "information",
+  "key": "w:information3",
+  "start": 58.64,
+  "end": 59.1
+ },
+ {
+  "w": "available",
+  "key": "w:available",
+  "start": 59.1,
+  "end": 59.58
+ },
+ {
+  "w": "for",
+  "key": "w:for2",
+  "start": 59.58,
+  "end": 60.0
+ },
+ {
+  "w": "future",
+  "key": "w:future",
+  "start": 60.0,
+  "end": 60.32
+ },
+ {
+  "w": "decisions.",
+  "key": "w:decisions",
+  "start": 60.32,
+  "end": 61.073
+ }
+]
