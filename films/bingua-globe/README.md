@@ -45,6 +45,6 @@ then mux `public/audio/mix.wav` in the delivery encode (sandbox: the pre-install
 - Footage: Mixkit (Stock Video Free License, commercial use, no credit needed), listed in
   `film/public/footage/CREDITS.md`. The transcripts, translations and greetings shown are written for the ad.
 - Globe: Natural Earth via world-atlas 2 (50m countries, public domain). Flags drawn as vectors.
-- Music: Mixkit "Inspired", Mixkit Stock Music Free License, no credit required.
+- Music: Mixkit "Tears of Joy" (Michael Ramir C.), Mixkit Stock Music Free License, no credit required.
 - Font: Inter (SIL OFL); Japanese and Korean set in the system's WenQuanYi Zen Hei. Effects: generated
   (`scripts/sfx_synth.py`). Voice: ElevenLabs "Christina", supplied by Karl.
