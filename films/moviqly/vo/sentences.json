@@ -1,0 +1,128 @@
+[
+ {
+  "i": 1,
+  "text": "One sentence.",
+  "start": 0.055,
+  "end": 0.999,
+  "pause_after": 0.311,
+  "first_key": "w:one",
+  "last_key": "w:sentence"
+ },
+ {
+  "i": 2,
+  "text": "One finished video.",
+  "start": 1.311,
+  "end": 2.747,
+  "pause_after": 0.537,
+  "first_key": "w:one2",
+  "last_key": "w:video"
+ },
+ {
+  "i": 3,
+  "text": "Motion design takes designers, expensive tools, and weeks of revisions.",
+  "start": 3.284,
+  "end": 7.693,
+  "pause_after": 0.485,
+  "first_key": "w:motion",
+  "last_key": "w:revisions"
+ },
+ {
+  "i": 4,
+  "text": "Most teams simply can't keep up.",
+  "start": 8.178,
+  "end": 9.969,
+  "pause_after": 0.578,
+  "first_key": "w:most",
+  "last_key": "w:up"
+ },
+ {
+  "i": 5,
+  "text": "Meet Moviqly.",
+  "start": 10.547,
+  "end": 11.541,
+  "pause_after": 0.422,
+  "first_key": "w:meet",
+  "last_key": "w:moviqly"
+ },
+ {
+  "i": 6,
+  "text": "Describe your idea, and Moviqly reads your website, understands your business, writes the story, designs the look and checks every fact.",
+  "start": 11.963,
+  "end": 19.792,
+  "pause_after": 0.457,
+  "first_key": "w:describe",
+  "last_key": "w:fact"
+ },
+ {
+  "i": 7,
+  "text": "Launching a product or announcing a new feature?",
+  "start": 20.249,
+  "end": 22.351,
+  "pause_after": 0.414,
+  "first_key": "w:launching",
+  "last_key": "w:feature"
+ },
+ {
+  "i": 8,
+  "text": "Just type: Make a 25 second video about our launch.",
+  "start": 22.765,
+  "end": 25.964,
+  "pause_after": 0.451,
+  "first_key": "w:just",
+  "last_key": "w:launch"
+ },
+ {
+  "i": 9,
+  "text": "Watch every step happen live and get your film in just minutes.",
+  "start": 26.415,
+  "end": 30.138,
+  "pause_after": 0.459,
+  "first_key": "w:watch",
+  "last_key": "w:minutes"
+ },
+ {
+  "i": 10,
+  "text": "Refine it right in the chat, then export landscape, portrait, or square.",
+  "start": 30.597,
+  "end": 34.719,
+  "pause_after": 0.524,
+  "first_key": "w:refine",
+  "last_key": "w:square"
+ },
+ {
+  "i": 11,
+  "text": "A little idea.",
+  "start": 35.243,
+  "end": 36.111,
+  "pause_after": 0.281,
+  "first_key": "w:a4",
+  "last_key": "w:idea2"
+ },
+ {
+  "i": 12,
+  "text": "A whole new world of motion.",
+  "start": 36.392,
+  "end": 38.243,
+  "pause_after": 0.417,
+  "first_key": "w:a5",
+  "last_key": "w:motion2"
+ },
+ {
+  "i": 13,
+  "text": "Make it Moviqly.",
+  "start": 38.66,
+  "end": 39.513,
+  "pause_after": 0.37,
+  "first_key": "w:make2",
+  "last_key": "w:moviqly3"
+ },
+ {
+  "i": 14,
+  "text": "Get started today.",
+  "start": 39.883,
+  "end": 40.799,
+  "pause_after": 0.292,
+  "first_key": "w:get2",
+  "last_key": "w:today"
+ }
+]
