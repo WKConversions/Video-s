@@ -1,0 +1,602 @@
+[
+ {
+  "w": "Behind",
+  "key": "w:behind",
+  "start": 0.137,
+  "end": 0.3
+ },
+ {
+  "w": "this",
+  "key": "w:this",
+  "start": 0.3,
+  "end": 0.6
+ },
+ {
+  "w": "prompt,",
+  "key": "w:prompt",
+  "start": 0.6,
+  "end": 1.029
+ },
+ {
+  "w": "an",
+  "key": "w:an",
+  "start": 1.359,
+  "end": 1.46
+ },
+ {
+  "w": "AI",
+  "key": "w:ai",
+  "start": 1.46,
+  "end": 1.88
+ },
+ {
+  "w": "motion-design",
+  "key": "w:motiondesign",
+  "start": 1.88,
+  "end": 2.66
+ },
+ {
+  "w": "studio.",
+  "key": "w:studio",
+  "start": 2.66,
+  "end": 3.268
+ },
+ {
+  "w": "Ask",
+  "key": "w:ask",
+  "start": 3.742,
+  "end": 3.98
+ },
+ {
+  "w": "for",
+  "key": "w:for",
+  "start": 3.98,
+  "end": 4.22
+ },
+ {
+  "w": "an",
+  "key": "w:an2",
+  "start": 4.22,
+  "end": 4.34
+ },
+ {
+  "w": "energetic,",
+  "key": "w:energetic",
+  "start": 4.34,
+  "end": 5.054
+ },
+ {
+  "w": "thirty-second",
+  "key": "w:thirtysecond",
+  "start": 5.187,
+  "end": 5.66
+ },
+ {
+  "w": "film",
+  "key": "w:film",
+  "start": 5.66,
+  "end": 6.0
+ },
+ {
+  "w": "about",
+  "key": "w:about",
+  "start": 6.0,
+  "end": 6.24
+ },
+ {
+  "w": "your",
+  "key": "w:your",
+  "start": 6.24,
+  "end": 6.42
+ },
+ {
+  "w": "site.",
+  "key": "w:site",
+  "start": 6.42,
+  "end": 6.852
+ },
+ {
+  "w": "Moviqly",
+  "key": "w:moviqly",
+  "start": 7.381,
+  "end": 7.76
+ },
+ {
+  "w": "scans",
+  "key": "w:scans",
+  "start": 7.76,
+  "end": 8.08
+ },
+ {
+  "w": "your",
+  "key": "w:your2",
+  "start": 8.08,
+  "end": 8.38
+ },
+ {
+  "w": "site:",
+  "key": "w:site2",
+  "start": 8.38,
+  "end": 8.751
+ },
+ {
+  "w": "headlines,",
+  "key": "w:headlines",
+  "start": 9.214,
+  "end": 10.04
+ },
+ {
+  "w": "numbers,",
+  "key": "w:numbers",
+  "start": 10.04,
+  "end": 10.74
+ },
+ {
+  "w": "colors,",
+  "key": "w:colors",
+  "start": 10.74,
+  "end": 11.54
+ },
+ {
+  "w": "logo.",
+  "key": "w:logo",
+  "start": 11.54,
+  "end": 11.972
+ },
+ {
+  "w": "It",
+  "key": "w:it",
+  "start": 12.499,
+  "end": 12.58
+ },
+ {
+  "w": "studies",
+  "key": "w:studies",
+  "start": 12.58,
+  "end": 12.86
+ },
+ {
+  "w": "earlier",
+  "key": "w:earlier",
+  "start": 12.86,
+  "end": 13.24
+ },
+ {
+  "w": "films,",
+  "key": "w:films",
+  "start": 13.24,
+  "end": 13.864
+ },
+ {
+  "w": "so",
+  "key": "w:so",
+  "start": 14.031,
+  "end": 14.26
+ },
+ {
+  "w": "this",
+  "key": "w:this2",
+  "start": 14.26,
+  "end": 14.58
+ },
+ {
+  "w": "one's",
+  "key": "w:ones",
+  "start": 14.58,
+  "end": 14.82
+ },
+ {
+  "w": "different.",
+  "key": "w:different",
+  "start": 14.82,
+  "end": 15.193
+ },
+ {
+  "w": "It",
+  "key": "w:it2",
+  "start": 15.727,
+  "end": 15.82
+ },
+ {
+  "w": "picks",
+  "key": "w:picks",
+  "start": 15.82,
+  "end": 16.02
+ },
+ {
+  "w": "one",
+  "key": "w:one",
+  "start": 16.02,
+  "end": 16.26
+ },
+ {
+  "w": "of",
+  "key": "w:of",
+  "start": 16.26,
+  "end": 16.38
+ },
+ {
+  "w": "nine",
+  "key": "w:nine",
+  "start": 16.38,
+  "end": 16.68
+ },
+ {
+  "w": "forms,",
+  "key": "w:forms",
+  "start": 16.68,
+  "end": 17.321
+ },
+ {
+  "w": "finds",
+  "key": "w:finds",
+  "start": 17.622,
+  "end": 17.76
+ },
+ {
+  "w": "the",
+  "key": "w:the",
+  "start": 17.76,
+  "end": 17.96
+ },
+ {
+  "w": "idea,",
+  "key": "w:idea",
+  "start": 17.96,
+  "end": 18.465
+ },
+ {
+  "w": "sets",
+  "key": "w:sets",
+  "start": 18.693,
+  "end": 18.92
+ },
+ {
+  "w": "the",
+  "key": "w:the2",
+  "start": 18.92,
+  "end": 19.1
+ },
+ {
+  "w": "art",
+  "key": "w:art",
+  "start": 19.1,
+  "end": 19.26
+ },
+ {
+  "w": "direction.",
+  "key": "w:direction",
+  "start": 19.26,
+  "end": 19.792
+ },
+ {
+  "w": "Your",
+  "key": "w:your3",
+  "start": 20.268,
+  "end": 20.36
+ },
+ {
+  "w": "storyboard",
+  "key": "w:storyboard",
+  "start": 20.36,
+  "end": 20.94
+ },
+ {
+  "w": "arrives.",
+  "key": "w:arrives",
+  "start": 20.94,
+  "end": 21.619
+ },
+ {
+  "w": "Every",
+  "key": "w:every",
+  "start": 21.994,
+  "end": 22.26
+ },
+ {
+  "w": "number",
+  "key": "w:number",
+  "start": 22.26,
+  "end": 22.62
+ },
+ {
+  "w": "and",
+  "key": "w:and",
+  "start": 22.62,
+  "end": 22.82
+ },
+ {
+  "w": "quote",
+  "key": "w:quote",
+  "start": 22.82,
+  "end": 23.08
+ },
+ {
+  "w": "is",
+  "key": "w:is",
+  "start": 23.08,
+  "end": 23.36
+ },
+ {
+  "w": "checked",
+  "key": "w:checked",
+  "start": 23.36,
+  "end": 23.62
+ },
+ {
+  "w": "against",
+  "key": "w:against",
+  "start": 23.62,
+  "end": 23.92
+ },
+ {
+  "w": "your",
+  "key": "w:your4",
+  "start": 23.92,
+  "end": 24.14
+ },
+ {
+  "w": "site.",
+  "key": "w:site3",
+  "start": 24.14,
+  "end": 24.484
+ },
+ {
+  "w": "Moviqly",
+  "key": "w:moviqly2",
+  "start": 24.98,
+  "end": 25.36
+ },
+ {
+  "w": "reviews",
+  "key": "w:reviews",
+  "start": 25.36,
+  "end": 25.72
+ },
+ {
+  "w": "test",
+  "key": "w:test",
+  "start": 25.72,
+  "end": 26.02
+ },
+ {
+  "w": "frames",
+  "key": "w:frames",
+  "start": 26.02,
+  "end": 26.4
+ },
+ {
+  "w": "like",
+  "key": "w:like",
+  "start": 26.4,
+  "end": 26.6
+ },
+ {
+  "w": "an",
+  "key": "w:an3",
+  "start": 26.6,
+  "end": 26.72
+ },
+ {
+  "w": "art",
+  "key": "w:art2",
+  "start": 26.72,
+  "end": 26.92
+ },
+ {
+  "w": "director.",
+  "key": "w:director",
+  "start": 26.92,
+  "end": 27.458
+ },
+ {
+  "w": "Your",
+  "key": "w:your5",
+  "start": 27.991,
+  "end": 28.08
+ },
+ {
+  "w": "film",
+  "key": "w:film2",
+  "start": 28.08,
+  "end": 28.4
+ },
+ {
+  "w": "plays",
+  "key": "w:plays",
+  "start": 28.4,
+  "end": 28.68
+ },
+ {
+  "w": "beside",
+  "key": "w:beside",
+  "start": 28.68,
+  "end": 29.0
+ },
+ {
+  "w": "the",
+  "key": "w:the3",
+  "start": 29.0,
+  "end": 29.22
+ },
+ {
+  "w": "chat.",
+  "key": "w:chat",
+  "start": 29.22,
+  "end": 29.586
+ },
+ {
+  "w": "Type",
+  "key": "w:type",
+  "start": 30.007,
+  "end": 30.325
+ },
+ {
+  "w": "\"make",
+  "key": "w:make",
+  "start": 30.619,
+  "end": 30.82
+ },
+ {
+  "w": "it",
+  "key": "w:it3",
+  "start": 30.82,
+  "end": 30.98
+ },
+ {
+  "w": "calmer\".",
+  "key": "w:calmer",
+  "start": 30.98,
+  "end": 31.593
+ },
+ {
+  "w": "The",
+  "key": "w:the4",
+  "start": 32.031,
+  "end": 32.1
+ },
+ {
+  "w": "storyboard",
+  "key": "w:storyboard2",
+  "start": 32.1,
+  "end": 32.56
+ },
+ {
+  "w": "updates.",
+  "key": "w:updates",
+  "start": 32.56,
+  "end": 33.178
+ },
+ {
+  "w": "Switch",
+  "key": "w:switch",
+  "start": 33.592,
+  "end": 33.76
+ },
+ {
+  "w": "to",
+  "key": "w:to",
+  "start": 33.76,
+  "end": 34.02
+ },
+ {
+  "w": "Portrait;",
+  "key": "w:portrait",
+  "start": 34.02,
+  "end": 34.447
+ },
+ {
+  "w": "the",
+  "key": "w:the5",
+  "start": 34.888,
+  "end": 34.96
+ },
+ {
+  "w": "canvas",
+  "key": "w:canvas",
+  "start": 34.96,
+  "end": 35.26
+ },
+ {
+  "w": "reshapes.",
+  "key": "w:reshapes",
+  "start": 35.26,
+  "end": 36.053
+ },
+ {
+  "w": "Click",
+  "key": "w:click",
+  "start": 36.433,
+  "end": 36.6
+ },
+ {
+  "w": "Export",
+  "key": "w:export",
+  "start": 36.6,
+  "end": 37.18
+ },
+ {
+  "w": "MP4.",
+  "key": "w:mp4",
+  "start": 37.18,
+  "end": 37.949
+ },
+ {
+  "w": "Every",
+  "key": "w:every2",
+  "start": 38.385,
+  "end": 38.66
+ },
+ {
+  "w": "step",
+  "key": "w:step",
+  "start": 38.66,
+  "end": 38.98
+ },
+ {
+  "w": "visible.",
+  "key": "w:visible",
+  "start": 38.98,
+  "end": 39.637
+ },
+ {
+  "w": "Every",
+  "key": "w:every3",
+  "start": 40.007,
+  "end": 40.22
+ },
+ {
+  "w": "version",
+  "key": "w:version",
+  "start": 40.22,
+  "end": 40.6
+ },
+ {
+  "w": "saved.",
+  "key": "w:saved",
+  "start": 40.6,
+  "end": 41.222
+ },
+ {
+  "w": "Describe",
+  "key": "w:describe",
+  "start": 41.707,
+  "end": 42.08
+ },
+ {
+  "w": "your",
+  "key": "w:your6",
+  "start": 42.08,
+  "end": 42.24
+ },
+ {
+  "w": "first",
+  "key": "w:first",
+  "start": 42.24,
+  "end": 42.56
+ },
+ {
+  "w": "motion.",
+  "key": "w:motion",
+  "start": 42.56,
+  "end": 43.114
+ },
+ {
+  "w": "Make",
+  "key": "w:make2",
+  "start": 43.529,
+  "end": 43.7
+ },
+ {
+  "w": "it",
+  "key": "w:it4",
+  "start": 43.7,
+  "end": 43.82
+ },
+ {
+  "w": "Moviqly.",
+  "key": "w:moviqly3",
+  "start": 43.82,
+  "end": 44.365
+ }
+]

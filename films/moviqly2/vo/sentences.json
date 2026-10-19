@@ -1,0 +1,155 @@
+[
+ {
+  "i": 1,
+  "text": "Behind this prompt, an AI motion-design studio.",
+  "start": 0.137,
+  "end": 3.268,
+  "pause_after": 0.475,
+  "first_key": "w:behind",
+  "last_key": "w:studio"
+ },
+ {
+  "i": 2,
+  "text": "Ask for an energetic, thirty-second film about your site.",
+  "start": 3.742,
+  "end": 6.852,
+  "pause_after": 0.529,
+  "first_key": "w:ask",
+  "last_key": "w:site"
+ },
+ {
+  "i": 3,
+  "text": "Moviqly scans your site: headlines, numbers, colors, logo.",
+  "start": 7.381,
+  "end": 11.972,
+  "pause_after": 0.527,
+  "first_key": "w:moviqly",
+  "last_key": "w:logo"
+ },
+ {
+  "i": 4,
+  "text": "It studies earlier films, so this one's different.",
+  "start": 12.499,
+  "end": 15.193,
+  "pause_after": 0.534,
+  "first_key": "w:it",
+  "last_key": "w:different"
+ },
+ {
+  "i": 5,
+  "text": "It picks one of nine forms, finds the idea, sets the art direction.",
+  "start": 15.727,
+  "end": 19.792,
+  "pause_after": 0.476,
+  "first_key": "w:it2",
+  "last_key": "w:direction"
+ },
+ {
+  "i": 6,
+  "text": "Your storyboard arrives.",
+  "start": 20.268,
+  "end": 21.619,
+  "pause_after": 0.375,
+  "first_key": "w:your3",
+  "last_key": "w:arrives"
+ },
+ {
+  "i": 7,
+  "text": "Every number and quote is checked against your site.",
+  "start": 21.994,
+  "end": 24.484,
+  "pause_after": 0.496,
+  "first_key": "w:every",
+  "last_key": "w:site3"
+ },
+ {
+  "i": 8,
+  "text": "Moviqly reviews test frames like an art director.",
+  "start": 24.98,
+  "end": 27.458,
+  "pause_after": 0.533,
+  "first_key": "w:moviqly2",
+  "last_key": "w:director"
+ },
+ {
+  "i": 9,
+  "text": "Your film plays beside the chat.",
+  "start": 27.991,
+  "end": 29.586,
+  "pause_after": 0.421,
+  "first_key": "w:your5",
+  "last_key": "w:chat"
+ },
+ {
+  "i": 10,
+  "text": "Type \"make it calmer\".",
+  "start": 30.007,
+  "end": 31.593,
+  "pause_after": 0.438,
+  "first_key": "w:type",
+  "last_key": "w:calmer"
+ },
+ {
+  "i": 11,
+  "text": "The storyboard updates.",
+  "start": 32.031,
+  "end": 33.178,
+  "pause_after": 0.414,
+  "first_key": "w:the4",
+  "last_key": "w:updates"
+ },
+ {
+  "i": 12,
+  "text": "Switch to Portrait; the canvas reshapes.",
+  "start": 33.592,
+  "end": 36.053,
+  "pause_after": 0.381,
+  "first_key": "w:switch",
+  "last_key": "w:reshapes"
+ },
+ {
+  "i": 13,
+  "text": "Click Export MP4.",
+  "start": 36.433,
+  "end": 37.949,
+  "pause_after": 0.437,
+  "first_key": "w:click",
+  "last_key": "w:mp4"
+ },
+ {
+  "i": 14,
+  "text": "Every step visible.",
+  "start": 38.385,
+  "end": 39.637,
+  "pause_after": 0.37,
+  "first_key": "w:every2",
+  "last_key": "w:visible"
+ },
+ {
+  "i": 15,
+  "text": "Every version saved.",
+  "start": 40.007,
+  "end": 41.222,
+  "pause_after": 0.485,
+  "first_key": "w:every3",
+  "last_key": "w:saved"
+ },
+ {
+  "i": 16,
+  "text": "Describe your first motion.",
+  "start": 41.707,
+  "end": 43.114,
+  "pause_after": 0.415,
+  "first_key": "w:describe",
+  "last_key": "w:motion"
+ },
+ {
+  "i": 17,
+  "text": "Make it Moviqly.",
+  "start": 43.529,
+  "end": 44.365,
+  "pause_after": 0.226,
+  "first_key": "w:make2",
+  "last_key": "w:moviqly3"
+ }
+]

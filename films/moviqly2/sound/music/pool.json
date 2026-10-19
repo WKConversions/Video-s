@@ -1,0 +1,1883 @@
+[
+ {
+  "source": "mixkit",
+  "title": "Pop Track 03",
+  "artist": "Lily J",
+  "genre": "Electronic",
+  "url": "https://assets.mixkit.co/music/729/729.mp3",
+  "waveform": "https://assets.mixkit.co/music/729/729-waveform.json",
+  "length": 97,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:electronic",
+   "tag:corporate"
+  ],
+  "relevance": 3.0,
+  "shape": {
+   "wf_intro_s": 4,
+   "wf_tail_s": 1
+  },
+  "prescore": 2.75
+ },
+ {
+  "source": "mixkit",
+  "title": "Infinity",
+  "artist": "Arulo",
+  "genre": "Corporate Music",
+  "url": "https://assets.mixkit.co/music/440/440.mp3",
+  "waveform": "https://assets.mixkit.co/music/440/440-waveform.json",
+  "length": 103,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:electronic",
+   "tag:corporate"
+  ],
+  "relevance": 3.0,
+  "shape": {
+   "wf_intro_s": 3,
+   "wf_tail_s": 5
+  },
+  "prescore": 2.75
+ },
+ {
+  "source": "mixkit",
+  "title": "Kodama Night Town",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Electronic",
+  "url": "https://assets.mixkit.co/music/114/114.mp3",
+  "waveform": "https://assets.mixkit.co/music/114/114-waveform.json",
+  "length": 185,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:electronic",
+   "tag:corporate"
+  ],
+  "relevance": 3.0,
+  "shape": {
+   "wf_intro_s": 9,
+   "wf_tail_s": 4
+  },
+  "prescore": 2.75
+ },
+ {
+  "source": "mixkit",
+  "title": "Jungle Voices",
+  "artist": "Diego Nava",
+  "genre": "Electronic",
+  "url": "https://assets.mixkit.co/music/517/517.mp3",
+  "waveform": "https://assets.mixkit.co/music/517/517-waveform.json",
+  "length": 98,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:electronic",
+   "tag:corporate"
+  ],
+  "relevance": 3.0,
+  "shape": {
+   "wf_intro_s": 7,
+   "wf_tail_s": 6
+  },
+  "prescore": 2.75
+ },
+ {
+  "source": "mixkit",
+  "title": "Sci-Fi Score",
+  "artist": "Arulo",
+  "genre": "Electronic",
+  "url": "https://assets.mixkit.co/music/464/464.mp3",
+  "waveform": "https://assets.mixkit.co/music/464/464-waveform.json",
+  "length": 97,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:electronic"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 12,
+   "wf_tail_s": 4
+  },
+  "prescore": 2.5
+ },
+ {
+  "source": "mixkit",
+  "title": "Coffee or Tea",
+  "artist": "Michael Ramir C.",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/1168/1168.mp3",
+  "waveform": "https://assets.mixkit.co/music/1168/1168-waveform.json",
+  "length": 125,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:electronic"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 8,
+   "wf_tail_s": 1
+  },
+  "prescore": 2.5
+ },
+ {
+  "source": "mixkit",
+  "title": "Crying Sea",
+  "artist": "Michael Ramir C.",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/1023/1023.mp3",
+  "waveform": "https://assets.mixkit.co/music/1023/1023-waveform.json",
+  "length": 140,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 10,
+   "wf_tail_s": 3
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Anthem #01",
+  "artist": "Eugenio Mininni",
+  "genre": "EDM",
+  "url": "https://assets.mixkit.co/music/567/567.mp3",
+  "waveform": "https://assets.mixkit.co/music/567/567-waveform.json",
+  "length": 177,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 6,
+   "wf_tail_s": 1
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Drum and Bass Vibes",
+  "artist": "Lily J",
+  "genre": "Electronic",
+  "url": "https://assets.mixkit.co/music/719/719.mp3",
+  "waveform": "https://assets.mixkit.co/music/719/719-waveform.json",
+  "length": 96,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/electronic/",
+  "queries": [
+   "tag:electronic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 11,
+   "wf_tail_s": 1
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Sweatin' It",
+  "artist": "Ahjay Stelino",
+  "genre": "Electronic",
+  "url": "https://assets.mixkit.co/music/103/103.mp3",
+  "waveform": "https://assets.mixkit.co/music/103/103-waveform.json",
+  "length": 102,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/electronic/",
+  "queries": [
+   "tag:electronic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 4,
+   "wf_tail_s": 3
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Curiosity",
+  "artist": "Diego Nava",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/480/480.mp3",
+  "waveform": "https://assets.mixkit.co/music/480/480-waveform.json",
+  "length": 100,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 11,
+   "wf_tail_s": 1
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Break Away",
+  "artist": "Ahjay Stelino",
+  "genre": "Corporate Music",
+  "url": "https://assets.mixkit.co/music/85/85.mp3",
+  "waveform": "https://assets.mixkit.co/music/85/85-waveform.json",
+  "length": 97,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 2,
+   "wf_tail_s": 6
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Roses",
+  "artist": "Andrew Ev",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/183/183.mp3",
+  "waveform": "https://assets.mixkit.co/music/183/183-waveform.json",
+  "length": 267,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 5,
+   "wf_tail_s": 2
+  },
+  "prescore": 2.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Digital Clouds",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/175/175.mp3",
+  "waveform": "https://assets.mixkit.co/music/175/175-waveform.json",
+  "length": 101,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:electronic",
+   "tag:corporate"
+  ],
+  "relevance": 3.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 0
+  },
+  "prescore": 2.15
+ },
+ {
+  "source": "mixkit",
+  "title": "Infected Mushroom Vibes",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "EDM",
+  "url": "https://assets.mixkit.co/music/136/136.mp3",
+  "waveform": "https://assets.mixkit.co/music/136/136-waveform.json",
+  "length": 90,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "mood:energetic",
+   "tag:electronic"
+  ],
+  "relevance": 3.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 0
+  },
+  "prescore": 2.15
+ },
+ {
+  "source": "mixkit",
+  "title": "Stylz",
+  "artist": "Ahjay Stelino",
+  "genre": "Corporate Music",
+  "url": "https://assets.mixkit.co/music/102/102.mp3",
+  "waveform": "https://assets.mixkit.co/music/102/102-waveform.json",
+  "length": 100,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:electronic",
+   "tag:corporate"
+  ],
+  "relevance": 3.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 3
+  },
+  "prescore": 2.15
+ },
+ {
+  "source": "mixkit",
+  "title": "New Bass 02",
+  "artist": "Lily J",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/721/721.mp3",
+  "waveform": "https://assets.mixkit.co/music/721/721-waveform.json",
+  "length": 96,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:electronic",
+   "tag:corporate"
+  ],
+  "relevance": 3.0,
+  "shape": {
+   "wf_intro_s": 1,
+   "wf_tail_s": 6
+  },
+  "prescore": 2.15
+ },
+ {
+  "source": "mixkit",
+  "title": "Kraft Twerk",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/115/115.mp3",
+  "waveform": "https://assets.mixkit.co/music/115/115-waveform.json",
+  "length": 130,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:electronic",
+   "tag:corporate"
+  ],
+  "relevance": 3.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 3
+  },
+  "prescore": 2.15
+ },
+ {
+  "source": "mixkit",
+  "title": "Cinematic Jazz",
+  "artist": "Francisco Alvear",
+  "genre": "Electronic",
+  "url": "https://assets.mixkit.co/music/653/653.mp3",
+  "waveform": "https://assets.mixkit.co/music/653/653-waveform.json",
+  "length": 144,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:electronic",
+   "tag:corporate"
+  ],
+  "relevance": 3.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 2.15
+ },
+ {
+  "source": "mixkit",
+  "title": "Sci-Fi Game",
+  "artist": "Arulo",
+  "genre": "Corporate Music",
+  "url": "https://assets.mixkit.co/music/395/395.mp3",
+  "waveform": "https://assets.mixkit.co/music/395/395-waveform.json",
+  "length": 100,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:electronic",
+   "tag:corporate"
+  ],
+  "relevance": 3.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 5
+  },
+  "prescore": 2.15
+ },
+ {
+  "source": "mixkit",
+  "title": "Moon Walk",
+  "artist": "Eugenio Mininni",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/609/609.mp3",
+  "waveform": "https://assets.mixkit.co/music/609/609-waveform.json",
+  "length": 205,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 12,
+   "wf_tail_s": 10
+  },
+  "prescore": 2.0
+ },
+ {
+  "source": "mixkit",
+  "title": "Lo-Fi 04",
+  "artist": "Lily J",
+  "genre": "Corporate Music",
+  "url": "https://assets.mixkit.co/music/766/766.mp3",
+  "waveform": "https://assets.mixkit.co/music/766/766-waveform.json",
+  "length": 164,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 8,
+   "wf_tail_s": 7
+  },
+  "prescore": 2.0
+ },
+ {
+  "source": "mixkit",
+  "title": "Trap Electro Vibes",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Electronic",
+  "url": "https://assets.mixkit.co/music/126/126.mp3",
+  "waveform": "https://assets.mixkit.co/music/126/126-waveform.json",
+  "length": 116,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/energetic/",
+  "queries": [
+   "mood:energetic",
+   "tag:electronic"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 4,
+   "wf_tail_s": 8
+  },
+  "prescore": 2.0
+ },
+ {
+  "source": "mixkit",
+  "title": "Close Up",
+  "artist": "Michael Ramir C.",
+  "genre": "Corporate Music",
+  "url": "https://assets.mixkit.co/music/1167/1167.mp3",
+  "waveform": "https://assets.mixkit.co/music/1167/1167-waveform.json",
+  "length": 95,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Hazy After Hours",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/132/132.mp3",
+  "waveform": "https://assets.mixkit.co/music/132/132-waveform.json",
+  "length": 127,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "House 02",
+  "artist": "Lily J",
+  "genre": "House",
+  "url": "https://assets.mixkit.co/music/744/744.mp3",
+  "waveform": "https://assets.mixkit.co/music/744/744-waveform.json",
+  "length": 113,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 2
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Deep Techno Ambience",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Techno",
+  "url": "https://assets.mixkit.co/music/134/134.mp3",
+  "waveform": "https://assets.mixkit.co/music/134/134-waveform.json",
+  "length": 123,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 6
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "PlaceIt World 01",
+  "artist": "Lily J",
+  "genre": "Corporate Music",
+  "url": "https://assets.mixkit.co/music/724/724.mp3",
+  "waveform": "https://assets.mixkit.co/music/724/724-waveform.json",
+  "length": 96,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Techno Fest Vibes",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "EDM",
+  "url": "https://assets.mixkit.co/music/124/124.mp3",
+  "waveform": "https://assets.mixkit.co/music/124/124-waveform.json",
+  "length": 134,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Minimal Techno 01",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Tech House",
+  "url": "https://assets.mixkit.co/music/162/162.mp3",
+  "waveform": "https://assets.mixkit.co/music/162/162-waveform.json",
+  "length": 124,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 0
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Infected Vibes",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Trance",
+  "url": "https://assets.mixkit.co/music/157/157.mp3",
+  "waveform": "https://assets.mixkit.co/music/157/157-waveform.json",
+  "length": 91,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "mood:energetic"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 2
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Minimal Emotion",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Techno",
+  "url": "https://assets.mixkit.co/music/160/160.mp3",
+  "waveform": "https://assets.mixkit.co/music/160/160-waveform.json",
+  "length": 120,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 4
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Goa Trance Mantra",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Trance",
+  "url": "https://assets.mixkit.co/music/137/137.mp3",
+  "waveform": "https://assets.mixkit.co/music/137/137-waveform.json",
+  "length": 104,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "mood:energetic"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Slow Trance Morning",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "House",
+  "url": "https://assets.mixkit.co/music/123/123.mp3",
+  "waveform": "https://assets.mixkit.co/music/123/123-waveform.json",
+  "length": 116,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 2
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Relaxation 04",
+  "artist": "Lily J",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/750/750.mp3",
+  "waveform": "https://assets.mixkit.co/music/750/750-waveform.json",
+  "length": 130,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 5
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Trance Party",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Trance",
+  "url": "https://assets.mixkit.co/music/166/166.mp3",
+  "waveform": "https://assets.mixkit.co/music/166/166-waveform.json",
+  "length": 108,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Pop 09",
+  "artist": "Grigoriy Nuzhny",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/702/702.mp3",
+  "waveform": "https://assets.mixkit.co/music/702/702-waveform.json",
+  "length": 68,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 0
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Dub Techno Groove",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Techno",
+  "url": "https://assets.mixkit.co/music/133/133.mp3",
+  "waveform": "https://assets.mixkit.co/music/133/133-waveform.json",
+  "length": 102,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 3
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Lo-Fi 01",
+  "artist": "Lily J",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/763/763.mp3",
+  "waveform": "https://assets.mixkit.co/music/763/763-waveform.json",
+  "length": 102,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 1,
+   "wf_tail_s": 5
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Techno Fights",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/171/171.mp3",
+  "waveform": "https://assets.mixkit.co/music/171/171-waveform.json",
+  "length": 109,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 0
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Beating Break",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Breakbeat",
+  "url": "https://assets.mixkit.co/music/174/174.mp3",
+  "waveform": "https://assets.mixkit.co/music/174/174-waveform.json",
+  "length": 107,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 3
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Atoms in Peace",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/107/107.mp3",
+  "waveform": "https://assets.mixkit.co/music/107/107-waveform.json",
+  "length": 227,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:electronic"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 2
+  },
+  "prescore": 1.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Hip Latin Jazz Groove",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/112/112.mp3",
+  "waveform": "https://assets.mixkit.co/music/112/112-waveform.json",
+  "length": 109,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/electronic/",
+  "queries": [
+   "tag:electronic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 2,
+   "wf_tail_s": 8
+  },
+  "prescore": 1.75
+ },
+ {
+  "source": "mixkit",
+  "title": "Cat Walk",
+  "artist": "Arulo",
+  "genre": "House",
+  "url": "https://assets.mixkit.co/music/371/371.mp3",
+  "waveform": "https://assets.mixkit.co/music/371/371-waveform.json",
+  "length": 124,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 13,
+   "wf_tail_s": 4
+  },
+  "prescore": 1.7
+ },
+ {
+  "source": "mixkit",
+  "title": "Autofahren",
+  "artist": "Mauro Urbina",
+  "genre": "Deep House",
+  "url": "https://assets.mixkit.co/music/770/770.mp3",
+  "waveform": "https://assets.mixkit.co/music/770/770-waveform.json",
+  "length": 284,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 30,
+   "wf_tail_s": 0
+  },
+  "prescore": 1.7
+ },
+ {
+  "source": "mixkit",
+  "title": "Pop Track 06",
+  "artist": "Lily J",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/732/732.mp3",
+  "waveform": "https://assets.mixkit.co/music/732/732-waveform.json",
+  "length": 114,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 17,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.7
+ },
+ {
+  "source": "mixkit",
+  "title": "Better Times are Coming",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Synthpop",
+  "url": "https://assets.mixkit.co/music/173/173.mp3",
+  "waveform": "https://assets.mixkit.co/music/173/173-waveform.json",
+  "length": 100,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "B.O.R.N",
+  "artist": "Eugenio Mininni",
+  "genre": "Trance",
+  "url": "https://assets.mixkit.co/music/620/620.mp3",
+  "waveform": "https://assets.mixkit.co/music/620/620-waveform.json",
+  "length": 218,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Techno Fest Feel",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "EDM",
+  "url": "https://assets.mixkit.co/music/125/125.mp3",
+  "waveform": "https://assets.mixkit.co/music/125/125-waveform.json",
+  "length": 114,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 2
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Pop Track 01",
+  "artist": "Lily J",
+  "genre": "Rhythmic Underscore",
+  "url": "https://assets.mixkit.co/music/727/727.mp3",
+  "waveform": "https://assets.mixkit.co/music/727/727-waveform.json",
+  "length": 122,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 2
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Lonerism",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Synthpop",
+  "url": "https://assets.mixkit.co/music/159/159.mp3",
+  "waveform": "https://assets.mixkit.co/music/159/159-waveform.json",
+  "length": 105,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 2
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "K.O. Games",
+  "artist": "Michael Ramir C.",
+  "genre": "Breakbeat",
+  "url": "https://assets.mixkit.co/music/1103/1103.mp3",
+  "waveform": "https://assets.mixkit.co/music/1103/1103-waveform.json",
+  "length": 93,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/mood/energetic/",
+  "queries": [
+   "mood:energetic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 4
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Serene Moments",
+  "artist": "Ahjay Stelino",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/27/27.mp3",
+  "waveform": "https://assets.mixkit.co/music/27/27-waveform.json",
+  "length": 119,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/electronic/",
+  "queries": [
+   "tag:electronic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 3
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Hot Love",
+  "artist": "Ahjay Stelino",
+  "genre": "Electronic",
+  "url": "https://assets.mixkit.co/music/99/99.mp3",
+  "waveform": "https://assets.mixkit.co/music/99/99-waveform.json",
+  "length": 99,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/electronic/",
+  "queries": [
+   "tag:electronic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Silk",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/143/143.mp3",
+  "waveform": "https://assets.mixkit.co/music/143/143-waveform.json",
+  "length": 98,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/electronic/",
+  "queries": [
+   "tag:electronic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 3
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Rising Forest",
+  "artist": "Diego Nava",
+  "genre": "House",
+  "url": "https://assets.mixkit.co/music/471/471.mp3",
+  "waveform": "https://assets.mixkit.co/music/471/471-waveform.json",
+  "length": 99,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 2
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "What About Action?",
+  "artist": "Diego Nava",
+  "genre": "Dance-Pop",
+  "url": "https://assets.mixkit.co/music/474/474.mp3",
+  "waveform": "https://assets.mixkit.co/music/474/474-waveform.json",
+  "length": 117,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Motivating Mornings",
+  "artist": "Ahjay Stelino",
+  "genre": "Corporate Music",
+  "url": "https://assets.mixkit.co/music/33/33.mp3",
+  "waveform": "https://assets.mixkit.co/music/33/33-waveform.json",
+  "length": 96,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "See Line Funk",
+  "artist": "Alejandro Maga\u00f1a",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/105/105.mp3",
+  "waveform": "https://assets.mixkit.co/music/105/105-waveform.json",
+  "length": 133,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 5
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "House Fest",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "EDM",
+  "url": "https://assets.mixkit.co/music/113/113.mp3",
+  "waveform": "https://assets.mixkit.co/music/113/113-waveform.json",
+  "length": 136,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 0
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Golden Storm",
+  "artist": "Diego Nava",
+  "genre": "EDM",
+  "url": "https://assets.mixkit.co/music/470/470.mp3",
+  "waveform": "https://assets.mixkit.co/music/470/470-waveform.json",
+  "length": 95,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Talent in the Air",
+  "artist": "Diego Nava",
+  "genre": "House",
+  "url": "https://assets.mixkit.co/music/473/473.mp3",
+  "waveform": "https://assets.mixkit.co/music/473/473-waveform.json",
+  "length": 114,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Running Out of Time",
+  "artist": "Ahjay Stelino",
+  "genre": "Corporate Music",
+  "url": "https://assets.mixkit.co/music/77/77.mp3",
+  "waveform": "https://assets.mixkit.co/music/77/77-waveform.json",
+  "length": 97,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 1,
+   "wf_tail_s": 4
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Gear",
+  "artist": "Andrew Ev",
+  "genre": "EDM",
+  "url": "https://assets.mixkit.co/music/180/180.mp3",
+  "waveform": "https://assets.mixkit.co/music/180/180-waveform.json",
+  "length": 246,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 2
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Summer Dream",
+  "artist": "Eugenio Mininni",
+  "genre": "EDM",
+  "url": "https://assets.mixkit.co/music/628/628.mp3",
+  "waveform": "https://assets.mixkit.co/music/628/628-waveform.json",
+  "length": 176,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "House Vibez",
+  "artist": "Lily J",
+  "genre": "House",
+  "url": "https://assets.mixkit.co/music/745/745.mp3",
+  "waveform": "https://assets.mixkit.co/music/745/745-waveform.json",
+  "length": 111,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 0
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "New York",
+  "artist": "Arulo",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/427/427.mp3",
+  "waveform": "https://assets.mixkit.co/music/427/427-waveform.json",
+  "length": 96,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 4
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Nights With Ga",
+  "artist": "Eugenio Mininni",
+  "genre": "EDM",
+  "url": "https://assets.mixkit.co/music/581/581.mp3",
+  "waveform": "https://assets.mixkit.co/music/581/581-waveform.json",
+  "length": 194,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 0
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Baten Kaitos",
+  "artist": "Eugenio Mininni",
+  "genre": "EDM",
+  "url": "https://assets.mixkit.co/music/618/618.mp3",
+  "waveform": "https://assets.mixkit.co/music/618/618-waveform.json",
+  "length": 216,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 2
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Minimal Techno 02",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Rhythmic Underscore",
+  "url": "https://assets.mixkit.co/music/161/161.mp3",
+  "waveform": "https://assets.mixkit.co/music/161/161-waveform.json",
+  "length": 94,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 0
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Lo-Fi 02",
+  "artist": "Lily J",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/764/764.mp3",
+  "waveform": "https://assets.mixkit.co/music/764/764-waveform.json",
+  "length": 98,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 2
+  },
+  "prescore": 1.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Ramp It Up",
+  "artist": "Ahjay Stelino",
+  "genre": "Rhythmic Underscore",
+  "url": "https://assets.mixkit.co/music/69/69.mp3",
+  "waveform": "https://assets.mixkit.co/music/69/69-waveform.json",
+  "length": 102,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 14,
+   "wf_tail_s": 2
+  },
+  "prescore": 1.45
+ },
+ {
+  "source": "mixkit",
+  "title": "It's Love",
+  "artist": "Michael Ramir C.",
+  "genre": "Corporate Music",
+  "url": "https://assets.mixkit.co/music/834/834.mp3",
+  "waveform": "https://assets.mixkit.co/music/834/834-waveform.json",
+  "length": 97,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 20,
+   "wf_tail_s": 1
+  },
+  "prescore": 1.45
+ },
+ {
+  "source": "mixkit",
+  "title": "Skeeomaver Sound",
+  "artist": "Eugenio Mininni",
+  "genre": "EDM",
+  "url": "https://assets.mixkit.co/music/629/629.mp3",
+  "waveform": "https://assets.mixkit.co/music/629/629-waveform.json",
+  "length": 234,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 1,
+   "wf_tail_s": 7
+  },
+  "prescore": 1.4
+ },
+ {
+  "source": "mixkit",
+  "title": "R&B vibes 1",
+  "artist": "Grigoriy Nuzhny",
+  "genre": "Chillout",
+  "url": "https://assets.mixkit.co/music/685/685.mp3",
+  "waveform": "https://assets.mixkit.co/music/685/685-waveform.json",
+  "length": 181,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/electronic/",
+  "queries": [
+   "tag:electronic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 9,
+   "wf_tail_s": 18
+  },
+  "prescore": 1.25
+ },
+ {
+  "source": "mixkit",
+  "title": "Focus on Yourself",
+  "artist": "Eugenio Mininni",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/568/568.mp3",
+  "waveform": "https://assets.mixkit.co/music/568/568-waveform.json",
+  "length": 286,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:electronic",
+   "tag:corporate"
+  ],
+  "relevance": 3.0,
+  "shape": {
+   "wf_intro_s": 1,
+   "wf_tail_s": 19
+  },
+  "prescore": 1.15
+ },
+ {
+  "source": "mixkit",
+  "title": "Slow Rain",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/122/122.mp3",
+  "waveform": "https://assets.mixkit.co/music/122/122-waveform.json",
+  "length": 129,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 7
+  },
+  "prescore": 1.15
+ },
+ {
+  "source": "mixkit",
+  "title": "Brainiac",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/167/167.mp3",
+  "waveform": "https://assets.mixkit.co/music/167/167-waveform.json",
+  "length": 106,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/electronic/",
+  "queries": [
+   "tag:electronic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 8
+  },
+  "prescore": 1.15
+ },
+ {
+  "source": "mixkit",
+  "title": "Machine Drum Vibes",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Techno",
+  "url": "https://assets.mixkit.co/music/117/117.mp3",
+  "waveform": "https://assets.mixkit.co/music/117/117-waveform.json",
+  "length": 132,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 16,
+   "wf_tail_s": 7
+  },
+  "prescore": 0.95
+ },
+ {
+  "source": "mixkit",
+  "title": "Friday Routine",
+  "artist": "Michael Ramir C.",
+  "genre": "EDM",
+  "url": "https://assets.mixkit.co/music/1062/1062.mp3",
+  "waveform": "https://assets.mixkit.co/music/1062/1062-waveform.json",
+  "length": 101,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 14,
+   "wf_tail_s": 7
+  },
+  "prescore": 0.95
+ },
+ {
+  "source": "mixkit",
+  "title": "Odd Beats 01",
+  "artist": "Lily J",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/722/722.mp3",
+  "waveform": "https://assets.mixkit.co/music/722/722-waveform.json",
+  "length": 95,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/electronic/",
+  "queries": [
+   "tag:electronic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 15,
+   "wf_tail_s": 10
+  },
+  "prescore": 0.95
+ },
+ {
+  "source": "mixkit",
+  "title": "Deep Urban",
+  "artist": "Eugenio Mininni",
+  "genre": "House",
+  "url": "https://assets.mixkit.co/music/623/623.mp3",
+  "waveform": "https://assets.mixkit.co/music/623/623-waveform.json",
+  "length": 289,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 19
+  },
+  "prescore": 0.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Your Breath",
+  "artist": "Eugenio Mininni",
+  "genre": "Corporate Music",
+  "url": "https://assets.mixkit.co/music/634/634.mp3",
+  "waveform": "https://assets.mixkit.co/music/634/634-waveform.json",
+  "length": 236,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology",
+   "tag:corporate"
+  ],
+  "relevance": 2.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 16
+  },
+  "prescore": 0.9
+ },
+ {
+  "source": "mixkit",
+  "title": "Sun in Your Eyes",
+  "artist": "Alejandro Maga\u00f1a (A. M.)",
+  "genre": "Synthwave",
+  "url": "https://assets.mixkit.co/music/131/131.mp3",
+  "waveform": "https://assets.mixkit.co/music/131/131-waveform.json",
+  "length": 106,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 11
+  },
+  "prescore": 0.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Deep House",
+  "artist": "Arulo",
+  "genre": "House",
+  "url": "https://assets.mixkit.co/music/196/196.mp3",
+  "waveform": "https://assets.mixkit.co/music/196/196-waveform.json",
+  "length": 157,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/technology/",
+  "queries": [
+   "tag:technology"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 11
+  },
+  "prescore": 0.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Sonor 03",
+  "artist": "Eugenio Mininni",
+  "genre": "Electronic",
+  "url": "https://assets.mixkit.co/music/561/561.mp3",
+  "waveform": "https://assets.mixkit.co/music/561/561-waveform.json",
+  "length": 299,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/electronic/",
+  "queries": [
+   "tag:electronic"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 0,
+   "wf_tail_s": 22
+  },
+  "prescore": 0.65
+ },
+ {
+  "source": "mixkit",
+  "title": "Mountains",
+  "artist": "Andrew Ev",
+  "genre": "Electronica",
+  "url": "https://assets.mixkit.co/music/187/187.mp3",
+  "waveform": "https://assets.mixkit.co/music/187/187-waveform.json",
+  "length": 277,
+  "licence": "Mixkit Stock Music Free License (commercial use, no credit needed)",
+  "licence_url": "https://mixkit.co/license/#musicFree",
+  "page": "https://mixkit.co/free-stock-music/tag/corporate/",
+  "queries": [
+   "tag:corporate"
+  ],
+  "relevance": 1.0,
+  "shape": {
+   "wf_intro_s": 43,
+   "wf_tail_s": 11
+  },
+  "prescore": 0.45
+ }
+]
