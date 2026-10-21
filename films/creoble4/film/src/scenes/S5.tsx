@@ -14,7 +14,7 @@ import React from "react";
 import { AbsoluteFill } from "remotion";
 import {
   BAR, Browser, C, EXIT, Gooey, HolmSite, INOUT, Ico, Island, KineticLine, Label, LiquidGlass, OUT, PillButton,
-  SANS, SERIF, SHADOW, SHADOW_BIG, aspring, bounce, clamp01, f, k, mix, press, squash, whipInR,
+  SANS, SERIF, SHADOW_BIG, SITE, aspring, bounce, clamp01, f, k, mix, press, squash, whipInR,
 } from "../shared";
 import { WM_DOT, WM_VIEW, WM_WORD } from "../wordmark";
 
@@ -51,6 +51,7 @@ const INK = f("w:byg") - 10, INKD = 12;
 const CON = f("w:du5") + 6, OPEN = CON + 14;
 const CAPY = 250;                                                  // the capsule / button centre
 const BW = 566, BH = 104;                                          // PillButton size 38, measured
+const BOXW = 1000, BOXH = 300;                                     // the button's static layer (holds the capsule at any size)
 
 /* ---------- local icons ---------- */
 const LP: Record<string, React.ReactNode> = {
@@ -80,9 +81,30 @@ const BText: React.FC<{ g: number; segs: { t: string; it?: boolean }[]; at: numb
 };
 
 /* ---------- 29–30: the help bubble → the conversation ---------- */
-const box = (cx: number, cy: number, w: number, h: number, bg: string, r?: number, extra?: React.CSSProperties): React.ReactNode => (
-  <div style={{ position: "absolute", left: cx - w / 2, top: cy - h / 2, width: Math.max(0, w), height: Math.max(0, h), borderRadius: r ?? Math.min(w, h) / 2, background: bg, ...extra }} />
-);
+// a blob (pill or rounded box) w × h centred on cx, cy, radius r. Its size springs, and a box's size snaps to whole
+// pixels (its edges stepped as it grew), so the layout box is whole pixels (Wl × Hl) and the fraction left over is a
+// scale (under 0.5 px over the box), with the position a translate: the blob's edges glide
+const tbox = (cx: number, cy: number, w: number, h: number, bg: string, r?: number): React.ReactNode => {
+  const W = Math.max(0, w), H = Math.max(0, h), Wl = Math.max(1, Math.round(W)), Hl = Math.max(1, Math.round(H));
+  return <div style={{ position: "absolute", left: 0, top: 0, width: Wl, height: Hl, borderRadius: r ?? Math.min(W, H) / 2, background: bg, transformOrigin: "0 0", transform: `translate(${cx - W / 2}px, ${cy - H / 2}px) scale(${W / Wl}, ${H / Hl})` }} />;
+};
+// The reply bubble (white, a 1 px hairline ring, the soft SHADOW) at x, y, w × h, radius r. Its size springs, and a
+// box's size snaps to whole pixels, so the shape is cut from static full-frame layers by clip-path (sub-pixel), and
+// the shadow comes from a box 3 px inside it with the spreads moved by 3 px (the same shadow as SHADOW on the bubble).
+const WhiteBubble: React.FC<{ x: number; y: number; w: number; h: number; r: number; op: number }> = ({ x, y, w, h, r, op }) => {
+  const cut = (d: number, rr: number) => `inset(${y - d}px ${1920 - x - w - d}px ${1080 - y - h - d}px ${x - d}px round ${rr}px)`;
+  // the shadow box: a whole-pixel layout size, and the fraction left over as a scale (≤ 0.3 %), so its edges and its
+  // shadow glide as the bubble springs open instead of stepping a pixel at a time
+  const sw = Math.max(0, w - 6), sh = Math.max(0, h - 6), swl = Math.max(1, Math.round(sw)), shl = Math.max(1, Math.round(sh));
+  return (
+    <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, opacity: op }}>
+      <div style={{ position: "absolute", left: 0, top: 0, width: swl, height: shl, borderRadius: Math.max(0, r - 3), transformOrigin: "0 0", transform: `translate(${x + 3}px, ${y + 3}px) scale(${sw / swl}, ${sh / shl})`,
+        boxShadow: "0 1px 2px 3px rgba(26,22,20,0.05), 0 12px 32px -9px rgba(26,22,20,0.14)" }} />
+      <div style={{ position: "absolute", inset: 0, background: C.line, clipPath: cut(1, r + 1) }} />
+      <div style={{ position: "absolute", inset: 0, background: C.white, clipPath: cut(0, r) }} />
+    </div>
+  );
+};
 const BUB = { x: 960, y: 420, w: 320, h: 230 };
 const A_MSG = { l: 800, t: 392, w: 700, h: 176 };                  // the client's message (right)
 const B_TYP = { l: 540, t: 680, w: 170, h: 110 };                  // typing bubble → the reply (left)
@@ -123,9 +145,10 @@ const Chat: React.FC<{ g: number }> = ({ g }) => {
     <AbsoluteFill>
       <AbsoluteFill style={{ transform: `translateX(${wx}px)`, transformOrigin: "960px 80px", opacity: 1 - u01(g, SWAL + 5, SWAL + 11) }}>
         <AbsoluteFill style={{ transformOrigin: "960px 80px", transform: `scale(${mix(1, 0.04, e)})` }}>
-          {/* 29: the question, sinking out through its mask at the split */}
+          {/* 29: the question, sinking out through its mask at the split (on a layer of its own: its slow start would
+              otherwise step its baseline by whole pixels) */}
           <div style={{ position: "absolute", left: 0, top: 610, width: 1920, overflow: "hidden", paddingBottom: 40, textAlign: "center", fontFamily: SERIF, fontSize: 170, letterSpacing: "-0.025em", lineHeight: 1.05, color: C.ink }}>
-            <div style={{ transform: `translateY(${typeOut * 115}%)`, whiteSpace: "nowrap" }}>Brug for <span style={{ fontStyle: "italic", color: C.sageDeep }}>hjælp</span>?</div>
+            <div style={{ transform: `translateY(${typeOut * 115}%)`, willChange: "transform", whiteSpace: "nowrap" }}>Brug for <span style={{ fontStyle: "italic", color: C.sageDeep }}>hjælp</span>?</div>
           </div>
           <AbsoluteFill style={{ perspective: 1800 }}>
             <AbsoluteFill style={{ transform: `translateY(${shift + rise}px) rotateY(${ry}deg) rotateX(${rx}deg)` }}>
@@ -133,25 +156,25 @@ const Chat: React.FC<{ g: number }> = ({ g }) => {
               <Gooey>
                 <AbsoluteFill style={{ transformOrigin: `${BUB.x}px ${BUB.y + BUB.h / 2}px`, transform: `translateY(${-fall}px) ${press} ${stretch}` }}>
                   {g < SPLIT + 2 && <>
-                    {box(BUB.x - 112, BUB.y + 98, 64 * (1 - u01(g, SPLIT - 2, SPLIT + 2)), 64 * (1 - u01(g, SPLIT - 2, SPLIT + 2)), C.sageDark)}
-                    {box(BUB.x - 150, BUB.y + 132, 30 * (1 - u01(g, SPLIT - 3, SPLIT)), 30 * (1 - u01(g, SPLIT - 3, SPLIT)), C.sageDark)}
+                    {tbox(BUB.x - 112, BUB.y + 98, 64 * (1 - u01(g, SPLIT - 2, SPLIT + 2)), 64 * (1 - u01(g, SPLIT - 2, SPLIT + 2)), C.sageDark)}
+                    {tbox(BUB.x - 150, BUB.y + 132, 30 * (1 - u01(g, SPLIT - 3, SPLIT)), 30 * (1 - u01(g, SPLIT - 3, SPLIT)), C.sageDark)}
                   </>}
-                  {box(aC[0], aC[1], aW, aH, C.sageDark, Math.min(aH / 2, mix(aH / 2, 46, mA)))}
-                  {mA > 0.05 && box(aC[0] + aW / 2 - 20, aC[1] + aH / 2 - 14, 46 * clamp01(mA), 46 * clamp01(mA), C.sageDark)}
-                  {g >= SPLIT && g < SPLIT + 16 && box(bC[0], bC[1], bW, bH, C.sageDark, Math.min(bH / 2, 55))}
-                  {g < SPLIT + 4 && [0, 1, 2].map((i) => box(BUB.x + (i - 1) * 54, BUB.y, 30 * (1 - u01(g, SPLIT - 3, SPLIT + 3)), 30 * (1 - u01(g, SPLIT - 3, SPLIT + 3)), C.cream))}
+                  {tbox(aC[0], aC[1], aW, aH, C.sageDark, Math.min(aH / 2, mix(aH / 2, 46, mA)))}
+                  {mA > 0.05 && tbox(aC[0] + aW / 2 - 20, aC[1] + aH / 2 - 14, 46 * clamp01(mA), 46 * clamp01(mA), C.sageDark)}
+                  {g >= SPLIT && g < SPLIT + 16 && tbox(bC[0], bC[1], bW, bH, C.sageDark, Math.min(bH / 2, 55))}
+                  {g < SPLIT + 4 && [0, 1, 2].map((i) => <React.Fragment key={i}>{tbox(BUB.x + (i - 1) * 54, BUB.y, 30 * (1 - u01(g, SPLIT - 3, SPLIT + 3)), 30 * (1 - u01(g, SPLIT - 3, SPLIT + 3)), C.cream)}</React.Fragment>)}
                 </AbsoluteFill>
               </Gooey>
               {/* the typing bubble / reply (white), its dots, the avatar, the name */}
-              {white > 0 && <div style={{ position: "absolute", left: bC[0] - bW / 2 - 1, top: bC[1] - bH / 2 - 1, width: bW + 2, height: bH + 2, borderRadius: Math.min(bH / 2, 46), background: C.white, opacity: white, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW}` }} />}
+              {white > 0 && <WhiteBubble x={bC[0] - bW / 2 - 1} y={bC[1] - bH / 2 - 1} w={bW + 2} h={bH + 2} r={Math.min(bH / 2, 46)} op={white} />}
               {dotsOn > 0 && [0, 1, 2].map((i) => {
                 const dy = -14 * Math.abs(Math.sin((Math.PI * (g - SPLIT)) / 9 - i * 0.75));
-                return <div key={i} style={{ position: "absolute", left: B_TYP.l + B_TYP.w / 2 + (i - 1) * 36 - 11, top: B_TYP.t + B_TYP.h / 2 - 11 + dy, width: 22, height: 22, borderRadius: 11, background: C.sage, opacity: dotsOn }} />;
+                return <div key={i} style={{ position: "absolute", left: B_TYP.l + B_TYP.w / 2 + (i - 1) * 36 - 11, top: B_TYP.t + B_TYP.h / 2 - 11, width: 22, height: 22, borderRadius: 11, background: C.sage, opacity: dotsOn, transform: `translateY(${dy}px)` }} />;
               })}
               <div style={{ position: "absolute", left: A_MSG.l + 40, top: A_MSG.t + 34, width: 640, fontFamily: SANS, fontSize: 40, lineHeight: "54px", color: C.cream, opacity: txtA }}>Hej! Kan I hjælpe med at<br />skifte et billede?</div>
               <div style={{ position: "absolute", left: B_TYP.l + 42, top: B_TYP.t + 34, width: 720, fontFamily: SANS, fontSize: 40, lineHeight: "54px", color: C.ink, opacity: txtB }}>Selvfølgelig! Jeg ordner det<br />med det samme.</div>
-              <div style={{ position: "absolute", left: B_TYP.l + 8, top: B_TYP.t - 50 + 14 * (1 - nm), fontFamily: SANS, fontWeight: 500, fontSize: 28, color: C.muted, opacity: nm }}>Creoble support</div>
-              <div style={{ position: "absolute", left: 412, top: B_TYP.t + B_TYP.h - 76 + mR * (B_REP.h - B_TYP.h), width: 76, height: 76, borderRadius: 38, background: C.sageTint, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${Math.max(0, av)})`, boxShadow: `0 0 0 1px ${C.line}` }}>
+              <div style={{ position: "absolute", left: B_TYP.l + 8, top: B_TYP.t - 50, transform: `translateY(${14 * (1 - nm)}px)`, fontFamily: SANS, fontWeight: 500, fontSize: 28, color: C.muted, opacity: nm }}>Creoble support</div>
+              <div style={{ position: "absolute", left: 412, top: B_TYP.t + B_TYP.h - 76, width: 76, height: 76, borderRadius: 38, background: C.sageTint, display: "flex", alignItems: "center", justifyContent: "center", transform: `translateY(${mR * (B_REP.h - B_TYP.h)}px) scale(${Math.max(0, av)})`, boxShadow: `0 0 0 1px ${C.line}` }}>
                 <Ico n="user" s={42} c={C.sageDeep} w={2.2} />
               </div>
             </AbsoluteFill>
@@ -276,6 +299,7 @@ const Mark: React.FC<{ g: number }> = ({ g }) => {
 const TA = { w: 600, h: 470 }, TB = { w: 560, h: 470 };
 const A0: V2 = [430, 640], B0: V2 = [1490, 640], A1: V2 = [640, 640], B1: V2 = [1300, 640];
 const CARD = { cx: 960, cy: 640, w: 1340, h: 530 };
+const TSS = 540 / SITE.w;                                          // the tile's site scale
 const tilePos = (g: number) => {
   const pa = bounce(g, sec(HJ), 0.8, 0.68), pb = bounce(g, sec(HOST), 0.8, 0.68), pm = bounce(g, sec(SAML + 3), 0.7, 0.62);
   const a = lerp2(qb([-340, 1480], [60, 820], A0, pa), A1, pm);
@@ -297,30 +321,33 @@ const Bento: React.FC<{ g: number }> = ({ g }) => {
     <AbsoluteFill style={{ transform: `translateY(${push}px)` }}>
       {/* the sage liquid under the glass: trails the tiles, joins them on "samlet" */}
       <Gooey>
-        {pa > 0.01 && box(lag.a[0], lag.a[1] + 6, (TA.w - 36) * clamp01(pa * 1.5), (TA.h - 36) * clamp01(pa * 1.5), C.sageLight, 34)}
-        {pb > 0.01 && box(lag.b[0], lag.b[1] + 6, (TB.w - 36) * clamp01(pb * 1.5), (TB.h - 36) * clamp01(pb * 1.5), C.sageLight, 34)}
-        {bridge > 0.01 && box(midX, mix(lag.a[1], lag.b[1], 0.5) + 6, span + 120, 300 * bridge, C.sageLight, 150 * bridge)}
+        {pa > 0.01 && tbox(lag.a[0], lag.a[1] + 6, (TA.w - 36) * clamp01(pa * 1.5), (TA.h - 36) * clamp01(pa * 1.5), C.sageLight, 34)}
+        {pb > 0.01 && tbox(lag.b[0], lag.b[1] + 6, (TB.w - 36) * clamp01(pb * 1.5), (TB.h - 36) * clamp01(pb * 1.5), C.sageLight, 34)}
+        {bridge > 0.01 && tbox(midX, mix(lag.a[1], lag.b[1], 0.5) + 6, span + 120, 300 * bridge, C.sageLight, 150 * bridge)}
       </Gooey>
-      {/* the merged card's glass */}
+      {/* the merged card's glass: it opens by scaleX on a static box (a box's width snaps to whole pixels) */}
       {pc > 0.001 && (
         <div style={{ position: "absolute", left: CARD.cx - CARD.w / 2, top: CARD.cy - CARD.h / 2 }}>
-          <LiquidGlass w={mix(CARD.w - 120, CARD.w, Math.max(0, pc))} h={CARD.h} radius={60} p={1} sheen={sheen} style={{ opacity: card, marginLeft: mix(60, 0, Math.max(0, pc)) }} />
+          <LiquidGlass w={CARD.w} h={CARD.h} radius={60} p={1} sheen={sheen} transform={`scaleX(${mix(CARD.w - 120, CARD.w, Math.max(0, pc)) / CARD.w})`} style={{ opacity: card }} />
         </div>
       )}
       {/* the two tiles' glass (fades into the card) */}
-      {pa > 0.001 && <div style={{ position: "absolute", left: a[0] - TA.w / 2, top: a[1] - TA.h / 2 }}><LiquidGlass w={TA.w} h={TA.h} radius={44} p={Math.max(0.05, Math.min(1.1, pa))} sheen={sheen} transform={squash(vA[0], vA[1], 0.0014)} style={{ opacity: clamp01(pa * 2) * (1 - card) }} /></div>}
-      {pb > 0.001 && <div style={{ position: "absolute", left: b[0] - TB.w / 2, top: b[1] - TB.h / 2 }}><LiquidGlass w={TB.w} h={TB.h} radius={44} p={Math.max(0.05, Math.min(1.1, pb))} sheen={1 - sheen} transform={squash(vB[0], vB[1], 0.0014)} style={{ opacity: clamp01(pb * 2) * (1 - card) }} /></div>}
-      {/* contents */}
+      {pa > 0.001 && <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${a[0] - TA.w / 2}px, ${a[1] - TA.h / 2}px)` }}><LiquidGlass w={TA.w} h={TA.h} radius={44} p={Math.max(0.05, Math.min(1.1, pa))} sheen={sheen} transform={squash(vA[0], vA[1], 0.0014)} style={{ opacity: clamp01(pa * 2) * (1 - card) }} /></div>}
+      {pb > 0.001 && <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${b[0] - TB.w / 2}px, ${b[1] - TB.h / 2}px)` }}><LiquidGlass w={TB.w} h={TB.h} radius={44} p={Math.max(0.05, Math.min(1.1, pb))} sheen={1 - sheen} transform={squash(vB[0], vB[1], 0.0014)} style={{ opacity: clamp01(pb * 2) * (1 - card) }} /></div>}
+      {/* contents: each tile's content is a layer of its own (will-change), and the site scrolls on a layer of its own
+          inside it, so its text is drawn once and moved whole (text repainted under a moving transform snaps its baseline) */}
       {pa > 0.001 && (
-        <div style={{ position: "absolute", left: a[0] - TA.w / 2, top: a[1] - TA.h / 2, width: TA.w, height: TA.h, transform: `${squash(vA[0], vA[1], 0.0014)} scale(${0.7 + 0.3 * Math.min(1.1, pa)})`, opacity: clamp01(pa * 2) }}>
+        <div style={{ position: "absolute", left: 0, top: 0, width: TA.w, height: TA.h, transform: `translate(${a[0] - TA.w / 2}px, ${a[1] - TA.h / 2}px) ${squash(vA[0], vA[1], 0.0014)} scale(${0.7 + 0.3 * Math.min(1.1, pa)})`, opacity: clamp01(pa * 2), willChange: "transform" }}>
           <Browser w={540} h={350} url="holmfysio.dk" live={1} style={{ position: "absolute", left: 30, top: 30 }}>
-            <HolmSite w={540} h={350 - BAR} booking={1} scroll={140 * INOUT(u01(g, HJ + 10, INK))} />
+            <div style={{ position: "absolute", left: 0, top: 0, transform: `translateY(${-140 * INOUT(u01(g, HJ + 10, INK)) * TSS}px)`, willChange: "transform" }}>
+              <HolmSite w={540} h={SITE.page * TSS} booking={1} />
+            </div>
           </Browser>
           <div style={{ position: "absolute", left: 34, top: 402, fontFamily: SANS, fontWeight: 500, fontSize: 32, color: C.ink }}>Hjemmeside</div>
         </div>
       )}
       {pb > 0.001 && (
-        <div style={{ position: "absolute", left: b[0] - TB.w / 2, top: b[1] - TB.h / 2, width: TB.w, height: TB.h, transform: `${squash(vB[0], vB[1], 0.0014)} scale(${0.7 + 0.3 * Math.min(1.1, pb)})`, opacity: clamp01(pb * 2), fontFamily: SANS, color: C.ink }}>
+        <div style={{ position: "absolute", left: 0, top: 0, width: TB.w, height: TB.h, transform: `translate(${b[0] - TB.w / 2}px, ${b[1] - TB.h / 2}px) ${squash(vB[0], vB[1], 0.0014)} scale(${0.7 + 0.3 * Math.min(1.1, pb)})`, opacity: clamp01(pb * 2), willChange: "transform", fontFamily: SANS, color: C.ink }}>
           <div style={{ position: "absolute", left: 48, top: 44, display: "flex", alignItems: "center", gap: 14, fontWeight: 500, fontSize: 34 }}><Ico n="server" s={40} c={C.sageDeep} w={2.2} />Hosting</div>
           <div style={{ position: "absolute", left: 48, top: 130, display: "flex", alignItems: "baseline", gap: 14, whiteSpace: "nowrap" }}>
             <span style={{ fontSize: 38, color: C.muted }}>fra</span>
@@ -330,7 +357,9 @@ const Bento: React.FC<{ g: number }> = ({ g }) => {
           <div style={{ position: "absolute", left: 48, top: 384, fontSize: 32, color: C.muted }}>Betalt årligt</div>
         </div>
       )}
-      {lab > 0 && <Label text="Hjemmeside & hosting" p={lab} size={28} style={{ position: "absolute", left: CARD.cx - CARD.w / 2 + 8, top: CARD.cy - CARD.h / 2 - 66 }} />}
+      {/* the label rides the shot's rise on a layer of its own (its text, repainted every frame as it reveals, would
+          otherwise snap its baseline to whole pixels under the rise) */}
+      {lab > 0 && <div style={{ position: "absolute", left: 0, top: 0, willChange: "transform" }}><Label text="Hjemmeside & hosting" p={lab} size={28} style={{ position: "absolute", left: CARD.cx - CARD.w / 2 + 8, top: CARD.cy - CARD.h / 2 - 66 }} /></div>}
     </AbsoluteFill>
   );
 };
@@ -363,15 +392,20 @@ const Ink: React.FC<{ g: number }> = ({ g }) => {
   } else if (g < OPEN) {
     const x0 = mix(0, 960 - 90, ce), x1 = mix(1920, 960 + 90, ce), y0 = mix(0, CAPY - 26, ce), y1 = mix(1080, CAPY + 26, ce);
     const r = Math.min((y1 - y0) / 2, (x1 - x0) / 2, 420 * ce);
-    node = <div style={{ position: "absolute", left: x0, top: y0, width: x1 - x0, height: y1 - y0, borderRadius: r, background: C.ink }} />;
+    node = <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, background: C.ink, clipPath: `inset(${y0}px ${1920 - x1}px ${1080 - y1}px ${x0}px round ${r}px)` }} />;
   } else {
     const ti = (g - OPEN) / 2, imp = ti * Math.exp(1 - ti);           // it lands in the capsule with a squish
     const W = mix(180, BW, po) + 70 * imp, H = mix(52, BH, po) - 12 * imp, pr = press(g, "w:gratis");
+    // a static layer that floats by transform; the capsule inside is cut by a clip-path (its springing size stays
+    // sub-pixel, where a box's size would snap to whole pixels); its shadow is cast by a box 2 px inside the capsule
+    // (spread −16 instead of −18: the same shadow), so that box's snapped edge is always under the ink
     node = (
-      <div style={{ position: "absolute", left: 960 - W / 2 + fx, top: CAPY - H / 2 + fy, width: W, height: H, borderRadius: H / 2, background: C.ink, overflow: "hidden",
-        boxShadow: `0 ${18 * (1 - pr)}px 40px -18px rgba(26,22,20,0.55)`, transform: `scale(${1 - 0.05 * pr})` }}>
-        <div style={{ position: "absolute", left: W / 2 - 400, top: H / 2 - 100, width: 800, height: 200, display: "flex", alignItems: "center", justifyContent: "center", opacity: u01(g, OPEN + 4, OPEN + 11) }}>
-          <PillButton text="Byg din side gratis" size={38} shine={k(g, "w:gratis", 0.75, INOUT)} style={{ boxShadow: "none" }} />
+      <div style={{ position: "absolute", left: 960 - BOXW / 2, top: CAPY - BOXH / 2, width: BOXW, height: BOXH, transform: `translate(${fx}px, ${fy}px) scale(${1 - 0.05 * pr})`, willChange: "transform" }}>
+        <div style={{ position: "absolute", left: 0, top: 0, width: W - 4, height: H - 4, borderRadius: (H - 4) / 2, transform: `translate(${(BOXW - W) / 2 + 2}px, ${(BOXH - H) / 2 + 2}px)`, boxShadow: `0 ${18 * (1 - pr)}px 40px -16px rgba(26,22,20,0.55)` }} />
+        <div style={{ position: "absolute", inset: 0, background: C.ink, clipPath: `inset(${(BOXH - H) / 2}px ${(BOXW - W) / 2}px round ${H / 2}px)`, display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <div style={{ display: "flex", opacity: u01(g, OPEN + 4, OPEN + 11) }}>
+            <PillButton text="Byg din side gratis" size={38} shine={k(g, "w:gratis", 0.75, INOUT)} style={{ boxShadow: "none" }} />
+          </div>
         </div>
       </div>
     );
@@ -391,11 +425,11 @@ const Ink: React.FC<{ g: number }> = ({ g }) => {
             const cy = 660 - 3.0 * Math.max(0, g - f("w:byg")) + (li - (n - 1) / 2) * LH;
             const px = (li % 2 === 0 ? 1 : -1) * 1.0 * Math.max(0, g - f(line[0].at));          // parallax: lines slide apart
             return (
-              <div key={li} style={{ position: "absolute", left: px, width: 1920, top: cy - TS * 0.62, display: "flex", justifyContent: "center", columnGap: TS * 0.24, fontFamily: SERIF, fontSize: TS, letterSpacing: "-0.025em", lineHeight: 1.05, color: C.cream, whiteSpace: "nowrap" }}>
+              <div key={li} style={{ position: "absolute", left: 0, top: 0, width: 1920, transform: `translate(${px}px, ${cy - TS * 0.62}px)`, willChange: "transform", display: "flex", justifyContent: "center", columnGap: TS * 0.24, fontFamily: SERIF, fontSize: TS, letterSpacing: "-0.025em", lineHeight: 1.05, color: C.cream, whiteSpace: "nowrap" }}>
                 {line.map((w, wi) => {
                   const q = bounce(g, w.at, 0.45, 0.55);
                   return (
-                    <span key={wi} style={{ display: "inline-block", transformOrigin: "50% 85%", transform: `translateY(${(1 - q) * 120}px) scale(${Math.max(0, q)})`, opacity: clamp01(q * 3), fontStyle: w.it ? "italic" : "normal", color: w.it ? C.sageLight : undefined, paddingRight: w.it ? TS * 0.04 : 0 }}>
+                    <span key={wi} style={{ display: "inline-block", transformOrigin: "50% 85%", transform: `translateY(${(1 - q) * 120}px) scale(${Math.max(0, q)})`, willChange: "transform", opacity: clamp01(q * 3), fontStyle: w.it ? "italic" : "normal", color: w.it ? C.sageLight : undefined, paddingRight: w.it ? TS * 0.04 : 0 }}>
                       {w.t}{w.dot && <span style={{ color: C.sageLight }}>.</span>}
                     </span>
                   );
@@ -415,11 +449,27 @@ const Ink: React.FC<{ g: number }> = ({ g }) => {
 const stopEase = (p: number) => (p < 0.88 ? p : 0.88 + (p - 0.88) - ((p - 0.88) * (p - 0.88)) / 0.24) / 0.94;
 const SiteRise: React.FC<{ g: number }> = ({ g }) => {
   const SIDE = f("w:din5"), ps = bounce(g, "w:din5", 0.8, 0.68), q = stopEase(u01(g, SIDE, HOLD));
-  const W = 1280, H = 720, y = mix(1130, 548, ps) - 80 * q;
+  const W = 1280, H = 720, y = mix(1130, 548, ps) - 80 * q, s = W / SITE.w;
+  // Glide, not steps: the window rides on its own layer (text moved by a repainted transform snaps its baseline to
+  // whole pixels); the page scrolls on a layer of its own, drawn whole. A layer's clip and a layer's own outline snap
+  // to whole pixels, so neither may be a visible edge: the page's clip edge sits under the window's bar, drawn again on
+  // top (the window's bottom is off frame), and the page and that bar reach 20 px past their visible edges with an
+  // invisible wash (alpha 1/255), so the edges you see are drawn inside their layers and glide with them.
+  const wash = "rgba(255,255,255,0.004)";
   return (
-    <Browser w={W} h={H} url="holmfysio.dk" live={1} style={{ position: "absolute", left: 960 - W / 2, top: y }}>
-      <HolmSite w={W} h={H - BAR} booking={1} scroll={330 * stopEase(u01(g, SIDE + 8, HOLD))} />
-    </Browser>
+    <div style={{ position: "absolute", left: 960 - W / 2, top: 0, width: W, height: H, transform: `translateY(${y}px)`, willChange: "transform" }}>
+      <Browser w={W} h={H} url="holmfysio.dk" live={1} />
+      <div style={{ position: "absolute", left: -60, top: BAR / 2, width: W + 120, height: H - BAR / 2, overflow: "hidden" }}>
+        <div style={{ position: "absolute", left: 40, top: BAR / 2, width: W + 40, height: SITE.page * s, background: wash, transform: `translateY(${-330 * stopEase(u01(g, SIDE + 8, HOLD)) * s}px)`, willChange: "transform" }}>
+          <div style={{ position: "absolute", left: 20, top: 0 }}><HolmSite w={W} h={SITE.page * s} booking={1} /></div>
+        </div>
+      </div>
+      <div style={{ position: "absolute", left: -20, top: -20, width: W + 40, height: BAR + 40, background: wash, willChange: "transform" }}>
+        <div style={{ position: "absolute", left: 20, top: 20, width: W, height: BAR, overflow: "hidden" }}>
+          <Browser w={W} h={H} url="holmfysio.dk" live={1} />
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -428,7 +478,7 @@ const URL = "creoble.dk";
 const Url: React.FC<{ g: number; fx: number; fy: number }> = ({ g, fx, fy }) => {
   const t0 = f("w:creoble4"), cps = 12;
   return (
-    <div style={{ position: "absolute", left: 0, width: 1920, top: CAPY + 78, display: "flex", justifyContent: "center", fontFamily: SERIF, fontSize: 104, letterSpacing: "-0.025em", lineHeight: 1.1, color: C.ink, transform: `translate(${fx * 0.6}px, ${fy * 0.7}px)` }}>
+    <div style={{ position: "absolute", left: 0, width: 1920, top: CAPY + 78, display: "flex", justifyContent: "center", fontFamily: SERIF, fontSize: 104, letterSpacing: "-0.025em", lineHeight: 1.1, color: C.ink, transform: `translate(${fx * 0.6}px, ${fy * 0.7}px)`, willChange: "transform" }}>
       {URL.split("").map((ch, i) => {
         const a = t0 + (i * 30) / cps, q = OUT(u01(g, a, a + 5));
         return <span key={i} style={{ display: "inline-block", opacity: q, transform: `translateY(${(1 - q) * 18}px)`, color: ch === "." ? C.sage : undefined }}>{ch}</span>;
