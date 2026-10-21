@@ -4,3 +4,7 @@ films/*/film/.remotion/
 films/*/film/src/__probe*.tsx
 *.log
 .DS_Store
+
+# Vino Academy (K.B Consultancy client): the photos and facts are confidential and this repository is public,
+# so the project stays local and the deliverables go to Karl directly.
+films/vinomio/
