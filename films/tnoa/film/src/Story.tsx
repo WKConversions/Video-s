@@ -24,7 +24,7 @@ const win = (t: number, a: number, b: number) => t >= a && t < b;
 // the network: twelve agents on two rings around a hub
 const NODES = Array.from({ length: 12 }, (_, i) => {
   const ring = i % 2 === 0 ? 300 : 470, a = (i / 12) * Math.PI * 2 + (i % 2 ? 0.26 : 0);
-  return { x: Math.cos(a) * ring * 1.25, y: Math.sin(a) * ring * 0.78, d: 0.12 + i * 0.07 };
+  return { x: Math.cos(a) * ring * 1.25, y: Math.sin(a) * ring * 0.78, d: 0.0 + i * 0.07 };
 });
 const ROWS = [
   { task: "Qualify inbound lead — ACME Roofing", agent: "Lead Response", ok: true, status: "Routed to sales", time: "38s" },
@@ -35,7 +35,7 @@ const ROWS = [
 
 const Network: React.FC<{ t: number }> = ({ t }) => {
   // forms 0-3.4 s, then folds into the panel (3.4-4.4 s)
-  const fold = ease((t - 3.4) / 0.9), rot = t * 0.75, hub = spring(t, 0.0, 0.5, 0.55);
+  const fold = ease((t - 3.4) / 0.9), rot = t * 0.75, hub = spring(t, -0.12, 0.5, 0.55);
   const pts = NODES.map((n) => {
     const p = spring(t, n.d, 0.55, 0.6), a = Math.atan2(n.y, n.x) + rot, r = Math.hypot(n.x / 1.25, n.y / 0.78);
     const x = Math.cos(a) * r * 1.25 * p * (1 - fold), y = Math.sin(a) * r * 0.78 * p * (1 - fold);
@@ -138,10 +138,10 @@ const Bento: React.FC<{ t: number }> = ({ t }) => {
 const Accountable: React.FC<{ t: number }> = ({ t }) => {
   // an agent and an engineer slide together and lock (gooey join), the two lines pop in (12.8-16.4 s)
   const a = spring(t, 12.45, 0.6, 0.6), join = spring(t, 13.3, 0.55, 0.55), out = ease((t - 16.3) / 0.45);
-  const gap = mix(520, 150, join) + Math.sin(t * 3) * 26, sc = (1 - out * 0.4) * (1 + 0.03 * Math.sin(t * 2)), op = 1 - out;
+  const gap = mix(520, 150, join) + Math.sin(t * 3) * 40, sc = (1 - out * 0.4) * (1 + 0.03 * Math.sin(t * 2)), op = 1 - out;
   const l1 = spring(t, 13.7, 0.5, 0.58), l2 = spring(t, 14.4, 0.5, 0.58);
   return (
-    <AbsoluteFill style={{ opacity: op, transform: `translateY(${Math.sin(t * 1.8) * 18}px) rotate(${Math.sin(t * 1.2) * 2}deg) scale(${sc})` }}>
+    <AbsoluteFill style={{ opacity: op, transform: `translateY(${Math.sin(t * 1.8) * 30}px) rotate(${Math.sin(t * 1.2) * 4}deg) scale(${sc})` }}>
       <svg width={1920} height={1080} style={{ position: "absolute", inset: 0 }}>
         <defs><filter id="tg"><feGaussianBlur stdDeviation="16" /><feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 26 -11" /></filter></defs>
         <g filter="url(#tg)">
@@ -165,16 +165,16 @@ const Accountable: React.FC<{ t: number }> = ({ t }) => {
 
 const End: React.FC<{ t: number }> = ({ t }) => {
   // navy floods up from the joined pair; the wordmark lands letter by letter; the capsule springs open into the button
-  const flood = ease((t - 16.1) / 0.5), w = (i: number) => spring(t, 16.75 + i * 0.07, 0.5, 0.55), cap = spring(t, 17.7, 0.6, 0.6);
-  const press = t > 18.9 && t < 19.15 ? 0.95 : 1, W = mix(160, 720, cap), bob = Math.sin(t * 2.4) * 16;
+  const flood = ease((t - 16.1) / 0.5), w = (i: number) => spring(t, 16.4 + i * 0.07, 0.5, 0.55), cap = spring(t, 17.35, 0.6, 0.6);
+  const press = t > 18.9 && t < 19.15 ? 0.95 : 1, W = mix(160, 720, cap), bob = Math.sin(t * 2.4) * 24;
   return (
     <AbsoluteFill>
       <div style={{ position: "absolute", left: 960, top: 540, width: 2400, height: 2400, borderRadius: 1200, background: B.navy, transform: `translate(-50%, -50%) scale(${flood})` }} />
-      <div style={{ position: "absolute", left: 0, right: 0, top: 330 + bob * 0.8, transform: `scale(${1 + 0.03 * Math.sin(t * 1.6)}) rotate(${Math.sin(t * 1.3) * 1.2}deg)`, display: "flex", justifyContent: "center", fontFamily: SANS, fontWeight: 700, fontSize: 230, letterSpacing: "-0.05em", color: B.white }}>
+      <div style={{ position: "absolute", left: 0, right: 0, top: 330 + bob * 0.8, transform: `scale(${1 + 0.03 * Math.sin(t * 1.6)}) rotate(${Math.sin(t * 1.3) * 2.5}deg)`, display: "flex", justifyContent: "center", fontFamily: SANS, fontWeight: 700, fontSize: 230, letterSpacing: "-0.05em", color: B.white }}>
         {"TNOA".split("").map((c, i) => { const p = w(i); return <span key={i} style={{ display: "inline-block", transform: `translateY(${(1 - p) * -160}px)`, opacity: clamp(p * 2) }}>{c}</span>; })}
-        <span style={{ color: B.sky, display: "inline-block", transform: `scale(${spring(t, 17.15, 0.45, 0.5)})` }}>.</span>
+        <span style={{ color: B.sky, display: "inline-block", transform: `scale(${spring(t, 16.8, 0.45, 0.5)})` }}>.</span>
       </div>
-      <div style={{ position: "absolute", left: 0, right: 0, top: 590, textAlign: "center", fontFamily: SANS, fontSize: 40, color: B.light, opacity: clamp((t - 17.3) * 3) }}>The Network of Agents</div>
+      <div style={{ position: "absolute", left: 0, right: 0, top: 590, textAlign: "center", fontFamily: SANS, fontSize: 40, color: B.light, opacity: clamp((t - 17.0) * 3) }}>The Network of Agents</div>
       <div style={{ position: "absolute", left: 960 - W / 2, top: 700 + bob, width: W, height: 96, borderRadius: 48, background: B.blue, transform: `scale(${press})`, boxShadow: "0 24px 60px -20px rgba(37,99,235,0.7)",
         display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", fontFamily: SANS, fontWeight: 600, fontSize: 38, color: B.white, opacity: clamp(cap * 3), whiteSpace: "nowrap" }}>
         <span style={{ opacity: clamp((cap - 0.6) * 3) }}>Book a Call — Free Audit →</span>
