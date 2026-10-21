@@ -9,6 +9,7 @@ import { Img, staticFile } from "remotion";
 import { T } from "./clock";
 import { C, EXIT, HOLM, INOUT, LIN, OUT, SANS, SERIF, SHADOW, SHADOW_BIG, WIPE, clamp01, mix } from "./lib";
 import { WM_DOT, WM_VIEW, WM_WORD } from "./wordmark";
+import { LG_MAP } from "./lgmap";
 
 export const k = (g: number, at: string | number, dur: number, ease = OUT) => T.k(g, at, dur, ease);
 export const f = (at: string | number) => T.f(at);
@@ -362,6 +363,108 @@ export const RollNumber: React.FC<{ value: number; from?: number; p: number; siz
       })}
     </div>
   );
+};
+
+
+/* ---------- version 3: obvious Apple — bounce, Liquid Glass, the ink capsule, liquid merges, bouncy type ---------- */
+// NOTE (version 3): the film renders at 60 fps; g is the 30-unit clock and is FRACTIONAL (g = frame / 2). Never
+// index arrays with g; never assume integer g. Labels and seconds work as before.
+// bounce: an Apple bouncy spring (iOS "bouncy"): it overshoots its target and settles. Use it for things that pop
+// in, land, get thrown or snap (chips, tiles, icons, toggles, buttons, capsules, numbers). damping 0.55 = playful,
+// 0.7 = gentle. Returns progress that passes 1 and comes back.
+export const bounce = (g: number, at: string | number, response = 0.5, damping = 0.62) => aspring(g, at, response, damping);
+// squash: Liquid-Glass squash and stretch from velocity (px per 1/30 s): a moving glass object stretches along its
+// travel and thins across it, then rounds out when it stops. Compute vx, vy from your position at g and g − 0.5.
+export const squash = (vx: number, vy: number, amount = 0.0011) => {
+  const v = Math.hypot(vx, vy), s = Math.min(0.22, v * amount), a = Math.atan2(vy, vx);
+  return `rotate(${a}rad) scale(${1 + s}, ${1 - s * 0.6}) rotate(${-a}rad)`;
+};
+// FilterDefs: the SVG filters the kit uses (Story draws them once): "goo" (liquid merge: blobs that touch flow
+// together) and "lg-refract" (Liquid Glass's refraction of what is behind it).
+export const FilterDefs: React.FC = () => (
+  <svg width={0} height={0} style={{ position: "absolute" }}>
+    <defs>
+      <filter id="goo" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="14" result="b" />
+        <feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 24 -10" result="g" />
+        <feComposite in="SourceGraphic" in2="g" operator="atop" />
+      </filter>
+      <filter id="lg-refract" x="0" y="0" width="100%" height="100%" colorInterpolationFilters="sRGB">
+        <feImage href={LG_MAP} x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="map" />
+        <feDisplacementMap in="SourceGraphic" in2="map" scale="70" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </defs>
+  </svg>
+);
+// LiquidGlass: Apple's Liquid Glass material. What is behind it is refracted (lg-refract) and blurred a little; a
+// bright rim and an inner glow catch the light; a specular highlight slides across it (sheen 0..1, move it as the
+// glass moves). p 0..1(+) materializes it (pass a bounce for a springy arrival). w × h, radius (default: a pill).
+// tint: "clear" (white glass) or "sage" (Creoble-tinted glass). transform: e.g. a squash() from its velocity.
+export const LiquidGlass: React.FC<{ w: number; h: number; radius?: number; p?: number; sheen?: number; tint?: "clear" | "sage" | "ink"; transform?: string; children?: React.ReactNode; style?: React.CSSProperties }> = ({
+  w, h, radius, p = 1, sheen = 0.3, tint = "clear", transform = "", children, style }) => {
+  const q = Math.max(0, p), r = radius ?? Math.min(w, h) / 2, o = clamp01(q * 2);
+  const base = tint === "sage" ? "rgba(135,168,158,0.30)" : tint === "ink" ? "rgba(26,22,20,0.55)" : "rgba(255,255,255,0.28)";
+  return (
+    <div style={{ width: w, height: h, borderRadius: r, position: "relative", overflow: "hidden", opacity: o, transform: `${transform} scale(${0.7 + 0.3 * q})`,
+      backdropFilter: `url(#lg-refract) blur(${3 + 3 * clamp01(q)}px) saturate(112%) brightness(1.05)`, WebkitBackdropFilter: `url(#lg-refract) blur(${3 + 3 * clamp01(q)}px) saturate(112%) brightness(1.05)`,
+      background: `linear-gradient(160deg, ${base}, rgba(255,255,255,0.06))`,
+      boxShadow: `inset 0 1.5px 1px rgba(255,255,255,0.95), inset 0 -1.5px 1px rgba(255,255,255,0.45), inset 0 0 0 1px rgba(255,255,255,0.4), inset 0 0 24px rgba(255,255,255,0.25), 0 18px 46px -18px rgba(26,22,20,0.38)`,
+      fontFamily: SANS, color: tint === "ink" ? C.cream : C.ink, flex: "none", ...style }}>
+      <div style={{ position: "absolute", inset: 0, borderRadius: r, background: `radial-gradient(90% 70% at ${8 + 84 * sheen}% -10%, rgba(255,255,255,0.75), rgba(255,255,255,0) 55%)`, mixBlendMode: "screen", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", inset: 0, borderRadius: r, background: `radial-gradient(70% 50% at ${92 - 70 * sheen}% 115%, rgba(255,255,255,0.45), rgba(255,255,255,0) 60%)`, mixBlendMode: "screen", pointerEvents: "none" }} />
+      <div style={{ position: "relative", width: "100%", height: "100%" }}>{children}</div>
+    </div>
+  );
+};
+// Island: a Dynamic-Island-style ink capsule. It starts as a small pill (180 × 52) and springs open to w × h with a
+// bounce (p from bounce(); it may pass 1), its corners staying round; children fade in once it is mostly open. Place
+// it by its top centre (x, y). Use it for live status: "Opdateret", "Live", "0 kr", a notification.
+export const Island: React.FC<{ x: number; y: number; w: number; h: number; p: number; children?: React.ReactNode }> = ({ x, y, w, h, p, children }) => {
+  const W = mix(180, w, p), H = mix(52, h, p), R = Math.min(H / 2, mix(26, Math.min(44, h / 2), clamp01(p)));
+  return (
+    <div style={{ position: "absolute", left: x - W / 2, top: y, width: W, height: H, borderRadius: R, background: C.ink, boxShadow: "0 20px 50px -20px rgba(26,22,20,0.6)", overflow: "hidden", color: C.cream, fontFamily: SANS }}>
+      <div style={{ position: "absolute", left: 0, top: 0, width: w, height: h, transform: `translate(${(W - w) / 2}px, ${(H - h) / 2}px)`, opacity: clamp01((p - 0.55) * 3) }}>{children}</div>
+    </div>
+  );
+};
+// Gooey: wrap sage/ink blobs (circles, pills) in it and they melt into each other where they touch — Apple's
+// liquid merge (a bubble splitting into two, chips flowing into a button). Solid colours only inside.
+export const Gooey: React.FC<{ children?: React.ReactNode; style?: React.CSSProperties }> = ({ children, style }) => (
+  <div style={{ position: "absolute", inset: 0, filter: "url(#goo)", ...style }}>{children}</div>
+);
+// BounceText: Apple's bouncy letter build. Each letter pops up from below and springs past its size and back,
+// one after another (stagger s apart) from label `at`. Fraunces 400 (or DM Sans 600 with sans); it = italic deep
+// sage (or `itColor`). Place with x, y (top-left; align "center" makes x the centre).
+export const BounceText: React.FC<{ g: number; text: string; at: string | number; x: number; y: number; size: number; it?: boolean; sans?: boolean; color?: string; itColor?: string; stagger?: number; align?: "left" | "center"; damping?: number }> = ({
+  g, text, at, x, y, size, it = false, sans = false, color = C.ink, itColor = C.sageDeep, stagger = 0.028, align = "left", damping = 0.55 }) => {
+  const t0 = (typeof at === "number" ? at : f(at) / 30);
+  return (
+    <div style={{ position: "absolute", left: align === "center" ? x - 1600 : x, top: y, width: align === "center" ? 3200 : undefined, display: "flex", justifyContent: align === "center" ? "center" : "flex-start",
+      fontFamily: sans ? SANS : SERIF, fontWeight: sans ? 600 : 400, fontStyle: it ? "italic" : "normal", fontSize: size, letterSpacing: sans ? "-0.03em" : "-0.025em", lineHeight: 1.05, color: it ? itColor : color, whiteSpace: "pre" }}>
+      {text.split("").map((ch, i) => {
+        const p = aspring(g, t0 + i * stagger, 0.42, damping);
+        return <span key={i} style={{ display: "inline-block", transform: `translateY(${(1 - p) * 0.55}em) scale(${0.4 + 0.6 * p})`, transformOrigin: "50% 90%", opacity: clamp01(p * 2.5) }}>{ch}</span>;
+      })}
+    </div>
+  );
+};
+
+
+// Version 3 boundaries — each builder boundary uses a DIFFERENT transition (Karl: "everything moves to the left"):
+//   h1 = speed-matched push UP (pushOutUp on the outgoing shot, pushInUp on the incoming);
+//   h2 = a hard cut on the beat: the incoming shot pops in with a bounce (nothing shared);
+//   h3 = a sage iris: SageIris drawn by BOTH sides (a disc grows to cover the frame by h3, then shrinks away,
+//        revealing the new shot around it);
+//   h4 = speed-matched whip to the RIGHT (whipOutR / whipInR).
+export const pushOutUp = (g: number, at: string | number) => { const t = clamp01((g - (f(at) - WHIP)) / WHIP); return -900 * t * t; };
+export const pushInUp = (g: number, at: string | number) => { const t = clamp01((g - f(at)) / WHIP); return 900 * (1 - t) * (1 - t); };
+export const whipOutR = (g: number, at: string | number) => -whipOut(g, at);
+export const whipInR = (g: number, at: string | number) => -whipIn(g, at);
+export const SageIris: React.FC<{ g: number; at: string | number; cx?: number; cy?: number }> = ({ g, at, cx = 960, cy = 540 }) => {
+  const t0 = f(at), grow = INOUT(clamp01((g - (t0 - 11)) / 11)), shrink = INOUT(clamp01((g - t0) / 13));
+  const r = g < t0 ? grow * 1150 : (1 - shrink) * 1150;
+  if (r <= 0.5) return null;
+  return <div style={{ position: "absolute", left: cx - r, top: cy - r, width: 2 * r, height: 2 * r, borderRadius: "50%", background: C.sage }} />;
 };
 
 /* ---------- the site's home position and the hand-offs ---------- */

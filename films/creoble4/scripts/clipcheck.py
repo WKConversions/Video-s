@@ -17,7 +17,7 @@ while True:
     if not ok: break
     small.append(cv2.cvtColor(cv2.resize(fr, (160, 90), interpolation=cv2.INTER_LINEAR), cv2.COLOR_BGR2GRAY).astype(np.float32))
     big.append(cv2.cvtColor(cv2.resize(fr, (320, 180), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2GRAY).astype(np.float32))
-n = len(small); t0 = first / 30
+n = len(small); t0 = first / fps   # frame numbers are in the clip's own fps (60 for Creoble v4 version 3)
 frac = np.array([float((np.abs(small[i] - small[i - 1]) > 6).mean()) for i in range(1, n)])
 still = frac < 0.001; runs, r = [0], 0
 for s in still: r = r + 1 if s else 0; runs.append(r)

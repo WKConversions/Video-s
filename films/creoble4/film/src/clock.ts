@@ -4,7 +4,8 @@
 import { timeline } from "./timeline";
 import WORDS from "./words.json";
 
-export const FPS = 30;
+export const FPS = 30;          // the animation clock: g counts 30ths of a second (fractional at 60 fps)
+export const OUT_FPS = 60;      // the render (version 3): 60 fps
 export const T = timeline(FPS, {
   open: 0,
   // hand-offs between the five builders (plan/storyboard.md; exact frame states in shared.tsx)
