@@ -34,13 +34,13 @@ const ROWS = [
 ];
 
 const Dots: React.FC<{ t: number; dark?: boolean }> = ({ t, dark }) => (
-  <AbsoluteFill style={{ transform: `translate(${-((t * 230) % 80)}px, ${-((t * 140) % 80)}px)`, width: 2100, height: 1200,
-    backgroundImage: `radial-gradient(${dark ? "rgba(255,255,255,0.2)" : "rgba(37,99,235,0.3)"} 4.6px, transparent 5px)`, backgroundSize: "80px 80px" }} />
+  <AbsoluteFill style={{ transform: `translate(${-((t * 420) % 90)}px, ${-((t * 260) % 90)}px)`, width: 2100, height: 1200,
+    backgroundImage: `radial-gradient(${dark ? "rgba(255,255,255,0.28)" : "rgba(37,99,235,0.42)"} 7px, transparent 7.6px)`, backgroundSize: "90px 90px" }} />
 );
 
 const Network: React.FC<{ t: number }> = ({ t }) => {
   // forms 0-3.4 s, then folds into the panel (3.4-4.4 s)
-  const fold = ease((t - 3.4) / 0.9), rot = t * 0.45, hub = spring(t, 0.15, 0.5, 0.55);
+  const fold = ease((t - 3.4) / 0.9), rot = t * 0.75, hub = spring(t, 0.15, 0.5, 0.55);
   const pts = NODES.map((n) => {
     const p = spring(t, n.d, 0.55, 0.6), a = Math.atan2(n.y, n.x) + rot, r = Math.hypot(n.x / 1.25, n.y / 0.78);
     const x = Math.cos(a) * r * 1.25 * p * (1 - fold), y = Math.sin(a) * r * 0.78 * p * (1 - fold);
@@ -58,7 +58,7 @@ const Network: React.FC<{ t: number }> = ({ t }) => {
             const ph = ((t * 0.9 + i / 12) % 1), s = clamp(q.p);
             return <circle key={"p" + i} cx={q.x * ph} cy={q.y * ph} r={5} fill={B.sky} opacity={0.8 * s * (1 - fold)} />;
           })}
-          {pts.map((q, i) => <circle key={"n" + i} cx={q.x} cy={q.y} r={Math.max(0, 15 * q.p)} fill={B.white} stroke={B.blue} strokeWidth={4} />)}
+          {pts.map((q, i) => <circle key={"n" + i} cx={q.x} cy={q.y} r={Math.max(0, (17 + 5 * Math.sin(t * 4 + i)) * q.p)} fill={B.white} stroke={B.blue} strokeWidth={4} />)}
           <circle cx={0} cy={0} r={Math.max(0, 46 * hub * (1 + 0.04 * Math.sin(t * 5)))} fill={B.blue} />
           <circle cx={0} cy={0} r={Math.max(0, 46 * hub + 30 * ((t * 0.8) % 1))} fill="none" stroke={B.blue} strokeOpacity={0.35 * (1 - ((t * 0.8) % 1)) * hub} strokeWidth={3} />
         </g>
@@ -74,11 +74,11 @@ const Activity: React.FC<{ t: number }> = ({ t }) => {
   // the hub grows into the panel (3.6-4.4 s), rows stack in like notifications, then the panel lifts away (8.6 s)
   const g = spring(t, 3.55, 0.6, 0.72), out = ease((t - 8.55) / 0.55);
   const W = mix(92, 1180, g), H = mix(92, 640, g), R = mix(46, 34, g);
-  const lift = -out * 1100, tilt = Math.sin(t * 0.8) * 1.2;
+  const lift = -out * 1100 + Math.sin(t * 1.6) * 22, tilt = Math.sin(t * 1.1) * 6;
   return (
     <AbsoluteFill style={{ transform: `translateY(${lift}px)` }}>
       <div style={{ position: "absolute", left: 960 - W / 2, top: 470 - H / 2 + 40 * g, width: W, height: H, borderRadius: R, background: g < 0.3 ? B.blue : B.white,
-        boxShadow: "0 2px 6px rgba(11,18,32,0.06), 0 50px 120px -40px rgba(11,18,32,0.35)", overflow: "hidden", transform: `rotate(${tilt * 0.3}deg)`, fontFamily: SANS }}>
+        boxShadow: "0 2px 6px rgba(11,18,32,0.06), 0 50px 120px -40px rgba(11,18,32,0.35)", overflow: "hidden", transform: `perspective(1600px) rotateY(${tilt}deg) rotateX(${Math.cos(t * 0.9) * 4}deg)`, fontFamily: SANS }}>
         <div style={{ opacity: clamp((g - 0.5) * 3), position: "absolute", inset: 0 }}>
           <div style={{ height: 76, background: B.navy, display: "flex", alignItems: "center", padding: "0 34px", gap: 12 }}>
             {[B.amber, B.green, B.sky].map((c, i) => <div key={i} style={{ width: 13, height: 13, borderRadius: 7, background: c, opacity: 0.9 }} />)}
@@ -127,10 +127,10 @@ const Bento: React.FC<{ t: number }> = ({ t }) => {
   return (
     <AbsoluteFill style={{ transform: `translateY(${out * 1200}px) rotate(${out * 4}deg)` }}>
       {T.map((b, i) => {
-        const p = tile(i), drift = Math.sin(t * 2.2 + i) * 22;
+        const p = tile(i), drift = Math.sin(t * 2.2 + i * 1.7) * 30;
         return (
           <div key={i} style={{ position: "absolute", left: 0, top: 0, width: b.w, height: b.h, borderRadius: 44, background: b.bg, color: b.fg, fontFamily: SANS, overflow: "hidden",
-            transform: `translate(${b.x}px, ${b.y + (1 - p) * 700 + drift}px) scale(${0.85 + 0.15 * p})`, boxShadow: "0 40px 90px -40px rgba(11,18,32,0.35)", border: b.bg === B.white ? `1.5px solid ${B.line}` : "none" }}>
+            transform: `translate(${b.x + Math.cos(t * 1.7 + i) * 16}px, ${b.y + (1 - p) * 700 + drift}px) perspective(1400px) rotateY(${Math.sin(t * 1.3 + i) * 7}deg) scale(${0.85 + 0.15 * p})`, boxShadow: "0 40px 90px -40px rgba(11,18,32,0.35)", border: b.bg === B.white ? `1.5px solid ${B.line}` : "none" }}>
             <div style={{ position: "absolute", left: 52, top: 44, fontSize: 30, fontWeight: 500, opacity: 0.75 }}>{b.k}</div>
             <div style={{ position: "absolute", left: 48, bottom: i === 0 ? 30 : 18 }}>{b.v}</div>
           </div>
@@ -143,7 +143,7 @@ const Bento: React.FC<{ t: number }> = ({ t }) => {
 const Accountable: React.FC<{ t: number }> = ({ t }) => {
   // an agent and an engineer slide together and lock (gooey join), the two lines pop in (12.8-16.4 s)
   const a = spring(t, 12.75, 0.6, 0.6), join = spring(t, 13.6, 0.55, 0.55), out = ease((t - 16.3) / 0.45);
-  const gap = mix(520, 150, join), sc = 1 - out * 0.4, op = 1 - out;
+  const gap = mix(520, 150, join) + Math.sin(t * 3) * 14, sc = (1 - out * 0.4) * (1 + 0.03 * Math.sin(t * 2)), op = 1 - out;
   const l1 = spring(t, 13.9, 0.5, 0.58), l2 = spring(t, 14.6, 0.5, 0.58);
   return (
     <AbsoluteFill style={{ opacity: op, transform: `scale(${sc})` }}>
@@ -175,7 +175,6 @@ const End: React.FC<{ t: number }> = ({ t }) => {
   return (
     <AbsoluteFill>
       <div style={{ position: "absolute", left: 960, top: 540, width: 2400, height: 2400, borderRadius: 1200, background: B.navy, transform: `translate(-50%, -50%) scale(${flood})` }} />
-      {flood > 0.5 && <Dots t={t} dark />}
       <div style={{ position: "absolute", left: 0, right: 0, top: 330 + bob * 0.5, display: "flex", justifyContent: "center", fontFamily: SANS, fontWeight: 700, fontSize: 230, letterSpacing: "-0.05em", color: B.white }}>
         {"TNOA".split("").map((c, i) => { const p = w(i); return <span key={i} style={{ display: "inline-block", transform: `translateY(${(1 - p) * -160}px)`, opacity: clamp(p * 2) }}>{c}</span>; })}
         <span style={{ color: B.sky, display: "inline-block", transform: `scale(${spring(t, 17.15, 0.45, 0.5)})` }}>.</span>
@@ -196,8 +195,7 @@ export const Story: React.FC = () => {
   const cam = 1.04 + 0.035 * Math.sin(t * 0.7);
   return (
     <AbsoluteFill style={{ background: B.bg, overflow: "hidden" }}>
-      <Dots t={t} />
-      <AbsoluteFill style={{ transform: `translate(${Math.sin(t * 0.8) * 40}px, ${Math.cos(t * 0.6) * 24}px) scale(${cam}) rotate(${Math.sin(t * 0.5) * 0.8}deg)` }}>
+      <AbsoluteFill style={{ transform: `translate(${Math.sin(t * 0.8) * 30}px, ${Math.cos(t * 0.6) * 18}px) scale(${cam}) rotate(${Math.sin(t * 0.5) * 0.8}deg)` }}>
         {win(t, 0, 4.5) && <Network t={t} />}
         {win(t, 3.5, 9.3) && <Activity t={t} />}
         {win(t, 8.6, 13.2) && <Bento t={t} />}
