@@ -1,0 +1,221 @@
+{
+ "fps": 30,
+ "frames": 1275,
+ "library": "lib",
+ "vo": {
+  "file": "../film/public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.05,
+  "fade_out": 1.2
+ },
+ "sfx": [
+  {
+   "id": "gen-shimmer",
+   "frame": 2,
+   "db": -12,
+   "pitch": -3,
+   "note": "frame 0: the network"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 12,
+   "db": -14,
+   "note": "a connection"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 27,
+   "db": -14,
+   "pitch": 2,
+   "note": "a connection"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 42,
+   "db": -14,
+   "pitch": 4,
+   "note": "a connection"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 57,
+   "db": -14,
+   "pitch": 3,
+   "note": "a connection"
+  },
+  {
+   "id": "gen-swell",
+   "frame": 98,
+   "db": -12,
+   "pitch": -4,
+   "note": "the network comes apart"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 230,
+   "db": -6,
+   "pitch": -2,
+   "note": "cream opens out"
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 236,
+   "db": -8,
+   "note": "the mark"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 295,
+   "db": -7,
+   "pitch": -3,
+   "note": "M\u00e1laga"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 365,
+   "db": -12,
+   "note": "who it brings together"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 391,
+   "db": -12,
+   "pitch": 2,
+   "note": "who it brings together"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 419,
+   "db": -12,
+   "pitch": 4,
+   "note": "who it brings together"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 443,
+   "db": -12,
+   "pitch": 5,
+   "note": "who it brings together"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 508,
+   "db": -8,
+   "note": "the gallery"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 529,
+   "db": -12,
+   "note": "a photo"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 534,
+   "db": -12,
+   "pitch": 1,
+   "note": "a photo"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 539,
+   "db": -12,
+   "pitch": 2,
+   "note": "a photo"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 610,
+   "db": -11,
+   "pitch": 2,
+   "note": "a caption"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 652,
+   "db": -11,
+   "pitch": 4,
+   "note": "a caption"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 688,
+   "db": -11,
+   "pitch": 6,
+   "note": "a caption"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 729,
+   "db": -7,
+   "pitch": -2,
+   "note": "the business cards"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 762,
+   "db": -10,
+   "pitch": 2,
+   "note": "struck through"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 798,
+   "db": -10,
+   "pitch": 3,
+   "note": "struck through"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 810,
+   "db": -8,
+   "pitch": 1,
+   "note": "the cards fly away"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 839,
+   "db": -8,
+   "note": "real conversations"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 982,
+   "db": -8,
+   "pitch": -3,
+   "note": "back to the dark"
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 1075,
+   "db": -8,
+   "note": "the two connect"
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 1076,
+   "db": -9,
+   "pitch": 2,
+   "note": ""
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 1120,
+   "db": -6,
+   "pitch": -2,
+   "note": "the end card"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1212,
+   "db": -10,
+   "pitch": 3,
+   "note": "Join the community"
+  }
+ ]
+}
