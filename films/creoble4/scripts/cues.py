@@ -1,4 +1,4 @@
-# Creoble v4's cue sheet: the Danish voice-over, the music bed ("Piano Reflections", its beat entering on "Det
+# Creoble v4's cue sheet: the Danish voice-over, the music bed ("Take this Higher", bright and energetic from the hook; (v1: "Piano Reflections") its beat entering on "Det
 # bedste?" and its last hit on "Så køber du."), and a quiet, sparing set of interface sounds. Apple's audio-haptic
 # rules decide them: causality (a sound only on the event that causes it, matching its physicality), harmony (on the
 # same frame as the picture event) and utility (only meaningful moments: a commit, a check, a press; never a sound on
@@ -65,7 +65,7 @@ cue("w:creoble3", -0.05, "gen-shimmer", -12, 2, "Creoble.")
 cue("w:samlet", 0.0, "gen-impact-soft", -17, 0, "website and hosting meet")
 cue("w:byg2", 0.0, CLICK, -11, 0, "Byg din side gratis")
 
-music = {"file": "bed.wav", "at": 0, "lufs": -24, "duck_db": 6, "fade_in": 0.2, "fade_out": 0.8}
+music = {"file": "bed.wav", "at": 0, "lufs": -22, "duck_db": 5, "fade_in": 0.2, "fade_out": 0.8}
 out = {"fps": FPS, "frames": round(END * FPS), "library": "../../alumni/sound/lib", "vo": {"file": "../vo/vo.mp3", "at": 0, "compress": True},
        "music": music, "sfx": sorted(cues, key=lambda c: c["frame"])}
 json.dump(out, open(os.path.join(ROOT, "sound", "cues.json"), "w"), indent=1)

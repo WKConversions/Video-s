@@ -301,6 +301,69 @@ export const Glass: React.FC<{ p?: number; radius?: number; weight?: number; chi
 // and the rest: the background dims a little toward the ground colour. p 0..1.
 export const Scrim: React.FC<{ p: number }> = ({ p }) => <div style={{ position: "absolute", inset: 0, background: `rgba(250,250,248,${0.62 * clamp01(p)})` }} />;
 
+
+/* ---------- constant motion (v2 of the film: Apple-style motion design, never a still) ---------- */
+// drift: a constant, eased travel over a shot, from a to b between labels (or seconds) `from` and `to`. Use it so
+// every element keeps moving while it is on screen (a slow push of scale 1 → 1.05, a pan of 40–120 px, a scroll).
+export const drift = (g: number, from: string | number, to: string | number, a: number, b: number) => {
+  const t0 = f(from), t1 = f(to);
+  return mix(a, b, INOUT(clamp01((g - t0) / Math.max(1, t1 - t0))));
+};
+// The builders' boundary transition (and any whip inside a span): a speed-matched whip to the left. The outgoing
+// content accelerates out over WHIP frames into the cut at frame `at` (whipOut: 0 → −W px); the incoming content
+// enters at the cut at the same speed and decelerates (whipIn: +W → 0 px). Both move 2W/WHIP px per frame at the
+// cut, so the cut lands on the fastest frame and the final render's motion blur smears it. Apply as translateX on
+// the whole shot; fade the outgoing a little (whipFade) so the two never read as one frame.
+export const WHIP = 9, WHIP_W = 1100;
+export const whipOut = (g: number, at: string | number) => { const t = clamp01((g - (f(at) - WHIP)) / WHIP); return -WHIP_W * t * t; };
+export const whipIn = (g: number, at: string | number) => { const t = clamp01((g - f(at)) / WHIP); return WHIP_W * (1 - t) * (1 - t); };
+export const whipFade = (g: number, at: string | number) => 1 - 0.5 * clamp01((g - (f(at) - WHIP)) / WHIP);
+// KineticLine: Apple-style kinetic type. Each word springs in on its label (from below through a mask, a little
+// scale), the whole line keeps moving while it holds (drifts dx px and grows by `grow` over its life), and on `out`
+// it pushes off in direction `dir` (left/up) with a fade. Fraunces 400 like the site; it = italic deep sage.
+export const KineticLine: React.FC<{ g: number; words: Wd[]; x: number; y: number; size: number; out?: string; dir?: "left" | "up"; dx?: number; grow?: number; align?: "left" | "center"; color?: string; sans?: boolean }> = ({
+  g, words, x, y, size, out, dir = "up", dx = -40, grow = 0.05, align = "left", color = C.ink, sans = false }) => {
+  const first = f(words[0].at), last = out ? f(out) : first + 90;
+  const life = clamp01((g - first) / Math.max(1, last - first + 12));
+  const o = out ? clamp01((g - f(out)) / 10) : 0, oe = EXIT(o);
+  if (o >= 1) return null;
+  const tx = dx * life + (dir === "left" ? -oe * 520 : 0), ty = dir === "up" ? -oe * size * 1.2 : 0;
+  return (
+    <div style={{ position: "absolute", left: align === "center" ? x - 1600 : x, top: y, width: align === "center" ? 3200 : undefined, display: "flex", justifyContent: align === "center" ? "center" : "flex-start", columnGap: size * 0.24,
+      fontFamily: sans ? SANS : SERIF, fontWeight: sans ? 500 : 400, fontSize: size, letterSpacing: sans ? "-0.03em" : "-0.025em", lineHeight: 1.05, color, whiteSpace: "nowrap",
+      transform: `translate(${tx}px, ${ty}px) scale(${1 + grow * life})`, transformOrigin: align === "center" ? "50% 50%" : "0% 50%", opacity: 1 - oe }}>
+      {words.map((w, i) => {
+        const p = aspring(g, w.at, 0.42, 1);
+        return (
+          <span key={i} style={{ display: "inline-block", overflow: "hidden", paddingBottom: size * 0.16, marginBottom: -size * 0.16, paddingRight: w.it ? size * 0.06 : 0 }}>
+            <span style={{ display: "inline-block", transform: `translateY(${(1 - Math.min(1, p)) * 100}%) scale(${0.92 + 0.08 * Math.min(1, p)})`, transformOrigin: "50% 100%", fontStyle: w.it ? "italic" : "normal", color: w.it ? C.sageDeep : undefined }}>{w.t}</span>
+          </span>
+        );
+      })}
+    </div>
+  );
+};
+// RollNumber: digits that roll into place like a counter (each digit column slides through 0–9 with a spring,
+// later digits arriving a little later). value = the number shown; p 0..1 progress of the roll (from `from`).
+export const RollNumber: React.FC<{ value: number; from?: number; p: number; size: number; color?: string; serif?: boolean }> = ({ value, from = 0, p, size, color = C.ink, serif = true }) => {
+  const digits = String(value).split(""), fromD = String(from).padStart(digits.length, "0").split("");
+  return (
+    <div style={{ display: "inline-flex", fontFamily: serif ? SERIF : SANS, fontSize: size, lineHeight: 1, color, letterSpacing: "-0.03em", fontVariantNumeric: "tabular-nums" }}>
+      {digits.map((d, i) => {
+        const q = clamp01(p * 1.15 - i * 0.08), a = Number(fromD[i] ?? 0), b = Number(d), turns = (b - a + 10) % 10 + (i === 0 ? 10 : 0);
+        const pos = a + turns * OUT(q);
+        return (
+          <span key={i} style={{ display: "inline-block", height: size * 1.25, overflow: "hidden", position: "relative", width: "0.62em" }}>
+            <span style={{ position: "absolute", left: 0, top: 0, width: "100%", transform: `translateY(${-(pos % 10) * size * 1.25}px)` }}>
+              {Array.from({ length: 11 }, (_, n) => <div key={n} style={{ height: size * 1.25, lineHeight: `${size * 1.25}px`, textAlign: "center" }}>{n % 10}</div>)}
+            </span>
+          </span>
+        );
+      })}
+    </div>
+  );
+};
+
 /* ---------- the site's home position and the hand-offs ---------- */
 // The thread of the film is the client's website. Its home position: a Browser at x 230, y 106, 1460 × 860 (content
 // 1460 × 814), centred. Each builder may move it, but at every hand-off frame it is exactly here, in the state below.

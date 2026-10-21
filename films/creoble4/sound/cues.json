@@ -10,8 +10,8 @@
  "music": {
   "file": "bed.wav",
   "at": 0,
-  "lufs": -24,
-  "duck_db": 6,
+  "lufs": -22,
+  "duck_db": 5,
   "fade_in": 0.2,
   "fade_out": 0.8
  },
