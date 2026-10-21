@@ -281,8 +281,11 @@ export const press = (g: number, at: string | number, hold = 0.12) => {
   if (t < 0) return 0;
   if (t < 0.1) return t / 0.1;
   if (t < 0.1 + hold) return 1;
-  return 1 - aspring(g, (f(at) + Math.round((0.1 + hold) * 30)) as number, 0.3, 1);
+  const r = t - 0.1 - hold, w0 = (2 * Math.PI) / 0.3;               // release: a critically damped spring, response 0.3 s
+  return (1 + w0 * r) * Math.exp(-w0 * r);
 };
+// Note: k, f, aspring and press take a label ("w:skriv", "h2+0.2") or a time in SECONDS. For frame numbers use
+// kf(g, firstFrame, durationFrames, ease).
 // Glass: Apple's translucent material for floating UI (a prompt bar, chips, a chat card, a toolbar over the site):
 // semi-transparent white over a backdrop blur, a bright top edge, a soft shadow. p 0..1 materializes it (the blur
 // radius, scale and opacity arrive together, not a plain fade). Bigger surfaces read thicker: pass weight 1.2–1.5.
