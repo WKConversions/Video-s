@@ -396,8 +396,9 @@ export const FilterDefs: React.FC = () => (
     </defs>
   </svg>
 );
-// LiquidGlass: Apple's Liquid Glass material. What is behind it is refracted (lg-refract) and blurred a little; a
-// bright rim and an inner glow catch the light; a specular highlight slides across it (sheen 0..1, move it as the
+// LiquidGlass: Apple's Liquid Glass material. What is behind it is blurred a little; a rim lens (a ring just inside the
+// edge, brighter and more saturated) reads as the glass's thickness bending light; a bright rim and an inner glow catch
+// the light. (No SVG refraction: lg-refract in a backdrop-filter renders in rectangular seams in headless Chrome.) a specular highlight slides across it (sheen 0..1, move it as the
 // glass moves). p 0..1(+) materializes it (pass a bounce for a springy arrival). w × h, radius (default: a pill).
 // tint: "clear" (white glass) or "sage" (Creoble-tinted glass). transform: e.g. a squash() from its velocity.
 export const LiquidGlass: React.FC<{ w: number; h: number; radius?: number; p?: number; sheen?: number; tint?: "clear" | "sage" | "ink"; transform?: string; children?: React.ReactNode; style?: React.CSSProperties }> = ({
@@ -406,10 +407,13 @@ export const LiquidGlass: React.FC<{ w: number; h: number; radius?: number; p?: 
   const base = tint === "sage" ? "rgba(135,168,158,0.30)" : tint === "ink" ? "rgba(26,22,20,0.55)" : "rgba(255,255,255,0.28)";
   return (
     <div style={{ width: w, height: h, borderRadius: r, position: "relative", overflow: "hidden", opacity: o, transform: `${transform} scale(${0.7 + 0.3 * q})`,
-      backdropFilter: `url(#lg-refract) blur(${3 + 3 * clamp01(q)}px) saturate(112%) brightness(1.05)`, WebkitBackdropFilter: `url(#lg-refract) blur(${3 + 3 * clamp01(q)}px) saturate(112%) brightness(1.05)`,
+      backdropFilter: `blur(${3 + 3 * clamp01(q)}px) saturate(112%) brightness(1.05)`, WebkitBackdropFilter: `blur(${3 + 3 * clamp01(q)}px) saturate(112%) brightness(1.05)`,
       background: `linear-gradient(160deg, ${base}, rgba(255,255,255,0.06))`,
       boxShadow: `inset 0 1.5px 1px rgba(255,255,255,0.95), inset 0 -1.5px 1px rgba(255,255,255,0.45), inset 0 0 0 1px rgba(255,255,255,0.4), inset 0 0 24px rgba(255,255,255,0.25), 0 18px 46px -18px rgba(26,22,20,0.38)`,
       fontFamily: SANS, color: tint === "ink" ? C.cream : C.ink, flex: "none", ...style }}>
+      {/* the rim lens: a ring just inside the edge where the glass is thickest bends more light: brighter, more saturated, a little clearer */}
+      <div style={{ position: "absolute", inset: 0, borderRadius: r, padding: Math.min(16, Math.min(w, h) * 0.12), backdropFilter: "brightness(1.10) saturate(135%) contrast(1.04)", WebkitBackdropFilter: "brightness(1.10) saturate(135%) contrast(1.04)",
+        WebkitMask: "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)", WebkitMaskComposite: "xor", maskComposite: "exclude", pointerEvents: "none" }} />
       <div style={{ position: "absolute", inset: 0, borderRadius: r, background: `radial-gradient(90% 70% at ${8 + 84 * sheen}% -10%, rgba(255,255,255,0.75), rgba(255,255,255,0) 55%)`, mixBlendMode: "screen", pointerEvents: "none" }} />
       <div style={{ position: "absolute", inset: 0, borderRadius: r, background: `radial-gradient(70% 50% at ${92 - 70 * sheen}% 115%, rgba(255,255,255,0.45), rgba(255,255,255,0) 60%)`, mixBlendMode: "screen", pointerEvents: "none" }} />
       <div style={{ position: "relative", width: "100%", height: "100%" }}>{children}</div>
