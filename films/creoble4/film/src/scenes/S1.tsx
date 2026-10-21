@@ -109,7 +109,11 @@ const ShotHook: React.FC<{ g: number }> = ({ g }) => {
   // the window's 3D tilt (back to 12° as the liquid pours, toward the camera in shot 2) and its recede in shot 3
   const tilt = 12 * sp(g, 63, 0.7) * (1 - sp(g, 80, 1.3));
   const rc = sp(g, 113, 0.7), wo = 1 - lin(g, 118, 132);
-  const cw = geo.w - WIN.pad * 2, ch = geo.h - WIN.bar - WIN.pad, s = cw / 1460;
+  // the window's layout box is whole, even pixels (gw × gh: its centre and anything centred in it sit on the pixel
+  // grid); the fraction left over is a transform scale, so its edges and contents glide instead of snapping while it
+  // settles
+  const gw = Math.max(2, 2 * Math.round(geo.w / 2)), gh = Math.max(2, 2 * Math.round(geo.h / 2));
+  const cw = gw - WIN.pad * 2, ch = gh - WIN.bar - WIN.pad, s = cw / 1460;
   const pcx = cw / 2, pcy = ch * 0.6;
   // the Island
   const drop = bn(g, F.byg - 4, 0.55, 0.6), close = sp(g, 112, 0.35), lift = sp(g, 118, 0.4);
@@ -119,25 +123,28 @@ const ShotHook: React.FC<{ g: number }> = ({ g }) => {
   return (
     <div style={{ position: "absolute", inset: 0 }}>
       {wordsO > 0 && (
-        <div style={{ position: "absolute", inset: 0, transform: `translateY(${bob}px)`, opacity: wordsO }}>
+        // will-change: the bob moves the drawn words as one layer by fractions of a pixel (re-drawn text would snap
+        // to whole-pixel baselines and step every other frame)
+        <div style={{ position: "absolute", inset: 0, transform: `translateY(${bob}px)`, opacity: wordsO, willChange: "transform" }}>
           <BounceText g={g} text="Din nye" at={-0.03} x={960} y={175} size={200} align="center" stagger={0.036} />
           <BounceText g={g} text="hjemmeside" at={0.36} x={960} y={392} size={200} it align="center" stagger={0.026} />
         </div>
       )}
       {showGlass && (
         <div style={{ position: "absolute", inset: 0, perspective: 1800, perspectiveOrigin: "50% 45%", opacity: wo, transform: `translateY(${-60 * rc}px) scale(${1 - 0.12 * rc})` }}>
-          <div style={{ position: "absolute", left: 0, top: 0, width: geo.w, height: geo.h, transform: `translate3d(${960 - geo.w / 2}px, ${geo.cy - geo.h / 2}px, 0) rotateX(${tilt}deg)`, transformOrigin: "50% 60%" }}>
-            <LiquidGlass w={geo.w} h={geo.h} radius={geo.r} p={1} sheen={0.15 + 0.7 * lin(g, F.er - 2, 90)} transform={`${squash(0, vy)} scale(${1 + imp}, ${1 - imp})`}>
-              {/* the capsule's face: a running clock, "få minutter" */}
+          <div style={{ position: "absolute", left: 0, top: 0, width: gw, height: gh, transform: `translate3d(${960 - gw / 2}px, ${geo.cy + 0.1 * geo.h - 0.6 * gh}px, 0) rotateX(${tilt}deg) scale(${geo.w / gw}, ${geo.h / gh})`, transformOrigin: "50% 60%" }}>
+            <LiquidGlass w={gw} h={gh} radius={geo.r} p={1} sheen={0.15 + 0.7 * lin(g, F.er - 2, 90)} transform={`${squash(0, vy)} scale(${1 + imp}, ${1 - imp})`}>
+              {/* the capsule's face: a running clock, "få minutter" (its own layer, will-change, so the words ride the
+                  capsule's landing bounce by fractions of a pixel instead of stepping on whole-pixel baselines) */}
               {capO > 0 && (
-                <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: 18, opacity: capO }}>
+                <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: 18, opacity: capO, willChange: "transform" }}>
                   <Clock s={56} g={g} />
                   <div style={{ fontFamily: SANS, fontWeight: 500, fontSize: 44, color: C.ink, letterSpacing: "-0.01em", whiteSpace: "nowrap" }}>få minutter</div>
                 </div>
               )}
               {/* the window's bar */}
               {frost > 0 && (
-                <div style={{ position: "absolute", left: 0, top: 0, width: geo.w, height: WIN.bar, opacity: frost, display: "flex", alignItems: "center", paddingLeft: 30, gap: 10, boxSizing: "border-box" }}>
+                <div style={{ position: "absolute", left: 0, top: 0, width: gw, height: WIN.bar, opacity: frost, display: "flex", alignItems: "center", paddingLeft: 30, gap: 10, boxSizing: "border-box" }}>
                   {[0, 1, 2].map((i) => <div key={i} style={{ width: 14, height: 14, borderRadius: "50%", background: "rgba(26,22,20,0.16)" }} />)}
                   <div style={{ position: "absolute", left: "50%", top: 12, transform: "translateX(-50%)", height: 46, padding: "0 26px", borderRadius: 14, background: "rgba(255,255,255,0.55)", display: "flex", alignItems: "center", fontFamily: SANS, fontSize: 28, color: C.muted, whiteSpace: "nowrap" }}>Forhåndsvisning</div>
                 </div>
@@ -148,6 +155,7 @@ const ShotHook: React.FC<{ g: number }> = ({ g }) => {
                   <div style={{ position: "absolute", inset: 0, background: HOLM.bg, opacity: frost }} />
                   {g < 106 && (
                     <Gooey>
+                      <svg width={cw} height={ch} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
                       {POOL.map((b, i) => {
                         const ti = F.vk + 0.5 + i * 1.1;
                         const yAt = (t: number) => pcy + b.dy - 760 * abs(1 - bn(t, ti, 0.5, 0.58));
@@ -161,8 +169,11 @@ const ShotHook: React.FC<{ g: number }> = ({ g }) => {
                         const shrink = 1 - EXIT(lin(g, POP[i], POP[i] + 6));
                         if (shrink <= 0) return null;
                         x += (w * (1 - shrink)) / 2; y += (h * (1 - shrink)) / 2; w *= shrink; h *= shrink;
-                        return <div key={i} style={{ position: "absolute", left: x, top: y, width: w, height: h, borderRadius: rad, background: tint(C.sage, SK, q) }} />;
+                        // CSS clamps an over-large corner radius to the shorter half side; SVG would clamp per axis
+                        const rr = Math.max(0, Math.min(rad, w / 2, h / 2));
+                        return <rect key={i} x={x} y={y} width={Math.max(0, w)} height={Math.max(0, h)} rx={rr} ry={rr} style={{ fill: tint(C.sage, SK, q) }} />;
                       })}
+                      </svg>
                     </Gooey>
                   )}
                   {POP.map((t, i) => g >= t && <SiteCut key={i} s={s} ch={ch} i={i} p={bn(g, t, 0.42, 0.55)} />)}
@@ -239,6 +250,9 @@ const ShotCard: React.FC<{ g: number }> = ({ g }) => {
   const W = mix(CARD.w, SITEB.w, gp), H = mix(CARD.h, SITEB.h, gp);
   const arc = -90 * Math.sin(Math.PI * clamp01(fp));
   // shot 4: the scroll (fast down, overscroll, rubber-band); the rest of the page builds; shot 5: back up behind the panel
+  // the card's layout box is whole, even pixels (Wl × Hl); the fraction left over is a transform scale (as for the
+  // window in shots 1–2), so the box and the site in it glide while the flip settles
+  const Wl = 2 * Math.round(W / 2), Hl = 2 * Math.round(H / 2);
   const s = W / 1460, maxS = 1500 - (H - BAR) / s;
   const sc = (maxS * bn(g, 203, 0.6, 0.55) - 3.2 * ramp(g, 224, 234)) * (1 - sp(g, F.ingen + 3, 0.8));
   const build = 0.72 + 0.28 * kf(g, 203, 18, OUT);
@@ -247,14 +261,16 @@ const ShotCard: React.FC<{ g: number }> = ({ g }) => {
   const front = ang < 90;
   return (
     <div style={{ position: "absolute", inset: 0, perspective: 2200, perspectiveOrigin: "50% 50%" }}>
-      <div style={{ position: "absolute", left: 960 - W / 2, top: 560 - H / 2, width: W, height: H,
-        transform: `translate3d(0, ${rise + slow + arc + para}px, 0) ${front ? `rotateX(${ang}deg)` : `rotateX(${ang - 180}deg)`} scale(${1 - 0.06 * back})`, transformOrigin: "50% 50%" }}>
+      {/* will-change: the card is its own compositor layer, so its slow rise moves the drawn layer by fractions of a
+          pixel instead of re-drawing its text on whole-pixel baselines */}
+      <div style={{ position: "absolute", left: 0, top: 0, width: Wl, height: Hl, willChange: "transform", transformOrigin: "50% 50%",
+        transform: `translate3d(${960 - Wl / 2}px, ${560 - Hl / 2 + rise + slow + arc + para}px, 0) ${front ? `rotateX(${ang}deg)` : `rotateX(${ang - 180}deg)`} scale(${1 - 0.06 * back}) scale(${W / Wl}, ${H / Hl})` }}>
         {front ? (
           <div style={{ position: "absolute", inset: 0, borderRadius: 24, background: C.card, border: `1px solid ${C.line}`, boxShadow: SHADOW_BIG }}>
             <FormFace g={g} />
           </div>
         ) : (
-          <Browser w={W} h={H}><HolmSite w={W} h={H - BAR} build={build} scroll={sc} /></Browser>
+          <Browser w={Wl} h={Hl}><HolmSite w={Wl} h={Hl - BAR} build={build} scroll={sc} /></Browser>
         )}
       </div>
     </div>

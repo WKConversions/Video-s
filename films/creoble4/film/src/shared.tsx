@@ -425,9 +425,12 @@ export const LiquidGlass: React.FC<{ w: number; h: number; radius?: number; p?: 
 // it by its top centre (x, y). Use it for live status: "Opdateret", "Live", "0 kr", a notification.
 export const Island: React.FC<{ x: number; y: number; w: number; h: number; p: number; children?: React.ReactNode }> = ({ x, y, w, h, p, children }) => {
   const W = mix(180, w, p), H = mix(52, h, p), R = Math.min(H / 2, mix(26, Math.min(44, h / 2), clamp01(p)));
+  // the layout box is whole, even pixels (Wl × Hl); y and the fraction left over are a transform, so the capsule glides
+  // as it drops and springs open instead of snapping its edges to the pixel grid
+  const Wl = Math.max(2, 2 * Math.round(W / 2)), Hl = Math.max(2, 2 * Math.round(H / 2));
   return (
-    <div style={{ position: "absolute", left: x - W / 2, top: y, width: W, height: H, borderRadius: R, background: C.ink, boxShadow: "0 20px 50px -20px rgba(26,22,20,0.6)", overflow: "hidden", color: C.cream, fontFamily: SANS }}>
-      <div style={{ position: "absolute", left: 0, top: 0, width: w, height: h, transform: `translate(${(W - w) / 2}px, ${(H - h) / 2}px)`, opacity: clamp01((p - 0.55) * 3) }}>{children}</div>
+    <div style={{ position: "absolute", left: x - Wl / 2, top: 0, width: Wl, height: Hl, borderRadius: R, transform: `translateY(${y}px) scale(${W / Wl}, ${H / Hl})`, transformOrigin: "50% 0", background: C.ink, boxShadow: "0 20px 50px -20px rgba(26,22,20,0.6)", overflow: "hidden", color: C.cream, fontFamily: SANS }}>
+      <div style={{ position: "absolute", left: 0, top: 0, width: w, height: h, transform: `translate(${(Wl - w) / 2}px, ${(Hl - h) / 2}px)`, opacity: clamp01((p - 0.55) * 3) }}>{children}</div>
     </div>
   );
 };

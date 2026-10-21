@@ -18,7 +18,7 @@
 //     with momentum into the speed-matched whip RIGHT at h4.
 import React from "react";
 import {
-  C, HolmSite, INOUT, Ico, Island, LiquidGlass, RollNumber, SANS, SERIF, SHADOW_BIG, SageIris, WIPE, EXIT, OUT,
+  C, HolmSite, INOUT, Ico, Island, LiquidGlass, RollNumber, SANS, SERIF, SHADOW_BIG, SITE, SageIris, WIPE, EXIT, OUT,
   aspring, bounce, clamp01, f, k, mix, squash, whipOutR,
 } from "../shared";
 
@@ -142,7 +142,9 @@ const Bar: React.FC<{ g: number }> = ({ g }) => {
   const sel = typing ? 0 : WIPE(clamp01((g - F.nettet) / 7));
   const lock = bn(g, F.vi + 21, 0.42, 0.55);
   return (
-    <div style={{ position: "absolute", left: 960 - BAR_W / 2, top: y - BAR_H / 2, width: BAR_W, height: BAR_H }}>
+    // positioned by transform on a static box, as its own layer (will-change): its rise and sink glide by fractions of
+    // a pixel instead of snapping its box and re-drawing its text on whole-pixel baselines
+    <div style={{ position: "absolute", left: 960 - BAR_W / 2, top: 0, width: BAR_W, height: BAR_H, transform: `translateY(${y - BAR_H / 2}px)`, willChange: "transform" }}>
       <LiquidGlass w={BAR_W} h={BAR_H} p={p} sheen={sheen} transform={`${squash(0, vy, 0.0026)} scale(${1 + wob}, ${1 - wob})`}>
         <div style={{ position: "absolute", inset: 0, background: "rgba(255,255,255,0.44)" }} />
         <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: 24, fontFamily: SANS, fontWeight: 500, fontSize: 72, letterSpacing: "-0.02em", color: C.ink }}>
@@ -178,7 +180,7 @@ const Rows: React.FC<{ g: number }> = ({ g }) => (
       if (g < r.at) return null;
       const y = rowY(g, i), vy = (y - rowY(g - 0.5, i)) / 0.5, e = bn(g, r.at, 0.5, 0.66), ck = bn(g, r.at + 7, 0.4, 0.5);
       return (
-        <div key={i} style={{ position: "absolute", left: 960 - RW / 2, top: y, width: RW, height: RH }}>
+        <div key={i} style={{ position: "absolute", left: 960 - RW / 2, top: 0, width: RW, height: RH, transform: `translateY(${y}px)`, willChange: "transform" }}>
           <LiquidGlass w={RW} h={RH} radius={40} p={0.55 + 0.45 * e} sheen={clamp01(0.15 + (g - r.at) / 50)} transform={squash(0, vy, 0.0018)}>
             <div style={{ position: "absolute", inset: 0, background: "rgba(255,255,255,0.58)" }} />
             <Disc ico={r.ico} s={74} style={{ position: "absolute", left: 26, top: 25 }} />
@@ -194,6 +196,7 @@ const Rows: React.FC<{ g: number }> = ({ g }) => (
   </>
 );
 
+const SITE_S = 1920 / SITE.w;
 const SiteAct: React.FC<{ g: number }> = ({ g }) => {
   const scroll = 20 + 420 * glide(g, F.h3 - 6, HOME_UP + 16, 0.08);
   const u = clamp01((g - HOME_UP) / 17);                      // the home gesture
@@ -202,7 +205,11 @@ const SiteAct: React.FC<{ g: number }> = ({ g }) => {
   return (
     <div style={{ position: "absolute", inset: 0, transform: `translateY(${ty}px) scale(${sc})`, transformOrigin: "960px 540px" }}>
       <div style={{ position: "absolute", inset: 0, borderRadius: 80 * clamp01(u * 3), overflow: "hidden", boxShadow: u > 0 ? SHADOW_BIG : undefined }}>
-        <HolmSite w={1920} h={1080} booking={1} scroll={scroll} />
+        {/* the scroll moves the whole page as one composited layer (will-change), so it glides by fractions of a pixel;
+            scrolling inside HolmSite re-draws the page every frame and its text snaps to whole-pixel baselines */}
+        <div style={{ position: "absolute", left: 0, top: 0, transform: `translateY(${-scroll * SITE_S}px)`, willChange: "transform" }}>
+          <HolmSite w={1920} h={SITE.page * SITE_S} booking={1} />
+        </div>
         <div style={{ position: "absolute", inset: 0, background: `rgba(250,250,248,${scrim})` }} />
       </div>
       <Rows g={g} />
@@ -231,12 +238,28 @@ const LiveIsland: React.FC<{ g: number }> = ({ g }) => {
 /* ================= shots 22–28: the bento ================= */
 type Off = { dx: number; dy: number; rot: number; sx: number; sy: number; op: number; pre?: string; origin?: string };
 const off0 = (): Off => ({ dx: 0, dy: 0, rot: 0, sx: 1, sy: 1, op: 1 });
-const Tile: React.FC<{ r: R; o: Off; bg: string; line?: boolean; children?: React.ReactNode }> = ({ r, o, bg, line, children }) => (
-  <div style={{ position: "absolute", left: r.x, top: r.y, width: r.w, height: r.h, opacity: o.op, transformOrigin: o.origin ?? "50% 50%",
-    transform: `translate(${o.dx}px, ${o.dy}px) ${o.pre ?? ""} rotate(${o.rot}deg) scale(${o.sx}, ${o.sy})` }}>
-    <div style={{ position: "absolute", inset: 0, borderRadius: 46, background: bg, overflow: "hidden", boxShadow: `${line ? `0 0 0 1px ${C.line}, ` : ""}0 2px 6px rgba(26,22,20,0.05), 0 30px 70px -34px rgba(26,22,20,0.32)` }}>{children}</div>
-  </div>
-);
+// A tile springs between layout rects without box geometry (left/top/width/height snap to whole pixels, so a slow
+// move or resize would step): it sits on a static box as its own layer (will-change), placed by transform; its card is
+// an SVG rect and its content clip a clip-path, both drawn at fractional sizes. Content inside is placed from the
+// top-left (anything anchored to a size that changes is moved by transform).
+const TILE_R = 46, CLIP_W = 2400, CLIP_H = 1400;
+const pct = (v: string, size: number) => (v.endsWith("%") ? (parseFloat(v) / 100) * size : parseFloat(v));
+const Tile: React.FC<{ r: R; o: Off; bg: string; line?: boolean; children?: React.ReactNode }> = ({ r, o, bg, line, children }) => {
+  const [ox0, oy0] = (o.origin ?? "50% 50%").split(" "), ox = pct(ox0, r.w), oy = pct(oy0, r.h);
+  return (
+    <div style={{ position: "absolute", left: 0, top: 0, opacity: o.op, transformOrigin: "0 0", willChange: "transform",
+      transform: `translate(${r.x + ox + o.dx}px, ${r.y + oy + o.dy}px) ${o.pre ?? ""} rotate(${o.rot}deg) scale(${o.sx}, ${o.sy}) translate(${-ox}px, ${-oy}px)` }}>
+      <div style={{ position: "absolute", left: 0, top: 0, width: r.w, height: r.h, borderRadius: TILE_R, boxShadow: "0 2px 6px rgba(26,22,20,0.05), 0 30px 70px -34px rgba(26,22,20,0.32)" }} />
+      <svg width={CLIP_W} height={CLIP_H} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
+        {line && <rect x={-1} y={-1} width={r.w + 2} height={r.h + 2} rx={TILE_R + 1} fill={C.line} />}
+        <rect x={0} y={0} width={r.w} height={r.h} rx={TILE_R} fill={bg} />
+      </svg>
+      <div style={{ position: "absolute", left: 0, top: 0, width: CLIP_W, height: CLIP_H, clipPath: `inset(0px ${CLIP_W - r.w}px ${CLIP_H - r.h}px 0px round ${TILE_R}px)` }}>
+        <div style={{ position: "absolute", left: 0, top: 0, width: r.w, height: r.h }}>{children}</div>
+      </div>
+    </div>
+  );
+};
 const Head: React.FC<{ ico: string; text: string; dark?: boolean; disc?: string; ic?: string }> = ({ ico, text, dark, disc, ic }) => (
   <div style={{ position: "absolute", left: 40, top: 36, display: "flex", alignItems: "center", gap: 18, fontFamily: SANS, fontWeight: 500, fontSize: 34, color: dark ? C.cream : C.ink, whiteSpace: "nowrap" }}>
     <Disc ico={ico} s={64} bg={disc ?? C.sage} c={ic ?? C.white} />{text}
@@ -276,12 +299,12 @@ const Chart: React.FC<{ g: number }> = ({ g }) => {
         <div key={i} style={{ position: "absolute", left: x - 60, width: 120, top: CH.axis + 18, textAlign: "center", fontFamily: SANS, fontSize: 30, color: "rgba(255,255,255,0.85)", opacity: clamp01((draw * (CH.x1 - CH.x0) - (x - CH.x0)) / 60) }}>{2026 + i}</div>
       ))}
       <div style={{ position: "absolute", left: 470, top: CH.y + 26, fontFamily: SANS, fontWeight: 600, fontSize: 30, color: C.white, opacity: clamp01(draw * 3 - 0.6) }}>Creoble</div>
-      <div style={{ position: "absolute", left: 1080, top: CH.y - jump - 64, fontFamily: SANS, fontWeight: 500, fontSize: 30, color: "rgba(26,22,20,0.7)", opacity: lbl, transform: `scale(${0.6 + 0.4 * lbl})`, transformOrigin: "0 100%" }}>Typisk webhotel</div>
+      <div style={{ position: "absolute", left: 1080, top: CH.y - 64, fontFamily: SANS, fontWeight: 500, fontSize: 30, color: "rgba(26,22,20,0.7)", opacity: lbl, transform: `translateY(${-jump}px) scale(${0.6 + 0.4 * lbl})`, transformOrigin: "0 100%" }}>Typisk webhotel</div>
       {lp > 0.001 && (
-        <div style={{ position: "absolute", left: lx - 160, top: CH.y - 78, width: 320, height: 156 }}>
+        <div style={{ position: "absolute", left: 0, top: CH.y - 78, width: 320, height: 156, transform: `translateX(${lx - 160}px)`, willChange: "transform" }}>
           <LiquidGlass w={320} h={156} radius={78} p={lp} sheen={clamp01(0.15 + (lx + 260) / 1900)} transform={squash(lv, 0, 0.0016)}>
             <div style={{ position: "absolute", inset: 0, background: "rgba(255,255,255,0.4)" }} />
-            <div style={{ position: "absolute", left: 0, top: 0, width: "100%", transform: `translateY(${-idx * 156}px)` }}>
+            <div style={{ position: "absolute", left: 0, top: 0, width: "100%", transform: `translateY(${-idx * 156}px)`, willChange: "transform" }}>
               {[2026, 2027, 2028].map((y) => <div key={y} style={{ height: 156, lineHeight: "156px", textAlign: "center", fontFamily: SERIF, fontSize: 112, letterSpacing: "-0.03em", color: C.ink }}>{y}</div>)}
             </div>
           </LiquidGlass>
@@ -298,7 +321,8 @@ const HostingTile: React.FC<{ g: number; w: number; h: number; px?: number; py?:
   return (
     <>
       <Head ico="server" text="Hosting" dark disc={C.white} ic={C.sageDeep} />
-      <div style={{ position: "absolute", left: nx, top: ny, fontFamily: SANS, transform: `translate(${px}px, ${py}px)` }}>
+      {/* its own layer (will-change): the counter-float moves the price inside the floating tile by fractions of a pixel */}
+      <div style={{ position: "absolute", left: 0, top: 0, fontFamily: SANS, transform: `translate(${nx + px}px, ${ny + py}px)`, willChange: "transform" }}>
         <div style={{ fontSize: 34, color: "rgba(255,255,255,0.88)", marginLeft: 8 }}>fra</div>
         <div style={{ display: "flex", alignItems: "flex-end", gap: 10, marginTop: -ns * 0.08 }}>
           <div style={{ opacity: num }}><RollNumber value={83} p={k(g, "w:83", 1.0)} size={ns} color={C.white} /></div>
@@ -317,13 +341,16 @@ const HostingTile: React.FC<{ g: number; w: number; h: number; px?: number; py?:
 };
 /* --- 23: domain and e-mail tiles (content anchored so it reads in every cell size) --- */
 const InfoTile: React.FC<{ g: number; w: number; h: number; ico: string; label: string; value: string; serif?: boolean; dark?: boolean; checkAt: number }> = ({ g, w, h, ico, label, value, serif, checkAt }) => {
-  const size = serif ? Math.min(84, (w - 90) / 6.4, h * 0.24) : Math.min(58, (w - 90) / 10.6, h * 0.2);
-  const ck = bn(g, checkAt, 0.4, 0.5);
+  // the value is set at a fixed size and scaled about its bottom-left (h − 34), so a resizing cell never re-lays it out;
+  // its optical size ("opsz", which the browser would pick from the font size) follows the size it is shown at
+  const base = serif ? 84 : 58, size = serif ? Math.min(84, (w - 90) / 6.4, h * 0.24) : Math.min(58, (w - 90) / 10.6, h * 0.2);
+  const ck = bn(g, checkAt, 0.4, 0.5), cps = popStyle(ck, 0);
   return (
     <>
       <Head ico={ico} text={label} />
-      <div style={{ position: "absolute", left: 44, bottom: 34, fontFamily: serif ? SERIF : SANS, fontWeight: serif ? 400 : 500, fontSize: size, letterSpacing: serif ? "-0.025em" : "-0.02em", color: C.ink, whiteSpace: "nowrap", lineHeight: 1.1 }}>{value}</div>
-      <div style={{ position: "absolute", right: 36, top: 40, width: 56, height: 56, borderRadius: "50%", background: C.sage, display: "flex", alignItems: "center", justifyContent: "center", ...popStyle(ck, 0) }}>
+      <div style={{ position: "absolute", left: 44, top: 0, fontFamily: serif ? SERIF : SANS, fontWeight: serif ? 400 : 500, fontSize: base, letterSpacing: serif ? "-0.025em" : "-0.02em", color: C.ink, whiteSpace: "nowrap", lineHeight: 1.1, fontVariationSettings: `"opsz" ${size}`,
+        transformOrigin: "0 100%", transform: `translateY(${h - 34 - 1.1 * base}px) scale(${size / base})` }}>{value}</div>
+      <div style={{ position: "absolute", left: 0, top: 40, width: 56, height: 56, borderRadius: "50%", background: C.sage, display: "flex", alignItems: "center", justifyContent: "center", opacity: cps.opacity, transform: `translateX(${w - 36 - 56}px) ${cps.transform}` }}>
         <Ico n="check" s={36} c={C.white} w={3} />
       </div>
     </>
@@ -338,7 +365,7 @@ const OwnerTile: React.FC<{ g: number; w: number; h: number }> = ({ g, w }) => {
       <div style={{ position: "absolute", left: 44, top: 40, display: "flex", alignItems: "center", gap: 14, fontFamily: SANS, fontWeight: 500, fontSize: 30, letterSpacing: "0.16em", textTransform: "uppercase", color: C.sageLight }}>
         <Ico n="globe" s={36} c={C.sageLight} w={2.2} />Domæne
       </div>
-      <div style={{ position: "absolute", left: 42, top: 96, fontFamily: SERIF, fontSize: big, letterSpacing: "-0.025em", color: C.cream, whiteSpace: "nowrap" }}>holmfysio.dk</div>
+      <div style={{ position: "absolute", left: 42, top: 96, fontFamily: SERIF, fontSize: 112, fontVariationSettings: `"opsz" ${big}`, letterSpacing: "-0.025em", color: C.cream, whiteSpace: "nowrap", transformOrigin: "0 0", transform: `scale(${big / 112})` }}>holmfysio.dk</div>
       <div style={{ position: "absolute", left: 44, bottom: 40, display: "flex", alignItems: "center", gap: 22, fontFamily: SANS }}>
         <div style={{ ...popStyle(who, 0) }}><Disc ico="user" s={84} bg={C.sage} /></div>
         <div style={{ overflow: "hidden", paddingBottom: 4 }}>

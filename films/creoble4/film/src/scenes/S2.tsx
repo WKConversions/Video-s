@@ -39,6 +39,25 @@ const kick = (t: number, period: number, zeta: number) => {
   return (Math.exp(-zeta * w * t) * Math.sin(wd * t)) / peak;
 };
 const bez = (a: number, b: number, c: number, u: number) => (1 - u) * (1 - u) * a + 2 * (1 - u) * u * b + u * u * c;
+// Sage blobs for the Gooey layer, placed and sized by transform on static 100 px boxes (box geometry would snap them to
+// whole pixels, and the liquid would tick as the page sways). disc: a circle of diameter d centred at (cx, cy), with an
+// optional extra transform about its centre (a squash). pill: a w × h capsule (radius min(w, h) / 2) as two discs and a
+// rect between their centres (the Gooey merges them into one shape).
+const disc = (cx: number, cy: number, d: number, extra = "", key?: string) => (
+  <div key={key} style={{ position: "absolute", left: 0, top: 0, width: 100, height: 100, borderRadius: "50%", background: C.sage,
+    transform: `translate(${cx - 50}px, ${cy - 50}px) ${extra} scale(${d / 100})` }} />
+);
+const pill = (cx: number, cy: number, w: number, h: number) => {
+  const d = Math.min(w, h), ax = (w - d) / 2, ay = (h - d) / 2;
+  return (
+    <>
+      {disc(cx - ax, cy - ay, d, "", "a")}
+      {disc(cx + ax, cy + ay, d, "", "b")}
+      {(ax > 0 || ay > 0) && <div style={{ position: "absolute", left: 0, top: 0, width: 100, height: 100, background: C.sage, transformOrigin: "0 0",
+        transform: `translate(${cx - (ax > 0 ? ax : d / 2)}px, ${cy - (ay > 0 ? ay : d / 2)}px) scale(${(ax > 0 ? 2 * ax : d) / 100}, ${(ay > 0 ? 2 * ay : d) / 100})` }} />}
+    </>
+  );
+};
 
 export const Scene2: React.FC<{ g: number }> = ({ g }) => {
   if (g < f("h1") || g >= f("h2")) return null;
@@ -89,6 +108,7 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
   const I1C = F.kr + 8, TICK = F.kr - 10;
   const i1in = bounce(g, S(F.bet - 8), 0.4, 0.62), i1hide = INOUT(lin(g, I1C + 5, I1C + 12));
   const ow = bounce(g, S(TICK), 0.45, 0.58);                                    // "0 kr" ticks in, the capsule widens
+  const i1w = mix(290, 410, ow);
   const thump = 0.09 * kick(g - F.kr, 9, 0.55);                                 // and pulses on "krone"
   const i1p = Math.max(-0.12, bounce(g, "w:betaler", 0.55, 0.6) + thump - bounce(g, S(I1C), 0.45, 0.7));
   const show1 = g >= F.bet - 8 && i1hide < 1;
@@ -171,8 +191,10 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
       {showCard && (
         <div style={{ position: "absolute", left: FB.x, top: FB.y, width: FB.w, height: FB.h, borderRadius: rad, overflow: "hidden", transformOrigin: `${CX - FB.x}px ${CY - FB.y}px`,
           transform: `translateY(${cd.ty}px) perspective(${PERSP}px) rotateX(${cd.rx}deg) rotateY(${cd.ry}deg) scale(${cd.sc})`, opacity: lin(g, POP, POP + 1.5), boxShadow: SHADOW_BIG, background: HOLM.bg }}>
-          <div style={{ position: "absolute", left: -FB.x, top: -FB.y }}>
-            <HolmSite w={SITE.w * DS} h={FB.h + FB.y} scroll={cd.scroll} booking={booking} />
+          {/* the scroll moves the whole page as one composited layer (will-change), so the compositor glides it at
+              sub-pixel steps; scrolling inside HolmSite re-rasters the page each frame and its text snaps to whole pixels */}
+          <div style={{ position: "absolute", left: -FB.x, top: -FB.y, transform: `translateY(${-cd.scroll * DS}px)`, willChange: "transform" }}>
+            <HolmSite w={SITE.w * DS} h={SITE.page * DS} booking={booking} />
           </div>
         </div>
       )}
@@ -180,10 +202,13 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
       {/* ===== Island 1: Betalt: 0 kr ===== */}
       {show1 && (
         <div style={{ position: "absolute", inset: 0, transformOrigin: "960px 56px", transform: `scale(${Math.max(0, i1in) * (1 - i1hide)})` }}>
-          <Island x={960} y={30} w={mix(290, 410, ow)} h={92} p={i1p}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", height: "100%", fontSize: 36, fontWeight: 500, whiteSpace: "nowrap" }}>
+          <Island x={960} y={30} w={i1w} h={92} p={i1p}>
+            {/* laid out once with "0 kr" at full width; as it opens (a clip) the row slides left by transform, so the
+                glyphs never re-lay out (a centred row whose child grows snaps them to whole pixels) */}
+            <div style={{ position: "absolute", left: 0, top: 0, width: 600, height: "100%", transform: `translateX(${i1w / 2 - 300 + 52 * (1 - clamp01(ow))}px)`,
+              display: "flex", alignItems: "center", justifyContent: "center", fontSize: 36, fontWeight: 500, whiteSpace: "nowrap" }}>
               <span style={{ opacity: 0.66 }}>Betalt:</span>
-              <span style={{ display: "inline-flex", width: 104 * clamp01(ow), overflow: "hidden", height: 56, alignItems: "center", flex: "none" }}>
+              <span style={{ display: "inline-flex", width: 104, clipPath: `inset(0px ${104 * (1 - clamp01(ow))}px 0px 0px)`, height: 56, alignItems: "center", flex: "none" }}>
                 <span style={{ display: "inline-block", marginLeft: 14, transform: `translateY(${(1 - ow) * -46}px)`, opacity: clamp01(ow * 3), color: C.sageLight, fontWeight: 600 }}>0</span>
                 <span style={{ marginLeft: 10, opacity: clamp01(ow * 2 - 0.4) }}>kr</span>
               </span>
@@ -194,7 +219,7 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
 
       {/* ===== shots 9–11: the Liquid Glass prompt bar ===== */}
       {showBar && (
-        <div style={{ position: "absolute", left: CX - bw / 2, top: bcy - bh / 2, width: bw, height: bh, opacity: 1 - barOut, transform: `scale(${1 - 0.14 * barOut})` }}>
+        <div style={{ position: "absolute", left: 0, top: 0, width: bw, height: bh, opacity: 1 - barOut, transform: `translate(${CX - bw / 2}px, ${bcy - bh / 2}px) scale(${1 - 0.14 * barOut})` }}>
           <LiquidGlass w={bw} h={bh} p={1} sheen={sheen} transform={barStretch}>
             <div style={{ position: "absolute", inset: 10, borderRadius: 999, background: "linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.8))" }} />
             <div style={{ position: "absolute", left: 42, top: 0, height: "100%", display: "flex", alignItems: "center" }}>
@@ -229,21 +254,25 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
       {showGoo && (
         <div style={{ position: "absolute", inset: 0, opacity: gooFade }}>
           <Gooey>
-            {stub > 0.02 && <div style={{ position: "absolute", left: sendC.x - (SEND * stub) / 2, top: sendC.y + exitY(g) - (SEND * stub) / 2, width: SEND * stub, height: SEND * stub, borderRadius: "50%", background: C.sage }} />}
-            <div style={{ position: "absolute", left: dot.x - dotD / 2, top: dot.y - dotD / 2, width: dotD, height: dotD, borderRadius: "50%", background: C.sage, transform: squash(dot.x - dotPrev.x, dot.y - dotPrev.y, 0.0016) }} />
-            {booking > 0.01 && <div style={{ position: "absolute", left: pad.x - padW / 2, top: pad.y - padH / 2, width: padW, height: padH, borderRadius: 999, background: C.sage }} />}
+            {stub > 0.02 && disc(sendC.x, sendC.y + exitY(g), SEND * stub)}
+            {disc(dot.x, dot.y, dotD, squash(dot.x - dotPrev.x, dot.y - dotPrev.y, 0.0016))}
+            {booking > 0.01 && pill(pad.x, pad.y, padW, padH)}
           </Gooey>
-          {u < 0.55 && <div style={{ position: "absolute", left: dot.x - 24, top: dot.y - 24, opacity: 1 - lin(u, 0.15, 0.55) }}><Ico n="arrow" s={48} c={C.white} w={2.6} style={{ transform: "rotate(-90deg)" }} /></div>}
+          {u < 0.55 && <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${dot.x - 24}px, ${dot.y - 24}px)`, opacity: 1 - lin(u, 0.15, 0.55) }}><Ico n="arrow" s={48} c={C.white} w={2.6} style={{ transform: "rotate(-90deg)" }} /></div>}
         </div>
       )}
 
       {/* ===== shot 11: "Book tid" pops out of the liquid ===== */}
       {g >= F.ret + 1 && (
         <>
-          {ripple < 1 && <div style={{ position: "absolute", left: tgt.x - (btnW + 110 * ripple) / 2, top: tgt.y - (btnH + 110 * ripple) / 2, width: btnW + 110 * ripple, height: btnH + 110 * ripple, borderRadius: 999, border: `3px solid ${C.sage}`, opacity: 0.9 * (1 - ripple), boxSizing: "border-box" }} />}
-          <div style={{ position: "absolute", left: tgt.x - btnW / 2, top: tgt.y - btnH / 2, width: btnW, height: btnH, borderRadius: 999, background: HOLM.accent, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", gap: 8 * tgt.s,
-            fontFamily: SANS, fontWeight: 600, fontSize: 18 * tgt.s, whiteSpace: "nowrap", opacity: btnIn, transform: `scale(${0.78 + 0.22 * btnPop})` }}>
-            <Ico n="calendar" s={18 * tgt.s} c="#fff" w={2.4} />Book tid
+          {ripple < 1 && (() => { const rw = btnW + 110 * ripple, rh = btnH + 110 * ripple; return (
+            <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0, overflow: "visible", opacity: 0.9 * (1 - ripple) }}>
+              <rect x={tgt.x - rw / 2 + 1.5} y={tgt.y - rh / 2 + 1.5} width={rw - 3} height={rh - 3} rx={(Math.min(rw, rh) - 3) / 2} fill="none" stroke={C.sage} strokeWidth={3} />
+            </svg>); })()}
+          {/* laid out once at the site's design size, placed and sized by transform (as the page's own button is) */}
+          <div style={{ position: "absolute", left: 0, top: 0, width: BOOK.w, height: BOOK.h, borderRadius: 999, background: HOLM.accent, color: "#fff", display: "flex", alignItems: "center", justifyContent: "center", gap: 8,
+            fontFamily: SANS, fontWeight: 600, fontSize: 18, whiteSpace: "nowrap", opacity: btnIn, transform: `translate(${tgt.x - BOOK.w / 2}px, ${tgt.y - BOOK.h / 2}px) scale(${tgt.s * (0.78 + 0.22 * btnPop)})` }}>
+            <Ico n="calendar" s={18} c="#fff" w={2.4} />Book tid
           </div>
         </>
       )}
