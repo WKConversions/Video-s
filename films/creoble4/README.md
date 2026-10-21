@@ -17,6 +17,13 @@ teal, so it never reads as Creoble's UI.
 - **Version 3** (this build): 60 fps; a named, different motion per shot; bounce springs, Liquid Glass, a
   Dynamic-Island status capsule, gooey merges, bento grids. Plan and contract: `plan/storyboard.md`; storyboard
   `plan/storyboard_v3.jpg`.
+- **Version 3 smoothness pass** (the final): Liquid Glass without the SVG refraction, which rendered in rectangular
+  seams in headless Chrome (a masked rim lens instead); every shake spot `scripts/jitter_check.py` found fixed: box
+  geometry moved into transforms on static boxes, slow text on compositor layers (never on a layer that scales up:
+  Chrome keeps its first raster scale), SVG and clip-path for fractional sizes, and a static 0.1° rotation where
+  slow scrolling text must glide and stay sharp (it turns on sub-pixel glyph placement). The remaining SHAKE lines
+  on the final are measurement artifacts (two layers crossing one tile, near-empty tiles), checked by tracking.
+  `scripts/glitch_check.py` scans renders for one-frame glitches.
 
 ## Delivered
 - `deliver/creoble-v4-dk-v3-draft-540p60.mp4`: the version 3 draft (540p, 60 fps, VO, music and effects).
