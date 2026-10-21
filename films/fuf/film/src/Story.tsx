@@ -1,6 +1,6 @@
 // Future Unicorn Founders (1920 × 1080, 42.5 s): connections forming in the dark, the search that doesn't find
 // anyone, the brand, Málaga and the people it brings together, gatherings, no business-card networking, real
-// conversations, and the one conversation that starts something. Brand: charcoal, taupe, cream; a Times-like serif
+// conversations, and the one conversation that starts something. Brand: charcoal, taupe, cream; a Bodoni serif (the site's Bodoni 72)
 // with italic accents (the logo and the site). Keyed to the voice's words (src/clock.ts).
 import React from "react";
 import { Img, staticFile } from "remotion";
@@ -8,7 +8,7 @@ import { T } from "./clock";
 import { Line, W, measure } from "./kinetic";
 import { ARRIVE, KIT, MOVE, OUT, SOFT, clamp01, lerp } from "./lib";
 
-const SERIF = "Liberation Serif", SANS = "Inter";
+const SERIF = "Bodoni Moda", SANS = "Nunito Sans";
 KIT.font = SERIF; KIT.serif = SERIF; KIT.strike = "#B9A595";
 const INK = "#2B2B2B", CREAM = "#F7F4EF", TAUPE = "#B9A595", TAUPE_D = "#8C7765";
 const k = (g: number, pos: string | number, dur: number, ease = ARRIVE) => T.k(g, pos, dur, ease);

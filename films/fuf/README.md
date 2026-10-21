@@ -1,8 +1,8 @@
 # Future Unicorn Founders: "Build what's next, together." (42.5 s, voice-over)
 
 A brand film for Future Unicorn Founders (FUF), a networking community in Málaga, on the ElevenLabs voice-over Karl
-supplied. It follows the brand: charcoal, taupe and cream, the logo's Times-like serif with italic accents, and the
-site's spaced small caps. The tone is high-end and calm, with no gimmicks.
+supplied. It follows the brand: charcoal, taupe and cream, the site's Bodoni serif with italic accents, and the site's
+spaced small caps. The tone is high-end and calm, with no gimmicks.
 
 | Line | On screen |
 |---|---|
@@ -18,17 +18,18 @@ site's spaced small caps. The tone is high-end and calm, with no gimmicks.
 
 | Path | What |
 |---|---|
-| `deliver/fuf-42s.mp4` | The film: 1920×1080, 30 fps, 42.5 s, H.264 BT.709, 2-sample motion blur, AAC 48 kHz, −15 LUFS. |
+| `deliver/fuf-42s.mp4` | The film: 1920×1080, 30 fps, 42.5 s, H.264 BT.709, 8-sample motion blur, AAC 48 kHz, −15 LUFS. |
 | `vo/` | The ElevenLabs file and its word timings (`whisper_words.json`). |
 | `sound/` | Cue sheet (`make_cues.py` → `cues.json`), the music bed (`bed.wav`, its lift on "Meet Future Unicorn Founders"), generated effects (`lib/`). |
 | `film/` | The Remotion project: `src/clock.ts` (labels on the voice's words), `src/Story.tsx` (the nine scenes), `public/img/` (the site's images and logos; the gallery photos are cropped from the brand collage Karl supplied). |
 
-Render: `cd film && bash scripts/render_chunks.sh Film out/final_raw.mp4 '{"blurSamples":2,"audio":"none"}' 0,319,638,957,1275`,
-then mux `public/audio/mix.wav` in the delivery encode. It was rendered with 2-sample motion blur to meet a 25-minute
-deadline; 8 samples gives a smoother result, at about four times the render time.
+Render: `cd film && bash scripts/render_chunks.sh Film out/final_raw.mp4 '{"blurSamples":8,"audio":"none"}' 0,319,638,957,1275`,
+then mux `public/audio/mix.wav` in the delivery encode. The first delivery used 2-sample blur and a stand-in serif to meet
+a 25-minute deadline; this version has the full blur and the closest free match to the site's type.
 
 ## Credits
 - FUF's logo, unicorn mark, photos and Málaga images: the client (test.fuf-16d.workers.dev and the supplied brand board).
 - Music: Mixkit "Deep Urban" (Eugenio Mininni), Mixkit Stock Music Free License, no credit required.
-- Fonts: Liberation Serif (SIL OFL) for the serif, Inter (SIL OFL). Effects: generated (`scripts/sfx_synth.py`).
+- Fonts: the site sets Bodoni 72 / Didot and Avenir Next (Apple system fonts, not embeddable); the film uses their
+  closest free equivalents, Bodoni Moda and Nunito Sans (SIL OFL). Effects: generated (`scripts/sfx_synth.py`).
   Voice: ElevenLabs "Christina", supplied by Karl.
