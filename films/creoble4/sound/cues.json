@@ -1,0 +1,551 @@
+{
+ "fps": 30,
+ "frames": 1655,
+ "library": "../../alumni/sound/lib",
+ "vo": {
+  "file": "../vo/vo.mp3",
+  "at": 0,
+  "compress": true
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "lufs": -24,
+  "duck_db": 6,
+  "fade_in": 0.2,
+  "fade_out": 0.8
+ },
+ "sfx": [
+  {
+   "frame": 15,
+   "id": "gen-whoosh-short",
+   "db": -12,
+   "pitch": 3,
+   "note": "the word becomes the website frame"
+  },
+  {
+   "frame": 46,
+   "id": "gen-riser-1s",
+   "db": -16,
+   "note": "the build line runs"
+  },
+  {
+   "frame": 101,
+   "id": "gen-shimmer",
+   "db": -10,
+   "pitch": 2,
+   "note": "built by AI: the site resolves"
+  },
+  {
+   "frame": 125,
+   "id": "gen-whoosh-medium",
+   "db": -14,
+   "note": "the frame morphs into the builder"
+  },
+  {
+   "frame": 144,
+   "id": "kenney-click-001",
+   "db": -18,
+   "note": "Holm Fysioterapi types"
+  },
+  {
+   "frame": 146,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": 2,
+   "note": "Holm Fysioterapi types"
+  },
+  {
+   "frame": 149,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": -1,
+   "note": "Holm Fysioterapi types"
+  },
+  {
+   "frame": 151,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": 3,
+   "note": "Holm Fysioterapi types"
+  },
+  {
+   "frame": 154,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": 1,
+   "note": "Holm Fysioterapi types"
+  },
+  {
+   "frame": 156,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": -2,
+   "note": "Holm Fysioterapi types"
+  },
+  {
+   "frame": 158,
+   "id": "kenney-click-001",
+   "db": -18,
+   "note": "Holm Fysioterapi types"
+  },
+  {
+   "frame": 161,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": 2,
+   "note": "Holm Fysioterapi types"
+  },
+  {
+   "frame": 163,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": -1,
+   "note": "Holm Fysioterapi types"
+  },
+  {
+   "frame": 166,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": 3,
+   "note": "Holm Fysioterapi types"
+  },
+  {
+   "frame": 184,
+   "id": "kenney-select-001",
+   "db": -6,
+   "note": "N\u00e6ste"
+  },
+  {
+   "frame": 200,
+   "id": "gen-tick",
+   "db": -15,
+   "note": "a step ticks"
+  },
+  {
+   "frame": 203,
+   "id": "gen-tick",
+   "db": -15,
+   "pitch": 2,
+   "note": "a step ticks"
+  },
+  {
+   "frame": 207,
+   "id": "gen-tick",
+   "db": -15,
+   "pitch": 4,
+   "note": "a step ticks"
+  },
+  {
+   "frame": 211,
+   "id": "gen-tick",
+   "db": -15,
+   "pitch": 6,
+   "note": "a step ticks"
+  },
+  {
+   "frame": 253,
+   "id": "gen-whoosh-short",
+   "db": -14,
+   "pitch": -2,
+   "note": "the code panel leaves"
+  },
+  {
+   "frame": 280,
+   "id": "gen-whoosh-short",
+   "db": -14,
+   "pitch": -4,
+   "note": "the templates fall away"
+  },
+  {
+   "frame": 314,
+   "id": "gen-appear",
+   "db": -12,
+   "pitch": 2,
+   "note": "Det bedste?"
+  },
+  {
+   "frame": 341,
+   "id": "gen-whoosh-medium",
+   "db": -13,
+   "note": "the frame expands"
+  },
+  {
+   "frame": 403,
+   "id": "gen-tap",
+   "db": -9,
+   "pitch": 2,
+   "note": "0 kr"
+  },
+  {
+   "frame": 451,
+   "id": "kenney-click-001",
+   "db": -18,
+   "note": "the edit types"
+  },
+  {
+   "frame": 453,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": 2,
+   "note": "the edit types"
+  },
+  {
+   "frame": 455,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": -1,
+   "note": "the edit types"
+  },
+  {
+   "frame": 457,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": 3,
+   "note": "the edit types"
+  },
+  {
+   "frame": 459,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": 1,
+   "note": "the edit types"
+  },
+  {
+   "frame": 461,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": -2,
+   "note": "the edit types"
+  },
+  {
+   "frame": 464,
+   "id": "kenney-click-001",
+   "db": -18,
+   "note": "the edit types"
+  },
+  {
+   "frame": 464,
+   "id": "kenney-select-001",
+   "db": -6,
+   "note": "send"
+  },
+  {
+   "frame": 466,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": 2,
+   "note": "the edit types"
+  },
+  {
+   "frame": 468,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": -1,
+   "note": "the edit types"
+  },
+  {
+   "frame": 470,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": 3,
+   "note": "the edit types"
+  },
+  {
+   "frame": 472,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": 1,
+   "note": "the edit types"
+  },
+  {
+   "frame": 474,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": -2,
+   "note": "the edit types"
+  },
+  {
+   "frame": 497,
+   "id": "gen-shimmer",
+   "db": -11,
+   "pitch": 4,
+   "note": "the booking button appears"
+  },
+  {
+   "frame": 508,
+   "id": "gen-tick",
+   "db": -10,
+   "pitch": 5,
+   "note": "Opdateret"
+  },
+  {
+   "frame": 544,
+   "id": "gen-appear",
+   "db": -10,
+   "note": "499 kr"
+  },
+  {
+   "frame": 608,
+   "id": "gen-tick",
+   "db": -10,
+   "pitch": 3,
+   "note": "1 betaling"
+  },
+  {
+   "frame": 640,
+   "id": "kenney-select-001",
+   "db": -7,
+   "pitch": -3,
+   "note": "the toggle switches off"
+  },
+  {
+   "frame": 683,
+   "id": "gen-tap",
+   "db": -10,
+   "pitch": 3,
+   "note": "Din"
+  },
+  {
+   "frame": 700,
+   "id": "gen-whoosh-short",
+   "db": -12,
+   "note": "the card flips"
+  },
+  {
+   "frame": 750,
+   "id": "gen-tap",
+   "db": -10,
+   "pitch": -2,
+   "note": "0 kr"
+  },
+  {
+   "frame": 782,
+   "id": "gen-chime",
+   "db": -12,
+   "note": "Nul risiko"
+  },
+  {
+   "frame": 820,
+   "id": "gen-whoosh-short",
+   "db": -14,
+   "pitch": 2,
+   "note": "the address bar comes forward"
+  },
+  {
+   "frame": 845,
+   "id": "kenney-click-001",
+   "db": -18,
+   "note": "holmfysio.dk types"
+  },
+  {
+   "frame": 848,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": 2,
+   "note": "holmfysio.dk types"
+  },
+  {
+   "frame": 850,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": -1,
+   "note": "holmfysio.dk types"
+  },
+  {
+   "frame": 852,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": 3,
+   "note": "holmfysio.dk types"
+  },
+  {
+   "frame": 854,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": 1,
+   "note": "holmfysio.dk types"
+  },
+  {
+   "frame": 856,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": -2,
+   "note": "holmfysio.dk types"
+  },
+  {
+   "frame": 858,
+   "id": "kenney-click-001",
+   "db": -18,
+   "note": "holmfysio.dk types"
+  },
+  {
+   "frame": 859,
+   "id": "gen-tick",
+   "db": -13,
+   "note": "a setup step ticks"
+  },
+  {
+   "frame": 860,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": 2,
+   "note": "holmfysio.dk types"
+  },
+  {
+   "frame": 862,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": -1,
+   "note": "holmfysio.dk types"
+  },
+  {
+   "frame": 863,
+   "id": "gen-tick",
+   "db": -13,
+   "pitch": 2,
+   "note": "a setup step ticks"
+  },
+  {
+   "frame": 864,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": 3,
+   "note": "holmfysio.dk types"
+  },
+  {
+   "frame": 866,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": 1,
+   "note": "holmfysio.dk types"
+  },
+  {
+   "frame": 867,
+   "id": "gen-tick",
+   "db": -13,
+   "pitch": 4,
+   "note": "a setup step ticks"
+  },
+  {
+   "frame": 868,
+   "id": "kenney-click-001",
+   "db": -18,
+   "pitch": -2,
+   "note": "holmfysio.dk types"
+  },
+  {
+   "frame": 871,
+   "id": "gen-tick",
+   "db": -13,
+   "pitch": 6,
+   "note": "a setup step ticks"
+  },
+  {
+   "frame": 886,
+   "id": "gen-success",
+   "db": -11,
+   "note": "Live"
+  },
+  {
+   "frame": 896,
+   "id": "gen-appear",
+   "db": -11,
+   "pitch": 2,
+   "note": "83 kr"
+  },
+  {
+   "frame": 947,
+   "id": "gen-tap",
+   "db": -12,
+   "pitch": 3,
+   "note": "domain chip"
+  },
+  {
+   "frame": 969,
+   "id": "gen-tap",
+   "db": -12,
+   "pitch": 5,
+   "note": "e-mail chip"
+  },
+  {
+   "frame": 1041,
+   "id": "gen-whoosh-short",
+   "db": -15,
+   "note": "the price line draws flat"
+  },
+  {
+   "frame": 1091,
+   "id": "gen-tick",
+   "db": -11,
+   "note": "a promise lands"
+  },
+  {
+   "frame": 1133,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": 2,
+   "note": "a promise lands"
+  },
+  {
+   "frame": 1164,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": 4,
+   "note": "a promise lands"
+  },
+  {
+   "frame": 1167,
+   "id": "kenney-select-001",
+   "db": -10,
+   "pitch": 2,
+   "note": "the lock opens"
+  },
+  {
+   "frame": 1183,
+   "id": "gen-appear",
+   "db": -11,
+   "note": "the chat comes forward"
+  },
+  {
+   "frame": 1223,
+   "id": "gen-tap",
+   "db": -9,
+   "pitch": 3,
+   "note": "the human reply lands"
+  },
+  {
+   "frame": 1287,
+   "id": "gen-whoosh-short",
+   "db": -16,
+   "pitch": -2,
+   "note": "the queue chip goes"
+  },
+  {
+   "frame": 1313,
+   "id": "gen-whoosh-short",
+   "db": -16,
+   "pitch": -4,
+   "note": "the bot chip goes"
+  },
+  {
+   "frame": 1341,
+   "id": "gen-shimmer",
+   "db": -8,
+   "pitch": 2,
+   "note": "Creoble."
+  },
+  {
+   "frame": 1406,
+   "id": "gen-impact-soft",
+   "db": -13,
+   "note": "website and hosting meet"
+  },
+  {
+   "frame": 1518,
+   "id": "kenney-select-001",
+   "db": -7,
+   "note": "Byg din side gratis"
+  }
+ ]
+}
