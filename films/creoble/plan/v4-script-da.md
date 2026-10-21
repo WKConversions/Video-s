@@ -1,11 +1,87 @@
-# Creoble v4: Danish script (130 words, ~55 s)
+# Creoble v4: Danish script, version 2 (130 words, ~55 s)
 
-For the website's hero section and the LinkedIn company page. The goal is to show the platform and its USPs as a real
-SaaS explainer, in a minimal Apple style, in Creoble's brand (`../brand/BRANDKIT.md`). Every claim was checked
-against creoble.dk on 21 Oct 2026.
+For the website's hero section and the LinkedIn company page. It shows the platform and its USPs: SaaS-driven, with
+short beats and room to breathe, and it never mentions the language or the country. Every claim was checked against
+creoble.dk on 21 Oct 2026. On-screen note for the hosting price: "faktureres årligt".
 
 ## Dansk
-Se din færdige hjemmeside, før du betaler en krone. Creoble. Hjemmeside og hosting, samlet ét sted. Fortæl os kort om din virksomhed. Ingen teknik, ingen skabeloner at rode med. På få minutter bygger Creoble hele siden, og du ser den helt færdig. Gratis. Vil du rette noget, skriver du det på almindeligt dansk. Du betaler kun, hvis du er tilfreds. 499 kroner. Én gang. Intet abonnement. Siden er din. Skal vi sætte den på nettet for dig? Fra 83 kroner om måneden. Domæne og e-mail er med. Fast pris, der ikke stiger. Domænet står i dit navn, serverne står i Europa, og der er ingen binding. Har du spørgsmål, svarer en dansker. Et menneske, ikke en robot. Byg den. Se den. Så køber du. Byg din side gratis på creoble.dk.
+Din nye hjemmeside er få minutter væk.
+Bygget af AI.
+
+Fortæl kort om din virksomhed.
+Creoble bygger hele siden.
+Ingen teknik. Ingen skabeloner.
+
+Det bedste?
+Du ser den færdig, før du betaler en krone.
+
+Vil du ændre noget?
+Skriv det.
+Creoble retter det.
+
+Tilfreds?
+499 kroner. Én gang.
+Intet abonnement. Siden er din.
+
+Ikke tilfreds?
+Så koster det ingenting.
+Nul risiko.
+
+Skal den på nettet?
+Vi sætter det hele op for dig.
+Fra 83 kroner om måneden. Domæne og e-mail er med.
+Fast pris. Også når du fornyer.
+Domænet i dit navn. Servere i Europa.
+Ingen binding.
+
+Brug for hjælp?
+Et menneske, der forstår din forretning.
+Ingen kø. Ingen robotsvar.
+
+Creoble.
+Hjemmeside og hosting, samlet ét sted.
+
+Byg den. Se den. Så køber du.
+
+Byg din side gratis på creoble.dk.
 
 ## English
-See your finished website before you pay a krone. Creoble. Website and hosting, all in one place. Tell us briefly about your business. No tech, no templates to fiddle with. In a few minutes Creoble builds the whole site, and you see it completely finished. Free. If you want to change something, you write it in plain Danish. You only pay if you're happy. 499 kroner. One time. No subscription. The site is yours. Shall we put it online for you? From 83 kroner a month. Domain and e-mail are included. A fixed price that doesn't go up. The domain is in your name, the servers are in Europe, and there's no lock-in. If you have questions, a Dane answers. A human, not a robot. Build it. See it. Then you buy. Build your site for free at creoble.dk.
+Your new website is a few minutes away.
+Built by AI.
+
+Tell us briefly about your business.
+Creoble builds the whole site.
+No tech. No templates.
+
+The best part?
+You see it finished before you pay a single krone.
+
+Want to change something?
+Write it.
+Creoble fixes it.
+
+Happy?
+499 kroner. Once.
+No subscription. The site is yours.
+
+Not happy?
+Then it costs nothing.
+Zero risk.
+
+Want it online?
+We set it all up for you.
+From 83 kroner a month. Domain and e-mail included.
+Fixed price. Even when you renew.
+The domain in your name. Servers in Europe.
+No lock-in.
+
+Need help?
+A human who understands your business.
+No queue. No robot answers.
+
+Creoble.
+Website & hosting, all in one place.
+
+Build it. See it. Then you buy.
+
+Build your site for free at creoble.dk.
