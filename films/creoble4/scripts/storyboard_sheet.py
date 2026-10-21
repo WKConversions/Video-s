@@ -9,7 +9,7 @@ film, out = sys.argv[1], sys.argv[2]
 import os
 SENT = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "vo", "sentences.json")))
 SHOTS = [(s["start"] + 0.8 * (s["end"] - s["start"]) + 0.15, s["text"]) for s in SENT if s["text"] != "dk."]
-LAST = int(round((SENT[-1]["end"] + 2.3) * 30))
+LAST = min(int(round((SENT[-1]["end"] + 2.3) * 30)), 1654)   # the film ends at frame 1655
 SHOTS.append((LAST / 30, "Last frame"))
 frames = [min(round(t * 30), LAST) for t, _ in SHOTS]
 subprocess.run(["node", "stills.mjs", ",".join(map(str, frames)), "1"], cwd=film, check=True, capture_output=True)
