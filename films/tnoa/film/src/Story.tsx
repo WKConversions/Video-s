@@ -34,13 +34,13 @@ const ROWS = [
 ];
 
 const Dots: React.FC<{ t: number; dark?: boolean }> = ({ t, dark }) => (
-  <AbsoluteFill style={{ transform: `translate(${-((t * 38) % 64)}px, ${-((t * 22) % 64)}px)`, width: 2100, height: 1200,
-    backgroundImage: `radial-gradient(${dark ? "rgba(255,255,255,0.10)" : "rgba(37,99,235,0.13)"} 1.6px, transparent 1.8px)`, backgroundSize: "64px 64px" }} />
+  <AbsoluteFill style={{ transform: `translate(${-((t * 150) % 72)}px, ${-((t * 90) % 72)}px)`, width: 2100, height: 1200,
+    backgroundImage: `radial-gradient(${dark ? "rgba(255,255,255,0.16)" : "rgba(37,99,235,0.24)"} 3.2px, transparent 3.6px)`, backgroundSize: "72px 72px" }} />
 );
 
 const Network: React.FC<{ t: number }> = ({ t }) => {
   // forms 0-3.4 s, then folds into the panel (3.4-4.4 s)
-  const fold = ease((t - 3.4) / 0.9), rot = t * 0.16, hub = spring(t, 0.15, 0.5, 0.55);
+  const fold = ease((t - 3.4) / 0.9), rot = t * 0.45, hub = spring(t, 0.15, 0.5, 0.55);
   const pts = NODES.map((n) => {
     const p = spring(t, n.d, 0.55, 0.6), a = Math.atan2(n.y, n.x) + rot, r = Math.hypot(n.x / 1.25, n.y / 0.78);
     const x = Math.cos(a) * r * 1.25 * p * (1 - fold), y = Math.sin(a) * r * 0.78 * p * (1 - fold);
@@ -127,7 +127,7 @@ const Bento: React.FC<{ t: number }> = ({ t }) => {
   return (
     <AbsoluteFill style={{ transform: `translateY(${out * 1200}px) rotate(${out * 4}deg)` }}>
       {T.map((b, i) => {
-        const p = tile(i), drift = Math.sin(t * 1.4 + i) * 8;
+        const p = tile(i), drift = Math.sin(t * 2.2 + i) * 22;
         return (
           <div key={i} style={{ position: "absolute", left: 0, top: 0, width: b.w, height: b.h, borderRadius: 44, background: b.bg, color: b.fg, fontFamily: SANS, overflow: "hidden",
             transform: `translate(${b.x}px, ${b.y + (1 - p) * 700 + drift}px) scale(${0.85 + 0.15 * p})`, boxShadow: "0 40px 90px -40px rgba(11,18,32,0.35)", border: b.bg === B.white ? `1.5px solid ${B.line}` : "none" }}>
@@ -193,11 +193,11 @@ const End: React.FC<{ t: number }> = ({ t }) => {
 
 export const Story: React.FC = () => {
   const t = useCurrentFrame() / 60;
-  const cam = 1 + 0.02 * Math.sin(t * 0.5);
+  const cam = 1.04 + 0.035 * Math.sin(t * 0.7);
   return (
     <AbsoluteFill style={{ background: B.bg, overflow: "hidden" }}>
       <Dots t={t} />
-      <AbsoluteFill style={{ transform: `scale(${cam}) rotate(${Math.sin(t * 0.37) * 0.4}deg)` }}>
+      <AbsoluteFill style={{ transform: `translate(${Math.sin(t * 0.8) * 40}px, ${Math.cos(t * 0.6) * 24}px) scale(${cam}) rotate(${Math.sin(t * 0.5) * 0.8}deg)` }}>
         {win(t, 0, 4.5) && <Network t={t} />}
         {win(t, 3.5, 9.3) && <Activity t={t} />}
         {win(t, 8.6, 13.2) && <Bento t={t} />}
