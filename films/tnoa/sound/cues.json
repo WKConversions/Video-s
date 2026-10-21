@@ -1,0 +1,413 @@
+{
+ "fps": 30,
+ "frames": 600,
+ "library": "../../alumni/sound/lib",
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "lufs": -33,
+  "duck_db": 0,
+  "fade_in": 0.3,
+  "fade_out": 1.5
+ },
+ "sfx": [
+  {
+   "frame": 4,
+   "id": "gen-appear",
+   "db": -2,
+   "note": "hub pops"
+  },
+  {
+   "frame": 10,
+   "id": "gen-tick",
+   "db": -8,
+   "note": "agent node pops"
+  },
+  {
+   "frame": 13,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 1,
+   "note": "agent node pops"
+  },
+  {
+   "frame": 15,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 2,
+   "note": "agent node pops"
+  },
+  {
+   "frame": 17,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 3,
+   "note": "agent node pops"
+  },
+  {
+   "frame": 19,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 4,
+   "note": "agent node pops"
+  },
+  {
+   "frame": 21,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 5,
+   "note": "agent node pops"
+  },
+  {
+   "frame": 23,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 6,
+   "note": "agent node pops"
+  },
+  {
+   "frame": 25,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 7,
+   "note": "agent node pops"
+  },
+  {
+   "frame": 27,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 8,
+   "note": "agent node pops"
+  },
+  {
+   "frame": 29,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 9,
+   "note": "agent node pops"
+  },
+  {
+   "frame": 32,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 10,
+   "note": "agent node pops"
+  },
+  {
+   "frame": 34,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 11,
+   "note": "agent node pops"
+  },
+  {
+   "frame": 42,
+   "id": "kenney-click-001",
+   "db": -12,
+   "note": "title letters"
+  },
+  {
+   "frame": 45,
+   "id": "kenney-click-001",
+   "db": -12,
+   "pitch": 2,
+   "note": "title letters"
+  },
+  {
+   "frame": 47,
+   "id": "kenney-click-001",
+   "db": -12,
+   "pitch": -1,
+   "note": "title letters"
+  },
+  {
+   "frame": 50,
+   "id": "kenney-click-001",
+   "db": -12,
+   "pitch": 3,
+   "note": "title letters"
+  },
+  {
+   "frame": 53,
+   "id": "kenney-click-001",
+   "db": -12,
+   "pitch": 1,
+   "note": "title letters"
+  },
+  {
+   "frame": 55,
+   "id": "kenney-click-001",
+   "db": -12,
+   "pitch": -2,
+   "note": "title letters"
+  },
+  {
+   "frame": 58,
+   "id": "kenney-click-001",
+   "db": -12,
+   "pitch": 4,
+   "note": "title letters"
+  },
+  {
+   "frame": 102,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "pitch": 2,
+   "note": "network folds"
+  },
+  {
+   "frame": 108,
+   "id": "gen-whoosh-medium",
+   "db": -8,
+   "note": "hub grows into the panel"
+  },
+  {
+   "frame": 136,
+   "id": "kenney-select-001",
+   "db": -2,
+   "note": "notification lands"
+  },
+  {
+   "frame": 142,
+   "id": "gen-tap",
+   "db": -4,
+   "pitch": 4,
+   "note": "status"
+  },
+  {
+   "frame": 155,
+   "id": "kenney-select-001",
+   "db": -2,
+   "pitch": 1,
+   "note": "notification lands"
+  },
+  {
+   "frame": 161,
+   "id": "gen-tap",
+   "db": -4,
+   "pitch": 4,
+   "note": "status"
+  },
+  {
+   "frame": 174,
+   "id": "kenney-select-001",
+   "db": -2,
+   "pitch": 2,
+   "note": "notification lands"
+  },
+  {
+   "frame": 180,
+   "id": "gen-tap",
+   "db": -4,
+   "pitch": 4,
+   "note": "status"
+  },
+  {
+   "frame": 192,
+   "id": "kenney-select-001",
+   "db": -2,
+   "pitch": 3,
+   "note": "notification lands"
+  },
+  {
+   "frame": 198,
+   "id": "gen-appear",
+   "db": -4,
+   "pitch": -3,
+   "note": "status"
+  },
+  {
+   "frame": 256,
+   "id": "gen-whoosh-short",
+   "db": -3,
+   "note": "panel lifts away"
+  },
+  {
+   "frame": 262,
+   "id": "gen-tap",
+   "db": -2,
+   "note": "bento tile lands"
+  },
+  {
+   "frame": 267,
+   "id": "gen-tap",
+   "db": -2,
+   "pitch": 2,
+   "note": "bento tile lands"
+  },
+  {
+   "frame": 268,
+   "id": "gen-tick",
+   "db": -11,
+   "note": "numbers roll"
+  },
+  {
+   "frame": 272,
+   "id": "gen-tap",
+   "db": -2,
+   "pitch": 4,
+   "note": "bento tile lands"
+  },
+  {
+   "frame": 272,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": 1,
+   "note": "numbers roll"
+  },
+  {
+   "frame": 276,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": 2,
+   "note": "numbers roll"
+  },
+  {
+   "frame": 279,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": 3,
+   "note": "numbers roll"
+  },
+  {
+   "frame": 283,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": 4,
+   "note": "numbers roll"
+  },
+  {
+   "frame": 286,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": 5,
+   "note": "numbers roll"
+  },
+  {
+   "frame": 290,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": 6,
+   "note": "numbers roll"
+  },
+  {
+   "frame": 294,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": 7,
+   "note": "numbers roll"
+  },
+  {
+   "frame": 297,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": 8,
+   "note": "numbers roll"
+  },
+  {
+   "frame": 301,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": 9,
+   "note": "numbers roll"
+  },
+  {
+   "frame": 303,
+   "id": "gen-success",
+   "db": -5,
+   "note": "numbers land"
+  },
+  {
+   "frame": 376,
+   "id": "gen-whoosh-short",
+   "db": -3,
+   "pitch": -2,
+   "note": "bento falls away"
+  },
+  {
+   "frame": 382,
+   "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": 3,
+   "note": "agent and engineer slide in"
+  },
+  {
+   "frame": 408,
+   "id": "gen-impact-soft",
+   "db": -1,
+   "note": "they join"
+  },
+  {
+   "frame": 417,
+   "id": "gen-appear",
+   "db": -5,
+   "pitch": 2,
+   "note": "Proven agents."
+  },
+  {
+   "frame": 438,
+   "id": "gen-appear",
+   "db": -5,
+   "pitch": 5,
+   "note": "Accountable engineers."
+  },
+  {
+   "frame": 488,
+   "id": "gen-whoosh-medium",
+   "db": -3,
+   "note": "navy floods in"
+  },
+  {
+   "frame": 502,
+   "id": "kenney-click-001",
+   "db": -6,
+   "note": "TNOA letters"
+  },
+  {
+   "frame": 505,
+   "id": "kenney-click-001",
+   "db": -6,
+   "pitch": 2,
+   "note": "TNOA letters"
+  },
+  {
+   "frame": 507,
+   "id": "kenney-click-001",
+   "db": -6,
+   "pitch": 4,
+   "note": "TNOA letters"
+  },
+  {
+   "frame": 509,
+   "id": "kenney-click-001",
+   "db": -6,
+   "pitch": 6,
+   "note": "TNOA letters"
+  },
+  {
+   "frame": 514,
+   "id": "gen-chime",
+   "db": -4,
+   "note": "the dot"
+  },
+  {
+   "frame": 531,
+   "id": "gen-appear",
+   "db": -3,
+   "note": "capsule opens into the button"
+  },
+  {
+   "frame": 552,
+   "id": "gen-shimmer",
+   "db": -6,
+   "pitch": 3,
+   "note": "shine"
+  },
+  {
+   "frame": 567,
+   "id": "kenney-click-001",
+   "db": 0,
+   "note": "press"
+  }
+ ]
+}

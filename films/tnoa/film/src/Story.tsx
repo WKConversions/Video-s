@@ -34,8 +34,8 @@ const ROWS = [
 ];
 
 const Dots: React.FC<{ t: number; dark?: boolean }> = ({ t, dark }) => (
-  <AbsoluteFill style={{ transform: `translate(${-((t * 150) % 72)}px, ${-((t * 90) % 72)}px)`, width: 2100, height: 1200,
-    backgroundImage: `radial-gradient(${dark ? "rgba(255,255,255,0.16)" : "rgba(37,99,235,0.24)"} 3.2px, transparent 3.6px)`, backgroundSize: "72px 72px" }} />
+  <AbsoluteFill style={{ transform: `translate(${-((t * 230) % 80)}px, ${-((t * 140) % 80)}px)`, width: 2100, height: 1200,
+    backgroundImage: `radial-gradient(${dark ? "rgba(255,255,255,0.2)" : "rgba(37,99,235,0.3)"} 4.6px, transparent 5px)`, backgroundSize: "80px 80px" }} />
 );
 
 const Network: React.FC<{ t: number }> = ({ t }) => {
