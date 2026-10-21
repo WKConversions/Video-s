@@ -1,0 +1,289 @@
+[
+ {
+  "t": 15.02,
+  "id": "gen-whoosh-medium",
+  "db": -8,
+  "pitch": 0,
+  "note": "tool chips fly in on arcs from off-frame"
+ },
+ {
+  "t": 15.14,
+  "id": "gen-tap",
+  "db": -14,
+  "pitch": 0,
+  "note": "chip 1 docks (Gmail & Outlook)"
+ },
+ {
+  "t": 15.21,
+  "id": "gen-tap",
+  "db": -14,
+  "pitch": 1,
+  "note": "chip 2 docks (Slack)"
+ },
+ {
+  "t": 15.25,
+  "id": "kenney-maximize-009",
+  "db": -6,
+  "pitch": 0,
+  "note": "capsule opens like the Dynamic Island"
+ },
+ {
+  "t": 15.28,
+  "id": "gen-tap",
+  "db": -14,
+  "pitch": 2,
+  "note": "chip 3 docks (QuickBooks & Xero)"
+ },
+ {
+  "t": 15.35,
+  "id": "gen-tap",
+  "db": -14,
+  "pitch": 3,
+  "note": "chip 4 docks (HubSpot & Salesforce)"
+ },
+ {
+  "t": 15.36,
+  "id": "gen-appear",
+  "db": -11,
+  "pitch": 0,
+  "note": "'Plugs into your stack' builds letter by letter"
+ },
+ {
+  "t": 15.41,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 3,
+  "note": "agent glyph pops in the island"
+ },
+ {
+  "t": 15.42,
+  "id": "gen-tap",
+  "db": -14,
+  "pitch": 4,
+  "note": "chip 5 docks (Google Sheets)"
+ },
+ {
+  "t": 15.49,
+  "id": "gen-tap",
+  "db": -14,
+  "pitch": 5,
+  "note": "chip 6 docks (Stripe)"
+ },
+ {
+  "t": 15.51,
+  "id": "kenney-tick-004",
+  "db": -14,
+  "pitch": 0,
+  "note": "green live dot pops on the island"
+ },
+ {
+  "t": 15.8,
+  "id": "kenney-click-001",
+  "db": -10,
+  "pitch": 0,
+  "note": "plug-in 1, status goes green"
+ },
+ {
+  "t": 15.85,
+  "id": "kenney-click-001",
+  "db": -10,
+  "pitch": 1,
+  "note": "plug-in 2"
+ },
+ {
+  "t": 15.9,
+  "id": "kenney-click-001",
+  "db": -10,
+  "pitch": 2,
+  "note": "plug-in 3"
+ },
+ {
+  "t": 15.95,
+  "id": "kenney-click-001",
+  "db": -10,
+  "pitch": 3,
+  "note": "plug-in 4"
+ },
+ {
+  "t": 16,
+  "id": "kenney-click-001",
+  "db": -10,
+  "pitch": 4,
+  "note": "plug-in 5"
+ },
+ {
+  "t": 16.05,
+  "id": "kenney-click-001",
+  "db": -10,
+  "pitch": 5,
+  "note": "plug-in 6"
+ },
+ {
+  "t": 16.08,
+  "id": "kenney-select-002",
+  "db": -8,
+  "pitch": 0,
+  "note": "island text rolls to 'Your data stays yours.'"
+ },
+ {
+  "t": 16.34,
+  "id": "gen-chime",
+  "db": -12,
+  "pitch": 0,
+  "note": "'yours.' lands in sky blue"
+ },
+ {
+  "t": 16.42,
+  "id": "gen-whoosh-whip",
+  "db": -5,
+  "pitch": 0,
+  "note": "push with momentum to the audit card"
+ },
+ {
+  "t": 16.62,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 2,
+  "note": "audit card icon pops"
+ },
+ {
+  "t": 16.74,
+  "id": "gen-impact-soft",
+  "db": -9,
+  "pitch": 0,
+  "note": "audit card lands, rows stack in"
+ },
+ {
+  "t": 16.9,
+  "id": "kenney-select-001",
+  "db": -7,
+  "pitch": 0,
+  "note": "check 1 ticks: Free 15-minute discovery call"
+ },
+ {
+  "t": 17.12,
+  "id": "kenney-select-001",
+  "db": -7,
+  "pitch": 2,
+  "note": "check 2 ticks: Free audit & roadmap"
+ },
+ {
+  "t": 17.34,
+  "id": "kenney-select-001",
+  "db": -7,
+  "pitch": 4,
+  "note": "check 3 ticks: No obligation"
+ },
+ {
+  "t": 17.5,
+  "id": "gen-success",
+  "db": -6,
+  "pitch": 0,
+  "note": "progress ring completes green, check pops"
+ },
+ {
+  "t": 17.66,
+  "id": "gen-whoosh-deep",
+  "db": -5,
+  "pitch": 0,
+  "note": "navy iris opens from the ring check"
+ },
+ {
+  "t": 18.03,
+  "id": "gen-tap",
+  "db": -8,
+  "pitch": 0,
+  "note": "T lands"
+ },
+ {
+  "t": 18.105,
+  "id": "gen-tap",
+  "db": -8,
+  "pitch": 1,
+  "note": "N lands"
+ },
+ {
+  "t": 18.18,
+  "id": "gen-tap",
+  "db": -8,
+  "pitch": 2,
+  "note": "O lands"
+ },
+ {
+  "t": 18.255,
+  "id": "gen-tap",
+  "db": -8,
+  "pitch": 3,
+  "note": "A lands"
+ },
+ {
+  "t": 18.3,
+  "id": "gen-appear",
+  "db": -12,
+  "pitch": 0,
+  "note": "wordmark rises, 'The Network of Agents' builds"
+ },
+ {
+  "t": 18.39,
+  "id": "kenney-drop-003",
+  "db": -7,
+  "pitch": 0,
+  "note": "sky-blue full stop drops and bounces"
+ },
+ {
+  "t": 18.45,
+  "id": "gen-shimmer",
+  "db": -12,
+  "pitch": 0,
+  "note": "network ring draws, nodes pop, pulses start racing"
+ },
+ {
+  "t": 18.5,
+  "id": "gen-pop",
+  "db": -8,
+  "pitch": 2,
+  "note": "blue capsule pops"
+ },
+ {
+  "t": 18.64,
+  "id": "kenney-maximize-009",
+  "db": -7,
+  "pitch": 2,
+  "note": "capsule springs open into Book a Call button"
+ },
+ {
+  "t": 19,
+  "id": "gen-shimmer",
+  "db": -11,
+  "pitch": 0,
+  "note": "shine sweeps the button"
+ },
+ {
+  "t": 19.16,
+  "id": "gen-tick",
+  "db": -13,
+  "pitch": 0,
+  "note": "thenetworkofagents.com builds"
+ },
+ {
+  "t": 19.3,
+  "id": "gen-tap",
+  "db": -14,
+  "pitch": 0,
+  "note": "touch point appears on the button"
+ },
+ {
+  "t": 19.47,
+  "id": "kenney-click-001",
+  "db": -6,
+  "pitch": 0,
+  "note": "button press with ripple"
+ },
+ {
+  "t": 19.72,
+  "id": "gen-chime",
+  "db": -9,
+  "pitch": 0,
+  "note": "second shine, closing sparkle"
+ }
+]

@@ -1,0 +1,268 @@
+[
+ {
+  "t": 10,
+  "id": "gen-whoosh-medium",
+  "db": -8,
+  "pitch": 0,
+  "note": "giant '1' starts rising in across the bottom edge"
+ },
+ {
+  "t": 10.08,
+  "id": "gen-pop",
+  "db": -10,
+  "pitch": 0,
+  "note": "'Tell us' rises, letters bounce in"
+ },
+ {
+  "t": 10.14,
+  "id": "gen-pop",
+  "db": -10,
+  "pitch": 2,
+  "note": "'what's broken' rises, letters bounce in"
+ },
+ {
+  "t": 10.16,
+  "id": "gen-impact-soft",
+  "db": -6,
+  "pitch": 0,
+  "note": "the '1' lands (overshoot and squash)"
+ },
+ {
+  "t": 10.32,
+  "id": "kenney-maximize-009",
+  "db": -9,
+  "pitch": 0,
+  "note": "glass composer springs up with a 3D tilt"
+ },
+ {
+  "t": 10.44,
+  "id": "kenney-tick-004",
+  "db": -14,
+  "pitch": 0,
+  "note": "typing starts: 'Leads wait...'"
+ },
+ {
+  "t": 10.5,
+  "id": "gen-shimmer",
+  "db": -14,
+  "pitch": 0,
+  "note": "light glint sweeps across the glass"
+ },
+ {
+  "t": 10.56,
+  "id": "kenney-tick-004",
+  "db": -14,
+  "pitch": 1,
+  "note": "typing"
+ },
+ {
+  "t": 10.68,
+  "id": "kenney-tick-004",
+  "db": -14,
+  "pitch": 0,
+  "note": "typing"
+ },
+ {
+  "t": 10.8,
+  "id": "kenney-tick-004",
+  "db": -14,
+  "pitch": 2,
+  "note": "typing ends '...next morning.'"
+ },
+ {
+  "t": 10.9,
+  "id": "kenney-select-001",
+  "db": -10,
+  "pitch": 2,
+  "note": "send button lights up (bounce)"
+ },
+ {
+  "t": 10.98,
+  "id": "gen-tap",
+  "db": -7,
+  "pitch": 0,
+  "note": "send button pressed"
+ },
+ {
+  "t": 11.12,
+  "id": "gen-whoosh-whip",
+  "db": -5,
+  "pitch": 0,
+  "note": "push with momentum to step 2"
+ },
+ {
+  "t": 11.26,
+  "id": "gen-pop",
+  "db": -9,
+  "pitch": 3,
+  "note": "'2' badge pops, title letters bounce in"
+ },
+ {
+  "t": 11.32,
+  "id": "gen-tick",
+  "db": -12,
+  "pitch": -2,
+  "note": "cover flow detent: card passes the centre"
+ },
+ {
+  "t": 11.43,
+  "id": "gen-tick",
+  "db": -12,
+  "pitch": -1,
+  "note": "cover flow detent"
+ },
+ {
+  "t": 11.55,
+  "id": "gen-tick",
+  "db": -12,
+  "pitch": 0,
+  "note": "cover flow detent"
+ },
+ {
+  "t": 11.7,
+  "id": "gen-tick",
+  "db": -12,
+  "pitch": 1,
+  "note": "cover flow detent"
+ },
+ {
+  "t": 11.9,
+  "id": "gen-tick",
+  "db": -12,
+  "pitch": 2,
+  "note": "cover flow detent"
+ },
+ {
+  "t": 12.04,
+  "id": "gen-tick",
+  "db": -11,
+  "pitch": 3,
+  "note": "'Inbound lead response' reaches the centre and overshoots"
+ },
+ {
+  "t": 12.5,
+  "id": "gen-whoosh-short",
+  "db": -12,
+  "pitch": 2,
+  "note": "engineer chip flies in from the right"
+ },
+ {
+  "t": 12.52,
+  "id": "gen-stamp",
+  "db": -6,
+  "pitch": 0,
+  "note": "hero card snaps back into the centre; neighbours nudged"
+ },
+ {
+  "t": 12.55,
+  "id": "gen-pop",
+  "db": -11,
+  "pitch": 4,
+  "note": "'Proven in production' pill glows"
+ },
+ {
+  "t": 12.72,
+  "id": "kenney-drop-003",
+  "db": -8,
+  "pitch": 0,
+  "note": "'Vetted engineer' chip docks onto the card (squash)"
+ },
+ {
+  "t": 12.8,
+  "id": "gen-whoosh-short",
+  "db": -11,
+  "pitch": -2,
+  "note": "other agents part to the sides, title rises away"
+ },
+ {
+  "t": 13.02,
+  "id": "gen-whoosh-deep",
+  "db": -6,
+  "pitch": 0,
+  "note": "card expand: hero card grows to fill the frame"
+ },
+ {
+  "t": 13.1,
+  "id": "gen-pop",
+  "db": -9,
+  "pitch": 5,
+  "note": "'3' badge pops, 'Deploy with accountability' bounces in"
+ },
+ {
+  "t": 13.4,
+  "id": "kenney-maximize-009",
+  "db": -9,
+  "pitch": 2,
+  "note": "Deploy settings card lands"
+ },
+ {
+  "t": 13.62,
+  "id": "kenney-drop-003",
+  "db": -11,
+  "pitch": 2,
+  "note": "Status / Vetted engineer card drops out from behind"
+ },
+ {
+  "t": 13.64,
+  "id": "kenney-click-001",
+  "db": -4,
+  "pitch": 0,
+  "note": "giant Deploy switch flips on (hero hit)"
+ },
+ {
+  "t": 13.7,
+  "id": "gen-success",
+  "db": -8,
+  "pitch": 0,
+  "note": "switch track floods green"
+ },
+ {
+  "t": 13.82,
+  "id": "gen-chime",
+  "db": -9,
+  "pitch": 2,
+  "note": "status rolls Off to Live, green dot pulses"
+ },
+ {
+  "t": 13.88,
+  "id": "gen-shimmer",
+  "db": -14,
+  "pitch": 2,
+  "note": "shine sweeps across the switch"
+ },
+ {
+  "t": 13.96,
+  "id": "gen-pop",
+  "db": -9,
+  "pitch": 7,
+  "note": "'Accountable' pill pops"
+ },
+ {
+  "t": 14.18,
+  "id": "gen-whoosh-medium",
+  "db": -7,
+  "pitch": -2,
+  "note": "collapse begins: card 2 tucks up, card 1 shrinks into its switch"
+ },
+ {
+  "t": 14.32,
+  "id": "gen-whoosh-short",
+  "db": -10,
+  "pitch": -3,
+  "note": "title flies down into the centre; switch track travels"
+ },
+ {
+  "t": 14.54,
+  "id": "gen-impact-soft",
+  "db": -5,
+  "pitch": -2,
+  "note": "track lands as the navy island (squash and settle); first ripple"
+ },
+ {
+  "t": 14.66,
+  "id": "gen-appear",
+  "db": -13,
+  "pitch": -3,
+  "note": "second landing ripple expands out of the frame"
+ }
+]

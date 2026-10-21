@@ -13,401 +13,989 @@
  "sfx": [
   {
    "frame": 0,
-   "id": "gen-appear",
-   "db": -2,
-   "note": "hub pops"
+   "id": "gen-whoosh-short",
+   "db": -3,
+   "note": "A: 'Deploy AI agents' starts building letter by letter"
   },
   {
-   "frame": 3,
-   "id": "gen-tick",
-   "db": -8,
-   "note": "agent node pops"
-  },
-  {
-   "frame": 6,
-   "id": "gen-tick",
-   "db": -8,
-   "pitch": 1,
-   "note": "agent node pops"
-  },
-  {
-   "frame": 8,
-   "id": "gen-tick",
-   "db": -8,
-   "pitch": 2,
-   "note": "agent node pops"
-  },
-  {
-   "frame": 10,
-   "id": "gen-tick",
-   "db": -8,
+   "frame": 11,
+   "id": "gen-whoosh-short",
+   "db": -4,
    "pitch": 3,
-   "note": "agent node pops"
+   "note": "A: 'that deliver' builds and springs line 1 up"
   },
   {
-   "frame": 12,
-   "id": "gen-tick",
-   "db": -8,
-   "pitch": 4,
-   "note": "agent node pops"
+   "frame": 26,
+   "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": 6,
+   "note": "A: full stop starts falling from above the frame"
   },
   {
-   "frame": 14,
+   "frame": 34,
+   "id": "kenney-drop-003",
+   "db": 0,
+   "note": "A: full stop lands with squash; hop ripples through the words"
+  },
+  {
+   "frame": 40,
+   "id": "gen-pop",
+   "db": -4,
+   "pitch": 3,
+   "note": "A: second bounce lands"
+  },
+  {
+   "frame": 41,
    "id": "gen-tick",
    "db": -8,
    "pitch": 5,
-   "note": "agent node pops"
+   "note": "A: third tiny bounce, settles"
   },
   {
-   "frame": 16,
-   "id": "gen-tick",
-   "db": -8,
-   "pitch": 6,
-   "note": "agent node pops"
+   "frame": 43,
+   "id": "gen-impact-deep",
+   "db": 2,
+   "note": "A: full stop blasts: hub swells, shockwave"
   },
   {
-   "frame": 18,
-   "id": "gen-tick",
-   "db": -8,
-   "pitch": 7,
-   "note": "agent node pops"
+   "frame": 43,
+   "id": "gen-whoosh-deep",
+   "db": 0,
+   "note": "A: words fly up and out with momentum"
   },
   {
-   "frame": 20,
-   "id": "gen-tick",
-   "db": -8,
-   "pitch": 8,
-   "note": "agent node pops"
-  },
-  {
-   "frame": 22,
-   "id": "gen-tick",
-   "db": -8,
-   "pitch": 9,
-   "note": "agent node pops"
-  },
-  {
-   "frame": 25,
-   "id": "gen-tick",
-   "db": -8,
-   "pitch": 10,
-   "note": "agent node pops"
-  },
-  {
-   "frame": 27,
-   "id": "gen-tick",
-   "db": -8,
-   "pitch": 11,
-   "note": "agent node pops"
-  },
-  {
-   "frame": 42,
-   "id": "kenney-click-001",
-   "db": -12,
-   "note": "title letters"
+   "frame": 44,
+   "id": "gen-appear",
+   "db": -3,
+   "note": "A: TNOA hub label appears, hub glides to centre"
   },
   {
    "frame": 45,
-   "id": "kenney-click-001",
-   "db": -12,
-   "pitch": 2,
-   "note": "title letters"
+   "id": "gen-pop",
+   "db": -5,
+   "note": "A: inner agents spring out (1)"
   },
   {
    "frame": 47,
-   "id": "kenney-click-001",
-   "db": -12,
-   "pitch": -1,
-   "note": "title letters"
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 1,
+   "note": "A: inner agents spring out (2)"
   },
   {
    "frame": 50,
-   "id": "kenney-click-001",
-   "db": -12,
+   "id": "gen-pop",
+   "db": -5,
    "pitch": 3,
-   "note": "title letters"
+   "note": "A: outer named agents spring out (1)"
   },
   {
-   "frame": 53,
+   "frame": 52,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 5,
+   "note": "A: outer named agents spring out (2)"
+  },
+  {
+   "frame": 56,
+   "id": "gen-shimmer",
+   "db": -6,
+   "note": "A: pulses start running along the spokes"
+  },
+  {
+   "frame": 60,
    "id": "kenney-click-001",
-   "db": -12,
+   "db": -4,
+   "note": "A: chip pops: Lead response"
+  },
+  {
+   "frame": 63,
+   "id": "kenney-click-001",
+   "db": -4,
    "pitch": 1,
-   "note": "title letters"
+   "note": "A: chip pops: Support triage"
   },
   {
-   "frame": 55,
+   "frame": 65,
    "id": "kenney-click-001",
-   "db": -12,
-   "pitch": -2,
-   "note": "title letters"
-  },
-  {
-   "frame": 58,
-   "id": "kenney-click-001",
-   "db": -12,
-   "pitch": 4,
-   "note": "title letters"
-  },
-  {
-   "frame": 102,
-   "id": "gen-whoosh-short",
    "db": -4,
    "pitch": 2,
-   "note": "network folds"
+   "note": "A: chip pops: Voice agents"
+  },
+  {
+   "frame": 68,
+   "id": "kenney-click-001",
+   "db": -4,
+   "pitch": 3,
+   "note": "A: chip pops: Invoicing"
+  },
+  {
+   "frame": 70,
+   "id": "kenney-click-001",
+   "db": -4,
+   "pitch": 4,
+   "note": "A: chip pops: Proposals"
+  },
+  {
+   "frame": 72,
+   "id": "gen-whoosh-medium",
+   "db": -4,
+   "note": "A: 'Production-Ready AI Agents' builds letter by letter"
+  },
+  {
+   "frame": 73,
+   "id": "kenney-click-001",
+   "db": -4,
+   "pitch": 5,
+   "note": "A: chip pops: Scheduling"
+  },
+  {
+   "frame": 83,
+   "id": "kenney-tick-004",
+   "db": -4,
+   "note": "A: green check pops on Support triage"
+  },
+  {
+   "frame": 86,
+   "id": "kenney-tick-004",
+   "db": -4,
+   "pitch": 2,
+   "note": "A: green check pops on Invoicing"
+  },
+  {
+   "frame": 89,
+   "id": "kenney-tick-004",
+   "db": -4,
+   "pitch": 4,
+   "note": "A: green check pops on Scheduling"
+  },
+  {
+   "frame": 92,
+   "id": "gen-chime",
+   "db": -4,
+   "note": "A: green check pops on Proposals"
+  },
+  {
+   "frame": 96,
+   "id": "gen-whoosh-medium",
+   "db": 1,
+   "note": "A: camera dives at Lead response; title flies up"
+  },
+  {
+   "frame": 97,
+   "id": "kenney-select-002",
+   "db": -6,
+   "note": "A: other chips fold away"
+  },
+  {
+   "frame": 104,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 2,
+   "note": "A: Lead response chip folds"
+  },
+  {
+   "frame": 106,
+   "id": "gen-tap",
+   "db": 0,
+   "note": "A: icon pressed"
   },
   {
    "frame": 108,
-   "id": "gen-whoosh-medium",
-   "db": -8,
-   "note": "hub grows into the panel"
+   "id": "kenney-select-001",
+   "db": -5,
+   "note": "A: icon released, tap ripple"
   },
   {
-   "frame": 136,
-   "id": "kenney-select-001",
+   "frame": 110,
+   "id": "gen-whoosh-whip",
+   "db": 1,
+   "note": "A: icon opens like an iPhone app; network pulls back"
+  },
+  {
+   "frame": 111,
+   "id": "kenney-maximize-009",
+   "db": -1,
+   "note": "A: blue splash card expands with overshoot"
+  },
+  {
+   "frame": 115,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 2,
+   "note": "A: 'Lead response' pops onto the splash"
+  },
+  {
+   "frame": 127,
+   "id": "gen-appear",
+   "db": 0,
+   "note": "A: white iris blooms, glyph and label lift off"
+  },
+  {
+   "frame": 131,
+   "id": "gen-whoosh-short",
    "db": -2,
-   "note": "notification lands"
+   "note": "A: agents start flying out of frame"
+  },
+  {
+   "frame": 134,
+   "id": "gen-impact-soft",
+   "db": -2,
+   "note": "A: card settles at final size; 3D turn begins"
+  },
+  {
+   "frame": 135,
+   "id": "gen-whoosh-short",
+   "db": -3,
+   "pitch": 2,
+   "note": "A: more agents fly out"
+  },
+  {
+   "frame": 139,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "pitch": 4,
+   "note": "A: more agents fly out"
   },
   {
    "frame": 142,
-   "id": "gen-tap",
-   "db": -4,
-   "pitch": 4,
-   "note": "status"
+   "id": "gen-whoosh-short",
+   "db": -5,
+   "pitch": 5,
+   "note": "A: last agents fly out (last exits at 5.00)"
   },
   {
-   "frame": 155,
-   "id": "kenney-select-001",
+   "frame": 158,
+   "id": "gen-whoosh-short",
    "db": -2,
+   "pitch": 2,
+   "note": "B: the card turns into the activity panel"
+  },
+  {
+   "frame": 158,
+   "id": "kenney-click-001",
+   "db": -10,
+   "note": "B: title types"
+  },
+  {
+   "frame": 160,
+   "id": "kenney-click-001",
+   "db": -10,
    "pitch": 1,
-   "note": "notification lands"
+   "note": "B: title types"
   },
   {
    "frame": 161,
-   "id": "gen-tap",
-   "db": -4,
-   "pitch": 4,
-   "note": "status"
+   "id": "kenney-click-001",
+   "db": -10,
+   "pitch": 2,
+   "note": "B: title types"
+  },
+  {
+   "frame": 162,
+   "id": "kenney-click-001",
+   "db": -10,
+   "pitch": 3,
+   "note": "B: title types"
+  },
+  {
+   "frame": 163,
+   "id": "kenney-select-001",
+   "db": 0,
+   "note": "B: notification lands"
+  },
+  {
+   "frame": 167,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 3,
+   "note": "B: status pill"
+  },
+  {
+   "frame": 169,
+   "id": "kenney-select-001",
+   "db": 0,
+   "pitch": 2,
+   "note": "B: notification lands"
   },
   {
    "frame": 174,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 3,
+   "note": "B: status pill"
+  },
+  {
+   "frame": 176,
    "id": "kenney-select-001",
+   "db": 0,
+   "pitch": 4,
+   "note": "B: notification lands"
+  },
+  {
+   "frame": 181,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 3,
+   "note": "B: status pill"
+  },
+  {
+   "frame": 182,
+   "id": "kenney-select-001",
+   "db": 0,
+   "pitch": 6,
+   "note": "B: notification lands"
+  },
+  {
+   "frame": 187,
+   "id": "gen-appear",
+   "db": -3,
+   "pitch": -3,
+   "note": "B: status pill"
+  },
+  {
+   "frame": 190,
+   "id": "gen-whoosh-medium",
+   "db": -2,
+   "note": "B: the review row expands"
+  },
+  {
+   "frame": 200,
+   "id": "gen-whoosh-short",
+   "db": -5,
+   "pitch": 4,
+   "note": "B: the engineer slides in"
+  },
+  {
+   "frame": 209,
+   "id": "gen-impact-soft",
+   "db": 1,
+   "note": "B: engineer and agent join"
+  },
+  {
+   "frame": 211,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 5,
+   "note": "B: join pop"
+  },
+  {
+   "frame": 213,
+   "id": "gen-appear",
    "db": -2,
    "pitch": 2,
-   "note": "notification lands"
+   "note": "B: A vetted engineer stays accountable."
   },
   {
-   "frame": 180,
-   "id": "gen-tap",
-   "db": -4,
-   "pitch": 4,
-   "note": "status"
-  },
-  {
-   "frame": 192,
-   "id": "kenney-select-001",
+   "frame": 249,
+   "id": "gen-whoosh-medium",
    "db": -2,
-   "pitch": 3,
-   "note": "notification lands"
+   "pitch": -2,
+   "note": "B: to the numbers"
   },
   {
-   "frame": 198,
-   "id": "gen-appear",
-   "db": -4,
-   "pitch": -3,
-   "note": "status"
-  },
-  {
-   "frame": 256,
-   "id": "gen-whoosh-short",
-   "db": -3,
-   "note": "panel lifts away"
+   "frame": 259,
+   "id": "gen-tap",
+   "db": 0,
+   "note": "B: bento tile lands"
   },
   {
    "frame": 262,
    "id": "gen-tap",
-   "db": -2,
-   "note": "bento tile lands"
-  },
-  {
-   "frame": 267,
-   "id": "gen-tap",
-   "db": -2,
+   "db": 0,
    "pitch": 2,
-   "note": "bento tile lands"
+   "note": "B: bento tile lands"
   },
   {
-   "frame": 268,
-   "id": "gen-tick",
-   "db": -11,
-   "note": "numbers roll"
-  },
-  {
-   "frame": 272,
+   "frame": 266,
    "id": "gen-tap",
-   "db": -2,
+   "db": 0,
    "pitch": 4,
-   "note": "bento tile lands"
+   "note": "B: bento tile lands"
+  },
+  {
+   "frame": 269,
+   "id": "gen-tap",
+   "db": 0,
+   "pitch": 6,
+   "note": "B: bento tile lands"
+  },
+  {
+   "frame": 270,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "note": "B: numbers roll"
+  },
+  {
+   "frame": 271,
+   "id": "gen-swell",
+   "db": -2,
+   "note": "B: the tile floods the frame blue"
   },
   {
    "frame": 272,
-   "id": "gen-tick",
-   "db": -11,
+   "id": "kenney-tick-004",
+   "db": -9,
    "pitch": 1,
-   "note": "numbers roll"
+   "note": "B: numbers roll"
   },
   {
-   "frame": 276,
-   "id": "gen-tick",
-   "db": -11,
+   "frame": 274,
+   "id": "kenney-tick-004",
+   "db": -9,
    "pitch": 2,
-   "note": "numbers roll"
+   "note": "B: numbers roll"
+  },
+  {
+   "frame": 275,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 3,
+   "note": "B: numbers roll"
+  },
+  {
+   "frame": 277,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 4,
+   "note": "B: numbers roll"
   },
   {
    "frame": 279,
-   "id": "gen-tick",
-   "db": -11,
-   "pitch": 3,
-   "note": "numbers roll"
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 5,
+   "note": "B: numbers roll"
+  },
+  {
+   "frame": 281,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 6,
+   "note": "B: numbers roll"
   },
   {
    "frame": 283,
-   "id": "gen-tick",
-   "db": -11,
-   "pitch": 4,
-   "note": "numbers roll"
-  },
-  {
-   "frame": 286,
-   "id": "gen-tick",
-   "db": -11,
-   "pitch": 5,
-   "note": "numbers roll"
-  },
-  {
-   "frame": 290,
-   "id": "gen-tick",
-   "db": -11,
-   "pitch": 6,
-   "note": "numbers roll"
-  },
-  {
-   "frame": 294,
-   "id": "gen-tick",
-   "db": -11,
+   "id": "kenney-tick-004",
+   "db": -9,
    "pitch": 7,
-   "note": "numbers roll"
+   "note": "B: numbers roll"
   },
   {
-   "frame": 297,
+   "frame": 300,
+   "id": "gen-whoosh-medium",
+   "db": -2,
+   "note": "C: giant '1' starts rising in across the bottom edge"
+  },
+  {
+   "frame": 302,
+   "id": "gen-pop",
+   "db": -4,
+   "note": "C: 'Tell us' rises, letters bounce in"
+  },
+  {
+   "frame": 304,
+   "id": "gen-pop",
+   "db": -4,
+   "pitch": 2,
+   "note": "C: 'what's broken' rises, letters bounce in"
+  },
+  {
+   "frame": 305,
+   "id": "gen-impact-soft",
+   "db": 0,
+   "note": "C: the '1' lands (overshoot and squash)"
+  },
+  {
+   "frame": 310,
+   "id": "kenney-maximize-009",
+   "db": -3,
+   "note": "C: glass composer springs up with a 3D tilt"
+  },
+  {
+   "frame": 313,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "note": "C: typing starts: 'Leads wait...'"
+  },
+  {
+   "frame": 315,
+   "id": "gen-shimmer",
+   "db": -8,
+   "note": "C: light glint sweeps across the glass"
+  },
+  {
+   "frame": 317,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "pitch": 1,
+   "note": "C: typing"
+  },
+  {
+   "frame": 320,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "note": "C: typing"
+  },
+  {
+   "frame": 324,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "pitch": 2,
+   "note": "C: typing ends '...next morning.'"
+  },
+  {
+   "frame": 327,
+   "id": "kenney-select-001",
+   "db": -4,
+   "pitch": 2,
+   "note": "C: send button lights up (bounce)"
+  },
+  {
+   "frame": 329,
+   "id": "gen-tap",
+   "db": -1,
+   "note": "C: send button pressed"
+  },
+  {
+   "frame": 334,
+   "id": "gen-whoosh-whip",
+   "db": 1,
+   "note": "C: push with momentum to step 2"
+  },
+  {
+   "frame": 338,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 3,
+   "note": "C: '2' badge pops, title letters bounce in"
+  },
+  {
+   "frame": 340,
    "id": "gen-tick",
-   "db": -11,
-   "pitch": 8,
-   "note": "numbers roll"
+   "db": -6,
+   "pitch": -2,
+   "note": "C: cover flow detent: card passes the centre"
   },
   {
-   "frame": 301,
+   "frame": 343,
    "id": "gen-tick",
-   "db": -11,
-   "pitch": 9,
-   "note": "numbers roll"
+   "db": -6,
+   "pitch": -1,
+   "note": "C: cover flow detent"
   },
   {
-   "frame": 303,
-   "id": "gen-success",
+   "frame": 346,
+   "id": "gen-tick",
+   "db": -6,
+   "note": "C: cover flow detent"
+  },
+  {
+   "frame": 351,
+   "id": "gen-tick",
+   "db": -6,
+   "pitch": 1,
+   "note": "C: cover flow detent"
+  },
+  {
+   "frame": 357,
+   "id": "gen-tick",
+   "db": -6,
+   "pitch": 2,
+   "note": "C: cover flow detent"
+  },
+  {
+   "frame": 361,
+   "id": "gen-tick",
    "db": -5,
-   "note": "numbers land"
+   "pitch": 3,
+   "note": "C: 'Inbound lead response' reaches the centre and overshoots"
   },
   {
-   "frame": 373,
+   "frame": 375,
    "id": "gen-whoosh-short",
    "db": -6,
-   "pitch": 3,
-   "note": "agent and engineer slide in"
+   "pitch": 2,
+   "note": "C: engineer chip flies in from the right"
   },
   {
    "frame": 376,
-   "id": "gen-whoosh-short",
-   "db": -3,
-   "pitch": -2,
-   "note": "bento falls away"
+   "id": "gen-stamp",
+   "db": 0,
+   "note": "C: hero card snaps back into the centre; neighbours nudged"
   },
   {
-   "frame": 399,
-   "id": "gen-impact-soft",
-   "db": -1,
-   "note": "they join"
+   "frame": 376,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 4,
+   "note": "C: 'Proven in production' pill glows"
+  },
+  {
+   "frame": 382,
+   "id": "kenney-drop-003",
+   "db": -2,
+   "note": "C: 'Vetted engineer' chip docks onto the card (squash)"
+  },
+  {
+   "frame": 384,
+   "id": "gen-whoosh-short",
+   "db": -5,
+   "pitch": -2,
+   "note": "C: other agents part to the sides, title rises away"
+  },
+  {
+   "frame": 391,
+   "id": "gen-whoosh-deep",
+   "db": 0,
+   "note": "C: card expand: hero card grows to fill the frame"
+  },
+  {
+   "frame": 393,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 5,
+   "note": "C: '3' badge pops, 'Deploy with accountability' bounces in"
+  },
+  {
+   "frame": 402,
+   "id": "kenney-maximize-009",
+   "db": -3,
+   "pitch": 2,
+   "note": "C: Deploy settings card lands"
+  },
+  {
+   "frame": 409,
+   "id": "kenney-drop-003",
+   "db": -5,
+   "pitch": 2,
+   "note": "C: Status / Vetted engineer card drops out from behind"
+  },
+  {
+   "frame": 409,
+   "id": "kenney-click-001",
+   "db": 2,
+   "note": "C: giant Deploy switch flips on (hero hit)"
   },
   {
    "frame": 411,
-   "id": "gen-appear",
-   "db": -5,
-   "pitch": 2,
-   "note": "Proven agents."
+   "id": "gen-success",
+   "db": -2,
+   "note": "C: switch track floods green"
   },
   {
-   "frame": 432,
-   "id": "gen-appear",
-   "db": -5,
-   "pitch": 5,
-   "note": "Accountable engineers."
-  },
-  {
-   "frame": 484,
-   "id": "gen-whoosh-medium",
+   "frame": 415,
+   "id": "gen-chime",
    "db": -3,
-   "note": "navy floods in"
+   "pitch": 2,
+   "note": "C: status rolls Off to Live, green dot pulses"
+  },
+  {
+   "frame": 416,
+   "id": "gen-shimmer",
+   "db": -8,
+   "pitch": 2,
+   "note": "C: shine sweeps across the switch"
+  },
+  {
+   "frame": 419,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 7,
+   "note": "C: 'Accountable' pill pops"
+  },
+  {
+   "frame": 425,
+   "id": "gen-whoosh-medium",
+   "db": -1,
+   "pitch": -2,
+   "note": "C: collapse begins: card 2 tucks up, card 1 shrinks into its switch"
+  },
+  {
+   "frame": 430,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "pitch": -3,
+   "note": "C: title flies down into the centre; switch track travels"
+  },
+  {
+   "frame": 436,
+   "id": "gen-impact-soft",
+   "db": 1,
+   "pitch": -2,
+   "note": "C: track lands as the navy island (squash and settle); first ripple"
+  },
+  {
+   "frame": 440,
+   "id": "gen-appear",
+   "db": -7,
+   "pitch": -3,
+   "note": "C: second landing ripple expands out of the frame"
+  },
+  {
+   "frame": 451,
+   "id": "gen-whoosh-medium",
+   "db": -2,
+   "note": "D: tool chips fly in on arcs from off-frame"
+  },
+  {
+   "frame": 454,
+   "id": "gen-tap",
+   "db": -8,
+   "note": "D: chip 1 docks (Gmail & Outlook)"
+  },
+  {
+   "frame": 456,
+   "id": "gen-tap",
+   "db": -8,
+   "pitch": 1,
+   "note": "D: chip 2 docks (Slack)"
+  },
+  {
+   "frame": 458,
+   "id": "kenney-maximize-009",
+   "db": 0,
+   "note": "D: capsule opens like the Dynamic Island"
+  },
+  {
+   "frame": 458,
+   "id": "gen-tap",
+   "db": -8,
+   "pitch": 2,
+   "note": "D: chip 3 docks (QuickBooks & Xero)"
+  },
+  {
+   "frame": 460,
+   "id": "gen-tap",
+   "db": -8,
+   "pitch": 3,
+   "note": "D: chip 4 docks (HubSpot & Salesforce)"
+  },
+  {
+   "frame": 461,
+   "id": "gen-appear",
+   "db": -5,
+   "note": "D: 'Plugs into your stack' builds letter by letter"
+  },
+  {
+   "frame": 462,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 3,
+   "note": "D: agent glyph pops in the island"
+  },
+  {
+   "frame": 463,
+   "id": "gen-tap",
+   "db": -8,
+   "pitch": 4,
+   "note": "D: chip 5 docks (Google Sheets)"
+  },
+  {
+   "frame": 465,
+   "id": "gen-tap",
+   "db": -8,
+   "pitch": 5,
+   "note": "D: chip 6 docks (Stripe)"
+  },
+  {
+   "frame": 465,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "note": "D: green live dot pops on the island"
+  },
+  {
+   "frame": 474,
+   "id": "kenney-click-001",
+   "db": -4,
+   "note": "D: plug-in 1, status goes green"
+  },
+  {
+   "frame": 476,
+   "id": "kenney-click-001",
+   "db": -4,
+   "pitch": 1,
+   "note": "D: plug-in 2"
+  },
+  {
+   "frame": 477,
+   "id": "kenney-click-001",
+   "db": -4,
+   "pitch": 2,
+   "note": "D: plug-in 3"
+  },
+  {
+   "frame": 478,
+   "id": "kenney-click-001",
+   "db": -4,
+   "pitch": 3,
+   "note": "D: plug-in 4"
+  },
+  {
+   "frame": 480,
+   "id": "kenney-click-001",
+   "db": -4,
+   "pitch": 4,
+   "note": "D: plug-in 5"
+  },
+  {
+   "frame": 482,
+   "id": "kenney-click-001",
+   "db": -4,
+   "pitch": 5,
+   "note": "D: plug-in 6"
+  },
+  {
+   "frame": 482,
+   "id": "kenney-select-002",
+   "db": -2,
+   "note": "D: island text rolls to 'Your data stays yours.'"
+  },
+  {
+   "frame": 490,
+   "id": "gen-chime",
+   "db": -6,
+   "note": "D: 'yours.' lands in sky blue"
   },
   {
    "frame": 493,
-   "id": "kenney-click-001",
-   "db": -6,
-   "note": "TNOA letters"
+   "id": "gen-whoosh-whip",
+   "db": 1,
+   "note": "D: push with momentum to the audit card"
   },
   {
-   "frame": 496,
-   "id": "kenney-click-001",
+   "frame": 499,
+   "id": "gen-pop",
    "db": -6,
    "pitch": 2,
-   "note": "TNOA letters"
+   "note": "D: audit card icon pops"
   },
   {
-   "frame": 498,
-   "id": "kenney-click-001",
-   "db": -6,
-   "pitch": 4,
-   "note": "TNOA letters"
+   "frame": 502,
+   "id": "gen-impact-soft",
+   "db": -3,
+   "note": "D: audit card lands, rows stack in"
   },
   {
-   "frame": 500,
-   "id": "kenney-click-001",
-   "db": -6,
-   "pitch": 6,
-   "note": "TNOA letters"
+   "frame": 507,
+   "id": "kenney-select-001",
+   "db": -1,
+   "note": "D: check 1 ticks: Free 15-minute discovery call"
   },
   {
-   "frame": 504,
-   "id": "gen-chime",
-   "db": -4,
-   "note": "the dot"
+   "frame": 514,
+   "id": "kenney-select-001",
+   "db": -1,
+   "pitch": 2,
+   "note": "D: check 2 ticks: Free audit & roadmap"
   },
   {
    "frame": 520,
+   "id": "kenney-select-001",
+   "db": -1,
+   "pitch": 4,
+   "note": "D: check 3 ticks: No obligation"
+  },
+  {
+   "frame": 525,
+   "id": "gen-success",
+   "db": 0,
+   "note": "D: progress ring completes green, check pops"
+  },
+  {
+   "frame": 530,
+   "id": "gen-whoosh-deep",
+   "db": 1,
+   "note": "D: navy iris opens from the ring check"
+  },
+  {
+   "frame": 541,
+   "id": "gen-tap",
+   "db": -2,
+   "note": "D: T lands"
+  },
+  {
+   "frame": 543,
+   "id": "gen-tap",
+   "db": -2,
+   "pitch": 1,
+   "note": "D: N lands"
+  },
+  {
+   "frame": 545,
+   "id": "gen-tap",
+   "db": -2,
+   "pitch": 2,
+   "note": "D: O lands"
+  },
+  {
+   "frame": 548,
+   "id": "gen-tap",
+   "db": -2,
+   "pitch": 3,
+   "note": "D: A lands"
+  },
+  {
+   "frame": 549,
    "id": "gen-appear",
-   "db": -3,
-   "note": "capsule opens into the button"
+   "db": -6,
+   "note": "D: wordmark rises, 'The Network of Agents' builds"
   },
   {
    "frame": 552,
-   "id": "gen-shimmer",
-   "db": -6,
-   "pitch": 3,
-   "note": "shine"
+   "id": "kenney-drop-003",
+   "db": -1,
+   "note": "D: sky-blue full stop drops and bounces"
   },
   {
-   "frame": 567,
+   "frame": 554,
+   "id": "gen-shimmer",
+   "db": -6,
+   "note": "D: network ring draws, nodes pop, pulses start racing"
+  },
+  {
+   "frame": 555,
+   "id": "gen-pop",
+   "db": -2,
+   "pitch": 2,
+   "note": "D: blue capsule pops"
+  },
+  {
+   "frame": 559,
+   "id": "kenney-maximize-009",
+   "db": -1,
+   "pitch": 2,
+   "note": "D: capsule springs open into Book a Call button"
+  },
+  {
+   "frame": 570,
+   "id": "gen-shimmer",
+   "db": -5,
+   "note": "D: shine sweeps the button"
+  },
+  {
+   "frame": 575,
+   "id": "gen-tick",
+   "db": -7,
+   "note": "D: thenetworkofagents.com builds"
+  },
+  {
+   "frame": 579,
+   "id": "gen-tap",
+   "db": -8,
+   "note": "D: touch point appears on the button"
+  },
+  {
+   "frame": 584,
    "id": "kenney-click-001",
    "db": 0,
-   "note": "press"
+   "note": "D: button press with ripple"
+  },
+  {
+   "frame": 592,
+   "id": "gen-chime",
+   "db": -3,
+   "note": "D: second shine, closing sparkle"
   }
  ]
 }

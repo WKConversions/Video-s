@@ -1,0 +1,226 @@
+[
+ {
+  "t": 5.25,
+  "id": "gen-whoosh-short",
+  "db": -8,
+  "pitch": 2,
+  "note": "the card turns into the activity panel"
+ },
+ {
+  "t": 5.28,
+  "id": "kenney-click-001",
+  "db": -16,
+  "pitch": 0,
+  "note": "title types"
+ },
+ {
+  "t": 5.32,
+  "id": "kenney-click-001",
+  "db": -16,
+  "pitch": 1,
+  "note": "title types"
+ },
+ {
+  "t": 5.36,
+  "id": "kenney-click-001",
+  "db": -16,
+  "pitch": 2,
+  "note": "title types"
+ },
+ {
+  "t": 5.4,
+  "id": "kenney-click-001",
+  "db": -16,
+  "pitch": 3,
+  "note": "title types"
+ },
+ {
+  "t": 5.42,
+  "id": "kenney-select-001",
+  "db": -6,
+  "pitch": 0,
+  "note": "notification lands"
+ },
+ {
+  "t": 5.58,
+  "id": "gen-pop",
+  "db": -9,
+  "pitch": 3,
+  "note": "status pill"
+ },
+ {
+  "t": 5.64,
+  "id": "kenney-select-001",
+  "db": -6,
+  "pitch": 2,
+  "note": "notification lands"
+ },
+ {
+  "t": 5.8,
+  "id": "gen-pop",
+  "db": -9,
+  "pitch": 3,
+  "note": "status pill"
+ },
+ {
+  "t": 5.86,
+  "id": "kenney-select-001",
+  "db": -6,
+  "pitch": 4,
+  "note": "notification lands"
+ },
+ {
+  "t": 6.0200000000000005,
+  "id": "gen-pop",
+  "db": -9,
+  "pitch": 3,
+  "note": "status pill"
+ },
+ {
+  "t": 6.08,
+  "id": "kenney-select-001",
+  "db": -6,
+  "pitch": 6,
+  "note": "notification lands"
+ },
+ {
+  "t": 6.24,
+  "id": "gen-appear",
+  "db": -9,
+  "pitch": -3,
+  "note": "status pill"
+ },
+ {
+  "t": 6.34,
+  "id": "gen-whoosh-medium",
+  "db": -8,
+  "pitch": 0,
+  "note": "the review row expands"
+ },
+ {
+  "t": 6.66,
+  "id": "gen-whoosh-short",
+  "db": -11,
+  "pitch": 4,
+  "note": "the engineer slides in"
+ },
+ {
+  "t": 6.98,
+  "id": "gen-impact-soft",
+  "db": -5,
+  "pitch": 0,
+  "note": "engineer and agent join"
+ },
+ {
+  "t": 7.04,
+  "id": "gen-pop",
+  "db": -9,
+  "pitch": 5,
+  "note": "join pop"
+ },
+ {
+  "t": 7.1,
+  "id": "gen-appear",
+  "db": -8,
+  "pitch": 2,
+  "note": "A vetted engineer stays accountable."
+ },
+ {
+  "t": 8.3,
+  "id": "gen-whoosh-medium",
+  "db": -8,
+  "pitch": -2,
+  "note": "to the numbers"
+ },
+ {
+  "t": 8.62,
+  "id": "gen-tap",
+  "db": -6,
+  "pitch": 0,
+  "note": "bento tile lands"
+ },
+ {
+  "t": 8.74,
+  "id": "gen-tap",
+  "db": -6,
+  "pitch": 2,
+  "note": "bento tile lands"
+ },
+ {
+  "t": 8.86,
+  "id": "gen-tap",
+  "db": -6,
+  "pitch": 4,
+  "note": "bento tile lands"
+ },
+ {
+  "t": 8.96,
+  "id": "gen-tap",
+  "db": -6,
+  "pitch": 6,
+  "note": "bento tile lands"
+ },
+ {
+  "t": 9.0,
+  "id": "kenney-tick-004",
+  "db": -15,
+  "pitch": 0,
+  "note": "numbers roll"
+ },
+ {
+  "t": 9.06,
+  "id": "kenney-tick-004",
+  "db": -15,
+  "pitch": 1,
+  "note": "numbers roll"
+ },
+ {
+  "t": 9.12,
+  "id": "kenney-tick-004",
+  "db": -15,
+  "pitch": 2,
+  "note": "numbers roll"
+ },
+ {
+  "t": 9.18,
+  "id": "kenney-tick-004",
+  "db": -15,
+  "pitch": 3,
+  "note": "numbers roll"
+ },
+ {
+  "t": 9.24,
+  "id": "kenney-tick-004",
+  "db": -15,
+  "pitch": 4,
+  "note": "numbers roll"
+ },
+ {
+  "t": 9.3,
+  "id": "kenney-tick-004",
+  "db": -15,
+  "pitch": 5,
+  "note": "numbers roll"
+ },
+ {
+  "t": 9.36,
+  "id": "kenney-tick-004",
+  "db": -15,
+  "pitch": 6,
+  "note": "numbers roll"
+ },
+ {
+  "t": 9.42,
+  "id": "kenney-tick-004",
+  "db": -15,
+  "pitch": 7,
+  "note": "numbers roll"
+ },
+ {
+  "t": 9.04,
+  "id": "gen-swell",
+  "db": -8,
+  "pitch": 0,
+  "note": "the tile floods the frame blue"
+ }
+]

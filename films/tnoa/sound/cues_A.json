@@ -1,0 +1,275 @@
+[
+ {
+  "t": 0,
+  "id": "gen-whoosh-short",
+  "db": -9,
+  "pitch": 0,
+  "note": "'Deploy AI agents' starts building letter by letter"
+ },
+ {
+  "t": 0.38,
+  "id": "gen-whoosh-short",
+  "db": -10,
+  "pitch": 3,
+  "note": "'that deliver' builds and springs line 1 up"
+ },
+ {
+  "t": 0.86,
+  "id": "gen-whoosh-short",
+  "db": -12,
+  "pitch": 6,
+  "note": "full stop starts falling from above the frame"
+ },
+ {
+  "t": 1.14,
+  "id": "kenney-drop-003",
+  "db": -6,
+  "pitch": 0,
+  "note": "full stop lands with squash; hop ripples through the words"
+ },
+ {
+  "t": 1.32,
+  "id": "gen-pop",
+  "db": -10,
+  "pitch": 3,
+  "note": "second bounce lands"
+ },
+ {
+  "t": 1.37,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": 5,
+  "note": "third tiny bounce, settles"
+ },
+ {
+  "t": 1.42,
+  "id": "gen-impact-deep",
+  "db": -4,
+  "pitch": 0,
+  "note": "full stop blasts: hub swells, shockwave"
+ },
+ {
+  "t": 1.43,
+  "id": "gen-whoosh-deep",
+  "db": -6,
+  "pitch": 0,
+  "note": "words fly up and out with momentum"
+ },
+ {
+  "t": 1.48,
+  "id": "gen-appear",
+  "db": -9,
+  "pitch": 0,
+  "note": "TNOA hub label appears, hub glides to centre"
+ },
+ {
+  "t": 1.5,
+  "id": "gen-pop",
+  "db": -11,
+  "pitch": 0,
+  "note": "inner agents spring out (1)"
+ },
+ {
+  "t": 1.58,
+  "id": "gen-pop",
+  "db": -11,
+  "pitch": 1,
+  "note": "inner agents spring out (2)"
+ },
+ {
+  "t": 1.66,
+  "id": "gen-pop",
+  "db": -11,
+  "pitch": 3,
+  "note": "outer named agents spring out (1)"
+ },
+ {
+  "t": 1.75,
+  "id": "gen-pop",
+  "db": -11,
+  "pitch": 5,
+  "note": "outer named agents spring out (2)"
+ },
+ {
+  "t": 1.85,
+  "id": "gen-shimmer",
+  "db": -12,
+  "pitch": 0,
+  "note": "pulses start running along the spokes"
+ },
+ {
+  "t": 2,
+  "id": "kenney-click-001",
+  "db": -10,
+  "pitch": 0,
+  "note": "chip pops: Lead response"
+ },
+ {
+  "t": 2.085,
+  "id": "kenney-click-001",
+  "db": -10,
+  "pitch": 1,
+  "note": "chip pops: Support triage"
+ },
+ {
+  "t": 2.17,
+  "id": "kenney-click-001",
+  "db": -10,
+  "pitch": 2,
+  "note": "chip pops: Voice agents"
+ },
+ {
+  "t": 2.255,
+  "id": "kenney-click-001",
+  "db": -10,
+  "pitch": 3,
+  "note": "chip pops: Invoicing"
+ },
+ {
+  "t": 2.34,
+  "id": "kenney-click-001",
+  "db": -10,
+  "pitch": 4,
+  "note": "chip pops: Proposals"
+ },
+ {
+  "t": 2.425,
+  "id": "kenney-click-001",
+  "db": -10,
+  "pitch": 5,
+  "note": "chip pops: Scheduling"
+ },
+ {
+  "t": 2.4,
+  "id": "gen-whoosh-medium",
+  "db": -10,
+  "pitch": 0,
+  "note": "'Production-Ready AI Agents' builds letter by letter"
+ },
+ {
+  "t": 2.76,
+  "id": "kenney-tick-004",
+  "db": -10,
+  "pitch": 0,
+  "note": "green check pops on Support triage"
+ },
+ {
+  "t": 2.86,
+  "id": "kenney-tick-004",
+  "db": -10,
+  "pitch": 2,
+  "note": "green check pops on Invoicing"
+ },
+ {
+  "t": 2.96,
+  "id": "kenney-tick-004",
+  "db": -10,
+  "pitch": 4,
+  "note": "green check pops on Scheduling"
+ },
+ {
+  "t": 3.06,
+  "id": "gen-chime",
+  "db": -10,
+  "pitch": 0,
+  "note": "green check pops on Proposals"
+ },
+ {
+  "t": 3.2,
+  "id": "gen-whoosh-medium",
+  "db": -5,
+  "pitch": 0,
+  "note": "camera dives at Lead response; title flies up"
+ },
+ {
+  "t": 3.22,
+  "id": "kenney-select-002",
+  "db": -12,
+  "pitch": 0,
+  "note": "other chips fold away"
+ },
+ {
+  "t": 3.45,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": 2,
+  "note": "Lead response chip folds"
+ },
+ {
+  "t": 3.53,
+  "id": "gen-tap",
+  "db": -6,
+  "pitch": 0,
+  "note": "icon pressed"
+ },
+ {
+  "t": 3.61,
+  "id": "kenney-select-001",
+  "db": -11,
+  "pitch": 0,
+  "note": "icon released, tap ripple"
+ },
+ {
+  "t": 3.66,
+  "id": "gen-whoosh-whip",
+  "db": -5,
+  "pitch": 0,
+  "note": "icon opens like an iPhone app; network pulls back"
+ },
+ {
+  "t": 3.7,
+  "id": "kenney-maximize-009",
+  "db": -7,
+  "pitch": 0,
+  "note": "blue splash card expands with overshoot"
+ },
+ {
+  "t": 3.84,
+  "id": "gen-pop",
+  "db": -9,
+  "pitch": 2,
+  "note": "'Lead response' pops onto the splash"
+ },
+ {
+  "t": 4.22,
+  "id": "gen-appear",
+  "db": -6,
+  "pitch": 0,
+  "note": "white iris blooms, glyph and label lift off"
+ },
+ {
+  "t": 4.36,
+  "id": "gen-whoosh-short",
+  "db": -8,
+  "pitch": 0,
+  "note": "agents start flying out of frame"
+ },
+ {
+  "t": 4.45,
+  "id": "gen-impact-soft",
+  "db": -8,
+  "pitch": 0,
+  "note": "card settles at final size; 3D turn begins"
+ },
+ {
+  "t": 4.5,
+  "id": "gen-whoosh-short",
+  "db": -9,
+  "pitch": 2,
+  "note": "more agents fly out"
+ },
+ {
+  "t": 4.62,
+  "id": "gen-whoosh-short",
+  "db": -10,
+  "pitch": 4,
+  "note": "more agents fly out"
+ },
+ {
+  "t": 4.72,
+  "id": "gen-whoosh-short",
+  "db": -11,
+  "pitch": 5,
+  "note": "last agents fly out (last exits at 5.00)"
+ }
+]
