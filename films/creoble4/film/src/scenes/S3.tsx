@@ -15,7 +15,7 @@
 import React from "react";
 import { T } from "../clock";
 import {
-  C, Gooey, HolmSite, INOUT, Ico, LIN, LiquidGlass, OUT, SANS, SERIF, SageIris,
+  C, Gooey, HOLM, HolmSite, INOUT, Ico, LIN, LiquidGlass, OUT, SANS, SERIF, SageIris,
   aspring, bounce, clamp01, f, kf, mix, squash,
 } from "../shared";
 
@@ -65,9 +65,13 @@ const Letters: React.FC<{ g: number; parts: Part[]; stagger: number; cx: number;
         const p = bz(g, pt.at + j * stagger, 0.42, damping);
         const wv = wave ? wave * Math.sin((g - waveFrom) / 4.2 - i * 0.6) * ramp(g, waveFrom, 8) : 0;
         const q = out !== undefined ? quadIn(clamp01((g - out - i * outStagger) / 6.5)) : 0;
+        // the move is a composited layer (glides at sub-pixel steps); the scale is painted inside it, so the layer
+        // never rasterizes small (a will-change layer keeps the scale it first rasterized at: soft when it grows)
         return (
-          <span key={`${pi}-${j}`} style={{ display: "inline-block", marginRight: ch === " " ? 0.1 * size : 0, fontStyle: pt.it ? "italic" : "normal", color: pt.it ? itColor : color, transformOrigin: "50% 90%", opacity: clamp01(p * 2.5) * (1 - q),
-            transform: `translateY(${(1 - p) * rise * size + wv - q * 0.2 * size}px) scale(${(0.35 + 0.65 * p) * (1 - q)})` }}>{ch}</span>
+          <span key={`${pi}-${j}`} style={{ display: "inline-block", marginRight: ch === " " ? 0.1 * size : 0, opacity: clamp01(p * 2.5) * (1 - q),
+            transform: `translateY(${(1 - p) * rise * size + wv - q * 0.2 * size}px)`, willChange: "transform" }}>
+            <span style={{ display: "inline-block", fontStyle: pt.it ? "italic" : "normal", color: pt.it ? itColor : color, transformOrigin: "50% 90%", transform: `scale(${(0.35 + 0.65 * p) * (1 - q)})` }}>{ch}</span>
+          </span>
         );
       }))}
     </div>
@@ -87,16 +91,18 @@ const reel = (g: number, a: number, D: number, p0: number, p1: number, v0: numbe
 };
 // One digit column like an iOS picker: digit n sits (n − pos) cells from the centre; pos falling = rolling DOWN,
 // rising = rolling UP. While it spins (speed in cells per unit) the neighbours above and below show faintly; at rest
-// only the digit. w = the column's width (collapses to close up a number). Its layout box is one cell high.
-const Column: React.FC<{ pos: number; speed?: number; size: number; cell: number; w: number; opacity?: number }> = ({ pos, speed = 0, size, cell, w, opacity = 1 }) => {
+// only the digit. w = the column's width. Its layout box is one cell high and static: the digits roll by a transform,
+// and a column that collapses to close up a number keeps its box and is cut (clip, both sides) and shifted (dx) instead
+// (box geometry and a re-centred flex row snap to whole pixels every frame).
+const Column: React.FC<{ pos: number; speed?: number; size: number; cell: number; w: number; opacity?: number; cut?: number; dx?: number }> = ({ pos, speed = 0, size, cell, w, opacity = 1, cut = 0, dx = 0 }) => {
   const ch = cell * size, n0 = Math.floor(pos) - 2, s = Math.min(0.4, Math.max(0, Math.abs(speed) - 0.1) * 0.5);
   const m = `linear-gradient(180deg, transparent 0%, rgba(0,0,0,${s}) 10%, rgba(0,0,0,${s}) 27%, #000 36%, #000 64%, rgba(0,0,0,${s}) 73%, rgba(0,0,0,${s}) 90%, transparent 100%)`;
   return (
-    <div style={{ position: "relative", width: w, height: ch, flex: "none", opacity }}>
-      <div style={{ position: "absolute", left: 0, top: -ch, width: w, height: 3 * ch, overflow: "hidden", WebkitMaskImage: m, maskImage: m }}>
+    <div style={{ position: "relative", width: w, height: ch, flex: "none", opacity, transform: dx ? `translateX(${dx}px)` : undefined }}>
+      <div style={{ position: "absolute", left: 0, top: -ch, width: w, height: 3 * ch, overflow: "hidden", WebkitMaskImage: m, maskImage: m, clipPath: cut > 0 ? `inset(0 ${cut / 2}px)` : undefined }}>
         {[0, 1, 2, 3, 4, 5].map((j) => {
           const nn = n0 + j, d = ((nn % 10) + 10) % 10;
-          return <div key={j} style={{ position: "absolute", left: "50%", marginLeft: -0.4 * size, width: 0.8 * size, top: ch + (nn - pos) * ch, height: ch, lineHeight: `${ch}px`, textAlign: "center" }}>{d}</div>;
+          return <div key={j} style={{ position: "absolute", left: "50%", marginLeft: -0.4 * size, width: 0.8 * size, top: ch, height: ch, lineHeight: `${ch}px`, textAlign: "center", transform: `translateY(${(nn - pos) * ch}px)` }}>{d}</div>;
         })}
       </div>
     </div>
@@ -125,7 +131,7 @@ const Shot13: React.FC<{ g: number }> = ({ g }) => {
   const jolt = 52 * kick(g, KR13 + 7.8, 0.42, 0.45);    // "kr" lands on the number: it dips and springs back
   return (
     <div style={{ position: "absolute", left: 0, top: 0, width: W, height: H, transform: `perspective(1500px) rotateY(${36 * sway - 8}deg) rotateX(${7 * sway}deg)`, transformOrigin: "820px 540px" }}>
-      <div style={{ position: "absolute", left: N13.x, top: N13.y + jolt, display: "flex", fontFamily: SERIF, fontSize: N13.size, color: C.ink, letterSpacing: "-0.03em", fontVariantNumeric: "tabular-nums" }}>
+      <div style={{ position: "absolute", left: N13.x, top: N13.y, transform: `translateY(${jolt}px)`, display: "flex", fontFamily: SERIF, fontSize: N13.size, color: C.ink, letterSpacing: "-0.03em", fontVariantNumeric: "tabular-nums" }}>
         {[4, 9, 9].map((d, i) => {
           const a = ROLL13 + i * 2, D = 14 + 3 * i, R = (x: number) => reel(x, a, D, d + 11 + 3 * i, d, -1.25, -0.28);
           const melt = ramp(g, MELT + i * 0.8, 5);
@@ -136,8 +142,8 @@ const Shot13: React.FC<{ g: number }> = ({ g }) => {
           );
         })}
       </div>
-      <div style={{ position: "absolute", left: 985, top: 453 + 0.6 * jolt, fontFamily: SERIF, fontStyle: "italic", fontSize: 210, lineHeight: 1, color: C.sageDeep, opacity: clamp01(kp * 3),
-        transform: `translateY(${-(1 - kp) * 640}px) scale(${1 - kOut})`, transformOrigin: "50% 60%" }}>kr</div>
+      <div style={{ position: "absolute", left: 985, top: 453, fontFamily: SERIF, fontStyle: "italic", fontSize: 210, lineHeight: 1, color: C.sageDeep, opacity: clamp01(kp * 3),
+        transform: `translateY(${0.6 * jolt - (1 - kp) * 640}px) scale(${1 - kOut})`, transformOrigin: "50% 60%" }}>kr</div>
     </div>
   );
 };
@@ -166,23 +172,31 @@ const Shot14: React.FC<{ g: number }> = ({ g }) => {
   const rise = 60 * ramp(g, T2 - 3, 26), rec = quadIn(clamp01((g - (SLAB_IN - 0.5)) / 12));
   const word = (t: string, at: number, it?: boolean) => {
     const p = bz(g, at, 0.45, 0.55);
-    return <span style={{ display: "inline-block", fontStyle: it ? "italic" : "normal", color: it ? C.sageDeep : C.ink, opacity: clamp01(p * 3), transform: `translateY(${(1 - p) * 110}px) scale(${0.25 + 0.75 * p})`, transformOrigin: "50% 100%" }}>{t}</span>;
+    // (as in Letters: a composited move, the scale painted inside it so the layer rasterizes at full size)
+    return (
+      <span style={{ display: "inline-block", opacity: clamp01(p * 3), transform: `translateY(${(1 - p) * 110}px)`, willChange: "transform" }}>
+        <span style={{ display: "inline-block", fontStyle: it ? "italic" : "normal", color: it ? C.sageDeep : C.ink, transform: `scale(${0.25 + 0.75 * p})`, transformOrigin: "50% 100%" }}>{t}</span>
+      </span>
+    );
   };
   return (
-    <div style={{ position: "absolute", left: 0, top: 0, width: W, height: H, transform: `translateY(${-rise}px) scale(${1 - 0.14 * rec})`, transformOrigin: "960px 650px", opacity: 1 - rec, filter: rec > 0 ? `blur(${6 * rec}px)` : undefined }}>
+    <div style={{ position: "absolute", left: 0, top: 0, width: W, height: H, transform: `translateY(${-rise}px) scale(${1 - 0.14 * rec})`, transformOrigin: "960px 650px", willChange: "transform", opacity: 1 - rec, filter: rec > 0 ? `blur(${6 * rec}px)` : undefined }}>
       {/* the hairline floor: it draws under the number on "kroner"; the coin lands on it */}
-      <div style={{ position: "absolute", left: COIN.x - 280 * line, top: FLOOR - 1, width: 1360 * line, height: 3, borderRadius: 2, background: "rgba(26,22,20,0.42)" }} />
+      {/* (static boxes: the line is revealed by a clip, the shadow and the drops sized by transforms; box geometry snaps) */}
+      <div style={{ position: "absolute", left: COIN.x - 280, top: FLOOR - 1, width: 1360, height: 3, borderRadius: 2, background: "rgba(26,22,20,0.42)", clipPath: `inset(0 ${1080 * (1 - line)}px 0 ${280 * (1 - line)}px round 2px)` }} />
       {/* the coin's contact shadow */}
-      <div style={{ position: "absolute", left: COIN.x - COIN.r * mix(0.4, 1.05, near), top: FLOOR - 9, width: 2 * COIN.r * mix(0.4, 1.05, near), height: 18, borderRadius: "50%", background: "rgba(26,22,20,0.16)", opacity: near, filter: "blur(4px)" }} />
+      <div style={{ position: "absolute", left: COIN.x - 1.05 * COIN.r, top: FLOOR - 9, width: 2.1 * COIN.r, height: 18, opacity: near, filter: "blur(4px)" }}>
+        <div style={{ position: "absolute", inset: 0, borderRadius: "50%", background: "rgba(26,22,20,0.16)", transform: `scaleX(${mix(0.4, 1.05, near) / 1.05})` }} />
+      </div>
       {g < TM ? (
         <Gooey>
           {drops.map((d, i) => {
             const x = mix(d.x, COIN.x, conv), y = mix(d.y, COIN.y0, conv), r = mix(d.r, COIN.r, conv);
-            return r > 0.5 ? <div key={i} style={{ position: "absolute", left: x - r, top: y - r, width: 2 * r, height: 2 * r, borderRadius: "50%", background: C.sage }} /> : null;
+            return r > 0.5 ? <div key={i} style={{ position: "absolute", left: -COIN.r, top: -COIN.r, width: 2 * COIN.r, height: 2 * COIN.r, borderRadius: "50%", background: C.sage, transform: `translate(${x}px, ${y}px) scale(${r / COIN.r})` }} /> : null;
           })}
         </Gooey>
       ) : (
-        <div style={{ position: "absolute", left: COIN.x - COIN.r, top: cs.y - COIN.r, width: 2 * COIN.r, height: 2 * COIN.r, transform: `scale(${sx}, ${sy})`, transformOrigin: "50% 100%" }}>
+        <div style={{ position: "absolute", left: COIN.x - COIN.r, top: COIN.y0 - COIN.r, width: 2 * COIN.r, height: 2 * COIN.r, transform: `translateY(${cs.y - COIN.y0}px) scale(${sx}, ${sy})`, transformOrigin: "50% 100%" }}>
           <div style={{ position: "absolute", inset: 0, borderRadius: "50%", background: C.sage }} />
           <div style={{ position: "absolute", inset: 0, borderRadius: "50%", opacity: detail, background: "radial-gradient(circle at 34% 28%, rgba(255,255,255,0.42), rgba(255,255,255,0) 52%)", boxShadow: "inset 0 -6px 14px rgba(73,93,88,0.35)" }} />
           <div style={{ position: "absolute", inset: COIN.r * 0.2, borderRadius: "50%", border: "3px solid rgba(255,255,255,0.5)", opacity: detail }} />
@@ -203,9 +217,13 @@ const BigToggle: React.FC<{ on: number; size: number }> = ({ on, size }) => {
   const q = clamp01(on), tr = 4 * q * (1 - q), push = Math.max(0, -on) + Math.max(0, on - 1);
   const kw = d * (1 + 0.34 * tr - 1.7 * push), kh = d * (1 + 0.25 * push);
   const left = on < 0 ? pad : on > 1 ? Wt - pad - kw : pad + q * (Wt - 2 * pad - kw);
+  // the knob's layout box is a static d × d circle: its place and its kw × kh size are a transform (box geometry snaps
+  // to whole pixels every frame), its corner radii pre-divided by the scale so it stays the same round-ended pill
+  const sx = kw / d, sy = kh / d, r = Math.min(kw, kh) / 2, sh = 1 / Math.sqrt(sx * sy);
   return (
     <div style={{ width: Wt, height: size, borderRadius: size, background: `color-mix(in srgb, ${C.sage} ${q * 100}%, #DCD8D1)`, position: "relative", boxShadow: "inset 0 2px 6px rgba(26,22,20,0.08)" }}>
-      <div style={{ position: "absolute", top: (size - kh) / 2, left, width: kw, height: kh, borderRadius: size, background: C.white, boxShadow: "0 8px 22px rgba(26,22,20,0.2), 0 2px 4px rgba(26,22,20,0.12)" }} />
+      <div style={{ position: "absolute", top: 0, left: 0, width: d, height: d, transformOrigin: "0 0", transform: `translate(${left}px, ${(size - kh) / 2}px) scale(${sx}, ${sy})`,
+        borderRadius: `${r / sx}px / ${r / sy}px`, background: C.white, boxShadow: `0 ${8 / sy}px ${22 * sh}px rgba(26,22,20,0.2), 0 ${2 / sy}px ${4 * sh}px rgba(26,22,20,0.12)` }} />
     </div>
   );
 };
@@ -217,12 +235,12 @@ const Shot15: React.FC<{ g: number }> = ({ g }) => {
   const sheen = 0.85 - 0.6 * clamp01(1 - x / 1760) + 0.45 * clamp01((g - SLAB_OUT) / 13);
   const fl = ramp(g, SLAB_IN + 8, 8), bob = 13 * Math.sin((g - SLAB_IN - 10) / 4.4) * fl, tilt = 1.1 * Math.sin((g - SLAB_IN - 10) / 4.4 + 1.3) * fl;   // the glass floats while it holds
   return (
-    <div style={{ position: "absolute", left: SLAB.x + x, top: SLAB.y + bob, transform: `rotate(${tilt}deg)` }}>
+    <div style={{ position: "absolute", left: SLAB.x, top: SLAB.y, transform: `translate(${x}px, ${bob}px) rotate(${tilt}deg)` }}>
       <LiquidGlass w={SLAB.w} h={SLAB.h} radius={SLAB.h / 2} sheen={sheen} transform={squash(vx, 0, 0.0005)}>
         <div style={{ position: "absolute", left: 120, top: 0, height: SLAB.h, display: "flex", alignItems: "center" }}>
           <span style={{ position: "relative", fontFamily: SERIF, fontSize: 140, lineHeight: 1, letterSpacing: "-0.025em", whiteSpace: "nowrap", color: `color-mix(in srgb, ${C.ink} ${100 - 60 * strike}%, ${C.soft})` }}>
             Abonnement
-            <span style={{ position: "absolute", left: -8, top: "56%", height: 7, width: `${strike * 104}%`, borderRadius: 4, background: C.ink, opacity: 0.85 }} />
+            <span style={{ position: "absolute", left: -8, top: "56%", height: 7, width: "104%", borderRadius: 4, background: C.ink, opacity: 0.85, clipPath: `inset(0 ${(1 - strike) * 100}% 0 0 round 4px)` }} />
           </span>
         </div>
         <div style={{ position: "absolute", left: SLAB.w - 72 - 306, top: (SLAB.h - 180) / 2 }}><BigToggle on={on} size={180} /></div>
@@ -246,7 +264,7 @@ const Shot16: React.FC<{ g: number }> = ({ g }) => {
     const p = Math.min(1, sp(g, at - 1.5, 0.45));
     return (
       <span style={{ display: "inline-block", overflow: "hidden", paddingBottom: 30, marginBottom: -30, paddingRight: it ? 12 : 0 }}>
-        <span style={{ display: "inline-block", transform: `translateY(${(1 - p) * 115}%)`, fontStyle: it ? "italic" : "normal", color: it ? C.sageDeep : C.ink }}>{t}</span>
+        <span style={{ display: "inline-block", transform: `translateY(${(1 - p) * 115}%)`, willChange: "transform", fontStyle: it ? "italic" : "normal", color: it ? C.sageDeep : C.ink }}>{t}</span>
       </span>
     );
   };
@@ -255,8 +273,14 @@ const Shot16: React.FC<{ g: number }> = ({ g }) => {
       {q > 0 && (
         <div style={{ position: "absolute", left: GF.x, top: GF.y }}>
           <LiquidGlass w={GF.w} h={GF.h} radius={46} p={q} sheen={0.15 + 0.6 * ramp(g, POP16, 50, LIN)}>
-            <div style={{ position: "absolute", left: 22, top: 22, width: GF.w - 44, height: GF.h - 44, borderRadius: 26, overflow: "hidden", boxShadow: `0 0 0 1px ${C.line}` }}>
-              <HolmSite w={GF.w - 44} h={GF.h - 44} booking={1} scroll={scroll} />
+            <div style={{ position: "absolute", left: 22, top: 22, width: GF.w - 44, height: GF.h - 44, borderRadius: 26, overflow: "hidden", background: HOLM.bg, boxShadow: `0 0 0 1px ${C.line}` }}>
+              {/* The page scrolls painted, not as a composited layer (a layer moved by sub-pixel steps is resampled
+                  every frame: its small text goes soft). Painted text keeps its glyphs crisp but Skia snaps an
+                  axis-aligned line of text to whole pixels vertically (1, 2, 1, 1, 2 px steps); under a slightly
+                  rotated matrix it places glyphs at sub-pixel positions both ways. 0.1° does it (0.03° still
+                  stepped, measured): 0.8 px at the page's ends, invisible; the clip's background fills the
+                  sub-pixel sliver along its edges. */}
+              <div style={{ position: "absolute", left: 0, top: 0, transform: "rotate(0.1deg)" }}><HolmSite w={GF.w - 44} h={GF.h - 44} booking={1} scroll={scroll} /></div>
             </div>
           </LiquidGlass>
         </div>
@@ -266,7 +290,7 @@ const Shot16: React.FC<{ g: number }> = ({ g }) => {
         <div style={{ display: "flex" }}>{word("din.", wd("w:din3"), true)}</div>
       </div>
       {g >= CHIP && (
-        <div style={{ position: "absolute", left: c.x - 114, top: c.y - 46 }}>
+        <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${c.x - 114}px, ${c.y - 46}px)` }}>
           <LiquidGlass w={228} h={92} sheen={0.2 + 0.6 * clamp01(u)} transform={squash((c.x - c0.x) / 0.5, (c.y - c0.y) / 0.5, 0.0016)}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 12, height: "100%", fontFamily: SANS, fontWeight: 600, fontSize: 44, color: C.ink }}>
               <Ico n="user" s={44} c={C.sageDeep} w={2.4} />Din
@@ -287,12 +311,17 @@ const Back: React.FC<{ g: number }> = ({ g }) => {
     const a = DIG + i * 1.5, D = 17 + 2 * i, R = (x: number) => reel(x, a, D, d, [10, 20, 30][i], 0, 0.28);
     return { pos: R(g), speed: (R(g) - R(g - 0.5)) / 0.5, w: i < 2 ? 1 - ramp(g, a + D + 2 + i, 7) : 1 };
   });
+  // the first two columns close up (each gives up cut px); the row stays laid out at full width and each piece is
+  // shifted to where the centred, closed-up row puts it
+  const CW = 0.62 * SZ, cut = cols.map((c) => CW * (1 - c.w)), cutAll = cut[0] + cut[1] + cut[2];
+  const dx = cols.map((_, i) => cutAll / 2 - cut.slice(0, i).reduce((s, x) => s + x, 0) - cut[i] / 2);
   const zero = 1 + 0.22 * bz(g, DIG + 24.5, 0.6, 0.55);
   return (
     <div style={{ position: "absolute", left: 0, top: 540 - LINE / 2, width: W, height: LINE, overflow: masked ? "hidden" : "visible", WebkitMaskImage: masked ? m : undefined, maskImage: masked ? m : undefined, fontFamily: SERIF, color: C.cream }}>
       {masked && (
         <div style={{ position: "absolute", left: 0, top: 0, width: W, height: LINE, display: "flex", justifyContent: "center", alignItems: "center", fontSize: SZ, lineHeight: `${LINE}px`, letterSpacing: "-0.025em", columnGap: SZ * 0.24, whiteSpace: "nowrap",
           transform: `perspective(1400px) translateY(${-roll * LINE}px) rotateX(${55 * roll}deg)` }}>
+          {/* painted: text moving sideways already glides (sub-pixel glyph positions along the line) and stays crisp */}
           <span style={{ display: "inline-block", fontStyle: "italic", transform: `translateX(${-apart}px)` }}>Ikke</span>
           <span style={{ display: "inline-block", transform: `translateX(${apart}px)` }}>tilfreds?</span>
         </div>
@@ -300,8 +329,8 @@ const Back: React.FC<{ g: number }> = ({ g }) => {
       <div style={{ position: "absolute", left: 0, top: 0, width: W }}>
         <div style={{ height: LINE, display: "flex", justifyContent: "center", alignItems: "flex-start", fontSize: SZ, letterSpacing: "-0.03em", fontVariantNumeric: "tabular-nums",
           transform: `perspective(1400px) translateY(${(1 - roll) * LINE}px) rotateX(${-55 * (1 - roll)}deg) scale(${zero})` }}>
-          {cols.map((c, i) => <Column key={i} pos={c.pos} speed={c.speed} size={SZ} cell={1.2} w={0.62 * SZ * c.w} opacity={c.w} />)}
-          <div style={{ fontStyle: "italic", fontSize: SZ * 0.62, lineHeight: 1, marginTop: 96, marginLeft: SZ * 0.16 }}>kr</div>
+          {cols.map((c, i) => <Column key={i} pos={c.pos} speed={c.speed} size={SZ} cell={1.2} w={CW} cut={cut[i]} dx={dx[i]} opacity={c.w} />)}
+          <div style={{ fontStyle: "italic", fontSize: SZ * 0.62, lineHeight: 1, marginTop: 96, marginLeft: SZ * 0.16, transform: `translateX(${-cutAll / 2}px)` }}>kr</div>
         </div>
       </div>
     </div>
@@ -333,8 +362,8 @@ const Shot19: React.FC<{ g: number }> = ({ g }) => {
   const d = ramp(g, SHIELD + 4, 9, OUT);
   return (
     <>
-      <div style={{ position: "absolute", left: SHIELD_C.x - 160, top: SHIELD_C.y - 160 + bob, width: 320, height: 320, opacity: clamp01(q * 3),
-        transform: `perspective(1200px) rotateY(${16 * Math.sin((g - SHIELD - 6) / 5) * ramp(g, SHIELD + 4, 8)}deg) scale(${q}) rotate(${(1 - q) * -14}deg)`, filter: "drop-shadow(0 22px 30px rgba(26,22,20,0.16))" }}>
+      <div style={{ position: "absolute", left: SHIELD_C.x - 160, top: SHIELD_C.y - 160, width: 320, height: 320, opacity: clamp01(q * 3),
+        transform: `translateY(${bob}px) perspective(1200px) rotateY(${16 * Math.sin((g - SHIELD - 6) / 5) * ramp(g, SHIELD + 4, 8)}deg) scale(${q}) rotate(${(1 - q) * -14}deg)`, filter: "drop-shadow(0 22px 30px rgba(26,22,20,0.16))" }}>
         <svg width={320} height={320} viewBox="0 0 48 48" style={{ display: "block", overflow: "visible" }}>
           <path d="M24 5 L39 11 V23 c0 9 -6 16 -15 20 c-9 -4 -15 -11 -15 -20 V11 Z" fill={C.sage} stroke={C.sage} strokeWidth={2.6} strokeLinejoin="round" />
           <path d="M17 24 L22 29 L31 19" fill="none" stroke={C.cream} strokeWidth={3.2} strokeLinecap="round" strokeLinejoin="round" strokeDasharray={21} strokeDashoffset={21 * (1 - d)} />
