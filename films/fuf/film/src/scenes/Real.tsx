@@ -9,8 +9,8 @@ export const Real: React.FC<{ g: number }> = ({ g }) => {
   const items: [string, string][] = [["just", "Ambitious *minds.*"], ["real", "Real *conversations.*"], ["connections2", "Connections that *matter.*"]];
   return (
     <div style={{ position: "absolute", inset: 0, opacity: o, background: CREAM }}>
-      <Photo src="c-terrace.jpg" x={136} y={110} w={640} h={860} a={k(g, "just-0.2", 0.9, MOVE)} zoom={1.03 + 0.07 * clamp01((t - s("just")) / 5)} pos="50% 35%" />
-      <Photo src="c-bar.jpg" x={600} y={640} w={330} h={370} a={k(g, "real-0.2", 0.8, MOVE)} zoom={1.05} />
+      <Photo src="c-terrace.jpg" x={136} y={110} w={640} h={860} a={k(g, "just-0.2", 0.9, MOVE)} zoom={1.05 + 0.17 * clamp01((t - s("just")) / 5)} pos={`${42 + 16 * clamp01((t - s("just")) / 5)}% 35%`} />
+      <Photo src="c-bar.jpg" x={600} y={640} w={330} h={370} a={k(g, "real-0.2", 0.8, MOVE)} zoom={1.05 + 0.15 * clamp01((t - s("real")) / 3)} />
       <Caps t="JUST" x={1010} y={270} o={k(g, "just", 0.5)} color={TAUPE_D} />
       {items.map(([label, text], i) => (
         <React.Fragment key={label}>

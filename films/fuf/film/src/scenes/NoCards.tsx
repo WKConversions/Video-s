@@ -21,6 +21,18 @@ export const NoCards: React.FC<{ g: number }> = ({ g }) => {
           </div>
         );
       })}
+      {(() => {
+        const t0 = s("no") - 0.1, per = 0.42, d = t - t0;
+        if (d < 0 || g > T.f("business+0.25")) return null;
+        const c = Math.floor(d / per), u = MOVE(clamp01((d - c * per) / (per * 0.85)));
+        const A = { x: 1130, y: 600 }, B = { x: 1560, y: 470 }, from = c % 2 ? B : A, to = c % 2 ? A : B;
+        const x = lerp(from.x, to.x, u), y = lerp(from.y, to.y, u) - Math.sin(Math.PI * u) * 120;
+        return <div style={{ position: "absolute", left: x, top: y, width: 330, height: 192, borderRadius: 10, background: CREAM, boxShadow: "0 18px 40px rgba(0,0,0,0.4)", transform: `rotate(${lerp(-10, 8, c % 2 ? 1 - u : u)}deg)`, padding: "26px 28px", boxSizing: "border-box", opacity: 1 - k(g, "business", 0.25, OUT) }}>
+          <div style={{ width: 120, height: 12, borderRadius: 6, background: "#CFC6BB" }} />
+          <div style={{ marginTop: 10, width: 170, height: 8, borderRadius: 4, background: "#DDD5CB" }} />
+          <div style={{ position: "absolute", left: 28, bottom: 26, width: 140, height: 6, borderRadius: 3, background: "#DDD5CB" }} />
+        </div>;
+      })()}
       <Para g={g} lines={[["no", "No awkward networking."]]} x={136} y={380} size={82} color={CREAM} />
       <div style={{ position: "absolute", left: 130, top: 380 + 50, width: lerp(0, measure("No awkward networking.", 82, 400, -0.02) + 12, k(g, "25.4", 0.45, MOVE)), height: 6, borderRadius: 3, background: TAUPE, transform: "rotate(-1.5deg)" }} />
       <Para g={g} lines={[["no2", "No endless"], ["business-0.1", "business card exchanges."]]} x={136} y={520} size={82} color={CREAM} />
