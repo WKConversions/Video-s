@@ -33,11 +33,6 @@ const ROWS = [
   { task: "Proposal draft — discovery call", agent: "Proposals", ok: false, status: "Human review", time: "4m 03s" },
 ];
 
-const Dots: React.FC<{ t: number; dark?: boolean }> = ({ t, dark }) => (
-  <AbsoluteFill style={{ transform: `translate(${-((t * 420) % 90)}px, ${-((t * 260) % 90)}px)`, width: 2100, height: 1200,
-    backgroundImage: `radial-gradient(${dark ? "rgba(255,255,255,0.28)" : "rgba(37,99,235,0.42)"} 7px, transparent 7.6px)`, backgroundSize: "90px 90px" }} />
-);
-
 const Network: React.FC<{ t: number }> = ({ t }) => {
   // forms 0-3.4 s, then folds into the panel (3.4-4.4 s)
   const fold = ease((t - 3.4) / 0.9), rot = t * 0.75, hub = spring(t, 0.15, 0.5, 0.55);
