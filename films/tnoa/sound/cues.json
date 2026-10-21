@@ -12,89 +12,89 @@
  },
  "sfx": [
   {
-   "frame": 4,
+   "frame": 0,
    "id": "gen-appear",
    "db": -2,
    "note": "hub pops"
   },
   {
-   "frame": 10,
+   "frame": 3,
    "id": "gen-tick",
    "db": -8,
    "note": "agent node pops"
   },
   {
-   "frame": 13,
+   "frame": 6,
    "id": "gen-tick",
    "db": -8,
    "pitch": 1,
    "note": "agent node pops"
   },
   {
-   "frame": 15,
+   "frame": 8,
    "id": "gen-tick",
    "db": -8,
    "pitch": 2,
    "note": "agent node pops"
   },
   {
-   "frame": 17,
+   "frame": 10,
    "id": "gen-tick",
    "db": -8,
    "pitch": 3,
    "note": "agent node pops"
   },
   {
-   "frame": 19,
+   "frame": 12,
    "id": "gen-tick",
    "db": -8,
    "pitch": 4,
    "note": "agent node pops"
   },
   {
-   "frame": 21,
+   "frame": 14,
    "id": "gen-tick",
    "db": -8,
    "pitch": 5,
    "note": "agent node pops"
   },
   {
-   "frame": 23,
+   "frame": 16,
    "id": "gen-tick",
    "db": -8,
    "pitch": 6,
    "note": "agent node pops"
   },
   {
-   "frame": 25,
+   "frame": 18,
    "id": "gen-tick",
    "db": -8,
    "pitch": 7,
    "note": "agent node pops"
   },
   {
-   "frame": 27,
+   "frame": 20,
    "id": "gen-tick",
    "db": -8,
    "pitch": 8,
    "note": "agent node pops"
   },
   {
-   "frame": 29,
+   "frame": 22,
    "id": "gen-tick",
    "db": -8,
    "pitch": 9,
    "note": "agent node pops"
   },
   {
-   "frame": 32,
+   "frame": 25,
    "id": "gen-tick",
    "db": -8,
    "pitch": 10,
    "note": "agent node pops"
   },
   {
-   "frame": 34,
+   "frame": 27,
    "id": "gen-tick",
    "db": -8,
    "pitch": 11,
@@ -318,6 +318,13 @@
    "note": "numbers land"
   },
   {
+   "frame": 373,
+   "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": 3,
+   "note": "agent and engineer slide in"
+  },
+  {
    "frame": 376,
    "id": "gen-whoosh-short",
    "db": -3,
@@ -325,34 +332,27 @@
    "note": "bento falls away"
   },
   {
-   "frame": 382,
-   "id": "gen-whoosh-short",
-   "db": -6,
-   "pitch": 3,
-   "note": "agent and engineer slide in"
-  },
-  {
-   "frame": 408,
+   "frame": 399,
    "id": "gen-impact-soft",
    "db": -1,
    "note": "they join"
   },
   {
-   "frame": 417,
+   "frame": 411,
    "id": "gen-appear",
    "db": -5,
    "pitch": 2,
    "note": "Proven agents."
   },
   {
-   "frame": 438,
+   "frame": 432,
    "id": "gen-appear",
    "db": -5,
    "pitch": 5,
    "note": "Accountable engineers."
   },
   {
-   "frame": 488,
+   "frame": 484,
    "id": "gen-whoosh-medium",
    "db": -3,
    "note": "navy floods in"
