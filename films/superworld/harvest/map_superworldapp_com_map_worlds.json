@@ -1,0 +1,179 @@
+{
+ "url": "https://map.superworldapp.com/map/worlds",
+ "title": "SuperWorld: your world, mapped by you and your friends",
+ "text": "SuperWorld\n\nBUY $SPWR\n\nLeaderboard\n\nWhipped Urban Dessert Lab x CAMP\n\n@jt_experience\n\nMamoun's Falafel\n\n@hrish\n\nJW Marriott Essex House New York\n\n@cmk999\n\nHilton New York Fashion District\n\n@cmk999\n\nNBA Store\n\n@morikhan9\n\nSadelle's\n\n@kitty\n\nC & B Cafe\n\n@kitty\n\nThe Uncommons\n\n@kitty\n\nHousing Works Bookstore Cafe\n\n@kitty\n\nFairfax\n\n@kitty\n\n© Mapbox © OpenStreetMap Improve this map\nRecs\nCheck-ins\nPosts\nPeople\nWorlds\n\nHome\n\nMap\n\nProperties\n\nApps\n\nChat\n\n🗺️\n\nThe Map\n\nReal places, pinned by real people.\n\n⭐\n\nRecs — places people vouch for — comment, share, or buy the spot.\n\n📍\n\nCheck-ins — places people have checked in to.\n\n📸\n\nPosts — media and comments pinned anywhere on Earth.\n\n🧑‍🤝‍🧑\n\nPeople — Super Citizens on the map, right now.\n\n🌍\n\nWorlds — user-built worlds that start where you look.\n\nStart exploring\n✨ Tap to discover\nthings to do nearby",
+ "links": [
+  {
+   "t": "SuperWorld",
+   "h": "https://map.superworldapp.com/home"
+  },
+  {
+   "t": "",
+   "h": "https://www.mapbox.com/"
+  },
+  {
+   "t": "© Mapbox",
+   "h": "https://www.mapbox.com/about/maps"
+  },
+  {
+   "t": "© OpenStreetMap",
+   "h": "https://www.openstreetmap.org/copyright/"
+  },
+  {
+   "t": "Improve this map",
+   "h": "https://apps.mapbox.com/feedback/?owner=mapbox&id=streets-v11&access_token=REDACTED#/-73.978/40.751/11.8"
+  },
+  {
+   "t": "",
+   "h": "https://www.superworldapp.com/how-it-works"
+  },
+  {
+   "t": "",
+   "h": "https://www.superworldapp.com/get-in-touch"
+  },
+  {
+   "t": "",
+   "h": "https://discord.com/invite/ZUMJjrg4nx"
+  },
+  {
+   "t": "",
+   "h": "https://www.superworldapp.com/faq"
+  },
+  {
+   "t": "",
+   "h": "https://www.superworldapp.com/"
+  },
+  {
+   "t": "",
+   "h": "https://map.superworldapp.com/product-roadmap"
+  }
+ ],
+ "cols": [
+  [
+   "rgb(26, 26, 26)",
+   410
+  ],
+  [
+   "rgb(0, 0, 0)",
+   170
+  ],
+  [
+   "rgb(66, 66, 66)",
+   103
+  ],
+  [
+   "rgb(255, 255, 255)",
+   71
+  ],
+  [
+   "rgba(255, 255, 255, 0.7)",
+   20
+  ],
+  [
+   "rgb(11, 13, 18)",
+   20
+  ],
+  [
+   "rgba(15, 17, 21, 0.08)",
+   14
+  ],
+  [
+   "rgba(255, 255, 255, 0.3)",
+   12
+  ],
+  [
+   "rgba(128, 128, 128, 0.16)",
+   10
+  ],
+  [
+   "rgb(255, 171, 0)",
+   10
+  ],
+  [
+   "rgba(15, 17, 21, 0.82)",
+   9
+  ],
+  [
+   "rgb(0, 0, 238)",
+   8
+  ],
+  [
+   "rgb(224, 224, 224)",
+   8
+  ],
+  [
+   "rgb(122, 92, 18)",
+   7
+  ],
+  [
+   "rgb(232, 232, 232)",
+   6
+  ],
+  [
+   "rgba(0, 0, 0, 0.75)",
+   6
+  ],
+  [
+   "rgba(15, 17, 21, 0.9)",
+   6
+  ],
+  [
+   "rgba(255, 255, 255, 0.5)",
+   3
+  ],
+  [
+   "rgb(245, 245, 245)",
+   2
+  ],
+  [
+   "rgb(160, 167, 180)",
+   2
+  ],
+  [
+   "rgba(0, 0, 0, 0.54)",
+   2
+  ],
+  [
+   "rgba(97, 97, 97, 0.9)",
+   2
+  ],
+  [
+   "rgba(201, 162, 39, 0.15)",
+   1
+  ],
+  [
+   "rgba(201, 162, 39, 0.5)",
+   1
+  ],
+  [
+   "rgb(225, 25, 17)",
+   1
+  ]
+ ],
+ "fonts": [
+  [
+   "Gibson, \"sans-serif\", Helvetica, Arial",
+   301
+  ],
+  [
+   "\"Times New Roman\"",
+   82
+  ],
+  [
+   "Arial",
+   18
+  ],
+  [
+   "\"Helvetica Neue\", Arial, Helvetica, sans-serif",
+   17
+  ],
+  [
+   "Gibson, sans-serif",
+   4
+  ],
+  [
+   "GibsonSemiBold",
+   4
+  ]
+ ]
+}

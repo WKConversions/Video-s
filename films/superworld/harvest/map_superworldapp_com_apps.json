@@ -1,0 +1,159 @@
+{
+ "url": "https://map.superworldapp.com/apps",
+ "title": "SuperWorld: your world, mapped by you and your friends",
+ "text": "SuperWorld\n\nBUY $SPWR\n\nLeaderboard\n\nWorlds\nStudio\n\nFEATURED APP\n\nNews + Game Theory Predictions\n\nNews with predictions based on Game Theory.\n\nOpen\nNews\n\nApps\n\nInteractive experiences you open right on the map.\n\nNEWS\n\nNews + Game Theory Predictions\n\nNews with predictions based on Game Theory.\n\nTOUR\n\nPostcards\n\nSpin the rack, play the map tour, and collect a postcard from every place you visit.\n\nMYSTERY\n\nDisclosure — The UAP / UFO Files\n\nReal declassified UAP/UFO files from the U.S. government's PURSUE release (war.gov) — Pentagon, CIA, FBI, and NASA records, mapped for you to read and judge.\n\nVISUALIZATION\n\nTheories of Everything\n\nVisually explore the competing theories behind the great questions — each rebuilt as an interactive, animated 3D world you can scrub through time. First up: five theories of how the Pyramids were built.\n\nADVENTURE\n\nTreasure Hunt\n\nDecode clues on a hand-drawn chart, dig up lost artifacts, and uncover the real history behind them.\n\nMULTIPLAYER\n\nParty World\n\nHang out with friends by voice in 3D worlds (Gaussian Splat, GLB). Pick your avatar, meet up in a captured world like Chichén Itzá, then walk, fly and wave together.\n\nCOMMUNITY\n\nNetwork States\n\nFly the globe from Próspera to the Network School — the real startup societies building new countries, one stop at a time.\n\nCOMMUNITY\n\nCryptoMondays\n\nVisit the CryptoMondays chapters around the world — the largest recurring crypto meetup, every Monday, free and open to all.\n\nVIEWER\n\nSpaceTime\n\nImmersive viewing of real environments and objects captured as Gaussian splats — fly around places rebuilt from photographs as fields of light.\n\nPORTFOLIO\n\nAround the World\n\nWish you were here...\n\nCOMMUNITY\n\nMy Community\n\nThe organizations and places that make up this community.\n\nMake your own app\n\n— Open Studio\n\nHome\n\nMap\n\nProperties\n\nApps\n\nChat\n\n🕹️\n\nApps built on Earth\n\nPlayable worlds, tours and stories on the real map.\n\n🧭\n\nExplore — tours, expeditions, investigations, globes.\n\n🛠️\n\nBuild yours — SuperWorld Studio templates, no code.\n\n💰\n\nCreators earn — from the apps they build.\n\nGot it",
+ "links": [
+  {
+   "t": "SuperWorld",
+   "h": "https://map.superworldapp.com/home"
+  },
+  {
+   "t": "",
+   "h": "https://www.superworldapp.com/how-it-works"
+  },
+  {
+   "t": "",
+   "h": "https://www.superworldapp.com/get-in-touch"
+  },
+  {
+   "t": "",
+   "h": "https://discord.com/invite/ZUMJjrg4nx"
+  },
+  {
+   "t": "",
+   "h": "https://www.superworldapp.com/faq"
+  },
+  {
+   "t": "",
+   "h": "https://www.superworldapp.com/"
+  },
+  {
+   "t": "",
+   "h": "https://map.superworldapp.com/product-roadmap"
+  }
+ ],
+ "cols": [
+  [
+   "rgb(255, 255, 255)",
+   242
+  ],
+  [
+   "rgb(26, 26, 26)",
+   140
+  ],
+  [
+   "rgb(0, 0, 0)",
+   108
+  ],
+  [
+   "rgb(66, 66, 66)",
+   92
+  ],
+  [
+   "rgba(255, 255, 255, 0.72)",
+   22
+  ],
+  [
+   "rgb(11, 13, 18)",
+   20
+  ],
+  [
+   "rgba(255, 255, 255, 0.08)",
+   11
+  ],
+  [
+   "rgba(8, 11, 18, 0.55)",
+   11
+  ],
+  [
+   "rgba(255, 255, 255, 0.5)",
+   10
+  ],
+  [
+   "rgb(7, 8, 12)",
+   9
+  ],
+  [
+   "rgba(255, 255, 255, 0.32)",
+   8
+  ],
+  [
+   "rgb(122, 92, 18)",
+   7
+  ],
+  [
+   "rgb(0, 0, 238)",
+   6
+  ],
+  [
+   "rgb(224, 224, 224)",
+   5
+  ],
+  [
+   "rgb(79, 124, 255)",
+   3
+  ],
+  [
+   "rgb(181, 113, 58)",
+   3
+  ],
+  [
+   "rgba(181, 113, 58, 0.4)",
+   3
+  ],
+  [
+   "rgb(232, 232, 232)",
+   3
+  ],
+  [
+   "rgb(245, 245, 245)",
+   2
+  ],
+  [
+   "rgba(8, 12, 20, 0.5)",
+   2
+  ],
+  [
+   "rgba(255, 255, 255, 0.12)",
+   2
+  ],
+  [
+   "rgba(255, 255, 255, 0.55)",
+   2
+  ],
+  [
+   "rgba(15, 17, 21, 0.08)",
+   2
+  ],
+  [
+   "rgba(201, 162, 39, 0.15)",
+   1
+  ],
+  [
+   "rgba(201, 162, 39, 0.5)",
+   1
+  ]
+ ],
+ "fonts": [
+  [
+   "Gibson, \"sans-serif\", Helvetica, Arial",
+   278
+  ],
+  [
+   "\"Times New Roman\"",
+   53
+  ],
+  [
+   "Arial",
+   6
+  ],
+  [
+   "Gibson, sans-serif",
+   4
+  ],
+  [
+   "GibsonSemiBold",
+   4
+  ]
+ ]
+}

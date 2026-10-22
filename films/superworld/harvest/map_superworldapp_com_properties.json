@@ -1,0 +1,43 @@
+{
+ "url": "https://map.superworldapp.com/properties",
+ "title": "SuperWorld: your world, mapped by you and your friends",
+ "text": "404\nPage not found\n\nThe page you are looking for does not exist or has been moved.\n\nGo To Home",
+ "links": [
+  {
+   "t": "Go To Home",
+   "h": "https://map.superworldapp.com/map/worlds"
+  }
+ ],
+ "cols": [
+  [
+   "rgb(0, 0, 0)",
+   98
+  ],
+  [
+   "rgb(26, 26, 26)",
+   10
+  ],
+  [
+   "rgb(66, 66, 66)",
+   4
+  ],
+  [
+   "rgb(255, 255, 255)",
+   3
+  ],
+  [
+   "rgb(39, 111, 243)",
+   1
+  ]
+ ],
+ "fonts": [
+  [
+   "\"Times New Roman\"",
+   49
+  ],
+  [
+   "Gibson, \"sans-serif\", Helvetica, Arial",
+   8
+  ]
+ ]
+}
