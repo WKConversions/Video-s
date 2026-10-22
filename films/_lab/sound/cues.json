@@ -1,0 +1,183 @@
+{
+ "fps": 60,
+ "frames": 543,
+ "library": "../../alumni/sound/lib",
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "duck_db": 0,
+  "fade_in": 0.3,
+  "fade_out": 1.0,
+  "lufs": -30
+ },
+ "sfx": [
+  {
+   "id": "gen-appear",
+   "frame": 42,
+   "db": -4,
+   "pitch": 0
+  },
+  {
+   "id": "gen-swell",
+   "frame": 58,
+   "db": -2,
+   "pitch": 0
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 87,
+   "db": -2,
+   "pitch": 0
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 132,
+   "db": 0,
+   "pitch": 0
+  },
+  {
+   "id": "gen-riser-1s",
+   "frame": 210,
+   "db": -2,
+   "pitch": 0
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 216,
+   "db": 0,
+   "pitch": 0
+  },
+  {
+   "id": "kenney-tick-004",
+   "frame": 237,
+   "db": -8,
+   "pitch": 0
+  },
+  {
+   "id": "kenney-tick-004",
+   "frame": 243,
+   "db": -8,
+   "pitch": 1
+  },
+  {
+   "id": "kenney-tick-004",
+   "frame": 249,
+   "db": -8,
+   "pitch": 2
+  },
+  {
+   "id": "kenney-tick-004",
+   "frame": 255,
+   "db": -8,
+   "pitch": 0
+  },
+  {
+   "id": "kenney-tick-004",
+   "frame": 261,
+   "db": -8,
+   "pitch": 1
+  },
+  {
+   "id": "kenney-tick-004",
+   "frame": 267,
+   "db": -8,
+   "pitch": 2
+  },
+  {
+   "id": "kenney-tick-004",
+   "frame": 273,
+   "db": -8,
+   "pitch": 0
+  },
+  {
+   "id": "kenney-tick-004",
+   "frame": 279,
+   "db": -8,
+   "pitch": 1
+  },
+  {
+   "id": "kenney-click-001",
+   "frame": 285,
+   "db": -2,
+   "pitch": 0
+  },
+  {
+   "id": "gen-whoosh-whip",
+   "frame": 303,
+   "db": 0,
+   "pitch": 0
+  },
+  {
+   "id": "gen-pop",
+   "frame": 318,
+   "db": -3,
+   "pitch": 0
+  },
+  {
+   "id": "gen-pop",
+   "frame": 329,
+   "db": -3,
+   "pitch": 2
+  },
+  {
+   "id": "gen-pop",
+   "frame": 340,
+   "db": -3,
+   "pitch": 4
+  },
+  {
+   "id": "gen-chime",
+   "frame": 352,
+   "db": -3,
+   "pitch": 0
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 369,
+   "db": -2,
+   "pitch": 0
+  },
+  {
+   "id": "kenney-drop-003",
+   "frame": 377,
+   "db": -4,
+   "pitch": 0
+  },
+  {
+   "id": "kenney-drop-003",
+   "frame": 384,
+   "db": -4,
+   "pitch": 2
+  },
+  {
+   "id": "kenney-drop-003",
+   "frame": 391,
+   "db": -4,
+   "pitch": 4
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 447,
+   "db": 0,
+   "pitch": 0
+  },
+  {
+   "id": "gen-swell",
+   "frame": 447,
+   "db": -3,
+   "pitch": 0
+  },
+  {
+   "id": "gen-success",
+   "frame": 462,
+   "db": -1,
+   "pitch": 0
+  },
+  {
+   "id": "gen-appear",
+   "frame": 489,
+   "db": -5,
+   "pitch": 0
+  }
+ ]
+}

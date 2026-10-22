@@ -32,3 +32,6 @@ films/fuf/sound/music/
 films/_lab/models/
 films/_lab/stock/
 films/_lab/film/out/
+films/_lab/film/public/footage/*.mp4
+films/_lab/track/
+films/_lab/ref/frames/
