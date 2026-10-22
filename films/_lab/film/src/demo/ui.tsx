@@ -56,7 +56,7 @@ export const PhoneWake: React.FC<{ t: number; logoZ?: number }> = ({ t, logoZ })
   const drift = mix(1.07, 1.0, clamp01(t / 2.2));
   const driftY = mix(-14, 8, clamp01(t / 2.2));
   const z = logoZ ?? 0;
-  const shadowK = clamp01(z / 30) * (1 - ramp(z, 160, 400, (x) => x));
+  const shadowK = clamp01(z / 30) * (1 - ramp(z, 120, 300, (x) => x));
 
   return (
     <div style={{ position: "relative", width: WAKE_W, height: WAKE_H, overflow: "hidden", background: "#020303" }}>
@@ -92,9 +92,9 @@ export const PhoneWake: React.FC<{ t: number; logoZ?: number }> = ({ t, logoZ })
       )}
       {t >= 1.38 && logoZ !== undefined && shadowK > 0.001 && (
         <div style={{
-          position: "absolute", left: WAKE_LOGO.x, top: WAKE_LOGO.y, opacity: 0.42 * shadowK * logoIn,
-          transform: `translate(${z * 0.06}px, ${z * 0.42}px) scale(${1 + z * 0.0012})`,
-          filter: `brightness(0) blur(${2 + z * 0.13}px)`,
+          position: "absolute", left: WAKE_LOGO.x, top: WAKE_LOGO.y, opacity: 0.26 * shadowK * logoIn,
+          transform: `translate(${z * 0.04}px, ${z * 0.22}px) scale(${1 + z * 0.0015})`,
+          filter: `brightness(0) blur(${4 + z * 0.22}px)`,
         }}>
           <Wordmark w={LOGO_W} />
         </div>
@@ -120,7 +120,7 @@ const T_RELEASE = 1.055;
 export const PHONE_FORM_GLOW = (_t: number): number => 1;
 const fieldIn = (t: number) => ramp(t, 0.2, 0.3);
 /** the field's height above the glass (UI px): it lifts toward the camera on a spring as the typing starts */
-export const FORM_FIELD_LIFT = (t: number) => 95 * springAt(t, 0.46, { damping: 12, stiffness: 115, mass: 0.9 });
+export const FORM_FIELD_LIFT = (t: number) => 120 * springAt(t, 0.46, { damping: 12, stiffness: 115, mass: 0.9 });
 
 /** The text field (the break-out layer): FORM_FIELD.w × FORM_FIELD.h. focus 0..1 tints the border sage. */
 export const FormField: React.FC<{ t: number; focus?: number }> = ({ t, focus = 0 }) => {
@@ -161,8 +161,8 @@ export const PhoneForm: React.FC<{ t: number; fieldZ?: number }> = ({ t, fieldZ 
 
   return (
     <div style={{ position: "relative", width: FORM_W, height: FORM_H, overflow: "hidden", background: C.bg }}>
-      {/* wordmark */}
-      <div style={{ position: "absolute", left: 0, top: 120, width: FORM_W, display: "flex", justifyContent: "center" }}>
+      {/* wordmark (bottom: the top of this screen is out of the footage) */}
+      <div style={{ position: "absolute", left: 0, top: 1150, width: FORM_W, display: "flex", justifyContent: "center", opacity: labelIn }}>
         <Wordmark w={180} dark />
       </div>
       {/* label */}
@@ -188,7 +188,7 @@ export const PhoneForm: React.FC<{ t: number; fieldZ?: number }> = ({ t, fieldZ 
             <div style={{
               position: "absolute", left: FORM_FIELD.x, top: FORM_FIELD.y, width: FORM_FIELD.w, height: FORM_FIELD.h,
               borderRadius: 24, background: "rgba(26,22,20,1)", opacity: 0.22 * shadowK * fk,
-              transform: `translate(${z * 0.05}px, ${z * 0.4}px) scale(${1 + z * 0.001})`, filter: `blur(${6 + z * 0.16}px)`,
+              transform: `translate(${z * 0.04}px, ${z * 0.3}px) scale(${1 + z * 0.001})`, filter: `blur(${6 + z * 0.16}px)`,
             }} />
           )}
         </>

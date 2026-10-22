@@ -196,34 +196,46 @@ const blurPlan = (camAt: (tc: number) => Cam, t: number, tEnd: number) => {
     const p = camInv(c, F), p0 = camPt(c0, p), p1 = camPt(c1, p);
     disp = Math.max(disp, Math.hypot(p1[0] - p0[0], p1[1] - p0[1]));
   }
-  const n = Math.max(1, Math.min(10, Math.ceil(disp / 7)));
+  const n = Math.max(1, Math.min(12, Math.ceil(disp / 5)));
   /** the sample times for m samples (m = 1 in the Studio preview: a plain blur stands in) */
   const at = (m: number) => m <= 1
     ? { times: [t], blur: disp > 2.5 ? Math.min(14, disp * 0.3) : 0 }
-    : { times: Array.from({ length: m }, (_, i) => mix(a, b, i / (m - 1))), blur: Math.min(14, (disp / (m - 1)) * 0.55) };
+    : { times: Array.from({ length: m }, (_, i) => mix(a, b, i / (m - 1))), blur: Math.min(10, (disp / (m - 1)) * 0.45) };
   return { n, at, disp };
 };
 
 // ───────────────────────── the scene
-/** a plane parallel to the screen at height z (UI px), seen by the camera: corners in frame px, its depth ratio
- * (screen depth / layer depth, > 1 = nearer than the glass) and whether it is still in front of the lens */
-const floatQuad = (P: Pose, H: M3, cam: Cam, x: number, y: number, w: number, h: number, zTop: number, zBot: number) => {
+/** a card floating above the screen (UI box x, y, w, h at height z, UI px), seen by the camera: its corners in frame
+ * px, its depth ratio (glass depth / card depth, > 1 = nearer than the glass) and whether it is still before the lens.
+ * face 0..1 turns the card from the glass's plane toward the lens; launch 0..1 sends it along its line of sight to a
+ * point aimUp above the lens (1 = at the lens), so it grows and flies past the camera. */
+const floatQuad = (P: Pose, H: M3, cam: Cam, x: number, y: number, w: number, h: number, z: number, face = 0, launch = 0, aimUp = 0) => {
   // the 2D zoom is read as a dolly toward the anchor's point on the plane (k = 1 - 1/s), which gives the parallax
   const k = 1 - 1 / cam.s;
-  const Hi = hInv(H);
-  const A = hApply(Hi, cam.ax, cam.ay);
+  const A = hApply(hInv(H), cam.ax, cam.ay);
   const T = sc3(world(P, A[0], A[1], 0), k);
   const co = Math.cos(cam.th), si = Math.sin(cam.th);
+  const cu = x + w / 2, cv = y + h / 2;
+  const C0 = world(P, cu, cv, z);
+  const Xc = add3(C0, sc3(T, -1));
+  const Cn = add3(Xc, sc3(add3([0, -aimUp, 0], sc3(Xc, -1)), launch));
+  // Rodrigues: turn the plane normal toward the lens (0, 0, -1) by `face`
+  const tgt: V3 = [0, 0, -1];
+  const ax0 = cross3(P.n, tgt), sinA = Math.hypot(ax0[0], ax0[1], ax0[2]);
+  const ax = sinA > 1e-6 ? sc3(ax0, 1 / sinA) : ([1, 0, 0] as V3);
+  const ang = Math.atan2(sinA, dot3(P.n, tgt)) * face, ca = Math.cos(ang), sa = Math.sin(ang);
+  const rot = (v: V3): V3 => add3(add3(sc3(v, ca), sc3(cross3(ax, v), sa)), sc3(ax, dot3(ax, v) * (1 - ca)));
   let minZ = Infinity;
-  const corners = ([[x, y, zTop], [x + w, y, zTop], [x + w, y + h, zBot], [x, y + h, zBot]] as V3[]).map(([u, v, z]) => {
-    const Xl = add3(world(P, u, v, z), sc3(T, -1)), Xf = add3(world(P, u, v, 0), sc3(T, -1));
+  const corners = ([[x, y], [x + w, y], [x + w, y + h], [x, y + h]] as Pt[]).map(([u, v]) => {
+    const Xl = add3(Cn, rot(add3(world(P, u, v, z), sc3(C0, -1))));
+    const Xf = add3(world(P, u, v, 0), sc3(T, -1));
     minZ = Math.min(minZ, Xl[2]);
     const a = project(Xl), b = project(Xf), f = camPt(cam, hApply(H, u, v));
     const dx = a[0] - b[0], dy = a[1] - b[1];
     return [f[0] + co * dx - si * dy, f[1] + si * dx + co * dy] as Pt;
   }) as Quad;
-  const zScreen = world(P, x + w / 2, y + h / 2, 0)[2] - T[2];
-  return { q: corners, ratio: zScreen / Math.max(1e-3, minZ), visible: minZ > 0.03 * zScreen };
+  const zScreen = world(P, cu, cv, 0)[2] - T[2];
+  return { q: corners, ratio: zScreen / Math.max(1e-3, minZ), visible: minZ > 0.04 * zScreen };
 };
 
 interface SceneProps {
@@ -322,8 +334,14 @@ const roundCam = (tc: number, q: Quad, H: M3): Cam => {
   const kTh = ramp(tc, J1_ROLL, ROUND_LAST - J1_ROLL, Easing.bezier(0.5, 0, 0.3, 1));
   return ensureCover(lerpCam({ ...base, s: base.s * (1 - antic) }, fill, kS, kA, kTh), q);
 };
-/** the wordmark: lifts off the glass on a spring, then launches at the lens as the camera dives */
-const roundLogoZ = (t: number) => WAKE_LOGO_LIFT(t) + 1100 * ramp(t, 1.86, ROUND_LAST - 1.86 + 0.02, Easing.bezier(0.5, 0, 0.9, 0.4));
+/** the wordmark: lifts off the glass on a spring (tilting up toward us), then turns to face the lens and flies past
+ * it as the camera dives */
+const LAUNCH = Easing.bezier(0.55, 0, 0.85, 0.35);
+const roundLogo = (t: number) => {
+  const lift = WAKE_LOGO_LIFT(t);
+  const launch = 0.97 * ramp(t, 1.9, ROUND_LAST - 0.03 - 1.9, LAUNCH);
+  return { z: lift + 60 * launch, face: 0.3 * clamp01(lift / 70) + 0.7 * ramp(t, 1.88, 0.22, INOUT), launch };
+};
 
 /** the glass ring: a thin ring of sage light on the stone, rippling out from under the phone as the screen blooms */
 const GlassRing: React.FC<{ t: number; P: Pose; H: M3; id: string }> = ({ t, P, H, id }) => {
@@ -378,7 +396,7 @@ export const RoundShot: React.FC<{ t: number }> = ({ t }) => {
   const plan = blurPlan(camAt, t, ROUND_LAST);
   const foot = useFootage("footage/seg_round.mp4", t, plan.n, 0);
   const shot = plan.at(foot.samples);
-  const z = roundLogoZ(t);
+  const logo = roundLogo(t);
   const glow = PHONE_WAKE_GLOW(t);
   const dive = ramp(t, J1_DIVE, ROUND_LAST - J1_DIVE, (x) => x);
   const L = WAKE_LOGO;
@@ -386,11 +404,11 @@ export const RoundShot: React.FC<{ t: number }> = ({ t }) => {
     <AbsoluteFill style={{ background: "#000", overflow: "hidden" }}>
       <Shutter times={shot.times} blur={shot.blur} render={(tc, i) => {
         const cam = camAt(tc);
-        const fq = t >= 1.38 ? floatQuad(P, H, cam, L.x, L.y, L.w, L.h, z, z) : null;
+        const fq = t >= 1.38 ? floatQuad(P, H, cam, L.x, L.y, L.w, L.h, logo.z, logo.face, logo.launch, 260) : null;
         const fade = fq ? 1 - ramp(fq.ratio, 2.6, 3.4, (x) => x) : 0;
         return (
           <Scene video={foot.video(i)} cam={cam} q={q} uiW={WAKE_W} uiH={WAKE_H} glow={glow} spill={1}
-            ui={<PhoneWake t={t} logoZ={z} />} under={<GlassRing t={t} P={P} H={H} id={`r${i}`} />}
+            ui={<PhoneWake t={t} logoZ={logo.z + 500 * logo.launch} />} under={<GlassRing t={t} P={P} H={H} id={`r${i}`} />}
             over={fq && fq.visible && fade > 0.01 ? (
               <OnQuad w={L.w} h={L.h} q={fq.q} style={{ overflow: "visible", opacity: fade,
                 filter: fq.ratio > 1.15 ? `blur(${Math.min(30, (fq.ratio - 1.1) * 9).toFixed(2)}px)` : undefined }}>
@@ -430,8 +448,12 @@ const woodCam = (tc: number, q: Quad, H: M3): Cam => {
   c = lerpCam(c, fillOut, kS, kA, kTh);
   return ensureCover(c, q);
 };
-/** the field: lifts toward the camera while it types, then rides the dive past the lens */
-const woodFieldZ = (t: number) => FORM_FIELD_LIFT(t) + 900 * ramp(t, 1.12, WOOD_LAST - 1.12 + 0.03, Easing.bezier(0.5, 0, 0.9, 0.4));
+/** the field: lifts toward the camera while it types (tilting up toward us), then flies past the lens on the dive */
+const woodField = (t: number) => {
+  const lift = FORM_FIELD_LIFT(t);
+  const launch = 0.97 * ramp(t, 1.1, WOOD_LAST - 0.03 - 1.1, LAUNCH);
+  return { z: lift, face: 0.35 * clamp01(lift / 120) + 0.65 * ramp(t, 1.06, 0.25, INOUT), launch };
+};
 
 export const WoodShot: React.FC<{ t: number }> = ({ t }) => {
   const q = quadAt(WQ, t);
@@ -439,23 +461,22 @@ export const WoodShot: React.FC<{ t: number }> = ({ t }) => {
   const P = poseOf(H);
   const camAt = (tc: number) => woodCam(tc, q, H);
   const plan = blurPlan(camAt, t, WOOD_LAST);
-  const z = woodFieldZ(t);
-  const lifted = clamp01(FORM_FIELD_LIFT(t) / 95);
+  const fld = woodField(t);
+  const lifted = clamp01(FORM_FIELD_LIFT(t) / 120);
   const out = ramp(t, 0, J2_END, OUT) * (1 - ramp(t, J3_DIVE, WOOD_LAST - J3_DIVE, (x) => x));
   // a touch of rack focus: the slats soften while the field floats toward the lens
   const foot = useFootage("footage/seg_wood.mp4", t, plan.n, 1.4 * lifted * out);
   const shot = plan.at(foot.samples);
   const F = FORM_FIELD, M = 40; // the floating card carries a margin for its glow
-  const tilt = 10 * lifted;
   return (
     <AbsoluteFill style={{ background: "#000", overflow: "hidden" }}>
       <Shutter times={shot.times} blur={shot.blur} render={(tc, i) => {
         const cam = camAt(tc);
-        const fq = floatQuad(P, H, cam, F.x - M, F.y - M, F.w + 2 * M, F.h + 2 * M, z + tilt, z - tilt);
+        const fq = floatQuad(P, H, cam, F.x - M, F.y - M, F.w + 2 * M, F.h + 2 * M, fld.z, fld.face, fld.launch, 200);
         const fade = 1 - ramp(fq.ratio, 2.6, 3.0, (x) => x);
         return (
           <Scene video={foot.video(i)} cam={cam} q={q} uiW={FORM_W} uiH={FORM_H} glow={1} spill={0.7}
-            ui={<PhoneForm t={t} fieldZ={z} />}
+            ui={<PhoneForm t={t} fieldZ={fld.z + 400 * fld.launch} />}
             over={fq.visible && fade > 0.01 ? (
               <OnQuad w={F.w + 2 * M} h={F.h + 2 * M} q={fq.q} style={{ opacity: fade,
                 filter: fq.ratio > 1.15 ? `blur(${Math.min(30, (fq.ratio - 1.1) * 9).toFixed(2)}px)` : undefined }}>
