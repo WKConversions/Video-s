@@ -133,11 +133,11 @@ instructions. Before step 1, read the recurring lessons at the top of `examples/
 | 7 | Composition | a styleframe per key scene: primary, secondary, detail; few, big things (Karl's references keep about 4 separate things on screen); framing, type, and UI where an interface is the subject | `design/visual-hierarchy.md`, `design/composition.md`, `design/typography.md`, `design/ui-product.md` |
 | 8 | Variety check | the whole storyboard against the variety budget | `design/composition.md` |
 | 9 | Motion and continuity | cause→motion→consequence chains, camera, timing and sync (the brief's tone row), a speed graph chosen for each move, the continuity table, transitions, sound | `motion/animation-grammar.md`, `motion/camera.md`, `motion/timing.md`, `motion/speed-graphs.md`, `motion/easing.md`, `motion/continuity.md`, `motion/transitions.md`, `references/technique-catalogue.md`, `motion/sound.md` |
-| 10 | Assets | what each scene is made of; royalty-free photos and footage sourced and credited (`scripts/stock.py`); asset and tool requests for the rest | `design/asset-strategy.md`, `production/tool-requests.md`, `production/mcp-tools.md` |
+| 10 | Assets | what each scene is made of; royalty-free photos and footage sourced and credited (`scripts/stock.py`); realistic shots (tracked real footage, Blender plates, photo to 2.5D) with free means; asset and tool requests for the rest | `design/asset-strategy.md`, `production/realism.md`, `production/tool-requests.md`, `production/mcp-tools.md` |
 | 11 | First storyboard | the scene spec for every scene, condensed into the storyboard page, with a frame per phrase (at least three per beat) made by the build itself | `production/output-format.md`, `production/remotion.md` (or `production/coded-render.md`), `examples/scene-examples.md` |
 | 12 | Art-director pass | independent reviews (story, truth, legibility, brand), then cold eyes; notes become decisions; revise until the stop rule; the tells check; the revision log as Before / After / Why rows | `evaluation/art-director.md`, `evaluation/tells.md`, `evaluation/troubleshooting.md` |
 | 13 | Final plan and approval | the production plan and its storyboard; the storyboard goes to Karl; stop and ask about music and voice-over (without a track: find one or compose one to the film's vibe) | `production/output-format.md`, `planning/intake.md`, `motion/sound.md` |
-| 14 | Build | After Effects when the session has it, otherwise a Remotion project (the plain coded render as a fallback), or a hand-off; say which, and what Karl will get. Motion tokens first; test frames and a draft before the blurred render; the voice-over placed on its words; the sound mixed from a cue sheet (Karl's effects picked by ear for the film's vibe and placed by the speed graph, the cues written against the timing labels, the music fitted or composed; an original score on sampled instruments when the client wants music without rights, checked by measurement) | `production/remotion.md`, `production/build-gotchas.md`, `planning/voice-over.md`, `motion/sound.md`, `production/after-effects.md`, `production/coded-render.md`, `scripts/index.md` |
+| 14 | Build | After Effects when the session has it, otherwise a Remotion project (the plain coded render as a fallback), or a hand-off; say which, and what Karl will get. Motion tokens first; test frames and a draft before the blurred render; the voice-over placed on its words; the sound mixed from a cue sheet (Karl's effects picked by ear for the film's vibe and placed by the speed graph, the cues written against the timing labels, the music fitted or composed; an original score on sampled instruments when the client wants music without rights, checked by measurement) | `production/remotion.md`, `production/build-gotchas.md`, `production/realism.md`, `planning/voice-over.md`, `motion/sound.md`, `production/after-effects.md`, `production/coded-render.md`, `scripts/index.md` |
 | 15 | Quality check | test frames, then the encode; the motion probe on the project (`scripts/motion_probe.py`: no camera spikes, lurches, pops past size or flying); the automatic checks (`scripts/qc.sh`: motion, shake, pops, busy, transition strips; `scripts/phrase_check.py check`: a new visual on every phrase) on the draft and the final; tells, brand colours and contrast measured; the mix's level report; what couldn't run reported as not checked; findings ranked by severity; the scorecard; the three biggest changes | `evaluation/quality-check.md`, `evaluation/troubleshooting.md` |
 | 16 | Learn | turn Karl's feedback into corrections, and approved solutions into examples | `examples/corrections.md` |
 
@@ -179,6 +179,8 @@ Use the steps a task needs:
 - **After Effects work:** `production/after-effects.md`. An .aep Karl sends as a reference: read it with
   `scripts/ae_read.py` (keyframes, eases, speed graphs) and file what it teaches in `motion/speed-graphs.md`.
 - **Remotion work** (a new project, edits to one, a template for many clients): `production/remotion.md`.
+- **Realistic or "IRL" shots** (real devices, footage with live screens, 3D devices, photo to 2.5D), with free
+  means only: `production/realism.md`; motion design on top, never a linear drift over stock.
 - **A revision Karl is waiting for:** straight to the video. Read his note and the corrections, change the
   build directly (no planning panels or extra passes he didn't ask for), render the draft with the mix,
   send the preview, then list what wasn't checked (blurred render, full QC) and offer it. Give honest time
@@ -199,6 +201,8 @@ read a reference video or URL (transcript and key frames), `exa` to research and
 
 ## Working with Karl
 
+- Say the generation time when a job starts (minutes from now and Karl's local time); when he asks for a quick
+  preview, send the smallest convincing one first.
 - Use the script as written; suggest changes in the storyboard notes instead of rewriting silently.
 - Say which assumptions you made: format, style mapping, which submission.
 - **Learning loop.** When Karl gives concrete feedback on a result, find the reusable principle,

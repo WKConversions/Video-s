@@ -9,6 +9,8 @@ planning; read the entries of the categories you are working on when a decision 
 - Give every beat its own idea; one example can run through a film, one device can't answer every
   line.
 - Constant, purposeful motion: nothing static, nothing useless; the camera never locks.
+- Reach the motion norm with motion that means something: content that streams, piles up or plays. Drift added
+  to keep the frame moving, text sliding left and right, reads as useless (VoxFlow).
 - Smooth before everything: the camera only breathes, nothing lurches, nothing pops past its size in a clean
   film, nothing flies around; liveliness comes from the content, never from camera moves (K.B, approved).
 - Clear before busy: one thing to watch at a time; when the eye can't tell what to look at, take things away.
@@ -28,6 +30,14 @@ planning; read the entries of the categories you are working on when a decision 
 - Show only the product's real interface and copy; never a feature it doesn't have.
 - When Karl is waiting for a revision, go straight to the video: build the fix, render, send; no planning panels
   or extra passes he didn't ask for, and honest time estimates.
+- Apple style, as Karl means it: the background calm and still, all motion in the foreground (heavy springs,
+  morphs, Apple transitions), never a still frame, a new visual every 0.5–0.8 s, 60 fps, sound-effect dominant
+  over a quiet music bed (louder bed only when there is no voice-over).
+- The client's own brand, always: harvested from their site, never another client's look.
+- A film that replaces a client's old video shares nothing with it: list what the old one did as EXCLUDED first.
+- Realistic frames are motion design too: a speed-ramped virtual camera, zoom-through joints, UI breaking out of
+  the screen (`production/realism.md`); real footage under a linear drift reads as stock, not design.
+- Say the generation time when a job starts; when Karl asks for a quick preview, send one first (minutes, not hours).
 
 ## Adding a correction
 
@@ -182,6 +192,19 @@ with the holds, phrases and beats marked; drawn by `qc.sh` and sent with every d
 (`evaluation/quality-check.md`, `production/output-format.md`).
 GENERAL LESSON: Show the motion, not just the numbers.
 
+CATEGORY: Animation / motion density
+DATE / PROJECT: October 2026, VoxFlow film
+ORIGINAL IDEA: "Working holds": layers and the headline drifted 1–2.6 px a frame to keep the frame moving.
+WHY IT WAS WEAK: Karl: "no useless animations, for example the text obviously moving left and right".
+USER CORRECTION: "no useless animations, for example the text obviously moving left and right"; "I want the 4%
+norm".
+FINAL APPROACH: Nothing drifts, and nothing with text on it slides across the frame. Arrivals land in place on
+their word; whips move both scenes on one curve. The motion comes from the content: streams of calls,
+notifications and appointments piling up, live waveforms, a clock rolling through the night, footage of the
+practice and the caller; and one ramped camera push per shot, released only under full-frame changes. The median
+reached 4.1% of the frame in motion.
+GENERAL LESSON: Reach the motion norm with motion that means something; decorative drift reads as useless.
+
 ## Style corrections
 
 CATEGORY: Style
@@ -322,6 +345,56 @@ USER CORRECTION: Karl's brief: understand the meaning, choose the strongest visu
 the whole film, critique and revise before production.
 FINAL APPROACH: The planning workflow, the visual-strategy catalog, the art-director pass.
 GENERAL LESSON: Ask what the viewer needs to understand before asking what should move.
+
+## Apple-style, brand and realism corrections (October 2026)
+
+CATEGORY: Style / motion
+DATE / PROJECT: October 2026, TNOA 20 s (no voice-over)
+ORIGINAL IDEA: v1: four scenes on a gently drifting background, music-led, about 2% motion.
+WHY IT WAS WEAK: Apple films keep the background still and put all the motion in the foreground; four scenes in
+20 s is too few; the music drowned the effects.
+USER CORRECTION: "Background of Apple style videos normally aren't this moving." "I want way more visuals ...
+better transitions, Apple-like transitions and heavy Apple animations." "Apple is sound-effect dominant."
+FINAL APPROACH: v2: twelve shots (one every 1.5–1.8 s), a plain still background, springs that overshoot and
+settle, 3D card turns, the Dynamic Island, notification stacks, cover flow; an effect on every visible event over a
+quiet bed; 6.6% motion at 60 fps.
+GENERAL LESSON: Apple style = still background, heavy foreground motion, many visuals, effects-led mix. Measure
+the motion norm the brief names (`motion_check.py` median at 60 fps) and reach it with the foreground only.
+
+CATEGORY: Brand
+DATE / PROJECT: October 2026, TNOA
+ORIGINAL IDEA: Started from the previous client's (Creoble's) kit and colours.
+USER CORRECTION: "Not same branding as Creoble, this time from thenetworkofagents.com."
+FINAL APPROACH: Harvested TNOA's own colours and type from its site into a fresh kit.
+GENERAL LESSON: Every film starts from the client's own harvested brand; reused code keeps only the mechanics.
+
+CATEGORY: Process / concept
+DATE / PROJECT: October 2026, Future Unicorn Founders 42 s
+ORIGINAL IDEA: A first storyboard that, without meaning to, repeated much of the client's old video.
+USER CORRECTION: "A complete different approach from the past videos, because now your storyboard has a lot in
+common."
+FINAL APPROACH: Listed what the old video did as EXCLUDED, then built a new concept (tactile objects) around it.
+GENERAL LESSON: When a client wants to improve an old film, read it first and write the EXCLUDED list before any
+storyboard.
+
+CATEGORY: Realism / animation
+DATE / PROJECT: October 2026, realism demo (Upwork-ad style, Creoble brand)
+ORIGINAL IDEA: Real Mixkit phone footage with a tracked UI on the screen, slow linear drifts and plain cuts.
+WHY IT WAS WEAK: Real footage with a constant drift reads as stock footage, not motion design.
+USER CORRECTION: "The 3D frames and realistic frames look so linear and not really motion-design like."
+FINAL APPROACH: A virtual camera over footage and UI with speed ramps and a roll; joints that zoom through the
+screen into the next shot or pull out of a white screen; UI layers lifting off the glass with parallax and shadow;
+shutter motion blur; 3D camera orbits and rack focus in the 2D shots.
+GENERAL LESSON: Treat realistic material as a stage for motion design (`production/realism.md`).
+
+CATEGORY: Process / speed
+DATE / PROJECT: October 2026, realism demo
+USER CORRECTION: "I want max 10 minutes, I need to see it quickly." "Just tell me the generation time whenever you
+start."
+FINAL APPROACH: A 9 s preview in about 10 minutes (two parallel builders while the lead tracked the footage), the
+full version offered after.
+GENERAL LESSON: Give the generation time at the start of every job. When speed is asked for, ship the smallest
+convincing preview first and skip review rounds he didn't ask for.
 
 ## Process corrections
 

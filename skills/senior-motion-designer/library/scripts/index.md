@@ -23,6 +23,10 @@ saved file into the build folder.
 | `jitter_check.py` | finds shake: motion that moves in steps instead of gliding | `evaluation/quality-check.md` |
 | `handoff_check.py` | finds pops: a place that changes in one frame (a blink, a jump in size, a layer appearing) | `evaluation/quality-check.md` |
 | `strips.py` | strips of frames around every transition, or around given frames | `evaluation/quality-check.md` |
+| `track_quad.py` | tracks a phone or laptop screen through real footage (LK flow + homography on the surface plane), one quad per frame | `production/realism.md` |
+| `realism_kit.tsx` | pins a UI on a tracked or rendered screen (CSS matrix3d), the low-key grade and the screen's light spill | `production/realism.md` |
+| `realism_footage_example.tsx` | worked example: virtual camera over footage, zoom-through joints, break-out UI, shutter blur | `production/realism.md` |
+| `photo_layers.py` | a photo into depth + matte + cut-out with free ONNX models on CPU (Depth Anything V2, ISNet) | `production/realism.md` |
 | `sfx_index.py` | measures sound effects from their waveforms (sync point, hits, decay, loudness, pitch) and draws them | `motion/sound.md` |
 | `sfx_build.py` | trims and files Karl's sounds by role into `sound/sfx/`, writes the index and catalogue | `motion/sound.md` |
 | `sfx_synth.py` | generates whooshes, risers, impacts, a stamp, a shimmer and a swell with exact sync points | `motion/sound.md` |

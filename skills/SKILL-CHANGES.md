@@ -1,3 +1,28 @@
+# Update, 22 October 2026: Apple-style lessons and the realism module (approved by Karl)
+
+Upload `senior-motion-designer.zip` again to replace the skill; it contains everything below plus the Tale Forge
+changes further down.
+- **`examples/corrections.md`**:
+  - five new recurring lessons:
+    - Apple style (still background, foreground motion, a visual every 0.5–0.8 s, 60 fps, effects-led mix);
+    - the client's own brand;
+    - an EXCLUDED list against a client's old film;
+    - realistic frames as motion design;
+    - the generation time at the start, quick previews first;
+  - five dated entries (TNOA, FUF, the realism demo).
+- **New module `production/realism.md`**, realistic shots with free means:
+  - tracked Mixkit footage with live screens;
+  - motion design on top (virtual camera, zoom-through joints, break-out UI, shutter blur);
+  - Blender Cycles plates;
+  - three.js notes;
+  - photo to 2.5D.
+- **New scripts:** `track_quad.py`, `realism_kit.tsx`, `realism_footage_example.tsx`, `photo_layers.py`.
+- **SKILL.md:**
+  - steps 10 and 14 read `production/realism.md`;
+  - a new "Realistic or IRL shots" item in Other tasks;
+  - Working with Karl: say the generation time when a job starts.
+- **Library page:** the new module is listed.
+
 # senior-motion-designer: what changed (Tale Forge, October 2026)
 
 Upload `senior-motion-designer.zip` to replace the skill. The library inside it is the live library
