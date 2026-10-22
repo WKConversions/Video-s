@@ -1,0 +1,415 @@
+[
+ {
+  "t": 10.25,
+  "id": "gen-whoosh-medium",
+  "db": -8,
+  "pitch": 0,
+  "note": "map shrinks into the window and dives to Sesame"
+ },
+ {
+  "t": 10.4,
+  "id": "kenney-tick-004",
+  "db": -12,
+  "pitch": 0,
+  "note": "'Become the' springs up"
+ },
+ {
+  "t": 10.62,
+  "id": "kenney-drop-003",
+  "db": -8,
+  "pitch": 0,
+  "note": "@hrish pin drops at Sesame"
+ },
+ {
+  "t": 10.64,
+  "id": "kenney-tick-004",
+  "db": -12,
+  "pitch": 2,
+  "note": "'Pioneer of' springs up"
+ },
+ {
+  "t": 10.85,
+  "id": "kenney-tick-004",
+  "db": -12,
+  "pitch": 4,
+  "note": "'your place.' springs up"
+ },
+ {
+  "t": 10.95,
+  "id": "gen-shimmer",
+  "db": -9,
+  "pitch": 0,
+  "note": "gold ring irises out of the pin"
+ },
+ {
+  "t": 11.12,
+  "id": "kenney-maximize-009",
+  "db": -6,
+  "pitch": 0,
+  "note": "Pioneer card expands from the pin, 3D turn begins"
+ },
+ {
+  "t": 11.32,
+  "id": "gen-pop",
+  "db": -13,
+  "pitch": 0,
+  "note": "@katya pin drops"
+ },
+ {
+  "t": 11.45,
+  "id": "gen-pop",
+  "db": -10,
+  "pitch": 2,
+  "note": "PIONEER pill pops"
+ },
+ {
+  "t": 11.5,
+  "id": "gen-pop",
+  "db": -13,
+  "pitch": 1,
+  "note": "@maxwoon pin drops"
+ },
+ {
+  "t": 11.55,
+  "id": "gen-pop",
+  "db": -11,
+  "pitch": 3,
+  "note": "@hrish avatar pops with gold ring"
+ },
+ {
+  "t": 11.62,
+  "id": "gen-tick",
+  "db": -13,
+  "pitch": 0,
+  "note": "'@hrish is the' slides in"
+ },
+ {
+  "t": 11.68,
+  "id": "gen-pop",
+  "db": -13,
+  "pitch": 2,
+  "note": "@isla.vuorinen pin drops"
+ },
+ {
+  "t": 11.75,
+  "id": "gen-tick",
+  "db": -12,
+  "pitch": 2,
+  "note": "'Pioneer of Sesame' slides in"
+ },
+ {
+  "t": 11.86,
+  "id": "gen-pop",
+  "db": -13,
+  "pitch": 3,
+  "note": "@travellingtexan pin drops"
+ },
+ {
+  "t": 11.95,
+  "id": "gen-shimmer",
+  "db": -8,
+  "pitch": 2,
+  "note": "gold sparkles burst, 'Since 21 Oct 2026' slides in"
+ },
+ {
+  "t": 12,
+  "id": "gen-swell",
+  "db": -13,
+  "pitch": 0,
+  "note": "light sweep across the Pioneer card"
+ },
+ {
+  "t": 12.04,
+  "id": "gen-pop",
+  "db": -13,
+  "pitch": 4,
+  "note": "@alex.alexander pin drops"
+ },
+ {
+  "t": 12.15,
+  "id": "gen-tick",
+  "db": -13,
+  "pitch": 0,
+  "note": "hype avatars stack in (12.15/12.25/12.35), 'Hyped by 3 people'"
+ },
+ {
+  "t": 12.22,
+  "id": "gen-pop",
+  "db": -13,
+  "pitch": 5,
+  "note": "@sebastian.ramon pin drops"
+ },
+ {
+  "t": 12.5,
+  "id": "gen-pop",
+  "db": -10,
+  "pitch": 4,
+  "note": "red heart pops"
+ },
+ {
+  "t": 12.62,
+  "id": "gen-appear",
+  "db": -9,
+  "pitch": 0,
+  "note": "SuperFan card stacks under"
+ },
+ {
+  "t": 12.8,
+  "id": "gen-pop",
+  "db": -10,
+  "pitch": 3,
+  "note": "SUPERFAN chip pops"
+ },
+ {
+  "t": 12.9,
+  "id": "gen-tick",
+  "db": -12,
+  "pitch": 0,
+  "note": "'@hrish is the SuperFan of Malaga, Spain' slides in"
+ },
+ {
+  "t": 13.1,
+  "id": "gen-whoosh-short",
+  "db": -10,
+  "pitch": 0,
+  "note": "headline lines slide out left, staggered by line"
+ },
+ {
+  "t": 13.22,
+  "id": "gen-whoosh-whip",
+  "db": -8,
+  "pitch": 0,
+  "note": "cards fold back into the pin"
+ },
+ {
+  "t": 13.45,
+  "id": "gen-whoosh-deep",
+  "db": -6,
+  "pitch": 0,
+  "note": "window tilts into the 3D map sheet, orbit unwinds"
+ },
+ {
+  "t": 13.62,
+  "id": "kenney-tick-004",
+  "db": -12,
+  "pitch": 0,
+  "note": "'Own a' springs up"
+ },
+ {
+  "t": 13.8,
+  "id": "kenney-tick-004",
+  "db": -12,
+  "pitch": 2,
+  "note": "'piece of' springs up"
+ },
+ {
+  "t": 14,
+  "id": "kenney-tick-004",
+  "db": -12,
+  "pitch": 4,
+  "note": "'the map.' springs up"
+ },
+ {
+  "t": 14.05,
+  "id": "gen-riser-1s",
+  "db": -10,
+  "pitch": 0,
+  "note": "plot grid draws over the sheet"
+ },
+ {
+  "t": 14.2,
+  "id": "gen-shimmer",
+  "db": -10,
+  "pitch": 0,
+  "note": "plots glow blue-violet heat"
+ },
+ {
+  "t": 14.85,
+  "id": "gen-appear",
+  "db": -9,
+  "pitch": 0,
+  "note": "'Click anywhere on map to buy!' glass drops in"
+ },
+ {
+  "t": 14.95,
+  "id": "gen-whoosh-short",
+  "db": -12,
+  "pitch": 2,
+  "note": "cursor glides in toward a plot"
+ },
+ {
+  "t": 15.05,
+  "id": "kenney-tick-004",
+  "db": -13,
+  "pitch": 0,
+  "note": "state chips pop in sequence (15.05-15.37): Owned, My plots, Listed, Wishlisted, Available"
+ },
+ {
+  "t": 15.5,
+  "id": "gen-pop",
+  "db": -9,
+  "pitch": 0,
+  "note": "'Available' chip pops over the hovered plot"
+ },
+ {
+  "t": 15.92,
+  "id": "kenney-click-001",
+  "db": -6,
+  "pitch": 0,
+  "note": "cursor taps the plot"
+ },
+ {
+  "t": 16.02,
+  "id": "gen-impact-soft",
+  "db": -7,
+  "pitch": 0,
+  "note": "plot fills blue-violet, ripple rings out"
+ },
+ {
+  "t": 16.2,
+  "id": "gen-success",
+  "db": -6,
+  "pitch": 0,
+  "note": "chip flips Available -> Owned"
+ },
+ {
+  "t": 16.22,
+  "id": "gen-shimmer",
+  "db": -9,
+  "pitch": 3,
+  "note": "sparkles around the Owned chip"
+ },
+ {
+  "t": 16.42,
+  "id": "gen-whoosh-short",
+  "db": -11,
+  "pitch": 0,
+  "note": "cursor and hint glass leave"
+ },
+ {
+  "t": 16.55,
+  "id": "gen-whoosh-medium",
+  "db": -7,
+  "pitch": 0,
+  "note": "Top Plots leaderboard rises from below"
+ },
+ {
+  "t": 16.7,
+  "id": "gen-swell",
+  "db": -12,
+  "pitch": 0,
+  "note": "second wave of plot heat"
+ },
+ {
+  "t": 16.85,
+  "id": "gen-pop",
+  "db": -9,
+  "pitch": 0,
+  "note": "trophy tile pops, 'Top Plots' header"
+ },
+ {
+  "t": 17,
+  "id": "kenney-select-001",
+  "db": -10,
+  "pitch": 0,
+  "note": "All Time | Weekly segment slides into place"
+ },
+ {
+  "t": 17.12,
+  "id": "gen-tick",
+  "db": -12,
+  "pitch": 0,
+  "note": "'Near here' chip pops (Worldwide at 17.2)"
+ },
+ {
+  "t": 17.3,
+  "id": "kenney-drop-003",
+  "db": -10,
+  "pitch": 0,
+  "note": "row #1 @travellingtexan stacks in, digits start rolling"
+ },
+ {
+  "t": 17.5,
+  "id": "kenney-drop-003",
+  "db": -11,
+  "pitch": 1,
+  "note": "row #2 @katya stacks in"
+ },
+ {
+  "t": 17.7,
+  "id": "kenney-drop-003",
+  "db": -11,
+  "pitch": 2,
+  "note": "row #3 @maxwoon stacks in"
+ },
+ {
+  "t": 17.9,
+  "id": "kenney-drop-003",
+  "db": -11,
+  "pitch": 3,
+  "note": "row #4 Available stacks in"
+ },
+ {
+  "t": 18.05,
+  "id": "gen-tick",
+  "db": -11,
+  "pitch": 0,
+  "note": "#1 lands on 9,265 pts"
+ },
+ {
+  "t": 18.25,
+  "id": "gen-tick",
+  "db": -11,
+  "pitch": 1,
+  "note": "#2 lands on 8,825 pts"
+ },
+ {
+  "t": 18.35,
+  "id": "gen-shimmer",
+  "db": -11,
+  "pitch": 0,
+  "note": "blue scan glow passes over the rows"
+ },
+ {
+  "t": 18.45,
+  "id": "gen-tick",
+  "db": -11,
+  "pitch": 2,
+  "note": "#3 lands on 7,826 pts"
+ },
+ {
+  "t": 18.65,
+  "id": "gen-tick",
+  "db": -11,
+  "pitch": 3,
+  "note": "#4 lands on 6,400 pts"
+ },
+ {
+  "t": 18.98,
+  "id": "gen-whoosh-short",
+  "db": -10,
+  "pitch": 0,
+  "note": "'Own a piece of the map.' slides out left"
+ },
+ {
+  "t": 19.02,
+  "id": "gen-whoosh-medium",
+  "db": -9,
+  "pitch": 0,
+  "note": "rows cascade up and out of the board"
+ },
+ {
+  "t": 19.05,
+  "id": "gen-whoosh-deep",
+  "db": -8,
+  "pitch": 0,
+  "note": "board swings in 3D and morphs into the panel, map sheet slides away"
+ },
+ {
+  "t": 19.75,
+  "id": "gen-impact-soft",
+  "db": -10,
+  "pitch": 0,
+  "note": "panel settles as H2Panel (hand-off)"
+ }
+]

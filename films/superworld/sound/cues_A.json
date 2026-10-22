@@ -1,0 +1,303 @@
+[
+ {
+  "t": 0,
+  "id": "gen-swell",
+  "db": -10,
+  "pitch": 0,
+  "note": "globe blooms in with its glow"
+ },
+ {
+  "t": 0.15,
+  "id": "gen-whoosh-short",
+  "db": -9,
+  "pitch": 0,
+  "note": "'Your world,' letter build"
+ },
+ {
+  "t": 0.6,
+  "id": "gen-pop",
+  "db": -11,
+  "pitch": 2,
+  "note": "@isla.vuorinen avatar pops on Helsinki"
+ },
+ {
+  "t": 0.7,
+  "id": "kenney-select-001",
+  "db": -13,
+  "pitch": 2,
+  "note": "isla chip"
+ },
+ {
+  "t": 0.9,
+  "id": "gen-whoosh-short",
+  "db": -11,
+  "pitch": 2,
+  "note": "'mapped by you and your friends.' letter build"
+ },
+ {
+  "t": 1,
+  "id": "gen-pop",
+  "db": -11,
+  "pitch": 4,
+  "note": "@tattiv avatar + chip (Lisbon)"
+ },
+ {
+  "t": 1.4,
+  "id": "gen-pop",
+  "db": -11,
+  "pitch": 5,
+  "note": "@travellingtexan avatar + chip (Austin)"
+ },
+ {
+  "t": 1.75,
+  "id": "gen-pop",
+  "db": -10,
+  "pitch": 7,
+  "note": "@katya avatar + chip (NYC)"
+ },
+ {
+  "t": 2.3,
+  "id": "gen-whoosh-medium",
+  "db": -9,
+  "pitch": 0,
+  "note": "line 1 lifts away"
+ },
+ {
+  "t": 2.4,
+  "id": "gen-whoosh-deep",
+  "db": -6,
+  "pitch": 0,
+  "note": "map dive: globe irises into the city"
+ },
+ {
+  "t": 2.9,
+  "id": "gen-impact-soft",
+  "db": -8,
+  "pitch": 0,
+  "note": "dive lands, glide begins"
+ },
+ {
+  "t": 2.95,
+  "id": "gen-whoosh-short",
+  "db": -9,
+  "pitch": 0,
+  "note": "'Real places.' letter build"
+ },
+ {
+  "t": 3.08,
+  "id": "gen-appear",
+  "db": -10,
+  "pitch": 0,
+  "note": "Dynamic-Island capsule appears"
+ },
+ {
+  "t": 3.2,
+  "id": "kenney-maximize-009",
+  "db": -10,
+  "pitch": 0,
+  "note": "capsule opens into the segmented control"
+ },
+ {
+  "t": 3.4,
+  "id": "gen-whoosh-short",
+  "db": -11,
+  "pitch": 2,
+  "note": "'Pinned by real people.' letter build"
+ },
+ {
+  "t": 3.45,
+  "id": "kenney-drop-003",
+  "db": -10,
+  "pitch": 0,
+  "note": "Recs pins drop + control on Recs"
+ },
+ {
+  "t": 3.95,
+  "id": "kenney-tick-004",
+  "db": -11,
+  "pitch": 1,
+  "note": "control slides to Check-ins, check-in pins drop"
+ },
+ {
+  "t": 4.45,
+  "id": "kenney-tick-004",
+  "db": -11,
+  "pitch": 2,
+  "note": "control slides to Posts, post pins drop"
+ },
+ {
+  "t": 4.95,
+  "id": "kenney-tick-004",
+  "db": -11,
+  "pitch": 3,
+  "note": "control slides to People, people pins drop"
+ },
+ {
+  "t": 5.45,
+  "id": "kenney-tick-004",
+  "db": -11,
+  "pitch": 4,
+  "note": "control slides to Worlds, world pins drop"
+ },
+ {
+  "t": 5.95,
+  "id": "kenney-select-002",
+  "db": -9,
+  "pitch": 0,
+  "note": "back to Recs, Casa Haga pin pulses"
+ },
+ {
+  "t": 6.2,
+  "id": "gen-whoosh-medium",
+  "db": -9,
+  "pitch": -2,
+  "note": "other pins collapse, labels fade, line 2 exits"
+ },
+ {
+  "t": 6.3,
+  "id": "gen-tick",
+  "db": -12,
+  "pitch": 0,
+  "note": "capsule collapses and fades"
+ },
+ {
+  "t": 6.45,
+  "id": "gen-whoosh-whip",
+  "db": -6,
+  "pitch": 0,
+  "note": "pin expands into the Casa Haga card"
+ },
+ {
+  "t": 6.6,
+  "id": "gen-pop",
+  "db": -11,
+  "pitch": 3,
+  "note": "Recs badge pops"
+ },
+ {
+  "t": 6.7,
+  "id": "gen-whoosh-short",
+  "db": -10,
+  "pitch": 0,
+  "note": "'Recommend the' letter build + awning drops"
+ },
+ {
+  "t": 6.75,
+  "id": "gen-tap",
+  "db": -12,
+  "pitch": 2,
+  "note": "hero icon spins and settles"
+ },
+ {
+  "t": 6.82,
+  "id": "kenney-select-001",
+  "db": -12,
+  "pitch": 0,
+  "note": "Casa Haga title row lands"
+ },
+ {
+  "t": 7.05,
+  "id": "gen-whoosh-short",
+  "db": -10,
+  "pitch": 2,
+  "note": "'spots you love.' letter build"
+ },
+ {
+  "t": 7.05,
+  "id": "kenney-tick-004",
+  "db": -13,
+  "pitch": 0,
+  "note": "tag chips pop (Spanish...)"
+ },
+ {
+  "t": 7.3,
+  "id": "kenney-tick-004",
+  "db": -13,
+  "pitch": 2,
+  "note": "tag chips pop (...Groups)"
+ },
+ {
+  "t": 7.6,
+  "id": "gen-tap",
+  "db": -11,
+  "pitch": 0,
+  "note": "Comment pill"
+ },
+ {
+  "t": 7.7,
+  "id": "gen-appear",
+  "db": -11,
+  "pitch": 0,
+  "note": "'Love it!' row"
+ },
+ {
+  "t": 7.75,
+  "id": "gen-tap",
+  "db": -11,
+  "pitch": 2,
+  "note": "Share pill"
+ },
+ {
+  "t": 7.8,
+  "id": "gen-pop",
+  "db": -8,
+  "pitch": 3,
+  "note": "heart toggles on"
+ },
+ {
+  "t": 7.85,
+  "id": "gen-shimmer",
+  "db": -10,
+  "pitch": 0,
+  "note": "hearts burst up"
+ },
+ {
+  "t": 7.9,
+  "id": "gen-tap",
+  "db": -10,
+  "pitch": 4,
+  "note": "Buy the spot pill"
+ },
+ {
+  "t": 8,
+  "id": "gen-whoosh-short",
+  "db": -11,
+  "pitch": -2,
+  "note": "card body scrolls to the comments"
+ },
+ {
+  "t": 8.4,
+  "id": "kenney-select-002",
+  "db": -13,
+  "pitch": 2,
+  "note": "@katya / @tattiv comments arrive"
+ },
+ {
+  "t": 8.86,
+  "id": "gen-whoosh-medium",
+  "db": -8,
+  "pitch": 0,
+  "note": "line 3, badge and pills slide out left"
+ },
+ {
+  "t": 8.95,
+  "id": "gen-whoosh-short",
+  "db": -9,
+  "pitch": -3,
+  "note": "card collapses back into the pin"
+ },
+ {
+  "t": 9.25,
+  "id": "kenney-drop-003",
+  "db": -11,
+  "pitch": 0,
+  "note": "Casa Haga pin re-lands"
+ },
+ {
+  "t": 9.4,
+  "id": "gen-whoosh-deep",
+  "db": -12,
+  "pitch": 0,
+  "note": "camera eases into the H1 map glide, labels return"
+ }
+]

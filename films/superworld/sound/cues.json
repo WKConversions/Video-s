@@ -1,0 +1,1276 @@
+{
+ "fps": 30,
+ "frames": 1200,
+ "library": "../../alumni/sound/lib",
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "lufs": -33,
+  "duck_db": 0,
+  "fade_in": 0.3,
+  "fade_out": 1.5
+ },
+ "sfx": [
+  {
+   "frame": 0,
+   "id": "gen-swell",
+   "db": -4,
+   "note": "A: globe blooms in with its glow"
+  },
+  {
+   "frame": 4,
+   "id": "gen-whoosh-short",
+   "db": -3,
+   "note": "A: 'Your world,' letter build"
+  },
+  {
+   "frame": 18,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 2,
+   "note": "A: @isla.vuorinen avatar pops on Helsinki"
+  },
+  {
+   "frame": 21,
+   "id": "kenney-select-001",
+   "db": -7,
+   "pitch": 2,
+   "note": "A: isla chip"
+  },
+  {
+   "frame": 27,
+   "id": "gen-whoosh-short",
+   "db": -5,
+   "pitch": 2,
+   "note": "A: 'mapped by you and your friends.' letter build"
+  },
+  {
+   "frame": 30,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 4,
+   "note": "A: @tattiv avatar + chip (Lisbon)"
+  },
+  {
+   "frame": 42,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 5,
+   "note": "A: @travellingtexan avatar + chip (Austin)"
+  },
+  {
+   "frame": 52,
+   "id": "gen-pop",
+   "db": -4,
+   "pitch": 7,
+   "note": "A: @katya avatar + chip (NYC)"
+  },
+  {
+   "frame": 69,
+   "id": "gen-whoosh-medium",
+   "db": -3,
+   "note": "A: line 1 lifts away"
+  },
+  {
+   "frame": 72,
+   "id": "gen-whoosh-deep",
+   "db": 0,
+   "note": "A: map dive: globe irises into the city"
+  },
+  {
+   "frame": 87,
+   "id": "gen-impact-soft",
+   "db": -2,
+   "note": "A: dive lands, glide begins"
+  },
+  {
+   "frame": 88,
+   "id": "gen-whoosh-short",
+   "db": -3,
+   "note": "A: 'Real places.' letter build"
+  },
+  {
+   "frame": 92,
+   "id": "gen-appear",
+   "db": -4,
+   "note": "A: Dynamic-Island capsule appears"
+  },
+  {
+   "frame": 96,
+   "id": "kenney-maximize-009",
+   "db": -4,
+   "note": "A: capsule opens into the segmented control"
+  },
+  {
+   "frame": 102,
+   "id": "gen-whoosh-short",
+   "db": -5,
+   "pitch": 2,
+   "note": "A: 'Pinned by real people.' letter build"
+  },
+  {
+   "frame": 104,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "note": "A: Recs pins drop + control on Recs"
+  },
+  {
+   "frame": 118,
+   "id": "kenney-tick-004",
+   "db": -5,
+   "pitch": 1,
+   "note": "A: control slides to Check-ins, check-in pins drop"
+  },
+  {
+   "frame": 134,
+   "id": "kenney-tick-004",
+   "db": -5,
+   "pitch": 2,
+   "note": "A: control slides to Posts, post pins drop"
+  },
+  {
+   "frame": 148,
+   "id": "kenney-tick-004",
+   "db": -5,
+   "pitch": 3,
+   "note": "A: control slides to People, people pins drop"
+  },
+  {
+   "frame": 164,
+   "id": "kenney-tick-004",
+   "db": -5,
+   "pitch": 4,
+   "note": "A: control slides to Worlds, world pins drop"
+  },
+  {
+   "frame": 178,
+   "id": "kenney-select-002",
+   "db": -3,
+   "note": "A: back to Recs, Casa Haga pin pulses"
+  },
+  {
+   "frame": 186,
+   "id": "gen-whoosh-medium",
+   "db": -3,
+   "pitch": -2,
+   "note": "A: other pins collapse, labels fade, line 2 exits"
+  },
+  {
+   "frame": 189,
+   "id": "gen-tick",
+   "db": -6,
+   "note": "A: capsule collapses and fades"
+  },
+  {
+   "frame": 194,
+   "id": "gen-whoosh-whip",
+   "db": 0,
+   "note": "A: pin expands into the Casa Haga card"
+  },
+  {
+   "frame": 198,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 3,
+   "note": "A: Recs badge pops"
+  },
+  {
+   "frame": 201,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "note": "A: 'Recommend the' letter build + awning drops"
+  },
+  {
+   "frame": 202,
+   "id": "gen-tap",
+   "db": -6,
+   "pitch": 2,
+   "note": "A: hero icon spins and settles"
+  },
+  {
+   "frame": 205,
+   "id": "kenney-select-001",
+   "db": -6,
+   "note": "A: Casa Haga title row lands"
+  },
+  {
+   "frame": 212,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "pitch": 2,
+   "note": "A: 'spots you love.' letter build"
+  },
+  {
+   "frame": 212,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "note": "A: tag chips pop (Spanish...)"
+  },
+  {
+   "frame": 219,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "pitch": 2,
+   "note": "A: tag chips pop (...Groups)"
+  },
+  {
+   "frame": 228,
+   "id": "gen-tap",
+   "db": -5,
+   "note": "A: Comment pill"
+  },
+  {
+   "frame": 231,
+   "id": "gen-appear",
+   "db": -5,
+   "note": "A: 'Love it!' row"
+  },
+  {
+   "frame": 232,
+   "id": "gen-tap",
+   "db": -5,
+   "pitch": 2,
+   "note": "A: Share pill"
+  },
+  {
+   "frame": 234,
+   "id": "gen-pop",
+   "db": -2,
+   "pitch": 3,
+   "note": "A: heart toggles on"
+  },
+  {
+   "frame": 236,
+   "id": "gen-shimmer",
+   "db": -4,
+   "note": "A: hearts burst up"
+  },
+  {
+   "frame": 237,
+   "id": "gen-tap",
+   "db": -4,
+   "pitch": 4,
+   "note": "A: Buy the spot pill"
+  },
+  {
+   "frame": 240,
+   "id": "gen-whoosh-short",
+   "db": -5,
+   "pitch": -2,
+   "note": "A: card body scrolls to the comments"
+  },
+  {
+   "frame": 252,
+   "id": "kenney-select-002",
+   "db": -7,
+   "pitch": 2,
+   "note": "A: @katya / @tattiv comments arrive"
+  },
+  {
+   "frame": 266,
+   "id": "gen-whoosh-medium",
+   "db": -2,
+   "note": "A: line 3, badge and pills slide out left"
+  },
+  {
+   "frame": 268,
+   "id": "gen-whoosh-short",
+   "db": -3,
+   "pitch": -3,
+   "note": "A: card collapses back into the pin"
+  },
+  {
+   "frame": 278,
+   "id": "kenney-drop-003",
+   "db": -5,
+   "note": "A: Casa Haga pin re-lands"
+  },
+  {
+   "frame": 282,
+   "id": "gen-whoosh-deep",
+   "db": -6,
+   "note": "A: camera eases into the H1 map glide, labels return"
+  },
+  {
+   "frame": 308,
+   "id": "gen-whoosh-medium",
+   "db": -2,
+   "note": "B: map shrinks into the window and dives to Sesame"
+  },
+  {
+   "frame": 312,
+   "id": "kenney-tick-004",
+   "db": -6,
+   "note": "B: 'Become the' springs up"
+  },
+  {
+   "frame": 319,
+   "id": "kenney-drop-003",
+   "db": -2,
+   "note": "B: @hrish pin drops at Sesame"
+  },
+  {
+   "frame": 319,
+   "id": "kenney-tick-004",
+   "db": -6,
+   "pitch": 2,
+   "note": "B: 'Pioneer of' springs up"
+  },
+  {
+   "frame": 326,
+   "id": "kenney-tick-004",
+   "db": -6,
+   "pitch": 4,
+   "note": "B: 'your place.' springs up"
+  },
+  {
+   "frame": 328,
+   "id": "gen-shimmer",
+   "db": -3,
+   "note": "B: gold ring irises out of the pin"
+  },
+  {
+   "frame": 334,
+   "id": "kenney-maximize-009",
+   "db": 0,
+   "note": "B: Pioneer card expands from the pin, 3D turn begins"
+  },
+  {
+   "frame": 340,
+   "id": "gen-pop",
+   "db": -7,
+   "note": "B: @katya pin drops"
+  },
+  {
+   "frame": 344,
+   "id": "gen-pop",
+   "db": -4,
+   "pitch": 2,
+   "note": "B: PIONEER pill pops"
+  },
+  {
+   "frame": 345,
+   "id": "gen-pop",
+   "db": -7,
+   "pitch": 1,
+   "note": "B: @maxwoon pin drops"
+  },
+  {
+   "frame": 346,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 3,
+   "note": "B: @hrish avatar pops with gold ring"
+  },
+  {
+   "frame": 349,
+   "id": "gen-tick",
+   "db": -7,
+   "note": "B: '@hrish is the' slides in"
+  },
+  {
+   "frame": 350,
+   "id": "gen-pop",
+   "db": -7,
+   "pitch": 2,
+   "note": "B: @isla.vuorinen pin drops"
+  },
+  {
+   "frame": 352,
+   "id": "gen-tick",
+   "db": -6,
+   "pitch": 2,
+   "note": "B: 'Pioneer of Sesame' slides in"
+  },
+  {
+   "frame": 356,
+   "id": "gen-pop",
+   "db": -7,
+   "pitch": 3,
+   "note": "B: @travellingtexan pin drops"
+  },
+  {
+   "frame": 358,
+   "id": "gen-shimmer",
+   "db": -2,
+   "pitch": 2,
+   "note": "B: gold sparkles burst, 'Since 21 Oct 2026' slides in"
+  },
+  {
+   "frame": 360,
+   "id": "gen-swell",
+   "db": -7,
+   "note": "B: light sweep across the Pioneer card"
+  },
+  {
+   "frame": 361,
+   "id": "gen-pop",
+   "db": -7,
+   "pitch": 4,
+   "note": "B: @alex.alexander pin drops"
+  },
+  {
+   "frame": 364,
+   "id": "gen-tick",
+   "db": -7,
+   "note": "B: hype avatars stack in (12.15/12.25/12.35), 'Hyped by 3 people'"
+  },
+  {
+   "frame": 367,
+   "id": "gen-pop",
+   "db": -7,
+   "pitch": 5,
+   "note": "B: @sebastian.ramon pin drops"
+  },
+  {
+   "frame": 375,
+   "id": "gen-pop",
+   "db": -4,
+   "pitch": 4,
+   "note": "B: red heart pops"
+  },
+  {
+   "frame": 379,
+   "id": "gen-appear",
+   "db": -3,
+   "note": "B: SuperFan card stacks under"
+  },
+  {
+   "frame": 384,
+   "id": "gen-pop",
+   "db": -4,
+   "pitch": 3,
+   "note": "B: SUPERFAN chip pops"
+  },
+  {
+   "frame": 387,
+   "id": "gen-tick",
+   "db": -6,
+   "note": "B: '@hrish is the SuperFan of Malaga, Spain' slides in"
+  },
+  {
+   "frame": 393,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "note": "B: headline lines slide out left, staggered by line"
+  },
+  {
+   "frame": 397,
+   "id": "gen-whoosh-whip",
+   "db": -2,
+   "note": "B: cards fold back into the pin"
+  },
+  {
+   "frame": 404,
+   "id": "gen-whoosh-deep",
+   "db": 0,
+   "note": "B: window tilts into the 3D map sheet, orbit unwinds"
+  },
+  {
+   "frame": 409,
+   "id": "kenney-tick-004",
+   "db": -6,
+   "note": "B: 'Own a' springs up"
+  },
+  {
+   "frame": 414,
+   "id": "kenney-tick-004",
+   "db": -6,
+   "pitch": 2,
+   "note": "B: 'piece of' springs up"
+  },
+  {
+   "frame": 420,
+   "id": "kenney-tick-004",
+   "db": -6,
+   "pitch": 4,
+   "note": "B: 'the map.' springs up"
+  },
+  {
+   "frame": 422,
+   "id": "gen-riser-1s",
+   "db": -4,
+   "note": "B: plot grid draws over the sheet"
+  },
+  {
+   "frame": 426,
+   "id": "gen-shimmer",
+   "db": -4,
+   "note": "B: plots glow blue-violet heat"
+  },
+  {
+   "frame": 446,
+   "id": "gen-appear",
+   "db": -3,
+   "note": "B: 'Click anywhere on map to buy!' glass drops in"
+  },
+  {
+   "frame": 448,
+   "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": 2,
+   "note": "B: cursor glides in toward a plot"
+  },
+  {
+   "frame": 452,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "note": "B: state chips pop in sequence (15.05-15.37): Owned, My plots, Listed, Wishlisted, Available"
+  },
+  {
+   "frame": 465,
+   "id": "gen-pop",
+   "db": -3,
+   "note": "B: 'Available' chip pops over the hovered plot"
+  },
+  {
+   "frame": 478,
+   "id": "kenney-click-001",
+   "db": 0,
+   "note": "B: cursor taps the plot"
+  },
+  {
+   "frame": 481,
+   "id": "gen-impact-soft",
+   "db": -1,
+   "note": "B: plot fills blue-violet, ripple rings out"
+  },
+  {
+   "frame": 486,
+   "id": "gen-success",
+   "db": 0,
+   "note": "B: chip flips Available -> Owned"
+  },
+  {
+   "frame": 487,
+   "id": "gen-shimmer",
+   "db": -3,
+   "pitch": 3,
+   "note": "B: sparkles around the Owned chip"
+  },
+  {
+   "frame": 493,
+   "id": "gen-whoosh-short",
+   "db": -5,
+   "note": "B: cursor and hint glass leave"
+  },
+  {
+   "frame": 496,
+   "id": "gen-whoosh-medium",
+   "db": -1,
+   "note": "B: Top Plots leaderboard rises from below"
+  },
+  {
+   "frame": 501,
+   "id": "gen-swell",
+   "db": -6,
+   "note": "B: second wave of plot heat"
+  },
+  {
+   "frame": 506,
+   "id": "gen-pop",
+   "db": -3,
+   "note": "B: trophy tile pops, 'Top Plots' header"
+  },
+  {
+   "frame": 510,
+   "id": "kenney-select-001",
+   "db": -4,
+   "note": "B: All Time | Weekly segment slides into place"
+  },
+  {
+   "frame": 514,
+   "id": "gen-tick",
+   "db": -6,
+   "note": "B: 'Near here' chip pops (Worldwide at 17.2)"
+  },
+  {
+   "frame": 519,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "note": "B: row #1 @travellingtexan stacks in, digits start rolling"
+  },
+  {
+   "frame": 525,
+   "id": "kenney-drop-003",
+   "db": -5,
+   "pitch": 1,
+   "note": "B: row #2 @katya stacks in"
+  },
+  {
+   "frame": 531,
+   "id": "kenney-drop-003",
+   "db": -5,
+   "pitch": 2,
+   "note": "B: row #3 @maxwoon stacks in"
+  },
+  {
+   "frame": 537,
+   "id": "kenney-drop-003",
+   "db": -5,
+   "pitch": 3,
+   "note": "B: row #4 Available stacks in"
+  },
+  {
+   "frame": 542,
+   "id": "gen-tick",
+   "db": -5,
+   "note": "B: #1 lands on 9,265 pts"
+  },
+  {
+   "frame": 548,
+   "id": "gen-tick",
+   "db": -5,
+   "pitch": 1,
+   "note": "B: #2 lands on 8,825 pts"
+  },
+  {
+   "frame": 550,
+   "id": "gen-shimmer",
+   "db": -5,
+   "note": "B: blue scan glow passes over the rows"
+  },
+  {
+   "frame": 554,
+   "id": "gen-tick",
+   "db": -5,
+   "pitch": 2,
+   "note": "B: #3 lands on 7,826 pts"
+  },
+  {
+   "frame": 560,
+   "id": "gen-tick",
+   "db": -5,
+   "pitch": 3,
+   "note": "B: #4 lands on 6,400 pts"
+  },
+  {
+   "frame": 569,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "note": "B: 'Own a piece of the map.' slides out left"
+  },
+  {
+   "frame": 571,
+   "id": "gen-whoosh-medium",
+   "db": -3,
+   "note": "B: rows cascade up and out of the board"
+  },
+  {
+   "frame": 572,
+   "id": "gen-whoosh-deep",
+   "db": -2,
+   "note": "B: board swings in 3D and morphs into the panel, map sheet slides away"
+  },
+  {
+   "frame": 592,
+   "id": "gen-impact-soft",
+   "db": -4,
+   "note": "B: panel settles as H2Panel (hand-off)"
+  },
+  {
+   "frame": 608,
+   "id": "gen-whoosh-medium",
+   "db": -2,
+   "note": "C: Chat panel slides left; the map window sweeps in from off-frame right"
+  },
+  {
+   "frame": 609,
+   "id": "gen-appear",
+   "db": -6,
+   "pitch": 2,
+   "note": "C: Chat header and avatar"
+  },
+  {
+   "frame": 614,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "pitch": 3,
+   "note": "C: Messages / Discover segmented control"
+  },
+  {
+   "frame": 615,
+   "id": "gen-whoosh-short",
+   "db": -5,
+   "pitch": -2,
+   "note": "C: Headline glass rises from below the frame"
+  },
+  {
+   "frame": 616,
+   "id": "gen-tick",
+   "db": -7,
+   "note": "C: Tab bar rises, Chat tab pulses"
+  },
+  {
+   "frame": 618,
+   "id": "gen-pop",
+   "db": -3,
+   "note": "C: 'Meet up in' letters spring up"
+  },
+  {
+   "frame": 622,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "note": "C: New York chat row lands"
+  },
+  {
+   "frame": 622,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 2,
+   "note": "C: New York chip on the map"
+  },
+  {
+   "frame": 628,
+   "id": "gen-pop",
+   "db": -2,
+   "pitch": 2,
+   "note": "C: 'every city.' in blue"
+  },
+  {
+   "frame": 631,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 3,
+   "note": "C: Jersey City chip on the map"
+  },
+  {
+   "frame": 632,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "pitch": 2,
+   "note": "C: Jersey City row lands"
+  },
+  {
+   "frame": 640,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 4,
+   "note": "C: City Ambassadors chip on the map"
+  },
+  {
+   "frame": 643,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "pitch": 4,
+   "note": "C: SuperWorld City Ambassadors row lands"
+  },
+  {
+   "frame": 652,
+   "id": "kenney-select-001",
+   "db": -3,
+   "note": "C: Discover selected, the thumb slides"
+  },
+  {
+   "frame": 654,
+   "id": "gen-whoosh-short",
+   "db": -5,
+   "pitch": 1,
+   "note": "C: Chips leave, Messages pushes over to Discover"
+  },
+  {
+   "frame": 656,
+   "id": "gen-tick",
+   "db": -8,
+   "note": "C: Pin @katya drops"
+  },
+  {
+   "frame": 660,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 1,
+   "note": "C: Pin @maxwoon and the mic pin in the mini map"
+  },
+  {
+   "frame": 664,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 2,
+   "note": "C: Pin @travellingtexan"
+  },
+  {
+   "frame": 667,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 3,
+   "note": "C: Pin @alex.alexander"
+  },
+  {
+   "frame": 668,
+   "id": "gen-appear",
+   "db": -5,
+   "note": "C: Activity chat card expands"
+  },
+  {
+   "frame": 671,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 4,
+   "note": "C: Pin @isla.vuorinen"
+  },
+  {
+   "frame": 672,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "note": "C: 'valencia vds' title, then place, date and members lines"
+  },
+  {
+   "frame": 674,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 5,
+   "note": "C: Pin @hrish"
+  },
+  {
+   "frame": 682,
+   "id": "gen-pop",
+   "db": -4,
+   "pitch": 1,
+   "note": "C: Join button pops"
+  },
+  {
+   "frame": 686,
+   "id": "gen-tap",
+   "db": -2,
+   "note": "C: Tap on Join"
+  },
+  {
+   "frame": 694,
+   "id": "gen-success",
+   "db": -1,
+   "note": "C: 'Joined \u2713', the avatar takes off"
+  },
+  {
+   "frame": 700,
+   "id": "kenney-maximize-009",
+   "db": -4,
+   "note": "C: Island opens: isla.vuorinen joined the Val\u00e8ncia chat"
+  },
+  {
+   "frame": 704,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "pitch": 2,
+   "note": "C: Avatar lands in the stack"
+  },
+  {
+   "frame": 718,
+   "id": "gen-tick",
+   "db": -6,
+   "pitch": 3,
+   "note": "C: Island morphs: tattiv joined the Lisbon chat"
+  },
+  {
+   "frame": 726,
+   "id": "gen-whoosh-whip",
+   "db": 0,
+   "note": "C: Speed-matched push to the apps"
+  },
+  {
+   "frame": 735,
+   "id": "gen-impact-soft",
+   "db": -2,
+   "note": "C: 'Play apps built on Earth.' lands"
+  },
+  {
+   "frame": 750,
+   "id": "gen-whoosh-short",
+   "db": -5,
+   "note": "C: Cover-flow flick 1"
+  },
+  {
+   "frame": 765,
+   "id": "kenney-tick-004",
+   "db": -5,
+   "pitch": 1,
+   "note": "C: Cover-flow flick 2"
+  },
+  {
+   "frame": 772,
+   "id": "gen-appear",
+   "db": -6,
+   "pitch": 2,
+   "note": "C: Glass pill: Interactive experiences you open right on the map."
+  },
+  {
+   "frame": 780,
+   "id": "gen-whoosh-short",
+   "db": -5,
+   "pitch": 2,
+   "note": "C: Cover-flow flick 3"
+  },
+  {
+   "frame": 795,
+   "id": "kenney-tick-004",
+   "db": -5,
+   "pitch": 3,
+   "note": "C: Cover-flow flick 4"
+  },
+  {
+   "frame": 810,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "pitch": 4,
+   "note": "C: Cover-flow flick 5, Network States centred"
+  },
+  {
+   "frame": 826,
+   "id": "gen-swell",
+   "db": -3,
+   "note": "C: Network States card lifts and turns"
+  },
+  {
+   "frame": 835,
+   "id": "gen-tap",
+   "db": -2,
+   "note": "C: Tap on Open"
+  },
+  {
+   "frame": 838,
+   "id": "kenney-click-001",
+   "db": -3,
+   "note": "C: Open pressed"
+  },
+  {
+   "frame": 843,
+   "id": "gen-whoosh-medium",
+   "db": -3,
+   "pitch": -2,
+   "note": "C: Side cards fly off"
+  },
+  {
+   "frame": 846,
+   "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": 2,
+   "note": "C: Headline and pill rise away"
+  },
+  {
+   "frame": 850,
+   "id": "gen-riser-1s",
+   "db": 0,
+   "note": "C: The illustration floods the frame"
+  },
+  {
+   "frame": 872,
+   "id": "gen-whoosh-deep",
+   "db": -1,
+   "note": "C: Fly through the globe, the dots stream out"
+  },
+  {
+   "frame": 882,
+   "id": "gen-shimmer",
+   "db": -4,
+   "pitch": 2,
+   "note": "C: H3 light sweep begins over the gradient"
+  },
+  {
+   "frame": 900,
+   "id": "gen-swell",
+   "db": -8,
+   "note": "D: D01-h3-sweep-tail: tail of C's gradient light-sweep air (hand-off), continue C'"
+  },
+  {
+   "frame": 908,
+   "id": "gen-swell",
+   "db": 0,
+   "note": "D: D02-iris-down: full-frame gradient irises down into the Studio card: soft w"
+  },
+  {
+   "frame": 915,
+   "id": "gen-swell",
+   "db": -12,
+   "note": "D: D03-camera-push: slow camera push begins: low air swell under the Studio sect"
+  },
+  {
+   "frame": 919,
+   "id": "gen-swell",
+   "db": -6,
+   "note": "D: D04-body-rise: white card body rises from the bottom edge: soft upward swel"
+  },
+  {
+   "frame": 922,
+   "id": "gen-whoosh-short",
+   "db": -8,
+   "pitch": 2,
+   "note": "D: D05-header: header SUPERWORLD STUDIO / Make your own app slides up: ligh"
+  },
+  {
+   "frame": 924,
+   "id": "kenney-drop-003",
+   "db": -10,
+   "note": "D: D06-slot-1: dashed slot 1 drops in (+ glyph), card glides right: tiny ti"
+  },
+  {
+   "frame": 926,
+   "id": "kenney-drop-003",
+   "db": -10,
+   "pitch": 2,
+   "note": "D: D07-slot-2: dashed slot 2 drops in: tiny tick"
+  },
+  {
+   "frame": 927,
+   "id": "gen-pop",
+   "db": -4,
+   "pitch": 3,
+   "note": "D: D08-tool-icon: tool icon pops with a spin: pop"
+  },
+  {
+   "frame": 928,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "note": "D: D09-tour-fly: Tour tile flies in from the left: short whoosh; slot 3 drops"
+  },
+  {
+   "frame": 930,
+   "id": "kenney-tick-004",
+   "db": -1,
+   "note": "D: D10-type-build: 'Build your own.' letters bounce up: kinetic type ripple"
+  },
+  {
+   "frame": 938,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 5,
+   "note": "D: D11-tour-pin: Tour emoji pin pops on the mini map: pop"
+  },
+  {
+   "frame": 938,
+   "id": "gen-tap",
+   "db": 1,
+   "note": "D: D12-tour-snap: Tour tile snaps into slot 1: snap/click"
+  },
+  {
+   "frame": 944,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "pitch": 1,
+   "note": "D: D13-hunt-fly: Treasure Hunt tile flies in: whoosh"
+  },
+  {
+   "frame": 945,
+   "id": "kenney-tick-004",
+   "db": 1,
+   "note": "D: D14-type-nocode: 'No code.' bounces up in blue: type hit"
+  },
+  {
+   "frame": 952,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 7,
+   "note": "D: D15-hunt-pin: Treasure Hunt emoji pin pops on the mini map: pop"
+  },
+  {
+   "frame": 953,
+   "id": "kenney-drop-003",
+   "db": 1,
+   "pitch": 2,
+   "note": "D: D16-hunt-snap: Treasure Hunt tile snaps into slot 2: snap"
+  },
+  {
+   "frame": 958,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "pitch": 3,
+   "note": "D: D17-party-fly: Party World tile flies in from the bottom-left: whoosh"
+  },
+  {
+   "frame": 966,
+   "id": "gen-swell",
+   "db": -8,
+   "note": "D: D18-switch-row: No code switch row rises into the card: soft tick"
+  },
+  {
+   "frame": 968,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 9,
+   "note": "D: D19-party-pin: Party World emoji pin pops on the mini map: pop"
+  },
+  {
+   "frame": 968,
+   "id": "kenney-drop-003",
+   "db": 1,
+   "pitch": 4,
+   "note": "D: D20-party-snap: Party World tile snaps into slot 3: snap"
+  },
+  {
+   "frame": 974,
+   "id": "gen-tick",
+   "db": -6,
+   "note": "D: D21-map-dive: mini map dives into the park: short zoom swoosh"
+  },
+  {
+   "frame": 976,
+   "id": "gen-tap",
+   "db": 2,
+   "note": "D: D22-switch-flip: No-code switch flips on: crisp toggle click"
+  },
+  {
+   "frame": 981,
+   "id": "gen-pop",
+   "db": -6,
+   "note": "D: D23-pin-hrish: @hrish pin pops on the mini map: pop"
+  },
+  {
+   "frame": 988,
+   "id": "gen-whoosh-short",
+   "db": -2,
+   "note": "D: D24-coins-fly: three star coins arc from the card toward the chip (32.92/32"
+  },
+  {
+   "frame": 989,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 2,
+   "note": "D: D25-pin-katya: @katya pin pops on the mini map: pop"
+  },
+  {
+   "frame": 990,
+   "id": "gen-shimmer",
+   "db": 0,
+   "note": "D: D26-chip-pop: 'Creators earn' chip pops in: pop"
+  },
+  {
+   "frame": 992,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 4,
+   "note": "D: D27-chip-coin-spin: chip coin spins: small coin ring"
+  },
+  {
+   "frame": 996,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 4,
+   "note": "D: D28-pin-maxwoon: @maxwoon pin pops on the mini map: pop"
+  },
+  {
+   "frame": 999,
+   "id": "gen-pop",
+   "db": -4,
+   "pitch": 7,
+   "note": "D: D29-coins-land: coins land in the chip (33.30/33.37/33.44): three soft clink"
+  },
+  {
+   "frame": 1000,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "note": "D: D30-type-sub: 'from the apps they build.' builds: light type ripple"
+  },
+  {
+   "frame": 1015,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "pitch": -2,
+   "note": "D: D31-column-out: left column slides out left: whoosh out"
+  },
+  {
+   "frame": 1018,
+   "id": "gen-whoosh-short",
+   "db": 0,
+   "pitch": -3,
+   "note": "D: D32-card-shrink: card shrinks into the app icon as the camera pulls back: who"
+  },
+  {
+   "frame": 1022,
+   "id": "gen-shimmer",
+   "db": -4,
+   "pitch": 5,
+   "note": "D: D33-white-s: white S mark appears in the icon: sparkle"
+  },
+  {
+   "frame": 1029,
+   "id": "gen-impact-soft",
+   "db": 2,
+   "note": "D: D34-logo-reveal: icon dissolves into the SuperWorld logo, ring of light (34.3"
+  },
+  {
+   "frame": 1035,
+   "id": "gen-swell",
+   "db": -2,
+   "pitch": -5,
+   "note": "D: D35-globe-rise: dot globe rises from below and starts spinning: low swell"
+  },
+  {
+   "frame": 1042,
+   "id": "kenney-tick-004",
+   "db": 0,
+   "note": "D: D36-wordmark: 'SuperWorld' wordmark letters bounce up: type ripple"
+  },
+  {
+   "frame": 1056,
+   "id": "gen-pop",
+   "db": -6,
+   "note": "D: D37-globe-pin-1: @hrish pin drops on the globe with ripple rings: pin pop"
+  },
+  {
+   "frame": 1064,
+   "id": "kenney-tick-004",
+   "db": -4,
+   "note": "D: D38-tagline: 'Your world, mapped by you and your friends.' builds: soft t"
+  },
+  {
+   "frame": 1071,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 1,
+   "note": "D: D39-globe-pin-2: @isla.vuorinen pin drops: pin pop"
+  },
+  {
+   "frame": 1086,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 2,
+   "note": "D: D40-globe-pin-3: @katya pin drops: pin pop"
+  },
+  {
+   "frame": 1092,
+   "id": "kenney-tick-004",
+   "db": 0,
+   "note": "D: D41-url-pill: map.superworldapp.com pill rises: UI pop"
+  },
+  {
+   "frame": 1107,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 3,
+   "note": "D: D42-globe-pin-4: @travellingtexan pin drops: pin pop"
+  },
+  {
+   "frame": 1122,
+   "id": "gen-pop",
+   "db": -7,
+   "pitch": 4,
+   "note": "D: D43-globe-pin-5: @maxwoon pin drops: pin pop"
+  },
+  {
+   "frame": 1137,
+   "id": "gen-pop",
+   "db": -7,
+   "pitch": 5,
+   "note": "D: D44-globe-pin-6: @sebastian.ramon pin drops (now high on the globe, clear of "
+  },
+  {
+   "frame": 1152,
+   "id": "gen-pop",
+   "db": -7,
+   "pitch": 6,
+   "note": "D: D45-globe-pin-7: @alex.alexander pin drops: pin pop"
+  },
+  {
+   "frame": 1167,
+   "id": "gen-pop",
+   "db": -8,
+   "pitch": 7,
+   "note": "D: D46-globe-pin-8: @katya pin drops: pin pop"
+  },
+  {
+   "frame": 1182,
+   "id": "gen-pop",
+   "db": -8,
+   "pitch": 8,
+   "note": "D: D47-globe-pin-9: @hrish pin drops: pin pop"
+  }
+ ]
+}

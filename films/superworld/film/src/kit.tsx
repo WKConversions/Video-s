@@ -172,12 +172,18 @@ export const H1Map: React.FC<{ t: number }> = ({ t }) => <CityMap cam={h1Cam(t)}
 export const H2 = 20.0;
 export const H2Panel: React.FC<{ t: number }> = ({ t }) => (
   <div style={{ position: "absolute", left: 550, top: 60, width: 820, height: 960, borderRadius: 48, background: S.white, boxShadow: SHADOW, border: `1.5px solid ${S.line}`,
-    transform: `perspective(1800px) rotateY(${Math.sin((t - H2) * 2.4) * 5}deg) rotateX(${Math.cos((t - H2) * 2) * 3}deg) translateY(${Math.sin((t - H2) * 3) * 10}px)` }} />
+    transform: `perspective(1800px) rotateY(${Math.sin((t - H2) * 2.4) * 5}deg) rotateX(${Math.cos((t - H2) * 2) * 3}deg) translateY(${Math.sin((t - H2) * 3) * 10}px)`, overflow: "hidden" }}>
+    {/* a light sweep crosses the panel inside the hand-off window (19.75-20.2 s), so the window always moves */}
+    <div style={{ position: "absolute", top: -200, bottom: -200, width: 420, left: mix(-520, 920, clamp((t - (H2 - 0.25)) / 0.45)), transform: "rotate(14deg)",
+      background: "linear-gradient(90deg, rgba(39,111,243,0), rgba(39,111,243,0.16), rgba(39,111,243,0))" }} />
+  </div>
 );
 // H3 (t = 30.0 s): the whole frame in the logo's gradient, a soft light sweeping across it.
 export const H3 = 30.0;
 export const H3Gradient: React.FC<{ t: number }> = ({ t }) => (
   <div style={{ position: "absolute", inset: 0, background: GRAD }}>
-    <div style={{ position: "absolute", top: 0, bottom: 0, width: 900, left: mix(-900, 1920, clamp((t - (H3 - 0.6)) / 1.2)), background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)" }} />
+    {/* two light bands sweep across inside the hand-off window (29.75-30.25 s), so the window always moves */}
+    <div style={{ position: "absolute", top: 0, bottom: 0, width: 560, left: mix(-560, 1920, clamp((t - (H3 - 0.3)) / 0.6)), background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.42), transparent)" }} />
+    <div style={{ position: "absolute", top: 0, bottom: 0, width: 360, left: mix(-760, 1720, clamp((t - (H3 - 0.22)) / 0.6)), background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)" }} />
   </div>
 );

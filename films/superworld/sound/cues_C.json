@@ -1,0 +1,317 @@
+[
+ {
+  "t": 20.25,
+  "id": "gen-whoosh-medium",
+  "db": -8,
+  "pitch": 0,
+  "note": "Chat panel slides left; the map window sweeps in from off-frame right"
+ },
+ {
+  "t": 20.3,
+  "id": "gen-appear",
+  "db": -12,
+  "pitch": 2,
+  "note": "Chat header and avatar"
+ },
+ {
+  "t": 20.45,
+  "id": "kenney-tick-004",
+  "db": -13,
+  "pitch": 3,
+  "note": "Messages / Discover segmented control"
+ },
+ {
+  "t": 20.5,
+  "id": "gen-whoosh-short",
+  "db": -11,
+  "pitch": -2,
+  "note": "Headline glass rises from below the frame"
+ },
+ {
+  "t": 20.55,
+  "id": "gen-tick",
+  "db": -13,
+  "pitch": 0,
+  "note": "Tab bar rises, Chat tab pulses"
+ },
+ {
+  "t": 20.6,
+  "id": "gen-pop",
+  "db": -9,
+  "pitch": 0,
+  "note": "'Meet up in' letters spring up"
+ },
+ {
+  "t": 20.72,
+  "id": "kenney-drop-003",
+  "db": -10,
+  "pitch": 0,
+  "note": "New York chat row lands"
+ },
+ {
+  "t": 20.74,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 2,
+  "note": "New York chip on the map"
+ },
+ {
+  "t": 20.92,
+  "id": "gen-pop",
+  "db": -8,
+  "pitch": 2,
+  "note": "'every city.' in blue"
+ },
+ {
+  "t": 21.04,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 3,
+  "note": "Jersey City chip on the map"
+ },
+ {
+  "t": 21.07,
+  "id": "kenney-drop-003",
+  "db": -10,
+  "pitch": 2,
+  "note": "Jersey City row lands"
+ },
+ {
+  "t": 21.34,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 4,
+  "note": "City Ambassadors chip on the map"
+ },
+ {
+  "t": 21.42,
+  "id": "kenney-drop-003",
+  "db": -10,
+  "pitch": 4,
+  "note": "SuperWorld City Ambassadors row lands"
+ },
+ {
+  "t": 21.75,
+  "id": "kenney-select-001",
+  "db": -9,
+  "pitch": 0,
+  "note": "Discover selected, the thumb slides"
+ },
+ {
+  "t": 21.8,
+  "id": "gen-whoosh-short",
+  "db": -11,
+  "pitch": 1,
+  "note": "Chips leave, Messages pushes over to Discover"
+ },
+ {
+  "t": 21.88,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": 0,
+  "note": "Pin @katya drops"
+ },
+ {
+  "t": 22,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": 1,
+  "note": "Pin @maxwoon and the mic pin in the mini map"
+ },
+ {
+  "t": 22.12,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": 2,
+  "note": "Pin @travellingtexan"
+ },
+ {
+  "t": 22.24,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": 3,
+  "note": "Pin @alex.alexander"
+ },
+ {
+  "t": 22.25,
+  "id": "gen-appear",
+  "db": -11,
+  "pitch": 0,
+  "note": "Activity chat card expands"
+ },
+ {
+  "t": 22.36,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": 4,
+  "note": "Pin @isla.vuorinen"
+ },
+ {
+  "t": 22.4,
+  "id": "kenney-tick-004",
+  "db": -13,
+  "pitch": 0,
+  "note": "'valencia vds' title, then place, date and members lines"
+ },
+ {
+  "t": 22.48,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": 5,
+  "note": "Pin @hrish"
+ },
+ {
+  "t": 22.75,
+  "id": "gen-pop",
+  "db": -10,
+  "pitch": 1,
+  "note": "Join button pops"
+ },
+ {
+  "t": 22.86,
+  "id": "gen-tap",
+  "db": -8,
+  "pitch": 0,
+  "note": "Tap on Join"
+ },
+ {
+  "t": 23.12,
+  "id": "gen-success",
+  "db": -7,
+  "pitch": 0,
+  "note": "'Joined \u2713', the avatar takes off"
+ },
+ {
+  "t": 23.35,
+  "id": "kenney-maximize-009",
+  "db": -10,
+  "pitch": 0,
+  "note": "Island opens: isla.vuorinen joined the Val\u00e8ncia chat"
+ },
+ {
+  "t": 23.48,
+  "id": "kenney-drop-003",
+  "db": -10,
+  "pitch": 2,
+  "note": "Avatar lands in the stack"
+ },
+ {
+  "t": 23.95,
+  "id": "gen-tick",
+  "db": -12,
+  "pitch": 3,
+  "note": "Island morphs: tattiv joined the Lisbon chat"
+ },
+ {
+  "t": 24.2,
+  "id": "gen-whoosh-whip",
+  "db": -6,
+  "pitch": 0,
+  "note": "Speed-matched push to the apps"
+ },
+ {
+  "t": 24.5,
+  "id": "gen-impact-soft",
+  "db": -8,
+  "pitch": 0,
+  "note": "'Play apps built on Earth.' lands"
+ },
+ {
+  "t": 25,
+  "id": "gen-whoosh-short",
+  "db": -11,
+  "pitch": 0,
+  "note": "Cover-flow flick 1"
+ },
+ {
+  "t": 25.5,
+  "id": "kenney-tick-004",
+  "db": -11,
+  "pitch": 1,
+  "note": "Cover-flow flick 2"
+ },
+ {
+  "t": 25.75,
+  "id": "gen-appear",
+  "db": -12,
+  "pitch": 2,
+  "note": "Glass pill: Interactive experiences you open right on the map."
+ },
+ {
+  "t": 26,
+  "id": "gen-whoosh-short",
+  "db": -11,
+  "pitch": 2,
+  "note": "Cover-flow flick 3"
+ },
+ {
+  "t": 26.5,
+  "id": "kenney-tick-004",
+  "db": -11,
+  "pitch": 3,
+  "note": "Cover-flow flick 4"
+ },
+ {
+  "t": 27,
+  "id": "gen-whoosh-short",
+  "db": -10,
+  "pitch": 4,
+  "note": "Cover-flow flick 5, Network States centred"
+ },
+ {
+  "t": 27.55,
+  "id": "gen-swell",
+  "db": -9,
+  "pitch": 0,
+  "note": "Network States card lifts and turns"
+ },
+ {
+  "t": 27.82,
+  "id": "gen-tap",
+  "db": -8,
+  "pitch": 0,
+  "note": "Tap on Open"
+ },
+ {
+  "t": 27.95,
+  "id": "kenney-click-001",
+  "db": -9,
+  "pitch": 0,
+  "note": "Open pressed"
+ },
+ {
+  "t": 28.1,
+  "id": "gen-whoosh-medium",
+  "db": -9,
+  "pitch": -2,
+  "note": "Side cards fly off"
+ },
+ {
+  "t": 28.2,
+  "id": "gen-whoosh-short",
+  "db": -12,
+  "pitch": 2,
+  "note": "Headline and pill rise away"
+ },
+ {
+  "t": 28.35,
+  "id": "gen-riser-1s",
+  "db": -6,
+  "pitch": 0,
+  "note": "The illustration floods the frame"
+ },
+ {
+  "t": 29.05,
+  "id": "gen-whoosh-deep",
+  "db": -7,
+  "pitch": 0,
+  "note": "Fly through the globe, the dots stream out"
+ },
+ {
+  "t": 29.4,
+  "id": "gen-shimmer",
+  "db": -10,
+  "pitch": 2,
+  "note": "H3 light sweep begins over the gradient"
+ }
+]

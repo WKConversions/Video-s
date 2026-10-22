@@ -1,0 +1,331 @@
+[
+ {
+  "t": 30,
+  "id": "gen-swell",
+  "db": -14,
+  "pitch": 0,
+  "note": "D01-h3-sweep-tail: tail of C's gradient light-sweep air (hand-off), continue C'"
+ },
+ {
+  "t": 30.25,
+  "id": "gen-swell",
+  "db": -6,
+  "pitch": 0,
+  "note": "D02-iris-down: full-frame gradient irises down into the Studio card: soft w"
+ },
+ {
+  "t": 30.5,
+  "id": "gen-swell",
+  "db": -18,
+  "pitch": 0,
+  "note": "D03-camera-push: slow camera push begins: low air swell under the Studio sect"
+ },
+ {
+  "t": 30.62,
+  "id": "gen-swell",
+  "db": -12,
+  "pitch": 0,
+  "note": "D04-body-rise: white card body rises from the bottom edge: soft upward swel"
+ },
+ {
+  "t": 30.72,
+  "id": "gen-whoosh-short",
+  "db": -14,
+  "pitch": 2,
+  "note": "D05-header: header SUPERWORLD STUDIO / Make your own app slides up: ligh"
+ },
+ {
+  "t": 30.8,
+  "id": "kenney-drop-003",
+  "db": -16,
+  "pitch": 0,
+  "note": "D06-slot-1: dashed slot 1 drops in (+ glyph), card glides right: tiny ti"
+ },
+ {
+  "t": 30.88,
+  "id": "kenney-drop-003",
+  "db": -16,
+  "pitch": 2,
+  "note": "D07-slot-2: dashed slot 2 drops in: tiny tick"
+ },
+ {
+  "t": 30.9,
+  "id": "gen-pop",
+  "db": -10,
+  "pitch": 3,
+  "note": "D08-tool-icon: tool icon pops with a spin: pop"
+ },
+ {
+  "t": 30.95,
+  "id": "gen-whoosh-short",
+  "db": -10,
+  "pitch": 0,
+  "note": "D09-tour-fly: Tour tile flies in from the left: short whoosh; slot 3 drops"
+ },
+ {
+  "t": 31,
+  "id": "kenney-tick-004",
+  "db": -7,
+  "pitch": 0,
+  "note": "D10-type-build: 'Build your own.' letters bounce up: kinetic type ripple"
+ },
+ {
+  "t": 31.25,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 5,
+  "note": "D11-tour-pin: Tour emoji pin pops on the mini map: pop"
+ },
+ {
+  "t": 31.27,
+  "id": "gen-tap",
+  "db": -5,
+  "pitch": 0,
+  "note": "D12-tour-snap: Tour tile snaps into slot 1: snap/click"
+ },
+ {
+  "t": 31.45,
+  "id": "gen-whoosh-short",
+  "db": -10,
+  "pitch": 1,
+  "note": "D13-hunt-fly: Treasure Hunt tile flies in: whoosh"
+ },
+ {
+  "t": 31.5,
+  "id": "kenney-tick-004",
+  "db": -5,
+  "pitch": 0,
+  "note": "D14-type-nocode: 'No code.' bounces up in blue: type hit"
+ },
+ {
+  "t": 31.75,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 7,
+  "note": "D15-hunt-pin: Treasure Hunt emoji pin pops on the mini map: pop"
+ },
+ {
+  "t": 31.77,
+  "id": "kenney-drop-003",
+  "db": -5,
+  "pitch": 2,
+  "note": "D16-hunt-snap: Treasure Hunt tile snaps into slot 2: snap"
+ },
+ {
+  "t": 31.95,
+  "id": "gen-whoosh-short",
+  "db": -10,
+  "pitch": 3,
+  "note": "D17-party-fly: Party World tile flies in from the bottom-left: whoosh"
+ },
+ {
+  "t": 32.2,
+  "id": "gen-swell",
+  "db": -14,
+  "pitch": 0,
+  "note": "D18-switch-row: No code switch row rises into the card: soft tick"
+ },
+ {
+  "t": 32.25,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 9,
+  "note": "D19-party-pin: Party World emoji pin pops on the mini map: pop"
+ },
+ {
+  "t": 32.27,
+  "id": "kenney-drop-003",
+  "db": -5,
+  "pitch": 4,
+  "note": "D20-party-snap: Party World tile snaps into slot 3: snap"
+ },
+ {
+  "t": 32.45,
+  "id": "gen-tick",
+  "db": -12,
+  "pitch": 0,
+  "note": "D21-map-dive: mini map dives into the park: short zoom swoosh"
+ },
+ {
+  "t": 32.55,
+  "id": "gen-tap",
+  "db": -4,
+  "pitch": 0,
+  "note": "D22-switch-flip: No-code switch flips on: crisp toggle click"
+ },
+ {
+  "t": 32.7,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 0,
+  "note": "D23-pin-hrish: @hrish pin pops on the mini map: pop"
+ },
+ {
+  "t": 32.92,
+  "id": "gen-whoosh-short",
+  "db": -8,
+  "pitch": 0,
+  "note": "D24-coins-fly: three star coins arc from the card toward the chip (32.92/32"
+ },
+ {
+  "t": 32.95,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 2,
+  "note": "D25-pin-katya: @katya pin pops on the mini map: pop"
+ },
+ {
+  "t": 33,
+  "id": "gen-shimmer",
+  "db": -6,
+  "pitch": 0,
+  "note": "D26-chip-pop: 'Creators earn' chip pops in: pop"
+ },
+ {
+  "t": 33.08,
+  "id": "gen-pop",
+  "db": -9,
+  "pitch": 4,
+  "note": "D27-chip-coin-spin: chip coin spins: small coin ring"
+ },
+ {
+  "t": 33.2,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 4,
+  "note": "D28-pin-maxwoon: @maxwoon pin pops on the mini map: pop"
+ },
+ {
+  "t": 33.3,
+  "id": "gen-pop",
+  "db": -10,
+  "pitch": 7,
+  "note": "D29-coins-land: coins land in the chip (33.30/33.37/33.44): three soft clink"
+ },
+ {
+  "t": 33.32,
+  "id": "kenney-tick-004",
+  "db": -14,
+  "pitch": 0,
+  "note": "D30-type-sub: 'from the apps they build.' builds: light type ripple"
+ },
+ {
+  "t": 33.82,
+  "id": "gen-whoosh-short",
+  "db": -10,
+  "pitch": -2,
+  "note": "D31-column-out: left column slides out left: whoosh out"
+ },
+ {
+  "t": 33.92,
+  "id": "gen-whoosh-short",
+  "db": -6,
+  "pitch": -3,
+  "note": "D32-card-shrink: card shrinks into the app icon as the camera pulls back: who"
+ },
+ {
+  "t": 34.06,
+  "id": "gen-shimmer",
+  "db": -10,
+  "pitch": 5,
+  "note": "D33-white-s: white S mark appears in the icon: sparkle"
+ },
+ {
+  "t": 34.3,
+  "id": "gen-impact-soft",
+  "db": -4,
+  "pitch": 0,
+  "note": "D34-logo-reveal: icon dissolves into the SuperWorld logo, ring of light (34.3"
+ },
+ {
+  "t": 34.5,
+  "id": "gen-swell",
+  "db": -8,
+  "pitch": -5,
+  "note": "D35-globe-rise: dot globe rises from below and starts spinning: low swell"
+ },
+ {
+  "t": 34.72,
+  "id": "kenney-tick-004",
+  "db": -6,
+  "pitch": 0,
+  "note": "D36-wordmark: 'SuperWorld' wordmark letters bounce up: type ripple"
+ },
+ {
+  "t": 35.2,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 0,
+  "note": "D37-globe-pin-1: @hrish pin drops on the globe with ripple rings: pin pop"
+ },
+ {
+  "t": 35.45,
+  "id": "kenney-tick-004",
+  "db": -10,
+  "pitch": 0,
+  "note": "D38-tagline: 'Your world, mapped by you and your friends.' builds: soft t"
+ },
+ {
+  "t": 35.7,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 1,
+  "note": "D39-globe-pin-2: @isla.vuorinen pin drops: pin pop"
+ },
+ {
+  "t": 36.2,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 2,
+  "note": "D40-globe-pin-3: @katya pin drops: pin pop"
+ },
+ {
+  "t": 36.4,
+  "id": "kenney-tick-004",
+  "db": -6,
+  "pitch": 0,
+  "note": "D41-url-pill: map.superworldapp.com pill rises: UI pop"
+ },
+ {
+  "t": 36.9,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 3,
+  "note": "D42-globe-pin-4: @travellingtexan pin drops: pin pop"
+ },
+ {
+  "t": 37.4,
+  "id": "gen-pop",
+  "db": -13,
+  "pitch": 4,
+  "note": "D43-globe-pin-5: @maxwoon pin drops: pin pop"
+ },
+ {
+  "t": 37.9,
+  "id": "gen-pop",
+  "db": -13,
+  "pitch": 5,
+  "note": "D44-globe-pin-6: @sebastian.ramon pin drops (now high on the globe, clear of "
+ },
+ {
+  "t": 38.4,
+  "id": "gen-pop",
+  "db": -13,
+  "pitch": 6,
+  "note": "D45-globe-pin-7: @alex.alexander pin drops: pin pop"
+ },
+ {
+  "t": 38.9,
+  "id": "gen-pop",
+  "db": -14,
+  "pitch": 7,
+  "note": "D46-globe-pin-8: @katya pin drops: pin pop"
+ },
+ {
+  "t": 39.4,
+  "id": "gen-pop",
+  "db": -14,
+  "pitch": 8,
+  "note": "D47-globe-pin-9: @hrish pin drops: pin pop"
+ }
+]
