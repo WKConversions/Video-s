@@ -150,10 +150,12 @@ export const H3Ink: React.FC<{ t: number }> = ({ t }) => (
 // cream to sunset), breathing, with a soft highlight circling.
 export const H4 = 32.85;
 export const H4Glow: React.FC<{ t: number }> = ({ t }) => {
-  const k = t - H4, cx = 960 + Math.cos(k * 3) * 160, cy = 540 + Math.sin(k * 3) * 90;
+  // the highlight circles fast enough (and a warm band sweeps through) that every frame of the window moves
+  const k = t - H4, cx = 960 + Math.cos(k * 7) * 260, cy = 540 + Math.sin(k * 7) * 150;
   return (
-    <div style={{ position: "absolute", inset: 0, background: `radial-gradient(circle at 50% 50%, ${F.sunset} 0%, #F1D7B8 38%, ${F.cream} 80%)` }}>
-      <div style={{ position: "absolute", left: cx - 380, top: cy - 380, width: 760, height: 760, borderRadius: 760, background: "radial-gradient(circle, rgba(255,255,255,0.55), rgba(255,255,255,0))" }} />
+    <div style={{ position: "absolute", inset: 0, overflow: "hidden", background: `radial-gradient(circle at 50% 50%, ${F.sunset} 0%, #F1D7B8 38%, ${F.cream} 80%)` }}>
+      <div style={{ position: "absolute", left: cx - 380, top: cy - 380, width: 760, height: 760, borderRadius: 760, background: "radial-gradient(circle, rgba(255,255,255,0.75), rgba(255,255,255,0))" }} />
+      <div style={{ position: "absolute", top: -300, bottom: -300, width: 520, left: mix(-700, 2100, clamp((t - (H4 - 0.3)) / 0.65)), transform: "rotate(16deg)", background: "linear-gradient(90deg, rgba(232,185,138,0), rgba(214,150,96,0.45), rgba(232,185,138,0))" }} />
     </div>
   );
 };
