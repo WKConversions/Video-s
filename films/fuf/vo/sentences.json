@@ -1,0 +1,101 @@
+[
+ {
+  "i": 1,
+  "text": "Great opportunities start with the right connections.",
+  "start": 0.05,
+  "end": 3.018,
+  "pause_after": 0.392,
+  "first_key": "w:great",
+  "last_key": "w:connections"
+ },
+ {
+  "i": 2,
+  "text": "But finding ambitious people who share your vision isn't always easy.",
+  "start": 3.409,
+  "end": 7.001,
+  "pause_after": 0.58,
+  "first_key": "w:but",
+  "last_key": "w:easy"
+ },
+ {
+  "i": 3,
+  "text": "Meet Future Unicorn Founders.",
+  "start": 7.581,
+  "end": 9.633,
+  "pause_after": 0.384,
+  "first_key": "w:meet",
+  "last_key": "w:founders"
+ },
+ {
+  "i": 4,
+  "text": "An international networking community bringing founders, entrepreneurs, builders, and investors together in M\u00e1laga.",
+  "start": 10.017,
+  "end": 16.634,
+  "pause_after": 0.44,
+  "first_key": "w:an",
+  "last_key": "w:mlaga"
+ },
+ {
+  "i": 5,
+  "text": "Through exclusive gatherings and meaningful conversations, new ideas emerge, partnerships form, and opportunities grow.",
+  "start": 17.074,
+  "end": 24.047,
+  "pause_after": 0.417,
+  "first_key": "w:through",
+  "last_key": "w:grow"
+ },
+ {
+  "i": 6,
+  "text": "No awkward networking.",
+  "start": 24.465,
+  "end": 25.775,
+  "pause_after": 0.149,
+  "first_key": "w:no",
+  "last_key": "w:networking2"
+ },
+ {
+  "i": 7,
+  "text": "No endless business card exchanges.",
+  "start": 25.924,
+  "end": 27.988,
+  "pause_after": 0.423,
+  "first_key": "w:no2",
+  "last_key": "w:exchanges"
+ },
+ {
+  "i": 8,
+  "text": "Just ambitious minds, real conversations, and connections that matter.",
+  "start": 28.411,
+  "end": 32.62,
+  "pause_after": 0.465,
+  "first_key": "w:just",
+  "last_key": "w:matter"
+ },
+ {
+  "i": 9,
+  "text": "Because the next big opportunity might start with one conversation.",
+  "start": 33.084,
+  "end": 36.686,
+  "pause_after": 0.543,
+  "first_key": "w:because",
+  "last_key": "w:conversation"
+ },
+ {
+  "i": 10,
+  "text": "Future Unicorn Founders.",
+  "start": 37.229,
+  "end": 38.748,
+  "pause_after": 0.386,
+  "first_key": "w:future2",
+  "last_key": "w:founders3"
+ },
+ {
+  "i": 11,
+  "text": "Build what's next, together.",
+  "start": 39.134,
+  "end": 40.823,
+  "pause_after": 0.267,
+  "first_key": "w:build",
+  "last_key": "w:together2"
+ }
+]

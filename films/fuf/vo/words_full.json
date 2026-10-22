@@ -1,0 +1,500 @@
+[
+ {
+  "w": "Great",
+  "key": "w:great",
+  "start": 0.05,
+  "end": 0.28
+ },
+ {
+  "w": "opportunities",
+  "key": "w:opportunities",
+  "start": 0.28,
+  "end": 0.84
+ },
+ {
+  "w": "start",
+  "key": "w:start",
+  "start": 0.84,
+  "end": 1.58
+ },
+ {
+  "w": "with",
+  "key": "w:with",
+  "start": 1.58,
+  "end": 1.82
+ },
+ {
+  "w": "the",
+  "key": "w:the",
+  "start": 1.82,
+  "end": 1.98
+ },
+ {
+  "w": "right",
+  "key": "w:right",
+  "start": 1.98,
+  "end": 2.22
+ },
+ {
+  "w": "connections.",
+  "key": "w:connections",
+  "start": 2.22,
+  "end": 3.018
+ },
+ {
+  "w": "But",
+  "key": "w:but",
+  "start": 3.409,
+  "end": 3.5
+ },
+ {
+  "w": "finding",
+  "key": "w:finding",
+  "start": 3.5,
+  "end": 3.82
+ },
+ {
+  "w": "ambitious",
+  "key": "w:ambitious",
+  "start": 3.82,
+  "end": 4.26
+ },
+ {
+  "w": "people",
+  "key": "w:people",
+  "start": 4.26,
+  "end": 4.68
+ },
+ {
+  "w": "who",
+  "key": "w:who",
+  "start": 4.68,
+  "end": 4.9
+ },
+ {
+  "w": "share",
+  "key": "w:share",
+  "start": 4.9,
+  "end": 5.2
+ },
+ {
+  "w": "your",
+  "key": "w:your",
+  "start": 5.2,
+  "end": 5.36
+ },
+ {
+  "w": "vision",
+  "key": "w:vision",
+  "start": 5.36,
+  "end": 5.68
+ },
+ {
+  "w": "isn't",
+  "key": "w:isnt",
+  "start": 5.68,
+  "end": 6.3
+ },
+ {
+  "w": "always",
+  "key": "w:always",
+  "start": 6.3,
+  "end": 6.54
+ },
+ {
+  "w": "easy.",
+  "key": "w:easy",
+  "start": 6.54,
+  "end": 7.001
+ },
+ {
+  "w": "Meet",
+  "key": "w:meet",
+  "start": 7.581,
+  "end": 7.868
+ },
+ {
+  "w": "Future",
+  "key": "w:future",
+  "start": 8.065,
+  "end": 8.36
+ },
+ {
+  "w": "Unicorn",
+  "key": "w:unicorn",
+  "start": 8.36,
+  "end": 8.82
+ },
+ {
+  "w": "Founders.",
+  "key": "w:founders",
+  "start": 8.82,
+  "end": 9.633
+ },
+ {
+  "w": "An",
+  "key": "w:an",
+  "start": 10.017,
+  "end": 10.12
+ },
+ {
+  "w": "international",
+  "key": "w:international",
+  "start": 10.12,
+  "end": 10.64
+ },
+ {
+  "w": "networking",
+  "key": "w:networking",
+  "start": 10.64,
+  "end": 11.2
+ },
+ {
+  "w": "community",
+  "key": "w:community",
+  "start": 11.2,
+  "end": 11.7
+ },
+ {
+  "w": "bringing",
+  "key": "w:bringing",
+  "start": 11.7,
+  "end": 12.221
+ },
+ {
+  "w": "founders,",
+  "key": "w:founders2",
+  "start": 12.353,
+  "end": 13.06
+ },
+ {
+  "w": "entrepreneurs,",
+  "key": "w:entrepreneurs",
+  "start": 13.06,
+  "end": 13.92
+ },
+ {
+  "w": "builders,",
+  "key": "w:builders",
+  "start": 13.92,
+  "end": 14.52
+ },
+ {
+  "w": "and",
+  "key": "w:and",
+  "start": 14.52,
+  "end": 14.78
+ },
+ {
+  "w": "investors",
+  "key": "w:investors",
+  "start": 14.78,
+  "end": 15.2
+ },
+ {
+  "w": "together",
+  "key": "w:together",
+  "start": 15.2,
+  "end": 15.78
+ },
+ {
+  "w": "in",
+  "key": "w:in",
+  "start": 15.78,
+  "end": 16.14
+ },
+ {
+  "w": "M\u00e1laga.",
+  "key": "w:mlaga",
+  "start": 16.14,
+  "end": 16.634
+ },
+ {
+  "w": "Through",
+  "key": "w:through",
+  "start": 17.074,
+  "end": 17.16
+ },
+ {
+  "w": "exclusive",
+  "key": "w:exclusive",
+  "start": 17.16,
+  "end": 17.7
+ },
+ {
+  "w": "gatherings",
+  "key": "w:gatherings",
+  "start": 17.7,
+  "end": 18.08
+ },
+ {
+  "w": "and",
+  "key": "w:and2",
+  "start": 18.08,
+  "end": 18.5
+ },
+ {
+  "w": "meaningful",
+  "key": "w:meaningful",
+  "start": 18.5,
+  "end": 18.94
+ },
+ {
+  "w": "conversations,",
+  "key": "w:conversations",
+  "start": 18.94,
+  "end": 19.928
+ },
+ {
+  "w": "new",
+  "key": "w:new",
+  "start": 20.144,
+  "end": 20.34
+ },
+ {
+  "w": "ideas",
+  "key": "w:ideas",
+  "start": 20.34,
+  "end": 20.72
+ },
+ {
+  "w": "emerge,",
+  "key": "w:emerge",
+  "start": 20.72,
+  "end": 21.348
+ },
+ {
+  "w": "partnerships",
+  "key": "w:partnerships",
+  "start": 21.568,
+  "end": 21.9
+ },
+ {
+  "w": "form,",
+  "key": "w:form",
+  "start": 21.9,
+  "end": 22.531
+ },
+ {
+  "w": "and",
+  "key": "w:and3",
+  "start": 22.698,
+  "end": 22.8
+ },
+ {
+  "w": "opportunities",
+  "key": "w:opportunities2",
+  "start": 22.8,
+  "end": 23.32
+ },
+ {
+  "w": "grow.",
+  "key": "w:grow",
+  "start": 23.32,
+  "end": 24.047
+ },
+ {
+  "w": "No",
+  "key": "w:no",
+  "start": 24.465,
+  "end": 24.68
+ },
+ {
+  "w": "awkward",
+  "key": "w:awkward",
+  "start": 24.68,
+  "end": 25.04
+ },
+ {
+  "w": "networking.",
+  "key": "w:networking2",
+  "start": 25.04,
+  "end": 25.775
+ },
+ {
+  "w": "No",
+  "key": "w:no2",
+  "start": 25.924,
+  "end": 26.2
+ },
+ {
+  "w": "endless",
+  "key": "w:endless",
+  "start": 26.2,
+  "end": 26.72
+ },
+ {
+  "w": "business",
+  "key": "w:business",
+  "start": 26.72,
+  "end": 27.02
+ },
+ {
+  "w": "card",
+  "key": "w:card",
+  "start": 27.02,
+  "end": 27.32
+ },
+ {
+  "w": "exchanges.",
+  "key": "w:exchanges",
+  "start": 27.32,
+  "end": 27.988
+ },
+ {
+  "w": "Just",
+  "key": "w:just",
+  "start": 28.411,
+  "end": 28.52
+ },
+ {
+  "w": "ambitious",
+  "key": "w:ambitious2",
+  "start": 28.52,
+  "end": 29.0
+ },
+ {
+  "w": "minds,",
+  "key": "w:minds",
+  "start": 29.0,
+  "end": 29.692
+ },
+ {
+  "w": "real",
+  "key": "w:real",
+  "start": 29.836,
+  "end": 30.12
+ },
+ {
+  "w": "conversations,",
+  "key": "w:conversations2",
+  "start": 30.12,
+  "end": 31.082
+ },
+ {
+  "w": "and",
+  "key": "w:and4",
+  "start": 31.257,
+  "end": 31.34
+ },
+ {
+  "w": "connections",
+  "key": "w:connections2",
+  "start": 31.34,
+  "end": 31.76
+ },
+ {
+  "w": "that",
+  "key": "w:that",
+  "start": 31.76,
+  "end": 32.12
+ },
+ {
+  "w": "matter.",
+  "key": "w:matter",
+  "start": 32.12,
+  "end": 32.62
+ },
+ {
+  "w": "Because",
+  "key": "w:because",
+  "start": 33.084,
+  "end": 33.22
+ },
+ {
+  "w": "the",
+  "key": "w:the2",
+  "start": 33.22,
+  "end": 33.42
+ },
+ {
+  "w": "next",
+  "key": "w:next",
+  "start": 33.42,
+  "end": 33.7
+ },
+ {
+  "w": "big",
+  "key": "w:big",
+  "start": 33.7,
+  "end": 33.9
+ },
+ {
+  "w": "opportunity",
+  "key": "w:opportunity",
+  "start": 33.9,
+  "end": 34.46
+ },
+ {
+  "w": "might",
+  "key": "w:might",
+  "start": 34.46,
+  "end": 34.98
+ },
+ {
+  "w": "start",
+  "key": "w:start2",
+  "start": 34.98,
+  "end": 35.3
+ },
+ {
+  "w": "with",
+  "key": "w:with2",
+  "start": 35.3,
+  "end": 35.54
+ },
+ {
+  "w": "one",
+  "key": "w:one",
+  "start": 35.54,
+  "end": 35.84
+ },
+ {
+  "w": "conversation.",
+  "key": "w:conversation",
+  "start": 35.84,
+  "end": 36.686
+ },
+ {
+  "w": "Future",
+  "key": "w:future2",
+  "start": 37.229,
+  "end": 37.44
+ },
+ {
+  "w": "Unicorn",
+  "key": "w:unicorn2",
+  "start": 37.44,
+  "end": 37.98
+ },
+ {
+  "w": "Founders.",
+  "key": "w:founders3",
+  "start": 37.98,
+  "end": 38.748
+ },
+ {
+  "w": "Build",
+  "key": "w:build",
+  "start": 39.134,
+  "end": 39.32
+ },
+ {
+  "w": "what's",
+  "key": "w:whats",
+  "start": 39.32,
+  "end": 39.62
+ },
+ {
+  "w": "next,",
+  "key": "w:next2",
+  "start": 39.62,
+  "end": 40.04
+ },
+ {
+  "w": "together.",
+  "key": "w:together2",
+  "start": 40.375,
+  "end": 40.823
+ }
+]
