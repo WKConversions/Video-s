@@ -1,0 +1,261 @@
+[
+ {
+  "t": 24.47,
+  "id": "gen-whoosh-short",
+  "db": -16,
+  "pitch": 0,
+  "note": "HELLO sticker drifts in from bottom right (before 'awkward' 24.68)"
+ },
+ {
+  "t": 25.06,
+  "id": "gen-whoosh-medium",
+  "db": -12,
+  "pitch": 1,
+  "note": "sticker peels off and flies up-right on 'networking'"
+ },
+ {
+  "t": 25.2,
+  "id": "gen-tap",
+  "db": -15,
+  "pitch": -3,
+  "note": "sticker crumples into a paper ball"
+ },
+ {
+  "t": 25.42,
+  "id": "gen-whoosh-deep",
+  "db": -13,
+  "pitch": -2,
+  "note": "Rolodex rises in from below; 'No awkward networking.' exits through masks"
+ },
+ {
+  "t": 25.64,
+  "id": "kenney-tick-004",
+  "db": -20,
+  "pitch": -4,
+  "note": "Rolodex card flick (reel starts spinning)"
+ },
+ {
+  "t": 25.86,
+  "id": "kenney-tick-004",
+  "db": -20,
+  "pitch": -3,
+  "note": "card flick"
+ },
+ {
+  "t": 26.06,
+  "id": "kenney-tick-004",
+  "db": -19,
+  "pitch": -2,
+  "note": "card flick (flick at 26.23 dropped to keep 'endless' 26.20 clear)"
+ },
+ {
+  "t": 26.38,
+  "id": "kenney-tick-004",
+  "db": -19,
+  "pitch": -1,
+  "note": "card flick, reel accelerating"
+ },
+ {
+  "t": 26.52,
+  "id": "kenney-tick-004",
+  "db": -18,
+  "pitch": 0,
+  "note": "card flick"
+ },
+ {
+  "t": 26.65,
+  "id": "kenney-tick-004",
+  "db": -18,
+  "pitch": 1,
+  "note": "card flick"
+ },
+ {
+  "t": 26.76,
+  "id": "kenney-tick-004",
+  "db": -18,
+  "pitch": 1,
+  "note": "card flick"
+ },
+ {
+  "t": 26.87,
+  "id": "kenney-tick-004",
+  "db": -18,
+  "pitch": 2,
+  "note": "card flick"
+ },
+ {
+  "t": 26.97,
+  "id": "kenney-tick-004",
+  "db": -17,
+  "pitch": 2,
+  "note": "card flick"
+ },
+ {
+  "t": 27.07,
+  "id": "kenney-tick-004",
+  "db": -17,
+  "pitch": 3,
+  "note": "card flick"
+ },
+ {
+  "t": 27.15,
+  "id": "kenney-tick-004",
+  "db": -17,
+  "pitch": 3,
+  "note": "card flick"
+ },
+ {
+  "t": 27.24,
+  "id": "kenney-tick-004",
+  "db": -16,
+  "pitch": 4,
+  "note": "last flick before the jam (no hit on the 'exchanges' onset 27.32)"
+ },
+ {
+  "t": 27.58,
+  "id": "gen-whoosh-medium",
+  "db": -16,
+  "pitch": -3,
+  "note": "cards burst outward from the jammed reel; low and quiet, 0.26 s after the 'exchanges' onset"
+ },
+ {
+  "t": 27.88,
+  "id": "kenney-maximize-009",
+  "db": -13,
+  "pitch": 0,
+  "note": "one card sweeps across and expands into the cream page"
+ },
+ {
+  "t": 28.1,
+  "id": "gen-appear",
+  "db": -15,
+  "pitch": 0,
+  "note": "seating plan (rug, oak table, mark) springs in"
+ },
+ {
+  "t": 28.22,
+  "id": "gen-tap",
+  "db": -19,
+  "pitch": 2,
+  "note": "chairs slide out around the table"
+ },
+ {
+  "t": 28.32,
+  "id": "gen-tap",
+  "db": -19,
+  "pitch": 3,
+  "note": "chairs, continued"
+ },
+ {
+  "t": 28.5,
+  "id": "gen-tap",
+  "db": -19,
+  "pitch": 4,
+  "note": "last chairs settle"
+ },
+ {
+  "t": 28.72,
+  "id": "gen-pop",
+  "db": -16,
+  "pitch": 0,
+  "note": "first initials circles fill the seats"
+ },
+ {
+  "t": 28.84,
+  "id": "gen-pop",
+  "db": -16,
+  "pitch": 2,
+  "note": "initials, continued (28.94-29.06 left clear for 'minds' 29.00)"
+ },
+ {
+  "t": 29.16,
+  "id": "kenney-drop-003",
+  "db": -17,
+  "pitch": 3,
+  "note": "last initials land"
+ },
+ {
+  "t": 29.56,
+  "id": "gen-whoosh-short",
+  "db": -17,
+  "pitch": -1,
+  "note": "overhead camera quarter-swing; 'Just ambitious minds' exits"
+ },
+ {
+  "t": 29.86,
+  "id": "gen-pop",
+  "db": -17,
+  "pitch": 1,
+  "note": "speech bubble 1 pops between neighbours on 'real'"
+ },
+ {
+  "t": 29.96,
+  "id": "gen-pop",
+  "db": -17,
+  "pitch": 3,
+  "note": "speech bubble 2"
+ },
+ {
+  "t": 30.04,
+  "id": "kenney-drop-003",
+  "db": -17,
+  "pitch": 0,
+  "note": "speech bubble 3"
+ },
+ {
+  "t": 30.16,
+  "id": "gen-pop",
+  "db": -16,
+  "pitch": 5,
+  "note": "speech bubble 4 on 'conversations'"
+ },
+ {
+  "t": 30.98,
+  "id": "gen-whoosh-short",
+  "db": -17,
+  "pitch": 1,
+  "note": "second camera swing; 'Real conversations,' exits"
+ },
+ {
+  "t": 31.36,
+  "id": "kenney-tick-004",
+  "db": -17,
+  "pitch": 0,
+  "note": "first bronze link draws between seats on 'connections'"
+ },
+ {
+  "t": 31.52,
+  "id": "kenney-tick-004",
+  "db": -17,
+  "pitch": 2,
+  "note": "second link"
+ },
+ {
+  "t": 31.78,
+  "id": "gen-tick",
+  "db": -17,
+  "pitch": 3,
+  "note": "third link on 'that'"
+ },
+ {
+  "t": 31.96,
+  "id": "gen-tick",
+  "db": -17,
+  "pitch": 5,
+  "note": "fourth link (links at 32.00 and 32.18 left silent for 'matter' 32.12)"
+ },
+ {
+  "t": 32.26,
+  "id": "gen-swell",
+  "db": -15,
+  "pitch": 0,
+  "note": "warm light floods the table, camera dives in, glow opens into H4Glow (after the 'matter' onset)"
+ },
+ {
+  "t": 32.6,
+  "id": "gen-shimmer",
+  "db": -18,
+  "pitch": 2,
+  "note": "glow settles into H4Glow; highlight sweeps (hand-off to E)"
+ }
+]

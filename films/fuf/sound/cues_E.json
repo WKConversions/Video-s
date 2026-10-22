@@ -1,0 +1,310 @@
+[
+ {
+  "t": 33.1,
+  "id": "gen-whoosh-short",
+  "db": -12,
+  "pitch": 0,
+  "note": "glow narrows into the doorway"
+ },
+ {
+  "t": 33.16,
+  "id": "kenney-click-001",
+  "db": -13,
+  "pitch": -2,
+  "note": "architrave springs in, door swings to ajar"
+ },
+ {
+  "t": 33.36,
+  "id": "gen-swell",
+  "db": -14,
+  "pitch": 0,
+  "note": "sunset light wedge spreads across the floor"
+ },
+ {
+  "t": 33.7,
+  "id": "gen-tap",
+  "db": -14,
+  "pitch": 2,
+  "note": "italic 'big' rises"
+ },
+ {
+  "t": 33.95,
+  "id": "kenney-tick-004",
+  "db": -14,
+  "pitch": 0,
+  "note": "kicker MAKE ROOM FOR POSSIBILITY slides in"
+ },
+ {
+  "t": 34.06,
+  "id": "kenney-click-001",
+  "db": -12,
+  "pitch": 0,
+  "note": "door latch, door swings fully open"
+ },
+ {
+  "t": 34.12,
+  "id": "gen-whoosh-deep",
+  "db": -9,
+  "pitch": 0,
+  "note": "camera pushes through the doorway"
+ },
+ {
+  "t": 34.41,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": 0,
+  "note": "'might' rolls into the slot (light, under the word)"
+ },
+ {
+  "t": 34.48,
+  "id": "gen-appear",
+  "db": -11,
+  "pitch": 0,
+  "note": "light condenses into the speech bubble, bronze rim"
+ },
+ {
+  "t": 34.98,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 0,
+  "note": "bubble grows, 'start' rolls in"
+ },
+ {
+  "t": 35.3,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 2,
+  "note": "bubble grows, 'with' rolls in"
+ },
+ {
+  "t": 35.52,
+  "id": "gen-whoosh-medium",
+  "db": -10,
+  "pitch": 0,
+  "note": "bubble becomes the frame, paper card slides up, 'one' rises"
+ },
+ {
+  "t": 35.84,
+  "id": "gen-shimmer",
+  "db": -13,
+  "pitch": 0,
+  "note": "'conversation.' letters cascade in"
+ },
+ {
+  "t": 36.02,
+  "id": "gen-whoosh-short",
+  "db": -14,
+  "pitch": 3,
+  "note": "bronze swash underline draws"
+ },
+ {
+  "t": 36.18,
+  "id": "gen-pop",
+  "db": -10,
+  "pitch": 3,
+  "note": "wordless ink reply bubble pops in"
+ },
+ {
+  "t": 36.26,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": 2,
+  "note": "tan line draws inside the reply bubble"
+ },
+ {
+  "t": 36.66,
+  "id": "gen-whoosh-short",
+  "db": -11,
+  "pitch": -2,
+  "note": "card drops away, bubble shrinks to the unicorn's place"
+ },
+ {
+  "t": 36.97,
+  "id": "kenney-drop-003",
+  "db": -12,
+  "pitch": 0,
+  "note": "photo iris closes, outline starts unwinding"
+ },
+ {
+  "t": 37.12,
+  "id": "gen-riser-1s",
+  "db": -12,
+  "pitch": 0,
+  "note": "one-line unicorn draws (37.12-37.62)"
+ },
+ {
+  "t": 37.23,
+  "id": "gen-tap",
+  "db": -13,
+  "pitch": 0,
+  "note": "'Future' slides in"
+ },
+ {
+  "t": 37.44,
+  "id": "gen-tap",
+  "db": -13,
+  "pitch": 2,
+  "note": "'Unicorn' slides in"
+ },
+ {
+  "t": 37.5,
+  "id": "gen-chime",
+  "db": -9,
+  "pitch": 0,
+  "note": "unicorn fills to the bronze mark"
+ },
+ {
+  "t": 37.98,
+  "id": "gen-tap",
+  "db": -13,
+  "pitch": 4,
+  "note": "'Founders.' slides in"
+ },
+ {
+  "t": 38.02,
+  "id": "kenney-tick-004",
+  "db": -14,
+  "pitch": 0,
+  "note": "hairline draws"
+ },
+ {
+  "t": 38.12,
+  "id": "kenney-select-001",
+  "db": -14,
+  "pitch": 0,
+  "note": "kicker INTERNATIONAL \u00b7 M\u00c1LAGA, SPAIN"
+ },
+ {
+  "t": 38.56,
+  "id": "gen-whoosh-medium",
+  "db": -9,
+  "pitch": 0,
+  "note": "speed-matched pan to the blocks"
+ },
+ {
+  "t": 38.7,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": -2,
+  "note": "floor line draws"
+ },
+ {
+  "t": 39.13,
+  "id": "gen-impact-soft",
+  "db": -9,
+  "pitch": 0,
+  "note": "'Build' block lands"
+ },
+ {
+  "t": 39.22,
+  "id": "kenney-drop-003",
+  "db": -12,
+  "pitch": 0,
+  "note": "sand block lands"
+ },
+ {
+  "t": 39.32,
+  "id": "gen-impact-soft",
+  "db": -10,
+  "pitch": 2,
+  "note": "'what's' block lands"
+ },
+ {
+  "t": 39.41,
+  "id": "kenney-drop-003",
+  "db": -12,
+  "pitch": 2,
+  "note": "bronze block lands"
+ },
+ {
+  "t": 39.51,
+  "id": "kenney-drop-003",
+  "db": -12,
+  "pitch": 4,
+  "note": "sand block lands"
+ },
+ {
+  "t": 39.62,
+  "id": "gen-impact-soft",
+  "db": -8,
+  "pitch": 3,
+  "note": "'next,' block lands on top"
+ },
+ {
+  "t": 40.32,
+  "id": "gen-tap",
+  "db": -12,
+  "pitch": 0,
+  "note": "'together.' letters start landing (40.32-40.48)"
+ },
+ {
+  "t": 40.42,
+  "id": "kenney-click-001",
+  "db": -13,
+  "pitch": 3,
+  "note": "last letters of 'together.' land"
+ },
+ {
+  "t": 40.64,
+  "id": "gen-whoosh-short",
+  "db": -13,
+  "pitch": 2,
+  "note": "'together.' lifts and fades"
+ },
+ {
+  "t": 40.78,
+  "id": "gen-whoosh-deep",
+  "db": -9,
+  "pitch": 0,
+  "note": "top block face opens into the M\u00e1laga photo panel, blocks fall away"
+ },
+ {
+  "t": 41,
+  "id": "gen-appear",
+  "db": -11,
+  "pitch": 0,
+  "note": "lockup rises"
+ },
+ {
+  "t": 41.15,
+  "id": "gen-tap",
+  "db": -14,
+  "pitch": 0,
+  "note": "'Ambitious, but' rises"
+ },
+ {
+  "t": 41.34,
+  "id": "gen-tap",
+  "db": -14,
+  "pitch": 2,
+  "note": "'approachable.' rises"
+ },
+ {
+  "t": 41.55,
+  "id": "kenney-select-001",
+  "db": -10,
+  "pitch": 0,
+  "note": "Join the community button springs in"
+ },
+ {
+  "t": 41.6,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": 0,
+  "note": "arrow nudge (repeats every 0.9 s)"
+ },
+ {
+  "t": 41.75,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": 0,
+  "note": "UPCOMING GATHERINGS chip slides up"
+ },
+ {
+  "t": 41.8,
+  "id": "kenney-tick-004",
+  "db": -14,
+  "pitch": 0,
+  "note": "kicker INTERNATIONAL IN OUTLOOK \u00b7 CONNECTED TO M\u00c1LAGA"
+ }
+]

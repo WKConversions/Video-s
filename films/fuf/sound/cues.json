@@ -1,0 +1,1214 @@
+{
+ "fps": 30,
+ "frames": 1275,
+ "library": "../../alumni/sound/lib",
+ "vo": {
+  "file": "../vo/vo.mp3",
+  "at": 0,
+  "compress": true
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "lufs": -27,
+  "duck_db": 5,
+  "fade_in": 0.2,
+  "fade_out": 1.0
+ },
+ "sfx": [
+  {
+   "frame": 1,
+   "id": "gen-whoosh-medium",
+   "db": -10,
+   "note": "A: film opens on two bands already running"
+  },
+  {
+   "frame": 2,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "note": "A: cream paper band arrives on 'great'"
+  },
+  {
+   "frame": 5,
+   "id": "gen-whoosh-short",
+   "db": -10,
+   "pitch": 2,
+   "note": "A: sand2 top band arrives"
+  },
+  {
+   "frame": 8,
+   "id": "gen-whoosh-short",
+   "db": -10,
+   "pitch": -2,
+   "note": "A: sand bottom band arrives on 'opportunities'"
+  },
+  {
+   "frame": 25,
+   "id": "gen-whoosh-medium",
+   "db": -8,
+   "note": "A: bands whip out bottom-first on 'start'"
+  },
+  {
+   "frame": 28,
+   "id": "gen-tick",
+   "db": -10,
+   "note": "A: cascade exit, bronze band"
+  },
+  {
+   "frame": 30,
+   "id": "gen-tick",
+   "db": -10,
+   "pitch": 2,
+   "note": "A: cascade exit, paper band"
+  },
+  {
+   "frame": 32,
+   "id": "gen-tick",
+   "db": -10,
+   "pitch": 4,
+   "note": "A: cascade exit, ink band"
+  },
+  {
+   "frame": 36,
+   "id": "gen-riser-1s",
+   "db": -10,
+   "note": "A: hands begin drawing in from the edges, rising into the touch"
+  },
+  {
+   "frame": 41,
+   "id": "gen-appear",
+   "db": -10,
+   "note": "A: serif 'start' rises"
+  },
+  {
+   "frame": 59,
+   "id": "kenney-tick-004",
+   "db": -10,
+   "note": "A: 'right' rises"
+  },
+  {
+   "frame": 67,
+   "id": "gen-shimmer",
+   "db": -8,
+   "note": "A: fingertips meet, sparks fly, 'connections.' lands"
+  },
+  {
+   "frame": 70,
+   "id": "gen-whoosh-short",
+   "db": -10,
+   "note": "A: top band clears"
+  },
+  {
+   "frame": 80,
+   "id": "gen-whoosh-deep",
+   "db": -6,
+   "note": "A: push up: drawing out, slot machine rises in"
+  },
+  {
+   "frame": 101,
+   "id": "gen-impact-soft",
+   "db": -6,
+   "note": "A: machine settles just before 'But'"
+  },
+  {
+   "frame": 105,
+   "id": "kenney-select-001",
+   "db": -6,
+   "note": "A: lever pull 1"
+  },
+  {
+   "frame": 109,
+   "id": "gen-whoosh-medium",
+   "db": -9,
+   "note": "A: reels start spinning"
+  },
+  {
+   "frame": 115,
+   "id": "kenney-tick-004",
+   "db": -10,
+   "note": "A: display rolls to 'ambitious people'"
+  },
+  {
+   "frame": 139,
+   "id": "gen-whoosh-short",
+   "db": -10,
+   "pitch": -2,
+   "note": "A: camera leans in on the display"
+  },
+  {
+   "frame": 140,
+   "id": "kenney-tick-004",
+   "db": -10,
+   "pitch": 1,
+   "note": "A: display rolls to 'who share'"
+  },
+  {
+   "frame": 156,
+   "id": "kenney-tick-004",
+   "db": -10,
+   "pitch": 2,
+   "note": "A: display rolls to 'your vision'"
+  },
+  {
+   "frame": 170,
+   "id": "kenney-tick-004",
+   "db": -10,
+   "pitch": 3,
+   "note": "A: display rolls to 'isn't always'"
+  },
+  {
+   "frame": 179,
+   "id": "gen-whoosh-medium",
+   "db": -9,
+   "note": "A: camera pushes in on the reels"
+  },
+  {
+   "frame": 182,
+   "id": "kenney-drop-003",
+   "db": -6,
+   "note": "A: reel 1 stops: rocket"
+  },
+  {
+   "frame": 189,
+   "id": "kenney-drop-003",
+   "db": -6,
+   "pitch": -1,
+   "note": "A: reel 2 stops: lightbulb (mismatch)"
+  },
+  {
+   "frame": 196,
+   "id": "kenney-drop-003",
+   "db": -5,
+   "pitch": -3,
+   "note": "A: reel 3 stops: briefcase, 'easy' rolls on the display"
+  },
+  {
+   "frame": 199,
+   "id": "gen-tap",
+   "db": -8,
+   "pitch": -2,
+   "note": "A: machine 'no' shake, lever springs back"
+  },
+  {
+   "frame": 200,
+   "id": "gen-appear",
+   "db": -9,
+   "note": "A: wordless receipt feeds out, camera tilts to the slot"
+  },
+  {
+   "frame": 216,
+   "id": "gen-tick",
+   "db": -10,
+   "note": "A: reel 1 nudge"
+  },
+  {
+   "frame": 219,
+   "id": "gen-tick",
+   "db": -10,
+   "pitch": 1,
+   "note": "A: reel 2 nudge"
+  },
+  {
+   "frame": 222,
+   "id": "gen-whoosh-deep",
+   "db": -7,
+   "note": "A: camera pull-back, lever wind-up, reel 3 nudge"
+  },
+  {
+   "frame": 228,
+   "id": "kenney-select-001",
+   "db": -5,
+   "pitch": 2,
+   "note": "A: lever drops on 'Meet'"
+  },
+  {
+   "frame": 231,
+   "id": "gen-riser-1s",
+   "db": -8,
+   "note": "A: reels spin toward the win, receipt falls away"
+  },
+  {
+   "frame": 247,
+   "id": "gen-whoosh-medium",
+   "db": -10,
+   "pitch": 2,
+   "note": "A: camera pushes in for the landing"
+  },
+  {
+   "frame": 251,
+   "id": "gen-pop",
+   "db": -6,
+   "note": "A: unicorn lands in reel 1"
+  },
+  {
+   "frame": 258,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 2,
+   "note": "A: unicorn lands in reel 2"
+  },
+  {
+   "frame": 265,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 4,
+   "note": "A: unicorn lands in reel 3, 'Founders.' on the display"
+  },
+  {
+   "frame": 266,
+   "id": "gen-success",
+   "db": -4,
+   "note": "A: three of a kind, bronze confetti bursts"
+  },
+  {
+   "frame": 270,
+   "id": "gen-whoosh-deep",
+   "db": -6,
+   "pitch": -2,
+   "note": "A: machine splits away, marks fly together"
+  },
+  {
+   "frame": 272,
+   "id": "gen-swell",
+   "db": -8,
+   "note": "A: seal rises out of the centre reel with a turn"
+  },
+  {
+   "frame": 286,
+   "id": "gen-stamp",
+   "db": -3,
+   "note": "A: seal presses down, the H1Seal hand-off"
+  },
+  {
+   "frame": 302,
+   "id": "gen-whoosh-medium",
+   "db": -8,
+   "note": "B: seal springs into the header badge, the board floods out of it"
+  },
+  {
+   "frame": 303,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "note": "B: ARRIVALS header and INTERNATIONAL mini row start flipping"
+  },
+  {
+   "frame": 311,
+   "id": "gen-stamp",
+   "db": -8,
+   "pitch": -2,
+   "note": "B: badge settles at (180,176) in the header"
+  },
+  {
+   "frame": 314,
+   "id": "gen-appear",
+   "db": -10,
+   "note": "B: FUTURE UNICORN FOUNDERS label slides in"
+  },
+  {
+   "frame": 318,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 2,
+   "note": "B: bronze M\u00c1LAGA header flips in, NETWORKING mini row"
+  },
+  {
+   "frame": 322,
+   "id": "gen-tick",
+   "db": -10,
+   "pitch": -3,
+   "note": "B: first wake wave of blank flips crosses the board"
+  },
+  {
+   "frame": 334,
+   "id": "gen-tick",
+   "db": -9,
+   "note": "B: COMMUNITY flips in bronze"
+  },
+  {
+   "frame": 336,
+   "id": "kenney-select-001",
+   "db": -10,
+   "note": "B: bronze hairline draws, FLIGHT/WHO/STATUS labels slide in"
+  },
+  {
+   "frame": 338,
+   "id": "gen-tick",
+   "db": -10,
+   "pitch": -3,
+   "note": "B: second wake wave of blank flips"
+  },
+  {
+   "frame": 351,
+   "id": "gen-whoosh-short",
+   "db": -10,
+   "note": "B: FUF 01-04 codes flip, camera starts gliding down the board"
+  },
+  {
+   "frame": 362,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "note": "B: FOUNDERS row flips"
+  },
+  {
+   "frame": 370,
+   "id": "gen-tap",
+   "db": -7,
+   "note": "B: FOUNDERS lands on its word, bronze band sweeps in"
+  },
+  {
+   "frame": 374,
+   "id": "kenney-click-001",
+   "db": -9,
+   "pitch": 2,
+   "note": "B: LANDED flips in bronze"
+  },
+  {
+   "frame": 383,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 1,
+   "note": "B: ENTREPRENEURS row flips"
+  },
+  {
+   "frame": 392,
+   "id": "gen-tap",
+   "db": -7,
+   "pitch": 1,
+   "note": "B: ENTREPRENEURS lands, band"
+  },
+  {
+   "frame": 395,
+   "id": "kenney-click-001",
+   "db": -9,
+   "pitch": 3,
+   "note": "B: LANDED"
+  },
+  {
+   "frame": 409,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 2,
+   "note": "B: BUILDERS row flips"
+  },
+  {
+   "frame": 418,
+   "id": "gen-tap",
+   "db": -7,
+   "pitch": 2,
+   "note": "B: BUILDERS lands, band"
+  },
+  {
+   "frame": 421,
+   "id": "kenney-click-001",
+   "db": -9,
+   "pitch": 4,
+   "note": "B: LANDED"
+  },
+  {
+   "frame": 434,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 3,
+   "note": "B: INVESTORS row flips"
+  },
+  {
+   "frame": 443,
+   "id": "gen-tap",
+   "db": -7,
+   "pitch": 3,
+   "note": "B: INVESTORS lands, band"
+  },
+  {
+   "frame": 447,
+   "id": "kenney-click-001",
+   "db": -9,
+   "pitch": 5,
+   "note": "B: LANDED"
+  },
+  {
+   "frame": 456,
+   "id": "gen-whoosh-short",
+   "db": -8,
+   "pitch": -2,
+   "note": "B: all flaps flip to blank at once, board dims"
+  },
+  {
+   "frame": 458,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "note": "B: giant cards rise into place one after another (15.26-15.56)"
+  },
+  {
+   "frame": 460,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "pitch": -4,
+   "note": "B: giant flaps start flipping through letters"
+  },
+  {
+   "frame": 474,
+   "id": "kenney-select-001",
+   "db": -10,
+   "note": "B: 'in' rises and the bronze rule draws under the word"
+  },
+  {
+   "frame": 478,
+   "id": "gen-tap",
+   "db": -6,
+   "pitch": -3,
+   "note": "B: last giant flap lands, M\u00c1LAGA complete"
+  },
+  {
+   "frame": 484,
+   "id": "gen-shimmer",
+   "db": -8,
+   "note": "B: the photo spreads through the letters from the L (on 'M\u00e1laga', kept under the voice)"
+  },
+  {
+   "frame": 488,
+   "id": "gen-whoosh-deep",
+   "db": -5,
+   "note": "B: camera flies into the L, cards and photo letters scale together"
+  },
+  {
+   "frame": 496,
+   "id": "gen-impact-soft",
+   "db": -6,
+   "note": "B: the L stem fills the frame, the photo becomes H2"
+  },
+  {
+   "frame": 513,
+   "id": "gen-whoosh-medium",
+   "db": -9,
+   "pitch": -2,
+   "note": "C: photo shrinks into the framed print"
+  },
+  {
+   "frame": 515,
+   "id": "gen-whoosh-short",
+   "db": -8,
+   "note": "C: envelope slides in on 'exclusive'"
+  },
+  {
+   "frame": 531,
+   "id": "gen-stamp",
+   "db": -6,
+   "pitch": 2,
+   "note": "C: wax seal cracks on 'gatherings'"
+  },
+  {
+   "frame": 533,
+   "id": "gen-whoosh-short",
+   "db": -11,
+   "pitch": 4,
+   "note": "C: envelope flap swings open"
+  },
+  {
+   "frame": 537,
+   "id": "gen-appear",
+   "db": -9,
+   "note": "C: invitation card rises out of the envelope"
+  },
+  {
+   "frame": 540,
+   "id": "kenney-tick-004",
+   "db": -11,
+   "note": "C: MON-SUN day row ticks in"
+  },
+  {
+   "frame": 550,
+   "id": "gen-pop",
+   "db": -7,
+   "pitch": 2,
+   "note": "C: FUF tag pops onto Thursday"
+  },
+  {
+   "frame": 551,
+   "id": "gen-whoosh-medium",
+   "db": -8,
+   "note": "C: speed-matched push left into shot 9"
+  },
+  {
+   "frame": 553,
+   "id": "gen-shimmer",
+   "db": -11,
+   "note": "C: bronze line starts drawing the two profiles"
+  },
+  {
+   "frame": 570,
+   "id": "gen-swell",
+   "db": -9,
+   "note": "C: bronze liquid fills the space between the faces (the cup)"
+  },
+  {
+   "frame": 584,
+   "id": "gen-tap",
+   "db": -10,
+   "note": "C: saucer line draws under the cup"
+  },
+  {
+   "frame": 599,
+   "id": "gen-whoosh-medium",
+   "db": -8,
+   "note": "C: vertical push up, napkin tossed in"
+  },
+  {
+   "frame": 601,
+   "id": "kenney-click-001",
+   "db": -11,
+   "note": "C: fountain pen lands on the napkin"
+  },
+  {
+   "frame": 604,
+   "id": "gen-tick",
+   "db": -11,
+   "note": "C: pen starts the rocket sketch on 'new'"
+  },
+  {
+   "frame": 617,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 3,
+   "note": "C: rocket flames sketched"
+  },
+  {
+   "frame": 621,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": -2,
+   "note": "C: chart axes drawn on 'emerge'"
+  },
+  {
+   "frame": 631,
+   "id": "gen-tap",
+   "db": -9,
+   "note": "C: arrowhead lands on the rising chart"
+  },
+  {
+   "frame": 639,
+   "id": "gen-whoosh-short",
+   "db": -8,
+   "note": "C: napkin flicked away up-left"
+  },
+  {
+   "frame": 641,
+   "id": "gen-whoosh-medium",
+   "db": -9,
+   "note": "C: two cups slide in from both sides"
+  },
+  {
+   "frame": 657,
+   "id": "gen-chime",
+   "db": -4,
+   "note": "C: cups clink on 'form' (hero hit)"
+  },
+  {
+   "frame": 658,
+   "id": "gen-shimmer",
+   "db": -10,
+   "note": "C: ripples run through both coffees"
+  },
+  {
+   "frame": 660,
+   "id": "kenney-select-001",
+   "db": -8,
+   "note": "C: saucers lock, bronze rings draw"
+  },
+  {
+   "frame": 679,
+   "id": "gen-whoosh-medium",
+   "db": -8,
+   "note": "C: cups lift away into shot 12"
+  },
+  {
+   "frame": 681,
+   "id": "kenney-maximize-009",
+   "db": -9,
+   "note": "C: pop-up back page (sunset sky) stands up"
+  },
+  {
+   "frame": 684,
+   "id": "kenney-drop-003",
+   "db": -9,
+   "note": "C: Gibralfaro hill layer folds up on 'opportunities'"
+  },
+  {
+   "frame": 686,
+   "id": "gen-swell",
+   "db": -11,
+   "note": "C: paper sun rises"
+  },
+  {
+   "frame": 688,
+   "id": "kenney-drop-003",
+   "db": -10,
+   "pitch": 2,
+   "note": "C: city blocks fold up"
+  },
+  {
+   "frame": 691,
+   "id": "kenney-drop-003",
+   "db": -10,
+   "pitch": 4,
+   "note": "C: La Farola, palms and harbour strip fold up"
+  },
+  {
+   "frame": 698,
+   "id": "gen-impact-soft",
+   "db": -6,
+   "note": "C: cathedral folds up just before 'grow'"
+  },
+  {
+   "frame": 705,
+   "id": "gen-pop",
+   "db": -8,
+   "pitch": -2,
+   "note": "C: ink dot opens on the cathedral spire"
+  },
+  {
+   "frame": 706,
+   "id": "gen-whoosh-deep",
+   "db": -6,
+   "note": "C: ink floods out from the spire, covers the frame at 24.00"
+  },
+  {
+   "frame": 720,
+   "id": "gen-impact-soft",
+   "db": -8,
+   "pitch": -3,
+   "note": "C: ink fully covers the frame, H3Ink hand-off"
+  },
+  {
+   "frame": 734,
+   "id": "gen-whoosh-short",
+   "db": -12,
+   "note": "D: HELLO sticker drifts in from bottom right (before 'awkward' 24.68)"
+  },
+  {
+   "frame": 752,
+   "id": "gen-whoosh-medium",
+   "db": -8,
+   "pitch": 1,
+   "note": "D: sticker peels off and flies up-right on 'networking'"
+  },
+  {
+   "frame": 756,
+   "id": "gen-tap",
+   "db": -11,
+   "pitch": -3,
+   "note": "D: sticker crumples into a paper ball"
+  },
+  {
+   "frame": 763,
+   "id": "gen-whoosh-deep",
+   "db": -9,
+   "pitch": -2,
+   "note": "D: Rolodex rises in from below; 'No awkward networking.' exits through masks"
+  },
+  {
+   "frame": 769,
+   "id": "kenney-tick-004",
+   "db": -16,
+   "pitch": -4,
+   "note": "D: Rolodex card flick (reel starts spinning)"
+  },
+  {
+   "frame": 776,
+   "id": "kenney-tick-004",
+   "db": -16,
+   "pitch": -3,
+   "note": "D: card flick"
+  },
+  {
+   "frame": 782,
+   "id": "kenney-tick-004",
+   "db": -15,
+   "pitch": -2,
+   "note": "D: card flick (flick at 26.23 dropped to keep 'endless' 26.20 clear)"
+  },
+  {
+   "frame": 791,
+   "id": "kenney-tick-004",
+   "db": -15,
+   "pitch": -1,
+   "note": "D: card flick, reel accelerating"
+  },
+  {
+   "frame": 796,
+   "id": "kenney-tick-004",
+   "db": -14,
+   "note": "D: card flick"
+  },
+  {
+   "frame": 800,
+   "id": "kenney-tick-004",
+   "db": -14,
+   "pitch": 1,
+   "note": "D: card flick"
+  },
+  {
+   "frame": 803,
+   "id": "kenney-tick-004",
+   "db": -14,
+   "pitch": 1,
+   "note": "D: card flick"
+  },
+  {
+   "frame": 806,
+   "id": "kenney-tick-004",
+   "db": -14,
+   "pitch": 2,
+   "note": "D: card flick"
+  },
+  {
+   "frame": 809,
+   "id": "kenney-tick-004",
+   "db": -13,
+   "pitch": 2,
+   "note": "D: card flick"
+  },
+  {
+   "frame": 812,
+   "id": "kenney-tick-004",
+   "db": -13,
+   "pitch": 3,
+   "note": "D: card flick"
+  },
+  {
+   "frame": 814,
+   "id": "kenney-tick-004",
+   "db": -13,
+   "pitch": 3,
+   "note": "D: card flick"
+  },
+  {
+   "frame": 817,
+   "id": "kenney-tick-004",
+   "db": -12,
+   "pitch": 4,
+   "note": "D: last flick before the jam (no hit on the 'exchanges' onset 27.32)"
+  },
+  {
+   "frame": 827,
+   "id": "gen-whoosh-medium",
+   "db": -12,
+   "pitch": -3,
+   "note": "D: cards burst outward from the jammed reel; low and quiet, 0.26 s after the 'exchanges' onset"
+  },
+  {
+   "frame": 836,
+   "id": "kenney-maximize-009",
+   "db": -9,
+   "note": "D: one card sweeps across and expands into the cream page"
+  },
+  {
+   "frame": 843,
+   "id": "gen-appear",
+   "db": -11,
+   "note": "D: seating plan (rug, oak table, mark) springs in"
+  },
+  {
+   "frame": 847,
+   "id": "gen-tap",
+   "db": -15,
+   "pitch": 2,
+   "note": "D: chairs slide out around the table"
+  },
+  {
+   "frame": 850,
+   "id": "gen-tap",
+   "db": -15,
+   "pitch": 3,
+   "note": "D: chairs, continued"
+  },
+  {
+   "frame": 855,
+   "id": "gen-tap",
+   "db": -15,
+   "pitch": 4,
+   "note": "D: last chairs settle"
+  },
+  {
+   "frame": 862,
+   "id": "gen-pop",
+   "db": -12,
+   "note": "D: first initials circles fill the seats"
+  },
+  {
+   "frame": 865,
+   "id": "gen-pop",
+   "db": -12,
+   "pitch": 2,
+   "note": "D: initials, continued (28.94-29.06 left clear for 'minds' 29.00)"
+  },
+  {
+   "frame": 875,
+   "id": "kenney-drop-003",
+   "db": -13,
+   "pitch": 3,
+   "note": "D: last initials land"
+  },
+  {
+   "frame": 887,
+   "id": "gen-whoosh-short",
+   "db": -13,
+   "pitch": -1,
+   "note": "D: overhead camera quarter-swing; 'Just ambitious minds' exits"
+  },
+  {
+   "frame": 896,
+   "id": "gen-pop",
+   "db": -13,
+   "pitch": 1,
+   "note": "D: speech bubble 1 pops between neighbours on 'real'"
+  },
+  {
+   "frame": 899,
+   "id": "gen-pop",
+   "db": -13,
+   "pitch": 3,
+   "note": "D: speech bubble 2"
+  },
+  {
+   "frame": 901,
+   "id": "kenney-drop-003",
+   "db": -13,
+   "note": "D: speech bubble 3"
+  },
+  {
+   "frame": 905,
+   "id": "gen-pop",
+   "db": -12,
+   "pitch": 5,
+   "note": "D: speech bubble 4 on 'conversations'"
+  },
+  {
+   "frame": 929,
+   "id": "gen-whoosh-short",
+   "db": -13,
+   "pitch": 1,
+   "note": "D: second camera swing; 'Real conversations,' exits"
+  },
+  {
+   "frame": 941,
+   "id": "kenney-tick-004",
+   "db": -13,
+   "note": "D: first bronze link draws between seats on 'connections'"
+  },
+  {
+   "frame": 946,
+   "id": "kenney-tick-004",
+   "db": -13,
+   "pitch": 2,
+   "note": "D: second link"
+  },
+  {
+   "frame": 953,
+   "id": "gen-tick",
+   "db": -13,
+   "pitch": 3,
+   "note": "D: third link on 'that'"
+  },
+  {
+   "frame": 959,
+   "id": "gen-tick",
+   "db": -13,
+   "pitch": 5,
+   "note": "D: fourth link (links at 32.00 and 32.18 left silent for 'matter' 32.12)"
+  },
+  {
+   "frame": 968,
+   "id": "gen-swell",
+   "db": -11,
+   "note": "D: warm light floods the table, camera dives in, glow opens into H4Glow (after the 'matter' onset)"
+  },
+  {
+   "frame": 978,
+   "id": "gen-shimmer",
+   "db": -14,
+   "pitch": 2,
+   "note": "D: glow settles into H4Glow; highlight sweeps (hand-off to E)"
+  },
+  {
+   "frame": 993,
+   "id": "gen-whoosh-short",
+   "db": -8,
+   "note": "E: glow narrows into the doorway"
+  },
+  {
+   "frame": 995,
+   "id": "kenney-click-001",
+   "db": -9,
+   "pitch": -2,
+   "note": "E: architrave springs in, door swings to ajar"
+  },
+  {
+   "frame": 1001,
+   "id": "gen-swell",
+   "db": -10,
+   "note": "E: sunset light wedge spreads across the floor"
+  },
+  {
+   "frame": 1011,
+   "id": "gen-tap",
+   "db": -10,
+   "pitch": 2,
+   "note": "E: italic 'big' rises"
+  },
+  {
+   "frame": 1019,
+   "id": "kenney-tick-004",
+   "db": -10,
+   "note": "E: kicker MAKE ROOM FOR POSSIBILITY slides in"
+  },
+  {
+   "frame": 1022,
+   "id": "kenney-click-001",
+   "db": -8,
+   "note": "E: door latch, door swings fully open"
+  },
+  {
+   "frame": 1024,
+   "id": "gen-whoosh-deep",
+   "db": -5,
+   "note": "E: camera pushes through the doorway"
+  },
+  {
+   "frame": 1032,
+   "id": "gen-tick",
+   "db": -10,
+   "note": "E: 'might' rolls into the slot (light, under the word)"
+  },
+  {
+   "frame": 1034,
+   "id": "gen-appear",
+   "db": -7,
+   "note": "E: light condenses into the speech bubble, bronze rim"
+  },
+  {
+   "frame": 1049,
+   "id": "gen-pop",
+   "db": -8,
+   "note": "E: bubble grows, 'start' rolls in"
+  },
+  {
+   "frame": 1059,
+   "id": "gen-pop",
+   "db": -8,
+   "pitch": 2,
+   "note": "E: bubble grows, 'with' rolls in"
+  },
+  {
+   "frame": 1066,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "note": "E: bubble becomes the frame, paper card slides up, 'one' rises"
+  },
+  {
+   "frame": 1075,
+   "id": "gen-shimmer",
+   "db": -9,
+   "note": "E: 'conversation.' letters cascade in"
+  },
+  {
+   "frame": 1081,
+   "id": "gen-whoosh-short",
+   "db": -10,
+   "pitch": 3,
+   "note": "E: bronze swash underline draws"
+  },
+  {
+   "frame": 1085,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 3,
+   "note": "E: wordless ink reply bubble pops in"
+  },
+  {
+   "frame": 1088,
+   "id": "gen-tick",
+   "db": -10,
+   "pitch": 2,
+   "note": "E: tan line draws inside the reply bubble"
+  },
+  {
+   "frame": 1100,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": -2,
+   "note": "E: card drops away, bubble shrinks to the unicorn's place"
+  },
+  {
+   "frame": 1109,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "note": "E: photo iris closes, outline starts unwinding"
+  },
+  {
+   "frame": 1114,
+   "id": "gen-riser-1s",
+   "db": -8,
+   "note": "E: one-line unicorn draws (37.12-37.62)"
+  },
+  {
+   "frame": 1117,
+   "id": "gen-tap",
+   "db": -9,
+   "note": "E: 'Future' slides in"
+  },
+  {
+   "frame": 1123,
+   "id": "gen-tap",
+   "db": -9,
+   "pitch": 2,
+   "note": "E: 'Unicorn' slides in"
+  },
+  {
+   "frame": 1125,
+   "id": "gen-chime",
+   "db": -5,
+   "note": "E: unicorn fills to the bronze mark"
+  },
+  {
+   "frame": 1139,
+   "id": "gen-tap",
+   "db": -9,
+   "pitch": 4,
+   "note": "E: 'Founders.' slides in"
+  },
+  {
+   "frame": 1141,
+   "id": "kenney-tick-004",
+   "db": -10,
+   "note": "E: hairline draws"
+  },
+  {
+   "frame": 1144,
+   "id": "kenney-select-001",
+   "db": -10,
+   "note": "E: kicker INTERNATIONAL \u00b7 M\u00c1LAGA, SPAIN"
+  },
+  {
+   "frame": 1157,
+   "id": "gen-whoosh-medium",
+   "db": -5,
+   "note": "E: speed-matched pan to the blocks"
+  },
+  {
+   "frame": 1161,
+   "id": "gen-tick",
+   "db": -10,
+   "pitch": -2,
+   "note": "E: floor line draws"
+  },
+  {
+   "frame": 1174,
+   "id": "gen-impact-soft",
+   "db": -5,
+   "note": "E: 'Build' block lands"
+  },
+  {
+   "frame": 1177,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "note": "E: sand block lands"
+  },
+  {
+   "frame": 1180,
+   "id": "gen-impact-soft",
+   "db": -6,
+   "pitch": 2,
+   "note": "E: 'what's' block lands"
+  },
+  {
+   "frame": 1182,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": 2,
+   "note": "E: bronze block lands"
+  },
+  {
+   "frame": 1185,
+   "id": "kenney-drop-003",
+   "db": -8,
+   "pitch": 4,
+   "note": "E: sand block lands"
+  },
+  {
+   "frame": 1189,
+   "id": "gen-impact-soft",
+   "db": -4,
+   "pitch": 3,
+   "note": "E: 'next,' block lands on top"
+  },
+  {
+   "frame": 1210,
+   "id": "gen-tap",
+   "db": -8,
+   "note": "E: 'together.' letters start landing (40.32-40.48)"
+  },
+  {
+   "frame": 1213,
+   "id": "kenney-click-001",
+   "db": -9,
+   "pitch": 3,
+   "note": "E: last letters of 'together.' land"
+  },
+  {
+   "frame": 1219,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "pitch": 2,
+   "note": "E: 'together.' lifts and fades"
+  },
+  {
+   "frame": 1223,
+   "id": "gen-whoosh-deep",
+   "db": -5,
+   "note": "E: top block face opens into the M\u00e1laga photo panel, blocks fall away"
+  },
+  {
+   "frame": 1230,
+   "id": "gen-appear",
+   "db": -7,
+   "note": "E: lockup rises"
+  },
+  {
+   "frame": 1234,
+   "id": "gen-tap",
+   "db": -10,
+   "note": "E: 'Ambitious, but' rises"
+  },
+  {
+   "frame": 1240,
+   "id": "gen-tap",
+   "db": -10,
+   "pitch": 2,
+   "note": "E: 'approachable.' rises"
+  },
+  {
+   "frame": 1246,
+   "id": "kenney-select-001",
+   "db": -6,
+   "note": "E: Join the community button springs in"
+  },
+  {
+   "frame": 1248,
+   "id": "gen-tick",
+   "db": -10,
+   "note": "E: arrow nudge (repeats every 0.9 s)"
+  },
+  {
+   "frame": 1252,
+   "id": "gen-pop",
+   "db": -8,
+   "note": "E: UPCOMING GATHERINGS chip slides up"
+  },
+  {
+   "frame": 1254,
+   "id": "kenney-tick-004",
+   "db": -10,
+   "note": "E: kicker INTERNATIONAL IN OUTLOOK \u00b7 CONNECTED TO M\u00c1LAGA"
+  }
+ ]
+}

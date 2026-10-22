@@ -1,0 +1,289 @@
+[
+ {
+  "t": 0.02,
+  "id": "gen-whoosh-medium",
+  "db": -14,
+  "pitch": 0,
+  "note": "film opens on two bands already running"
+ },
+ {
+  "t": 0.05,
+  "id": "gen-whoosh-short",
+  "db": -13,
+  "pitch": 0,
+  "note": "cream paper band arrives on 'great'"
+ },
+ {
+  "t": 0.16,
+  "id": "gen-whoosh-short",
+  "db": -14,
+  "pitch": 2,
+  "note": "sand2 top band arrives"
+ },
+ {
+  "t": 0.28,
+  "id": "gen-whoosh-short",
+  "db": -14,
+  "pitch": -2,
+  "note": "sand bottom band arrives on 'opportunities'"
+ },
+ {
+  "t": 0.84,
+  "id": "gen-whoosh-medium",
+  "db": -12,
+  "pitch": 0,
+  "note": "bands whip out bottom-first on 'start'"
+ },
+ {
+  "t": 0.92,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": 0,
+  "note": "cascade exit, bronze band"
+ },
+ {
+  "t": 1,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": 2,
+  "note": "cascade exit, paper band"
+ },
+ {
+  "t": 1.08,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": 4,
+  "note": "cascade exit, ink band"
+ },
+ {
+  "t": 1.2,
+  "id": "gen-riser-1s",
+  "db": -14,
+  "pitch": 0,
+  "note": "hands begin drawing in from the edges, rising into the touch"
+ },
+ {
+  "t": 1.36,
+  "id": "gen-appear",
+  "db": -14,
+  "pitch": 0,
+  "note": "serif 'start' rises"
+ },
+ {
+  "t": 1.98,
+  "id": "kenney-tick-004",
+  "db": -14,
+  "pitch": 0,
+  "note": "'right' rises"
+ },
+ {
+  "t": 2.24,
+  "id": "gen-shimmer",
+  "db": -12,
+  "pitch": 0,
+  "note": "fingertips meet, sparks fly, 'connections.' lands"
+ },
+ {
+  "t": 2.34,
+  "id": "gen-whoosh-short",
+  "db": -14,
+  "pitch": 0,
+  "note": "top band clears"
+ },
+ {
+  "t": 2.68,
+  "id": "gen-whoosh-deep",
+  "db": -10,
+  "pitch": 0,
+  "note": "push up: drawing out, slot machine rises in"
+ },
+ {
+  "t": 3.36,
+  "id": "gen-impact-soft",
+  "db": -10,
+  "pitch": 0,
+  "note": "machine settles just before 'But'"
+ },
+ {
+  "t": 3.5,
+  "id": "kenney-select-001",
+  "db": -10,
+  "pitch": 0,
+  "note": "lever pull 1"
+ },
+ {
+  "t": 3.62,
+  "id": "gen-whoosh-medium",
+  "db": -13,
+  "pitch": 0,
+  "note": "reels start spinning"
+ },
+ {
+  "t": 3.82,
+  "id": "kenney-tick-004",
+  "db": -14,
+  "pitch": 0,
+  "note": "display rolls to 'ambitious people'"
+ },
+ {
+  "t": 4.62,
+  "id": "gen-whoosh-short",
+  "db": -14,
+  "pitch": -2,
+  "note": "camera leans in on the display"
+ },
+ {
+  "t": 4.68,
+  "id": "kenney-tick-004",
+  "db": -14,
+  "pitch": 1,
+  "note": "display rolls to 'who share'"
+ },
+ {
+  "t": 5.2,
+  "id": "kenney-tick-004",
+  "db": -14,
+  "pitch": 2,
+  "note": "display rolls to 'your vision'"
+ },
+ {
+  "t": 5.68,
+  "id": "kenney-tick-004",
+  "db": -14,
+  "pitch": 3,
+  "note": "display rolls to 'isn't always'"
+ },
+ {
+  "t": 5.96,
+  "id": "gen-whoosh-medium",
+  "db": -13,
+  "pitch": 0,
+  "note": "camera pushes in on the reels"
+ },
+ {
+  "t": 6.06,
+  "id": "kenney-drop-003",
+  "db": -10,
+  "pitch": 0,
+  "note": "reel 1 stops: rocket"
+ },
+ {
+  "t": 6.3,
+  "id": "kenney-drop-003",
+  "db": -10,
+  "pitch": -1,
+  "note": "reel 2 stops: lightbulb (mismatch)"
+ },
+ {
+  "t": 6.54,
+  "id": "kenney-drop-003",
+  "db": -9,
+  "pitch": -3,
+  "note": "reel 3 stops: briefcase, 'easy' rolls on the display"
+ },
+ {
+  "t": 6.62,
+  "id": "gen-tap",
+  "db": -12,
+  "pitch": -2,
+  "note": "machine 'no' shake, lever springs back"
+ },
+ {
+  "t": 6.68,
+  "id": "gen-appear",
+  "db": -13,
+  "pitch": 0,
+  "note": "wordless receipt feeds out, camera tilts to the slot"
+ },
+ {
+  "t": 7.2,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": 0,
+  "note": "reel 1 nudge"
+ },
+ {
+  "t": 7.3,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": 1,
+  "note": "reel 2 nudge"
+ },
+ {
+  "t": 7.4,
+  "id": "gen-whoosh-deep",
+  "db": -11,
+  "pitch": 0,
+  "note": "camera pull-back, lever wind-up, reel 3 nudge"
+ },
+ {
+  "t": 7.6,
+  "id": "kenney-select-001",
+  "db": -9,
+  "pitch": 2,
+  "note": "lever drops on 'Meet'"
+ },
+ {
+  "t": 7.7,
+  "id": "gen-riser-1s",
+  "db": -12,
+  "pitch": 0,
+  "note": "reels spin toward the win, receipt falls away"
+ },
+ {
+  "t": 8.22,
+  "id": "gen-whoosh-medium",
+  "db": -14,
+  "pitch": 2,
+  "note": "camera pushes in for the landing"
+ },
+ {
+  "t": 8.36,
+  "id": "gen-pop",
+  "db": -10,
+  "pitch": 0,
+  "note": "unicorn lands in reel 1"
+ },
+ {
+  "t": 8.59,
+  "id": "gen-pop",
+  "db": -10,
+  "pitch": 2,
+  "note": "unicorn lands in reel 2"
+ },
+ {
+  "t": 8.82,
+  "id": "gen-pop",
+  "db": -9,
+  "pitch": 4,
+  "note": "unicorn lands in reel 3, 'Founders.' on the display"
+ },
+ {
+  "t": 8.86,
+  "id": "gen-success",
+  "db": -8,
+  "pitch": 0,
+  "note": "three of a kind, bronze confetti bursts"
+ },
+ {
+  "t": 9,
+  "id": "gen-whoosh-deep",
+  "db": -10,
+  "pitch": -2,
+  "note": "machine splits away, marks fly together"
+ },
+ {
+  "t": 9.08,
+  "id": "gen-swell",
+  "db": -12,
+  "pitch": 0,
+  "note": "seal rises out of the centre reel with a turn"
+ },
+ {
+  "t": 9.55,
+  "id": "gen-stamp",
+  "db": -7,
+  "pitch": 0,
+  "note": "seal presses down, the H1Seal hand-off"
+ }
+]

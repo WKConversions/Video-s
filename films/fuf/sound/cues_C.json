@@ -1,0 +1,226 @@
+[
+ {
+  "t": 17.1,
+  "id": "gen-whoosh-medium",
+  "db": -13,
+  "pitch": -2,
+  "note": "photo shrinks into the framed print"
+ },
+ {
+  "t": 17.16,
+  "id": "gen-whoosh-short",
+  "db": -12,
+  "pitch": 0,
+  "note": "envelope slides in on 'exclusive'"
+ },
+ {
+  "t": 17.7,
+  "id": "gen-stamp",
+  "db": -10,
+  "pitch": 2,
+  "note": "wax seal cracks on 'gatherings'"
+ },
+ {
+  "t": 17.76,
+  "id": "gen-whoosh-short",
+  "db": -15,
+  "pitch": 4,
+  "note": "envelope flap swings open"
+ },
+ {
+  "t": 17.9,
+  "id": "gen-appear",
+  "db": -13,
+  "pitch": 0,
+  "note": "invitation card rises out of the envelope"
+ },
+ {
+  "t": 18,
+  "id": "kenney-tick-004",
+  "db": -15,
+  "pitch": 0,
+  "note": "MON-SUN day row ticks in"
+ },
+ {
+  "t": 18.33,
+  "id": "gen-pop",
+  "db": -11,
+  "pitch": 2,
+  "note": "FUF tag pops onto Thursday"
+ },
+ {
+  "t": 18.38,
+  "id": "gen-whoosh-medium",
+  "db": -12,
+  "pitch": 0,
+  "note": "speed-matched push left into shot 9"
+ },
+ {
+  "t": 18.42,
+  "id": "gen-shimmer",
+  "db": -15,
+  "pitch": 0,
+  "note": "bronze line starts drawing the two profiles"
+ },
+ {
+  "t": 19,
+  "id": "gen-swell",
+  "db": -13,
+  "pitch": 0,
+  "note": "bronze liquid fills the space between the faces (the cup)"
+ },
+ {
+  "t": 19.45,
+  "id": "gen-tap",
+  "db": -14,
+  "pitch": 0,
+  "note": "saucer line draws under the cup"
+ },
+ {
+  "t": 19.98,
+  "id": "gen-whoosh-medium",
+  "db": -12,
+  "pitch": 0,
+  "note": "vertical push up, napkin tossed in"
+ },
+ {
+  "t": 20.04,
+  "id": "kenney-click-001",
+  "db": -15,
+  "pitch": 0,
+  "note": "fountain pen lands on the napkin"
+ },
+ {
+  "t": 20.14,
+  "id": "gen-tick",
+  "db": -15,
+  "pitch": 0,
+  "note": "pen starts the rocket sketch on 'new'"
+ },
+ {
+  "t": 20.56,
+  "id": "gen-tick",
+  "db": -16,
+  "pitch": 3,
+  "note": "rocket flames sketched"
+ },
+ {
+  "t": 20.7,
+  "id": "gen-tick",
+  "db": -15,
+  "pitch": -2,
+  "note": "chart axes drawn on 'emerge'"
+ },
+ {
+  "t": 21.02,
+  "id": "gen-tap",
+  "db": -13,
+  "pitch": 0,
+  "note": "arrowhead lands on the rising chart"
+ },
+ {
+  "t": 21.3,
+  "id": "gen-whoosh-short",
+  "db": -12,
+  "pitch": 0,
+  "note": "napkin flicked away up-left"
+ },
+ {
+  "t": 21.38,
+  "id": "gen-whoosh-medium",
+  "db": -13,
+  "pitch": 0,
+  "note": "two cups slide in from both sides"
+ },
+ {
+  "t": 21.9,
+  "id": "gen-chime",
+  "db": -8,
+  "pitch": 0,
+  "note": "cups clink on 'form' (hero hit)"
+ },
+ {
+  "t": 21.93,
+  "id": "gen-shimmer",
+  "db": -14,
+  "pitch": 0,
+  "note": "ripples run through both coffees"
+ },
+ {
+  "t": 22,
+  "id": "kenney-select-001",
+  "db": -12,
+  "pitch": 0,
+  "note": "saucers lock, bronze rings draw"
+ },
+ {
+  "t": 22.62,
+  "id": "gen-whoosh-medium",
+  "db": -12,
+  "pitch": 0,
+  "note": "cups lift away into shot 12"
+ },
+ {
+  "t": 22.7,
+  "id": "kenney-maximize-009",
+  "db": -13,
+  "pitch": 0,
+  "note": "pop-up back page (sunset sky) stands up"
+ },
+ {
+  "t": 22.8,
+  "id": "kenney-drop-003",
+  "db": -13,
+  "pitch": 0,
+  "note": "Gibralfaro hill layer folds up on 'opportunities'"
+ },
+ {
+  "t": 22.86,
+  "id": "gen-swell",
+  "db": -15,
+  "pitch": 0,
+  "note": "paper sun rises"
+ },
+ {
+  "t": 22.92,
+  "id": "kenney-drop-003",
+  "db": -14,
+  "pitch": 2,
+  "note": "city blocks fold up"
+ },
+ {
+  "t": 23.04,
+  "id": "kenney-drop-003",
+  "db": -14,
+  "pitch": 4,
+  "note": "La Farola, palms and harbour strip fold up"
+ },
+ {
+  "t": 23.28,
+  "id": "gen-impact-soft",
+  "db": -10,
+  "pitch": 0,
+  "note": "cathedral folds up just before 'grow'"
+ },
+ {
+  "t": 23.5,
+  "id": "gen-pop",
+  "db": -12,
+  "pitch": -2,
+  "note": "ink dot opens on the cathedral spire"
+ },
+ {
+  "t": 23.55,
+  "id": "gen-whoosh-deep",
+  "db": -10,
+  "pitch": 0,
+  "note": "ink floods out from the spire, covers the frame at 24.00"
+ },
+ {
+  "t": 24,
+  "id": "gen-impact-soft",
+  "db": -12,
+  "pitch": -3,
+  "note": "ink fully covers the frame, H3Ink hand-off"
+ }
+]

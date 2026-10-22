@@ -1,0 +1,212 @@
+[
+ {
+  "t": 10.05,
+  "id": "gen-whoosh-medium",
+  "db": -12,
+  "pitch": 0,
+  "note": "seal springs into the header badge, the board floods out of it"
+ },
+ {
+  "t": 10.1,
+  "id": "kenney-tick-004",
+  "db": -13,
+  "pitch": 0,
+  "note": "ARRIVALS header and INTERNATIONAL mini row start flipping"
+ },
+ {
+  "t": 10.38,
+  "id": "gen-stamp",
+  "db": -12,
+  "pitch": -2,
+  "note": "badge settles at (180,176) in the header"
+ },
+ {
+  "t": 10.45,
+  "id": "gen-appear",
+  "db": -14,
+  "pitch": 0,
+  "note": "FUTURE UNICORN FOUNDERS label slides in"
+ },
+ {
+  "t": 10.6,
+  "id": "kenney-tick-004",
+  "db": -13,
+  "pitch": 2,
+  "note": "bronze M\u00c1LAGA header flips in, NETWORKING mini row"
+ },
+ {
+  "t": 10.74,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": -3,
+  "note": "first wake wave of blank flips crosses the board"
+ },
+ {
+  "t": 11.14,
+  "id": "gen-tick",
+  "db": -13,
+  "pitch": 0,
+  "note": "COMMUNITY flips in bronze"
+ },
+ {
+  "t": 11.2,
+  "id": "kenney-select-001",
+  "db": -14,
+  "pitch": 0,
+  "note": "bronze hairline draws, FLIGHT/WHO/STATUS labels slide in"
+ },
+ {
+  "t": 11.26,
+  "id": "gen-tick",
+  "db": -14,
+  "pitch": -3,
+  "note": "second wake wave of blank flips"
+ },
+ {
+  "t": 11.7,
+  "id": "gen-whoosh-short",
+  "db": -14,
+  "pitch": 0,
+  "note": "FUF 01-04 codes flip, camera starts gliding down the board"
+ },
+ {
+  "t": 12.05,
+  "id": "kenney-tick-004",
+  "db": -13,
+  "pitch": 0,
+  "note": "FOUNDERS row flips"
+ },
+ {
+  "t": 12.35,
+  "id": "gen-tap",
+  "db": -11,
+  "pitch": 0,
+  "note": "FOUNDERS lands on its word, bronze band sweeps in"
+ },
+ {
+  "t": 12.47,
+  "id": "kenney-click-001",
+  "db": -13,
+  "pitch": 2,
+  "note": "LANDED flips in bronze"
+ },
+ {
+  "t": 12.76,
+  "id": "kenney-tick-004",
+  "db": -13,
+  "pitch": 1,
+  "note": "ENTREPRENEURS row flips"
+ },
+ {
+  "t": 13.06,
+  "id": "gen-tap",
+  "db": -11,
+  "pitch": 1,
+  "note": "ENTREPRENEURS lands, band"
+ },
+ {
+  "t": 13.18,
+  "id": "kenney-click-001",
+  "db": -13,
+  "pitch": 3,
+  "note": "LANDED"
+ },
+ {
+  "t": 13.62,
+  "id": "kenney-tick-004",
+  "db": -13,
+  "pitch": 2,
+  "note": "BUILDERS row flips"
+ },
+ {
+  "t": 13.92,
+  "id": "gen-tap",
+  "db": -11,
+  "pitch": 2,
+  "note": "BUILDERS lands, band"
+ },
+ {
+  "t": 14.04,
+  "id": "kenney-click-001",
+  "db": -13,
+  "pitch": 4,
+  "note": "LANDED"
+ },
+ {
+  "t": 14.48,
+  "id": "kenney-tick-004",
+  "db": -13,
+  "pitch": 3,
+  "note": "INVESTORS row flips"
+ },
+ {
+  "t": 14.78,
+  "id": "gen-tap",
+  "db": -11,
+  "pitch": 3,
+  "note": "INVESTORS lands, band"
+ },
+ {
+  "t": 14.9,
+  "id": "kenney-click-001",
+  "db": -13,
+  "pitch": 5,
+  "note": "LANDED"
+ },
+ {
+  "t": 15.2,
+  "id": "gen-whoosh-short",
+  "db": -12,
+  "pitch": -2,
+  "note": "all flaps flip to blank at once, board dims"
+ },
+ {
+  "t": 15.26,
+  "id": "kenney-drop-003",
+  "db": -12,
+  "pitch": 0,
+  "note": "giant cards rise into place one after another (15.26-15.56)"
+ },
+ {
+  "t": 15.34,
+  "id": "kenney-tick-004",
+  "db": -12,
+  "pitch": -4,
+  "note": "giant flaps start flipping through letters"
+ },
+ {
+  "t": 15.8,
+  "id": "kenney-select-001",
+  "db": -14,
+  "pitch": 0,
+  "note": "'in' rises and the bronze rule draws under the word"
+ },
+ {
+  "t": 15.94,
+  "id": "gen-tap",
+  "db": -10,
+  "pitch": -3,
+  "note": "last giant flap lands, M\u00c1LAGA complete"
+ },
+ {
+  "t": 16.14,
+  "id": "gen-shimmer",
+  "db": -12,
+  "pitch": 0,
+  "note": "the photo spreads through the letters from the L (on 'M\u00e1laga', kept under the voice)"
+ },
+ {
+  "t": 16.26,
+  "id": "gen-whoosh-deep",
+  "db": -9,
+  "pitch": 0,
+  "note": "camera flies into the L, cards and photo letters scale together"
+ },
+ {
+  "t": 16.53,
+  "id": "gen-impact-soft",
+  "db": -10,
+  "pitch": 0,
+  "note": "the L stem fills the frame, the photo becomes H2"
+ }
+]
