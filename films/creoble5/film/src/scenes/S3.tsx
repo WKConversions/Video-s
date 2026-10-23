@@ -120,7 +120,7 @@ const IMGS = ["holm-shoulder.jpg", "holm-neck.jpg", "holm-calves.jpg", "holm-str
 /** camera: a value that starts at v0 and eases (calm in-out, no bounce) to each key's value over `dur` g from `at` */
 const cm = (g: number, v0: number, keys: [number, number, number][]) => {
   let v = v0, prev = v0;
-  for (const [at, val, dur] of keys) { v += (val - prev) * INOUT(clamp01((g - at) / dur)); prev = val; }
+  for (const [at, val, dur] of keys) { v += (val - prev) * OUT(clamp01((g - at) / dur)); prev = val; }
   return v;
 };
 // the hero photo's frame on the stage (design 760,120 630x560 on a 960-wide page): 0.6575 scale
@@ -139,9 +139,9 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
   const tEx = TE - 11;      // the toggle row collapses onto its knob, the knob drops out
 
   // ── the camera: push in toward the price area, pull back, push in on the top-right corner (Din), back, price, back ───
-  const S = cm(g, 1.08, [[T0 + 4, 1.14, 36], [t499 - 1, 1.2, 26], [tSiden - 4, 1.0, 22], [684, 1.3, 22], [708, 1.18, 24], [tNul, 1.0, 20]]);
-  const fx = cm(g, 960, [[tIntet, 1050, 22], [tDrop + 4, 960, 20], [684, 1330, 22], [708, 960, 24]]);
-  const fy = cm(g, 540, [[t499 - 1, 700, 26], [tN, 650, 22], [tIntet + 8, 700, 20], [tSiden - 4, 540, 22], [684, 330, 22], [708, 700, 24], [tNul, 540, 20]]);
+  const S = cm(g, 1.08, [[T0 + 4, 1.14, 22], [t499 - 1, 1.2, 20], [tSiden - 4, 1.0, 18], [684, 1.3, 18], [708, 1.18, 20], [tNul, 1.0, 18]]);
+  const fx = cm(g, 960, [[tIntet, 1050, 18], [tDrop + 4, 960, 18], [684, 1330, 18], [708, 960, 20]]);
+  const fy = cm(g, 540, [[t499 - 1, 700, 20], [tN, 650, 18], [tIntet + 8, 700, 18], [tSiden - 4, 540, 18], [684, 330, 18], [708, 700, 20], [tNul, 540, 18]]);
   const camId = Math.abs(S - 1) < 0.0005 && Math.abs(fx - 960) < 0.05 && Math.abs(fy - 540) < 0.05;
 
   // ── the stage's own acts: pages fan out as cards (Siden er din), question tilts ───────────────────────────────────
@@ -153,7 +153,7 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
   const tilt = Math.abs(sry) + Math.abs(srz) + Math.abs(srx) < 0.002 ? "" : `perspective(2400px) rotateX(${srx}deg) rotateY(${sry}deg) rotateZ(${srz}deg)`;
 
   // ── the photos swap in the hero frame: a slide every ~0.9 s ─────────────────────────────────────────────────────
-  const PER = 22, SL = 9, tc0 = T0 + 8;
+  const tc0 = T0 + 8, PER = (TE - 10 - tc0) / 11, SL = 9;      // 12 slides; the last one (stretch -> shoulder) ends before TE, on the site's own photo
   const tr = (g - tc0) / PER, kk = Math.floor(tr);
   const slideU = tr < 0 ? 0 : INOUT(clamp01(((tr - kk) * PER) / SL));
   const imgA = tr < 0 ? 0 : kk % 4, imgB = (imgA + 1) % 4;

@@ -17,7 +17,7 @@ import { WM_DOT, WM_VIEW, WM_WORD } from "../wordmark";
 // ── clock helpers (seconds; own springs so nothing is rounded to the 30 fps grid) ──────────────────────────────────
 const sec = (l: string) => f(l) / 30;
 const START = (f("h4") + HANDOFF_HALF) / 30;               // the stage leaves the hand-off (scale 1.08, scroll 0, holmfysio.dk live)
-const B_REOPEN = 45.3;
+const B_REOPEN = 45.12;
 /** Apple spring from time `at` (s): resp = response (s), damp = damping ratio (<1 overshoots). 0 → 1 (passes 1). */
 const spr = (t: number, at: number, resp = 0.45, damp = 0.62) => {
   const x = t - at;
@@ -46,17 +46,17 @@ const typed = (t: number, at: number, text: string, cps: number) => text.slice(0
 // ── the camera: keyframes (time, focus point on screen, scale), eased between ─────────────────────────────────────────
 type Key = [number, number, number, number];
 const CAM: Key[] = [
-  [START, 960, 540, 1], [40.15, 960, 540, 1],
-  [40.85, 1170, 560, 1.24],                 // push in on the chat panel's corner while the reply types
-  [41.4, 1040, 520, 1.1], [42.0, 1190, 600, 1.3], [42.55, 960, 540, 1],
-  [43.3, 1180, 520, 1.12], [43.9, 960, 540, 1],   // toward the queue counter, then back
-  [45.3, 960, 540, 1], [45.9, 820, 470, 1.2], [46.7, 1080, 520, 1.1], [47.5, 940, 500, 1.14], [47.85, 960, 540, 1],   // the pills
+  [START, 960, 540, 1], [39.7, 960, 540, 1],
+  [40.4, 1170, 560, 1.24],                 // push in on the chat panel's corner while the reply types
+  [41.7, 1170, 560, 1.24], [42.3, 960, 540, 1],
+  [43.3, 1180, 520, 1.08], [43.9, 960, 540, 1],   // toward the queue counter, then back
+  [45.12, 960, 540, 1], [45.7, 820, 470, 1.2], [46.5, 1080, 520, 1.1], [47.3, 940, 500, 1.14], [47.75, 960, 540, 1],   // the pills
   [48.12, 960, 540, 1],
   [48.62, 740, 400, 1.38],                  // Byg den: push in on the headline while the site rebuilds
   [48.95, 740, 400, 1.38], [49.5, 960, 540, 1],
-  [49.62, 960, 540, 1], [50.1, 1130, 520, 1.15],    // Så køber du: push toward the price tag
-  [50.28, 1130, 520, 1.15], [50.75, 960, 530, 1.06], // the button lands: frame it
-  [51.6, 960, 530, 1.06], [52.4, 900, 500, 1.12], [53.3, 1020, 520, 1.08], [54.2, 940, 500, 1.12], [55.2, 960, 530, 1.06],
+  [49.62, 960, 540, 1], [50.1, 1130, 520, 1.12],    // Så køber du: push toward the price tag
+  [50.28, 1130, 520, 1.12], [50.75, 960, 530, 1.06], // the button lands: frame it
+  [55.2, 960, 530, 1.06],
 ];
 const camAt = (t: number) => {
   if (t <= CAM[0][0]) return CAM[0];
@@ -67,7 +67,7 @@ const camAt = (t: number) => {
 const PHOTOS = ["holm-shoulder.jpg", "holm-neck.jpg", "holm-calves.jpg", "holm-stretch.jpg"];
 const HK = STAGE.w / 1460;                                        // design px → stage px
 const HERO = { x: 760 * HK, y: 120 * HK, w: 630 * HK, h: 560 * HK, r: 24 * HK };
-const ERAS: [number, number[]][] = [[START, [40.3, 41.05, 41.8, 42.55, 43.3]], [B_REOPEN, [45.9, 46.65, 47.4]], [49.1, []], [50.7, [51.2, 51.95, 52.7, 53.45, 54.2, 54.95]]];
+const ERAS: [number, number[]][] = [[START, [39.8, 40.55, 41.3, 42.05, 42.8, 43.55]], [B_REOPEN, [45.5, 46.25, 47.0]], [49.1, []], [50.7, [50.9, 51.65, 52.4, 53.15, 53.85, 54.45, 55.0]]];
 const HeroSwap: React.FC<{ t: number; scrollPx: number }> = ({ t, scrollPx }) => {
   let era = ERAS[0];
   for (const e of ERAS) if (t >= e[0]) era = e;
@@ -100,7 +100,7 @@ const B = {
   collapse: 43.95,            // the stage collapses into the dot
   launch: 44.3,              // the dot leaves for the wordmark's full stop
   land: 44.62,
-  slide: 45.2,              // the wordmark slides up and the stage re-opens
+  slide: 45.05,              // the wordmark slides up and the stage re-opens
   reopen: B_REOPEN,
   merge: L.samlet + 0.04,    // the pills melt together
   flipOut: 47.92,            // the stage flips edge-on and rebuilds
@@ -124,7 +124,7 @@ const DOT = 64;                                               // the thread dot 
 const PW = 380, PH = 110, PY = 540;                           // the two pills
 const BTN = { w: 700, h: 140, y: 690 };
 const TAG = { x: CX + 330, y: 690, w: 520, h: 300 };          // the price tag docked on the stage
-const LINE_Y = 950, LINE_SIZE = 88;
+const LINE_Y = 985, LINE_SIZE = 88;
 const HW = (STAGE.w * ZS) / 2, HH = (STAGE.h * ZS) / 2;       // the stage's half extents on screen
 
 // ── a morphing blob: ONE static 200×60 box, moved and sized with transforms only (a pill is exactly the capsule) ───

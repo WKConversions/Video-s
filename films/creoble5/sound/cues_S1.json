@@ -35,18 +35,18 @@
   "note": "capsule springs open into the stage (browser)"
  },
  {
-  "id": "gen-whoosh-short",
-  "frame": 48,
-  "db": -17,
-  "pitch": 2,
-  "note": "site scroll pass 1"
- },
- {
   "id": "gen-tick",
   "frame": 54,
   "db": -16,
   "pitch": 0,
   "note": "wireframe block 1 resolves into the site"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 57,
+  "db": -18,
+  "pitch": -2,
+  "note": "camera glides to the next block"
  },
  {
   "id": "gen-tick",
@@ -77,6 +77,13 @@
   "note": "wireframe block 4 resolves into the site"
  },
  {
+  "id": "gen-whoosh-short",
+  "frame": 87,
+  "db": -18,
+  "pitch": 2,
+  "note": "camera glides to the next block"
+ },
+ {
   "id": "kenney-tick-004",
   "frame": 87,
   "db": -19,
@@ -89,13 +96,6 @@
   "db": -16,
   "pitch": 4,
   "note": "wireframe block 5 resolves into the site"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 102,
-  "db": -17,
-  "pitch": -3,
-  "note": "site scroll pass 2"
  },
  {
   "id": "kenney-tick-004",
@@ -117,6 +117,13 @@
   "db": -19,
   "pitch": 3,
   "note": "timer tick 4"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 120,
+  "db": -18,
+  "pitch": -1,
+  "note": "camera glides to the next block"
  },
  {
   "id": "kenney-tick-004",
@@ -148,10 +155,17 @@
  },
  {
   "id": "gen-whoosh-short",
-  "frame": 156,
-  "db": -17,
+  "frame": 157,
+  "db": -14,
+  "pitch": -2,
+  "note": "photo 1 slides into its frame"
+ },
+ {
+  "id": "gen-whoosh-medium",
+  "frame": 157,
+  "db": -12,
   "pitch": 2,
-  "note": "site scroll pass 3"
+  "note": "look 1: sage tone and serif headline"
  },
  {
   "id": "gen-tick",
@@ -161,11 +175,32 @@
   "note": "sparkle writes a block 1"
  },
  {
+  "id": "gen-whoosh-short",
+  "frame": 179,
+  "db": -14,
+  "pitch": 0,
+  "note": "photo 2 slides into its frame"
+ },
+ {
+  "id": "gen-whoosh-medium",
+  "frame": 183,
+  "db": -11,
+  "pitch": -3,
+  "note": "look 2: dark"
+ },
+ {
   "id": "gen-tick",
   "frame": 187,
   "db": -15,
   "pitch": 4,
   "note": "sparkle writes a block 2"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 200,
+  "db": -14,
+  "pitch": 2,
+  "note": "photo 3 slides into its frame"
  },
  {
   "id": "gen-tick",
@@ -175,11 +210,18 @@
   "note": "sparkle writes a block 3"
  },
  {
-  "id": "gen-whoosh-short",
+  "id": "gen-whoosh-medium",
   "frame": 210,
-  "db": -17,
-  "pitch": -3,
-  "note": "site scroll pass 4"
+  "db": -12,
+  "pitch": 3,
+  "note": "back to the original look"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 222,
+  "db": -14,
+  "pitch": 4,
+  "note": "photo 4 slides into its frame"
  },
  {
   "id": "gen-tick",
@@ -203,6 +245,13 @@
   "note": "prompt field docks onto the stage"
  },
  {
+  "id": "gen-tick",
+  "frame": 252,
+  "db": -15,
+  "pitch": 2,
+  "note": "label chip rises"
+ },
+ {
   "id": "kenney-maximize-009",
   "frame": 258,
   "db": -10,
@@ -211,10 +260,10 @@
  },
  {
   "id": "gen-whoosh-short",
-  "frame": 264,
-  "db": -17,
-  "pitch": 2,
-  "note": "site scroll pass 5"
+  "frame": 261,
+  "db": -15,
+  "pitch": -2,
+  "note": "camera pushes in on the header"
  },
  {
   "id": "gen-tick",
@@ -294,13 +343,6 @@
   "note": "typed letter 9 (the header name follows)"
  },
  {
-  "id": "gen-whoosh-short",
-  "frame": 318,
-  "db": -17,
-  "pitch": -3,
-  "note": "site scroll pass 6"
- },
- {
   "id": "kenney-click-001",
   "frame": 322,
   "db": -19,
@@ -334,6 +376,13 @@
   "db": -19,
   "pitch": 0,
   "note": "typed letter 14 (the header name follows)"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 342,
+  "db": -16,
+  "pitch": 2,
+  "note": "camera glides down to the field"
  },
  {
   "id": "kenney-click-001",
@@ -386,52 +435,108 @@
  },
  {
   "id": "gen-tick",
-  "frame": 383,
+  "frame": 381,
   "db": -16,
   "pitch": 1,
   "note": "page block 2 rebuilds"
  },
  {
   "id": "gen-tick",
-  "frame": 391,
+  "frame": 387,
   "db": -16,
   "pitch": 2,
   "note": "page block 3 rebuilds"
  },
  {
   "id": "gen-tick",
-  "frame": 399,
+  "frame": 393,
   "db": -16,
   "pitch": 3,
   "note": "page block 4 rebuilds"
  },
  {
   "id": "gen-tick",
-  "frame": 407,
+  "frame": 399,
   "db": -16,
   "pitch": 4,
   "note": "page block 5 rebuilds"
  },
  {
+  "id": "gen-whoosh-short",
+  "frame": 399,
+  "db": -16,
+  "pitch": 3,
+  "note": "camera glides to the photo"
+ },
+ {
   "id": "gen-tick",
-  "frame": 416,
+  "frame": 405,
   "db": -16,
   "pitch": 5,
   "note": "page block 6 rebuilds"
  },
  {
   "id": "gen-tick",
-  "frame": 424,
+  "frame": 411,
   "db": -16,
   "pitch": 6,
   "note": "page block 7 rebuilds"
  },
  {
+  "id": "gen-whoosh-medium",
+  "frame": 417,
+  "db": -10,
+  "pitch": 0,
+  "note": "the site fans out as its pages"
+ },
+ {
+  "id": "gen-tap",
+  "frame": 432,
+  "db": -14,
+  "pitch": 0,
+  "note": "carousel steps to page 2"
+ },
+ {
   "id": "gen-whoosh-short",
   "frame": 432,
-  "db": -16,
-  "pitch": -3,
-  "note": "site scrolls back up"
+  "db": -15,
+  "pitch": -2,
+  "note": "carousel swish 1"
+ },
+ {
+  "id": "gen-tap",
+  "frame": 447,
+  "db": -14,
+  "pitch": 1,
+  "note": "carousel steps to page 3"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 447,
+  "db": -15,
+  "pitch": 0,
+  "note": "carousel swish 2"
+ },
+ {
+  "id": "gen-tap",
+  "frame": 462,
+  "db": -14,
+  "pitch": 2,
+  "note": "carousel steps to page 4"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 462,
+  "db": -15,
+  "pitch": 2,
+  "note": "carousel swish 3"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 475,
+  "db": -12,
+  "pitch": -2,
+  "note": "pages merge back into one stage"
  },
  {
   "id": "gen-whoosh-medium",
@@ -476,6 +581,13 @@
   "note": "stage flips back to the site"
  },
  {
+  "id": "gen-whoosh-short",
+  "frame": 541,
+  "db": -12,
+  "pitch": 0,
+  "note": "template site 1 flicks through"
+ },
+ {
   "id": "gen-tap",
   "frame": 543,
   "db": -12,
@@ -484,37 +596,30 @@
  },
  {
   "id": "gen-whoosh-short",
-  "frame": 545,
-  "db": -12,
-  "pitch": 0,
-  "note": "template site 1 flicks through"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 551,
+  "frame": 547,
   "db": -12,
   "pitch": 2,
   "note": "template site 2 flicks through"
  },
  {
   "id": "gen-whoosh-short",
-  "frame": 557,
+  "frame": 553,
   "db": -12,
   "pitch": 4,
   "note": "template site 3 flicks through"
  },
  {
   "id": "gen-pop",
-  "frame": 580,
+  "frame": 582,
   "db": -11,
   "pitch": 2,
   "note": "Holm's site lands"
  },
  {
   "id": "gen-whoosh-medium",
-  "frame": 587,
+  "frame": 588,
   "db": -9,
   "pitch": 0,
-  "note": "hand-off: the stage scrolls on"
+  "note": "hand-off: the camera pushes in"
  }
 ]

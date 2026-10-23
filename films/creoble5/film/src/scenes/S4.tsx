@@ -149,19 +149,19 @@ const Link: React.FC<{ clipX?: number }> = ({ clipX }) => (
 
 // ── the camera: eased pushes, glides and pull-backs on the stage (the page itself never scrolls) ─────────────────────
 // pose = zoom Z and the stage point (fx, fy), measured from the stage centre, that sits at the screen centre
-const CAM: Array<[number, number, number, number, number]> = [   // [from s, to s, Z, fx, fy]
-  [26.91, 27.6, 1.25, 0, -10],     // the globe rises out of the address bar
-  [27.8, 28.5, 1.45, 0, -90],      // push toward the top while the progress bar fills
-  [28.6, 29.3, 1.2, 0, -20],       // the bar finishes, the site goes live
-  [29.45, 30.1, 0.95, 0, 0],       // pull back for the price
-  [30.3, 31.0, 1.25, 0, 60],       // a step in toward the price
-  [31.2, 31.85, 1.55, 0, -200],    // push in on the address bar for the domain
-  [32.05, 32.7, 1.3, 220, -170],   // glide to the corner for the e-mail card
-  [32.9, 33.5, 1.0, 0, 30],        // pull back for the lock
-  [33.7, 34.3, 1.3, 0, 90],        // in toward the price for the calendar
-  [34.45, 35.05, 1.05, 0, 20],     // ease out while the year flips
-  [35.2, 35.85, 1.55, 0, -230],    // push in on the address bar: Domænet i dit navn
-  [36.25, 36.85, 1.15, 0, 0],      // pull back before the stage flips
+const CAM: Array<[number, number, number, number, number]> = [   // [from s, to s, Z, fx, fy]; quick eased moves (no slow vertical text drift)
+  [26.91, 27.5, 1.25, 0, -10],     // the globe rises out of the address bar
+  [27.8, 28.3, 1.45, 0, -90],      // push toward the top while the progress bar fills
+  [28.7, 29.2, 1.2, 0, -20],       // the bar finishes, the site goes live
+  [29.45, 29.95, 1.05, 0, 0],      // pull back for the price
+  [30.3, 30.8, 1.35, 0, 60],       // a step in toward the price
+  [31.2, 31.7, 1.55, 0, -200],     // push in on the address bar for the domain
+  [32.0, 32.6, 1.55, 220, -200],   // glide sideways to the corner for the e-mail card (a pure pan)
+  [32.9, 33.4, 0.95, 0, 30],       // pull back for the lock
+  [33.7, 34.2, 1.4, 0, 100],       // in toward the price for the calendar
+  [34.45, 34.95, 1.1, 0, 20],      // ease out while the year flips
+  [35.2, 35.7, 1.55, 0, -230],     // push in on the address bar: Domænet i dit navn
+  [36.25, 36.75, 1.15, 0, 0],      // pull back before the stage flips
   [38.1, 38.9, 1.0, 0, 0],         // settle on the plain stage for the h4 hand-off
 ];
 const cam = (sec: number) => {
@@ -290,10 +290,10 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
         ))}
       </div>
       {/* the site goes live: a ripple runs out from the address bar across the page */}
-      {goLive > 0 && goLive < 1.4 && [0, 0.25].map((d, i) => {
-        const u = clamp01((goLive - d) / 1.0);
-        return u > 0 && u < 1 ? <div key={i} style={{ position: "absolute", left: 480 - 200, top: -200, width: 400, height: 400, borderRadius: 200, border: "20px solid rgba(135,168,158,0.5)", boxSizing: "border-box",
-          opacity: 1 - u, transform: `scale(${(0.2 + 3.2 * ou(u)).toFixed(3)})` }} /> : null;
+      {goLive > 0 && sec < 36.95 && Array.from({ length: 24 }, (_, i) => i).map((i) => {
+        const u = clamp01((goLive - i * 0.4) / 1.3);   // a live heartbeat: a ripple leaves the address bar every 0.4 s
+        return u > 0 && u < 1 ? <div key={i} style={{ position: "absolute", left: 480 - 200, top: -200, width: 400, height: 400, borderRadius: 200, border: `${i === 0 ? 26 : 20}px solid rgba(135,168,158,${i === 0 ? 0.55 : 0.45})`, boxSizing: "border-box",
+          opacity: 1 - u, transform: `scale(${(0.2 + 3.6 * u).toFixed(3)})` }} /> : null;
       })}
       {barOp > 0 && g < f("w:vi+1.8") && g >= f("w:vi") - 2 && (
         <div style={{ position: "absolute", left: 0, top: 0, width: 960, height: 12, background: "rgba(255,255,255,0.7)", opacity: barOp * clamp01(t("w:vi") / 0.1) }}>

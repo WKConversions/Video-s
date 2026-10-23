@@ -141,7 +141,7 @@ const CodeBack: React.FC<{ t: number }> = ({ t }) => {
 
 // ── template sites flicking through the stage like a cover-flow ─────────────────────────────────────────────────
 const TemplateFlick: React.FC<{ t: number; i: number }> = ({ t, i }) => {
-  const t0 = 9.09 + i * 0.1, u = clamp01((t - t0) / 0.5);
+  const t0 = 9.02 + i * 0.1, u = clamp01((t - t0) / 0.56);
   if (u <= 0 || u >= 1) return null;
   const e = INOUT(u), c = Math.abs(2 * e - 1);          // 1 at the sides, 0 at the middle
   return (
@@ -169,7 +169,8 @@ const TemplateFlick: React.FC<{ t: number; i: number }> = ({ t, i }) => {
 const CAM: [number, number, number, number][] = [
   [0.9, 1, 0, 0], [1.2, 1.12, -190, -20], [1.75, 1.12, 190, -20], [2.25, 1.12, -120, 20], [2.55, 1.1, 0, 0],
   [2.9, 1.12, 190, -20], [3.45, 1.12, -190, 0], [3.95, 1, 0, 0],
-  [4.3, 1.1, 0, 40], [4.75, 1.25, -180, -100], [5.9, 1.25, -180, -100], [6.2, 1.2, -200, -110], [6.6, 1.2, 170, -60], [6.95, 1, 0, 0],
+  [4.3, 1.1, 0, 40], [4.65, 1.25, -190, -120], [5.95, 1.25, -30, 60], [6.25, 1.2, -200, -110], [6.65, 1.2, 170, -60], [6.95, 1, 0, 0],
+  [8.13, 1, 0, 0], [8.5, 1.14, 0, 0], [8.82, 1.14, 0, 0], [9.08, 1, 0, 0],
 ];
 const camAt = (t: number) => {
   if (t <= CAM[0][0]) return { c: 1, fu: 0, fv: 0 };
@@ -211,21 +212,29 @@ const HeroSlider: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
-// ── "Creoble bygger hele siden": the site fans out as its pages ──────────────────────────────────────────────────
+// ── "Creoble bygger hele siden": the site fans out as its pages and steps through them like a carousel ──────────
+const PAGE_SCROLL = [0, 470, 658], PAGE_NAME = ["Forside", "Behandlinger", "Kontakt"];
 const Pages: React.FC<{ t: number }> = ({ t }) => {
-  const f1 = sp(t, 7.0, 0.45, 0.62) * (1 - ez(t, 7.72, 0.3, INOUT));
-  const vis = clamp01(f1 * 3), side = mix(0.46, 0.62, clamp01(f1));
-  const lab = (x: number, text: string) => (
-    <div style={{ position: "absolute", left: x - 150, top: 540 + 300 * side + 34, width: 300, textAlign: "center", opacity: vis * (1 - ez(t, 7.72, 0.2, INOUT)), fontFamily: SANS, fontWeight: 600, fontSize: 32, color: INK }}>
-      <span style={{ display: "inline-block", padding: "6px 24px", borderRadius: 26, background: "#fff", border: `1px solid ${C.line}`, boxShadow: "0 10px 20px -12px rgba(26,22,20,0.3)" }}>{text}</span>
-    </div>
-  );
+  const fan = sp(t, 6.95, 0.4, 0.62), ret = ez(t, 7.92, 0.2, INOUT);
+  const pos = ez(t, 7.2, 0.25, INOUT) + ez(t, 7.45, 0.25, INOUT) + ez(t, 7.7, 0.25, INOUT);   // 0 → 3: Forside, Behandlinger, Kontakt, Forside
+  const ff = fan * (1 - ret);
   return (
     <>
-      <Stage x={960 - 640 * f1} y={540} scale={side} scroll={470} transform={`perspective(1800px) rotateY(${38 * f1}deg)`} style={{ opacity: vis }} />
-      <Stage x={960 + 640 * f1} y={540} scale={side} scroll={658} transform={`perspective(1800px) rotateY(${-38 * f1}deg)`} style={{ opacity: vis }} />
-      <Stage x={960} y={540} scale={mix(1, 0.8, f1)} scroll={0} />
-      {lab(960 - 640 * f1, "Behandlinger")}{lab(960, "Forside")}{lab(960 + 640 * f1, "Kontakt")}
+      {[0, 1, 2].map((i) => {
+        const d = ((((i - pos + 1.5) % 3) + 3) % 3) - 1.5, ad = Math.min(1, Math.abs(d));
+        const sc = mix(1, mix(0.8, 0.58, ad), ff), x = 960 + d * 650 * ff, rot = -Math.max(-1, Math.min(1, d)) * 38 * ff;
+        const op = i === 0 ? 1 : clamp01((1.45 - Math.abs(d)) * 4) * clamp01(ff * 3);
+        const front = Math.abs(d) < 0.5;
+        return (
+          <React.Fragment key={i}>
+            <Stage x={x} y={540} scale={sc} scroll={PAGE_SCROLL[i]} transform={`perspective(1800px) rotateY(${rot}deg)`} style={{ opacity: op, zIndex: front ? 2 : 1 }} />
+            <div style={{ position: "absolute", left: 960 - 160, top: 868, width: 320, textAlign: "center", opacity: i === 0 ? clamp01((t - 7.15) * 8) * (1 - ez(t, 7.88, 0.12, LIN)) : op * clamp01((t - 7.15) * 8) * (1 - ez(t, 7.88, 0.12, LIN)),
+              transform: `translateX(${Math.round(d * 650)}px)`, fontFamily: SANS, fontWeight: 600, fontSize: 32, color: INK }}>
+              <span style={{ display: "inline-block", padding: "6px 24px", borderRadius: 26, background: "#fff", border: `1px solid ${C.line}`, boxShadow: "0 10px 20px -12px rgba(26,22,20,0.3)" }}>{PAGE_NAME[i]}</span>
+            </div>
+          </React.Fragment>
+        );
+      })}
     </>
   );
 };
@@ -302,7 +311,7 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
                 </div>
               </div>
             )}
-            {t > 9.05 && <>{[0, 1, 2].map((i) => <TemplateFlick key={i} t={t} i={i} />)}</>}
+            {t > 9.0 && <>{[0, 1, 2].map((i) => <TemplateFlick key={i} t={t} i={i} />)}</>}
           </Stage>
           {t < 2.9 && <TimerChip t={t} left={20 + STAGE.w - 18 - 128} top={24} />}
         </div>
@@ -310,7 +319,7 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
       {back && <div style={{ position: "absolute", left: 20, top: 20, width: STAGE.w, height: STAGE.h }}><CodeBack t={t} /></div>}
     </Shaped>
   );
-  const pagesOn = t >= 6.95 && t < 8.02;
+  const pagesOn = t >= 6.95 && t < 8.12;
 
   // landing rings of the dot
   const landRings = [0.2, 0.34, 0.42].map((ti, i) => {
