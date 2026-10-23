@@ -28,13 +28,6 @@
   "note": "hero photo slides to the next"
  },
  {
-  "id": "gen-whoosh-short",
-  "frame": 1668,
-  "db": -13,
-  "pitch": 0,
-  "note": "camera pushes in toward the top of the stage"
- },
- {
   "id": "gen-appear",
   "frame": 1676,
   "db": -10,
@@ -68,13 +61,6 @@
   "db": -10,
   "pitch": 0,
   "note": "address bar turns from Forhåndsvisning to holmfysio.dk live"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 1770,
-  "db": -13,
-  "pitch": 0,
-  "note": "camera pulls back for the price"
  },
  {
   "id": "gen-whoosh-short",
@@ -147,25 +133,11 @@
   "note": "'/md.' slides in"
  },
  {
-  "id": "gen-whoosh-short",
-  "frame": 1872,
-  "db": -13,
-  "pitch": 0,
-  "note": "camera pushes in on the address bar"
- },
- {
   "id": "gen-pop",
   "frame": 1895,
   "db": -7,
   "pitch": 0,
   "note": "Domæne card flies out of the price"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 1920,
-  "db": -14,
-  "pitch": 2,
-  "note": "camera glides sideways to the corner for the e-mail card"
  },
  {
   "id": "kenney-drop-003",
@@ -194,13 +166,6 @@
   "db": -10,
   "pitch": 2,
   "note": "E-mail card docks"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 1974,
-  "db": -13,
-  "pitch": 0,
-  "note": "camera pulls back for the lock"
  },
  {
   "id": "gen-chime",
@@ -238,13 +203,6 @@
   "note": "shackle snaps shut"
  },
  {
-  "id": "gen-whoosh-short",
-  "frame": 2022,
-  "db": -14,
-  "pitch": 0,
-  "note": "camera steps in toward the price for the calendar"
- },
- {
   "id": "kenney-drop-003",
   "frame": 2051,
   "db": -11,
@@ -278,13 +236,6 @@
   "db": -10,
   "pitch": 0,
   "note": "year flap falls"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 2112,
-  "db": -12,
-  "pitch": 0,
-  "note": "camera pushes in on the address bar"
  },
  {
   "id": "gen-whoosh-short",
@@ -327,13 +278,6 @@
   "db": -9,
   "pitch": 0,
   "note": "'Ejer: dig' tag swings in"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 2175,
-  "db": -13,
-  "pitch": 0,
-  "note": "camera pulls back before the flip"
  },
  {
   "id": "kenney-tick-004",
@@ -432,12 +376,5 @@
   "db": -9,
   "pitch": 0,
   "note": "halves bounce apart"
- },
- {
-  "id": "gen-whoosh-medium",
-  "frame": 2338,
-  "db": -9,
-  "pitch": 0,
-  "note": "camera push-in hand-off to S5"
  }
 ]

@@ -46,20 +46,15 @@ const typed = (t: number, at: number, text: string, cps: number) => text.slice(0
 // ── the camera: keyframes (time, focus point on screen, scale), eased between ─────────────────────────────────────────
 type Key = [number, number, number, number];
 const CAM: Key[] = [
-  [START, 960, 540, 1], [39.7, 960, 540, 1],
-  [40.4, 1170, 560, 1.24],                  // push in on the chat panel's corner while the reply types
-  [41.7, 1170, 560, 1.24], [42.3, 960, 540, 1],
-  [43.3, 1180, 520, 1.08], [43.9, 960, 540, 1],   // toward the queue counter, then back
-  [45.12, 960, 540, 1], [45.7, 820, 470, 1.2], [46.5, 1080, 520, 1.1], [47.3, 940, 500, 1.14], [47.75, 960, 540, 1],   // the pills
-  [48.12, 960, 540, 1],
-  [48.5, 740, 400, 1.38],                   // Byg den: push in on the headline while the site rebuilds
-  [48.75, 740, 400, 1.38], [48.98, 960, 540, 1],
-  [49.62, 960, 540, 1], [50.1, 1130, 520, 1.12],    // Så køber du: push toward the price tag
-  [50.28, 1130, 520, 1.12], [50.75, 960, 530, 1.06], // the button lands: frame it
-  [51.3, 960, 530, 1.06], [51.85, 900, 500, 1.16], [52.4, 900, 500, 1.16], [52.95, 1020, 520, 1.06], [53.5, 1020, 520, 1.06], [54.05, 940, 500, 1.16], [54.6, 940, 500, 1.16], [55.2, 960, 530, 1.06],
+  [START, 960, 540, 1],
+  [41.3, 1030, 545, 1.07],                  // the hand-off's push continues, one long ease toward the chat (1.8 s)
+  [42.3, 1030, 545, 1.07], [43.5, 960, 540, 1],           // holds through the reply, then one calm return (1.2 s)
+  [45.6, 960, 540, 1], [47.3, 940, 520, 1.06],            // the pills: one slow reframe (1.7 s)
+  [50.6, 940, 520, 1.06], [52.2, 1040, 520, 1.1],         // Byg den, Se den, Så køber du hold; one calm reframe toward the button once it has landed (1.6 s)
+  [55.2, 1040, 520, 1.1],                                 // the end card holds
 ];
 /** a push with a small anticipation the other way, an overshoot and a quick settle (done in 88% of the segment) */
-const camEase = (u: number) => INOUT(clamp01(u));   // (an anticipation + overshoot push lowered the motion median and did not remove the push-tail SHAKE flags, so the plain eased push stays)
+const camEase = (u: number) => 0.5 - 0.5 * Math.cos(Math.PI * clamp01(u));   // a smooth sine ease from rest to rest, no overshoot
 const camAt = (t: number) => {
   if (t <= CAM[0][0]) return CAM[0];
   for (let i = 1; i < CAM.length; i++) if (t <= CAM[i][0]) { const a = CAM[i - 1], b = CAM[i], e = camEase((t - a[0]) / Math.max(1e-6, b[0] - a[0])); return [t, mix(a[1], b[1], e), mix(a[2], b[2], e), mix(a[3], b[3], e)] as Key; }
@@ -69,19 +64,19 @@ const camAt = (t: number) => {
 const PHOTOS = ["holm-shoulder.jpg", "holm-neck.jpg", "holm-calves.jpg", "holm-stretch.jpg"];
 const HK = STAGE.w / 1460;                                        // design px → stage px
 const HERO = { x: 760 * HK, y: 120 * HK, w: 630 * HK, h: 560 * HK, r: 24 * HK };
-const ERAS: [number, number[]][] = [[START, [39.8, 40.4, 41.0, 41.6, 42.2, 42.8, 43.4]], [B_REOPEN, [45.5, 46.15, 46.8, 47.4]], [49.1, []], [50.7, [50.9, 51.5, 52.1, 52.7, 53.3, 53.9, 54.5, 55.1]]];
+const ERAS: [number, number[]][] = [[START, [40.0, 41.7, 43.4]], [B_REOPEN, [45.7, 47.4]], [49.1, []], [50.7, [51.0, 52.8, 54.6]]];
 const HeroSwap: React.FC<{ t: number; scrollPx: number }> = ({ t, scrollPx }) => {
   let era = ERAS[0];
   for (const e of ERAS) if (t >= e[0]) era = e;
   const sw = era[1]; let k = -1;
   for (let i = 0; i < sw.length; i++) if (t >= sw[i]) k = i;
-  const p = k >= 0 ? INOUT(clamp01((t - sw[k]) / 0.42)) : 1, d = k % 2 === 0 ? 1 : -1;
+  const p = k >= 0 ? INOUT(clamp01((t - sw[k]) / 0.9)) : 1, d = k % 2 === 0 ? 1 : -1;
   const cur = PHOTOS[(k + 1) % 4], old = PHOTOS[((k % 4) + 4) % 4];
-  const img = (src: string, dx: number) => <Img src={staticFile(`img/${src}`)} style={{ position: "absolute", left: 0, top: 0, width: HERO.w, height: HERO.h, objectFit: "cover", transform: `translateX(${dx}px)` }} />;
+  const img = (src: string, dx: number, op = 1) => <Img src={staticFile(`img/${src}`)} style={{ position: "absolute", left: 0, top: 0, width: HERO.w, height: HERO.h, objectFit: "cover", transform: `translateX(${dx}px)`, opacity: op }} />;
   return (
     <div style={{ position: "absolute", left: HERO.x, top: HERO.y - scrollPx, width: HERO.w, height: HERO.h, borderRadius: HERO.r, overflow: "hidden", background: "#E3E9E8" }}>
-      {p < 1 && k >= 0 && img(old, -d * HERO.w * 0.3 * p)}
-      {img(cur, d * HERO.w * (1 - p))}
+      {p < 1 && k >= 0 && img(old, -d * HERO.w * 0.12 * p)}
+      {img(cur, d * HERO.w * 0.3 * (1 - p), k >= 0 ? clamp01(p * 1.3) : 1)}
     </div>
   );
 };
@@ -116,7 +111,7 @@ const B = {
 };
 
 // ── layout (px at 1080p) ───────────────────────────────────────────────────────────────────────────────────────────
-const SX = 100, ZS = 1.08;                                    // the stage steps left while the chat is open; the stage scale of the hand-off
+const SX = 100, ZS = 1.04;                                    // the stage steps left while the chat is open; the stage scale of the hand-off (1.0 → 1.04)
 const PANEL = { x: 1290, y: 540, w: 480, h: 460 };            // the chat panel, docked on the right half of the stage
 const WM_Y = 140;                                             // the small wordmark above the stage
 const WM_H = 150, WM_W = (WM_H * WM_VIEW.w) / WM_VIEW.h;
@@ -223,14 +218,14 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
   let stageTr = "", stageSc = 1, stageOp = 1;
   const stageOn = t < B.collapse + 0.45 || t >= B.reopen;
   if (t < B.collapse + 0.45) {
-    const shift = spr(t, B.open, 0.55, 0.6), c = ez(t, B.collapse, 0.4, INOUT);
+    const shift = ez(t, B.open, 1.0, camEase), c = ez(t, B.collapse, 0.4, INOUT);
     stageTr = `translate(${mix(-SX * shift, 1290 - CX, c)}px, ${mix(0, 540 - CY, c)}px)`;
     stageSc = mix(ZS, 0.06, c); stageOp = 1 - clamp01((c - 0.75) / 0.25);
   } else {
-    const u = spr(t, B.reopen, 0.5, 0.5);
+    const u = ez(t, B.reopen, 0.8, camEase);
     stageSc = mix(0.12, ZS, u); stageOp = clamp01(u * 3);
     if (t >= B.flipOut && t < B.flipIn) stageTr = `perspective(2200px) rotateY(${90 * ez(t, B.flipOut, 0.14, INOUT)}deg)`;
-    else if (t >= B.flipIn) stageTr = `perspective(2200px) rotateY(${-90 * (1 - spr(t, B.flipIn, 0.5, 0.45))}deg)`;
+    else if (t >= B.flipIn) stageTr = `perspective(2200px) rotateY(${-90 * (1 - spr(t, B.flipIn, 0.55, 0.8))}deg)`;
   }
   // Se den: a sage scan band sweeps down the live site (twice, always downward)
   const su = (t - (L.se + 0.02)) / 0.4, scanOn = su >= 0 && su < 2, scanY = su - Math.floor(su);

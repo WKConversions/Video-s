@@ -149,45 +149,32 @@ const Link: React.FC<{ clipX?: number }> = ({ clipX }) => (
 
 // ── the camera: eased pushes, glides and pull-backs on the stage (the page itself never scrolls) ─────────────────────
 // pose = zoom Z and the stage point (fx, fy), measured from the stage centre, that sits at the screen centre
-const CAM: Array<[number, number, number, number, number]> = [   // [from s, to s, Z, fx, fy]; quick eased moves (no slow vertical text drift)
-  [26.91, 27.5, 1.25, 0, -10],     // the globe rises out of the address bar
-  [27.8, 28.3, 1.45, 0, -90],      // push toward the top while the progress bar fills
-  [28.7, 29.2, 1.2, 0, -20],       // the bar finishes, the site goes live
-  [29.45, 29.95, 1.05, 0, 0],      // pull back for the price
-  [30.3, 30.8, 1.35, 0, 60],       // a step in toward the price
-  [31.2, 31.7, 1.55, 0, -200],     // push in on the address bar for the domain
-  [32.0, 32.6, 1.55, 220, -200],   // glide sideways to the corner for the e-mail card (a pure pan)
-  [32.9, 33.4, 0.95, 0, 30],       // pull back for the lock
-  [33.7, 34.2, 1.4, 0, 100],       // in toward the price for the calendar
-  [34.45, 34.95, 1.1, 0, 20],      // ease out while the year flips
-  [35.2, 35.7, 1.55, 0, -230],     // push in on the address bar: Domænet i dit navn
-  [36.25, 36.75, 1.15, 0, 0],      // pull back before the stage flips
-  [37.75, 38.9, 1.0, 0, 0],         // settle on the plain stage for the h4 hand-off
+const CAM: Array<[number, number, number, number, number]> = [   // [from s, to s, Z, fx, fy]: a few calm reframes, 1.2-2.0 s each, rest to rest
+  [26.91, 28.5, 1.1, 0, -20],      // "Skal den på nettet?": the hand-off's push eases on (the globe rises)
+  [29.7, 31.3, 1.0, 0, 0],         // "Fra 83 kr./md.": settle back for the price
+  [31.6, 33.2, 1.1, 0, -60],       // "Domæne og e-mail": a gentle lean toward the address bar
+  [35.45, 36.85, 1.1, 0, -60],     // "Domænet i dit navn": held framing; barely moves (the bar is already there)
+  [37.1, 38.9, 1.0, 0, 0],         // after the flip: ease to the plain stage for the h4 hand-off
 ];
-const camE = (te: number) => {                       // a small anticipation the other way, then a spring with a short overshoot
-  if (te <= 0) return 0;
-  const tt = te - 0.1, w0 = (2 * Math.PI) / 0.36, d = 0.62, wd = w0 * Math.sqrt(1 - d * d);
-  const spr = tt <= 0 ? 0 : 1 - Math.exp(-d * w0 * tt) * (Math.cos(wd * tt) + ((d * w0) / wd) * Math.sin(wd * tt));
-  return spr - 0.025 * Math.sin(Math.PI * clamp01(te / 0.14));
-};
+const camE = (u: number) => 0.5 - 0.5 * Math.cos(Math.PI * clamp01(u));   // a smooth sine ease, rest to rest: no spring, no overshoot
 const cam = (sec: number) => {
-  let Z = 1.08, fx = 0, fy = 0, pz = 1.08, px = 0, py = 0;
-  for (const [a, , z, x, y] of CAM) {
-    const e = camE(sec - a);
+  let Z = 1.04, fx = 0, fy = 0, pz = 1.04, px = 0, py = 0;
+  for (const [a, b, z, x, y] of CAM) {
+    const e = camE((sec - a) / (b - a));
     Z += (z - pz) * e; fx += (x - px) * e; fy += (y - py) * e;
     pz = z; px = x; py = y;
   }
   return { Z, fx, fy };
 };
 // the hero photo swaps in its frame (a carousel: the AI tries photos), one slide every 1.3 s
-const SLIDES = Array.from({ length: 15 }, (_, i) => 27.45 + 0.72 * i);   // 15 slides: ends on the first photo again
+const SLIDES = Array.from({ length: 6 }, (_, i) => 27.45 + 1.7 * i);   // a slow slide every 1.7 s: 6 slides end on the first photo again
 const PHOTOS = ["holm-shoulder.jpg", "holm-neck.jpg", "holm-calves.jpg"];
-const slideIdx = (sec: number) => SLIDES.reduce((a, T) => a + OUT(clamp01((sec - T) / 0.4)), 0);
+const slideIdx = (sec: number) => SLIDES.reduce((a, T) => a + camE((sec - T) / 0.9), 0);
 
 // ── the body (the thing that lives on the stage): a dot from the address bar → globe → price capsule → domain bar ──
 const main = (g: number) => ({
   x: seq(g, 960, [["w:ogs-0.02", 790, 0.5, 0.55], ["w:domnet-0.05", 960, 0.5, 0.55]]),
-  y: seq(g, 213, [["h3+0.3", 565, 0.5, 0.55], ["w:fra-0.12", 690, 0.5, 0.55], ["w:domnet-0.05", 470, 0.5, 0.55], ["w:servere-0.04", 540, 0.35, 0.7]]),
+  y: seq(g, 252, [["h3+0.3", 565, 0.5, 0.55], ["w:fra-0.12", 690, 0.5, 0.55], ["w:domnet-0.05", 301, 0.5, 0.55], ["w:servere-0.04", 540, 0.35, 0.7]]),
   w: Math.max(2, seq(g, 30, [["h3+0.3", 520, 0.45, 0.5], ["w:fra-0.12", 760, 0.45, 0.5], ["w:domnet-0.05", 880, 0.45, 0.5], ["w:servere-0.04", 40, 0.3, 0.7]])),
   h: Math.max(2, seq(g, 30, [["h3+0.3", 520, 0.45, 0.5], ["w:fra-0.12", 230, 0.45, 0.5], ["w:domnet-0.05", 130, 0.45, 0.5], ["w:servere-0.04", 40, 0.3, 0.7]])),
   sc: seq(g, 1, [["w:ogs-0.02", 0.7, 0.5, 0.55], ["w:domnet-0.05", 1, 0.5, 0.55]]),
@@ -282,8 +269,8 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
   const showTag = g >= f("w:dit-0.05") - 1 && g < f("w:servere-0.1") + 8;
 
   // ── the flip (36.95): the stage turns to show Europe with the server pins, then turns back ──
-  const flipOut = aspring(g, "w:servere-0.04", 0.7, 0.55), flipBack = aspring(g, "w:ingen3-0.35", 0.7, 0.55);
-  const ang = 180 * (flipOut - flipBack) * (1 - ez((sec - 38.55) / 0.3));
+  const flipOut = aspring(g, "w:servere-0.04", 0.85, 0.55), flipBack = ez((sec - 38.0) / 0.85);
+  const ang = 180 * (flipOut - flipBack);
   const flipping = g >= f("w:servere-0.04") - 1 && sec < 38.86;
   const tm = t("w:servere+0.35");
   const pinAt = ["w:servere+0.4", "w:servere+0.55", "w:servere+0.7"];
@@ -388,7 +375,7 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
       ))}
       {showLock && <At x={CX} y={lockY} op={clamp01(lockP * 4)} tf={`${squash(0, lockY - lockY1, 0.0026)} scale(${lockS})`}><Lock lift={14 * (1 - snap)} /></At>}
       {showTag && (
-        <div style={{ position: "absolute", left: CX, top: CY, width: 0, height: 0, opacity: 1 - tagOut, transform: `translate(0px, ${470 + 65 - 10 - CY}px) rotate(${tagAng}deg) scale(${(0.5 + 0.5 * Math.min(1.08, tagIn)) * (1 - 0.7 * tagOut)})`, transformOrigin: "0 0" }}>
+        <div style={{ position: "absolute", left: CX, top: CY, width: 0, height: 0, opacity: 1 - tagOut, transform: `translate(0px, ${301 + 65 - 10 - CY}px) rotate(${tagAng}deg) scale(${(0.5 + 0.5 * Math.min(1.08, tagIn)) * (1 - 0.7 * tagOut)})`, transformOrigin: "0 0" }}>
           <div style={{ position: "absolute", left: -2, top: 0, width: 4, height: 40, background: C.sage }} />
           <div style={{ position: "absolute", left: -190, top: 36, width: 380, height: 104, borderRadius: 30, background: C.white, border: `1.5px solid ${C.line}`, boxShadow: "0 22px 36px -18px rgba(26,22,20,0.30)",
             display: "flex", alignItems: "center", justifyContent: "center", gap: 16, fontFamily: SANS, fontWeight: 500, fontSize: 50, color: C.ink, whiteSpace: "nowrap" }}>
@@ -460,7 +447,7 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
       {/* lines (under the stage) */}
       {g >= f("w:p") - 2 && g < f("w:vi") + 12 && <Rise text="på nettet?" y={982} g={g} at="w:p" out={k(g, "w:vi-0.1", 0.25)} size={100} italicWords={["nettet"]} />}
       {g >= f("w:kroner2+0.2") - 1 && g < f("w:domne") + 6 && <Rise text="faktureres årligt" y={934} g={g} at="w:kroner2" delay={0.2} size={30} serif={false} color={C.muted} out={k(g, "w:domne-0.1", 0.25)} />}
-      {g >= f("w:i2") - 2 && g < f("w:ingen3-0.35") + 10 && <Rise text="Servere i Europa." y={982} g={g} at="w:i2" size={100} out={k(g, "w:ingen3-0.4", 0.28)} italicWords={["Europa"]} />}
+      {g >= f("w:i2") - 2 && g < f("w:ingen3-0.35") + 10 && <Rise text="Servere i Europa." y={1002} g={g} at="w:i2" size={100} out={k(g, "w:ingen3-0.4", 0.28)} italicWords={["Europa"]} />}
 
       {/* the chain snaps around the stage */}
       {showChain && (

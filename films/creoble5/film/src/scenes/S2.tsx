@@ -33,7 +33,7 @@ const trap = (t: number, a: number, b: number, D: number, r: number) => {
 };
 // the finished site is a long page: MiniSite's own page (≈ 990 pt) plus a closing block below it (the stretch photo, the
 // booking buttons, the domain), so the steady scroll has something to show for the whole voice line
-const TAIL_Y = 1000, PAGE_H = 1560;
+const TAIL_Y = 1000, PAGE_H = 1450;
 const SiteTail: React.FC = () => (
   <div style={{ position: "absolute", left: 0, top: TAIL_Y, width: SCREEN.w, padding: "0 20px", boxSizing: "border-box", fontFamily: SANS, color: HOLM.ink }}>
     <div style={{ height: 240, borderRadius: 16, overflow: "hidden" }}><Img src={staticFile("img/holm-stretch.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover" }} /></div>
@@ -74,8 +74,8 @@ const T_JUMP = 14.0;                             // "Vil": a status-bar tap jump
 const T_ISLAND_ON = 11.58;                       // "færdig"
 const T_TAG = 13.3;                              // "krone"
 const T_TAG_OUT = 13.98;
-const T_PUSH = 14.2, T_PUSH_END = 14.65;         // "Vil du ændre noget?": the camera pushes in on the headline (fast, eased)
-const T_PULL = 16.3;         // on the check it pulls back out to 1.4×
+const T_PUSH = 14.3, T_PUSH_END = 15.7;          // "Vil du ændre noget?": ONE slow, soft camera push (+12%, sine ease, no spring) toward the headline
+const T_PULL = 16.0;                             // the pull-back (sine) ends together with the fold at h2
 const T_TAP = 14.4;                              // "ændre": a finger taps the headline
 const T_SELECT = 14.5;
 const T_BUBBLE = 14.76;                          // "Skriv"
@@ -86,7 +86,7 @@ const T_DEL = 15.6;                              // "Creoble": the old headline 
 const T_RETYPE = 15.86;                          // ... and the corrected one types
 const T_CHECK = 16.28;
 const T_POP = 16.5;
-const T_FOLD = 16.52;                            // the phone folds back into the stage
+const T_FOLD = 16.34;                            // the phone folds back into the stage
 const T_FOLD_END = 16.8;                         // = f("h2") - 7.5 frames: the plain stage at scroll 0
 
 const OLD_HEAD = "Kom godt i bevægelse igen.";
@@ -141,18 +141,19 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
   const E0 = (h1 + HANDOFF_HALF) / 30;    // the stage is at scroll 300 here
 
   // ── the stage morphs into the phone (one clip-path box), and back at h2 ──────────────────────────────────────
-  const pc = spr(t, E0, 0.46, 0.62);                          // the browser narrows into the phone (clip morph)
-  const pcs = spr(t, E0 + 0.03, 0.56, 0.46);                   // the phone's own spring: it pops up a little and settles
+  const pc = spr(t, E0, 0.62, 0.8);                          // the browser narrows into the phone (clip morph)
+  const pcs = spr(t, E0 + 0.05, 0.72, 0.62);                   // the phone's own spring: it pops up a little and settles
   const foldU = clamp01((t - T_FOLD) / (T_FOLD_END - T_FOLD));
-  const fold = INOUT(foldU) - 0.07 * Math.sin(Math.PI * clamp01(foldU / 0.3));   // a small inhale (anticipation) before it shrinks
+  const fold = INOUT(foldU);
   const m = pc * (1 - fold);                                  // 0 = the stage, 1 = the phone
   // the camera push: scale everything up around the headline (1.4× → 2.1×) and back
-  const pushP = spr(t, T_PUSH + 0.09, 0.4, 0.55) - 0.03 * Math.sin(Math.PI * clamp01((t - T_PUSH) / 0.18));   // 3% back first, then an overshoot settle
-  const pullP = t < T_PULL ? 0 : mix(spr(t, T_PULL + 0.09, 0.4, 0.55) - 0.03 * Math.sin(Math.PI * clamp01((t - T_PULL) / 0.18)), 1, clamp01((t - T_FOLD) / (T_FOLD_END - T_FOLD)));
+  // the camera: one slow sine move in (+12%) and one slow sine move back, rest to rest, no anticipation or overshoot
+  const sine = (u: number) => 0.5 - 0.5 * Math.cos(Math.PI * clamp01(u));
+  const pushP = sine((t - T_PUSH) / (T_PUSH_END - T_PUSH));
+  const pullP = sine((t - T_PULL) / (T_FOLD_END - T_PULL));
   const pp = pushP * (1 - pullP);
-  const sc = mix(SN, 1, pp);
-  const FOCUS_Y = 330, headLocalY = (144 - PHONE.h / 2) * PZ;   // the headline sits at phone point y 144
-  const pushY = (FOCUS_Y - CY - headLocalY) * pp;
+  const sc = SN * (1 + 0.12 * pp);
+  const pushY = 0;
   const mh = clamp01(m);
   const vIn = mix((WB_H - STAGE.h * STAGE_K) / 2, 0, m);        // clip: the stage rect → the phone rect (local px)
   const hIn = mix((WB_W - STAGE.w * STAGE_K) / 2, (WB_W - PW) / 2, mh);
@@ -163,7 +164,7 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
   const stageOp = 1 - clamp01((m - 0.12) / 0.4), phoneOp = clamp01((m - 0.2) / 0.35);
   const wrapT = `translate(0px, ${pushY}px) scale(${sc})`;
   // the stage arrives at the hand-off's last state (scale 1.08, scroll 0), settles to 1.0 while it narrows, and is a plain stage (scale 1) at h2
-  const stageScale = mix(1.08, 1, spr(t, E0, 0.5, 0.55));          // settles with a rubber-band dip below 1.0
+  const stageScale = mix(1.04 + 0.02 * OUT(clamp01((t - E0) / 1.2)), 1, foldU);   // continues the hand-off push (1.0 → 1.04) with a long ease-out; a plain 1.0 at h2
 
   // ── the site: it builds, then ONE long steady scroll down (≥ 4 px/frame), a fast eased return ────────────────
   const build = mix(0.2, 1, kk(t, E0 + 0.05, 0.55));
@@ -207,9 +208,8 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
   const tapP = kk(t, T_TAP, 0.4);
   const tapDown = pressAt(t, T_TAP, 0.08);
   // during the edit the photo below the headline swaps in its frame (slide), the site stays alive; handles animate on the selection
-  const editLive = t >= T_PUSH_END - 0.05 && t < T_FOLD;
-  const swaps = [14.7, 15.12, 15.54, 15.96];
-  const slideX = -242 * swaps.reduce((acc, at) => acc + kk(t, at, 0.4, INOUT), 0);
+  const editLive = t >= T_JUMP + 0.3 && t < T_FOLD + 0.2;
+  const slideX = -242 * (sine((t - 14.85) / 0.8) + sine((t - 16.35) / 0.7));   // one slow slide out, one back (≥ 1.5 s apart)
 
   // ── the Island ───────────────────────────────────────────────────────────────────────────────────────────────
   const pI = Math.max(0, spr(t, T_ISLAND_ON, 0.52, 0.48) + 0.1 * Math.sin(Math.PI * clamp01((t - T_TAP) / 0.32)));
@@ -271,8 +271,8 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
                 {/* during the edit the hero photo swaps in its frame (it starts and ends on the site's own photo) */}
                 {editLive && (
                   <div style={{ position: "absolute", left: 20, top: 234.1, width: 242, height: 190, borderRadius: 16, overflow: "hidden", background: HOLM.bg }}>
-                    <div style={{ position: "absolute", left: 0, top: 0, width: 242 * 5, height: 190, display: "flex", transform: `translate3d(${slideX}px, 0, 0)` }}>
-                      {["holm-shoulder.jpg", "holm-neck.jpg", "holm-calves.jpg", "holm-stretch.jpg", "holm-shoulder.jpg"].map((src, i) => (
+                    <div style={{ position: "absolute", left: 0, top: 0, width: 242 * 3, height: 190, display: "flex", transform: `translate3d(${slideX}px, 0, 0)` }}>
+                      {["holm-shoulder.jpg", "holm-neck.jpg", "holm-shoulder.jpg"].map((src, i) => (
                         <div key={i} style={{ width: 242, height: 190, flex: "none" }}><Img src={staticFile(`img/${src}`)} style={{ width: "100%", height: "100%", objectFit: "cover" }} /></div>
                       ))}
                     </div>

@@ -117,8 +117,8 @@ const NulLine: React.FC<{ g: number; y: number; tA: number; tB: number; out: num
 );
 
 const IMGS = ["holm-shoulder.jpg", "holm-neck.jpg", "holm-calves.jpg", "holm-stretch.jpg"];
-/** camera ease: a small anticipation (3.5% the other way), a fast out-eased move, an overshoot (5%) and settle; ends exactly on target */
-const camE = (t: number) => { if (t <= 0) return 0; if (t >= 1) return 1; const tt = clamp01((t - 0.12) / 0.88); return OUT(tt) - (t < 0.2 ? 0.035 * Math.sin((Math.PI * t) / 0.2) : 0) + (t > 0.7 ? 0.05 * Math.sin((Math.PI * (t - 0.7)) / 0.3) : 0); };
+/** camera ease: a smooth sine in-out from rest to rest (no anticipation, no overshoot) */
+const camE = (t: number) => 0.5 * (1 - Math.cos(Math.PI * clamp01(t)));
 /** camera: a value that starts at v0 and moves to each key's value over `dur` g from `at` (camE) */
 const cm = (g: number, v0: number, keys: [number, number, number][]) => {
   let v = v0, prev = v0;
@@ -135,38 +135,40 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
 
   // cues (g)
   const t499 = f("w:499"), tKr = f("w:kroner"), tN = f("w:n"), tIntet = f("w:intet"), tAbo = f("w:abonnement"), tSiden = f("w:siden2"), tDin = f("w:din3");
-  const tIkke = f("w:ikke"), tTil2 = f("w:tilfreds2"), tS = f("w:s"), tNul = f("w:nul"), tRis = f("w:risiko");
+  const tIkke = f("w:ikke"), tS = f("w:s"), tNul = f("w:nul"), tRis = f("w:risiko");
   const tStamp = T0 + 1, tChk = T0 + 3, tRoll = t499 + 1, ROLL1 = 52, tLand = tRoll + ROLL1 - 3, tDock = tIntet + 6, tDrop = tAbo + 5, tOff = tNul;
   const tRoll2 = tS + 4, ROLL2 = 26, tLand2 = tRoll2 + ROLL2 - 3;
   const tEx = TE - 11;      // the toggle row collapses onto its knob, the knob drops out
 
   // ── the camera: push in toward the price area, pull back, push in on the top-right corner (Din), back, price, back ───
-  const S = cm(g, 1.08, [[T0 + 4, 1.14, 22], [t499 - 1, 1.2, 20], [tSiden - 4, 1.0, 18], [684, 1.3, 18], [708, 1.18, 20], [tNul, 1.0, 18]]);
-  const fx = cm(g, 960, [[tIntet, 1050, 18], [tDrop + 4, 960, 18], [684, 1330, 18], [708, 960, 20]]);
-  const fy = cm(g, 540, [[t499 - 1, 700, 20], [tN, 650, 18], [tIntet + 8, 700, 18], [tSiden - 4, 540, 18], [684, 330, 18], [708, 700, 20], [tNul, 540, 18]]);
-  const camId = Math.abs(S - 1) < 0.0005 && Math.abs(fx - 960) < 0.05 && Math.abs(fy - 540) < 0.05;
+  // two calm reframes in the whole scene (1.8 s each, rest to rest): a slow push toward the price area that continues the
+  // hand-off's push (Tilfreds? / 499 kroner), and one pull back for "Siden er din"; every other beat holds the frame
+  const S = cm(g, 1.04, [[T0 + 2, 1.1, 54], [tSiden - 5, 1.0, 54]]);
+  const fx = 960;
+  const fy = cm(g, 540, [[T0 + 2, 640, 54], [tSiden - 5, 540, 54]]);
+  const camId = Math.abs(S - 1) < 0.0005 && Math.abs(fy - 540) < 0.05;
 
   // ── the stage's own acts: pages fan out as cards (Siden er din), question tilts ───────────────────────────────────
   const fan = track(g, 0, [[tSiden, 1, 0.6, 0.45], [tSiden + 30, 0, 0.42, 0.5]]);
-  const fanS = track(g, 0, [[tSiden, 1, 0.42, 0.9], [tSiden + 30, 0, 0.34, 0.9]]);   // the main page: only a hint of overshoot, its text stays calm
+  const fanS = ramp(g, tSiden, 40, camE) - ramp(g, tSiden + 30, 40, camE);   // the main page: only a hint of overshoot, its text stays calm
   const ss = 1 - 0.2 * fanS;                                 // the main page steps back while the others fan out
-  const sry = imp(g, tIkke, 22, 1.6, 3.2) + imp(g, tTil2, -12, 1.8, 3.4);
-  const srz = imp(g, tIkke, -5, 1.6, 3.2) + imp(g, tTil2, 4, 1.8, 3.4);
-  const srx = imp(g, tTil2, -8, 1.8, 3.4);
+  const sry = imp(g, tIkke, 13, 1.1, 2.6);
+  const srz = imp(g, tIkke, -3, 1.1, 2.6);
+  const srx = 0;
   const tilt = Math.abs(sry) + Math.abs(srz) + Math.abs(srx) < 0.002 ? "" : `perspective(2400px) rotateX(${srx}deg) rotateY(${sry}deg) rotateZ(${srz}deg)`;
 
   // ── the photos swap in the hero frame: a slide every ~0.9 s ─────────────────────────────────────────────────────
-  // 12 slides (hero photo: shoulder -> neck -> calves -> stretch -> ... -> shoulder), placed where the page would otherwise rest;
+  // 4 slow swaps (hero photo: shoulder -> neck -> calves -> stretch -> shoulder), a crossfade with a small slide;
   // the last one ends before TE on the site's own photo
-  const STARTS = [534, 556, 578, 598, 618, 640, 662, 676, 700, 720, 750, 782], SL = 9;
+  const STARTS = [556, 624, 692, 758], SL = 26;
   let kk = -1;
   for (let i = 0; i < STARTS.length; i++) if (g >= STARTS[i]) kk = i;
-  const slideU = kk < 0 ? 0 : INOUT(clamp01((g - STARTS[kk]) / SL));
+  const slideU = kk < 0 ? 0 : camE((g - STARTS[kk]) / SL);
   const imgA = kk < 0 ? 0 : kk % 4, imgB = (imgA + 1) % 4;
   const carousel = (
     <div style={abs(PH0.x, PH0.y, { width: PH0.w, height: PH0.h, borderRadius: 16, overflow: "hidden", background: "#E9E5DE" })}>
-      <Img src={staticFile(`img/${IMGS[imgA]}`)} style={{ position: "absolute", left: 0, top: 0, width: "100%", height: "100%", objectFit: "cover", transform: `translateX(${-slideU * PH0.w * 0.3}px)` }} />
-      {slideU > 0 && <Img src={staticFile(`img/${IMGS[imgB]}`)} style={{ position: "absolute", left: 0, top: 0, width: "100%", height: "100%", objectFit: "cover", transform: `translateX(${(1 - slideU) * PH0.w}px)` }} />}
+      <Img src={staticFile(`img/${IMGS[imgA]}`)} style={{ position: "absolute", left: 0, top: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+      {slideU > 0 && <Img src={staticFile(`img/${IMGS[imgB]}`)} style={{ position: "absolute", left: 0, top: 0, width: "100%", height: "100%", objectFit: "cover", opacity: slideU, transform: `translateX(${(1 - slideU) * 56}px)` }} />}
     </div>
   );
 

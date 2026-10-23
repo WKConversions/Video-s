@@ -165,26 +165,28 @@ const TemplateFlick: React.FC<{ t: number; i: number }> = ({ t, i }) => {
   );
 };
 
-// ── the camera: push-ins and glides on the stage (c = zoom, fu/fv = the focus, relative to the stage centre) ─────
+// ── the camera (revision 4): calm. One reframe per sentence, each 1.2–1.4 s, a sine ease from rest to rest, no spring,
+//    zoom within ±12%, pans within ~150 px; everything else holds the frame. (c = zoom, fu/fv = focus from the stage centre) ──
 const CAM: [number, number, number, number][] = [
-  [0.9, 1, 0, 0], [1.2, 1.12, -190, -20], [1.75, 1.12, 190, -20], [2.25, 1.12, -120, 20], [2.55, 1.1, 0, 0],
-  [2.9, 1.12, 190, -20], [3.45, 1.12, -190, 0], [3.95, 1, 0, 0],
-  [4.3, 1.1, 0, 40], [4.65, 1.25, -190, -120], [5.95, 1.25, -30, 60], [6.25, 1.2, -200, -110], [6.65, 1.2, 170, -60], [6.95, 1, 0, 0],
-  [8.13, 1, 0, 0], [8.5, 1.14, 0, 0], [8.82, 1.14, 0, 0], [9.08, 1, 0, 0],
+  [0.9, 1, 0, 0], [2.3, 1.08, -70, 0],          // "Din nye hjemmeside er få minutter væk": settle in on the building site
+  [2.7, 1.08, -70, 0], [4.1, 1.08, 70, 0],      // "Bygget af AI": a slow glide across to the photo
+  [4.3, 1.08, 70, 0], [5.5, 1.12, -50, -10],    // "Fortæl kort om din virksomhed": frame the header and the field
+  [6.2, 1.12, -50, -10], [7.4, 1, 0, 0],        // "Creoble bygger hele siden": pull back as the pages fan out
 ];
-/** A camera move of under 0.6 s: a small pull-back (anticipation), then a springy push with ~14% overshoot that settles. */
+const camAt = (t: number) => {
+  if (t <= CAM[0][0]) return { c: 1, fu: 0, fv: 0 };
+  for (let i = 0; i < CAM.length - 1; i += 2) {
+    const [a, c0, u0, v0] = CAM[i], [b, c1, u1, v1] = CAM[i + 1];
+    if (t < b) { const e = 0.5 - 0.5 * Math.cos(Math.PI * clamp01((t - a) / (b - a))); return { c: mix(c0, c1, e), fu: mix(u0, u1, e), fv: mix(v0, v1, e) }; }
+    if (i + 2 < CAM.length && t < CAM[i + 2][0]) return { c: c1, fu: u1, fv: v1 };
+  }
+  return { c: 1, fu: 0, fv: 0 };
+};
+/** the sparkle's own travel (an object, so it keeps a small spring): anticipation, push, ~14% overshoot, settle */
 const camSpring = (u: number) => {
   if (u < 0.14) return -0.08 * Math.sin((Math.PI * u) / 0.14);
   const v = (u - 0.14) / 0.86;
   return 1 - Math.exp(-5.5 * v) * (Math.cos(9.5 * v) + (5.5 / 9.5) * Math.sin(9.5 * v)) + 0.004 * v;
-};
-const camAt = (t: number) => {
-  if (t <= CAM[0][0]) return { c: 1, fu: 0, fv: 0 };
-  for (let i = 0; i < CAM.length - 1; i++) {
-    const [a, c0, u0, v0] = CAM[i], [b, c1, u1, v1] = CAM[i + 1];
-    if (t < b) { const u = (t - a) / (b - a), e = b - a > 0.6 ? INOUT(u) : camSpring(u); return { c: mix(c0, c1, e), fu: mix(u0, u1, e), fv: mix(v0, v1, e) }; }
-  }
-  return { c: 1, fu: 0, fv: 0 };
 };
 
 // ── "Bygget af AI": the AI tries looks (a sage tone with a serif headline, then dark, then back) and swaps the photo ──
@@ -202,17 +204,16 @@ const Looks: React.FC<{ t: number }> = ({ t }) => {
     </>
   );
 };
-const HERO_IMGS = ["holm-neck.jpg", "holm-stretch.jpg", "holm-calves.jpg", "holm-shoulder.jpg"];
-const HERO_T = [2.62, 2.98, 3.34, 3.7];
+const HERO_IMGS = ["holm-neck.jpg", "holm-shoulder.jpg"];
+const HERO_T = [2.65, 4.2];
 const HeroSlider: React.FC<{ t: number }> = ({ t }) => {
-  if (t < 2.6 || t > 4.05) return null;
-  const s = STAGE.w / 1460, k = HERO_T.filter((x) => t >= x).length - 1;
-  if (k < 0) return null;
+  if (t < 2.6 || t > 5.1) return null;
+  const s = STAGE.w / 1460;
   return (
     <div style={{ position: "absolute", left: 760 * s, top: 120 * s, width: 630 * s, height: 560 * s, borderRadius: 24 * s, overflow: "hidden" }}>
-      {HERO_IMGS.slice(0, k + 1).map((src, i) => {
-        const p = i === k ? sp(t, HERO_T[i], 0.4, 0.55) : 1;
-        return <Img key={src} src={staticFile(`img/${src}`)} style={{ position: "absolute", left: 0, top: 0, width: "100%", height: "100%", objectFit: "cover", transform: `translateX(${(1 - p) * 630 * s}px)` }} />;
+      {HERO_IMGS.map((src, i) => {
+        const o = ez(t, HERO_T[i], 0.8, INOUT);
+        return o > 0 ? <Img key={src} src={staticFile(`img/${src}`)} style={{ position: "absolute", left: 0, top: 0, width: "100%", height: "100%", objectFit: "cover", opacity: o }} /> : null;
       })}
     </div>
   );
