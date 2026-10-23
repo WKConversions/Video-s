@@ -9,8 +9,8 @@ import { f } from "./shared";
 
 // ── sizes: the minimal rules (plan/storyboard.md) ────────────────────────────────────────────────────────────────
 export const W = 1920, H = 1080, CX = 960, CY = 540;
-export const MAX_W = 760, MAX_H = 640;        // no object bigger than this (fleeting morph frames excepted)
-export const TYPE = { head: 76, sub: 34, ui: 26, small: 20 };  // Fraunces headline; DM Sans sub / UI / labels
+export const MAX_W = 1150, MAX_H = 920;       // revision 1: bigger objects (one at a time), no bigger than this
+export const TYPE = { head: 100, sub: 44, ui: 30, small: 24 };  // revision 1: bigger type  // Fraunces headline; DM Sans sub / UI / labels
 export const SHADOW_SOFT = "0 1px 2px rgba(26,22,20,0.05), 0 18px 40px -18px rgba(26,22,20,0.22)";
 
 // ── the thread capsule and the hand-offs ───────────────────────────────────────────────────────────────────────

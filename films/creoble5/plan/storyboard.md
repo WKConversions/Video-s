@@ -1,3 +1,45 @@
+# REVISION 1 (Karl, on the 540p draft; read before everything below, it overrides the size and motion rules)
+> "Bigger object and 7% useful motion. No shaking objects, and the 7% has to be useful, explaining motion. But it
+> should be very understandable."
+
+The draft was minimal but measured only 0.8% motion: one small object on cream can't change 7% of the frame. So:
+- **Bigger object.** Still ONE object at a time, centred, on plain still cream, with at most one short line of text.
+  - The hero object is now 45–60% of the frame width: about 900–1100 px wide, or about 420×900 for the phone
+    (`<Phone scale={1.4}>`).
+  - New limits: `MAX_W` 1150, `MAX_H` 920. Type is bigger: headline 92–110 px, UI text ≥ 28 px at 1080p.
+- **7% from useful, explaining motion.** The number must come from content that SHOWS what the voice says, moving
+  inside or out of the object:
+  - the site building itself block by block;
+  - typing;
+  - scrolling through the finished site;
+  - the headline rewriting;
+  - numbers rolling;
+  - chips flying out and docking;
+  - checks ticking;
+  - the globe turning;
+  - server pins pulsing on the map;
+  - messages typing.
+
+  Keep the object busy explaining for most of every second. No decorative wobble, sway or float to pad the number:
+  `float()` only very gently, and only between beats.
+- **Very understandable.** Each phrase's picture reads in one second: a clear subject, Danish labels where they help,
+  nothing abstract. If a visual needs a label to be understood, give it one (e.g. "Domæne", "E-mail", "Servere i
+  Europa").
+- **No shake** (`jitter_check` at full scale shows no SHAKE line):
+  - Move with transforms on static boxes. Never animate left/top/width/height, font-size or letter-spacing.
+  - No slow sub-pixel text glides: text either sits still or moves at ≥ 2 px per frame.
+  - A slow-moving text layer gets `willChange: "transform"` plus a static `rotate(0.1deg)`, but only if it never
+    scales up afterwards (Chrome keeps the first raster scale).
+  - Scrolling content inside a device: put `willChange: "transform"` on the scrolling layer, and scroll at a steady
+    ≥ 2 px per frame, or eased fast; no slow creep.
+  - Use clip-path for growing boxes.
+- **Measure:**
+  - motion: on your span's render at `--scale=0.5`, median ≥ 7%;
+  - shake: `jitter_check` on a `--scale=1` render of your 3 busiest seconds (`--frames=a-b`), no SHAKE.
+- **Hand-offs:** unchanged (the small capsule whips across at h1–h4).
+- **Shot list:** same as below, at the new size. Where a beat had a tiny object (the "</>" chip, the toggle, chips,
+  the lock, the calendar), make it a big, readable object of its own, or show the beat inside the hero object.
+
 # Creoble v5 (Danish): the minimal Apple film. Build contract (55.2 s, 16:9, 1920×1080, 60 fps)
 
 ## Karl's brief (read first)
