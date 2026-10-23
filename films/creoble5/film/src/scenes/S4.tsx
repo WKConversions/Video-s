@@ -162,7 +162,7 @@ const CAM: Array<[number, number, number, number, number]> = [   // [from s, to 
   [34.45, 34.95, 1.1, 0, 20],      // ease out while the year flips
   [35.2, 35.7, 1.55, 0, -230],     // push in on the address bar: Domænet i dit navn
   [36.25, 36.75, 1.15, 0, 0],      // pull back before the stage flips
-  [38.1, 38.9, 1.0, 0, 0],         // settle on the plain stage for the h4 hand-off
+  [37.75, 38.9, 1.0, 0, 0],         // settle on the plain stage for the h4 hand-off
 ];
 const camE = (te: number) => {                       // a small anticipation the other way, then a spring with a short overshoot
   if (te <= 0) return 0;
