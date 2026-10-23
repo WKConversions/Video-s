@@ -9,7 +9,7 @@
 // becomes the CTA button. Transforms only; nothing wobbles.
 import React from "react";
 import { Img, staticFile } from "remotion";
-import { C, INOUT, LIN, OUT, SANS, SERIF, clamp01, mix } from "../lib";
+import { C, INOUT, LIN, OUT, SANS, SERIF, clamp01, mix, DROP_BIG, appleShadow } from "../lib";
 import { Island, PillButton, RollNumber, Ico, f } from "../shared";
 import { CX, CY, HANDOFF_HALF, Line, NEW_HEADLINE, Stage, StageHandoff, STAGE } from "../v5";
 import { WM_DOT, WM_VIEW, WM_WORD } from "../wordmark";
@@ -39,7 +39,7 @@ const prs = (t: number, at: number, hold = 0.12) => {
   const r = x - 0.1 - hold, w0 = (2 * Math.PI) / 0.3;
   return (1 + w0 * r) * Math.exp(-w0 * r);
 };
-const sh = (a: number) => `0 1px 2px rgba(26,22,20,${0.05 * a}), 0 18px 40px -18px rgba(26,22,20,${0.22 * a})`;
+const sh = (a: number) => appleShadow(a, 0.35);
 const cmix = (a: string, b: string, pa: number) => `color-mix(in srgb, ${a} ${(clamp01(pa) * 100).toFixed(1)}%, ${b})`;
 const typed = (t: number, at: number, text: string, cps: number) => text.slice(0, Math.max(0, Math.min(text.length, Math.floor((t - at) * cps))));
 
@@ -164,7 +164,7 @@ const Dots: React.FC<{ t: number; x: number; y: number; o: number; color?: strin
   </Abs>
 );
 const Robot: React.FC<{ blink: number }> = ({ blink }) => (
-  <svg width={260} height={260} viewBox="0 0 160 160" style={{ display: "block", overflow: "visible", filter: "drop-shadow(0 16px 20px rgba(26,22,20,0.2))" }}>
+  <svg width={260} height={260} viewBox="0 0 160 160" style={{ display: "block", overflow: "visible", filter: DROP_BIG }}>
     <path d="M80 44 V26" stroke={C.ink} strokeWidth={5} strokeLinecap="round" />
     <circle cx={80} cy={18} r={9} fill={C.sage} />
     <rect x={13} y={72} width={14} height={26} rx={7} fill={C.ink} /><rect x={133} y={72} width={14} height={26} rx={7} fill={C.ink} />

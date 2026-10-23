@@ -6,7 +6,7 @@
 // rises, strips roll 499 -> 0 -> toggle row switches OFF -> knob drops out -> the plain stage (StageHandoff).
 // Transforms only; the capsule morphs with clip-path on one static box; its shadow is a transparent caster.
 import React from "react";
-import { C, INOUT, OUT, SANS, SERIF, clamp01, mix } from "../lib";
+import { C, INOUT, OUT, SANS, SERIF, clamp01, mix, SHADOW, appleShadow, DROP } from "../lib";
 import { Img, staticFile } from "remotion";
 import { CX, NEW_HEADLINE, Stage, StageHandoff } from "../v5";
 import { LiquidGlass, f } from "../shared";
@@ -98,7 +98,7 @@ const Tgl: React.FC<{ u: number }> = ({ u }) => {
   const col = lerpC(SAGE, [220, 216, 209], tr);
   return (
     <div style={{ width: TG.w, height: s, borderRadius: s, background: rgba(col), position: "relative" }}>
-      <div style={{ position: "absolute", top: s * 0.09, left: 0, width: s * 0.82, height: s * 0.82, borderRadius: "50%", background: "#fff", boxShadow: "0 4px 12px rgba(0,0,0,0.22)",
+      <div style={{ position: "absolute", top: s * 0.09, left: 0, width: s * 0.82, height: s * 0.82, borderRadius: "50%", background: "#fff", boxShadow: SHADOW,
         transform: `translateX(${kx}px) scaleX(${1 + 0.22 * Math.sin(Math.PI * tr)})` }} />
     </div>
   );
@@ -243,7 +243,7 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
   };
   const Wl = 2 * Math.round(w / 2), Hl = 2 * Math.round(h / 2);
   const kS = clamp01((w - 200) / 600);
-  const shadow = `0 1px 2px rgba(26,22,20,0.05), 0 ${mix(18, 44, kS)}px ${mix(40, 90, kS)}px -${mix(18, 34, kS)}px rgba(26,22,20,${mix(0.22, 0.32, kS)})`;
+  const shadow = appleShadow(1, kS);
 
   return (
     <>
@@ -264,17 +264,17 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
           const q = lab(l.i), o = clamp01(q * 2.5);
           return (
             <div key={l.t} style={abs(l.cx - 150, l.top - 80, { width: 300, height: 66, borderRadius: 33, background: C.ink, color: C.cream, fontFamily: SANS, fontWeight: 600, fontSize: 36, display: "flex", alignItems: "center", justifyContent: "center",
-              opacity: o, transform: `translateY(${(1 - q) * 30}px) scale(${0.7 + 0.3 * q})`, boxShadow: "0 12px 24px -10px rgba(26,22,20,0.45)" })}>{l.t}</div>
+              opacity: o, transform: `translateY(${(1 - q) * 30}px) scale(${0.7 + 0.3 * q})`, boxShadow: SHADOW })}>{l.t}</div>
           );
         })}
         {showBadge && (
           <div style={abs(bx - 140, by - 65, { width: 280, height: 130, borderRadius: 65, background: C.ink, color: C.cream, fontFamily: SERIF, fontStyle: "italic", fontSize: 92, display: "flex", alignItems: "center", justifyContent: "center",
-            transform: `scale(${badge}) rotate(${(1 - badge) * -25}deg)`, opacity: clamp01(badge * 3), boxShadow: "0 18px 34px -12px rgba(26,22,20,0.5)" })}>Din</div>
+            transform: `scale(${badge}) rotate(${(1 - badge) * -25}deg)`, opacity: clamp01(badge * 3), boxShadow: SHADOW })}>Din</div>
         )}
 
         {/* "Én gang." chip (under the capsule) */}
         {showChip && (
-          <div style={{ position: "absolute", left: 0, top: 0, width: CW, height: CH, transform: `translate(${960 - CW / 2}px, ${chipY - CH / 2}px) scale(${mix(0.3, 1, chipPop) * (1 - 0.7 * chipTuck)})`, opacity: 1 - chipTuck, filter: "drop-shadow(0 12px 14px rgba(26,22,20,0.2))" }}>
+          <div style={{ position: "absolute", left: 0, top: 0, width: CW, height: CH, transform: `translate(${960 - CW / 2}px, ${chipY - CH / 2}px) scale(${mix(0.3, 1, chipPop) * (1 - 0.7 * chipTuck)})`, opacity: 1 - chipTuck, filter: DROP }}>
             <div style={{ position: "absolute", inset: 0, background: "#fff", clipPath: `inset(0px ${(1 - chipW) * chipHalf}px round ${CH / 2}px)` }}>
               <div style={{ position: "absolute", inset: 0, boxShadow: `inset 0 0 0 4px ${C.sage}`, borderRadius: CH / 2 }} />
               <div style={abs(CW / 2 - 47 - (CW / 2 - 55) * chipW, 8, { width: 94, height: 94, borderRadius: 47, background: C.sage, color: "#fff", fontFamily: SANS, fontWeight: 600, fontSize: 44, display: "flex", alignItems: "center", justifyContent: "center" })}>1×</div>

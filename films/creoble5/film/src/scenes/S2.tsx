@@ -6,7 +6,7 @@
 // Transforms only (translate / scale / rotate / clip-path on static boxes). No sway, no float.
 import React from "react";
 import { Img, staticFile } from "remotion";
-import { C, HOLM, INOUT, OUT, SANS, SERIF, clamp01, mix } from "../lib";
+import { C, HOLM, INOUT, OUT, SANS, SERIF, clamp01, mix, SHADOW_BIG } from "../lib";
 import { Ico, LiquidGlass, RollNumber, f } from "../shared";
 import { CX, CY, HANDOFF_HALF, Line, MiniSite, PHONE, Phone, SCREEN, STAGE, Stage, StageHandoff, TYPE, NEW_HEADLINE } from "../v5";
 
@@ -308,7 +308,7 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
       {bubbleOn && (
         <div style={{ position: "absolute", left: BX - BW / 2, top: BY - BH / 2, width: BW, height: BH,
           transform: `translate(${gone * 70}px, ${(1 - rise) * 120 + popAway * 40}px) scale(${(0.5 + 0.5 * rise) * (1 - 0.35 * popAway)})`, opacity: clamp01(rise * 3) * (1 - popAway), filter: popAway > 0 ? `blur(${popAway * 6}px)` : undefined }}>
-          <div style={{ position: "absolute", inset: 0, background: C.sage, borderRadius: "52px 52px 14px 52px", clipPath: `inset(0 ${hInset}px 0 ${hInset}px round 52px)`, boxShadow: "0 16px 34px -16px rgba(26,22,20,0.38)" }}>
+          <div style={{ position: "absolute", inset: 0, background: C.sage, borderRadius: "52px 52px 14px 52px", clipPath: `inset(0 ${hInset}px 0 ${hInset}px round 52px)`, boxShadow: SHADOW_BIG }}>
             <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: 11, opacity: dotsA }}>
               {[0, 1, 2].map((i) => <div key={i} style={{ width: 16, height: 16, borderRadius: 8, background: C.ink, opacity: 0.55, transform: `translateY(${-9 * Math.max(0, Math.sin((t - T_BUBBLE) * 11 - i * 0.9))}px)` }} />)}
             </div>

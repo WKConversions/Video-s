@@ -1,6 +1,6 @@
 import React from "react";
 import { Easing, Img, staticFile } from "remotion";
-import { C, HOLM, OUT, INOUT, SANS, SERIF, SHADOW_BIG, clamp01, mix } from "../lib";
+import { C, HOLM, OUT, INOUT, SANS, SERIF, SHADOW_BIG, clamp01, mix, SHADOW, DROP } from "../lib";
 import { Ico, LiquidGlass, f } from "../shared";
 import { HANDOFF_HALF, Line, STAGE, Stage, StageHandoff } from "../v5";
 
@@ -41,7 +41,7 @@ const Shaped: React.FC<{ BW: number; BH: number; cx: number; cy: number; w: numb
   const ix = (BW - ww) / 2, iy = (BH - hh) / 2;
   return (
     <div style={{ position: "absolute", left: 960 - BW / 2, top: 540 - BH / 2, width: BW, height: BH, transform: `translate(${cx - 960}px, ${cy - 540}px) ${tf} scale(${sc})`,
-      filter: shadow > 0.01 ? `drop-shadow(0 ${12 * shadow}px ${15 * shadow}px rgba(26,22,20,${0.13 * shadow}))` : undefined }}>
+      filter: shadow > 0.01 ? `drop-shadow(0 ${2 * shadow}px ${3 * shadow}px rgba(26,22,20,${0.08 * shadow})) drop-shadow(0 ${14 * shadow}px ${26 * shadow}px rgba(26,22,20,${0.13 * shadow}))` : undefined }}>
       {big > 0.01 && <div style={{ position: "absolute", left: (BW - STAGE.w) / 2, top: (BH - STAGE.h) / 2, width: STAGE.w, height: STAGE.h, borderRadius: 16, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW_BIG}`, opacity: big }} />}
       <div style={{ position: "absolute", inset: 0, clipPath: `inset(${iy}px ${ix}px ${iy}px ${ix}px round ${rr}px)`, background: color }}>{children}</div>
     </div>
@@ -52,7 +52,7 @@ const Shaped: React.FC<{ BW: number; BH: number; cx: number; cy: number; w: numb
 const STAR = "M50 0 C54.5 29 71 45.5 100 50 C71 54.5 54.5 71 50 100 C45.5 71 29 54.5 0 50 C29 45.5 45.5 29 50 0 Z";
 const Sparkle: React.FC<{ t: number; x: number; y: number; size: number; rot: number; scale: number }> = ({ t, x, y, size, rot, scale }) => (
   <div style={{ position: "absolute", left: x - size / 2, top: y - size / 2, width: size, height: size, transform: `rotate(${rot}deg) scale(${Math.max(0, scale)})`,
-    filter: "drop-shadow(0 14px 18px rgba(26,22,20,0.22))" }}>
+    filter: DROP }}>
     <svg width={size} height={size} viewBox="0 0 100 100">
       <defs>
         <linearGradient id="s1-spark" x1="0" y1="0" x2="1" y2="1" gradientTransform={`rotate(${t * 90} 0.5 0.5)`}>
@@ -104,7 +104,7 @@ const Wireframe: React.FC<{ build: number }> = ({ build }) => {
 
 // ── the sticky site header: what is typed in the prompt becomes the site's name ─────────────────────────────────
 const SiteHeader: React.FC<{ name: string; p: number }> = ({ name, p }) => (
-  <div style={{ position: "absolute", left: 0, top: 0, width: STAGE.w, height: 64, background: HOLM.bg, borderBottom: "1px solid rgba(31,42,46,0.10)", boxShadow: "0 10px 22px -14px rgba(26,22,20,0.35)",
+  <div style={{ position: "absolute", left: 0, top: 0, width: STAGE.w, height: 64, background: HOLM.bg, borderBottom: "1px solid rgba(31,42,46,0.10)", boxShadow: SHADOW,
     transform: `translateY(${-70 * (1 - p)}px)`, fontFamily: SANS, color: HOLM.ink }}>
   <div style={{ position: "absolute", left: 28, top: 15, width: 34, height: 34, borderRadius: 10, background: HOLM.accent, color: "#fff", fontWeight: 700, fontSize: 20, display: "flex", alignItems: "center", justifyContent: "center" }}>{name.length ? name[0] : ""}</div>
     <div style={{ position: "absolute", left: 76, top: 0, height: 64, display: "flex", alignItems: "center", fontWeight: 600, fontSize: 26, letterSpacing: "-0.01em", whiteSpace: "pre" }}>{name}</div>
@@ -147,7 +147,7 @@ const TemplateFlick: React.FC<{ t: number; i: number }> = ({ t, i }) => {
   return (
     <div style={{ position: "absolute", left: STAGE.w / 2 - 400, top: (STAGE.h - 46) / 2 - 240, width: 800, height: 480, opacity: clamp01((1 - c) * 6),
       transform: `perspective(1500px) translate3d(${mix(900, -900, e)}px, 0, ${mix(160, 0, c)}px) rotateY(${mix(-58, 58, e)}deg)` }}>
-      <div style={{ position: "absolute", inset: 0, borderRadius: 22, background: "#ECE9E3", border: "2px solid #D6D2CA", boxShadow: "0 30px 50px -24px rgba(26,22,20,0.40)", overflow: "hidden" }}>
+      <div style={{ position: "absolute", inset: 0, borderRadius: 22, background: "#ECE9E3", border: "2px solid #D6D2CA", boxShadow: SHADOW_BIG, overflow: "hidden" }}>
         <div style={{ position: "absolute", left: 0, top: 0, right: 0, height: 56, background: "#E2DFD8" }}>
           <div style={{ position: "absolute", left: 28, top: 16, width: 120, height: 24, borderRadius: 12, background: "#CFCBC3" }} />
           {[0, 1, 2].map((n) => <div key={n} style={{ position: "absolute", right: 28 + n * 84, top: 20, width: 60, height: 16, borderRadius: 8, background: "#D3CFC7" }} />)}
@@ -230,7 +230,7 @@ const Pages: React.FC<{ t: number }> = ({ t }) => {
             <Stage x={x} y={540} scale={sc} scroll={PAGE_SCROLL[i]} transform={`perspective(1800px) rotateY(${rot}deg)`} style={{ opacity: op, zIndex: front ? 2 : 1 }} />
             <div style={{ position: "absolute", left: 960 - 160, top: 868, width: 320, textAlign: "center", opacity: i === 0 ? clamp01((t - 7.15) * 8) * (1 - ez(t, 7.88, 0.12, LIN)) : op * clamp01((t - 7.15) * 8) * (1 - ez(t, 7.88, 0.12, LIN)),
               transform: `translateX(${Math.round(d * 650)}px)`, fontFamily: SANS, fontWeight: 600, fontSize: 32, color: INK }}>
-              <span style={{ display: "inline-block", padding: "6px 24px", borderRadius: 26, background: "#fff", border: `1px solid ${C.line}`, boxShadow: "0 10px 20px -12px rgba(26,22,20,0.3)" }}>{PAGE_NAME[i]}</span>
+              <span style={{ display: "inline-block", padding: "6px 24px", borderRadius: 26, background: "#fff", border: `1px solid ${C.line}`, boxShadow: SHADOW }}>{PAGE_NAME[i]}</span>
             </div>
           </React.Fragment>
         );
@@ -295,7 +295,7 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
             {showField && <SiteHeader name={txt.slice(0, Math.max(0, Math.min(txt.length, Math.floor((t - t0 - 0.12) * cps))))} p={hdr} />}
             {showField && (
               <div style={{ position: "absolute", left: 30, top: STAGE.h - 46 - 24 - 110, width: 900, height: 110, transform: `translateY(${fieldDy}px)`, opacity: 1 - clamp01((leave - 0.5) * 2), fontFamily: SANS }}>
-                <div style={{ position: "absolute", left: 0, top: -64, height: 50, padding: "0 24px", borderRadius: 25, background: "rgba(250,250,248,0.94)", border: `1px solid ${C.line}`, boxShadow: "0 10px 20px -12px rgba(26,22,20,0.3)",
+                <div style={{ position: "absolute", left: 0, top: -64, height: 50, padding: "0 24px", borderRadius: 25, background: "rgba(250,250,248,0.94)", border: `1px solid ${C.line}`, boxShadow: SHADOW,
                   display: "flex", alignItems: "center", fontSize: 28, fontWeight: 500, color: C.muted, whiteSpace: "nowrap", opacity: lab, transform: `translateY(${(1 - lab) * 14}px)` }}>Fortæl kort om din virksomhed</div>
                 <LiquidGlass w={900} h={110} radius={55} p={1} sheen={0.5 + 0.5 * Math.sin(t * 1.8)} tint="clear" />
                 <div style={{ position: "absolute", left: 120, top: 0, height: 110, display: "flex", alignItems: "center", fontSize: 40, fontWeight: 500, color: INK, whiteSpace: "pre", letterSpacing: "-0.01em" }}>
@@ -306,7 +306,7 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
                   <span style={{ display: "inline-block", width: 4, height: 52, marginLeft: 4, borderRadius: 2, background: SAGE, opacity: caretOn ? 1 : 0 }} />
                 </div>
                 <div style={{ position: "absolute", left: 900 - 16 - 78, top: 16, width: 78, height: 78, borderRadius: 39, background: SAGE, display: "flex", alignItems: "center", justifyContent: "center",
-                  transform: `scale(${Math.max(0, btn) * pr})`, boxShadow: "0 8px 18px -8px rgba(26,22,20,0.4)" }}>
+                  transform: `scale(${Math.max(0, btn) * pr})`, boxShadow: SHADOW }}>
                   <Ico n="arrow" s={42} c="#fff" w={2.6} />
                 </div>
               </div>

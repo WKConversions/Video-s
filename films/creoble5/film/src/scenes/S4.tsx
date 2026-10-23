@@ -3,7 +3,7 @@
 // snaps. One object at a time on plain cream; the motion is the content (continents turning, digits rolling, cards
 // flying, pins pulsing, data travelling), never sway. Transforms and clip-path only.
 import React from "react";
-import { C, EXIT, INOUT, OUT, SANS, SERIF, clamp01, mix } from "../lib";
+import { C, EXIT, INOUT, OUT, SANS, SERIF, clamp01, mix, SHADOW_BIG, DROP_BIG } from "../lib";
 import { Ico, aspring, bounce, f, k, press, squash, typed } from "../shared";
 import { Img, staticFile } from "remotion";
 import { CX, CY, HANDOFF_HALF, Line, NEW_HEADLINE, Stage, StageHandoff } from "../v5";
@@ -35,7 +35,7 @@ const Shape: React.FC<{ x: number; y: number; w: number; h: number; color: strin
   const r = Math.min(w, h) / 2, ix = (BW - w) / 2, iy = (BH - h) / 2;
   return (
     <div style={{ position: "absolute", left: CX - BW / 2, top: CY - BH / 2, width: BW, height: BH, transform: `translate(${x - CX}px, ${y - CY}px) ${tf}` }}>
-      <div style={{ position: "absolute", inset: 0, filter: "drop-shadow(0 22px 26px rgba(26,22,20,0.16))" }}>
+      <div style={{ position: "absolute", inset: 0, filter: DROP_BIG }}>
         <div style={{ position: "absolute", inset: 0, background: color, clipPath: `inset(${iy}px ${ix}px round ${r}px)` }}>
           {sheen >= 0 && sheen <= 1 && <div style={{ position: "absolute", inset: 0, background: `linear-gradient(105deg, rgba(255,255,255,0) ${mix(-30, 100, sheen)}%, rgba(255,255,255,0.42) ${mix(-18, 112, sheen)}%, rgba(255,255,255,0) ${mix(-6, 124, sheen)}%)` }} />}
           {clipped}
@@ -124,7 +124,7 @@ const Flip: React.FC<{ a: string; b: string; ang1: number; ang2: number }> = ({ 
 
 // ── a labelled card (domain / e-mail) that flies out and docks ──────────────────────────────────────────────────
 const Card: React.FC<{ label: string; icon: string; text: string; done: number }> = ({ label, icon, text, done }) => (
-  <div style={{ position: "relative", width: 560, height: 160, borderRadius: 42, background: C.white, border: `1.5px solid ${C.line}`, boxShadow: "0 26px 44px -22px rgba(26,22,20,0.32)",
+  <div style={{ position: "relative", width: 560, height: 160, borderRadius: 42, background: C.white, border: `1.5px solid ${C.line}`, boxShadow: SHADOW_BIG,
     display: "flex", alignItems: "center", gap: 26, padding: "0 32px", boxSizing: "border-box", fontFamily: SANS }}>
     <div style={{ width: 96, height: 96, borderRadius: 48, background: C.sageTint, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}><Ico n={icon} s={56} c={C.sageDeep} w={2.2} /></div>
     <div style={{ display: "flex", flexDirection: "column", gap: 8, width: 374 }}>
@@ -303,7 +303,7 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
     </Stage>
   );
   const backEl = (
-    <div style={{ position: "absolute", inset: 0, borderRadius: 16, background: C.white, boxShadow: `0 0 0 1px ${C.line}, 0 40px 90px -40px rgba(26,22,20,0.30)`, overflow: "hidden" }}>
+    <div style={{ position: "absolute", inset: 0, borderRadius: 16, background: C.white, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW_BIG}`, overflow: "hidden" }}>
       <svg width={780} height={574} viewBox={`0 0 ${EU_W} ${EU_H}`} style={{ position: "absolute", left: 90, top: 13, overflow: "visible" }}>
         {Array.from({ length: EU.length / 2 }, (_, i) => {
           const x = EU[2 * i], y = EU[2 * i + 1], d0 = Math.hypot(x - PINS[0][0], y - PINS[0][1]);
@@ -366,7 +366,7 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
       {showTag && (
         <div style={{ position: "absolute", left: CX, top: CY, width: 0, height: 0, opacity: 1 - tagOut, transform: `translate(0px, ${470 + 65 - 10 - CY}px) rotate(${tagAng}deg) scale(${(0.5 + 0.5 * Math.min(1.08, tagIn)) * (1 - 0.7 * tagOut)})`, transformOrigin: "0 0" }}>
           <div style={{ position: "absolute", left: -2, top: 0, width: 4, height: 40, background: C.sage }} />
-          <div style={{ position: "absolute", left: -190, top: 36, width: 380, height: 104, borderRadius: 30, background: C.white, border: `1.5px solid ${C.line}`, boxShadow: "0 22px 36px -18px rgba(26,22,20,0.30)",
+          <div style={{ position: "absolute", left: -190, top: 36, width: 380, height: 104, borderRadius: 30, background: C.white, border: `1.5px solid ${C.line}`, boxShadow: SHADOW_BIG,
             display: "flex", alignItems: "center", justifyContent: "center", gap: 16, fontFamily: SANS, fontWeight: 500, fontSize: 50, color: C.ink, whiteSpace: "nowrap" }}>
             <Ico n="user" s={52} c={C.sageDeep} w={2.2} />Ejer: dig
           </div>
@@ -374,7 +374,7 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
       )}
       {showYear && (
         <At x={cardX} y={690} op={clamp01(cp * 4) * (1 - clamp01((cTuck - 0.5) * 2))} tf={`scale(${cardS})`}>
-          <div style={{ width: FW, borderRadius: 30, overflow: "hidden", background: C.white, border: `1.5px solid ${C.line}`, boxShadow: "0 26px 44px -20px rgba(26,22,20,0.32)" }}>
+          <div style={{ width: FW, borderRadius: 30, overflow: "hidden", background: C.white, border: `1.5px solid ${C.line}`, boxShadow: SHADOW_BIG }}>
             <div style={{ height: 44, background: C.sage, display: "flex", justifyContent: "space-around", alignItems: "center", padding: "0 64px" }}>
               <div style={{ width: 14, height: 14, borderRadius: 7, background: C.bg }} /><div style={{ width: 14, height: 14, borderRadius: 7, background: C.bg }} />
             </div>

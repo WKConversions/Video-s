@@ -4,14 +4,14 @@
 // eases). The clock: g = 30ths of a second, fractional at 60 fps; f("label") = a label's g.
 import React from "react";
 import { Img, staticFile } from "remotion";
-import { C, HOLM, INOUT, OUT, SANS, SERIF, clamp01, mix } from "./lib";
+import { C, HOLM, INOUT, OUT, SANS, SERIF, SHADOW, SHADOW_BIG, clamp01, mix } from "./lib";
 import { f } from "./shared";
 
 // ── sizes: the minimal rules (plan/storyboard.md) ────────────────────────────────────────────────────────────────
 export const W = 1920, H = 1080, CX = 960, CY = 540;
 export const MAX_W = 1150, MAX_H = 920;       // revision 1: bigger objects (one at a time), no bigger than this
 export const TYPE = { head: 100, sub: 44, ui: 30, small: 24 };  // revision 1: bigger type  // Fraunces headline; DM Sans sub / UI / labels
-export const SHADOW_SOFT = "0 1px 2px rgba(26,22,20,0.05), 0 18px 40px -18px rgba(26,22,20,0.22)";
+export const SHADOW_SOFT = SHADOW;
 
 // ── the thread capsule and the hand-offs ───────────────────────────────────────────────────────────────────────
 export const PILL = { w: 200, h: 60 };
@@ -52,7 +52,7 @@ export const PHONE = { w: 300, h: 640, r: 50, bezel: 9 };
 export const Phone: React.FC<{ x: number; y: number; scale?: number; transform?: string; island?: React.ReactNode; children?: React.ReactNode }> =
   ({ x, y, scale = 1, transform = "", island, children }) => (
   <div style={{ position: "absolute", left: x - PHONE.w / 2, top: y - PHONE.h / 2, width: PHONE.w, height: PHONE.h, transform: `perspective(1600px) ${transform} scale(${scale})`, transformStyle: "preserve-3d" }}>
-    <div style={{ position: "absolute", inset: 0, borderRadius: PHONE.r, background: C.ink, boxShadow: "0 2px 4px rgba(26,22,20,0.10), 0 40px 70px -30px rgba(26,22,20,0.35)" }} />
+    <div style={{ position: "absolute", inset: 0, borderRadius: PHONE.r, background: C.ink, boxShadow: SHADOW_BIG }} />
     <div style={{ position: "absolute", inset: PHONE.bezel, borderRadius: PHONE.r - PHONE.bezel, overflow: "hidden", background: HOLM.bg }}>{children}</div>
     <div style={{ position: "absolute", left: PHONE.w / 2 - 45, top: 20, width: 90, height: 26, borderRadius: 13, background: "#000", display: "flex", alignItems: "center", justifyContent: "center" }}>{island}</div>
   </div>
