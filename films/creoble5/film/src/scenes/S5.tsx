@@ -53,7 +53,7 @@ const CAM: Key[] = [
   [45.12, 960, 540, 1], [45.7, 820, 470, 1.2], [46.5, 1080, 520, 1.1], [47.3, 940, 500, 1.14], [47.75, 960, 540, 1],   // the pills
   [48.12, 960, 540, 1],
   [48.5, 740, 400, 1.38],                   // Byg den: push in on the headline while the site rebuilds
-  [48.75, 740, 400, 1.38], [49.05, 960, 540, 1],
+  [48.75, 740, 400, 1.38], [48.98, 960, 540, 1],
   [49.62, 960, 540, 1], [50.1, 1130, 520, 1.12],    // Så køber du: push toward the price tag
   [50.28, 1130, 520, 1.12], [50.75, 960, 530, 1.06], // the button lands: frame it
   [51.3, 960, 530, 1.06], [51.85, 900, 500, 1.16], [52.4, 900, 500, 1.16], [52.95, 1020, 520, 1.06], [53.5, 1020, 520, 1.06], [54.05, 940, 500, 1.16], [54.6, 940, 500, 1.16], [55.2, 960, 530, 1.06],
@@ -218,7 +218,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
 
   // ── the stage: always alive. Scroll, build, step aside for the chat, collapse into the dot, re-open, flip and rebuild ──
   const rebuilt = t >= B.flipIn;
-  const scroll = t >= B.seStart && t < B.jump ? 640 * ez(t, B.seStart, B.seEnd - B.seStart, INOUT) : 0;   // the only scroll: one calm pass down
+  const scroll = t >= B.seStart && t < B.jump ? 640 * ez(t, B.seStart, B.seEnd - B.seStart, OUT) : 0;   // (lead) eased OUT: the pass starts already moving, never creeping out of rest under the camera pull-back (fewest shake flags of INOUT / OUT / linear)   // the only scroll: one calm pass down
   const build = rebuilt ? clamp01((t - B.build) / 0.85) : 1;
   let stageTr = "", stageSc = 1, stageOp = 1;
   const stageOn = t < B.collapse + 0.45 || t >= B.reopen;

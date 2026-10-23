@@ -166,9 +166,9 @@ const CAM: Array<[number, number, number, number, number]> = [   // [from s, to 
 ];
 const camE = (te: number) => {                       // a small anticipation the other way, then a spring with a short overshoot
   if (te <= 0) return 0;
-  const tt = te - 0.12, w0 = (2 * Math.PI) / 0.46, d = 0.6, wd = w0 * Math.sqrt(1 - d * d);
+  const tt = te - 0.1, w0 = (2 * Math.PI) / 0.36, d = 0.62, wd = w0 * Math.sqrt(1 - d * d);
   const spr = tt <= 0 ? 0 : 1 - Math.exp(-d * w0 * tt) * (Math.cos(wd * tt) + ((d * w0) / wd) * Math.sin(wd * tt));
-  return spr - 0.035 * Math.sin(Math.PI * clamp01(te / 0.16));
+  return spr - 0.025 * Math.sin(Math.PI * clamp01(te / 0.14));
 };
 const cam = (sec: number) => {
   let Z = 1.08, fx = 0, fy = 0, pz = 1.08, px = 0, py = 0;
