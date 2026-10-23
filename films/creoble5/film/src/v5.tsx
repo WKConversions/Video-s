@@ -109,3 +109,33 @@ export const Line: React.FC<{ text: string; x?: number; y: number; p: number; ou
   );
 };
 export { C, HOLM, SERIF, SANS };
+
+// ── REVISION 2: the website is the hero object in every beat ───────────────────────────────────────────────────
+// One browser (≈half the frame) showing Holm's photo-rich site; it is always doing something (building, scrolling,
+// being edited), and each phrase acts on it (things dock onto it, open over it, fly out of it).
+import { Browser, HolmSite, BAR, SITE } from "./shared";
+export const STAGE = { w: 960, h: 600 };
+export const STAGE_SCROLL_MAX = SITE.page - (STAGE.h - BAR) / (STAGE.w / SITE.w);   // ≈ 658 design px
+/** The website stage centred at (x, y): browser + Holm site. scroll in design px (0..STAGE_SCROLL_MAX), build 0..1,
+ * booking 0..1, url/live for the address bar; children are drawn over the site area (inside the browser). */
+export const Stage: React.FC<{ x?: number; y?: number; scale?: number; transform?: string; scroll?: number; build?: number; booking?: number;
+  url?: string; live?: number; children?: React.ReactNode; style?: React.CSSProperties }> =
+  ({ x = CX, y = CY, scale = 1, transform = "", scroll = 0, build = 1, booking = 1, url = "Forhåndsvisning", live = 0, children, style }) => (
+  <div style={{ position: "absolute", left: x - STAGE.w / 2, top: y - STAGE.h / 2, width: STAGE.w, height: STAGE.h, transform: `${transform} scale(${scale})`, ...style }}>
+    <Browser w={STAGE.w} h={STAGE.h} url={url} live={live}>
+      <div style={{ willChange: "transform" }}><HolmSite w={STAGE.w} h={STAGE.h - BAR} build={build} booking={booking} scroll={scroll} /></div>
+      {children}
+    </Browser>
+  </div>
+);
+const HANDOFF_URL: Record<string, [string, number]> = { h1: ["Forhåndsvisning", 0], h2: ["Forhåndsvisning", 0], h3: ["Forhåndsvisning", 0], h4: ["holmfysio.dk", 1] };
+/** Revision 2 hand-off at hN: the stage centred, the site scrolling from 0 to 300 (design px) across the 0.5 s window. */
+export const stageHandoffState = (g: number, at: string) => {
+  const u = clamp01((g - (f(at) - HANDOFF_HALF)) / (2 * HANDOFF_HALF));
+  const [url, live] = HANDOFF_URL[at];
+  return { scroll: 300 * INOUT(u), url, live, u };
+};
+export const StageHandoff: React.FC<{ g: number; at: string }> = ({ g, at }) => {
+  const s = stageHandoffState(g, at);
+  return <Stage scroll={s.scroll} url={s.url} live={s.live} />;
+};

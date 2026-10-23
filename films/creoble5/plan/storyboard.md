@@ -1,3 +1,31 @@
+# REVISION 2 (Karl chose this; it overrides Revision 1 where they differ): the website is the hero object
+Draft 2 measured 2.0%. The only content that reached 7% was Holm's photo-rich site moving (building, scrolling, being
+edited); typing fields, icons, chat bubbles and buttons alone stay under 1%.
+
+So the website is the ONE hero object in every beat:
+- **The stage:** `Stage` in `./v5` is a browser of 960×600 with `HolmSite`, centred. It takes `scroll` in design px (0
+  … `STAGE_SCROLL_MAX` ≈ 658), plus `build`, `booking`, `url` and `live`. Its children are drawn over the site area.
+  - It may become the phone (`Phone` at scale 1.4 with `MiniSite`) and back, as a morph.
+  - It may flip in 3D to show a back side: code, or the map.
+  - It may push in on a detail (exceeding the size limits briefly is allowed for a focus push).
+- **The site is always alive:** building, scrolling, being edited, or its photos sliding. A steady scroll at ≥ 3 px
+  per frame on screen, with eased turnarounds and never a slow creep, is the base motion under every beat. A beat with
+  nothing else to do scrolls the site.
+- **Every phrase acts on the site,** docking onto it, opening over it, or flying out of it and back. Beat objects stay
+  big and readable (Revision 1 sizes) but sit ON the stage (overlapping it is fine), never as a separate scene.
+  Examples:
+  - the price tag docks on the site;
+  - the domain types into its address bar;
+  - the lock snaps onto the price;
+  - the support chat opens over the site;
+  - the CTA button lands on the site.
+- **Hand-offs:** replace the capsule whip with `<StageHandoff g={g} at="hN" />`. It is the stage centred, the site
+  scrolling 0 → 300 across the window, and the address bar "Forhåndsvisning" (h1–h3) or "holmfysio.dk" live (h4).
+  - Outgoing: by `f(hN) − 7.5`, be the plain stage at scroll 0 with that address bar.
+  - Incoming: from `f(hN) + 7.5`, start from the stage at scroll 300.
+- **Target:** span median ≥ 7% at `--scale=0.5`, with no SHAKE at `--scale=1` on the busiest 3 s. Keep the motion
+  explaining, never wobble.
+
 # REVISION 1 (Karl, on the 540p draft; read before everything below, it overrides the size and motion rules)
 > "Bigger object and 7% useful motion. No shaking objects, and the 7% has to be useful, explaining motion. But it
 > should be very understandable."
