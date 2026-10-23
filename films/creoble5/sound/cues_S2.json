@@ -106,10 +106,10 @@
  },
  {
   "id": "gen-whoosh-medium",
-  "frame": 852,
-  "db": -8,
+  "frame": 858,
+  "db": -10,
   "pitch": 2,
-  "note": "S2.3 the camera pushes in on the headline"
+  "note": "S2.3 the slow camera push toward the headline"
  },
  {
   "id": "kenney-tick-004",
@@ -141,17 +141,17 @@
  },
  {
   "id": "gen-whoosh-short",
-  "frame": 882,
-  "db": -10,
-  "pitch": -2,
-  "note": "S2.4 the photo below the headline swaps in its frame"
- },
- {
-  "id": "gen-whoosh-short",
   "frame": 886,
   "db": -9,
   "pitch": 0,
   "note": "S2.4 the bubble rises from below"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 891,
+  "db": -10,
+  "pitch": -2,
+  "note": "S2.4 the hero photo slides to the next (slow)"
  },
  {
   "id": "gen-pop",
@@ -166,13 +166,6 @@
   "db": -10,
   "pitch": 0,
   "note": "S2.4 typing"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 907,
-  "db": -10,
-  "pitch": -1,
-  "note": "S2.4 the photo below the headline swaps in its frame"
  },
  {
   "id": "kenney-click-001",
@@ -201,13 +194,6 @@
   "db": -10,
   "pitch": 0,
   "note": "S2.4 typing"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 932,
-  "db": -10,
-  "pitch": 0,
-  "note": "S2.4 the photo below the headline swaps in its frame"
  },
  {
   "id": "kenney-select-002",
@@ -252,11 +238,11 @@
   "note": "S2.5 retyping"
  },
  {
-  "id": "gen-whoosh-short",
-  "frame": 958,
+  "id": "gen-whoosh-medium",
+  "frame": 960,
   "db": -10,
-  "pitch": 1,
-  "note": "S2.4 the photo below the headline swaps in its frame"
+  "pitch": -2,
+  "note": "S2.5 the slow camera pull-back starts"
  },
  {
   "id": "kenney-click-001",
@@ -287,11 +273,18 @@
   "note": "S2.5 the send button becomes a check"
  },
  {
-  "id": "gen-whoosh-medium",
-  "frame": 978,
-  "db": -8,
-  "pitch": -2,
-  "note": "S2.5 the camera pulls back out to 1.4x"
+  "id": "gen-whoosh-short",
+  "frame": 980,
+  "db": -7,
+  "pitch": 0,
+  "note": "S2.6 the phone widens back into the stage"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 981,
+  "db": -10,
+  "pitch": 2,
+  "note": "S2.4 the hero photo slides to the next (slow)"
  },
  {
   "id": "gen-pop",
@@ -299,13 +292,6 @@
   "db": -7,
   "pitch": 0,
   "note": "S2.5 the bubble pops away"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 991,
-  "db": -7,
-  "pitch": 0,
-  "note": "S2.6 the phone widens back into the stage"
  },
  {
   "id": "gen-tick",
