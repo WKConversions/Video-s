@@ -318,7 +318,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
     const ctaOn = t >= B.byg2 + 0.05;
     const pp = Math.max(prs(t, B.press), prs(t, 53.6));
     const sh1 = ez(t, B.press + 0.18, 0.75, INOUT), per = 1.45, ph = ((t - 52.95) % per + per) % per;
-    const shine = t < B.press + 0.18 ? 0 : t < B.press + 0.93 ? sh1 : t > 52.95 && ph < 0.75 ? ph / 0.75 : 0;
+    const shine = t < B.press + 0.18 ? 0 : t < B.press + 0.93 ? sh1 : t > 52.95 && ph < 0.75 ? INOUT(ph / 0.75) : 0;
     over = (
       <>
         {pillTxt("Hjemmeside", pLx, ly, L.hjem + 0.3)}
