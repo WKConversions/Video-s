@@ -168,11 +168,12 @@ const TemplateFlick: React.FC<{ t: number; i: number }> = ({ t, i }) => {
 // ── the camera (revision 4): calm. One reframe per sentence, each 1.2–1.4 s, a sine ease from rest to rest, no spring,
 //    zoom within ±12%, pans within ~150 px; everything else holds the frame. (c = zoom, fu/fv = focus from the stage centre) ──
 const CAM: [number, number, number, number][] = [
-  [0.9, 1, 0, 0], [2.3, 1.08, -70, 0],          // "Din nye hjemmeside er få minutter væk": settle in on the building site
-  [2.7, 1.08, -70, 0], [4.1, 1.08, 70, 0],      // "Bygget af AI": a slow glide across to the photo
-  [4.3, 1.08, 70, 0], [5.5, 1.12, -50, -10],    // "Fortæl kort om din virksomhed": frame the header and the field
-  [6.2, 1.12, -50, -10], [7.4, 1, 0, 0],        // "Creoble bygger hele siden": pull back as the pages fan out
+  [0.9, 1, 0, 0], [2.3, 1, -70, 0],             // "Din nye hjemmeside er få minutter væk": drift in on the building site
+  [2.7, 1, -70, 0], [4.1, 1, 70, 0],            // "Bygget af AI": a slow glide across to the photo
+  [4.3, 1, 70, 0], [5.5, 1, -50, -10],          // "Fortæl kort om din virksomhed": frame the header and the field
+  [6.2, 1, -50, -10], [7.4, 1, 0, 0],           // "Creoble bygger hele siden": ease back to centre as the pages fan out
 ];
+// (pans only, zoom held at 1: a changing zoom re-rasterises the text each frame and shimmers; a pan of a settled layer stays smooth)
 const camAt = (t: number) => {
   if (t <= CAM[0][0]) return { c: 1, fu: 0, fv: 0 };
   for (let i = 0; i < CAM.length - 1; i += 2) {

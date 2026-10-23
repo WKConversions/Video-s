@@ -21,20 +21,6 @@
   "note": "check lands: Tilfreds"
  },
  {
-  "id": "gen-tick",
-  "frame": 1070,
-  "db": -14,
-  "pitch": -1,
-  "note": "the hero photo slides to the next"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 1088,
-  "db": -9,
-  "pitch": 0,
-  "note": "check disc widens into the price capsule, camera pushes in toward the price"
- },
- {
   "id": "kenney-tick-004",
   "frame": 1096,
   "db": -12,
@@ -49,18 +35,18 @@
   "note": "digit strips roll 0 to 499"
  },
  {
-  "id": "gen-tick",
-  "frame": 1114,
-  "db": -14,
-  "pitch": 0,
-  "note": "the hero photo slides to the next"
- },
- {
   "id": "kenney-tick-004",
   "frame": 1116,
   "db": -12,
   "pitch": 0,
   "note": "digit strips roll 0 to 499"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 1120,
+  "db": -15,
+  "pitch": 0,
+  "note": "the hero photo crossfades to the next"
  },
  {
   "id": "kenney-tick-004",
@@ -98,13 +84,6 @@
   "note": "digit strips roll 0 to 499"
  },
  {
-  "id": "gen-tick",
-  "frame": 1158,
-  "db": -14,
-  "pitch": 1,
-  "note": "the hero photo slides to the next"
- },
- {
   "id": "kenney-tick-004",
   "frame": 1166,
   "db": -12,
@@ -126,13 +105,6 @@
   "note": "price lands with a pop"
  },
  {
-  "id": "gen-tick",
-  "frame": 1198,
-  "db": -14,
-  "pitch": -1,
-  "note": "the hero photo slides to the next"
- },
- {
   "id": "gen-pop",
   "frame": 1204,
   "db": -8,
@@ -148,17 +120,10 @@
  },
  {
   "id": "gen-tick",
-  "frame": 1238,
-  "db": -14,
+  "frame": 1256,
+  "db": -15,
   "pitch": 0,
-  "note": "the hero photo slides to the next"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 1252,
-  "db": -11,
-  "pitch": 0,
-  "note": "chip tucks in, camera follows to the right"
+  "note": "the hero photo crossfades to the next"
  },
  {
   "id": "kenney-drop-003",
@@ -182,13 +147,6 @@
   "note": "thick strike line through /md"
  },
  {
-  "id": "gen-tick",
-  "frame": 1282,
-  "db": -14,
-  "pitch": 1,
-  "note": "the hero photo slides to the next"
- },
- {
   "id": "kenney-drop-003",
   "frame": 1284,
   "db": -8,
@@ -197,24 +155,10 @@
  },
  {
   "id": "gen-whoosh-medium",
-  "frame": 1320,
-  "db": -10,
-  "pitch": 0,
-  "note": "the capsule drops away, camera pulls back"
- },
- {
-  "id": "gen-whoosh-medium",
   "frame": 1322,
   "db": -9,
   "pitch": 0,
   "note": "the site's pages fan out as cards: Siden er din"
- },
- {
-  "id": "gen-tick",
-  "frame": 1326,
-  "db": -14,
-  "pitch": -1,
-  "note": "the hero photo slides to the next"
  },
  {
   "id": "kenney-tick-004",
@@ -238,20 +182,6 @@
   "note": "page labels pop: Forside, Behandlinger, Kontakt"
  },
  {
-  "id": "gen-tick",
-  "frame": 1354,
-  "db": -14,
-  "pitch": 0,
-  "note": "the hero photo slides to the next"
- },
- {
-  "id": "gen-pop",
-  "frame": 1366,
-  "db": -7,
-  "pitch": 0,
-  "note": "Din badge pops on the page's corner, camera pushes in on it"
- },
- {
   "id": "gen-whoosh-short",
   "frame": 1382,
   "db": -12,
@@ -259,32 +189,18 @@
   "note": "the pages stack back"
  },
  {
+  "id": "gen-tick",
+  "frame": 1392,
+  "db": -15,
+  "pitch": 0,
+  "note": "the hero photo crossfades to the next"
+ },
+ {
   "id": "gen-whoosh-short",
   "frame": 1400,
   "db": -11,
   "pitch": 0,
   "note": "stage tilts like a question"
- },
- {
-  "id": "gen-tick",
-  "frame": 1402,
-  "db": -14,
-  "pitch": 1,
-  "note": "the hero photo slides to the next"
- },
- {
-  "id": "kenney-select-002",
-  "frame": 1414,
-  "db": -10,
-  "pitch": 0,
-  "note": "second question tilt"
- },
- {
-  "id": "gen-tick",
-  "frame": 1442,
-  "db": -14,
-  "pitch": -1,
-  "note": "the hero photo slides to the next"
  },
  {
   "id": "gen-whoosh-medium",
@@ -329,13 +245,6 @@
   "note": "digit strips roll 499 to 0"
  },
  {
-  "id": "gen-tick",
-  "frame": 1502,
-  "db": -14,
-  "pitch": 0,
-  "note": "the hero photo slides to the next"
- },
- {
   "id": "kenney-tick-004",
   "frame": 1508,
   "db": -12,
@@ -357,11 +266,11 @@
   "note": "0 kr. lands"
  },
  {
-  "id": "gen-appear",
-  "frame": 1530,
-  "db": -10,
+  "id": "gen-tick",
+  "frame": 1524,
+  "db": -15,
   "pitch": 0,
-  "note": "capsule becomes the risk row, camera pulls back"
+  "note": "the hero photo crossfades to the next"
  },
  {
   "id": "kenney-select-001",
@@ -390,13 +299,6 @@
   "db": -11,
   "pitch": 2,
   "note": "risiko: zero risk"
- },
- {
-  "id": "gen-tick",
-  "frame": 1566,
-  "db": -14,
-  "pitch": 1,
-  "note": "the hero photo slides to the next"
  },
  {
   "id": "kenney-drop-003",
