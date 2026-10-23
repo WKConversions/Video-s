@@ -1,7 +1,7 @@
 // Creoble v5 (Danish): the minimal Apple film. Same script and voice-over as v4; one small sage capsule (the thread)
 // morphs into everything, one thing on screen at a time (plan/storyboard.md). Five builders; the kit is ./v5 + ./shared.
 import React from "react";
-import { AbsoluteFill, useCurrentFrame } from "remotion";
+import { AbsoluteFill, staticFile, useCurrentFrame } from "remotion";
 import { FilterDefs, f } from "./shared";
 import { C } from "./lib";
 import { OUT_FPS } from "./clock";
@@ -19,6 +19,8 @@ export const Story: React.FC = () => {
     <AbsoluteFill style={{ background: C.bg, overflow: "hidden" }}>
       <FilterDefs />
       <S g={g} />
+      {/* a static dither (±1–2 shade levels, never moves): breaks the 8-bit banding of the big soft shadows on cream */}
+      <AbsoluteFill style={{ backgroundImage: `url(${staticFile("img/dither.png")})`, backgroundRepeat: "repeat", pointerEvents: "none" }} />
     </AbsoluteFill>
   );
 };
