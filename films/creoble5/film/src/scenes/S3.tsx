@@ -257,7 +257,7 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
 
   return (
     <>
-      <div style={{ position: "absolute", inset: 0, textRendering: "geometricPrecision", transformOrigin: "960px 540px", transform: camId ? undefined : `translate(${-S * (fx - 960)}px, ${-S * (fy - 540)}px) scale(${S})` }}>
+      <div style={{ position: "absolute", inset: 0, textRendering: "geometricPrecision", willChange: camId ? undefined : "transform", transformOrigin: "960px 540px", transform: camId ? undefined : `translate(${-S * (fx - 960)}px, ${-S * (fy - 540)}px) scale(${S})` }}>
         {/* the other pages, fanning out from behind the stage as cards */}
         {fan > 0.003 && (
           <>

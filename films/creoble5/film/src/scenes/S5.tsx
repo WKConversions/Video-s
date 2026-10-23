@@ -60,6 +60,13 @@ const camAt = (t: number) => {
   for (let i = 1; i < CAM.length; i++) if (t <= CAM[i][0]) { const a = CAM[i - 1], b = CAM[i], e = camEase((t - a[0]) / Math.max(1e-6, b[0] - a[0])); return [t, mix(a[1], b[1], e), mix(a[2], b[2], e), mix(a[3], b[3], e)] as Key; }
   return CAM[CAM.length - 1];
 };
+// ── the one calm pass: integer pixels per frame (a staircase ramp up, a steady 5 px, a staircase ramp down), so the
+// glyphs never step irregularly ──────────────────────────────────────────────────────────────────────────────────────
+const PASS_V: number[] = (() => {
+  const D = Math.round(640 * (960 / 1460)), up = [0, 0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4], mid = Math.round((D - 60) / 5);
+  return [...up, ...Array(mid).fill(5), ...[...up].reverse()];
+})();
+const passPx = (tt: number) => { const f = Math.floor(tt * 60); let p = 0; for (let i = 0; i < Math.min(f, PASS_V.length); i++) p += PASS_V[i]; return p; };
 // ── photos swapping in the hero frame (the frame is the kit site's photo: design 760,120, 630×560) ───────────────────
 const PHOTOS = ["holm-shoulder.jpg", "holm-neck.jpg", "holm-calves.jpg", "holm-stretch.jpg"];
 const HK = STAGE.w / 1460;                                        // design px → stage px
@@ -103,7 +110,7 @@ const B = {
   flipOut: 47.92,            // the stage flips edge-on and rebuilds
   flipIn: 48.06,
   build: 48.2,
-  seStart: 49.1, seEnd: 50.6, // Se den: ONE calm downward pass
+  seStart: 48.95, seEnd: 50.65, // Se den: ONE calm downward pass
   jump: 50.66,               // back to the top behind a quick blur (never scrolls up)
   gather: 50.28,             // the price tag becomes the button
   byg2: L.byg2,              // the button grows (50.61)
@@ -159,7 +166,7 @@ const SLine: React.FC<{ text: string; t: number; at: number; y: number; size: nu
   <div style={{ position: "absolute", left: CX - 900, top: y - size * 0.62, width: 1800, textAlign: "center", fontFamily: serif ? SERIF : SANS, fontSize: size, fontWeight: serif ? 400 : 500,
     letterSpacing: serif ? "-0.025em" : "-0.01em", color, lineHeight: 1.15, whiteSpace: "nowrap", opacity: 1 - out, transform: `translateY(${-28 * out}px)`, filter: out > 0 ? `blur(${10 * out}px)` : undefined }}>
     {text.split(" ").map((w, i) => {
-      const q = spr(t, at + i * 0.09, 0.45, 0.55), o = clamp01(q * 2.5), it = italicWords.includes(w.replace(/[.,?!]/g, ""));
+      const q = spr(t, at + i * 0.09, 0.34, 0.6), o = clamp01(q * 2.5), it = italicWords.includes(w.replace(/[.,?!]/g, ""));
       return <span key={i} style={{ display: "inline-block", marginRight: "0.26em", opacity: o, transform: `translateY(${(1 - q) * 44}px)`, filter: o < 1 ? `blur(${(1 - o) * 10}px)` : undefined, fontStyle: it ? "italic" : "normal", color: it ? C.sageDeep : undefined }}>{w}</span>;
     })}
   </div>
@@ -213,7 +220,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
 
   // ── the stage: always alive. Scroll, build, step aside for the chat, collapse into the dot, re-open, flip and rebuild ──
   const rebuilt = t >= B.flipIn;
-  const scroll = t >= B.seStart && t < B.jump ? 640 * ez(t, B.seStart, B.seEnd - B.seStart, OUT) : 0;   // (lead) eased OUT: the pass starts already moving, never creeping out of rest under the camera pull-back (fewest shake flags of INOUT / OUT / linear)   // the only scroll: one calm pass down
+  const scroll = t >= B.seStart && t < B.jump ? passPx(t - B.seStart) / HK : 0;   // the only scroll: one calm pass down, in whole pixels per frame
   const build = rebuilt ? clamp01((t - B.build) / 0.85) : 1;
   let stageTr = "", stageSc = 1, stageOp = 1;
   const stageOn = t < B.collapse + 0.45 || t >= B.reopen;

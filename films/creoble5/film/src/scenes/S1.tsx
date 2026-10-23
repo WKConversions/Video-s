@@ -177,7 +177,7 @@ const camAt = (t: number) => {
   if (t <= CAM[0][0]) return { c: 1, fu: 0, fv: 0 };
   for (let i = 0; i < CAM.length - 1; i += 2) {
     const [a, c0, u0, v0] = CAM[i], [b, c1, u1, v1] = CAM[i + 1];
-    if (t < b) { const e = 0.5 - 0.5 * Math.cos(Math.PI * clamp01((t - a) / (b - a))); return { c: mix(c0, c1, e), fu: mix(u0, u1, e), fv: mix(v0, v1, e) }; }
+    if (t < b) { const u = clamp01((t - a) / (b - a)), e = 0.5 - 0.5 * Math.cos(Math.PI * u); return { c: mix(c0, c1, e), fu: mix(u0, u1, e), fv: mix(v0, v1, e) }; }
     if (i + 2 < CAM.length && t < CAM[i + 2][0]) return { c: c1, fu: u1, fv: v1 };
   }
   return { c: 1, fu: 0, fv: 0 };
@@ -382,7 +382,7 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
   return (
     <>
       {lines}
-      <div style={{ position: "absolute", inset: 0, transformOrigin: "0 0", transform: cam.c === 1 && cam.fu === 0 && cam.fv === 0 ? undefined : `translate(${tx}px, ${ty}px) scale(${cam.c})` }}>
+      <div style={{ position: "absolute", inset: 0, transformOrigin: "0 0", willChange: "transform", transform: `translate(${tx}px, ${ty}px) scale(${cam.c})` }}>
         {landRings}
         {pagesOn ? <Pages t={t} /> : stageEl}
         {spark}
