@@ -8,10 +8,24 @@
  },
  {
   "id": "kenney-tick-004",
-  "frame": 2388,
+  "frame": 2393,
+  "db": -12,
+  "pitch": 0,
+  "note": "the question starts typing"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2406,
   "db": -13,
   "pitch": 0,
-  "note": "typing dots start"
+  "note": "typing"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2419,
+  "db": -13,
+  "pitch": 0,
+  "note": "typing"
  },
  {
   "id": "gen-whoosh-short",
@@ -35,6 +49,20 @@
   "note": "avatar C pops"
  },
  {
+  "id": "kenney-tick-004",
+  "frame": 2452,
+  "db": -12,
+  "pitch": 0,
+  "note": "reply word 1"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2462,
+  "db": -12,
+  "pitch": 0,
+  "note": "reply word 2"
+ },
+ {
   "id": "kenney-maximize-009",
   "frame": 2472,
   "db": -9,
@@ -43,13 +71,34 @@
  },
  {
   "id": "kenney-tick-004",
+  "frame": 2472,
+  "db": -12,
+  "pitch": 0,
+  "note": "reply word 3"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2483,
+  "db": -12,
+  "pitch": 0,
+  "note": "reply word 4"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2493,
+  "db": -12,
+  "pitch": 0,
+  "note": "reply word 5"
+ },
+ {
+  "id": "gen-tick",
   "frame": 2494,
   "db": -13,
   "pitch": 0,
   "note": "avatar ripple"
  },
  {
-  "id": "kenney-tick-004",
+  "id": "gen-tick",
   "frame": 2519,
   "db": -14,
   "pitch": 0,
@@ -57,14 +106,14 @@
  },
  {
   "id": "gen-whoosh-medium",
-  "frame": 2526,
+  "frame": 2520,
   "db": -10,
   "pitch": 0,
   "note": "chat gathers into the capsule"
  },
  {
   "id": "gen-pop",
-  "frame": 2536,
+  "frame": 2530,
   "db": -10,
   "pitch": 0,
   "note": "capsule pops back"
@@ -78,45 +127,45 @@
  },
  {
   "id": "gen-tick",
-  "frame": 2568,
+  "frame": 2566,
   "db": -12,
   "pitch": 0,
   "note": "counter rolls down"
  },
  {
   "id": "gen-tick",
-  "frame": 2574,
+  "frame": 2572,
   "db": -13,
   "pitch": 0,
   "note": "counter rolls down"
  },
  {
   "id": "gen-tick",
-  "frame": 2582,
+  "frame": 2579,
   "db": -13,
   "pitch": 0,
   "note": "counter rolls down"
  },
  {
   "id": "gen-tick",
-  "frame": 2590,
+  "frame": 2588,
   "db": -14,
   "pitch": 0,
   "note": "counter rolls down"
  },
  {
-  "id": "gen-pop",
-  "frame": 2598,
-  "db": -10,
-  "pitch": 0,
-  "note": "card shrinks to a dot"
- },
- {
   "id": "kenney-select-002",
-  "frame": 2601,
+  "frame": 2597,
   "db": -11,
   "pitch": 0,
   "note": "counter lands on 0"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 2601,
+  "db": -10,
+  "pitch": 0,
+  "note": "card shrinks to a dot"
  },
  {
   "id": "gen-appear",
@@ -148,7 +197,7 @@
  },
  {
   "id": "gen-pop",
-  "frame": 2654,
+  "frame": 2644,
   "db": -11,
   "pitch": 0,
   "note": "dot pulses"
@@ -176,14 +225,14 @@
  },
  {
   "id": "gen-whoosh-medium",
-  "frame": 2738,
+  "frame": 2721,
   "db": -10,
   "pitch": 0,
   "note": "wordmark slides up"
  },
  {
   "id": "gen-pop",
-  "frame": 2742,
+  "frame": 2736,
   "db": -9,
   "pitch": 0,
   "note": "Hjemmeside pill arrives"
@@ -193,7 +242,7 @@
   "frame": 2783,
   "db": -9,
   "pitch": 0,
-  "note": "Hosting pill drops in"
+  "note": "Hosting pill arrives"
  },
  {
   "id": "gen-whoosh-short",
@@ -228,21 +277,42 @@
   "frame": 2882,
   "db": -9,
   "pitch": 0,
-  "note": "capsule buds into three discs"
- },
- {
-  "id": "gen-pop",
-  "frame": 2892,
-  "db": -8,
-  "pitch": 0,
-  "note": "hammer pops"
+  "note": "capsule opens into the site card"
  },
  {
   "id": "kenney-click-001",
-  "frame": 2900,
+  "frame": 2904,
   "db": -10,
   "pitch": 0,
-  "note": "hammer strikes"
+  "note": "header block lands, hammer hits"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 2911,
+  "db": -11,
+  "pitch": 0,
+  "note": "headline lands"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 2917,
+  "db": -11,
+  "pitch": 0,
+  "note": "text lands"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 2922,
+  "db": -10,
+  "pitch": 0,
+  "note": "photo lands"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 2929,
+  "db": -11,
+  "pitch": 0,
+  "note": "buttons land"
  },
  {
   "id": "gen-pop",
@@ -252,32 +322,95 @@
   "note": "eye pops"
  },
  {
+  "id": "gen-whoosh-short",
+  "frame": 2933,
+  "db": -12,
+  "pitch": 0,
+  "note": "scan sweeps down"
+ },
+ {
   "id": "kenney-tick-004",
-  "frame": 2965,
+  "frame": 2936,
+  "db": -12,
+  "pitch": 0,
+  "note": "service card"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2942,
+  "db": -12,
+  "pitch": 0,
+  "note": "service card"
+ },
+ {
+  "id": "gen-swell",
+  "frame": 2945,
   "db": -14,
   "pitch": 0,
-  "note": "eye blinks"
+  "note": "page scrolls"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2948,
+  "db": -12,
+  "pitch": 0,
+  "note": "service card"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 2951,
+  "db": -13,
+  "pitch": 0,
+  "note": "scan sweeps up"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 2978,
+  "db": -9,
+  "pitch": 0,
+  "note": "the price card"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2981,
+  "db": -12,
+  "pitch": 0,
+  "note": "price rolls"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2987,
+  "db": -13,
+  "pitch": 0,
+  "note": "price rolls"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2993,
+  "db": -13,
+  "pitch": 0,
+  "note": "price rolls"
  },
  {
   "id": "gen-chime",
-  "frame": 2974,
+  "frame": 2999,
   "db": -9,
   "pitch": 0,
   "note": "check pops"
  },
  {
   "id": "gen-whoosh-medium",
-  "frame": 3024,
+  "frame": 3017,
   "db": -9,
   "pitch": 0,
-  "note": "discs flow together"
+  "note": "the card flows into the button"
  },
  {
   "id": "gen-impact-soft",
   "frame": 3036,
   "db": -8,
   "pitch": 0,
-  "note": "button grows out of the discs"
+  "note": "button grows"
  },
  {
   "id": "kenney-click-001",
@@ -288,7 +421,7 @@
  },
  {
   "id": "gen-shimmer",
-  "frame": 3095,
+  "frame": 3090,
   "db": -10,
   "pitch": 0,
   "note": "shine across the button"
@@ -302,23 +435,30 @@
  },
  {
   "id": "gen-shimmer",
-  "frame": 3177,
-  "db": -15,
+  "frame": 3153,
+  "db": -14,
   "pitch": 0,
   "note": "shine again"
  },
  {
   "id": "kenney-click-001",
-  "frame": 3216,
+  "frame": 3198,
   "db": -12,
   "pitch": 0,
   "note": "second press"
  },
  {
   "id": "gen-shimmer",
-  "frame": 3264,
-  "db": -17,
+  "frame": 3240,
+  "db": -16,
   "pitch": 0,
-  "note": "last shine"
+  "note": "shine"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 3276,
+  "db": -14,
+  "pitch": 0,
+  "note": "third press"
  }
 ]
