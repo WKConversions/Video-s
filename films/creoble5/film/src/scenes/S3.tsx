@@ -132,7 +132,7 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
   let w = track(g, 200, [[T0 + 2, 880, 0.45, 0.6], [t499, PW, 0.45, 0.58], [tSiden, PHW, 0.5, 0.6], [tS, PW, 0.45, 0.6], [tNul - 5, ROW_W, 0.4, 0.8]]);
   let h = track(g, 60, [[T0 + 2, 280, 0.45, 0.6], [t499, PH, 0.45, 0.58], [tSiden, PHH, 0.5, 0.6], [tS, PH, 0.45, 0.6]]);
   let r = track(g, 30, [[T0 + 2, 140, 0.4, 0.9], [t499, PH / 2, 0.4, 0.9], [tSiden, PHR, 0.5, 0.9], [tS, PH / 2, 0.4, 0.9]]);
-  let fl = track(g, 0, [[t499, 1, 0.35, 1], [tSiden, 2, 0.4, 1], [tS, 1, 0.16, 1]]);
+  let fl = track(g, 0, [[t499, 1, 0.35, 1], [tSiden, 2, 0.4, 1], [tS, 1, 0.07, 1]]);
   let ring = track(g, 0, [[t499, 5, 0.35, 1], [tSiden, 0, 0.4, 1], [tS, 5, 0.35, 1]]);
   let sc = 1 + imp(g, tChk + 6, 0.10, 2.0, 6.5) + imp(g, tLand, 0.07, 2.3, 6) + imp(g, tLand2, 0.08, 2.2, 6) + imp(g, tNul, 0.05, 2.2, 6) + imp(g, tN, 0.05, 2.2, 7);
   let rz = imp(g, tDock, -4, 2.2, 5) + imp(g, tDrop, 3, 2.4, 5) + imp(g, tIkke, -14, 1.6, 3.2) + imp(g, tTil2, 10, 1.8, 3.4);

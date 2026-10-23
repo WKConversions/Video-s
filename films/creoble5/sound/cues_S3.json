@@ -11,7 +11,7 @@
   "frame": 1057,
   "db": -9,
   "pitch": 0,
-  "note": "capsule lands at the centre after the hand-off"
+  "note": "capsule lands at the centre after the hand-off, grows"
  },
  {
   "id": "gen-chime",
@@ -23,44 +23,44 @@
  {
   "id": "gen-whoosh-short",
   "frame": 1088,
-  "db": -10,
+  "db": -9,
   "pitch": 0,
-  "note": "capsule widens into the price capsule"
+  "note": "capsule widens into the big price capsule"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 1098,
+  "frame": 1096,
   "db": -12,
   "pitch": 0,
-  "note": "digits roll 0 to 499"
+  "note": "digit strips roll 0 to 499"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 1108,
+  "frame": 1106,
+  "db": -12,
+  "pitch": 0,
+  "note": "digit strips roll 0 to 499"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 1116,
+  "db": -12,
+  "pitch": 0,
+  "note": "digit strips roll 0 to 499"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 1126,
   "db": -12,
   "pitch": 1,
-  "note": "digits roll 0 to 499"
+  "note": "digit strips roll 0 to 499"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 1118,
+  "frame": 1136,
   "db": -12,
-  "pitch": 2,
-  "note": "digits roll 0 to 499"
- },
- {
-  "id": "kenney-tick-004",
-  "frame": 1128,
-  "db": -12,
-  "pitch": 3,
-  "note": "digits roll 0 to 499"
- },
- {
-  "id": "kenney-tick-004",
-  "frame": 1138,
-  "db": -12,
-  "pitch": 4,
-  "note": "digits roll 0 to 499"
+  "pitch": 1,
+  "note": "digit strips roll 0 to 499"
  },
  {
   "id": "gen-pop",
@@ -70,11 +70,39 @@
   "note": "kr. slides in"
  },
  {
+  "id": "kenney-tick-004",
+  "frame": 1146,
+  "db": -12,
+  "pitch": 1,
+  "note": "digit strips roll 0 to 499"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 1156,
+  "db": -12,
+  "pitch": 2,
+  "note": "digit strips roll 0 to 499"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 1166,
+  "db": -12,
+  "pitch": 2,
+  "note": "digit strips roll 0 to 499"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 1176,
+  "db": -12,
+  "pitch": 2,
+  "note": "digit strips roll 0 to 499"
+ },
+ {
   "id": "gen-impact-soft",
-  "frame": 1154,
+  "frame": 1188,
   "db": -8,
   "pitch": 0,
-  "note": "price lands, small pop"
+  "note": "price lands with a pop"
  },
  {
   "id": "gen-pop",
@@ -85,7 +113,7 @@
  },
  {
   "id": "kenney-tick-004",
-  "frame": 1212,
+  "frame": 1220,
   "db": -11,
   "pitch": 0,
   "note": "chip widens to its text: Én gang"
@@ -93,7 +121,7 @@
  {
   "id": "gen-whoosh-short",
   "frame": 1252,
-  "db": -12,
+  "db": -11,
   "pitch": 0,
   "note": "chip tucks in"
  },
@@ -102,56 +130,63 @@
   "frame": 1260,
   "db": -11,
   "pitch": 0,
-  "note": "/md glass tag flies in"
+  "note": "/md tag flies in"
  },
  {
   "id": "gen-tap",
   "frame": 1264,
-  "db": -8,
+  "db": -7,
   "pitch": 0,
   "note": "/md bumps the price, price recoils"
  },
  {
   "id": "kenney-click-001",
   "frame": 1274,
-  "db": -8,
+  "db": -7,
   "pitch": 0,
-  "note": "strike line through /md"
+  "note": "thick strike line through /md"
  },
  {
   "id": "kenney-drop-003",
   "frame": 1284,
-  "db": -9,
+  "db": -8,
   "pitch": -2,
-  "note": "/md drops away"
+  "note": "/md falls away"
  },
  {
   "id": "gen-whoosh-medium",
   "frame": 1322,
   "db": -9,
   "pitch": 0,
-  "note": "price morphs into the mini phone"
+  "note": "price unrolls into the big phone, the phone turns"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 1340,
+  "frame": 1334,
   "db": -12,
   "pitch": 0,
-  "note": "phone screen blocks cascade"
+  "note": "the site builds block by block"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 1342,
+  "db": -13,
+  "pitch": 0,
+  "note": "site starts scrolling"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 1350,
+  "frame": 1344,
   "db": -12,
   "pitch": 1,
-  "note": "phone screen blocks cascade"
+  "note": "the site builds block by block"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 1360,
+  "frame": 1354,
   "db": -12,
   "pitch": 2,
-  "note": "phone screen blocks cascade"
+  "note": "the site builds block by block"
  },
  {
   "id": "gen-pop",
@@ -175,71 +210,85 @@
   "note": "second question tilt"
  },
  {
-  "id": "kenney-drop-003",
-  "frame": 1450,
-  "db": -12,
-  "pitch": -3,
-  "note": "small hop lands"
+  "id": "gen-whoosh-short",
+  "frame": 1426,
+  "db": -13,
+  "pitch": 0,
+  "note": "site scrolls back up"
  },
  {
   "id": "gen-whoosh-medium",
   "frame": 1462,
   "db": -9,
   "pitch": 0,
-  "note": "phone morphs back into the price"
+  "note": "phone collapses back into the price"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 1474,
+  "frame": 1472,
   "db": -12,
   "pitch": 0,
-  "note": "digits roll down 499 to 0"
+  "note": "digit strips roll 499 to 0"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 1482,
+  "frame": 1480,
+  "db": -12,
+  "pitch": 0,
+  "note": "digit strips roll 499 to 0"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 1488,
   "db": -12,
   "pitch": -1,
-  "note": "digits roll down 499 to 0"
+  "note": "digit strips roll 499 to 0"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 1490,
+  "frame": 1496,
+  "db": -12,
+  "pitch": -1,
+  "note": "digit strips roll 499 to 0"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 1504,
   "db": -12,
   "pitch": -2,
-  "note": "digits roll down 499 to 0"
+  "note": "digit strips roll 499 to 0"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 1498,
+  "frame": 1512,
   "db": -12,
-  "pitch": -3,
-  "note": "digits roll down 499 to 0"
+  "pitch": -2,
+  "note": "digit strips roll 499 to 0"
  },
  {
   "id": "gen-success",
-  "frame": 1500,
+  "frame": 1512,
   "db": -8,
   "pitch": 0,
   "note": "0 kr. lands"
  },
  {
   "id": "gen-appear",
-  "frame": 1540,
-  "db": -9,
+  "frame": 1530,
+  "db": -10,
   "pitch": 0,
-  "note": "risk row appears: Nul"
+  "note": "capsule becomes the risk row"
  },
  {
   "id": "kenney-select-001",
-  "frame": 1548,
-  "db": -8,
+  "frame": 1540,
+  "db": -7,
   "pitch": 0,
   "note": "toggle switches OFF"
  },
  {
   "id": "gen-pop",
-  "frame": 1554,
+  "frame": 1546,
   "db": -11,
   "pitch": 0,
   "note": "knob overshoots and settles"
@@ -253,7 +302,7 @@
  },
  {
   "id": "gen-whoosh-short",
-  "frame": 1572,
+  "frame": 1565,
   "db": -9,
   "pitch": 0,
   "note": "row collapses to the knob, knob becomes the capsule"
