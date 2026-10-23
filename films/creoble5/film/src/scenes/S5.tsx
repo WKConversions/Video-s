@@ -219,7 +219,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
   }
   // "Ingen kø." and "Ingen robotsvar." (one line at a time)
   const lineKo = t >= L.ingen4 - 0.05 && t < B.cardOut + 0.5 ? <Line text="Ingen kø." y={632} p={ez(t, L.ingen4, 0.9, LIN)} out={ez(t, B.cardOut + 0.04, 0.3, INOUT)} italicWords={["kø"]} /> : null;
-  const lineRobot = t >= L.ingen5 - 0.05 && t < B.launch + 0.5 ? <Line text="Ingen robotsvar." y={632} p={ez(t, L.ingen5, 1.0, LIN)} out={ez(t, B.launch - 0.05, 0.3, INOUT)} italicWords={["robotsvar"]} /> : null;
+  const lineRobot = t >= L.ingen5 - 0.05 && t < B.launch + 0.5 ? <Line text="Ingen robotsvar." y={632} p={ez(t, L.ingen5, 1.0, LIN)} out={ez(t, B.launch - 0.2, 0.35, INOUT)} italicWords={["robotsvar"]} /> : null;
 
   // ── 4. the robot: pops out of the dot, shakes "no", is flicked away ────────────────────────────────────────────────
   let robot: React.ReactNode = null;
@@ -247,7 +247,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
     const squ = xl > 0 ? Math.exp(-xl * 9) * Math.cos(xl * 24) : 0;
     const ddx = (1 - ux) * (CX - WM_DOT_X), ddy = (1 - ux) * (CARD_Y - WM_DOT_Y) - lift - hop;
     const base = mix(DOT / 18.4, 1, ux), beat = 1 + 0.38 * Math.pow(Math.max(0, Math.sin((t - 46) * 5.3)), 8) * (t > 46 ? 1 : 0);
-    const rev = ez(t, B.land + 0.04, 0.78, WIPE);
+    const rev = ez(t, B.land - 0.02, 0.8, OUT);
     const sl = spr(t, B.slide, 0.55, 0.72);
     const k0 = WM_VIEW.w / WM_W;
     const bob = t > B.land + 0.5 ? `translateY(${5 * Math.sin(t * 3.4)}px) rotate(${0.9 * Math.sin(t * 2.6)}deg)` : "";
@@ -331,7 +331,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
           return (
             <React.Fragment key={d.k}>
               <Abs x={d.x - 23} y={STAGE_Y - 23 + d.w} style={{ opacity: 1 }}><StepIcon kind={d.k} p={p} t={t} at={d.at} /></Abs>
-              <Line text={d.label} x={d.x} y={STAGE_Y + 92 + d.w * 0.5} p={ez(t, d.at, 0.55, LIN)} out={sOut} size={26} serif={false} color={C.ink} />
+              <div style={{ position: "absolute", inset: 0, transform: `translateY(${d.w * 0.5}px)` }}><Line text={d.label} x={d.x} y={STAGE_Y + 92} p={ez(t, d.at, 0.55, LIN)} out={sOut} size={26} serif={false} color={C.ink} /></div>
             </React.Fragment>
           );
         })}

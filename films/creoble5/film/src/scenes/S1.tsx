@@ -2,7 +2,7 @@ import React from "react";
 import { Easing } from "remotion";
 import { C, HOLM, OUT, INOUT, SANS, clamp01, mix } from "../lib";
 import { Ico, LiquidGlass, f, squash } from "../shared";
-import { CX, Handoff, HANDOFF_HALF, Line, MiniSite, float } from "../v5";
+import { CX, Handoff, HANDOFF_HALF, Line, MiniSite } from "../v5";
 
 // Scene 1 (0 → h1, 10.05 s), builder 1. One sage thing on screen at a time, centred, small, on plain cream:
 // dot → capsule → Liquid Glass window → stopwatch → sparkle → text field → Dynamic Island → phone → capsule.
@@ -24,6 +24,9 @@ const mixc = (a: string, b: string, p: number) => {
   return "#" + A.map((v, i) => Math.round(mix(v, B[i], q)).toString(16).padStart(2, "0")).join("");
 };
 const SWEEP = Easing.bezier(0.45, 0.05, 0.25, 1);
+/** A livelier hold than the kit's float: bob, drift, 3D sway and a hair of roll, so the object never sits (amp 0..1). */
+const flt = (t: number, amp: number, seed = 0) =>
+  `translate(${6 * amp * Math.sin(2.3 * t + seed + 1)}px, ${12 * amp * Math.sin(4.0 * t + seed)}px) rotateY(${8 * amp * Math.sin(2.6 * t + seed + 0.7)}deg) rotateX(${3 * amp * Math.sin(2.1 * t + seed + 2)}deg) rotateZ(${1.1 * amp * Math.sin(3.1 * t + seed)}deg)`;
 const kick = (t: number, t0: number, amp: number) => (t < t0 ? 0 : amp * Math.exp(-(t - t0) * 7) * Math.sin((t - t0) * 26));
 
 /** A static box (BW × BH) centred on the frame centre, moved by transforms only; its visible shape is a clip-path inset
@@ -183,13 +186,20 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
     );
   }
 
+  // each landing sends a thin ring out of the dot
+  const landRings = [0.2, 0.34, 0.42].map((ti, i) => {
+    const p = ez(t, ti, 0.4, OUT);
+    return t >= ti && t < ti + 0.4 ? <div key={i} style={{ position: "absolute", left: 960 - 80, top: 552 - 80, width: 160, height: 160, borderRadius: "50%", border: `2.5px solid ${SAGE}`,
+      opacity: 0.5 * (1 - p), transform: `scale(${0.15 + (0.85 - 0.2 * i) * p})` }} /> : null;
+  });
+
   // ── the shock ring and the sparkle (bursts from the stopwatch's dot) ──
   const SPY = 478;
   let spark: React.ReactNode = null;
   if (t >= 2.56 && t < 4.1) {
     const born = sp(t, 2.6, 0.5, 0.52), shrink = ez(t, 3.86, 0.2, INOUT);
-    const sc0 = born * (1 + 0.035 * Math.sin(t * 6.9)) * (1 + kick(t, 3.01, 0.07) + kick(t, 3.3, 0.14)) * (1 - shrink);
-    const rot = -230 * (1 - sp(t, 2.6, 0.55, 0.62)) + 26 * (t - 2.6) + 160 * shrink;
+    const sc0 = born * (1 + 0.06 * Math.sin(t * 13.5)) * (1 + kick(t, 3.01, 0.07) + kick(t, 3.3, 0.14)) * (1 - shrink);
+    const rot = -230 * (1 - sp(t, 2.6, 0.55, 0.62)) + 55 * (t - 2.6) + 160 * shrink;
     spark = <Sparkle t={t} cx={CX} cy={mix(SPY, 530, shrink)} size={236} rot={rot} scale={sc0} />;
   }
   const ringP = ez(t, 2.6, 0.5, OUT);
@@ -209,7 +219,7 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
     const btn = sp(t, 4.5, 0.4, 0.55), pr = 1 - 0.14 * Math.max(0, Math.min(1, (t - 6.09) / 0.08)) * (t < 6.21 ? 1 : Math.exp(-(t - 6.21) * 12));
     const caretOn = n < txt.length || Math.floor(t * 2.2) % 2 === 0;
     field = (
-      <Shaped BW={620} BH={84} cx={960} cy={530} w={w} h={h} r={h / 2} color={col} tf={`perspective(1400px) ${float(g, 0.3, ampA)}`} shadow={1}>
+      <Shaped BW={620} BH={84} cx={960} cy={530} w={w} h={h} r={h / 2} color={col} tf={`perspective(1400px) ${flt(t, ampA, 0.3)}`} shadow={1}>
         <div style={{ position: "absolute", inset: 0, opacity: clamp01(f2 * 1.6) }}>
           <LiquidGlass w={620} h={84} radius={42} p={1} sheen={0.5 + 0.5 * Math.sin(t * 1.8)} tint="clear" />
         </div>
@@ -258,7 +268,7 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
     const build = ez(t, 6.86, 0.7, (x) => x);
     const scroll = 330 * INOUT(clamp01((t - 7.45) / 2.0));
     phone = (
-      <div style={{ position: "absolute", inset: 0, transformOrigin: "960px 540px", transform: `perspective(1600px) ${float(g, 2.0, phoneAmp)} scale(${pop})` }}>
+      <div style={{ position: "absolute", inset: 0, transformOrigin: "960px 540px", transform: `perspective(1600px) ${flt(t, phoneAmp, 2.0)} scale(${pop})` }}>
         <div style={{ position: "absolute", inset: 0, filter: "drop-shadow(0 2px 3px rgba(26,22,20,0.10)) drop-shadow(0 30px 26px rgba(26,22,20,0.20))" }}>
         <div style={{ position: "absolute", inset: 0, clipPath: `inset(${top}px ${side}px ${bot}px ${side}px round ${rad}px)` }}>
           <div style={{ position: "absolute", left: 810, top: 220, width: 300, height: 640 }}>
@@ -317,8 +327,8 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
   return (
     <>
       {lines}
-      <div style={{ position: "absolute", inset: 0, transformOrigin: "960px 520px", transform: `perspective(1400px) ${float(g, 0.3, ampA)}` }}>
-        {A}{crown}{ring}{spark}
+      <div style={{ position: "absolute", inset: 0, transformOrigin: "960px 520px", transform: `perspective(1400px) ${flt(t, ampA, 0.3)}` }}>
+        {landRings}{A}{crown}{ring}{spark}
       </div>
       {field}
       {cards}
