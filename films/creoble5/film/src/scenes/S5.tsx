@@ -4,7 +4,7 @@
 // reply, a queue card that counts down to nothing, a robot that is flicked away, a dot that lands as the full stop of
 // the wordmark; the wordmark slides up, two pills merge (Gooey) and bud into three step discs that melt into the CTA.
 import React from "react";
-import { C, INOUT, LIN, OUT, SANS, SERIF, WIPE, clamp01, mix } from "../lib";
+import { C, INOUT, LIN, OUT, SANS, SERIF, clamp01, mix } from "../lib";
 import { Island, PillButton, squash, f } from "../shared";
 import { CX, CY, HANDOFF_HALF, Handoff, Line, float } from "../v5";
 import { WM_DOT, WM_VIEW, WM_WORD } from "../wordmark";
@@ -218,7 +218,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
     );
   }
   // "Ingen kø." and "Ingen robotsvar." (one line at a time)
-  const lineKo = t >= L.ingen4 - 0.05 && t < B.cardOut + 0.5 ? <Line text="Ingen kø." y={632} p={ez(t, L.ingen4, 0.9, LIN)} out={ez(t, B.cardOut + 0.04, 0.3, INOUT)} italicWords={["kø"]} /> : null;
+  const lineKo = t >= L.ingen4 - 0.05 && t < B.cardOut + 0.5 ? <Line text="Ingen kø." y={632} p={ez(t, L.ingen4, 0.9, LIN)} out={ez(t, B.cardOut - 0.12, 0.26, INOUT)} italicWords={["kø"]} /> : null;
   const lineRobot = t >= L.ingen5 - 0.05 && t < B.launch + 0.5 ? <Line text="Ingen robotsvar." y={632} p={ez(t, L.ingen5, 1.0, LIN)} out={ez(t, B.launch - 0.2, 0.35, INOUT)} italicWords={["robotsvar"]} /> : null;
 
   // ── 4. the robot: pops out of the dot, shakes "no", is flicked away ────────────────────────────────────────────────
@@ -283,8 +283,8 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
     // left and right blobs
     const lx = split ? mix(pLx, CX - 200, sp) : pLx, rx = split ? mix(pRx, CX + 200, sp) : pRx;
     const lxx = t >= B.gather ? mix(CX - 200, CX, gt) : lx, rxx = t >= B.gather ? mix(CX + 200, CX, gt) : rx;
-    const ly = t < B.split ? mix(STAGE_Y + 80, STAGE_Y, uL) : STAGE_Y + wave(0), ry = t < B.split ? mix(STAGE_Y - 300, STAGE_Y, uR) : STAGE_Y + wave(2);
-    const ldx = t < B.merge ? mix(CX - 470, pLx, uL) : lxx, rdx = t < B.merge ? pRx : rxx;
+    const ly = t < B.split ? mix(STAGE_Y + 80, STAGE_Y, uL) : STAGE_Y + wave(0), ry = t < B.split ? mix(STAGE_Y - 60, STAGE_Y, uR) : STAGE_Y + wave(2);
+    const ldx = t < B.merge ? mix(CX - 470, pLx, uL) : lxx, rdx = t < B.merge ? mix(CX + 470, pRx, uR) : rxx;
     const lw = split ? mix(pWid, 76, sp) : pWid, lh = split ? mix(70, 76, sp) : 70;
     const dKick = (at: number) => 1 + 0.1 * kick(t, at, 9, 26);
     const showL = uL > 0.001 && t < B.gather + 0.5, showR = uR > 0.001 && t < B.gather + 0.5;
@@ -318,7 +318,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
     const ctaOn = t >= B.byg2 + 0.05;
     const pp = Math.max(prs(t, B.press), prs(t, 53.6));
     const sh1 = ez(t, B.press + 0.18, 0.75, INOUT), per = 1.45, ph = ((t - 52.95) % per + per) % per;
-    const shine = t < B.press + 0.18 ? 0 : t < B.press + 0.93 ? sh1 : t > 52.95 && ph < 0.75 ? INOUT(ph / 0.75) : 0;
+    const shine = t < B.press + 0.18 ? 0 : t < B.press + 0.93 ? sh1 : t > 52.95 && ph < 0.75 ? ph / 0.75 : 0;
     over = (
       <>
         {pillTxt("Hjemmeside", pLx, ly, L.hjem + 0.3)}
@@ -331,7 +331,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
           return (
             <React.Fragment key={d.k}>
               <Abs x={d.x - 23} y={STAGE_Y - 23 + d.w} style={{ opacity: 1 }}><StepIcon kind={d.k} p={p} t={t} at={d.at} /></Abs>
-              <div style={{ position: "absolute", inset: 0, transform: `translateY(${d.w * 0.5}px)` }}><Line text={d.label} x={d.x} y={STAGE_Y + 92} p={ez(t, d.at, 0.55, LIN)} out={sOut} size={26} serif={false} color={C.ink} /></div>
+              <div style={{ position: "absolute", inset: 0, transform: `translateY(${d.w * 0.5}px)`, willChange: "transform" }}><Line text={d.label} x={d.x} y={STAGE_Y + 92} p={ez(t, d.at, 0.55, LIN)} out={sOut} size={26} serif={false} color={C.ink} /></div>
             </React.Fragment>
           );
         })}

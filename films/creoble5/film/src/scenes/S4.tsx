@@ -32,7 +32,7 @@ const Shape: React.FC<{ x: number; y: number; w: number; h: number; color: strin
     <div style={{ position: "absolute", left: CX - BW / 2, top: CY - BH / 2, width: BW, height: BH, opacity: op, transform: `translate(${x - CX}px, ${y - CY}px) ${tf}` }}>
       <div style={{ position: "absolute", inset: 0, filter: "drop-shadow(0 16px 20px rgba(26,22,20,0.15))" }}>
         <div style={{ position: "absolute", inset: 0, background: color, clipPath: `inset(${iy}px ${ix}px round ${r}px)` }}>
-          {sheen >= 0 && <div style={{ position: "absolute", inset: 0, background: `linear-gradient(105deg, rgba(255,255,255,0) ${mix(-26, 104, sheen)}%, rgba(255,255,255,0.30) ${mix(-12, 118, sheen)}%, rgba(255,255,255,0) ${mix(2, 132, sheen)}%)` }} />}
+          {sheen >= 0 && <div style={{ position: "absolute", inset: 0, background: `linear-gradient(105deg, rgba(255,255,255,0) ${mix(-30, 100, sheen)}%, rgba(255,255,255,0.46) ${mix(-18, 112, sheen)}%, rgba(255,255,255,0) ${mix(-6, 124, sheen)}%)` }} />}
           {clipped}
         </div>
       </div>
@@ -59,8 +59,8 @@ const Globe: React.FC<{ th: number; R: number; op: number }> = ({ th, R, op }) =
     const p = GP[i], a = p.lon + th, x = p.cl * Math.sin(a), z0 = p.cl * Math.cos(a);
     const y2 = p.sl * ct - z0 * st, z2 = p.sl * st + z0 * ct;
     if (z2 < 0.03) continue;
-    const rad = (p.land ? 5.0 : 1.7) * (0.45 + 0.55 * z2) * op;
-    out.push(<circle key={i} cx={(x * R).toFixed(1)} cy={(-y2 * R).toFixed(1)} r={rad.toFixed(2)} fill={p.land ? C.sage : C.sageLight} opacity={(0.3 + 0.7 * z2).toFixed(2)} />);
+    const rad = (p.land ? 5.6 : 1.9) * (0.45 + 0.55 * z2) * op;
+    out.push(<circle key={i} cx={(x * R).toFixed(1)} cy={(-y2 * R).toFixed(1)} r={rad.toFixed(2)} fill={p.land ? "#749289" : C.sageLight} opacity={(0.4 + 0.6 * z2).toFixed(2)} />);
   }
   return <svg width={BW} height={BH} viewBox={`${-BW / 2} ${-BH / 2} ${BW} ${BH}`} style={{ position: "absolute", left: 0, top: 0 }}>{out}</svg>;
 };
@@ -156,7 +156,7 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
   const roll = -180 * (1 - aspring(g, "h3+0.25", 0.55, 0.8));
   const sway = float(g, 0.3, 1.3 * ou(t0 / 0.5));
   const tf = `rotate(${roll}deg) ${trav} perspective(1400px) ${sway} scale(${1 + pulse * 0.4}, ${1 - pulse})`;
-  const sheenPhase = ((((g - f("h3") - HANDOFF_HALF) / 30) * 0.85) % 1.35) / 1.35;
+  const sheenPhase = (((g - f("h3") - HANDOFF_HALF) / 30) * 1.05) % 1;
   const bodyColor = `color-mix(in srgb, ${TINT} ${(body.tint * 100).toFixed(1)}%, ${C.sage})`;
 
   // ── chips (31.58 → 33.0) ──
@@ -242,7 +242,7 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
             {globeStage && <>
               <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 50% 50%, rgba(135,168,158,0) 52%, rgba(135,168,158,0.42) 100%)", opacity: dotsOp }} />
               <Globe th={th} R={0.474 * Math.min(M.w, M.h)} op={0.6 + 0.4 * dotsOp} />
-              <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 36% 28%, rgba(255,255,255,0.55), rgba(255,255,255,0) 48%)", opacity: dotsOp }} />
+              <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle at 36% 28%, rgba(255,255,255,0.32), rgba(255,255,255,0) 46%)", opacity: dotsOp }} />
             </>}
             {g >= f("w:fra") - 2 && g < f("w:domnet-0.05") + 14 && (
               <Mid style={{ opacity: pcIn * (1 - pcOut), filter: pcIn < 1 || pcOut > 0 ? `blur(${(1 - pcIn) * 8 + pcOut * 8}px)` : undefined }}>
