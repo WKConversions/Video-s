@@ -150,7 +150,7 @@ const Link: React.FC<{ clipX?: number }> = ({ clipX }) => (
 // ── the scroll of the site behind every beat: steady, eased turnarounds, ends at 0 for the h4 hand-off ─────────────
 const SCROLL_KEYS: Array<[number, number, number]> = [   // [from s, to s, to scroll]; starts at 300 on the h3 hand-off's last frame
   // every sweep cruises at exactly 6 device px per frame (360 px/s) so the page moves in whole-pixel steps; ends at 0 for h4
-  [26.91, 27.90, 658], [27.90, 29.537, 0], [29.537, 31.174, 658], [31.174, 32.811, 0], [32.811, 34.448, 658], [34.448, 36.085, 0], [36.085, 37.5275, 568], [37.5275, 38.97, 0],
+  [26.91, 27.90, 658], [27.90, 29.537, 0], [29.537, 31.174, 658], [31.174, 32.811, 0], [32.811, 34.448, 658], [34.448, 36.085, 0], [36.085, 37.3175, 470], [37.3175, 38.55, 0],
 ];
 const trap = (t: number, T: number, r: number) => {            // 0..1 over T s: linear ramps of r s, steady cruise between
   const vp = 1 / (T - r), x = clamp01(t / T) * T;
@@ -185,7 +185,7 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
   const sec = g / 30;
   const M = main(g), Mp = main(g - 1);
   const scroll = siteScroll(sec);
-  const SS = 1 + 0.18 * (ez(t("h3+0.35") / 0.5) - ez(t("w:ingen3-0.35") / 0.5));
+  const SS = 1 + 0.18 * (ez(t("h3+0.35") / 0.5) - ez((sec - 38.55) / 0.42));
 
   // ── the address bar: Forhåndsvisning → holmfysio.dk live when set up ──
   const live = ez(t("w:vi+1.4") / 0.3), url = g >= f("w:vi+1.4") ? "holmfysio.dk" : "Forhåndsvisning";

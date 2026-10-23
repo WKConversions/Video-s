@@ -123,8 +123,9 @@ export const Stage: React.FC<{ x?: number; y?: number; scale?: number; transform
   ({ x = CX, y = CY, scale = 1, transform = "", scroll = 0, build = 1, booking = 1, url = "Forhåndsvisning", live = 0, headline, children, style }) => (
   <div style={{ position: "absolute", left: x - STAGE.w / 2, top: y - STAGE.h / 2, width: STAGE.w, height: STAGE.h, transform: `${transform} scale(${scale})`, ...style }}>
     <Browser w={STAGE.w} h={STAGE.h} url={url} live={live}>
-      {/* the whole page is drawn once and scrolled as one compositor layer (no per-frame glyph snapping = no shake) */}
-      <div style={{ position: "absolute", left: 0, top: 0, width: STAGE.w, transform: `translate3d(0, ${-scroll * (STAGE.w / SITE.w)}px, 0)`, willChange: "transform" }}>
+      {/* the whole page is laid out once (no scale on the moving element) and moved by whole pixels, so the glyphs never
+          re-snap (no shake); no will-change: a compositor layer made headless Chrome skip screen updates (S4's finding) */}
+      <div style={{ position: "absolute", left: 0, top: 0, width: STAGE.w, transform: `translateY(${Math.round(-scroll * (STAGE.w / SITE.w))}px)` }}>
         <HolmSite w={STAGE.w} h={SITE.page * (STAGE.w / SITE.w)} build={build} booking={booking} scroll={0} headline={headline} />
       </div>
       {children}

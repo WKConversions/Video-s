@@ -44,7 +44,7 @@ const typed = (t: number, at: number, text: string, cps: number) => text.slice(0
 // ── the site's steady scroll: a triangle between 0 and the page end with softly rounded turnarounds ─────────────────
 const SMAX = STAGE_SCROLL_MAX, V = 480;                           // design px per second ≈ 5.3 px per frame on screen
 const foldScroll = (x: number) => {
-  const P = 2 * SMAX, m = ((x % P) + P) % P, u = m <= SMAX ? m : P - m, e = 6;   // short, eased turnarounds (no slow creep)
+  const P = 2 * SMAX, m = ((x % P) + P) % P, u = m <= SMAX ? m : P - m, e = 28;   // short, eased turnarounds (no slow creep)
   if (u < e) return (u * u) / (2 * e) + e / 2;
   if (u > SMAX - e) { const v = SMAX - u; return SMAX - ((v * v) / (2 * e) + e / 2); }
   return u;

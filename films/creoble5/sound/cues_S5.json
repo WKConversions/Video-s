@@ -4,25 +4,39 @@
   "frame": 2371,
   "db": -8,
   "pitch": 0,
-  "note": "capsule grows into the chat bubble"
+  "note": "the chat button pops on the live site"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 2380,
+  "db": -10,
+  "pitch": 0,
+  "note": "the chat opens over the site"
+ },
+ {
+  "id": "kenney-drop-003",
+  "frame": 2392,
+  "db": -11,
+  "pitch": 0,
+  "note": "panel settles"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 2401,
+  "db": -10,
+  "pitch": 0,
+  "note": "the question bubble pops"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 2393,
+  "frame": 2410,
   "db": -12,
   "pitch": 0,
-  "note": "the question starts typing"
+  "note": "the question types"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 2406,
-  "db": -13,
-  "pitch": 0,
-  "note": "typing"
- },
- {
-  "id": "kenney-tick-004",
-  "frame": 2419,
+  "frame": 2422,
   "db": -13,
   "pitch": 0,
   "note": "typing"
@@ -32,7 +46,7 @@
   "frame": 2422,
   "db": -10,
   "pitch": 0,
-  "note": "the human reply splits off the bubble"
+  "note": "the human reply splits off"
  },
  {
   "id": "kenney-drop-003",
@@ -42,11 +56,11 @@
   "note": "reply bubble lands"
  },
  {
-  "id": "gen-pop",
+  "id": "kenney-tick-004",
   "frame": 2434,
-  "db": -9,
+  "db": -13,
   "pitch": 0,
-  "note": "avatar C pops"
+  "note": "typing"
  },
  {
   "id": "kenney-tick-004",
@@ -63,6 +77,13 @@
   "note": "reply word 2"
  },
  {
+  "id": "kenney-tick-004",
+  "frame": 2471,
+  "db": -12,
+  "pitch": 0,
+  "note": "reply word 3"
+ },
+ {
   "id": "kenney-maximize-009",
   "frame": 2472,
   "db": -9,
@@ -71,21 +92,14 @@
  },
  {
   "id": "kenney-tick-004",
-  "frame": 2472,
-  "db": -12,
-  "pitch": 0,
-  "note": "reply word 3"
- },
- {
-  "id": "kenney-tick-004",
-  "frame": 2483,
+  "frame": 2481,
   "db": -12,
   "pitch": 0,
   "note": "reply word 4"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 2493,
+  "frame": 2490,
   "db": -12,
   "pitch": 0,
   "note": "reply word 5"
@@ -105,25 +119,11 @@
   "note": "second ripple"
  },
  {
-  "id": "gen-whoosh-medium",
-  "frame": 2520,
-  "db": -10,
-  "pitch": 0,
-  "note": "chat gathers into the capsule"
- },
- {
-  "id": "gen-pop",
-  "frame": 2530,
-  "db": -10,
-  "pitch": 0,
-  "note": "capsule pops back"
- },
- {
   "id": "kenney-select-001",
   "frame": 2553,
   "db": -9,
   "pitch": 0,
-  "note": "capsule morphs into the queue card"
+  "note": "chat panel morphs into the queue card"
  },
  {
   "id": "gen-tick",
@@ -196,39 +196,46 @@
   "note": "robot shakes no"
  },
  {
-  "id": "gen-pop",
-  "frame": 2644,
-  "db": -11,
+  "id": "gen-whoosh-medium",
+  "frame": 2637,
+  "db": -9,
   "pitch": 0,
-  "note": "dot pulses"
+  "note": "the stage collapses into the dot"
  },
  {
   "id": "gen-whoosh-short",
-  "frame": 2664,
+  "frame": 2658,
   "db": -10,
   "pitch": 0,
   "note": "dot flies to the full stop"
  },
  {
   "id": "kenney-drop-003",
-  "frame": 2682,
+  "frame": 2677,
   "db": -7,
   "pitch": 0,
   "note": "the full stop lands"
  },
  {
   "id": "gen-shimmer",
-  "frame": 2686,
+  "frame": 2681,
   "db": -10,
   "pitch": 0,
   "note": "the letters come out of the dot"
  },
  {
   "id": "gen-whoosh-medium",
-  "frame": 2721,
+  "frame": 2712,
   "db": -10,
   "pitch": 0,
   "note": "wordmark slides up"
+ },
+ {
+  "id": "kenney-maximize-009",
+  "frame": 2718,
+  "db": -9,
+  "pitch": 0,
+  "note": "the stage re-opens"
  },
  {
   "id": "gen-pop",
@@ -274,45 +281,52 @@
  },
  {
   "id": "gen-whoosh-short",
-  "frame": 2882,
+  "frame": 2875,
   "db": -9,
   "pitch": 0,
-  "note": "capsule opens into the site card"
+  "note": "the stage flips to rebuild"
+ },
+ {
+  "id": "kenney-drop-003",
+  "frame": 2884,
+  "db": -9,
+  "pitch": 0,
+  "note": "the stage flips back"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 2897,
+  "db": -11,
+  "pitch": 0,
+  "note": "hammer hits, block 1 resolves"
  },
  {
   "id": "kenney-click-001",
   "frame": 2904,
-  "db": -10,
+  "db": -12,
   "pitch": 0,
-  "note": "header block lands, hammer hits"
+  "note": "hammer hits, block 2 resolves"
  },
  {
   "id": "kenney-click-001",
-  "frame": 2911,
+  "frame": 2912,
   "db": -11,
   "pitch": 0,
-  "note": "headline lands"
+  "note": "hammer hits, block 3 resolves"
  },
  {
   "id": "kenney-click-001",
-  "frame": 2917,
-  "db": -11,
+  "frame": 2919,
+  "db": -12,
   "pitch": 0,
-  "note": "text lands"
- },
- {
-  "id": "gen-pop",
-  "frame": 2922,
-  "db": -10,
-  "pitch": 0,
-  "note": "photo lands"
+  "note": "hammer hits, block 4 resolves"
  },
  {
   "id": "kenney-click-001",
-  "frame": 2929,
+  "frame": 2926,
   "db": -11,
   "pitch": 0,
-  "note": "buttons land"
+  "note": "hammer hits, block 5 resolves"
  },
  {
   "id": "gen-pop",
@@ -329,32 +343,18 @@
   "note": "scan sweeps down"
  },
  {
-  "id": "kenney-tick-004",
-  "frame": 2936,
+  "id": "kenney-click-001",
+  "frame": 2934,
   "db": -12,
   "pitch": 0,
-  "note": "service card"
+  "note": "hammer hits, block 6 resolves"
  },
  {
-  "id": "kenney-tick-004",
-  "frame": 2942,
-  "db": -12,
+  "id": "kenney-click-001",
+  "frame": 2941,
+  "db": -11,
   "pitch": 0,
-  "note": "service card"
- },
- {
-  "id": "gen-swell",
-  "frame": 2945,
-  "db": -14,
-  "pitch": 0,
-  "note": "page scrolls"
- },
- {
-  "id": "kenney-tick-004",
-  "frame": 2948,
-  "db": -12,
-  "pitch": 0,
-  "note": "service card"
+  "note": "hammer hits, block 7 resolves"
  },
  {
   "id": "gen-whoosh-short",
@@ -364,36 +364,43 @@
   "note": "scan sweeps up"
  },
  {
-  "id": "gen-pop",
-  "frame": 2978,
-  "db": -9,
+  "id": "gen-whoosh-medium",
+  "frame": 2972,
+  "db": -10,
   "pitch": 0,
-  "note": "the price card"
+  "note": "the price tag slides onto the stage"
  },
  {
   "id": "gen-tick",
-  "frame": 2981,
+  "frame": 2982,
   "db": -12,
   "pitch": 0,
   "note": "price rolls"
  },
  {
+  "id": "kenney-drop-003",
+  "frame": 2985,
+  "db": -9,
+  "pitch": 0,
+  "note": "tag docks"
+ },
+ {
   "id": "gen-tick",
-  "frame": 2987,
+  "frame": 2988,
   "db": -13,
   "pitch": 0,
   "note": "price rolls"
  },
  {
   "id": "gen-tick",
-  "frame": 2993,
+  "frame": 2994,
   "db": -13,
   "pitch": 0,
   "note": "price rolls"
  },
  {
   "id": "gen-chime",
-  "frame": 2999,
+  "frame": 3001,
   "db": -9,
   "pitch": 0,
   "note": "check pops"
@@ -403,14 +410,21 @@
   "frame": 3017,
   "db": -9,
   "pitch": 0,
-  "note": "the card flows into the button"
+  "note": "the tag morphs into the button"
  },
  {
   "id": "gen-impact-soft",
   "frame": 3036,
   "db": -8,
   "pitch": 0,
-  "note": "button grows"
+  "note": "button text wipes in"
+ },
+ {
+  "id": "gen-shimmer",
+  "frame": 3066,
+  "db": -12,
+  "pitch": 0,
+  "note": "shine starts"
  },
  {
   "id": "kenney-click-001",
@@ -418,13 +432,6 @@
   "db": -7,
   "pitch": 0,
   "note": "button press"
- },
- {
-  "id": "gen-shimmer",
-  "frame": 3090,
-  "db": -10,
-  "pitch": 0,
-  "note": "shine across the button"
  },
  {
   "id": "gen-appear",
@@ -435,10 +442,10 @@
  },
  {
   "id": "gen-shimmer",
-  "frame": 3153,
-  "db": -14,
+  "frame": 3150,
+  "db": -15,
   "pitch": 0,
-  "note": "shine again"
+  "note": "shine"
  },
  {
   "id": "kenney-click-001",
@@ -449,7 +456,7 @@
  },
  {
   "id": "gen-shimmer",
-  "frame": 3240,
+  "frame": 3234,
   "db": -16,
   "pitch": 0,
   "note": "shine"
