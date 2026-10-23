@@ -153,10 +153,13 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
   const tilt = Math.abs(sry) + Math.abs(srz) + Math.abs(srx) < 0.002 ? "" : `perspective(2400px) rotateX(${srx}deg) rotateY(${sry}deg) rotateZ(${srz}deg)`;
 
   // ── the photos swap in the hero frame: a slide every ~0.9 s ─────────────────────────────────────────────────────
-  const tc0 = T0 + 8, PER = (TE - 10 - tc0) / 11, SL = 9;      // 12 slides; the last one (stretch -> shoulder) ends before TE, on the site's own photo
-  const tr = (g - tc0) / PER, kk = Math.floor(tr);
-  const slideU = tr < 0 ? 0 : INOUT(clamp01(((tr - kk) * PER) / SL));
-  const imgA = tr < 0 ? 0 : kk % 4, imgB = (imgA + 1) % 4;
+  // 12 slides (hero photo: shoulder -> neck -> calves -> stretch -> ... -> shoulder), placed where the page would otherwise rest;
+  // the last one ends before TE on the site's own photo
+  const STARTS = [534, 556, 578, 598, 618, 640, 662, 676, 700, 720, 750, 782], SL = 9;
+  let kk = -1;
+  for (let i = 0; i < STARTS.length; i++) if (g >= STARTS[i]) kk = i;
+  const slideU = kk < 0 ? 0 : INOUT(clamp01((g - STARTS[kk]) / SL));
+  const imgA = kk < 0 ? 0 : kk % 4, imgB = (imgA + 1) % 4;
   const carousel = (
     <div style={abs(PH0.x, PH0.y, { width: PH0.w, height: PH0.h, borderRadius: 16, overflow: "hidden", background: "#E9E5DE" })}>
       <Img src={staticFile(`img/${IMGS[imgA]}`)} style={{ position: "absolute", left: 0, top: 0, width: "100%", height: "100%", objectFit: "cover", transform: `translateX(${-slideU * PH0.w * 0.3}px)` }} />
