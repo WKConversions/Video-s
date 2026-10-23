@@ -223,6 +223,9 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
         <div style={{ position: "absolute", inset: 0, opacity: clamp01(f2 * 1.6) }}>
           <LiquidGlass w={620} h={84} radius={42} p={1} sheen={0.5 + 0.5 * Math.sin(t * 1.8)} tint="clear" />
         </div>
+        <div style={{ position: "absolute", inset: 0, borderRadius: 42, padding: 3, opacity: contentOp * clamp01((t - 4.45) * 3), boxSizing: "border-box",
+          background: `conic-gradient(from ${t * 300}deg at 50% 50%, ${SAGE}, rgba(135,168,158,0) 25%, ${LIGHT} 50%, rgba(135,168,158,0) 75%, ${SAGE})`,
+          WebkitMask: "linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0)", WebkitMaskComposite: "xor", maskComposite: "exclude" }} />
         <div style={{ position: "absolute", inset: 0, opacity: contentOp, fontFamily: SANS }}>
           <div style={{ position: "absolute", left: 28, top: 26, transform: `rotate(${20 * Math.sin(t * 2.5)}deg) scale(${1 + 0.08 * Math.sin(t * 5)})` }}><Ico n="sparkle" s={32} c={SAGE} fill={SAGE} w={1} /></div>
           <div style={{ position: "absolute", left: 80, top: 0, height: 84, display: "flex", alignItems: "center", fontSize: 28, fontWeight: 500, color: INK, whiteSpace: "pre", letterSpacing: "-0.01em" }}>
@@ -275,7 +278,7 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
             <div style={{ position: "absolute", inset: 0, borderRadius: 50, background: INK }} />
             <div style={{ position: "absolute", left: 9, top: 9, width: 282, height: 622, borderRadius: 41, overflow: "hidden", background: HOLM.bg,
               clipPath: `inset(${top - 220}px ${side - 810}px ${bot - 220}px ${side - 810}px round ${Math.max(0, rad - 9)}px)` }}>
-              <MiniSite build={build} scroll={scroll} />
+              <div className="s1site"><style>{".s1site > div > div { will-change: transform; }"}</style><MiniSite build={build} scroll={scroll} /></div>
             </div>
             <div style={{ position: "absolute", left: 105, top: 20, width: 90, height: 26, borderRadius: 13, background: "#000" }} />
           </div>

@@ -1,0 +1,436 @@
+[
+ {
+  "id": "kenney-drop-003",
+  "frame": 12,
+  "db": -9,
+  "pitch": 0,
+  "note": "dot lands (bounce 1)"
+ },
+ {
+  "id": "kenney-drop-003",
+  "frame": 20,
+  "db": -12,
+  "pitch": 3,
+  "note": "dot bounce 2"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 25,
+  "db": -14,
+  "pitch": 2,
+  "note": "dot settles, last tick"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 27,
+  "db": -13,
+  "pitch": 0,
+  "note": "dot stretches into the capsule"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 37,
+  "db": -8,
+  "pitch": 0,
+  "note": "capsule springs open into the glass window"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 47,
+  "db": -15,
+  "pitch": 0,
+  "note": "site sketch: toolbar"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 52,
+  "db": -14,
+  "pitch": 2,
+  "note": "site sketch: hero block"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 59,
+  "db": -14,
+  "pitch": 4,
+  "note": "site sketch: card 1"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 67,
+  "db": -13,
+  "pitch": 6,
+  "note": "site sketch: card 2"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 83,
+  "db": -10,
+  "pitch": 0,
+  "note": "window shrinks into the ring"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 96,
+  "db": -11,
+  "pitch": 4,
+  "note": "stopwatch crown pops"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 96,
+  "db": -16,
+  "pitch": 0,
+  "note": "stopwatch sweep tick 1"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 102,
+  "db": -16,
+  "pitch": 2,
+  "note": "stopwatch sweep tick 2"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 109,
+  "db": -16,
+  "pitch": 4,
+  "note": "stopwatch sweep tick 3"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 119,
+  "db": -16,
+  "pitch": 6,
+  "note": "stopwatch sweep tick 4"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 145,
+  "db": -12,
+  "pitch": 3,
+  "note": "stopwatch collapses to a dot"
+ },
+ {
+  "id": "gen-shimmer",
+  "frame": 156,
+  "db": -9,
+  "pitch": 0,
+  "note": "dot bursts into the sparkle"
+ },
+ {
+  "id": "gen-impact-soft",
+  "frame": 156,
+  "db": -13,
+  "pitch": 0,
+  "note": "burst thump"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 181,
+  "db": -14,
+  "pitch": 0,
+  "note": "sparkle kick on 'af'"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 198,
+  "db": -10,
+  "pitch": 5,
+  "note": "sparkle kick on 'AI'"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 233,
+  "db": -12,
+  "pitch": 0,
+  "note": "sparkle shrinks into the field's dot"
+ },
+ {
+  "id": "kenney-maximize-009",
+  "frame": 250,
+  "db": -10,
+  "pitch": 0,
+  "note": "capsule stretches into the glass text field"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 270,
+  "db": -13,
+  "pitch": 6,
+  "note": "send button pops in"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 277,
+  "db": -19,
+  "pitch": -1,
+  "note": "typed letter 1"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 282,
+  "db": -19,
+  "pitch": 0,
+  "note": "typed letter 2"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 287,
+  "db": -19,
+  "pitch": 1,
+  "note": "typed letter 3"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 292,
+  "db": -19,
+  "pitch": -1,
+  "note": "typed letter 4"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 297,
+  "db": -19,
+  "pitch": 0,
+  "note": "typed letter 5"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 302,
+  "db": -19,
+  "pitch": 1,
+  "note": "typed letter 6"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 307,
+  "db": -19,
+  "pitch": -1,
+  "note": "typed letter 7"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 312,
+  "db": -19,
+  "pitch": 0,
+  "note": "typed letter 8"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 317,
+  "db": -19,
+  "pitch": 1,
+  "note": "typed letter 9"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 322,
+  "db": -19,
+  "pitch": -1,
+  "note": "typed letter 10"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 327,
+  "db": -19,
+  "pitch": 0,
+  "note": "typed letter 11"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 332,
+  "db": -19,
+  "pitch": 1,
+  "note": "typed letter 12"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 337,
+  "db": -19,
+  "pitch": -1,
+  "note": "typed letter 13"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 342,
+  "db": -19,
+  "pitch": 0,
+  "note": "typed letter 14"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 347,
+  "db": -19,
+  "pitch": 1,
+  "note": "typed letter 15"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 352,
+  "db": -19,
+  "pitch": -1,
+  "note": "typed letter 16"
+ },
+ {
+  "id": "gen-tap",
+  "frame": 365,
+  "db": -8,
+  "pitch": 0,
+  "note": "send arrow pressed"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 368,
+  "db": -11,
+  "pitch": 0,
+  "note": "field collapses into the capsule"
+ },
+ {
+  "id": "gen-whoosh-medium",
+  "frame": 384,
+  "db": -9,
+  "pitch": 0,
+  "note": "capsule rises and shrinks into the Island"
+ },
+ {
+  "id": "kenney-select-002",
+  "frame": 406,
+  "db": -11,
+  "pitch": 0,
+  "note": "Island arrives"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 409,
+  "db": -13,
+  "pitch": 0,
+  "note": "phone unroll swish"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 410,
+  "db": -9,
+  "pitch": -3,
+  "note": "phone unrolls out of the Island"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 412,
+  "db": -16,
+  "pitch": 0,
+  "note": "site block 1 builds"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 419,
+  "db": -16,
+  "pitch": 1,
+  "note": "site block 2 builds"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 425,
+  "db": -16,
+  "pitch": 2,
+  "note": "site block 3 builds"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 433,
+  "db": -16,
+  "pitch": 3,
+  "note": "site block 4 builds"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 440,
+  "db": -16,
+  "pitch": 4,
+  "note": "site block 5 builds"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 446,
+  "db": -16,
+  "pitch": 5,
+  "note": "site block 6 builds"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 488,
+  "db": -9,
+  "pitch": 2,
+  "note": "</> chip pops out"
+ },
+ {
+  "id": "gen-tap",
+  "frame": 505,
+  "db": -8,
+  "pitch": 0,
+  "note": "strike lands on the chip"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 505,
+  "db": -15,
+  "pitch": 6,
+  "note": "strike swish"
+ },
+ {
+  "id": "kenney-drop-003",
+  "frame": 518,
+  "db": -11,
+  "pitch": 0,
+  "note": "chip drops away"
+ },
+ {
+  "id": "gen-whoosh-medium",
+  "frame": 545,
+  "db": -12,
+  "pitch": 0,
+  "note": "template cards fan out"
+ },
+ {
+  "id": "gen-tap",
+  "frame": 548,
+  "db": -15,
+  "pitch": 0,
+  "note": "card 2 settles"
+ },
+ {
+  "id": "gen-tap",
+  "frame": 551,
+  "db": -15,
+  "pitch": 2,
+  "note": "card 3 settles"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 559,
+  "db": -12,
+  "pitch": 0,
+  "note": "cards slide away"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 564,
+  "db": -10,
+  "pitch": -2,
+  "note": "phone collapses up into its Island"
+ },
+ {
+  "id": "gen-whoosh-medium",
+  "frame": 577,
+  "db": -9,
+  "pitch": 0,
+  "note": "Island drops into the capsule"
+ },
+ {
+  "id": "gen-whoosh-whip",
+  "frame": 586,
+  "db": -8,
+  "pitch": 0,
+  "note": "hand-off whip (S2 builder: do not duplicate, or drop this one)"
+ }
+]
