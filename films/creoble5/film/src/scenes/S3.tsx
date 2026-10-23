@@ -9,7 +9,7 @@ import React from "react";
 import { C, INOUT, OUT, SANS, SERIF, clamp01, mix, SHADOW, appleShadow, DROP } from "../lib";
 import { Img, staticFile } from "remotion";
 import { CX, NEW_HEADLINE, Stage, StageHandoff } from "../v5";
-import { LiquidGlass, f } from "../shared";
+import { LiquidGlass, f, squash } from "../shared";
 
 // ── small math ──────────────────────────────────────────────────────────────────────────────────────────────────
 /** a spring 0 -> 1 from g-time `at` (response s, damping ratio); damping < 1 overshoots */
@@ -52,7 +52,7 @@ const TG = { size: 200, w: 340 }, TGX = 140;     // iOS toggle 340 x 200, centre
 const DIG = 260;                                 // price digits, Fraunces px
 const abs = (x: number, y: number, extra: React.CSSProperties = {}): React.CSSProperties => ({ position: "absolute", left: x, top: y, ...extra });
 // roll easing: fast the whole way, a short decel to land (no long slow tail)
-const ROLL = (q: number) => { if (q <= 0) return 0; if (q >= 1) return 1; if (q < 0.8) return (8 / 9) * (q / 0.8); const u = (q - 0.8) / 0.2; return 8 / 9 + (1 / 9) * (2 * u - u * u); };
+const ROLL = (q: number) => { if (q <= 0) return 0; if (q >= 1) return 1; if (q < 0.8) return (8 / 9) * (q / 0.8); const u = (q - 0.8) / 0.2; return 8 / 9 + (1 / 9) * (2 * u - u * u) + 0.014 * Math.sin(3 * Math.PI * u) * (1 - u); };   // decel, then a small bounce (the digit overshoots and settles)
 
 // ── rolling price: digit strips that roll several full turns (up 0 -> 499, down 499 -> 0), then collapse; "kr." beside ──
 const Price: React.FC<{ size: number; from: number; to: number; p: number; dp: number; krb: number; spins: number[] }> = ({ size, from, to, p, dp, krb, spins }) => {
@@ -109,7 +109,7 @@ const NulLine: React.FC<{ g: number; y: number; tA: number; tB: number; out: num
   <div style={{ position: "absolute", left: CX - 800, top: y - size * 0.62, width: 1600, textAlign: "center", fontFamily: SERIF, fontSize: size, letterSpacing: "-0.025em", lineHeight: 1.15, whiteSpace: "nowrap",
     opacity: 1 - out, transform: `translate(${size * 1.18 * (1 - sp(g, tB - 1, 0.45, 0.7))}px, ${-40 * out}px)`, filter: out > 0 ? `blur(${12 * out}px)` : undefined }}>
     {[{ t: "Nul", at: tA, it: false }, { t: "risiko.", at: tB, it: true }].map((w, i) => {
-      const q = sp(g, w.at, 0.42, 0.7), qc = clamp01(q), o = OUT(clamp01((g - w.at) / 7));
+      const q = sp(g, w.at, 0.46, 0.5), qc = clamp01(q), o = OUT(clamp01((g - w.at) / 7));
       return <span key={i} style={{ display: "inline-block", marginRight: i === 0 ? "0.26em" : 0, opacity: o, transform: `translateY(${(1 - q) * 40}px)`, filter: o < 1 ? `blur(${(1 - qc) * 10}px)` : undefined,
         fontStyle: w.it ? "italic" : "normal", color: w.it ? C.sageDeep : C.ink }}>{w.t}</span>;
     })}
@@ -117,10 +117,12 @@ const NulLine: React.FC<{ g: number; y: number; tA: number; tB: number; out: num
 );
 
 const IMGS = ["holm-shoulder.jpg", "holm-neck.jpg", "holm-calves.jpg", "holm-stretch.jpg"];
-/** camera: a value that starts at v0 and eases (calm in-out, no bounce) to each key's value over `dur` g from `at` */
+/** camera ease: a small anticipation (3.5% the other way), a fast out-eased move, an overshoot (5%) and settle; ends exactly on target */
+const camE = (t: number) => { if (t <= 0) return 0; if (t >= 1) return 1; const tt = clamp01((t - 0.12) / 0.88); return OUT(tt) - (t < 0.2 ? 0.035 * Math.sin((Math.PI * t) / 0.2) : 0) + (t > 0.7 ? 0.05 * Math.sin((Math.PI * (t - 0.7)) / 0.3) : 0); };
+/** camera: a value that starts at v0 and moves to each key's value over `dur` g from `at` (camE) */
 const cm = (g: number, v0: number, keys: [number, number, number][]) => {
   let v = v0, prev = v0;
-  for (const [at, val, dur] of keys) { v += (val - prev) * OUT(clamp01((g - at) / dur)); prev = val; }
+  for (const [at, val, dur] of keys) { v += (val - prev) * camE(clamp01((g - at) / dur)); prev = val; }
   return v;
 };
 // the hero photo's frame on the stage (design 760,120 630x560 on a 960-wide page): 0.6575 scale
@@ -145,8 +147,8 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
   const camId = Math.abs(S - 1) < 0.0005 && Math.abs(fx - 960) < 0.05 && Math.abs(fy - 540) < 0.05;
 
   // ── the stage's own acts: pages fan out as cards (Siden er din), question tilts ───────────────────────────────────
-  const fan = track(g, 0, [[tSiden, 1, 0.55, 0.6], [tSiden + 30, 0, 0.38, 0.9]]);
-  const fanS = track(g, 0, [[tSiden, 1, 0.42, 1], [tSiden + 30, 0, 0.34, 1]]);   // calm (no overshoot): the main page's text never wobbles
+  const fan = track(g, 0, [[tSiden, 1, 0.6, 0.45], [tSiden + 30, 0, 0.42, 0.5]]);
+  const fanS = track(g, 0, [[tSiden, 1, 0.42, 0.9], [tSiden + 30, 0, 0.34, 0.9]]);   // the main page: only a hint of overshoot, its text stays calm
   const ss = 1 - 0.2 * fanS;                                 // the main page steps back while the others fan out
   const sry = imp(g, tIkke, 22, 1.6, 3.2) + imp(g, tTil2, -12, 1.8, 3.4);
   const srz = imp(g, tIkke, -5, 1.6, 3.2) + imp(g, tTil2, 4, 1.8, 3.4);
@@ -169,11 +171,15 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
   );
 
   // ── the hero capsule over the stage (all springs) ────────────────────────────────────────────────────────────
-  const stampP = sp(g, tStamp, 0.5, 0.5);
+  const stampP = sp(g, tStamp, 0.5, 0.45);
   let x = 960 + imp(g, tDock, -40, 2, 6);
-  let y = track(g, 540, [[t499, HY, 0.45, 0.62], [tSiden - 1, 1320, 0.3, 1], [tS - 1, HY, 0.5, 0.6]]);
-  let w = track(g, 300, [[t499, PW, 0.45, 0.58], [tNul - 5, ROW_W, 0.4, 0.8]]);
+  let y = track(g, 540, [[t499, HY, 0.5, 0.5], [tSiden - 1, 1320, 0.3, 0.9], [tS - 1, HY, 0.55, 0.5]]);
+  let w = track(g, 300, [[t499, PW, 0.5, 0.5], [tNul - 5, ROW_W, 0.45, 0.55]]);
   let h = 300;
+  // squash & stretch from the capsule's own velocity (px per g): it stretches along its travel and thins across it
+  const yAt = (gg: number) => track(gg, 540, [[t499, HY, 0.5, 0.5], [tSiden - 1, 1320, 0.3, 0.9], [tS - 1, HY, 0.55, 0.5]]);
+  const xAt = (gg: number) => 960 + imp(gg, tDock, -40, 2, 6);
+  const sq = squash(xAt(g) - xAt(g - 1), yAt(g) - yAt(g - 1), 0.0016);
   let r = 150;
   let fl = track(g, 0, [[t499, 1, 0.35, 1]]);
   let ring = track(g, 0, [[t499, 5, 0.35, 1]]);
@@ -207,26 +213,28 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
 
   // ── "Én gang." chip: pops out of the capsule upward over the site, widens to its text, tucks back ──────────────────
   const CW = 420, CH = 110, chipHalf = (CW - CH) / 2;
-  const chipPop = sp(g, tN, 0.6, 0.5), chipTuck = ramp(g, tIntet - 1, 6, INOUT), chipW = ramp(g, tN + 6, 14);
+  const chipPop = sp(g, tN, 0.55, 0.45), chipTuck = ramp(g, tIntet - 1, 6, INOUT), chipW = ramp(g, tN + 6, 14);
   const chipY = mix(HY, HY - PH / 2 - 26 - CH / 2, chipPop);
   const showChip = g >= tN && g < tIntet + 6;
 
   // ── "/md": a big dark tag flies at the price, docks (the price recoils), is struck and falls ─────────────────────────
   const mdT = (g - tDrop) / 30;
-  const mdIn = 1 - sp(g, tIntet, 0.42, 0.6);
+  const mdIn = 1 - sp(g, tIntet, 0.45, 0.5);
   const mdX = x + 495 + mdIn * 700 + (mdT > 0 ? 120 * mdT : 0);
   const mdY = HY + (mdT > 0 ? 0.5 * 4200 * mdT * mdT : 0) + imp(g, tIntet + 9, -12, 3, 4) * (mdT > 0 ? 0 : 1);
   const mdRot = (mdT > 0 ? 420 * mdT : 0) + imp(g, tIntet + 7, 5, 3.4, 4);
   const mdO = mdT > 0 ? 1 - clamp01(mdT / 0.6) : 1;
+  const mdPos = (gg: number) => { const t = (gg - tDrop) / 30; return { x: x + 495 + (1 - sp(gg, tIntet, 0.45, 0.5)) * 700 + (t > 0 ? 120 * t : 0), y: HY + (t > 0 ? 0.5 * 4200 * t * t : 0) }; };
+  const mdVx = mdPos(g).x - mdPos(g - 1).x, mdVy = mdPos(g).y - mdPos(g - 1).y;
   const strike = ramp(g, tAbo, 4.5, INOUT);
   const showMd = g >= tIntet && mdT < 0.62;
 
   // ── the "Din" badge rides on the main page's corner; page labels pop over the cards ──────────────────────────────
-  const badge = sp(g, tDin, 0.4, 0.5) * (1 - ramp(g, tIkke, 5, INOUT));
+  const badge = sp(g, tDin, 0.45, 0.42) * (1 - ramp(g, tIkke, 5, INOUT));
   const showBadge = g >= tDin && g < tIkke + 6;
   const bx = 960 + 480 * ss - 10, by = 540 - 300 * ss + 12;
   const SCARD = 0.8, SIDE = 470;                               // side cards: scale 0.8 of the stage, 470 px left / right of centre
-  const lab = (i: number) => sp(g, tSiden + 5 + i * 3, 0.4, 0.55) * (1 - ramp(g, tSiden + 30, 5));
+  const lab = (i: number) => sp(g, tSiden + 5 + i * 3, 0.45, 0.45) * (1 - ramp(g, tSiden + 30, 5));
   const labels = [
     { t: "Forside", cx: 960, top: 540 - 300 * ss, i: 0 },
     { t: "Behandlinger", cx: 960 - SIDE * fan, top: 540 + 30 * fan - 300 * SCARD * (0.9 + 0.1 * fan), i: 1 },
@@ -274,7 +282,7 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
 
         {/* "Én gang." chip (under the capsule) */}
         {showChip && (
-          <div style={{ position: "absolute", left: 0, top: 0, width: CW, height: CH, transform: `translate(${960 - CW / 2}px, ${chipY - CH / 2}px) scale(${mix(0.3, 1, chipPop) * (1 - 0.7 * chipTuck)})`, opacity: 1 - chipTuck, filter: DROP }}>
+          <div style={{ position: "absolute", left: 0, top: 0, width: CW, height: CH, transform: `translate(${960 - CW / 2}px, ${chipY - CH / 2}px) scale(${mix(0.3, 1, chipPop) * (1 - 0.7 * chipTuck) * (1 - 0.5 * Math.min(0.16, Math.abs(chipPop - sp(g - 1, tN, 0.55, 0.45)) * 2.2))}, ${mix(0.3, 1, chipPop) * (1 - 0.7 * chipTuck) * (1 + Math.min(0.16, Math.abs(chipPop - sp(g - 1, tN, 0.55, 0.45)) * 2.2))})`, opacity: 1 - chipTuck, filter: DROP }}>
             <div style={{ position: "absolute", inset: 0, background: "#fff", clipPath: `inset(0px ${(1 - chipW) * chipHalf}px round ${CH / 2}px)` }}>
               <div style={{ position: "absolute", inset: 0, boxShadow: `inset 0 0 0 4px ${C.sage}`, borderRadius: CH / 2 }} />
               <div style={abs(CW / 2 - 47 - (CW / 2 - 55) * chipW, 8, { width: 94, height: 94, borderRadius: 47, background: C.sage, color: "#fff", fontFamily: SANS, fontWeight: 600, fontSize: 44, display: "flex", alignItems: "center", justifyContent: "center" })}>1×</div>
@@ -286,7 +294,7 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
         {/* the capsule docked on the stage: caster (shadow), sage ring, inner fill, content */}
         {heroOn && (
           <div style={{ position: "absolute", left: 0, top: 0, width: BW, height: BH, opacity: clamp01(stampP * 3),
-            transform: `translate(${x - BW / 2}px, ${y - BH / 2}px) perspective(1800px) rotateZ(${rz}deg) scale(${sc})` }}>
+            transform: `translate(${x - BW / 2}px, ${y - BH / 2}px) perspective(1800px) rotateZ(${rz}deg) scale(${sc}) ${sq}` }}>
             <div style={abs(BW / 2 - Wl / 2, BH / 2 - Hl / 2, { width: Wl, height: Hl, borderRadius: Math.min(r, Math.min(Wl, Hl) / 2), boxShadow: shadow })} />
             <div style={{ position: "absolute", inset: 0, background: rgba(SAGE), clipPath: clip(w, h, r) }} />
             <div style={{ position: "absolute", inset: 0, background: rgba(inner), clipPath: clip(w, h, r, ring) }}>
@@ -305,7 +313,7 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
                 {rowIn > 0.001 && (
                   <div style={{ opacity: rowIn, filter: rowIn < 1 ? `blur(${(1 - rowIn) * 8}px)` : undefined }}>
                     <div style={abs(-336, -50, { height: 100, display: "flex", alignItems: "center", fontFamily: SANS, fontWeight: 500, fontSize: 48, color: C.ink, letterSpacing: "-0.01em" })}>Risiko</div>
-                    <div style={abs(TGX - TG.w / 2, -TG.size / 2)}><Tgl u={sp(g, tOff, 0.4, 0.55)} /></div>
+                    <div style={abs(TGX - TG.w / 2, -TG.size / 2)}><Tgl u={sp(g, tOff, 0.42, 0.42)} /></div>
                   </div>
                 )}
               </div>
@@ -315,7 +323,7 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
 
         {/* "/md": big dark tag */}
         {showMd && (
-          <div style={{ position: "absolute", left: 0, top: 0, width: 300, height: 170, opacity: mdO, transform: `translate(${mdX - 150}px, ${mdY - 85}px) rotate(${mdRot}deg)` }}>
+          <div style={{ position: "absolute", left: 0, top: 0, width: 300, height: 170, opacity: mdO, transform: `translate(${mdX - 150}px, ${mdY - 85}px) rotate(${mdRot}deg) ${squash(mdVx, mdVy, 0.0007)}` }}>
             <LiquidGlass w={300} h={170} p={1} sheen={clamp01((g - tIntet) / 20)} tint="ink" style={{ background: "linear-gradient(160deg, rgba(40,35,32,0.96), rgba(26,22,20,0.92))" }}>
               <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: SERIF, fontSize: 120, letterSpacing: "-0.02em", color: C.cream }}>/md</div>
             </LiquidGlass>

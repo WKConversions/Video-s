@@ -1,8 +1,8 @@
 import React from "react";
 import { Easing, Img, staticFile } from "remotion";
 import { C, HOLM, OUT, INOUT, SANS, SERIF, SHADOW_BIG, clamp01, mix, SHADOW, DROP } from "../lib";
-import { Ico, LiquidGlass, f } from "../shared";
-import { HANDOFF_HALF, Line, STAGE, Stage, StageHandoff } from "../v5";
+import { Ico, LiquidGlass, f, squash } from "../shared";
+import { HANDOFF_HALF, STAGE, Stage, StageHandoff } from "../v5";
 
 // Scene 1 (0 → h1, 10.05 s), revision 2: the website is the hero object in every beat. A sage dot drops, becomes the
 // capsule, and opens into the stage (a 960 × 600 browser). Holm's site builds itself live with a timer counting to
@@ -50,8 +50,8 @@ const Shaped: React.FC<{ BW: number; BH: number; cx: number; cy: number; w: numb
 
 // ── the sparkle ──────────────────────────────────────────────────────────────────────────────────────────────────
 const STAR = "M50 0 C54.5 29 71 45.5 100 50 C71 54.5 54.5 71 50 100 C45.5 71 29 54.5 0 50 C29 45.5 45.5 29 50 0 Z";
-const Sparkle: React.FC<{ t: number; x: number; y: number; size: number; rot: number; scale: number }> = ({ t, x, y, size, rot, scale }) => (
-  <div style={{ position: "absolute", left: x - size / 2, top: y - size / 2, width: size, height: size, transform: `rotate(${rot}deg) scale(${Math.max(0, scale)})`,
+const Sparkle: React.FC<{ t: number; x: number; y: number; size: number; rot: number; scale: number; sq?: string }> = ({ t, x, y, size, rot, scale, sq = "" }) => (
+  <div style={{ position: "absolute", left: x - size / 2, top: y - size / 2, width: size, height: size, transform: `${sq} rotate(${rot}deg) scale(${Math.max(0, scale)})`,
     filter: DROP }}>
     <svg width={size} height={size} viewBox="0 0 100 100">
       <defs>
@@ -146,7 +146,7 @@ const TemplateFlick: React.FC<{ t: number; i: number }> = ({ t, i }) => {
   const e = INOUT(u), c = Math.abs(2 * e - 1);          // 1 at the sides, 0 at the middle
   return (
     <div style={{ position: "absolute", left: STAGE.w / 2 - 400, top: (STAGE.h - 46) / 2 - 240, width: 800, height: 480, opacity: clamp01((1 - c) * 6),
-      transform: `perspective(1500px) translate3d(${mix(900, -900, e)}px, 0, ${mix(160, 0, c)}px) rotateY(${mix(-58, 58, e)}deg)` }}>
+      transform: `perspective(1500px) translate3d(${mix(900, -900, e)}px, ${-30 * Math.sin(Math.PI * e)}px, ${mix(160, 0, c) + 70 * Math.sin(Math.PI * e)}px) rotateY(${mix(-58, 58, e)}deg)` }}>
       <div style={{ position: "absolute", inset: 0, borderRadius: 22, background: "#ECE9E3", border: "2px solid #D6D2CA", boxShadow: SHADOW_BIG, overflow: "hidden" }}>
         <div style={{ position: "absolute", left: 0, top: 0, right: 0, height: 56, background: "#E2DFD8" }}>
           <div style={{ position: "absolute", left: 28, top: 16, width: 120, height: 24, borderRadius: 12, background: "#CFCBC3" }} />
@@ -172,11 +172,17 @@ const CAM: [number, number, number, number][] = [
   [4.3, 1.1, 0, 40], [4.65, 1.25, -190, -120], [5.95, 1.25, -30, 60], [6.25, 1.2, -200, -110], [6.65, 1.2, 170, -60], [6.95, 1, 0, 0],
   [8.13, 1, 0, 0], [8.5, 1.14, 0, 0], [8.82, 1.14, 0, 0], [9.08, 1, 0, 0],
 ];
+/** A camera move of under 0.6 s: a small pull-back (anticipation), then a springy push with ~14% overshoot that settles. */
+const camSpring = (u: number) => {
+  if (u < 0.14) return -0.08 * Math.sin((Math.PI * u) / 0.14);
+  const v = (u - 0.14) / 0.86;
+  return 1 - Math.exp(-5.5 * v) * (Math.cos(9.5 * v) + (5.5 / 9.5) * Math.sin(9.5 * v)) + 0.004 * v;
+};
 const camAt = (t: number) => {
   if (t <= CAM[0][0]) return { c: 1, fu: 0, fv: 0 };
   for (let i = 0; i < CAM.length - 1; i++) {
     const [a, c0, u0, v0] = CAM[i], [b, c1, u1, v1] = CAM[i + 1];
-    if (t < b) { const e = INOUT((t - a) / (b - a)); return { c: mix(c0, c1, e), fu: mix(u0, u1, e), fv: mix(v0, v1, e) }; }
+    if (t < b) { const u = (t - a) / (b - a), e = b - a > 0.6 ? INOUT(u) : camSpring(u); return { c: mix(c0, c1, e), fu: mix(u0, u1, e), fv: mix(v0, v1, e) }; }
   }
   return { c: 1, fu: 0, fv: 0 };
 };
@@ -205,7 +211,7 @@ const HeroSlider: React.FC<{ t: number }> = ({ t }) => {
   return (
     <div style={{ position: "absolute", left: 760 * s, top: 120 * s, width: 630 * s, height: 560 * s, borderRadius: 24 * s, overflow: "hidden" }}>
       {HERO_IMGS.slice(0, k + 1).map((src, i) => {
-        const p = i === k ? ez(t, HERO_T[i], 0.34, OUT) : 1;
+        const p = i === k ? sp(t, HERO_T[i], 0.4, 0.55) : 1;
         return <Img key={src} src={staticFile(`img/${src}`)} style={{ position: "absolute", left: 0, top: 0, width: "100%", height: "100%", objectFit: "cover", transform: `translateX(${(1 - p) * 630 * s}px)` }} />;
       })}
     </div>
@@ -215,8 +221,8 @@ const HeroSlider: React.FC<{ t: number }> = ({ t }) => {
 // ── "Creoble bygger hele siden": the site fans out as its pages and steps through them like a carousel ──────────
 const PAGE_SCROLL = [0, 470, 658], PAGE_NAME = ["Forside", "Behandlinger", "Kontakt"];
 const Pages: React.FC<{ t: number }> = ({ t }) => {
-  const fan = sp(t, 6.95, 0.4, 0.62), ret = ez(t, 7.92, 0.2, INOUT);
-  const pos = ez(t, 7.2, 0.25, INOUT) + ez(t, 7.45, 0.25, INOUT) + ez(t, 7.7, 0.25, INOUT);   // 0 → 3: Forside, Behandlinger, Kontakt, Forside
+  const fan = sp(t, 6.95, 0.45, 0.5), ret0 = sp(t, 7.92, 0.28, 0.55), ret = ret0 > 1 ? 1 + (ret0 - 1) * (1 - ez(t, 8.0, 0.12, LIN)) : ret0;
+  const pos = sp(t, 7.2, 0.3, 0.6) + sp(t, 7.45, 0.3, 0.6) + sp(t, 7.7, 0.3, 0.6);   // 0 → 3: Forside, Behandlinger, Kontakt, Forside
   const ff = fan * (1 - ret);
   return (
     <>
@@ -239,6 +245,21 @@ const Pages: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
+// ── a headline line: each word springs up (overshoot ~10%) out of a blur, then settles ───────────────────────────
+const SLine: React.FC<{ t: number; text: string; t0: number; D: number; y: number; size: number; out?: number; italicWords?: string[] }> = ({ t, text, t0, D, y, size, out = 0, italicWords = [] }) => {
+  const words = text.split(" ");
+  return (
+    <div style={{ position: "absolute", left: 960 - 900, top: y - size * 0.62, width: 1800, textAlign: "center", fontFamily: SERIF, fontSize: size, fontWeight: 400, letterSpacing: "-0.025em", color: INK, lineHeight: 1.15,
+      whiteSpace: "nowrap", opacity: 1 - out, transform: `translateY(${-28 * out}px)`, filter: out > 0 ? `blur(${10 * out}px)` : undefined }}>
+      {words.map((w, i) => {
+        const q = sp(t, t0 + (i * D) / (words.length + 2), 0.5, 0.5), o = clamp01(q * 2.2), it = italicWords.includes(w.replace(/[.,?!]/g, ""));
+        return <span key={i} style={{ display: "inline-block", marginRight: "0.26em", opacity: o, transform: `translateY(${(1 - q) * 46}px) scale(${0.9 + 0.1 * q})`, filter: o < 1 ? `blur(${(1 - o) * 10}px)` : undefined,
+          fontStyle: it ? "italic" : "normal", color: it ? DEEP : undefined }}>{w}</span>;
+      })}
+    </div>
+  );
+};
+
 // ── the scene ────────────────────────────────────────────────────────────────────────────────────────────────────
 export const Scene1: React.FC<{ g: number }> = ({ g }) => {
   const HOFF = f("h1") - HANDOFF_HALF;
@@ -254,9 +275,9 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
   const imp = [0.2, 0.34, 0.42].reduce((s, ti, i) => s + (t >= ti ? [0.55, 0.4, 0.25][i] * Math.exp(-(t - ti) / 0.045) : 0), 0);
   const fs = t < 0.2 ? (t / 0.2) * 0.4 : 0;
   const D = 30, dw = D * (1 + 0.5 * imp - 0.2 * fs), dh = D * (1 - 0.4 * imp + fs);
-  const pd = sp(t, 0.43, 0.26, 0.6), wp = sp(t, 0.62, 0.5, 0.68);
+  const pd = sp(t, 0.43, 0.26, 0.5), wp = sp(t, 0.62, 0.55, 0.5);
   const capW = t < 0.43 ? dw : mix(dw, 200, pd), capH = t < 0.43 ? dh : mix(dh, 60, pd);
-  const w = capW + (STAGE.w - 200) * wp, h = capH + (STAGE.h - 60) * wp;
+  const w = Math.min(STAGE.w, capW + (STAGE.w - 200) * wp), h = Math.min(STAGE.h, capH + (STAGE.h - 60) * wp), osc = 1 + 0.55 * Math.max(0, wp - 1);
   const cy = t < 0.43 ? y + 15 - dh / 2 : 540;
   const r = Math.min(w / 2, h / 2, mix(30, 16, clamp01(wp)));
   const col = mixc(SAGE, "#FFFFFF", clamp01(wp * 1.4));
@@ -270,20 +291,21 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
   // the prompt field docks onto the lower part of the stage (4.1) and drops away at the press (6.09)
   const txt = "Holm Fysioterapi", t0 = 4.62, cps = 12;
   const n = Math.max(0, Math.min(txt.length, Math.floor((t - t0) * cps)));
-  const dock = sp(t, 4.1, 0.5, 0.62), leave = ez(t, 6.16, 0.3, EASE_IN);
-  const fieldDy = (1 - dock) * 190 + leave * 200;
+  const fdy = (tt: number) => (1 - sp(tt, 4.1, 0.5, 0.5)) * 190 + ez(tt, 6.16, 0.3, EASE_IN) * 200;
+  const leave = ez(t, 6.16, 0.3, EASE_IN);
+  const fieldDy = fdy(t), fieldSq = squash(0, fdy(t) - fdy(t - 1 / 30), 0.003);
   const btn = sp(t, 4.5, 0.4, 0.55), pr = 1 - 0.14 * Math.max(0, Math.min(1, (t - 6.09) / 0.08)) * (t < 6.21 ? 1 : Math.exp(-(t - 6.21) * 12));
   const caretOn = n < txt.length || Math.floor(t * 2.2) % 2 === 0;
-  const hdr = sp(t, 4.45, 0.45, 0.62) * (1 - ez(t, 6.1, 0.22, INOUT));
+  const hdr = sp(t, 4.45, 0.45, 0.5) * (1 - ez(t, 6.1, 0.22, INOUT));
   const showField = t > 4.08 && t < 6.5;
   const lab = ez(t, 4.2, 0.4, OUT);
 
   // the flip to the code side and back ("Ingen teknik")
-  const theta = 180 * sp(t, 8.13, 0.36, 0.7) - 180 * sp(t, 8.82, 0.36, 0.7);
+  const theta = 180 * sp(t, 8.13, 0.42, 0.55) - 180 * sp(t, 8.82, 0.42, 0.55);
   const back = theta > 90;
 
   const stageEl = (
-    <Shaped BW={1000} BH={640} cx={960} cy={cy} w={w} h={h} r={r} color={col} shadow={(1 - full) * 1.1} big={full}
+    <Shaped BW={1000} BH={640} cx={960} cy={cy} w={w} h={h} r={r} color={col} sc={osc} shadow={(1 - full) * 1.1} big={full}
       tf={Math.abs(theta) > 0.05 ? `perspective(2400px) rotateY(${theta}deg)` : ""}>
       {fo > 0.01 && !back && (
         <div style={{ position: "absolute", left: 0, top: 0, width: 1000, height: 640, opacity: fo }}>
@@ -294,7 +316,7 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
             <Looks t={t} />
             {showField && <SiteHeader name={txt.slice(0, Math.max(0, Math.min(txt.length, Math.floor((t - t0 - 0.12) * cps))))} p={hdr} />}
             {showField && (
-              <div style={{ position: "absolute", left: 30, top: STAGE.h - 46 - 24 - 110, width: 900, height: 110, transform: `translateY(${fieldDy}px)`, opacity: 1 - clamp01((leave - 0.5) * 2), fontFamily: SANS }}>
+              <div style={{ position: "absolute", left: 30, top: STAGE.h - 46 - 24 - 110, width: 900, height: 110, transform: `translateY(${fieldDy}px) ${fieldSq}`, opacity: 1 - clamp01((leave - 0.5) * 2), fontFamily: SANS }}>
                 <div style={{ position: "absolute", left: 0, top: -64, height: 50, padding: "0 24px", borderRadius: 25, background: "rgba(250,250,248,0.94)", border: `1px solid ${C.line}`, boxShadow: SHADOW,
                   display: "flex", alignItems: "center", fontSize: 28, fontWeight: 500, color: C.muted, whiteSpace: "nowrap", opacity: lab, transform: `translateY(${(1 - lab) * 14}px)` }}>Fortæl kort om din virksomhed</div>
                 <LiquidGlass w={900} h={110} radius={55} p={1} sheen={0.5 + 0.5 * Math.sin(t * 1.8)} tint="clear" />
@@ -332,22 +354,25 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
   let spark: React.ReactNode = null;
   if (t >= 2.5 && t < 6.3) {
     const WP: [number, number, number][] = [[SL + STAGE.w - 18 - 64, ST + 23, 2.5], [1180, 430, 2.82], [760, 470, 3.12], [900, 700, 3.42], [1210, 650, 3.72]];
-    let px = WP[0][0], py = WP[0][1];
-    for (let i = 0; i < WP.length - 1; i++) {
-      if (t >= WP[i][2]) { const q = ez(t, WP[i][2], WP[i + 1][2] - WP[i][2], INOUT); px = mix(WP[i][0], WP[i + 1][0], q); py = mix(WP[i][1], WP[i + 1][1], q); }
-    }
-    const born = sp(t, 2.5, 0.45, 0.55), dive = ez(t, 3.95, 0.45, INOUT);
-    const iconY = ST + 46 + (STAGE.h - 46 - 24 - 55) + fieldDy;
-    const x = mix(px, SL + 30 + 64, dive), yy = mix(py, iconY, dive);
+    const pos = (tt: number) => {
+      let px = WP[0][0], py = WP[0][1];
+      for (let i = 0; i < WP.length - 1; i++) {
+        if (tt >= WP[i][2]) { const q = camSpring(clamp01((tt - WP[i][2]) / (WP[i + 1][2] - WP[i][2]))); px = mix(WP[i][0], WP[i + 1][0], q); py = mix(WP[i][1], WP[i + 1][1], q); }
+      }
+      const dv = Math.max(0, sp(tt, 3.95, 0.45, 0.6)), ic = ST + 46 + (STAGE.h - 46 - 24 - 55) + fdy(tt);
+      return [mix(px, SL + 30 + 64, dv), mix(py, ic, dv)];
+    };
+    const born = sp(t, 2.5, 0.45, 0.5), dive = clamp01(sp(t, 3.95, 0.45, 0.6));
+    const [x, yy] = pos(t), [x1, y1] = pos(t - 1 / 30), sqs = squash(x - x1, yy - y1, 0.0016);
     const sc = mix(born, 56 / 260, dive) * (1 - ez(t, 6.1, 0.18, INOUT));
     const rot = -230 * (1 - sp(t, 2.5, 0.55, 0.62)) + 90 * (Math.min(t, 4.4) - 2.5);
-    spark = <Sparkle t={t} x={x} y={yy} size={260} rot={rot} scale={sc} />;
+    spark = <Sparkle t={t} x={x} y={yy} size={260} rot={rot} scale={sc} sq={sqs} />;
   }
 
   const lines = (
     <>
-      {t > 1.36 && t < 2.62 && <Line text="få minutter" y={985} size={76} p={clamp01((t - 1.38) / 0.8)} out={ez(t, 2.34, 0.26, INOUT)} italicWords={["minutter"]} />}
-      {t > 2.58 && t < 4.15 && <Line text="Bygget af AI." y={985} size={76} p={clamp01((t - 2.6) / 1.9)} out={ez(t, 3.86, 0.24, INOUT)} italicWords={["AI"]} />}
+      {t > 1.36 && t < 2.62 && <SLine t={t} text="få minutter" t0={1.38} D={0.8} y={985} size={76} out={ez(t, 2.34, 0.26, INOUT)} italicWords={["minutter"]} />}
+      {t > 2.58 && t < 4.15 && <SLine t={t} text="Bygget af AI." t0={2.6} D={1.9} y={985} size={76} out={ez(t, 3.86, 0.24, INOUT)} italicWords={["AI"]} />}
     </>
   );
 

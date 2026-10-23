@@ -11,7 +11,7 @@ import React from "react";
 import { Img, staticFile } from "remotion";
 import { C, INOUT, LIN, OUT, SANS, SERIF, clamp01, mix, DROP_BIG, appleShadow } from "../lib";
 import { Island, PillButton, RollNumber, Ico, f } from "../shared";
-import { CX, CY, HANDOFF_HALF, Line, NEW_HEADLINE, Stage, StageHandoff, STAGE } from "../v5";
+import { CX, CY, HANDOFF_HALF, NEW_HEADLINE, Stage, StageHandoff, STAGE } from "../v5";
 import { WM_DOT, WM_VIEW, WM_WORD } from "../wordmark";
 
 // ── clock helpers (seconds; own springs so nothing is rounded to the 30 fps grid) ──────────────────────────────────
@@ -30,14 +30,14 @@ const spr = (t: number, at: number, resp = 0.45, damp = 0.62) => {
 const ez = (t: number, at: number, dur: number, e: (x: number) => number = OUT) => e(clamp01((t - at) / dur));
 /** a short decaying wobble after `at` (a kick): 0 before, ±1 → 0 after */
 const kick = (t: number, at: number, rate = 9, freq = 26) => { const x = t - at; return x <= 0 ? 0 : Math.exp(-x * rate) * Math.sin(x * freq); };
-/** Apple press feedback: 0 → 1 in 0.1 s, held, released with a spring */
+/** Apple press feedback, deep: 0 → 1 in 0.09 s, held, released by an underdamped spring (it rebounds past rest) */
 const prs = (t: number, at: number, hold = 0.12) => {
   const x = t - at;
   if (x < 0) return 0;
-  if (x < 0.1) return x / 0.1;
-  if (x < 0.1 + hold) return 1;
-  const r = x - 0.1 - hold, w0 = (2 * Math.PI) / 0.3;
-  return (1 + w0 * r) * Math.exp(-w0 * r);
+  if (x < 0.09) return x / 0.09;
+  if (x < 0.09 + hold) return 1;
+  const r = x - 0.09 - hold, w0 = (2 * Math.PI) / 0.32, z = 0.42, wd = w0 * Math.sqrt(1 - z * z);
+  return Math.exp(-z * w0 * r) * (Math.cos(wd * r) + ((z * w0) / wd) * Math.sin(wd * r));
 };
 const sh = (a: number) => appleShadow(a, 0.35);
 const cmix = (a: string, b: string, pa: number) => `color-mix(in srgb, ${a} ${(clamp01(pa) * 100).toFixed(1)}%, ${b})`;
@@ -58,9 +58,17 @@ const CAM: Key[] = [
   [50.28, 1130, 520, 1.12], [50.75, 960, 530, 1.06], // the button lands: frame it
   [51.3, 960, 530, 1.06], [51.85, 900, 500, 1.16], [52.4, 900, 500, 1.16], [52.95, 1020, 520, 1.06], [53.5, 1020, 520, 1.06], [54.05, 940, 500, 1.16], [54.6, 940, 500, 1.16], [55.2, 960, 530, 1.06],
 ];
+/** a push with a small anticipation the other way, an overshoot and a quick settle (done in 88% of the segment) */
+const camEase = (u: number) => {
+  const q = clamp01(u / 0.88);
+  if (q <= 0) return 0;
+  if (q < 0.1) return -0.02 * Math.sin((Math.PI * q) / 0.1);                   // anticipation
+  const r = (q - 0.1) / 0.9, c1 = 1.25, c3 = c1 + 1;                              // easeOutBack: overshoot ≈ 4%
+  return 1 + c3 * Math.pow(r - 1, 3) + c1 * Math.pow(r - 1, 2);
+};
 const camAt = (t: number) => {
   if (t <= CAM[0][0]) return CAM[0];
-  for (let i = 1; i < CAM.length; i++) if (t <= CAM[i][0]) { const a = CAM[i - 1], b = CAM[i], e = INOUT(clamp01((t - a[0]) / Math.max(1e-6, b[0] - a[0]))); return [t, mix(a[1], b[1], e), mix(a[2], b[2], e), mix(a[3], b[3], e)] as Key; }
+  for (let i = 1; i < CAM.length; i++) if (t <= CAM[i][0]) { const a = CAM[i - 1], b = CAM[i], e = camEase((t - a[0]) / Math.max(1e-6, b[0] - a[0])); return [t, mix(a[1], b[1], e), mix(a[2], b[2], e), mix(a[3], b[3], e)] as Key; }
   return CAM[CAM.length - 1];
 };
 // ── photos swapping in the hero frame (the frame is the kit site's photo: design 760,120, 630×560) ───────────────────
@@ -156,6 +164,17 @@ const Words: React.FC<{ words: string[]; ats: number[]; t: number; x: number; y:
   </div>
 );
 
+/** one short line: every word springs up out of blur with a little overshoot (own version of the kit's Line) */
+const SLine: React.FC<{ text: string; t: number; at: number; y: number; size: number; out?: number; serif?: boolean; color?: string; italicWords?: string[] }> =
+  ({ text, t, at, y, size, out = 0, serif = true, color = C.ink, italicWords = [] }) => (
+  <div style={{ position: "absolute", left: CX - 900, top: y - size * 0.62, width: 1800, textAlign: "center", fontFamily: serif ? SERIF : SANS, fontSize: size, fontWeight: serif ? 400 : 500,
+    letterSpacing: serif ? "-0.025em" : "-0.01em", color, lineHeight: 1.15, whiteSpace: "nowrap", opacity: 1 - out, transform: `translateY(${-28 * out}px)`, filter: out > 0 ? `blur(${10 * out}px)` : undefined }}>
+    {text.split(" ").map((w, i) => {
+      const q = spr(t, at + i * 0.09, 0.45, 0.55), o = clamp01(q * 2.5), it = italicWords.includes(w.replace(/[.,?!]/g, ""));
+      return <span key={i} style={{ display: "inline-block", marginRight: "0.26em", opacity: o, transform: `translateY(${(1 - q) * 44}px)`, filter: o < 1 ? `blur(${(1 - o) * 10}px)` : undefined, fontStyle: it ? "italic" : "normal", color: it ? C.sageDeep : undefined }}>{w}</span>;
+    })}
+  </div>
+);
 // ── drawings ───────────────────────────────────────────────────────────────────────────────────────────────────────
 const Dots: React.FC<{ t: number; x: number; y: number; o: number; color?: string }> = ({ t, x, y, o, color = "#fff" }) => (
   <Abs x={x - 48} y={y - 11} style={{ opacity: o, display: "flex", gap: 18 }}>
@@ -210,14 +229,14 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
   let stageTr = "", stageSc = 1, stageOp = 1;
   const stageOn = t < B.collapse + 0.45 || t >= B.reopen;
   if (t < B.collapse + 0.45) {
-    const shift = spr(t, B.open, 0.55, 0.8), c = ez(t, B.collapse, 0.4, INOUT);
+    const shift = spr(t, B.open, 0.55, 0.6), c = ez(t, B.collapse, 0.4, INOUT);
     stageTr = `translate(${mix(-SX * shift, 1290 - CX, c)}px, ${mix(0, 540 - CY, c)}px)`;
     stageSc = mix(ZS, 0.06, c); stageOp = 1 - clamp01((c - 0.75) / 0.25);
   } else {
-    const u = spr(t, B.reopen, 0.5, 0.62);
+    const u = spr(t, B.reopen, 0.5, 0.5);
     stageSc = mix(0.12, ZS, u); stageOp = clamp01(u * 3);
     if (t >= B.flipOut && t < B.flipIn) stageTr = `perspective(2200px) rotateY(${90 * ez(t, B.flipOut, 0.14, INOUT)}deg)`;
-    else if (t >= B.flipIn) stageTr = `perspective(2200px) rotateY(${-90 * (1 - spr(t, B.flipIn, 0.34, 0.65))}deg)`;
+    else if (t >= B.flipIn) stageTr = `perspective(2200px) rotateY(${-90 * (1 - spr(t, B.flipIn, 0.5, 0.45))}deg)`;
   }
   // Se den: a sage scan band sweeps down the live site (twice, always downward)
   const su = (t - (L.se + 0.02)) / 0.4, scanOn = su >= 0 && su < 2, scanY = su - Math.floor(su);
@@ -236,8 +255,8 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
   // ── 1+2. the support chat opens OVER the live site: the question types, the human's reply types, "Svarer nu" ─────────
   let panel: React.ReactNode = null;
   if (t >= START && t < B.launch) {
-    const btn = spr(t, START + 0.02, 0.4, 0.5), po = spr(t, B.open, 0.5, 0.7);
-    const qm = spr(t, B.card, 0.5, 0.62), d = ez(t, B.cardOut, 0.3, INOUT);
+    const btn = spr(t, START + 0.02, 0.4, 0.5), po = spr(t, B.open, 0.5, 0.5);
+    const qm = spr(t, B.card, 0.5, 0.5), d = ez(t, B.cardOut, 0.3, INOUT);
     const bw = 96 * btn;
     let w = mix(bw, PANEL.w, po), h = mix(bw, PANEL.h, po), r = mix(48, 40, po);
     const x = mix(1390, PANEL.x, po), y = mix(800, PANEL.y, po);
@@ -249,8 +268,8 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
     const chatOp = ez(t, B.open + 0.25, 0.15, LIN) * (1 - ez(t, B.card - 0.2, 0.14, LIN));
     const Q = "Brug for hjælp?", qTxt = typed(t, B.open + 0.5, Q, 34);
     const caret = Math.floor(t * 4) % 2 === 0 || qTxt.length < Q.length;
-    const qb = spr(t, B.open + 0.35, 0.42, 0.6);
-    const pR = spr(t, L.et, 0.5, 0.6), pA = spr(t, B.open + 0.5, 0.42, 0.5), pI = spr(t, L.forstr, 0.5, 0.6);
+    const qb = spr(t, B.open + 0.35, 0.42, 0.5);
+    const pR = spr(t, L.et, 0.5, 0.5), pA = spr(t, B.open + 0.5, 0.42, 0.45), pI = spr(t, L.forstr, 0.5, 0.5);
     const rx = mix(1150, 1290, pR), ry = mix(380, 630, pR);
     const l1 = ["Hej!", "Hvordan", "kan"], l2 = ["jeg", "hjælpe?"], ats = [0, 1, 2, 3, 4].map((i) => L.et + 0.5 + i * 0.16);
     const ripple = (at: number) => { const q = ez(t, at, 0.6, OUT); return q > 0 && q < 1 ? <div key={at} style={{ position: "absolute", left: 0, top: 0, width: 96, height: 96, borderRadius: 48, border: `5px solid ${C.sage}`, boxSizing: "border-box", opacity: 0.7 * (1 - q), transform: `translate(${1116 - 48}px, ${366 - 48}px) scale(${1 + 0.9 * q})` }} /> : null; };
@@ -291,14 +310,14 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
     );
   }
   // "Ingen kø." and "Ingen robotsvar." under the stage (one line at a time)
-  const lineKo = t >= L.ingen4 - 0.05 && t < B.cardOut + 0.5 ? <Line text="Ingen kø." y={LINE_Y} size={LINE_SIZE} p={ez(t, L.ingen4, 0.9, LIN)} out={ez(t, B.cardOut - 0.12, 0.26, INOUT)} italicWords={["kø"]} /> : null;
-  const lineRobot = t >= L.ingen5 - 0.05 && t < B.launch + 0.5 ? <Line text="Ingen robotsvar." y={LINE_Y} size={LINE_SIZE} p={ez(t, L.ingen5, 1.0, LIN)} out={ez(t, B.launch - 0.2, 0.35, INOUT)} italicWords={["robotsvar"]} /> : null;
+  const lineKo = t >= L.ingen4 - 0.05 && t < B.cardOut + 0.5 ? <SLine text="Ingen kø." y={LINE_Y} size={LINE_SIZE} t={t} at={L.ingen4} out={ez(t, B.cardOut - 0.12, 0.26, INOUT)} italicWords={["kø"]} /> : null;
+  const lineRobot = t >= L.ingen5 - 0.05 && t < B.launch + 0.5 ? <SLine text="Ingen robotsvar." y={LINE_Y} size={LINE_SIZE} t={t} at={L.ingen5} out={ez(t, B.launch - 0.2, 0.35, INOUT)} italicWords={["robotsvar"]} /> : null;
 
   // ── 4. the robot: pops out of the dot over the stage, shakes "no", is flicked away ─────────────────────────────────
   let robot: React.ReactNode = null;
   const tf = L.robot + 0.04;
   if (t >= L.ingen5 && t < tf + 0.55) {
-    const pop = spr(t, L.ingen5, 0.45, 0.5), x0 = t - (L.ingen5 + 0.3);
+    const pop = spr(t, L.ingen5, 0.45, 0.45), x0 = t - (L.ingen5 + 0.3);
     const wob = x0 > 0 ? 11 * Math.sin(x0 * 34) * Math.exp(-x0 * 6) : 0;
     const pull = ez(t, tf - 0.14, 0.14, INOUT), fly = ez(t, tf, 0.5, OUT);
     const dx = -40 * pull + 1000 * fly, dy = 16 * pull - 420 * fly;
@@ -320,7 +339,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
     const base = mix(DOT / WM_DOT_D, 1, ux);
     const bph = ((t - 46.4) % 0.7 + 0.7) % 0.7 / 0.7, beat = 1 + (t > 46.4 ? 0.9 * Math.pow(Math.max(0, Math.sin(Math.PI * bph)), 6) : 0);   // the full stop pulses with the shine
     const rev = ez(t, B.land - 0.02, 0.7, OUT);
-    const sl = spr(t, B.slide, 0.5, 0.75);
+    const sl = spr(t, B.slide, 0.5, 0.55);
     const k0 = WM_VIEW.w / WM_W;
     wm = (
       <div style={{ position: "absolute", left: CX - WM_W / 2, top: CY - WM_H / 2, width: WM_W, height: WM_H, transform: `translateY(${sl * (WM_Y - CY)}px) scale(${mix(1, 0.5, sl)})`, transformOrigin: "50% 50%" }}>
@@ -338,18 +357,20 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
   // ── 6. Hjemmeside + Hosting: two pills glide together and merge (Gooey) ON the re-opened stage ─────────────────────
   let goo: React.ReactNode = null, over: React.ReactNode = null;
   if (t >= B.reopen + 0.05 && t < B.flipOut + 0.1) {
-    const uL = spr(t, L.hjem - 0.06, 0.5, 0.62), uR = spr(t, L.hosting - 0.02, 0.5, 0.58), m = spr(t, B.merge, 0.46, 0.7);
+    const uL = spr(t, L.hjem - 0.06, 0.5, 0.5), uR = spr(t, L.hosting - 0.02, 0.5, 0.5), m = spr(t, B.merge, 0.46, 0.5);
     const pLx = mix(CX - 330, CX - 130, m), pRx = mix(CX + 330, CX + 130, m);
     const kP = 1 + 0.06 * (kick(t, L.t, 8, 26) + kick(t, L.sted, 8, 26));
     const pWid = PW * (1 + 0.1 * Math.sin(Math.PI * clamp01(m)));
+    const stre = (u: number, at: number, rs: number, dm: number) => 1 + Math.min(0.24, Math.abs(u - spr(t - 1 / 60, at, rs, dm)) * 60 * 0.14);   // squash & stretch on fast travel
+    const stL = stre(uL, L.hjem - 0.06, 0.5, 0.5) * (1 + 0.1 * Math.abs(m - spr(t - 1 / 60, B.merge, 0.46, 0.5)) * 60), stR = stre(uR, L.hosting - 0.02, 0.5, 0.5) * (1 + 0.1 * Math.abs(m - spr(t - 1 / 60, B.merge, 0.46, 0.5)) * 60);
     const ldx = t < B.merge ? mix(CX - 640, pLx, uL) : pLx, rdx = t < B.merge ? mix(CX + 640, pRx, uR) : pRx;
     const ly = mix(PY + 120, PY, uL), ry = mix(PY - 90, PY, uR);
     const gone = ez(t, B.flipOut - 0.08, 0.1, LIN), gs = 1 - gone;
     goo = (
       <div style={{ position: "absolute", left: 0, top: 200, width: 1920, height: 700, filter: "url(#goo)" }}>
         <div style={{ position: "absolute", left: 0, top: -200, width: 1920, height: 1080 }}>
-          {uL > 0.001 && <Blob x={ldx} y={ly} w={pWid * kP * gs} h={PH * kP * gs} />}
-          {uR > 0.001 && <Blob x={rdx} y={ry} w={pWid * kP * gs} h={PH * kP * gs} />}
+          {uL > 0.001 && <Blob x={ldx} y={ly} w={pWid * kP * gs * stL} h={PH * kP * gs / Math.sqrt(stL)} />}
+          {uR > 0.001 && <Blob x={rdx} y={ry} w={pWid * kP * gs * stR} h={PH * kP * gs / Math.sqrt(stR)} />}
         </div>
       </div>
     );
@@ -374,10 +395,10 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
     const hits = [0, 1, 2, 3, 4, 5, 6].map((i) => B.build + (0.85 * (i + 0.7)) / 7);
     const hit = hits.reduce((a, at) => Math.max(a, bump(t - (at - 0.09))), 0);
     const hammerOn = t >= B.build - 0.05 && t < L.se + 0.1;
-    const eyeS = spr(t, L.se, 0.4, 0.5), blink = 1 - 0.92 * Math.exp(-Math.pow((t - (L.se + 0.5)) / 0.05, 2));
-    const tg = spr(t, L.s2 - 0.04, 0.45, 0.6), gt = spr(t, B.gather, 0.42, 0.8);
+    const eyeS = spr(t, L.se, 0.4, 0.45), blink = 1 - 0.92 * Math.exp(-Math.pow((t - (L.se + 0.5)) / 0.05, 2));
+    const tg = spr(t, L.s2 - 0.04, 0.45, 0.5), gt = spr(t, B.gather, 0.45, 0.6);
     const gathered = t >= B.gather;
-    const pp = Math.max(prs(t, B.press), prs(t, 53.3), prs(t, 54.6)), pr = t >= B.byg2 ? 1 - 0.05 * pp : 1;
+    const pp = Math.max(prs(t, B.press), prs(t, 53.3), prs(t, 54.6)), pr = t >= B.byg2 ? 1 - 0.09 * pp : 1;
     // the tag docks (slides in from the right with a squash), then morphs into the button
     let tx = mix(CX + 760, TAG.x, tg), tw = TAG.w, th = TAG.h, tr = 36, tcol = "#FFFFFF", ty = TAG.y;
     if (gathered) {
@@ -385,10 +406,10 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
       if (t >= B.byg2) { tw *= pr; th *= pr; }
     }
     const tagOn = t >= L.s2 - 0.1;
-    const tagVx = (mix(CX + 760, TAG.x, spr(t, L.s2 - 0.04, 0.45, 0.6)) - mix(CX + 760, TAG.x, spr(t - 1 / 60, L.s2 - 0.04, 0.45, 0.6))) * 30 * 0.5;
+    const tagVx = (mix(CX + 760, TAG.x, spr(t, L.s2 - 0.04, 0.45, 0.5)) - mix(CX + 760, TAG.x, spr(t - 1 / 60, L.s2 - 0.04, 0.45, 0.5))) * 30 * 0.5;
     const stretch = gathered ? 1 : 1 + Math.min(0.18, Math.abs(tagVx) * 0.0035);
     const cOp = (gathered ? 1 - ez(t, B.gather - 0.02, 0.12, LIN) : 1) * clamp01(tg * 3);
-    const priceP = ez(t, L.s2 + 0.12, 0.45, OUT), chk = spr(t, L.s2 + 0.45, 0.4, 0.5);
+    const priceP = ez(t, L.s2 + 0.12, 0.45, OUT), chk = spr(t, L.s2 + 0.45, 0.4, 0.45);
     const reveal = ez(t, B.byg2 + 0.04, 0.62, LIN);
     const ph = t < 51.1 ? -1 : (((t - 51.1) % 0.7) + 0.7) % 0.7 / 0.7, bandX = mix(-380, BTN.w + 40, ph);
     steps = (
@@ -419,11 +440,11 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
       </>
     );
     // one line at a time under the stage
-    const ln = (txt: string, at: number, next: number, it: string[]) => t >= at - 0.05 && t < next + 0.4 ? <Line key={txt} text={txt} y={LINE_Y} size={LINE_SIZE} p={ez(t, at, 0.45, LIN)} out={t > next - 0.12 ? ez(t, next - 0.12, 0.2, INOUT) : 0} italicWords={it} /> : null;
+    const ln = (txt: string, at: number, next: number, it: string[]) => t >= at - 0.05 && t < next + 0.4 ? <SLine key={txt} text={txt} y={LINE_Y} size={LINE_SIZE} t={t} at={at} out={t > next - 0.12 ? ez(t, next - 0.12, 0.2, INOUT) : 0} italicWords={it} /> : null;
     lines = (
       <>
         {ln("Byg den.", L.byg, L.se, ["Byg"])}{ln("Se den.", L.se, L.s2, ["Se"])}{ln("Så køber du.", L.s2, B.gather + 0.1, ["køber"])}
-        {t >= L.creoble4 - 0.05 && <Line text="creoble.dk" y={LINE_Y} size={56} p={ez(t, L.creoble4, 0.6, LIN)} serif={false} color={C.sageDeep} />}
+        {t >= L.creoble4 - 0.05 && <SLine text="creoble.dk" y={LINE_Y} size={56} t={t} at={L.creoble4} serif={false} color={C.sageDeep} />}
       </>
     );
   }

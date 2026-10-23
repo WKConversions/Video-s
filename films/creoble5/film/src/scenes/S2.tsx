@@ -8,7 +8,7 @@ import React from "react";
 import { Img, staticFile } from "remotion";
 import { C, HOLM, INOUT, OUT, SANS, SERIF, clamp01, mix, SHADOW_BIG } from "../lib";
 import { Ico, LiquidGlass, RollNumber, f } from "../shared";
-import { CX, CY, HANDOFF_HALF, Line, MiniSite, PHONE, Phone, SCREEN, STAGE, Stage, StageHandoff, TYPE, NEW_HEADLINE } from "../v5";
+import { CX, CY, HANDOFF_HALF, MiniSite, PHONE, Phone, SCREEN, STAGE, Stage, StageHandoff, TYPE, NEW_HEADLINE } from "../v5";
 
 // ── local helpers (times in seconds) ─────────────────────────────────────────────────────────────────────────────
 const kk = (t: number, at: number, dur: number, ease: (x: number) => number = OUT) => ease(clamp01((t - at) / dur));
@@ -75,7 +75,7 @@ const T_ISLAND_ON = 11.58;                       // "færdig"
 const T_TAG = 13.3;                              // "krone"
 const T_TAG_OUT = 13.98;
 const T_PUSH = 14.2, T_PUSH_END = 14.65;         // "Vil du ændre noget?": the camera pushes in on the headline (fast, eased)
-const T_PULL = 16.3, T_PULL_END = 16.75;         // on the check it pulls back out to 1.4×
+const T_PULL = 16.3;         // on the check it pulls back out to 1.4×
 const T_TAP = 14.4;                              // "ændre": a finger taps the headline
 const T_SELECT = 14.5;
 const T_BUBBLE = 14.76;                          // "Skriv"
@@ -119,6 +119,19 @@ const Pencil: React.FC<{ s?: number; c?: string; tilt?: number }> = ({ s = 22, c
   </svg>
 );
 
+/** one short line: each word springs up with an overshoot (damping ~0.5) from blur to sharp; `out` blurs it away upward */
+const SpringLine: React.FC<{ t: number; at: number; words: string[]; italicWords: string[]; x: number; y: number; out: number; size: number }> = ({ t, at, words, italicWords, x, y, out, size }) => (
+  <div style={{ position: "absolute", left: x - 900, top: y - size * 0.62, width: 1800, textAlign: "center", fontFamily: SERIF, fontSize: size, fontWeight: 400, letterSpacing: "-0.025em", color: C.ink, lineHeight: 1.15, whiteSpace: "nowrap",
+    opacity: 1 - out, transform: `translateY(${-28 * out}px)`, filter: out > 0 ? `blur(${10 * out}px)` : undefined }}>
+    {words.map((w, i) => {
+      const q = spr(t, at + i * 0.09, 0.5, 0.5);
+      const it = italicWords.includes(w);
+      return <span key={i} style={{ display: "inline-block", marginRight: "0.26em", opacity: clamp01(q * 2.2), transform: `translateY(${(1 - q) * 46}px) scale(${0.9 + 0.1 * q})`,
+        filter: q < 1 ? `blur(${Math.max(0, 1 - q) * 10}px)` : undefined, fontStyle: it ? "italic" : "normal", color: it ? C.sageDeep : undefined }}>{w}</span>;
+    })}
+  </div>
+);
+
 export const Scene2: React.FC<{ g: number }> = ({ g }) => {
   const h1 = f("h1"), h2 = f("h2");
   if (g <= h1 + HANDOFF_HALF) return <StageHandoff g={g} at="h1" />;
@@ -128,12 +141,15 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
   const E0 = (h1 + HANDOFF_HALF) / 30;    // the stage is at scroll 300 here
 
   // ── the stage morphs into the phone (one clip-path box), and back at h2 ──────────────────────────────────────
-  const pc = spr(t, E0, 0.42, 0.85);                          // the browser narrows into the phone (clip morph)
-  const pcs = spr(t, E0 + 0.04, 0.5, 0.55);                   // the phone's own spring: it pops up a little and settles
-  const fold = INOUT(clamp01((t - T_FOLD) / (T_FOLD_END - T_FOLD)));
+  const pc = spr(t, E0, 0.46, 0.62);                          // the browser narrows into the phone (clip morph)
+  const pcs = spr(t, E0 + 0.03, 0.56, 0.46);                   // the phone's own spring: it pops up a little and settles
+  const foldU = clamp01((t - T_FOLD) / (T_FOLD_END - T_FOLD));
+  const fold = INOUT(foldU) - 0.07 * Math.sin(Math.PI * clamp01(foldU / 0.3));   // a small inhale (anticipation) before it shrinks
   const m = pc * (1 - fold);                                  // 0 = the stage, 1 = the phone
   // the camera push: scale everything up around the headline (1.4× → 2.1×) and back
-  const pp = INOUT(clamp01((t - T_PUSH) / (T_PUSH_END - T_PUSH))) * (1 - INOUT(clamp01((t - T_PULL) / (T_PULL_END - T_PULL))));
+  const pushP = spr(t, T_PUSH + 0.09, 0.4, 0.55) - 0.03 * Math.sin(Math.PI * clamp01((t - T_PUSH) / 0.18));   // 3% back first, then an overshoot settle
+  const pullP = t < T_PULL ? 0 : mix(spr(t, T_PULL + 0.09, 0.4, 0.55) - 0.03 * Math.sin(Math.PI * clamp01((t - T_PULL) / 0.18)), 1, clamp01((t - T_FOLD) / (T_FOLD_END - T_FOLD)));
+  const pp = pushP * (1 - pullP);
   const sc = mix(SN, 1, pp);
   const FOCUS_Y = 330, headLocalY = (144 - PHONE.h / 2) * PZ;   // the headline sits at phone point y 144
   const pushY = (FOCUS_Y - CY - headLocalY) * pp;
@@ -147,7 +163,7 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
   const stageOp = 1 - clamp01((m - 0.12) / 0.4), phoneOp = clamp01((m - 0.2) / 0.35);
   const wrapT = `translate(0px, ${pushY}px) scale(${sc})`;
   // the stage arrives at the hand-off's last state (scale 1.08, scroll 0), settles to 1.0 while it narrows, and is a plain stage (scale 1) at h2
-  const stageScale = mix(1.08, 1, INOUT(clamp01((t - E0) / 0.45)));
+  const stageScale = mix(1.08, 1, spr(t, E0, 0.5, 0.55));          // settles with a rubber-band dip below 1.0
 
   // ── the site: it builds, then ONE long steady scroll down (≥ 4 px/frame), a fast eased return ────────────────
   const build = mix(0.2, 1, kk(t, E0 + 0.05, 0.55));
@@ -160,7 +176,7 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
   // ── the headline: tapped, selected, deleted backwards, retyped ──────────────────────────────────────────────
   const fadeSel = kk(t, T_RETYPE + 0.05, 0.25, INOUT);
   const sel = Math.max(0, spr(t, T_SELECT, 0.45, 0.55)) * (1 - fadeSel);
-  const handles = Math.max(0, spr(t, T_SELECT + 0.08, 0.4, 0.5));   // the selection handles pop on and stretch to the text
+  const handles = Math.max(0, spr(t, T_SELECT + 0.08, 0.42, 0.45));   // the selection handles pop on and stretch to the text
   const handlesOn = t >= T_SELECT && fadeSel < 1;
   const nOld = t < T_DEL ? OLD_HEAD.length : Math.max(0, OLD_HEAD.length - Math.floor((t - T_DEL) * (OLD_HEAD.length / 0.26)));
   const nNew = Math.max(0, Math.min(NEW_HEAD.length, Math.floor((t - T_RETYPE) * (NEW_HEAD.length / 0.4))));
@@ -170,13 +186,13 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
   const headline = (
     <span style={{ display: "block", position: "relative" }}>
       <span style={{ position: "absolute", left: -7, right: -7, top: -4, bottom: -4, borderRadius: 10, background: `rgba(135,168,158,${0.34 * sel})`, boxShadow: `0 0 0 2px rgba(135,168,158,${clamp01(sel) * 0.9})`,
-        transform: `scale(${0.9 + 0.1 * sel})`, opacity: clamp01(sel * 4) }} />
+        transform: `scale(${0.84 + 0.16 * sel})`, opacity: clamp01(sel * 4) }} />
       {handlesOn && (
         <>
-          <span style={{ position: "absolute", left: -8, top: -4, width: 2, height: 34, background: C.sageDeep, opacity: clamp01(handles * 3) * (1 - fadeSel), transformOrigin: "50% 100%", transform: `scaleY(${clamp01(handles)})` }}>
+          <span style={{ position: "absolute", left: -8, top: -4, width: 2, height: 34, background: C.sageDeep, opacity: clamp01(handles * 3) * (1 - fadeSel), transformOrigin: "50% 100%", transform: `scaleY(${Math.min(1.18, handles)})` }}>
             <span style={{ position: "absolute", left: -4, top: -9, width: 10, height: 10, borderRadius: 5, background: C.sageDeep, transform: `scale(${Math.max(0, handles)})` }} />
           </span>
-          <span style={{ position: "absolute", right: -8, bottom: -4, width: 2, height: 34, background: C.sageDeep, opacity: clamp01(handles * 3) * (1 - fadeSel), transformOrigin: "50% 0%", transform: `scaleY(${clamp01(handles)})` }}>
+          <span style={{ position: "absolute", right: -8, bottom: -4, width: 2, height: 34, background: C.sageDeep, opacity: clamp01(handles * 3) * (1 - fadeSel), transformOrigin: "50% 0%", transform: `scaleY(${Math.min(1.18, handles)})` }}>
             <span style={{ position: "absolute", left: -4, bottom: -9, width: 10, height: 10, borderRadius: 5, background: C.sageDeep, transform: `scale(${Math.max(0, handles)})` }} />
           </span>
         </>
@@ -196,38 +212,41 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
   const slideX = -242 * swaps.reduce((acc, at) => acc + kk(t, at, 0.4, INOUT), 0);
 
   // ── the Island ───────────────────────────────────────────────────────────────────────────────────────────────
-  const pI = Math.max(0, spr(t, T_ISLAND_ON, 0.5, 0.58));
+  const pI = Math.max(0, spr(t, T_ISLAND_ON, 0.52, 0.48) + 0.1 * Math.sin(Math.PI * clamp01((t - T_TAP) / 0.32)));
   const edit = kk(t, T_TAP, 0.3, INOUT);                         // the Island turns from "Forhåndsvisning" into "Redigerer"
   const islandClip = `inset(${mix(12, 5, pI)}px ${Math.max(0, mix(90, 20, pI))}px round ${mix(13, 20, clamp01(pI))}px)`;
   const islandTxt = clamp01((pI - 0.45) * 2.4);
 
   // ── the line at the left: one short line, blurs away before the scroll takes over ────────────────────────────
-  const headP = kk(t, E0 + 0.14, 0.62), headOut = kk(t, 11.12, 0.3, INOUT);
+  const headOut = kk(t, 11.12, 0.3, INOUT);
 
   // ── the big glass tag "0 kr." ────────────────────────────────────────────────────────────────────────────────
   const TW = 340, TH = 152, tagX = 1292, tagY = 400;
-  const tagIn = spr(t, T_TAG, 0.45, 0.6);
-  const tagSwing = -58 * (1 - spr(t, T_TAG, 0.62, 0.34));
-  const tagOut = INOUT(clamp01((t - T_TAG_OUT) / 0.3));
+  const tagIn = spr(t, T_TAG, 0.5, 0.5);
+  const tagSwing = -58 * (1 - spr(t, T_TAG, 0.62, 0.32));
+  const tagOutU = clamp01((t - T_TAG_OUT) / 0.3);
+  const tagOut = INOUT(tagOutU);
+  const tagStretch = 0.28 * Math.sin(Math.PI * tagOutU);   // squash and stretch along the flight into the Island
+  const tagAng = Math.atan2(CY - PH_N / 2 + 46 - tagY, CX - tagX);
   const tagOn = t > T_TAG - 0.02 && tagOut < 1;
   const toIslandX = CX - tagX, toIslandY = CY - PH_N / 2 + 46 - tagY;
 
   // ── the instruction bubble, at the left: rises with dots, widens, types, is sent ─────────────────────────────
   const BW = 640, BH = 104, BX = 960, BY = 905;
-  const rise = spr(t, T_BUBBLE, 0.52, 0.6);
-  const widen = spr(t, T_WIDEN, 0.42, 0.7);
+  const rise = spr(t, T_BUBBLE, 0.55, 0.48);
+  const widen = spr(t, T_WIDEN, 0.44, 0.5);
   const popAway = INOUT(clamp01((t - T_POP) / 0.24));
   const bubbleOn = t > T_BUBBLE - 0.02 && popAway < 1;
   const nIns = Math.max(0, Math.min(INSTRUCTION.length, Math.floor((t - T_TYPE) * 60)));
   const dotsA = 1 - clamp01((t - T_WIDEN) / 0.12);
   const sendP = pressAt(t, T_SEND, 0.1);
-  const checkP = Math.max(0, spr(t, T_CHECK, 0.42, 0.5));
+  const checkP = Math.max(0, spr(t, T_CHECK, 0.44, 0.45));
   const gone = clamp01((t - T_SEND - 0.12) / 0.3);              // the sent text lifts off toward the phone
   const hInset = ((BW - 112) / 2) * (1 - widen);
 
   return (
     <>
-      {headP > 0 && headOut < 1 && <Line text="Det bedste?" x={340} y={CY} p={headP} out={headOut} size={TYPE.head} italicWords={["bedste"]} />}
+      {t > E0 + 0.1 && headOut < 1 && <SpringLine t={t} at={E0 + 0.14} words={["Det", "bedste?"]} italicWords={["bedste?"]} x={340} y={CY} out={headOut} size={TYPE.head} />}
 
       {/* the stage (browser) morphing into the phone, and back */}
       <div style={{ position: "absolute", left: CX - WB_W / 2, top: CY - WB_H / 2, width: WB_W, height: WB_H, transform: wrapT, clipPath: clip }}>
@@ -237,7 +256,7 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
           </div>
         )}
         {phoneOp > 0.001 && (
-          <div style={{ position: "absolute", left: (WB_W - PW) / 2, top: 0, width: PW, height: PH, opacity: phoneOp, transform: `scale(${0.8 + 0.2 * pcs})` }}>
+          <div style={{ position: "absolute", left: (WB_W - PW) / 2, top: 0, width: PW, height: PH, opacity: phoneOp, transform: `scale(${0.68 + 0.32 * pcs})` }}>
           <div style={{ position: "absolute", left: 0, top: 0, width: PHONE.w, height: PHONE.h, zoom: PZ }}>
             <Phone x={PHONE.w / 2} y={PHONE.h / 2}>
               {/* the page scrolls as one promoted layer (two stacked windows of the same site) */}
@@ -294,7 +313,7 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
       {/* "0 kr." — a big Liquid Glass tag that swings in beside the phone and rolls its number */}
       {tagOn && (
         <div style={{ position: "absolute", left: tagX - TW / 2, top: tagY - TH / 2, width: TW, height: TH, transformOrigin: "0% 50%",
-          transform: `translate(${toIslandX * tagOut}px, ${toIslandY * tagOut}px) rotate(${tagSwing}deg) scale(${(0.6 + 0.4 * Math.min(1.1, tagIn)) * (1 - 0.85 * tagOut)})`, opacity: 1 - tagOut * tagOut }}>
+          transform: `translate(${toIslandX * tagOut}px, ${toIslandY * tagOut}px) rotate(${tagSwing}deg) scale(${(0.6 + 0.4 * Math.min(1.25, tagIn)) * (1 - 0.85 * tagOut)}) rotate(${tagAng}rad) scale(${1 + tagStretch}, ${1 - 0.6 * tagStretch}) rotate(${-tagAng}rad)`, opacity: 1 - tagOut * tagOut }}>
           <LiquidGlass w={TW} h={TH} p={Math.max(0, tagIn)} sheen={0.2 + 0.6 * kk(t, T_TAG, 0.9, INOUT)} tint="sage">
             <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: 14, fontFamily: SERIF, fontSize: 80, color: C.ink, letterSpacing: "-0.02em" }}>
               <RollNumber value={0} from={6} p={kk(t, T_TAG + 0.1, 0.6)} size={80} />
@@ -307,7 +326,7 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
       {/* the instruction: a big sage bubble with typing dots, then the text, then it is sent */}
       {bubbleOn && (
         <div style={{ position: "absolute", left: BX - BW / 2, top: BY - BH / 2, width: BW, height: BH,
-          transform: `translate(${gone * 70}px, ${(1 - rise) * 120 + popAway * 40}px) scale(${(0.5 + 0.5 * rise) * (1 - 0.35 * popAway)})`, opacity: clamp01(rise * 3) * (1 - popAway), filter: popAway > 0 ? `blur(${popAway * 6}px)` : undefined }}>
+          transform: `translate(${gone * 70}px, ${(1 - rise) * 120 + popAway * 40}px) scale(${(0.5 + 0.5 * rise) * (1 - 0.35 * popAway) * (1 + 0.07 * Math.sin(Math.PI * clamp01((t - T_POP) / 0.12)))}, ${(0.5 + 0.5 * rise) * (1 - 0.35 * popAway) * (1 + 0.07 * Math.sin(Math.PI * clamp01((t - T_POP) / 0.12))) * (1 + 0.16 * Math.max(-0.2, Math.min(1, 1 - rise)))})`, opacity: clamp01(rise * 3) * (1 - popAway), filter: popAway > 0 ? `blur(${popAway * 6}px)` : undefined }}>
           <div style={{ position: "absolute", inset: 0, background: C.sage, borderRadius: "52px 52px 14px 52px", clipPath: `inset(0 ${hInset}px 0 ${hInset}px round 52px)`, boxShadow: SHADOW_BIG }}>
             <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: 11, opacity: dotsA }}>
               {[0, 1, 2].map((i) => <div key={i} style={{ width: 16, height: 16, borderRadius: 8, background: C.ink, opacity: 0.55, transform: `translateY(${-9 * Math.max(0, Math.sin((t - T_BUBBLE) * 11 - i * 0.9))}px)` }} />)}
@@ -319,7 +338,7 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
             <div style={{ position: "absolute", right: 18, top: (BH - 68) / 2, width: 68, height: 68, borderRadius: 34, background: C.sageDeep, display: "flex", alignItems: "center", justifyContent: "center", opacity: clamp01((t - T_TYPE) * 6),
               transform: `scale(${(1 - 0.14 * sendP) * (1 + 0.3 * Math.max(0, checkP - 0.6) * (checkP < 1 ? 1 : 0))})` }}>
               <div style={{ position: "absolute", opacity: 1 - clamp01(checkP * 3), transform: `scale(${1 - clamp01(checkP * 3) * 0.4})` }}><Ico n="arrow" s={36} c="#fff" w={2.8} /></div>
-              <div style={{ position: "absolute", opacity: clamp01(checkP * 2.5), transform: `scale(${0.4 + 0.6 * Math.min(1.15, checkP)})` }}><Ico n="check" s={40} c="#fff" w={3} /></div>
+              <div style={{ position: "absolute", opacity: clamp01(checkP * 2.5), transform: `scale(${0.4 + 0.6 * Math.min(1.3, checkP)})` }}><Ico n="check" s={40} c="#fff" w={3} /></div>
             </div>
           </div>
         </div>
