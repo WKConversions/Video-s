@@ -133,15 +133,16 @@ export const Stage: React.FC<{ x?: number; y?: number; scale?: number; transform
   </div>
 );
 const HANDOFF_URL: Record<string, [string, number]> = { h1: ["Forhåndsvisning", 0], h2: ["Forhåndsvisning", 0], h3: ["Forhåndsvisning", 0], h4: ["holmfysio.dk", 1] };
-/** Revision 2 hand-off at hN: the stage centred, the site scrolling from 0 to 300 (design px) across the 0.5 s window. */
+/** Revision 3 hand-off at hN: the stage centred at scroll 0 (the page never scrolls back up), the camera pushing in
+ * from scale 1.0 to 1.08 across the 0.5 s window. Outgoing ends on scale 1, scroll 0; incoming starts on scale 1.08. */
 export const stageHandoffState = (g: number, at: string) => {
   const u = clamp01((g - (f(at) - HANDOFF_HALF)) / (2 * HANDOFF_HALF));
   const [url, live] = HANDOFF_URL[at];
-  return { scroll: 300 * INOUT(u), url, live, u };
+  return { scroll: 0, scale: 1 + 0.08 * INOUT(u), url, live, u };
 };
 /** The site's headline after "Creoble retter det." (S2): every stage from h2 on shows it. */
 export const NEW_HEADLINE = <>Velkommen hjem<br />i din krop.</>;
 export const StageHandoff: React.FC<{ g: number; at: string }> = ({ g, at }) => {
   const s = stageHandoffState(g, at);
-  return <Stage scroll={s.scroll} url={s.url} live={s.live} headline={at === "h1" ? undefined : NEW_HEADLINE} />;
+  return <Stage scroll={0} scale={s.scale} url={s.url} live={s.live} headline={at === "h1" ? undefined : NEW_HEADLINE} />;
 };

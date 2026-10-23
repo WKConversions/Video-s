@@ -1,3 +1,30 @@
+# REVISION 3 (Karl, on draft 3; overrides Revision 2 where they differ)
+> "I don't like that the website is constantly scrolling up and down."
+
+- **No scroll ping-pong, ever:**
+  - The page never scrolls back up.
+  - Scroll only where the beat is about looking at the site ("Du ser den færdig", "Se den"). There it is ONE calm
+    downward pass, readable and eased, never a time-lapse.
+  - To get back to the top, don't scroll up. Use a cut-like move: the phone turns in 3D and shows the top, or an
+    iOS-style status-bar tap jumps there behind a quick blur, or the page rebuilds.
+- **What replaces it (explaining motion, still aiming at ≥ 7%):**
+  - **Camera framing on the stage.** Push in on the part of the site the voice names (the headline, the address
+    bar, the price area, the booking button, a photo), glide to the next detail, pull back. Use varied directions,
+    eased speed ramps, purposeful.
+  - **Site content changing in place:**
+    - blocks building or rebuilding;
+    - photos swapping in their frames (slide or crossfade);
+    - the layout reflowing desktop ↔ mobile;
+    - the AI trying colour and type variants;
+    - sections fanning out as pages (Forside, Behandlinger, Kontakt);
+    - the headline being edited;
+    - the "Book tid" button appearing.
+  - **The beat objects docking:** price, chips, lock, chat, toggle, as now.
+- **Hand-offs:** the kit's `StageHandoff` is now a camera push-in (stage scale 1.0 → 1.08 at scroll 0), not a
+  scroll.
+  - Outgoing: end on the plain stage at scale 1, scroll 0.
+  - Incoming: start from the stage at scale 1.08, scroll 0.
+
 # REVISION 2 (Karl chose this; it overrides Revision 1 where they differ): the website is the hero object
 Draft 2 measured 2.0%. The only content that reached 7% was Holm's photo-rich site moving (building, scrolling, being
 edited); typing fields, icons, chat bubbles and buttons alone stay under 1%.
