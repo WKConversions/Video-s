@@ -54,17 +54,16 @@ const B = {
   cardOut: 43.35,            // the card shrinks to a dot
   launch: 44.4,              // the dot leaves for the wordmark's full stop
   land: 44.7,
-  slide: L.hjem,             // the wordmark slides up
+  slide: L.hjem - 0.28,      // the wordmark slides up
   merge: L.samlet + 0.04,    // the pills melt together
   split: L.byg - 0.16,       // the capsule springs out into three step cards
-  gather: 50.4,              // the cards flow into the button
+  gather: 50.28,              // the cards flow into the button
   byg2: L.byg2,              // the button grows (50.61)
   press: 51.4,
 };
 
 // ── layout (px at 1080p; nothing above 1150 × 920) ─────────────────────────────────────────────────────────────────
 const STAGE_Y = 545;         // pills and the button
-const STEP_Y = 560;          // step cards
 const WM_Y = 370;            // the small wordmark
 const WM_H = 150, WM_W = (WM_H * WM_VIEW.w) / WM_VIEW.h;
 const WM_DOT_X = CX - WM_W / 2 + (7062.84 / WM_VIEW.w) * WM_W, WM_DOT_Y = CY - WM_H / 2 + (1344.2 / WM_VIEW.h) * WM_H;   // the full stop (px)
@@ -77,8 +76,9 @@ const RP = { x: CL_X0 + AV + GAP + RW / 2, y: 700 };
 const SG = { x: CL_X0 + AV + GAP + RW - 280, y: 545, w: 560, h: 140 };
 const ISL_TOP = 335, ISL = { w: 380, h: 92 };
 const CARD = { w: 900, h: 360, y: 470 };
-const PW = 380, PH = 110;                                     // the two pills
-const STEP = { w: 300, h: 240, dx: 350 };
+const PW = 440, PH = 130;                                     // the two pills
+const SITE = { w: 900, h: 540, y: 500 };                     // the step stage
+const TYPE_LINE = 64;
 const BTN = { w: 780, h: 140 };
 
 // ── a morphing blob: ONE static 200×60 box, moved and sized with transforms only (a pill is exactly the capsule) ───
@@ -139,41 +139,46 @@ const QueueStrip: React.FC<{ v: number }> = ({ v }) => {
   return (
     <div style={{ width: 300, height: ROW, overflow: "hidden", position: "relative", WebkitMaskImage: m, maskImage: m }}>
       <div style={{ position: "absolute", left: 0, top: 0, width: "100%", transform: `translateY(${-(12 - v) * ROW}px)`, willChange: "transform" }}>
-        {rows.map((n) => <div key={n} style={{ height: ROW, lineHeight: `${ROW}px`, textAlign: "center", fontFamily: SERIF, fontSize: 200, color: C.ink, letterSpacing: "-0.03em" }}>{n}</div>)}
+        {rows.map((n) => <div key={n} style={{ height: ROW, lineHeight: `${ROW}px`, textAlign: "center", fontFamily: SERIF, fontSize: 200, color: C.cream, letterSpacing: "-0.03em" }}>{n}</div>)}
       </div>
     </div>
   );
 };
-/** the mini site that "Byg den" builds and "Se den" scans: header, headline, photo, button (offsets from the card centre) */
-const SITE_BLOCKS = [
-  { x: 0, y: -98, w: 240, h: 16, r: 8, c: C.sageLight },
-  { x: -20, y: -66, w: 200, h: 18, r: 9, c: C.ink },
-  { x: -50, y: -40, w: 140, h: 18, r: 9, c: C.ink },
-  { x: 0, y: 14, w: 240, h: 92, r: 14, c: "" },            // the photo
-  { x: -64, y: 84, w: 112, h: 32, r: 16, c: C.sage },
-];
-const Site: React.FC<{ cx: number; cy: number; t: number; ats: number[] | null }> = ({ cx, cy, t, ats }) => (
-  <>
-    {SITE_BLOCKS.map((b, i) => {
-      const q = ats ? spr(t, ats[i], 0.36, 0.55) : 1;
-      if (q <= 0.001) return null;
-      return (
-        <div key={i} style={{ position: "absolute", left: 0, top: 0, width: b.w, height: b.h, borderRadius: b.r, overflow: "hidden", background: b.c || C.line, opacity: clamp01(q * 4),
-          transform: `translate(${cx + b.x - b.w / 2}px, ${cy + b.y - b.h / 2 + (1 - q) * -110}px) scale(${mix(0.85, 1, clamp01(q))})` }}>
-          {i === 3 && <Img src={staticFile("img/holm-shoulder.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover" }} />}
-        </div>
-      );
-    })}
-  </>
-);
+/** the example site (Holm Fysioterapi, its own slate teal) that "Byg den" builds block by block and "Se den" scrolls */
+const SiteView: React.FC<{ t: number; ats: number[] | null; scroll: number }> = ({ t, ats, scroll }) => {
+  const q = (i: number) => (ats ? spr(t, ats[i], 0.36, 0.55) : 1);
+  const wrap = (i: number, x: number, y: number, w: number, h: number, st: React.CSSProperties, ch?: React.ReactNode) => {
+    const p = q(i);
+    if (p <= 0.001) return null;
+    return <div key={i} style={{ position: "absolute", left: 0, top: 0, width: w, height: h, opacity: clamp01(p * 4), transform: `translate(${x}px, ${y - scroll + (1 - p) * -90}px) scale(${mix(0.86, 1, clamp01(p))})`, ...st }}>{ch}</div>;
+  };
+  const photo = (src: string, w: number, h: number, r: number) => <div style={{ width: w, height: h, borderRadius: r, overflow: "hidden", background: HOLM_TINT }}><Img src={staticFile(`img/${src}`)} style={{ width: "100%", height: "100%", objectFit: "cover" }} /></div>;
+  return (
+    <div style={{ position: "absolute", inset: 0, background: "#F4F1EC", fontFamily: SANS, color: "#1F2A2E" }}>
+      {wrap(0, 40, 26, 820, 48, {}, <div style={{ display: "flex", alignItems: "center", gap: 14, height: 48 }}>
+        <div style={{ width: 44, height: 44, borderRadius: 13, background: "#2E4A52", color: "#fff", fontWeight: 700, fontSize: 26, display: "flex", alignItems: "center", justifyContent: "center" }}>H</div>
+        <div style={{ fontSize: 28, fontWeight: 600 }}>Holm Fysioterapi</div><div style={{ flex: 1 }} />
+        <div style={{ fontSize: 22, color: "#5E6A6D" }}>Behandlinger</div><div style={{ fontSize: 22, color: "#5E6A6D", marginLeft: 26 }}>Kontakt</div></div>)}
+      {wrap(1, 44, 112, 440, 130, { fontSize: 58, fontWeight: 600, letterSpacing: "-0.03em", lineHeight: 1.05 }, <>Kom godt i bevægelse igen.</>)}
+      {wrap(2, 44, 262, 400, 66, { fontSize: 23, lineHeight: 1.45, color: "#5E6A6D" }, <>Fysioterapi og genoptræning på Frederiksberg.</>)}
+      {wrap(3, 500, 104, 352, 300, {}, photo("holm-stretch.jpg", 352, 300, 24))}
+      {wrap(4, 44, 346, 400, 58, { display: "flex", gap: 12 }, <>
+        <div style={{ height: 58, padding: "0 30px", borderRadius: 29, background: "#2E4A52", color: "#fff", fontSize: 23, fontWeight: 600, display: "flex", alignItems: "center" }}>Book tid</div>
+        <div style={{ height: 58, padding: "0 28px", borderRadius: 29, border: "2px solid #1F2A2E22", fontSize: 23, fontWeight: 600, display: "flex", alignItems: "center" }}>Behandlinger</div></>)}
+      {[["Fysioterapi", "holm-neck.jpg"], ["Massage", "holm-calves.jpg"], ["Genoptræning", "holm-shoulder.jpg"]].map(([tt, src], i) =>
+        wrap(5 + i, 40 + i * 282, 448, 262, 250, { background: "#fff", borderRadius: 20, overflow: "hidden" }, <>{photo(src, 262, 176, 0)}<div style={{ padding: "14px 18px", fontSize: 24, fontWeight: 600 }}>{tt}</div></>))}
+    </div>
+  );
+};
+const HOLM_TINT = "#E3E9E8";
 const Hammer: React.FC<{ rot: number }> = ({ rot }) => (
-  <svg width={120} height={120} viewBox="0 0 48 48" fill="none" stroke={C.sageDeep} strokeWidth={4.6} strokeLinecap="round" strokeLinejoin="round" style={{ display: "block", transform: `rotate(${rot}deg)`, transformOrigin: "10px 40px" }}>
+  <svg width={170} height={170} viewBox="0 0 48 48" fill="none" stroke={C.sageDeep} strokeWidth={4.6} strokeLinecap="round" strokeLinejoin="round" style={{ display: "block", transform: `rotate(${rot}deg)`, transformOrigin: "10px 40px" }}>
     <path d="M12 38 L30 20" /><g transform="rotate(45 30 20)"><rect x="16" y="12" width="28" height="13" rx="3" fill={C.sageDeep} stroke="none" /></g>
   </svg>
 );
 const EyeBadge: React.FC<{ s: number; blink: number }> = ({ s, blink }) => (
-  <div style={{ width: 96, height: 96, borderRadius: 48, background: C.sage, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${Math.max(0, s)})`, boxShadow: sh(1) }}>
-    <svg width={58} height={58} viewBox="0 0 48 48" fill="none" stroke="#fff" strokeWidth={3.6} strokeLinecap="round" strokeLinejoin="round">
+  <div style={{ width: 130, height: 130, borderRadius: 65, background: C.sage, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${Math.max(0, s)})`, boxShadow: sh(1) }}>
+    <svg width={80} height={80} viewBox="0 0 48 48" fill="none" stroke="#fff" strokeWidth={3.6} strokeLinecap="round" strokeLinejoin="round">
       <g style={{ transform: `scaleY(${blink})`, transformOrigin: "24px 24px" }}><path d="M5 24 C12 12 36 12 43 24 C36 36 12 36 5 24 Z" /><circle cx={24} cy={24} r={6} fill="#fff" stroke="none" /></g>
     </svg>
   </div>
@@ -243,9 +248,9 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
     const cOp = ez(t, B.card + 0.2, 0.18, OUT) * (1 - ez(t, B.cardOut - 0.06, 0.12, LIN));
     thread = (
       <>
-        <Blob x={CX} y={cy} w={w} h={h} r={r} color={cmix("#FFFFFF", C.sage, white)} shadow={sh(clamp01((w - DOT) / 240))} border={white} />
+        <Blob x={CX} y={cy} w={w} h={h} r={r} color={cmix(C.ink, C.sage, white)} shadow={sh(clamp01((w - DOT) / 240))} />
         {cOp > 0.01 && (
-          <Abs x={CX - CARD.w / 2} y={cy - CARD.h / 2} style={{ width: CARD.w, height: CARD.h, display: "flex", alignItems: "center", justifyContent: "center", gap: 28, opacity: cOp, filter: cOp < 1 ? `blur(${(1 - cOp) * 8}px)` : undefined, fontFamily: SANS, fontSize: 70, fontWeight: 500, color: C.muted }}>
+          <Abs x={CX - CARD.w / 2} y={cy - CARD.h / 2} style={{ width: CARD.w, height: CARD.h, display: "flex", alignItems: "center", justifyContent: "center", gap: 28, opacity: cOp, filter: cOp < 1 ? `blur(${(1 - cOp) * 8}px)` : undefined, fontFamily: SANS, fontSize: 70, fontWeight: 500, color: C.sageLight }}>
             <span>Nr.</span><QueueStrip v={v} /><span>i kø</span>
           </Abs>
         )}
@@ -280,12 +285,13 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
     const squ = xl > 0 ? Math.exp(-xl * 9) * Math.cos(xl * 24) : 0;
     const ddx = (1 - ux) * (CX - WM_DOT_X), ddy = (1 - ux) * (CARD.y - WM_DOT_Y) - lift - hop;
     const base = mix(DOT / WM_DOT_D, 1, ux);
-    const bph = ((t - 46.4) % 0.85 + 0.85) % 0.85 / 0.85, beat = 1 + (t > 46.4 ? 0.9 * Math.pow(Math.max(0, Math.sin(Math.PI * bph)), 6) : 0);   // the full stop pulses with the shine
+    const bph = ((t - 46.4) % 0.7 + 0.7) % 0.7 / 0.7, beat = 1 + (t > 46.4 ? 0.9 * Math.pow(Math.max(0, Math.sin(Math.PI * bph)), 6) : 0);   // the full stop pulses with the shine
     const rev = ez(t, B.land - 0.02, 0.8, OUT);
     const sl = spr(t, B.slide, 0.55, 0.72);
     const k0 = WM_VIEW.w / WM_W;
+    const wmIn = ez(t, B.byg2 + 0.05, 0.4, OUT), wmOp = t < B.split - 0.1 ? 1 : t < B.byg2 ? 1 - ez(t, B.split - 0.1, 0.18, LIN) : wmIn, wmDy = t < B.byg2 ? 0 : (1 - wmIn) * 70;
     wm = (
-      <div style={{ position: "absolute", left: CX - WM_W / 2, top: CY - WM_H / 2, width: WM_W, height: WM_H, transform: `translateY(${sl * (WM_Y - CY)}px) scale(${mix(1, 0.5, sl)})`, transformOrigin: "50% 50%" }}>
+      <div style={{ position: "absolute", left: CX - WM_W / 2, top: CY - WM_H / 2, width: WM_W, height: WM_H, opacity: wmOp, transform: `translateY(${sl * (WM_Y - CY) + wmDy}px) scale(${mix(1, 0.5, sl)})`, transformOrigin: "50% 50%" }}>
         <div style={{ position: "absolute", inset: 0, WebkitMaskImage: `linear-gradient(270deg, #000 ${rev * 112 - 12}%, transparent ${rev * 112}%)`, maskImage: `linear-gradient(270deg, #000 ${rev * 112 - 12}%, transparent ${rev * 112}%)`,
           transform: `translateX(${-44 * (1 - rev)}px)`, filter: rev < 1 ? `blur(${(1 - rev) * 7}px)` : undefined }}>
           <svg width={WM_W} height={WM_H} viewBox={`0 0 ${WM_VIEW.w} ${WM_VIEW.h}`} style={{ display: "block", overflow: "visible" }}><path d={WM_WORD} fill={C.ink} /></svg>
@@ -300,10 +306,10 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
   // ── 6+7+8. pills (Gooey) → three step cards that act it out → CTA button ────────────────────────────────────────
   let goo: React.ReactNode = null, over: React.ReactNode = null, cards: React.ReactNode = null;
   const m = spr(t, B.merge, 0.46, 0.7);
-  const pLx = mix(CX - 330, CX - 150, m), pRx = mix(CX + 330, CX + 150, m);
+  const pLx = mix(CX - 330, CX - 140, m), pRx = mix(CX + 330, CX + 140, m);
   const splitOn = t >= B.split;
-  if (t >= L.hjem && t < B.split) {
-    const uL = spr(t, L.hjem + 0.04, 0.5, 0.62), uR = spr(t, L.hosting - 0.02, 0.5, 0.58);
+  if (t >= L.hjem - 0.1 && t < B.split) {
+    const uL = spr(t, L.hjem - 0.06, 0.5, 0.62), uR = spr(t, L.hosting - 0.02, 0.5, 0.58);
     const kP = 1 + 0.06 * (kick(t, L.t, 8, 26) + kick(t, L.sted, 8, 26));
     const pWid = PW * (1 + 0.1 * Math.sin(Math.PI * clamp01(m)));
     const ldx = t < B.merge ? mix(CX - 760, pLx, uL) : pLx, rdx = t < B.merge ? mix(CX + 760, pRx, uR) : pRx;
@@ -318,87 +324,66 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
     );
     const pillTxt = (txt: string, x: number, y: number, at: number) => {
       const o = ez(t, at, 0.2, OUT) * (1 - ez(t, B.merge, 0.2, INOUT));
-      return o > 0.01 ? <Abs x={x - PW / 2} y={y - 30} still style={{ width: PW, textAlign: "center", fontFamily: SANS, fontWeight: 500, fontSize: 44, color: C.ink, opacity: o, filter: o < 1 ? `blur(${(1 - o) * 8}px)` : undefined, lineHeight: "60px" }}>{txt}</Abs> : null;
+      return o > 0.01 ? <Abs x={x - PW / 2} y={y - 35} still style={{ width: PW, textAlign: "center", fontFamily: SANS, fontWeight: 500, fontSize: 52, color: C.ink, opacity: o, filter: o < 1 ? `blur(${(1 - o) * 8}px)` : undefined, lineHeight: "70px" }}>{txt}</Abs> : null;
     };
     over = (
       <>
-        {pillTxt("Hjemmeside", ldx, ly, L.hjem + 0.25)}
+        {pillTxt("Hjemmeside", ldx, ly, L.hjem + 0.15)}
         {pillTxt("Hosting", rdx, ry, L.hosting + 0.2)}
-        {t >= B.merge && <Words words={["samlet", "ét", "sted"]} ats={[B.merge + 0.16, L.t, L.sted]} t={t} x={CX} y={STAGE_Y} size={50} out={ez(t, B.split - 0.05, 0.05, LIN)} />}
+        {t >= B.merge && <Words words={["samlet", "ét", "sted"]} ats={[B.merge + 0.16, L.t, L.sted]} t={t} x={CX} y={STAGE_Y} size={56} out={ez(t, B.split - 0.05, 0.05, LIN)} />}
       </>
     );
   }
 
-  // the step cards: the merged capsule springs out into three cards that build / scan / buy
-  const stepsOn = splitOn && t < B.byg2 + 0.4;
+  // one big stage for the three steps: the merged capsule becomes a white card that BUILDS a site (Byg den), is SCANNED and
+  // scrolled (Se den) and turns into the price with a ticking check (Så køber du); then it flows into the CTA button
+  const stepsOn = splitOn;
   if (stepsOn) {
-    const sp = spr(t, B.split, 0.5, 0.62), spm = spr(t, B.split, 0.46, 0.6);
-    const gt = spr(t, B.gather, 0.46, 0.9), bg = spr(t, B.byg2 + 0.01, 0.52, 0.62);
-    const whiteC = (a: number) => cmix("#FFFFFF", C.sage, clamp01(a * 1.3));
+    const sp = spr(t, B.split, 0.5, 0.62), gt = spr(t, B.gather, 0.34, 0.9), bg = spr(t, B.byg2 + 0.01, 0.52, 0.62);
     const gathered = t >= B.gather;
-    const cardCol = gathered ? cmix("#FFFFFF", C.ink, 1 - clamp01(gt * 1.6)) : whiteC(sp);
-    const sx = (side: number) => (gathered ? mix(CX + side * STEP.dx, CX, gt) : mix(CX + side * 150, CX + side * STEP.dx, sp));
-    const sy = gathered ? mix(STEP_Y, STAGE_Y, gt) : mix(STAGE_Y, STEP_Y, sp);
-    const cw = gathered ? mix(STEP.w, 140, gt) : mix(PW, STEP.w, sp), chh = gathered ? mix(STEP.h, 140, gt) : mix(PH, STEP.h, sp);
-    const cr = gathered ? mix(40, 70, gt) : mix(55, 40, sp);
-    const shA = gathered ? clamp01(1 - gt * 1.2) : clamp01(sp * 1.2 - 0.2);
-    const pp = Math.max(prs(t, B.press), prs(t, 53.3), prs(t, 54.6));
-    const pr = 1 - 0.05 * pp;
-    const mw = t < B.byg2 ? (gathered ? cw : STEP.w * spm) : mix(140, BTN.w, bg) * pr, mh = t < B.byg2 ? (gathered ? chh : STEP.h * spm) : mix(140, BTN.h, bg) * pr;
-    const mr = t < B.byg2 ? (gathered ? cr : 40) : 70;
-    const mCol = t < B.byg2 ? (gathered ? cardCol : whiteC(spm)) : C.ink;
-    const sideOk = t < B.byg2 + 0.3;
-    cards = (
-      <>
-        {sideOk && <Blob x={sx(-1)} y={sy} w={cw} h={chh} r={cr} color={cardCol} shadow={sh(shA)} border={gathered ? 0 : clamp01(sp * 1.4 - 0.4)} />}
-        {sideOk && <Blob x={sx(1)} y={sy} w={cw} h={chh} r={cr} color={cardCol} shadow={sh(shA)} border={gathered ? 0 : clamp01(sp * 1.4 - 0.4)} />}
-        <Blob x={CX} y={t < B.byg2 ? sy : STAGE_Y} w={mw} h={mh} r={mr} color={mCol} shadow={sh(t < B.byg2 ? clamp01(spm * 1.2 - 0.2) : 1)} border={t < B.byg2 && !gathered ? clamp01(spm * 1.4 - 0.4) : 0} />
-      </>
-    );
-    // what the cards show (outside the blobs so nothing is distorted)
-    const cOp = (gathered ? 1 - ez(t, B.gather - 0.04, 0.14, LIN) : 1) * ez(t, B.split + 0.3, 0.12, LIN);
+    const pp = Math.max(prs(t, B.press), prs(t, 53.3), prs(t, 54.6)), pr = t >= B.byg2 ? 1 - 0.05 * pp : 1;
+    let w = mix(720, SITE.w, sp), h = mix(130, SITE.h, sp), r = mix(65, 36, sp), y = mix(STAGE_Y, SITE.y, sp);
+    let col = cmix("#FFFFFF", C.sage, clamp01(sp * 1.3)), shA = clamp01(sp * 1.2 - 0.2), bd = clamp01(sp * 1.4 - 0.4);
+    if (gathered) {
+      w = mix(SITE.w, 140, gt); h = mix(SITE.h, 140, gt); r = mix(36, 70, gt); y = mix(SITE.y, STAGE_Y, gt);
+      col = cmix("#FFFFFF", C.ink, 1 - clamp01(gt * 1.6)); bd = 0; shA = 1;
+      if (t >= B.byg2) { w = mix(w, BTN.w, bg) * pr; h = mix(h, BTN.h, bg) * pr; r = mix(r, BTN.h / 2, bg); y = mix(y, STAGE_Y, bg); }
+    }
+    cards = <Blob x={CX} y={y} w={w} h={h} r={r} color={col} shadow={sh(shA)} border={bd} />;
+    // what the stage shows
+    const cOp = (gathered ? 1 - ez(t, B.gather - 0.04, 0.12, LIN) : 1) * ez(t, B.split + 0.28, 0.1, LIN);
     if (cOp > 0.01) {
-      const xl = CX - STEP.dx, xm = CX, xr = CX + STEP.dx;
-      const tb = [L.byg + 0.26, L.byg + 0.4, L.byg + 0.52, L.byg + 0.64, L.byg + 0.78];
-      // the hammer hits as each block lands
+      const ox = CX - SITE.w / 2, oy = SITE.y - SITE.h / 2;
+      const tb = [0.08, 0.2, 0.3, 0.38, 0.5, 0.62, 0.72, 0.82].map((d) => L.byg + d + 0.12);
       const bump = (x: number) => (x < 0 ? 0 : x < 0.09 ? x / 0.09 : Math.exp(-(x - 0.09) * 11));
-      const hit = tb.reduce((a, at) => Math.max(a, bump(t - (at - 0.09))), 0);
-      // the eye scans the finished site down and up
-      const u = (t - (L.se + 0.12)) / 0.34, scanOn = u >= 0 && u < 2, frac = u - Math.floor(u), scanY = Math.floor(u) % 2 === 0 ? -150 + 300 * frac : 150 - 300 * frac;
-      const eyeS = spr(t, L.se + 0.04, 0.4, 0.5), blink = 1 - 0.92 * Math.exp(-Math.pow((t - (L.se + 0.8)) / 0.05, 2));
-      // the price rolls, the check ticks
-      const priceP = ez(t, L.s2 + 0.05, 0.55, OUT), chk = spr(t, L.s2 + 0.58, 0.4, 0.5);
-      const card3 = spr(t, L.s2 - 0.05, 0.4, 0.55);
+      const hit = tb.reduce((a2, at) => Math.max(a2, bump(t - (at - 0.09))), 0);       // the hammer hits as each block lands
+      const scroll = 170 * ez(t, L.se + 0.22, 0.42, INOUT);                                // Se den: the page scrolls
+      const u = (t - (L.se + 0.02)) / 0.3, scanOn = u >= 0 && u < 2, frac = u - Math.floor(u), scanY = Math.floor(u) % 2 === 0 ? frac : 1 - frac;
+      const eyeS = spr(t, L.se, 0.4, 0.5), blink = 1 - 0.92 * Math.exp(-Math.pow((t - (L.se + 0.5)) / 0.05, 2));
+      const siteOut = ez(t, L.s2 - 0.04, 0.2, INOUT);
+      const priceIn = spr(t, L.s2 + 0.06, 0.45, 0.6), priceP = ez(t, L.s2 + 0.1, 0.4, OUT), chk = spr(t, L.s2 + 0.42, 0.4, 0.5);
       cards = (
         <>
           {cards}
-          <div style={{ position: "absolute", inset: 0, opacity: cOp }}>
-            <Site cx={xl} cy={STEP_Y} t={t} ats={tb} />
-            <Abs x={xl + 62} y={STEP_Y + 22} style={{ opacity: t >= tb[0] - 0.1 ? 1 : 0 }}><Hammer rot={-62 + 72 * hit} /></Abs>
-            <Site cx={xm} cy={STEP_Y} t={t} ats={null} />
-            {scanOn && (
-              <div style={{ position: "absolute", left: xm - STEP.w / 2, top: STEP_Y - STEP.h / 2, width: STEP.w, height: STEP.h, borderRadius: 40, overflow: "hidden" }}>
-                <div style={{ position: "absolute", left: 0, top: 0, width: STEP.w, height: 84, transform: `translateY(${STEP.h / 2 + scanY - 42}px)`, background: "linear-gradient(transparent, rgba(135,168,158,0.55), transparent)" }} />
+          <div style={{ position: "absolute", left: ox, top: oy, width: SITE.w, height: SITE.h, borderRadius: 36, overflow: "hidden", opacity: cOp, clipPath: `inset(0 round 36px)` }}>
+            {siteOut < 1 && <div style={{ position: "absolute", inset: 0, opacity: 1 - siteOut, filter: siteOut > 0 ? `blur(${siteOut * 10}px)` : undefined, transform: `scale(${1 - 0.04 * siteOut})` }}><SiteView t={t} ats={tb} scroll={scroll} /></div>}
+            {scanOn && <div style={{ position: "absolute", left: 0, top: 0, width: SITE.w, height: 130, transform: `translateY(${-65 + SITE.h * scanY}px)`, background: "linear-gradient(transparent, rgba(135,168,158,0.6), transparent)" }} />}
+            {t >= L.s2 && (
+              <div style={{ position: "absolute", inset: 0, opacity: clamp01(priceIn * 2), transform: `scale(${mix(0.88, 1, clamp01(priceIn))})` }}>
+                <div style={{ position: "absolute", left: 0, top: 70, width: SITE.w, display: "flex", alignItems: "baseline", justifyContent: "center", gap: 16 }}>
+                  <RollNumber value={499} p={priceP} size={240} /><span style={{ fontFamily: SANS, fontSize: 72, fontWeight: 500, color: C.muted }}>kr.</span>
+                </div>
               </div>
             )}
-            <Abs x={xm + STEP.w / 2 - 70} y={STEP_Y - STEP.h / 2 - 34}><EyeBadge s={eyeS} blink={Math.max(0.06, blink)} /></Abs>
-            <Abs x={xr - 130} y={STEP_Y - 100} still style={{ width: 260, display: "flex", alignItems: "baseline", justifyContent: "center", gap: 10, opacity: clamp01(card3 * 3), transform: `translate(${xr - 130}px, ${STEP_Y - 100}px) scale(${mix(0.8, 1, clamp01(card3))})` }}>
-              <RollNumber value={499} p={priceP} size={92} /><span style={{ fontFamily: SANS, fontSize: 36, fontWeight: 500, color: C.muted }}>kr.</span>
-            </Abs>
-            <Abs x={xr - 44} y={STEP_Y + 26} style={{ width: 88, height: 88, borderRadius: 44, background: C.sage, display: "flex", alignItems: "center", justifyContent: "center", transform: `translate(${xr - 44}px, ${STEP_Y + 26}px) scale(${Math.max(0, chk)}) rotate(${-25 * (1 - clamp01(chk))}deg)` }}>
-              <Ico n="check" s={58} c="#fff" w={2.8} />
-            </Abs>
           </div>
+          {t >= L.byg + 0.1 && t < L.s2 && <Abs x={CX + SITE.w / 2 - 150} y={SITE.y + SITE.h / 2 - 150}><Hammer rot={-62 + 72 * hit} /></Abs>}
+          {eyeS > 0.001 && t < L.s2 + 0.1 && <Abs x={CX + SITE.w / 2 - 80} y={SITE.y - SITE.h / 2 - 60}><EyeBadge s={eyeS * (1 - siteOut)} blink={Math.max(0.06, blink)} /></Abs>}
+          {chk > 0.001 && <Abs x={CX - 70} y={SITE.y + 130} style={{ width: 140, height: 140, borderRadius: 70, background: C.sage, display: "flex", alignItems: "center", justifyContent: "center", transform: `translate(${CX - 70}px, ${SITE.y + 130}px) scale(${Math.max(0, chk)}) rotate(${-25 * (1 - clamp01(chk))}deg)`, boxShadow: sh(1), opacity: cOp }}><Ico n="check" s={92} c="#fff" w={2.8} /></Abs>}
         </>
       );
-      // labels under the cards
-      over = (
-        <>
-          {[[xl, "Byg den", L.byg], [xm, "Se den", L.se], [xr, "Så køber du", L.s2]].map(([x, txt, at]) => (
-            <Line key={txt as string} text={txt as string} x={x as number} y={STEP_Y + 190} p={ez(t, at as number, 0.5, LIN)} out={gathered ? ez(t, B.gather - 0.04, 0.18, INOUT) : 0} size={44} serif={false} color={C.ink} />
-          ))}
-        </>
-      );
+      // one line at a time under the stage
+      const ln = (txt: string, at: number, next: number, it: string[]) => t >= at - 0.05 && t < next + 0.4 ? <Line key={txt} text={txt} y={SITE.y + SITE.h / 2 + 100} p={ez(t, at, 0.45, LIN)} out={t > next - 0.12 ? ez(t, next - 0.12, 0.2, INOUT) : 0} size={TYPE_LINE} italicWords={it} /> : null;
+      over = <>{ln("Byg den.", L.byg, L.se, ["Byg"])}{ln("Se den.", L.se, L.s2, ["Se"])}{ln("Så køber du.", L.s2, B.gather, ["køber"])}</>;
     }
   }
 
@@ -407,8 +392,8 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
   if (t >= B.byg2 + 0.05) {
     const reveal = ez(t, B.byg2 + 0.04, 0.62, LIN);
     const pp = Math.max(prs(t, B.press), prs(t, 53.3), prs(t, 54.6)), pr = 1 - 0.05 * pp;
-    const ph = t < 51.5 ? -1 : (((t - 51.5) % 0.85) + 0.85) % 0.85 / 0.85;
-    const bandX = mix(-420, BTN.w + 120, ph);
+    const ph = t < 51.1 ? -1 : (((t - 51.1) % 0.7) + 0.7) % 0.7 / 0.7;
+    const bandX = mix(-380, BTN.w + 40, ph);
     cta = (
       <>
         <Abs x={CX - BTN.w / 2} y={STAGE_Y - BTN.h / 2} style={{ width: BTN.w, height: BTN.h, opacity: ez(t, B.byg2 + 0.04, 0.2, LIN) }}>
@@ -417,7 +402,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
           </div>
           {ph >= 0 && (
             <div style={{ position: "absolute", inset: 0, borderRadius: BTN.h / 2, overflow: "hidden", transform: `scale(${pr})` }}>
-              <div style={{ position: "absolute", left: 0, top: 0, width: 330, height: BTN.h, transform: `translateX(${bandX}px) skewX(-18deg)`, background: "linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.4), rgba(255,255,255,0))" }} />
+              <div style={{ position: "absolute", left: 0, top: 0, width: 400, height: BTN.h, transform: `translateX(${bandX}px) skewX(-18deg)`, background: "linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.3), rgba(255,255,255,0))" }} />
             </div>
           )}
         </Abs>

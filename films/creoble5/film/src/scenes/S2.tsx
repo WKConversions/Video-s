@@ -56,8 +56,11 @@ const pressAt = (t: number, at: number, hold = 0.1) => {
 };
 
 // ── geometry ─────────────────────────────────────────────────────────────────────────────────────────────────────
-const PS = 1.4;                                  // the phone at 1.4×: 420 × 896
-const PW = PHONE.w * PS, PH = PHONE.h * PS;
+// The phone is laid out natively at 2.1× (630 × 1344: text is rasterized sharp for the focus push) and sits at 1.4× (420 × 896)
+// through a transform scale of 2/3; the camera push on the headline scales it to 1.0, the pull-back returns it to 2/3.
+const PZ = 2.1, SN = 1.4 / 2.1;
+const PW = PHONE.w * PZ, PH = PHONE.h * PZ;
+const PH_N = PHONE.h * 1.4;                      // the resting height on screen
 
 // ── the beats (seconds): voice words from words.json, offsets are the picture's own ─────────────────────────────
 const T_SCROLL = 10.6, T_SCROLL_END = 13.55;     // one long steady pass down the finished site (≈ 6.6 px per frame)
@@ -66,17 +69,19 @@ const T_ISLAND_ON = 11.58;                       // "færdig"
 const T_ISLAND_OFF = 14.3;
 const T_TAG = 13.3;                              // "krone"
 const T_TAG_OUT = 13.98;
-const T_TAP = 14.18;                             // "ændre": a finger taps the headline
-const T_SELECT = 14.3;
-const T_BUBBLE = 15.0;                           // "Skriv"
-const T_WIDEN = 15.18;
-const T_TYPE = 15.28;
-const T_SEND = 15.78;
-const T_DEL = 15.84;                             // "Creoble": the old headline deletes backwards
-const T_RETYPE = 16.1;                           // ... and the corrected one types
-const T_CHECK = 16.5;
-const T_POP = 16.56;
-const T_FOLD = 16.56;                            // the phone folds back into the capsule
+const T_PUSH = 14.2, T_PUSH_END = 14.65;         // "Vil du ændre noget?": the camera pushes in on the headline (fast, eased)
+const T_PULL = 16.3, T_PULL_END = 16.75;         // on the check it pulls back out to 1.4×
+const T_TAP = 14.4;                              // "ændre": a finger taps the headline
+const T_SELECT = 14.5;
+const T_BUBBLE = 14.76;                          // "Skriv"
+const T_WIDEN = 14.98;
+const T_TYPE = 15.08;
+const T_SEND = 15.55;
+const T_DEL = 15.6;                              // "Creoble": the old headline deletes backwards
+const T_RETYPE = 15.86;                          // ... and the corrected one types
+const T_CHECK = 16.28;
+const T_POP = 16.5;
+const T_FOLD = 16.52;                            // the phone folds back into the capsule
 const T_FOLD_END = 16.8;                         // = f("h2") - 7.5 frames: the capsule is home at x 760
 
 const OLD_HEAD = "Kom godt i bevægelse igen.";
@@ -118,17 +123,22 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
   const fold = INOUT(clamp01((t - T_FOLD) / (T_FOLD_END - T_FOLD)));
   const m = pc * (1 - fold);                                  // 0 = capsule, 1 = phone
   const dx = 200 * travel - 200 * fold;
-  const dy = -34 * Math.sin(Math.PI * clamp01((t - E0) / 0.55)) * (1 - fold);
+  // the camera push: scale the phone up around the headline (1.4× → 2.1×) and back
+  const pp = INOUT(clamp01((t - T_PUSH) / (T_PUSH_END - T_PUSH))) * (1 - INOUT(clamp01((t - T_PULL) / (T_PULL_END - T_PULL))));
+  const sc = mix(SN, 1, pp);
+  const FOCUS_Y = 330, headLocalY = (144 - PHONE.h / 2) * PZ;   // the headline sits at phone point y 144
+  const pushY = (FOCUS_Y - CY - headLocalY) * pp;
+  const dy = -34 * Math.sin(Math.PI * clamp01((t - E0) / 0.55)) * (1 - fold) + pushY;
   const cosA = Math.max(0.3, Math.cos(ang * DEG));
-  const hl = mix(60 / cosA, PH, m);                            // local height of the clip (keeps the capsule 60 tall on screen)
+  const hl = mix(60 / (sc * cosA), PH, m);                     // local height of the clip (keeps the capsule 60 tall on screen)
   const vIn = (PH - hl) / 2;
-  const hIn = (PW - mix(200, PW, m)) / 2;
-  const extra = 130 * clamp01((m - 0.94) / 0.06);              // room for the phone's own shadow once it is open
-  const rh = mix(30, PHONE.r * PS, clamp01(m));
+  const hIn = (PW - mix(200 / sc, PW, m)) / 2;
+  const extra = 200 * clamp01((m - 0.94) / 0.06);              // room for the phone's own shadow once it is open
+  const rh = mix(30 / sc, PHONE.r * PZ, clamp01(m));
   const rv = rh / mix(1, cosA, clamp01(1 - m));
   const clip = `inset(${(vIn - extra).toFixed(2)}px ${(hIn - extra).toFixed(2)}px ${(vIn - extra).toFixed(2)}px ${(hIn - extra).toFixed(2)}px round ${rh.toFixed(2)}px / ${rv.toFixed(2)}px)`;
   const overlay = 1 - clamp01((m - 0.2) / 0.42);               // the sage capsule fades into the phone
-  const wrapT = `translate(${dx}px, ${dy}px) perspective(2200px) rotateX(${ang}deg)`;
+  const wrapT = `translate(${dx}px, ${dy}px) perspective(2200px) rotateX(${ang}deg) scale(${sc})`;
   const shadowA = 0.2 * (1 - clamp01(m));
 
   // ── the site: it builds, then ONE long steady scroll down (≥ 4 px/frame), a fast eased return ────────────────
@@ -172,15 +182,15 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
   const tagSwing = -58 * (1 - spr(t, T_TAG, 0.62, 0.34));
   const tagOut = INOUT(clamp01((t - T_TAG_OUT) / 0.3));
   const tagOn = t > T_TAG - 0.02 && tagOut < 1;
-  const toIslandX = CX - tagX, toIslandY = CY - PH / 2 + 46 - tagY;
+  const toIslandX = CX - tagX, toIslandY = CY - PH_N / 2 + 46 - tagY;
 
   // ── the instruction bubble, at the left: rises with dots, widens, types, is sent ─────────────────────────────
-  const BW = 640, BH = 104, BX = 392, BY = 744;
+  const BW = 640, BH = 104, BX = 960, BY = 905;
   const rise = spr(t, T_BUBBLE, 0.52, 0.6);
   const widen = spr(t, T_WIDEN, 0.42, 0.7);
   const popAway = INOUT(clamp01((t - T_POP) / 0.24));
   const bubbleOn = t > T_BUBBLE - 0.02 && popAway < 1;
-  const nIns = Math.max(0, Math.min(INSTRUCTION.length, Math.floor((t - T_TYPE) * 52)));
+  const nIns = Math.max(0, Math.min(INSTRUCTION.length, Math.floor((t - T_TYPE) * 60)));
   const dotsA = 1 - clamp01((t - T_WIDEN) / 0.12);
   const sendP = pressAt(t, T_SEND, 0.1);
   const checkP = Math.max(0, spr(t, T_CHECK, 0.42, 0.5));
@@ -194,11 +204,11 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
       {/* the phone, opened from the capsule */}
       <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, filter: shadowA > 0.004 ? `drop-shadow(0 20px 20px rgba(26,22,20,${shadowA.toFixed(3)}))` : undefined }}>
         <div style={{ position: "absolute", left: CX - PW / 2, top: CY - PH / 2, width: PW, height: PH, transform: wrapT, clipPath: clip }}>
-          <div style={{ position: "absolute", left: 0, top: 0, width: PHONE.w, height: PHONE.h, zoom: PS }}>
+          <div style={{ position: "absolute", left: 0, top: 0, width: PHONE.w, height: PHONE.h, zoom: PZ }}>
             <Phone x={PHONE.w / 2} y={PHONE.h / 2}>
               {/* the page scrolls as one promoted layer (two stacked windows of the same site) */}
               <div style={{ width: SCREEN.w, height: SCREEN.h, position: "relative", overflow: "hidden" }}>
-                <div style={{ position: "absolute", left: 0, top: 0, width: SCREEN.w, willChange: "transform", transform: `translate3d(0, ${-scroll}px, 0)` }}>
+                <div style={{ position: "absolute", left: 0, top: 0, width: SCREEN.w, willChange: t < T_RET_END + 0.12 ? "transform" : "auto", transform: `translate3d(0, ${-scroll}px, 0)` }}>
                   <MiniSite build={build} scroll={0} headline={headline} booking={1} highlight={0} />
                   <MiniSite build={build} scroll={SCREEN.h} booking={1} highlight={0} />
                   <SiteTail />

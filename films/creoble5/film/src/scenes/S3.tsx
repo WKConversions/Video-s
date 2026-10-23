@@ -5,7 +5,7 @@
 // capsule (hand-off). Transforms only; the shape morphs with clip-path on one static box; its shadow is a transparent caster.
 import React from "react";
 import { C, INOUT, OUT, SANS, SERIF, clamp01, mix } from "../lib";
-import { CX, Handoff, MiniSite, Phone, SHADOW_SOFT } from "../v5";
+import { CX, HOLM, Handoff, MiniSite, Phone, SHADOW_SOFT } from "../v5";
 import { LiquidGlass, f } from "../shared";
 
 // ── small math ──────────────────────────────────────────────────────────────────────────────────────────────────
@@ -122,26 +122,26 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
   // cues (g)
   const t499 = f("w:499"), tKr = f("w:kroner"), tN = f("w:n"), tIntet = f("w:intet"), tAbo = f("w:abonnement"), tSiden = f("w:siden2"), tDin = f("w:din3");
   const tIkke = f("w:ikke"), tTil2 = f("w:tilfreds2"), tS = f("w:s"), tNul = f("w:nul"), tRis = f("w:risiko");
-  const tChk = T0 + 5, tRoll = t499 + 1, ROLL1 = 52, tLand = tRoll + ROLL1 - 3, tDock = tIntet + 6, tDrop = tAbo + 5, tOff = tNul + 4;
+  const tChk = T0 + 5, tRoll = t499 + 1, ROLL1 = 52, tLand = tRoll + ROLL1 - 3, tDock = tIntet + 6, tDrop = tAbo + 5, tOff = tNul;
   const tRoll2 = tS + 2, ROLL2 = 26, tLand2 = tRoll2 + ROLL2 - 3;
-  const tEx = TE - 6.5;     // the knob leaves the row
+  const tEx = TE - 10;     // the knob leaves the row
 
   // ── the capsule's own state (all springs) ─────────────────────────────────────────────────────────────────────
-  let x = track(g, 1160, [[T0, 960, 0.55, 0.62]]) + imp(g, tDock, -22, 2, 6);
-  let y = track(g, 540, [[tN - 1, 472, 0.45, 0.62], [tIntet, 540, 0.4, 0.7], [tNul - 3, 460, 0.45, 0.62]]);
-  let w = track(g, 200, [[T0 + 2, 700, 0.45, 0.6], [t499, PW, 0.45, 0.58], [tSiden, PHW, 0.5, 0.6], [tS, PW, 0.45, 0.6], [tNul - 1, ROW_W, 0.4, 0.8]]);
-  let h = track(g, 60, [[T0 + 2, 220, 0.45, 0.6], [t499, PH, 0.45, 0.58], [tSiden, PHH, 0.5, 0.6], [tS, PH, 0.45, 0.6]]);
-  let r = track(g, 30, [[T0 + 2, 110, 0.4, 0.9], [t499, PH / 2, 0.4, 0.9], [tSiden, PHR, 0.5, 0.9], [tS, PH / 2, 0.4, 0.9]]);
-  let fl = track(g, 0, [[t499, 1, 0.35, 1], [tSiden, 2, 0.4, 1], [tS, 1, 0.35, 1]]);
+  let x = track(g, 1160, [[T0, 960, 0.55, 0.62]]) + imp(g, tDock, -40, 2, 6);
+  let y = track(g, 540, [[tN - 1, 472, 0.45, 0.62], [tIntet, 540, 0.4, 0.7], [tNul - 6, 460, 0.45, 0.62]]);
+  let w = track(g, 200, [[T0 + 2, 880, 0.45, 0.6], [t499, PW, 0.45, 0.58], [tSiden, PHW, 0.5, 0.6], [tS, PW, 0.45, 0.6], [tNul - 5, ROW_W, 0.4, 0.8]]);
+  let h = track(g, 60, [[T0 + 2, 280, 0.45, 0.6], [t499, PH, 0.45, 0.58], [tSiden, PHH, 0.5, 0.6], [tS, PH, 0.45, 0.6]]);
+  let r = track(g, 30, [[T0 + 2, 140, 0.4, 0.9], [t499, PH / 2, 0.4, 0.9], [tSiden, PHR, 0.5, 0.9], [tS, PH / 2, 0.4, 0.9]]);
+  let fl = track(g, 0, [[t499, 1, 0.35, 1], [tSiden, 2, 0.4, 1], [tS, 1, 0.16, 1]]);
   let ring = track(g, 0, [[t499, 5, 0.35, 1], [tSiden, 0, 0.4, 1], [tS, 5, 0.35, 1]]);
-  let sc = 1 + imp(g, tChk + 6, 0.07, 2.0, 6.5) + imp(g, tLand, 0.035, 2.3, 6) + imp(g, tLand2, 0.05, 2.2, 6) + imp(g, tNul, 0.03, 2.2, 6) + imp(g, tN, 0.02, 2.2, 7);
-  let rz = imp(g, tDock, -2.5, 2.2, 5) + imp(g, tDrop, 3, 2.4, 5) + imp(g, tIkke, -14, 1.6, 3.2) + imp(g, tTil2, 10, 1.8, 3.4);
+  let sc = 1 + imp(g, tChk + 6, 0.10, 2.0, 6.5) + imp(g, tLand, 0.07, 2.3, 6) + imp(g, tLand2, 0.08, 2.2, 6) + imp(g, tNul, 0.05, 2.2, 6) + imp(g, tN, 0.05, 2.2, 7);
+  let rz = imp(g, tDock, -4, 2.2, 5) + imp(g, tDrop, 3, 2.4, 5) + imp(g, tIkke, -14, 1.6, 3.2) + imp(g, tTil2, 10, 1.8, 3.4);
   let ry = imp(g, tIkke, 28, 1.6, 3.2);
   let rx = imp(g, tTil2, -16, 1.8, 3.4);
   const spinY = -360 * (1 - sp(g, tSiden, 0.9, 0.7));   // the one flip: the phone turns in
 
   // ── the exit: the row collapses onto its knob, the knob flies out and becomes the capsule at x 760 ───────────────
-  const e1 = ramp(g, tEx, 3.2, OUT), e2 = ramp(g, tEx + 2.6, TE - (tEx + 2.6), INOUT);
+  const e1 = ramp(g, tEx, 4.5, OUT), e2 = ramp(g, tEx + 4, TE - (tEx + 4), INOUT);
   const mx = (a: number, b: number, t: number) => mix(a, b, t);
   {
     // knob centre when OFF: the toggle's left edge + 0.09 s + 0.41 s
@@ -154,18 +154,18 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
   const mirX = Math.cos((rx * Math.PI) / 180) < 0 ? -1 : 1, mirY = Math.cos(((ry + spinY) * Math.PI) / 180) < 0 ? -1 : 1;
 
   // glints on the events (a single sweep; 1 = off-capsule, matches the hand-off pill)
-  const sw = [sweep(g, T0 + 8, 18), sweep(g, tLand, 20), sweep(g, tLand2, 20), sweep(g, tNul + 2, 16)].find((v) => v >= 0);
+  const sw = [sweep(g, T0 + 8, 18), sweep(g, tLand, 12), sweep(g, tN + 8, 12), sweep(g, tIntet + 12, 12), sweep(g, tLand2, 12), sweep(g, tNul + 4, 12)].find((v) => v >= 0);
   const sheen = sw === undefined ? 1 : sw;
   const sheenCol = fl > 1 ? WHITE : lerpC(WHITE, SAGE, clamp01(fl));
   const sheenA = fl > 1 ? 0.12 : mix(0.4, 0.34, clamp01(fl));
 
   // ── content visibilities ─────────────────────────────────────────────────────────────────────────────────────
   const chkP = ramp(g, tChk, 9, OUT), chkOut = ramp(g, t499, 6, OUT), chkPop = sp(g, tChk + 7, 0.35, 0.5);
-  const priceIn = ramp(g, t499 + 1, 6) * (1 - ramp(g, tSiden - 2, 4)) + ramp(g, tS + 2, 6) * (1 - ramp(g, tNul - 1, 5));
+  const priceIn = ramp(g, t499 + 1, 6) * (1 - ramp(g, tSiden - 2, 4)) + ramp(g, tS + 4, 5) * (1 - ramp(g, tNul - 5, 5));
   const pR1 = clamp01((g - tRoll) / ROLL1), pR2 = clamp01((g - tRoll2) / ROLL2);
   const phase2 = g >= tS - 1;
   const krb = phase2 ? 1 : sp(g, tKr, 0.4, 0.62);
-  const rowIn = ramp(g, tNul - 1, 6) * (1 - clamp01(e1 * 2.2));
+  const rowIn = ramp(g, tNul - 5, 6) * (1 - clamp01(e1 * 2.2));
   const phoneIn = ramp(g, tSiden + 2, 6) * (1 - ramp(g, tS - 1, 3));
   // the site builds block by block, then scrolls steadily down the page
   const build = ramp(g, tSiden + 3, 22, (t) => t);
@@ -174,7 +174,7 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
 
   // ── "Én gang." chip: pops out from under the capsule, widens to its text, tucks back ───────────────────────────
   const CW = 420, CH = 110, chipHalf = (CW - CH) / 2;
-  const chipPop = sp(g, tN, 0.42, 0.55), chipTuck = ramp(g, tIntet - 1, 6, INOUT), chipW = ramp(g, tN + 4, 8);
+  const chipPop = sp(g, tN, 0.6, 0.5), chipTuck = ramp(g, tIntet - 1, 6, INOUT), chipW = ramp(g, tN + 6, 14);
   const chipY = mix(y, y + PH / 2 + 26 + CH / 2, chipPop);
   const showChip = g >= tN && g < tIntet + 6;
 
@@ -184,9 +184,9 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
   const mdX = x + 575 + mdIn * 700 + (mdT > 0 ? 120 * mdT : 0);
   const mdY = y + (mdT > 0 ? 0.5 * 4200 * mdT * mdT : 0) + imp(g, tIntet + 9, -12, 3, 4) * (mdT > 0 ? 0 : 1);
   const mdRot = (mdT > 0 ? 420 * mdT : 0) + imp(g, tIntet + 7, 5, 3.4, 4);
-  const mdO = mdT > 0 ? 1 - clamp01(mdT / 0.42) : 1;
+  const mdO = mdT > 0 ? 1 - clamp01(mdT / 0.6) : 1;
   const strike = ramp(g, tAbo, 4.5, INOUT);
-  const showMd = g >= tIntet && mdT < 0.45;
+  const showMd = g >= tIntet && mdT < 0.62;
 
   // ── the "Din" badge on the phone ───────────────────────────────────────────────────────────────────────────────
   const badge = sp(g, tDin, 0.4, 0.5) * (1 - ramp(g, tIkke, 5, INOUT));
@@ -228,7 +228,7 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
           <div style={abs(BW / 2, BH / 2, { transform: `scale(${mirY}, ${mirX})` })}>
             {/* check */}
             {chkOut < 1 && (
-              <svg width={150} height={150} viewBox="0 0 48 48" style={abs(-75, -75, { overflow: "visible", opacity: 1 - chkOut, transform: `scale(${(0.6 + 0.4 * chkPop) * (1 - 0.5 * chkOut)})` })}>
+              <svg width={190} height={190} viewBox="0 0 48 48" style={abs(-95, -95, { overflow: "visible", opacity: 1 - chkOut, transform: `scale(${(0.6 + 0.4 * chkPop) * (1 - 0.5 * chkOut)})` })}>
                 <path d="M11 25 L21 35 L38 14" pathLength={1} fill="none" stroke="#fff" strokeWidth={5.5} strokeLinecap="round" strokeLinejoin="round" strokeDasharray="1" strokeDashoffset={1 - chkP} />
               </svg>
             )}
@@ -242,7 +242,10 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
             {phoneIn > 0.001 && (
               <div style={{ opacity: phoneIn }}>
                 <Phone x={0} y={0} scale={PS}>
-                  <div style={{ width: 282, height: 622, willChange: "transform", transform: "rotate(0.1deg)" }}><MiniSite build={build} scroll={scroll} booking={1} /></div>
+                  <div style={{ width: 282, height: 622, willChange: "transform", transform: "rotate(0.1deg)" }}><MiniSite build={build} scroll={scroll} booking={1} />
+                    {/* status bar: scrolled content passes under the Island, not through it */}
+                    <div style={{ position: "absolute", left: 0, top: 0, width: 282, height: 56, background: `linear-gradient(${HOLM.bg} 0, ${HOLM.bg} 40px, rgba(244,241,236,0) 56px)` }} />
+                  </div>
                 </Phone>
               </div>
             )}

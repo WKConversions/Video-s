@@ -27,7 +27,7 @@ const mixc = (a: string, b: string, p: number) => {
 };
 const LIN = (x: number) => x;
 const EASE_IN = Easing.bezier(0.5, 0, 0.9, 0.6);
-const SCROLL = Easing.bezier(0.3, 0, 0.6, 1);
+const SCROLL = Easing.bezier(0.2, 0, 0.5, 1);
 const MONO = "ui-monospace, SFMono-Regular, Menlo, 'DejaVu Sans Mono', monospace";
 
 /** A static box (BW × BH) centred on the frame centre, moved by transforms only; its visible shape is a clip-path inset
@@ -103,7 +103,7 @@ const CodeWin: React.FC<{ t: number }> = ({ t }) => {
           <div style={{ position: "absolute", left: 0, right: 0, top: 14, textAlign: "center", fontFamily: MONO, fontSize: 20, color: "rgba(255,255,255,0.5)" }}>index.html</div>
         </div>
         <div style={{ position: "absolute", left: 0, top: 56, width: 700, height: 264, overflow: "hidden" }}>
-          <div style={{ position: "absolute", left: 28, top: 0, width: 650, willChange: "transform", transform: `translateY(${220 - scrollY}px)` }}>
+          <div style={{ position: "absolute", left: 28, top: 0, width: 650, willChange: "transform", transform: `translateY(${6 - scrollY}px)` }}>
             {CODE.map(([s, col], i) => <div key={i} style={{ height: 44, lineHeight: "44px", fontFamily: MONO, fontSize: 26, color: col, whiteSpace: "pre" }}>{s}</div>)}
           </div>
         </div>
@@ -166,7 +166,7 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
 
     // browser content (site builds, scrolls, timer counts) and field content (typing)
     const bo = clamp01((wp - 0.25) * 2.2) * (1 - clamp01((t - 3.88) / 0.14));
-    const build = ez(t, 0.95, 1.6, LIN), scroll = 560 * (ez(t, 1.2, 1.2, SCROLL) - ez(t, 2.65, 1.1, SCROLL));
+    const build = ez(t, 0.95, 1.5, LIN), scroll = 560 * (ez(t, 0.98, 1.25, SCROLL) - ez(t, 2.4, 1.3, SCROLL));
     const fo = clamp01((fm - 0.55) * 2.4) * (1 - clamp01(g1 * 4));
     const txt = "Holm Fysioterapi", t0 = 4.62, cps = 12;
     const n = Math.max(0, Math.min(txt.length, Math.floor((t - t0) * cps)));
@@ -249,7 +249,7 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
     const top = mix(240, 220, oh), bot = mix(814, 220, oh), side = mix(915, 810, ow), rad = mix(13, 50, ow);
     const pop = 1 + 0.25 * Math.max(0, Math.min(ph, pw) - 1);
     const build = ez(t, 6.86, 0.7, LIN);
-    const scroll = 340 * (ez(t, 7.45, 1.1, SCROLL) - ez(t, 8.6, 0.85, SCROLL));
+    const scroll = 340 * (ez(t, 7.25, 1.1, SCROLL) - ez(t, 8.45, 0.9, SCROLL));
     phone = (
       <div style={{ position: "absolute", inset: 0, transformOrigin: "960px 540px", transform: `scale(${1.4 * pop})` }}>
         <div style={{ position: "absolute", inset: 0, filter: "drop-shadow(0 2px 3px rgba(26,22,20,0.10)) drop-shadow(0 30px 26px rgba(26,22,20,0.20))" }}>

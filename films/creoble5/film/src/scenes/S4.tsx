@@ -4,7 +4,7 @@
 // flying, pins pulsing, data travelling), never sway. Transforms and clip-path only.
 import React from "react";
 import { C, EXIT, INOUT, OUT, SANS, SERIF, clamp01, mix } from "../lib";
-import { Ico, RollNumber, aspring, bounce, f, k, press, squash, typed } from "../shared";
+import { Ico, aspring, bounce, f, k, press, squash, typed } from "../shared";
 import { CX, CY, Handoff, HANDOFF_HALF, Line, Pill } from "../v5";
 
 const FLAGS = "000000000000000000010010000000000001000010010000100001001100100010000100001001110000001100111111111111001001000111011110010010110101101001011011010110101101001011010111111111011111110101001111011011100111101101111011010100111001001110011111110111001001010011100100111001100010011110100111001100111011100100101001101110011100110011001110010011100111011001110010010100111011011110011101100111001011110011111100111001011110011100100111001110110011100101111001110010011100101011001110010011100111011001100010101100111011001110010101100110001010110011101100110001011110011100101011001100010011000101011001110010011100100011001110010101000111001001110010001100110001010110010000100011001000100011000100111001000110011100101011001000010011000101011001100010011100101001001100010111100110001000110010101100110001011110010000100110001010110011100100011001010010011000101011001010010011100101001001010010101100101001001110010100100101001000110010100100111001010010010100100110001010110010100101001001010010011100101000001010010101100101000001110010100100101000001110010100000101001010010010100000101001010010010100000111001010110010100101001001010000000100101001001010000101000001000000010010100100101010100110000100100001001010010010100000001001010110010100001011000010000000100101011001010000000100001000001010000100000001000000010000101100101000011010000100000101001010010000100000001000010100010100001001000010000000100101000000010100000100001010001010000100100001000000010000100100001010000010000100000001001010010000101000001000010000000101001101000010100000100001001001010100000100001000000010100100100001010000010000100000101010000010000000000001010010010010101000101010000000000101000001000000100010101000000000010100000100000000000010100000100001010001010100000000001010001010000001000101010000000000101000001010000000000101000001000010100010101000000001010100000101000010000010100000000001010000010100010000101010000010100001000001010000000000101000101010001000000101000000010001100000101000000000011100000101000110001010100000001001010000010100010000001010000000100001000001010000000100101000001010000000000101000000010000100000101000000000010100000101000000000010100000001001010000010100000000001010000000100001000001010001010000101000001010001000000101000100010010100000101000000000010100010001000100000011100010100001010000010100000000001010001000100000000001010001000000101000100010001000000101000101000010000000101000100000010100010001000100000010100010000001010001000100010000001010001010000010000101010001000000101000100010001000000101000100000011100010001000100000010100010000000100001010100010000001010001000000010000001010001000000010000100010001000000101000100000001000000101000100000000100010000000100000010100010000000100001000100010000001010001000000010000001010000000000001000100000001000000101000000000001000000000000000000000100000000000100000000100000000000110000000000000000000010000001000010000000000000000000001000000000000000000000000000000001000000000000000000000100000000000000000000000000000000010000001000000000000000000000000000000000000000000000001000000000000000000000000000000000100000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000100010001000010010100100000001010010010100101001001010010111101111001011010010110101111001111110111100111111011111011111100111111011110111111000000000";
@@ -28,7 +28,7 @@ const rgb = (a: number[], b: number[], q: number) => `rgb(${Math.round(mix(a[0],
 const L = (base: string, off: number) => `${base}${off >= 0 ? "+" : "-"}${Math.abs(off).toFixed(2)}`;     // a label with an offset in seconds
 
 // ── the morphing body: a static box, clip-path inset + round = capsule/circle; moves by transform only ──────────
-const BW = 960, BH = 600;
+const BW = 1160, BH = 600;
 const Shape: React.FC<{ x: number; y: number; w: number; h: number; color: string; tf?: string; sheen?: number; clipped?: React.ReactNode; over?: React.ReactNode }> =
   ({ x, y, w, h, color, tf = "", sheen = -1, clipped, over }) => {
   const r = Math.min(w, h) / 2, ix = (BW - w) / 2, iy = (BH - h) / 2;
@@ -65,9 +65,9 @@ const Globe: React.FC<{ th: number; R: number; op: number; sweep: number }> = ({
     const y2 = p.sl * ct - z0 * st, z2 = p.sl * st + z0 * ct;
     if (z2 < 0.03) continue;
     const sx = x * R, sy = -y2 * R;
-    let fill = C.sageLight;
+    let fill = "#9DBBB1";
     if (p.land) { const ang = ((Math.atan2(sx, -sy) + 2 * Math.PI) % (2 * Math.PI)) / (2 * Math.PI); fill = ang < sweep ? LAND_SET : C.sage; }
-    const rad = (p.land ? 7.8 : 3.8) * (0.4 + 0.6 * z2) * op;
+    const rad = (p.land ? 8.2 : 5.0) * (0.4 + 0.6 * z2) * op;
     out.push(<circle key={i} cx={sx.toFixed(1)} cy={sy.toFixed(1)} r={rad.toFixed(2)} fill={fill} opacity={(0.45 + 0.55 * z2).toFixed(2)} />);
   }
   return <svg width={BW} height={BH} viewBox={`${-BW / 2} ${-BH / 2} ${BW} ${BH}`} style={{ position: "absolute", left: 0, top: 0 }}>{out}</svg>;
@@ -78,6 +78,22 @@ const CheckDisc: React.FC<{ size: number; p: number }> = ({ size, p }) => (
     <path d="M28 52 L43 66 L72 35" fill="none" stroke="#fff" strokeWidth="8.5" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="64" strokeDashoffset={64 * (1 - clamp01(p))} />
   </svg>
 );
+
+// ── the price counter: two digit columns that roll steadily (ones 13 steps, tens 8) ───────────────────────────────
+const Roller: React.FC<{ p: number; size: number }> = ({ p, size }) => {
+  const row = size * 1.25;
+  const col = (steps: number, end: number) => {
+    const pos = steps * p;
+    return (
+      <span style={{ display: "inline-block", height: row, overflow: "hidden", position: "relative", width: "0.62em" }}>
+        <span style={{ position: "absolute", left: 0, top: 0, width: "100%", transform: `translateY(${-pos * row}px)`, willChange: "transform" }}>
+          {Array.from({ length: steps + 1 }, (_, n) => <div key={n} style={{ height: row, lineHeight: `${row}px`, textAlign: "center" }}>{((end - steps + n) % 10 + 10) % 10}</div>)}
+        </span>
+      </span>
+    );
+  };
+  return <div style={{ display: "inline-flex", fontFamily: SERIF, fontSize: size, lineHeight: 1, color: C.ink, letterSpacing: "-0.03em", fontVariantNumeric: "tabular-nums" }}>{col(8, 8)}{col(13, 3)}</div>;
+};
 
 // ── the lock (~220 px): the shackle lifts open, then snaps shut ─────────────────────────────────────────────────
 const Lock: React.FC<{ lift: number }> = ({ lift }) => (
@@ -107,12 +123,12 @@ const Flip: React.FC<{ a: string; b: string; ang1: number; ang2: number }> = ({ 
 
 // ── a labelled card (domain / e-mail) that flies out and docks ──────────────────────────────────────────────────
 const Card: React.FC<{ label: string; icon: string; text: string; done: number }> = ({ label, icon, text, done }) => (
-  <div style={{ position: "relative", width: 470, height: 132, borderRadius: 36, background: C.white, border: `1.5px solid ${C.line}`, boxShadow: "0 26px 44px -22px rgba(26,22,20,0.32)",
-    display: "flex", alignItems: "center", gap: 22, padding: "0 28px", boxSizing: "border-box", fontFamily: SANS }}>
-    <div style={{ width: 78, height: 78, borderRadius: 39, background: C.sageTint, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}><Ico n={icon} s={46} c={C.sageDeep} w={2.2} /></div>
-    <div style={{ display: "flex", flexDirection: "column", gap: 6, width: 318 }}>
-      <div style={{ fontSize: 24, fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: C.sageDeep, whiteSpace: "nowrap" }}>{label}</div>
-      <div style={{ fontSize: 30, fontWeight: 500, color: C.ink, whiteSpace: "nowrap", height: 38, lineHeight: "38px" }}>{text}</div>
+  <div style={{ position: "relative", width: 560, height: 160, borderRadius: 42, background: C.white, border: `1.5px solid ${C.line}`, boxShadow: "0 26px 44px -22px rgba(26,22,20,0.32)",
+    display: "flex", alignItems: "center", gap: 26, padding: "0 32px", boxSizing: "border-box", fontFamily: SANS }}>
+    <div style={{ width: 96, height: 96, borderRadius: 48, background: C.sageTint, display: "flex", alignItems: "center", justifyContent: "center", flex: "none" }}><Ico n={icon} s={56} c={C.sageDeep} w={2.2} /></div>
+    <div style={{ display: "flex", flexDirection: "column", gap: 8, width: 374 }}>
+      <div style={{ fontSize: 28, fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: C.sageDeep, whiteSpace: "nowrap" }}>{label}</div>
+      <div style={{ fontSize: 36, fontWeight: 500, color: C.ink, whiteSpace: "nowrap", height: 44, lineHeight: "44px" }}>{text}</div>
     </div>
     <div style={{ position: "absolute", right: -14, top: -14, width: 48, height: 48, borderRadius: 24, background: C.sage, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${done})`, opacity: clamp01(done * 3) }}>
       <Ico n="check" s={32} c={C.white} w={3} />
@@ -129,7 +145,7 @@ const Pin: React.FC<{ col: string }> = ({ col }) => (
 );
 
 // ── the chain (~660 px): two stadium links, over-under at the crossings ─────────────────────────────────────────
-const LW = 360, LH = 150, SW = 26, LX = 150;
+const LW = 360, LH = 170, SW = 28, LX = 128;
 const linkPath = () => { const w = LW - SW, h = LH - SW, r = h / 2; return `M ${-w / 2 + r} ${-h / 2} H ${w / 2 - r} A ${r} ${r} 0 0 1 ${w / 2 - r} ${h / 2} H ${-w / 2 + r} A ${r} ${r} 0 0 1 ${-w / 2 + r} ${-h / 2} Z`; };
 const Link: React.FC<{ clipX?: number }> = ({ clipX }) => (
   <svg width={LW + 60} height={LH + 60} viewBox={`${-(LW + 60) / 2} ${-(LH + 60) / 2} ${LW + 60} ${LH + 60}`} style={{ display: "block", overflow: "visible" }}>
@@ -140,11 +156,11 @@ const Link: React.FC<{ clipX?: number }> = ({ clipX }) => (
 
 // ── the body's track through the scene ──────────────────────────────────────────────────────────────────────────
 const main = (g: number) => ({
-  x: seq(g, 1160, [["h3+0.25", 960, 0.55, 0.8], ["w:ogs-0.02", 792, 0.5, 0.72], ["w:domnet-0.05", 960, 0.5, 0.72]]),
-  y: seq(g, 540, [["h3+0.25", 452, 0.55, 0.8], ["w:fra-0.12", 500, 0.5, 0.7], ["w:domne-0.1", 470, 0.45, 0.75], ["w:fast-0.2", 620, 0.4, 0.8], ["w:ogs-0.02", 540, 0.45, 0.8], ["w:domnet-0.05", 470, 0.5, 0.7], ["w:servere-0.04", 90, 0.32, 0.8]]),
-  w: Math.max(2, seq(g, 200, [["h3+0.3", 560, 0.42, 0.62], ["w:fra-0.12", 900, 0.45, 0.62], ["w:servere-0.04", 56, 0.3, 0.8]])),
-  h: Math.max(2, seq(g, 60, [["h3+0.3", 560, 0.42, 0.62], ["w:fra-0.12", 260, 0.45, 0.62], ["w:servere-0.04", 56, 0.3, 0.8]])),
-  sc: seq(g, 1, [["w:ogs-0.02", 0.78, 0.5, 0.72], ["w:domnet-0.05", 1, 0.5, 0.72]]),
+  x: seq(g, 1160, [["h3+0.25", 960, 0.55, 0.8], ["w:ogs-0.02", 760, 0.5, 0.72], ["w:domnet-0.05", 960, 0.5, 0.72]]),
+  y: seq(g, 540, [["h3+0.25", 452, 0.55, 0.8], ["w:fra-0.12", 510, 0.5, 0.7], ["w:domne-0.1", 447, 0.45, 0.75], ["w:fast-0.2", 654, 0.4, 0.8], ["w:ogs-0.02", 540, 0.45, 0.8], ["w:domnet-0.05", 460, 0.5, 0.7], ["w:servere-0.04", 90, 0.32, 0.8]]),
+  w: Math.max(2, seq(g, 200, [["h3+0.3", 560, 0.42, 0.62], ["w:fra-0.12", 1100, 0.45, 0.62], ["w:servere-0.04", 56, 0.3, 0.8]])),
+  h: Math.max(2, seq(g, 60, [["h3+0.3", 560, 0.42, 0.62], ["w:fra-0.12", 320, 0.45, 0.62], ["w:servere-0.04", 56, 0.3, 0.8]])),
+  sc: seq(g, 1, [["w:ogs-0.02", 0.66, 0.5, 0.72], ["w:domnet-0.05", 1, 0.5, 0.72]]),
   tint: clamp01(seq(g, 0, [["h3+0.5", 1, 0.3, 1], ["w:fra-0.12", 0, 0.3, 1]])),
 });
 
@@ -158,7 +174,7 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
   // ── globe + ring + check ──
   const t0 = t("h3+0.25");
   const ringP = ez(t("w:vi") / 1.4), ringIn = bounce(g, "w:vi-0.08", 0.4, 0.6), ringOut = ez(t("w:fra-0.12") / 0.3);
-  const th = 0.9 * t0;                                   // the globe turns steadily: continents move ~4 px per frame
+  const th = 1.25 * t0;                                   // the globe turns steadily: continents move ~4 px per frame
   const chkP = bounce(g, "w:vi+1.4", 0.4, 0.55), chkDraw = clamp01(t("w:vi+1.44") / 0.25), chkOut = clamp01(t("w:fra-0.12") / 0.12);
   const dotsOp = ou(t("h3+0.5") / 0.3) * (1 - clamp01(t("w:fra-0.12") / 0.14)) * (1 - 0.65 * clamp01(chkP));
   const globeStage = g < f("w:fra") + 8;
@@ -167,8 +183,8 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
   // ── the price ──
   const pcIn = ou(t("w:fra") / 0.3), pcOut = clamp01(t("w:domnet-0.05") / 0.2);
   const qFra = ou(t("w:fra") / 0.3), qKr = ou(t("w:kroner2") / 0.35), qMd = ou(t("w:mneden") / 0.4);
-  const shift = (112 * (1 - qKr) + 172 * (1 - qMd)) / 2;
-  const rollP = k(g, "w:83", 1.35, (x) => x);
+  const shift = 40 + (134 * (1 - qKr) + 208 * (1 - qMd)) / 2;
+  const rollP = ez(t("w:83") / 1.5);
   // ── the domain capsule ──
   const dOut = clamp01(t("w:servere-0.1") / 0.15);
   const DOM = "holmfysio.dk";
@@ -182,10 +198,10 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
   const bodyColor = `color-mix(in srgb, ${TINT} ${(M.tint * 100).toFixed(1)}%, ${C.sage})`;
 
   // ── the two cards (31.58 / 32.3): fly out on arcs, dock, type, check, tuck in ──
-  const DOCK_Y = 470 + 130 + 30 + 66;
+  const DOCK_Y = 447 + 160 + 26 + 80;
   const card = (at: string, dockX: number, ctrl: [number, number], seed: number, text: string) => {
     const u = bounce(g, at, 0.5, 0.6), tk = ez(t("w:fast-0.32") / 0.3 - seed * 0.1);
-    const P0: [number, number] = [CX, 470], P1: [number, number] = [dockX, DOCK_Y];
+    const P0: [number, number] = [CX, 447], P1: [number, number] = [dockX, DOCK_Y];
     const bx = (1 - u) * (1 - u) * P0[0] + 2 * (1 - u) * u * ctrl[0] + u * u * P1[0], by = (1 - u) * (1 - u) * P0[1] + 2 * (1 - u) * u * ctrl[1] + u * u * P1[1];
     const x = mix(bx, P0[0], tk), y = mix(by, P0[1], tk);
     const s = (0.3 + 0.7 * Math.min(1.08, clamp01(u) + Math.max(0, u - 1))) * (1 - 0.7 * tk);
@@ -196,7 +212,7 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
   // ── the lock (33.27) ──
   const lockP = bounce(g, "w:fast-0.2", 0.42, 0.55), snap = bounce(g, "w:fast+0.0", 0.3, 0.5), lockTuck = ez(t("w:ogs-0.12") / 0.22);
   const showLock = g >= f("w:fast-0.2") - 1 && g < f("w:ogs-0.12") + 8;
-  const lockY = M.y - 130 - 8 - 110 - 420 * (1 - lockP) + (M.y - (M.y - 130 - 8 - 110)) * lockTuck, lockS = 1 - 0.9 * lockTuck;
+  const lockY = M.y - 160 - 8 - 110 - 420 * (1 - lockP) + (160 + 8 + 110) * lockTuck, lockS = 1 - 0.9 * lockTuck;
   // ── the year (34.3 → 35.3) ──
   const cp = bounce(g, "w:ogs", 0.45, 0.6), cTuck = ez(t("w:domnet-0.14") / 0.26);
   const f1 = "w:du4+0.03", f2 = "w:fornyer+0.37";
@@ -204,7 +220,7 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
   let ya = "2027", yb = "2027", fl = { ang1: 0, ang2: 90 };
   if (g >= f(f2) + 20) { ya = yb = "2029"; } else if (g >= f(f2)) { ya = "2028"; yb = "2029"; fl = yearsAt("w:fornyer", 0.37); } else if (g >= f(f1) + 20) { ya = yb = "2028"; } else if (g >= f(f1)) { ya = "2027"; yb = "2028"; fl = yearsAt("w:du4", 0.03); }
   const showYear = g >= f("w:ogs") - 1 && g < f("w:domnet-0.14") + 10;
-  const cardX = mix(900, 1329, cp) * (1 - cTuck) + 960 * cTuck, cardS = (0.3 + 0.7 * Math.min(1.08, cp)) * (1 - 0.85 * cTuck);
+  const cardX = mix(900, 1343, cp) * (1 - cTuck) + 960 * cTuck, cardS = 1.2 * (0.3 + 0.7 * Math.min(1.08, cp)) * (1 - 0.85 * cTuck);
   // ── the tag (36.2) ──
   const tg = t("w:dit-0.05"), tagIn = bounce(g, "w:dit-0.05", 0.4, 0.6), tagOut = ez(t("w:servere-0.1") / 0.18);
   const tagAng = tg > 0 ? 34 * Math.exp(-3.4 * tg) * Math.cos(2 * Math.PI * 1.5 * tg) : 0;
@@ -250,12 +266,12 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
         const ap = ou((tm - 0.03 - d0 / 1500) / 0.28);
         if (ap <= 0) return null;
         let w = 0;
-        if (tm > 0.45) for (let j = 0; j < 3; j++) { if (g < f(pinAt[j]) + 6) continue; const d = Math.hypot(x - PINS[j][0], y - PINS[j][1]); w = Math.max(w, clamp01(1 - Math.abs(d - ripple(j)) / 46)); }
+        if (tm > 0.45) for (let j = 0; j < 3; j++) { if (g < f(pinAt[j]) + 6) continue; const d = Math.hypot(x - PINS[j][0], y - PINS[j][1]); w = Math.max(w, clamp01(1 - Math.abs(d - ripple(j)) / 38)); }
         const dc = Math.hypot(x - EU_W / 2, y - EU_H / 2), cdelay = (dc / 650) * 0.12;
         const cq = ez((t("w:ingen3-0.4") - cdelay) / 0.26);
         const px = mix(x, EU_W / 2, cq), py = mix(y, EU_H / 2 + 80, cq);
-        const r = 8.2 * vig * (0.3 + 0.7 * ap) * (1 + 0.5 * w) * (1 - cq);
-        return <circle key={i} cx={px.toFixed(1)} cy={py.toFixed(1)} r={Math.max(0, r).toFixed(2)} fill={rgb(SAGE, DEEP, w)} opacity={Math.min(1, ap * (0.72 + 0.28 * vig))} />;
+        const r = 8.2 * vig * (0.3 + 0.7 * ap) * (1 + 0.3 * w) * (1 - cq);
+        return <circle key={i} cx={px.toFixed(1)} cy={py.toFixed(1)} r={Math.max(0, r).toFixed(2)} fill={rgb(SAGE, DEEP, 0.85 * w)} opacity={Math.min(1, ap * (0.72 + 0.28 * vig))} />;
       })}
     </svg>
   );
@@ -264,16 +280,16 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
     <>
       {/* cards behind the body so they come out of it */}
       {showCards && [
-        { c: card("w:domne", CX - 245, [CX - 560, 420], 0, "holmfysio.dk"), label: "Domæne", icon: "globe" },
-        { c: card("w:email", CX + 245, [CX + 560, 420], 1, "mail@holmfysio.dk"), label: "E-mail", icon: "mail" },
+        { c: card("w:domne", CX - 290, [CX - 700, 380], 0, "holmfysio.dk"), label: "Domæne", icon: "globe" },
+        { c: card("w:email", CX + 290, [CX + 700, 380], 1, "mail@holmfysio.dk"), label: "E-mail", icon: "mail" },
       ].map(({ c, label, icon }, i) => (
         <At key={i} x={c.x} y={c.y} op={c.op} tf={`rotate(${c.rot}deg) scale(${c.s})`}><Card label={label} icon={icon} text={c.txt} done={c.done} /></At>
       ))}
       {showLock && <At x={CX} y={lockY} op={clamp01(lockP * 4)} tf={`scale(${lockS})`}><Lock lift={14 * (1 - snap)} /></At>}
       {showTag && (
-        <div style={{ position: "absolute", left: CX, top: CY, width: 0, height: 0, opacity: 1 - tagOut, transform: `translate(0px, ${470 + 130 - 14 - CY}px) rotate(${tagAng}deg) scale(${(0.5 + 0.5 * Math.min(1.08, tagIn)) * (1 - 0.7 * tagOut)})`, transformOrigin: "0 0" }}>
+        <div style={{ position: "absolute", left: CX, top: CY, width: 0, height: 0, opacity: 1 - tagOut, transform: `translate(0px, ${460 + 160 - 16 - CY}px) rotate(${tagAng}deg) scale(${(0.5 + 0.5 * Math.min(1.08, tagIn)) * (1 - 0.7 * tagOut)})`, transformOrigin: "0 0" }}>
           <div style={{ position: "absolute", left: -2, top: 0, width: 4, height: 40, background: C.sage }} />
-          <div style={{ position: "absolute", left: -190, top: 36, width: 380, height: 108, borderRadius: 32, background: C.white, border: `1.5px solid ${C.line}`, boxShadow: "0 22px 36px -18px rgba(26,22,20,0.30)",
+          <div style={{ position: "absolute", left: -200, top: 36, width: 400, height: 112, borderRadius: 32, background: C.white, border: `1.5px solid ${C.line}`, boxShadow: "0 22px 36px -18px rgba(26,22,20,0.30)",
             display: "flex", alignItems: "center", justifyContent: "center", gap: 16, fontFamily: SANS, fontWeight: 500, fontSize: 52, color: C.ink, whiteSpace: "nowrap" }}>
             <Ico n="user" s={54} c={C.sageDeep} w={2.2} />Ejer: dig
           </div>
@@ -302,21 +318,21 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
             {g >= f("w:fra") - 2 && g < f("w:domnet-0.05") + 14 && (
               <Mid style={{ opacity: pcIn * (1 - pcOut), filter: pcOut > 0 ? `blur(${pcOut * 10}px)` : undefined }}>
                 <div style={{ display: "flex", alignItems: "center", transform: `translateX(${shift}px)`, color: C.ink }}>
-                  <RollNumber value={83} p={rollP} size={180} color={C.ink} />
-                  <span style={{ marginLeft: 20, fontFamily: SANS, fontWeight: 500, fontSize: 76, opacity: qKr, transform: `translateX(${(1 - qKr) * -40}px)`, filter: qKr < 1 ? `blur(${(1 - qKr) * 8}px)` : undefined }}>kr.</span>
-                  <span style={{ marginLeft: 6, fontFamily: SANS, fontWeight: 500, fontSize: 76, opacity: qMd * 0.62, transform: `translateX(${(1 - qMd) * -50}px)`, filter: qMd < 1 ? `blur(${(1 - qMd) * 8}px)` : undefined }}>/md.</span>
+                  <Roller p={rollP} size={230} />
+                  <span style={{ marginLeft: 20, fontFamily: SANS, fontWeight: 500, fontSize: 92, opacity: qKr, transform: `translateX(${(1 - qKr) * -40}px)`, filter: qKr < 1 ? `blur(${(1 - qKr) * 8}px)` : undefined }}>kr.</span>
+                  <span style={{ marginLeft: 6, fontFamily: SANS, fontWeight: 500, fontSize: 92, opacity: qMd * 0.62, transform: `translateX(${(1 - qMd) * -50}px)`, filter: qMd < 1 ? `blur(${(1 - qMd) * 8}px)` : undefined }}>/md.</span>
                 </div>
-                <div style={{ position: "absolute", left: 120, top: 0, bottom: 0, display: "flex", alignItems: "center", fontFamily: SANS, fontWeight: 500, fontSize: 52, color: "rgba(26,22,20,0.62)", opacity: qFra, transform: `translateX(${(1 - qFra) * -40}px)` }}>Fra</div>
+                <div style={{ position: "absolute", left: 84, top: 0, bottom: 0, display: "flex", alignItems: "center", fontFamily: SANS, fontWeight: 500, fontSize: 60, color: "rgba(26,22,20,0.62)", opacity: qFra, transform: `translateX(${(1 - qFra) * -40}px)` }}>Fra</div>
               </Mid>
             )}
             {g >= f("w:domnet-0.05") - 2 && g < f("w:servere") + 4 && (
               <Mid style={{ opacity: 1 - dOut }}>
-                <div style={{ display: "flex", alignItems: "center", gap: 30 }}>
-                  <div style={{ width: 150, height: 150, borderRadius: 75, background: C.white, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${0.5 + 0.5 * Math.min(1.1, bounce(g, "w:domnet-0.02", 0.4, 0.6))})` }}><Ico n="globe" s={92} c={C.sageDeep} w={2.1} /></div>
-                  <div style={{ display: "flex", fontFamily: SANS, fontWeight: 500, fontSize: 92, letterSpacing: "-0.01em", color: C.ink }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 36 }}>
+                  <div style={{ width: 190, height: 190, borderRadius: 95, background: C.white, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${0.5 + 0.5 * Math.min(1.1, bounce(g, "w:domnet-0.02", 0.4, 0.6))})` }}><Ico n="globe" s={116} c={C.sageDeep} w={2.1} /></div>
+                  <div style={{ display: "flex", fontFamily: SANS, fontWeight: 500, fontSize: 112, letterSpacing: "-0.01em", color: C.ink }}>
                     {DOM.split("").map((ch, i) => {
                       const q = aspring(g, L("w:domnet", 0.06 + i * 0.045), 0.35, 0.62);
-                      return <span key={i} style={{ display: "inline-block", opacity: clamp01(q * 2.2), transform: `translateY(${(1 - q) * 80}px)`, filter: q < 1 ? `blur(${Math.max(0, (1 - q) * 6)}px)` : undefined }}>{ch}</span>;
+                      return <span key={i} style={{ display: "inline-block", opacity: clamp01(q * 2.2), transform: `translateY(${(1 - q) * 100}px)`, filter: q < 1 ? `blur(${Math.max(0, (1 - q) * 6)}px)` : undefined }}>{ch}</span>;
                     })}
                   </div>
                 </div>
@@ -342,7 +358,7 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
 
       {/* lines */}
       {g >= f("w:p") - 2 && g < f("w:vi") + 12 && <Line text="på nettet?" y={836} p={k(g, "w:p", 0.8)} out={k(g, "w:vi-0.1", 0.25)} size={100} italicWords={["nettet"]} />}
-      {g >= f("w:kroner2+0.2") - 1 && g < f("w:domne") + 6 && <Line text="faktureres årligt" y={690} size={28} serif={false} color={C.muted} p={k(g, "w:kroner2+0.2", 0.45)} out={k(g, "w:domne-0.1", 0.25)} />}
+      {g >= f("w:kroner2+0.2") - 1 && g < f("w:domne") + 6 && <Line text="faktureres årligt" y={738} size={30} serif={false} color={C.muted} p={k(g, "w:kroner2+0.2", 0.45)} out={k(g, "w:domne-0.1", 0.25)} />}
       {g >= f("w:i2") - 2 && g < f("w:ingen3-0.4") + 10 && <Line text="Servere i Europa." y={928} size={100} p={k(g, "w:i2", 0.7)} out={k(g, "w:ingen3-0.42", 0.28)} italicWords={["Europa"]} />}
 
       {/* Europe: three server pins pulse, data travels between them */}

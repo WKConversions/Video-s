@@ -11,7 +11,7 @@
   "frame": 1628,
   "db": -6,
   "pitch": 0,
-  "note": "capsule rounds into the globe"
+  "note": "capsule rounds into the turning globe"
  },
  {
   "id": "gen-appear",
@@ -22,7 +22,7 @@
  },
  {
   "id": "gen-appear",
-  "frame": 1680,
+  "frame": 1676,
   "db": -10,
   "pitch": 0,
   "note": "line leaves, setup ring appears"
@@ -32,11 +32,11 @@
   "frame": 1698,
   "db": -14,
   "pitch": 0,
-  "note": "ring fills 0 to 100% while the globe spins up"
+  "note": "ring fills 0 to 100% while the land darkens in the sweep"
  },
  {
   "id": "gen-success",
-  "frame": 1765,
+  "frame": 1766,
   "db": -7,
   "pitch": 0,
   "note": "check draws in the ring"
@@ -46,33 +46,26 @@
   "frame": 1774,
   "db": -10,
   "pitch": 0,
-  "note": "globe and ring compact into the price capsule"
+  "note": "globe and ring open into the price capsule"
  },
  {
   "id": "gen-pop",
-  "frame": 1792,
+  "frame": 1787,
   "db": -7,
   "pitch": 0,
-  "note": "price capsule lands, 83 starts rolling"
+  "note": "price capsule lands"
  },
  {
   "id": "kenney-tick-004",
   "frame": 1797,
   "db": -14,
   "pitch": 0,
-  "note": "digit roll tick"
+  "note": "digits start rolling"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 1805,
+  "frame": 1809,
   "db": -15,
-  "pitch": 0,
-  "note": "digit roll tick"
- },
- {
-  "id": "kenney-tick-004",
-  "frame": 1813,
-  "db": -16,
   "pitch": 0,
   "note": "digit roll tick"
  },
@@ -84,11 +77,32 @@
   "note": "'kr.' slides in"
  },
  {
+  "id": "kenney-tick-004",
+  "frame": 1823,
+  "db": -15,
+  "pitch": 0,
+  "note": "digit roll tick"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 1837,
+  "db": -16,
+  "pitch": 0,
+  "note": "digit roll tick"
+ },
+ {
   "id": "gen-appear",
   "frame": 1843,
   "db": -13,
   "pitch": 0,
   "note": "small note 'faktureres årligt'"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 1851,
+  "db": -17,
+  "pitch": 0,
+  "note": "digits settle on 83"
  },
  {
   "id": "kenney-select-002",
@@ -98,39 +112,74 @@
   "note": "'/md.' slides in"
  },
  {
+  "id": "gen-whoosh-short",
+  "frame": 1893,
+  "db": -9,
+  "pitch": 0,
+  "note": "price capsule lifts, domain card flies out"
+ },
+ {
   "id": "gen-pop",
   "frame": 1895,
   "db": -7,
   "pitch": 0,
-  "note": "chip holmfysio.dk pops out on an arc"
+  "note": "Domæne card flies out on an arc"
+ },
+ {
+  "id": "kenney-drop-003",
+  "frame": 1918,
+  "db": -10,
+  "pitch": 0,
+  "note": "Domæne card docks"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 1931,
+  "db": -15,
+  "pitch": 0,
+  "note": "domain typing"
  },
  {
   "id": "gen-pop",
   "frame": 1938,
   "db": -7,
   "pitch": 2,
-  "note": "chip @holmfysio.dk pops out on an arc"
+  "note": "E-mail card flies out on an arc"
  },
  {
-  "id": "gen-whoosh-short",
-  "frame": 1955,
+  "id": "gen-chime",
+  "frame": 1944,
   "db": -12,
   "pitch": 0,
-  "note": "first chip tucks back"
+  "note": "check on the Domæne card"
+ },
+ {
+  "id": "kenney-drop-003",
+  "frame": 1960,
+  "db": -10,
+  "pitch": 2,
+  "note": "E-mail card docks"
  },
  {
   "id": "gen-whoosh-short",
-  "frame": 1963,
-  "db": -13,
+  "frame": 1977,
+  "db": -11,
+  "pitch": 0,
+  "note": "first card tucks back into the capsule"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 1983,
+  "db": -12,
   "pitch": 2,
-  "note": "second chip tucks back"
+  "note": "second card tucks back"
  },
  {
   "id": "gen-whoosh-short",
   "frame": 1984,
   "db": -12,
   "pitch": 0,
-  "note": "lock drops in from above"
+  "note": "lock drops in as the price capsule sinks"
  },
  {
   "id": "gen-stamp",
@@ -158,7 +207,7 @@
   "frame": 2058,
   "db": -7,
   "pitch": 0,
-  "note": "calendar card pops out with 2027"
+  "note": "capsule shrinks, calendar card pops out with 2027"
  },
  {
   "id": "gen-tick",
@@ -200,7 +249,21 @@
   "frame": 2123,
   "db": -8,
   "pitch": 0,
-  "note": "capsule becomes the domain chip"
+  "note": "capsule becomes the big domain card"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2130,
+  "db": -14,
+  "pitch": 0,
+  "note": "letters of holmfysio.dk pop up"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2142,
+  "db": -15,
+  "pitch": 0,
+  "note": "letters of holmfysio.dk pop up"
  },
  {
   "id": "gen-pop",
@@ -221,28 +284,21 @@
   "frame": 2213,
   "db": -12,
   "pitch": 0,
-  "note": "tag collapses into the chip"
- },
- {
-  "id": "kenney-tick-004",
-  "frame": 2214,
-  "db": -16,
-  "pitch": 0,
-  "note": "tag swing tick"
+  "note": "tag collapses into the card"
  },
  {
   "id": "gen-whoosh-short",
   "frame": 2217,
   "db": -9,
   "pitch": 0,
-  "note": "chip shrinks to a dot and rises"
+  "note": "card shrinks to a dot and rises"
  },
  {
   "id": "gen-impact-soft",
   "frame": 2239,
   "db": -8,
   "pitch": 0,
-  "note": "pin lands on the map location"
+  "note": "first server pin lands"
  },
  {
   "id": "gen-shimmer",
@@ -252,11 +308,32 @@
   "note": "dotted Europe blooms around the pin"
  },
  {
-  "id": "gen-appear",
+  "id": "gen-pop",
+  "frame": 2250,
+  "db": -9,
+  "pitch": 0,
+  "note": "second server pin lands"
+ },
+ {
+  "id": "gen-pop",
   "frame": 2258,
+  "db": -9,
+  "pitch": 2,
+  "note": "third server pin lands"
+ },
+ {
+  "id": "gen-appear",
+  "frame": 2260,
   "db": -11,
   "pitch": 0,
   "note": "'Servere i Europa.' rises"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2271,
+  "db": -16,
+  "pitch": 0,
+  "note": "data packet travels between pins"
  },
  {
   "id": "gen-whoosh-medium",
@@ -270,7 +347,7 @@
   "frame": 2292,
   "db": -8,
   "pitch": 0,
-  "note": "two-link chain pops in"
+  "note": "big two-link chain pops in"
  },
  {
   "id": "gen-swell",
