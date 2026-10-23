@@ -28,18 +28,18 @@
   "note": "S2.1 'bedste?' rises"
  },
  {
+  "id": "gen-whoosh-medium",
+  "frame": 645,
+  "db": -10,
+  "pitch": -2,
+  "note": "S2.2 the steady scroll through the finished site starts"
+ },
+ {
   "id": "gen-whoosh-short",
   "frame": 667,
   "db": -10,
   "pitch": 0,
-  "note": "S2.1 the line blurs away upward"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 672,
-  "db": -10,
-  "pitch": -2,
-  "note": "S2.2 first browse pass: the site scrolls down"
+  "note": "S2.1 the line blurs away"
  },
  {
   "id": "gen-pop",
@@ -57,17 +57,10 @@
  },
  {
   "id": "gen-whoosh-short",
-  "frame": 759,
-  "db": -10,
-  "pitch": -2,
-  "note": "S2.2 second browse pass"
- },
- {
-  "id": "gen-whoosh-short",
   "frame": 798,
   "db": -9,
   "pitch": 0,
-  "note": "S2.2 the 0 kr. glass tag swings in"
+  "note": "S2.2 the big 0 kr. glass tag swings in"
  },
  {
   "id": "gen-pop",
@@ -91,6 +84,13 @@
   "note": "S2.2 the number rolls to 0"
  },
  {
+  "id": "gen-whoosh-medium",
+  "frame": 816,
+  "db": -9,
+  "pitch": 2,
+  "note": "S2.2 the page returns to the top, fast"
+ },
+ {
   "id": "gen-whoosh-short",
   "frame": 839,
   "db": -9,
@@ -98,18 +98,11 @@
   "note": "S2.2 the tag flies into the Island"
  },
  {
-  "id": "gen-whoosh-medium",
-  "frame": 840,
+  "id": "kenney-tick-004",
+  "frame": 851,
   "db": -8,
-  "pitch": 0,
-  "note": "S2.3 the phone turns toward the camera"
- },
- {
-  "id": "gen-impact-soft",
-  "frame": 852,
-  "db": -9,
-  "pitch": 0,
-  "note": "S2.3 the turn settles"
+  "pitch": -2,
+  "note": "S2.3 a finger taps the headline"
  },
  {
   "id": "kenney-select-001",
@@ -127,77 +120,147 @@
  },
  {
   "id": "gen-whoosh-short",
-  "frame": 902,
+  "frame": 900,
   "db": -9,
   "pitch": 0,
   "note": "S2.4 the bubble rises from below"
  },
  {
-  "id": "kenney-drop-003",
-  "frame": 916,
-  "db": -9,
-  "pitch": 0,
-  "note": "S2.4 the bubble lands, typing dots"
- },
- {
   "id": "gen-pop",
-  "frame": 925,
+  "frame": 911,
   "db": -7,
   "pitch": 0,
   "note": "S2.4 the bubble widens"
  },
  {
   "id": "kenney-click-001",
-  "frame": 933,
+  "frame": 918,
   "db": -10,
   "pitch": 0,
   "note": "S2.4 typing"
  },
  {
   "id": "kenney-click-001",
-  "frame": 940,
+  "frame": 924,
   "db": -10,
   "pitch": 1,
   "note": "S2.4 typing"
  },
  {
   "id": "kenney-click-001",
-  "frame": 947,
+  "frame": 930,
   "db": -10,
   "pitch": 0,
   "note": "S2.4 typing"
  },
  {
   "id": "kenney-click-001",
-  "frame": 955,
+  "frame": 936,
   "db": -10,
   "pitch": 2,
   "note": "S2.4 typing"
  },
  {
+  "id": "kenney-click-001",
+  "frame": 942,
+  "db": -10,
+  "pitch": 0,
+  "note": "S2.4 typing"
+ },
+ {
+  "id": "kenney-select-002",
+  "frame": 947,
+  "db": -7,
+  "pitch": 0,
+  "note": "S2.4 the send button is pressed"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 949,
+  "db": -10,
+  "pitch": 2,
+  "note": "S2.4 the sent text lifts off"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 953,
+  "db": -10,
+  "pitch": 0,
+  "note": "S2.5 the old headline deletes backwards"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 958,
+  "db": -10,
+  "pitch": -2,
+  "note": "S2.5 the old headline deletes backwards"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 962,
+  "db": -10,
+  "pitch": -4,
+  "note": "S2.5 the old headline deletes backwards"
+ },
+ {
   "id": "gen-shimmer",
-  "frame": 959,
+  "frame": 966,
   "db": -8,
   "pitch": 0,
-  "note": "S2.5 the headline blur-swaps to the corrected one"
+  "note": "S2.5 the corrected headline starts to type"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 968,
+  "db": -10,
+  "pitch": 0,
+  "note": "S2.5 retyping"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 973,
+  "db": -10,
+  "pitch": 1,
+  "note": "S2.5 retyping"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 978,
+  "db": -10,
+  "pitch": 0,
+  "note": "S2.5 retyping"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 983,
+  "db": -10,
+  "pitch": 2,
+  "note": "S2.5 retyping"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 988,
+  "db": -10,
+  "pitch": 0,
+  "note": "S2.5 retyping"
  },
  {
   "id": "gen-success",
-  "frame": 972,
+  "frame": 990,
   "db": -5,
   "pitch": 0,
-  "note": "S2.5 the check pops on the bubble"
+  "note": "S2.5 the send button becomes a check"
  },
  {
   "id": "gen-pop",
-  "frame": 986,
+  "frame": 994,
   "db": -7,
   "pitch": 0,
   "note": "S2.5 the bubble pops away"
  },
  {
   "id": "gen-whoosh-short",
-  "frame": 988,
+  "frame": 994,
   "db": -7,
   "pitch": 0,
   "note": "S2.6 the phone shrinks and rounds into the capsule"
