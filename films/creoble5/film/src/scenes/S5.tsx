@@ -8,7 +8,7 @@
 // and REBUILDS (Byg den), is scanned and scrolled once (Se den), the price docks on it (Så køber du); the price tag
 // becomes the CTA button. Transforms only; nothing wobbles.
 import React from "react";
-import { staticFile } from "remotion";
+import { Img, staticFile } from "remotion";
 import { C, INOUT, LIN, OUT, SANS, SERIF, clamp01, mix } from "../lib";
 import { Island, PillButton, RollNumber, Ico, f } from "../shared";
 import { CX, CY, HANDOFF_HALF, Line, NEW_HEADLINE, Stage, StageHandoff, STAGE } from "../v5";
@@ -47,7 +47,7 @@ const typed = (t: number, at: number, text: string, cps: number) => text.slice(0
 type Key = [number, number, number, number];
 const CAM: Key[] = [
   [START, 960, 540, 1], [39.7, 960, 540, 1],
-  [40.4, 1170, 560, 1.24],                 // push in on the chat panel's corner while the reply types
+  [40.4, 1170, 560, 1.24],                  // push in on the chat panel's corner while the reply types
   [41.7, 1170, 560, 1.24], [42.3, 960, 540, 1],
   [43.3, 1180, 520, 1.08], [43.9, 960, 540, 1],   // toward the queue counter, then back
   [45.12, 960, 540, 1], [45.7, 820, 470, 1.2], [46.5, 1080, 520, 1.1], [47.3, 940, 500, 1.14], [47.75, 960, 540, 1],   // the pills
@@ -56,7 +56,7 @@ const CAM: Key[] = [
   [48.95, 740, 400, 1.38], [49.5, 960, 540, 1],
   [49.62, 960, 540, 1], [50.1, 1130, 520, 1.12],    // Så køber du: push toward the price tag
   [50.28, 1130, 520, 1.12], [50.75, 960, 530, 1.06], // the button lands: frame it
-  [55.2, 960, 530, 1.06],
+  [51.3, 960, 530, 1.06], [51.85, 900, 500, 1.16], [52.4, 900, 500, 1.16], [52.95, 1020, 520, 1.06], [53.5, 1020, 520, 1.06], [54.05, 940, 500, 1.16], [54.6, 940, 500, 1.16], [55.2, 960, 530, 1.06],
 ];
 const camAt = (t: number) => {
   if (t <= CAM[0][0]) return CAM[0];
@@ -67,15 +67,15 @@ const camAt = (t: number) => {
 const PHOTOS = ["holm-shoulder.jpg", "holm-neck.jpg", "holm-calves.jpg", "holm-stretch.jpg"];
 const HK = STAGE.w / 1460;                                        // design px → stage px
 const HERO = { x: 760 * HK, y: 120 * HK, w: 630 * HK, h: 560 * HK, r: 24 * HK };
-const ERAS: [number, number[]][] = [[START, [39.8, 40.55, 41.3, 42.05, 42.8, 43.55]], [B_REOPEN, [45.5, 46.25, 47.0]], [49.1, []], [50.7, [50.9, 51.65, 52.4, 53.15, 53.85, 54.45, 55.0]]];
+const ERAS: [number, number[]][] = [[START, [39.8, 40.4, 41.0, 41.6, 42.2, 42.8, 43.4]], [B_REOPEN, [45.5, 46.15, 46.8, 47.4]], [49.1, []], [50.7, [50.9, 51.5, 52.1, 52.7, 53.3, 53.9, 54.5, 55.1]]];
 const HeroSwap: React.FC<{ t: number; scrollPx: number }> = ({ t, scrollPx }) => {
   let era = ERAS[0];
   for (const e of ERAS) if (t >= e[0]) era = e;
   const sw = era[1]; let k = -1;
   for (let i = 0; i < sw.length; i++) if (t >= sw[i]) k = i;
-  const p = k >= 0 ? INOUT(clamp01((t - sw[k]) / 0.5)) : 1, d = k % 2 === 0 ? 1 : -1;
+  const p = k >= 0 ? INOUT(clamp01((t - sw[k]) / 0.42)) : 1, d = k % 2 === 0 ? 1 : -1;
   const cur = PHOTOS[(k + 1) % 4], old = PHOTOS[((k % 4) + 4) % 4];
-  const img = (src: string, dx: number) => <img src={staticFile(`img/${src}`)} style={{ position: "absolute", left: 0, top: 0, width: HERO.w, height: HERO.h, objectFit: "cover", transform: `translateX(${dx}px)` }} />;
+  const img = (src: string, dx: number) => <Img src={staticFile(`img/${src}`)} style={{ position: "absolute", left: 0, top: 0, width: HERO.w, height: HERO.h, objectFit: "cover", transform: `translateX(${dx}px)` }} />;
   return (
     <div style={{ position: "absolute", left: HERO.x, top: HERO.y - scrollPx, width: HERO.w, height: HERO.h, borderRadius: HERO.r, overflow: "hidden", background: "#E3E9E8" }}>
       {p < 1 && k >= 0 && img(old, -d * HERO.w * 0.3 * p)}

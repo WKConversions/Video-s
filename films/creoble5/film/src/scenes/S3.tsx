@@ -146,7 +146,8 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
 
   // ── the stage's own acts: pages fan out as cards (Siden er din), question tilts ───────────────────────────────────
   const fan = track(g, 0, [[tSiden, 1, 0.55, 0.6], [tSiden + 30, 0, 0.38, 0.9]]);
-  const ss = 1 - 0.2 * fan;                                  // the main page steps back while the others fan out
+  const fanS = track(g, 0, [[tSiden, 1, 0.42, 1], [tSiden + 30, 0, 0.34, 1]]);   // calm (no overshoot): the main page's text never wobbles
+  const ss = 1 - 0.2 * fanS;                                 // the main page steps back while the others fan out
   const sry = imp(g, tIkke, 22, 1.6, 3.2) + imp(g, tTil2, -12, 1.8, 3.4);
   const srz = imp(g, tIkke, -5, 1.6, 3.2) + imp(g, tTil2, 4, 1.8, 3.4);
   const srx = imp(g, tTil2, -8, 1.8, 3.4);
@@ -246,7 +247,7 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
 
   return (
     <>
-      <div style={{ position: "absolute", inset: 0, transformOrigin: "960px 540px", transform: camId ? undefined : `translate(${-S * (fx - 960)}px, ${-S * (fy - 540)}px) scale(${S})` }}>
+      <div style={{ position: "absolute", inset: 0, textRendering: "geometricPrecision", transformOrigin: "960px 540px", transform: camId ? undefined : `translate(${-S * (fx - 960)}px, ${-S * (fy - 540)}px) scale(${S})` }}>
         {/* the other pages, fanning out from behind the stage as cards */}
         {fan > 0.003 && (
           <>
@@ -297,12 +298,12 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
                   </svg>
                 )}
                 {priceIn > 0.001 && (
-                  <div style={{ opacity: priceIn, transform: `scale(${mix(0.92, 1, priceIn)})` }}>
+                  <div style={{ opacity: priceIn }}>
                     {!phase2 ? <Price size={DIG} from={0} to={499} p={pR1} dp={0.5 / ROLL1} krb={krb} spins={[1, 2, 3]} /> : <Price size={DIG} from={499} to={0} p={pR2} dp={0.5 / ROLL2} krb={1} spins={[1, 2, 3]} />}
                   </div>
                 )}
                 {rowIn > 0.001 && (
-                  <div style={{ opacity: rowIn, transform: `scale(${mix(0.94, 1, rowIn)})`, filter: rowIn < 1 ? `blur(${(1 - rowIn) * 8}px)` : undefined }}>
+                  <div style={{ opacity: rowIn, filter: rowIn < 1 ? `blur(${(1 - rowIn) * 8}px)` : undefined }}>
                     <div style={abs(-336, -50, { height: 100, display: "flex", alignItems: "center", fontFamily: SANS, fontWeight: 500, fontSize: 48, color: C.ink, letterSpacing: "-0.01em" })}>Risiko</div>
                     <div style={abs(TGX - TG.w / 2, -TG.size / 2)}><Tgl u={sp(g, tOff, 0.4, 0.55)} /></div>
                   </div>
