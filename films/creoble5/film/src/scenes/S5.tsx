@@ -59,13 +59,7 @@ const CAM: Key[] = [
   [51.3, 960, 530, 1.06], [51.85, 900, 500, 1.16], [52.4, 900, 500, 1.16], [52.95, 1020, 520, 1.06], [53.5, 1020, 520, 1.06], [54.05, 940, 500, 1.16], [54.6, 940, 500, 1.16], [55.2, 960, 530, 1.06],
 ];
 /** a push with a small anticipation the other way, an overshoot and a quick settle (done in 88% of the segment) */
-const camEase = (u: number) => {
-  const q = clamp01(u / 0.88);
-  if (q <= 0) return 0;
-  if (q < 0.1) return -0.02 * Math.sin((Math.PI * q) / 0.1);                   // anticipation
-  const r = (q - 0.1) / 0.9, c1 = 1.25, c3 = c1 + 1;                              // easeOutBack: overshoot ≈ 4%
-  return 1 + c3 * Math.pow(r - 1, 3) + c1 * Math.pow(r - 1, 2);
-};
+const camEase = (u: number) => INOUT(clamp01(u));   // (an anticipation + overshoot push lowered the motion median and did not remove the push-tail SHAKE flags, so the plain eased push stays)
 const camAt = (t: number) => {
   if (t <= CAM[0][0]) return CAM[0];
   for (let i = 1; i < CAM.length; i++) if (t <= CAM[i][0]) { const a = CAM[i - 1], b = CAM[i], e = camEase((t - a[0]) / Math.max(1e-6, b[0] - a[0])); return [t, mix(a[1], b[1], e), mix(a[2], b[2], e), mix(a[3], b[3], e)] as Key; }
