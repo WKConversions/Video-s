@@ -150,10 +150,10 @@ const Link: React.FC<{ clipX?: number }> = ({ clipX }) => (
 // ── the camera: eased pushes, glides and pull-backs on the stage (the page itself never scrolls) ─────────────────────
 // pose = zoom Z and the stage point (fx, fy), measured from the stage centre, that sits at the screen centre
 const CAM: Array<[number, number, number, number, number]> = [   // [from s, to s, Z, fx, fy]: a few calm reframes, 1.2-2.0 s each, rest to rest
-  [26.91, 28.5, 1.1, 0, -20],      // "Skal den på nettet?": the hand-off's push eases on (the globe rises)
+  [26.91, 28.5, 1.1, 0, 0],      // "Skal den på nettet?": the hand-off's push eases on (the globe rises)
   [29.7, 31.3, 1.0, 0, 0],         // "Fra 83 kr./md.": settle back for the price
-  [31.6, 33.2, 1.1, 0, -60],       // "Domæne og e-mail": a gentle lean toward the address bar
-  [35.45, 36.85, 1.1, 0, -60],     // "Domænet i dit navn": held framing; barely moves (the bar is already there)
+  [31.6, 33.2, 1.1, 0, 0],       // "Domæne og e-mail": a gentle lean toward the address bar
+  [35.45, 36.85, 1.1, 0, 0],     // "Domænet i dit navn": held framing; barely moves (the bar is already there)
   [37.1, 38.9, 1.0, 0, 0],         // after the flip: ease to the plain stage for the h4 hand-off
 ];
 const camE = (u: number) => 0.5 - 0.5 * Math.cos(Math.PI * clamp01(u));   // a smooth sine ease, rest to rest: no spring, no overshoot
@@ -174,7 +174,7 @@ const slideIdx = (sec: number) => SLIDES.reduce((a, T) => a + camE((sec - T) / 0
 // ── the body (the thing that lives on the stage): a dot from the address bar → globe → price capsule → domain bar ──
 const main = (g: number) => ({
   x: seq(g, 960, [["w:ogs-0.02", 790, 0.5, 0.55], ["w:domnet-0.05", 960, 0.5, 0.55]]),
-  y: seq(g, 252, [["h3+0.3", 565, 0.5, 0.55], ["w:fra-0.12", 690, 0.5, 0.55], ["w:domnet-0.05", 301, 0.5, 0.55], ["w:servere-0.04", 540, 0.35, 0.7]]),
+  y: seq(g, 252, [["h3+0.3", 565, 0.5, 0.55], ["w:fra-0.12", 690, 0.5, 0.55], ["w:domnet-0.05", 235, 0.5, 0.55], ["w:servere-0.04", 540, 0.35, 0.7]]),
   w: Math.max(2, seq(g, 30, [["h3+0.3", 520, 0.45, 0.5], ["w:fra-0.12", 760, 0.45, 0.5], ["w:domnet-0.05", 880, 0.45, 0.5], ["w:servere-0.04", 40, 0.3, 0.7]])),
   h: Math.max(2, seq(g, 30, [["h3+0.3", 520, 0.45, 0.5], ["w:fra-0.12", 230, 0.45, 0.5], ["w:domnet-0.05", 130, 0.45, 0.5], ["w:servere-0.04", 40, 0.3, 0.7]])),
   sc: seq(g, 1, [["w:ogs-0.02", 0.7, 0.5, 0.55], ["w:domnet-0.05", 1, 0.5, 0.55]]),
@@ -369,13 +369,13 @@ export const Scene4: React.FC<{ g: number }> = ({ g }) => {
       {/* cards behind the body so they come out of it */}
       {showCards && [
         { c: card("w:domne", (gg) => { const q = cam(gg / 30); return [CX + q.Z * (0 - q.fx), CY + q.Z * (-277 - q.fy)]; }, [CX - 300, 420], 0, "holmfysio.dk", true), label: "Domæne", icon: "globe" },
-        { c: card("w:email", (gg) => { const q = cam(gg / 30); return [CX + q.Z * (0 - q.fx) + 400, CY + q.Z * (-277 - q.fy) + 120]; }, [CX + 560, 600], 1, "mail@holmfysio.dk", false), label: "E-mail", icon: "mail" },
+        { c: card("w:email", (gg) => { const q = cam(gg / 30); return [CX + q.Z * (0 - q.fx), CY + q.Z * (-277 - q.fy) + 150]; }, [CX + 560, 600], 1, "mail@holmfysio.dk", false), label: "E-mail", icon: "mail" },
       ].map(({ c, label, icon }, i) => (
         <At key={i} x={c.x} y={c.y} op={c.op} tf={`${c.sq} rotate(${c.rot}deg) scale(${c.s})`}><Card label={label} icon={icon} text={c.txt} done={c.done} /></At>
       ))}
       {showLock && <At x={CX} y={lockY} op={clamp01(lockP * 4)} tf={`${squash(0, lockY - lockY1, 0.0026)} scale(${lockS})`}><Lock lift={14 * (1 - snap)} /></At>}
       {showTag && (
-        <div style={{ position: "absolute", left: CX, top: CY, width: 0, height: 0, opacity: 1 - tagOut, transform: `translate(0px, ${301 + 65 - 10 - CY}px) rotate(${tagAng}deg) scale(${(0.5 + 0.5 * Math.min(1.08, tagIn)) * (1 - 0.7 * tagOut)})`, transformOrigin: "0 0" }}>
+        <div style={{ position: "absolute", left: CX, top: CY, width: 0, height: 0, opacity: 1 - tagOut, transform: `translate(0px, ${235 + 65 - 10 - CY}px) rotate(${tagAng}deg) scale(${(0.5 + 0.5 * Math.min(1.08, tagIn)) * (1 - 0.7 * tagOut)})`, transformOrigin: "0 0" }}>
           <div style={{ position: "absolute", left: -2, top: 0, width: 4, height: 40, background: C.sage }} />
           <div style={{ position: "absolute", left: -190, top: 36, width: 380, height: 104, borderRadius: 30, background: C.white, border: `1.5px solid ${C.line}`, boxShadow: "0 22px 36px -18px rgba(26,22,20,0.30)",
             display: "flex", alignItems: "center", justifyContent: "center", gap: 16, fontFamily: SANS, fontWeight: 500, fontSize: 50, color: C.ink, whiteSpace: "nowrap" }}>

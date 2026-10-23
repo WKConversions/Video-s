@@ -168,8 +168,8 @@ const TemplateFlick: React.FC<{ t: number; i: number }> = ({ t, i }) => {
 // ── the camera (revision 4): calm. One reframe per sentence, each 1.2–1.4 s, a sine ease from rest to rest, no spring,
 //    zoom within ±12%, pans within ~150 px; everything else holds the frame. (c = zoom, fu/fv = focus from the stage centre) ──
 const CAM: [number, number, number, number][] = [
-  [0.9, 1, 0, 0], [2.3, 1.08, -40, 0],          // "Din nye hjemmeside er få minutter væk": settle in while the site builds
-  [8.1, 1.08, -40, 0], [9.0, 1, 0, 0],          // (lead, rev. 4) hold through AI, the field and the rebuild; pull back inside the code flip
+  [0.9, 1, 0, 0], [2.3, 1.08, 0, 0],          // "Din nye hjemmeside er få minutter væk": settle in while the site builds
+  [8.1, 1.08, 0, 0], [9.0, 1, 0, 0],          // (lead, rev. 4) hold through AI, the field and the rebuild; pull back inside the code flip
 ];
 const camAt = (t: number) => {
   if (t <= CAM[0][0]) return { c: 1, fu: 0, fv: 0 };
@@ -316,8 +316,8 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
             {showField && <SiteHeader name={txt.slice(0, Math.max(0, Math.min(txt.length, Math.floor((t - t0 - 0.12) * cps))))} p={hdr} />}
             {showField && (
               <div style={{ position: "absolute", left: 30, top: STAGE.h - 46 - 24 - 110, width: 900, height: 110, transform: `translateY(${fieldDy}px) ${fieldSq}`, opacity: 1 - clamp01((leave - 0.5) * 2), fontFamily: SANS }}>
-                <div style={{ position: "absolute", left: 0, top: -64, height: 50, padding: "0 24px", borderRadius: 25, background: "rgba(250,250,248,0.94)", border: `1px solid ${C.line}`, boxShadow: SHADOW,
-                  display: "flex", alignItems: "center", fontSize: 28, fontWeight: 500, color: C.muted, whiteSpace: "nowrap", opacity: lab, transform: `translateY(${(1 - lab) * 14}px)` }}>Fortæl kort om din virksomhed</div>
+                <div style={{ position: "absolute", left: 450, top: -64, height: 50, padding: "0 24px", borderRadius: 25, transform: `translateX(-50%) translateY(${(1 - lab) * 14}px)`, background: "rgba(250,250,248,0.94)", border: `1px solid ${C.line}`, boxShadow: SHADOW,
+                  display: "flex", alignItems: "center", fontSize: 28, fontWeight: 500, color: C.muted, whiteSpace: "nowrap", opacity: lab }}>Fortæl kort om din virksomhed</div>
                 <LiquidGlass w={900} h={110} radius={55} p={1} sheen={0.5 + 0.5 * Math.sin(t * 1.8)} tint="clear" />
                 <div style={{ position: "absolute", left: 120, top: 0, height: 110, display: "flex", alignItems: "center", fontSize: 40, fontWeight: 500, color: INK, whiteSpace: "pre", letterSpacing: "-0.01em" }}>
                   {txt.slice(0, n).split("").map((ch, i) => {

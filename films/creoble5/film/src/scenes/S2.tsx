@@ -8,7 +8,7 @@ import React from "react";
 import { Img, staticFile } from "remotion";
 import { C, HOLM, INOUT, OUT, SANS, SERIF, clamp01, mix, SHADOW_BIG } from "../lib";
 import { Ico, LiquidGlass, RollNumber, f } from "../shared";
-import { CX, CY, HANDOFF_HALF, MiniSite, PHONE, Phone, SCREEN, STAGE, Stage, StageHandoff, TYPE, NEW_HEADLINE } from "../v5";
+import { CX, CY, HANDOFF_HALF, MiniSite, PHONE, Phone, SCREEN, STAGE, Stage, StageHandoff, NEW_HEADLINE } from "../v5";
 
 // ── local helpers (times in seconds) ─────────────────────────────────────────────────────────────────────────────
 const kk = (t: number, at: number, dur: number, ease: (x: number) => number = OUT) => ease(clamp01((t - at) / dur));
@@ -221,7 +221,7 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
   const headOut = kk(t, 11.12, 0.3, INOUT);
 
   // ── the big glass tag "0 kr." ────────────────────────────────────────────────────────────────────────────────
-  const TW = 340, TH = 152, tagX = 1292, tagY = 400;
+  const TW = 340, TH = 152, tagX = CX, tagY = 700;   // centred on x 960, docked on the phone's lower part
   const tagIn = spr(t, T_TAG, 0.5, 0.5);
   const tagSwing = -58 * (1 - spr(t, T_TAG, 0.62, 0.32));
   const tagOutU = clamp01((t - T_TAG_OUT) / 0.3);
@@ -246,7 +246,7 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
 
   return (
     <>
-      {t > E0 + 0.1 && headOut < 1 && <SpringLine t={t} at={E0 + 0.14} words={["Det", "bedste?"]} italicWords={["bedste?"]} x={340} y={CY} out={headOut} size={TYPE.head} />}
+      {t > E0 + 0.1 && headOut < 1 && <SpringLine t={t} at={E0 + 0.14} words={["Det", "bedste?"]} italicWords={["bedste?"]} x={CX} y={46} out={headOut} size={52} />}
 
       {/* the stage (browser) morphing into the phone, and back */}
       <div style={{ position: "absolute", left: CX - WB_W / 2, top: CY - WB_H / 2, width: WB_W, height: WB_H, transform: wrapT, clipPath: clip }}>
@@ -312,7 +312,7 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
 
       {/* "0 kr." — a big Liquid Glass tag that swings in beside the phone and rolls its number */}
       {tagOn && (
-        <div style={{ position: "absolute", left: tagX - TW / 2, top: tagY - TH / 2, width: TW, height: TH, transformOrigin: "0% 50%",
+        <div style={{ position: "absolute", left: tagX - TW / 2, top: tagY - TH / 2, width: TW, height: TH, transformOrigin: "50% 50%",
           transform: `translate(${toIslandX * tagOut}px, ${toIslandY * tagOut}px) rotate(${tagSwing}deg) scale(${(0.6 + 0.4 * Math.min(1.25, tagIn)) * (1 - 0.85 * tagOut)}) rotate(${tagAng}rad) scale(${1 + tagStretch}, ${1 - 0.6 * tagStretch}) rotate(${-tagAng}rad)`, opacity: 1 - tagOut * tagOut }}>
           <LiquidGlass w={TW} h={TH} p={Math.max(0, tagIn)} sheen={0.2 + 0.6 * kk(t, T_TAG, 0.9, INOUT)} tint="sage">
             <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: 14, fontFamily: SERIF, fontSize: 80, color: C.ink, letterSpacing: "-0.02em" }}>

@@ -47,11 +47,11 @@ const typed = (t: number, at: number, text: string, cps: number) => text.slice(0
 type Key = [number, number, number, number];
 const CAM: Key[] = [
   [START, 960, 540, 1],
-  [41.3, 1030, 545, 1.07],                  // the hand-off's push continues, one long ease toward the chat (1.8 s)
-  [42.3, 1030, 545, 1.07], [43.5, 960, 540, 1],           // holds through the reply, then one calm return (1.2 s)
-  [45.6, 960, 540, 1], [47.3, 940, 520, 1.06],            // the pills: one slow reframe (1.7 s)
-  [50.6, 940, 520, 1.06], [52.2, 1040, 520, 1.1],         // Byg den, Se den, Så køber du hold; one calm reframe toward the button once it has landed (1.6 s)
-  [55.2, 1040, 520, 1.1],                                 // the end card holds
+  [41.3, 960, 540, 1.07],                  // the hand-off's push continues, one long ease toward the chat (1.8 s)
+  [42.3, 960, 540, 1.07], [43.5, 960, 540, 1],           // holds through the reply, then one calm return (1.2 s)
+  [45.6, 960, 540, 1], [47.3, 960, 540, 1.06],            // the pills: one slow reframe (1.7 s)
+  [50.6, 960, 540, 1.06], [52.2, 960, 540, 1.1],         // Byg den, Se den, Så køber du hold; one calm reframe toward the button once it has landed (1.6 s)
+  [55.2, 960, 540, 1.1],                                 // the end card holds
 ];
 /** a push with a small anticipation the other way, an overshoot and a quick settle (done in 88% of the segment) */
 const camEase = (u: number) => 0.5 - 0.5 * Math.cos(Math.PI * clamp01(u));   // a smooth sine ease from rest to rest, no overshoot
@@ -119,7 +119,7 @@ const B = {
 
 // ── layout (px at 1080p) ───────────────────────────────────────────────────────────────────────────────────────────
 const SX = 100, ZS = 1.04;                                    // the stage steps left while the chat is open; the stage scale of the hand-off (1.0 → 1.04)
-const PANEL = { x: 1290, y: 540, w: 480, h: 460 };            // the chat panel, docked on the right half of the stage
+const PANEL = { x: 1290, y: 540, w: 480, h: 460 };            // (the panel layer is shifted +29 px in the scene so stage + panel are centred as a group on x 960)            // the chat panel, docked on the right half of the stage
 const WM_Y = 140;                                             // the small wordmark above the stage
 const WM_H = 150, WM_W = (WM_H * WM_VIEW.w) / WM_VIEW.h;
 const WM_DOT_X = CX - WM_W / 2 + (7062.84 / WM_VIEW.w) * WM_W, WM_DOT_Y = CY - WM_H / 2 + (1344.2 / WM_VIEW.h) * WM_H;   // the full stop (px)
@@ -127,7 +127,7 @@ const WM_DOT_D = (2 * 145 * WM_H) / WM_VIEW.h;                // its diameter
 const DOT = 64;                                               // the thread dot before it lands
 const PW = 380, PH = 110, PY = 540;                           // the two pills
 const BTN = { w: 700, h: 140, y: 690 };
-const TAG = { x: CX + 330, y: 690, w: 520, h: 300 };          // the price tag docked on the stage
+const TAG = { x: CX, y: 690, w: 520, h: 300 };          // the price tag docked on the stage
 const LINE_Y = 985, LINE_SIZE = 88;
 const HW = (STAGE.w * ZS) / 2, HH = (STAGE.h * ZS) / 2;       // the stage's half extents on screen
 
@@ -226,7 +226,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
   const stageOn = t < B.collapse + 0.45 || t >= B.reopen;
   if (t < B.collapse + 0.45) {
     const shift = ez(t, B.open, 1.0, camEase), c = ez(t, B.collapse, 0.4, INOUT);
-    stageTr = `translate(${mix(-SX * shift, 1290 - CX, c)}px, ${mix(0, 540 - CY, c)}px)`;
+    stageTr = `translate(${mix(-SX * shift, 0, c)}px, ${mix(0, 540 - CY, c)}px)`;
     stageSc = mix(ZS, 0.06, c); stageOp = 1 - clamp01((c - 0.75) / 0.25);
   } else {
     const u = ez(t, B.reopen, 0.8, camEase);
@@ -255,7 +255,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
     const qm = spr(t, B.card, 0.5, 0.5), d = ez(t, B.cardOut, 0.3, INOUT);
     const bw = 96 * btn;
     let w = mix(bw, PANEL.w, po), h = mix(bw, PANEL.h, po), r = mix(48, 40, po);
-    const x = mix(1390, PANEL.x, po), y = mix(800, PANEL.y, po);
+    const x = mix(mix(1390, PANEL.x, po), CX - 29, qm), y = mix(800, PANEL.y, po);
     h = mix(h, 300, qm);
     const inkAmt = clamp01(qm * 1.4) * (1 - d);
     const crouch = ez(t, B.launch - 0.12, 0.12, INOUT), dotKick = 1 + 0.6 * Math.max(0, kick(t, L.robot + 0.3, 7, 22));
@@ -298,7 +298,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
           </div>
         )}
         {qIn > 0.01 && (
-          <Abs x={PANEL.x - PANEL.w / 2} y={PANEL.y - 150} style={{ width: PANEL.w, height: 300, display: "flex", alignItems: "center", justifyContent: "center", gap: 18, opacity: qIn, filter: qIn < 1 ? `blur(${(1 - qIn) * 8}px)` : undefined, fontFamily: SANS, fontSize: 52, fontWeight: 500, color: C.sageLight }}>
+          <Abs x={CX - 29 - PANEL.w / 2} y={PANEL.y - 150} style={{ width: PANEL.w, height: 300, display: "flex", alignItems: "center", justifyContent: "center", gap: 18, opacity: qIn, filter: qIn < 1 ? `blur(${(1 - qIn) * 8}px)` : undefined, fontFamily: SANS, fontSize: 52, fontWeight: 500, color: C.sageLight }}>
             <span>Nr.</span><QueueStrip v={v} /><span>i kø</span>
           </Abs>
         )}
@@ -319,7 +319,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
     const dx = -40 * pull + 1000 * fly, dy = 16 * pull - 420 * fly;
     const blink = 1 - 0.92 * Math.exp(-Math.pow((t - (L.ingen5 + 0.72)) / 0.045, 2));
     robot = (
-      <Abs x={1290 - 130 + dx} y={540 - 130 + dy} style={{ opacity: 1 - clamp01((fly - 0.55) / 0.45), transform: `translate(${1290 - 130 + dx}px, ${540 - 130 + dy}px) rotate(${wob + 300 * fly}deg) scale(${Math.max(0, pop) * mix(1, 0.6, fly)})` }}>
+      <Abs x={CX - 130 + dx} y={540 - 130 + dy} style={{ opacity: 1 - clamp01((fly - 0.55) / 0.45), transform: `translate(${CX - 130 + dx}px, ${540 - 130 + dy}px) rotate(${wob + 300 * fly}deg) scale(${Math.max(0, pop) * mix(1, 0.6, fly)})` }}>
         <Robot blink={Math.max(0.05, blink)} />
       </Abs>
     );
@@ -331,7 +331,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
     const ux = spr(t, B.launch, 0.4, 1), x1 = t - B.launch, lift = 230 * Math.sin(Math.PI * clamp01(x1 / 0.3)), xl = t - B.land;
     const hop = xl > 0 ? 50 * Math.exp(-xl * 6.5) * Math.abs(Math.sin(xl * 15)) : 0;
     const squ = xl > 0 ? Math.exp(-xl * 9) * Math.cos(xl * 24) : 0;
-    const ddx = (1 - ux) * (1290 - WM_DOT_X), ddy = (1 - ux) * (540 - WM_DOT_Y) - lift - hop;
+    const ddx = (1 - ux) * (CX - WM_DOT_X), ddy = (1 - ux) * (540 - WM_DOT_Y) - lift - hop;
     const base = mix(DOT / WM_DOT_D, 1, ux);
     const bph = ((t - 46.4) % 0.7 + 0.7) % 0.7 / 0.7, beat = 1 + (t > 46.4 ? 0.9 * Math.pow(Math.max(0, Math.sin(Math.PI * bph)), 6) : 0);   // the full stop pulses with the shine
     const rev = ez(t, B.land - 0.02, 0.7, OUT);
@@ -450,7 +450,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
     <>
       <div style={{ position: "absolute", inset: 0, transformOrigin: "0 0", transform: `translate(${CX}px, ${CY}px) scale(${cs}) translate(${-cfx}px, ${-cfy}px)`}}>
         {stage}
-        {panel}
+        <div style={{ position: "absolute", inset: 0, transform: "translateX(29px)" }}>{panel}</div>
         {robot}
         {goo}
         {over}

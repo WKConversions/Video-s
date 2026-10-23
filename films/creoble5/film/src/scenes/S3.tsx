@@ -141,11 +141,11 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
   const tEx = TE - 11;      // the toggle row collapses onto its knob, the knob drops out
 
   // ── the camera: push in toward the price area, pull back, push in on the top-right corner (Din), back, price, back ───
-  // two calm reframes in the whole scene (1.8 s each, rest to rest): a slow push toward the price area that continues the
+  // two calm reframes in the whole scene (1.8 s each, rest to rest): a slow zoom (about the frame centre) toward the price area that continues the
   // hand-off's push (Tilfreds? / 499 kroner), and one pull back for "Siden er din"; every other beat holds the frame
   const S = cm(g, 1.04, [[T0 + 2, 1.1, 54], [tSiden - 5, 1.0, 54]]);
   const fx = 960;
-  const fy = cm(g, 540, [[T0 + 2, 640, 54], [tSiden - 5, 540, 54]]);
+  const fy = 540;                                            // no pan: the camera only zooms about the frame centre
   const camId = Math.abs(S - 1) < 0.0005 && Math.abs(fy - 540) < 0.05;
 
   // ── the stage's own acts: pages fan out as cards (Siden er din), question tilts ───────────────────────────────────
