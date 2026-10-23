@@ -4,7 +4,7 @@
   "frame": 619,
   "db": -7,
   "pitch": 0,
-  "note": "S2.1 the capsule flips up from flat into the phone"
+  "note": "S2.1 the stage (browser) narrows into the phone"
  },
  {
   "id": "kenney-tick-004",
@@ -18,7 +18,7 @@
   "frame": 633,
   "db": -9,
   "pitch": 0,
-  "note": "S2.1 the phone lands on its bounce"
+  "note": "S2.1 the phone pops up and settles"
  },
  {
   "id": "kenney-tick-004",
@@ -127,6 +127,13 @@
  },
  {
   "id": "gen-whoosh-short",
+  "frame": 877,
+  "db": -10,
+  "pitch": -2,
+  "note": "S2.4 the page below the headline keeps scrolling behind the bubble"
+ },
+ {
+  "id": "gen-whoosh-short",
   "frame": 886,
   "db": -9,
   "pitch": 0,
@@ -224,6 +231,13 @@
   "note": "S2.5 retyping"
  },
  {
+  "id": "gen-whoosh-short",
+  "frame": 966,
+  "db": -10,
+  "pitch": 2,
+  "note": "S2.5 the page returns to its place under the finished headline"
+ },
+ {
   "id": "kenney-click-001",
   "frame": 967,
   "db": -10,
@@ -263,13 +277,13 @@
   "frame": 991,
   "db": -7,
   "pitch": 0,
-  "note": "S2.6 the phone shrinks and rounds into the capsule"
+  "note": "S2.6 the phone widens back into the stage"
  },
  {
   "id": "gen-tick",
   "frame": 1007,
   "db": -10,
   "pitch": 0,
-  "note": "S2.6 the capsule is home at x 760"
+  "note": "S2.6 the plain stage at scroll 0 is home"
  }
 ]

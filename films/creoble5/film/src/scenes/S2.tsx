@@ -1,4 +1,5 @@
-// Scene 2 (h1 → h2), REVISION 1: "Det bedste? Du ser den færdig, før du betaler en krone. Vil du ændre noget? Skriv det.
+// Scene 2 (h1 → h2), REVISION 2 (the website is the hero): the stage (browser) from the hand-off morphs into the phone at 1.4×
+// and back into the stage at h2. REVISION 1: "Det bedste? Du ser den færdig, før du betaler en krone. Vil du ændre noget? Skriv det.
 // Creoble retter det." One object, the phone at 1.4× (420 × 896), centred. Every second SHOWS what the voice says:
 // the site builds, one long steady scroll through the finished site, "0 kr." rolls in a big glass tag, the headline is
 // selected, the instruction is typed in a bubble and sent, the headline deletes backwards and RETYPES, a check ticks.
@@ -7,7 +8,7 @@ import React from "react";
 import { Img, staticFile } from "remotion";
 import { C, HOLM, INOUT, OUT, SANS, SERIF, clamp01, mix } from "../lib";
 import { Ico, LiquidGlass, RollNumber, f } from "../shared";
-import { CX, CY, HANDOFF_HALF, Handoff, Line, MiniSite, PHONE, Phone, SCREEN, TYPE } from "../v5";
+import { CX, CY, HANDOFF_HALF, Line, MiniSite, PHONE, Phone, SCREEN, STAGE, STAGE_SCROLL_MAX, Stage, StageHandoff, TYPE, NEW_HEADLINE } from "../v5";
 
 // ── local helpers (times in seconds) ─────────────────────────────────────────────────────────────────────────────
 const kk = (t: number, at: number, dur: number, ease: (x: number) => number = OUT) => ease(clamp01((t - at) / dur));
@@ -30,13 +31,14 @@ const trap = (t: number, a: number, b: number, D: number, r: number) => {
   const y = T - x;
   return D - (v * y * y) / (2 * r);
 };
-const DEG = Math.PI / 180;
 // the finished site is a long page: MiniSite's own page (≈ 990 pt) plus a closing block below it (the stretch photo, the
 // booking buttons, the domain), so the steady scroll has something to show for the whole voice line
-const TAIL_Y = 1000, PAGE_H = 1380;
+const TAIL_Y = 1000, PAGE_H = 1936;
 const SiteTail: React.FC = () => (
   <div style={{ position: "absolute", left: 0, top: TAIL_Y, width: SCREEN.w, padding: "0 20px", boxSizing: "border-box", fontFamily: SANS, color: HOLM.ink }}>
     <div style={{ height: 240, borderRadius: 16, overflow: "hidden" }}><Img src={staticFile("img/holm-stretch.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover" }} /></div>
+    <div style={{ height: 250, borderRadius: 16, overflow: "hidden", marginTop: 16 }}><Img src={staticFile("img/holm-calves.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover" }} /></div>
+    <div style={{ height: 230, borderRadius: 16, overflow: "hidden", marginTop: 16 }}><Img src={staticFile("img/holm-neck.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 30%" }} /></div>
     <div style={{ display: "flex", gap: 8, marginTop: 18 }}>
       <div style={{ height: 40, padding: "0 16px", borderRadius: 999, background: HOLM.accent, color: "#fff", fontSize: 13, fontWeight: 600, display: "flex", alignItems: "center" }}>Book tid</div>
       <div style={{ height: 40, padding: "0 16px", borderRadius: 999, border: `1.5px solid ${HOLM.ink}22`, fontSize: 13, fontWeight: 600, display: "flex", alignItems: "center" }}>Behandlinger</div>
@@ -61,6 +63,11 @@ const pressAt = (t: number, at: number, hold = 0.1) => {
 const PZ = 2.1, SN = 1.4 / 2.1;
 const PW = PHONE.w * PZ, PH = PHONE.h * PZ;
 const PH_N = PHONE.h * 1.4;                      // the resting height on screen
+// the morph wrapper (local px, centred on the frame): wide enough for the stage (960 × 600 on screen = 1440 × 900 local at the
+// resting scale 2/3) and tall enough for the phone (630 × 1344)
+const WB_W = 1600, WB_H = PH;
+const STAGE_K = 1 / SN;                           // the stage layer is drawn at 1.5× in local px, so it is 960 × 600 on screen
+const SPLIT_Y = 172;                              // below the headline: the page behind keeps scrolling during the edit
 
 // ── the beats (seconds): voice words from words.json, offsets are the picture's own ─────────────────────────────
 const T_SCROLL = 10.6, T_SCROLL_END = 13.55;     // one long steady pass down the finished site (≈ 6.6 px per frame)
@@ -81,8 +88,8 @@ const T_DEL = 15.6;                              // "Creoble": the old headline 
 const T_RETYPE = 15.86;                          // ... and the corrected one types
 const T_CHECK = 16.28;
 const T_POP = 16.5;
-const T_FOLD = 16.52;                            // the phone folds back into the capsule
-const T_FOLD_END = 16.8;                         // = f("h2") - 7.5 frames: the capsule is home at x 760
+const T_FOLD = 16.52;                            // the phone folds back into the stage
+const T_FOLD_END = 16.8;                         // = f("h2") - 7.5 frames: the plain stage at scroll 0
 
 const OLD_HEAD = "Kom godt i bevægelse igen.";
 const NEW_HEAD = "Velkommen hjem i din krop.";
@@ -110,40 +117,39 @@ const Eye: React.FC<{ s?: number; c?: string; pupil?: number }> = ({ s = 22, c =
 
 export const Scene2: React.FC<{ g: number }> = ({ g }) => {
   const h1 = f("h1"), h2 = f("h2");
-  if (g <= h1 + HANDOFF_HALF) return <Handoff g={g} at="h1" />;
-  if (g >= h2 - HANDOFF_HALF) return <Handoff g={g} at="h2" />;
+  if (g <= h1 + HANDOFF_HALF) return <StageHandoff g={g} at="h1" />;
+  if (g >= h2 - HANDOFF_HALF) return <StageHandoff g={g} at="h2" />;
 
   const t = g / 30;
-  const E0 = (h1 + HANDOFF_HALF) / 30;    // the capsule is at x 1160 here
+  const E0 = (h1 + HANDOFF_HALF) / 30;    // the stage is at scroll 300 here
 
-  // ── the phone: opens out of the capsule, flips up from flat, folds back into the capsule ─────────────────────
-  const pc = spr(t, E0, 0.38, 0.82);                          // the capsule opens (clip morph), may overshoot
-  const ang = 70 * (1 - spr(t, E0 + 0.02, 0.5, 0.5));         // flips up from flat, overshoots forward and settles
-  const travel = 1 - spr(t, E0, 0.55, 0.9);                   // x 1160 → 960
+  // ── the stage morphs into the phone (one clip-path box), and back at h2 ──────────────────────────────────────
+  const pc = spr(t, E0, 0.42, 0.85);                          // the browser narrows into the phone (clip morph)
+  const pcs = spr(t, E0 + 0.04, 0.5, 0.55);                   // the phone's own spring: it pops up a little and settles
   const fold = INOUT(clamp01((t - T_FOLD) / (T_FOLD_END - T_FOLD)));
-  const m = pc * (1 - fold);                                  // 0 = capsule, 1 = phone
-  const dx = 200 * travel - 200 * fold;
-  // the camera push: scale the phone up around the headline (1.4× → 2.1×) and back
+  const m = pc * (1 - fold);                                  // 0 = the stage, 1 = the phone
+  // the camera push: scale everything up around the headline (1.4× → 2.1×) and back
   const pp = INOUT(clamp01((t - T_PUSH) / (T_PUSH_END - T_PUSH))) * (1 - INOUT(clamp01((t - T_PULL) / (T_PULL_END - T_PULL))));
   const sc = mix(SN, 1, pp);
   const FOCUS_Y = 330, headLocalY = (144 - PHONE.h / 2) * PZ;   // the headline sits at phone point y 144
   const pushY = (FOCUS_Y - CY - headLocalY) * pp;
-  const dy = -34 * Math.sin(Math.PI * clamp01((t - E0) / 0.55)) * (1 - fold) + pushY;
-  const cosA = Math.max(0.3, Math.cos(ang * DEG));
-  const hl = mix(60 / (sc * cosA), PH, m);                     // local height of the clip (keeps the capsule 60 tall on screen)
-  const vIn = (PH - hl) / 2;
-  const hIn = (PW - mix(200 / sc, PW, m)) / 2;
-  const extra = 200 * clamp01((m - 0.94) / 0.06);              // room for the phone's own shadow once it is open
-  const rh = mix(30 / sc, PHONE.r * PZ, clamp01(m));
-  const rv = rh / mix(1, cosA, clamp01(1 - m));
-  const clip = `inset(${(vIn - extra).toFixed(2)}px ${(hIn - extra).toFixed(2)}px ${(vIn - extra).toFixed(2)}px ${(hIn - extra).toFixed(2)}px round ${rh.toFixed(2)}px / ${rv.toFixed(2)}px)`;
-  const overlay = 1 - clamp01((m - 0.2) / 0.42);               // the sage capsule fades into the phone
-  const wrapT = `translate(${dx}px, ${dy}px) perspective(2200px) rotateX(${ang}deg) scale(${sc})`;
-  const shadowA = 0.2 * (1 - clamp01(m));
+  const mh = clamp01(m);
+  const vIn = mix((WB_H - STAGE.h * STAGE_K) / 2, 0, m);        // clip: the stage rect → the phone rect (local px)
+  const hIn = mix((WB_W - STAGE.w * STAGE_K) / 2, (WB_W - PW) / 2, mh);
+  const extra = 160 * (1 - clamp01(m / 0.2)) + 300 * clamp01((m - 0.94) / 0.06);   // room for the stage's / the phone's shadow
+  const rh = mix(16 * STAGE_K, PHONE.r * PZ, mh);
+  const open = t > E0 + 0.8 && t < T_FOLD;                      // fully a phone: no clip at all (the push may exceed it)
+  const clip = open ? undefined : `inset(${(vIn - extra).toFixed(2)}px ${(hIn - extra).toFixed(2)}px ${(vIn - extra).toFixed(2)}px ${(hIn - extra).toFixed(2)}px round ${rh.toFixed(2)}px)`;
+  const stageOp = 1 - clamp01((m - 0.12) / 0.4), phoneOp = clamp01((m - 0.2) / 0.35);
+  const wrapT = `translate(0px, ${pushY}px) scale(${sc})`;
+  // the stage keeps scrolling while it narrows (it arrives at scroll 300, the hand-off's last value), and is at 0 when it returns
+  const tau = t - E0;
+  const stageScroll = t < T_FOLD ? Math.min(STAGE_SCROLL_MAX, 300 + 600 * (tau < 0.15 ? (tau * tau) / 0.3 : tau - 0.075)) : 0;
 
   // ── the site: it builds, then ONE long steady scroll down (≥ 4 px/frame), a fast eased return ────────────────
   const build = mix(0.2, 1, kk(t, E0 + 0.05, 0.55));
   const down = trap(t, T_SCROLL, T_SCROLL_END, PAGE_H - SCREEN.h, 0.25);
+  const scrollV = Math.abs(trap(t + 1 / 120, T_SCROLL, T_SCROLL_END, PAGE_H - SCREEN.h, 0.25) * (1 - INOUT(clamp01((t + 1 / 120 - T_RET) / (T_RET_END - T_RET)))) - trap(t - 1 / 120, T_SCROLL, T_SCROLL_END, PAGE_H - SCREEN.h, 0.25) * (1 - INOUT(clamp01((t - 1 / 120 - T_RET) / (T_RET_END - T_RET))))) * PZ;   // screen px per frame at 60 fps
   const back = INOUT(clamp01((t - T_RET) / (T_RET_END - T_RET)));
   const scroll = down * (1 - back);
 
@@ -167,6 +173,10 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
   // the finger tap on the headline (a touch ripple, in phone points)
   const tapP = kk(t, T_TAP, 0.4);
   const tapDown = pressAt(t, T_TAP, 0.08);
+  // below the headline the page keeps scrolling (≈ 6 px per frame on screen) while the headline is edited, then returns fast
+  const editLive = t >= T_PUSH_END - 0.05 && t < T_FOLD;
+  const lowOff = trap(t, 14.6, 16.1, 520, 0.2) * (1 - INOUT(clamp01((t - 16.1) / 0.35)));
+  const lowFade = clamp01(lowOff / 20);
 
   // ── the Island ───────────────────────────────────────────────────────────────────────────────────────────────
   const pI = Math.max(0, spr(t, T_ISLAND_ON, 0.5, 0.58) - spr(t, T_ISLAND_OFF, 0.42, 0.8));
@@ -174,7 +184,7 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
   const islandTxt = clamp01((pI - 0.45) * 2.4);
 
   // ── the line at the left: one short line, blurs away before the scroll takes over ────────────────────────────
-  const headP = kk(t, E0 + 0.1, 0.62), headOut = kk(t, 11.12, 0.3, INOUT);
+  const headP = kk(t, E0 + 0.14, 0.62), headOut = kk(t, 11.12, 0.3, INOUT);
 
   // ── the big glass tag "0 kr." ────────────────────────────────────────────────────────────────────────────────
   const TW = 340, TH = 152, tagX = 1292, tagY = 400;
@@ -199,20 +209,39 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
 
   return (
     <>
-      {headP > 0 && headOut < 1 && <Line text="Det bedste?" x={400} y={CY} p={headP} out={headOut} size={TYPE.head} italicWords={["bedste"]} />}
+      {headP > 0 && headOut < 1 && <Line text="Det bedste?" x={340} y={CY} p={headP} out={headOut} size={TYPE.head} italicWords={["bedste"]} />}
 
-      {/* the phone, opened from the capsule */}
-      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, filter: shadowA > 0.004 ? `drop-shadow(0 20px 20px rgba(26,22,20,${shadowA.toFixed(3)}))` : undefined }}>
-        <div style={{ position: "absolute", left: CX - PW / 2, top: CY - PH / 2, width: PW, height: PH, transform: wrapT, clipPath: clip }}>
+      {/* the stage (browser) morphing into the phone, and back */}
+      <div style={{ position: "absolute", left: CX - WB_W / 2, top: CY - WB_H / 2, width: WB_W, height: WB_H, transform: wrapT, clipPath: clip }}>
+        {stageOp > 0.001 && (
+          <div style={{ position: "absolute", left: (WB_W - STAGE.w) / 2, top: (WB_H - STAGE.h) / 2, width: STAGE.w, height: STAGE.h, transform: `scale(${STAGE_K})`, opacity: stageOp }}>
+            <Stage x={STAGE.w / 2} y={STAGE.h / 2} scroll={stageScroll} build={1} url="Forhåndsvisning" headline={g > f("w:creoble2") ? NEW_HEADLINE : undefined} />
+          </div>
+        )}
+        {phoneOp > 0.001 && (
+          <div style={{ position: "absolute", left: (WB_W - PW) / 2, top: 0, width: PW, height: PH, opacity: phoneOp, transform: `scale(${0.8 + 0.2 * pcs})` }}>
           <div style={{ position: "absolute", left: 0, top: 0, width: PHONE.w, height: PHONE.h, zoom: PZ }}>
             <Phone x={PHONE.w / 2} y={PHONE.h / 2}>
               {/* the page scrolls as one promoted layer (two stacked windows of the same site) */}
               <div style={{ width: SCREEN.w, height: SCREEN.h, position: "relative", overflow: "hidden" }}>
-                <div style={{ position: "absolute", left: 0, top: 0, width: SCREEN.w, willChange: t < T_RET_END + 0.12 ? "transform" : "auto", transform: `translate3d(0, ${-scroll}px, 0)` }}>
-                  <MiniSite build={build} scroll={0} headline={headline} booking={1} highlight={0} />
-                  <MiniSite build={build} scroll={SCREEN.h} booking={1} highlight={0} />
-                  <SiteTail />
+                <div style={{ position: "absolute", left: 0, top: 0, width: SCREEN.w, height: SCREEN.h, overflow: "hidden", clipPath: editLive ? `inset(0px 0px ${SCREEN.h - SPLIT_Y}px 0px)` : undefined }}>
+                  <div style={{ position: "absolute", left: 0, top: 0, width: SCREEN.w, willChange: t < T_RET_END + 0.12 ? "transform" : "auto", transform: `translate3d(0, ${-scroll}px, 0)`, filter: scrollV > 26 ? `blur(${Math.min(7, (scrollV - 26) / 6).toFixed(2)}px)` : undefined }}>
+                    <MiniSite build={build} scroll={0} headline={headline} booking={1} highlight={0} />
+                    <MiniSite build={build} scroll={SCREEN.h} booking={1} highlight={0} />
+                    <SiteTail />
+                  </div>
                 </div>
+                {/* during the edit the page BELOW the headline keeps scrolling (the site stays alive behind the bubble) */}
+                {editLive && (
+                  <div style={{ position: "absolute", left: 0, top: 0, width: SCREEN.w, height: SCREEN.h, overflow: "hidden", clipPath: `inset(${SPLIT_Y}px 0px 0px 0px)`,
+                    WebkitMaskImage: `linear-gradient(to bottom, rgba(0,0,0,${1 - lowFade}) ${SPLIT_Y}px, #000 ${SPLIT_Y + 16 * lowFade + 0.01}px)` }}>
+                    <div style={{ position: "absolute", left: 0, top: 0, width: SCREEN.w, transform: `translate3d(0, ${-lowOff}px, 0)` }}>
+                      <MiniSite build={1} scroll={0} booking={1} highlight={0} />
+                      <MiniSite build={1} scroll={SCREEN.h} booking={1} highlight={0} />
+                      <SiteTail />
+                    </div>
+                  </div>
+                )}
               </div>
             </Phone>
             {/* the finger tap on the headline */}
@@ -228,10 +257,9 @@ export const Scene2: React.FC<{ g: number }> = ({ g }) => {
                 <span style={{ width: 8, height: 8, borderRadius: 4, background: C.sage, marginLeft: 2 }} />
               </div>
             </div>
-            {/* the sage capsule it came from */}
-            <div style={{ position: "absolute", left: 0, top: 0, width: PHONE.w, height: PHONE.h, borderRadius: PHONE.r, background: C.sage, opacity: overlay, pointerEvents: "none" }} />
           </div>
-        </div>
+          </div>
+        )}
       </div>
 
       {/* "0 kr." — a big Liquid Glass tag that swings in beside the phone and rolls its number */}

@@ -1,14 +1,15 @@
 import React from "react";
 import { Easing } from "remotion";
-import { C, HOLM, OUT, INOUT, SANS, clamp01, mix } from "../lib";
-import { HolmSite, Ico, LiquidGlass, f, squash } from "../shared";
-import { Handoff, HANDOFF_HALF, Line, MiniSite } from "../v5";
+import { C, HOLM, OUT, INOUT, SANS, SHADOW_BIG, clamp01, mix } from "../lib";
+import { Ico, LiquidGlass, f } from "../shared";
+import { HANDOFF_HALF, Line, STAGE, STAGE_SCROLL_MAX, Stage, StageHandoff } from "../v5";
 
-// Scene 1 (0 → h1, 10.05 s), revision 1: BIG and explaining. One hero object at a time on plain cream:
-// dot → capsule → a big browser (1000 × 620) where Holm's site builds itself while the AI sparkle writes it, a timer
-// counting to "2 min" in the bar → the sparkle dives into a big text field (1000 × 120) → the Island → a 1.4× phone
-// that builds and scrolls the site → a code window that is struck out → template cards flicked away → the capsule.
-// Timings are seconds (t = g / 30); springs are local (seconds based). No float or wobble: all motion explains.
+// Scene 1 (0 → h1, 10.05 s), revision 2: the website is the hero object in every beat. A sage dot drops, becomes the
+// capsule, and opens into the stage (a 960 × 600 browser). Holm's site builds itself live with a timer counting to
+// "2 min"; the AI sparkle sweeps over it while it builds and scrolls; a prompt field docks onto the stage and what is
+// typed becomes the site's header name; the page unbuilds and rebuilds in a fast cascade; the stage flips to its back
+// (code), a sage strike wipes it, it flips back; template sites flick through like a cover-flow and land on Holm's
+// site. The site scrolls steadily underneath every beat. Timings are seconds (t = g / 30), springs are local.
 
 const SAGE = C.sage, DEEP = C.sageDeep, LIGHT = C.sageLight, INK = C.ink;
 const sp = (t: number, t0: number, resp = 0.4, damp = 1) => {
@@ -27,18 +28,32 @@ const mixc = (a: string, b: string, p: number) => {
 };
 const LIN = (x: number) => x;
 const EASE_IN = Easing.bezier(0.5, 0, 0.9, 0.6);
-const SCROLL = Easing.bezier(0.2, 0, 0.5, 1);
 const MONO = "ui-monospace, SFMono-Regular, Menlo, 'DejaVu Sans Mono', monospace";
+const SM = STAGE_SCROLL_MAX - 1;
+const SX = 960, SY = 540;           // the stage's centre
+const SL = SX - STAGE.w / 2, ST = SY - STAGE.h / 2;   // its top-left corner (480, 240)
+
+/** The site's scroll (design px): fast, steady passes with eased turnarounds under every beat. Ends at 0. */
+const KEYS: [number, number][] = [[0.8, 0], [1.7, SM], [2.6, 0], [3.5, SM], [4.4, 0], [5.3, SM], [6.2, 0], [7.2, SM], [8.1, 0], [9.0, 330], [9.8, 0]];
+const scrollAt = (t: number) => {
+  if (t <= KEYS[0][0]) return 0;
+  for (let i = 0; i < KEYS.length - 1; i++) {
+    const [a, va] = KEYS[i], [b, vb] = KEYS[i + 1];
+    if (t < b) { const u = (t - a) / (b - a); return mix(va, vb, 0.65 * u + 0.35 * u * u * (3 - 2 * u)); }
+  }
+  return 0;
+};
 
 /** A static box (BW × BH) centred on the frame centre, moved by transforms only; its visible shape is a clip-path inset
- * (w × h, radius r), so a dot, a capsule, a browser and a field are one box morphing. */
-const Shaped: React.FC<{ BW: number; BH: number; cx: number; cy: number; w: number; h: number; r?: number; color: string; sc?: number; tf?: string; shadow?: number; children?: React.ReactNode }> =
-  ({ BW, BH, cx, cy, w, h, r, color, sc = 1, tf = "", shadow = 1, children }) => {
+ * (w × h, radius r), so a dot, a capsule and the browser are one box morphing. `big` fades the browser's own soft shadow in. */
+const Shaped: React.FC<{ BW: number; BH: number; cx: number; cy: number; w: number; h: number; r?: number; color: string; sc?: number; tf?: string; shadow?: number; big?: number; children?: React.ReactNode }> =
+  ({ BW, BH, cx, cy, w, h, r, color, sc = 1, tf = "", shadow = 1, big = 0, children }) => {
   const ww = Math.max(0.5, w), hh = Math.max(0.5, h), rr = Math.max(0, Math.min(r ?? hh / 2, ww / 2, hh / 2));
   const ix = (BW - ww) / 2, iy = (BH - hh) / 2;
   return (
     <div style={{ position: "absolute", left: 960 - BW / 2, top: 540 - BH / 2, width: BW, height: BH, transform: `translate(${cx - 960}px, ${cy - 540}px) ${tf} scale(${sc})`,
-      filter: shadow > 0 ? `drop-shadow(0 ${12 * shadow}px ${15 * shadow}px rgba(26,22,20,${0.13 * shadow}))` : undefined }}>
+      filter: shadow > 0.01 ? `drop-shadow(0 ${12 * shadow}px ${15 * shadow}px rgba(26,22,20,${0.13 * shadow}))` : undefined }}>
+      {big > 0.01 && <div style={{ position: "absolute", left: (BW - STAGE.w) / 2, top: (BH - STAGE.h) / 2, width: STAGE.w, height: STAGE.h, borderRadius: 16, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW_BIG}`, opacity: big }} />}
       <div style={{ position: "absolute", inset: 0, clipPath: `inset(${iy}px ${ix}px ${iy}px ${ix}px round ${rr}px)`, background: color }}>{children}</div>
     </div>
   );
@@ -60,78 +75,102 @@ const Sparkle: React.FC<{ t: number; x: number; y: number; size: number; rot: nu
   </div>
 );
 
-// ── the browser bar with the timer ("0:00" → "2 min") ───────────────────────────────────────────────────────────
-const BAR_H = 56;
-const Bar: React.FC<{ t: number }> = ({ t }) => {
+// ── the timer chip in the browser bar ("0:00" → "2 min") ─────────────────────────────────────────────────────────
+const TimerChip: React.FC<{ t: number; left: number; top: number }> = ({ t, left, top }) => {
   const secs = Math.floor(119 * ez(t, 0.95, 1.45, LIN));
   const done = t >= 2.4;
   const pop = done ? sp(t, 2.4, 0.4, 0.5) : 1;
   const label = done ? "2 min" : `${Math.floor(secs / 60)}:${String(secs % 60).padStart(2, "0")}`;
   const hand = (t - 0.95) * 360 * 5;
   return (
-    <div style={{ position: "absolute", left: 0, top: 0, width: 1000, height: BAR_H, background: "#FBFAF7", borderBottom: `1px solid ${C.line}`, fontFamily: SANS }}>
-      {[0, 1, 2].map((i) => <div key={i} style={{ position: "absolute", left: 24 + i * 22, top: 22, width: 12, height: 12, borderRadius: 6, background: "#E4E0D9" }} />)}
-      <div style={{ position: "absolute", left: 330, top: 10, width: 300, height: 36, borderRadius: 10, background: "#F1EEE8", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 19, fontWeight: 500, color: C.muted }}>holmfysio.dk</div>
-      <div style={{ position: "absolute", left: 852, top: 9, width: 128, height: 38, borderRadius: 19, background: C.sageTint, display: "flex", alignItems: "center", justifyContent: "center", gap: 8, color: DEEP, fontSize: 22, fontWeight: 600,
-        letterSpacing: "-0.01em", fontVariantNumeric: "tabular-nums", transform: `scale(${pop})` }}>
-        <svg width={22} height={22} viewBox="0 0 22 22"><circle cx={11} cy={11} r={9} fill="none" stroke={DEEP} strokeWidth={2.2} /><line x1={11} y1={11} x2={11} y2={5} stroke={DEEP} strokeWidth={2.2} strokeLinecap="round" transform={`rotate(${done ? 0 : hand} 11 11)`} /></svg>
-        {label}
-      </div>
+    <div style={{ position: "absolute", left, top, width: 128, height: 38, borderRadius: 19, background: C.sageTint, display: "flex", alignItems: "center", justifyContent: "center", gap: 8, color: DEEP,
+      fontFamily: SANS, fontSize: 22, fontWeight: 600, letterSpacing: "-0.01em", fontVariantNumeric: "tabular-nums", transform: `scale(${pop})` }}>
+      <svg width={22} height={22} viewBox="0 0 22 22"><circle cx={11} cy={11} r={9} fill="none" stroke={DEEP} strokeWidth={2.2} /><line x1={11} y1={11} x2={11} y2={5} stroke={DEEP} strokeWidth={2.2} strokeLinecap="round" transform={`rotate(${done ? 0 : hand} 11 11)`} /></svg>
+      {label}
     </div>
   );
 };
 
-// ── the code window ("Ingen teknik") ─────────────────────────────────────────────────────────────────────────────
+// ── the wireframe: sage skeleton blocks over the page that fade as each block of the site resolves ─────────────
+const SK = "rgba(135,168,158,0.42)", SK2 = "rgba(135,168,158,0.62)";
+const Wireframe: React.FC<{ build: number; scroll: number }> = ({ build, scroll }) => {
+  if (build >= 0.999) return null;
+  const b = (i: number) => 1 - OUT(clamp01(build * 7 - i));
+  const s = STAGE.w / 1460;
+  const bar = (l: number, t: number, w: number, h: number, c = SK2) => <div style={{ position: "absolute", left: l, top: t, width: w, height: h, borderRadius: h / 2, background: c }} />;
+  const blk = (i: number, l: number, t: number, w: number, h: number, r: number, ch?: React.ReactNode) =>
+    <div style={{ position: "absolute", left: l, top: t, width: w, height: h, borderRadius: r, background: SK, opacity: b(i), transform: `scale(${1 - 0.04 * (1 - b(i))})` }}>{ch}</div>;
+  return (
+    <div style={{ position: "absolute", left: 0, top: 0, width: 1460, height: 1500, transformOrigin: "0 0", transform: `scale(${s}) translateY(${-scroll}px)`, willChange: "transform", pointerEvents: "none" }}>
+      {blk(0, 70, 34, 1320, 46, 14, <>{bar(10, 8, 30, 30, SK2)}{bar(54, 15, 190, 16)}{[0, 1, 2, 3].map((n) => bar(1000 + n * 78, 15, 60, 16))}</>)}
+      {blk(1, 70, 168, 640, 230, 22, <>{bar(30, 40, 560, 54)}{bar(30, 116, 400, 54)}</>)}
+      {blk(2, 70, 420, 560, 96, 18, <>{bar(0, 14, 520, 16)}{bar(0, 44, 460, 16)}{bar(0, 74, 360, 16)}</>)}
+      {blk(3, 760, 120, 630, 560, 28, <div style={{ position: "absolute", left: 240, top: 190, width: 150, height: 150, borderRadius: 75, background: SK2 }} />)}
+      {blk(4, 70, 556, 560, 64, 32, <>{bar(0, 0, 156, 64, SK2)}{bar(176, 0, 250, 64)}</>)}
+      {[0, 1, 2].map((i) => blk(5 + i * 0.6, 70 + i * 450, 760, 420, 400, 26, <>{bar(0, 0, 420, 270, SK2)}{bar(26, 296, 240, 20)}{bar(26, 332, 170, 14)}</>))}
+      <div style={{ position: "absolute", left: 0, top: 1240, width: 1460, height: 260, background: "rgba(73,93,88,0.55)", opacity: b(6.2) }} />
+    </div>
+  );
+};
+
+// ── the sticky site header: what is typed in the prompt becomes the site's name ─────────────────────────────────
+const SiteHeader: React.FC<{ name: string; p: number }> = ({ name, p }) => (
+  <div style={{ position: "absolute", left: 0, top: 0, width: STAGE.w, height: 64, background: HOLM.bg, borderBottom: "1px solid rgba(31,42,46,0.10)", boxShadow: "0 10px 22px -14px rgba(26,22,20,0.35)",
+    transform: `translateY(${-70 * (1 - p)}px)`, fontFamily: SANS, color: HOLM.ink }}>
+  <div style={{ position: "absolute", left: 28, top: 15, width: 34, height: 34, borderRadius: 10, background: HOLM.accent, color: "#fff", fontWeight: 700, fontSize: 20, display: "flex", alignItems: "center", justifyContent: "center" }}>{name.length ? name[0] : ""}</div>
+    <div style={{ position: "absolute", left: 76, top: 0, height: 64, display: "flex", alignItems: "center", fontWeight: 600, fontSize: 26, letterSpacing: "-0.01em", whiteSpace: "pre" }}>{name}</div>
+    <div style={{ position: "absolute", right: 28, top: 0, height: 64, display: "flex", alignItems: "center", gap: 30, fontSize: 18, color: HOLM.muted }}>{["Behandlinger", "Om os", "Priser", "Kontakt"].map((x) => <div key={x}>{x}</div>)}</div>
+  </div>
+);
+
+// ── the stage's back: code ("Ingen teknik") ──────────────────────────────────────────────────────────────────────
 const CODE: [string, string][] = [
   ["<!doctype html>", LIGHT], ['<html lang="da">', LIGHT], ["<head>", LIGHT], ['  <meta charset="utf-8">', LIGHT], ['  <link rel="stylesheet" href="app.css">', LIGHT], ["</head>", LIGHT],
-  ['<body class="home">', LIGHT], ['  <header class="nav">', LIGHT], ["    <h1>Kom godt i bevægelse</h1>", LIGHT], ["  </header>", LIGHT],
+  ['<body class="home">', LIGHT], ['  <header class="nav">', LIGHT], ["    <h1>Kom godt i bevægelse igen.</h1>", LIGHT], ["  </header>", LIGHT],
   [".hero { display: grid; gap: 24px; }", "#EDE8DE"], [".hero img { object-fit: cover; }", "#EDE8DE"], ["@media (max-width: 600px) {", "#EDE8DE"], ["  .nav { position: sticky; }", "#EDE8DE"], ["}", "#EDE8DE"],
   ["const app = express();", SAGE], ["app.use(cors(), helmet());", SAGE], ['app.get("/", render);', SAGE], ["npm install && npm run build", "rgba(255,255,255,0.7)"], ["deploy --env production", "rgba(255,255,255,0.7)"],
   ["</body>", LIGHT], ["</html>", LIGHT],
 ];
-const CodeWin: React.FC<{ t: number }> = ({ t }) => {
-  const pop = sp(t, 8.13, 0.45, 0.6), strike = ez(t, 8.42, 0.2, OUT), wipe = ez(t, 8.6, 0.26, INOUT), away = ez(t, 8.9, 0.3, EASE_IN);
-  const sc = mix(0.12, 1, Math.min(pop, 1.08)) * (1 - 0.94 * away);
-  const y = mix(138, 540, Math.min(pop, 1.06)) + (138 - 540) * away;
-  const scrollY = (t - 8.13) * 60 * 5.5;
+const CodeBack: React.FC<{ t: number }> = ({ t }) => {
+  const scrollY = (t - 8.13) * 60 * 8, strike = ez(t, 8.5, 0.2, OUT), wipe = ez(t, 8.66, 0.16, INOUT);
   return (
-    <div style={{ position: "absolute", left: 960 - 350, top: 540 - 160, width: 700, height: 320, transform: `translateY(${y - 540}px) scale(${sc})`, opacity: 1 - clamp01((away - 0.7) / 0.3),
-      filter: "drop-shadow(0 22px 26px rgba(26,22,20,0.30))" }}>
-      <div style={{ position: "absolute", inset: 0, borderRadius: 28, background: INK, overflow: "hidden" }}>
-        <div style={{ position: "absolute", left: 0, top: 0, width: 700, height: 56, borderBottom: "1px solid rgba(255,255,255,0.12)" }}>
-          {[0, 1, 2].map((i) => <div key={i} style={{ position: "absolute", left: 26 + i * 24, top: 22, width: 12, height: 12, borderRadius: 6, background: i === 0 ? SAGE : "rgba(255,255,255,0.25)" }} />)}
-          <div style={{ position: "absolute", left: 0, right: 0, top: 14, textAlign: "center", fontFamily: MONO, fontSize: 20, color: "rgba(255,255,255,0.5)" }}>index.html</div>
-        </div>
-        <div style={{ position: "absolute", left: 0, top: 56, width: 700, height: 264, overflow: "hidden" }}>
-          <div style={{ position: "absolute", left: 28, top: 0, width: 650, willChange: "transform", transform: `translateY(${6 - scrollY}px)` }}>
-            {CODE.map(([s, col], i) => <div key={i} style={{ height: 44, lineHeight: "44px", fontFamily: MONO, fontSize: 26, color: col, whiteSpace: "pre" }}>{s}</div>)}
-          </div>
-        </div>
-        <div style={{ position: "absolute", inset: 0, background: SAGE, clipPath: `inset(0 0 ${(1 - wipe) * 100}% 0)` }} />
-        <div style={{ position: "absolute", left: -10, top: 150, width: 720, height: 20, borderRadius: 10, background: DEEP, transformOrigin: "0 50%", transform: `rotate(-4deg) scaleX(${strike})` }} />
+    <div style={{ position: "absolute", left: 0, top: 0, width: STAGE.w, height: STAGE.h, borderRadius: 16, background: INK, overflow: "hidden", transform: "scaleX(-1)" }}>
+      <div style={{ position: "absolute", left: 0, top: 0, width: STAGE.w, height: 56, borderBottom: "1px solid rgba(255,255,255,0.12)" }}>
+        {[0, 1, 2].map((i) => <div key={i} style={{ position: "absolute", left: 26 + i * 24, top: 22, width: 12, height: 12, borderRadius: 6, background: i === 0 ? SAGE : "rgba(255,255,255,0.25)" }} />)}
+        <div style={{ position: "absolute", left: 0, right: 0, top: 14, textAlign: "center", fontFamily: MONO, fontSize: 20, color: "rgba(255,255,255,0.5)" }}>index.html</div>
       </div>
+      <div style={{ position: "absolute", left: 0, top: 56, width: STAGE.w, height: STAGE.h - 56, overflow: "hidden" }}>
+        <div style={{ position: "absolute", left: 32, top: 0, width: 880, willChange: "transform", transform: `translateY(${10 - scrollY}px)` }}>
+          {CODE.map(([s, col], i) => <div key={i} style={{ height: 44, lineHeight: "44px", fontFamily: MONO, fontSize: 26, color: col, whiteSpace: "pre" }}>{s}</div>)}
+        </div>
+      </div>
+      <div style={{ position: "absolute", inset: 0, background: SAGE, clipPath: `inset(0 0 ${(1 - wipe) * 100}% 0)` }} />
+      <div style={{ position: "absolute", left: -20, top: 280, width: STAGE.w + 40, height: 26, borderRadius: 13, background: DEEP, transformOrigin: "0 50%", transform: `rotate(-4deg) scaleX(${strike})` }} />
     </div>
   );
 };
 
-// ── template cards in a cover-flow ───────────────────────────────────────────────────────────────────────────────
-const CARDS = [
-  { dx: -440, rot: 52, dz: 0, dir: -1, label: "Skabelon" },
-  { dx: -700, rot: 62, dz: -160, dir: -1, label: "Skabelon" },
-  { dx: 440, rot: -52, dz: 0, dir: 1, label: "Skabelon" },
-];
-const TCard: React.FC<{ t: number; i: number }> = ({ t, i }) => {
-  const c = CARDS[i];
-  const fan = sp(t, 9.07 + i * 0.045, 0.45, 0.62), away = ez(t, 9.3 + i * 0.04, 0.32, EASE_IN);
-  const dx = c.dx * fan + c.dir * 1400 * away, rot = c.rot * fan + c.dir * -30 * away;
+// ── template sites flicking through the stage like a cover-flow ─────────────────────────────────────────────────
+const TemplateFlick: React.FC<{ t: number; i: number }> = ({ t, i }) => {
+  const t0 = 9.09 + i * 0.1, u = clamp01((t - t0) / 0.5);
+  if (u <= 0 || u >= 1) return null;
+  const e = INOUT(u), c = Math.abs(2 * e - 1);          // 1 at the sides, 0 at the middle
   return (
-    <div style={{ position: "absolute", left: 960 - 180, top: 540 - 240, width: 360, height: 480, opacity: clamp01(fan * 4) * (1 - clamp01((away - 0.2) / 0.5)),
-      transform: `perspective(1500px) translate3d(${dx}px, ${-40 * away}px, ${c.dz * fan}px) rotateY(${rot}deg)` }}>
-      <div style={{ position: "absolute", inset: 0, borderRadius: 28, background: "#ECE9E3", border: "2px solid #D6D2CA", boxShadow: "0 24px 40px -22px rgba(26,22,20,0.32)", overflow: "hidden" }}>
-        <div style={{ position: "absolute", left: 26, top: 26, height: 40, padding: "0 18px", borderRadius: 20, background: "#D9D5CD", color: "#8B867D", fontFamily: SANS, fontWeight: 600, fontSize: 24, display: "flex", alignItems: "center" }}>{c.label}</div>
-        <div style={{ position: "absolute", left: 26, top: 92, width: 308, height: 176, borderRadius: 18, background: "#D9D5CD" }} />
-        {[0, 1, 2].map((n) => <div key={n} style={{ position: "absolute", left: 26, top: 298 + n * 34, width: 308 - n * 62, height: 16, borderRadius: 8, background: "#D2CEC6" }} />)}
-        <div style={{ position: "absolute", left: 26, top: 410, width: 130, height: 44, borderRadius: 22, background: "#CFCBC3" }} />
+    <div style={{ position: "absolute", left: STAGE.w / 2 - 400, top: (STAGE.h - 46) / 2 - 240, width: 800, height: 480, opacity: clamp01((1 - c) * 6),
+      transform: `perspective(1500px) translate3d(${mix(900, -900, e)}px, 0, ${mix(160, 0, c)}px) rotateY(${mix(-58, 58, e)}deg)` }}>
+      <div style={{ position: "absolute", inset: 0, borderRadius: 22, background: "#ECE9E3", border: "2px solid #D6D2CA", boxShadow: "0 30px 50px -24px rgba(26,22,20,0.40)", overflow: "hidden" }}>
+        <div style={{ position: "absolute", left: 0, top: 0, right: 0, height: 56, background: "#E2DFD8" }}>
+          <div style={{ position: "absolute", left: 28, top: 16, width: 120, height: 24, borderRadius: 12, background: "#CFCBC3" }} />
+          {[0, 1, 2].map((n) => <div key={n} style={{ position: "absolute", right: 28 + n * 84, top: 20, width: 60, height: 16, borderRadius: 8, background: "#D3CFC7" }} />)}
+        </div>
+        <div style={{ position: "absolute", left: 28, top: 84, width: 330, height: 22, borderRadius: 11, background: "#CFCBC3" }} />
+        <div style={{ position: "absolute", left: 28, top: 120, width: 270, height: 22, borderRadius: 11, background: "#CFCBC3" }} />
+        <div style={{ position: "absolute", left: 28, top: 164, width: 300, height: 12, borderRadius: 6, background: "#D6D2CA" }} />
+        <div style={{ position: "absolute", left: 28, top: 190, width: 240, height: 12, borderRadius: 6, background: "#D6D2CA" }} />
+        <div style={{ position: "absolute", left: 28, top: 226, width: 120, height: 40, borderRadius: 20, background: "#CBC7BF" }} />
+        <div style={{ position: "absolute", right: 28, top: 84, width: 380, height: 200, borderRadius: 16, background: "#D9D5CD" }} />
+        {[0, 1, 2].map((n) => <div key={n} style={{ position: "absolute", left: 28 + n * 250, top: 316, width: 230, height: 134, borderRadius: 14, background: "#DEDAD3" }} />)}
+        <div style={{ position: "absolute", left: 300, top: 238, height: 34, padding: "0 16px", borderRadius: 17, background: "#D3CFC7", color: "#8B867D", fontFamily: SANS, fontWeight: 600, fontSize: 22, display: "flex", alignItems: "center" }}>Skabelon</div>
       </div>
     </div>
   );
@@ -140,142 +179,106 @@ const TCard: React.FC<{ t: number; i: number }> = ({ t, i }) => {
 // ── the scene ────────────────────────────────────────────────────────────────────────────────────────────────────
 export const Scene1: React.FC<{ g: number }> = ({ g }) => {
   const HOFF = f("h1") - HANDOFF_HALF;
-  if (g >= HOFF) return <Handoff g={g} at="h1" />;       // from h1 - 0.25 s to the end of the span: the hand-off only
-  const t = g / 30, TH = HOFF / 30;
-  const BY = 440, FY = 540, ISY = 138.2;                  // browser centre, field centre, the Island's centre under the 1.4× phone
+  if (g >= HOFF) return <StageHandoff g={g} at="h1" />;   // from h1 - 0.25 s to the end of the span: the hand-off only
+  const t = g / 30;
 
-  // ── A: dot → capsule → browser → field → capsule (one Shaped box, 1040 × 660) ──
-  let A: React.ReactNode = null;
-  let landRings: React.ReactNode = null;
-  if (t < 6.45) {
-    const fall = t < 0.2 ? (t / 0.2) ** 2 : 1;
-    let y = -30 + 570 * fall;
-    if (t >= 0.2 && t < 0.34) { const u = (t - 0.2) / 0.14; y = 540 - 95 * 4 * u * (1 - u); }
-    if (t >= 0.34 && t < 0.42) { const u = (t - 0.34) / 0.08; y = 540 - 24 * 4 * u * (1 - u); }
-    if (t >= 0.42) y = 540;
-    const imp = [0.2, 0.34, 0.42].reduce((s, ti, i) => s + (t >= ti ? [0.55, 0.4, 0.25][i] * Math.exp(-(t - ti) / 0.045) : 0), 0);
-    const fs = t < 0.2 ? (t / 0.2) * 0.4 : 0;
-    const D = 30, dw = D * (1 + 0.5 * imp - 0.2 * fs), dh = D * (1 - 0.4 * imp + fs);
-    const pd = sp(t, 0.43, 0.26, 0.6), wp = sp(t, 0.62, 0.5, 0.68), fm = sp(t, 3.9, 0.45, 0.8), g1 = sp(t, 6.12, 0.26, 0.85);
-    const capW = t < 0.43 ? dw : mix(dw, 200, pd), capH = t < 0.43 ? dh : mix(dh, 60, pd);
-    const w = capW + 800 * wp - 800 * g1, h = capH + 560 * wp - 500 * fm - 60 * g1;
-    const cy0 = t < 0.43 ? y + 15 - dh / 2 : 540;
-    const cy = cy0 + (BY - 540) * wp + (FY - BY) * fm;
-    const r = Math.min(w / 2, h / 2, 30 + 30 * clamp01(fm));
-    const col = mixc(mixc(SAGE, "#FFFFFF", clamp01(wp * 1.4)), SAGE, clamp01(g1 * 1.2));
+  // ── the dot, the capsule and the stage: one Shaped box (1000 × 640) ──
+  const fall = t < 0.2 ? (t / 0.2) ** 2 : 1;
+  let y = -30 + 570 * fall;
+  if (t >= 0.2 && t < 0.34) { const u = (t - 0.2) / 0.14; y = 540 - 95 * 4 * u * (1 - u); }
+  if (t >= 0.34 && t < 0.42) { const u = (t - 0.34) / 0.08; y = 540 - 24 * 4 * u * (1 - u); }
+  if (t >= 0.42) y = 540;
+  const imp = [0.2, 0.34, 0.42].reduce((s, ti, i) => s + (t >= ti ? [0.55, 0.4, 0.25][i] * Math.exp(-(t - ti) / 0.045) : 0), 0);
+  const fs = t < 0.2 ? (t / 0.2) * 0.4 : 0;
+  const D = 30, dw = D * (1 + 0.5 * imp - 0.2 * fs), dh = D * (1 - 0.4 * imp + fs);
+  const pd = sp(t, 0.43, 0.26, 0.6), wp = sp(t, 0.62, 0.5, 0.68);
+  const capW = t < 0.43 ? dw : mix(dw, 200, pd), capH = t < 0.43 ? dh : mix(dh, 60, pd);
+  const w = capW + (STAGE.w - 200) * wp, h = capH + (STAGE.h - 60) * wp;
+  const cy = t < 0.43 ? y + 15 - dh / 2 : 540;
+  const r = Math.min(w / 2, h / 2, mix(30, 16, clamp01(wp)));
+  const col = mixc(SAGE, "#FFFFFF", clamp01(wp * 1.4));
+  const full = clamp01((w - 950) / 10) * clamp01((h - 590) / 10);
 
-    // browser content (site builds, scrolls, timer counts) and field content (typing)
-    const bo = clamp01((wp - 0.25) * 2.2) * (1 - clamp01((t - 3.88) / 0.14));
-    const build = ez(t, 0.95, 1.5, LIN), scroll = 560 * (ez(t, 0.98, 1.25, SCROLL) - ez(t, 2.4, 1.3, SCROLL));
-    const fo = clamp01((fm - 0.55) * 2.4) * (1 - clamp01(g1 * 4));
-    const txt = "Holm Fysioterapi", t0 = 4.62, cps = 12;
-    const n = Math.max(0, Math.min(txt.length, Math.floor((t - t0) * cps)));
-    const btn = sp(t, 4.5, 0.4, 0.55), pr = 1 - 0.14 * Math.max(0, Math.min(1, (t - 6.09) / 0.08)) * (t < 6.21 ? 1 : Math.exp(-(t - 6.21) * 12));
-    const caretOn = n < txt.length || Math.floor(t * 2.2) % 2 === 0;
-    A = (
-      <Shaped BW={1040} BH={660} cx={960} cy={cy} w={w} h={h} r={r} color={col} shadow={1.4}>
-        {bo > 0.01 && (
-          <div style={{ position: "absolute", left: 20, top: 20, width: 1000, height: 620, opacity: bo, overflow: "hidden", background: "#fff" }}>
-            <Bar t={t} />
-            <div className="s1holm" style={{ position: "absolute", left: 0, top: BAR_H, width: 1000, height: 564 }}>
-              <style>{".s1holm > div > div { will-change: transform; }"}</style>
-              <HolmSite w={1000} h={564} build={build} scroll={scroll} />
-            </div>
-          </div>
-        )}
-        {fo > 0.01 && (
-          <div style={{ position: "absolute", left: 20, top: 270, width: 1000, height: 120, opacity: fo, fontFamily: SANS }}>
-            <div style={{ position: "absolute", inset: 0 }}><LiquidGlass w={1000} h={120} radius={60} p={1} sheen={0.5 + 0.5 * Math.sin(t * 1.8)} tint="clear" /></div>
-            <div style={{ position: "absolute", left: 118, top: 0, height: 120, display: "flex", alignItems: "center", fontSize: 44, fontWeight: 500, color: INK, whiteSpace: "pre", letterSpacing: "-0.01em" }}>
-              {txt.slice(0, n).split("").map((ch, i) => {
-                const a = sp(t, t0 + i / cps, 0.22, 0.5);
-                return <span key={i} style={{ display: "inline-block", opacity: clamp01(a * 3), transform: `translateY(${(1 - a) * 14}px) scale(${0.6 + 0.4 * a})`, filter: a < 0.7 ? `blur(${(0.7 - a) * 6}px)` : undefined }}>{ch}</span>;
-              })}
-              <span style={{ display: "inline-block", width: 4, height: 58, marginLeft: 4, borderRadius: 2, background: SAGE, opacity: caretOn ? 1 : 0 }} />
-            </div>
-            <div style={{ position: "absolute", left: 1000 - 18 - 84, top: 18, width: 84, height: 84, borderRadius: 42, background: SAGE, display: "flex", alignItems: "center", justifyContent: "center",
-              transform: `scale(${Math.max(0, btn) * pr})`, boxShadow: "0 8px 18px -8px rgba(26,22,20,0.4)" }}>
-              <Ico n="arrow" s={44} c="#fff" w={2.6} />
-            </div>
-          </div>
-        )}
-      </Shaped>
-    );
-    // each landing sends a thin ring out of the dot
-    landRings = [0.2, 0.34, 0.42].map((ti, i) => {
-      const p = ez(t, ti, 0.45, OUT);
-      return t >= ti && t < ti + 0.45 ? <div key={i} style={{ position: "absolute", left: 960 - 220, top: 555 - 220, width: 440, height: 440, borderRadius: "50%", border: `4px solid ${SAGE}`,
-        opacity: 0.5 * (1 - p), transform: `scale(${0.07 + (0.9 - 0.2 * i) * p})` }} /> : null;
-    });
-  }
+  // the site: builds (0.95 → 2.2), unbuilds at the send press and rebuilds in a fast cascade (6.3 → 7.5)
+  const buildV = t < 6.1 ? ez(t, 0.9, 1.15, LIN) : t < 6.25 ? 1 - ez(t, 6.1, 0.15, LIN) : ez(t, 6.25, 0.95, LIN);
+  const scroll = scrollAt(t);
+  const fo = clamp01((wp - 0.25) * 2.2);
 
-  // ── the sparkle: born in the timer chip, writes the site, dives into the field as its icon ──
+  // the prompt field docks onto the lower part of the stage (4.1) and drops away at the press (6.09)
+  const txt = "Holm Fysioterapi", t0 = 4.62, cps = 12;
+  const n = Math.max(0, Math.min(txt.length, Math.floor((t - t0) * cps)));
+  const dock = sp(t, 4.1, 0.5, 0.62), leave = ez(t, 6.16, 0.3, EASE_IN);
+  const fieldDy = (1 - dock) * 190 + leave * 200;
+  const btn = sp(t, 4.5, 0.4, 0.55), pr = 1 - 0.14 * Math.max(0, Math.min(1, (t - 6.09) / 0.08)) * (t < 6.21 ? 1 : Math.exp(-(t - 6.21) * 12));
+  const caretOn = n < txt.length || Math.floor(t * 2.2) % 2 === 0;
+  const hdr = sp(t, 4.45, 0.45, 0.62) * (1 - ez(t, 6.1, 0.22, INOUT));
+  const showField = t > 4.08 && t < 6.5;
+
+  // the flip to the code side and back ("Ingen teknik")
+  const theta = 180 * sp(t, 8.13, 0.36, 0.7) - 180 * sp(t, 8.82, 0.36, 0.7);
+  const back = theta > 90;
+
+  const stageEl = (
+    <Shaped BW={1000} BH={640} cx={960} cy={cy} w={w} h={h} r={r} color={col} shadow={(1 - full) * 1.1} big={full}
+      tf={Math.abs(theta) > 0.05 ? `perspective(2400px) rotateY(${theta}deg)` : ""}>
+      {fo > 0.01 && !back && (
+        <div style={{ position: "absolute", left: 0, top: 0, width: 1000, height: 640, opacity: fo }}>
+          <Stage x={500} y={320} scroll={scroll} build={buildV} booking={1} url="Forhåndsvisning">
+            <Wireframe build={buildV} scroll={scroll} />
+            {showField && <SiteHeader name={txt.slice(0, Math.max(0, Math.min(txt.length, Math.floor((t - t0 - 0.12) * cps))))} p={hdr} />}
+            {showField && (
+              <div style={{ position: "absolute", left: 30, top: STAGE.h - 46 - 24 - 110, width: 900, height: 110, transform: `translateY(${fieldDy}px)`, opacity: 1 - clamp01((leave - 0.5) * 2), fontFamily: SANS }}>
+                <LiquidGlass w={900} h={110} radius={55} p={1} sheen={0.5 + 0.5 * Math.sin(t * 1.8)} tint="clear" />
+                <div style={{ position: "absolute", left: 120, top: 0, height: 110, display: "flex", alignItems: "center", fontSize: 40, fontWeight: 500, color: INK, whiteSpace: "pre", letterSpacing: "-0.01em" }}>
+                  {txt.slice(0, n).split("").map((ch, i) => {
+                    const a = sp(t, t0 + i / cps, 0.22, 0.5);
+                    return <span key={i} style={{ display: "inline-block", opacity: clamp01(a * 3), transform: `translateY(${(1 - a) * 14}px) scale(${0.6 + 0.4 * a})`, filter: a < 0.7 ? `blur(${(0.7 - a) * 6}px)` : undefined }}>{ch}</span>;
+                  })}
+                  <span style={{ display: "inline-block", width: 4, height: 52, marginLeft: 4, borderRadius: 2, background: SAGE, opacity: caretOn ? 1 : 0 }} />
+                </div>
+                <div style={{ position: "absolute", left: 900 - 16 - 78, top: 16, width: 78, height: 78, borderRadius: 39, background: SAGE, display: "flex", alignItems: "center", justifyContent: "center",
+                  transform: `scale(${Math.max(0, btn) * pr})`, boxShadow: "0 8px 18px -8px rgba(26,22,20,0.4)" }}>
+                  <Ico n="arrow" s={42} c="#fff" w={2.6} />
+                </div>
+              </div>
+            )}
+            {t > 9.05 && <>{[0, 1, 2].map((i) => <TemplateFlick key={i} t={t} i={i} />)}</>}
+          </Stage>
+          {t < 2.9 && <TimerChip t={t} left={20 + STAGE.w - 18 - 128} top={24} />}
+        </div>
+      )}
+      {back && <div style={{ position: "absolute", left: 20, top: 20, width: STAGE.w, height: STAGE.h }}><CodeBack t={t} /></div>}
+    </Shaped>
+  );
+
+  // landing rings of the dot
+  const landRings = [0.2, 0.34, 0.42].map((ti, i) => {
+    const p = ez(t, ti, 0.45, OUT);
+    return t >= ti && t < ti + 0.45 ? <div key={i} style={{ position: "absolute", left: 960 - 220, top: 555 - 220, width: 440, height: 440, borderRadius: "50%", border: `4px solid ${SAGE}`,
+      opacity: 0.5 * (1 - p), transform: `scale(${0.07 + (0.9 - 0.2 * i) * p})` }} /> : null;
+  });
+
+  // ── the sparkle: born in the timer chip, writes the site, dives into the prompt field as its icon ──
   let spark: React.ReactNode = null;
   if (t >= 2.5 && t < 6.3) {
-    const WP: [number, number, number][] = [[1376, 158, 2.5], [1120, 330, 2.82], [690, 360, 3.12], [830, 610, 3.42], [1190, 560, 3.72]];
+    const WP: [number, number, number][] = [[SL + STAGE.w - 18 - 64, ST + 23, 2.5], [1180, 430, 2.82], [760, 470, 3.12], [900, 700, 3.42], [1210, 650, 3.72]];
     let px = WP[0][0], py = WP[0][1];
     for (let i = 0; i < WP.length - 1; i++) {
       if (t >= WP[i][2]) { const q = ez(t, WP[i][2], WP[i + 1][2] - WP[i][2], INOUT); px = mix(WP[i][0], WP[i + 1][0], q); py = mix(WP[i][1], WP[i + 1][1], q); }
     }
-    const born = sp(t, 2.5, 0.45, 0.55), dive = ez(t, 3.86, 0.42, INOUT);
-    const x = mix(px, 530, dive), y = mix(py, FY, dive);
-    const sc = mix(born, 56 / 260, dive) * (1 - ez(t, 6.08, 0.16, INOUT));
-    const rot = -230 * (1 - sp(t, 2.5, 0.55, 0.62)) + 90 * (Math.min(t, 4.3) - 2.5);
-    spark = <Sparkle t={t} x={x} y={y} size={260} rot={rot} scale={sc} />;
+    const born = sp(t, 2.5, 0.45, 0.55), dive = ez(t, 3.95, 0.45, INOUT);
+    const iconY = ST + 46 + (STAGE.h - 46 - 24 - 55) + fieldDy;
+    const x = mix(px, SL + 30 + 64, dive), yy = mix(py, iconY, dive);
+    const sc = mix(born, 56 / 260, dive) * (1 - ez(t, 6.1, 0.18, INOUT));
+    const rot = -230 * (1 - sp(t, 2.5, 0.55, 0.62)) + 90 * (Math.min(t, 4.4) - 2.5);
+    spark = <Sparkle t={t} x={x} y={yy} size={260} rot={rot} scale={sc} />;
   }
 
-  // ── B: capsule rises and becomes the Island (6.4 → 6.8); later the Island drops into the capsule (→ TH) ──
-  let B: React.ReactNode = null;
-  if (t >= 6.4 && t < 6.8) {
-    const pr = sp(t, 6.4, 0.38, 0.72);
-    B = <Shaped BW={240} BH={80} cx={960} cy={540 - (540 - ISY) * pr} w={200 - 74 * pr} h={60 - 23.6 * pr} color={mixc(SAGE, "#000000", clamp01((pr - 0.45) * 2))} />;
-  }
-  const dropStart = TH - 0.2;
-  if (t >= dropStart) {
-    const q = ez(t, dropStart, 0.2, OUT), qp = ez(t - 1 / 30, dropStart, 0.2, OUT);
-    const px = (u: number) => mix(960, 760, u), py = (u: number) => mix(ISY, 540, u);
-    B = <Shaped BW={240} BH={80} cx={px(q)} cy={py(q)} w={126 + 74 * q} h={36.4 + 23.6 * q} color={mixc("#000000", SAGE, clamp01(q * 1.3))}
-      tf={squash(px(q) - px(qp), py(q) - py(qp), 0.0016)} />;
-  }
-
-  // ── the phone (1.4×), unrolled from the Island; the site builds, then scrolls steadily ──
-  let phone: React.ReactNode = null, code: React.ReactNode = null, cards: React.ReactNode = null;
-  const u0 = 6.78;
-  if (t >= u0 && t < TH - 0.15) {
-    const pw = sp(t, u0, 0.38, 0.8), ph = sp(t, u0 + 0.02, 0.5, 0.68);
-    const collapse = ez(t, TH - 0.42, 0.24, INOUT);
-    const open = t < TH - 0.45 ? 1 : 1 - collapse;
-    const ow = t < TH - 0.45 ? clamp01(pw) : open, oh = t < TH - 0.45 ? clamp01(ph) : open;
-    const top = mix(240, 220, oh), bot = mix(814, 220, oh), side = mix(915, 810, ow), rad = mix(13, 50, ow);
-    const pop = 1 + 0.25 * Math.max(0, Math.min(ph, pw) - 1);
-    const build = ez(t, 6.86, 0.7, LIN);
-    const scroll = 340 * (ez(t, 7.25, 1.1, SCROLL) - ez(t, 8.45, 0.9, SCROLL));
-    phone = (
-      <div style={{ position: "absolute", inset: 0, transformOrigin: "960px 540px", transform: `scale(${1.4 * pop})` }}>
-        <div style={{ position: "absolute", inset: 0, filter: "drop-shadow(0 2px 3px rgba(26,22,20,0.10)) drop-shadow(0 30px 26px rgba(26,22,20,0.20))" }}>
-          <div style={{ position: "absolute", inset: 0, clipPath: `inset(${top}px ${side}px ${bot}px ${side}px round ${rad}px)` }}>
-            <div style={{ position: "absolute", left: 810, top: 220, width: 300, height: 640 }}>
-              <div style={{ position: "absolute", inset: 0, borderRadius: 50, background: INK }} />
-              <div style={{ position: "absolute", left: 9, top: 9, width: 282, height: 622, borderRadius: 41, overflow: "hidden", background: HOLM.bg,
-                clipPath: `inset(${top - 220}px ${side - 810}px ${bot - 220}px ${side - 810}px round ${Math.max(0, rad - 9)}px)` }}>
-                <div className="s1site"><style>{".s1site > div > div { will-change: transform; }"}</style><MiniSite build={build} scroll={scroll} /></div>
-              </div>
-              <div style={{ position: "absolute", left: 105, top: 20, width: 90, height: 26, borderRadius: 13, background: "#000" }} />
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-    if (t > 8.1 && t < 9.25) code = <CodeWin t={t} />;
-    if (t > 9.05) cards = <>{CARDS.map((_, i) => <TCard key={i} t={t} i={i} />)}</>;
-  }
-
-  // ── the lines ──
   const lines = (
     <>
-      {t > 1.36 && t < 2.62 && <Line text="få minutter" y={882} size={92} p={clamp01((t - 1.38) / 0.8)} out={ez(t, 2.34, 0.26, INOUT)} italicWords={["minutter"]} />}
-      {t > 2.58 && t < 4.15 && <Line text="Bygget af AI." y={882} size={92} p={clamp01((t - 2.6) / 1.9)} out={ez(t, 3.86, 0.24, INOUT)} italicWords={["AI"]} />}
-      {t > 4.15 && t < 6.4 && <Line text="Fortæl kort om din virksomhed" y={FY - 128} size={30} serif={false} color={C.muted} p={clamp01((t - 4.2) / 1.7)} out={ez(t, 6.0, 0.24, INOUT)} />}
+      {t > 1.36 && t < 2.62 && <Line text="få minutter" y={935} size={84} p={clamp01((t - 1.38) / 0.8)} out={ez(t, 2.34, 0.26, INOUT)} italicWords={["minutter"]} />}
+      {t > 2.58 && t < 4.15 && <Line text="Bygget af AI." y={935} size={84} p={clamp01((t - 2.6) / 1.9)} out={ez(t, 3.86, 0.24, INOUT)} italicWords={["AI"]} />}
+      {t > 4.15 && t < 6.4 && <Line text="Fortæl kort om din virksomhed" y={935} size={36} serif={false} color={C.muted} p={clamp01((t - 4.2) / 1.7)} out={ez(t, 6.0, 0.24, INOUT)} />}
     </>
   );
 
@@ -283,12 +286,8 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
     <>
       {lines}
       {landRings}
-      {A}
+      {stageEl}
       {spark}
-      {cards}
-      {phone}
-      {code}
-      {B}
     </>
   );
 };

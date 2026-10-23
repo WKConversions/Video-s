@@ -1,31 +1,31 @@
 [
  {
   "id": "kenney-tick-004",
-  "frame": 1049,
+  "frame": 1045,
   "db": -10,
   "pitch": 0,
   "note": "check starts drawing"
  },
  {
-  "id": "gen-pop",
-  "frame": 1057,
-  "db": -9,
+  "id": "gen-stamp",
+  "frame": 1047,
+  "db": -7,
   "pitch": 0,
-  "note": "capsule lands at the centre after the hand-off, grows"
+  "note": "the big check disc stamps onto the site"
  },
  {
   "id": "gen-chime",
-  "frame": 1065,
+  "frame": 1059,
   "db": -9,
   "pitch": 0,
-  "note": "check pops: Tilfreds"
+  "note": "check lands: Tilfreds"
  },
  {
   "id": "gen-whoosh-short",
   "frame": 1088,
   "db": -9,
   "pitch": 0,
-  "note": "capsule widens into the big price capsule"
+  "note": "check disc widens into the price capsule, docks on the stage"
  },
  {
   "id": "kenney-tick-004",
@@ -109,7 +109,7 @@
   "frame": 1204,
   "db": -8,
   "pitch": 0,
-  "note": "1x chip pops out from under the price"
+  "note": "1x chip pops out of the price over the site"
  },
  {
   "id": "kenney-tick-004",
@@ -130,7 +130,7 @@
   "frame": 1260,
   "db": -11,
   "pitch": 0,
-  "note": "/md tag flies in"
+  "note": "/md tag flies at the price"
  },
  {
   "id": "gen-tap",
@@ -155,52 +155,31 @@
  },
  {
   "id": "gen-whoosh-medium",
+  "frame": 1320,
+  "db": -10,
+  "pitch": 0,
+  "note": "the capsule drops away"
+ },
+ {
+  "id": "gen-swell",
   "frame": 1322,
-  "db": -9,
-  "pitch": 0,
-  "note": "price unrolls into the big phone, the phone turns"
- },
- {
-  "id": "kenney-tick-004",
-  "frame": 1334,
   "db": -12,
   "pitch": 0,
-  "note": "the site builds block by block"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 1342,
-  "db": -13,
-  "pitch": 0,
-  "note": "site starts scrolling"
- },
- {
-  "id": "kenney-tick-004",
-  "frame": 1344,
-  "db": -12,
-  "pitch": 1,
-  "note": "the site builds block by block"
- },
- {
-  "id": "kenney-tick-004",
-  "frame": 1354,
-  "db": -12,
-  "pitch": 2,
-  "note": "the site builds block by block"
+  "note": "the stage pushes in: Siden er din"
  },
  {
   "id": "gen-pop",
   "frame": 1366,
   "db": -7,
   "pitch": 0,
-  "note": "Din badge pops onto the phone"
+  "note": "Din badge pops onto the site"
  },
  {
   "id": "gen-whoosh-short",
   "frame": 1400,
   "db": -11,
   "pitch": 0,
-  "note": "phone tilts like a question"
+  "note": "stage tilts like a question"
  },
  {
   "id": "kenney-select-002",
@@ -210,64 +189,64 @@
   "note": "second question tilt"
  },
  {
-  "id": "gen-whoosh-short",
-  "frame": 1426,
-  "db": -13,
-  "pitch": 0,
-  "note": "site scrolls back up"
- },
- {
   "id": "gen-whoosh-medium",
   "frame": 1462,
   "db": -9,
   "pitch": 0,
-  "note": "phone collapses back into the price"
+  "note": "the price capsule rises onto the stage"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 1472,
+  "frame": 1476,
+  "db": -12,
+  "pitch": 0,
+  "note": "digit strips roll 499 to 0"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 1478,
+  "db": -11,
+  "pitch": 0,
+  "note": "capsule lands"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 1484,
   "db": -12,
   "pitch": 0,
   "note": "digit strips roll 499 to 0"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 1480,
-  "db": -12,
-  "pitch": 0,
-  "note": "digit strips roll 499 to 0"
- },
- {
-  "id": "kenney-tick-004",
-  "frame": 1488,
+  "frame": 1492,
   "db": -12,
   "pitch": -1,
   "note": "digit strips roll 499 to 0"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 1496,
+  "frame": 1500,
   "db": -12,
   "pitch": -1,
   "note": "digit strips roll 499 to 0"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 1504,
+  "frame": 1508,
   "db": -12,
   "pitch": -2,
   "note": "digit strips roll 499 to 0"
  },
  {
   "id": "kenney-tick-004",
-  "frame": 1512,
+  "frame": 1516,
   "db": -12,
   "pitch": -2,
   "note": "digit strips roll 499 to 0"
  },
  {
   "id": "gen-success",
-  "frame": 1512,
+  "frame": 1516,
   "db": -8,
   "pitch": 0,
   "note": "0 kr. lands"
@@ -294,6 +273,13 @@
   "note": "knob overshoots and settles"
  },
  {
+  "id": "gen-whoosh-short",
+  "frame": 1563,
+  "db": -10,
+  "pitch": 0,
+  "note": "row collapses onto the knob"
+ },
+ {
   "id": "gen-chime",
   "frame": 1564,
   "db": -11,
@@ -301,10 +287,10 @@
   "note": "risiko: zero risk"
  },
  {
-  "id": "gen-whoosh-short",
-  "frame": 1565,
-  "db": -9,
-  "pitch": 0,
-  "note": "row collapses to the knob, knob becomes the capsule"
+  "id": "kenney-drop-003",
+  "frame": 1579,
+  "db": -12,
+  "pitch": -3,
+  "note": "the knob drops out; the plain site remains"
  }
 ]

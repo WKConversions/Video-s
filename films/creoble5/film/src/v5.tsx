@@ -119,11 +119,14 @@ export const STAGE_SCROLL_MAX = SITE.page - (STAGE.h - BAR) / (STAGE.w / SITE.w)
 /** The website stage centred at (x, y): browser + Holm site. scroll in design px (0..STAGE_SCROLL_MAX), build 0..1,
  * booking 0..1, url/live for the address bar; children are drawn over the site area (inside the browser). */
 export const Stage: React.FC<{ x?: number; y?: number; scale?: number; transform?: string; scroll?: number; build?: number; booking?: number;
-  url?: string; live?: number; children?: React.ReactNode; style?: React.CSSProperties }> =
-  ({ x = CX, y = CY, scale = 1, transform = "", scroll = 0, build = 1, booking = 1, url = "Forhåndsvisning", live = 0, children, style }) => (
+  url?: string; live?: number; headline?: React.ReactNode; children?: React.ReactNode; style?: React.CSSProperties }> =
+  ({ x = CX, y = CY, scale = 1, transform = "", scroll = 0, build = 1, booking = 1, url = "Forhåndsvisning", live = 0, headline, children, style }) => (
   <div style={{ position: "absolute", left: x - STAGE.w / 2, top: y - STAGE.h / 2, width: STAGE.w, height: STAGE.h, transform: `${transform} scale(${scale})`, ...style }}>
     <Browser w={STAGE.w} h={STAGE.h} url={url} live={live}>
-      <div style={{ willChange: "transform" }}><HolmSite w={STAGE.w} h={STAGE.h - BAR} build={build} booking={booking} scroll={scroll} /></div>
+      {/* the whole page is drawn once and scrolled as one compositor layer (no per-frame glyph snapping = no shake) */}
+      <div style={{ position: "absolute", left: 0, top: 0, width: STAGE.w, transform: `translate3d(0, ${-scroll * (STAGE.w / SITE.w)}px, 0)`, willChange: "transform" }}>
+        <HolmSite w={STAGE.w} h={SITE.page * (STAGE.w / SITE.w)} build={build} booking={booking} scroll={0} headline={headline} />
+      </div>
       {children}
     </Browser>
   </div>
@@ -135,7 +138,9 @@ export const stageHandoffState = (g: number, at: string) => {
   const [url, live] = HANDOFF_URL[at];
   return { scroll: 300 * INOUT(u), url, live, u };
 };
+/** The site's headline after "Creoble retter det." (S2): every stage from h2 on shows it. */
+export const NEW_HEADLINE = <>Velkommen hjem<br />i din krop.</>;
 export const StageHandoff: React.FC<{ g: number; at: string }> = ({ g, at }) => {
   const s = stageHandoffState(g, at);
-  return <Stage scroll={s.scroll} url={s.url} live={s.live} />;
+  return <Stage scroll={s.scroll} url={s.url} live={s.live} headline={at === "h1" ? undefined : NEW_HEADLINE} />;
 };

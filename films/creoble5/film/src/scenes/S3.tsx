@@ -1,11 +1,12 @@
-// Scene 3 (h2 to h3), revision 1: the price, big. One object, always working: capsule + check -> a 960x320 price capsule
-// whose digit strips roll several full turns (0 -> 499) -> "1× Én gang." chip flies out -> a big "/md" tag flies in, is
-// struck and falls -> the capsule unrolls into a big phone (1.35x) with the real MiniSite building and scrolling ("Din")
-// -> question tilt -> back to the price, strips roll 499 -> 0 -> a big iOS toggle switches OFF -> the knob becomes the
-// capsule (hand-off). Transforms only; the shape morphs with clip-path on one static box; its shadow is a transparent caster.
+// Scene 3 (h2 to h3), revision 2: the website is the hero object in every beat. The Holm stage (browser + site) is on
+// screen the whole span and always scrolls (steady, eased turnarounds). Over it: a big check stamps -> the check becomes
+// the price capsule (docked on the lower half) whose digit strips roll 0 -> 499 -> "1× Én gang." chip pops out upward
+// over the site -> "/md" flies at the price, is struck and falls -> the capsule drops away, the stage pushes in with
+// the "Din" badge -> question tilt -> the capsule rises, strips roll 499 -> 0 -> the toggle row docks and switches OFF
+// -> the knob drops out -> plain stage at scroll 0 (StageHandoff). Transforms only; shapes morph with clip-path.
 import React from "react";
 import { C, INOUT, OUT, SANS, SERIF, clamp01, mix } from "../lib";
-import { CX, HOLM, Handoff, MiniSite, Phone, SHADOW_SOFT } from "../v5";
+import { CX, NEW_HEADLINE, STAGE_SCROLL_MAX, Stage, StageHandoff } from "../v5";
 import { LiquidGlass, f } from "../shared";
 
 // ── small math ──────────────────────────────────────────────────────────────────────────────────────────────────
@@ -43,11 +44,10 @@ const fillAt = (fl: number) => { const u = Math.min(2, Math.max(0, fl)); return 
 
 // ── sizes (revision 1) ──────────────────────────────────────────────────────────────────────────────────────────
 const BW = 1200, BH = 960;                       // the static box the capsule lives in (always centred on the capsule)
-const PW = 1140, PH = 400, ROW_W = 880;           // price capsule; the risk row is a little narrower
-const PS = 1.4;                                  // phone scale: 420 x 896
-const PHW = 300 * PS, PHH = 640 * PS, PHR = 50 * PS;
+const PW = 960, PH = 300, ROW_W = 860;           // price capsule docked on the lower half of the stage; the risk row a little narrower
+const HY = 760;                                  // docked centre y
 const TG = { size: 200, w: 340 }, TGX = 140;     // iOS toggle 340 x 200, centred 140 right of the capsule centre
-const DIG = 330;                                 // price digits, Fraunces px
+const DIG = 260;                                 // price digits, Fraunces px
 const abs = (x: number, y: number, extra: React.CSSProperties = {}): React.CSSProperties => ({ position: "absolute", left: x, top: y, ...extra });
 // roll easing: fast the whole way, a short decel to land (no long slow tail)
 const ROLL = (q: number) => { if (q <= 0) return 0; if (q >= 1) return 1; if (q < 0.8) return (8 / 9) * (q / 0.8); const u = (q - 0.8) / 0.2; return 8 / 9 + (1 / 9) * (2 * u - u * u); };
@@ -114,86 +114,96 @@ const NulLine: React.FC<{ g: number; y: number; tA: number; tB: number; out: num
   </div>
 );
 
+// the site's steady scroll: trapezoid segments (accelerate, cruise at ~6 px/frame design = ~4 px on screen, decelerate)
+const trap = (t: number, ta0 = 0.09, ta1 = 0.09) => { const v = 1 / (1 - (ta0 + ta1) / 2); if (t <= 0) return 0; if (t >= 1) return 1; if (t < ta0) return (v * t * t) / (2 * ta0); if (t > 1 - ta1) return 1 - (v * (1 - t) * (1 - t)) / (2 * ta1); return v * (t - ta0 / 2); };
+
 export const Scene3: React.FC<{ g: number }> = ({ g }) => {
   const H2 = f("h2"), H3 = f("h3"), T0 = H2 + 7.5, TE = H3 - 7.5;
-  if (g <= T0) return <Handoff g={g} at="h2" />;
-  if (g >= TE) return <Handoff g={g} at="h3" />;
+  if (g <= T0) return <StageHandoff g={g} at="h2" />;
+  if (g >= TE) return <StageHandoff g={g} at="h3" />;
 
   // cues (g)
   const t499 = f("w:499"), tKr = f("w:kroner"), tN = f("w:n"), tIntet = f("w:intet"), tAbo = f("w:abonnement"), tSiden = f("w:siden2"), tDin = f("w:din3");
   const tIkke = f("w:ikke"), tTil2 = f("w:tilfreds2"), tS = f("w:s"), tNul = f("w:nul"), tRis = f("w:risiko");
-  const tChk = T0 + 5, tRoll = t499 + 1, ROLL1 = 52, tLand = tRoll + ROLL1 - 3, tDock = tIntet + 6, tDrop = tAbo + 5, tOff = tNul;
-  const tRoll2 = tS + 2, ROLL2 = 26, tLand2 = tRoll2 + ROLL2 - 3;
-  const tEx = TE - 10;     // the knob leaves the row
+  const tStamp = T0 + 1, tChk = T0 + 3, tRoll = t499 + 1, ROLL1 = 52, tLand = tRoll + ROLL1 - 3, tDock = tIntet + 6, tDrop = tAbo + 5, tOff = tNul;
+  const tRoll2 = tS + 4, ROLL2 = 26, tLand2 = tRoll2 + ROLL2 - 3;
+  const tEx = TE - 11;      // the toggle row collapses onto its knob, the knob drops out
 
-  // ── the capsule's own state (all springs) ─────────────────────────────────────────────────────────────────────
-  let x = track(g, 1160, [[T0, 960, 0.55, 0.62]]) + imp(g, tDock, -40, 2, 6);
-  let y = track(g, 540, [[tN - 1, 472, 0.45, 0.62], [tIntet, 540, 0.4, 0.7], [tNul - 6, 460, 0.45, 0.62]]);
-  let w = track(g, 200, [[T0 + 2, 880, 0.45, 0.6], [t499, PW, 0.45, 0.58], [tSiden, PHW, 0.5, 0.6], [tS, PW, 0.45, 0.6], [tNul - 5, ROW_W, 0.4, 0.8]]);
-  let h = track(g, 60, [[T0 + 2, 280, 0.45, 0.6], [t499, PH, 0.45, 0.58], [tSiden, PHH, 0.5, 0.6], [tS, PH, 0.45, 0.6]]);
-  let r = track(g, 30, [[T0 + 2, 140, 0.4, 0.9], [t499, PH / 2, 0.4, 0.9], [tSiden, PHR, 0.5, 0.9], [tS, PH / 2, 0.4, 0.9]]);
-  let fl = track(g, 0, [[t499, 1, 0.35, 1], [tSiden, 2, 0.4, 1], [tS, 1, 0.07, 1]]);
-  let ring = track(g, 0, [[t499, 5, 0.35, 1], [tSiden, 0, 0.4, 1], [tS, 5, 0.35, 1]]);
-  let sc = 1 + imp(g, tChk + 6, 0.10, 2.0, 6.5) + imp(g, tLand, 0.07, 2.3, 6) + imp(g, tLand2, 0.08, 2.2, 6) + imp(g, tNul, 0.05, 2.2, 6) + imp(g, tN, 0.05, 2.2, 7);
-  let rz = imp(g, tDock, -4, 2.2, 5) + imp(g, tDrop, 3, 2.4, 5) + imp(g, tIkke, -14, 1.6, 3.2) + imp(g, tTil2, 10, 1.8, 3.4);
-  let ry = imp(g, tIkke, 28, 1.6, 3.2);
-  let rx = imp(g, tTil2, -16, 1.8, 3.4);
-  const spinY = -360 * (1 - sp(g, tSiden, 0.9, 0.7));   // the one flip: the phone turns in
+  // ── the stage: the site always scrolls (0 .. STAGE_SCROLL_MAX), from 300 at the hand-off to 0 at the next ─────────
+  const segs = [{ d: 30, a: 300, b: 0 }, { d: 0, a: 0, b: STAGE_SCROLL_MAX }, { d: 0, a: STAGE_SCROLL_MAX, b: 0 }, { d: 0, a: 0, b: STAGE_SCROLL_MAX }, { d: 0, a: STAGE_SCROLL_MAX, b: 0 }];
+  const dFull = (TE - T0 - 30) / 4;
+  let tc = T0, scroll = 0;
+  for (const sg of segs) {
+    const d = sg.d || dFull;
+    if (g >= tc && g < tc + d) { scroll = mix(sg.a, sg.b, trap((g - tc) / d, 0.09, sg === segs[segs.length - 1] ? 0.035 : 0.09)); break; }
+    tc += d; scroll = sg.b;
+  }
+  // push-in and tilts of the stage (the stage acts: "Siden er din" pushes in, "Ikke tilfreds?" tilts like a question)
+  const push = track(g, 1, [[tSiden, 1.15, 0.5, 0.6], [tS - 3, 1, 0.4, 0.8]]);
+  const sry = imp(g, tSiden, -14, 1.5, 4) + imp(g, tIkke, 22, 1.6, 3.2) + imp(g, tTil2, -12, 1.8, 3.4);
+  const srz = imp(g, tIkke, -5, 1.6, 3.2) + imp(g, tTil2, 4, 1.8, 3.4);
+  const srx = imp(g, tTil2, -8, 1.8, 3.4);
+  const stageId = Math.abs(sry) + Math.abs(srz) + Math.abs(srx) + Math.abs(push - 1) < 0.002;
 
-  // ── the exit: the row collapses onto its knob, the knob flies out and becomes the capsule at x 760 ───────────────
-  const e1 = ramp(g, tEx, 4.5, OUT), e2 = ramp(g, tEx + 4, TE - (tEx + 4), INOUT);
+  // ── the hero capsule over the stage (all springs) ────────────────────────────────────────────────────────────
+  const stampP = sp(g, tStamp, 0.5, 0.5);
+  let x = 960 + imp(g, tDock, -40, 2, 6);
+  let y = track(g, 540, [[t499, HY, 0.45, 0.62], [tSiden - 1, 1320, 0.3, 1], [tS - 1, HY, 0.5, 0.6]]);
+  let w = track(g, 300, [[t499, PW, 0.45, 0.58], [tNul - 5, ROW_W, 0.4, 0.8]]);
+  let h = 300;
+  let r = 150;
+  let fl = track(g, 0, [[t499, 1, 0.35, 1]]);
+  let ring = track(g, 0, [[t499, 5, 0.35, 1]]);
+  let sc = mix(2.2, 1, stampP) + imp(g, tLand, 0.07, 2.3, 6) + imp(g, tLand2, 0.08, 2.2, 6) + imp(g, tNul, 0.05, 2.2, 6) + imp(g, tN, 0.05, 2.2, 7);
+  let rz = imp(g, tDock, -4, 2.2, 5) + imp(g, tDrop, 3, 2.4, 5);
+
+  // ── the exit: the row collapses onto its knob, the knob drops out; at TE only the plain stage is left ─────────────
+  const e1 = ramp(g, tEx, 4.5, OUT), e2 = ramp(g, tEx + 4, TE - 2 - (tEx + 4), INOUT);
   const mx = (a: number, b: number, t: number) => mix(a, b, t);
   {
-    // knob centre when OFF: the toggle's left edge + 0.09 s + 0.41 s
     const k1 = { x: x + TGX - TG.w / 2 + TG.size * 0.09 + TG.size * 0.41, y, w: TG.size * 0.82, h: TG.size * 0.82, r: TG.size * 0.41, fl: 1, ring: 5 };
     x = mx(x, k1.x, e1); y = mx(y, k1.y, e1); w = mx(w, k1.w, e1); h = mx(h, k1.h, e1); r = mx(r, k1.r, e1); fl = mx(fl, k1.fl, e1); ring = mx(ring, k1.ring, e1);
-    x = mx(x, 760, e2); y = mx(y, 540, e2); w = mx(w, 200, e2); h = mx(h, 60, e2); r = mx(r, 30, e2); fl = mx(fl, 0, e2); ring = mx(ring, 0, e2);
-    sc = mx(sc, 1, e2); rz = mx(rz, 0, e2); ry = mx(ry, 0, e2); rx = mx(rx, 0, e2);
+    y = mx(y, 1300, e2); rz = mx(rz, 0, e2);
   }
+  const heroOn = y - h / 2 < 1100 && g < TE - 1;
   const inner = fillAt(fl);
-  const mirX = Math.cos((rx * Math.PI) / 180) < 0 ? -1 : 1, mirY = Math.cos(((ry + spinY) * Math.PI) / 180) < 0 ? -1 : 1;
 
-  // glints on the events (a single sweep; 1 = off-capsule, matches the hand-off pill)
+  // glints on the events
   const sw = [sweep(g, T0 + 8, 18), sweep(g, tLand, 12), sweep(g, tN + 8, 12), sweep(g, tIntet + 12, 12), sweep(g, tLand2, 12), sweep(g, tNul + 4, 12)].find((v) => v >= 0);
   const sheen = sw === undefined ? 1 : sw;
-  const sheenCol = fl > 1 ? WHITE : lerpC(WHITE, SAGE, clamp01(fl));
-  const sheenA = fl > 1 ? 0.12 : mix(0.4, 0.34, clamp01(fl));
+  const sheenCol = lerpC(WHITE, SAGE, clamp01(fl));
+  const sheenA = mix(0.4, 0.34, clamp01(fl));
 
   // ── content visibilities ─────────────────────────────────────────────────────────────────────────────────────
-  const chkP = ramp(g, tChk, 9, OUT), chkOut = ramp(g, t499, 6, OUT), chkPop = sp(g, tChk + 7, 0.35, 0.5);
-  const priceIn = ramp(g, t499 + 1, 6) * (1 - ramp(g, tSiden - 2, 4)) + ramp(g, tS + 4, 5) * (1 - ramp(g, tNul - 5, 5));
+  const chkP = ramp(g, tChk, 9, OUT), chkOut = ramp(g, t499, 6, OUT), chkPop = sp(g, tChk + 6, 0.35, 0.5);
+  const priceIn = ramp(g, t499 + 1, 6) * (1 - ramp(g, tSiden - 2, 3)) + ramp(g, tS - 1, 3) * (1 - ramp(g, tNul - 5, 5));
   const pR1 = clamp01((g - tRoll) / ROLL1), pR2 = clamp01((g - tRoll2) / ROLL2);
   const phase2 = g >= tS - 1;
   const krb = phase2 ? 1 : sp(g, tKr, 0.4, 0.62);
   const rowIn = ramp(g, tNul - 5, 6) * (1 - clamp01(e1 * 2.2));
-  const phoneIn = ramp(g, tSiden + 2, 6) * (1 - ramp(g, tS - 1, 3));
-  // the site builds block by block, then scrolls steadily down the page
-  const build = ramp(g, tSiden + 3, 22, (t) => t);
-  const scDown = ramp(g, tSiden + 10, 38, (t) => (t < 0.88 ? (t / 0.88) * 0.93 : 0.93 + 0.07 * (1 - Math.pow(1 - (t - 0.88) / 0.12, 2)))), scUp = ramp(g, tTil2 + 6, 20, INOUT);
-  const scroll = 360 * scDown - 330 * scUp;
 
-  // ── "Én gang." chip: pops out from under the capsule, widens to its text, tucks back ───────────────────────────
+  // ── "Én gang." chip: pops out of the capsule upward over the site, widens to its text, tucks back ──────────────────
   const CW = 420, CH = 110, chipHalf = (CW - CH) / 2;
   const chipPop = sp(g, tN, 0.6, 0.5), chipTuck = ramp(g, tIntet - 1, 6, INOUT), chipW = ramp(g, tN + 6, 14);
-  const chipY = mix(y, y + PH / 2 + 26 + CH / 2, chipPop);
+  const chipY = mix(HY, HY - PH / 2 - 26 - CH / 2, chipPop);
   const showChip = g >= tN && g < tIntet + 6;
 
-  // ── "/md": a big glass tag flies in, docks on the price (the price recoils), is struck and drops ───────────────────
+  // ── "/md": a big dark tag flies at the price, docks (the price recoils), is struck and falls ─────────────────────────
   const mdT = (g - tDrop) / 30;
   const mdIn = 1 - sp(g, tIntet, 0.42, 0.6);
-  const mdX = x + 575 + mdIn * 700 + (mdT > 0 ? 120 * mdT : 0);
-  const mdY = y + (mdT > 0 ? 0.5 * 4200 * mdT * mdT : 0) + imp(g, tIntet + 9, -12, 3, 4) * (mdT > 0 ? 0 : 1);
+  const mdX = x + 495 + mdIn * 700 + (mdT > 0 ? 120 * mdT : 0);
+  const mdY = HY + (mdT > 0 ? 0.5 * 4200 * mdT * mdT : 0) + imp(g, tIntet + 9, -12, 3, 4) * (mdT > 0 ? 0 : 1);
   const mdRot = (mdT > 0 ? 420 * mdT : 0) + imp(g, tIntet + 7, 5, 3.4, 4);
   const mdO = mdT > 0 ? 1 - clamp01(mdT / 0.6) : 1;
   const strike = ramp(g, tAbo, 4.5, INOUT);
   const showMd = g >= tIntet && mdT < 0.62;
 
-  // ── the "Din" badge on the phone ───────────────────────────────────────────────────────────────────────────────
+  // ── the "Din" badge rides on the stage's corner ────────────────────────────────────────────────────────────────
   const badge = sp(g, tDin, 0.4, 0.5) * (1 - ramp(g, tIkke, 5, INOUT));
   const showBadge = g >= tDin && g < tIkke + 6;
 
-  const nulOut = ramp(g, TE - 5, 4, INOUT);
-  const lineY = 762;
+  const nulOut = ramp(g, TE - 10, 5, INOUT);
+  const lineY = 135;
 
   // shape clip (centred in the box): outer ring (sage) and inner fill
   const clip = (ww: number, hh: number, rr: number, inset = 0) => {
@@ -201,14 +211,23 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
     return `inset(${iy}px ${ix}px ${iy}px ${ix}px round ${Math.max(0, Math.min(rr - inset, (Math.min(ww, hh) - 2 * inset) / 2))}px)`;
   };
   const Wl = 2 * Math.round(w / 2), Hl = 2 * Math.round(h / 2);
-  const kS = clamp01((w - 200) / 600);      // shadow grows with the object; at 200 px it is exactly SHADOW_SOFT
-  const shadow = kS === 0 ? SHADOW_SOFT : `0 1px 2px rgba(26,22,20,0.05), 0 ${mix(18, 44, kS)}px ${mix(40, 90, kS)}px -${mix(18, 34, kS)}px rgba(26,22,20,${mix(0.22, 0.32, kS)})`;
+  const kS = clamp01((w - 200) / 600);
+  const shadow = `0 1px 2px rgba(26,22,20,0.05), 0 ${mix(18, 44, kS)}px ${mix(40, 90, kS)}px -${mix(18, 34, kS)}px rgba(26,22,20,${mix(0.22, 0.32, kS)})`;
 
   return (
     <>
+      {/* the stage: always the hero, always alive */}
+      <div style={{ position: "absolute", inset: 0, transform: stageId ? undefined : `perspective(2400px) rotateX(${srx}deg) rotateY(${sry}deg) rotateZ(${srz}deg) scale(${push})` }}>
+        <Stage scroll={scroll} headline={NEW_HEADLINE} />
+        {showBadge && (
+          <div style={abs(1430 - 140, 252 - 65, { width: 280, height: 130, borderRadius: 65, background: C.ink, color: C.cream, fontFamily: SERIF, fontStyle: "italic", fontSize: 92, display: "flex", alignItems: "center", justifyContent: "center",
+            transform: `scale(${badge}) rotate(${(1 - badge) * -25}deg)`, opacity: clamp01(badge * 3), boxShadow: "0 18px 34px -12px rgba(26,22,20,0.5)" })}>Din</div>
+        )}
+      </div>
+
       {/* "Én gang." chip (under the capsule) */}
       {showChip && (
-        <div style={{ position: "absolute", left: 0, top: 0, width: CW, height: CH, transform: `translate(${x - CW / 2}px, ${chipY - CH / 2}px) scale(${mix(0.3, 1, chipPop) * (1 - 0.7 * chipTuck)})`, opacity: 1 - chipTuck, filter: "drop-shadow(0 12px 14px rgba(26,22,20,0.16))" }}>
+        <div style={{ position: "absolute", left: 0, top: 0, width: CW, height: CH, transform: `translate(${960 - CW / 2}px, ${chipY - CH / 2}px) scale(${mix(0.3, 1, chipPop) * (1 - 0.7 * chipTuck)})`, opacity: 1 - chipTuck, filter: "drop-shadow(0 12px 14px rgba(26,22,20,0.2))" }}>
           <div style={{ position: "absolute", inset: 0, background: "#fff", clipPath: `inset(0px ${(1 - chipW) * chipHalf}px round ${CH / 2}px)` }}>
             <div style={{ position: "absolute", inset: 0, boxShadow: `inset 0 0 0 4px ${C.sage}`, borderRadius: CH / 2 }} />
             <div style={abs(CW / 2 - 47 - (CW / 2 - 55) * chipW, 8, { width: 94, height: 94, borderRadius: 47, background: C.sage, color: "#fff", fontFamily: SANS, fontWeight: 600, fontSize: 44, display: "flex", alignItems: "center", justifyContent: "center" })}>1×</div>
@@ -217,55 +236,41 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
         </div>
       )}
 
-      {/* the capsule: caster (shadow), sage ring, inner fill, content */}
-      <div style={{ position: "absolute", left: 0, top: 0, width: BW, height: BH,
-        transform: `translate(${x - BW / 2}px, ${y - BH / 2}px) perspective(1800px) rotateX(${rx}deg) rotateY(${ry + spinY}deg) rotateZ(${rz}deg) scale(${sc})` }}>
-        <div style={abs(BW / 2 - Wl / 2, BH / 2 - Hl / 2, { width: Wl, height: Hl, borderRadius: Math.min(r, Math.min(Wl, Hl) / 2), boxShadow: shadow })} />
-        <div style={{ position: "absolute", inset: 0, background: rgba(SAGE), clipPath: clip(w, h, r) }} />
-        <div style={{ position: "absolute", inset: 0, background: rgba(inner), clipPath: clip(w, h, r, ring) }}>
-          {/* glint */}
-          <div style={{ position: "absolute", inset: 0, background: `linear-gradient(105deg, ${rgba(sheenCol, 0)} ${mix(-55, 95, sheen)}%, ${rgba(sheenCol, sheenA)} ${mix(-30, 120, sheen)}%, ${rgba(sheenCol, 0)} ${mix(-5, 145, sheen)}%)` }} />
-          <div style={abs(BW / 2, BH / 2, { transform: `scale(${mirY}, ${mirX})` })}>
-            {/* check */}
-            {chkOut < 1 && (
-              <svg width={190} height={190} viewBox="0 0 48 48" style={abs(-95, -95, { overflow: "visible", opacity: 1 - chkOut, transform: `scale(${(0.6 + 0.4 * chkPop) * (1 - 0.5 * chkOut)})` })}>
-                <path d="M11 25 L21 35 L38 14" pathLength={1} fill="none" stroke="#fff" strokeWidth={5.5} strokeLinecap="round" strokeLinejoin="round" strokeDasharray="1" strokeDashoffset={1 - chkP} />
-              </svg>
-            )}
-            {/* price: strips roll several full turns */}
-            {priceIn > 0.001 && (
-              <div style={{ opacity: priceIn, transform: `scale(${mix(0.92, 1, priceIn)})` }}>
-                {!phase2 ? <Price size={DIG} from={0} to={499} p={pR1} dp={0.5 / ROLL1} krb={krb} spins={[1, 2, 3]} /> : <Price size={DIG} from={499} to={0} p={pR2} dp={0.5 / ROLL2} krb={1} spins={[1, 2, 3]} />}
-              </div>
-            )}
-            {/* the phone with the real site, building and scrolling */}
-            {phoneIn > 0.001 && (
-              <div style={{ opacity: phoneIn }}>
-                <Phone x={0} y={0} scale={PS}>
-                  <div style={{ width: 282, height: 622, willChange: "transform", transform: "rotate(0.1deg)" }}><MiniSite build={build} scroll={scroll} booking={1} />
-                    {/* status bar: scrolled content passes under the Island, not through it */}
-                    <div style={{ position: "absolute", left: 0, top: 0, width: 282, height: 56, background: `linear-gradient(${HOLM.bg} 0, ${HOLM.bg} 40px, rgba(244,241,236,0) 56px)` }} />
-                  </div>
-                </Phone>
-              </div>
-            )}
-            {/* risk row */}
-            {rowIn > 0.001 && (
-              <div style={{ opacity: rowIn, transform: `scale(${mix(0.94, 1, rowIn)})`, filter: rowIn < 1 ? `blur(${(1 - rowIn) * 8}px)` : undefined }}>
-                <div style={abs(-336, -50, { height: 100, display: "flex", alignItems: "center", fontFamily: SANS, fontWeight: 500, fontSize: 48, color: C.ink, letterSpacing: "-0.01em" })}>Risiko</div>
-                <div style={abs(TGX - TG.w / 2, -TG.size / 2)}><Tgl u={sp(g, tOff, 0.4, 0.55)} /></div>
-              </div>
-            )}
+      {/* the capsule docked on the stage: caster (shadow), sage ring, inner fill, content */}
+      {heroOn && (
+        <div style={{ position: "absolute", left: 0, top: 0, width: BW, height: BH, opacity: clamp01(stampP * 3),
+          transform: `translate(${x - BW / 2}px, ${y - BH / 2}px) perspective(1800px) rotateZ(${rz}deg) scale(${sc})` }}>
+          <div style={abs(BW / 2 - Wl / 2, BH / 2 - Hl / 2, { width: Wl, height: Hl, borderRadius: Math.min(r, Math.min(Wl, Hl) / 2), boxShadow: shadow })} />
+          <div style={{ position: "absolute", inset: 0, background: rgba(SAGE), clipPath: clip(w, h, r) }} />
+          <div style={{ position: "absolute", inset: 0, background: rgba(inner), clipPath: clip(w, h, r, ring) }}>
+            {/* glint */}
+            <div style={{ position: "absolute", inset: 0, background: `linear-gradient(105deg, ${rgba(sheenCol, 0)} ${mix(-55, 95, sheen)}%, ${rgba(sheenCol, sheenA)} ${mix(-30, 120, sheen)}%, ${rgba(sheenCol, 0)} ${mix(-5, 145, sheen)}%)` }} />
+            <div style={abs(BW / 2, BH / 2)}>
+              {/* check */}
+              {chkOut < 1 && (
+                <svg width={190} height={190} viewBox="0 0 48 48" style={abs(-95, -95, { overflow: "visible", opacity: 1 - chkOut, transform: `scale(${(0.6 + 0.4 * chkPop) * (1 - 0.5 * chkOut)})` })}>
+                  <path d="M11 25 L21 35 L38 14" pathLength={1} fill="none" stroke="#fff" strokeWidth={5.5} strokeLinecap="round" strokeLinejoin="round" strokeDasharray="1" strokeDashoffset={1 - chkP} />
+                </svg>
+              )}
+              {/* price: strips roll several full turns */}
+              {priceIn > 0.001 && (
+                <div style={{ opacity: priceIn, transform: `scale(${mix(0.92, 1, priceIn)})` }}>
+                  {!phase2 ? <Price size={DIG} from={0} to={499} p={pR1} dp={0.5 / ROLL1} krb={krb} spins={[1, 2, 3]} /> : <Price size={DIG} from={499} to={0} p={pR2} dp={0.5 / ROLL2} krb={1} spins={[1, 2, 3]} />}
+                </div>
+              )}
+              {/* risk row */}
+              {rowIn > 0.001 && (
+                <div style={{ opacity: rowIn, transform: `scale(${mix(0.94, 1, rowIn)})`, filter: rowIn < 1 ? `blur(${(1 - rowIn) * 8}px)` : undefined }}>
+                  <div style={abs(-336, -50, { height: 100, display: "flex", alignItems: "center", fontFamily: SANS, fontWeight: 500, fontSize: 48, color: C.ink, letterSpacing: "-0.01em" })}>Risiko</div>
+                  <div style={abs(TGX - TG.w / 2, -TG.size / 2)}><Tgl u={sp(g, tOff, 0.4, 0.55)} /></div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
-        {/* Din badge */}
-        {showBadge && (
-          <div style={abs(BW / 2 + 205 - 110, BH / 2 - 400 - 52, { width: 220, height: 104, borderRadius: 52, background: C.ink, color: C.cream, fontFamily: SERIF, fontStyle: "italic", fontSize: 70, display: "flex", alignItems: "center", justifyContent: "center",
-            transform: `scale(${badge}) rotate(${(1 - badge) * -25}deg)`, opacity: clamp01(badge * 3), boxShadow: "0 14px 28px -10px rgba(26,22,20,0.45)" })}>Din</div>
-        )}
-      </div>
+      )}
 
-      {/* "/md": big glass tag */}
+      {/* "/md": big dark tag */}
       {showMd && (
         <div style={{ position: "absolute", left: 0, top: 0, width: 300, height: 170, opacity: mdO, transform: `translate(${mdX - 150}px, ${mdY - 85}px) rotate(${mdRot}deg)` }}>
           <LiquidGlass w={300} h={170} p={1} sheen={clamp01((g - tIntet) / 20)} tint="ink" style={{ background: "linear-gradient(160deg, rgba(40,35,32,0.96), rgba(26,22,20,0.92))" }}>
@@ -275,8 +280,8 @@ export const Scene3: React.FC<{ g: number }> = ({ g }) => {
         </div>
       )}
 
-      {/* "Nul risiko." */}
-      {g >= tNul && <NulLine g={g} y={lineY} tA={tNul} tB={tRis - 1.5} out={nulOut} size={100} />}
+      {/* "Nul risiko." above the stage */}
+      {g >= tNul && nulOut < 1 && <NulLine g={g} y={lineY} tA={tNul} tB={tRis - 1.5} out={nulOut} size={100} />}
     </>
   );
 };

@@ -169,7 +169,7 @@ const ph = (on: number, style: React.CSSProperties, children: React.ReactNode) =
     <div style={{ opacity: on, transform: `translateY(${(1 - on) * 10}px)` }}>{children}</div>
   </div>
 );
-export const HolmSite: React.FC<{ w: number; h?: number; build?: number; booking?: number; scroll?: number }> = ({ w, h, build = 1, booking = 0, scroll = 0 }) => {
+export const HolmSite: React.FC<{ w: number; h?: number; build?: number; booking?: number; scroll?: number; headline?: React.ReactNode }> = ({ w, h, build = 1, booking = 0, scroll = 0, headline }) => {
   const s = w / SITE.w, H = h ?? SITE.h * s;
   const b = (i: number) => OUT(clamp01(build * 7 - i));
   const bk = OUT(clamp01(booking));
@@ -185,7 +185,7 @@ export const HolmSite: React.FC<{ w: number; h?: number; build?: number; booking
             {["Behandlinger", "Om os", "Priser", "Kontakt"].map((x) => <div key={x} style={{ marginLeft: 38, fontSize: 17, color: HOLM.muted }}>{x}</div>)}
           </div>))}
         {ph(b(1), { position: "absolute", left: 70, top: 168, width: 640, height: 230 }, (
-          <div style={{ fontSize: 76, fontWeight: 600, letterSpacing: "-0.035em", lineHeight: 1.0 }}>Kom godt i<br />bevægelse igen.</div>))}
+          <div style={{ fontSize: 76, fontWeight: 600, letterSpacing: "-0.035em", lineHeight: 1.0 }}>{headline ?? <>Kom godt i<br />bevægelse igen.</>}</div>))}
         {ph(b(2), { position: "absolute", left: 70, top: 420, width: 560, height: 96 }, (
           <div style={{ fontSize: 21, lineHeight: 1.5, color: HOLM.muted }}>Fysioterapi og genoptræning på Frederiksberg. Vi finder årsagen og lægger en plan, der passer til dig.</div>))}
         {ph(b(3), { position: "absolute", left: 760, top: 120, width: 630, height: 560, borderRadius: 24, overflow: "hidden" }, (
