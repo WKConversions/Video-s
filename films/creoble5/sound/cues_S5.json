@@ -1,0 +1,324 @@
+[
+ {
+  "id": "gen-pop",
+  "frame": 2371,
+  "db": -8,
+  "pitch": 0,
+  "note": "capsule grows into the chat bubble"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2388,
+  "db": -13,
+  "pitch": 0,
+  "note": "typing dots start"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 2422,
+  "db": -10,
+  "pitch": 0,
+  "note": "the human reply splits off the bubble"
+ },
+ {
+  "id": "kenney-drop-003",
+  "frame": 2430,
+  "db": -10,
+  "pitch": 0,
+  "note": "reply bubble lands"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 2434,
+  "db": -9,
+  "pitch": 0,
+  "note": "avatar C pops"
+ },
+ {
+  "id": "kenney-maximize-009",
+  "frame": 2472,
+  "db": -9,
+  "pitch": 0,
+  "note": "Svarer nu island opens"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2494,
+  "db": -13,
+  "pitch": 0,
+  "note": "avatar ripple"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2519,
+  "db": -14,
+  "pitch": 0,
+  "note": "second ripple"
+ },
+ {
+  "id": "gen-whoosh-medium",
+  "frame": 2526,
+  "db": -10,
+  "pitch": 0,
+  "note": "chat gathers into the capsule"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 2536,
+  "db": -10,
+  "pitch": 0,
+  "note": "capsule pops back"
+ },
+ {
+  "id": "kenney-select-001",
+  "frame": 2553,
+  "db": -9,
+  "pitch": 0,
+  "note": "capsule morphs into the queue card"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2568,
+  "db": -12,
+  "pitch": 0,
+  "note": "counter rolls down"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2574,
+  "db": -13,
+  "pitch": 0,
+  "note": "counter rolls down"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2582,
+  "db": -13,
+  "pitch": 0,
+  "note": "counter rolls down"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2590,
+  "db": -14,
+  "pitch": 0,
+  "note": "counter rolls down"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 2598,
+  "db": -10,
+  "pitch": 0,
+  "note": "card shrinks to a dot"
+ },
+ {
+  "id": "kenney-select-002",
+  "frame": 2601,
+  "db": -11,
+  "pitch": 0,
+  "note": "counter lands on 0"
+ },
+ {
+  "id": "gen-appear",
+  "frame": 2608,
+  "db": -8,
+  "pitch": 0,
+  "note": "robot pops out of the dot"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2627,
+  "db": -11,
+  "pitch": 0,
+  "note": "robot shakes no"
+ },
+ {
+  "id": "gen-whoosh-whip",
+  "frame": 2628,
+  "db": -8,
+  "pitch": 0,
+  "note": "robot is flicked away"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2634,
+  "db": -12,
+  "pitch": 0,
+  "note": "robot shakes no"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 2654,
+  "db": -11,
+  "pitch": 0,
+  "note": "dot pulses"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 2664,
+  "db": -10,
+  "pitch": 0,
+  "note": "dot flies to the full stop"
+ },
+ {
+  "id": "kenney-drop-003",
+  "frame": 2682,
+  "db": -7,
+  "pitch": 0,
+  "note": "the full stop lands"
+ },
+ {
+  "id": "gen-shimmer",
+  "frame": 2686,
+  "db": -10,
+  "pitch": 0,
+  "note": "the letters come out of the dot"
+ },
+ {
+  "id": "gen-whoosh-medium",
+  "frame": 2738,
+  "db": -10,
+  "pitch": 0,
+  "note": "wordmark slides up"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 2742,
+  "db": -9,
+  "pitch": 0,
+  "note": "Hjemmeside pill arrives"
+ },
+ {
+  "id": "kenney-drop-003",
+  "frame": 2783,
+  "db": -9,
+  "pitch": 0,
+  "note": "Hosting pill drops in"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 2814,
+  "db": -10,
+  "pitch": 0,
+  "note": "pills glide together and merge"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 2828,
+  "db": -10,
+  "pitch": 0,
+  "note": "merged capsule settles"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2846,
+  "db": -12,
+  "pitch": 0,
+  "note": "ét"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2860,
+  "db": -12,
+  "pitch": 0,
+  "note": "sted"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 2882,
+  "db": -9,
+  "pitch": 0,
+  "note": "capsule buds into three discs"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 2892,
+  "db": -8,
+  "pitch": 0,
+  "note": "hammer pops"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 2900,
+  "db": -10,
+  "pitch": 0,
+  "note": "hammer strikes"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 2932,
+  "db": -8,
+  "pitch": 0,
+  "note": "eye pops"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2965,
+  "db": -14,
+  "pitch": 0,
+  "note": "eye blinks"
+ },
+ {
+  "id": "gen-chime",
+  "frame": 2974,
+  "db": -9,
+  "pitch": 0,
+  "note": "check pops"
+ },
+ {
+  "id": "gen-whoosh-medium",
+  "frame": 3024,
+  "db": -9,
+  "pitch": 0,
+  "note": "discs flow together"
+ },
+ {
+  "id": "gen-impact-soft",
+  "frame": 3036,
+  "db": -8,
+  "pitch": 0,
+  "note": "button grows out of the discs"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 3084,
+  "db": -7,
+  "pitch": 0,
+  "note": "button press"
+ },
+ {
+  "id": "gen-shimmer",
+  "frame": 3095,
+  "db": -10,
+  "pitch": 0,
+  "note": "shine across the button"
+ },
+ {
+  "id": "gen-appear",
+  "frame": 3118,
+  "db": -10,
+  "pitch": 0,
+  "note": "creoble.dk rises"
+ },
+ {
+  "id": "gen-shimmer",
+  "frame": 3177,
+  "db": -15,
+  "pitch": 0,
+  "note": "shine again"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 3216,
+  "db": -12,
+  "pitch": 0,
+  "note": "second press"
+ },
+ {
+  "id": "gen-shimmer",
+  "frame": 3264,
+  "db": -17,
+  "pitch": 0,
+  "note": "last shine"
+ }
+]

@@ -1,0 +1,303 @@
+[
+ {
+  "id": "gen-whoosh-short",
+  "frame": 1617,
+  "db": -8,
+  "pitch": 0,
+  "note": "capsule glides from the hand-off to the centre, rolling"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 1628,
+  "db": -6,
+  "pitch": 0,
+  "note": "capsule rounds into the globe"
+ },
+ {
+  "id": "gen-appear",
+  "frame": 1632,
+  "db": -11,
+  "pitch": 0,
+  "note": "'på nettet?' rises under the globe"
+ },
+ {
+  "id": "gen-appear",
+  "frame": 1680,
+  "db": -10,
+  "pitch": 0,
+  "note": "line leaves, setup ring appears"
+ },
+ {
+  "id": "gen-riser-1s",
+  "frame": 1698,
+  "db": -14,
+  "pitch": 0,
+  "note": "ring fills 0 to 100% while the globe spins up"
+ },
+ {
+  "id": "gen-success",
+  "frame": 1765,
+  "db": -7,
+  "pitch": 0,
+  "note": "check draws in the ring"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 1774,
+  "db": -10,
+  "pitch": 0,
+  "note": "globe and ring compact into the price capsule"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 1792,
+  "db": -7,
+  "pitch": 0,
+  "note": "price capsule lands, 83 starts rolling"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 1797,
+  "db": -14,
+  "pitch": 0,
+  "note": "digit roll tick"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 1805,
+  "db": -15,
+  "pitch": 0,
+  "note": "digit roll tick"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 1813,
+  "db": -16,
+  "pitch": 0,
+  "note": "digit roll tick"
+ },
+ {
+  "id": "kenney-select-001",
+  "frame": 1822,
+  "db": -10,
+  "pitch": 0,
+  "note": "'kr.' slides in"
+ },
+ {
+  "id": "gen-appear",
+  "frame": 1843,
+  "db": -13,
+  "pitch": 0,
+  "note": "small note 'faktureres årligt'"
+ },
+ {
+  "id": "kenney-select-002",
+  "frame": 1862,
+  "db": -10,
+  "pitch": 0,
+  "note": "'/md.' slides in"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 1895,
+  "db": -7,
+  "pitch": 0,
+  "note": "chip holmfysio.dk pops out on an arc"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 1938,
+  "db": -7,
+  "pitch": 2,
+  "note": "chip @holmfysio.dk pops out on an arc"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 1955,
+  "db": -12,
+  "pitch": 0,
+  "note": "first chip tucks back"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 1963,
+  "db": -13,
+  "pitch": 2,
+  "note": "second chip tucks back"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 1984,
+  "db": -12,
+  "pitch": 0,
+  "note": "lock drops in from above"
+ },
+ {
+  "id": "gen-stamp",
+  "frame": 1995,
+  "db": -6,
+  "pitch": 0,
+  "note": "lock lands on the price capsule"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 1998,
+  "db": -6,
+  "pitch": 0,
+  "note": "shackle snaps shut"
+ },
+ {
+  "id": "kenney-drop-003",
+  "frame": 2051,
+  "db": -11,
+  "pitch": 0,
+  "note": "lock tucks into the capsule"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 2058,
+  "db": -7,
+  "pitch": 0,
+  "note": "calendar card pops out with 2027"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2077,
+  "db": -10,
+  "pitch": 0,
+  "note": "year flap falls"
+ },
+ {
+  "id": "gen-tap",
+  "frame": 2089,
+  "db": -9,
+  "pitch": 0,
+  "note": "2028 lands"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2104,
+  "db": -10,
+  "pitch": 0,
+  "note": "year flap falls"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 2116,
+  "db": -12,
+  "pitch": 0,
+  "note": "calendar card tucks into the capsule"
+ },
+ {
+  "id": "gen-tap",
+  "frame": 2117,
+  "db": -9,
+  "pitch": 0,
+  "note": "2029 lands"
+ },
+ {
+  "id": "kenney-maximize-009",
+  "frame": 2123,
+  "db": -8,
+  "pitch": 0,
+  "note": "capsule becomes the domain chip"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 2170,
+  "db": -9,
+  "pitch": 0,
+  "note": "'Ejer: dig' tag swings in"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2192,
+  "db": -15,
+  "pitch": 0,
+  "note": "tag swing tick"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 2213,
+  "db": -12,
+  "pitch": 0,
+  "note": "tag collapses into the chip"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 2214,
+  "db": -16,
+  "pitch": 0,
+  "note": "tag swing tick"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 2217,
+  "db": -9,
+  "pitch": 0,
+  "note": "chip shrinks to a dot and rises"
+ },
+ {
+  "id": "gen-impact-soft",
+  "frame": 2239,
+  "db": -8,
+  "pitch": 0,
+  "note": "pin lands on the map location"
+ },
+ {
+  "id": "gen-shimmer",
+  "frame": 2240,
+  "db": -12,
+  "pitch": 0,
+  "note": "dotted Europe blooms around the pin"
+ },
+ {
+  "id": "gen-appear",
+  "frame": 2258,
+  "db": -11,
+  "pitch": 0,
+  "note": "'Servere i Europa.' rises"
+ },
+ {
+  "id": "gen-whoosh-medium",
+  "frame": 2282,
+  "db": -10,
+  "pitch": 0,
+  "note": "map collapses into the chain"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 2292,
+  "db": -8,
+  "pitch": 0,
+  "note": "two-link chain pops in"
+ },
+ {
+  "id": "gen-swell",
+  "frame": 2301,
+  "db": -16,
+  "pitch": 0,
+  "note": "chain pulls taut"
+ },
+ {
+  "id": "gen-stamp",
+  "frame": 2321,
+  "db": -5,
+  "pitch": 0,
+  "note": "chain snaps"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 2323,
+  "db": -9,
+  "pitch": 0,
+  "note": "halves bounce apart, one becomes the capsule"
+ },
+ {
+  "id": "gen-whoosh-whip",
+  "frame": 2338,
+  "db": -8,
+  "pitch": 0,
+  "note": "hand-off whip to S5"
+ }
+]

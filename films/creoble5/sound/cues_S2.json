@@ -1,0 +1,212 @@
+[
+ {
+  "id": "gen-whoosh-medium",
+  "frame": 619,
+  "db": -7,
+  "pitch": 0,
+  "note": "S2.1 the capsule flips up from flat into the phone"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 628,
+  "db": -10,
+  "pitch": 0,
+  "note": "S2.1 'Det' rises, blur to sharp"
+ },
+ {
+  "id": "gen-impact-soft",
+  "frame": 633,
+  "db": -9,
+  "pitch": 0,
+  "note": "S2.1 the phone lands on its bounce"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 637,
+  "db": -10,
+  "pitch": 2,
+  "note": "S2.1 'bedste?' rises"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 667,
+  "db": -10,
+  "pitch": 0,
+  "note": "S2.1 the line blurs away upward"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 672,
+  "db": -10,
+  "pitch": -2,
+  "note": "S2.2 first browse pass: the site scrolls down"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 695,
+  "db": -6,
+  "pitch": 0,
+  "note": "S2.2 the Island springs open: Forhåndsvisning"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 747,
+  "db": -10,
+  "pitch": 0,
+  "note": "S2.2 the eye blinks in the Island"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 759,
+  "db": -10,
+  "pitch": -2,
+  "note": "S2.2 second browse pass"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 798,
+  "db": -9,
+  "pitch": 0,
+  "note": "S2.2 the 0 kr. glass tag swings in"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 805,
+  "db": -6,
+  "pitch": 0,
+  "note": "S2.2 the tag lands on its spring"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 808,
+  "db": -10,
+  "pitch": 0,
+  "note": "S2.2 the number rolls to 0"
+ },
+ {
+  "id": "kenney-tick-004",
+  "frame": 815,
+  "db": -10,
+  "pitch": 3,
+  "note": "S2.2 the number rolls to 0"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 839,
+  "db": -9,
+  "pitch": 0,
+  "note": "S2.2 the tag flies into the Island"
+ },
+ {
+  "id": "gen-whoosh-medium",
+  "frame": 840,
+  "db": -8,
+  "pitch": 0,
+  "note": "S2.3 the phone turns toward the camera"
+ },
+ {
+  "id": "gen-impact-soft",
+  "frame": 852,
+  "db": -9,
+  "pitch": 0,
+  "note": "S2.3 the turn settles"
+ },
+ {
+  "id": "kenney-select-001",
+  "frame": 858,
+  "db": -6,
+  "pitch": 0,
+  "note": "S2.3 the headline selection springs on"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 859,
+  "db": -9,
+  "pitch": -3,
+  "note": "S2.3 the Island contracts back"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 902,
+  "db": -9,
+  "pitch": 0,
+  "note": "S2.4 the bubble rises from below"
+ },
+ {
+  "id": "kenney-drop-003",
+  "frame": 916,
+  "db": -9,
+  "pitch": 0,
+  "note": "S2.4 the bubble lands, typing dots"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 925,
+  "db": -7,
+  "pitch": 0,
+  "note": "S2.4 the bubble widens"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 933,
+  "db": -10,
+  "pitch": 0,
+  "note": "S2.4 typing"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 940,
+  "db": -10,
+  "pitch": 1,
+  "note": "S2.4 typing"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 947,
+  "db": -10,
+  "pitch": 0,
+  "note": "S2.4 typing"
+ },
+ {
+  "id": "kenney-click-001",
+  "frame": 955,
+  "db": -10,
+  "pitch": 2,
+  "note": "S2.4 typing"
+ },
+ {
+  "id": "gen-shimmer",
+  "frame": 959,
+  "db": -8,
+  "pitch": 0,
+  "note": "S2.5 the headline blur-swaps to the corrected one"
+ },
+ {
+  "id": "gen-success",
+  "frame": 972,
+  "db": -5,
+  "pitch": 0,
+  "note": "S2.5 the check pops on the bubble"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 986,
+  "db": -7,
+  "pitch": 0,
+  "note": "S2.5 the bubble pops away"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 988,
+  "db": -7,
+  "pitch": 0,
+  "note": "S2.6 the phone shrinks and rounds into the capsule"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 1007,
+  "db": -10,
+  "pitch": 0,
+  "note": "S2.6 the capsule is home at x 760"
+ }
+]
