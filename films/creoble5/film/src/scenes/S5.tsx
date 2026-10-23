@@ -52,8 +52,8 @@ const CAM: Key[] = [
   [43.3, 1180, 520, 1.08], [43.9, 960, 540, 1],   // toward the queue counter, then back
   [45.12, 960, 540, 1], [45.7, 820, 470, 1.2], [46.5, 1080, 520, 1.1], [47.3, 940, 500, 1.14], [47.75, 960, 540, 1],   // the pills
   [48.12, 960, 540, 1],
-  [48.62, 740, 400, 1.38],                  // Byg den: push in on the headline while the site rebuilds
-  [48.95, 740, 400, 1.38], [49.5, 960, 540, 1],
+  [48.5, 740, 400, 1.38],                   // Byg den: push in on the headline while the site rebuilds
+  [48.75, 740, 400, 1.38], [49.05, 960, 540, 1],
   [49.62, 960, 540, 1], [50.1, 1130, 520, 1.12],    // Så køber du: push toward the price tag
   [50.28, 1130, 520, 1.12], [50.75, 960, 530, 1.06], // the button lands: frame it
   [51.3, 960, 530, 1.06], [51.85, 900, 500, 1.16], [52.4, 900, 500, 1.16], [52.95, 1020, 520, 1.06], [53.5, 1020, 520, 1.06], [54.05, 940, 500, 1.16], [54.6, 940, 500, 1.16], [55.2, 960, 530, 1.06],
@@ -106,7 +106,7 @@ const B = {
   flipOut: 47.92,            // the stage flips edge-on and rebuilds
   flipIn: 48.06,
   build: 48.2,
-  seStart: 48.9, seEnd: 50.6, // Se den: ONE calm downward pass
+  seStart: 49.1, seEnd: 50.6, // Se den: ONE calm downward pass
   jump: 50.66,               // back to the top behind a quick blur (never scrolls up)
   gather: 50.28,             // the price tag becomes the button
   byg2: L.byg2,              // the button grows (50.61)
@@ -179,7 +179,7 @@ const QueueStrip: React.FC<{ v: number }> = ({ v }) => {
   const m = "linear-gradient(transparent 0, #000 16%, #000 84%, transparent 100%)";
   return (
     <div style={{ width: 210, height: ROW, overflow: "hidden", position: "relative", WebkitMaskImage: m, maskImage: m }}>
-      <div style={{ position: "absolute", left: 0, top: 0, width: "100%", transform: `translateY(${-(12 - v) * ROW}px)`, willChange: "transform" }}>
+      <div style={{ position: "absolute", left: 0, top: 0, width: "100%", transform: `translateY(${-(12 - v) * ROW}px)`}}>
         {rows.map((n) => <div key={n} style={{ height: ROW, lineHeight: `${ROW}px`, textAlign: "center", fontFamily: SERIF, fontSize: 160, color: C.cream, letterSpacing: "-0.03em" }}>{n}</div>)}
       </div>
     </div>
@@ -431,7 +431,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
   const [, cfx, cfy, cs] = camAt(t);
   return (
     <>
-      <div style={{ position: "absolute", inset: 0, transformOrigin: "0 0", transform: `translate(${CX}px, ${CY}px) scale(${cs}) translate(${-cfx}px, ${-cfy}px)` }}>
+      <div style={{ position: "absolute", inset: 0, transformOrigin: "0 0", transform: `translate(${CX}px, ${CY}px) scale(${cs}) translate(${-cfx}px, ${-cfy}px)`}}>
         {stage}
         {panel}
         {robot}

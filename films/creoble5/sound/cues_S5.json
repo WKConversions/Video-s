@@ -14,6 +14,20 @@
   "note": "the chat opens over the site"
  },
  {
+  "id": "gen-whoosh-medium",
+  "frame": 2385,
+  "db": -15,
+  "pitch": 0,
+  "note": "camera pushes in on the chat"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2388,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
+ },
+ {
   "id": "kenney-drop-003",
   "frame": 2392,
   "db": -11,
@@ -49,6 +63,13 @@
   "note": "the human reply splits off"
  },
  {
+  "id": "gen-tick",
+  "frame": 2424,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
+ },
+ {
   "id": "kenney-drop-003",
   "frame": 2430,
   "db": -10,
@@ -68,6 +89,13 @@
   "db": -12,
   "pitch": 0,
   "note": "reply word 1"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2460,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
  },
  {
   "id": "kenney-tick-004",
@@ -113,10 +141,31 @@
  },
  {
   "id": "gen-tick",
+  "frame": 2496,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
+ },
+ {
+  "id": "gen-whoosh-medium",
+  "frame": 2502,
+  "db": -15,
+  "pitch": 0,
+  "note": "camera pulls back"
+ },
+ {
+  "id": "gen-tick",
   "frame": 2519,
   "db": -14,
   "pitch": 0,
   "note": "second ripple"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2532,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
  },
  {
   "id": "kenney-select-001",
@@ -131,6 +180,13 @@
   "db": -12,
   "pitch": 0,
   "note": "counter rolls down"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2568,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
  },
  {
   "id": "gen-tick",
@@ -166,6 +222,13 @@
   "db": -10,
   "pitch": 0,
   "note": "card shrinks to a dot"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2604,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
  },
  {
   "id": "gen-appear",
@@ -225,17 +288,24 @@
  },
  {
   "id": "gen-whoosh-medium",
-  "frame": 2712,
+  "frame": 2703,
   "db": -10,
   "pitch": 0,
   "note": "wordmark slides up"
  },
  {
   "id": "kenney-maximize-009",
-  "frame": 2718,
+  "frame": 2707,
   "db": -9,
   "pitch": 0,
   "note": "the stage re-opens"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2730,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
  },
  {
   "id": "gen-pop",
@@ -245,11 +315,32 @@
   "note": "Hjemmeside pill arrives"
  },
  {
+  "id": "gen-whoosh-medium",
+  "frame": 2742,
+  "db": -15,
+  "pitch": 0,
+  "note": "camera glides to the headline"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2769,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
+ },
+ {
   "id": "kenney-drop-003",
   "frame": 2783,
   "db": -9,
   "pitch": 0,
   "note": "Hosting pill arrives"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2808,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
  },
  {
   "id": "gen-whoosh-short",
@@ -264,6 +355,13 @@
   "db": -10,
   "pitch": 0,
   "note": "merged capsule settles"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 2844,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
  },
  {
   "id": "kenney-tick-004",
@@ -294,6 +392,13 @@
   "note": "the stage flips back"
  },
  {
+  "id": "gen-whoosh-medium",
+  "frame": 2887,
+  "db": -14,
+  "pitch": 0,
+  "note": "camera pushes in on the headline"
+ },
+ {
   "id": "kenney-click-001",
   "frame": 2897,
   "db": -11,
@@ -322,6 +427,13 @@
   "note": "hammer hits, block 4 resolves"
  },
  {
+  "id": "gen-whoosh-medium",
+  "frame": 2925,
+  "db": -14,
+  "pitch": 0,
+  "note": "camera pulls back"
+ },
+ {
   "id": "kenney-click-001",
   "frame": 2926,
   "db": -11,
@@ -338,7 +450,7 @@
  {
   "id": "gen-whoosh-short",
   "frame": 2933,
-  "db": -12,
+  "db": -13,
   "pitch": 0,
   "note": "scan sweeps down"
  },
@@ -357,11 +469,18 @@
   "note": "hammer hits, block 7 resolves"
  },
  {
-  "id": "gen-whoosh-short",
-  "frame": 2951,
-  "db": -13,
+  "id": "gen-swell",
+  "frame": 2946,
+  "db": -15,
   "pitch": 0,
-  "note": "scan sweeps up"
+  "note": "one calm pass down the page"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 2957,
+  "db": -14,
+  "pitch": 0,
+  "note": "scan sweeps down again"
  },
  {
   "id": "gen-whoosh-medium",
@@ -413,11 +532,39 @@
   "note": "the tag morphs into the button"
  },
  {
+  "id": "gen-whoosh-short",
+  "frame": 3036,
+  "db": -14,
+  "pitch": 0,
+  "note": "quick blur back to the top"
+ },
+ {
   "id": "gen-impact-soft",
   "frame": 3036,
   "db": -8,
   "pitch": 0,
   "note": "button text wipes in"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 3043,
+  "db": -15,
+  "pitch": 0,
+  "note": "Book tid pulses"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 3054,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 3065,
+  "db": -15,
+  "pitch": 0,
+  "note": "Book tid pulses"
  },
  {
   "id": "gen-shimmer",
@@ -434,11 +581,32 @@
   "note": "button press"
  },
  {
+  "id": "gen-tick",
+  "frame": 3086,
+  "db": -15,
+  "pitch": 0,
+  "note": "Book tid pulses"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 3090,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
+ },
+ {
   "id": "gen-appear",
   "frame": 3118,
   "db": -10,
   "pitch": 0,
   "note": "creoble.dk rises"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 3126,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
  },
  {
   "id": "gen-shimmer",
@@ -448,11 +616,32 @@
   "note": "shine"
  },
  {
+  "id": "gen-tick",
+  "frame": 3162,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 3198,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
+ },
+ {
   "id": "kenney-click-001",
   "frame": 3198,
   "db": -12,
   "pitch": 0,
   "note": "second press"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 3234,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
  },
  {
   "id": "gen-shimmer",
@@ -462,10 +651,24 @@
   "note": "shine"
  },
  {
+  "id": "gen-tick",
+  "frame": 3270,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
+ },
+ {
   "id": "kenney-click-001",
   "frame": 3276,
   "db": -14,
   "pitch": 0,
   "note": "third press"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 3306,
+  "db": -17,
+  "pitch": 0,
+  "note": "the hero photo swaps in its frame"
  }
 ]

@@ -49,17 +49,17 @@
    "note": "S1: capsule springs open into the stage (browser)"
   },
   {
-   "frame": 48,
-   "id": "gen-whoosh-short",
-   "db": -14,
-   "pitch": 2,
-   "note": "S1: site scroll pass 1"
-  },
-  {
    "frame": 54,
    "id": "gen-tick",
    "db": -13,
    "note": "S1: wireframe block 1 resolves into the site"
+  },
+  {
+   "frame": 57,
+   "id": "gen-whoosh-short",
+   "db": -15,
+   "pitch": -2,
+   "note": "S1: camera glides to the next block"
   },
   {
    "frame": 64,
@@ -90,6 +90,13 @@
   },
   {
    "frame": 87,
+   "id": "gen-whoosh-short",
+   "db": -15,
+   "pitch": 2,
+   "note": "S1: camera glides to the next block"
+  },
+  {
+   "frame": 87,
    "id": "kenney-tick-004",
    "db": -16,
    "pitch": 1,
@@ -101,13 +108,6 @@
    "db": -13,
    "pitch": 4,
    "note": "S1: wireframe block 5 resolves into the site"
-  },
-  {
-   "frame": 102,
-   "id": "gen-whoosh-short",
-   "db": -14,
-   "pitch": -3,
-   "note": "S1: site scroll pass 2"
   },
   {
    "frame": 102,
@@ -129,6 +129,13 @@
    "db": -16,
    "pitch": 3,
    "note": "S1: timer tick 4"
+  },
+  {
+   "frame": 120,
+   "id": "gen-whoosh-short",
+   "db": -15,
+   "pitch": -1,
+   "note": "S1: camera glides to the next block"
   },
   {
    "frame": 132,
@@ -157,11 +164,18 @@
    "note": "S1: sparkle burst"
   },
   {
-   "frame": 156,
+   "frame": 157,
    "id": "gen-whoosh-short",
-   "db": -14,
+   "db": -11,
+   "pitch": -2,
+   "note": "S1: photo 1 slides into its frame"
+  },
+  {
+   "frame": 157,
+   "id": "gen-whoosh-medium",
+   "db": -9,
    "pitch": 2,
-   "note": "S1: site scroll pass 3"
+   "note": "S1: look 1: sage tone and serif headline"
   },
   {
    "frame": 169,
@@ -171,11 +185,31 @@
    "note": "S1: sparkle writes a block 1"
   },
   {
+   "frame": 179,
+   "id": "gen-whoosh-short",
+   "db": -11,
+   "note": "S1: photo 2 slides into its frame"
+  },
+  {
+   "frame": 183,
+   "id": "gen-whoosh-medium",
+   "db": -8,
+   "pitch": -3,
+   "note": "S1: look 2: dark"
+  },
+  {
    "frame": 187,
    "id": "gen-tick",
    "db": -12,
    "pitch": 4,
    "note": "S1: sparkle writes a block 2"
+  },
+  {
+   "frame": 200,
+   "id": "gen-whoosh-short",
+   "db": -11,
+   "pitch": 2,
+   "note": "S1: photo 3 slides into its frame"
   },
   {
    "frame": 205,
@@ -186,10 +220,17 @@
   },
   {
    "frame": 210,
+   "id": "gen-whoosh-medium",
+   "db": -9,
+   "pitch": 3,
+   "note": "S1: back to the original look"
+  },
+  {
+   "frame": 222,
    "id": "gen-whoosh-short",
-   "db": -14,
-   "pitch": -3,
-   "note": "S1: site scroll pass 4"
+   "db": -11,
+   "pitch": 4,
+   "note": "S1: photo 4 slides into its frame"
   },
   {
    "frame": 223,
@@ -211,17 +252,24 @@
    "note": "S1: prompt field docks onto the stage"
   },
   {
+   "frame": 252,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 2,
+   "note": "S1: label chip rises"
+  },
+  {
    "frame": 258,
    "id": "kenney-maximize-009",
    "db": -7,
    "note": "S1: glass prompt field lands"
   },
   {
-   "frame": 264,
+   "frame": 261,
    "id": "gen-whoosh-short",
-   "db": -14,
-   "pitch": 2,
-   "note": "S1: site scroll pass 5"
+   "db": -12,
+   "pitch": -2,
+   "note": "S1: camera pushes in on the header"
   },
   {
    "frame": 267,
@@ -298,13 +346,6 @@
    "note": "S1: typed letter 9 (the header name follows)"
   },
   {
-   "frame": 318,
-   "id": "gen-whoosh-short",
-   "db": -14,
-   "pitch": -3,
-   "note": "S1: site scroll pass 6"
-  },
-  {
    "frame": 322,
    "id": "kenney-click-001",
    "db": -16,
@@ -336,6 +377,13 @@
    "id": "kenney-click-001",
    "db": -16,
    "note": "S1: typed letter 14 (the header name follows)"
+  },
+  {
+   "frame": 342,
+   "id": "gen-whoosh-short",
+   "db": -13,
+   "pitch": 2,
+   "note": "S1: camera glides down to the field"
   },
   {
    "frame": 347,
@@ -383,53 +431,106 @@
    "note": "S1: page block 1 rebuilds"
   },
   {
-   "frame": 383,
+   "frame": 381,
    "id": "gen-tick",
    "db": -13,
    "pitch": 1,
    "note": "S1: page block 2 rebuilds"
   },
   {
-   "frame": 391,
+   "frame": 387,
    "id": "gen-tick",
    "db": -13,
    "pitch": 2,
    "note": "S1: page block 3 rebuilds"
   },
   {
-   "frame": 399,
+   "frame": 393,
    "id": "gen-tick",
    "db": -13,
    "pitch": 3,
    "note": "S1: page block 4 rebuilds"
   },
   {
-   "frame": 407,
+   "frame": 399,
    "id": "gen-tick",
    "db": -13,
    "pitch": 4,
    "note": "S1: page block 5 rebuilds"
   },
   {
-   "frame": 416,
+   "frame": 399,
+   "id": "gen-whoosh-short",
+   "db": -13,
+   "pitch": 3,
+   "note": "S1: camera glides to the photo"
+  },
+  {
+   "frame": 405,
    "id": "gen-tick",
    "db": -13,
    "pitch": 5,
    "note": "S1: page block 6 rebuilds"
   },
   {
-   "frame": 424,
+   "frame": 411,
    "id": "gen-tick",
    "db": -13,
    "pitch": 6,
    "note": "S1: page block 7 rebuilds"
   },
   {
+   "frame": 417,
+   "id": "gen-whoosh-medium",
+   "db": -7,
+   "note": "S1: the site fans out as its pages"
+  },
+  {
+   "frame": 432,
+   "id": "gen-tap",
+   "db": -11,
+   "note": "S1: carousel steps to page 2"
+  },
+  {
    "frame": 432,
    "id": "gen-whoosh-short",
-   "db": -13,
-   "pitch": -3,
-   "note": "S1: site scrolls back up"
+   "db": -12,
+   "pitch": -2,
+   "note": "S1: carousel swish 1"
+  },
+  {
+   "frame": 447,
+   "id": "gen-tap",
+   "db": -11,
+   "pitch": 1,
+   "note": "S1: carousel steps to page 3"
+  },
+  {
+   "frame": 447,
+   "id": "gen-whoosh-short",
+   "db": -12,
+   "note": "S1: carousel swish 2"
+  },
+  {
+   "frame": 462,
+   "id": "gen-tap",
+   "db": -11,
+   "pitch": 2,
+   "note": "S1: carousel steps to page 4"
+  },
+  {
+   "frame": 462,
+   "id": "gen-whoosh-short",
+   "db": -12,
+   "pitch": 2,
+   "note": "S1: carousel swish 3"
+  },
+  {
+   "frame": 475,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "pitch": -2,
+   "note": "S1: pages merge back into one stage"
   },
   {
    "frame": 488,
@@ -470,43 +571,43 @@
    "note": "S1: stage flips back to the site"
   },
   {
+   "frame": 541,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "note": "S1: template site 1 flicks through"
+  },
+  {
    "frame": 543,
    "id": "gen-tap",
    "db": -9,
    "note": "S1: site side lands"
   },
   {
-   "frame": 545,
-   "id": "gen-whoosh-short",
-   "db": -9,
-   "note": "S1: template site 1 flicks through"
-  },
-  {
-   "frame": 551,
+   "frame": 547,
    "id": "gen-whoosh-short",
    "db": -9,
    "pitch": 2,
    "note": "S1: template site 2 flicks through"
   },
   {
-   "frame": 557,
+   "frame": 553,
    "id": "gen-whoosh-short",
    "db": -9,
    "pitch": 4,
    "note": "S1: template site 3 flicks through"
   },
   {
-   "frame": 580,
+   "frame": 582,
    "id": "gen-pop",
    "db": -8,
    "pitch": 2,
    "note": "S1: Holm's site lands"
   },
   {
-   "frame": 587,
+   "frame": 588,
    "id": "gen-whoosh-medium",
    "db": -6,
-   "note": "S1: hand-off: the stage scrolls on"
+   "note": "S1: hand-off: the camera pushes in"
   },
   {
    "frame": 619,
@@ -534,11 +635,11 @@
    "note": "S2: S2.1 'bedste?' rises"
   },
   {
-   "frame": 645,
+   "frame": 642,
    "id": "gen-whoosh-medium",
    "db": -7,
    "pitch": -2,
-   "note": "S2: S2.2 the steady scroll through the finished site starts"
+   "note": "S2: S2.2 the calm pass down the finished site starts"
   },
   {
    "frame": 667,
@@ -584,17 +685,23 @@
    "note": "S2: S2.2 the number rolls to 0"
   },
   {
-   "frame": 816,
-   "id": "gen-whoosh-medium",
-   "db": -6,
-   "pitch": 2,
-   "note": "S2: S2.2 the page returns to the top, fast"
+   "frame": 834,
+   "id": "kenney-tick-004",
+   "db": -5,
+   "note": "S2: S2.3 a status-bar tap"
   },
   {
    "frame": 839,
    "id": "gen-whoosh-short",
    "db": -6,
    "note": "S2: S2.2 the tag flies into the Island"
+  },
+  {
+   "frame": 840,
+   "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": 3,
+   "note": "S2: S2.3 the page jumps to the top behind a quick blur"
   },
   {
    "frame": 852,
@@ -604,18 +711,18 @@
    "note": "S2: S2.3 the camera pushes in on the headline"
   },
   {
-   "frame": 858,
-   "id": "gen-pop",
-   "db": -6,
-   "pitch": -3,
-   "note": "S2: S2.3 the Island contracts back"
-  },
-  {
    "frame": 864,
    "id": "kenney-tick-004",
    "db": -5,
    "pitch": -2,
    "note": "S2: S2.3 a finger taps the headline"
+  },
+  {
+   "frame": 865,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": -3,
+   "note": "S2: S2.3 the Island turns into Redigerer"
   },
   {
    "frame": 870,
@@ -624,11 +731,18 @@
    "note": "S2: S2.3 the headline selection springs on"
   },
   {
-   "frame": 877,
+   "frame": 876,
+   "id": "kenney-tick-004",
+   "db": -7,
+   "pitch": 2,
+   "note": "S2: S2.3 the selection handles pop on"
+  },
+  {
+   "frame": 882,
    "id": "gen-whoosh-short",
    "db": -7,
    "pitch": -2,
-   "note": "S2: S2.4 the page below the headline keeps scrolling behind the bubble"
+   "note": "S2: S2.4 the photo below the headline swaps in its frame"
   },
   {
    "frame": 886,
@@ -647,6 +761,13 @@
    "id": "kenney-click-001",
    "db": -7,
    "note": "S2: S2.4 typing"
+  },
+  {
+   "frame": 907,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": -1,
+   "note": "S2: S2.4 the photo below the headline swaps in its frame"
   },
   {
    "frame": 912,
@@ -673,6 +794,12 @@
    "id": "kenney-click-001",
    "db": -7,
    "note": "S2: S2.4 typing"
+  },
+  {
+   "frame": 932,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "note": "S2: S2.4 the photo below the headline swaps in its frame"
   },
   {
    "frame": 933,
@@ -713,18 +840,18 @@
    "note": "S2: S2.5 retyping"
   },
   {
+   "frame": 958,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 1,
+   "note": "S2: S2.4 the photo below the headline swaps in its frame"
+  },
+  {
    "frame": 961,
    "id": "kenney-click-001",
    "db": -7,
    "pitch": 1,
    "note": "S2: S2.5 retyping"
-  },
-  {
-   "frame": 966,
-   "id": "gen-whoosh-short",
-   "db": -7,
-   "pitch": 2,
-   "note": "S2: S2.5 the page returns to its place under the finished headline"
   },
   {
    "frame": 967,
@@ -789,10 +916,17 @@
    "note": "S3: check lands: Tilfreds"
   },
   {
+   "frame": 1070,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": -1,
+   "note": "S3: the hero photo slides to the next"
+  },
+  {
    "frame": 1088,
    "id": "gen-whoosh-short",
    "db": -6,
-   "note": "S3: check disc widens into the price capsule, docks on the stage"
+   "note": "S3: check disc widens into the price capsule, camera pushes in toward the price"
   },
   {
    "frame": 1096,
@@ -805,6 +939,12 @@
    "id": "kenney-tick-004",
    "db": -9,
    "note": "S3: digit strips roll 0 to 499"
+  },
+  {
+   "frame": 1114,
+   "id": "gen-tick",
+   "db": -11,
+   "note": "S3: the hero photo slides to the next"
   },
   {
    "frame": 1116,
@@ -847,6 +987,13 @@
    "note": "S3: digit strips roll 0 to 499"
   },
   {
+   "frame": 1158,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": 1,
+   "note": "S3: the hero photo slides to the next"
+  },
+  {
    "frame": 1166,
    "id": "kenney-tick-004",
    "db": -9,
@@ -867,6 +1014,13 @@
    "note": "S3: price lands with a pop"
   },
   {
+   "frame": 1198,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": -1,
+   "note": "S3: the hero photo slides to the next"
+  },
+  {
    "frame": 1204,
    "id": "gen-pop",
    "db": -5,
@@ -879,10 +1033,16 @@
    "note": "S3: chip widens to its text: \u00c9n gang"
   },
   {
+   "frame": 1238,
+   "id": "gen-tick",
+   "db": -11,
+   "note": "S3: the hero photo slides to the next"
+  },
+  {
    "frame": 1252,
    "id": "gen-whoosh-short",
    "db": -8,
-   "note": "S3: chip tucks in"
+   "note": "S3: chip tucks in, camera follows to the right"
   },
   {
    "frame": 1260,
@@ -903,6 +1063,13 @@
    "note": "S3: thick strike line through /md"
   },
   {
+   "frame": 1282,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": 1,
+   "note": "S3: the hero photo slides to the next"
+  },
+  {
    "frame": 1284,
    "id": "kenney-drop-003",
    "db": -5,
@@ -913,19 +1080,58 @@
    "frame": 1320,
    "id": "gen-whoosh-medium",
    "db": -7,
-   "note": "S3: the capsule drops away"
+   "note": "S3: the capsule drops away, camera pulls back"
   },
   {
    "frame": 1322,
-   "id": "gen-swell",
-   "db": -9,
-   "note": "S3: the stage pushes in: Siden er din"
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "note": "S3: the site's pages fan out as cards: Siden er din"
+  },
+  {
+   "frame": 1326,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": -1,
+   "note": "S3: the hero photo slides to the next"
+  },
+  {
+   "frame": 1332,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "note": "S3: page labels pop: Forside, Behandlinger, Kontakt"
+  },
+  {
+   "frame": 1338,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "pitch": 1,
+   "note": "S3: page labels pop: Forside, Behandlinger, Kontakt"
+  },
+  {
+   "frame": 1344,
+   "id": "kenney-tick-004",
+   "db": -8,
+   "pitch": 2,
+   "note": "S3: page labels pop: Forside, Behandlinger, Kontakt"
+  },
+  {
+   "frame": 1354,
+   "id": "gen-tick",
+   "db": -11,
+   "note": "S3: the hero photo slides to the next"
   },
   {
    "frame": 1366,
    "id": "gen-pop",
    "db": -4,
-   "note": "S3: Din badge pops onto the site"
+   "note": "S3: Din badge pops on the page's corner, camera pushes in on it"
+  },
+  {
+   "frame": 1382,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "note": "S3: the pages stack back"
   },
   {
    "frame": 1400,
@@ -934,10 +1140,24 @@
    "note": "S3: stage tilts like a question"
   },
   {
+   "frame": 1402,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": 1,
+   "note": "S3: the hero photo slides to the next"
+  },
+  {
    "frame": 1414,
    "id": "kenney-select-002",
    "db": -7,
    "note": "S3: second question tilt"
+  },
+  {
+   "frame": 1442,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": -1,
+   "note": "S3: the hero photo slides to the next"
   },
   {
    "frame": 1462,
@@ -978,6 +1198,12 @@
    "note": "S3: digit strips roll 499 to 0"
   },
   {
+   "frame": 1502,
+   "id": "gen-tick",
+   "db": -11,
+   "note": "S3: the hero photo slides to the next"
+  },
+  {
    "frame": 1508,
    "id": "kenney-tick-004",
    "db": -9,
@@ -1001,7 +1227,7 @@
    "frame": 1530,
    "id": "gen-appear",
    "db": -7,
-   "note": "S3: capsule becomes the risk row"
+   "note": "S3: capsule becomes the risk row, camera pulls back"
   },
   {
    "frame": 1540,
@@ -1029,6 +1255,13 @@
    "note": "S3: risiko: zero risk"
   },
   {
+   "frame": 1566,
+   "id": "gen-tick",
+   "db": -11,
+   "pitch": 1,
+   "note": "S3: the hero photo slides to the next"
+  },
+  {
    "frame": 1579,
    "id": "kenney-drop-003",
    "db": -9,
@@ -1045,13 +1278,25 @@
    "frame": 1622,
    "id": "gen-whoosh-short",
    "db": -6,
-   "note": "S4: the stage pushes in; the dot grows into the turning globe"
+   "note": "S4: the dot grows into the turning globe"
   },
   {
    "frame": 1632,
    "id": "gen-appear",
    "db": -8,
    "note": "S4: 'p\u00e5 nettet?' rises under the stage"
+  },
+  {
+   "frame": 1647,
+   "id": "kenney-tick-004",
+   "db": -14,
+   "note": "S4: hero photo slides to the next"
+  },
+  {
+   "frame": 1668,
+   "id": "gen-whoosh-short",
+   "db": -10,
+   "note": "S4: camera pushes in toward the top of the stage"
   },
   {
    "frame": 1676,
@@ -1072,10 +1317,22 @@
    "note": "S4: check on the globe"
   },
   {
+   "frame": 1767,
+   "id": "gen-shimmer",
+   "db": -8,
+   "note": "S4: the site goes live: a ripple runs out from the address bar"
+  },
+  {
    "frame": 1768,
    "id": "kenney-select-002",
    "db": -7,
    "note": "S4: address bar turns from Forh\u00e5ndsvisning to holmfysio.dk live"
+  },
+  {
+   "frame": 1770,
+   "id": "gen-whoosh-short",
+   "db": -10,
+   "note": "S4: camera pulls back for the price"
   },
   {
    "frame": 1774,
@@ -1138,10 +1395,23 @@
    "note": "S4: '/md.' slides in"
   },
   {
+   "frame": 1872,
+   "id": "gen-whoosh-short",
+   "db": -10,
+   "note": "S4: camera pushes in on the address bar"
+  },
+  {
    "frame": 1895,
    "id": "gen-pop",
    "db": -4,
    "note": "S4: Dom\u00e6ne card flies out of the price"
+  },
+  {
+   "frame": 1920,
+   "id": "gen-whoosh-short",
+   "db": -11,
+   "pitch": 2,
+   "note": "S4: camera glides sideways to the corner for the e-mail card"
   },
   {
    "frame": 1928,
@@ -1168,6 +1438,12 @@
    "db": -7,
    "pitch": 2,
    "note": "S4: E-mail card docks"
+  },
+  {
+   "frame": 1974,
+   "id": "gen-whoosh-short",
+   "db": -10,
+   "note": "S4: camera pulls back for the lock"
   },
   {
    "frame": 1977,
@@ -1200,6 +1476,12 @@
    "note": "S4: shackle snaps shut"
   },
   {
+   "frame": 2022,
+   "id": "gen-whoosh-short",
+   "db": -11,
+   "note": "S4: camera steps in toward the price for the calendar"
+  },
+  {
    "frame": 2051,
    "id": "kenney-drop-003",
    "db": -8,
@@ -1228,6 +1510,12 @@
    "id": "gen-tick",
    "db": -7,
    "note": "S4: year flap falls"
+  },
+  {
+   "frame": 2112,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "note": "S4: camera pushes in on the address bar"
   },
   {
    "frame": 2116,
@@ -1264,6 +1552,12 @@
    "id": "gen-pop",
    "db": -6,
    "note": "S4: 'Ejer: dig' tag swings in"
+  },
+  {
+   "frame": 2175,
+   "id": "gen-whoosh-short",
+   "db": -10,
+   "note": "S4: camera pulls back before the flip"
   },
   {
    "frame": 2192,
@@ -1354,7 +1648,7 @@
    "frame": 2338,
    "id": "gen-whoosh-medium",
    "db": -6,
-   "note": "S4: stage hand-off to S5"
+   "note": "S4: camera push-in hand-off to S5"
   },
   {
    "frame": 2371,
@@ -1367,6 +1661,18 @@
    "id": "gen-whoosh-short",
    "db": -7,
    "note": "S5: the chat opens over the site"
+  },
+  {
+   "frame": 2385,
+   "id": "gen-whoosh-medium",
+   "db": -12,
+   "note": "S5: camera pushes in on the chat"
+  },
+  {
+   "frame": 2388,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
   },
   {
    "frame": 2392,
@@ -1399,6 +1705,12 @@
    "note": "S5: the human reply splits off"
   },
   {
+   "frame": 2424,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
+  },
+  {
    "frame": 2430,
    "id": "kenney-drop-003",
    "db": -7,
@@ -1415,6 +1727,12 @@
    "id": "kenney-tick-004",
    "db": -9,
    "note": "S5: reply word 1"
+  },
+  {
+   "frame": 2460,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
   },
   {
    "frame": 2462,
@@ -1453,10 +1771,28 @@
    "note": "S5: avatar ripple"
   },
   {
+   "frame": 2496,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
+  },
+  {
+   "frame": 2502,
+   "id": "gen-whoosh-medium",
+   "db": -12,
+   "note": "S5: camera pulls back"
+  },
+  {
    "frame": 2519,
    "id": "gen-tick",
    "db": -11,
    "note": "S5: second ripple"
+  },
+  {
+   "frame": 2532,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
   },
   {
    "frame": 2553,
@@ -1469,6 +1805,12 @@
    "id": "gen-tick",
    "db": -9,
    "note": "S5: counter rolls down"
+  },
+  {
+   "frame": 2568,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
   },
   {
    "frame": 2572,
@@ -1499,6 +1841,12 @@
    "id": "gen-pop",
    "db": -7,
    "note": "S5: card shrinks to a dot"
+  },
+  {
+   "frame": 2604,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
   },
   {
    "frame": 2608,
@@ -1549,16 +1897,22 @@
    "note": "S5: the letters come out of the dot"
   },
   {
-   "frame": 2712,
+   "frame": 2703,
    "id": "gen-whoosh-medium",
    "db": -7,
    "note": "S5: wordmark slides up"
   },
   {
-   "frame": 2718,
+   "frame": 2707,
    "id": "kenney-maximize-009",
    "db": -6,
    "note": "S5: the stage re-opens"
+  },
+  {
+   "frame": 2730,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
   },
   {
    "frame": 2736,
@@ -1567,10 +1921,28 @@
    "note": "S5: Hjemmeside pill arrives"
   },
   {
+   "frame": 2742,
+   "id": "gen-whoosh-medium",
+   "db": -12,
+   "note": "S5: camera glides to the headline"
+  },
+  {
+   "frame": 2769,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
+  },
+  {
    "frame": 2783,
    "id": "kenney-drop-003",
    "db": -6,
    "note": "S5: Hosting pill arrives"
+  },
+  {
+   "frame": 2808,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
   },
   {
    "frame": 2814,
@@ -1583,6 +1955,12 @@
    "id": "gen-pop",
    "db": -7,
    "note": "S5: merged capsule settles"
+  },
+  {
+   "frame": 2844,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
   },
   {
    "frame": 2846,
@@ -1609,6 +1987,12 @@
    "note": "S5: the stage flips back"
   },
   {
+   "frame": 2887,
+   "id": "gen-whoosh-medium",
+   "db": -11,
+   "note": "S5: camera pushes in on the headline"
+  },
+  {
    "frame": 2897,
    "id": "kenney-click-001",
    "db": -8,
@@ -1633,6 +2017,12 @@
    "note": "S5: hammer hits, block 4 resolves"
   },
   {
+   "frame": 2925,
+   "id": "gen-whoosh-medium",
+   "db": -11,
+   "note": "S5: camera pulls back"
+  },
+  {
    "frame": 2926,
    "id": "kenney-click-001",
    "db": -8,
@@ -1647,7 +2037,7 @@
   {
    "frame": 2933,
    "id": "gen-whoosh-short",
-   "db": -9,
+   "db": -10,
    "note": "S5: scan sweeps down"
   },
   {
@@ -1663,10 +2053,16 @@
    "note": "S5: hammer hits, block 7 resolves"
   },
   {
-   "frame": 2951,
+   "frame": 2946,
+   "id": "gen-swell",
+   "db": -12,
+   "note": "S5: one calm pass down the page"
+  },
+  {
+   "frame": 2957,
    "id": "gen-whoosh-short",
-   "db": -10,
-   "note": "S5: scan sweeps up"
+   "db": -11,
+   "note": "S5: scan sweeps down again"
   },
   {
    "frame": 2972,
@@ -1712,9 +2108,33 @@
   },
   {
    "frame": 3036,
+   "id": "gen-whoosh-short",
+   "db": -11,
+   "note": "S5: quick blur back to the top"
+  },
+  {
+   "frame": 3036,
    "id": "gen-impact-soft",
    "db": -5,
    "note": "S5: button text wipes in"
+  },
+  {
+   "frame": 3043,
+   "id": "gen-tick",
+   "db": -12,
+   "note": "S5: Book tid pulses"
+  },
+  {
+   "frame": 3054,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
+  },
+  {
+   "frame": 3065,
+   "id": "gen-tick",
+   "db": -12,
+   "note": "S5: Book tid pulses"
   },
   {
    "frame": 3066,
@@ -1729,16 +2149,46 @@
    "note": "S5: button press"
   },
   {
+   "frame": 3086,
+   "id": "gen-tick",
+   "db": -12,
+   "note": "S5: Book tid pulses"
+  },
+  {
+   "frame": 3090,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
+  },
+  {
    "frame": 3118,
    "id": "gen-appear",
    "db": -7,
    "note": "S5: creoble.dk rises"
   },
   {
+   "frame": 3126,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
+  },
+  {
    "frame": 3150,
    "id": "gen-shimmer",
    "db": -12,
    "note": "S5: shine"
+  },
+  {
+   "frame": 3162,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
+  },
+  {
+   "frame": 3198,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
   },
   {
    "frame": 3198,
@@ -1748,15 +2198,33 @@
   },
   {
    "frame": 3234,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
+  },
+  {
+   "frame": 3234,
    "id": "gen-shimmer",
    "db": -13,
    "note": "S5: shine"
+  },
+  {
+   "frame": 3270,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
   },
   {
    "frame": 3276,
    "id": "kenney-click-001",
    "db": -11,
    "note": "S5: third press"
+  },
+  {
+   "frame": 3306,
+   "id": "gen-tick",
+   "db": -14,
+   "note": "S5: the hero photo swaps in its frame"
   }
  ]
 }
