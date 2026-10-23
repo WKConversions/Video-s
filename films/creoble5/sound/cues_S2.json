@@ -29,10 +29,10 @@
  },
  {
   "id": "gen-whoosh-medium",
-  "frame": 645,
+  "frame": 642,
   "db": -10,
   "pitch": -2,
-  "note": "S2.2 the steady scroll through the finished site starts"
+  "note": "S2.2 the calm pass down the finished site starts"
  },
  {
   "id": "gen-whoosh-short",
@@ -84,11 +84,11 @@
   "note": "S2.2 the number rolls to 0"
  },
  {
-  "id": "gen-whoosh-medium",
-  "frame": 816,
-  "db": -9,
-  "pitch": 2,
-  "note": "S2.2 the page returns to the top, fast"
+  "id": "kenney-tick-004",
+  "frame": 834,
+  "db": -8,
+  "pitch": 0,
+  "note": "S2.3 a status-bar tap"
  },
  {
   "id": "gen-whoosh-short",
@@ -98,18 +98,18 @@
   "note": "S2.2 the tag flies into the Island"
  },
  {
+  "id": "gen-whoosh-short",
+  "frame": 840,
+  "db": -9,
+  "pitch": 3,
+  "note": "S2.3 the page jumps to the top behind a quick blur"
+ },
+ {
   "id": "gen-whoosh-medium",
   "frame": 852,
   "db": -8,
   "pitch": 2,
   "note": "S2.3 the camera pushes in on the headline"
- },
- {
-  "id": "gen-pop",
-  "frame": 858,
-  "db": -9,
-  "pitch": -3,
-  "note": "S2.3 the Island contracts back"
  },
  {
   "id": "kenney-tick-004",
@@ -119,6 +119,13 @@
   "note": "S2.3 a finger taps the headline"
  },
  {
+  "id": "gen-pop",
+  "frame": 865,
+  "db": -9,
+  "pitch": -3,
+  "note": "S2.3 the Island turns into Redigerer"
+ },
+ {
   "id": "kenney-select-001",
   "frame": 870,
   "db": -6,
@@ -126,11 +133,18 @@
   "note": "S2.3 the headline selection springs on"
  },
  {
+  "id": "kenney-tick-004",
+  "frame": 876,
+  "db": -10,
+  "pitch": 2,
+  "note": "S2.3 the selection handles pop on"
+ },
+ {
   "id": "gen-whoosh-short",
-  "frame": 877,
+  "frame": 882,
   "db": -10,
   "pitch": -2,
-  "note": "S2.4 the page below the headline keeps scrolling behind the bubble"
+  "note": "S2.4 the photo below the headline swaps in its frame"
  },
  {
   "id": "gen-whoosh-short",
@@ -152,6 +166,13 @@
   "db": -10,
   "pitch": 0,
   "note": "S2.4 typing"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 907,
+  "db": -10,
+  "pitch": -1,
+  "note": "S2.4 the photo below the headline swaps in its frame"
  },
  {
   "id": "kenney-click-001",
@@ -180,6 +201,13 @@
   "db": -10,
   "pitch": 0,
   "note": "S2.4 typing"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 932,
+  "db": -10,
+  "pitch": 0,
+  "note": "S2.4 the photo below the headline swaps in its frame"
  },
  {
   "id": "kenney-select-002",
@@ -224,18 +252,18 @@
   "note": "S2.5 retyping"
  },
  {
+  "id": "gen-whoosh-short",
+  "frame": 958,
+  "db": -10,
+  "pitch": 1,
+  "note": "S2.4 the photo below the headline swaps in its frame"
+ },
+ {
   "id": "kenney-click-001",
   "frame": 961,
   "db": -10,
   "pitch": 1,
   "note": "S2.5 retyping"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 966,
-  "db": -10,
-  "pitch": 2,
-  "note": "S2.5 the page returns to its place under the finished headline"
  },
  {
   "id": "kenney-click-001",

@@ -1,21 +1,23 @@
-// Scene 5 (builder 5), revision 2: h4 → end, the WEBSITE is the hero object in every beat.
-// "Brug for hjælp? Et menneske, der forstår din forretning. Ingen kø. Ingen robotsvar. Creoble. Hjemmeside og hosting,
-// samlet ét sted. Byg den. Se den. Så køber du. Byg din side gratis på creoble.dk."
-// One Stage (browser + Holm's site) that is always alive: it scrolls steadily behind the support chat that opens over
-// it (the question types, the human's reply types, a queue counter rolls down, a robot is flicked away); it collapses
-// into the dot that lands as the full stop of the wordmark (the one beat without the site); it re-opens, two pills
-// merge on it; it flips and REBUILDS itself (Byg den), is scanned and scrolled (Se den), the price docks on it
-// (Så køber du); the price tag becomes the CTA button, and the site keeps scrolling to the last frame.
-// Transforms only; the scroll is a steady ≥ 3 px per frame with softly rounded turnarounds; no wobble.
+// Scene 5 (builder 5), revision 3: h4 → end, the WEBSITE is the hero object in every beat, and the page never scrolls
+// back up. One Stage (browser + Holm's site) starts at the hand-off's camera push (scale 1.08, scroll 0). It stays put:
+// the motion is the CAMERA (push in on the chat, on the headline while the site rebuilds, on the price, on the
+// button), photos swapping in the hero frame, the site rebuilding, the "Book tid" button pulsing as the CTA lands.
+// The only scroll is ONE calm downward pass for "Se den". The beats: the support chat opens over the site (types);
+// a queue counter rolls down and a robot is flicked away over it; the stage collapses into the dot that lands as the
+// full stop of the wordmark (the one beat without the site); the stage re-opens and two pills merge on it; it flips
+// and REBUILDS (Byg den), is scanned and scrolled once (Se den), the price docks on it (Så køber du); the price tag
+// becomes the CTA button. Transforms only; nothing wobbles.
 import React from "react";
+import { staticFile } from "remotion";
 import { C, INOUT, LIN, OUT, SANS, SERIF, clamp01, mix } from "../lib";
 import { Island, PillButton, RollNumber, Ico, f } from "../shared";
-import { CX, CY, HANDOFF_HALF, Line, NEW_HEADLINE, Stage, StageHandoff, STAGE, STAGE_SCROLL_MAX } from "../v5";
+import { CX, CY, HANDOFF_HALF, Line, NEW_HEADLINE, Stage, StageHandoff, STAGE } from "../v5";
 import { WM_DOT, WM_VIEW, WM_WORD } from "../wordmark";
 
 // ── clock helpers (seconds; own springs so nothing is rounded to the 30 fps grid) ──────────────────────────────────
 const sec = (l: string) => f(l) / 30;
-const START = (f("h4") + HANDOFF_HALF) / 30;               // the stage leaves the hand-off (scroll 300, holmfysio.dk live)
+const START = (f("h4") + HANDOFF_HALF) / 30;               // the stage leaves the hand-off (scale 1.08, scroll 0, holmfysio.dk live)
+const B_REOPEN = 45.3;
 /** Apple spring from time `at` (s): resp = response (s), damp = damping ratio (<1 overshoots). 0 → 1 (passes 1). */
 const spr = (t: number, at: number, resp = 0.45, damp = 0.62) => {
   const x = t - at;
@@ -41,16 +43,48 @@ const sh = (a: number) => `0 1px 2px rgba(26,22,20,${0.05 * a}), 0 18px 40px -18
 const cmix = (a: string, b: string, pa: number) => `color-mix(in srgb, ${a} ${(clamp01(pa) * 100).toFixed(1)}%, ${b})`;
 const typed = (t: number, at: number, text: string, cps: number) => text.slice(0, Math.max(0, Math.min(text.length, Math.floor((t - at) * cps))));
 
-// ── the site's steady scroll: a triangle between 0 and the page end with softly rounded turnarounds ─────────────────
-const SMAX = STAGE_SCROLL_MAX, V = 480;                           // design px per second ≈ 5.3 px per frame on screen
-const foldScroll = (x: number) => {
-  const P = 2 * SMAX, m = ((x % P) + P) % P, u = m <= SMAX ? m : P - m, e = 28;   // short, eased turnarounds (no slow creep)
-  if (u < e) return (u * u) / (2 * e) + e / 2;
-  if (u > SMAX - e) { const v = SMAX - u; return SMAX - ((v * v) / (2 * e) + e / 2); }
-  return u;
+// ── the camera: keyframes (time, focus point on screen, scale), eased between ─────────────────────────────────────────
+type Key = [number, number, number, number];
+const CAM: Key[] = [
+  [START, 960, 540, 1], [40.15, 960, 540, 1],
+  [40.85, 1170, 560, 1.24],                 // push in on the chat panel's corner while the reply types
+  [41.4, 1040, 520, 1.1], [42.0, 1190, 600, 1.3], [42.55, 960, 540, 1],
+  [43.3, 1180, 520, 1.12], [43.9, 960, 540, 1],   // toward the queue counter, then back
+  [45.3, 960, 540, 1], [45.9, 820, 470, 1.2], [46.7, 1080, 520, 1.1], [47.5, 940, 500, 1.14], [47.85, 960, 540, 1],   // the pills
+  [48.12, 960, 540, 1],
+  [48.62, 740, 400, 1.38],                  // Byg den: push in on the headline while the site rebuilds
+  [48.95, 740, 400, 1.38], [49.5, 960, 540, 1],
+  [49.62, 960, 540, 1], [50.1, 1130, 520, 1.15],    // Så køber du: push toward the price tag
+  [50.28, 1130, 520, 1.15], [50.75, 960, 530, 1.06], // the button lands: frame it
+  [51.6, 960, 530, 1.06], [52.4, 900, 500, 1.12], [53.3, 1020, 520, 1.08], [54.2, 940, 500, 1.12], [55.2, 960, 530, 1.06],
+];
+const camAt = (t: number) => {
+  if (t <= CAM[0][0]) return CAM[0];
+  for (let i = 1; i < CAM.length; i++) if (t <= CAM[i][0]) { const a = CAM[i - 1], b = CAM[i], e = INOUT(clamp01((t - a[0]) / Math.max(1e-6, b[0] - a[0]))); return [t, mix(a[1], b[1], e), mix(a[2], b[2], e), mix(a[3], b[3], e)] as Key; }
+  return CAM[CAM.length - 1];
 };
-/** scroll from rest at t0 at s0, speeding up to V design px per second (≈ V × 0.657 / 60 px per frame on screen) */
-const scrollFrom = (t: number, t0: number, s0: number, V: number) => { const tau = Math.max(0, t - t0), T0 = 0.3; return foldScroll(s0 + V * (tau - T0 * (1 - Math.exp(-tau / T0)))); };
+// ── photos swapping in the hero frame (the frame is the kit site's photo: design 760,120, 630×560) ───────────────────
+const PHOTOS = ["holm-shoulder.jpg", "holm-neck.jpg", "holm-calves.jpg", "holm-stretch.jpg"];
+const HK = STAGE.w / 1460;                                        // design px → stage px
+const HERO = { x: 760 * HK, y: 120 * HK, w: 630 * HK, h: 560 * HK, r: 24 * HK };
+const ERAS: [number, number[]][] = [[START, [40.3, 41.05, 41.8, 42.55, 43.3]], [B_REOPEN, [45.9, 46.65, 47.4]], [49.1, []], [50.7, [51.2, 51.95, 52.7, 53.45, 54.2, 54.95]]];
+const HeroSwap: React.FC<{ t: number; scrollPx: number }> = ({ t, scrollPx }) => {
+  let era = ERAS[0];
+  for (const e of ERAS) if (t >= e[0]) era = e;
+  const sw = era[1]; let k = -1;
+  for (let i = 0; i < sw.length; i++) if (t >= sw[i]) k = i;
+  const p = k >= 0 ? INOUT(clamp01((t - sw[k]) / 0.5)) : 1, d = k % 2 === 0 ? 1 : -1;
+  const cur = PHOTOS[(k + 1) % 4], old = PHOTOS[((k % 4) + 4) % 4];
+  const img = (src: string, dx: number) => <img src={staticFile(`img/${src}`)} style={{ position: "absolute", left: 0, top: 0, width: HERO.w, height: HERO.h, objectFit: "cover", transform: `translateX(${dx}px)` }} />;
+  return (
+    <div style={{ position: "absolute", left: HERO.x, top: HERO.y - scrollPx, width: HERO.w, height: HERO.h, borderRadius: HERO.r, overflow: "hidden", background: "#E3E9E8" }}>
+      {p < 1 && k >= 0 && img(old, -d * HERO.w * 0.3 * p)}
+      {img(cur, d * HERO.w * (1 - p))}
+    </div>
+  );
+};
+/** the "Book tid" button on the kit site (design 70,559, 156×58): a sage ring pulses out of it */
+const BOOK = { x: 70 * HK, y: 559 * HK, w: 156 * HK, h: 58 * HK };
 
 // ── the labels this scene lands on ─────────────────────────────────────────────────────────────────────────────────
 const L = {
@@ -67,19 +101,20 @@ const B = {
   launch: 44.3,              // the dot leaves for the wordmark's full stop
   land: 44.62,
   slide: 45.2,              // the wordmark slides up and the stage re-opens
-  reopen: 45.3,
+  reopen: B_REOPEN,
   merge: L.samlet + 0.04,    // the pills melt together
   flipOut: 47.92,            // the stage flips edge-on and rebuilds
   flipIn: 48.06,
   build: 48.2,
-  scroll2: 48.3,             // the steady scroll starts again
+  seStart: 48.9, seEnd: 50.6, // Se den: ONE calm downward pass
+  jump: 50.66,               // back to the top behind a quick blur (never scrolls up)
   gather: 50.28,             // the price tag becomes the button
   byg2: L.byg2,              // the button grows (50.61)
   press: 51.4,
 };
 
 // ── layout (px at 1080p) ───────────────────────────────────────────────────────────────────────────────────────────
-const SX = 100, ZS = 1.1;                                     // the stage steps left while the chat is open; it pushes in a little (1.1×)                                               // the stage steps left while the chat is open
+const SX = 100, ZS = 1.08;                                    // the stage steps left while the chat is open; the stage scale of the hand-off
 const PANEL = { x: 1290, y: 540, w: 480, h: 460 };            // the chat panel, docked on the right half of the stage
 const WM_Y = 140;                                             // the small wordmark above the stage
 const WM_H = 150, WM_W = (WM_H * WM_VIEW.w) / WM_VIEW.h;
@@ -87,7 +122,7 @@ const WM_DOT_X = CX - WM_W / 2 + (7062.84 / WM_VIEW.w) * WM_W, WM_DOT_Y = CY - W
 const WM_DOT_D = (2 * 145 * WM_H) / WM_VIEW.h;                // its diameter
 const DOT = 64;                                               // the thread dot before it lands
 const PW = 380, PH = 110, PY = 540;                           // the two pills
-const BTN = { w: 780, h: 140, y: 690 };
+const BTN = { w: 700, h: 140, y: 690 };
 const TAG = { x: CX + 330, y: 690, w: 520, h: 300 };          // the price tag docked on the stage
 const LINE_Y = 950, LINE_SIZE = 88;
 const HW = (STAGE.w * ZS) / 2, HH = (STAGE.h * ZS) / 2;       // the stage's half extents on screen
@@ -170,27 +205,31 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
 
   // ── the stage: always alive. Scroll, build, step aside for the chat, collapse into the dot, re-open, flip and rebuild ──
   const rebuilt = t >= B.flipIn;
-  let scroll = scrollFrom(t, START, 300, V);
-  if (t >= B.reopen) scroll = scrollFrom(t, B.reopen, 90, V);
-  if (rebuilt) scroll = t < B.scroll2 ? 0 : scrollFrom(t, B.scroll2, 0, V);
+  const scroll = t >= B.seStart && t < B.jump ? 640 * ez(t, B.seStart, B.seEnd - B.seStart, INOUT) : 0;   // the only scroll: one calm pass down
   const build = rebuilt ? clamp01((t - B.build) / 0.85) : 1;
   let stageTr = "", stageSc = 1, stageOp = 1;
   const stageOn = t < B.collapse + 0.45 || t >= B.reopen;
   if (t < B.collapse + 0.45) {
     const shift = spr(t, B.open, 0.55, 0.8), c = ez(t, B.collapse, 0.4, INOUT);
     stageTr = `translate(${mix(-SX * shift, 1290 - CX, c)}px, ${mix(0, 540 - CY, c)}px)`;
-    stageSc = mix(1 + (ZS - 1) * spr(t, START + 0.05, 0.6, 0.85), 0.06, c); stageOp = 1 - clamp01((c - 0.75) / 0.25);
+    stageSc = mix(ZS, 0.06, c); stageOp = 1 - clamp01((c - 0.75) / 0.25);
   } else {
     const u = spr(t, B.reopen, 0.5, 0.62);
     stageSc = mix(0.12, ZS, u); stageOp = clamp01(u * 3);
     if (t >= B.flipOut && t < B.flipIn) stageTr = `perspective(2200px) rotateY(${90 * ez(t, B.flipOut, 0.14, INOUT)}deg)`;
     else if (t >= B.flipIn) stageTr = `perspective(2200px) rotateY(${-90 * (1 - spr(t, B.flipIn, 0.34, 0.65))}deg)`;
   }
-  // Se den: a sage scan band sweeps down and up the live site
-  const su = (t - (L.se + 0.02)) / 0.3, scanOn = su >= 0 && su < 2, sfr = su - Math.floor(su), scanY = Math.floor(su) % 2 === 0 ? sfr : 1 - sfr;
+  // Se den: a sage scan band sweeps down the live site (twice, always downward)
+  const su = (t - (L.se + 0.02)) / 0.4, scanOn = su >= 0 && su < 2, scanY = su - Math.floor(su);
+  const scrollPx = Math.round(scroll * HK);
+  const heroOn = build > 0.999 && !(t >= B.flipOut && t < B.flipIn + 0.3);
+  const ringAt = (at: number) => { const q = ez(t, at, 0.5, OUT); return q > 0 && q < 1 ? <div key={at} style={{ position: "absolute", left: BOOK.x - 4, top: BOOK.y - 4 - scrollPx, width: BOOK.w + 8, height: BOOK.h + 8, borderRadius: 999, border: `3px solid ${C.sage}`, boxSizing: "border-box", opacity: 0.85 * (1 - q), transform: `scale(${1 + 0.9 * q})` }} /> : null; };
+  const jb = Math.max(0, 1 - Math.abs(t - B.jump) / 0.14);
   const stage = !stageOn ? null : (
-    <Stage transform={stageTr} scale={stageSc} scroll={scroll} build={build} url="holmfysio.dk" live={1} headline={NEW_HEADLINE} style={{ opacity: stageOp }}>
+    <Stage transform={stageTr} scale={stageSc} scroll={scroll} build={build} url="holmfysio.dk" live={1} headline={NEW_HEADLINE} style={{ opacity: stageOp, filter: jb > 0.02 ? `blur(${10 * jb}px)` : undefined }}>
+      {heroOn && <HeroSwap t={t} scrollPx={scrollPx} />}
       {scanOn && <div style={{ position: "absolute", left: 0, top: 0, width: STAGE.w, height: 120, transform: `translateY(${-60 + (STAGE.h - 46) * scanY}px)`, background: "linear-gradient(transparent, rgba(135,168,158,0.62), transparent)" }} />}
+      {t >= 50.66 && scroll === 0 && (<>{ringAt(50.72)}{ringAt(51.08)}{ringAt(51.44)}</>)}
     </Stage>
   );
 
@@ -368,7 +407,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
         {t >= B.byg2 + 0.05 && (
           <Abs x={CX - BTN.w / 2} y={BTN.y - BTN.h / 2} style={{ width: BTN.w, height: BTN.h, opacity: ez(t, B.byg2 + 0.04, 0.2, LIN) }}>
             <div style={{ position: "absolute", inset: 0, WebkitMaskImage: `linear-gradient(90deg, #000 ${reveal * 130 - 30}%, transparent ${reveal * 130}%)`, maskImage: `linear-gradient(90deg, #000 ${reveal * 130 - 30}%, transparent ${reveal * 130}%)` }}>
-              <PillButton text="Byg din side gratis" size={56} press={pp} style={{ width: BTN.w, height: BTN.h, padding: 0, justifyContent: "center", boxSizing: "border-box", background: "transparent", boxShadow: "none" }} />
+              <PillButton text="Byg din side gratis" size={50} press={pp} style={{ width: BTN.w, height: BTN.h, padding: 0, justifyContent: "center", boxSizing: "border-box", background: "transparent", boxShadow: "none" }} />
             </div>
             {ph >= 0 && (
               <div style={{ position: "absolute", inset: 0, borderRadius: BTN.h / 2, overflow: "hidden", transform: `scale(${pr})` }}>
@@ -389,17 +428,20 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
     );
   }
 
+  const [, cfx, cfy, cs] = camAt(t);
   return (
     <>
-      {stage}
-      {panel}
+      <div style={{ position: "absolute", inset: 0, transformOrigin: "0 0", transform: `translate(${CX}px, ${CY}px) scale(${cs}) translate(${-cfx}px, ${-cfy}px)` }}>
+        {stage}
+        {panel}
+        {robot}
+        {goo}
+        {over}
+        {steps}
+      </div>
       {lineKo}
       {lineRobot}
-      {robot}
       {wm}
-      {goo}
-      {over}
-      {steps}
       {lines}
     </>
   );

@@ -1,15 +1,16 @@
 import React from "react";
-import { Easing } from "remotion";
-import { C, HOLM, OUT, INOUT, SANS, SHADOW_BIG, clamp01, mix } from "../lib";
+import { Easing, Img, staticFile } from "remotion";
+import { C, HOLM, OUT, INOUT, SANS, SERIF, SHADOW_BIG, clamp01, mix } from "../lib";
 import { Ico, LiquidGlass, f } from "../shared";
-import { HANDOFF_HALF, Line, STAGE, STAGE_SCROLL_MAX, Stage, StageHandoff } from "../v5";
+import { HANDOFF_HALF, Line, STAGE, Stage, StageHandoff } from "../v5";
 
 // Scene 1 (0 → h1, 10.05 s), revision 2: the website is the hero object in every beat. A sage dot drops, becomes the
 // capsule, and opens into the stage (a 960 × 600 browser). Holm's site builds itself live with a timer counting to
-// "2 min"; the AI sparkle sweeps over it while it builds and scrolls; a prompt field docks onto the stage and what is
+// "2 min"; the AI sparkle sweeps over it while it builds; a prompt field docks onto the stage and what is
 // typed becomes the site's header name; the page unbuilds and rebuilds in a fast cascade; the stage flips to its back
 // (code), a sage strike wipes it, it flips back; template sites flick through like a cover-flow and land on Holm's
-// site. The site scrolls steadily underneath every beat. Timings are seconds (t = g / 30), springs are local.
+// site. Revision 3: the site never scrolls; the camera frames what the voice names (push-ins and glides on the stage),
+// and the content itself moves (build, photo swaps, looks, fan-out pages). Timings are seconds (t = g / 30), springs are local.
 
 const SAGE = C.sage, DEEP = C.sageDeep, LIGHT = C.sageLight, INK = C.ink;
 const sp = (t: number, t0: number, resp = 0.4, damp = 1) => {
@@ -29,20 +30,8 @@ const mixc = (a: string, b: string, p: number) => {
 const LIN = (x: number) => x;
 const EASE_IN = Easing.bezier(0.5, 0, 0.9, 0.6);
 const MONO = "ui-monospace, SFMono-Regular, Menlo, 'DejaVu Sans Mono', monospace";
-const SM = STAGE_SCROLL_MAX - 1;
 const SX = 960, SY = 540;           // the stage's centre
 const SL = SX - STAGE.w / 2, ST = SY - STAGE.h / 2;   // its top-left corner (480, 240)
-
-/** The site's scroll (design px): fast, steady passes with eased turnarounds under every beat. Ends at 0. */
-const KEYS: [number, number][] = [[0.8, 0], [1.7, SM], [2.6, 0], [3.5, SM], [4.4, 0], [5.3, SM], [6.2, 0], [7.2, SM], [8.1, 0], [9.0, 330], [9.8, 0]];
-const scrollAt = (t: number) => {
-  if (t <= KEYS[0][0]) return 0;
-  for (let i = 0; i < KEYS.length - 1; i++) {
-    const [a, va] = KEYS[i], [b, vb] = KEYS[i + 1];
-    if (t < b) { const u = (t - a) / (b - a); return mix(va, vb, 0.65 * u + 0.35 * u * u * (3 - 2 * u)); }
-  }
-  return 0;
-};
 
 /** A static box (BW × BH) centred on the frame centre, moved by transforms only; its visible shape is a clip-path inset
  * (w × h, radius r), so a dot, a capsule and the browser are one box morphing. `big` fades the browser's own soft shadow in. */
@@ -93,7 +82,7 @@ const TimerChip: React.FC<{ t: number; left: number; top: number }> = ({ t, left
 
 // ── the wireframe: sage skeleton blocks over the page that fade as each block of the site resolves ─────────────
 const SK = "rgba(135,168,158,0.42)", SK2 = "rgba(135,168,158,0.62)";
-const Wireframe: React.FC<{ build: number; scroll: number }> = ({ build, scroll }) => {
+const Wireframe: React.FC<{ build: number }> = ({ build }) => {
   if (build >= 0.999) return null;
   const b = (i: number) => 1 - OUT(clamp01(build * 7 - i));
   const s = STAGE.w / 1460;
@@ -101,7 +90,7 @@ const Wireframe: React.FC<{ build: number; scroll: number }> = ({ build, scroll 
   const blk = (i: number, l: number, t: number, w: number, h: number, r: number, ch?: React.ReactNode) =>
     <div style={{ position: "absolute", left: l, top: t, width: w, height: h, borderRadius: r, background: SK, opacity: b(i), transform: `scale(${1 - 0.04 * (1 - b(i))})` }}>{ch}</div>;
   return (
-    <div style={{ position: "absolute", left: 0, top: 0, width: 1460, height: 1500, transformOrigin: "0 0", transform: `scale(${s}) translateY(${-scroll}px)`, willChange: "transform", pointerEvents: "none" }}>
+    <div style={{ position: "absolute", left: 0, top: 0, width: 1460, height: 1500, transformOrigin: "0 0", transform: `scale(${s})`, pointerEvents: "none" }}>
       {blk(0, 70, 34, 1320, 46, 14, <>{bar(10, 8, 30, 30, SK2)}{bar(54, 15, 190, 16)}{[0, 1, 2, 3].map((n) => bar(1000 + n * 78, 15, 60, 16))}</>)}
       {blk(1, 70, 168, 640, 230, 22, <>{bar(30, 40, 560, 54)}{bar(30, 116, 400, 54)}</>)}
       {blk(2, 70, 420, 560, 96, 18, <>{bar(0, 14, 520, 16)}{bar(0, 44, 460, 16)}{bar(0, 74, 360, 16)}</>)}
@@ -176,6 +165,71 @@ const TemplateFlick: React.FC<{ t: number; i: number }> = ({ t, i }) => {
   );
 };
 
+// ── the camera: push-ins and glides on the stage (c = zoom, fu/fv = the focus, relative to the stage centre) ─────
+const CAM: [number, number, number, number][] = [
+  [0.9, 1, 0, 0], [1.2, 1.12, -190, -20], [1.75, 1.12, 190, -20], [2.25, 1.12, -120, 20], [2.55, 1.1, 0, 0],
+  [2.9, 1.12, 190, -20], [3.45, 1.12, -190, 0], [3.95, 1, 0, 0],
+  [4.3, 1.1, 0, 40], [4.75, 1.25, -180, -100], [5.9, 1.25, -180, -100], [6.2, 1.2, -200, -110], [6.6, 1.2, 170, -60], [6.95, 1, 0, 0],
+];
+const camAt = (t: number) => {
+  if (t <= CAM[0][0]) return { c: 1, fu: 0, fv: 0 };
+  for (let i = 0; i < CAM.length - 1; i++) {
+    const [a, c0, u0, v0] = CAM[i], [b, c1, u1, v1] = CAM[i + 1];
+    if (t < b) { const e = INOUT((t - a) / (b - a)); return { c: mix(c0, c1, e), fu: mix(u0, u1, e), fv: mix(v0, v1, e) }; }
+  }
+  return { c: 1, fu: 0, fv: 0 };
+};
+
+// ── "Bygget af AI": the AI tries looks (a sage tone with a serif headline, then dark, then back) and swaps the photo ──
+const Looks: React.FC<{ t: number }> = ({ t }) => {
+  const a = ez(t, 2.6, 0.28, INOUT), b1 = ez(t, 3.05, 0.28, INOUT), b2 = ez(t, 3.5, 0.28, INOUT);
+  const W = STAGE.w, aOn = t >= 2.6 && t < 3.36, bOn = t >= 3.05 && t < 3.8;
+  const edge = (x: number) => <div style={{ position: "absolute", left: x - 2, top: 0, width: 4, height: STAGE.h - 46, background: SAGE }} />;
+  return (
+    <>
+      {aOn && <div style={{ position: "absolute", inset: 0, clipPath: `inset(0 ${(1 - a) * 100}% 0 0)`, backdropFilter: "grayscale(1) contrast(1.05)", WebkitBackdropFilter: "grayscale(1) contrast(1.05)", background: "rgba(135,168,158,0.32)" }} />}
+      {aOn && a < 0.999 && edge(a * W)}
+      {bOn && <div style={{ position: "absolute", inset: 0, clipPath: `inset(0 ${(1 - b1) * 100}% 0 ${b2 * 100}%)`, backdropFilter: "invert(0.92) hue-rotate(180deg) brightness(0.92) contrast(1.05)", WebkitBackdropFilter: "invert(0.92) hue-rotate(180deg) brightness(0.92) contrast(1.05)" }} />}
+      {bOn && b1 < 0.999 && b1 > 0 && edge(b1 * W)}
+      {bOn && b2 > 0.001 && b2 < 0.999 && edge(b2 * W)}
+    </>
+  );
+};
+const HERO_IMGS = ["holm-neck.jpg", "holm-stretch.jpg", "holm-calves.jpg", "holm-shoulder.jpg"];
+const HERO_T = [2.62, 2.98, 3.34, 3.7];
+const HeroSlider: React.FC<{ t: number }> = ({ t }) => {
+  if (t < 2.6 || t > 4.05) return null;
+  const s = STAGE.w / 1460, k = HERO_T.filter((x) => t >= x).length - 1;
+  if (k < 0) return null;
+  return (
+    <div style={{ position: "absolute", left: 760 * s, top: 120 * s, width: 630 * s, height: 560 * s, borderRadius: 24 * s, overflow: "hidden" }}>
+      {HERO_IMGS.slice(0, k + 1).map((src, i) => {
+        const p = i === k ? ez(t, HERO_T[i], 0.34, OUT) : 1;
+        return <Img key={src} src={staticFile(`img/${src}`)} style={{ position: "absolute", left: 0, top: 0, width: "100%", height: "100%", objectFit: "cover", transform: `translateX(${(1 - p) * 630 * s}px)` }} />;
+      })}
+    </div>
+  );
+};
+
+// ── "Creoble bygger hele siden": the site fans out as its pages ──────────────────────────────────────────────────
+const Pages: React.FC<{ t: number }> = ({ t }) => {
+  const f1 = sp(t, 7.0, 0.45, 0.62) * (1 - ez(t, 7.72, 0.3, INOUT));
+  const vis = clamp01(f1 * 3), side = mix(0.46, 0.62, clamp01(f1));
+  const lab = (x: number, text: string) => (
+    <div style={{ position: "absolute", left: x - 150, top: 540 + 300 * side + 34, width: 300, textAlign: "center", opacity: vis * (1 - ez(t, 7.72, 0.2, INOUT)), fontFamily: SANS, fontWeight: 600, fontSize: 32, color: INK }}>
+      <span style={{ display: "inline-block", padding: "6px 24px", borderRadius: 26, background: "#fff", border: `1px solid ${C.line}`, boxShadow: "0 10px 20px -12px rgba(26,22,20,0.3)" }}>{text}</span>
+    </div>
+  );
+  return (
+    <>
+      <Stage x={960 - 640 * f1} y={540} scale={side} scroll={470} transform={`perspective(1800px) rotateY(${38 * f1}deg)`} style={{ opacity: vis }} />
+      <Stage x={960 + 640 * f1} y={540} scale={side} scroll={658} transform={`perspective(1800px) rotateY(${-38 * f1}deg)`} style={{ opacity: vis }} />
+      <Stage x={960} y={540} scale={mix(1, 0.8, f1)} scroll={0} />
+      {lab(960 - 640 * f1, "Behandlinger")}{lab(960, "Forside")}{lab(960 + 640 * f1, "Kontakt")}
+    </>
+  );
+};
+
 // ── the scene ────────────────────────────────────────────────────────────────────────────────────────────────────
 export const Scene1: React.FC<{ g: number }> = ({ g }) => {
   const HOFF = f("h1") - HANDOFF_HALF;
@@ -199,10 +253,10 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
   const col = mixc(SAGE, "#FFFFFF", clamp01(wp * 1.4));
   const full = clamp01((w - 950) / 10) * clamp01((h - 590) / 10);
 
-  // the site: builds (0.95 → 2.2), unbuilds at the send press and rebuilds in a fast cascade (6.3 → 7.5)
-  const buildV = t < 6.1 ? ez(t, 0.9, 1.15, LIN) : t < 6.25 ? 1 - ez(t, 6.1, 0.15, LIN) : ez(t, 6.25, 0.95, LIN);
-  const scroll = scrollAt(t);
+  // the site: builds (0.9 → 2.05), unbuilds at the send press, rebuilds in a fast cascade (6.25 → 6.95); it never scrolls
+  const buildV = t < 6.1 ? ez(t, 0.9, 1.15, LIN) : t < 6.25 ? 1 - ez(t, 6.1, 0.15, LIN) : ez(t, 6.25, 0.7, LIN);
   const fo = clamp01((wp - 0.25) * 2.2);
+  const serif = t >= 2.7 && t < 3.75;
 
   // the prompt field docks onto the lower part of the stage (4.1) and drops away at the press (6.09)
   const txt = "Holm Fysioterapi", t0 = 4.62, cps = 12;
@@ -213,6 +267,7 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
   const caretOn = n < txt.length || Math.floor(t * 2.2) % 2 === 0;
   const hdr = sp(t, 4.45, 0.45, 0.62) * (1 - ez(t, 6.1, 0.22, INOUT));
   const showField = t > 4.08 && t < 6.5;
+  const lab = ez(t, 4.2, 0.4, OUT);
 
   // the flip to the code side and back ("Ingen teknik")
   const theta = 180 * sp(t, 8.13, 0.36, 0.7) - 180 * sp(t, 8.82, 0.36, 0.7);
@@ -223,13 +278,16 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
       tf={Math.abs(theta) > 0.05 ? `perspective(2400px) rotateY(${theta}deg)` : ""}>
       {fo > 0.01 && !back && (
         <div style={{ position: "absolute", left: 0, top: 0, width: 1000, height: 640, opacity: fo }}>
-          <div className="s1st" style={{ position: "absolute", inset: 0 }}>
-          {t < 9.5 && <style>{'.s1st div[style*="scale("][style*="translateY("] { will-change: transform; }'}</style>}
-          <Stage x={500} y={320} scroll={scroll} build={buildV} booking={1} url="Forhåndsvisning">
-            <Wireframe build={buildV} scroll={scroll} />
+          <Stage x={500} y={320} scroll={0} build={buildV} booking={1} url="Forhåndsvisning"
+            headline={serif ? <span style={{ fontFamily: SERIF, fontWeight: 400, letterSpacing: "-0.02em" }}>Kom godt i<br />bevægelse igen.</span> : undefined}>
+            <Wireframe build={buildV} />
+            <HeroSlider t={t} />
+            <Looks t={t} />
             {showField && <SiteHeader name={txt.slice(0, Math.max(0, Math.min(txt.length, Math.floor((t - t0 - 0.12) * cps))))} p={hdr} />}
             {showField && (
               <div style={{ position: "absolute", left: 30, top: STAGE.h - 46 - 24 - 110, width: 900, height: 110, transform: `translateY(${fieldDy}px)`, opacity: 1 - clamp01((leave - 0.5) * 2), fontFamily: SANS }}>
+                <div style={{ position: "absolute", left: 0, top: -64, height: 50, padding: "0 24px", borderRadius: 25, background: "rgba(250,250,248,0.94)", border: `1px solid ${C.line}`, boxShadow: "0 10px 20px -12px rgba(26,22,20,0.3)",
+                  display: "flex", alignItems: "center", fontSize: 28, fontWeight: 500, color: C.muted, whiteSpace: "nowrap", opacity: lab, transform: `translateY(${(1 - lab) * 14}px)` }}>Fortæl kort om din virksomhed</div>
                 <LiquidGlass w={900} h={110} radius={55} p={1} sheen={0.5 + 0.5 * Math.sin(t * 1.8)} tint="clear" />
                 <div style={{ position: "absolute", left: 120, top: 0, height: 110, display: "flex", alignItems: "center", fontSize: 40, fontWeight: 500, color: INK, whiteSpace: "pre", letterSpacing: "-0.01em" }}>
                   {txt.slice(0, n).split("").map((ch, i) => {
@@ -246,13 +304,13 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
             )}
             {t > 9.05 && <>{[0, 1, 2].map((i) => <TemplateFlick key={i} t={t} i={i} />)}</>}
           </Stage>
-          </div>
           {t < 2.9 && <TimerChip t={t} left={20 + STAGE.w - 18 - 128} top={24} />}
         </div>
       )}
       {back && <div style={{ position: "absolute", left: 20, top: 20, width: STAGE.w, height: STAGE.h }}><CodeBack t={t} /></div>}
     </Shaped>
   );
+  const pagesOn = t >= 6.95 && t < 8.02;
 
   // landing rings of the dot
   const landRings = [0.2, 0.34, 0.42].map((ti, i) => {
@@ -279,18 +337,21 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
 
   const lines = (
     <>
-      {t > 1.36 && t < 2.62 && <Line text="få minutter" y={935} size={84} p={clamp01((t - 1.38) / 0.8)} out={ez(t, 2.34, 0.26, INOUT)} italicWords={["minutter"]} />}
-      {t > 2.58 && t < 4.15 && <Line text="Bygget af AI." y={935} size={84} p={clamp01((t - 2.6) / 1.9)} out={ez(t, 3.86, 0.24, INOUT)} italicWords={["AI"]} />}
-      {t > 4.15 && t < 6.4 && <Line text="Fortæl kort om din virksomhed" y={935} size={36} serif={false} color={C.muted} p={clamp01((t - 4.2) / 1.7)} out={ez(t, 6.0, 0.24, INOUT)} />}
+      {t > 1.36 && t < 2.62 && <Line text="få minutter" y={985} size={76} p={clamp01((t - 1.38) / 0.8)} out={ez(t, 2.34, 0.26, INOUT)} italicWords={["minutter"]} />}
+      {t > 2.58 && t < 4.15 && <Line text="Bygget af AI." y={985} size={76} p={clamp01((t - 2.6) / 1.9)} out={ez(t, 3.86, 0.24, INOUT)} italicWords={["AI"]} />}
     </>
   );
 
+  const cam = camAt(t);
+  const tx = 960 - cam.c * (960 + cam.fu), ty = 540 - cam.c * (540 + cam.fv);
   return (
     <>
       {lines}
-      {landRings}
-      {stageEl}
-      {spark}
+      <div style={{ position: "absolute", inset: 0, transformOrigin: "0 0", transform: cam.c === 1 && cam.fu === 0 && cam.fv === 0 ? undefined : `translate(${tx}px, ${ty}px) scale(${cam.c})` }}>
+        {landRings}
+        {pagesOn ? <Pages t={t} /> : stageEl}
+        {spark}
+      </div>
     </>
   );
 };
