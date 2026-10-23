@@ -1,3 +1,16 @@
+# REVISION 4 (Karl, on the final: "the view shifting is too choppy, should all be softer and smoother and slower")
+- **The camera, which is every view change** (push, pull, pan, the stage's scale or position), becomes calm:
+  - **Fewer moves:** at most one reframe per sentence. Many beats keep the frame where it is.
+  - **Slower:** each move takes 1.2–2.0 s. Never a quick push, never two moves back to back.
+  - **Softer:** a smooth sine or `INOUT` ease from rest to rest. No springs, anticipation or overshoot on the camera.
+    The springs stay on the objects only.
+  - **Smaller:** zoom changes within about ±12%, pans within about 150 px.
+- **Objects:** the content (pops, docks, typing, rolls, photo swaps) keeps its Apple springs. Hero-photo swaps
+  become calmer too: at most one swap every 1.5–2 s, crossfade or slow slide.
+- **Hand-offs:** the kit's `StageHandoff` is now a softer push, 1.0 → 1.04 (was 1.08). Incoming: start at 1.04 and
+  continue that push's motion with a long ease-out. Outgoing: end at scale 1, scroll 0.
+- **Motion:** report the median honestly. Smoothness now matters more than the number.
+
 # REVISION 3 (Karl, on draft 3; overrides Revision 2 where they differ)
 > "I don't like that the website is constantly scrolling up and down."
 

@@ -134,11 +134,11 @@ export const Stage: React.FC<{ x?: number; y?: number; scale?: number; transform
 );
 const HANDOFF_URL: Record<string, [string, number]> = { h1: ["Forhåndsvisning", 0], h2: ["Forhåndsvisning", 0], h3: ["Forhåndsvisning", 0], h4: ["holmfysio.dk", 1] };
 /** Revision 3 hand-off at hN: the stage centred at scroll 0 (the page never scrolls back up), the camera pushing in
- * from scale 1.0 to 1.08 across the 0.5 s window. Outgoing ends on scale 1, scroll 0; incoming starts on scale 1.08. */
+ * from scale 1.0 to 1.04 across the 0.5 s window. Outgoing ends on scale 1, scroll 0; incoming starts on scale 1.04. */
 export const stageHandoffState = (g: number, at: string) => {
   const u = clamp01((g - (f(at) - HANDOFF_HALF)) / (2 * HANDOFF_HALF));
   const [url, live] = HANDOFF_URL[at];
-  return { scroll: 0, scale: 1 + 0.08 * INOUT(u), url, live, u };
+  return { scroll: 0, scale: 1 + 0.04 * INOUT(u), url, live, u };   // revision 4: a softer push (1.0 → 1.04)
 };
 /** The site's headline after "Creoble retter det." (S2): every stage from h2 on shows it. */
 export const NEW_HEADLINE = <>Velkommen hjem<br />i din krop.</>;
