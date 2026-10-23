@@ -15,11 +15,12 @@ export const C = {
 export const HOLM = { bg: "#F4F1EC", ink: "#1F2A2E", accent: "#2E4A52", tint: "#E3E9E8", muted: "#5E6A6D" };
 export const SERIF = "Fraunces";
 export const SANS = "DM Sans";
-// Apple-style layered shadows (v5, Karl: "UIs with drop shadow same as Apple style"): a fine contact line, a soft
-// mid shadow and a big diffuse ambient one, warm-tinted for the cream ground. appleShadow(a, b): a = strength 0..1,
-// b = 0 for small UI (chips, pills, buttons) .. 1 for hero UI (the browser, the phone, big cards).
-const SH_SMALL = [[0, 0.5, 1, 0, 0.08], [0, 2, 6, 0, 0.06], [0, 10, 24, 0, 0.08], [0, 24, 48, -8, 0.10]];
-const SH_BIG = [[0, 1, 2, 0, 0.07], [0, 6, 16, 0, 0.06], [0, 24, 56, 0, 0.10], [0, 60, 120, -24, 0.20]];
+// Apple-style layered shadows (v5, Karl: "UIs with drop shadow same as Apple style", then "more size drop shadow, no
+// direction, even all sides"): no offset, a fine contact edge, a soft halo and a wide diffuse glow, warm-tinted for
+// the cream ground. appleShadow(a, b): a = strength 0..1, b = 0 for small UI (chips, pills, buttons) .. 1 for hero UI
+// (the browser, the phone, big cards).
+const SH_SMALL = [[0, 0, 1.5, 0, 0.09], [0, 0, 16, 0, 0.09], [0, 0, 44, 0, 0.10], [0, 0, 90, 0, 0.09]];
+const SH_BIG = [[0, 0, 2, 0, 0.09], [0, 0, 30, 0, 0.10], [0, 0, 90, 0, 0.13], [0, 0, 180, 0, 0.13]];
 export const appleShadow = (a = 1, b = 0) => SH_SMALL.map((l, i) => {
   const m = (j: number) => l[j] + (SH_BIG[i][j] - l[j]) * b;
   return `${m(0)}px ${m(1).toFixed(2)}px ${m(2).toFixed(1)}px ${m(3).toFixed(1)}px rgba(26,22,20,${(m(4) * a).toFixed(3)})`;
@@ -27,8 +28,8 @@ export const appleShadow = (a = 1, b = 0) => SH_SMALL.map((l, i) => {
 export const SHADOW = appleShadow(1, 0);
 export const SHADOW_BIG = appleShadow(1, 1);
 /** the same look for irregular shapes (SVG, cut-outs) */
-export const DROP = "drop-shadow(0 2px 3px rgba(26,22,20,0.08)) drop-shadow(0 12px 22px rgba(26,22,20,0.12))";
-export const DROP_BIG = "drop-shadow(0 3px 6px rgba(26,22,20,0.08)) drop-shadow(0 30px 50px rgba(26,22,20,0.16))";
+export const DROP = "drop-shadow(0 0 2px rgba(26,22,20,0.08)) drop-shadow(0 0 20px rgba(26,22,20,0.12)) drop-shadow(0 0 44px rgba(26,22,20,0.08))";
+export const DROP_BIG = "drop-shadow(0 0 3px rgba(26,22,20,0.08)) drop-shadow(0 0 36px rgba(26,22,20,0.12)) drop-shadow(0 0 80px rgba(26,22,20,0.10))";
 
 // v4's motion identity: calm, editorial, precise. Lines are revealed through a mask (the site's editorial feel),
 // objects settle (a short scale and fade), nothing overshoots or blurs in.

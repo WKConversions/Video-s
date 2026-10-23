@@ -122,7 +122,7 @@ export const Toggle: React.FC<{ on: number; size?: number; style?: React.CSSProp
   const q = INOUT(clamp01(on));
   return (
     <div style={{ width: size * 1.7, height: size, borderRadius: size, background: `color-mix(in srgb, ${C.sage} ${q * 100}%, #DCD8D1)`, position: "relative", flex: "none", ...style }}>
-      <div style={{ position: "absolute", top: size * 0.09, left: size * 0.09 + q * size * 0.7, width: size * 0.82, height: size * 0.82, borderRadius: "50%", background: C.white, boxShadow: "0 2px 6px rgba(0,0,0,0.18)" }} />
+      <div style={{ position: "absolute", top: size * 0.09, left: size * 0.09 + q * size * 0.7, width: size * 0.82, height: size * 0.82, borderRadius: "50%", background: C.white, boxShadow: "0 0 1px rgba(0,0,0,0.12), 0 0 8px rgba(0,0,0,0.14)" }} />
     </div>
   );
 };
@@ -429,7 +429,7 @@ export const Island: React.FC<{ x: number; y: number; w: number; h: number; p: n
   // as it drops and springs open instead of snapping its edges to the pixel grid
   const Wl = Math.max(2, 2 * Math.round(W / 2)), Hl = Math.max(2, 2 * Math.round(H / 2));
   return (
-    <div style={{ position: "absolute", left: x - Wl / 2, top: 0, width: Wl, height: Hl, borderRadius: R, transform: `translateY(${y}px) scale(${W / Wl}, ${H / Hl})`, transformOrigin: "50% 0", background: C.ink, boxShadow: "0 20px 50px -20px rgba(26,22,20,0.6)", overflow: "hidden", color: C.cream, fontFamily: SANS }}>
+    <div style={{ position: "absolute", left: x - Wl / 2, top: 0, width: Wl, height: Hl, borderRadius: R, transform: `translateY(${y}px) scale(${W / Wl}, ${H / Hl})`, transformOrigin: "50% 0", background: C.ink, boxShadow: SHADOW_BIG, overflow: "hidden", color: C.cream, fontFamily: SANS }}>
       <div style={{ position: "absolute", left: 0, top: 0, width: w, height: h, transform: `translate(${(Wl - w) / 2}px, ${(Hl - h) / 2}px)`, opacity: clamp01((p - 0.55) * 3) }}>{children}</div>
     </div>
   );

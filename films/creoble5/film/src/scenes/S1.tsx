@@ -41,7 +41,7 @@ const Shaped: React.FC<{ BW: number; BH: number; cx: number; cy: number; w: numb
   const ix = (BW - ww) / 2, iy = (BH - hh) / 2;
   return (
     <div style={{ position: "absolute", left: 960 - BW / 2, top: 540 - BH / 2, width: BW, height: BH, transform: `translate(${cx - 960}px, ${cy - 540}px) ${tf} scale(${sc})`,
-      filter: shadow > 0.01 ? `drop-shadow(0 ${2 * shadow}px ${3 * shadow}px rgba(26,22,20,${0.08 * shadow})) drop-shadow(0 ${14 * shadow}px ${26 * shadow}px rgba(26,22,20,${0.13 * shadow}))` : undefined }}>
+      filter: shadow > 0.01 ? `drop-shadow(0 0 ${3 * shadow}px rgba(26,22,20,${0.08 * shadow})) drop-shadow(0 0 ${30 * shadow}px rgba(26,22,20,${0.13 * shadow})) drop-shadow(0 0 ${60 * shadow}px rgba(26,22,20,${0.08 * shadow}))` : undefined }}>
       {big > 0.01 && <div style={{ position: "absolute", left: (BW - STAGE.w) / 2, top: (BH - STAGE.h) / 2, width: STAGE.w, height: STAGE.h, borderRadius: 16, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW_BIG}`, opacity: big }} />}
       <div style={{ position: "absolute", inset: 0, clipPath: `inset(${iy}px ${ix}px ${iy}px ${ix}px round ${rr}px)`, background: color }}>{children}</div>
     </div>

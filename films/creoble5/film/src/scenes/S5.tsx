@@ -186,7 +186,7 @@ const QueueStrip: React.FC<{ v: number }> = ({ v }) => {
   );
 };
 const Hammer: React.FC<{ rot: number }> = ({ rot }) => (
-  <svg width={170} height={170} viewBox="0 0 48 48" fill="none" stroke={C.sageDeep} strokeWidth={4.6} strokeLinecap="round" strokeLinejoin="round" style={{ display: "block", transform: `rotate(${rot}deg)`, transformOrigin: "10px 40px", filter: "drop-shadow(0 8px 10px rgba(26,22,20,0.25))" }}>
+  <svg width={170} height={170} viewBox="0 0 48 48" fill="none" stroke={C.sageDeep} strokeWidth={4.6} strokeLinecap="round" strokeLinejoin="round" style={{ display: "block", transform: `rotate(${rot}deg)`, transformOrigin: "10px 40px", filter: "drop-shadow(0 0 2px rgba(26,22,20,0.12)) drop-shadow(0 0 16px rgba(26,22,20,0.16))" }}>
     <path d="M12 38 L30 20" /><g transform="rotate(45 30 20)"><rect x="16" y="12" width="28" height="13" rx="3" fill={C.sageDeep} stroke="none" /></g>
   </svg>
 );
