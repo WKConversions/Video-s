@@ -223,6 +223,8 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
       tf={Math.abs(theta) > 0.05 ? `perspective(2400px) rotateY(${theta}deg)` : ""}>
       {fo > 0.01 && !back && (
         <div style={{ position: "absolute", left: 0, top: 0, width: 1000, height: 640, opacity: fo }}>
+          <div className="s1st" style={{ position: "absolute", inset: 0 }}>
+          {t < 9.5 && <style>{'.s1st div[style*="scale("][style*="translateY("] { will-change: transform; }'}</style>}
           <Stage x={500} y={320} scroll={scroll} build={buildV} booking={1} url="Forhåndsvisning">
             <Wireframe build={buildV} scroll={scroll} />
             {showField && <SiteHeader name={txt.slice(0, Math.max(0, Math.min(txt.length, Math.floor((t - t0 - 0.12) * cps))))} p={hdr} />}
@@ -244,6 +246,7 @@ export const Scene1: React.FC<{ g: number }> = ({ g }) => {
             )}
             {t > 9.05 && <>{[0, 1, 2].map((i) => <TemplateFlick key={i} t={t} i={i} />)}</>}
           </Stage>
+          </div>
           {t < 2.9 && <TimerChip t={t} left={20 + STAGE.w - 18 - 128} top={24} />}
         </div>
       )}

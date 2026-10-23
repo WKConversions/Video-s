@@ -10,7 +10,7 @@
 import React from "react";
 import { C, INOUT, LIN, OUT, SANS, SERIF, clamp01, mix } from "../lib";
 import { Island, PillButton, RollNumber, Ico, f } from "../shared";
-import { CX, CY, HANDOFF_HALF, Line, Stage, StageHandoff, STAGE, STAGE_SCROLL_MAX } from "../v5";
+import { CX, CY, HANDOFF_HALF, Line, NEW_HEADLINE, Stage, StageHandoff, STAGE, STAGE_SCROLL_MAX } from "../v5";
 import { WM_DOT, WM_VIEW, WM_WORD } from "../wordmark";
 
 // ── clock helpers (seconds; own springs so nothing is rounded to the 30 fps grid) ──────────────────────────────────
@@ -44,7 +44,7 @@ const typed = (t: number, at: number, text: string, cps: number) => text.slice(0
 // ── the site's steady scroll: a triangle between 0 and the page end with softly rounded turnarounds ─────────────────
 const SMAX = STAGE_SCROLL_MAX, V = 480;                           // design px per second ≈ 5.3 px per frame on screen
 const foldScroll = (x: number) => {
-  const P = 2 * SMAX, m = ((x % P) + P) % P, u = m <= SMAX ? m : P - m, e = 28;   // short, eased turnarounds (no slow creep)
+  const P = 2 * SMAX, m = ((x % P) + P) % P, u = m <= SMAX ? m : P - m, e = 6;   // short, eased turnarounds (no slow creep)
   if (u < e) return (u * u) / (2 * e) + e / 2;
   if (u > SMAX - e) { const v = SMAX - u; return SMAX - ((v * v) / (2 * e) + e / 2); }
   return u;
@@ -174,11 +174,11 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
   if (t >= B.reopen) scroll = scrollFrom(t, B.reopen, 90, V);
   if (rebuilt) scroll = t < B.scroll2 ? 0 : scrollFrom(t, B.scroll2, 0, V);
   const build = rebuilt ? clamp01((t - B.build) / 0.85) : 1;
-  let stageTr = "rotate(0.1deg)", stageSc = 1, stageOp = 1;
+  let stageTr = "", stageSc = 1, stageOp = 1;
   const stageOn = t < B.collapse + 0.45 || t >= B.reopen;
   if (t < B.collapse + 0.45) {
     const shift = spr(t, B.open, 0.55, 0.8), c = ez(t, B.collapse, 0.4, INOUT);
-    stageTr = `translate(${mix(-SX * shift, 1290 - CX, c)}px, ${mix(0, 540 - CY, c)}px) rotate(0.1deg)`;
+    stageTr = `translate(${mix(-SX * shift, 1290 - CX, c)}px, ${mix(0, 540 - CY, c)}px)`;
     stageSc = mix(1 + (ZS - 1) * spr(t, START + 0.05, 0.6, 0.85), 0.06, c); stageOp = 1 - clamp01((c - 0.75) / 0.25);
   } else {
     const u = spr(t, B.reopen, 0.5, 0.62);
@@ -189,7 +189,7 @@ export const Scene5: React.FC<{ g: number }> = ({ g }) => {
   // Se den: a sage scan band sweeps down and up the live site
   const su = (t - (L.se + 0.02)) / 0.3, scanOn = su >= 0 && su < 2, sfr = su - Math.floor(su), scanY = Math.floor(su) % 2 === 0 ? sfr : 1 - sfr;
   const stage = !stageOn ? null : (
-    <Stage transform={stageTr} scale={stageSc} scroll={scroll} build={build} url="holmfysio.dk" live={1} style={{ opacity: stageOp }}>
+    <Stage transform={stageTr} scale={stageSc} scroll={scroll} build={build} url="holmfysio.dk" live={1} headline={NEW_HEADLINE} style={{ opacity: stageOp }}>
       {scanOn && <div style={{ position: "absolute", left: 0, top: 0, width: STAGE.w, height: 120, transform: `translateY(${-60 + (STAGE.h - 46) * scanY}px)`, background: "linear-gradient(transparent, rgba(135,168,158,0.62), transparent)" }} />}
     </Stage>
   );

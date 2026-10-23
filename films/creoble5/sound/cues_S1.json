@@ -32,28 +32,28 @@
   "frame": 37,
   "db": -8,
   "pitch": 0,
-  "note": "capsule springs open into the big browser"
- },
- {
-  "id": "gen-tick",
-  "frame": 57,
-  "db": -16,
-  "pitch": 0,
-  "note": "site block 1 builds"
+  "note": "capsule springs open into the stage (browser)"
  },
  {
   "id": "gen-whoosh-short",
-  "frame": 59,
-  "db": -14,
+  "frame": 48,
+  "db": -17,
   "pitch": 2,
-  "note": "page starts to scroll as it builds"
+  "note": "site scroll pass 1"
  },
  {
   "id": "gen-tick",
-  "frame": 70,
+  "frame": 54,
+  "db": -16,
+  "pitch": 0,
+  "note": "wireframe block 1 resolves into the site"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 64,
   "db": -16,
   "pitch": 1,
-  "note": "site block 2 builds"
+  "note": "wireframe block 2 resolves into the site"
  },
  {
   "id": "kenney-tick-004",
@@ -64,10 +64,17 @@
  },
  {
   "id": "gen-tick",
-  "frame": 83,
+  "frame": 74,
   "db": -16,
   "pitch": 2,
-  "note": "site block 3 builds"
+  "note": "wireframe block 3 resolves into the site"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 83,
+  "db": -16,
+  "pitch": 3,
+  "note": "wireframe block 4 resolves into the site"
  },
  {
   "id": "kenney-tick-004",
@@ -78,10 +85,17 @@
  },
  {
   "id": "gen-tick",
-  "frame": 95,
+  "frame": 93,
   "db": -16,
-  "pitch": 3,
-  "note": "site block 4 builds"
+  "pitch": 4,
+  "note": "wireframe block 5 resolves into the site"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 102,
+  "db": -17,
+  "pitch": -3,
+  "note": "site scroll pass 2"
  },
  {
   "id": "kenney-tick-004",
@@ -92,10 +106,10 @@
  },
  {
   "id": "gen-tick",
-  "frame": 109,
+  "frame": 103,
   "db": -16,
-  "pitch": 4,
-  "note": "site block 5 builds"
+  "pitch": 5,
+  "note": "wireframe block 6 resolves into the site"
  },
  {
   "id": "kenney-tick-004",
@@ -103,13 +117,6 @@
   "db": -19,
   "pitch": 3,
   "note": "timer tick 4"
- },
- {
-  "id": "gen-tick",
-  "frame": 121,
-  "db": -16,
-  "pitch": 5,
-  "note": "site block 6 builds"
  },
  {
   "id": "kenney-tick-004",
@@ -126,13 +133,6 @@
   "note": "timer lands on '2 min'"
  },
  {
-  "id": "gen-whoosh-short",
-  "frame": 144,
-  "db": -14,
-  "pitch": -3,
-  "note": "page scrolls back up"
- },
- {
   "id": "gen-shimmer",
   "frame": 150,
   "db": -9,
@@ -145,6 +145,13 @@
   "db": -14,
   "pitch": 0,
   "note": "sparkle burst"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 156,
+  "db": -17,
+  "pitch": 2,
+  "note": "site scroll pass 3"
  },
  {
   "id": "gen-tick",
@@ -168,6 +175,13 @@
   "note": "sparkle writes a block 3"
  },
  {
+  "id": "gen-whoosh-short",
+  "frame": 210,
+  "db": -17,
+  "pitch": -3,
+  "note": "site scroll pass 4"
+ },
+ {
   "id": "gen-tick",
   "frame": 223,
   "db": -15,
@@ -176,24 +190,38 @@
  },
  {
   "id": "gen-whoosh-short",
-  "frame": 232,
+  "frame": 237,
   "db": -11,
   "pitch": 0,
-  "note": "sparkle dives into the field icon"
+  "note": "sparkle dives into the prompt field's icon"
  },
  {
   "id": "gen-whoosh-medium",
-  "frame": 234,
+  "frame": 246,
   "db": -11,
   "pitch": 0,
-  "note": "browser collapses into the text field"
+  "note": "prompt field docks onto the stage"
  },
  {
   "id": "kenney-maximize-009",
-  "frame": 250,
+  "frame": 258,
   "db": -10,
   "pitch": 0,
-  "note": "glass text field settles"
+  "note": "glass prompt field lands"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 264,
+  "db": -17,
+  "pitch": 2,
+  "note": "site scroll pass 5"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 267,
+  "db": -14,
+  "pitch": 3,
+  "note": "site header slides in"
  },
  {
   "id": "gen-pop",
@@ -207,112 +235,119 @@
   "frame": 277,
   "db": -19,
   "pitch": -1,
-  "note": "typed letter 1"
+  "note": "typed letter 1 (the header name follows)"
  },
  {
   "id": "kenney-click-001",
   "frame": 282,
   "db": -19,
   "pitch": 0,
-  "note": "typed letter 2"
+  "note": "typed letter 2 (the header name follows)"
  },
  {
   "id": "kenney-click-001",
   "frame": 287,
   "db": -19,
   "pitch": 1,
-  "note": "typed letter 3"
+  "note": "typed letter 3 (the header name follows)"
  },
  {
   "id": "kenney-click-001",
   "frame": 292,
   "db": -19,
   "pitch": -1,
-  "note": "typed letter 4"
+  "note": "typed letter 4 (the header name follows)"
  },
  {
   "id": "kenney-click-001",
   "frame": 297,
   "db": -19,
   "pitch": 0,
-  "note": "typed letter 5"
+  "note": "typed letter 5 (the header name follows)"
  },
  {
   "id": "kenney-click-001",
   "frame": 302,
   "db": -19,
   "pitch": 1,
-  "note": "typed letter 6"
+  "note": "typed letter 6 (the header name follows)"
  },
  {
   "id": "kenney-click-001",
   "frame": 307,
   "db": -19,
   "pitch": -1,
-  "note": "typed letter 7"
+  "note": "typed letter 7 (the header name follows)"
  },
  {
   "id": "kenney-click-001",
   "frame": 312,
   "db": -19,
   "pitch": 0,
-  "note": "typed letter 8"
+  "note": "typed letter 8 (the header name follows)"
  },
  {
   "id": "kenney-click-001",
   "frame": 317,
   "db": -19,
   "pitch": 1,
-  "note": "typed letter 9"
+  "note": "typed letter 9 (the header name follows)"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 318,
+  "db": -17,
+  "pitch": -3,
+  "note": "site scroll pass 6"
  },
  {
   "id": "kenney-click-001",
   "frame": 322,
   "db": -19,
   "pitch": -1,
-  "note": "typed letter 10"
+  "note": "typed letter 10 (the header name follows)"
  },
  {
   "id": "kenney-click-001",
   "frame": 327,
   "db": -19,
   "pitch": 0,
-  "note": "typed letter 11"
+  "note": "typed letter 11 (the header name follows)"
  },
  {
   "id": "kenney-click-001",
   "frame": 332,
   "db": -19,
   "pitch": 1,
-  "note": "typed letter 12"
+  "note": "typed letter 12 (the header name follows)"
  },
  {
   "id": "kenney-click-001",
   "frame": 337,
   "db": -19,
   "pitch": -1,
-  "note": "typed letter 13"
+  "note": "typed letter 13 (the header name follows)"
  },
  {
   "id": "kenney-click-001",
   "frame": 342,
   "db": -19,
   "pitch": 0,
-  "note": "typed letter 14"
+  "note": "typed letter 14 (the header name follows)"
  },
  {
   "id": "kenney-click-001",
   "frame": 347,
   "db": -19,
   "pitch": 1,
-  "note": "typed letter 15"
+  "note": "typed letter 15 (the header name follows)"
  },
  {
   "id": "kenney-click-001",
   "frame": 352,
   "db": -19,
   "pitch": -1,
-  "note": "typed letter 16"
+  "note": "typed letter 16 (the header name follows)"
  },
  {
   "id": "gen-tap",
@@ -323,198 +358,163 @@
  },
  {
   "id": "gen-whoosh-short",
-  "frame": 368,
-  "db": -11,
+  "frame": 367,
+  "db": -12,
   "pitch": 0,
-  "note": "field collapses into the capsule"
+  "note": "the page unbuilds back to the wireframe"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 372,
+  "db": -14,
+  "pitch": -2,
+  "note": "prompt field drops away"
+ },
+ {
+  "id": "gen-riser-1s",
+  "frame": 375,
+  "db": -14,
+  "pitch": 0,
+  "note": "fast cascade: Creoble builds the whole page"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 375,
+  "db": -16,
+  "pitch": 0,
+  "note": "page block 1 rebuilds"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 383,
+  "db": -16,
+  "pitch": 1,
+  "note": "page block 2 rebuilds"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 391,
+  "db": -16,
+  "pitch": 2,
+  "note": "page block 3 rebuilds"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 399,
+  "db": -16,
+  "pitch": 3,
+  "note": "page block 4 rebuilds"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 407,
+  "db": -16,
+  "pitch": 4,
+  "note": "page block 5 rebuilds"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 416,
+  "db": -16,
+  "pitch": 5,
+  "note": "page block 6 rebuilds"
+ },
+ {
+  "id": "gen-tick",
+  "frame": 424,
+  "db": -16,
+  "pitch": 6,
+  "note": "page block 7 rebuilds"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 432,
+  "db": -16,
+  "pitch": -3,
+  "note": "site scrolls back up"
  },
  {
   "id": "gen-whoosh-medium",
-  "frame": 384,
-  "db": -9,
-  "pitch": 0,
-  "note": "capsule rises and shrinks into the Island"
- },
- {
-  "id": "kenney-select-002",
-  "frame": 406,
-  "db": -11,
-  "pitch": 0,
-  "note": "Island arrives"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 409,
-  "db": -13,
-  "pitch": 0,
-  "note": "phone unroll swish"
- },
- {
-  "id": "gen-pop",
-  "frame": 410,
-  "db": -9,
-  "pitch": -3,
-  "note": "phone unrolls out of the Island"
- },
- {
-  "id": "gen-tick",
-  "frame": 412,
-  "db": -16,
-  "pitch": 0,
-  "note": "site block 1 builds in the phone"
- },
- {
-  "id": "gen-tick",
-  "frame": 419,
-  "db": -16,
-  "pitch": 1,
-  "note": "site block 2 builds in the phone"
- },
- {
-  "id": "gen-tick",
-  "frame": 425,
-  "db": -16,
-  "pitch": 2,
-  "note": "site block 3 builds in the phone"
- },
- {
-  "id": "gen-tick",
-  "frame": 433,
-  "db": -16,
-  "pitch": 3,
-  "note": "site block 4 builds in the phone"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 435,
-  "db": -14,
-  "pitch": 2,
-  "note": "site scrolls through"
- },
- {
-  "id": "gen-tick",
-  "frame": 440,
-  "db": -16,
-  "pitch": 4,
-  "note": "site block 5 builds in the phone"
- },
- {
-  "id": "gen-tick",
-  "frame": 446,
-  "db": -16,
-  "pitch": 5,
-  "note": "site block 6 builds in the phone"
- },
- {
-  "id": "gen-pop",
   "frame": 488,
-  "db": -9,
-  "pitch": 2,
-  "note": "code window pops out of the Island"
+  "db": -10,
+  "pitch": 0,
+  "note": "stage flips to its back (code)"
  },
  {
   "id": "gen-tap",
-  "frame": 505,
+  "frame": 504,
+  "db": -11,
+  "pitch": -2,
+  "note": "code side lands"
+ },
+ {
+  "id": "gen-tap",
+  "frame": 510,
   "db": -8,
   "pitch": 0,
-  "note": "strike lands on the code"
+  "note": "sage strike lands on the code"
  },
  {
   "id": "gen-whoosh-short",
-  "frame": 505,
+  "frame": 510,
   "db": -15,
   "pitch": 6,
   "note": "strike swish"
  },
  {
   "id": "gen-whoosh-short",
-  "frame": 507,
-  "db": -14,
-  "pitch": -3,
-  "note": "site scrolls back up"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 516,
+  "frame": 520,
   "db": -12,
   "pitch": 0,
   "note": "sage wipe covers the code"
  },
  {
   "id": "gen-whoosh-medium",
-  "frame": 534,
-  "db": -11,
-  "pitch": 0,
-  "note": "code window collapses into the Island"
- },
- {
-  "id": "gen-whoosh-medium",
-  "frame": 544,
-  "db": -11,
-  "pitch": 0,
-  "note": "template cards fan out"
- },
- {
-  "id": "gen-tap",
-  "frame": 547,
-  "db": -15,
-  "pitch": 0,
-  "note": "card 2 settles"
- },
- {
-  "id": "gen-tap",
-  "frame": 550,
-  "db": -15,
-  "pitch": 2,
-  "note": "card 3 settles"
- },
- {
-  "id": "gen-tap",
-  "frame": 551,
-  "db": -13,
-  "pitch": 3,
-  "note": "code gone, Island taps"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 558,
-  "db": -13,
-  "pitch": 0,
-  "note": "card 1 flicked away"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 560,
-  "db": -13,
-  "pitch": 2,
-  "note": "card 2 flicked away"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 563,
-  "db": -13,
-  "pitch": 4,
-  "note": "card 3 flicked away"
- },
- {
-  "id": "gen-whoosh-short",
-  "frame": 564,
+  "frame": 529,
   "db": -10,
-  "pitch": -2,
-  "note": "phone collapses up into its Island"
+  "pitch": 0,
+  "note": "stage flips back to the site"
+ },
+ {
+  "id": "gen-tap",
+  "frame": 543,
+  "db": -12,
+  "pitch": 0,
+  "note": "site side lands"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 545,
+  "db": -12,
+  "pitch": 0,
+  "note": "template site 1 flicks through"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 551,
+  "db": -12,
+  "pitch": 2,
+  "note": "template site 2 flicks through"
+ },
+ {
+  "id": "gen-whoosh-short",
+  "frame": 557,
+  "db": -12,
+  "pitch": 4,
+  "note": "template site 3 flicks through"
+ },
+ {
+  "id": "gen-pop",
+  "frame": 580,
+  "db": -11,
+  "pitch": 2,
+  "note": "Holm's site lands"
  },
  {
   "id": "gen-whoosh-medium",
-  "frame": 577,
+  "frame": 587,
   "db": -9,
   "pitch": 0,
-  "note": "Island drops into the capsule"
- },
- {
-  "id": "gen-whoosh-whip",
-  "frame": 586,
-  "db": -8,
-  "pitch": 0,
-  "note": "hand-off whip (S2 builder: do not duplicate, or drop this one)"
+  "note": "hand-off: the stage scrolls on"
  }
 ]
