@@ -1,0 +1,85 @@
+{
+ "fps": 60,
+ "frames": 720,
+ "library": "../../alumni/sound/lib",
+ "sfx": [
+  {
+   "id": "gen-whoosh-short",
+   "frame": 40,
+   "db": -5
+  },
+  {
+   "id": "gen-pop",
+   "frame": 108,
+   "db": -2,
+   "pitch": 0
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 112,
+   "db": -7
+  },
+  {
+   "id": "gen-appear",
+   "frame": 128,
+   "db": -2
+  },
+  {
+   "id": "kenney-select-001",
+   "frame": 150,
+   "db": -7
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 280,
+   "db": -5
+  },
+  {
+   "id": "gen-pop",
+   "frame": 348,
+   "db": -2,
+   "pitch": 2
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 352,
+   "db": -7
+  },
+  {
+   "id": "gen-appear",
+   "frame": 368,
+   "db": -2
+  },
+  {
+   "id": "kenney-select-001",
+   "frame": 390,
+   "db": -7
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 520,
+   "db": -5
+  },
+  {
+   "id": "gen-pop",
+   "frame": 588,
+   "db": -2,
+   "pitch": 4
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 592,
+   "db": -7
+  },
+  {
+   "id": "gen-appear",
+   "frame": 608,
+   "db": -2
+  },
+  {
+   "id": "kenney-select-001",
+   "frame": 630,
+   "db": -7
+  }
+ ]
+}

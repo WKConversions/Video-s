@@ -1,0 +1,11 @@
+/* Vertical section handoff: compact spacing, outgoing content rises, incoming content follows. */
+.story-section {
+  padding-block: clamp(72px, 9vh, 112px);
+  transform: translate3d(0, var(--scene-y, 0px), 0);
+}
+
+@media (max-width: 900px) {
+  .story-section {
+    padding-block: 80px;
+  }
+}
