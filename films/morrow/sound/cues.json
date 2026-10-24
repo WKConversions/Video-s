@@ -1,0 +1,295 @@
+{
+ "fps": 60,
+ "frames": 720,
+ "library": "../../alumni/sound/lib",
+ "sfx": [
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 2,
+   "db": -6
+  },
+  {
+   "id": "kenney-tick-004",
+   "frame": 15,
+   "db": -7
+  },
+  {
+   "id": "kenney-tick-004",
+   "frame": 22,
+   "db": -7,
+   "pitch": 2
+  },
+  {
+   "id": "gen-appear",
+   "frame": 30,
+   "db": -6
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 62,
+   "db": -9
+  },
+  {
+   "id": "gen-tick",
+   "frame": 102,
+   "db": -13,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick",
+   "frame": 106,
+   "db": -13,
+   "pitch": 1
+  },
+  {
+   "id": "gen-tick",
+   "frame": 110,
+   "db": -13,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 114,
+   "db": -13,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick",
+   "frame": 118,
+   "db": -13,
+   "pitch": 1
+  },
+  {
+   "id": "gen-tick",
+   "frame": 122,
+   "db": -13,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 126,
+   "db": -13,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick",
+   "frame": 130,
+   "db": -13,
+   "pitch": 1
+  },
+  {
+   "id": "gen-tick",
+   "frame": 134,
+   "db": -13,
+   "pitch": 2
+  },
+  {
+   "id": "kenney-click-001",
+   "frame": 153,
+   "db": -2
+  },
+  {
+   "id": "gen-chime",
+   "frame": 160,
+   "db": -5,
+   "pitch": 0
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 215,
+   "db": -8
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 242,
+   "db": -6
+  },
+  {
+   "id": "kenney-tick-004",
+   "frame": 255,
+   "db": -7
+  },
+  {
+   "id": "kenney-tick-004",
+   "frame": 262,
+   "db": -7,
+   "pitch": 2
+  },
+  {
+   "id": "gen-appear",
+   "frame": 270,
+   "db": -6
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 302,
+   "db": -9
+  },
+  {
+   "id": "gen-tick",
+   "frame": 342,
+   "db": -13,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick",
+   "frame": 346,
+   "db": -13,
+   "pitch": 1
+  },
+  {
+   "id": "gen-tick",
+   "frame": 350,
+   "db": -13,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 354,
+   "db": -13,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick",
+   "frame": 358,
+   "db": -13,
+   "pitch": 1
+  },
+  {
+   "id": "gen-tick",
+   "frame": 362,
+   "db": -13,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 366,
+   "db": -13,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick",
+   "frame": 370,
+   "db": -13,
+   "pitch": 1
+  },
+  {
+   "id": "gen-tick",
+   "frame": 374,
+   "db": -13,
+   "pitch": 2
+  },
+  {
+   "id": "kenney-click-001",
+   "frame": 393,
+   "db": -2
+  },
+  {
+   "id": "gen-chime",
+   "frame": 400,
+   "db": -5,
+   "pitch": 2
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 455,
+   "db": -8
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 482,
+   "db": -6
+  },
+  {
+   "id": "kenney-tick-004",
+   "frame": 495,
+   "db": -7
+  },
+  {
+   "id": "kenney-tick-004",
+   "frame": 502,
+   "db": -7,
+   "pitch": 2
+  },
+  {
+   "id": "gen-appear",
+   "frame": 510,
+   "db": -6
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 542,
+   "db": -9
+  },
+  {
+   "id": "gen-tick",
+   "frame": 582,
+   "db": -13,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick",
+   "frame": 586,
+   "db": -13,
+   "pitch": 1
+  },
+  {
+   "id": "gen-tick",
+   "frame": 590,
+   "db": -13,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 594,
+   "db": -13,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick",
+   "frame": 598,
+   "db": -13,
+   "pitch": 1
+  },
+  {
+   "id": "gen-tick",
+   "frame": 602,
+   "db": -13,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 606,
+   "db": -13,
+   "pitch": 0
+  },
+  {
+   "id": "gen-tick",
+   "frame": 610,
+   "db": -13,
+   "pitch": 1
+  },
+  {
+   "id": "gen-tick",
+   "frame": 614,
+   "db": -13,
+   "pitch": 2
+  },
+  {
+   "id": "kenney-click-001",
+   "frame": 633,
+   "db": -2
+  },
+  {
+   "id": "gen-chime",
+   "frame": 640,
+   "db": -5,
+   "pitch": 4
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 695,
+   "db": -8
+  }
+ ]
+}
