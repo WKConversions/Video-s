@@ -1,0 +1,198 @@
+{
+ "fps": 60,
+ "frames": 720,
+ "library": "../../alumni/sound/lib",
+ "sfx": [
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 2,
+   "db": -5
+  },
+  {
+   "id": "gen-pop",
+   "frame": 15,
+   "db": -5,
+   "pitch": 0
+  },
+  {
+   "id": "gen-pop",
+   "frame": 23,
+   "db": -5,
+   "pitch": 1
+  },
+  {
+   "id": "gen-pop",
+   "frame": 31,
+   "db": -5,
+   "pitch": 2
+  },
+  {
+   "id": "gen-pop",
+   "frame": 39,
+   "db": -5,
+   "pitch": 3
+  },
+  {
+   "id": "kenney-tick-004",
+   "frame": 57,
+   "db": -5,
+   "pitch": 0
+  },
+  {
+   "id": "kenney-tick-004",
+   "frame": 74,
+   "db": -5,
+   "pitch": 1
+  },
+  {
+   "id": "kenney-tick-004",
+   "frame": 91,
+   "db": -5,
+   "pitch": 2
+  },
+  {
+   "id": "kenney-click-001",
+   "frame": 100,
+   "db": -12
+  },
+  {
+   "id": "kenney-click-001",
+   "frame": 105,
+   "db": -12
+  },
+  {
+   "id": "kenney-click-001",
+   "frame": 110,
+   "db": -12
+  },
+  {
+   "id": "kenney-click-001",
+   "frame": 115,
+   "db": -12
+  },
+  {
+   "id": "kenney-click-001",
+   "frame": 120,
+   "db": -12
+  },
+  {
+   "id": "kenney-click-001",
+   "frame": 125,
+   "db": -12
+  },
+  {
+   "id": "kenney-click-001",
+   "frame": 130,
+   "db": -12
+  },
+  {
+   "id": "kenney-click-001",
+   "frame": 135,
+   "db": -12
+  },
+  {
+   "id": "kenney-click-001",
+   "frame": 140,
+   "db": -12
+  },
+  {
+   "id": "kenney-click-001",
+   "frame": 145,
+   "db": -12
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 215,
+   "db": -7
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 242,
+   "db": -5
+  },
+  {
+   "id": "gen-appear",
+   "frame": 255,
+   "db": -4,
+   "pitch": 0
+  },
+  {
+   "id": "gen-appear",
+   "frame": 268,
+   "db": -4,
+   "pitch": 2
+  },
+  {
+   "id": "gen-appear",
+   "frame": 281,
+   "db": -4,
+   "pitch": 4
+  },
+  {
+   "id": "gen-pop",
+   "frame": 294,
+   "db": -6,
+   "pitch": 0
+  },
+  {
+   "id": "gen-pop",
+   "frame": 307,
+   "db": -6,
+   "pitch": 1
+  },
+  {
+   "id": "gen-pop",
+   "frame": 320,
+   "db": -6,
+   "pitch": 2
+  },
+  {
+   "id": "gen-chime",
+   "frame": 340,
+   "db": -6
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 455,
+   "db": -7
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 482,
+   "db": -5
+  },
+  {
+   "id": "gen-swell",
+   "frame": 500,
+   "db": -8
+  },
+  {
+   "id": "gen-success",
+   "frame": 630,
+   "db": -4
+  },
+  {
+   "id": "gen-pop",
+   "frame": 534,
+   "db": -5,
+   "pitch": 0
+  },
+  {
+   "id": "gen-pop",
+   "frame": 561,
+   "db": -5,
+   "pitch": 2
+  },
+  {
+   "id": "gen-pop",
+   "frame": 588,
+   "db": -5,
+   "pitch": 4
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 695,
+   "db": -7
+  }
+ ]
+}
