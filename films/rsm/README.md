@@ -19,5 +19,6 @@ College London, ABRSM; both on the site); S8 the melody runs along a staff; S9 e
 
 - **Sound:** `sound/make_cues.py` → `sound_mix.py`; effects from `films/alumni/sound/lib`; bed Mixkit "Driving
   Ambition" (no credit needed), fitted with `music_fit.py` (lift on "Meet").
-- **Motion:** preview median 1.8%, moving in 93% of frames (see the session for the target).
-- **Deliverables:** `deliver/rsm-preview-540p60.mp4`.
+- **Motion:** median 1.8%, moving in 94% of frames (no target given; approved by Karl). Shake check: two small flags
+  (9.9–10.5 s wordmark landing, 27.2–27.9 s the teachers → certificate hand-off, up to 3.8 px).
+- **Deliverables:** `deliver/royal-school-of-music-35s-1080p60.mp4` (final, H.264 BT.709, AAC), `deliver/rsm-preview-540p60.mp4`.
