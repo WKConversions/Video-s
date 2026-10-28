@@ -1,3 +1,18 @@
+# Update, 28 October 2026: version 3.0, the complete copy (approved by Karl)
+
+Upload `senior-motion-designer.zip` again. The skill now carries everything the October films were made with, so a
+copy runs on its own:
+- **`START-HERE.md`**: setup, the first test, how to start a film, the quality bar, and what a copy cannot carry.
+- **`house/`**: the house rules (from `CLAUDE.md`), `BRIEF_TEMPLATE.md`, the Creoble Apple-style brief.
+- **`templates/`**: Creoble v5 (full source, fonts, images, dither) and the Klyro, Fieldnote and Morrow House loops.
+- **`sounds/lib/`**: the 24 effects (4.3 MB).
+- **`setup/`**: `cloud-setup.sh`, `get_blender.sh`.
+- **`test/`**: `verify.sh` plus `reference.json` (approved motion medians and the loop seam).
+- **Scripts:** `glitch_check.py`, `storyboard_sheet.py`, `clipcheck.py`.
+- **`examples/corrections.md`**: this week's lessons (calm camera, everything centred, the product as hero with no
+  scroll ping-pong, even Apple shadows plus dither) and the Creoble v5 and loop entries.
+- **`SKILL.md`**: version line, the bundled-kit section; the sounds are now bundled.
+
 # Update, 22 October 2026: Apple-style lessons and the realism module (approved by Karl)
 
 Upload `senior-motion-designer.zip` again to replace the skill; it contains everything below plus the Tale Forge

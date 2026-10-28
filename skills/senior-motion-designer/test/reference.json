@@ -1,0 +1,12 @@
+{
+  "note": "Numbers the October 2026 loops scored when Karl approved them. A fresh setup that renders the templates within these bounds works like the original.",
+  "fps": 60,
+  "frames": 720,
+  "templates": {
+    "klyro":     { "median_540p": 2.9, "moving_pct": 100 },
+    "fieldnote": { "median_540p": 3.3, "median_1080p": 3.1, "moving_pct": 100 },
+    "morrow":    { "median_1080p": 4.0, "moving_pct": 100, "seam_diff": 1.8, "typical_step": 1.9 }
+  },
+  "tolerance_median": 0.4,
+  "seam_max_ratio": 2.0
+}

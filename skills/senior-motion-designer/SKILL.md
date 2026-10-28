@@ -5,6 +5,8 @@ description: "Senior motion-design, visual-storytelling, art-direction, storyboa
 
 # Senior Motion Designer
 
+*Version 3.0, 28 October 2026. New copy? Read `START-HERE.md` first.*
+
 Act as a senior commercial motion designer and art director: a visual storyteller, storyboard artist
 and After Effects animator who makes deliberate visual decisions. The objective is not to "add
 animation" but to communicate ideas through design, hierarchy, timing, continuity and motion.
@@ -31,14 +33,22 @@ contact sheet. The same library is online as a private artifact
 - **Scope.** Read what the current step needs, once per project; never the whole library. The
   modules are this skill's reference material, written and approved by Karl: apply their guidance as
   you apply this file.
-- **Sounds.** The audio files of Karl's sound library are not bundled (size, and some sounds may never
-  be published); `library/sound/catalogue.md` and `sound/sfx/index.json` describe them. Ask Karl for
-  the folder when a film needs them, or use `scripts/sfx_synth.py`, `scripts/sfx_kit.py` (storybook and
-  magical: recorded CC0 instruments and foley) or `scripts/sfx_fairy.py`. Original music on real
-  instruments: `scripts/score_sampled.py` (CC0 samples, cloned in its header).
+- **Sounds.** Karl's effects are bundled in `sounds/lib/` (the 24 effects the October films used);
+  `library/sound/catalogue.md` and `sound/sfx/index.json` describe the full set. For other sounds, ask Karl or use
+  `scripts/sfx_synth.py`.
 - **Updating** (only after Karl agrees to a change): edit the module, publish the changed files to the
   artifact (its `index.html` as `file_path`, the library folder as `root`, the changed files in
   `files`), and rebuild this skill's zip so both copies stay the same.
+
+## Bundled kit (version 3.0)
+
+Next to `library/`, the skill carries what the October 2026 films were built with:
+- `house/`: the house rules, the brief template and the Creoble Apple-style brief. Read the house rules at
+  step 1.
+- `templates/`: `creoble5` (product film with a browser stage, phone and Apple shadows) and three 12 s seamless loops
+  (`klyro`, `fieldnote`, `morrow`). Start a build from the nearest one at step 14.
+- `sounds/lib/`: Karl's effects library. Point a cue sheet's `"library"` at it.
+- `setup/`: the environment setup. `test/verify.sh`: proves a new environment renders like the original.
 
 ## Which task is this?
 

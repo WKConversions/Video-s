@@ -38,6 +38,13 @@ planning; read the entries of the categories you are working on when a decision 
 - Realistic frames are motion design too: a speed-ramped virtual camera, zoom-through joints, UI breaking out of
   the screen (`production/realism.md`); real footage under a linear drift reads as stock, not design.
 - Say the generation time when a job starts; when Karl asks for a quick preview, send one first (minutes, not hours).
+- Calm camera: few reframes (one per sentence at most), each 1.2–2 s on a soft ease from rest to rest, no spring or
+  overshoot on the camera, zoom within ±12%; the springs live on the objects (Creoble v5).
+- Centre everything: the camera zooms about the frame centre only, never pans; two things sharing the frame are
+  centred as a group.
+- Reach a motion target with motion that explains: the client's product (their website, their app) as the one hero
+  object, always doing something; never decorative wobble; never scroll a page up and down.
+- Shadows Apple-style: layered, no offset, even on all sides, generous; a static dither against banding.
 
 ## Adding a correction
 
@@ -395,6 +402,31 @@ FINAL APPROACH: A 9 s preview in about 10 minutes (two parallel builders while t
 full version offered after.
 GENERAL LESSON: Give the generation time at the start of every job. When speed is asked for, ship the smallest
 convincing preview first and skip review rounds he didn't ask for.
+
+## Creoble v5 and the loops (October 2026)
+
+CATEGORY: Composition / motion
+DATE / PROJECT: October 2026, Creoble v5 (Danish, 55 s)
+USER CORRECTIONS, in order: "way way way more minimalistic … now it's all too big" → a single small capsule measured
+0.8% motion → "bigger object and 7% useful motion" → the client's website as the one hero object (7.4%) → "I don't
+like that the website is constantly scrolling up and down" → camera framing and in-place changes instead → "UIs with
+drop shadow same as Apple style" → "more size drop shadow, no direction, even all sides" → "more Apple-style heavy
+animations" → "the view shifting is too choppy, softer, smoother, slower" → "make sure stuff is as centred as possible".
+FINAL APPROACH: the website (browser ≈ half the frame, or the phone) is the hero; every phrase acts on it; heavy
+springs on objects only; a calm, centred, zoom-only camera; even layered shadows plus a static dither; one calm
+downward pass at most; ≈3% motion. Worked example: `templates/creoble5`, `house/creoble-style-brief.md`.
+GENERAL LESSON: minimal ≠ small; motion targets come from the product doing things, not from decoration or camera
+moves; a calm camera beats a busy one; centre.
+
+CATEGORY: Process / format
+DATE / PROJECT: October 2026, Klyro, Fieldnote, Morrow House (12 s loops from a website archive, 15 minutes each)
+USER CORRECTION: "why more than an hour, it's just 12 seconds"; "something simple in 15 minutes".
+FINAL APPROACH: one composition, 720 frames at 60 fps; 3 beats of 4 s on one centred product card in the site's own
+brand (colours and fonts from its CSS, copy from its HTML); two lanes of small chips streaming at a speed where
+speed × 12 s is a whole number of chip spacings (seamless); each beat enters from and leaves to an empty card body;
+effects every 4 s; check seam diff (last vs first frame) ≈ a normal frame step. Templates: `templates/klyro`,
+`templates/fieldnote`, `templates/morrow`.
+GENERAL LESSON: a short loop is a template job: start from the loop template, harvest the brand, ship in 15 minutes.
 
 ## Process corrections
 
