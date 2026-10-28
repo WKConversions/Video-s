@@ -1,0 +1,37 @@
+01    1.60– 4.66s  kb builds the software and automation your business runs
+02    4.66– 5.42s  on
+03    5.42– 6.50s  with you
+04    6.50– 7.24s  how
+05    7.24– 9.22s  we start with a process audit
+06    9.30–10.72s  how your team works today
+07   10.72–11.98s  where the friction is
+08   11.98–14.00s  and what to improve first
+09   14.16–16.04s  then we build together
+10   16.06–17.34s  in the open
+11   17.34–18.36s  intake forms
+12   18.36–20.94s  follow ups and crm updates run on their own
+13   20.94–21.98s  with make
+14   21.98–22.60s  n8n
+15   22.60–25.22s  and ai agents doing the manual work
+16   25.22–26.10s  need more
+17   26.10–27.98s  we build custom software
+18   28.24–29.04s  dashboards
+19   29.04–29.64s  websites
+20   29.64–32.36s  and mobile apps tailored to how your team already
+21   32.36–33.26s  works
+22   33.40–34.78s  every tool you use
+23   34.78–35.50s  connected
+24   35.50–36.86s  so data flows without
+25   36.86–38.12s  copy paste
+26   38.12–40.78s  we work inside your team not around it so
+27   40.78–42.68s  you always know what were doing
+28   42.68–43.74s  and after launch
+29   43.74–45.12s  we stay on
+30   45.62–46.58s  hosting maintenance
+31   46.58–49.72s  and new features every month as your business grows
+32   50.04–50.82s  diagnose
+33   50.82–51.40s  build
+34   51.40–52.28s  run
+35   52.28–53.02s  one loop
+36   53.02–55.44s  so your systems keep up with your growth
+37   55.44–56.46s  talk to kb

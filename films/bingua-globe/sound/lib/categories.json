@@ -1,0 +1,945 @@
+{
+  "_about": "Karl's sound effects, sorted by what they are for (judged from their waveforms and measurements: sfx_index.py). licence: pixabay = Pixabay Content License, free for commercial use without attribution; karl = Karl's own motion-design pack (October 2026, \"SFX pack 2\"), supplied by him for client films; cc0 = public domain (Kenney's Interface Sounds, kenney.nl, CC0 1.0), free for any use, no credit; apple = Apple's own system sounds, for reference and internal drafts only, never in a client delivery. character: how it feels, to match the film's motion identity.",
+  "categories": {
+    "tap": "a finger touching the screen, a button pressed, a selection: one short transient",
+    "double-tap": "a two-part click: a toggle, a confirm, a pressed-and-released button",
+    "pop": "something small appearing: a card, a pin, a bubble, a badge",
+    "appear-rise": "something opening or growing: a panel, a sheet, a window, a reveal; pitch rises",
+    "dismiss-fall": "something closing, leaving or switching off; pitch falls",
+    "chime": "a message or notification arriving; tonal, with a ring",
+    "success": "something done, confirmed, saved, paid; rising notes",
+    "ticker": "a run of even ticks: counting, loading, a list or wheel scrolling, typing",
+    "swipe": "something sliding or sent: a swipe, a send, a soft move",
+    "camera": "a photo taken",
+    "stinger": "a long tonal moment: a start-up, a logo; use sparingly",
+    "whoosh": "something passing the camera: a move, a fly-past, a whip, a scene change; lands at its loudest moment",
+    "riser": "a build into a reveal; lands at the end of the climb",
+    "gear": "something mechanical turning: a dial, a wheel, a counter winding, a part fitting into a system, a process running",
+    "money": "a payment, a sale, revenue: a cash register or coins; literal, so only where money is the subject",
+    "data": "digital processing: data loading, collected, scanned or analysed; an AI thinking; a stream of blips",
+    "glitch": "a digital glitch or flicker: a text glitch, a screen switching, a tech reveal",
+    "error": "something wrong, rejected or failed: the problem beat (a red error, a declined card, a broken flow); soft, never harsh"
+  },
+  "sounds": {
+    "u-o8xh7gwsrj-app-interface-click-2": [
+      "tap",
+      "crisp, neutral",
+      "pixabay"
+    ],
+    "u-o8xh7gwsrj-bubble-pop-1": [
+      "tap",
+      "tiny, bright, light",
+      "pixabay"
+    ],
+    "ui-sounds-pack-3-15": [
+      "tap",
+      "soft, rounded",
+      "pixabay"
+    ],
+    "u-2ttqv1v1rq-14-plopp-1": [
+      "tap",
+      "soft plop, friendly",
+      "pixabay"
+    ],
+    "soundshelfstudio-ui-click-deep": [
+      "tap",
+      "deep, soft, premium",
+      "pixabay"
+    ],
+    "dragon-studio-notification-click-sound": [
+      "tap",
+      "click with a short ring",
+      "pixabay"
+    ],
+    "malwaa-button-09": [
+      "tap",
+      "button with a ring",
+      "pixabay"
+    ],
+    "existentialtaco-confirm-tap": [
+      "tap",
+      "rising confirm tap, positive",
+      "pixabay"
+    ],
+    "ui-sounds-pack-3-14": [
+      "double-tap",
+      "light double click",
+      "pixabay"
+    ],
+    "ui-sounds-pack-3-18": [
+      "double-tap",
+      "bright double click",
+      "pixabay"
+    ],
+    "floraphonic-punchy-taps-ui-9": [
+      "double-tap",
+      "punchy, bright",
+      "pixabay"
+    ],
+    "juniorsoundays-ui-sound-70": [
+      "double-tap",
+      "soft double",
+      "pixabay"
+    ],
+    "floraphonic-minimal-pop-click-ui-3": [
+      "double-tap",
+      "minimal, clean",
+      "pixabay"
+    ],
+    "ui-pop-sound": [
+      "pop",
+      "clean, rising",
+      "pixabay"
+    ],
+    "universfield-bubble-pop-03": [
+      "pop",
+      "bubbly, soft",
+      "pixabay"
+    ],
+    "soundreality-ui-pop-up": [
+      "pop",
+      "soft, low",
+      "pixabay"
+    ],
+    "soundreality-ui-pop-up-clear": [
+      "pop",
+      "clear, rising",
+      "pixabay"
+    ],
+    "miraclei-tiktok-pop-notification3-by-miraclei": [
+      "pop",
+      "bright, social",
+      "pixabay"
+    ],
+    "floraphonic-casual-click-pop-ui-2": [
+      "pop",
+      "playful, casual",
+      "pixabay"
+    ],
+    "floraphonic-casual-click-pop-ui-3": [
+      "pop",
+      "playful, casual",
+      "pixabay"
+    ],
+    "floraphonic-multi-pop-2": [
+      "pop",
+      "two items appearing",
+      "pixabay"
+    ],
+    "pop-up-notify-smooth-modern": [
+      "appear-rise",
+      "smooth, modern",
+      "pixabay"
+    ],
+    "ui-sounds-pack-3-10": [
+      "appear-rise",
+      "two quick rising pops",
+      "pixabay"
+    ],
+    "ui-sounds-pack-2-sound-5": [
+      "appear-rise",
+      "soft rising swell",
+      "pixabay"
+    ],
+    "floraphonic-90s-game-ui-10": [
+      "appear-rise",
+      "bright, playful, game-like",
+      "pixabay"
+    ],
+    "game-start": [
+      "appear-rise",
+      "rising, bold (0.6 s lead-in)",
+      "pixabay"
+    ],
+    "freesound-community-ui-sci-fi-sound": [
+      "appear-rise",
+      "slow riser into its peak at 1.1 s",
+      "pixabay"
+    ],
+    "ui-sound-off": [
+      "dismiss-fall",
+      "soft falling",
+      "pixabay"
+    ],
+    "notification-1-reversed": [
+      "dismiss-fall",
+      "falling echoes",
+      "pixabay"
+    ],
+    "ui-6-sound-effect-modern-smooth-fade-out-stereo": [
+      "dismiss-fall",
+      "smooth fade-out",
+      "pixabay"
+    ],
+    "malwaa-button-10": [
+      "dismiss-fall",
+      "three falling taps",
+      "pixabay"
+    ],
+    "floraphonic-casual-click-pop-ui-5": [
+      "dismiss-fall",
+      "playful falling pop",
+      "pixabay"
+    ],
+    "floraphonic-multi-pop-1": [
+      "dismiss-fall",
+      "two pops, falling",
+      "pixabay"
+    ],
+    "juniorsoundays-ui-sound-24": [
+      "dismiss-fall",
+      "sparkly, falling",
+      "pixabay"
+    ],
+    "soundreality-ui-bubble": [
+      "dismiss-fall",
+      "loud bubble, close",
+      "pixabay"
+    ],
+    "ui-1-sound-effect-notification": [
+      "chime",
+      "soft, long ring",
+      "pixabay"
+    ],
+    "ui-sounds-pack-2-sound-2": [
+      "chime",
+      "two notes, gentle",
+      "pixabay"
+    ],
+    "ui-sounds-pack-2-sound-1": [
+      "chime",
+      "two pings",
+      "pixabay"
+    ],
+    "floraphonic-90s-game-ui-2": [
+      "chime",
+      "bright, falling",
+      "pixabay"
+    ],
+    "freesound-community-beep-6": [
+      "chime",
+      "warm beep",
+      "pixabay"
+    ],
+    "soundshelfstudio-ui-notification-for-pc": [
+      "chime",
+      "soft, full",
+      "pixabay"
+    ],
+    "soundshelfstudio-ui-radio-select": [
+      "chime",
+      "single soft ping",
+      "pixabay"
+    ],
+    "soundshelfstudio-ui-soft-glass-ping": [
+      "chime",
+      "glassy, two notes, premium",
+      "pixabay"
+    ],
+    "universfield-new-notification-012": [
+      "chime",
+      "warm, modern",
+      "pixabay"
+    ],
+    "universfield-new-notification-04": [
+      "chime",
+      "modern, rising",
+      "pixabay"
+    ],
+    "u-2ttqv1v1rq-04-handy-mitteilung-2": [
+      "chime",
+      "phone message",
+      "pixabay"
+    ],
+    "universfield-bubble-pop-05": [
+      "chime",
+      "bubbly notification",
+      "pixabay"
+    ],
+    "soundshelfstudio-ui-success-bloom": [
+      "success",
+      "three rising notes, bright, premium",
+      "pixabay"
+    ],
+    "ui-sounds-pack-2-sound-4": [
+      "success",
+      "three rising pops",
+      "pixabay"
+    ],
+    "ui-sounds-pack-5-2": [
+      "success",
+      "three quick notes, light",
+      "pixabay"
+    ],
+    "floraphonic-90s-game-ui-7": [
+      "success",
+      "bright arpeggio, playful",
+      "pixabay"
+    ],
+    "floraphonic-90s-game-ui-6": [
+      "success",
+      "bright, rising, playful",
+      "pixabay"
+    ],
+    "ui-sounds-pack-3-13": [
+      "success",
+      "three quick rising notes",
+      "pixabay"
+    ],
+    "freesound-community-button-pressed": [
+      "success",
+      "confirm with a ring",
+      "pixabay"
+    ],
+    "u-vhdh7nfefn-click-01": [
+      "success",
+      "swell, then a full confirm",
+      "pixabay"
+    ],
+    "floraphonic-ui-pop-up-15": [
+      "ticker",
+      "eight even ticks: counting, loading",
+      "pixabay"
+    ],
+    "miraclei-sample-soft-tap02-kofi-by-miraclei": [
+      "ticker",
+      "soft ticks slowing down: a scroll settling",
+      "pixabay"
+    ],
+    "humordome-soft-ui-pop-light-minimal-click": [
+      "ticker",
+      "soft clicks fading: a bounce settling",
+      "pixabay"
+    ],
+    "soundshelfstudio-ui-swipe-confirm": [
+      "swipe",
+      "soft swell",
+      "pixabay"
+    ],
+    "arnav-geddada-ui-sound": [
+      "swipe",
+      "soft move with a buzz",
+      "pixabay"
+    ],
+    "iphone-apple-pay": [
+      "success",
+      "Apple Pay",
+      "apple"
+    ],
+    "double-bubble-pop": [
+      "pop",
+      "Apple double pop",
+      "apple"
+    ],
+    "pop": [
+      "pop",
+      "Apple pop",
+      "apple"
+    ],
+    "mail-notification": [
+      "chime",
+      "Apple mail",
+      "apple"
+    ],
+    "message": [
+      "chime",
+      "Apple message",
+      "apple"
+    ],
+    "iphone-notification": [
+      "chime",
+      "Apple notification",
+      "apple"
+    ],
+    "twitter": [
+      "chime",
+      "two chirps",
+      "apple"
+    ],
+    "start-video": [
+      "chime",
+      "Apple record start",
+      "apple"
+    ],
+    "one-keyboard-click": [
+      "tap",
+      "Apple keyboard key",
+      "apple"
+    ],
+    "turn-off-phone": [
+      "dismiss-fall",
+      "Apple lock",
+      "apple"
+    ],
+    "charge-connection": [
+      "dismiss-fall",
+      "Apple charge",
+      "apple"
+    ],
+    "send": [
+      "swipe",
+      "Apple send swoosh",
+      "apple"
+    ],
+    "send-2": [
+      "swipe",
+      "Apple send swoosh",
+      "apple"
+    ],
+    "mail-in": [
+      "swipe",
+      "Apple mail sent",
+      "apple"
+    ],
+    "iphone-camera-shot": [
+      "camera",
+      "Apple shutter",
+      "apple"
+    ],
+    "spin-sound": [
+      "ticker",
+      "Apple picker wheel spinning",
+      "apple"
+    ],
+    "iphone-texting": [
+      "ticker",
+      "Apple keyboard typing, 43 s",
+      "apple"
+    ],
+    "mac-startup": [
+      "stinger",
+      "Mac start-up chord",
+      "apple"
+    ],
+    "futuristic-sfx": [
+      "stinger",
+      "sci-fi swell",
+      "apple"
+    ],
+    "low-battery": [
+      "stinger",
+      "Apple low battery",
+      "apple"
+    ],
+    "ui-sounds": [
+      "stinger",
+      "a compilation of Apple UI sounds (split before use)",
+      "apple"
+    ],
+    "fast-gear-2": [
+      "gear",
+      "fast ratchet, slowing then racing",
+      "karl"
+    ],
+    "fast-gear": [
+      "gear",
+      "dense fast ratchet",
+      "karl"
+    ],
+    "smooth-and-premium-gear": [
+      "gear",
+      "sparse premium ticks, a dial turning",
+      "karl"
+    ],
+    "soft-gear-1": [
+      "gear",
+      "soft, a few ticks",
+      "karl"
+    ],
+    "soft-gear-2": [
+      "gear",
+      "soft, slow ticks",
+      "karl"
+    ],
+    "long-speed-gear": [
+      "gear",
+      "quick ratchet that runs down, 0.5 s",
+      "karl"
+    ],
+    "middle-gear": [
+      "gear",
+      "even ratchet, 0.7 s",
+      "karl"
+    ],
+    "camera-shutter": [
+      "camera",
+      "soft shutter",
+      "karl"
+    ],
+    "little-bit-hard-cammera-shutter": [
+      "camera",
+      "firm shutter",
+      "karl"
+    ],
+    "smooth-cammera-shutter": [
+      "camera",
+      "smooth shutter with a wind-on",
+      "karl"
+    ],
+    "ui-beatbox-click-01": [
+      "tap",
+      "punchy beatbox click",
+      "karl"
+    ],
+    "ui-premium-open": [
+      "appear-rise",
+      "premium open, a long low swell",
+      "karl"
+    ],
+    "ui-backspace": [
+      "tap",
+      "low thock, a backspace",
+      "karl"
+    ],
+    "ui-click-digital-03": [
+      "tap",
+      "digital, bright",
+      "karl"
+    ],
+    "ui-click-digital-04": [
+      "tap",
+      "digital, faint",
+      "karl"
+    ],
+    "ui-click": [
+      "tap",
+      "low click with a soft tail",
+      "karl"
+    ],
+    "ui-digital-click": [
+      "dismiss-fall",
+      "digital blip, falling",
+      "karl"
+    ],
+    "ui-enter": [
+      "tap",
+      "low, soft enter",
+      "karl"
+    ],
+    "ui-glitch-click": [
+      "glitch",
+      "glitchy click",
+      "karl"
+    ],
+    "ui-glitch-flicker-text": [
+      "glitch",
+      "flicker, a text glitch",
+      "karl"
+    ],
+    "ui-granular-button-select": [
+      "double-tap",
+      "granular select",
+      "karl"
+    ],
+    "ui-granular-button-select-2": [
+      "double-tap",
+      "granular, rising",
+      "karl"
+    ],
+    "ui-open": [
+      "appear-rise",
+      "airy open, 1.5 s",
+      "karl"
+    ],
+    "ui-typing": [
+      "ticker",
+      "typing, soft and low",
+      "karl"
+    ],
+    "ui-button": [
+      "pop",
+      "bubbly button, rising",
+      "karl"
+    ],
+    "ui-stretch": [
+      "swipe",
+      "elastic stretch",
+      "karl"
+    ],
+    "ui": [
+      "data",
+      "digital sparkle chatter, falling",
+      "karl"
+    ],
+    "uu-click-digital-01": [
+      "glitch",
+      "digital noise click",
+      "karl"
+    ],
+    "v4-type-delete": [
+      "tap",
+      "tiny key tap",
+      "karl"
+    ],
+    "cinematic-fast-normal-whoosh": [
+      "whoosh",
+      "fast, cinematic, short",
+      "karl"
+    ],
+    "cinematic-fast-whoosh": [
+      "whoosh",
+      "fast, airy, cinematic",
+      "karl"
+    ],
+    "cinematic-long-whoosh": [
+      "whoosh",
+      "long cinematic pass",
+      "karl"
+    ],
+    "cinematic-low-whoosh": [
+      "whoosh",
+      "low, cinematic, 2 s",
+      "karl"
+    ],
+    "cinematic-mediam-whoosh": [
+      "whoosh",
+      "medium, cinematic",
+      "karl"
+    ],
+    "data-whoosh": [
+      "whoosh",
+      "digital, a data whoosh",
+      "karl"
+    ],
+    "fast-whoosh": [
+      "whoosh",
+      "fast, airy, falling",
+      "karl"
+    ],
+    "fast-whoosh-2": [
+      "whoosh",
+      "rising pass, 2.6 s",
+      "karl"
+    ],
+    "high-and-fast-whoosh": [
+      "whoosh",
+      "fast, clean pass",
+      "karl"
+    ],
+    "high-and-fast-woosh": [
+      "whoosh",
+      "fast pass, fuller",
+      "karl"
+    ],
+    "long-whoosh": [
+      "whoosh",
+      "long, soft",
+      "karl"
+    ],
+    "simple-whoosh-2": [
+      "whoosh",
+      "deep double swoosh",
+      "karl"
+    ],
+    "simple-whoosh": [
+      "whoosh",
+      "soft, simple",
+      "karl"
+    ],
+    "slow-and-smooth-whoosh": [
+      "whoosh",
+      "slow, smooth",
+      "karl"
+    ],
+    "smooth-and-fast-whoosh": [
+      "whoosh",
+      "smooth, fast, deep",
+      "karl"
+    ],
+    "whoosh-deep-light-2": [
+      "whoosh",
+      "deep, light, long",
+      "karl"
+    ],
+    "whoosh-deep-short": [
+      "whoosh",
+      "deep, short",
+      "karl"
+    ],
+    "epic-fast-whoosh": [
+      "whoosh",
+      "epic, short, pulsing",
+      "pixabay"
+    ],
+    "cinematic-money-1": [
+      "money",
+      "cash register ring, cinematic",
+      "karl"
+    ],
+    "cinematic-money-2": [
+      "money",
+      "coins, cinematic",
+      "karl"
+    ],
+    "high-volume-money": [
+      "money",
+      "cash register, full",
+      "karl"
+    ],
+    "mediam-volume-mone": [
+      "money",
+      "coins, light",
+      "karl"
+    ],
+    "premium-riser": [
+      "appear-rise",
+      "premium shimmer open, an airy tail",
+      "karl"
+    ],
+    "rjd-riser": [
+      "appear-rise",
+      "fast sweep up with a ring",
+      "karl"
+    ],
+    "riser-2": [
+      "riser",
+      "long build to a hit, 6 s",
+      "karl"
+    ],
+    "riser": [
+      "riser",
+      "short build to a hit, 2 s",
+      "karl"
+    ],
+    "smooth-riser": [
+      "riser",
+      "pulsing tonal swell, 2.5 s",
+      "karl"
+    ],
+    "cinematic-data-collect-2": [
+      "data",
+      "cinematic data stream, 3.5 s",
+      "karl"
+    ],
+    "cinematic-data": [
+      "data",
+      "faint data chatter",
+      "karl"
+    ],
+    "data-collect": [
+      "data",
+      "fast data beeps, 1.2 s",
+      "karl"
+    ],
+    "data-collect-2": [
+      "data",
+      "rising data blips",
+      "karl"
+    ],
+    "ma-tuttkile-stopwatch-3": [
+      "ticker",
+      "stopwatch ticking, 5.6 s",
+      "karl"
+    ],
+    "meadia-pop": [
+      "pop",
+      "deep, round",
+      "karl"
+    ],
+    "normal-pop": [
+      "pop",
+      "clean, single",
+      "karl"
+    ],
+    "premium-and-smooth-pop": [
+      "pop",
+      "smooth double pop, premium",
+      "karl"
+    ],
+    "slow-and-smooth-pop": [
+      "pop",
+      "soft, round",
+      "karl"
+    ],
+    "smooth-pop": [
+      "pop",
+      "bright, airy",
+      "karl"
+    ],
+    "sweet-ui-open": [
+      "pop",
+      "sweet double pop, an opening",
+      "karl"
+    ],
+    "cinematic-click": [
+      "tap",
+      "short, crisp",
+      "karl"
+    ],
+    "click": [
+      "tap",
+      "low tonal click, rising",
+      "karl"
+    ],
+    "click-2": [
+      "double-tap",
+      "bright double click",
+      "karl"
+    ],
+    "high-click": [
+      "tap",
+      "high, tight",
+      "karl"
+    ],
+    "kenney-back-001": [
+      "tap",
+      "tiny, bright tick",
+      "cc0"
+    ],
+    "kenney-bong-001": [
+      "impact",
+      "soft low bong",
+      "cc0"
+    ],
+    "kenney-click-001": [
+      "tap",
+      "clean, neutral click",
+      "cc0"
+    ],
+    "kenney-close-001": [
+      "dismiss-fall",
+      "quick, bright close",
+      "cc0"
+    ],
+    "kenney-close-002": [
+      "dismiss-fall",
+      "falling close",
+      "cc0"
+    ],
+    "kenney-confirmation-001": [
+      "success",
+      "warm rising confirm",
+      "cc0"
+    ],
+    "kenney-confirmation-002": [
+      "success",
+      "bright two-note confirm",
+      "cc0"
+    ],
+    "kenney-drop-001": [
+      "pop",
+      "light drop",
+      "cc0"
+    ],
+    "kenney-drop-003": [
+      "pop",
+      "low, soft drop",
+      "cc0"
+    ],
+    "kenney-error-001": [
+      "error",
+      "short buzz",
+      "cc0"
+    ],
+    "kenney-error-005": [
+      "error",
+      "soft low error",
+      "cc0"
+    ],
+    "kenney-glass-001": [
+      "chime",
+      "glassy ping",
+      "cc0"
+    ],
+    "kenney-glass-004": [
+      "chime",
+      "bright glass shimmer",
+      "cc0"
+    ],
+    "kenney-maximize-001": [
+      "appear-rise",
+      "quick rising open",
+      "cc0"
+    ],
+    "kenney-maximize-006": [
+      "appear-rise",
+      "stepped rise, low",
+      "cc0"
+    ],
+    "kenney-minimize-001": [
+      "dismiss-fall",
+      "quick falling close",
+      "cc0"
+    ],
+    "kenney-minimize-006": [
+      "dismiss-fall",
+      "stepped fall, low",
+      "cc0"
+    ],
+    "kenney-open-001": [
+      "appear-rise",
+      "quick, airy open",
+      "cc0"
+    ],
+    "kenney-open-002": [
+      "appear-rise",
+      "rising open",
+      "cc0"
+    ],
+    "kenney-pluck-001": [
+      "pop",
+      "plucked, friendly",
+      "cc0"
+    ],
+    "kenney-question-001": [
+      "chime",
+      "questioning two notes, falling",
+      "cc0"
+    ],
+    "kenney-scratch-002": [
+      "swipe",
+      "short scratch, a quick swipe",
+      "cc0"
+    ],
+    "kenney-scroll-001": [
+      "ticker",
+      "bright scroll, 1 s",
+      "cc0"
+    ],
+    "kenney-scroll-003": [
+      "ticker",
+      "soft scroll, 1 s",
+      "cc0"
+    ],
+    "kenney-select-001": [
+      "tap",
+      "tight select",
+      "cc0"
+    ],
+    "kenney-select-004": [
+      "double-tap",
+      "rising select",
+      "cc0"
+    ],
+    "kenney-switch-002": [
+      "double-tap",
+      "switch flip",
+      "cc0"
+    ],
+    "kenney-switch-005": [
+      "double-tap",
+      "low switch",
+      "cc0"
+    ],
+    "kenney-tick-001": [
+      "ticker",
+      "single tick",
+      "cc0"
+    ],
+    "kenney-tick-002": [
+      "ticker",
+      "tiny tick",
+      "cc0"
+    ],
+    "kenney-toggle-001": [
+      "double-tap",
+      "toggle on",
+      "cc0"
+    ],
+    "kenney-toggle-003": [
+      "double-tap",
+      "toggle off",
+      "cc0"
+    ]
+  }
+}

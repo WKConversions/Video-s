@@ -1,0 +1,104 @@
+{
+ "chips": {
+  "Motion": "6.0% median (target 5%)",
+  "Moving": "100% of frames",
+  "Phrases": "21/21 new visual",
+  "Voice over a held frame": "0.0 s",
+  "Captions": "7 of 21 phrases",
+  "Loudness": "−15.5 LUFS",
+  "Length": "34.0 s"
+ },
+ "rows": [
+  [
+   "Motion (motion_check.py): share of the frame changing, median frame",
+   "6.0%",
+   "Karl: 5% (earlier films 1.0–1.8%; references 0.5–6.6%)",
+   true
+  ],
+  [
+   "Frames where something moves; longest still",
+   "100%; 0.00 s",
+   "≥ 90%; ≤ 0.8 s",
+   true
+  ],
+  [
+   "Every phrase a new visual (phrase_check.py)",
+   "21 of 21; 0.0 s of voice without one",
+   "all; ≤ 2.5 s",
+   true
+  ],
+  [
+   "Words on screen",
+   "7 of 21 phrases",
+   "Karl: not everywhere",
+   true
+  ],
+  [
+   "Motion probe (camera spikes, lurches, overshoot, flying, busy)",
+   "no camera spikes, overshoot, flying or busy stretches; 2 lurch flags, both wall tiles that start moving 120 px above the frame (off screen), so no still-to-fast start is seen",
+   "none",
+   true
+  ],
+  [
+   "Shake (jitter_check.py)",
+   "none in 1020 frames",
+   "none",
+   true
+  ],
+  [
+   "Pops (handoff_check.py)",
+   "39 flagged, all designed moves (arrivals, flips, the road turning solid, the field); no blink or size jump",
+   "none unexplained",
+   true
+  ],
+  [
+   "Things on screen (busy_check.py)",
+   "median 2; 8 or more 0% of the time",
+   "references median 4; ≤ 35%",
+   true
+  ],
+  [
+   "Brand (brand_measure.py verify)",
+   "26 of 26 frames on palette (off-palette pixels only in the photos); accent where the thesis puts it",
+   "no frame off-brand",
+   true
+  ],
+  [
+   "Contrast, every text colour",
+   "navy on canvas 10.8:1; white on the K.B tile 8.4:1; ink on cyan 7.9:1",
+   "≥ 4.5:1",
+   true
+  ],
+  [
+   "Tells (film_tells.py)",
+   "1: \"w:solutions\", a timing label in clock.ts, never on screen",
+   "answered",
+   true
+  ],
+  [
+   "\"K.B\" only; no URL; no hero video",
+   "checked by the truth review and by hand",
+   "Karl",
+   true
+  ],
+  [
+   "Delivery",
+   "1920×1080, 30 fps, 34.0 s, H.264 yuv420p BT.709 TV range, AAC 48 kHz",
+   "as planned",
+   true
+  ],
+  [
+   "Loudness and peak",
+   "−15.5 LUFS integrated, −1.5 dBFS peak",
+   "−15 LUFS, ≤ −1.5 dBFS",
+   true
+  ],
+  [
+   "Sound",
+   "47 effects on their picture frames; 46 clear the music by 3 dB, one (the lens opening) is felt rather than heard",
+   "every effect clears the bed",
+   true
+  ]
+ ],
+ "note": "Measured on the delivered encode (deliver/kb-tech-partner-34s.mp4). The probe runs on the Remotion project. Sound was mixed by measurement: no speakers in the build sandbox, so Karl's ear has the last word."
+}

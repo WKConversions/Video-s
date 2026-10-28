@@ -1,0 +1,327 @@
+[
+  {
+    "name": "home",
+    "url": "https://kruslockbosconsultancy.com/",
+    "height": 6209,
+    "shots": [
+      {
+        "file": "home-s01.png",
+        "y": 900,
+        "h": 246,
+        "text": ""
+      },
+      {
+        "file": "home-s02.png",
+        "y": 1146,
+        "h": 610,
+        "text": "Discover how we help your business grow with automation, AI, and systems We partner with you to unde"
+      },
+      {
+        "file": "home-s03.png",
+        "y": 1756,
+        "h": 216,
+        "text": "Built together, built to be run We don't take a spec and disappear. We build alongside your team fro"
+      },
+      {
+        "file": "home-s04.png",
+        "y": 1972,
+        "h": 264,
+        "text": "01 Diagnose We look at how your business actually works today and find where the friction is. 02 Bui"
+      },
+      {
+        "file": "home-s05.png",
+        "y": 2236,
+        "h": 240,
+        "text": "For Startups Get the technical team you can't hire yet. We build your first systems so you can focus"
+      },
+      {
+        "file": "home-s06.png",
+        "y": 2476,
+        "h": 602,
+        "text": "What we have to offer AI, Agents & Automation Custom AI Agents No-code automation workflows Multi-st"
+      },
+      {
+        "file": "home-s07.png",
+        "y": 3078,
+        "h": 268,
+        "text": "We build the systems Software, automation and the infrastructure behind them. Whatever your business"
+      },
+      {
+        "file": "home-s08.png",
+        "y": 3346,
+        "h": 904,
+        "text": "After we deliver We don't disappear once we ship. Pick how much support you want going forward. Host"
+      },
+      {
+        "file": "home-s09.png",
+        "y": 4250,
+        "h": 492,
+        "text": "Tools we build with We put these to work on every project, from quick automations to full builds."
+      },
+      {
+        "file": "home-s10.png",
+        "y": 4742,
+        "h": 474,
+        "text": "Our Story in Numbers Every number tells a part of our story. From our first project to fully integra"
+      },
+      {
+        "file": "home-s11.png",
+        "y": 5216,
+        "h": 376,
+        "text": "Ready to add your project to our numbers? Whether you have a clear brief or just a challenge worth s"
+      },
+      {
+        "file": "home-s12.png",
+        "y": 5592,
+        "h": 220,
+        "text": "Join our newsletter Subscribe I have read and accept the Privacy Policy"
+      },
+      {
+        "file": "home-footer.png",
+        "y": 5812,
+        "h": 397,
+        "text": "Let's Work Together Professional consultancy services helping businesses achieve their goals through"
+      }
+    ]
+  },
+  {
+    "name": "services",
+    "url": "https://kruslockbosconsultancy.com/services",
+    "height": 3162,
+    "shots": [
+      {
+        "file": "services-s01.png",
+        "y": 0,
+        "h": 532,
+        "text": "Our Services & Way of Working Built to work alongside you. We see ourselves as part of your team. Ou"
+      },
+      {
+        "file": "services-s02.png",
+        "y": 532,
+        "h": 947,
+        "text": "Our work is built on two core pillars Explore our pillars further by clicking on them below AI, Agen"
+      },
+      {
+        "file": "services-s03.png",
+        "y": 1479,
+        "h": 216,
+        "text": "Built together, built to be run We don't take a spec and disappear. We build alongside your team fro"
+      },
+      {
+        "file": "services-s04.png",
+        "y": 1695,
+        "h": 264,
+        "text": "01 Diagnose We look at how your business actually works today and find where the friction is. 02 Bui"
+      },
+      {
+        "file": "services-s05.png",
+        "y": 1959,
+        "h": 240,
+        "text": "For Startups Get the technical team you can't hire yet. We build your first systems so you can focus"
+      },
+      {
+        "file": "services-s06.png",
+        "y": 2199,
+        "h": 567,
+        "text": "Why Businesses Choose K.B You will get a clear, professional overview of your business workflows and"
+      }
+    ]
+  },
+  {
+    "name": "ai-agents",
+    "url": "https://kruslockbosconsultancy.com/services/ai-agents-and-automation",
+    "height": 4121,
+    "shots": [
+      {
+        "file": "ai-agents-s01.png",
+        "y": 0,
+        "h": 784,
+        "text": "← Return to Services AI, Agents & Automation - Improve Process"
+      },
+      {
+        "file": "ai-agents-s02.png",
+        "y": 784,
+        "h": 684,
+        "text": "AI Agents Does your business want to participate in the fastest growing and most impactful innovatio"
+      },
+      {
+        "file": "ai-agents-s03.png",
+        "y": 1468,
+        "h": 588,
+        "text": "No/low-code AI automation workflows We design and deploy automation workflows using tools like Make,"
+      },
+      {
+        "file": "ai-agents-s04.png",
+        "y": 2056,
+        "h": 496,
+        "text": "Systems & Workflow Integrations We connect your tools, platforms, and data sources so they operate a"
+      },
+      {
+        "file": "ai-agents-s05.png",
+        "y": 2552,
+        "h": 904,
+        "text": "After we deliver We don't disappear once we ship. Pick how much support you want going forward. Host"
+      },
+      {
+        "file": "ai-agents-s06.png",
+        "y": 3456,
+        "h": 268,
+        "text": "Tools we use"
+      },
+      {
+        "file": "ai-agents-footer.png",
+        "y": 3724,
+        "h": 397,
+        "text": "Let's Work Together Professional consultancy services helping businesses achieve their goals through"
+      }
+    ]
+  },
+  {
+    "name": "software-dev",
+    "url": "https://kruslockbosconsultancy.com/services/software-development",
+    "height": 3972,
+    "shots": [
+      {
+        "file": "software-dev-s01.png",
+        "y": 0,
+        "h": 784,
+        "text": "← Return to Services Software Development - Web/Mobile Apps & Dashboards"
+      },
+      {
+        "file": "software-dev-s02.png",
+        "y": 784,
+        "h": 417,
+        "text": "Web Development We build responsive, scalable websites and digital systems that support your operati"
+      },
+      {
+        "file": "software-dev-s03.png",
+        "y": 1201,
+        "h": 681,
+        "text": "Mobile App Development We develop high-performance mobile applications that integrate into your syst"
+      },
+      {
+        "file": "software-dev-s04.png",
+        "y": 1882,
+        "h": 417,
+        "text": "Business Dashboards We design and build custom business dashboards that bring clarity to your data a"
+      },
+      {
+        "file": "software-dev-s05.png",
+        "y": 2299,
+        "h": 904,
+        "text": "After we deliver We don't disappear once we ship. Pick how much support you want going forward. Host"
+      },
+      {
+        "file": "software-dev-s06.png",
+        "y": 3203,
+        "h": 372,
+        "text": "Tools we use"
+      },
+      {
+        "file": "software-dev-footer.png",
+        "y": 3575,
+        "h": 397,
+        "text": "Let's Work Together Professional consultancy services helping businesses achieve their goals through"
+      }
+    ]
+  },
+  {
+    "name": "client-cases",
+    "url": "https://kruslockbosconsultancy.com/client-cases",
+    "height": 1688,
+    "shots": [
+      {
+        "file": "client-cases-s01.png",
+        "y": 0,
+        "h": 1291,
+        "text": "Client Cases Real examples of the systems we've built with automation and software development. Göte"
+      },
+      {
+        "file": "client-cases-footer.png",
+        "y": 1291,
+        "h": 397,
+        "text": "Let's Work Together Professional consultancy services helping businesses achieve their goals through"
+      }
+    ]
+  },
+  {
+    "name": "about-us",
+    "url": "https://kruslockbosconsultancy.com/about-us",
+    "height": 5638,
+    "shots": [
+      {
+        "file": "about-us-s01.png",
+        "y": 0,
+        "h": 630,
+        "text": ""
+      },
+      {
+        "file": "about-us-s02.png",
+        "y": 630,
+        "h": 652,
+        "text": "ABOUT US At K.B, we grow with you. Our work starts with understanding how your business actually run"
+      },
+      {
+        "file": "about-us-s03.png",
+        "y": 1282,
+        "h": 216,
+        "text": "Our Mission To be the technical team you don't have to hire in-house. Our Vision To be the tech part"
+      },
+      {
+        "file": "about-us-s04.png",
+        "y": 1498,
+        "h": 1716,
+        "text": "Our DNA Technical We're engineers first. Every system we build is built properly, not just to look f"
+      },
+      {
+        "file": "about-us-s05.png",
+        "y": 3214,
+        "h": 336,
+        "text": "From generalist consultancy to embedded tech partner K.B started out offering a bit of everything: c"
+      },
+      {
+        "file": "about-us-s06.png",
+        "y": 3550,
+        "h": 1479,
+        "text": "Our team The people of K.B Robin Bos Co-Founder & CSO +31 6 24327214 robin@kruslockbosconsultancy.co"
+      },
+      {
+        "file": "about-us-s07.png",
+        "y": 5029,
+        "h": 212,
+        "text": "Get started today with a discovery call Contact"
+      },
+      {
+        "file": "about-us-footer.png",
+        "y": 5241,
+        "h": 397,
+        "text": "Let's Work Together Professional consultancy services helping businesses achieve their goals through"
+      }
+    ]
+  },
+  {
+    "name": "contact-us",
+    "url": "https://kruslockbosconsultancy.com/contact-us",
+    "height": 2172,
+    "shots": [
+      {
+        "file": "contact-us-s01.png",
+        "y": 0,
+        "h": 848,
+        "text": "How can we help? If you are curious how we can help you and your business, fill out the form and we'"
+      },
+      {
+        "file": "contact-us-s02.png",
+        "y": 848,
+        "h": 927,
+        "text": "FAQ What does K.B do? How can automation benefit my business? What kind of tasks can be automated? D"
+      },
+      {
+        "file": "contact-us-footer.png",
+        "y": 1775,
+        "h": 397,
+        "text": "Let's Work Together Professional consultancy services helping businesses achieve their goals through"
+      }
+    ]
+  }
+]

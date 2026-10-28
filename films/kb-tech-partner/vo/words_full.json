@@ -1,0 +1,492 @@
+{
+ "offset": 0.4,
+ "source": "vo/elevenlabs-christina.mp3 (ElevenLabs, voice Christina - Energetic Commercial Female, 31.95 s)",
+ "words": [
+  {
+   "key": "w:technology",
+   "word": "technology",
+   "start": 0.4,
+   "end": 1.09
+  },
+  {
+   "key": "w:should",
+   "word": "should",
+   "start": 1.1,
+   "end": 1.28
+  },
+  {
+   "key": "w:help",
+   "word": "help",
+   "start": 1.29,
+   "end": 1.63
+  },
+  {
+   "key": "w:your",
+   "word": "your",
+   "start": 1.64,
+   "end": 1.74
+  },
+  {
+   "key": "w:business",
+   "word": "business",
+   "start": 1.75,
+   "end": 2.15
+  },
+  {
+   "key": "w:grow",
+   "word": "grow",
+   "start": 2.16,
+   "end": 2.75
+  },
+  {
+   "key": "w:not",
+   "word": "not",
+   "start": 3.05,
+   "end": 3.33
+  },
+  {
+   "key": "w:hold",
+   "word": "hold",
+   "start": 3.34,
+   "end": 3.54
+  },
+  {
+   "key": "w:it",
+   "word": "it",
+   "start": 3.55,
+   "end": 3.67
+  },
+  {
+   "key": "w:back",
+   "word": "back",
+   "start": 3.68,
+   "end": 4.16
+  },
+  {
+   "key": "w:but",
+   "word": "but",
+   "start": 4.66,
+   "end": 4.79
+  },
+  {
+   "key": "w:finding",
+   "word": "finding",
+   "start": 4.8,
+   "end": 5.15
+  },
+  {
+   "key": "w:the",
+   "word": "the",
+   "start": 5.16,
+   "end": 5.24
+  },
+  {
+   "key": "w:right",
+   "word": "right",
+   "start": 5.25,
+   "end": 5.53
+  },
+  {
+   "key": "w:solutions",
+   "word": "solutions",
+   "start": 5.54,
+   "end": 6.36
+  },
+  {
+   "key": "w:and",
+   "word": "and",
+   "start": 6.37,
+   "end": 6.65
+  },
+  {
+   "key": "w:knowing",
+   "word": "knowing",
+   "start": 6.66,
+   "end": 6.93
+  },
+  {
+   "key": "w:where",
+   "word": "where",
+   "start": 6.94,
+   "end": 7.05
+  },
+  {
+   "key": "w:to",
+   "word": "to",
+   "start": 7.06,
+   "end": 7.11
+  },
+  {
+   "key": "w:start",
+   "word": "start",
+   "start": 7.12,
+   "end": 7.85
+  },
+  {
+   "key": "w:isnt",
+   "word": "isnt",
+   "start": 7.86,
+   "end": 8.15
+  },
+  {
+   "key": "w:always",
+   "word": "always",
+   "start": 8.16,
+   "end": 8.42
+  },
+  {
+   "key": "w:easy",
+   "word": "easy",
+   "start": 8.43,
+   "end": 8.95
+  },
+  {
+   "key": "w:thats",
+   "word": "thats",
+   "start": 9.41,
+   "end": 9.69
+  },
+  {
+   "key": "w:where2",
+   "word": "where",
+   "start": 9.7,
+   "end": 9.82
+  },
+  {
+   "key": "w:kay",
+   "word": "kay",
+   "start": 9.83,
+   "end": 10.08
+  },
+  {
+   "key": "w:bee",
+   "word": "bee",
+   "start": 10.09,
+   "end": 10.27
+  },
+  {
+   "key": "w:comes",
+   "word": "comes",
+   "start": 10.28,
+   "end": 10.59
+  },
+  {
+   "key": "w:in",
+   "word": "in",
+   "start": 10.6,
+   "end": 10.8
+  },
+  {
+   "key": "w:we",
+   "word": "we",
+   "start": 11.28,
+   "end": 11.39
+  },
+  {
+   "key": "w:dont",
+   "word": "dont",
+   "start": 11.4,
+   "end": 11.56
+  },
+  {
+   "key": "w:just",
+   "word": "just",
+   "start": 11.57,
+   "end": 11.77
+  },
+  {
+   "key": "w:offer",
+   "word": "offer",
+   "start": 11.78,
+   "end": 12.13
+  },
+  {
+   "key": "w:advice",
+   "word": "advice",
+   "start": 12.14,
+   "end": 12.79
+  },
+  {
+   "key": "w:we2",
+   "word": "we",
+   "start": 13.05,
+   "end": 13.19
+  },
+  {
+   "key": "w:become",
+   "word": "become",
+   "start": 13.2,
+   "end": 13.57
+  },
+  {
+   "key": "w:your2",
+   "word": "your",
+   "start": 13.58,
+   "end": 13.74
+  },
+  {
+   "key": "w:tech",
+   "word": "tech",
+   "start": 13.75,
+   "end": 14.08
+  },
+  {
+   "key": "w:partner",
+   "word": "partner",
+   "start": 14.09,
+   "end": 14.63
+  },
+  {
+   "key": "w:first",
+   "word": "first",
+   "start": 15.06,
+   "end": 15.71
+  },
+  {
+   "key": "w:we3",
+   "word": "we",
+   "start": 15.72,
+   "end": 15.92
+  },
+  {
+   "key": "w:understand",
+   "word": "understand",
+   "start": 15.93,
+   "end": 16.62
+  },
+  {
+   "key": "w:your3",
+   "word": "your",
+   "start": 16.63,
+   "end": 16.73
+  },
+  {
+   "key": "w:business2",
+   "word": "business",
+   "start": 16.74,
+   "end": 17.34
+  },
+  {
+   "key": "w:then",
+   "word": "then",
+   "start": 17.6,
+   "end": 18.09
+  },
+  {
+   "key": "w:we4",
+   "word": "we",
+   "start": 18.1,
+   "end": 18.27
+  },
+  {
+   "key": "w:identify",
+   "word": "identify",
+   "start": 18.28,
+   "end": 18.76
+  },
+  {
+   "key": "w:opportunities",
+   "word": "opportunities",
+   "start": 18.77,
+   "end": 19.63
+  },
+  {
+   "key": "w:develop",
+   "word": "develop",
+   "start": 19.81,
+   "end": 20.16
+  },
+  {
+   "key": "w:solutions2",
+   "word": "solutions",
+   "start": 20.17,
+   "end": 20.89
+  },
+  {
+   "key": "w:and2",
+   "word": "and",
+   "start": 21.15,
+   "end": 21.29
+  },
+  {
+   "key": "w:help2",
+   "word": "help",
+   "start": 21.3,
+   "end": 21.6
+  },
+  {
+   "key": "w:bring",
+   "word": "bring",
+   "start": 21.61,
+   "end": 21.79
+  },
+  {
+   "key": "w:them",
+   "word": "them",
+   "start": 21.8,
+   "end": 21.94
+  },
+  {
+   "key": "w:to2",
+   "word": "to",
+   "start": 21.95,
+   "end": 22.05
+  },
+  {
+   "key": "w:life",
+   "word": "life",
+   "start": 22.06,
+   "end": 22.51
+  },
+  {
+   "key": "w:from",
+   "word": "from",
+   "start": 23.03,
+   "end": 23.16
+  },
+  {
+   "key": "w:strategy",
+   "word": "strategy",
+   "start": 23.17,
+   "end": 23.82
+  },
+  {
+   "key": "w:to3",
+   "word": "to",
+   "start": 23.83,
+   "end": 23.94
+  },
+  {
+   "key": "w:implementation",
+   "word": "implementation",
+   "start": 23.95,
+   "end": 24.92
+  },
+  {
+   "key": "w:were",
+   "word": "were",
+   "start": 25.11,
+   "end": 25.33
+  },
+  {
+   "key": "w:by",
+   "word": "by",
+   "start": 25.34,
+   "end": 25.56
+  },
+  {
+   "key": "w:your4",
+   "word": "your",
+   "start": 25.57,
+   "end": 25.69
+  },
+  {
+   "key": "w:side",
+   "word": "side",
+   "start": 25.7,
+   "end": 26.13
+  },
+  {
+   "key": "w:because",
+   "word": "because",
+   "start": 26.55,
+   "end": 26.84
+  },
+  {
+   "key": "w:real",
+   "word": "real",
+   "start": 26.85,
+   "end": 27.18
+  },
+  {
+   "key": "w:growth",
+   "word": "growth",
+   "start": 27.19,
+   "end": 27.56
+  },
+  {
+   "key": "w:doesnt",
+   "word": "doesnt",
+   "start": 27.57,
+   "end": 27.9
+  },
+  {
+   "key": "w:come",
+   "word": "come",
+   "start": 27.91,
+   "end": 28.21
+  },
+  {
+   "key": "w:from2",
+   "word": "from",
+   "start": 28.22,
+   "end": 28.38
+  },
+  {
+   "key": "w:technology2",
+   "word": "technology",
+   "start": 28.39,
+   "end": 28.96
+  },
+  {
+   "key": "w:alone",
+   "word": "alone",
+   "start": 28.97,
+   "end": 29.44
+  },
+  {
+   "key": "w:it2",
+   "word": "it",
+   "start": 29.84,
+   "end": 29.93
+  },
+  {
+   "key": "w:comes2",
+   "word": "comes",
+   "start": 29.94,
+   "end": 30.23
+  },
+  {
+   "key": "w:from3",
+   "word": "from",
+   "start": 30.24,
+   "end": 30.36
+  },
+  {
+   "key": "w:having",
+   "word": "having",
+   "start": 30.37,
+   "end": 30.72
+  },
+  {
+   "key": "w:the2",
+   "word": "the",
+   "start": 30.73,
+   "end": 30.81
+  },
+  {
+   "key": "w:right2",
+   "word": "right",
+   "start": 30.82,
+   "end": 31.2
+  },
+  {
+   "key": "w:partner2",
+   "word": "partner",
+   "start": 31.21,
+   "end": 31.56
+  },
+  {
+   "key": "w:behind",
+   "word": "behind",
+   "start": 31.57,
+   "end": 31.92
+  },
+  {
+   "key": "w:it3",
+   "word": "it",
+   "start": 31.93,
+   "end": 32.34
+  }
+ ]
+}

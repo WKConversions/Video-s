@@ -44,6 +44,10 @@ script: 30 of 31 phrases, and never more than 1.0 second.
 
 ## Thinking outside the box: where the idea comes from
 
+First look up what the beat must say in `references/technique-picker.md`: it maps meanings ("this leads to
+that", "many parts become one", "it's generated", "remember us" ...) to techniques measured frame by frame in
+the reference films, with their timings. Take one when its meaning fits; otherwise use the list below.
+
 For each phrase, run the list and take the idea that reads in a second with the sound off and grows
 out of the previous frame. Then cut anything that doesn't read.
 

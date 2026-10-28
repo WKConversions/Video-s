@@ -4,6 +4,9 @@
 //   src/lib.tsx   export const KIT = { font: "DM Sans", serif: "Gelasio", ink: "#0D2139", word: "#2D5F95",
 //                                      mark: "#C9D7E6", under: "#2D5F95", strike: "#2D5F95" };  // the brand's roles
 // Built from Karl's October 2026 films (Bruno Morgante v3, MindMirror, Amargier Advisory).
+// Moving text and images sit on their own layer (willChange: transform): without it Chrome snaps them to whole
+// pixels, so a landing ends in 1-px clicks and dies early (tested 2026-10: ARRIVE tail 0,1,0,0,1 vs 0.62→0.06).
+// Text drops the layer once it has landed: layer text renders ~20% softer at rest.
 import React from "react";
 import { Easing, Img, interpolate, staticFile } from "remotion";
 import { T } from "./clock";
@@ -45,7 +48,7 @@ export const Line: React.FC<{ g: number; words: W[]; x: number; y: number; size:
       return (
         <span key={i} style={{ position: "relative", isolation: "isolate", display: "inline-block", opacity: Math.min(1, k * 1.7) * (1 - o),
           ...(w.serif ? { fontFamily: KIT.serif, fontStyle: "italic", fontWeight: 400, letterSpacing: "-0.02em" } : {}),
-          transform: split ? `translate(${(i - (words.length - 1) / 2) * o * size * 0.9}px, ${(1 - k) * dy * size}px)` : `translateY(${((1 - k) * dy - o * 0.3) * size}px)`, filter: k < 1 || o > 0 ? `blur(${(1 - k) * 9 + o * 9}px)` : undefined,
+          willChange: k < 1 || o > 0 ? "transform" : undefined, transform: split ? `translate(${(i - (words.length - 1) / 2) * o * size * 0.9}px, ${(1 - k) * dy * size}px)` : `translateY(${((1 - k) * dy - o * 0.3) * size}px)`, filter: k < 1 || o > 0 ? `blur(${(1 - k) * 9 + o * 9}px)` : undefined,
           color: w.color ?? (w.accent ? KIT.word : color) }}>
           {w.mark && <span style={{ position: "absolute", zIndex: -1, left: -size * 0.1, right: -size * 0.1, top: size * 0.06, bottom: -size * 0.1, borderRadius: size * 0.08,
             background: KIT.mark, transformOrigin: "0 50%", transform: `scaleX(${m})` }} />}
@@ -69,7 +72,7 @@ export const Roll: React.FC<{ g: number; a: React.ReactNode; b: React.ReactNode;
   const k = T.k(g, at, dur, MOVE);
   return (
     <div style={{ position: "relative", height: h, overflow: "hidden", ...style }}>
-      <div style={{ transform: `translateY(${-k * h}px)`, filter: k > 0 && k < 1 ? `blur(${Math.sin(k * Math.PI) * 5}px)` : undefined }}>
+      <div style={{ willChange: "transform", transform: `translateY(${-k * h}px)`, filter: k > 0 && k < 1 ? `blur(${Math.sin(k * Math.PI) * 5}px)` : undefined }}>
         <div style={{ position: "relative", height: h, display: "flex", alignItems: "center" }}>{a}</div>
         <div style={{ position: "relative", height: h, display: "flex", alignItems: "center" }}>{b}</div>
       </div>
@@ -89,7 +92,7 @@ export const Disc: React.FC<{ src: string; x: number; y: number; r: number; pos?
   src, x, y, r, pos = "50% 30%", zoom = 1, ring = 0, ringColor = "#fff", style, children }) => (
   <div style={{ position: "absolute", left: x - r, top: y - r, width: 2 * r, height: 2 * r, borderRadius: "50%", overflow: "hidden",
     boxShadow: ring ? `0 0 0 ${ring}px ${ringColor}, 0 40px 80px -30px rgba(0,0,0,.4)` : undefined, ...style }}>
-    <Img src={staticFile(`img/${src}`)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: pos, transform: `scale(${zoom})`, transformOrigin: pos }} />
+    <Img src={staticFile(`img/${src}`)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: pos, willChange: "transform", transform: `scale(${zoom})`, transformOrigin: pos }} />
     {children}
   </div>
 );
@@ -181,7 +184,7 @@ export const Selector: React.FC<{ g: number; items: string[]; from?: number; to:
       <span style={{ position: "absolute", inset: 0, borderRadius: 999, border: `${Math.max(2, size * 0.05)}px solid ${pill}` }} />
       {items.map((it, i) => { const d = i - v; return Math.abs(d) < 2.6 && (
         <span key={i} style={{ position: "absolute", left: 0, right: 0, top: 0, height: h, lineHeight: `${h}px`, textAlign: "center", fontSize: size, color,
-          transform: `translateY(${d * h}px) scale(${1 - Math.min(1, Math.abs(d)) * 0.15})`, opacity: Math.max(0, 1 - Math.abs(d) * 0.7), whiteSpace: "nowrap" }}>{it}</span>); })}
+          willChange: "transform", transform: `translateY(${d * h}px) scale(${1 - Math.min(1, Math.abs(d)) * 0.15})`, opacity: Math.max(0, 1 - Math.abs(d) * 0.7), whiteSpace: "nowrap" }}>{it}</span>); })}
     </span>
   );
 };

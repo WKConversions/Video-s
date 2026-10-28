@@ -152,7 +152,11 @@ The tested kit and the rules for it (studio, logo tile, devices with live screen
 - Storyboard and test frames: `node stills.mjs 0,45,120` (`scripts/stills.mjs`, one bundle for all
   frames), then tile them as in `production/coded-render.md`. The frames Karl approves come from the
   project itself.
-- Final render only after approval: `npx remotion render <Comp> out/film.mp4`. A 60-frame 720p test
+- Final render only after approval, supersampled: `npx remotion render <Comp> out/film@2x.mp4 --scale 2 --crf 10`,
+  then `ffmpeg -i out/film@2x.mp4 -vf "scale=1920:1080:flags=area" -c:v libx264 -crf 16 -preset slow -pix_fmt yuv420p
+  out/film.mp4` (with the delivery re-encode settings below). The camera layer (breathe's 3D term) makes motion
+  smooth but draws text soft: measured small-text sharpness 1027 at 1x vs 1647 at 2x -> 1x with the same smoothness
+  (plain 2D 2220 but snapping). About 1.4x the render time in the test. Drafts stay at 1x. A 60-frame 720p test
   with 8-sample blur took 16 seconds in the sandbox. When the film has slowly moving layered text, render
   it with `scripts/render_chunks.sh` instead, boundaries where no layered text moves
   (`production/build-gotchas.md`).

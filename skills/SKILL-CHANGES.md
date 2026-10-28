@@ -1,3 +1,20 @@
+# Update, 28 October 2026 (later): version 3.1, merged with the parallel session (approved by Karl)
+
+The export of the parallel session (Bingua, Bingua ad, Bingua globe, FUF, Northline, the K.B films) merged in, without
+duplicates:
+- **Library (from its v2 fork, three-way merged):** `references/technique-picker.md`, `references/explainer-structures.md`,
+  a much larger `references/technique-catalogue.md`; `ui-product.md` and `phrase-by-phrase.md` additions; build notes on
+  moving text and supersampled finals.
+- **Scripts:** new `motion_read.py`, `punch_check.py`, `relay_check.py`, `av_sync.py`, `av_plot.py`, `vo_words.py`,
+  `ui_motion.tsx`, `boil.tsx`, `globe_dots.py`; newer `motion_check.py` (cadence, end card), `jitter_check.py` (held
+  drawings, JUDDER, one-frame pops), `phrase_check.py`, `kinetic.tsx`, `maps.tsx`; `qc.sh` now runs 9 steps (rhythm, turns,
+  sound sync, plus the movement graph).
+- **`examples/corrections.md`:** four new recurring lessons (ads hook on frame 0, premium not childish, photos at most
+  1.3x, confidential material) and a section with the parallel session's corrections and build fixes.
+- **Templates:** `portrait-ad` (Bingua ad) and `globe-ad` (Bingua globe), code, fonts and map; footage and audio not included.
+- **Repo:** its films are under `films/` (`bingua-phone` and `fuf-brand` are its versions of Bingua and FUF).
+- Left out: the confidential hero film's material; the sound effects were already identical.
+
 # Update, 28 October 2026: version 3.0, the complete copy (approved by Karl)
 
 Upload `senior-motion-designer.zip` again. The skill now carries everything the October films were made with, so a

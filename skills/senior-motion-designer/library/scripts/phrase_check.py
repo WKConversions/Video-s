@@ -16,6 +16,9 @@ GAP = 0.22           # a pause this long ends a phrase
 MAX_WORDS, MAX_S = 9, 3.2
 NEW = 0.06           # share of the frame whose tone must change during a phrase, or
 STRUCT = 0.006       # share of the frame that must gain new structure (edges not there before: a card, a chart, a word)
+ELEM = 0.0015       # or one new element: a connected shape of new edges whose box covers this share of the frame
+                     # (an icon added to a line diagram; measured 2026-10: DemoDuck's diagram builds add one icon per
+                     # phrase, too small for NEW and STRUCT, and were wrongly called static)
 LONGEST = 2.5        # seconds of voice allowed without a new visual
 
 def phrases(words):
@@ -31,7 +34,7 @@ def phrases(words):
             cur = []
     return out
 
-def frames(path, fps_out=10, w=320):
+def frames(path, fps_out=10, w=640):
     import cv2
     cap = cv2.VideoCapture(path); fps = cap.get(cv2.CAP_PROP_FPS) or 30
     step = max(1, round(fps / fps_out)); out = []; i = 0
@@ -53,7 +56,7 @@ def newness(a, b):
     (share of the frame whose tone changed, share of the frame that gained new edges). A white card landing on
     white changes little tone but adds a lot of structure; a bullet appearing on a held page adds almost none."""
     import cv2
-    tone = struct = None
+    tone = struct = elem = None
     for s in (1.0, 1.02, 0.98, 1.04, 0.96, 1.08, 0.93):
         M = cv2.getRotationMatrix2D((a.shape[1] / 2, a.shape[0] / 2), 0, s)
         aa = cv2.warpAffine(a, M, (a.shape[1], a.shape[0]), borderMode=cv2.BORDER_REPLICATE)
@@ -66,9 +69,15 @@ def newness(a, b):
         d = np.abs(cv2.GaussianBlur(aa, (5, 5), 0) - cv2.GaussianBlur(b, (5, 5), 0))
         t = float((d > 18).mean())
         ea = cv2.dilate(_edges(aa).astype(np.uint8), np.ones((7, 7), np.uint8)) > 0
-        e = float((_edges(b) & ~ea).mean())
+        new = _edges(b) & ~ea; e = float(new.mean())
+        # the biggest single new shape: new edges grouped into blobs, the largest blob's box as a share of the frame
+        n, lab, st, _ = cv2.connectedComponentsWithStats(cv2.dilate(new.astype(np.uint8), np.ones((9, 9), np.uint8)), 8)
+        el = 0.0
+        for k in range(1, n):
+            if new[lab == k].sum() >= 25: el = max(el, st[k, 2] * st[k, 3] / new.size)
         tone = t if tone is None else min(tone, t); struct = e if struct is None else min(struct, e)
-    return tone, struct
+        elem = el if elem is None else min(elem, el)
+    return tone, struct, elem
 
 def check(video, words_path, sheet=None):
     ph = phrases(json.load(open(words_path)))
@@ -79,9 +88,9 @@ def check(video, words_path, sheet=None):
         # the most that became new between the phrase's start and any moment in it
         f0 = at(a - 0.1)
         vals = [newness(f0, at(t)) for t in np.linspace(a + 0.15, b, 5)]
-        tone, struct = max(v[0] for v in vals), max(v[1] for v in vals)
-        ok = tone >= NEW or struct >= STRUCT
-        rows.append((a, b, ok, tone, struct, text))
+        tone, struct, elem = max(v[0] for v in vals), max(v[1] for v in vals), max(v[2] for v in vals)
+        ok = tone >= NEW or struct >= STRUCT or elem >= ELEM
+        rows.append((a, b, ok, tone, struct, text, elem))
         if not ok: static.append(text)
     # the longest stretch of voice without a new visual: walk the phrases, resetting on each that brings one
     longest, run_start, last = 0.0, None, None
@@ -92,15 +101,15 @@ def check(video, words_path, sheet=None):
         else:
             run_start = a if run_start is None else run_start; last = b
     if run_start is not None: longest = max(longest, last - run_start)
-    for a, b, ok, tone, struct, text in rows:
-        print(f"{'      ' if ok else 'STATIC'} {a:6.2f}–{b:5.2f}s  tone {tone * 100:5.1f}%  structure {struct * 100:4.1f}%  {text}")
-    print(f"{len(rows) - len(static)} of {len(rows)} phrases bring a new visual (target: all; {NEW * 100:.0f}% of the frame changed or {STRUCT * 100:.1f}% new structure)")
+    for a, b, ok, tone, struct, text, elem in rows:
+        print(f"{'      ' if ok else 'STATIC'} {a:6.2f}–{b:5.2f}s  tone {tone * 100:5.1f}%  structure {struct * 100:4.1f}%  element {elem * 100:4.2f}%  {text}")
+    print(f"{len(rows) - len(static)} of {len(rows)} phrases bring a new visual (target: all; {NEW * 100:.0f}% of the frame changed, {STRUCT * 100:.1f}% new structure, or one new element of {ELEM * 100:.2f}%)")
     print(f"longest voice without a new visual: {longest:.1f} s (target {LONGEST} s or less)")
     if sheet:
         from PIL import Image, ImageDraw
         W, H = 240, 135; cols = 8; rws = (len(rows) + cols - 1) // cols
         im = Image.new("RGB", (cols * W, rws * (H + 30)), "white"); d = ImageDraw.Draw(im)
-        for i, (a, b, ok, tone, struct, text) in enumerate(rows):
+        for i, (a, b, ok, tone, struct, text, elem) in enumerate(rows):
             f = Image.fromarray(at((a + b) / 2).astype(np.uint8)).resize((W, H)).convert("RGB")
             x, y = (i % cols) * W, (i // cols) * (H + 30); im.paste(f, (x, y + 30))
             d.text((x + 4, y + 2), f"{a:.1f}s {'' if ok else 'STATIC '}{tone * 100:.0f}% / {struct * 100:.1f}%", fill="black" if ok else "red")

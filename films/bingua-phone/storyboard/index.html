@@ -1,0 +1,64 @@
+<title>Bingua Scroll Film</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: the film's own look (Bingua's navy stage, its cyan, iOS greys); one reading column; a card per spoken line. */
+:root {
+  --bg: #F2F2F7; --panel: #FFFFFF; --ink: #1C1C1E; --muted: #636366; --line: #E5E5EA; --navy: #0E1826; --cyan: #189DDF; --chip: #E3F1FB;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif; --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #0E1826; --panel: #142235; --ink: #F2F2F7; --muted: #A3ADBB; --line: #22344B; --navy: #F2F2F7; --cyan: #2FAFEE; --chip: #18324A; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #0E1826; --panel: #142235; --ink: #F2F2F7; --muted: #A3ADBB; --line: #22344B; --navy: #F2F2F7; --cyan: #2FAFEE; --chip: #18324A; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font: 15px/1.6 var(--sans); }
+.wrap { max-width: 1080px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 80px; display: grid; gap: 40px; }
+.eyebrow { font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font: 800 clamp(34px, 5.5vw, 58px)/1.02 var(--sans); letter-spacing: -.035em; margin: 8px 0 0; color: var(--navy); text-wrap: balance; }
+h1 span { color: var(--cyan); }
+h2 { font: 800 21px/1.25 var(--sans); letter-spacing: -.02em; margin: 0 0 12px; text-wrap: balance; }
+.lede { color: var(--muted); max-width: 66ch; margin: 12px 0 0; }
+.dir { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.dir div { background: var(--panel); padding: 14px 16px; min-width: 0; }
+.dir b { display: block; font: 500 11.5px/1.4 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.beats { display: grid; gap: 12px; }
+.beat { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+.t { font: 500 12.5px/1.5 var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.vo { font-weight: 800; font-size: 16px; letter-spacing: -.01em; }
+.what { margin: 6px 0 0; }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.tags span { background: var(--chip); border-radius: 999px; padding: 2px 10px; font-size: 12.5px; }
+@media (max-width: 520px) { .beat { grid-template-columns: 1fr; gap: 4px; } .wrap { padding-inline: 16px; } }
+</style>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Bingua · storyboard · 36 s · 1920×1080</div>
+    <h1>Learn languages by <span>scrolling.</span></h1>
+    <p class="lede">Every move in the film is the app doing its job: real videos play, the feed scrolls, subtitles keep pace with the speech, a word is tapped, a sentence is swiped, a word is saved, cards flip and a quiz is answered. The motion comes from those actions, not from drift.</p>
+  </header>
+  <section>
+    <h2>Direction</h2>
+    <div class="dir">
+      <div><b>Stage</b>Bingua's navy (the icon's #0E1826) with one large phone running the real Bingua interface, rebuilt from the app: XP bar, video, For you / Discover, dual transcript, tab bar with the Cards badge.</div>
+      <div><b>Footage</b>Four royalty-free Mixkit clips play inside the phone as the feed: street food (Spanish), an outdoor vlog (French), pasta (Italian), a creator talking to camera (German). Transcript lines are written for them, with translations.</div>
+      <div><b>Productive 5 %</b>Motion comes from the real footage, feed swipes, the transcript advancing, taps, pop-ups, cards flipping, the word flying into Cards. The camera only breathes. No idle sliding.</div>
+      <div><b>Lifts</b>What the finger opens (the word card, the sentence breakdown, the flashcard) also lifts out of the phone at a readable size, to its right.</div>
+      <div><b>Words on screen</b>Only "Bingua" and the closing line "Learn languages by Scrolling." (the site's own). Everything else is the app's own text.</div>
+      <div><b>Type and colour</b>Inter (the site's font), cyan #2FAFEE for action, iOS greys; the Bingua icon rebuilt as vectors.</div>
+    </div>
+  </section>
+  <section>
+    <h2>Shots, one per line</h2>
+    <div class="beats">
+      <div class="beat"><div class="t">0.0–4.6</div><div><div class="vo">What if learning a language felt more like scrolling than studying?</div><p class="what">The phone shows a flat textbook lesson: a verb table, a grey "Lesson 4 · 25 min" header. On "scrolling" a thumb flicks it away and the feed scrolls in fast, landing on a real video that starts playing. On "studying" the lesson page falls away off the frame.</p></div></div>
+      <div class="beat"><div class="t">4.6–5.8</div><div><div class="vo">Meet Bingua.</div><p class="what">The phone becomes the logo: its video turns into the play triangle, two transcript lines into the two bars, the frame into the navy tile. "Bingua" sets beside it.</p><div class="tags"><span>Bingua</span></div></div></div>
+      <div class="beat"><div class="t">5.8–8.9</div><div><div class="vo">Watch real videos in the language you want to learn.</div><p class="what">The tile opens back into the phone. Swipe: Spanish street food, then French vlog, then Italian pasta; each video plays with its language chip (ES, FR, IT) as it lands.</p></div></div>
+      <div class="beat"><div class="t">8.9–11.6</div><div><div class="vo">Follow along with dual-language subtitles.</div><p class="what">Back to the Spanish video. Under it the transcript keeps pace: each line lights blue as it is spoken, word by word, the English line under it. The live line lifts out large beside the phone.</p></div></div>
+      <div class="beat"><div class="t">11.6–14.9</div><div><div class="vo">Don't know a word? Just tap it for an instant translation.</div><p class="what">"famoso" pulses as unknown; the finger taps it; the word card opens in place (famoso · famous · ADJECTIVE) and lifts out large.</p></div></div>
+      <div class="beat"><div class="t">14.9–18.9</div><div><div class="vo">Need more context? Swipe to understand the entire sentence.</div><p class="what">The finger swipes the transcript line sideways; the sentence breakdown slides up: "¿Qué está pasando aquí?" · What's going on here? · EXPLANATION 1, 2, building line by line.</p></div></div>
+      <div class="beat"><div class="t">18.9–21.8</div><div><div class="vo">Found something useful? Save it in one tap.</div><p class="what">"+ Save" is tapped, turns to "✓ Saved"; the word flies down into the Cards tab and its badge goes 14 → 15.</p></div></div>
+      <div class="beat"><div class="t">21.8–24.8</div><div><div class="vo">Then practice with smart flashcards and quizzes.</div><p class="what">Cards tab: the "famoso" flashcard flips to its answer and is marked "Got it"; a quiz question follows, "famous" is picked and turns green, +10 XP.</p></div></div>
+      <div class="beat"><div class="t">24.8–27.6</div><div><div class="vo">No boring lessons. No complicated routines.</div><p class="what">The textbook lesson card comes back and is flicked away; a 7-step study-routine checklist folds up and is flicked away.</p></div></div>
+      <div class="beat"><div class="t">27.6–31.4</div><div><div class="vo">Just videos you love, and a language you're learning.</div><p class="what">Feed again: a video is hearted; the XP bar fills to the daily goal and the streak flame goes 2 → 3.</p></div></div>
+      <div class="beat"><div class="t">31.4–36.0</div><div><div class="vo">Bingua. Learn languages by scrolling.</div><p class="what">The phone becomes the logo again; "Bingua", then "Learn languages by Scrolling." with "Scrolling." in cyan, and the App Store badge. The camera settles.</p><div class="tags"><span>Bingua</span><span>Learn languages by Scrolling.</span></div></div></div>
+    </div>
+  </section>
+</div>

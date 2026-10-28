@@ -1,0 +1,200 @@
+<title>K.B Explainer Film</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column; the film first, then a frame per phrase in a wrapping grid, then notes and the working tables. */
+:root {
+  --bg: #F7F7F7; --panel: #FFFFFF; --ink: #252525; --muted: #49525B; --navy: #293A51; --line: #E2E8F0; --cyan: #38C8FF; --chip: #EBECF4;
+  --sans: "Montserrat", "Segoe UI", system-ui, sans-serif; --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111923; --panel: #18222F; --ink: #EEF2F7; --muted: #A9B4C2; --navy: #A8C1E2; --line: #2A3546; --cyan: #38C8FF; --chip: #212D3D; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #111923; --panel: #18222F; --ink: #EEF2F7; --muted: #A9B4C2; --navy: #A8C1E2; --line: #2A3546; --cyan: #38C8FF; --chip: #212D3D; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font: 15px/1.6 var(--sans); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 96px; display: grid; gap: 48px; }
+h1 { font: 800 clamp(34px, 5.4vw, 60px)/1.02 var(--sans); letter-spacing: -0.04em; margin: 6px 0 0; text-wrap: balance; color: var(--navy); }
+h1 em { font-style: normal; box-shadow: inset 0 -0.16em 0 var(--cyan); }
+h2 { font: 700 22px/1.25 var(--sans); letter-spacing: -0.02em; margin: 0 0 14px; text-wrap: balance; color: var(--navy); }
+h3 { font: 700 17px/1.35 var(--sans); letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+.eyebrow, .mono { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.lede { color: var(--muted); max-width: 68ch; margin: 12px 0 0; }
+video { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: #000; display: block; box-shadow: 0 30px 70px -40px rgba(41,58,81,.5); }
+.qc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.qc span { background: var(--chip); border-radius: 999px; padding: 5px 13px; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.qc b { color: var(--ink); font-weight: 700; }
+.dir { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.dir div { background: var(--panel); padding: 14px 16px; min-width: 0; }
+.dir b { display: block; margin-bottom: 4px; }
+.beat { display: grid; gap: 14px; padding-top: 24px; border-top: 1px solid var(--line); }
+.beat-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.frames { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 20px; }
+.fr { display: grid; gap: 6px; align-content: start; min-width: 0; }
+.fr img { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; background: var(--chip); display: block; }
+.fr .t { font-family: var(--mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.fr .p { font-weight: 700; font-size: 14px; }
+.fr .w { font-size: 12.5px; color: var(--navy); }
+.fr .w::before { content: "on screen: "; color: var(--muted); }
+.fr .m { font-size: 13.5px; color: var(--muted); }
+ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; max-width: 90ch; }
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; min-width: 760px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: 0; }
+th { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ok { color: #1F8A5B; font-weight: 700; } .no { color: #C2410C; font-weight: 700; }
+details { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+details + details { margin-top: 10px; }
+summary { cursor: pointer; padding: 12px 16px; font-weight: 700; }
+summary:focus-visible, a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+pre { margin: 0; padding: 0 16px 16px; white-space: pre-wrap; font: 12.5px/1.55 var(--mono); color: var(--muted); overflow-x: auto; }
+a { color: var(--navy); }
+@media (max-width: 520px) { .wrap { padding-inline: 16px; gap: 36px; } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>
+<div class="wrap">
+<header><div class="eyebrow">K.B · explainer · 58 s · 1920×1080 · storyboard and QC</div><h1>Diagnose, build, <em>run</em></h1><p class="lede">The JustCall × HubSpot explainer Karl supplied, remade beat for beat for K.B: the same structure, pacing and kinds of motion, with K.B&#x27;s own interface, words and voice. Only &quot;K.B&quot; is said and shown; people are initials, never photos.</p></header>
+<section><video controls playsinline preload="metadata" poster="frames/t52.80.jpg" src="film.mp4"></video>
+<div class="qc"><span><b>Length</b> 58.0 s</span><span><b>Phrases</b> 37/37 new visual</span><span><b>Voice over a held frame</b> 0.0 s</span><span><b>Motion</b> 1.7% median (reference 2.7%)</span><span><b>Moving</b> 99% of frames</span><span><b>Loudness</b> −15.1 LUFS</span></div>
+</section>
+<section><h2>Project direction</h2><div class="dir"><div><b class="mono">Purpose</b>A product-explainer for K.B&#x27;s website and LinkedIn: what K.B does, how it works, and the call to talk.</div><div><b class="mono">Audience</b>Founders and managers of startups and SMEs whose work still runs on manual steps.</div><div><b class="mono">Format</b>16:9, 1920×1080, 30 fps, 58.0 s.</div><div><b class="mono">Core message</b>K.B builds the software and automation your business runs on, with you: diagnose, build, run, one loop.</div><div><b class="mono">Reference</b>The JustCall × HubSpot explainer: logo circles open into an app window, a module switches on, a phone slides in, &quot;How?&quot;, one window whose body changes while cards lift out of it, a dropdown pick, a workflow, tools joined up, avatars, a month calendar, an infinity loop, a logo-and-button end card, a brand mark in the corner. Nothing of its artwork, screens or words is used.</div><div><b class="mono">Style and brand</b>K.B&#x27;s site: canvas #F7F7F7 with soft blobs, white rounded windows with a navy app bar, cyan as the action colour (never text on light), Montserrat; Copperplate only in the K.B logotype.</div><div><b class="mono">Motion</b>Precise and calm: arrivals on a gentle curve, MOVE for things already on screen, no overshoot. Windows stay whole in the frame and only creep (≤ 3% a second); cards lift out of them for emphasis, as in the reference. The camera only breathes.</div><div><b class="mono">Words on screen</b>Only &quot;How?&quot; and &quot;Need more?&quot; as big words (as in the reference); everything else is interface text inside the pictures.</div><div><b class="mono">Sound</b>ElevenLabs voice (Christina) at 1.60 s; Mixkit &quot;Tears of Joy&quot; cut on its bar grid, the band coming in as the audit window rises after &quot;How?&quot;, the song&#x27;s last hit on &quot;K.B&quot; and the end card; 139 effects on their moves (clicks, typing, landings, chimes).</div></div></section>
+<section><h2>Storyboard</h2><p class="lede" style="margin:0 0 8px">A frame per phrase, taken from the delivered film. "On screen" lists the only words the film shows; everything else is picture.</p>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 1 · 0.0–6.5 s</span><h3>K.B builds the software and automation your business runs on, with you.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t00.80.jpg" alt="(open) at 0.80 s"><span class="t">0.80 s</span><span class="p">(open)</span><span class="m">Two white circles, K.B and &quot;Your business&quot;, drift in and dock into one lockup.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t02.60.jpg" alt="K.B builds the software at 2.60 s"><span class="t">2.60 s</span><span class="p">K.B builds the software</span><span class="m">The lockup opens into the business&#x27;s workspace window; eight module cards land.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t03.70.jpg" alt="and automation at 3.70 s"><span class="t">3.70 s</span><span class="p">and automation</span><span class="m">Automations fills with cyan, lifts out of the window and shows a big check.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t04.90.jpg" alt="your business runs on at 4.90 s"><span class="t">4.90 s</span><span class="p">your business runs on</span><span class="m">Every module switches on; the window steps left and a phone slides in running the same workspace.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t05.90.jpg" alt="with you at 5.90 s"><span class="t">5.90 s</span><span class="p">with you</span><span class="m">A large K.B tile drops in from above and &quot;You&quot; rises from below; they meet over the workspace.</span></figure>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 2 · 6.5–7.2 s</span><h3>How?</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t06.80.jpg" alt="How? at 6.80 s"><span class="t">6.80 s</span><span class="p">How?</span><span class="w">How?</span><span class="m">Everything leaves left; &quot;How?&quot; rises among small drifting shapes.</span></figure>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 3 · 7.2–14.1 s</span><h3>We start with a process audit: how your team works today, where the friction is, and what to improve first.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t08.50.jpg" alt="we start with a process audit at 8.50 s"><span class="t">8.50 s</span><span class="p">we start with a process audit</span><span class="m">The audit window rises; a magnifier passes over the empty steps.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t10.20.jpg" alt="how your team works today at 10.20 s"><span class="t">10.20 s</span><span class="p">how your team works today</span><span class="m">Five steps draw left to right, each with its team: Lead, Intake, Quote, Invoice, Follow-up.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t11.60.jpg" alt="where the friction is at 11.60 s"><span class="t">11.60 s</span><span class="p">where the friction is</span><span class="m">Intake and Follow-up lift out of the window with a red &quot;Manual&quot; flag.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t13.20.jpg" alt="and what to improve first at 13.20 s"><span class="t">13.20 s</span><span class="p">and what to improve first</span><span class="m">The K.B cursor opens Priority on Intake and picks &quot;First&quot;; a &quot;1&quot; badge lands.</span></figure>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 4 · 14.2–17.3 s</span><h3>Then we build together, in the open.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t15.40.jpg" alt="then we build together at 15.40 s"><span class="t">15.40 s</span><span class="p">then we build together</span><span class="m">The window&#x27;s body turns into a build board; the K.B and You cursors drag cards into Building.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t16.80.jpg" alt="in the open at 16.80 s"><span class="t">16.80 s</span><span class="p">in the open</span><span class="m">The activity strip lifts: what was moved, by whom, &quot;Shared with your team&quot;, seen by the team.</span></figure>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 5 · 17.3–25.0 s</span><h3>Intake forms, follow-ups and CRM updates run on their own, with Make, n8n and AI agents doing the manual work.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t17.90.jpg" alt="intake forms at 17.90 s"><span class="t">17.90 s</span><span class="p">intake forms</span><span class="m">A client intake form lifts out, fills itself and is sent.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t19.40.jpg" alt="follow-ups and CRM updates at 19.40 s"><span class="t">19.40 s</span><span class="p">follow-ups and CRM updates</span><span class="m">The form shrinks into the first node of a workflow; the CRM node updates.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t20.60.jpg" alt="run on their own at 20.60 s"><span class="t">20.60 s</span><span class="p">run on their own</span><span class="m">The follow-up email arrives on the client&#x27;s phone; the workflow shows &quot;Running&quot;.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t22.20.jpg" alt="with Make, n8n at 22.20 s"><span class="t">22.20 s</span><span class="p">with Make, n8n</span><span class="w">Make · n8n</span><span class="m">The Make and n8n tiles land on their nodes, each named for a moment.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t24.40.jpg" alt="and AI agents doing the manual work at 24.40 s"><span class="t">24.40 s</span><span class="p">and AI agents doing the manual work</span><span class="m">An AI agent node (Claude) joins; more runs pass through by themselves.</span></figure>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 6 · 25.2–33.3 s</span><h3>Need more? We build custom software: dashboards, websites and mobile apps, tailored to how your team already works.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t25.70.jpg" alt="need more? at 25.70 s"><span class="t">25.70 s</span><span class="p">need more?</span><span class="w">Need more?</span><span class="m">The workflow tucks away; &quot;Need more?&quot; rises.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t27.50.jpg" alt="we build custom software at 27.50 s"><span class="t">27.50 s</span><span class="p">we build custom software</span><span class="m">A new window builds itself block by block.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t28.80.jpg" alt="dashboards at 28.80 s"><span class="t">28.80 s</span><span class="p">dashboards</span><span class="w">Example data</span><span class="m">It becomes a dashboard (labelled as example data): numbers count up, bars grow, a line draws.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t29.50.jpg" alt="websites at 29.50 s"><span class="t">29.50 s</span><span class="p">websites</span><span class="m">A website slides in behind it.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t31.00.jpg" alt="and mobile apps tailored at 31.00 s"><span class="t">31.00 s</span><span class="p">and mobile apps tailored</span><span class="m">An app slides in front; its sections are dragged into the team&#x27;s own order.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t32.80.jpg" alt="works at 32.80 s"><span class="t">32.80 s</span><span class="p">works</span><span class="m">The order is saved: a check on Today&#x27;s jobs.</span></figure>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 7 · 33.4–38.1 s</span><h3>Every tool you use, connected, so data flows without copy-paste.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t34.40.jpg" alt="every tool you use at 34.40 s"><span class="t">34.40 s</span><span class="p">every tool you use</span><span class="m">The screens slide away; the real tools from K.B&#x27;s site land in a slowly turning ring round &quot;Your system&quot;.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t35.20.jpg" alt="connected at 35.20 s"><span class="t">35.20 s</span><span class="p">connected</span><span class="m">Lines draw from every tool to the centre.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t36.40.jpg" alt="so data flows at 36.40 s"><span class="t">36.40 s</span><span class="p">so data flows</span><span class="m">Dots run along the lines; rings pulse out of the system.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t37.50.jpg" alt="without copy-paste at 37.50 s"><span class="t">37.50 s</span><span class="p">without copy-paste</span><span class="w">Copy · Paste</span><span class="m">Two keys, Copy and Paste, struck out in red.</span></figure>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 8 · 38.1–42.7 s</span><h3>We work inside your team, not around it, so you always know what we&#x27;re doing.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t39.20.jpg" alt="we work inside your team at 39.20 s"><span class="t">39.20 s</span><span class="p">we work inside your team</span><span class="m">A team channel: the team makes room and K.B takes a seat in the row; 5 members.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t42.10.jpg" alt="you always know what we&#x27;re doing at 42.10 s"><span class="t">42.10 s</span><span class="p">you always know what we&#x27;re doing</span><span class="m">K.B&#x27;s status messages arrive in the channel.</span></figure>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 9 · 42.7–49.7 s</span><h3>And after launch, we stay on: hosting, maintenance and new features every month as your business grows.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t43.30.jpg" alt="and after launch at 43.30 s"><span class="t">43.30 s</span><span class="p">and after launch</span><span class="m">&quot;Go live&quot; is clicked: Live.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t44.80.jpg" alt="we stay on at 44.80 s"><span class="t">44.80 s</span><span class="p">we stay on</span><span class="m">A monthly plan opens; &quot;K.B · on call&quot; is pinned to the month.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t46.30.jpg" alt="hosting, maintenance at 46.30 s"><span class="t">46.30 s</span><span class="p">hosting, maintenance</span><span class="m">Hosting and Maintenance lines run through every week.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t47.20.jpg" alt="and new features every month at 47.20 s"><span class="t">47.20 s</span><span class="p">and new features every month</span><span class="m">A New feature lands in its day; the month turns.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t49.30.jpg" alt="as your business grows at 49.30 s"><span class="t">49.30 s</span><span class="p">as your business grows</span><span class="m">Month 3: three features shipped.</span></figure>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 10 · 50.0–55.4 s</span><h3>Diagnose, build, run: one loop, so your systems keep up with your growth.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t50.30.jpg" alt="Diagnose at 50.30 s"><span class="t">50.30 s</span><span class="p">Diagnose</span><span class="w">Diagnose</span><span class="m">An infinity road draws from Diagnose.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t51.70.jpg" alt="build, run at 51.70 s"><span class="t">51.70 s</span><span class="p">build, run</span><span class="w">Build · Run</span><span class="m">Build and Run light in turn; the dots start running as the road closes.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t52.80.jpg" alt="one loop at 52.80 s"><span class="t">52.80 s</span><span class="p">one loop</span><span class="m">All three stations light; the dots run round the loop.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t54.60.jpg" alt="so your systems keep up with your growth at 54.60 s"><span class="t">54.60 s</span><span class="p">so your systems keep up with your growth</span><span class="m">The loop lifts; the stations pulse on &quot;growth&quot;.</span></figure>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 11 · 55.4–58.0 s</span><h3>Talk to K.B.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t57.00.jpg" alt="Talk to K.B. at 57.00 s"><span class="t">57.00 s</span><span class="p">Talk to K.B.</span><span class="w">Talk to K.B. · Book a Free Discovery Call</span><span class="m">The loop fades; the K.B logo, &quot;Talk to K.B.&quot; built word by word, and the site&#x27;s button in cyan.</span></figure>
+</div></div>
+</section>
+<section><h2>Notes</h2><ul><li>The voice-over is the script Karl recorded (script.md); nothing was rewritten. &quot;K.B&quot; is spoken and shown; &quot;Consultancy&quot; never appears.</li><li>Remade after the reference&#x27;s structure, pacing and kinds of motion; none of its screens, logos, illustrations or wording is used. Every interface is an example built from K.B&#x27;s own services and words.</li><li>People are initials only (AM, JS, RK, LT, You); K.B is its logo tile. Jordan Smith and Acme Studio are placeholder names in the example form; the dashboard numbers are labelled &quot;Example data&quot;.</li><li>Tool logos (Pipedrive, Odoo, Supabase, Resend, Make, n8n, Claude, Next.js) are the ones K.B&#x27;s site shows as tools it builds with.</li><li>No URL on the end card (the domain contains &quot;consultancy&quot;); the button is the site&#x27;s own &quot;Book a Free Discovery Call&quot;.</li><li>Nothing from the site&#x27;s hero video (or any of its videos) was downloaded, sampled or used.</li></ul></section>
+<section><h2>Open questions</h2><ul><li>Motion: the median frame now moves 1.7% of its area — below the reference (2.7%) and well below the 5% you asked for on the last film. The review rounds made the film calmer on purpose (no push-ins; cards lift out of a still window, as in the reference; every screen leaves before the next arrives). Want it livelier?</li><li>Music: Mixkit &quot;Tears of Joy&quot; (no credit needed), cut so its last hit lands on the end card. Keep it, or do you have a track?</li><li>End card: keep it URL-free, or add a domain without &quot;consultancy&quot; if K.B has one?</li></ul></section>
+<section><h2>Revision log</h2><p class="lede" style="margin:0 0 12px">From the review round: two independent reviews of the draft (fidelity to the reference and story; craft, legibility and brand), a cold-eyes pass, and the automatic checks.</p><div class="tbl"><table><tr><th>Before</th><th>After</th><th>Why</th></tr><tr><td>The view pushed into the window (up to 1.45×) on friction, the dropdown, the activity and the intake form, cropping the window at the frame edge and sliding its title bar under the corner mark.</td><td>The window stays whole in the frame, clear of the corner mark, and only creeps (≤ 3% a second); for emphasis a card lifts out of it with a deeper shadow: the two manual steps, the dropdown, the activity strip, the form.</td><td>The reference lifts cards out of a window that stays put; the push-ins read as camera zooms on transitions, which K.B&#x27;s camera rule forbids (both reviews).</td></tr><tr><td>A new body faded in over the old one (&quot;To do&quot; over &quot;Current process&quot;, the form over the board); the months of the plan cross-faded into a doubled grid.</td><td>The old body slides left and is gone in 0.25 s before the new one comes in from the right; the months turn the same way.</td><td>Two screens at once read as a glitch (both reviews).</td></tr><tr><td>The camera&#x27;s breathing drift showed the stage&#x27;s own edge as hard lines inside the frame.</td><td>The stage is 80 px larger than the frame on every side.</td><td>A rendering bug (craft review).</td></tr><tr><td>&quot;With you&quot; was two 52 px chips in the title bar; the &quot;You&quot; chip covered the B, so it read &quot;K.E&quot;.</td><td>A large K.B tile drops in from above and a large &quot;You&quot; rises from below; they meet over the workspace.</td><td>The line needs a picture, and the brand mark was mangled (both reviews).</td></tr><tr><td>Automations got a cyan outline and a small corner check.</td><td>Its card fills with cyan, lifts 1.2×, shows a big check and a small burst; the other modules switch on quietly on &quot;runs&quot;.</td><td>The reference&#x27;s module switching on is the opening&#x27;s key moment (fidelity review).</td></tr><tr><td>The process audit opened on an empty window; a cyan gradient swept across it on &quot;audit&quot;.</td><td>Dashed placeholders for the steps arrive with the window, and a magnifier passes over them on &quot;audit&quot;, lighting each one.</td><td>The sweep looked like a render glitch; the window looked empty (both reviews).</td></tr><tr><td>The phone appeared only twice.</td><td>The client&#x27;s phone comes back during the workflow and receives the follow-up email (&quot;Thanks, Jordan! Here&#x27;s what happens next.&quot;).</td><td>In the reference the phone is a recurring co-star (fidelity review).</td></tr><tr><td>The Make and n8n tiles landed without names; the AI agent dropped through &quot;Runs today&quot;.</td><td>Each tile shows its name for a second as it lands; the AI agent slides in from the right.</td><td>Viewers who don&#x27;t know the logos missed the spoken names; a collision (both reviews).</td></tr><tr><td>&quot;Copy&quot; and &quot;Paste&quot; were small keys at the top edge, struck by one cyan line that missed &quot;Paste&quot;.</td><td>Two large keys, each struck out in red on &quot;paste&quot;, then gone.</td><td>Cyan read as a highlight, not a &quot;no&quot; (both reviews).</td></tr><tr><td>The K.B avatar slid along the team row, over &quot;4 members&quot; and through two people.</td><td>The team makes room, K.B takes the seat, and the count changes to 5 as it lands; the messages fill the channel from the top.</td><td>A collision, and an empty channel (both reviews).</td></tr><tr><td>The monthly plan had a solid navy and a solid cyan bar across every week; the New feature chip covered the dates.</td><td>Thin Hosting and Maintenance lines with a legend; the New feature chip sits inside its day, which lights up; &quot;K.B · on call&quot; is pinned to the month on &quot;we stay on&quot;.</td><td>The heaviest frame of the film, and &quot;we stay on&quot; showed an empty calendar (both reviews).</td></tr><tr><td>The loop drew over the leaving calendar, grew until &quot;Diagnose&quot; was clipped, then shrank 82% into the logo.</td><td>The plan leaves first; the road draws from Diagnose to each station before it is named; the loop grows only 3%; it fades before the logo comes in.</td><td>Overlap, clipping, and a zoom on a transition (both reviews).</td></tr><tr><td>Green fills (Sent, Live, Running) and green check marks.</td><td>Navy buttons and pills with a cyan dot or a cyan check.</td><td>Off-brand, and white on green failed contrast (craft review).</td></tr><tr><td>The end card was the logo and a navy button, arriving 2 s before the end; the shapes kept spinning.</td><td>The logo, &quot;Talk to K.B.&quot; built word by word on the voice, and a cyan &quot;Book a Free Discovery Call&quot; button; the shapes ease to a stop.</td><td>The reference&#x27;s button is in the action colour and echoes the spoken line; a calm sign-off (both reviews).</td></tr></table></div></section>
+<section><h2>Quality check</h2><div class="tbl"><table><tr><th>Check</th><th>Result</th><th>Target</th><th></th></tr><tr><td>Every phrase a new visual (phrase_check.py)</td><td class="n">37 of 37; 0.0 s of voice without one</td><td>all; ≤ 2.5 s</td><td class="ok">pass</td></tr><tr><td>Frames where something moves; longest still</td><td class="n">99%; 0.20 s</td><td>≥ 90%; ≤ 0.8 s</td><td class="ok">pass</td></tr><tr><td>Motion (motion_check.py): share of the frame changing, median frame</td><td class="n">1.7%</td><td>reference 2.7%; Karl asked 5% on the last film (see open questions)</td><td class="no">look</td></tr><tr><td>Screen changes</td><td class="n">every screen leaves before the next arrives (checked frame by frame at each change)</td><td>no two screens at once</td><td class="ok">pass</td></tr><tr><td>Motion probe (camera spikes, lurches, overshoot, flying, busy)</td><td class="n">run on the review-round build: no camera spikes or lurches; one busy stretch (the tool ring landing, 1.4 s); one overshoot flag is the probe confusing two elements (an index shift), not a pop</td><td>none unexplained</td><td class="ok">pass</td></tr><tr><td>Shake (jitter_check.py)</td><td class="n">6 flags, all very slow creeps (≤ 2 px in 20 frames) stepping a whole pixel at a time; no tremble</td><td>none visible</td><td class="ok">pass</td></tr><tr><td>Pops (handoff_check.py)</td><td class="n">65 flagged, all designed arrivals (windows, cards, chips, words)</td><td>none unexplained</td><td class="ok">pass</td></tr><tr><td>Things on screen (busy_check.py)</td><td class="n">median 10; 8 or more 63% of the time</td><td>the reference itself: median 11, 64%</td><td class="ok">pass</td></tr><tr><td>Brand (brand_measure.py verify)</td><td class="n">every storyboard frame on palette (off-palette ≤ 0.3%, anti-aliasing of cyan on navy)</td><td>no frame off-brand</td><td class="ok">pass</td></tr><tr><td>Contrast, every text colour</td><td class="n">navy on canvas 10.8:1; white on navy 11.5:1; navy on cyan 6.0:1; navy on pale cyan 10.0:1; red on pale red 5.6:1; grey on white 8.0:1</td><td>≥ 4.5:1</td><td class="ok">pass</td></tr><tr><td>&quot;K.B&quot; only; no URL; no photos; no hero video</td><td class="n">&quot;Consultancy&quot; appears nowhere on screen or in the voice; people are initials; checked by three reviews</td><td>Karl</td><td class="ok">pass</td></tr><tr><td>Tells (film_tells.py)</td><td class="n">1: &quot;Acme Studio&quot; / &quot;Jordan Smith&quot;, placeholder names in the example intake form</td><td>answered: example data</td><td class="ok">pass</td></tr><tr><td>Delivery</td><td class="n">1920×1080, 30 fps, 58.0 s, H.264 yuv420p BT.709 TV range, AAC 48 kHz, 8-sample motion blur</td><td>as planned</td><td class="ok">pass</td></tr><tr><td>Loudness and peak</td><td class="n">−15.1 LUFS integrated, −1.3 dBFS peak</td><td>−15 LUFS, ≤ −1 dBFS</td><td class="ok">pass</td></tr></table></div><p class="lede">Measured on the delivered encode (deliver/kb-explainer-58s.mp4) unless noted. Sound was mixed by measurement: no speakers in the build sandbox, so Karl&#x27;s ear has the last word.</p></section>
+<section><h2>Appendix</h2>
+<details><summary>Production plan (every shot against the reference beat it mirrors)</summary><pre># K.B explainer — production plan (58.0 s)
+
+Karl&#x27;s ask: &quot;exactly this video&quot; (the JustCall × HubSpot explainer in `references/`), for K.B. Built as a beat-for-beat
+remake of the reference&#x27;s **structure, pacing and kinds of motion** (logo-circle open, app window with a module switched
+on, a phone sliding in, a big &quot;How?&quot;, zooms into interface cards, a dropdown pick, a workflow running, tools joined up,
+avatars, a calendar filling, an infinity loop, a logo-and-button end card), with **original K.B artwork, interface and
+copy**: none of the reference&#x27;s screens, logos, illustrations or wording are reproduced. Only &quot;K.B&quot; (never
+&quot;Consultancy&quot;); no team photos (avatars are initials); nothing from K.B&#x27;s hero video. VO: ElevenLabs &quot;Christina&quot;,
+placed at 1.60 s; 37 phrases (`storyboard/phrases.txt`).
+
+Look: K.B&#x27;s site (canvas #F7F7F7 with a faint dot texture, white rounded windows with a navy title bar, cyan as the
+action colour, Montserrat; Copperplate only in the K.B logotype), a small K.B tile in the top-right corner throughout
+(the reference keeps its brand mark there), a few small shapes drifting at the edges in the open, &quot;How?&quot; and the end.
+Every interface is an example built from K.B&#x27;s own services and words (labelled where it could be mistaken for a real
+client): process audit, build board, workflow, dashboard / website / app, tool connections, team channel, monthly
+plan calendar, the Diagnose → Build → Run loop.
+
+| # | Time | VO | Shot (reference beat it mirrors) |
+|---|---|---|---|
+| Open | 0.0–1.6 | — | Shapes drift; a K.B circle and a &quot;your business&quot; circle slide together and dock into one lockup (logo circles). |
+| 01 | 1.6–4.7 | K.B builds the software and automation your business runs | The lockup circle grows into a white workspace window &quot;Your business&quot;; module tiles fill it; on &quot;automation&quot; the Automations tile switches on and lifts with a check (app window, module switched on). |
+| 02–03 | 4.7–6.5 | on, with you | A phone slides in at right running the same workspace; &quot;with you&quot; two presence chips (K.B and You) dock in the title bar (phone slides in). |
+| 04 | 6.5–7.2 | How? | Everything slides away left; &quot;How?&quot; rises huge and blurs out into the next window (big word). |
+| 05 | 7.2–9.3 | we start with a process audit | A &quot;Process audit&quot; window rises; its title types in (window, zoom). |
+| 06 | 9.3–10.7 | how your team works today | Five example steps draw left to right (Lead, Intake, Quote, Invoice, Follow-up), each with a team initial. |
+| 07 | 10.7–12.0 | where the friction is | The window pushes in: Intake and Follow-up get a red &quot;Manual&quot; flag and outline. |
+| 08 | 12.0–14.0 | and what to improve first | A Priority dropdown opens on Intake and lands on &quot;First&quot; (dropdown pick). |
+| 09 | 14.2–16.0 | then we build together | The flow folds into a build board (To do / Building / Live); two named cursors, K.B and You, move cards together. |
+| 10 | 16.1–17.3 | in the open | Zoom to the board&#x27;s activity line and a &quot;Shared with your team&quot; chip (zoom into a card). |
+| 11 | 17.3–18.4 | intake forms | An intake form card fills and is sent (cursor click). |
+| 12 | 18.4–20.9 | follow-ups and CRM updates run on their own | The form drops into a workflow: CRM record updates, follow-up email sends; status &quot;Running&quot; (workflow builder). |
+| 13–14 | 20.9–22.6 | with Make, n8n | The Make and n8n tiles land on the two nodes as they are named. |
+| 15 | 22.6–25.2 | and AI agents doing the manual work | An &quot;AI agent&quot; node joins (Claude tile) and the next records run through by themselves. |
+| 16 | 25.2–26.1 | need more? | The workflow tucks away; &quot;Need more?&quot; rises (big word). |
+| 17 | 26.1–28.0 | we build custom software | An empty window builds itself block by block. |
+| 18 | 28.2–29.0 | dashboards | It becomes a dashboard: bars grow, a line draws. |
+| 19 | 29.0–29.6 | websites | A website window slides in behind. |
+| 20–21 | 29.6–33.3 | and mobile apps tailored to how your team already works | A phone slides in front; on &quot;tailored&quot; its sections reorder to the team&#x27;s order (phone slides in). |
+| 22 | 33.4–34.8 | every tool you use | Real tool tiles from the site land in a ring round &quot;Your system&quot;. |
+| 23 | 34.8–35.5 | connected | Lines draw from every tool to the centre. |
+| 24–25 | 35.5–38.1 | so data flows without copy-paste | Dots run along the lines; a copy/paste key pair is struck out. |
+| 26 | 38.1–40.8 | we work inside your team, not around it | A team channel: initials avatars in a row; the K.B tile slides into the row (avatars). |
+| 27 | 40.8–42.7 | you always know what we&#x27;re doing | K.B&#x27;s status messages arrive in the channel. |
+| 28–29 | 42.7–45.1 | and after launch, we stay on | The system goes Live; a month calendar opens (calendar). |
+| 30 | 45.6–46.6 | hosting, maintenance | Recurring Hosting and Maintenance bars fill the month. |
+| 31 | 46.6–49.7 | and new features every month as your business grows | The calendar turns month to month, a New feature chip landing in each. |
+| 32–34 | 50.0–52.3 | Diagnose, build, run | An infinity loop draws; Diagnose, Build, Run light in turn (infinity loop). |
+| 35–36 | 52.3–55.4 | one loop, so your systems keep up with your growth | Dots keep running round the loop, which lifts. |
+| 37 + end | 55.4–58.0 | Talk to K.B. | The loop gathers into the K.B logo; &quot;Book a Free Discovery Call&quot; button (end card). |
+</pre></details>
+<details><summary>Voice-over script</summary><pre># K.B explainer — voice-over script (≈64 s)
+
+Same beat structure and timing as the reference (12 lines, ≈135 words, voice from ≈3 s to ≈63 s); the wording is
+K.B&#x27;s own (harvest/facts.md of the kb-tech-partner film: home, services, about, FAQ). Say &quot;K.B&quot; as &quot;kay bee&quot;.
+Never &quot;Consultancy&quot;.
+
+| # | Start | Line |
+|---|---|---|
+| 1 | 3.0 s | K.B builds the software and automation your business runs on, with you. |
+| 2 | 9.1 s | How? |
+| 3 | 10.5 s | We start with a process audit: how your team works today, where the friction is, and what to improve first. |
+| 4 | 17.9 s | Then we build together. |
+| 5 | 23.1 s | In the open. |
+| 6 | 25.0 s | Intake forms, follow-ups and CRM updates run on their own, with Make, n8n and AI agents doing the manual work. |
+| 7 | 32.2 s | Need more? We build custom software: dashboards, websites and mobile apps, tailored to how your team already works. |
+| 8 | 38.7 s | Every tool you use, connected, so data flows without copy-paste. |
+| 9 | 42.3 s | We work inside your team, not around it, so you always know what we&#x27;re doing. |
+| 10 | 48.7 s | And after launch, we stay on: hosting, maintenance and new features every month as your business grows. |
+| 11 | 57.3 s | Diagnose, build, run: one loop, so your systems keep up with your growth. |
+| 12 | 62.3 s | Talk to K.B. |
+</pre></details>
+</section></div>

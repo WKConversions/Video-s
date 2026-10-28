@@ -45,6 +45,12 @@ planning; read the entries of the categories you are working on when a decision 
 - Reach a motion target with motion that explains: the client's product (their website, their app) as the one hero
   object, always doing something; never decorative wobble; never scroll a page up and down.
 - Shadows Apple-style: layered, no offset, even on all sides, generous; a static dither against banding.
+- Ads (TikTok / Meta): the hook moves on frame 0, the problem first, then the big solution; captions for sound-off
+  viewers (Bingua ad).
+- Premium brands: editorial calm, serif with italic accents, small caps, thin lines; no bounce, no cartoon icons,
+  no scaling for effect, nothing childish (FUF).
+- Sharpness is source size: never show a photo larger than about 1.3x its pixels.
+- Confidential client material never goes into the public repo or a public tool: gitignore it, send files in chat.
 
 ## Adding a correction
 
@@ -427,6 +433,60 @@ speed × 12 s is a whole number of chip spacings (seamless); each beat enters fr
 effects every 4 s; check seam diff (last vs first frame) ≈ a normal frame step. Templates: `templates/klyro`,
 `templates/fieldnote`, `templates/morrow`.
 GENERAL LESSON: a short loop is a template job: start from the loop template, harvest the brand, ship in 15 minutes.
+
+## Bingua, FUF, a confidential hero film and Northline (October 2026, the parallel session)
+
+Merged on 28 October 2026 from the export of the parallel session. Their films are in the repo (`films/bingua-phone`,
+`bingua-ad`, `bingua-globe`, `fuf-brand`, `kb-explainer`, `kb-tech-partner`, `northline`); the confidential hero film (handoff) is
+is not.
+
+- **Productive motion (Bingua, 2.0 → 4.2%).** Karl: "a productive 5% norm… something is really happening, not just
+  easily moving something constantly"; "dont simply animate a UI left to right". Raised with content that acts (a
+  feed that mirrors the voice, a lesson that scrolls with sequential highlights, a livelier clip), never with drift.
+- **Fewer check rounds.** "No unnecessary rounds of checking": one stills pass, then render.
+- **The ad hook (Bingua ad, 7.5%).** Frame 0 already moves and shows the subject: place labels at negative offsets
+  (`open-0.35`) so text is up on the first frame. Problem first (doomscrolling, "ON HOLD", a timer 5 min → 1 h),
+  then "Meet Bingua", then the payoff. An overlap becomes a productive move (word chips fly home to their countries
+  instead of colliding with the headline).
+- **Globe (Bingua globe, 6.1%).** A canvas dot globe (13,597 land dots at 0.9°, orthographic, shaded sphere,
+  `scripts/globe_dots.py`), turned by a thumb; five stops each light up, drop a pin, raise a reel, fly a word chip
+  home. Countries that can't share a hemisphere get a row of flags instead. Outgoing lines leave 0.3 s before the
+  next line's first word.
+- **Premium and not childish (FUF v2).** "constant motion but no useless only movement or sizing motion and dont
+  make it childish". Thin lines on flat colour barely register at 160x90 (1.2% with a lot of line work): area motion
+  (photos, footage, fields of dots) is the honest way to a high norm. The softness came from crops enlarged more than
+  1.3x, not from the resolution.
+- **Client storyboards (confidential hero film, v1).** When the handed-over storyboard is weak, offer your own concept early; the
+  direction stays the client's unless Karl says otherwise. Website hero legibility: key words at least 96 px, support at
+  least 44 px on the 1080 master, nothing essential in the outer 5% (the site shows it about 358 px wide on a phone).
+  Deliverables for a hero: mp4 about 4–6 MB (`-crf 21 -maxrate 1400k -bufsize 2800k`), webm (`libvpx-vp9 -b:v 1300k
+  -crf 32`), a poster under 250 KB, a VTT (one cue per sentence, +0.25 s hold), a music licence list; a 0.6 s picture
+  lead before the first word.
+- **60 fps from a 30 fps story (confidential hero film, v2).** A `Film60` composition (fps 60, double duration, prop `fpsScale: 2`);
+  the camera reads `useCurrentFrame() / SCALE`. Frame 400 at 60 fps equals frame 200 at 30 (pixel diff 0).
+- **Loops at 30 fps (Northline).** The hero beat wraps round the end; all motion periodic or wrapped; no camera breath;
+  motion-blur sample frames wrap with `(f - x + D) % D`. An unclear size ("580p"): deliver the master plus the best
+  reading (1032x580), and say which.
+- **Music licences.** Mixkit tracks need no credit; Incompetech (Kevin MacLeod, CC BY) needs one, so it is out for ads.
+  Check where a track's real ending lands (`music_fit.py --end fade` when it rings out).
+- **Build failures and their fixes.**
+  - A compound label (`"w:world+0.25-0.15"`) throws: compute the number (`T.s(label) - 0.15`).
+  - A beat named `end` clashes with `breathe`, which reads `T.f("end")` as the film end: use `outro`.
+  - `track()` keys must be in time order; the ease belongs to the destination key.
+  - Huge PNG layers (six at 5400x2040) make Chrome throw "EncodingError" and vanish: keep decoded image memory per
+    frame low (halve or merge layers).
+  - An opaque scene mounted before the previous transition finished covers it: start the next scene at the end of the
+    grow.
+  - A strike-through across several words: draw one bar of `measure(text)` width.
+  - `pgrep`/`pkill` with a pattern that is in your own command line matches itself (an endless wait, exit 144): use
+    `[r]ender_chunks`, or run the render itself in the background.
+  - Parallel `stock.py get` overwrites CREDITS.md: run gets one after another.
+  - Whisper sometimes stacks two words on one time: fix by ear.
+- **Moving text and will-change.** Two findings that fit together: a slow ease-out tail on text without its own layer
+  snaps to whole pixels (0, 1, 0, 0, 1 px instead of 0.62 → 0.06), so moving text gets `will-change: transform` while
+  it moves and drops it at rest (layer text is about 20% softer) (`kinetic.tsx`, `production/build-gotchas.md`); but a
+  long page scroll on a compositor layer skips frames in headless Chrome, so scroll a page in whole pixels without
+  `will-change` (Creoble v5).
 
 ## Process corrections
 

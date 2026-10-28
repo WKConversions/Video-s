@@ -19,7 +19,7 @@ saved file into the build folder.
 | `cut_match.py` | compares the carried object's box across a cut | `production/build-gotchas.md` |
 | `vo_align.py` | transcribes voice-over files and force-aligns the script for word timings | `planning/voice-over.md` |
 | `vo_whisper.py` | word timings with faster-whisper, the script as prompt (more robust on synthetic voices than pocketsphinx) | `planning/voice-over.md` |
-| `qc.sh` | runs the automatic checks on an encode (motion, shake, pops, busy, strips) and draws the movement graph, results in one folder | `evaluation/quality-check.md` |
+| `qc.sh` | runs the automatic checks on an encode: motion, shake, pops, busy, strips, rhythm (punch_check + relay_check, with a RHYTHM verdict), turns (motion_read on every transition) and sound (av_sync, when the film has audio); plus the movement graph; results in one folder | `evaluation/quality-check.md` |
 | `jitter_check.py` | finds shake: motion that moves in steps instead of gliding | `evaluation/quality-check.md` |
 | `handoff_check.py` | finds pops: a place that changes in one frame (a blink, a jump in size, a layer appearing) | `evaluation/quality-check.md` |
 | `strips.py` | strips of frames around every transition, or around given frames | `evaluation/quality-check.md` |
@@ -45,6 +45,7 @@ saved file into the build folder.
 | `phrase_check.py` | splits the aligned voice-over into phrases (the shot list), and measures on a render that every phrase brings a new visual | `planning/phrase-by-phrase.md`, `evaluation/quality-check.md` |
 | `kinetic.tsx` | the kinetic kit for Remotion: word-by-word type with marks, rolls, masks out of objects, the breathing camera, keyed tracks; from Karl's references, typed prompts, a dial selector, a split exit, drawn strokes, blooms and flips; the approved speed graphs (`EASE`, `whip`, `popElastic`, `bounce`, `speedRamp`, `stepper`, `flick`, `zoomThrough`) | `production/remotion.md`, `planning/phrase-by-phrase.md` |
 | `storybook_kit.tsx` + `storybook_blot.png`, `storybook_grain.png` | the storybook kit for Remotion: paintings placed by focus point, light pools, watercolour blooms out of an object, full-frame page turns at the gutter, a rack focus across the gutter, paper grain; no drawn lines | `production/remotion.md` |
+| `ui_motion.tsx` | UI-motion helpers for Remotion: `reorder` (FLIP row re-sorting, ease-in-out, 1-frame stagger) and `popFrom` (appears on the click frame, scale .86 -> .94, settles to 1 over about 10 frames); test-rendered, no shake | `design/ui-product.md` |
 | `three_card.tsx` | a tested 3D scene for Remotion: a lit card with a soft shadow, frame-driven | `production/remotion.md` |
 | `three_kit.tsx` | the 3D kit: a bright studio, a breathing camera, the logo as a real tile, a laptop, phone and panels with live interface screens (projected onto the 3D screens), frame-driven speed graphs | `design/three-d.md` |
 | `stock.py` | searches royalty-free footage (Mixkit) and photos (Openverse, Pexels by ID), measures them, keeps credits | `design/asset-strategy.md` |
@@ -123,3 +124,28 @@ and `pip install pyloudnorm`, and `sound_mix.py` reads the library's `sound/` fo
 
 Good candidates for future scripts: validating brief fields, converting timecodes between frame
 rates, building a scene timing sheet from word timings, exporting reference thumbnails.
+
+## Frame-by-frame motion reading (added October 2026)
+
+| Script | What it does | Used in |
+|---|---|---|
+| `motion_read.py` | every drawn frame of each motion event (onset to settle), the changed region outlined, change-per-frame bars, curve shape, ramp ×/frame and settle frames; cadence-aware | `references/reading-references.md`, `references/technique-catalogue.md` (M) |
+| `punch_check.py` | the gaps between big changes over a whole film: median gap and the longest held stretch | `references/technique-catalogue.md` (M, rule 2), `evaluation/quality-check.md` |
+
+- `python3 motion_read.py ref.mp4 reads/ [--at 13.7,21.8]`: read the strips, not a contact sheet a second apart.
+- `python3 punch_check.py film.mp4`: target a median gap ≈ 2 s and no stretch over ~5 s (explainers and ads).
+| `relay_check.py` | gaps between motion events in drawn frames: median gap, share of tight relays (1-6) and pauses (>12); target for explainers: median 8-14, relays under 50% | `references/technique-catalogue.md` (M, rule 14), `evaluation/quality-check.md` |
+| `av_sync.py` | each strong visual hit against the nearest sound onset (±8 frames), offsets in frames, scored against a random-frame baseline | `motion/sound.md`, `references/technique-catalogue.md` (S1) |
+| `av_plot.py` | picture of motion and sound onsets over a window, with the frames around one hit | `motion/sound.md` |
+
+`motion_check.py` now also judges the end card on its own (last 2 s, 0.2 s windows at 320×180; target longest
+still 0.5 s or less) and handles held drawings (cadence) when 30%+ of encoded frames repeat.
+
+`jitter_check.py` (October 2026): held drawings are judged per drawing (no false SHAKE on films on twos); whole-frame double-steps at a fixed period are reported as JUDDER (frame-rate conversion) and a repeat every 5 frames as PULLDOWN. `qc.sh` prints a RHYTHM verdict in its result line.
+`jitter_check.py` (October 2026, round M24): texture is judged by fine detail (high-pass), so smooth gradients with grain and a drifting glow no longer read as SHAKE (tm_4 went from 2 SHAKE flags to clean); one-frame out-and-back pops are detected (they were missed by every earlier version); JUDDER now fails the check (exit 1). Tested on synthetic smooth / pop / step clips: 0 / 1 / 1.
+`av_sync.py` (October 2026, parallel round M11): adds a beat grid (tempo by autocorrelation of the onset curve, sub-frame period and phase) and reports how many visual hits land within a frame of a beat, against chance.
+| `vo_words.py` | word timings from any film's voice-over (faster-whisper, local), for `phrase_check.py` on references | `planning/phrase-by-phrase.md` |
+`phrase_check.py` (October 2026, parallel round M14): one new element (an icon added to a diagram, box >= 0.15% of the frame) counts as a new visual; analysis at 640 px.
+`qc.sh` (parallel round M16): REGISTER=ad|explainer. Ads keep the 5 s turn and 50% relay targets; narrated explainers (default) are judged by phrase_check, flagging only relays over 70% or moves under 4 frames apart.
+| `boil.tsx` | `<Boil every={3} px={1.2}>`: hand-drawn boil for held characters and icons (SVG turbulence, seed stepped every 3 frames) | `references/technique-catalogue.md` (rule 26) |
+| `globe_dots.py` | the dot globe: evenly spaced land dots tagged by country (Natural Earth, public domain), for a canvas orthographic globe (Bingua globe) | `design/maps.md` |

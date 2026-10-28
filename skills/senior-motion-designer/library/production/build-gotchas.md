@@ -49,7 +49,10 @@ new one (the learning loop in `examples/corrections.md` covers taste; this file 
   reports it as a `SHAKE` with regular steps.
 - **Slow text still steps a pixel at a time, even with transforms,** because glyphs are drawn on
   whole pixels; motion blur doesn't hide it (on a slow move all 8 samples land on the same pixel).
-  Give slowly moving text its own layer (`will-change: transform` on the moving span), then render in
+  Give slowly moving text its own layer (`will-change: transform` on the moving span), and every landing is slow
+  at its end: the tail of an ease-out snaps to whole pixels without a layer (measured: 0, 1, 0, 0, 1 instead of
+  0.62 -> 0.06). Add the layer while the element moves and remove it at rest (text on a layer is ~20% softer).
+  Then render in
   contiguous chunks, one tab each (`scripts/render_chunks.sh`): with `--concurrency` above 1, Remotion
   gives neighbouring frames to different tabs, each layer keeps a sub-pixel offset that depends on its
   tab's history, and the text trembles ±0.85 px from frame to frame (measured on the GoHere captions:

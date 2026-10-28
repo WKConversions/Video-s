@@ -1,0 +1,294 @@
+<title>K.B Tech Partner Film</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column; the film first, then a frame per phrase in a wrapping grid, then notes and the working tables. */
+:root {
+  --bg: #F7F7F7; --panel: #FFFFFF; --ink: #252525; --muted: #49525B; --navy: #293A51; --line: #E2E8F0; --cyan: #38C8FF; --chip: #EBECF4;
+  --sans: "Montserrat", "Segoe UI", system-ui, sans-serif; --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111923; --panel: #18222F; --ink: #EEF2F7; --muted: #A9B4C2; --navy: #A8C1E2; --line: #2A3546; --cyan: #38C8FF; --chip: #212D3D; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #111923; --panel: #18222F; --ink: #EEF2F7; --muted: #A9B4C2; --navy: #A8C1E2; --line: #2A3546; --cyan: #38C8FF; --chip: #212D3D; color-scheme: dark }
+body { background: var(--bg); color: var(--ink); font: 15px/1.6 var(--sans); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; padding-block: 40px 96px; display: grid; gap: 48px; }
+h1 { font: 800 clamp(34px, 5.4vw, 60px)/1.02 var(--sans); letter-spacing: -0.04em; margin: 6px 0 0; text-wrap: balance; color: var(--navy); }
+h1 em { font-style: normal; box-shadow: inset 0 -0.16em 0 var(--cyan); }
+h2 { font: 700 22px/1.25 var(--sans); letter-spacing: -0.02em; margin: 0 0 14px; text-wrap: balance; color: var(--navy); }
+h3 { font: 700 17px/1.35 var(--sans); letter-spacing: -0.01em; margin: 0; text-wrap: balance; }
+.eyebrow, .mono { font-family: var(--mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.lede { color: var(--muted); max-width: 68ch; margin: 12px 0 0; }
+video { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; border-radius: 16px; background: #000; display: block; box-shadow: 0 30px 70px -40px rgba(41,58,81,.5); }
+.qc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.qc span { background: var(--chip); border-radius: 999px; padding: 5px 13px; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.qc b { color: var(--ink); font-weight: 700; }
+.dir { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.dir div { background: var(--panel); padding: 14px 16px; min-width: 0; }
+.dir b { display: block; margin-bottom: 4px; }
+.beat { display: grid; gap: 14px; padding-top: 24px; border-top: 1px solid var(--line); }
+.beat-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.frames { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 20px; }
+.fr { display: grid; gap: 6px; align-content: start; min-width: 0; }
+.fr img { width: 100%; max-width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 10px; background: var(--chip); display: block; }
+.fr .t { font-family: var(--mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.fr .p { font-weight: 700; font-size: 14px; }
+.fr .w { font-size: 12.5px; color: var(--navy); }
+.fr .w::before { content: "on screen: "; color: var(--muted); }
+.fr .m { font-size: 13.5px; color: var(--muted); }
+ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; max-width: 90ch; }
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; min-width: 760px; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+tr:last-child td { border-bottom: 0; }
+th { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.ok { color: #1F8A5B; font-weight: 700; } .no { color: #C2410C; font-weight: 700; }
+details { border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+details + details { margin-top: 10px; }
+summary { cursor: pointer; padding: 12px 16px; font-weight: 700; }
+summary:focus-visible, a:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+pre { margin: 0; padding: 0 16px 16px; white-space: pre-wrap; font: 12.5px/1.55 var(--mono); color: var(--muted); overflow-x: auto; }
+a { color: var(--navy); }
+@media (max-width: 520px) { .wrap { padding-inline: 16px; gap: 36px; } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>
+<div class="wrap">
+<header><div class="eyebrow">K.B · brand film · 34 s · 1920×1080 · storyboard and QC</div><h1>In, beside, <em>behind</em></h1><p class="lede">K.B is the one tile that isn&#x27;t another tool: it comes in, stands beside your business and ends up behind it, so the business that technology held back grows. Told with K.B&#x27;s own shapes, one business at work, and the real people of K.B.</p></header>
+<section><video controls playsinline preload="metadata" poster="frames/t33.60.jpg" src="film.mp4"></video>
+<div class="qc"><span><b>Motion</b> 6.0% median (target 5%)</span><span><b>Moving</b> 100% of frames</span><span><b>Phrases</b> 21/21 new visual</span><span><b>Voice over a held frame</b> 0.0 s</span><span><b>Captions</b> 7 of 21 phrases</span><span><b>Loudness</b> −15.5 LUFS</span><span><b>Length</b> 34.0 s</span></div>
+</section>
+<section><h2>Project direction</h2><div class="dir"><div><b class="mono">Purpose</b>A website and LinkedIn film that positions K.B as the embedded tech partner.</div><div><b class="mono">Audience</b>Founders and managers of startups and SMEs who know technology could help but not where to start.</div><div><b class="mono">Format</b>16:9, 1920×1080, 30 fps, 34.0 s.</div><div><b class="mono">Core message</b>Technology alone doesn&#x27;t grow a business; K.B comes in, stays beside you and ends up behind your growth.</div><div><b class="mono">Tone</b>Energetic voice, clean motion: no camera moves, no bounce, a calm sign-off.</div><div><b class="mono">Style and brand</b>K.B&#x27;s own site: canvas #F7F7F7, navy #293A51, cyan #38C8FF as marks only, Montserrat, Copperplate CC for the K.B logotype. Only &quot;K.B&quot; is said and shown.</div><div><b class="mono">Art direction</b>One bright stage of rounded squares: one business at work (a clip in a tile), one K.B tile, the real tool tiles of the site, the founders&#x27; photo for the partner lines.</div><div><b class="mono">Motion</b>Precise premium at the energetic end. Signature curve ARRIVE; MOVE for things already on screen; soft starts everywhere a still thing moves. The camera only breathes.</div><div><b class="mono">Transitions</b>A tile flips into the next thing; a field or a mask grows out of a tile; the business opens into its parts and closes again.</div><div><b class="mono">5% motion</b>Karl&#x27;s target: the median frame changes 5% of its area. Reached by the content (the footage drifting inside its tile, the tool conveyors, the founders&#x27; photo, the moves), never by the camera.</div><div><b class="mono">Captions</b>Words on 7 of 21 phrases (grow, Where to start?, Advice, Tech Partner, Strategy / Implementation, alone.); the other 14 are pure pictures.</div><div><b class="mono">Sound</b>ElevenLabs voice (Christina) at 0.40 s; Mixkit &quot;Raising Me Higher&quot; cut on its bar grid, opening up on &quot;That&#x27;s where K.B comes in&quot;, its last chord on the end card; 47 effects on their moves.</div></div></section>
+<section><h2>Storyboard</h2><p class="lede" style="margin:0 0 8px">A frame per phrase, taken from the delivered film. "On screen" lists the only words the film shows; everything else is picture.</p>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 1 · 0.0–4.6 s</span><h3>Technology should help your business grow. Not hold it back.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t00.60.jpg" alt="Technology at 0.60 s"><span class="t">0.60 s</span><span class="p">Technology</span><span class="m">From frame 0 a band of the real tools K.B builds with runs across the middle of the frame.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t01.60.jpg" alt="should help your business at 1.60 s"><span class="t">1.60 s</span><span class="p">should help your business</span><span class="m">The floor glides down as the business (a team at work, seen from above) drops onto it.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t02.50.jpg" alt="grow at 2.50 s"><span class="t">2.50 s</span><span class="p">grow</span><span class="w">grow</span><span class="m">The floor lifts the business on &quot;grow&quot;; the word rises out of a mask beside it.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t03.40.jpg" alt="not hold at 3.40 s"><span class="t">3.40 s</span><span class="p">not hold</span><span class="m">Two tiles lift out of the floor under its feet and turn their blank backs: the grip.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t04.20.jpg" alt="it back at 4.20 s"><span class="t">4.20 s</span><span class="p">it back</span><span class="m">Floor, business and word sink 300 px; the business turns grey.</span></figure>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 2 · 4.7–9.3 s</span><h3>But finding the right solutions, and knowing where to start, isn&#x27;t always easy.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t05.60.jpg" alt="finding the right solutions at 5.60 s"><span class="t">5.60 s</span><span class="p">finding the right solutions</span><span class="m">A full reel of tools runs up through a cyan selector that never settles.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t07.40.jpg" alt="and knowing where to start at 7.40 s"><span class="t">7.40 s</span><span class="p">and knowing where to start</span><span class="w">Where to start?</span><span class="m">The reel breaks: three tools land round the business; the selector hops between them and can&#x27;t choose.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t08.70.jpg" alt="isn&#x27;t always easy at 8.70 s"><span class="t">8.70 s</span><span class="p">isn&#x27;t always easy</span><span class="m">Tools close round the business in pairs: a wall with one tile-sized hole.</span></figure>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 3 · 9.4–11.3 s</span><h3>That&#x27;s where K.B comes in.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t09.95.jpg" alt="That&#x27;s where K.B at 9.95 s"><span class="t">9.95 s</span><span class="p">That&#x27;s where K.B</span><span class="w">K.B (logo)</span><span class="m">The K.B tile slides in from the right and seats in the hole; the wall of tools fades back.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t10.90.jpg" alt="comes in at 10.90 s"><span class="t">10.90 s</span><span class="p">comes in</span><span class="w">K.B (logo)</span><span class="m">The tile grows into the film&#x27;s one full navy field; the logotype keeps growing under the voice.</span></figure>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 4 · 11.3–15.0 s</span><h3>We don&#x27;t just offer advice. We become your tech partner.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t12.40.jpg" alt="we don&#x27;t just offer advice at 12.40 s"><span class="t">12.40 s</span><span class="p">we don&#x27;t just offer advice</span><span class="w">Advice</span><span class="m">The field folds back into the tile; a note, &quot;Advice&quot;, slides across the gap to the business, which stays grey.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t14.50.jpg" alt="we become your tech partner at 14.50 s"><span class="t">14.50 s</span><span class="p">we become your tech partner</span><span class="w">TECH PARTNER</span><span class="m">K.B crosses the gap and docks beside the business; the site&#x27;s lockup builds under the pair, underlined on &quot;partner&quot;.</span></figure>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 5 · 15.1–23.0 s</span><h3>First, we understand your business. Then, we identify opportunities, develop solutions, and help bring them to life.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t15.50.jpg" alt="First at 15.50 s"><span class="t">15.50 s</span><span class="p">First</span><span class="m">The business grows close; the period of K.B lights and a cyan dot slides out of it.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t16.20.jpg" alt="we understand at 16.20 s"><span class="t">16.20 s</span><span class="p">we understand</span><span class="m">The dot opens into a lens gliding over the business: inside it, in colour and closer.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t17.30.jpg" alt="your business at 17.30 s"><span class="t">17.30 s</span><span class="p">your business</span><span class="m">The business opens to the full frame and parts into nine: your business, laid out in its parts.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t19.20.jpg" alt="then we identify opportunities at 19.20 s"><span class="t">19.20 s</span><span class="p">then we identify opportunities</span><span class="w">labels: Excel files · Follow-ups · CRM updates</span><span class="m">Three parts that don&#x27;t touch are ringed and lift forward, named with K.B&#x27;s own words for manual work: a printed chart, a clipboard, a laptop; the rest dims.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t20.60.jpg" alt="develop solutions at 20.60 s"><span class="t">20.60 s</span><span class="p">develop solutions</span><span class="m">The three parts flip into Make, n8n and Claude; a dotted flow draws between them, stopping short of each logo.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t22.20.jpg" alt="and help bring them to life at 22.20 s"><span class="t">22.20 s</span><span class="p">and help bring them to life</span><span class="m">The parts close; a pulse runs the flow and colour floods out of the three tools into the whole business.</span></figure>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 6 · 23.0–26.6 s</span><h3>From strategy to implementation, we&#x27;re by your side.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t23.50.jpg" alt="from strategy at 23.50 s"><span class="t">23.50 s</span><span class="p">from strategy</span><span class="w">Strategy</span><span class="m">The pair sets down at the start of a road; the business becomes its plan, a dashed outline.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t24.60.jpg" alt="to implementation at 24.60 s"><span class="t">24.60 s</span><span class="p">to implementation</span><span class="w">Implementation</span><span class="m">The pair rides the road side by side; the plan fills with the real business as it goes.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t26.20.jpg" alt="we&#x27;re by your side at 26.20 s"><span class="t">26.20 s</span><span class="p">we&#x27;re by your side</span><span class="m">The K.B tile turns over into the founders&#x27; Málaga photo, beside the business: the real team.</span></figure>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 7 · 26.6–29.8 s</span><h3>Because real growth doesn&#x27;t come from technology alone.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t27.60.jpg" alt="because real growth at 27.60 s"><span class="t">27.60 s</span><span class="p">because real growth</span><span class="m">The founders go behind the business, hidden; it rises on &quot;growth&quot;.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t29.60.jpg" alt="alone at 29.60 s"><span class="t">29.60 s</span><span class="p">alone</span><span class="w">alone.</span><span class="m">The opening&#x27;s floor returns as a treadmill; the business turns grey and sinks into it.</span></figure>
+</div></div>
+<div class="beat"><div class="beat-head"><span class="mono">Beat 8 · 29.8–34.0 s</span><h3>It comes from having the right partner behind it.</h3></div><div class="frames">
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t31.30.jpg" alt="the right partner at 31.30 s"><span class="t">31.30 s</span><span class="p">the right partner</span><span class="m">Carried left, the floor dropped away: the founders rise behind the business, faces and shoulders above it, and its colour comes back.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t32.10.jpg" alt="behind it at 32.10 s"><span class="t">32.10 s</span><span class="p">behind it</span><span class="w">grow</span><span class="m">Both lift, higher than in the hook; &quot;grow&quot; returns at the hook&#x27;s size.</span></figure>
+<figure class="fr" style="margin:0"><img loading="lazy" src="frames/t33.60.jpg" alt="end card at 33.60 s"><span class="t">33.60 s</span><span class="p">end card</span><span class="w">K.B TECH PARTNER · We grow with you. · Book a Free Discovery Call</span><span class="m">The founders turn back into the K.B logo, the business in front of its corner; &quot;grow&quot; slots into the site&#x27;s line; the button rises. Nothing crosses the screen.</span></figure>
+</div></div>
+</section>
+<section><h2>Notes</h2><ul><li>The voice-over is the script as written; nothing was rewritten. &quot;K.B.&quot; is spoken; the screen always writes &quot;K.B&quot; as the site does.</li><li>No URL on the end card: the domain contains &quot;consultancy&quot;. The end card uses the site&#x27;s own words: &quot;We grow with you.&quot; (About) and &quot;Book a Free Discovery Call&quot; (home).</li><li>&quot;Your business&quot; is a royalty-free Mixkit clip (4809, a team at a table seen from above, no faces to camera, no brand). It is never presented as a K.B client or the K.B team. The founders&#x27; photo is the site&#x27;s own About photo.</li><li>The three ringed parts are named with the manual work K.B&#x27;s own client cases describe (Excel files, CRM updates, follow-ups); the solution tools are the ones the site lists for AI and automation (Make, n8n, Claude). No figures, no client names, no case on screen.</li><li>&quot;Strategy&quot; is only loosely supported by the site now (it leads with building and running); the road shows it as a plan turning into the built business.</li><li>Nothing from the site&#x27;s hero video (or its other videos) was downloaded, sampled or used.</li></ul></section>
+<section><h2>Open questions</h2><ul><li>Music: Mixkit &quot;Raising Me Higher&quot; (no credit needed) cut to the film. Keep it, or do you have a track?</li><li>End card: keep it URL-free, or add a domain without &quot;consultancy&quot; if K.B has one?</li><li>Founders&#x27; photo: fine to use the site&#x27;s About photo on &quot;by your side&quot; and &quot;behind it&quot;?</li></ul></section>
+<section><h2>Revision log</h2><p class="lede" style="margin:0 0 12px">From the art-director pass: four independent reviews (story, truth, legibility, brand) and a judgement pass on the draft.</p><div class="tbl"><table><tr><th>Before</th><th>After</th><th>Why</th></tr><tr><td>The founders&#x27; tile showed as a rim behind the business through &quot;technology alone&quot;, then slid out up-left on &quot;right partner behind it&quot;; the business shrank and dropped off the bottom edge.</td><td>The founders hide fully behind the business through &quot;technology alone&quot;; on &quot;right partner&quot; they rise straight up behind it, faces above its top edge; both lift 140 px, higher than in the hook.</td><td>The climax said &quot;steps out in front&quot; while the voice said &quot;behind&quot;; the arc in → beside → behind has to land at the end (story, legibility, brand reviews).</td></tr><tr><td>On &quot;alone.&quot; the business stood in colour on the tool floor: the same picture as the hook&#x27;s &quot;grow&quot;.</td><td>On &quot;alone&quot; it turns grey and sinks into the treadmill; the colour comes back only when the partner rises behind it.</td><td>Cause and effect visible in one glance: technology alone = held back; the partner behind = colour and lift.</td></tr><tr><td>The returning &quot;grow&quot; was an 84 px word far from the pair.</td><td>&quot;grow&quot; returns at the hook&#x27;s 190 px beside the lifted pair, then scales into its slot in &quot;We grow with you.&quot;, underlined in cyan.</td><td>The callback must be as strong as the setup.</td></tr><tr><td>&quot;Finding the right solutions&quot;: one tool parked inside the cyan selector (the reel slowed on &quot;solutions&quot;).</td><td>A full column of tools runs up at a constant 260 px/s through a selector that never settles.</td><td>A parked tile in a frame reads as &quot;found&quot; — the opposite of the line.</td></tr><tr><td>&quot;Where to start?&quot;: two tiles broke out, the selector hopped onto empty canvas, and a different tool popped into the wall.</td><td>Three tools land round the business, the selector hops tile to tile, and the same three tools step into the wall.</td><td>No object appears from nothing; the hesitation reads as hesitation, not as a glitch.</td></tr><tr><td>On &quot;hold it back&quot; two blank navy squares appeared over the business&#x27;s feet.</td><td>Two real tool tiles lift out of the floor under its feet (the floor keeps their gaps), then turn their blank backs as they grip.</td><td>They read as placeholders; now they are visibly the tools, and the brand rule (tools are never the villain) holds.</td></tr><tr><td>K.B arrived as a 220 px tile among eleven 220 px tool tiles of nearly the same navy.</td><td>On &quot;K.B&quot; the wall fades to 35% so the K.B tile is the only full-strength tile.</td><td>On arrival it read as a twelfth tool.</td></tr><tr><td>&quot;TECH PARTNER&quot; was two lines of 60 px caps under a small tile, partly covered later by the business.</td><td>One line of Copperplate at 96 px, centred under the docked pair, gone before the next phrase.</td><td>Unreadable on a phone; it is the positioning line.</td></tr><tr><td>The process ran on a grid of rounded cards on the canvas (a bento look), K.B squeezed at the left edge.</td><td>The business opens to the full frame in nine parts with 9 px gaps; K.B steps out and its lens does the work; the solution logos are 60% of a part&#x27;s height.</td><td>Tiles carried almost every frame; the variety budget asked for a different structure in the longest beat.</td></tr><tr><td>On &quot;life&quot; the tools flipped back while the colour arrived, opening white holes in the business.</td><td>The colour floods out of the three tools first, over a full copy of the business underneath; then the tools turn back, with nothing showing through.</td><td>&quot;Bring them to life&quot; must visibly come from the solutions; holes read as a glitch.</td></tr><tr><td>&quot;CRM updates&quot; ringed a part showing a person, then a tool replaced him.</td><td>The ring goes to a part with a printed chart; no person is replaced.</td><td>Read as &quot;automation replaces your staff&quot;.</td></tr><tr><td>On &quot;from strategy&quot; the business was wiped to an empty dashed grid.</td><td>The plan keeps the business at 25% inside its dashed outline, filling to full as it rides to &quot;implementation&quot;.</td><td>The business never disappears one second after coming to life.</td></tr><tr><td>The founders&#x27; photo cropped the left founder in half.</td><td>The photo is framed so all three faces stay inside the tile at every size.</td><td>The real people are the point of &quot;by your side&quot;.</td></tr><tr><td>The end card&#x27;s line ran to 54 px from the right edge; the button label was 36 px.</td><td>The line starts at x 930 with balanced margins; the button label is 48 px; the line builds only after &quot;grow&quot; has landed.</td><td>Balance, legibility on a phone, and two texts never overlap.</td></tr><tr><td>The draft moved 8.2% of the frame in a typical frame.</td><td>The footage and founders&#x27; photo drift slower and the conveyors run slower: 5.6% (target 5%).</td><td>Karl asked for 5%: above every earlier film, without going past his references&#x27; range (0.5–6.6%) into a busy film.</td></tr><tr><td>Lurches (the business sinking, the hover tiles stepping into the wall, the lift on &quot;behind&quot;, the grip) started at full speed from rest.</td><td>Soft starts (B3) or MOVE for everything already on screen; ARRIVE only for arrivals from outside the frame.</td><td>The motion probe flagged them; Karl&#x27;s K.B lesson: nothing lurches.</td></tr><tr><td>Cold eyes: Next.js, Claude and Supabase appeared twice in the opening frame; the n8n logo carried a black box.</td><td>The two floor rows hold ten different tools each; the n8n mark is cut out of its box.</td><td>The first frame read like a repeated integrations strip.</td></tr><tr><td>Cold eyes: fast arrivals (the business dropping in, K.B sliding in, wall tiles, the grip turning) showed 5–6 ghost copies.</td><td>Arrivals start just outside the frame on a gentler curve (≤ ~120 px a frame), the grip turns in 0.36 s, and the final renders with 8 blur samples.</td><td>Motion blur reads as smooth only when no frame outruns it (build-gotchas: about 150 px a frame at 8 samples).</td></tr><tr><td>Cold eyes: the dotted flow ran across the logos; the solution parts touched (Make next to n8n).</td><td>The three parts are diagonal neighbours with no shared edge (a printed chart, a clipboard, a laptop; no person), and each line stops short of the logos.</td><td>A line over a logo looks like a rendering fault; two touching navy parts read as one block.</td></tr><tr><td>Cold eyes: labels were 9 px on a phone and &quot;Follow-ups&quot; touched the frame edge; Strategy / Implementation were small and the road group filled a third of the frame.</td><td>Labels 54 px, centred on their part; road labels 64 px; the riding pair is larger.</td><td>Readable where it plays (website section and phone).</td></tr><tr><td>Cold eyes: the founders showed only from the chin up behind the business; the dot sat still in the opened grid like a recording light; the plan looked disabled at 25%.</td><td>The founders rise to show faces and shoulders; the dot drifts toward the first part while the business lies open, then hops; the plan keeps the business at 35%.</td><td>Read as layering mistakes and UI states, not as the story.</td></tr><tr><td>Cold eyes: headlines switched between near-black and navy; the end card showed only &quot;K.B&quot;.</td><td>All type in navy, emphasis only by the cyan underline; the end card adds the site&#x27;s lockup &quot;K.B TECH PARTNER&quot; above the line.</td><td>One type colour; a website visitor leaves with the full name (no URL: the domain contains &quot;consultancy&quot;).</td></tr></table></div></section>
+<section><h2>Quality check</h2><div class="tbl"><table><tr><th>Check</th><th>Result</th><th>Target</th><th></th></tr><tr><td>Motion (motion_check.py): share of the frame changing, median frame</td><td class="n">6.0%</td><td>Karl: 5% (earlier films 1.0–1.8%; references 0.5–6.6%)</td><td class="ok">pass</td></tr><tr><td>Frames where something moves; longest still</td><td class="n">100%; 0.00 s</td><td>≥ 90%; ≤ 0.8 s</td><td class="ok">pass</td></tr><tr><td>Every phrase a new visual (phrase_check.py)</td><td class="n">21 of 21; 0.0 s of voice without one</td><td>all; ≤ 2.5 s</td><td class="ok">pass</td></tr><tr><td>Words on screen</td><td class="n">7 of 21 phrases</td><td>Karl: not everywhere</td><td class="ok">pass</td></tr><tr><td>Motion probe (camera spikes, lurches, overshoot, flying, busy)</td><td class="n">no camera spikes, overshoot, flying or busy stretches; 2 lurch flags, both wall tiles that start moving 120 px above the frame (off screen), so no still-to-fast start is seen</td><td>none</td><td class="ok">pass</td></tr><tr><td>Shake (jitter_check.py)</td><td class="n">none in 1020 frames</td><td>none</td><td class="ok">pass</td></tr><tr><td>Pops (handoff_check.py)</td><td class="n">39 flagged, all designed moves (arrivals, flips, the road turning solid, the field); no blink or size jump</td><td>none unexplained</td><td class="ok">pass</td></tr><tr><td>Things on screen (busy_check.py)</td><td class="n">median 2; 8 or more 0% of the time</td><td>references median 4; ≤ 35%</td><td class="ok">pass</td></tr><tr><td>Brand (brand_measure.py verify)</td><td class="n">26 of 26 frames on palette (off-palette pixels only in the photos); accent where the thesis puts it</td><td>no frame off-brand</td><td class="ok">pass</td></tr><tr><td>Contrast, every text colour</td><td class="n">navy on canvas 10.8:1; white on the K.B tile 8.4:1; ink on cyan 7.9:1</td><td>≥ 4.5:1</td><td class="ok">pass</td></tr><tr><td>Tells (film_tells.py)</td><td class="n">1: &quot;w:solutions&quot;, a timing label in clock.ts, never on screen</td><td>answered</td><td class="ok">pass</td></tr><tr><td>&quot;K.B&quot; only; no URL; no hero video</td><td class="n">checked by the truth review and by hand</td><td>Karl</td><td class="ok">pass</td></tr><tr><td>Delivery</td><td class="n">1920×1080, 30 fps, 34.0 s, H.264 yuv420p BT.709 TV range, AAC 48 kHz</td><td>as planned</td><td class="ok">pass</td></tr><tr><td>Loudness and peak</td><td class="n">−15.5 LUFS integrated, −1.5 dBFS peak</td><td>−15 LUFS, ≤ −1.5 dBFS</td><td class="ok">pass</td></tr><tr><td>Sound</td><td class="n">47 effects on their picture frames; 46 clear the music by 3 dB, one (the lens opening) is felt rather than heard</td><td>every effect clears the bed</td><td class="ok">pass</td></tr></table></div><p class="lede">Measured on the delivered encode (deliver/kb-tech-partner-34s.mp4). The probe runs on the Remotion project. Sound was mixed by measurement: no speakers in the build sandbox, so Karl&#x27;s ear has the last word.</p></section>
+<section><h2>Appendix</h2>
+<details><summary>Beat sheet and arc</summary><pre># Beat sheet and arc (steps 3–4)
+
+Times are film seconds (the voice-over starts at 0.40 s; `film/src/words.json`). Phrases from
+`python3 scripts/phrase_check.py plan film/src/words.json` (`storyboard/phrases.txt`): 21 phrases.
+
+| # | Time | VO | Core meaning | Viewer must understand | Imp. | Tone | Nouns | Verbs | Type | Hold |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | 0.40–4.58 | Technology should help your business grow. Not hold it back. | Tech is meant to be a lift, but often it&#x27;s a drag | Technology can push a business up, or pin it down | 1 | curiosity → frustration | technology, your business | help, grow, hold back | Hook / Problem | none: straight into 2 |
+| 2 | 4.66–9.33 | But finding the right solutions, and knowing where to start, isn&#x27;t always easy. | Too many options and no starting point | There are countless tools and no obvious first step | 2 | frustration | solutions (the real tools), a start | find, know, start | Problem | a beat of the knot before the turn |
+| 3 | 9.41–11.28 | That&#x27;s where K.B comes in. | The turn: K.B enters | K.B is the answer to the knot | 1 | relief, confidence | K.B | comes in | Solution (reveal) | the logo reads for ≥0.8 s |
+| 4 | 11.28–14.99 | We don&#x27;t just offer advice. We become your tech partner. | Not a report-and-leave advisor, a partner inside the team | K.B builds and stays, not just advises | 1 | confidence, warmth | advice, tech partner | offer, become | Comparison | &quot;tech partner&quot; reads |
+| 5 | 15.06–22.96 | First, we understand your business. Then, we identify opportunities, develop solutions, and help bring them to life. | The four-step way of working | Understand → identify → develop → launch, each step visibly doing something to the business | 1 | confident, energetic | your business, opportunities, solutions | understand, identify, develop, bring to life | Process | the running system before 6 |
+| 6 | 23.03–26.55 | From strategy to implementation, we&#x27;re by your side. | End to end, alongside you | K.B is there across the whole path, next to the client | 2 | warmth | strategy, implementation, side | be beside | Process / Emotional | short |
+| 7 | 26.55–29.84 | Because real growth doesn&#x27;t come from technology alone. | Tools on their own don&#x27;t grow a business | A pile of tech by itself doesn&#x27;t move growth | 2 | reflective | growth, technology | come from, alone | Abstract concept | &quot;alone&quot; gets space |
+| 8 | 29.84–32.53 | It comes from having the right partner behind it. | The partner is the difference | Growth moves when K.B is behind it | 1 | pride, resolution | partner | come from, be behind | Emotional / CTA lead-in | end card to ≈34 s |
+
+## The arc (storytelling.md)
+- **Spine:** K.B is the tech partner that stays: it understands, builds and launches with you, so technology finally
+  helps the business grow.
+- **Hook (0–4.6 s):** growth that technology should lift and instead holds back: a promise and its betrayal in one
+  object, in the first second.
+- **Problem (4.6–9.3 s):** the search: too many real tools, no starting point, a knot.
+- **Turn (9.4 s):** K.B comes in, literally, and the knot resolves around it. The film&#x27;s one full brand-colour field.
+- **Mechanism (11.3–23 s):** advisor vs partner, then the four steps acted out on the viewer&#x27;s business, each on its
+  verb.
+- **Benefit (23–26.6 s):** the whole path, side by side.
+- **Resolution (26.6–34 s):** the callback: technology alone stays flat; with the partner behind it, growth moves.
+  The end card grows out of that partner.
+- **Energy curve:** high open (hook) → cramped (problem, tension) → release (turn, the peak) → driving and even
+  (process, four quick steps, the densest stretch) → warm (side by side) → a held breath (&quot;alone&quot;, the emptiest
+  frame) → resolve (lift, logo, calm end card).
+
+## Setups and payoffs
+- The business&#x27;s growth (hook) is held back (1), resumes when the solutions go live (5), and rises for good when the
+  partner is behind it (8).
+- The real tools of the problem beat (2) return as &quot;technology alone&quot; (7).
+- K.B arrives &quot;in&quot; (3), stands beside (4, 6) and ends behind (8): in, beside, behind, three positions of one object.
+</pre></details>
+<details><summary>Production plan (phrases, continuity, variety)</summary><pre># Production plan: K.B, &quot;In, Beside, Behind&quot; (34.0 s)
+
+PURPOSE: a website and LinkedIn film that positions K.B as the embedded tech partner · AUDIENCE: founders and managers
+of startups and SMEs · FORMAT: 16:9, 1920×1080, 30 fps · DURATION: 34.0 s (1020 frames) · CORE MESSAGE: technology
+alone doesn&#x27;t grow a business; K.B comes in, stays beside you and ends up behind your growth · TONE: energetic voice,
+clean motion · STYLE AND BRAND: K.B&#x27;s own site (canvas #F7F7F7, navy #293A51, cyan #38C8FF as marks only, Montserrat,
+Copperplate CC for &quot;K.B&quot;) · ART DIRECTION: one bright stage of rounded squares; one business at work (footage in a
+tile), one K.B tile, the real tool tiles; mixed media decided once: one clip for &quot;your business&quot;, the founders&#x27; photo
+for the partner lines, real tool logos; no UI templates, no invented data · MOTION PERSONALITY: precise premium at the
+energetic end: heavy, sure objects, no overshoot, no bounce · SIGNATURE CURVE: ARRIVE `cubic-bezier(.22,1,.36,1)`
+(≈80%), MOVE `(.65,0,.35,1)` for objects already on screen, DEPART for exits; B2 long S for the carries, B10 for the
+conveyors, B4 for the dot · DURATION PALETTE: quick 7, standard 13, slow 24 frames · ENTRANCE PATTERN: from a frame
+edge or out of another object, never from nothing · TRANSITION FAMILY: (1) a tile flips into the next thing, (2) a
+field or a mask grows out of a tile, (3) split and close (the business opens into parts and closes again) · CAMERA:
+one slow breath for the film (K.B v3), easing to rest before the sign-off · VOICE-OVER AND MUSIC: ElevenLabs
+&quot;Christina&quot;, at 0.40 s; Mixkit &quot;Raising Me Higher&quot; (110 BPM), opening up on &quot;That&#x27;s where K.B comes in&quot;.
+
+**The 5% rule of this film** (measured: 5.6% on the draft). The fields and tiles carry the meaning; the textured surfaces carry the motion. In
+every phrase a textured surface (the footage, the founders&#x27; photo, the logo floor) of at least a third of the frame
+keeps travelling at 40–130 px/s inside or with its frame. The camera never makes up the difference.
+
+## Phrases (film seconds; ★ = words on screen that the voice also says; 7 of 21)
+
+| # | Time | Key word | On screen (words) | Visual event | Keeps moving | Into next |
+|---|---|---|---|---|---|---|
+| 01 | 0.40–1.10 | technology 0.40 | none | From frame 0 two rows of real tool tiles (200 px; Make, n8n, Supabase, Claude, Next.js, Pipedrive, Odoo…) run right to left across the lower 40% of an empty canvas. | conveyor 120 / 95 px/s | the floor: the business lands on it |
+| 02 | 1.10–3.05 | business 1.75, grow 2.16 | ★ **grow** | The business tile (480, colour footage) drops in from above and lands on the floor on &quot;your&quot;. On &quot;grow&quot; the floor lifts 170 px (B2) carrying it up to 560 px, and &quot;grow&quot; (190 px, navy 800) rises out of a mask beside it. | conveyor; footage pans 55 px/s in the tile | the floor&#x27;s top row |
+| 03 | 3.05–4.58 | hold 3.34, back 3.68 | none | On &quot;Not&quot; the two floor tiles under the business&#x27;s feet lift out of the row (the floor runs on with their gaps); on &quot;hold&quot; they turn their blank backs as they grip its feet. On &quot;back&quot; floor, tile and word sink 300 px and the business turns grey. | conveyor; footage | the business slides left |
+| 04 | 4.66–6.37 | finding 4.80, solutions 5.54 | none | &quot;grow&quot; splits out. The business slides left; a full column of tools runs up out of the floor at a constant 260 px/s through a cyan selector that never settles. | reel; footage | the reel breaks |
+| 05 | 6.37–7.86 | where 6.94, start 7.12 | ★ **Where to start?** | The words build at top right. The floor drops away; the reel breaks: its three visible tools land round the business; the selector hops tile to tile (MOVE, 9 f) and can&#x27;t settle. | hops; footage | the tiles close in |
+| 06 | 7.86–9.33 | easy 8.43 | none | The words split out. The same three tools and eight more close round the business in pairs (on &quot;isn&#x27;t&quot;, &quot;always&quot;, &quot;easy&quot;): a wall of tools with one tile-sized hole. | steps; footage | the hole |
+| 07 | 9.41–11.28 | K.B 9.83, comes in 10.28 | **K.B** (logotype) | On &quot;K.B&quot; the K.B tile slides in from the right and seats in the hole; the wall fades to 35% so K.B is the only full-strength tile. On &quot;comes in&quot; it grows into the film&#x27;s one full navy field (B2), the logotype growing to 300 px. | the field&#x27;s edge, the logotype | the field folds into the tile |
+| 08 | 11.28–13.04 | offer 11.78, advice 12.14 | **Advice** (the note) | The field folds back into the K.B tile (300 px, top left); the business (grey, 600 px) waits at right across a gap. On &quot;offer&quot; a white note, &quot;Advice&quot;, slides across the gap and lands at the business&#x27;s corner. Nothing changes: still grey. | footage drifts | the note is pushed off |
+| 09 | 13.05–14.99 | become 13.20, partner 14.09 | ★ **TECH PARTNER** | On &quot;become&quot; the K.B tile crosses the gap (B2) and docks top-aligned beside the business; the note drops away. &quot;TECH PARTNER&quot; (Copperplate 96 px, the site&#x27;s lockup) builds under the pair; a cyan underline sweeps on &quot;partner&quot;; it leaves before &quot;first&quot;. | footage; underline | the period |
+| 10 | 15.06–15.72 | first 15.06 | none | The pair reframes: the business grows to 900 (close), the K.B tile steps back to 240 beside it. The period lights and a cyan dot slides out of it onto the business. | rescale; footage | the dot |
+| 11 | 15.72–16.63 | understand 15.93 | none | The dot opens into a lens (360 px cyan ring) that glides across the business; inside it the business is in colour and closer. | lens glide; footage | the lens&#x27;s path |
+| 12 | 16.63–17.60 | business 16.74 | none | On &quot;business&quot; the tile opens to the full frame and parts into nine (9 px gaps): your business, laid out in its parts. K.B steps out of frame; its dot does the work. | footage | the dot hops |
+| 13 | 17.60–19.67 | identify 18.28, opportunities 18.77 | labels: Excel files · CRM updates · Follow-ups | The dot rings one part on &quot;identify&quot; (&quot;Excel files&quot;), two more on &quot;opportunities&quot; (&quot;CRM updates&quot;, &quot;Follow-ups&quot;; parts with paperwork and screens, never a person); they lift, the other six dim. | footage | the ringed parts flip |
+| 14 | 19.81–21.07 | develop 19.81, solutions 20.17 | none | The three parts flip (3-frame stagger) into navy Make, n8n and Claude faces (logos 60% of the part); on &quot;solutions&quot; a dotted cyan flow draws between them. | footage | the parts close |
+| 15 | 21.15–22.96 | bring 21.61, life 22.06 | none | On &quot;bring&quot; the parts close into one tile (K.B steps back in beside it), over a full copy of the business; a pulse runs the flow; on &quot;life&quot; colour floods out of the three tools into the whole business; then the tools turn back into the business, in colour, and it rises. The dot goes home. | colour masks; footage | the road |
+| 16 | 23.03–23.83 | strategy 23.17 | ★ Strategy (diagram label) | The pair sets down on the left end of a road drawn across the frame; the business becomes its plan (a dashed outline over the business at 25%). | road drawing; footage | the pair travels |
+| 17 | 23.83–24.85 | implementation 23.95 | ★ Implementation (diagram label) | The pair rides the road (B2, 760 px); the plan fills with the real business as it goes; the label builds at the far end. | travel; footage | the road gathers |
+| 18 | 25.11–26.55 | side 25.70 | none | The road gathers into the pair, which centres at 620 each. On &quot;side&quot; the K.B tile flips and comes round as the founders&#x27; Málaga photo: the real team beside you. | photo pans 50 px/s; footage | the tile slides behind |
+| 19 | 26.55–28.97 | growth 27.19, technology 28.39 | none | The founders&#x27; tile goes behind the business, fully hidden. On &quot;growth&quot; the business rises 100 px; on &quot;technology&quot; the opening&#x27;s floor slides back in under it. | conveyor; footage | the floor runs on |
+| 20 | 28.97–29.84 | alone 28.97 | ★ **alone.** | &quot;alone.&quot; (210 px) rises out of a mask at left; the business turns grey and sinks 120 px into the treadmill: going nowhere. | conveyor; footage | the word splits out |
+| 21 | 29.84–32.53 | partner 31.21, behind 31.57 | **grow** (returns) | The business (grey) is carried left as the floor drops away. On &quot;right partner&quot; the founders rise straight up behind it, faces above its edge, and its colour comes back; on &quot;behind&quot; both lift 140 px and &quot;grow&quot; returns at the hook&#x27;s 190 px beside them. | the lift; photo; footage | the founders turn to the logo |
+| End | 32.35–34.0 | | **We grow with you.** · **Book a Free Discovery Call** | The founders&#x27; tile turns back into the K.B logo, the business in front of its lower corner, letters clear; &quot;grow&quot; scales into its slot of the site&#x27;s line, underlined; the line builds, the cyan button rises. Nothing crosses the screen. | breath eases to rest | |
+
+## Continuity (exits name their entrances)
+floor → business lands on it → grip → reel out of the floor → the reel&#x27;s tiles → wall → the hole → K.B tile → field →
+field folds into the tile → note out of the tile → the tile crosses → its period → the dot → the lens → the lens&#x27;s
+cut → the pieces → rings → flips → close → the road out of the pair → the pair → the flip to the founders → behind →
+the floor returns → drops → the lift → the logo face.
+
+## Variety check
+| Beat | Strategy | Primary | Framing | Things | Centred? |
+|---|---|---|---|---|---|
+| Hook | object + kinetic word | business tile on the floor | wide → medium | 3 | no |
+| Problem | object interaction | the reel / the wall | wide | 4 | no |
+| Turn | brand field | K.B tile → field | close → extreme close | 1–2 | yes (logo) |
+| Advice / partner | comparison (gap vs docked) | the gap, then the pair | medium | 3 | no |
+| Process | transformation, exploded view | the business, close / full frame | close | 3–4 | no |
+| Span | diagram | the road | wide | 4 | no |
+| Side | people | founders beside business | medium | 2 | yes |
+| Alone | type + object | &quot;alone.&quot; | medium | 3 | no |
+| Resolution | object + kinetic word | the lifted pair | medium | 3 | no |
+| End | 32.35–34.0 | | **We grow with you.** · **Book a Free Discovery Call** | The founders&#x27; tile turns back into the K.B logo, the business in front of its lower corner, letters clear; &quot;grow&quot; scales into its slot of the site&#x27;s line, underlined; the line builds, the cyan button rises. Nothing crosses the screen. | breath eases to rest | |
+
+## QC targets
+`motion_check.py`: moving ≥ 95% of frames, **median ≥ 5.0%**, longest still ≤ 0.8 s · `motion_probe.py --style
+standard`: no CAMERA, LURCH, OVERSHOOT, FLYING · `busy_check.py`: not BUSY · `phrase_check.py`: 21/21 phrases new,
+longest voice without a new visual ≤ 1.0 s · `qc.sh`: no SHAKE, every POP explained · `film_tells.py` answered ·
+loudness −15 LUFS, peaks ≤ −1.5 dBFS, 48 kHz, 34.0 s.
+</pre></details>
+<details><summary>Thesis and allowed patterns</summary><pre># Thesis
+
+**Thesis:** K.B is the one tile that isn&#x27;t another tool: it comes *in*, stands *beside* your business and ends up
+*behind* it, so the business that technology held back grows. The film is told with K.B&#x27;s own shapes (the navy logo
+tile, the site&#x27;s tool tiles, the cyan accent, the period between K and B), one real-looking business at work, and the
+real people of K.B.
+
+**Allowed patterns:**
+- The site&#x27;s real tool tiles (&quot;Tools we build with&quot;, their real logos on navy) as &quot;technology&quot;: a floor, a reel, a
+  wall, a treadmill. Never recoloured; on the grip they turn their blank navy backs.
+- One royalty-free clip (Mixkit 4809, a team at a table seen from above, no faces to camera, no brand) in a rounded
+  tile as &quot;your business&quot;: the viewer&#x27;s business, never presented as a K.B client or the K.B team. Grey while held
+  back, colour from &quot;bring them to life&quot;.
+- A white note reading &quot;Advice&quot;.
+- A cyan dot drawn out of the logotype&#x27;s period; it becomes a lens.
+- The business opened into a 3×3 exploded view (&quot;a visual workflow breakdown&quot;, [S]); three parts ringed with K.B&#x27;s
+  own words for manual work: &quot;Follow-ups&quot;, &quot;CRM updates&quot;, &quot;Excel files&quot; ([C1], [C2]).
+- Make, n8n and Claude as the solution tiles (the site&#x27;s AI &amp; automation tools, [SA], [H]), joined by a dotted flow.
+- A road labelled &quot;Strategy&quot; and &quot;Implementation&quot; (diagram ends), the business drawn as a dashed plan at the start
+  and built by the end.
+- The founders&#x27; Málaga photo (the site&#x27;s About photo) on the back of the K.B tile.
+- The site&#x27;s own words: &quot;Tech Partner&quot; (the nav lockup), &quot;We grow with you.&quot; (About H1), &quot;Book a Free Discovery Call&quot;.
+
+Nothing else: no URL (the domain says &quot;consultancy&quot;), no &quot;Consultancy&quot;, no figures, no client names, no hero video.
+</pre></details>
+<details><summary>Brief</summary><pre># Brief: K.B, &quot;Your tech partner&quot; (2026-10-08)
+
+| Field | |
+|---|---|
+| PROJECT | A brand film for K.B (kruslockbosconsultancy.com), requested by Karl (WKConversions) |
+| CLIENT-BRAND | **K.B** only. Never &quot;Consultancy&quot; or &quot;Kruslock Bos Consultancy&quot; on screen or in the sound (Karl). The site&#x27;s own lockup is &quot;K.B Tech Partner&quot;. |
+| DELIVERABLE | MP4 + the Remotion project (editable in Remotion Studio) + storyboard page |
+| PLATFORM | Website section and LinkedIn (assumed: Karl gave no platform) |
+| ASPECT RATIO / RESOLUTION / FRAME RATE | 16:9, 1920×1080, 30 fps (assumed: a website brand film) |
+| TARGET DURATION | set by the voice-over: 31.95 s of voice, placed at 0.40 s; the film ends about 1.7 s after the last word (≈34 s) |
+| AUDIENCE | Founders and managers of growing businesses (startups and SMEs) who know technology could help but don&#x27;t know which solution or where to start ([H] For Startups / For Established SMEs) |
+| PRIMARY OBJECTIVE | Position K.B as the embedded tech partner who stays from strategy to implementation, not an advisor who hands over a report and leaves |
+| DESIRED VIEWER ACTION | Book a call with K.B (site CTA: &quot;Book a Free Discovery Call&quot;) |
+| SCRIPT | as written by Karl (below), unchanged |
+| VOICE-OVER | Recorded: ElevenLabs, voice &quot;Christina – Energetic Commercial Female&quot; (vo/elevenlabs-christina.mp3, 31.95 s, mono 44.1 kHz), one take, every word present; force-aligned to the script (vo/align.txt, film/src/words.json) |
+| BRAND ASSETS | the site: logo (K.B in Copperplate on navy), Montserrat, navy/cyan/light grey, tools strip, team photos, client-case cards (harvest/) |
+| REFERENCES | none supplied for this film; Karl&#x27;s standing direction and the skill&#x27;s reference set; **the site&#x27;s hero video is ruled out** (not a reference, not material) |
+| MUST INCLUDE | 5% of the frame in motion (Karl: &quot;5% motion instead of 1, 2, 3 or 4%&quot;: the median share of the frame changing per frame, `motion_check.py`); no static frames under the voice; a new visual on every phrase |
+| MUST AVOID | captions everywhere (Karl: &quot;don&#x27;t place the caption everywhere, sometimes only visualize the script&quot;); &quot;Consultancy&quot;; the hero video; camera spikes, overshoot pops, flying outros (K.B v2 lessons); busy frames (K.B v3 lesson) |
+| TONE | Energetic, confident, warm (the voice is ElevenLabs&#x27; &quot;Energetic Commercial&quot;); clean, never spiky |
+| TECHNICAL CONSTRAINTS | Remotion in the cloud sandbox (headless Chromium), no After Effects; no speakers, so the mix is read by measurement |
+| OTHER NOTES | Music: none supplied, so one is found or composed to the film (open question for Karl). URL: the domain contains &quot;consultancy&quot;, so the end card shows no URL (open question). |
+
+## Script (Karl, as written)
+1. Technology should help your business grow. Not hold it back.
+2. But finding the right solutions, and knowing where to start, isn&#x27;t always easy.
+3. That&#x27;s where K.B. comes in.
+4. We don&#x27;t just offer advice. We become your tech partner.
+5. First, we understand your business. Then, we identify opportunities, develop solutions, and help bring them to life.
+6. From strategy to implementation, we&#x27;re by your side.
+7. Because real growth doesn&#x27;t come from technology alone.
+8. It comes from having the right partner behind it.
+
+## What &quot;5% motion&quot; means here, and how it is reached
+`motion_check.py` measures, at 160×90, the share of the frame whose brightness changes by more than 6 levels from one
+frame to the next; the film&#x27;s median frame must reach **5.0%** (K.B v3, approved: 1.7%; Karl&#x27;s 25 references: median
+3.5%, range 0.5–6.6%). Karl&#x27;s K.B lessons still hold: the 3% target of October was first reached with camera moves and
+those read as spikes, so **the camera only breathes** and the motion comes from the content: big subjects that keep
+travelling, colour fields that grow out of objects, real photographs that keep moving inside their frames, and a second
+layer working inside every scene, without crowding the frame (the probe&#x27;s BUSY and `busy_check.py` stay clean).
+
+## Assumptions (stated for Karl)
+- 16:9 1080p30 for a website section and LinkedIn.
+- The voice-over starts at 0.40 s so the first picture lands before the first word.
+- No storyboard approval stop: Karl asked for the video with the voice-over in hand, so the film is built through to
+  delivery; the storyboard page comes with it for review.
+</pre></details>
+</section></div>

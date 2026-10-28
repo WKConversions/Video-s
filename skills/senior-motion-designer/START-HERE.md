@@ -12,6 +12,7 @@ build from there.
 | `house/` | `HOUSE-RULES.md` (standing rules and house style), `BRIEF_TEMPLATE.md`, `creoble-style-brief.md` (the full Creoble Apple-style recipe) |
 | `templates/creoble5/` | the Creoble v5 film (55 s): Stage, StageHandoff, Phone, MiniSite, Apple shadows, dither, the scenes |
 | `templates/klyro`, `fieldnote`, `morrow` | the three 12 s seamless loops (the 15-minute recipe) |
+| `templates/portrait-ad`, `globe-ad` | 9:16 social ads (Bingua): hook on frame 0, world map, dot globe, phone UI; 30 fps, footage and audio not included |
 | `sounds/lib/` | Karl's 24 sound effects (4.3 MB) |
 | `setup/` | `cloud-setup.sh` (Python and Node tools), `get_blender.sh` |
 | `test/` | `verify.sh` and `reference.json`: proves a new setup renders like the original |

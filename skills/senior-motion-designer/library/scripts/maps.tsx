@@ -41,9 +41,9 @@ export const Pin: React.FC<{ x: number; y: number; k: number; color: string; siz
   k <= 0 ? null : (
     <>
       {k < 1 && <div style={{ position: "absolute", left: 0, top: 0, width: size * 4, height: size * 4, borderRadius: 999, border: `3px solid ${color}`,
-        transform: `translate(${x - size * 2}px, ${y - size * 2}px) scale(${0.3 + k * 0.9})`, opacity: 1 - k }} />}
+        willChange: "transform", transform: `translate(${x - size * 2}px, ${y - size * 2}px) scale(${0.3 + k * 0.9})`, opacity: 1 - k }} />}
       <div style={{ position: "absolute", left: 0, top: 0, width: size, height: size, borderRadius: 999, background: color, boxShadow: `0 0 0 ${size * 0.3}px ${color}33`,
-        transform: `translate(${x - size / 2}px, ${y - size / 2 - (1 - k) * 30}px)`, opacity: Math.min(1, k * 2) }} />
+        willChange: "transform", transform: `translate(${x - size / 2}px, ${y - size / 2 - (1 - k) * 30}px)`, opacity: Math.min(1, k * 2) }} />
     </>
   );
 

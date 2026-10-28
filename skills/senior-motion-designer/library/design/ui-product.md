@@ -38,6 +38,12 @@ Cards are materials, not layouts. They shouldn't all float independently: treat 
 connected system, with layout changes, stacks and shared containers carrying continuity. Card-based
 scenes follow the budget in `design/composition.md`.
 
+UI responses are fast in, slow settle (catalogue rule 28): a popover or menu appears on the click frame and settles
+over 8-12 frames while the cursor holds still (`popFrom` in `scripts/ui_motion.tsx`, M96); rows that re-sort move
+together on one ease-in-out of about 0.7 s with a 0-1 frame stagger (`reorder`, M99); a new panel pushes the whole
+layout open rather than sliding over it (M98); a container that changes content keeps its frame and empties for
+3-5 frames between dense screens (M87).
+
 ## Premium SaaS character
 
 Restrained or no overshoot, clean spatial hierarchy, crisp type, controlled depth, short but not

@@ -1,0 +1,683 @@
+{
+ "fps": 30,
+ "frames": 1395,
+ "library": "lib",
+ "vo": {
+  "file": "../film/public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.05,
+  "fade_out": 1.2
+ },
+ "sfx": [
+  {
+   "id": "gen-whoosh-whip",
+   "frame": 1,
+   "db": -3,
+   "note": "frame 0: the globe is already spinning under the thumb"
+  },
+  {
+   "id": "gen-whoosh-whip",
+   "frame": 27,
+   "db": -4,
+   "pitch": 1,
+   "note": "every scroll: spin"
+  },
+  {
+   "id": "gen-whoosh-whip",
+   "frame": 50,
+   "db": -4,
+   "pitch": 2,
+   "note": "spin"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 18,
+   "db": -6,
+   "pitch": 4,
+   "note": "\u3053\u3093\u306b\u3061\u306f"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 44,
+   "db": -6,
+   "pitch": 3,
+   "note": "Ol\u00e1"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 67,
+   "db": -8,
+   "pitch": 2,
+   "note": "Hola, Bonjour, Ciao"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 70,
+   "db": -8,
+   "pitch": 4,
+   "note": "Hola, Bonjour, Ciao"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 74,
+   "db": -8,
+   "pitch": 6,
+   "note": "Hola, Bonjour, Ciao"
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 97,
+   "db": -4,
+   "note": "Bingua"
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 100,
+   "db": -7,
+   "note": ""
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 133,
+   "db": -6,
+   "note": "the ring of languages"
+  },
+  {
+   "id": "gen-whoosh-whip",
+   "frame": 178,
+   "db": -3,
+   "note": "one swipe"
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 195,
+   "db": -6,
+   "note": "the globe turns to Spain"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 247,
+   "db": -4,
+   "note": "pin lands"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 452,
+   "db": -4,
+   "pitch": 1,
+   "note": "pin lands"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 628,
+   "db": -4,
+   "pitch": 2,
+   "note": "pin lands"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 781,
+   "db": -4,
+   "pitch": 3,
+   "note": "pin lands"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 916,
+   "db": -4,
+   "pitch": 4,
+   "note": "pin lands"
+  },
+  {
+   "id": "gen-appear",
+   "frame": 271,
+   "db": -6,
+   "pitch": -2,
+   "note": "the reel rises out of the country"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 320,
+   "db": -2,
+   "note": "tap the word"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 323,
+   "db": -6,
+   "pitch": 3,
+   "note": "word card"
+  },
+  {
+   "id": "gen-chime",
+   "frame": 329,
+   "db": -8,
+   "note": "translation"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 341,
+   "db": -7,
+   "pitch": 2,
+   "note": "the word flies to its country"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 354,
+   "db": -6,
+   "pitch": 5,
+   "note": "and lands"
+  },
+  {
+   "id": "gen-success",
+   "frame": 389,
+   "db": -5,
+   "note": "language checked"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 423,
+   "db": -7,
+   "pitch": -3,
+   "note": "back into the pin"
+  },
+  {
+   "id": "gen-appear",
+   "frame": 471,
+   "db": -6,
+   "pitch": -1,
+   "note": "the reel rises out of the country"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 553,
+   "db": -2,
+   "note": "tap the word"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 555,
+   "db": -6,
+   "pitch": 3,
+   "note": "word card"
+  },
+  {
+   "id": "gen-chime",
+   "frame": 561,
+   "db": -8,
+   "pitch": 1,
+   "note": "translation"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 569,
+   "db": -7,
+   "pitch": 2,
+   "note": "the word flies to its country"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 583,
+   "db": -6,
+   "pitch": 5,
+   "note": "and lands"
+  },
+  {
+   "id": "gen-success",
+   "frame": 578,
+   "db": -5,
+   "pitch": 1,
+   "note": "language checked"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 599,
+   "db": -7,
+   "pitch": -3,
+   "note": "back into the pin"
+  },
+  {
+   "id": "gen-appear",
+   "frame": 642,
+   "db": -6,
+   "note": "the reel rises out of the country"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 668,
+   "db": -2,
+   "note": "tap the word"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 670,
+   "db": -6,
+   "pitch": 3,
+   "note": "word card"
+  },
+  {
+   "id": "gen-chime",
+   "frame": 676,
+   "db": -8,
+   "pitch": 2,
+   "note": "translation"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 714,
+   "db": -7,
+   "pitch": 2,
+   "note": "the word flies to its country"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 727,
+   "db": -6,
+   "pitch": 5,
+   "note": "and lands"
+  },
+  {
+   "id": "gen-success",
+   "frame": 733,
+   "db": -5,
+   "pitch": 2,
+   "note": "language checked"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 747,
+   "db": -7,
+   "pitch": -3,
+   "note": "back into the pin"
+  },
+  {
+   "id": "gen-appear",
+   "frame": 785,
+   "db": -6,
+   "pitch": 1,
+   "note": "the reel rises out of the country"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 800,
+   "db": -2,
+   "note": "tap the word"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 802,
+   "db": -6,
+   "pitch": 3,
+   "note": "word card"
+  },
+  {
+   "id": "gen-chime",
+   "frame": 808,
+   "db": -8,
+   "pitch": 3,
+   "note": "translation"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 823,
+   "db": -7,
+   "pitch": 2,
+   "note": "the word flies to its country"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 836,
+   "db": -6,
+   "pitch": 5,
+   "note": "and lands"
+  },
+  {
+   "id": "gen-success",
+   "frame": 863,
+   "db": -5,
+   "pitch": 3,
+   "note": "language checked"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 873,
+   "db": -7,
+   "pitch": -3,
+   "note": "back into the pin"
+  },
+  {
+   "id": "gen-appear",
+   "frame": 936,
+   "db": -6,
+   "pitch": 2,
+   "note": "the reel rises out of the country"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 951,
+   "db": -2,
+   "note": "tap the word"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 953,
+   "db": -6,
+   "pitch": 3,
+   "note": "word card"
+  },
+  {
+   "id": "gen-chime",
+   "frame": 959,
+   "db": -8,
+   "pitch": 4,
+   "note": "translation"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 983,
+   "db": -7,
+   "pitch": 2,
+   "note": "the word flies to its country"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 997,
+   "db": -6,
+   "pitch": 5,
+   "note": "and lands"
+  },
+  {
+   "id": "gen-success",
+   "frame": 1022,
+   "db": -5,
+   "pitch": 4,
+   "note": "language checked"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 1045,
+   "db": -7,
+   "pitch": -3,
+   "note": "back into the pin"
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 434,
+   "db": -5,
+   "note": "the flight"
+  },
+  {
+   "id": "gen-swell",
+   "frame": 433,
+   "db": -10,
+   "note": ""
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 604,
+   "db": -5,
+   "note": "the flight"
+  },
+  {
+   "id": "gen-swell",
+   "frame": 603,
+   "db": -10,
+   "note": ""
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 754,
+   "db": -5,
+   "note": "the flight"
+  },
+  {
+   "id": "gen-swell",
+   "frame": 752,
+   "db": -10,
+   "note": ""
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 878,
+   "db": -5,
+   "note": "the flight"
+  },
+  {
+   "id": "gen-swell",
+   "frame": 877,
+   "db": -10,
+   "note": ""
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 699,
+   "db": -6,
+   "pitch": 1,
+   "note": "one video at a time"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 1001,
+   "db": -6,
+   "pitch": 1,
+   "note": "next video"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 854,
+   "db": -3,
+   "note": "heart"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 855,
+   "db": -5,
+   "pitch": 6,
+   "note": ""
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 1048,
+   "db": -6,
+   "pitch": -1,
+   "note": "zoom out"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1057,
+   "db": -7,
+   "note": "five flags"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1060,
+   "db": -7,
+   "pitch": 1,
+   "note": "five flags"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1063,
+   "db": -7,
+   "pitch": 2,
+   "note": "five flags"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1065,
+   "db": -7,
+   "pitch": 3,
+   "note": "five flags"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1068,
+   "db": -7,
+   "pitch": 4,
+   "note": "five flags"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 1090,
+   "db": -8,
+   "note": "five languages"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 1093,
+   "db": -8,
+   "pitch": 1,
+   "note": "five languages"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 1096,
+   "db": -8,
+   "pitch": 2,
+   "note": "five languages"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 1099,
+   "db": -8,
+   "pitch": 3,
+   "note": "five languages"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 1101,
+   "db": -8,
+   "pitch": 4,
+   "note": "five languages"
+  },
+  {
+   "id": "gen-riser-1s",
+   "frame": 1102,
+   "db": -9,
+   "note": "the world lights up"
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 1126,
+   "db": -6,
+   "note": ""
+  },
+  {
+   "id": "gen-tick",
+   "frame": 1129,
+   "db": -10,
+   "note": "greetings"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 1134,
+   "db": -10,
+   "pitch": 1,
+   "note": "greetings"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 1139,
+   "db": -10,
+   "pitch": 2,
+   "note": "greetings"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 1145,
+   "db": -10,
+   "pitch": 3,
+   "note": "greetings"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 1150,
+   "db": -10,
+   "pitch": 4,
+   "note": "greetings"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 1156,
+   "db": -10,
+   "pitch": 5,
+   "note": "greetings"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 1161,
+   "db": -10,
+   "note": "greetings"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 1178,
+   "db": -5,
+   "note": "the world goes into the app"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1204,
+   "db": -9,
+   "note": "flags in the app"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1207,
+   "db": -9,
+   "pitch": 1,
+   "note": "flags in the app"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1210,
+   "db": -9,
+   "pitch": 2,
+   "note": "flags in the app"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1213,
+   "db": -9,
+   "pitch": 3,
+   "note": "flags in the app"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1216,
+   "db": -9,
+   "pitch": 4,
+   "note": "flags in the app"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 1262,
+   "db": -5,
+   "note": "the end card"
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 1263,
+   "db": -5,
+   "note": "Bingua"
+  },
+  {
+   "id": "gen-whoosh-whip",
+   "frame": 1286,
+   "db": -4,
+   "note": "scroll the world"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1345,
+   "db": -6,
+   "pitch": 3,
+   "note": "App Store badge"
+  }
+ ]
+}

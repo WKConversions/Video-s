@@ -1,0 +1,298 @@
+{
+ "fps": 30,
+ "frames": 1080,
+ "library": "lib",
+ "vo": {
+  "file": "../film/public/audio/vo.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "duck_db": 6,
+  "fade_in": 0.2,
+  "fade_out": 0.8
+ },
+ "sfx": [
+  {
+   "id": "gen-whoosh-whip",
+   "frame": 72,
+   "db": -4,
+   "note": "the thumb flicks the lesson away"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 77,
+   "db": -8,
+   "note": "videos scroll past"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 82,
+   "db": -8,
+   "pitch": 2,
+   "note": "videos scroll past"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 87,
+   "db": -8,
+   "pitch": 4,
+   "note": "videos scroll past"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 145,
+   "db": -5,
+   "note": "the phone becomes the tile"
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 153,
+   "db": -6,
+   "note": ""
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 146,
+   "db": -8,
+   "note": "Bingua"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 176,
+   "db": -5,
+   "note": "the tile opens into the phone"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 186,
+   "db": -6,
+   "note": "swipe to the next video"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 222,
+   "db": -6,
+   "pitch": 2,
+   "note": "swipe to the next video"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 251,
+   "db": -6,
+   "pitch": 4,
+   "note": "swipe to the next video"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 188,
+   "db": -8,
+   "pitch": 2,
+   "note": "the language changes"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 224,
+   "db": -8,
+   "pitch": 4,
+   "note": "the language changes"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 254,
+   "db": -8,
+   "pitch": 6,
+   "note": "the language changes"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 388,
+   "db": -2,
+   "note": "tap the word"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 391,
+   "db": -5,
+   "pitch": 3,
+   "note": "the word card opens"
+  },
+  {
+   "id": "gen-chime",
+   "frame": 410,
+   "db": -6,
+   "note": "the translation"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 503,
+   "db": -6,
+   "pitch": -2,
+   "note": "swipe the line"
+  },
+  {
+   "id": "gen-appear",
+   "frame": 512,
+   "db": -4,
+   "note": "the breakdown slides up"
+  },
+  {
+   "id": "gen-tick",
+   "frame": 509,
+   "db": -7,
+   "note": ""
+  },
+  {
+   "id": "gen-tick",
+   "frame": 529,
+   "db": -7,
+   "pitch": 2,
+   "note": ""
+  },
+  {
+   "id": "gen-tap",
+   "frame": 590,
+   "db": -3,
+   "note": "tap famoso again"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 616,
+   "db": -2,
+   "pitch": 2,
+   "note": "Save"
+  },
+  {
+   "id": "gen-success",
+   "frame": 617,
+   "db": -4,
+   "note": "Saved"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 639,
+   "db": -7,
+   "pitch": 4,
+   "note": "famoso flies into Cards"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 646,
+   "db": -4,
+   "pitch": 5,
+   "note": "the badge goes to 15"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 656,
+   "db": -3,
+   "note": "Cards tab"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 700,
+   "db": -6,
+   "pitch": 2,
+   "note": "the card flips"
+  },
+  {
+   "id": "gen-success",
+   "frame": 712,
+   "db": -5,
+   "note": "Got it"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 738,
+   "db": -2,
+   "pitch": 1,
+   "note": "pick famous"
+  },
+  {
+   "id": "gen-success",
+   "frame": 740,
+   "db": -3,
+   "pitch": 3,
+   "note": "correct, +10 XP"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 755,
+   "db": -7,
+   "note": "the old lesson comes back"
+  },
+  {
+   "id": "gen-whoosh-whip",
+   "frame": 775,
+   "db": -4,
+   "note": "flicked away"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 800,
+   "db": -7,
+   "pitch": 1,
+   "note": "the routine"
+  },
+  {
+   "id": "gen-whoosh-whip",
+   "frame": 825,
+   "db": -4,
+   "pitch": 2,
+   "note": "flicked away"
+  },
+  {
+   "id": "gen-tap",
+   "frame": 830,
+   "db": -3,
+   "note": "Home tab"
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 856,
+   "db": -6,
+   "pitch": 3,
+   "note": "swipe"
+  },
+  {
+   "id": "gen-pop",
+   "frame": 875,
+   "db": -3,
+   "pitch": 4,
+   "note": "heart"
+  },
+  {
+   "id": "gen-riser-1s",
+   "frame": 926,
+   "db": -9,
+   "note": "XP fills to the goal"
+  },
+  {
+   "id": "gen-success",
+   "frame": 926,
+   "db": -3,
+   "pitch": 5,
+   "note": "streak 3"
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 956,
+   "db": -5,
+   "note": "the phone becomes the tile"
+  },
+  {
+   "id": "gen-impact-deep",
+   "frame": 1008,
+   "db": -5,
+   "note": "Scrolling."
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1022,
+   "db": -8,
+   "pitch": 3,
+   "note": "the App Store badge"
+  }
+ ]
+}

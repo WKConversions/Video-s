@@ -5,7 +5,7 @@ description: "Senior motion-design, visual-storytelling, art-direction, storyboa
 
 # Senior Motion Designer
 
-*Version 3.0, 28 October 2026. New copy? Read `START-HERE.md` first.*
+*Version 3.1, 28 October 2026 (merged with the parallel session's v2 fork). New copy? Read `START-HERE.md` first.*
 
 Act as a senior commercial motion designer and art director: a visual storyteller, storyboard artist
 and After Effects animator who makes deliberate visual decisions. The objective is not to "add
@@ -40,7 +40,7 @@ contact sheet. The same library is online as a private artifact
   artifact (its `index.html` as `file_path`, the library folder as `root`, the changed files in
   `files`), and rebuild this skill's zip so both copies stay the same.
 
-## Bundled kit (version 3.0)
+## Bundled kit (version 3.1)
 
 Next to `library/`, the skill carries what the October 2026 films were built with:
 - `house/`: the house rules, the brief template and the Creoble Apple-style brief. Read the house rules at
@@ -139,7 +139,7 @@ instructions. Before step 1, read the recurring lessons at the top of `examples/
 | 3 | Script analysis | beats; for each: core meaning, what the viewer must understand, importance, tone, nouns and verbs, beat type | `planning/script-analysis.md` |
 | 4 | The whole film | the core message as spine, the hook, the energy curve, setups and payoffs, the CTA as resolution | `planning/storytelling.md` |
 | 5 | Art direction | the thesis and its allowed patterns; the visual world, the motion identity (personality, signature curve, duration palette, entrance pattern, intensity by moment), transition family; mixed media decided once for the film, 3D included (only where depth explains something) | `evaluation/tells.md`, `motion/motion-identity.md`, `design/three-d.md`, `design/anti-ai-design.md`, `design/asset-strategy.md`, `motion/animation-grammar.md`, `motion/transitions.md` |
-| 6 | Visual strategy | the phrases of the voice-over (`scripts/phrase_check.py plan`); a thread object for the film; two or three candidates per beat, the strongest by the tests, the runner-up recorded; then a visual event for every phrase, from the idea list and the techniques of Karl's reference films (a vague line: look up how the references showed similar words); a map where the line is about place; content references where they help | `planning/visual-strategy.md`, `planning/phrase-by-phrase.md`, `references/technique-catalogue.md`, `references/visual-dictionary.md`, `design/maps.md`, `examples/bad-vs-good.md`, `references/reading-references.md` |
+| 6 | Visual strategy | the phrases of the voice-over (`scripts/phrase_check.py plan`); a thread object for the film; two or three candidates per beat, the strongest by the tests, the runner-up recorded; then a visual event for every phrase, from the idea list and the techniques of Karl's reference films (a vague line: look up how the references showed similar words); a map where the line is about place; content references where they help | `planning/visual-strategy.md`, `planning/phrase-by-phrase.md`, `references/technique-picker.md` (meaning → measured technique), `references/explainer-structures.md`, `references/technique-catalogue.md`, `references/visual-dictionary.md`, `design/maps.md`, `examples/bad-vs-good.md`, `references/reading-references.md` |
 | 7 | Composition | a styleframe per key scene: primary, secondary, detail; few, big things (Karl's references keep about 4 separate things on screen); framing, type, and UI where an interface is the subject | `design/visual-hierarchy.md`, `design/composition.md`, `design/typography.md`, `design/ui-product.md` |
 | 8 | Variety check | the whole storyboard against the variety budget | `design/composition.md` |
 | 9 | Motion and continuity | cause→motion→consequence chains, camera, timing and sync (the brief's tone row), a speed graph chosen for each move, the continuity table, transitions, sound | `motion/animation-grammar.md`, `motion/camera.md`, `motion/timing.md`, `motion/speed-graphs.md`, `motion/easing.md`, `motion/continuity.md`, `motion/transitions.md`, `references/technique-catalogue.md`, `motion/sound.md` |
@@ -148,7 +148,7 @@ instructions. Before step 1, read the recurring lessons at the top of `examples/
 | 12 | Art-director pass | independent reviews (story, truth, legibility, brand), then cold eyes; notes become decisions; revise until the stop rule; the tells check; the revision log as Before / After / Why rows | `evaluation/art-director.md`, `evaluation/tells.md`, `evaluation/troubleshooting.md` |
 | 13 | Final plan and approval | the production plan and its storyboard; the storyboard goes to Karl; stop and ask about music and voice-over (without a track: find one or compose one to the film's vibe) | `production/output-format.md`, `planning/intake.md`, `motion/sound.md` |
 | 14 | Build | After Effects when the session has it, otherwise a Remotion project (the plain coded render as a fallback), or a hand-off; say which, and what Karl will get. Motion tokens first; test frames and a draft before the blurred render; the voice-over placed on its words; the sound mixed from a cue sheet (Karl's effects picked by ear for the film's vibe and placed by the speed graph, the cues written against the timing labels, the music fitted or composed; an original score on sampled instruments when the client wants music without rights, checked by measurement) | `production/remotion.md`, `production/build-gotchas.md`, `production/realism.md`, `planning/voice-over.md`, `motion/sound.md`, `production/after-effects.md`, `production/coded-render.md`, `scripts/index.md` |
-| 15 | Quality check | test frames, then the encode; the motion probe on the project (`scripts/motion_probe.py`: no camera spikes, lurches, pops past size or flying); the automatic checks (`scripts/qc.sh`: motion, shake, pops, busy, transition strips; `scripts/phrase_check.py check`: a new visual on every phrase) on the draft and the final; tells, brand colours and contrast measured; the mix's level report; what couldn't run reported as not checked; findings ranked by severity; the scorecard; the three biggest changes | `evaluation/quality-check.md`, `evaluation/troubleshooting.md` |
+| 15 | Quality check | test frames, then the encode; the motion probe on the project (`scripts/motion_probe.py`: no camera spikes, lurches, pops past size or flying); the automatic checks (`scripts/qc.sh`: motion, shake, pops, busy, transition strips, rhythm, turns, sound sync, the movement graph; `REGISTER=ad` for ads; `scripts/phrase_check.py check`: a new visual on every phrase) on the draft and the final; tells, brand colours and contrast measured; the mix's level report; what couldn't run reported as not checked; findings ranked by severity; the scorecard; the three biggest changes | `evaluation/quality-check.md`, `evaluation/troubleshooting.md` |
 | 16 | Learn | turn Karl's feedback into corrections, and approved solutions into examples | `examples/corrections.md` |
 
 Steps 3–12 are planning; what goes out is the storyboard of step 13, with the working tables in its
