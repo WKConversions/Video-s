@@ -1,0 +1,797 @@
+{
+ "fps": 60,
+ "frames": 2184,
+ "library": "../../alumni/sound/lib",
+ "vo": {
+  "file": "../vo/vo.mp3",
+  "at": 0.4,
+  "compress": true
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "lufs": -32,
+  "duck_db": 5,
+  "fade_in": 0.1,
+  "fade_out": 1.4
+ },
+ "sfx": [
+  {
+   "frame": 0,
+   "id": "gen-appear",
+   "db": -3,
+   "pitch": 0,
+   "note": "the mark draws on"
+  },
+  {
+   "frame": 33,
+   "id": "gen-pop",
+   "db": -4,
+   "pitch": 2,
+   "note": "the dot pops"
+  },
+  {
+   "frame": 47,
+   "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": 0,
+   "note": "the ends pull apart"
+  },
+  {
+   "frame": 63,
+   "id": "kenney-drop-003",
+   "db": -3,
+   "pitch": 0,
+   "note": "card A blooms"
+  },
+  {
+   "frame": 102,
+   "id": "kenney-drop-003",
+   "db": -3,
+   "pitch": 3,
+   "note": "card B blooms"
+  },
+  {
+   "frame": 128,
+   "id": "gen-shimmer",
+   "db": -5,
+   "pitch": 0,
+   "note": "glint along the connection"
+  },
+  {
+   "frame": 138,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 5,
+   "note": "ring ping"
+  },
+  {
+   "frame": 174,
+   "id": "gen-swell",
+   "db": -9,
+   "pitch": -5,
+   "note": "the ridge rises"
+  },
+  {
+   "frame": 199,
+   "id": "gen-whoosh-whip",
+   "db": -4,
+   "pitch": -2,
+   "note": "the wave snaps"
+  },
+  {
+   "frame": 200,
+   "id": "kenney-click-001",
+   "db": -5,
+   "pitch": -4,
+   "note": "snap"
+  },
+  {
+   "frame": 213,
+   "id": "gen-tick",
+   "db": -10,
+   "pitch": 0,
+   "note": "the dot searches"
+  },
+  {
+   "frame": 225,
+   "id": "gen-tick",
+   "db": -10,
+   "pitch": 1,
+   "note": "the dot searches"
+  },
+  {
+   "frame": 237,
+   "id": "gen-tick",
+   "db": -10,
+   "pitch": 2,
+   "note": "the dot searches"
+  },
+  {
+   "frame": 249,
+   "id": "gen-tick",
+   "db": -10,
+   "pitch": 3,
+   "note": "the dot searches"
+  },
+  {
+   "frame": 246,
+   "id": "kenney-select-001",
+   "db": -5,
+   "pitch": 0,
+   "note": "outline pulse"
+  },
+  {
+   "frame": 276,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "pitch": -3,
+   "note": "loops"
+  },
+  {
+   "frame": 318,
+   "id": "gen-stamp",
+   "db": -6,
+   "pitch": -3,
+   "note": "the knot pulls tight"
+  },
+  {
+   "frame": 348,
+   "id": "gen-whoosh-medium",
+   "db": -5,
+   "pitch": 0,
+   "note": "the knot unwinds"
+  },
+  {
+   "frame": 382,
+   "id": "gen-appear",
+   "db": -3,
+   "pitch": 2,
+   "note": "springs into the mark"
+  },
+  {
+   "frame": 388,
+   "id": "gen-pop",
+   "db": -4,
+   "pitch": 4,
+   "note": "dot"
+  },
+  {
+   "frame": 396,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 0,
+   "note": "logotype word"
+  },
+  {
+   "frame": 425,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 2,
+   "note": "logotype word"
+  },
+  {
+   "frame": 451,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 4,
+   "note": "logotype word"
+  },
+  {
+   "frame": 481,
+   "id": "gen-chime",
+   "db": -3,
+   "pitch": 0,
+   "note": "the dot clicks in: the logo"
+  },
+  {
+   "frame": 495,
+   "id": "gen-whoosh-short",
+   "db": -8,
+   "pitch": 2,
+   "note": "logotype leaves"
+  },
+  {
+   "frame": 517,
+   "id": "gen-swell",
+   "db": -7,
+   "pitch": 0,
+   "note": "rings ripple out"
+  },
+  {
+   "frame": 522,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "pitch": 2,
+   "note": "the wave stretches"
+  },
+  {
+   "frame": 540,
+   "id": "kenney-drop-003",
+   "db": -5,
+   "pitch": 0,
+   "note": "hero card lands"
+  },
+  {
+   "frame": 545,
+   "id": "kenney-drop-003",
+   "db": -5,
+   "pitch": 2,
+   "note": "hero card lands"
+  },
+  {
+   "frame": 551,
+   "id": "kenney-drop-003",
+   "db": -5,
+   "pitch": 4,
+   "note": "hero card lands"
+  },
+  {
+   "frame": 556,
+   "id": "kenney-drop-003",
+   "db": -5,
+   "pitch": 6,
+   "note": "hero card lands"
+  },
+  {
+   "frame": 600,
+   "id": "gen-shimmer",
+   "db": -6,
+   "pitch": 2,
+   "note": "pulse along the community"
+  },
+  {
+   "frame": 633,
+   "id": "gen-whoosh-short",
+   "db": -8,
+   "pitch": 0,
+   "note": "cards slide in"
+  },
+  {
+   "frame": 670,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "pitch": -2,
+   "note": "stack"
+  },
+  {
+   "frame": 678,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "pitch": 4,
+   "note": "the wave pulls into its dot"
+  },
+  {
+   "frame": 703,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": -1,
+   "note": "the pin lands"
+  },
+  {
+   "frame": 704,
+   "id": "gen-tick",
+   "db": -6,
+   "pitch": 0,
+   "note": "pin ring"
+  },
+  {
+   "frame": 747,
+   "id": "gen-riser-1s",
+   "db": -9,
+   "pitch": 0,
+   "note": "the pin swells"
+  },
+  {
+   "frame": 757,
+   "id": "gen-whoosh-deep",
+   "db": -3,
+   "pitch": 0,
+   "note": "the white circle opens"
+  },
+  {
+   "frame": 760,
+   "id": "gen-appear",
+   "db": -6,
+   "pitch": 3,
+   "note": "first banner"
+  },
+  {
+   "frame": 780,
+   "id": "gen-whoosh-whip",
+   "db": -5,
+   "pitch": 0,
+   "note": "banner flip"
+  },
+  {
+   "frame": 805,
+   "id": "gen-whoosh-whip",
+   "db": -5,
+   "pitch": 1,
+   "note": "banner flip"
+  },
+  {
+   "frame": 851,
+   "id": "gen-whoosh-whip",
+   "db": -5,
+   "pitch": 2,
+   "note": "banner flip"
+  },
+  {
+   "frame": 781,
+   "id": "kenney-tick-004",
+   "db": -6,
+   "pitch": 2,
+   "note": "date rolls"
+  },
+  {
+   "frame": 806,
+   "id": "kenney-tick-004",
+   "db": -6,
+   "pitch": 2,
+   "note": "date rolls"
+  },
+  {
+   "frame": 852,
+   "id": "kenney-tick-004",
+   "db": -6,
+   "pitch": 2,
+   "note": "date rolls"
+  },
+  {
+   "frame": 822,
+   "id": "gen-tap",
+   "db": -6,
+   "pitch": 0,
+   "note": "underline"
+  },
+  {
+   "frame": 857,
+   "id": "gen-tap",
+   "db": -6,
+   "pitch": 2,
+   "note": "venue underline"
+  },
+  {
+   "frame": 873,
+   "id": "gen-swell",
+   "db": -9,
+   "pitch": 2,
+   "note": "the event grows"
+  },
+  {
+   "frame": 906,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 0,
+   "note": "seams"
+  },
+  {
+   "frame": 923,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "pitch": 0,
+   "note": "panel flips to a speaker"
+  },
+  {
+   "frame": 929,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "pitch": 2,
+   "note": "panel flips to a speaker"
+  },
+  {
+   "frame": 935,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "pitch": 4,
+   "note": "panel flips to a speaker"
+  },
+  {
+   "frame": 966,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 3,
+   "note": "name"
+  },
+  {
+   "frame": 971,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 4,
+   "note": "name"
+  },
+  {
+   "frame": 976,
+   "id": "gen-tick",
+   "db": -8,
+   "pitch": 5,
+   "note": "name"
+  },
+  {
+   "frame": 987,
+   "id": "gen-shimmer",
+   "db": -6,
+   "pitch": 0,
+   "note": "one line links the speakers"
+  },
+  {
+   "frame": 1035,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 0,
+   "note": "cards slide together"
+  },
+  {
+   "frame": 1054,
+   "id": "gen-whoosh-whip",
+   "db": -5,
+   "pitch": 0,
+   "note": "flip to the group"
+  },
+  {
+   "frame": 1071,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 2,
+   "note": "speech bubble"
+  },
+  {
+   "frame": 1104,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "pitch": -2,
+   "note": "make room"
+  },
+  {
+   "frame": 1122,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 3,
+   "note": "the wave forks"
+  },
+  {
+   "frame": 1143,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 0,
+   "note": "member pill"
+  },
+  {
+   "frame": 1148,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 2,
+   "note": "member pill"
+  },
+  {
+   "frame": 1153,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 4,
+   "note": "member pill"
+  },
+  {
+   "frame": 1170,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 4,
+   "note": "lights a pill"
+  },
+  {
+   "frame": 1185,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 5,
+   "note": "lights a pill"
+  },
+  {
+   "frame": 1201,
+   "id": "kenney-click-001",
+   "db": -3,
+   "pitch": 0,
+   "note": "presses WhatsApp group"
+  },
+  {
+   "frame": 1203,
+   "id": "gen-whoosh-medium",
+   "db": -5,
+   "pitch": 0,
+   "note": "the phone rises"
+  },
+  {
+   "frame": 1218,
+   "id": "kenney-drop-003",
+   "db": -6,
+   "pitch": 2,
+   "note": "voice note"
+  },
+  {
+   "frame": 1235,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 0,
+   "note": "image message"
+  },
+  {
+   "frame": 1263,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 3,
+   "note": "link preview"
+  },
+  {
+   "frame": 1293,
+   "id": "kenney-select-002",
+   "db": -10,
+   "pitch": 0,
+   "note": "typing dots"
+  },
+  {
+   "frame": 1300,
+   "id": "kenney-select-002",
+   "db": -10,
+   "pitch": 1,
+   "note": "typing dots"
+  },
+  {
+   "frame": 1307,
+   "id": "kenney-select-002",
+   "db": -10,
+   "pitch": 2,
+   "note": "typing dots"
+  },
+  {
+   "frame": 1309,
+   "id": "gen-stamp",
+   "db": -5,
+   "pitch": 2,
+   "note": "the lock closes"
+  },
+  {
+   "frame": 1328,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 2,
+   "note": "WhatsApp group"
+  },
+  {
+   "frame": 1353,
+   "id": "gen-riser-1s",
+   "db": -7,
+   "pitch": 0,
+   "note": "into the zoom-through"
+  },
+  {
+   "frame": 1386,
+   "id": "gen-whoosh-deep",
+   "db": -3,
+   "pitch": 0,
+   "note": "zoom-through cut"
+  },
+  {
+   "frame": 1392,
+   "id": "gen-appear",
+   "db": -6,
+   "pitch": 0,
+   "note": "the dot"
+  },
+  {
+   "frame": 1404,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "pitch": 0,
+   "note": "a pill lands"
+  },
+  {
+   "frame": 1428,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "pitch": 2,
+   "note": "a pill lands"
+  },
+  {
+   "frame": 1450,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "pitch": 4,
+   "note": "a pill lands"
+  },
+  {
+   "frame": 1410,
+   "id": "gen-tap",
+   "db": -8,
+   "pitch": 0,
+   "note": "the dot hops"
+  },
+  {
+   "frame": 1434,
+   "id": "gen-tap",
+   "db": -8,
+   "pitch": 2,
+   "note": "the dot hops"
+  },
+  {
+   "frame": 1456,
+   "id": "gen-tap",
+   "db": -8,
+   "pitch": 4,
+   "note": "the dot hops"
+  },
+  {
+   "frame": 1488,
+   "id": "gen-whoosh-short",
+   "db": -8,
+   "pitch": -2,
+   "note": "pills out"
+  },
+  {
+   "frame": 1500,
+   "id": "gen-swell",
+   "db": -6,
+   "pitch": 0,
+   "note": "the humps grow"
+  },
+  {
+   "frame": 1536,
+   "id": "gen-shimmer",
+   "db": -7,
+   "pitch": 2,
+   "note": "glint"
+  },
+  {
+   "frame": 1566,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "pitch": 3,
+   "note": "the dot lets go"
+  },
+  {
+   "frame": 1628,
+   "id": "gen-chime",
+   "db": -3,
+   "pitch": 3,
+   "note": "inspiration flares"
+  },
+  {
+   "frame": 1630,
+   "id": "gen-shimmer",
+   "db": -5,
+   "pitch": 4,
+   "note": "rings of light"
+  },
+  {
+   "frame": 1662,
+   "id": "gen-whoosh-medium",
+   "db": -5,
+   "pitch": 0,
+   "note": "the two return"
+  },
+  {
+   "frame": 1705,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 4,
+   "note": "the link draws out"
+  },
+  {
+   "frame": 1723,
+   "id": "gen-pop",
+   "db": -4,
+   "pitch": 2,
+   "note": "connected"
+  },
+  {
+   "frame": 1753,
+   "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": -2,
+   "note": "the line folds into a door"
+  },
+  {
+   "frame": 1777,
+   "id": "gen-whoosh-deep",
+   "db": -4,
+   "pitch": 2,
+   "note": "the door swings open"
+  },
+  {
+   "frame": 1780,
+   "id": "gen-swell",
+   "db": -6,
+   "pitch": 4,
+   "note": "light pours in"
+  },
+  {
+   "frame": 1809,
+   "id": "gen-riser-1s",
+   "db": -6,
+   "pitch": 2,
+   "note": "the light fills the frame"
+  },
+  {
+   "frame": 1842,
+   "id": "gen-shimmer",
+   "db": -5,
+   "pitch": 5,
+   "note": "sheen"
+  },
+  {
+   "frame": 1851,
+   "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": -3,
+   "note": "the light condenses into JOIN US"
+  },
+  {
+   "frame": 1868,
+   "id": "kenney-click-001",
+   "db": -3,
+   "pitch": 0,
+   "note": "JOIN US pressed"
+  },
+  {
+   "frame": 1869,
+   "id": "gen-impact-soft",
+   "db": -5,
+   "pitch": 0,
+   "note": "press"
+  },
+  {
+   "frame": 1890,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 0,
+   "note": "logotype word"
+  },
+  {
+   "frame": 1918,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 2,
+   "note": "logotype word"
+  },
+  {
+   "frame": 1943,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 4,
+   "note": "logotype word"
+  },
+  {
+   "frame": 1954,
+   "id": "gen-appear",
+   "db": -5,
+   "pitch": 2,
+   "note": "the wave draws back"
+  },
+  {
+   "frame": 1975,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 4,
+   "note": "the dot: full stop"
+  },
+  {
+   "frame": 2022,
+   "id": "gen-swell",
+   "db": -6,
+   "pitch": 2,
+   "note": "grow"
+  },
+  {
+   "frame": 2029,
+   "id": "gen-success",
+   "db": -4,
+   "pitch": 0,
+   "note": "together"
+  },
+  {
+   "frame": 2100,
+   "id": "gen-shimmer",
+   "db": -9,
+   "pitch": 2,
+   "note": "glint"
+  }
+ ]
+}

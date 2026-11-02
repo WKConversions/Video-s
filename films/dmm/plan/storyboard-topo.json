@@ -1,0 +1,382 @@
+{
+ "concept": "The topographic texture on their site becomes a living map of M\u00e1laga's marketing community. Every person is a peak, the cyan wave from their logo is the connection that finds a way between peaks, and joining DMM makes the whole map rise together. It is theirs because the motion itself is built from what is on digitalmarketingmalaga.com: the contour lines, the wave-and-dot mark, the rounded hero cards at different heights, the dark event banners, the pill buttons, the datetime style and the serif logotype.",
+ "thread": "The thread is the cyan wave mark from the logo: a gradient sine squiggle (#49D8ED to #9EE6FD) ending in a dot. It always means 'a connection':\n- S1: it is born from a dot on frame 0 and links two people on 'great connections'.\n- S2: it snaps, slides along a contour into a dead end, and falls short as a flat dashed line.\n- S3: it lands home after 'M\u00e1laga' in the logotype.\n- S4: it chains the community cards together.\n- S5: it writes 'M\u00e1laga\u223f.' at the summit.\n- S6: it underlines the local venue.\n- S8: it draws spokes back to the speaker, then runs down the paths that open to the member pills.\n- S9: it becomes the group's avatar and the chat's typing indicator.\n- S10: it underlines career / business / inspiration and flies over the risen peaks, looking.\n- S11: it arcs across the valley to the next connection.\n- S12: it comes out of the JOIN US pill and lands after 'M\u00e1laga' again.\n\nUnder it, the topographic map is the stage, and it changes with the story:\n- it forms around the first dot;\n- it crowds into steep walls (the problem);\n- it relaxes (Meet);\n- it rings every person who appears;\n- it converges into one summit (M\u00e1laga);\n- it parts around banners and into paths;\n- it turns pale on the white pages;\n- it lifts into a 3D landscape for the viewer's ambitions;\n- on 'grow together', all its peaks rise and their contour rings merge into shared ones.",
+ "colour_plan": "There are four fields. Each is entered through an object, and the order follows their homepage: hero, content, footer.\n\n1. **Charcoal #2C2C31 with cyan contour lines at 25\u201335%, 0\u201315.1 s.** This is their hero, the map where the problem, the meeting, the community, M\u00e1laga and the events play out. The banners' dark halves are the same charcoal, so the banners look printed on the map.\n2. **White #F5F5F5, 15.1\u201323.3 s.** These are their light content pages: event list, team names in cyan, the members page. It grows out of Tatiana Benito's white photo background inside her banner. This is daylight, what you actually get: speakers, sharing, opportunities, the chat. The map continues as pale cyan lines at 30%. Text is charcoal; cyan is kept for names, big words and marks.\n3. **Charcoal again, 23.3\u201330.3 s.** Entered by zooming through the phone's charcoal chat screen: back on the map, now rising, for the viewer's own ambitions.\n4. **Full cyan #49D8ED, 30.3\u201331.1 s.** The film's one accent field: the light pouring through the 'new door', the promise.\n5. **Charcoal footer, 31.1\u201336.4 s.** The cyan field contracts into their JOIN US pill, so the field becomes the button. It reveals the risen landscape behind the end card, like their footer with the logo.\n\nType is white on charcoal and charcoal on white. Cyan is only for key words, names, the wave and the pill.",
+ "scenes": [
+  {
+   "id": "S01-connection",
+   "t0": 0,
+   "t1": 3.45,
+   "vo": "Great marketing starts with great connections, (0.40\u20132.76)",
+   "idea": "On their charcoal contour map, the logo's cyan wave is born from a dot and on 'starts' it sets off across the map. It stretches from one real person (the woman from their hero) to their people (the group from their hero), and the contour lines part to let it through. A connection is a line across their map. The type only labels it.",
+   "beats": [
+    "0.00 Frame 0 already moves: a cyan dot (\u00d832) springs in at (960,500) (B4, no overshoot). The contour lines draw outward from it as a widening ripple (Topo draw-on from a point, radius 0\u21921100 px by 1.4 s, B3). Camera 1.05\u21921.00 over 0\u20131.8 s, soft ease.",
+    "0.32 'Great' (0.40): the dot pulls the logo's wave out of itself to the left. 3 humps, 360\u00d7110 px, stroke 18, gradient #49D8ED\u2192#9EE6FD, round caps, dot at the right end exactly like the logo (Wave draw-on, B3 0.45 s).",
+    "0.62 'marketing' (0.68): the hero card of the woman in a M\u00e1laga street (3bcee954, 340\u00d7425, r 26, even soft shadow) rises out of the map at (405,500) (y+50\u21920, scale 0.92\u21921, B3 0.5 s). The contours curl into rings around her (Topo rings): a person is a peak. The wave's tail stretches to hook onto her card's right edge (575,500).",
+    "1.04 'starts' (1.10): the dot sets off to the right (B2 0.5 s), the wave lengthening behind it in the logo's rhythm (more humps, same amplitude).",
+    "1.50 'with' (1.56): the hero card of the group in a room (7f268048, 440\u00d7330, r 26) rises out of the map at (1465,500). Rings form under it: a second peak. The group of card, wave and card is centred, spanning 235\u20131685.",
+    "1.80 'great' (1.86): the dot lands on the group card's left edge with a ring ripple through the contours. The wave tightens to an even rhythm between the cards. 'great' rises (y 880).",
+    "2.16 'connections' (2.22): 'connections' rises next to it in cyan. The contour lines between the cards part along the wave (Topo part), opening a smooth channel.",
+    "2.75 Both cards ease 25 px toward each other and the wave shortens with them (the pull of the connection), then breathe (B15, 3 px)."
+   ],
+   "on_screen_text": [
+    "great connections (Albert Sans 700, 100 px, centred at y 880; 'connections' cyan #49D8ED)"
+   ],
+   "site_visuals_used": [
+    "topographic contour texture (procedural Topo in the style of 2024_12_Topographic3tiny.png)",
+    "logo wave mark with end dot (Wave)",
+    "hero rounded photo cards: 2024_12_3bcee954 (woman in a M\u00e1laga street), 2024_12_7f268048 (group in a room)",
+    "Albert Sans"
+   ],
+   "transition_out": "3.05\u20133.45 Object continuity: the same wave carries into S2. On 'but' it stretches thin and snaps; the woman's card stays and becomes S2's centre; the group card sinks into the map (overlap 0.4 s).",
+   "sfx": "0.00 gen-swell very low under the map forming + gen-appear (dot); quiet music bed starts. 0.32 gen-whoosh-short (wave draws). 0.62 gen-appear (card rises). 1.04 gen-whoosh-short. 1.50 gen-appear. 1.80 gen-pop + gen-chime at -14 dB (connection lands)."
+  },
+  {
+   "id": "S02-hard-to-find",
+   "t0": 3.05,
+   "t1": 6.55,
+   "vo": "but finding your people isn't always easy. (3.16\u20135.80)",
+   "idea": "The same map turns against her. The connection snaps and her people sink into the terrain. The contour lines crowd into steep walls around her card (on a topographic map, dense lines mean steep ground). Her people are visible only far away and out of focus. The wave tries to reach one, runs along a contour into a dead end, and falls short as a flat dashed line.",
+   "beats": [
+    "3.08 'but' (3.16): the wave stretches thin and snaps in the middle; the halves recoil into the two cards (B4 0.3 s). 'great connections' rolls down and out.",
+    "3.50 'finding' (3.56): the group card sinks back into the map (scale 1\u21920.6, blur 0\u219210 px, fade, 0.55 s) as the contours close over its spot. The woman's card glides to the centre (960,470) and scales 1\u21921.1 (B2 0.7 s). 'finding' rises (y 900). Camera 1.00\u21921.05 over 3.3\u20135.1 s.",
+    "3.94 'your people' (3.98): the contours around her crowd into steep walls (line count \u00d72.5 in a ring 260\u2013520 px from her card, B3 0.6 s). 'your people' rises, 'people' in cyan.",
+    "4.40 Three of her people rise far out, dim (45%) and out of focus (6 px blur) beyond the walls, staggered 0.1 s: talk audience f547d508 at (300,250) 260\u00d7195, outdoor event b9025ec0 at (1640,280) 300\u00d7142, DMM03 at (1620,820) 260\u00d7148.",
+    "4.80 'isn't': the dot leaves her card for the top-right card, drawing the wave. It hits the wall and slides along a contour line instead: a dead end (0.45 s).",
+    "5.10 'always' (5.10): the wave flattens (amplitude\u21920) and turns dashed (potential, not a connection); the dot stops 220 px short of the card.",
+    "5.40 'easy' (5.38): the dashed line retracts into her card (B4 0.35 s); the far cards dim to 30%.",
+    "5.95 The walls tighten a few px more and the far cards drift 10 px further out (slow): the pressure before the turn."
+   ],
+   "on_screen_text": [
+    "finding your people (Albert Sans 700, 96 px, y 900; 'people' cyan)"
+   ],
+   "site_visuals_used": [
+    "topographic contours (densified into steep walls)",
+    "wave mark (snapped, dashed, flattened)",
+    "hero card 2024_12_3bcee954",
+    "community photos 2024_12_f547d508 (talk audience), 2021_05_b9025ec0 (outdoor event), 2024_12_DMM03"
+   ],
+   "transition_out": "6.05\u20136.55 The walls release: the dense lines spread back to even spacing and flow outward as the ground eases. The far cards sink into the map, and her card glides left to make room for the logo rising beside her (overlap 0.5 s).",
+   "sfx": "3.08 kenney-drop-003 (elastic snap). 3.50 gen-whoosh-deep at -12 dB (sinking). 3.94 gen-riser-1s at -18 dB (pressure). 4.80 gen-whoosh-short. 5.10 two soft gen-tick (dashes). 5.40 gen-whoosh-short low (retract)."
+  },
+  {
+   "id": "S03-meet-dmm",
+   "t0": 6.05,
+   "t1": 8.85,
+   "vo": "Meet Digital Marketing M\u00e1laga, (6.44\u20138.10)",
+   "idea": "The terrain relaxes and their serif logotype rises beside her, word by word on the spoken words. The wave leaves her card and lands home as the logo's own mark after 'M\u00e1laga'. She has met DMM, and the film's connection line turns out to be their logo.",
+   "beats": [
+    "6.08 The walls release: contours spread to even spacing and flow outward (B3 0.6 s); the far cards sink; 'finding your people' rolls out. Camera 1.05\u21921.00 over 6.2\u20138.0 s.",
+    "6.38 'Meet' (6.44): her card glides left to (600,500) and scales 1.1\u21920.95 (B2 0.6 s). A ring ripples out from (1220,500), where the logo will stand.",
+    "6.60 'Digital' (6.66): the logotype begins. 'Digital' rises (Logo, white serif, 132 px, left-aligned block at x 920, first line y 360). The card and logo group is centred (438\u20131500).",
+    "7.08 'Marketing' (7.14): 'Marketing' rises (y 500).",
+    "7.52 'M\u00e1laga' (7.58): 'M\u00e1laga' rises (y 640).",
+    "7.75 The dot leaves her card and draws the wave across the gap in an arc (B2 0.45 s). It lands after 'M\u00e1laga' as the logo's own mark, contracts to the logo's 3-hump size (150 px), and the dot settles with a ring.",
+    "8.20 One ring pulses out of the logo through the contours; card and logo breathe (B15)."
+   ],
+   "on_screen_text": [
+    "Digital / Marketing / M\u00e1laga (serif logotype, white, 132 px, with the cyan wave mark)"
+   ],
+   "site_visuals_used": [
+    "serif logotype rebuilt live (Logo), matched to 2024_12_DMM-logo-dark.png",
+    "wave mark landing in its home position",
+    "topographic contours relaxing",
+    "hero card 2024_12_3bcee954"
+   ],
+   "transition_out": "8.45\u20138.85 Layout transformation: the logo glides up into the top centre like the site's header, her card slides into a slot of the hero row, and the other community cards rise out of the map. S3's objects become S4's homepage hero (overlap 0.4 s).",
+   "sfx": "6.08 gen-swell (relief). 6.60 / 7.08 / 7.52 gen-tap soft, one per word. 7.75 gen-whoosh-short. 8.00 gen-chime (the dot lands home)."
+  },
+  {
+   "id": "S04-global-community",
+   "t0": 8.45,
+   "t1": 10.95,
+   "vo": "a global community of digital marketers, (8.62\u201310.64)",
+   "idea": "Their homepage hero, rebuilt live and alive. The logo sits at the top, the hero line ('a global community of digital marketers') in the middle, and rounded photo cards of real community moments rise across the map at different heights, each on its own peak. The wave links them into one chain: a community is people connected across the map.",
+   "beats": [
+    "8.50 'a' (8.62): the logo glides up to the top centre (960,150), scale 0.42, the site's header position but centred (B1 0.6 s). Her card glides into the hero row at (700,800), scale 0.72.",
+    "8.70 'global' (8.78): three more cards rise out of the map in their hero slots, outermost first (0.1 s stagger, B3 0.5 s), each on new rings: outdoor event b9025ec0 (1660,800) 320\u00d7151, group 7f268048 (260,740) 340\u00d7255, talk audience f547d508 (1230,720) 340\u00d7255. They sit at different heights like the site's hero.",
+    "9.04 'community' (9.10): 'A global community' rises at the centre (Albert Sans 500, 110 px, white, y 430). The wave links the cards left to right (group \u2192 her \u2192 talk \u2192 outdoor), one link every 0.12 s, each card's rings pulsing as it joins.",
+    "9.56 'of digital marketers': the subline rises (Albert Sans 500, 64 px, #9A999E, y 530).",
+    "10.12 'marketers' (10.18): a light pulse runs along the wave chain left to right (B10); the cards breathe."
+   ],
+   "on_screen_text": [
+    "A global community (Albert Sans 500, 110 px, white)",
+    "of digital marketers (64 px, #9A999E)"
+   ],
+   "site_visuals_used": [
+    "homepage hero composition: logo top, hero line, scattered rounded photo cards at different heights",
+    "hero line wording 'a global community of digital marketers'",
+    "photos 2024_12_7f268048, 2024_12_3bcee954, 2024_12_f547d508, 2021_05_b9025ec0",
+    "wave mark as links",
+    "contour rings under each card"
+   ],
+   "transition_out": "10.55\u201310.95 The hero gathers: the headline rolls out, the logo sinks into the map, and the four cards glide inward into a ring around the centre. Every contour line flows into concentric rings around one point: the map converges on M\u00e1laga (overlap 0.4 s).",
+   "sfx": "8.50 gen-whoosh-medium (logo up). 8.70 gen-appear \u00d73 staggered. 9.04 four soft gen-tick (links). 10.12 gen-shimmer at -14 dB (pulse)."
+  },
+  {
+   "id": "S05-right-here-malaga",
+   "t0": 10.55,
+   "t1": 12.9,
+   "vo": "right here in M\u00e1laga. (10.64\u201312.20)",
+   "idea": "All their contour lines converge into one summit, and the M\u00e1laga cathedral card from their hero rises on top of it. The global community has a place, and the map says where. 'M\u00e1laga' is written the way their logo writes it, with the wave after it.",
+   "beats": [
+    "10.58 'right' (10.64): the headline rolls out and the logo sinks into the map. The four cards glide inward to a ring at (470,300), (1450,300), (430,780), (1490,780), scale 0.8 (B2 0.7 s). Every contour flows into concentric rings around (960,480) (Topo rings around a point, 0.9 s). Camera 1.00\u21921.04 over 10.6\u201312.4 s.",
+    "11.18 'here' (11.24): the cathedral card (540dd6ef, 440\u00d7412, r 26) rises out of the summit with a ring ripple.",
+    "11.60 'in M\u00e1laga' (11.80): 'M\u00e1laga' rises under it (Albert Sans 700, 130 px, cyan, y 830).",
+    "11.95 The wave draws after 'M\u00e1laga' and its dot lands: the logo's own grammar for the place.",
+    "12.20 The ring cards ease 20 px closer to the summit; the rings breathe once."
+   ],
+   "on_screen_text": [
+    "M\u00e1laga (Albert Sans 700, 130 px, cyan, followed by the wave mark)"
+   ],
+   "site_visuals_used": [
+    "hero card 2024_12_540dd6ef (M\u00e1laga cathedral)",
+    "topographic contours as rings around a summit",
+    "wave mark after the place name",
+    "the four community cards"
+   ],
+   "transition_out": "12.45\u201312.90 The ring cards tuck in behind the cathedral card. The cathedral sinks into its summit while the first event banner rises out of the same summit: the place becomes the event (overlap 0.45 s).",
+   "sfx": "10.58 gen-whoosh-deep (gather). 11.18 gen-appear + gen-impact-soft (summit). 11.95 gen-chime."
+  },
+  {
+   "id": "S06-local-events",
+   "t0": 12.45,
+   "t1": 15.5,
+   "vo": "Discover fresh ideas at our local events, (12.72\u201314.94)",
+   "idea": "Their real event banners rise out of M\u00e1laga's summit and stack up, newest in front. Underneath, the date rolls like an odometer in the site's own '2026-10-15 19:00:00' style. Each banner is a fresh idea, the rolling date shows they keep coming, and the venue underlined by the wave makes them local.",
+   "beats": [
+    "12.48 The ring cards tuck in behind the cathedral (B2 0.4 s); 'M\u00e1laga' rolls out.",
+    "12.64 'Discover' (12.72): the cathedral sinks into the summit as the Charlie Titherley banner (2026_06_Meetup-Charlie-Titherley2.png, 1000\u00d7556, r 36) rises out of it at (960,400). The contours part around it (Topo part). The date rolls in at y 770: '2026-06-18 19:00:00' (DateRoll, Albert Sans 500, 56 px, #9A999E). Camera 1.04\u21921.00 over 12.6\u201314.4 s.",
+    "12.98 'fresh' (13.04): the Yago Gonz\u00e1lez banner rises in front (y+50\u21920, scale 0.94\u21921, B3 0.4 s); Charlie's tucks back (scale 0.93, y\u221234, 70% brightness). The date rolls to '2026-09-17 19:00:00', only the changing digits rolling.",
+    "13.42 'ideas' (13.48): the Tatiana Benito banner rises in front; the stack is three deep. The date rolls to '2026-10-15 19:00:00'. This front banner holds until 15.05.",
+    "13.92 'at our' (13.96): the venue rises under the date: 'Impact Hub Perchel' (Albert Sans 700, 90 px, white, y 880).",
+    "14.22 'local' (14.28): the cyan wave draws under 'Impact Hub Perchel', its dot landing at the end.",
+    "14.46 'events' (14.52): the two back banners slide out to the left and right, to (400,400) and (1520,400) at scale 0.6, half behind the front one (B2 0.5 s). It reads as a row of events, like their event list.",
+    "15.05 The side banners slide back behind; date and venue roll down and out; Tatiana's white photo half starts to grow."
+   ],
+   "on_screen_text": [
+    "2026-06-18 19:00:00 \u2192 2026-09-17 19:00:00 \u2192 2026-10-15 19:00:00 (site datetime style, rolling)",
+    "Impact Hub Perchel (90 px, white, cyan wave underline)"
+   ],
+   "site_visuals_used": [
+    "dark event banners: 2026_06_Meetup-Charlie-Titherley2.png, 2026_06_Meetup-Yago-Gonzalez.png, 2026_06_Meetup-Tatiana-Benito-1.png (2100+ px originals)",
+    "the event list's datetime style and venue line",
+    "wave mark as underline",
+    "contour lines parting around the banners"
+   ],
+   "transition_out": "15.05\u201315.50 Mask out of an object: Tatiana's white photo background grows as a rounded rect to fill the frame (B3 0.5 s), turning the field white. The banner's dark half slides away left under it, and her photo half becomes S7's portrait card (overlap 0.45 s).",
+   "sfx": "12.64 gen-appear. 12.98 kenney-select-001. 13.42 kenney-select-002. Each date roll: kenney-tick-004 \u00d72 (odometer). 14.22 gen-whoosh-short (underline). 14.46 gen-whoosh-medium (fan). 15.05 gen-swell (white opens)."
+  },
+  {
+   "id": "S07-professionals",
+   "t0": 15.05,
+   "t1": 17.55,
+   "vo": "learn from industry professionals, (15.44\u201317.04)",
+   "idea": "The speakers step out of their banners. On white, in the style of their about page, each speaker's photo half becomes a rounded portrait card rising out of the pale map at a different height, with the name in cyan. One professional per spoken word.",
+   "beats": [
+    "15.10 The white field (#F5F5F5) fills out of Tatiana's photo half. Pale contours (cyan at 30%) continue on the white: the map in daylight.",
+    "15.38 'learn' (15.44): her photo half (cropped above the banner's printed caption) settles as a portrait card at (960,470), 400\u00d7480, r 26. 'Tatiana Benito' rises under it (Albert Sans 700, 50 px, cyan, y 760). A ring forms under the card.",
+    "15.94 'industry' (16.00): Yago Gonz\u00e1lez's portrait (his banner's photo half) rises out of the map at (1430,530), 360\u00d7432, with his name under it.",
+    "16.42 'professionals' (16.48): Charlie Titherley's portrait rises at (490,530), 360\u00d7432, with his name under it. Three speakers at different heights, like the hero.",
+    "16.90 The rings under the three cards pulse once in turn; the cards breathe (B15)."
+   ],
+   "on_screen_text": [
+    "Tatiana Benito",
+    "Yago Gonz\u00e1lez",
+    "Charlie Titherley (each Albert Sans 700, 50 px, cyan, like the about page's team names)"
+   ],
+   "site_visuals_used": [
+    "speaker photos cropped from the right halves of the 2026 event banners",
+    "about page's cyan-name style",
+    "white body colour #F5F5F5",
+    "pale contour map",
+    "hero 'different heights' card rhythm"
+   ],
+   "transition_out": "17.20\u201317.55 Yago's and Charlie's cards sink back into the map. Tatiana's card lifts to (960,450) and shrinks to 320\u00d7384, staying on as the source of S8's ripple (overlap 0.35 s).",
+   "sfx": "15.10 gen-swell tail. 15.38 / 15.94 / 16.42 gen-pop soft, one per card. Names: gen-tap at -20 dB."
+  },
+  {
+   "id": "S08-share-explore",
+   "t0": 17.2,
+   "t1": 20.15,
+   "vo": "share insights, explore opportunities, (17.64\u201319.66)",
+   "idea": "Two acts on the same map. Share: a ripple of contour rings travels out from the speaker, and community cards rise exactly where it reaches them, one insight reaching a room. Explore: everything folds into the map, the contour lines part into two paths, and the wave runs down each one to a real member benefit, set as their dark pill buttons.",
+   "beats": [
+    "17.25 Yago and Charlie sink; names roll out; Tatiana's card lifts and shrinks to 320\u00d7384 at (960,450).",
+    "17.58 'share' (17.64): three contour rings ripple out from Tatiana's card across the pale map (0.9 s, 0.15 s apart), turning brighter cyan as they travel.",
+    "17.84 'insights' (17.90): community cards rise where the ripple reaches them: group 7f268048 (430,330) 300\u00d7225, talk f547d508 (1490,330) 300\u00d7225, DMM03 (470,790) 300\u00d7171, outdoor b9025ec0 (1450,800) 330\u00d7156. Each card's rim flashes cyan as the ripple touches it.",
+    "18.40 The wave draws short spokes from each card back to Tatiana's card, 0.08 s apart: sharing goes both ways.",
+    "18.72 'explore' (18.78): the five cards fold down into the map (stagger 0.05 s, B3 0.4 s). The contour lines part into two channels from the centre, up-left and down-right, and the wave's dot runs down each, drawing the wave.",
+    "19.08 'opportunities' (19.14): two dark pills in the site's 'Read More' style rise at the channel ends (#2C2C31, white Albert Sans 600, 72 px, height 136, fully round): 'Exclusive training' at (600,380), 'Job offers' at (1360,700). Each clicks in (scale 0.96, 0.1 s) as the dot reaches it.",
+    "19.55 The two paths glow once; the pills breathe."
+   ],
+   "on_screen_text": [
+    "Exclusive training",
+    "Job offers (dark pills, white 72 px text)"
+   ],
+   "site_visuals_used": [
+    "contour ripple out of a point",
+    "contours parting into paths",
+    "community photos 2024_12_7f268048, 2024_12_f547d508, 2024_12_DMM03, 2021_05_b9025ec0",
+    "Tatiana's speaker card",
+    "dark 'Read More' pill style",
+    "member features 'Exclusive training' and 'Job offers' (members page)"
+   ],
+   "transition_out": "19.80\u201320.15 The phone rises from below to (560,540). The two pills fly into its screen and are absorbed into the chat as it opens: the opportunities go into the group (overlap 0.35 s).",
+   "sfx": "17.58 gen-swell (ripple). 17.84 gen-pop \u00d74 staggered by distance. 18.40 soft gen-tick \u00d74 (spokes). 18.72 gen-whoosh-short \u00d72 (paths). 19.08 kenney-click-001 \u00d72 (pills)."
+  },
+  {
+   "id": "S09-whatsapp-group",
+   "t0": 19.75,
+   "t1": 23.5,
+   "vo": "and keep the conversation going in our private WhatsApp group. (20.18\u201322.92)",
+   "idea": "A phone in their brand holds the group chat, and the conversation literally keeps going. Their real banners and event photos arrive as messages, and the typing indicator is their own wave, oscillating like a voice. Beside it, the label names it: private, WhatsApp group, about 240 active members (a site fact).",
+   "beats": [
+    "19.80 The phone (Phone, 440\u00d7900, r 64, charcoal body and screen, even soft shadow) rises from below to (560,540) (B3 0.6 s); the pills fly into its screen.",
+    "20.22 'keep' (20.28): the first message bubble pops in (incoming, white, r 22) carrying the Nicole Schafhausen banner (2024_12_Meetup-Nicole-Schafhausen.png, 320 px wide). Camera 1.00\u21921.03 over 20.0\u201321.8 s.",
+    "20.58 'conversation' (20.64): a typing bubble appears: their wave (cyan, 90\u00d730) oscillating, amplitude 0.6\u21941 every 0.4 s.",
+    "21.04 'going' (21.10): a cyan outgoing bubble pops with the DMM03 event photo. The chat scrolls up steadily (B10, 60 px/s): the conversation keeps streaming.",
+    "21.46 'in our': the chat header slides down into the phone: wave avatar (\u00d872, cyan wave on charcoal), 'Digital Marketing M\u00e1laga' (30 px white), 'About 240 active members' (24 px grey).",
+    "21.82 'private' (21.88): 'Private' rises right of the phone (Albert Sans 700, 96 px, charcoal, left-aligned at x 900, y 440). The phone and label group is centred.",
+    "22.14 'WhatsApp group' (22.20): 'WhatsApp group' rises under it (96 px, y 550) and the cyan wave sweeps under it.",
+    "22.50 'group' (22.54): 'About 240 active members' rises (48 px, #9A999E, y 640).",
+    "22.90 Another bubble pops in the phone (outdoor event photo b9025ec0) and the typing wave returns.",
+    "23.10 Zoom-through: the label rolls out and the phone glides to the centre while growing \u00d74.5 on whipIn (B16, the element scales, not the camera). The cut lands on the fastest frame at 23.30."
+   ],
+   "on_screen_text": [
+    "Private",
+    "WhatsApp group (96 px, cyan wave underline)",
+    "About 240 active members (48 px)",
+    "phone header: Digital Marketing M\u00e1laga \u00b7 About 240 active members"
+   ],
+   "site_visuals_used": [
+    "Phone in DMM brand (charcoal, cyan)",
+    "wave mark as avatar and typing indicator",
+    "banner 2024_12_Meetup-Nicole-Schafhausen.png",
+    "photos 2024_12_DMM03.jpg and 2021_05_b9025ec0",
+    "fact 'About 240 active members'",
+    "members page wording 'private WhatsApp group'"
+   ],
+   "transition_out": "23.10\u201323.50 Zoom-through the phone screen (B16, the film's only one). At the fastest frame (23.30) its charcoal chat fills the frame, and S10's charcoal landscape grows from 25% to 100% on whipOut. The field returns to charcoal through the phone (overlap 0.4 s).",
+   "sfx": "19.80 gen-whoosh-medium (phone rises). 20.22 gen-pop. 20.58 gen-tick \u00d73 soft (typing). 21.04 gen-pop. 21.46 gen-whoosh-short (header). 21.82 / 22.14 gen-tap. 22.90 gen-pop. 23.10 gen-whoosh-whip into the cut."
+  },
+  {
+   "id": "S10-ambitions",
+   "t0": 23.1,
+   "t1": 28.2,
+   "vo": "Whether you're building your career, growing your business, or simply looking for inspiration, (23.38\u201327.84)",
+   "idea": "Back on the map, now rising: their contour levels lift into a landscape (TopoLift, tilted 30\u00b0, entered already tilted inside the zoom-through so it never reads as a camera move). The woman from the opening stands on her own peak, and the map acts out each ambition. Building: the peak rises level by level. Growing: it spreads wider and higher. Looking for inspiration: the wave's dot sets off across the landscape, lighting the peaks it passes. The key word rolls in one slot.",
+   "beats": [
+    "23.30 Cut: the charcoal landscape grows from 25% to 100% (whipOut 0.4 s): the contour map tilted back 30\u00b0, levels slightly lifted (TopoLift). The woman's card (3bcee954, 300\u00d7375, billboard) stands on a low peak at (560,470).",
+    "23.58 'you're' (23.56): rings draw in around her peak.",
+    "23.74 'building' (23.78): her peak rises in four steps (B13: each level lifts 30 px in 0.1 s, holds 0.06 s). Her card rides up 120 px and its shadow widens. 'building your' rises (Albert Sans 500, 56 px, #9A999E, left-aligned x 880, y 430); the card and text group is centred.",
+    "24.20 'career' (24.26): 'career' rises (Albert Sans 700, 130 px, white, y 540).",
+    "24.50 The cyan wave draws under 'career'.",
+    "25.00 'growing' (25.06): new contour rings spread outward around the base of her peak (0.6 s) and the summit rises 60 px more. 'building your' rolls to 'growing your'.",
+    "25.38 'business' (25.44): 'career' rolls up and out, 'business' rolls in; the wave underline stretches to fit.",
+    "26.06 'or simply' (26.12): the wave's dot lifts off her summit and glides over the landscape in an arc across the top of the frame (B10, 500 px/s), drawing a short wave behind it.",
+    "26.66 'looking' (26.72): 'growing your' rolls to 'looking for'. Each peak the dot passes lights up, its rings flashing brighter cyan one after another.",
+    "27.16 'inspiration' (27.22): 'business' rolls to 'inspiration'. The dot lands on a far peak at (1500,230) and a burst of rings ripples out from it."
+   ],
+   "on_screen_text": [
+    "building your / career",
+    "growing your / business",
+    "looking for / inspiration (key word 130 px white with cyan wave underline; verb line 56 px #9A999E)"
+   ],
+   "site_visuals_used": [
+    "topographic contours lifted into a 3D landscape (TopoLift)",
+    "wave mark (underline, travelling dot)",
+    "hero card 2024_12_3bcee954",
+    "Albert Sans"
+   ],
+   "transition_out": "27.75\u201328.20 The text block rolls out upward. The dot drops from the far peak to a new peak rising at (1340,470), where the next connection will stand, and carries the wave into S11 (overlap 0.45 s).",
+   "sfx": "23.30 gen-whoosh-deep tail (landing). 23.74 gen-tick \u00d74 (one per step). 24.20 gen-tap. 25.00 gen-swell (growth). 25.38 kenney-tick-004 (roll). 26.06 gen-whoosh-medium (glide). 26.66 two soft gen-tick (peaks light). 27.16 gen-shimmer (burst)."
+  },
+  {
+   "id": "S11-new-door",
+   "t0": 27.75,
+   "t1": 31.2,
+   "vo": "your next connection could open a new door. (27.84\u201330.82)",
+   "idea": "A new peak rises across the valley with a new face on it: Diego from their organising team. The wave connects her to him. Then his card swings open on its hinge like a door, and their cyan pours out of the doorway until it fills the frame: the connection is the door.",
+   "beats": [
+    "27.80 The text rolls out; a new peak rises at (1340,470), rings forming.",
+    "28.15 The dot drops from the far peak to the new peak, drawing a short wave.",
+    "28.44 'next' (28.50): Diego's portrait card (2024_12_diego.jpg, 300\u00d7375, r 26, billboard) rises on the new peak. The two-card group is centred. Camera 1.00\u21921.05 over 28.6\u201330.4 s.",
+    "28.72 'connection' (28.78): the wave arcs from her card to his across the valley (B2 0.4 s) and the dot lands with a ring. 'your next connection' rises (Albert Sans 700, 92 px, white, y 880; 'connection' cyan).",
+    "29.22 'could' (29.28): a cyan rim light grows around the edges of his card, as if light were behind it.",
+    "29.62 'open' (29.68): his card swings open like a door, hinged on its left edge (rotateY 0\u2192\u221272\u00b0, B2 0.6 s), revealing a glowing cyan doorway of the same shape. The text rolls out.",
+    "30.26 'a new door' (30.32\u201330.82): the cyan doorway grows as a rounded-rect mask to fill the whole frame (B3 0.55 s).",
+    "30.80 Full cyan #49D8ED field: the film's one accent moment."
+   ],
+   "on_screen_text": [
+    "your next connection (92 px, white; 'connection' cyan)"
+   ],
+   "site_visuals_used": [
+    "team portrait 2024_12_diego.jpg (organising team)",
+    "hero card 2024_12_3bcee954",
+    "TopoLift peaks",
+    "wave mark as the connection",
+    "brand cyan #49D8ED as the light behind the door"
+   ],
+   "transition_out": "30.80\u201331.20 Background becomes foreground: the full cyan field contracts into their JOIN US pill at (960,730), revealing the charcoal landscape around it (overlap 0.4 s).",
+   "sfx": "28.15 gen-whoosh-short. 28.44 gen-appear. 28.72 gen-whoosh-short + gen-chime. 29.22 gen-riser-1s into the door. 29.62 kenney-maximize-009 (door swings). 30.26 gen-swell, peaking at 30.80 with gen-impact-soft (field full)."
+  },
+  {
+   "id": "S12-join-grow-together",
+   "t0": 30.8,
+   "t1": 36.4,
+   "vo": "Join Digital Marketing M\u00e1laga. Let's grow together. (31.16\u201334.16)",
+   "idea": "The cyan light condenses into their own JOIN US button, which is pressed on 'Join'. The logotype builds above it and the wave comes home after 'M\u00e1laga' once more. On 'grow together' every peak on the map rises at once, the separate peaks' contour rings merge into shared ones, and the community cards rise on the peaks around the end card: their homepage hero, now a landscape that grows together.",
+   "beats": [
+    "30.90 The cyan field contracts into the JOIN US pill (B2 0.4 s, corner radius rounding over the middle 60%), landing at (960,730), 500\u00d7136. The charcoal landscape is revealed around it.",
+    "31.10 'Join' (31.16): 'JOIN US' (Albert Sans 600, 58 px, charcoal, +4% tracking) appears in the pill, 3 frames after the shape settles. Camera 1.05\u21921.00 over 31.2\u201333.0 s.",
+    "31.24 The pill is pressed (scale 0.95 in 0.08 s, back on B4) and a ring ripples out of it through the contours.",
+    "31.50 'Digital' (31.56): the serif logotype starts rising above the pill (Logo, white, 104 px, block centred at (960,300)).",
+    "31.96 'Marketing' (32.02): rises.",
+    "32.38 'M\u00e1laga' (32.44): rises.",
+    "32.64 The wave draws out of the pill's right end and travels up to land after 'M\u00e1laga' (B2 0.45 s): the thread comes home.",
+    "33.34 'Let's' (33.40): 'Let's grow together.' rises word by word between logo and pill (Albert Sans 700, 92 px, white, y 575; 'together' cyan). Camera 1.00\u21920.97 over 33.4\u201335.4 s.",
+    "33.64 'grow' (33.70): TopoLift: every peak on the landscape rises together (Z lift \u00d71.8, B3 1.2 s).",
+    "33.78 'together' (33.82): the peaks' lower contour rings merge into shared rings around all of them. Four community cards rise on peaks at the sides, as in the hero: group 7f268048 (220,330) 280\u00d7210, her 3bcee954 (280,760) 220\u00d7275, talk f547d508 (1700,340) 280\u00d7210, Diego (1640,760) 220\u00d7275.",
+    "34.40 The address rises under the pill: 'digitalmarketingmalaga.com' (Albert Sans 500, 34 px, #9A999E, y 860).",
+    "35.00 A soft light sweep crosses the JOIN US pill.",
+    "35.60 The logo's dot sends one ring out through the contours.",
+    "36.10 The landscape keeps breathing (B15) and the cards float 3 px, resting to the last frame."
+   ],
+   "on_screen_text": [
+    "JOIN US (cyan pill, charcoal text)",
+    "Digital / Marketing / M\u00e1laga (serif logotype with the wave mark)",
+    "Let's grow together. ('together' cyan)",
+    "digitalmarketingmalaga.com"
+   ],
+   "site_visuals_used": [
+    "cyan JOIN US pill (header button)",
+    "serif logotype + wave mark",
+    "TopoLift landscape (their topographic texture risen)",
+    "hero card arrangement: 2024_12_7f268048, 2024_12_3bcee954, 2024_12_f547d508, 2024_12_diego",
+    "charcoal footer"
+   ],
+   "transition_out": "No transition: the film rests on the breathing end card from 34.4 s to 36.4 s, with no cut.",
+   "sfx": "30.90 gen-whoosh-medium (cyan collapses). 31.24 kenney-click-001 + gen-impact-soft (press). 31.50 / 31.96 / 32.38 gen-tap soft. 32.64 gen-whoosh-short, then gen-chime at 33.0 (wave home). 33.64 gen-riser-1s into gen-success at 33.78 (together). 35.00 gen-shimmer. The music bed lifts slightly after the VO ends (34.2) and resolves on 36.4."
+  }
+ ],
+ "risks": [
+  "Kit request, two extra components. (1) TopoLift (S10\u2013S12): the Topo field drawn as stacked contour-level layers on a CSS-3D plane tilted about 30\u00b0, each level lifted in Z by its height. It needs raisable peaks at points, rings that spread at a base, merging of lower levels, and billboard cards on summits. Fallback if it looks generic or aliases: flat 2D rings with brightness by height and growing card shadows. (2) DateRoll (S6): the site's 'YYYY-MM-DD HH:MM:SS' datetime as an odometer where only the changing digits roll (tabular figures).",
+  "Calm background versus a living map: the contours must act only on events (draw, ripple, ring, part, densify, rise) and otherwise drift no more than about 8 px/s. A full-frame field that keeps wobbling will read as decorative motion and fight the foreground.",
+  "Thin cyan lines at 25\u201335% on charcoal shimmer at 60 fps and band in H.264. Keep strokes at least 2 px at 1080p, keep the contours stable over time (smooth noise, no marching-squares popping) and add the static dither.",
+  "S2's meaning (dense contours = steep = hard) may not read for viewers who can't read maps. The failed dashed wave and the blurred far cards must carry it; check this on the contact sheet.",
+  "The woman in the M\u00e1laga street (hero photo) plays 'you': alone in S2, ambitions in S10, end card. If she is a specific member or organiser, showing her isolated may be awkward, so confirm with Karl. Diego (organiser) on the door stays unlabelled.",
+  "Source sizes. DMM03 is 589 px (show at most 765 px), the cathedral 714 px (at most 928), the Nicole banner 697 px and alexandra.jpeg 564 px. The logo PNG (302 px) and dmm-icon (159 px) are too small, so use only the live Logo and Wave. Speaker portraits are crops of the 2026 banner right halves (sharp at 0.5x); crop above the printed name captions. Charcoal's grey photo background must still read as a card on #F5F5F5.",
+  "The task notes call 2025_04_WhatsApp-Image an event crowd. It is actually the Ruben Llorach banner ('B2B shouldn't mean Being Too Boring'), so don't use it as a crowd photo.",
+  "No invented chat content. Bubbles carry only real site images (banners, event photos) and the wave typing indicator. No message text, no WhatsApp logo or green UI; the header shows only 'Digital Marketing M\u00e1laga' and 'About 240 active members' (fact).",
+  "Every listed event is in the past (the latest is 2026-10-15; today is 2026-11-02), so never label them 'Upcoming' even though the site does.",
+  "Cyan on #F5F5F5 is about 1.7:1. The site uses it for team names, but at 50 px it may be weak; fall back to charcoal names with a cyan wave underline if the sheet reads poorly.",
+  "S6 shows three banners in about 0.9 s, too fast to read their headlines. The beat is 'many fresh ideas', and the front banner (Tatiana) holds for 1.6 s.",
+  "The end card is dense: logo, line, pill, address and four side cards on a 3D landscape. If the contact sheet looks busy, cut the side cards to two or set them to 70% opacity.",
+  "The door swing (rotateY) and the billboards in a tilted world need one consistent perspective; build the door in camera space, not in the tilted plane.",
+  "The logo's serif font is unidentified. Pick from films/dmm/plan/ttf (Gelasio, Libre Caslon Text, Lora, Literata, Source Serif 4, ...) by overlaying candidates on 2024_12_DMM-logo-dark.png before building S3 and S12.",
+  "Motion norm (7%): the white stretch in S7, with three mid-size portraits, is the likeliest dip. The ripples and card rises there must be large.",
+  "The only zoom-through (S9\u2192S10) is off-centre. The phone must glide to the centre while scaling \u00d74.5 so its screen covers the full 1920 px width at the cut.",
+  "About 27 of 36 s are charcoal (their hero and footer colour), against Karl's default of bright and no standard dark background. It is justified as their signature and the map is never static, but if he wants more light, S10\u2013S11 can run on white with charcoal contours."
+ ]
+}

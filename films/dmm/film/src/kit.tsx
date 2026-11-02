@@ -161,3 +161,36 @@ export const Bubble: React.FC<{ children: React.ReactNode; side?: "l" | "r"; siz
 export const Center: React.FC<{ children?: React.ReactNode; style?: React.CSSProperties }> = ({ children, style }) => (
   <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center", ...style }}>{children}</div>
 );
+
+// ------------------------------------------------------------------ morphable wave (point lists with the same count)
+export type Pt = [number, number];
+const MARK_SEGS: [Pt, Pt, Pt, Pt][] = [[[5, 67], [8, 42], [16, 25], [28, 25]], [[28, 25], [40, 25], [45, 79], [57, 79]], [[57, 79], [71, 79], [89, 11], [104, 11]], [[104, 11], [119, 11], [125, 69], [136, 69]], [[136, 69], [140, 69], [144, 66], [146, 62]]];
+/** N points along the logo's wave mark, placed so the mark (160 x 90 units) is `width` px wide with its box centred at (cx, cy); the dot sits at markDot() */
+export const markPoints = (N: number, cx: number, cy: number, width: number): Pt[] => {
+  const s = width / 160, ox = cx - width / 2, oy = cy - (90 * s) / 2; const out: Pt[] = [];
+  for (let i = 0; i < N; i++) { const g = (i / (N - 1)) * MARK_SEGS.length; const si = Math.min(MARK_SEGS.length - 1, Math.floor(g)); const u = g - si; const [a, b, c, d] = MARK_SEGS[si];
+    const m = (k: 0 | 1) => (1 - u) ** 3 * a[k] + 3 * (1 - u) ** 2 * u * b[k] + 3 * (1 - u) * u * u * c[k] + u ** 3 * d[k]; out.push([ox + m(0) * s, oy + m(1) * s]); }
+  return out;
+};
+export const markDot = (cx: number, cy: number, width: number): Pt => { const s = width / 160; return [cx - width / 2 + 155 * s, cy - (90 * s) / 2 + 51 * s]; };
+/** N points of a sine wave along (x1, y1)-(x2, y2) */
+export const sinePoints = (N: number, x1: number, y1: number, x2: number, y2: number, cycles = 2.5, amp = 26, phase = 0, taper = true): Pt[] => {
+  const dx = x2 - x1, dy = y2 - y1, L = Math.hypot(dx, dy) || 1, nx = -dy / L, ny = dx / L; const out: Pt[] = [];
+  for (let i = 0; i < N; i++) { const u = i / (N - 1); const env = taper ? Math.sin(Math.PI * u) ** 0.6 : 1; const a = amp * env * Math.sin(u * cycles * Math.PI * 2 + phase); out.push([x1 + dx * u + nx * a, y1 + dy * u + ny * a]); }
+  return out;
+};
+/** blend two point lists (same N) */
+export const lerpPts = (A: Pt[], B: Pt[], p: number): Pt[] => A.map((a, i) => [a[0] + (B[i][0] - a[0]) * p, a[1] + (B[i][1] - a[1]) * p]);
+/** draws a point list as the cyan gradient stroke; p draws it on from the first point (0..1), from trims the start (0..1); dot at the end */
+export const WavePoly: React.FC<{ pts: Pt[]; width?: number; p?: number; from?: number; dot?: number; dotR?: number; color?: string; opacity?: number }> = ({ pts, width = 14, p = 1, from = 0, dot = 0, dotR, color, opacity = 1 }) => {
+  const id = React.useMemo(() => `wp${gid++}`, []);
+  const n = pts.length; const i0 = Math.floor(c01(from) * (n - 1)), i1 = Math.max(i0 + 1, Math.round(c01(p) * (n - 1)));
+  const seg = pts.slice(i0, i1 + 1); const xs = pts.map((q) => q[0]); const x1 = Math.min(...xs), x2 = Math.max(...xs); const end = seg[seg.length - 1];
+  return (
+    <svg width={W} height={H} style={{ position: "absolute", left: 0, top: 0, overflow: "visible", pointerEvents: "none", opacity }}>
+      <defs><linearGradient id={id} gradientUnits="userSpaceOnUse" x1={x1} y1={0} x2={Math.max(x1 + 1, x2)} y2={0}><stop offset="0" stopColor={C.cyan} /><stop offset="1" stopColor={C.cyanL} /></linearGradient></defs>
+      {p > from + 0.001 && <polyline points={seg.map((q) => `${q[0].toFixed(1)},${q[1].toFixed(1)}`).join(" ")} stroke={color ?? `url(#${id})`} strokeWidth={width} strokeLinecap="round" strokeLinejoin="round" fill="none" />}
+      {dot > 0 && end && <circle cx={end[0]} cy={end[1]} r={(dotR ?? width * 0.47) * c01(dot)} fill={color ?? C.cyanL} />}
+    </svg>
+  );
+};

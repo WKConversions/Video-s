@@ -29,9 +29,11 @@ export function noise3(x: number, y: number, z: number): number {
 
 export type Bump = { x: number; y: number; h: number; r: number };          // a summit: height h (field units), radius r (px)
 export type Ripple = { x: number; y: number; age: number; h?: number; w?: number; speed?: number }; // a ring travelling out from (x, y); age in s
+/** a ridge (a wall of tightly packed contours) along the segment (x1, y1)-(x2, y2): height h, half-width w px */
+export type Ridge = { x1: number; y1: number; x2: number; y2: number; h: number; w: number };
 export type TopoOpts = {
   t: number; w?: number; h?: number; cell?: number; scale?: number; drift?: number; amp?: number;
-  spacing?: number; offset?: number; bumps?: Bump[]; ripples?: Ripple[]; seed?: number; calm?: number;
+  spacing?: number; offset?: number; bumps?: Bump[]; ripples?: Ripple[]; ridges?: Ridge[]; seed?: number; calm?: number;
 };
 
 /** the contour path ("M x y L x y ..." segments) for the field at time t */
@@ -47,6 +49,10 @@ export function topoPath(o: TopoOpts): string {
     if (o.ripples) for (const r of o.ripples) {
       if (r.age < 0) continue; const R = r.age * (r.speed ?? 900), wd = r.w ?? 90; const d = Math.hypot(x - r.x, y - r.y);
       v += (r.h ?? 0.5) * Math.exp(-((d - R) * (d - R)) / (wd * wd)) * Math.exp(-r.age * 1.2);
+    }
+    if (o.ridges) for (const g of o.ridges) {
+      const vx = g.x2 - g.x1, vy = g.y2 - g.y1, L2 = vx * vx + vy * vy || 1; const u = Math.max(0, Math.min(1, ((x - g.x1) * vx + (y - g.y1) * vy) / L2));
+      const px = g.x1 + vx * u - x, py = g.y1 + vy * u - y; v += g.h * Math.exp(-(px * px + py * py) / (g.w * g.w));
     }
     f[j * gw + i] = v;
   }

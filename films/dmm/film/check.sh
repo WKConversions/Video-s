@@ -7,7 +7,7 @@ B_=$(ls -d /opt/pw-browsers/chromium_headless_shell*/chrome-linux/headless_shell
 F0=$(python3 -c "print(int(round($A*60)))"); F1=$(python3 -c "print(int(round($B*60))-1)")
 npx remotion render src/solo/$ID.tsx Solo out/$ID.mp4 --frames=$F0-$F1 --scale=0.5 --concurrency=2 --muted --browser-executable=$B_ --log=error || exit 1
 S=/home/user/Video-s/skills/senior-motion-designer/library/scripts
-python3 $S/motion_check.py out/$ID.mp4 --profile | head -1 | cut -c1-110
+python3 $S/motion_check.py out/$ID.mp4 --profile > out/$ID-motion.txt 2>&1; head -1 out/$ID-motion.txt | cut -c1-110
 python3 $S/jitter_check.py out/$ID.mp4 | grep -v '^look' | cut -c1-120
 python3 -I - "$ID" "$A" <<'PY'
 import cv2, sys
