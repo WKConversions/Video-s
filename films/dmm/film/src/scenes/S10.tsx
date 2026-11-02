@@ -3,7 +3,7 @@
 // staircase of their cyan pills (career), grows its humps taller one after another like the logo's own second hump
 // (business), lets go of the line and flares as the contours ring out around its dot (inspiration).
 import React from "react";
-import { C, GLOW, INOUT, IN, OUT, Pt, SANS, WavePoly, c01, k, mix, sp, w } from "../kit";
+import { C, GLOW, INOUT, IN, OUT, Photo, Pt, SANS, SHADOW, WavePoly, c01, k, mix, sp, w } from "../kit";
 import { Scene } from "./types";
 
 const T0 = 23.15, T1 = 28.0;
@@ -55,7 +55,7 @@ const Slot: React.FC<{ t: number }> = ({ t }) => {
   const bigAt = [w("building") + 0.1, w("growing") + 0.06, w("inspiration") - 0.1];
   return <>{lines.map(([a, b, small, big, cyan], i) => {
     if (t < a - 0.02 || t > b + 0.4) return null;
-    const pin = c01(sp(t, a, 1.8, 0.72)), pinB = c01(sp(t, bigAt[i], 1.8, 0.72)); const o = i < 2 ? k(t, b - 0.05, 0.3, IN) : k(t, 27.72, 0.3, IN);
+    const pin = c01(sp(t, a, 1.8, 0.72)), pinB = c01(sp(t, bigAt[i], 1.8, 0.72)); const o = i < 2 ? k(t, b - 0.05, 0.3, IN) : k(t, 27.5, 0.28, IN);
     const roll = (q: number) => ({ opacity: c01(q * 1.6) * (1 - o), transform: `translateY(${(1 - q) * 46 - o * 46}px)`, filter: q < 0.97 || o > 0.02 ? `blur(${(1 - q) * 10 + o * 10}px)` : undefined });
     return <div key={i} style={{ position: "absolute", left: 0, right: 0, top: 110, textAlign: "center", fontFamily: SANS }}>
       <div style={{ fontWeight: 500, fontSize: 56, color: C.grey, letterSpacing: "-0.01em", ...roll(pin) }}>{small}</div>
@@ -63,6 +63,7 @@ const Slot: React.FC<{ t: number }> = ({ t }) => {
     </div>; })}</>;
 };
 
+const LOOK = [{ src: "talk.jpg", x: 540, y: 600, w: 360, h: 250, pos: "50% 45%" }, { src: "outdoor.jpg", x: 1380, y: 600, w: 360, h: 250, pos: "50% 60%" }, { src: "group.jpg", x: 960, y: 860, w: 300, h: 190, pos: "50% 45%" }];
 const Ambitions: React.FC<{ t: number }> = ({ t }) => {
   const dotIn = c01(sp(t, T0 + 0.1, 2.2, 0.6));
   const hop = hopPts(t);
@@ -74,8 +75,10 @@ const Ambitions: React.FC<{ t: number }> = ({ t }) => {
   const lineEnd = curve[curve.length - 1];
   // the dot: on the stair / curve end, then floating to the centre, drifting, flaring on "inspiration"
   const floatP = k(t, w("or") - 0.05, 0.9, INOUT);
-  const drift = t > w("looking") ? [Math.sin((t - w("looking")) * 2.2) * 26, -Math.sin((t - w("looking")) * 1.4) * 14] : [0, 0];
-  const dx = mix(lineEnd[0], 960, floatP) + drift[0] * floatP, dy = mix(lineEnd[1], 520, floatP) + drift[1] * floatP;
+  // looking: the dot visits three moments from their events (left, right), then comes back to the centre and flares
+  const v1 = k(t, w("looking") - 0.2, 0.32, INOUT), v2 = k(t, w("looking") + 0.14, 0.32, INOUT), v3 = k(t, w("for") + 0.02, 0.26, INOUT);
+  const look: [number, number] = [mix(mix(mix(0, LOOK[0].x + 150 - 960, v1), LOOK[1].x - 150 - 960, v2), 0, v3), mix(mix(mix(0, LOOK[0].y - 520, v1), LOOK[1].y - 520, v2), 0, v3)];
+  const dx = mix(lineEnd[0], 960, floatP) + look[0], dy = mix(lineEnd[1], 520, floatP) + look[1];
   const flare = c01(sp(t, w("inspiration") - 0.05, 1.6, 0.55)); const settle = k(t, 27.6, 0.5, OUT);
   const dotScale = (0.9 + 0.5 * dotIn) * (1 + 1.8 * flare - 0.8 * flare * settle);
   // a glint along the curve once it has grown
@@ -89,6 +92,12 @@ const Ambitions: React.FC<{ t: number }> = ({ t }) => {
           transform: `translate(${p.x - PW / 2}px, ${p.y - PH / 2 + (1 - q) * 60 + out * 420}px) scale(${0.7 + 0.3 * q})`, opacity: c01(q * 2) * (1 - out) }} />; })}
       <WavePoly pts={curve} width={26} p={1} opacity={1 - letGo * 0.88} />
       {glintU > 0 && glintU < 1 && <WavePoly pts={curve} width={26} from={Math.max(0, glintU - 0.08)} p={glintU} color="rgba(255,255,255,0.75)" opacity={(1 - letGo) * Math.sin(Math.PI * glintU)} />}
+      {/* three moments from their events float up while the dot looks around: talk, terrace, room */}
+      {LOOK.map((c, i) => { const q = c01(sp(t, w("simply") - 0.1 + i * 0.12, 1.6, 0.72)); const lit = i === 0 ? v1 * (1 - v2) : i === 1 ? v2 * (1 - v3) : 0;
+        const push = k(t, w("inspiration") - 0.05, 0.7, IN); if (q <= 0 || push >= 1) return null;
+        const ox = (c.x - 960) * push * 0.6, oy = (c.y - 520) * push * 0.6;
+        return <div key={c.src} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${c.x - c.w / 2 + ox}px, ${c.y - c.h / 2 + oy + (1 - q) * 70}px) scale(${(0.86 + 0.14 * q) * (1 + 0.05 * lit)})`, opacity: c01(q * 2) * (1 - push) * (0.72 + 0.28 * lit) }}>
+          <Photo src={c.src} w={c.w} h={c.h} r={22} pos={c.pos} shadow={SHADOW} /></div>; })}
       {/* the dot */}
       {/* rings of light out of the dot as it flares: the contour field answering it */}
       {[0, 1, 2].map((i) => { const u = c01((t - (w("inspiration") - 0.05) - i * 0.28) / 1.5); if (u <= 0 || u >= 1) return null;

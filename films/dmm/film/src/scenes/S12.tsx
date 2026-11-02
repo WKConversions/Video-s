@@ -31,7 +31,7 @@ const Join: React.FC<{ t: number }> = ({ t }) => {
   return (
     <>
       {/* the logotype, built on the words; the wave mark draws on after "Málaga" as on frame 0 */}
-      <div style={{ position: "absolute", left: 0, right: 0, top: LOGO.top, display: "flex", justifyContent: "center" }}>
+      <div style={{ position: "absolute", left: 0, right: 0, top: LOGO.top, display: "flex", justifyContent: "center", transform: "translateX(56px)" }}>
         <div style={{ fontFamily: SERIF, fontWeight: 700, fontSize: LOGO.size, lineHeight: 0.98, color: C.white, letterSpacing: "-0.012em", fontVariationSettings: "'opsz' 60", paddingRight: LOGO.size * 0.9 }}>
           <Line t={t} at={w("digital3") - 0.06} text="Digital" />
           <Line t={t} at={w("marketing3") - 0.06} text="Marketing" />
