@@ -3,18 +3,20 @@
 // word and the wave draws itself back after "Málaga" exactly as on frame 0; on "grow" it grows, and rings keep
 // rippling from its dot through the contours to the last frame.
 import React from "react";
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill, Easing } from "remotion";
 import { C, CX, GRAD, GLOW, INOUT, OUT, SANS, SERIF, WaveMark, c01, k, mix, sp, w } from "../kit";
 import { H } from "../handoff";
 import { Scene } from "./types";
 
 const T0 = 30.8, T1 = 36.41;
+const LAND = Easing.bezier(0.25, 0.8, 0.35, 1);
 const LOGO = { size: 136, top: 140 };                 // the logotype block (3 lines), centred horizontally as a group
 const PILL = { w0: 600, h0: 160, w1: 470, h1: 124, y0: 540, y1: 848 };
 
 const Line: React.FC<{ t: number; at: number; text: string; children?: React.ReactNode }> = ({ t, at, text, children }) => {
-  const q = c01(sp(t, at, 1.7, 0.74));
-  return <div style={{ display: "flex", alignItems: "baseline", gap: LOGO.size * 0.2, opacity: c01(q * 1.6), transform: `translateY(${(1 - q) * LOGO.size * 0.42}px)`, filter: q < 0.97 ? `blur(${(1 - q) * 9}px)` : undefined, willChange: q < 0.999 ? "transform" : undefined }}>
+  // a quick arrival with no long sub-pixel tail (a slow tail steps on the pixel grid): the last pixel is clamped away
+  const q = k(t, at, 0.42, LAND); const off = (1 - q) * LOGO.size * 0.42;
+  return <div style={{ display: "flex", alignItems: "baseline", gap: LOGO.size * 0.2, opacity: c01(q * 1.6), transform: `translateY(${off < 0.9 ? 0 : off}px)`, filter: q < 0.97 ? `blur(${(1 - q) * 9}px)` : undefined }}>
     <span>{text}</span>{children}</div>;
 };
 
@@ -44,8 +46,8 @@ const Join: React.FC<{ t: number }> = ({ t }) => {
       </div>
       {/* "Let's grow together." */}
       <div style={{ position: "absolute", left: 0, right: 0, top: 606, display: "flex", justifyContent: "center", fontFamily: SANS, fontWeight: 700, fontSize: 96, letterSpacing: "-0.025em", color: C.white }}>
-        {["Let's", "grow", "together."].map((wd, i) => { const at = [w("lets"), w("grow"), w("together")][i] - 0.08; const q = c01(sp(t, at, 1.8, 0.72));
-          return <span key={wd} style={{ display: "inline-block", marginRight: "0.24em", opacity: c01(q * 1.6), transform: `translateY(${(1 - q) * 38}px)`, filter: q < 0.97 ? `blur(${(1 - q) * 10}px)` : undefined, willChange: q < 0.999 ? "transform" : undefined,
+        {["Let's", "grow", "together."].map((wd, i) => { const at = [w("lets"), w("grow"), w("together")][i] - 0.08; const q = k(t, at, 0.4, LAND); const off = (1 - q) * 38;
+          return <span key={wd} style={{ display: "inline-block", marginRight: "0.24em", opacity: c01(q * 1.6), transform: `translateY(${off < 0.9 ? 0 : off}px)`, filter: q < 0.97 ? `blur(${(1 - q) * 10}px)` : undefined,
             ...(i === 2 ? { backgroundImage: GRAD, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" } : {}) }}>{wd}</span>; })}
       </div>
       {/* the cyan field that becomes the JOIN US pill */}

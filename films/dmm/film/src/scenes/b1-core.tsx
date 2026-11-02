@@ -135,7 +135,7 @@ const headS = (S: Snake, t: number) => { const x = c01((t - T0S) / (TE - T0S)) *
 
 // the lockup: Source Serif 4 700 at 166 px (cap height ≈ 110), lines 0.98 em, the mark 1.25 em after 'Málaga' (as kit Logo)
 export const LOGO = { F: 166, x0: 595.3, y0: 278.55, lh: 162.68 };
-const LOCK = { cx: 1220.95, cy: 701.6, w: 207.5 };
+const LOCK = { cx: 1250.95, cy: 701.6, w: 207.5 };   // +30 px: the logo's own gap between "Málaga" and the mark
 // H.mark is frame (screen) space (S4 un-does its own camera to match it): land there through B1's camera at 8.55
 const S0 = cam(H.mark.t);
 const HAND = { cx: CX + (H.mark.cx - CX) / S0, cy: CY + (H.mark.cy - CY) / S0, w: H.mark.width / S0 };
