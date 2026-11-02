@@ -1,0 +1,487 @@
+{
+ "source": "vo/vo.mp3",
+ "model": "small",
+ "duration": 34.1943125,
+ "words": [
+  {
+   "word": "Great",
+   "start": 0.0,
+   "end": 0.28,
+   "p": 0.78
+  },
+  {
+   "word": "marketing",
+   "start": 0.28,
+   "end": 0.7,
+   "p": 0.922
+  },
+  {
+   "word": "starts",
+   "start": 0.7,
+   "end": 1.16,
+   "p": 0.994
+  },
+  {
+   "word": "with",
+   "start": 1.16,
+   "end": 1.46,
+   "p": 0.998
+  },
+  {
+   "word": "great",
+   "start": 1.46,
+   "end": 1.82,
+   "p": 0.997
+  },
+  {
+   "word": "connections,",
+   "start": 1.82,
+   "end": 2.36,
+   "p": 0.998
+  },
+  {
+   "word": "but",
+   "start": 2.76,
+   "end": 3.16,
+   "p": 0.994
+  },
+  {
+   "word": "finding",
+   "start": 3.16,
+   "end": 3.58,
+   "p": 0.999
+  },
+  {
+   "word": "your",
+   "start": 3.58,
+   "end": 3.8,
+   "p": 0.993
+  },
+  {
+   "word": "people",
+   "start": 3.8,
+   "end": 4.12,
+   "p": 0.998
+  },
+  {
+   "word": "isn't",
+   "start": 4.12,
+   "end": 4.7,
+   "p": 0.995
+  },
+  {
+   "word": "always",
+   "start": 4.7,
+   "end": 4.98,
+   "p": 0.998
+  },
+  {
+   "word": "easy.",
+   "start": 4.98,
+   "end": 5.4,
+   "p": 0.999
+  },
+  {
+   "word": "Meet",
+   "start": 6.04,
+   "end": 6.26,
+   "p": 0.959
+  },
+  {
+   "word": "Digital",
+   "start": 6.26,
+   "end": 6.74,
+   "p": 0.902
+  },
+  {
+   "word": "Marketing",
+   "start": 6.74,
+   "end": 7.18,
+   "p": 0.985
+  },
+  {
+   "word": "Malaga,",
+   "start": 7.18,
+   "end": 7.7,
+   "p": 0.716
+  },
+  {
+   "word": "a",
+   "start": 8.22,
+   "end": 8.38,
+   "p": 0.99
+  },
+  {
+   "word": "global",
+   "start": 8.38,
+   "end": 8.7,
+   "p": 0.998
+  },
+  {
+   "word": "community",
+   "start": 8.7,
+   "end": 9.22,
+   "p": 0.999
+  },
+  {
+   "word": "of",
+   "start": 9.22,
+   "end": 9.48,
+   "p": 0.999
+  },
+  {
+   "word": "digital",
+   "start": 9.48,
+   "end": 9.78,
+   "p": 0.96
+  },
+  {
+   "word": "marketers",
+   "start": 9.78,
+   "end": 10.24,
+   "p": 0.997
+  },
+  {
+   "word": "right",
+   "start": 10.24,
+   "end": 10.84,
+   "p": 0.897
+  },
+  {
+   "word": "here",
+   "start": 10.84,
+   "end": 11.18,
+   "p": 0.998
+  },
+  {
+   "word": "in",
+   "start": 11.18,
+   "end": 11.4,
+   "p": 0.996
+  },
+  {
+   "word": "Malaga.",
+   "start": 11.4,
+   "end": 11.8,
+   "p": 0.998
+  },
+  {
+   "word": "Discover",
+   "start": 12.32,
+   "end": 12.64,
+   "p": 0.99
+  },
+  {
+   "word": "fresh",
+   "start": 12.64,
+   "end": 13.08,
+   "p": 0.998
+  },
+  {
+   "word": "ideas",
+   "start": 13.08,
+   "end": 13.56,
+   "p": 0.999
+  },
+  {
+   "word": "at",
+   "start": 13.56,
+   "end": 13.78,
+   "p": 0.987
+  },
+  {
+   "word": "our",
+   "start": 13.78,
+   "end": 13.88,
+   "p": 0.994
+  },
+  {
+   "word": "local",
+   "start": 13.88,
+   "end": 14.12,
+   "p": 0.999
+  },
+  {
+   "word": "events,",
+   "start": 14.12,
+   "end": 14.54,
+   "p": 0.998
+  },
+  {
+   "word": "learn",
+   "start": 15.04,
+   "end": 15.32,
+   "p": 0.998
+  },
+  {
+   "word": "from",
+   "start": 15.32,
+   "end": 15.6,
+   "p": 0.999
+  },
+  {
+   "word": "industry",
+   "start": 15.6,
+   "end": 16.08,
+   "p": 0.999
+  },
+  {
+   "word": "professionals,",
+   "start": 16.08,
+   "end": 16.64,
+   "p": 0.999
+  },
+  {
+   "word": "share",
+   "start": 17.24,
+   "end": 17.5,
+   "p": 0.996
+  },
+  {
+   "word": "insights,",
+   "start": 17.5,
+   "end": 18.02,
+   "p": 0.998
+  },
+  {
+   "word": "explore",
+   "start": 18.38,
+   "end": 18.74,
+   "p": 0.999
+  },
+  {
+   "word": "opportunities,",
+   "start": 18.74,
+   "end": 19.26,
+   "p": 0.999
+  },
+  {
+   "word": "and",
+   "start": 19.78,
+   "end": 19.88,
+   "p": 0.999
+  },
+  {
+   "word": "keep",
+   "start": 19.88,
+   "end": 20.08,
+   "p": 0.998
+  },
+  {
+   "word": "the",
+   "start": 20.08,
+   "end": 20.24,
+   "p": 0.998
+  },
+  {
+   "word": "conversation",
+   "start": 20.24,
+   "end": 20.7,
+   "p": 0.999
+  },
+  {
+   "word": "going",
+   "start": 20.7,
+   "end": 21.12,
+   "p": 0.999
+  },
+  {
+   "word": "in",
+   "start": 21.12,
+   "end": 21.36,
+   "p": 0.987
+  },
+  {
+   "word": "our",
+   "start": 21.36,
+   "end": 21.48,
+   "p": 0.999
+  },
+  {
+   "word": "private",
+   "start": 21.48,
+   "end": 21.8,
+   "p": 0.896
+  },
+  {
+   "word": "WhatsApp",
+   "start": 21.8,
+   "end": 22.14,
+   "p": 0.946
+  },
+  {
+   "word": "group.",
+   "start": 22.14,
+   "end": 22.52,
+   "p": 0.952
+  },
+  {
+   "word": "Whether",
+   "start": 22.98,
+   "end": 23.16,
+   "p": 0.996
+  },
+  {
+   "word": "you're",
+   "start": 23.16,
+   "end": 23.38,
+   "p": 0.989
+  },
+  {
+   "word": "building",
+   "start": 23.38,
+   "end": 23.64,
+   "p": 0.999
+  },
+  {
+   "word": "your",
+   "start": 23.64,
+   "end": 23.86,
+   "p": 0.999
+  },
+  {
+   "word": "career,",
+   "start": 23.86,
+   "end": 24.22,
+   "p": 0.999
+  },
+  {
+   "word": "growing",
+   "start": 24.66,
+   "end": 24.86,
+   "p": 0.999
+  },
+  {
+   "word": "your",
+   "start": 24.86,
+   "end": 25.04,
+   "p": 0.999
+  },
+  {
+   "word": "business,",
+   "start": 25.04,
+   "end": 25.38,
+   "p": 1.0
+  },
+  {
+   "word": "or",
+   "start": 25.72,
+   "end": 25.88,
+   "p": 0.999
+  },
+  {
+   "word": "simply",
+   "start": 25.88,
+   "end": 26.32,
+   "p": 0.995
+  },
+  {
+   "word": "looking",
+   "start": 26.32,
+   "end": 26.58,
+   "p": 0.999
+  },
+  {
+   "word": "for",
+   "start": 26.58,
+   "end": 26.82,
+   "p": 0.999
+  },
+  {
+   "word": "inspiration,",
+   "start": 26.82,
+   "end": 27.44,
+   "p": 1.0
+  },
+  {
+   "word": "your",
+   "start": 27.44,
+   "end": 28.1,
+   "p": 0.629
+  },
+  {
+   "word": "next",
+   "start": 28.1,
+   "end": 28.38,
+   "p": 0.985
+  },
+  {
+   "word": "connection",
+   "start": 28.38,
+   "end": 28.88,
+   "p": 0.99
+  },
+  {
+   "word": "could",
+   "start": 28.88,
+   "end": 29.28,
+   "p": 0.991
+  },
+  {
+   "word": "open",
+   "start": 29.28,
+   "end": 29.74,
+   "p": 0.999
+  },
+  {
+   "word": "a",
+   "start": 29.74,
+   "end": 29.92,
+   "p": 0.998
+  },
+  {
+   "word": "new",
+   "start": 29.92,
+   "end": 30.12,
+   "p": 0.998
+  },
+  {
+   "word": "door.",
+   "start": 30.12,
+   "end": 30.42,
+   "p": 0.999
+  },
+  {
+   "word": "Join",
+   "start": 30.76,
+   "end": 31.16,
+   "p": 0.979
+  },
+  {
+   "word": "Digital",
+   "start": 31.16,
+   "end": 31.62,
+   "p": 0.414
+  },
+  {
+   "word": "Marketing",
+   "start": 31.62,
+   "end": 32.04,
+   "p": 0.99
+  },
+  {
+   "word": "Malaga.",
+   "start": 32.04,
+   "end": 32.56,
+   "p": 0.854
+  },
+  {
+   "word": "Let's",
+   "start": 33.0,
+   "end": 33.3,
+   "p": 0.997
+  },
+  {
+   "word": "grow",
+   "start": 33.3,
+   "end": 33.42,
+   "p": 0.964
+  },
+  {
+   "word": "together.",
+   "start": 33.42,
+   "end": 33.76,
+   "p": 0.999
+  }
+ ]
+}

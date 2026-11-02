@@ -1,0 +1,221 @@
+{
+ "imgs": [
+  {
+   "src": "https://digitalmarketingmalaga.com/wp-content/uploads/2024/12/DMM-logo-dark-170x114.png",
+   "w": 170,
+   "h": 114,
+   "alt": ""
+  },
+  {
+   "src": "https://digitalmarketingmalaga.com/wp-content/uploads/2024/12/DMM-logo-dark-170x114.png",
+   "w": 170,
+   "h": 114,
+   "alt": ""
+  },
+  {
+   "src": "https://digitalmarketingmalaga.com/wp-content/uploads/2024/12/7f268048a75b9e94756492da7306fe77-1-768x576.jpg",
+   "w": 768,
+   "h": 576,
+   "alt": ""
+  },
+  {
+   "src": "https://digitalmarketingmalaga.com/wp-content/uploads/2024/12/3bcee95403a49691f37fef5436d76499-1024x1024.jpg",
+   "w": 1024,
+   "h": 1024,
+   "alt": ""
+  },
+  {
+   "src": "https://digitalmarketingmalaga.com/wp-content/uploads/2024/12/f547d5082896187028ae9d2d494488da-768x576.jpg",
+   "w": 768,
+   "h": 576,
+   "alt": ""
+  },
+  {
+   "src": "https://digitalmarketingmalaga.com/wp-content/uploads/2024/12/540dd6ef21209b3fd881d2a709423c47-1-300x281.png",
+   "w": 220,
+   "h": 206,
+   "alt": ""
+  },
+  {
+   "src": "https://digitalmarketingmalaga.com/wp-content/uploads/2026/06/Meetup-Tatiana-Benito-1-300x164.png",
+   "w": 300,
+   "h": 164,
+   "alt": "What Happens When You Take the P&G Playbook Out of P&G?"
+  },
+  {
+   "src": "https://digitalmarketingmalaga.com/wp-content/uploads/2026/06/Meetup-Yago-Gonzalez-300x160.png",
+   "w": 300,
+   "h": 160,
+   "alt": "How to do Digital Business Consulting in 2026"
+  },
+  {
+   "src": "https://digitalmarketingmalaga.com/wp-content/uploads/2026/06/Meetup-Charlie-Titherley2-300x167.png",
+   "w": 300,
+   "h": 167,
+   "alt": "Building Apps in hours, without developer reliance"
+  },
+  {
+   "src": "https://digitalmarketingmalaga.com/wp-content/uploads/2024/12/DMM-logo-dark-170x114.png",
+   "w": 170,
+   "h": 114,
+   "alt": "Digital Marketing Málaga"
+  }
+ ],
+ "bgs": [
+  "url(\"https://digitalmarketingmalaga.com/wp-content/uploads/2024/12/Topographic3tiny.png\")",
+  "linear-gradient(rgb(73, 216, 237) 0%, rgb(158, 230, 253) 100%)",
+  "linear-gradient(to right, rgba(44, 44, 49, 0.5), rgba(44, 44, 49, 0.5)), url(\"https://digitalmarketingmalaga.com/wp-content/uploads/2024/12/Topographic3tiny.png\")"
+ ],
+ "videos": [],
+ "text": "Skip to content\nAbout\nEvents\nLog in\nJOIN US\nWelcome\nTo a global community of digital marketers\nin Málaga who sell smoke but don’t buy it\nUpcoming Community Events\nWhat Happens When You Take the P&G Playbook Out of P&G?\n2026-10-15 19:00:00\nTatiana Benito\nImpact Hub Perchel\nRead More\nHow to do Digital Business Consulting in 2026\n2026-09-17 19:00:00\nYago González\nImpact Hub Perchel\nRead More\nBuilding Apps in hours, without developer reliance\n2026-06-18 19:00:00\nCharlie Titherley\nMomentum Coworking\nRead More\n\nLinks\nMeetups\nSpeak\nConnect\n\nConnect with entrepreneurs, build your network, make great business. Let’s connect!\n\nCopyright © 2026 Digital Marketing Malaga |  Política de privacidad\n\nPowered by Digital Marketing Malaga",
+ "h": [
+  {
+   "t": "To a global community of digital marketers\nin Málaga who sell smoke but don’t bu",
+   "f": "\"Albert Sans\"",
+   "w": "400",
+   "s": "30px",
+   "c": "rgb(247, 248, 250)",
+   "ls": "normal",
+   "tt": "none"
+  },
+  {
+   "t": "Upcoming Community Events",
+   "f": "\"Albert Sans\", sans-serif",
+   "w": "700",
+   "s": "30px",
+   "c": "rgb(73, 216, 237)",
+   "ls": "normal",
+   "tt": "none"
+  },
+  {
+   "t": "What Happens When You Take the P&G Playbook Out of P&G?",
+   "f": "\"Albert Sans\", sans-serif",
+   "w": "700",
+   "s": "26px",
+   "c": "rgb(73, 216, 237)",
+   "ls": "normal",
+   "tt": "none"
+  },
+  {
+   "t": "How to do Digital Business Consulting in 2026",
+   "f": "\"Albert Sans\", sans-serif",
+   "w": "700",
+   "s": "26px",
+   "c": "rgb(73, 216, 237)",
+   "ls": "normal",
+   "tt": "none"
+  },
+  {
+   "t": "Building Apps in hours, without developer reliance",
+   "f": "\"Albert Sans\", sans-serif",
+   "w": "700",
+   "s": "26px",
+   "c": "rgb(73, 216, 237)",
+   "ls": "normal",
+   "tt": "none"
+  },
+  {
+   "t": "Links",
+   "f": "\"Albert Sans\", sans-serif",
+   "w": "700",
+   "s": "28px",
+   "c": "rgb(58, 58, 58)",
+   "ls": "normal",
+   "tt": "none"
+  },
+  {
+   "t": "Connect",
+   "f": "\"Albert Sans\", sans-serif",
+   "w": "700",
+   "s": "28px",
+   "c": "rgb(154, 153, 158)",
+   "ls": "normal",
+   "tt": "none"
+  }
+ ],
+ "btn": [
+  {
+   "t": "JOIN US",
+   "bg": "rgba(0, 0, 0, 0)",
+   "c": "rgb(158, 230, 253)",
+   "r": "0px",
+   "f": "\"Albert Sans\", sans-serif",
+   "w": "400",
+   "pad": "0px",
+   "bd": "0px none rgb(158, 230, 253)",
+   "sh": "none"
+  },
+  {
+   "t": "\n\t\t\t\tJOIN US\n\t\t\t",
+   "bg": "rgba(0, 0, 0, 0)",
+   "c": "rgb(158, 230, 253)",
+   "r": "0px",
+   "f": "\"Albert Sans\", sans-serif",
+   "w": "400",
+   "pad": "0px",
+   "bd": "0px none rgb(158, 230, 253)",
+   "sh": "none"
+  },
+  {
+   "t": "\n\t\t\t\t\tMain Menu\n\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t",
+   "bg": "rgba(0, 0, 0, 0)",
+   "c": "rgb(73, 216, 237)",
+   "r": "2px",
+   "f": "\"Albert Sans\", sans-serif",
+   "w": "400",
+   "pad": "15px",
+   "bd": "1px solid rgb(73, 216, 237)",
+   "sh": "none"
+  },
+  {
+   "t": "Read More",
+   "bg": "rgb(44, 44, 49)",
+   "c": "rgb(247, 248, 250)",
+   "r": "33px",
+   "f": "\"Albert Sans\", sans-serif",
+   "w": "400",
+   "pad": "13px 40px",
+   "bd": "0px solid rgb(232, 232, 232)",
+   "sh": "none"
+  },
+  {
+   "t": "Read More",
+   "bg": "rgb(44, 44, 49)",
+   "c": "rgb(247, 248, 250)",
+   "r": "33px",
+   "f": "\"Albert Sans\", sans-serif",
+   "w": "400",
+   "pad": "13px 40px",
+   "bd": "0px solid rgb(232, 232, 232)",
+   "sh": "none"
+  },
+  {
+   "t": "Read More",
+   "bg": "rgb(44, 44, 49)",
+   "c": "rgb(247, 248, 250)",
+   "r": "33px",
+   "f": "\"Albert Sans\", sans-serif",
+   "w": "400",
+   "pad": "13px 40px",
+   "bd": "0px solid rgb(232, 232, 232)",
+   "sh": "none"
+  },
+  {
+   "t": "",
+   "bg": "rgba(0, 0, 0, 0)",
+   "c": "rgb(58, 58, 58)",
+   "r": "33px",
+   "f": "\"Albert Sans\", sans-serif",
+   "w": "400",
+   "pad": "14.4px",
+   "bd": "0px none rgb(58, 58, 58)",
+   "sh": "none"
+  }
+ ],
+ "svgs": [
+  "<svg class=\"ast-mobile-svg ast-menu-svg\" fill=\"currentColor\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M3 13h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1zM3 7h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1zM3 19h18c0.552 0 1-0.448 1-1s-0.448-1-1-1h-18c-0.552 0-1 0.448-1 1s0.448 1 1 1z\"></path></svg>",
+  "<svg class=\"ast-mobile-svg ast-close-svg\" fill=\"currentColor\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M5.293 6.707l5.293 5.293-5.293 5.293c-0.391 0.391-0.391 1.024 0 1.414s1.024 0.391 1.414 0l5.293-5.293 5.293 5.293c0.391 0.391 1.024 0.391 1.414 0s0.391-1.024 0-1.414l-5.293-5.293 5.293-5.293c0.391-0.391 0.391-1.024 0-1.414s-1.024-0.391-1.414 0l-5.293 5.293-5.293-5.293c-0.391-0.391-1.024-0.391-1.414 0s-0.391 1.024 0 1.414z\"></path></svg>",
+  "<svg class=\"ast-mobile-svg ast-close-svg\" fill=\"currentColor\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M5.293 6.707l5.293 5.293-5.293 5.293c-0.391 0.391-0.391 1.024 0 1.414s1.024 0.391 1.414 0l5.293-5.293 5.293 5.293c0.391 0.391 1.024 0.391 1.414 0s0.391-1.024 0-1.414l-5.293-5.293 5.293-5.293c0.391-0.391 0.391-1.024 0-1.414s-1.024-0.391-1.414 0l-5.293 5.293-5.293-5.293c-0.391-0.391-1.024-0.391-1.414 0s-0.391 1.024 0 1.414z\"></path></svg>"
+ ],
+ "bodybg": "rgb(255, 255, 255)"
+}
