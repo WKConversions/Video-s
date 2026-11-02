@@ -25,7 +25,8 @@ map, climbs a staircase of their pills (career), grows taller humps (business), 
   (no credit needed), fitted with `music_fit.py` (lift on "Meet").
 
 ## Numbers
-- Preview: motion median 5.0%, moving in 99% of frames; end card moving to the last frame.
+- Final (1080p): motion median 6.8%, moving in 100% of frames, end card moving to the last frame. Shake check: four
+  borderline flags (exactly the 3-jump threshold, 1.3–2.3 px) at 12.6, 13.9 (the rolling date), 22.2 and 25.8 s.
 - On screen only facts from the site (facts.md) and the script.
 
 ## Deliverables
