@@ -14,7 +14,7 @@ const PILL = { w0: 600, h0: 160, w1: 470, h1: 124, y0: 540, y1: 848 };
 
 const Line: React.FC<{ t: number; at: number; text: string; children?: React.ReactNode }> = ({ t, at, text, children }) => {
   const q = c01(sp(t, at, 1.7, 0.74));
-  return <div style={{ display: "flex", alignItems: "baseline", gap: LOGO.size * 0.2, opacity: c01(q * 1.6), transform: `translateY(${(1 - q) * LOGO.size * 0.42}px)`, filter: q < 0.97 ? `blur(${(1 - q) * 9}px)` : undefined }}>
+  return <div style={{ display: "flex", alignItems: "baseline", gap: LOGO.size * 0.2, opacity: c01(q * 1.6), transform: `translateY(${(1 - q) * LOGO.size * 0.42}px)`, filter: q < 0.97 ? `blur(${(1 - q) * 9}px)` : undefined, willChange: q < 0.999 ? "transform" : undefined }}>
     <span>{text}</span>{children}</div>;
 };
 
@@ -45,7 +45,7 @@ const Join: React.FC<{ t: number }> = ({ t }) => {
       {/* "Let's grow together." */}
       <div style={{ position: "absolute", left: 0, right: 0, top: 606, display: "flex", justifyContent: "center", fontFamily: SANS, fontWeight: 700, fontSize: 96, letterSpacing: "-0.025em", color: C.white }}>
         {["Let's", "grow", "together."].map((wd, i) => { const at = [w("lets"), w("grow"), w("together")][i] - 0.08; const q = c01(sp(t, at, 1.8, 0.72));
-          return <span key={wd} style={{ display: "inline-block", marginRight: "0.24em", opacity: c01(q * 1.6), transform: `translateY(${(1 - q) * 38}px)`, filter: q < 0.97 ? `blur(${(1 - q) * 10}px)` : undefined,
+          return <span key={wd} style={{ display: "inline-block", marginRight: "0.24em", opacity: c01(q * 1.6), transform: `translateY(${(1 - q) * 38}px)`, filter: q < 0.97 ? `blur(${(1 - q) * 10}px)` : undefined, willChange: q < 0.999 ? "transform" : undefined,
             ...(i === 2 ? { backgroundImage: GRAD, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" } : {}) }}>{wd}</span>; })}
       </div>
       {/* the cyan field that becomes the JOIN US pill */}

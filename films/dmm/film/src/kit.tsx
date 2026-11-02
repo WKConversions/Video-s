@@ -52,9 +52,20 @@ export const rnd = (i: number) => { const x = Math.sin(i * 127.1 + 311.7) * 4375
 
 // ------------------------------------------------------------------ the topographic field
 /** the site's contour texture, alive. reveal: a soft circle (x, y, r) outside which the lines are hidden (to draw the map in from a point). */
-export const Topo: React.FC<{ o: TopoOpts; color?: string; width?: number; opacity?: number; reveal?: { x: number; y: number; r: number; soft?: number }; id?: string; style?: React.CSSProperties }> =
-  ({ o, color = C.line, width = 2, opacity = 1, reveal, id = "topo", style }) => {
-    const d = topoPath(o); const Wd = o.w ?? W, Hd = o.h ?? H;
+export const Topo: React.FC<{ o: TopoOpts; color?: string; width?: number; opacity?: number; reveal?: { x: number; y: number; r: number; soft?: number }; ring?: { x: number; y: number; r: number; w: number }; id?: string; style?: React.CSSProperties; d?: string }> =
+  ({ o, color = C.line, width = 2, opacity = 1, reveal, ring, id = "topo", style, d: dIn }) => {
+    const d = dIn ?? topoPath(o); const Wd = o.w ?? W, Hd = o.h ?? H;
+    if (ring) {
+      const R = Math.max(2, ring.r), a0 = Math.max(0, (R - ring.w) / R), a1 = Math.max(0, (R - ring.w * 0.35) / R);
+      return (
+        <svg width={Wd} height={Hd} viewBox={`0 0 ${Wd} ${Hd}`} style={{ position: "absolute", left: 0, top: 0, opacity, ...style }}>
+          <defs><radialGradient id={`${id}-rg`} gradientUnits="userSpaceOnUse" cx={ring.x} cy={ring.y} r={R}>
+            <stop offset={`${a0 * 100}%`} stopColor="#000" /><stop offset={`${a1 * 100}%`} stopColor="#fff" /><stop offset="100%" stopColor="#000" /></radialGradient>
+            <mask id={`${id}-rm`}><rect width={Wd} height={Hd} fill={`url(#${id}-rg)`} /></mask></defs>
+          <path d={d} stroke={color} strokeWidth={width} fill="none" strokeLinecap="round" mask={`url(#${id}-rm)`} />
+        </svg>
+      );
+    }
     return (
       <svg width={Wd} height={Hd} viewBox={`0 0 ${Wd} ${Hd}`} style={{ position: "absolute", left: 0, top: 0, opacity, ...style }}>
         {reveal && <defs>
@@ -124,7 +135,7 @@ export const Rise: React.FC<{ text: string; t: number; at: number; size: number;
     <div style={{ fontFamily: serif ? SERIF : SANS, fontWeight: weight, fontSize: size, color, lineHeight: 1.06, letterSpacing: spacing ?? (serif ? "-0.01em" : "-0.025em"), whiteSpace: "nowrap", ...style }}>
       {text.split(" ").map((wd, j) => { const q = c01(sp(t, times ? times[j] : at + j * gap, 1.7, 0.72)); const o = c01(out);
         return <span key={j} style={{ display: "inline-block", marginRight: "0.24em", opacity: c01(q * 1.6) * (1 - o), transform: `translateY(${(1 - q) * 0.42 * size - o * 0.3 * size}px)`,
-          filter: q < 0.97 || o > 0.01 ? `blur(${(1 - q) * 10 + o * 10}px)` : undefined, ...(grad ? { backgroundImage: GRAD, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" } : {}) }}>{wd}</span>; })}
+          filter: q < 0.97 || o > 0.01 ? `blur(${(1 - q) * 10 + o * 10}px)` : undefined, willChange: q < 0.999 || (o > 0.001 && o < 0.999) ? "transform" : undefined, ...(grad ? { backgroundImage: GRAD, WebkitBackgroundClip: "text", backgroundClip: "text", color: "transparent" } : {}) }}>{wd}</span>; })}
     </div>
   );
 

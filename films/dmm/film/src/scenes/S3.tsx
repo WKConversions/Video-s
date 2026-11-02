@@ -3,7 +3,7 @@
 // ripples across the contours. The words leave and the mark alone glides to H.mark (WaveMark 400 wide, box centred
 // (960, 560)) for S4. Shared stage: b1-core.tsx (S3 draws it from 5.80). Nothing is drawn after 8.55.
 import React from "react";
-import { C, IN, OUT, SERIF, c01, k } from "../kit";
+import { C, OUT, SERIF, c01, k } from "../kit";
 import { Cam, LOGO, Stage, topoS3 } from "./b1-core";
 import { Scene } from "./types";
 
@@ -13,9 +13,10 @@ const Logotype: React.FC<{ t: number }> = ({ t }) => (
     {WORDS.map(([s, at], i) => {
       if (t < at - 0.02) return null;
       // exit bottom-up ('Málaga' 8.15, 'Marketing' 8.20, 'Digital' 8.25): each word is gone before the mark's slide to H.mark reaches it
-      const q = k(t, at, 0.42, OUT), u = c01((t - (8.15 + 0.05 * (2 - i))) / 0.18), o = IN(u); if (u >= 1) return null;
-      // it lands while still softly blurred and sharpens at rest (crisp glyphs creeping by sub-pixels would step)
-      const bl = 7 * (1 - c01((t - at) / 0.6)) ** 2 + u * 6;
+      const q = k(t, at, 0.42, OUT), u = c01((t - (8.15 + 0.05 * (2 - i))) / 0.18), o = u * u; if (u >= 1) return null;
+      // it lands while still softly blurred and sharpens at rest; it leaves blurring at once, then accelerating (lift u²):
+      // crisp glyphs creeping by sub-pixels would step (Chrome snaps slow text to whole pixels)
+      const bl = 7 * (1 - c01((t - at) / 0.6)) ** 2 + 7 * Math.sqrt(u);
       return <div key={s} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${LOGO.x0}px, ${LOGO.y0 + i * LOGO.lh + (1 - q) * 40 - o * 40}px)`,
         fontFamily: SERIF, fontWeight: 700, fontSize: LOGO.F, lineHeight: 0.98, letterSpacing: "-0.012em", fontVariationSettings: "'opsz' 60", color: C.white, whiteSpace: "nowrap",
         opacity: c01(q * 1.5) * (1 - u), filter: bl > 0.04 ? `blur(${bl.toFixed(2)}px)` : undefined }}>{s}</div>;

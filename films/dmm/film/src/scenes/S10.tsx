@@ -56,7 +56,8 @@ const Slot: React.FC<{ t: number }> = ({ t }) => {
   return <>{lines.map(([a, b, small, big, cyan], i) => {
     if (t < a - 0.02 || t > b + 0.4) return null;
     const pin = c01(sp(t, a, 1.8, 0.72)), pinB = c01(sp(t, bigAt[i], 1.8, 0.72)); const o = i < 2 ? k(t, b - 0.05, 0.3, IN) : k(t, 27.5, 0.28, IN);
-    const roll = (q: number) => ({ opacity: c01(q * 1.6) * (1 - o), transform: `translateY(${(1 - q) * 46 - o * 46}px)`, filter: q < 0.97 || o > 0.02 ? `blur(${(1 - q) * 10 + o * 10}px)` : undefined });
+    const roll = (q: number) => ({ opacity: c01(q * 1.6) * (1 - o), transform: `translateY(${(1 - q) * 46 - o * 46}px)`, filter: q < 0.97 || o > 0.02 ? `blur(${(1 - q) * 10 + o * 10}px)` : undefined,
+      willChange: q < 0.999 || (o > 0.001 && o < 0.999) ? "transform" : undefined } as React.CSSProperties);
     return <div key={i} style={{ position: "absolute", left: 0, right: 0, top: 110, textAlign: "center", fontFamily: SANS }}>
       <div style={{ fontWeight: 500, fontSize: 56, color: C.grey, letterSpacing: "-0.01em", ...roll(pin) }}>{small}</div>
       <div style={{ fontWeight: 700, fontSize: 120, lineHeight: 1.05, letterSpacing: "-0.03em", color: cyan ? C.cyan : C.white, ...roll(pinB) }}>{big}</div>

@@ -264,8 +264,10 @@ export const Stage: React.FC<{ t: number; id: string }> = ({ t, id }) => {
 };
 
 // ------------------------------------------------------------------ top-slot type: words rise on their VO words (kit Rise style), per-word colour
-export const Slot: React.FC<{ t: number; words: { s: string; at: number; c?: string }[]; size: number; top: number; color?: string; outAt: number; outDur: number; outDy: number }> =
-  ({ t, words, size, top, color = C.white, outAt, outDur, outDy }) => {
+/** layer: give each word its own layer while it rises (smooth sub-pixel landing). Only where the camera is near still (S1):
+ *  under the camera push a layer re-rasters as the scale changes and steps (measured, round 2) */
+export const Slot: React.FC<{ t: number; words: { s: string; at: number; c?: string }[]; size: number; top: number; color?: string; outAt: number; outDur: number; outDy: number; layer?: boolean }> =
+  ({ t, words, size, top, color = C.white, outAt, outDur, outDy, layer }) => {
     const v = c01((t - outAt) / outDur); if (t < words[0].at - 0.02 || v >= 1) return null;
     return (
       <div style={{ position: "absolute", left: 0, top, width: 1920, display: "flex", justifyContent: "center", fontFamily: SANS, fontWeight: 700, fontSize: size, lineHeight: 1.06, letterSpacing: "-0.025em", whiteSpace: "nowrap" }}>
@@ -275,7 +277,8 @@ export const Slot: React.FC<{ t: number; words: { s: string; at: number; c?: str
           // then accelerates away (lift v², fade), for the same reason.
           const u = c01((t - wd.at) / 0.42), q = OUT(u), bl = 9 * (1 - c01((t - wd.at) / 0.62)) ** 2 + 9 * Math.sqrt(v);
           return <span key={j} style={{ display: "inline-block", marginLeft: j ? "0.24em" : 0, color: wd.c ?? color, opacity: c01(u * 3) * (1 - v) ** 1.2,
-            transform: `translateY(${(1 - q) * 0.34 * size + v * v * outDy}px)`, filter: bl > 0.04 ? `blur(${bl.toFixed(2)}px)` : undefined }}>{wd.s}</span>; })}
+            transform: `translateY(${(1 - q) * 0.34 * size + v * v * outDy}px)`, willChange: layer && u > 0 && u < 1 ? "transform" : undefined,
+            filter: bl > 0.04 ? `blur(${bl.toFixed(2)}px)` : undefined }}>{wd.s}</span>; })}
       </div>
     );
   };

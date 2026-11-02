@@ -11,7 +11,7 @@ const View: React.FC<{ t: number }> = ({ t }) => (
   <>
     {t < 3.32 && <Stage t={t} id="b1s1" />}
     <Cam t={t}>
-      <Slot t={t} top={150} size={112} words={[{ s: "Great", at: 1.7 }, { s: "connections", at: 2.14, c: C.cyan }]} outAt={2.95} outDur={0.3} outDy={-30} />
+      <Slot t={t} top={150} size={112} words={[{ s: "Great", at: 1.7 }, { s: "connections", at: 2.14, c: C.cyan }]} outAt={2.95} outDur={0.3} outDy={-30} layer />
     </Cam>
   </>
 );
