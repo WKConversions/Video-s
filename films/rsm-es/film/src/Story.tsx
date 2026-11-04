@@ -166,7 +166,7 @@ const Services: React.FC<{ t: number; W: number; H: number }> = ({ t, W, H }) =>
         </div>
         {/* 1: the home lesson, revealed through the house */}
         <div style={{ position: "absolute", inset: 0, overflow: "hidden", transform: `translateY(${y1}px)` }}>
-          <Img src={img("home.jpg")} style={{ position: "absolute", height: panelH, left: -260, top: 0, transform: `scale(${1.42 - 0.38 * k(t, s1, 2.0, OUT)}) translateX(${-90 + 130 * k(t, s1, 2.0, OUT)}px)`, transformOrigin: "40% 50%" }} />
+          <Img src={img("home.jpg")} style={{ position: "absolute", height: panelH, left: -260, top: 0, transform: `scale(${1.42 - 0.38 * k(t, s1, 2.7, SOFT)}) translateX(${-90 + 130 * k(t, s1, 2.7, SOFT)}px)`, transformOrigin: "40% 50%" }} />
         </div>
         {/* 2: the schools that run the programme (logos from the site), in two columns running opposite ways */}
         <div style={{ position: "absolute", inset: 0, background: C.pink, transform: `translateY(${y2}px)`, overflow: "hidden" }}>
@@ -179,7 +179,7 @@ const Services: React.FC<{ t: number; W: number; H: number }> = ({ t, W, H }) =>
         {/* 3: the instruments assemble (low-poly, from the site's artwork) */}
         <div style={{ position: "absolute", inset: 0, overflow: "hidden", background: "#fff", transform: `translateY(${y3}px)` }}>
           <div style={{ position: "absolute", right: -10, top: panelH / 2 - (POLY.h * 1.25) / 2, transform: `scale(${1.12 + 0.14 * k(t, s3, 3, SOFT)})`, transformOrigin: "100% 50%" }}><LowPoly t={t} a={s3 + 0.05} scale={1.25} /></div>
-          {Array.from({ length: 14 }, (_, i) => { const st = w("live") + 0.6; if (t < st) return null; const u = (((t - st) * 1.0 + i / 14) % 1); const r = rnd(i + 40);
+          {Array.from({ length: 14 }, (_, i) => { const st = s3 + 1.1; if (t < st) return null; const u = (((t - st) * 1.0 + i / 14) % 1); const r = rnd(i + 40);
             const bx = panelW - 10 - POLY.w * 1.25 + 120 * 1.25, by = panelH / 2 - (POLY.h * 1.25) / 2 + 250 * 1.25;
             return <div key={i} style={{ position: "absolute", left: 0, top: 0, opacity: Math.sin(Math.PI * u) * c01((t - st) * 3), transform: `translate(${bx - u * (260 + r * 120)}px, ${by - u * (220 + r * 260) + Math.sin(u * 9 + i) * 14}px) rotate(${(r - 0.5) * 50}deg) scale(${0.6 + u * 0.7})` }}><Note size={78} color={NOTES[i % 5]} beamed={i % 3 === 0} /></div>; })}
         </div>
@@ -233,8 +233,13 @@ const S6: React.FC<{ t: number }> = ({ t }) => {
       </div>
       <div style={{ position: "absolute", left: 0, right: 0, top: mix(330, 230, up), display: "flex", justifyContent: "center", gap: 36, transform: `scale(${1 - up * 0.3})`, transformOrigin: "50% 0" }}>
         {TEACHERS.map((f, i) => { const p = c01(sp(t, w("qualified") + i * 0.1, 1.9, 0.62)); return (
-          <div key={f} style={{ width: 360, height: 344, transform: `translateY(${(1 - p) * 120}px) scale(${0.7 + 0.3 * p})`, opacity: c01(p * 2) }}>
-            <Img src={img(f)} style={{ width: 360 }} /></div>); })}
+          <div key={f} style={{ width: 360, height: 344, position: "relative", transform: `translateY(${(1 - p) * 120 + Math.sin(t * 2.2 + i * 1.4) * 7 * p}px) scale(${0.7 + 0.3 * p})`, opacity: c01(p * 2) }}>
+            <Img src={img(f)} style={{ width: 360 }} />
+            {/* the qualification badge */}
+            <div style={{ position: "absolute", right: 46, bottom: 34, width: 74, height: 74, borderRadius: 37, background: C.teal, boxShadow: SHADOW_S, display: "flex", alignItems: "center", justifyContent: "center",
+              transform: `scale(${c01(sp(t, w("teachers") + 0.25 + i * 0.22, 2.4, 0.5))})` }}>
+              <svg width="40" height="40" viewBox="0 0 10 10"><path d="M2 5.2 L4.2 7.4 L8 3" fill="none" stroke="#fff" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"
+                strokeDasharray="10" strokeDashoffset={10 * (1 - c01((t - (w("teachers") + 0.35 + i * 0.22)) / 0.3))} /></svg></div></div>); })}
       </div>
       {[["Confianza", w("confidence")], ["Técnica", w("develop")]].map(([n, at], j) => { const a = at as number; const vis = k(t, a - 0.15, 0.3); return (
         <div key={j} style={{ position: "absolute", left: 960 - 620, top: 545 + j * 170, width: 1240, opacity: vis, transform: `translateY(${(1 - vis) * 40}px)`, display: "flex", alignItems: "center", gap: 36 }}>
@@ -242,7 +247,7 @@ const S6: React.FC<{ t: number }> = ({ t }) => {
           <div style={{ flex: 1, display: "flex", gap: 12, alignItems: "flex-end", height: 130 }}>
             {Array.from({ length: 12 }, (_, i) => { const p = c01(sp(t, a + 0.05 + i * 0.05, 2.4, 0.55)); return (
               <div key={i} style={{ flex: 1, height: 40 + i * 8, borderRadius: 10, background: "#E6EAEA", position: "relative", overflow: "hidden" }}>
-                <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: `${p * 100 * (0.62 + 0.38 * Math.abs(Math.sin(t * 7 + i * 1.3 + j * 2)))}%`, background: j === 0 ? C.teal : NOTES[i % 5], borderRadius: 10 }} /></div>); })}
+                <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: `${p * 100 * (0.45 + 0.55 * Math.abs(Math.sin(t * 9 + i * 1.3 + j * 2)))}%`, background: j === 0 ? C.teal : NOTES[i % 5], borderRadius: 10 }} /></div>); })}
           </div>
         </div>); })}
     </>
@@ -345,7 +350,7 @@ export const Story: React.FC = () => {
       {cardOn && (
         <Center>
           <div style={{ width: g.w, height: g.h, borderRadius: g.r, background: g.teal > 0.01 ? `color-mix(in srgb, ${C.teal} ${g.teal * 100}%, #fff)` : C.card, boxShadow: SHADOW, position: "relative", overflow: "hidden",
-            transform: `translateY(${less * 26 * (1 - meetOut)}px)`, opacity: cardFade, filter: less > 0.01 && t < w("meet") ? `saturate(${1 - less * 0.9})` : undefined }}>
+            transform: `translateY(${(less * 26 + k(t, w("often") + 0.7, w("meet") - w("often") - 0.7, SOFT) * 34) * (1 - meetOut)}px) scale(${1 - 0.04 * k(t, w("often") + 0.7, w("meet") - w("often") - 0.7, SOFT) * (1 - meetOut)})`, opacity: cardFade, filter: less > 0.01 && t < w("meet") ? `saturate(${1 - less * 0.9})` : undefined }}>
             <Center style={{ opacity: s2(3.57, w("fitting") - 0.05) * (1 - meetOut), transform: "scale(1.3)" }}>{t < w("fitting") + 0.1 && <Search t={t} />}</Center>
             <Center style={{ opacity: s2(w("fitting") - 0.15, w("knowing") - 0.05) * (1 - meetOut) }}>{t > w("fitting") - 0.2 && t < w("knowing") + 0.1 && <div style={{ transform: "scale(1.2)" }}><Schedule t={t} /></div>}</Center>
             <Center style={{ opacity: s2(w("knowing") - 0.15, w("meet") - 0.1) * (1 - meetOut), transform: `scale(${1 - less * 0.06})` }}>{t > w("knowing") - 0.2 && t < w("meet") && <WhereToStart t={t} />}</Center>
