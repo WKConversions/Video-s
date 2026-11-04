@@ -14,4 +14,6 @@ Spanish.
   rebuilt from Spanish words (`plan/make_guitar_es.py`).
 - **Sound:** `sound/make_cues.py` (the English cue sheet retimed), the same Mixkit bed ("Driving Ambition") refitted to
   41.6 s with the lift on "Descubre".
+- **Checks (final):** moving in 96% of frames, median 1.7% (the English film: 1.8%); two borderline shake flags (the 3-jump
+  threshold, ≤ 2.5 px) at 10.3 s and 17.3 s.
 - **Deliverable:** `deliver/royal-school-of-music-es-41s-1080p60.mp4`.
