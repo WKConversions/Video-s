@@ -1,0 +1,553 @@
+{
+ "source": "rsm-es/vo/vo.mp3",
+ "model": "small",
+ "duration": 39.62775,
+ "words": [
+  {
+   "word": "psonAprender",
+   "start": 0.0,
+   "end": 0.48,
+   "p": 0.249
+  },
+  {
+   "word": "m\u00fasica",
+   "start": 0.48,
+   "end": 0.86,
+   "p": 0.382
+  },
+  {
+   "word": "deber\u00eda",
+   "start": 0.86,
+   "end": 1.44,
+   "p": 0.973
+  },
+  {
+   "word": "ilusionarte.",
+   "start": 1.44,
+   "end": 2.3,
+   "p": 0.914
+  },
+  {
+   "word": "\u00bfEncontrar",
+   "start": 2.9,
+   "end": 3.36,
+   "p": 0.799
+  },
+  {
+   "word": "al",
+   "start": 3.36,
+   "end": 3.54,
+   "p": 0.954
+  },
+  {
+   "word": "profesor",
+   "start": 3.54,
+   "end": 3.94,
+   "p": 0.986
+  },
+  {
+   "word": "adecuado,",
+   "start": 3.94,
+   "end": 4.48,
+   "p": 0.989
+  },
+  {
+   "word": "hacer",
+   "start": 4.78,
+   "end": 5.04,
+   "p": 0.967
+  },
+  {
+   "word": "hueco",
+   "start": 5.04,
+   "end": 5.4,
+   "p": 0.972
+  },
+  {
+   "word": "para",
+   "start": 5.4,
+   "end": 5.6,
+   "p": 0.997
+  },
+  {
+   "word": "las",
+   "start": 5.6,
+   "end": 5.82,
+   "p": 0.982
+  },
+  {
+   "word": "clases",
+   "start": 5.82,
+   "end": 6.18,
+   "p": 0.996
+  },
+  {
+   "word": "y",
+   "start": 6.18,
+   "end": 6.52,
+   "p": 0.877
+  },
+  {
+   "word": "saber",
+   "start": 6.52,
+   "end": 6.82,
+   "p": 0.996
+  },
+  {
+   "word": "por",
+   "start": 6.82,
+   "end": 7.08,
+   "p": 0.998
+  },
+  {
+   "word": "d\u00f3nde",
+   "start": 7.08,
+   "end": 7.28,
+   "p": 0.907
+  },
+  {
+   "word": "empezar?",
+   "start": 7.28,
+   "end": 7.66,
+   "p": 0.998
+  },
+  {
+   "word": "Eso",
+   "start": 8.36,
+   "end": 8.7,
+   "p": 0.854
+  },
+  {
+   "word": "ya",
+   "start": 8.7,
+   "end": 8.94,
+   "p": 0.96
+  },
+  {
+   "word": "cuesta",
+   "start": 8.94,
+   "end": 9.28,
+   "p": 0.991
+  },
+  {
+   "word": "un",
+   "start": 9.28,
+   "end": 9.42,
+   "p": 0.998
+  },
+  {
+   "word": "poco",
+   "start": 9.42,
+   "end": 9.54,
+   "p": 0.996
+  },
+  {
+   "word": "m\u00e1s",
+   "start": 9.54,
+   "end": 9.8,
+   "p": 0.995
+  },
+  {
+   "word": ".\u05ea\u05d7acere",
+   "start": 9.8,
+   "end": 10.42,
+   "p": 0.251
+  },
+  {
+   "word": "Royal",
+   "start": 10.96,
+   "end": 11.46,
+   "p": 0.486
+  },
+  {
+   "word": "School",
+   "start": 11.46,
+   "end": 11.8,
+   "p": 0.962
+  },
+  {
+   "word": "of",
+   "start": 11.8,
+   "end": 12.0,
+   "p": 0.937
+  },
+  {
+   "word": "Music",
+   "start": 12.0,
+   "end": 12.34,
+   "p": 0.986
+  },
+  {
+   "word": ".halbPEAKTe",
+   "start": 12.34,
+   "end": 12.88,
+   "p": 0.143
+  },
+  {
+   "word": "acercamos",
+   "start": 12.88,
+   "end": 13.32,
+   "p": 0.996
+  },
+  {
+   "word": "la",
+   "start": 13.32,
+   "end": 13.5,
+   "p": 0.989
+  },
+  {
+   "word": "m\u00fasica",
+   "start": 13.5,
+   "end": 13.78,
+   "p": 0.993
+  },
+  {
+   "word": "con",
+   "start": 13.78,
+   "end": 14.14,
+   "p": 0.995
+  },
+  {
+   "word": "clases",
+   "start": 14.14,
+   "end": 14.44,
+   "p": 0.987
+  },
+  {
+   "word": "personalizadas",
+   "start": 14.44,
+   "end": 15.26,
+   "p": 0.996
+  },
+  {
+   "word": "a",
+   "start": 15.26,
+   "end": 15.44,
+   "p": 0.947
+  },
+  {
+   "word": "domicilio,",
+   "start": 15.44,
+   "end": 16.06,
+   "p": 0.99
+  },
+  {
+   "word": "programas",
+   "start": 16.34,
+   "end": 16.82,
+   "p": 0.984
+  },
+  {
+   "word": "completos",
+   "start": 16.82,
+   "end": 17.4,
+   "p": 0.993
+  },
+  {
+   "word": "de",
+   "start": 17.4,
+   "end": 17.5,
+   "p": 0.995
+  },
+  {
+   "word": "educaci\u00f3n",
+   "start": 17.5,
+   "end": 17.78,
+   "p": 0.967
+  },
+  {
+   "word": "musical",
+   "start": 17.78,
+   "end": 18.36,
+   "p": 0.996
+  },
+  {
+   "word": "para",
+   "start": 18.36,
+   "end": 18.62,
+   "p": 0.986
+  },
+  {
+   "word": "colegios",
+   "start": 18.62,
+   "end": 19.18,
+   "p": 0.994
+  },
+  {
+   "word": "y",
+   "start": 19.18,
+   "end": 19.56,
+   "p": 0.811
+  },
+  {
+   "word": "actuaciones",
+   "start": 19.56,
+   "end": 20.02,
+   "p": 0.996
+  },
+  {
+   "word": "profesionales",
+   "start": 20.02,
+   "end": 20.8,
+   "p": 0.998
+  },
+  {
+   "word": "en",
+   "start": 20.8,
+   "end": 20.92,
+   "p": 0.994
+  },
+  {
+   "word": "directo",
+   "start": 20.92,
+   "end": 21.34,
+   "p": 0.992
+  },
+  {
+   "word": "para",
+   "start": 21.34,
+   "end": 21.52,
+   "p": 0.998
+  },
+  {
+   "word": "tus",
+   "start": 21.52,
+   "end": 21.72,
+   "p": 0.996
+  },
+  {
+   "word": "eventos.",
+   "start": 21.72,
+   "end": 22.26,
+   "p": 0.997
+  },
+  {
+   "word": "apprehnde",
+   "start": 22.72,
+   "end": 23.12,
+   "p": 0.038
+  },
+  {
+   "word": "piano,",
+   "start": 23.12,
+   "end": 23.56,
+   "p": 0.883
+  },
+  {
+   "word": "guitarra,",
+   "start": 23.88,
+   "end": 24.4,
+   "p": 0.988
+  },
+  {
+   "word": "viol\u00edn,",
+   "start": 24.62,
+   "end": 25.02,
+   "p": 0.851
+  },
+  {
+   "word": "canto",
+   "start": 25.34,
+   "end": 25.7,
+   "p": 0.991
+  },
+  {
+   "word": "o",
+   "start": 25.7,
+   "end": 25.86,
+   "p": 0.938
+  },
+  {
+   "word": "bater\u00eda",
+   "start": 25.86,
+   "end": 26.4,
+   "p": 0.981
+  },
+  {
+   "word": "con",
+   "start": 26.4,
+   "end": 26.84,
+   "p": 0.716
+  },
+  {
+   "word": "profesores",
+   "start": 26.84,
+   "end": 27.32,
+   "p": 0.994
+  },
+  {
+   "word": "cualificados",
+   "start": 27.32,
+   "end": 28.02,
+   "p": 0.66
+  },
+  {
+   "word": "que",
+   "start": 28.02,
+   "end": 28.22,
+   "p": 0.964
+  },
+  {
+   "word": "te",
+   "start": 28.22,
+   "end": 28.36,
+   "p": 0.976
+  },
+  {
+   "word": "ayudar\u00e1n",
+   "start": 28.36,
+   "end": 28.82,
+   "p": 0.964
+  },
+  {
+   "word": "a",
+   "start": 28.82,
+   "end": 28.9,
+   "p": 0.995
+  },
+  {
+   "word": "ganar",
+   "start": 28.9,
+   "end": 29.18,
+   "p": 0.994
+  },
+  {
+   "word": "confianza,",
+   "start": 29.18,
+   "end": 29.9,
+   "p": 0.995
+  },
+  {
+   "word": "mejorar",
+   "start": 30.18,
+   "end": 30.5,
+   "p": 0.914
+  },
+  {
+   "word": "tu",
+   "start": 30.5,
+   "end": 30.72,
+   "p": 0.995
+  },
+  {
+   "word": "t\u00e9cnica",
+   "start": 30.72,
+   "end": 31.06,
+   "p": 0.998
+  },
+  {
+   "word": "y",
+   "start": 31.06,
+   "end": 31.56,
+   "p": 0.907
+  },
+  {
+   "word": "prepararte",
+   "start": 31.56,
+   "end": 32.1,
+   "p": 0.983
+  },
+  {
+   "word": "para",
+   "start": 32.1,
+   "end": 32.28,
+   "p": 0.998
+  },
+  {
+   "word": "obtener",
+   "start": 32.28,
+   "end": 32.68,
+   "p": 0.991
+  },
+  {
+   "word": "certificaciones",
+   "start": 32.68,
+   "end": 33.44,
+   "p": 0.986
+  },
+  {
+   "word": "internacionales.",
+   "start": 33.44,
+   "end": 34.48,
+   "p": 0.995
+  },
+  {
+   "word": "Tucamino",
+   "start": 34.86,
+   "end": 35.32,
+   "p": 0.614
+  },
+  {
+   "word": "en",
+   "start": 35.32,
+   "end": 35.42,
+   "p": 0.922
+  },
+  {
+   "word": "la",
+   "start": 35.42,
+   "end": 35.5,
+   "p": 0.926
+  },
+  {
+   "word": "m\u00fasica",
+   "start": 35.5,
+   "end": 35.86,
+   "p": 0.815
+  },
+  {
+   "word": "empieza",
+   "start": 35.86,
+   "end": 36.36,
+   "p": 0.959
+  },
+  {
+   "word": "aqu\u00ed.",
+   "start": 36.36,
+   "end": 36.86,
+   "p": 0.976
+  },
+  {
+   "word": "Ponte",
+   "start": 37.36,
+   "end": 37.58,
+   "p": 0.941
+  },
+  {
+   "word": "en",
+   "start": 37.58,
+   "end": 37.7,
+   "p": 0.988
+  },
+  {
+   "word": "contacto",
+   "start": 37.7,
+   "end": 38.14,
+   "p": 0.996
+  },
+  {
+   "word": "con",
+   "start": 38.14,
+   "end": 38.26,
+   "p": 0.996
+  },
+  {
+   "word": "nosotros",
+   "start": 38.26,
+   "end": 38.58,
+   "p": 0.993
+  },
+  {
+   "word": "hoy",
+   "start": 38.58,
+   "end": 39.02,
+   "p": 0.981
+  },
+  {
+   "word": "mismo.",
+   "start": 39.02,
+   "end": 39.3,
+   "p": 0.995
+  }
+ ]
+}

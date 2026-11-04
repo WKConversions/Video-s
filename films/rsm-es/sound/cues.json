@@ -1,0 +1,741 @@
+{
+ "fps": 60,
+ "frames": 2496,
+ "library": "../../alumni/sound/lib",
+ "vo": {
+  "file": "../vo/vo.mp3",
+  "at": 0.4,
+  "compress": true
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "lufs": -31,
+  "duck_db": 5,
+  "fade_in": 0.2,
+  "fade_out": 1.2
+ },
+ "sfx": [
+  {
+   "frame": 0,
+   "id": "gen-whoosh-medium",
+   "db": -7,
+   "pitch": 0,
+   "note": "words fly in"
+  },
+  {
+   "frame": 21,
+   "id": "gen-tick",
+   "db": -13,
+   "pitch": 0,
+   "note": "words lock"
+  },
+  {
+   "frame": 33,
+   "id": "gen-tick",
+   "db": -13,
+   "pitch": 1,
+   "note": "words lock"
+  },
+  {
+   "frame": 45,
+   "id": "gen-tick",
+   "db": -13,
+   "pitch": 2,
+   "note": "words lock"
+  },
+  {
+   "frame": 57,
+   "id": "gen-tick",
+   "db": -13,
+   "pitch": 3,
+   "note": "words lock"
+  },
+  {
+   "frame": 69,
+   "id": "gen-tick",
+   "db": -13,
+   "pitch": 4,
+   "note": "words lock"
+  },
+  {
+   "frame": 109,
+   "id": "gen-shimmer",
+   "db": -3,
+   "pitch": 0,
+   "note": "strum: notes burst"
+  },
+  {
+   "frame": 110,
+   "id": "gen-appear",
+   "db": -5,
+   "pitch": 0,
+   "note": "burst"
+  },
+  {
+   "frame": 187,
+   "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": -2,
+   "note": "words into the card"
+  },
+  {
+   "frame": 202,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "pitch": 0,
+   "note": "card lands"
+  },
+  {
+   "frame": 230,
+   "id": "gen-tick",
+   "db": -9,
+   "pitch": 0,
+   "note": "portrait slots"
+  },
+  {
+   "frame": 235,
+   "id": "gen-tick",
+   "db": -9,
+   "pitch": 1,
+   "note": "portrait slots"
+  },
+  {
+   "frame": 240,
+   "id": "gen-tick",
+   "db": -9,
+   "pitch": 2,
+   "note": "portrait slots"
+  },
+  {
+   "frame": 245,
+   "id": "gen-tick",
+   "db": -9,
+   "pitch": 3,
+   "note": "portrait slots"
+  },
+  {
+   "frame": 263,
+   "id": "gen-pop",
+   "db": -9,
+   "pitch": 2,
+   "note": "? badges"
+  },
+  {
+   "frame": 268,
+   "id": "gen-pop",
+   "db": -9,
+   "pitch": 3,
+   "note": "? badges"
+  },
+  {
+   "frame": 273,
+   "id": "gen-pop",
+   "db": -9,
+   "pitch": 4,
+   "note": "? badges"
+  },
+  {
+   "frame": 278,
+   "id": "gen-pop",
+   "db": -9,
+   "pitch": 5,
+   "note": "? badges"
+  },
+  {
+   "frame": 302,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 0,
+   "note": "to schedule"
+  },
+  {
+   "frame": 344,
+   "id": "kenney-click-001",
+   "db": -5,
+   "pitch": -3,
+   "note": "slot taken"
+  },
+  {
+   "frame": 371,
+   "id": "kenney-click-001",
+   "db": -5,
+   "pitch": -2,
+   "note": "slot taken"
+  },
+  {
+   "frame": 398,
+   "id": "kenney-click-001",
+   "db": -5,
+   "pitch": -1,
+   "note": "slot taken"
+  },
+  {
+   "frame": 406,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 2,
+   "note": "to instruments"
+  },
+  {
+   "frame": 409,
+   "id": "gen-pop",
+   "db": -10,
+   "pitch": 0,
+   "note": "chips"
+  },
+  {
+   "frame": 413,
+   "id": "gen-pop",
+   "db": -10,
+   "pitch": 1,
+   "note": "chips"
+  },
+  {
+   "frame": 416,
+   "id": "gen-pop",
+   "db": -10,
+   "pitch": 2,
+   "note": "chips"
+  },
+  {
+   "frame": 420,
+   "id": "gen-pop",
+   "db": -10,
+   "pitch": 3,
+   "note": "chips"
+  },
+  {
+   "frame": 424,
+   "id": "gen-pop",
+   "db": -10,
+   "pitch": 4,
+   "note": "chips"
+  },
+  {
+   "frame": 439,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 0,
+   "note": "hover"
+  },
+  {
+   "frame": 449,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 1,
+   "note": "hover"
+  },
+  {
+   "frame": 460,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 0,
+   "note": "hover"
+  },
+  {
+   "frame": 470,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 1,
+   "note": "hover"
+  },
+  {
+   "frame": 526,
+   "id": "gen-whoosh-deep",
+   "db": -7,
+   "pitch": -4,
+   "note": "less so: grey and sink"
+  },
+  {
+   "frame": 598,
+   "id": "gen-riser-1s",
+   "db": -6,
+   "pitch": 0,
+   "note": "into the tile"
+  },
+  {
+   "frame": 653,
+   "id": "gen-chime",
+   "db": -3,
+   "pitch": 0,
+   "note": "logo"
+  },
+  {
+   "frame": 655,
+   "id": "gen-shimmer",
+   "db": -4,
+   "pitch": 2,
+   "note": "brand notes"
+  },
+  {
+   "frame": 788,
+   "id": "gen-swell",
+   "db": -5,
+   "pitch": 0,
+   "note": "tile opens into the card"
+  },
+  {
+   "frame": 807,
+   "id": "gen-whoosh-short",
+   "db": -11,
+   "pitch": 4,
+   "note": "house draws"
+  },
+  {
+   "frame": 860,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "pitch": 0,
+   "note": "push: home"
+  },
+  {
+   "frame": 998,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "pitch": 2,
+   "note": "push: schools"
+  },
+  {
+   "frame": 1019,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 0,
+   "note": "logos"
+  },
+  {
+   "frame": 1029,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 1,
+   "note": "logos"
+  },
+  {
+   "frame": 1039,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 2,
+   "note": "logos"
+  },
+  {
+   "frame": 1048,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 3,
+   "note": "logos"
+  },
+  {
+   "frame": 1058,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 4,
+   "note": "logos"
+  },
+  {
+   "frame": 1189,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "pitch": -1,
+   "note": "push: events"
+  },
+  {
+   "frame": 1273,
+   "id": "gen-appear",
+   "db": -4,
+   "pitch": 0,
+   "note": "instruments assemble"
+  },
+  {
+   "frame": 1315,
+   "id": "gen-shimmer",
+   "db": -9,
+   "pitch": -2,
+   "note": "assembled"
+  },
+  {
+   "frame": 1359,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 0,
+   "note": "card out"
+  },
+  {
+   "frame": 1404,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "pitch": -2,
+   "note": "piano"
+  },
+  {
+   "frame": 1450,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "pitch": -1,
+   "note": "guitar"
+  },
+  {
+   "frame": 1494,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "pitch": 0,
+   "note": "violin"
+  },
+  {
+   "frame": 1537,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "pitch": 1,
+   "note": "singing"
+  },
+  {
+   "frame": 1568,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "pitch": 2,
+   "note": "drums"
+  },
+  {
+   "frame": 1634,
+   "id": "kenney-drop-003",
+   "db": -6,
+   "pitch": 0,
+   "note": "teacher"
+  },
+  {
+   "frame": 1640,
+   "id": "kenney-drop-003",
+   "db": -6,
+   "pitch": 1,
+   "note": "teacher"
+  },
+  {
+   "frame": 1646,
+   "id": "kenney-drop-003",
+   "db": -6,
+   "pitch": 2,
+   "note": "teacher"
+  },
+  {
+   "frame": 1652,
+   "id": "kenney-drop-003",
+   "db": -6,
+   "pitch": 3,
+   "note": "teacher"
+  },
+  {
+   "frame": 1752,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "pitch": 0,
+   "note": "row up"
+  },
+  {
+   "frame": 1778,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 0,
+   "note": "bar"
+  },
+  {
+   "frame": 1781,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 0,
+   "note": "bar"
+  },
+  {
+   "frame": 1784,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 1,
+   "note": "bar"
+  },
+  {
+   "frame": 1787,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 1,
+   "note": "bar"
+  },
+  {
+   "frame": 1790,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 2,
+   "note": "bar"
+  },
+  {
+   "frame": 1793,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 2,
+   "note": "bar"
+  },
+  {
+   "frame": 1796,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 3,
+   "note": "bar"
+  },
+  {
+   "frame": 1799,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 3,
+   "note": "bar"
+  },
+  {
+   "frame": 1802,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 4,
+   "note": "bar"
+  },
+  {
+   "frame": 1805,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 4,
+   "note": "bar"
+  },
+  {
+   "frame": 1808,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 5,
+   "note": "bar"
+  },
+  {
+   "frame": 1811,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 5,
+   "note": "bar"
+  },
+  {
+   "frame": 1840,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 2,
+   "note": "bar"
+  },
+  {
+   "frame": 1843,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 2,
+   "note": "bar"
+  },
+  {
+   "frame": 1846,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 3,
+   "note": "bar"
+  },
+  {
+   "frame": 1849,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 3,
+   "note": "bar"
+  },
+  {
+   "frame": 1852,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 4,
+   "note": "bar"
+  },
+  {
+   "frame": 1855,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 4,
+   "note": "bar"
+  },
+  {
+   "frame": 1858,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 5,
+   "note": "bar"
+  },
+  {
+   "frame": 1861,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 5,
+   "note": "bar"
+  },
+  {
+   "frame": 1864,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 6,
+   "note": "bar"
+  },
+  {
+   "frame": 1867,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 6,
+   "note": "bar"
+  },
+  {
+   "frame": 1870,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 7,
+   "note": "bar"
+  },
+  {
+   "frame": 1873,
+   "id": "gen-tick",
+   "db": -12,
+   "pitch": 7,
+   "note": "bar"
+  },
+  {
+   "frame": 1900,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "pitch": 0,
+   "note": "certificate in"
+  },
+  {
+   "frame": 1991,
+   "id": "gen-pop",
+   "db": -7,
+   "pitch": 0,
+   "note": "Trinity"
+  },
+  {
+   "frame": 2003,
+   "id": "gen-pop",
+   "db": -7,
+   "pitch": 3,
+   "note": "ABRSM"
+  },
+  {
+   "frame": 2039,
+   "id": "gen-stamp",
+   "db": -3,
+   "pitch": 0,
+   "note": "seal stamps"
+  },
+  {
+   "frame": 2042,
+   "id": "gen-success",
+   "db": -5,
+   "pitch": 0,
+   "note": "seal"
+  },
+  {
+   "frame": 2101,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 0,
+   "note": "staff draws"
+  },
+  {
+   "frame": 2125,
+   "id": "gen-pop",
+   "db": -10,
+   "pitch": 0,
+   "note": "melody notes"
+  },
+  {
+   "frame": 2135,
+   "id": "gen-pop",
+   "db": -10,
+   "pitch": 1,
+   "note": "melody notes"
+  },
+  {
+   "frame": 2144,
+   "id": "gen-pop",
+   "db": -10,
+   "pitch": 2,
+   "note": "melody notes"
+  },
+  {
+   "frame": 2154,
+   "id": "gen-pop",
+   "db": -10,
+   "pitch": 3,
+   "note": "melody notes"
+  },
+  {
+   "frame": 2164,
+   "id": "gen-pop",
+   "db": -10,
+   "pitch": 4,
+   "note": "melody notes"
+  },
+  {
+   "frame": 2173,
+   "id": "gen-pop",
+   "db": -10,
+   "pitch": 5,
+   "note": "melody notes"
+  },
+  {
+   "frame": 2183,
+   "id": "gen-pop",
+   "db": -10,
+   "pitch": 6,
+   "note": "melody notes"
+  },
+  {
+   "frame": 2192,
+   "id": "gen-pop",
+   "db": -10,
+   "pitch": 7,
+   "note": "melody notes"
+  },
+  {
+   "frame": 2202,
+   "id": "gen-pop",
+   "db": -10,
+   "pitch": 8,
+   "note": "melody notes"
+  },
+  {
+   "frame": 2212,
+   "id": "gen-pop",
+   "db": -10,
+   "pitch": 9,
+   "note": "melody notes"
+  },
+  {
+   "frame": 2221,
+   "id": "gen-pop",
+   "db": -10,
+   "pitch": 10,
+   "note": "melody notes"
+  },
+  {
+   "frame": 2249,
+   "id": "gen-whoosh-deep",
+   "db": -6,
+   "pitch": 0,
+   "note": "end card"
+  },
+  {
+   "frame": 2252,
+   "id": "gen-chime",
+   "db": -3,
+   "pitch": 0,
+   "note": "logo"
+  },
+  {
+   "frame": 2286,
+   "id": "kenney-click-001",
+   "db": -3,
+   "pitch": 0,
+   "note": "button press"
+  }
+ ]
+}
