@@ -18,13 +18,13 @@ export const GIGS: Gig[] = [
 ];
 export const DECK_FROM = 11.1;
 /** the gig deck's front card scale: S4's flip ends on it, S5 starts from it (same function, same state) */
-export const deckScale = (t: number) => 1.55 + 0.02 * (t - 11.4);
+export const deckScale = (_t?: number) => 1.7;
 export const DECK_Y = 600;
 
 /** "What's new?": the app's new-post sheet (444 x 356 app px) */
 export const PanelA: React.FC<{ t: number }> = ({ t }) => {
   const press = Math.sin(Math.PI * c01((t - 10.4) / 0.2)), sel = k(t, 10.42, 0.2), cont = Math.sin(Math.PI * c01((t - 10.54) / 0.2)), rip = c01((t - 10.4) / 0.55);
-  const rows: { ico: "calendar" | "user" | "plus"; l: string; s: string }[] = [{ ico: "calendar", l: "I'm available", s: "Say I'm free" }, { ico: "user", l: "Let's collab", s: "Find someone to team up with" }, { ico: "plus", l: "Add new work", s: "Share a new piece" }];
+  const rows: { ico: "calendar" | "user" | "plus"; l: string }[] = [{ ico: "calendar", l: "I'm available" }, { ico: "user", l: "Let's collab" }, { ico: "plus", l: "Add new work" }];
   return (
     <div style={{ width: 444, height: 356, borderRadius: 22, background: C.card, border: `1px solid ${C.border}`, boxShadow: SHADOW, position: "relative", overflow: "hidden" }}>
       <div style={{ position: "absolute", left: 20, top: 18, ...F(24, 800, C.cream, { letterSpacing: "-0.03em" }) }}>What's new?</div>
@@ -34,7 +34,7 @@ export const PanelA: React.FC<{ t: number }> = ({ t }) => {
           <div key={r.l} style={{ position: "absolute", left: 20, top: 66 + i * 74, width: 404, height: 64, borderRadius: 14, display: "flex", alignItems: "center", gap: 14, padding: "0 14px", boxSizing: "border-box",
             background: on ? lerpHex(C.card2, "#3A2019", sel) : C.card2, border: `1.5px solid ${on ? lerpHex(C.border, C.coral, sel) : C.border}`, transform: on ? `scale(${1 - 0.04 * press})` : undefined }}>
             <div style={{ width: 38, height: 38, borderRadius: 19, background: on ? lerpHex(C.bg, C.coral, sel) : C.bg, display: "flex", alignItems: "center", justifyContent: "center" }}><Ico n={r.ico} s={20} c={C.cream} /></div>
-            <div style={{ flex: 1 }}><div style={F(17, 700)}>{r.l}</div><div style={F(13, 500, C.muted)}>{r.s}</div></div>
+            <div style={{ flex: 1 }}><div style={F(18, 700)}>{r.l}</div></div>
             {on && <div style={{ width: 24, height: 24, borderRadius: 12, background: C.coral, display: "flex", alignItems: "center", justifyContent: "center", opacity: sel, transform: `scale(${sel})` }}><Ico n="check" s={15} w={2.8} /></div>}
           </div>
         );

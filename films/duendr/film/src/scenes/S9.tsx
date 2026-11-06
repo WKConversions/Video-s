@@ -11,7 +11,7 @@ import { Scene } from "./types";
 const T0 = 25.6;
 const GIG = { tag: "HIRING", roles: "2 ROLES", title: "Photographer for a rooftop launch", by: "La Terraza", city: "Málaga", role: "Event photographer", open: "Open · 0/1", fee: "€350", time: "Sat 21 Nov", img: "clips/photog-lens.mp4" };
 const TILE = { mon: "NOV", day: "21", dow: "Sat", name: "Javi Ortega", at: "Casa Brisa", time: "Sat · 20:00", img: "clips/dj-stage.mp4" };
-const SHEET = [{ letter: "C", title: "Live DJ for sunset sessions", sub: "Casa Brisa · Fri 20 Nov", fee: "€280" }, { letter: "A", title: "Campaign designer", sub: "Atelier Mar", fee: "On request" }];
+const SHEET = [{ letter: "C", title: "Live DJ for sunset sessions", sub: "Casa Brisa · Fri 20 Nov", fee: "€280" }, { letter: "C", title: "Photographer for sunset sessions", sub: "Casa Brisa · Marbella", fee: "On request" }];
 
 type Piece = { key: string; fx: number; fy: number; s: number; from: [number, number]; at: number; rot: number; node: React.ReactNode };
 const PIECES: Piece[] = [
