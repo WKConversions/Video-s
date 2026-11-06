@@ -63,21 +63,21 @@ export const LOCK = {
 };
 /** coral field -> circle -> lockup -> header wordmark + the lone circle; S2 and S3 both draw this, identically */
 export const Brand: React.FC<{ t: number }> = ({ t }) => {
-  const mv = sp(t, 2.98, 1.5, 0.85), lift = k(t, 3.4, 0.44, INOUT);
+  const mv = sp(t, 2.9, 1.6, 0.85), off = (1 - mv) * (960 - LOCK.cx), lift = k(t, 3.4, 0.44, INOUT);
   const R0 = t < 3.4 ? mix(1250, LOCK.r, k(t, 2.62, 0.45, INOUT)) : mix(LOCK.r, LOCK.nodeR, lift);
-  const cx = mix(mix(960, LOCK.cx, mv), 960, lift), cy = mix(mix(540, LOCK.cy, mv), 540, lift);
-  const b = Math.min(1, sp(t, 2.96, 1.8, 0.7)) * (1 - lift);
-  const rev = k(t, 2.98, 0.4, OUT), p = k(t, 3.4, 0.45, SOFT), s = mix(1, LOCK.hdrH / WM_H, p);
+  const cx = mix(LOCK.cx + off, 960, lift), cy = mix(mix(540, LOCK.cy, mv), 540, lift);
+  const b = Math.min(1, sp(t, 3.02, 1.8, 0.7)) * (1 - lift), bx = mix(LOCK.barX + off, cx - LOCK.barW / 2, lift), bb = mix(LOCK.barBottom, cy, lift);
+  const rev = k(t, 3.0, 0.42, OUT), p = k(t, 3.4, 0.45, SOFT), s = mix(1, LOCK.hdrH / WM_H, p);
   const dx = (960 - (LOCK.wmLeft + WM_W / 2)) * p, dy = (LOCK.hdrY - 540) * p;
   const dot = c01(sp(t, 3.30, 2.2, 0.6)); const gl = 0.55 + 0.25 * Math.sin(t * 5);
   return (
     <>
       {t >= 2.62 && t < LOCK.cutover && <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0 }}>
         <circle cx={cx} cy={cy} r={R0} fill={C.coral} />
-        {b > 0 && <rect x={LOCK.barX} y={LOCK.barBottom - LOCK.barH * b} width={LOCK.barW} height={LOCK.barH * b} fill={C.cream} />}
+        {b > 0 && <rect x={bx} y={bb - LOCK.barH * b} width={LOCK.barW} height={LOCK.barH * b} fill={C.cream} />}
       </svg>}
       {t >= 2.9 && (
-        <div style={{ position: "absolute", left: LOCK.wmLeft, top: LOCK.wmTop, width: WM_W, height: WM_H, clipPath: t < 3.42 ? `inset(-60px -60px -60px ${-GAP}px)` : undefined }}>
+        <div style={{ position: "absolute", left: LOCK.wmLeft + off, top: LOCK.wmTop, width: WM_W, height: WM_H, clipPath: t < 3.42 ? `inset(-60px -60px -60px ${-GAP}px)` : undefined }}>
           <div style={{ transform: `translate(${dx - (1 - rev) * (WM_W + GAP)}px, ${dy}px) scale(${s})`, transformOrigin: "50% 50%", opacity: c01(rev * 3) }}>
             <div style={{ position: "absolute", left: WM_W - 0.105 * WM_H - 0.3 * WM_H, top: 0.47 * WM_H - 0.3 * WM_H, width: 0.6 * WM_H, height: 0.6 * WM_H, borderRadius: "50%", opacity: dot * gl,
               background: "radial-gradient(circle, rgba(226,90,61,0.9) 0%, rgba(226,90,61,0) 70%)", transform: `scale(${1 + 0.4 * dot})` }} />

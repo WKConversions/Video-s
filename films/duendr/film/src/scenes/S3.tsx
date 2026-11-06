@@ -9,7 +9,7 @@ import { H } from "../handoff";
 import { Scene } from "./types";
 import { Brand, BrandCard, CreativeCard, LOCK, VenueCard, WordLine } from "./b1-lib";
 
-const X = [330, 960, 1590], NY = 880, CY = 410, OY = 520;
+const X = [330, 960, 1590], NY = 925, CY = 410, OY = 540, ZS = 1.2;
 const MAL = CITIES.find((c) => c.name === "Málaga")!;
 const cityLL = (n: string): [number, number] => { const c = CITIES.find((q) => q.name === n)!; return [c.lon, c.lat]; };
 const COAST = ["Estepona", "Marbella", "Fuengirola", "Torremolinos", "Málaga", "Nerja"].map(cityLL);
@@ -18,7 +18,7 @@ const DIVE0 = 8.25, DIVE1 = 8.65;
 
 const camAt = (t: number): View => {
   const gIn = k(t, 6.9, 0.8, OUT), p = k(t, DIVE0, DIVE1 - DIVE0, INOUT);
-  const base = (2250 + Math.max(0, t - 7) * 110) * mix(0.84, 1, gIn);
+  const base = (2250 + Math.max(0, t - 7) * 260) * mix(0.84, 1, gIn);
   return { lam0: mix(-4.9, MAL.lon, p), phi0: mix(36.9, MAL.lat, p), k: 10, pitch: 38, d: 1.55, S: base * mix(1, 2.3, p), cx: 960, cy: mix(640, 540, p) };
 };
 const catmull = (P: [number, number][], n = 14): [number, number][] => {
@@ -39,7 +39,7 @@ const Node: React.FC<{ x: number; y: number; r: number; glow?: number; o?: numbe
 const BLOOMS = [4.82, 5.78, 6.56];
 const Bloom: React.FC<{ t: number; i: number; yc: number; h: number; j: number; children: React.ReactNode }> = ({ t, i, yc, h, j, children }) => {
   const q = sp(t, BLOOMS[i] + 0.12 * j, 1.7, 0.72); if (q <= 0.001) return null;
-  return <div style={{ position: "absolute", left: X[i] - 230, top: yc - h / 2, transform: `translate(0px, ${(NY - yc) * (1 - q)}px) scale(${0.25 + 0.75 * q})`, opacity: c01(q * 2.2) }}>{children}</div>;
+  return <div style={{ position: "absolute", left: X[i] - 230, top: yc - h / 2, transform: `translate(0px, ${(NY - yc) * (1 - q)}px) scale(${(0.25 + 0.75 * q) * ZS})`, opacity: c01(q * 2.2) }}>{children}</div>;
 };
 
 const S3C: React.FC<{ t: number }> = ({ t }) => {
@@ -106,19 +106,19 @@ const S3C: React.FC<{ t: number }> = ({ t }) => {
       {pulses.map((p, n) => <div key={n} style={{ position: "absolute", left: 0, top: 0, width: 22, height: 22, marginLeft: -11, marginTop: -11, borderRadius: 11, background: C.cream, opacity: p.o, boxShadow: "0 0 18px 4px rgba(226,90,61,0.8)", transform: `translate(${p.x}px, ${p.y}px)` }} />)}
       {/* clusters */}
       {clusterOn(0) && <div style={group(0)}>
-        <Bloom t={t} i={0} yc={CY - 154} h={140} j={0}><CreativeCard name="Javi Ortega" roles="DJ, Producer" city="Marbella" clip="clips/dj-hands.mp4" initials="JO" avail="Weekends" /></Bloom>
+        <Bloom t={t} i={0} yc={CY - 154 * ZS} h={140} j={0}><CreativeCard name="Javi Ortega" roles="DJ, Producer" city="Marbella" clip="clips/dj-hands.mp4" initials="JO" avail="Weekends" /></Bloom>
         <Bloom t={t} i={0} yc={CY} h={140} j={1}><CreativeCard name="Mateo Ruiz" roles="Videographer" city="Marbella" clip="clips/photog-review.mp4" avatar="img/avatars/mateo.jpg" avail="Weekends" /></Bloom>
-        <Bloom t={t} i={0} yc={CY + 154} h={140} j={2}><CreativeCard name="Alba Ríos" roles="Painter" city="Granada" clip="clips/paint-canvas.mp4" initials="AR" avail="Most days" /></Bloom>
-        <WordLine t={t} size={96} weight={800} color={C.cream} cx={X[0]} cy={750} items={[{ text: "Creatives", at: 4.82 }]} />
+        <Bloom t={t} i={0} yc={CY + 154 * ZS} h={140} j={2}><CreativeCard name="Alba Ríos" roles="Painter" city="Granada" clip="clips/paint-canvas.mp4" initials="AR" avail="Most days" /></Bloom>
+        <WordLine t={t} size={96} weight={800} color={C.cream} cx={X[0]} cy={775} items={[{ text: "Creatives", at: 4.82 }]} />
       </div>}
       {clusterOn(1) && <div style={group(1)}>
-        <Bloom t={t} i={1} yc={CY - 107} h={190} j={0}><VenueCard letter="C" name="Casa Brisa" sub="Beach club · Marbella" /></Bloom>
-        <Bloom t={t} i={1} yc={CY + 107} h={190} j={1}><VenueCard letter="L" name="La Terraza" sub="Rooftop · Málaga" /></Bloom>
-        <WordLine t={t} size={96} weight={800} color={C.cream} cx={X[1]} cy={750} items={[{ text: "Venues", at: 5.78 }]} />
+        <Bloom t={t} i={1} yc={CY - 107 * ZS} h={190} j={0}><VenueCard letter="C" name="Casa Brisa" sub="Beach club · Marbella" /></Bloom>
+        <Bloom t={t} i={1} yc={CY + 107 * ZS} h={190} j={1}><VenueCard letter="L" name="La Terraza" sub="Rooftop · Málaga" /></Bloom>
+        <WordLine t={t} size={96} weight={800} color={C.cream} cx={X[1]} cy={775} items={[{ text: "Venues", at: 5.78 }]} />
       </div>}
       {clusterOn(2) && <div style={group(2)}>
         <Bloom t={t} i={2} yc={CY} h={330} j={0}><BrandCard clip="clips/model-dress.mp4" /></Bloom>
-        <WordLine t={t} size={96} weight={800} color={C.cream} cx={X[2]} cy={750} items={[{ text: "Brands", at: 6.56 }]} />
+        <WordLine t={t} size={96} weight={800} color={C.cream} cx={X[2]} cy={775} items={[{ text: "Brands", at: 6.56 }]} />
       </div>}
       {/* nodes */}
       {t >= LOCK.cutover && (

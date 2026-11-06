@@ -40,7 +40,7 @@ const S1C: React.FC<{ t: number }> = ({ t }) => {
   const creamTx = creamX - 960;
   const sz1 = mix(170, 108, k(t, 1.2, 0.4, OUT));
   const drop = (i: number) => 2.32 + 0.1 * i;
-  const slow = 1 + 0.035 * k(t, 1.7, 1.1, SOFT);
+  const slow = 1 + 0.07 * k(t, 1.6, 1.0, SOFT);
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
       {/* the row of work */}
@@ -54,7 +54,7 @@ const S1C: React.FC<{ t: number }> = ({ t }) => {
           {g1 > 0.02 && <Shadow l={cl} r={cr} tp={ct} b={ct} rad={mix(0, 34, g1)} />}
           <Inset l={cl} r={cr} tp={ct} b={ct} rad={mix(0, 34, g1)} bg={C.paper}>
             <div style={{ position: "absolute", inset: 0, transform: `translateX(${creamTx * g1}px)` }}>
-              <WordLine t={t} size={lookSize} weight={900} items={[{ text: "Looking", at: 0.0 }, { text: "for", at: 0.54 }, { text: "your", at: 0.82 }]} />
+              <WordLine t={t} size={lookSize} weight={900} items={[{ text: "Looking", at: -0.4 }, { text: "for", at: 0.54 }, { text: "your", at: 0.82 }]} />
             </div>
           </Inset>
         </>
@@ -64,7 +64,7 @@ const S1C: React.FC<{ t: number }> = ({ t }) => {
         <>
           {g2 < 0.98 && <Shadow l={kl} r={kr} tp={kt} b={kt} rad={krad} />}
           <Inset l={kl} r={kr} tp={kt} b={kt} rad={krad} bg={C.coral}>
-            <div style={{ position: "absolute", inset: 0, background: `radial-gradient(60% 70% at ${50 + 14 * Math.sin(t * 0.9)}% ${46 + 8 * Math.cos(t * 0.7)}%, rgba(240,138,110,${0.5 * g2}) 0%, rgba(226,90,61,0) 70%)` }} />
+            <div style={{ position: "absolute", inset: 0, background: `radial-gradient(60% 70% at ${50 + 14 * Math.sin(t * 2.2)}% ${46 + 8 * Math.cos(t * 1.7)}%, rgba(240,138,110,${0.5 * g2}) 0%, rgba(226,90,61,0) 70%)` }} />
             <div style={{ position: "absolute", inset: 0, transform: `translateX(${coralX - 960}px) scale(${slow})`, transformOrigin: "50% 50%" }}>
               <WordLine t={t} size={sz1} weight={900} color={C.cream} items={[{ text: "next", at: 0.96, out: drop(0) }, { text: "creative", at: 1.24, out: drop(1) }, { text: "connection?", at: 1.62, out: drop(2) }]} />
             </div>
