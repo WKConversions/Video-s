@@ -47,7 +47,7 @@ export const WordLine: React.FC<{ items: WItem[]; t: number; size: number; cx?: 
         const y = (1 - r.q) * 0.38 * size + o * 0.9 * size;
         return (
           <div key={i} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${left.toFixed(2)}px, ${(cy - size * 0.55 + y + dy).toFixed(2)}px)`, fontFamily: SANS, fontWeight: weight, fontSize: size, lineHeight: 1.1,
-            letterSpacing: "-0.04em", color: r.it.color ?? color, whiteSpace: "nowrap", opacity: c01(r.q * 1.7) * (1 - o), filter: r.q < 0.96 || o > 0.02 ? `blur(${(1 - r.q) * 9 + o * 9}px)` : undefined }}>{r.it.text}</div>
+            letterSpacing: "-0.04em", color: r.it.color ?? color, whiteSpace: "nowrap", opacity: c01(r.q * 1.7) * (1 - o), filter: `blur(${((1 - r.q) * 9 + o * 9).toFixed(2)}px)` }}>{r.it.text}</div>
         );
       })}
     </div>
@@ -64,7 +64,7 @@ export const LOCK = {
 /** coral field -> circle -> lockup -> header wordmark + the lone circle; S2 and S3 both draw this, identically */
 export const Brand: React.FC<{ t: number }> = ({ t }) => {
   const mv = sp(t, 2.9, 1.6, 0.85), off = (1 - mv) * (960 - LOCK.cx), lift = k(t, 3.4, 0.44, INOUT);
-  const R0 = t < 3.4 ? mix(1250, LOCK.r, k(t, 2.62, 0.45, INOUT)) : mix(LOCK.r, LOCK.nodeR, lift);
+  const R0 = t < 3.4 ? mix(1115, LOCK.r, k(t, 2.62, 0.45, SOFT)) : mix(LOCK.r, LOCK.nodeR, lift);
   const cx = mix(LOCK.cx + off, 960, lift), cy = mix(mix(540, LOCK.cy, mv), 540, lift);
   const b = Math.min(1, sp(t, 3.02, 1.8, 0.7)) * (1 - k(t, 3.4, 0.22, INOUT)), bx = mix(LOCK.barX + off, cx - LOCK.barW / 2, lift), bb = mix(LOCK.barBottom, cy, lift);
   const rev = k(t, 3.0, 0.42, OUT), p = k(t, 3.4, 0.45, SOFT), s = mix(1, LOCK.hdrH / WM_H, p);

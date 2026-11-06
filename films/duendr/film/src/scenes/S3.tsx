@@ -14,12 +14,12 @@ const MAL = CITIES.find((c) => c.name === "Málaga")!;
 const cityLL = (n: string): [number, number] => { const c = CITIES.find((q) => q.name === n)!; return [c.lon, c.lat]; };
 const COAST = ["Estepona", "Marbella", "Fuengirola", "Torremolinos", "Málaga", "Nerja"].map(cityLL);
 const TARGET = ["Marbella", "Málaga", "Nerja"].map(cityLL);
-const DIVE0 = 8.25, DIVE1 = 8.65;
+const DIVE0 = 8.25, DIVE1 = 8.74;
 
 const camAt = (t: number): View => {
   const gIn = k(t, 6.9, 0.8, OUT), p = k(t, DIVE0, DIVE1 - DIVE0, INOUT);
-  const base = (2250 + Math.max(0, t - 7) * 260) * mix(0.84, 1, gIn);
-  return { lam0: mix(-4.9, MAL.lon, p), phi0: mix(36.9, MAL.lat, p), k: 10, pitch: 38, d: 1.55, S: base * mix(1, 2.3, p), cx: 960, cy: mix(640, 540, p) };
+  const base = (3500 + Math.max(0, t - 7) * 400) * mix(0.84, 1, gIn);
+  return { lam0: mix(-4.55 - Math.max(0, t - 7) * 0.06, MAL.lon, p), phi0: mix(36.8, MAL.lat, p), k: 10, pitch: 38, d: 1.55, S: base * mix(1, 2.3, p), cx: 960, cy: mix(700, 540, p) };
 };
 const catmull = (P: [number, number][], n = 14): [number, number][] => {
   const out: [number, number][] = [];

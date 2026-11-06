@@ -40,7 +40,7 @@ const S1C: React.FC<{ t: number }> = ({ t }) => {
   const creamTx = creamX - 960;
   const sz1 = mix(170, 108, k(t, 1.2, 0.4, OUT));
   const drop = (i: number) => 2.32 + 0.1 * i;
-  const slow = 1 + 0.05 * Math.max(0, t - 1.6);
+  const slow = 1 + 0.11 * Math.max(0, t - 1.6);
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
       {/* the row of work */}
@@ -65,7 +65,7 @@ const S1C: React.FC<{ t: number }> = ({ t }) => {
           {g2 < 0.98 && <Shadow l={kl} r={kr} tp={kt} b={kt} rad={krad} />}
           <Inset l={kl} r={kr} tp={kt} b={kt} rad={krad} bg={C.coral}>
             <div style={{ position: "absolute", inset: 0, background: `radial-gradient(60% 70% at ${50 + 14 * Math.sin(t * 2.2)}% ${46 + 8 * Math.cos(t * 1.7)}%, rgba(240,138,110,${0.5 * g2}) 0%, rgba(226,90,61,0) 70%)` }} />
-            <div style={{ position: "absolute", inset: 0, transform: `translateX(${coralX - 960 - 26 * Math.max(0, t - 1.6)}px) scale(${slow})`, transformOrigin: "50% 50%" }}>
+            <div style={{ position: "absolute", inset: 0, transform: `translateX(${coralX - 960 - 60 * Math.max(0, t - 1.6)}px) scale(${slow})`, transformOrigin: "50% 50%" }}>
               <WordLine t={t} size={sz1} weight={900} color={C.cream} items={[{ text: "next", at: 0.96, out: drop(0) }, { text: "creative", at: 1.24, out: drop(1) }, { text: "connection?", at: 1.62, out: drop(2) }]} />
             </div>
           </Inset>
