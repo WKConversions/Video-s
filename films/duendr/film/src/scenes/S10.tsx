@@ -57,7 +57,7 @@ const S10C: React.FC<{ t: number }> = ({ t }) => {
             </svg>
           </div>
           <Place t={t} x={1105} y={DISC.y + 4} s={pct} o={c01(pct * 3) * (1 - exit)}><div style={{ fontFamily: SANS, fontWeight: 900, fontSize: 270, color: C.cream, letterSpacing: "-0.04em", lineHeight: 1 }}>%</div></Place>
-          <div style={{ position: "absolute", left: 0, top: 520 + Math.sin(t * 2.7) * 4, width: 1920, display: "flex", justifyContent: "center", opacity: 1 - exit }}>
+          <div style={{ position: "absolute", left: 0, top: 520, width: 1920, display: "flex", justifyContent: "center", opacity: 1 - exit }}>
             <Rise text="commission" t={t} at={T.comm} size={170} times={[T.comm]} />
           </div>
         </>

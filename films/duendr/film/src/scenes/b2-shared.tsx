@@ -18,7 +18,7 @@ export const GIGS: Gig[] = [
 ];
 export const DECK_FROM = 11.1;
 /** the gig deck's front card scale: S4's flip ends on it, S5 starts from it (same function, same state) */
-export const deckScale = (t: number) => 1.45 + 0.012 * (t - 11.4);
+export const deckScale = (t: number) => 1.55 + 0.02 * (t - 11.4);
 export const DECK_Y = 600;
 
 /** "What's new?": the app's new-post sheet (444 x 356 app px) */

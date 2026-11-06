@@ -19,7 +19,7 @@ const BY = LY - ((ROW_H * 4 + LIST_PAD * 2) / 2) * LS + (LIST_PAD + ROW_H / 2) *
 
 const Head: React.FC<{ t: number; text: string; at: number; end: number; times?: number[]; colors?: (string | undefined)[] }> = ({ t, text, at, end, times, colors }) => {
   if (t < at - 0.1 || t > end + 0.5) return null;
-  return <div style={{ position: "absolute", left: 0, top: 100 + Math.sin(t * 2.2) * 3, width: 1920, display: "flex", justifyContent: "center" }}><Rise text={text} t={t} at={at} size={112} gap={0.1} times={times} out={k(t, end, 0.3, IN)} colors={colors} /></div>;
+  return <div style={{ position: "absolute", left: 0, top: 100, width: 1920, display: "flex", justifyContent: "center" }}><Rise text={text} t={t} at={at} size={112} gap={0.1} times={times} out={k(t, end, 0.3, IN)} colors={colors} /></div>;
 };
 
 const S11C: React.FC<{ t: number }> = ({ t }) => {

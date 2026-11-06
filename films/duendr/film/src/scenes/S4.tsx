@@ -11,7 +11,7 @@ const AV = { x: 600, y: 215, R: 100 };
 
 const Body: React.FC<{ t: number }> = ({ t }) => {
   // dot -> avatar ring
-  const g = k(t, 8.78, 0.5), R = mix(18, AV.R, g), p = k(t, 8.9, 0.6, INOUT);
+  const g = k(t, 8.78, 0.5), R = t < 8.75 ? 18 + 7 * (8.75 - t) / 0.15 : mix(18, AV.R, g), p = k(t, 8.9, 0.6, INOUT);
   const cx = mix(960, AV.x, p), cy = mix(540, AV.y, p), img = k(t, 8.86, 0.25);
   const pulse = c01((t - 9.45) / 0.8);
   const grp = 1 - k(t, 10.12, 0.4);               // profile + tiles step back as the sheet opens

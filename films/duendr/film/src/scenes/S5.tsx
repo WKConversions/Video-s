@@ -12,7 +12,7 @@ export const PEOPLE: Person[] = [
   { name: "Inés Navarro", roles: "Designer, Illustrator", city: "Nerja", badge: "verified" },
   { name: "Rafa Torres", roles: "Tattoo artist", city: "Fuengirola", avatar: "img/avatars/rafa.jpg" },
 ];
-const SC = 1.55, PT = 400, CT = 290, CARD_H = 394;
+const SC = 1.7, PT = 330, CT = 250, CARD_H = 394;
 export const PILL_Y = CT + (16 + 64 + 12 + 230 + 12 + 22) * SC; // 842: where the map grows from
 
 const Deck: React.FC<{ t: number }> = ({ t }) => {
@@ -25,7 +25,7 @@ const Deck: React.FC<{ t: number }> = ({ t }) => {
         const d = i - P; if (d < -1.02) return null;
         const dd = Math.max(0, d) * (i === 0 ? 1 : peek) ; const fl = c01(-d);
         const behind = d > 0;
-        const tr = behind ? `translateY(-50%) translateY(${dd * 40}px) scale(${1 - 0.07 * dd})` : `translateY(-50%) rotateX(${fl * 88}deg) scale(${1 + 0.06 * fl})`;
+        const tr = behind ? `translateY(-50%) translateY(${dd * 34}px) scale(${1 - 0.07 * dd})` : `translateY(-50%) rotateX(${fl * 88}deg) scale(${1 + 0.06 * fl})`;
         return (
           <div key={i} style={{ position: "absolute", left: 0, top: 0, zIndex: 10 - i, transform: tr, transformOrigin: behind ? "50% 100%" : "50% 0%", opacity: 1 - c01((fl - 0.55) / 0.4) }}>
             {i === 0 ? <GigFace i={0} /> : <Seq from={DECK_FROM}><GigCard g={GIGS[i]} /></Seq>}

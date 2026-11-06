@@ -66,7 +66,7 @@ export const Brand: React.FC<{ t: number }> = ({ t }) => {
   const mv = sp(t, 2.9, 1.6, 0.85), off = (1 - mv) * (960 - LOCK.cx), lift = k(t, 3.4, 0.44, INOUT);
   const R0 = t < 3.4 ? mix(1250, LOCK.r, k(t, 2.62, 0.45, INOUT)) : mix(LOCK.r, LOCK.nodeR, lift);
   const cx = mix(LOCK.cx + off, 960, lift), cy = mix(mix(540, LOCK.cy, mv), 540, lift);
-  const b = Math.min(1, sp(t, 3.02, 1.8, 0.7)) * (1 - lift), bx = mix(LOCK.barX + off, cx - LOCK.barW / 2, lift), bb = mix(LOCK.barBottom, cy, lift);
+  const b = Math.min(1, sp(t, 3.02, 1.8, 0.7)) * (1 - k(t, 3.4, 0.22, INOUT)), bx = mix(LOCK.barX + off, cx - LOCK.barW / 2, lift), bb = mix(LOCK.barBottom, cy, lift);
   const rev = k(t, 3.0, 0.42, OUT), p = k(t, 3.4, 0.45, SOFT), s = mix(1, LOCK.hdrH / WM_H, p);
   const dx = (960 - (LOCK.wmLeft + WM_W / 2)) * p, dy = (LOCK.hdrY - 540) * p;
   const dot = c01(sp(t, 3.30, 2.2, 0.6)); const gl = 0.55 + 0.25 * Math.sin(t * 5);

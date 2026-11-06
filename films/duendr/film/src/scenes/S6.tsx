@@ -12,11 +12,11 @@ import { Scene } from "./types";
 import { PILL_Y } from "./S5";
 
 const PINS: Pin2[] = [
-  { name: "Cádiz", at: 14.62, place: "r" }, { name: "Sotogrande", at: 14.76, place: "l" }, { name: "Estepona", at: 14.9, place: "l" }, { name: "Marbella", at: 15.04, count: 6, place: "bl" },
-  { name: "Fuengirola", at: 15.18, place: "br" }, { name: "Torremolinos", at: 15.3, place: "al" }, { name: "Málaga", at: 15.42, big: true, count: 12, place: "r" }, { name: "Nerja", at: 15.58, place: "r" },
-  { name: "Ronda", at: 15.7, place: "r" }, { name: "Sevilla", at: 15.82, place: "r" }, { name: "Granada", at: 15.94, place: "l" },
+  { name: "Cádiz", at: 14.52, place: "r" }, { name: "Sotogrande", at: 14.62, place: "l" }, { name: "Estepona", at: 14.72, place: "l" }, { name: "Marbella", at: 14.82, count: 6, place: "bl" },
+  { name: "Fuengirola", at: 14.92, place: "br" }, { name: "Torremolinos", at: 15.02, place: "al" }, { name: "Málaga", at: 15.12, big: true, count: 12, place: "r" }, { name: "Nerja", at: 15.24, place: "r" },
+  { name: "Ronda", at: 15.36, place: "r" }, { name: "Sevilla", at: 15.48, place: "r" }, { name: "Granada", at: 15.6, place: "l" },
 ];
-const ARCS: [string, string, number][] = [["Málaga", "Marbella", 15.5], ["Málaga", "Granada", 16.0], ["Málaga", "Sevilla", 15.9], ["Málaga", "Ronda", 15.78], ["Málaga", "Nerja", 15.66], ["Marbella", "Sotogrande", 15.2], ["Marbella", "Ronda", 15.5]];
+const ARCS: [string, string, number][] = [["Málaga", "Marbella", 15.22], ["Málaga", "Granada", 15.7], ["Málaga", "Sevilla", 15.58], ["Málaga", "Ronda", 15.46], ["Málaga", "Nerja", 15.34], ["Marbella", "Sotogrande", 14.9], ["Marbella", "Ronda", 15.46]];
 const pos = (n: string) => CITIES.find((c) => c.name === n)!;
 
 const cam = (t: number): View => {
@@ -42,7 +42,7 @@ const Arcs: React.FC<{ t: number; at: (lo: number, la: number) => [number, numbe
 const Body: React.FC<{ t: number }> = ({ t }) => {
   const v = cam(t), R = 1750 * k(t, 14.3, 0.8, SOFT), sink = k(t, 16.0, 0.5, INOUT), reveal = R < 1740;
   const [mx, my] = makeView(v).at(pos("Marbella").lon, pos("Marbella").lat);
-  const sh = sp(t, 15.3, 1.7, 0.75), tg = k(t, 16.02, 0.68, OUT);
+  const sh = sp(t, 15.0, 1.7, 0.75), tg = k(t, 16.02, 0.68, OUT);
   return (
     <>
       <div style={{ position: "absolute", inset: 0, opacity: 1 - sink, transform: `translateY(${150 * sink}px) scale(${1 - 0.1 * sink})`, transformOrigin: "50% 60%", clipPath: reveal ? `circle(${R}px at 960px ${PILL_Y}px)` : undefined }}>
