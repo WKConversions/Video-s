@@ -1,0 +1,131 @@
+<title>Duendr Film Storyboard</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a reel sheet. The film plays at the top; below it the film runs down the page beat by beat, each beat a strip
+   with its voice-over line and spec on the left and one rendered frame per phrase on the right, in timecode order.
+   The page stays quiet and neutral so the frames carry the colour. */
+:root {
+  --bg: #ECEBE8; --surface: #F7F6F3; --ink: #1B1A18; --muted: #615D57; --rule: #D3D0CA; --accent: #B3432B; --accent-soft: rgba(179, 67, 43, 0.09);
+  --display: "Instrument Sans", "Helvetica Neue", Arial, sans-serif; --body: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --step--1: 0.8125rem; --step-0: 1rem; --step-1: 1.1875rem; --step-2: 1.5rem; --step-3: 2.25rem; --step-4: clamp(2.4rem, 6vw, 3.6rem);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #131211; --surface: #1B1A18; --ink: #ECE9E3; --muted: #A09A91; --rule: #2C2A27; --accent: #EE7357; --accent-soft: rgba(238, 115, 87, 0.12); color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #131211; --surface: #1B1A18; --ink: #ECE9E3; --muted: #A09A91; --rule: #2C2A27; --accent: #EE7357; --accent-soft: rgba(238, 115, 87, 0.12); color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: var(--step-0); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.tc { font-family: var(--mono); font-size: var(--step--1); font-variant-numeric: tabular-nums; color: var(--accent); letter-spacing: 0; }
+a { color: inherit; }
+a:focus-visible, video:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+/* top */
+.top { padding-block: clamp(28px, 5vw, 56px) 28px; }
+.eyebrow { margin: 0 0 14px; font-size: var(--step--1); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+h1 { margin: 0; font-family: var(--display); font-weight: 700; font-size: var(--step-4); line-height: 1.02; letter-spacing: -0.03em; text-wrap: balance; }
+.lede { margin: 14px 0 0; max-width: 62ch; color: var(--muted); font-size: var(--step-1); line-height: 1.5; }
+.player { margin-top: 28px; display: grid; grid-template-columns: minmax(0, 1fr) 240px; gap: 24px; align-items: start; }
+.player video, .player img { display: block; width: 100%; max-width: 100%; aspect-ratio: 16 / 9; height: auto; background: #000; border-radius: 10px; }
+.stats { margin: 0; display: grid; gap: 14px; }
+.stats div { border-top: 1px solid var(--rule); padding-top: 10px; }
+.stats dt { font-size: var(--step--1); color: var(--muted); }
+.stats dd { margin: 2px 0 0; font-weight: 600; }
+
+/* beat index */
+.index { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); border-block: 1px solid var(--rule); }
+.index .wrap { display: flex; gap: 6px 18px; flex-wrap: wrap; padding-block: 10px; }
+.index a { display: inline-flex; gap: 8px; align-items: baseline; text-decoration: none; font-size: var(--step--1); font-weight: 500; padding: 2px 0; }
+.index a:hover span:last-child, .index a:hover { text-decoration: underline; text-underline-offset: 3px; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+
+/* beats */
+main { padding-block: 8px 64px; }
+.beat { display: grid; grid-template-columns: 330px minmax(0, 1fr); gap: 28px; padding-block: 40px; border-bottom: 1px solid var(--rule); scroll-margin-top: 64px; }
+.beat-head { position: sticky; top: 64px; align-self: start; min-width: 0; }
+.range { margin: 0 0 6px; }
+h2 { margin: 0; font-family: var(--display); font-size: var(--step-3); font-weight: 700; line-height: 1.08; letter-spacing: -0.025em; text-wrap: balance; }
+.vo { margin: 14px 0 0; padding: 0; font-size: var(--step-1); line-height: 1.45; font-weight: 500; text-wrap: pretty; }
+.spec { margin: 18px 0 0; display: grid; gap: 12px; }
+.spec dt { font-size: var(--step--1); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.spec dd { margin: 3px 0 0; font-size: 0.9375rem; line-height: 1.5; }
+.frames { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 18px; align-content: start; min-width: 0; }
+figure { margin: 0; min-width: 0; }
+figure img { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: 16 / 9; border-radius: 8px; background: #000; }
+figcaption { margin-top: 8px; display: grid; grid-template-columns: 3.4em minmax(0, 1fr); gap: 8px; font-size: 0.9rem; line-height: 1.45; }
+
+/* notes */
+.notes { padding-block: 48px 8px; display: grid; gap: 36px; }
+.notes h2 { font-size: var(--step-2); }
+.note-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 28px; }
+.note-grid h3 { margin: 0 0 4px; font-size: var(--step-0); font-weight: 600; }
+.note-grid p { margin: 0; color: var(--muted); max-width: 62ch; }
+.questions { margin: 10px 0 0; padding-left: 1.2em; display: grid; gap: 8px; max-width: 70ch; }
+.questions li::marker { color: var(--accent); }
+.flag { background: var(--accent-soft); border-radius: 8px; padding: 14px 16px; }
+.table-scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 0.9rem; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--rule); }
+th { font-size: var(--step--1); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+details summary { cursor: pointer; font-weight: 600; }
+footer { padding-block: 24px 48px; color: var(--muted); font-size: var(--step--1); }
+
+@media (max-width: 900px) {
+  .player { grid-template-columns: minmax(0, 1fr); }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .beat { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .beat-head { position: static; }
+  .note-grid { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) { .frames { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+html { scroll-behavior: smooth; }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <p class="eyebrow">WKConversions · Storyboard @@VERSION@@ · @@DATE@@</p>
+    <h1>Duendr film</h1>
+    <p class="lede">42.4 seconds, 1920 × 1080 at 60 fps, on the English voice-over. Every frame on this page is rendered from the film's own build, one for each phrase, so what you approve here is what gets animated.</p>
+    <div class="player">
+      @@VIDEO@@
+      <dl class="stats">
+        <div><dt>Length</dt><dd>42.4 s, 12 beats</dd></div>
+        <div><dt>Frames on this page</dt><dd>@@FRAMES@@</dd></div>
+        <div><dt>Motion</dt><dd>@@MOTION@@</dd></div>
+        <div><dt>Profiles and work</dt><dd>Demo names and royalty-free clips inside Duendr's real design</dd></div>
+      </dl>
+    </div>
+  </div>
+</header>
+
+<nav class="index" aria-label="Beats">
+  <div class="wrap">@@NAV@@</div>
+</nav>
+
+<main class="wrap">
+@@SECTIONS@@
+
+  <section class="notes" id="notes">
+    <div>
+      <h2>Notes for Karl</h2>
+      <div class="note-grid" style="margin-top:16px">@@NOTES@@</div>
+    </div>
+    <div class="flag">
+      <h2>Open questions</h2>
+      <ul class="questions">@@QUESTIONS@@</ul>
+    </div>
+    <details>
+      <summary>Revision log</summary>
+      <div class="table-scroll" style="margin-top:12px">
+        <table><thead><tr><th>Before</th><th>After</th><th>Why</th></tr></thead><tbody>@@REVISIONS@@</tbody></table>
+      </div>
+    </details>
+  </section>
+</main>
+<footer><div class="wrap">Duendr · film by WKConversions · storyboard @@VERSION@@, @@DATE@@</div></footer>

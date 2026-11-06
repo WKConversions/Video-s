@@ -1,0 +1,77 @@
+// S1 Hook (0.00-2.75): Karl's reference 1 as Duendr's own: a cream frame with one giant word, it shrinks to a card in a sliding row of work,
+// a coral card pushes the row away and grows to the full coral frame, the words settle and drop away; the coral field becomes S2's circle.
+import React from "react";
+import { C, Media, OUT, SOFT, SHADOW, k, mix, sp } from "../kit";
+import { Scene } from "./types";
+import { WordLine } from "./b1-lib";
+
+const CW = 800, CH = 430, WW = 560, WH = 330, KW = 760, KH = 400, GAPX = 40, V = 700, T0 = 0.8, RAMP = 0.4;
+const disp = (t: number) => { const u = Math.max(0, t - T0); return u < RAMP ? (V * u * u) / (2 * RAMP) : V * (RAMP / 2 + (u - RAMP)); };
+const CLIPS = ["clips/model-shoot.mp4", "clips/dj-stage.mp4", "clips/paint-brush.mp4", "clips/pottery.mp4", "clips/design-tablet.mp4"];
+
+const Inset: React.FC<{ l: number; r: number; tp: number; b: number; rad: number; bg: string; dx?: number; children?: React.ReactNode; z?: number }> = ({ l, r, tp, b, rad, bg, children, z }) => (
+  <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, zIndex: z }}>
+    <div style={{ position: "absolute", inset: 0, background: bg, clipPath: `inset(${tp}px ${r}px ${b}px ${l}px round ${rad}px)` }}>{children}</div>
+  </div>
+);
+const Shadow: React.FC<{ l: number; r: number; tp: number; b: number; rad: number }> = ({ l, r, tp, b, rad }) => {
+  const w = Math.max(1, 1920 - l - r), h = Math.max(1, 1080 - tp - b);
+  return <div style={{ position: "absolute", left: 0, top: 0, width: w, height: h, borderRadius: rad, boxShadow: SHADOW, background: C.card, transform: `translate(${l}px, ${tp}px)` }} />;
+};
+
+const S1C: React.FC<{ t: number }> = ({ t }) => {
+  const d = disp(t);
+  const rawW1 = 960 + CW / 2 + GAPX + WW / 2 - d, rawC = rawW1 + WW / 2 + GAPX + KW / 2, rawCream = 960 - d;
+  const pc = k(t, 0.96, 0.52, OUT);
+  const coralX = mix(rawC, 960, pc);
+  const w1 = Math.min(rawW1, coralX - KW / 2 - GAPX - WW / 2);
+  const creamX = Math.min(rawCream, w1 - WW / 2 - GAPX - CW / 2) - (pc > 0.95 ? 60 * (t - 1.4) : 0);
+  const wm1 = Math.min(960 - d - CW / 2 - GAPX - WW / 2, creamX - CW / 2 - GAPX - WW / 2);
+  const wm2 = Math.min(960 - d - CW / 2 - 2 * GAPX - WW * 1.5, wm1 - WW - GAPX);
+  const drift = (t - 0.8) * 22; // work cards: a slow push inside the frame
+  const cards = [{ x: w1, i: 2 }, { x: wm1, i: 0 }, { x: wm2, i: 1 }, { x: wm2 - WW - GAPX, i: 3 }];
+  // cream card: full frame -> card
+  const g1 = k(t, 0.8, 0.32, OUT);
+  const cl = mix(0, creamX - CW / 2, g1), cr = mix(0, 1920 - (creamX + CW / 2), g1), ct = mix(0, (1080 - CH) / 2, g1);
+  // coral card: grows to the full frame
+  const g2 = Math.min(1, sp(t, 1.2, 1.7, 0.85)), kl = (coralX - KW / 2) * (1 - g2), kr = (1920 - (coralX + KW / 2)) * (1 - g2), kt = ((1080 - KH) / 2) * (1 - g2), krad = mix(34, 0, g2);
+  const zoom = 1.12 - 0.12 * k(t, 0, 0.9, OUT);
+  const lookSize = mix(300, 86, k(t, 0.34, 0.34, OUT)) * zoom;
+  const creamTx = creamX - 960;
+  const sz1 = mix(170, 108, k(t, 1.2, 0.4, OUT));
+  const drop = (i: number) => 2.32 + 0.1 * i;
+  const slow = 1 + 0.035 * k(t, 1.7, 1.1, SOFT);
+  return (
+    <div style={{ position: "absolute", inset: 0, overflow: "hidden" }}>
+      {/* the row of work */}
+      {t > 0.6 && cards.map((c, n) => c.x + WW / 2 > -20 && c.x - WW / 2 < 1940 && (
+        <div key={n} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${c.x - WW / 2}px, ${(1080 - WH) / 2}px)`, opacity: k(t, 0.8, 0.25) }}>
+          <Media src={CLIPS[c.i]} w={WW} h={WH} r={26} zoom={1.12 + drift * 0.0012} shadow={SHADOW} />
+        </div>))}
+      {/* cream card */}
+      {creamX + CW / 2 > -40 && (
+        <>
+          {g1 > 0.02 && <Shadow l={cl} r={cr} tp={ct} b={ct} rad={mix(0, 34, g1)} />}
+          <Inset l={cl} r={cr} tp={ct} b={ct} rad={mix(0, 34, g1)} bg={C.paper}>
+            <div style={{ position: "absolute", inset: 0, transform: `translateX(${creamTx * g1}px)` }}>
+              <WordLine t={t} size={lookSize} weight={900} items={[{ text: "Looking", at: 0.0 }, { text: "for", at: 0.54 }, { text: "your", at: 0.82 }]} />
+            </div>
+          </Inset>
+        </>
+      )}
+      {/* coral card */}
+      {t > 0.7 && coralX - KW / 2 < 1930 && (
+        <>
+          {g2 < 0.98 && <Shadow l={kl} r={kr} tp={kt} b={kt} rad={krad} />}
+          <Inset l={kl} r={kr} tp={kt} b={kt} rad={krad} bg={C.coral}>
+            <div style={{ position: "absolute", inset: 0, background: `radial-gradient(60% 70% at ${50 + 14 * Math.sin(t * 0.9)}% ${46 + 8 * Math.cos(t * 0.7)}%, rgba(240,138,110,${0.5 * g2}) 0%, rgba(226,90,61,0) 70%)` }} />
+            <div style={{ position: "absolute", inset: 0, transform: `translateX(${coralX - 960}px) scale(${slow})`, transformOrigin: "50% 50%" }}>
+              <WordLine t={t} size={sz1} weight={900} color={C.cream} items={[{ text: "next", at: 0.96, out: drop(0) }, { text: "creative", at: 1.24, out: drop(1) }, { text: "connection?", at: 1.62, out: drop(2) }]} />
+            </div>
+          </Inset>
+        </>
+      )}
+    </div>
+  );
+};
+export const S1: Scene = { id: "S1", t0: 0, t1: 2.75, C: S1C };
