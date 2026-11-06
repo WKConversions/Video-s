@@ -17,7 +17,7 @@ export const Cap: React.FC<{ t: number; text: string; times: number[]; exit: num
   if (t < times[0] - 0.3 || t > exit + 0.45) return null;
   return (
     <div style={{ position: "absolute", left: 0, top: y - size * 0.55, width: 1920, display: "flex", justifyContent: "center" }}>
-      <Rise text={text} t={t} at={times[0]} times={times.map((x) => x - 0.08)} size={size} out={k(t, exit, 0.3, IN)} style={{ paddingLeft: "0.24em" }} />
+      <Rise text={text} t={t} at={times[0]} times={times.map((x) => x - 0.08)} size={size} out={c01((t - exit) / 0.22)} style={{ paddingLeft: "0.24em" }} />
     </div>
   );
 };
@@ -30,7 +30,7 @@ export const TAL: Talent[] = [
   { name: "Leo Martín", sub: "Pianist · Sevilla", chips: ["Pianist", "Live"], clip: "clips/piano.mp4", initials: "LM", badge: true },
   { name: "Javi Ortega", sub: "Marbella · €200–€400", chips: ["DJ", "Producer"], clip: "clips/dj-stage.mp4", initials: "JO", badge: true },
   { name: "Vinyl DJ", sub: "Turntables · Live", chips: ["DJ", "Vinyl"], clip: "clips/dj-turntable.mp4", initials: "D" },
-  { name: "Live DJ", sub: "Sets · Events", chips: ["DJ", "Live"], clip: "clips/dj-hands.mp4", initials: "L" },
+  { name: "Nadia Vega", sub: "Dancer · Málaga", chips: ["Dancer", "Choreographer"], clip: "clips/dance-smoke.mp4", initials: "NV" },
 ];
 export const CLIP_FROM = 19.0;
 
@@ -39,7 +39,7 @@ export const TalentCard: React.FC<{ p: Talent; press?: number; label?: string; d
   <div style={{ width: 400, height: 400, borderRadius: 20, overflow: "hidden", background: C.card, border: `1px solid ${C.border}`, boxShadow: SHADOW, position: "relative" }}>
     <div style={{ width: 400, height: 225, position: "relative" }}>
       <Clip src={p.clip} w={400} h={225} from={CLIP_FROM} />
-      <div style={{ position: "absolute", left: 12, top: 12, display: "flex", alignItems: "center", gap: 6, height: 26, padding: "0 10px", borderRadius: 13, background: "rgba(22,20,19,0.7)", ...F(12, 600) }}>
+      <div style={{ position: "absolute", left: 12, top: 12, display: "flex", alignItems: "center", gap: 6, height: 26, padding: "0 10px", borderRadius: 13, background: "rgba(22,20,19,0.7)", ...F(14, 600) }}>
         <span style={{ width: 7, height: 7, borderRadius: 4, background: C.coral }} />Available</div>
     </div>
     <div style={{ padding: 16, display: "flex", flexDirection: "column", gap: 10 }}>
@@ -47,21 +47,24 @@ export const TalentCard: React.FC<{ p: Talent; press?: number; label?: string; d
         <div style={{ width: 44, height: 44, borderRadius: 22, background: C.card2, display: "flex", alignItems: "center", justifyContent: "center", flex: "none", ...F(15, 700, C.muted) }}>{p.initials}</div>
         <div style={{ minWidth: 0 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 6 }}><span style={F(18, 700)}>{p.name}</span>{p.badge && <Badge s={15} />}</div>
-          <div style={F(13.5, 500, C.muted, { whiteSpace: "nowrap" })}>{p.sub}</div>
+          <div style={F(15, 500, C.muted, { whiteSpace: "nowrap" })}>{p.sub}</div>
         </div>
       </div>
       <div style={{ display: "flex", gap: 8, height: 34 }}>{p.chips.map((c) => <Chip key={c} label={c} />)}</div>
       <div style={{ transform: `scale(${1 - 0.07 * Math.sin(Math.PI * c01(press))})` }}>
-        {done > 0.5 ? <Pill kind="cream" label="Connected" w="100%" h={44} icon={<Ico n="check" s={16} c={C.ink} w={2.6} />} /> : <Pill label={label} w="100%" h={44} icon={<Ico n="arrow" s={16} w={2.2} />} />}
+        <div style={{ position: "relative" }}>
+          <Pill label={label} w="100%" h={44} icon={<Ico n="arrow" s={16} w={2.2} />} />
+          {done > 0.01 && <div style={{ position: "absolute", inset: 0, opacity: c01(done) }}><Pill kind="cream" label="Connected" w="100%" h={44} icon={<span style={{ display: "inline-flex", transform: `scale(${c01(done)})` }}><Ico n="check" s={16} c={C.ink} w={2.6} /></span>} /></div>}
+        </div>
       </div>
     </div>
   </div>
 );
 
 export const RowE = Easing.bezier(0.3, 0.55, 0.3, 1);
-export const rowOff = (t: number) => 2800 * (1 - k(t, 19.4, 2.0, RowE));
+export const rowOff = (t: number) => 3000 * (1 - k(t, 19.4, 2.0, RowE));
 /** Javi's card: in the row, then lifted. x/y/scale about the frame centre; identical in S7 and S8 */
-export const javiPose = (t: number) => { const q = sp(t, 20.7, 1.5, 0.8); return { x: 960 + rowOff(t), y: 590 - 15 * q, s: 1.2 + 0.35 * q }; };
+export const javiPose = (t: number) => { const q = sp(t, 20.7, 1.5, 0.8); return { x: 960 + rowOff(t), y: 590 - 15 * q, s: 1.35 + 0.2 * q }; };
 
 /** Javi's card with the coral ring ("Right fit"), the check pill and the press ripple. cx/cy/s are the card's centre and scale. */
 export const JaviGroup: React.FC<{ t: number; x: number; y: number; s: number; opacity?: number }> = ({ t, x, y, s, opacity = 1 }) => {
@@ -69,7 +72,7 @@ export const JaviGroup: React.FC<{ t: number; x: number; y: number; s: number; o
   const pill = sp(t, 21.14, 1.9, 0.62) * (1 - k(t, 21.95, 0.2, IN));
   const press = (t - 22.04) / 0.3;
   const rip = k(t, 22.04, 0.7);
-  const done = t > 22.4 ? 1 : 0;
+  const done = k(t, 22.36, 0.16);
   return (
     <div style={{ position: "absolute", left: 760, top: 340, width: 400, height: 400, opacity, transform: `translate(${x - 960}px,${y - 540}px) scale(${s})` }}>
       {ring > 0.01 && <div style={{ position: "absolute", inset: -10, borderRadius: 28, border: `4px solid ${C.coral}`, boxShadow: GLOW, opacity: c01(ring), transform: `scale(${mix(1.12, 1, c01(ring))})` }} />}
@@ -136,7 +139,7 @@ export const CHAT = { x: 960, y: 590, s: 1.6, w: 444, h: 440 };
 export const chatPt = (lx: number, ly: number): [number, number] => [CHAT.x + (lx - CHAT.w / 2) * CHAT.s, CHAT.y + (ly - CHAT.h / 2) * CHAT.s];
 export const HDR_C = chatPt(36, 32), HDR_J = chatPt(60, 32);
 
-export const ChatPanel: React.FC<{ t: number }> = ({ t }) => {
+export const ChatPanel: React.FC<{ t: number; inner?: number; hideConfirm?: boolean }> = ({ t, inner = 1, hideConfirm }) => {
   const conf = sp(t, 24.54, 1.9, 0.75);
   const press = Math.sin(Math.PI * c01((t - 24.8) / 0.25));
   const hdr = t >= 23.4;
@@ -145,7 +148,7 @@ export const ChatPanel: React.FC<{ t: number }> = ({ t }) => {
       <div style={{ height: 64, borderBottom: `1px solid ${C.border}`, display: "flex", alignItems: "center", padding: "0 16px", gap: 0, flex: "none" }}>
         <div style={{ width: 40, height: 40, borderRadius: 12, background: C.cream, display: "flex", alignItems: "center", justifyContent: "center", ...F(20, 800, C.ink), opacity: hdr ? 1 : 0 }}>C</div>
         <div style={{ width: 40, height: 40, borderRadius: 20, background: C.card2, border: `2px solid ${C.card}`, marginLeft: -16, display: "flex", alignItems: "center", justifyContent: "center", ...F(14, 700, C.muted), opacity: hdr ? 1 : 0, boxSizing: "content-box" as const, flex: "none" }}>JO</div>
-        <div style={{ marginLeft: 14 }}><div style={{ display: "flex", alignItems: "center", gap: 6 }}><span style={F(17, 700)}>Javi Ortega</span><Badge s={15} /></div><div style={F(12.5, 500, C.muted)}>Casa Brisa · Sunset sessions</div></div>
+        <div style={{ marginLeft: 14, opacity: inner }}><div style={{ display: "flex", alignItems: "center", gap: 6 }}><span style={F(17, 700)}>Javi Ortega</span><Badge s={15} /></div><div style={F(12.5, 500, C.muted)}>Casa Brisa · Sunset sessions</div></div>
       </div>
       <div style={{ padding: "14px 16px", display: "flex", flexDirection: "column", gap: 10, flex: 1 }}>
         <Slot t={t} me at={23.28} text="Hi Javi! Sunset set this weekend?" />
@@ -153,8 +156,8 @@ export const ChatPanel: React.FC<{ t: number }> = ({ t }) => {
         <Slot t={t} me dots={[24.02, 24.3]} at={24.3} text="Perfect. €280, 3 hours." />
       </div>
       <div style={{ height: 76, padding: "0 16px", display: "flex", alignItems: "center", position: "relative", flex: "none", borderTop: `1px solid ${C.border}` }}>
-        <div style={{ position: "absolute", left: 16, right: 16, height: 46, borderRadius: 23, background: C.card2, display: "flex", alignItems: "center", padding: "0 16px", ...F(15, 500, C.dim), opacity: 1 - c01(conf * 2) }}>Message Javi…<div style={{ flex: 1 }} /><Ico n="send" s={18} c={C.muted} /></div>
-        {conf > 0.01 && <div style={{ position: "absolute", left: 16, right: 16, transform: `scale(${mix(0.9, 1, c01(conf)) * (1 - 0.06 * press)})`, opacity: c01(conf * 2.5) }}>
+        <div style={{ position: "absolute", left: 16, right: 16, height: 46, borderRadius: 23, background: C.card2, display: "flex", alignItems: "center", padding: "0 16px", ...F(15, 500, C.dim), opacity: (1 - c01(conf * 5)) * inner }}>Message Javi…<div style={{ flex: 1 }} /><Ico n="send" s={18} c={C.muted} /></div>
+        {conf > 0.01 && !hideConfirm && <div style={{ position: "absolute", left: 16, right: 16, transformOrigin: "100% 50%", transform: `scaleX(${mix(0.12, 1, c01(conf)) * (1 - 0.06 * press)}) scaleY(${1 - 0.06 * press})`, opacity: c01(conf * 2.5) }}>
           <Pill label="Confirm booking" w="100%" h={46} size={16} icon={<Ico n="check" s={17} w={2.6} />} /></div>}
         {t > 24.8 && t < 25.3 && <div style={{ position: "absolute", left: 222 - 150, top: 38 - 150, width: 300, height: 300, borderRadius: 150, border: `3px solid ${C.coral}`, opacity: 0.8 * (1 - k(t, 24.8, 0.5)), transform: `scale(${mix(0.1, 1, k(t, 24.8, 0.5))})` }} />}
       </div>
