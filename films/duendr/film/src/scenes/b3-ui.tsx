@@ -58,8 +58,8 @@ export const TalentCard: React.FC<{ p: Talent; press?: number; label?: string; d
   </div>
 );
 
-export const RowE = Easing.bezier(0.25, 0.7, 0.2, 1);
-export const rowOff = (t: number) => 2800 * (1 - k(t, 19.4, 1.8, RowE));
+export const RowE = Easing.bezier(0.3, 0.55, 0.3, 1);
+export const rowOff = (t: number) => 2800 * (1 - k(t, 19.4, 2.0, RowE));
 /** Javi's card: in the row, then lifted. x/y/scale about the frame centre; identical in S7 and S8 */
 export const javiPose = (t: number) => { const q = sp(t, 20.7, 1.5, 0.8); return { x: 960 + rowOff(t), y: 590 - 15 * q, s: 1.2 + 0.35 * q }; };
 

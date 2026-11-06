@@ -45,7 +45,7 @@ const S9C: React.FC<{ t: number }> = ({ t }) => {
         return <Place key={p.key} x={mix(x, 960, conv)} y={mix(y, 540, conv)} s={p.s * drift * mix(1, 0.3, conv)} r={p.rot * (1 - c01(q)) + Math.sin(t * 2.2 + p.fx) * 0.8 * (1 - conv)} o={1 - k(t, 26.78, 0.2)}>{p.node}</Place>;
       })}
       {t >= 26.5 && (
-        <Place x={960} y={540 + 30 * ex} s={phS} o={phO}>
+        <Place t={t} amp={3} x={960} y={540 + 30 * ex} s={phS} o={phO}>
           <Phone>
             <AppHeader />
             <div style={{ padding: "6px 18px 0" }}><Segmented w={408} on={0} /></div>
@@ -58,7 +58,7 @@ const S9C: React.FC<{ t: number }> = ({ t }) => {
         </Place>
       )}
       <Place x={960} y={tileY} s={tileS} o={tileO}>
-        <div style={{ boxShadow: SHADOW, borderRadius: 14 }}><BookedTile {...TILE} /></div>
+        <div style={{ boxShadow: SHADOW, borderRadius: 14 }}><BookedTile {...TILE} />{t < 26.6 && <div style={{ position: "absolute", inset: 0, borderRadius: 14, overflow: "hidden" }}><div style={{ position: "absolute", top: 0, bottom: 0, width: 70, left: 0, transform: `translateX(${-80 + 460 * ((t - 25.6) / 0.9)}px) skewX(-18deg)`, background: "linear-gradient(90deg, rgba(240,235,225,0), rgba(240,235,225,0.22), rgba(240,235,225,0))" }} /></div>}</div>
       </Place>
     </>
   );

@@ -41,23 +41,23 @@ const S10C: React.FC<{ t: number }> = ({ t }) => {
         <Rise text="Creatives keep their full fee" t={t} at={T.creatives} size={108} times={[T.creatives, T.keep, T.their, T.full, T.fee]} colors={[, , , C.coral, C.coral]} out={k(t, 29.15, 0.3, IN)} />
       </div>
       {/* the wallet card */}
-      <Place x={960} y={cy} s={cs * (1 + 0.02 * cardIn)} o={cardIn * (1 - exit)}><div style={{ boxShadow: "0 0 30px rgba(0,0,0,0.4)", borderRadius: 18 }}><Wallet strike={k(t, 30.05, 0.4, OUT)} show={k(t, 29.6, 0.3)} /></div></Place>
+      <Place t={t} x={960} y={cy} s={cs * (1 + 0.02 * cardIn)} o={cardIn * (1 - exit)}><div style={{ boxShadow: "0 0 30px rgba(0,0,0,0.4)", borderRadius: 18 }}><Wallet strike={k(t, 30.05, 0.4, OUT)} show={k(t, 29.6, 0.3)} /></div></Place>
       {/* the fee */}
-      <Place x={gx} y={gy} s={gs * (em < 1 ? mix(0.25, 1, c01(em)) : 1) * (fl > 0 ? 1 : 1) * drift} o={gO * (1 - exit)}>
+      <Place t={t} amp={4} x={gx} y={gy} s={gs * (em < 1 ? mix(0.25, 1, c01(em)) : 1) * (fl > 0 ? 1 : 1) * drift} o={gO * (1 - exit)}>
         <div style={{ fontFamily: SANS, fontWeight: 900, fontSize: GS, color: C.cream, letterSpacing: "-0.045em", lineHeight: 1, whiteSpace: "nowrap" }}>€280</div>
       </Place>
       {/* 0% commission */}
       {t > 29.1 && (
         <>
-          <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${dx - DISC.R}px, ${DISC.y - DISC.R}px)`, opacity: 1, filter: roll < 0.98 ? "blur(1.5px)" : undefined }}>
+          <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${dx - DISC.R}px, ${DISC.y - DISC.R + (roll > 0.9 ? Math.sin(t * 2.7 + 8) * 5 : 0)}px)`, opacity: 1, filter: roll < 0.98 ? "blur(1.5px)" : undefined }}>
             <svg width={DISC.R * 2} height={DISC.R * 2} viewBox={`${-DISC.R} ${-DISC.R} ${DISC.R * 2} ${DISC.R * 2}`}>
               <circle r={DISC.R} fill={C.coral} />
               <circle r={DISC.R * 0.52 * Math.max(0, hole)} fill={C.bg} />
               <g transform={`rotate(${ang})`}><circle cx={DISC.R * 0.72} cy={0} r={13} fill={C.cream} opacity={marker} /></g>
             </svg>
           </div>
-          <Place x={1105} y={DISC.y + 4} s={pct} o={c01(pct * 3) * (1 - exit)}><div style={{ fontFamily: SANS, fontWeight: 900, fontSize: 270, color: C.cream, letterSpacing: "-0.04em", lineHeight: 1 }}>%</div></Place>
-          <div style={{ position: "absolute", left: 0, top: 520, width: 1920, display: "flex", justifyContent: "center", opacity: 1 - exit }}>
+          <Place t={t} x={1105} y={DISC.y + 4} s={pct} o={c01(pct * 3) * (1 - exit)}><div style={{ fontFamily: SANS, fontWeight: 900, fontSize: 270, color: C.cream, letterSpacing: "-0.04em", lineHeight: 1 }}>%</div></Place>
+          <div style={{ position: "absolute", left: 0, top: 520 + Math.sin(t * 2.7) * 4, width: 1920, display: "flex", justifyContent: "center", opacity: 1 - exit }}>
             <Rise text="commission" t={t} at={T.comm} size={170} times={[T.comm]} />
           </div>
         </>

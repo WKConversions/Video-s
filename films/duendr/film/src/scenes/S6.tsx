@@ -5,15 +5,16 @@ import React from "react";
 import { C, INOUT, OUT, SOFT, c01, k, mix, sp, SHADOW } from "../kit";
 import { H } from "../handoff";
 import { CITIES, View, makeView } from "../globe";
-import { GlobeMap, Pin } from "../map";
+import { GlobeMap } from "../map";
+import { Pin2, Pins } from "./b2-map";
 import { MapSheet, Segmented } from "../ui";
 import { Scene } from "./types";
 import { PILL_Y } from "./S5";
 
-const PINS: Pin[] = [
-  { name: "Cádiz", at: 14.62, side: "r" }, { name: "Sotogrande", at: 14.76, side: "l" }, { name: "Estepona", at: 14.9, side: "l" }, { name: "Marbella", at: 15.04, count: 6, side: "l" },
-  { name: "Fuengirola", at: 15.18, side: "l" }, { name: "Torremolinos", at: 15.3, side: "l" }, { name: "Málaga", at: 15.42, big: true, count: 12 }, { name: "Nerja", at: 15.58 },
-  { name: "Ronda", at: 15.7 }, { name: "Sevilla", at: 15.82 }, { name: "Granada", at: 15.94 },
+const PINS: Pin2[] = [
+  { name: "Cádiz", at: 14.62, place: "r" }, { name: "Sotogrande", at: 14.76, place: "l" }, { name: "Estepona", at: 14.9, place: "l" }, { name: "Marbella", at: 15.04, count: 6, place: "bl" },
+  { name: "Fuengirola", at: 15.18, place: "br" }, { name: "Torremolinos", at: 15.3, place: "al" }, { name: "Málaga", at: 15.42, big: true, count: 12, place: "r" }, { name: "Nerja", at: 15.58, place: "r" },
+  { name: "Ronda", at: 15.7, place: "r" }, { name: "Sevilla", at: 15.82, place: "r" }, { name: "Granada", at: 15.94, place: "l" },
 ];
 const ARCS: [string, string, number][] = [["Málaga", "Marbella", 15.5], ["Málaga", "Granada", 16.0], ["Málaga", "Sevilla", 15.9], ["Málaga", "Ronda", 15.78], ["Málaga", "Nerja", 15.66], ["Marbella", "Sotogrande", 15.2], ["Marbella", "Ronda", 15.5]];
 const pos = (n: string) => CITIES.find((c) => c.name === n)!;
@@ -45,7 +46,8 @@ const Body: React.FC<{ t: number }> = ({ t }) => {
   return (
     <>
       <div style={{ position: "absolute", inset: 0, opacity: 1 - sink, transform: `translateY(${150 * sink}px) scale(${1 - 0.1 * sink})`, transformOrigin: "50% 60%", clipPath: reveal ? `circle(${R}px at 960px ${PILL_Y}px)` : undefined }}>
-        <GlobeMap v={v} t={t} pins={PINS} labelSize={30}>{(at) => <Arcs t={t} at={at} />}</GlobeMap>
+        <GlobeMap v={v} t={t} pins={[]}>{(at) => <Arcs t={t} at={at} />}</GlobeMap>
+        <Pins v={v} t={t} pins={PINS} size={30} />
         <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0, opacity: c01(sh * 2) }}>
           <path d={`M${mx} ${my - 18}L${mx} ${SHEET.y + 340 * SHEET.s / 1.6 + 120}`} stroke={C.coral} strokeWidth={3} strokeDasharray="1 8" strokeLinecap="round" fill="none" />
         </svg>

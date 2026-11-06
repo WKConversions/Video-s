@@ -8,9 +8,9 @@ import { Scene } from "./types";
 import { Cap, PostCard, TAL, TalentCard, JaviGroup, javiPose, rowOff } from "./b3-ui";
 
 const Toggle: React.FC<{ t: number }> = ({ t }) => {
-  const on = sp(t, 16.82, 1.7, 0.72);
+  const on = sp(t, 16.72, 1.7, 0.72);
   const kk = k(t, 17.9, 0.75, INOUT);
-  const s = mix(2.4 + 0.04 * k(t, 16.7, 1.2, SOFT), 0.9, kk);
+  const s = mix(2.4 + 0.12 * k(t, 16.7, 1.4, SOFT), 0.9, kk);
   const y = 540 + 470 * kk;
   const op = 1 - k(t, 20.55, 0.35, SOFT);
   const rp = k(t, 17.44, 0.7);

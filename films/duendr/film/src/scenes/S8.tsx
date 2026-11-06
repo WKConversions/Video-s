@@ -29,7 +29,7 @@ const S8C: React.FC<{ t: number }> = ({ t }) => {
   // chat panel
   const cq = sp(t, 22.9, 1.6, 0.8);
   const xk = k(t, 25.0, 0.35, INOUT);
-  const pS = mix(0.7, CHAT.s, c01(cq)) * (1 - 0.45 * xk);
+  const pS = (mix(0.7, CHAT.s, c01(cq)) + 0.07 * k(t, 23.3, 2.0, SOFT)) * (1 - 0.45 * xk);
   const pO = c01((t - 22.9) / 0.2) * (1 - xk);
   const pY = mix(CHAT.y, 540, xk);
   // booking tile

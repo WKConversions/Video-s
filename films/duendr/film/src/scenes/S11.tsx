@@ -19,7 +19,7 @@ const BY = LY - ((ROW_H * 4 + LIST_PAD * 2) / 2) * LS + (LIST_PAD + ROW_H / 2) *
 
 const Head: React.FC<{ t: number; text: string; at: number; end: number; times?: number[]; colors?: (string | undefined)[] }> = ({ t, text, at, end, times, colors }) => {
   if (t < at - 0.1 || t > end + 0.5) return null;
-  return <div style={{ position: "absolute", left: 0, top: 100, width: 1920, display: "flex", justifyContent: "center" }}><Rise text={text} t={t} at={at} size={112} gap={0.1} times={times} out={k(t, end, 0.3, IN)} colors={colors} /></div>;
+  return <div style={{ position: "absolute", left: 0, top: 100 + Math.sin(t * 2.2) * 3, width: 1920, display: "flex", justifyContent: "center" }}><Rise text={text} t={t} at={at} size={112} gap={0.1} times={times} out={k(t, end, 0.3, IN)} colors={colors} /></div>;
 };
 
 const S11C: React.FC<{ t: number }> = ({ t }) => {
@@ -40,7 +40,7 @@ const S11C: React.FC<{ t: number }> = ({ t }) => {
   // the profile
   const prof = sp(t, 33.3, 1.5, 0.78);
   const grow = sp(t, T.strengthen, 1.4, 0.8);
-  const profS = mix(1.6, 2.2, grow), profY = mix(375, 560, grow);
+  const profS = mix(1.6, 2.2, grow), profY = mix(400, 560, grow);
   const profOut = k(t, 35.0, 0.3);
   const counted = FLY_AT.filter((a) => t >= a + 0.34).length;
   const lastLand = Math.max(...FLY_AT.map((a) => (t >= a + 0.34 ? a + 0.34 : 0)));
@@ -66,7 +66,7 @@ const S11C: React.FC<{ t: number }> = ({ t }) => {
         </div>
       )}
       {t >= 30.8 && (
-        <Place x={960} y={tileY} s={tileS * (0.94 + 0.06 * tileO)} o={tileO * tileOut}>
+        <Place t={t} x={960} y={tileY} s={tileS * (0.94 + 0.06 * tileO)} o={tileO * tileOut}>
           <div style={{ position: "relative", boxShadow: SHADOW, borderRadius: 14 }}>
             <BookedTile {...TILE} />
             {stamp > 0 && (
@@ -85,24 +85,24 @@ const S11C: React.FC<{ t: number }> = ({ t }) => {
         const yy = mix(930, baseY - 70 * shift - 40 * 0, c01(q) * 1 + (q - c01(q)));
         const ss = (1.75 * mix(0.45, 1, c01(q))) * (1 - 0.055 * shift);
         const fly = k(t, FLY_AT[2 - i], 0.34, IN);              // the front card (i = 2) goes first
-        const px = mix(960, 960, fly), py = mix(yy, 375, fly);
+        const px = mix(960, 960, fly), py = mix(yy, 400, fly);
         const sfl = ss * mix(1, 0.32, fly);
         const bob = Math.sin(t * 2 + i) * 3;
         return (
-          <Place key={i} x={px} y={py + bob} s={sfl} o={c01(q * 3) * (1 - c01((fly - 0.7) / 0.3)) * (1 - k(t, 34.2, 0.15))} r={(1 - c01(q)) * (i % 2 ? 5 : -5)}>
+          <Place key={i} t={t} x={px} y={py} s={sfl} o={c01(q * 3) * (1 - c01((fly - 0.7) / 0.3)) * (1 - k(t, 34.2, 0.15))} r={(1 - c01(q)) * (i % 2 ? 5 : -5)}>
             <div style={{ boxShadow: SHADOW, borderRadius: 18, position: "relative" }}><RecCard {...r} /><div style={{ position: "absolute", inset: 0, borderRadius: 18, background: `rgba(22,20,19,${0.3 * Math.min(2, shift)})` }} /></div>
           </Place>
         );
       })}
       {/* Javi's profile */}
       {prof > 0 && (
-        <Place x={960} y={profY} s={profS * mix(0.8, 1, c01(prof))} o={c01(prof * 2) * (1 - profOut)}>
+        <Place t={t} x={960} y={profY} s={profS * mix(0.8, 1, c01(prof))} o={c01(prof * 2) * (1 - profOut)}>
           <div style={{ boxShadow: SHADOW, borderRadius: 18 }}><JaviProfile count={counted} pop={pop} lit={lit} /></div>
         </Place>
       )}
       {/* the people list */}
       {listIn > 0 && (
-        <Place x={960} y={LY} s={listS} o={listIn}>
+        <Place t={t} x={960} y={LY} s={listS} o={listIn}>
           <div style={{ boxShadow: SHADOW, borderRadius: 20 }}><PeopleList p={climb} lit={lit} /></div>
         </Place>
       )}
