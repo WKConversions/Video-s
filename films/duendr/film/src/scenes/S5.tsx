@@ -2,9 +2,10 @@
 // with her clip and "Let's collab" pops; the map (S6) grows out of that pill.
 import React from "react";
 import { Media, Rise, C, INOUT, c01, k, sp } from "../kit";
+import { Freeze } from "remotion";
 import { GigCard, PersonRow, Pill, Ico, Person } from "../ui";
 import { Scene } from "./types";
-import { DECK_FROM, DECK_Y, GIGS, GigFace, Seq, deckScale } from "./b2-shared";
+import { DECK_FROM, DECK_Y, GIGS, Seq, deckScale } from "./b2-shared";
 
 export const PEOPLE: Person[] = [
   { name: "Nadia Vega", roles: "Dancer, Choreographer", city: "Málaga", avatar: "img/avatars/nadia.jpg", badge: "founding" },
@@ -27,7 +28,7 @@ const Deck: React.FC<{ t: number }> = ({ t }) => {
         const tr = behind ? `translateY(-50%) translateY(${dd * 34}px) scale(${1 - 0.07 * dd})` : `translateY(-50%) perspective(2400px) rotateX(${fl * 90}deg)`;
         return (
           <div key={i} style={{ position: "absolute", left: 0, top: 0, zIndex: 10 - i, transform: tr, transformOrigin: behind ? "50% 100%" : "50% 0%", opacity: 1 - c01((fl - 0.8) / 0.2) }}>
-            {i === 0 ? <GigFace i={0} /> : <Seq from={DECK_FROM}><GigCard g={GIGS[i]} /></Seq>}
+            <Seq from={DECK_FROM}><Freeze frame={Math.round(([12.0, 12.32, 12.98][i] - DECK_FROM) * 60)} active={fl > 0}><GigCard g={GIGS[i]} /></Freeze></Seq>
             {behind && <div style={{ position: "absolute", inset: 0, borderRadius: 16, background: `rgba(22,20,19,${Math.min(0.7, 0.3 * dd + 0.1)})` }} />}
           </div>
         );

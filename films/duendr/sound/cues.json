@@ -612,7 +612,7 @@
    "note": "the cream grows out"
   },
   {
-   "frame": 2167,
+   "frame": 2165,
    "id": "gen-tick",
    "db": -10,
    "pitch": 0,
@@ -647,7 +647,7 @@
    "note": "the line waves away"
   },
   {
-   "frame": 2222,
+   "frame": 2228,
    "id": "gen-tick",
    "db": -10,
    "pitch": 2,
@@ -682,7 +682,7 @@
    "note": "the line waves away"
   },
   {
-   "frame": 2327,
+   "frame": 2335,
    "id": "gen-tick",
    "db": -10,
    "pitch": 4,
@@ -703,35 +703,42 @@
    "note": "a word"
   },
   {
-   "frame": 2389,
+   "frame": 2399,
    "id": "gen-whoosh-medium",
    "db": -5,
    "pitch": 0,
-   "note": "the push: the circle rolls in"
+   "note": "the push: the circle comes in"
   },
   {
-   "frame": 2401,
+   "frame": 2406,
    "id": "gen-appear",
    "db": -5,
    "pitch": 2,
    "note": "the tile grows, the bar shoots up"
   },
   {
-   "frame": 2406,
+   "frame": 2410,
    "id": "gen-impact-deep",
    "db": -4,
    "pitch": 0,
    "note": "the icon lands on Duendr"
   },
   {
-   "frame": 2437,
+   "frame": 2459,
+   "id": "gen-whoosh-short",
+   "db": -11,
+   "pitch": -2,
+   "note": "the icon shrinks"
+  },
+  {
+   "frame": 2478,
    "id": "gen-whoosh-short",
    "db": -9,
    "pitch": 2,
-   "note": "the wordmark slides out"
+   "note": "the wordmark slides in"
   },
   {
-   "frame": 2465,
+   "frame": 2491,
    "id": "gen-chime",
    "db": -3,
    "pitch": 2,
