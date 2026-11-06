@@ -45,7 +45,7 @@ const S9C: React.FC<{ t: number }> = ({ t }) => {
         return <Place key={p.key} x={mix(x, 960, conv)} y={mix(y, 540, conv)} s={p.s * drift * mix(1, 0.3, conv)} r={p.rot * (1 - c01(q)) + Math.sin(t * 2.2 + p.fx) * 0.8 * (1 - conv)} o={1 - k(t, 26.78, 0.2)}>{p.node}</Place>;
       })}
       {t >= 26.5 && (
-        <Place t={t} amp={3} x={960} y={540 + 30 * ex} s={phS} o={phO}>
+        <Place t={t} x={960} y={540 + 30 * ex} s={phS} o={phO}>
           <Phone>
             <AppHeader />
             <div style={{ padding: "6px 18px 0" }}><Segmented w={408} on={0} /></div>

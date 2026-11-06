@@ -87,7 +87,6 @@ const S11C: React.FC<{ t: number }> = ({ t }) => {
         const fly = k(t, FLY_AT[2 - i], 0.34, IN);              // the front card (i = 2) goes first
         const px = mix(960, 960, fly), py = mix(yy, 400, fly);
         const sfl = ss * mix(1, 0.32, fly);
-        const bob = Math.sin(t * 2 + i) * 3;
         return (
           <Place key={i} t={t} x={px} y={py} s={sfl} o={c01(q * 3) * (1 - c01((fly - 0.7) / 0.3)) * (1 - k(t, 34.2, 0.15))} r={(1 - c01(q)) * (i % 2 ? 5 : -5)}>
             <div style={{ boxShadow: SHADOW, borderRadius: 18, position: "relative" }}><RecCard {...r} /><div style={{ position: "absolute", inset: 0, borderRadius: 18, background: `rgba(22,20,19,${0.3 * Math.min(2, shift)})` }} /></div>

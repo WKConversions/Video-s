@@ -65,7 +65,7 @@ const S3C: React.FC<{ t: number }> = ({ t }) => {
   const sL = seg(nodes[1], nodes[0], nodes[1]), sR = seg(nodes[1], nodes[2], nodes[1]);
   // pulses
   const pulse = (a: { x: number; y: number }, b: { x: number; y: number }, at: number) => { const p = k(t, at, 0.5, INOUT); return p > 0 && p < 1 ? { x: mix(a.x, b.x, p), y: mix(a.y, b.y, p), o: Math.sin(Math.PI * p) } : null; };
-  const pulses = [pulse(nodes[0], nodes[1], 6.9), pulse(nodes[1], nodes[2], 6.98), pulse(nodes[2], nodes[1], 7.2), pulse(nodes[1], nodes[0], 7.28)].filter(Boolean) as { x: number; y: number; o: number }[];
+  const pulses = [pulse(nodes[1], nodes[0], 4.22), pulse(nodes[1], nodes[2], 4.3), pulse(nodes[0], nodes[1], 4.62), pulse(nodes[2], nodes[1], 4.7), pulse(nodes[0], nodes[1], 6.9), pulse(nodes[1], nodes[2], 6.98), pulse(nodes[2], nodes[1], 7.2), pulse(nodes[1], nodes[0], 7.28)].filter(Boolean) as { x: number; y: number; o: number }[];
   // clusters
   const group = (i: number): React.CSSProperties => {
     const p = fl[i]; const [tx, ty] = tgt[i];
@@ -104,6 +104,9 @@ const S3C: React.FC<{ t: number }> = ({ t }) => {
         </svg>
       )}
       {pulses.map((p, n) => <div key={n} style={{ position: "absolute", left: 0, top: 0, width: 22, height: 22, marginLeft: -11, marginTop: -11, borderRadius: 11, background: C.cream, opacity: p.o, boxShadow: "0 0 18px 4px rgba(226,90,61,0.8)", transform: `translate(${p.x}px, ${p.y}px)` }} />)}
+      {/* ripples around the nodes, and a light running along the coast */}
+      {t > 4.35 && t < 7.7 && [0, 1, 2].map((i) => { const ph = (((t - 4.35 + i * 0.3) / 1.0) % 1 + 1) % 1; const f = 1 - fl[i]; return <div key={i} style={{ position: "absolute", left: 0, top: 0, width: 2 * nodes[i].r, height: 2 * nodes[i].r, marginLeft: -nodes[i].r, marginTop: -nodes[i].r, borderRadius: "50%", border: "2px solid rgba(226,90,61,0.9)", opacity: (1 - ph) * 0.7 * f, transform: `translate(${nodes[i].x}px, ${nodes[i].y}px) scale(${1 + ph * 2.2})` }} />; })}
+      {cpts.length > 3 && t > 7.9 && t < 8.45 && (() => { const q = c01((t - 7.9) / 0.5); const idx = Math.min(cpts.length - 1, Math.floor(q * (cpts.length - 1))); return <div style={{ position: "absolute", left: 0, top: 0, width: 26, height: 26, marginLeft: -13, marginTop: -13, borderRadius: 13, background: C.cream, boxShadow: "0 0 22px 6px rgba(226,90,61,0.8)", opacity: Math.sin(Math.PI * q) * coastO, transform: `translate(${cpts[idx][0]}px, ${cpts[idx][1]}px)` }} />; })()}
       {/* clusters */}
       {clusterOn(0) && <div style={group(0)}>
         <Bloom t={t} i={0} yc={CY - 154 * ZS} h={140} j={0}><CreativeCard name="Javi Ortega" roles="DJ, Producer" city="Marbella" clip="clips/dj-hands.mp4" initials="JO" avail="Weekends" /></Bloom>

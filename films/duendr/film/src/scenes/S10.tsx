@@ -43,7 +43,7 @@ const S10C: React.FC<{ t: number }> = ({ t }) => {
       {/* the wallet card */}
       <Place t={t} x={960} y={cy} s={cs * (1 + 0.02 * cardIn)} o={cardIn * (1 - exit)}><div style={{ boxShadow: "0 0 30px rgba(0,0,0,0.4)", borderRadius: 18 }}><Wallet strike={k(t, 30.05, 0.4, OUT)} show={k(t, 29.6, 0.3)} /></div></Place>
       {/* the fee */}
-      <Place t={t} amp={4} x={gx} y={gy} s={gs * (em < 1 ? mix(0.25, 1, c01(em)) : 1) * (fl > 0 ? 1 : 1) * drift} o={gO * (1 - exit)}>
+      <Place t={t} x={gx} y={gy} s={gs * (em < 1 ? mix(0.25, 1, c01(em)) : 1) * (fl > 0 ? 1 : 1) * drift} o={gO * (1 - exit)}>
         <div style={{ fontFamily: SANS, fontWeight: 900, fontSize: GS, color: C.cream, letterSpacing: "-0.045em", lineHeight: 1, whiteSpace: "nowrap" }}>€280</div>
       </Place>
       {/* 0% commission */}

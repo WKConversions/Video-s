@@ -7,8 +7,8 @@ import { Avatar, Badge, Ico, PersonRow } from "../ui";
 export const F = (size: number, weight = 500, color: string = C.cream, extra: React.CSSProperties = {}): React.CSSProperties => ({ fontFamily: SANS, fontSize: size, fontWeight: weight, color, letterSpacing: "-0.01em", ...extra });
 
 /** centres its child on (x, y) in the frame, scaled and rotated about its centre */
-export const Place: React.FC<{ x: number; y: number; s?: number; r?: number; o?: number; t?: number; amp?: number; children?: React.ReactNode }> = ({ x, y, s = 1, r = 0, o = 1, t, amp = 5, children }) => {
-  if (t !== undefined) { y += Math.sin(t * 2.7 + x * 0.01) * amp; s *= 1 + 0.006 * Math.sin(t * 1.9); }
+export const Place: React.FC<{ x: number; y: number; s?: number; r?: number; o?: number; t?: number; amp?: number; children?: React.ReactNode }> = ({ x, y, s = 1, r = 0, o = 1, t, amp = 0, children }) => {
+  if (t !== undefined) { y += Math.sin(t * 1.3 + x * 0.01) * amp; s *= 1 + 0.014 * Math.sin(t * 1.1); }
   if (o <= 0.003 || s <= 0.001) return null;
   return (
     <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${x}px, ${y}px)` }}>
