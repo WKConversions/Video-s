@@ -62,8 +62,8 @@ for i, t in enumerate([45.22, 45.32, 45.42, 45.52, 45.62, 45.72]): a(t, "ui-clic
 a(46.50, "smooth-pop", -5, 2, "every offer")
 a(47.42, "high-click", -6, 0, "the logo: home")
 a(47.60, "ui-premium-open", -8, 0, "the platform at rest")
-json.dump({"fps": 60, "frames": 2988, "library": "lib-karl",
-           "vo": {"file": "../vo/vo.mp3", "at": 0.4, "compress": True},
+json.dump({"fps": 60, "frames": 3660, "library": "lib-karl",
+           "vo": {"file": "../vo/vo_paced.mp3", "at": 0.4, "compress": True},
            "music": {"file": "bed.wav", "at": 0, "lufs": -31, "duck_db": 5, "fade_in": 0.05, "fade_out": 1.0},
            "sfx": fx}, open("cues.json", "w"), indent=1)
 print(len(fx), "cues")

@@ -145,3 +145,40 @@ Each scene file exports `export const S4: Scene = { id, t0, t1, C }`. Hand-offs:
    about the original studio's motion design, video, Málaga/UFM/Luma/Brevo, its real prices other than the €400/€450 example, its
    revenue), no WKC, no Karl, no settings screen. Every readable example text is the custom content above.
 4. Report per scene what you built, the motion line, SHAKE, and anything not done.
+
+## Revision 1 (Karl, 7 Nov): sentence by sentence, slower, clearer
+Karl: "it is sometimes a bit hasty; the click moments and what you visualise are not smooth and clear; it is too fast to sync with the
+voice-over. Put some space in the voice-over so the animation can finish, then the voice-over continues. Sentence by sentence; clearer."
+
+- The VO now has a pause after every sentence (`vo/vo_paced.mp3`; `src/words.json` holds the new word times, so `w()` gives the new
+  times). The film is 61.0 s. NEVER hard-code a VO time: key every event to `w()`/`we()` (or to the end of a sentence + an offset).
+- New film times (VO start of each sentence → its last word): S1 "Meet your intelligence platform." 0.40-1.54 · "Everything about how
+  your company works, in one place." 3.00-5.58 (ends ~6.0) · S2 "The knowledge base covers every department, from sales (10.06) and
+  marketing (10.52) to operations (11.22) and finance (12.10)." 7.52-12.10 (ends ~12.6) · S3 "Each starts with one strategy document
+  (14.94-15.68), followed by how you work (17.00-17.50) and detailed playbooks (18.48)." 14.08-18.48 (ends ~18.9) · S4 "Need something to
+  change?" 20.42-21.10 · "Open (22.18) Strategy (22.50) and just tell the agent (23.50-23.90), like: Raise (24.76) … euros (27.70)."
+  (ends ~28.1) · S5 "It suggests (29.90) the exact edit (30.62-31.10)." · S6 "You approve (32.82)." (ends ~33.2) · S7 "Every related
+  document (34.48-35.14) updates (35.66) to match (36.30), ready for your review (36.88-37.56)." (ends ~38.0) · S8 "Had a client call?"
+  39.66-40.14 · "Paste (41.38) the transcript (41.76) into Offer (42.52)." (ends ~43.0) · S9 "It pulls out what matters (44.36-45.12),
+  needs (45.90), budget (46.64) and timeline (47.12)," (ends ~47.6) · S10 "and writes a tailored offer (48.74-49.70) from your own prices
+  (50.74) and process (51.34), in minutes (52.30)." (ends ~52.8) · S11 "One source of truth (54.34-55.02), always in sync (55.76-56.28),
+  and every offer on point (57.06-58.18)." then the home screen at rest to 61.0.
+- New windows: B1 S1 0-6.8, S2 6.6-13.6, S3 13.4-20.2 (H1 at 20.2: screen 06, nothing lifted, Cam {1280, 600, 1.0}, no cursor).
+  B2 S4 20.0-29.4, S5 29.2-32.4, S6 32.2-34.2, S7 34.0-39.4 (H2 at 39.4: screen 34, nothing lifted, Cam {1280, 600, 1.0}, no cursor).
+  B3 S8 39.2-44.0, S9 43.8-48.4, S10 48.2-54.0, S11 53.8-61.0.
+- The rules of this revision:
+  1. Sentence by sentence: a sentence's visuals happen while it is spoken and FINISH in the pause after it; the next sentence's visual
+     starts with that sentence, never earlier than 0.2 s before it.
+  2. Clicks are slow and clear: the cursor glides 0.6-0.9 s (INOUT, no spring overshoot) to its target, rests 0.15 s, the target shows
+     a hover state (a slight highlight), the press is visible (a 0.12 s squeeze, 0.2 s release, a soft ripple), and the app responds
+     0.15-0.25 s after the release. Clicks sit in the pauses, except where the VO names the action ("Open Strategy", "approve", "Paste").
+  3. Screen changes: one soft 0.45-0.5 s dissolve after the click, with the camera STILL during the dissolve (no reframe while two
+     screens overlap).
+  4. Lifts: rise 0.5-0.6 s on a spring without wobble (z >= 0.85), hold at least 1.0 s (only a slow breath), settle back in 0.4 s. One
+     lifted thing at a time; the next lift starts after the previous one has settled.
+  5. Camera: one framing per sentence; reframe only in a pause (1.0-1.2 s, INOUT), never during a click, a dissolve or a lift. Fewer
+     camera moves over text-heavy screens (they shimmer).
+  6. Typing and pasting at a readable pace.
+  7. Known weak spots to fix: the opening (0-2.5 s was almost empty: let the home screen build in on "Meet your intelligence platform",
+     then the three cards on "how your company works", settled on "one place"); the layer-1 moment (the Strategy block lifted as a thin
+     bar: lift the whole Strategy block with its "Layer 1" label and row, bigger and centred).

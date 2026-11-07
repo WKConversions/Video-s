@@ -8,7 +8,7 @@ import { loadFont } from "@remotion/fonts";
 import WORDS_RAW from "./words.json";
 
 // ------------------------------------------------------------------ clock
-export const FPS = 60, VO = 0.4, DUR = 49.8, W = 1920, H = 1080, CX = 960, CY = 540;
+export const FPS = 60, VO = 0.4, DUR = 61.0, W = 1920, H = 1080, CX = 960, CY = 540;
 type Word = { word: string; start: number; end: number };
 const WORDS = (WORDS_RAW as { words: Word[] }).words;
 const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9']/g, "");

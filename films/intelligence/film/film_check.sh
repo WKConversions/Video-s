@@ -13,7 +13,7 @@ python3 -I - <<'PY'
 import cv2, json
 from PIL import Image, ImageDraw
 cap = cv2.VideoCapture("out/film540.mp4")
-SPANS = [(0, 6), (5.5, 12), (11.5, 18), (17.5, 24), (23.5, 30), (29.5, 36), (35.5, 42), (41.5, 49.8)]
+SPANS = [(0, 7), (6.5, 14), (13.5, 21), (20.5, 28), (27.5, 34.5), (34, 41), (40.5, 48), (47.5, 55), (54.5, 61)]
 for a, b in SPANS:
     ts = [a + 0.25 * i for i in range(int((b - a) / 0.25) + 1)]; W, H = 480, 270; cols = 6; rows = (len(ts) + cols - 1) // cols
     sh = Image.new("RGB", (cols * W, rows * (H + 16)), "black"); d = ImageDraw.Draw(sh)
