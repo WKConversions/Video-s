@@ -28,15 +28,15 @@ a(7.74, "meadia-pop", -8, 0, "the coast lights up")
 a(8.76, "smooth-pop", -5, 0, "the dot becomes Lucía's avatar")
 a(9.00, "smooth-cammera-shutter", -4, 0, "her first work tile: a photographer's shot")
 for i, t in enumerate([9.30, 9.60]): a(t, "smooth-pop", -6, 2 + 2 * i, "a work tile springs in")
-a(10.08, "sweet-ui-open", -5, 0, "the new-post sheet opens")
-a(10.14, "high-click", -4, 0, "I'm available pressed")
-a(10.64, "premium-and-smooth-pop", -5, 2, "the AVAILABLE pill")
-for i, t in enumerate([10.84, 10.94, 11.04]): a(t, "ui-click-digital-04", -10, 3 + 2 * i, "a day lights up")
-# S5 gigs, collaborators
-for i, t in enumerate([12.00, 12.32, 12.98]): a(t, "ui-click-digital-03", -8, i, "a gig card flips")
-a(13.06, "sweet-ui-open", -6, 0, "the people list")
-a(13.40, "smooth-pop", -5, 2, "a collaborator opens")
-a(14.00, "premium-and-smooth-pop", -5, 4, "Let's collab")
+a(10.02, "sweet-ui-open", -5, 0, "her Available post rises")
+a(10.38, "smooth-pop", -5, 2, "the post lands: Available this weekend")
+for i, t in enumerate([10.62, 10.76, 10.90]): a(t, "ui-click-digital-04", -8, 3 + 2 * i, "a day lights up")
+# S5 gigs, collaborators (calmer: three held states)
+a(11.62, "sweet-ui-open", -6, -2, "the gig cards rise as a fan")
+a(12.30, "normal-pop", -4, 0, "the fan lands on gigs")
+a(13.08, "sweet-ui-open", -6, 2, "Nadia's card rises")
+a(13.38, "smooth-pop", -4, 2, "a collaborator lands")
+a(13.85, "premium-and-smooth-pop", -4, 4, "Let's collab")
 # S6 the map
 a(14.42, "slow-and-smooth-whoosh", -12, 0, "the globe grows out of the pill")
 for i, t in enumerate([14.52, 14.64, 14.76, 14.88, 15.00, 15.12, 15.24, 15.36, 15.48, 15.58, 15.70]): a(t, "smooth-pop", -10, (i % 6) * 2, "a pin lands")
@@ -81,7 +81,7 @@ a(41.52, "smooth-pop", -4, 5, "the dot")
 
 # Karl's Apple UI sounds: when his folder is in the library (ids from the skill's catalogue), these cues switch to them
 APPLE = {"Connect pressed": "charge-connection", "a chat bubble": "message", "Post pressed": "send", "the post types": "one-keyboard-click",
-         "I'm available pressed": "one-keyboard-click", "a pin lands": "pop", "the AVAILABLE pill": "double-bubble-pop",
+         "a pin lands": "pop", "the post lands: Available this weekend": "double-bubble-pop",
          "Confirm booking": "one-keyboard-click", "everything lands in the app": "turn-off-phone", "a recommendation rises": "message"}
 have = {x["id"] for x in json.load(open(os.path.join(LIB, "sfx", "index.json")))}
 for c in fx:

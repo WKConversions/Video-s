@@ -58,7 +58,7 @@ export const PanelB: React.FC<{ t: number }> = ({ t }) => (
     <div style={{ position: "absolute", left: 20, top: 124, ...F(14, 500, C.muted) }}>Photographer, Model +1 · Málaga</div>
     <div style={{ position: "absolute", left: 25, top: 160, display: "flex", gap: 5 }}>
       {DAYS.map(([d, n], i) => {
-        const lit = i >= 4 ? k(t, 10.84 + (i - 4) * 0.1, 0.18) : 0; const pop = i >= 4 ? 1 + 0.14 * Math.sin(Math.PI * c01((t - 10.84 - (i - 4) * 0.1) / 0.3)) : 1;
+        const lit = i >= 4 ? k(t, 10.62 + (i - 4) * 0.14, 0.22) : 0; const pop = i >= 4 ? 1 + 0.14 * Math.sin(Math.PI * c01((t - 10.62 - (i - 4) * 0.14) / 0.4)) : 1;
         return <div key={d} style={{ width: 52, height: 72, borderRadius: 14, background: lerpHex(C.card2, C.coral, lit), border: `1px solid ${lerpHex(C.border, C.coral, lit)}`, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 2, transform: `scale(${pop})` }}>
           <span style={F(12, 600, lerpHex(C.muted, C.cream, lit))}>{d}</span><span style={F(22, 800)}>{n}</span></div>;
       })}

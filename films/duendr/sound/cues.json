@@ -157,86 +157,72 @@
    "note": "a work tile springs in"
   },
   {
-   "frame": 605,
+   "frame": 601,
    "id": "sweet-ui-open",
    "db": -5,
    "pitch": 0,
-   "note": "the new-post sheet opens"
+   "note": "her Available post rises"
   },
   {
-   "frame": 608,
-   "id": "high-click",
-   "db": -4,
-   "pitch": 0,
-   "note": "I'm available pressed"
-  },
-  {
-   "frame": 638,
-   "id": "premium-and-smooth-pop",
+   "frame": 623,
+   "id": "smooth-pop",
    "db": -5,
    "pitch": 2,
-   "note": "the AVAILABLE pill"
+   "note": "the post lands: Available this weekend"
   },
   {
-   "frame": 650,
+   "frame": 637,
    "id": "ui-click-digital-04",
-   "db": -10,
+   "db": -8,
    "pitch": 3,
    "note": "a day lights up"
   },
   {
-   "frame": 656,
+   "frame": 646,
    "id": "ui-click-digital-04",
-   "db": -10,
+   "db": -8,
    "pitch": 5,
    "note": "a day lights up"
   },
   {
-   "frame": 662,
+   "frame": 654,
    "id": "ui-click-digital-04",
-   "db": -10,
+   "db": -8,
    "pitch": 7,
    "note": "a day lights up"
   },
   {
-   "frame": 720,
-   "id": "ui-click-digital-03",
-   "db": -8,
-   "pitch": 0,
-   "note": "a gig card flips"
-  },
-  {
-   "frame": 739,
-   "id": "ui-click-digital-03",
-   "db": -8,
-   "pitch": 1,
-   "note": "a gig card flips"
-  },
-  {
-   "frame": 779,
-   "id": "ui-click-digital-03",
-   "db": -8,
-   "pitch": 2,
-   "note": "a gig card flips"
-  },
-  {
-   "frame": 784,
+   "frame": 697,
    "id": "sweet-ui-open",
    "db": -6,
+   "pitch": -2,
+   "note": "the gig cards rise as a fan"
+  },
+  {
+   "frame": 738,
+   "id": "normal-pop",
+   "db": -4,
    "pitch": 0,
-   "note": "the people list"
+   "note": "the fan lands on gigs"
   },
   {
-   "frame": 804,
-   "id": "smooth-pop",
-   "db": -5,
+   "frame": 785,
+   "id": "sweet-ui-open",
+   "db": -6,
    "pitch": 2,
-   "note": "a collaborator opens"
+   "note": "Nadia's card rises"
   },
   {
-   "frame": 840,
+   "frame": 803,
+   "id": "smooth-pop",
+   "db": -4,
+   "pitch": 2,
+   "note": "a collaborator lands"
+  },
+  {
+   "frame": 831,
    "id": "premium-and-smooth-pop",
-   "db": -5,
+   "db": -4,
    "pitch": 4,
    "note": "Let's collab"
   },
