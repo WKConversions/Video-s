@@ -19,23 +19,26 @@ a(12.64, "premium-and-smooth-pop", -4, 0, "the strategy document lifts: layer 1"
 a(14.70, "smooth-pop", -5, 2, "how we work lifts: layer 2")
 a(16.18, "smooth-pop", -5, 4, "the playbooks lift: layer 3")
 # S4 tell the agent
-a(18.80, "high-click", -4, 0, "Strategy tab clicked")
-a(19.40, "high-click", -6, 2, "Sales strategy opened")
-a(20.10, "ui-open", -7, 0, "the agent panel lifts")
+a(18.70, "high-click", -4, 0, "Strategy tab clicked")
+a(19.60, "high-click", -6, 2, "Sales strategy opened")
+a(20.00, "ui-open", -7, 0, "the agent panel lifts")
 for i, t in enumerate([21.30, 21.55, 21.95, 22.20, 22.50, 22.90, 23.20, 23.50, 23.90]): a(t, "v4-type-delete", -11, (i % 3) - 1, "a key")
 a(24.40, "ui-enter", -4, 0, "Send")
 # S5 the suggestion
 a(25.40, "sweet-ui-open", -5, 0, "the agent's suggestion appears")
 a(26.12, "smooth-pop", -4, 3, "the exact edit lifts")
-a(26.60, "cinematic-click", -6, 0, "€400 struck, €450 in")
+a(26.30, "cinematic-click", -6, 0, "€400 struck")
+a(26.50, "smooth-pop", -7, 5, "€450 in")
 # S6 approve
 a(27.52, "ui-button", -2, 0, "Approve pressed")
 a(27.60, "premium-and-smooth-pop", -5, 2, "strategy updated")
 # S7 every document follows
 a(28.38, "ui-open", -8, 0, "updating 15 related documents")
-for i, t in enumerate([28.80, 28.95, 29.10, 29.25, 29.40, 29.55]): a(t, "ui-click-digital-04", -12, i, "a document ticks past")
+for i, t in enumerate([29.04, 29.14, 29.24, 29.34, 29.44, 29.54]): a(t, "ui-click-digital-04", -12, i, "a document ticks past")
 a(30.20, "premium-and-smooth-pop", -4, 0, "4 documents updated")
 a(30.80, "sweet-ui-open", -6, 2, "ready for your review")
+a(31.28, "smooth-pop", -5, 3, "the Pricing change lifts")
+a(31.80, "ui-button", -4, 0, "Approve all")
 # S8 paste the transcript
 a(32.64, "high-click", -4, 0, "Offer tab clicked")
 a(33.58, "sweet-ui-open", -5, 0, "the transcript box lifts")

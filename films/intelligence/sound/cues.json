@@ -1,0 +1,531 @@
+{
+ "fps": 60,
+ "frames": 2988,
+ "library": "lib-karl",
+ "vo": {
+  "file": "../vo/vo.mp3",
+  "at": 0.4,
+  "compress": true
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "lufs": -31,
+  "duck_db": 5,
+  "fade_in": 0.05,
+  "fade_out": 1.0
+ },
+ "sfx": [
+  {
+   "frame": 18,
+   "id": "ui-open",
+   "db": -8,
+   "pitch": 0,
+   "note": "the home screen assembles"
+  },
+  {
+   "frame": 162,
+   "id": "smooth-pop",
+   "db": -5,
+   "pitch": 0,
+   "note": "a place springs up"
+  },
+  {
+   "frame": 204,
+   "id": "smooth-pop",
+   "db": -5,
+   "pitch": 2,
+   "note": "a place springs up"
+  },
+  {
+   "frame": 246,
+   "id": "smooth-pop",
+   "db": -5,
+   "pitch": 4,
+   "note": "a place springs up"
+  },
+  {
+   "frame": 372,
+   "id": "high-click",
+   "db": -4,
+   "pitch": 0,
+   "note": "Knowledge base clicked"
+  },
+  {
+   "frame": 378,
+   "id": "sweet-ui-open",
+   "db": -7,
+   "pitch": 0,
+   "note": "the knowledge base opens"
+  },
+  {
+   "frame": 526,
+   "id": "ui-click-digital-04",
+   "db": -7,
+   "pitch": 0,
+   "note": "a department lifts"
+  },
+  {
+   "frame": 553,
+   "id": "ui-click-digital-04",
+   "db": -7,
+   "pitch": 2,
+   "note": "a department lifts"
+  },
+  {
+   "frame": 595,
+   "id": "ui-click-digital-04",
+   "db": -7,
+   "pitch": 4,
+   "note": "a department lifts"
+  },
+  {
+   "frame": 648,
+   "id": "ui-click-digital-04",
+   "db": -7,
+   "pitch": 6,
+   "note": "a department lifts"
+  },
+  {
+   "frame": 708,
+   "id": "high-click",
+   "db": -4,
+   "pitch": 0,
+   "note": "Sales clicked"
+  },
+  {
+   "frame": 758,
+   "id": "premium-and-smooth-pop",
+   "db": -4,
+   "pitch": 0,
+   "note": "the strategy document lifts: layer 1"
+  },
+  {
+   "frame": 882,
+   "id": "smooth-pop",
+   "db": -5,
+   "pitch": 2,
+   "note": "how we work lifts: layer 2"
+  },
+  {
+   "frame": 971,
+   "id": "smooth-pop",
+   "db": -5,
+   "pitch": 4,
+   "note": "the playbooks lift: layer 3"
+  },
+  {
+   "frame": 1122,
+   "id": "high-click",
+   "db": -4,
+   "pitch": 0,
+   "note": "Strategy tab clicked"
+  },
+  {
+   "frame": 1176,
+   "id": "high-click",
+   "db": -6,
+   "pitch": 2,
+   "note": "Sales strategy opened"
+  },
+  {
+   "frame": 1200,
+   "id": "ui-open",
+   "db": -7,
+   "pitch": 0,
+   "note": "the agent panel lifts"
+  },
+  {
+   "frame": 1278,
+   "id": "v4-type-delete",
+   "db": -11,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 1293,
+   "id": "v4-type-delete",
+   "db": -11,
+   "pitch": 0,
+   "note": "a key"
+  },
+  {
+   "frame": 1317,
+   "id": "v4-type-delete",
+   "db": -11,
+   "pitch": 1,
+   "note": "a key"
+  },
+  {
+   "frame": 1332,
+   "id": "v4-type-delete",
+   "db": -11,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 1350,
+   "id": "v4-type-delete",
+   "db": -11,
+   "pitch": 0,
+   "note": "a key"
+  },
+  {
+   "frame": 1374,
+   "id": "v4-type-delete",
+   "db": -11,
+   "pitch": 1,
+   "note": "a key"
+  },
+  {
+   "frame": 1392,
+   "id": "v4-type-delete",
+   "db": -11,
+   "pitch": -1,
+   "note": "a key"
+  },
+  {
+   "frame": 1410,
+   "id": "v4-type-delete",
+   "db": -11,
+   "pitch": 0,
+   "note": "a key"
+  },
+  {
+   "frame": 1434,
+   "id": "v4-type-delete",
+   "db": -11,
+   "pitch": 1,
+   "note": "a key"
+  },
+  {
+   "frame": 1464,
+   "id": "ui-enter",
+   "db": -4,
+   "pitch": 0,
+   "note": "Send"
+  },
+  {
+   "frame": 1524,
+   "id": "sweet-ui-open",
+   "db": -5,
+   "pitch": 0,
+   "note": "the agent's suggestion appears"
+  },
+  {
+   "frame": 1567,
+   "id": "smooth-pop",
+   "db": -4,
+   "pitch": 3,
+   "note": "the exact edit lifts"
+  },
+  {
+   "frame": 1578,
+   "id": "cinematic-click",
+   "db": -6,
+   "pitch": 0,
+   "note": "\u20ac400 struck"
+  },
+  {
+   "frame": 1590,
+   "id": "smooth-pop",
+   "db": -7,
+   "pitch": 5,
+   "note": "\u20ac450 in"
+  },
+  {
+   "frame": 1651,
+   "id": "ui-button",
+   "db": -2,
+   "pitch": 0,
+   "note": "Approve pressed"
+  },
+  {
+   "frame": 1656,
+   "id": "premium-and-smooth-pop",
+   "db": -5,
+   "pitch": 2,
+   "note": "strategy updated"
+  },
+  {
+   "frame": 1703,
+   "id": "ui-open",
+   "db": -8,
+   "pitch": 0,
+   "note": "updating 15 related documents"
+  },
+  {
+   "frame": 1742,
+   "id": "ui-click-digital-04",
+   "db": -12,
+   "pitch": 0,
+   "note": "a document ticks past"
+  },
+  {
+   "frame": 1748,
+   "id": "ui-click-digital-04",
+   "db": -12,
+   "pitch": 1,
+   "note": "a document ticks past"
+  },
+  {
+   "frame": 1754,
+   "id": "ui-click-digital-04",
+   "db": -12,
+   "pitch": 2,
+   "note": "a document ticks past"
+  },
+  {
+   "frame": 1760,
+   "id": "ui-click-digital-04",
+   "db": -12,
+   "pitch": 3,
+   "note": "a document ticks past"
+  },
+  {
+   "frame": 1766,
+   "id": "ui-click-digital-04",
+   "db": -12,
+   "pitch": 4,
+   "note": "a document ticks past"
+  },
+  {
+   "frame": 1772,
+   "id": "ui-click-digital-04",
+   "db": -12,
+   "pitch": 5,
+   "note": "a document ticks past"
+  },
+  {
+   "frame": 1812,
+   "id": "premium-and-smooth-pop",
+   "db": -4,
+   "pitch": 0,
+   "note": "4 documents updated"
+  },
+  {
+   "frame": 1848,
+   "id": "sweet-ui-open",
+   "db": -6,
+   "pitch": 2,
+   "note": "ready for your review"
+  },
+  {
+   "frame": 1877,
+   "id": "smooth-pop",
+   "db": -5,
+   "pitch": 3,
+   "note": "the Pricing change lifts"
+  },
+  {
+   "frame": 1908,
+   "id": "ui-button",
+   "db": -4,
+   "pitch": 0,
+   "note": "Approve all"
+  },
+  {
+   "frame": 1958,
+   "id": "high-click",
+   "db": -4,
+   "pitch": 0,
+   "note": "Offer tab clicked"
+  },
+  {
+   "frame": 2015,
+   "id": "sweet-ui-open",
+   "db": -5,
+   "pitch": 0,
+   "note": "the transcript box lifts"
+  },
+  {
+   "frame": 2024,
+   "id": "v4-type-delete",
+   "db": -10,
+   "pitch": 0,
+   "note": "a transcript line lands"
+  },
+  {
+   "frame": 2036,
+   "id": "v4-type-delete",
+   "db": -10,
+   "pitch": 1,
+   "note": "a transcript line lands"
+  },
+  {
+   "frame": 2048,
+   "id": "v4-type-delete",
+   "db": -10,
+   "pitch": 2,
+   "note": "a transcript line lands"
+  },
+  {
+   "frame": 2060,
+   "id": "v4-type-delete",
+   "db": -10,
+   "pitch": 3,
+   "note": "a transcript line lands"
+  },
+  {
+   "frame": 2083,
+   "id": "ui-enter",
+   "db": -4,
+   "pitch": 0,
+   "note": "Read transcript"
+  },
+  {
+   "frame": 2136,
+   "id": "ui-open",
+   "db": -9,
+   "pitch": 0,
+   "note": "reading the transcript"
+  },
+  {
+   "frame": 2160,
+   "id": "sweet-ui-open",
+   "db": -5,
+   "pitch": 0,
+   "note": "here's what I took from it"
+  },
+  {
+   "frame": 2226,
+   "id": "smooth-pop",
+   "db": -4,
+   "pitch": 0,
+   "note": "a card lifts"
+  },
+  {
+   "frame": 2270,
+   "id": "smooth-pop",
+   "db": -4,
+   "pitch": 2,
+   "note": "a card lifts"
+  },
+  {
+   "frame": 2299,
+   "id": "smooth-pop",
+   "db": -4,
+   "pitch": 4,
+   "note": "a card lifts"
+  },
+  {
+   "frame": 2346,
+   "id": "high-click",
+   "db": -4,
+   "pitch": 0,
+   "note": "Make an offer"
+  },
+  {
+   "frame": 2406,
+   "id": "premium-and-smooth-pop",
+   "db": -3,
+   "pitch": 0,
+   "note": "the offer is ready"
+  },
+  {
+   "frame": 2468,
+   "id": "smooth-pop",
+   "db": -5,
+   "pitch": 3,
+   "note": "the price table lifts"
+  },
+  {
+   "frame": 2504,
+   "id": "sweet-ui-open",
+   "db": -6,
+   "pitch": 0,
+   "note": "terms and next step"
+  },
+  {
+   "frame": 2573,
+   "id": "high-click",
+   "db": -4,
+   "pitch": 2,
+   "note": "Copy"
+  },
+  {
+   "frame": 2604,
+   "id": "high-click",
+   "db": -6,
+   "pitch": 0,
+   "note": "Strategy clicked"
+  },
+  {
+   "frame": 2635,
+   "id": "premium-and-smooth-pop",
+   "db": -5,
+   "pitch": -2,
+   "note": "the strategy: the source"
+  },
+  {
+   "frame": 2695,
+   "id": "high-click",
+   "db": -6,
+   "pitch": 2,
+   "note": "knowledge base"
+  },
+  {
+   "frame": 2713,
+   "id": "ui-click-digital-04",
+   "db": -11,
+   "pitch": 0,
+   "note": "the departments ripple"
+  },
+  {
+   "frame": 2719,
+   "id": "ui-click-digital-04",
+   "db": -11,
+   "pitch": 2,
+   "note": "the departments ripple"
+  },
+  {
+   "frame": 2725,
+   "id": "ui-click-digital-04",
+   "db": -11,
+   "pitch": 4,
+   "note": "the departments ripple"
+  },
+  {
+   "frame": 2731,
+   "id": "ui-click-digital-04",
+   "db": -11,
+   "pitch": 6,
+   "note": "the departments ripple"
+  },
+  {
+   "frame": 2737,
+   "id": "ui-click-digital-04",
+   "db": -11,
+   "pitch": 8,
+   "note": "the departments ripple"
+  },
+  {
+   "frame": 2743,
+   "id": "ui-click-digital-04",
+   "db": -11,
+   "pitch": 10,
+   "note": "the departments ripple"
+  },
+  {
+   "frame": 2790,
+   "id": "smooth-pop",
+   "db": -5,
+   "pitch": 2,
+   "note": "every offer"
+  },
+  {
+   "frame": 2845,
+   "id": "high-click",
+   "db": -6,
+   "pitch": 0,
+   "note": "the logo: home"
+  },
+  {
+   "frame": 2856,
+   "id": "ui-premium-open",
+   "db": -8,
+   "pitch": 0,
+   "note": "the platform at rest"
+  }
+ ]
+}
