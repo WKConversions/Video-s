@@ -1,0 +1,745 @@
+{
+ "source": "vo.mp3",
+ "model": "medium",
+ "duration": 47.647375,
+ "words": [
+  {
+   "word": "Meet",
+   "start": 0.0,
+   "end": 0.4,
+   "p": 0.98
+  },
+  {
+   "word": "your",
+   "start": 0.4,
+   "end": 0.66,
+   "p": 0.988
+  },
+  {
+   "word": "intelligence",
+   "start": 0.66,
+   "end": 1.14,
+   "p": 0.739
+  },
+  {
+   "word": "platform.",
+   "start": 1.14,
+   "end": 1.72,
+   "p": 0.999
+  },
+  {
+   "word": "Everything",
+   "start": 2.3,
+   "end": 2.72,
+   "p": 0.987
+  },
+  {
+   "word": "about",
+   "start": 2.72,
+   "end": 3.02,
+   "p": 0.999
+  },
+  {
+   "word": "how",
+   "start": 3.02,
+   "end": 3.26,
+   "p": 0.994
+  },
+  {
+   "word": "your",
+   "start": 3.26,
+   "end": 3.42,
+   "p": 0.998
+  },
+  {
+   "word": "company",
+   "start": 3.42,
+   "end": 3.72,
+   "p": 0.999
+  },
+  {
+   "word": "works,",
+   "start": 3.72,
+   "end": 4.14,
+   "p": 0.999
+  },
+  {
+   "word": "in",
+   "start": 4.44,
+   "end": 4.62,
+   "p": 0.994
+  },
+  {
+   "word": "one",
+   "start": 4.62,
+   "end": 4.88,
+   "p": 0.989
+  },
+  {
+   "word": "place.",
+   "start": 4.88,
+   "end": 5.28,
+   "p": 0.999
+  },
+  {
+   "word": "The",
+   "start": 5.82,
+   "end": 6.04,
+   "p": 0.997
+  },
+  {
+   "word": "knowledge",
+   "start": 6.04,
+   "end": 6.28,
+   "p": 0.745
+  },
+  {
+   "word": "base",
+   "start": 6.28,
+   "end": 6.52,
+   "p": 0.955
+  },
+  {
+   "word": "covers",
+   "start": 6.52,
+   "end": 6.88,
+   "p": 0.997
+  },
+  {
+   "word": "every",
+   "start": 6.88,
+   "end": 7.34,
+   "p": 0.997
+  },
+  {
+   "word": "department,",
+   "start": 7.34,
+   "end": 7.84,
+   "p": 0.996
+  },
+  {
+   "word": "from",
+   "start": 8.18,
+   "end": 8.36,
+   "p": 0.995
+  },
+  {
+   "word": "sales",
+   "start": 8.36,
+   "end": 8.64,
+   "p": 0.956
+  },
+  {
+   "word": "and",
+   "start": 8.64,
+   "end": 8.82,
+   "p": 0.966
+  },
+  {
+   "word": "marketing",
+   "start": 8.82,
+   "end": 9.2,
+   "p": 0.999
+  },
+  {
+   "word": "to",
+   "start": 9.2,
+   "end": 9.52,
+   "p": 0.001
+  },
+  {
+   "word": "operations",
+   "start": 9.52,
+   "end": 10.14,
+   "p": 0.989
+  },
+  {
+   "word": "and",
+   "start": 10.14,
+   "end": 10.4,
+   "p": 0.976
+  },
+  {
+   "word": "finance.",
+   "start": 10.4,
+   "end": 10.9,
+   "p": 0.998
+  },
+  {
+   "word": "Each",
+   "start": 11.38,
+   "end": 11.66,
+   "p": 0.989
+  },
+  {
+   "word": "starts",
+   "start": 11.66,
+   "end": 11.96,
+   "p": 0.995
+  },
+  {
+   "word": "with",
+   "start": 11.96,
+   "end": 12.24,
+   "p": 0.997
+  },
+  {
+   "word": "one",
+   "start": 12.24,
+   "end": 12.58,
+   "p": 0.975
+  },
+  {
+   "word": "strategy",
+   "start": 12.58,
+   "end": 12.98,
+   "p": 0.987
+  },
+  {
+   "word": "document,",
+   "start": 12.98,
+   "end": 13.58,
+   "p": 0.999
+  },
+  {
+   "word": "followed",
+   "start": 13.84,
+   "end": 14.06,
+   "p": 0.993
+  },
+  {
+   "word": "by",
+   "start": 14.06,
+   "end": 14.3,
+   "p": 0.997
+  },
+  {
+   "word": "how",
+   "start": 14.3,
+   "end": 14.56,
+   "p": 0.991
+  },
+  {
+   "word": "you",
+   "start": 14.56,
+   "end": 14.8,
+   "p": 0.995
+  },
+  {
+   "word": "work",
+   "start": 14.8,
+   "end": 15.06,
+   "p": 0.999
+  },
+  {
+   "word": "and",
+   "start": 15.06,
+   "end": 15.36,
+   "p": 0.896
+  },
+  {
+   "word": "detailed",
+   "start": 15.36,
+   "end": 15.78,
+   "p": 0.997
+  },
+  {
+   "word": "playbooks.",
+   "start": 15.78,
+   "end": 16.36,
+   "p": 0.977
+  },
+  {
+   "word": "Need",
+   "start": 16.92,
+   "end": 17.06,
+   "p": 0.992
+  },
+  {
+   "word": "something",
+   "start": 17.06,
+   "end": 17.34,
+   "p": 0.998
+  },
+  {
+   "word": "to",
+   "start": 17.34,
+   "end": 17.6,
+   "p": 0.016
+  },
+  {
+   "word": "change?",
+   "start": 17.6,
+   "end": 17.88,
+   "p": 0.996
+  },
+  {
+   "word": "Open",
+   "start": 18.28,
+   "end": 18.6,
+   "p": 0.989
+  },
+  {
+   "word": "Strategy",
+   "start": 18.6,
+   "end": 19.08,
+   "p": 0.28
+  },
+  {
+   "word": "and",
+   "start": 19.08,
+   "end": 19.38,
+   "p": 0.798
+  },
+  {
+   "word": "just",
+   "start": 19.38,
+   "end": 19.6,
+   "p": 0.993
+  },
+  {
+   "word": "tell",
+   "start": 19.6,
+   "end": 19.78,
+   "p": 0.329
+  },
+  {
+   "word": "the",
+   "start": 19.78,
+   "end": 20.0,
+   "p": 0.014
+  },
+  {
+   "word": "agent,",
+   "start": 20.0,
+   "end": 20.3,
+   "p": 0.965
+  },
+  {
+   "word": "like",
+   "start": 20.5,
+   "end": 20.86,
+   "p": 0.97
+  },
+  {
+   "word": "Raise",
+   "start": 20.86,
+   "end": 21.5,
+   "p": 0.92
+  },
+  {
+   "word": "our",
+   "start": 21.5,
+   "end": 21.72,
+   "p": 0.992
+  },
+  {
+   "word": "minimum",
+   "start": 21.72,
+   "end": 22.06,
+   "p": 0.943
+  },
+  {
+   "word": "project",
+   "start": 22.06,
+   "end": 22.46,
+   "p": 0.992
+  },
+  {
+   "word": "price",
+   "start": 22.46,
+   "end": 22.78,
+   "p": 0.998
+  },
+  {
+   "word": "to",
+   "start": 22.78,
+   "end": 23.08,
+   "p": 0.998
+  },
+  {
+   "word": "four",
+   "start": 23.08,
+   "end": 23.1,
+   "p": 0.015
+  },
+  {
+   "word": "hundred",
+   "start": 23.1,
+   "end": 23.48,
+   "p": 0.969
+  },
+  {
+   "word": "fifty",
+   "start": 23.48,
+   "end": 23.8,
+   "p": 0.862
+  },
+  {
+   "word": "euros.",
+   "start": 23.8,
+   "end": 24.28,
+   "p": 0.887
+  },
+  {
+   "word": "It",
+   "start": 24.82,
+   "end": 25.0,
+   "p": 0.991
+  },
+  {
+   "word": "suggests",
+   "start": 25.0,
+   "end": 25.46,
+   "p": 0.99
+  },
+  {
+   "word": "the",
+   "start": 25.46,
+   "end": 25.72,
+   "p": 0.001
+  },
+  {
+   "word": "exact",
+   "start": 25.72,
+   "end": 26.2,
+   "p": 0.986
+  },
+  {
+   "word": "edit.",
+   "start": 26.2,
+   "end": 26.54,
+   "p": 0.973
+  },
+  {
+   "word": "You",
+   "start": 26.92,
+   "end": 27.12,
+   "p": 0.989
+  },
+  {
+   "word": "approve.",
+   "start": 27.12,
+   "end": 27.46,
+   "p": 0.993
+  },
+  {
+   "word": "Every",
+   "start": 27.98,
+   "end": 28.3,
+   "p": 0.994
+  },
+  {
+   "word": "related",
+   "start": 28.3,
+   "end": 28.64,
+   "p": 0.997
+  },
+  {
+   "word": "document",
+   "start": 28.64,
+   "end": 29.16,
+   "p": 0.996
+  },
+  {
+   "word": "updates",
+   "start": 29.16,
+   "end": 29.54,
+   "p": 0.988
+  },
+  {
+   "word": "to",
+   "start": 29.54,
+   "end": 29.8,
+   "p": 0.005
+  },
+  {
+   "word": "match,",
+   "start": 29.8,
+   "end": 30.08,
+   "p": 0.994
+  },
+  {
+   "word": "ready",
+   "start": 30.38,
+   "end": 30.62,
+   "p": 0.993
+  },
+  {
+   "word": "for",
+   "start": 30.62,
+   "end": 30.86,
+   "p": 0.994
+  },
+  {
+   "word": "your",
+   "start": 30.86,
+   "end": 31.06,
+   "p": 0.981
+  },
+  {
+   "word": "review.",
+   "start": 31.06,
+   "end": 31.38,
+   "p": 0.991
+  },
+  {
+   "word": "Had",
+   "start": 31.96,
+   "end": 32.08,
+   "p": 0.415
+  },
+  {
+   "word": "a",
+   "start": 32.08,
+   "end": 32.24,
+   "p": 0.989
+  },
+  {
+   "word": "client",
+   "start": 32.24,
+   "end": 32.44,
+   "p": 0.986
+  },
+  {
+   "word": "call?",
+   "start": 32.44,
+   "end": 32.8,
+   "p": 0.995
+  },
+  {
+   "word": "Paste",
+   "start": 33.18,
+   "end": 33.38,
+   "p": 0.964
+  },
+  {
+   "word": "the",
+   "start": 33.38,
+   "end": 33.56,
+   "p": 0.992
+  },
+  {
+   "word": "transcript",
+   "start": 33.56,
+   "end": 34.06,
+   "p": 0.373
+  },
+  {
+   "word": "into",
+   "start": 34.06,
+   "end": 34.32,
+   "p": 0.929
+  },
+  {
+   "word": "Offer.",
+   "start": 34.32,
+   "end": 34.9,
+   "p": 0.844
+  },
+  {
+   "word": "It",
+   "start": 35.16,
+   "end": 35.34,
+   "p": 0.981
+  },
+  {
+   "word": "pulls",
+   "start": 35.34,
+   "end": 35.56,
+   "p": 0.991
+  },
+  {
+   "word": "out",
+   "start": 35.56,
+   "end": 35.74,
+   "p": 0.977
+  },
+  {
+   "word": "what",
+   "start": 35.74,
+   "end": 35.92,
+   "p": 0.964
+  },
+  {
+   "word": "matters,",
+   "start": 35.92,
+   "end": 36.4,
+   "p": 0.956
+  },
+  {
+   "word": "needs,",
+   "start": 36.7,
+   "end": 37.06,
+   "p": 0.985
+  },
+  {
+   "word": "budget",
+   "start": 37.44,
+   "end": 37.66,
+   "p": 0.979
+  },
+  {
+   "word": "and",
+   "start": 37.66,
+   "end": 37.92,
+   "p": 0.616
+  },
+  {
+   "word": "timeline,",
+   "start": 37.92,
+   "end": 38.32,
+   "p": 0.946
+  },
+  {
+   "word": "and",
+   "start": 38.74,
+   "end": 38.9,
+   "p": 0.969
+  },
+  {
+   "word": "writes",
+   "start": 38.9,
+   "end": 39.06,
+   "p": 0.976
+  },
+  {
+   "word": "a",
+   "start": 39.06,
+   "end": 39.22,
+   "p": 0.97
+  },
+  {
+   "word": "tailored",
+   "start": 39.22,
+   "end": 39.7,
+   "p": 0.364
+  },
+  {
+   "word": "offer",
+   "start": 39.7,
+   "end": 40.02,
+   "p": 0.95
+  },
+  {
+   "word": "from",
+   "start": 40.02,
+   "end": 40.22,
+   "p": 0.979
+  },
+  {
+   "word": "your",
+   "start": 40.22,
+   "end": 40.48,
+   "p": 0.986
+  },
+  {
+   "word": "own",
+   "start": 40.48,
+   "end": 40.74,
+   "p": 0.969
+  },
+  {
+   "word": "prices",
+   "start": 40.74,
+   "end": 41.08,
+   "p": 0.868
+  },
+  {
+   "word": "and",
+   "start": 41.08,
+   "end": 41.34,
+   "p": 0.925
+  },
+  {
+   "word": "process,",
+   "start": 41.34,
+   "end": 41.76,
+   "p": 0.969
+  },
+  {
+   "word": "in",
+   "start": 42.04,
+   "end": 42.3,
+   "p": 0.987
+  },
+  {
+   "word": "minutes.",
+   "start": 42.3,
+   "end": 42.72,
+   "p": 0.983
+  },
+  {
+   "word": "One",
+   "start": 43.34,
+   "end": 43.56,
+   "p": 0.979
+  },
+  {
+   "word": "source",
+   "start": 43.56,
+   "end": 43.78,
+   "p": 0.986
+  },
+  {
+   "word": "of",
+   "start": 43.78,
+   "end": 44.02,
+   "p": 0.996
+  },
+  {
+   "word": "truth,",
+   "start": 44.02,
+   "end": 44.38,
+   "p": 0.429
+  },
+  {
+   "word": "always",
+   "start": 44.76,
+   "end": 45.04,
+   "p": 0.989
+  },
+  {
+   "word": "in",
+   "start": 45.04,
+   "end": 45.28,
+   "p": 0.964
+  },
+  {
+   "word": "sync,",
+   "start": 45.28,
+   "end": 45.52,
+   "p": 0.89
+  },
+  {
+   "word": "and",
+   "start": 45.82,
+   "end": 46.06,
+   "p": 0.975
+  },
+  {
+   "word": "every",
+   "start": 46.06,
+   "end": 46.34,
+   "p": 0.979
+  },
+  {
+   "word": "offer",
+   "start": 46.34,
+   "end": 46.72,
+   "p": 0.949
+  },
+  {
+   "word": "on",
+   "start": 46.72,
+   "end": 47.18,
+   "p": 0.952
+  },
+  {
+   "word": "point.",
+   "start": 47.18,
+   "end": 47.4,
+   "p": 0.941
+  }
+ ]
+}
