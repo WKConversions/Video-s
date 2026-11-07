@@ -1,7 +1,7 @@
 {
  "fps": 60,
  "frames": 2544,
- "library": "../../alumni/sound/lib",
+ "library": "lib-karl",
  "vo": {
   "file": "../vo/vo.mp3",
   "at": 0.3,
@@ -18,730 +18,646 @@
  "sfx": [
   {
    "frame": 1,
-   "id": "gen-impact-soft",
-   "db": -6,
+   "id": "cinematic-click",
+   "db": -4,
    "pitch": 0,
    "note": "Looking lands, giant"
   },
   {
-   "frame": 19,
-   "id": "gen-whoosh-short",
-   "db": -8,
-   "pitch": 2,
-   "note": "Looking shrinks, for your join"
-  },
-  {
    "frame": 50,
-   "id": "gen-whoosh-medium",
-   "db": -5,
+   "id": "sweet-ui-open",
+   "db": -4,
    "pitch": 0,
    "note": "the frame becomes a card in the row"
   },
   {
    "frame": 59,
-   "id": "kenney-drop-003",
-   "db": -4,
+   "id": "normal-pop",
+   "db": -3,
    "pitch": 0,
    "note": "the coral card slides in: next"
   },
   {
    "frame": 73,
-   "id": "gen-swell",
+   "id": "ui-open",
    "db": -6,
    "pitch": 0,
    "note": "the coral card fills the frame"
   },
   {
    "frame": 76,
-   "id": "gen-tick",
+   "id": "high-click",
    "db": -9,
-   "pitch": 2,
+   "pitch": 0,
    "note": "word joins"
   },
   {
    "frame": 98,
-   "id": "gen-tick",
+   "id": "high-click",
    "db": -9,
-   "pitch": 4,
+   "pitch": 2,
    "note": "word joins"
   },
   {
-   "frame": 139,
-   "id": "gen-whoosh-short",
-   "db": -9,
-   "pitch": -2,
-   "note": "the words drop away"
-  },
-  {
-   "frame": 157,
-   "id": "gen-whoosh-deep",
+   "frame": 158,
+   "id": "slow-and-smooth-pop",
    "db": -4,
-   "pitch": 0,
+   "pitch": -3,
    "note": "the coral field condenses into the circle"
   },
   {
    "frame": 175,
-   "id": "gen-pop",
+   "id": "premium-and-smooth-pop",
    "db": -3,
-   "pitch": 2,
+   "pitch": 0,
    "note": "the bar shoots up: the d"
   },
   {
    "frame": 190,
-   "id": "gen-chime",
-   "db": -4,
-   "pitch": 0,
+   "id": "sweet-ui-open",
+   "db": -5,
+   "pitch": 3,
    "note": "the wordmark's dot"
   },
   {
-   "frame": 217,
-   "id": "gen-whoosh-short",
-   "db": -9,
-   "pitch": 2,
-   "note": "the lockup lifts"
-  },
-  {
    "frame": 238,
-   "id": "gen-whoosh-short",
-   "db": -7,
+   "id": "ui-click-digital-04",
+   "db": -6,
    "pitch": 0,
    "note": "the circle splits into three nodes"
   },
   {
-   "frame": 263,
-   "id": "gen-shimmer",
-   "db": -9,
-   "pitch": 0,
-   "note": "connections draw"
-  },
-  {
    "frame": 289,
-   "id": "kenney-drop-003",
+   "id": "smooth-pop",
    "db": -4,
    "pitch": 0,
    "note": "a cluster blooms"
   },
   {
    "frame": 347,
-   "id": "kenney-drop-003",
+   "id": "smooth-pop",
    "db": -4,
    "pitch": 2,
    "note": "a cluster blooms"
   },
   {
    "frame": 394,
-   "id": "kenney-drop-003",
+   "id": "smooth-pop",
    "db": -4,
    "pitch": 4,
    "note": "a cluster blooms"
   },
   {
    "frame": 415,
-   "id": "gen-shimmer",
-   "db": -6,
-   "pitch": 2,
+   "id": "ui-granular-button-select",
+   "db": -8,
+   "pitch": 0,
    "note": "the connections light coral"
   },
   {
-   "frame": 432,
-   "id": "gen-whoosh-medium",
-   "db": -5,
+   "frame": 435,
+   "id": "smooth-and-fast-whoosh",
+   "db": -10,
    "pitch": 0,
    "note": "down onto the globe"
   },
   {
    "frame": 464,
-   "id": "gen-swell",
-   "db": -7,
-   "pitch": 2,
+   "id": "meadia-pop",
+   "db": -8,
+   "pitch": 0,
    "note": "the coast lights up"
   },
   {
-   "frame": 498,
-   "id": "gen-whoosh-deep",
-   "db": -5,
-   "pitch": 0,
-   "note": "the dive to M\u00e1laga"
-  },
-  {
    "frame": 526,
-   "id": "gen-pop",
-   "db": -4,
+   "id": "smooth-pop",
+   "db": -5,
    "pitch": 0,
    "note": "the dot becomes Luc\u00eda's avatar"
   },
   {
    "frame": 540,
-   "id": "kenney-drop-003",
-   "db": -5,
+   "id": "smooth-cammera-shutter",
+   "db": -4,
    "pitch": 0,
-   "note": "a work tile springs in"
+   "note": "her first work tile: a photographer's shot"
   },
   {
    "frame": 558,
-   "id": "kenney-drop-003",
-   "db": -5,
+   "id": "smooth-pop",
+   "db": -6,
    "pitch": 2,
    "note": "a work tile springs in"
   },
   {
    "frame": 576,
-   "id": "kenney-drop-003",
-   "db": -5,
+   "id": "smooth-pop",
+   "db": -6,
    "pitch": 4,
    "note": "a work tile springs in"
   },
   {
+   "frame": 605,
+   "id": "sweet-ui-open",
+   "db": -5,
+   "pitch": 0,
+   "note": "the new-post sheet opens"
+  },
+  {
    "frame": 608,
-   "id": "kenney-click-001",
-   "db": -3,
+   "id": "high-click",
+   "db": -4,
    "pitch": 0,
    "note": "I'm available pressed"
   },
   {
    "frame": 638,
-   "id": "gen-pop",
-   "db": -4,
-   "pitch": 3,
+   "id": "premium-and-smooth-pop",
+   "db": -5,
+   "pitch": 2,
    "note": "the AVAILABLE pill"
   },
   {
-   "frame": 648,
-   "id": "gen-tick",
-   "db": -8,
+   "frame": 650,
+   "id": "ui-click-digital-04",
+   "db": -10,
    "pitch": 3,
    "note": "a day lights up"
   },
   {
-   "frame": 655,
-   "id": "gen-tick",
-   "db": -8,
+   "frame": 656,
+   "id": "ui-click-digital-04",
+   "db": -10,
    "pitch": 5,
    "note": "a day lights up"
   },
   {
    "frame": 662,
-   "id": "gen-tick",
-   "db": -8,
+   "id": "ui-click-digital-04",
+   "db": -10,
    "pitch": 7,
    "note": "a day lights up"
   },
   {
-   "frame": 712,
-   "id": "gen-whoosh-short",
-   "db": -6,
+   "frame": 720,
+   "id": "ui-click-digital-03",
+   "db": -8,
    "pitch": 0,
-   "note": "gig cards arrive"
+   "note": "a gig card flips"
   },
   {
    "frame": 739,
-   "id": "gen-whoosh-whip",
-   "db": -8,
-   "pitch": 0,
-   "note": "a card flips"
-  },
-  {
-   "frame": 760,
-   "id": "gen-whoosh-whip",
+   "id": "ui-click-digital-03",
    "db": -8,
    "pitch": 1,
-   "note": "a card flips"
+   "note": "a gig card flips"
   },
   {
    "frame": 779,
-   "id": "gen-whoosh-whip",
+   "id": "ui-click-digital-03",
    "db": -8,
    "pitch": 2,
-   "note": "a card flips"
+   "note": "a gig card flips"
   },
   {
    "frame": 784,
-   "id": "gen-whoosh-short",
-   "db": -7,
-   "pitch": 2,
-   "note": "to the people"
+   "id": "sweet-ui-open",
+   "db": -6,
+   "pitch": 0,
+   "note": "the people list"
   },
   {
    "frame": 804,
-   "id": "kenney-drop-003",
+   "id": "smooth-pop",
    "db": -5,
    "pitch": 2,
-   "note": "a collaborator lifts out"
+   "note": "a collaborator opens"
   },
   {
-   "frame": 828,
-   "id": "gen-pop",
-   "db": -4,
+   "frame": 840,
+   "id": "premium-and-smooth-pop",
+   "db": -5,
    "pitch": 4,
    "note": "Let's collab"
   },
   {
    "frame": 865,
-   "id": "gen-whoosh-deep",
-   "db": -4,
+   "id": "slow-and-smooth-whoosh",
+   "db": -12,
    "pitch": 0,
-   "note": "the globe fills the frame"
+   "note": "the globe grows out of the pill"
   },
   {
-   "frame": 877,
-   "id": "kenney-drop-003",
-   "db": -8,
+   "frame": 871,
+   "id": "smooth-pop",
+   "db": -10,
    "pitch": 0,
    "note": "a pin lands"
   },
   {
-   "frame": 884,
-   "id": "kenney-drop-003",
-   "db": -8,
-   "pitch": 1,
-   "note": "a pin lands"
-  },
-  {
-   "frame": 892,
-   "id": "kenney-drop-003",
-   "db": -8,
+   "frame": 878,
+   "id": "smooth-pop",
+   "db": -10,
    "pitch": 2,
    "note": "a pin lands"
   },
   {
-   "frame": 899,
-   "id": "kenney-drop-003",
-   "db": -8,
-   "pitch": 3,
-   "note": "a pin lands"
-  },
-  {
-   "frame": 906,
-   "id": "kenney-drop-003",
-   "db": -8,
+   "frame": 886,
+   "id": "smooth-pop",
+   "db": -10,
    "pitch": 4,
    "note": "a pin lands"
   },
   {
-   "frame": 913,
-   "id": "kenney-drop-003",
-   "db": -8,
-   "pitch": 5,
+   "frame": 893,
+   "id": "smooth-pop",
+   "db": -10,
+   "pitch": 6,
    "note": "a pin lands"
   },
   {
-   "frame": 920,
-   "id": "kenney-drop-003",
-   "db": -8,
+   "frame": 900,
+   "id": "smooth-pop",
+   "db": -10,
+   "pitch": 8,
+   "note": "a pin lands"
+  },
+  {
+   "frame": 907,
+   "id": "smooth-pop",
+   "db": -10,
+   "pitch": 10,
+   "note": "a pin lands"
+  },
+  {
+   "frame": 914,
+   "id": "smooth-pop",
+   "db": -10,
    "pitch": 0,
    "note": "a pin lands"
   },
   {
-   "frame": 928,
-   "id": "kenney-drop-003",
-   "db": -8,
-   "pitch": 1,
+   "frame": 922,
+   "id": "smooth-pop",
+   "db": -10,
+   "pitch": 2,
+   "note": "a pin lands"
+  },
+  {
+   "frame": 929,
+   "id": "smooth-pop",
+   "db": -10,
+   "pitch": 4,
    "note": "a pin lands"
   },
   {
    "frame": 935,
-   "id": "kenney-drop-003",
-   "db": -8,
-   "pitch": 2,
+   "id": "smooth-pop",
+   "db": -10,
+   "pitch": 6,
    "note": "a pin lands"
   },
   {
    "frame": 942,
-   "id": "kenney-drop-003",
-   "db": -8,
-   "pitch": 3,
-   "note": "a pin lands"
-  },
-  {
-   "frame": 949,
-   "id": "kenney-drop-003",
-   "db": -8,
-   "pitch": 4,
+   "id": "smooth-pop",
+   "db": -10,
+   "pitch": 8,
    "note": "a pin lands"
   },
   {
    "frame": 937,
-   "id": "kenney-maximize-009",
-   "db": -5,
+   "id": "ui-open",
+   "db": -8,
    "pitch": 0,
    "note": "the Marbella sheet rises"
   },
   {
-   "frame": 967,
-   "id": "gen-whoosh-short",
-   "db": -7,
-   "pitch": -2,
-   "note": "the map sinks, the switch arrives"
-  },
-  {
-   "frame": 1012,
-   "id": "kenney-click-001",
+   "frame": 1003,
+   "id": "high-click",
    "db": -3,
    "pitch": 0,
    "note": "the switch flips to Find talent"
   },
   {
-   "frame": 1028,
-   "id": "gen-whoosh-short",
-   "db": -8,
-   "pitch": 2,
-   "note": "Hiring creative talent? rises"
+   "frame": 1062,
+   "id": "sweet-ui-open",
+   "db": -5,
+   "pitch": -2,
+   "note": "the thumb becomes the post"
   },
   {
    "frame": 1106,
-   "id": "kenney-tick-004",
+   "id": "v4-type-delete",
    "db": -9,
    "pitch": 0,
    "note": "the post types"
   },
   {
-   "frame": 1114,
-   "id": "kenney-tick-004",
+   "frame": 1112,
+   "id": "v4-type-delete",
    "db": -9,
    "pitch": 1,
    "note": "the post types"
   },
   {
-   "frame": 1121,
-   "id": "kenney-tick-004",
+   "frame": 1118,
+   "id": "v4-type-delete",
    "db": -9,
-   "pitch": 2,
+   "pitch": 0,
    "note": "the post types"
   },
   {
-   "frame": 1128,
-   "id": "kenney-tick-004",
+   "frame": 1124,
+   "id": "v4-type-delete",
    "db": -9,
-   "pitch": 3,
+   "pitch": 1,
    "note": "the post types"
   },
   {
-   "frame": 1146,
-   "id": "kenney-click-001",
-   "db": -3,
-   "pitch": 2,
+   "frame": 1130,
+   "id": "v4-type-delete",
+   "db": -9,
+   "pitch": 0,
+   "note": "the post types"
+  },
+  {
+   "frame": 1140,
+   "id": "ui-enter",
+   "db": -4,
+   "pitch": 0,
    "note": "Post pressed"
   },
   {
-   "frame": 1152,
-   "id": "gen-whoosh-short",
-   "db": -7,
-   "pitch": 0,
-   "note": "the post flies onto the board"
-  },
-  {
    "frame": 1169,
-   "id": "gen-whoosh-medium",
-   "db": -6,
+   "id": "ui-click-digital-03",
+   "db": -8,
    "pitch": 0,
    "note": "portfolios slide past"
   },
   {
-   "frame": 1241,
-   "id": "gen-swell",
-   "db": -7,
-   "pitch": 0,
-   "note": "the row slows"
-  },
-  {
-   "frame": 1265,
-   "id": "gen-pop",
+   "frame": 1264,
+   "id": "premium-and-smooth-pop",
    "db": -3,
-   "pitch": 2,
+   "pitch": 3,
    "note": "right fit"
   },
   {
    "frame": 1324,
-   "id": "kenney-click-001",
+   "id": "ui-button",
    "db": -3,
    "pitch": 0,
    "note": "Connect pressed"
   },
   {
-   "frame": 1327,
-   "id": "gen-whoosh-short",
-   "db": -7,
-   "pitch": 3,
-   "note": "the line shoots across"
+   "frame": 1342,
+   "id": "smooth-pop",
+   "db": -5,
+   "pitch": 4,
+   "note": "connected"
+  },
+  {
+   "frame": 1374,
+   "id": "sweet-ui-open",
+   "db": -6,
+   "pitch": 0,
+   "note": "the card becomes a chat"
   },
   {
    "frame": 1398,
-   "id": "gen-pop",
-   "db": -6,
+   "id": "smooth-pop",
+   "db": -5,
    "pitch": 0,
    "note": "a chat bubble"
   },
   {
    "frame": 1426,
-   "id": "gen-pop",
-   "db": -6,
+   "id": "slow-and-smooth-pop",
+   "db": -5,
    "pitch": 2,
    "note": "a chat bubble"
   },
   {
    "frame": 1447,
-   "id": "gen-pop",
-   "db": -6,
+   "id": "smooth-pop",
+   "db": -5,
    "pitch": 4,
    "note": "a chat bubble"
   },
   {
-   "frame": 1474,
-   "id": "kenney-click-001",
+   "frame": 1488,
+   "id": "high-click",
    "db": -3,
    "pitch": 0,
    "note": "Confirm booking"
   },
   {
-   "frame": 1507,
-   "id": "gen-stamp",
+   "frame": 1506,
+   "id": "premium-and-smooth-pop",
    "db": -3,
-   "pitch": 0,
+   "pitch": -2,
    "note": "the booking stamps in"
   },
   {
    "frame": 1552,
-   "id": "gen-whoosh-short",
-   "db": -7,
+   "id": "meadia-pop",
+   "db": -9,
    "pitch": 0,
-   "note": "pieces fly in"
+   "note": "a piece flies in"
   },
   {
-   "frame": 1583,
-   "id": "gen-whoosh-deep",
-   "db": -5,
-   "pitch": 0,
-   "note": "everything converges"
+   "frame": 1560,
+   "id": "meadia-pop",
+   "db": -9,
+   "pitch": 2,
+   "note": "a piece flies in"
   },
   {
-   "frame": 1598,
-   "id": "gen-impact-soft",
+   "frame": 1568,
+   "id": "meadia-pop",
+   "db": -9,
+   "pitch": 4,
+   "note": "a piece flies in"
+  },
+  {
+   "frame": 1597,
+   "id": "ui-enter",
    "db": -5,
-   "pitch": 0,
-   "note": "one place"
+   "pitch": -2,
+   "note": "everything lands in the app"
   },
   {
    "frame": 1651,
-   "id": "gen-whoosh-short",
-   "db": -7,
+   "id": "ui-open",
+   "db": -8,
    "pitch": 0,
    "note": "the fee comes forward"
   },
   {
    "frame": 1730,
-   "id": "gen-impact-soft",
+   "id": "premium-and-smooth-pop",
    "db": -4,
-   "pitch": 0,
+   "pitch": -3,
    "note": "the full fee lands whole"
   },
   {
+   "frame": 1735,
+   "id": "high-click",
+   "db": -8,
+   "pitch": 4,
+   "note": "Full fee"
+  },
+  {
    "frame": 1772,
-   "id": "kenney-drop-003",
-   "db": -3,
-   "pitch": 0,
+   "id": "slow-and-smooth-pop",
+   "db": -4,
+   "pitch": -4,
    "note": "the circle rolls in: the zero"
   },
   {
    "frame": 1794,
-   "id": "gen-stamp",
+   "id": "cinematic-click",
    "db": -5,
    "pitch": 0,
-   "note": "zero commission"
+   "note": "0% commission"
   },
   {
    "frame": 1885,
-   "id": "gen-stamp",
+   "id": "ui-enter",
    "db": -4,
    "pitch": 0,
    "note": "Completed"
   },
   {
    "frame": 1955,
-   "id": "kenney-maximize-009",
+   "id": "sweet-ui-open",
    "db": -6,
    "pitch": 0,
    "note": "a recommendation rises"
   },
   {
    "frame": 1972,
-   "id": "kenney-maximize-009",
+   "id": "sweet-ui-open",
    "db": -6,
    "pitch": 2,
    "note": "a recommendation rises"
   },
   {
    "frame": 1988,
-   "id": "kenney-maximize-009",
+   "id": "sweet-ui-open",
    "db": -6,
    "pitch": 4,
    "note": "a recommendation rises"
   },
   {
-   "frame": 2010,
-   "id": "gen-tick",
-   "db": -8,
-   "pitch": 3,
-   "note": "the count rises"
-  },
-  {
-   "frame": 2017,
-   "id": "gen-tick",
+   "frame": 2011,
+   "id": "smooth-pop",
    "db": -8,
    "pitch": 4,
-   "note": "the count rises"
+   "note": "a recommendation lands on the profile"
   },
   {
-   "frame": 2024,
-   "id": "gen-tick",
+   "frame": 2022,
+   "id": "smooth-pop",
    "db": -8,
-   "pitch": 5,
-   "note": "the count rises"
+   "pitch": 6,
+   "note": "a recommendation lands on the profile"
+  },
+  {
+   "frame": 2033,
+   "id": "smooth-pop",
+   "db": -8,
+   "pitch": 8,
+   "note": "a recommendation lands on the profile"
   },
   {
    "frame": 2106,
-   "id": "gen-chime",
-   "db": -3,
-   "pitch": 0,
+   "id": "premium-and-smooth-pop",
+   "db": -4,
+   "pitch": 2,
    "note": "the badge lights up"
   },
   {
-   "frame": 2133,
-   "id": "gen-swell",
-   "db": -5,
+   "frame": 2135,
+   "id": "ui-open",
+   "db": -7,
    "pitch": 0,
    "note": "the cream grows out"
   },
   {
    "frame": 2165,
-   "id": "gen-tick",
+   "id": "high-click",
    "db": -10,
    "pitch": 0,
-   "note": "a word"
-  },
-  {
-   "frame": 2177,
-   "id": "gen-tick",
-   "db": -10,
-   "pitch": 1,
-   "note": "a word"
-  },
-  {
-   "frame": 2184,
-   "id": "gen-tick",
-   "db": -10,
-   "pitch": 2,
-   "note": "a word"
-  },
-  {
-   "frame": 2197,
-   "id": "gen-tick",
-   "db": -10,
-   "pitch": 3,
-   "note": "a word"
-  },
-  {
-   "frame": 2218,
-   "id": "gen-whoosh-short",
-   "db": -10,
-   "pitch": 0,
-   "note": "the line waves away"
+   "note": "a phrase starts"
   },
   {
    "frame": 2228,
-   "id": "gen-tick",
+   "id": "high-click",
    "db": -10,
-   "pitch": 2,
-   "note": "a word"
-  },
-  {
-   "frame": 2245,
-   "id": "gen-tick",
-   "db": -10,
-   "pitch": 3,
-   "note": "a word"
-  },
-  {
-   "frame": 2254,
-   "id": "gen-tick",
-   "db": -10,
-   "pitch": 4,
-   "note": "a word"
-  },
-  {
-   "frame": 2269,
-   "id": "gen-tick",
-   "db": -10,
-   "pitch": 5,
-   "note": "a word"
-  },
-  {
-   "frame": 2314,
-   "id": "gen-whoosh-short",
-   "db": -10,
-   "pitch": 2,
-   "note": "the line waves away"
+   "pitch": 0,
+   "note": "a phrase starts"
   },
   {
    "frame": 2335,
-   "id": "gen-tick",
+   "id": "high-click",
    "db": -10,
-   "pitch": 4,
-   "note": "a word"
+   "pitch": 0,
+   "note": "a phrase starts"
   },
   {
-   "frame": 2346,
-   "id": "gen-tick",
-   "db": -10,
-   "pitch": 5,
-   "note": "a word"
+   "frame": 2197,
+   "id": "smooth-pop",
+   "db": -8,
+   "pitch": 0,
+   "note": "the coral word"
+  },
+  {
+   "frame": 2269,
+   "id": "smooth-pop",
+   "db": -8,
+   "pitch": 2,
+   "note": "the coral word"
   },
   {
    "frame": 2356,
-   "id": "gen-tick",
-   "db": -10,
-   "pitch": 6,
-   "note": "a word"
+   "id": "smooth-pop",
+   "db": -8,
+   "pitch": 4,
+   "note": "the coral word"
   },
   {
    "frame": 2399,
-   "id": "gen-whoosh-medium",
-   "db": -5,
+   "id": "simple-whoosh-2",
+   "db": -12,
    "pitch": 0,
    "note": "the push: the circle comes in"
   },
   {
-   "frame": 2406,
-   "id": "gen-appear",
-   "db": -5,
-   "pitch": 2,
-   "note": "the tile grows, the bar shoots up"
-  },
-  {
-   "frame": 2410,
-   "id": "gen-impact-deep",
-   "db": -4,
-   "pitch": 0,
+   "frame": 2407,
+   "id": "premium-and-smooth-pop",
+   "db": -2,
+   "pitch": -3,
    "note": "the icon lands on Duendr"
   },
   {
-   "frame": 2459,
-   "id": "gen-whoosh-short",
-   "db": -11,
-   "pitch": -2,
-   "note": "the icon shrinks"
+   "frame": 2410,
+   "id": "ui-premium-open",
+   "db": -8,
+   "pitch": 0,
+   "note": "the icon grows"
   },
   {
    "frame": 2478,
-   "id": "gen-whoosh-short",
-   "db": -9,
-   "pitch": 2,
+   "id": "sweet-ui-open",
+   "db": -7,
+   "pitch": 0,
    "note": "the wordmark slides in"
   },
   {
    "frame": 2491,
-   "id": "gen-chime",
-   "db": -3,
-   "pitch": 2,
+   "id": "smooth-pop",
+   "db": -4,
+   "pitch": 5,
    "note": "the dot"
   }
  ]
