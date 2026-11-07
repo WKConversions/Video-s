@@ -46,3 +46,6 @@ films/intelligence/harvest/zip/
 films/intelligence/harvest/shots/
 films/intelligence/film/public/screens/
 films/intelligence/harvest/ocr/
+films/intelligence/sound/bed.wav
+films/intelligence/sound/music/*.mp3
+films/intelligence/sound/lib-karl/

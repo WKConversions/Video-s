@@ -1,0 +1,9 @@
+1.41  Driving Ambition                   mixkit        99.4 BPM  2.2/s  1139 Hz build  +1.2  102 s  Film Score
+1.29  Carpe Diem                         incompetech   95.7 BPM  2.5/s  1091 Hz build  -2.4  295 s  Clarinet, Ukulele, Flute, Guitar, Xylophone, Percussion, Bass
+1.21  Tears of Joy                       mixkit       123.0 BPM  2.5/s  1661 Hz build  +0.0  140 s  Folk Pop
+1.03  I Do!                              mixkit       129.2 BPM  2.7/s  2675 Hz build  +2.4  128 s  EDM
+0.88  Nowhere Land                       incompetech   80.7 BPM  3.0/s   945 Hz build  -0.7  132 s  Synths, Percussion
+0.86  Dreaming Big                       mixkit       136.0 BPM  2.7/s  1190 Hz build  +3.2  110 s  Film Score
+0.66  Carry On                           mixkit       143.6 BPM  2.8/s  2251 Hz build  +4.1  95 s  Rock
+0.61  One More Dance                     mixkit       147.7 BPM  2.2/s   953 Hz build  -0.2  100 s  Pop
+0.54  Newer Wave                         incompetech  147.7 BPM  3.1/s  2146 Hz build  +0.6  175 s  Synths, Drums
