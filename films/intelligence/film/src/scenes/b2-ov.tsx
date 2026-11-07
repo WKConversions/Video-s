@@ -108,7 +108,7 @@ export const CodeBlock: React.FC<{ strike: number; show: number }> = ({ strike, 
         <Ln x={x} y={917} size={S}>| Range per service | €450 to</Ln>
         <Ln x={x} y={940} size={S}>€4,500 |</Ln>
         <Ln x={x} y={965} size={S} color="#8b8b8b">· · ·</Ln>
-        <Ln x={x + 3} y={994} size={S}>never goes below €450 and</Ln>
+        <Ln x={x + 3} y={994} size={S}>A stand-alone project never goes</Ln>
       </div>
     </div>
   </>);

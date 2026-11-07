@@ -24,9 +24,9 @@ const kx24 = K("24")[0];
 const PW = (PXR - PXL) * kx24; // panel width in its own px
 const H1 = 318 + 30 + 155, H2 = 448 + 30 + 155, H3 = 690, H4 = 382, H5 = 422;
 const SC1 = 1.75, SC2 = 1.45;
-const scAt = (t: number) => mix(SC1 + 0.022 * (Math.min(t, T_SEND + 0.1) - 20.5), SC2 + 0.009 * (Math.max(t, 24.6) - 24.6), lerp(t, T_SEND + 0.1, T_SEND + 0.7));
+const scAt = (t: number) => mix(SC1 + 0.022 * (Math.min(t, T_SEND + 0.1) - 20.5), SC2 + 0.009 * (Math.max(t, 24.6) - 24.6), lerp(t, T_SEND + 0.1, T_SEND + 1.0));
 const hAt = (t: number) => {
-  let h = H1; h = mix(h, H2, lerp(t, T_SEND + 0.1, T_SEND + 0.65)); h = mix(h, H3, lerp(t, T_REPLY - 0.05, T_REPLY + 0.55)); h = mix(h, H4, lerp(t, T_APPROVE + 0.12, T_APPROVE + 0.7)); h = mix(h, H5, lerp(t, T_DONE - 0.1, T_DONE + 0.4));
+  let h = H1; h = mix(h, H2, lerp(t, T_SEND + 0.1, T_SEND + 0.95)); h = mix(h, H3, lerp(t, T_REPLY - 0.05, T_REPLY + 0.55)); h = mix(h, H4, lerp(t, T_APPROVE + 0.12, T_APPROVE + 0.7)); h = mix(h, H5, lerp(t, T_DONE - 0.1, T_DONE + 0.4));
   return h;
 };
 const liftP = (t: number) => sp(t, T_LIFT, 1.5, 0.78);
@@ -76,11 +76,10 @@ const Panel: React.FC<{ t: number }> = ({ t }) => {
   const pres = PRES(t);
   if (t < T_LIFT || pres <= 0) return null;
   const [kx26, ky26] = K("26");
-  const a1 = 1 - lerp(t, T_SEND + 0.05, T_SEND + 0.35);
-  const a2 = lerp(t, T_SEND + 0.1, T_SEND + 0.35) - lerp(t, T_REPLY - 0.1, T_REPLY + 0.06);
-  const a3 = lerp(t, T_REPLY + 0.04, T_REPLY + 0.26) - lerp(t, T_APPROVE + 0.06, T_APPROVE + 0.2);
-  const a4 = lerp(t, T_APPROVE + 0.2, T_APPROVE + 0.42) - lerp(t, T_DONE - 0.12, T_DONE + 0.02);
-  const a5 = lerp(t, T_DONE + 0.02, T_DONE + 0.24);
+  const a1 = 1 - lerp(t, T_SEND + 0.06, T_SEND + 0.3);
+  const a3 = lerp(t, T_REPLY, T_REPLY + 0.22);
+  const a4 = lerp(t, T_APPROVE + 0.12, T_APPROVE + 0.34);
+  const a5 = lerp(t, T_DONE, T_DONE + 0.22);
   const lift = c01(b.p);
   const footLy = mix(1165 - 92, 318 + 30, lerp(t, T_LIFT, T_LIFT + 0.5, OUT));
   const typed = typedAt(t);
@@ -90,35 +89,35 @@ const Panel: React.FC<{ t: number }> = ({ t }) => {
   const prog = lerp(t, T_UPD, 29.56), nDone = Math.min(15, Math.floor(prog * 15 + 0.001));
   const pressA = c01((t - T_APPROVE) / 0.3);
   const [pL, pT, pW, pH] = POPR;
-  const ps = 1 + 0.18 * pop;
+  const ps = 1 + 0.12 * pop;
   const pressBtn = 1 - 0.07 * Math.sin(Math.PI * pressA) * (pressA > 0 && pressA < 1 ? 1 : 0);
   return (
-    <div style={{ position: "absolute", left: b.left, top: b.top, width: PW, height: b.h, transformOrigin: "0 0", transform: `scale(${b.sc * (0.965 + 0.035 * pres)})`, opacity: Math.min(1, lift * 4) * pres }}>
+    <div style={{ position: "absolute", left: 0, top: 0, width: PW, height: b.h, transformOrigin: "0 0", transform: `translate(${b.left}px, ${b.top}px) scale(${b.sc * (0.965 + 0.035 * pres)})`, opacity: Math.min(1, lift * 4) * pres }}>
       <div style={{ position: "absolute", inset: 0, borderRadius: 27, background: "#fff", boxShadow: SHADOW, overflow: "hidden" }}>
-        {a1 > 0.001 && <div style={{ position: "absolute", inset: 0, opacity: a1 }}>
-          <Pc n="24" y0={92} y1={410} at={0} />
-          <Pc n="24" y0={1165} y1={1320} at={footLy} ov={<PanelP24 typed={typed} caret={caret} />} />
-        </div>}
-        {a2 > 0.001 && <div style={{ position: "absolute", inset: 0, opacity: a2 }}>
+        {t >= T_SEND && a3 < 1 && <div style={{ position: "absolute", inset: 0, background: "#fff" }}>
           <Pc n="25" y0={92} y1={540} at={0} />
           <Pc n="25" y0={1165} y1={1320} at={448 + 30} />
         </div>}
-        {a3 > 0.001 && <div style={{ position: "absolute", inset: 0, opacity: a3 }}>
+        {a1 > 0.001 && <div style={{ position: "absolute", inset: 0, opacity: a1, background: "#fff" }}>
+          <Pc n="25" y0={92} y1={410} at={0} />
+          <Pc n="25" y0={1165} y1={1320} at={footLy} ov={<PanelP24 typed={typed} caret={caret} />} />
+        </div>}
+        {a3 > 0.001 && a4 < 1 && <div style={{ position: "absolute", inset: 0, opacity: a3, background: "#fff" }}>
           <Pc n="26" y0={CARD_TOP} y1={CARD_TOP + 690} at={0} ov={<PanelP26 strike={strike} show={show} />} />
           {pressA > 0 && <div style={{ position: "absolute", left: (1457 - PXL) * kx26, top: (1026 - CARD_TOP) * ky26, width: 118 * kx26, height: 36, transform: `scale(${pressBtn})`, transformOrigin: "50% 50%", background: "#fff" }}>
             <Pc n="26" y0={1026} y1={1062} at={0} x0={1457} x1={1575} ov={null} />
           </div>}
         </div>}
-        {a4 > 0.001 && <div style={{ position: "absolute", inset: 0, opacity: a4 }}>
+        {a4 > 0.001 && a5 < 1 && <div style={{ position: "absolute", inset: 0, opacity: a4, background: "#fff" }}>
           <Pc n="27" y0={470} y1={852} at={0} ov={<PanelP27 n={nDone} p={prog} />} />
         </div>}
-        {a5 > 0.001 && <div style={{ position: "absolute", inset: 0, opacity: a5 }}>
+        {a5 > 0.001 && <div style={{ position: "absolute", inset: 0, opacity: a5, background: "#fff" }}>
           <Pc n="29" y0={470} y1={892} at={0} ov={<PanelP29 />} />
         </div>}
       </div>
       {/* the exact edit: the diff-preview block steps forward out of the card */}
-      {pop > 0.003 && a3 > 0.01 && (
-        <div style={{ position: "absolute", left: (pL - PXL) * kx26, top: (pT - CARD_TOP) * ky26, width: (pW - pL) * kx26, height: pH - pT, transform: `scale(${ps})`, transformOrigin: "50% 50%", borderRadius: 12, overflow: "hidden", boxShadow: `0 ${6 + 26 * pop}px ${18 + 46 * pop}px rgba(5,15,25,${0.08 + 0.12 * pop})`, opacity: a3 }}>
+      {pop > 0.003 && a3 > 0.01 && a4 < 0.5 && (
+        <div style={{ position: "absolute", left: (pL - PXL) * kx26, top: (pT - CARD_TOP) * ky26, width: (pW - pL) * kx26, height: pH - pT, transform: `scale(${ps})`, transformOrigin: "50% 50%", borderRadius: 12, overflow: "hidden", boxShadow: `0 ${6 + 26 * pop}px ${18 + 46 * pop}px rgba(5,15,25,${0.08 + 0.12 * pop})`, opacity: a3 * (1 - a4) }}>
           <Crop n="26" x={pL * kx26} y={pT * ky26} w={(pW - pL) * kx26} h={pH - pT}>
             <div style={{ position: "absolute", left: -pL * kx26, top: -pT * ky26 }}><Nat n="26"><PanelP26 strike={strike} show={show} /></Nat></div>
           </Crop>
@@ -135,7 +134,7 @@ const Cascade: React.FC<{ t: number }> = ({ t }) => {
   if (a <= 0.001) return null;
   const [kx, ky] = K("30"), sc = 0.9, cw = 560;
   return (
-    <div style={{ position: "absolute", left: 130, top: (1080 - ROWS * ROW_H * sc) / 2, width: cw, height: ROWS * ROW_H * ky, transformOrigin: "0 0", transform: `scale(${sc})`, opacity: a, borderRadius: 26, background: "#fff", boxShadow: SHADOW, overflow: "hidden" }}>
+    <div style={{ position: "absolute", left: 0, top: 0, width: cw, height: ROWS * ROW_H * ky, transformOrigin: "0 0", transform: `translate(130px, ${(1080 - ROWS * ROW_H * sc) / 2}px) scale(${sc})`, opacity: a, borderRadius: 26, background: "#fff", boxShadow: SHADOW, overflow: "hidden" }}>
       {Array.from({ length: ROWS }, (_, i) => {
         const s = lerp(t, 29.04 + i * 0.038, 29.04 + i * 0.038 + 0.16, OUT);
         return <div key={i} style={{ position: "absolute", left: 0, top: i * ROW_H, width: cw, height: ROW_H, opacity: s, transform: `translateY(${(1 - s) * 14}px)` }}>
@@ -156,7 +155,7 @@ const DiffLift: React.FC<{ t: number }> = ({ t }) => {
   const p = sp(t, 31.28, 1.6, 0.8), sc = mix(1.05, 2.1, Math.min(1.03, p)) * (1 - 0.04 * (1 - a));
   const r1 = lerp(t, 31.5, 31.64, OUT);
   return (
-    <div style={{ position: "absolute", left: 960 - (cw * sc) / 2, top: 540 - (ch * sc) / 2, width: cw, height: ch, transformOrigin: "0 0", transform: `scale(${sc})`, opacity: a, borderRadius: 14, overflow: "hidden", boxShadow: SHADOW }}>
+    <div style={{ position: "absolute", left: 0, top: 0, width: cw, height: ch, transformOrigin: "0 0", transform: `translate(${960 - (cw * sc) / 2}px, ${540 - (ch * sc) / 2}px) scale(${sc})`, opacity: a, borderRadius: 14, overflow: "hidden", boxShadow: SHADOW }}>
       <Crop n="31" x={x0 * kx} y={y0 * ky} w={cw} h={ch}>
         <div style={{ position: "absolute", left: -x0 * kx, top: -y0 * ky }}><Nat n="31"><Ov31 r1={r1} r2={1} /></Nat></div>
       </Crop>
@@ -217,7 +216,7 @@ export const Seq: React.FC<{ t: number }> = ({ t }) => {
       <F t={t} a={T_REPLY} until={28.2}><Shot n="26"><StageOv n="26" hole={hole} /></Shot></F>
       <F t={t} a={T_APPROVE + 0.12} until={31.3}><Shot n="27"><StageOv n="27" hole={hole} /></Shot></F>
       <F t={t} a={T_LIST + 0.04} d={0.26}><Shot n="30" /></F>
-      <F t={t} a={31.1} until={32.3}><Shot n="31"><Nat n="31"><Ov31 /></Nat></Shot></F>
+      <F t={t} a={31.12} d={0.2} until={32.3}><Shot n="31"><Nat n="31"><Ov31 /></Nat></Shot></F>
       <F t={t} a={31.88} d={0.26}><Shot n="34" /></F>
     </Cam>
     {veil > 0.002 && <div style={{ position: "absolute", inset: 0, background: `rgba(5,15,25,${veil})` }} />}
