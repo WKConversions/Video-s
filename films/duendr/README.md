@@ -28,7 +28,9 @@ Costa del Sol. English VO (supplied), 1920×1080, 60 fps, Remotion.
   - Checks: `check.sh <ID> <t0> <t1>` (one builder's window), `film_check.sh` (the whole film with the mix → `deliver/`).
 - `sound/`: `make_cues.py` → `cues.json` → `sound_mix.py` → `film/public/audio/mix.wav`; music Mixkit "Gimme that groove",
   fitted to 42.4 s with its lift on "Meet" (`bed.wav`, regenerable, gitignored).
-- `deliver/`: the MP4s.
+- `deliver/`: `duendr-42s-1080p60.mp4` (final, 1080p60, CRF 16, chunked render with `render_chunks.sh`), `duendr-preview-540p60.mp4` (preview).
+- Sound effects: Karl's own Motionix pack from his Drive, built into `sound/lib-karl` (gitignored: the repo is public); his Apple UI
+  sounds switch in automatically once his "Apple sounds" folder is added to that library (`APPLE` in `sound/make_cues.py`).
 
 ## Commands
 ```
