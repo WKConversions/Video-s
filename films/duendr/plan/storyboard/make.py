@@ -6,7 +6,7 @@ import html, json, os, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__)); SITE = os.path.join(HERE, "site"); FR = os.path.join(SITE, "frames")
 SRC = sys.argv[1]; MOTION = sys.argv[sys.argv.index("--motion") + 1] if "--motion" in sys.argv else None
-VERSION = "v1"; DATE = "7 Nov 2026"
+VERSION = "v2"; DATE = "7 Nov 2026"
 
 # (id, title, t0, t1, VO line, on-screen words, what moves (the scene), transition out, [(time, caption), ...])
 BEATS = [
@@ -86,8 +86,9 @@ NOTES = [        # (heading, text) for the notes section
   ("Hook and outro", "The hook follows your reference 1 (a giant word shrinking as the next words join, the frame becoming a card in a "
    "row, the brand card filling the frame). The outro follows reference 16 (words one by one with the spacing tightening, wave swaps, "
    "the line pushed out as the logo arrives, then the lockup)."),
-  ("Next pass", "Scale up the app UI where it reads small (the S3 cards, the chat, the recommendation cards) and the map labels; smooth "
-   "the few spots of sub-pixel shake the checks still flag; align every sound effect to the final picture; then the 1080p render."),
+  ("Next", "Your Apple UI sounds go in as soon as the sound folder is here (they're mapped to every real phone action already); then "
+   "every effect is timed to the final picture and the film is rendered at 1080p. A few spots still flag tiny shake in the checks: it is the "
+   "30 fps stock clips playing inside moving cards, not the layout."),
   ("Sound", "Mixkit \"Gimme that groove\" (free, no credit needed), fitted to 42.4 s with its lift on \"Meet\". Effects lead on the "
    "picture's events; the music sits under the voice."),
 ]
@@ -102,6 +103,9 @@ QUESTIONS = [    # open questions for Karl
   "so it isn't there now.",
 ]
 REVISIONS = [    # (before, after, why)
+  ("v1: the app UI read small in places", "v2: cards, post, chat, recommendations and the people list are 1.4-2.2x bigger", "Readable on a phone with the sound off"),
+  ("v1: map labels 30 px, the coast in the lower third", "v2: labels 40 px (Málaga 50), placed by hand; the coast in the middle of the frame, the horizon still curving", "Your map is the subject of that beat"),
+  ("v1: the €280 overlapped its card for a moment", "v2: the card's name appears only once the fee has landed", "No collisions"),
   ("The fee beat showed a wallet card and a \"Duendr fee −€0\" row", "The €280 lands whole on the creative's card with \"Full fee\"; then \"0% commission\"", "The site doesn't say payments run through the app"),
   ("Málaga's pin showed a count of 12", "No count on Málaga; Marbella keeps \"6 open jobs\" from the app's own screen", "No invented numbers"),
   ("The Marbella sheet listed a gig by a Málaga brand", "Two Casa Brisa gigs in Marbella", "Demo data stays consistent"),
