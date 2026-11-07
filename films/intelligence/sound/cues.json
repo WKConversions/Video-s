@@ -1,9 +1,9 @@
 {
  "fps": 60,
- "frames": 2988,
+ "frames": 3660,
  "library": "lib-karl",
  "vo": {
-  "file": "../vo/vo.mp3",
+  "file": "../vo/vo_paced.mp3",
   "at": 0.4,
   "compress": true
  },
@@ -19,509 +19,537 @@
   {
    "frame": 18,
    "id": "ui-open",
-   "db": -8,
+   "db": -9,
    "pitch": 0,
-   "note": "the home screen assembles"
+   "note": "the home screen builds"
   },
   {
-   "frame": 162,
+   "frame": 189,
    "id": "smooth-pop",
    "db": -5,
    "pitch": 0,
    "note": "a place springs up"
   },
   {
-   "frame": 204,
+   "frame": 227,
    "id": "smooth-pop",
    "db": -5,
    "pitch": 2,
    "note": "a place springs up"
   },
   {
-   "frame": 246,
+   "frame": 265,
    "id": "smooth-pop",
    "db": -5,
    "pitch": 4,
    "note": "a place springs up"
   },
   {
-   "frame": 372,
+   "frame": 421,
    "id": "high-click",
    "db": -4,
    "pitch": 0,
    "note": "Knowledge base clicked"
   },
   {
-   "frame": 378,
+   "frame": 456,
    "id": "sweet-ui-open",
    "db": -7,
    "pitch": 0,
    "note": "the knowledge base opens"
   },
   {
-   "frame": 526,
-   "id": "ui-click-digital-04",
-   "db": -7,
-   "pitch": 0,
-   "note": "a department lifts"
-  },
-  {
-   "frame": 553,
-   "id": "ui-click-digital-04",
-   "db": -7,
+   "frame": 486,
+   "id": "ui-open",
+   "db": -9,
    "pitch": 2,
-   "note": "a department lifts"
+   "note": "the six departments lift"
   },
   {
-   "frame": 595,
+   "frame": 601,
    "id": "ui-click-digital-04",
-   "db": -7,
+   "db": -8,
+   "pitch": 0,
+   "note": "a department lights"
+  },
+  {
+   "frame": 628,
+   "id": "ui-click-digital-04",
+   "db": -8,
+   "pitch": 2,
+   "note": "a department lights"
+  },
+  {
+   "frame": 670,
+   "id": "ui-click-digital-04",
+   "db": -8,
    "pitch": 4,
-   "note": "a department lifts"
+   "note": "a department lights"
   },
   {
-   "frame": 648,
+   "frame": 723,
    "id": "ui-click-digital-04",
-   "db": -7,
+   "db": -8,
    "pitch": 6,
-   "note": "a department lifts"
+   "note": "a department lights"
   },
   {
-   "frame": 708,
+   "frame": 810,
    "id": "high-click",
    "db": -4,
    "pitch": 0,
    "note": "Sales clicked"
   },
   {
-   "frame": 758,
+   "frame": 845,
+   "id": "sweet-ui-open",
+   "db": -7,
+   "pitch": 2,
+   "note": "the Sales department opens"
+  },
+  {
+   "frame": 873,
    "id": "premium-and-smooth-pop",
    "db": -4,
    "pitch": 0,
-   "note": "the strategy document lifts: layer 1"
+   "note": "layer 1: the strategy document lifts"
   },
   {
-   "frame": 882,
+   "frame": 990,
    "id": "smooth-pop",
    "db": -5,
    "pitch": 2,
-   "note": "how we work lifts: layer 2"
+   "note": "layer 2: how we work lifts"
   },
   {
-   "frame": 971,
+   "frame": 1107,
    "id": "smooth-pop",
    "db": -5,
    "pitch": 4,
-   "note": "the playbooks lift: layer 3"
+   "note": "layer 3: the playbooks lift"
   },
   {
-   "frame": 1122,
+   "frame": 1368,
    "id": "high-click",
    "db": -4,
    "pitch": 0,
    "note": "Strategy tab clicked"
   },
   {
-   "frame": 1176,
+   "frame": 1450,
    "id": "high-click",
    "db": -6,
    "pitch": 2,
    "note": "Sales strategy opened"
   },
   {
-   "frame": 1200,
+   "frame": 1510,
    "id": "ui-open",
    "db": -7,
    "pitch": 0,
    "note": "the agent panel lifts"
   },
   {
-   "frame": 1278,
+   "frame": 1530,
    "id": "v4-type-delete",
    "db": -11,
    "pitch": -1,
    "note": "a key"
   },
   {
-   "frame": 1293,
+   "frame": 1545,
    "id": "v4-type-delete",
    "db": -11,
    "pitch": 0,
    "note": "a key"
   },
   {
-   "frame": 1317,
+   "frame": 1563,
    "id": "v4-type-delete",
    "db": -11,
    "pitch": 1,
    "note": "a key"
   },
   {
-   "frame": 1332,
+   "frame": 1581,
    "id": "v4-type-delete",
    "db": -11,
    "pitch": -1,
    "note": "a key"
   },
   {
-   "frame": 1350,
+   "frame": 1596,
    "id": "v4-type-delete",
    "db": -11,
    "pitch": 0,
    "note": "a key"
   },
   {
-   "frame": 1374,
+   "frame": 1614,
    "id": "v4-type-delete",
    "db": -11,
    "pitch": 1,
    "note": "a key"
   },
   {
-   "frame": 1392,
+   "frame": 1632,
    "id": "v4-type-delete",
    "db": -11,
    "pitch": -1,
    "note": "a key"
   },
   {
-   "frame": 1410,
+   "frame": 1650,
    "id": "v4-type-delete",
    "db": -11,
    "pitch": 0,
    "note": "a key"
   },
   {
-   "frame": 1434,
+   "frame": 1667,
    "id": "v4-type-delete",
    "db": -11,
    "pitch": 1,
    "note": "a key"
   },
   {
-   "frame": 1464,
+   "frame": 1752,
    "id": "ui-enter",
    "db": -4,
    "pitch": 0,
    "note": "Send"
   },
   {
-   "frame": 1524,
+   "frame": 1782,
+   "id": "ui-open",
+   "db": -10,
+   "pitch": 0,
+   "note": "thinking"
+  },
+  {
+   "frame": 1800,
    "id": "sweet-ui-open",
    "db": -5,
    "pitch": 0,
    "note": "the agent's suggestion appears"
   },
   {
-   "frame": 1567,
+   "frame": 1837,
    "id": "smooth-pop",
    "db": -4,
    "pitch": 3,
    "note": "the exact edit lifts"
   },
   {
-   "frame": 1578,
+   "frame": 1875,
    "id": "cinematic-click",
    "db": -6,
    "pitch": 0,
    "note": "\u20ac400 struck"
   },
   {
-   "frame": 1590,
+   "frame": 1893,
    "id": "smooth-pop",
    "db": -7,
    "pitch": 5,
    "note": "\u20ac450 in"
   },
   {
-   "frame": 1651,
+   "frame": 1980,
    "id": "ui-button",
    "db": -2,
    "pitch": 0,
    "note": "Approve pressed"
   },
   {
-   "frame": 1656,
+   "frame": 2010,
    "id": "premium-and-smooth-pop",
    "db": -5,
    "pitch": 2,
    "note": "strategy updated"
   },
   {
-   "frame": 1703,
+   "frame": 2070,
    "id": "ui-open",
    "db": -8,
    "pitch": 0,
    "note": "updating 15 related documents"
   },
   {
-   "frame": 1742,
+   "frame": 2076,
    "id": "ui-click-digital-04",
    "db": -12,
    "pitch": 0,
-   "note": "a document ticks past"
+   "note": "documents tick past"
   },
   {
-   "frame": 1748,
-   "id": "ui-click-digital-04",
-   "db": -12,
-   "pitch": 1,
-   "note": "a document ticks past"
-  },
-  {
-   "frame": 1754,
+   "frame": 2097,
    "id": "ui-click-digital-04",
    "db": -12,
    "pitch": 2,
-   "note": "a document ticks past"
+   "note": "documents tick past"
   },
   {
-   "frame": 1760,
-   "id": "ui-click-digital-04",
-   "db": -12,
-   "pitch": 3,
-   "note": "a document ticks past"
-  },
-  {
-   "frame": 1766,
+   "frame": 2118,
    "id": "ui-click-digital-04",
    "db": -12,
    "pitch": 4,
-   "note": "a document ticks past"
+   "note": "documents tick past"
   },
   {
-   "frame": 1772,
-   "id": "ui-click-digital-04",
-   "db": -12,
-   "pitch": 5,
-   "note": "a document ticks past"
-  },
-  {
-   "frame": 1812,
+   "frame": 2136,
    "id": "premium-and-smooth-pop",
    "db": -4,
    "pitch": 0,
    "note": "4 documents updated"
   },
   {
-   "frame": 1848,
+   "frame": 2169,
+   "id": "high-click",
+   "db": -5,
+   "pitch": 0,
+   "note": "Review one by one"
+  },
+  {
+   "frame": 2225,
    "id": "sweet-ui-open",
    "db": -6,
    "pitch": 2,
    "note": "ready for your review"
   },
   {
-   "frame": 1877,
-   "id": "smooth-pop",
-   "db": -5,
-   "pitch": 3,
-   "note": "the Pricing change lifts"
-  },
-  {
-   "frame": 1908,
+   "frame": 2307,
    "id": "ui-button",
    "db": -4,
    "pitch": 0,
    "note": "Approve all"
   },
   {
-   "frame": 1958,
+   "frame": 2430,
    "id": "high-click",
    "db": -4,
    "pitch": 0,
    "note": "Offer tab clicked"
   },
   {
-   "frame": 2015,
+   "frame": 2453,
    "id": "sweet-ui-open",
-   "db": -5,
+   "db": -7,
+   "pitch": 0,
+   "note": "Offer opens"
+  },
+  {
+   "frame": 2496,
+   "id": "high-click",
+   "db": -7,
+   "pitch": 2,
+   "note": "the transcript box focused"
+  },
+  {
+   "frame": 2515,
+   "id": "ui-open",
+   "db": -8,
    "pitch": 0,
    "note": "the transcript box lifts"
   },
   {
-   "frame": 2024,
+   "frame": 2544,
    "id": "v4-type-delete",
    "db": -10,
    "pitch": 0,
    "note": "a transcript line lands"
   },
   {
-   "frame": 2036,
+   "frame": 2557,
    "id": "v4-type-delete",
    "db": -10,
    "pitch": 1,
    "note": "a transcript line lands"
   },
   {
-   "frame": 2048,
+   "frame": 2570,
    "id": "v4-type-delete",
    "db": -10,
    "pitch": 2,
    "note": "a transcript line lands"
   },
   {
-   "frame": 2060,
+   "frame": 2584,
    "id": "v4-type-delete",
    "db": -10,
    "pitch": 3,
    "note": "a transcript line lands"
   },
   {
-   "frame": 2083,
+   "frame": 2597,
+   "id": "v4-type-delete",
+   "db": -10,
+   "pitch": 4,
+   "note": "a transcript line lands"
+  },
+  {
+   "frame": 2648,
    "id": "ui-enter",
    "db": -4,
    "pitch": 0,
    "note": "Read transcript"
   },
   {
-   "frame": 2136,
+   "frame": 2670,
    "id": "ui-open",
-   "db": -9,
+   "db": -10,
    "pitch": 0,
    "note": "reading the transcript"
   },
   {
-   "frame": 2160,
+   "frame": 2727,
    "id": "sweet-ui-open",
    "db": -5,
    "pitch": 0,
    "note": "here's what I took from it"
   },
   {
-   "frame": 2226,
+   "frame": 2751,
    "id": "smooth-pop",
-   "db": -4,
+   "db": -6,
    "pitch": 0,
-   "note": "a card lifts"
+   "note": "the four cards lift"
   },
   {
-   "frame": 2270,
-   "id": "smooth-pop",
-   "db": -4,
+   "frame": 2756,
+   "id": "ui-click-digital-04",
+   "db": -7,
    "pitch": 2,
-   "note": "a card lifts"
+   "note": "the focus moves: needs, budget, timeline"
   },
   {
-   "frame": 2299,
-   "id": "smooth-pop",
-   "db": -4,
+   "frame": 2797,
+   "id": "ui-click-digital-04",
+   "db": -7,
    "pitch": 4,
-   "note": "a card lifts"
+   "note": "the focus moves: needs, budget, timeline"
   },
   {
-   "frame": 2346,
+   "frame": 2826,
+   "id": "ui-click-digital-04",
+   "db": -7,
+   "pitch": 6,
+   "note": "the focus moves: needs, budget, timeline"
+  },
+  {
+   "frame": 2958,
    "id": "high-click",
    "db": -4,
    "pitch": 0,
    "note": "Make an offer"
   },
   {
-   "frame": 2406,
+   "frame": 2981,
+   "id": "ui-open",
+   "db": -10,
+   "pitch": 0,
+   "note": "writing the offer"
+  },
+  {
+   "frame": 3030,
    "id": "premium-and-smooth-pop",
    "db": -3,
    "pitch": 0,
    "note": "the offer is ready"
   },
   {
-   "frame": 2468,
+   "frame": 3057,
    "id": "smooth-pop",
    "db": -5,
    "pitch": 3,
-   "note": "the price table lifts"
+   "note": "prices and timeline lift"
   },
   {
-   "frame": 2504,
-   "id": "sweet-ui-open",
-   "db": -6,
-   "pitch": 0,
-   "note": "terms and next step"
+   "frame": 3090,
+   "id": "ui-click-digital-04",
+   "db": -8,
+   "pitch": 5,
+   "note": "the focus moves to the timeline"
   },
   {
-   "frame": 2573,
-   "id": "high-click",
-   "db": -4,
-   "pitch": 2,
-   "note": "Copy"
-  },
-  {
-   "frame": 2604,
+   "frame": 3198,
    "id": "high-click",
    "db": -6,
    "pitch": 0,
    "note": "Strategy clicked"
   },
   {
-   "frame": 2635,
+   "frame": 3265,
    "id": "premium-and-smooth-pop",
    "db": -5,
    "pitch": -2,
    "note": "the strategy: the source"
   },
   {
-   "frame": 2695,
+   "frame": 3364,
    "id": "high-click",
    "db": -6,
    "pitch": 2,
-   "note": "knowledge base"
+   "note": "knowledge base clicked"
   },
   {
-   "frame": 2713,
+   "frame": 3414,
    "id": "ui-click-digital-04",
    "db": -11,
    "pitch": 0,
-   "note": "the departments ripple"
+   "note": "the departments ripple in sync"
   },
   {
-   "frame": 2719,
+   "frame": 3424,
    "id": "ui-click-digital-04",
    "db": -11,
    "pitch": 2,
-   "note": "the departments ripple"
+   "note": "the departments ripple in sync"
   },
   {
-   "frame": 2725,
+   "frame": 3434,
    "id": "ui-click-digital-04",
    "db": -11,
    "pitch": 4,
-   "note": "the departments ripple"
+   "note": "the departments ripple in sync"
   },
   {
-   "frame": 2731,
+   "frame": 3445,
    "id": "ui-click-digital-04",
    "db": -11,
    "pitch": 6,
-   "note": "the departments ripple"
+   "note": "the departments ripple in sync"
   },
   {
-   "frame": 2737,
+   "frame": 3455,
    "id": "ui-click-digital-04",
    "db": -11,
    "pitch": 8,
-   "note": "the departments ripple"
+   "note": "the departments ripple in sync"
   },
   {
-   "frame": 2743,
+   "frame": 3465,
    "id": "ui-click-digital-04",
    "db": -11,
    "pitch": 10,
-   "note": "the departments ripple"
+   "note": "the departments ripple in sync"
   },
   {
-   "frame": 2790,
-   "id": "smooth-pop",
-   "db": -5,
-   "pitch": 2,
-   "note": "every offer"
+   "frame": 3439,
+   "id": "high-click",
+   "db": -7,
+   "pitch": 4,
+   "note": "Offer clicked"
   },
   {
-   "frame": 2845,
+   "frame": 3511,
    "id": "high-click",
    "db": -6,
    "pitch": 0,
    "note": "the logo: home"
   },
   {
-   "frame": 2856,
+   "frame": 3534,
    "id": "ui-premium-open",
    "db": -8,
    "pitch": 0,

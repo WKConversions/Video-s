@@ -6,42 +6,42 @@ import html, json, os, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__)); SITE = os.path.join(HERE, "site"); FR = os.path.join(SITE, "frames")
 SRC = sys.argv[1]; MOTION = sys.argv[sys.argv.index("--motion") + 1] if "--motion" in sys.argv else None
-VERSION = "v1"; DATE = "7 Nov 2026"
+VERSION = "v2"; DATE = "7 Nov 2026"
 
 # (id, title, t0, t1, VO line, on-screen words, what moves (the scene), transition out, [(time, caption), ...])
 BEATS = [
-  ("s1", "Home", 0.0, 6.0, "Meet your intelligence platform. Everything about how your company works, in one place.", "Good morning, Sam · Knowledge base · Offer · Strategy",
+  ("s1", "Home", 0.0, 7.4, "Meet your intelligence platform. Everything about how your company works, in one place.", "Good morning, Sam · Knowledge base · Offer · Strategy",
    "The home screen assembles: the greeting rises, then the three places of the platform spring up one after another: Knowledge base, Offer, Strategy.",
-   "The cursor opens the Knowledge base.", [(1.6, "The greeting rises on the real home screen."), (3.6, "The three places spring up in turn."), (5.4, "\"in one place\": all three, held.")]),
-  ("s2", "Knowledge base", 5.6, 11.6, "The knowledge base covers every department, from sales and marketing to operations and finance.", "Sales · Marketing · Operations · Customer Success · Finance · People",
+   "The cursor opens the Knowledge base.", [(1.6, "The home screen builds with the voice: the greeting."), (4.0, "\"how your company works\": the three places, one by one."), (5.4, "\"in one place\": all three, settled.")]),
+  ("s2", "Knowledge base", 7.4, 14.0, "The knowledge base covers every department, from sales and marketing to operations and finance.", "Sales · Marketing · Operations · Customer Success · Finance · People",
    "The knowledge base with its six departments; Sales, Marketing, Operations and Finance each lift on their word.",
-   "The cursor opens Sales.", [(7.2, "The knowledge base: every department."), (9.0, "\"sales and marketing\" lift in turn."), (10.9, "\"operations and finance\".")]),
-  ("s3", "Three layers", 11.4, 17.2, "Each starts with one strategy document, followed by how you work and detailed playbooks.", "Strategy · How we work · Playbooks",
+   "The cursor opens Sales.", [(8.7, "The knowledge base: all six departments lift as one grid."), (10.2, "\"sales and marketing\" light up in turn."), (12.2, "\"operations and finance\".")]),
+  ("s3", "Three layers", 14.0, 20.2, "Each starts with one strategy document, followed by how you work and detailed playbooks.", "Strategy · How we work · Playbooks",
    "Inside Sales: the one strategy document (layer 1) lifts, then How we work (layer 2), then the Playbooks (layer 3).",
-   "Back to the page; the cursor heads for Strategy.", [(13.1, "\"one strategy document\": layer 1."), (15.0, "\"how you work\": layer 2."), (16.5, "\"detailed playbooks\": layer 3.")]),
-  ("s4", "Tell the agent", 17.0, 24.6, "Need something to change? Open Strategy and just tell the agent, like: \"Raise our minimum project price to €450.\"", "Raise our minimum project price to €450",
+   "Back to the page; the cursor heads for Strategy.", [(15.3, "\"one strategy document\": layer 1 lifts."), (17.3, "\"how you work\": layer 2."), (19.2, "\"detailed playbooks\": layer 3.")]),
+  ("s4", "Tell the agent", 20.2, 29.4, "Need something to change? Open Strategy and just tell the agent, like: \"Raise our minimum project price to €450.\"", "Raise our minimum project price to €450",
    "Strategy opens; the Sales strategy with its agent panel; the panel lifts and the request is typed in with the voice.",
-   "Send.", [(19.2, "\"Open Strategy\"."), (20.6, "\"tell the agent\": the Strategy agent panel."), (23.2, "The request is typed in.")]),
-  ("s5", "The suggestion", 24.4, 27.0, "It suggests the exact edit.", "€400 → €450",
+   "Send.", [(22.9, "\"Open Strategy\": the tab is clicked."), (25.7, "\"tell the agent\": the Strategy agent panel lifts."), (27.5, "The request is typed in.")]),
+  ("s5", "The suggestion", 29.4, 32.4, "It suggests the exact edit.", "€400 → €450",
    "The agent thinks, replies with what it took from the request and suggests the exact change in the pricing table.",
-   "The cursor on Approve.", [(25.7, "The agent's reply and its suggestion."), (26.5, "\"exact edit\": €400 becomes €450.")]),
-  ("s6", "Approve", 26.9, 28.2, "You approve.", "Approve",
-   "Approve is pressed; the strategy is updated.", "The update spreads.", [(27.7, "\"You approve.\"")]),
-  ("s7", "Every document follows", 28.0, 32.2, "Every related document updates to match, ready for your review.", "Updating 15 related documents · Review updated documents",
-   "Fifteen related documents update; four changed ones wait in Review updated documents, each with its change shown.",
-   "All approved; the cursor heads for Offer.", [(29.0, "\"Every related document\": 15 updating."), (30.4, "Four changed documents, ready to check."), (31.4, "\"ready for your review\".")]),
-  ("s8", "Paste the transcript", 31.9, 35.3, "Had a client call? Paste the transcript into Offer.", "the Fernwood call transcript",
+   "The cursor on Approve.", [(30.3, "\"suggests\": the agent replies with the exact change."), (31.7, "\"exact edit\": €400 becomes €450.")]),
+  ("s6", "Approve", 32.4, 34.2, "You approve.", "Approve",
+   "Approve is pressed; the strategy is updated.", "The update spreads.", [(33.1, "\"You approve\": Approve is pressed.")]),
+  ("s7", "Every document follows", 34.2, 39.4, "Every related document updates to match, ready for your review.", "Updating 15 related documents · Review updated documents",
+   "Fifteen related documents update; the four that changed wait in Review updated documents; Approve all.",
+   "All approved; the cursor heads for Offer.", [(35.0, "\"Every related document\": 15 updating."), (35.9, "Four changed documents, ready to check."), (37.7, "\"ready for your review\": Review updated documents.")]),
+  ("s8", "Paste the transcript", 39.4, 44.2, "Had a client call? Paste the transcript into Offer.", "the Fernwood call transcript",
    "Offer opens; the transcript box lifts and a (custom) client call pours in; Read transcript.",
-   "The platform reads the call.", [(32.9, "\"Had a client call?\" Offer opens."), (34.3, "\"Paste the transcript\"."), (34.9, "Read transcript.")]),
-  ("s9", "What matters", 35.1, 38.9, "It pulls out what matters, needs, budget and timeline,", "Needs · Budget signals · Timeline",
+   "The platform reads the call.", [(40.6, "\"Had a client call?\" Offer is clicked."), (43.0, "\"Paste the transcript\": the call pours in."), (44.1, "Read transcript.")]),
+  ("s9", "What matters", 44.2, 48.4, "It pulls out what matters, needs, budget and timeline,", "Needs · Budget signals · Timeline",
    "\"Here's what I took from it\": the summary and eight cards; Needs, Budget signals and Timeline lift on their words.",
-   "Make an offer.", [(36.6, "\"what matters\": the summary and the cards."), (37.3, "\"needs\"."), (38.0, "\"budget\"."), (38.5, "\"timeline\".")]),
-  ("s10", "The offer", 38.8, 43.4, "and writes a tailored offer from your own prices and process, in minutes.", "Offer for Fernwood Coffee Roasters · Scope and price",
-   "The offer is written: the title, what we heard, the scope and price table from Nova's own prices, the payment terms and next step; Copy.",
-   "Back to the strategy.", [(40.4, "\"tailored offer\": Offer for Fernwood Coffee Roasters."), (41.4, "\"your own prices\"."), (42.1, "\"and process\": terms and next step."), (43.0, "\"in minutes\": Copy.")]),
-  ("s11", "One source of truth", 43.2, 49.8, "One source of truth, always in sync, and every offer on point.", "",
+   "Make an offer.", [(45.6, "\"what matters\": what the platform took from the call."), (46.0, "\"needs\"."), (46.8, "\"budget\"."), (47.3, "\"timeline\".")]),
+  ("s10", "The offer", 48.4, 53.8, "and writes a tailored offer from your own prices and process, in minutes.", "Offer for Fernwood Coffee Roasters · Scope and price",
+   "The offer is written: the title, what we heard, and the scope and price table from Nova's own prices with the timeline.",
+   "Back to the strategy.", [(49.3, "Make an offer."), (50.6, "\"a tailored offer\": Offer for Fernwood Coffee Roasters."), (51.2, "\"your own prices\": scope and price."), (51.8, "\"and process\": the timeline.")]),
+  ("s11", "One source of truth", 53.8, 61.0, "One source of truth, always in sync, and every offer on point.", "",
    "The strategy (the source), the knowledge base rippling in sync, the offer, and the home screen to rest.",
-   "End.", [(44.2, "\"One source of truth\": the strategy."), (45.6, "\"always in sync\": every department."), (46.9, "\"every offer on point\"."), (49.0, "The platform at rest.")]),
+   "End.", [(55.0, "\"One source of truth\": the strategy."), (57.1, "\"always in sync\": every department."), (58.1, "\"every offer on point\"."), (60.2, "The platform at rest.")]),
 ]
 NOTES = [
   ("Your real screens, nobody's data", "Every screen is your own screenshot. The logo is a neutral \"nova\", the avatar an \"S\", the names Sam van Dijk and Daniel Bos. The settings screen (API key, workspace ID) is never shown."),
@@ -51,7 +51,12 @@ NOTES = [
 ]
 QUESTIONS = ["Does the platform have a name for the first line and the logo? It is a neutral \"nova\" now.",
              "Is the demo story right for your buyers (a studio raising its minimum price; a coffee roaster's website offer), or should the examples come from another industry?"]
-REVISIONS = []
+REVISIONS = [
+  ("v1: hasty; clicks and changes squeezed into the voice-over", "v2: a pause after every sentence; each sentence's visual finishes before the next one starts", "Your feedback: sentence by sentence, clearer"),
+  ("v1: quick cursor jumps", "v2: the cursor glides, the target lights up, the press is visible, then the platform responds", "Clear click moments"),
+  ("v1: camera moves during dissolves and lifts", "v2: the camera stands still during clicks, screen changes and lifts", "Smoother, no ghosting or shimmer"),
+  ("v1: an almost empty opening", "v2: the home screen builds with the first lines", "No dead start"),
+]
 
 def grab(t, name):
     out = os.path.join(FR, name)
