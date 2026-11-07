@@ -10,7 +10,7 @@ const lerp = (t: number, a: number, b: number, e: (x: number) => number = SOFT) 
 // ------------------------------------------------------------------ timeline (film seconds)
 const T_LIFT = 20.0, T_SEND = 24.4, T_REPLY = 25.4, T_POP = 26.12, T_APPROVE = 27.52, T_UPD = 28.38, T_DONE = 30.2, T_LIST = 30.78;
 // the camera on the screens (screen px): keyframes [t, x, y, s]
-const CAMK: [number, number, number, number, boolean][] = [[17.2, 1280, 600, 1, true], [18.5, 1280, 538, 1, true], [19.6, 1280, 542, 1.015, true], [20.6, 1280, 600, 1.02, true], [28.0, 1310, 600, 1.075, false], [30.7, 1310, 600, 1.1, false], [31.7, 1280, 600, 1, true], [32.2, 1280, 600, 1, true]];
+const CAMK: [number, number, number, number, boolean][] = [[17.0, 1280, 600, 1, true], [18.5, 1280, 538, 1.004, true], [19.6, 1280, 538, 1.03, false], [20.6, 1280, 600, 1.035, true], [28.0, 1310, 600, 1.08, false], [30.7, 1310, 600, 1.1, false], [31.7, 1280, 600, 1, true], [32.2, 1280, 600, 1, true]];
 export const camAt = (t: number) => {
   if (t <= CAMK[0][0]) return { x: 1280, y: 600, s: 1 };
   for (let i = 1; i < CAMK.length; i++) if (t <= CAMK[i][0]) { const a = CAMK[i - 1], b = CAMK[i], u = c01((t - a[0]) / (b[0] - a[0])), p = b[4] ? INOUT(u) : u; return { x: mix(a[1], b[1], p), y: mix(a[2], b[2], p), s: mix(a[3], b[3], p) }; }
@@ -168,7 +168,7 @@ const DiffLift: React.FC<{ t: number }> = ({ t }) => {
 type Seg = { a: number; b: number; to: [number, number]; sp: "s" | "f"; e?: (x: number) => number };
 const APPROVE_T = 27.4, REVIEW_T = 30.45;
 const SEGS: Seg[] = [
-  { a: 17.0, b: 18.64, to: [1070, 40], sp: "s" },
+  { a: 17.0, b: 18.64, to: [1070, 40], sp: "s", e: OUT },
   { a: 18.98, b: 19.58, to: [905, 345], sp: "s" },
   { a: 19.9, b: 20.85, to: toFrame((1800 - PXL) * kx24, 318 + 30 + (1248 - 1165), 20.9), sp: "f" },
   { a: 21.3, b: 24.3, to: toFrame((1790 - PXL) * kx24, 318 + 30 + (1292 - 1165), 24.3), sp: "f" },
@@ -179,7 +179,7 @@ const SEGS: Seg[] = [
 ];
 const PRESS: [number, number][] = [[18.7, 18.98], [19.6, 19.85], [20.9, 21.15], [24.4, 24.65], [27.5, 27.8], [30.55, 30.8], [31.02, 31.26], [31.8, 32.0]];
 const SEG_START: [number, number] = [880, 430];
-const idle = (t: number): [number, number] => [Math.sin(t * 2.3) * 1.6, Math.cos(t * 1.9) * 1.3];
+const idle = (t: number): [number, number] => [Math.sin(t * 3.1) * 2.4, Math.cos(t * 2.6) * 2.0];
 const curAt = (t: number): [number, number] => {
   let p0 = SEG_START;
   for (const sg of SEGS) {
