@@ -4,13 +4,13 @@ import React from "react";
 import { Crop, SHADOW, Shot } from "../kit";
 import { CamK, Layer, Lift, Veil, camAt, cursorAt, dis, liftP, Ptr, Spin, Way, k } from "./b3-lib";
 import { SOFT } from "../kit";
-import { Pg03, Pg13, Pg16, Pg17, Pg18, OFFER_TITLE, STRAT_RECT, TABLE_RECT, cardRect } from "./b3-screens";
+import { liftRect, Pg03, Pg13, Pg16, Pg17, Pg18, OFFER_TITLE, STRAT_RECT, TABLE_RECT } from "./b3-screens";
 
 // ------------------------------------------------------------------ cameras (screen px at frame centre, scale)
 const CAM_A: CamK[] = [[31.9, 1280, 600, 1], [32.2, 1280, 600, 1], [32.64, 1250, 440, 1.03], [33.2, 1262, 540, 1.06], [33.58, 1272, 590, 1.075], [34.5, 1280, 640, 1.09], [35.0, 1284, 650, 1.1],
   [35.45, 1280, 470, 1.22], [36.0, 1280, 520, 1.18], [36.9, 1280, 610, 1.15], [37.8, 1280, 720, 1.12], [38.45, 1280, 830, 1.1], [38.6, 1280, 850, 1.1], [39.15, 1190, 1640, 1.22], [39.7, 1190, 1650, 1.22]];
-const CAM_B: CamK[] = [[39.3, 1280, 470, 1.15], [40.1, 1280, 520, 1.1], [41.1, 1280, 860, 1.1], [41.9, 1280, 880, 1.1], [42.4, 1280, 450, 1.1], [43.5, 1280, 430, 1.12], [43.9, 1280, 430, 1.12]];
-const CAM_C: CamK[] = [[41.5, 1280, 560, 1.3], [42.7, 1280, 650, 1.35], [43.0, 1280, 650, 1.35]];
+const CAM_B: CamK[] = [[39.3, 1280, 470, 1.15], [40.1, 1280, 520, 1.1], [41.1, 1280, 835, 1.1], [41.9, 1280, 845, 1.1], [42.4, 1280, 450, 1.1], [43.5, 1280, 430, 1.12], [43.9, 1280, 430, 1.12]];
+const CAM_C: CamK[] = [[41.5, 1280, 560, 1.36], [42.7, 1280, 650, 1.4], [43.0, 1280, 650, 1.4]];
 const CAM_18: CamK[] = [[43.4, 1280, 430, 1.12], [44.2, 1330, 480, 1.1], [44.95, 1330, 500, 1.12], [45.3, 1330, 500, 1.12]];
 const CAM_02: CamK[] = [[44.9, 1280, 450, 1.06], [46.3, 1280, 480, 1.12], [46.6, 1280, 480, 1.12]];
 const CAM_16C: CamK[] = [[46.2, 1280, 520, 1.14], [47.5, 1280, 400, 1.14], [47.8, 1280, 400, 1.14]];
@@ -94,12 +94,12 @@ export const Flow: React.FC<{ t: number }> = ({ t }) => {
 
       <Veil p={veil} />
       <Lift cam={a} rect={{ x: 735, y: 322, w: 1090, h: 372 }} p={pTx} ts={1.5} ty={520} r={22}><Pg03 t={t} /></Lift>
-      <Lift cam={a} rect={cardRect("needs")} p={pNeeds} ts={1.75} r={17}><Pg13 t={t} /></Lift>
-      <Lift cam={a} rect={cardRect("budget")} p={pBud} ts={1.75} r={17}><Pg13 t={t} /></Lift>
-      <Lift cam={a} rect={cardRect("timeline")} p={pTime} ts={1.75} r={17}><Pg13 t={t} /></Lift>
+      <Lift cam={a} rect={liftRect("needs")} p={pNeeds} ts={2} r={17}><Pg13 t={t} /></Lift>
+      <Lift cam={a} rect={liftRect("budget")} p={pBud} ts={2} r={17}><Pg13 t={t} /></Lift>
+      <Lift cam={a} rect={liftRect("timeline")} p={pTime} ts={2} r={17}><Pg13 t={t} /></Lift>
       <Lift cam={b} rect={OFFER_TITLE} p={pTitle} ts={1.6} ty={500} r={20}><Pg16 /></Lift>
       <Lift cam={b} rect={TABLE_RECT} p={pTable} ts={1.6} r={20}><Pg16 /></Lift>
-      <Lift cam={c8} rect={STRAT_RECT} p={pStrat} ts={1.35} r={22}><Pg18 /></Lift>
+      <Lift cam={c8} rect={STRAT_RECT} p={pStrat} ts={1.3} r={22}><Pg18 /></Lift>
       {cur && <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, zIndex: 40 }}><Ptr x={cur.x} y={cur.y} press={cur.press} op={cur.op} /></div>}
     </>
   );

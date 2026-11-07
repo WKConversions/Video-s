@@ -33,6 +33,7 @@ export const Pg03: React.FC<{ t: number }> = ({ t }) => (
     <Cover x={735} y={1062} w={840} h={64} c="#ffffff" />
     <T x={741} y={ty(1074, 17.4, 1.3)} size={17.4} lh={1.3} weight={500} color={C.ink}>Offer for Studio Kade: website refresh</T>
     <T x={741} y={ty(1101, 14.6, 1.3)} size={14.6} lh={1.3} color={C.muted}>3 Nov 2026 · Sam van Dijk</T>
+    <Cover x={0} y={1345} w={2559} h={7} c={C.page} />
   </Shot>
 );
 
@@ -50,7 +51,7 @@ export const CARDS: CardDef[] = [
   { id: "risks", n: "14", x: 1287, y: 620, w: 530, h: 321, py: 1221, text: "Webshop platform not chosen yet; product photography not planned." },
 ];
 export const CARD = Object.fromEntries(CARDS.map((c) => [c.id, c])) as Record<string, CardDef>;
-export const cardRect = (id: string) => ({ x: CARD[id].x, y: CARD[id].py, w: CARD[id].w, h: CARD[id].h });
+export const liftRect = (id: string) => ({ x: CARD[id].x, y: CARD[id].py, w: CARD[id].w, h: 134 });
 const CARD_BG = "#eff0f2";
 
 const CardEl: React.FC<{ c: CardDef; op: number; dy: number }> = ({ c, op, dy }) => (
@@ -74,6 +75,7 @@ export const Pg13: React.FC<{ t: number }> = ({ t }) => {
       <div style={{ position: "absolute", left: 0, top: 1214, width: SW, height: 737, overflow: "hidden" }}>
         <Shot n="14" style={{ top: -613 }}>
           <Cover x={730} y={606} w={1100} h={342} c="#ffffff" />
+          <Cover x={0} y={1338} w={2559} h={12} c={C.page} />
         </Shot>
       </div>
       {CARDS.map((c, i) => {
@@ -99,7 +101,7 @@ const TblRow: React.FC<{ y: number; a: string; b: string; bold?: boolean; last?:
   </>
 );
 export const OFFER_TITLE = { x: 745, y: 392, w: 1110, h: 108 };
-export const TABLE_RECT = { x: 745, y: 905, w: 1110, h: 268 };
+export const TABLE_RECT = { x: 745, y: 888, w: 1070, h: 296 };
 export const Pg16: React.FC = () => (
   <Shot n="16">
     <Cover x={745} y={405} w={1100} h={84} c="#ffffff" />
@@ -120,6 +122,8 @@ export const Pg16: React.FC = () => (
     <TblRow y={1111} a="Total" b="€10,400" bold last />
     <T x={766} y={tz(1212, 26, 1.2)} size={26} lh={1.2} weight={600} head color={C.ink}>Timeline</T>
     <T x={768} y={tz(1262, 18.2, 1.565)} w={1040} size={18.2} lh={1.565} color={DOC}>First designs in January, launch on <span style={S(600)}>7 March</span>.</T>
+    <Cover x={0} y={1345} w={2559} h={7} c={C.page} />
+    <Cover x={711} y={1345} w={1138} h={7} c="#ffffff" />
   </Shot>
 );
 
@@ -151,11 +155,12 @@ export const Pg17: React.FC = () => (
     <Num top={895} n={2}><span style={S(600)}>The timeline:</span> first designs in January, launch on 7 March.</Num>
     <Num top={927} n={3}><span style={S(600)}>The start:</span> we begin on 12 January.</Num>
     <T x={768} y={tz(1078, 16.4, 1.3)} size={16.4} lh={1.3} color="#6c727b">Sam van Dijk and Daniel Bos, Nova</T>
+    <Cover x={0} y={1345} w={2559} h={7} c={C.page} />
   </Shot>
 );
 
 // ------------------------------------------------------------------ 18 Sales strategy (source) with the doc text re-set
-export const STRAT_RECT = { x: 936, y: 150, w: 470, h: 760 };
+export const STRAT_RECT = { x: 936, y: 128, w: 470, h: 790 };
 export const Pg18: React.FC = () => (
   <Shot n="18">
     <Cover x={962} y={528} w={420} h={822} c="#ffffff" />

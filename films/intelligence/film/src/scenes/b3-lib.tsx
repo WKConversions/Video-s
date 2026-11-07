@@ -66,7 +66,7 @@ export const Lift: React.FC<{ cam: CamV; rect: Rect; p: number; ts: number; tx?:
 };
 /** a lift curve: up at a (spring), down at b (soft) */
 export const liftP = (t: number, a: number, b: number, down = 0.38) => (t < b ? Math.min(1, sp(t, a, 1.5, 0.82)) : 1 - k(t, b, down, SOFT) * 1) * (t >= a ? 1 : 0);
-export const Veil: React.FC<{ p: number }> = ({ p }) => (p <= 0.001 ? null : <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, background: `rgba(5,15,25,${0.24 * p})`, zIndex: 10 }} />);
+export const Veil: React.FC<{ p: number }> = ({ p }) => (p <= 0.001 ? null : <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, background: `rgba(5,15,25,${0.16 * p})`, zIndex: 10 }} />);
 
 // ------------------------------------------------------------------ spinner (replaces the photo's frozen arc so it turns)
 export const Spin: React.FC<{ x: number; y: number; t: number; r?: number }> = ({ x, y, t, r = 11 }) => (

@@ -10,10 +10,10 @@ const lerp = (t: number, a: number, b: number, e: (x: number) => number = SOFT) 
 // ------------------------------------------------------------------ timeline (film seconds)
 const T_LIFT = 20.0, T_SEND = 24.4, T_REPLY = 25.4, T_POP = 26.12, T_APPROVE = 27.52, T_UPD = 28.38, T_DONE = 30.2, T_LIST = 30.78;
 // the camera on the screens (screen px): keyframes [t, x, y, s]
-const CAMK: [number, number, number, number][] = [[17.2, 1280, 600, 1], [18.5, 1280, 538, 1], [19.6, 1280, 542, 1.015], [20.6, 1280, 600, 1], [28.0, 1280, 600, 1.045], [30.7, 1280, 600, 1.02], [31.7, 1280, 600, 1], [32.2, 1280, 600, 1]];
+const CAMK: [number, number, number, number, boolean][] = [[17.2, 1280, 600, 1, true], [18.5, 1280, 538, 1, true], [19.6, 1280, 542, 1.015, true], [20.6, 1280, 600, 1.02, true], [28.0, 1310, 600, 1.075, false], [30.7, 1310, 600, 1.1, false], [31.7, 1280, 600, 1, true], [32.2, 1280, 600, 1, true]];
 export const camAt = (t: number) => {
   if (t <= CAMK[0][0]) return { x: 1280, y: 600, s: 1 };
-  for (let i = 1; i < CAMK.length; i++) if (t <= CAMK[i][0]) { const a = CAMK[i - 1], b = CAMK[i], p = INOUT(c01((t - a[0]) / (b[0] - a[0]))); return { x: mix(a[1], b[1], p), y: mix(a[2], b[2], p), s: mix(a[3], b[3], p) }; }
+  for (let i = 1; i < CAMK.length; i++) if (t <= CAMK[i][0]) { const a = CAMK[i - 1], b = CAMK[i], u = c01((t - a[0]) / (b[0] - a[0])), p = b[4] ? INOUT(u) : u; return { x: mix(a[1], b[1], p), y: mix(a[2], b[2], p), s: mix(a[3], b[3], p) }; }
   return { x: 1280, y: 600, s: 1 };
 };
 const scr2f = (x: number, y: number, t: number): [number, number] => { const c = camAt(t); return [960 + (x - c.x) * c.s, 540 + (y - c.y) * c.s]; };
@@ -24,7 +24,7 @@ const kx24 = K("24")[0];
 const PW = (PXR - PXL) * kx24; // panel width in its own px
 const H1 = 318 + 30 + 155, H2 = 448 + 30 + 155, H3 = 690, H4 = 382, H5 = 422;
 const SC1 = 1.75, SC2 = 1.45;
-const scAt = (t: number) => mix(SC1, SC2, lerp(t, T_SEND + 0.1, T_SEND + 0.7));
+const scAt = (t: number) => mix(SC1 + 0.022 * (Math.min(t, T_SEND + 0.1) - 20.5), SC2 + 0.009 * (Math.max(t, 24.6) - 24.6), lerp(t, T_SEND + 0.1, T_SEND + 0.7));
 const hAt = (t: number) => {
   let h = H1; h = mix(h, H2, lerp(t, T_SEND + 0.1, T_SEND + 0.65)); h = mix(h, H3, lerp(t, T_REPLY - 0.05, T_REPLY + 0.55)); h = mix(h, H4, lerp(t, T_APPROVE + 0.12, T_APPROVE + 0.7)); h = mix(h, H5, lerp(t, T_DONE - 0.1, T_DONE + 0.4));
   return h;
@@ -77,10 +77,10 @@ const Panel: React.FC<{ t: number }> = ({ t }) => {
   if (t < T_LIFT || pres <= 0) return null;
   const [kx26, ky26] = K("26");
   const a1 = 1 - lerp(t, T_SEND + 0.05, T_SEND + 0.35);
-  const a2 = lerp(t, T_SEND + 0.05, T_SEND + 0.35) - lerp(t, T_REPLY - 0.05, T_REPLY + 0.25);
-  const a3 = lerp(t, T_REPLY - 0.05, T_REPLY + 0.25) - lerp(t, T_APPROVE + 0.1, T_APPROVE + 0.4);
-  const a4 = lerp(t, T_APPROVE + 0.1, T_APPROVE + 0.4) - lerp(t, T_DONE - 0.05, T_DONE + 0.25);
-  const a5 = lerp(t, T_DONE - 0.05, T_DONE + 0.25);
+  const a2 = lerp(t, T_SEND + 0.1, T_SEND + 0.35) - lerp(t, T_REPLY - 0.1, T_REPLY + 0.06);
+  const a3 = lerp(t, T_REPLY + 0.04, T_REPLY + 0.26) - lerp(t, T_APPROVE + 0.06, T_APPROVE + 0.2);
+  const a4 = lerp(t, T_APPROVE + 0.2, T_APPROVE + 0.42) - lerp(t, T_DONE - 0.12, T_DONE + 0.02);
+  const a5 = lerp(t, T_DONE + 0.02, T_DONE + 0.24);
   const lift = c01(b.p);
   const footLy = mix(1165 - 92, 318 + 30, lerp(t, T_LIFT, T_LIFT + 0.5, OUT));
   const typed = typedAt(t);
@@ -90,7 +90,7 @@ const Panel: React.FC<{ t: number }> = ({ t }) => {
   const prog = lerp(t, T_UPD, 29.56), nDone = Math.min(15, Math.floor(prog * 15 + 0.001));
   const pressA = c01((t - T_APPROVE) / 0.3);
   const [pL, pT, pW, pH] = POPR;
-  const ps = 1 + 0.28 * pop;
+  const ps = 1 + 0.18 * pop;
   const pressBtn = 1 - 0.07 * Math.sin(Math.PI * pressA) * (pressA > 0 && pressA < 1 ? 1 : 0);
   return (
     <div style={{ position: "absolute", left: b.left, top: b.top, width: PW, height: b.h, transformOrigin: "0 0", transform: `scale(${b.sc * (0.965 + 0.035 * pres)})`, opacity: Math.min(1, lift * 4) * pres }}>
@@ -179,6 +179,7 @@ const SEGS: Seg[] = [
 ];
 const PRESS: [number, number][] = [[18.7, 18.98], [19.6, 19.85], [20.9, 21.15], [24.4, 24.65], [27.5, 27.8], [30.55, 30.8], [31.02, 31.26], [31.8, 32.0]];
 const SEG_START: [number, number] = [880, 430];
+const idle = (t: number): [number, number] => [Math.sin(t * 2.3) * 1.6, Math.cos(t * 1.9) * 1.3];
 const curAt = (t: number): [number, number] => {
   let p0 = SEG_START;
   for (const sg of SEGS) {
@@ -203,7 +204,7 @@ export const Seq: React.FC<{ t: number }> = ({ t }) => {
   const lp = Math.min(1, liftP(t)) * PRES(t);
   const hole = lp;
   const veil = 0.16 * Math.min(1, lerp(t, T_LIFT, T_LIFT + 0.4)) * PRES(t) + 0.16 * Math.max(0, lerp(t, 31.28, 31.4) * (1 - lerp(t, 31.74, 31.94))) + 0.1 * (lerp(t, 28.95, 29.1) * (1 - lerp(t, 29.78, 30.05)));
-  const cur = curAt(t);
+  const cur0 = curAt(t), id = idle(t), cur: [number, number] = [cur0[0] + id[0], cur0[1] + id[1]];
   let press = 0; for (const [a, b] of PRESS) if (t >= a && t <= b) press = (t - a) / (b - a);
   const sCur = 1 + 0.18 * (t > 27.3 && t < 27.9 ? 1 : 0);
   return (<>
@@ -215,7 +216,7 @@ export const Seq: React.FC<{ t: number }> = ({ t }) => {
       <F t={t} a={T_SEND + 0.05} d={0.16} until={25.9}><Shot n="25"><StageOv n="25" hole={hole} /></Shot></F>
       <F t={t} a={T_REPLY} until={28.2}><Shot n="26"><StageOv n="26" hole={hole} /></Shot></F>
       <F t={t} a={T_APPROVE + 0.12} until={31.3}><Shot n="27"><StageOv n="27" hole={hole} /></Shot></F>
-      <F t={t} a={T_LIST}><Shot n="30" /></F>
+      <F t={t} a={T_LIST + 0.04} d={0.26}><Shot n="30" /></F>
       <F t={t} a={31.1} until={32.3}><Shot n="31"><Nat n="31"><Ov31 /></Nat></Shot></F>
       <F t={t} a={31.88} d={0.26}><Shot n="34" /></F>
     </Cam>
