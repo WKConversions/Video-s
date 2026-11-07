@@ -153,6 +153,13 @@ const R6 = (x: number, y: number, w: number, h: number): Rect => ({ x: Math.roun
 export const STRAT_RECT = R6(707, 363, 1132, 84);
 export const HWW_RECT = R6(707, 529, 1132, 679);
 export const PB_RECT: Rect = { x: Math.round(707 * K6) + 1, y: 1291, w: Math.round(1132 * K6) - 2, h: 302 };
+// whole blocks with their heading + "Layer n" badge (revision 1): what the lifts take out of the page
+const BX = Math.round(696 * K6), BW = Math.round(1160 * K6);
+export const STRAT_BLOCK: Rect = { x: BX, y: 308, w: BW, h: 152 };
+export const HWW_BLOCK: Rect = { x: BX, y: 478, w: BW, h: 476 };
+export const PB_LABEL: Rect = { x: BX, y: 1236, w: BW, h: 55 };
+export const PB_BLOCK: Rect = { x: BX, y: 1236, w: BW, h: 55 + 302 };
+export const GRID_RECT: Rect = { x: 706, y: 322, w: 1148, h: 440 };
 
 /** the Layer 3 card (its first group, "Pricing"), built in the platform's row style; rowP[0] = header, rowP[1..3] = rows (0..1) */
 export const PlaybooksCard: React.FC<{ rowP: number[] }> = ({ rowP }) => {

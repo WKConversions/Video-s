@@ -1,4 +1,4 @@
-// Solo entry for builder B2 (S4-S7, 17.0-32.2)
+// Solo entry for builder B2 (S4-S7, 20.0-39.4)
 import React from "react";
 import { Composition, registerRoot, useCurrentFrame } from "remotion";
 import { DUR, FPS } from "../kit";

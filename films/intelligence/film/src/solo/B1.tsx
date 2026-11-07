@@ -1,4 +1,4 @@
-// Solo entry for B1: S1 - S3 only. bash check.sh B1 0 17.2
+// Solo entry for B1: S1 - S3 only. bash check.sh B1 0 20.2
 import React from "react";
 import { Composition, registerRoot, useCurrentFrame } from "remotion";
 import { DUR, FPS } from "../kit";

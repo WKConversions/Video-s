@@ -30,7 +30,7 @@ const B: React.FC<{ children?: React.ReactNode }> = ({ children }) => <b style={
 
 // ------------------------------------------------------------------ Sales strategy, left column
 /** v "A" = screens 24/25 (6. Pricing at the top), "B" = 26-29 (scrolled 100 px); val = the project minimum shown in the table */
-export const SalesCol: React.FC<{ v: "A" | "B"; val: "400" | "450" }> = ({ v, val }) => {
+export const SalesCol: React.FC<{ v: "A" | "B"; val: "400" | "450"; p450?: number; flash?: number }> = ({ v, val, p450, flash = 0 }) => {
   const dy = v === "A" ? 0 : -100;
   const X = 975, S = 17, TS = 14.2;
   const row = (y: number, a: React.ReactNode[], b: React.ReactNode[]) => (<>
@@ -46,7 +46,8 @@ export const SalesCol: React.FC<{ v: "A" | "B"; val: "400" | "450" }> = ({ v, va
       <Cv x={962} y={241 + dy} w={410} h={142} />
       <Para x={X} y={247} dy={dy} size={S} lines={["Every quote starts with a conversation, so the", "amount depends on the scope of the project and", "on the client, and it is agreed in the call. We", "keep a clear floor for every service, and quotes", "exclude VAT."]} />
       {/* table */}
-      {row(470, ["Minimum one-off", "project"], [val === "450" ? "€450" : "€400"])}
+      {row(470, ["Minimum one-off", "project"], [p450 === undefined ? (val === "450" ? "€450" : "€400") : <><span style={{ position: "absolute", left: 0, top: 0, opacity: 1 - p450 }}>€400</span><span style={{ opacity: p450 }}>€450</span></>])}
+      {flash > 0.001 && <div style={{ position: "absolute", left: 1124, top: 470 + dy - 8, width: 100, height: 32, borderRadius: 6, background: "#dcf3e5", opacity: flash, mixBlendMode: "multiply" }} />}
       {row(544, ["Minimum monthly", "retainer"], ["€900 to €2,000 a month"])}
       {row(618, ["Range per", "service"], ["€450 to €4,500"])}
       {row(694, ["Discounts"], ["Never; scope comes down,", "not the price"])}

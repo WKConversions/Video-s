@@ -1,8 +1,8 @@
 // B3: the platform's own screens with every example text covered and re-set (custom Fernwood / Nova content), in Shot px.
 // Each Pg* draws a whole page (screen px or page px) so a lift-out is the same pixels as the stage.
 import React from "react";
-import { Crop, Cover, SW, Shot, T, Typed, C, k, OUT } from "../kit";
-import { ITA } from "./b3-lib";
+import { Crop, Cover, SW, Shot, T, C, k, OUT } from "../kit";
+import { ITA, Tint } from "./b3-lib";
 
 const DOC = "#0c1a28";            // offer / document body ink (sampled)
 const ty = (ocrTop: number, size: number, lh: number) => ocrTop - (0.5 * lh * size - 0.376 * size); // line box top from the OCR ink top
@@ -17,18 +17,20 @@ export const TRANSCRIPT = [
   "Sam: When does it need to be live?",
   "Lena: Before the opening, the 14th of March.",
 ];
-export const TX_AT = [33.74, 33.9, 34.04, 34.22, 34.34];
-export const Pg03: React.FC<{ t: number }> = ({ t }) => (
+export type P03 = { at: number; step: number; ring: number; hov: number; prs: number };
+export const Pg03: React.FC<{ t: number; p: P03 }> = ({ t, p }) => (
   <Shot n="03">
-    {t >= TX_AT[0] && <Cover x={760} y={346} w={420} h={40} c="#ffffff" />}
-    {t >= TX_AT[0] && (
+    {t >= p.at && <Cover x={760} y={346} w={420} h={40} c="#ffffff" />}
+    {p.ring > 0.001 && <div style={{ position: "absolute", left: 745, top: 335, width: 1068, height: 347, borderRadius: 12, boxShadow: `0 0 0 ${2.5 * p.ring}px rgba(47,125,225,${0.55 * p.ring})`, boxSizing: "border-box" }} />}
+    {t >= p.at && (
       <T x={770} y={ty(358, 17.1, 1.5)} w={1020} size={17.1} lh={1.5} color={C.ink}>
         {TRANSCRIPT.map((l, i) => {
-          const p = k(t, TX_AT[i], 0.2, OUT);
-          return <div key={i} style={{ opacity: p, transform: `translateY(${(1 - p) * 10}px)` }}>{l}</div>;
+          const q = k(t, p.at + i * p.step, 0.22, OUT);
+          return <div key={i} style={{ opacity: q, transform: `translateY(${(1 - q) * 10}px)` }}>{l}</div>;
         })}
       </T>
     )}
+    <Tint x={746} y={886} w={180} h={44} hov={p.hov} prs={p.prs} kind="btn" />
     {/* Earlier offers row */}
     <Cover x={735} y={1062} w={840} h={64} c="#ffffff" />
     <T x={741} y={ty(1074, 17.4, 1.3)} size={17.4} lh={1.3} weight={500} color={C.ink}>Offer for Studio Kade: website refresh</T>
@@ -54,22 +56,26 @@ export const CARD = Object.fromEntries(CARDS.map((c) => [c.id, c])) as Record<st
 export const liftRect = (id: string) => ({ x: CARD[id].x, y: CARD[id].py, w: CARD[id].w, h: 134 });
 const CARD_BG = "#eff0f2";
 
-const CardEl: React.FC<{ c: CardDef; op: number; dy: number }> = ({ c, op, dy }) => (
-  <div style={{ position: "absolute", left: c.x, top: c.py, opacity: op, transform: `translateY(${dy}px)` }}>
+const CardEl: React.FC<{ c: CardDef; top: number; op: number; dy: number; ring?: number }> = ({ c, top, op, dy, ring = 0 }) => (
+  <div style={{ position: "absolute", left: c.x, top, opacity: op, transform: `translateY(${dy}px)` }}>
     <Crop n={c.n} x={c.x} y={c.y} w={c.w} h={c.h} r={17}>
       <Cover x={8} y={38} w={c.w - 16} h={c.h - 46} c={CARD_BG} />
       <T x={19} y={ty(46.3, 17.1, 1.368)} w={494} size={17.1} lh={1.368} color={C.ink}>{c.text}</T>
     </Crop>
+    {ring > 0.001 && <div style={{ position: "absolute", inset: 0, borderRadius: 17, boxShadow: `0 0 0 ${3.5 * ring}px rgba(47,125,225,${0.7 * ring})` }} />}
   </div>
 );
 
-export const CARD_AT = 36.42, CARD_STEP = 0.13;
-export const Pg13: React.FC<{ t: number }> = ({ t }) => {
+/** focus on the lifted cards: ring per card id (0..1); the other cards dim while any ring is up */
+export type Foc = Record<string, number>;
+export const SCROLL = 601; // screen 14 is screen 13 scrolled by this many px
+export const Pg13: React.FC<{ t: number; at: number; foc?: Foc }> = ({ t, at, foc = {} }) => {
+  const any = Math.max(0, ...Object.values(foc));
   return (
     <div style={{ position: "absolute", left: 0, top: 0, width: SW, height: 2000 }}>
       <Shot n="13">
         <Cover x={730} y={366} w={1100} h={92} c="#ffffff" />
-        <T x={744} y={tz(373, 18.6, 1.47)} w={1075} size={18.6} lh={1.47} color={DOC}><Typed text={SUMMARY} t={t} at={36.1} dur={0.8} caret={false} /></T>
+        <T x={744} y={tz(373, 18.6, 1.47)} w={1075} size={18.6} lh={1.47} color={DOC}>{SUMMARY}</T>
         <Cover x={730} y={466} w={1100} h={884} c="#ffffff" />
       </Shot>
       <div style={{ position: "absolute", left: 0, top: 1214, width: SW, height: 737, overflow: "hidden" }}>
@@ -79,12 +85,21 @@ export const Pg13: React.FC<{ t: number }> = ({ t }) => {
         </Shot>
       </div>
       {CARDS.map((c, i) => {
-        const p = k(t, CARD_AT + i * CARD_STEP, 0.42, OUT);
-        return <CardEl key={c.id} c={c} op={Math.min(1, p * 1.6)} dy={(1 - p) * 34} />;
+        const p = k(t, at + i * 0.04, 0.3, OUT), r = foc[c.id] ?? 0;
+        return <CardEl key={c.id} c={c} top={c.py} op={Math.min(1, p * 1.6) * (1 - 0.5 * any * (1 - r))} dy={(1 - p) * 26} ring={r} />;
       })}
     </div>
   );
 };
+/** screen 14: the same page scrolled to its end ("What do you want to do with this?"), cards re-set */
+export const Pg14: React.FC<{ hov: number; prs: number }> = ({ hov, prs }) => (
+  <Shot n="14">
+    <Cover x={730} y={76} w={1100} h={872} c="#ffffff" />
+    {CARDS.map((c) => <CardEl key={c.id} c={c} top={c.n === "13" ? c.py - SCROLL : c.y} op={1} dy={0} />).slice(2)}
+    <Cover x={0} y={1338} w={2559} h={12} c={C.page} />
+    <Tint x={739} y={1032} w={140} h={46} hov={hov} prs={prs} />
+  </Shot>
+);
 
 // ------------------------------------------------------------------ 16 / 17 the offer
 const Bul: React.FC<{ x: number; top: number; lead: string; rest: string }> = ({ x, top, lead, rest }) => (
@@ -102,7 +117,7 @@ const TblRow: React.FC<{ y: number; a: string; b: string; bold?: boolean; last?:
 );
 export const OFFER_TITLE = { x: 745, y: 392, w: 1110, h: 108 };
 export const TABLE_RECT = { x: 745, y: 888, w: 1070, h: 296 };
-export const Pg16: React.FC = () => (
+export const Pg16: React.FC<{ foc?: { table: number; time: number }; logo?: { hov: number; prs: number } }> = ({ foc, logo }) => (
   <Shot n="16">
     <Cover x={745} y={405} w={1100} h={84} c="#ffffff" />
     <T x={768} y={tz(421, 33, 1.2)} size={33} lh={1.2} weight={700} head color={C.ink} style={{ whiteSpace: "nowrap" }}>Offer for Fernwood Coffee Roasters</T>
@@ -124,6 +139,9 @@ export const Pg16: React.FC = () => (
     <T x={768} y={tz(1262, 18.2, 1.565)} w={1040} size={18.2} lh={1.565} color={DOC}>First designs in January, launch on <span style={S(600)}>7 March</span>.</T>
     <Cover x={0} y={1345} w={2559} h={7} c={C.page} />
     <Cover x={711} y={1345} w={1138} h={7} c="#ffffff" />
+    {foc && foc.table > 0.001 && <div style={{ position: "absolute", left: 764, top: 965, width: 1020, height: 197, borderRadius: 16, boxShadow: `0 0 0 ${3.5 * foc.table}px rgba(47,125,225,${0.7 * foc.table})` }} />}
+    {foc && foc.time > 0.001 && <div style={{ position: "absolute", left: 754, top: 1198, width: 1050, height: 98, borderRadius: 14, boxShadow: `0 0 0 ${3.5 * foc.time}px rgba(47,125,225,${0.7 * foc.time})` }} />}
+    {logo && <Tint x={700} y={14} w={76} h={42} hov={logo.hov} prs={logo.prs} />}
   </Shot>
 );
 

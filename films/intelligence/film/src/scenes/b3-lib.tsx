@@ -1,7 +1,7 @@
 // B3 helpers: camera chains, projection, lift-outs, cursor, spinner, italic font. Shot coordinates = screenshot px (2559 x 1350).
 import React from "react";
-import { continueRender, delayRender, staticFile } from "remotion";
-import { C, CX, CY, Cursor, SHADOW, SW, c01, k, mix, OUT, SOFT, sp } from "../kit";
+import { continueRender, delayRender, Easing, staticFile } from "remotion";
+import { C, CX, CY, Cursor, INOUT, SHADOW, SW, c01, k, mix, SOFT, sp } from "../kit";
 
 // ------------------------------------------------------------------ italic (the offer's "Prepared by" line)
 export const ITA = "InterIt";
@@ -50,7 +50,8 @@ export const dis = (t: number, a: number, d = 0.3) => k(t, a, d, SOFT);
 // ------------------------------------------------------------------ lift-out of a region of a composed page
 export type Rect = { x: number; y: number; w: number; h: number };
 /** p 0..1: the region (same pixels as the stage) grows from where it sits to scale ts, centred on (tx, ty) in the frame */
-export const Lift: React.FC<{ cam: CamV; rect: Rect; p: number; ts: number; tx?: number; ty?: number; r?: number; children: React.ReactNode }> = ({ cam, rect, p, ts, tx = CX, ty = CY, r = 14, children }) => {
+export const Lift: React.FC<{ cam: CamV; rect: Rect; p: number; ts: number; bre?: number; tx?: number; ty?: number; r?: number; children: React.ReactNode }> = ({ cam, rect, p, ts: ts0, bre = 0, tx = CX, ty = CY, r = 14, children }) => {
+  const ts = ts0 * (1 + 0.018 * bre);
   if (p <= 0.001) return null;
   const f0 = proj(cam, rect.x, rect.y);
   const tl = { x: tx - (rect.w * ts) / 2, y: ty - (rect.h * ts) / 2 };
@@ -64,8 +65,10 @@ export const Lift: React.FC<{ cam: CamV; rect: Rect; p: number; ts: number; tx?:
     </div>
   );
 };
-/** a lift curve: up at a (spring), down at b (soft) */
-export const liftP = (t: number, a: number, b: number, down = 0.38) => (t < b ? Math.min(1, sp(t, a, 1.5, 0.82)) : 1 - k(t, b, down, SOFT) * 1) * (t >= a ? 1 : 0);
+/** a calm lift: rises 0.55 s with no overshoot at a, holds (a slow breath), settles back 0.4 s from b. Returns p (0..1) and the breath (0..1) */
+export const LIFTE = Easing.bezier(0.3, 0.7, 0.25, 1);
+export const liftP = (t: number, a: number, b: number) => (t < a ? 0 : k(t, a, 0.55, LIFTE) * (1 - k(t, b, 0.4, SOFT)));
+export const breath = (t: number, a: number, b: number) => c01((t - a - 0.55) / Math.max(0.1, b - a - 0.55)) * (t < b ? 1 : 1 - k(t, b, 0.4, SOFT));
 export const Veil: React.FC<{ p: number }> = ({ p }) => (p <= 0.001 ? null : <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, background: `rgba(5,15,25,${0.16 * p})`, zIndex: 10 }} />);
 
 // ------------------------------------------------------------------ spinner (replaces the photo's frozen arc so it turns)
@@ -79,28 +82,26 @@ export const Spin: React.FC<{ x: number; y: number; t: number; r?: number }> = (
 );
 
 // ------------------------------------------------------------------ cursor track
-export type Way = { t: number; x: number; y: number; cam: (t: number) => CamV; dur?: number; press?: number };
-/** cursor that travels waypoint to waypoint; a target follows its camera, so it stays on the button while the camera moves */
-export const cursorAt = (start: { t: number; x: number; y: number }, ways: Way[], t: number) => {
-  let px = start.x, py = start.y, pt = start.t;
-  let prev: Way | null = null;
-  for (const wp of ways) {
-    const d = wp.dur ?? 0.45, a = wp.t - d;
-    const here = (tt: number) => (prev ? proj(prev.cam(tt), prev.x, prev.y) : { x: px, y: py });
-    if (t < a) { const h = here(t); return { x: h.x, y: h.y, press: 0 }; }
-    if (t < wp.t) {
-      const u = OUT(c01((t - a) / d)); const f = here(t), g = proj(wp.cam(t), wp.x, wp.y);
-      return { x: mix(f.x, g.x, u), y: mix(f.y, g.y, u), press: 0 };
-    }
-    const g = proj(wp.cam(t), wp.x, wp.y);
-    const pr = wp.press !== undefined ? c01((t - wp.press) / 0.3) : 0;
-    prev = wp; px = g.x; py = g.y; pt = wp.t;
-    const nextStart = ways[ways.indexOf(wp) + 1];
-    if (!nextStart || t < nextStart.t - (nextStart.dur ?? 0.45)) return { x: g.x, y: g.y, press: pr };
-  }
-  void pt;
-  const L = ways[ways.length - 1]; const g = proj(L.cam(t), L.x, L.y);
-  return { x: g.x, y: g.y, press: L.press !== undefined ? c01((t - L.press) / 0.3) : 0 };
+/** a click: glide a -> b (INOUT) to screen point (x, y), rest, press at tp (0.12 s squeeze, 0.2 s release) */
+export type Mv = { a: number; b: number; x: number; y: number; tp: number };
+const warp = (u: number) => (u <= 0 ? 0 : u >= 1 ? 1 : u < 0.375 ? (0.5 * u) / 0.375 : 0.5 + (0.5 * (u - 0.375)) / 0.625);
+/** hover 0..1 (the target reacts as the cursor arrives) and pressed 0..1 for move m */
+export const hovP = (t: number, m: Mv) => k(t, m.b - 0.04, 0.16, SOFT);
+export const prsP = (t: number, m: Mv) => (t < m.tp ? 0 : t < m.tp + 0.12 ? c01((t - m.tp) / 0.12) : 1 - 0.7 * c01((t - m.tp - 0.12) / 0.2));
+export const cursorPos = (start: { x: number; y: number }, mvs: Mv[], t: number, cam: (t: number) => CamV) => {
+  let cur = -1; for (let i = 0; i < mvs.length; i++) if (t >= mvs[i].a) cur = i;
+  if (cur < 0) return { x: start.x, y: start.y, press: 0 };
+  const m = mvs[cur];
+  const g = proj(cam(t), m.x, m.y);
+  const from = cur > 0 ? proj(cam(t), mvs[cur - 1].x, mvs[cur - 1].y) : start;
+  const u = INOUT(c01((t - m.a) / (m.b - m.a)));
+  return { x: mix(from.x, g.x, u), y: mix(from.y, g.y, u), press: warp(c01((t - m.tp) / 0.32)) };
+};
+/** a hover / press tint over a nav pill or a button (screen px). kind "pill": a soft dark tint; "btn": a light tint on a black button */
+export const Tint: React.FC<{ x: number; y: number; w: number; h: number; hov: number; prs: number; kind?: "pill" | "btn" }> = ({ x, y, w: tw, h: th, hov, prs, kind = "pill" }) => {
+  if (hov <= 0.001) return null;
+  const bg = kind === "pill" ? `rgba(5,15,25,${0.075 * hov + 0.07 * prs})` : `rgba(255,255,255,${0.2 * hov * (1 - 0.8 * prs)})`;
+  return <div style={{ position: "absolute", left: x, top: y, width: tw, height: th, borderRadius: Math.min(tw, th) / 2, background: bg }} />;
 };
 export const Ptr: React.FC<{ x: number; y: number; press: number; op?: number }> = ({ x, y, press, op = 1 }) => (
   <div style={{ opacity: op }}><Cursor x={x - 3} y={y - 2} press={press} /></div>
