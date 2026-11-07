@@ -6,7 +6,7 @@ import html, json, os, subprocess, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__)); SITE = os.path.join(HERE, "site"); FR = os.path.join(SITE, "frames")
 SRC = sys.argv[1]; MOTION = sys.argv[sys.argv.index("--motion") + 1] if "--motion" in sys.argv else None
-VERSION = "v2"; DATE = "7 Nov 2026"
+VERSION = "v3"; DATE = "7 Nov 2026"
 
 # (id, title, t0, t1, VO line, on-screen words, what moves (the scene), transition out, [(time, caption), ...])
 BEATS = [
@@ -25,16 +25,16 @@ BEATS = [
    [(4.25, "\"The platform connecting\": the circle splits into three connected nodes."), (5.25, "\"creatives\": the first node blooms into a creative's card, work playing."),
     (7.00, "\"venues, and brands\": Casa Brisa and Atelier Mar; the connections light up coral."), (7.75, "\"across the Costa del Sol\": the clusters fly onto the curved globe."),
     (8.50, "The coast lights up under \"Costa del Sol\"; the camera dives to Málaga.")]),
-  ("s4", "Showcase and availability", 8.6, 11.6, "Showcase your work and share your availability.", "Lucía Moreno · Available this weekend",
-   "The Málaga dot becomes Lucía Moreno's avatar (a demo creative); her work springs in as playing tiles; the app's new-post sheet, \"I'm available\" pressed; it flips to her Available post with Fri, Sat, Sun lighting up.",
-   "Her post flips into the first gig card.",
-   [(9.75, "\"Showcase your work\": her profile, her work springing in, clips playing."), (10.55, "\"share\": the app's new-post sheet, \"I'm available\" pressed."),
-    (11.10, "\"your availability\": her Available post, Fri, Sat, Sun lit coral.")]),
-  ("s5", "Gigs and collaborators", 11.5, 14.6, "Find local gigs, discover collaborators,", "Find local gigs, · discover collaborators,",
-   "Gig cards in the app's design flip forward one by one; then the people list, and Nadia Vega's row opens into her dance work with a coral \"Let's collab\".",
+  ("s4", "Showcase and availability", 8.6, 11.9, "Showcase your work and share your availability.", "Lucía Moreno · Available this weekend",
+   "The Málaga dot becomes Lucía Moreno's avatar (a demo creative); her work springs in as playing tiles; on \"share\" her Available post rises into the centre in one move, and on \"availability\" Fri, Sat and Sun light up one by one; it holds.",
+   "Her post sinks as the gig cards rise.",
+   [(9.75, "\"Showcase your work\": her profile, her work springing in, clips playing."), (10.50, "\"share\": her Available post rises into the centre."),
+    (11.10, "\"your availability\": Fri, Sat, Sun lit coral, held.")]),
+  ("s5", "Gigs and collaborators", 11.4, 14.6, "Find local gigs, discover collaborators,", "Find local gigs, · discover collaborators,",
+   "The three gig cards rise together as one fan and hold, clips playing; then Nadia Vega's card rises big with two other creators beside it, and a coral \"Let's collab\" pops on her card.",
    "The globe grows out of the \"Let's collab\" pill.",
-   [(12.25, "\"Find local gigs\": gig cards flip forward one by one."), (13.75, "\"discover collaborators\": the people list; Nadia's row opens into her work."),
-    (14.25, "A coral \"Let's collab\" pops on her card.")]),
+   [(12.40, "\"Find local gigs\": the gig cards land together as a fan."), (13.50, "\"discover collaborators\": Nadia's card rises, two creators beside it."),
+    (14.15, "A coral \"Let's collab\" pops on her card.")]),
   ("s6", "The map", 14.3, 16.7, "and explore opportunities on the map.", "the eleven place names · Marbella · 6 open jobs",
    "Your map: a close-up of the globe with a curved horizon and graticule; coral pins pop on all eleven places with their labels, linked by coral arcs; Marbella's map sheet rises (\"6 open jobs\", from the app's own screen).",
    "The map sinks; the Find work / Find talent switch arrives in front.",
@@ -103,6 +103,8 @@ QUESTIONS = [    # open questions for Karl
   "so it isn't there now.",
 ]
 REVISIONS = [    # (before, after, why)
+  ("v2: 10-14 s had a sheet, a button press, two flips and a deck flipping through cards", "v3: one held state per phrase: the Available post, a fan of gig cards, Nadia's card with Let's collab", "You couldn't keep up with that stretch"),
+  ("v2: generated whooshes and effects", "v3: only your own Motionix pack (clicks, pops, a shutter, UI opens, three soft whooshes)", "They sounded like AI"),
   ("v1: the app UI read small in places", "v2: cards, post, chat, recommendations and the people list are 1.4-2.2x bigger", "Readable on a phone with the sound off"),
   ("v1: map labels 30 px, the coast in the lower third", "v2: labels 40 px (Málaga 50), placed by hand; the coast in the middle of the frame, the horizon still curving", "Your map is the subject of that beat"),
   ("v1: the €280 overlapped its card for a moment", "v2: the card's name appears only once the fee has landed", "No collisions"),
