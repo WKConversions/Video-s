@@ -1,7 +1,7 @@
 // S5 "Find local gigs, discover collaborators," 11.5-14.6. The gig deck flips forward card by card, then the people list; Nadia lifts out
 // with her clip and "Let's collab" pops; the map (S6) grows out of that pill.
 import React from "react";
-import { Media, Rise, C, INOUT, c01, k, sp } from "../kit";
+import { Media, Rise, C, INOUT, c01, k, mix, sp } from "../kit";
 import { Freeze } from "remotion";
 import { GigCard, PersonRow, Pill, Ico, Person } from "../ui";
 import { Scene } from "./types";
@@ -12,7 +12,7 @@ export const PEOPLE: Person[] = [
   { name: "Mateo Ruiz", roles: "Videographer, Photographer", city: "Marbella", avatar: "img/avatars/mateo.jpg", badge: "verified", avail: "Weekends" },
   { name: "Inés Navarro", roles: "Designer, Illustrator", city: "Nerja", badge: "verified" },
 ];
-const SC = 2.1, PT = 300, CT = 230, CLIP_H = 180, CARD_H = 16 + 64 + 12 + CLIP_H + 12 + 44 + 16;
+const SC = 2.1, SPL = 2.94, PT = 250, CT = 230, CLIP_H = 180, CARD_H = 16 + 64 + 12 + CLIP_H + 12 + 44 + 16;
 export const PILL_Y = CT + (16 + 64 + 12 + CLIP_H + 12 + 22) * SC; // ~873: where the map grows from
 
 const Deck: React.FC<{ t: number }> = ({ t }) => {
@@ -39,16 +39,16 @@ const Deck: React.FC<{ t: number }> = ({ t }) => {
 
 const People: React.FC<{ t: number }> = ({ t }) => {
   const lift = k(t, 13.62, 0.45, INOUT), rev = k(t, 13.64, 0.42, INOUT), pill = sp(t, 14.0, 1.8, 0.6), pin = sp(t, 13.04, 1.8, 0.75);
-  const out = k(t, 14.5, 0.12);
+  const out = k(t, 14.5, 0.12), sP = mix(SPL, SC, lift), mv = pin < 0.999 || lift < 1;
   return (
     <div style={{ position: "absolute", inset: 0, opacity: 1 - out, transform: `scale(${1 - 0.03 * out})`, transformOrigin: "50% 80%" }}>
-      <div style={{ position: "absolute", left: 960 - 238, top: PT, width: 476, transform: `translateY(${50 * lift}px) scale(${SC * (0.92 + 0.08 * pin)})`, transformOrigin: "50% 0", opacity: c01(pin * 2) * (1 - 0.8 * lift) }}>
+      <div style={{ position: "absolute", left: 960 - 238, top: PT, width: 476, transform: `translateY(${50 * lift}px) scale(${sP * (0.92 + 0.08 * pin)})`, transformOrigin: "50% 0", willChange: mv ? "transform" : undefined, opacity: c01(pin * 2) * (1 - 0.8 * lift) }}>
         <div style={{ width: 476, boxSizing: "border-box", borderRadius: 20, background: C.card, border: `1px solid ${C.border}`, padding: 16, overflow: "hidden", boxShadow: "0 0 30px rgba(0,0,0,0.35), 0 0 90px rgba(0,0,0,0.4)" }}>
           {PEOPLE.map((p, i) => { const q = sp(t, 13.06 + i * 0.12, 1.8, 0.75);
             return <div key={p.name} style={{ transform: `translateY(${(1 - q) * 24}px)`, opacity: i === 0 && t > 13.62 ? 0 : c01(q * 2), borderBottom: i < 2 ? `1px solid ${C.border}` : "none", height: 64, boxSizing: "border-box", display: "flex", alignItems: "center" }}><PersonRow p={p} w={444} /></div>; })}
         </div>
       </div>
-      {t >= 13.62 && <div style={{ position: "absolute", left: 960 - 238, top: PT, width: 476, transform: `translateY(${(CT - PT) * lift}px) scale(${SC})`, transformOrigin: "50% 0", filter: "drop-shadow(0 0 30px rgba(0,0,0,0.45))" }}>
+      {t >= 13.62 && <div style={{ position: "absolute", left: 960 - 238, top: PT, width: 476, transform: `translateY(${(CT - PT) * lift}px) scale(${sP})`, transformOrigin: "50% 0", willChange: lift < 1 ? "transform" : undefined, filter: "drop-shadow(0 0 30px rgba(0,0,0,0.45))" }}>
         <div style={{ width: 476, boxSizing: "border-box", borderRadius: 20, background: C.card, border: `1px solid ${C.border}`, padding: 16, display: "flex", flexDirection: "column", gap: 12, clipPath: `inset(0px 0px ${(CARD_H - 96) * (1 - rev)}px 0px round 20px)` }}>
           <PersonRow p={{ ...PEOPLE[0] }} w={444} />
           <Seq from={13.6}><Media src="clips/dance-graffiti.mp4" w={444} h={CLIP_H} r={12} shadow="none" zoom={1.04} /></Seq>

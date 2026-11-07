@@ -8,9 +8,9 @@ import { Scene } from "./types";
 
 const T0 = 27.2;
 const T = { creatives: 27.5, keep: 28.06, their: 28.26, full: 28.5, fee: 28.82, zero: 29.52, comm: 29.88 };
-const GX = 960, GY = 560;          // the giant fee, centred
+const GX = 960, GY = 430;          // the giant fee, centred, above the card's header
 const GS = 300;                    // its font size
-const CARD_S = 1.7, CARD_Y1 = 560; // Javi's card, big
+const CARD_S = 1.7, CARD_Y1 = 700; // Javi's card, big
 const PCT = 320;                   // the "%" is as tall as the ring
 const PCT_GAP = 18;
 
@@ -44,7 +44,7 @@ const S10C: React.FC<{ t: number }> = ({ t }) => {
         <RiseL text="Creatives keep their full fee" t={t} at={T.creatives} size={108} times={[T.creatives, T.keep, T.their, T.full, T.fee]} colors={[, , , C.coral, C.coral]} out={k(t, 29.15, 0.3, IN)} />
       </div>
       {/* Javi's card */}
-      <Place t={t} x={960} y={cy} s={CARD_S}><div style={{ boxShadow: "0 0 30px rgba(0,0,0,0.4)", borderRadius: 18 }}><FeeCard info={k(t, 28.9, 0.25)} pill={pill} /></div></Place>
+      <Place t={t} x={960} y={cy} s={CARD_S}><div style={{ boxShadow: "0 0 30px rgba(0,0,0,0.4)", borderRadius: 18 }}><FeeCard head={k(t, 28.9, 0.3)} info={k(t, 28.9, 0.25)} pill={pill} /></div></Place>
       {/* the fee */}
       <Place t={t} x={gx} y={gy} s={gs * mix(0.25, 1, em) * drift} o={gO}>
         <div style={{ fontFamily: SANS, fontWeight: 900, fontSize: GS, color: C.cream, letterSpacing: "-0.045em", lineHeight: 1, whiteSpace: "nowrap" }}>€280</div>

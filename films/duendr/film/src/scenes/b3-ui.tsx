@@ -3,13 +3,14 @@ import React from "react";
 import { Sequence } from "remotion";
 import { C, SANS, SHADOW, GLOW, IN, SOFT, Media, Rise, c01, k, mix, sp } from "../kit";
 import { Badge, Chip, Ico, Pill } from "../ui";
-import { Easing } from "remotion";
+import { Easing, Freeze } from "remotion";
+const FREEZE_CLIPS = false; // temp diagnostic
 
 export const F = (size: number, weight = 500, color: string = C.cream, extra: React.CSSProperties = {}): React.CSSProperties => ({ fontFamily: SANS, fontSize: size, fontWeight: weight, color, letterSpacing: "-0.01em", ...extra });
 
 /** a clip card whose video starts at film time `from` (clips are 8 s) */
 export const Clip: React.FC<{ src: string; w: number; h: number; from: number; r?: number; shadow?: string }> = ({ from, ...p }) => (
-  <Sequence from={Math.round(from * 60)} layout="none"><Media {...p} r={p.r ?? 0} shadow={p.shadow ?? "none"} /></Sequence>
+  <Sequence from={Math.round(from * 60)} layout="none">{FREEZE_CLIPS ? <Freeze frame={0}><Media {...p} r={p.r ?? 0} shadow={p.shadow ?? "none"} /></Freeze> : <Media {...p} r={p.r ?? 0} shadow={p.shadow ?? "none"} />}</Sequence>
 );
 
 /** big caption at the top of the frame; words rise on their VO times, then leave upward at `exit` */
@@ -95,11 +96,11 @@ export const PostCard: React.FC<{ t: number }> = ({ t }) => {
     <div style={{ width: 444, height: 340, borderRadius: 20, background: C.card, border: `1px solid ${C.border}`, boxShadow: SHADOW, padding: 18, display: "flex", flexDirection: "column", gap: 12 }}>
       <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
         <div style={{ width: 40, height: 40, borderRadius: 10, background: C.cream, display: "flex", alignItems: "center", justifyContent: "center", ...F(20, 800, C.ink) }}>C</div>
-        <div><div style={{ display: "flex", alignItems: "center", gap: 6 }}><span style={F(17, 700)}>Casa Brisa</span><Badge s={15} /></div><div style={F(13, 500, C.muted)}>Beach club · Marbella</div></div>
-        <div style={{ flex: 1 }} /><span style={{ ...F(10.5, 700, C.cream, { letterSpacing: "0.12em" }), padding: "4px 8px", borderRadius: 6, background: C.card2 }}>HIRING</span>
+        <div><div style={{ display: "flex", alignItems: "center", gap: 6 }}><span style={F(17, 700)}>Casa Brisa</span><Badge s={15} /></div><div style={F(14, 500, C.muted)}>Beach club · Marbella</div></div>
+        <div style={{ flex: 1 }} /><span style={{ ...F(12, 700, C.cream, { letterSpacing: "0.12em" }), padding: "4px 8px", borderRadius: 6, background: C.card2 }}>HIRING</span>
       </div>
       <div style={{ height: 76 }}>
-        <div style={F(10.5, 700, C.dim, { letterSpacing: "0.12em" })}>WHAT DO YOU NEED?</div>
+        <div style={F(12, 700, C.dim, { letterSpacing: "0.12em" })}>WHAT DO YOU NEED?</div>
         <div style={F(25, 800, C.cream, { lineHeight: 1.18, marginTop: 4 })}>{TXT.slice(0, n)}<span style={{ display: "inline-block", width: 3, height: 24, background: C.coral, marginLeft: 2, verticalAlign: -3, opacity: Math.floor(t * 3) % 2 === 0 || n < TXT.length ? 1 : 0.2 }} /></div>
       </div>
       <div style={{ display: "flex", gap: 8, height: 34 }}>
@@ -127,14 +128,14 @@ const Slot: React.FC<{ t: number; me?: boolean; dots?: [number, number]; at: num
   const q = sp(t, at, 2.0, 0.7);
   const showDots = dots && t >= dots[0] && t < at;
   return (
-    <div style={{ height: 66, display: "flex", justifyContent: me ? "flex-end" : "flex-start", alignItems: "flex-end" }}>
+    <div style={{ height: 72, display: "flex", justifyContent: me ? "flex-end" : "flex-start", alignItems: "flex-end" }}>
       {showDots && <div style={{ transform: `scale(${mix(0.6, 1, c01(sp(t, dots![0], 2.2, 0.7)))})`, transformOrigin: me ? "100% 100%" : "0% 100%" }}><Dots t={t} me={me} /></div>}
       {t >= at && <div style={{ transform: `scale(${mix(0.6, 1, c01(q))})`, opacity: c01(q * 3), transformOrigin: me ? "100% 100%" : "0% 100%" }}>
-        <div style={{ maxWidth: 300, padding: "10px 14px", borderRadius: 18, borderBottomRightRadius: me ? 6 : 18, borderBottomLeftRadius: me ? 18 : 6, background: me ? C.coral : C.card2, ...F(17, 500, C.cream, { lineHeight: 1.3 }) }}>{text}</div></div>}
+        <div style={{ maxWidth: 380, padding: "10px 16px", borderRadius: 18, borderBottomRightRadius: me ? 6 : 18, borderBottomLeftRadius: me ? 18 : 6, background: me ? C.coral : C.card2, ...F(21, 500, C.cream, { lineHeight: 1.3 }) }}>{text}</div></div>}
     </div>
   );
 };
-export const CHAT = { x: 960, y: 590, s: 1.6, w: 444, h: 440 };
+export const CHAT = { x: 960, y: 612, s: 1.95, w: 500, h: 410 };
 /** screen position of a point (lx, ly) in the chat panel's own px */
 export const chatPt = (lx: number, ly: number): [number, number] => [CHAT.x + (lx - CHAT.w / 2) * CHAT.s, CHAT.y + (ly - CHAT.h / 2) * CHAT.s];
 export const HDR_C = chatPt(36, 32), HDR_J = chatPt(60, 32);
@@ -148,7 +149,7 @@ export const ChatPanel: React.FC<{ t: number; inner?: number; hideConfirm?: bool
       <div style={{ height: 64, borderBottom: `1px solid ${C.border}`, display: "flex", alignItems: "center", padding: "0 16px", gap: 0, flex: "none" }}>
         <div style={{ width: 40, height: 40, borderRadius: 12, background: C.cream, display: "flex", alignItems: "center", justifyContent: "center", ...F(20, 800, C.ink), opacity: hdr ? 1 : 0 }}>C</div>
         <div style={{ width: 40, height: 40, borderRadius: 20, background: C.card2, border: `2px solid ${C.card}`, marginLeft: -16, display: "flex", alignItems: "center", justifyContent: "center", ...F(14, 700, C.muted), opacity: hdr ? 1 : 0, boxSizing: "content-box" as const, flex: "none" }}>JO</div>
-        <div style={{ marginLeft: 14, opacity: inner }}><div style={{ display: "flex", alignItems: "center", gap: 6 }}><span style={F(17, 700)}>Javi Ortega</span><Badge s={15} /></div><div style={F(12.5, 500, C.muted)}>Casa Brisa · Sunset sessions</div></div>
+        <div style={{ marginLeft: 14, opacity: inner }}><div style={{ display: "flex", alignItems: "center", gap: 6 }}><span style={F(18, 700)}>Javi Ortega</span><Badge s={15} /></div><div style={F(14, 500, C.muted)}>Casa Brisa · Sunset sessions</div></div>
       </div>
       <div style={{ padding: "14px 16px", display: "flex", flexDirection: "column", gap: 10, flex: 1 }}>
         <Slot t={t} me at={23.28} text="Hi Javi! Sunset set this weekend?" />
@@ -156,10 +157,10 @@ export const ChatPanel: React.FC<{ t: number; inner?: number; hideConfirm?: bool
         <Slot t={t} me dots={[24.02, 24.3]} at={24.3} text="Perfect. €280, 3 hours." />
       </div>
       <div style={{ height: 76, padding: "0 16px", display: "flex", alignItems: "center", position: "relative", flex: "none", borderTop: `1px solid ${C.border}` }}>
-        <div style={{ position: "absolute", left: 16, right: 16, height: 46, borderRadius: 23, background: C.card2, display: "flex", alignItems: "center", padding: "0 16px", ...F(15, 500, C.dim), opacity: (1 - c01(conf * 5)) * inner }}>Message Javi…<div style={{ flex: 1 }} /><Ico n="send" s={18} c={C.muted} /></div>
+        <div style={{ position: "absolute", left: 16, right: 16, height: 46, borderRadius: 23, background: C.card2, display: "flex", alignItems: "center", padding: "0 16px", ...F(17, 500, C.dim), opacity: (1 - c01(conf * 5)) * inner }}>Message Javi…<div style={{ flex: 1 }} /><Ico n="send" s={18} c={C.muted} /></div>
         {conf > 0.01 && !hideConfirm && <div style={{ position: "absolute", left: 16, right: 16, transformOrigin: "100% 50%", transform: `scaleX(${mix(0.12, 1, c01(conf)) * (1 - 0.06 * press)}) scaleY(${1 - 0.06 * press})`, opacity: c01(conf * 2.5) }}>
-          <Pill label="Confirm booking" w="100%" h={46} size={16} icon={<Ico n="check" s={17} w={2.6} />} /></div>}
-        {t > 24.8 && t < 25.3 && <div style={{ position: "absolute", left: 222 - 150, top: 38 - 150, width: 300, height: 300, borderRadius: 150, border: `3px solid ${C.coral}`, opacity: 0.8 * (1 - k(t, 24.8, 0.5)), transform: `scale(${mix(0.1, 1, k(t, 24.8, 0.5))})` }} />}
+          <Pill label="Confirm booking" w="100%" h={46} size={18} icon={<Ico n="check" s={17} w={2.6} />} /></div>}
+        {t > 24.8 && t < 25.3 && <div style={{ position: "absolute", left: 250 - 150, top: 38 - 150, width: 300, height: 300, borderRadius: 150, border: `3px solid ${C.coral}`, opacity: 0.8 * (1 - k(t, 24.8, 0.5)), transform: `scale(${mix(0.1, 1, k(t, 24.8, 0.5))})` }} />}
       </div>
     </div>
   );

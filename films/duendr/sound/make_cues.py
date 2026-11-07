@@ -1,8 +1,19 @@
 # Cue sheet for the Duendr film: effects lead (on the picture's events, plan/contract.md and the build), a quiet music bed
 # under the voice (Mixkit "Gimme that groove", fitted with a lift on "Meet": bed.wav). Film time = VO + 0.3.
 # python3 make_cues.py && python3 <skill>/library/scripts/sound_mix.py cues.json ../film/public/audio/mix.wav --sheet mix.png
-import json
+import json, os, sys
 fx = []
+# Karl's Apple UI sounds (licence "apple" in the skill's catalogue): used where a real phone action happens, when his folder is
+# present (APPLE_LIB, gitignored: the repo is public and the sounds are Apple's). Each entry: cue note -> Apple sound id.
+APPLE_LIB = os.environ.get("APPLE_LIB", "")
+APPLE = {
+  "the coral card slides in: next": "pop", "the bar shoots up: the d": "pop",
+  "a work tile springs in": "iphone-camera-shot", "I'm available pressed": "one-keyboard-click", "the AVAILABLE pill": "double-bubble-pop",
+  "a pin lands": "pop", "the switch flips to Find talent": "one-keyboard-click",
+  "the post types": "one-keyboard-click", "Post pressed": "one-keyboard-click", "the post flies onto the board": "send",
+  "Connect pressed": "charge-connection", "a chat bubble": "message", "Confirm booking": "one-keyboard-click",
+  "the booking stamps in": "mail-notification", "everything converges": "turn-off-phone", "a recommendation rises": "message",
+}
 QUIET = ("gen-tick", "kenney-tick-004", "kenney-select-001", "kenney-select-002")
 def a(t, i, db, pitch=0, note=""): fx.append({"frame": round(t * 60), "id": i, "db": min(-3, db + (5 if i in QUIET else 3)), "pitch": pitch, "note": note})
 
@@ -86,7 +97,15 @@ a(40.16, "gen-impact-deep", -7, 0, "the icon lands on Duendr")
 a(40.98, "gen-whoosh-short", -14, -2, "the icon shrinks")
 a(41.30, "gen-whoosh-short", -12, 2, "the wordmark slides in")
 a(41.52, "gen-chime", -6, 2, "the dot")
-json.dump({"fps": 60, "frames": 2544, "library": "../../alumni/sound/lib",
+if APPLE_LIB:
+    seen = {}
+    for c in fx:
+        aid = APPLE.get(c["note"])
+        if not aid: continue
+        if aid == "iphone-camera-shot" and seen.get(aid): continue      # one shutter, on the first work tile
+        seen[aid] = 1; c["id"] = aid
+        if aid == "message" and c["note"] == "a chat bubble": c["id"] = ["send", "message", "send-2"][seen.setdefault("bub", 0) % 3]; seen["bub"] += 1
+json.dump({"fps": 60, "frames": 2544, "library": APPLE_LIB or "../../alumni/sound/lib",
            "vo": {"file": "../vo/vo.mp3", "at": 0.3, "compress": True},
            "music": {"file": "bed.wav", "at": 0, "lufs": -32, "duck_db": 5, "fade_in": 0.05, "fade_out": 1.2},
            "sfx": fx}, open("cues.json", "w"), indent=1)

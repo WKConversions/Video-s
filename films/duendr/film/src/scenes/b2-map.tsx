@@ -5,26 +5,21 @@ import { Ico, Pill } from "../ui";
 import { F } from "./b2-shared";
 import { CITIES, View, makeView } from "../globe";
 
-export type Place = "l" | "r" | "bl" | "br" | "al" | "ar";
-export type Pin2 = { name: string; at: number; place: Place; count?: number; big?: boolean };
-export const Pins: React.FC<{ v: View; t: number; pins: Pin2[]; size?: number; pulse2?: number; labelFade?: number }> = ({ v, t, pins, size = 30, pulse2, labelFade = 1 }) => {
+export type Lab = { a: "l" | "r" | "c"; dx: number; dy: number; lead?: [number, number] };
+export type Pin2 = { name: string; at: number; lab: Lab; count?: number; big?: boolean };
+export const Pins: React.FC<{ v: View; t: number; pins: Pin2[]; size?: number; pulse2?: number; labelFade?: number }> = ({ v, t, pins, size = 40, pulse2, labelFade = 1 }) => {
   const m = makeView(v);
   return (
     <div style={{ position: "absolute", inset: 0 }}>
       {pins.map((p) => {
         const c = CITIES.find((x) => x.name === p.name)!; const [x, y, ok] = m.at(c.lon, c.lat); const q = c01(sp(t, p.at, 2.1, 0.55));
         if (!ok || q <= 0) return null;
-        const r = p.count ? 22 : p.big ? 17 : 12, ring2 = pulse2 === undefined ? 1 : c01((t - pulse2) / 0.7), ring = c01((t - p.at) / 1.1), fs = p.big ? size * 1.25 : size, lo = c01((t - p.at - 0.05) / 0.25), pl = p.place;
-        const lab: React.CSSProperties = { position: "absolute", whiteSpace: "nowrap", fontFamily: SANS, fontWeight: p.big ? 800 : 600, fontSize: fs, lineHeight: 1, color: C.cream, letterSpacing: "-0.01em", opacity: lo * labelFade, textShadow: "0 0 12px rgba(22,20,19,0.95), 0 0 4px rgba(22,20,19,0.9)" };
-        const sl = (1 - c01((t - p.at) / 0.35)) * 12;
-        if (pl === "l") Object.assign(lab, { right: r + 10, top: -fs / 2, transform: `translateX(${sl}px)` });
-        else if (pl === "r") Object.assign(lab, { left: r + 10, top: -fs / 2, transform: `translateX(${-sl}px)` });
-        else if (pl === "bl") Object.assign(lab, { right: -6, top: r + 12, transform: `translateY(${-sl}px)` });
-        else if (pl === "br") Object.assign(lab, { left: -6, top: r + 12, transform: `translateY(${-sl}px)` });
-        else if (pl === "al") Object.assign(lab, { right: -6, bottom: r + 12, transform: `translateY(${sl}px)` });
-        else Object.assign(lab, { left: -6, bottom: r + 12, transform: `translateY(${sl}px)` });
+        const r = p.count ? 22 : p.big ? 17 : 12, ring2 = pulse2 === undefined ? 1 : c01((t - pulse2) / 0.7), ring = c01((t - p.at) / 1.1), fs = p.big ? 50 : size, lo = c01((t - p.at - 0.05) / 0.25), L = p.lab;
+        const lab: React.CSSProperties = { position: "absolute", whiteSpace: "nowrap", fontFamily: SANS, fontWeight: p.big ? 800 : 600, fontSize: fs, lineHeight: 1, color: C.cream, letterSpacing: "-0.01em", opacity: lo * labelFade, textShadow: "0 0 14px rgba(22,20,19,0.95), 0 0 5px rgba(22,20,19,0.95)", top: L.dy - fs / 2 };
+        if (L.a === "l") Object.assign(lab, { right: -L.dx, textAlign: "right" }); else if (L.a === "r") Object.assign(lab, { left: L.dx }); else Object.assign(lab, { left: L.dx - 200, width: 400, textAlign: "center" });
         return (
-          <div key={p.name} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${x}px, ${y}px)` }}>
+          <div key={p.name} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${x}px, ${y}px)`, willChange: "transform" }}>
+            {L.lead && <svg width={1} height={1} style={{ position: "absolute", left: 0, top: 0, overflow: "visible", opacity: lo * labelFade }}><line x1={0} y1={0} x2={L.lead[0]} y2={L.lead[1]} stroke="rgba(240,235,225,0.6)" strokeWidth={2} strokeLinecap="round" /></svg>}
             {ring < 1 && <div style={{ position: "absolute", left: -r * 3, top: -r * 3, width: r * 6, height: r * 6, borderRadius: r * 3, border: `2px solid rgba(226,90,61,${0.8 * (1 - ring)})`, transform: `scale(${0.3 + ring})` }} />}
             {pulse2 !== undefined && ring2 > 0 && ring2 < 1 && <div style={{ position: "absolute", left: -r * 3, top: -r * 3, width: r * 6, height: r * 6, borderRadius: r * 3, border: `2px solid rgba(226,90,61,${0.8 * (1 - ring2)})`, transform: `scale(${0.3 + ring2})` }} />}
             <div style={{ position: "absolute", left: -r, top: -r, width: 2 * r, height: 2 * r, borderRadius: r, background: C.coral, boxShadow: "0 0 0 3px rgba(22,20,19,0.9), 0 0 24px rgba(226,90,61,0.6)", transform: `scale(${q})`,
@@ -45,7 +40,7 @@ export const MapSheet2: React.FC<{ city: string; count: number; rows: { letter: 
     <span style={{ position: "absolute", left: 33, top: 42, ...F(13.5, 500, C.muted) }}>{count} open jobs</span>
     {rows.map((r, i) => <div key={r.title} style={{ position: "absolute", left: 16, right: 16, top: 70 + i * 50, height: 46, display: "flex", alignItems: "center", gap: 12 }}>
       <div style={{ width: 34, height: 34, borderRadius: 8, background: C.cream, display: "flex", alignItems: "center", justifyContent: "center", ...F(14, 700, C.ink) }}>{r.letter}</div>
-      <div style={{ flex: 1 }}><div style={F(15, 600)}>{r.title}</div><div style={F(12.5, 500, C.muted)}>{r.sub}</div></div><span style={F(15, 700)}>{r.fee}</span></div>)}
+      <div style={{ flex: 1 }}><div style={F(15, 600)}>{r.title}</div><div style={F(13.5, 500, C.muted)}>{r.sub}</div></div><span style={F(15, 700)}>{r.fee}</span></div>)}
     <div style={{ position: "absolute", left: PILL_RECT.x, top: PILL_RECT.y, width: PILL_RECT.w, opacity: pillOpacity }}><Pill label={`See all ${count} in ${city}`} kind="cream" w="100%" /></div>
   </div>
 );

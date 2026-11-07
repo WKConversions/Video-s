@@ -13,18 +13,20 @@ import { Scene } from "./types";
 import { PILL_Y } from "./S5";
 
 const PINS: Pin2[] = [
-  { name: "Cádiz", at: 14.52, place: "r" }, { name: "Sotogrande", at: 14.62, place: "l" }, { name: "Estepona", at: 14.72, place: "l" }, { name: "Marbella", at: 14.82, count: 6, place: "bl" },
-  { name: "Fuengirola", at: 14.92, place: "br" }, { name: "Torremolinos", at: 15.02, place: "al" }, { name: "Málaga", at: 15.12, big: true, place: "r" }, { name: "Nerja", at: 15.24, place: "r" },
-  { name: "Ronda", at: 15.36, place: "r" }, { name: "Sevilla", at: 15.48, place: "r" }, { name: "Granada", at: 15.6, place: "l" },
+  { name: "Cádiz", at: 14.52, lab: { a: "r", dx: 24, dy: 0 } }, { name: "Sotogrande", at: 14.62, lab: { a: "l", dx: -24, dy: 0 } }, { name: "Estepona", at: 14.72, lab: { a: "l", dx: -24, dy: -10 } },
+  { name: "Marbella", at: 14.82, count: 6, lab: { a: "c", dx: 0, dy: 92, lead: [0, 66] } }, { name: "Fuengirola", at: 14.92, lab: { a: "c", dx: -15, dy: 40 } },
+  { name: "Torremolinos", at: 15.02, lab: { a: "r", dx: 40, dy: 62, lead: [34, 50] } }, { name: "Málaga", at: 15.12, big: true, lab: { a: "r", dx: 30, dy: -6 } },
+  { name: "Nerja", at: 15.24, lab: { a: "c", dx: 0, dy: -38 } }, { name: "Ronda", at: 15.36, lab: { a: "c", dx: 0, dy: -36 } }, { name: "Sevilla", at: 15.48, lab: { a: "r", dx: 24, dy: 0 } },
+  { name: "Granada", at: 15.6, lab: { a: "r", dx: 24, dy: 0 } },
 ];
 const ARCS: [string, string, number][] = [["Málaga", "Marbella", 15.22], ["Málaga", "Nerja", 15.34], ["Málaga", "Ronda", 15.46], ["Málaga", "Sevilla", 15.58], ["Málaga", "Granada", 15.7]];
 const pos = (n: string) => CITIES.find((c) => c.name === n)!;
 
 const cam = (t: number): View => {
   const e = k(t, 14.3, 1.5, OUT), d = t - 14.3;
-  return { lam0: -4.95 + 0.02 * d, phi0: 36.95, k: 10, pitch: mix(24, 38, e), d: 1.55, S: mix(1700, 3050, e) + 45 * d, cx: 960, cy: mix(560, 620, e) };
+  return { lam0: -4.9, phi0: mix(36.95, 36.6, e), k: 10, pitch: mix(24, 38, e), d: 1.55, S: mix(1700, 3400, e) + 30 * d, cx: 960, cy: mix(560, 580, e) };
 };
-export const SHEET = { x: 583, y: 56, s: 1.7 };
+export const SHEET = { x: 560, y: 36, s: 1.8 };
 const T_OUT = 16.2, DETACH = 16.22;
 
 const Arcs: React.FC<{ t: number; at: (lo: number, la: number) => [number, number, boolean] }> = ({ t, at }) => (
@@ -57,7 +59,7 @@ const Body: React.FC<{ t: number }> = ({ t }) => {
     <>
       <div style={{ position: "absolute", inset: 0, opacity: 1 - sink, transform: `translateY(${120 * sink}px)`, clipPath: reveal ? `circle(${R}px at 960px ${PILL_Y}px)` : undefined }}>
         <GlobeMap v={v} t={t} pins={[]}>{(at) => <div style={{ opacity: lf }}><Arcs t={t} at={at} /></div>}</GlobeMap>
-        <Pins v={v} t={t} pins={PINS} size={30} pulse2={16.08} labelFade={lf} />
+        <Pins v={v} t={t} pins={PINS} size={40} pulse2={16.08} labelFade={lf} />
         <div style={{ opacity: lf }}>
           <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0, opacity: c01(sh * 2) }}>
             <path d={`M${mx} ${my - 26}L${mx} ${SHEET.y + SHEET_H * SHEET.s}`} stroke={C.coral} strokeWidth={3} strokeDasharray="1 8" strokeLinecap="round" fill="none" />

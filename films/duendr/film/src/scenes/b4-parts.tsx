@@ -8,12 +8,12 @@ import { Avatar, Badge, Ico, PersonRow } from "../ui";
 export const F = (size: number, weight = 500, color: string = C.cream, extra: React.CSSProperties = {}): React.CSSProperties => ({ fontFamily: SANS, fontSize: size, fontWeight: weight, color, letterSpacing: "-0.01em", ...extra });
 
 /** centres its child on (x, y) in the frame, scaled and rotated about its centre */
-export const Place: React.FC<{ x: number; y: number; s?: number; r?: number; o?: number; t?: number; amp?: number; children?: React.ReactNode }> = ({ x, y, s = 1, r = 0, o = 1, t, amp = 0, children }) => {
+export const Place: React.FC<{ x: number; y: number; s?: number; r?: number; o?: number; t?: number; amp?: number; wc?: boolean; children?: React.ReactNode }> = ({ x, y, s = 1, r = 0, o = 1, t, amp = 0, wc = false, children }) => {
   if (t !== undefined) { y += Math.sin(t * 1.3 + x * 0.01) * amp; s *= 1 + 0.014 * Math.sin(t * 1.1); }
   if (o <= 0.003 || s <= 0.001) return null;
   return (
     <div style={{ position: "absolute", left: 0, top: 0, transform: `translate(${x}px, ${y}px)` }}>
-      <div style={{ position: "absolute", left: 0, top: 0, width: "max-content", opacity: o < 0.999 ? o : undefined, transform: `translate(-50%, -50%) scale(${s})${r ? ` rotate(${r}deg)` : ""}` }}>{children}</div>
+      <div style={{ position: "absolute", left: 0, top: 0, width: "max-content", willChange: wc ? "transform" : undefined, opacity: o < 0.999 ? o : undefined, transform: `translate(-50%, -50%) scale(${s})${r ? ` rotate(${r}deg)` : ""}` }}>{children}</div>
     </div>
   );
 };
@@ -21,8 +21,8 @@ export const Place: React.FC<{ x: number; y: number; s?: number; r?: number; o?:
 export const RiseL: React.FC<{ text: string; t: number; at: number; size: number; color?: string; weight?: number; gap?: number; times?: number[]; out?: number; spacing?: string; colors?: (string | undefined)[] }> =
   ({ text, t, at, size, color = C.cream, weight = 800, gap = 0.07, times, out = 0, spacing = "-0.035em", colors }) => (
     <div style={{ fontFamily: SANS, fontWeight: weight, fontSize: size, color, lineHeight: 1.04, letterSpacing: spacing, whiteSpace: "nowrap" }}>
-      {text.split(" ").map((wd, j) => { const q = c01(sp(t, times ? times[j] : at + j * gap, 1.8, 0.75)); const o = c01(out); const off = (1 - q) * 0.4 * size - o * 0.3 * size; const mv = Math.abs(off) >= 0.6; const bl = q < 0.97 || o > 0.01;
-        return <span key={j} style={{ display: "inline-block", marginRight: "0.24em", color: colors?.[j] ?? color, opacity: c01(q * 1.6) * (1 - o), transform: `translateY(${mv ? off : 0}px)`, willChange: mv || bl ? "transform, opacity" : undefined,
+      {text.split(" ").map((wd, j) => { const q = c01(sp(t, times ? times[j] : at + j * gap, 1.8, 0.75)); const o = c01(out); const off = (1 - q) * 0.4 * size - o * 0.3 * size; const bl = q < 0.97 || o > 0.01;
+        return <span key={j} style={{ display: "inline-block", marginRight: "0.24em", color: colors?.[j] ?? color, opacity: c01(q * 1.6) * (1 - o), transform: `translateY(${off}px)`, willChange: "transform, opacity",
           filter: bl ? `blur(${(1 - q) * 10 + o * 10}px)` : undefined }}>{wd}</span>; })}
     </div>
   );
@@ -71,9 +71,9 @@ export const RECS = [
 /** Javi's card (S10): who, when, and a slot where the EUR 280 lands; their "Full fee" pill springs in beside it. No fee line: Duendr takes nothing. */
 export const FEE_W = 444, FEE_H = 222;
 export const FEE_SLOT = { x: -222 + 20 + 80, y: 53 }; // the fee's centre relative to the card centre, app px
-export const FeeCard: React.FC<{ info?: number; pill?: number }> = ({ info = 1, pill = 1 }) => (
+export const FeeCard: React.FC<{ info?: number; pill?: number; head?: number }> = ({ info = 1, pill = 1, head = 1 }) => (
   <Card w={FEE_W} pad={20} style={{ height: FEE_H, gap: 0, position: "relative" }}>
-    <div style={{ display: "flex", alignItems: "center", gap: 14, height: 56 }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 14, height: 56, opacity: head }}>
       <Avatar s={56} initials="JO" />
       <div><div style={{ display: "flex", alignItems: "center", gap: 6 }}><span style={F(22, 800)}>Javi Ortega</span><Badge s={18} /></div><div style={F(15.5, 500, C.muted)}>DJ, Producer · Marbella</div></div>
     </div>

@@ -3,7 +3,7 @@
 // the Phone, which settles centred; the tile travels into the phone's "This weekend" slot. Then the phone and tile leave (S10 takes over).
 import React from "react";
 import { Sequence } from "remotion";
-import { C, SHADOW, k, sp, mix, c01, INOUT, OUT, w } from "../kit";
+import { C, SHADOW, k, sp, mix, c01, INOUT, OUT, SOFT, w } from "../kit";
 import { AppHeader, BookedTile, BottomNav, Bubble, Chip, GigCard, MapSheet, Phone, Segmented } from "../ui";
 import { F, LuciaCard, Place, Seq } from "./b4-parts";
 import { Scene } from "./types";
@@ -27,6 +27,7 @@ const S0 = 600 / 408;                                   // at H.booking the phon
 const PH_CY = 477, SLOT_CY = 290.5;                     // phone px: its centre, and the tile slot's centre (screen y 208-349 + 12)
 const WRAP = 140;                                       // padding around the phone inside the clipped wrapper (rim and shadow)
 const PHH = 954;
+const GROW = 0.2;                                       // the lone tile grows gently (x2 -> x2.4) while the pieces fly in
 const TILE_SEQ = Math.round(24.9 * 60) - Math.round(T0 * 60); // S8 plays this tile from 24.9: the clip carries on, no jump
 
 const S9C: React.FC<{ t: number }> = ({ t }) => {
@@ -34,8 +35,10 @@ const S9C: React.FC<{ t: number }> = ({ t }) => {
   const ex = k(t, 27.25, 0.5, INOUT);                              // the phone leaves
   const c2 = k(t, 26.4, 0.55, INOUT);                              // the slot grows into the phone
   const open = k(t, 26.4, 0.45, OUT);                              // and the rest of the phone opens out of it
-  const phS = mix(S0, 1, c2) * (1 - 0.14 * ex) * (1 + 0.012 * c01((t - 27.0) / 0.6)), phO = 1 - ex;
-  const phY = mix(540 + (PH_CY - SLOT_CY) * S0, 540, c2) + 30 * ex;
+  const g = 1 + GROW * k(t, 25.72, 0.75, SOFT);                    // 1 at 25.6-25.72 (hand-off state exact)
+  const S0g = S0 * g;
+  const phS = mix(S0g, 1, c2) * (1 - 0.14 * ex) * (1 + 0.012 * c01((t - 27.0) / 0.6)), phO = 1 - ex;
+  const phY = mix(540 + (PH_CY - SLOT_CY) * S0g, 540, c2) + 30 * ex;
   const shO = k(t, 25.7, 0.3) * (1 - k(t, 26.4, 0.4));            // the tile's shadow, until the phone's own takes over
   const insetT = (12 + 208) + WRAP, insetB = (PHH - (12 + 349)) + WRAP, insetX = 30 + WRAP;
   const clip = open >= 1 ? undefined : `inset(${insetT * (1 - open)}px ${insetX * (1 - open)}px ${insetB * (1 - open)}px ${insetX * (1 - open)}px round ${19 * (1 - open)}px)`;

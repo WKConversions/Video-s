@@ -18,14 +18,14 @@ const S8C: React.FC<{ t: number }> = ({ t }) => {
   const AV_Y = jp.y + 98;                          // Javi's avatar row on the card (scale 1.55)
   // Casa Brisa tile
   const tq = sp(t, 21.95, 1.8, 0.7);
-  const tx = mix(400, HDR_C[0], mo), ty = mix(AV_Y, HDR_C[1], mo), ts = mix(200, 64, mo);
+  const tx = mix(400, HDR_C[0], mo), ty = mix(AV_Y, HDR_C[1], mo), ts = mix(200, 78, mo);
   // line
   const ax = 960 + 190 * shift - 251 * (jp.s / 1.55);   // Javi's avatar centre x on the card
   const lp = k(t, 22.1, 0.3, SNAP);
   const lx0 = 500, lx1 = ax - 40;
   const lineOp = 1 - k(t, 22.75, 0.2, SOFT);
   const ring = sp(t, 22.35, 2, 0.65);
-  const jx = mix(ax, HDR_J[0], mo), jy = mix(AV_Y, HDR_J[1], mo), js = mix(68, 64, mo);
+  const jx = mix(ax, HDR_J[0], mo), jy = mix(AV_Y, HDR_J[1], mo), js = mix(68, 78, mo);
   // chat panel: starts at the card's own rect, opaque, and settles
   const cq = sp(t, 22.85, 1.6, 0.8);
   const xk = k(t, 25.0, 0.35, INOUT);
@@ -34,10 +34,10 @@ const S8C: React.FC<{ t: number }> = ({ t }) => {
   const pY = mix(mix(575, CHAT.y, cq), 540, xk);
   const pO = t >= 22.85 ? 1 - xk : 0;
   const inner = k(t, 22.95, 0.25, SOFT);
-  // booking tile grows out of the pressed Confirm pill (centre 960,881)
+  // booking tile grows out of the pressed Confirm pill (centre 960,938)
   const bq = k(t, 25.02, 0.5);
   const bs = mix(2.2, 2, bq);
-  const by = 341 * (1 - bq);
+  const by = 398 * (1 - bq);
   const bI = mix(35, 0, bq);
   const chk = sp(t, 25.18, 2, 0.65) * (1 - k(t, 25.4, 0.12, IN));
   const flash = k(t, 25.02, 0.5);

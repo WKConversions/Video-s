@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Easing } from "remotion";
 import { continueRender, delayRender } from "remotion";
 import { Avatar, Badge, Pill, Ico } from "../ui";
-import { C, Media, SANS, SHADOW, Wordmark, INOUT, OUT, SOFT, c01, k, mix, sp } from "../kit";
+import { C, Media as MediaReal, SANS, SHADOW, Wordmark, INOUT, OUT, SOFT, c01, k, mix, sp } from "../kit";
 import WM from "../wordmark.json";
 
 // ------------------------------------------------------------------ text measuring (fonts-safe)
@@ -58,6 +58,7 @@ export const WordLine: React.FC<{ items: WItem[]; t: number; size: number; cx?: 
 // ------------------------------------------------------------------ the lockup (S2) and its hand-over to S3
 const ICON_S = 625, u = ICON_S / 512, WM_H = 170, WM_A = (WM as { aspect: number }).aspect, WM_W = WM_H * WM_A;
 const iconW = 325 * u, GAP = 74, total = iconW + GAP + WM_W, LEFT = 960 - total / 2;
+const LIFT = Easing.bezier(0.45, 0, 0.8, 0.75);
 const LAND = Easing.bezier(0.3, 0.3, 0.2, 1);
 export const LOCK = {
   cx: LEFT + 106.5 * u, cy: 540 + (311.5 - 256) * u, r: 130, barX: LEFT + 240 * u, barW: 85 * u, barBottom: 540 + (418 - 256) * u, barH: 325 * u,
@@ -65,7 +66,7 @@ export const LOCK = {
 };
 /** coral field -> circle -> lockup -> header wordmark + the lone circle; S2 and S3 both draw this, identically */
 export const Brand: React.FC<{ t: number }> = ({ t }) => {
-  const mv = sp(t, 2.9, 1.6, 0.85), off = (1 - mv) * (960 - LOCK.cx), lift = k(t, 3.4, 0.44, INOUT);
+  const mv = sp(t, 2.9, 1.6, 0.85), off = (1 - mv) * (960 - LOCK.cx), lift = k(t, 3.4, 0.44, LIFT);
   const R0 = t < 3.4 ? mix(1102, LOCK.r, k(t, 2.6, 0.6, LAND)) : mix(LOCK.r, LOCK.nodeR, lift);
   const cx = mix(LOCK.cx + off, 960, lift), cy = mix(mix(540, LOCK.cy, mv), 540, lift);
   const b = Math.min(1, sp(t, 3.02, 1.8, 0.7)) * (1 - k(t, 3.4, 0.22, INOUT)), bx = mix(LOCK.barX + off, cx - LOCK.barW / 2, lift), bb = mix(LOCK.barBottom, cy, lift);
@@ -91,34 +92,36 @@ export const Brand: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
+const FREEZE = false;
+const Media: typeof MediaReal = (p) => (FREEZE ? <div style={{ width: p.w, height: p.h, borderRadius: p.r, background: "#444" }} /> : <MediaReal {...p} />);
 // ------------------------------------------------------------------ cards of the three clusters (app style, frame px)
 const F = (size: number, weight = 500, color: string = C.cream): React.CSSProperties => ({ fontFamily: SANS, fontSize: size, fontWeight: weight, color, letterSpacing: "-0.01em" });
 const card: React.CSSProperties = { borderRadius: 22, background: C.card, border: `1px solid ${C.border}`, boxShadow: SHADOW, overflow: "hidden" };
 export const CreativeCard: React.FC<{ name: string; roles: string; city: string; clip: string; avatar?: string; initials?: string; avail: string }> = ({ name, roles, city, clip, avatar, initials, avail }) => (
-  <div style={{ ...card, width: 460, height: 140, display: "flex", alignItems: "center", gap: 16, padding: 14 }}>
-    <Media src={clip} w={132} h={112} r={14} shadow="none" />
-    <div style={{ display: "flex", flexDirection: "column", gap: 4, minWidth: 0 }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 10 }}><Avatar s={40} src={avatar} initials={initials} /><span style={F(25, 700)}>{name}</span></div>
-      <span style={F(22, 500, C.muted)}>{roles} · {city}</span>
-      <span style={{ ...F(21, 600), display: "flex", alignItems: "center", gap: 7 }}><span style={{ width: 9, height: 9, borderRadius: 5, background: C.coral }} />{avail}</span>
+  <div style={{ ...card, width: 460, height: 392, padding: 16, display: "flex", flexDirection: "column", gap: 14 }}>
+    <Media src={clip} w={428} h={226} r={14} shadow="none" />
+    <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 12 }}><Avatar s={46} src={avatar} initials={initials} /><span style={F(32, 800)}>{name}</span></div>
+      <span style={F(24, 500, C.muted)}>{roles} · {city}</span>
+      <span style={{ ...F(24, 600), display: "flex", alignItems: "center", gap: 8 }}><span style={{ width: 10, height: 10, borderRadius: 5, background: C.coral }} />{avail}</span>
     </div>
   </div>
 );
 export const VenueCard: React.FC<{ letter: string; name: string; sub: string }> = ({ letter, name, sub }) => (
-  <div style={{ ...card, width: 460, height: 190, padding: 18, display: "flex", flexDirection: "column", gap: 14 }}>
-    <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-      <div style={{ width: 62, height: 62, borderRadius: 14, background: C.cream, display: "flex", alignItems: "center", justifyContent: "center", ...F(30, 800, C.ink) }}>{letter}</div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 3 }}><div style={{ display: "flex", alignItems: "center", gap: 8 }}><span style={F(29, 700)}>{name}</span><Badge s={20} /></div><span style={F(22, 500, C.muted)}>{sub}</span></div>
+  <div style={{ ...card, width: 460, height: 290, padding: 20, display: "flex", flexDirection: "column", gap: 20 }}>
+    <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+      <div style={{ width: 84, height: 84, borderRadius: 18, background: C.cream, display: "flex", alignItems: "center", justifyContent: "center", ...F(40, 800, C.ink) }}>{letter}</div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}><div style={{ display: "flex", alignItems: "center", gap: 10 }}><span style={F(34, 800)}>{name}</span><Badge s={24} /></div><span style={F(24, 500, C.muted)}>{sub}</span></div>
     </div>
-    <div style={{ display: "flex", gap: 12 }}><Pill label="See all roles" kind="outline" w="50%" h={56} size={22} /><Pill label="Connect" w="50%" h={56} size={22} icon={<Ico n="arrow" s={18} w={2.4} />} /></div>
+    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}><Pill label="See all roles" kind="outline" w="100%" h={66} size={25} /><Pill label="Connect" w="100%" h={66} size={25} icon={<Ico n="arrow" s={22} w={2.4} />} /></div>
   </div>
 );
 export const BrandCard: React.FC<{ clip: string }> = ({ clip }) => (
-  <div style={{ ...card, width: 460, height: 330, padding: 16, display: "flex", flexDirection: "column", gap: 14 }}>
-    <Media src={clip} w={428} h={214} r={14} shadow="none" />
-    <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
-      <div style={{ width: 58, height: 58, borderRadius: 14, background: C.cream, display: "flex", alignItems: "center", justifyContent: "center", ...F(28, 800, C.ink) }}>A</div>
-      <div style={{ display: "flex", flexDirection: "column", gap: 3 }}><div style={{ display: "flex", alignItems: "center", gap: 8 }}><span style={F(28, 700)}>Atelier Mar</span><Badge s={20} /></div><span style={F(22, 500, C.muted)}>Brand · Málaga</span></div>
+  <div style={{ ...card, width: 460, height: 392, padding: 16, display: "flex", flexDirection: "column", gap: 14 }}>
+    <Media src={clip} w={428} h={226} r={14} shadow="none" />
+    <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+      <div style={{ width: 72, height: 72, borderRadius: 16, background: C.cream, display: "flex", alignItems: "center", justifyContent: "center", ...F(36, 800, C.ink) }}>A</div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 4 }}><div style={{ display: "flex", alignItems: "center", gap: 10 }}><span style={F(34, 800)}>Atelier Mar</span><Badge s={24} /></div><span style={F(24, 500, C.muted)}>Brand · Málaga</span></div>
     </div>
   </div>
 );

@@ -13,7 +13,7 @@ const TILE = { mon: "NOV", day: "21", dow: "Sat", name: "Javi Ortega", at: "Casa
 const T = { completed: 31.4, booking: 31.78, recs: 32.56, build: 33.48, trust: 33.7, strengthen: 34.42, reputation: 35.08 };
 const REC_AT = [32.56, 32.94, 33.22];                 // the cards rise out of the tile
 const FLY_AT = [33.48, 33.7, 33.92];                  // and fly into Javi's profile
-const LS = 2.1, LY = 575;                             // the people list: scale and centre y
+const LS = 2.7, LY = 640;                             // the people list: scale and centre y
 
 const Head: React.FC<{ t: number; text: string; at: number; end: number; times?: number[]; colors?: (string | undefined)[] }> = ({ t, text, at, end, times, colors }) => {
   if (t < at - 0.1 || t > end + 0.5) return null;
@@ -25,12 +25,12 @@ const S11C: React.FC<{ t: number }> = ({ t }) => {
   const m = sp(t, 30.62, 1.5, 0.8);
   const dX = 960 + (DISC.x - 960) * PUSH_END, dY = 540 + (DISC.y - 540) * PUSH_END, dR = DISC.R * PUSH_END;
   const mx = mix(dX, 960, m), my = mix(dY, 540, m);
-  const mw = mix(dR * 2, 600, m), mh = mix(dR * 2, 208, m), mr = mix(dR, 28, m);
+  const mw = mix(dR * 2, 840, m), mh = mix(dR * 2, 291, m), mr = mix(dR, 39, m);
   const holeS = dR * 0.52 * (1 - c01(m * 2.2));
   const tileO = k(t, 31.2, 0.2);
   // 2. the tile: stamp, then it sinks to the bottom and the cards rise out of it
   const sink = k(t, 32.3, 0.7, INOUT);
-  const tileS = mix(2 + 0.035 * c01((t - 31.2) / 1.2), 1.0, sink);
+  const tileS = mix(2.8 + 0.049 * c01((t - 31.2) / 1.2), 1.4, sink);
   const tileY = mix(540, 930, sink);
   const stamp = sp(t, T.booking, 2.4, 0.5);
   const tileOut = 1 - k(t, 33.3, 0.35);
@@ -40,8 +40,8 @@ const S11C: React.FC<{ t: number }> = ({ t }) => {
   // the profile: enters from above, already opaque
   const prof = sp(t, 33.4, 1.5, 0.78);
   const grow = sp(t, T.strengthen, 1.4, 0.8);
-  const profYb = mix(-260, 450, prof);
-  const profS = mix(1.5, 2.2, grow), profY = mix(profYb, 560, grow);
+  const profYb = mix(-300, 470, prof);
+  const profS = mix(2.1, 3.08, grow), profY = mix(profYb, 590, grow);
   const pops = [0, 1, 2].map((i) => sp(t, FLY_AT[2 - i] + 0.34, 1.8, 0.55));   // CB, LT, AM pop in as their cards land
   const lit = k(t, 34.5, 0.35);
   // the profile becomes Javi's row, the list grows out of that row
@@ -88,7 +88,7 @@ const S11C: React.FC<{ t: number }> = ({ t }) => {
         const shift = REC_AT.map((a, j) => (j > i ? sp(t, a, 1.5, 0.8) : 0)).reduce((a, b) => a + b, 0);
         const baseY = mix(540, 800, pileDrop);
         const yy = mix(930, baseY - 28 * shift, c01(q) * 1 + (q - c01(q)));
-        const ss = (1.75 * mix(0.45, 1, c01(q))) * (1 - 0.055 * shift);
+        const ss = (2.45 * mix(0.45, 1, c01(q))) * (1 - 0.055 * shift);
         const fly = k(t, FLY_AT[2 - i], 0.34, IN);              // the front card (i = 2) goes first
         const px = mix(960, 960, fly), py = mix(yy, profYb, fly);
         const sfl = ss * mix(1, 0.32, fly);

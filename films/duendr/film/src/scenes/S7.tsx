@@ -24,11 +24,14 @@ const Toggle: React.FC<{ t: number }> = ({ t }) => {
 
 // the cream thumb becomes the post card (plain rounded rect, no text)
 const lerpHex = (a: [number, number, number], b: [number, number, number], u: number) => `rgb(${a.map((v, i) => Math.round(mix(v, b[i], u))).join(",")})`;
+// fixed-size element (the post card's final size); the visible rect is a clip-path inset, moved with a transform
+const PW = 977, PH = 748;                           // post card at 2.2x
 const Morph: React.FC<{ t: number }> = ({ t }) => {
   if (t < 17.62 || t >= 18.25) return null;
   const g = k(t, 17.62, 0.6, SOFT);
-  const w = mix(544, 799, g), h = mix(96, 612, g);
-  return <div style={{ position: "absolute", left: 960 - 400, top: 540 - 306, width: w, height: h, marginLeft: (799 - w) / 2, marginTop: (612 - h) / 2, borderRadius: mix(48, 36, g), background: lerpHex([240, 235, 225], [30, 27, 25], c01(g / 0.6)), border: `1px solid ${C.border}`, boxSizing: "border-box", transform: `translate(${mix(280, 0, g)}px,${mix(0, 50, g)}px)` }} />;
+  const w = mix(544, PW, g), h = mix(96, PH, g);
+  const ix = (PW - w) / 2, iy = (PH - h) / 2;
+  return <div style={{ position: "absolute", left: 960 - PW / 2, top: 590 - PH / 2, width: PW, height: PH, background: lerpHex([240, 235, 225], [30, 27, 25], c01(g / 0.6)), clipPath: `inset(${iy}px ${ix}px ${iy}px ${ix}px round ${mix(48, 44, g)}px)`, transform: `translate(${mix(280, 0, g)}px,${mix(-50, 0, g)}px)` }} />;
 };
 
 const Row: React.FC<{ t: number }> = ({ t }) => {
@@ -49,7 +52,7 @@ const Row: React.FC<{ t: number }> = ({ t }) => {
 const S7C: React.FC<{ t: number }> = ({ t }) => {
   // post card: grows out of the thumb, then rides out with the row
   const m = k(t, 19.15, 0.4, INOUT);
-  const pS = 1.8 + (1.35 - 1.8) * m;
+  const pS = 2.2 + (1.35 - 2.2) * m;
   const pX = 960 - (rowOff(19.0) - rowOff(t));
   const pO = c01((t - 17.95) / 0.25);
   const jp = javiPose(t);
