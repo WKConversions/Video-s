@@ -1,5 +1,338 @@
-// Scene A: placeholder until the builder writes it.
+// Scene A (0 → h1, 20.5 s), contract 2: object-led Apple motion. Four fixed frames, each with a slow steady push:
+//   Hook   0 – 6.95   the line with the old website inside it; the window grows (the hook's one push) and pushes the
+//                     words out; its content drops away to "Siden kan ikke findes"; the window shrinks into a dot.
+//   Logo   6.75 – 8.8 the dot opens into the six dots, the wordmark slides out beside it; the lockup leaves upward.
+//   Wizard 8.05 – 14.7 the window rises; one push to the form column; the cursor leads typing, the select, the new
+//                     field, e-mail, phone; the page scrolls to "Fortsæt"; the pressed button contracts into a dot.
+//   Site   13.9 – h1  the dot becomes the turning logo; the empty window rises under it; the logo settles on the
+//                     address bar; text, photos, layout arrive; three answer chips fly into the site. Ends on Handoff1.
+// Times below are film seconds (t = g / 30).
 import React from "react";
 import { AbsoluteFill } from "remotion";
+import { C, SANS, SHADOW, INOUT, OUT, clamp01, mix } from "../lib";
+import { f, aspring, press, typed, Browser, Wordmark } from "../shared";
+import { Kinetic, KItem, measure, useFonts } from "../type";
+import { Dots, LOGO, RING, ANG } from "../dots";
+import { Stage3D, Plane, cam, project } from "../cam";
+import { Wizard, WIZ_WIN, WIZ_R, Cursor, Handoff1, camH1, H1_SITE, SITE_WIN, SiteWindow, HANDOFF_HALF } from "../ui";
+import { OldSite, OldWindow, OLD } from "./A_old";
+import { SiteBuild } from "./A_site";
+
 export const BLUR: [number, number][] = [];
-export const SceneA: React.FC<{ g: number }> = () => <AbsoluteFill />;
+
+export const EVENTS: { t: number; kind: "click" | "type" | "check" | "pop" | "open" | "send" | "logo"; len?: number; note: string }[] = [
+  { t: 0.45, kind: "pop", note: "second old site slides up behind the first (soft)" },
+  { t: 0.75, kind: "pop", note: "third old site slides up (soft)" },
+  { t: 3.5, kind: "open", len: 1.9, note: "the hook's push: the old window grows and pushes the words out (soft swell)" },
+  { t: 4.35, kind: "pop", len: 0.6, note: "the old site's rows drop away, top to bottom (five soft ticks)" },
+  { t: 4.95, kind: "check", note: "'Siden kan ikke findes' lands (dull error tone, not a chime)" },
+  { t: 6.15, kind: "pop", len: 0.9, note: "the window shrinks into the dot" },
+  { t: 6.85, kind: "logo", note: "the dot opens into the six dots, the wordmark slides out" },
+  { t: 8.0, kind: "open", note: "the wizard window rises from below" },
+  { t: 9.22, kind: "click", note: "click into Virksomhedsnavn" },
+  { t: 9.3, kind: "type", len: 0.73, note: "types 'Holm Fysioterapi'" },
+  { t: 10.2, kind: "click", note: "click on Branche, the menu opens" },
+  { t: 10.62, kind: "click", note: "picks 'Fysioterapi', the menu closes" },
+  { t: 10.75, kind: "pop", note: "the field 'Hvad laver du?' eases in, the fields below make room" },
+  { t: 10.98, kind: "type", len: 1.05, note: "types 'Genoptræning og massage'" },
+  { t: 12.1, kind: "click", note: "click into E-mail" },
+  { t: 12.16, kind: "type", len: 0.8, note: "types 'kontakt@holmfysio.dk'" },
+  { t: 13.0, kind: "click", note: "click into Telefon" },
+  { t: 13.05, kind: "type", len: 0.47, note: "types '+45 31 42 53 64'" },
+  { t: 13.85, kind: "send", note: "press on 'Fortsæt'; the button contracts into a dot" },
+  { t: 14.4, kind: "logo", len: 1.5, note: "the dot opens into the turning logo (loader)" },
+  { t: 14.6, kind: "open", note: "the empty site window rises under the loader" },
+  { t: 15.8, kind: "pop", note: "headline and text rise in" },
+  { t: 16.45, kind: "pop", note: "the hero photo lands" },
+  { t: 16.62, kind: "pop", len: 0.3, note: "three service photos land, left to right" },
+  { t: 17.12, kind: "pop", len: 0.4, note: "navigation and button slide into the layout" },
+  { t: 17.75, kind: "pop", len: 0.3, note: "three answer chips rise in" },
+  { t: 19.67, kind: "check", note: "chip 'Holm Fysioterapi' lands in the navigation" },
+  { t: 19.77, kind: "check", note: "chip 'Fysioterapi' lands in the text" },
+  { t: 19.87, kind: "check", note: "chip 'Genoptræning og massage' lands in the service cards; the loader finishes" },
+];
+
+/* ---------- small helpers ---------- */
+const seg = (t: number, a: number, b: number) => clamp01((t - a) / (b - a));
+const sine = (u: number) => (1 - Math.cos(Math.PI * clamp01(u))) / 2;
+const sp = (t: number, at: number, response = 0.55, damping = 1) => aspring(t * 30, at, response, damping);
+// soft: a critically damped spring of the third order for big surfaces: no overshoot, the same long soft landing, but
+// it also STARTS gently (zero acceleration), so a large surface never jumps into motion. Settles in about 0.9 × response.
+const soft = (t: number, at: number, response = 0.8) => { const x = Math.max(0, t - at) * ((3 * Math.PI) / response); return 1 - (1 + x + (x * x) / 2) * Math.exp(-x); };
+
+// the logo opening out of ONE dot: all six start on the first dot (ring radius 0), the ring opens (ro) and the dots
+// fan round it from the largest (fan[i]); spin in degrees. Circles in screen px.
+const D_ANG = [0, -57.8, -110.4, -157.7, -200.1, -237.5].map((d) => (d * Math.PI) / 180);
+const fanDots = (size: number, cx: number, cy: number, spin: number, ro: number, fan: number[], grow = 1) => {
+  const u = size / 100, a0 = ANG[0] + (spin * Math.PI) / 180;
+  return LOGO.map((d, i) => {
+    const a = a0 + D_ANG[i] * fan[i], R = RING.r * u * ro;
+    return { x: cx + Math.cos(a) * R, y: cy + Math.sin(a) * R, r: (i === 0 ? d.r : d.r * (fan[i] < 0.02 ? 0 : 0.4 + 0.6 * Math.min(1, fan[i]))) * u * grow };
+  });
+};
+
+/* ================= Hook: 0 – 6.95 ================= */
+const SIZE = 84, SLOT0 = 340, SLOT1 = 1132, PUSH0 = 3.5, PUSH1 = 5.4, M0 = 5.9, M1 = 7.05;
+const LOGO_S = 180;                                   // the lockup's C
+const LOCK = { cx: 796.2, cy: 543.9, wmX: 875, wmH: 66 };
+const dot0At = (t: number) => {                       // where the first dot is while the lockup opens (screen px)
+  const q = sp(t, 6.85, 0.55), ro = sp(t, 6.8, 0.55);
+  const cx = mix(960, LOCK.cx, q), cy = mix(540, LOCK.cy, q), R = RING.r * (LOGO_S / 100) * ro;
+  return { x: cx + Math.cos(ANG[0]) * R, y: cy + Math.sin(ANG[0]) * R, cx, cy, ro };
+};
+const hookItems = (slotW: number): KItem[] => [
+  { t: "De", at: 0.02, out: 2.0 }, { t: "fleste", at: 0.16, out: 2.0 },
+  { t: "de", at: 2.1, dur: 0.85 }, { t: "ikke", at: 2.3, dur: 0.85 }, { t: "er", at: 2.5, dur: 0.85 },
+  { node: <div style={{ width: slotW, height: 1 }} />, w: slotW, at: -1 },
+  { t: "har", at: 1.1, out: 3.12, dur: 0.7 }, { t: "en", at: 1.28, out: 3.12, dur: 0.7 }, { t: "hjemmeside,", at: 1.4, out: 3.12, dur: 0.9 },
+  { t: "stolte", at: 3.08, accent: true }, { t: "af.", at: 3.3 },
+];
+// the same slot maths as Kinetic, to find where the inline window sits (its centre, relative to the line's centre)
+const slotCentre = (g: number, items: KItem[], size: number, ready: boolean) => {
+  const gap = 0.27 * size; let acc = 0, cum = 0, c = 0;
+  for (const it of items) {
+    const w = it.node ? (it.w ?? size) : measure(it.t ?? "", size, !!it.accent, true, 400, ready);
+    const a = f(it.at), dur = (it.dur ?? 0.6) * 30, o = it.out !== undefined ? f(it.out) : Infinity;
+    const slot = INOUT(clamp01((g - a) / (dur * 0.9))) * (1 - INOUT(clamp01((g - o - 3) / 16.5)));
+    const pre = gap * slot * Math.min(1, acc), l = cum + pre;
+    if (it.node) c = l + (slot * w) / 2;
+    cum += pre + slot * w; acc += slot;
+  }
+  return c - cum / 2;
+};
+const TIMES = "'Times New Roman', 'Liberation Serif', Times, serif", ARIAL = "Arial, 'Liberation Sans', Helvetica, sans-serif";
+const BANDS: [number, number][] = [[80, 256], [256, 333], [333, 404], [404, 497], [497, 690], [690, 760]];
+
+const Hook: React.FC<{ g: number }> = ({ g }) => {
+  const t = g / 30, ready = useFonts();
+  const E = sine(seg(t, PUSH0, PUSH1));
+  const slotW = SLOT0 * Math.pow(SLOT1 / SLOT0, E);
+  const items = hookItems(slotW + 1000 * sine(seg(t, 4.75, 5.45)));   // the growing window pushes the words apart, then out past the edges
+  const zs = 1 + 0.012 * t;                                             // the slow steady push
+  const m = sine(Math.pow(seg(t, M0, M1), 1.6));                                       // window → dot
+  const d0 = dot0At(t);
+  const cx = 960 + slotCentre(g, items, SIZE, ready) * (1 - E) + (d0.x - 960) / zs, cy = 540 + (d0.y - 540) / zs;
+  const ls0 = slotW / OLD.w, lsDot = 40 / zs / OLD.h, ls = mix(ls0, lsDot, m);
+  const back = (j: number) => { const a = soft(t, 0.2 + 0.35 * j, 0.9), r = sine(seg(t, 3.3, 4.3)); return a * (1 - r); };
+  const dropping = t >= 4.28;
+  const er = (at: number) => { const p = sp(t, at, 0.5); return { opacity: clamp01(p * 1.6), transform: `translateY(${((1 - p) * 30).toFixed(2)}px)` }; };
+  const c2 = sine(seg(m, 0.25, 1));
+  return (
+    <AbsoluteFill style={{ transform: `scale(${zs.toFixed(5)})` }}>
+      {t < 5.5 && <div style={{ position: "absolute", left: 960, top: 540 }}><Kinetic g={g} items={items} size={SIZE} /></div>}
+      <div style={{ position: "absolute", left: cx, top: cy, width: 0, height: 0 }}>
+        <div style={{ position: "absolute", left: -OLD.w / 2, top: -OLD.h / 2, width: OLD.w, height: OLD.h, transform: `scale(${ls.toFixed(5)})` }}>
+          {/* the soft stack: two more old sites slide up behind the first, and settle back behind it as it grows */}
+          {[2, 1].map((j) => { const b = back(j); return b > 0.002 && (
+            <div key={j} style={{ position: "absolute", inset: 0, transform: `translateY(${(-(23 + 30) * j * b).toFixed(2)}px) scale(${1 - 0.06 * j})`, opacity: clamp01(b * 4) }}><OldSite i={j} /></div>); })}
+          {!dropping && <div style={{ position: "absolute", inset: 0 }}><OldSite i={0} /></div>}
+          {dropping && (
+            <div style={{ position: "absolute", inset: 0, opacity: 1 - sine(seg(m, 0.1, 0.8)) }}>
+              <OldWindow w={OLD.w} h={OLD.h} title="Siden kan ikke findes" path="/kontakt.htm">
+                <div style={{ position: "absolute", inset: 0, background: "#FFFFFF", fontFamily: TIMES, color: "#111111" }}>
+                  <div style={{ position: "absolute", left: 84, top: 132, fontSize: 104, fontWeight: 700, letterSpacing: "-0.01em", whiteSpace: "nowrap", lineHeight: 1, ...er(4.5) }}>Siden kan ikke findes</div>
+                  <div style={{ position: "absolute", left: 84, top: 276, width: 1024, height: 3, background: "#8C8982", ...er(4.6) }} />
+                  <div style={{ position: "absolute", left: 84, top: 316, fontFamily: ARIAL, fontSize: 34, whiteSpace: "nowrap", color: "#2A2A2A", ...er(4.68) }}>HTTP 404 – Filen eller mappen blev ikke fundet.</div>
+                  <div style={{ position: "absolute", left: 84, top: 424, width: 220, height: 70, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: ARIAL, fontSize: 32, color: "#1E1E1E",
+                    background: "#D6D2CA", border: "3px solid", borderColor: "#FFFFFF #7C7A76 #7C7A76 #FFFFFF", boxSizing: "border-box", ...er(4.78) }}>Opdater</div>
+                </div>
+              </OldWindow>
+            </div>)}
+          {/* the old site's title bar fades to the error page's; its rows drop away top to bottom */}
+          {dropping && t < 4.95 && <div style={{ position: "absolute", inset: 0, clipPath: "inset(0px 0px 680px 0px)", opacity: 1 - seg(t, 4.3, 4.75) }}><OldSite i={0} /></div>}
+          {dropping && t < 5.6 && (
+            <div style={{ position: "absolute", left: 4, top: 80, width: OLD.w - 8, height: OLD.h - 84, overflow: "hidden" }}>
+              {BANDS.map(([a, b], i) => { const p = sp(t, 4.3 + 0.085 * i, 0.5), o = 1 - clamp01(p * 1.5); return o > 0.002 && (
+                <div key={i} style={{ position: "absolute", left: -4, top: -80, width: OLD.w, height: OLD.h, clipPath: `inset(${a}px 0px ${OLD.h - b}px 0px)`, transform: `translateY(${(p * 110).toFixed(2)}px)`, opacity: o }}><OldSite i={0} /></div>); })}
+            </div>)}
+          {/* the morph: a sage shape the window's size, becoming a circle */}
+          {m > 0 && <div style={{ position: "absolute", inset: 0, background: C.sage, opacity: sine(seg(m, 0, 0.8)), clipPath: `inset(0px ${(220 * c2).toFixed(2)}px round ${(380 * c2).toFixed(2)}px)` }} />}
+        </div>
+      </div>
+    </AbsoluteFill>
+  );
+};
+
+/* ================= Logo: 6.75 – 8.8 ================= */
+const Lockup: React.FC<{ g: number }> = ({ g }) => {
+  const t = g / 30, d0 = dot0At(t);
+  const fan = LOGO.map((_, i) => sp(t, 6.8 + 0.04 * i, 0.6, 0.9));
+  const dots = fanDots(LOGO_S, d0.cx, d0.cy, 0, d0.ro, fan).map((d, i) => (i === 0 && t < M1 ? { ...d, r: 0 } : d));
+  const wp = seg(t, 6.9, 7.35), wq = sp(t, 6.9, 0.55);
+  const lift = soft(t, 8.05, 0.9), zs = 1 + 0.04 * seg(t, 6.9, 8.9);
+  return (
+    <AbsoluteFill style={{ transform: `translateY(${(-320 * lift).toFixed(2)}px) scale(${zs.toFixed(5)})`, opacity: 1 - sine(lift * 1.4) }}>
+      <Dots dots={dots} />
+      {wp > 0 && <div style={{ position: "absolute", left: LOCK.wmX, top: 540 - LOCK.wmH / 2, transform: `translateX(${((1 - wq) * -36).toFixed(2)}px)` }}><Wordmark h={LOCK.wmH} p={wp} /></div>}
+    </AbsoluteFill>
+  );
+};
+
+/* ================= Wizard: 8.05 – 14.7 ================= */
+const S0 = 1500 / WIZ_WIN.w, S1 = 2.2, ZR = 2.3, SHIFT = 86, SPLIT = 424, SCROLL = 215;
+const wiz = (t: number) => {
+  const e = sine(seg(t, 8.8, 10.3));                                    // the scene's one push, to the form column
+  const s = S0 * Math.pow(S1 / S0, e) * (1 + 0.04 * seg(t, 10.3, 14.2));
+  const fy = mix(WIZ_WIN.h / 2, 476, e);
+  const arr = soft(t, 7.8, 1.5), ex = sine(seg(t, 14.02, 15.0));
+  const sT = s * mix(0.94, 1, arr) * mix(1, 0.96, ex);
+  const y = (1 - arr) * 420 + ex * 300 + (WIZ_WIN.h / 2 - fy) * sT;
+  const scroll = SCROLL * sine(seg(t, 12.4, 13.8)), shift = SHIFT * soft(t, 10.7, 0.8);
+  // a page point (final layout coordinates) on screen
+  const at = (px: number, py: number) => ({ x: 960 + (px - 800) * sT, y: 540 + y + (46 + py - scroll - WIZ_WIN.h / 2) * sT });
+  return { s, sT, y, scroll, shift, at, opacity: sine(arr * 1.6) * (1 - sine(seg(t, 14.02, 14.82))) };
+};
+const CUR: [number, number, number][] = [
+  [8.85, 1010, 640], [9.2, 690, 289], [9.95, 690, 289], [10.2, 800, 375], [10.3, 800, 375], [10.55, 760, 426], [11.45, 760, 426],
+  [12.08, 650, 567], [12.8, 650, 567], [13.0, 890, 567], [13.1, 890, 567], [13.8, 1000, 812],
+];
+const curAt = (t: number) => {
+  if (t <= CUR[0][0]) return { x: CUR[0][1], y: CUR[0][2] };
+  for (let i = 1; i < CUR.length; i++) if (t <= CUR[i][0]) { const u = sine(seg(t, CUR[i - 1][0], CUR[i][0])); return { x: mix(CUR[i - 1][1], CUR[i][1], u), y: mix(CUR[i - 1][2], CUR[i][2], u) }; }
+  return { x: CUR[CUR.length - 1][1], y: CUR[CUR.length - 1][2] };
+};
+const CLICKS = [9.22, 10.2, 10.62, 12.1, 13.0, 13.85];
+const BTN = { x: WIZ_R.button.x + WIZ_R.button.w / 2, y: WIZ_R.button.y + WIZ_R.button.h / 2, w: WIZ_R.button.w, h: WIZ_R.button.h };
+const T_NAME = "Holm Fysioterapi", T_WHAT = "Genoptræning og massage", T_MAIL = "kontakt@holmfysio.dk", T_TEL = "+45 31 42 53 64";
+const OPTIONS = ["Fysioterapi", "Frisør", "Restaurant"];
+
+const WizardScene: React.FC<{ g: number }> = ({ g }) => {
+  const t = g / 30, v = wiz(t);
+  const name = typed(g, 9.3, T_NAME, 22), what = typed(g, 10.98, T_WHAT, 22), mail = typed(g, 12.16, T_MAIL, 25), tel = typed(g, 13.05, T_TEL, 32);
+  const focus = t < 9.22 ? null : t < 10.2 ? "name" : t < 10.66 ? "branche" : t < 12.1 ? null : t < 13.0 ? "email" : t < 13.85 ? "phone" : null;
+  const whatOn = t >= 10.66 && t < 12.1;
+  const typing = (name.length > 0 && name.length < T_NAME.length) || (mail.length > 0 && mail.length < T_MAIL.length) || (tel.length > 0 && tel.length < T_TEL.length);
+  const props = { g, name, branche: t >= 10.66 ? "Fysioterapi" : "", email: mail, phone: tel, focus, caret: true, caretSolid: typing, hideButton: true } as const;
+  const menu = sp(t, 10.22, 0.45) - sp(t, 10.68, 0.4), room = v.shift / SHIFT;
+  const hover = seg(t, 10.4, 10.55);
+  const blink = (what.length > 0 && what.length < T_WHAT.length) || Math.floor(g / 15) % 2 === 0;
+  const cp = curAt(t), c = v.at(cp.x, cp.y), cPress = Math.max(...CLICKS.map((x) => press(g, x)));
+  const cOp = seg(t, 8.85, 9.15) * (1 - seg(t, 14.02, 14.3));
+  return (
+    <AbsoluteFill>
+      <Stage3D cam={cam()}>
+        <Plane x={0} y={v.y} z={0} w={WIZ_WIN.w * ZR} h={WIZ_WIN.h * ZR} scale={v.sT / ZR} opacity={v.opacity} dof={false}>
+          <div style={{ zoom: ZR, width: WIZ_WIN.w, height: WIZ_WIN.h }}>
+            <Browser w={WIZ_WIN.w} h={WIZ_WIN.h} url="creoble.dk/builder">
+              <div style={{ position: "absolute", left: 0, top: 0, width: 1600, height: 1200, background: C.bg, transform: `translateY(${(-v.scroll).toFixed(3)}px)` }}>
+                <div style={{ position: "absolute", left: 0, top: 0, clipPath: `inset(0px 0px ${800 - SPLIT}px 0px)` }}><Wizard {...props} /></div>
+                <div style={{ position: "absolute", left: 0, top: 0, clipPath: `inset(${SPLIT}px 0px 0px 0px)`, transform: `translateY(${v.shift.toFixed(3)}px)` }}><Wizard {...props} /></div>
+                {/* the field that eases in under Branche */}
+                {room > 0.001 && (
+                  <div style={{ position: "absolute", left: 560, top: 433, width: 480, fontFamily: SANS, color: C.ink, opacity: seg(room, 0.25, 0.8), transform: `translateY(${((1 - room) * -26).toFixed(2)}px) scale(${mix(0.96, 1, room)})`, transformOrigin: "50% 0%" }}>
+                    <div style={{ fontSize: 13.5, fontWeight: 500, height: 25 }}>Hvad laver du?<span style={{ color: "#B4574A" }}> *</span></div>
+                    <div style={{ width: 480, height: 42, boxSizing: "border-box", borderRadius: 7, background: C.white, border: `1px solid ${whatOn ? "#8FAFA6" : "#E1DDD6"}`, boxShadow: whatOn ? "0 0 0 3px rgba(135,168,158,0.22)" : "0 1px 1px rgba(26,22,20,0.03)",
+                      display: "flex", alignItems: "center", padding: "0 13px", fontSize: 14, color: what ? C.ink : "#A9A39B", whiteSpace: "nowrap" }}>
+                      <span>{what || "fx behandling af skader"}</span>
+                      {whatOn && <span style={{ display: "inline-block", width: 1.5, height: 18, marginLeft: what ? 1 : -2, background: C.ink, opacity: blink ? 1 : 0 }} />}
+                    </div>
+                  </div>)}
+                {/* the select's menu grows out of the Branche field */}
+                {menu > 0.001 && (
+                  <div style={{ position: "absolute", left: 560, top: 398, width: 480, height: 132, boxSizing: "border-box", borderRadius: 8, background: C.white, border: "1px solid #E1DDD6", boxShadow: SHADOW, padding: 6,
+                    fontFamily: SANS, fontSize: 14, color: C.ink, opacity: clamp01(menu * 1.6), transform: `translateY(${((1 - menu) * -10).toFixed(2)}px) scale(${mix(0.94, 1, menu)})`, transformOrigin: "50% 0%" }}>
+                    {OPTIONS.map((o, i) => (
+                      <div key={o} style={{ height: 40, borderRadius: 5, padding: "0 10px", display: "flex", alignItems: "center", background: i === 0 ? `rgba(231,239,236,${hover})` : "transparent" }}>{o}</div>))}
+                  </div>)}
+              </div>
+            </Browser>
+          </div>
+        </Plane>
+      </Stage3D>
+      {cOp > 0 && <Cursor x={c.x} y={c.y} press={cPress} size={28 * v.s} opacity={cOp} />}
+    </AbsoluteFill>
+  );
+};
+
+/* ================= the button → the dot → the loader (13.6 – 20.15) ================= */
+const LOADER = 280, R0 = (LOGO[0].r * LOADER) / 100;                    // the first dot's radius in the loader (31.3 px)
+const ramp = (x: number) => (x <= 0 ? 0 : x < 0.6 ? (x * x) / 1.2 : x - 0.3);
+const sitePose = (t: number) => { const q = soft(t, 14.5, 1.0); return { y: H1_SITE.y + (1 - q) * 420, scale: mix(0.95, 1, q), opacity: sine(q * 1.6) }; };
+const Loader: React.FC<{ g: number }> = ({ g }) => {
+  const t = g / 30;
+  const live = wiz(t), froz = wiz(14.02);
+  const gl = sine(seg(t, 14.07, 14.82)), m = sp(t, 13.97, 0.45), bar = sine(seg(t, 15.25, 15.95));
+  const b = t < 14.02 ? live.at(BTN.x, BTN.y + live.shift) : froz.at(BTN.x, BTN.y + froz.shift), bs = (t < 14.02 ? live.sT : froz.sT) / S1;
+  const pose = sitePose(t), pr = project(camH1(g), { x: H1_SITE.x, y: pose.y + (23 - SITE_WIN.h / 2), z: H1_SITE.z });
+  const cx = mix(mix(b.x, 960, gl), pr.x, bar), cy = mix(mix(b.y, 540, gl), pr.y, bar);
+  const size = LOADER * Math.pow((30 * pr.s) / LOADER, bar);
+  const fan = LOGO.map((_, i) => sp(t, 14.4 + 0.05 * i, 0.6, 0.9)), ro = sp(t, 14.4, 0.55);
+  const out = sine(seg(t, 19.75, 20.1));
+  const dots = fanDots(size, cx, cy, 240 * ramp(t - 14.45), ro, fan, 1 - out);
+  const k = bs * (1 - 0.045 * press(g, 13.85)) * mix(1, (2 * R0) / (BTN.h * S1) / bs, m);
+  const bw = BTN.w * S1, bh = BTN.h * S1, c2 = clamp01(m);
+  const dotOp = seg(m, 0.7, 0.95), wOp = t < 14.02 ? live.opacity : 1;
+  return (
+    <AbsoluteFill>
+      {m < 0.985 && (
+        <div style={{ position: "absolute", left: cx - bw / 2, top: cy - bh / 2, width: bw, height: bh, opacity: wOp, transform: `scale(${k.toFixed(5)})`, clipPath: `inset(0px ${(((bw - bh) / 2) * c2).toFixed(2)}px round ${mix(7 * S1, bh / 2, c2).toFixed(2)}px)`,
+          background: `color-mix(in srgb, ${C.sage} ${(seg(m, 0.1, 0.8) * 100).toFixed(1)}%, ${C.ink})`, color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: SANS, fontSize: 14 * S1, fontWeight: 500 }}>
+          <span style={{ opacity: 1 - seg(m, 0, 0.35) }}>Fortsæt</span>
+        </div>)}
+      {dotOp > 0 && <Dots dots={dots} style={{ opacity: dotOp }} />}
+    </AbsoluteFill>
+  );
+};
+
+/* ================= Site: 14.5 – h1 ================= */
+// chips: the wizard's answers, on the window's bottom edge (plane px), each flying to where the site uses it
+const CHIPS = [
+  { text: T_NAME, w: 350, x: 340, to: { x: 201, y: 103 }, hi: { x: 104, y: 82, w: 300, h: 42 }, hi2: null as null | { x: number; y: number; w: number; h: number } },
+  { text: "Fysioterapi", w: 260, x: 665, to: { x: 126, y: 482 }, hi: { x: 62, y: 464, w: 128, h: 36 }, hi2: null },
+  { text: T_WHAT, w: 480, x: 1035, to: { x: 955, y: 858 }, hi: { x: 520, y: 806, w: 420, h: 100 }, hi2: { x: 970, y: 806, w: 420, h: 100 } },
+];
+const FLY = [19.25, 19.35, 19.45], FLY_D = 0.45;
+const SiteScene: React.FC<{ g: number }> = ({ g }) => {
+  const t = g / 30, pose = sitePose(t);
+  const done = t >= 20.18;
+  const o = (at: number, r = 0.55) => sp(t, at, r);
+  const b = {
+    h1: OUT(seg(t, 15.72, 16.3)), h2: OUT(seg(t, 15.84, 16.42)), para: o(15.96),
+    frame: [seg(t, 15.5, 15.95), seg(t, 15.6, 16.05), seg(t, 15.68, 16.13), seg(t, 15.76, 16.21)],
+    hero: o(16.42), cards: [o(16.58), o(16.68), o(16.78)],
+    nav: [o(17.1, 0.5), o(17.17, 0.5), o(17.24, 0.5), o(17.31, 0.5), o(17.38, 0.5), o(17.45, 0.5)], btn: o(17.5, 0.5),
+  };
+  const patch = 1 - seg(t, 19.85, 20.15);
+  return (
+    <Stage3D cam={camH1(g)}>
+      <Plane {...H1_SITE} y={pose.y} scale={pose.scale} opacity={pose.opacity} w={SITE_WIN.w} h={SITE_WIN.h}>
+        {done ? <SiteWindow /> : (
+          <>
+            <Browser w={SITE_WIN.w} h={SITE_WIN.h} url="Forhåndsvisning"><SiteBuild b={b} /></Browser>
+            {patch > 0 && <div style={{ position: "absolute", left: SITE_WIN.w / 2 - 140, top: 12, width: 280, height: 22, background: "#F1EEE8", opacity: patch }} />}
+            {CHIPS.map((c, i) => {
+              const land = FLY[i] + FLY_D - 0.03, hv = seg(t, land - 0.12, land) * (1 - seg(t, land, land + 0.3));
+              if (hv <= 0) return null;
+              return [c.hi, c.hi2].map((h, j) => h && (
+                <div key={`${i}-${j}`} style={{ position: "absolute", left: h.x, top: h.y, width: h.w, height: h.h, borderRadius: 10, background: "rgba(135,168,158,0.30)", boxShadow: "0 0 0 2px rgba(135,168,158,0.55)", opacity: hv }} />));
+            })}
+            {CHIPS.map((c, i) => {
+              const a = sp(t, 17.7 + 0.1 * i, 0.5, 0.9), p = sine(seg(t, FLY[i], FLY[i] + FLY_D));
+              if (a <= 0.001 || p >= 1) return null;
+              const x = mix(c.x, c.to.x, p), y = mix(SITE_WIN.h, c.to.y, p) + (1 - a) * 40;
+              return (
+                <div key={c.text} style={{ position: "absolute", left: x - c.w / 2, top: y - 34, width: c.w, height: 68, borderRadius: 34, background: C.white, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW}`, display: "flex", alignItems: "center", justifyContent: "center", gap: 12,
+                  fontFamily: SANS, fontWeight: 500, fontSize: 34, letterSpacing: "-0.01em", color: C.ink, whiteSpace: "nowrap", opacity: clamp01(a * 2.5) * (1 - seg(p, 0.5, 0.95)), transform: `scale(${(mix(0.94, 1, Math.min(1, a)) * mix(1, 0.5, p)).toFixed(4)})` }}>
+                  {c.text}
+                </div>);
+            })}
+          </>)}
+      </Plane>
+    </Stage3D>
+  );
+};
+
+/* ================= the scene ================= */
+export const SceneA: React.FC<{ g: number }> = ({ g }) => {
+  const t = g / 30;
+  if (g >= f("h1") - HANDOFF_HALF) return <Handoff1 g={g} />;
+  return (
+    <AbsoluteFill>
+      {t >= 6.75 && t < 9.2 && <Lockup g={g} />}
+      {t < M1 && <Hook g={g} />}
+      {t >= 7.8 && t < 15.0 && <WizardScene g={g} />}
+      {t >= 14.5 && <SiteScene g={g} />}
+      {t >= 7.8 && t < 20.12 && <Loader g={g} />}
+    </AbsoluteFill>
+  );
+};
