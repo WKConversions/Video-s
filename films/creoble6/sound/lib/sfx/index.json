@@ -83,62 +83,6 @@
   }
  },
  {
-  "id": "ui-typing",
-  "file": "sfx/ticker/ui-typing.wav",
-  "category": "ticker",
-  "character": "typing, soft and low",
-  "licence": "karl",
-  "sync": 0.54,
-  "transients": [
-   0.085,
-   0.115,
-   0.245,
-   0.32,
-   0.54,
-   0.54,
-   0.68,
-   0.735,
-   0.735,
-   1.02,
-   1.14,
-   1.535
-  ],
-  "length": 2.08,
-  "decay": 0.54,
-  "lufs": -15.8,
-  "brightness_hz": 141,
-  "pitch_move_semitones": 0.0,
-  "hits": 16,
-  "original": [
-   "Ui Sound Effects/Ui Typing.wma"
-  ],
-  "heard": {
-   "tone": {
-    "soft": 0.72,
-    "warm": 0.95,
-    "premium": 0.49,
-    "playful": 0.52,
-    "subtle": 0.06,
-    "organic": 0.77
-   },
-   "style": {
-    "corporate-tech": -2.0,
-    "calm-premium": -0.04,
-    "playful-social": 0.22,
-    "energetic-startup": 1.1,
-    "cinematic": 2.09,
-    "friendly-human": -0.98,
-    "data-ai": 0.06,
-    "retro-game": -0.05
-   },
-   "heard_as": [
-    "a laser",
-    "a deep impact",
-    "a stamp"
-   ]
-  }
- },
- {
   "id": "soundreality-ui-pop-up",
   "file": "sfx/pop/soundreality-ui-pop-up.wav",
   "category": "pop",
@@ -272,6 +216,164 @@
     "a bubbly pop",
     "a water drop",
     "a switch toggle"
+   ]
+  }
+ },
+ {
+  "id": "ui-typing-13",
+  "file": "sfx/ticker/ui-typing-13.wav",
+  "category": "ticker",
+  "character": "typing, soft and low",
+  "licence": "karl",
+  "sync": 0.54,
+  "transients": [
+   0.085,
+   0.115,
+   0.245,
+   0.32,
+   0.54,
+   0.54,
+   0.68,
+   0.735,
+   0.735,
+   1.02,
+   1.14
+  ],
+  "length": 1.3,
+  "decay": 0.54,
+  "lufs": -15.8,
+  "brightness_hz": 141,
+  "pitch_move_semitones": 0.0,
+  "hits": 16,
+  "original": [
+   "Ui Sound Effects/Ui Typing.wma"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.72,
+    "warm": 0.95,
+    "premium": 0.49,
+    "playful": 0.52,
+    "subtle": 0.06,
+    "organic": 0.77
+   },
+   "style": {
+    "corporate-tech": -2.0,
+    "calm-premium": -0.04,
+    "playful-social": 0.22,
+    "energetic-startup": 1.1,
+    "cinematic": 2.09,
+    "friendly-human": -0.98,
+    "data-ai": 0.06,
+    "retro-game": -0.05
+   },
+   "heard_as": [
+    "a laser",
+    "a deep impact",
+    "a stamp"
+   ]
+  }
+ },
+ {
+  "id": "ui-typing-09",
+  "file": "sfx/ticker/ui-typing-09.wav",
+  "category": "ticker",
+  "character": "typing, soft and low",
+  "licence": "karl",
+  "sync": 0.54,
+  "transients": [
+   0.085,
+   0.115,
+   0.245,
+   0.32,
+   0.54,
+   0.54,
+   0.68,
+   0.735,
+   0.735
+  ],
+  "length": 0.9,
+  "decay": 0.54,
+  "lufs": -15.8,
+  "brightness_hz": 141,
+  "pitch_move_semitones": 0.0,
+  "hits": 16,
+  "original": [
+   "Ui Sound Effects/Ui Typing.wma"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.72,
+    "warm": 0.95,
+    "premium": 0.49,
+    "playful": 0.52,
+    "subtle": 0.06,
+    "organic": 0.77
+   },
+   "style": {
+    "corporate-tech": -2.0,
+    "calm-premium": -0.04,
+    "playful-social": 0.22,
+    "energetic-startup": 1.1,
+    "cinematic": 2.09,
+    "friendly-human": -0.98,
+    "data-ai": 0.06,
+    "retro-game": -0.05
+   },
+   "heard_as": [
+    "a laser",
+    "a deep impact",
+    "a stamp"
+   ]
+  }
+ },
+ {
+  "id": "ui-typing-06",
+  "file": "sfx/ticker/ui-typing-06.wav",
+  "category": "ticker",
+  "character": "typing, soft and low",
+  "licence": "karl",
+  "sync": 0.54,
+  "transients": [
+   0.085,
+   0.115,
+   0.245,
+   0.32,
+   0.54,
+   0.54
+  ],
+  "length": 0.6,
+  "decay": 0.54,
+  "lufs": -15.8,
+  "brightness_hz": 141,
+  "pitch_move_semitones": 0.0,
+  "hits": 16,
+  "original": [
+   "Ui Sound Effects/Ui Typing.wma"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.72,
+    "warm": 0.95,
+    "premium": 0.49,
+    "playful": 0.52,
+    "subtle": 0.06,
+    "organic": 0.77
+   },
+   "style": {
+    "corporate-tech": -2.0,
+    "calm-premium": -0.04,
+    "playful-social": 0.22,
+    "energetic-startup": 1.1,
+    "cinematic": 2.09,
+    "friendly-human": -0.98,
+    "data-ai": 0.06,
+    "retro-game": -0.05
+   },
+   "heard_as": [
+    "a laser",
+    "a deep impact",
+    "a stamp"
    ]
   }
  }

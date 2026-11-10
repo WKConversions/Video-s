@@ -7,38 +7,22 @@ import json
 fx = []
 GAIN = 8   # soft, but audible over the bed (house style: effects lead)
 def a(t, i, db, pitch=0, note=""): fx.append({"frame": round(t * 60), "id": i, "db": db + GAIN, "pitch": pitch, "note": note})
-def typing(t0, t1, n, db=-19, note="a key"):
-    for j in range(n): a(t0 + (t1 - t0) * j / max(1, n - 1), "kenney-select-001", db, (j * 7 % 5) - 2, note)
 
-# A: the old web, the wizard, the build
-a(6.45, "kenney-click-001", -11, 0, "click into Virksomhedsnavn")
-typing(6.6, 7.85, 12, note="typing Holm Fysioterapi")
-a(8.5, "kenney-click-001", -9, -2, "Fortsæt pressed")
-a(9.1, "soundreality-ui-pop-up", -13, 0, "the dot opens into the logo")
-a(11.1, "pop-up-notify-smooth-modern", -16, 0, "the site is complete")
-# B: preview, edit, price, hosting
-a(17.4, "soundreality-ui-pop-up", -15, 3, "Gratis")
-a(19.0, "kenney-click-001", -11, 0, "the headline selected")
-typing(19.4, 20.2, 9, note="typing the change")
-a(20.3, "kenney-click-001", -12, 2, "send")
-a(21.0, "kenney-glass-001", -19, 0, "the headline rewritten")
-for i, t in enumerate([25.15, 25.95, 27.14]): a(t, "kenney-glass-001", -17, 2 * i, "a row ticks on the purchase card")
-a(30.0, "kenney-tick-004", -21, 0, "499 rolls to 0")
-a(33.9, "pop-up-notify-smooth-modern", -15, -2, "the address pill becomes the card")
-for i, t in enumerate([34.48, 34.92, 35.20]): a(t, "kenney-tick-004", -19, 2 * i, "a row arrives")
-a(36.0, "soundreality-ui-pop-up", -15, -2, "the price")
-# C: green rows, pills, support, the logo
-for i, t in enumerate([38.28, 39.00, 39.54]): a(t, "kenney-glass-001", -15, 2 * i, "a row turns green")
-for i, t in enumerate([42.11, 43.69, 45.13]): a(t, "kenney-tick-004", -17, 2 * i, "a pill")
-a(48.0, "kenney-click-001", -11, 0, "the chat button")
-a(52.15, "kenney-click-001", -11, 0, "the send button")
-for i, t in enumerate([39.97, 41.4]): a(t, "kenney-tick-004", -17, 2 * i, "a price row")
-a(48.2, "pop-up-notify-smooth-modern", -15, 0, "the chat opens")
-typing(48.8, 49.7, 9, -21, "her reply types")
-a(53.25, "kenney-drop-003", -10, 0, "the dots land: the C")
-a(53.45, "soundreality-ui-pop-up-clear", -19, 0, "the wordmark")
-a(60.05, "soundreality-ui-pop-up", -14, 0, "Byg din side gratis")
-typing(61.4, 61.95, 6, -21, "creoble.dk types")
+# Willads' list, and nothing else ("less is more"): quiet keyboard ticks (Karl's own soft typing recording), a soft
+# click on each real click, a gentle glass tone on each checkmark, and one soft landing for the logo.
+def typing(t, n, db=-14, note="typing"): a(t, {13: "ui-typing-13", 9: "ui-typing-09", 6: "ui-typing-06"}[n], db, 0, note)
+def click(t, note, db=-13): a(t, "kenney-click-001", db, -3, note)
+def tone(t, i, note, db=-17): a(t, "kenney-glass-001", db, -5 + 2 * i, note)
+# A
+click(6.45, "click into Virksomhedsnavn"); typing(6.62, 13, note="typing Holm Fysioterapi"); click(8.5, "Fortsæt pressed")
+# B
+click(19.0, "the headline selected"); typing(19.4, 9, note="typing the change"); click(20.3, "send")
+for i, t in enumerate([25.15, 25.95, 27.14]): tone(t, i, "a check on the purchase card")
+# C
+for i, t in enumerate([38.28, 39.00, 39.54]): tone(t, i, "a row turns green")
+click(48.0, "the chat button"); typing(48.8, 9, -17, "her reply types"); click(52.15, "the send button")
+a(53.25, "kenney-drop-003", -12, 0, "the dots land: the C")
+typing(61.4, 6, -17, "creoble.dk types")
 json.dump({"fps": 60, "frames": 3911, "library": "lib",
            "vo": {"file": "../vo/vo_paced.mp3", "at": 0, "compress": True},
            "music": {"file": "bed.wav", "at": 0, "lufs": -31, "duck_db": 5, "fade_in": 0.05, "fade_out": 1.5},

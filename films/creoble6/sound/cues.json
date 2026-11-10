@@ -19,470 +19,120 @@
   {
    "frame": 387,
    "id": "kenney-click-001",
-   "db": -3,
-   "pitch": 0,
+   "db": -5,
+   "pitch": -3,
    "note": "click into Virksomhedsnavn"
   },
   {
-   "frame": 396,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": -2,
-   "note": "typing Holm Fysioterapi"
-  },
-  {
-   "frame": 403,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": 0,
-   "note": "typing Holm Fysioterapi"
-  },
-  {
-   "frame": 410,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": 2,
-   "note": "typing Holm Fysioterapi"
-  },
-  {
-   "frame": 416,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": -1,
-   "note": "typing Holm Fysioterapi"
-  },
-  {
-   "frame": 423,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": 1,
-   "note": "typing Holm Fysioterapi"
-  },
-  {
-   "frame": 430,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": -2,
-   "note": "typing Holm Fysioterapi"
-  },
-  {
-   "frame": 437,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": 0,
-   "note": "typing Holm Fysioterapi"
-  },
-  {
-   "frame": 444,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": 2,
-   "note": "typing Holm Fysioterapi"
-  },
-  {
-   "frame": 451,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": -1,
-   "note": "typing Holm Fysioterapi"
-  },
-  {
-   "frame": 457,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": 1,
-   "note": "typing Holm Fysioterapi"
-  },
-  {
-   "frame": 464,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": -2,
-   "note": "typing Holm Fysioterapi"
-  },
-  {
-   "frame": 471,
-   "id": "kenney-select-001",
-   "db": -11,
+   "frame": 397,
+   "id": "ui-typing-13",
+   "db": -6,
    "pitch": 0,
    "note": "typing Holm Fysioterapi"
   },
   {
    "frame": 510,
    "id": "kenney-click-001",
-   "db": -1,
-   "pitch": -2,
-   "note": "Forts\u00e6t pressed"
-  },
-  {
-   "frame": 546,
-   "id": "soundreality-ui-pop-up",
    "db": -5,
-   "pitch": 0,
-   "note": "the dot opens into the logo"
-  },
-  {
-   "frame": 666,
-   "id": "pop-up-notify-smooth-modern",
-   "db": -8,
-   "pitch": 0,
-   "note": "the site is complete"
-  },
-  {
-   "frame": 1044,
-   "id": "soundreality-ui-pop-up",
-   "db": -7,
-   "pitch": 3,
-   "note": "Gratis"
+   "pitch": -3,
+   "note": "Forts\u00e6t pressed"
   },
   {
    "frame": 1140,
    "id": "kenney-click-001",
-   "db": -3,
-   "pitch": 0,
+   "db": -5,
+   "pitch": -3,
    "note": "the headline selected"
   },
   {
    "frame": 1164,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": -2,
-   "note": "typing the change"
-  },
-  {
-   "frame": 1170,
-   "id": "kenney-select-001",
-   "db": -11,
+   "id": "ui-typing-09",
+   "db": -6,
    "pitch": 0,
-   "note": "typing the change"
-  },
-  {
-   "frame": 1176,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": 2,
-   "note": "typing the change"
-  },
-  {
-   "frame": 1182,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": -1,
-   "note": "typing the change"
-  },
-  {
-   "frame": 1188,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": 1,
-   "note": "typing the change"
-  },
-  {
-   "frame": 1194,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": -2,
-   "note": "typing the change"
-  },
-  {
-   "frame": 1200,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": 0,
-   "note": "typing the change"
-  },
-  {
-   "frame": 1206,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": 2,
-   "note": "typing the change"
-  },
-  {
-   "frame": 1212,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": -1,
    "note": "typing the change"
   },
   {
    "frame": 1218,
    "id": "kenney-click-001",
-   "db": -4,
-   "pitch": 2,
+   "db": -5,
+   "pitch": -3,
    "note": "send"
-  },
-  {
-   "frame": 1260,
-   "id": "kenney-glass-001",
-   "db": -11,
-   "pitch": 0,
-   "note": "the headline rewritten"
   },
   {
    "frame": 1509,
    "id": "kenney-glass-001",
    "db": -9,
-   "pitch": 0,
-   "note": "a row ticks on the purchase card"
+   "pitch": -5,
+   "note": "a check on the purchase card"
   },
   {
    "frame": 1557,
    "id": "kenney-glass-001",
    "db": -9,
-   "pitch": 2,
-   "note": "a row ticks on the purchase card"
+   "pitch": -3,
+   "note": "a check on the purchase card"
   },
   {
    "frame": 1628,
    "id": "kenney-glass-001",
    "db": -9,
-   "pitch": 4,
-   "note": "a row ticks on the purchase card"
-  },
-  {
-   "frame": 1800,
-   "id": "kenney-tick-004",
-   "db": -13,
-   "pitch": 0,
-   "note": "499 rolls to 0"
-  },
-  {
-   "frame": 2034,
-   "id": "pop-up-notify-smooth-modern",
-   "db": -7,
-   "pitch": -2,
-   "note": "the address pill becomes the card"
-  },
-  {
-   "frame": 2069,
-   "id": "kenney-tick-004",
-   "db": -11,
-   "pitch": 0,
-   "note": "a row arrives"
-  },
-  {
-   "frame": 2095,
-   "id": "kenney-tick-004",
-   "db": -11,
-   "pitch": 2,
-   "note": "a row arrives"
-  },
-  {
-   "frame": 2112,
-   "id": "kenney-tick-004",
-   "db": -11,
-   "pitch": 4,
-   "note": "a row arrives"
-  },
-  {
-   "frame": 2160,
-   "id": "soundreality-ui-pop-up",
-   "db": -7,
-   "pitch": -2,
-   "note": "the price"
+   "pitch": -1,
+   "note": "a check on the purchase card"
   },
   {
    "frame": 2297,
    "id": "kenney-glass-001",
-   "db": -7,
-   "pitch": 0,
+   "db": -9,
+   "pitch": -5,
    "note": "a row turns green"
   },
   {
    "frame": 2340,
    "id": "kenney-glass-001",
-   "db": -7,
-   "pitch": 2,
+   "db": -9,
+   "pitch": -3,
    "note": "a row turns green"
   },
   {
    "frame": 2372,
    "id": "kenney-glass-001",
-   "db": -7,
-   "pitch": 4,
+   "db": -9,
+   "pitch": -1,
    "note": "a row turns green"
-  },
-  {
-   "frame": 2527,
-   "id": "kenney-tick-004",
-   "db": -9,
-   "pitch": 0,
-   "note": "a pill"
-  },
-  {
-   "frame": 2621,
-   "id": "kenney-tick-004",
-   "db": -9,
-   "pitch": 2,
-   "note": "a pill"
-  },
-  {
-   "frame": 2708,
-   "id": "kenney-tick-004",
-   "db": -9,
-   "pitch": 4,
-   "note": "a pill"
   },
   {
    "frame": 2880,
    "id": "kenney-click-001",
-   "db": -3,
-   "pitch": 0,
+   "db": -5,
+   "pitch": -3,
    "note": "the chat button"
+  },
+  {
+   "frame": 2928,
+   "id": "ui-typing-09",
+   "db": -9,
+   "pitch": 0,
+   "note": "her reply types"
   },
   {
    "frame": 3129,
    "id": "kenney-click-001",
-   "db": -3,
-   "pitch": 0,
+   "db": -5,
+   "pitch": -3,
    "note": "the send button"
-  },
-  {
-   "frame": 2398,
-   "id": "kenney-tick-004",
-   "db": -9,
-   "pitch": 0,
-   "note": "a price row"
-  },
-  {
-   "frame": 2484,
-   "id": "kenney-tick-004",
-   "db": -9,
-   "pitch": 2,
-   "note": "a price row"
-  },
-  {
-   "frame": 2892,
-   "id": "pop-up-notify-smooth-modern",
-   "db": -7,
-   "pitch": 0,
-   "note": "the chat opens"
-  },
-  {
-   "frame": 2928,
-   "id": "kenney-select-001",
-   "db": -13,
-   "pitch": -2,
-   "note": "her reply types"
-  },
-  {
-   "frame": 2935,
-   "id": "kenney-select-001",
-   "db": -13,
-   "pitch": 0,
-   "note": "her reply types"
-  },
-  {
-   "frame": 2942,
-   "id": "kenney-select-001",
-   "db": -13,
-   "pitch": 2,
-   "note": "her reply types"
-  },
-  {
-   "frame": 2948,
-   "id": "kenney-select-001",
-   "db": -13,
-   "pitch": -1,
-   "note": "her reply types"
-  },
-  {
-   "frame": 2955,
-   "id": "kenney-select-001",
-   "db": -13,
-   "pitch": 1,
-   "note": "her reply types"
-  },
-  {
-   "frame": 2962,
-   "id": "kenney-select-001",
-   "db": -13,
-   "pitch": -2,
-   "note": "her reply types"
-  },
-  {
-   "frame": 2968,
-   "id": "kenney-select-001",
-   "db": -13,
-   "pitch": 0,
-   "note": "her reply types"
-  },
-  {
-   "frame": 2975,
-   "id": "kenney-select-001",
-   "db": -13,
-   "pitch": 2,
-   "note": "her reply types"
-  },
-  {
-   "frame": 2982,
-   "id": "kenney-select-001",
-   "db": -13,
-   "pitch": -1,
-   "note": "her reply types"
   },
   {
    "frame": 3195,
    "id": "kenney-drop-003",
-   "db": -2,
+   "db": -4,
    "pitch": 0,
    "note": "the dots land: the C"
   },
   {
-   "frame": 3207,
-   "id": "soundreality-ui-pop-up-clear",
-   "db": -11,
-   "pitch": 0,
-   "note": "the wordmark"
-  },
-  {
-   "frame": 3603,
-   "id": "soundreality-ui-pop-up",
-   "db": -6,
-   "pitch": 0,
-   "note": "Byg din side gratis"
-  },
-  {
    "frame": 3684,
-   "id": "kenney-select-001",
-   "db": -13,
-   "pitch": -2,
-   "note": "creoble.dk types"
-  },
-  {
-   "frame": 3691,
-   "id": "kenney-select-001",
-   "db": -13,
+   "id": "ui-typing-06",
+   "db": -9,
    "pitch": 0,
-   "note": "creoble.dk types"
-  },
-  {
-   "frame": 3697,
-   "id": "kenney-select-001",
-   "db": -13,
-   "pitch": 2,
-   "note": "creoble.dk types"
-  },
-  {
-   "frame": 3704,
-   "id": "kenney-select-001",
-   "db": -13,
-   "pitch": -1,
-   "note": "creoble.dk types"
-  },
-  {
-   "frame": 3710,
-   "id": "kenney-select-001",
-   "db": -13,
-   "pitch": 1,
-   "note": "creoble.dk types"
-  },
-  {
-   "frame": 3717,
-   "id": "kenney-select-001",
-   "db": -13,
-   "pitch": -2,
    "note": "creoble.dk types"
   }
  ]
