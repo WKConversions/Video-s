@@ -66,7 +66,7 @@ const MOVES: Move[] = [
   { n: "C4 glide to the support world", s: 45.8, e: 47.7, p: { t: Q, d: 0, ry: -3, ap: 16, fo: Q } },
   { n: "C5 push on the chat", s: 47.3, e: 49.8, p: { t: QY, d: sc(1.28), ry: 3, rx: 1 } },
   { n: "C6 glide to clean cream beside the panel", s: 49.2, e: 51.0, p: { t: Q6, d: sc(0.62), ry: -3, rx: 0 } },
-  { n: "C7 glide in to the send button", s: 51.25, e: 52.65, p: { t: [B[0] - 90, B[1] - 20, B[2]], d: sc(1.65), ry: 5, rx: 2 } },
+  { n: "C7 glide in to the send button", s: 51.25, e: 52.8, p: { t: [B[0] - 90, B[1] - 20, B[2]], d: sc(1.65), ry: 5, rx: 2 } },
   { n: "C7 ease out to the logo", s: 52.0, e: 54.0, p: { t: Q, d: 0, ry: 0, rx: 0, ap: 14 } },
   { n: "C8-C9 slow push", s: 53.7, e: 56.6, p: { d: -45, ry: -3 } },
   { n: "C10 ease back for the line", s: 56.1, e: 57.8, p: { d: 110, ry: 2 } },
@@ -309,7 +309,7 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
   const cardOut = k(g, 45.9, 1.6, S);
 
   // C6–C7: the panel small and faint beside the type; then the send button becomes the dot
-  const back6 = k(g, 49.55, 0.9, S) * (1 - k(g, 51.72, 0.6, S));
+  const back6 = k(g, 49.55, 0.9, S) * (1 - k(g, 51.7, 0.8, S));
   const drift6 = k(g, 51.3, 1.2, S);
   const lifted = t >= T_CLICK7, m7 = k(g, T_CLICK7 + 0.04, 0.34, S), T_FLY = 52.38, T_C = sec("w:creoble3"), D_FLY = T_C - 0.02 - T_FLY, T_SWAP = T_CLICK7 + 0.4;
   const fall = k(g, 52.2, 1.5, S);

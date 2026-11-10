@@ -33,7 +33,6 @@ const cardPt = (u: number, v: number) => onPlane(H2_CARD, CARD.w, CARD.h, u, v);
 const focusOn = (c: Cam, P: V3): Cam => ({ ...c, focus: project(c, P).dist });
 const SITE_C: V3 = { x: H1_SITE.x, y: H1_SITE.y, z: H1_SITE.z };
 const CARD_C: V3 = { x: H2_CARD.x, y: H2_CARD.y, z: H2_CARD.z };
-const sec = (g: number) => g / 30;
 const SIN = (t: number) => 0.5 - 0.5 * Math.cos(Math.PI * clamp01(t));          // the sine in-out: the gentlest start and landing
 const io = (g: number, a: number, b: number) => SIN((g - a * 30) / ((b - a) * 30));
 const lin = (g: number, a: number, b: number) => clamp01((g - a * 30) / ((b - a) * 30));
@@ -59,18 +58,18 @@ const THUMB = { x: 56, y: 132, w: 420, h: 234 };
 const T = {
   click: 18.72, type0: 19.25, send: 20.1, swap: 20.5, swapIn: 20.7,
   cardIn: 22.65, lift0: 27.15, lift1: 28.3, drop0: 28.5, drop1: 29.7, roll0: 29.8, roll1: 30.85,
-  push0: 31.9, morph0: 33.4, morph1: 35.3,
+  push0: 32.1, morph0: 33.5, morph1: 35.3,
 };
 const EDIT_TEXT = "Gør overskriften mere personlig";
 // through the zero: the card's scale grows exponentially (a steady relative growth, so the glide looks even)
-const P0 = 31.0, PD = 1.9, PR = 1.505;
-const zoomS = (g: number) => { const t = sec(g) - P0; return Math.min(60, 2.0 * Math.exp(PR * (t <= 0 ? 0 : t < PD ? (t * t) / (2 * PD) : t - PD / 2))); };
+const P0 = 31.4, P1 = 34.1;
+const zoomS = (g: number) => 2.0 * Math.exp(Math.log(15) * io(g, P0, P1));   // 2 → 30, its rate rising and falling on a sine
 
 /* ---------- the camera: ONE path. Long sine blends, each starting while the previous is still under way ---------- */
 type Move = { name: string; a: number; b: number; p: (g: number) => Cam };
 const pEdit0 = (g: number) => sway(g, focusOn(look(sitePt(395, 320), 1.4, 6, 0), SITE_C));
 const pEdit1 = (g: number) => sway(g, focusOn(look(sitePt(375, 330), 2.0, -5, 0), SITE_C));
-const pBar = (g: number) => sway(g, focusOn(look(sitePt(765, 70), 2.1, 10, -1), SITE_C), 0.5);
+const pBar = (g: number) => sway(g, focusOn(look(sitePt(790, 60), 2.1, 10, -1), SITE_C), 0.5);
 const pCardWhole = (g: number) => sway(g, look(pcPt(500, 320), 0.95, -7, 0, { ap: 16 }));
 const pPrice499 = (g: number) => sway(g, look(pcPt(720, 175), 1.7, -2, 0, { ap: 16 }), 0.6);
 const pRows = (g: number) => sway(g, look(pcPt(742, 330), 1.5, 6, 2, { ap: 16 }), 0.6);
@@ -81,9 +80,9 @@ const pZoom = (g: number) => focusOn(look(ZERO_W, zoomS(g), 0, 0, { ap: 0 }), SI
 const pCard = (g: number) => sway(g, focusOn(look(cardPt(500, 205), 1.52, -6, 0, { ap: 0 }), CARD_C), 0.6);
 const pFra = (g: number) => sway(g, focusOn(look(cardPt(500, 445), 1.5, 4, 0, { ap: 0 }), CARD_C), 0.4);
 export const MOVES: Move[] = [
-  { name: "site aside for the line", a: 13.9, b: 15.1, p: (g) => sway(g, cam({ ...look(SITE_C, 0.45, -3, 0, { sx: 1580, sy: 620 }), focus: PERSP, ap: 20 })) },
-  { name: "glide to the address bar", a: 14.7, b: 17.1, p: pBar },
-  { name: "down to the headline", a: 16.15, b: 19.1, p: pEdit0 },
+  { name: "site aside for the line", a: 13.9, b: 15.1, p: (g) => sway(g, cam({ ...look(SITE_C, 0.4, 3, 0, { sx: 350, sy: 745 }), focus: PERSP, ap: 20 })) },
+  { name: "glide to the address bar", a: 14.7, b: 17.3, p: pBar },
+  { name: "down to the headline", a: 15.9, b: 19.1, p: pEdit0 },
   { name: "slow push on the edit", a: 18.2, b: 21.8, p: pEdit1 },
   { name: "back to the purchase card", a: 21.1, b: 23.5, p: pCardWhole },
   { name: "push in on 499 kr.", a: 22.8, b: 25.0, p: pPrice499 },
@@ -239,17 +238,17 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
   /* the site */
   const pre = g > T.morph0 * 30 ? makeCam(g, MORPH_I) : c;      // the camera without the pill-to-card move
   const zp = project(c, ZERO_W), zs = project(pre, ZERO_W).s;
-  const gone = SIN(lin(Math.log(Math.max(1, zs)) * 30, Math.log(8), Math.log(30)));       // the card dissolves as the camera glides through its 0
+  const gone = SIN(lin(Math.log(Math.max(1, zs)) * 30, Math.log(9), Math.log(29.5)));       // the card dissolves as the camera glides through its 0
   const pushing = g > T.push0 * 30 && gone < 1;
   const phase1 = g < 22.8 * 30;
   const siteO = phase1 ? mix(1, 0.12, io(g, 13.9, 14.55) * (1 - io(g, 14.9, 16.0))) * (1 - io(g, 21.6, 22.7))
-    : (g > T.push0 * 30 && (zs >= 5.5 || gone >= 1) ? 1 - io(g, 33.55, 34.5) : 0);
+    : (g > T.push0 * 30 && gone > 0 ? 1 - io(g, 33.7, 34.6) : 0);
   const clip = `ellipse(${(ZERO_A * zp.s).toFixed(1)}px ${(ZERO_B * zp.s).toFixed(1)}px at ${zp.x.toFixed(1)}px ${zp.y.toFixed(1)}px)`;
 
   /* the purchase card */
   const showPC = g > T.cardIn * 30 && gone < 1;
   const pcIn = io(g, T.cardIn, T.cardIn + 1.35);
-  const dim = Math.max(io(g, 28.1, 28.8) * (1 - io(g, 29.7, 30.3)), io(g, 30.9, 31.5) * (1 - io(g, 31.95, 32.9)));
+  const dim = Math.max(io(g, 28.1, 28.8) * (1 - io(g, 29.7, 30.3)), io(g, 30.9, 31.5) * (1 - io(g, 32.1, 32.85)));
   const pcO = clamp01(pcIn * 2) * (1 - 0.8 * dim) * (1 - gone), pcY = PCC.y + (1 - pcIn) * 560;
   const pcBlur = 6 * dim;   // soft only behind the type beats; otherwise the card is the subject
   const lift = io(g, T.lift0, T.lift1) * (1 - io(g, T.drop0, T.drop1));
@@ -315,7 +314,7 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
       <TypeBeat g={g} a={13.9} out={14.75} items={[{ t: "Det", at: "w:det", dur: 0.7 }, { t: "bedste?", at: "w:bedste", accent: true, dur: 0.7 }]} />
       <TypeBeat g={g} a={22.3} out={22.85} items={[{ t: "Tilfreds?", at: "w:tilfreds", accent: true, dur: 0.6 }]} />
       <TypeBeat g={g} a={28.6} out={29.45} items={[{ t: "Ikke", at: "w:ikke", dur: 0.7 }, { t: "tilfreds?", at: "w:tilfreds2", accent: true, dur: 0.7 }]} />
-      <TypeBeat g={g} a={31.0} out={31.75} items={[{ t: "Nul", at: "w:nul", accent: true, dur: 0.7 }, { t: "risiko.", at: "w:risiko", dur: 0.7 }]} />
+      <TypeBeat g={g} a={31.0} out={31.95} items={[{ t: "Nul", at: "w:nul", accent: true, dur: 0.7 }, { t: "risiko.", at: "w:risiko", dur: 0.7 }]} />
       {showCur && <Cursor x={cur.x} y={cur.y} size={48} press={Math.max(press(g, T.click), press(g, T.send))} />}
     </AbsoluteFill>
   );

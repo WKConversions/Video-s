@@ -61,12 +61,12 @@ const WIZ: Pl = (() => { const o = planePt({ x: 0, y: 0, z: 0, rx: WRX }, BTN.x 
 const WFW = { x: 0, y: Math.sin(rad(WRX)), z: -Math.cos(rad(WRX)) };   // into the wizard page (away from the viewer)
 const wizQ = (px: number, py: number) => planePt(WIZ, px - WIZ_WIN.w / 2, py + 46 - WIZ_WIN.h / 2);   // page px → world
 const lookW = (px: number, py: number, s: number, ap = 10) => look(WIZ, wizQ(px, py), s, ap);
-const WIZ_L = { x: 0, y: 1150, z: -4200 };                        // the wizard's centre in zone H's local space
+const WIZ_L = { x: 0, y: 1150, z: -2200 };                        // the wizard's centre in zone H's local space
 const OH: V = { x: WIZ.x - WIZ_L.x, y: WIZ.y - WIZ_L.y, z: WIZ.z - WIZ_L.z };
 const H = (x: number, y: number, z: number): V => ({ x: x + OH.x, y: y + OH.y, z: z + OH.z });
 
 // the tunnel (local), short (revision 2): the 404 page at its end; old sites on the walls, the floor, the ceiling
-const Z_ERR = -1900, Z_LINE2 = -4600;
+const Z_ERR = -1900, Z_LINE2 = -2600;   // "Bygget af AI." waits just behind the 404 page
 const TUNNEL: { x: number; y: number; z: number; rx: number; ry: number; rz: number; i: number }[] = [
   { x: -720, y: 0, z: -1170, rx: 0, ry: 76, rz: 0, i: 3 }, { x: 720, y: 0, z: -1170, rx: 0, ry: -76, rz: 0, i: 1 },
   { x: 0, y: -440, z: -1380, rx: -75, ry: 0, rz: 0, i: 2 }, { x: 0, y: 440, z: -1380, rx: 75, ry: 0, rz: 0, i: 4 },
@@ -85,7 +85,7 @@ const T_END = (f("h1") - HANDOFF_HALF) / 30;
 const KEYS: Key[] = [
   hk(0, 5200), hk(0.5, 4450), hk(1.0, 3600), hk(1.4, 2750), hk(1.75, 1950, { ap: 4 }),
   hk(2.1, 1300, { ap: 10, rz: 2, focus: 3000 }), hk(2.45, 660, { ap: 12, rz: 3, focus: 2500 }), hk(2.8, 90, { ap: 12, rz: 1, focus: 1990 }),
-  hk(3.15, -280, { ap: 12, focus: 1620 }), hk(3.5, -560, { ap: 12, focus: 1340 }), hk(3.8, -1100, { ap: 10, focus: 1200 }),
+  hk(3.15, -280, { ap: 12, focus: 1620 }), hk(3.5, -480, { ap: 12, focus: 1420 }), hk(3.8, -700, { ap: 10, focus: 1500 }),
   { t: 4.2, c: cam({ ...H(0, 70, Z_LINE2 + 110), rx: 2.5, ap: 10 }) },   // "Bygget af AI."; the crane has already begun
   { t: 5.85, c: lookW(800, 350, 1.72) },                               // the crane down: the form column 900 px wide
   { t: 6.7, c: lookW(806, 284, 2.62) },                                 // extreme close-up: the field 1250 px wide
@@ -201,11 +201,11 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
         })}
         {t > 1.0 && t < 4.0 && (() => {
           const P = H(0, 0, Z_ERR);
-          return <Plane {...P} w={ERR.w} h={ERR.h} opacity={INOUT(clamp01((1900 - dW) / 1100)) * COS(clamp01((dist(P) - 300) / 700)) * (1 - seg(t, 3.25, 3.98, COS))}><ErrorPage p={seg(t, 2.56, 2.8)} /></Plane>;
+          return <Plane {...P} w={ERR.w} h={ERR.h} opacity={INOUT(clamp01((1900 - dW) / 1100)) * (1 - seg(t, 3.25, 3.95, COS))}><ErrorPage p={seg(t, 2.56, 2.8)} /></Plane>;
         })()}
         {/* A4: "Bygget af AI." */}
         {t > 2.9 && t < 5.7 && (
-          <Plane {...H(0, 0, Z_LINE2)} w={2} h={2} dof={false}>
+          <Plane {...H(0, 0, Z_LINE2)} w={2} h={2} dof={false} opacity={seg(t, 3.45, 3.95, COS)}>
             <Kinetic g={g} items={[{ t: "Bygget", at: "w:bygget", dur: 0.8 }, { t: "af", at: "w:af", dur: 0.8 }, { t: "AI.", at: "w:ai", accent: true, dur: 0.8 }]} size={TYPE.hero} style={{ left: 1, top: 1 }} />
           </Plane>
         )}
