@@ -8,8 +8,8 @@ import { Ico } from "../shared";
 
 export type Build = { h1: number; h2: number; para: number; frame: number[]; hero: number; cards: number[]; nav: number[]; btn: number };
 const rise = (p: number, d = 24): React.CSSProperties => ({ opacity: clamp01(p * 1.8), transform: `translateY(${((1 - p) * d).toFixed(2)}px)` });
-const land = (p: number): React.CSSProperties => ({ opacity: Math.sin(clamp01(p * 1.5) * Math.PI / 2), transform: `translateY(${((1 - p) * 70).toFixed(2)}px) scale(${mix(0.88, 1, p).toFixed(4)})` });
-const frame = (p: number, gone: number, r: number): React.CSSProperties => ({ position: "absolute", inset: 0, borderRadius: r, background: "linear-gradient(90deg,#E6E1D9,#EFEBE4,#E6E1D9)", opacity: Math.sin(clamp01(p * 1.5) * Math.PI / 2) * (1 - clamp01(gone * 1.5)), transform: `translateY(${((1 - p) * 60).toFixed(2)}px)` });
+const land = (p: number): React.CSSProperties => ({ opacity: Math.sin(clamp01(p * 2.5) * Math.PI / 2), transform: `translateY(${((1 - p) * 180).toFixed(2)}px) scale(${mix(0.88, 1, p).toFixed(4)})` });
+const frame = (p: number, gone: number, r: number): React.CSSProperties => ({ position: "absolute", inset: 0, borderRadius: r, background: "linear-gradient(90deg,#E6E1D9,#EFEBE4,#E6E1D9)", opacity: Math.sin(clamp01(p * 1.5) * Math.PI / 2) * (1 - clamp01(gone * 1.5)), transform: `translateY(${((1 - p) * 160).toFixed(2)}px)` });
 const photo = (src: string, st: React.CSSProperties = {}) => <Img src={staticFile(`img/${src}`)} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", ...st }} />;
 
 export const SiteBuild: React.FC<{ b: Build }> = ({ b }) => (
@@ -33,7 +33,8 @@ export const SiteBuild: React.FC<{ b: Build }> = ({ b }) => (
       {/* hero photo: its frame first, then the photo lands in it */}
       <div style={{ position: "absolute", left: 760, top: 120, width: 630, height: 560 }}>
         <div style={frame(b.frame[0], b.hero, 24)} />
-        <div style={{ width: 630, height: 560, borderRadius: 24, overflow: "hidden", ...land(b.hero) }}>{photo("holm-shoulder.jpg")}</div>
+        {/* the photo slides up into its frame */}
+        <div style={{ width: 630, height: 560, borderRadius: 24, overflow: "hidden" }}>{b.hero > 0 && photo("holm-shoulder.jpg", { transform: `translateY(${((1 - b.hero) * 560).toFixed(2)}px)` })}</div>
       </div>
       {/* button */}
       <div style={{ position: "absolute", left: 70, top: 556, width: 560, height: 64 }}>

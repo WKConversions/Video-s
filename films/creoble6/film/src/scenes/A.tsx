@@ -73,9 +73,9 @@ const fanDots = (size: number, cx: number, cy: number, spin: number, ro: number,
 };
 
 /* ================= Hook: 0 – 6.95 ================= */
-const SIZE = 82, SLOT0 = 300, SLOT1 = 1100, PUSH0 = 4.5, PUSH1 = 6.0, M0 = 6.75, M1 = 7.8;
-const LOGO_S = 180;                                   // the lockup's C
-const LOCK = { cx: 796.2, cy: 543.9, wmX: 875, wmH: 66 };
+const SIZE = 76, SLOT0 = 380, SLOT1 = 1100, PUSH0 = 4.5, PUSH1 = 6.1, M0 = 6.75, M1 = 7.8;
+const LOGO_S = 260;                                   // the lockup's C
+const LOCK = { cx: 723.5, cy: 545.7, wmX: 834, wmH: 96 };
 const lockSpin = (t: number) => { const u = 1 - seg(t, 7.55, 8.95); return -150 * u * u; };   // the dots turn slowly into the C's rest pose
 const dot0At = (t: number) => {                       // where the first dot is while the lockup opens (screen px)
   const q = sp(t, 7.6, 0.55), ro = sp(t, 7.55, 0.55), a = ANG[0] + (lockSpin(t) * Math.PI) / 180;
@@ -105,6 +105,7 @@ const slotCentre = (g: number, items: KItem[], size: number, ready: boolean) => 
 const TIMES = "'Times New Roman', 'Liberation Serif', Times, serif", ARIAL = "Arial, 'Liberation Sans', Helvetica, sans-serif";
 const BANDS: [number, number][] = [[80, 256], [256, 333], [333, 404], [404, 497], [497, 690], [690, 760]];
 
+const FRONT = 2;                                       // the site in front after the stack has turned twice (same layout as site 0)
 const Hook: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30, ready = useFonts();
   const E = sine(seg(t, PUSH0, PUSH1));
@@ -116,20 +117,29 @@ const Hook: React.FC<{ g: number }> = ({ g }) => {
   const d0 = dot0At(t);
   const rel = slotCentre(g, items, SIZE, ready) - extra / 2;            // the window's centre, relative to the line's centre
   const cx = 960 + rel * (1 - E) + (d0.x - 960) / zs, cy = 540 + (d0.y - 540) / zs;
-  const ls0 = slotW / OLD.w, lsDot = 40 / zs / OLD.h, ls = mix(ls0, lsDot, m);
-  const back = (j: number) => { const a = soft(t, 0.1 + 0.3 * (j - 1), 1.0), r = sine(seg(t, PUSH0, PUSH0 + 1.0)); return a * (1 - r); };
+  const ls0 = slotW / OLD.w, lsDot = (2 * LOGO[0].r * LOGO_S) / 100 / zs / OLD.h, ls = mix(ls0, lsDot, m);
+  // the stack ("de fleste"): three more old sites fly up from below and tuck in behind the first; while the line is
+  // read the stack turns twice (the front site drops away and returns at the back); it folds away as the window grows
+  const rot = soft(t, 3.5, 0.85) + soft(t, 4.0, 0.85), ret = sine(seg(t, PUSH0 + 0.1, PUSH0 + 1.0));
+  const deck = [0, 1, 2, 3].map((k) => {
+    const arrive = k === 0 ? 1 : soft(t, 0.05 + 0.3 * (k - 1), 1.25);
+    const dm = ((((k - rot) % 4) + 4) % 4);
+    let d = dm, y = 0, o = 1, z = 10 - dm;
+    if (dm > 3) { const L = 4 - dm; if (L < 0.5) { d = 0; y = L * 2 * 300; o = 1 - sine(L * 2); z = 20; } else { d = 3; y = (1 - L) * 2 * 140; o = sine((L - 0.5) * 2); z = 0; } }
+    const fold = d > 0.5 ? 1 - ret : 1;
+    return { k, z, o: o * (d > 0.02 ? fold : 1) * (k === 0 ? 1 : sine(arrive * 2.5)), tf: `translateY(${(-(23 + 62) * d * fold + y + (1 - arrive) * 2000).toFixed(2)}px) scale(${(1 - 0.06 * d * fold).toFixed(4)})`, front: dm < 0.02 || dm > 3.98 };
+  }).sort((a, b) => a.z - b.z);
   const dropping = t >= 5.03;
   const er = (at: number) => { const p = sp(t, at, 0.5); return { opacity: clamp01(p * 1.6), transform: `translateY(${((1 - p) * 30).toFixed(2)}px)` }; };
   const c2 = sine(seg(m, 0.25, 1)), pr = press(g, 6.5, 0.16);            // 'Opdater' is pressed once; nothing happens
+  const eb = er(6.1);
   return (
     <AbsoluteFill style={{ transform: `scale(${zs.toFixed(5)})` }}>
-      {t < 6.1 && <div style={{ position: "absolute", left: 960, top: 540, transform: `translateX(${(-rel * E).toFixed(2)}px)` }}><Kinetic g={g} items={items} size={SIZE} /></div>}
+      {t < 6.2 && <div style={{ position: "absolute", left: 960, top: 540, transform: `translateX(${(-rel * E).toFixed(2)}px)` }}><Kinetic g={g} items={items} size={SIZE} /></div>}
       <div style={{ position: "absolute", left: cx, top: cy, width: 0, height: 0 }}>
         <div style={{ position: "absolute", left: -OLD.w / 2, top: -OLD.h / 2, width: OLD.w, height: OLD.h, transform: `scale(${ls.toFixed(5)})` }}>
-          {/* the soft stack: two more old sites slide up behind the first, and settle back behind it as it grows */}
-          {[3, 2, 1].map((j) => { const b = back(j); return b > 0.002 && (
-            <div key={j} style={{ position: "absolute", inset: 0, transform: `translateY(${(-(23 + 62) * j * b).toFixed(2)}px) scale(${1 - 0.06 * j})`, opacity: sine(b * 3) }}><OldSite i={j} /></div>); })}
-          {!dropping && <div style={{ position: "absolute", inset: 0 }}><OldSite i={0} /></div>}
+          {deck.map((c) => (c.o > 0.002 && !(dropping && c.k === FRONT)) && (
+            <div key={c.k} style={{ position: "absolute", inset: 0, transform: c.tf, opacity: c.o }}><OldSite i={c.k} /></div>))}
           {dropping && (
             <div style={{ position: "absolute", inset: 0, opacity: 1 - sine(seg(m, 0.1, 0.8)) }}>
               <OldWindow w={OLD.w} h={OLD.h} title="Siden kan ikke findes" path="/kontakt.htm">
@@ -138,16 +148,16 @@ const Hook: React.FC<{ g: number }> = ({ g }) => {
                   <div style={{ position: "absolute", left: 84, top: 276, width: 1024, height: 3, background: "#8C8982", ...er(5.6) }} />
                   <div style={{ position: "absolute", left: 84, top: 316, fontFamily: ARIAL, fontSize: 34, whiteSpace: "nowrap", color: "#2A2A2A", ...er(5.85) }}>HTTP 404 – Filen eller mappen blev ikke fundet.</div>
                   <div style={{ position: "absolute", left: 84, top: 424, width: 220, height: 70, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: ARIAL, fontSize: 32, color: "#1E1E1E",
-                    background: "#D6D2CA", border: "3px solid", borderColor: pr > 0.5 ? "#7C7A76 #FFFFFF #FFFFFF #7C7A76" : "#FFFFFF #7C7A76 #7C7A76 #FFFFFF", boxSizing: "border-box", opacity: er(6.1).opacity, transform: `${er(6.1).transform} scale(${1 - 0.05 * pr})` }}>Opdater</div>
+                    background: "#D6D2CA", border: "3px solid", borderColor: pr > 0.5 ? "#7C7A76 #FFFFFF #FFFFFF #7C7A76" : "#FFFFFF #7C7A76 #7C7A76 #FFFFFF", boxSizing: "border-box", opacity: eb.opacity, transform: `${eb.transform} scale(${1 - 0.05 * pr})` }}>Opdater</div>
                 </div>
               </OldWindow>
             </div>)}
-          {/* the old site's title bar fades to the error page's; its rows drop away top to bottom */}
-          {dropping && t < 5.6 && <div style={{ position: "absolute", inset: 0, clipPath: "inset(0px 0px 680px 0px)", opacity: 1 - sine(seg(t, 5.05, 5.55)) }}><OldSite i={0} /></div>}
-          {dropping && t < 6.8 && (
+          {/* the old site's title bar fades to the error page's; its rows drop away top to bottom, the last still falling while the error is read */}
+          {dropping && t < 5.6 && <div style={{ position: "absolute", inset: 0, clipPath: "inset(0px 0px 680px 0px)", opacity: 1 - sine(seg(t, 5.05, 5.55)) }}><OldSite i={FRONT} /></div>}
+          {dropping && t < 7.0 && (
             <div style={{ position: "absolute", left: 4, top: 80, width: OLD.w - 8, height: OLD.h - 84, overflow: "hidden" }}>
-              {BANDS.map(([a, b], i) => { const p = soft(t, 5.05 + 0.14 * i, 0.75), o = 1 - sine(p * 1.3); return o > 0.002 && (
-                <div key={i} style={{ position: "absolute", left: -4, top: -80, width: OLD.w, height: OLD.h, clipPath: `inset(${a}px 0px ${OLD.h - b}px 0px)`, transform: `translateY(${(p * 130).toFixed(2)}px)`, opacity: o }}><OldSite i={0} /></div>); })}
+              {BANDS.map(([a, b], i) => { const p = soft(t, 5.05 + 0.2 * i, 0.85), o = 1 - sine(p * 1.15); return o > 0.002 && (
+                <div key={i} style={{ position: "absolute", left: -4, top: -80, width: OLD.w, height: OLD.h, clipPath: `inset(${a}px 0px ${OLD.h - b}px 0px)`, transform: `translateY(${(p * 240).toFixed(2)}px)`, opacity: o }}><OldSite i={FRONT} /></div>); })}
             </div>)}
           {/* the morph: a sage shape the window's size, becoming a circle */}
           {m > 0 && <div style={{ position: "absolute", inset: 0, background: C.sage, opacity: sine(seg(m, 0, 0.8)), clipPath: `inset(0px ${(220 * c2).toFixed(2)}px round ${(380 * c2).toFixed(2)}px)` }} />}
@@ -162,12 +172,12 @@ const Lockup: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30, d0 = dot0At(t);
   const fan = LOGO.map((_, i) => sp(t, 7.55 + 0.04 * i, 0.6, 0.9));
   const dots = fanDots(LOGO_S, d0.cx, d0.cy, lockSpin(t), d0.ro, fan).map((d, i) => (i === 0 && t < M1 ? { ...d, r: 0 } : d));
-  const wp = seg(t, 7.65, 8.15), wq = soft(t, 7.65, 0.9);
-  const lift = soft(t, 8.85, 0.75), zs = 1 + 0.04 * seg(t, 7.6, 9.7);
+  const wp = seg(t, 7.65, 8.2), wq = soft(t, 7.65, 0.9);
+  const lift = soft(t, 8.85, 0.6), zs = 1 + 0.04 * seg(t, 7.6, 9.7);
   return (
-    <AbsoluteFill style={{ transform: `translateY(${(-260 * lift).toFixed(2)}px) scale(${zs.toFixed(5)})`, opacity: 1 - sine(lift * 1.8) }}>
+    <AbsoluteFill style={{ transform: `translateY(${(-300 * lift).toFixed(2)}px) scale(${zs.toFixed(5)})`, opacity: 1 - sine(lift * 1.8) }}>
       <Dots dots={dots} />
-      {wp > 0 && <div style={{ position: "absolute", left: LOCK.wmX, top: 540 - LOCK.wmH / 2, transform: `translateX(${((1 - wq) * -60).toFixed(2)}px)` }}><Wordmark h={LOCK.wmH} p={wp} /></div>}
+      {wp > 0 && <div style={{ position: "absolute", left: LOCK.wmX, top: 540 - LOCK.wmH / 2, transform: `translateX(${((1 - wq) * -90).toFixed(2)}px)` }}><Wordmark h={LOCK.wmH} p={wp} /></div>}
     </AbsoluteFill>
   );
 };
@@ -175,40 +185,40 @@ const Lockup: React.FC<{ g: number }> = ({ g }) => {
 /* ================= Wizard: 8.05 – 14.7 ================= */
 const S0 = 1500 / WIZ_WIN.w, S1 = 2.2, ZR = 2.3, SHIFT = 86, SPLIT = 424, SCROLL = 215;
 const wiz = (t: number) => {
-  const e = sine(seg(t, 9.4, 10.7));                                    // the scene's one push, to the form column
-  const s = S0 * Math.pow(S1 / S0, e) * (1 + 0.04 * seg(t, 10.7, 14.3));
+  const e = sine(seg(t, 9.45, 10.75));                                    // the scene's one push, to the form column
+  const s = S0 * Math.pow(S1 / S0, e) * (1 + 0.04 * seg(t, 10.75, 14.3));
   const fy = mix(WIZ_WIN.h / 2, 476, e);
-  const arr = soft(t, 8.65, 1.5), ex = sine(seg(t, 14.07, 15.05));
+  const arr = soft(t, 8.5, 1.6), ex = sine(seg(t, 14.07, 15.05));
   const sT = s * mix(0.94, 1, arr) * mix(1, 0.96, ex);
-  const y = (1 - arr) * 360 + ex * 300 + (WIZ_WIN.h / 2 - fy) * sT;
-  const scroll = SCROLL * sine(seg(t, 12.5, 13.9)), shift = SHIFT * soft(t, 11.12, 0.8);
+  const y = (1 - arr) * 900 + ex * 300 + (WIZ_WIN.h / 2 - fy) * sT;
+  const scroll = SCROLL * sine(seg(t, 11.7, 13.9)), shift = SHIFT * soft(t, 11.24, 0.9);
   // a page point (final layout coordinates) on screen
   const at = (px: number, py: number) => ({ x: 960 + (px - 800) * sT, y: 540 + y + (46 + py - scroll - WIZ_WIN.h / 2) * sT });
-  return { s, sT, y, scroll, shift, at, opacity: sine(seg(t, 8.85, 9.75)) * (1 - sine(seg(t, 14.07, 14.87))) };
+  return { s, sT, y, scroll, shift, at, opacity: sine(seg(t, 8.5, 8.8)) * (1 - sine(seg(t, 14.07, 14.87))) };
 };
 const CUR: [number, number, number][] = [
-  [9.45, 1010, 640], [9.78, 690, 289], [10.45, 690, 289], [10.7, 800, 375], [10.8, 800, 375], [11.02, 760, 426], [11.6, 760, 426],
-  [12.2, 650, 567], [12.9, 650, 567], [13.1, 890, 567], [13.2, 890, 567], [13.88, 1016, 822],
+  [9.5, 1010, 640], [9.86, 690, 289], [10.5, 690, 289], [10.76, 800, 375], [10.86, 800, 375], [11.08, 760, 426], [11.65, 760, 426],
+  [12.25, 650, 567], [12.95, 650, 567], [13.13, 890, 567], [13.25, 890, 567], [13.88, 1016, 822],
 ];
 const curAt = (t: number) => {
   if (t <= CUR[0][0]) return { x: CUR[0][1], y: CUR[0][2] };
   for (let i = 1; i < CUR.length; i++) if (t <= CUR[i][0]) { const u = sine(seg(t, CUR[i - 1][0], CUR[i][0])); return { x: mix(CUR[i - 1][1], CUR[i][1], u), y: mix(CUR[i - 1][2], CUR[i][2], u) }; }
   return { x: CUR[CUR.length - 1][1], y: CUR[CUR.length - 1][2] };
 };
-const CLICKS = [9.8, 10.72, 11.08, 12.22, 13.12, 13.92];
+const CLICKS = [9.9, 10.78, 11.14, 12.27, 13.15, 13.92];
 const BTN = { x: WIZ_R.button.x + WIZ_R.button.w / 2, y: WIZ_R.button.y + WIZ_R.button.h / 2, w: WIZ_R.button.w, h: WIZ_R.button.h };
 const T_NAME = "Holm Fysioterapi", T_WHAT = "Genoptræning og massage", T_MAIL = "kontakt@holmfysio.dk", T_TEL = "+45 31 42 53 64";
 const OPTIONS = ["Fysioterapi", "Frisør", "Restaurant"];
 
 const WizardScene: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30, v = wiz(t);
-  const name = typed(g, 9.86, T_NAME, 22), what = typed(g, 11.35, T_WHAT, 28), mail = typed(g, 12.28, T_MAIL, 25), tel = typed(g, 13.17, T_TEL, 32);
-  const focus = t < 9.8 ? null : t < 10.72 ? "name" : t < 11.1 ? "branche" : t < 12.22 ? null : t < 13.12 ? "email" : t < 13.92 ? "phone" : null;
-  const whatOn = t >= 11.1 && t < 12.22;
+  const name = typed(g, 9.95, T_NAME, 22), what = typed(g, 11.42, T_WHAT, 28), mail = typed(g, 12.32, T_MAIL, 25), tel = typed(g, 13.2, T_TEL, 32);
+  const focus = t < 9.9 ? null : t < 10.78 ? "name" : t < 11.16 ? "branche" : t < 12.27 ? null : t < 13.15 ? "email" : t < 13.92 ? "phone" : null;
+  const whatOn = t >= 11.16 && t < 12.27;
   const typing = (name.length > 0 && name.length < T_NAME.length) || (mail.length > 0 && mail.length < T_MAIL.length) || (tel.length > 0 && tel.length < T_TEL.length);
-  const props = { g, name, branche: t >= 11.1 ? "Fysioterapi" : "", email: mail, phone: tel, focus, caret: true, caretSolid: typing, hideButton: true } as const;
-  const menu = sp(t, 10.74, 0.45) - sp(t, 11.12, 0.4), room = v.shift / SHIFT;
-  const hover = seg(t, 10.9, 11.02);
+  const props = { g, name, branche: t >= 11.16 ? "Fysioterapi" : "", email: mail, phone: tel, focus, caret: true, caretSolid: typing, hideButton: true } as const;
+  const menu = sp(t, 10.8, 0.45) - sp(t, 11.17, 0.5), room = v.shift / SHIFT;
+  const hover = seg(t, 10.96, 11.08);
   const blink = (what.length > 0 && what.length < T_WHAT.length) || Math.floor(g / 15) % 2 === 0;
   return (
     <AbsoluteFill>
@@ -247,7 +257,7 @@ const WizardScene: React.FC<{ g: number }> = ({ g }) => {
 // the cursor, drawn over everything (it leads every action; it rides the page while the page scrolls)
 const WizCursor: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30, v = wiz(t), cp = curAt(t), c = v.at(cp.x, cp.y), cPress = Math.max(...CLICKS.map((x) => press(g, x)));
-  const cOp = sine(seg(t, 9.45, 9.75)) * (1 - sine(seg(t, 14.1, 14.45)));
+  const cOp = sine(seg(t, 9.5, 9.8)) * (1 - sine(seg(t, 14.1, 14.45)));
   return cOp > 0 ? <Cursor x={c.x} y={c.y} press={cPress} size={28 * v.s} opacity={cOp} /> : null;
 };
 
@@ -294,9 +304,9 @@ const SiteScene: React.FC<{ g: number }> = ({ g }) => {
   const done = t >= 20.18;
   const o = (at: number, r = 0.55) => sp(t, at, r);
   const b = {
-    frame: [soft(t, 15.3, 0.8), soft(t, 15.5, 0.8), soft(t, 15.65, 0.8), soft(t, 15.8, 0.8)],
-    h1: OUT(seg(t, 15.72, 16.37)), h2: OUT(seg(t, 15.88, 16.53)), para: soft(t, 16.02, 0.75),
-    hero: soft(t, 16.38, 0.85), cards: [soft(t, 16.6, 0.8), soft(t, 16.8, 0.8), soft(t, 17.0, 0.8)],
+    frame: [soft(t, 15.2, 0.9), soft(t, 15.4, 0.9), soft(t, 15.55, 0.9), soft(t, 15.7, 0.9)],
+    h1: OUT(seg(t, 15.68, 16.4)), h2: OUT(seg(t, 15.88, 16.6)), para: soft(t, 16.08, 0.8),
+    hero: soft(t, 16.3, 1.0), cards: [soft(t, 16.75, 0.9), soft(t, 16.95, 0.9), soft(t, 17.15, 0.9)],
     nav: [0, 1, 2, 3, 4, 5].map((i) => o(17.4 + 0.09 * i, 0.5)), btn: soft(t, 18.0, 0.7),
   };
   const patch = 1 - seg(t, 19.85, 20.15);
@@ -337,10 +347,10 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
     <AbsoluteFill>
       {t >= 7.5 && t < 9.75 && <Lockup g={g} />}
       {t < M1 && <Hook g={g} />}
-      {t >= 8.6 && t < 15.05 && <WizardScene g={g} />}
+      {t >= 8.45 && t < 15.05 && <WizardScene g={g} />}
       {t >= 14.5 && <SiteScene g={g} />}
-      {t >= 8.6 && t < 20.12 && <Loader g={g} />}
-      {t >= 9.4 && t < 14.5 && <WizCursor g={g} />}
+      {t >= 8.45 && t < 20.12 && <Loader g={g} />}
+      {t >= 9.45 && t < 14.5 && <WizCursor g={g} />}
     </AbsoluteFill>
   );
 };
