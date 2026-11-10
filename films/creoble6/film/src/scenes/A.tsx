@@ -82,10 +82,10 @@ const dot0At = (t: number) => {                       // where the first dot is 
 };
 const hookItems = (slotW: number): KItem[] => [
   { t: "De", at: 0.02, out: 2.0 }, { t: "fleste", at: 0.16, out: 2.0 },
-  { t: "de", at: 2.1, dur: 0.85 }, { t: "ikke", at: 2.3, dur: 0.85 }, { t: "er", at: 2.5, dur: 0.85 },
+  { t: "de", at: 2.1 }, { t: "ikke", at: 2.17 }, { t: "er", at: 2.58, dur: 0.75 },
   { node: <div style={{ width: slotW, height: 1 }} />, w: slotW, at: -1 },
   { t: "har", at: 1.1, out: 3.12, dur: 0.7 }, { t: "en", at: 1.28, out: 3.12, dur: 0.7 }, { t: "hjemmeside,", at: 1.4, out: 3.12, dur: 0.9 },
-  { t: "stolte", at: 3.08, accent: true }, { t: "af.", at: 3.3 },
+  { t: "stolte", at: 3.2, accent: true }, { t: "af.", at: 3.32 },
 ];
 // the same slot maths as Kinetic, to find where the inline window sits (its centre, relative to the line's centre)
 const slotCentre = (g: number, items: KItem[], size: number, ready: boolean) => {
@@ -159,9 +159,9 @@ const Lockup: React.FC<{ g: number }> = ({ g }) => {
   const fan = LOGO.map((_, i) => sp(t, 6.8 + 0.04 * i, 0.6, 0.9));
   const dots = fanDots(LOGO_S, d0.cx, d0.cy, 0, d0.ro, fan).map((d, i) => (i === 0 && t < M1 ? { ...d, r: 0 } : d));
   const wp = seg(t, 6.9, 7.35), wq = sp(t, 6.9, 0.55);
-  const lift = soft(t, 8.05, 0.9), zs = 1 + 0.04 * seg(t, 6.9, 8.9);
+  const lift = soft(t, 7.95, 0.75), zs = 1 + 0.04 * seg(t, 6.9, 8.9);
   return (
-    <AbsoluteFill style={{ transform: `translateY(${(-320 * lift).toFixed(2)}px) scale(${zs.toFixed(5)})`, opacity: 1 - sine(lift * 1.4) }}>
+    <AbsoluteFill style={{ transform: `translateY(${(-260 * lift).toFixed(2)}px) scale(${zs.toFixed(5)})`, opacity: 1 - sine(lift * 1.8) }}>
       <Dots dots={dots} />
       {wp > 0 && <div style={{ position: "absolute", left: LOCK.wmX, top: 540 - LOCK.wmH / 2, transform: `translateX(${((1 - wq) * -36).toFixed(2)}px)` }}><Wordmark h={LOCK.wmH} p={wp} /></div>}
     </AbsoluteFill>
@@ -176,15 +176,15 @@ const wiz = (t: number) => {
   const fy = mix(WIZ_WIN.h / 2, 476, e);
   const arr = soft(t, 7.8, 1.5), ex = sine(seg(t, 14.02, 15.0));
   const sT = s * mix(0.94, 1, arr) * mix(1, 0.96, ex);
-  const y = (1 - arr) * 420 + ex * 300 + (WIZ_WIN.h / 2 - fy) * sT;
+  const y = (1 - arr) * 360 + ex * 300 + (WIZ_WIN.h / 2 - fy) * sT;
   const scroll = SCROLL * sine(seg(t, 12.4, 13.8)), shift = SHIFT * soft(t, 10.7, 0.8);
   // a page point (final layout coordinates) on screen
   const at = (px: number, py: number) => ({ x: 960 + (px - 800) * sT, y: 540 + y + (46 + py - scroll - WIZ_WIN.h / 2) * sT });
-  return { s, sT, y, scroll, shift, at, opacity: sine(arr * 1.6) * (1 - sine(seg(t, 14.02, 14.82))) };
+  return { s, sT, y, scroll, shift, at, opacity: sine(seg(t, 8.0, 8.9)) * (1 - sine(seg(t, 14.02, 14.82))) };
 };
 const CUR: [number, number, number][] = [
   [8.85, 1010, 640], [9.2, 690, 289], [9.95, 690, 289], [10.2, 800, 375], [10.3, 800, 375], [10.55, 760, 426], [11.45, 760, 426],
-  [12.08, 650, 567], [12.8, 650, 567], [13.0, 890, 567], [13.1, 890, 567], [13.8, 1000, 812],
+  [12.08, 650, 567], [12.8, 650, 567], [13.0, 890, 567], [13.1, 890, 567], [13.8, 1016, 822],
 ];
 const curAt = (t: number) => {
   if (t <= CUR[0][0]) return { x: CUR[0][1], y: CUR[0][2] };
@@ -206,8 +206,6 @@ const WizardScene: React.FC<{ g: number }> = ({ g }) => {
   const menu = sp(t, 10.22, 0.45) - sp(t, 10.68, 0.4), room = v.shift / SHIFT;
   const hover = seg(t, 10.4, 10.55);
   const blink = (what.length > 0 && what.length < T_WHAT.length) || Math.floor(g / 15) % 2 === 0;
-  const cp = curAt(t), c = v.at(cp.x, cp.y), cPress = Math.max(...CLICKS.map((x) => press(g, x)));
-  const cOp = seg(t, 8.85, 9.15) * (1 - seg(t, 14.02, 14.3));
   return (
     <AbsoluteFill>
       <Stage3D cam={cam()}>
@@ -239,9 +237,14 @@ const WizardScene: React.FC<{ g: number }> = ({ g }) => {
           </div>
         </Plane>
       </Stage3D>
-      {cOp > 0 && <Cursor x={c.x} y={c.y} press={cPress} size={28 * v.s} opacity={cOp} />}
     </AbsoluteFill>
   );
+};
+// the cursor, drawn over everything (it leads every action; it rides the page while the page scrolls)
+const WizCursor: React.FC<{ g: number }> = ({ g }) => {
+  const t = g / 30, v = wiz(t), cp = curAt(t), c = v.at(cp.x, cp.y), cPress = Math.max(...CLICKS.map((x) => press(g, x)));
+  const cOp = sine(seg(t, 8.85, 9.15)) * (1 - sine(seg(t, 14.02, 14.4)));
+  return cOp > 0 ? <Cursor x={c.x} y={c.y} press={cPress} size={28 * v.s} opacity={cOp} /> : null;
 };
 
 /* ================= the button → the dot → the loader (13.6 – 20.15) ================= */
@@ -328,11 +331,12 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
   if (g >= f("h1") - HANDOFF_HALF) return <Handoff1 g={g} />;
   return (
     <AbsoluteFill>
-      {t >= 6.75 && t < 9.2 && <Lockup g={g} />}
+      {t >= 6.75 && t < 8.9 && <Lockup g={g} />}
       {t < M1 && <Hook g={g} />}
       {t >= 7.8 && t < 15.0 && <WizardScene g={g} />}
       {t >= 14.5 && <SiteScene g={g} />}
       {t >= 7.8 && t < 20.12 && <Loader g={g} />}
+      {t >= 8.8 && t < 14.45 && <WizCursor g={g} />}
     </AbsoluteFill>
   );
 };
