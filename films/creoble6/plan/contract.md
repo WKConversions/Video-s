@@ -156,37 +156,47 @@ Both sides draw exactly the kit's picture inside ±0.3 s (`HANDOFF_HALF` = 9 g) 
 Seconds are paced film seconds. Each beat is a direction, not a cage, but keep the rules and the KEEP moments.
 
 ### Builder A: 0 → h1 (13.6 s), `scenes/A.tsx`
-**A1 · The old web (0 – 1.7), KEEP.** A corridor of old websites, like the reference's tunnel of screens (6–9.5 s),
-but calm.
-- **The planes:** 8–10, about 1200 × 760 each, on the left and right walls (ry ±72–80°), the ceiling and the floor
-  (rx ±75°), at z from −400 to −4000. The camera dollies forward through them, already moving at frame 0 (from
-  z 0 to about −3000 by 1.7 s, decelerating), with a slight roll settling (rz −3 → 0).
-- **The sites:** draw them yourself in HTML/CSS as fictional dated Danish small-business sites from about 2006.
-  - Names: "Jensens Bageri", "Hansen Tømrer & Snedker", "Salon Lone", "Nielsen VVS", "Café Hjørnet" and similar.
-  - Look: Verdana / Times / Comic Sans, bevelled grey buttons, blue underlined links, a tiled or gradient
-    background, "Velkommen til vores hjemmeside!", a hit counter "Besøgende: 004127", "Sidst opdateret: 12.03.2009",
-    an "Under konstruktion" stripe, table layouts.
-  - An old grey window bar whose address shows only a path ("/forside.htm"), never a real-looking domain. No images
-    and no clip art.
-  - Slightly desaturated and dim (filter saturate 0.7).
-- **Depth:** depth of field (ap about 18, focus travelling with the camera), so the walls passing close go soft.
-- **BLUR:** about 0.1–1.5 s.
+**HOOK (A1–A4), Karl (10 Nov): "be very inspired by the reference video's hook".** The reference's opening, beat for
+beat:
+- 0–2.5 s: words appear one by one, centred, and the line re-centres.
+- 3–4.5 s: a small object sits INSIDE the line between words (its folder icon).
+- 4.5–5.5 s: the camera pushes into that object; it opens into a tilted window.
+- 6–9.5 s: the camera flies down a TUNNEL of screens, with a short line of type floating in the middle of the tunnel.
 
-**A2 · "Siden kan ikke findes" (0.6 – 1.9), KEEP.**
-- At the corridor's end (about z −4300), facing the camera: an old browser error page. White; Times or Arial;
-  H1 "Siden kan ikke findes"; small "HTTP 404 – Filen eller mappen blev ikke fundet."; an old grey "Opdater" button.
-- It grows as the camera approaches. By `w:hjemmeside` (1.00) it is about 60% of the frame wide and readable, and the
-  camera eases to a near stop on it (about 1.0–1.6).
+Ours does the same with Willads' KEEP (old websites and "Siden kan ikke findes" in the first 5 s):
 
-**A3 · Through the page (1.7 – 2.2), then K "få minutter væk."**
-- The camera accelerates through the 404 page (it fills the frame and passes the lens; BLUR 1.65–2.2).
-- Behind it is only cream: the old web is gone.
-- The line `Kinetic` TYPE.hero: "få" `w:f`, "minutter" `w:minutter` (accent), "væk." `w:vk`.
-- The line sits on a Plane just behind the 404 plane, so the camera arrives at it and settles with a long OUT ease
-  (0.8 s), then drifts (a slow push plus ry ±3°).
-- Out: at `w:bygget − 0.3`.
+**A1 · The line with an object in it (0 – 1.5).**
+- At frame 0 a small old-website window (about 300 × 190 on screen, dated: a grey title bar, Times text, a blue
+  link, a bevelled button; see A2) is already drifting gently at the centre: never a still frame.
+- From `w:din` the words arrive around it: "Din" `w:din`, "nye" `w:nye`, then the window as an inline `node`, then
+  "hjemmeside" `w:hjemmeside` (accent). The line is `Kinetic` TYPE.big with the window as an inline item of width
+  300, so the words slide apart around it like the reference's "Any language [folder] Instantly".
 
-**A4 · K "Bygget af AI."** `w:bygget`, `w:af`, `w:ai` ("AI." accent). Same place, with the camera's slow push going on.
+**A2 · Into the window, the tunnel of old sites (1.4 – 2.9), KEEP.**
+- From about 1.4 the words leave and the camera pushes into the inline window (it fills the frame, INOUT 0.5 s).
+- That window opens into a corridor of old websites, like the reference's tunnel (6–9.5 s), calm but clearly 3D:
+  - 8–10 planes of about 1200 × 760, on the left and right walls (ry ±72–80°), the ceiling and the floor (rx ±75°),
+    at z from −400 to −4000;
+  - the camera flies forward through them (BLUR across the fast part), decelerating, with a slight roll settling.
+- **The old sites** are drawn by you in HTML/CSS as fictional dated Danish small-business sites from about 2006:
+  - names: "Jensens Bageri", "Hansen Tømrer & Snedker", "Salon Lone", "Nielsen VVS", "Café Hjørnet";
+  - look: Verdana / Times / Comic Sans, bevelled grey buttons, blue underlined links, a tiled background,
+    "Velkommen til vores hjemmeside!", a hit counter "Besøgende: 004127", "Sidst opdateret: 12.03.2009", an "Under
+    konstruktion" stripe;
+  - an old grey window bar with a path only ("/forside.htm"), never a real-looking domain; no images; slightly
+    desaturated.
+- **Inside the tunnel**, floating in its centre like the reference's "Just drop and go": the line "få" `w:f`,
+  "minutter" `w:minutter` (accent), "væk." `w:vk` (TYPE.big). The camera travels with it.
+
+**A3 · "Siden kan ikke findes" (2.6 – 3.1), KEEP.**
+- At the tunnel's end, facing the camera: an old browser error page. White; Times or Arial; H1 "Siden kan ikke
+  findes"; small "HTTP 404 – Filen eller mappen blev ikke fundet."; an old grey "Opdater" button.
+- It is readable and about 60% of the frame wide for a moment (about 2.6–2.95).
+- The "få minutter væk." line leaves just before.
+- At about 2.95 the camera flies through the 404 page (BLUR 2.9–3.2) into calm cream space: the old web is gone.
+
+**A4 · K "Bygget af AI."** On cream, right after the fly-through, settling: `w:bygget`, `w:af`, `w:ai` ("AI." accent),
+TYPE.hero. The camera's slow push goes on.
 
 **A5 · Crane down to the wizard (4.25 – 5.6).**
 - The `WizardWindow` lives in the same world below the line (about y +1150), tilted back (rx 25–35°).
@@ -332,7 +342,8 @@ orbit (ry −5 → +5) and push.
 - The pills rise out, staggered, from about 46.3.
 - The line: "Brug" `w:brug`, "for" `w:for2`, "hjælp?" `w:hjlp` (accent).
 
-**C5 · A person answers (47.8 – 49.9).**
+**C5 · A person answers (47.8 – 49.9).** (The panel's input row has a small black send button at the bottom right: C7
+clicks it.)
 - The line leaves. The wizard's sage chat button (dark sage `C.sageDark`, a white chat icon, drawn about 120 px)
   arrives at the centre (from 0.6 scale, OUT 0.5 s, no bounce).
 - The cursor clicks it at about 48.0, and it opens into the chat panel: one shape morphing from the circle to a white
@@ -349,28 +360,44 @@ orbit (ry −5 → +5) and push.
 - The panel recedes, soft.
 - The line: "Ingen" `w:ingen4`, "kø." `w:k` (accent; out at `w:ingen5`), then "robotsvar." `w:robotsvar` (accent).
 
-**C7 · The dots assemble (51.9 – 53.3), Willads 8 and 6.**
-- The line rises out except the full stop of "robotsvar.". That stop grows into the largest logo dot and turns sage.
-- The other five dots fly in from depth around the frame (`assemble()`, soft arcs, BLUR 52.4–53.3) and land at
+**OUTRO (C7–C11), Karl (10 Nov): "be very inspired by the reference video's outro".** The reference's ending, beat for
+beat:
+- 22.5–24 s: an extreme close-up of a row; the cursor clicks a black button.
+- 24–24.5 s: the button turns to the accent colour and becomes a big four-point star.
+- 25–26 s: the star shrinks and flies off on a soft curved trail.
+- 26–28 s: it lands trailing a line of words ("Translate. Dub. Distribute"), riding after the last word as each
+  arrives.
+- 28.5–29 s: it becomes part of the logo mark.
+- 29–31 s: the wordmark slides out beside the mark; the URL types in small below.
+
+Ours, with the dots as the star:
+
+**C7 · The click → the dot → the C (51.9 – 53.3).**
+- During "Ingen robotsvar." the chat panel stays soft behind. At about 51.9 the line leaves and the camera comes back
+  to the panel's black send button (extreme close-up). The cursor clicks it (about 52.1).
+- The button turns sage and contracts into one big sage dot (INOUT 0.35 s), like the reference's button → star.
+- The dot shrinks and flies to the centre on a soft curved trail (a short fading trail of 4–6 ghost dots), where it
+  becomes the largest logo dot.
+- The five other dots fly in from depth around the frame (`assemble()`, soft arcs, BLUR 52.4–53.3) and land at
   `w:creoble3` (53.25) exactly: the C, about 240 px, centred on `BOX_C`. No overshoot.
 
-**C8 · The wordmark (53.4 – 54.1).** The C slides left (INOUT 0.7 s) and `Wordmark` (h about 96) reveals to its right;
-its stop lands last. The lockup is centred.
+**C8 · The wordmark slides out (53.4 – 54.1).** As in the reference, the C moves left (INOUT 0.7 s) while `Wordmark`
+(h about 96) reveals to its right from behind it; its stop lands last. The lockup is centred.
 
 **C9 · "Hjemmeside og hosting, samlet ét sted."** The lockup rises (y −150). The line appears below it (TYPE.line 88;
 accent "samlet"), one word per label. A slow dolly in.
 
-**C10 · "Byg den. Se den. Så køber du." (57.11 – 59.5).**
-- The lockup and the previous line leave.
-- One line accumulates word by word (TYPE.big; accent "køber"), with a sage dot (24 px) as the last inline item. It
-  travels right as the words arrive: the reference's trailing star (25.5–28 s).
+**C10 · "Byg den. Se den. Så køber du." (57.11 – 59.5), the reference's "Translate. Dub. Distribute".**
+- The lockup and the previous line leave. The smallest dot of the C detaches and flies down on a soft trail.
+- One line accumulates word by word (TYPE.big; accent "køber"), with that sage dot (24 px) as the last inline item,
+  riding after the last word as each one arrives.
 
-**C11 · The end (60.01 – 65.18).**
-- The line rises out. The trailing dot travels to the centre and becomes the largest dot of the C. The other five
-  appear around the ring in turn (0.07 s apart, OUT), and the wordmark reveals: the final lockup, centred, upper
-  middle.
-- At `w:byg2`: a black button (radius 12, not a pill; DM Sans 500, 30 px) "Byg din side gratis" rises in below.
-- From `w:creoble4` to `w:dk`: "creoble.dk" types in under it (DM Sans 28, muted; reference 29–31 s).
+**C11 · The end (60.01 – 65.18), the reference's final lockup.**
+- The line rises out. The trailing dot flies back up on a soft trail and becomes the largest dot of the C. The other
+  five appear around the ring in turn (0.07 s apart, OUT). Then the wordmark slides out beside it: the final lockup,
+  centred, slightly above the middle.
+- From `w:byg2`, "Byg din side gratis på" types in small under the lockup (DM Sans 30, muted). From `w:creoble4` to
+  `w:dk`, "creoble.dk" types after it in ink. This is the reference's "langease.ai" typing under the logo.
 - The hold to the end: a slow camera dolly keeps it alive; nothing else moves.
 
 ## Each builder's QC (on your own span only; the machine has 4 CPUs shared by 3 builders)
