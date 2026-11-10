@@ -16,14 +16,14 @@ export const BLUR: [number, number][] = [];
 export const EVENTS: { t: number; kind: "click" | "type" | "check" | "pop" | "open" | "send" | "logo"; len?: number; note: string }[] = [
   { t: 20.85, kind: "open", len: 1.85, note: "B1 the window grows to the whole page (soft, long)" },
   { t: 22.2, kind: "pop", note: "B1 chip 'Gratis forhåndsvisning' lands on the window's top edge" },
-  { t: 23.0, kind: "open", len: 1.6, note: "B2 the window comes back and close on the hero (soft, long)" },
+  { t: 22.9, kind: "open", len: 1.85, note: "B2 the window comes back and close on the hero (soft, long)" },
   { t: 24.2, kind: "click", note: "B2 cursor clicks the headline" },
   { t: 24.35, kind: "pop", note: "B2 the edit field grows out of the headline" },
   { t: 24.55, kind: "type", len: 0.9, note: "B2 typing 'Gør overskriften mere personlig'" },
   { t: 25.55, kind: "click", note: "B2 cursor presses send" },
   { t: 25.6, kind: "send", note: "B2 the edit is sent" },
   { t: 25.9, kind: "pop", note: "B2 the headline swaps to the new one (soft)" },
-  { t: 27.2, kind: "open", len: 1.4, note: "B3 the site shrinks into the thumbnail card (soft, long)" },
+  { t: 27.15, kind: "open", len: 1.55, note: "B3 the site shrinks into the thumbnail card (soft, long)" },
   { t: 28.5, kind: "pop", len: 1.1, note: "B4 the card splits in two (the copy slides right)" },
   { t: 29.15, kind: "click", note: "B4 the download button presses; the thumbnail packs into the file row" },
   { t: 29.85, kind: "logo", len: 0.75, note: "B4 the download bar fills (soft rising tone)" },
@@ -193,28 +193,28 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30, c = cam({ z: cz(t) }), p = pz(ZS, t), pH = pz(ZH, t);
 
   // the site: h1 pose → whole page (B1) → close on the hero, a slow push (B2) → the thumbnail in the card (B3)
-  const m1 = sine(lin(t, 20.84, 1.86)), m2 = sine(lin(t, 23.0, 1.6)), m3 = smoother(lin(t, 27.2, 1.4)), m4 = sine(lin(t, 28.5, 1.15));
+  const m1 = sine(lin(t, 20.84, 1.86)), m2 = smoother(lin(t, 22.85, 1.9)), m3 = smoother(lin(t, 27.1, 1.6)), m4 = sine(lin(t, 28.5, 1.15));
   const S2 = mix(1.3, 1.42, sine((t - 24.4) / 2.85)), P2 = wp(25.5, 575 + (SW / 2 - 358) * S2, 503 + (SH / 2 - 341) * S2, S2);   // the headline + field held at (575, 503)
   const h = SH + (HT - SH) * m1 * (1 - m2);
   const site = lp(lp(lp(lp(P0, P1, m1), P2, m2), P3, m3), P4L, m4);
   const hlOn = t > 25.7, q1 = sine(lin(t, 25.75, 0.26)), a1 = aspring(g, 25.87, 0.5), a2 = aspring(g, 25.97, 0.5);
-  const small = t >= 28.6, sq = t < 23.0 ? 1 : site.s * p > 0.9 ? 1.6 : 0.72;
+  const small = t >= 28.7, sq = t < 22.85 ? 1 : site.s * p > 0.9 ? 1.6 : 0.72;
 
   // the cards: the one stepping back dims, shrinks and sinks a little
   const pc = sine(lin(t, 27.75, 0.75)), grow = mix(0.9, 1, pc);
   const dL = aspring(g, 30.75, 0.9) - aspring(g, 34.3, 0.9), dR = sine(lin(t, 28.5, 1.0)) - aspring(g, 30.75, 0.9);   // 1 = stepped back
   const lv = smoother(lin(t, 36.2, 1.2));                                    // the left card leaves downward
   const cL0 = lp(C3, C4L, m4), cR0 = lp(C3, C4R, m4), pr = press(g, 36.05);
-  const cL: Pose = { x: cL0.x, y: cL0.y + (14 * dL + 420 * lv) * cL0.s, s: cL0.s * grow * (1 - 0.07 * dL) }, oL = pc * (1 - 0.42 * dL) * (1 - clamp01(lv * 1.7));
-  const cR: Pose = { x: cR0.x, y: cR0.y + 14 * dR * cR0.s, s: cR0.s * grow * (1 - 0.07 * dR) * (1 - 0.015 * pr) }, oR = 1 - 0.42 * dR;
+  const cL: Pose = { x: cL0.x, y: cL0.y + (14 * dL + 420 * lv) * cL0.s, s: cL0.s * grow * (1 - 0.1 * dL) }, oL = pc * (1 - 0.42 * dL) * (1 - clamp01(lv * 1.7));
+  const cR: Pose = { x: cR0.x, y: cR0.y + 14 * dR * cR0.s, s: cR0.s * grow * (1 - 0.1 * dR) * (1 - 0.015 * pr) }, oR = 1 - 0.42 * dR;
   const inCard = (cd: Pose, lx: number, ly: number, w: number): Pose => ({ x: cd.x + lx * cd.s, y: cd.y + ly * cd.s, s: (w / SW) * cd.s });
   const pk = sine(lin(t, 29.2, 1.0));                                        // the thumbnail packs down into the file row
   const tL = inCard(cL, mix(0, MINI.x - CW / 2, pk), mix(TY, MINI.y - CH / 2, pk), mix(TW, MINI.w, pk));
-  const scroll = 420 * sine(lin(t, 31.9, 2.4));
+  const scroll = 640 * sine(lin(t, 31.6, 3.8));
 
   // the hosting card: grows out of the right card (one box) to 1.25×, a slow push, then back to the hand-off pose
   const TM = 36.15, m6 = smoother(lin(t, TM, 1.4)), morph = t >= TM;
-  const Sscr = mix(mix(1.22, 1.27, sine((t - 37.5) / 5)), pH, sine(lin(t, 42.5, 1.6))), tgt = Sscr / pH;
+  const Sscr = mix(mix(1.17, 1.27, sine((t - 37.4) / 5.1)), pH, sine(lin(t, 42.5, 1.6))), tgt = Sscr / pH;
   const hx = mix((cR.x * p) / pH, 0, m6), hy = mix((cR.y * p) / pH, 0, m6);
   const hsx = mix((CW * cR.s * p) / (CARD.w * pH), tgt, m6), hsy = mix((CH * cR.s * p) / (CARD.h * pH), tgt, m6);
   const ha = sine(lin(t, 36.55, 0.55));                                      // the hosting content fades in

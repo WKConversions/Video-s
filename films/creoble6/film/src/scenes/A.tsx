@@ -21,35 +21,36 @@ import { SiteBuild } from "./A_site";
 export const BLUR: [number, number][] = [];
 
 export const EVENTS: { t: number; kind: "click" | "type" | "check" | "pop" | "open" | "send" | "logo"; len?: number; note: string }[] = [
-  { t: 0.45, kind: "pop", note: "second old site slides up behind the first (soft)" },
-  { t: 0.75, kind: "pop", note: "third old site slides up (soft)" },
-  { t: 3.5, kind: "open", len: 1.9, note: "the hook's push: the old window grows and pushes the words out (soft swell)" },
-  { t: 4.35, kind: "pop", len: 0.6, note: "the old site's rows drop away, top to bottom (five soft ticks)" },
-  { t: 4.95, kind: "check", note: "'Siden kan ikke findes' lands (dull error tone, not a chime)" },
-  { t: 6.15, kind: "pop", len: 0.9, note: "the window shrinks into the dot" },
-  { t: 6.85, kind: "logo", note: "the dot opens into the six dots, the wordmark slides out" },
-  { t: 8.0, kind: "open", note: "the wizard window rises from below" },
-  { t: 9.22, kind: "click", note: "click into Virksomhedsnavn" },
-  { t: 9.3, kind: "type", len: 0.73, note: "types 'Holm Fysioterapi'" },
-  { t: 10.2, kind: "click", note: "click on Branche, the menu opens" },
-  { t: 10.62, kind: "click", note: "picks 'Fysioterapi', the menu closes" },
-  { t: 10.75, kind: "pop", note: "the field 'Hvad laver du?' eases in, the fields below make room" },
-  { t: 10.98, kind: "type", len: 1.05, note: "types 'Genoptræning og massage'" },
-  { t: 12.1, kind: "click", note: "click into E-mail" },
-  { t: 12.16, kind: "type", len: 0.8, note: "types 'kontakt@holmfysio.dk'" },
-  { t: 13.0, kind: "click", note: "click into Telefon" },
-  { t: 13.05, kind: "type", len: 0.47, note: "types '+45 31 42 53 64'" },
-  { t: 13.85, kind: "send", note: "press on 'Fortsæt'; the button contracts into a dot" },
-  { t: 14.4, kind: "logo", len: 1.5, note: "the dot opens into the turning logo (loader)" },
+  { t: 0.15, kind: "pop", len: 0.9, note: "three more old sites slide up behind the first, one after another (soft)" },
+  { t: 4.5, kind: "open", len: 1.5, note: "the hook's push: the old window grows and pushes the line out to the right (soft swell)" },
+  { t: 5.05, kind: "pop", len: 0.9, note: "the old site's rows drop away, top to bottom (six soft ticks)" },
+  { t: 5.75, kind: "check", note: "'Siden kan ikke findes' lands (dull error tone, not a chime)" },
+  { t: 6.5, kind: "click", note: "'Opdater' is pressed once; nothing happens (dry old click)" },
+  { t: 6.85, kind: "pop", len: 0.9, note: "the window shrinks into the dot" },
+  { t: 7.6, kind: "logo", note: "the dot opens into the six dots, turning; the wordmark slides out" },
+  { t: 8.9, kind: "open", note: "the wizard window rises from below" },
+  { t: 9.8, kind: "click", note: "click into Virksomhedsnavn" },
+  { t: 9.86, kind: "type", len: 0.73, note: "types 'Holm Fysioterapi'" },
+  { t: 10.72, kind: "click", note: "click on Branche, the menu opens" },
+  { t: 11.08, kind: "click", note: "picks 'Fysioterapi', the menu closes" },
+  { t: 11.2, kind: "pop", note: "the field 'Hvad laver du?' eases in, the fields below make room" },
+  { t: 11.35, kind: "type", len: 0.82, note: "types 'Genoptræning og massage'" },
+  { t: 12.22, kind: "click", note: "click into E-mail" },
+  { t: 12.28, kind: "type", len: 0.8, note: "types 'kontakt@holmfysio.dk'" },
+  { t: 13.12, kind: "click", note: "click into Telefon" },
+  { t: 13.17, kind: "type", len: 0.47, note: "types '+45 31 42 53 64'" },
+  { t: 13.92, kind: "send", note: "press on 'Fortsæt'; the button contracts into a dot" },
+  { t: 14.5, kind: "logo", len: 1.4, note: "the dot opens into the turning logo (loader)" },
   { t: 14.6, kind: "open", note: "the empty site window rises under the loader" },
-  { t: 15.8, kind: "pop", note: "headline and text rise in" },
-  { t: 16.45, kind: "pop", note: "the hero photo lands" },
-  { t: 16.62, kind: "pop", len: 0.3, note: "three service photos land, left to right" },
-  { t: 17.12, kind: "pop", len: 0.4, note: "navigation and button slide into the layout" },
-  { t: 17.75, kind: "pop", len: 0.3, note: "three answer chips rise in" },
-  { t: 19.67, kind: "check", note: "chip 'Holm Fysioterapi' lands in the navigation" },
-  { t: 19.77, kind: "check", note: "chip 'Fysioterapi' lands in the text" },
-  { t: 19.87, kind: "check", note: "chip 'Genoptræning og massage' lands in the service cards; the loader finishes" },
+  { t: 15.4, kind: "pop", len: 0.6, note: "the photo frames slide into the empty page (very soft)" },
+  { t: 15.85, kind: "pop", note: "headline and text rise in" },
+  { t: 16.5, kind: "pop", note: "the hero photo lands" },
+  { t: 16.7, kind: "pop", len: 0.5, note: "three service photos slide in, left to right" },
+  { t: 17.1, kind: "pop", len: 0.4, note: "three answer chips rise in" },
+  { t: 17.45, kind: "pop", len: 0.5, note: "navigation slides into the layout, left to right; the button at 18.1" },
+  { t: 19.02, kind: "check", note: "chip 'Holm Fysioterapi' lands in the navigation" },
+  { t: 19.37, kind: "check", note: "chip 'Fysioterapi' lands in the text" },
+  { t: 19.72, kind: "check", note: "chip 'Genoptræning og massage' lands in the service cards; the loader finishes" },
 ];
 
 /* ---------- small helpers ---------- */
@@ -72,20 +73,21 @@ const fanDots = (size: number, cx: number, cy: number, spin: number, ro: number,
 };
 
 /* ================= Hook: 0 – 6.95 ================= */
-const SIZE = 84, SLOT0 = 340, SLOT1 = 1132, PUSH0 = 3.5, PUSH1 = 5.4, M0 = 5.9, M1 = 7.05;
+const SIZE = 76, SLOT0 = 300, SLOT1 = 1100, PUSH0 = 4.5, PUSH1 = 6.0, M0 = 6.75, M1 = 7.8;
 const LOGO_S = 180;                                   // the lockup's C
 const LOCK = { cx: 796.2, cy: 543.9, wmX: 875, wmH: 66 };
+const lockSpin = (t: number) => { const u = 1 - seg(t, 7.55, 8.95); return -150 * u * u; };   // the dots turn slowly into the C's rest pose
 const dot0At = (t: number) => {                       // where the first dot is while the lockup opens (screen px)
-  const q = sp(t, 6.85, 0.55), ro = sp(t, 6.8, 0.55);
+  const q = sp(t, 7.6, 0.55), ro = sp(t, 7.55, 0.55), a = ANG[0] + (lockSpin(t) * Math.PI) / 180;
   const cx = mix(960, LOCK.cx, q), cy = mix(540, LOCK.cy, q), R = RING.r * (LOGO_S / 100) * ro;
-  return { x: cx + Math.cos(ANG[0]) * R, y: cy + Math.sin(ANG[0]) * R, cx, cy, ro };
+  return { x: cx + Math.cos(a) * R, y: cy + Math.sin(a) * R, cx, cy, ro };
 };
+// ONE line that only grows: the old site at the left, the words arriving on their spoken words
 const hookItems = (slotW: number): KItem[] => [
-  { t: "De", at: 0.02, out: 2.0 }, { t: "fleste", at: 0.16, out: 2.0 },
-  { t: "de", at: 2.1 }, { t: "ikke", at: 2.17 }, { t: "er", at: 2.58, dur: 0.75 },
   { node: <div style={{ width: slotW, height: 1 }} />, w: slotW, at: -1 },
-  { t: "har", at: 1.1, out: 3.12, dur: 0.7 }, { t: "en", at: 1.28, out: 3.12, dur: 0.7 }, { t: "hjemmeside,", at: 1.4, out: 3.12, dur: 0.9 },
-  { t: "stolte", at: 3.2, accent: true }, { t: "af.", at: 3.32 },
+  { t: "En", at: 1.38 }, { t: "hjemmeside,", at: 1.5, dur: 0.8 },
+  { t: "de", at: 2.18 }, { t: "ikke", at: 2.3 }, { t: "er", at: 2.68 },
+  { t: "stolte", at: 2.88, accent: true }, { t: "af.", at: 3.2 },
 ];
 // the same slot maths as Kinetic, to find where the inline window sits (its centre, relative to the line's centre)
 const slotCentre = (g: number, items: KItem[], size: number, ready: boolean) => {
@@ -106,44 +108,46 @@ const BANDS: [number, number][] = [[80, 256], [256, 333], [333, 404], [404, 497]
 const Hook: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30, ready = useFonts();
   const E = sine(seg(t, PUSH0, PUSH1));
-  const slotW = SLOT0 * Math.pow(SLOT1 / SLOT0, E);
-  const items = hookItems(slotW + 1000 * sine(seg(t, 4.75, 5.45)));   // the growing window pushes the words apart, then out past the edges
+  const slotW = SLOT0 * mix(0.8, 1, soft(t, 0, 1.6)) * Math.pow(SLOT1 / SLOT0, E);   // the window: visibly growing from frame 0, then the push
+  const extra = 460 * sine(seg(t, PUSH0 + 0.15, PUSH1));               // the growing window pushes the words out to the right
+  const items = hookItems(slotW + extra);
   const zs = 1 + 0.012 * t;                                             // the slow steady push
-  const m = sine(Math.pow(seg(t, M0, M1), 1.6));                                       // window → dot
+  const m = sine(Math.pow(seg(t, M0, M1), 1.6));                        // window → dot
   const d0 = dot0At(t);
-  const cx = 960 + slotCentre(g, items, SIZE, ready) * (1 - E) + (d0.x - 960) / zs, cy = 540 + (d0.y - 540) / zs;
+  const rel = slotCentre(g, items, SIZE, ready) - extra / 2;            // the window's centre, relative to the line's centre
+  const cx = 960 + rel * (1 - E) + (d0.x - 960) / zs, cy = 540 + (d0.y - 540) / zs;
   const ls0 = slotW / OLD.w, lsDot = 40 / zs / OLD.h, ls = mix(ls0, lsDot, m);
-  const back = (j: number) => { const a = soft(t, 0.2 + 0.35 * j, 0.9), r = sine(seg(t, 3.3, 4.3)); return a * (1 - r); };
-  const dropping = t >= 4.28;
+  const back = (j: number) => { const a = soft(t, 0.1 + 0.3 * (j - 1), 1.0), r = sine(seg(t, PUSH0, PUSH0 + 1.0)); return a * (1 - r); };
+  const dropping = t >= 5.03;
   const er = (at: number) => { const p = sp(t, at, 0.5); return { opacity: clamp01(p * 1.6), transform: `translateY(${((1 - p) * 30).toFixed(2)}px)` }; };
-  const c2 = sine(seg(m, 0.25, 1));
+  const c2 = sine(seg(m, 0.25, 1)), pr = press(g, 6.5, 0.16);            // 'Opdater' is pressed once; nothing happens
   return (
     <AbsoluteFill style={{ transform: `scale(${zs.toFixed(5)})` }}>
-      {t < 5.5 && <div style={{ position: "absolute", left: 960, top: 540 }}><Kinetic g={g} items={items} size={SIZE} /></div>}
+      {t < 6.1 && <div style={{ position: "absolute", left: 960, top: 540, transform: `translateX(${(-rel * E).toFixed(2)}px)` }}><Kinetic g={g} items={items} size={SIZE} /></div>}
       <div style={{ position: "absolute", left: cx, top: cy, width: 0, height: 0 }}>
         <div style={{ position: "absolute", left: -OLD.w / 2, top: -OLD.h / 2, width: OLD.w, height: OLD.h, transform: `scale(${ls.toFixed(5)})` }}>
           {/* the soft stack: two more old sites slide up behind the first, and settle back behind it as it grows */}
-          {[2, 1].map((j) => { const b = back(j); return b > 0.002 && (
-            <div key={j} style={{ position: "absolute", inset: 0, transform: `translateY(${(-(23 + 30) * j * b).toFixed(2)}px) scale(${1 - 0.06 * j})`, opacity: clamp01(b * 4) }}><OldSite i={j} /></div>); })}
+          {[3, 2, 1].map((j) => { const b = back(j); return b > 0.002 && (
+            <div key={j} style={{ position: "absolute", inset: 0, transform: `translateY(${(-(23 + 62) * j * b).toFixed(2)}px) scale(${1 - 0.06 * j})`, opacity: sine(b * 3) }}><OldSite i={j} /></div>); })}
           {!dropping && <div style={{ position: "absolute", inset: 0 }}><OldSite i={0} /></div>}
           {dropping && (
             <div style={{ position: "absolute", inset: 0, opacity: 1 - sine(seg(m, 0.1, 0.8)) }}>
               <OldWindow w={OLD.w} h={OLD.h} title="Siden kan ikke findes" path="/kontakt.htm">
                 <div style={{ position: "absolute", inset: 0, background: "#FFFFFF", fontFamily: TIMES, color: "#111111" }}>
-                  <div style={{ position: "absolute", left: 84, top: 132, fontSize: 104, fontWeight: 700, letterSpacing: "-0.01em", whiteSpace: "nowrap", lineHeight: 1, ...er(4.5) }}>Siden kan ikke findes</div>
-                  <div style={{ position: "absolute", left: 84, top: 276, width: 1024, height: 3, background: "#8C8982", ...er(4.6) }} />
-                  <div style={{ position: "absolute", left: 84, top: 316, fontFamily: ARIAL, fontSize: 34, whiteSpace: "nowrap", color: "#2A2A2A", ...er(4.68) }}>HTTP 404 – Filen eller mappen blev ikke fundet.</div>
+                  <div style={{ position: "absolute", left: 84, top: 132, fontSize: 104, fontWeight: 700, letterSpacing: "-0.01em", whiteSpace: "nowrap", lineHeight: 1, ...er(5.3) }}>Siden kan ikke findes</div>
+                  <div style={{ position: "absolute", left: 84, top: 276, width: 1024, height: 3, background: "#8C8982", ...er(5.6) }} />
+                  <div style={{ position: "absolute", left: 84, top: 316, fontFamily: ARIAL, fontSize: 34, whiteSpace: "nowrap", color: "#2A2A2A", ...er(5.85) }}>HTTP 404 – Filen eller mappen blev ikke fundet.</div>
                   <div style={{ position: "absolute", left: 84, top: 424, width: 220, height: 70, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: ARIAL, fontSize: 32, color: "#1E1E1E",
-                    background: "#D6D2CA", border: "3px solid", borderColor: "#FFFFFF #7C7A76 #7C7A76 #FFFFFF", boxSizing: "border-box", ...er(4.78) }}>Opdater</div>
+                    background: "#D6D2CA", border: "3px solid", borderColor: pr > 0.5 ? "#7C7A76 #FFFFFF #FFFFFF #7C7A76" : "#FFFFFF #7C7A76 #7C7A76 #FFFFFF", boxSizing: "border-box", opacity: er(6.1).opacity, transform: `${er(6.1).transform} scale(${1 - 0.05 * pr})` }}>Opdater</div>
                 </div>
               </OldWindow>
             </div>)}
           {/* the old site's title bar fades to the error page's; its rows drop away top to bottom */}
-          {dropping && t < 4.95 && <div style={{ position: "absolute", inset: 0, clipPath: "inset(0px 0px 680px 0px)", opacity: 1 - seg(t, 4.3, 4.75) }}><OldSite i={0} /></div>}
-          {dropping && t < 5.6 && (
+          {dropping && t < 5.6 && <div style={{ position: "absolute", inset: 0, clipPath: "inset(0px 0px 680px 0px)", opacity: 1 - sine(seg(t, 5.05, 5.55)) }}><OldSite i={0} /></div>}
+          {dropping && t < 6.8 && (
             <div style={{ position: "absolute", left: 4, top: 80, width: OLD.w - 8, height: OLD.h - 84, overflow: "hidden" }}>
-              {BANDS.map(([a, b], i) => { const p = sp(t, 4.3 + 0.085 * i, 0.5), o = 1 - clamp01(p * 1.5); return o > 0.002 && (
-                <div key={i} style={{ position: "absolute", left: -4, top: -80, width: OLD.w, height: OLD.h, clipPath: `inset(${a}px 0px ${OLD.h - b}px 0px)`, transform: `translateY(${(p * 110).toFixed(2)}px)`, opacity: o }}><OldSite i={0} /></div>); })}
+              {BANDS.map(([a, b], i) => { const p = soft(t, 5.05 + 0.14 * i, 0.75), o = 1 - sine(p * 1.3); return o > 0.002 && (
+                <div key={i} style={{ position: "absolute", left: -4, top: -80, width: OLD.w, height: OLD.h, clipPath: `inset(${a}px 0px ${OLD.h - b}px 0px)`, transform: `translateY(${(p * 130).toFixed(2)}px)`, opacity: o }}><OldSite i={0} /></div>); })}
             </div>)}
           {/* the morph: a sage shape the window's size, becoming a circle */}
           {m > 0 && <div style={{ position: "absolute", inset: 0, background: C.sage, opacity: sine(seg(m, 0, 0.8)), clipPath: `inset(0px ${(220 * c2).toFixed(2)}px round ${(380 * c2).toFixed(2)}px)` }} />}
@@ -156,14 +160,14 @@ const Hook: React.FC<{ g: number }> = ({ g }) => {
 /* ================= Logo: 6.75 – 8.8 ================= */
 const Lockup: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30, d0 = dot0At(t);
-  const fan = LOGO.map((_, i) => sp(t, 6.8 + 0.04 * i, 0.6, 0.9));
-  const dots = fanDots(LOGO_S, d0.cx, d0.cy, 0, d0.ro, fan).map((d, i) => (i === 0 && t < M1 ? { ...d, r: 0 } : d));
-  const wp = seg(t, 6.9, 7.35), wq = sp(t, 6.9, 0.55);
-  const lift = soft(t, 7.95, 0.75), zs = 1 + 0.04 * seg(t, 6.9, 8.9);
+  const fan = LOGO.map((_, i) => sp(t, 7.55 + 0.04 * i, 0.6, 0.9));
+  const dots = fanDots(LOGO_S, d0.cx, d0.cy, lockSpin(t), d0.ro, fan).map((d, i) => (i === 0 && t < M1 ? { ...d, r: 0 } : d));
+  const wp = seg(t, 7.65, 8.15), wq = soft(t, 7.65, 0.9);
+  const lift = soft(t, 8.85, 0.75), zs = 1 + 0.04 * seg(t, 7.6, 9.7);
   return (
     <AbsoluteFill style={{ transform: `translateY(${(-260 * lift).toFixed(2)}px) scale(${zs.toFixed(5)})`, opacity: 1 - sine(lift * 1.8) }}>
       <Dots dots={dots} />
-      {wp > 0 && <div style={{ position: "absolute", left: LOCK.wmX, top: 540 - LOCK.wmH / 2, transform: `translateX(${((1 - wq) * -36).toFixed(2)}px)` }}><Wordmark h={LOCK.wmH} p={wp} /></div>}
+      {wp > 0 && <div style={{ position: "absolute", left: LOCK.wmX, top: 540 - LOCK.wmH / 2, transform: `translateX(${((1 - wq) * -60).toFixed(2)}px)` }}><Wordmark h={LOCK.wmH} p={wp} /></div>}
     </AbsoluteFill>
   );
 };
@@ -171,40 +175,40 @@ const Lockup: React.FC<{ g: number }> = ({ g }) => {
 /* ================= Wizard: 8.05 – 14.7 ================= */
 const S0 = 1500 / WIZ_WIN.w, S1 = 2.2, ZR = 2.3, SHIFT = 86, SPLIT = 424, SCROLL = 215;
 const wiz = (t: number) => {
-  const e = sine(seg(t, 8.8, 10.3));                                    // the scene's one push, to the form column
-  const s = S0 * Math.pow(S1 / S0, e) * (1 + 0.04 * seg(t, 10.3, 14.2));
+  const e = sine(seg(t, 9.4, 10.7));                                    // the scene's one push, to the form column
+  const s = S0 * Math.pow(S1 / S0, e) * (1 + 0.04 * seg(t, 10.7, 14.3));
   const fy = mix(WIZ_WIN.h / 2, 476, e);
-  const arr = soft(t, 7.8, 1.5), ex = sine(seg(t, 14.02, 15.0));
+  const arr = soft(t, 8.65, 1.5), ex = sine(seg(t, 14.07, 15.05));
   const sT = s * mix(0.94, 1, arr) * mix(1, 0.96, ex);
   const y = (1 - arr) * 360 + ex * 300 + (WIZ_WIN.h / 2 - fy) * sT;
-  const scroll = SCROLL * sine(seg(t, 12.4, 13.8)), shift = SHIFT * soft(t, 10.7, 0.8);
+  const scroll = SCROLL * sine(seg(t, 12.5, 13.9)), shift = SHIFT * soft(t, 11.12, 0.8);
   // a page point (final layout coordinates) on screen
   const at = (px: number, py: number) => ({ x: 960 + (px - 800) * sT, y: 540 + y + (46 + py - scroll - WIZ_WIN.h / 2) * sT });
-  return { s, sT, y, scroll, shift, at, opacity: sine(seg(t, 8.0, 8.9)) * (1 - sine(seg(t, 14.02, 14.82))) };
+  return { s, sT, y, scroll, shift, at, opacity: sine(seg(t, 8.85, 9.75)) * (1 - sine(seg(t, 14.07, 14.87))) };
 };
 const CUR: [number, number, number][] = [
-  [8.85, 1010, 640], [9.2, 690, 289], [9.95, 690, 289], [10.2, 800, 375], [10.3, 800, 375], [10.55, 760, 426], [11.45, 760, 426],
-  [12.08, 650, 567], [12.8, 650, 567], [13.0, 890, 567], [13.1, 890, 567], [13.8, 1016, 822],
+  [9.45, 1010, 640], [9.78, 690, 289], [10.45, 690, 289], [10.7, 800, 375], [10.8, 800, 375], [11.02, 760, 426], [11.6, 760, 426],
+  [12.2, 650, 567], [12.9, 650, 567], [13.1, 890, 567], [13.2, 890, 567], [13.88, 1016, 822],
 ];
 const curAt = (t: number) => {
   if (t <= CUR[0][0]) return { x: CUR[0][1], y: CUR[0][2] };
   for (let i = 1; i < CUR.length; i++) if (t <= CUR[i][0]) { const u = sine(seg(t, CUR[i - 1][0], CUR[i][0])); return { x: mix(CUR[i - 1][1], CUR[i][1], u), y: mix(CUR[i - 1][2], CUR[i][2], u) }; }
   return { x: CUR[CUR.length - 1][1], y: CUR[CUR.length - 1][2] };
 };
-const CLICKS = [9.22, 10.2, 10.62, 12.1, 13.0, 13.85];
+const CLICKS = [9.8, 10.72, 11.08, 12.22, 13.12, 13.92];
 const BTN = { x: WIZ_R.button.x + WIZ_R.button.w / 2, y: WIZ_R.button.y + WIZ_R.button.h / 2, w: WIZ_R.button.w, h: WIZ_R.button.h };
 const T_NAME = "Holm Fysioterapi", T_WHAT = "Genoptræning og massage", T_MAIL = "kontakt@holmfysio.dk", T_TEL = "+45 31 42 53 64";
 const OPTIONS = ["Fysioterapi", "Frisør", "Restaurant"];
 
 const WizardScene: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30, v = wiz(t);
-  const name = typed(g, 9.3, T_NAME, 22), what = typed(g, 10.98, T_WHAT, 22), mail = typed(g, 12.16, T_MAIL, 25), tel = typed(g, 13.05, T_TEL, 32);
-  const focus = t < 9.22 ? null : t < 10.2 ? "name" : t < 10.66 ? "branche" : t < 12.1 ? null : t < 13.0 ? "email" : t < 13.85 ? "phone" : null;
-  const whatOn = t >= 10.66 && t < 12.1;
+  const name = typed(g, 9.86, T_NAME, 22), what = typed(g, 11.35, T_WHAT, 28), mail = typed(g, 12.28, T_MAIL, 25), tel = typed(g, 13.17, T_TEL, 32);
+  const focus = t < 9.8 ? null : t < 10.72 ? "name" : t < 11.1 ? "branche" : t < 12.22 ? null : t < 13.12 ? "email" : t < 13.92 ? "phone" : null;
+  const whatOn = t >= 11.1 && t < 12.22;
   const typing = (name.length > 0 && name.length < T_NAME.length) || (mail.length > 0 && mail.length < T_MAIL.length) || (tel.length > 0 && tel.length < T_TEL.length);
-  const props = { g, name, branche: t >= 10.66 ? "Fysioterapi" : "", email: mail, phone: tel, focus, caret: true, caretSolid: typing, hideButton: true } as const;
-  const menu = sp(t, 10.22, 0.45) - sp(t, 10.68, 0.4), room = v.shift / SHIFT;
-  const hover = seg(t, 10.4, 10.55);
+  const props = { g, name, branche: t >= 11.1 ? "Fysioterapi" : "", email: mail, phone: tel, focus, caret: true, caretSolid: typing, hideButton: true } as const;
+  const menu = sp(t, 10.74, 0.45) - sp(t, 11.12, 0.4), room = v.shift / SHIFT;
+  const hover = seg(t, 10.9, 11.02);
   const blink = (what.length > 0 && what.length < T_WHAT.length) || Math.floor(g / 15) % 2 === 0;
   return (
     <AbsoluteFill>
@@ -243,7 +247,7 @@ const WizardScene: React.FC<{ g: number }> = ({ g }) => {
 // the cursor, drawn over everything (it leads every action; it rides the page while the page scrolls)
 const WizCursor: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30, v = wiz(t), cp = curAt(t), c = v.at(cp.x, cp.y), cPress = Math.max(...CLICKS.map((x) => press(g, x)));
-  const cOp = sine(seg(t, 8.85, 9.15)) * (1 - sine(seg(t, 14.02, 14.4)));
+  const cOp = sine(seg(t, 9.45, 9.75)) * (1 - sine(seg(t, 14.1, 14.45)));
   return cOp > 0 ? <Cursor x={c.x} y={c.y} press={cPress} size={28 * v.s} opacity={cOp} /> : null;
 };
 
@@ -253,18 +257,18 @@ const ramp = (x: number) => (x <= 0 ? 0 : x < 0.6 ? (x * x) / 1.2 : x - 0.3);
 const sitePose = (t: number) => { const q = soft(t, 14.5, 1.0); return { y: H1_SITE.y + (1 - q) * 420, scale: mix(0.95, 1, q), opacity: sine(q * 1.6) }; };
 const Loader: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30;
-  const live = wiz(t), froz = wiz(14.02);
-  const gl = sine(seg(t, 14.07, 14.82)), m = sp(t, 13.97, 0.45), bar = sine(seg(t, 15.25, 15.95));
-  const b = t < 14.02 ? live.at(BTN.x, BTN.y + live.shift) : froz.at(BTN.x, BTN.y + froz.shift), bs = (t < 14.02 ? live.sT : froz.sT) / S1;
+  const live = wiz(t), froz = wiz(14.07);
+  const gl = sine(seg(t, 14.14, 14.89)), m = sp(t, 14.04, 0.45), bar = sine(seg(t, 15.25, 15.95));
+  const b = t < 14.07 ? live.at(BTN.x, BTN.y + live.shift) : froz.at(BTN.x, BTN.y + froz.shift), bs = (t < 14.07 ? live.sT : froz.sT) / S1;
   const pose = sitePose(t), pr = project(camH1(g), { x: H1_SITE.x, y: pose.y + (23 - SITE_WIN.h / 2), z: H1_SITE.z });
   const cx = mix(mix(b.x, 960, gl), pr.x, bar), cy = mix(mix(b.y, 540, gl), pr.y, bar);
   const size = LOADER * Math.pow((30 * pr.s) / LOADER, bar);
-  const fan = LOGO.map((_, i) => sp(t, 14.4 + 0.05 * i, 0.6, 0.9)), ro = sp(t, 14.4, 0.55);
+  const fan = LOGO.map((_, i) => sp(t, 14.5 + 0.05 * i, 0.6, 0.9)), ro = sp(t, 14.5, 0.55);
   const out = sine(seg(t, 19.75, 20.1));
-  const dots = fanDots(size, cx, cy, 240 * ramp(t - 14.45), ro, fan, 1 - out);
-  const k = bs * (1 - 0.045 * press(g, 13.85)) * mix(1, (2 * R0) / (BTN.h * S1) / bs, m);
+  const dots = fanDots(size, cx, cy, 240 * ramp(t - 14.5), ro, fan, 1 - out);
+  const k = bs * (1 - 0.045 * press(g, 13.92)) * mix(1, (2 * R0) / (BTN.h * S1) / bs, m);
   const bw = BTN.w * S1, bh = BTN.h * S1, c2 = clamp01(m);
-  const dotOp = seg(m, 0.7, 0.95), wOp = t < 14.02 ? live.opacity : 1;
+  const dotOp = seg(m, 0.7, 0.95), wOp = t < 14.07 ? live.opacity : 1;
   return (
     <AbsoluteFill>
       {m < 0.985 && (
@@ -284,16 +288,16 @@ const CHIPS = [
   { text: "Fysioterapi", w: 260, x: 665, to: { x: 126, y: 482 }, hi: { x: 62, y: 464, w: 128, h: 36 }, hi2: null },
   { text: T_WHAT, w: 480, x: 1035, to: { x: 955, y: 858 }, hi: { x: 520, y: 806, w: 420, h: 100 }, hi2: { x: 970, y: 806, w: 420, h: 100 } },
 ];
-const FLY = [19.25, 19.35, 19.45], FLY_D = 0.45;
+const FLY = [18.5, 18.85, 19.2], FLY_D = 0.55;
 const SiteScene: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30, pose = sitePose(t);
   const done = t >= 20.18;
   const o = (at: number, r = 0.55) => sp(t, at, r);
   const b = {
-    h1: OUT(seg(t, 15.72, 16.3)), h2: OUT(seg(t, 15.84, 16.42)), para: o(15.96),
-    frame: [seg(t, 15.5, 15.95), seg(t, 15.6, 16.05), seg(t, 15.68, 16.13), seg(t, 15.76, 16.21)],
-    hero: o(16.42), cards: [o(16.58), o(16.68), o(16.78)],
-    nav: [o(17.1, 0.5), o(17.17, 0.5), o(17.24, 0.5), o(17.31, 0.5), o(17.38, 0.5), o(17.45, 0.5)], btn: o(17.5, 0.5),
+    frame: [soft(t, 15.3, 0.8), soft(t, 15.5, 0.8), soft(t, 15.65, 0.8), soft(t, 15.8, 0.8)],
+    h1: OUT(seg(t, 15.72, 16.37)), h2: OUT(seg(t, 15.88, 16.53)), para: soft(t, 16.02, 0.75),
+    hero: soft(t, 16.38, 0.85), cards: [soft(t, 16.6, 0.8), soft(t, 16.8, 0.8), soft(t, 17.0, 0.8)],
+    nav: [0, 1, 2, 3, 4, 5].map((i) => o(17.4 + 0.09 * i, 0.5)), btn: soft(t, 18.0, 0.7),
   };
   const patch = 1 - seg(t, 19.85, 20.15);
   return (
@@ -310,12 +314,12 @@ const SiteScene: React.FC<{ g: number }> = ({ g }) => {
                 <div key={`${i}-${j}`} style={{ position: "absolute", left: h.x, top: h.y, width: h.w, height: h.h, borderRadius: 10, background: "rgba(135,168,158,0.30)", boxShadow: "0 0 0 2px rgba(135,168,158,0.55)", opacity: hv }} />));
             })}
             {CHIPS.map((c, i) => {
-              const a = sp(t, 17.7 + 0.1 * i, 0.5, 0.9), p = sine(seg(t, FLY[i], FLY[i] + FLY_D));
+              const a = sp(t, 17.0 + 0.15 * i, 0.55, 0.9), p = sine(seg(t, FLY[i], FLY[i] + FLY_D));
               if (a <= 0.001 || p >= 1) return null;
-              const x = mix(c.x, c.to.x, p), y = mix(SITE_WIN.h, c.to.y, p) + (1 - a) * 40;
+              const x = mix(c.x, c.to.x, p), y = mix(SITE_WIN.h, c.to.y, p) + (1 - a) * 90;
               return (
                 <div key={c.text} style={{ position: "absolute", left: x - c.w / 2, top: y - 34, width: c.w, height: 68, borderRadius: 34, background: C.white, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW}`, display: "flex", alignItems: "center", justifyContent: "center", gap: 12,
-                  fontFamily: SANS, fontWeight: 500, fontSize: 34, letterSpacing: "-0.01em", color: C.ink, whiteSpace: "nowrap", opacity: clamp01(a * 2.5) * (1 - seg(p, 0.5, 0.95)), transform: `scale(${(mix(0.94, 1, Math.min(1, a)) * mix(1, 0.5, p)).toFixed(4)})` }}>
+                  fontFamily: SANS, fontWeight: 500, fontSize: 34, letterSpacing: "-0.01em", color: C.ink, whiteSpace: "nowrap", opacity: sine(a * 1.6) * (1 - sine(seg(p, 0.55, 1))), transform: `scale(${(mix(0.94, 1, Math.min(1, a)) * mix(1, 0.5, p)).toFixed(4)})` }}>
                   {c.text}
                 </div>);
             })}
@@ -331,12 +335,12 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
   if (g >= f("h1") - HANDOFF_HALF) return <Handoff1 g={g} />;
   return (
     <AbsoluteFill>
-      {t >= 6.75 && t < 8.9 && <Lockup g={g} />}
+      {t >= 7.5 && t < 9.75 && <Lockup g={g} />}
       {t < M1 && <Hook g={g} />}
-      {t >= 7.8 && t < 15.0 && <WizardScene g={g} />}
+      {t >= 8.6 && t < 15.05 && <WizardScene g={g} />}
       {t >= 14.5 && <SiteScene g={g} />}
-      {t >= 7.8 && t < 20.12 && <Loader g={g} />}
-      {t >= 8.8 && t < 14.45 && <WizCursor g={g} />}
+      {t >= 8.6 && t < 20.12 && <Loader g={g} />}
+      {t >= 9.4 && t < 14.5 && <WizCursor g={g} />}
     </AbsoluteFill>
   );
 };

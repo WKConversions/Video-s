@@ -19,10 +19,11 @@ export const EVENTS: { t: number; kind: "click" | "type" | "check" | "pop" | "op
   { t: 46.7, kind: "send", note: "sage dot travels panel to site" },
   { t: 47.15, kind: "pop", note: "site: Massage price swaps to 450 kr." },
   { t: 47.5, kind: "click", note: "photo dropped on the panel" },
-  { t: 47.65, kind: "send", note: "sage dot travels panel to site" },
-  { t: 48.1, kind: "pop", note: "site: hero photo changes" },
-  { t: 48.8, kind: "check", note: "Opdateret chip lands on the site window" },
-  { t: 49.8, kind: "open", note: "panel and site settle small; type line begins" },
+  { t: 47.9, kind: "send", note: "sage dot travels panel to site" },
+  { t: 47.3, kind: "open", len: 1.2, note: "site page scrolls up to the hero" },
+  { t: 48.4, kind: "pop", note: "site: hero photo changes" },
+  { t: 48.9, kind: "check", note: "Opdateret chip lands on the site window" },
+  { t: 49.7, kind: "open", note: "panel and site settle small; type line begins" },
   { t: 52.3, kind: "open", note: "type line glides up; plan card rises" },
   { t: 52.82, kind: "check", note: "row: Stop når som helst" },
   { t: 54.25, kind: "pop", note: "År 1" },
@@ -46,6 +47,8 @@ const GL = Easing.bezier(0.42, 0, 0.22, 1);            // a glide: soft start, l
 const SINE = (x: number) => 0.5 - 0.5 * Math.cos(Math.PI * x);
 const gl = (t: number, at: number, dur: number) => GL(clamp01((t - at) / dur));
 const sn = (t: number, at: number, dur: number) => SINE(clamp01((t - at) / dur));
+const SM = (x: number) => x * x * x * (10 - 15 * x + 6 * x * x);                 // the softest start and stop, for the biggest surfaces
+const sm = (t: number, at: number, dur: number) => SM(clamp01((t - at) / dur));
 const push = (t: number, a: number, b: number, from = 0.95, to = 1) => from + (to - from) * clamp01((t - a) / (b - a));
 const arr = (q: number, rise = 70, from = 0.9): React.CSSProperties => ({ opacity: SINE(clamp01(q * 1.25)), transform: `translateY(${((1 - q) * rise).toFixed(2)}px) scale(${mix(from, 1, q).toFixed(4)})` });
 const Group: React.FC<{ s: number; children?: React.ReactNode }> = ({ s, children }) => (
@@ -62,12 +65,12 @@ const CheckDot: React.FC<{ s: number; q?: number }> = ({ s, q = 1 }) => (
 // Two objects fill SAFE: the panel (600 × 560, left) and the live site (1000 × 740, right). The hosting card of the
 // hand-off becomes the panel (one box: it shrinks left while its content cross-fades). Each change is a chain: the
 // panel takes the input, a sage dot travels to the site, the site's element updates.
-const SITE_S = 1000 / 1460, SITE_H = 740 / SITE_S, SCROLL = 150;
+const SITE_S = 1000 / 1460, SITE_H = 740 / SITE_S, SCR_CARDS = 430, SCR_HERO = 40;   // the page scrolls from the services row up to the hero
 const PANEL = { x: 144, y: 260, w: 600, h: 560 }, SITEP = { x: 776, y: 170, w: 1000, h: 740 };
 const FIELD = { x: 34, y: 146, w: 532, h: 84 }, ZONE = { x: 34, y: 290, w: 532, h: 236 }, THUMB = { w: 250, h: 176 };
-const pagePt = (x: number, y: number) => ({ x: SITEP.x + x * SITE_S, y: SITEP.y + (46 + y - SCROLL) * SITE_S });
-const SRC1 = { x: PANEL.x + FIELD.x + FIELD.w - 44, y: PANEL.y + FIELD.y + FIELD.h / 2 }, DST1 = pagePt(620, 1110);
-const SRC2 = { x: PANEL.x + ZONE.x + ZONE.w / 2, y: PANEL.y + ZONE.y + ZONE.h / 2 }, DST2 = pagePt(1075, 400);
+const pagePt = (x: number, y: number, scroll: number) => ({ x: SITEP.x + x * SITE_S, y: SITEP.y + (46 + y - scroll) * SITE_S });
+const SRC1 = { x: PANEL.x + FIELD.x + FIELD.w - 44, y: PANEL.y + FIELD.y + FIELD.h / 2 }, DST1 = pagePt(620, 1110, SCR_CARDS);
+const SRC2 = { x: PANEL.x + ZONE.x + ZONE.w / 2, y: PANEL.y + ZONE.y + ZONE.h / 2 }, DST2 = pagePt(1075, 400, SCR_HERO);
 const NEWTXT = "Massage: 450 kr.";
 const MINI = 0.32, MINI_Y = 838;
 // a small sage dot carrying the change from a to b (a low arc), 0.5 s
@@ -81,12 +84,12 @@ const Courier: React.FC<{ t: number; at: number; a: { x: number; y: number }; b:
 const C1: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30;
   // afterwards (C2): both settle small under the type line, then sink as the plan card rises
-  const m = gl(t, 49.7, 1.35), sink = sn(t, 52.1, 0.85);
+  const m = sm(t, 49.4, 1.9), sink = sn(t, 52.1, 0.85);
   const mini = (cx: number, tx: number) => `translate(${((tx - cx) * m).toFixed(2)}px, ${((MINI_Y - 540) * m + sink * 170).toFixed(2)}px) scale(${(mix(1, MINI, m) * (1 - 0.1 * sink)).toFixed(4)})`;
   // the hosting card becomes the panel
   const cq = gl(t, 44.95, 1.15), toX = (960 - (PANEL.x + PANEL.w / 2)) * (1 - cq);
   const cardO = 1 - sn(t, 44.95, 0.6), panelO = sn(t, 45.15, 0.65);
-  const sq = gl(t, 45.1, 1.15);
+  const sq = sm(t, 45.05, 1.3), scroll = mix(SCR_CARDS, SCR_HERO, sm(t, 47.2, 1.3));
   // the field
   const focus = aspring(g, 45.5, 0.4), txt = typed(g, 45.75, NEWTXT, 17), typing = t > 45.75 && t < 46.72;
   const done = aspring(g, 46.62, 0.45, 0.88) * (1 - sn(t, 46.68, 0.12)) + aspring(g, 47.25, 0.45, 0.88);
@@ -97,8 +100,8 @@ const C1: React.FC<{ g: number }> = ({ g }) => {
   const th = { x: mix(SRC2.x + 110, SRC2.x, carry), y: mix(1230, SRC2.y, carry) };
   const cur = { x: th.x + 50 + away * 70, y: th.y + 30 + away * 560 };
   const inPanel = t >= 47.95;
-  const hero = sn(t, 48.08, 0.95), hhl = sn(t, 48.05, 0.35) * (1 - sn(t, 48.8, 0.8)), ring2 = aspring(g, 48.05, 0.6);
-  const chip = aspring(g, 48.55, 0.5, 0.88);
+  const hero = gl(t, 48.35, 0.85), hhl = sn(t, 48.35, 0.35) * (1 - sn(t, 49.0, 0.6)), ring2 = aspring(g, 48.35, 0.6);
+  const chip = aspring(g, 48.62, 0.5, 0.88);
   const caretOn = typing || Math.floor(g / 15) % 2 === 0;
   const thumb = (st: React.CSSProperties) => <div style={{ position: "absolute", width: THUMB.w, height: THUMB.h, borderRadius: 14, overflow: "hidden", boxShadow: `0 0 0 1px ${C.line}`, ...st }}>{photo("holm-stretch.jpg")}</div>;
   return (
@@ -108,7 +111,7 @@ const C1: React.FC<{ g: number }> = ({ g }) => {
         <HostingCard g={g} rows={3} active={[1, 1, 1]} price={1} /></div>}
       {/* the panel */}
       <div style={{ position: "absolute", left: PANEL.x, top: PANEL.y, width: PANEL.w, height: PANEL.h, opacity: 1 - sink, transform: mini(PANEL.x + PANEL.w / 2, 960 - 271 + 96) }}>
-        <div style={{ position: "absolute", inset: 0, borderRadius: 28, background: C.white, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW_BIG}`, fontFamily: SANS, color: C.ink, opacity: panelO, transform: `translateX(${toX.toFixed(2)}px) scale(${mix(1.5, 1, cq).toFixed(4)})` }}>
+        <div style={{ position: "absolute", inset: 0, borderRadius: 28, background: C.white, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW_BIG}`, fontFamily: SANS, color: C.ink, opacity: panelO, transform: `translateX(${toX.toFixed(2)}px) scale(${mix(1.35, 1, cq).toFixed(4)})` }}>
           <div style={{ position: "absolute", left: 34, top: 30, fontFamily: SERIF, fontSize: 46, letterSpacing: "-0.025em" }}>Dit panel</div>
           <div style={{ position: "absolute", right: 34, top: 52, display: "flex", alignItems: "center", gap: 9, fontSize: 20, color: C.muted }}><span style={{ width: 9, height: 9, borderRadius: 5, background: C.sage }} />holmfysio.dk</div>
           <div style={{ position: "absolute", left: 34, top: 112, fontSize: 20, color: C.muted }}>Skriv en ændring</div>
@@ -133,10 +136,10 @@ const C1: React.FC<{ g: number }> = ({ g }) => {
         <div style={{ position: "absolute", inset: 0, ...arr(sq, 90, 0.9) }}>
           <div style={{ width: 1460, height: SITE_H, transform: `scale(${SITE_S})`, transformOrigin: "0 0" }}>
             <Browser w={1460} h={SITE_H} url="holmfysio.dk" live={1}>
-              <HolmSite w={1460} h={SITE_H - 46} scroll={SCROLL} headline={NEW_HEADLINE} />
-              <div style={{ position: "absolute", left: 0, top: -SCROLL, width: 1460, height: 1500, fontFamily: SANS, color: HOLM.ink }}>
+              <HolmSite w={1460} h={SITE_H - 46} scroll={scroll} headline={NEW_HEADLINE} />
+              <div style={{ position: "absolute", left: 0, top: 0, width: 1460, height: 1500, transform: `translateY(${(-scroll).toFixed(2)}px)`, fontFamily: SANS, color: HOLM.ink }}>
                 {/* the new hero photo */}
-                <div style={{ position: "absolute", left: 760, top: 120, width: 630, height: 560, borderRadius: 24, overflow: "hidden", opacity: hero }}>{photo("holm-stretch.jpg", { transform: `scale(${(1.1 - 0.1 * hero).toFixed(4)})` })}</div>
+                <div style={{ position: "absolute", left: 760, top: 120, width: 630, height: 560, borderRadius: 24, overflow: "hidden" }}>{hero > 0 && photo("holm-stretch.jpg", { transform: `translateY(${((1 - hero) * 100).toFixed(3)}%) scale(${(1.08 - 0.08 * hero).toFixed(4)})` })}</div>
                 <div style={{ position: "absolute", left: 760, top: 120, width: 630, height: 560, borderRadius: 24, boxSizing: "border-box", border: `9px solid ${C.sage}`, opacity: hhl, transform: `scale(${mix(0.9, 1.035, ring2).toFixed(4)})` }} />
                 {/* the Massage card carries the price */}
                 <div style={{ position: "absolute", left: 520, top: 1030, width: 420, height: 130, background: "#fff", borderRadius: "0 0 22px 22px" }}>
@@ -154,11 +157,11 @@ const C1: React.FC<{ g: number }> = ({ g }) => {
         </div>
         {/* "Opdateret" lands on the window's top edge */}
         <div style={{ position: "absolute", right: 40, top: -32, height: 64, padding: "0 28px 0 16px", borderRadius: 999, background: C.white, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW}`, display: "flex", alignItems: "center", gap: 13,
-          fontFamily: SANS, fontSize: 30, fontWeight: 500, color: C.sageDeep, ...arr(chip, 40, 0.85) }}><CheckDot s={38} q={aspring(g, 48.68, 0.45, 0.88)} />Opdateret</div>
+          fontFamily: SANS, fontSize: 30, fontWeight: 500, color: C.sageDeep, ...arr(chip, 40, 0.85) }}><CheckDot s={38} q={aspring(g, 48.75, 0.45, 0.88)} />Opdateret</div>
       </div>
       {/* the couriers */}
       <Courier t={t} at={46.66} a={SRC1} b={DST1} />
-      <Courier t={t} at={47.6} a={SRC2} b={DST2} />
+      <Courier t={t} at={47.9} a={SRC2} b={DST2} />
       {/* the photo and the cursor that carries it */}
       {t > 46.45 && !inPanel && <div style={{ position: "absolute", left: th.x - THUMB.w / 2, top: th.y - THUMB.h / 2, width: THUMB.w, height: THUMB.h, transform: `scale(${(1.1 - 0.1 * drop).toFixed(4)})` }}>
         <div style={{ position: "absolute", inset: 0, borderRadius: 14, boxShadow: SHADOW_BIG, opacity: 1 - clamp01(drop) }} />
@@ -196,7 +199,7 @@ const Line: React.FC<{ t: number; items: LW[]; size: number }> = ({ t, items, si
 const C2: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30;
   // fully up 51.6 → 52.85: it reads at the centre, then glides up as a heading while the plan card rises, and leaves upward
-  const up = sn(t, 52.3, 0.8), off = sn(t, 52.9, 0.55);
+  const up = sm(t, 52.1, 0.95), off = sn(t, 52.9, 0.55);
   return (
     <Group s={push(t, 50.0, 53.5, 0.94)}>
       <div style={{ position: "absolute", left: 960, top: 450, opacity: 1 - off, transform: `translateY(${(-285 * up - 70 * off).toFixed(2)}px) scale(${mix(1, 0.5, up).toFixed(4)})` }}>
@@ -213,12 +216,12 @@ const C2: React.FC<{ g: number }> = ({ g }) => {
 const PLAN = { x: 510, y: 270, w: 900, h: 540 };
 const C3: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30;
-  const q = gl(t, 52.2, 1.05), out = sn(t, 56.15, 0.95), gone = sn(t, 56.15, 0.62);
-  const title = aspring(g, 52.5, 0.6), row = aspring(g, 52.6, 0.55), tick = aspring(g, 52.74, 0.45, 0.88), price = aspring(g, 53.4, 0.65);
+  const q = gl(t, 52.35, 0.95), out = sn(t, 56.15, 0.95), gone = sn(t, 56.15, 0.62);
+  const title = aspring(g, 52.55, 0.6), row = aspring(g, 52.66, 0.55), tick = aspring(g, 52.8, 0.45, 0.88), price = aspring(g, 53.4, 0.65);
   const yr = [53.92, 54.52, 55.02].map((a) => aspring(g, a, 0.65));
   const line = clamp01((t - 53.85) / 1.9), dot = sn(t, 55.2, 0.9);
   return (
-    <Group s={push(t, 52.2, 57.1) * 1.15}>
+    <Group s={push(t, 52.3, 57.1, 0.93) * 1.15}>
       <div style={{ position: "absolute", left: PLAN.x, top: PLAN.y, width: PLAN.w, height: PLAN.h, opacity: 1 - gone, transform: `translateY(${(-out * 300).toFixed(2)}px) scale(${(1 - 0.05 * out).toFixed(4)})` }}>
         <div style={{ position: "absolute", inset: 0, borderRadius: 28, background: C.white, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW_BIG}`, fontFamily: SANS, color: C.ink, ...arr(q, 120, 0.9) }}>
           <div style={{ position: "absolute", left: 52, top: 44, ...arr(title, 30, 0.96) }}>
@@ -233,12 +236,12 @@ const C3: React.FC<{ g: number }> = ({ g }) => {
           {/* the same price every year: three equal columns under one level line */}
           {[0, 1, 2].map((i) => (
             <div key={i} style={{ position: "absolute", left: 52 + i * 272, top: 290, width: 252, height: 210 }}>
-              <div style={{ position: "absolute", left: 0, top: 0, width: 252, height: 156, borderRadius: 16, background: C.sageTint, transformOrigin: "50% 100%", transform: `scaleY(${yr[i].toFixed(4)})`, opacity: clamp01(yr[i] * 2) }} />
-              <div style={{ position: "absolute", left: 0, top: 0, width: 252, height: 156, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 36, fontWeight: 500, letterSpacing: "-0.015em", color: C.sageDeep, whiteSpace: "nowrap", ...arr(yr[i], 50, 0.9) }}>99 kr. /md.</div>
+              <div style={{ position: "absolute", left: 0, top: 0, width: 252, height: 156, borderRadius: 16, background: C.sage, transformOrigin: "50% 100%", transform: `scaleY(${yr[i].toFixed(4)})`, opacity: clamp01(yr[i] * 2) }} />
+              <div style={{ position: "absolute", left: 0, top: 0, width: 252, height: 156, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 36, fontWeight: 500, letterSpacing: "-0.015em", color: C.white, whiteSpace: "nowrap", ...arr(yr[i], 50, 0.9) }}>99 kr. /md.</div>
               <div style={{ position: "absolute", left: 0, top: 168, width: 252, textAlign: "center", fontSize: 23, color: C.muted, opacity: clamp01(yr[i] * 1.5) }}>År {i + 1}</div>
             </div>
           ))}
-          <div style={{ position: "absolute", left: 52, top: 287, width: 796, height: 4, borderRadius: 2, background: C.sage, transformOrigin: "0 50%", transform: `scaleX(${line.toFixed(4)})` }} />
+          <div style={{ position: "absolute", left: 52, top: 287, width: 796, height: 4, borderRadius: 2, background: C.sageDark, transformOrigin: "0 50%", transform: `scaleX(${line.toFixed(4)})` }} />
           {/* a dot runs the level line once: the same, year after year */}
           <div style={{ position: "absolute", left: 52 - 9, top: 289 - 9, width: 18, height: 18, borderRadius: 9, background: C.sageDark, opacity: Math.min(1, dot * 8, (1 - dot) * 8), transform: `translateX(${(796 * dot).toFixed(2)}px)` }} />
         </div>
@@ -261,7 +264,7 @@ const C4: React.FC<{ g: number }> = ({ g }) => {
   const cur = cursorAt(g, [{ at: 57.45, x: SEND.x + 70, y: 1010 }, { at: 58.2, x: SEND.x + 4, y: SEND.y + 6 }, { at: 58.6, x: SEND.x + 4, y: SEND.y + 6 }, { at: 59.3, x: SEND.x + 40, y: 1010 }]);
   const bubble: React.CSSProperties = { padding: "17px 26px", fontSize: 28, lineHeight: 1.25, letterSpacing: "-0.01em", whiteSpace: "nowrap" };
   return (
-    <Group s={push(t, 56.25, T_SEND) * KC}>
+    <Group s={push(t, 56.25, T_SEND, 0.94) * KC}>
       <div style={{ position: "absolute", left: CHAT.x, top: CHAT.y, width: CHAT.w, height: CHAT.h, opacity: 1 - gone, transform: `translateY(${(sink * 170).toFixed(2)}px) scale(${(1 - 0.08 * sink).toFixed(4)})` }}>
         <div style={{ position: "absolute", inset: 0, borderRadius: 28, background: C.white, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW_BIG}`, fontFamily: SANS, color: C.ink, ...arr(q, 200, 0.9) }}>
           <div style={{ position: "absolute", left: 0, top: 0, width: CHAT.w, height: 92, borderBottom: `1px solid ${C.line}`, boxSizing: "border-box" }}>
@@ -311,7 +314,7 @@ const even = (x: number, r = 0.18) => { const v = 1 / (1 - r); return x <= 0 ? 0
 const C5: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30, s = LOGO_S / 100, R = RING.r * s;
   const P = 1 + 0.06 * clamp01((t - 58.6) / (65.2 - 58.6));
-  const shift = sn(t, 59.38, 0.72), dx = (C_X1 - 960) * shift;
+  const shift = gl(t, 59.3, 0.95), dx = (C_X1 - 960) * shift;
   const spin = 2 * Math.PI * even((t - (T_PRESS + 0.12)) / (65.12 - T_PRESS - 0.12));
   const ring0 = { x: 960 + (RING.x - BOX_C.x) * s, y: LY + (RING.y - BOX_C.y) * s };
   const D0 = { x: ring0.x + Math.cos(ANG[0]) * R, y: ring0.y + Math.sin(ANG[0]) * R };
@@ -327,7 +330,7 @@ const C5: React.FC<{ g: number }> = ({ g }) => {
     const q = aspring(g, 58.96 + (i - 1) * 0.055, 0.45, 0.9), a = mix(ANG[0], UNWRAP[i], q) + spin;
     return { x: ring.x + Math.cos(a) * R, y: ring.y + Math.sin(a) * R, r: LOGO[i].r * s * clamp01(q * 1.4) };
   });
-  const wm = sn(t, 59.42, 0.68), wmask = `linear-gradient(90deg, #000 ${(wm * 116 - 10).toFixed(2)}%, transparent ${(wm * 116).toFixed(2)}%)`, wx = (960 - C_X1) * (1 - shift);
+  const wm = gl(t, 59.34, 0.95), wmask = `linear-gradient(90deg, #000 ${(wm * 116 - 10).toFixed(2)}%, transparent ${(wm * 116).toFixed(2)}%)`, wx = (960 - C_X1) * (1 - shift);
   const btn = aspring(g, 59.84, 0.6), bp = press(g, T_PRESS, 0.16);
   const adr = typed(g, 60.9, ADDR, 12), caret = t > 60.8 && (t < 61.8 || Math.floor((t - 61.8) * 2) % 2 === 0);
   const cur = cursorAt(g, [{ at: 61.55, x: 1100, y: 1150 }, { at: 62.48, x: 1046, y: 622 }]);
@@ -364,7 +367,7 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
     <AbsoluteFill style={{ background: C.bg }}>
       {t < 53.0 && <C1 g={g} />}
       {t > 50.0 && t < 53.5 && <C2 g={g} />}
-      {t > 52.15 && t < 57.15 && <C3 g={g} />}
+      {t > 52.3 && t < 57.15 && <C3 g={g} />}
       {t > 56.2 && t < 59.9 && <C4 g={g} />}
       {t >= T_SEND && <C5 g={g} />}
     </AbsoluteFill>
