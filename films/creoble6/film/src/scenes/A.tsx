@@ -141,7 +141,7 @@ const Hook: React.FC<{ g: number }> = ({ g }) => {
   const c2 = sine(seg(m, 0.25, 1)), pr = press(g, 6.6, 0.16);            // 'Opdater' is pressed once; nothing happens
   const eb = er(6.15);
   // the hand presses 'Opdater' once (it comes up from below, well before, and leaves downward)
-  const ox = cx + (262 - OLD.w / 2) * ls, oy = cy + (80 + 424 + 44 - OLD.h / 2) * ls;
+  const ox = cx + (194 - OLD.w / 2) * ls, oy = cy + (80 + 424 + 25 - OLD.h / 2) * ls;
   const hand = handAt(g, [{ at: 4.6, x: ox + 40, y: 1320 }, { at: 6.6, x: ox, y: oy, click: true, dur: 0.85, early: 0.5 }, { at: 7.6, x: ox + 30, y: 1380, early: 0, dur: 0.8 }], { size: 170 });
   return (
     <AbsoluteFill style={{ transform: `scale(${zs.toFixed(5)})` }}>
@@ -211,7 +211,7 @@ const wiz = (t: number) => {
 const CLK = { name: 9.8, branche: 10.95, option: 11.45, mail: 12.6, tel: 13.45, go: 14.2 };
 const handKeys = (t: number): HandKey[] => {
   const v = wiz(t), P = (x: number, y: number) => v.at(x, y);
-  const n = P(960, 292), br = P(985, 376), op = P(900, 427), ma = P(770, 571), te = P(1005, 571), go = P(1010, 804);
+  const n = P(920, 282), br = P(920, 368), op = P(760, 419), ma = P(730, 560), te = P(974, 560), go = P(993, 805);   // 5 px above each mark: the hand dips that much as it presses
   return [
     { at: 8.2, x: n.x + 60, y: 1340 },
     { at: CLK.name, ...n, click: true },

@@ -209,7 +209,7 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
   // the cards: the one stepping back dims, shrinks and sinks a little
   const pc = sine(lin(t, 27.75, 0.75)), grow = mix(0.9, 1, pc);
   const dL = aspring(g, 30.75, 0.9) - aspring(g, 34.3, 0.9), dR = sine(lin(t, 28.5, 1.0)) - aspring(g, 30.75, 0.9);   // 1 = stepped back
-  const lv = smoother(lin(t, 36.2, 1.2));                                    // the left card leaves downward
+  const lv = smoother(lin(t, 36.35, 1.2));                                    // the left card leaves downward
   const cL0 = lp(C3, C4L, m4), cR0 = lp(C3, C4R, m4), pr = press(g, 36.05);
   const cL: Pose = { x: cL0.x, y: cL0.y + (14 * dL + 420 * lv) * cL0.s, s: cL0.s * grow * (1 - 0.1 * dL) }, oL = pc * (1 - 0.42 * dL) * (1 - clamp01(lv * 1.7));
   const cR: Pose = { x: cR0.x, y: cR0.y + 14 * dR * cR0.s, s: cR0.s * grow * (1 - 0.1 * dR) * (1 - 0.015 * pr) }, oR = 1 - 0.42 * dR;
@@ -246,7 +246,7 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
   const hostPt = (x: number, y: number) => ({ x: 960 + (hx + (x - CARD.w / 2) * hsx) * pH, y: 540 + (hy + (y - CARD.h / 2) * hsy) * pH });
   const keys: HandKey[] = [
     { at: 20.5, x: 1150, y: 1290 },
-    { at: 24.2, ...sitePt(590, 342), click: true },                              // the headline
+    { at: 24.2, ...sitePt(470, 322), click: true },                              // the headline
     { at: 25.55, ...sitePt(SEND.x, SEND.y + 4), click: true, early: 0.35, dur: 0.6 },   // send
     { at: 27.0, x: 900, y: 1300, early: 0, dur: 1.0 },                           // nothing to do: leaves downward
     { at: 29.15, ...cardPt(cL, 700, 74), click: true },                          // the download button
@@ -254,7 +254,7 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
     { at: 32.7, ...cardPt(cR, 250, 574), early: 0, dur: 0.9 },                   // rests under the price while it rolls
     { at: 34.56, ...cardPt(cR, 500, 520), click: true },                         // "Uden binding"
     { at: 36.05, ...cardPt(cR, 480, 300), click: true, early: 0.5, dur: 0.7 },   // the Online card
-    { at: 37.4, x: 1640, y: 1300, early: 0, dur: 1.0 },                          // leaves downward
+    { at: 37.8, x: 1640, y: 1300, early: 0, dur: 1.0 },                          // leaves downward
     { at: 43.4, ...hostPt(840, 574), click: true },                              // "Sæt online"
     { at: 44.35, x: 1500, y: 1340, early: 0, dur: 0.7 },                          // gone before the hand-off
   ];
