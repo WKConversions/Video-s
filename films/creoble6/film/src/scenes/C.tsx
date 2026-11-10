@@ -27,9 +27,9 @@ type V3 = [number, number, number];
 const rad = (d: number) => (d * Math.PI) / 180;
 const cardPt = (lx: number, ly: number): V3 => [H2_CARD.x + lx * Math.cos(rad(3)), H2_CARD.y + ly, H2_CARD.z + lx * Math.sin(rad(3))];
 const CARD_C: V3 = [H2_CARD.x, H2_CARD.y, H2_CARD.z];
-const P: V3 = [0, 0, 1300];          // the type plane in front of the card; the pills
+const P: V3 = [-700, -620, 2000];          // the type plane in front of the card; the pills
 const Q: V3 = [2800, 0, 1300];       // the chat; later the outro's plane (O)
-const Q2: V3 = [2800, 0, 2800];      // the type plane in front of the chat
+const Q2: V3 = [2100, -620, 3400];      // the type plane in front of the chat
 const PANEL = { w: 820, h: 640 };
 const SEND = { x: 728, y: 548, s: 64 };                                  // the send button in the panel
 const B_O = { x: SEND.x + SEND.s / 2 - PANEL.w / 2, y: SEND.y + SEND.s / 2 - PANEL.h / 2 };   // its centre, from the panel's centre
@@ -57,8 +57,8 @@ const SHOTS: Shot[] = [
   { at: 40.37, t: P, d: 0, ry: 3, ap: 24 },
   { at: 42.05, t: P, d: -50, ry: -1, ap: 24, ease: LIN },
   // C3: the pills; a slow orbit and push
-  { at: 42.8, t: P, d: sc(1.3), ry: -8, ap: 22 },
-  { at: 46.3, t: P, d: sc(1.6), ry: 8, ap: 22, ease: LIN },
+  { at: 42.8, t: P, d: -10, ry: -8, ap: 22 },
+  { at: 46.3, t: P, d: sc(1.06), ry: 8, ap: 22, ease: LIN },
   // C4: truck to the support world
   { at: 47.1, t: Q, d: 0, ry: -3, ap: 16 },
   { at: 47.95, t: Q, d: -40, ry: -1, ap: 16, ease: LIN },
@@ -73,16 +73,16 @@ const SHOTS: Shot[] = [
   { at: 52.6, t: [B[0] - 60, B[1] - 8, B[2]], d: sc(3.2), ry: 5, rx: 2.5, ap: 16, fo: Q, ease: LIN },
   { at: 53.2, t: Q, d: 0, ry: 0, rx: 0, ap: 14 },
   // C8: the wordmark slides out
-  { at: 54.14, t: Q, d: -40, ry: -2, ap: 14, ease: LIN },
+  { at: 54.14, t: Q, d: -25, ry: -2, ap: 14, ease: LIN },
   // C9: the lockup rises, the line below; then a slow dolly in
-  { at: 54.85, t: Q, d: 50, ry: -1, ap: 14 },
-  { at: 56.7, t: Q, d: -10, ry: 1.5, ap: 14, ease: LIN },
+  { at: 54.85, t: Q, d: 20, ry: -1, ap: 14 },
+  { at: 56.7, t: Q, d: -20, ry: 1.5, ap: 14, ease: LIN },
   // C10: the line with the dot
-  { at: 57.3, t: Q, d: 70, ry: -2, ap: 14 },
-  { at: 59.6, t: Q, d: 20, ry: 2, ap: 14, ease: LIN },
+  { at: 57.3, t: Q, d: 50, ry: -2, ap: 14 },
+  { at: 59.6, t: Q, d: 0, ry: 2, ap: 14, ease: LIN },
   // C11: the final lockup; a slow dolly to the end
-  { at: 60.5, t: [Q[0], Q[1] + 6, Q[2]], d: 70, ry: 1.5, ap: 14 },
-  { at: 65.4, t: [Q[0], Q[1] + 6, Q[2]], d: -60, ry: -2, ap: 14, ease: LIN },
+  { at: 60.5, t: [Q[0], Q[1] + 6, Q[2]], d: 30, ry: 1.5, ap: 14 },
+  { at: 65.4, t: [Q[0], Q[1] + 6, Q[2]], d: -45, ry: -2, ap: 14, ease: LIN },
 ];
 const shotAt = (t: number): Pose => {
   if (t <= SHOTS[0].at) return pose(SHOTS[0]);
@@ -120,20 +120,22 @@ const comet = (pos: (t: number) => Dot, t: number, n = 6, dt = 0.016): Dot[] => 
 };
 // the mark (size S, its visual centre on mx / my)
 const markDots = (S: number, mx: number, my: number) => dotsAt(S, mx + ((RING.x - BOX_C.x) * S) / 100, my + ((RING.y - BOX_C.y) * S) / 100);
-const WM_H = 96, WM_W = WM_H * 4.77, S_BIG = 240, S_LOCK = 200, GAP = 44;
-const MARK_W = (61.75 * S_LOCK) / 100, LOCK_W = MARK_W + GAP + WM_W;
-const MARK_X = -LOCK_W / 2 + MARK_W / 2, WM_LEFT = -LOCK_W / 2 + MARK_W + GAP;
-// Lockup: the C (centred, 240) slides left and settles at 200 while the wordmark comes out from behind it (s 0..1);
-// wm 0..1 reveals the wordmark (its stop lands last); rs = each dot's radius factor
-const Lockup: React.FC<{ cy: number; s: number; wm: number; rs: number[] }> = ({ cy, s, wm, rs }) => {
-  const S = mix(S_BIG, S_LOCK, s), mx = mix(0, MARK_X, s);
-  const ds = markDots(S, mx, cy).map((d, i) => ({ ...d, r: d.r * (rs[i] ?? 1) }));
-  const edge = mx + ((78.81 - BOX_C.x) * S) / 100;
+const S_BIG = 240;
+// the two lockups: the first (about 640 px wide) and the final one (about 700 px wide, the C about 190 px tall)
+type Lock = { S: number; h: number; gap: number };
+const LA: Lock = { S: 240, h: 94, gap: 46 }, LB: Lock = { S: 260, h: 103, gap: 50 };
+const geo = (L: Lock) => { const mw = (61.75 * L.S) / 100, wmW = L.h * 4.77, tot = mw + L.gap + wmW; return { markX: -tot / 2 + mw / 2, wmLeft: -tot / 2 + mw + L.gap, wmW }; };
+// Lockup: the C (centred) slides left while the wordmark comes out from behind it (s 0..1); wm 0..1 reveals the
+// wordmark (its stop lands last); rs = each dot's radius factor
+const Lockup: React.FC<{ L: Lock; cy: number; s: number; wm: number; rs: number[] }> = ({ L, cy, s, wm, rs }) => {
+  const G = geo(L), mx = mix(0, G.markX, s);
+  const ds = markDots(L.S, mx, cy).map((d, i) => ({ ...d, r: d.r * (rs[i] ?? 1) }));
+  const edge = mx + ((78.81 - BOX_C.x) * L.S) / 100;
   return (
     <>
       {wm > 0.001 && (
-        <div style={{ position: "absolute", left: WM_LEFT, top: cy - WM_H / 2, width: WM_W, height: WM_H, clipPath: `inset(-40px -80px -40px ${Math.max(0, edge + 12 - WM_LEFT).toFixed(1)}px)` }}>
-          <Wordmark h={WM_H} p={wm} style={{ transform: `translateX(${(-(1 - s) * 150).toFixed(2)}px)` }} />
+        <div style={{ position: "absolute", left: G.wmLeft, top: cy - L.h / 2, width: G.wmW, height: L.h, clipPath: `inset(-40px -80px -40px ${Math.max(0, edge + 12 - G.wmLeft).toFixed(1)}px)` }}>
+          <Wordmark h={L.h} p={wm} style={{ transform: `translateX(${(-(1 - s) * 150).toFixed(2)}px)` }} />
         </div>
       )}
       <Dots dots={ds} />
@@ -149,12 +151,12 @@ const Pills: React.FC<{ g: number }> = ({ g }) => {
       {PILLS.map(([text, at], i) => {
         const a = k(g, at, 0.6, OUT), out = k(g, 46.2 + i * 0.09, 0.45, INOUT);
         if (a <= 0 || out >= 1) return null;
-        const y = (i - n1 / 2) * 124 + (1 - a) * 70 - out * 90;
+        const y = (i - n1 / 2) * 152 + (1 - a) * 80 - out * 100;
         return (
           <div key={i} style={{ position: "absolute", left: 0, top: 0, transform: `translate(-50%, -50%) translateY(${y.toFixed(2)}px)`, opacity: clamp01(a * 1.6) * (1 - out),
-            height: 96, borderRadius: 48, boxSizing: "border-box", padding: "0 46px 0 36px", background: C.white, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW}`,
-            display: "flex", alignItems: "center", gap: 20, fontFamily: SANS, fontWeight: 500, fontSize: 44, letterSpacing: "-0.015em", color: C.ink, whiteSpace: "nowrap" }}>
-            <div style={{ width: 14, height: 14, borderRadius: 7, background: C.sage, flex: "none" }} />{text}
+            height: 120, borderRadius: 60, boxSizing: "border-box", padding: "0 60px 0 46px", background: C.white, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW}`,
+            display: "flex", alignItems: "center", gap: 24, fontFamily: SANS, fontWeight: 500, fontSize: 56, letterSpacing: "-0.015em", color: C.ink, whiteSpace: "nowrap" }}>
+            <div style={{ width: 18, height: 18, borderRadius: 9, background: C.sage, flex: "none" }} />{text}
           </div>
         );
       })}
@@ -221,11 +223,11 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
 
   // C1: the card
   const active = [k(g, "w:domne", 0.45, LIN), k(g, "w:email", 0.45, LIN), k(g, "w:med", 0.45, LIN)];
-  const back = k(g, 39.95, 0.5, INOUT);
+  const back = k(g, 39.9, 0.4, INOUT);
   const close = t < 41 ? clamp01((1600 / project(c, { x: CARD_C[0], y: CARD_C[1], z: CARD_C[2] }).dist - 1.25) / 0.5) : 0;
 
   // C7: the send button becomes the dot; the dots assemble on "Creoble."
-  const back6 = k(g, 50.05, 0.6, INOUT) * (1 - k(g, 51.85, 0.4, INOUT));
+  const back6 = k(g, 49.95, 0.4, INOUT) * (1 - k(g, 51.85, 0.4, INOUT));
   const lifted = t >= 52.28, m7 = k(g, 52.36, 0.35, INOUT), T_FLY = 52.68, T_C = f("w:creoble3") / 30;
   const fall = k(g, 52.45, 0.5, INOUT);
   const big = markDots(S_BIG, 0, 0);
@@ -236,7 +238,7 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
 
   // C8–C10: the first lockup
   const cyA = -150 * k(g, "w:hjemmeside2", 0.65, INOUT);
-  const T_DOWN = 56.6, d5 = markDots(S_LOCK, MARK_X, -150)[5];
+  const T_DOWN = 56.6, d5 = markDots(LA.S, geo(LA).markX, -150)[5];
   const pos10 = (tt: number): Dot => { const q = INOUT(clamp01((tt - T_DOWN) / 0.5)); return { ...bez(d5, { x: rideX(f(T_DOWN + 0.5)), y: 8 }, -110, q), r: mix(d5.r, 12, q) }; };
   const rsA = [0, 1, 2, 3, 4].map((i) => 1 - k(g, 56.72 + i * 0.04, 0.35, INOUT)).concat(t < T_DOWN ? 1 : 0);
 
@@ -255,10 +257,16 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
   };
 
   // C11: the final lockup
-  const CY = -60, fin = markDots(S_BIG, 0, CY);
+  const CY = -70, fin = markDots(LB.S, 0, CY);
   const pos11 = (tt: number): Dot => { const q = INOUT(clamp01((tt - T_UP) / 0.58)); return { ...bez({ x: rideX(f(T_UP)), y: 8 }, fin[0], 150, q), r: mix(12, fin[0].r, q) }; };
   const rsB = [t >= T_UP + 0.58 ? 1 : 0, ...[1, 2, 3, 4, 5].map((i) => k(g, 60.06 + (i - 1) * 0.07, 0.4, OUT))];
   const ctaA = typed(g, "w:byg2", CTA_A, 19), ctaB = typed(g, "w:creoble4", CTA_B, 17);
+
+  // the type planes ride with the camera while it pulls back (so a word is never seen oversized), then stay put
+  const ride = (to: V3, arrive: number, leave = 1e9) => {
+    const w = INOUT(clamp01((t - arrive) / 0.6)) * (1 - INOUT(clamp01((t - leave) / 0.25))), q = mixV([c.x, c.y, c.z], to, w);
+    return { x: q[0], y: q[1], z: q[2], ry: -c.ry * (1 - w), rx: c.rx * (1 - w) };
+  };
 
   // cursors (screen space)
   const cq = project(c, { x: Q[0], y: Q[1] + CHAT_Y * (1 - k(g, 48.1, 0.6, INOUT)), z: Q[2] }), co = cursorAt(g, [{ at: 47.5, x: 420, y: 300 }, { at: 47.97, x: 8, y: 6 }, { at: 48.15, x: 8, y: 6 }, { at: 48.8, x: 600, y: 440 }]);
@@ -269,13 +277,13 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
       <Stage3D cam={c}>
         {/* the hosting card (C1; soft behind C2 and C3) */}
         {t < 47.2 && (
-          <Plane {...H2_CARD} w={CARD.w} h={CARD.h} opacity={1 - 0.4 * back} blur={5 * back} farBlur={close > 0.05 ? 7 * close : 0} farMask="linear-gradient(180deg, transparent 6%, #000 27%, #000 76%, transparent 96%)">
+          <Plane {...H2_CARD} w={CARD.w} h={CARD.h} opacity={1 - 0.75 * back} blur={9 * back} farBlur={close > 0.05 ? 7 * close : 0} farMask="linear-gradient(180deg, transparent 6%, #000 27%, #000 76%, transparent 96%)">
             <HostingCard g={g} rows={3} active={active} price={1} />
           </Plane>
         )}
         {/* C2: "Fast pris." → "Også når du fornyer."   C3: the pills */}
         {t > 39.9 && t < 47.2 && (
-          <Plane x={P[0]} y={P[1]} z={P[2]} w={W2} h={H2} dof={false}>
+          <Plane {...ride(P, 40.37)} w={W2} h={H2} dof={false}>
             <Kinetic g={g} size={TYPE.hero} style={mid} items={W("Fast pris.", ["w:fast", "w:pris"], 0, "w:ogs-0.1", 0.42)} />
             <Kinetic g={g} size={TYPE.big} style={mid} items={W("Også når du fornyer.", ["w:ogs", "w:nr+0.1", "w:du4+0.06", "w:fornyer+0.1"], 3, "w:domnet-0.1", 0.3)} />
             <div style={{ position: "absolute", ...mid }}><Pills g={g} /></div>
@@ -283,7 +291,7 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
         )}
         {/* C5: the chat (soft behind C6; falls away in C7) */}
         {t > 47.7 && fall < 1 && (
-          <Plane x={Q[0]} y={Q[1]} z={Q[2] - 1900 * fall} w={PANEL.w} h={PANEL.h} opacity={(1 - 0.4 * back6) * (1 - k(g, 52.5, 0.42, LIN))} blur={5 * back6}>
+          <Plane x={Q[0]} y={Q[1]} z={Q[2] - 1900 * fall} w={PANEL.w} h={PANEL.h} opacity={(1 - 0.75 * back6) * (1 - k(g, 52.5, 0.42, LIN))} blur={9 * back6}>
             <div style={{ position: "absolute", left: PANEL.w / 2, top: PANEL.h / 2 }}><Chat g={g} hideSend={lifted} /></div>
           </Plane>
         )}
@@ -295,7 +303,7 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
         )}
         {/* C6: "Ingen kø." → "Ingen robotsvar." */}
         {t > 50.1 && t < 52.2 && (
-          <Plane x={Q2[0]} y={Q2[1]} z={Q2[2]} w={W2} h={H2} dof={false}>
+          <Plane {...ride(Q2, 50.67, 51.78)} w={W2} h={H2} dof={false}>
             <Kinetic g={g} size={TYPE.hero} style={mid} items={[{ t: "Ingen", at: "w:ingen4", out: 51.84, dur: 0.42 }, { t: "kø.", at: "w:k", accent: true, out: "w:ingen5", dur: 0.42 }, { t: "robotsvar.", at: "w:robotsvar", accent: true, out: 51.84 }]} />
           </Plane>
         )}
@@ -319,15 +327,15 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
           <Plane x={Q[0]} y={Q[1]} z={Q[2]} w={W2} h={H2}>
             <div style={{ position: "absolute", ...mid, width: 0, height: 0 }}>
               {t < T_C && <Dots dots={comet(pos7, t)} />}
-              {t >= T_C && t < 57.3 && <Lockup cy={cyA} s={k(g, 53.4, 0.7, INOUT)} wm={k(g, 53.42, 0.85, LIN) * (1 - k(g, 56.7, 0.45, LIN))} rs={rsA} />}
-              {t > 54 && t < 57.4 && <Kinetic g={g} size={TYPE.line} style={{ top: 96 }} items={W("Hjemmeside og hosting, samlet ét sted.", ["w:hjemmeside2", "w:og2", "w:hosting", "w:samlet", "w:t", "w:sted"], 3, 56.7, 0.32)} />}
+              {t >= T_C && t < 57.3 && <Lockup L={LA} cy={cyA} s={k(g, 53.4, 0.7, INOUT)} wm={k(g, 53.42, 0.85, LIN) * (1 - k(g, 56.7, 0.45, LIN))} rs={rsA} />}
+              {t > 54 && t < 57.4 && <Kinetic g={g} size={TYPE.line} style={{ top: 104 }} items={W("Hjemmeside og hosting, samlet ét sted.", ["w:hjemmeside2", "w:og2", "w:hosting", "w:samlet", "w:t", "w:sted"], 3, 56.7, 0.32)} />}
               {t >= T_DOWN && t < T_DOWN + 0.5 && <Dots dots={comet(pos10, t)} />}
               {t >= T_DOWN + 0.4 && t < 60.3 && <Kinetic g={g} size={TYPE.big} items={items10} />}
               {t >= T_DOWN + 0.5 && t < T_UP && <Dots dots={[{ x: rideX(g), y: 8, r: 12 }]} />}
               {t >= T_UP && t < T_UP + 0.58 && <Dots dots={comet(pos11, t)} />}
-              {t >= T_UP && <Lockup cy={CY} s={k(g, 60.62, 0.7, INOUT)} wm={k(g, 60.64, 0.85, LIN)} rs={rsB} />}
+              {t >= T_UP && <Lockup L={LB} cy={CY} s={k(g, 60.62, 0.7, INOUT)} wm={k(g, 60.64, 0.85, LIN)} rs={rsB} />}
               {t >= 60 && (
-                <div style={{ position: "absolute", left: 0, top: CY + 168, transform: "translate(-50%, -50%)", fontFamily: SANS, fontSize: 32, fontWeight: 400, letterSpacing: "-0.005em", whiteSpace: "pre", color: C.muted }}>
+                <div style={{ position: "absolute", left: 0, top: CY + 196, transform: "translate(-50%, -50%)", fontFamily: SANS, fontSize: 40, fontWeight: 400, letterSpacing: "-0.005em", whiteSpace: "pre", color: C.muted }}>
                   <span>{ctaA}</span><span style={{ color: C.ink, fontWeight: 500 }}>{ctaB}</span><span style={{ opacity: 0 }}>{CTA_A.slice(ctaA.length)}{CTA_B.slice(ctaB.length)}</span>
                 </div>
               )}

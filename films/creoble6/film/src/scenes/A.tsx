@@ -263,6 +263,8 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
           <Kinetic g={g} size={TYPE.big} items={[{ t: "få", at: "w:f", out: 2.58, dur: 0.45 }, { t: "minutter", at: "w:minutter", out: 2.58, accent: true, dur: 0.45 }, { t: "væk.", at: "w:vk", out: 2.58, dur: 0.4 }]} />
         </div>
       )}
+      {/* a quiet cream veil over the receding site while the line is read (gone before the hand-off) */}
+      {t > 11.2 && <AbsoluteFill style={{ background: C.bg, opacity: 0.58 * seg(t, 11.3, 11.85) * (1 - seg(t, 12.95, 13.28)) }} />}
       {/* A10: "Ingen teknik." → "Ingen skabeloner." in front of the far, soft site */}
       {t > 11.2 && (
         <div style={{ position: "absolute", left: 960, top: 540, transform: `scale(${mix(0.97, 1.03, seg(t, 11.33, 13.3, LIN))})`, opacity: 1 - seg(t, 13.16, 13.28, LIN) }}>
