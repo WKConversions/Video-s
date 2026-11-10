@@ -18,14 +18,28 @@
  },
  "sfx": [
   {
-   "frame": 9,
+   "frame": 6,
    "id": "pop",
    "db": -13,
    "pitch": 0,
-   "note": "three more old sites slide up behind the first, one after another (soft)"
+   "note": "three more old sites fly up from below and tuck in behind the first, one after another (soft, 0.1 / 0.55 / 1.0)"
   },
   {
-   "frame": 270,
+   "frame": 111,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "the stack turns once: the front site drops away, the next comes forward (soft card flick)"
+  },
+  {
+   "frame": 201,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "the stack turns three more times while the line is read (three soft card flicks)"
+  },
+  {
+   "frame": 273,
    "id": "ui-open",
    "db": -5,
    "pitch": 0,
@@ -36,24 +50,24 @@
    "id": "pop",
    "db": -13,
    "pitch": 0,
-   "note": "the old site's rows drop away, top to bottom (six soft ticks)"
+   "note": "the old site's rows drop away, top to bottom (six soft ticks, 0.2 s apart)"
   },
   {
-   "frame": 345,
+   "frame": 351,
    "id": "double-bubble-pop",
    "db": -9,
    "pitch": 0,
    "note": "'Siden kan ikke findes' lands (dull error tone, not a chime)"
   },
   {
-   "frame": 390,
+   "frame": 396,
    "id": "ui-beatbox-click-01",
    "db": -3,
    "pitch": 0,
    "note": "'Opdater' is pressed once; nothing happens (dry old click)"
   },
   {
-   "frame": 411,
+   "frame": 420,
    "id": "pop",
    "db": -13,
    "pitch": 0,
@@ -67,77 +81,77 @@
    "note": "the dot opens into the six dots, turning; the wordmark slides out"
   },
   {
-   "frame": 534,
+   "frame": 498,
    "id": "ui-open",
    "db": -5,
    "pitch": 0,
-   "note": "the wizard window rises from below"
+   "note": "the wizard window rises from below; the lockup leaves upward"
   },
   {
-   "frame": 588,
+   "frame": 594,
    "id": "ui-beatbox-click-01",
    "db": -3,
    "pitch": 0,
    "note": "click into Virksomhedsnavn"
   },
   {
-   "frame": 592,
+   "frame": 597,
    "id": "typing-00",
    "db": 4,
    "pitch": 0,
    "note": "types 'Holm Fysioterapi'"
   },
   {
-   "frame": 643,
+   "frame": 647,
    "id": "ui-beatbox-click-01",
    "db": -3,
    "pitch": 0,
    "note": "click on Branche, the menu opens"
   },
   {
-   "frame": 665,
+   "frame": 668,
    "id": "ui-beatbox-click-01",
    "db": -3,
    "pitch": 0,
    "note": "picks 'Fysioterapi', the menu closes"
   },
   {
-   "frame": 672,
+   "frame": 678,
    "id": "pop",
    "db": -13,
    "pitch": 0,
    "note": "the field 'Hvad laver du?' eases in, the fields below make room"
   },
   {
-   "frame": 681,
+   "frame": 685,
    "id": "typing-01",
    "db": 4,
    "pitch": 0,
    "note": "types 'Genoptr\u00e6ning og massage'"
   },
   {
-   "frame": 733,
+   "frame": 736,
    "id": "ui-beatbox-click-01",
    "db": -3,
    "pitch": 0,
    "note": "click into E-mail"
   },
   {
-   "frame": 737,
+   "frame": 739,
    "id": "typing-02",
    "db": 4,
    "pitch": 0,
    "note": "types 'kontakt@holmfysio.dk'"
   },
   {
-   "frame": 787,
+   "frame": 789,
    "id": "ui-beatbox-click-01",
    "db": -3,
    "pitch": 0,
    "note": "click into Telefon"
   },
   {
-   "frame": 790,
+   "frame": 792,
    "id": "typing-03",
    "db": 4,
    "pitch": 0,
@@ -158,7 +172,7 @@
    "note": "the dot opens into the turning logo (loader)"
   },
   {
-   "frame": 876,
+   "frame": 891,
    "id": "ui-open",
    "db": -5,
    "pitch": 0,
@@ -172,32 +186,32 @@
    "note": "the photo frames slide into the empty page (very soft)"
   },
   {
-   "frame": 951,
+   "frame": 948,
    "id": "pop",
    "db": -13,
    "pitch": 0,
-   "note": "headline and text rise in"
+   "note": "headline lines and text rise in"
   },
   {
-   "frame": 990,
+   "frame": 987,
    "id": "pop",
    "db": -13,
    "pitch": 0,
-   "note": "the hero photo lands"
+   "note": "the hero photo slides up into its frame"
   },
   {
-   "frame": 1002,
+   "frame": 1014,
    "id": "pop",
    "db": -13,
    "pitch": 0,
    "note": "three service photos slide in, left to right"
   },
   {
-   "frame": 1026,
+   "frame": 1038,
    "id": "pop",
    "db": -13,
    "pitch": 0,
-   "note": "three answer chips rise in"
+   "note": "three answer cards rise in from below (Virksomhedsnavn, Branche, Hvad laver du?)"
   },
   {
    "frame": 1047,
@@ -207,25 +221,25 @@
    "note": "navigation slides into the layout, left to right; the button at 18.1"
   },
   {
-   "frame": 1141,
+   "frame": 1132,
    "id": "double-bubble-pop",
    "db": -9,
    "pitch": 0,
-   "note": "chip 'Holm Fysioterapi' lands in the navigation"
+   "note": "answer 'Holm Fysioterapi' lands in the navigation"
   },
   {
    "frame": 1162,
    "id": "double-bubble-pop",
    "db": -9,
    "pitch": 0,
-   "note": "chip 'Fysioterapi' lands in the text"
+   "note": "answer 'Fysioterapi' lands in the text"
   },
   {
-   "frame": 1183,
+   "frame": 1192,
    "id": "double-bubble-pop",
    "db": -9,
    "pitch": 0,
-   "note": "chip 'Genoptr\u00e6ning og massage' lands in the service cards; the loader finishes"
+   "note": "answer 'Genoptr\u00e6ning og massage' lands in the service cards; the loader finishes"
   },
   {
    "frame": 1251,
