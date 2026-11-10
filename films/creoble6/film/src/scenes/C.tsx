@@ -34,7 +34,7 @@ export const EVENTS: { t: number; kind: "click" | "type" | "check" | "pop" | "op
   { t: 57.0, kind: "type", len: 0.76, note: "Sofie's reply types" },
   { t: 57.8, kind: "pop", note: "chip: Dansk support" },
   { t: 58.3, kind: "click", note: "send button pressed; turns sage" },
-  { t: 58.6, kind: "send", note: "the dot leaves the panel and glides to the centre" },
+  { t: 58.6, kind: "send", len: 0.8, note: "the dot leaves the panel and glides to the centre, smearing a soft sage trail" },
   { t: 59.0, kind: "logo", len: 0.5, note: "the six dots unfurl into the C" },
   { t: 59.45, kind: "open", note: "wordmark slides out beside the C" },
   { t: 60.04, kind: "pop", note: "button: Byg din side gratis" },
@@ -322,7 +322,15 @@ const C5: React.FC<{ g: number }> = ({ g }) => {
   const pr = press(g, T_SEND), sage = sn(t, T_SEND + 0.02, 0.26), round = gl(t, T_SEND + 0.05, 0.32);
   const fl = gl(t, T_SEND + 0.26, 0.78), u = 1 - fl;
   const mx = (SEND_S.x + D0.x) / 2 + 0.776 * 110, my = (SEND_S.y + D0.y) / 2 - 0.631 * 110;
-  const lead0 = { x: u * u * SEND_S.x + 2 * u * fl * mx + fl * fl * D0.x, y: u * u * SEND_S.y + 2 * u * fl * my + fl * fl * D0.y };
+  const bez = (q: number) => { const w = 1 - q; return { x: w * w * SEND_S.x + 2 * w * q * mx + q * q * D0.x, y: w * w * SEND_S.y + 2 * w * q * my + q * q * D0.y }; };
+  const lead0 = bez(fl);
+  // the smear: the dot stretches along its path and leaves a soft sage trail (wide and faint at the tail, tapering
+  // to the dot), which closes up into the dot and fades as it lands
+  const T_FLY = T_SEND + 0.26, vel = ((gl(t + 0.01, T_FLY, 0.78) - gl(t - 0.01, T_FLY, 0.78)) / 0.02) * 0.78 / 2;   // 0..~1
+  const tan = { x: 2 * u * (mx - SEND_S.x) + 2 * fl * (D0.x - mx), y: 2 * u * (my - SEND_S.y) + 2 * fl * (D0.y - my) }, dir = (Math.atan2(tan.y, tan.x) * 180) / Math.PI;
+  const tailQ = gl(t - 0.42, T_FLY, 0.78), trailO = sn(t, T_FLY + 0.05, 0.25) * (1 - sn(t, 59.05, 0.7));
+  const N = 24, pts = Array.from({ length: N + 1 }, (_, i) => { const k = i / N, q = mix(tailQ, fl, k), a = bez(q), b = bez(Math.min(1, q + 0.01)), c0 = bez(Math.max(0, q - 0.01)), L = Math.hypot(b.x - c0.x, b.y - c0.y) || 1; return { x: a.x, y: a.y, nx: -(b.y - c0.y) / L, ny: (b.x - c0.x) / L, w: mix(40, 19, k) }; });
+  const trailD = fl - tailQ > 0.004 ? "M" + pts.map((q) => `${(q.x + q.nx * q.w).toFixed(1)} ${(q.y + q.ny * q.w).toFixed(1)}`).join(" L") + " L" + pts.slice().reverse().map((q) => `${(q.x - q.nx * q.w).toFixed(1)} ${(q.y - q.ny * q.w).toFixed(1)}`).join(" L") + " Z" : "";
   const ring = { x: lead0.x - Math.cos(ANG[0]) * R + dx, y: lead0.y - Math.sin(ANG[0]) * R };
   const lead = { x: ring.x + Math.cos(ANG[0] + spin) * R, y: ring.y + Math.sin(ANG[0] + spin) * R };
   const leadScale = mix(KC, (LOGO[0].r * s * 2) / 60, round) * (1 - 0.06 * pr);
@@ -337,10 +345,17 @@ const C5: React.FC<{ g: number }> = ({ g }) => {
   return (
     <Group s={P}>
       <Dots dots={others} />
+      {trailD && trailO > 0.002 && <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0, overflow: "visible", opacity: trailO, transform: `translateX(${dx.toFixed(2)}px)` }}>
+        <defs>
+          <linearGradient id="c-trail" gradientUnits="userSpaceOnUse" x1={pts[0].x} y1={pts[0].y} x2={pts[N].x} y2={pts[N].y}><stop offset="0" stopColor={C.sage} stopOpacity={0} /><stop offset="0.55" stopColor={C.sage} stopOpacity={0.22} /><stop offset="1" stopColor={C.sage} stopOpacity={0.6} /></linearGradient>
+          <filter id="c-trail-soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation={7} /></filter>
+        </defs>
+        <path d={trailD} fill="url(#c-trail)" filter="url(#c-trail-soft)" />
+      </svg>}
       <div style={{ position: "absolute", left: 960 - LOCK_W / 2 + C_W + GAP, top: LY - WM_H / 2, transform: `translateX(${wx.toFixed(2)}px)`, WebkitMaskImage: wm < 1 ? wmask : undefined, maskImage: wm < 1 ? wmask : undefined }}><Wordmark h={WM_H} /></div>
       {/* the send button → the dot */}
       <div style={{ position: "absolute", left: lead.x - 30, top: lead.y - 30, width: 60, height: 60, borderRadius: mix(16, 30, round), background: `color-mix(in srgb, ${C.sage} ${(sage * 100).toFixed(1)}%, ${C.ink})`,
-        transform: `scale(${leadScale.toFixed(4)})`, display: "flex", alignItems: "center", justifyContent: "center" }}>
+        transform: `rotate(${dir.toFixed(2)}deg) scale(${(1 + 0.42 * vel).toFixed(4)}, ${(1 - 0.08 * vel).toFixed(4)}) rotate(${(-dir).toFixed(2)}deg) scale(${leadScale.toFixed(4)})`, display: "flex", alignItems: "center", justifyContent: "center" }}>
         {round < 1 && <Ico n="arrow" s={28} c={C.white} w={2.4} style={{ transform: "rotate(-90deg)", opacity: 1 - round }} />}
       </div>
       {/* the button */}

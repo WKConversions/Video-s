@@ -26,30 +26,30 @@
   },
   {
    "frame": 111,
-   "id": "pop",
-   "db": -13,
-   "pitch": 0,
+   "id": "ui-granular-button-select",
+   "db": -12,
+   "pitch": 2,
    "note": "the stack turns once: the front site drops away, the next comes forward (soft card flick)"
   },
   {
    "frame": 201,
-   "id": "pop",
-   "db": -13,
-   "pitch": 0,
+   "id": "v4-type-delete",
+   "db": -2,
+   "pitch": 4,
    "note": "the stack turns three more times while the line is read (three soft card flicks)"
   },
   {
    "frame": 273,
-   "id": "ui-open",
-   "db": -5,
+   "id": "ui-stretch",
+   "db": -17,
    "pitch": 0,
    "note": "the hook's push: the old window grows and pushes the line out to the right (soft swell)"
   },
   {
    "frame": 303,
-   "id": "pop",
-   "db": -13,
-   "pitch": 0,
+   "id": "ui-enter",
+   "db": -6,
+   "pitch": 6,
    "note": "the old site's rows drop away, top to bottom (six soft ticks, 0.2 s apart)"
   },
   {
@@ -68,9 +68,9 @@
   },
   {
    "frame": 420,
-   "id": "pop",
-   "db": -13,
-   "pitch": 0,
+   "id": "ui-granular-button-select-2",
+   "db": -15,
+   "pitch": 6,
    "note": "the window shrinks into the dot"
   },
   {
@@ -82,15 +82,15 @@
   },
   {
    "frame": 498,
-   "id": "ui-open",
-   "db": -5,
+   "id": "turn-off-phone",
+   "db": -6,
    "pitch": 0,
    "note": "the wizard window rises from below; the lockup leaves upward"
   },
   {
    "frame": 594,
-   "id": "ui-beatbox-click-01",
-   "db": -3,
+   "id": "one-keyboard-click",
+   "db": 2,
    "pitch": 0,
    "note": "click into Virksomhedsnavn"
   },
@@ -103,8 +103,8 @@
   },
   {
    "frame": 647,
-   "id": "ui-beatbox-click-01",
-   "db": -3,
+   "id": "ui-click-digital-03",
+   "db": 0,
    "pitch": 0,
    "note": "click on Branche, the menu opens"
   },
@@ -131,8 +131,8 @@
   },
   {
    "frame": 736,
-   "id": "ui-beatbox-click-01",
-   "db": -3,
+   "id": "one-keyboard-click",
+   "db": 2,
    "pitch": 0,
    "note": "click into E-mail"
   },
@@ -145,8 +145,8 @@
   },
   {
    "frame": 789,
-   "id": "ui-beatbox-click-01",
-   "db": -3,
+   "id": "ui-click-digital-03",
+   "db": 0,
    "pitch": 0,
    "note": "click into Telefon"
   },
@@ -166,99 +166,78 @@
   },
   {
    "frame": 870,
-   "id": "ui-button",
-   "db": -12,
+   "id": "ui-granular-button-select",
+   "db": -11,
    "pitch": 0,
    "note": "the dot opens into the turning logo (loader)"
   },
   {
    "frame": 891,
-   "id": "ui-open",
-   "db": -5,
+   "id": "ui-premium-open",
+   "db": -10,
    "pitch": 0,
    "note": "the empty site window rises under the loader"
   },
   {
    "frame": 924,
-   "id": "pop",
-   "db": -13,
+   "id": "ui-granular-button-select",
+   "db": -12,
    "pitch": 0,
    "note": "the photo frames slide into the empty page (very soft)"
   },
   {
-   "frame": 948,
-   "id": "pop",
-   "db": -13,
-   "pitch": 0,
-   "note": "headline lines and text rise in"
-  },
-  {
    "frame": 987,
-   "id": "pop",
-   "db": -13,
-   "pitch": 0,
+   "id": "v4-type-delete",
+   "db": -2,
+   "pitch": 2,
    "note": "the hero photo slides up into its frame"
   },
   {
-   "frame": 1014,
-   "id": "pop",
-   "db": -13,
-   "pitch": 0,
-   "note": "three service photos slide in, left to right"
-  },
-  {
    "frame": 1038,
-   "id": "pop",
-   "db": -13,
-   "pitch": 0,
+   "id": "ui-enter",
+   "db": -6,
+   "pitch": 4,
    "note": "three answer cards rise in from below (Virksomhedsnavn, Branche, Hvad laver du?)"
   },
   {
-   "frame": 1047,
-   "id": "pop",
-   "db": -13,
-   "pitch": 0,
-   "note": "navigation slides into the layout, left to right; the button at 18.1"
-  },
-  {
    "frame": 1132,
-   "id": "double-bubble-pop",
-   "db": -9,
+   "id": "ui-button",
+   "db": -13,
    "pitch": 0,
    "note": "answer 'Holm Fysioterapi' lands in the navigation"
   },
   {
    "frame": 1162,
-   "id": "double-bubble-pop",
-   "db": -9,
-   "pitch": 0,
+   "id": "iphone-apple-pay",
+   "db": 0,
+   "pitch": 2,
    "note": "answer 'Fysioterapi' lands in the text"
   },
   {
    "frame": 1192,
    "id": "double-bubble-pop",
    "db": -9,
-   "pitch": 0,
+   "pitch": 4,
    "note": "answer 'Genoptr\u00e6ning og massage' lands in the service cards; the loader finishes"
   },
   {
    "frame": 1251,
-   "id": "ui-open",
-   "db": -5,
+   "id": "ui-backspace",
+   "db": -4,
    "pitch": 0,
    "note": "B1 the window grows to the whole page (soft, long)"
   },
   {
    "frame": 1332,
-   "id": "pop",
-   "db": -13,
+   "id": "ui-granular-button-select-2",
+   "db": -15,
    "pitch": 0,
    "note": "B1 chip 'Gratis forh\u00e5ndsvisning' lands on the window's top edge"
   },
   {
    "frame": 1374,
-   "id": "ui-open",
-   "db": -5,
+   "id": "charge-connection",
+   "db": -3,
    "pitch": 0,
    "note": "B2 the window comes back and close on the hero (soft, long)"
   },
@@ -273,7 +252,7 @@
    "frame": 1461,
    "id": "pop",
    "db": -13,
-   "pitch": 0,
+   "pitch": 2,
    "note": "B2 the edit field grows out of the headline"
   },
   {
@@ -285,43 +264,43 @@
   },
   {
    "frame": 1533,
-   "id": "ui-beatbox-click-01",
-   "db": -3,
+   "id": "one-keyboard-click",
+   "db": 2,
    "pitch": 0,
    "note": "B2 cursor presses send"
   },
   {
    "frame": 1536,
-   "id": "send-2",
-   "db": -12,
+   "id": "mail-in",
+   "db": -17,
    "pitch": 0,
    "note": "B2 the edit is sent"
   },
   {
    "frame": 1554,
-   "id": "pop",
-   "db": -13,
-   "pitch": 0,
+   "id": "ui-granular-button-select",
+   "db": -12,
+   "pitch": 4,
    "note": "B2 the headline swaps to the new one (soft)"
   },
   {
    "frame": 1632,
-   "id": "ui-open",
-   "db": -5,
+   "id": "ui-digital-click",
+   "db": -8,
    "pitch": 0,
    "note": "B3 the site shrinks into the thumbnail card (soft, long)"
   },
   {
    "frame": 1710,
-   "id": "pop",
-   "db": -13,
+   "id": "v4-type-delete",
+   "db": -2,
    "pitch": 0,
    "note": "B4 the card splits in two (the copy slides right)"
   },
   {
    "frame": 1749,
-   "id": "ui-beatbox-click-01",
-   "db": -3,
+   "id": "ui-click-digital-03",
+   "db": 0,
    "pitch": 0,
    "note": "B4 the download button presses; the thumbnail packs into the file row"
   },
@@ -334,16 +313,16 @@
   },
   {
    "frame": 1837,
-   "id": "double-bubble-pop",
-   "db": -9,
+   "id": "iphone-apple-pay",
+   "db": 0,
    "pitch": 0,
    "note": "B4 download done"
   },
   {
    "frame": 1848,
-   "id": "pop",
-   "db": -13,
-   "pitch": 0,
+   "id": "ui-enter",
+   "db": -6,
+   "pitch": 2,
    "note": "B4 the Online card steps forward"
   },
   {
@@ -355,17 +334,10 @@
   },
   {
    "frame": 1929,
-   "id": "pop",
-   "db": -13,
-   "pitch": 0,
+   "id": "ui-granular-button-select-2",
+   "db": -15,
+   "pitch": 4,
    "note": "B4 'Live' comes on (small)"
-  },
-  {
-   "frame": 1944,
-   "id": "pop",
-   "db": -13,
-   "pitch": 0,
-   "note": "B4 the price 99 rolls up"
   },
   {
    "frame": 2077,
@@ -383,8 +355,8 @@
   },
   {
    "frame": 2172,
-   "id": "ui-open",
-   "db": -5,
+   "id": "start-video",
+   "db": -7,
    "pitch": 0,
    "note": "B6 the card grows into the hosting card"
   },
@@ -397,8 +369,8 @@
   },
   {
    "frame": 2277,
-   "id": "double-bubble-pop",
-   "db": -9,
+   "id": "ui-button",
+   "db": -13,
    "pitch": 0,
    "note": "B6 row 1 .dk-dom\u00e6ne turns green"
   },
@@ -411,9 +383,9 @@
   },
   {
    "frame": 2376,
-   "id": "double-bubble-pop",
-   "db": -9,
-   "pitch": 0,
+   "id": "iphone-apple-pay",
+   "db": 0,
+   "pitch": 2,
    "note": "B6 row 2 e-mail turns green"
   },
   {
@@ -427,20 +399,20 @@
    "frame": 2502,
    "id": "double-bubble-pop",
    "db": -9,
-   "pitch": 0,
+   "pitch": 4,
    "note": "B6 row 3 siden online turns green"
   },
   {
    "frame": 2565,
-   "id": "ui-button",
-   "db": -12,
+   "id": "ui-granular-button-select",
+   "db": -11,
    "pitch": 0,
    "note": "B7 the three checks pulse in turn (three soft notes, 0.2 s apart); the price row rises"
   },
   {
    "frame": 2700,
-   "id": "ui-open",
-   "db": -5,
+   "id": "ui-stretch",
+   "db": -17,
    "pitch": 0,
    "note": "hosting card becomes the panel; the live site rises"
   },
@@ -453,8 +425,8 @@
   },
   {
    "frame": 2802,
-   "id": "send-2",
-   "db": -12,
+   "id": "send",
+   "db": -19,
    "pitch": 0,
    "note": "sage dot travels panel to site"
   },
@@ -467,15 +439,15 @@
   },
   {
    "frame": 2838,
-   "id": "ui-open",
-   "db": -5,
+   "id": "turn-off-phone",
+   "db": -6,
    "pitch": 0,
    "note": "site page scrolls up to the hero"
   },
   {
    "frame": 2850,
-   "id": "ui-beatbox-click-01",
-   "db": -3,
+   "id": "one-keyboard-click",
+   "db": 2,
    "pitch": 0,
    "note": "photo dropped on the panel"
   },
@@ -488,71 +460,71 @@
   },
   {
    "frame": 2904,
-   "id": "pop",
-   "db": -13,
-   "pitch": 0,
+   "id": "ui-granular-button-select",
+   "db": -12,
+   "pitch": 2,
    "note": "site: hero photo changes"
   },
   {
    "frame": 2934,
-   "id": "double-bubble-pop",
-   "db": -9,
+   "id": "ui-button",
+   "db": -13,
    "pitch": 0,
    "note": "Opdateret chip lands on the site window"
   },
   {
    "frame": 2982,
-   "id": "ui-open",
-   "db": -5,
+   "id": "ui-backspace",
+   "db": -4,
    "pitch": 0,
    "note": "panel and site settle small; type line begins"
   },
   {
    "frame": 3138,
-   "id": "ui-open",
-   "db": -5,
+   "id": "charge-connection",
+   "db": -3,
    "pitch": 0,
    "note": "type line glides up; plan card rises"
   },
   {
    "frame": 3169,
-   "id": "double-bubble-pop",
-   "db": -9,
+   "id": "iphone-apple-pay",
+   "db": 0,
    "pitch": 0,
    "note": "row: Stop n\u00e5r som helst"
   },
   {
    "frame": 3255,
-   "id": "pop",
-   "db": -13,
+   "id": "v4-type-delete",
+   "db": -2,
    "pitch": 0,
    "note": "\u00c5r 1"
   },
   {
    "frame": 3291,
-   "id": "pop",
-   "db": -13,
-   "pitch": 0,
+   "id": "ui-enter",
+   "db": -6,
+   "pitch": 2,
    "note": "\u00c5r 2"
   },
   {
    "frame": 3321,
-   "id": "pop",
-   "db": -13,
-   "pitch": 0,
+   "id": "ui-granular-button-select-2",
+   "db": -15,
+   "pitch": 4,
    "note": "\u00c5r 3"
   },
   {
    "frame": 3378,
-   "id": "ui-open",
-   "db": -5,
+   "id": "ui-digital-click",
+   "db": -8,
    "pitch": 0,
    "note": "plan card leaves upward; chat panel rises"
   },
   {
    "frame": 3411,
-   "id": "send-2",
-   "db": -12,
+   "id": "mail-in",
+   "db": -17,
    "pitch": 0,
    "note": "customer bubble: Kan I hj\u00e6lpe med min e-mail?"
   },
@@ -567,22 +539,22 @@
    "frame": 3468,
    "id": "pop",
    "db": -13,
-   "pitch": 0,
+   "pitch": 6,
    "note": "chip: Dansk support"
   },
   {
    "frame": 3498,
-   "id": "ui-beatbox-click-01",
-   "db": -3,
+   "id": "ui-click-digital-03",
+   "db": 0,
    "pitch": 0,
    "note": "send button pressed; turns sage"
   },
   {
    "frame": 3516,
-   "id": "send-2",
-   "db": -12,
+   "id": "send",
+   "db": -19,
    "pitch": 0,
-   "note": "the dot leaves the panel and glides to the centre"
+   "note": "the dot leaves the panel and glides to the centre, smearing a soft sage trail"
   },
   {
    "frame": 3540,
@@ -593,16 +565,16 @@
   },
   {
    "frame": 3567,
-   "id": "ui-open",
-   "db": -5,
+   "id": "start-video",
+   "db": -7,
    "pitch": 0,
    "note": "wordmark slides out beside the C"
   },
   {
    "frame": 3602,
-   "id": "pop",
-   "db": -13,
-   "pitch": 0,
+   "id": "ui-granular-button-select",
+   "db": -12,
+   "pitch": 6,
    "note": "button: Byg din side gratis"
   },
   {
