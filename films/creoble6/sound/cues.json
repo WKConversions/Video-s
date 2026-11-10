@@ -109,112 +109,112 @@
    "note": "the hand clicks Branche, the menu opens"
   },
   {
-   "frame": 687,
+   "frame": 696,
    "id": "ui-beatbox-click-01",
    "db": -3,
    "pitch": 0,
    "note": "the hand picks 'Fysioterapi', the menu closes"
   },
   {
-   "frame": 696,
+   "frame": 705,
    "id": "pop",
    "db": -13,
    "pitch": 0,
    "note": "the field 'Hvad laver du?' eases in, the fields below make room"
   },
   {
-   "frame": 703,
+   "frame": 711,
    "id": "typing-01",
    "db": 4,
    "pitch": 0,
    "note": "types 'Genoptr\u00e6ning og massage'"
   },
   {
-   "frame": 756,
+   "frame": 765,
    "id": "one-keyboard-click",
    "db": 2,
    "pitch": 0,
    "note": "the hand clicks into E-mail"
   },
   {
-   "frame": 760,
+   "frame": 769,
    "id": "typing-02",
    "db": 4,
    "pitch": 0,
    "note": "types 'kontakt@holmfysio.dk'"
   },
   {
-   "frame": 807,
+   "frame": 813,
    "id": "ui-click-digital-03",
    "db": 0,
    "pitch": 0,
    "note": "the hand clicks into Telefon"
   },
   {
-   "frame": 810,
+   "frame": 816,
    "id": "typing-03",
    "db": 4,
    "pitch": 0,
    "note": "types '+45 31 42 53 64'"
   },
   {
-   "frame": 852,
+   "frame": 858,
    "id": "send-2",
    "db": -12,
    "pitch": 0,
    "note": "the hand presses 'Forts\u00e6t'; the button turns sage"
   },
   {
-   "frame": 863,
+   "frame": 869,
    "id": "ui-backspace",
    "db": -4,
    "pitch": 0,
    "note": "the smear: the sage button stretches out to the right and sweeps across the frame, in again from the left (one long soft whoosh, rising then settling)"
   },
   {
-   "frame": 887,
+   "frame": 893,
    "id": "ui-granular-button-select",
    "db": -11,
    "pitch": 0,
    "note": "the six-dot logo turns at the bar's head (loader)"
   },
   {
-   "frame": 887,
+   "frame": 893,
    "id": "typing-04",
    "db": 4,
    "pitch": 0,
    "note": "the number counts 0 to 100 beside the bar (fine fast ticks slowing down, not keyboard)"
   },
   {
-   "frame": 935,
+   "frame": 941,
    "id": "ui-button",
    "db": -13,
    "pitch": 0,
    "note": "the count lands on 100"
   },
   {
-   "frame": 947,
+   "frame": 953,
    "id": "ui-granular-button-select",
    "db": -12,
    "pitch": 0,
    "note": "the bar rises and thins into the site window's top bar"
   },
   {
-   "frame": 974,
+   "frame": 980,
    "id": "charge-connection",
    "db": -3,
    "pitch": 0,
    "note": "the site window unfolds down from its top bar"
   },
   {
-   "frame": 978,
+   "frame": 984,
    "id": "v4-type-delete",
    "db": -2,
    "pitch": 2,
    "note": "the photo frames slide into the empty page (very soft)"
   },
   {
-   "frame": 1011,
+   "frame": 1017,
    "id": "ui-enter",
    "db": -6,
    "pitch": 4,
