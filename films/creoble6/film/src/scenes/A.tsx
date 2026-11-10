@@ -9,7 +9,7 @@
 // Times below are film seconds (t = g / 30).
 import React from "react";
 import { AbsoluteFill } from "remotion";
-import { C, SANS, SHADOW, INOUT, OUT, clamp01, mix } from "../lib";
+import { C, SANS, SHADOW, INOUT, clamp01, mix } from "../lib";
 import { f, aspring, press, typed, Browser, Wordmark } from "../shared";
 import { Kinetic, KItem, measure, useFonts } from "../type";
 import { Dots, LOGO, RING, ANG } from "../dots";
@@ -73,7 +73,7 @@ const fanDots = (size: number, cx: number, cy: number, spin: number, ro: number,
 };
 
 /* ================= Hook: 0 – 6.95 ================= */
-const SIZE = 76, SLOT0 = 380, SLOT1 = 1100, PUSH0 = 4.5, PUSH1 = 6.1, M0 = 6.75, M1 = 7.8;
+const SIZE = 76, SLOT0 = 380, SLOT1 = 1100, PUSH0 = 4.5, PUSH1 = 6.9, M0 = 6.75, M1 = 7.8;
 const LOGO_S = 260;                                   // the lockup's C
 const LOCK = { cx: 723.5, cy: 545.7, wmX: 834, wmH: 96 };
 const lockSpin = (t: number) => { const u = 1 - seg(t, 7.55, 8.95); return -150 * u * u; };   // the dots turn slowly into the C's rest pose
@@ -105,12 +105,12 @@ const slotCentre = (g: number, items: KItem[], size: number, ready: boolean) => 
 const TIMES = "'Times New Roman', 'Liberation Serif', Times, serif", ARIAL = "Arial, 'Liberation Sans', Helvetica, sans-serif";
 const BANDS: [number, number][] = [[80, 256], [256, 333], [333, 404], [404, 497], [497, 690], [690, 760]];
 
-const FRONT = 2;                                       // the site in front after the stack has turned twice (same layout as site 0)
+const FRONT = 0;                                       // the site in front after the stack has turned twice (same layout as site 0)
 const Hook: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30, ready = useFonts();
-  const E = sine(seg(t, PUSH0, PUSH1));
+  const E = sine(1 - Math.pow(1 - seg(t, PUSH0, PUSH1), 1.8));       // the one push: a soft start, a long soft landing under the 404
   const slotW = SLOT0 * mix(0.8, 1, soft(t, 0, 1.6)) * Math.pow(SLOT1 / SLOT0, E);   // the window: visibly growing from frame 0, then the push
-  const extra = 460 * sine(seg(t, PUSH0 + 0.15, PUSH1));               // the growing window pushes the words out to the right
+  const extra = 460 * sine(seg(t, PUSH0 + 0.15, 6.1));               // the growing window pushes the words out to the right
   const items = hookItems(slotW + extra);
   const zs = 1 + 0.012 * t;                                             // the slow steady push
   const m = sine(Math.pow(seg(t, M0, M1), 1.6));                        // window → dot
@@ -119,10 +119,10 @@ const Hook: React.FC<{ g: number }> = ({ g }) => {
   const cx = 960 + rel * (1 - E) + (d0.x - 960) / zs, cy = 540 + (d0.y - 540) / zs;
   const ls0 = slotW / OLD.w, lsDot = (2 * LOGO[0].r * LOGO_S) / 100 / zs / OLD.h, ls = mix(ls0, lsDot, m);
   // the stack ("de fleste"): three more old sites fly up from below and tuck in behind the first; while the line is
-  // read the stack turns twice (the front site drops away and returns at the back); it folds away as the window grows
-  const rot = soft(t, 3.5, 0.85) + soft(t, 4.0, 0.85), ret = sine(seg(t, PUSH0 + 0.1, PUSH0 + 1.0));
+  // read the stack turns (the front site drops away and returns at the back); it folds away as the window grows
+  const rot = sine(seg(t, 1.8, 2.55)) + 3 * sine(seg(t, 3.3, 4.95)), ret = sine(seg(t, PUSH0 + 0.1, PUSH0 + 1.0));
   const deck = [0, 1, 2, 3].map((k) => {
-    const arrive = k === 0 ? 1 : soft(t, 0.05 + 0.3 * (k - 1), 1.25);
+    const arrive = k === 0 ? 1 : soft(t, 0.05 + 0.45 * (k - 1), 1.25);
     const dm = ((((k - rot) % 4) + 4) % 4);
     let d = dm, y = 0, o = 1, z = 10 - dm;
     if (dm > 3) { const L = 4 - dm; if (L < 0.5) { d = 0; y = L * 2 * 300; o = 1 - sine(L * 2); z = 20; } else { d = 3; y = (1 - L) * 2 * 140; o = sine((L - 0.5) * 2); z = 0; } }
@@ -173,7 +173,7 @@ const Lockup: React.FC<{ g: number }> = ({ g }) => {
   const fan = LOGO.map((_, i) => sp(t, 7.55 + 0.04 * i, 0.6, 0.9));
   const dots = fanDots(LOGO_S, d0.cx, d0.cy, lockSpin(t), d0.ro, fan).map((d, i) => (i === 0 && t < M1 ? { ...d, r: 0 } : d));
   const wp = seg(t, 7.65, 8.2), wq = soft(t, 7.65, 0.9);
-  const lift = soft(t, 8.85, 0.6), zs = 1 + 0.04 * seg(t, 7.6, 9.7);
+  const lift = soft(t, 8.7, 0.6), zs = 1 + 0.04 * seg(t, 7.6, 9.7);
   return (
     <AbsoluteFill style={{ transform: `translateY(${(-300 * lift).toFixed(2)}px) scale(${zs.toFixed(5)})`, opacity: 1 - sine(lift * 1.8) }}>
       <Dots dots={dots} />
@@ -188,13 +188,13 @@ const wiz = (t: number) => {
   const e = sine(seg(t, 9.45, 10.75));                                    // the scene's one push, to the form column
   const s = S0 * Math.pow(S1 / S0, e) * (1 + 0.04 * seg(t, 10.75, 14.3));
   const fy = mix(WIZ_WIN.h / 2, 476, e);
-  const arr = soft(t, 8.5, 1.6), ex = sine(seg(t, 14.07, 15.05));
+  const arr = soft(t, 8.3, 1.6), ex = sine(seg(t, 14.07, 15.05));
   const sT = s * mix(0.94, 1, arr) * mix(1, 0.96, ex);
   const y = (1 - arr) * 900 + ex * 300 + (WIZ_WIN.h / 2 - fy) * sT;
   const scroll = SCROLL * sine(seg(t, 11.7, 13.9)), shift = SHIFT * soft(t, 11.24, 0.9);
   // a page point (final layout coordinates) on screen
   const at = (px: number, py: number) => ({ x: 960 + (px - 800) * sT, y: 540 + y + (46 + py - scroll - WIZ_WIN.h / 2) * sT });
-  return { s, sT, y, scroll, shift, at, opacity: sine(seg(t, 8.5, 8.8)) * (1 - sine(seg(t, 14.07, 14.87))) };
+  return { s, sT, y, scroll, shift, at, opacity: sine(seg(t, 8.3, 8.6)) * (1 - sine(seg(t, 14.07, 14.87))) };
 };
 const CUR: [number, number, number][] = [
   [9.5, 1010, 640], [9.86, 690, 289], [10.5, 690, 289], [10.76, 800, 375], [10.86, 800, 375], [11.08, 760, 426], [11.65, 760, 426],
@@ -264,11 +264,11 @@ const WizCursor: React.FC<{ g: number }> = ({ g }) => {
 /* ================= the button → the dot → the loader (13.6 – 20.15) ================= */
 const LOADER = 280, R0 = (LOGO[0].r * LOADER) / 100;                    // the first dot's radius in the loader (31.3 px)
 const ramp = (x: number) => (x <= 0 ? 0 : x < 0.6 ? (x * x) / 1.2 : x - 0.3);
-const sitePose = (t: number) => { const q = soft(t, 14.5, 1.0); return { y: H1_SITE.y + (1 - q) * 420, scale: mix(0.95, 1, q), opacity: sine(q * 1.6) }; };
+const sitePose = (t: number) => { const q = soft(t, 14.7, 1.15); return { y: H1_SITE.y + (1 - q) * 560, scale: mix(0.95, 1, q), opacity: sine(q * 1.6) }; };
 const Loader: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30;
   const live = wiz(t), froz = wiz(14.07);
-  const gl = sine(seg(t, 14.14, 14.89)), m = sp(t, 14.04, 0.45), bar = sine(seg(t, 15.25, 15.95));
+  const gl = sine(seg(t, 14.14, 14.89)), m = sp(t, 14.04, 0.45), bar = sine(seg(t, 15.45, 16.2));
   const b = t < 14.07 ? live.at(BTN.x, BTN.y + live.shift) : froz.at(BTN.x, BTN.y + froz.shift), bs = (t < 14.07 ? live.sT : froz.sT) / S1;
   const pose = sitePose(t), pr = project(camH1(g), { x: H1_SITE.x, y: pose.y + (23 - SITE_WIN.h / 2), z: H1_SITE.z });
   const cx = mix(mix(b.x, 960, gl), pr.x, bar), cy = mix(mix(b.y, 540, gl), pr.y, bar);
@@ -298,15 +298,15 @@ const CHIPS = [
   { text: "Fysioterapi", w: 260, x: 665, to: { x: 126, y: 482 }, hi: { x: 62, y: 464, w: 128, h: 36 }, hi2: null },
   { text: T_WHAT, w: 480, x: 1035, to: { x: 955, y: 858 }, hi: { x: 520, y: 806, w: 420, h: 100 }, hi2: { x: 970, y: 806, w: 420, h: 100 } },
 ];
-const FLY = [18.5, 18.85, 19.2], FLY_D = 0.55;
+const FLY = [18.4, 18.8, 19.2], FLY_D = 0.65;
 const SiteScene: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30, pose = sitePose(t);
   const done = t >= 20.18;
   const o = (at: number, r = 0.55) => sp(t, at, r);
   const b = {
-    frame: [soft(t, 15.2, 0.9), soft(t, 15.4, 0.9), soft(t, 15.55, 0.9), soft(t, 15.7, 0.9)],
-    h1: OUT(seg(t, 15.68, 16.4)), h2: OUT(seg(t, 15.88, 16.6)), para: soft(t, 16.08, 0.8),
-    hero: soft(t, 16.3, 1.0), cards: [soft(t, 16.75, 0.9), soft(t, 16.95, 0.9), soft(t, 17.15, 0.9)],
+    frame: [soft(t, 15.3, 0.9), soft(t, 15.5, 0.9), soft(t, 15.65, 0.9), soft(t, 15.8, 0.9)],
+    h1: soft(t, 15.55, 1.0), h2: soft(t, 15.75, 1.0), para: soft(t, 15.98, 1.0),
+    hero: soft(t, 16.3, 1.3), cards: [soft(t, 16.75, 1.0), soft(t, 17.0, 1.0), soft(t, 17.25, 1.0)],
     nav: [0, 1, 2, 3, 4, 5].map((i) => o(17.4 + 0.09 * i, 0.5)), btn: soft(t, 18.0, 0.7),
   };
   const patch = 1 - seg(t, 19.85, 20.15);
@@ -324,9 +324,9 @@ const SiteScene: React.FC<{ g: number }> = ({ g }) => {
                 <div key={`${i}-${j}`} style={{ position: "absolute", left: h.x, top: h.y, width: h.w, height: h.h, borderRadius: 10, background: "rgba(135,168,158,0.30)", boxShadow: "0 0 0 2px rgba(135,168,158,0.55)", opacity: hv }} />));
             })}
             {CHIPS.map((c, i) => {
-              const a = sp(t, 17.0 + 0.15 * i, 0.55, 0.9), p = sine(seg(t, FLY[i], FLY[i] + FLY_D));
+              const a = soft(t, 16.9 + 0.2 * i, 0.9), p = sine(seg(t, FLY[i], FLY[i] + FLY_D));
               if (a <= 0.001 || p >= 1) return null;
-              const x = mix(c.x, c.to.x, p), y = mix(SITE_WIN.h, c.to.y, p) + (1 - a) * 90;
+              const x = mix(c.x, c.to.x, p), y = mix(SITE_WIN.h, c.to.y, p) + (1 - a) * 220;
               return (
                 <div key={c.text} style={{ position: "absolute", left: x - c.w / 2, top: y - 34, width: c.w, height: 68, borderRadius: 34, background: C.white, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW}`, display: "flex", alignItems: "center", justifyContent: "center", gap: 12,
                   fontFamily: SANS, fontWeight: 500, fontSize: 34, letterSpacing: "-0.01em", color: C.ink, whiteSpace: "nowrap", opacity: sine(a * 1.6) * (1 - sine(seg(p, 0.55, 1))), transform: `scale(${(mix(0.94, 1, Math.min(1, a)) * mix(1, 0.5, p)).toFixed(4)})` }}>
@@ -347,9 +347,9 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
     <AbsoluteFill>
       {t >= 7.5 && t < 9.75 && <Lockup g={g} />}
       {t < M1 && <Hook g={g} />}
-      {t >= 8.45 && t < 15.05 && <WizardScene g={g} />}
-      {t >= 14.5 && <SiteScene g={g} />}
-      {t >= 8.45 && t < 20.12 && <Loader g={g} />}
+      {t >= 8.25 && t < 15.05 && <WizardScene g={g} />}
+      {t >= 14.65 && <SiteScene g={g} />}
+      {t >= 8.25 && t < 20.12 && <Loader g={g} />}
       {t >= 9.45 && t < 14.5 && <WizCursor g={g} />}
     </AbsoluteFill>
   );

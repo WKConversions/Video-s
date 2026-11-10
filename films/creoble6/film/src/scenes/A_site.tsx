@@ -7,7 +7,7 @@ import { HOLM, SANS, clamp01, mix } from "../lib";
 import { Ico } from "../shared";
 
 export type Build = { h1: number; h2: number; para: number; frame: number[]; hero: number; cards: number[]; nav: number[]; btn: number };
-const rise = (p: number, d = 24): React.CSSProperties => ({ opacity: clamp01(p * 1.8), transform: `translateY(${((1 - p) * d).toFixed(2)}px)` });
+const rise = (p: number, d = 24): React.CSSProperties => ({ opacity: Math.sin(clamp01(p * 1.8) * Math.PI / 2), transform: `translateY(${((1 - p) * d).toFixed(2)}px)` });
 const land = (p: number): React.CSSProperties => ({ opacity: Math.sin(clamp01(p * 2.5) * Math.PI / 2), transform: `translateY(${((1 - p) * 180).toFixed(2)}px) scale(${mix(0.88, 1, p).toFixed(4)})` });
 const frame = (p: number, gone: number, r: number): React.CSSProperties => ({ position: "absolute", inset: 0, borderRadius: r, background: "linear-gradient(90deg,#E6E1D9,#EFEBE4,#E6E1D9)", opacity: Math.sin(clamp01(p * 1.5) * Math.PI / 2) * (1 - clamp01(gone * 1.5)), transform: `translateY(${((1 - p) * 160).toFixed(2)}px)` });
 const photo = (src: string, st: React.CSSProperties = {}) => <Img src={staticFile(`img/${src}`)} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", ...st }} />;
@@ -22,13 +22,11 @@ export const SiteBuild: React.FC<{ b: Build }> = ({ b }) => (
         <div style={{ flex: 1 }} />
         {["Behandlinger", "Om os", "Priser", "Kontakt"].map((x, i) => <div key={x} style={{ marginLeft: 38, fontSize: 17, color: HOLM.muted, ...rise(b.nav[2 + i], 44) }}>{x}</div>)}
       </div>
-      {/* headline: two lines, each rising through its own mask */}
+      {/* headline: two lines, each rising into the page from well below */}
       {["Kom godt i", "bevægelse igen."].map((l, i) => { const p = i === 0 ? b.h1 : b.h2; return p > 0 && (
-        <div key={l} style={{ position: "absolute", left: 50, top: 168 + i * 76 - 12, width: 700, height: 76 + 34, overflow: "hidden" }}>
-          <div style={{ position: "absolute", left: 20, top: 12, fontSize: 76, fontWeight: 600, letterSpacing: "-0.035em", lineHeight: 1.0, whiteSpace: "nowrap", transform: `translateY(${((1 - p) * 100).toFixed(2)}px)` }}>{l}</div>
-        </div>); })}
+        <div key={l} style={{ position: "absolute", left: 70, top: 168 + i * 76, fontSize: 76, fontWeight: 600, letterSpacing: "-0.035em", lineHeight: 1.0, whiteSpace: "nowrap", ...rise(p, 260) }}>{l}</div>); })}
       <div style={{ position: "absolute", left: 70, top: 420, width: 560, height: 96 }}>
-        <div style={{ fontSize: 21, lineHeight: 1.5, color: HOLM.muted, ...rise(b.para, 60) }}>Fysioterapi og genoptræning på Frederiksberg. Vi finder årsagen og lægger en plan, der passer til dig.</div>
+        <div style={{ fontSize: 21, lineHeight: 1.5, color: HOLM.muted, ...rise(b.para, 200) }}>Fysioterapi og genoptræning på Frederiksberg. Vi finder årsagen og lægger en plan, der passer til dig.</div>
       </div>
       {/* hero photo: its frame first, then the photo lands in it */}
       <div style={{ position: "absolute", left: 760, top: 120, width: 630, height: 560 }}>
