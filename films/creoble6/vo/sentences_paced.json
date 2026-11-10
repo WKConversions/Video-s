@@ -1,353 +1,182 @@
 [
  {
   "i": 1,
-  "text": "Din nye hjemmeside er f\u00e5 minutter v\u00e6k.",
-  "start": 0.58,
-  "end": 2.622,
-  "pause_after": 0.404,
-  "first_key": "w:din",
-  "last_key": "w:vk"
+  "text": "De fleste virksomheder har en hjemmeside, de ikke er stolte af.",
+  "start": 0.4,
+  "end": 3.78,
+  "a": 0,
+  "b": 11,
+  "first_key": "w:de"
  },
  {
   "i": 2,
-  "text": "Bygget af AI.",
-  "start": 3.026,
-  "end": 4.153,
-  "pause_after": 0.516,
-  "first_key": "w:bygget",
-  "last_key": "w:ai"
+  "text": "Eller slet ingen.",
+  "start": 4.22,
+  "end": 5.18,
+  "a": 11,
+  "b": 14,
+  "first_key": "w:eller"
  },
  {
   "i": 3,
-  "text": "Fort\u00e6l kort om din virksomhed.",
-  "start": 5.869,
-  "end": 7.278,
-  "pause_after": 0.509,
-  "first_key": "w:fortl",
-  "last_key": "w:virksomhed"
+  "text": "Med Creoble fortæller du kort om din virksomhed.",
+  "start": 6.76,
+  "end": 9.2,
+  "a": 14,
+  "b": 22,
+  "first_key": "w:med"
  },
  {
   "i": 4,
-  "text": "Creoble bygger hele siden.",
-  "start": 8.987,
-  "end": 10.643,
-  "pause_after": 0.391,
-  "first_key": "w:creoble",
-  "last_key": "w:siden"
+  "text": "Navn, branche, hvad du laver og hvordan man kontakter dig.",
+  "start": 9.68,
+  "end": 12.92,
+  "a": 22,
+  "b": 32,
+  "first_key": "w:navn"
  },
  {
   "i": 5,
-  "text": "Ingen teknik.",
-  "start": 11.334,
-  "end": 11.988,
-  "pause_after": 0.3,
-  "first_key": "w:ingen",
-  "last_key": "w:teknik"
+  "text": "Så bygger Creoble siden til dig.",
+  "start": 13.76,
+  "end": 15.64,
+  "a": 32,
+  "b": 38,
+  "first_key": "w:s"
  },
  {
   "i": 6,
-  "text": "Ingen skabeloner.",
-  "start": 12.288,
-  "end": 13.087,
-  "pause_after": 0.419,
-  "first_key": "w:ingen2",
-  "last_key": "w:skabeloner"
+  "text": "Tekst, billeder og opbygning, alt sammen ud fra det du skrev.",
+  "start": 16.08,
+  "end": 19.98,
+  "a": 38,
+  "b": 49,
+  "first_key": "w:tekst"
  },
  {
   "i": 7,
-  "text": "Det bedste?",
-  "start": 14.106,
-  "end": 14.564,
-  "pause_after": 0.437,
-  "first_key": "w:det",
-  "last_key": "w:bedste"
+  "text": "Du ser hele siden før du betaler en krone.",
+  "start": 21.04,
+  "end": 23.74,
+  "a": 49,
+  "b": 58,
+  "first_key": "w:du4"
  },
  {
   "i": 8,
-  "text": "Du ser den f\u00e6rdig, f\u00f8r du betaler en krone.",
-  "start": 15.001,
-  "end": 17.375,
-  "pause_after": 0.444,
-  "first_key": "w:du",
-  "last_key": "w:krone"
+  "text": "Og vil du ændre noget, skriver du det bare.",
+  "start": 24.2,
+  "end": 25.94,
+  "a": 58,
+  "b": 67,
+  "first_key": "w:og3"
  },
  {
   "i": 9,
-  "text": "Vil du \u00e6ndre noget?",
-  "start": 18.219,
-  "end": 18.892,
-  "pause_after": 0.337,
-  "first_key": "w:vil",
-  "last_key": "w:noget"
+  "text": "Når du er tilfreds, vælger du selv.",
+  "start": 26.92,
+  "end": 28.56,
+  "a": 67,
+  "b": 74,
+  "first_key": "w:nr"
  },
  {
   "i": 10,
-  "text": "Skriv det.",
-  "start": 19.228,
-  "end": 19.656,
-  "pause_after": 0.401,
-  "first_key": "w:skriv",
-  "last_key": "w:det2"
+  "text": "Download siden én gang for alle, eller lad os sætte den online for 99 kroner om måneden.",
+  "start": 28.56,
+  "end": 34.16,
+  "a": 74,
+  "b": 91,
+  "first_key": "w:download"
  },
  {
   "i": 11,
-  "text": "Creoble retter det.",
-  "start": 20.057,
-  "end": 21.029,
-  "pause_after": 0.461,
-  "first_key": "w:creoble2",
-  "last_key": "w:det3"
+  "text": "Uden binding.",
+  "start": 34.44,
+  "end": 34.94,
+  "a": 91,
+  "b": 93,
+  "first_key": "w:uden"
  },
  {
   "i": 12,
-  "text": "Tilfreds?",
-  "start": 22.39,
-  "end": 22.891,
-  "pause_after": 0.35,
-  "first_key": "w:tilfreds",
-  "last_key": "w:tilfreds"
+  "text": "Vælger du hosting, får du dit eget dk-domæne.",
+  "start": 36.08,
+  "end": 38.7,
+  "a": 93,
+  "b": 101,
+  "first_key": "w:vlger2"
  },
  {
   "i": 13,
-  "text": "499 kroner.",
-  "start": 23.241,
-  "end": 24.774,
-  "pause_after": 0.375,
-  "first_key": "w:499",
-  "last_key": "w:kroner"
+  "text": "E-mail på domænet og siden online på europæiske servere.",
+  "start": 38.98,
+  "end": 42.4,
+  "a": 101,
+  "b": 110,
+  "first_key": "w:email"
  },
  {
   "i": 14,
-  "text": "\u00c9n gang.",
-  "start": 25.149,
-  "end": 25.535,
-  "pause_after": 0.414,
-  "first_key": "w:n",
-  "last_key": "w:gang"
+  "text": "Det hele sættes op for dig.",
+  "start": 42.72,
+  "end": 44.16,
+  "a": 110,
+  "b": 116,
+  "first_key": "w:det3"
  },
  {
   "i": 15,
-  "text": "Intet abonnement.",
-  "start": 25.95,
-  "end": 26.744,
-  "pause_after": 0.4,
-  "first_key": "w:intet",
-  "last_key": "w:abonnement"
+  "text": "Får du nye priser eller et nyt billede, skriver du det i dit panel og siden opdateres.",
+  "start": 45.22,
+  "end": 49.72,
+  "a": 116,
+  "b": 133,
+  "first_key": "w:fr3"
  },
  {
   "i": 16,
-  "text": "Siden er din.",
-  "start": 27.144,
-  "end": 27.969,
-  "pause_after": 0.475,
-  "first_key": "w:siden2",
-  "last_key": "w:din3"
+  "text": "Du rører aldrig en linje kode.",
+  "start": 50.06,
+  "end": 51.72,
+  "a": 133,
+  "b": 139,
+  "first_key": "w:du14"
  },
  {
   "i": 17,
-  "text": "Ikke tilfreds?",
-  "start": 28.744,
-  "end": 29.391,
-  "pause_after": 0.369,
-  "first_key": "w:ikke",
-  "last_key": "w:tilfreds2"
+  "text": "Du kan stoppe når som helst.",
+  "start": 52.54,
+  "end": 53.88,
+  "a": 139,
+  "b": 145,
+  "first_key": "w:du15"
  },
  {
   "i": 18,
-  "text": "S\u00e5 koster det ingenting.",
-  "start": 29.761,
-  "end": 30.727,
-  "pause_after": 0.346,
-  "first_key": "w:s",
-  "last_key": "w:ingenting"
+  "text": "Prisen er den samme hvert år.",
+  "start": 54.26,
+  "end": 55.82,
+  "a": 145,
+  "b": 151,
+  "first_key": "w:prisen"
  },
  {
   "i": 19,
-  "text": "Nul risiko.",
-  "start": 31.074,
-  "end": 31.837,
-  "pause_after": 0.448,
-  "first_key": "w:nul",
-  "last_key": "w:risiko"
+  "text": "Og skriver du til os, svarer en dansker.",
+  "start": 56.2,
+  "end": 58.24,
+  "a": 151,
+  "b": 159,
+  "first_key": "w:og6"
  },
  {
   "i": 20,
-  "text": "Skal den p\u00e5 nettet?",
-  "start": 33.185,
-  "end": 33.865,
-  "pause_after": 0.442,
-  "first_key": "w:skal",
-  "last_key": "w:nettet"
- },
- {
-  "i": 21,
-  "text": "Vi s\u00e6tter det hele op for dig.",
-  "start": 34.307,
-  "end": 35.702,
-  "pause_after": 0.283,
-  "first_key": "w:vi",
-  "last_key": "w:dig"
- },
- {
-  "i": 22,
-  "text": "Fra 83 kroner om m\u00e5neden.",
-  "start": 35.985,
-  "end": 37.565,
-  "pause_after": 0.313,
-  "first_key": "w:fra",
-  "last_key": "w:mneden"
- },
- {
-  "i": 23,
-  "text": "Dom\u00e6ne og e-mail er med.",
-  "start": 38.277,
-  "end": 39.674,
-  "pause_after": 0.3,
-  "first_key": "w:domne",
-  "last_key": "w:med"
- },
- {
-  "i": 24,
-  "text": "Fast pris.",
-  "start": 39.974,
-  "end": 40.662,
-  "pause_after": 0.335,
-  "first_key": "w:fast",
-  "last_key": "w:pris"
- },
- {
-  "i": 25,
-  "text": "Ogs\u00e5 n\u00e5r du fornyer.",
-  "start": 40.997,
-  "end": 41.753,
-  "pause_after": 0.362,
-  "first_key": "w:ogs",
-  "last_key": "w:fornyer"
- },
- {
-  "i": 26,
-  "text": "Dom\u00e6net i dit navn.",
-  "start": 42.115,
-  "end": 43.315,
-  "pause_after": 0.375,
-  "first_key": "w:domnet",
-  "last_key": "w:navn"
- },
- {
-  "i": 27,
-  "text": "Servere i Europa.",
-  "start": 43.69,
-  "end": 44.8,
-  "pause_after": 0.333,
-  "first_key": "w:servere",
-  "last_key": "w:europa"
- },
- {
-  "i": 28,
-  "text": "Ingen binding.",
-  "start": 45.133,
-  "end": 45.749,
-  "pause_after": 0.377,
-  "first_key": "w:ingen3",
-  "last_key": "w:binding"
- },
- {
-  "i": 29,
-  "text": "Brug for hj\u00e6lp?",
-  "start": 47.025,
-  "end": 47.553,
-  "pause_after": 0.392,
-  "first_key": "w:brug",
-  "last_key": "w:hjlp"
- },
- {
-  "i": 30,
-  "text": "Et menneske, der forst\u00e5r din forretning.",
-  "start": 47.946,
-  "end": 49.762,
-  "pause_after": 0.416,
-  "first_key": "w:et",
-  "last_key": "w:forretning"
- },
- {
-  "i": 31,
-  "text": "Ingen k\u00f8.",
-  "start": 50.178,
-  "end": 50.72,
-  "pause_after": 0.339,
-  "first_key": "w:ingen4",
-  "last_key": "w:k"
- },
- {
-  "i": 32,
-  "text": "Ingen robotsvar.",
-  "start": 51.059,
-  "end": 51.891,
-  "pause_after": 0.464,
-  "first_key": "w:ingen5",
-  "last_key": "w:robotsvar"
- },
- {
-  "i": 33,
-  "text": "Creoble.",
-  "start": 53.254,
-  "end": 53.823,
-  "pause_after": 0.322,
-  "first_key": "w:creoble3",
-  "last_key": "w:creoble3"
- },
- {
-  "i": 34,
-  "text": "Hjemmeside og hosting, samlet \u00e9t sted.",
-  "start": 54.145,
-  "end": 56.333,
-  "pause_after": 0.381,
-  "first_key": "w:hjemmeside2",
-  "last_key": "w:sted"
- },
- {
-  "i": 35,
-  "text": "Byg den.",
-  "start": 57.114,
-  "end": 57.507,
-  "pause_after": 0.253,
-  "first_key": "w:byg",
-  "last_key": "w:den3"
- },
- {
-  "i": 36,
-  "text": "Se den.",
-  "start": 57.76,
-  "end": 58.191,
-  "pause_after": 0.264,
-  "first_key": "w:se",
-  "last_key": "w:den4"
- },
- {
-  "i": 37,
-  "text": "S\u00e5 k\u00f8ber du.",
-  "start": 58.455,
-  "end": 59.066,
-  "pause_after": 0.441,
-  "first_key": "w:s2",
-  "last_key": "w:du5"
- },
- {
-  "i": 38,
-  "text": "Byg din side gratis p\u00e5 creoble.",
-  "start": 60.007,
-  "end": 61.98,
-  "pause_after": 0.0,
-  "first_key": "w:byg2",
-  "last_key": "w:creoble4"
- },
- {
-  "i": 39,
-  "text": "dk.",
-  "start": 61.98,
-  "end": 62.739,
-  "pause_after": 0.29,
-  "first_key": "w:dk",
-  "last_key": "w:dk"
+  "text": "Byg din side gratis på creoble.dk",
+  "start": 59.04,
+  "end": 62.38,
+  "a": 159,
+  "b": 165,
+  "first_key": "w:byg"
  }
 ]

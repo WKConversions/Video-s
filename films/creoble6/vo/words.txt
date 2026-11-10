@@ -1,0 +1,40 @@
+ 1   0.40- 3.78  De fleste virksomheder har en hjemmeside, de ikke er stolte af.
+      de 0.40  fleste 0.56  virksomheder 1.00  har 1.56  en 1.80  hjemmeside 1.96  de2 2.58  ikke 2.70  er 3.08  stolte 3.28  af 3.60
+ 2   4.22- 5.18  Eller slet ingen.
+      eller 4.22  slet 4.48  ingen 4.98
+ 3   6.76- 9.20  Med Creoble fortæller du kort om din virksomhed.
+      med 6.76  creoble 6.94  fortller 7.36  du 7.90  kort 8.06  om 8.38  din 8.54  virksomhed 8.66
+ 4   9.68-12.92  Navn, branche, hvad du laver og hvordan man kontakter dig.
+      navn 9.68  branche 10.28  hvad 10.96  du2 11.02  laver 11.12  og 11.38  hvordan 11.82  man 12.06  kontakter 12.26  dig 12.72
+ 5  13.76-15.64  Så bygger Creoble siden til dig.
+      s 13.76  bygger 14.08  creoble2 14.40  siden 14.88  til 15.26  dig2 15.50
+ 6  16.08-19.98  Tekst, billeder og opbygning, alt sammen ud fra det du skrev.
+      tekst 16.08  billeder 16.74  og2 17.02  opbygning 17.42  alt 18.44  sammen 18.60  ud 18.96  fra 19.10  det 19.28  du3 19.46  skrev 19.70
+ 7  21.04-23.74  Du ser hele siden før du betaler en krone.
+      du4 21.04  ser 21.18  hele 21.38  siden2 21.82  fr 22.20  du5 22.52  betaler 22.68  en2 23.04  krone 23.38
+ 8  24.20-25.94  Og vil du ændre noget, skriver du det bare.
+      og3 24.20  vil 24.30  du6 24.38  ndre 24.48  noget 24.76  skriver 25.36  du7 25.54  det2 25.70  bare 25.78
+ 9  26.92-28.56  Når du er tilfreds, vælger du selv.
+      nr 26.92  du8 27.04  er2 27.16  tilfreds 27.30  vlger 27.98  du9 28.14  selv 28.30
+10  28.56-34.16  Download siden én gang for alle, eller lad os sætte den online for 99 kroner om måneden.
+      download 28.56  siden3 29.26  n 29.76  gang 30.04  for 30.26  alle 30.44  eller2 30.90  lad 31.18  os 31.42  stte 31.54  den 31.74  online 31.88  for2 32.28  99 32.52  kroner 32.86  om2 33.58  mneden 33.68
+11  34.44-34.94  Uden binding.
+      uden 34.44  binding 34.68
+12  36.08-38.70  Vælger du hosting, får du dit eget dk-domæne.
+      vlger2 36.08  du10 36.30  hosting 36.46  fr2 37.20  du11 37.24  dit 37.38  eget 37.52  dkdomne 37.82
+13  38.98-42.40  E-mail på domænet og siden online på europæiske servere.
+      email 38.98  p 39.36  domnet 39.54  og4 40.04  siden4 40.26  online2 40.54  p2 41.04  europiske 41.24  servere 41.86
+14  42.72-44.16  Det hele sættes op for dig.
+      det3 42.72  hele2 42.84  sttes 43.16  op 43.60  for3 43.86  dig3 44.04
+15  45.22-49.72  Får du nye priser eller et nyt billede, skriver du det i dit panel og siden opdateres.
+      fr3 45.22  du12 45.30  nye 45.42  priser 45.62  eller3 46.06  et 46.36  nyt 46.52  billede 46.62  skriver2 47.36  du13 47.54  det4 47.72  i 47.86  dit2 47.94  panel 48.06  og5 48.34  siden5 48.70  opdateres 49.02
+16  50.06-51.72  Du rører aldrig en linje kode.
+      du14 50.06  rrer 50.20  aldrig 50.44  en3 50.98  linje 51.16  kode 51.40
+17  52.54-53.88  Du kan stoppe når som helst.
+      du15 52.54  kan 52.70  stoppe 52.78  nr2 53.14  som 53.38  helst 53.58
+18  54.26-55.82  Prisen er den samme hvert år.
+      prisen 54.26  er3 54.60  den2 54.80  samme 54.92  hvert 55.34  r 55.60
+19  56.20-58.24  Og skriver du til os, svarer en dansker.
+      og6 56.20  skriver3 56.30  du16 56.56  til2 56.70  os2 56.88  svarer 57.46  en4 57.66  dansker 57.86
+20  59.04-62.38  Byg din side gratis på creoble.dk
+      byg 59.04  din2 59.68  side 59.78  gratis 60.04  p3 60.68  creobledk 60.92

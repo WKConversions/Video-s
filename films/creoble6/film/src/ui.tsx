@@ -5,7 +5,7 @@ import React from "react";
 import { C, SANS, SERIF, SHADOW, SHADOW_BIG, OUT, INOUT, clamp01, mix } from "./lib";
 import { Browser, BAR, HolmSite, Wordmark, Ico, f } from "./shared";
 import { Spinner } from "./dots";
-import { Stage3D, Plane, cam, PERSP } from "./cam";
+import { Stage3D, Plane, cam } from "./cam";
 
 /* ---------- the wizard (creoble.dk/builder, step 1) ---------- */
 // The page is 1600 × 800 (the screenshot's proportions); in the film it sits in a Browser window (WIZ_WIN, the bar
@@ -103,10 +103,10 @@ export const SiteWindow: React.FC<{ build?: number; scroll?: number; booking?: n
 /* ---------- the hosting card ---------- */
 // Creoble's hosting for Holm: 1000 × 660. rows 0..3 shows the three rows in turn (fractional = arriving); active[i]
 // 0..1 turns row i from "Sætter op" (grey, a small turning logo) to "Aktiv" (sage, a check): Willads' "domain, mail
-// and website turning green one after another". price 0..1 shows "Fra 83 kr./md." (+ "faktureres årligt");
+// and website turning green one after another". price 0..1 shows "99 kr. /md." (+ "Uden binding");
 // press 0..1 on the black "Sæt online" button; g turns the spinners.
 export const CARD = { w: 1000, h: 660 };
-export const CARD_ROWS = [["Domæne", "holmfysio.dk"], ["E-mail", "kontakt@holmfysio.dk"], ["Hjemmeside", "Holm Fysioterapi"]];
+export const CARD_ROWS = [[".dk-domæne", "holmfysio.dk"], ["E-mail på domænet", "kontakt@holmfysio.dk"], ["Siden online", "Europæiske servere"]];
 export const CARD_R = { title: { x: 64, y: 56, w: 872, h: 110 }, rows: [0, 1, 2].map((i) => ({ x: 64, y: 186 + i * 104, w: 872, h: 104 })), price: { x: 64, y: 524, w: 872, h: 90 }, button: { x: 744, y: 540, w: 192, h: 60 } };
 export const HostingCard: React.FC<{ g?: number; rows?: number; active?: number[]; price?: number; press?: number }> = ({ g = 0, rows = 3, active = [0, 0, 0], price = 1, press = 0 }) => (
   <div style={{ position: "relative", width: CARD.w, height: CARD.h, borderRadius: 24, background: C.white, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW_BIG}`, fontFamily: SANS, color: C.ink, overflow: "hidden" }}>
@@ -130,8 +130,8 @@ export const HostingCard: React.FC<{ g?: number; rows?: number; active?: number[
     })}
     <div style={{ position: "absolute", left: 64, top: 498, width: 872, height: 1, background: C.line, opacity: OUT(clamp01(price)) }} />
     <div style={{ position: "absolute", left: 64, top: 528, opacity: OUT(clamp01(price)), transform: `translateY(${(1 - OUT(clamp01(price))) * 16}px)` }}>
-      <div style={{ fontFamily: SERIF, fontSize: 54, letterSpacing: "-0.025em", lineHeight: 1 }}>Fra 83 kr.<span style={{ fontSize: 30, color: C.muted }}> /md.</span></div>
-      <div style={{ marginTop: 10, fontSize: 16, color: C.muted }}>faktureres årligt</div>
+      <div style={{ fontFamily: SERIF, fontSize: 54, letterSpacing: "-0.025em", lineHeight: 1 }}>99 kr.<span style={{ fontSize: 30, color: C.muted }}> /md.</span></div>
+      <div style={{ marginTop: 10, fontSize: 16, color: C.muted }}>Uden binding</div>
     </div>
     <div style={{ position: "absolute", left: 744, top: 540, width: 192, height: 60, borderRadius: 12, background: C.ink, color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 19, fontWeight: 500,
       opacity: OUT(clamp01(price)), transform: `scale(${1 - 0.045 * press})` }}>Sæt online</div>
@@ -158,22 +158,22 @@ export const cursorAt = (g: number, keys: { at: string | number; x: number; y: n
 
 /* ---------- the hand-offs between builders ---------- */
 // Both builders draw the same picture inside ±0.3 s (9 g) of h1 and h2, so the cut between their files is invisible.
-// h1 (A → B): the finished site, far and soft (depth of field), drifting slowly; no type on screen.
+// h1 (A → B): the finished Holm site in its window, whole, sharp, centred, in a very slow push; nothing else on screen.
 export const HANDOFF_HALF = 9;
 export const inHandoff = (g: number, at: "h1" | "h2") => Math.abs(g - f(at)) <= HANDOFF_HALF;
-export const camH1 = (g: number) => { const t = (g - f("h1")) / 30; return cam({ x: 24 * t, y: -6 * t, z: -140 - 70 * t, ry: -1.2 * t, ap: 20 }); };
-export const H1_SITE = { x: 0, y: 0, z: -1400, ry: -8 };
+export const camH1 = (g: number) => { const t = (g - f("h1")) / 30; return cam({ z: -30 - 12 * t }); };
+export const H1_SITE = { x: 0, y: 0, z: -420, ry: 0 };       // the window shows about 1150 px wide
 export const Handoff1: React.FC<{ g: number }> = ({ g }) => (
   <Stage3D cam={camH1(g)}>
     <Plane {...H1_SITE} w={SITE_WIN.w} h={SITE_WIN.h}><SiteWindow /></Plane>
   </Stage3D>
 );
-// h2 (B → C): the hosting card, whole and sharp, three rows still setting up, the price in view; a slow dolly in.
-export const camH2 = (g: number) => { const t = (g - f("h2")) / 30; return cam({ x: 10 * t, z: -40 - 40 * t, ry: 2 - 1.5 * t, ap: 12, focus: PERSP + 60 }); };
-export const H2_CARD = { x: 0, y: 0, z: -100, ry: -3 };
+// h2 (B → C): the hosting card, whole, sharp, centred, all three rows "Aktiv", the price shown; a very slow push.
+export const camH2 = (g: number) => { const t = (g - f("h2")) / 30; return cam({ z: -30 - 12 * t }); };
+export const H2_CARD = { x: 0, y: 0, z: -60, ry: 0 };
 export const Handoff2: React.FC<{ g: number }> = ({ g }) => (
   <Stage3D cam={camH2(g)}>
-    <Plane {...H2_CARD} w={CARD.w} h={CARD.h}><HostingCard g={g} rows={3} active={[0, 0, 0]} price={1} /></Plane>
+    <Plane {...H2_CARD} w={CARD.w} h={CARD.h}><HostingCard g={g} rows={3} active={[1, 1, 1]} price={1} /></Plane>
   </Stage3D>
 );
 export { SHADOW };
