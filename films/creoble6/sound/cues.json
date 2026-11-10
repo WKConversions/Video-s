@@ -1,0 +1,447 @@
+{
+ "fps": 60,
+ "frames": 3911,
+ "library": "lib",
+ "vo": {
+  "file": "../vo/vo_paced.mp3",
+  "at": 0,
+  "compress": true
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "lufs": -31,
+  "duck_db": 5,
+  "fade_in": 0.05,
+  "fade_out": 1.5
+ },
+ "sfx": [
+  {
+   "frame": 387,
+   "id": "kenney-click-001",
+   "db": -3,
+   "pitch": 0,
+   "note": "click into Virksomhedsnavn"
+  },
+  {
+   "frame": 396,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": -2,
+   "note": "typing Holm Fysioterapi"
+  },
+  {
+   "frame": 403,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 0,
+   "note": "typing Holm Fysioterapi"
+  },
+  {
+   "frame": 410,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 2,
+   "note": "typing Holm Fysioterapi"
+  },
+  {
+   "frame": 416,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": -1,
+   "note": "typing Holm Fysioterapi"
+  },
+  {
+   "frame": 423,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 1,
+   "note": "typing Holm Fysioterapi"
+  },
+  {
+   "frame": 430,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": -2,
+   "note": "typing Holm Fysioterapi"
+  },
+  {
+   "frame": 437,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 0,
+   "note": "typing Holm Fysioterapi"
+  },
+  {
+   "frame": 444,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 2,
+   "note": "typing Holm Fysioterapi"
+  },
+  {
+   "frame": 451,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": -1,
+   "note": "typing Holm Fysioterapi"
+  },
+  {
+   "frame": 457,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 1,
+   "note": "typing Holm Fysioterapi"
+  },
+  {
+   "frame": 464,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": -2,
+   "note": "typing Holm Fysioterapi"
+  },
+  {
+   "frame": 471,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 0,
+   "note": "typing Holm Fysioterapi"
+  },
+  {
+   "frame": 510,
+   "id": "kenney-click-001",
+   "db": -1,
+   "pitch": -2,
+   "note": "Forts\u00e6t pressed"
+  },
+  {
+   "frame": 527,
+   "id": "soundreality-ui-pop-up",
+   "db": -5,
+   "pitch": 0,
+   "note": "the dot opens into the logo"
+  },
+  {
+   "frame": 654,
+   "id": "pop-up-notify-smooth-modern",
+   "db": -8,
+   "pitch": 0,
+   "note": "the site is complete"
+  },
+  {
+   "frame": 979,
+   "id": "soundreality-ui-pop-up",
+   "db": -7,
+   "pitch": 3,
+   "note": "Gratis"
+  },
+  {
+   "frame": 1121,
+   "id": "kenney-click-001",
+   "db": -3,
+   "pitch": 0,
+   "note": "the headline selected"
+  },
+  {
+   "frame": 1155,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": -2,
+   "note": "typing the change"
+  },
+  {
+   "frame": 1160,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 0,
+   "note": "typing the change"
+  },
+  {
+   "frame": 1166,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 2,
+   "note": "typing the change"
+  },
+  {
+   "frame": 1171,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": -1,
+   "note": "typing the change"
+  },
+  {
+   "frame": 1176,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 1,
+   "note": "typing the change"
+  },
+  {
+   "frame": 1181,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": -2,
+   "note": "typing the change"
+  },
+  {
+   "frame": 1186,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 0,
+   "note": "typing the change"
+  },
+  {
+   "frame": 1192,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 2,
+   "note": "typing the change"
+  },
+  {
+   "frame": 1197,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": -1,
+   "note": "typing the change"
+  },
+  {
+   "frame": 1200,
+   "id": "kenney-click-001",
+   "db": -4,
+   "pitch": 2,
+   "note": "send"
+  },
+  {
+   "frame": 1242,
+   "id": "kenney-glass-001",
+   "db": -11,
+   "pitch": 0,
+   "note": "the headline rewritten"
+  },
+  {
+   "frame": 1812,
+   "id": "kenney-tick-004",
+   "db": -13,
+   "pitch": 0,
+   "note": "499 rolls to 0"
+  },
+  {
+   "frame": 2022,
+   "id": "pop-up-notify-smooth-modern",
+   "db": -7,
+   "pitch": -2,
+   "note": "the address pill becomes the card"
+  },
+  {
+   "frame": 2069,
+   "id": "kenney-tick-004",
+   "db": -11,
+   "pitch": 0,
+   "note": "a row arrives"
+  },
+  {
+   "frame": 2095,
+   "id": "kenney-tick-004",
+   "db": -11,
+   "pitch": 2,
+   "note": "a row arrives"
+  },
+  {
+   "frame": 2112,
+   "id": "kenney-tick-004",
+   "db": -11,
+   "pitch": 4,
+   "note": "a row arrives"
+  },
+  {
+   "frame": 2160,
+   "id": "soundreality-ui-pop-up",
+   "db": -7,
+   "pitch": -2,
+   "note": "the price"
+  },
+  {
+   "frame": 2297,
+   "id": "kenney-glass-001",
+   "db": -7,
+   "pitch": 0,
+   "note": "a row turns green"
+  },
+  {
+   "frame": 2340,
+   "id": "kenney-glass-001",
+   "db": -7,
+   "pitch": 2,
+   "note": "a row turns green"
+  },
+  {
+   "frame": 2372,
+   "id": "kenney-glass-001",
+   "db": -7,
+   "pitch": 4,
+   "note": "a row turns green"
+  },
+  {
+   "frame": 2527,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 0,
+   "note": "a pill"
+  },
+  {
+   "frame": 2621,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 2,
+   "note": "a pill"
+  },
+  {
+   "frame": 2708,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 4,
+   "note": "a pill"
+  },
+  {
+   "frame": 2880,
+   "id": "kenney-click-001",
+   "db": -3,
+   "pitch": 0,
+   "note": "the chat button"
+  },
+  {
+   "frame": 2892,
+   "id": "pop-up-notify-smooth-modern",
+   "db": -7,
+   "pitch": 0,
+   "note": "the chat opens"
+  },
+  {
+   "frame": 2928,
+   "id": "kenney-select-001",
+   "db": -13,
+   "pitch": -2,
+   "note": "her reply types"
+  },
+  {
+   "frame": 2935,
+   "id": "kenney-select-001",
+   "db": -13,
+   "pitch": 0,
+   "note": "her reply types"
+  },
+  {
+   "frame": 2942,
+   "id": "kenney-select-001",
+   "db": -13,
+   "pitch": 2,
+   "note": "her reply types"
+  },
+  {
+   "frame": 2948,
+   "id": "kenney-select-001",
+   "db": -13,
+   "pitch": -1,
+   "note": "her reply types"
+  },
+  {
+   "frame": 2955,
+   "id": "kenney-select-001",
+   "db": -13,
+   "pitch": 1,
+   "note": "her reply types"
+  },
+  {
+   "frame": 2962,
+   "id": "kenney-select-001",
+   "db": -13,
+   "pitch": -2,
+   "note": "her reply types"
+  },
+  {
+   "frame": 2968,
+   "id": "kenney-select-001",
+   "db": -13,
+   "pitch": 0,
+   "note": "her reply types"
+  },
+  {
+   "frame": 2975,
+   "id": "kenney-select-001",
+   "db": -13,
+   "pitch": 2,
+   "note": "her reply types"
+  },
+  {
+   "frame": 2982,
+   "id": "kenney-select-001",
+   "db": -13,
+   "pitch": -1,
+   "note": "her reply types"
+  },
+  {
+   "frame": 3195,
+   "id": "kenney-drop-003",
+   "db": -2,
+   "pitch": 0,
+   "note": "the dots land: the C"
+  },
+  {
+   "frame": 3207,
+   "id": "soundreality-ui-pop-up-clear",
+   "db": -11,
+   "pitch": 0,
+   "note": "the wordmark"
+  },
+  {
+   "frame": 3603,
+   "id": "soundreality-ui-pop-up",
+   "db": -6,
+   "pitch": 0,
+   "note": "Byg din side gratis"
+  },
+  {
+   "frame": 3684,
+   "id": "kenney-select-001",
+   "db": -13,
+   "pitch": -2,
+   "note": "creoble.dk types"
+  },
+  {
+   "frame": 3691,
+   "id": "kenney-select-001",
+   "db": -13,
+   "pitch": 0,
+   "note": "creoble.dk types"
+  },
+  {
+   "frame": 3697,
+   "id": "kenney-select-001",
+   "db": -13,
+   "pitch": 2,
+   "note": "creoble.dk types"
+  },
+  {
+   "frame": 3704,
+   "id": "kenney-select-001",
+   "db": -13,
+   "pitch": -1,
+   "note": "creoble.dk types"
+  },
+  {
+   "frame": 3710,
+   "id": "kenney-select-001",
+   "db": -13,
+   "pitch": 1,
+   "note": "creoble.dk types"
+  },
+  {
+   "frame": 3717,
+   "id": "kenney-select-001",
+   "db": -13,
+   "pitch": -2,
+   "note": "creoble.dk types"
+  }
+ ]
+}

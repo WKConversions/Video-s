@@ -1,0 +1,278 @@
+[
+ {
+  "id": "kenney-click-001",
+  "file": "sfx/tap/kenney-click-001.wav",
+  "category": "tap",
+  "character": "crisp mouse click: the cursor in the portal",
+  "licence": "cc0",
+  "sync": 0.0,
+  "length": 0.097,
+  "source": "Kenney Interface Sounds 1.0 (kenney.nl), CC0"
+ },
+ {
+  "id": "kenney-select-001",
+  "file": "sfx/tap/kenney-select-001.wav",
+  "category": "tap",
+  "character": "soft short blip, a little brighter: a row lighting up",
+  "licence": "cc0",
+  "sync": 0.0,
+  "length": 0.04,
+  "source": "Kenney Interface Sounds 1.0 (kenney.nl), CC0"
+ },
+ {
+  "id": "kenney-tick-004",
+  "file": "sfx/ticker/kenney-tick-004.wav",
+  "category": "ticker",
+  "character": "soft light tick: one step of a cascade",
+  "licence": "cc0",
+  "sync": 0.045,
+  "length": 0.055,
+  "source": "Kenney Interface Sounds 1.0 (kenney.nl), CC0"
+ },
+ {
+  "id": "kenney-drop-003",
+  "file": "sfx/pop/kenney-drop-003.wav",
+  "category": "pop",
+  "character": "warm low bloop: a place, a pin, a tile landing",
+  "licence": "cc0",
+  "sync": 0.0,
+  "length": 0.188,
+  "source": "Kenney Interface Sounds 1.0 (kenney.nl), CC0"
+ },
+ {
+  "id": "kenney-glass-001",
+  "file": "sfx/chime/kenney-glass-001.wav",
+  "category": "chime",
+  "character": "glassy ping",
+  "licence": "cc0",
+  "sync": 0.0,
+  "transients": [],
+  "length": 0.275,
+  "decay": 0.09,
+  "lufs": -19.5,
+  "brightness_hz": 1914,
+  "pitch_move_semitones": 0.4,
+  "hits": 1,
+  "original": [
+   "kenney-glass-001.ogg"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.4,
+    "warm": 0.6,
+    "premium": 0.27,
+    "playful": 0.32,
+    "subtle": 0.72,
+    "organic": 0.83
+   },
+   "style": {
+    "corporate-tech": 0.96,
+    "calm-premium": -0.37,
+    "playful-social": -0.05,
+    "energetic-startup": 0.97,
+    "cinematic": 0.01,
+    "friendly-human": 0.77,
+    "data-ai": -0.16,
+    "retro-game": 0.74
+   },
+   "heard_as": [
+    "a synth blip",
+    "a glass ping",
+    "a falling sweep"
+   ]
+  }
+ },
+ {
+  "id": "ui-typing",
+  "file": "sfx/ticker/ui-typing.wav",
+  "category": "ticker",
+  "character": "typing, soft and low",
+  "licence": "karl",
+  "sync": 0.54,
+  "transients": [
+   0.085,
+   0.115,
+   0.245,
+   0.32,
+   0.54,
+   0.54,
+   0.68,
+   0.735,
+   0.735,
+   1.02,
+   1.14,
+   1.535
+  ],
+  "length": 2.08,
+  "decay": 0.54,
+  "lufs": -15.8,
+  "brightness_hz": 141,
+  "pitch_move_semitones": 0.0,
+  "hits": 16,
+  "original": [
+   "Ui Sound Effects/Ui Typing.wma"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.72,
+    "warm": 0.95,
+    "premium": 0.49,
+    "playful": 0.52,
+    "subtle": 0.06,
+    "organic": 0.77
+   },
+   "style": {
+    "corporate-tech": -2.0,
+    "calm-premium": -0.04,
+    "playful-social": 0.22,
+    "energetic-startup": 1.1,
+    "cinematic": 2.09,
+    "friendly-human": -0.98,
+    "data-ai": 0.06,
+    "retro-game": -0.05
+   },
+   "heard_as": [
+    "a laser",
+    "a deep impact",
+    "a stamp"
+   ]
+  }
+ },
+ {
+  "id": "soundreality-ui-pop-up",
+  "file": "sfx/pop/soundreality-ui-pop-up.wav",
+  "category": "pop",
+  "character": "soft, low",
+  "licence": "pixabay",
+  "sync": 0.045,
+  "transients": [
+   0.045
+  ],
+  "length": 0.2,
+  "decay": 0.035,
+  "lufs": -17.9,
+  "brightness_hz": 713,
+  "pitch_move_semitones": -7.0,
+  "hits": 1,
+  "original": [
+   "Pop/soundreality-ui-pop-up-243471.mp3"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.66,
+    "warm": 0.56,
+    "premium": 0.8,
+    "playful": 0.77,
+    "subtle": 0.79,
+    "organic": 0.55
+   },
+   "style": {
+    "corporate-tech": 1.09,
+    "calm-premium": 0.56,
+    "playful-social": 1.42,
+    "energetic-startup": 0.35,
+    "cinematic": -0.45,
+    "friendly-human": 1.11,
+    "data-ai": -0.41,
+    "retro-game": -0.71
+   },
+   "heard_as": [
+    "a water drop",
+    "a bubbly pop",
+    "a synth blip"
+   ]
+  }
+ },
+ {
+  "id": "pop-up-notify-smooth-modern",
+  "file": "sfx/appear-rise/pop-up-notify-smooth-modern.wav",
+  "category": "appear-rise",
+  "character": "smooth, modern",
+  "licence": "pixabay",
+  "sync": 0.03,
+  "transients": [
+   0.03
+  ],
+  "length": 0.465,
+  "decay": 0.17,
+  "lufs": -21.5,
+  "brightness_hz": 848,
+  "pitch_move_semitones": 5.8,
+  "hits": 1,
+  "original": [
+   "Click/36505577-pop-up-notify-smooth-modern-332448.mp3",
+   "Notification/36505577-pop-up-notify-smooth-modern-332448.mp3",
+   "Open/36505577-pop-up-notify-smooth-modern-332448.mp3"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.54,
+    "warm": 0.1,
+    "premium": 0.42,
+    "playful": 0.16,
+    "subtle": 0.17,
+    "organic": 0.45
+   },
+   "style": {
+    "corporate-tech": 1.74,
+    "calm-premium": 1.49,
+    "playful-social": 0.14,
+    "energetic-startup": 1.63,
+    "cinematic": 1.69,
+    "friendly-human": 1.07,
+    "data-ai": 0.69,
+    "retro-game": 1.12
+   },
+   "heard_as": [
+    "a positive confirmation",
+    "a notification chime",
+    "a pluck"
+   ]
+  }
+ },
+ {
+  "id": "soundreality-ui-pop-up-clear",
+  "file": "sfx/pop/soundreality-ui-pop-up-clear.wav",
+  "category": "pop",
+  "character": "clear, rising",
+  "licence": "pixabay",
+  "sync": 0.075,
+  "transients": [
+   0.075
+  ],
+  "length": 0.605,
+  "decay": 0.045,
+  "lufs": -15.2,
+  "brightness_hz": 1044,
+  "pitch_move_semitones": 10.4,
+  "hits": 1,
+  "original": [
+   "Pop/soundreality-ui-pop-up-clear-391155.mp3"
+  ],
+  "heard": {
+   "tone": {
+    "soft": 0.29,
+    "warm": 0.3,
+    "premium": 0.94,
+    "playful": 0.72,
+    "subtle": 0.13,
+    "organic": 0.43
+   },
+   "style": {
+    "corporate-tech": 1.16,
+    "calm-premium": 1.66,
+    "playful-social": 1.07,
+    "energetic-startup": 1.37,
+    "cinematic": 0.14,
+    "friendly-human": 0.63,
+    "data-ai": -0.29,
+    "retro-game": -0.6
+   },
+   "heard_as": [
+    "a bubbly pop",
+    "a water drop",
+    "a switch toggle"
+   ]
+  }
+ }
+]
