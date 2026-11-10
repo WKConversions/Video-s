@@ -6,6 +6,6 @@ const pg = await b.newPage(); pg.on("console", (m) => console.log("page:", m.tex
 await pg.goto("http://localhost:8123/page.html"); await pg.waitForFunction("window.ready === true", null, { timeout: 60000 });
 console.log(JSON.stringify(await pg.evaluate("window.info")));
 fs.mkdirSync("out", { recursive: true });
-const A = [-40, -30, -20, -10, 0, 10, 20, 30, 40];
+const A = Array.from({ length: 17 }, (_, i) => -40 + 5 * i);
 for (const rx of A) for (const ry of A) { const u = await pg.evaluate(([x, y]) => window.shot(x, y), [rx, ry]); fs.writeFileSync(`out/h_${rx}_${ry}.png`, Buffer.from(u.split(",")[1], "base64")); }
 await b.close(); srv.close(); console.log("done");

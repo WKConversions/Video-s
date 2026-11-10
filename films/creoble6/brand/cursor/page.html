@@ -4,10 +4,11 @@
 import * as THREE from "three"; import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 const S = 320; const r = new THREE.WebGLRenderer({ alpha: true, antialias: true, preserveDrawingBuffer: true }); r.setSize(S, S); r.setPixelRatio(2); r.setClearColor(0, 0);
 r.outputColorSpace = THREE.SRGBColorSpace; document.body.appendChild(r.domElement);
-const scene = new THREE.Scene(); const cam = new THREE.PerspectiveCamera(22, 1, 0.1, 100); cam.position.set(0, 0, 9);
+const scene = new THREE.Scene(); const cam = new THREE.PerspectiveCamera(34, 1, 0.1, 100); cam.position.set(0, 0, 5.8);
 scene.add(new THREE.AmbientLight(0xffffff, 1.5)); const d = new THREE.DirectionalLight(0xffffff, 2.2); d.position.set(-2, 3, 5); scene.add(d);
 const g = await new GLTFLoader().loadAsync("./cursor.glb"); const obj = g.scene; const box = new THREE.Box3().setFromObject(obj); const size = box.getSize(new THREE.Vector3()), c = box.getCenter(new THREE.Vector3());
-obj.position.sub(c); const pivot = new THREE.Group(); pivot.add(obj); pivot.scale.setScalar(2.6 / Math.max(size.x, size.y)); scene.add(pivot);
+// the pivot is the BOTTOM of the hand (the wrist): tilting swings the fingertip in depth, the wrist stays put
+obj.position.sub(c); obj.position.y += size.y / 2; const pivot = new THREE.Group(); pivot.add(obj); const k = 2.6 / Math.max(size.x, size.y); pivot.scale.setScalar(k); pivot.position.y = -size.y / 2 * k; scene.add(pivot);
 window.info = { size: size.toArray(), center: c.toArray() };
 window.shot = (rx, ry) => { pivot.rotation.set(rx * Math.PI / 180, ry * Math.PI / 180, 0); r.render(scene, cam); return r.domElement.toDataURL("image/png"); };
 window.ready = true;
