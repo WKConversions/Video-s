@@ -7,11 +7,14 @@
 // before `at` by default) and rests on the target with a slow float, leans into its direction of travel (the 3D
 // tilt comes from its speed), and clicks at `at`: a deep 3D push of the FINGERTIP into the screen: the hand is anchored at its bottom (the
 // wrist) and the finger swings away from the viewer by up to 40°, so the tip goes deepest; a slight squash and
-// turn come with it and the shadow closes, then a loose, wobbling release that swells past its size. x, y are SCREEN px of the fingertip.
+// turn come with it and the shadow closes, then a loose, wobbling release that swells past its size. x, y are SCREEN px of the TARGET: for a click key the
+// fingertip is exactly there at the deepest point of the click (before it, the finger hovers just short of it and
+// swings in); for a key without a click the resting fingertip is there.
 import React from "react";
 import { Img, staticFile } from "remotion";
 import { clamp01 } from "./lib";
 import { f } from "./shared";
+import TIPS from "./handTips.json";
 
 const STEPS = Array.from({ length: 17 }, (_, i) => -40 + 5 * i);   // 5° apart, so blending two poses never shows a double edge
 const TIP = { x: 0.39, y: 0.135 };        // the top of the index finger inside the square sprite (measured on h_0_0.png): the click point
@@ -37,6 +40,25 @@ export const Hand: React.FC<{ x: number; y: number; tiltX?: number; tiltY?: numb
   );
 };
 
+// tipOf: where the top of the index finger is inside the sprite box for a pose (fractions of the box), measured on
+// every rendered pose (handTips.json) and blended like the sprites.
+const tipOf = (tiltX: number, tiltY: number) => {
+  const cl = (v: number) => Math.max(-40, Math.min(40, v)), ax = cl(tiltX) / 5 + 8, ay = cl(tiltY) / 5 + 8;
+  const i0 = Math.min(15, Math.floor(ax)), j0 = Math.min(15, Math.floor(ay)), u = ax - i0, v = ay - j0;
+  const at = (i: number, j: number) => (TIPS as Record<string, number[]>)[`${STEPS[i]}_${STEPS[j]}`];
+  const a = at(i0, j0), b = at(i0 + 1, j0), c = at(i0, j0 + 1), d = at(i0 + 1, j0 + 1), m = (k: number) => (a[k] * (1 - u) + b[k] * u) * (1 - v) + (c[k] * (1 - u) + d[k] * u) * v;
+  return { x: m(0), y: m(1) };
+};
+// The click's deepest pose (press = 1), as handAt builds it: the finger swung 40° into the screen about the wrist.
+const PRESS = { tiltX: -40, tiltY: -10, rot: -9, dy: 4 };
+// pressShift: how far (fractions of the box) the fingertip travels from the rest pose to the deepest point of the
+// click, the wrist staying where it is. A click target is approached with the fingertip hovering this far short of
+// it, so that AT THE DEEPEST POINT OF THE CLICK THE FINGERTIP IS EXACTLY ON THE TARGET (Karl).
+const pressShift = (() => {
+  const r = tipOf(0, 0), p = tipOf(PRESS.tiltX, PRESS.tiltY), sc = 1 - 0.12, sy = sc * (1 - 0.08), a = (PRESS.rot * Math.PI) / 180;
+  const vx = (p.x - WRIST.x) * sc, vy = (p.y - WRIST.y) * sy;
+  return { x: vx * Math.cos(a) - vy * Math.sin(a) - (r.x - WRIST.x), y: vx * Math.sin(a) + vy * Math.cos(a) - (r.y - WRIST.y) };
+})();
 export type HandKey = { at: string | number; x: number; y: number; click?: boolean; early?: number; dur?: number };
 // a spring 0..1 (damping 0.5 by default: a clear bounce that settles in two swings)
 const spring = (t: number, response: number, damping = 0.5) => {
@@ -44,7 +66,9 @@ const spring = (t: number, response: number, damping = 0.5) => {
   const w0 = (2 * Math.PI) / response, wd = w0 * Math.sqrt(1 - damping * damping);
   return 1 - Math.exp(-damping * w0 * t) * (Math.cos(wd * t) + ((damping * w0) / wd) * Math.sin(wd * t));
 };
-const posAt = (g: number, keys: HandKey[]) => {
+const posAt = (g: number, keysIn: HandKey[], size: number) => {
+  // a click target is held with the fingertip hovering short of it by the press travel (see pressShift)
+  const keys = keysIn.map((kk) => (kk.click ? { ...kk, x: kk.x - pressShift.x * size, y: kk.y - pressShift.y * size - PRESS.dy } : kk));
   let x = keys[0].x, y = keys[0].y;
   for (let i = 1; i < keys.length; i++) {
     const kk = keys[i], dur = kk.dur ?? 0.95, early = kk.early ?? 0.55;
@@ -69,13 +93,14 @@ const clickAt = (g: number, keys: HandKey[]) => {
 };
 // handAt: the cursor's state at g. opts.float = idle bob in px (default 3).
 export const handAt = (g: number, keys: HandKey[], opts: { float?: number; size?: number } = {}) => {
-  const p = posAt(g, keys), a = posAt(g - 1.5, keys), b = posAt(g + 1.5, keys);
+  const size = opts.size ?? 150;
+  const p = posAt(g, keys, size), a = posAt(g - 1.5, keys, size), b = posAt(g + 1.5, keys, size);
   const vx = ((b.x - a.x) / 3) * 30, vy = ((b.y - a.y) / 3) * 30;           // px per second, smoothed over 0.1 s
-  const press = clickAt(g, keys), fl = opts.float ?? 3, t = g / 30;
+  const press = clickAt(g, keys), q = 1 - Math.min(1, Math.abs(press)), fl = (opts.float ?? 3) * q, t = g / 30;
   const lean = (v: number) => Math.max(-36, Math.min(36, v / 30));
   return {
-    x: p.x + fl * 0.6 * Math.sin(t * 1.7), y: p.y + fl * Math.sin(t * 2.3 + 1) + 4 * press,
-    tiltY: lean(vx) + 4 * Math.sin(t * 1.1) - 10 * press, tiltX: -lean(vy) * 0.6 - 40 * press + 3 * Math.sin(t * 1.4 + 0.6),
-    rot: Math.max(-26, Math.min(26, vx / 55 + vy / 140)) - 9 * press, press, size: opts.size ?? 150,
+    x: p.x + fl * 0.6 * Math.sin(t * 1.7), y: p.y + fl * Math.sin(t * 2.3 + 1) + PRESS.dy * press,
+    tiltY: lean(vx) + 4 * q * Math.sin(t * 1.1) + PRESS.tiltY * press, tiltX: -lean(vy) * 0.6 + PRESS.tiltX * press + 3 * q * Math.sin(t * 1.4 + 0.6),
+    rot: Math.max(-26, Math.min(26, vx / 55 + vy / 140)) + PRESS.rot * press, press, size,
   };
 };
