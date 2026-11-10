@@ -1,0 +1,392 @@
+{
+ "fps": 60,
+ "frames": 2460,
+ "library": "../../alumni/sound/lib",
+ "vo": {
+  "file": "../vo/vo.mp3",
+  "at": 0
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "duck_db": 5,
+  "fade_in": 0.3,
+  "fade_out": 2.0
+ },
+ "sfx": [
+  {
+   "id": "gen-whoosh-short",
+   "frame": 73,
+   "note": "her circle slides in",
+   "db": -7
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 88,
+   "note": "his circle slides in",
+   "db": -7,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tap",
+   "frame": 115,
+   "note": "the minds meet",
+   "db": -3
+  },
+  {
+   "id": "gen-pop",
+   "frame": 190,
+   "note": "ideas spark",
+   "db": -3
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 191,
+   "note": "the spark",
+   "db": -9
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 273,
+   "note": "the circles become one card",
+   "db": -5
+  },
+  {
+   "id": "gen-swell",
+   "frame": 298,
+   "note": "perspectives shift",
+   "db": -9
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 369,
+   "note": "the card becomes a circle",
+   "db": -7
+  },
+  {
+   "id": "kenney-maximize-009",
+   "frame": 375,
+   "note": "possibilities open",
+   "db": -4
+  },
+  {
+   "id": "kenney-select-001",
+   "frame": 415,
+   "note": "a shape changes",
+   "db": -4
+  },
+  {
+   "id": "kenney-select-001",
+   "frame": 421,
+   "note": "a shape changes",
+   "db": -4,
+   "pitch": 3
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 455,
+   "note": "they take one shape",
+   "db": -6
+  },
+  {
+   "id": "gen-appear",
+   "frame": 465,
+   "note": "the M\u00e1laga arch",
+   "db": -4
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 513,
+   "note": "the arch steps aside",
+   "db": -6
+  },
+  {
+   "id": "gen-chime",
+   "frame": 510,
+   "note": "the unicorn",
+   "db": -6
+  },
+  {
+   "id": "gen-tick",
+   "frame": 532,
+   "note": "Unicorn",
+   "db": -4
+  },
+  {
+   "id": "gen-tick",
+   "frame": 557,
+   "note": "Founders",
+   "db": -4,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 586,
+   "note": "Malaga",
+   "db": -4,
+   "pitch": 4
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 654,
+   "note": "founders",
+   "db": -6
+  },
+  {
+   "id": "gen-pop",
+   "frame": 698,
+   "note": "builders",
+   "db": -4
+  },
+  {
+   "id": "gen-pop",
+   "frame": 746,
+   "note": "investors",
+   "db": -4,
+   "pitch": 2
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 789,
+   "note": "they come together",
+   "db": -5
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 813,
+   "note": "together",
+   "db": -8
+  },
+  {
+   "id": "kenney-click-001",
+   "frame": 858,
+   "note": "the group splits in two",
+   "db": -4
+  },
+  {
+   "id": "gen-whoosh-whip",
+   "frame": 892,
+   "note": "stories swap",
+   "db": -5
+  },
+  {
+   "id": "kenney-drop-003",
+   "frame": 923,
+   "note": "a challenge",
+   "db": -5
+  },
+  {
+   "id": "kenney-drop-003",
+   "frame": 928,
+   "note": "a challenge",
+   "db": -5,
+   "pitch": 2
+  },
+  {
+   "id": "kenney-drop-003",
+   "frame": 934,
+   "note": "a challenge",
+   "db": -5,
+   "pitch": 4
+  },
+  {
+   "id": "gen-tap",
+   "frame": 943,
+   "note": "navigating a challenge",
+   "db": -3
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 1020,
+   "note": "the stories rise into the row",
+   "db": -7
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1037,
+   "note": "people",
+   "db": -5
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1042,
+   "note": "people",
+   "db": -5,
+   "pitch": 2
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1046,
+   "note": "people",
+   "db": -5,
+   "pitch": 4
+  },
+  {
+   "id": "gen-appear",
+   "frame": 1078,
+   "note": "ambition",
+   "db": -4
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 1122,
+   "note": "letters move",
+   "db": -8
+  },
+  {
+   "id": "gen-tap",
+   "frame": 1144,
+   "note": "action",
+   "db": -3
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 1183,
+   "note": "into one conversation",
+   "db": -6
+  },
+  {
+   "id": "kenney-select-002",
+   "frame": 1260,
+   "note": "it becomes two",
+   "db": -3
+  },
+  {
+   "id": "gen-pop",
+   "frame": 1307,
+   "note": "a connection",
+   "db": -3
+  },
+  {
+   "id": "gen-chime",
+   "frame": 1317,
+   "note": "the ring closes",
+   "db": -7
+  },
+  {
+   "id": "gen-whoosh-medium",
+   "frame": 1410,
+   "note": "into a collaboration",
+   "db": -5
+  },
+  {
+   "id": "gen-appear",
+   "frame": 1441,
+   "note": "a collaboration",
+   "db": -5
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 1531,
+   "note": "the card becomes the first node",
+   "db": -6
+  },
+  {
+   "id": "gen-tick",
+   "frame": 1550,
+   "note": "node 1",
+   "db": -3
+  },
+  {
+   "id": "gen-tick",
+   "frame": 1574,
+   "note": "node 2",
+   "db": -3,
+   "pitch": 2
+  },
+  {
+   "id": "gen-tick",
+   "frame": 1600,
+   "note": "node 3",
+   "db": -3,
+   "pitch": 4
+  },
+  {
+   "id": "gen-tick",
+   "frame": 1626,
+   "note": "node 4",
+   "db": -3,
+   "pitch": 6
+  },
+  {
+   "id": "gen-success",
+   "frame": 1656,
+   "note": "$1B",
+   "db": -3
+  },
+  {
+   "id": "kenney-maximize-009",
+   "frame": 1714,
+   "note": "different industries",
+   "db": -4
+  },
+  {
+   "id": "kenney-maximize-009",
+   "frame": 1796,
+   "note": "fresh perspectives",
+   "db": -4,
+   "pitch": 2
+  },
+  {
+   "id": "kenney-maximize-009",
+   "frame": 1870,
+   "note": "shared ambition",
+   "db": -4,
+   "pitch": 4
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 1971,
+   "note": "the pill becomes the globe",
+   "db": -5
+  },
+  {
+   "id": "gen-chime",
+   "frame": 2030,
+   "note": "M\u00e1laga",
+   "db": -4
+  },
+  {
+   "id": "gen-shimmer",
+   "frame": 2032,
+   "note": "the pin",
+   "db": -10
+  },
+  {
+   "id": "gen-whoosh-deep",
+   "frame": 2103,
+   "note": "into M\u00e1laga",
+   "db": -6
+  },
+  {
+   "id": "gen-appear",
+   "frame": 2232,
+   "note": "hello",
+   "db": -5
+  },
+  {
+   "id": "gen-whoosh-short",
+   "frame": 2286,
+   "note": "the photo becomes the seat",
+   "db": -6
+  },
+  {
+   "id": "gen-impact-soft",
+   "frame": 2295,
+   "note": "the logo",
+   "db": -7
+  },
+  {
+   "id": "gen-tap",
+   "frame": 2325,
+   "note": "apply for a seat",
+   "db": -1
+  },
+  {
+   "id": "gen-success",
+   "frame": 2329,
+   "note": "the seat",
+   "db": -6
+  }
+ ]
+}
