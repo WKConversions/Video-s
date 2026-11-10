@@ -30,6 +30,12 @@ golden-hour photos travel in frames that change shape on the words:
   one-line unicorn;
 - `films/fuf-brand`: the points-and-lines network, the business-card fan and the dashed reach.
 
+## Delivered
+- `deliver/ufm-41s-1080sq-60fps.mp4`: the film.
+  - 1080×1080, 60 fps, 41.0 s, H.264 BT.709 TV range (converted from the full-range render), CRF 17.
+  - AAC 48 kHz, -15.3 LUFS integrated, true peak -1.4 dBFS.
+- `deliver/ufm-preview-540p.mp4`: the approved 540p preview.
+
 ## Files
 - **Voice-over:** `vo/` holds the ElevenLabs file, `whisper_words.json` and `words.json` (script-aligned word starts,
   also in `film/src/words.json`).
