@@ -17,9 +17,9 @@ const KEYS: HandKey[] = [
 ];
 const LABELS: [number, string][] = [[0.4, "Naar rechts"], [2.5, "Naar links"], [4.5, "Omhoog"], [6.3, "Omlaag"], [8.1, "Schuin"], [10.4, "Vroeg aankomen, rusten, klikken"], [13.0, "Nog een klik"], [14.2, "Naar een knop glijden, rusten, klikken"]];
 export const HandLab: React.FC = () => {
-  const g = useCurrentFrame() / 2, t = g / 30, h = handAt(g, KEYS);
+  const g = useCurrentFrame() / 2, t = g / 30, h = handAt(g, KEYS, { size: 230 });
   const label = [...LABELS].reverse().find(([a]) => t >= a)?.[1] ?? "";
-  const pr = (at: number) => { const d = t - at; return d < 0 ? 0 : d < 0.1 ? d / 0.1 : d < 0.2 ? 1 : Math.max(0, 1 - (d - 0.2) / 0.35); };
+  const pr = (at: number) => { const d = t - at; return d < 0 ? 0 : d < 0.1 ? d / 0.1 : d < 0.2 ? 1 : Math.exp(-(d - 0.2) * 7) * Math.cos((d - 0.2) * 16); };
   const b1 = Math.max(pr(12.2), pr(13.4)), b2 = pr(16.2);
   return (
     <AbsoluteFill style={{ background: C.bg, fontFamily: SANS }}>
