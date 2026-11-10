@@ -115,119 +115,140 @@
    "note": "Forts\u00e6t pressed"
   },
   {
-   "frame": 527,
+   "frame": 546,
    "id": "soundreality-ui-pop-up",
    "db": -5,
    "pitch": 0,
    "note": "the dot opens into the logo"
   },
   {
-   "frame": 654,
+   "frame": 666,
    "id": "pop-up-notify-smooth-modern",
    "db": -8,
    "pitch": 0,
    "note": "the site is complete"
   },
   {
-   "frame": 979,
+   "frame": 1044,
    "id": "soundreality-ui-pop-up",
    "db": -7,
    "pitch": 3,
    "note": "Gratis"
   },
   {
-   "frame": 1121,
+   "frame": 1140,
    "id": "kenney-click-001",
    "db": -3,
    "pitch": 0,
    "note": "the headline selected"
   },
   {
-   "frame": 1155,
+   "frame": 1164,
    "id": "kenney-select-001",
    "db": -11,
    "pitch": -2,
    "note": "typing the change"
   },
   {
-   "frame": 1160,
+   "frame": 1170,
    "id": "kenney-select-001",
    "db": -11,
    "pitch": 0,
-   "note": "typing the change"
-  },
-  {
-   "frame": 1166,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": 2,
-   "note": "typing the change"
-  },
-  {
-   "frame": 1171,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": -1,
    "note": "typing the change"
   },
   {
    "frame": 1176,
    "id": "kenney-select-001",
    "db": -11,
-   "pitch": 1,
-   "note": "typing the change"
-  },
-  {
-   "frame": 1181,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": -2,
-   "note": "typing the change"
-  },
-  {
-   "frame": 1186,
-   "id": "kenney-select-001",
-   "db": -11,
-   "pitch": 0,
-   "note": "typing the change"
-  },
-  {
-   "frame": 1192,
-   "id": "kenney-select-001",
-   "db": -11,
    "pitch": 2,
    "note": "typing the change"
   },
   {
-   "frame": 1197,
+   "frame": 1182,
    "id": "kenney-select-001",
    "db": -11,
    "pitch": -1,
    "note": "typing the change"
   },
   {
+   "frame": 1188,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 1,
+   "note": "typing the change"
+  },
+  {
+   "frame": 1194,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": -2,
+   "note": "typing the change"
+  },
+  {
    "frame": 1200,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 0,
+   "note": "typing the change"
+  },
+  {
+   "frame": 1206,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": 2,
+   "note": "typing the change"
+  },
+  {
+   "frame": 1212,
+   "id": "kenney-select-001",
+   "db": -11,
+   "pitch": -1,
+   "note": "typing the change"
+  },
+  {
+   "frame": 1218,
    "id": "kenney-click-001",
    "db": -4,
    "pitch": 2,
    "note": "send"
   },
   {
-   "frame": 1242,
+   "frame": 1260,
    "id": "kenney-glass-001",
    "db": -11,
    "pitch": 0,
    "note": "the headline rewritten"
   },
   {
-   "frame": 1812,
+   "frame": 1509,
+   "id": "kenney-glass-001",
+   "db": -9,
+   "pitch": 0,
+   "note": "a row ticks on the purchase card"
+  },
+  {
+   "frame": 1557,
+   "id": "kenney-glass-001",
+   "db": -9,
+   "pitch": 2,
+   "note": "a row ticks on the purchase card"
+  },
+  {
+   "frame": 1628,
+   "id": "kenney-glass-001",
+   "db": -9,
+   "pitch": 4,
+   "note": "a row ticks on the purchase card"
+  },
+  {
+   "frame": 1800,
    "id": "kenney-tick-004",
    "db": -13,
    "pitch": 0,
    "note": "499 rolls to 0"
   },
   {
-   "frame": 2022,
+   "frame": 2034,
    "id": "pop-up-notify-smooth-modern",
    "db": -7,
    "pitch": -2,
@@ -309,6 +330,27 @@
    "db": -3,
    "pitch": 0,
    "note": "the chat button"
+  },
+  {
+   "frame": 3129,
+   "id": "kenney-click-001",
+   "db": -3,
+   "pitch": 0,
+   "note": "the send button"
+  },
+  {
+   "frame": 2398,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 0,
+   "note": "a price row"
+  },
+  {
+   "frame": 2484,
+   "id": "kenney-tick-004",
+   "db": -9,
+   "pitch": 2,
+   "note": "a price row"
   },
   {
    "frame": 2892,
