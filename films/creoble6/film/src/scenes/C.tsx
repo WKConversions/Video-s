@@ -84,7 +84,7 @@ const Courier: React.FC<{ t: number; at: number; a: { x: number; y: number }; b:
 const C1: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30;
   // afterwards (C2): both settle small under the type line, then sink as the plan card rises
-  const m = sm(t, 49.4, 1.9), sink = sn(t, 52.1, 0.85);
+  const m = sm(t, 49.3, 1.6), sink = sn(t, 52.1, 0.85);
   const mini = (cx: number, tx: number) => `translate(${((tx - cx) * m).toFixed(2)}px, ${((MINI_Y - 540) * m + sink * 170).toFixed(2)}px) scale(${(mix(1, MINI, m) * (1 - 0.1 * sink)).toFixed(4)})`;
   // the hosting card becomes the panel
   const cq = gl(t, 44.95, 1.15), toX = (960 - (PANEL.x + PANEL.w / 2)) * (1 - cq);
@@ -204,7 +204,7 @@ const C2: React.FC<{ g: number }> = ({ g }) => {
     <Group s={push(t, 50.0, 53.5, 0.94)}>
       <div style={{ position: "absolute", left: 960, top: 450, opacity: 1 - off, transform: `translateY(${(-285 * up - 70 * off).toFixed(2)}px) scale(${mix(1, 0.5, up).toFixed(4)})` }}>
         <Line t={t} size={TYPE.hero} items={[
-          { t: "Aldrig", at: 50.1, dur: 0.85, out: 99 }, { t: "en", at: 50.58, dur: 0.8, out: 99 },
+          { t: "Aldrig", at: 50.2, dur: 0.8, out: 99 }, { t: "en", at: 50.58, dur: 0.8, out: 99 },
           { t: "linje", at: 50.8, dur: 0.85, out: 99 }, { t: "kode.", at: 51.0, dur: 0.95, accent: true, out: 99 },
         ]} />
       </div>
