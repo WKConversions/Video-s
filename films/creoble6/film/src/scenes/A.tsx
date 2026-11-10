@@ -73,7 +73,7 @@ const fanDots = (size: number, cx: number, cy: number, spin: number, ro: number,
 };
 
 /* ================= Hook: 0 – 6.95 ================= */
-const SIZE = 76, SLOT0 = 300, SLOT1 = 1100, PUSH0 = 4.5, PUSH1 = 6.0, M0 = 6.75, M1 = 7.8;
+const SIZE = 82, SLOT0 = 300, SLOT1 = 1100, PUSH0 = 4.5, PUSH1 = 6.0, M0 = 6.75, M1 = 7.8;
 const LOGO_S = 180;                                   // the lockup's C
 const LOCK = { cx: 796.2, cy: 543.9, wmX: 875, wmH: 66 };
 const lockSpin = (t: number) => { const u = 1 - seg(t, 7.55, 8.95); return -150 * u * u; };   // the dots turn slowly into the C's rest pose

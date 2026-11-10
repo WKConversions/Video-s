@@ -23,7 +23,7 @@ export const EVENTS: { t: number; kind: "click" | "type" | "check" | "pop" | "op
   { t: 25.55, kind: "click", note: "B2 cursor presses send" },
   { t: 25.6, kind: "send", note: "B2 the edit is sent" },
   { t: 25.9, kind: "pop", note: "B2 the headline swaps to the new one (soft)" },
-  { t: 27.15, kind: "open", len: 1.55, note: "B3 the site shrinks into the thumbnail card (soft, long)" },
+  { t: 27.2, kind: "open", len: 1.5, note: "B3 the site shrinks into the thumbnail card (soft, long)" },
   { t: 28.5, kind: "pop", len: 1.1, note: "B4 the card splits in two (the copy slides right)" },
   { t: 29.15, kind: "click", note: "B4 the download button presses; the thumbnail packs into the file row" },
   { t: 29.85, kind: "logo", len: 0.75, note: "B4 the download bar fills (soft rising tone)" },
@@ -56,6 +56,7 @@ const wp = (tRef: number, sx: number, sy: number, S: number): Pose => { const p 
 const lp = (a: Pose, b: Pose, m: number): Pose => ({ x: mix(a.x, b.x, m), y: mix(a.y, b.y, m), s: mix(a.s, b.s, m) });
 const sine = (x: number) => 0.5 - 0.5 * Math.cos(Math.PI * clamp01(x));
 const smoother = (x: number) => { const u = clamp01(x); return u * u * u * (u * (6 * u - 15) + 10); };
+const septic = (x: number) => { const u = clamp01(x); return u * u * u * u * (35 - 84 * u + 70 * u * u - 20 * u * u * u); };   // the softest start, for the largest surface
 const lin = (t: number, a: number, d: number) => clamp01((t - a) / d);
 const arrive = (p: number, dy = 26, from = 0.95): React.CSSProperties => ({ opacity: clamp01(p * 1.5), transform: `translateY(${((1 - p) * dy).toFixed(2)}px) scale(${mix(from, 1, p).toFixed(4)})` });
 
@@ -193,12 +194,12 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30, c = cam({ z: cz(t) }), p = pz(ZS, t), pH = pz(ZH, t);
 
   // the site: h1 pose → whole page (B1) → close on the hero, a slow push (B2) → the thumbnail in the card (B3)
-  const m1 = sine(lin(t, 20.84, 1.86)), m2 = smoother(lin(t, 22.85, 1.9)), m3 = smoother(lin(t, 27.1, 1.6)), m4 = sine(lin(t, 28.5, 1.15));
+  const m1 = sine(lin(t, 20.84, 1.86)), m2 = smoother(lin(t, 22.85, 1.9)), m3 = septic(lin(t, 26.95, 1.8)), m4 = sine(lin(t, 28.5, 1.15));
   const S2 = mix(1.3, 1.42, sine((t - 24.4) / 2.85)), P2 = wp(25.5, 575 + (SW / 2 - 358) * S2, 503 + (SH / 2 - 341) * S2, S2);   // the headline + field held at (575, 503)
   const h = SH + (HT - SH) * m1 * (1 - m2);
   const site = lp(lp(lp(lp(P0, P1, m1), P2, m2), P3, m3), P4L, m4);
   const hlOn = t > 25.7, q1 = sine(lin(t, 25.75, 0.26)), a1 = aspring(g, 25.87, 0.5), a2 = aspring(g, 25.97, 0.5);
-  const small = t >= 28.7, sq = t < 22.85 ? 1 : site.s * p > 0.9 ? 1.6 : 0.72;
+  const small = t >= 28.75, sq = t < 22.85 ? 1 : site.s * p > 0.9 ? 1.6 : 0.72;
 
   // the cards: the one stepping back dims, shrinks and sinks a little
   const pc = sine(lin(t, 27.75, 0.75)), grow = mix(0.9, 1, pc);

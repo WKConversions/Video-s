@@ -1,7 +1,8 @@
 {
  "fps": 60,
- "frames": 3911,
- "library": "lib",
+ "frames": 3912,
+ "library": "lib-karl",
+ "allow_apple": true,
  "vo": {
   "file": "../vo/vo_paced.mp3",
   "at": 0,
@@ -10,130 +11,606 @@
  "music": {
   "file": "bed.wav",
   "at": 0,
-  "lufs": -31,
-  "duck_db": 5,
+  "lufs": -27,
+  "duck_db": 6,
   "fade_in": 0.05,
-  "fade_out": 1.5
+  "fade_out": 1.2
  },
  "sfx": [
   {
-   "frame": 387,
-   "id": "kenney-click-001",
+   "frame": 9,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "three more old sites slide up behind the first, one after another (soft)"
+  },
+  {
+   "frame": 270,
+   "id": "ui-open",
    "db": -5,
-   "pitch": -3,
+   "pitch": 0,
+   "note": "the hook's push: the old window grows and pushes the line out to the right (soft swell)"
+  },
+  {
+   "frame": 303,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "the old site's rows drop away, top to bottom (six soft ticks)"
+  },
+  {
+   "frame": 345,
+   "id": "double-bubble-pop",
+   "db": -9,
+   "pitch": 0,
+   "note": "'Siden kan ikke findes' lands (dull error tone, not a chime)"
+  },
+  {
+   "frame": 390,
+   "id": "ui-beatbox-click-01",
+   "db": -3,
+   "pitch": 0,
+   "note": "'Opdater' is pressed once; nothing happens (dry old click)"
+  },
+  {
+   "frame": 411,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "the window shrinks into the dot"
+  },
+  {
+   "frame": 456,
+   "id": "ui-button",
+   "db": -12,
+   "pitch": 0,
+   "note": "the dot opens into the six dots, turning; the wordmark slides out"
+  },
+  {
+   "frame": 534,
+   "id": "ui-open",
+   "db": -5,
+   "pitch": 0,
+   "note": "the wizard window rises from below"
+  },
+  {
+   "frame": 588,
+   "id": "ui-beatbox-click-01",
+   "db": -3,
+   "pitch": 0,
    "note": "click into Virksomhedsnavn"
   },
   {
-   "frame": 397,
-   "id": "ui-typing-13",
-   "db": -6,
+   "frame": 592,
+   "id": "typing-00",
+   "db": 4,
    "pitch": 0,
-   "note": "typing Holm Fysioterapi"
+   "note": "types 'Holm Fysioterapi'"
   },
   {
-   "frame": 510,
-   "id": "kenney-click-001",
-   "db": -5,
-   "pitch": -3,
-   "note": "Forts\u00e6t pressed"
-  },
-  {
-   "frame": 1140,
-   "id": "kenney-click-001",
-   "db": -5,
-   "pitch": -3,
-   "note": "the headline selected"
-  },
-  {
-   "frame": 1164,
-   "id": "ui-typing-09",
-   "db": -6,
+   "frame": 643,
+   "id": "ui-beatbox-click-01",
+   "db": -3,
    "pitch": 0,
-   "note": "typing the change"
+   "note": "click on Branche, the menu opens"
   },
   {
-   "frame": 1218,
-   "id": "kenney-click-001",
+   "frame": 665,
+   "id": "ui-beatbox-click-01",
+   "db": -3,
+   "pitch": 0,
+   "note": "picks 'Fysioterapi', the menu closes"
+  },
+  {
+   "frame": 672,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "the field 'Hvad laver du?' eases in, the fields below make room"
+  },
+  {
+   "frame": 681,
+   "id": "typing-01",
+   "db": 4,
+   "pitch": 0,
+   "note": "types 'Genoptr\u00e6ning og massage'"
+  },
+  {
+   "frame": 733,
+   "id": "ui-beatbox-click-01",
+   "db": -3,
+   "pitch": 0,
+   "note": "click into E-mail"
+  },
+  {
+   "frame": 737,
+   "id": "typing-02",
+   "db": 4,
+   "pitch": 0,
+   "note": "types 'kontakt@holmfysio.dk'"
+  },
+  {
+   "frame": 787,
+   "id": "ui-beatbox-click-01",
+   "db": -3,
+   "pitch": 0,
+   "note": "click into Telefon"
+  },
+  {
+   "frame": 790,
+   "id": "typing-03",
+   "db": 4,
+   "pitch": 0,
+   "note": "types '+45 31 42 53 64'"
+  },
+  {
+   "frame": 835,
+   "id": "send-2",
+   "db": -12,
+   "pitch": 0,
+   "note": "press on 'Forts\u00e6t'; the button contracts into a dot"
+  },
+  {
+   "frame": 870,
+   "id": "ui-button",
+   "db": -12,
+   "pitch": 0,
+   "note": "the dot opens into the turning logo (loader)"
+  },
+  {
+   "frame": 876,
+   "id": "ui-open",
    "db": -5,
-   "pitch": -3,
-   "note": "send"
+   "pitch": 0,
+   "note": "the empty site window rises under the loader"
   },
   {
-   "frame": 1509,
-   "id": "kenney-glass-001",
-   "db": -9,
-   "pitch": -5,
-   "note": "a check on the purchase card"
+   "frame": 924,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "the photo frames slide into the empty page (very soft)"
   },
   {
-   "frame": 1557,
-   "id": "kenney-glass-001",
-   "db": -9,
-   "pitch": -3,
-   "note": "a check on the purchase card"
+   "frame": 951,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "headline and text rise in"
   },
   {
-   "frame": 1628,
-   "id": "kenney-glass-001",
-   "db": -9,
-   "pitch": -1,
-   "note": "a check on the purchase card"
+   "frame": 990,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "the hero photo lands"
   },
   {
-   "frame": 2297,
-   "id": "kenney-glass-001",
-   "db": -9,
-   "pitch": -5,
-   "note": "a row turns green"
+   "frame": 1002,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "three service photos slide in, left to right"
   },
   {
-   "frame": 2340,
-   "id": "kenney-glass-001",
-   "db": -9,
-   "pitch": -3,
-   "note": "a row turns green"
+   "frame": 1026,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "three answer chips rise in"
   },
   {
-   "frame": 2372,
-   "id": "kenney-glass-001",
-   "db": -9,
-   "pitch": -1,
-   "note": "a row turns green"
+   "frame": 1047,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "navigation slides into the layout, left to right; the button at 18.1"
   },
   {
-   "frame": 2880,
-   "id": "kenney-click-001",
-   "db": -5,
-   "pitch": -3,
-   "note": "the chat button"
-  },
-  {
-   "frame": 2928,
-   "id": "ui-typing-09",
+   "frame": 1141,
+   "id": "double-bubble-pop",
    "db": -9,
    "pitch": 0,
-   "note": "her reply types"
+   "note": "chip 'Holm Fysioterapi' lands in the navigation"
   },
   {
-   "frame": 3129,
-   "id": "kenney-click-001",
-   "db": -5,
-   "pitch": -3,
-   "note": "the send button"
-  },
-  {
-   "frame": 3195,
-   "id": "kenney-drop-003",
-   "db": -4,
-   "pitch": 0,
-   "note": "the dots land: the C"
-  },
-  {
-   "frame": 3684,
-   "id": "ui-typing-06",
+   "frame": 1162,
+   "id": "double-bubble-pop",
    "db": -9,
+   "pitch": 0,
+   "note": "chip 'Fysioterapi' lands in the text"
+  },
+  {
+   "frame": 1183,
+   "id": "double-bubble-pop",
+   "db": -9,
+   "pitch": 0,
+   "note": "chip 'Genoptr\u00e6ning og massage' lands in the service cards; the loader finishes"
+  },
+  {
+   "frame": 1251,
+   "id": "ui-open",
+   "db": -5,
+   "pitch": 0,
+   "note": "B1 the window grows to the whole page (soft, long)"
+  },
+  {
+   "frame": 1332,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "B1 chip 'Gratis forh\u00e5ndsvisning' lands on the window's top edge"
+  },
+  {
+   "frame": 1374,
+   "id": "ui-open",
+   "db": -5,
+   "pitch": 0,
+   "note": "B2 the window comes back and close on the hero (soft, long)"
+  },
+  {
+   "frame": 1452,
+   "id": "ui-beatbox-click-01",
+   "db": -3,
+   "pitch": 0,
+   "note": "B2 cursor clicks the headline"
+  },
+  {
+   "frame": 1461,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "B2 the edit field grows out of the headline"
+  },
+  {
+   "frame": 1473,
+   "id": "typing-04",
+   "db": 4,
+   "pitch": 0,
+   "note": "B2 typing 'G\u00f8r overskriften mere personlig'"
+  },
+  {
+   "frame": 1533,
+   "id": "ui-beatbox-click-01",
+   "db": -3,
+   "pitch": 0,
+   "note": "B2 cursor presses send"
+  },
+  {
+   "frame": 1536,
+   "id": "send-2",
+   "db": -12,
+   "pitch": 0,
+   "note": "B2 the edit is sent"
+  },
+  {
+   "frame": 1554,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "B2 the headline swaps to the new one (soft)"
+  },
+  {
+   "frame": 1632,
+   "id": "ui-open",
+   "db": -5,
+   "pitch": 0,
+   "note": "B3 the site shrinks into the thumbnail card (soft, long)"
+  },
+  {
+   "frame": 1710,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "B4 the card splits in two (the copy slides right)"
+  },
+  {
+   "frame": 1749,
+   "id": "ui-beatbox-click-01",
+   "db": -3,
+   "pitch": 0,
+   "note": "B4 the download button presses; the thumbnail packs into the file row"
+  },
+  {
+   "frame": 1791,
+   "id": "ui-button",
+   "db": -12,
+   "pitch": 0,
+   "note": "B4 the download bar fills (soft rising tone)"
+  },
+  {
+   "frame": 1837,
+   "id": "double-bubble-pop",
+   "db": -9,
+   "pitch": 0,
+   "note": "B4 download done"
+  },
+  {
+   "frame": 1848,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "B4 the Online card steps forward"
+  },
+  {
+   "frame": 1878,
+   "id": "typing-05",
+   "db": 4,
+   "pitch": 0,
+   "note": "B4 the address types holmfysio.dk"
+  },
+  {
+   "frame": 1929,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "B4 'Live' comes on (small)"
+  },
+  {
+   "frame": 1944,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "B4 the price 99 rolls up"
+  },
+  {
+   "frame": 2077,
+   "id": "double-bubble-pop",
+   "db": -9,
+   "pitch": 0,
+   "note": "B5 'Uden binding' ticks in"
+  },
+  {
+   "frame": 2163,
+   "id": "ui-beatbox-click-01",
+   "db": -3,
+   "pitch": 0,
+   "note": "B6 cursor clicks the Online card"
+  },
+  {
+   "frame": 2172,
+   "id": "ui-open",
+   "db": -5,
+   "pitch": 0,
+   "note": "B6 the card grows into the hosting card"
+  },
+  {
+   "frame": 2238,
+   "id": "typing-06",
+   "db": 4,
+   "pitch": 0,
+   "note": "B6 row 1 types holmfysio.dk"
+  },
+  {
+   "frame": 2277,
+   "id": "double-bubble-pop",
+   "db": -9,
+   "pitch": 0,
+   "note": "B6 row 1 .dk-dom\u00e6ne turns green"
+  },
+  {
+   "frame": 2319,
+   "id": "typing-07",
+   "db": 4,
+   "pitch": 0,
+   "note": "B6 row 2 types kontakt@holmfysio.dk"
+  },
+  {
+   "frame": 2376,
+   "id": "double-bubble-pop",
+   "db": -9,
+   "pitch": 0,
+   "note": "B6 row 2 e-mail turns green"
+  },
+  {
+   "frame": 2418,
+   "id": "typing-08",
+   "db": 4,
+   "pitch": 0,
+   "note": "B6 row 3 types Europ\u00e6iske servere"
+  },
+  {
+   "frame": 2502,
+   "id": "double-bubble-pop",
+   "db": -9,
+   "pitch": 0,
+   "note": "B6 row 3 siden online turns green"
+  },
+  {
+   "frame": 2565,
+   "id": "ui-button",
+   "db": -12,
+   "pitch": 0,
+   "note": "B7 the three checks pulse in turn (three soft notes, 0.2 s apart); the price row rises"
+  },
+  {
+   "frame": 2700,
+   "id": "ui-open",
+   "db": -5,
+   "pitch": 0,
+   "note": "hosting card becomes the panel; the live site rises"
+  },
+  {
+   "frame": 2745,
+   "id": "typing-09",
+   "db": 4,
+   "pitch": 0,
+   "note": "panel field: Massage: 450 kr."
+  },
+  {
+   "frame": 2802,
+   "id": "send-2",
+   "db": -12,
+   "pitch": 0,
+   "note": "sage dot travels panel to site"
+  },
+  {
+   "frame": 2829,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "site: Massage price swaps to 450 kr."
+  },
+  {
+   "frame": 2838,
+   "id": "ui-open",
+   "db": -5,
+   "pitch": 0,
+   "note": "site page scrolls up to the hero"
+  },
+  {
+   "frame": 2850,
+   "id": "ui-beatbox-click-01",
+   "db": -3,
+   "pitch": 0,
+   "note": "photo dropped on the panel"
+  },
+  {
+   "frame": 2874,
+   "id": "send-2",
+   "db": -12,
+   "pitch": 0,
+   "note": "sage dot travels panel to site"
+  },
+  {
+   "frame": 2904,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "site: hero photo changes"
+  },
+  {
+   "frame": 2934,
+   "id": "double-bubble-pop",
+   "db": -9,
+   "pitch": 0,
+   "note": "Opdateret chip lands on the site window"
+  },
+  {
+   "frame": 2982,
+   "id": "ui-open",
+   "db": -5,
+   "pitch": 0,
+   "note": "panel and site settle small; type line begins"
+  },
+  {
+   "frame": 3138,
+   "id": "ui-open",
+   "db": -5,
+   "pitch": 0,
+   "note": "type line glides up; plan card rises"
+  },
+  {
+   "frame": 3169,
+   "id": "double-bubble-pop",
+   "db": -9,
+   "pitch": 0,
+   "note": "row: Stop n\u00e5r som helst"
+  },
+  {
+   "frame": 3255,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "\u00c5r 1"
+  },
+  {
+   "frame": 3291,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "\u00c5r 2"
+  },
+  {
+   "frame": 3321,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "\u00c5r 3"
+  },
+  {
+   "frame": 3378,
+   "id": "ui-open",
+   "db": -5,
+   "pitch": 0,
+   "note": "plan card leaves upward; chat panel rises"
+  },
+  {
+   "frame": 3411,
+   "id": "send-2",
+   "db": -12,
+   "pitch": 0,
+   "note": "customer bubble: Kan I hj\u00e6lpe med min e-mail?"
+  },
+  {
+   "frame": 3420,
+   "id": "typing-10",
+   "db": 4,
+   "pitch": 0,
+   "note": "Sofie's reply types"
+  },
+  {
+   "frame": 3468,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "chip: Dansk support"
+  },
+  {
+   "frame": 3498,
+   "id": "ui-beatbox-click-01",
+   "db": -3,
+   "pitch": 0,
+   "note": "send button pressed; turns sage"
+  },
+  {
+   "frame": 3516,
+   "id": "send-2",
+   "db": -12,
+   "pitch": 0,
+   "note": "the dot leaves the panel and glides to the centre"
+  },
+  {
+   "frame": 3540,
+   "id": "ui-button",
+   "db": -12,
+   "pitch": 0,
+   "note": "the six dots unfurl into the C"
+  },
+  {
+   "frame": 3567,
+   "id": "ui-open",
+   "db": -5,
+   "pitch": 0,
+   "note": "wordmark slides out beside the C"
+  },
+  {
+   "frame": 3602,
+   "id": "pop",
+   "db": -13,
+   "pitch": 0,
+   "note": "button: Byg din side gratis"
+  },
+  {
+   "frame": 3654,
+   "id": "typing-11",
+   "db": 4,
    "pitch": 0,
    "note": "creoble.dk types"
+  },
+  {
+   "frame": 3756,
+   "id": "ui-beatbox-click-01",
+   "db": -3,
+   "pitch": 0,
+   "note": "the button is pressed; the dots turn once"
+  },
+  {
+   "frame": 3558,
+   "id": "mac-startup",
+   "db": -14,
+   "pitch": 0,
+   "note": "the logo: Mac start-up chord, low"
   }
  ]
 }

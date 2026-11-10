@@ -1,30 +1,36 @@
-# Cue sheet for Creoble v6. Willads: "soft UI sounds (quiet keyboard ticks, a soft click, a gentle tone on checkmarks);
-# less is more; calm minimal music, low in the mix." Real recorded sounds only (Karl: no generated whooshes), in sound/lib (Kenney CC0 and
-# Pixabay UI sounds, copied from the alumni and recruiting-rewards libraries; Karl's Motionix pack is not on this machine). Music: Mixkit "Piano Reflections" (free licence, no credit), fitted to 65.18 s with an entry on the build
-# (8.99 s): bed.wav, regenerable with music_fit.py (see README). Film time = paced VO time (vo/pace.py).
+# Cue sheet for Creoble v6 (contract 2). Karl (10 Nov): "more Apple-style heavy sounds", from his own folder (lib-karl,
+# built with sfx_build.py from his zip; gitignored). Every cue comes from the EVENTS list each scene exports
+# (film/src/scenes/A|B|C.tsx), so the sound follows the picture. Music: Karl's track, fitted with music_fit.py
+# (bed.wav, gitignored). Voice: vo/vo_paced.mp3.
 # python3 make_cues.py && python3 <skill>/library/scripts/sound_mix.py cues.json ../film/public/audio/mix.wav --sheet mix.png
-import json
-fx = []
-GAIN = 8   # soft, but audible over the bed (house style: effects lead)
-def a(t, i, db, pitch=0, note=""): fx.append({"frame": round(t * 60), "id": i, "db": db + GAIN, "pitch": pitch, "note": note})
-
-# Willads' list, and nothing else ("less is more"): quiet keyboard ticks (Karl's own soft typing recording), a soft
-# click on each real click, a gentle glass tone on each checkmark, and one soft landing for the logo.
-def typing(t, n, db=-14, note="typing"): a(t, {13: "ui-typing-13", 9: "ui-typing-09", 6: "ui-typing-06"}[n], db, 0, note)
-def click(t, note, db=-13): a(t, "kenney-click-001", db, -3, note)
-def tone(t, i, note, db=-17): a(t, "kenney-glass-001", db, -5 + 2 * i, note)
-# A
-click(6.45, "click into Virksomhedsnavn"); typing(6.62, 13, note="typing Holm Fysioterapi"); click(8.5, "Fortsæt pressed")
-# B
-click(19.0, "the headline selected"); typing(19.4, 9, note="typing the change"); click(20.3, "send")
-for i, t in enumerate([25.15, 25.95, 27.14]): tone(t, i, "a check on the purchase card")
-# C
-for i, t in enumerate([38.28, 39.00, 39.54]): tone(t, i, "a row turns green")
-click(48.0, "the chat button"); typing(48.8, 9, -17, "her reply types"); click(52.15, "the send button")
-a(53.25, "kenney-drop-003", -12, 0, "the dots land: the C")
-typing(61.4, 6, -17, "creoble.dk types")
-json.dump({"fps": 60, "frames": 3911, "library": "lib",
+import json, re, subprocess, copy, os
+LIB = "lib-karl"; idx = json.load(open(f"{LIB}/sfx/index.json")); by = {x["id"]: x for x in idx}
+ev = []
+for s in "ABC":
+    src = open(f"../film/src/scenes/{s}.tsx").read(); m = re.search(r"export const EVENTS[^=]*=\s*\[(.*?)\n\];", src, re.S)
+    for t, kind, rest in re.findall(r"\{\s*t:\s*([\d.]+),\s*kind:\s*\"(\w+)\"([^}]*)\}", m.group(1) if m else ""):
+        ln = re.search(r"len:\s*([\d.]+)", rest); note = re.search(r"note:\s*\"([^\"]*)\"", rest)
+        ev.append((float(t), kind, float(ln.group(1)) if ln else 0, note.group(1) if note else ""))
+ev.sort()
+def typing_clip(n, length):          # a stretch of Karl's iPhone keyboard recording, cut to the typing run
+    i = f"typing-{n:02d}"; out = f"{LIB}/sfx/ticker/{i}.wav"; os.makedirs(os.path.dirname(out), exist_ok=True)
+    src = os.path.join(LIB, by["iphone-texting"]["file"]); d = max(0.3, length)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(2.0 + 1.7 * n), "-i", src, "-t", str(d), "-af", f"afade=t=in:d=0.02,afade=t=out:st={d - 0.06}:d=0.06", out], check=True)
+    e = copy.deepcopy(by["iphone-texting"]); e.update(id=i, file=f"sfx/ticker/{i}.wav", length=d, sync=0.0, transients=[]); return e
+SOUND = {"click": ("ui-beatbox-click-01", -3), "pop": ("pop", -13), "open": ("ui-open", -5), "send": ("send-2", -12), "check": ("double-bubble-pop", -9), "logo": ("ui-button", -12)}
+fx, extra, n = [], [], 0
+last = {}
+for t, kind, ln, note in ev:
+    if kind == "type":
+        e = typing_clip(n, ln); extra.append(e); fx.append({"frame": round(t * 60), "id": e["id"], "db": 4, "pitch": 0, "note": note}); n += 1; continue
+    if kind not in SOUND or t - last.get(kind, -9) < 0.12: continue
+    last[kind] = t; i, db = SOUND[kind]
+    fx.append({"frame": round(t * 60), "id": i, "db": db, "pitch": 0, "note": note})
+end_logo = max([t for t, k, _, _ in ev if k == "logo"] or [60])
+fx.append({"frame": round((end_logo + 0.3) * 60), "id": "mac-startup", "db": -14, "pitch": 0, "note": "the logo: Mac start-up chord, low"})
+json.dump([x for x in idx if not x["id"].startswith("typing-")] + extra, open(f"{LIB}/sfx/index.json", "w"), indent=1)
+json.dump({"fps": 60, "frames": 3912, "library": LIB, "allow_apple": True,
            "vo": {"file": "../vo/vo_paced.mp3", "at": 0, "compress": True},
-           "music": {"file": "bed.wav", "at": 0, "lufs": -31, "duck_db": 5, "fade_in": 0.05, "fade_out": 1.5},
+           "music": {"file": "bed.wav", "at": 0, "lufs": -27, "duck_db": 6, "fade_in": 0.05, "fade_out": 1.2},
            "sfx": fx}, open("cues.json", "w"), indent=1)
-print(len(fx), "cues")
+print(len(ev), "events ->", len(fx), "cues")
