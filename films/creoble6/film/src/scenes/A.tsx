@@ -93,8 +93,8 @@ const KEYS: Key[] = [
   { t: 8.55, c: lookW(905, 600, 2.4) },                                // down-right to Fortsæt
   { t: 9.55, c: look(MARK, S, 1.3, 20, 0, -6) },                       // the button's spot: the spinner
   { t: 10.6, c: look(SITE, siteQ(730, 453), 0.96, 20, 0, -5) },        // along the progress line to the window
-  { t: 11.5, c: a10(0.34, 400, -300, -8) },                            // the site small, upper right, clear of the line
-  { t: 12.6, c: a10(0.38, 340, -265, -7.4) },                          // drifting slowly back
+  { t: 11.5, c: a10(0.6, 0, -60, -7) },                                // the site back and soft, in the upper part of the frame                            // the site small, upper right, clear of the line
+  { t: 13.17, c: camH1(13.17 * 30) },                                  // home early: a soft landing before the hand-off
   { t: T_END, c: camH1(f("h1") - HANDOFF_HALF) },                      // exactly the hand-off pose
 ];
 const CAMP: (keyof Cam)[] = ["x", "y", "z", "rx", "ry", "rz", "focus", "ap"];
@@ -116,6 +116,14 @@ const sceneCam = (g: number): Cam => {
   const c = cam();
   CAMP.forEach((p, j) => { c[p] = (2 * u3 - 3 * u2 + 1) * KEYS[i].c[p] + (u3 - 2 * u2 + u) * h * SLOPES[j][i] + (-2 * u3 + 3 * u2) * KEYS[i + 1].c[p] + (u3 - u2) * h * SLOPES[j][i + 1]; });
   return c;
+};
+
+// softClock: Kinetic's words start at full speed (its OUT curve). For a line on a quiet ground that reads as a
+// snap, so the line's clock eases in for 0.2 s at each word's start (u²(2 − u): from standstill back to normal
+// speed, no lag left behind).
+const softClock = (g: number, starts: string[], w = 6) => {
+  for (const a of starts.map((x) => f(x))) if (g > a && g < a + w) { const u = (g - a) / w; return a + w * u * u * (2 - u); }
+  return g;
 };
 
 /* ---------- the opening line's layout (the same slot maths as Kinetic, to know where its inline window sits) ---------- */
@@ -177,7 +185,11 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
   const head = mix(130, RAIL_W - 16, seg(t, T_LINE, 10.32));
   const tail = mix(130, L + 16, seg(t, 9.85, 10.62));
   const unfold = seg(t, 9.8, 11.0, COS);
-  const build = clamp01((t - 10.3) / 1.3);
+  // the site's blocks each start at full speed (the kit's OUT curve); ease each block's start in the same way
+  const b7 = clamp01((t - 10.3) / 1.3) * 7;
+  let b7s = b7;
+  for (const a of [0, 1, 2, 3, 4, 5, 5.6, 6.2]) if (b7 > a && b7 < a + 0.4) { const u = (b7 - a) / 0.4; b7s = a + 0.4 * u * u * (2 - u); }
+  const build = b7s / 7;
   const lineO = 1 - seg(t, 10.95, 11.4);
 
   /* the cursor (screen space, on page points) */
@@ -212,7 +224,7 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
         })()}
         {/* A4: "Bygget af AI." */}
         {t > 2.9 && t < 5.7 && (
-          <Plane {...H(0, 0, Z_LINE2)} w={2} h={2} dof={false} opacity={seg(t, 3.62, 4.0, COS)}>
+          <Plane {...H(0, 0, Z_LINE2)} w={2} h={2} dof={false} opacity={seg(t, 3.78, 4.1, COS)}>
             <Kinetic g={g} items={[{ t: "Bygget", at: "w:bygget", dur: 0.8 }, { t: "af", at: "w:af", dur: 0.8 }, { t: "AI.", at: "w:ai", accent: true, dur: 0.8 }]} size={TYPE.hero} style={{ left: 1, top: 1 }} />
           </Plane>
         )}
@@ -264,12 +276,10 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
           <Kinetic g={g} size={TYPE.big} items={[{ t: "få", at: "w:f", out: 2.54, dur: 0.7 }, { t: "minutter", at: "w:minutter", out: 2.54, accent: true, dur: 0.7 }, { t: "væk.", at: "w:vk", out: 2.54, dur: 0.6 }]} />
         </div>
       )}
-      {/* a quiet cream veil over the receding site while the line is read (gone before the hand-off) */}
-      {t > 11.2 && <AbsoluteFill style={{ background: C.bg, opacity: 0.8 * seg(t, 10.9, 12.1, COS) * (1 - seg(t, 12.7, 13.3, COS)) }} />}
       {/* A10: "Ingen teknik." → "Ingen skabeloner." in front of the far, soft site */}
       {t > 11.2 && (
-        <div style={{ position: "absolute", left: 960, top: 540, transform: `scale(${mix(0.97, 1.03, seg(t, 11.33, 13.3, LIN))})`, opacity: 1 - seg(t, 12.8, 13.22, COS) }}>
-          <Kinetic g={g} size={TYPE.big} items={[{ t: "Ingen", at: "w:ingen", dur: 0.9 }, { t: "teknik.", at: "w:teknik", out: "w:ingen2", accent: true, dur: 0.9 },
+        <div style={{ position: "absolute", left: 960, top: 884, transform: `scale(${mix(0.97, 1.03, seg(t, 11.2, 13.3, LIN))})`, opacity: 1 - seg(t, 12.8, 13.22, COS) }}>
+          <Kinetic g={softClock(g, ["w:ingen", "w:teknik", "w:ingen2", "w:skabeloner"])} size={TYPE.big} items={[{ t: "Ingen", at: "w:ingen", dur: 0.9 }, { t: "teknik.", at: "w:teknik", out: "w:ingen2", accent: true, dur: 0.9 },
             { t: "skabeloner.", at: "w:skabeloner", accent: true, dur: 0.9 }]} />
         </div>
       )}
