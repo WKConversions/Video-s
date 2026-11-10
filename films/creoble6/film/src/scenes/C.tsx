@@ -56,16 +56,17 @@ type Move = { s: number; e: number; p: Partial<Pose>; n: string };
 const QY: V3 = [Q[0], Q[1] + 6, Q[2]];
 const MOVES: Move[] = [
   { n: "C1 drift down the rows", s: 38.9, e: 40.0, p: { t: cardPt(14, 50), d: sc(2.0), ry: 4.5, rx: 2 } },
-  { n: "C2 glide down to the price rows", s: 39.35, e: 40.6, p: { t: cardPt(0, 300), d: sc(1.72), ry: -3 } },
-  { n: "C2 slow push on the price rows", s: 40.3, e: 41.9, p: { t: cardPt(24, 318), d: sc(1.82), ry: 3 } },
-  { n: "C3 pull back to card + pills", s: 41.55, e: 43.1, p: { t: GROUP, d: sc(0.84), ry: -4, rx: 0, ap: 12, fo: GROUP } },
-  { n: "C3 orbit round card + pills", s: 42.8, e: 46.3, p: { d: sc(0.86), ry: 4 } },
+  { n: "C2 glide down to the price rows", s: 39.35, e: 40.6, p: { t: cardPt(0, 338), d: sc(1.72), ry: -3 } },
+  { n: "C2 slow push on the price rows", s: 40.3, e: 41.6, p: { t: cardPt(24, 352), d: sc(1.82), ry: 3 } },
+  { n: "C3 pull back to card + pills", s: 41.25, e: 42.7, p: { t: GROUP, d: sc(0.84), ry: -4, rx: 0, ap: 12, fo: GROUP } },
+  { n: "C3 orbit round card + pills", s: 42.4, e: 46.3, p: { d: sc(0.86), ry: 4 } },
   { n: "C4 truck to the support world", s: 45.95, e: 47.25, p: { t: Q, d: 0, ry: -3, ap: 16, fo: Q } },
   { n: "C5 push to the chat reply", s: 47.0, e: 49.4, p: { t: QY, d: sc(1.3), ry: 3, rx: 1 } },
   { n: "C5 drift on the reply", s: 49.0, e: 50.0, p: { ry: -1.5 } },
   { n: "C6 pull back to the type plane", s: 49.6, e: 50.95, p: { t: Q2, d: 0, ry: -3, rx: 0, ap: 24, fo: Q2 } },
   { n: "C6 drift", s: 50.7, e: 51.7, p: { d: -40, ry: 0.5 } },
-  { n: "C7 fly in to the send button", s: 51.3, e: 52.45, p: { t: [B[0] - 62, B[1] - 8, B[2]], d: sc(3.1), ry: 6, rx: 3, ap: 16, fo: Q } },
+  { n: "C7 fly in to the send button", s: 51.3, e: 52.45, p: { t: [B[0] - 62, B[1] - 8, B[2]], d: sc(3.1), ry: 6, rx: 3, ap: 16 } },
+  { n: "(focus rack to the panel, not a camera move)", s: 51.3, e: 52.05, p: { fo: Q } },
   { n: "C7 out to the logo", s: 52.3, e: 53.5, p: { t: Q, d: 0, ry: 0, rx: 0, ap: 14 } },
   { n: "C8 drift while the wordmark slides", s: 53.3, e: 54.6, p: { d: -25, ry: -2 } },
   { n: "C9 ease back for the pair", s: 54.0, e: 55.2, p: { d: 30, ry: 1 } },
@@ -186,7 +187,7 @@ const Pills: React.FC<{ g: number }> = ({ g }) => {
         if (a <= 0 || out >= 1) return null;
         const y = (i - n1 / 2) * 150 - out * 110;
         return (
-          <div key={i} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${((1 - a) * 110).toFixed(2)}px, ${y.toFixed(2)}px) translateY(-50%)`, opacity: clamp01(a * 1.6) * (1 - out),
+          <div key={i} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${(-(1 - a) * 90).toFixed(2)}px, ${y.toFixed(2)}px) translateY(-50%)`, opacity: clamp01(a * 1.6) * (1 - out),
             height: 120, borderRadius: 60, boxSizing: "border-box", padding: "0 60px 0 46px", background: C.white, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW}`,
             display: "flex", alignItems: "center", gap: 24, fontFamily: SANS, fontWeight: 500, fontSize: 56, letterSpacing: "-0.015em", color: C.ink, whiteSpace: "nowrap" }}>
             <div style={{ width: 18, height: 18, borderRadius: 9, background: C.sage, flex: "none" }} />{text}
@@ -204,7 +205,7 @@ const Chat: React.FC<{ g: number; hideSend: boolean }> = ({ g, hideSend }) => {
   const a = k(g, 47.4, 0.7, OUT), m = k(g, T_OPEN, 1.0, INOUT), dip = press(g, T_CLICK5);
   const w = mix(120, PANEL.w, m), h = mix(120, PANEL.h, m), body = clamp01((m - 0.5) / 0.5);
   const up = (at: number | string, dur = 0.7): React.CSSProperties => { const q = k(g, at, dur, OUT); return { opacity: q, transform: `translateY(${((1 - q) * 14).toFixed(2)}px)` }; };
-  const reply = typed(g, "w:forstr+0.05", REPLY, 54);
+  const reply = typed(g, "w:forstr+0.05", REPLY, 60);
   return (
     <div style={{ position: "absolute", left: -w / 2, top: -h / 2 + CHAT_Y * (1 - m), width: w, height: h, borderRadius: mix(60, 28, m), overflow: "hidden", opacity: clamp01(a * 2),
       transform: `scale(${(mix(0.6, 1, a) * (1 - 0.06 * dip)).toFixed(4)})`, background: `color-mix(in srgb, ${C.white} ${(clamp01(m * 1.7) * 100).toFixed(1)}%, ${C.sageDark})`,
@@ -266,7 +267,7 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
   const cardMask = `linear-gradient(180deg, transparent ${(ly - 430).toFixed(0)}px, #000 ${(ly - 240).toFixed(0)}px, #000 ${(ly + 240).toFixed(0)}px, transparent ${(ly + 430).toFixed(0)}px)`;
 
   // C7: the send button becomes the dot; the dots assemble on "Creoble."
-  const back6 = k(g, 49.95, 0.5, INOUT) * (1 - k(g, 51.9, 0.45, INOUT));
+  const back6 = k(g, 49.95, 0.5, INOUT) * (1 - k(g, 51.72, 0.38, INOUT));
   const lifted = t >= T_CLICK7, m7 = k(g, 52.2, 0.3, INOUT), T_FLY = 52.45, D_FLY = 0.78, T_SWAP = 52.5, T_C = f("w:creoble3") / 30;
   const fall = k(g, 52.4, 1.0, INOUT);
   const big = markDots(S_BIG, 0, 0);
@@ -276,7 +277,7 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
   const asm = assemble(tA, FROM, S_BIG, ((RING.x - BOX_C.x) * S_BIG) / 100, ((RING.y - BOX_C.y) * S_BIG) / 100, ASM);
 
   // C8–C9: the first lockup; under it the site and the hosting card come together
-  const CY_A = -255, cyA = CY_A * k(g, 54.0, 1.0, INOUT);
+  const CY_A = -255, cyA = CY_A * k(g, 53.7, 1.0, INOUT);
   const siteIn = k(g, "w:hjemmeside2", 0.9, OUT), cardIn = k(g, "w:hosting", 0.9, OUT), join = k(g, 55.2, 1.0, INOUT), pairOut = k(g, 56.45, 0.8, INOUT);
   const tot = PAIR_W.site + PAIR_W.card, siteX = mix(-400, -tot / 2 + PAIR_W.site / 2, join) - (1 - siteIn) * 260, cardX = mix(410, tot / 2 - PAIR_W.card / 2, join) + (1 - cardIn) * 260;
   const pairY = PAIR.y + pairOut * 120;
@@ -319,7 +320,7 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
       <Stage3D cam={c}>
         {/* the hosting card (C1–C3) */}
         {t < 47.4 && (
-          <Plane {...H2_CARD} w={CARD.w} h={CARD.h} farBlur={close > 0.05 ? 7 * close : 0} farMask={cardMask}>
+          <Plane {...H2_CARD} y={H2_CARD.y + EXT / 2} w={CARD.w} h={CARD.h + EXT} farBlur={close > 0.05 ? 7 * close : 0} farMask={cardMask}>
             <CardC g={g} active={active} ext={ext} rowA={rowA} rowB={rowB} eq={eq} />
           </Plane>
         )}
@@ -344,7 +345,7 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
         {/* C6: "Ingen kø." → "Ingen robotsvar." */}
         {t > 50.1 && t < 52.5 && (
           <Plane {...ride(Q2, 50.95, 51.3)} w={W2} h={H2} dof={false}>
-            <Kinetic g={g} size={TYPE.hero} style={mid} items={[{ t: "Ingen", at: "w:ingen4", out: 51.95, dur: 0.42 }, { t: "kø.", at: "w:k", accent: true, out: "w:ingen5", dur: 0.42 }, { t: "robotsvar.", at: "w:robotsvar", accent: true, out: 51.95 }]} />
+            <Kinetic g={g} size={TYPE.hero} style={mid} items={[{ t: "Ingen", at: "w:ingen4", out: 51.85, dur: 0.42 }, { t: "kø.", at: "w:k", accent: true, out: "w:ingen5", dur: 0.42 }, { t: "robotsvar.", at: "w:robotsvar", accent: true, out: 51.85 }]} />
           </Plane>
         )}
         {/* C7: the send button, lifted off the panel: it turns sage and becomes the dot */}

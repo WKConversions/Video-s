@@ -6,7 +6,7 @@ import React from "react";
 import { AbsoluteFill, Easing } from "remotion";
 import { C, SANS, SERIF, SHADOW, SHADOW_BIG, OUT, INOUT, HOLM, clamp01, mix, appleShadow } from "../lib";
 import { f, k, typed, press, Ico, HolmSite } from "../shared";
-import { Stage3D, Plane, Cam, cam, project, PERSP } from "../cam";
+import { Stage3D, Plane, Cam, cam, project, dofBlur, PERSP } from "../cam";
 import { Kinetic, TYPE, ACCENT, KItem } from "../type";
 import { Spinner } from "../dots";
 import { SiteWindow, SITE_WIN, NEW_HEADLINE, HostingCard, CARD, Cursor, Handoff1, Handoff2, camH1, camH2, H1_SITE, H2_CARD, HANDOFF_HALF } from "../ui";
@@ -58,7 +58,7 @@ const THUMB = { x: 56, y: 132, w: 420, h: 234 };
 /* ---------- times (film seconds) ---------- */
 const T = {
   reset0: 17.8, reset1: 18.2, click: 19.0, type0: 19.3, send: 20.3, swap: 20.7, swapIn: 20.9,
-  cardIn: 22.85, lift0: 27.2, lift1: 28.2, drop0: 28.3, drop1: 29.3, roll0: 29.85, roll1: 30.8,
+  cardIn: 22.9, lift0: 27.15, lift1: 28.0, drop0: 28.0, drop1: 28.95, roll0: 29.7, roll1: 30.5,
   push0: 32.05, push1: 33.6, morph0: 33.45, morph1: 34.65,
 };
 const EDIT_TEXT = "Gør overskriften mere personlig";
@@ -70,9 +70,9 @@ const pBar = (g: number) => sway(g, focusOn(look(sitePt(772, 23), 2.6 + 0.08 * (
 const pCardWhole = (g: number) => sway(g, look(pcPt(500, 320), 0.98 + 0.03 * (sec(g) - 22.75), -8, 0, { ap: 16 }));
 const pPrice499 = (g: number) => sway(g, look(pcPt(735, 165), 2.0 + 0.05 * (sec(g) - 24.5), -3 + 1.5 * (sec(g) - 24.5), 0, { ap: 16 }), 0.6);
 const pRows = (g: number) => sway(g, look(pcPt(742, 395 + 22 * (sec(g) - 26.1)), 1.95, 5, 2, { ap: 16 }), 0.6);
-const pThumb = (g: number) => sway(g, look(pcPt(430, 310), 1.18 + 0.03 * (sec(g) - 28.2), 9, 0, { ap: 16 }));
-const pSide = (dir: number) => (g: number) => sway(g, cam({ x: PCC.x + dir * 1050, y: PCC.y, z: TYPE_Z + 1500 - 40 * (sec(g) - 29), ry: 0, focus: PERSP, ap: 22 }));
-const pRoll = (g: number) => sway(g, look(pcPt(700, 165), 2.25 + 0.06 * (sec(g) - 30.5), 3, 0, { ap: 16 }), 0.6);
+const pThumb = (g: number) => sway(g, look(pcPt(430, 310), 1.18 + 0.03 * (sec(g) - 27.9), 9, 0, { ap: 16 }));
+const pSide = (dir: number) => (g: number) => sway(g, cam({ x: PCC.x + dir * 1300, y: PCC.y, z: TYPE_Z + 1900 - 40 * (sec(g) - 29), ry: 0, focus: PERSP, ap: 22 }));
+const pRoll = (g: number) => sway(g, look(pcPt(700, 165), 2.25 + 0.06 * (sec(g) - 30.3), 3, 0, { ap: 16 }), 0.6);
 const pAim = () => cam({ x: ZERO_W.x, y: ZERO_W.y, rx: 0, ry: 0 });
 const pPill = (g: number) => sway(g, focusOn(look(PILL, 1.6 + 0.08 * (sec(g) - T.push1), 0, 0, { ap: 16 }), SITE_C), 0.5);
 const pCard = (g: number) => { const u = lin(g, 34.2, 35.6); return sway(g, focusOn(look(CARD_C, mix(0.95, 1.14, u), mix(-1, 3, u), 0, { ap: 14 }), CARD_C), 0.6); };
@@ -86,10 +86,10 @@ export const MOVES: Move[] = [
   { name: "fall away to the card's place", a: 21.35, b: 22.75, p: pCardWhole },
   { name: "push in on 499 kr.", a: 23.0, b: 24.5, p: pPrice499 },
   { name: "glide down the rows", a: 24.6, b: 26.1, p: pRows },
-  { name: "back to the lifted site", a: 26.8, b: 28.2, p: pThumb },
-  { name: "card away (Ikke tilfreds?)", a: 28.15, b: 29.45, p: pSide(-1) },
-  { name: "in on the price (roll)", a: 29.35, b: 30.55, p: pRoll },
-  { name: "card away (Nul risiko.)", a: 30.95, b: 32.1, p: pSide(1) },
+  { name: "back to the lifted site", a: 26.6, b: 27.9, p: pThumb },
+  { name: "card away (Ikke tilfreds?)", a: 27.75, b: 28.95, p: pSide(-1) },
+  { name: "in on the price (roll)", a: 29.2, b: 30.3, p: pRoll },
+  { name: "card away (Nul risiko.)", a: 30.35, b: 31.5, p: pSide(1) },
   { name: "line up on the 0", a: T.push0, b: 32.78, p: pAim, part: "aim" },
   { name: "through the 0 to the site", a: T.push0, b: T.push1, p: pPill, part: "z" },
   { name: "rise to the address pill", a: 32.95, b: 33.95, p: pPill, part: "aim" },
@@ -198,7 +198,7 @@ const PurchaseBody: React.FC<{ g: number }> = ({ g }) => (
 // the price: "499" rises in on its word, "kr." on its own; three columns roll down to 0, then the leading zeros fold away
 const PurchasePrice: React.FC<{ g: number }> = ({ g }) => {
   const inN = k(g, "w:499", 0.8), inK = k(g, "w:kroner", 0.7);
-  const p = lin(g, T.roll0, T.roll1 + 0.15), fold = io(g, 30.65, 31.2);
+  const p = lin(g, T.roll0, T.roll1 + 0.15), fold = io(g, 30.4, 30.9);
   return (
     <div style={{ position: "absolute", left: PRICE.x, top: PRICE.y, height: LH, display: "flex", fontFamily: SERIF, fontSize: DIGIT, letterSpacing: "-0.02em", color: C.ink, fontVariantNumeric: "lining-nums tabular-nums" }}>
       <div style={{ height: LH, overflow: "hidden", display: "flex" }}>
@@ -242,17 +242,18 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
   const pushing = g > T.push0 * 30 && !passed;
   const siteO = !edited ? mix(1, 0.22, QUICK(lin(g, 13.9, 14.45)) * (1 - io(g, 14.9, 15.7))) * (1 - io(g, 21.85, 22.4))
     : g < T.push0 * 30 ? 0 : io(g, T.push0 + 0.1, T.push0 + 0.5) * (1 - io(g, 34.2, 34.8));
-  const clip = pushing ? `ellipse(${(ZERO_A * zp.s).toFixed(1)}px ${(ZERO_B * zp.s).toFixed(1)}px at ${zp.x.toFixed(1)}px ${zp.y.toFixed(1)}px)` : undefined;
+  const clip = pushing && zp.s < 48 ? `ellipse(${(ZERO_A * zp.s).toFixed(1)}px ${(ZERO_B * zp.s).toFixed(1)}px at ${zp.x.toFixed(1)}px ${zp.y.toFixed(1)}px)` : undefined;
   const toBar = io(g, 16.75, 17.95), back = io(g, 18.15, 19.0);
-  const fb = mix(8 * io(g, 15.9, 17.1), 15, toBar) * (1 - back);
+  const fb = mix(8 * io(g, 15.9, 17.1), 15, io(g, 17.2, 17.95)) * (1 - back);
   const ang = mix(90, 180, toBar), ma = mix(mix(45, 5, toBar), 120, back), mb = mix(mix(95, 8.5, toBar), 170, back);
   const mask = `linear-gradient(${ang.toFixed(2)}deg, #000 ${ma.toFixed(2)}%, transparent ${mb.toFixed(2)}%)`;
 
   /* the purchase card */
   const showPC = g > T.cardIn * 30 && !passed && zp.s < 48;
-  const pcIn = k(g, T.cardIn, 0.9);
-  const dim = Math.max(io(g, 28.3, 29.0) * (1 - io(g, 29.35, 30.0)), io(g, 31.0, 31.6) * (1 - io(g, T.push0, T.push0 + 0.5)));
-  const pcO = pcIn * (1 - 0.6 * dim), pcY = PCC.y + (1 - pcIn) * 110;
+  const pcIn = io(g, T.cardIn, T.cardIn + 1.0);
+  const dim = Math.max(io(g, 27.9, 28.6) * (1 - io(g, 29.25, 29.9)), io(g, 30.6, 31.15) * (1 - io(g, T.push0, T.push0 + 0.5)));
+  const pcO = clamp01(pcIn * 2.5) * (1 - 0.6 * dim), pcY = PCC.y + (1 - pcIn) * 620;
+  const pcBlur = dofBlur(c, project(c, PCC).dist) * dim;   // soft only behind the type beats; otherwise the card is the subject
   const lift = io(g, T.lift0, T.lift1) * (1 - io(g, T.drop0, T.drop1));
   const tc = pcPt(THUMB.x + THUMB.w / 2, THUMB.y + THUMB.h / 2);
 
@@ -277,7 +278,7 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
     <AbsoluteFill>
       {showPC && (
         <Stage3D cam={c}>
-          <Plane x={PCC.x} y={pcY} z={TYPE_Z} w={PC.w} h={PC.h} opacity={pcO}><PurchaseBody g={g} /></Plane>
+          <Plane x={PCC.x} y={pcY} z={TYPE_Z} w={PC.w} h={PC.h} opacity={pcO} dof={false} blur={pcBlur}><PurchaseBody g={g} /></Plane>
         </Stage3D>
       )}
       {siteO > 0 && (
@@ -297,9 +298,9 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
       <Stage3D cam={c}>
         {showPC && (
           <>
-            <Plane x={PCC.x} y={pcY} z={TYPE_Z} w={PC.w} h={PC.h} opacity={pcO}><PurchasePrice g={g} /></Plane>
+            <Plane x={PCC.x} y={pcY} z={TYPE_Z} w={PC.w} h={PC.h} opacity={pcO} dof={false} blur={pcBlur}><PurchasePrice g={g} /></Plane>
             {/* the site thumbnail: on "Siden er din" it lifts out of the card toward the camera and grows */}
-            <Plane x={tc.x + 40 * lift} y={tc.y + (pcY - PCC.y) - 10 * lift} z={TYPE_Z + 2 + 300 * lift} w={THUMB.w} h={THUMB.h} scale={1 + 0.22 * lift} opacity={pcO}>
+            <Plane x={tc.x - 50 * lift} y={tc.y + (pcY - PCC.y) - 10 * lift} z={TYPE_Z + 2 + 300 * lift} w={THUMB.w} h={THUMB.h} scale={1 + 0.22 * lift} opacity={pcO} dof={false} blur={pcBlur * (1 - lift)}>
               <div style={{ width: THUMB.w, height: THUMB.h, borderRadius: 12, overflow: "hidden", boxShadow: `0 0 0 1px ${C.line}, ${appleShadow(0.25 + 0.75 * lift, 0.3 + 0.7 * lift)}` }}>
                 <HolmSite w={THUMB.w} headline={NEW_HEADLINE} />
               </div>
@@ -319,8 +320,8 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
       </Stage3D>
       {/* the type beats */}
       <TypeBeat g={g} a={13.9} b={15.6} items={[{ t: "Det", at: "w:det", out: 14.95, dur: 0.7 }, { t: "bedste?", at: "w:bedste", accent: true, out: 14.95, dur: 0.7 }]} />
-      <TypeBeat g={g} a={22.3} b={23.6} items={[{ t: "Tilfreds?", at: "w:tilfreds", accent: true, out: 23.0, dur: 0.7 }]} />
-      <TypeBeat g={g} a={28.6} b={30.2} items={[{ t: "Ikke", at: "w:ikke", out: 29.6, dur: 0.7 }, { t: "tilfreds?", at: "w:tilfreds2", accent: true, out: 29.6, dur: 0.7 }]} />
+      <TypeBeat g={g} a={22.3} b={23.6} items={[{ t: "Tilfreds?", at: "w:tilfreds", accent: true, out: 22.95, dur: 0.6 }]} />
+      <TypeBeat g={g} a={28.6} b={30.2} items={[{ t: "Ikke", at: "w:ikke", out: 29.45, dur: 0.7 }, { t: "tilfreds?", at: "w:tilfreds2", accent: true, out: 29.45, dur: 0.7 }]} />
       <TypeBeat g={g} a={31.0} b={32.7} items={[{ t: "Nul", at: "w:nul", accent: true, out: T.push0, dur: 0.7 }, { t: "risiko.", at: "w:risiko", out: T.push0, dur: 0.7 }]} />
       {showCur && <Cursor x={cur.x} y={cur.y} size={48} press={Math.max(press(g, T.click), press(g, T.send))} />}
     </AbsoluteFill>
