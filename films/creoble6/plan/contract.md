@@ -1,3 +1,37 @@
+# REVISION 2 (Karl, on the second preview; overrides everything below on motion)
+> "The animations, motion and movement are not smooth. Already at the start: while it writes the text with the website
+> in the middle, it suddenly gets choppy and zooms in on the website all at once. It has to be gradual, smooth,
+> everything has to glide out. It has to flow."
+
+Measured on that preview with `tools/flow.py` (the share of the picture changing per frame): the first half second
+does not move at all (0.01), then the hook jumps to 7.5 at 1.75 s; the film has 54 sudden starts and stops, and
+several stretches near zero (3.5 s, 34.9 s, 58–59.6 s).
+
+**The standard, measured, for every builder:**
+- Render your own span as video at quarter scale and run the check:
+  `npx remotion render src/index.ts Film out/A.mp4 --frames=0-815 --scale=0.25 --concurrency=2 --muted --props='{"blurSamples":1,"audio":"none"}' --log=error`
+  then `python3 tools/flow.py out/A.mp4` (times in the output are relative to your span's first frame).
+- **No JERK lines.** Speed never changes by more than 1.7× within 3 frames.
+- **The profile stays between about 0.4 and 3.0** for the whole span: never near zero (something always glides), and
+  no peak above about 3.5, including fly-throughs. One hill flows into the next; no cliffs.
+- **How:**
+  - Build the camera as ONE continuous path with continuous speed (position AND velocity match where moves meet).
+    Do not chain separate eased segments that each stop; use long overlapping sine-like eases or a smooth spline
+    through the poses.
+  - Start moves much earlier and make them longer (1.5–3 s). A zoom that must end at a word starts gently one
+    to two seconds before it.
+  - Lower the peaks: travel less distance (a shorter tunnel, a smaller push, a smaller pull-back) instead of moving
+    faster. A fly-through is a calm glide through, not a dash.
+  - Let everything glide out: arrivals with a long soft landing; objects and type ease in and out of the frame
+    over 0.8–1.2 s; nothing pops or snaps, except typing and a button press.
+  - From frame 0 the picture already moves visibly (a steady push), and it never rests.
+- If a move cannot be made calm inside its time, simplify the beat (fewer moves, one longer move); say so.
+- Iterate until the check is clean, then report the JERK count (target 0) and the profile's minimum and maximum.
+
+**The hook in particular (A):** the camera pushes toward the inline website from frame 0, slowly and steadily
+growing, so that entering it and the tunnel beyond is one gradual acceleration that the viewer sees coming; the
+tunnel is a calm glide (shorten it), and passing the 404 page is the same glide continuing.
+
 # REVISION 1 (Karl, on the first preview; overrides the shot list where they differ)
 > "From second 23 there is far too much text. Some text is fine, but it needs more visuals, more alternation between
 > text and visual. And some visuals and animations go far too fast and too linear: a flash, then it stands still, then
