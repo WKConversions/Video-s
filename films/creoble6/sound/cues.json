@@ -64,7 +64,7 @@
    "id": "ui-beatbox-click-01",
    "db": -3,
    "pitch": 0,
-   "note": "'Opdater' is pressed once; nothing happens (dry old click)"
+   "note": "the hand presses 'Opdater' once; nothing happens (dry old click)"
   },
   {
    "frame": 420,
@@ -88,144 +88,144 @@
    "note": "the wizard window rises from below; the lockup leaves upward"
   },
   {
-   "frame": 594,
+   "frame": 588,
    "id": "one-keyboard-click",
    "db": 2,
    "pitch": 0,
-   "note": "click into Virksomhedsnavn"
+   "note": "the hand clicks into Virksomhedsnavn"
   },
   {
-   "frame": 597,
+   "frame": 592,
    "id": "typing-00",
    "db": 4,
    "pitch": 0,
    "note": "types 'Holm Fysioterapi'"
   },
   {
-   "frame": 647,
+   "frame": 657,
    "id": "ui-click-digital-03",
    "db": 0,
    "pitch": 0,
-   "note": "click on Branche, the menu opens"
+   "note": "the hand clicks Branche, the menu opens"
   },
   {
-   "frame": 668,
+   "frame": 687,
    "id": "ui-beatbox-click-01",
    "db": -3,
    "pitch": 0,
-   "note": "picks 'Fysioterapi', the menu closes"
+   "note": "the hand picks 'Fysioterapi', the menu closes"
   },
   {
-   "frame": 678,
+   "frame": 696,
    "id": "pop",
    "db": -13,
    "pitch": 0,
    "note": "the field 'Hvad laver du?' eases in, the fields below make room"
   },
   {
-   "frame": 685,
+   "frame": 703,
    "id": "typing-01",
    "db": 4,
    "pitch": 0,
    "note": "types 'Genoptr\u00e6ning og massage'"
   },
   {
-   "frame": 736,
+   "frame": 756,
    "id": "one-keyboard-click",
    "db": 2,
    "pitch": 0,
-   "note": "click into E-mail"
+   "note": "the hand clicks into E-mail"
   },
   {
-   "frame": 739,
+   "frame": 760,
    "id": "typing-02",
    "db": 4,
    "pitch": 0,
    "note": "types 'kontakt@holmfysio.dk'"
   },
   {
-   "frame": 789,
+   "frame": 807,
    "id": "ui-click-digital-03",
    "db": 0,
    "pitch": 0,
-   "note": "click into Telefon"
+   "note": "the hand clicks into Telefon"
   },
   {
-   "frame": 792,
+   "frame": 810,
    "id": "typing-03",
    "db": 4,
    "pitch": 0,
    "note": "types '+45 31 42 53 64'"
   },
   {
-   "frame": 835,
+   "frame": 852,
    "id": "send-2",
    "db": -12,
    "pitch": 0,
-   "note": "press on 'Forts\u00e6t'; the button turns sage"
+   "note": "the hand presses 'Forts\u00e6t'; the button turns sage"
   },
   {
-   "frame": 846,
+   "frame": 863,
    "id": "ui-backspace",
    "db": -4,
    "pitch": 0,
    "note": "the smear: the sage button stretches out to the right and sweeps across the frame, in again from the left (one long soft whoosh, rising then settling)"
   },
   {
-   "frame": 870,
+   "frame": 887,
    "id": "ui-granular-button-select",
    "db": -11,
    "pitch": 0,
    "note": "the six-dot logo turns at the bar's head (loader)"
   },
   {
-   "frame": 870,
+   "frame": 887,
    "id": "typing-04",
    "db": 4,
    "pitch": 0,
    "note": "the number counts 0 to 100 beside the bar (fine fast ticks slowing down, not keyboard)"
   },
   {
-   "frame": 918,
+   "frame": 935,
    "id": "ui-button",
    "db": -13,
    "pitch": 0,
    "note": "the count lands on 100"
   },
   {
-   "frame": 930,
+   "frame": 947,
    "id": "ui-granular-button-select",
    "db": -12,
    "pitch": 0,
    "note": "the bar rises and thins into the site window's top bar"
   },
   {
-   "frame": 958,
+   "frame": 974,
    "id": "charge-connection",
    "db": -3,
    "pitch": 0,
    "note": "the site window unfolds down from its top bar"
   },
   {
-   "frame": 960,
+   "frame": 978,
    "id": "v4-type-delete",
    "db": -2,
    "pitch": 2,
    "note": "the photo frames slide into the empty page (very soft)"
   },
   {
-   "frame": 999,
+   "frame": 1011,
    "id": "ui-enter",
    "db": -6,
    "pitch": 4,
    "note": "the hero photo slides up into its frame"
   },
   {
-   "frame": 1038,
+   "frame": 1047,
    "id": "ui-granular-button-select-2",
    "db": -15,
    "pitch": 6,
-   "note": "three answer cards rise in from below (Virksomhedsnavn, Branche, Hvad laver du?)"
+   "note": "navigation slides into the layout, left to right; the button at 18.1"
   },
   {
    "frame": 1132,
@@ -274,7 +274,7 @@
    "id": "ui-beatbox-click-01",
    "db": -3,
    "pitch": 0,
-   "note": "B2 cursor clicks the headline"
+   "note": "B2 the hand clicks the headline"
   },
   {
    "frame": 1461,
@@ -295,7 +295,7 @@
    "id": "one-keyboard-click",
    "db": 2,
    "pitch": 0,
-   "note": "B2 cursor presses send"
+   "note": "B2 the hand presses send"
   },
   {
    "frame": 1536,
@@ -330,7 +330,7 @@
    "id": "ui-click-digital-03",
    "db": 0,
    "pitch": 0,
-   "note": "B4 the download button presses; the thumbnail packs into the file row"
+   "note": "B4 the hand clicks the download button; the thumbnail packs into the file row"
   },
   {
    "frame": 1791,
@@ -354,6 +354,13 @@
    "note": "B4 the Online card steps forward"
   },
   {
+   "frame": 1875,
+   "id": "ui-beatbox-click-01",
+   "db": -3,
+   "pitch": 0,
+   "note": "B4 the hand clicks the address pill"
+  },
+  {
    "frame": 1878,
    "id": "typing-06",
    "db": 4,
@@ -368,6 +375,13 @@
    "note": "B4 'Live' comes on (small)"
   },
   {
+   "frame": 2074,
+   "id": "one-keyboard-click",
+   "db": 2,
+   "pitch": 0,
+   "note": "B5 the hand clicks; 'Uden binding' ticks in"
+  },
+  {
    "frame": 2077,
    "id": "double-bubble-pop",
    "db": -9,
@@ -376,10 +390,10 @@
   },
   {
    "frame": 2163,
-   "id": "ui-beatbox-click-01",
-   "db": -3,
+   "id": "ui-click-digital-03",
+   "db": 0,
    "pitch": 0,
-   "note": "B6 cursor clicks the Online card"
+   "note": "B6 the hand clicks the Online card"
   },
   {
    "frame": 2172,
@@ -431,11 +445,25 @@
    "note": "B6 row 3 siden online turns green"
   },
   {
-   "frame": 2565,
+   "frame": 2544,
+   "id": "ui-granular-button-select",
+   "db": -12,
+   "pitch": 0,
+   "note": "B7 the price row rises (soft)"
+  },
+  {
+   "frame": 2604,
+   "id": "ui-beatbox-click-01",
+   "db": -3,
+   "pitch": 0,
+   "note": "B7 the hand clicks 'S\u00e6t online'"
+  },
+  {
+   "frame": 2608,
    "id": "ui-granular-button-select",
    "db": -11,
    "pitch": 0,
-   "note": "B7 the three checks pulse in turn (three soft notes, 0.2 s apart); the price row rises"
+   "note": "B7 the three checks pulse in turn (three soft notes, 0.12 s apart)"
   },
   {
    "frame": 2700,
@@ -445,23 +473,37 @@
    "note": "hosting card becomes the panel; the live site rises"
   },
   {
-   "frame": 2745,
+   "frame": 2757,
+   "id": "one-keyboard-click",
+   "db": 2,
+   "pitch": 0,
+   "note": "the hand clicks into the panel field"
+  },
+  {
+   "frame": 2760,
    "id": "typing-10",
    "db": 4,
    "pitch": 0,
    "note": "panel field: Massage: 450 kr."
   },
   {
-   "frame": 2802,
+   "frame": 2805,
    "id": "send",
    "db": -19,
    "pitch": 0,
    "note": "sage dot travels panel to site"
   },
   {
-   "frame": 2829,
-   "id": "ui-granular-button-select",
-   "db": -12,
+   "frame": 2811,
+   "id": "ui-click-digital-03",
+   "db": 0,
+   "pitch": 0,
+   "note": "the hand takes the photo under the panel"
+  },
+  {
+   "frame": 2835,
+   "id": "v4-type-delete",
+   "db": -2,
    "pitch": 0,
    "note": "site: Massage price swaps to 450 kr."
   },
@@ -474,10 +516,10 @@
   },
   {
    "frame": 2850,
-   "id": "one-keyboard-click",
-   "db": 2,
+   "id": "ui-beatbox-click-01",
+   "db": -3,
    "pitch": 0,
-   "note": "photo dropped on the panel"
+   "note": "the hand releases the photo on the panel"
   },
   {
    "frame": 2874,
@@ -488,8 +530,8 @@
   },
   {
    "frame": 2904,
-   "id": "v4-type-delete",
-   "db": -2,
+   "id": "ui-enter",
+   "db": -6,
    "pitch": 2,
    "note": "site: hero photo changes"
   },
@@ -523,22 +565,22 @@
   },
   {
    "frame": 3255,
-   "id": "ui-enter",
-   "db": -6,
+   "id": "ui-granular-button-select-2",
+   "db": -15,
    "pitch": 0,
    "note": "\u00c5r 1"
   },
   {
    "frame": 3291,
-   "id": "ui-granular-button-select-2",
-   "db": -15,
+   "id": "pop",
+   "db": -13,
    "pitch": 2,
    "note": "\u00c5r 2"
   },
   {
    "frame": 3321,
-   "id": "pop",
-   "db": -13,
+   "id": "ui-granular-button-select",
+   "db": -12,
    "pitch": 4,
    "note": "\u00c5r 3"
   },
@@ -565,17 +607,17 @@
   },
   {
    "frame": 3468,
-   "id": "ui-granular-button-select",
-   "db": -12,
+   "id": "v4-type-delete",
+   "db": -2,
    "pitch": 6,
    "note": "chip: Dansk support"
   },
   {
    "frame": 3498,
-   "id": "ui-click-digital-03",
-   "db": 0,
+   "id": "one-keyboard-click",
+   "db": 2,
    "pitch": 0,
-   "note": "send button pressed; turns sage"
+   "note": "the hand presses the send button; it turns sage"
   },
   {
    "frame": 3516,
@@ -600,8 +642,8 @@
   },
   {
    "frame": 3602,
-   "id": "v4-type-delete",
-   "db": -2,
+   "id": "ui-enter",
+   "db": -6,
    "pitch": 6,
    "note": "button: Byg din side gratis"
   },
@@ -614,10 +656,10 @@
   },
   {
    "frame": 3756,
-   "id": "ui-beatbox-click-01",
-   "db": -3,
+   "id": "ui-click-digital-03",
+   "db": 0,
    "pitch": 0,
-   "note": "the button is pressed; the dots turn once"
+   "note": "the hand presses the button; the dots turn once"
   },
   {
    "frame": 3558,

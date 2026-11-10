@@ -16,12 +16,13 @@ export const BLUR: [number, number][] = [];
 
 export const EVENTS: { t: number; kind: "click" | "type" | "check" | "pop" | "open" | "send" | "logo"; len?: number; note: string }[] = [
   { t: 45.0, kind: "open", note: "hosting card becomes the panel; the live site rises" },
-  { t: 45.85, kind: "click", note: "the hand clicks into the panel field" },
-  { t: 45.91, kind: "type", len: 0.85, note: "panel field: Massage: 450 kr." },
+  { t: 45.95, kind: "click", note: "the hand clicks into the panel field" },
+  { t: 46.0, kind: "type", len: 0.77, note: "panel field: Massage: 450 kr." },
   { t: 46.75, kind: "send", note: "sage dot travels panel to site" },
+  { t: 46.85, kind: "click", note: "the hand takes the photo under the panel" },
   { t: 47.25, kind: "pop", note: "site: Massage price swaps to 450 kr." },
-  { t: 47.5, kind: "click", note: "the hand releases the photo on the panel" },
   { t: 47.3, kind: "open", len: 1.2, note: "site page scrolls up to the hero" },
+  { t: 47.5, kind: "click", note: "the hand releases the photo on the panel" },
   { t: 47.9, kind: "send", note: "sage dot travels panel to site" },
   { t: 48.4, kind: "pop", note: "site: hero photo changes" },
   { t: 48.9, kind: "check", note: "Opdateret chip lands on the site window" },
@@ -74,7 +75,7 @@ const pagePt = (x: number, y: number, scroll: number) => ({ x: SITEP.x + x * SIT
 const SRC1 = { x: PANEL.x + FIELD.x + FIELD.w - 44, y: PANEL.y + FIELD.y + FIELD.h / 2 }, DST1 = pagePt(620, 1110, SCR_CARDS);
 const SRC2 = { x: PANEL.x + ZONE.x + ZONE.w / 2, y: PANEL.y + ZONE.y + ZONE.h / 2 }, DST2 = pagePt(1075, 400, SCR_HERO);
 const NEWTXT = "Massage: 450 kr.";
-const T_FIELD = 45.85, T_DROP = 47.5, GRIP = { x: 46, y: 36 };   // the hand: click into the field; release the photo; where the fingertip holds the photo (from its centre)
+const T_FIELD = 45.95, T_GRAB = 46.85, T_DROP = 47.5, GRIP = { x: 46, y: 36 }, TRAY = { x: PANEL.x + ZONE.x + ZONE.w / 2, y: 934 };   // the hand: click into the field; release the photo; where the fingertip holds the photo (from its centre)
 const MINI = 0.32, MINI_Y = 838;
 // a small sage dot carrying the change from a to b (a low arc), 0.5 s
 const Courier: React.FC<{ t: number; at: number; a: { x: number; y: number }; b: { x: number; y: number } }> = ({ t, at, a, b }) => {
@@ -92,18 +93,19 @@ const C1: React.FC<{ g: number }> = ({ g }) => {
   // the hosting card becomes the panel
   const cq = gl(t, 44.95, 1.15), toX = (960 - (PANEL.x + PANEL.w / 2)) * (1 - cq);
   const cardO = 1 - sn(t, 44.95, 0.6), panelO = sn(t, 45.15, 0.65);
-  const sq = sm(t, 45.05, 1.3), scroll = mix(SCR_CARDS, SCR_HERO, sm(t, 47.2, 1.3));
+  const sq = sm(t, 45.22, 1.25), scroll = mix(SCR_CARDS, SCR_HERO, sm(t, 47.2, 1.3));
   // the field
-  const focus = aspring(g, T_FIELD, 0.4), txt = typed(g, T_FIELD + 0.06, NEWTXT, 19), typing = t > T_FIELD && t < 46.78;
+  const focus = aspring(g, T_FIELD, 0.4), txt = typed(g, T_FIELD + 0.05, NEWTXT, 21), typing = t > T_FIELD && t < 46.78;
   const done = aspring(g, 47.3, 0.45, 0.88);
   // the site's price line
   const sw = aspring(g, 47.2, 0.55), hl = sn(t, 47.18, 0.35) * (1 - sn(t, 47.95, 0.9)), ring1 = aspring(g, 47.18, 0.6);
   // the photo: carried by the cursor from below, dropped on the panel
-  // the photo rides at the hand's fingertip from below the frame and is released on the panel at T_DROP
-  const carry = sn(t, 46.55, 0.6), drop = aspring(g, T_DROP, 0.45, 0.9), land = aspring(g, T_DROP, 0.3);
+  // the photo rises under the panel, the hand takes it (T_GRAB), it rides at the fingertip and is released on the panel (T_DROP)
+  const offer = sm(t, 46.15, 0.65), held = aspring(g, T_GRAB, 0.35), carry = sn(t, T_GRAB, 0.5), drop = aspring(g, T_DROP, 0.45, 0.9), land = aspring(g, T_DROP, 0.3);
   const P1 = push(t, 44.95, 53.0), hd = handAt(g, handKeys(t), { size: HAND });
   const ride = { x: 960 + (hd.x - 960) / P1 - GRIP.x, y: 540 + (hd.y - 540) / P1 - GRIP.y };
-  const th = { x: mix(ride.x, SRC2.x, land), y: mix(ride.y, SRC2.y, land) };
+  const tray = { x: TRAY.x, y: TRAY.y + (1 - offer) * 260 };
+  const th = { x: mix(mix(tray.x, ride.x, held), SRC2.x, land), y: mix(mix(tray.y, ride.y, held), SRC2.y, land) };
   const inPanel = t >= 47.95;
   const hero = gl(t, 48.35, 0.85), hhl = sn(t, 48.35, 0.35) * (1 - sn(t, 49.0, 0.6)), ring2 = aspring(g, 48.35, 0.6);
   const chip = aspring(g, 48.62, 0.5, 0.88);
@@ -168,8 +170,8 @@ const C1: React.FC<{ g: number }> = ({ g }) => {
       <Courier t={t} at={46.74} a={SRC1} b={DST1} />
       <Courier t={t} at={47.9} a={SRC2} b={DST2} />
       {/* the photo and the cursor that carries it */}
-      {t > 46.3 && !inPanel && <div style={{ position: "absolute", left: th.x - THUMB.w / 2, top: th.y - THUMB.h / 2, width: THUMB.w, height: THUMB.h, transform: `scale(${(1.1 - 0.1 * drop).toFixed(4)})` }}>
-        <div style={{ position: "absolute", inset: 0, borderRadius: 14, boxShadow: SHADOW_BIG, opacity: 1 - clamp01(drop) }} />
+      {t > 46.15 && !inPanel && <div style={{ position: "absolute", left: th.x - THUMB.w / 2, top: th.y - THUMB.h / 2, width: THUMB.w, height: THUMB.h, transform: `scale(${(1 + 0.1 * held - 0.1 * drop).toFixed(4)})` }}>
+        <div style={{ position: "absolute", inset: 0, borderRadius: 14, boxShadow: SHADOW_BIG, opacity: clamp01(held) * (1 - clamp01(drop)) }} />
         {thumb({ left: 0, top: 0 })}
       </div>}
     </Group>
@@ -384,14 +386,14 @@ const BTN_TIP = { x: 1150, y: 618 };                       // on the right end o
 function handKeys(t: number): HandKey[] {
   const at = (x: number, y: number, sc: number) => ({ x: 960 + (x - 960) * sc, y: 540 + (y - 540) * sc });
   const P1 = push(t, 44.95, 53.0), toX = (960 - (PANEL.x + PANEL.w / 2)) * (1 - gl(t, 44.95, 1.15));
-  const fld = at(PANEL.x + FIELD.x + 170 + toX, PANEL.y + FIELD.y + 52, P1), zone = at(SRC2.x + GRIP.x, SRC2.y + GRIP.y, P1);
+  const fld = at(PANEL.x + FIELD.x + 170 + toX, PANEL.y + FIELD.y + 52, P1), zone = at(SRC2.x + GRIP.x, SRC2.y + GRIP.y, P1), tray = at(TRAY.x + GRIP.x, TRAY.y + GRIP.y, P1);
   const send = at(SEND.x + 4, SEND.y + 4, push(t, 56.25, T_SEND, 0.94) * KC);
   const btn = at(BTN_TIP.x, BTN_TIP.y, 1 + 0.06 * clamp01((t - 58.6) / (65.2 - 58.6)));
   return [
-    { at: 44.0, x: 400, y: 1170 },
-    { at: T_FIELD, x: fld.x, y: fld.y, click: true, early: 0.15, dur: 0.72 },
-    { at: 46.5, x: 620, y: 1235, early: 0, dur: 0.55 },
-    { at: T_DROP, x: zone.x, y: zone.y, click: true, early: 0.25, dur: 0.9 },
+    { at: 44.0, x: 380, y: 1120 },
+    { at: T_FIELD, x: fld.x, y: fld.y, click: true, early: 0.03, dur: 0.8 },
+    { at: T_GRAB, x: tray.x, y: tray.y, click: true, early: 0.2, dur: 0.55 },
+    { at: T_DROP, x: zone.x, y: zone.y, click: true, early: 0.03, dur: 0.6 },
     { at: 48.6, x: 680, y: BELOW, early: 0, dur: 0.9 },
     { at: 56.7, x: send.x + 50, y: BELOW, early: 0, dur: 0.5 },
     { at: T_SEND, x: send.x, y: send.y, click: true },
