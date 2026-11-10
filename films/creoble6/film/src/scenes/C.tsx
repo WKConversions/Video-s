@@ -8,17 +8,19 @@ import { C, HOLM, OUT, SANS, SERIF, SHADOW, SHADOW_BIG, clamp01, mix } from "../
 import { aspring, press, typed, Ico, Wordmark, HolmSite, Browser } from "../shared";
 import { ACCENT, TYPE, measure, useFonts } from "../type";
 import { Dots, Icon, ANG, RING, LOGO, BOX_C } from "../dots";
-import { HostingCard, CARD, Cursor, cursorAt, Handoff2, NEW_HEADLINE } from "../ui";
+import { HostingCard, CARD, Handoff2, NEW_HEADLINE } from "../ui";
+import { Hand, handAt, HandKey } from "../hand";
 import { f } from "../shared";
 
 export const BLUR: [number, number][] = [];
 
 export const EVENTS: { t: number; kind: "click" | "type" | "check" | "pop" | "open" | "send" | "logo"; len?: number; note: string }[] = [
   { t: 45.0, kind: "open", note: "hosting card becomes the panel; the live site rises" },
-  { t: 45.75, kind: "type", len: 0.95, note: "panel field: Massage: 450 kr." },
-  { t: 46.7, kind: "send", note: "sage dot travels panel to site" },
-  { t: 47.15, kind: "pop", note: "site: Massage price swaps to 450 kr." },
-  { t: 47.5, kind: "click", note: "photo dropped on the panel" },
+  { t: 45.85, kind: "click", note: "the hand clicks into the panel field" },
+  { t: 45.91, kind: "type", len: 0.85, note: "panel field: Massage: 450 kr." },
+  { t: 46.75, kind: "send", note: "sage dot travels panel to site" },
+  { t: 47.25, kind: "pop", note: "site: Massage price swaps to 450 kr." },
+  { t: 47.5, kind: "click", note: "the hand releases the photo on the panel" },
   { t: 47.3, kind: "open", len: 1.2, note: "site page scrolls up to the hero" },
   { t: 47.9, kind: "send", note: "sage dot travels panel to site" },
   { t: 48.4, kind: "pop", note: "site: hero photo changes" },
@@ -33,13 +35,13 @@ export const EVENTS: { t: number; kind: "click" | "type" | "check" | "pop" | "op
   { t: 56.85, kind: "send", note: "customer bubble: Kan I hjælpe med min e-mail?" },
   { t: 57.0, kind: "type", len: 0.76, note: "Sofie's reply types" },
   { t: 57.8, kind: "pop", note: "chip: Dansk support" },
-  { t: 58.3, kind: "click", note: "send button pressed; turns sage" },
+  { t: 58.3, kind: "click", note: "the hand presses the send button; it turns sage" },
   { t: 58.6, kind: "send", len: 0.8, note: "the dot leaves the panel and glides to the centre, smearing a soft sage trail" },
   { t: 59.0, kind: "logo", len: 0.5, note: "the six dots unfurl into the C" },
   { t: 59.45, kind: "open", note: "wordmark slides out beside the C" },
   { t: 60.04, kind: "pop", note: "button: Byg din side gratis" },
   { t: 60.9, kind: "type", len: 0.83, note: "creoble.dk types" },
-  { t: 62.6, kind: "click", note: "the button is pressed; the dots turn once" },
+  { t: 62.6, kind: "click", note: "the hand presses the button; the dots turn once" },
 ];
 
 /* ---------- motion helpers (seconds) ---------- */
@@ -72,6 +74,7 @@ const pagePt = (x: number, y: number, scroll: number) => ({ x: SITEP.x + x * SIT
 const SRC1 = { x: PANEL.x + FIELD.x + FIELD.w - 44, y: PANEL.y + FIELD.y + FIELD.h / 2 }, DST1 = pagePt(620, 1110, SCR_CARDS);
 const SRC2 = { x: PANEL.x + ZONE.x + ZONE.w / 2, y: PANEL.y + ZONE.y + ZONE.h / 2 }, DST2 = pagePt(1075, 400, SCR_HERO);
 const NEWTXT = "Massage: 450 kr.";
+const T_FIELD = 45.85, T_DROP = 47.5, GRIP = { x: 46, y: 36 };   // the hand: click into the field; release the photo; where the fingertip holds the photo (from its centre)
 const MINI = 0.32, MINI_Y = 838;
 // a small sage dot carrying the change from a to b (a low arc), 0.5 s
 const Courier: React.FC<{ t: number; at: number; a: { x: number; y: number }; b: { x: number; y: number } }> = ({ t, at, a, b }) => {
@@ -91,21 +94,23 @@ const C1: React.FC<{ g: number }> = ({ g }) => {
   const cardO = 1 - sn(t, 44.95, 0.6), panelO = sn(t, 45.15, 0.65);
   const sq = sm(t, 45.05, 1.3), scroll = mix(SCR_CARDS, SCR_HERO, sm(t, 47.2, 1.3));
   // the field
-  const focus = aspring(g, 45.5, 0.4), txt = typed(g, 45.75, NEWTXT, 17), typing = t > 45.75 && t < 46.72;
-  const done = aspring(g, 46.62, 0.45, 0.88) * (1 - sn(t, 46.68, 0.12)) + aspring(g, 47.25, 0.45, 0.88);
+  const focus = aspring(g, T_FIELD, 0.4), txt = typed(g, T_FIELD + 0.06, NEWTXT, 19), typing = t > T_FIELD && t < 46.78;
+  const done = aspring(g, 47.3, 0.45, 0.88);
   // the site's price line
-  const sw = aspring(g, 47.12, 0.55), hl = sn(t, 47.1, 0.35) * (1 - sn(t, 47.9, 0.9)), ring1 = aspring(g, 47.1, 0.6);
+  const sw = aspring(g, 47.2, 0.55), hl = sn(t, 47.18, 0.35) * (1 - sn(t, 47.95, 0.9)), ring1 = aspring(g, 47.18, 0.6);
   // the photo: carried by the cursor from below, dropped on the panel
-  const carry = gl(t, 46.45, 1.05), drop = aspring(g, 47.5, 0.45, 0.9), away = gl(t, 47.6, 1.0);
-  const th = { x: mix(SRC2.x + 110, SRC2.x, carry), y: mix(1230, SRC2.y, carry) };
-  const cur = { x: th.x + 50 + away * 70, y: th.y + 30 + away * 560 };
+  // the photo rides at the hand's fingertip from below the frame and is released on the panel at T_DROP
+  const carry = sn(t, 46.55, 0.6), drop = aspring(g, T_DROP, 0.45, 0.9), land = aspring(g, T_DROP, 0.3);
+  const P1 = push(t, 44.95, 53.0), hd = handAt(g, handKeys(t), { size: HAND });
+  const ride = { x: 960 + (hd.x - 960) / P1 - GRIP.x, y: 540 + (hd.y - 540) / P1 - GRIP.y };
+  const th = { x: mix(ride.x, SRC2.x, land), y: mix(ride.y, SRC2.y, land) };
   const inPanel = t >= 47.95;
   const hero = gl(t, 48.35, 0.85), hhl = sn(t, 48.35, 0.35) * (1 - sn(t, 49.0, 0.6)), ring2 = aspring(g, 48.35, 0.6);
   const chip = aspring(g, 48.62, 0.5, 0.88);
   const caretOn = typing || Math.floor(g / 15) % 2 === 0;
   const thumb = (st: React.CSSProperties) => <div style={{ position: "absolute", width: THUMB.w, height: THUMB.h, borderRadius: 14, overflow: "hidden", boxShadow: `0 0 0 1px ${C.line}`, ...st }}>{photo("holm-stretch.jpg")}</div>;
   return (
-    <Group s={push(t, 44.95, 53.0)}>
+    <Group s={P1}>
       {/* the hosting card, leaving into the panel */}
       {cardO > 0 && <div style={{ position: "absolute", left: 960 - CARD.w / 2, top: 540 - CARD.h / 2, width: CARD.w, height: CARD.h, opacity: cardO, transform: `translateX(${(-(960 - (PANEL.x + PANEL.w / 2)) * cq).toFixed(2)}px) scale(${(1.0355 * Math.pow(0.6 / 1.0355, cq)).toFixed(5)})` }}>
         <HostingCard g={g} rows={3} active={[1, 1, 1]} price={1} /></div>}
@@ -118,7 +123,7 @@ const C1: React.FC<{ g: number }> = ({ g }) => {
           <div style={{ position: "absolute", left: FIELD.x, top: FIELD.y, width: FIELD.w, height: FIELD.h, boxSizing: "border-box", borderRadius: 14, background: C.white, border: `1.5px solid color-mix(in srgb, #8FAFA6 ${focus * 100}%, #E1DDD6)`,
             boxShadow: `0 0 0 5px rgba(135,168,158,${(0.22 * focus).toFixed(3)})`, display: "flex", alignItems: "center", padding: "0 22px", fontSize: 34, fontWeight: 500, letterSpacing: "-0.01em", whiteSpace: "nowrap" }}>
             {txt && <span>{txt}</span>}
-            {focus > 0.5 && t < 46.75 && <span style={{ width: 2.5, height: 40, marginLeft: 2, marginRight: 3, background: C.ink, opacity: caretOn ? 1 : 0 }} />}
+            {focus > 0.5 && t < 46.8 && <span style={{ width: 2.5, height: 40, marginLeft: 2, marginRight: 3, background: C.ink, opacity: caretOn ? 1 : 0 }} />}
             {!txt && <span style={{ color: "#A9A39B", fontWeight: 400 }}>fx nye priser</span>}
             <div style={{ flex: 1 }} />
             <CheckDot s={36} q={done} />
@@ -160,14 +165,13 @@ const C1: React.FC<{ g: number }> = ({ g }) => {
           fontFamily: SANS, fontSize: 30, fontWeight: 500, color: C.sageDeep, ...arr(chip, 40, 0.85) }}><CheckDot s={38} q={aspring(g, 48.75, 0.45, 0.88)} />Opdateret</div>
       </div>
       {/* the couriers */}
-      <Courier t={t} at={46.66} a={SRC1} b={DST1} />
+      <Courier t={t} at={46.74} a={SRC1} b={DST1} />
       <Courier t={t} at={47.9} a={SRC2} b={DST2} />
       {/* the photo and the cursor that carries it */}
-      {t > 46.45 && !inPanel && <div style={{ position: "absolute", left: th.x - THUMB.w / 2, top: th.y - THUMB.h / 2, width: THUMB.w, height: THUMB.h, transform: `scale(${(1.1 - 0.1 * drop).toFixed(4)})` }}>
+      {t > 46.3 && !inPanel && <div style={{ position: "absolute", left: th.x - THUMB.w / 2, top: th.y - THUMB.h / 2, width: THUMB.w, height: THUMB.h, transform: `scale(${(1.1 - 0.1 * drop).toFixed(4)})` }}>
         <div style={{ position: "absolute", inset: 0, borderRadius: 14, boxShadow: SHADOW_BIG, opacity: 1 - clamp01(drop) }} />
         {thumb({ left: 0, top: 0 })}
       </div>}
-      {t > 46.45 && away < 1 && <Cursor x={cur.x} y={cur.y} press={1 - clamp01(drop)} size={48} opacity={1 - sn(t, 48.2, 0.4)} />}
     </Group>
   );
 };
@@ -261,7 +265,6 @@ const C4: React.FC<{ g: number }> = ({ g }) => {
   const q = gl(t, 56.25, 1.0), sink = sn(t, T_SINK, 0.9), gone = sn(t, T_SINK, 0.55);
   const b1 = aspring(g, 56.7, 0.45), rep = aspring(g, 56.92, 0.5), flag = aspring(g, 57.62, 0.5, 0.88);
   const txt = typed(g, 57.0, REPLY, 46);
-  const cur = cursorAt(g, [{ at: 57.45, x: SEND.x + 70, y: 1010 }, { at: 58.2, x: SEND.x + 4, y: SEND.y + 6 }, { at: 58.6, x: SEND.x + 4, y: SEND.y + 6 }, { at: 59.3, x: SEND.x + 40, y: 1010 }]);
   const bubble: React.CSSProperties = { padding: "17px 26px", fontSize: 28, lineHeight: 1.25, letterSpacing: "-0.01em", whiteSpace: "nowrap" };
   return (
     <Group s={push(t, 56.25, T_SEND, 0.94) * KC}>
@@ -293,7 +296,6 @@ const C4: React.FC<{ g: number }> = ({ g }) => {
             <Ico n="arrow" s={28} c={C.white} w={2.4} style={{ transform: "rotate(-90deg)" }} /></div>}
         </div>
       </div>
-      {t > 57.4 && t < 59.3 && <Cursor x={cur.x} y={cur.y} press={press(g, T_SEND)} size={38} />}
     </Group>
   );
 };
@@ -341,7 +343,6 @@ const C5: React.FC<{ g: number }> = ({ g }) => {
   const wm = gl(t, 59.34, 0.95), wmask = `linear-gradient(90deg, #000 ${(wm * 116 - 10).toFixed(2)}%, transparent ${(wm * 116).toFixed(2)}%)`, wx = (960 - C_X1) * (1 - shift);
   const btn = aspring(g, 59.84, 0.6), bp = press(g, T_PRESS, 0.16);
   const adr = typed(g, 60.9, ADDR, 12), caret = t > 60.8 && (t < 61.8 || Math.floor((t - 61.8) * 2) % 2 === 0);
-  const cur = cursorAt(g, [{ at: 61.55, x: 1100, y: 1150 }, { at: 62.48, x: 1046, y: 622 }]);
   return (
     <Group s={P}>
       <Dots dots={others} />
@@ -370,10 +371,35 @@ const C5: React.FC<{ g: number }> = ({ g }) => {
           <span style={{ position: "absolute", left: 0, top: 0, display: "flex", alignItems: "center" }}>{adr}<span style={{ width: 2, height: 34, marginLeft: 3, background: C.ink, opacity: caret ? 1 : 0, flex: "none" }} /></span>
         </div>
       </div>
-      {t > 61.5 && <Cursor x={cur.x} y={cur.y} press={bp} size={44} />}
     </Group>
   );
 };
+
+/* ---------- the hand cursor (screen px, one for the whole scene) ---------- */
+// It enters from below, arrives early and rests before each click, and leaves downward when it has nothing to do:
+// the click into the panel field, the photo carried onto the panel, the chat's send button, the final button
+// (where it stays resting). Targets are re-evaluated every frame, so it stays on a target that is still moving.
+const HAND = 170, BELOW = 1220;
+const BTN_TIP = { x: 1150, y: 618 };                       // on the right end of "Byg din side gratis", clear of the address
+function handKeys(t: number): HandKey[] {
+  const at = (x: number, y: number, sc: number) => ({ x: 960 + (x - 960) * sc, y: 540 + (y - 540) * sc });
+  const P1 = push(t, 44.95, 53.0), toX = (960 - (PANEL.x + PANEL.w / 2)) * (1 - gl(t, 44.95, 1.15));
+  const fld = at(PANEL.x + FIELD.x + 170 + toX, PANEL.y + FIELD.y + 52, P1), zone = at(SRC2.x + GRIP.x, SRC2.y + GRIP.y, P1);
+  const send = at(SEND.x + 4, SEND.y + 4, push(t, 56.25, T_SEND, 0.94) * KC);
+  const btn = at(BTN_TIP.x, BTN_TIP.y, 1 + 0.06 * clamp01((t - 58.6) / (65.2 - 58.6)));
+  return [
+    { at: 44.0, x: 400, y: 1170 },
+    { at: T_FIELD, x: fld.x, y: fld.y, click: true, early: 0.15, dur: 0.72 },
+    { at: 46.5, x: 620, y: 1235, early: 0, dur: 0.55 },
+    { at: T_DROP, x: zone.x, y: zone.y, click: true, early: 0.25, dur: 0.9 },
+    { at: 48.6, x: 680, y: BELOW, early: 0, dur: 0.9 },
+    { at: 56.7, x: send.x + 50, y: BELOW, early: 0, dur: 0.5 },
+    { at: T_SEND, x: send.x, y: send.y, click: true },
+    { at: 59.5, x: send.x + 60, y: BELOW, early: 0, dur: 0.9 },
+    { at: 60.9, x: btn.x + 40, y: BELOW, early: 0, dur: 0.5 },
+    { at: T_PRESS, x: btn.x, y: btn.y, click: true, early: 0.6 },
+  ];
+}
 
 export const SceneC: React.FC<{ g: number }> = ({ g }) => {
   if (g <= f("h2") + 9) return <Handoff2 g={g} />;
@@ -385,6 +411,7 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
       {t > 52.3 && t < 57.15 && <C3 g={g} />}
       {t > 56.2 && t < 59.9 && <C4 g={g} />}
       {t >= T_SEND && <C5 g={g} />}
+      <Hand {...handAt(g, handKeys(t), { size: HAND })} />
     </AbsoluteFill>
   );
 };

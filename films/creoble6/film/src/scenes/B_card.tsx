@@ -9,7 +9,7 @@ import { CARD, CARD_ROWS, CARD_R } from "../ui";
 // in 0..1 the row slides in; chars = letters of the value shown (caret while typing); a 0..1 "Sætter op" → "Aktiv";
 // draw 0..1 the check draws itself; tint 0..1 the sage tint sweeps across (tintO its strength); pulse 0..1 the check swells
 export type HRow = { in: number; chars: number; caret: boolean; a: number; draw: number; tint: number; tintO: number; pulse: number };
-export const HostCard: React.FC<{ g: number; rows: HRow[]; price: number; spin: number }> = ({ g, rows, price, spin }) => (
+export const HostCard: React.FC<{ g: number; rows: HRow[]; price: number; spin: number; press?: number }> = ({ g, rows, price, spin, press = 0 }) => (
   <div style={{ position: "relative", width: CARD.w, height: CARD.h, borderRadius: 24, background: C.white, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW_BIG}`, fontFamily: SANS, color: C.ink, overflow: "hidden" }}>
     {rows.map((r, i) => { const R = CARD_R.rows[i]; return r.tint > 0 && r.tintO > 0 ? <div key={i} style={{ position: "absolute", left: 0, top: R.y, width: CARD.w, height: R.h, background: "rgba(135,168,158,0.22)", transformOrigin: "0% 50%", transform: `scaleX(${r.tint.toFixed(4)})`, opacity: r.tintO }} /> : null; })}
     <div style={{ position: "absolute", left: 64, top: 56, fontSize: 15, fontWeight: 500, letterSpacing: "0.18em", textTransform: "uppercase", color: C.muted }}>Hosting</div>
@@ -45,6 +45,6 @@ export const HostCard: React.FC<{ g: number; rows: HRow[]; price: number; spin: 
       <div style={{ marginTop: 10, fontSize: 16, color: C.muted }}>Uden binding</div>
     </div>
     <div style={{ position: "absolute", left: 744, top: 540, width: 192, height: 60, borderRadius: 12, background: C.ink, color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 19, fontWeight: 500,
-      opacity: price, transform: `translateY(${((1 - price) * 40).toFixed(2)}px)` }}>Sæt online</div>
+      opacity: price, transform: `translateY(${((1 - price) * 40).toFixed(2)}px) scale(${(1 - 0.045 * press).toFixed(4)})` }}>Sæt online</div>
   </div>
 );

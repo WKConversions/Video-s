@@ -9,7 +9,8 @@ import { f, aspring, press, Ico, Browser, HolmSite } from "../shared";
 import { Stage3D, Plane, cam, PERSP } from "../cam";
 import { Kinetic } from "../type";
 import { Spinner } from "../dots";
-import { SiteWindow, HostingCard, CARD, CARD_ROWS, Cursor, Handoff1, Handoff2, HANDOFF_HALF } from "../ui";
+import { SiteWindow, HostingCard, CARD, CARD_ROWS, Handoff1, Handoff2, HANDOFF_HALF } from "../ui";
+import { Hand, handAt, HandKey } from "../hand";
 import { HostCard, HRow } from "./B_card";
 
 export const BLUR: [number, number][] = [];
@@ -17,23 +18,25 @@ export const EVENTS: { t: number; kind: "click" | "type" | "check" | "pop" | "op
   { t: 20.85, kind: "open", len: 1.85, note: "B1 the window grows to the whole page (soft, long)" },
   { t: 22.2, kind: "pop", note: "B1 chip 'Gratis forhåndsvisning' lands on the window's top edge" },
   { t: 22.9, kind: "open", len: 1.85, note: "B2 the window comes back and close on the hero (soft, long)" },
-  { t: 24.2, kind: "click", note: "B2 cursor clicks the headline" },
+  { t: 24.2, kind: "click", note: "B2 the hand clicks the headline" },
   { t: 24.35, kind: "pop", note: "B2 the edit field grows out of the headline" },
   { t: 24.55, kind: "type", len: 0.9, note: "B2 typing 'Gør overskriften mere personlig'" },
-  { t: 25.55, kind: "click", note: "B2 cursor presses send" },
+  { t: 25.55, kind: "click", note: "B2 the hand presses send" },
   { t: 25.6, kind: "send", note: "B2 the edit is sent" },
   { t: 25.9, kind: "pop", note: "B2 the headline swaps to the new one (soft)" },
   { t: 27.2, kind: "open", len: 1.5, note: "B3 the site shrinks into the thumbnail card (soft, long)" },
   { t: 28.5, kind: "pop", len: 1.1, note: "B4 the card splits in two (the copy slides right)" },
-  { t: 29.15, kind: "click", note: "B4 the download button presses; the thumbnail packs into the file row" },
+  { t: 29.15, kind: "click", note: "B4 the hand clicks the download button; the thumbnail packs into the file row" },
   { t: 29.85, kind: "logo", len: 0.75, note: "B4 the download bar fills (soft rising tone)" },
   { t: 30.62, kind: "check", note: "B4 download done" },
   { t: 30.8, kind: "pop", note: "B4 the Online card steps forward" },
+  { t: 31.25, kind: "click", note: "B4 the hand clicks the address pill" },
   { t: 31.3, kind: "type", len: 0.75, note: "B4 the address types holmfysio.dk" },
   { t: 32.15, kind: "pop", note: "B4 'Live' comes on (small)" },
   { t: 32.4, kind: "pop", note: "B4 the price 99 rolls up" },
+  { t: 34.56, kind: "click", note: "B5 the hand clicks; 'Uden binding' ticks in" },
   { t: 34.62, kind: "check", note: "B5 'Uden binding' ticks in" },
-  { t: 36.05, kind: "click", note: "B6 cursor clicks the Online card" },
+  { t: 36.05, kind: "click", note: "B6 the hand clicks the Online card" },
   { t: 36.2, kind: "open", len: 1.4, note: "B6 the card grows into the hosting card" },
   { t: 37.3, kind: "type", len: 0.5, note: "B6 row 1 types holmfysio.dk" },
   { t: 37.95, kind: "check", note: "B6 row 1 .dk-domæne turns green" },
@@ -41,7 +44,9 @@ export const EVENTS: { t: number; kind: "click" | "type" | "check" | "pop" | "op
   { t: 39.6, kind: "check", note: "B6 row 2 e-mail turns green" },
   { t: 40.3, kind: "type", len: 0.85, note: "B6 row 3 types Europæiske servere" },
   { t: 41.7, kind: "check", note: "B6 row 3 siden online turns green" },
-  { t: 42.75, kind: "logo", len: 0.9, note: "B7 the three checks pulse in turn (three soft notes, 0.2 s apart); the price row rises" },
+  { t: 42.4, kind: "pop", note: "B7 the price row rises (soft)" },
+  { t: 43.4, kind: "click", note: "B7 the hand clicks 'Sæt online'" },
+  { t: 43.46, kind: "logo", len: 0.6, note: "B7 the three checks pulse in turn (three soft notes, 0.12 s apart)" },
 ];
 
 /* ---------- the world ---------- */
@@ -159,8 +164,8 @@ const CardR: React.FC<{ g: number; box?: boolean }> = ({ g, box = true }) => {
     <div style={{ position: "relative", width: CW, height: CH, fontFamily: SANS, color: C.ink }}>
       {box && <div style={shell} />}
       <div style={{ ...title, ...arrive(aspring(g, 30.7, 0.65), 36) }}>Online</div>
-      <div style={{ position: "absolute", right: 48, top: 42, width: 344, height: 58, boxSizing: "border-box", padding: "0 20px 0 18px", borderRadius: 29, background: "#F1EEE8", display: "flex", alignItems: "center", gap: 10, fontSize: 29, fontWeight: 500, color: C.ink, whiteSpace: "nowrap",
-        transformOrigin: "100% 100%", ...arrive(aspring(g, 31.08, 0.55), 24, 0.9) }}>
+      <div style={{ position: "absolute", right: 48, top: 42, width: 344, height: 58, boxSizing: "border-box", padding: "0 20px 0 18px", borderRadius: 29, background: "#F1EEE8", display: "flex", alignItems: "center", gap: 10, fontSize: 29, boxShadow: `0 0 0 ${(3 * press(g, 31.25, 0.3)).toFixed(2)}px rgba(135,168,158,0.45)`, fontWeight: 500, color: C.ink, whiteSpace: "nowrap",
+        transformOrigin: "100% 100%", ...arrive(aspring(g, 30.85, 0.55), 24, 0.9) }}>
         <Ico n="lock" s={25} c={C.sageDeep} w={2.4} /><span>{ADDR.slice(0, n)}</span>
         {n < ADDR.length && <span style={{ display: "inline-block", width: 2.5, height: 30, marginLeft: -6, background: C.sageDark }} />}
         <div style={{ flex: 1 }} />
@@ -179,7 +184,7 @@ const CardR: React.FC<{ g: number; box?: boolean }> = ({ g, box = true }) => {
       </div>
       <div style={{ position: "absolute", right: 48, top: 492, height: 48, display: "flex", alignItems: "center", gap: 13, fontSize: 34, fontWeight: 500, whiteSpace: "nowrap" }}>
         <div style={{ width: 42, height: 42, borderRadius: "50%", background: C.sage, display: "flex", alignItems: "center", justifyContent: "center", opacity: clamp01(pc * 2), transform: `scale(${mix(0.5, 1, pc).toFixed(4)})` }}><Ico n="check" s={28} c={C.white} w={3} /></div>
-        <span style={{ display: "inline-block", ...arrive(aspring(g, 34.5, 0.55), 24, 1) }}>Uden binding</span>
+        <span style={{ display: "inline-block", ...arrive(aspring(g, 34.58, 0.55), 24, 1) }}>Uden binding</span>
       </div>
     </div>
   );
@@ -224,10 +229,10 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
   const row = (i: number, tin: number, ttype: number, len: number, tact: number): HRow => {
     const n = CARD_ROWS[i][1].length, ty = lin(t, ttype, len);
     return { in: sine(lin(t, tin, 0.55)), chars: Math.floor(ty * n), caret: t > ttype - 0.2 && ty < 1, a: sine(lin(t, tact, 0.45)), draw: sine(lin(t, tact + 0.15, 0.45)),
-      tint: sine(lin(t, tact, 0.9)), tintO: tintO * (1 - 0.5 * sine(lin(t, tact + 0.9, 0.9))), pulse: Math.sin(Math.PI * lin(t, 42.75 + i * 0.2, 0.6)) };
+      tint: sine(lin(t, tact, 0.9)), tintO: tintO * (1 - 0.5 * sine(lin(t, tact + 0.9, 0.9))), pulse: Math.sin(Math.PI * lin(t, 43.46 + i * 0.12, 0.34)) };
   };
   const hrows = [row(0, 37.05, 37.3, 0.5, 37.85), row(1, 38.35, 38.65, 0.8, 39.5), row(2, 39.95, 40.3, 0.85, 41.6)];
-  const price = sine(lin(t, 42.6, 0.75)), spin = lin(t, 36.9, 0.5) * (1 - lin(t, 42.2, 0.5));
+  const price = sine(lin(t, 42.3, 0.75)), spin = lin(t, 36.9, 0.5) * (1 - lin(t, 42.0, 0.4));
   const oldO = 1 - sine(lin(t, TM, 0.45)), k6 = morph ? (hsx * CARD.w * pH) / (CW * cR.s * p) : 1;   // the old content rides the box and fades
   const rc: Pose = morph ? { x: (hx * pH) / p, y: (hy * pH) / p, s: cR.s * k6 } : cR;
   const tR = inCard(rc, 0, TY, TW);
@@ -235,20 +240,25 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
   // the chip on the window's top edge
   const pChip = aspring(g, 21.9, 0.6, 0.9), oChip = aspring(g, 23.75, 0.5), chipS = wp(22.5, 960, 540, 1).s;
 
-  // the cursor (screen px), following its moving targets
+  // the hand cursor (screen px of the fingertip); targets are re-evaluated every frame so it stays on moving things
   const sitePt = (x: number, y: number) => ({ x: 960 + (site.x + (x - SW / 2) * site.s) * p, y: 540 + (site.y + (y - SH / 2) * site.s) * p });
-  const cardPt = (x: number, y: number) => ({ x: 960 + (cR.x + (x - CW / 2) * cR.s) * p, y: 540 + (cR.y + (y - CH / 2) * cR.s) * p });
-  const mixPt = (a: { x: number; y: number }, b: { x: number; y: number }, m: number) => ({ x: mix(a.x, b.x, m), y: mix(a.y, b.y, m) });
-  let cur: { x: number; y: number } | null = null, curPress = 0, curSize = 46;
-  if (t > 22.85 && t < 26.9) {
-    const a = { x: 1150, y: 1170 }, b = sitePt(560, 338), s = sitePt(SEND.x + 4, SEND.y + 6), e = { x: 820, y: 1180 };
-    cur = mixPt(mixPt(mixPt(a, b, sine(lin(t, 22.9, 1.25))), s, sine(lin(t, 25.0, 0.5))), e, sine(lin(t, 25.8, 1.0)));
-    curPress = press(g, 24.2) + press(g, 25.55); curSize = 60;
-  } else if (t > 34.9 && t < 37.3) {
-    const a = { x: 1480, y: 1150 }, b = cardPt(480, 330), e = { x: 1600, y: 1160 };
-    cur = mixPt(mixPt(a, b, sine(lin(t, 35.0, 1.02))), e, sine(lin(t, 36.22, 1.0)));
-    curPress = pr;
-  }
+  const cardPt = (cd: Pose, x: number, y: number) => ({ x: 960 + (cd.x + (x - CW / 2) * cd.s) * p, y: 540 + (cd.y + (y - CH / 2) * cd.s) * p });
+  const hostPt = (x: number, y: number) => ({ x: 960 + (hx + (x - CARD.w / 2) * hsx) * pH, y: 540 + (hy + (y - CARD.h / 2) * hsy) * pH });
+  const keys: HandKey[] = [
+    { at: 20.5, x: 1150, y: 1290 },
+    { at: 24.2, ...sitePt(590, 342), click: true },                              // the headline
+    { at: 25.55, ...sitePt(SEND.x, SEND.y + 4), click: true, early: 0.35, dur: 0.6 },   // send
+    { at: 27.0, x: 900, y: 1300, early: 0, dur: 1.0 },                           // nothing to do: leaves downward
+    { at: 29.15, ...cardPt(cL, 700, 74), click: true },                          // the download button
+    { at: 31.25, ...cardPt(cR, 560, 74), click: true, early: 0.5, dur: 0.9 },    // the address pill, before it types
+    { at: 32.7, ...cardPt(cR, 250, 574), early: 0, dur: 0.9 },                   // rests under the price while it rolls
+    { at: 34.56, ...cardPt(cR, 500, 520), click: true },                         // "Uden binding"
+    { at: 36.05, ...cardPt(cR, 480, 300), click: true, early: 0.5, dur: 0.7 },   // the Online card
+    { at: 37.4, x: 1640, y: 1300, early: 0, dur: 1.0 },                          // leaves downward
+    { at: 43.4, ...hostPt(840, 574), click: true },                              // "Sæt online"
+    { at: 44.35, x: 1500, y: 1340, early: 0, dur: 0.7 },                          // gone before the hand-off
+  ];
+  const hand = handAt(g, keys, { size: t < 27.5 ? 190 : 170 });
 
   const settled = t > 44.15;
   return (
@@ -292,7 +302,7 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
               <div style={{ position: "absolute", left: 0, top: 0, width: CARD.w, height: CARD.h, transform: `scale(${HK})`, transformOrigin: "0 0" }}>
                 {ha < 1 && <div style={{ position: "absolute", inset: 0, borderRadius: rad, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW_BIG}`, opacity: 1 - ha }} />}
                 {ha < 1 && <div style={{ position: "absolute", inset: 0, borderRadius: rad, background: C.white }} />}
-                <div style={{ position: "absolute", inset: 0, opacity: ha }}><HostCard g={g} rows={hrows} price={price} spin={spin} /></div>
+                <div style={{ position: "absolute", inset: 0, opacity: ha }}><HostCard g={g} rows={hrows} price={price} spin={spin} press={press(g, 43.4)} /></div>
               </div>
             </div>
           </Plane>
@@ -302,7 +312,7 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
         {morph && oldO > 0 && <Plane x={hx} y={hy + (TY * rc.s * p) / pH} z={ZH + 2} w={SW * TQ} h={SH * TQ} scale={(tR.s * p) / pH / TQ} opacity={oldO}><Thumb scroll={scroll} /></Plane>}
         {settled && <Plane x={0} y={0} z={ZH} w={CARD.w} h={CARD.h}><HostingCard g={g} rows={3} active={[1, 1, 1]} price={1} /></Plane>}
       </Stage3D>
-      {cur && <Cursor x={cur.x} y={cur.y} press={Math.min(1, curPress)} size={curSize} />}
+      {t > 22.5 && t < 44.2 && <Hand {...hand} />}
     </>
   );
 };

@@ -14,9 +14,10 @@ import { f, aspring, press, typed, Browser, Wordmark } from "../shared";
 import { Kinetic, KItem, measure, useFonts } from "../type";
 import { Dots, LOGO, RING, ANG } from "../dots";
 import { Stage3D, Plane, cam, project } from "../cam";
-import { Wizard, WIZ_WIN, WIZ_R, Cursor, Handoff1, camH1, H1_SITE, SITE_WIN, SiteWindow, HANDOFF_HALF } from "../ui";
+import { Wizard, WIZ_WIN, WIZ_R, Handoff1, camH1, H1_SITE, SITE_WIN, SiteWindow, HANDOFF_HALF } from "../ui";
 import { OldSite, OldWindow, OLD } from "./A_old";
 import { SiteBuild } from "./A_site";
+import { Hand, handAt, HandKey } from "../hand";
 
 export const BLUR: [number, number][] = [];
 
@@ -27,31 +28,31 @@ export const EVENTS: { t: number; kind: "click" | "type" | "check" | "pop" | "op
   { t: 4.55, kind: "open", len: 1.8, note: "the hook's push: the old window grows and pushes the line out to the right (soft swell)" },
   { t: 5.05, kind: "pop", len: 1.4, note: "the old site's rows drop away, top to bottom (six soft ticks, 0.2 s apart)" },
   { t: 5.85, kind: "check", note: "'Siden kan ikke findes' lands (dull error tone, not a chime)" },
-  { t: 6.6, kind: "click", note: "'Opdater' is pressed once; nothing happens (dry old click)" },
+  { t: 6.6, kind: "click", note: "the hand presses 'Opdater' once; nothing happens (dry old click)" },
   { t: 7.0, kind: "pop", len: 0.8, note: "the window shrinks into the dot" },
   { t: 7.6, kind: "logo", note: "the dot opens into the six dots, turning; the wordmark slides out" },
   { t: 8.3, kind: "open", len: 1.2, note: "the wizard window rises from below; the lockup leaves upward" },
-  { t: 9.9, kind: "click", note: "click into Virksomhedsnavn" },
-  { t: 9.95, kind: "type", len: 0.73, note: "types 'Holm Fysioterapi'" },
-  { t: 10.78, kind: "click", note: "click on Branche, the menu opens" },
-  { t: 11.14, kind: "click", note: "picks 'Fysioterapi', the menu closes" },
-  { t: 11.3, kind: "pop", note: "the field 'Hvad laver du?' eases in, the fields below make room" },
-  { t: 11.42, kind: "type", len: 0.82, note: "types 'Genoptræning og massage'" },
-  { t: 12.27, kind: "click", note: "click into E-mail" },
-  { t: 12.32, kind: "type", len: 0.8, note: "types 'kontakt@holmfysio.dk'" },
-  { t: 13.15, kind: "click", note: "click into Telefon" },
-  { t: 13.2, kind: "type", len: 0.47, note: "types '+45 31 42 53 64'" },
-  { t: 13.92, kind: "send", note: "press on 'Fortsæt'; the button turns sage" },
-  { t: 14.1, kind: "open", len: 1.3, note: "the smear: the sage button stretches out to the right and sweeps across the frame, in again from the left (one long soft whoosh, rising then settling)" },
-  { t: 14.5, kind: "type", len: 0.9, note: "the number counts 0 to 100 beside the bar (fine fast ticks slowing down, not keyboard)" },
-  { t: 14.5, kind: "logo", len: 1.4, note: "the six-dot logo turns at the bar's head (loader)" },
-  { t: 15.3, kind: "check", note: "the count lands on 100" },
-  { t: 15.5, kind: "pop", len: 0.6, note: "the bar rises and thins into the site window's top bar" },
-  { t: 15.96, kind: "open", len: 0.8, note: "the site window unfolds down from its top bar" },
-  { t: 16.0, kind: "pop", len: 0.6, note: "the photo frames slide into the empty page (very soft)" },
-  { t: 16.1, kind: "pop", len: 0.6, note: "headline lines and text rise in" },
-  { t: 16.65, kind: "pop", note: "the hero photo slides up into its frame" },
-  { t: 17.0, kind: "pop", len: 0.6, note: "three service photos slide in, left to right" },
+  { t: 9.8, kind: "click", note: "the hand clicks into Virksomhedsnavn" },
+  { t: 9.86, kind: "type", len: 0.73, note: "types 'Holm Fysioterapi'" },
+  { t: 10.95, kind: "click", note: "the hand clicks Branche, the menu opens" },
+  { t: 11.45, kind: "click", note: "the hand picks 'Fysioterapi', the menu closes" },
+  { t: 11.6, kind: "pop", note: "the field 'Hvad laver du?' eases in, the fields below make room" },
+  { t: 11.72, kind: "type", len: 0.82, note: "types 'Genoptræning og massage'" },
+  { t: 12.6, kind: "click", note: "the hand clicks into E-mail" },
+  { t: 12.66, kind: "type", len: 0.74, note: "types 'kontakt@holmfysio.dk'" },
+  { t: 13.45, kind: "click", note: "the hand clicks into Telefon" },
+  { t: 13.5, kind: "type", len: 0.44, note: "types '+45 31 42 53 64'" },
+  { t: 14.2, kind: "send", note: "the hand presses 'Fortsæt'; the button turns sage" },
+  { t: 14.38, kind: "open", len: 1.3, note: "the smear: the sage button stretches out to the right and sweeps across the frame, in again from the left (one long soft whoosh, rising then settling)" },
+  { t: 14.78, kind: "type", len: 0.9, note: "the number counts 0 to 100 beside the bar (fine fast ticks slowing down, not keyboard)" },
+  { t: 14.78, kind: "logo", len: 1.4, note: "the six-dot logo turns at the bar's head (loader)" },
+  { t: 15.58, kind: "check", note: "the count lands on 100" },
+  { t: 15.78, kind: "pop", len: 0.6, note: "the bar rises and thins into the site window's top bar" },
+  { t: 16.24, kind: "open", len: 0.8, note: "the site window unfolds down from its top bar" },
+  { t: 16.3, kind: "pop", len: 0.6, note: "the photo frames slide into the empty page (very soft)" },
+  { t: 16.4, kind: "pop", len: 0.6, note: "headline lines and text rise in" },
+  { t: 16.85, kind: "pop", note: "the hero photo slides up into its frame" },
+  { t: 17.1, kind: "pop", len: 0.6, note: "three service photos slide in, left to right" },
   { t: 17.3, kind: "pop", len: 0.6, note: "three answer cards rise in from below (Virksomhedsnavn, Branche, Hvad laver du?)" },
   { t: 17.45, kind: "pop", len: 0.5, note: "navigation slides into the layout, left to right; the button at 18.1" },
   { t: 18.87, kind: "check", note: "answer 'Holm Fysioterapi' lands in the navigation" },
@@ -139,6 +140,9 @@ const Hook: React.FC<{ g: number }> = ({ g }) => {
   const er = (at: number) => { const p = sp(t, at, 0.5); return { opacity: clamp01(p * 1.6), transform: `translateY(${((1 - p) * 30).toFixed(2)}px)` }; };
   const c2 = sine(seg(m, 0.25, 1)), pr = press(g, 6.6, 0.16);            // 'Opdater' is pressed once; nothing happens
   const eb = er(6.15);
+  // the hand presses 'Opdater' once (it comes up from below, well before, and leaves downward)
+  const ox = cx + (262 - OLD.w / 2) * ls, oy = cy + (80 + 424 + 44 - OLD.h / 2) * ls;
+  const hand = handAt(g, [{ at: 4.6, x: ox + 40, y: 1320 }, { at: 6.6, x: ox, y: oy, click: true, dur: 0.85, early: 0.5 }, { at: 7.6, x: ox + 30, y: 1380, early: 0, dur: 0.8 }], { size: 170 });
   return (
     <AbsoluteFill style={{ transform: `scale(${zs.toFixed(5)})` }}>
       {t < 6.2 && <div style={{ position: "absolute", left: 960, top: 540, transform: `translateX(${(-rel * E).toFixed(2)}px)` }}><Kinetic g={g} items={items} size={SIZE} /></div>}
@@ -169,6 +173,7 @@ const Hook: React.FC<{ g: number }> = ({ g }) => {
           {m > 0 && <div style={{ position: "absolute", inset: 0, background: C.sage, opacity: sine(seg(m, 0, 0.8)), clipPath: `inset(0px ${(220 * c2).toFixed(2)}px round ${(380 * c2).toFixed(2)}px)` }} />}
         </div>
       </div>
+      {t > 5.0 && t < 7.7 && <Hand {...hand} />}
     </AbsoluteFill>
   );
 };
@@ -192,39 +197,45 @@ const Lockup: React.FC<{ g: number }> = ({ g }) => {
 const S0 = 1500 / WIZ_WIN.w, S1 = 2.2, ZR = 2.3, SHIFT = 86, SPLIT = 424, SCROLL = 215;
 const wiz = (t: number) => {
   const e = sine(seg(t, 9.45, 10.75));                                    // the scene's one push, to the form column
-  const s = S0 * Math.pow(S1 / S0, e) * (1 + 0.04 * seg(t, 10.75, 14.3));
+  const s = S0 * Math.pow(S1 / S0, e) * (1 + 0.04 * seg(t, 10.75, 14.5));
   const fy = mix(WIZ_WIN.h / 2, 476, e);
-  const arr = soft(t, 8.1, 1.6), ex = sine(seg(t, 14.07, 15.05));
+  const arr = soft(t, 8.1, 1.6), ex = sine(seg(t, 14.35, 15.33));
   const sT = s * mix(0.94, 1, arr) * mix(1, 0.96, ex);
   const y = (1 - arr) * 900 + ex * 300 + (WIZ_WIN.h / 2 - fy) * sT;
-  const scroll = SCROLL * sine(seg(t, 11.7, 13.9)), shift = SHIFT * soft(t, 11.24, 0.9);
+  const scroll = SCROLL * sine(seg(t, 11.9, 14.15)), shift = SHIFT * soft(t, 11.52, 0.9);
   // a page point (final layout coordinates) on screen
   const at = (px: number, py: number) => ({ x: 960 + (px - 800) * sT, y: 540 + y + (46 + py - scroll - WIZ_WIN.h / 2) * sT });
-  return { s, sT, y, scroll, shift, at, opacity: sine(seg(t, 8.1, 8.4)) * (1 - sine(seg(t, 14.07, 14.87))) };
+  return { s, sT, y, scroll, shift, at, opacity: sine(seg(t, 8.1, 8.4)) * (1 - sine(seg(t, 14.35, 15.15))) };
 };
-const CUR: [number, number, number][] = [
-  [9.5, 1010, 640], [9.86, 690, 289], [10.5, 690, 289], [10.76, 800, 375], [10.86, 800, 375], [11.08, 760, 426], [11.65, 760, 426],
-  [12.25, 650, 567], [12.95, 650, 567], [13.13, 890, 567], [13.25, 890, 567], [13.88, 1016, 822],
-];
-const curAt = (t: number) => {
-  if (t <= CUR[0][0]) return { x: CUR[0][1], y: CUR[0][2] };
-  for (let i = 1; i < CUR.length; i++) if (t <= CUR[i][0]) { const u = sine(seg(t, CUR[i - 1][0], CUR[i][0])); return { x: mix(CUR[i - 1][1], CUR[i][1], u), y: mix(CUR[i - 1][2], CUR[i][2], u) }; }
-  return { x: CUR[CUR.length - 1][1], y: CUR[CUR.length - 1][2] };
+// the hand's targets (page px of the fingertip) and click times; every UI response fires at its click time
+const CLK = { name: 9.8, branche: 10.95, option: 11.45, mail: 12.6, tel: 13.45, go: 14.2 };
+const handKeys = (t: number): HandKey[] => {
+  const v = wiz(t), P = (x: number, y: number) => v.at(x, y);
+  const n = P(960, 292), br = P(985, 376), op = P(900, 427), ma = P(770, 571), te = P(1005, 571), go = P(1010, 804);
+  return [
+    { at: 8.2, x: n.x + 60, y: 1340 },
+    { at: CLK.name, ...n, click: true },
+    { at: CLK.branche, ...br, click: true, dur: 0.6, early: 0.5 },
+    { at: CLK.option, ...op, click: true, dur: 0.35, early: 0.1 },
+    { at: CLK.mail, ...ma, click: true, dur: 0.6, early: 0.5 },
+    { at: CLK.tel, ...te, click: true, dur: 0.45, early: 0.3 },
+    { at: CLK.go, ...go, click: true, dur: 0.5, early: 0.2 },
+    { at: 15.45, x: go.x + 40, y: 1400, early: 0, dur: 0.85 },
+  ];
 };
-const CLICKS = [9.9, 10.78, 11.14, 12.27, 13.15, 13.92];
 const BTN = { x: WIZ_R.button.x + WIZ_R.button.w / 2, y: WIZ_R.button.y + WIZ_R.button.h / 2, w: WIZ_R.button.w, h: WIZ_R.button.h };
 const T_NAME = "Holm Fysioterapi", T_WHAT = "Genoptræning og massage", T_MAIL = "kontakt@holmfysio.dk", T_TEL = "+45 31 42 53 64";
 const OPTIONS = ["Fysioterapi", "Frisør", "Restaurant"];
 
 const WizardScene: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30, v = wiz(t);
-  const name = typed(g, 9.95, T_NAME, 22), what = typed(g, 11.42, T_WHAT, 28), mail = typed(g, 12.32, T_MAIL, 25), tel = typed(g, 13.2, T_TEL, 32);
-  const focus = t < 9.9 ? null : t < 10.78 ? "name" : t < 11.16 ? "branche" : t < 12.27 ? null : t < 13.15 ? "email" : t < 13.92 ? "phone" : null;
-  const whatOn = t >= 11.16 && t < 12.27;
+  const name = typed(g, 9.86, T_NAME, 22), what = typed(g, 11.72, T_WHAT, 28), mail = typed(g, 12.66, T_MAIL, 27), tel = typed(g, 13.5, T_TEL, 34);
+  const focus = t < CLK.name ? null : t < CLK.branche ? "name" : t < CLK.option + 0.02 ? "branche" : t < CLK.mail ? null : t < CLK.tel ? "email" : t < CLK.go ? "phone" : null;
+  const whatOn = t >= CLK.option + 0.02 && t < CLK.mail;
   const typing = (name.length > 0 && name.length < T_NAME.length) || (mail.length > 0 && mail.length < T_MAIL.length) || (tel.length > 0 && tel.length < T_TEL.length);
-  const props = { g, name, branche: t >= 11.16 ? "Fysioterapi" : "", email: mail, phone: tel, focus, caret: true, caretSolid: typing, hideButton: true } as const;
-  const menu = sp(t, 10.8, 0.45) - sp(t, 11.17, 0.5), room = v.shift / SHIFT;
-  const hover = seg(t, 10.96, 11.08);
+  const props = { g, name, branche: t >= CLK.option + 0.02 ? "Fysioterapi" : "", email: mail, phone: tel, focus, caret: true, caretSolid: typing, hideButton: true } as const;
+  const menu = sp(t, CLK.branche + 0.02, 0.45) - sp(t, CLK.option + 0.03, 0.5), room = v.shift / SHIFT;
+  const hover = seg(t, 11.2, 11.35);
   const blink = (what.length > 0 && what.length < T_WHAT.length) || Math.floor(g / 15) % 2 === 0;
   return (
     <AbsoluteFill>
@@ -260,11 +271,11 @@ const WizardScene: React.FC<{ g: number }> = ({ g }) => {
     </AbsoluteFill>
   );
 };
-// the cursor, drawn over everything (it leads every action; it rides the page while the page scrolls)
-const WizCursor: React.FC<{ g: number }> = ({ g }) => {
-  const t = g / 30, v = wiz(t), cp = curAt(t), c = v.at(cp.x, cp.y), cPress = Math.max(...CLICKS.map((x) => press(g, x)));
-  const cOp = sine(seg(t, 9.5, 9.8)) * (1 - sine(seg(t, 14.1, 14.45)));
-  return cOp > 0 ? <Cursor x={c.x} y={c.y} press={cPress} size={28 * v.s} opacity={cOp} /> : null;
+// the hand cursor, drawn over everything: one key list for the whole wizard beat, its targets re-projected every frame
+// so it stays on them through the push and the page scroll
+const WizHand: React.FC<{ g: number }> = ({ g }) => {
+  const t = g / 30, v = wiz(t);
+  return <Hand {...handAt(g, handKeys(t), { size: 150 + 30 * seg(v.s, S0, S1) })} />;
 };
 
 /* ================= the smear: button → trail → progress bar → the window's top edge (13.9 – 20.15) ================= */
@@ -273,10 +284,10 @@ const WizCursor: React.FC<{ g: number }> = ({ g }) => {
 // leaves through the right edge and comes in again from the left at the centre line (soft start, long landing),
 // where it settles as the progress bar; the number counts with the head and lands on 100. Then the bar rises and
 // thins into the site window's top bar, and the window unfolds down from it.
-const BAR_H = 86, BAR_L = 410, BAR_R = 1510, SW0 = 14.08, SW1 = 15.42, D1 = 700, D2 = BAR_R + 260, LAG = 0.42;
+const BAR_H = 86, BAR_L = 410, BAR_R = 1510, SW0 = 14.36, SW1 = 15.7, D1 = 700, D2 = BAR_R + 260, LAG = 0.42;
 const ramp = (x: number) => (x <= 0 ? 0 : x < 0.6 ? (x * x) / 1.2 : x - 0.3);
 const sweepE = (t: number) => sine(1 - Math.pow(1 - seg(t, SW0, SW1), 1.8));
-const siteQ = (t: number) => soft(t, 15.96, 0.95);                       // the window unfolding down from its top bar
+const siteQ = (t: number) => soft(t, 16.24, 0.95);                       // the window unfolding down from its top bar
 // the smear's shape between tail xL and head xH on the line yc: fh = the tail's height (≥ BAR_H), a = strength
 const Smear: React.FC<{ id: string; xL: number; xH: number; yc: number; fh: number; a: number; solid: number }> = ({ id, xL, xH, yc, fh, a, solid }) => {
   const r = BAR_H / 2, len = Math.max(1, xH - xL), xT = xL + Math.min(len * 0.62, 900), d = (xT - xL) * 0.5;
@@ -304,7 +315,7 @@ const Smear: React.FC<{ id: string; xL: number; xH: number; yc: number; fh: numb
 const Loader: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30, live = wiz(t);
   const b = live.at(BTN.x, BTN.y + live.shift), bs = live.sT / S1, bw = BTN.w * S1, bh = BTN.h * S1;
-  const col = sine(seg(t, 13.98, 14.25));                               // ink → sage
+  const col = sine(seg(t, CLK.go + 0.06, CLK.go + 0.33));                               // ink → sage
   const S = (D1 + D2) * sweepE(t), Sl = (D1 + D2) * sweepE(t - LAG);
   const v = clamp01(((sweepE(t + 0.01) - sweepE(t - 0.01)) / 0.02) / 1.9);   // the sweep's speed, 0..1
   // stage 1: out of the button, off the right edge
@@ -314,23 +325,23 @@ const Loader: React.FC<{ g: number }> = ({ g }) => {
   const landed = sine(seg(t, SW1 - 0.45, SW1 + 0.05));
   const pct = Math.round(100 * clamp01((h2x - BAR_L) / (BAR_R - BAR_L)));
   // the bar becomes the window's top bar
-  const m2 = sine(seg(t, 15.48, 16.08)), cH = camH1(g);
+  const m2 = sine(seg(t, 15.76, 16.36)), cH = camH1(g);
   const tl = project(cH, { x: H1_SITE.x - SITE_WIN.w / 2, y: H1_SITE.y - SITE_WIN.h / 2, z: H1_SITE.z }), pill = project(cH, { x: H1_SITE.x, y: H1_SITE.y + 23 - SITE_WIN.h / 2, z: H1_SITE.z });
   const rx = mix(BAR_L, tl.x, m2), rw = mix(BAR_R - BAR_L, SITE_WIN.w * tl.s, m2), rh = mix(BAR_H, 46 * tl.s, m2), ry = mix(540 - BAR_H / 2, tl.y, m2);
-  const barOp = 1 - sine(seg(t, 16.06, 16.3));
+  const barOp = 1 - sine(seg(t, 16.34, 16.58));
   // the turning logo: at the bar's head, then on the address pill
-  const lp = sine(seg(t, 14.5, 14.9)), out = sine(seg(t, 19.75, 20.1));
+  const lp = sine(seg(t, 14.78, 15.18)), out = sine(seg(t, 19.75, 20.1));
   const lx = mix(Math.min(h2x, BAR_R) - BAR_H / 2, pill.x, m2), ly = mix(540, pill.y, m2), lsz = mix(64, 30 * pill.s, m2);
-  const dots = fanDots(lsz, lx, ly, 240 * ramp(t - 14.5), 1, [1, 1, 1, 1, 1, 1], lp * (1 - out));
-  const nOp = sine(seg(t, 14.5, 14.8)) * (1 - sine(seg(t, 15.46, 15.76)));
+  const dots = fanDots(lsz, lx, ly, 240 * ramp(t - 14.78), 1, [1, 1, 1, 1, 1, 1], lp * (1 - out));
+  const nOp = sine(seg(t, 14.78, 15.08)) * (1 - sine(seg(t, 15.74, 16.04)));
   return (
     <AbsoluteFill>
-      {t < 15.1 && (
-        <div style={{ position: "absolute", left: b.x - bw / 2, top: b.y - bh / 2, width: bw, height: bh, borderRadius: mix(7 * S1, bh / 2, col), opacity: live.opacity * (1 - sine(seg(t, 14.2, 14.75))), transform: `scale(${(bs * (1 - 0.045 * press(g, 13.92))).toFixed(5)})`,
+      {t < 15.4 && (
+        <div style={{ position: "absolute", left: b.x - bw / 2, top: b.y - bh / 2, width: bw, height: bh, borderRadius: mix(7 * S1, bh / 2, col), opacity: live.opacity * (1 - sine(seg(t, 14.48, 15.03))), transform: `scale(${(bs * (1 - 0.045 * press(g, CLK.go))).toFixed(5)})`,
           background: `color-mix(in srgb, ${C.sage} ${(col * 100).toFixed(1)}%, ${C.ink})`, color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: SANS, fontSize: 14 * S1, fontWeight: 500 }}>
           <span style={{ opacity: 1 - col }}>Fortsæt</span>
         </div>)}
-      {t >= SW0 && t < 15.3 && <Smear id="s1" xL={t1x} xH={h1x} yc={b.y} fh={BAR_H + 300 * v} a={sine(seg(t, SW0, SW0 + 0.2)) * (1 - sine(seg(t, 14.45, 15.25)))} solid={0} />}
+      {t >= SW0 && t < 15.6 && <Smear id="s1" xL={t1x} xH={h1x} yc={b.y} fh={BAR_H + 300 * v} a={sine(seg(t, SW0, SW0 + 0.2)) * (1 - sine(seg(t, 14.73, 15.53)))} solid={0} />}
       {t >= SW0 && m2 <= 0 && <Smear id="s2" xL={t2x} xH={Math.max(h2x, t2x + 1)} yc={540} fh={BAR_H + 420 * v} a={1} solid={landed} />}
       {m2 > 0 && barOp > 0 && (
         <div style={{ position: "absolute", left: 0, top: 0, width: 1, height: 1, opacity: barOp }}>
@@ -338,7 +349,7 @@ const Loader: React.FC<{ g: number }> = ({ g }) => {
         </div>)}
       {nOp > 0 && (
         <div style={{ position: "absolute", left: BAR_R - 400, top: 540 - BAR_H / 2 - 150, width: 400, textAlign: "right", fontFamily: SERIF, fontSize: 112, lineHeight: "120px", letterSpacing: "-0.02em", color: C.ink, whiteSpace: "nowrap", fontVariantNumeric: "tabular-nums",
-          opacity: nOp, transform: `translateY(${((1 - sine(seg(t, 14.5, 14.9))) * 30 - sine(seg(t, 15.46, 15.76)) * 40).toFixed(2)}px)` }}>
+          opacity: nOp, transform: `translateY(${((1 - sine(seg(t, 14.78, 15.18))) * 30 - sine(seg(t, 15.74, 16.04)) * 40).toFixed(2)}px)` }}>
           {pct}<span style={{ fontSize: 56, color: C.soft }}> /100</span>
         </div>)}
       {lp > 0 && <Dots dots={dots} color={`color-mix(in srgb, ${C.sage} ${(m2 * 100).toFixed(1)}%, #FFFFFF)`} />}
@@ -355,13 +366,13 @@ const CHIPS = [
 ];
 const FLY = [18.3, 18.8, 19.3], FLY_D = 0.6;
 const SiteScene: React.FC<{ g: number }> = ({ g }) => {
-  const t = g / 30, q = siteQ(t), winOp = sine(seg(t, 15.88, 16.08));
+  const t = g / 30, q = siteQ(t), winOp = sine(seg(t, 16.16, 16.36));
   const done = t >= 20.18;
   const o = (at: number, r = 0.55) => sp(t, at, r);
   const b = {
-    frame: [soft(t, 15.9, 0.9), soft(t, 16.05, 0.9), soft(t, 16.2, 0.9), soft(t, 16.35, 0.9)],
-    h1: soft(t, 15.88, 1.0), h2: soft(t, 16.05, 1.0), para: soft(t, 16.25, 1.0),
-    hero: soft(t, 16.5, 1.2), cards: [soft(t, 16.9, 0.9), soft(t, 17.1, 0.9), soft(t, 17.3, 0.9)],
+    frame: [soft(t, 16.18, 0.9), soft(t, 16.33, 0.9), soft(t, 16.48, 0.9), soft(t, 16.63, 0.9)],
+    h1: soft(t, 16.16, 1.0), h2: soft(t, 16.33, 1.0), para: soft(t, 16.53, 1.0),
+    hero: soft(t, 16.7, 1.2), cards: [soft(t, 17.0, 0.9), soft(t, 17.2, 0.9), soft(t, 17.4, 0.9)],
     nav: [0, 1, 2, 3, 4, 5].map((i) => o(17.4 + 0.09 * i, 0.5)), btn: soft(t, 18.0, 0.7),
   };
   const patch = 1 - seg(t, 19.85, 20.15);
@@ -405,10 +416,10 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
     <AbsoluteFill>
       {t >= 7.5 && t < 9.4 && <Lockup g={g} />}
       {t < M1 && <Hook g={g} />}
-      {t >= 8.05 && t < 15.05 && <WizardScene g={g} />}
-      {t >= 15.85 && <SiteScene g={g} />}
+      {t >= 8.05 && t < 15.35 && <WizardScene g={g} />}
+      {t >= 16.1 && <SiteScene g={g} />}
       {t >= 8.05 && t < 20.12 && <Loader g={g} />}
-      {t >= 9.45 && t < 14.5 && <WizCursor g={g} />}
+      {t >= 8.3 && t < 15.5 && <WizHand g={g} />}
     </AbsoluteFill>
   );
 };
