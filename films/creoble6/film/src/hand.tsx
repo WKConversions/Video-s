@@ -14,7 +14,7 @@ import { clamp01 } from "./lib";
 import { f } from "./shared";
 
 const STEPS = Array.from({ length: 17 }, (_, i) => -40 + 5 * i);   // 5° apart, so blending two poses never shows a double edge
-const TIP = { x: 0.455, y: 0.128 };       // the index fingertip inside the square sprite (at rest)
+const TIP = { x: 0.39, y: 0.135 };        // the top of the index finger inside the square sprite (measured on h_0_0.png): the click point
 const WRIST = { x: 0.5, y: 0.875 };       // the bottom of the hand: the anchor of every tilt, turn and squash
 // Hand: the cursor at fingertip (x, y). size = sprite box px (the hand itself is about 0.64 × 0.76 of it).
 // tiltX / tiltY in degrees (±40), about the wrist: tiltX − swings the fingertip AWAY (into the screen), + toward the
