@@ -132,7 +132,7 @@ const Edit: React.FC<{ g: number }> = ({ g }) => {
 /* ---------- the two choice cards (780 × 590) ---------- */
 const shell: React.CSSProperties = { position: "absolute", left: 0, top: 0, width: CW, height: CH, borderRadius: 24, background: C.white, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW_BIG}` };
 const title: React.CSSProperties = { position: "absolute", left: 48, top: 30, fontFamily: SERIF, fontSize: 60, letterSpacing: "-0.025em", lineHeight: 1.2, color: C.ink, transformOrigin: "0% 100%" };
-const MINI = { x: 138, y: 295, w: 150 };           // where the thumbnail packs down to (card px, centre; width)
+const MINI = { x: 152, y: 292, w: 208 };           // where the thumbnail packs down to (card px, centre; width)
 const CardL: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30, fill = sine(lin(t, 29.85, 0.75)), done = aspring(g, 30.6, 0.5, 0.86);
   return (
@@ -143,10 +143,10 @@ const CardL: React.FC<{ g: number }> = ({ g }) => {
         <div style={{ width: 64, height: 64, borderRadius: 17, background: C.ink, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${(1 - 0.08 * press(g, 29.15)).toFixed(4)})` }}>
           <Ico n="arrow" s={32} c="#FFFFFF" w={2.4} style={{ transform: "rotate(90deg)" }} /></div></div>
       {/* the file row the thumbnail packs into */}
-      <div style={{ position: "absolute", left: 238, top: 250, fontSize: 38, fontWeight: 500, letterSpacing: "-0.01em", whiteSpace: "nowrap", transformOrigin: "0% 100%", ...arrive(aspring(g, 29.55, 0.6), 30) }}>holmfysio.zip</div>
-      <div style={{ position: "absolute", left: 238, top: 322, width: 440, height: 12, borderRadius: 6, background: "#ECE8E1", overflow: "hidden", ...arrive(aspring(g, 29.65, 0.6), 30, 1) }}>
-        <div style={{ width: "100%", height: "100%", borderRadius: 6, background: C.sage, transformOrigin: "0% 50%", transform: `scaleX(${fill.toFixed(4)})` }} /></div>
-      <div style={{ position: "absolute", left: 692, top: 252, width: 44, height: 44, borderRadius: "50%", background: C.sage, display: "flex", alignItems: "center", justifyContent: "center", opacity: clamp01(done * 2), transform: `scale(${mix(0.5, 1, done).toFixed(4)})` }}><Ico n="check" s={30} c={C.white} w={3} /></div>
+      <div style={{ position: "absolute", left: 284, top: 236, fontSize: 46, fontWeight: 500, letterSpacing: "-0.01em", whiteSpace: "nowrap", transformOrigin: "0% 100%", ...arrive(aspring(g, 29.55, 0.6), 30) }}>holmfysio.zip</div>
+      <div style={{ position: "absolute", left: 284, top: 318, width: 448, height: 14, borderRadius: 7, background: "#ECE8E1", overflow: "hidden", ...arrive(aspring(g, 29.65, 0.6), 30, 1) }}>
+        <div style={{ width: "100%", height: "100%", borderRadius: 7, background: C.sage, transformOrigin: "0% 50%", transform: `scaleX(${fill.toFixed(4)})` }} /></div>
+      <div style={{ position: "absolute", left: 686, top: 242, width: 46, height: 46, borderRadius: "50%", background: C.sage, display: "flex", alignItems: "center", justifyContent: "center", opacity: clamp01(done * 2), transform: `scale(${mix(0.5, 1, done).toFixed(4)})` }}><Ico n="check" s={30} c={C.white} w={3} /></div>
       <div style={{ position: "absolute", left: 48, top: 482, fontSize: 40, fontWeight: 500, letterSpacing: "-0.015em", whiteSpace: "nowrap", transformOrigin: "0% 100%", ...arrive(aspring(g, 29.62, 0.65), 36) }}>Én gang for alle</div>
     </div>
   );
@@ -223,7 +223,7 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
   const row = (i: number, tin: number, ttype: number, len: number, tact: number): HRow => {
     const n = CARD_ROWS[i][1].length, ty = lin(t, ttype, len);
     return { in: sine(lin(t, tin, 0.55)), chars: Math.floor(ty * n), caret: t > ttype - 0.2 && ty < 1, a: sine(lin(t, tact, 0.45)), draw: sine(lin(t, tact + 0.15, 0.45)),
-      tint: sine(lin(t, tact, 0.9)), tintO, pulse: Math.sin(Math.PI * lin(t, 42.75 + i * 0.2, 0.6)) };
+      tint: sine(lin(t, tact, 0.9)), tintO: tintO * (1 - 0.5 * sine(lin(t, tact + 0.9, 0.9))), pulse: Math.sin(Math.PI * lin(t, 42.75 + i * 0.2, 0.6)) };
   };
   const hrows = [row(0, 37.05, 37.3, 0.5, 37.85), row(1, 38.35, 38.65, 0.8, 39.5), row(2, 39.95, 40.3, 0.85, 41.6)];
   const price = sine(lin(t, 42.6, 0.75)), spin = lin(t, 36.9, 0.5) * (1 - lin(t, 42.2, 0.5));
@@ -254,9 +254,9 @@ export const SceneB: React.FC<{ g: number }> = ({ g }) => {
     <>
       <Stage3D cam={c}>
         {/* the line above the cards (uncovered as the window shrinks away) */}
-        {t > 27.7 && t < 37.2 && (() => { const L = wp(34, 960, 215, 0.9), q = smoother(lin(t, 36.05, 1.0)); return (
+        {t > 27.6 && t < 37.2 && (() => { const L = wp(34, 960, 215, 0.9), q = smoother(lin(t, 36.05, 1.0)); return (
           <Plane x={L.x} y={L.y - 90 * q * L.s} z={ZS} w={2} h={2} scale={L.s} opacity={1 - q}><div style={{ position: "absolute", left: 1, top: 1 }}>
-            <Kinetic g={g} size={124} items={[{ t: "Du", at: 27.83 }, { t: "vælger", at: 27.9 }, { t: "selv.", at: 28.2, accent: true }]} />
+            <Kinetic g={g} size={124} items={[{ t: "Du", at: 27.68 }, { t: "vælger", at: 27.93 }, { t: "selv.", at: 28.24, accent: true }]} />
           </div></Plane>); })()}
 
         {/* the right card (the copy) and its thumbnail */}
