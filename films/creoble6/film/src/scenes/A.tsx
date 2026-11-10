@@ -14,7 +14,7 @@ import React from "react";
 import { AbsoluteFill } from "remotion";
 import { C, OUT, INOUT, SANS, clamp01, mix } from "../lib";
 import { f, k, typed, press } from "../shared";
-import { Stage3D, Plane, cam, project, PERSP, type Cam } from "../cam";
+import { Stage3D, Plane, cam, project, dofBlur, PERSP, type Cam } from "../cam";
 import { Kinetic, TYPE, measure, useFonts, type KItem } from "../type";
 import { Dots, dotsAt } from "../dots";
 import { WizardWindow, WIZ_WIN, WIZ_R, SiteWindow, SITE_WIN, Cursor, cursorAt, Handoff1, camH1, H1_SITE, HANDOFF_HALF } from "../ui";
@@ -45,7 +45,7 @@ const LIN = (t: number) => t;
 const seg = (t: number, a: number, b: number, e: (t: number) => number = INOUT) => e(clamp01((t - a) / (b - a)));
 
 /* ---------- zone S: the site, the rail, the spinner ---------- */
-const SITE: Pl = { ...H1_SITE };
+const SITE = { ...H1_SITE };
 const L = 1500;                                                  // the spinner sits this far left of the window's corner
 const S = planePt(SITE, -SITE_WIN.w / 2 - L, -SITE_WIN.h / 2);   // the spinner's centre (= the button's spot)
 const MARK: Pl = { ...S, ry: SITE.ry };
@@ -56,6 +56,7 @@ const siteQ = (px: number, py: number) => planePt(SITE, px - SITE_WIN.w / 2, py 
 
 /* ---------- zone H: the wizard (its button on S), and everything before it ---------- */
 const WRX = 30;
+const ZK = 2.5;   // the wizard is laid out 2.5× larger and scaled back, so its text stays crisp in the extreme close-ups
 const BTN = { x: WIZ_R.button.x + WIZ_R.button.w / 2, y: WIZ_R.button.y + WIZ_R.button.h / 2 + 46 };   // window px
 const WIZ: Pl = (() => { const o = planePt({ x: 0, y: 0, z: 0, rx: WRX }, BTN.x - WIZ_WIN.w / 2, BTN.y - WIZ_WIN.h / 2); return { x: S.x - o.x, y: S.y - o.y, z: S.z - o.z, rx: WRX }; })();
 const WFW = { x: 0, y: Math.sin(rad(WRX)), z: -Math.cos(rad(WRX)) };   // into the wizard page (away from the viewer)
@@ -92,9 +93,9 @@ const hookCam = (t: number, cs: number): Cam => {
     x = 0;
     z = -PERSP + (Z_REST + PERSP) * (1 - Math.pow(1 - u, 3)) - 70 * Math.max(0, t - T_T1) - (Z_REST - 70 * (4.25 - T_T1) - Z_LINE2) * seg(t, T_FLY, T_FLY + 0.46);
   }
-  if (t >= T_P0) { const w = clamp01((t - T_P0) / (T_T1 - T_P0)); rz = 18 * Math.sin(Math.PI * w) * (1 - w); }
-  const ap = t < 3 ? 16 * seg(t, 1.5, 1.85) : mix(16, 10, seg(t, 3.0, 3.4));
-  const focus = mix(Z_ERR * 0 + (PERSP + Z_REST - Z_ERR), PERSP, seg(t, 3.0, 3.4));
+  if (t >= T_P0) { const w = clamp01((t - T_P0) / (T_T1 - T_P0)); rz = 11 * Math.sin(Math.PI * w) * (1 - w); }
+  const ap = 10 * seg(t, 1.5, 1.85);
+  const focus = mix(PERSP + Z_REST - Z_ERR, PERSP, seg(t, 3.0, 3.4));
   return cam({ ...H(x, 0, z), rz, ap, focus });
 };
 type Key = { t: number; c: Cam; e?: (t: number) => number };
@@ -107,15 +108,15 @@ const sceneCam = (g: number, cs: number): Cam => {
     { t: 5.87, c: lookW(800, 326, 1.95), e: LIN },
     { t: 6.68, c: lookW(806, 283, 2.7) },                                // extreme close-up: the field 1300 px wide
     { t: 7.9, c: lookW(838, 285, 2.85), e: LIN },                        // tracking the text
-    { t: 8.45, c: lookW(905, 640, 2.4) },                                // down-right to Fortsæt
-    { t: 8.56, c: lookW(908, 646, 2.43), e: LIN },
+    { t: 8.45, c: lookW(905, 600, 2.4) },                                // down-right to Fortsæt
+    { t: 8.56, c: lookW(908, 605, 2.43), e: LIN },
     { t: 9.25, c: look(MARK, S, 1.3, 20, 0, -6) },                       // the button's spot: the spinner
     { t: 9.62, c: look(MARK, S, 1.36, 20, 0, -1.5), e: LIN },
-    { t: 10.38, c: look(SITE, siteQ(730, 453), 1.0, 20, 0, -5) },        // the truck along the line to the window
-    { t: 10.62, c: look(SITE, siteQ(726, 450), 1.02, 20, 0, -4.6), e: LIN },
-    { t: 11.3, c: look(SITE, siteQ(690, 430), 1.18, 20, 0, -10) },       // the glide over the site, a 5° turn
+    { t: 10.32, c: look(SITE, siteQ(730, 453), 0.96, 20, 0, -5) },        // the truck along the line to the window
+    { t: 10.5, c: look(SITE, siteQ(727, 451), 0.975, 20, 0, -4.7), e: LIN },
+    { t: 11.08, c: look(SITE, siteQ(690, 430), 1.16, 20, 0, -10) },       // the glide over the site, a 5° turn
   ];
-  if (t >= 11.3) return lerpCam(keys[keys.length - 1].c, camH1(g), seg(t, 11.3, 12.5));   // back to the hand-off pose
+  if (t >= 11.08) return lerpCam(keys[keys.length - 1].c, camH1(g), seg(t, 11.08, 12.05));   // back to the hand-off pose
   for (let i = 1; i < keys.length; i++) if (t <= keys[i].t) return lerpCam(keys[i - 1].c, keys[i].c, seg(t, keys[i - 1].t, keys[i].t, keys[i].e ?? INOUT));
   return keys[keys.length - 1].c;
 };
@@ -159,7 +160,7 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
   const lifted = t >= 8.58;
   const fall = seg(t, 8.62, 9.3);
   const wizP = vadd(WIZ, WFW, 2600 * fall);
-  const fys = k(g, 8.02, 0.22, INOUT);
+  const fys = k(g, 7.95, 0.2, INOUT);
   const hover = k(g, 8.25, 0.2, INOUT), prs = press(g, 8.5);
 
   /* the button → the dot → the six dots → the turning logo */
@@ -175,9 +176,9 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
   /* the progress line (rail px from the spinner's centre) and the window that unfolds from it */
   const head = mix(130, RAIL_W - 16, seg(t, f("w:bygger") / 30, f("w:bygger") / 30 + 0.52));
   const tail = mix(130, L + 16, seg(t, 9.8, 10.25));
-  const unfold = seg(t, 10.0, 10.62);
-  const build = clamp01((t - 10.12) / 1.15);
-  const lineO = 1 - seg(t, 10.95, 11.3);
+  const unfold = seg(t, 9.98, 10.52);
+  const build = clamp01((t - 10.08) / 0.95);
+  const lineO = 1 - seg(t, 10.8, 11.1);
 
   /* the cursor (screen space, on page points) */
   const pg = (px: number, py: number) => { const q = project(c, wizQ(px, py)); return { x: q.x, y: q.y }; };
@@ -206,7 +207,7 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
         })}
         {t > 1.3 && t < 3.3 && (() => {
           const P = H(0, 0, Z_ERR);
-          return <Plane {...P} w={ERR.w} h={ERR.h} opacity={gate * clamp01((dist(P) - 170) / 380)}><ErrorPage p={seg(t, 2.58, 2.8)} /></Plane>;
+          return <Plane {...P} w={ERR.w} h={ERR.h} opacity={gate * clamp01((dist(P) - 170) / 380)}><ErrorPage p={seg(t, 2.66, 2.84)} /></Plane>;
         })()}
         {/* A4: "Bygget af AI." */}
         {t > 2.9 && t < 5.7 && (
@@ -216,9 +217,10 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
         )}
         {/* A5–A7: the wizard */}
         {t > 3.5 && t < 9.3 && (
-          <Plane {...wizP} rx={WRX} w={WIZ_WIN.w} h={WIZ_WIN.h} opacity={1 - seg(t, 8.78, 9.28)} blur={10 * fall}
-            farBlur={far} farMask="radial-gradient(ellipse 36% 15% at 50% 39.5%, #000 55%, transparent 100%)">
-            <div style={{ position: "relative", width: WIZ_WIN.w, height: WIZ_WIN.h }}>
+          <Plane {...wizP} rx={WRX} w={WIZ_WIN.w * ZK} h={WIZ_WIN.h * ZK} scale={1 / ZK} opacity={1 - seg(t, 8.78, 9.28)}
+            blur={ZK * 10 * fall + (ZK - 1) * dofBlur(c, dist(wizP))}
+            farBlur={ZK * far} farMask="radial-gradient(ellipse 36% 15% at 50% 39.5%, #000 55%, transparent 100%)">
+            <div style={{ position: "relative", width: WIZ_WIN.w, height: WIZ_WIN.h, zoom: ZK }}>
               <WizardWindow g={g} name={name} focus={focused ? "name" : null} caret={focused} caretSolid={t < 8.0} hover={hover} press={prs} hideButton={lifted} />
               {fys > 0 && (
                 <div style={{ position: "absolute", left: WIZ_R.branche.x + 2, top: WIZ_R.branche.y + 46 + 2, width: 420, height: WIZ_R.branche.h - 4, borderRadius: 6, background: C.white, opacity: fys,
@@ -229,14 +231,16 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
         )}
         {/* A7–A8: the lifted button, the dot, the turning logo */}
         {lifted && t < 10.12 && (
-          <Plane {...vadd(S, { x: 0, y: -Math.sin(rad(WRX)) * (1 - mq), z: 1 }, 1.5)} rx={WRX * (1 - mq)} ry={SITE.ry * mq} w={2} h={2} dof={false}>
+          <Plane {...vadd(S, { x: 0, y: -Math.sin(rad(WRX)) * (1 - mq), z: 1 }, 1.5)} rx={WRX * (1 - mq)} ry={SITE.ry * mq} w={0} h={0} scale={1 / ZK} dof={false}>
+            <div style={{ position: "absolute", left: 0, top: 0, zoom: ZK }}>
             {m2 < 1 && (
-              <div style={{ position: "absolute", left: 1 - bw / 2, top: 1 - bh / 2, width: bw, height: bh, borderRadius: mix(7, R0, m1), background: `color-mix(in srgb, ${C.sage} ${(m2 * 100).toFixed(1)}%, #3A3431)`,
+              <div style={{ position: "absolute", left: -bw / 2, top: -bh / 2, width: bw, height: bh, borderRadius: mix(7, R0, m1), background: `color-mix(in srgb, ${C.sage} ${(m2 * 100).toFixed(1)}%, #3A3431)`,
                 opacity: 1 - seg(t, 8.9, 9.0, LIN), transform: `scale(${1 - 0.045 * prs})`, display: "flex", alignItems: "center", justifyContent: "center", fontFamily: SANS, fontSize: 14, fontWeight: 500, color: "#FFFFFF", overflow: "hidden", whiteSpace: "nowrap" }}>
                 <span style={{ opacity: 1 - seg(t, 8.6, 8.76, LIN) }}>Fortsæt</span>
               </div>
             )}
-            {t >= 8.9 && <Dots dots={logo} color={`color-mix(in srgb, ${C.sage} ${(m2 * 100).toFixed(1)}%, #3A3431)`} style={{ left: 1, top: 1 }} />}
+            {t >= 8.9 && <Dots dots={logo} color={`color-mix(in srgb, ${C.sage} ${(m2 * 100).toFixed(1)}%, #3A3431)`} />}
+            </div>
           </Plane>
         )}
         {/* A8: the progress line, then the site unfolding from it */}
@@ -245,7 +249,7 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
             <div style={{ position: "absolute", left: tail, top: 10, width: Math.max(0, head - tail), height: 3, borderRadius: 2, background: C.sage }} />
           </Plane>
         )}
-        {t >= 10.0 && (
+        {t >= 9.98 && (
           <Plane {...H1_SITE} w={SITE_WIN.w} h={SITE_WIN.h}
             style={unfold < 1 ? { clipPath: `inset(${(-240 * unfold).toFixed(1)}px -240px ${mix(SITE_WIN.h - 4, -240, unfold).toFixed(1)}px -240px)` } : undefined}>
             <SiteWindow build={build} />
@@ -256,7 +260,7 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
       {/* A2: the line floating in the tunnel */}
       {t > 1.7 && t < 3.2 && (
         <div style={{ position: "absolute", left: 960, top: 540, transform: `scale(${mix(0.95, 1.03, seg(t, 1.78, 2.9, LIN))})` }}>
-          <Kinetic g={g} size={TYPE.big} items={[{ t: "få", at: "w:f", out: 2.64, dur: 0.45 }, { t: "minutter", at: "w:minutter", out: 2.64, accent: true, dur: 0.45 }, { t: "væk.", at: "w:vk", out: 2.64, dur: 0.4 }]} />
+          <Kinetic g={g} size={TYPE.big} items={[{ t: "få", at: "w:f", out: 2.58, dur: 0.45 }, { t: "minutter", at: "w:minutter", out: 2.58, accent: true, dur: 0.45 }, { t: "væk.", at: "w:vk", out: 2.58, dur: 0.4 }]} />
         </div>
       )}
       {/* A10: "Ingen teknik." → "Ingen skabeloner." in front of the far, soft site */}

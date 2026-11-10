@@ -6,14 +6,14 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
 import { Stage3D, Plane, cam, project, Cam } from "../cam";
-import { Kinetic, TYPE, words, measure, useFonts, KItem } from "../type";
+import { Kinetic, TYPE, measure, useFonts, KItem } from "../type";
 import { Dots, dotsAt, RING, BOX_C, Icon, assemble } from "../dots";
 import { HostingCard, CARD, Cursor, cursorAt, Handoff2, camH2, H2_CARD, HANDOFF_HALF } from "../ui";
 import { k, f, typed, press, Ico, Wordmark, C, OUT, INOUT, LIN, SANS, SHADOW, SHADOW_BIG, clamp01, mix } from "../shared";
 
 // motion blur: only around the fast moves (each ≤ 0.8 s)
 export const BLUR: [number, number][] = [
-  [39.55, 40.3],    // pull back from the rows to "Fast pris."
+  [39.6, 40.35],    // pull back from the rows to "Fast pris."
   [46.35, 47.1],    // the truck from the pills to "Brug for hjælp?"
   [49.75, 50.5],    // pull back from the chat to "Ingen kø."
   [51.85, 52.35],   // the fly-in to the send button
@@ -52,9 +52,9 @@ const sc = (scale: number) => 1600 / scale - 1600;   // the distance for an on-s
 const SHOTS: Shot[] = [
   // C1: the rows, close (the card's rows fill the frame; the title and the price go soft)
   { at: 38.95, t: cardPt(6, -24), d: sc(1.9), ry: 6, rx: 3, ap: 14, fo: CARD_C },
-  { at: 39.43, t: cardPt(14, 40), d: sc(2.0), ry: 4.5, rx: 2, ap: 14, fo: CARD_C, ease: LIN },
+  { at: 39.5, t: cardPt(14, 44), d: sc(2.0), ry: 4.5, rx: 2, ap: 14, fo: CARD_C, ease: LIN },
   // C2: back to the type plane; the card recedes, soft
-  { at: 40.4, t: P, d: 0, ry: 3, ap: 24 },
+  { at: 40.37, t: P, d: 0, ry: 3, ap: 24 },
   { at: 42.05, t: P, d: -50, ry: -1, ap: 24, ease: LIN },
   // C3: the pills; a slow orbit and push
   { at: 42.8, t: P, d: sc(1.3), ry: -8, ap: 22 },
@@ -63,8 +63,8 @@ const SHOTS: Shot[] = [
   { at: 47.1, t: Q, d: 0, ry: -3, ap: 16 },
   { at: 47.95, t: Q, d: -40, ry: -1, ap: 16, ease: LIN },
   // C5: the chat panel opens; push toward the reply (the panel stays inside SAFE)
-  { at: 48.8, t: [Q[0], Q[1] + 6, Q[2]], d: sc(1.2), ry: 3, rx: 1, ap: 16, fo: Q },
-  { at: 49.65, t: [Q[0], Q[1] + 6, Q[2]], d: sc(1.25), ry: -1.5, rx: 1, ap: 16, fo: Q, ease: LIN },
+  { at: 48.8, t: [Q[0], Q[1] + 6, Q[2]], d: sc(1.24), ry: 3, rx: 1, ap: 16, fo: Q },
+  { at: 49.65, t: [Q[0], Q[1] + 6, Q[2]], d: sc(1.3), ry: -1.5, rx: 1, ap: 16, fo: Q, ease: LIN },
   // C6: back to the type plane in front of it
   { at: 50.67, t: Q2, d: 0, ry: -3, ap: 24 },
   { at: 51.8, t: Q2, d: -50, ry: 0.5, ap: 24, ease: LIN },
@@ -97,6 +97,8 @@ const camC = (g: number): { c: Cam; s: Pose } => {
   // a slow breath on top of every shot, so the camera is never at rest (the target stays centred)
   s.ry += 0.6 * Math.sin((t / 6.7) * Math.PI * 2);
   s.rx += 0.3 * Math.sin((t / 8.9) * Math.PI * 2 + 1);
+  // the focus stays on the card until the third row is green, then racks to the type plane
+  if (t > 39.5 && t < 40.37) s.fo = mixV(CARD_C, P, INOUT(clamp01((t - 39.92) / 0.45)));
   let c = shotCam(s);
   const t0 = (f("h2") + HANDOFF_HALF) / 30, u = INOUT(clamp01((t - t0) / (38.95 - t0)));
   if (u < 1) { c = lerpCam(camH2(g), c, u); c.focus = project(c, { x: CARD_C[0], y: CARD_C[1], z: CARD_C[2] }).dist; }   // out of the hand-off: camH2's drift carries on and blends into the first shot
@@ -183,8 +185,8 @@ const Chat: React.FC<{ g: number; hideSend: boolean }> = ({ g, hideSend }) => {
         {/* the person */}
         <div style={{ position: "absolute", left: 32, top: 246, width: 64, height: 64, borderRadius: 32, background: C.sage, color: C.white, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, fontWeight: 600, letterSpacing: "0.02em", ...up(48.58) }}>SL</div>
         <div style={{ position: "absolute", left: 114, top: 232, fontSize: 21, fontWeight: 500, color: C.muted, ...up(48.62) }}>Sofie</div>
-        <div style={{ position: "absolute", left: 112, top: 268, width: 548, boxSizing: "border-box", padding: "20px 28px", borderRadius: "8px 26px 26px 26px", background: C.white, boxShadow: `0 0 0 1px ${C.line}, 0 1px 2px rgba(26,22,20,0.04)`,
-          fontSize: 31, lineHeight: 1.36, letterSpacing: "-0.01em", ...up("w:forstr-0.12", 0.45) }}>
+        <div style={{ position: "absolute", left: 112, top: 268, width: 584, boxSizing: "border-box", padding: "20px 28px", borderRadius: "8px 26px 26px 26px", background: C.white, boxShadow: `0 0 0 1px ${C.line}, 0 1px 2px rgba(26,22,20,0.04)`,
+          fontSize: 34, lineHeight: 1.36, letterSpacing: "-0.01em", ...up("w:forstr-0.12", 0.45) }}>
           <span>{reply}</span><span style={{ opacity: 0 }}>{REPLY.slice(reply.length)}</span>
         </div>
         {/* the input row */}
@@ -206,6 +208,7 @@ const SendButton: React.FC<{ p?: number; m?: number; abs?: boolean }> = ({ p = 0
   );
 };
 
+const W = (text: string, at: (string | number)[], accent: number, out: string | number, dur = 0.34): KItem[] => text.split(" ").map((tx, i) => ({ t: tx, at: at[i], accent: accent === i, out, dur }));
 const L10: [string, string, boolean?][] = [["Byg", "w:byg"], ["den.", "w:den3"], ["Se", "w:se"], ["den.", "w:den4"], ["Så", "w:s2"], ["køber", "w:kber", true], ["du.", "w:du5"]];
 const CTA_A = "Byg din side gratis på ", CTA_B = "creoble.dk";
 
@@ -213,13 +216,13 @@ const CTA_A = "Byg din side gratis på ", CTA_B = "creoble.dk";
 export const SceneC: React.FC<{ g: number }> = ({ g }) => {
   const ready = useFonts();
   if (g < f("h2") + HANDOFF_HALF) return <Handoff2 g={g} />;
-  const t = g / 30, { c, s } = camC(g);
+  const t = g / 30, { c } = camC(g);
   const W2 = 1920, H2 = 1080, mid: React.CSSProperties = { left: W2 / 2, top: H2 / 2 };
 
   // C1: the card
   const active = [k(g, "w:domne", 0.45, LIN), k(g, "w:email", 0.45, LIN), k(g, "w:med", 0.45, LIN)];
-  const back = k(g, 39.85, 0.6, INOUT);
-  const close = t < 41 ? clamp01((-s.d - 250) / 350) : 0;
+  const back = k(g, 39.95, 0.5, INOUT);
+  const close = t < 41 ? clamp01((1600 / project(c, { x: CARD_C[0], y: CARD_C[1], z: CARD_C[2] }).dist - 1.25) / 0.5) : 0;
 
   // C7: the send button becomes the dot; the dots assemble on "Creoble."
   const back6 = k(g, 50.05, 0.6, INOUT) * (1 - k(g, 51.85, 0.4, INOUT));
@@ -238,13 +241,13 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
   const rsA = [0, 1, 2, 3, 4].map((i) => 1 - k(g, 56.72 + i * 0.04, 0.35, INOUT)).concat(t < T_DOWN ? 1 : 0);
 
   // C10: the line with the dot riding after the last word
-  const T_UP = 59.5, lineOut = 59.62;
-  const items10: KItem[] = L10.map(([tx, at, acc]) => ({ t: tx, at, accent: !!acc, out: lineOut }));
+  const T_UP = 59.5, lineOut = 59.62, D10 = 0.3;
+  const items10: KItem[] = L10.map(([tx, at, acc]) => ({ t: tx, at, accent: !!acc, out: lineOut, dur: D10 }));
   // the dot's place: just after the last word (Kinetic's own layout, replayed), moving ahead of each word as it arrives
   const rideX = (gg: number) => {
     const sp = 0.27 * TYPE.big; let width = 0, acc = 0, right = 0, accM = 0;
     for (const [tx, at, it] of L10) {
-      const w = measure(tx, TYPE.big, !!it, true, 400, ready), u = gg - f(at), slot = INOUT(clamp01(u / 16.2)), m = Math.max(slot, OUT(clamp01(u / 10)));
+      const w = measure(tx, TYPE.big, !!it, true, 400, ready), u = gg - f(at), slot = INOUT(clamp01(u / (D10 * 27))), m = Math.max(slot, OUT(clamp01(u / (D10 * 27))));
       width += sp * slot * Math.min(1, acc) + w * slot; acc += slot;
       right += sp * m * Math.min(1, accM) + w * m; accM += m;
     }
@@ -272,9 +275,9 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
         )}
         {/* C2: "Fast pris." → "Også når du fornyer."   C3: the pills */}
         {t > 39.9 && t < 47.2 && (
-          <Plane x={P[0]} y={P[1]} z={P[2]} w={W2} h={H2}>
-            <Kinetic g={g} size={TYPE.hero} style={mid} items={words("Fast pris.", ["w:fast", "w:pris"], { accent: 0, out: "w:ogs-0.1" })} />
-            <Kinetic g={g} size={TYPE.big} style={mid} items={words("Også når du fornyer.", ["w:ogs", "w:nr", "w:du4", "w:fornyer"], { accent: 3, out: "w:domnet-0.1" })} />
+          <Plane x={P[0]} y={P[1]} z={P[2]} w={W2} h={H2} dof={false}>
+            <Kinetic g={g} size={TYPE.hero} style={mid} items={W("Fast pris.", ["w:fast", "w:pris"], 0, "w:ogs-0.1", 0.42)} />
+            <Kinetic g={g} size={TYPE.big} style={mid} items={W("Også når du fornyer.", ["w:ogs", "w:nr+0.1", "w:du4+0.06", "w:fornyer+0.1"], 3, "w:domnet-0.1", 0.3)} />
             <div style={{ position: "absolute", ...mid }}><Pills g={g} /></div>
           </Plane>
         )}
@@ -286,14 +289,14 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
         )}
         {/* C4: "Brug for hjælp?" */}
         {t > 46.9 && t < 48.4 && (
-          <Plane x={Q[0]} y={Q[1]} z={Q[2] + 1} w={W2} h={H2}>
-            <Kinetic g={g} size={TYPE.hero} style={mid} items={words("Brug for hjælp?", ["w:brug", "w:for2", "w:hjlp"], { accent: 2, out: 47.92 })} />
+          <Plane x={Q[0]} y={Q[1]} z={Q[2] + 1} w={W2} h={H2} dof={false}>
+            <Kinetic g={g} size={TYPE.hero} style={mid} items={W("Brug for hjælp?", ["w:brug", "w:for2", "w:hjlp"], 2, 47.92, 0.3)} />
           </Plane>
         )}
         {/* C6: "Ingen kø." → "Ingen robotsvar." */}
         {t > 50.1 && t < 52.2 && (
-          <Plane x={Q2[0]} y={Q2[1]} z={Q2[2]} w={W2} h={H2}>
-            <Kinetic g={g} size={TYPE.hero} style={mid} items={[{ t: "Ingen", at: "w:ingen4", out: 51.84 }, { t: "kø.", at: "w:k", accent: true, out: "w:ingen5" }, { t: "robotsvar.", at: "w:robotsvar", accent: true, out: 51.84 }]} />
+          <Plane x={Q2[0]} y={Q2[1]} z={Q2[2]} w={W2} h={H2} dof={false}>
+            <Kinetic g={g} size={TYPE.hero} style={mid} items={[{ t: "Ingen", at: "w:ingen4", out: 51.84, dur: 0.42 }, { t: "kø.", at: "w:k", accent: true, out: "w:ingen5", dur: 0.42 }, { t: "robotsvar.", at: "w:robotsvar", accent: true, out: 51.84 }]} />
           </Plane>
         )}
         {/* C7: the send button, lifted off the panel: it turns sage and becomes the dot */}
@@ -317,7 +320,7 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
             <div style={{ position: "absolute", ...mid, width: 0, height: 0 }}>
               {t < T_C && <Dots dots={comet(pos7, t)} />}
               {t >= T_C && t < 57.3 && <Lockup cy={cyA} s={k(g, 53.4, 0.7, INOUT)} wm={k(g, 53.42, 0.85, LIN) * (1 - k(g, 56.7, 0.45, LIN))} rs={rsA} />}
-              {t > 54 && t < 57.4 && <Kinetic g={g} size={TYPE.line} style={{ top: 96 }} items={words("Hjemmeside og hosting, samlet ét sted.", ["w:hjemmeside2", "w:og2", "w:hosting", "w:samlet", "w:t", "w:sted"], { accent: 3, out: 56.7 })} />}
+              {t > 54 && t < 57.4 && <Kinetic g={g} size={TYPE.line} style={{ top: 96 }} items={W("Hjemmeside og hosting, samlet ét sted.", ["w:hjemmeside2", "w:og2", "w:hosting", "w:samlet", "w:t", "w:sted"], 3, 56.7, 0.32)} />}
               {t >= T_DOWN && t < T_DOWN + 0.5 && <Dots dots={comet(pos10, t)} />}
               {t >= T_DOWN + 0.4 && t < 60.3 && <Kinetic g={g} size={TYPE.big} items={items10} />}
               {t >= T_DOWN + 0.5 && t < T_UP && <Dots dots={[{ x: rideX(g), y: 8, r: 12 }]} />}
