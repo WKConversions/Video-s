@@ -1,3 +1,55 @@
+# REVISION 1 (Karl, on the first preview; overrides the shot list where they differ)
+> "From second 23 there is far too much text. Some text is fine, but it needs more visuals, more alternation between
+> text and visual. And some visuals and animations go far too fast and too linear: a flash, then it stands still, then
+> a flash, then still again. It has to be constant, at a calm tempo you can follow, not linear, so you understand
+> what happens."
+
+## 1. Pacing (all builders, the whole film)
+- **No flash, no stall.** Motion is continuous and calm. Between two moves the camera never stops: it keeps a slow,
+  clearly visible drift (dolly, truck or orbit) that the next move grows out of.
+- **Slower moves.** No camera move or transition under 1.0 s; most take 1.2–1.8 s. Object arrivals take 0.7–1.0 s.
+  The only short things are UI responses (a press, a tick): 0.3–0.5 s.
+- **Never linear.** Every move eases in and out (`INOUT`), or lands softly (`OUT`). No constant-speed moves except the
+  slow background drift.
+- **Overlap.** A move starts before the previous one has fully settled (the last 20–30% overlap), so the film
+  flows as one motion with no dead holds in between.
+- **Followable.** One thing changes at a time. Start a move early enough that it LANDS on its word; do not start it
+  on the word and rush.
+- Fly-throughs stay, but as a smooth acceleration and a long, soft deceleration (about 1.2 s in total), not a jump.
+
+## 2. Less type after 23 s: product beats replace type beats
+Type beats that stay: "Tilfreds?", "Ikke tilfreds?" + "Nul risiko.", "Brug for hjælp?", "Ingen kø. / Ingen robotsvar.",
+"Byg den. Se den. Så køber du.". Everything else below becomes a product visual. Rhythm: type, visual, type, visual.
+
+**B9 (22.39 – 31.84) becomes:**
+- "Tilfreds?": type, as now.
+- "499 kroner. Én gang. Intet abonnement. Siden er din." is ONE product beat: a **purchase card** in Creoble's style
+  (white, hairline, about 1000 × 640, inside SAFE, big in frame, tilted in 3D with the camera gliding).
+  - Top: a live thumbnail of the Holm site (the real `HolmSite`, about 420 px wide) and "Holm Fysioterapi" /
+    "Din hjemmeside".
+  - The price "499 kr." in Fraunces, large, arriving on `w:499`. The camera pushes in on it.
+  - Three rows under it, each ticking with a sage check on its phrase: "Én gang" (`w:n`), "Intet abonnement"
+    (`w:intet`), "Siden er din" (`w:siden2`). The camera glides down the rows as they tick.
+  - On "Siden er din" the site thumbnail lifts out of the card toward the camera and grows (the site is yours).
+- "Ikke tilfreds?": type (short, hero), in front of the card gone soft and small to one side.
+- "Så koster det ingenting.": back on the card, close on the price: the digits roll 499 → 0 ("0 kr."), calmly
+  (about 1.0 s).
+- "Nul risiko.": type; then B10 flies through the price's zero ON THE CARD (the big "0"), as before.
+
+**C2 "Fast pris. Også når du fornyer." becomes a product beat** on the hosting card: the camera stays close on the price
+area; two small rows appear under "Fra 83 kr./md.": "I dag · 83 kr./md." (`w:fast`) and "Ved fornyelse · 83 kr./md."
+(`w:fornyer`), the second arriving as an equal twin of the first (same price), with a small sage "=" or check
+between them. No type line here. (You may draw this as your own card variant; the kit's card can't be edited.)
+
+**C3 pills stay** (they are a visual), bigger as now, but dock them beside the hosting card (card left, pills right),
+so the product stays in frame.
+
+**C9 "Hjemmeside og hosting, samlet ét sted." becomes a product beat:** under the lockup, the site window (left,
+`w:hjemmeside2`) and the hosting card (right, `w:hosting`) slide in at about 520 px wide each, then on `w:samlet`
+they slide together into one tidy pair touching under the logo (`w:sted`). No type line.
+
+The outro's "Byg den. Se den. Så køber du." with the riding dot, and the end card, stay as they are.
+
 # Creoble v6 (Danish): build contract (65.2 s, 1920×1080, 60 fps)
 
 Client feedback round (Willads, Creoble) on our demo. The film is new; the script and the Danish voice-over are the
