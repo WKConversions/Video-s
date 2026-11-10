@@ -93,7 +93,8 @@ const KEYS: Key[] = [
   { t: 8.55, c: lookW(905, 600, 2.4) },                                // down-right to Fortsæt
   { t: 9.55, c: look(MARK, S, 1.3, 20, 0, -6) },                       // the button's spot: the spinner
   { t: 10.6, c: look(SITE, siteQ(730, 453), 0.96, 20, 0, -5) },        // along the progress line to the window
-  { t: 11.5, c: a10(0.4, 330, -240, -8) },                             // the site small, gliding to the upper right
+  { t: 11.5, c: a10(0.34, 400, -300, -8) },                            // the site small, upper right, clear of the line
+  { t: 12.6, c: a10(0.38, 340, -265, -7.4) },                          // drifting slowly back
   { t: T_END, c: camH1(f("h1") - HANDOFF_HALF) },                      // exactly the hand-off pose
 ];
 const CAMP: (keyof Cam)[] = ["x", "y", "z", "rx", "ry", "rz", "focus", "ap"];
@@ -118,7 +119,7 @@ const sceneCam = (g: number): Cam => {
 };
 
 /* ---------- the opening line's layout (the same slot maths as Kinetic, to know where its inline window sits) ---------- */
-const SP = 0.27 * TYPE.big, WDUR = 0.8;
+const SP = 0.27 * TYPE.big, WDUR = 0.6;
 const LINE1: { t: string; at: string; accent?: boolean }[] = [{ t: "Din", at: "w:din" }, { t: "nye", at: "w:nye" }, { t: "", at: "" }, { t: "hjemmeside", at: "w:hjemmeside", accent: true }];
 const nodeX = (g: number, nodeW: number, ready: boolean) => {
   let acc = 0, cum = 0, nx = 0;
@@ -186,6 +187,12 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
 
   return (
     <AbsoluteFill>
+      {/* A1: the line, with the old window growing inside it; the words slide out from behind it (drawn under the stage) */}
+      {t < 1.85 && (
+        <div style={{ position: "absolute", left: 960 + shift, top: 540, opacity: 1 - seg(t, 1.5, 1.82) }}>
+          <Kinetic g={g} items={line1} size={TYPE.big} />
+        </div>
+      )}
       <Stage3D cam={c}>
         {/* A1: the line, with the old window inside it */}
         {dW > -60 && (
@@ -205,7 +212,7 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
         })()}
         {/* A4: "Bygget af AI." */}
         {t > 2.9 && t < 5.7 && (
-          <Plane {...H(0, 0, Z_LINE2)} w={2} h={2} dof={false} opacity={seg(t, 3.45, 3.95, COS)}>
+          <Plane {...H(0, 0, Z_LINE2)} w={2} h={2} dof={false} opacity={seg(t, 3.62, 4.0, COS)}>
             <Kinetic g={g} items={[{ t: "Bygget", at: "w:bygget", dur: 0.8 }, { t: "af", at: "w:af", dur: 0.8 }, { t: "AI.", at: "w:ai", accent: true, dur: 0.8 }]} size={TYPE.hero} style={{ left: 1, top: 1 }} />
           </Plane>
         )}
@@ -251,12 +258,6 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
         )}
       </Stage3D>
 
-      {/* A1: the line, with the old window growing inside it; the words glide apart and out */}
-      {t < 1.85 && (
-        <div style={{ position: "absolute", left: 960 + shift, top: 540, opacity: 1 - seg(t, 1.5, 1.82) }}>
-          <Kinetic g={g} items={line1} size={TYPE.big} />
-        </div>
-      )}
       {/* A2: the line floating in the tunnel */}
       {t > 1.7 && t < 3.2 && (
         <div style={{ position: "absolute", left: 960, top: 540, transform: `scale(${mix(0.95, 1.03, seg(t, 1.78, 2.9, LIN))})` }}>
