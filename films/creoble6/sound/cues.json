@@ -162,82 +162,110 @@
    "id": "send-2",
    "db": -12,
    "pitch": 0,
-   "note": "press on 'Forts\u00e6t'; the button contracts into a dot"
+   "note": "press on 'Forts\u00e6t'; the button turns sage"
+  },
+  {
+   "frame": 846,
+   "id": "ui-backspace",
+   "db": -4,
+   "pitch": 0,
+   "note": "the smear: the sage button stretches out to the right and sweeps across the frame, in again from the left (one long soft whoosh, rising then settling)"
   },
   {
    "frame": 870,
    "id": "ui-granular-button-select",
    "db": -11,
    "pitch": 0,
-   "note": "the dot opens into the turning logo (loader)"
+   "note": "the six-dot logo turns at the bar's head (loader)"
   },
   {
-   "frame": 891,
-   "id": "ui-premium-open",
-   "db": -10,
+   "frame": 870,
+   "id": "typing-04",
+   "db": 4,
    "pitch": 0,
-   "note": "the empty site window rises under the loader"
+   "note": "the number counts 0 to 100 beside the bar (fine fast ticks slowing down, not keyboard)"
   },
   {
-   "frame": 924,
+   "frame": 918,
+   "id": "ui-button",
+   "db": -13,
+   "pitch": 0,
+   "note": "the count lands on 100"
+  },
+  {
+   "frame": 930,
    "id": "ui-granular-button-select",
    "db": -12,
    "pitch": 0,
-   "note": "the photo frames slide into the empty page (very soft)"
+   "note": "the bar rises and thins into the site window's top bar"
   },
   {
-   "frame": 987,
+   "frame": 958,
+   "id": "charge-connection",
+   "db": -3,
+   "pitch": 0,
+   "note": "the site window unfolds down from its top bar"
+  },
+  {
+   "frame": 960,
    "id": "v4-type-delete",
    "db": -2,
    "pitch": 2,
+   "note": "the photo frames slide into the empty page (very soft)"
+  },
+  {
+   "frame": 999,
+   "id": "ui-enter",
+   "db": -6,
+   "pitch": 4,
    "note": "the hero photo slides up into its frame"
   },
   {
    "frame": 1038,
-   "id": "ui-enter",
-   "db": -6,
-   "pitch": 4,
+   "id": "ui-granular-button-select-2",
+   "db": -15,
+   "pitch": 6,
    "note": "three answer cards rise in from below (Virksomhedsnavn, Branche, Hvad laver du?)"
   },
   {
    "frame": 1132,
-   "id": "ui-button",
-   "db": -13,
+   "id": "iphone-apple-pay",
+   "db": 0,
    "pitch": 0,
    "note": "answer 'Holm Fysioterapi' lands in the navigation"
   },
   {
    "frame": 1162,
-   "id": "iphone-apple-pay",
-   "db": 0,
+   "id": "double-bubble-pop",
+   "db": -9,
    "pitch": 2,
    "note": "answer 'Fysioterapi' lands in the text"
   },
   {
    "frame": 1192,
-   "id": "double-bubble-pop",
-   "db": -9,
+   "id": "ui-button",
+   "db": -13,
    "pitch": 4,
    "note": "answer 'Genoptr\u00e6ning og massage' lands in the service cards; the loader finishes"
   },
   {
    "frame": 1251,
-   "id": "ui-backspace",
-   "db": -4,
+   "id": "ui-digital-click",
+   "db": -8,
    "pitch": 0,
    "note": "B1 the window grows to the whole page (soft, long)"
   },
   {
    "frame": 1332,
-   "id": "ui-granular-button-select-2",
-   "db": -15,
+   "id": "pop",
+   "db": -13,
    "pitch": 0,
    "note": "B1 chip 'Gratis forh\u00e5ndsvisning' lands on the window's top edge"
   },
   {
    "frame": 1374,
-   "id": "charge-connection",
-   "db": -3,
+   "id": "start-video",
+   "db": -7,
    "pitch": 0,
    "note": "B2 the window comes back and close on the hero (soft, long)"
   },
@@ -250,14 +278,14 @@
   },
   {
    "frame": 1461,
-   "id": "pop",
-   "db": -13,
+   "id": "ui-granular-button-select",
+   "db": -12,
    "pitch": 2,
    "note": "B2 the edit field grows out of the headline"
   },
   {
    "frame": 1473,
-   "id": "typing-04",
+   "id": "typing-05",
    "db": 4,
    "pitch": 0,
    "note": "B2 typing 'G\u00f8r overskriften mere personlig'"
@@ -278,22 +306,22 @@
   },
   {
    "frame": 1554,
-   "id": "ui-granular-button-select",
-   "db": -12,
+   "id": "v4-type-delete",
+   "db": -2,
    "pitch": 4,
    "note": "B2 the headline swaps to the new one (soft)"
   },
   {
    "frame": 1632,
-   "id": "ui-digital-click",
-   "db": -8,
+   "id": "ui-stretch",
+   "db": -17,
    "pitch": 0,
    "note": "B3 the site shrinks into the thumbnail card (soft, long)"
   },
   {
    "frame": 1710,
-   "id": "v4-type-delete",
-   "db": -2,
+   "id": "ui-enter",
+   "db": -6,
    "pitch": 0,
    "note": "B4 the card splits in two (the copy slides right)"
   },
@@ -320,22 +348,22 @@
   },
   {
    "frame": 1848,
-   "id": "ui-enter",
-   "db": -6,
+   "id": "ui-granular-button-select-2",
+   "db": -15,
    "pitch": 2,
    "note": "B4 the Online card steps forward"
   },
   {
    "frame": 1878,
-   "id": "typing-05",
+   "id": "typing-06",
    "db": 4,
    "pitch": 0,
    "note": "B4 the address types holmfysio.dk"
   },
   {
    "frame": 1929,
-   "id": "ui-granular-button-select-2",
-   "db": -15,
+   "id": "pop",
+   "db": -13,
    "pitch": 4,
    "note": "B4 'Live' comes on (small)"
   },
@@ -355,14 +383,14 @@
   },
   {
    "frame": 2172,
-   "id": "start-video",
-   "db": -7,
+   "id": "turn-off-phone",
+   "db": -6,
    "pitch": 0,
    "note": "B6 the card grows into the hosting card"
   },
   {
    "frame": 2238,
-   "id": "typing-06",
+   "id": "typing-07",
    "db": 4,
    "pitch": 0,
    "note": "B6 row 1 types holmfysio.dk"
@@ -376,7 +404,7 @@
   },
   {
    "frame": 2319,
-   "id": "typing-07",
+   "id": "typing-08",
    "db": 4,
    "pitch": 0,
    "note": "B6 row 2 types kontakt@holmfysio.dk"
@@ -390,7 +418,7 @@
   },
   {
    "frame": 2418,
-   "id": "typing-08",
+   "id": "typing-09",
    "db": 4,
    "pitch": 0,
    "note": "B6 row 3 types Europ\u00e6iske servere"
@@ -411,14 +439,14 @@
   },
   {
    "frame": 2700,
-   "id": "ui-stretch",
-   "db": -17,
+   "id": "ui-backspace",
+   "db": -4,
    "pitch": 0,
    "note": "hosting card becomes the panel; the live site rises"
   },
   {
    "frame": 2745,
-   "id": "typing-09",
+   "id": "typing-10",
    "db": 4,
    "pitch": 0,
    "note": "panel field: Massage: 450 kr."
@@ -432,15 +460,15 @@
   },
   {
    "frame": 2829,
-   "id": "pop",
-   "db": -13,
+   "id": "ui-granular-button-select",
+   "db": -12,
    "pitch": 0,
    "note": "site: Massage price swaps to 450 kr."
   },
   {
    "frame": 2838,
-   "id": "turn-off-phone",
-   "db": -6,
+   "id": "charge-connection",
+   "db": -3,
    "pitch": 0,
    "note": "site page scrolls up to the hero"
   },
@@ -460,8 +488,8 @@
   },
   {
    "frame": 2904,
-   "id": "ui-granular-button-select",
-   "db": -12,
+   "id": "v4-type-delete",
+   "db": -2,
    "pitch": 2,
    "note": "site: hero photo changes"
   },
@@ -474,15 +502,15 @@
   },
   {
    "frame": 2982,
-   "id": "ui-backspace",
-   "db": -4,
+   "id": "ui-digital-click",
+   "db": -8,
    "pitch": 0,
    "note": "panel and site settle small; type line begins"
   },
   {
    "frame": 3138,
-   "id": "charge-connection",
-   "db": -3,
+   "id": "start-video",
+   "db": -7,
    "pitch": 0,
    "note": "type line glides up; plan card rises"
   },
@@ -495,29 +523,29 @@
   },
   {
    "frame": 3255,
-   "id": "v4-type-delete",
-   "db": -2,
+   "id": "ui-enter",
+   "db": -6,
    "pitch": 0,
    "note": "\u00c5r 1"
   },
   {
    "frame": 3291,
-   "id": "ui-enter",
-   "db": -6,
+   "id": "ui-granular-button-select-2",
+   "db": -15,
    "pitch": 2,
    "note": "\u00c5r 2"
   },
   {
    "frame": 3321,
-   "id": "ui-granular-button-select-2",
-   "db": -15,
+   "id": "pop",
+   "db": -13,
    "pitch": 4,
    "note": "\u00c5r 3"
   },
   {
    "frame": 3378,
-   "id": "ui-digital-click",
-   "db": -8,
+   "id": "ui-stretch",
+   "db": -17,
    "pitch": 0,
    "note": "plan card leaves upward; chat panel rises"
   },
@@ -530,15 +558,15 @@
   },
   {
    "frame": 3420,
-   "id": "typing-10",
+   "id": "typing-11",
    "db": 4,
    "pitch": 0,
    "note": "Sofie's reply types"
   },
   {
    "frame": 3468,
-   "id": "pop",
-   "db": -13,
+   "id": "ui-granular-button-select",
+   "db": -12,
    "pitch": 6,
    "note": "chip: Dansk support"
   },
@@ -565,21 +593,21 @@
   },
   {
    "frame": 3567,
-   "id": "start-video",
-   "db": -7,
+   "id": "turn-off-phone",
+   "db": -6,
    "pitch": 0,
    "note": "wordmark slides out beside the C"
   },
   {
    "frame": 3602,
-   "id": "ui-granular-button-select",
-   "db": -12,
+   "id": "v4-type-delete",
+   "db": -2,
    "pitch": 6,
    "note": "button: Byg din side gratis"
   },
   {
    "frame": 3654,
-   "id": "typing-11",
+   "id": "typing-12",
    "db": 4,
    "pitch": 0,
    "note": "creoble.dk types"

@@ -9,7 +9,7 @@
 // Times below are film seconds (t = g / 30).
 import React from "react";
 import { AbsoluteFill } from "remotion";
-import { C, SANS, SHADOW, INOUT, clamp01, mix } from "../lib";
+import { C, SANS, SERIF, SHADOW, SHADOW_BIG, INOUT, clamp01, mix } from "../lib";
 import { f, aspring, press, typed, Browser, Wordmark } from "../shared";
 import { Kinetic, KItem, measure, useFonts } from "../type";
 import { Dots, LOGO, RING, ANG } from "../dots";
@@ -41,13 +41,17 @@ export const EVENTS: { t: number; kind: "click" | "type" | "check" | "pop" | "op
   { t: 12.32, kind: "type", len: 0.8, note: "types 'kontakt@holmfysio.dk'" },
   { t: 13.15, kind: "click", note: "click into Telefon" },
   { t: 13.2, kind: "type", len: 0.47, note: "types '+45 31 42 53 64'" },
-  { t: 13.92, kind: "send", note: "press on 'Fortsæt'; the button contracts into a dot" },
-  { t: 14.5, kind: "logo", len: 1.5, note: "the dot opens into the turning logo (loader)" },
-  { t: 14.85, kind: "open", note: "the empty site window rises under the loader" },
-  { t: 15.4, kind: "pop", len: 0.6, note: "the photo frames slide into the empty page (very soft)" },
-  { t: 15.8, kind: "pop", len: 0.6, note: "headline lines and text rise in" },
-  { t: 16.45, kind: "pop", note: "the hero photo slides up into its frame" },
-  { t: 16.9, kind: "pop", len: 0.6, note: "three service photos slide in, left to right" },
+  { t: 13.92, kind: "send", note: "press on 'Fortsæt'; the button turns sage" },
+  { t: 14.1, kind: "open", len: 1.3, note: "the smear: the sage button stretches out to the right and sweeps across the frame, in again from the left (one long soft whoosh, rising then settling)" },
+  { t: 14.5, kind: "type", len: 0.9, note: "the number counts 0 to 100 beside the bar (fine fast ticks slowing down, not keyboard)" },
+  { t: 14.5, kind: "logo", len: 1.4, note: "the six-dot logo turns at the bar's head (loader)" },
+  { t: 15.3, kind: "check", note: "the count lands on 100" },
+  { t: 15.5, kind: "pop", len: 0.6, note: "the bar rises and thins into the site window's top bar" },
+  { t: 15.96, kind: "open", len: 0.8, note: "the site window unfolds down from its top bar" },
+  { t: 16.0, kind: "pop", len: 0.6, note: "the photo frames slide into the empty page (very soft)" },
+  { t: 16.1, kind: "pop", len: 0.6, note: "headline lines and text rise in" },
+  { t: 16.65, kind: "pop", note: "the hero photo slides up into its frame" },
+  { t: 17.0, kind: "pop", len: 0.6, note: "three service photos slide in, left to right" },
   { t: 17.3, kind: "pop", len: 0.6, note: "three answer cards rise in from below (Virksomhedsnavn, Branche, Hvad laver du?)" },
   { t: 17.45, kind: "pop", len: 0.5, note: "navigation slides into the layout, left to right; the button at 18.1" },
   { t: 18.87, kind: "check", note: "answer 'Holm Fysioterapi' lands in the navigation" },
@@ -263,32 +267,81 @@ const WizCursor: React.FC<{ g: number }> = ({ g }) => {
   return cOp > 0 ? <Cursor x={c.x} y={c.y} press={cPress} size={28 * v.s} opacity={cOp} /> : null;
 };
 
-/* ================= the button → the dot → the loader (13.6 – 20.15) ================= */
-const LOADER = 280, R0 = (LOGO[0].r * LOADER) / 100;                    // the first dot's radius in the loader (31.3 px)
+/* ================= the smear: button → trail → progress bar → the window's top edge (13.9 – 20.15) ================= */
+// After the reference (10–12 s): the pressed button turns sage and smears out to the right, leaving a soft trail that is
+// wide and faint where it came from and tapers into a thick bar. The sweep is ONE motion, left to right: the head
+// leaves through the right edge and comes in again from the left at the centre line (soft start, long landing),
+// where it settles as the progress bar; the number counts with the head and lands on 100. Then the bar rises and
+// thins into the site window's top bar, and the window unfolds down from it.
+const BAR_H = 86, BAR_L = 410, BAR_R = 1510, SW0 = 14.08, SW1 = 15.42, D1 = 700, D2 = BAR_R + 260, LAG = 0.42;
 const ramp = (x: number) => (x <= 0 ? 0 : x < 0.6 ? (x * x) / 1.2 : x - 0.3);
-const sitePose = (t: number) => { const q = soft(t, 14.7, 1.15); return { y: H1_SITE.y + (1 - q) * 560, scale: mix(0.95, 1, q), opacity: sine(q * 1.6) }; };
+const sweepE = (t: number) => sine(1 - Math.pow(1 - seg(t, SW0, SW1), 1.8));
+const siteQ = (t: number) => soft(t, 15.96, 0.95);                       // the window unfolding down from its top bar
+// the smear's shape between tail xL and head xH on the line yc: fh = the tail's height (≥ BAR_H), a = strength
+const Smear: React.FC<{ id: string; xL: number; xH: number; yc: number; fh: number; a: number; solid: number }> = ({ id, xL, xH, yc, fh, a, solid }) => {
+  const r = BAR_H / 2, len = Math.max(1, xH - xL), xT = xL + Math.min(len * 0.62, 900), d = (xT - xL) * 0.5;
+  if (len < 4 || a <= 0.003) return null;
+  const path = `M ${xL} ${yc - fh / 2} C ${xL + d} ${yc - fh / 2} ${xT - d} ${yc - r} ${xT} ${yc - r} L ${xH - r} ${yc - r} A ${r} ${r} 0 0 1 ${xH - r} ${yc + r} L ${xT} ${yc + r} C ${xT - d} ${yc + r} ${xL + d} ${yc + fh / 2} ${xL} ${yc + fh / 2} Z`;
+  const headL = Math.max(xL, xH - 360);
+  return (
+    <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0, overflow: "visible", opacity: a }}>
+      <defs>
+        <linearGradient id={`${id}a`} gradientUnits="userSpaceOnUse" x1={xL} y1={0} x2={xH} y2={0}>
+          <stop offset={0} stopColor={C.sageLight} stopOpacity={0.0 + 0.9 * solid} /><stop offset={0.4} stopColor={C.sageLight} stopOpacity={0.5 + 0.5 * solid} />
+          <stop offset={0.8} stopColor={C.sage} stopOpacity={0.95} /><stop offset={1} stopColor={C.sage} stopOpacity={1} />
+        </linearGradient>
+        <linearGradient id={`${id}b`} gradientUnits="userSpaceOnUse" x1={headL} y1={0} x2={xH} y2={0}>
+          <stop offset={0} stopColor={C.sage} stopOpacity={0} /><stop offset={0.7} stopColor={C.sage} stopOpacity={1} /><stop offset={1} stopColor={C.sage} stopOpacity={1} />
+        </linearGradient>
+        <filter id={`${id}f`} x="-10%" y="-60%" width="120%" height="220%"><feGaussianBlur stdDeviation={9} /></filter>
+      </defs>
+      <path d={path} fill={`url(#${id}a)`} filter={`url(#${id}f)`} opacity={1 - solid} />
+      {solid > 0 && <rect x={xL} y={yc - r} width={len} height={BAR_H} rx={r} fill={`url(#${id}a)`} opacity={solid} />}
+      <rect x={headL} y={yc - r} width={xH - headL} height={BAR_H} rx={r} fill={`url(#${id}b)`} opacity={1 - solid} />
+    </svg>
+  );
+};
 const Loader: React.FC<{ g: number }> = ({ g }) => {
-  const t = g / 30;
-  const live = wiz(t), froz = wiz(14.07);
-  const gl = sine(seg(t, 14.14, 14.89)), m = sp(t, 14.04, 0.45), bar = sine(seg(t, 15.45, 16.2));
-  const b = t < 14.07 ? live.at(BTN.x, BTN.y + live.shift) : froz.at(BTN.x, BTN.y + froz.shift), bs = (t < 14.07 ? live.sT : froz.sT) / S1;
-  const pose = sitePose(t), pr = project(camH1(g), { x: H1_SITE.x, y: pose.y + (23 - SITE_WIN.h / 2), z: H1_SITE.z });
-  const cx = mix(mix(b.x, 960, gl), pr.x, bar), cy = mix(mix(b.y, 540, gl), pr.y, bar);
-  const size = LOADER * Math.pow((30 * pr.s) / LOADER, bar);
-  const fan = LOGO.map((_, i) => sp(t, 14.5 + 0.05 * i, 0.6, 0.9)), ro = sp(t, 14.5, 0.55);
-  const out = sine(seg(t, 19.75, 20.1));
-  const dots = fanDots(size, cx, cy, 240 * ramp(t - 14.5), ro, fan, 1 - out);
-  const k = bs * (1 - 0.045 * press(g, 13.92)) * mix(1, (2 * R0) / (BTN.h * S1) / bs, m);
-  const bw = BTN.w * S1, bh = BTN.h * S1, c2 = clamp01(m);
-  const dotOp = seg(m, 0.7, 0.95), wOp = t < 14.07 ? live.opacity : 1;
+  const t = g / 30, live = wiz(t);
+  const b = live.at(BTN.x, BTN.y + live.shift), bs = live.sT / S1, bw = BTN.w * S1, bh = BTN.h * S1;
+  const col = sine(seg(t, 13.98, 14.25));                               // ink → sage
+  const S = (D1 + D2) * sweepE(t), Sl = (D1 + D2) * sweepE(t - LAG);
+  const v = clamp01(((sweepE(t + 0.01) - sweepE(t - 0.01)) / 0.02) / 1.9);   // the sweep's speed, 0..1
+  // stage 1: out of the button, off the right edge
+  const x0 = b.x + (bw * bs) / 2, h1x = x0 + Math.min(S, D1 + 400), t1x = b.x - (bw * bs) / 2;   // the trail stays anchored where the button was
+  // stage 2: in from the left, landing as the bar
+  const h2x = -260 + Math.max(0, S - D1), t2x = Math.min(BAR_L, -260 + Math.max(0, Sl - D1));
+  const landed = sine(seg(t, SW1 - 0.45, SW1 + 0.05));
+  const pct = Math.round(100 * clamp01((h2x - BAR_L) / (BAR_R - BAR_L)));
+  // the bar becomes the window's top bar
+  const m2 = sine(seg(t, 15.48, 16.08)), cH = camH1(g);
+  const tl = project(cH, { x: H1_SITE.x - SITE_WIN.w / 2, y: H1_SITE.y - SITE_WIN.h / 2, z: H1_SITE.z }), pill = project(cH, { x: H1_SITE.x, y: H1_SITE.y + 23 - SITE_WIN.h / 2, z: H1_SITE.z });
+  const rx = mix(BAR_L, tl.x, m2), rw = mix(BAR_R - BAR_L, SITE_WIN.w * tl.s, m2), rh = mix(BAR_H, 46 * tl.s, m2), ry = mix(540 - BAR_H / 2, tl.y, m2);
+  const barOp = 1 - sine(seg(t, 16.06, 16.3));
+  // the turning logo: at the bar's head, then on the address pill
+  const lp = sine(seg(t, 14.5, 14.9)), out = sine(seg(t, 19.75, 20.1));
+  const lx = mix(Math.min(h2x, BAR_R) - BAR_H / 2, pill.x, m2), ly = mix(540, pill.y, m2), lsz = mix(64, 30 * pill.s, m2);
+  const dots = fanDots(lsz, lx, ly, 240 * ramp(t - 14.5), 1, [1, 1, 1, 1, 1, 1], lp * (1 - out));
+  const nOp = sine(seg(t, 14.5, 14.8)) * (1 - sine(seg(t, 15.46, 15.76)));
   return (
     <AbsoluteFill>
-      {m < 0.985 && (
-        <div style={{ position: "absolute", left: cx - bw / 2, top: cy - bh / 2, width: bw, height: bh, opacity: wOp, transform: `scale(${k.toFixed(5)})`, clipPath: `inset(0px ${(((bw - bh) / 2) * c2).toFixed(2)}px round ${mix(7 * S1, bh / 2, c2).toFixed(2)}px)`,
-          background: `color-mix(in srgb, ${C.sage} ${(seg(m, 0.1, 0.8) * 100).toFixed(1)}%, ${C.ink})`, color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: SANS, fontSize: 14 * S1, fontWeight: 500 }}>
-          <span style={{ opacity: 1 - seg(m, 0, 0.35) }}>Fortsæt</span>
+      {t < 15.1 && (
+        <div style={{ position: "absolute", left: b.x - bw / 2, top: b.y - bh / 2, width: bw, height: bh, borderRadius: mix(7 * S1, bh / 2, col), opacity: live.opacity * (1 - sine(seg(t, 14.2, 14.75))), transform: `scale(${(bs * (1 - 0.045 * press(g, 13.92))).toFixed(5)})`,
+          background: `color-mix(in srgb, ${C.sage} ${(col * 100).toFixed(1)}%, ${C.ink})`, color: "#FFFFFF", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: SANS, fontSize: 14 * S1, fontWeight: 500 }}>
+          <span style={{ opacity: 1 - col }}>Fortsæt</span>
         </div>)}
-      {dotOp > 0 && <Dots dots={dots} style={{ opacity: dotOp }} />}
+      {t >= SW0 && t < 15.3 && <Smear id="s1" xL={t1x} xH={h1x} yc={b.y} fh={BAR_H + 300 * v} a={sine(seg(t, SW0, SW0 + 0.2)) * (1 - sine(seg(t, 14.45, 15.25)))} solid={0} />}
+      {t >= SW0 && m2 <= 0 && <Smear id="s2" xL={t2x} xH={Math.max(h2x, t2x + 1)} yc={540} fh={BAR_H + 420 * v} a={1} solid={landed} />}
+      {m2 > 0 && barOp > 0 && (
+        <div style={{ position: "absolute", left: 0, top: 0, width: 1, height: 1, opacity: barOp }}>
+          <div style={{ position: "absolute", left: rx, top: ry, width: rw, height: rh, borderRadius: mix(BAR_H / 2, 16 * tl.s, m2), background: `linear-gradient(90deg, color-mix(in srgb, #FBFAF7 ${(m2 * 100).toFixed(1)}%, ${C.sageLight}), color-mix(in srgb, #FBFAF7 ${(m2 * 100).toFixed(1)}%, ${C.sage}))` }} />
+        </div>)}
+      {nOp > 0 && (
+        <div style={{ position: "absolute", left: BAR_R - 400, top: 540 - BAR_H / 2 - 150, width: 400, textAlign: "right", fontFamily: SERIF, fontSize: 112, lineHeight: "120px", letterSpacing: "-0.02em", color: C.ink, whiteSpace: "nowrap", fontVariantNumeric: "tabular-nums",
+          opacity: nOp, transform: `translateY(${((1 - sine(seg(t, 14.5, 14.9))) * 30 - sine(seg(t, 15.46, 15.76)) * 40).toFixed(2)}px)` }}>
+          {pct}<span style={{ fontSize: 56, color: C.soft }}> /100</span>
+        </div>)}
+      {lp > 0 && <Dots dots={dots} color={`color-mix(in srgb, ${C.sage} ${(m2 * 100).toFixed(1)}%, #FFFFFF)`} />}
     </AbsoluteFill>
   );
 };
@@ -302,22 +355,24 @@ const CHIPS = [
 ];
 const FLY = [18.3, 18.8, 19.3], FLY_D = 0.6;
 const SiteScene: React.FC<{ g: number }> = ({ g }) => {
-  const t = g / 30, pose = sitePose(t);
+  const t = g / 30, q = siteQ(t), winOp = sine(seg(t, 15.88, 16.08));
   const done = t >= 20.18;
   const o = (at: number, r = 0.55) => sp(t, at, r);
   const b = {
-    frame: [soft(t, 15.3, 0.9), soft(t, 15.5, 0.9), soft(t, 15.65, 0.9), soft(t, 15.8, 0.9)],
-    h1: soft(t, 15.55, 1.0), h2: soft(t, 15.75, 1.0), para: soft(t, 15.98, 1.0),
-    hero: soft(t, 16.3, 1.3), cards: [soft(t, 16.75, 1.0), soft(t, 17.0, 1.0), soft(t, 17.25, 1.0)],
+    frame: [soft(t, 15.9, 0.9), soft(t, 16.05, 0.9), soft(t, 16.2, 0.9), soft(t, 16.35, 0.9)],
+    h1: soft(t, 15.88, 1.0), h2: soft(t, 16.05, 1.0), para: soft(t, 16.25, 1.0),
+    hero: soft(t, 16.5, 1.2), cards: [soft(t, 16.9, 0.9), soft(t, 17.1, 0.9), soft(t, 17.3, 0.9)],
     nav: [0, 1, 2, 3, 4, 5].map((i) => o(17.4 + 0.09 * i, 0.5)), btn: soft(t, 18.0, 0.7),
   };
   const patch = 1 - seg(t, 19.85, 20.15);
   return (
     <Stage3D cam={camH1(g)}>
-      <Plane {...H1_SITE} y={pose.y} scale={pose.scale} opacity={pose.opacity} w={SITE_WIN.w} h={SITE_WIN.h}>
+      <Plane {...H1_SITE} opacity={winOp} w={SITE_WIN.w} h={SITE_WIN.h}>
         {done ? <SiteWindow /> : (
           <>
-            <Browser w={SITE_WIN.w} h={SITE_WIN.h} url="Forhåndsvisning"><SiteBuild b={b} /></Browser>
+            {/* the window unfolds down from its top bar */}
+            <div style={{ position: "absolute", left: 0, top: 0, width: SITE_WIN.w, height: mix(46, SITE_WIN.h, q), borderRadius: 16, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW_BIG}` }} />
+            <div style={{ position: "absolute", left: 0, top: 0, clipPath: `inset(0px 0px ${mix(SITE_WIN.h - 46, 0, q).toFixed(2)}px 0px round 16px)` }}><Browser w={SITE_WIN.w} h={SITE_WIN.h} url="Forhåndsvisning"><SiteBuild b={b} /></Browser></div>
             {patch > 0 && <div style={{ position: "absolute", left: SITE_WIN.w / 2 - 140, top: 12, width: 280, height: 22, background: "#F1EEE8", opacity: patch }} />}
             {CHIPS.map((c, i) => {
               const land = FLY[i] + FLY_D - 0.03, hv = seg(t, land - 0.12, land) * (1 - seg(t, land, land + 0.25));
@@ -351,7 +406,7 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
       {t >= 7.5 && t < 9.4 && <Lockup g={g} />}
       {t < M1 && <Hook g={g} />}
       {t >= 8.05 && t < 15.05 && <WizardScene g={g} />}
-      {t >= 14.65 && <SiteScene g={g} />}
+      {t >= 15.85 && <SiteScene g={g} />}
       {t >= 8.05 && t < 20.12 && <Loader g={g} />}
       {t >= 9.45 && t < 14.5 && <WizCursor g={g} />}
     </AbsoluteFill>
