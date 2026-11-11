@@ -32,7 +32,8 @@ export const SiteBuild: React.FC<{ b: Build }> = ({ b }) => (
       <div style={{ position: "absolute", left: 760, top: 120, width: 630, height: 560 }}>
         <div style={frame(b.frame[0], b.hero, 24)} />
         {/* the photo slides up into its frame */}
-        <div style={{ width: 630, height: 560, borderRadius: 24, overflow: "hidden" }}>{b.hero > 0 && photo("holm-shoulder.jpg", { transform: `translateY(${((1 - b.hero) * 560).toFixed(2)}px)` })}</div>
+        {/* (b.hero may pass 1 by a few % as it settles: the photo then grows by as much about its top, so the frame stays covered) */}
+        <div style={{ width: 630, height: 560, borderRadius: 24, overflow: "hidden" }}>{b.hero > 0 && photo("holm-shoulder.jpg", { transformOrigin: "50% 0%", transform: `translateY(${((1 - b.hero) * 560).toFixed(2)}px) scale(${(1 + 1.1 * Math.max(0, b.hero - 1)).toFixed(4)})` })}</div>
       </div>
       {/* button */}
       <div style={{ position: "absolute", left: 70, top: 556, width: 560, height: 64 }}>

@@ -15,9 +15,10 @@ const LINK = "#2B3FB0";
 // the old window: a grey title bar, an address row with a path, then the page (pageOpacity fades the page only, so
 // the frame can become a doorway)
 const CHROME = 80;
-export const OldWindow: React.FC<{ w: number; h: number; title: string; path: string; pageOpacity?: number; children?: React.ReactNode }> = ({ w, h, title, path, pageOpacity = 1, children }) => (
+// shadow 0..1 fades the window's outline and drop shadow (scene A fades it before the window's corners round)
+export const OldWindow: React.FC<{ w: number; h: number; title: string; path: string; pageOpacity?: number; shadow?: number; children?: React.ReactNode }> = ({ w, h, title, path, pageOpacity = 1, shadow = 1, children }) => (
   <div style={{ position: "relative", width: w, height: h, filter: "saturate(0.78)" }}>
-    <div style={{ position: "absolute", inset: 0, boxSizing: "border-box", border: "4px solid #B9B5AD", boxShadow: "0 0 0 1px #8C8982, 0 0 70px rgba(26,22,20,0.16), 0 0 180px rgba(26,22,20,0.14)" }} />
+    <div style={{ position: "absolute", inset: 0, boxSizing: "border-box", border: "4px solid #B9B5AD", boxShadow: `0 0 0 1px rgba(140,137,130,${shadow.toFixed(3)}), 0 0 70px rgba(26,22,20,${(0.16 * shadow).toFixed(3)}), 0 0 180px rgba(26,22,20,${(0.14 * shadow).toFixed(3)})` }} />
     <div style={{ position: "absolute", left: 4, top: 4, width: w - 8, height: 38, background: "linear-gradient(90deg, #6F7C92, #A9B3C4)", display: "flex", alignItems: "center", padding: "0 10px", boxSizing: "border-box",
       fontFamily: ARIAL, fontWeight: 700, fontSize: 21, color: "#FFFFFF", whiteSpace: "nowrap" }}>
       <span>{title}</span><div style={{ flex: 1 }} />
