@@ -1,0 +1,2 @@
+film/probe/*
+!film/probe/logo_frames.json
