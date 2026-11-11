@@ -24,10 +24,24 @@ assert len(words) == len(T), (len(words), len(T))
 sents, i = [], 0
 for n, s in enumerate(SCRIPT, 1):
     k = len(s.split()); sents.append({"i": n, "text": s, "start": T[i][1], "end": T[i + k - 1][2], "a": i, "b": i + k}); i += k
+# each cut goes on the QUIETEST 20 ms of the real audio near the pause (Karl, on the final: the voice stuttered at 58 s:
+# whisper put the end of "dansker" and the start of "Byg" at the same instant, so the old midpoint cut fell inside
+# the word). Search from 0.1 s before the last word's end to 0.3 s after the next word's start.
+import numpy as np
+_raw = subprocess.run(["ffmpeg", "-v", "error", "-i", "vo.mp3", "-ac", "1", "-ar", "16000", "-f", "s16le", "-"], capture_output=True).stdout
+_a = np.frombuffer(_raw, np.int16).astype(np.float32) / 32768
+def quietest(t0, t1):
+    best, bt = 9.0, (t0 + t1) / 2
+    for k in range(int(t0 * 100), int(t1 * 100)):
+        seg = _a[int(k * 160):int(k * 160 + 320)]
+        if len(seg) and float(np.sqrt((seg ** 2).mean())) < best: best, bt = float(np.sqrt((seg ** 2).mean())), (k + 1) / 100
+    return bt, best
 shift, cuts, acc = {}, [], LEAD
 for s in sents:
     shift[s["i"]] = acc
-    if s["i"] in GAP: nxt = sents[s["i"]]; cuts.append(((s["end"] + nxt["start"]) / 2, GAP[s["i"]])); acc += GAP[s["i"]]
+    if s["i"] in GAP:
+        nxt = sents[s["i"]]; c, lvl = quietest(s["end"] - 0.1, nxt["start"] + 0.3); cuts.append((c, GAP[s["i"]])); acc += GAP[s["i"]]
+        print(f"cut after {s['i']:2d} at {c:.2f} s (level {lvl:.5f})")
 keys, seen = {}, {}
 lines = []
 for s in sents:
