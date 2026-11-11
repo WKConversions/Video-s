@@ -4,7 +4,7 @@
 // the white "th" builds; the field then contracts back into the mark, which lands red, size 150, at (960, 540).
 import React from "react";
 import { AbsoluteFill } from "remotion";
-import { ARRIVE, Avatar, C, CARD, FONT, Ico, MOVE, POP, Say, THMark, clamp01, f, k, mix, tx, typed } from "../shared";
+import { ARRIVE, Avatar, C, CARD, FONT, Ico, LOCK_AR, Lockup, MOVE, POP, Say, THMark, clamp01, f, k, mix, tx, typed } from "../shared";
 import { TH } from "../thpaths";
 
 const rnd = (i: number, s: number) => { const x = Math.sin(i * 127.1 + s * 311.7) * 43758.5453; return x - Math.floor(x); };
@@ -149,7 +149,16 @@ export const SceneA: React.FC<{ g: number }> = ({ g }) => {
               const r = 260 + ARRIVE(t) * 520;
               return <div key={`b${j}`} style={{ position: "absolute", left: HUB.x - r, top: HUB.y - r, width: 2 * r, height: 2 * r, borderRadius: "50%", border: `${10 * (1 - t) + 2}px solid rgba(255,255,255,${0.35 * (1 - t)})` }} />;
             })}
-            {g >= BUILD && markAt(contract > 0 ? mix(432, 150, contract) : mix(400, 432, clamp01((g - BUILD) / (BUILT - BUILD))), C.white, "white", clamp01((g - BUILD) / (BUILT - BUILD - 1)))}
+            {g >= BUILD && (() => {
+              // Beyond Borders: the white lock-up builds on "Talent Hub"; as the field contracts it shrinks away and the white
+              // th takes its place, so the field still closes into the mark that lands in the hub
+              const LW = 900 * (1 + 0.04 * clamp01((g - BUILD) / (BUILT - BUILD))) * mix(1, 0.42, contract), LH = LW * LOCK_AR;
+              const lo = 1 - clamp01(contract * 2.6), mo = clamp01((contract - 0.3) * 2);
+              return <>
+                {lo > 0 && <div style={{ position: "absolute", left: HUB.x - LW / 2, top: HUB.y - LH / 2, opacity: lo }}><Lockup width={LW} color="white" reveal={clamp01((g - BUILD) / 12)} /></div>}
+                {mo > 0 && <div style={{ opacity: mo }}>{markAt(mix(432, 150, contract), C.white, "white")}</div>}
+              </>;
+            })()}
           </AbsoluteFill>}
         </>
       )}

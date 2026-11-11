@@ -7,16 +7,15 @@
 // An end card with a gentle push. Timed only on labels (s4, w:talent4, w:hub2, w:your, w:connection, w:here, end).
 import React from "react";
 import { AbsoluteFill } from "remotion";
-import { ARRIVE, Avatar, C, FONT, Ico, JLMark, JLWord, Link, MOVE, POP, Say, THMark, WideLogo, clamp01, f, k, mix, tx } from "../shared";
-import { TH } from "../thpaths";
+import { ARRIVE, Avatar, C, FONT, Ico, JLMark, JLWord, LOCK_AR, Lockup, Link, MOVE, POP, Say, clamp01, f, k, mix, tx } from "../shared";
 
 const rnd = (i: number, s: number) => { const x = Math.sin(i * 91.7 + s * 271.3) * 43758.5453; return x - Math.floor(x); };
 const HUB = { x: 960, y: 540 };
 const RMAX = Math.hypot(960, 540) + 4;
 // the end card (before the push): the wide logo (the hero, 1000 px wide), the tagline, the thread, the partner lockup
-const WL_W = 1000, WL_H = (WL_W * 344) / 1701, WL_X = 960 - WL_W / 2, WL_Y = 282 - WL_H / 2;
-const MARK_W = (WL_W * 438) / 1701, MARK_H = (MARK_W * TH.h) / TH.w;     // its square mark is the first 438 of 1701 units
-const MARK_END = { x: WL_X + MARK_W / 2, y: WL_Y + MARK_H / 2 };
+// Beyond Borders: the lock-up (wordmark over BEYOND BORDERS) holds where the old wide logo stood, centred on y 282
+const WL_W = 820, WL_H = WL_W * LOCK_AR, WL_X = 960 - WL_W / 2, WL_Y = 282 - WL_H / 2;
+const LOCK_FIELD_W = 900;                                                  // its width on the red field
 const TAG_Y = 436;
 // the two people the line connects, and the partner lockup the line drops to
 const AV = 84, ROW = 604;
@@ -26,9 +25,6 @@ const WAVE_Y = 480;
 
 const ORBIT = Array.from({ length: 20 }, (_, i) => ({ a0: (i / 20) * Math.PI * 2 + rnd(i, 1) * 0.2, rs: 0.92 + rnd(i, 2) * 0.12, s: 34 + rnd(i, 3) * 22, o: 0.7 + rnd(i, 4) * 0.3, d: rnd(i, 5) * 10 }));
 
-const markAt = (x: number, y: number, size: number, color: string, p = 1, key?: string) => (
-  <div key={key} style={{ position: "absolute", left: x - size / 2, top: y - (size * TH.h) / TH.w / 2 }}><THMark size={size} color={color} p={p} /></div>
-);
 
 const Person: React.FC<{ g: number; x: number; y: number; at: number; icon: string; label: string; side: "left" | "right"; lit: number }> = ({ g, x, y, at, icon, label, side, lit }) => {
   const s = POP(clamp01((g - at) / 12));
@@ -50,17 +46,14 @@ export const SceneE: React.FC<{ g: number }> = ({ g }) => {
   const FIELD = f("s4") + 3;                       // D's iris covers by s4+5; E's own field is full from s4+3
   if (g < FIELD) return null;
   const YOUR = f("w:your"), HERE = f("w:here"), HUB2 = f("w:hub2");
-  const BUILD = f("w:talent4"), SHRINK = YOUR - 11, OPEN = YOUR + 2, SLIDE = YOUR - 9, SLID = YOUR + 10, WORD = YOUR - 2;
-  const p = clamp01((g - BUILD) / Math.max(1, SHRINK - BUILD));
+  const BUILD = f("w:talent4"), SHRINK = YOUR - 11, OPEN = YOUR + 2, SLIDE = YOUR - 9, SLID = YOUR + 10;
   const hit = Math.max(0, 1 - Math.abs(g - HUB2) / 5);                     // the last hit, on "Hub"
   const burst = clamp01((g - (HUB2 - 2)) / 14);
   const shrink = MOVE(clamp01((g - SHRINK) / (OPEN - SHRINK)));
   const R = mix(RMAX, 0, shrink);
   const slide = MOVE(clamp01((g - SLIDE) / (SLID - SLIDE)));
-  const size = shrink > 0 ? mix(432, MARK_W, shrink) : mix(400, 432, p) * (1 + 0.035 * hit);
-  const mx = mix(HUB.x, MARK_END.x, slide), my = mix(HUB.y, MARK_END.y, slide);
-  const rv = ARRIVE(clamp01((g - WORD) / 22));
-  const sk = slide >= 1 ? clamp01((g - WORD - 22) / 10) : 0;              // THMark → the wide logo's own mark (crossfade)
+  // the lock-up: built on the field at the centre, then it travels up to its place over the tagline while the field closes
+  const lw = mix(LOCK_FIELD_W, WL_W, slide) * (shrink > 0 ? 1 : 1 + 0.035 * hit), lx = 960, ly = mix(HUB.y, 282, slide);
   const push = 1 + 0.035 * clamp01((g - (HERE - 5)) / Math.max(1, f("end") - 1 - (HERE - 5)));
   const link = k(g, "w:connection", 0.8, MOVE);
   const lit = clamp01((g - HERE) / 4);
@@ -100,14 +93,8 @@ export const SceneE: React.FC<{ g: number }> = ({ g }) => {
       })}
 
       <AbsoluteFill style={{ transform: `scale(${push})`, transformOrigin: "960px 540px" }}>
-        {/* the wordmark slides out from behind the mark, then the full wide logo holds */}
-        {sk < 1 && rv > 0 && (
-          <AbsoluteFill style={{ clipPath: `inset(0 0 0 ${mx + MARK_W / 2 + 6}px)` }}>
-            <WideLogo width={WL_W} style={{ position: "absolute", left: WL_X - (1 - rv) * 600, top: WL_Y + (my - MARK_END.y) }} />
-          </AbsoluteFill>
-        )}
-        {sk < 1 && shrink > 0 && markAt(mx, my, size, C.red, 1, "red")}
-        {sk > 0 && <WideLogo width={WL_W} style={{ position: "absolute", left: WL_X, top: WL_Y, opacity: sk }} />}
+        {/* the red lock-up under the field: it shows where the field has already contracted, so the logo turns red as the field closes */}
+        {shrink > 0 && <div style={{ position: "absolute", left: lx - lw / 2, top: ly - (lw * LOCK_AR) / 2 }}><Lockup width={lw} color="red" /></div>}
 
         {/* the tagline */}
         <Say g={g} x={120} width={1680} align="center" y={TAG_Y} size={64}
@@ -180,7 +167,7 @@ export const SceneE: React.FC<{ g: number }> = ({ g }) => {
             return <div key={`b${j}`} style={{ position: "absolute", left: HUB.x - r, top: HUB.y - r, width: 2 * r, height: 2 * r, borderRadius: "50%", border: `${10 * (1 - t) + 2}px solid rgba(255,255,255,${0.35 * (1 - t)})` }} />;
           })}
           {burst > 0 && burst < 1 && (() => { const r = 250 + ARRIVE(burst) * 420; return <div style={{ position: "absolute", left: HUB.x - r, top: HUB.y - r, width: 2 * r, height: 2 * r, borderRadius: "50%", border: `6px solid rgba(255,255,255,${0.5 * (1 - burst)})` }} />; })()}
-          {g >= BUILD && markAt(mx, my, size, C.white, p, "white")}
+          {g >= BUILD && <div style={{ position: "absolute", left: lx - lw / 2, top: ly - (lw * LOCK_AR) / 2 }}><Lockup width={lw} color="white" reveal={clamp01((g - BUILD) / 14)} /></div>}
         </AbsoluteFill>
       )}
     </AbsoluteFill>
