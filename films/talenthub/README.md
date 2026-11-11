@@ -1,3 +1,38 @@
+# Talent Hub — v3 (November 2026): the TalentHub Beyond Borders logo
+
+## Delivery (v3)
+- `deliver/talenthub-v3-beyond-borders-en-36s.mp4`: English, 36.0 s.
+- `deliver/talenthub-v3-beyond-borders-nl-40s.mp4`: Dutch, 40.3 s.
+- Both are v2 with only the logo changed. Everything else is v2's approved picture and sound.
+- Same format as v2: 1920×1080, 30 fps, H.264 High BT.709 TV range; the audio is copied from v2.
+
+## What changed: the logo
+Karl asked for the logo to change throughout the film and for nothing else to change. Source: the brand kit
+`brand/beyond-borders/TalentHub_Beyond_Borders_Brandkit.pdf`. The logos were extracted from it with their
+transparency: `lockup-red.png`, `lockup-white.png` and `square.png`.
+- **Opening ("Meet Talent Hub", scene A):** the white lock-up "TalentHub / BEYOND BORDERS" builds on the red field;
+  this was the white th.
+  - The wordmark wipes in, then BEYOND BORDERS rises in.
+  - As the field contracts, the lock-up shrinks away and the th takes its place, so the hand-off into the hub is
+    unchanged.
+- **End card (scene E):** the white lock-up builds on the red field, turns red as the field closes, and travels to
+  where the old "th TalentHub" wide logo stood, centred over the tagline (820 px wide).
+  - The th is no longer beside it: the kit says "Het TH-symbool combineren met het woordmerk in de white lock-up:
+    NIET".
+- **Kept:** the small square th in the hub, the dashboard sidebar and the timeline. The kit keeps it as the square
+  mark for small applications and square contexts, and it is identical to the old mark.
+- **Code:** `Lockup` in `film/src/shared.tsx`, and scenes A and E.
+
+## How it was made (only the changed frames)
+- A probe build with the logo components filled magenta found every frame that holds a logo
+  (`film/probe/logo_frames.json`).
+- Only the windows that changed were rendered:
+  - EN: frames 62–97 and 919–1079;
+  - NL: frames 69–120 and 1034–1207.
+- They were rendered with v2's settings (8-sample motion blur), converted from full-range BT.601 to TV-range
+  BT.709 through RGB, and spliced into the v2 files.
+- Check: at every window edge the frames match v2, with no changed pixels; the rest of the film is v2.
+
 # Talent Hub — v2 (October 2026): JongLeren as verified partner, English and Dutch
 
 ## Delivery (v2)
