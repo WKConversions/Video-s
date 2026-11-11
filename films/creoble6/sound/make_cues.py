@@ -1,16 +1,13 @@
 # Cue sheet for Creoble v6 (contract 2). Karl (10 Nov): "more Apple-style heavy sounds", from his own folder (lib-karl,
 # built with sfx_build.py from his zip; gitignored). Every cue comes from the EVENTS list each scene exports
-# (film/src/scenes/A|B|C.tsx), so the sound follows the picture. Music: Karl's track, fitted with music_fit.py
+# (film/src/scenes/A|B|C.tsx, evaluated by film/tools/events.mjs), so the sound follows the picture. Music: Karl's track, fitted with music_fit.py
 # (bed.wav, gitignored). Voice: vo/vo_paced.mp3.
 # python3 make_cues.py && python3 <skill>/library/scripts/sound_mix.py cues.json ../film/public/audio/mix.wav --sheet mix.png
 import json, re, subprocess, copy, os
 LIB = "lib-karl"; idx = json.load(open(f"{LIB}/sfx/index.json")); by = {x["id"]: x for x in idx}
-ev = []
-for s in "ABC":
-    src = open(f"../film/src/scenes/{s}.tsx").read(); m = re.search(r"export const EVENTS[^=]*=\s*\[(.*?)\n\];", src, re.S)
-    for t, kind, rest in re.findall(r"\{\s*t:\s*([\d.]+),\s*kind:\s*\"(\w+)\"([^}]*)\}", m.group(1) if m else ""):
-        ln = re.search(r"len:\s*([\d.]+)", rest); note = re.search(r"note:\s*\"([^\"]*)\"", rest)
-        ev.append((float(t), kind, float(ln.group(1)) if ln else 0, note.group(1) if note else ""))
+# the scenes compute their event times from expressions, so they are evaluated: node tools/events.mjs (run below)
+subprocess.run("node tools/events.mjs > ../sound/events.json", shell=True, check=True, cwd="../film")
+ev = [(float(e["t"]), e["kind"], float(e.get("len") or 0), e.get("note", "")) for e in json.load(open("events.json"))]
 ev.sort()
 def typing_clip(n, length):          # a stretch of Karl's iPhone keyboard recording, cut to the typing run
     i = f"typing-{n:02d}"; out = f"{LIB}/sfx/ticker/{i}.wav"; os.makedirs(os.path.dirname(out), exist_ok=True)

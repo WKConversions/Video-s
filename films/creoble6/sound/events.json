@@ -1,0 +1,793 @@
+[
+ {
+  "t": 0.1,
+  "kind": "pop",
+  "len": 1.6,
+  "note": "three more old sites fly up from below and tuck in behind the first, one after another (soft, 0.05 / 0.5 / 0.95)",
+  "scene": "A"
+ },
+ {
+  "t": 1.8,
+  "kind": "pop",
+  "note": "the stack turns once: the front site drops away, the next comes forward (soft card flick)",
+  "scene": "A"
+ },
+ {
+  "t": 3.3,
+  "kind": "pop",
+  "len": 1.5,
+  "note": "the stack turns three more times while the line is read (three soft card flicks, 3.3 / 3.85 / 4.4)",
+  "scene": "A"
+ },
+ {
+  "t": 4.55,
+  "kind": "open",
+  "len": 1.8,
+  "note": "the hook's push: the old window grows and pushes the line out to the right (soft swell)",
+  "scene": "A"
+ },
+ {
+  "t": 5.05,
+  "kind": "pop",
+  "len": 1.4,
+  "note": "the old site's rows drop away, top to bottom (six soft ticks, 0.2 s apart)",
+  "scene": "A"
+ },
+ {
+  "t": 5.85,
+  "kind": "check",
+  "note": "'Siden kan ikke findes' lands (dull error tone, not a chime)",
+  "scene": "A"
+ },
+ {
+  "t": 6.6,
+  "kind": "click",
+  "note": "the hand presses 'Opdater' once; nothing happens (dry old click)",
+  "scene": "A"
+ },
+ {
+  "t": 6.85,
+  "kind": "pop",
+  "len": 1,
+  "note": "the window's corners round into a circle as it shrinks into the dot (one soft morph); the dot lands with a small pop at 7.85",
+  "scene": "A"
+ },
+ {
+  "t": 7.55,
+  "kind": "logo",
+  "note": "the dot opens into the six dots, turning; the wordmark slides out",
+  "scene": "A"
+ },
+ {
+  "t": 7.82,
+  "kind": "pop",
+  "len": 1.15,
+  "note": "a single soft sage ripple ring expands from the forming logo and fades (airy, very quiet)",
+  "scene": "A"
+ },
+ {
+  "t": 8.05,
+  "kind": "open",
+  "len": 1.3,
+  "note": "the wizard window rises from below; the lockup leaves upward (8.45)",
+  "scene": "A"
+ },
+ {
+  "t": 9.4,
+  "kind": "click",
+  "note": "the hand clicks into Virksomhedsnavn",
+  "scene": "A"
+ },
+ {
+  "t": 9.45,
+  "kind": "type",
+  "len": 0.73,
+  "note": "types 'Holm Fysioterapi'",
+  "scene": "A"
+ },
+ {
+  "t": 9.9,
+  "kind": "pop",
+  "len": 0.5,
+  "note": "the progress row docks at the top of the frame as the camera pushes in (a soft hairline settles under it)",
+  "scene": "A"
+ },
+ {
+  "t": 10.2,
+  "kind": "check",
+  "note": "name done: a sage underline sweeps under the field, progress segment 2 fills with a sage wipe (light tick)",
+  "scene": "A"
+ },
+ {
+  "t": 10.75,
+  "kind": "click",
+  "note": "the hand clicks Branche, the menu opens",
+  "scene": "A"
+ },
+ {
+  "t": 11.95,
+  "kind": "click",
+  "note": "the hand picks 'Fysioterapi', the menu closes",
+  "scene": "A"
+ },
+ {
+  "t": 11.98,
+  "kind": "check",
+  "note": "Branche done: underline sweep under Branche, segment 3 fills (light tick, a step higher)",
+  "scene": "A"
+ },
+ {
+  "t": 11.99,
+  "kind": "pop",
+  "note": "the field 'Hvad laver du?' eases in, the fields below make room",
+  "scene": "A"
+ },
+ {
+  "t": 12,
+  "kind": "pop",
+  "len": 2,
+  "note": "the page scrolls down to the button (soft, settles)",
+  "scene": "A"
+ },
+ {
+  "t": 12.22,
+  "kind": "type",
+  "len": 0.77,
+  "note": "types 'Genoptræning og massage'",
+  "scene": "A"
+ },
+ {
+  "t": 13,
+  "kind": "check",
+  "note": "'Hvad laver du?' done: underline sweep, segment 4 fills; Tab to E-mail",
+  "scene": "A"
+ },
+ {
+  "t": 13.06,
+  "kind": "type",
+  "len": 0.63,
+  "note": "types 'kontakt@holmfysio.dk'",
+  "scene": "A"
+ },
+ {
+  "t": 13.7,
+  "kind": "check",
+  "note": "E-mail done: underline sweep, segment 5 fills; Tab to Telefon",
+  "scene": "A"
+ },
+ {
+  "t": 13.76,
+  "kind": "type",
+  "len": 0.4,
+  "note": "types '+45 31 42 53 64'",
+  "scene": "A"
+ },
+ {
+  "t": 14.17,
+  "kind": "check",
+  "note": "Telefon done: underline sweep, segment 6 fills: the progress row is full (brightest tick)",
+  "scene": "A"
+ },
+ {
+  "t": 14.3,
+  "kind": "send",
+  "note": "the hand presses 'Fortsæt'; the button turns sage",
+  "scene": "A"
+ },
+ {
+  "t": 14.46,
+  "kind": "open",
+  "len": 1.3,
+  "note": "the smear: the sage button stretches out to the right and sweeps across the frame, in again from the left (one long soft whoosh, rising then settling)",
+  "scene": "A"
+ },
+ {
+  "t": 14.88,
+  "kind": "logo",
+  "len": 1.4,
+  "note": "the six-dot logo turns at the bar's head (loader)",
+  "scene": "A"
+ },
+ {
+  "t": 14.92,
+  "kind": "type",
+  "len": 0.45,
+  "note": "the number counts 0 to 100 beside the bar (fine fast ticks slowing down, not keyboard)",
+  "scene": "A"
+ },
+ {
+  "t": 15.36,
+  "kind": "check",
+  "note": "the count lands on 100 and holds",
+  "scene": "A"
+ },
+ {
+  "t": 15.85,
+  "kind": "pop",
+  "len": 0.8,
+  "note": "the bar rises carrying the 100 and thins into the site window's top bar",
+  "scene": "A"
+ },
+ {
+  "t": 16.28,
+  "kind": "pop",
+  "len": 0.6,
+  "note": "the photo frames slide into the empty page (very soft)",
+  "scene": "A"
+ },
+ {
+  "t": 16.3,
+  "kind": "pop",
+  "len": 0.6,
+  "note": "headline lines and text rise in",
+  "scene": "A"
+ },
+ {
+  "t": 16.34,
+  "kind": "open",
+  "len": 0.6,
+  "note": "the site window unfolds down from its top bar",
+  "scene": "A"
+ },
+ {
+  "t": 16.8,
+  "kind": "pop",
+  "note": "the hero photo slides up into its frame",
+  "scene": "A"
+ },
+ {
+  "t": 17.1,
+  "kind": "pop",
+  "len": 0.6,
+  "note": "three service photos slide in, left to right",
+  "scene": "A"
+ },
+ {
+  "t": 17.15,
+  "kind": "pop",
+  "len": 0.6,
+  "note": "three answer cards rise in from below (Virksomhedsnavn, Branche, Hvad laver du?)",
+  "scene": "A"
+ },
+ {
+  "t": 17.4,
+  "kind": "pop",
+  "len": 0.5,
+  "note": "navigation slides into the layout, left to right; the button at 18.0",
+  "scene": "A"
+ },
+ {
+  "t": 18.15,
+  "kind": "send",
+  "len": 0.52,
+  "note": "card 'Holm Fysioterapi' flies into the navigation with a short sage comet trail (small airy whoosh)",
+  "scene": "A"
+ },
+ {
+  "t": 18.6,
+  "kind": "send",
+  "len": 0.52,
+  "note": "card 'Fysioterapi' flies into the text with a comet trail (whoosh, a little higher)",
+  "scene": "A"
+ },
+ {
+  "t": 18.67,
+  "kind": "check",
+  "note": "'Holm Fysioterapi' lands in the navigation: a soft sage bloom on the spot",
+  "scene": "A"
+ },
+ {
+  "t": 19.05,
+  "kind": "send",
+  "len": 0.52,
+  "note": "card 'Genoptræning og massage' flies into the service cards with a comet trail (whoosh, highest)",
+  "scene": "A"
+ },
+ {
+  "t": 19.12,
+  "kind": "check",
+  "note": "'Fysioterapi' lands in the text: sage bloom",
+  "scene": "A"
+ },
+ {
+  "t": 19.57,
+  "kind": "check",
+  "note": "'Genoptræning og massage' lands in the service cards: sage bloom; the loader finishes",
+  "scene": "A"
+ },
+ {
+  "t": 20.85,
+  "kind": "open",
+  "len": 1.85,
+  "note": "B1 the window grows to the whole page (soft, long)",
+  "scene": "B"
+ },
+ {
+  "t": 21.1,
+  "kind": "logo",
+  "len": 1.3,
+  "note": "B1 a soft light sheen sweeps across the page (airy shimmer)",
+  "scene": "B"
+ },
+ {
+  "t": 21.9,
+  "kind": "pop",
+  "note": "B1 chip 'Gratis forhåndsvisning' pops onto the window's top edge",
+  "scene": "B"
+ },
+ {
+  "t": 22.9,
+  "kind": "open",
+  "len": 1.85,
+  "note": "B2 the window comes back and close on the hero (soft, long)",
+  "scene": "B"
+ },
+ {
+  "t": 24.2,
+  "kind": "click",
+  "note": "B2 the hand clicks the headline",
+  "scene": "B"
+ },
+ {
+  "t": 24.279999999999998,
+  "kind": "pop",
+  "note": "B2 the edit field grows out of the headline",
+  "scene": "B"
+ },
+ {
+  "t": 24.55,
+  "kind": "type",
+  "len": 0.95,
+  "note": "B2 typing 'Gør overskriften mere personlig'",
+  "scene": "B"
+ },
+ {
+  "t": 25.67,
+  "kind": "click",
+  "note": "B2 the hand presses send",
+  "scene": "B"
+ },
+ {
+  "t": 25.700000000000003,
+  "kind": "send",
+  "note": "B2 the edit is sent",
+  "scene": "B"
+ },
+ {
+  "t": 25.8,
+  "kind": "pop",
+  "note": "B2 the old headline breaks into small sage dots (a light scatter)",
+  "scene": "B"
+ },
+ {
+  "t": 26.35,
+  "kind": "logo",
+  "len": 0.4,
+  "note": "B2 the dots re-gather and the new headline resolves",
+  "scene": "B"
+ },
+ {
+  "t": 26.6,
+  "kind": "open",
+  "len": 1.7,
+  "note": "B3 the site shrinks into the thumbnail card (soft, long)",
+  "scene": "B"
+ },
+ {
+  "t": 27.75,
+  "kind": "pop",
+  "note": "B3 the thumbnail card settles",
+  "scene": "B"
+ },
+ {
+  "t": 28.5,
+  "kind": "open",
+  "len": 0.8,
+  "note": "B4 the card stretches like a cell (gooey)",
+  "scene": "B"
+ },
+ {
+  "t": 29.32,
+  "kind": "pop",
+  "note": "B4 the neck pinches and snaps: two cards, each settling",
+  "scene": "B"
+ },
+ {
+  "t": 30.4,
+  "kind": "click",
+  "note": "B4 the hand clicks the download button; the thumbnail packs into the file row",
+  "scene": "B"
+ },
+ {
+  "t": 30.9,
+  "kind": "logo",
+  "len": 0.6,
+  "note": "B4 the download bar fills (soft rising tone)",
+  "scene": "B"
+ },
+ {
+  "t": 31.5,
+  "kind": "check",
+  "note": "B4 download done",
+  "scene": "B"
+ },
+ {
+  "t": 31.52,
+  "kind": "pop",
+  "note": "B4 the Online card steps forward",
+  "scene": "B"
+ },
+ {
+  "t": 31.75,
+  "kind": "type",
+  "len": 0.75,
+  "note": "B4 the address types holmfysio.dk",
+  "scene": "B"
+ },
+ {
+  "t": 32.42,
+  "kind": "logo",
+  "len": 0.6,
+  "note": "B4 the price 99 rolls up (soft ticking roll)",
+  "scene": "B"
+ },
+ {
+  "t": 32.55,
+  "kind": "pop",
+  "note": "B4 'Live' comes on (small)",
+  "scene": "B"
+ },
+ {
+  "t": 33.06,
+  "kind": "pop",
+  "note": "B4 the price lands; one faint sage ring pulses out behind it",
+  "scene": "B"
+ },
+ {
+  "t": 34.6,
+  "kind": "click",
+  "note": "B5 the hand clicks; 'Uden binding' ticks in",
+  "scene": "B"
+ },
+ {
+  "t": 34.64,
+  "kind": "check",
+  "note": "B5 'Uden binding' ticks in",
+  "scene": "B"
+ },
+ {
+  "t": 36.1,
+  "kind": "click",
+  "note": "B6 the hand clicks the Online card",
+  "scene": "B"
+ },
+ {
+  "t": 36.2,
+  "kind": "open",
+  "len": 1.3,
+  "note": "B6 the card grows into the hosting card",
+  "scene": "B"
+ },
+ {
+  "t": 37.3,
+  "kind": "type",
+  "len": 0.5,
+  "note": "B6 row 1 types holmfysio.dk",
+  "scene": "B"
+ },
+ {
+  "t": 37.800000000000004,
+  "kind": "open",
+  "len": 0.8,
+  "note": "B6 row 1 fills green like liquid (soft pour)",
+  "scene": "B"
+ },
+ {
+  "t": 37.9,
+  "kind": "check",
+  "note": "B6 row 1 .dk-domæne: the check draws and pops",
+  "scene": "B"
+ },
+ {
+  "t": 38.65,
+  "kind": "type",
+  "len": 0.8,
+  "note": "B6 row 2 types kontakt@holmfysio.dk",
+  "scene": "B"
+ },
+ {
+  "t": 39.45,
+  "kind": "open",
+  "len": 0.8,
+  "note": "B6 row 2 fills green like liquid (soft pour)",
+  "scene": "B"
+ },
+ {
+  "t": 39.55,
+  "kind": "check",
+  "note": "B6 row 2 e-mail: the check draws and pops",
+  "scene": "B"
+ },
+ {
+  "t": 40.3,
+  "kind": "type",
+  "len": 0.85,
+  "note": "B6 row 3 types Europæiske servere",
+  "scene": "B"
+ },
+ {
+  "t": 41.550000000000004,
+  "kind": "open",
+  "len": 0.8,
+  "note": "B6 row 3 fills green like liquid (soft pour)",
+  "scene": "B"
+ },
+ {
+  "t": 41.65,
+  "kind": "check",
+  "note": "B6 row 3 siden online: the check draws and pops",
+  "scene": "B"
+ },
+ {
+  "t": 42,
+  "kind": "pop",
+  "note": "B7 the price row pops up",
+  "scene": "B"
+ },
+ {
+  "t": 43.12,
+  "kind": "click",
+  "note": "B7 the hand clicks 'Sæt online'",
+  "scene": "B"
+ },
+ {
+  "t": 43.22,
+  "kind": "logo",
+  "len": 0.6,
+  "note": "B7 the three checks pulse in turn (three soft notes, 0.12 s apart)",
+  "scene": "B"
+ },
+ {
+  "t": 44.95,
+  "kind": "open",
+  "note": "C1 the hosting card shrinks into the panel (soft settle); the live site rises",
+  "scene": "C"
+ },
+ {
+  "t": 45.65,
+  "kind": "type",
+  "len": 0.76,
+  "note": "C1 panel field types 'Massage: 450 kr.'",
+  "scene": "C"
+ },
+ {
+  "t": 45.75,
+  "kind": "pop",
+  "note": "C1 a photo rises under the panel",
+  "scene": "C"
+ },
+ {
+  "t": 46.4,
+  "kind": "send",
+  "len": 0.55,
+  "note": "C1 the sage dot runs a dashed path that draws ahead of it and erases behind it (light dotted whoosh, panel to price)",
+  "scene": "C"
+ },
+ {
+  "t": 46.45,
+  "kind": "check",
+  "note": "C1 the field's check pops",
+  "scene": "C"
+ },
+ {
+  "t": 46.8,
+  "kind": "click",
+  "note": "C1 the hand takes the photo (it lifts)",
+  "scene": "C"
+ },
+ {
+  "t": 46.95,
+  "kind": "pop",
+  "note": "C1 the dot lands with a small ripple; the Massage price swaps to 450 kr.",
+  "scene": "C"
+ },
+ {
+  "t": 47.55,
+  "kind": "open",
+  "len": 0.95,
+  "note": "C1 the site scrolls up to the hero (soft)",
+  "scene": "C"
+ },
+ {
+  "t": 48.199999999999996,
+  "kind": "send",
+  "len": 0.55,
+  "note": "C1 second dashed-path run (panel to hero), a touch higher in pitch",
+  "scene": "C"
+ },
+ {
+  "t": 48.2,
+  "kind": "click",
+  "note": "C1 the hand releases the photo on the panel (it settles)",
+  "scene": "C"
+ },
+ {
+  "t": 48.75,
+  "kind": "pop",
+  "note": "C1 ripple on the hero; the hero photo changes",
+  "scene": "C"
+ },
+ {
+  "t": 49.07,
+  "kind": "check",
+  "note": "C1 'Opdateret' chip pops onto the site window",
+  "scene": "C"
+ },
+ {
+  "t": 49.85,
+  "kind": "open",
+  "note": "C1 panel and site settle small; the type line begins",
+  "scene": "C"
+ },
+ {
+  "t": 50.12,
+  "kind": "type",
+  "len": 0.45,
+  "note": "C2 faint code lines tick in behind the words (very quiet)",
+  "scene": "C"
+ },
+ {
+  "t": 51.15,
+  "kind": "open",
+  "len": 0.6,
+  "note": "C2 one soft sage brush stroke wipes the code away (soft swish)",
+  "scene": "C"
+ },
+ {
+  "t": 52.35,
+  "kind": "open",
+  "note": "C3 the line glides up; the plan card rises",
+  "scene": "C"
+ },
+ {
+  "t": 52.82,
+  "kind": "check",
+  "note": "C3 row 'Stop når som helst' ticks in",
+  "scene": "C"
+ },
+ {
+  "t": 53.4,
+  "kind": "pop",
+  "note": "C3 the price '99 kr. /md.' pops",
+  "scene": "C"
+ },
+ {
+  "t": 53.75,
+  "kind": "pop",
+  "note": "C3 column År 1 grows up",
+  "scene": "C"
+ },
+ {
+  "t": 53.97,
+  "kind": "pop",
+  "note": "C3 column År 2 grows up",
+  "scene": "C"
+ },
+ {
+  "t": 54.19,
+  "kind": "pop",
+  "note": "C3 column År 3 grows up",
+  "scene": "C"
+ },
+ {
+  "t": 54.7,
+  "kind": "open",
+  "len": 0.7,
+  "note": "C3 the level line draws through the columns",
+  "scene": "C"
+ },
+ {
+  "t": 55.45,
+  "kind": "logo",
+  "len": 0.55,
+  "note": "C3 a small light glint runs along the level line (airy shimmer)",
+  "scene": "C"
+ },
+ {
+  "t": 56.25,
+  "kind": "open",
+  "note": "C4 the plan card leaves upward; the chat panel rises",
+  "scene": "C"
+ },
+ {
+  "t": 56.6,
+  "kind": "send",
+  "note": "C4 customer bubble 'Kan I hjælpe med min e-mail?'",
+  "scene": "C"
+ },
+ {
+  "t": 56.86,
+  "kind": "pop",
+  "len": 0.5,
+  "note": "C4 typing indicator: three sage dots bob in a wave (three soft ticks)",
+  "scene": "C"
+ },
+ {
+  "t": 57.34,
+  "kind": "pop",
+  "note": "C4 the reply bubble grows out of the indicator",
+  "scene": "C"
+ },
+ {
+  "t": 57.4,
+  "kind": "type",
+  "len": 0.63,
+  "note": "C4 Sofie's reply types",
+  "scene": "C"
+ },
+ {
+  "t": 57.7,
+  "kind": "pop",
+  "note": "C4 chip 'Dansk support'",
+  "scene": "C"
+ },
+ {
+  "t": 58.3,
+  "kind": "click",
+  "note": "C5 the hand presses the send button; it turns sage",
+  "scene": "C"
+ },
+ {
+  "t": 58.559999999999995,
+  "kind": "send",
+  "len": 0.82,
+  "note": "C5 the dot leaves the panel and glides to the centre, smearing a soft sage trail",
+  "scene": "C"
+ },
+ {
+  "t": 58.96,
+  "kind": "logo",
+  "len": 0.5,
+  "note": "C5 the five dots unfurl into the C (each settles)",
+  "scene": "C"
+ },
+ {
+  "t": 59.34,
+  "kind": "open",
+  "note": "C5 the wordmark slides out beside the C",
+  "scene": "C"
+ },
+ {
+  "t": 59.62,
+  "kind": "logo",
+  "len": 1,
+  "note": "C5 a soft light sweep runs across the wordmark",
+  "scene": "C"
+ },
+ {
+  "t": 59.84,
+  "kind": "pop",
+  "note": "C5 button 'Byg din side gratis' pops up",
+  "scene": "C"
+ },
+ {
+  "t": 60.9,
+  "kind": "type",
+  "len": 0.83,
+  "note": "C5 creoble.dk types",
+  "scene": "C"
+ },
+ {
+  "t": 62.6,
+  "kind": "click",
+  "note": "C5 the hand presses the button; the dots turn once",
+  "scene": "C"
+ },
+ {
+  "t": 62.800000000000004,
+  "kind": "logo",
+  "len": 0.65,
+  "note": "C5 a gentle shine passes across the button",
+  "scene": "C"
+ }
+]
