@@ -12,7 +12,7 @@
 # Run from the Remotion project folder. Needs ffmpeg; uses the pre-installed headless Chromium.
 set -euo pipefail
 comp=$1; out=$2; props=$3; IFS=, read -ra B <<< "$4"; mix=${5:-}
-browser=$(ls -d /opt/pw-browsers/chromium_headless_shell*/chrome-linux/headless_shell 2>/dev/null | head -1)
+browser=$( (ls -d /opt/pw-browsers/chromium_headless_shell*/chrome-linux/headless_shell 2>/dev/null || true) | head -1)
 work=$(mktemp -d); trap 'rm -rf "$work"' EXIT
 npx remotion bundle src/index.ts --out-dir="$work/bundle" --log=error >/dev/null
 pids=()
