@@ -620,7 +620,7 @@
    "note": "C1 the dot lands with a small ripple; the Massage price swaps to 450 kr."
   },
   {
-   "frame": 2853,
+   "frame": 2844,
    "id": "turn-off-phone",
    "db": -6,
    "pitch": 0,
@@ -655,11 +655,11 @@
    "note": "C1 'Opdateret' chip pops onto the site window"
   },
   {
-   "frame": 2991,
+   "frame": 2982,
    "id": "ui-backspace",
    "db": -4,
    "pitch": 0,
-   "note": "C1 panel and site settle small; the type line begins"
+   "note": "C1 panel, then site, settle small (staggered); the type line begins"
   },
   {
    "frame": 3007,
@@ -669,18 +669,18 @@
    "note": "C2 faint code lines tick in behind the words (very quiet)"
   },
   {
-   "frame": 3069,
+   "frame": 3075,
    "id": "charge-connection",
    "db": -3,
    "pitch": 0,
    "note": "C2 one soft sage brush stroke wipes the code away (soft swish)"
   },
   {
-   "frame": 3141,
+   "frame": 3144,
    "id": "ui-digital-click",
    "db": -8,
    "pitch": 0,
-   "note": "C3 the line glides up; the plan card rises"
+   "note": "C3 the plan card rises"
   },
   {
    "frame": 3169,
@@ -718,7 +718,7 @@
    "note": "C3 a small light glint runs along the level line (airy shimmer)"
   },
   {
-   "frame": 3375,
+   "frame": 3369,
    "id": "ui-stretch",
    "db": -17,
    "pitch": 0,

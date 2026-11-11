@@ -592,9 +592,9 @@
   "scene": "C"
  },
  {
-  "t": 47.55,
+  "t": 47.400000000000006,
   "kind": "open",
-  "len": 0.95,
+  "len": 1.3,
   "note": "C1 the site scrolls up to the hero (soft)",
   "scene": "C"
  },
@@ -624,9 +624,10 @@
   "scene": "C"
  },
  {
-  "t": 49.85,
+  "t": 49.699999999999996,
   "kind": "open",
-  "note": "C1 panel and site settle small; the type line begins",
+  "len": 1.3,
+  "note": "C1 panel, then site, settle small (staggered); the type line begins",
   "scene": "C"
  },
  {
@@ -637,16 +638,22 @@
   "scene": "C"
  },
  {
-  "t": 51.15,
+  "t": 51.25,
   "kind": "open",
   "len": 0.6,
   "note": "C2 one soft sage brush stroke wipes the code away (soft swish)",
   "scene": "C"
  },
  {
-  "t": 52.35,
+  "t": 52.15,
   "kind": "open",
-  "note": "C3 the line glides up; the plan card rises",
+  "note": "C2 the line glides up as a heading",
+  "scene": "C"
+ },
+ {
+  "t": 52.4,
+  "kind": "open",
+  "note": "C3 the plan card rises",
   "scene": "C"
  },
  {
@@ -694,7 +701,7 @@
   "scene": "C"
  },
  {
-  "t": 56.25,
+  "t": 56.15,
   "kind": "open",
   "note": "C4 the plan card leaves upward; the chat panel rises",
   "scene": "C"
