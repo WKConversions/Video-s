@@ -9,6 +9,7 @@ import React, { useEffect, useState } from "react";
 import { continueRender, delayRender } from "remotion";
 import { C, OUT, INOUT, SERIF, SANS, clamp01, fontsReady } from "./lib";
 import { f } from "./shared";
+import { pop } from "./motion";
 
 export const ACCENT = "#6F9187";          // the accent word: italic, a deeper sage than #87A89E so it reads at display size
 export const TYPE = { hero: 136, big: 112, line: 88, sub: 56 };   // Fraunces 400 sizes (px at 1080p)
@@ -50,7 +51,8 @@ export const Kinetic: React.FC<{ g: number; items: KItem[]; size?: number; color
   const st = items.map((it) => {
     const w = it.node ? (it.w ?? size) : measure(it.t ?? "", size, !!it.accent, serif, serif ? 400 : 500, ready);
     const a = f(it.at), dur = (it.dur ?? 0.6) * 30;
-    const inV = OUT(clamp01((g - a) / dur)), inL = INOUT(clamp01((g - a) / (dur * 0.9)));
+    // Karl (10 Nov): "everything should bounce a bit": a word rises with a soft start and settles with a small overshoot
+    const inV = pop(g, (a) / 30, { dur: dur / 30, over: 0.07 }), inL = INOUT(clamp01((g - a) / (dur * 0.9)));
     const o = it.out !== undefined ? f(it.out) : Infinity;
     const outV = OUT(clamp01((g - o) / 13.5)), outL = INOUT(clamp01((g - o - 3) / 16.5));
     return { it, w, vis: inV, gone: outV, slot: inL * (1 - outL) };
@@ -66,6 +68,7 @@ export const Kinetic: React.FC<{ g: number; items: KItem[]; size?: number; color
       {st.map((s, i) => {
         const left = lefts[i] - width / 2;
         if (s.vis <= 0 || s.gone >= 1) return null;
+        // vis may pass 1 slightly (the settle): the word rises a touch above its line and comes back
         const y = (1 - s.vis) * size * 0.9 - s.gone * size * 0.95;
         return (
           <div key={i} style={{ position: "absolute", left: left - pad, top: -lh / 2, width: s.w + 2 * pad, height: lh, overflow: "hidden" }}>
