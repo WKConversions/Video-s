@@ -25,12 +25,12 @@ export const BLUR: [number, number][] = [];
 
 /* ---------- the beats (film seconds) ---------- */
 const TC = {
-  card: 44.95, site: 45.22, focus: 45.4, type: 45.65, offer: 45.75, done: 46.45,
-  c1: 46.5, scroll: 47.55, c2: 48.3, mini: 49.85, sinkC1: 52.1,                     // C1
-  code: 50.12, brush: 51.15, up: 52.1, off: 52.9,                                     // C2
-  plan: 52.35, title: 52.55, row: 52.66, tick: 52.82, price: 53.4,
-  years: [53.75, 53.97, 54.19], level: 54.7, glint: 55.45, planOut: 56.15,          // C3
-  chat: 56.25, b1: 56.6, sofie: 56.8, wave: 56.86, reply: 57.34, rtype: 57.4, flag: 57.7, // C4
+  card: 44.95, site: 45.05, focus: 45.4, type: 45.65, offer: 45.75, done: 46.45,
+  c1: 46.5, scroll: 47.2, c2: 48.3, mini: 49.15, sinkC1: 51.95,                       // C1
+  code: 50.12, brush: 51.25, up: 51.85, off: 52.9,                                    // C2
+  plan: 52.25, title: 52.55, row: 52.66, tick: 52.82, price: 53.4,
+  years: [53.75, 53.97, 54.19], level: 54.7, glint: 55.45, planOut: 55.95,          // C3
+  chat: 56.05, b1: 56.6, sofie: 56.8, wave: 56.86, reply: 57.34, rtype: 57.4, flag: 57.7, // C4
 };
 const ARRIVE = 0.45;                                   // a courier dot lands this long after it leaves
 const A1 = TC.c1 + ARRIVE, A2 = TC.c2 + ARRIVE;        // the price swaps; the hero photo changes
@@ -45,15 +45,16 @@ export const EVENTS: { t: number; kind: "click" | "type" | "check" | "pop" | "op
   { t: TC.c1 - 0.1, kind: "send", len: 0.55, note: "C1 the sage dot runs a dashed path that draws ahead of it and erases behind it (light dotted whoosh, panel to price)" },
   { t: T_GRAB, kind: "click", note: "C1 the hand takes the photo (it lifts)" },
   { t: A1, kind: "pop", note: "C1 the dot lands with a small ripple; the Massage price swaps to 450 kr." },
-  { t: TC.scroll, kind: "open", len: 0.95, note: "C1 the site scrolls up to the hero (soft)" },
+  { t: TC.scroll + 0.2, kind: "open", len: 1.3, note: "C1 the site scrolls up to the hero (soft)" },
   { t: T_DROP, kind: "click", note: "C1 the hand releases the photo on the panel (it settles)" },
   { t: TC.c2 - 0.1, kind: "send", len: 0.55, note: "C1 second dashed-path run (panel to hero), a touch higher in pitch" },
   { t: A2, kind: "pop", note: "C1 ripple on the hero; the hero photo changes" },
   { t: A2 + 0.32, kind: "check", note: "C1 'Opdateret' chip pops onto the site window" },
-  { t: TC.mini, kind: "open", note: "C1 panel and site settle small; the type line begins" },
+  { t: TC.mini + 0.55, kind: "open", len: 1.3, note: "C1 panel, then site, settle small (staggered); the type line begins" },
   { t: TC.code, kind: "type", len: 0.45, note: "C2 faint code lines tick in behind the words (very quiet)" },
   { t: TC.brush, kind: "open", len: 0.6, note: "C2 one soft sage brush stroke wipes the code away (soft swish)" },
-  { t: TC.plan, kind: "open", note: "C3 the line glides up; the plan card rises" },
+  { t: TC.up + 0.3, kind: "open", note: "C2 the line glides up as a heading" },
+  { t: TC.plan + 0.15, kind: "open", note: "C3 the plan card rises" },
   { t: TC.tick, kind: "check", note: "C3 row 'Stop når som helst' ticks in" },
   { t: TC.price, kind: "pop", note: "C3 the price '99 kr. /md.' pops" },
   { t: TC.years[0], kind: "pop", note: "C3 column År 1 grows up" },
@@ -61,7 +62,7 @@ export const EVENTS: { t: number; kind: "click" | "type" | "check" | "pop" | "op
   { t: TC.years[2], kind: "pop", note: "C3 column År 3 grows up" },
   { t: TC.level, kind: "open", len: 0.7, note: "C3 the level line draws through the columns" },
   { t: TC.glint, kind: "logo", len: 0.55, note: "C3 a small light glint runs along the level line (airy shimmer)" },
-  { t: TC.chat, kind: "open", note: "C4 the plan card leaves upward; the chat panel rises" },
+  { t: TC.chat + 0.1, kind: "open", note: "C4 the plan card leaves upward; the chat panel rises" },
   { t: TC.b1, kind: "send", note: "C4 customer bubble 'Kan I hjælpe med min e-mail?'" },
   { t: TC.wave, kind: "pop", len: 0.5, note: "C4 typing indicator: three sage dots bob in a wave (three soft ticks)" },
   { t: TC.reply, kind: "pop", note: "C4 the reply bubble grows out of the indicator" },
@@ -87,6 +88,11 @@ const sn = (t: number, at: number, dur: number) => SINE(clamp01((t - at) / dur))
 const push = (t: number, a: number, b: number, from = 0.95, to = 1) => from + (to - from) * clamp01((t - a) / (b - a));   // the camera
 const pp = (g: number, at: number, dur: number, over: number) => pop(g, at, { dur, over });
 const away = (g: number, at: number, dur: number) => 1 - popOut(g, at, { dur });   // 0 → 1 (a small anticipation first)
+// big surfaces: the same pop / popOut on a clock that eases in over about A s (its speed grows from 0 instead of
+// kicking in), so a large card or the whole page never jumps from still to fast (flow check); it lands about A later
+const wt = (g: number, at: number, A: number) => { const x = g / 30 - at; return x <= 0 ? g : (at + x - A * (1 - Math.exp(-x / A))) * 30; };
+const ppw = (g: number, at: number, dur: number, over: number, A = 0.3) => pop(wt(g, at, A), at, { dur, over });
+const awayw = (g: number, at: number, dur: number, A = 0.2) => away(wt(g, at, A), at, dur);
 // an object arriving: q is a pop (it may pass 1: the settle rises a touch above its place and comes back)
 const arr = (q: number, rise = 70, from = 0.9): React.CSSProperties => ({ opacity: SINE(clamp01(q * 1.25)), transform: `translateY(${((1 - q) * rise).toFixed(2)}px) scale(${mix(from, 1, q).toFixed(4)})` });
 const Group: React.FC<{ s: number; children?: React.ReactNode }> = ({ s, children }) => (
@@ -152,7 +158,7 @@ const Courier: React.FC<{ g: number; at: number; a: Pt; b: Pt; bend?: number }> 
 // Two objects fill SAFE: the panel (600 × 560, left) and the live site (1000 × 740, right). The hosting card of the
 // hand-off becomes the panel (one box: it shrinks left while its content cross-fades). Each change is a chain: the
 // panel takes the input, a sage dot carries it to the site on its dashed path, the site's element updates.
-const SITE_S = 1000 / 1460, SITE_H = 740 / SITE_S, SCR_CARDS = 430, SCR_HERO = 40;   // the page scrolls from the services row up to the hero
+const SITE_S = 1000 / 1460, SITE_H = 740 / SITE_S, SCR_CARDS = 380, SCR_HERO = 40;   // the page scrolls from the services row up to the hero
 const PANEL = { x: 144, y: 260, w: 600, h: 560 }, SITEP = { x: 776, y: 170, w: 1000, h: 740 };
 const FIELD = { x: 34, y: 146, w: 532, h: 84 }, ZONE = { x: 34, y: 290, w: 532, h: 236 }, THUMB = { w: 250, h: 176 };
 const pagePt = (x: number, y: number, scroll: number) => ({ x: SITEP.x + x * SITE_S, y: SITEP.y + (46 + y - scroll) * SITE_S });
@@ -168,12 +174,12 @@ const SHIFT = (() => { const kk = handPlan([{ at: 0, x: 0, y: 0 }, { at: 1, x: 0
 const C1: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30;
   // afterwards (C2): both settle small under the type line, then sink as the plan card rises
-  const m = pp(g, TC.mini, 1.0, 0.03), sink = away(g, TC.sinkC1, 0.85);
-  const mini = (cx: number, tx: number) => `translate(${((tx - cx) * m).toFixed(2)}px, ${((MINI_Y - 540) * m + sink * 170).toFixed(2)}px) scale(${(mix(1, MINI, m) * (1 - 0.1 * sink)).toFixed(4)})`;
+  const mP = ppw(g, TC.mini, 1.7, 0.03, 0.4), mS = ppw(g, TC.mini + 0.25, 1.7, 0.03, 0.4), sink = awayw(g, TC.sinkC1, 0.85);   // the panel first, then the site
+  const mini = (cx: number, tx: number, m: number) => `translate(${((tx - cx) * m).toFixed(2)}px, ${((MINI_Y - 540) * m + sink * 170).toFixed(2)}px) scale(${(mix(1, MINI, m) * (1 - 0.1 * sink)).toFixed(4)})`;
   // the hosting card becomes the panel
-  const cq = pp(g, TC.card, 1.0, 0.03), toX = (960 - (PANEL.x + PANEL.w / 2)) * (1 - cq);
-  const cardO = 1 - sn(t, TC.card, 0.6), panelO = sn(t, TC.card + 0.2, 0.65);
-  const sq = pp(g, TC.site, 0.95, 0.03), scroll = mix(SCR_CARDS, SCR_HERO, pp(g, TC.scroll, 0.95, 0.03));
+  const cq = ppw(g, TC.card, 1.2, 0.03, 0.25), toX = (960 - (PANEL.x + PANEL.w / 2)) * (1 - cq);
+  const cardO = 1 - sn(t, TC.card + 0.08, 0.8), panelO = sn(t, TC.card + 0.3, 0.8);
+  const sq = ppw(g, TC.site, 1.25, 0.03), scroll = mix(SCR_CARDS, SCR_HERO, ppw(g, TC.scroll, 1.5, 0.03));
   // the field: focused as the panel lands, it types on "priser"; its check pops when the text is complete
   const focus = aspring(g, TC.focus, 0.4), txt = typed(g, TC.type, NEWTXT, 21), typing = t > TC.type && t < TC.done;
   const done = pp(g, TC.done, 0.4, 0.1);
@@ -199,7 +205,7 @@ const C1: React.FC<{ g: number }> = ({ g }) => {
       {cardO > 0 && <div style={{ position: "absolute", left: 960 - CARD.w / 2, top: 540 - CARD.h / 2, width: CARD.w, height: CARD.h, opacity: cardO, transform: `translateX(${(-(960 - (PANEL.x + PANEL.w / 2)) * cq).toFixed(2)}px) scale(${(1.0355 * Math.pow(0.6 / 1.0355, cq)).toFixed(5)})` }}>
         <HostingCard g={g} rows={3} active={[1, 1, 1]} price={1} /></div>}
       {/* the panel */}
-      <div style={{ position: "absolute", left: PANEL.x, top: PANEL.y, width: PANEL.w, height: PANEL.h, opacity: clamp01(1 - sink), transform: mini(PANEL.x + PANEL.w / 2, 960 - 271 + 96) }}>
+      <div style={{ position: "absolute", left: PANEL.x, top: PANEL.y, width: PANEL.w, height: PANEL.h, opacity: clamp01(1 - sink), transform: mini(PANEL.x + PANEL.w / 2, 960 - 271 + 96, mP) }}>
         <div style={{ position: "absolute", inset: 0, borderRadius: 28, background: C.white, boxShadow: `0 0 0 1px ${C.line}, ${SHADOW_BIG}`, fontFamily: SANS, color: C.ink, opacity: panelO, transform: `translateX(${toX.toFixed(2)}px) scale(${mix(1.35, 1, cq).toFixed(4)})` }}>
           <div style={{ position: "absolute", left: 34, top: 30, fontFamily: SERIF, fontSize: 46, letterSpacing: "-0.025em" }}>Dit panel</div>
           <div style={{ position: "absolute", right: 34, top: 52, display: "flex", alignItems: "center", gap: 9, fontSize: 20, color: C.muted }}><span style={{ width: 9, height: 9, borderRadius: 5, background: C.sage }} />holmfysio.dk</div>
@@ -221,7 +227,7 @@ const C1: React.FC<{ g: number }> = ({ g }) => {
         </div>
       </div>
       {/* the live site */}
-      <div style={{ position: "absolute", left: SITEP.x, top: SITEP.y, width: SITEP.w, height: SITEP.h, opacity: clamp01(1 - sink), transform: mini(SITEP.x + SITEP.w / 2, 960 + 271 - 160) }}>
+      <div style={{ position: "absolute", left: SITEP.x, top: SITEP.y, width: SITEP.w, height: SITEP.h, opacity: clamp01(1 - sink), transform: mini(SITEP.x + SITEP.w / 2, 960 + 271 - 160, mS) }}>
         <div style={{ position: "absolute", inset: 0, ...arr(sq, 90, 0.9) }}>
           <div style={{ width: 1460, height: SITE_H, transform: `scale(${SITE_S})`, transformOrigin: "0 0" }}>
             <Browser w={1460} h={SITE_H} url="holmfysio.dk" live={1}>
@@ -265,13 +271,13 @@ const C1: React.FC<{ g: number }> = ({ g }) => {
 /* ---------- C2: "Aldrig en linje kode." ---------- */
 // The kit's Kinetic look (each word rises through its own mask with a small settle, the line re-centres), with the
 // slot opening ahead of the word so two arriving words never overlap. Behind it, faint code; one brush stroke wipes it.
-type LW = { t: string; at: number; dur: number; out: number; accent?: boolean };
+type LW = { t: string; at: number; dur: number; out: number; accent?: boolean; slot?: number };   // slot: s for the line to re-centre (last word only)
 const Line: React.FC<{ g: number; items: LW[]; size: number }> = ({ g, items, size }) => {
   const ready = useFonts(), t = g / 30;
   const sp = 0.27 * size, lh = size * 1.25, pad = size * 0.16;
   const st = items.map((it) => {
     const a = (t - it.at) / it.dur, o = t - it.out;
-    return { it, w: measure(it.t, size, !!it.accent, true, 400, ready), vis: pp(g, it.at + 0.06, it.dur, 0.07), gone: SINE(clamp01(o / 0.7)), slot: SINE(clamp01(a / 0.62)) };
+    return { it, w: measure(it.t, size, !!it.accent, true, 400, ready), vis: pp(g, it.at + 0.06, it.dur, 0.07), gone: SINE(clamp01(o / 0.7)), slot: it.slot ? gl(t, it.at, it.slot) : SINE(clamp01(a / 0.62)) };
   });
   let acc = 0, cum = 0;
   const lefts = st.map((x) => { const pre = sp * x.slot * Math.min(1, acc), l = cum + pre; cum += pre + x.slot * x.w; acc += x.slot; return l; });
@@ -291,7 +297,7 @@ const CODE = [`<section class="priser">`, `  <h3>Massage</h3>`, `  <p class="pri
 const CODE_X = -250, CODE_LH = 54, MONO = "'JetBrains Mono', 'DejaVu Sans Mono', monospace";
 // the brush: seven soft bristles side by side (different reach and strength), sweeping left → right across the code;
 // its head wipes the code, its tail lifts off behind it, so it leaves clean cream
-const BR = { x0: -330, x1: 330, len: 0.55, lag: 0.2 };
+const BR = { x0: -330, x1: 330, len: 0.6, lag: 0.2 };
 const BRISTLES = [
   { y: -156, h: 12, tl: -18, o: 0.2 }, { y: -104, h: -10, tl: 14, o: 0.3 }, { y: -52, h: 22, tl: -6, o: 0.26 }, { y: 0, h: 4, tl: 20, o: 0.32 },
   { y: 52, h: -14, tl: -12, o: 0.27 }, { y: 104, h: 16, tl: 8, o: 0.3 }, { y: 156, h: -20, tl: -16, o: 0.2 },
@@ -299,7 +305,7 @@ const BRISTLES = [
 const CodeWipe: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30;
   if (t > TC.brush + BR.len + BR.lag + 0.1) return null;
-  const head = BR.x0 + (BR.x1 - BR.x0 + 40) * gl(t, TC.brush, BR.len), tail = BR.x0 + (BR.x1 - BR.x0 + 40) * gl(t, TC.brush + BR.lag, BR.len);
+  const head = BR.x0 + (BR.x1 - BR.x0 + 40) * gl(t, TC.brush, BR.len), tail = BR.x0 + (BR.x1 - BR.x0 + 100) * gl(t, TC.brush + BR.lag, BR.len);
   const started = t > TC.brush;
   const tilt = (x: number) => -0.035 * x;              // the stroke rises a little to the right, as a hand paints it
   const near = (y: number) => BRISTLES.reduce((b, q) => (Math.abs(q.y - y) < Math.abs(b.y - y) ? q : b));
@@ -329,14 +335,14 @@ const CodeWipe: React.FC<{ g: number }> = ({ g }) => {
 const C2: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30;
   // fully up ~51.6 → 52.85: it reads at the centre, then glides up as a heading while the plan card rises, and leaves upward
-  const up = pp(g, TC.up, 0.95, 0.03), off = away(g, TC.off, 0.55);
+  const up = ppw(g, TC.up, 1.5, 0.03, 0.4), off = awayw(g, TC.off, 0.7, 0.25);
   return (
     <Group s={push(t, 50.0, 53.5, 0.94)}>
       <div style={{ position: "absolute", left: 960, top: 450, opacity: clamp01(1 - off), transform: `translateY(${(-285 * up - 70 * off).toFixed(2)}px) scale(${mix(1, 0.5, up).toFixed(4)})` }}>
         <CodeWipe g={g} />
         <Line g={g} size={TYPE.hero} items={[
           { t: "Aldrig", at: 50.2, dur: 0.62, out: 99 }, { t: "en", at: 50.62, dur: 0.62, out: 99 },
-          { t: "linje", at: 50.85, dur: 0.62, out: 99 }, { t: "kode.", at: 51.08, dur: 0.66, accent: true, out: 99 },
+          { t: "linje", at: 50.85, dur: 0.62, out: 99 }, { t: "kode.", at: 51.08, dur: 0.8, accent: true, out: 99, slot: 1.0 },
         ]} />
       </div>
     </Group>
@@ -347,7 +353,7 @@ const C2: React.FC<{ g: number }> = ({ g }) => {
 const PLAN = { x: 510, y: 270, w: 900, h: 540 };
 const C3: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30;
-  const q = pp(g, TC.plan, 0.95, 0.03), out = away(g, TC.planOut, 0.95), gone = sn(t, TC.planOut, 0.62);
+  const q = ppw(g, TC.plan, 1.0, 0.03, 0.25), out = awayw(g, TC.planOut, 0.95), gone = sn(t, TC.planOut + 0.08, 0.66);
   const title = pp(g, TC.title, 0.6, 0.05), row = pp(g, TC.row, 0.55, 0.06), tick = pp(g, TC.tick, 0.4, 0.1), price = pp(g, TC.price, 0.6, 0.05);
   const yr = TC.years.map((a) => pp(g, a, 0.55, 0.07)), lab = TC.years.map((a) => pp(g, a + 0.07, 0.5, 0.06));
   const line = gl(t, TC.level, 0.7);
@@ -394,7 +400,7 @@ const SEND_S = { x: 960 + (SEND.x - 960) * KC, y: 540 + (SEND.y - 540) * KC };
 const BUB_H = 17 * 2 + 28 * 1.25;                                           // a bubble's height (padding + one line)
 const C4: React.FC<{ g: number }> = ({ g }) => {
   const t = g / 30;
-  const q = pp(g, TC.chat, 0.95, 0.03), sink = away(g, T_SINK, 0.9), gone = sn(t, T_SINK, 0.55);
+  const q = ppw(g, TC.chat, 1.0, 0.03, 0.25), sink = away(g, T_SINK, 0.9), gone = sn(t, T_SINK, 0.55);
   const b1 = pp(g, TC.b1, 0.45, 0.07), who = pp(g, TC.sofie, 0.45, 0.06), flag = pp(g, TC.flag, 0.45, 0.1);
   // the typing indicator: a small bubble with three logo dots that bob in one wave, then the reply grows out of it
   const ind = pp(g, TC.sofie, 0.32, 0.08) * popOut(g, TC.reply, { dur: 0.22 }), bub = pp(g, TC.reply, 0.45, 0.04);
@@ -560,8 +566,8 @@ export const SceneC: React.FC<{ g: number }> = ({ g }) => {
   return (
     <AbsoluteFill style={{ background: C.bg }}>
       {t < 53.0 && <C1 g={g} />}
-      {t > 50.0 && t < 53.5 && <C2 g={g} />}
-      {t > 52.3 && t < 57.15 && <C3 g={g} />}
+      {t > 52.2 && t < 57.15 && <C3 g={g} />}
+      {t > 50.0 && t < 54.0 && <C2 g={g} />}
       {t > 56.2 && t < 59.9 && <C4 g={g} />}
       {t >= T_SEND && <C5 g={g} />}
       <Hand {...handAt(g, handKeys(t), { size: HAND })} />
