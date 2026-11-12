@@ -1,6 +1,7 @@
 import React from "react";
 import { Composition } from "remotion";
 import { FPS, FRAMES, W, H } from "./loop";
+import { CandidateIntake, BLOG_FPS, BLOG_FRAMES } from "./blog/candidate-intake";
 import { Loop as Goteborgsvarvet } from "./cases/goteborgsvarvet";
 import { Loop as SocialImpactFactory } from "./cases/social-impact-factory";
 import { Loop as AbroadInternships } from "./cases/abroad-internships";
@@ -21,5 +22,7 @@ export const Root: React.FC = () => (
     <Composition id="top-jobs-abroad" component={TopJobsAbroad} durationInFrames={FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="vino-mio" component={VinoMio} durationInFrames={FRAMES} fps={FPS} width={W} height={H} />
     <Composition id="h2o-water-coolers" component={H2oWaterCoolers} durationInFrames={FRAMES} fps={FPS} width={W} height={H} />
+    {/* blog loops (12 s, 30 fps) */}
+    <Composition id="blog-candidate-intake" component={CandidateIntake} durationInFrames={BLOG_FRAMES} fps={BLOG_FPS} width={W} height={H} />
   </>
 );
