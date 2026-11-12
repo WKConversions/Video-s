@@ -10,11 +10,11 @@ import { Frame, useT, seg, cyc, pop, popOut, clamp01, lerp, SOFT } from "../loop
 import { C, KBTile, ToolTile, SHADOW } from "../kb";
 
 // ---------- layout ----------
-const LX = 200, RX = 1240, CY = 380, CW = 480, CH = 500, HEAD = 104, ROW = 92;
-const ROW0 = CY + HEAD + 14; // top of slot 0
+const LX = 166, RX = 1214, CY = 366, CW = 540, CH = 536, HEAD = 112, ROW = 103;
+const ROW0 = CY + HEAD + 6; // slot 0 (rows sit 12 px below the header, 12 px apart: no neighbour peeks in)
 const PORT_Y = ROW0 + ROW / 2; // the cable meets both cards at row 0's height
 const APEX_Y = 388, TILE = 124;
-const FY = 664; // the result figure, under the arch
+const FY = 676; // the result figure, under the arch
 const SIF = { ground: "#3B3B39", yellow: "#E9B938", yellowSoft: "#FBF0CF" };
 const AQQO_GREEN = { soft: "#D9F7E7", ink: "#0A7F47" };
 const CYAN_TRAIL = C.cyan;
@@ -26,13 +26,17 @@ const ARR = (k: number) => (k === 0 ? 4.68 : DEP(k) + 1.35); // it lands in its 
 const SHIFT_AT = (k: number) => (k === 0 ? 3.5 : DEP(k) + 0.08);
 const COMET = { lift: 3.3, morph: 3.5, go: 3.72, hit: 4.45 };
 const KB_IN = 2.55, KB_OUT = 9.15;
-const flight = Easing.bezier(0.45, 0, 0.25, 1); // comet: quick launch, soft landing
+const flight = Easing.bezier(0.32, 0, 0.18, 1); // comet: quick launch, soft landing
+// the wet trail: a point of the trail is as wide as the time since the comet passed it allows (28 px fresh, 7 px dry at 1.6 s)
+const DRY = 1.6, wetW = (age: number) => 7 + 21 * Math.max(0, Math.exp(-age / 0.32) - Math.exp(-DRY / 0.32)) / (1 - Math.exp(-DRY / 0.32));
+const AGES = [0, 0.025, 0.05, 0.08, 0.12, 0.17, 0.23, 0.3, 0.39, 0.5, 0.64, 0.82, 1.05, 1.32, DRY];
 const ride = Easing.bezier(0.55, 0, 0.35, 1);
 const pulse = (t: number, at: number, dur: number) => { const u = clamp01((t - at) / dur); return Math.pow(Math.sin(Math.PI * u), 2); };
-const floatY = (t: number, ph: number) => 9 * Math.sin(2 * Math.PI * (t / 5 + ph));
+// cos: at the seam the cards are at the turn of their float (no pixel-snap step there)
+const floatY = (t: number, ph: number) => 9 * Math.cos(2 * Math.PI * (t / 5 + ph)) + 0.25;
 // problem: each side tries to reach the other and falls into the gap (even: a booking from AQQO, odd: a contact from Pipedrive)
 const ATTEMPTS = [0.0, 0.5, 1.0, 1.5];
-const PW = 156, PH = 56; // a travelling pill
+const PW = 170, PH = 60; // a travelling pill
 
 // ---------- the arch ----------
 type Pt = { x: number; y: number };
@@ -98,9 +102,9 @@ const Disc: React.FC<{ soft: string; g: Glyph; size: number }> = ({ soft, g, siz
 );
 
 // ---------- a booking: a full AQQO row that can morph into a travelling pill ----------
-const RW = CW - 28, RH = 80;
+const RW = CW - 28, RH = ROW - 12;
 const Booking: React.FC<{ cat: number; cx: number; cy: number; w: number; h: number; full: number; rot?: number; sx?: number; lift?: number; tint?: number; op?: number }> = ({ cat, cx, cy, w, h, full, rot = 0, sx = 1, lift = 0, tint = 0, op = 1 }) => {
-  const c = CATS[cat % 4], disc = Math.min(50, h - 14);
+  const c = CATS[cat % 4], disc = Math.min(58, h - 14);
   const bg = tint > 0 ? `rgba(56,200,255,${tint})` : C.white;
   return (
     <div style={{ position: "absolute", left: cx - w / 2, top: cy - h / 2, width: w, height: h, borderRadius: Math.min(h / 2, lerp(14, h / 2, 1 - full)), opacity: op,
@@ -109,10 +113,10 @@ const Booking: React.FC<{ cat: number; cx: number; cy: number; w: number; h: num
       <div style={{ position: "absolute", inset: 0, background: bg }} />
       <div style={{ position: "relative", opacity: 1 - tint }}><Disc soft={c.soft} g={c.g} size={disc} /></div>
       <div style={{ position: "relative", marginLeft: 16, flex: 1, minWidth: 0, opacity: clamp01(full * 1.6 - 0.6) * (1 - tint), whiteSpace: "nowrap" }}>
-        <div style={{ fontSize: 23, fontWeight: 700, color: C.ink, lineHeight: 1 }}>{c.label}</div>
-        <div style={{ marginTop: 11, width: 116, height: 9, borderRadius: 5, background: C.line }} />
+        <div style={{ fontSize: 27, fontWeight: 700, color: C.ink, lineHeight: 1 }}>{c.label}</div>
+        <div style={{ marginTop: 12, width: 130, height: 10, borderRadius: 5, background: C.line }} />
       </div>
-      <div style={{ position: "relative", opacity: clamp01(full * 1.6 - 0.6) * (1 - tint), padding: "8px 15px", borderRadius: 999, background: AQQO_GREEN.soft, color: AQQO_GREEN.ink, fontSize: 17, fontWeight: 700, lineHeight: 1 }}>Booked</div>
+      <div style={{ position: "relative", opacity: clamp01(full * 1.6 - 0.6) * (1 - tint), padding: "9px 17px", borderRadius: 999, background: AQQO_GREEN.soft, color: AQQO_GREEN.ink, fontSize: 20, fontWeight: 700, lineHeight: 1 }}>Booked</div>
       {/* the pill's own data bars, once the row has folded */}
       <div style={{ position: "absolute", left: disc + 18, top: h / 2 - 9, opacity: clamp01(1 - full * 2.2) * (1 - tint) }}>
         <div style={{ width: 54, height: 7, borderRadius: 4, background: C.navy, opacity: 0.75 }} />
@@ -123,8 +127,8 @@ const Booking: React.FC<{ cat: number; cx: number; cy: number; w: number; h: num
 };
 
 // ---------- a Pipedrive contact row ----------
-const FIELD_W = 118, FIELD_H = 46;
-const FIELD_X = [RX + 194, RX + 330]; // left edges, relative to the frame
+const FIELD_W = 130, FIELD_H = 52;
+const FIELD_X = [RX + 214, RX + 366]; // left edges, relative to the frame
 const Field: React.FC<{ x: number; y: number; fill: number; g: Glyph; soft: string; q: number }> = ({ x, y, fill, g, soft, q }) => (
   <div style={{ position: "absolute", left: x, top: y - FIELD_H / 2, width: FIELD_W, height: FIELD_H }}>
     <div style={{ position: "absolute", inset: 0, borderRadius: 13, border: "2.5px dashed #C3CCD8", boxSizing: "border-box", opacity: 1 - clamp01(fill * 1.4),
@@ -134,8 +138,8 @@ const Field: React.FC<{ x: number; y: number; fill: number; g: Glyph; soft: stri
     {fill > 0.001 && (
       <div style={{ position: "absolute", inset: 0, borderRadius: 13, background: soft, display: "flex", alignItems: "center", justifyContent: "center", gap: 10,
         opacity: clamp01(fill * 1.8), transform: `scale(${0.55 + 0.45 * fill})` }}>
-        <GlyphSvg g={g} size={24} />
-        <svg width={20} height={20} viewBox="0 0 20 20"><circle cx={10} cy={10} r={10} fill={C.ok} /><path d="M5.6 10.3l3 2.9 5.6-6" stroke="#fff" strokeWidth={2.4} fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
+        <GlyphSvg g={g} size={27} />
+        <svg width={22} height={22} viewBox="0 0 20 20"><circle cx={10} cy={10} r={10} fill={C.ok} /><path d="M5.6 10.3l3 2.9 5.6-6" stroke="#fff" strokeWidth={2.4} fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </div>
     )}
   </div>
@@ -193,16 +197,25 @@ export const Loop: React.FC = () => {
   // comet
   const cu = (tm: number) => seg(tm, COMET.go, COMET.hit, flight);
   const cometOn = t >= COMET.go && t < COMET.hit + 0.02;
-  const cableW = lerp(18, 7, seg(t, 4.0, 5.1));
+  const cableW = 7;
   const cableOp = 1 - seg(t, 9.5, 9.96);
   if (t >= COMET.go && t < 9.97) {
-    const head = cu(t), t1 = cu(t - 0.07), t2 = cu(t - 0.15);
+    const head = cu(t);
     const glow = (d: string, w: number, key: string, op: number) => <path key={key} d={d} stroke={CYAN_TRAIL} strokeWidth={w} strokeLinecap="round" strokeLinejoin="round" fill="none" opacity={op} />;
-    if (t < KB_OUT + 0.05) {
-      // the wet trail that stays: wide, then thinning into the cable
-      const end = cometOn ? t2 : 1;
-      svg.push(glow(arch.sub(0, end), cableW * 2.6, "halo", 0.14));
-      svg.push(glow(arch.sub(0, end), cableW, "trail", 1));
+    if (t < COMET.hit + DRY) {
+      // the smear: the comet's trail is laid wet and dries, from the tail forward, into the cable
+      const dry = cu(t - DRY);
+      if (dry > 0) { svg.push(glow(arch.sub(0, dry), cableW * 2.6, "halo", 0.14)); svg.push(glow(arch.sub(0, dry), cableW, "trail", 1)); }
+      for (let j = AGES.length - 2; j >= 0; j--) {
+        const a = cu(t - AGES[j + 1]), b = cu(t - AGES[j]);
+        if (b - a < 1e-4) continue;
+        const w = wetW((AGES[j] + AGES[j + 1]) / 2);
+        svg.push(glow(arch.sub(a, b), w * 2.4, `wh${j}`, 0.14));
+        svg.push(glow(arch.sub(a, b), w, `w${j}`, 1));
+      }
+    } else if (t < KB_OUT + 0.05) {
+      svg.push(glow(arch.sub(0, 1), cableW * 2.6, "halo", 0.14));
+      svg.push(glow(arch.sub(0, 1), cableW, "trail", 1));
     } else {
       // the snap: the cable splits at the apex and recoils into the stubs
       const rk = pop(t, KB_OUT + 0.05, { dur: 0.5, over: 0.08 });
@@ -214,9 +227,7 @@ export const Loop: React.FC = () => {
     }
     if (cometOn) {
       // the smear: a tapered comet whose length is its speed
-      svg.push(glow(arch.sub(t2, head), 20, "c2", 0.55));
-      svg.push(glow(arch.sub(t1, head), 28, "c1", 0.85));
-      svg.push(glow(arch.sub(Math.max(0, head - 0.03), head), 38, "c0", 1));
+      svg.push(glow(arch.sub(cu(t - 0.03), head), 40, "c0", 1));
       const hp = arch.at(head);
       svg.push(<circle key="core" cx={hp.x} cy={hp.y} r={9} fill="#FFFFFF" opacity={0.9} />);
     }
@@ -249,6 +260,9 @@ export const Loop: React.FC = () => {
       svg.push(<circle key={`warn${i}`} cx={e.x} cy={e.y} r={10 + 30 * ring} stroke={C.warn} strokeWidth={3} fill="none" opacity={0.75 * (1 - ring)} />);
     }
   });
+  // the comet lands: a splash ring at the Pipedrive port
+  const splash = seg(t, COMET.hit - 0.04, COMET.hit + 0.5, Easing.out(Easing.cubic));
+  if (splash > 0 && splash < 1) svg.push(<circle key="splash" cx={arch.p3.x} cy={arch.p3.y} r={16 + 50 * splash} stroke={C.cyan} strokeWidth={5 * (1 - splash) + 1} fill="none" opacity={0.7 * (1 - splash)} />);
   // K.B steps in: a soft cyan ring
   const ringK = seg(t, KB_IN + 0.15, KB_IN + 0.85, Easing.out(Easing.cubic));
   if (ringK > 0 && ringK < 1) svg.push(<circle key="kbring" cx={apex.x} cy={apex.y} r={70 + 90 * ringK} stroke={C.cyan} strokeWidth={4} fill="none" opacity={0.6 * (1 - ringK)} />);
@@ -300,12 +314,12 @@ export const Loop: React.FC = () => {
   const aqqoRows: React.ReactNode[] = [];
   for (let i = Math.max(0, Math.floor(shiftA) - 1); i < Math.floor(shiftA) + 6; i++) {
     if (i < N_CHIPS && t >= DEP(i)) continue; // already left as a chip
-    const y = (i - shiftA) * ROW + 14 + 6;
+    const y = (i - shiftA) * ROW + 12;
     aqqoRows.push(<div key={`a${i}`} style={{ position: "absolute", left: 14, top: y }}><div style={{ position: "relative", width: RW, height: RH }}><Booking cat={i} cx={RW / 2} cy={RH / 2} w={RW} h={RH} full={1} /></div></div>);
   }
   const pdRows: React.ReactNode[] = [];
   for (let r = Math.max(0, Math.floor(shiftP) - 1); r < Math.floor(shiftP) + 6; r++) {
-    const y = (r - shiftP) * ROW + 14 + 6;
+    const y = (r - shiftP) * ROW + 12;
     const fields = [0, 1].map((f) => {
       const k = r * 2 + f, has = r < 4;
       const fill = has && t >= ARR(k) - 0.06 ? pop(t, ARR(k) - 0.06, { dur: 0.4, over: 0.08 }) : 0;
@@ -314,9 +328,9 @@ export const Loop: React.FC = () => {
     });
     pdRows.push(<div key={`p${r}`} style={{ position: "absolute", left: 0, top: y, width: CW, height: RH }}>
       <div style={{ position: "absolute", left: 14, top: 0, width: RW, height: RH, borderRadius: 14, background: C.white, boxShadow: "0 6px 16px -10px rgba(41,58,81,0.25)" }} />
-      <div style={{ position: "absolute", left: 30, top: RH / 2 - 23 }}><Disc soft={AVATAR[r % 4]} g="person" size={46} /></div>
-      <div style={{ position: "absolute", left: 90, top: RH / 2 - 14, width: 84, height: 11, borderRadius: 6, background: "#D5DCE5" }} />
-      <div style={{ position: "absolute", left: 90, top: RH / 2 + 5, width: 58, height: 9, borderRadius: 5, background: C.line }} />
+      <div style={{ position: "absolute", left: 30, top: RH / 2 - 27 }}><Disc soft={AVATAR[r % 4]} g="person" size={54} /></div>
+      <div style={{ position: "absolute", left: 100, top: RH / 2 - 15, width: 92, height: 12, borderRadius: 6, background: "#D5DCE5" }} />
+      <div style={{ position: "absolute", left: 100, top: RH / 2 + 6, width: 62, height: 10, borderRadius: 5, background: C.line }} />
       {fields}
     </div>);
   }
@@ -331,20 +345,20 @@ export const Loop: React.FC = () => {
   );
   const aqqoHead = (
     <div style={{ position: "absolute", left: 0, top: 0, width: CW, height: HEAD, background: SIF.ground, display: "flex", alignItems: "center", padding: "0 22px", boxSizing: "border-box" }}>
-      <Img src={staticFile("cases/social-impact-factory/sif-logo.jpg")} style={{ height: 82, width: 82 * 1169 / 1249, display: "block" }} />
-      <div style={{ marginLeft: 20, color: C.white, fontSize: 26, fontWeight: 700, letterSpacing: "-0.01em" }}>Reservations</div>
+      <Img src={staticFile("cases/social-impact-factory/sif-logo.jpg")} style={{ height: 90, width: 90 * 1169 / 1249, display: "block" }} />
+      <div style={{ marginLeft: 22, color: C.white, fontSize: 30, fontWeight: 700, letterSpacing: "-0.01em" }}>Reservations</div>
     </div>
   );
   const pdHead = (
     <div style={{ position: "absolute", left: 0, top: 0, width: CW, height: HEAD, background: C.white, borderBottom: `1px solid ${C.line}`, display: "flex", alignItems: "center", padding: "0 26px 0 96px", boxSizing: "border-box" }}>
-      <div style={{ color: C.navy, fontSize: 26, fontWeight: 700, letterSpacing: "-0.01em" }}>Contacts</div>
+      <div style={{ color: C.navy, fontSize: 30, fontWeight: 700, letterSpacing: "-0.01em" }}>Contacts</div>
       <div style={{ marginLeft: "auto", width: 128, height: 36, borderRadius: 18, background: C.paleCool, border: `1px solid ${C.line}` }} />
     </div>
   );
 
   const line = (k: number, text: string) => k > 0.001 && (
     <div style={{ position: "absolute", left: 0, right: 0, top: 150, height: 100, display: "flex", justifyContent: "center", alignItems: "center",
-      opacity: clamp01(k * 1.6), transform: `translateY(${(1 - k) * 26}px) scale(${0.93 + 0.07 * k})`, fontSize: 64, fontWeight: 800, color: C.navy, letterSpacing: "-0.015em", whiteSpace: "nowrap" }}>{text}</div>
+      opacity: clamp01(k * 1.6), transform: `translateY(${(1 - k) * 26}px) scale(${0.93 + 0.07 * k})`, fontSize: 72, fontWeight: 800, color: C.navy, letterSpacing: "-0.015em", whiteSpace: "nowrap" }}>{text}</div>
   );
 
   // result: 100% grows down out of the K.B tile, SIF's yellow brackets close around it
@@ -352,7 +366,7 @@ export const Loop: React.FC = () => {
   const brackets = [0, 1, 2, 3].map((i) => {
     const k = pop(t, 7.4 + 0.06 * i, { dur: 0.5, over: 0.07 }) * popOut(t, 8.74, { dur: 0.35 });
     if (k < 0.001) return null;
-    const sxn = i % 2 ? 1 : -1, syn = i < 2 ? -1 : 1, bx = 960 + sxn * (236 + 40 * (1 - k)), by = FY + syn * (80 + 26 * (1 - k)), arm = 48;
+    const sxn = i % 2 ? 1 : -1, syn = i < 2 ? -1 : 1, bx = 960 + sxn * (216 + 40 * (1 - k)), by = FY + syn * (76 + 26 * (1 - k)), arm = 46;
     return <path key={i} d={`M${bx - sxn * arm},${by}L${bx},${by}L${bx},${by - syn * arm}`} stroke={SIF.yellow} strokeWidth={10} strokeLinecap="square" fill="none" opacity={clamp01(k * 2)} />;
   });
 
@@ -360,17 +374,17 @@ export const Loop: React.FC = () => {
     <Frame>
       {card(LX, fL, aqqoHead, aqqoRows)}
       {card(RX, fR, pdHead, pdRows)}
-      <div style={{ position: "absolute", left: LX + CW - 46, top: CY + fL - 40, transform: `scale(${badgeA})` }}><ToolTile tool="aqqo" size={86} /></div>
-      <div style={{ position: "absolute", left: RX - 40, top: CY + fR - 40, transform: `scale(${badgeP})` }}><ToolTile tool="pipedrive" size={86} /></div>
+      <div style={{ position: "absolute", left: LX + CW - 50, top: CY + fL - 44, transform: `scale(${badgeA})` }}><ToolTile tool="aqqo" size={94} /></div>
+      <div style={{ position: "absolute", left: RX - 44, top: CY + fR - 44, transform: `scale(${badgeP})` }}><ToolTile tool="pipedrive" size={94} /></div>
 
       <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0 }}>{svg}{brackets}</svg>
 
       {fig > 0.001 && (
         <div style={{ position: "absolute", left: 960 - 400, top: figY - 90, width: 800, height: 180, display: "flex", justifyContent: "center", alignItems: "center",
-          transform: `scale(${figS})`, opacity: clamp01(fig * 2.2), fontSize: 136, fontWeight: 800, color: C.navy, letterSpacing: "-0.03em", lineHeight: 1, fontVariantNumeric: "tabular-nums" }}>{figN}%</div>
+          transform: `scale(${figS})`, opacity: clamp01(fig * 2.2), fontSize: 128, fontWeight: 800, color: C.navy, letterSpacing: "-0.03em", lineHeight: 1, fontVariantNumeric: "tabular-nums" }}>{figN}%</div>
       )}
       {figLabel > 0.001 && (
-        <div style={{ position: "absolute", left: 960 - 400, top: FY + 104, width: 800, textAlign: "center", fontSize: 30, fontWeight: 600, color: C.muted,
+        <div style={{ position: "absolute", left: 960 - 400, top: FY + 100, width: 800, textAlign: "center", fontSize: 30, fontWeight: 600, color: C.muted,
           opacity: clamp01(figLabel * 1.6), transform: `translateY(${(1 - figLabel) * 18}px)` }}>automated synchronization</div>
       )}
 
