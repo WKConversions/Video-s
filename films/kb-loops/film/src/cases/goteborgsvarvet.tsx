@@ -18,7 +18,7 @@ const RING = { x: 1398, y: 600, r: 190, w: 40 };
 const FW = 180, FH = 220, FS = 1.3, GS = 0.62, PILL = 162;
 const SCAT = [
   { x: 480, y: 610, r: -7, ph: 0 },
-  { x: 880, y: 785, r: 5, ph: 0.3 },
+  { x: 880, y: 768, r: 5, ph: 0.3 },
   { x: 1262, y: 445, r: -4, ph: 0.55 },
   { x: 1540, y: 738, r: 8, ph: 0.8 },
 ];
@@ -59,8 +59,8 @@ const LANES: Lane[] = [0, 1, 2, 3].map((i) => {
   const L = cum[cum.length - 1];
   return { d: "M" + pts.map((p) => `${p[0].toFixed(1)},${p[1].toFixed(1)}`).join("L"), L, rail: cum[railEnd - 1], seg: L - cum[railEnd + 45 * i] };
 });
-const RING_D = `M${RING.x},${RING.y - RING.r}A${RING.r},${RING.r} 0 1 1 ${RING.x},${RING.y + RING.r}A${RING.r},${RING.r} 0 1 1 ${RING.x},${RING.y - RING.r}`;
 const BIG = 9999;
+const DOT = { r: (14.71 / 512) * TILE.s, dy: ((323.42 - 256) / 512) * TILE.s }; // the K.B logo's period, on the tile
 
 // ---------- pieces ----------
 const Icon: React.FC<{ i: number }> = ({ i }) => {
@@ -143,7 +143,7 @@ export const Loop: React.FC = () => {
       r: c.r + 3 * Math.sin(TAU * (t / 5 + c.ph + 0.25)) + 3 * bump(t, land + 0.04, 0.4), s: FS };
   };
   const tilePose: Pose = { x: TILE.x, y: TILE.y, r: 0, s: 0.25 };
-  const arrive = (i: number) => pop(wrap(t), 9.1 + 0.06 * i, { dur: 0.55, over: 0.05 });
+  const arrive = (i: number) => pop(wrap(t), 9.0 + 0.06 * i, { dur: 0.58, over: 0.05 });
 
   // envelope (manual follow-ups): hops f0 → f1 → f2 → f3 → f0 every 0.625 s with a dotted trail; flies into the K.B
   // tile; comes back out of it at the end
@@ -154,11 +154,11 @@ export const Loop: React.FC = () => {
   const hop = { ...at(hu), r: Math.sign(B.x - A.x) * 10 * Math.sin(Math.PI * hu) };
   let env = { ...hop, s: 1 }, trailOp = 0;
   if (t < 5) {
-    const kA = seg(t, 1.95, 2.45, INOUT), kE = pop(t + 10, 9.3, { dur: 0.45, over: 0.06 });
+    const kA = seg(t, 1.95, 2.45, INOUT), kE = pop(t + 10, 9.22, { dur: 0.45, over: 0.06 });
     env = { x: lerp(hop.x, TILE.x, kA), y: lerp(hop.y, TILE.y, kA), r: hop.r * (1 - kA), s: kE * popOut(t, 2.22, { dur: 0.26, over: 0.06 }) };
     trailOp = 1 - seg(t, 1.9, 2.15);
   } else {
-    const kE = pop(t, 9.3, { dur: 0.45, over: 0.06 });
+    const kE = pop(t, 9.22, { dur: 0.45, over: 0.06 });
     env = { x: lerp(TILE.x, hop.x, kE), y: lerp(TILE.y, hop.y, kE), r: hop.r * kE, s: kE };
     trailOp = seg(t, 9.55, 9.8);
   }
@@ -170,14 +170,15 @@ export const Loop: React.FC = () => {
   const tileOut = popOut(t, 9.32, { dur: 0.45, over: 0.05 });
   const G = pop(t, 2.72, { dur: 1.0, over: 0.03 }) - pop(t, 8.66, { dur: 0.62, over: 0.03 });
   const landBump = [0, 1, 2, 3].reduce((a, i) => a + bump(t, LAND(i) - 0.15, 0.45), 0);
-  const kG = INOUT(seg(t, 6.85, 7.85)), hs = 1 + 0.05 * kG + 0.012 * landBump;
+  const kG = seg(t, 6.8, 8.0, INOUT), hs = 1 + 0.04 * kG + 0.03 * seg(t, 7.6, 8.8) + 0.012 * landBump;
   const off = { x: (TILE.x - CARD.x) * kG, y: (TILE.y - CARD.y) * kG };
   const card = { x: lerp(TILE.x, CARD.x + off.x, G), y: lerp(TILE.y, CARD.y + off.y, G), w: lerp(TILE.s, CARD.w, G), h: lerp(TILE.s, CARD.h, G) };
   const cardS = Math.max(0, tileIn * tileOut) * (1 + (hs - 1) * clamp01(G));
-  const disc = INOUT(seg(t, 2.86, 3.5)) - INOUT(seg(t, 8.92, 9.2));
-  const kbLetters = clamp01(1 - seg(t, 2.8, 2.98) + seg(t, 9.05, 9.22));
+  const disc = seg(t, 2.82, 3.8, OUT) - seg(t, 8.86, 9.2, INOUT); // the K.B dot grows into the white card and back
+  const kbLetters = clamp01(1 - seg(t, 2.78, 2.98) + seg(t, 9.06, 9.24));
   const outK = popOut(t, 8.52, { dur: 0.36, over: 0.04 });
-  const inK = (j: number) => pop(t, 3.3 + 0.08 * j, { dur: 0.45, over: 0.05 });
+  const IN = [3.5, 3.56, 3.16, 3.3]; // logo, header, ring, label: centre first, corners last (the reveal is a disc)
+  const inK = (j: number) => pop(t, IN[j], { dur: 0.45, over: 0.05 });
   const content = (j: number) => clamp01(inK(j)) * clamp01(outK);
 
   // lanes, stripes, counter
@@ -190,10 +191,10 @@ export const Loop: React.FC = () => {
   const ringScale = lerp(0.82, 1, clamp01(inK(2))) * lerp(0.6, 1, clamp01(outK));
   const ringOp = clamp01(Math.min(inK(2), outK));
   const halo = seg(t, 6.9, 7.7, OUT);
-  const glint = seg(t, 7.8, 8.6, INOUT);
+  const lap = 150 * seg(t, 7.66, 8.95, INOUT); // victory lap: the full ring keeps turning into the fold
   const check = seg(t, 7.55, 7.9, OUT);
   const stage: React.CSSProperties = { position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: `${CARD.x}px ${CARD.y}px`,
-    transform: `translate(${off.x}px, ${off.y}px) scale(${hs})` };
+    transform: `translate(${card.x - CARD.x}px, ${card.y - CARD.y}px) scale(${cardS * (card.w / CARD.w)})` }; // content rides on the card
 
   return (
     <Frame>
@@ -238,12 +239,13 @@ export const Loop: React.FC = () => {
       {cardS > 0.001 && (
         <div style={{ position: "absolute", left: card.x - card.w / 2, top: card.y - card.h / 2, width: card.w, height: card.h, transform: `scale(${cardS})`,
           borderRadius: lerp(12, 26, clamp01(G)), background: `linear-gradient(90deg, ${C.kbL}, ${C.kbR})`, boxShadow: SHADOW.card, overflow: "hidden" }}>
-          {kbLetters > 0.001 && (
-            <div style={{ position: "absolute", left: card.w / 2 - TILE.s / 2, top: card.h / 2 - TILE.s / 2, opacity: kbLetters }}>
-              <KBTile size={TILE.s} shadow="" radius={0} dot={1 + 0.7 * bump(t, 2.3, 0.42)} />
+          {disc < 0.999 && (
+            <div style={{ position: "absolute", left: card.w / 2 - TILE.s / 2, top: card.h / 2 - TILE.s / 2 }}>
+              <KBTile size={TILE.s} shadow="" radius={0} letters={kbLetters} dot={1 + 0.7 * bump(t, 2.3, 0.42)} />
             </div>
           )}
-          {disc > 0.001 && <div style={{ position: "absolute", inset: 0, background: C.white, clipPath: `circle(${disc * (Math.hypot(card.w, card.h) / 2 + 4)}px at 50% 50%)` }} />}
+          {disc > 0.001 && <div style={{ position: "absolute", inset: 0, background: C.white,
+            clipPath: `circle(${lerp(DOT.r, Math.hypot(card.w, card.h) / 2 + 30, disc)}px at 50% calc(50% + ${DOT.dy}px))` }} />}
         </div>
       )}
 
@@ -268,7 +270,7 @@ export const Loop: React.FC = () => {
           </svg>
         )}
         {content(3) > 0.001 && (
-          <div style={{ position: "absolute", left: CARD.x - 300, width: 600, top: 852, textAlign: "center", fontSize: 30, fontWeight: 600, color: C.muted,
+          <div style={{ position: "absolute", left: CARD.x - 300, width: 600, top: 848, textAlign: "center", fontSize: 34, fontWeight: 600, color: C.muted,
             opacity: content(3), transform: `translateY(${(1 - clamp01(inK(3))) * 18}px)` }}>successful submissions</div>
         )}
         <svg width={1920} height={1080} style={{ position: "absolute", inset: 0, overflow: "visible" }}>
@@ -276,7 +278,7 @@ export const Loop: React.FC = () => {
             {ringOp > 0.001 && <circle cx={RING.x} cy={RING.y} r={RING.r} fill="none" stroke="#EBECF4" strokeWidth={RING.w} />}
             {halo > 0 && halo < 1 && <circle cx={RING.x} cy={RING.y} r={RING.r + 26 + 64 * halo} fill="none" stroke={C.cyan} strokeWidth={9 * (1 - halo) + 1} opacity={0.75 * (1 - halo)} />}
           </g>
-          <g opacity={clamp01(outK)} transform={`translate(${RING.x} ${RING.y}) scale(${lerp(0.6, 1, clamp01(outK))}) translate(${-RING.x} ${-RING.y})`}>
+          <g opacity={clamp01(outK)} transform={`translate(${RING.x} ${RING.y}) scale(${lerp(0.6, 1, clamp01(outK))}) rotate(${lap}) translate(${-RING.x} ${-RING.y})`}>
             {LANES.map((Ln, i) => {
               if (t < S[i]) return null;
               const vis = Math.max(1, heads[i] - tails[i]), gvis = Math.max(1, heads[i] - ghosts[i]);
@@ -291,10 +293,6 @@ export const Loop: React.FC = () => {
                 </g>
               );
             })}
-            {glint > 0 && glint < 1 && (
-              <path d={RING_D} fill="none" stroke="#fff" strokeOpacity={0.6 * Math.sin(Math.PI * glint)} strokeWidth={RING.w - 12} strokeLinecap="round"
-                strokeDasharray={`110 ${BIG}`} strokeDashoffset={-(TAU * RING.r - 110) * glint} />
-            )}
           </g>
         </svg>
         {ringOp > 0.001 && (
