@@ -25,10 +25,16 @@ Source: https://kruslockbosconsultancy.com/client-cases/goteborgsvarvet (fetched
   Excel.
 
 ## Loop concept: "Every lane to one finish"
-Scattered spreadsheet files (one per category, each with its own icon: travel, food, materials, logistics, other) float
-around while a follow-up envelope hops from file to file. The K.B tile arrives, the files line up like runners at a start
-grid, a white dashboard card grows out of the K.B tile, and one by one each file squeezes into a lane stripe with a
-white inline (the GV logo's letter style) that races left, paints its row's bar on the way and swoops into the donut
-ring, which fills lap by lap to 100%. The card folds back into the K.B tile and the files scatter again.
+Concept: four scattered spreadsheet files (travel, food, materials, other emissions; GV colours) float around while a
+follow-up envelope hops from file to file and drops red badges; the K.B tile arrives at the centre, the files line up as
+runners in a left start grid, the tile grows into a white GV dashboard card on the right, and four lanes converge into one
+finish straight that feeds a donut ring on the card. Each file runs its lane into the ring, which fills lap by lap to
+100%. The card folds back into the K.B tile and the files burst out of it to their scattered spots (the opening).
+Flourish: each file squashes into a pill and smears into a long GV-coloured stripe with a white inline down its middle
+(the letter style of the GV logo), leaving a painted lane and a fading ghost tail; it laps the ring over the segments
+already filled and settles as its own quarter of the donut. After 100% a white glint runs one victory lap.
 
-On screen: "Scattered Excel files" / "One CO₂ portal" / "100%" + "successful submissions".
+Layout: headline top-left; start grid of files on the left; four converging lanes in the middle; dashboard card on the
+right (GV logo in its header, donut, "successful submissions" label).
+
+On screen: "Scattered Excel files" / "One CO2 portal" / "100%" + "successful submissions".
