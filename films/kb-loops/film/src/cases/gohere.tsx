@@ -39,8 +39,8 @@ const T = {
   drop: 2.15, shift: 1.7, probOut: 2.45, chip: 2.55,
   st1: 2.7, s1a: 2.95, s1b: 4.05, ct1: 4.0, solIn: 4.2, flip: 4.3,
   st2: 4.45, s2a: 4.7, s2b: 5.7, ct2: 5.65, card: 5.95, solOut: 6.0,
-  grow: 6.1, resIn: 6.35, resOut: 8.3, shrink: 8.25, cmsOut: 8.3, cardOut: 8.4, morph: 8.5,
-  chipOut: 8.95, kbOut: 8.9, shiftBack: 8.55, probIn: 9.15, curIn: 9.3,
+  grow: 6.1, resIn: 6.35, resOut: 8.35, shrink: 8.1, cmsOut: 8.22, cardOut: 8.5, morph: 8.55,
+  chipOut: 8.85, kbOut: 8.9, shiftBack: 8.55, probIn: 9.15, curIn: 9.3,
 };
 
 // the blade's two wipes (bar centre, content x)
@@ -177,7 +177,7 @@ const CMS = [
 const CmsLayer: React.FC<{ t: number }> = ({ t }) => (
   <>
     {CMS.map((r, j) => {
-      const e = popOut(t, T.cmsOut + j * 0.07, { dur: 0.35 });
+      const e = popOut(t, T.cmsOut + j * 0.1, { dur: 0.42 });
       if (t < T.s2a || e <= 0.001) return null;
       const bp = pop(t, r.at, { dur: 0.42, over: 0.08 });
       const wa = 6.5 + j * 0.6, wig = t > wa && t < wa + 0.5 ? 16 * Math.sin(TAU * 1.5 * (t - wa) / 0.5) * (1 - (t - wa) / 0.5) : 0;
@@ -260,7 +260,7 @@ const SearchCard: React.FC<{ t: number; tile: TS | null }> = ({ t, tile }) => {
 const Calendar: React.FC<{ t: number }> = ({ t }) => {
   const a = pop(t, T.chip, { dur: 0.5, over: 0.08 }), ex = popOut(t, T.chipOut, { dur: 0.35 });
   if (t < T.chip || ex <= 0.001) return null;
-  const g = t < T.shrink ? glide(t, T.grow, 0.75, 0.035) : 1 - sstep((t - T.shrink) / 0.75);
+  const g = t < T.shrink ? glide(t, T.grow, 0.75, 0.035) : 1 - sstep((t - T.shrink) / 0.8);
   const sc = lerp(CAL.s0, 1, g) * a * ex, y = lerp(CAL.y0, CAL.y1, g) + 7 * Math.sin(TAU * (t / 2.5 + 0.3));
   const r = pop(t, T.flip, { dur: 0.45, over: 0.06 }), days = clamp01(lerp(0, 1, (g - 0.55) / 0.4));
   return (
