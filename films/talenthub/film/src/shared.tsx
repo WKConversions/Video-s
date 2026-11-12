@@ -66,6 +66,20 @@ export const WideLogo: React.FC<{ width: number; style?: React.CSSProperties }> 
   <Img src={staticFile("img/talenthub-wide.svg")} style={{ width, height: (width * 344) / 1701, display: "block", ...style }} />
 );
 
+// The TalentHub Beyond Borders lock-up (brand kit, November 2026): the wordmark over BEYOND BORDERS, never with the th
+// symbol beside it. width in px. reveal 0..1: the wordmark wipes in left to right, then BEYOND BORDERS rises in.
+export const LOCK_AR = 301 / 1243, LOCK_SPLIT = 0.787;
+export const Lockup: React.FC<{ width: number; color?: "red" | "white"; reveal?: number; style?: React.CSSProperties }> = ({ width, color = "red", reveal = 1, style }) => {
+  const h = width * LOCK_AR, src = staticFile(`img/lockup-${color}.png`);
+  const wk = ARRIVE(clamp01(reveal / 0.65)), bk = ARRIVE(clamp01((reveal - 0.45) / 0.55));
+  return (
+    <div style={{ position: "relative", width, height: h, ...style }}>
+      <Img src={src} style={{ position: "absolute", left: 0, top: 0, width, height: h, clipPath: `inset(0 ${(1 - wk) * 100}% ${(1 - LOCK_SPLIT) * 100}% 0)`, transform: `translateY(${(1 - wk) * h * 0.06}px)` }} />
+      <Img src={src} style={{ position: "absolute", left: 0, top: 0, width, height: h, clipPath: `inset(${LOCK_SPLIT * 100}% 0 0 0)`, opacity: bk, transform: `translateY(${(1 - bk) * h * 0.12}px)` }} />
+    </div>
+  );
+};
+
 /* ---------- icons (rounded monoline) ---------- */
 export const P: Record<string, React.ReactNode> = {
   search: <><circle cx="21" cy="21" r="12" /><path d="M30 30 L40 40" /></>,
