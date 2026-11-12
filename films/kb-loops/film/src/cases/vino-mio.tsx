@@ -24,7 +24,7 @@ const STAGE = { x: CARD.x + CARD.w - 32, y: 489, r: 132 };
 const GYG = { x: 300, y: 196, s: 112 };
 const MAP = { x: 432, y: 196 };
 const KB = { x: 580, y: 440, s: 124 };
-const PX = 300, SLOTY = [740, 690, 640, 590, 540, 490], BW = 176, BH = 52, TH = 46;
+const PX = 304, SLOTY = [724, 666, 608, 550, 492, 434], BW = 204, BH = 60, TH = 54;
 const CAPX = 950;
 
 // ---------- timing ----------
@@ -92,7 +92,7 @@ const Chairs: React.FC<{ k: number }> = ({ k }) => (
   <>
     {[45, 135, 225, 315].map((a) => (
       <g key={a} transform={`rotate(${a}) translate(${TR + 21} 0) rotate(90)`}>
-        <rect x={-17} y={-10} width={34} height={20} rx={9} fill={mix("#DCE3EC", C.navy, k)} />
+        <rect x={-17} y={-10} width={34} height={20} rx={9} fill={mix("#DCE3EC", C.kb, k)} />
       </g>
     ))}
   </>
@@ -139,21 +139,22 @@ const Ripple: React.FC<{ t: number; j: number }> = ({ t, j }) => {
 // the pour: ribbon + splash for table ORDER[i]
 const Pour: React.FC<{ t: number; i: number }> = ({ t, i }) => {
   const j = ORDER[i], P0 = POUR[i], { a, b, c } = pourArc(j);
-  const head = seg(t, P0, P0 + 0.52, INOUT), tail = seg(t, P0 + 0.15, P0 + 0.72, INOUT);
+  const head = seg(t, P0, P0 + 0.55, INOUT), tail = seg(t, P0 + 0.2, P0 + 0.8, INOUT), ghost = seg(t, P0 + 0.08, P0 + 0.95, INOUT);
   const out: React.ReactNode[] = [];
   if (head > 0 && head - tail > 0.004) {
-    const w = seg(t, P0, P0 + 0.14, OUT), rh = 15 * w * (1 - 0.55 * seg(t, P0 + 0.5, P0 + 0.72));
+    const w = seg(t, P0, P0 + 0.14, OUT), rh = 21 * w * (1 - 0.55 * seg(t, P0 + 0.52, P0 + 0.8));
     const hp = qb(a, c, b, head);
-    out.push(<path key="r" d={ribbon(a, c, b, tail, head, 2.5 * w, rh)} fill={VM.blue} />);
+    if (head - ghost > 0.004) out.push(<path key="gh" d={ribbon(a, c, b, ghost, head, 1, rh * 0.8)} fill={VM.blue} opacity={0.16} />);
+    out.push(<path key="r" d={ribbon(a, c, b, tail, head, 3 * w, rh)} fill={VM.blue} />);
     out.push(<circle key="h" cx={hp.x} cy={hp.y} r={rh} fill={VM.blue} />);
     out.push(<path key="g" d={ribbon(a, c, b, tail, head, 1.2 * w, rh, -0.42, 0.3)} fill={VM.hi} opacity={0.75} />);
   }
   // splash: four droplets jump out of the table as the head lands
-  const tau = t - (P0 + 0.5);
+  const tau = t - (P0 + 0.53);
   if (tau > 0 && tau < 0.5) {
     [[-260, -300], [-120, -380], [140, -360], [270, -290]].forEach(([vx, vy], k) => {
       const px = b.x + vx * tau * 0.9, py = b.y - TR * 0.4 + vy * tau + 0.5 * 1500 * tau * tau;
-      out.push(<circle key={`d${k}`} cx={px} cy={py} r={Math.max(0, 7 * (1 - tau / 0.5))} fill={VM.blue} />);
+      out.push(<circle key={`d${k}`} cx={px} cy={py} r={Math.max(0, 10 * (1 - tau / 0.5))} fill={VM.blue} />);
     });
   }
   return <>{out}</>;
@@ -163,45 +164,45 @@ const Pour: React.FC<{ t: number; i: number }> = ({ t, i }) => {
 const Mail: React.FC = () => (
   <g>
     <rect x={-BW / 2} y={-BH / 2} width={BW} height={BH} rx={14} fill={C.white} stroke={C.line} strokeWidth={2} />
-    <g transform="translate(-58 0)">
+    <g transform="translate(-68 0) scale(1.15)">
       <rect x={-17} y={-12} width={34} height={24} rx={5} fill="none" stroke={C.navy} strokeWidth={3.2} />
       <path d="M-15 -9 L0 3 L15 -9" fill="none" stroke={C.navy} strokeWidth={3.2} strokeLinejoin="round" />
     </g>
-    <rect x={-28} y={-12} width={86} height={9} rx={4.5} fill="#CBD4DF" />
-    <rect x={-28} y={4} width={58} height={8} rx={4} fill="#E3E8EF" />
+    <rect x={-36} y={-13} width={104} height={10} rx={5} fill="#CBD4DF" />
+    <rect x={-36} y={5} width={70} height={9} rx={4.5} fill="#E3E8EF" />
   </g>
 );
 const Chat: React.FC = () => (
   <g>
     <path d={`M${-BW / 2 + 14} ${-BH / 2} H${BW / 2 - 14} Q${BW / 2} ${-BH / 2} ${BW / 2} ${-BH / 2 + 14} V${BH / 2 - 14} Q${BW / 2} ${BH / 2} ${BW / 2 - 14} ${BH / 2} H${-BW / 2 + 30} L${-BW / 2 + 8} ${BH / 2 + 12} L${-BW / 2 + 12} ${BH / 2 - 2} Q${-BW / 2} ${BH / 2 - 6} ${-BW / 2} ${BH / 2 - 16} V${-BH / 2 + 14} Q${-BW / 2} ${-BH / 2} ${-BW / 2 + 14} ${-BH / 2} Z`}
       fill={C.white} stroke={C.line} strokeWidth={2} />
-    <g transform="translate(-58 0)">
+    <g transform="translate(-68 0) scale(1.15)">
       <circle r={16} fill={VM.chat} />
       <path d="M-7 -5 H7 Q9 -5 9 -3 V3 Q9 5 7 5 H-1 L-6 9 L-5 5 H-7 Q-9 5 -9 3 V-3 Q-9 -5 -7 -5 Z" fill="#FFFFFF" />
     </g>
-    <rect x={-28} y={-12} width={74} height={9} rx={4.5} fill="#CBD4DF" />
-    <rect x={-28} y={4} width={92} height={8} rx={4} fill="#E3E8EF" />
+    <rect x={-36} y={-13} width={88} height={10} rx={5} fill="#CBD4DF" />
+    <rect x={-36} y={5} width={110} height={9} rx={4.5} fill="#E3E8EF" />
   </g>
 );
 const Ticket: React.FC = () => (
   <g>
     <rect x={-BW / 2} y={-TH / 2} width={BW} height={TH} rx={11} fill={C.white} stroke={C.line} strokeWidth={2} />
     <path d={`M${-BW / 2 + 11} ${-TH / 2} H${-BW / 2 + 22} V${TH / 2} H${-BW / 2 + 11} Q${-BW / 2} ${TH / 2} ${-BW / 2} ${TH / 2 - 11} V${-TH / 2 + 11} Q${-BW / 2} ${-TH / 2} ${-BW / 2 + 11} ${-TH / 2} Z`} fill={VM.gyg} />
-    <g transform="translate(-46 0)" fill={VM.gyg}>
+    <g transform="translate(-56 0) scale(1.15)" fill={VM.gyg}>
       <circle cy={-6} r={6} />
       <path d="M-10 13 Q-10 1 0 1 Q10 1 10 13 Z" />
     </g>
-    <rect x={-26} y={-11} width={58} height={9} rx={4.5} fill={C.navy} />
-    <rect x={-26} y={4} width={40} height={8} rx={4} fill="#D3DAE3" />
-    <line x1={50} y1={-TH / 2 + 7} x2={50} y2={TH / 2 - 7} stroke="#D3DAE3" strokeWidth={2.5} strokeDasharray="4 5" />
-    <circle cx={68} r={7} fill={VM.gyg} opacity={0.9} />
+    <rect x={-32} y={-12} width={70} height={10} rx={5} fill={C.navy} />
+    <rect x={-32} y={5} width={48} height={9} rx={4.5} fill="#D3DAE3" />
+    <line x1={58} y1={-TH / 2 + 8} x2={58} y2={TH / 2 - 8} stroke="#D3DAE3" strokeWidth={2.5} strokeDasharray="4 5" />
+    <circle cx={80} r={8} fill={VM.gyg} opacity={0.9} />
   </g>
 );
 
 // the cursor (problem time)
 const cursorPos = (pt: number): P => {
   const idle = { x: 446 + 8 * Math.sin(pt * 3.4), y: 652 + 6 * Math.cos(pt * 2.7) };
-  const grab = { x: PX + 12 + 44, y: SLOTY[3] + 6 };
+  const grab = { x: PX + 12 + 52, y: SLOTY[3] + 6 };
   const t0 = { x: TABLES[0].x + 18, y: TABLES[0].y + 14 }, g = { x: GYG.x + 22, y: GYG.y + 26 }, away = { x: 372, y: 330 };
   const k1 = seg(pt, CUR.to, CUR.grab, INOUT), k2 = seg(pt, CUR.carry, CUR.drop, INOUT), k3 = seg(pt, CUR.back, CUR.tap, INOUT), k4 = seg(pt, CUR.tap + 0.18, CUR.out + 0.4, SOFT);
   let p = { x: lerp(idle.x, grab.x, k1), y: lerp(idle.y, grab.y, k1) };
@@ -215,13 +216,13 @@ const Cursor: React.FC<{ pt: number }> = ({ pt }) => {
   if (v <= 0.001 || pt > CUR.out + 0.5) return null;
   const p = cursorPos(pt), press = 1 - 0.12 * bump(pt, CUR.grab, 0.16) - 0.14 * bump(pt, CUR.tap, 0.18);
   const prog = 0.92 * seg(pt, CUR.in + 0.2, CUR.out, (x) => x);
-  const rr = 11, circ = 2 * Math.PI * rr;
+  const rr = 15, circ = 2 * Math.PI * rr;
   return (
     <g transform={`translate(${f1(p.x)} ${f1(p.y)}) scale(${(clamp01(v) * press).toFixed(4)})`} opacity={clamp01(v * 1.3)}>
-      <g transform="translate(34 40)" filter="url(#vmsh)">
-        <circle r={19} fill={C.white} />
-        <circle r={rr} fill="none" stroke="#EEF1F5" strokeWidth={5} />
-        <circle r={rr} fill="none" stroke={C.warn} strokeWidth={5} strokeLinecap="round" strokeDasharray={`${f1(circ * prog)} ${f1(circ)}`} transform="rotate(-90)" />
+      <g transform="translate(44 50)" filter="url(#vmsh)">
+        <circle r={25} fill={C.white} />
+        <circle r={rr} fill="none" stroke="#EEF1F5" strokeWidth={6} />
+        <circle r={rr} fill="none" stroke={C.warn} strokeWidth={6} strokeLinecap="round" strokeDasharray={`${f1(circ * prog)} ${f1(circ)}`} transform="rotate(-90)" />
       </g>
       <path d="M0 0 L0 38 L10 29 L17 43 L24 40 L17 26 L30 26 Z" fill={C.navy} stroke={C.white} strokeWidth={3} strokeLinejoin="round" filter="url(#vmsh)" />
     </g>
@@ -242,9 +243,15 @@ const PileItem: React.FC<{ t: number; pt: number; k: number }> = ({ t, pt, k }) 
   const isTicket = t >= 2.8 && t < 8 && flip >= 0.5 && go < 1;
   if (!inProblem && !isTicket) return null;
   if (inProblem) {
-    const x = lerp(GYG.x, PX + b.dx * (1 - flip), clamp01(fall)), y = lerp(GYG.y + 10, slotY, fall);
+    // each message landing on top jostles the pile below it (a damped wobble)
+    const jostle = BUB.reduce((a, m, mk) => {
+      if (mk <= k) return a;
+      const tau = pt - (m.at + 0.3);
+      return tau > 0 ? a + Math.exp(-tau * 5.5) * Math.sin(tau * 17) : a;
+    }, 0) * (k % 2 ? 1 : -1) * (1 - flip);
+    const x = lerp(GYG.x, PX + b.dx * (1 - flip), clamp01(fall)) + 5 * jostle, y = lerp(GYG.y + 10, slotY, fall);
     const sc = lerp(0.3, 1, clamp01(fall * 1.6)) * Math.abs(Math.cos(Math.PI * flip));
-    const rot = b.rot * clamp01(fall) * (1 - flip);
+    const rot = b.rot * clamp01(fall) * (1 - flip) + 3 * jostle;
     return (
       <g transform={`translate(${f1(x)} ${f1(y)}) rotate(${rot.toFixed(2)}) scale(${sc.toFixed(4)} ${lerp(0.3, 1, clamp01(fall * 1.6)).toFixed(4)})`} opacity={clamp01(fall * 3)} filter="url(#vmsh)">
         {b.kind === "mail" ? <Mail /> : <Chat />}
@@ -253,7 +260,10 @@ const PileItem: React.FC<{ t: number; pt: number; k: number }> = ({ t, pt, k }) 
   }
   // the ticket: settles in its slot, then slides into the K.B tile
   const sx = Math.abs(Math.cos(Math.PI * flip));
-  const x = lerp(PX, KB.x, go), y = lerp(slotY, KB.y, go) - 50 * Math.sin(Math.PI * go);
+  // the queue moves up a slot each time the ticket above it leaves
+  const up = POUR.slice(0, ti).reduce((a, Pj) => a + pop(t, Pj - 0.22, { dur: 0.42, over: 0.08 }), 0);
+  const baseY = slotY - (SLOTY[0] - SLOTY[1]) * up;
+  const x = lerp(PX, KB.x, go), y = lerp(baseY, KB.y, go) - 50 * Math.sin(Math.PI * go);
   const sc = lerp(1, 0.32, go);
   return (
     <g transform={`translate(${f1(x)} ${f1(y)}) rotate(${(-8 * Math.sin(Math.PI * go)).toFixed(2)}) scale(${(sc * sx).toFixed(4)} ${sc.toFixed(4)})`} opacity={1 - seg(go, 0.7, 1)} filter="url(#vmsh)">
@@ -263,16 +273,16 @@ const PileItem: React.FC<{ t: number; pt: number; k: number }> = ({ t, pt, k }) 
 };
 
 // the message the cursor drags to table 0, which then waits there as a pending badge
-const Carried: React.FC<{ t: number; pt: number }> = ({ t, pt }) => {
+const Carried: React.FC<{ t: number; pt: number; top: boolean }> = ({ t, pt, top }) => {
   const b = BUB[PICK];
-  if (pt < b.at) return null;
+  if (pt < b.at || (pt >= CUR.grab) !== top) return null;
   const fall = pop(pt, b.at, { dur: 0.5, over: 0.07 });
   const badgeOut = popOut(t < 8 ? t : -1, POUR[0] + 0.42, { dur: 0.3 });
   if (pt > 3 && badgeOut <= 0.001) return null;
   let x = lerp(GYG.x, PX + b.dx, clamp01(fall)), y = lerp(GYG.y + 10, SLOTY[b.slot], fall), sc = lerp(0.3, 1, clamp01(fall * 1.6)), rot = b.rot * clamp01(fall);
   if (pt >= CUR.grab) {
     const c = cursorPos(pt), lift = seg(pt, CUR.grab, CUR.carry + 0.1, OUT);
-    const held = { x: c.x - 44, y: c.y - 6 };
+    const held = { x: c.x - 52, y: c.y - 6 };
     const drop = seg(pt, CUR.drop, CUR.back + 0.1, INOUT);
     const badge = { x: TABLES[0].x + 46, y: TABLES[0].y - 46 };
     x = lerp(lerp(x, held.x, lift), badge.x, drop); y = lerp(lerp(y, held.y, lift), badge.y, drop);
@@ -303,7 +313,7 @@ const MiniMap: React.FC<{ t: number }> = ({ t }) => {
   if (v <= 0.001) return null;
   const chk = pop(t, MAPT.check, { dur: 0.45, over: 0.08 }) * popOut(t, MAPT.checkOut, { dur: 0.3 });
   return (
-    <g transform={`translate(${MAP.x} ${MAP.y}) scale(${clamp01(v) === 1 ? v.toFixed(4) : v.toFixed(4)})`} opacity={clamp01(v * 1.5)}>
+    <g transform={`translate(${MAP.x} ${MAP.y}) scale(${v.toFixed(4)})`} opacity={clamp01(v * 1.5)}>
       <rect x={-54} y={-44} width={108} height={88} rx={16} fill={C.white} filter="url(#vmsh)" />
       <rect x={-34} y={-31} width={36} height={7} rx={3.5} fill={VM.gyg} />
       <rect x={8} y={-31} width={22} height={7} rx={3.5} fill="#E3E8EF" />
@@ -329,6 +339,24 @@ const MiniMap: React.FC<{ t: number }> = ({ t }) => {
   );
 };
 
+// the flamenco stage once the room is full: three coral notes rise from the guitar and fade
+const Notes: React.FC<{ t: number }> = ({ t }) => (
+  <>
+    {[6.7, 7.15, 7.6, 8.05].map((at, k) => {
+      const u = seg(t, at, at + 1.1, SOFT);
+      if (u <= 0 || u >= 1) return null;
+      const x = STAGE.x - 70 - 40 * u + 14 * Math.sin(u * 5 + k), y = STAGE.y - 70 - 120 * u, o = Math.sin(Math.PI * u);
+      return (
+        <g key={k} transform={`translate(${f1(x)} ${f1(y)}) scale(${(0.7 + 0.4 * o).toFixed(3)}) rotate(${(-12 + 24 * (k % 2)).toFixed(1)})`} opacity={o} fill={VM.coral}>
+          <ellipse cx={0} cy={0} rx={9} ry={7} transform="rotate(-20)" />
+          <rect x={6} y={-30} width={4} height={30} rx={2} />
+          <path d="M8 -30 Q22 -24 18 -10 Q16 -20 8 -22 Z" />
+        </g>
+      );
+    })}
+  </>
+);
+
 // ---------- text ----------
 const Line: React.FC<{ v: number; y: number; size: number; children: React.ReactNode }> = ({ v, y, size, children }) => {
   if (v <= 0.001) return null;
@@ -340,7 +368,7 @@ const Line: React.FC<{ v: number; y: number; size: number; children: React.React
 
 export const Loop: React.FC = () => {
   const t = useT(), pt = ptOf(t);
-  const driftX = 4 * Math.sin((2 * Math.PI * t) / 10), driftY = 5 * Math.sin((2 * Math.PI * t) / 5);
+  const driftX = 6 * Math.sin((2 * Math.PI * t) / 10), driftY = 6 * Math.sin((2 * Math.PI * t) / 5);
   const zoom = 1 + 0.03 * Math.sin(Math.PI * clamp01((t - 6.2) / 2.7)) ** 2;
   // K.B tile: drops onto the card's edge, gulps each ticket, lifts away at the end
   const kbIn = t < 8 ? pop(t, KBT.in, { dur: 0.6, over: 0.06 }) : popOut(t, KBT.out, { dur: 0.45 });
@@ -350,13 +378,13 @@ export const Loop: React.FC = () => {
   // GetYourGuide tile: twitches as each message drops out of it and when the cursor taps it
   const gygB = 1 + BUB.reduce((a, b) => a + 0.05 * bump(pt, b.at - 0.04, 0.22), 0) + 0.08 * bump(pt, CUR.tap + 0.02, 0.24);
   const zenB = 1 + POUR.reduce((a, P0) => a + 0.08 * bump(t, P0 + 0.86, 0.3), 0);
-  const guitar = 3 * Math.sin((2 * Math.PI * t) / 2.5);
+  const live = seg(t, 6.5, 7.0) * (1 - seg(t, 8.5, 9.1)); // the room is full: the stage comes alive
+  const guitar = 3 * (1 - live) * Math.sin((2 * Math.PI * t) / 2.5) + 8 * live * Math.sin((2 * Math.PI * t) / 1.25);
   const prob = pop(pt, TXT.probIn, { dur: 0.55, over: 0.04 }) * popOut(pt, TXT.probOut, { dur: 0.4 });
   const sol = pop(t, TXT.solIn, { dur: 0.55, over: 0.04 }) * popOut(t, TXT.solOut, { dur: 0.4 });
   const res = pop(t, TXT.resIn, { dur: 0.55, over: 0.04 }) * popOut(t, TXT.resOut, { dur: 0.4 });
   const res2 = pop(t, TXT.resIn + 0.15, { dur: 0.55, over: 0.04 }) * popOut(t, TXT.resOut - 0.05, { dur: 0.4 });
   const count = Math.round(30 * seg(t, TXT.resIn, TXT.resIn + 0.7, (x) => 1 - Math.pow(1 - x, 3)));
-  const full = "svg" as const;
   return (
     <Frame>
       <div style={{ position: "absolute", inset: 0, transform: `translate(${driftX.toFixed(2)}px, ${driftY.toFixed(2)}px) scale(${zoom.toFixed(5)})`, transformOrigin: "1000px 440px" }}>
@@ -383,24 +411,33 @@ export const Loop: React.FC = () => {
               <rect x={-3.5} y={-58} width={7} height={46} rx={3} /><rect x={-6} y={-66} width={12} height={12} rx={3} />
             </g>
           </g>
+          <Notes t={t} />
           {TABLES.map((_, j) => <Table key={j} t={t} j={j} />)}
           <Pending t={t} pt={pt} />
           {TABLES.map((_, j) => <Ripple key={j} t={t} j={j} />)}
           {POUR.map((_, i) => <Pour key={i} t={t} i={i} />)}
           <MiniMap t={t} />
           {BUB.map((_, k) => <PileItem key={k} t={t} pt={pt} k={k} />)}
+          <Carried t={t} pt={pt} top={false} />
         </svg>
         {/* GetYourGuide tile */}
         <div style={{ position: "absolute", left: GYG.x - GYG.s / 2, top: GYG.y - GYG.s / 2, transform: `scale(${gygB.toFixed(4)})` }}><ToolTile tool="gyg" size={GYG.s} /></div>
+        {/* K.B keeps both platforms in sync: a soft heartbeat while the room is full */}
+        <svg width={1920} height={1080} style={{ position: "absolute", inset: 0, overflow: "visible" }}>
+          {[7.05, 7.6, 8.15].map((at) => {
+            const u = seg(t, at, at + 0.9, OUT);
+            return u > 0 && u < 1 ? <circle key={at} cx={KB.x} cy={KB.y} r={70 + 90 * u} fill="none" stroke={C.cyan} strokeWidth={7 * (1 - u)} opacity={0.9 * (1 - u)} /> : null;
+          })}
+        </svg>
         {/* the K.B tile */}
         {kbIn > 0.001 && (
           <div style={{ position: "absolute", left: KB.x - KB.s / 2, top: kbY - KB.s / 2, width: KB.s, height: KB.s, opacity: clamp01(kbIn * 2),
-            transform: `scale(${(clamp01(kbIn) === 1 ? kbIn : kbIn) * (1 + gulp)})`.replace(/(\d\.\d{4})\d+/g, "$1") }}>
+            transform: `scale(${(kbIn * (1 + gulp)).toFixed(4)})` }}>
             <KBTile size={KB.s} dot={kbDot} />
           </div>
         )}
         <svg width={1920} height={1080} style={{ position: "absolute", inset: 0, overflow: "visible" }}>
-          <Carried t={t} pt={pt} />
+          <Carried t={t} pt={pt} top />
           <Cursor pt={pt} />
         </svg>
       </div>
@@ -408,14 +445,13 @@ export const Loop: React.FC = () => {
       <Line v={prob} y={836} size={76}>Every booking by hand</Line>
       <Line v={sol} y={836} size={76}>Bookings flow straight in</Line>
       {res > 0.001 && (
-        <div style={{ position: "absolute", left: CAPX - 800, width: 1600, top: 796, display: "flex", justifyContent: "center", alignItems: "baseline", gap: 30, whiteSpace: "nowrap", lineHeight: 1, letterSpacing: "-0.02em" }}>
-          <span style={{ display: "inline-block", width: 300, textAlign: "right", fontSize: 158, fontWeight: 800, color: C.navy, fontVariantNumeric: "tabular-nums",
+        <div style={{ position: "absolute", left: CAPX - 800, width: 1600, top: 796, display: "flex", justifyContent: "center", alignItems: "baseline", gap: 44, whiteSpace: "nowrap", lineHeight: 1, letterSpacing: "-0.02em" }}>
+          <span style={{ display: "inline-block", width: 310, textAlign: "right", fontSize: 164, fontWeight: 800, color: C.navy, fontVariantNumeric: "tabular-nums",
             opacity: clamp01(res * 1.4), transform: `translateY(${(Math.abs(1 - res) < 0.02 ? 0 : (1 - res) * 40).toFixed(2)}px)` }}>{count}h</span>
-          <span style={{ display: "inline-block", fontSize: 46, fontWeight: 600, color: C.muted, opacity: clamp01(res2 * 1.4),
+          <span style={{ display: "inline-block", fontSize: 52, fontWeight: 700, color: C.muted, opacity: clamp01(res2 * 1.4),
             transform: `translateY(${(Math.abs(1 - res2) < 0.02 ? 0 : (1 - res2) * 30).toFixed(2)}px)` }}>saved per month</span>
         </div>
       )}
-      {full && null}
     </Frame>
   );
 };

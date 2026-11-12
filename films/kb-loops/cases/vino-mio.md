@@ -34,7 +34,8 @@ drags one booking by hand to a table (a dashed pending ring), then has to go bac
 step. The K.B tile drops onto the card's left edge; the pile flips into neat GetYourGuide tickets, a 3×2 live
 availability mini-map pops up beside the GetYourGuide tile, and each ticket slides into K.B and is poured straight into a
 table, which fills Vino Mio blue and gets its coral ring (the table becomes the Vino Mio seal) while its dot on the
-mini-map fills in sync. A ripple runs over the full room and "30h saved per month" counts up below. The tables drain,
+mini-map fills in sync (the ticket queue moves up a slot each time). A cyan ripple runs over the full room, K.B pulses a sync
+heartbeat, the flamenco stage comes alive (the guitar strums, coral notes rise) and "30h saved per month" counts up below. The tables drain,
 the mini-map and K.B leave, and the messages start dropping again: the opening.
 Flourish: "the pour". Out of the K.B tile each booking jets as a glossy liquid ribbon (thick head, thinning tail) that
 arcs over the room like wine poured from a bottle and splashes into its table; the ribbon drains into the table, which
