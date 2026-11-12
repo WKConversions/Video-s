@@ -168,7 +168,7 @@ export const Loop: React.FC = () => {
   const problem = pop(tt, 9.35, { dur: 0.6, over: 0.04 }) * popOut(tt, 12.35, { dur: 0.45 });
   const solution = pop(t, 4.5, { dur: 0.6, over: 0.04 }) * popOut(t, 6.85, { dur: 0.45 });
   const fig = pop(t, 7.1, { dur: 0.7, over: 0.05 }) * popOut(t, 8.9, { dur: 0.45 });
-  const figN = Math.round(100 * seg(t, 7.12, 7.75, Easing.out(Easing.cubic)));
+  const figN = Math.round(100 * seg(t, 7.12, 7.55, Easing.out(Easing.cubic)));   // lands on 100 at 7.55: readable 1.35 s before the exit
   const figLabel = pop(t, 7.35, { dur: 0.55, over: 0.04 }) * popOut(t, 8.78, { dur: 0.4 });
 
   // ---------- the cable and the comet (SVG) ----------
