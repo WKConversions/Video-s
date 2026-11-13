@@ -29,23 +29,24 @@ except Exception as err:
 KEYS = [(a, keyboard(n, b - a)) for n, (a, b) in enumerate(TYPING)]
 
 C = [  # (film s, id, db nudge against the role level, pitch, note)
- # B1 the real work
- (0.08, "gen-whoosh-short", -3, 0, "the quote card comes forward"),
- (0.70, "ui-digital-click", 0, -2, "'quiet': the ring drains, the reply dots fade (a falling blip)"),
- (1.86, "kenney-drop-003", -2, 0, "enquiries drop onto the inbox"), (2.12, "kenney-drop-003", -2, 2, ""), (2.38, "kenney-drop-003", -1, 4, ""), (2.64, "kenney-drop-003", 0, 6, "pile up"),
- (3.47, "gen-whoosh-short", -4, 2, "the hours card comes forward"),
- (3.66, "ui-beatbox-click-01", 0, 0, "hand click 1: the timesheet row"),
- (3.95, "ui-stretch", -3, 0, "the dashed arrow draws to the invoice"),
- (4.73, "ui-click-digital-03", 0, 0, "hand click 2: the invoice line"), (4.76, T1, 0, 0, "the line typed in again"),
- (5.15, "gen-whoosh-medium", -2, 0, "the cards lie down on the wire blocks"),
- (5.55, "kenney-tick-004", -2, 0, "the wire world draws itself"), (5.85, "kenney-tick-004", -2, 2, ""), (6.15, "kenney-tick-004", -2, 4, ""),
- # B2 off the shelf never fits
- (6.20, "gen-whoosh-deep", -2, 0, "the grey app slab lowers"),
- (6.76, "gen-impact-soft", -3, 0, "'never': contact, block 06 strikes orange"), (6.78, "ui-glitch-click", -5, 0, "the wrong fit"),
- (7.30, "uu-click-digital-01", -3, 0, "'quite fits': the orange gap lines draw"),
- (7.95, "gen-whoosh-short", -6, -2, "the slab lifts and slides out"),
- (7.90, "gen-swell", -4, 0, "the periwinkle scan band"),
- (7.98, "kenney-select-001", -4, 0, "dimension tick"), (8.12, "kenney-select-001", -4, 3, "dimension tick"),
+ # B1 the hook: three lines typed on (the Apple keyboard runs are added from TYPING below), each turning into its UI
+ (1.20, "kenney-maximize-009", -5, 0, "line 1 becomes the quote card (the shell grows out of the text)"),
+ (1.62, "ui-digital-click", 0, -2, "'quiet': the reply dots fade, the ring drains to peach"), (1.64, "gen-whoosh-short", -6, 0, "the card docks top left"),
+ (2.10, "kenney-select-002", -2, 0, "Open becomes Quiet"),
+ (3.05, "kenney-drop-003", -2, 0, "'pile up': the letters drop into enquiry pills"), (3.16, "kenney-drop-003", -2, 2, ""), (3.27, "kenney-drop-003", -1, 4, ""), (3.38, "kenney-drop-003", 0, 6, ""),
+ (3.30, "gen-whoosh-short", -6, 2, "the enquiries card docks"),
+ (4.96, "kenney-maximize-009", -4, 2, "line 3 becomes the hours card"),
+ (5.28, "ui-click-digital-03", -1, 0, "'twice': the same hours row lands in the timesheet"), (5.36, "ui-click-digital-03", -1, 2, "and again in the invoice"),
+ # B2 off the shelf never fits: the puzzle
+ (5.70, "gen-whoosh-medium", -2, 0, "'Off-the-shelf': the grey template springs in from the right"),
+ (5.76, "gen-pop", -3, 0, "new customers tile pops in"), (5.88, "gen-pop", -3, 3, "report tile pops in"),
+ (6.26, "ui-beatbox-click-01", 0, 0, "hand click: the person grabs the hours tile"),
+ (6.62, "ui-glitch-click", -3, 0, "the quote tile bumps the template edge (orange)"),
+ (7.00, "ui-stretch", -3, 0, "enquiries squeezes into a slot"), (7.34, "gen-pop", -2, -3, "and pops back out"),
+ (7.46, "uu-click-digital-01", -2, 0, "the hours tile is too wide: it sticks out in orange"),
+ (7.64, "ui-granular-button-select", -2, -5, "the template's 'no' shake"), (7.68, "ui-backspace", -1, -2, "the hours tile bounces back"),
+ (7.92, "gen-whoosh-short", -3, -2, "the template slides away"),
+ (8.02, "kenney-tick-004", -2, 0, "the tiles settle into the company's own arrangement"), (8.17, "kenney-tick-004", -2, 2, ""), (8.32, "kenney-tick-004", -2, 4, ""),
  # B3 the AI mapping
  (8.92, "gen-whoosh-medium", -2, 2, "'First': the company's tiles glide into the mapping"), (9.30, "ui-granular-button-select-2", -1, 0, "the tiles settle"),
  (9.50, "ui", 0, 0, "'we map': the connectors draw, data dots run"),
@@ -80,7 +81,7 @@ C = [  # (film s, id, db nudge against the role level, pitch, note)
  (22.42, "kenney-select-001", 2, 0, "'Block': 02 builds"), (22.76, "kenney-select-001", 2, 3, "'block': 03 builds"),
  (23.30, "gen-whoosh-short", -4, 0, "the price document slides in"),
  (23.86, "ui-click", 0, 0, "hand click: the signature line, the signature draws itself"),
- (24.55, "kenney-select-001", -6, 5, "04 builds"), (24.70, "kenney-select-001", -6, 7, "05 builds"),
+ (24.55, "kenney-select-001", -9, 5, "04 builds"), (24.70, "kenney-select-001", -6, 7, "05 builds"),
  # B8 all of it connected
  (25.16, "kenney-select-002", 0, 0, "light lines climb, block to block"), (25.45, "kenney-select-002", 0, 2, ""), (25.75, "kenney-select-002", -4, 4, ""),
  (26.05, "kenney-select-002", 0, 5, ""), (26.40, "kenney-select-002", 0, 7, ""),

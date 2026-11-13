@@ -2,6 +2,7 @@
  "fps": 60,
  "frames": 1980,
  "library": "lib-mix",
+ "allow_apple": true,
  "vo": {
   "file": "../vo/vo.mp3",
   "at": 0,
@@ -17,172 +18,193 @@
  },
  "sfx": [
   {
-   "frame": 5,
-   "id": "gen-whoosh-short",
-   "db": -3,
+   "frame": 72,
+   "id": "kenney-maximize-009",
+   "db": -5,
    "pitch": 0,
-   "note": "the quote card comes forward"
+   "note": "line 1 becomes the quote card (the shell grows out of the text)"
   },
   {
-   "frame": 42,
+   "frame": 97,
    "id": "ui-digital-click",
    "db": 0,
    "pitch": -2,
-   "note": "'quiet': the ring drains, the reply dots fade (a falling blip)"
+   "note": "'quiet': the reply dots fade, the ring drains to peach"
   },
   {
-   "frame": 112,
+   "frame": 98,
+   "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": 0,
+   "note": "the card docks top left"
+  },
+  {
+   "frame": 126,
+   "id": "kenney-select-002",
+   "db": -2,
+   "pitch": 0,
+   "note": "Open becomes Quiet"
+  },
+  {
+   "frame": 183,
    "id": "kenney-drop-003",
    "db": -2,
    "pitch": 0,
-   "note": "enquiries drop onto the inbox"
+   "note": "'pile up': the letters drop into enquiry pills"
   },
   {
-   "frame": 127,
+   "frame": 190,
    "id": "kenney-drop-003",
    "db": -2,
    "pitch": 2,
    "note": ""
   },
   {
-   "frame": 143,
+   "frame": 196,
    "id": "kenney-drop-003",
    "db": -1,
    "pitch": 4,
    "note": ""
   },
   {
-   "frame": 158,
+   "frame": 203,
    "id": "kenney-drop-003",
    "db": 0,
    "pitch": 6,
-   "note": "pile up"
+   "note": ""
   },
   {
-   "frame": 208,
+   "frame": 198,
    "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": 2,
+   "note": "the enquiries card docks"
+  },
+  {
+   "frame": 298,
+   "id": "kenney-maximize-009",
    "db": -4,
    "pitch": 2,
-   "note": "the hours card comes forward"
+   "note": "line 3 becomes the hours card"
   },
   {
-   "frame": 220,
-   "id": "ui-beatbox-click-01",
-   "db": 0,
-   "pitch": 0,
-   "note": "hand click 1: the timesheet row"
-  },
-  {
-   "frame": 237,
-   "id": "ui-stretch",
-   "db": -3,
-   "pitch": 0,
-   "note": "the dashed arrow draws to the invoice"
-  },
-  {
-   "frame": 284,
+   "frame": 317,
    "id": "ui-click-digital-03",
-   "db": 0,
+   "db": -1,
    "pitch": 0,
-   "note": "hand click 2: the invoice line"
+   "note": "'twice': the same hours row lands in the timesheet"
   },
   {
-   "frame": 286,
-   "id": "wf-type-invoice",
-   "db": 0,
-   "pitch": 0,
-   "note": "the line typed in again"
+   "frame": 322,
+   "id": "ui-click-digital-03",
+   "db": -1,
+   "pitch": 2,
+   "note": "and again in the invoice"
   },
   {
-   "frame": 309,
+   "frame": 342,
    "id": "gen-whoosh-medium",
    "db": -2,
    "pitch": 0,
-   "note": "the cards lie down on the wire blocks"
+   "note": "'Off-the-shelf': the grey template springs in from the right"
   },
   {
-   "frame": 333,
+   "frame": 346,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 0,
+   "note": "new customers tile pops in"
+  },
+  {
+   "frame": 353,
+   "id": "gen-pop",
+   "db": -3,
+   "pitch": 3,
+   "note": "report tile pops in"
+  },
+  {
+   "frame": 376,
+   "id": "ui-beatbox-click-01",
+   "db": 0,
+   "pitch": 0,
+   "note": "hand click: the person grabs the hours tile"
+  },
+  {
+   "frame": 397,
+   "id": "ui-glitch-click",
+   "db": -3,
+   "pitch": 0,
+   "note": "the quote tile bumps the template edge (orange)"
+  },
+  {
+   "frame": 420,
+   "id": "ui-stretch",
+   "db": -3,
+   "pitch": 0,
+   "note": "enquiries squeezes into a slot"
+  },
+  {
+   "frame": 440,
+   "id": "gen-pop",
+   "db": -2,
+   "pitch": -3,
+   "note": "and pops back out"
+  },
+  {
+   "frame": 448,
+   "id": "uu-click-digital-01",
+   "db": -2,
+   "pitch": 0,
+   "note": "the hours tile is too wide: it sticks out in orange"
+  },
+  {
+   "frame": 458,
+   "id": "ui-granular-button-select",
+   "db": -2,
+   "pitch": -5,
+   "note": "the template's 'no' shake"
+  },
+  {
+   "frame": 461,
+   "id": "ui-backspace",
+   "db": -1,
+   "pitch": -2,
+   "note": "the hours tile bounces back"
+  },
+  {
+   "frame": 475,
+   "id": "gen-whoosh-short",
+   "db": -3,
+   "pitch": -2,
+   "note": "the template slides away"
+  },
+  {
+   "frame": 481,
    "id": "kenney-tick-004",
    "db": -2,
    "pitch": 0,
-   "note": "the wire world draws itself"
+   "note": "the tiles settle into the company's own arrangement"
   },
   {
-   "frame": 351,
+   "frame": 490,
    "id": "kenney-tick-004",
    "db": -2,
    "pitch": 2,
    "note": ""
   },
   {
-   "frame": 369,
+   "frame": 499,
    "id": "kenney-tick-004",
    "db": -2,
    "pitch": 4,
    "note": ""
   },
   {
-   "frame": 372,
-   "id": "gen-whoosh-deep",
-   "db": -2,
-   "pitch": 0,
-   "note": "the grey app slab lowers"
-  },
-  {
-   "frame": 406,
-   "id": "gen-impact-soft",
-   "db": -3,
-   "pitch": 0,
-   "note": "'never': contact, block 06 strikes orange"
-  },
-  {
-   "frame": 407,
-   "id": "ui-glitch-click",
-   "db": -5,
-   "pitch": 0,
-   "note": "the wrong fit"
-  },
-  {
-   "frame": 438,
-   "id": "uu-click-digital-01",
-   "db": -3,
-   "pitch": 0,
-   "note": "'quite fits': the orange gap lines draw"
-  },
-  {
-   "frame": 477,
-   "id": "gen-whoosh-short",
-   "db": -6,
-   "pitch": -2,
-   "note": "the slab lifts and slides out"
-  },
-  {
-   "frame": 474,
-   "id": "gen-swell",
-   "db": -4,
-   "pitch": 0,
-   "note": "the periwinkle scan band"
-  },
-  {
-   "frame": 479,
-   "id": "kenney-select-001",
-   "db": -4,
-   "pitch": 0,
-   "note": "dimension tick"
-  },
-  {
-   "frame": 487,
-   "id": "kenney-select-001",
-   "db": -4,
-   "pitch": 3,
-   "note": "dimension tick"
-  },
-  {
-   "frame": 537,
+   "frame": 535,
    "id": "gen-whoosh-medium",
    "db": -2,
    "pitch": 2,
-   "note": "'First': the faces fly up into the mapping's tiles"
+   "note": "'First': the company's tiles glide into the mapping"
   },
   {
    "frame": 558,
@@ -301,14 +323,14 @@
    "id": "ui-backspace",
    "db": 2,
    "pitch": -2,
-   "note": "'block': the first block extrudes (a plastic thock)"
+   "note": "'block': the first block springs up (a plastic thock)"
   },
   {
-   "frame": 889,
+   "frame": 899,
    "id": "gen-impact-soft",
    "db": -3,
    "pitch": 2,
-   "note": ""
+   "note": "it lands with a squash"
   },
   {
    "frame": 903,
@@ -318,31 +340,38 @@
    "note": "its stud rises"
   },
   {
-   "frame": 926,
-   "id": "wf-type-label",
-   "db": -1,
-   "pitch": 0,
-   "note": "'guaranteed': the label types on"
+   "frame": 928,
+   "id": "gen-appear",
+   "db": 0,
+   "pitch": 2,
+   "note": "'guaranteed': the label pops in"
   },
   {
-   "frame": 942,
-   "id": "kenney-tick-004",
+   "frame": 903,
+   "id": "kenney-drop-003",
    "db": -4,
    "pitch": 0,
-   "note": "wire blocks draw in"
+   "note": "the other blocks pop in, back to front"
   },
   {
-   "frame": 966,
-   "id": "kenney-tick-004",
+   "frame": 924,
+   "id": "kenney-drop-003",
    "db": -4,
    "pitch": 2,
    "note": ""
   },
   {
-   "frame": 990,
-   "id": "kenney-tick-004",
+   "frame": 945,
+   "id": "kenney-drop-003",
    "db": -4,
    "pitch": 4,
+   "note": ""
+  },
+  {
+   "frame": 966,
+   "id": "kenney-drop-003",
+   "db": -4,
+   "pitch": 6,
    "note": ""
   },
   {
@@ -395,11 +424,11 @@
    "note": "the follow-up drafts itself"
   },
   {
-   "frame": 1259,
+   "frame": 1257,
    "id": "ui-granular-button-select",
    "db": 0,
    "pitch": 0,
-   "note": "send"
+   "note": "send: the button presses in"
   },
   {
    "frame": 1266,
@@ -453,7 +482,7 @@
   {
    "frame": 1473,
    "id": "kenney-select-001",
-   "db": -6,
+   "db": -9,
    "pitch": 5,
    "note": "04 builds"
   },
@@ -554,6 +583,27 @@
    "db": -2,
    "pitch": 0,
    "note": "the button releases, the ripple spreads"
+  },
+  {
+   "frame": -2,
+   "id": "wf-keys-0",
+   "db": 3,
+   "pitch": 0,
+   "note": "Apple keyboard typing under the hook's type-on"
+  },
+  {
+   "frame": 106,
+   "id": "wf-keys-1",
+   "db": 3,
+   "pitch": 0,
+   "note": "Apple keyboard typing under the hook's type-on"
+  },
+  {
+   "frame": 210,
+   "id": "wf-keys-2",
+   "db": 3,
+   "pitch": 0,
+   "note": "Apple keyboard typing under the hook's type-on"
   }
  ]
 }
