@@ -1,6 +1,6 @@
 /* Group D shared helpers (B7, B8, B9): the block system's states as pure functions of film time T. */
 import * as K from '../engine/kit.js';
-import { E, pop, seg, mix, bezier, clamp01, DASH, drift } from '../engine/anim.js';
+import { E, pop, seg, mix, bezier, clamp01, DASH, drift, spring, bounceIn, BOUNCY, SNAPPY } from '../engine/anim.js';
 import { w } from '../timeline.js';
 
 const fmt = (n) => Math.round(n * 100) / 100;
@@ -15,6 +15,8 @@ export function fillProps(n, e, extra = {}) {
   // solid at .99 keeps the stud off the "studs on top" layer until the wipe is complete
   return { w: { glass: 1, solid: 0.99 }, wipe: Math.min(1, e * 1.08), num: n, ...extra };
 }
+/* a hop-and-land: rises, comes down past rest (squash into the floor) and settles; 0 before t0 and after it settles */
+export const hop = (T, t0, amp = 24, cfg = BOUNCY) => (T <= t0 || T > t0 + 1.3 ? 0 : -amp * (spring(T, t0, cfg) - spring(T, t0 + 0.2, cfg)));
 export const fillE = (T, n) => E(T, FILL[n][0], FILL[n][1], 'inOut');
 
 /* an expanding ring on a block's top stud (the flourish of B7: "it landed") */
@@ -39,7 +41,10 @@ export const lineFrac = (T, id) => E(T, LTIME[id][0], LTIME[id][1] - LTIME[id][0
 export function lines(T) {
   return LORDER.map((id) => {
     const f = lineFrac(T, id);
-    return f <= 0 ? '' : K.lightLine(K.LINES[id], f, { spark: true });
+    if (f <= 0) return '';
+    const sp = f < 1 ? Math.max(0.05, spring(T, LTIME[id][0], SNAPPY)) * (1 + 0.25 * Math.sin(T * 40)) : 0;
+    const head = f < 1 ? K.polyAt(K.LINES[id], f) : null;
+    return K.lightLine(K.LINES[id], f) + (head ? K.spark(head[0], head[1], 10 * sp * 1.1, 20 * sp * 1.1) : '');
   }).join('');
 }
 /* pulses circulating the lines once each line is complete (same function in B8 and B9: no seam) */
@@ -60,7 +65,7 @@ export function topLabel(T) {
   const pl = E(T, 26.26, 0.30, 'inOut');
   if (pl <= 0) return '';
   let s = `<line x1="960" y1="178" x2="960" y2="${fmt(178 - 62 * pl)}" stroke="rgba(223,230,243,.5)" stroke-width="1.2"/>`;
-  const dp = pop(T, 26.48, { dur: 0.35, over: 0.08 });
+  const dp = spring(T, 26.48, SNAPPY);
   if (dp > 0) s += `<circle cx="960" cy="112" r="${fmt(4.5 * dp)}" fill="#F3F5FA"/>`;
   const tp = E(T, 26.40, 0.34, 'inOut');
   if (tp > 0) {
@@ -88,11 +93,12 @@ export function camera(T) {
 export function system(T) {
   const e6 = E(T, FILL6[0], FILL6[1], 'inOut');
   const lit = {}, glowMul = {};
-  for (const n in STUD_T) { lit[n] = E(T, STUD_T[n], 0.30, 'inOut'); glowMul[n] = 1 + 0.2 * lit[n]; }
-  const ex = (n) => ({ studLit: lit[n], glowMul: glowMul[n] });
+  for (const n in STUD_T) { lit[n] = E(T, STUD_T[n], 0.30, 'inOut'); glowMul[n] = 1 + 0.2 * lit[n] + 0.5 * Math.max(0, spring(T, STUD_T[n], SNAPPY) - spring(T, STUD_T[n] + 0.22, SNAPPY)); }
+  const ex = (n) => ({ studLit: lit[n], glowMul: glowMul[n], studH: 20 * (1 + 0.45 * Math.max(0, spring(T, STUD_T[n], SNAPPY) - spring(T, STUD_T[n] + 0.22, SNAPPY))) });
   const b = (n) => ({ w: n === '01' ? { peri: 1 } : { solid: 1 }, num: n, ...ex(n) });
-  const six = e6 <= 0 ? { w: { glass: 1 }, num: null } : e6 >= 1 ? b('06')
-    : { w: { glass: 1, solid: 0.99 }, wipe: Math.min(1, e6 * 1.08), num: '06', ...ex('06') };
+  const h6 = hop(T, FILL6[0], 30), d6 = { dy: h6 };
+  const six = e6 <= 0 ? { w: { glass: 1 }, num: null } : e6 >= 1 ? { ...b('06'), ...d6 }
+    : { w: { glass: 1, solid: 0.99 }, wipe: Math.min(1, e6 * 1.08), num: '06', ...ex('06'), ...d6 };
   const blocks = K.namedState({ '01': b('01'), '02': b('02'), '03': b('03'), '04': b('04'), '05': b('05'), '06': six });
   const tc = K.topCentre(0, 0, 2);
   const haloOp = E(T, 26.95, 0.6, 'inOut');
@@ -106,7 +112,8 @@ export function system(T) {
   const cam = camera(T);
   const worldS = K.world({ def: { w: { glass: 1 } }, blocks, before: halo, after: lines(T), studsOnTop: true, top: wave + pulses(T) });
   const labOp = 1 - E(T, 27.95, 0.35, 'inOut');
-  const label = labOp > 0 ? `<g opacity="${fmt(labOp)}">${topLabel(T)}</g>` : '';
+  const lb = bounceIn(T, 26.30, { from: 0.8, rise: 16, cfg: SNAPPY });
+  const label = labOp > 0 ? `<g opacity="${fmt(labOp)}" transform="translate(960,${fmt(123 + lb.y)}) scale(${fmt(lb.s)}) translate(-960,-123)">${topLabel(T)}</g>` : '';
   const [fx, fy] = floatXY(T);
   return K.placed(worldS + label, cam.s, fx * cam.s, cam.dy + fy * cam.s);
 }

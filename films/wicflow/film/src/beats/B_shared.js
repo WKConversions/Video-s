@@ -2,13 +2,14 @@
    move of window -> costed plan card with the five tiles dropping into the rows' icon slots (10.94 -> 12.3).
    B3.js draws the world + stage(T); B4.js draws stage(T) + the plan rows (rows() lives in B4.js). */
 import * as K from '../engine/kit.js';
-import { E, ease, pop, seg, mix, clamp01 } from '../engine/anim.js';
+import { E, ease, pop, seg, mix, clamp01, spring, squash, BOUNCY, SNAPPY, DASH } from '../engine/anim.js';
+import { SEAM_AB_TILES } from './seams.js';
 
 const { f2, NODES, NS, BASE, SLOT } = K;
 export const KEYS = NODES.map((n) => n.key);               // cust, enq, quote, hours, report (left to right)
 
 /* ---- timings (film s) ---- */
-export const F0 = 8.80, FST = 0.045, FD = 0.62;              // faces lift and fly into tiles
+export const F0 = 8.80, FST = 0.06, FD = 0.62;               // seam tiles glide on springs into the mapping's flow positions
 export const SCAN0 = 9.88, SCAN_DUR = 0.72;                  // scan line + week track (ends 10.60)
 export const FOUND = 10.60;                                  // brackets snap onto quotes
 export const TW = { win0: 10.94, tile0: 10.98, stag: 0.06, tileDur: 0.62, tail: 0.4 };
@@ -22,6 +23,9 @@ export function popF(T, t0, dur, over, tEnd) {
   const p = pop(T, t0, { dur, over });
   return mix(p, 1, E(T, tEnd - 0.4, 0.4));
 }
+
+/* spring forced to exactly 1 by tEnd */
+export function springF(T, t0, cfg, tEnd) { return mix(spring(T, t0, cfg), 1, E(T, tEnd - 0.4, 0.4)); }
 
 const scanP = (T) => E(T, SCAN0, SCAN_DUR);
 const scanX = (T) => mix(260, 1700, scanP(T));
@@ -50,15 +54,16 @@ export function tileSvg(cx, cy, size, key, o = {}) {
     const t = K.tile(cx, cy, size, n.icon, { fill: 'rgba(185,193,255,.24)', stroke: '#B9C1FF', sw: o.litSw || 2, ic: '#F3F5FA', is, isw });
     s += lit >= 0.999 ? t : `<g opacity="${f2(lit)}">${t}</g>`;
   }
-  if (o.scale && Math.abs(o.scale - 1) > 1e-4) s = `<g transform="translate(${f2(cx)},${f2(cy)}) scale(${f2(o.scale)}) translate(${f2(-cx)},${f2(-cy)})">${s}</g>`;
+  { const sc = o.scale || 1, sq = o.sq || [1, 1], a = sc * sq[0], b = sc * sq[1];
+    if (Math.abs(a - 1) > 1e-4 || Math.abs(b - 1) > 1e-4) s = `<g transform="translate(${f2(cx)},${f2(cy)}) scale(${f2(a)},${f2(b)}) translate(${f2(-cx)},${f2(-cy)})">${s}</g>`; }
   return o.op != null && o.op < 0.999 ? `<g opacity="${f2(o.op)}">${s}</g>` : s;
 }
 
 /* ---- the window / card shell ---- */
 export function shell(T) {
-  if (T < 8.86) return '';
+  if (T < F0) return '';
   if (T >= SHELL_END) return K.planCard() + K.planLines();
-  const o = E(T, 8.86, 0.7, 'smooth'), fo = E(T, 9.15, 0.45), sk = E(T, 9.3, 0.5);
+  const o = E(T, F0, 0.7, 'smooth'), fo = E(T, 9.15, 0.45), sk = E(T, 9.3, 0.5);
   const p = T < TW.win0 ? 0 : pop(T, TW.win0, { dur: 0.8, over: 0.03 });
   const x = mix(220, 380, p), w = mix(1480, 1160, p);
   const dash = o < 0.999 ? ` pathLength="1" stroke-dasharray="${f2(o)} 2"` : '';
@@ -89,7 +94,6 @@ export function shell(T) {
 
 /* ---- the map layer: flying faces -> tiles, connectors, columns, drops, scan, found, tiles dropping into rows ---- */
 export function mapLayer(T) {
-  if (T < F0) return '';
   const bodyOp = 1 - E(T, TW.win0, 0.32);
   const foundE = E(T, FOUND + 0.02, 0.3);
   const foundDim = E(T, FOUND + 0.12, 0.4);
@@ -107,7 +111,7 @@ export function mapLayer(T) {
     for (let i = 0; i < 4; i++) {
       const a = NODES[i], b = NODES[i + 1];
       const A = [a.x + NS / 2 + 6, a.y], B = [b.x - NS / 2 - 6, b.y];
-      const t0 = 9.46 + i * 0.07, dr = E(T, t0, 0.3, 'smooth');
+      const t0 = 9.3 + i * 0.07, dr = E(T, t0, 0.3, 'smooth');
       if (dr <= 0) continue;
       const k = Math.max(50, Math.abs(B[0] - A[0]) * 0.45), p1 = [A[0] + k, A[1]], p2 = [B[0] - k, B[1]];
       const d = `M${f2(A[0])},${f2(A[1])} C${f2(p1[0])},${f2(p1[1])} ${f2(p2[0])},${f2(p2[1])} ${f2(B[0])},${f2(B[1])}`;
@@ -142,7 +146,11 @@ export function mapLayer(T) {
           if (u < 1) {
             const y = y0 + (yt - y0) * u * u, r = 3.4 + (k % 3) * 0.7, sq = 1 + 1.1 * u;
             g += `<ellipse cx="${n.x + ((k * 7) % 5 - 2) * 3}" cy="${f2(y)}" rx="${f2(r)}" ry="${f2(r * sq)}" fill="#ffd9c8" opacity="${f2(0.9 * Math.min(1, u * 6))}"/>`;
-          } else if (u < 1.7) {
+          } else if (u < 1.16) {
+            const v = (u - 1) / 0.16, r0 = 3.4 + (k % 3) * 0.7;
+            g += `<ellipse cx="${n.x}" cy="${f2(yt)}" rx="${f2(r0 * (1.6 + 1.2 * v))}" ry="${f2(r0 * (0.55 + 0.3 * v))}" fill="#ffd9c8" opacity="${f2(0.8 * (1 - v))}"/>`;
+          }
+          if (u >= 1 && u < 1.7) {
             const v = (u - 1) / 0.7;
             g += `<ellipse cx="${n.x}" cy="${f2(yt)}" rx="${f2(8 + 26 * ease.out(v))}" ry="${f2(3 + 7 * ease.out(v))}" fill="none" stroke="#ffd9c8" stroke-width="1.6" opacity="${f2(0.5 * (1 - v))}"/>`;
           }
@@ -160,46 +168,46 @@ export function mapLayer(T) {
     });
   }
 
-  // tiles (faces -> tiles, static map tiles, dropping into row slots)
+  // seam path: the company's dashed path follows the tiles while they glide, then hands over to the connectors
+  const pOp = 1 - E(T, 9.25, 0.45);
+  const posAt = (n, i) => {
+    const sp = SEAM_AB_TILES[i], p = spring(T, F0 + i * FST, i % 2 ? SNAPPY : BOUNCY);
+    return [mix(sp.x, n.x, p), mix(sp.y, n.y, p)];
+  };
+  if (pOp > 0.003) {
+    const r = NS / 2 + 10, P = NODES.map(posAt);
+    let d = '';
+    for (let i = 1; i < P.length; i++) {
+      const a = P[i - 1], b = P[i], L = Math.hypot(b[0] - a[0], b[1] - a[1]), ux = (b[0] - a[0]) / L, uy = (b[1] - a[1]) / L;
+      d += `M${f2(a[0] + ux * r)},${f2(a[1] + uy * r)} L${f2(b[0] - ux * r)},${f2(b[1] - uy * r)} `;
+    }
+    under = `<path d="${d}" fill="none" stroke="rgba(223,230,243,.38)" stroke-width="2" stroke-dasharray="6 8" stroke-dashoffset="${f2(-DASH(T))}" stroke-linecap="round" opacity="${pOp >= 0.999 ? 1 : f2(pOp)}"/>` + under;
+  }
+
+  // tiles: seam positions -> flow positions (springs), found pop, then dropping into the plan's icon slots
   NODES.forEach((n, i) => {
-    const f0 = F0 + i * FST;
-    if (T < f0 || T >= tileDone(i)) return;
-    const q = seg(T, f0, FD), e = ease.smooth(q), isQ = n.key === 'quote';
-    const [c, r, k] = n.blk;
-    const from = K.topFaceCardOrder(c, r, k, 0);
-    const to = [[n.x - NS / 2, n.y - NS / 2], [n.x + NS / 2, n.y - NS / 2], [n.x + NS / 2, n.y + NS / 2], [n.x - NS / 2, n.y + NS / 2]];
-    const lift = 90 * Math.sin(Math.PI * e);
-    const quad = from.map((p, m) => [mix(p[0], to[m][0], e), mix(p[1], to[m][1], e) - lift]);
-    const cen = [(quad[0][0] + quad[2][0]) / 2, (quad[0][1] + quad[2][1]) / 2];
-    const origin = K.topCentre(c, r, k);
-    const ts = tStart(i), te = seg(T, ts, TW.tileDur), ee = ease.smooth(te);
+    if (T >= tileDone(i)) return;
+    const isQ = n.key === 'quote', ts = tStart(i);
     let g = '';
-    if (q < 1) {
-      // flourish: a soft lavender light trail behind the flying face
-      const e2 = Math.max(0, e - 0.24);
-      const c2 = [mix(origin[0], n.x, e2), mix(origin[1], n.y, e2) - 90 * Math.sin(Math.PI * e2)];
-      const tr = Math.sin(Math.PI * q);
-      g += `<line x1="${f2(cen[0])}" y1="${f2(cen[1])}" x2="${f2(c2[0])}" y2="${f2(c2[1])}" stroke="rgba(185,193,255,${f2(0.26 * tr)})" stroke-width="${f2(40 + 20 * tr)}" stroke-linecap="round" filter="url(#b12)"/>`;
-      const ap = clamp01(q / 0.18), xf = clamp01((q - 0.74) / 0.26);
-      g += `<g opacity="${f2(1 - xf)}"><polygon points="${K.pts(quad)}" fill="rgba(185,193,255,${f2(0.10 * ap)})" stroke="rgba(255,255,255,${f2(0.3 * ap)})" stroke-width="1.2" stroke-linejoin="round"/>` +
-        K.icon(n.icon, cen[0], cen[1], (NS * (0.5 + 0.5 * e)) / 80, { op: 0.55 * ap, sw: 3 }) + `</g>`;
-      if (xf > 0) g += tileSvg(cen[0], cen[1], NS * (0.55 + 0.45 * e), n.key, { op: xf, lit: 0 });
-    } else if (T < ts) {
+    if (T < ts) {
+      const [x, y] = posAt(n, i);
       const sm = clamp01((sx - (n.x - NS / 2)) / NS);
-      const bump = 1 + 0.07 * Math.sin(Math.PI * seg(T, f0 + FD, TW.tail));
       const lit = isQ ? foundE : 0;
       const stroke = `rgba(${f2(mix(255, 185, sm))},${f2(mix(255, 193, sm))},255,${f2(mix(0.15, 0.45, sm))})`;
-      g += tileSvg(n.x, n.y, NS, n.key, { lit, glow: isQ ? foundE : 0, stroke, scale: bump, op: isQ ? 1 : 1 - 0.64 * foundDim });
+      const tp = T - FOUND;
+      const bump = isQ && tp > 0 ? 1 + 0.16 * Math.exp(-5 * tp) * Math.sin((2 * Math.PI * tp) / 0.5) : 1;
+      g += tileSvg(x, y, NS, n.key, { lit, glow: isQ ? foundE : 0, stroke, scale: bump, op: isQ ? 1 : 1 - 0.64 * foundDim });
       if (isQ && foundE > 0) {
-        const kk = mix(130, 86, pop(T, FOUND, { dur: 0.4, over: 0.06 })), a = 26, bo = E(T, FOUND, 0.12);
+        const kk = mix(150, 86, spring(T, FOUND, BOUNCY)), a = 26, bo = E(T, FOUND, 0.12);
         g += `<g opacity="${f2(bo)}">${K.ringArc(n.x, n.y, 104, 1, 'rgba(185,193,255,.35)', 2)}<path d="M${n.x - kk},${n.y - kk + a} V${n.y - kk} H${n.x - kk + a} M${n.x + kk - a},${n.y - kk} H${n.x + kk} V${n.y - kk + a} M${n.x + kk},${n.y + kk - a} V${n.y + kk} H${n.x + kk - a} M${n.x - kk + a},${n.y + kk} H${n.x - kk} V${n.y + kk - a}" fill="none" stroke="#B9C1FF" stroke-width="3" stroke-linecap="round"/></g>`;
       }
     } else {
-      // dropping into the row's icon slot
+      // dropping into the row's icon slot on a spring, with a squash where it lands
+      const p = spring(T, ts, SNAPPY), ee = p;
       const tx = mix(n.x, 478, ee), ty = mix(n.y, SLOT[i], ee), sz = mix(NS, 68, ee);
-      const bump = 1 + 0.07 * Math.sin(Math.PI * seg(T, tLand(i), TW.tail));
+      const sq = squash(T, ts + 0.22, 0.1), kill = 1 - E(T, tileDone(i) - 0.2, 0.2);
       const fo = 1 - E(T, ts, 0.3);
-      g += tileSvg(tx, ty, sz, n.key, { lit: isQ ? 1 : 0, glow: isQ ? foundE * fo : 0, isw: mix(3, 2.5, ee), litSw: mix(2, 1.5, ee), scale: bump, op: isQ ? 1 : 1 - 0.64 * foundDim * (1 - E(T, ts, 0.35)) });
+      g += tileSvg(tx, ty, sz, n.key, { lit: isQ ? 1 : 0, glow: isQ ? foundE * fo : 0, isw: mix(3, 2.5, clamp01(ee)), litSw: mix(2, 1.5, clamp01(ee)), sq: [mix(1, sq[0], kill), mix(1, sq[1], kill)], op: isQ ? 1 : 1 - 0.64 * foundDim * (1 - E(T, ts, 0.35)) });
       if (isQ && fo > 0.003) {
         const kk = 86 * sz / NS;
         g += `<g opacity="${f2(fo)}"><path d="M${f2(tx - kk)},${f2(ty - kk + 26)} V${f2(ty - kk)} H${f2(tx - kk + 26)} M${f2(tx + kk - 26)},${f2(ty - kk)} H${f2(tx + kk)} V${f2(ty - kk + 26)} M${f2(tx + kk)},${f2(ty + kk - 26)} V${f2(ty + kk)} H${f2(tx + kk - 26)} M${f2(tx - kk + 26)},${f2(ty + kk)} H${f2(tx - kk)} V${f2(ty + kk - 26)}" fill="none" stroke="#B9C1FF" stroke-width="3" stroke-linecap="round"/></g>`;

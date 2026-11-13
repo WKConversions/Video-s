@@ -5,7 +5,7 @@
    17.00 cost chip pops in, 17.64 it drains ("don't pay") and dissolves   | 17.25 glint over the stud
    18.17-18.45 zoom through block 01's top face, panel emerges (B6 continues it). */
 import * as K from '../engine/kit.js';
-import { E, pop, mix, seg, drift, DASH } from '../engine/anim.js';
+import { E, pop, popOut, mix, seg, drift, DASH, spring, springTo, bounceIn, squash, BOUNCY } from '../engine/anim.js';
 import { SPANS, w } from '../timeline.js';
 import { periBlock, zoomGroup, zoomScale, streaks, cornerTint, blurWrap, scaleAbout, autoPanel2, clamp01 } from './C_shared.js';
 
@@ -24,7 +24,7 @@ const WIRES = K.BLOCKS.filter(([c, r, k]) => !(c === 0 && r === 2 && k === 0))
 const LABEL = 'First block · guaranteed';
 
 function scene(T, e) {
-  const tt = pop(T, 14.30, { dur: 0.6, over: 0.03 });
+  const tt = pop(T, 14.30, { dur: 0.6, over: 0.07 });
   const q = CARD.map((p, n) => K.lerpP(p, FLOOR[n], tt));
   let s = '';
   // ---- the card lying down (content fades as the floor grid dashes in)
@@ -69,10 +69,10 @@ function scene(T, e) {
     s += `<polygon points="${pts([Af, Bf, Cf, Df].map((p) => [p[0], p[1] - lift]))}" fill="rgba(185,193,255,${f2(0.32 * fp)})" stroke="#B9C1FF" stroke-width="1.5" stroke-opacity="${f2(fp)}"/>`;
   }
   // ---- seal ring on the floor around block 01's footprint
-  const sp = E(T, T_AGREED, 0.55, 'out');
+  const sp = E(T, T_AGREED, 0.55, 'out'), ringK = springTo(T, T_AGREED, 1.9, 1.55, BOUNCY);
   const cen = P(0.5, 2.5, 0);
   if (sp > 0.001) {
-    const k = 1.55, corners = [P(0, 2, 0), P(1, 2, 0), P(1, 3, 0), P(0, 3, 0)].map((p) => [cen[0] + (p[0] - cen[0]) * k, cen[1] + (p[1] - cen[1]) * k]);
+    const k = ringK, corners = [P(0, 2, 0), P(1, 2, 0), P(1, 3, 0), P(0, 3, 0)].map((p) => [cen[0] + (p[0] - cen[0]) * k, cen[1] + (p[1] - cen[1]) * k]);
     const d = `M${corners.map((p) => `${f2(p[0])},${f2(p[1])}`).join(' L')} Z`;
     const dash = `stroke-dasharray="${f2(sp * 100)} 100"`;
     const br = 0.75 + 0.25 * Math.sin(T * 2.4);
@@ -82,22 +82,33 @@ function scene(T, e) {
     // ripple when the ring closes
     const rp = E(T, T_AGREED + 0.42, 0.55, 'out');
     if (rp > 0 && rp < 0.99 && e <= 0) {
-      const k2 = 1 + 0.5 * rp, c2 = corners.map((p) => [cen[0] + (p[0] - cen[0]) * k2, cen[1] + (p[1] - cen[1]) * k2]);
+      const k2 = ringK + (0.5 + ringK - 1.55) * rp, c2 = corners.map((p) => [cen[0] + (p[0] - cen[0]) * k2, cen[1] + (p[1] - cen[1]) * k2]);
       s += `<path d="M${c2.map((p) => `${f2(p[0])},${f2(p[1])}`).join(' L')} Z" fill="none" stroke="#B9C1FF" stroke-width="2" stroke-linejoin="round" opacity="${f2(0.6 * (1 - rp))}"/>`;
     }
   }
-  // ---- the world: 13 wire blocks back to front, block 01 on top
-  const blocks = { '0,2,0': null };
-  WIRES.forEach(([c, r, k], i) => {
-    const p = E(T, 15.0 + i * 0.1, 0.55, 'smooth');
-    blocks[`${c},${r},${k}`] = p > 0.001 ? { w: { wire: 1 }, prog: p, dashOff: DASH(T) } : null;
-  });
-  const hh = pop(T, 14.72, { dur: 0.55, over: 0.04 });
-  const stud = pop(T, 15.02, { dur: 0.4, over: 0.1 });
-  const studOp = clamp01(stud * 6) * (1 - seg(e, 0.04, 0.25));
+  // ---- the world: 13 glass-wire blocks bounce in back to front, block 01 rises on a spring and squashes on landing
+  const T0 = 15.0, STEP = 0.09;
+  const rest = WIRES.map(([c, r, k], i) => {
+    const t0 = T0 + i * STEP;
+    if (T < t0) return '';
+    const b = bounceIn(T, t0, { from: 0.55, rise: 34 });
+    const prog = E(T, t0, 0.45, 'smooth');
+    const body = K.renderBlock({ c, r, k, w: { wire: 1, glass: prog }, prog, dashOff: DASH(T), wireOp: 0.6 });
+    if (T > t0 + 1.3) return body;
+    const bc = P(c + 0.5, r + 0.5, k);
+    return `<g opacity="${f2(b.op)}" transform="translate(${f2(bc[0])},${f2(bc[1] + b.y)}) scale(${f2(b.s)}) translate(${f2(-bc[0])},${f2(-bc[1])})">${body}</g>`;
+  }).join('');
+  const hh = T < 14.72 ? 0 : T > 15.9 ? 1 : spring(T, 14.72, BOUNCY);
+  const stud = spring(T, 15.02, BOUNCY);
+  const studOp = clamp01((T - 15.02) * 9) * (1 - seg(e, 0.04, 0.25));
   const glow = 1.2 * E(T, 14.8, 0.5, 'smooth') * (1 + drift(T, 2.4, 0.07)) * (1 - seg(e, 0, 0.1));
   let after = '';
-  if (T >= 14.5) after += periBlock({ hh: T < 14.72 ? 0 : hh, studH: 20 * stud, studOp, glow, op: E(T, 14.55, 0.2) });
+  if (T >= 14.5) {
+    const [sx, sy] = e > 0 ? [1, 1] : squash(T, 14.98, 0.07);
+    const bc = P(0.5, 2.5, 0);
+    const blk = periBlock({ hh, studH: 20 * stud, studOp, glow, op: E(T, 14.55, 0.2) });
+    after += sx === 1 && sy === 1 ? blk : `<g transform="translate(${f2(bc[0])},${f2(bc[1])}) scale(${f2(sx)},${f2(sy)}) translate(${f2(-bc[0])},${f2(-bc[1])})">${blk}</g>`;
+  }
   // glint across the stud (flourish of the "not as agreed" stretch)
   const gt = seg(T, 17.25, 0.5);
   if (gt > 0 && gt < 1 && e <= 0) {
@@ -108,29 +119,29 @@ function scene(T, e) {
       `<g clip-path="url(#${id})"><rect x="${f2(x - 9)}" y="${f2(cy - 40)}" width="18" height="80" fill="#fff" opacity="${f2(0.95 * bell)}" transform="skewX(-25)" transform-origin="${f2(x)} ${f2(cy)}"/></g>` +
       `<g opacity="${f2(bell)}">${K.glintArc(0, 2, 0)}</g>`;
   }
-  s += K.world({ def: { w: { wire: 1 } }, blocks, after });
-  // ---- leader line + label
+  s += rest + after;
+  // ---- leader line + label: the line drops, the dot and the label pop once and hold
   const ld = E(T, T_GUAR, 0.28, 'out');
   if (ld > 0) {
     const y2 = mix(764, 928, ld);
     let l = `<line x1="600" y1="764" x2="600" y2="${f2(y2)}" stroke="rgba(223,230,243,.5)" stroke-width="1.2"/>`;
-    const dp = pop(T, T_GUAR + 0.2, { dur: 0.3, over: 0.1 });
-    if (dp > 0) l += `<circle cx="600" cy="932" r="${f2(4.5 * dp)}" fill="#B9C1FF"/>`;
-    const n = Math.round(LABEL.length * E(T, T_GUAR + 0.22, 0.42, 'smooth'));
-    if (n > 0) {
-      const txt = LABEL.slice(0, n);
-      l += K.MONO(620, 943, txt, { sz: 32, fill: C.text, op: 0.9 });
-      if (n < LABEL.length || T < T_GUAR + 0.8) l += K.caret(620 + K.measure(txt, { f: 'm', sz: 32 }) + 4, 918, 30);
+    const dp = bounceIn(T, T_GUAR + 0.2, { from: 0.2, rise: 0, fade: 0.08 });
+    if (dp.op > 0) l += `<circle cx="600" cy="932" r="${f2(4.5 * dp.s)}" fill="#B9C1FF" opacity="${f2(dp.op)}"/>`;
+    const lb = bounceIn(T, T_GUAR + 0.24, { from: 0.7, rise: 22, fade: 0.12 });
+    if (lb.op > 0) {
+      const lx = 620, ly = 932;
+      l += `<g opacity="${f2(lb.op)}" transform="translate(${lx},${f2(ly + lb.y)}) scale(${f2(lb.s)}) translate(${-lx},${-ly})">${K.MONO(620, 943, LABEL, { sz: 32, fill: C.text, op: 0.9 })}</g>`;
     }
     s += l;
   }
-  // ---- cost chip: the grey bar of the plan row, drained on "don't pay"
-  const cp = pop(T, 17.0, { dur: 0.4, over: 0.07 });
-  const gone = E(T, 17.98, 0.22, 'inOut');
-  if (cp > 0.01 && gone < 1 && e <= 0) {
+  // ---- cost chip: bounces in, the grey bar drains on "don't pay", then it pops away
+  const cb = bounceIn(T, 17.0, { from: 0.6, rise: 26, fade: 0.12 });
+  const goneT = seg(T, 17.95, 0.3);
+  if (T >= 17.0 && goneT < 1 && e <= 0) {
+    const gp = popOut(T, 17.95, { dur: 0.3, over: 0.14 });
     const drain = E(T, T_DONT, 0.38, 'inOut');
-    const sc = cp * (1 - 0.15 * gone), op = (1 - gone) * clamp01(cp);
-    const cx = 420, cy = 640;
+    const sc = cb.s * gp, op = cb.op * (1 - E(T, 18.03, 0.14));
+    const cx = 420, cy = 640 + cb.y;
     let ch = `<rect x="${cx - 130}" y="${cy - 30}" width="260" height="60" rx="30" fill="rgba(255,255,255,.07)" stroke="rgba(185,193,255,.45)" stroke-width="1.2"/>`;
     ch += `<circle cx="${cx - 92}" cy="${cy}" r="17" fill="none" stroke="#B9C1FF" stroke-width="2"/>` + K.T(cx - 92, cy + 8, '€', { f: 'i', sz: 22, w: 500, fill: C.text, anchor: 'middle' });
     ch += K.bar(cx - 56, cy - 7, 164, 14, 'rgba(255,255,255,.07)');

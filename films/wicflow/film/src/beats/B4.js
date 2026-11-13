@@ -1,7 +1,7 @@
 /* B4 (11.20-14.30) "A costed plan. Highest return, first." Builder B. */
 import * as K from '../engine/kit.js';
-import { E, pop, seg, mix, clamp01 } from '../engine/anim.js';
-import { stage, KEYS, tLand, tileDone, popF } from './B_shared.js';
+import { E, pop, seg, mix, clamp01, spring, springTo, BOUNCY, SNAPPY } from '../engine/anim.js';
+import { stage, KEYS, tLand, tileDone, popF, springF } from './B_shared.js';
 const { f2, SLOT } = K;
 
 /* a plan row: a copy of K.planRow with the extra state the re-rank needs */
@@ -47,14 +47,14 @@ export const HAND = [
 export function draw(T) {
   let s = stage(T);
   // ---- row state ----
-  const lift = pop(T, LIFT, { dur: 0.45, over: 0.06 }) * (1 - E(T, SETTLE, 0.4));
-  const g = popF(T, GLIDE, 0.85, 0.03, END);            // quote glides up
-  const uc = popF(T, GLIDE + 0.06, 0.85, 0.03, END);    // customers glide down
+  const lift = spring(T, LIFT, BOUNCY) * (1 - E(T, SETTLE, 0.4));
+  const g = springF(T, GLIDE, BOUNCY, END);            // quote glides up
+  const uc = springF(T, GLIDE + 0.06, SNAPPY, END);    // customers glide down
   const mv = Math.sin(Math.PI * seg(T, GLIDE + 0.04, 0.9));
   const others = mix(1, 0.62, E(T, SETTLE + 0.04, 0.5));
   const plate = E(T, LIFT, 0.3) * (1 - E(T, SETTLE + 0.06, 0.35));
   const hi = E(T, SETTLE + 0.06, 0.35);
-  const tag = T > SETTLE + 0.08 ? popF(T, SETTLE + 0.08, 0.45, 0.08, END + 0.1) : 0;
+  const tag = T > SETTLE + 0.08 ? springF(T, SETTLE + 0.08, BOUNCY, END + 0.1) : 0;
   const shn = T > 13.8 && T < 14.2 ? 1.16 * E(T, 13.8, 0.4, 'smooth') : 0;
   const gate = E(T, 13.85, 0.3), halo = gate * Math.pow(Math.sin(Math.PI * (14.3 - T) / 1.1), 2);
   const idle = E(T, 11.9, 0.4) * (1 - E(T, 12.7, 0.3)) * (0.5 + 0.5 * Math.sin(2 * Math.PI * (T - 11.9) / 1.4));
@@ -63,10 +63,10 @@ export function draw(T) {
   KEYS.forEach((k, i) => {
     const land = tLand(i);
     const bodyOp = E(T, land - 0.12, 0.32);
-    const grow = T > 11.5 + i * 0.07 ? pop(T, 11.5 + i * 0.07, { dur: 0.55, over: 0.04 }) : 0;
+    const grow = spring(T, 11.5 + i * 0.07, { stiffness: 220, damping: 20 });
     const tile = T >= tileDone(i);
     const cas = T > 12.45 + i * 0.06 && T < 13.1 ? 1.16 * E(T, 12.45 + i * 0.06, 0.5, 'smooth') : 0;
-    const base = { cas, bodyOp, grow: T > 12.9 ? popF(T, 11.5 + i * 0.07, 0.55, 0.04, 13.0) : grow, tile };
+    const base = { cas, bodyOp, grow, tile };
     if (k === 'cust') R[k] = row(k, mix(SLOT[0], SLOT[2], uc), { ...base, sheen: cas, op: others * (1 - 0.88 * mv), dx: 70 * mv });   // lead: almost gone while it passes behind enquiries (no legible overlap)
     else if (k === 'enq') R[k] = row(k, SLOT[1], { ...base, sheen: cas, op: others * (1 - 0.25 * mv), dx: -70 * mv });
     else if (k === 'quote') R[k] = row(k, cyQ, { ...base, lit: true, plate, hi, tag, sheen: shn || cas, glow: halo * 0.85, tileGlow: idle * 0.8, scale: 1 + 0.025 * lift });
