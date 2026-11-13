@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Wicflow styleframe</title>
+<style>
+@font-face{font-family:'WF Headline';src:url(../../../harvest/stack-sans-headline.woff2) format('woff2');font-weight:200 700}
+@font-face{font-family:'WF Inter';src:url(../../../harvest/inter.woff2) format('woff2');font-weight:100 900}
+@font-face{font-family:'WF Mono';src:url(../../../harvest/fragment-mono.woff2) format('woff2');font-weight:400}
+@font-face{font-family:'WF Mark';src:url(../../../harvest/manrope-latin-7.woff2) format('woff2');font-weight:800}
+html,body{margin:0;background:#0B1220}
+#stage{width:1920px;height:1080px;overflow:hidden}
+#stage svg{display:block}
+</style></head>
+<body><div id="stage"></div>
+<script src="lib.js"></script>
+<script src="frames.js"></script>
+<script>
+(async () => {
+  await Promise.all(['500 96px "WF Headline"', '400 40px "WF Inter"', '500 40px "WF Inter"', '600 40px "WF Inter"',
+    '400 40px "WF Mono"', '800 40px "WF Mark"'].map((f) => document.fonts.load(f, 'Aa€’–·äö')));
+  const img = new Image(); img.src = '../../../harvest/wicflow-mark.png'; await img.decode().catch(() => {});
+  const id = new URLSearchParams(location.search).get('f') || FRAME_IDS[0];
+  document.getElementById('stage').innerHTML = FRAMES[id]();
+  await document.fonts.ready;
+  await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+  window.READY = true;
+})();
+</script>
+</body></html>
