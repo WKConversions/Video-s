@@ -35,7 +35,15 @@ function row(key, cy, o = {}) {
 }
 
 const LIFT = 12.76, GLIDE = 13.16, SETTLE = 13.64, END = 14.0;
-export const HAND = [];
+// Karl (13 Nov): the cursor in 30-50% of the film. Here the client CHOOSES: the hand clicks the quote row on "Highest"
+// (its deepest point = LIFT, so the click lifts the row), guides it up to the top slot with the row's own glide, rests on
+// it, and leaves as the card tilts into B5.
+export const HAND = [
+  { at: 10.0, x: 2100, y: 1250 },
+  { at: 12.65, x: 700, y: 590, click: true },
+  { at: 14.0, x: 700, y: 350, early: 0, dur: 0.85 },
+  { at: 15.9, x: 2150, y: 1300, early: 0 },
+];
 export function draw(T) {
   let s = stage(T);
   // ---- row state ----

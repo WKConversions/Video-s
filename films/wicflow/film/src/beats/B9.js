@@ -7,9 +7,9 @@ const f2 = (n) => Math.round(n * 100) / 100;
 const BTN = { x: 700, y: 846, w: 520, h: 88 }, TIP = [1080, 890];
 const CLICK = 30.3, DEEP = CLICK + 0.11;
 export const HAND = [
-  { at: 28.95, x: 2000, y: 1150 },
+  { at: 28.4, x: 2000, y: 1250 },
   { at: CLICK, x: TIP[0], y: TIP[1], click: true },
-  { at: 31.4, x: TIP[0] + 160, y: TIP[1] + 160 },
+  { at: 31.6, x: TIP[0] + 160, y: TIP[1] + 160 },
 ];
 const WORDS = ['Let’s', 'find', 'the', 'first', 'thing', 'to', 'build.'];
 const WT = [w('let\'s'), w('find'), w('the', 3), w('first', 4), w('thing'), w('to'), w('build')];

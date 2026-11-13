@@ -1,0 +1,559 @@
+{
+ "fps": 60,
+ "frames": 1980,
+ "library": "lib-mix",
+ "vo": {
+  "file": "../vo/vo.mp3",
+  "at": 0,
+  "compress": true
+ },
+ "music": {
+  "file": "music/bed_fit.wav",
+  "at": 0,
+  "lufs": -27,
+  "duck_db": 6,
+  "fade_in": 0.05,
+  "fade_out": 0.6
+ },
+ "sfx": [
+  {
+   "frame": 5,
+   "id": "gen-whoosh-short",
+   "db": -3,
+   "pitch": 0,
+   "note": "the quote card comes forward"
+  },
+  {
+   "frame": 42,
+   "id": "ui-digital-click",
+   "db": 0,
+   "pitch": -2,
+   "note": "'quiet': the ring drains, the reply dots fade (a falling blip)"
+  },
+  {
+   "frame": 112,
+   "id": "kenney-drop-003",
+   "db": -2,
+   "pitch": 0,
+   "note": "enquiries drop onto the inbox"
+  },
+  {
+   "frame": 127,
+   "id": "kenney-drop-003",
+   "db": -2,
+   "pitch": 2,
+   "note": ""
+  },
+  {
+   "frame": 143,
+   "id": "kenney-drop-003",
+   "db": -1,
+   "pitch": 4,
+   "note": ""
+  },
+  {
+   "frame": 158,
+   "id": "kenney-drop-003",
+   "db": 0,
+   "pitch": 6,
+   "note": "pile up"
+  },
+  {
+   "frame": 208,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "pitch": 2,
+   "note": "the hours card comes forward"
+  },
+  {
+   "frame": 220,
+   "id": "ui-beatbox-click-01",
+   "db": 0,
+   "pitch": 0,
+   "note": "hand click 1: the timesheet row"
+  },
+  {
+   "frame": 237,
+   "id": "ui-stretch",
+   "db": -3,
+   "pitch": 0,
+   "note": "the dashed arrow draws to the invoice"
+  },
+  {
+   "frame": 284,
+   "id": "ui-click-digital-03",
+   "db": 0,
+   "pitch": 0,
+   "note": "hand click 2: the invoice line"
+  },
+  {
+   "frame": 286,
+   "id": "wf-type-invoice",
+   "db": 0,
+   "pitch": 0,
+   "note": "the line typed in again"
+  },
+  {
+   "frame": 309,
+   "id": "gen-whoosh-medium",
+   "db": -2,
+   "pitch": 0,
+   "note": "the cards lie down on the wire blocks"
+  },
+  {
+   "frame": 333,
+   "id": "kenney-tick-004",
+   "db": -2,
+   "pitch": 0,
+   "note": "the wire world draws itself"
+  },
+  {
+   "frame": 351,
+   "id": "kenney-tick-004",
+   "db": -2,
+   "pitch": 2,
+   "note": ""
+  },
+  {
+   "frame": 369,
+   "id": "kenney-tick-004",
+   "db": -2,
+   "pitch": 4,
+   "note": ""
+  },
+  {
+   "frame": 372,
+   "id": "gen-whoosh-deep",
+   "db": -2,
+   "pitch": 0,
+   "note": "the grey app slab lowers"
+  },
+  {
+   "frame": 406,
+   "id": "gen-impact-soft",
+   "db": -3,
+   "pitch": 0,
+   "note": "'never': contact, block 06 strikes orange"
+  },
+  {
+   "frame": 407,
+   "id": "ui-glitch-click",
+   "db": -5,
+   "pitch": 0,
+   "note": "the wrong fit"
+  },
+  {
+   "frame": 438,
+   "id": "uu-click-digital-01",
+   "db": -3,
+   "pitch": 0,
+   "note": "'quite fits': the orange gap lines draw"
+  },
+  {
+   "frame": 477,
+   "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": -2,
+   "note": "the slab lifts and slides out"
+  },
+  {
+   "frame": 474,
+   "id": "gen-swell",
+   "db": -4,
+   "pitch": 0,
+   "note": "the periwinkle scan band"
+  },
+  {
+   "frame": 479,
+   "id": "kenney-select-001",
+   "db": -4,
+   "pitch": 0,
+   "note": "dimension tick"
+  },
+  {
+   "frame": 487,
+   "id": "kenney-select-001",
+   "db": -4,
+   "pitch": 3,
+   "note": "dimension tick"
+  },
+  {
+   "frame": 537,
+   "id": "gen-whoosh-medium",
+   "db": -2,
+   "pitch": 2,
+   "note": "'First': the faces fly up into the mapping's tiles"
+  },
+  {
+   "frame": 558,
+   "id": "ui-granular-button-select-2",
+   "db": -1,
+   "pitch": 0,
+   "note": "the tiles settle"
+  },
+  {
+   "frame": 570,
+   "id": "ui",
+   "db": 0,
+   "pitch": 0,
+   "note": "'we map': the connectors draw, data dots run"
+  },
+  {
+   "frame": 601,
+   "id": "kenney-tick-004",
+   "db": 0,
+   "pitch": 0,
+   "note": "time drops land"
+  },
+  {
+   "frame": 613,
+   "id": "kenney-tick-004",
+   "db": 0,
+   "pitch": 2,
+   "note": ""
+  },
+  {
+   "frame": 622,
+   "id": "kenney-tick-004",
+   "db": 0,
+   "pitch": 4,
+   "note": ""
+  },
+  {
+   "frame": 630,
+   "id": "kenney-tick-004",
+   "db": -3,
+   "pitch": 6,
+   "note": "'time goes'"
+  },
+  {
+   "frame": 637,
+   "id": "ui-click-digital-04",
+   "db": -2,
+   "pitch": 0,
+   "note": "brackets snap onto quotes"
+  },
+  {
+   "frame": 640,
+   "id": "gen-chime",
+   "db": -6,
+   "pitch": 0,
+   "note": "the highest return is found"
+  },
+  {
+   "frame": 661,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "pitch": 0,
+   "note": "the window becomes the costed plan"
+  },
+  {
+   "frame": 672,
+   "id": "kenney-drop-003",
+   "db": -2,
+   "pitch": 0,
+   "note": "tiles drop into the rows"
+  },
+  {
+   "frame": 684,
+   "id": "kenney-drop-003",
+   "db": -2,
+   "pitch": 3,
+   "note": ""
+  },
+  {
+   "frame": 696,
+   "id": "kenney-maximize-009",
+   "db": 0,
+   "pitch": 0,
+   "note": "'costed plan': the bars grow"
+  },
+  {
+   "frame": 766,
+   "id": "ui-enter",
+   "db": 1,
+   "pitch": 0,
+   "note": "hand click: the client picks the quote row, it lifts"
+  },
+  {
+   "frame": 795,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "pitch": 3,
+   "note": "it glides to the top"
+  },
+  {
+   "frame": 820,
+   "id": "ui-button",
+   "db": 0,
+   "pitch": 0,
+   "note": "'first': the plate settles, the 'First block' tag pops"
+  },
+  {
+   "frame": 867,
+   "id": "gen-whoosh-deep",
+   "db": -3,
+   "pitch": 2,
+   "note": "the plan card lies down as the ground"
+  },
+  {
+   "frame": 888,
+   "id": "ui-backspace",
+   "db": 2,
+   "pitch": -2,
+   "note": "'block': the first block extrudes (a plastic thock)"
+  },
+  {
+   "frame": 889,
+   "id": "gen-impact-soft",
+   "db": -3,
+   "pitch": 2,
+   "note": ""
+  },
+  {
+   "frame": 903,
+   "id": "gen-pop",
+   "db": -2,
+   "pitch": 0,
+   "note": "its stud rises"
+  },
+  {
+   "frame": 926,
+   "id": "wf-type-label",
+   "db": -1,
+   "pitch": 0,
+   "note": "'guaranteed': the label types on"
+  },
+  {
+   "frame": 942,
+   "id": "kenney-tick-004",
+   "db": -4,
+   "pitch": 0,
+   "note": "wire blocks draw in"
+  },
+  {
+   "frame": 966,
+   "id": "kenney-tick-004",
+   "db": -4,
+   "pitch": 2,
+   "note": ""
+  },
+  {
+   "frame": 990,
+   "id": "kenney-tick-004",
+   "db": -4,
+   "pitch": 4,
+   "note": ""
+  },
+  {
+   "frame": 1008,
+   "id": "gen-success",
+   "db": -2,
+   "pitch": 0,
+   "note": "'agreed': the seal ring closes around the block"
+  },
+  {
+   "frame": 1021,
+   "id": "gen-pop",
+   "db": -2,
+   "pitch": 3,
+   "note": "the cost chip pops in"
+  },
+  {
+   "frame": 1060,
+   "id": "ui-digital-click",
+   "db": 0,
+   "pitch": -5,
+   "note": "'don't pay': the cost bar drains to nothing"
+  },
+  {
+   "frame": 1097,
+   "id": "gen-whoosh-whip",
+   "db": 0,
+   "pitch": 0,
+   "note": "zoom through the first block's top face"
+  },
+  {
+   "frame": 1113,
+   "id": "ui-premium-open",
+   "db": -3,
+   "pitch": 0,
+   "note": "the automation panel opens"
+  },
+  {
+   "frame": 1156,
+   "id": "ui-click-digital-04",
+   "db": 0,
+   "pitch": 3,
+   "note": "'runs': the Running dot starts"
+  },
+  {
+   "frame": 1213,
+   "id": "wf-type-draft",
+   "db": 2,
+   "pitch": 0,
+   "note": "the follow-up drafts itself"
+  },
+  {
+   "frame": 1259,
+   "id": "ui-granular-button-select",
+   "db": 0,
+   "pitch": 0,
+   "note": "send"
+  },
+  {
+   "frame": 1266,
+   "id": "kenney-maximize-009",
+   "db": -4,
+   "pitch": 3,
+   "note": "'Draft ready' slides into the queue"
+  },
+  {
+   "frame": 1300,
+   "id": "gen-chime",
+   "db": -5,
+   "pitch": 3,
+   "note": "'quiet': the ring refills, the check pops"
+  },
+  {
+   "frame": 1320,
+   "id": "gen-whoosh-medium",
+   "db": -3,
+   "pitch": -2,
+   "note": "back out through the block"
+  },
+  {
+   "frame": 1345,
+   "id": "kenney-select-001",
+   "db": 2,
+   "pitch": 0,
+   "note": "'Block': 02 builds"
+  },
+  {
+   "frame": 1366,
+   "id": "kenney-select-001",
+   "db": 2,
+   "pitch": 3,
+   "note": "'block': 03 builds"
+  },
+  {
+   "frame": 1398,
+   "id": "gen-whoosh-short",
+   "db": -4,
+   "pitch": 0,
+   "note": "the price document slides in"
+  },
+  {
+   "frame": 1432,
+   "id": "ui-click",
+   "db": 0,
+   "pitch": 0,
+   "note": "hand click: the signature line, the signature draws itself"
+  },
+  {
+   "frame": 1473,
+   "id": "kenney-select-001",
+   "db": -6,
+   "pitch": 5,
+   "note": "04 builds"
+  },
+  {
+   "frame": 1482,
+   "id": "kenney-select-001",
+   "db": -6,
+   "pitch": 7,
+   "note": "05 builds"
+  },
+  {
+   "frame": 1510,
+   "id": "kenney-select-002",
+   "db": 0,
+   "pitch": 0,
+   "note": "light lines climb, block to block"
+  },
+  {
+   "frame": 1527,
+   "id": "kenney-select-002",
+   "db": 0,
+   "pitch": 2,
+   "note": ""
+  },
+  {
+   "frame": 1545,
+   "id": "kenney-select-002",
+   "db": -4,
+   "pitch": 4,
+   "note": ""
+  },
+  {
+   "frame": 1563,
+   "id": "kenney-select-002",
+   "db": 0,
+   "pitch": 5,
+   "note": ""
+  },
+  {
+   "frame": 1584,
+   "id": "kenney-select-002",
+   "db": 0,
+   "pitch": 7,
+   "note": ""
+  },
+  {
+   "frame": 1606,
+   "id": "gen-impact-soft",
+   "db": -5,
+   "pitch": 3,
+   "note": "'connected': block 06 turns solid"
+  },
+  {
+   "frame": 1621,
+   "id": "gen-shimmer",
+   "db": -2,
+   "pitch": 0,
+   "note": "the wave lights every stud"
+  },
+  {
+   "frame": 1665,
+   "id": "gen-whoosh-deep",
+   "db": -4,
+   "pitch": 3,
+   "note": "the system rises above the lockup"
+  },
+  {
+   "frame": 1703,
+   "id": "gen-appear",
+   "db": -1,
+   "pitch": 0,
+   "note": "the mark reveals"
+  },
+  {
+   "frame": 1741,
+   "id": "gen-pop",
+   "db": -1,
+   "pitch": 5,
+   "note": "the button pops in"
+  },
+  {
+   "frame": 1825,
+   "id": "ui-beatbox-click-01",
+   "db": 2,
+   "pitch": -2,
+   "note": "THE CTA PRESS (the deepest point of the hand's click)"
+  },
+  {
+   "frame": 1825,
+   "id": "gen-impact-deep",
+   "db": -2,
+   "pitch": 0,
+   "note": "the press lands"
+  },
+  {
+   "frame": 1833,
+   "id": "ui-open",
+   "db": -2,
+   "pitch": 0,
+   "note": "the button releases, the ripple spreads"
+  }
+ ]
+}

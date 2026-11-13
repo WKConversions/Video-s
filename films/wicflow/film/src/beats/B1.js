@@ -13,7 +13,7 @@ export const HAND = [
   { at: 2.0, x: 1150, y: 1300 },
   { at: A.CLICK1, x: Math.round(x1), y: Math.round(y1), click: true },
   { at: A.CLICK2, x: Math.round(x2), y: Math.round(y2), click: true },
-  { at: 6.0, x: 1300, y: 1300 },
+  { at: 6.2, x: 1300, y: 1300 },
 ];
 
 export function draw(T) {

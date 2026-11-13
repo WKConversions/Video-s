@@ -108,7 +108,7 @@ export function enquiryBody(T, out = 1) {
 
 /* the hand's two targets, in local card coordinates, and when the fingertip is deepest */
 export const L1 = [210, 212], L2 = [366, 190];
-export const CLICK1 = 3.55, CLICK2 = 4.5, DEEP = 0.11;
+export const CLICK1 = 3.55, CLICK2 = 4.62, DEEP = 0.11;   // lead: click 2 moved from 4.50 so its 156 px glide is not compressed (handcheck)
 export function hoursBody(T, out = 1) {
   const t1 = CLICK1 + DEEP, t2 = CLICK2 + DEEP;
   let c = tile(64, 64, 64, 'clock', { is: 0.95 });
