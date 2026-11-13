@@ -59,3 +59,32 @@ export const wobble = (T, t0, amp = 3, dur = 0.8) => {
 };
 export const drift = (T, period = 3.76, amp = 6, phase = 0) => amp * Math.sin((2 * Math.PI * T) / period + phase);
 export const DASH = (T) => 12 * T;
+
+/* ---- Apple-style springs (Karl, 13 Nov: "more Apple-style bouncy animation through the whole video") ----
+   spring(T, t0, cfg)  a real damped spring 0 -> 1 from rest (the physics of Remotion's spring()): cfg.stiffness
+                       (default 170), cfg.damping (default 14), cfg.mass (1). Overshoot: damping 12 ~ 20%, 14 ~ 13%,
+                       18 ~ 5%, 26 ~ 1%. Settles in about 0.6-0.9 s. Presets: BOUNCY (13%), SNAPPY (9%, quicker), SOFT (slower, softer).
+   bounceIn(T, t0, o)  an Apple pop-in for anything that appears: { s, op, y }: scale from o.from (0.6) through the
+                       spring's overshoot to 1, opacity in o.fade s (0.14), a rise of o.rise px (28) that springs to 0.
+                       Use as transform="translate(cx, cy + y) scale(s) translate(-cx, -cy)" with opacity op.
+   squash(T, t0, amp)  [sx, sy] a landing squash-and-stretch that wobbles back to [1, 1] (amp 0.08 = 8%).
+   springTo(T, t0, a, b, cfg)  a value travelling a -> b on a spring (a slide, a scale, a morph that lands with a bounce). */
+export const BOUNCY = { stiffness: 170, damping: 14 }, SNAPPY = { stiffness: 220, damping: 18 }, SOFT = { stiffness: 110, damping: 13 };
+export const spring = (T, t0, cfg = BOUNCY) => {
+  const t = T - t0; if (t <= 0) return 0;
+  const k = cfg.stiffness ?? 170, c = cfg.damping ?? 14, m = cfg.mass ?? 1;
+  const w0 = Math.sqrt(k / m), z = c / (2 * Math.sqrt(k * m));
+  if (z >= 1) return 1 - Math.exp(-w0 * t) * (1 + w0 * t);
+  const wd = w0 * Math.sqrt(1 - z * z);
+  return 1 - Math.exp(-z * w0 * t) * (Math.cos(wd * t) + ((z * w0) / wd) * Math.sin(wd * t));
+};
+export const springTo = (T, t0, a, b, cfg = BOUNCY) => a + (b - a) * spring(T, t0, cfg);
+export const bounceIn = (T, t0, o = {}) => {
+  const p = spring(T, t0, o.cfg || BOUNCY), from = o.from ?? 0.6;
+  return { s: from + (1 - from) * p, op: clamp01((T - t0) / (o.fade ?? 0.14)), y: (o.rise ?? 28) * (1 - p) };
+};
+export const squash = (T, t0, amp = 0.08) => {
+  const t = T - t0; if (t <= 0 || t > 1.2) return [1, 1];
+  const a = amp * Math.exp(-5.5 * t) * Math.cos(2 * Math.PI * t / 0.32);
+  return [1 + a, 1 - a];
+};

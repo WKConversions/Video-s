@@ -12,7 +12,21 @@ def typing(name, start, length):          # a stretch of Karl's soft typing reco
                     "-af", f"afade=t=in:d=0.02,afade=t=out:st={length - 0.08}:d=0.08", out], check=True)
     e = copy.deepcopy(by["ui-typing"]); e.update(id=name, file=f"sfx/ticker/{name}.wav", length=length, sync=0.0, transients=[]); extra.append(e)
     return name
-T1 = typing("wf-type-invoice", 0.2, 0.45); T2 = typing("wf-type-label", 0.9, 0.7); T3 = typing("wf-type-draft", 0.1, 0.85)
+T2 = typing("wf-type-label", 0.9, 0.7); T3 = typing("wf-type-draft", 0.1, 0.85)
+# Karl (13 Nov): "apply Apple keyboard typing under the type-on of the hook": his iPhone keyboard recording
+# (iphone-texting, an Apple sound: allowed here because Karl asked for it by name), cut to each type-on run that B1
+# exports as TYPING.
+def keyboard(n, length):
+    i = f"wf-keys-{n}"; out = f"{LIB}/sfx/ticker/{i}.wav"; d = max(0.3, length)
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-ss", str(3.0 + 2.3 * n), "-i", os.path.join(LIB, by["iphone-texting"]["file"]), "-t", str(d),
+                    "-af", f"afade=t=in:d=0.02,afade=t=out:st={d - 0.07}:d=0.07", out], check=True)
+    e = copy.deepcopy(by["iphone-texting"]); e.update(id=i, file=f"sfx/ticker/{i}.wav", length=d, sync=0.0, transients=[]); extra.append(e); return i
+try:
+    TYPING = json.loads(subprocess.run(["node", "--input-type=module", "-e", "import {TYPING} from './src/beats/B1.js'; console.log(JSON.stringify(TYPING))"],
+                                       cwd="../film", capture_output=True, text=True, check=True).stdout)
+except Exception as err:
+    print("TYPING not readable from B1.js, using the voice-over's lines:", err); TYPING = [[0.0, 1.08], [1.76, 2.92], [3.5, 4.86]]
+KEYS = [(a, keyboard(n, b - a)) for n, (a, b) in enumerate(TYPING)]
 
 C = [  # (film s, id, db nudge against the role level, pitch, note)
  # B1 the real work
@@ -80,8 +94,10 @@ C = [  # (film s, id, db nudge against the role level, pitch, note)
  (30.55, "ui-open", -2, 0, "the button releases, the ripple spreads"),
 ]
 fx = [{"frame": round(t * 60), "id": i, "db": db, "pitch": p, "note": n} for t, i, db, p, n in C]
-json.dump([x for x in idx if not x["id"].startswith("wf-type")] + extra, open(f"{LIB}/sfx/index.json", "w"), indent=1)
-json.dump({"fps": 60, "frames": 1980, "library": LIB,
+json.dump([x for x in idx if not x["id"].startswith(("wf-type", "wf-keys"))] + extra, open(f"{LIB}/sfx/index.json", "w"), indent=1)
+C += [(a, k, 3, 0, "Apple keyboard typing under the hook's type-on") for a, k in KEYS]
+fx = [{"frame": round(t * 60), "id": i, "db": db, "pitch": p, "note": n} for t, i, db, p, n in C]
+json.dump({"fps": 60, "frames": 1980, "library": LIB, "allow_apple": True,
            "vo": {"file": "../vo/vo.mp3", "at": 0, "compress": True},
            "music": {"file": "music/bed_fit.wav", "at": 0, "lufs": -27, "duck_db": 6, "fade_in": 0.05, "fade_out": 0.6},
            "sfx": fx}, open("cues.json", "w"), indent=1)
