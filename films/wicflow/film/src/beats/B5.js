@@ -93,7 +93,7 @@ function scene(T, e) {
     if (T < t0) return '';
     const b = bounceIn(T, t0, { from: 0.55, rise: 34 });
     const prog = E(T, t0, 0.45, 'smooth');
-    const body = K.renderBlock({ c, r, k, w: { wire: 1, glass: prog }, prog, dashOff: DASH(T), wireOp: 0.6 });
+    const body = K.renderBlock({ c, r, k, w: { wire: 1, glass: prog }, prog, dashOff: DASH(T), wireOp: 0.72 });
     if (T > t0 + 1.3) return body;
     const bc = P(c + 0.5, r + 0.5, k);
     return `<g opacity="${f2(b.op)}" transform="translate(${f2(bc[0])},${f2(bc[1] + b.y)}) scale(${f2(b.s)}) translate(${f2(-bc[0])},${f2(-bc[1])})">${body}</g>`;

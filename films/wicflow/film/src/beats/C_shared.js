@@ -1,7 +1,7 @@
 /* Shared helpers for builder C (B5 + B6): the first block (variable height), the zoom-through, streaks, the
    automation panel with every state driven by film time T. */
 import * as K from '../engine/kit.js';
-import { E, pop, mix, seg, DASH, drift } from '../engine/anim.js';
+import { E, pop, mix, seg, DASH, drift, spring, springTo, bounceIn, BOUNCY } from '../engine/anim.js';
 
 const { f2, pts, P, C, T: TXT, MONO } = K;
 const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
@@ -109,33 +109,43 @@ const runDots = (T, t0, speed = 0.62, n = 3) => {
   return out;
 };
 
+/* an Apple pop-in wrapper: scales/rises/fades `inner` about (cx, cy) from t0, plain once settled */
+function BI(T, t0, cx, cy, inner, o = {}) {
+  if (T < t0 || !inner) return '';
+  if (T > t0 + 1.3 && !o.keep) return inner;
+  const b = bounceIn(T, t0, { from: o.from ?? 0.78, rise: o.rise ?? 24, fade: 0.12 });
+  return `<g opacity="${f2(b.op)}" transform="translate(${f2(cx)},${f2(cy + b.y)}) scale(${f2(b.s)}) translate(${f2(-cx)},${f2(-cy)})">${inner}</g>`;
+}
+const CHECK = { stiffness: 200, damping: 11 };
+
 export function autoPanel2(T) {
   const lw = [250, 228, 256, 204, 150];
   // timings
   const run = T >= T_RUN;
   const d = E(T, T_DRAFT, 0.82, 'smooth');
-  const sendFill = E(T, 20.98, 0.28, 'smooth'), sendPop = pop(T, 20.98, { dur: 0.4, over: 0.08 });
+  const sendFill = E(T, 20.98, 0.28, 'smooth'), sendPop = 0;
+  const sendSc = T < 21.04 ? mix(1, 0.84, E(T, 20.94, 0.08, 'inOut')) : springTo(T, 21.04, 0.84, 1, BOUNCY);
   const flow3 = E(T, 21.0, 0.3, 'smooth');
-  const cardIn = pop(T, 21.08, { dur: 0.5, over: 0.04 }), cardOp = E(T, 21.08, 0.18);
+  const cardIn = spring(T, 21.08, BOUNCY), cardOp = E(T, 21.08, 0.14);
   const lit3 = E(T, 21.04, 0.3, 'smooth');
   const refill = E(T, T_QUIET, 0.4, 'smooth');
   const done = refill >= 0.98;
-  const badge = pop(T, 21.66, { dur: 0.4, over: 0.1 });
-  const adv = pop(T, 21.74, { dur: 0.4, over: 0.05 });
+  const badge = spring(T, 21.66, CHECK);
+  const adv = spring(T, 21.74, BOUNCY);
   const ringCol = mixHex('#ffd9c8', '#B9C1FF', refill);
   const frameLit = E(T, 21.55, 0.25);
 
   let s = `<rect x="240" y="160" width="1440" height="760" rx="32" fill="rgba(97,114,243,.08)" stroke="rgba(185,193,255,.28)" stroke-width="1" filter="url(#shCard60)"/>`;
   s += `<rect x="240" y="160" width="1440" height="760" rx="32" fill="none" stroke="rgba(185,193,255,.30)" stroke-width="1.5" stroke-dasharray="7 9" stroke-dashoffset="${f2(-DASH(T) * 1.6)}"/>`;
-  s += K.miniCube(300, 222, 1.3) + TXT(340, 234, 'Quote follow-ups', { f: 'i', sz: 34, w: 500 });
-  s += K.pill(1620, 200, 'Running', { right: true, sz: 24, dot: C.green, ring: run ? ((T - T_RUN) / 1.2) % 1 : undefined });
+  s += BI(T, 18.46, 440, 222, K.miniCube(300, 222, 1.3) + TXT(340, 234, 'Quote follow-ups', { f: 'i', sz: 34, w: 500 }), { rise: 14 });
+  s += BI(T, 18.54, 1560, 212, K.pill(1620, 200, 'Running', { right: true, sz: 24, dot: C.green, ring: run ? ((T - T_RUN) / 1.2) % 1 : undefined }), { rise: 14, keep: run });
   s += `<line x1="270" y1="280" x2="1650" y2="280" stroke="rgba(255,255,255,.09)"/>`;
   const head = s;
   s = '';
   // stage 1: the queue of open quotes; the queue advances once the front quote is settled
   const a1 = [386 - 8 * adv, 396 - 8 * adv], a2 = [402 - 16 * adv, 412 - 16 * adv];
-  s += `<g opacity="${f2(0.28 + 0.22 * adv)}"><rect x="${f2(a2[0])}" y="${f2(a2[1])}" width="300" height="400" rx="24" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)"/></g>`;
-  s += `<g opacity="${f2(0.5)}"><rect x="${f2(a1[0])}" y="${f2(a1[1])}" width="300" height="400" rx="24" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)"/></g>`;
+  s += BI(T, 18.58, 580, 600, `<g opacity="${f2(clamp01(0.28 + 0.22 * adv))}"><rect x="${f2(a2[0])}" y="${f2(a2[1])}" width="300" height="400" rx="24" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)"/></g>`, { from: 0.9 });
+  s += BI(T, 18.54, 560, 590, `<g opacity="0.5"><rect x="${f2(a1[0])}" y="${f2(a1[1])}" width="300" height="400" rx="24" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)"/></g>`, { from: 0.9 });
   if (adv > 0.01) s += `<g opacity="${f2(0.28 * Math.min(1, adv))}"><rect x="418" y="428" width="300" height="400" rx="24" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)"/></g>`;
   let c = `<rect x="370" y="380" width="300" height="400" rx="24" fill="#151D3D" stroke="${mixHex('#3a4160', '#6f7bd0', frameLit)}" stroke-width="1.2"/>`;
   c += K.tile(422, 432, 56, 'doc', { is: 0.82 }) + K.bar(462, 418, 120, 12, 'rgba(255,255,255,.30)') + K.bar(462, 440, 80, 10);
@@ -144,14 +154,14 @@ export function autoPanel2(T) {
   c += TXT(394, 652, '€', { f: 'i', sz: 28, w: 500, fill: C.muted }) + K.bar(600, 640, 46, 14, 'rgba(185,193,255,.55)');
   c += K.timer(420, 724, 22, mix(0.4, 1, refill), ringCol);
   c += K.pill(458, 706, 'Open', { sz: 22 });
-  s += c;
+  s += BI(T, 18.50, 520, 580, c);
   if (badge > 0.01) {
-    s += `<g transform="translate(646,404) scale(${f2(badge)}) translate(-646,-404)"><circle cx="646" cy="404" r="20" fill="#6172F3"/>${K.icon('check', 646, 404, 0.9, { c: '#fff', sw: 3 })}</g>`;
+    s += `<g transform="translate(646,404) scale(${f2(Math.max(0, badge))}) translate(-646,-404)"><circle cx="646" cy="404" r="20" fill="#6172F3"/>${K.icon('check', 646, 404, 0.9, { c: '#fff', sw: 3 })}</g>`;
     const rp = E(T, 21.66, 0.55, 'out');
     if (rp < 0.98) s += `<circle cx="646" cy="404" r="${f2(20 + 56 * rp)}" fill="none" stroke="#B9C1FF" stroke-width="${f2(3 * (1 - rp) + 0.5)}" opacity="${f2(0.7 * (1 - rp))}"/>`;
   }
   // stage 2: the follow-up drafts itself
-  s += flow2([676, 580], [800, 580], { lit: mix(0.15, 1, E(T, T_RUN - 0.05, 0.3)), dots: runDots(T, T_RUN) });
+  s += `<g opacity="${f2(E(T, 18.62, 0.2))}">` + flow2([676, 580], [800, 580], { lit: mix(0.15, 1, E(T, T_RUN - 0.05, 0.3)), dots: runDots(T, T_RUN) }) + '</g>';
   let g = `<rect x="806" y="380" width="308" height="400" rx="24" fill="#151D3D" stroke="rgba(185,193,255,.45)" stroke-width="1.2"/>`;
   g += K.tile(858, 432, 56, 'sparkle', { fill: 'rgba(185,193,255,.2)', stroke: '#B9C1FF', ic: '#CDD3FF', is: 0.82, glow: d > 0 && d < 1 ? 'rgba(97,114,243,.6)' : null });
   g += K.bar(898, 418, 140, 12, 'rgba(255,255,255,.30)') + K.bar(898, 440, 90, 10);
@@ -162,15 +172,15 @@ export function autoPanel2(T) {
     if (ww > 0) { g += K.bar(830, y, ww, 12, 'rgba(223,230,243,.72)'); cx = 830 + ww; cy = y; }
   });
   if (d > 0 && T < 21.25) g += K.caret(cx + 6, cy - 6, 24).replace('fill="#B9C1FF"', `fill="#B9C1FF" opacity="${f2(0.65 + 0.35 * Math.sin(T * 9))}"`);
-  g += `<g transform="translate(898,730) scale(${f2(1 - 0.06 * Math.sin(Math.PI * clamp01((T - 20.98) / 0.3)))}) translate(-898,-730)">` +
+  g += `<g transform="translate(898,730) scale(${f2(sendSc)}) translate(-898,-730)">` +
     `<rect x="830" y="706" width="136" height="48" rx="24" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.14)"/>` +
     `<rect x="830" y="706" width="136" height="48" rx="24" fill="#6172F3" opacity="${f2(sendFill)}"/>` + K.icon('send', 898, 730, 0.62, { c: '#F3F5FA', sw: 2.4 }) + '</g>';
   void sendPop;
-  s += g;
+  s += BI(T, 18.64, 960, 580, g);
   // stage 3: ready for the salesperson
-  s += flow2([1120, 580], [1244, 666], { lit: mix(0.15, 1, flow3), dots: flow3 > 0.2 ? runDots(T, 21.0, 0.75, 2) : [] });
-  s += `<g opacity="${f2(mix(0.55, 1, lit3))}"><circle cx="1400" cy="452" r="64" fill="rgba(255,255,255,.07)" stroke="${mixHex('#3a4160', '#8d99ee', lit3)}" stroke-width="1.5"/>${K.icon('person', 1400, 456, 1.7, { sw: 3 })}</g>`;
-  s += `<rect x="1250" y="560" width="300" height="220" rx="24" fill="none" stroke="rgba(255,255,255,.18)" stroke-dasharray="7 7" stroke-dashoffset="${f2(-DASH(T))}" opacity="${f2(1 - cardOp)}"/>`;
+  s += `<g opacity="${f2(E(T, 18.72, 0.2))}">` + flow2([1120, 580], [1244, 666], { lit: mix(0.15, 1, flow3), dots: flow3 > 0.2 ? runDots(T, 21.0, 0.75, 2) : [] }) + '</g>';
+  s += BI(T, 18.76, 1400, 452, `<g opacity="${f2(mix(0.55, 1, lit3))}"><circle cx="1400" cy="452" r="64" fill="rgba(255,255,255,.07)" stroke="${mixHex('#3a4160', '#8d99ee', lit3)}" stroke-width="1.5"/>${K.icon('person', 1400, 456, 1.7, { sw: 3 })}</g>`, { from: 0.6, rise: 16 });
+  s += BI(T, 18.82, 1400, 670, `<rect x="1250" y="560" width="300" height="220" rx="24" fill="none" stroke="rgba(255,255,255,.18)" stroke-dasharray="7 7" stroke-dashoffset="${f2(-DASH(T))}" opacity="${f2(1 - cardOp)}"/>`, { from: 0.9, keep: true });
   if (cardOp > 0.01) {
     let qc = `<rect x="1250" y="560" width="300" height="220" rx="24" fill="#151D3D" stroke="rgba(185,193,255,.55)" stroke-width="1.2" filter="url(#shLift)"/>`;
     qc += K.tile(1296, 606, 48, 'doc', { is: 0.7 }) + K.bar(1332, 594, 140, 11, 'rgba(255,255,255,.3)') + K.bar(1332, 614, 96, 9);
@@ -182,7 +192,8 @@ export function autoPanel2(T) {
       qc += `<defs><clipPath id="${id}"><rect x="1276" y="712" width="176" height="44" rx="22"/></clipPath></defs><rect x="${f2(x - 25)}" y="700" width="50" height="70" fill="#fff" opacity=".28" transform="skewX(-20)" transform-origin="${f2(x)} 734" clip-path="url(#${id})"/>`;
     }
     qc += `<circle cx="1500" cy="734" r="22" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.18)"/>` + K.icon('send', 1501, 734, 0.5, { sw: 2.2 });
-    s += `<g opacity="${f2(cardOp)}" transform="translate(${f2((1 - cardIn) * 150)},0)">${qc}</g>`;
+    const cs = 0.82 + 0.18 * cardIn;
+    s += `<g opacity="${f2(cardOp)}" transform="translate(${f2(1400 + (1 - cardIn) * 150)},${f2(670)}) scale(${f2(cs)}) translate(-1400,-670)">${qc}</g>`;
   }
   void done;
   // alive: a soft light sweeps across the glass, the stages float a little (never a still frame)

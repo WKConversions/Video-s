@@ -48,7 +48,7 @@ export function draw(T) {
   let s = stage(T);
   // ---- row state ----
   const lift = spring(T, LIFT, BOUNCY) * (1 - E(T, SETTLE, 0.4));
-  const g = springF(T, GLIDE, BOUNCY, END);            // quote glides up
+  const g = springF(T, GLIDE, { stiffness: 140, damping: 13.5 }, END);            // quote glides up
   const uc = springF(T, GLIDE + 0.06, SNAPPY, END);    // customers glide down
   const mv = Math.sin(Math.PI * seg(T, GLIDE + 0.04, 0.9));
   const others = mix(1, 0.62, E(T, SETTLE + 0.04, 0.5));
@@ -65,7 +65,7 @@ export function draw(T) {
     const bodyOp = E(T, land - 0.12, 0.32);
     const grow = spring(T, 11.5 + i * 0.07, { stiffness: 220, damping: 20 });
     const tile = T >= tileDone(i);
-    const cas = T > 12.45 + i * 0.06 && T < 13.1 ? 1.16 * E(T, 12.45 + i * 0.06, 0.5, 'smooth') : 0;
+    const cas = T > 12.2 + i * 0.06 && T < 13.0 ? 1.16 * E(T, 12.2 + i * 0.06, 0.5, 'smooth') : 0;
     const base = { cas, bodyOp, grow, tile };
     if (k === 'cust') R[k] = row(k, mix(SLOT[0], SLOT[2], uc), { ...base, sheen: cas, op: others * (1 - 0.88 * mv), dx: 70 * mv });   // lead: almost gone while it passes behind enquiries (no legible overlap)
     else if (k === 'enq') R[k] = row(k, SLOT[1], { ...base, sheen: cas, op: others * (1 - 0.25 * mv), dx: -70 * mv });
