@@ -1,6 +1,6 @@
 # Cue sheet for the Wicflow hero film (33.0 s, 60 fps). Effects lead, a quiet bed of Karl's track ("New Gold",
-# instrumental) under Christina's voice-over. Client delivery: only Karl's own sounds, generated ones and Kenney CC0
-# (lib-mix = lib-karl without the Apple sounds + the alumni library; gitignored). Each cue sits on a picture event from
+# instrumental) under Christina's voice-over. Effects: ONLY Karl's own folder (lib-mix = a copy of lib-karl's index over
+# hardlinks to its files; gitignored), see SUB below. Each cue sits on a picture event from
 # the beat builders' reports (film/src/beats/*.js); the hand's clicks land on their deepest point (at + 0.11 s).
 #   python3 make_cues.py && python3 sound_mix.py cues.json mix.wav --sheet mix.png
 import json, copy, subprocess, os
@@ -81,7 +81,7 @@ C = [  # (film s, id, db nudge against the role level, pitch, note)
  (22.42, "kenney-select-001", 2, 0, "'Block': 02 builds"), (22.76, "kenney-select-001", 2, 3, "'block': 03 builds"),
  (23.30, "gen-whoosh-short", -4, 0, "the price document slides in"),
  (23.86, "ui-click", 0, 0, "hand click: the signature line, the signature draws itself"),
- (24.55, "kenney-select-001", -9, 5, "04 builds"), (24.70, "kenney-select-001", -6, 7, "05 builds"),
+ (24.55, "kenney-select-001", -13, 5, "04 builds"), (24.70, "kenney-select-001", -10, 7, "05 builds"),
  # B8 all of it connected
  (25.16, "kenney-select-002", 0, 0, "light lines climb, block to block"), (25.45, "kenney-select-002", 0, 2, ""), (25.75, "kenney-select-002", -4, 4, ""),
  (26.05, "kenney-select-002", 0, 5, ""), (26.40, "kenney-select-002", 0, 7, ""),
@@ -94,6 +94,25 @@ C = [  # (film s, id, db nudge against the role level, pitch, note)
  (30.41, "ui-beatbox-click-01", 2, -2, "THE CTA PRESS (the deepest point of the hand's click)"), (30.42, "gen-impact-deep", -2, 0, "the press lands"),
  (30.55, "ui-open", -2, 0, "the button releases, the ripple spreads"),
 ]
+# Karl (13 Nov, after preview v2): "no self-made sound effects, no Claude sound effects, only what you have from my
+# folder". So every generated (gen-*) and Kenney sound is swapped for one of Karl's own (lib-karl, his zip: his UI
+# sounds and the Apple sounds he supplied); pools rotate so no sound repeats back to back.
+SUB = {
+ "gen-whoosh-short": ["send-2", "mail-in", "send"], "gen-whoosh-medium": ["mail-in", "send-2"],
+ "gen-whoosh-deep": ["turn-off-phone", "futuristic-sfx"], "gen-whoosh-whip": ["send"],
+ "gen-impact-soft": ["ui-backspace", "ui-enter"], "gen-impact-deep": ["iphone-apple-pay"],
+ "gen-pop": ["double-bubble-pop", "ui-button"], "gen-appear": ["ui-button"],
+ "gen-chime": ["message", "start-video"], "gen-success": ["start-video"], "gen-shimmer": ["mail-notification"], "gen-swell": ["ui-open"],
+ "kenney-drop-003": ["pop"], "kenney-tick-004": ["v4-type-delete"], "kenney-select-001": ["ui-click-digital-04"],
+ "kenney-select-002": ["one-keyboard-click"], "kenney-maximize-009": ["ui-granular-button-select-2"],
+}
+turn = {}
+def sub(i):
+    if i not in SUB: return i
+    pool = SUB[i]; k = turn.get(i, 0); turn[i] = k + 1; return pool[k % len(pool)]
+C = [(t, sub(i), db, p, n) for t, i, db, p, n in sorted(C) if not (i == "ui-open" and abs(t - 30.55) < 0.01)]   # Apple Pay is the CTA's resolve now
+bad = [i for _, i, *_ in C if i not in by and not i.startswith(("wf-type", "wf-keys"))]
+assert not bad, f"not in Karl's library: {bad}"
 fx = [{"frame": round(t * 60), "id": i, "db": db, "pitch": p, "note": n} for t, i, db, p, n in C]
 json.dump([x for x in idx if not x["id"].startswith(("wf-type", "wf-keys"))] + extra, open(f"{LIB}/sfx/index.json", "w"), indent=1)
 C += [(a, k, 3, 0, "Apple keyboard typing under the hook's type-on") for a, k in KEYS]
