@@ -1,10 +1,14 @@
-/* B3: PLACEHOLDER (the storyboard key frames as an animatic) until the beat is built. */
+/* B3 (8.60-11.20) "First, we map where the time goes." Builder B. The stage lives in B_shared.js. */
 import * as K from '../engine/kit.js';
-import { SPANS } from '../timeline.js';
-const IDS = K.FRAME_META.filter((m) => m.id.startsWith('B03-'));
+import { E, DASH } from '../engine/anim.js';
+import { stage, F0 } from './B_shared.js';
 export const HAND = [];
 export function draw(T) {
-  const [t0, t1] = SPANS.B3, u = (T - t0) / (t1 - t0);
-  const m = IDS[Math.min(IDS.length - 1, Math.floor(u * IDS.length))];
-  return K.FRAMES[m.id]();   // a full <svg> document
+  const op = 1 - E(T, F0, 0.7);
+  let s = '';
+  if (op > 0.003) {
+    const w = K.world({ def: { w: { wire: 1 }, dash: '3 4', wireOp: 0.55, dashOff: DASH(T) } });
+    s += op > 0.999 ? w : `<g opacity="${op.toFixed(3)}">${w}</g>`;
+  }
+  return s + stage(T);
 }
