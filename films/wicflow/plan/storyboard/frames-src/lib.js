@@ -1,6 +1,6 @@
 /* Wicflow hero storyboard: styleframe engine (1920x1080 SVG).
-   Isometric lattice from the storyboard notes:
-   (i,j,h) -> (1360 + 120(i-j), 554 + 69.5(i+j) - 128h). */
+   v2 (text-light): the block world is centred, so the lattice is
+   (i,j,h) -> (960 + 120(i-j), 554 + 69.5(i+j) - 128h). v1 used 1360 (world right of a text column). */
 'use strict';
 const W = 1920, HGT = 1080;
 const C = {
@@ -45,7 +45,7 @@ const MONO = (x, y, s, o = {}) => T(x, y, s, { f: 'm', sz: 40, w: 400, fill: C.m
 /* ---------- defs shared by every frame ---------- */
 function baseDefs() {
   return `
-  <radialGradient id="bg" gradientUnits="userSpaceOnUse" cx="1360" cy="560" r="1500">
+  <radialGradient id="bg" gradientUnits="userSpaceOnUse" cx="960" cy="540" r="1400">
     <stop offset="0" stop-color="#131C3A"/><stop offset=".45" stop-color="#0E1630"/><stop offset="1" stop-color="#0B1220"/>
   </radialGradient>
   <filter id="dither" x="0" y="0" width="100%" height="100%">
@@ -71,7 +71,7 @@ function svgDoc(inner, extraDefs = '') {
 }
 
 /* ---------- isometric block world ---------- */
-const OX = 1360, OY = 554, AX = 120, AY = 69.5, HZ = 128;
+const OX = 960, OY = 554, AX = 120, AY = 69.5, HZ = 128;
 const P = (i, j, h) => [OX + AX * (i - j), OY + AY * (i + j) - HZ * h];
 const STUD = { rx: 44, ry: 25.5, h: 20 };
 const BLOCKS = [
@@ -283,7 +283,7 @@ function lightLine(points, frac = 1, o = {}) {
 function spark(x, y, d = 12, glow = 20) {
   return `<circle cx="${f2(x)}" cy="${f2(y)}" r="${glow / 2}" fill="#fff" filter="url(#b6)" opacity=".8"/><circle cx="${f2(x)}" cy="${f2(y)}" r="${d / 2}" fill="#fff"/>`;
 }
-const LINES = {
+const LINES_V1 = {
   '01-02': [[1120, 634.5], [1360, 773.5]],
   '02-03': [[1360, 773.5], [1540, 669.25], [1540, 541.25], [1600, 506.5]],
   '01-04': [[1120, 634.5], [1180, 599.75], [1180, 471.75], [1240, 437]],
@@ -291,6 +291,7 @@ const LINES = {
   '04-06': [[1240, 437], [1300, 402.25], [1300, 274.25], [1360, 239.5]],
   '05-06': [[1480, 437], [1420, 402.25], [1420, 274.25], [1360, 239.5]]
 };
+const LINES = Object.fromEntries(Object.entries(LINES_V1).map(([k, v]) => [k, v.map(([x, y]) => [x + OX - 1360, y])]));
 
 /* glass panel/card */
 function glassRect(x, y, w, h, o = {}) {

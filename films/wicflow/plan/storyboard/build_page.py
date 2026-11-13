@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Builds site/index.html (the storyboard page) from storyboard.json.
+"""Builds site/index.html (the storyboard page, v2) from storyboard.json.
+The one-image overview (site/storyboard-overview.png) is made by make_overview.js.
 Self-contained: Wicflow's own fonts are embedded, frames load from site/frames/.
 Run: python3 build_page.py"""
 import base64
@@ -26,7 +27,7 @@ FONTS = '\n'.join([
     font('WF Mono', 'fragment-mono.woff2', '400'),
 ])
 
-STYLE_LABEL = {'mixed': 'Mixed', '3d-blocks': '3D blocks', 'kinetic-type': 'Kinetic type', 'flat-ui': 'Flat UI'}
+STYLE_LABEL = {'mixed': 'Lockup', '3d-blocks': '3D blocks', 'kinetic-type': 'Kinetic type', 'flat-ui': 'Flat UI'}
 
 
 def secs(t):
@@ -45,6 +46,12 @@ def note_parts(n):
 
 
 total = sb['length_s']
+try:
+    import struct
+    with open(os.path.join(HERE, 'site', 'storyboard-overview.png'), 'rb') as fh:
+        OV_H = struct.unpack('>I', fh.read(24)[20:24])[0]
+except OSError:
+    OV_H = 2582
 beats = sb['beats']
 nframes = sum(len(b['frames']) for b in beats)
 
@@ -59,7 +66,11 @@ ticks = ''.join(f'<span style="left:{t / total * 100:.3f}%">{t:g}s</span>' for t
 
 # ---- notes
 notes = []
+intro = ''
 for n in sb['notes']:
+    if n.startswith('What changed in v2'):
+        intro = note_parts(n)[1]
+        continue
     head, body = note_parts(n)
     notes.append(f'<article class="note"><h3>{E(head)}</h3><p>{E(body)}</p></article>')
 
@@ -96,8 +107,11 @@ for b in beats:
 </section>''')
 
 questions = ''.join(f'<li>{E(q)}</li>' for q in sb['questions'])
+ch = sb['changes_v2']
+changes = ''.join(f'<li>{E(c)}</li>' for c in ch['changes'])
+tb = sb['textBudget']
+budget = ''.join(f'<li><span class="tc">{E(m["beat"])} · {E(m["t"])} s</span><span>“{E(m["text"])}”</span><span class="kind">{E(m["kind"])}</span></li>' for m in tb['moments'])
 devs = ''.join(f'<li>{E(d)}</li>' for d in sb.get('styleframes', {}).get('deviations', []))
-cover = beats[4]['frames'][2]['file'].replace('site/', '')
 title_main = sb['title'].split(':')[1].split('(')[0].strip() if ':' in sb['title'] else sb['title']
 title_main = title_main[:1].upper() + title_main[1:]
 
@@ -107,7 +121,7 @@ page = f'''<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wicflow Hero Storyboard</title>
-<meta name="description" content="Storyboard for Wicflow’s hero explainer: {nframes} styleframes across {len(beats)} beats, {total:g} s, looping.">
+<meta name="description" content="Storyboard v2 for Wicflow’s hero explainer: text-light and visual-first, {nframes} styleframes across {len(beats)} beats, {total:g} s, looping.">
 <style>
 {FONTS}
 :root{{
@@ -149,13 +163,26 @@ h4{{font:400 12px/1.4 'WF Mono',ui-monospace,Menlo,monospace;letter-spacing:.06e
 .toggle:focus-visible{{outline:2px solid var(--accent);outline-offset:2px}}
 .hero{{padding:32px 0 8px}}
 .eyebrow{{font:400 13px/1.4 'WF Mono',ui-monospace,monospace;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}}
-.hero h1{{font-size:clamp(40px,7vw,84px);max-width:14ch}}
+.hero h1{{font-size:clamp(40px,7vw,84px);max-width:20ch}}
 .logline{{font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:var(--muted);max-width:68ch;margin:24px 0 0}}
 .facts{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:32px 0 0}}
 .facts div{{background:var(--surface);padding:14px 16px}}
 .facts dt{{font:400 11px/1.4 'WF Mono',ui-monospace,monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}}
 .facts dd{{margin:4px 0 0;font-weight:500;font-size:15px;line-height:1.35}}
 .cover{{margin:32px 0 0;border-radius:18px;overflow:hidden;background:var(--plate);box-shadow:var(--shadow)}}
+.cover a{{display:block}}
+.ver{{display:inline-block;font:400 14px/1 'WF Mono',ui-monospace,monospace;letter-spacing:.04em;color:var(--accent);background:var(--accent-soft);border:1px solid var(--line);border-radius:999px;padding:6px 10px;vertical-align:middle;margin-left:10px}}
+h1 .ver{{font-size:clamp(14px,1.6vw,20px);padding:8px 14px;vertical-align:.5em;margin-left:14px;letter-spacing:0}}
+.changed{{margin:32px 0 0;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 22px 18px;box-shadow:var(--shadow)}}
+.changed h2{{font-size:clamp(24px,2.6vw,30px);margin:0 0 12px}}
+.changed blockquote{{margin:0 0 14px;padding:0 0 0 14px;border-left:2px solid var(--accent);color:var(--ink);font-size:16px;line-height:1.55}}
+.changed p{{margin:0 0 12px;color:var(--muted);font-size:15px;line-height:1.6}}
+.changed ul{{margin:0;padding-left:20px;color:var(--muted);font-size:14.5px;line-height:1.6}}
+.changed li{{margin:0 0 6px;overflow-wrap:anywhere}}
+.budget{{list-style:none;padding:0 !important;margin:14px 0 16px !important;display:grid;gap:8px}}
+.budget li{{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;background:var(--surface-2);border-radius:12px;padding:10px 14px;margin:0;color:var(--ink);font-size:15px}}
+.budget .kind{{color:var(--faint);font-size:13px}}
+.changed h3{{font-size:17px;margin:16px 0 4px;font-family:'WF Inter',system-ui,sans-serif;font-weight:600;letter-spacing:0}}
 .cover figcaption{{padding:10px 16px;font-size:13px;color:#C9D0E0;background:var(--plate);display:flex;gap:12px;flex-wrap:wrap}}
 .cover figcaption .tc{{font-family:'WF Mono',ui-monospace,monospace;color:#B9C1FF}}
 .barwrap{{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-top:40px}}
@@ -220,30 +247,41 @@ footer p{{margin:0 0 6px;max-width:80ch}}
 <body>
 <div class="wrap">
   <div class="top">
-    <div class="brandline">Wicflow · WKConversions</div>
+    <div class="brandline">Wicflow · WKConversions · <span class="ver">Storyboard v2</span></div>
     <button class="toggle" type="button" id="themeBtn" aria-label="Switch colour theme">Theme</button>
   </div>
   <header class="hero">
-    <div class="eyebrow">Hero explainer · Storyboard</div>
-    <h1>{E(title_main)}</h1>
+    <div class="eyebrow">Hero explainer · Storyboard v2</div>
+    <h1>{E(title_main)}<span class="ver">v2</span></h1>
     <p class="logline">{E(sb['logline'])}</p>
     <dl class="facts">
       <div><dt>Length</dt><dd>{total:g} s, loops</dd></div>
       <div><dt>Format</dt><dd>16:9 · 1920×1080</dd></div>
       <div><dt>Frame rate</dt><dd>60 fps</dd></div>
-      <div><dt>Sound</dt><dd>Works muted · optional English VO</dd></div>
+      <div><dt>Sound</dt><dd>English VO carries the words · effects lead</dd></div>
       <div><dt>Beats</dt><dd>{len(beats)}</dd></div>
       <div><dt>Styleframes</dt><dd>{nframes}, rendered</dd></div>
+      <div><dt>Text outside the UI</dt><dd>{tb['used']} moments (max {tb['limit']})</dd></div>
     </dl>
     <figure class="cover">
-      <img src="{E(cover)}" width="1600" height="900" alt="Styleframe B5 at 18.4 s: the periwinkle first block in the wireframe company, labelled First block · guaranteed.">
-      <figcaption><span class="tc">B5 · 18.40 s</span><span>{E(beats[4]['frames'][2]['caption'])} The signature beat: the costed plan lies down as the ground and its top row rises as the first block.</span></figcaption>
+      <a href="storyboard-overview.png" aria-label="Open the storyboard overview image at full size"><img src="storyboard-overview.png" width="3200" height="{OV_H}" alt="The whole storyboard v2 in one image: ten beats in order, each with its number, name, time span, key frames and voice-over line."></a>
+      <figcaption><span class="tc">Overview</span><span>The whole storyboard in one image: every beat, its key frames and its VO line. Open it at full size (3200 px) to zoom.</span></figcaption>
     </figure>
+    <section class="changed" id="changed">
+      <h2>What changed in v2</h2>
+      <blockquote>{E(ch['feedback'])}</blockquote>
+      <p>{E(intro)}</p>
+      <h3>The text budget</h3>
+      <p>{E(tb['uiTextRule'])}</p>
+      <ul class="budget">{budget}</ul>
+      <h3>Beat by beat</h3>
+      <ul>{changes}</ul>
+    </section>
   </header>
 </div>
 <div class="barwrap"><div class="wrap"><nav class="bar" aria-label="Beats on the timeline">{''.join(bar)}<div class="ticks" aria-hidden="true">{ticks}</div></nav></div></div>
 <div class="wrap">
-  <div class="legend"><span class="s-3d-blocks">3D blocks</span><span class="s-flat-ui">Flat UI</span><span class="s-kinetic-type">Kinetic type</span><span class="s-mixed">Mixed</span></div>
+  <div class="legend"><span class="s-3d-blocks">3D blocks</span><span class="s-flat-ui">Flat UI</span><span class="s-mixed">Lockup</span></div>
   <section class="block" id="direction">
     <div class="section-title"><h2>Direction</h2><p>The rules every beat follows.</p></div>
     <div class="notes">{''.join(notes)}</div>
@@ -258,7 +296,7 @@ footer p{{margin:0 0 6px;max-width:80ch}}
   </section>
   <footer>
     <p>Styleframes are drawn as code (HTML and SVG, 1920×1080) with Wicflow’s own fonts and mark, harvested from wicflow.com; the source is in <span class="mono">films/wicflow/plan/storyboard/frames-src/</span>, and the full storyboard is <span class="mono">storyboard.json</span>.</p>
-    <p>Kallio Lämpö is the made-up example company from wicflow.com. Every on-screen phrase comes from the site.</p>
+    <p>Kallio Lämpö is the made-up example company from wicflow.com. Every on-screen phrase comes from the site, and there are no figures on screen. v1 is kept in <span class="mono">storyboard_v1.json</span>; its frames are in git history.</p>
   </footer>
 </div>
 <script>

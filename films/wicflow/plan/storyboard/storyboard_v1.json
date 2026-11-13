@@ -1,0 +1,345 @@
+{
+  "title": "Wicflow hero explainer: the work, in blocks (final storyboard)",
+  "logline": "A company’s work folds into Wicflow’s wireframe block world, and off-the-shelf software won’t sit on it. The AI mapping lifts that work onto the site’s own Week 1 → Week 2 timeline, finds one more process and turns it into a costed plan ranked by return. The plan then lies down as the ground, and its top row rises as the periwinkle first block, guaranteed. Inside that block no open quote goes quiet. Block by block the system builds and lights up as one. For the CTA, the first block’s face seats into the wicflow mark, and then everything unbuilds back into the work so the film loops.",
+  "length_s": 37.6,
+  "beats": [
+    {
+      "id": "B1",
+      "t0": 0,
+      "t1": 3.6,
+      "name": "The work, as blocks",
+      "style": "mixed",
+      "onScreen": "Quotes. / Enquiries. / Hours. / Reports. (one word per line in the left column, each landing with its block)",
+      "vo": "Quotes. Enquiries. Hours. Reports.",
+      "visual": "The background stays still. Four glass work cards (300×200) float where the block world will stand: QUOTE, ENQUIRY, HOURS and REPORT. Each has a small mono tag and abstract content only (placeholder lines, a chat bubble, a timesheet grid, four mini bars), with no invented names or numbers. One by one, each card tips into the isometric plane and becomes a dashed wireframe toy block with a stud as its word lands in the left column. The other ten blocks then draw in around them until the whole 14-block wireframe company stands at the right (x 1000–1720, y 170–971, 74% of the frame height). The card-to-block mapping holds for the whole film: QUOTE → 01 (0,2,0), ENQUIRY → 02 (2,2,0), HOURS → 04 (0,1,1), REPORT → 05 (1,0,1).",
+      "motion": "0.00: the cards are already drifting (B15: 6 px and ±1.5° on a 3.76 s period, phase-offset), so frame 0 moves. 0.15: ‘Quotes.’ rises 40 px (A5 slowed, 0.4 s). With it the QUOTE card corner-pins from upright onto block 01’s top-face rhombus (B3, 0.55 s), its contents dissolve into a dashed stud, the side edges draw downward (B11, 0.25 s) and the block lands with a 3 px drift, no overshoot. 0.70: ‘Enquiries.’ with ENQUIRY → 02. 1.25: ‘Hours.’ with HOURS → 04, which hovers at level 1 until the block beneath it draws. 1.80: ‘Reports.’ with REPORT → 05. 2.20–2.80: the other ten blocks stroke-draw outward from block 01 (0.30 s each, 0.03 s stagger). From 2.80 the dashes march (B10, 12 px/s), and they keep marching in every wire beat. A new event lands every 0.55 s.",
+      "transitionOut": "3.40–3.60: the four words leave upward (ease-in, 24 px, 0.2 s, 0.04 s stagger). At 3.55 the off-the-shelf slab is already entering from above the frame, so the eye passes from the words to the slab with no gap.",
+      "frames": [
+        {
+          "t": 0,
+          "caption": "Loop frame: the work, before it has a shape.",
+          "draw": "1920×1080. BG: still radial gradient centred (1360,560), #131C3A → #0E1630 at 45% → #0B1220 at the edges, with 2% static dither. Four glass cards, each 300×200, radius 20, fill rgba(255,255,255,.07), 1 px border rgba(255,255,255,.14), even shadow 0 0 40 px rgba(0,0,0,.35). QUOTE: centre (1090,600), rotated −8°; Fragment Mono 28 px tag ‘QUOTE’ in rgba(223,230,243,.72) at top left; placeholder lines 200/160/120×12 px in rgba(255,255,255,.22); outlined pill ‘Open’ at bottom right. ENQUIRY: (1420,800), +6°; chat bubble 180×80 with border rgba(255,255,255,.30), two placeholder lines and a small reply arrow. HOURS: (1210,400), +5°; a 5×3 grid of 28 px rounded cells, five filled #6172F3 at 45%. REPORT: (1560,470), −4°; four bars 22 px wide and 40/64/52/80 px tall, gradient #6172F3 → #B9C1FF. The left column (x 170–950) is empty. No blocks, no text.",
+          "file": "site/frames/B01-0000.jpg"
+        },
+        {
+          "t": 1,
+          "caption": "Quotes is now block 01; Enquiries is tipping into place.",
+          "draw": "BG as at 0.00. Left column, Stack Sans Headline 96 px #F3F5FA, tracking −2%: ‘Quotes.’ settled on baseline (170,330); ‘Enquiries.’ at (170,440), 10 px below its final 430, at 85% opacity and rising. Block 01 (0,2,0) has landed as WIRE (dashed 1.5 px rgba(223,230,243,.42), dash 6/6). Top face (1120,565) (1240,634.5) (1120,704) (1000,634.5); vertical edges down 128 px to (1000,762.5) (1120,832) (1240,762.5); dashed stud, an 88×51 ellipse centred (1120,614.5) with 20 px dashed sides. The ENQUIRY card is mid-morph above block 02: a parallelogram about 55% of the way from its upright rectangle to the rhombus (1360,704) (1480,773.5) (1360,843) (1240,773.5), its contents at 40%. The HOURS and REPORT cards still float at their frame-0 positions, drifted 4 px.",
+          "file": "site/frames/B01-0100.jpg"
+        },
+        {
+          "t": 3.2,
+          "caption": "Every piece of work is a block: the company, still in wireframe.",
+          "draw": "Left column, Stack Sans Headline 96 px #F3F5FA: ‘Quotes.’ (170,330), ‘Enquiries.’ (170,430), ‘Hours.’ (170,530), ‘Reports.’ (170,630). Right: the whole company in WIRE, 14 blocks. Nine top faces are visible, with top vertices at (1360,170) 06, (1240,367.5) 04, (1480,367.5) 05, (1600,437) 03, (1120,565) 01, (1360,565), (1240,634.5), (1480,634.5) and (1360,704) 02. Each is a 240×139 rhombus with 128 px dashed sides and a dashed stud; the hidden edges show faintly through, as in reference 1. Silhouette x 1000–1720, y 170–971. Dashes caught mid-march. No fills, no colour.",
+          "file": "site/frames/B01-0320.jpg"
+        }
+      ]
+    },
+    {
+      "id": "B2",
+      "t0": 3.6,
+      "t1": 7.6,
+      "name": "Off the shelf never fits",
+      "style": "3d-blocks",
+      "onScreen": "Software made to work / for every company (44 px) + never quite / fits yours. (96 px) → swap → Built around / how you work. (96 px) + Custom automation and AI, / not software off the shelf. (44 px)",
+      "vo": "Off-the-shelf software never quite fits. We build around how you work.",
+      "visual": "A plain grey slab lowers onto the irregular wireframe company and cannot seat. It is one standard box with a 3×3 footprint, no studs and ‘OFF THE SHELF’ printed on its side. Top block 06 is buried inside it, outlined in thin Wicflow orange, and orange dashed drop lines mark the empty gaps under it. The slab lifts away, and the wireframe tightens while a soft light band reads its real shape. Orange appears only in this beat.",
+      "motion": "3.55–4.25: the slab descends from above the frame (offset −620 px) on a long ease-out (B3, 0.7 s), and its soft shadow grows on the blocks beneath. 4.25–4.45: it sinks the last 20 px; the orange intersection outline around 06 draws on (0.2 s) and the slab stops with a damped 4 px settle, no bounce. 4.45–4.80: three orange gap markers drop from its underside (B11, 0.25 s each, 0.05 s stagger). 3.62/3.68: the two support lines rise (A5, 0.4 s). 3.72/3.84: ‘never quite’ / ‘fits yours.’ rise (landed 4.24). 4.80–5.45, kept alive: the markers pulse (B15, 1.2 s), the slab hovers ±2 px and the dashes march. 5.45–5.65: the old text drops out downward (ease-in, 24 px). 5.50–6.05: the slab lifts away on an ease-in (accelerating out) and fades before the top edge, the markers retracting with it. 5.62/5.74: ‘Built around’ / ‘how you work.’ drop in from 60 px above (A2 slowed, 0.4 s ease-out; landed 6.14). 5.76/5.82: the new support rises (landed 6.22). 6.05–6.50: the dashes tighten from 6/6 to 3/4 and from .42 to .55 opacity (B3). 6.25–7.05: a soft white band sweeps the cluster from its left corner to its right corner (B11), lighting the dashes it touches. 7.05–7.40: the stack breathes (levels part 0–4 px). The band’s afterglow stays on the top faces of the four work blocks (01, 02, 04, 05), which warm to rgba(185,193,255,.10).",
+      "transitionOut": "7.40–7.60: the headline, then the support, leave upward (ease-in, 0.2 s, 0.04 s stagger). At 7.45 the four warmed top faces lift off their blocks; they are about to become the mapping’s chips.",
+      "frames": [
+        {
+          "t": 4.9,
+          "caption": "Off the shelf: one standard slab that won’t seat.",
+          "draw": "Left: Inter 44 px rgba(223,230,243,.72) ‘Software made to work’ (170,330), ‘for every company’ (170,386). Stack Sans Headline 96 px #F3F5FA ‘never quite’ (170,500), ‘fits yours.’ (170,600). Right: the WIRE cluster as at 3.2. The slab fills layer h 2–3 over the whole 3×3 footprint. Top face (1360,170) (1720,378.5) (1360,587) (1000,378.5); sides down to (1000,506.5) (1360,715) (1720,506.5). Faces cool grey (top rgba(154,163,181,.30), left .22, right .26), solid 1.5 px edges rgba(200,206,220,.60), a printed 3×3 grid on top, no studs. Fragment Mono 36 px ‘OFF THE SHELF’ printed along its left face, skewed to the face, #0B1220 at 45%. Block 06 shows through inside it: 2 px #FF5A1F outline with a 14% #FF5A1F fill. Three dashed #FF5A1F verticals (1.5 px, 70%) mark the gaps under the slab and show through it: (1120,506.5)→(1120,634.5), (1360,645.5)→(1360,773.5), (1480,576)→(1480,704). The slab’s soft shadow (black 25%, 30 px blur) lies on the low blocks.",
+          "file": "site/frames/B02-0490.jpg"
+        },
+        {
+          "t": 6.8,
+          "caption": "Built around how you work: the wireframe tightens as light reads it.",
+          "draw": "Left: Stack Sans Headline 96 px #F3F5FA ‘Built around’ (170,420), ‘how you work.’ (170,520). Inter 44 px rgba(223,230,243,.72) ‘Custom automation and AI,’ (170,600), ‘not software off the shelf.’ (170,656). Right: the WIRE cluster with tighter dashes (3/4) at .55 opacity. A soft white band, 120 px wide (white 0 → 14% → 0, with a 1 px core of rgba(255,255,255,.5)), runs parallel to the r-axis with its centre line through (1600,565) and (1240,773.5), sweeping down and to the right. The dashes it touches glow at .85. No slab and no orange.",
+          "file": "site/frames/B02-0680.jpg"
+        }
+      ]
+    },
+    {
+      "id": "B3",
+      "t0": 7.6,
+      "t1": 11.2,
+      "name": "First we map where the time goes",
+      "style": "kinetic-type",
+      "onScreen": "Kicker: AI MAPPING · FIXED PRICE · 1–2 WEEKS. Headline: First we map / where the time goes. (second line in PEACH). Timeline: WEEK 1 · WEEK 2. Chips: Quotes · Enquiries · Hours · Reports, plus New customers (found).",
+      "vo": "First, we map where the time goes.",
+      "visual": "Kinetic type over the site’s own ‘How we start’ timeline, centred. The top faces of the four work blocks become glass chips carrying the B1 words; the rest of the wireframe undraws, leaving only the still navy. A 1200 px timeline draws under the chips, from a white Week 1 dot to a peach Week 2 dot. A soft periwinkle scan travels the line from Week 1 to Week 2. Each chip it passes is mapped: its border lights and a small heat bar grows under it, a schematic return with no number. In a gap at the far left it finds one more process, ‘New customers’, which draws on dashed and then fills. The 3D world rests for two beats so that it can return through the plan.",
+      "motion": "7.45–7.60: the four faces lift 24 px. 7.60–8.20: they fly to the chip row and un-skew from 240×139 rhombi into 64 px glass pills (B2 long S, 0.6 s, 0.05 s stagger), their words fading in. 7.55–8.00: the rest of the wire undraws back to front (stroke retract, ease-in). 7.75–8.15: the kicker types on (A6). 7.85/7.97: the headline lines rise (A5, 0.4 s; landed 8.37), and the PEACH gradient creeps 15% across over 2 s. 8.00–8.50: the timeline draws left to right (B11). The Week 1 dot appears at 8.00 and the Week 2 dot at 8.50 (scale 0 → 1, 0.15 s, no overshoot), and the WEEK labels fade up. 8.55–8.80: the chips slide right to open a gap at the far left (B1, 0.25 s). 8.60–10.20: the scan glow runs from x 360 to x 1560 (B11, 1.6 s). 8.70–9.00: ‘New customers’ draws on dashed (0.15 s) and fills (0.15 s). As the scan reaches each chip (8.86, 9.20, 9.49, 9.77, 10.02), its border turns #B9C1FF for 0.3 s and its heat bar grows (B11, 0.35 s). 10.20–10.50: the Week 2 dot blooms peach (B3).",
+      "transitionOut": "10.85–11.05: kicker and headline leave upward (ease-in, 28 px). 10.95–11.55: the chips swing down into a column at the plan’s row positions (B4 spring, 0.05 s stagger), shedding their pills as the text grows from 36 to 44 px. The timeline glides up to y 446 and stretches to x 330–1590 while its dots and labels fade (0.15 s). It becomes the plan’s divider, and the glass card grows out of that line, 276 px up and 484 px down (ARRIVE, 0.5 s).",
+      "frames": [
+        {
+          "t": 7.85,
+          "caption": "The work lifts off the blocks and becomes chips.",
+          "draw": "Only the BG behind. The remaining WIRE is undrawing from the back: 06, 04, 05 and the back base blocks are gone, and the front base edges remain at 40%. Four glass shapes are about 35% of the way from their top-face rhombi to their chips. Each is a rounded parallelogram about 210×100 (fill rgba(185,193,255,.10), 1 px border rgba(255,255,255,.18)) with its word at 40% in Inter 500 36 px #F3F5FA: ‘Quotes’ at (956,636), ‘Enquiries’ at (1188,727), ‘Hours’ at (1182,508), ‘Reports’ at (1404,508). Each trails a soft 40 px streak back toward its block. Kicker typing ‘AI M’ in Fragment Mono 40 px rgba(223,230,243,.72) from x 528, baseline 250, with a 2×30 px #B9C1FF caret. No headline yet.",
+          "file": "site/frames/B03-0785.jpg"
+        },
+        {
+          "t": 9.25,
+          "caption": "The mapping follows the real work and finds one more.",
+          "draw": "Kicker ‘AI MAPPING · FIXED PRICE · 1–2 WEEKS’, Fragment Mono 40 px muted, centred (x 528–1392), baseline 250. Stack Sans Headline 96 px, centred: ‘First we map’ in #F3F5FA on baseline 380; ‘where the time goes.’ in PEACH (linear-gradient 100deg, #fff 0% → #ffd9c8 60% → #f3a585 100%) on baseline 480. Timeline: 1.5 px rgba(255,255,255,.18) from x 360 to 1560 at y 760, filled with rgba(255,255,255,.55) from 360 up to the scan. Week 1 dot 12 px #FFFFFF at (360,760); Week 2 dot 12 px #ffd9c8 at 50% at (1560,760); ‘WEEK 1’ and ‘WEEK 2’ in Fragment Mono 36 px muted, centred under the dots on baseline 815. Scan glow: a radial ellipse 200×80 rgba(97,114,243,.35) with a 1.5×24 px #B9C1FF core at (850,760). Chips (Inter 500 36 px, 64 px tall, radius 32, fill rgba(255,255,255,.06), 1 px border rgba(255,255,255,.12)) at y 608–672. ‘New customers’ (x 403–707) has just filled, its border fading from #B9C1FF, with an 80×4 px heat bar (gradient #6172F3 → #B9C1FF) at x 431, y 684. ‘Quotes’ (x 723–899) has a #B9C1FF border and its heat bar is 60 of 120 px long from x 751. ‘Enquiries’ (x 915–1143), ‘Hours’ (x 1159–1311) and ‘Reports’ (x 1327–1517) are not yet mapped, text at 72%.",
+          "file": "site/frames/B03-0925.jpg"
+        },
+        {
+          "t": 10.4,
+          "caption": "Five processes mapped; on to Week 2, the costed plan.",
+          "draw": "Kicker and headline as at 9.25. The timeline is fully filled. The Week 2 dot is #ffd9c8 at full strength with a 28 px glow rgba(255,217,200,.5), and the scan glow rests on it. All five chips are mapped: text #F3F5FA, borders back to rgba(255,255,255,.12). Heat bars at y 684, 4 px tall, starting 28 px inside each chip’s left edge: New customers 80, Quotes 120, Enquiries 98, Hours 64, Reports 48 px. WEEK labels in place.",
+          "file": "site/frames/B03-1040.jpg"
+        }
+      ]
+    },
+    {
+      "id": "B4",
+      "t0": 11.2,
+      "t1": 15.2,
+      "name": "A costed plan, highest return first",
+      "style": "flat-ui",
+      "onScreen": "AI MAPPING · FIXED PRICE · 1–2 WEEKS / A costed plan → Highest return first. / Build first · Returns · Costs / 01 Quote follow-ups [First block] / 02 Enquiries answered / 03 New customers / 04 Hours to invoices / 05 Owner’s weekly report / Example: Kallio Lämpö, a made-up heating company",
+      "vo": "A costed plan. Highest return first.",
+      "visual": "A centred glass card shows what the mapping delivers. The chips are now its rows, and each short word drops through to its full Kallio Lämpö block name. The heat bars slide into a Returns column and grow, and a Costs column shows ‘€’ with a schematic bar; there are no digits anywhere. Then the rows physically re-rank by return. The heading drops through to ‘Highest return first.’, the numbers 01–05 step in, and Quote follow-ups, now on top, gets the ‘First block’ tag. A footnote names Kallio Lämpö as the site’s made-up example.",
+      "motion": "11.20–11.55: the card completes and the rows settle in the order they were found: New customers, Quotes, Enquiries, Hours, Reports. 11.30–11.70: the mono label types on (A6). 11.35: ‘A costed plan’ rises (A5, 0.4 s; landed 11.75). 11.50–11.95: each short word drops through to its block name (A2, 8 f halves, 0.06 s stagger). 11.70–11.90: column heads and footnote fade in. 11.80–12.40: the heat bars slide into the Returns column (B2, 0.3 s) and grow to full length (B11, 0.35 s, 0.06 s stagger); each cost cell fades up 0.07 s after its bar. 12.40–13.10, kept alive: the card floats ±3 px (B15), and a glint runs along the longest bar at 12.60 (0.4 s). 13.10–13.60, the re-rank by return (B2 long S, 0.5 s, 0.03 s stagger): Quote follow-ups rises to row 1 and Enquiries answered to row 2, both lifted (scale 1.01, shadow 0 12 32 rgba(0,0,0,.45)) and passing in front; New customers sinks to row 3 behind them at 85%. 13.15–13.55: the heading drops through (A2, 0.2 s halves) to ‘Highest return first.’ 13.55–13.85: ‘01’…‘05’ step in (B13, 0.05 s stagger). 13.75–14.05: row 01’s highlight glides in (B4, 0.3 s) and its number turns #B9C1FF. 13.95–14.25: the ‘First block’ tag fades in and scales from 0.96 to 1.0 (B3, no overshoot). 14.25: rows 02–05 dim to 60%. 14.35: a sheen runs along row 01’s return bar (0.5 s).",
+      "transitionOut": "14.80–15.00: heading, mono label, column heads, footnote and rows 02–05 leave (ease-in, 0.2 s). 14.85–15.15: row 01 lifts off the card (scale 1.03, its shadow growing to 0 24 60 rgba(0,0,0,.5), B3). At 15.20 the emptied card starts to tilt into the ground.",
+      "frames": [
+        {
+          "t": 11.6,
+          "caption": "The timeline is now the plan’s divider, and the chips are its rows.",
+          "draw": "Card: x 300–1620, y 170–930, radius 28, fill rgba(255,255,255,.055), 1 px border rgba(255,255,255,.10), 24 px backdrop blur, even shadow 0 0 60 rgba(0,0,0,.35). Divider (the former timeline): 1 px rgba(255,255,255,.10) at y 446, x 330–1590, with a last peach glint fading at its right end. Fragment Mono 40 px rgba(223,230,243,.72) typing ‘AI MAPPING · FIXED PR’ from x 360, baseline 236. ‘A costed plan’ in Stack Sans Headline 96 px #F3F5FA is rising at 70%, 12 px below its baseline (360,340). Rows in Inter 44 px #F3F5FA at x 430 on baselines 514/594/674/754/834: ‘New customers’; ‘Quote follow-ups’ half in from above and clipped to its row, with ‘Quotes’ sliding out below; ‘Enquiries’, ‘Hours’ and ‘Reports’ still short. Each row’s 4 px heat bar still sits under its name, 18 px below the baseline.",
+          "file": "site/frames/B04-1160.jpg"
+        },
+        {
+          "t": 12.45,
+          "caption": "A costed plan: what to build first, what it returns, what it costs.",
+          "draw": "Card as at 11.6. Mono label ‘AI MAPPING · FIXED PRICE · 1–2 WEEKS’ (360,236). Heading ‘A costed plan’ in Stack Sans Headline 96 px #F3F5FA (360,340). Column heads in Fragment Mono 36 px muted on baseline 420: ‘Build first’ x 360, ‘Returns’ x 1080, ‘Costs’ x 1370. Divider at y 446. Rows have an 80 px pitch (centres 498/578/658/738/818) with 1 px separators rgba(255,255,255,.06). Names in Inter 44 px #F3F5FA at x 430, in the order found: ‘New customers’, ‘Quote follow-ups’, ‘Enquiries answered’, ‘Hours to invoices’, ‘Owner’s weekly report’. Return bars start at x 1080: 14 px tall, radius 7, gradient #6172F3 → #B9C1FF, centred on each row, lengths 160, 240, 196, 128, 96 px. Cost cells: ‘€’ in Inter 40 px muted at x 1370, then a 14 px bar rgba(223,230,243,.35) from x 1406, lengths 96, 112, 104, 96, 88 px. Footnote in Fragment Mono 28 px rgba(223,230,243,.5): ‘Example: Kallio Lämpö, a made-up heating company’ at (360,900). No numbers and no highlight yet.",
+          "file": "site/frames/B04-1245.jpg"
+        },
+        {
+          "t": 13.35,
+          "caption": "Re-ranked by return.",
+          "draw": "As at 12.45, mid-move. The ‘Quote follow-ups’ row (name and both bars) is rising at centre y 538, lifted (scale 1.01, shadow 0 12 32 rgba(0,0,0,.45)). ‘Enquiries answered’ is rising at 618, also lifted. ‘New customers’ is sinking at 578, behind them at 85%. ‘Hours to invoices’ (738) and ‘Owner’s weekly report’ (818) stay where they are. The heading is mid drop-through, clipped to the band y 260–362: ‘A costed plan’ 50 px below its baseline at 40%, and ‘Highest return first.’ 50 px above its baseline at 60%.",
+          "file": "site/frames/B04-1335.jpg"
+        },
+        {
+          "t": 14.4,
+          "caption": "Highest return first: Quote follow-ups becomes the first block.",
+          "draw": "Heading ‘Highest return first.’ in Stack Sans Headline 96 px #F3F5FA (360,340). Rows in their final order, with Fragment Mono 36 px numbers at x 360 (muted, except row 01’s in #B9C1FF): ‘01 Quote follow-ups’ (baseline 514), ‘02 Enquiries answered’ (594), ‘03 New customers’ (674), ‘04 Hours to invoices’ (754), ‘05 Owner’s weekly report’ (834). Return bars 240/196/160/128/96 and cost bars 112/104/96/96/88 sit in the same rows. Row 01 highlight: x 330–1590, y 462–534, radius 16, fill rgba(185,193,255,.16), 1.5 px border rgba(185,193,255,.75). Tag on row 01: pill x 820–1037, y 476–520, radius 22, fill #B9C1FF, Fragment Mono 28 px #0B1220 ‘First block’. A white sheen (an 80 px band at 18%) is halfway along row 01’s return bar. Rows 02–05 at 60%. The card is 2 px above its rest position (breathing). Footnote as before.",
+          "file": "site/frames/B04-1440.jpg"
+        }
+      ]
+    },
+    {
+      "id": "B5",
+      "t0": 15.2,
+      "t1": 19.4,
+      "name": "First block, guaranteed",
+      "style": "3d-blocks",
+      "onScreen": "Leader label: First block · guaranteed. Headline: If it doesn’t do / what we agreed, / you don’t pay.",
+      "vo": "First block, guaranteed. Not as agreed? You don’t pay.",
+      "visual": "The signature flourish, where flat UI turns into the 3D world. The emptied plan card tilts and lies down as the floor of the block world, its rows and columns re-spacing into the 3×3 cells. The lifted top row shrinks onto the first block’s cell, lands flush and extrudes into the periwinkle first block with its stud and glow. The rest of the company draws back in around it as dashed wireframe (reference 1), rippling outward from the first block, and the reference’s thin leader line drops to ‘First block · guaranteed’. The left column states the guarantee in the site’s own words.",
+      "motion": "15.20–16.20: the card corner-pins into the floor footprint (B2 long S, 1.0 s, motion blur on the six fastest frames): (300,170) → (1000,762.5), (1620,170) → (1360,554), (1620,930) → (1720,762.5), (300,930) → (1360,971). Its fill fades from .055 to 0, its border turns WIRE, and its five row lines and two column lines re-space into the floor’s 2 + 2 inner lines (the extras fade). 15.40–16.30: the lifted row contracts and corner-pins onto cell (0,2,0)’s footprint, (1120,693) (1240,762.5) (1120,832) (1000,762.5), landing flush as its tint rises to GLASS-PERI (B2, 0.9 s). 16.40–16.70, extrusion: the top face rises 128 px and the side faces grow (ARRIVE, 0.3 s) while the fill goes from GLASS-PERI to PERI; the last 3 px of the rise are the settle. 16.65–16.80: the stud rises 20 px. 16.70–17.10: the glow blooms. 16.70–17.40: the other 13 blocks draw on in WIRE, rippling out from block 01 (0.25 s each, 0.04 s stagger), and the floor lines become their bottom edges. 16.90–17.25: the leader draws down (B11); the dot appears at 17.25 (0.1 s) and the label types on 17.30–17.75 (A6). 17.00/17.12/17.24: the headline lines rise (A5, 0.4 s; landed 17.64). 17.75–19.00, kept alive: the glow breathes (B15, 2.4 s), the dashes march, a glint arc crosses the stud at 18.30, and the label dot pulses once at 18.80.",
+      "transitionOut": "19.15–19.35: the headline leaves upward (ease-in); the label stays. 18.95–19.13: block 01 grows from 1.00 to 1.04 about its top-face centre (1120,634.5) (B3). 19.13–19.40: it zooms through ×4 into its top face (B16 whipIn, 16 frames), and the cut to the automation panel falls on the fastest frame.",
+      "frames": [
+        {
+          "t": 15.7,
+          "caption": "The plan lies down to become the ground.",
+          "draw": "Left column empty. The emptied card is halfway through its corner-pin: a foreshortened quad with corners at about (650,466), (1490,362), (1670,846), (830,950). Fill rgba(255,255,255,.02); border and the re-spacing grid lines are now dashed rgba(223,230,243,.42), dash 6/6, with 8 px motion blur on the fastest edges. The lifted row is about a quarter of the way to its cell: a glass bar about 1000×80 centred (1000,564), rotated −8° and starting to shear, fill rgba(185,193,255,.30), 1.5 px #B9C1FF border. ‘Quote follow-ups’ and the ‘First block’ tag are at 40% and fading, and a soft shadow 0 24 60 rgba(0,0,0,.5) lies under the bar.",
+          "file": "site/frames/B05-1570.jpg"
+        },
+        {
+          "t": 16.75,
+          "caption": "The top row rises as the first block.",
+          "draw": "Floor: a dashed WIRE 3×3 rhombus with corners (1360,554) (1720,762.5) (1360,971) (1000,762.5), and inner lines (1480,623.5)→(1120,832), (1600,693)→(1240,901.5), (1240,623.5)→(1600,832), (1120,693)→(1480,901.5). Block 01 in PERI, fully extruded: top face (1120,565) (1240,634.5) (1120,704) (1000,634.5) in #CDD3FF; left face (1000,634.5) (1120,704) (1120,832) (1000,762.5) in #B9C1FF; right face (1120,704) (1240,634.5) (1240,762.5) (1120,832) in #98A2F5; edges 1 px rgba(255,255,255,.55). The stud has risen 14 of its 20 px: an 88×51 ellipse, top #DDE1FF, sides #B9C1FF. Glow (60 px blur, rgba(97,114,243,.45)) at 50%. The dashed outlines of (1,2,0) and (0,1,0) are 20% drawn beside it.",
+          "file": "site/frames/B05-1675.jpg"
+        },
+        {
+          "t": 18.4,
+          "caption": "First block · guaranteed.",
+          "draw": "Right: the full WIRE company (13 dashed blocks with dashed studs, top block 06 at (1360,170)), with the floor lines now its bottom edges. Block 01 is PERI with full glow and a thin white glint arc on its stud’s near rim. Leader: 1 px rgba(223,230,243,.5) from (1000,762.5) down to (1000,930), with an 8 px #F3F5FA dot at (1000,930). Label: Fragment Mono 40 px #F3F5FA at 85%, ‘First block · guaranteed’, right-aligned to x 982 at baseline 944. Left column, Stack Sans Headline 96 px #F3F5FA: ‘If it doesn’t do’ (170,380), ‘what we agreed,’ (170,480), ‘you don’t pay.’ (170,580).",
+          "file": "site/frames/B05-1840.jpg"
+        }
+      ]
+    },
+    {
+      "id": "B6",
+      "t0": 19.4,
+      "t1": 23.2,
+      "name": "Inside the block: it runs",
+      "style": "flat-ui",
+      "onScreen": "Headline: No open quote / goes quiet. Support: Drafts ready for / the salesperson. Panel: First block · Quote follow-ups · ● Running · Open → Draft ready (×3) · Kallio Lämpö · a made-up example",
+      "vo": "Then it runs. No open quote goes quiet.",
+      "visual": "Inside the first block, the quote follow-up automation is running. It uses Wicflow’s glass UI tinted periwinkle, so the block’s colour carries over. The panel takes the cluster’s place and shows the ‘First block’ tag, the title ‘Quote follow-ups’, a green ‘Running’ dot and three open-quote rows made of placeholder lines (no invented names). A highlight steps down the rows. For each one a draft slides out and types itself, and the pill changes from ‘Open’ to ‘Draft ready’. The kinetic touch, taken from Concept B and made true: while the third quote waits, the letters of ‘quiet.’ dim one by one, and when its draft is ready they brighten back. The automation keeps the quote from going quiet.",
+      "motion": "19.40–19.67: the panel grows from 25% to 100% about (1360,540) on whipOut (16 frames), with radial motion blur in the first 6. Its contents follow (B9: header 3 frames behind, rows 6). 19.70/19.82: ‘No open quote’ / ‘goes quiet.’ rise (A5, 0.4 s; landed 20.22). 19.80: the Running dot starts pulsing (B15, 1.2 s). 19.90–20.35, row 1: a 2 px #B9C1FF highlight glides in (B4, 0.2 s); a draft card slides 70 px out from behind the document glyph (B3, 0.3 s) and its three lines type on (A6); at 20.25 the pill cross-fades from ‘Open’ to ‘Draft ready’ and widens (B1, 0.2 s). 20.40–20.85: row 2 does the same, with its pill changing at 20.75. 20.60–21.00: the support fades up (B3). 20.90: the highlight reaches row 3. Its time track fills (B11, 20.95–21.80) while the letters of ‘quiet.’ dim to 45% from left to right (0.08 s stagger, 0.3 s each, 21.00–21.70). 21.80–22.15: row 3’s draft slides out and types. 22.15: its pill flips to ‘Draft ready’, and the letters of ‘quiet.’ brighten back to 100% in a soft wave (0.05 s stagger, 22.15–22.50). 22.40–22.90: a sheen runs down the three ‘Draft ready’ pills while the panel breathes 2 px.",
+      "transitionOut": "22.85–23.05: the text leaves (ease-in). 22.93–23.20: the panel shrinks into block 01’s top face (reverse zoom-through, whipIn, 16 frames). At the cut (23.20) the world appears at ×4 about (1120,634.5) and settles to ×1 by 23.47 (whipOut), with block 01 glowing in place.",
+      "frames": [
+        {
+          "t": 19.55,
+          "caption": "Through the block into the automation it runs.",
+          "draw": "Navy BG. The automation panel is at about 60% scale, centred on (1360,540), roughly 456×420: periwinkle glass (fill rgba(97,114,243,.10), 1 px border rgba(185,193,255,.35)) with its contents still blurred and radial motion streaks of 8–14 px from its centre. At the four frame corners, the last of the giant PERI top face and stud (×4) is leaving the frame in #CDD3FF at 35%. The left column is empty.",
+          "file": "site/frames/B06-1955.jpg"
+        },
+        {
+          "t": 21.4,
+          "caption": "The third quote waits, and ‘quiet.’ starts to go quiet.",
+          "draw": "Panel: x 980–1740, y 190–890, radius 28, fill rgba(97,114,243,.10), 1 px border rgba(185,193,255,.35), even shadow. Header: pill x 1030–1220, y 236–284, fill #B9C1FF, Fragment Mono 30 px #0B1220 ‘First block’; a 12 px #16B857 dot with a soft pulse ring at (1520,260), then Fragment Mono 36 px #F3F5FA ‘Running’ from x 1542, baseline 272. Title: Stack Sans Headline 56 px #F3F5FA ‘Quote follow-ups’ (1030,360). Divider: 1 px rgba(255,255,255,.10) at y 392, x 1010–1710. Three rows, x 1010–1710, 120 px tall at y 420/560/700, radius 18, fill rgba(255,255,255,.04), border rgba(255,255,255,.10). Each row has an outlined document glyph 56×72 at x 1040, placeholder lines 240×14 and 170×14 in rgba(255,255,255,.20) at x 1120, and a status pill at x 1500–1690, 52 px tall. Rows 1 and 2: a periwinkle-tinted draft card 110×76 at x 1110 with three typed lines, and the pill filled #6172F3 with Fragment Mono 32 px #F3F5FA ‘Draft ready’. Row 3: a 2 px #B9C1FF outline; its pill still reads ‘Open’ (fill rgba(255,255,255,.08), Fragment Mono 32 px muted); a 1 px time track rgba(255,255,255,.14) at y 790, x 1120–1460, filled with rgba(223,230,243,.5) to x 1330. Footer: Fragment Mono 28 px muted ‘Kallio Lämpö · a made-up example’ (1030,862). Left: Stack Sans Headline 96 px #F3F5FA ‘No open quote’ (170,420) and ‘goes quiet.’ (170,520), where ‘q’ and ‘u’ are at 45%, ‘i’ at 55%, ‘e’ at 75%, ‘t’ at 90% and ‘.’ at 100%. Inter 44 px rgba(223,230,243,.72) ‘Drafts ready for’ (170,600), ‘the salesperson.’ (170,656).",
+          "file": "site/frames/B06-2140.jpg"
+        },
+        {
+          "t": 22.4,
+          "caption": "No open quote goes quiet: every draft is ready.",
+          "draw": "Panel as at 21.4. All three rows have their draft cards out and their pills read ‘Draft ready’ (#6172F3). A soft white sheen (a 60 px band at 25%) is crossing row 1’s pill; row 3’s outline is fading to 40% and its time track is gone. Left: ‘goes quiet.’ is back to full #F3F5FA, the trailing ‘.’ still carrying a faint 12 px glow from the brightening wave. Support as at 21.4. The Running dot is mid-pulse.",
+          "file": "site/frames/B06-2240.jpg"
+        }
+      ]
+    },
+    {
+      "id": "B7",
+      "t0": 23.2,
+      "t1": 27,
+      "name": "Block by block",
+      "style": "3d-blocks",
+      "onScreen": "Headline: Block by block. List: 01 Quote follow-ups / 02 Enquiries answered / 03 New customers / 04 Hours to invoices / 05 Owner’s weekly report. Support: Every block priced in writing / before we start. (The label ‘First block · guaranteed’ returns at 70%.)",
+      "vo": "Block by block, each priced in writing before we start.",
+      "visual": "The system takes shape in the reference’s order. The wireframe turns to glass, with top block 06 staying dashed (reference 3). Then the named blocks turn solid white-lavender one at a time, each printing its number on its left face. The left column carries the site’s own numbered list (01–05), and each row lights as its block lands, so words and blocks are linked by number rather than by leader lines crossing the stack.",
+      "motion": "23.20–23.47: the world settles from ×4 to ×1 (whipOut). 23.40: ‘Block by block.’ rises (A5; landed 23.80). 23.45: the first-block label types back on at 70%. 23.45–23.85: every WIRE block except 06 turns GLASS: its dashes become faint solid edges and its faces fill (0.2 s each, rippling out from 01, 0.02 s stagger). 23.50–23.70: the list rows rise 16 px at 50% (0.05 s stagger), with row 01 already lit. The builds are 0.6 s apart: 02 at 23.75, 03 at 24.35, 04 at 24.95, 05 at 25.55. Each block goes from GLASS to SOLID, brightening from the top down (0.35 s), lands with a 3 px drift and prints its number (0.2 s fade); its list row lights 0.3 s after the build starts (B13). 24.40–24.80: the support fades up (landed 24.80). 26.05–26.60, kept alive: the stack breathes (levels part 0–5 px on a 2.8 s sine), and a soft light passes over the five solid top faces in order, 01 to 05, 0.1 s apart.",
+      "transitionOut": "26.60–27.05: ‘Block by block.’ and the support leave upward (ease-in). The five list rows slide together (B1, 0.45 s) and resolve into one line, ‘One system.’, which becomes B8’s headline. At 26.90 the first light line starts drawing from block 01.",
+      "frames": [
+        {
+          "t": 24.05,
+          "caption": "Glass, then the next block: Enquiries answered.",
+          "draw": "The world is at ×1. Block 01 is PERI with Fragment Mono 34 px ‘01’ printed on its left face (skewed to the face, #0B1220 at 35%). Block 02 (2,2,0), top face (1360,704) (1480,773.5) (1360,843) (1240,773.5), is 60% of the way from GLASS to SOLID (top #F2F3FC, sides #DCDFF5 and #C2C7EC, at 60%) and sits 2 px above rest. Every other block is GLASS (faces rgba(255,255,255,.06/.035/.05), 1.25 px edges rgba(255,255,255,.22), studs rgba(255,255,255,.08)), except 06 (0,0,2), which is still dashed WIRE. The first-block leader and label are at 70%, positioned as at 18.4. Left: Stack Sans Headline 96 px #F3F5FA ‘Block by block.’ (170,250). List with Fragment Mono 36 px numbers at x 170 and Inter 44 px names at x 240, baselines 350/425/500/575/650: ‘01 Quote follow-ups’ (number #B9C1FF, name #F3F5FA); ‘02 Enquiries answered’ at 80% and brightening; ‘03 New customers’, ‘04 Hours to invoices’ and ‘05 Owner’s weekly report’ at 50%.",
+          "file": "site/frames/B07-2405.jpg"
+        },
+        {
+          "t": 26.3,
+          "caption": "Every block priced in writing before we start.",
+          "draw": "Block 01 is PERI with ‘01’. Blocks 02 (2,2,0), 03 (2,0,1), 04 (0,1,1) and 05 (1,0,1) are SOLID (top #F2F3FC, left #DCDFF5, right #C2C7EC, stud top #FFFFFF, 40 px glow rgba(185,193,255,.22)), each with its number on its left face. Block 03 stands on the glass block (2,0,0), with its top face at (1600,437) (1720,506.5) (1600,576) (1480,506.5). Block 06 is dashed WIRE. (0,0,0), (1,0,0), (2,0,0), (0,1,0), (1,1,0), (2,1,0), (1,2,0) and (0,0,1) are GLASS. The levels are parted 4 px (breathing), and a soft white light lies on 03’s top face. Left: the headline as at 24.05; every list row in #F3F5FA; Inter 44 px rgba(223,230,243,.72) ‘Every block priced in writing’ (170,760), ‘before we start.’ (170,814). The first-block label is at 70%.",
+          "file": "site/frames/B07-2630.jpg"
+        }
+      ]
+    },
+    {
+      "id": "B8",
+      "t0": 27,
+      "t1": 30.8,
+      "name": "One system, all of it connected",
+      "style": "3d-blocks",
+      "onScreen": "Headline: One system. Support: In your name and colours. Leader label at the top block: All of it connected. Chips: Hosted in Finland · One contact at Wicflow.",
+      "vo": "One system, all of it connected, hosted in Finland.",
+      "visual": "The reference’s finale. Thin periwinkle light lines run between the six named blocks along isometric directions, floating just above the surfaces and converging on top block 06, which turns solid with a brighter glow. A leader rises from it to ‘All of it connected’, as in reference 4. Then comes the second flourish: one bright pulse runs from block 01 through the whole network, lighting every stud in turn, and after that small pulses keep travelling the lines. The left column holds ‘One system.’, the name-and-colours line and two chips saying how it is run.",
+      "motion": "27.05: ‘One system.’ lands, formed from the merged list. 26.90–27.90: the light lines draw on in order 01→02, 02→03, 01→04, 03→05, 04→06, 05→06 (B11, 0.4 s each, 0.12 s stagger), each led by a small spark. 27.50–27.90: 06 goes WIRE → GLASS → SOLID with a brighter glow, lands with a 3 px drift and prints ‘06’. 27.70–28.10: the support rises (A5). 27.85–28.15: the top leader draws upward (B11); the dot appears at 28.15 and ‘All of it connected’ types on 28.15–28.55 (A6). 28.20–29.00, the connection pulse: one bright wave travels from 01 through every line to 06 (B11, 0.8 s), and the studs light white as it reaches them. On arrival, 06 gives off a soft halo (0.4 s) and every solid block’s glow steps up 20%. 28.60–28.95: the two chips rise 16 px and fade in (B3, 0.1 s stagger). From 29.00: 12 px pulses travel the lines toward 06 at a constant 240 px/s (B10), three at a time, and the stack breathes.",
+      "transitionOut": "30.50–30.75: the text, the chips, the top label and the first-block label leave (ease-in, 0.25 s). The lit, connected cluster stays with its pulses running, and block 01’s top face brightens, about to lift.",
+      "frames": [
+        {
+          "t": 27.45,
+          "caption": "Connections draw between the blocks.",
+          "draw": "Blocks as at 26.3, with 06 still dashed. Light lines: 2 px #B9C1FF at 85% with a 10 px glow rgba(97,114,243,.5), floating above the surfaces. Fully drawn: 01→02 from (1120,634.5) to (1360,773.5); 02→03 from (1360,773.5) to (1540,669.25), up 03’s face to (1540,541.25), then to (1600,506.5). Still drawing: 01→04, (1120,634.5) → (1180,599.75) → (1180,471.75) → (1240,437), at 78%; 03→05, (1600,506.5) → (1480,437), at 48%; 04→06, (1240,437) → (1300,402.25) → (1300,274.25) → (1360,239.5), at 18%. Not started: 05→06, (1480,437) → (1420,402.25) → (1420,274.25) → (1360,239.5). Each drawing tip carries a 10 px white spark. Left: Stack Sans Headline 96 px #F3F5FA ‘One system.’ (170,420). The first-block label is at 70%.",
+          "file": "site/frames/B08-2745.jpg"
+        },
+        {
+          "t": 28.6,
+          "caption": "The pulse runs through the system: all of it connected.",
+          "draw": "All six lines are drawn. Block 06 is SOLID with ‘06’; its top face is (1360,170) (1480,239.5) (1360,309) (1240,239.5). The bright wave has passed 01, 02, 04 and 03, whose studs are lit #FFFFFF with 16 px glows. It is climbing 04→06 at (1300,330) and crossing 03→05 at (1540,472). Top leader: 1 px rgba(223,230,243,.5) from (1360,166) up to (1360,118), with an 8 px #F3F5FA dot at (1360,112) and Fragment Mono 40 px #F3F5FA at 85% ‘All of it connected’, right-aligned to x 1342 at baseline 124. Left: ‘One system.’ (96 px, baseline 420); Inter 44 px rgba(223,230,243,.72) ‘In your name and colours.’ (170,500). The two chips are 20% in, 13 px below their rest positions.",
+          "file": "site/frames/B08-2860.jpg"
+        },
+        {
+          "t": 30.2,
+          "caption": "One system, run from Finland.",
+          "draw": "All six lines are lit. Three 12 px white pulse dots with 20 px glows are travelling toward 06, at (1180,540), (1540,600) and (1420,330). Every stud is lit, 06 has a soft halo, and every solid block’s glow is up 20%. The top label and the first-block label (70%) are on. Left: ‘One system.’ (baseline 420); ‘In your name and colours.’ (170,500). Chips (radius 32, fill rgba(255,255,255,.06), 1 px border rgba(255,255,255,.10), Fragment Mono 40 px #F3F5FA): ‘Hosted in Finland’ at x 170–638, y 600–664, text from x 200 on baseline 646; ‘One contact at Wicflow’ at x 170–758, y 684–748, baseline 730.",
+          "file": "site/frames/B08-3020.jpg"
+        }
+      ]
+    },
+    {
+      "id": "B9",
+      "t0": 30.8,
+      "t1": 35.8,
+      "name": "Let’s find the first thing to build",
+      "style": "mixed",
+      "onScreen": "wicflow mark + wordmark / Let’s find the / first thing / to build. / [ Book an AI mapping → ] / 300+ projects built",
+      "vo": "Let’s find the first thing to build. Book an AI mapping.",
+      "visual": "The system signs off as Wicflow. A light copy of the first block’s periwinkle top face lifts off, turns face-on and flies into the left negative-space diamond of the real wicflow mark (harvest/wicflow-mark.png in #F3F5FA, never redrawn), and the mark is revealed around it. The copy then fades so the mark stands untouched, and the wordmark slides out beside it. Below come the site’s closing line, the CTA pill and the proof line. The lit, connected cluster stays at the right with its pulses running and breathes out to 0.96; apart from the zoom-throughs, this is the film’s only scale move.",
+      "motion": "30.80–31.10: the face copy lifts 24 px off block 01 (B3). 31.10–31.80: it flies to the mark position with a soft trail (B2 long S, 0.7 s), turning from the 240×139 rhombus into the mark’s left diamond: top (222,212), right (253,250), bottom (233,283), left (202,248). 31.70–32.10: the mark is revealed around it by a radial mask growing from the diamond (B3, 0.4 s). 31.90–32.30: the wordmark slides 24 px right out from behind the mark and fades in (B3, B9 follow-through). 32.10–32.40: the periwinkle diamond fades, leaving the mark exactly as supplied. 32.10/32.22/32.34: the three headline lines rise (A5, 0.4 s; landed 32.74). 32.80–33.20: the CTA pill rises 24 px and fades in (B3). 33.20–33.50: the proof line fades in. 34.10–34.70: a sheen sweeps once across the pill. 35.00: block 01’s glow pulses once (0.4 s). Throughout the beat: the arrow nudges 6 px (B15, 1.6 s), the pulses keep travelling, and the world scales from 1.0 to 0.96 about (960,540) over 30.8–33.8 (B3, one calm breath out).",
+      "transitionOut": "35.45–35.75: headline, proof line and pill leave (ease-in, 0.3 s, pill last). 35.65: the periwinkle diamond reappears in the mark and flies back down to block 01’s top face (B2, 0.45 s) as the mark and wordmark fade (0.25 s).",
+      "frames": [
+        {
+          "t": 31.45,
+          "caption": "The first block’s face lifts off toward the mark.",
+          "draw": "No text. The lit, connected cluster at scale 0.99 about (960,540), with pulses on the lines. A light copy of block 01’s top face (#CDD3FF at 90%, 1 px white edge) is halfway along its flight, centred (674,429). It is about 146×105 and nearly square-on-point as it turns face-on, with a 60 px periwinkle trail back toward the block. Block 01 itself stays PERI in place.",
+          "file": "site/frames/B09-3145.jpg"
+        },
+        {
+          "t": 31.95,
+          "caption": "The face seats into the wicflow mark.",
+          "draw": "The periwinkle diamond (#CDD3FF, 1 px white edge) is seated at top (222,212), right (253,250), bottom (233,283), left (202,248). The real wicflow mark (harvest/wicflow-mark.png in #F3F5FA, opaque area x 170–326, y 196–296) is about 60% revealed by a radial mask growing from (228,248). The wordmark ‘wicflow’ (as set in the site nav: #F3F5FA, Stack Sans Headline 600, 68 px) is at 30%, sliding from x 330 toward x 350, baseline 284. Right: the cluster at scale 0.985 with its pulses. No headline yet.",
+          "file": "site/frames/B09-3195.jpg"
+        },
+        {
+          "t": 34.4,
+          "caption": "Let’s find the first thing to build.",
+          "draw": "Left: the mark at x 170–326, y 196–296 in #F3F5FA, its negative space navy again; ‘wicflow’ from x 350, baseline 284. Stack Sans Headline 96 px #F3F5FA: ‘Let’s find the’ (170,450), ‘first thing’ (170,550), ‘to build.’ (170,650). CTA pill: x 170–770, y 712–808, radius 48, fill #FFFFFF, with ‘Book an AI mapping’ in Inter 600 44 px #0B1220 from x 218, baseline 776, and a ‘→’ at x 712 (nudged 3 px). A sheen band (120 px wide, skewed 20°, white 35% → 0) is crossing it at x 470. Fragment Mono 40 px rgba(223,230,243,.72) ‘300+ projects built’ at (170,900). Right: the lit, connected cluster at scale 0.96 about (960,540): top vertex (1344,185), block 01’s top-face centre (1114,631), extents x 998–1690 and y 185–954. Pulses on the lines; no labels.",
+          "file": "site/frames/B09-3440.jpg"
+        }
+      ]
+    },
+    {
+      "id": "B10",
+      "t0": 35.8,
+      "t1": 37.6,
+      "name": "Back to the work (loop)",
+      "style": "3d-blocks",
+      "onScreen": "none",
+      "vo": "(none: the tail of the music bed carries the loop)",
+      "visual": "The film exhales back to its first frame. The face returns to the first block and the system unbuilds in reverse: solid → glass → wire, the lines retracting, the periwinkle block last. The unnamed blocks undraw, and the four work blocks fold back up into the floating QUOTE, ENQUIRY, HOURS and REPORT cards. The work keeps coming, and the loop restarts.",
+      "motion": "35.65–36.10: the diamond flies back onto block 01’s top face and fades into it. 35.95–36.75: blocks 06, 05, 04, 03 and 02 unbuild in that order (0.1 s stagger): SOLID → GLASS (0.2 s) → WIRE (0.2 s). 36.00–36.60: the light lines retract toward 01 (stroke undraw, ease-in) while the world scales from 0.96 back to 1.0 (B3). 36.30–36.60: the unnamed glass blocks return to dashes. 36.50–36.85: block 01 goes PERI → GLASS-PERI → WIRE, its glow lingering longest. 36.75–37.10: the dashed outlines of the ten blocks without cards undraw from the back forward (0.2 s each, 0.02 s stagger). 36.95–37.60: the four card blocks fold up. Their side faces retract into the top face (0.2 s), the top face corner-pins upright into its card (B3, 0.45 s), and the card’s contents fade back in. Each card arrives at its frame-0 position and rotation; its B15 drift is layered on the fold path, so it reaches frame 0 with the same pose and velocity.",
+      "transitionOut": "Seamless loop: 37.60 ≡ 0.00 (frame 2256 = frame 0). Cards, drift phase and BG match exactly, and ‘Quotes.’ returns 0.15 s into the next loop.",
+      "frames": [
+        {
+          "t": 36.4,
+          "caption": "The system exhales back to wireframe.",
+          "draw": "Text and mark are gone; the world is at scale 0.98. Block 06 is WIRE again; 05 is nearly WIRE (a faint glass remainder); 04 is GLASS; 03 is three-quarters of the way from SOLID to GLASS; 02 is still SOLID; 01 is still PERI with its glow at 60%. The light lines are about half retracted: 01→02 remains as far as (1240,704) and 01→04 as far as (1180,536); the rest are gone. The unnamed glass blocks (1,1,0), (1,2,0) and (2,1,0) are breaking back into dashes.",
+          "file": "site/frames/B10-3640.jpg"
+        },
+        {
+          "t": 37.6,
+          "caption": "Back to frame 0: the work, before it has a shape.",
+          "draw": "Identical to 0.00: the BG and the four glass cards at their frame-0 positions and rotations: QUOTE (1090,600) −8°, ENQUIRY (1420,800) +6°, HOURS (1210,400) +5°, REPORT (1560,470) −4°, with their drift phase equal to frame 0. No blocks, no text.",
+          "file": "site/frames/B10-3760.jpg"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Verdict and grafts. The base is Concept A. Scores out of 10 (A / B): story clear when muted 8/7, block thread 9/6, variety 6/9, one element becoming the next 8/9, truth 9/6, readability 9/5, loop 8/9, premium dark SaaS fit 8/8. Totals: A 65, B 59. A keeps the block world alive from frame 0 and covers all three flat UI beats the brief asks for (the mapping, a costed plan, a running automation). It also sizes its text for a hero player. B's on-screen problems ('Enquiries pile up', 'Hours re-typed into invoices') are guesses, not site facts. B's block world only arrives at 16 s, and its 18–30 px text is too small for a hero player. Grafted from B: (1) the mapping as kinetic type on the site's own Week 1 → Week 2 timeline, with the work riding on it as chips; (2) the chips becoming the plan's rows and the timeline its divider; (3) a re-rank that shows 'Highest return first'; (4) the signature tilt, where the plan lies down as the floor and its top row rises as the first block; (5) 'All of it connected' at the top block, as in reference 4; (6) one pulse lighting every stud; (7) the fading 'quiet.', which the automation now restores so that it stays true; (8) the first block's face seating into the real wicflow mark. Dropped from A: the scan over the blocks, the mark rebuilt from four faces, and 'Hosted in Finland' as the top label.",
+    "Look, from wicflow.com's CSS and references 1–4. Background (BG): one still radial gradient centred (1360,560), #131C3A → #0E1630 (45%) → #0B1220, with 2% static dither. There is no floor grid, and the BG never moves. Text #F3F5FA; muted text rgba(223,230,243,.72); lines rgba(255,255,255,.10). Glass cards: fill rgba(255,255,255,.055–.07), 1 px border rgba(255,255,255,.10–.14), 24 px backdrop blur, even shadow 0 0 40–60 rgba(0,0,0,.35), radius 20–32. PEACH, the site's accent-word gradient: linear-gradient(100deg, #fff 0%, #ffd9c8 60%, #f3a585 100%). Periwinkle #6172F3 for bars and UI highlights, and #B9C1FF for the first block's colour family. Green #16B857 appears only on the 'Running' dot, and orange #FF5A1F only for the off-the-shelf misfit in B2. Leader lines: 1 px rgba(223,230,243,.5) with an 8 px #F3F5FA dot and a Fragment Mono 40 px label in sentence case.",
+    "Block rules. Orthographic 2:1 isometric. A lattice point (i,j,h) sits on screen at (1360 + 120(i−j), 554 + 69.5(i+j) − 128h). A block in cell (c,r,k) spans c..c+1, r..r+1 and k..k+1. Its top face is a 240×139 rhombus, its height 128 px, and its stud an 88×51 ellipse, 20 px tall, on the top-face centre. Draw back to front (by c+r, then by k). There are 14 blocks: all nine base cells, level 1 at (0,0), (0,1), (1,0) and (2,0), and level 2 at (0,0). The silhouette spans x 1000–1720, y 170–971 (74% of the frame height). The named blocks are the site's Kallio Lämpö blocks (top-face centre in brackets): 01 Quote follow-ups (0,2,0) (1120,634.5), the first block; 02 Enquiries answered (2,2,0) (1360,773.5); 03 New customers (2,0,1) (1600,506.5); 04 Hours to invoices (0,1,1) (1240,437); 05 Owner's weekly report (1,0,1) (1480,437); 06 One system (0,0,2) (1360,239.5). States follow the story and are never skipped. WIRE: no fill, 1.5 px dashed rgba(223,230,243,.42), dash 6/6, marching at 12 px/s. GLASS: faces rgba(255,255,255,.06/.035/.05) top/left/right, 1.25 px edges rgba(255,255,255,.22). SOLID: top #F2F3FC, left #DCDFF5, right #C2C7EC, stud top #FFFFFF, 40 px glow rgba(185,193,255,.22), and its number on the left face in Fragment Mono 34 px #0B1220 at 35%. The first block alone goes through GLASS-PERI (faces rgba(185,193,255,.24/.14/.10), 1.5 px #B9C1FF edges, 24 px glow rgba(97,114,243,.35)) to PERI (top #CDD3FF, left #B9C1FF, right #98A2F5, stud top #DDE1FF, 60 px glow rgba(97,114,243,.45)). The card-to-block mapping holds for the whole film: QUOTE → 01, ENQUIRY → 02, HOURS → 04, REPORT → 05. New customers (03) is the block the mapping finds. Only block 01 is ever a periwinkle block, and 06 stays dashed until it connects, as in reference 3.",
+    "Type and layout. Every headline is Stack Sans Headline 500 at 96 px, tracking −2%, 100 px line pitch, at most about 15 characters a line. Support lines are Inter 44 px in the muted colour, 56 px pitch. Kickers, chips and leader labels are Fragment Mono 40 px; 28–36 px is used only for tags, column heads and the made-up-example footnote, none of which the story depends on. The text column is left-aligned at x 170–950, with the block world at x 1000–1720. The kinetic beat (B3) and the plan (B4) are centred, and the automation panel takes the cluster's place. Nothing essential sits outside x 96–1824, y 54–1026. Every line holds for at least 1.2 s after it lands; this is checked in each beat's timings. Before the Finnish version, check that Stack Sans Headline and Fragment Mono have ä and ö. Finnish runs 25–35% longer, so reflow to three lines or drop to 84 px, never below 80 px.",
+    "Motion identity: calm, clean, Apple. Arrivals decelerate (B3 soft start with a long settle; A5 rise slowed to 0.4 s; ARRIVE cubic-bezier(.22,1,.36,1)). Exits accelerate (ease-in, 0.2–0.3 s). Landings end in a 2–4 px drift with no overshoot (B4 spring with damping 200; B9 follow-through 3/6 frames). No bounce, elastic or anticipation, and no camera pans. The only scale moves are the two zoom-throughs of block 01 (B16, 16 frames each way, cut on the fastest frame) and one breath out to 0.96 in the CTA. One movement leads at a time, and a new event lands every 0.5–0.8 s. Holds stay alive: the dashes march, the stack breathes 0–5 px, glows breathe and pulses run. Motion norm: the brief names no target, so plan for the house 7% median (motion_check.py at 60 fps). Thin wire lines barely register, so test B1–B2 first at the animatic stage. Sound: effects lead over a quiet music bed (louder if there is no VO), from films/alumni/sound/lib. Cues: felt clicks as blocks land; a dull thud and a soft 'wrong' tick on the slab; line-draw tones and ticks on the timeline; a card-shuffle swish on the re-rank; a deep whoosh and a plastic thock on the tilt and extrusion; typing ticks and a soft ding for each 'Draft ready'; rising clicks block by block; an arpeggio as the pulse lights each stud; a resolving chord under the CTA; a reverse shimmer into the loop.",
+    "Truth, exclusions and loop. Every on-screen phrase comes from wicflow.com. Used as written: 'Software made to work for every company never quite fits yours'; 'Custom automation and AI, not software off the shelf'; 'AI mapping', '1–2 weeks', 'fixed price', 'First we map where the time goes', 'Week 1' and 'Week 2'; 'costed plan', with 'what to build first, what it returns, what it costs' as the columns 'Build first · Returns · Costs'; 'Highest return first'; the five Kallio Lämpö block names and the 'First block' tag; 'First block · guaranteed'; 'No open quote goes quiet', 'Drafts ready for the salesperson'; 'Every block priced in writing before we start'; 'One system', 'All of it connected', 'in your name and colours', 'Hosted in Finland', 'One contact at Wicflow'; 'Let's find the first thing to build', 'Book an AI mapping', '300+ projects built'. Lightly shortened: 'Built around how you work' (from '…around how you actually work') and 'If it doesn't do what we agreed, you don't pay' (from '…you don't pay for it'). The only figures on screen are 1–2 weeks and 300+. The bars carry no digits, the quote rows use placeholder lines, and Kallio Lämpö is labelled as the site's made-up example. EXCLUDED, from Wicflow's current hero: stock footage of real work (a forklift, a tractor) and any other footage, a headline over full-bleed video, a linear drift over stock, and the headline's cycling word. Also out: generic AI imagery, cartoon icons, bounce, and the site's other example companies. Loop: 37.60 ≡ 0.00 (frame 2256 = frame 0). The card drift runs on a 3.76 s period (ten periods per loop), so pose and velocity match at the loop point, and no dashes are on screen at frame 0."
+  ],
+  "questions": [
+    "Where does the film sit in the hero? It could play as its own player beside or below the headline 'Built for the work that keeps your company on schedule.' (as boarded, with its own left text column), or full-bleed behind that headline in place of the stock video. Full-bleed would mean dropping the film's text or moving it to a lower third, and centring the cluster.",
+    "Should the closing CTA be 'Book an AI mapping' (as boarded: it is the story's next step and the site's main button) or the hero's own 'Get your free AI roadmap'?",
+    "In B9 a copy of the first block's face seats into the left diamond of the real wicflow mark for about 0.3 s, then fades so the mark stands untouched. Is Wicflow happy with that, or should the mark simply fade in?",
+    "The plan's return bars are schematic (no figures) and follow the site's 01–05 order, so they imply that this is Kallio Lämpö's payback order. Is that acceptable, or should every bar except the first be the same length?"
+  ],
+  "styleframes": {
+    "page": "site/index.html",
+    "source": "frames-src/ (frame.html?f=<id> draws each key frame as 1920×1080 SVG with Wicflow’s fonts and mark; render.js renders them with Playwright to site/frames/*.jpg at 1600 px)",
+    "fonts": "Stack Sans Headline, Inter, Fragment Mono and Manrope 800 (the nav wordmark), all from wicflow.com, in films/wicflow/harvest/",
+    "deviations": [
+      "B9 wordmark: set as the site nav actually sets it (site.css .brand: Manrope 800, −4% tracking), at 100 px beside the 156×100 mark, instead of Stack Sans Headline 600 at 68 px.",
+      "B3 chips: Inter 500 at 40 px (drawn as 36 px) so every story word stays at 40 px or more. The row is laid out from the measured words, centred on x 960 (26 px padding, 16 px gaps), so chip x positions and the scan point differ a few px from the drawn numbers; the B3 → B4 text growth becomes 40 → 44 px.",
+      "B6 pills: ‘Draft ready’ widens to x 1436–1690 and ‘Open’ sits at x 1530–1690; the header ‘First block’ pill is 214 px wide so the mono text fits; ‘Running’ is 40 px.",
+      "B2 slab: ‘OFF THE SHELF’ is printed in light grey (rgba(225,230,240,.62)); #0B1220 at 45% disappeared on the translucent grey slab over navy.",
+      "WIRE blocks carry a faint navy face tint so hidden edges read faintly through, as in reference 1. SOLID and PERI blocks are drawn above glass and wire, so the first block’s faces read fully through the glass in front, as in references 2–4.",
+      "Printed block numbers sit left of the face centre so the B8 light lines, which climb the faces at the centre, never cross them; the studs of solid blocks are drawn over the light lines so each line plugs into its stud.",
+      "Drop-throughs at 11.6 and 13.35 are drawn a little further along than specified (the new text nearer its baseline) so the frame stays legible; the lifted rows at 13.35 sit on opaque glass plates that hide the sinking row.",
+      "Block 02 at 24.05 is shown mid ‘brightening from the top down’ (solid top, glass base) rather than as a uniform 60% mix.",
+      "B6 19.55: the giant PERI top face reads as four small wedges at the frame corners."
+    ]
+  }
+}

@@ -1,466 +1,222 @@
-/* Wicflow hero storyboard: one function per key frame (ids = beat + time in centiseconds). */
+/* Wicflow hero storyboard v2: one function per key frame (ids = beat + time in centiseconds).
+   v2 is text-light and visual-first: the voice-over carries the words. Outside the product UI the film shows
+   three text moments only: the leader label "First block · guaranteed" (B5), the leader label
+   "All of it connected" (B8) and the end lockup (wicflow + one line + the "Book an AI mapping" button, B9).
+   UI text is small and only where a real interface would show it (a status chip, a row label, a tag). */
 'use strict';
 
-/* ---------- B1 work cards (local box 0..300 x 0..200) ---------- */
-const CARD = {
-  QUOTE: { cx: 1090, cy: 600, rot: -8 },
-  ENQUIRY: { cx: 1420, cy: 800, rot: 6 },
-  HOURS: { cx: 1210, cy: 400, rot: 5 },
-  REPORT: { cx: 1560, cy: 470, rot: -4 }
-};
-function cardBody(type, contentOp = 1) {
-  const nss = 'vector-effect="non-scaling-stroke"';
-  let s = `<rect x="0" y="0" width="300" height="200" rx="20" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.14)" stroke-width="1" ${nss}/>`;
-  let c = MONO(24, 46, type, { sz: 28 });
-  const ph = 'rgba(255,255,255,.22)';
-  if (type === 'QUOTE') {
-    c += `<rect x="24" y="72" width="200" height="12" rx="6" fill="${ph}"/><rect x="24" y="96" width="160" height="12" rx="6" fill="${ph}"/><rect x="24" y="120" width="120" height="12" rx="6" fill="${ph}"/>`;
-    c += `<rect x="186" y="146" width="90" height="34" rx="17" fill="none" stroke="rgba(255,255,255,.34)" stroke-width="1.2" ${nss}/>` + T(231, 170, 'Open', { f: 'i', sz: 20, w: 500, fill: 'rgba(223,230,243,.8)', anchor: 'middle' });
-  } else if (type === 'ENQUIRY') {
-    c += `<path d="M42,66 H186 a18,18 0 0 1 18,18 V128 a18,18 0 0 1 -18,18 H64 L44,162 L46,146 H42 a18,18 0 0 1 -18,-18 V84 a18,18 0 0 1 18,-18 Z" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.30)" stroke-width="1.2" ${nss}/>`;
-    c += `<rect x="44" y="90" width="124" height="11" rx="5.5" fill="${ph}"/><rect x="44" y="112" width="90" height="11" rx="5.5" fill="${ph}"/>`;
-    c += `<path d="M262,160 h-26 a12,12 0 0 1 -12,-12 v-14 M262,160 l-9,-8 M262,160 l-9,8" fill="none" stroke="rgba(185,193,255,.75)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ${nss}/>`;
-  } else if (type === 'HOURS') {
-    const filled = ['0,0', '1,0', '2,1', '3,1', '1,2'];
-    for (let r = 0; r < 3; r++) for (let q = 0; q < 5; q++) {
-      const f = filled.includes(`${q},${r}`);
-      c += `<rect x="${24 + q * 36}" y="${66 + r * 36}" width="28" height="28" rx="7" fill="${f ? 'rgba(97,114,243,.45)' : 'rgba(255,255,255,.04)'}" stroke="${f ? 'rgba(185,193,255,.5)' : 'rgba(255,255,255,.16)'}" stroke-width="1" ${nss}/>`;
-    }
-  } else if (type === 'REPORT') {
-    [40, 64, 52, 80].forEach((h, n) => { c += `<rect x="${28 + n * 36}" y="${172 - h}" width="22" height="${h}" rx="4" fill="url(#barV)"/>`; });
-    c += `<line x1="24" y1="176" x2="186" y2="176" stroke="rgba(255,255,255,.18)" stroke-width="1" ${nss}/>`;
-    c += `<rect x="206" y="92" width="70" height="10" rx="5" fill="${ph}"/><rect x="206" y="112" width="50" height="10" rx="5" fill="${ph}"/>`;
+/* ---------- helpers ---------- */
+const bar = (x, y, w, h = 12, fill = 'rgba(255,255,255,.20)', op = 1) =>
+  `<rect x="${f2(x)}" y="${f2(y)}" width="${f2(Math.max(0, w))}" height="${h}" rx="${h / 2}" fill="${fill}"${op !== 1 ? ` opacity="${op}"` : ''}/>`;
+function pill(x, y, text, o = {}) { // x = left edge (right edge with o.right), y = top
+  const sz = o.sz || 24, padX = o.padX || 16, h = o.h || Math.round(sz * 1.75);
+  const dotW = o.dot ? 20 : 0;
+  const w = measure(text, { f: o.f || 'm', sz, w: o.w || 400 }) + padX * 2 + dotW;
+  const x0 = o.right ? x - w : x;
+  let s = `<rect x="${f2(x0)}" y="${y}" width="${f2(w)}" height="${h}" rx="${h / 2}" fill="${o.fill || 'rgba(255,255,255,.07)'}" stroke="${o.stroke || 'rgba(255,255,255,.14)'}" stroke-width="1"/>`;
+  if (o.dot) {
+    if (o.ring) s += `<circle cx="${f2(x0 + padX + 5)}" cy="${f2(y + h / 2)}" r="${f2(8 + 6 * o.ring)}" fill="none" stroke="${o.dot}" stroke-opacity="${f2(0.6 * (1 - o.ring))}" stroke-width="2"/>`;
+    s += `<circle cx="${f2(x0 + padX + 5)}" cy="${f2(y + h / 2)}" r="5" fill="${o.dot}"/>`;
   }
-  return s + `<g opacity="${contentOp}">${c}</g>`;
+  s += T(x0 + padX + dotW, y + h / 2 + sz * 0.36, text, { f: o.f || 'm', sz, w: o.w || 400, fill: o.tc || C.text });
+  return `<g${o.op != null ? ` opacity="${o.op}"` : ''}>${s}</g>`;
 }
-function cardAt(type, dx = 0, dy = 0, drot = 0) {
-  const k = CARD[type];
-  return `<g filter="url(#shCard)"><g transform="translate(${k.cx + dx},${k.cy + dy}) rotate(${k.rot + drot}) translate(-150,-100)">${cardBody(type)}</g></g>`;
-}
-function cardMorph(type, toCorners, t, contentOp) {
-  const k = CARD[type];
-  const from = rotRectCorners(k.cx, k.cy, 300, 200, k.rot);
-  const q = from.map((p, n) => lerpP(p, toCorners[n], t));
-  return `<g filter="url(#shCard)"><g transform="${affine(q[0], q[1], q[3], 300, 200)}">${cardBody(type, contentOp)}<rect x="0" y="0" width="300" height="200" rx="20" fill="rgba(185,193,255,.05)" stroke="rgba(185,193,255,.5)" stroke-width="1.2" vector-effect="non-scaling-stroke"/></g></g>`;
-}
-function frame0() {
-  return cardAt('HOURS') + cardAt('REPORT') + cardAt('QUOTE') + cardAt('ENQUIRY');
-}
-
-const ALL_WIRE = { def: { w: { wire: 1 } } };
-
-/* ---------- B3 chips ---------- */
-const CHIP = { sz: 40, pad: 26, gap: 16, y0: 608, h: 64 };
-function chipLayout(words) {
-  const ws = words.map((w) => measure(w, { f: 'i', sz: CHIP.sz, w: 500 }) + CHIP.pad * 2);
-  const total = ws.reduce((a, b) => a + b, 0) + CHIP.gap * (words.length - 1);
-  let x = 960 - total / 2;
-  return words.map((w, n) => { const o = { word: w, x0: x, w: ws[n], cx: x + ws[n] / 2 }; x += ws[n] + CHIP.gap; return o; });
-}
-function chip(ch, o = {}) {
-  const stroke = o.stroke || 'rgba(255,255,255,.12)';
-  const dash = o.dash ? `stroke-dasharray="${o.dash}"` : '';
-  let s = `<rect x="${f2(ch.x0)}" y="${CHIP.y0}" width="${f2(ch.w)}" height="${CHIP.h}" rx="32" fill="${o.fill || 'rgba(255,255,255,.06)'}" stroke="${stroke}" stroke-width="${o.sw || 1}" ${dash}/>`;
-  s += T(ch.cx, CHIP.y0 + 46, ch.word, { f: 'i', sz: CHIP.sz, w: 500, anchor: 'middle', fill: C.text, op: o.textOp == null ? 1 : o.textOp });
-  if (o.bar) s += `<rect x="${f2(ch.x0 + 28)}" y="684" width="${o.bar}" height="4" rx="2" fill="url(#barG)"/>`;
-  return s;
-}
-const HEAT = { 'New customers': 80, Quotes: 120, Enquiries: 98, Hours: 64, Reports: 48 };
-function kickerX() { return 960 - measure('AI MAPPING · FIXED PRICE · 1–2 WEEKS', { f: 'm', sz: 40 }) / 2; }
-function b3Head(op = 1) {
-  return `<g opacity="${op}">${MONO(960, 250, 'AI MAPPING · FIXED PRICE · 1–2 WEEKS', { anchor: 'middle' })}
-    ${HL(960, 380, 'First we map', { anchor: 'middle' })}${HL(960, 480, 'where the time goes.', { anchor: 'middle', fill: 'url(#peach)' })}</g>`;
-}
-function timeline(fillTo, week2) {
-  let s = `<line x1="360" y1="760" x2="1560" y2="760" stroke="rgba(255,255,255,.18)" stroke-width="1.5"/>`;
-  s += `<line x1="360" y1="760" x2="${fillTo}" y2="760" stroke="rgba(255,255,255,.55)" stroke-width="1.5"/>`;
-  s += `<circle cx="360" cy="760" r="6" fill="#FFFFFF"/>`;
-  if (week2 === 'full') s += `<circle cx="1560" cy="760" r="14" fill="rgba(255,217,200,.5)" filter="url(#b6)"/><circle cx="1560" cy="760" r="6" fill="#ffd9c8"/>`;
-  else s += `<circle cx="1560" cy="760" r="6" fill="#ffd9c8" opacity=".5"/>`;
-  s += MONO(360, 815, 'WEEK 1', { sz: 36, anchor: 'middle' }) + MONO(1560, 815, 'WEEK 2', { sz: 36, anchor: 'middle' });
-  return s;
-}
-function scanGlow(x) {
-  return `<defs><radialGradient id="scanG"><stop offset="0" stop-color="rgba(97,114,243,.35)"/><stop offset="1" stop-color="rgba(97,114,243,0)"/></radialGradient></defs>
-  <ellipse cx="${x}" cy="760" rx="100" ry="40" fill="url(#scanG)"/><rect x="${x - 0.75}" y="748" width="1.5" height="24" fill="#B9C1FF"/>`;
-}
-
-/* ---------- B4 plan card ---------- */
-const ROWC = [498, 578, 658, 738, 818];
-const PLAN = {
-  'New customers': { ret: 160, cost: 96 }, 'Quote follow-ups': { ret: 240, cost: 112 }, 'Enquiries answered': { ret: 196, cost: 104 },
-  'Hours to invoices': { ret: 128, cost: 96 }, 'Owner’s weekly report': { ret: 96, cost: 88 }
+const ICON = {
+  doc: '<path d="M-14,-20 H6 L16,-10 V20 H-14 Z"/><path d="M6,-20 V-10 H16"/><path d="M-8,-1 H8 M-8,7 H8 M-8,15 H2"/>',
+  chat: '<path d="M-16,-15 H16 a5,5 0 0 1 5,5 V7 a5,5 0 0 1 -5,5 H-4 L-13,19 V12 H-16 a5,5 0 0 1 -5,-5 V-10 a5,5 0 0 1 5,-5 Z"/><path d="M-11,-5 H11 M-11,3 H4"/>',
+  clock: '<circle cx="0" cy="0" r="18"/><path d="M0,-10 V0 L8,6"/>',
+  invoice: '<path d="M-14,-20 H14 V20 L9.33,16 L4.67,20 L0,16 L-4.67,20 L-9.33,16 L-14,20 Z"/><path d="M-8,-10 H8 M-8,-2 H8 M-8,6 H2"/>',
+  chart: '<path d="M-18,18 H18"/><path d="M-12,14 V4 M-4,14 V-6 M4,14 V-1 M12,14 V-14"/>',
+  person: '<circle cx="0" cy="-7" r="8"/><path d="M-15,18 a15,13 0 0 1 30,0"/>',
+  personPlus: '<circle cx="-5" cy="-7" r="8"/><path d="M-20,18 a15,13 0 0 1 30,0"/><path d="M16,-13 V-1 M10,-7 H22"/>',
+  sparkle: '<path d="M0,-18 C2,-6 6,-2 18,0 C6,2 2,6 0,18 C-2,6 -6,2 -18,0 C-6,-2 -2,-6 0,-18 Z"/>',
+  check: '<path d="M-10,1 L-3,8 L11,-7"/>',
+  send: '<path d="M-14,-12 L16,0 L-14,12 L-9,0 Z"/>',
+  trend: '<path d="M-18,14 L-6,2 L2,8 L18,-10"/><path d="M7,-10 H18 V1"/>',
+  arrow: '<path d="M-16,0 H16 M6,-10 L16,0 L6,10"/>'
 };
-function planCard(dy = 0) {
-  return `<rect x="300" y="${170 + dy}" width="1320" height="760" rx="28" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.10)" stroke-width="1" filter="url(#shCard60)"/>`;
+function icon(name, x, y, s = 1, o = {}) {
+  const c = o.c || 'rgba(223,230,243,.9)', sw = o.sw || 2.5;
+  return `<g transform="translate(${f2(x)},${f2(y)}) scale(${s})" fill="${o.fill || 'none'}" stroke="${c}" stroke-width="${f2(sw / s)}" stroke-linecap="round" stroke-linejoin="round"${o.op != null ? ` opacity="${o.op}"` : ''}>${ICON[name]}</g>`;
 }
-function planRow(name, cy, o = {}) {
-  const d = PLAN[name];
-  let s = '';
-  if (o.plate) s += `<rect x="330" y="${cy - 39}" width="1260" height="78" rx="16" fill="#1A2246" fill-opacity=".97" stroke="rgba(255,255,255,.14)" filter="url(#shLift)"/>`;
-  if (o.num) s += MONO(360, cy + 13, o.num, { sz: 36, fill: o.numFill || C.muted });
-  s += T(430, cy + 16, name, { f: 'i', sz: 44, fill: C.text });
-  s += `<rect x="1080" y="${cy - 7}" width="${d.ret}" height="14" rx="7" fill="url(#barG)"/>`;
-  s += T(1370, cy + 14, '€', { f: 'i', sz: 40, fill: C.muted });
-  s += `<rect x="1406" y="${cy - 7}" width="${d.cost}" height="14" rx="7" fill="rgba(223,230,243,.35)"/>`;
-  const op = o.op == null ? 1 : o.op;
-  const tr = o.scale ? `transform="translate(960,${cy}) scale(${o.scale}) translate(-960,${-cy})"` : '';
-  return `<g opacity="${op}" ${tr}>${s}</g>`;
+function tile(x, y, size, name, o = {}) { // centred on x,y
+  const r = o.r || size * 0.26;
+  let s = `<rect x="${f2(x - size / 2)}" y="${f2(y - size / 2)}" width="${size}" height="${size}" rx="${f2(r)}" fill="${o.fill || 'rgba(255,255,255,.07)'}" stroke="${o.stroke || 'rgba(255,255,255,.15)'}" stroke-width="${o.sw || 1}"/>`;
+  if (o.glow) s = `<rect x="${f2(x - size / 2)}" y="${f2(y - size / 2)}" width="${size}" height="${size}" rx="${f2(r)}" fill="${o.glow}" filter="url(#b20)"/>` + s;
+  return s + icon(name, x, y, o.is || size / 80, { c: o.ic, sw: o.isw || 2.5 });
 }
-function planHeads() {
-  return MONO(360, 420, 'Build first', { sz: 36 }) + MONO(1080, 420, 'Returns', { sz: 36 }) + MONO(1370, 420, 'Costs', { sz: 36 }) +
-    `<line x1="330" y1="446" x2="1590" y2="446" stroke="rgba(255,255,255,.10)"/>` +
-    ROWC.slice(0, 4).map((c) => `<line x1="330" y1="${c + 40}" x2="1590" y2="${c + 40}" stroke="rgba(255,255,255,.06)"/>`).join('');
+function ringArc(cx, cy, r, frac, col, sw = 4) {
+  const L = 2 * Math.PI * r;
+  return `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="${sw}"/>` +
+    `<circle cx="${cx}" cy="${cy}" r="${r}" fill="none" stroke="${col}" stroke-width="${sw}" stroke-linecap="round" stroke-dasharray="${f2(L * frac)} ${f2(L)}" transform="rotate(-90 ${cx} ${cy})"/>`;
 }
-const FOOT = () => MONO(360, 900, 'Example: Kallio Lämpö, a made-up heating company', { sz: 28, fill: 'rgba(223,230,243,.5)' });
+function timer(cx, cy, r, frac, col) {
+  return ringArc(cx, cy, r, frac, col, 4) + `<path d="M${cx},${cy - r * 0.5} V${cy} L${f2(cx + r * 0.4)},${f2(cy + r * 0.3)}" stroke="${col}" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+}
+function cursor(x, y, s = 1) {
+  return `<g transform="translate(${f2(x)},${f2(y)}) scale(${s})" filter="url(#shLift)"><path d="M0,0 L0,30 L8,23 L13.5,35 L18.5,32.8 L13,21 L23,21 Z" fill="#fff" stroke="#0B1220" stroke-width="1.6" stroke-linejoin="round"/></g>`;
+}
+const caret = (x, y, h = 24) => `<rect x="${f2(x)}" y="${f2(y)}" width="3" height="${h}" rx="1.5" fill="#B9C1FF"/>`;
+const shell = (w, h, o = {}) => `<rect x="0" y="0" width="${w}" height="${h}" rx="${o.rx || 26}" fill="${o.fill || '#161F3F'}" stroke="${o.stroke || 'rgba(255,255,255,.14)'}" stroke-width="1" vector-effect="non-scaling-stroke"/>`;
+function miniCube(x, y, s = 1) { // small periwinkle block glyph (the first block), centred
+  const a = 14 * s, b = 8 * s, h = 16 * s;
+  return `<g><polygon points="${f2(x)},${f2(y - b - h / 2)} ${f2(x + a)},${f2(y - h / 2)} ${f2(x)},${f2(y + b - h / 2)} ${f2(x - a)},${f2(y - h / 2)}" fill="#CDD3FF"/>
+    <polygon points="${f2(x - a)},${f2(y - h / 2)} ${f2(x)},${f2(y + b - h / 2)} ${f2(x)},${f2(y + b + h / 2)} ${f2(x - a)},${f2(y + h / 2)}" fill="#B9C1FF"/>
+    <polygon points="${f2(x)},${f2(y + b - h / 2)} ${f2(x + a)},${f2(y - h / 2)} ${f2(x + a)},${f2(y + h / 2)} ${f2(x)},${f2(y + b + h / 2)}" fill="#98A2F5"/></g>`;
+}
+function bez(p0, p1, p2, p3, t) {
+  const u = 1 - t;
+  return [u * u * u * p0[0] + 3 * u * u * t * p1[0] + 3 * u * t * t * p2[0] + t * t * t * p3[0],
+    u * u * u * p0[1] + 3 * u * u * t * p1[1] + 3 * u * t * t * p2[1] + t * t * t * p3[1]];
+}
+function flow(a, b, o = {}) { // horizontal S-curve connector with data dots
+  const k = o.k || Math.max(50, Math.abs(b[0] - a[0]) * 0.45);
+  const p1 = [a[0] + k, a[1]], p2 = [b[0] - k, b[1]];
+  const lit = o.lit == null ? 1 : o.lit;
+  let s = `<path d="M${f2(a[0])},${f2(a[1])} C${f2(p1[0])},${f2(p1[1])} ${f2(p2[0])},${f2(p2[1])} ${f2(b[0])},${f2(b[1])}" fill="none" stroke="rgba(255,255,255,.16)" stroke-width="2"/>`;
+  if (lit > 0) {
+    s += `<path d="M${f2(a[0])},${f2(a[1])} C${f2(p1[0])},${f2(p1[1])} ${f2(p2[0])},${f2(p2[1])} ${f2(b[0])},${f2(b[1])}" fill="none" stroke="rgba(185,193,255,.55)" stroke-width="2" opacity="${lit}"/>`;
+    for (const t of (o.dots || [0.3, 0.62])) {
+      const p = bez(a, p1, p2, b, t);
+      s += `<circle cx="${f2(p[0])}" cy="${f2(p[1])}" r="9" fill="#B9C1FF" opacity="${f2(0.45 * lit)}" filter="url(#b4)"/><circle cx="${f2(p[0])}" cy="${f2(p[1])}" r="4.5" fill="#fff" opacity="${f2(lit)}"/>`;
+    }
+  }
+  return s;
+}
+const xf = (p, s = 1, dx = 0, dy = 0, cx = 960, cy = 570) => [cx + (p[0] - cx) * s + dx, cy + (p[1] - cy) * s + dy];
+function placed(inner, s = 1, dx = 0, dy = 0, cx = 960, cy = 570) {
+  return `<g transform="translate(${dx},${dy}) translate(${cx},${cy}) scale(${s}) translate(${-cx},${-cy})">${inner}</g>`;
+}
 
-/* ---------- B6 automation panel ---------- */
-function docGlyph(x, y) {
-  return `<g transform="translate(${x},${y})" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="1.5" stroke-linejoin="round">
-    <path d="M0,0 H40 L56,16 V72 H0 Z"/><path d="M40,0 V16 H56"/>
-    <line x1="10" y1="30" x2="44" y2="30"/><line x1="10" y1="42" x2="40" y2="42"/><line x1="10" y1="54" x2="32" y2="54"/></g>`;
+/* ---------- B1: the company's real work, four big cards (local box 520 x 320) ---------- */
+const CW = 520, CH = 320;
+function quoteBody(st = {}) {
+  const quiet = st.quiet || 0;
+  const ring = st.ring == null ? 0.72 : st.ring;
+  const col = quiet > 0.5 ? '#f3a585' : '#B9C1FF';
+  let c = tile(64, 64, 64, 'doc', { is: 0.95 });
+  c += bar(112, 46, 170, 14, 'rgba(255,255,255,.30)') + bar(112, 72, 110, 11);
+  c += pill(488, 40, 'Open', { right: true, sz: 22 });
+  [[128, 230], [166, 190], [204, 212]].forEach(([y, w]) => { c += bar(34, y, w, 12) + bar(420, y, 66, 12); });
+  c += `<line x1="34" y1="240" x2="486" y2="240" stroke="rgba(255,255,255,.10)"/>`;
+  c += timer(60, 280, 22, ring, col) + bar(98, 274, 130, 12);
+  c += T(392, 291, '€', { f: 'i', sz: 30, w: 500, fill: C.muted }) + bar(418, 278, 68, 16, 'rgba(185,193,255,.55)');
+  // a reply bubble on the corner: three dots while the quote is alive, faint and dashed once it has gone quiet
+  const dots = quiet > 0.5 ? [0.18, 0.14, 0.1] : [0.95, 0.65, 0.38];
+  let bub = `<rect x="430" y="-34" width="104" height="52" rx="26" fill="${quiet > 0.5 ? 'rgba(11,18,32,.6)' : '#1A2350'}" stroke="${quiet > 0.5 ? 'rgba(223,230,243,.3)' : 'rgba(185,193,255,.5)'}" stroke-width="1.2"${quiet > 0.5 ? ' stroke-dasharray="5 5"' : ''}/>`;
+  dots.forEach((o, n) => { bub += `<circle cx="${458 + n * 24}" cy="-8" r="6" fill="#F3F5FA" opacity="${o}"/>`; });
+  // gone quiet: the quote's activity trace decays to a flat line under the card
+  if (quiet > 0.5) {
+    for (let i = 0; i < 30; i++) {
+      const x = 30 + i * 15.6, h = Math.max(3, 40 * Math.exp(-i / 6) * (0.6 + 0.4 * Math.abs(Math.sin(i * 1.7))));
+      bub += `<rect x="${f2(x)}" y="${f2(372 - h / 2)}" width="6" height="${f2(h)}" rx="3" fill="${i < 9 ? '#B9C1FF' : 'rgba(223,230,243,.28)'}" opacity="${f2(Math.max(0.3, 1 - i / 14))}"/>`;
+    }
+  }
+  return shell(CW, CH, quiet > 0.5 ? { stroke: 'rgba(255,255,255,.10)', fill: '#121A35' } : {}) +
+    `<g opacity="${f2(1 - 0.3 * quiet)}">${c}</g>` + bub;
 }
-function panel(st = {}) {
-  let s = `<rect x="980" y="190" width="760" height="700" rx="28" fill="rgba(97,114,243,.10)" stroke="rgba(185,193,255,.35)" stroke-width="1" filter="url(#shCard60)"/>`;
-  s += `<rect x="1030" y="236" width="214" height="48" rx="24" fill="#B9C1FF"/>` + MONO(1137, 270, 'First block', { sz: 30, fill: '#0B1220', anchor: 'middle' });
-  const pr = st.pulse == null ? 0.5 : st.pulse;
-  s += `<circle cx="1508" cy="260" r="${f2(8 + 10 * pr)}" fill="none" stroke="#16B857" stroke-opacity="${f2(0.55 * (1 - pr))}" stroke-width="2"/><circle cx="1508" cy="260" r="6" fill="#16B857"/>`;
-  s += MONO(1528, 273, 'Running', { fill: C.text });
-  s += T(1030, 360, 'Quote follow-ups', { f: 'h', sz: 56, w: 500, ls: -0.8, fill: C.text });
-  s += `<line x1="1010" y1="392" x2="1710" y2="392" stroke="rgba(255,255,255,.10)"/>`;
-  const rows = st.rows || [{}, {}, {}];
-  [420, 560, 700].forEach((y, n) => {
-    const R = rows[n] || {};
-    s += `<rect x="1010" y="${y}" width="700" height="120" rx="18" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.10)"/>`;
-    if (R.outline) s += `<rect x="1010" y="${y}" width="700" height="120" rx="18" fill="none" stroke="#B9C1FF" stroke-width="2" opacity="${R.outline}"/>`;
-    s += `<rect x="1120" y="${y + 38}" width="240" height="14" rx="7" fill="rgba(255,255,255,.20)"/><rect x="1120" y="${y + 64}" width="170" height="14" rx="7" fill="rgba(255,255,255,.20)"/>`;
-    if (R.draft) {
-      const dx = (1 - R.draft) * -70;
-      s += `<g transform="translate(${dx},0)"><rect x="1110" y="${y + 22}" width="110" height="76" rx="10" fill="#1B2253" stroke="rgba(185,193,255,.6)" stroke-width="1.2"/>
-        <rect x="1124" y="${y + 38}" width="${f2(76 * Math.min(1, (R.typed == null ? 1 : R.typed) * 3))}" height="7" rx="3.5" fill="rgba(223,230,243,.7)"/>
-        <rect x="1124" y="${y + 54}" width="${f2(62 * Math.max(0, Math.min(1, (R.typed == null ? 1 : R.typed) * 3 - 1)))}" height="7" rx="3.5" fill="rgba(223,230,243,.55)"/>
-        <rect x="1124" y="${y + 70}" width="${f2(44 * Math.max(0, Math.min(1, (R.typed == null ? 1 : R.typed) * 3 - 2)))}" height="7" rx="3.5" fill="rgba(223,230,243,.55)"/></g>`;
-    }
-    s += docGlyph(1040, y + 24);
-    if (R.track != null) {
-      s += `<line x1="1120" y1="${y + 96}" x2="1460" y2="${y + 96}" stroke="rgba(255,255,255,.14)" stroke-width="2"/><line x1="1120" y1="${y + 96}" x2="${R.track}" y2="${y + 96}" stroke="rgba(223,230,243,.5)" stroke-width="2"/>`;
-    }
-    if (R.ready) {
-      s += `<rect x="1436" y="${y + 34}" width="254" height="52" rx="26" fill="#6172F3"/>` + MONO(1563, y + 71, 'Draft ready', { sz: 32, fill: C.text, anchor: 'middle' });
-      if (R.sheen != null) {
-        const cid = uid('pc');
-        s += `<defs><clipPath id="${cid}"><rect x="1436" y="${y + 34}" width="254" height="52" rx="26"/></clipPath></defs><rect x="${1436 + R.sheen * 254 - 30}" y="${y + 20}" width="60" height="80" fill="#fff" opacity=".25" transform="skewX(-20)" transform-origin="${1436 + R.sheen * 254} ${y + 60}" clip-path="url(#${cid})"/>`;
-      }
-    } else {
-      s += `<rect x="1530" y="${y + 34}" width="160" height="52" rx="26" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.14)"/>` + MONO(1610, y + 71, 'Open', { sz: 32, anchor: 'middle' });
-    }
+function enquiryBody(st = {}) {
+  const pile = st.pile || 0;
+  let c = tile(64, 64, 64, 'chat', { is: 0.95 });
+  c += bar(112, 46, 150, 14, 'rgba(255,255,255,.30)') + bar(112, 72, 96, 11);
+  [[132, 210, 120], [192, 170, 96], [252, 196, 140]].forEach(([y, w1, w2], n) => {
+    c += `<circle cx="52" cy="${y + 10}" r="16" fill="rgba(255,255,255,.10)" stroke="rgba(255,255,255,.16)"/>`;
+    c += bar(82, y, w1, 12, 'rgba(255,255,255,.26)') + bar(82, y + 20, w2, 10);
+    if (n < (pile > 0.5 ? 3 : 1)) c += `<circle cx="478" cy="${y + 10}" r="7" fill="${pile > 0.5 ? C.orange : '#B9C1FF'}"/>`;
   });
-  s += MONO(1030, 862, 'Kallio Lämpö · a made-up example', { sz: 28 });
-  return s;
-}
-function quietLine(ops, glowDot = 0) {
-  const letters = ['q', 'u', 'i', 'e', 't', '.'];
-  const spans = letters.map((l, n) => `<tspan fill-opacity="${ops[n]}">${l}</tspan>`).join('');
-  let g = '';
-  if (glowDot) {
-    const x = 170 + measure('goes quiet', { f: 'h', sz: 96, w: 500, ls: -1.92 }) + 12;
-    g = `<circle cx="${f2(x)}" cy="512" r="12" fill="#fff" opacity="${glowDot}" filter="url(#b6)"/>`;
+  // new enquiries piling up on top of the inbox
+  const spots = [[372, 236, -4], [352, 190, 5], [380, 146, -6], [346, 100, 4], [376, 54, -3], [356, 8, 6], [372, -38, -5]];
+  const n = pile > 0.5 ? 7 : (st.arrive ? 1 : 0);
+  let p = '';
+  for (let i = 0; i < n; i++) {
+    const [cx, cy, rot] = i === 0 && n === 1 ? [372, -30, -4] : spots[i];
+    p += `<g transform="translate(${cx},${cy}) rotate(${rot})" filter="url(#shLift)"><rect x="-112" y="-30" width="224" height="60" rx="16" fill="#18213F" stroke="rgba(255,255,255,.16)"/>
+      <circle cx="-82" cy="0" r="13" fill="rgba(255,255,255,.12)"/>${bar(-60, -12, 110, 10, 'rgba(255,255,255,.28)')}${bar(-60, 4, 76, 8)}
+      <circle cx="86" cy="0" r="6.5" fill="${pile > 0.5 ? C.orange : '#B9C1FF'}"/></g>`;
   }
-  return g + T(170, 520, `goes ${spans}`, { f: 'h', sz: 96, w: 500, ls: -1.92, fill: C.text, raw: true });
+  return shell(CW, CH) + c + p;
 }
+function hoursBody(st = {}) {
+  const rt = st.retype || 0;
+  let c = tile(64, 64, 64, 'clock', { is: 0.95 });
+  c += bar(112, 46, 120, 14, 'rgba(255,255,255,.30)') + bar(112, 72, 80, 11);
+  const filled = new Set(['0,0', '1,0', '2,0', '0,1', '1,1', '3,1', '0,2', '2,2', '3,2', '4,2', '1,3']);
+  for (let r = 0; r < 4; r++) for (let q = 0; q < 5; q++) {
+    const f = filled.has(`${q},${r}`);
+    c += `<rect x="${34 + q * 40}" y="${116 + r * 40}" width="32" height="32" rx="8" fill="${f ? 'rgba(97,114,243,.5)' : 'rgba(255,255,255,.04)'}" stroke="${f ? 'rgba(185,193,255,.55)' : 'rgba(255,255,255,.16)'}"/>`;
+  }
+  // invoice
+  let zig = 'M300,34 H488 V282'; for (let i = 0; i < 8; i++) zig += ` l-11.75,${i % 2 ? 10 : -10}`; zig += ' Z';
+  c += `<path d="${zig}" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.18)" stroke-width="1"/>`;
+  c += icon('invoice', 334, 70, 0.7) + bar(360, 64, 90, 12, 'rgba(255,255,255,.28)');
+  [116, 150, 184, 218].forEach((y, n) => {
+    if (rt && n === 2) { c += bar(318, y, 52, 12, 'rgba(223,230,243,.7)') + caret(373, y - 6, 24); return; }
+    if (rt && n === 3) { c += `<rect x="318" y="${y}" width="96" height="12" rx="6" fill="none" stroke="rgba(255,255,255,.18)" stroke-dasharray="4 4"/>`; return; }
+    c += bar(318, y, 96, 12) + bar(436, y, 34, 12);
+  });
+  c += T(318, 262, '€', { f: 'i', sz: 26, w: 500, fill: C.muted }) + bar(436, 250, 34, 14, 'rgba(185,193,255,.5)');
+  if (rt) {
+    c += `<rect x="28" y="${110 + 80}" width="210" height="44" rx="12" fill="none" stroke="#B9C1FF" stroke-width="2"/>`;
+    c += `<path d="M240,212 C268,212 278,196 300,192" fill="none" stroke="#B9C1FF" stroke-width="2" stroke-dasharray="5 5"/><path d="M292,186 L302,192 L293,199" fill="none" stroke="#B9C1FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`;
+    c += cursor(380, 196, 1.05);
+  }
+  return shell(CW, CH) + c;
+}
+function reportBody(st = {}) {
+  const hand = st.hand || 0;
+  let c = tile(64, 64, 64, 'chart', { is: 0.95 });
+  c += bar(112, 46, 140, 14, 'rgba(255,255,255,.30)') + bar(112, 72, 90, 11);
+  const hs = [64, 96, 80, 124, 104, 150];
+  hs.forEach((h, n) => {
+    const x = 40 + n * 46;
+    if (hand && n === 5) {
+      c += `<rect x="${x}" y="${292 - h}" width="30" height="${h}" rx="6" fill="none" stroke="rgba(185,193,255,.6)" stroke-width="1.5" stroke-dasharray="5 4"/>`;
+      c += `<rect x="${x}" y="${292 - h * 0.55}" width="30" height="${f2(h * 0.55)}" rx="6" fill="url(#barV)" opacity=".9"/>`;
+      c += cursor(x + 8, 292 - h * 0.55 - 8, 1.05);
+    } else c += `<rect x="${x}" y="${292 - h}" width="30" height="${h}" rx="6" fill="url(#barV)" opacity="${hand ? 0.9 : 0.8}"/>`;
+  });
+  c += `<line x1="34" y1="294" x2="312" y2="294" stroke="rgba(255,255,255,.18)"/>`;
+  for (let r = 0; r < 5; r++) for (let q = 0; q < 3; q++) {
+    const hi = hand && r === 3 && q === 1;
+    c += `<rect x="${340 + q * 50}" y="${126 + r * 34}" width="46" height="28" rx="5" fill="${hi ? 'rgba(185,193,255,.16)' : 'rgba(255,255,255,.04)'}" stroke="${hi ? '#B9C1FF' : 'rgba(255,255,255,.12)'}" stroke-width="${hi ? 1.5 : 1}"/>`;
+    if (!hi && (r + q) % 2 === 0) c += bar(348 + q * 50, 136 + r * 34, 26, 8, 'rgba(255,255,255,.22)');
+  }
+  if (hand) c += caret(402, 228 + 2, 20);
+  return shell(CW, CH) + c;
+}
+const CARD = {
+  QUOTE: { cx: 690, cy: 330, rot: -2, body: quoteBody },
+  ENQUIRY: { cx: 1250, cy: 350, rot: 2, body: enquiryBody },
+  HOURS: { cx: 700, cy: 762, rot: 1.5, body: hoursBody },
+  REPORT: { cx: 1244, cy: 768, rot: -1.5, body: reportBody }
+};
+function cardAt(type, st = {}, o = {}) {
+  const k = CARD[type];
+  const op = o.op == null ? 1 : o.op;
+  return `<g opacity="${op}" filter="url(#shCard)"><g transform="translate(${k.cx + (o.dx || 0)},${k.cy + (o.dy || 0)}) rotate(${k.rot}) scale(${o.s || 1}) translate(${-CW / 2},${-CH / 2})">${k.body(st)}</g></g>`;
+}
+function cardMorph(type, toCorners, t, contentOp, st = {}) {
+  const k = CARD[type];
+  const from = rotRectCorners(k.cx, k.cy, CW, CH, k.rot);
+  const q = from.map((p, n) => lerpP(p, toCorners[n], t));
+  const body = `<rect x="0" y="0" width="${CW}" height="${CH}" rx="26" fill="#141C3B" opacity="${f2(Math.min(1, 0.4 + contentOp))}"/><g opacity="${contentOp}">${k.body(st)}</g>`;
+  return `<g filter="url(#shCard)"><g transform="${affine(q[0], q[1], q[3], CW, CH)}">${body}<rect x="0" y="0" width="${CW}" height="${CH}" rx="26" fill="rgba(185,193,255,.06)" stroke="rgba(185,193,255,.6)" stroke-width="1.4" vector-effect="non-scaling-stroke"/></g></g>`;
+}
+const frame0 = () => cardAt('HOURS') + cardAt('REPORT') + cardAt('QUOTE') + cardAt('ENQUIRY', { arrive: 1 });
+const CARD_BLOCK = { QUOTE: [0, 2, 0], ENQUIRY: [2, 2, 0], HOURS: [0, 1, 1], REPORT: [1, 0, 1] };
 
-/* ---------- B7/B8 list + labels ---------- */
-const LIST = [['01', 'Quote follow-ups'], ['02', 'Enquiries answered'], ['03', 'New customers'], ['04', 'Hours to invoices'], ['05', 'Owner’s weekly report']];
-function list(ops) {
-  return LIST.map(([n, name], i) => {
-    const y = 350 + i * 75; const op = ops[i];
-    return `<g opacity="${op}">${MONO(170, y - 2, n, { sz: 36, fill: i === 0 ? C.lav : C.muted })}${T(240, y, name, { f: 'i', sz: 44, fill: C.text })}</g>`;
-  }).join('');
-}
-const FIRST_LABEL = (op = 1) => leader(1000, 762.5, 930, 'First block · guaranteed', { op, lx: 982, ly: 944 });
-const TOP_LABEL = (op = 1) => `<g opacity="${op}"><line x1="1360" y1="166" x2="1360" y2="118" stroke="rgba(223,230,243,.5)"/><circle cx="1360" cy="112" r="4" fill="#F3F5FA"/>${MONO(1342, 124, 'All of it connected', { fill: C.text, op: 0.85, anchor: 'end' })}</g>`;
-function runChips(op = 1, dy = 0) {
-  const chipM = (x0, y0, w, txt) => `<rect x="${x0}" y="${y0}" width="${w}" height="64" rx="32" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.10)"/>` + MONO(x0 + 30, y0 + 46, txt, { fill: C.text });
-  const w1 = measure('Hosted in Finland', { f: 'm', sz: 40 }) + 60, w2 = measure('One contact at Wicflow', { f: 'm', sz: 40 }) + 60;
-  return `<g opacity="${op}" transform="translate(0,${dy})">${chipM(170, 600, f2(w1), 'Hosted in Finland')}${chipM(170, 684, f2(w2), 'One contact at Wicflow')}</g>`;
-}
+/* ---------- labels (reference style: line, dot, Fragment Mono label) ---------- */
+const FIRST_LABEL = (op = 1) => `<g opacity="${op}"><line x1="600" y1="764" x2="600" y2="928" stroke="rgba(223,230,243,.5)" stroke-width="1.2"/><circle cx="600" cy="932" r="4.5" fill="#B9C1FF"/>${MONO(620, 943, 'First block · guaranteed', { sz: 32, fill: C.text, op: 0.9 })}</g>`;
+const TOP_LABEL = (op = 1, dy = 0) => `<g opacity="${op}" transform="translate(0,${dy})"><line x1="960" y1="178" x2="960" y2="116" stroke="rgba(223,230,243,.5)" stroke-width="1.2"/><circle cx="960" cy="112" r="4.5" fill="#F3F5FA"/>${MONO(940, 123, 'All of it connected', { sz: 32, fill: C.text, op: 0.9, anchor: 'end' })}</g>`;
+
+/* ---------- world helpers ---------- */
 function namedState(map) { const o = {}; for (const k in map) o[KEY_OF[k]] = map[k]; return o; }
 function solidNamed(extra = {}) {
-  return namedState({
-    '01': { w: { peri: 1 }, num: '01', ...(extra['01'] || {}) },
-    '02': { w: { solid: 1 }, num: '02', ...(extra['02'] || {}) },
-    '03': { w: { solid: 1 }, num: '03', ...(extra['03'] || {}) },
-    '04': { w: { solid: 1 }, num: '04', ...(extra['04'] || {}) },
-    '05': { w: { solid: 1 }, num: '05', ...(extra['05'] || {}) },
-    '06': { w: { solid: 1 }, num: '06', ...(extra['06'] || {}) }
-  });
+  const b = (n, w) => ({ w, num: n, ...(extra[n] || {}) });
+  return namedState({ '01': b('01', { peri: 1 }), '02': b('02', { solid: 1 }), '03': b('03', { solid: 1 }), '04': b('04', { solid: 1 }), '05': b('05', { solid: 1 }), '06': b('06', { solid: 1 }) });
 }
 function pulsesAt(list) { return list.map(([x, y]) => spark(x, y, 12, 20)).join(''); }
-
-/* ---------- B9 lockup ---------- */
-const MARK = { x: 147.64, y: 173.64, w: 199.68, h: 133.12 };
-const DIAMOND = [[202, 248], [222, 212], [253, 250], [233, 283]]; // left, top, right, bottom
-function markImg(attr = '') {
-  return `<image href="../../../harvest/wicflow-mark.png" x="${MARK.x}" y="${MARK.y}" width="${MARK.w}" height="${MARK.h}" filter="url(#markWhite)" ${attr}/>`;
-}
-const WORD = { sz: 100, x: 350, y: 284 };
-function wordmark(x = WORD.x, op = 1) { return T(x, WORD.y, 'wicflow', { f: 'k', sz: WORD.sz, w: 800, ls: -WORD.sz * 0.04, fill: C.text, op }); }
-
-/* ======================================================================= */
-const FRAMES = {};
-const FRAME_META = [];
-function def(id, t, fn) { FRAMES[id] = fn; FRAME_META.push({ id, t }); }
-
-/* B1: the work, as blocks */
-def('B01-0000', 0, () => svgDoc(frame0()));
-def('B01-0100', 1, () => {
-  let s = HL(170, 330, 'Quotes.') + HL(170, 440, 'Enquiries.', { op: 0.85 });
-  s += world({ def: { w: { wire: 1 }, dashOff: 2 }, blocks: Object.fromEntries(BLOCKS.map(([c, r, k]) => [`${c},${r},${k}`, (c === 0 && r === 2 && k === 0) ? {} : null])) });
-  s += cardAt('HOURS', 0, -4) + cardAt('REPORT', 0, -4);
-  s += cardMorph('ENQUIRY', topFaceCardOrder(2, 2, 0), 0.55, 0.4);
-  return svgDoc(s);
-});
-def('B01-0320', 3.2, () => {
-  const s = HL(170, 330, 'Quotes.') + HL(170, 430, 'Enquiries.') + HL(170, 530, 'Hours.') + HL(170, 630, 'Reports.');
-  return svgDoc(s + world({ def: { w: { wire: 1 }, dashOff: 5 } }));
-});
-
-/* B2: off the shelf never fits */
-function slab() {
-  const top = [P(0, 0, 3), P(3, 0, 3), P(3, 3, 3), P(0, 3, 3)];
-  const left = [P(0, 3, 3), P(3, 3, 3), P(3, 3, 2), P(0, 3, 2)];
-  const right = [P(3, 3, 3), P(3, 0, 3), P(3, 0, 2), P(3, 3, 2)];
-  let s = `<polygon points="${pts([P(0, 0, 1), P(3, 0, 1), P(3, 3, 1), P(0, 3, 1)].map((p) => [p[0], p[1] + 30]))}" fill="#000" opacity=".25" filter="url(#b15)"/>`;
-  s += `<polygon points="${pts(top)}" fill="rgba(154,163,181,.30)"/><polygon points="${pts(left)}" fill="rgba(154,163,181,.22)"/><polygon points="${pts(right)}" fill="rgba(154,163,181,.26)"/>`;
-  for (const n of [1, 2]) {
-    s += `<line x1="${P(n, 0, 3)[0]}" y1="${P(n, 0, 3)[1]}" x2="${P(n, 3, 3)[0]}" y2="${P(n, 3, 3)[1]}" stroke="rgba(200,206,220,.28)" stroke-width="1"/>`;
-    s += `<line x1="${P(0, n, 3)[0]}" y1="${P(0, n, 3)[1]}" x2="${P(3, n, 3)[0]}" y2="${P(3, n, 3)[1]}" stroke="rgba(200,206,220,.28)" stroke-width="1"/>`;
-  }
-  const e = [[P(0, 0, 3), P(3, 0, 3)], [P(3, 0, 3), P(3, 3, 3)], [P(3, 3, 3), P(0, 3, 3)], [P(0, 3, 3), P(0, 0, 3)], [P(0, 3, 3), P(0, 3, 2)], [P(3, 3, 3), P(3, 3, 2)], [P(3, 0, 3), P(3, 0, 2)], [P(0, 3, 2), P(3, 3, 2)], [P(3, 3, 2), P(3, 0, 2)]];
-  s += `<path d="${e.map(([a, b]) => `M${a[0]},${a[1]} L${b[0]},${b[1]}`).join(' ')}" stroke="rgba(200,206,220,.60)" stroke-width="1.5" fill="none"/>`;
-  const lc = P(1.5, 3, 2.5);
-  s += `<g transform="matrix(0.866,0.5,0,1,${lc[0]},${lc[1]})">${T(0, 13, 'OFF THE SHELF', { f: 'm', sz: 36, fill: 'rgba(225,230,240,.62)', anchor: 'middle', ls: 2 })}</g>`;
-  return s;
-}
-def('B02-0490', 4.9, () => {
-  let s = SUP(170, 330, 'Software made to work') + SUP(170, 386, 'for every company') + HL(170, 500, 'never quite') + HL(170, 600, 'fits yours.');
-  s += world({ def: { w: { wire: 1 }, dashOff: 7 } });
-  s += slab();
-  s += renderBlock({ c: 0, r: 0, k: 2, w: { orange: 1 } });
-  const gaps = [[[1120, 506.5], [1120, 634.5]], [[1360, 645.5], [1360, 773.5]], [[1480, 576], [1480, 704]]];
-  s += gaps.map(([a, b]) => `<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="#FF5A1F" stroke-opacity=".7" stroke-width="1.5" stroke-dasharray="6 5"/><circle cx="${b[0]}" cy="${b[1]}" r="3" fill="#FF5A1F" opacity=".8"/>`).join('');
-  return svgDoc(s);
-});
-def('B02-0680', 6.8, () => {
-  let s = HL(170, 420, 'Built around') + HL(170, 520, 'how you work.') + SUP(170, 600, 'Custom automation and AI,') + SUP(170, 656, 'not software off the shelf.');
-  const base = { def: { w: { wire: 1 }, dash: '3 4', wireOp: 0.55, dashOff: 3 } };
-  s += world(base);
-  const c = [1420, 669.25], n = [0.5, 0.866];
-  const p0 = [c[0] - 60 * n[0], c[1] - 60 * n[1]], p1 = [c[0] + 60 * n[0], c[1] + 60 * n[1]];
-  const defs = `<linearGradient id="bandM" gradientUnits="userSpaceOnUse" x1="${p0[0]}" y1="${p0[1]}" x2="${p1[0]}" y2="${p1[1]}"><stop offset="0" stop-color="#000"/><stop offset=".5" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
-    <linearGradient id="bandF" gradientUnits="userSpaceOnUse" x1="${p0[0]}" y1="${p0[1]}" x2="${p1[0]}" y2="${p1[1]}"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".14"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
-    <mask id="band"><rect width="1920" height="1080" fill="url(#bandM)"/></mask><clipPath id="clu">${clusterShapes()}</clipPath>`;
-  s += `<g clip-path="url(#clu)"><rect width="1920" height="1080" fill="url(#bandF)"/><line x1="${c[0] + 1000 * 0.866}" y1="${c[1] - 500}" x2="${c[0] - 1000 * 0.866}" y2="${c[1] + 500}" stroke="rgba(255,255,255,.5)" stroke-width="1"/></g>`;
-  s += `<g mask="url(#band)"><g filter="url(#b2)" opacity=".8">${world({ def: { w: { wire: 1 }, dash: '3 4', wireOp: 0.85, dashOff: 3 } })}</g>${world({ def: { w: { wire: 1 }, dash: '3 4', wireOp: 0.85, dashOff: 3 } })}</g>`;
-  return svgDoc(s, defs);
-});
-
-/* B3: first we map where the time goes */
-def('B03-0785', 7.85, () => {
-  const kx = kickerX();
-  let s = MONO(kx, 250, 'AI M') + `<rect x="${f2(kx + measure('AI M', { f: 'm', sz: 40 }) + 4)}" y="222" width="2" height="30" fill="#B9C1FF"/>`;
-  const keep = { '2,0,0': { prog: 0.55 }, '1,1,0': { prog: 0.7 }, '2,1,0': { prog: 0.85 }, '0,2,0': { prog: 1 }, '1,2,0': { prog: 1 }, '2,2,0': { prog: 1 } };
-  const blocks = {};
-  for (const [c, r, k] of BLOCKS) { const key = `${c},${r},${k}`; blocks[key] = keep[key] ? { ...keep[key], op: 0.4 } : null; }
-  s += world({ def: { w: { wire: 1 }, dashOff: 4 }, blocks });
-  const lay = chipLayout(['Quotes', 'Enquiries', 'Hours', 'Reports']);
-  const src = { Quotes: [0, 2, 0], Enquiries: [2, 2, 0], Hours: [0, 1, 1], Reports: [1, 0, 1] };
-  const t = 0.35;
-  for (const ch of lay) {
-    const [c, r, k] = src[ch.word];
-    const from = topFaceCardOrder(c, r, k, 24);
-    const to = [[ch.x0, CHIP.y0], [ch.x0 + ch.w, CHIP.y0], [ch.x0 + ch.w, CHIP.y0 + CHIP.h], [ch.x0, CHIP.y0 + CHIP.h]];
-    const q = from.map((p, n) => lerpP(p, to[n], t));
-    const cen = [(q[0][0] + q[2][0]) / 2, (q[0][1] + q[2][1]) / 2];
-    const o = topCentre(c, r, k); o[1] -= 24;
-    const back = lerpP(cen, o, 0.45);
-    s += `<line x1="${f2(cen[0])}" y1="${f2(cen[1])}" x2="${f2(back[0])}" y2="${f2(back[1])}" stroke="rgba(185,193,255,.16)" stroke-width="44" stroke-linecap="round" filter="url(#b10)"/>`;
-    s += `<g transform="${affine(q[0], q[1], q[3], ch.w, CHIP.h)}"><rect x="0" y="0" width="${f2(ch.w)}" height="${CHIP.h}" rx="22" fill="rgba(185,193,255,.10)" stroke="rgba(255,255,255,.18)" stroke-width="1" vector-effect="non-scaling-stroke"/></g>`;
-    s += T(cen[0], cen[1] + 14, ch.word, { f: 'i', sz: 40, w: 500, anchor: 'middle', op: 0.4 });
-  }
-  return svgDoc(s);
-});
-def('B03-0925', 9.25, () => {
-  const lay = chipLayout(['New customers', 'Quotes', 'Enquiries', 'Hours', 'Reports']);
-  const q = lay[1];
-  const scanX = q.x0 + 28 + 60 + 40;
-  let s = b3Head() + timeline(scanX) + scanGlow(scanX);
-  s += chip(lay[0], { stroke: 'rgba(185,193,255,.55)', bar: 80 });
-  s += chip(lay[1], { stroke: '#B9C1FF', sw: 1.5, bar: 60 });
-  for (const ch of lay.slice(2)) s += chip(ch, { textOp: 0.72 });
-  return svgDoc(s);
-});
-def('B03-1040', 10.4, () => {
-  const lay = chipLayout(['New customers', 'Quotes', 'Enquiries', 'Hours', 'Reports']);
-  let s = b3Head() + timeline(1560, 'full') + scanGlow(1560);
-  for (const ch of lay) s += chip(ch, { bar: HEAT[ch.word] });
-  return svgDoc(s);
-});
-
-/* B4: a costed plan, highest return first */
-def('B04-1160', 11.6, () => {
-  let s = planCard();
-  s += `<line x1="330" y1="446" x2="1590" y2="446" stroke="rgba(255,255,255,.10)"/><circle cx="1590" cy="446" r="16" fill="rgba(255,217,200,.45)" filter="url(#b6)"/><circle cx="1590" cy="446" r="3" fill="#ffd9c8" opacity=".8"/>`;
-  s += MONO(360, 236, 'AI MAPPING · FIXED PR') + `<rect x="${f2(360 + measure('AI MAPPING · FIXED PR', { f: 'm', sz: 40 }) + 4)}" y="208" width="2" height="30" fill="#B9C1FF"/>`;
-  s += HL(360, 352, 'A costed plan', { op: 0.7 });
-  const short = ['New customers', null, 'Enquiries', 'Hours', 'Reports'];
-  const heat = [80, 120, 98, 64, 48];
-  ROWC.forEach((cy, n) => {
-    const b = cy + 16;
-    if (n === 1) {
-      s += `<defs><clipPath id="r2"><rect x="330" y="${cy - 32}" width="1260" height="66"/></clipPath></defs><g clip-path="url(#r2)">${T(430, b - 10, 'Quote follow-ups', { f: 'i', sz: 44, op: 0.9 })}${T(430, b + 36, 'Quotes', { f: 'i', sz: 44, op: 0.3 })}</g>`;
-    } else s += T(430, b, short[n], { f: 'i', sz: 44 });
-    s += `<rect x="430" y="${b + 18}" width="${heat[n]}" height="4" rx="2" fill="url(#barG)"/>`;
-  });
-  return svgDoc(s);
-});
-def('B04-1245', 12.45, () => {
-  let s = planCard() + MONO(360, 236, 'AI MAPPING · FIXED PRICE · 1–2 WEEKS') + HL(360, 340, 'A costed plan') + planHeads();
-  ['New customers', 'Quote follow-ups', 'Enquiries answered', 'Hours to invoices', 'Owner’s weekly report'].forEach((n, i) => { s += planRow(n, ROWC[i]); });
-  return svgDoc(s + FOOT());
-});
-def('B04-1335', 13.35, () => {
-  let s = planCard() + MONO(360, 236, 'AI MAPPING · FIXED PRICE · 1–2 WEEKS') + planHeads();
-  s += `<defs><clipPath id="hband"><rect x="330" y="260" width="1200" height="102"/></clipPath></defs><g clip-path="url(#hband)">${HL(360, 412, 'A costed plan', { op: 0.12 })}${HL(360, 332, 'Highest return first.', { op: 0.85 })}</g>`;
-  s += planRow('Hours to invoices', 738) + planRow('Owner’s weekly report', 818);
-  s += planRow('New customers', 578, { op: 0.85 });
-  s += planRow('Enquiries answered', 618, { plate: true, scale: 1.01 });
-  s += planRow('Quote follow-ups', 538, { plate: true, scale: 1.01 });
-  return svgDoc(s + FOOT());
-});
-def('B04-1440', 14.4, () => {
-  const dy = -2;
-  let s = planCard(dy);
-  let g = MONO(360, 236, 'AI MAPPING · FIXED PRICE · 1–2 WEEKS') + HL(360, 340, 'Highest return first.') + planHeads();
-  g += `<rect x="330" y="462" width="1260" height="72" rx="16" fill="rgba(185,193,255,.16)" stroke="rgba(185,193,255,.75)" stroke-width="1.5"/>`;
-  const order = ['Quote follow-ups', 'Enquiries answered', 'New customers', 'Hours to invoices', 'Owner’s weekly report'];
-  order.forEach((n, i) => { g += planRow(n, ROWC[i], { num: `0${i + 1}`, numFill: i === 0 ? C.lav : C.muted, op: i === 0 ? 1 : 0.6 }); });
-  g += `<rect x="820" y="476" width="217" height="44" rx="22" fill="#B9C1FF"/>` + MONO(928.5, 507, 'First block', { sz: 28, fill: '#0B1220', anchor: 'middle' });
-  g += `<defs><clipPath id="rb1"><rect x="1080" y="491" width="240" height="14" rx="7"/></clipPath></defs><rect x="1160" y="485" width="80" height="26" fill="#fff" opacity=".18" clip-path="url(#rb1)"/>`;
-  g += FOOT();
-  return svgDoc(s + `<g transform="translate(0,${dy})">${g}</g>`);
-});
-
-/* B5: first block, guaranteed */
-def('B05-1570', 15.7, () => {
-  const q = [[650, 466], [1490, 362], [1670, 846], [830, 950]];
-  const wire = 'stroke="rgba(223,230,243,.42)" stroke-width="1.5" stroke-dasharray="6 6" fill="none"';
-  let s = `<polygon points="${pts(q)}" fill="rgba(255,255,255,.02)"/>`;
-  s += `<polygon points="${pts(q)}" stroke="rgba(223,230,243,.25)" stroke-width="6" fill="none" filter="url(#b4)"/>`;
-  s += `<polygon points="${pts(q)}" ${wire}/>`;
-  const lineUV = (u0, v0, u1, v1, op = 1) => { const a = bil(q, u0, v0), b = bil(q, u1, v1); return `<line x1="${f2(a[0])}" y1="${f2(a[1])}" x2="${f2(b[0])}" y2="${f2(b[1])}" ${wire} opacity="${op}"/>`; };
-  for (const v of [0.348, 0.681]) s += lineUV(0, v, 1, v);
-  for (const v of [0.484, 0.589, 0.8]) s += lineUV(0, v, 1, v, 0.45);
-  for (const u of [0.462, 0.739]) s += lineUV(u, 0, u, 1);
-  // lifted row
-  s += `<g transform="translate(1000,564) rotate(-8) skewX(-10)" filter="url(#shLift2)">
-    <rect x="-500" y="-40" width="1000" height="80" rx="16" fill="rgba(185,193,255,.30)" stroke="#B9C1FF" stroke-width="1.5"/>
-    <g opacity=".4">${MONO(-470, 13, '01', { sz: 36, fill: C.lav })}${T(-400, 16, 'Quote follow-ups', { f: 'i', sz: 44 })}
-    <rect x="-10" y="-22" width="217" height="44" rx="22" fill="#B9C1FF"/>${MONO(98.5, 9, 'First block', { sz: 28, fill: '#0B1220', anchor: 'middle' })}
-    <rect x="250" y="-7" width="240" height="14" rx="7" fill="url(#barG)"/></g></g>`;
-  return svgDoc(s);
-});
-function floorLines(op = 1) {
-  const wire = `stroke="rgba(223,230,243,.42)" stroke-width="1.5" stroke-dasharray="6 6" fill="none" opacity="${op}"`;
-  let s = `<polygon points="${pts([P(0, 0, 0), P(3, 0, 0), P(3, 3, 0), P(0, 3, 0)])}" ${wire}/>`;
-  for (const n of [1, 2]) { s += `<path d="M${P(n, 0, 0)} L${P(n, 3, 0)} M${P(0, n, 0)} L${P(3, n, 0)}" ${wire}/>`; }
-  return s;
-}
-def('B05-1675', 16.75, () => {
-  let s = floorLines();
-  const blocks = {};
-  for (const [c, r, k] of BLOCKS) blocks[`${c},${r},${k}`] = null;
-  blocks['1,2,0'] = { prog: 0.2 }; blocks['0,1,0'] = { prog: 0.2 };
-  blocks['0,2,0'] = { w: { peri: 1 }, studH: 14, glowMul: 0.5 };
-  s += world({ def: { w: { wire: 1 }, dashOff: 2 }, blocks });
-  return svgDoc(s);
-});
-function glintArc(c, r, k, dy = 0) {
-  const sc = topCentre(c, r, k); const cx = sc[0], cy = sc[1] - STUD.h - dy;
-  return `<path d="M${cx - 38},${cy + 12} A44,25.5 0 0 0 ${cx + 6},${cy + 25.3}" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".95"/><path d="M${cx - 38},${cy + 12} A44,25.5 0 0 0 ${cx + 6},${cy + 25.3}" stroke="#fff" stroke-width="6" fill="none" opacity=".5" filter="url(#b3)"/>`;
-}
-def('B05-1840', 18.4, () => {
-  let s = HL(170, 380, 'If it doesn’t do') + HL(170, 480, 'what we agreed,') + HL(170, 580, 'you don’t pay.');
-  s += world({ def: { w: { wire: 1 }, dashOff: 9 }, blocks: { '0,2,0': { w: { peri: 1 } } } });
-  s += glintArc(0, 2, 0) + FIRST_LABEL(1);
-  return svgDoc(s);
-});
-
-/* B6: inside the block, it runs */
-def('B06-1955', 19.55, () => {
-  // giant top face (x4 and beyond) leaving through the frame corners
-  const hole = [[960 - 1700, 540], [960, 540 - 980], [960 + 1700, 540], [960, 540 + 980]];
-  let s = `<defs><mask id="corners"><rect width="1920" height="1080" fill="#fff"/><polygon points="${pts(hole)}" fill="#000" filter="url(#b12)"/></mask></defs>`;
-  s += `<rect width="1920" height="1080" fill="#CDD3FF" opacity=".35" mask="url(#corners)"/>`;
-  // radial streaks
-  let streaks = '';
-  for (let n = 0; n < 28; n++) {
-    const a = (n / 28) * Math.PI * 2 + 0.1; const r0 = 250 + (n % 3) * 30, r1 = r0 + 60 + (n % 4) * 25;
-    streaks += `<line x1="${f2(1360 + Math.cos(a) * r0 * 1.15)}" y1="${f2(540 + Math.sin(a) * r0)}" x2="${f2(1360 + Math.cos(a) * r1 * 1.15)}" y2="${f2(540 + Math.sin(a) * r1)}" stroke="rgba(185,193,255,.22)" stroke-width="2" stroke-linecap="round"/>`;
-  }
-  s += `<g filter="url(#b2)">${streaks}</g>`;
-  s += `<g transform="translate(1360,540) scale(.6) translate(-1360,-540)"><g filter="url(#b3)">${panel({ rows: [{}, {}, {}], pulse: 0 })}</g></g>`;
-  return svgDoc(s);
-});
-def('B06-2140', 21.4, () => {
-  let s = panel({ rows: [{ draft: 1, ready: 1 }, { draft: 1, ready: 1 }, { outline: 1, track: 1330 }], pulse: 0.4 });
-  s += HL(170, 420, 'No open quote') + quietLine([0.45, 0.45, 0.55, 0.75, 0.9, 1]);
-  s += SUP(170, 600, 'Drafts ready for') + SUP(170, 656, 'the salesperson.');
-  return svgDoc(s);
-});
-def('B06-2240', 22.4, () => {
-  let s = panel({ rows: [{ draft: 1, ready: 1, sheen: 0.5 }, { draft: 1, ready: 1 }, { draft: 1, ready: 1, outline: 0.4 }], pulse: 0.5 });
-  s += HL(170, 420, 'No open quote') + quietLine([1, 1, 1, 1, 1, 1], 0.55);
-  s += SUP(170, 600, 'Drafts ready for') + SUP(170, 656, 'the salesperson.');
-  return svgDoc(s);
-});
-
-/* B7: block by block */
-def('B07-2405', 24.05, () => {
-  let s = HL(170, 250, 'Block by block.') + list([1, 0.8, 0.5, 0.5, 0.5]);
-  const blocks = namedState({ '01': { w: { peri: 1 }, num: '01' }, '02': { w: { glass: 1, solid: 1 }, wipe: 0.6, dy: 2 }, '06': { w: { wire: 1 } } });
-  s += world({ def: { w: { glass: 1 } }, blocks });
-  s += FIRST_LABEL(0.7);
-  return svgDoc(s);
-});
-def('B07-2630', 26.3, () => {
-  let s = HL(170, 250, 'Block by block.') + list([1, 1, 1, 1, 1]) + SUP(170, 760, 'Every block priced in writing') + SUP(170, 814, 'before we start.');
-  const blocks = solidNamed({ '06': { w: { wire: 1 }, num: null } });
-  const tc = topCentre(2, 0, 1);
-  const light = `<polygon points="${pts([P(2, 0, 2), P(3, 0, 2), P(3, 1, 2), P(2, 1, 2)].map((p) => [p[0], p[1] - 4]))}" fill="#fff" opacity=".35" filter="url(#b8)"/>`;
-  s += world({ def: { w: { glass: 1 } }, blocks, level: 4, after: light });
-  s += FIRST_LABEL(0.7);
-  return svgDoc(s);
-});
-
-/* B8: one system, all of it connected */
-def('B08-2745', 27.45, () => {
-  let s = HL(170, 420, 'One system.');
-  const blocks = solidNamed({ '06': { w: { wire: 1 }, num: null } });
-  let lines = lightLine(LINES['01-02']) + lightLine(LINES['02-03']) + lightLine(LINES['01-04'], 0.78, { spark: 1 }) + lightLine(LINES['03-05'], 0.48, { spark: 1 }) + lightLine(LINES['04-06'], 0.18, { spark: 1 });
-  s += world({ def: { w: { glass: 1 } }, blocks, after: lines, studsOnTop: true });
-  s += FIRST_LABEL(0.7);
-  return svgDoc(s);
-});
 function allLines() { return Object.values(LINES).map((l) => lightLine(l)).join(''); }
-def('B08-2860', 28.6, () => {
-  let s = HL(170, 420, 'One system.') + SUP(170, 500, 'In your name and colours.') + runChips(0.2, 13);
-  const blocks = solidNamed({ '01': { studLit: 1 }, '02': { studLit: 1 }, '04': { studLit: 1 }, '03': { studLit: 1 } });
-  const wave = `<circle cx="1300" cy="330" r="22" fill="#fff" opacity=".5" filter="url(#b8)"/>${spark(1300, 330, 14, 26)}<circle cx="1540" cy="472" r="22" fill="#fff" opacity=".5" filter="url(#b8)"/>${spark(1540, 472, 14, 26)}`;
-  s += world({ def: { w: { glass: 1 } }, blocks, after: allLines(), studsOnTop: true, top: wave });
-  s += TOP_LABEL(1) + FIRST_LABEL(0.7);
-  return svgDoc(s);
-});
 function litWorld(extra = {}) {
   const lit = { studLit: 1, glowMul: 1.2 };
   const blocks = solidNamed({ '01': lit, '02': lit, '03': lit, '04': lit, '05': lit, '06': lit });
@@ -468,60 +224,494 @@ function litWorld(extra = {}) {
   const halo = `<ellipse cx="${tc[0]}" cy="${tc[1] + 40}" rx="170" ry="150" fill="rgba(185,193,255,.22)" filter="url(#b30)"/>`;
   return { def: { w: { glass: 1 } }, blocks, before: halo, studsOnTop: true, ...extra };
 }
-def('B08-3020', 30.2, () => {
-  let s = HL(170, 420, 'One system.') + SUP(170, 500, 'In your name and colours.') + runChips(1, 0);
-  s += world(litWorld({ after: allLines(), top: pulsesAt([[1180, 540], [1540, 600], [1420, 330]]) }));
-  s += TOP_LABEL(1) + FIRST_LABEL(0.7);
-  return svgDoc(s);
-});
-
-/* B9: let's find the first thing to build */
-def('B09-3145', 31.45, () => {
-  let s = world(litWorld({ after: allLines(), top: pulsesAt([[1240, 704], [1540, 620], [1300, 300]]), scale: { s: 0.99, cx: 960, cy: 540 } }));
-  const sc = (p) => [960 + (p[0] - 960) * 0.99, 540 + (p[1] - 540) * 0.99 - 24];
-  const from = [P(0, 3, 1), P(0, 2, 1), P(1, 2, 1), P(1, 3, 1)].map(sc); // left, top, right, bottom
-  const q = from.map((p, n) => lerpP(p, DIAMOND[n], 0.5));
-  const cen = [(q[0][0] + q[2][0]) / 2, (q[1][1] + q[3][1]) / 2];
-  const back = lerpP(cen, sc(topCentre(0, 2, 0)), 0.22);
-  s += `<line x1="${f2(cen[0])}" y1="${f2(cen[1])}" x2="${f2(back[0])}" y2="${f2(back[1])}" stroke="rgba(97,114,243,.45)" stroke-width="70" stroke-linecap="round" filter="url(#b12)"/>`;
-  s += `<polygon points="${pts(q)}" fill="#CDD3FF" fill-opacity=".9" stroke="#fff" stroke-width="1" stroke-linejoin="round"/>`;
-  return svgDoc(s);
-});
-def('B09-3195', 31.95, () => {
-  let s = world(litWorld({ after: allLines(), top: pulsesAt([[1180, 560], [1600, 506], [1420, 300]]), scale: { s: 0.985, cx: 960, cy: 540 } }));
-  const defs = `<radialGradient id="rev" gradientUnits="userSpaceOnUse" cx="228" cy="248" r="118"><stop offset="0" stop-color="#fff"/><stop offset=".52" stop-color="#fff"/><stop offset=".66" stop-color="#000"/></radialGradient><mask id="revM"><rect width="1920" height="1080" fill="url(#rev)"/></mask>`;
-  s += `<g mask="url(#revM)">${markImg()}</g>`;
-  s += `<polygon points="${pts(DIAMOND)}" fill="#CDD3FF" stroke="#fff" stroke-width="1" stroke-linejoin="round"/>`;
-  s += wordmark(336, 0.3);
-  return svgDoc(s, defs);
-});
-function ctaPill(sheenX, nudge = 3) {
-  let s = `<rect x="170" y="712" width="600" height="96" rx="48" fill="#FFFFFF"/>`;
-  s += T(218, 776, 'Book an AI mapping', { f: 'i', sz: 44, w: 600, fill: '#0B1220' });
-  const ax = 712 + nudge;
-  s += `<path d="M${ax},760 h34 M${ax + 20},746 l14,14 l-14,14" stroke="#0B1220" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
-  if (sheenX != null) s += `<defs><clipPath id="ctaC"><rect x="170" y="712" width="600" height="96" rx="48"/></clipPath><linearGradient id="shG" x1="0" x2="1"><stop offset="0" stop-color="#9fb0ff" stop-opacity="0"/><stop offset=".5" stop-color="#9fb0ff" stop-opacity=".35"/><stop offset="1" stop-color="#9fb0ff" stop-opacity="0"/></linearGradient></defs><g clip-path="url(#ctaC)"><rect x="${sheenX - 60}" y="700" width="120" height="120" fill="url(#shG)" transform="skewX(-20)" transform-origin="${sheenX} 760"/></g>`;
+function floorLines(op = 1) {
+  const wire = `stroke="rgba(223,230,243,.42)" stroke-width="1.5" stroke-dasharray="6 6" fill="none" opacity="${op}"`;
+  let s = `<polygon points="${pts([P(0, 0, 0), P(3, 0, 0), P(3, 3, 0), P(0, 3, 0)])}" ${wire}/>`;
+  for (const n of [1, 2]) s += `<path d="M${P(n, 0, 0)} L${P(n, 3, 0)} M${P(0, n, 0)} L${P(3, n, 0)}" ${wire}/>`;
   return s;
 }
-def('B09-3440', 34.4, () => {
-  let s = world(litWorld({ after: allLines(), top: pulsesAt([[1240, 704], [1540, 560], [1300, 340]]), scale: { s: 0.96, cx: 960, cy: 540 } }));
-  s += markImg() + wordmark();
-  s += HL(170, 450, 'Let’s find the') + HL(170, 550, 'first thing') + HL(170, 650, 'to build.');
-  s += ctaPill(470);
-  s += MONO(170, 900, '300+ projects built');
+function glintArc(c, r, k, dy = 0) {
+  const sc = topCentre(c, r, k); const cx = sc[0], cy = sc[1] - STUD.h - dy;
+  return `<path d="M${cx - 38},${cy + 12} A44,25.5 0 0 0 ${cx + 6},${cy + 25.3}" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".95"/><path d="M${cx - 38},${cy + 12} A44,25.5 0 0 0 ${cx + 6},${cy + 25.3}" stroke="#fff" stroke-width="6" fill="none" opacity=".5" filter="url(#b3)"/>`;
+}
+
+/* ---------- B3: the AI mapping (an interface) ---------- */
+const NODES = [
+  { key: 'cust', icon: 'personPlus', x: 400, y: 420, lost: 165, blk: [2, 0, 1] },
+  { key: 'enq', icon: 'chat', x: 680, y: 500, lost: 205, blk: [2, 2, 0] },
+  { key: 'quote', icon: 'doc', x: 960, y: 420, lost: 250, blk: [0, 2, 0] },
+  { key: 'hours', icon: 'clock', x: 1240, y: 500, lost: 130, blk: [0, 1, 1] },
+  { key: 'report', icon: 'chart', x: 1520, y: 420, lost: 100, blk: [1, 0, 1] }
+];
+const BASE = 872, NS = 128;
+const PEACH_V = `<linearGradient id="peachV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd9c8"/><stop offset="1" stop-color="#f3a585" stop-opacity=".75"/></linearGradient>
+  <linearGradient id="periV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CDD3FF"/><stop offset="1" stop-color="#6172F3"/></linearGradient>`;
+function mapWindow(o = {}) {
+  let s = `<rect x="220" y="140" width="1480" height="800" rx="32" fill="rgba(255,255,255,.045)" stroke="rgba(255,255,255,.11)" stroke-width="1" filter="url(#shCard60)"${o.dash ? ` stroke-dasharray="${o.dash}"` : ''}/>`;
+  if (o.chrome === false) return s;
+  s += MONO(270, 200, 'AI mapping', { sz: 26, fill: C.muted });
+  const x0 = 1250, x1 = 1640, fx = lerp(x0, x1, o.week == null ? 0 : o.week);
+  s += `<line x1="${x0}" y1="186" x2="${x1}" y2="186" stroke="rgba(255,255,255,.16)" stroke-width="2"/><line x1="${x0}" y1="186" x2="${f2(fx)}" y2="186" stroke="#B9C1FF" stroke-width="2"/>`;
+  s += `<circle cx="${x0}" cy="186" r="5" fill="#F3F5FA"/><circle cx="${x1}" cy="186" r="5" fill="${o.week >= 1 ? '#B9C1FF' : 'rgba(223,230,243,.35)'}"/>`;
+  if (o.week > 0 && o.week < 1) s += `<circle cx="${f2(fx)}" cy="186" r="12" fill="rgba(185,193,255,.45)" filter="url(#b4)"/><circle cx="${f2(fx)}" cy="186" r="4" fill="#fff"/>`;
+  s += MONO(x0, 216, 'Week 1', { sz: 20, anchor: 'middle', fill: 'rgba(223,230,243,.55)' }) + MONO(x1, 216, 'Week 2', { sz: 20, anchor: 'middle', fill: 'rgba(223,230,243,.55)' });
+  s += `<line x1="220" y1="240" x2="1700" y2="240" stroke="rgba(255,255,255,.08)"/>`;
+  return s;
+}
+function mapBody(o = {}) {
+  const fill = o.fill || [1, 1, 1, 1, 1];
+  const dim = o.found ? 0.36 : 1;
+  let s = `<line x1="300" y1="${BASE}" x2="1620" y2="${BASE}" stroke="rgba(255,255,255,.14)" stroke-width="1.5"/>` + icon('clock', 272, BASE, 0.62, { c: 'rgba(255,217,200,.7)', sw: 2 });
+  // connectors
+  for (let i = 0; i < NODES.length - 1; i++) {
+    const a = NODES[i], b = NODES[i + 1];
+    s += `<g opacity="${o.found ? 0.4 : 1}">${flow([a.x + NS / 2 + 6, a.y], [b.x - NS / 2 - 6, b.y], { lit: o.flow == null ? 1 : o.flow, dots: [0.35 + 0.1 * (i % 2), 0.75] })}</g>`;
+  }
+  NODES.forEach((n, i) => {
+    const isQ = n.key === 'quote';
+    const op = o.found && !isQ ? dim : 1;
+    const h = n.lost * fill[i];
+    const top = BASE - h;
+    let g = '';
+    // time draining out of the process into its column
+    const y0 = n.y + NS / 2 + 18, y1 = top - 14;
+    if (y1 > y0 && fill[i] < 1) {
+      for (let d = 0; d < 4; d++) {
+        const y = lerp(y0, y1, (d + 0.35) / 4);
+        g += `<circle cx="${n.x}" cy="${f2(y)}" r="${f2(3.2 + d * 0.5)}" fill="#ffd9c8" opacity="${f2(0.35 + d * 0.15)}"/>`;
+      }
+    }
+    if (y1 > y0 && fill[i] >= 1 && !(o.found && isQ)) g += `<line x1="${n.x}" y1="${f2(y0)}" x2="${n.x}" y2="${f2(y1)}" stroke="rgba(255,217,200,.22)" stroke-width="2" stroke-dasharray="2 8" stroke-linecap="round"/>`;
+    const barFill = o.found && isQ ? 'url(#periV)' : 'url(#peachV)';
+    if (o.found && isQ) g += `<rect x="${n.x - 36}" y="${f2(top)}" width="72" height="${f2(h)}" rx="14" fill="rgba(97,114,243,.6)" filter="url(#b15)"/>`;
+    g += `<rect x="${n.x - 36}" y="${f2(top)}" width="72" height="${f2(h)}" rx="14" fill="${barFill}" opacity=".92"/>`;
+    // node
+    if (o.found && isQ) {
+      g += tile(n.x, n.y, NS, n.icon, { fill: 'rgba(185,193,255,.24)', stroke: '#B9C1FF', sw: 2, ic: '#F3F5FA', is: 1.6, isw: 3, glow: 'rgba(97,114,243,.55)' });
+      g += ringArc(n.x, n.y, 104, 1, 'rgba(185,193,255,.35)', 2);
+      const k = 86, a = 26;
+      g += `<path d="M${n.x - k},${n.y - k + a} V${n.y - k} H${n.x - k + a} M${n.x + k - a},${n.y - k} H${n.x + k} V${n.y - k + a} M${n.x + k},${n.y + k - a} V${n.y + k} H${n.x + k - a} M${n.x - k + a},${n.y + k} H${n.x - k} V${n.y + k - a}" fill="none" stroke="#B9C1FF" stroke-width="3" stroke-linecap="round"/>`;
+    } else {
+      const scanned = o.scanX != null && o.scanX > n.x;
+      g += tile(n.x, n.y, NS, n.icon, { is: 1.6, isw: 3, stroke: scanned ? 'rgba(185,193,255,.45)' : 'rgba(255,255,255,.15)' });
+    }
+    s += `<g opacity="${op}">${g}</g>`;
+  });
+  if (o.scanX != null) {
+    s += `<defs><linearGradient id="scanB" x1="0" x2="1"><stop offset="0" stop-color="#6172F3" stop-opacity="0"/><stop offset="1" stop-color="#6172F3" stop-opacity=".16"/></linearGradient></defs>`;
+    s += `<rect x="${o.scanX - 160}" y="252" width="160" height="${BASE - 252 + 30}" fill="url(#scanB)"/><line x1="${o.scanX}" y1="252" x2="${o.scanX}" y2="${BASE + 30}" stroke="#B9C1FF" stroke-width="1.5" opacity=".8"/>`;
+  }
+  return s;
+}
+
+/* ---------- B4: the costed plan (a UI card) ---------- */
+const ROWS = {
+  quote: { icon: 'doc', label: 'Quote follow-ups', ret: 300, cost: 110 },
+  enq: { icon: 'chat', label: 'Enquiries answered', ret: 245, cost: 96 },
+  cust: { icon: 'personPlus', label: 'New customers', ret: 195, cost: 104 },
+  hours: { icon: 'clock', label: 'Hours to invoices', ret: 150, cost: 90 },
+  report: { icon: 'chart', label: 'Owner’s weekly report', ret: 115, cost: 80 }
+};
+const SLOT = [350, 470, 590, 710, 830];
+function planCard(o = {}) {
+  let s = `<rect x="380" y="140" width="1160" height="800" rx="32" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.11)" stroke-width="1" filter="url(#shCard60)"/>`;
+  s += T(440, 222, 'Costed plan', { f: 'h', sz: 44, w: 500, ls: -0.6, op: o.titleOp == null ? 1 : o.titleOp });
+  s += icon('trend', 1086, 206, 0.8, { c: 'rgba(185,193,255,.8)' }) + T(1398, 219, '€', { f: 'i', sz: 34, w: 500, fill: C.muted });
+  s += `<line x1="410" y1="262" x2="1510" y2="262" stroke="rgba(255,255,255,.10)"/>`;
+  return s;
+}
+function planRow(key, cy, o = {}) {
+  const d = ROWS[key];
+  const grow = o.grow == null ? 1 : o.grow;
+  let s = '';
+  if (o.plate) s += `<rect x="410" y="${cy - 50}" width="1100" height="100" rx="20" fill="#1A2246" fill-opacity=".97" stroke="rgba(255,255,255,.16)" filter="url(#shLift2)"/>`;
+  if (o.hi) s += `<rect x="410" y="${cy - 50}" width="1100" height="100" rx="20" fill="rgba(185,193,255,.14)" stroke="rgba(185,193,255,.75)" stroke-width="1.5"/>`;
+  const lit = o.lit || o.hi;
+  s += tile(478, cy, 68, d.icon, lit ? { fill: 'rgba(185,193,255,.24)', stroke: '#B9C1FF', sw: 1.5, ic: '#F3F5FA', is: 0.85 } : { is: 0.85 });
+  s += T(540, cy + 13, d.label, { f: 'i', sz: 36, fill: C.text, op: o.labelOp == null ? 1 : o.labelOp });
+  if (o.tag) {
+    const x = 540 + measure(d.label, { f: 'i', sz: 36 }) + 24;
+    s += `<rect x="${f2(x)}" y="${cy - 20}" width="162" height="40" rx="20" fill="#B9C1FF"/>` + MONO(x + 81, cy + 8, 'First block', { sz: 22, fill: '#0B1220', anchor: 'middle' });
+  }
+  s += `<rect x="1070" y="${cy - 8}" width="290" height="16" rx="8" fill="rgba(255,255,255,.06)"/>`;
+  s += `<rect x="1070" y="${cy - 8}" width="${f2(d.ret * 0.96 * grow)}" height="16" rx="8" fill="url(#barG)"/>`;
+  if (o.sheen) s += `<defs><clipPath id="sh${key}"><rect x="1070" y="${cy - 8}" width="${d.ret * 0.96}" height="16" rx="8"/></clipPath></defs><rect x="${1070 + d.ret * 0.96 * o.sheen - 40}" y="${cy - 14}" width="80" height="28" fill="#fff" opacity=".35" clip-path="url(#sh${key})"/>`;
+  s += `<rect x="1400" y="${cy - 6}" width="${f2(d.cost * 0.85 * grow)}" height="12" rx="6" fill="rgba(223,230,243,.38)"/>`;
+  const op = o.op == null ? 1 : o.op;
+  const tr = o.dx || o.scale ? ` transform="translate(${o.dx || 0},0)${o.scale ? ` translate(960,${cy}) scale(${o.scale}) translate(-960,${-cy})` : ''}"` : '';
+  return `<g opacity="${op}"${tr}>${s}</g>`;
+}
+function planLines() { return SLOT.slice(0, 4).map((c) => `<line x1="430" y1="${c + 60}" x2="1490" y2="${c + 60}" stroke="rgba(255,255,255,.05)"/>`).join(''); }
+
+/* ---------- B6: the automation running inside the first block ---------- */
+function autoPanel(st = {}) {
+  let s = `<rect x="240" y="160" width="1440" height="760" rx="32" fill="rgba(97,114,243,.08)" stroke="rgba(185,193,255,.28)" stroke-width="1" filter="url(#shCard60)"/>`;
+  s += miniCube(300, 222, 1.3) + T(340, 234, 'Quote follow-ups', { f: 'i', sz: 34, w: 500 });
+  s += pill(1620, 200, 'Running', { right: true, sz: 24, dot: C.green, ring: st.pulse == null ? 0.4 : st.pulse });
+  s += `<line x1="270" y1="280" x2="1650" y2="280" stroke="rgba(255,255,255,.09)"/>`;
+  // stage 1: open quotes (a queue)
+  const q = st.quote || {};
+  s += `<g opacity=".28"><rect x="402" y="412" width="300" height="400" rx="24" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)"/></g>`;
+  s += `<g opacity=".5"><rect x="386" y="396" width="300" height="400" rx="24" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)"/></g>`;
+  let c = `<rect x="370" y="380" width="300" height="400" rx="24" fill="#151D3D" stroke="${q.done ? 'rgba(185,193,255,.55)' : 'rgba(255,255,255,.16)'}" stroke-width="1.2"/>`;
+  c += tile(422, 432, 56, 'doc', { is: 0.82 }) + bar(462, 418, 120, 12, 'rgba(255,255,255,.30)') + bar(462, 440, 80, 10);
+  [500, 536, 572].forEach((y, n) => { c += bar(394, y, [170, 140, 160][n], 12) + bar(600, y, 46, 12); });
+  c += `<line x1="394" y1="610" x2="646" y2="610" stroke="rgba(255,255,255,.10)"/>`;
+  c += T(394, 652, '€', { f: 'i', sz: 28, w: 500, fill: C.muted }) + bar(600, 640, 46, 14, 'rgba(185,193,255,.55)');
+  c += timer(420, 724, 22, q.done ? 1 : 0.4, q.done ? '#B9C1FF' : '#ffd9c8');
+  c += pill(458, 706, 'Open', { sz: 22 });
+  if (q.done) c += `<circle cx="646" cy="404" r="20" fill="#6172F3"/>` + icon('check', 646, 404, 0.9, { c: '#fff', sw: 3 });
+  s += c;
+  // stage 2: the follow-up drafts itself
+  const d = st.draft == null ? 1 : st.draft;
+  s += flow([676, 580], [800, 580], { lit: 1, dots: [0.4, 0.8] });
+  let g = `<rect x="806" y="380" width="308" height="400" rx="24" fill="#151D3D" stroke="rgba(185,193,255,.45)" stroke-width="1.2"/>`;
+  g += tile(858, 432, 56, 'sparkle', { fill: 'rgba(185,193,255,.2)', stroke: '#B9C1FF', ic: '#CDD3FF', is: 0.82, glow: d < 1 ? 'rgba(97,114,243,.6)' : null });
+  g += bar(898, 418, 140, 12, 'rgba(255,255,255,.30)') + bar(898, 440, 90, 10);
+  const lw = [250, 228, 256, 204, 150];
+  let rem = d * lw.reduce((a, b) => a + b, 0), cx = 830, cy = 500;
+  lw.forEach((w, n) => {
+    const y = 500 + n * 34;
+    const ww = Math.max(0, Math.min(w, rem)); rem -= w;
+    g += `<rect x="830" y="${y}" width="${w}" height="12" rx="6" fill="rgba(255,255,255,.06)"/>`;
+    if (ww > 0) { g += bar(830, y, ww, 12, 'rgba(223,230,243,.72)'); cx = 830 + ww; cy = y; }
+  });
+  if (d < 1) g += caret(cx + 6, cy - 6, 24);
+  g += `<rect x="830" y="${d >= 1 ? 706 : 706}" width="136" height="48" rx="24" fill="${d >= 1 ? '#6172F3' : 'rgba(255,255,255,.07)'}" stroke="rgba(255,255,255,.14)"/>` + icon('send', 898, 730, 0.62, { c: '#F3F5FA', sw: 2.4 });
+  s += g;
+  // stage 3: ready for the salesperson
+  const r = st.ready || 0;
+  s += flow([1120, 580], [1244, 666], { lit: r ? 1 : 0.15, dots: r ? [0.35, 0.75] : [] });
+  s += `<g opacity="${r ? 1 : 0.55}"><circle cx="1400" cy="452" r="64" fill="rgba(255,255,255,.07)" stroke="${r ? 'rgba(185,193,255,.6)' : 'rgba(255,255,255,.16)'}" stroke-width="1.5"/>${icon('person', 1400, 456, 1.7, { sw: 3 })}</g>`;
+  if (r) {
+    s += `<rect x="1250" y="560" width="300" height="220" rx="24" fill="#151D3D" stroke="rgba(185,193,255,.55)" stroke-width="1.2" filter="url(#shLift)"/>`;
+    s += tile(1296, 606, 48, 'doc', { is: 0.7 }) + bar(1332, 594, 140, 11, 'rgba(255,255,255,.3)') + bar(1332, 614, 96, 9);
+    s += bar(1276, 650, 248, 10) + bar(1276, 672, 210, 10);
+    s += `<rect x="1276" y="712" width="176" height="44" rx="22" fill="#6172F3"/>` + MONO(1364, 741, 'Draft ready', { sz: 22, fill: C.text, anchor: 'middle' });
+    if (st.sheen != null) s += `<defs><clipPath id="drC"><rect x="1276" y="712" width="176" height="44" rx="22"/></clipPath></defs><rect x="${1276 + st.sheen * 176 - 25}" y="700" width="50" height="70" fill="#fff" opacity=".28" transform="skewX(-20)" transform-origin="${1276 + st.sheen * 176} 734" clip-path="url(#drC)"/>`;
+    s += `<circle cx="1500" cy="734" r="22" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.18)"/>` + icon('send', 1501, 734, 0.5, { sw: 2.2 });
+  } else {
+    s += `<rect x="1250" y="560" width="300" height="220" rx="24" fill="none" stroke="rgba(255,255,255,.18)" stroke-dasharray="7 7"/>`;
+  }
+  return s;
+}
+
+/* ---------- B7: the system, block by block ---------- */
+function signedDoc(x, y, sig = 1) { // "priced in writing": a document with a price line and a signature being drawn
+  let s = `<rect x="${x}" y="${y}" width="300" height="400" rx="24" fill="#151D3D" stroke="rgba(255,255,255,.16)" filter="url(#shCard)"/>`;
+  s += tile(x + 52, y + 52, 56, 'doc', { is: 0.82 }) + bar(x + 92, y + 38, 130, 12, 'rgba(255,255,255,.3)') + bar(x + 92, y + 60, 86, 10);
+  [120, 156, 192].forEach((dy, n) => { s += bar(x + 26, y + dy, [160, 130, 150][n], 12) + bar(x + 228, y + dy, 46, 12); });
+  s += `<line x1="${x + 26}" y1="${y + 228}" x2="${x + 274}" y2="${y + 228}" stroke="rgba(255,255,255,.10)"/>`;
+  s += T(x + 26, y + 272, '€', { f: 'i', sz: 28, w: 500, fill: C.muted }) + bar(x + 214, y + 258, 60, 16, 'rgba(185,193,255,.65)');
+  s += `<line x1="${x + 26}" y1="${y + 356}" x2="${x + 274}" y2="${y + 356}" stroke="rgba(223,230,243,.35)" stroke-width="1.2"/>`;
+  const sigD = `M${x + 40},${y + 340} c8,-26 18,-30 20,-8 s6,16 14,-6 s10,-24 16,-2 s8,14 18,-6 c6,-10 12,-8 16,2 s10,8 22,-10`;
+  s += `<path d="${sigD}" fill="none" stroke="#CDD3FF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" pathLength="100" stroke-dasharray="${f2(100 * sig)} 100"/>`;
+  if (sig < 1) s += `<g transform="translate(${x + 40 + 106 * sig},${y + 330}) rotate(35)"><rect x="-4" y="-40" width="8" height="40" rx="3" fill="#F3F5FA"/><path d="M-4,0 L0,10 L4,0 Z" fill="#B9C1FF"/></g>`;
+  return s;
+}
+function hoursFlowCard(x, y) { // hours from the sites straight into invoices, running
+  let s = `<rect x="${x}" y="${y}" width="740" height="600" rx="30" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.12)" filter="url(#shCard60)"/>`;
+  s += tile(x + 64, y + 64, 60, 'clock', { is: 0.85 }) + icon('arrow', x + 128, y + 64, 0.7, { c: 'rgba(185,193,255,.8)' }) + tile(x + 192, y + 64, 60, 'invoice', { is: 0.85 });
+  s += `<circle cx="${x + 690}" cy="${y + 64}" r="7" fill="${C.green}"/><circle cx="${x + 690}" cy="${y + 64}" r="14" fill="none" stroke="${C.green}" stroke-opacity=".35" stroke-width="2"/>`;
+  s += MONO(x + 662, y + 73, '04', { sz: 26, anchor: 'end', fill: C.muted });
+  s += `<line x1="${x + 30}" y1="${y + 120}" x2="${x + 710}" y2="${y + 120}" stroke="rgba(255,255,255,.08)"/>`;
+  // timesheet
+  const gx = x + 50, gy = y + 160;
+  const on = new Set(['0,0', '1,0', '2,0', '3,0', '0,1', '1,1', '2,1', '4,1', '0,2', '1,2', '3,2', '4,2', '0,3', '2,3', '3,3', '1,4', '2,4', '4,4', '0,5', '3,5']);
+  for (let r = 0; r < 6; r++) for (let q = 0; q < 5; q++) {
+    const f = on.has(`${q},${r}`) && !(r === 2 && q < 2);
+    const c0 = `<rect x="${gx + q * 48}" y="${gy + r * 48}" width="40" height="40" rx="9" fill="${f ? 'rgba(97,114,243,.5)' : 'rgba(255,255,255,.04)'}" stroke="${f ? 'rgba(185,193,255,.55)' : 'rgba(255,255,255,.14)'}"/>`;
+    s += c0;
+  }
+  // invoice
+  const ix = x + 440, iy = y + 150;
+  let zig = `M${ix},${iy} H${ix + 260} V${iy + 400}`; for (let i = 0; i < 10; i++) zig += ` l-26,${i % 2 ? 12 : -12}`; zig += ' Z';
+  s += `<path d="${zig}" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.18)"/>`;
+  s += bar(ix + 24, iy + 30, 120, 12, 'rgba(255,255,255,.3)');
+  [80, 120, 160, 200, 240, 280].forEach((dy, n) => {
+    if (n < 3) s += bar(ix + 24, iy + dy, 130, 12, 'rgba(223,230,243,.6)') + bar(ix + 190, iy + dy, 46, 12, 'rgba(223,230,243,.6)');
+    else if (n === 3) s += bar(ix + 24, iy + dy, 74, 12, 'rgba(223,230,243,.6)') + `<rect x="${ix + 24}" y="${iy + dy}" width="130" height="12" rx="6" fill="none" stroke="rgba(185,193,255,.35)"/>`;
+    else s += `<rect x="${ix + 24}" y="${iy + dy}" width="130" height="12" rx="6" fill="none" stroke="rgba(255,255,255,.14)" stroke-dasharray="4 4"/>`;
+  });
+  s += `<line x1="${ix + 24}" y1="${iy + 320}" x2="${ix + 236}" y2="${iy + 320}" stroke="rgba(255,255,255,.12)"/>`;
+  s += T(ix + 24, iy + 360, '€', { f: 'i', sz: 28, w: 500, fill: C.muted }) + bar(ix + 176, iy + 346, 60, 16, 'rgba(185,193,255,.65)');
+  // cells flying across, no hands
+  const to = [ix + 98, iy + 86 + 120];
+  [[gx + 20, gy + 2 * 48 + 20, 0.82], [gx + 68, gy + 2 * 48 + 20, 0.5], [gx + 20, gy + 2 * 48 + 20, 0.22]].forEach(([fx, fy, t], n) => {
+    const c1 = [fx + 160, fy - 120], c2 = [to[0] - 120, to[1] - 140];
+    if (n === 0) s += `<path d="M${fx},${fy} C${c1[0]},${c1[1]} ${c2[0]},${c2[1]} ${to[0]},${to[1]}" fill="none" stroke="rgba(185,193,255,.35)" stroke-width="2" stroke-dasharray="3 7" stroke-linecap="round"/>`;
+    const p = bez([fx, fy], c1, c2, to, t);
+    s += `<rect x="${f2(p[0] - 20)}" y="${f2(p[1] - 20)}" width="40" height="40" rx="9" fill="rgba(97,114,243,.85)" stroke="#CDD3FF" stroke-width="1.5" filter="url(#shLift)" transform="rotate(${-8 + n * 6} ${f2(p[0])} ${f2(p[1])})"/>`;
+  });
+  return s;
+}
+function reportCard(x, y, grow = 0.7) {
+  let s = `<rect x="${x}" y="${y}" width="420" height="300" rx="26" fill="rgba(255,255,255,.055)" stroke="rgba(255,255,255,.12)" filter="url(#shCard)"/>`;
+  s += tile(x + 52, y + 52, 56, 'chart', { is: 0.82 }) + bar(x + 92, y + 38, 120, 12, 'rgba(255,255,255,.3)') + bar(x + 92, y + 60, 80, 10);
+  s += tile(x + 372, y + 52, 48, 'sparkle', { fill: 'rgba(185,193,255,.2)', stroke: '#B9C1FF', ic: '#CDD3FF', is: 0.7 });
+  const hs = [70, 110, 88, 136, 118, 160];
+  hs.forEach((h, n) => {
+    const g = n < 4 ? 1 : n === 4 ? grow : grow * 0.35;
+    s += `<rect x="${x + 36 + n * 60}" y="${f2(y + 270 - h * g)}" width="40" height="${f2(h * g)}" rx="7" fill="url(#barV)"/>`;
+  });
+  s += `<line x1="${x + 28}" y1="${y + 272}" x2="${x + 392}" y2="${y + 272}" stroke="rgba(255,255,255,.18)"/>`;
+  return s;
+}
+function elbow(points, frac = 1) { return lightLine(points, frac, { spark: frac < 1 }); }
+
+/* ---------- B9: lockup ---------- */
+const MARK = { w: 199.68, h: 133.12 };
+function lockup(o = {}) {
+  const ms = o.markS || 0.66, mw = MARK.w * ms, mh = MARK.h * ms;
+  const wsz = 92, ls = -wsz * 0.04;
+  const ww = measure('wicflow', { f: 'k', sz: wsz, w: 800, ls });
+  const gap = 18, total = mw + gap + ww;
+  const x0 = 960 - total / 2, cy = o.cy || 628;
+  let g = `<image href="../../../harvest/wicflow-mark.png" x="${f2(x0)}" y="${f2(cy - mh / 2 - 4)}" width="${f2(mw)}" height="${f2(mh)}" filter="url(#markWhite)"/>`;
+  g += T(x0 + mw + gap, cy + wsz * 0.34, 'wicflow', { f: 'k', sz: wsz, w: 800, ls, fill: C.text, op: o.wordOp == null ? 1 : o.wordOp });
+  let s = `<g opacity="${o.markOp == null ? 1 : o.markOp}">${g}</g>`;
+  if (o.line) s += T(960, 790, 'Let’s find the first thing to build.', { f: 'h', sz: 60, w: 500, ls: -1.2, anchor: 'middle', op: o.line });
+  if (o.cta) {
+    const bw = 520, bx = 960 - bw / 2, by = 846;
+    s += `<rect x="${bx}" y="${by}" width="${bw}" height="88" rx="44" fill="#FFFFFF"/>`;
+    s += T(bx + 54, by + 57, 'Book an AI mapping', { f: 'i', sz: 38, w: 600, fill: '#0B1220' });
+    const ax = bx + bw - 86;
+    s += `<path d="M${ax},${by + 44} h32 M${ax + 18},${by + 31} l14,13 l-14,13" stroke="#0B1220" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+    if (o.sheen != null) s += `<defs><clipPath id="ctaC"><rect x="${bx}" y="${by}" width="${bw}" height="88" rx="44"/></clipPath><linearGradient id="shG" x1="0" x2="1"><stop offset="0" stop-color="#9fb0ff" stop-opacity="0"/><stop offset=".5" stop-color="#9fb0ff" stop-opacity=".38"/><stop offset="1" stop-color="#9fb0ff" stop-opacity="0"/></linearGradient></defs><g clip-path="url(#ctaC)"><rect x="${bx + bw * o.sheen - 60}" y="${by - 10}" width="120" height="110" fill="url(#shG)" transform="skewX(-20)" transform-origin="${bx + bw * o.sheen} ${by + 44}"/></g>`;
+  }
+  return s;
+}
+
+/* ======================================================================= */
+const FRAMES = {};
+const FRAME_META = [];
+function def(id, t, fn) { FRAMES[id] = fn; FRAME_META.push({ id, t }); }
+
+/* B1 · the real work */
+def('B01-0000', 0, () => svgDoc(frame0()));
+def('B01-0120', 1.2, () => svgDoc(
+  cardAt('HOURS', {}, { op: 0.28 }) + cardAt('REPORT', {}, { op: 0.28 }) + cardAt('ENQUIRY', { arrive: 1 }, { op: 0.28 }) +
+  cardAt('QUOTE', { quiet: 1, ring: 0.1 }, { s: 1.18, dx: 170, dy: 105 })));
+def('B01-0260', 2.6, () => svgDoc(
+  cardAt('QUOTE', { quiet: 1, ring: 0.1 }, { op: 0.55 }) + cardAt('REPORT', { hand: 1 }) +
+  cardAt('HOURS', { retype: 1 }, { s: 1.04 }) + cardAt('ENQUIRY', { pile: 1 }, { s: 1.04 })));
+
+/* B2 · off the shelf never fits, so we build around how you work */
+def('B02-0420', 4.2, () => {
+  const prog = { '0,0,0': 0.7, '1,0,0': 0.85, '2,0,0': 1, '0,1,0': 0.9, '1,1,0': 1, '2,1,0': 1, '1,2,0': 1, '0,0,1': 0.55, '2,0,1': 0.8, '0,0,2': 0.35 };
+  const blocks = {}; for (const k in prog) blocks[k] = { prog: prog[k] };
+  let s = world({ def: { w: { wire: 1 }, dashOff: 3 }, blocks });
+  for (const type of ['HOURS', 'REPORT', 'QUOTE', 'ENQUIRY']) {
+    const [c, r, k] = CARD_BLOCK[type];
+    s += cardMorph(type, topFaceCardOrder(c, r, k), 0.74, 0.18, type === 'QUOTE' ? { quiet: 1, ring: 0.1 } : {});
+  }
+  return svgDoc(s);
+});
+function appSlab(drop = 0) {
+  const dy = -drop;
+  const L = (i, j, h) => { const p = P(i, j, h); return [p[0], p[1] + dy]; };
+  let s = `<polygon points="${pts([P(0, 0, 1), P(3, 0, 1), P(3, 3, 1), P(0, 3, 1)].map((p) => [p[0], p[1] + 34]))}" fill="#000" opacity=".28" filter="url(#b15)"/>`;
+  const top = [L(0, 0, 3), L(3, 0, 3), L(3, 3, 3), L(0, 3, 3)];
+  const left = [L(0, 3, 3), L(3, 3, 3), L(3, 3, 2.7), L(0, 3, 2.7)];
+  const right = [L(3, 3, 3), L(3, 0, 3), L(3, 0, 2.7), L(3, 3, 2.7)];
+  s += `<polygon points="${pts(left)}" fill="rgba(140,148,166,.42)"/><polygon points="${pts(right)}" fill="rgba(160,168,186,.48)"/>`;
+  // a generic, one-size-fits-all app window lying on the slab's top face
+  const app = `<rect x="0" y="0" width="600" height="600" rx="26" fill="rgba(176,183,200,.40)" stroke="rgba(220,225,236,.75)" stroke-width="2"/>
+    <rect x="0" y="0" width="600" height="70" rx="26" fill="rgba(210,215,228,.30)"/><circle cx="40" cy="35" r="10" fill="rgba(235,238,245,.7)"/><circle cx="72" cy="35" r="10" fill="rgba(235,238,245,.5)"/><circle cx="104" cy="35" r="10" fill="rgba(235,238,245,.35)"/>
+    <rect x="24" y="96" width="120" height="480" rx="16" fill="rgba(220,225,236,.18)"/>
+    ${[0, 1, 2].map((r) => [0, 1, 2].map((q) => `<rect x="${172 + q * 140}" y="${96 + r * 164}" width="120" height="140" rx="18" fill="rgba(220,225,236,.24)" stroke="rgba(235,238,245,.35)"/>`).join('')).join('')}`;
+  s += `<g transform="${affine(top[0], top[1], top[3], 600, 600)}">${app}</g>`;
+  return s;
+}
+def('B02-0540', 5.4, () => {
+  let s = world({ def: { w: { wire: 1 }, dashOff: 7 } });
+  s += appSlab(0);
+  s += renderBlock({ c: 0, r: 0, k: 2, w: { orange: 1 } });
+  const gaps = [[P(0, 2, 2), P(0, 2, 1)], [P(2, 3, 2), P(2, 3, 1)], [P(3, 2, 2), P(3, 2, 1)], [P(1, 3, 2), P(1, 3, 1)]];
+  s += gaps.map(([a, b]) => `<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="#FF5A1F" stroke-opacity=".8" stroke-width="2" stroke-dasharray="6 5"/><circle cx="${b[0]}" cy="${b[1]}" r="4" fill="#FF5A1F"/>`).join('');
+  return svgDoc(s);
+});
+def('B02-0700', 7.0, () => {
+  const base = { def: { w: { wire: 1 }, dash: '3 4', wireOp: 0.55, dashOff: 3 } };
+  let s = world(base);
+  const c = [1020, 669.25], n = [0.5, 0.866];
+  const p0 = [c[0] - 70 * n[0], c[1] - 70 * n[1]], p1 = [c[0] + 70 * n[0], c[1] + 70 * n[1]];
+  const defs = `<linearGradient id="bandM" gradientUnits="userSpaceOnUse" x1="${p0[0]}" y1="${p0[1]}" x2="${p1[0]}" y2="${p1[1]}"><stop offset="0" stop-color="#000"/><stop offset=".5" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient>
+    <linearGradient id="bandF" gradientUnits="userSpaceOnUse" x1="${p0[0]}" y1="${p0[1]}" x2="${p1[0]}" y2="${p1[1]}"><stop offset="0" stop-color="#B9C1FF" stop-opacity="0"/><stop offset=".5" stop-color="#B9C1FF" stop-opacity=".2"/><stop offset="1" stop-color="#B9C1FF" stop-opacity="0"/></linearGradient>
+    <mask id="band"><rect width="1920" height="1080" fill="url(#bandM)"/></mask><clipPath id="clu">${clusterShapes()}</clipPath>`;
+  s += `<g clip-path="url(#clu)"><rect width="1920" height="1080" fill="url(#bandF)"/></g>`;
+  s += `<line x1="${c[0] + 1000 * 0.866}" y1="${c[1] - 500}" x2="${c[0] - 1000 * 0.866}" y2="${c[1] + 500}" stroke="rgba(185,193,255,.45)" stroke-width="1.2"/>`;
+  s += `<g mask="url(#band)"><g filter="url(#b2)" opacity=".9">${world({ def: { w: { wire: 1 }, dash: '3 4', wireOp: 0.95, dashOff: 3 } })}</g>${world({ def: { w: { wire: 1 }, dash: '3 4', wireOp: 0.95, dashOff: 3 } })}</g>`;
+  // the edges the scan has passed are measured and settle crisp: small dimension ticks
+  const tick = (a, b) => { const m = lerpP(a, b, 0.5); return `<line x1="${f2(a[0])}" y1="${f2(a[1])}" x2="${f2(b[0])}" y2="${f2(b[1])}" stroke="#B9C1FF" stroke-width="2"/><circle cx="${f2(a[0])}" cy="${f2(a[1])}" r="4" fill="#B9C1FF"/><circle cx="${f2(b[0])}" cy="${f2(b[1])}" r="4" fill="#B9C1FF"/><circle cx="${f2(m[0])}" cy="${f2(m[1])}" r="10" fill="rgba(185,193,255,.35)" filter="url(#b4)"/>`; };
+  const off = (p, dx, dy) => [p[0] + dx, p[1] + dy];
+  s += tick(off(P(0, 3, 0), -26, 15), off(P(0, 3, 1), -26, 15)) + tick(off(P(3, 3, 0), 0, 30), off(P(3, 2, 0), 26, 15));
+  return svgDoc(s, defs);
+});
+
+/* B3 · the AI mapping: processes laid out, time draining, the highest return found */
+def('B03-0790', 7.9, () => {
+  let s = `<g opacity=".28">${world({ def: { w: { wire: 1 }, dashOff: 5 } })}</g>`;
+  s += mapWindow({ chrome: false, dash: '1600 3000' });
+  const t = 0.6;
+  NODES.forEach((n) => {
+    const [c, r, k] = n.blk;
+    const from = topFaceCardOrder(c, r, k, 30);
+    const to = [[n.x - NS / 2, n.y - NS / 2], [n.x + NS / 2, n.y - NS / 2], [n.x + NS / 2, n.y + NS / 2], [n.x - NS / 2, n.y + NS / 2]];
+    const q = from.map((p, i) => lerpP(p, to[i], t));
+    const cen = [(q[0][0] + q[2][0]) / 2, (q[0][1] + q[2][1]) / 2];
+    const o = topCentre(c, r, k);
+    const back = lerpP(cen, o, 0.4);
+    s += `<line x1="${f2(cen[0])}" y1="${f2(cen[1])}" x2="${f2(back[0])}" y2="${f2(back[1])}" stroke="rgba(185,193,255,.16)" stroke-width="60" stroke-linecap="round" filter="url(#b12)"/>`;
+    s += `<polygon points="${pts(q)}" fill="rgba(185,193,255,.10)" stroke="rgba(255,255,255,.3)" stroke-width="1.2" stroke-linejoin="round"/>`;
+    s += icon(n.icon, cen[0], cen[1], 1.4, { op: 0.55, sw: 3 });
+  });
+  return svgDoc(s);
+});
+def('B03-0930', 9.3, () => svgDoc(mapWindow({ week: 0.5 }) + mapBody({ fill: [0.62, 0.58, 0.66, 0.4, 0.28], scanX: 1100 }), PEACH_V));
+def('B03-1070', 10.7, () => svgDoc(mapWindow({ week: 1 }) + mapBody({ found: 1, flow: 0.6 }), PEACH_V));
+
+/* B4 · the costed plan, ranked by return */
+def('B04-1170', 11.7, () => {
+  let s = planCard({ titleOp: 0.85 }) + planLines();
+  const order = ['cust', 'enq', 'quote', 'hours', 'report'];
+  order.forEach((k, i) => {
+    s += planRow(k, SLOT[i], { lit: k === 'quote', grow: [0.75, 0.6, 0.7, 0.45, 0.3][i], dx: [0, 0, 0, 30, 70][i], op: [1, 1, 1, 0.75, 0.45][i] });
+  });
+  return svgDoc(s);
+});
+def('B04-1320', 13.2, () => {
+  let s = planCard() + planLines();
+  s += planRow('hours', SLOT[3]) + planRow('report', SLOT[4]);
+  s += planRow('cust', 548, { op: 0.6 }) + planRow('enq', SLOT[1], { op: 0.85 });
+  s += planRow('quote', 398, { plate: true, lit: true, scale: 1.025 });
+  return svgDoc(s);
+});
+def('B04-1460', 14.6, () => {
+  let s = planCard() + planLines();
+  ['quote', 'enq', 'cust', 'hours', 'report'].forEach((k, i) => {
+    s += planRow(k, SLOT[i], i === 0 ? { hi: true, tag: true, sheen: 0.55 } : { op: 0.62 });
+  });
   return svgDoc(s);
 });
 
-/* B10: back to the work (loop) */
+/* B5 · the plan lies down as the ground, the top row rises as the first block */
+def('B05-1570', 15.7, () => {
+  const card = [[380, 140], [1540, 140], [1540, 940], [380, 940]];
+  const floor = [P(0, 3, 0), P(0, 0, 0), P(3, 0, 0), P(3, 3, 0)];
+  const q = card.map((p, n) => lerpP(p, floor[n], 0.55));
+  const wire = 'stroke="rgba(223,230,243,.42)" stroke-width="1.5" stroke-dasharray="6 6" fill="none"';
+  let s = `<polygon points="${pts(q)}" fill="rgba(255,255,255,.025)"/>`;
+  s += `<polygon points="${pts(q)}" stroke="rgba(223,230,243,.22)" stroke-width="6" fill="none" filter="url(#b4)"/><polygon points="${pts(q)}" ${wire}/>`;
+  const lineUV = (u0, v0, u1, v1, op = 1) => { const a = bil(q, u0, v0), b = bil(q, u1, v1); return `<line x1="${f2(a[0])}" y1="${f2(a[1])}" x2="${f2(b[0])}" y2="${f2(b[1])}" ${wire} opacity="${op}"/>`; };
+  for (const v of [1 / 3, 2 / 3]) s += lineUV(0, v, 1, v);
+  for (const u of [1 / 3, 2 / 3]) s += lineUV(u, 0, u, 1);
+  for (const v of [0.475, 0.625, 0.775]) s += lineUV(0.03, v, 0.97, v, 0.3);
+  // the lifted top row
+  const u0 = 30 / 1160, u1 = 1130 / 1160, v0 = 160 / 800, v1 = 260 / 800, lift = 64;
+  const A = bil(q, u0, v0), B = bil(q, u1, v0), D = bil(q, u0, v1);
+  const up = (p) => [p[0], p[1] - lift];
+  s += `<polygon points="${pts([A, B, bil(q, u1, v1), D])}" fill="#000" opacity=".35" filter="url(#b10)"/>`;
+  const row = `<rect x="0" y="0" width="1100" height="100" rx="20" fill="rgba(185,193,255,.32)" stroke="#B9C1FF" stroke-width="2" vector-effect="non-scaling-stroke"/>
+    <g opacity=".5">${tile(68, 50, 68, 'doc', { fill: 'rgba(185,193,255,.24)', stroke: '#B9C1FF', ic: '#F3F5FA', is: 0.85 })}${T(130, 63, 'Quote follow-ups', { f: 'i', sz: 36 })}
+    <rect x="600" y="42" width="300" height="16" rx="8" fill="url(#barG)"/></g>`;
+  s += `<g filter="url(#shLift2)"><g transform="${affine(up(A), up(B), up(D), 1100, 100)}">${row}</g></g>`;
+  const a = up(A);
+  s += `<ellipse cx="${f2(a[0] + 60)}" cy="${f2(a[1] + 30)}" rx="90" ry="50" fill="rgba(97,114,243,.45)" filter="url(#b20)"/>`;
+  return svgDoc(s);
+});
+def('B05-1680', 16.8, () => {
+  let s = floorLines();
+  const blocks = {};
+  for (const [c, r, k] of BLOCKS) blocks[`${c},${r},${k}`] = null;
+  blocks['1,2,0'] = { prog: 0.25 }; blocks['0,1,0'] = { prog: 0.25 }; blocks['1,1,0'] = { prog: 0.1 };
+  blocks['0,2,0'] = { w: { peri: 1 }, studH: 14, glowMul: 0.6 };
+  s += world({ def: { w: { wire: 1 }, dashOff: 2 }, blocks });
+  return svgDoc(s);
+});
+def('B05-1840', 18.4, () => {
+  let s = world({ def: { w: { wire: 1 }, dashOff: 9 }, blocks: { '0,2,0': { w: { peri: 1 }, glowMul: 1.2 } } });
+  s += glintArc(0, 2, 0) + FIRST_LABEL(1);
+  return svgDoc(s);
+});
+
+/* B6 · inside the first block, the automation runs */
+def('B06-1960', 19.6, () => {
+  const hole = [[960 - 1700, 540], [960, 540 - 980], [960 + 1700, 540], [960, 540 + 980]];
+  let s = `<defs><mask id="corners"><rect width="1920" height="1080" fill="#fff"/><polygon points="${pts(hole)}" fill="#000" filter="url(#b12)"/></mask></defs>`;
+  s += `<rect width="1920" height="1080" fill="#CDD3FF" opacity=".35" mask="url(#corners)"/>`;
+  let streaks = '';
+  for (let n = 0; n < 32; n++) {
+    const a = (n / 32) * Math.PI * 2 + 0.1; const r0 = 330 + (n % 3) * 30, r1 = r0 + 70 + (n % 4) * 30;
+    streaks += `<line x1="${f2(960 + Math.cos(a) * r0 * 1.5)}" y1="${f2(540 + Math.sin(a) * r0)}" x2="${f2(960 + Math.cos(a) * r1 * 1.5)}" y2="${f2(540 + Math.sin(a) * r1)}" stroke="rgba(185,193,255,.22)" stroke-width="2" stroke-linecap="round"/>`;
+  }
+  s += `<g filter="url(#b2)">${streaks}</g>`;
+  s += `<g transform="translate(960,540) scale(.62) translate(-960,-540)"><g filter="url(#b3)">${autoPanel({ draft: 0, quote: {}, pulse: 0 })}</g></g>`;
+  return svgDoc(s);
+});
+def('B06-2120', 21.2, () => svgDoc(autoPanel({ draft: 0.55, pulse: 0.3 })));
+def('B06-2260', 22.6, () => svgDoc(autoPanel({ draft: 1, ready: 1, sheen: 0.5, quote: { done: 1 }, pulse: 0.7 })));
+
+/* B7 · block by block, each priced in writing before we start */
+def('B07-2360', 23.6, () => {
+  const blocks = namedState({ '01': { w: { peri: 1 }, num: '01' }, '02': { w: { glass: 1, solid: 1 }, wipe: 0.55, dy: 3 }, '06': { w: { wire: 1 } } });
+  let s = world({ def: { w: { glass: 1 } }, blocks });
+  s += `<line x1="1400" y1="740" x2="1068" y2="842" stroke="rgba(185,193,255,.55)" stroke-width="1.5" stroke-dasharray="5 6"/><circle cx="1068" cy="842" r="5" fill="#B9C1FF"/>`;
+  s += signedDoc(1400, 470, 0.62);
+  return svgDoc(s);
+});
+def('B07-2500', 25.0, () => {
+  const blocks = solidNamed({ '04': { glowMul: 1.8, studLit: 0.8 }, '05': { w: { glass: 1 }, num: null }, '06': { w: { wire: 1 }, num: null } });
+  const W2 = world({ def: { w: { glass: 1 } }, blocks });
+  let s = placed(W2, 0.9, -390, 0, 960, 570);
+  const stud = xf([840, 437 - 24], 0.9, -390, 0);
+  s += elbow([stud, [stud[0], 196], [1110, 196], [1110, 236]], 1);
+  s += hoursFlowCard(1060, 236);
+  return svgDoc(s);
+});
+def('B07-2640', 26.4, () => {
+  const blocks = solidNamed({ '05': { studLit: 0.9, glowMul: 1.5 }, '06': { w: { wire: 1 }, num: null } });
+  let s = world({ def: { w: { glass: 1 } }, blocks, level: 4 });
+  s += elbow([[1080, 404], [1080, 300], [1240, 300]], 1);
+  s += reportCard(1240, 150, 0.72);
+  return svgDoc(s);
+});
+
+/* B8 · one system, all of it connected */
+def('B08-2750', 27.5, () => {
+  const blocks = solidNamed({ '06': { w: { glass: 1 }, num: null } });
+  const lines = lightLine(LINES['01-02']) + lightLine(LINES['02-03']) + lightLine(LINES['01-04'], 0.78, { spark: 1 }) + lightLine(LINES['03-05'], 0.5, { spark: 1 }) + lightLine(LINES['04-06'], 0.2, { spark: 1 });
+  return svgDoc(world({ def: { w: { glass: 1 } }, blocks, after: lines, studsOnTop: true }));
+});
+def('B08-2880', 28.8, () => {
+  const blocks = solidNamed({ '01': { studLit: 1 }, '02': { studLit: 1 }, '04': { studLit: 1 }, '03': { studLit: 1 }, '06': { glowMul: 1.3 } });
+  const tc = topCentre(0, 0, 2);
+  const wave = `<ellipse cx="${tc[0]}" cy="${tc[1] - 20}" rx="210" ry="122" fill="none" stroke="rgba(185,193,255,.5)" stroke-width="2" filter="url(#b2)"/>` + spark(900, 330, 14, 26) + spark(1140, 472, 14, 26);
+  let s = world({ def: { w: { glass: 1 } }, blocks, after: allLines(), studsOnTop: true, top: wave });
+  return svgDoc(s + TOP_LABEL(1));
+});
+def('B08-3020', 30.2, () => {
+  const s = world(litWorld({ after: allLines(), top: pulsesAt([[780, 540], [1140, 600], [1020, 330]]), scale: { s: 1.04, cx: 960, cy: 570 } }));
+  return svgDoc(s + TOP_LABEL(1, -8));
+});
+
+/* B9 · the end: let's find the first thing to build */
+def('B09-3150', 31.5, () => svgDoc(placed(world(litWorld({ after: allLines(), top: pulsesAt([[840, 704], [1140, 620], [900, 300]]) })), 0.76, 0, -90)));
+def('B09-3270', 32.7, () => svgDoc(placed(world(litWorld({ after: allLines(), top: pulsesAt([[780, 540], [1140, 600], [1020, 330]]) })), 0.5, 0, -238) + lockup({ wordOp: 0.85 })));
+def('B09-3440', 34.4, () => svgDoc(placed(world(litWorld({ after: allLines(), top: pulsesAt([[840, 704], [1140, 560], [900, 340]]) })), 0.5, 0, -238) + lockup({ line: 1, cta: 1, sheen: 0.62 })));
+
+/* B10 · back to the work (loop) */
 def('B10-3640', 36.4, () => {
-  const blocks = namedState({
-    '06': { w: { wire: 1 } }, '05': { w: { wire: 0.85, glass: 0.15 } }, '04': { w: { glass: 1 } },
-    '03': { w: { glass: 0.75, solid: 0.25 }, num: '03' }, '02': { w: { solid: 1 }, num: '02' }, '01': { w: { peri: 1 }, num: '01', glowMul: 0.6 }
-  });
-  for (const k of ['1,1,0', '1,2,0', '2,1,0']) blocks[k] = { w: { glass: 0.5, wire: 0.5 } };
-  for (const k of ['0,0,0', '1,0,0', '2,0,0', '0,1,0', '0,0,1']) blocks[k] = { w: { glass: 0.8, wire: 0.2 } };
-  const lines = lightLine(LINES['01-02'], 0.5) + lightLine(LINES['01-04'], 0.5);
-  return svgDoc(world({ def: { w: { glass: 1 } }, blocks, after: lines, studsOnTop: true, scale: { s: 0.98, cx: 960, cy: 540 } }));
+  const blocks = namedState({ '06': { w: { wire: 1 } }, '05': { w: { wire: 0.8, glass: 0.2 } }, '04': { w: { glass: 1 } }, '03': { w: { glass: 0.7, solid: 0.3 } }, '02': { w: { glass: 1 } }, '01': { w: { peri: 0.6, glass: 0.4 }, glowMul: 0.4 } });
+  for (const k of ['0,0,0', '1,0,0', '2,0,0', '0,1,0', '1,1,0', '2,1,0', '1,2,0', '0,0,1']) blocks[k] = { w: { glass: 0.5, wire: 0.5 } };
+  const S = 0.62, DY = -150;
+  let s = `<g opacity=".5">${placed(world({ def: { w: { glass: 1 } }, blocks }), S, 0, DY)}</g>`;
+  for (const type of ['HOURS', 'REPORT', 'QUOTE', 'ENQUIRY']) {
+    const [c, r, k] = CARD_BLOCK[type];
+    const face = topFaceCardOrder(c, r, k, 20).map((p) => xf(p, S, 0, DY));
+    s += cardMorph(type, face, 0.36, 0.6, type === 'ENQUIRY' ? { arrive: 1 } : {});
+  }
+  return svgDoc(s);
 });
 def('B10-3760', 37.6, () => svgDoc(frame0()));
 

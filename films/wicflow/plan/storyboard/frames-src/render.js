@@ -7,7 +7,7 @@ const fs = require('fs');
   const outPng = process.argv[2] || '/tmp/wf-frames';
   const only = process.argv.slice(3);
   fs.mkdirSync(outPng, { recursive: true });
-  const site = path.join(__dirname, '..', 'site', 'frames');
+  const site = process.env.WF_JPG_DIR || path.join(__dirname, '..', 'site', 'frames');
   fs.mkdirSync(site, { recursive: true });
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 });
