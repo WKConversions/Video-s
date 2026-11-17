@@ -14,7 +14,7 @@ for n in range(346, 370):
     nonw = np.maximum(255 - b, 1)
     a = np.where(((g - b) / nonw > 0.4) & (255 - b > 6), np.clip((255 - b) / 195.0, 0, 1), 0)[..., None]   # the logo's alpha
     green = ((g > r + 25) & (g > b + 25)); cols = np.where(green.sum(0) > 2)[0]
-    edge = cols.max() + 6 if len(cols) else 0
+    edge = (cols.min() + cols.max()) / 2 if len(cols) else 0   # Karl: the logo clearly OVER the text: it comes out from under the logo's centre
     dx = int(round(-(1 - ease((n - N0) / (N1 - N0))) * D))
     sh = np.full_like(text, 255.0)
     if dx < 0: sh[:, :dx] = text[:, -dx:]
