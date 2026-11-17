@@ -70,3 +70,8 @@ films/coyorclo/harvest/*.html
 films/coyorclo/harvest/cap/
 films/coyorclo/sound/*.wav
 films/coyorclo/film/public/takes/
+films/coyorclo/harvest/vt_*/
+films/coyorclo/harvest/vprobe*/
+films/coyorclo/film/public/vtakes/
+films/coyorclo/film/public/products/
+films/coyorclo/harvest/ui/

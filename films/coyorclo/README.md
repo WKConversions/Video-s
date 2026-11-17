@@ -11,3 +11,10 @@ Story: ONE OUTFIT. FOUR RUNNERS. → Abdel runs the streets → Bram flies the j
 survives the moon (UFO boss) → Infinity Mode: climb the leaderboard, play for prizes → COYOR RUN, the hand taps PLAY FREE,
 COYORCLO.COM. Sound: the beat from the sample draft (sound/bed.wav, looped to 28 s) and effects from Karl's own folder only.
 Not in git: the client's sample videos, the game copy, the captured takes, the audio.
+
+## v2 (Karl: "it must be fullscreen; understand the platform")
+FULLSCREEN vertical gameplay: `film/tools/capture_v.js` renders the game at 4K (its own resolution scaling) and a 9:16
+camera follows each runner (Abdel and Rahim's boss shot continue the sky upward; the game's HUD text is left out and the
+film draws its own HUD). The platform, from the game's own COYOR Shop: play -> earn CY coins -> discounts on real COYOR
+clothing (10% / 25% / 50% off at 2,500 / 6,000 / 12,000 CY, 100% for Infinity Mode winners), unlock and equip the fits
+(Common to Legendary), wear them IRL (the site's products and prices). Shop screens: `film/tools/ui_shots.js`.

@@ -13,273 +13,315 @@
  },
  "sfx": [
   {
-   "frame": 4,
+   "frame": 5,
    "id": "ui-backspace",
    "db": 2,
    "pitch": 0,
-   "note": "ONE OUTFIT. slams in"
+   "note": "PLAY THE GAME."
   },
   {
-   "frame": 44,
+   "frame": 45,
+   "id": "ui-enter",
+   "db": 2,
+   "pitch": 0,
+   "note": "WEAR THE FIT."
+  },
+  {
+   "frame": 66,
+   "id": "pop",
+   "db": 0,
+   "pitch": 0,
+   "note": "COYOR RUN \u00b7 FREE TO PLAY"
+  },
+  {
+   "frame": 126,
+   "id": "ui-click",
+   "db": 1,
+   "pitch": 0,
+   "note": "cut: Abdel"
+  },
+  {
+   "frame": 130,
+   "id": "ui-backspace",
+   "db": 2,
+   "pitch": 2,
+   "note": "RUN."
+  },
+  {
+   "frame": 258,
+   "id": "ui-click",
+   "db": 1,
+   "pitch": 2,
+   "note": "cut: Bram"
+  },
+  {
+   "frame": 262,
+   "id": "ui-enter",
+   "db": 2,
+   "pitch": 0,
+   "note": "FLY."
+  },
+  {
+   "frame": 384,
+   "id": "ui-click",
+   "db": 1,
+   "pitch": 4,
+   "note": "cut: Paulie"
+  },
+  {
+   "frame": 388,
+   "id": "ui-beatbox-click-01",
+   "db": 1,
+   "pitch": 0,
+   "note": "DODGE."
+  },
+  {
+   "frame": 510,
+   "id": "ui-click",
+   "db": 1,
+   "pitch": 0,
+   "note": "cut: Rahim"
+  },
+  {
+   "frame": 514,
+   "id": "ui-backspace",
+   "db": 2,
+   "pitch": -2,
+   "note": "BLAST."
+  },
+  {
+   "frame": 624,
+   "id": "ui-click",
+   "db": 1,
+   "pitch": -2,
+   "note": "cut: the boss"
+  },
+  {
+   "frame": 628,
+   "id": "ui-enter",
+   "db": 2,
+   "pitch": -3,
+   "note": "BEAT THE BOSS."
+  },
+  {
+   "frame": 747,
+   "id": "send-2",
+   "db": 0,
+   "pitch": 0,
+   "note": "gold wipe"
+  },
+  {
+   "frame": 760,
    "id": "ui-button",
    "db": 0,
    "pitch": 0,
-   "note": "the parcel lands and bounces"
+   "note": "the big coin pops"
   },
   {
-   "frame": 60,
-   "id": "ui-enter",
-   "db": 2,
-   "pitch": 0,
-   "note": "FOUR RUNNERS. slams in"
-  },
-  {
-   "frame": 71,
+   "frame": 765,
    "id": "pop",
+   "db": -2,
+   "pitch": 0,
+   "note": "coins rain"
+  },
+  {
+   "frame": 777,
+   "id": "pop",
+   "db": -2,
+   "pitch": 3,
+   "note": ""
+  },
+  {
+   "frame": 789,
+   "id": "pop",
+   "db": -2,
+   "pitch": 5,
+   "note": ""
+  },
+  {
+   "frame": 801,
+   "id": "pop",
+   "db": -2,
+   "pitch": 7,
+   "note": ""
+  },
+  {
+   "frame": 789,
+   "id": "ui-backspace",
+   "db": 1,
+   "pitch": 0,
+   "note": "COINS = DISCOUNTS"
+  },
+  {
+   "frame": 816,
+   "id": "ui-click-digital-03",
    "db": 0,
    "pitch": 0,
-   "note": "Abdel pops in"
+   "note": "10% card"
   },
   {
-   "frame": 76,
-   "id": "pop",
+   "frame": 823,
+   "id": "ui-click-digital-03",
    "db": 0,
    "pitch": 2,
-   "note": "Bram"
+   "note": "25%"
   },
   {
-   "frame": 82,
-   "id": "pop",
+   "frame": 830,
+   "id": "ui-click-digital-03",
    "db": 0,
    "pitch": 4,
-   "note": "Paulie"
+   "note": "50%"
   },
   {
-   "frame": 87,
-   "id": "pop",
+   "frame": 838,
+   "id": "ui-click-digital-03",
    "db": 0,
    "pitch": 6,
-   "note": "Rahim"
+   "note": "100%"
   },
   {
-   "frame": 138,
-   "id": "send-2",
-   "db": 0,
+   "frame": 897,
+   "id": "iphone-apple-pay",
+   "db": -2,
    "pitch": 0,
-   "note": "the parcel flies into the camera"
+   "note": "12,000 CY reached: 50% unlocked"
   },
   {
-   "frame": 157,
-   "id": "ui-click",
-   "db": 0,
-   "pitch": 0,
-   "note": "gold flash into Abdel"
-  },
-  {
-   "frame": 161,
-   "id": "ui-backspace",
-   "db": 2,
-   "pitch": 2,
-   "note": "ABDEL"
-  },
-  {
-   "frame": 177,
-   "id": "v4-type-delete",
-   "db": 0,
-   "pitch": 0,
-   "note": "RUN THE STREETS."
-  },
-  {
-   "frame": 414,
+   "frame": 975,
    "id": "send",
    "db": 0,
    "pitch": 0,
-   "note": "wipe to Bram"
+   "note": "gold wipe"
   },
   {
-   "frame": 425,
-   "id": "ui-enter",
-   "db": 2,
-   "pitch": 0,
-   "note": "BRAM"
-  },
-  {
-   "frame": 441,
-   "id": "v4-type-delete",
-   "db": 0,
-   "pitch": 2,
-   "note": "FLY THE JETPACK."
-  },
-  {
-   "frame": 678,
-   "id": "mail-in",
-   "db": 0,
-   "pitch": 0,
-   "note": "wipe to Paulie"
-  },
-  {
-   "frame": 689,
-   "id": "ui-beatbox-click-01",
-   "db": 0,
-   "pitch": 0,
-   "note": "PAULIE"
-  },
-  {
-   "frame": 705,
-   "id": "v4-type-delete",
-   "db": 0,
-   "pitch": 4,
-   "note": "DODGE THE TRAFFIC."
-  },
-  {
-   "frame": 942,
-   "id": "send-2",
-   "db": 0,
-   "pitch": 2,
-   "note": "wipe to Rahim"
-  },
-  {
-   "frame": 953,
-   "id": "ui-backspace",
-   "db": 2,
-   "pitch": -2,
-   "note": "RAHIM"
-  },
-  {
-   "frame": 969,
-   "id": "v4-type-delete",
-   "db": 0,
-   "pitch": 6,
-   "note": "SURVIVE THE MOON."
-  },
-  {
-   "frame": 1254,
-   "id": "send",
-   "db": 0,
-   "pitch": 2,
-   "note": "wipe to Infinity Mode"
-  },
-  {
-   "frame": 1266,
-   "id": "ui-enter",
-   "db": 2,
-   "pitch": 0,
-   "note": "CLIMB THE"
-  },
-  {
-   "frame": 1278,
-   "id": "ui-backspace",
-   "db": 2,
-   "pitch": 0,
-   "note": "LEADERBOARD."
-  },
-  {
-   "frame": 1284,
+   "frame": 987,
    "id": "mail-in",
    "db": -2,
-   "pitch": 2,
-   "note": "the leaderboard lands"
-  },
-  {
-   "frame": 1347,
-   "id": "ui-click-digital-03",
-   "db": 0,
    "pitch": 0,
-   "note": "YOU climbs to 3rd"
+   "note": "the COYOR Shop slides up"
   },
   {
-   "frame": 1367,
-   "id": "ui-click-digital-03",
-   "db": 0,
-   "pitch": 3,
-   "note": "to 2nd"
+   "frame": 999,
+   "id": "ui-backspace",
+   "db": 1,
+   "pitch": 2,
+   "note": "UNLOCK THE FITS"
   },
   {
-   "frame": 1393,
-   "id": "ui-click-digital-03",
-   "db": 0,
-   "pitch": 6,
-   "note": "to 1st"
+   "frame": 1108,
+   "id": "ui-beatbox-click-01",
+   "db": 2,
+   "pitch": 0,
+   "note": "the hand taps Equip"
   },
   {
-   "frame": 1396,
+   "frame": 1113,
    "id": "ui-granular-button-select-2",
    "db": 0,
    "pitch": 0,
-   "note": "PLAY FOR PRIZES pops"
+   "note": "Equipped"
   },
   {
-   "frame": 1398,
-   "id": "message",
-   "db": -2,
-   "pitch": 0,
-   "note": "prize chime"
-  },
-  {
-   "frame": 1446,
+   "frame": 1167,
    "id": "send-2",
    "db": 0,
-   "pitch": -2,
-   "note": "wipe to the end card"
+   "pitch": 2,
+   "note": "gold wipe"
   },
   {
-   "frame": 1455,
+   "frame": 1181,
+   "id": "ui-enter",
+   "db": 2,
+   "pitch": 0,
+   "note": "WEAR IT IRL."
+  },
+  {
+   "frame": 1236,
+   "id": "send",
+   "db": -2,
+   "pitch": 3,
+   "note": "next fit"
+  },
+  {
+   "frame": 1296,
+   "id": "mail-in",
+   "db": -2,
+   "pitch": 0,
+   "note": "next fit"
+  },
+  {
+   "frame": 1356,
+   "id": "send-2",
+   "db": -2,
+   "pitch": 4,
+   "note": "next fit"
+  },
+  {
+   "frame": 1407,
+   "id": "send",
+   "db": 0,
+   "pitch": -2,
+   "note": "gold wipe"
+  },
+  {
+   "frame": 1419,
    "id": "ui-backspace",
    "db": 2,
    "pitch": 0,
    "note": "COYOR"
   },
   {
-   "frame": 1467,
+   "frame": 1429,
    "id": "ui-enter",
    "db": 2,
    "pitch": 0,
    "note": "RUN"
   },
   {
-   "frame": 1474,
+   "frame": 1435,
    "id": "pop",
    "db": 0,
    "pitch": 0,
-   "note": "runners pop in"
+   "note": "runners"
   },
   {
-   "frame": 1478,
+   "frame": 1440,
    "id": "pop",
    "db": 0,
    "pitch": 2,
    "note": ""
   },
   {
-   "frame": 1483,
+   "frame": 1445,
    "id": "pop",
    "db": 0,
    "pitch": 4,
    "note": ""
   },
   {
-   "frame": 1488,
+   "frame": 1450,
    "id": "pop",
    "db": 0,
    "pitch": 6,
    "note": ""
   },
   {
-   "frame": 1498,
+   "frame": 1464,
    "id": "ui-button",
    "db": 0,
    "pitch": 2,
    "note": "PLAY FREE pops in"
   },
   {
-   "frame": 1582,
+   "frame": 1573,
    "id": "ui-beatbox-click-01",
    "db": 2,
    "pitch": 0,
    "note": "the hand taps PLAY FREE"
   },
   {
-   "frame": 1584,
+   "frame": 1575,
    "id": "start-video",
    "db": -1,
    "pitch": 0,
