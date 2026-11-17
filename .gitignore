@@ -63,3 +63,10 @@ films/mexico-social/source/
 films/mexico-social/deliver/
 films/mexico-social/work/line/
 films/mexico-social/work/logo/
+films/coyorclo/source/
+films/coyorclo/harvest/take*/
+films/coyorclo/harvest/probe*/
+films/coyorclo/harvest/*.html
+films/coyorclo/harvest/cap/
+films/coyorclo/sound/*.wav
+films/coyorclo/film/public/takes/

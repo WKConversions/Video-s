@@ -1,0 +1,289 @@
+{
+ "fps": 60,
+ "frames": 1680,
+ "library": "../../creoble6/sound/lib-karl",
+ "allow_apple": true,
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "lufs": -20,
+  "duck_db": 0,
+  "fade_in": 0.02,
+  "fade_out": 1.0
+ },
+ "sfx": [
+  {
+   "frame": 4,
+   "id": "ui-backspace",
+   "db": 2,
+   "pitch": 0,
+   "note": "ONE OUTFIT. slams in"
+  },
+  {
+   "frame": 44,
+   "id": "ui-button",
+   "db": 0,
+   "pitch": 0,
+   "note": "the parcel lands and bounces"
+  },
+  {
+   "frame": 60,
+   "id": "ui-enter",
+   "db": 2,
+   "pitch": 0,
+   "note": "FOUR RUNNERS. slams in"
+  },
+  {
+   "frame": 71,
+   "id": "pop",
+   "db": 0,
+   "pitch": 0,
+   "note": "Abdel pops in"
+  },
+  {
+   "frame": 76,
+   "id": "pop",
+   "db": 0,
+   "pitch": 2,
+   "note": "Bram"
+  },
+  {
+   "frame": 82,
+   "id": "pop",
+   "db": 0,
+   "pitch": 4,
+   "note": "Paulie"
+  },
+  {
+   "frame": 87,
+   "id": "pop",
+   "db": 0,
+   "pitch": 6,
+   "note": "Rahim"
+  },
+  {
+   "frame": 138,
+   "id": "send-2",
+   "db": 0,
+   "pitch": 0,
+   "note": "the parcel flies into the camera"
+  },
+  {
+   "frame": 157,
+   "id": "ui-click",
+   "db": 0,
+   "pitch": 0,
+   "note": "gold flash into Abdel"
+  },
+  {
+   "frame": 161,
+   "id": "ui-backspace",
+   "db": 2,
+   "pitch": 2,
+   "note": "ABDEL"
+  },
+  {
+   "frame": 177,
+   "id": "v4-type-delete",
+   "db": 0,
+   "pitch": 0,
+   "note": "RUN THE STREETS."
+  },
+  {
+   "frame": 414,
+   "id": "send",
+   "db": 0,
+   "pitch": 0,
+   "note": "wipe to Bram"
+  },
+  {
+   "frame": 425,
+   "id": "ui-enter",
+   "db": 2,
+   "pitch": 0,
+   "note": "BRAM"
+  },
+  {
+   "frame": 441,
+   "id": "v4-type-delete",
+   "db": 0,
+   "pitch": 2,
+   "note": "FLY THE JETPACK."
+  },
+  {
+   "frame": 678,
+   "id": "mail-in",
+   "db": 0,
+   "pitch": 0,
+   "note": "wipe to Paulie"
+  },
+  {
+   "frame": 689,
+   "id": "ui-beatbox-click-01",
+   "db": 0,
+   "pitch": 0,
+   "note": "PAULIE"
+  },
+  {
+   "frame": 705,
+   "id": "v4-type-delete",
+   "db": 0,
+   "pitch": 4,
+   "note": "DODGE THE TRAFFIC."
+  },
+  {
+   "frame": 942,
+   "id": "send-2",
+   "db": 0,
+   "pitch": 2,
+   "note": "wipe to Rahim"
+  },
+  {
+   "frame": 953,
+   "id": "ui-backspace",
+   "db": 2,
+   "pitch": -2,
+   "note": "RAHIM"
+  },
+  {
+   "frame": 969,
+   "id": "v4-type-delete",
+   "db": 0,
+   "pitch": 6,
+   "note": "SURVIVE THE MOON."
+  },
+  {
+   "frame": 1254,
+   "id": "send",
+   "db": 0,
+   "pitch": 2,
+   "note": "wipe to Infinity Mode"
+  },
+  {
+   "frame": 1266,
+   "id": "ui-enter",
+   "db": 2,
+   "pitch": 0,
+   "note": "CLIMB THE"
+  },
+  {
+   "frame": 1278,
+   "id": "ui-backspace",
+   "db": 2,
+   "pitch": 0,
+   "note": "LEADERBOARD."
+  },
+  {
+   "frame": 1284,
+   "id": "mail-in",
+   "db": -2,
+   "pitch": 2,
+   "note": "the leaderboard lands"
+  },
+  {
+   "frame": 1347,
+   "id": "ui-click-digital-03",
+   "db": 0,
+   "pitch": 0,
+   "note": "YOU climbs to 3rd"
+  },
+  {
+   "frame": 1367,
+   "id": "ui-click-digital-03",
+   "db": 0,
+   "pitch": 3,
+   "note": "to 2nd"
+  },
+  {
+   "frame": 1393,
+   "id": "ui-click-digital-03",
+   "db": 0,
+   "pitch": 6,
+   "note": "to 1st"
+  },
+  {
+   "frame": 1396,
+   "id": "ui-granular-button-select-2",
+   "db": 0,
+   "pitch": 0,
+   "note": "PLAY FOR PRIZES pops"
+  },
+  {
+   "frame": 1398,
+   "id": "message",
+   "db": -2,
+   "pitch": 0,
+   "note": "prize chime"
+  },
+  {
+   "frame": 1446,
+   "id": "send-2",
+   "db": 0,
+   "pitch": -2,
+   "note": "wipe to the end card"
+  },
+  {
+   "frame": 1455,
+   "id": "ui-backspace",
+   "db": 2,
+   "pitch": 0,
+   "note": "COYOR"
+  },
+  {
+   "frame": 1467,
+   "id": "ui-enter",
+   "db": 2,
+   "pitch": 0,
+   "note": "RUN"
+  },
+  {
+   "frame": 1474,
+   "id": "pop",
+   "db": 0,
+   "pitch": 0,
+   "note": "runners pop in"
+  },
+  {
+   "frame": 1478,
+   "id": "pop",
+   "db": 0,
+   "pitch": 2,
+   "note": ""
+  },
+  {
+   "frame": 1483,
+   "id": "pop",
+   "db": 0,
+   "pitch": 4,
+   "note": ""
+  },
+  {
+   "frame": 1488,
+   "id": "pop",
+   "db": 0,
+   "pitch": 6,
+   "note": ""
+  },
+  {
+   "frame": 1498,
+   "id": "ui-button",
+   "db": 0,
+   "pitch": 2,
+   "note": "PLAY FREE pops in"
+  },
+  {
+   "frame": 1582,
+   "id": "ui-beatbox-click-01",
+   "db": 2,
+   "pitch": 0,
+   "note": "the hand taps PLAY FREE"
+  },
+  {
+   "frame": 1584,
+   "id": "start-video",
+   "db": -1,
+   "pitch": 0,
+   "note": "the tap lands"
+  }
+ ]
+}
