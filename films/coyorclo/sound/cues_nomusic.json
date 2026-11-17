@@ -1,0 +1,526 @@
+{
+ "fps": 60,
+ "frames": 1680,
+ "library": "../../creoble6/sound/lib-karl",
+ "allow_apple": true,
+ "sfx": [
+  {
+   "frame": 5,
+   "id": "ui-backspace",
+   "db": 2,
+   "pitch": 0,
+   "note": "PLAY THE GAME."
+  },
+  {
+   "frame": 45,
+   "id": "ui-enter",
+   "db": 2,
+   "pitch": 0,
+   "note": "WEAR THE FIT."
+  },
+  {
+   "frame": 52,
+   "id": "one-keyboard-click",
+   "db": -2,
+   "pitch": 0,
+   "note": "TAP TO JUMP"
+  },
+  {
+   "frame": 66,
+   "id": "pop",
+   "db": 0,
+   "pitch": 0,
+   "note": "COYOR RUN \u00b7 FREE TO PLAY"
+  },
+  {
+   "frame": 126,
+   "id": "ui-click",
+   "db": 1,
+   "pitch": 0,
+   "note": "cut: Abdel"
+  },
+  {
+   "frame": 130,
+   "id": "ui-backspace",
+   "db": 2,
+   "pitch": 2,
+   "note": "RUN."
+  },
+  {
+   "frame": 138,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 0,
+   "note": "coin +10"
+  },
+  {
+   "frame": 150,
+   "id": "one-keyboard-click",
+   "db": -5,
+   "pitch": 0,
+   "note": "tap: jump"
+  },
+  {
+   "frame": 186,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 2,
+   "note": "coin +10"
+  },
+  {
+   "frame": 199,
+   "id": "one-keyboard-click",
+   "db": -5,
+   "pitch": 0,
+   "note": "tap: jump"
+  },
+  {
+   "frame": 234,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 4,
+   "note": "coin +10"
+  },
+  {
+   "frame": 248,
+   "id": "one-keyboard-click",
+   "db": -5,
+   "pitch": 0,
+   "note": "tap: jump"
+  },
+  {
+   "frame": 258,
+   "id": "ui-click",
+   "db": 1,
+   "pitch": 2,
+   "note": "cut: Bram"
+  },
+  {
+   "frame": 262,
+   "id": "ui-enter",
+   "db": 2,
+   "pitch": 0,
+   "note": "FLY."
+  },
+  {
+   "frame": 273,
+   "id": "one-keyboard-click",
+   "db": -7,
+   "pitch": 2,
+   "note": "tap: fly"
+  },
+  {
+   "frame": 282,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 6,
+   "note": "coin +10"
+  },
+  {
+   "frame": 323,
+   "id": "one-keyboard-click",
+   "db": -7,
+   "pitch": 2,
+   "note": "tap: fly"
+  },
+  {
+   "frame": 330,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 0,
+   "note": "coin +10"
+  },
+  {
+   "frame": 374,
+   "id": "one-keyboard-click",
+   "db": -7,
+   "pitch": 2,
+   "note": "tap: fly"
+  },
+  {
+   "frame": 378,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 2,
+   "note": "coin +10"
+  },
+  {
+   "frame": 384,
+   "id": "ui-click",
+   "db": 1,
+   "pitch": 4,
+   "note": "cut: Paulie"
+  },
+  {
+   "frame": 388,
+   "id": "ui-beatbox-click-01",
+   "db": 1,
+   "pitch": 0,
+   "note": "DODGE."
+  },
+  {
+   "frame": 402,
+   "id": "ui-stretch",
+   "db": -9,
+   "pitch": 0,
+   "note": "swipe: lane"
+  },
+  {
+   "frame": 426,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 4,
+   "note": "coin +10"
+  },
+  {
+   "frame": 439,
+   "id": "ui-stretch",
+   "db": -9,
+   "pitch": 2,
+   "note": "swipe: lane"
+  },
+  {
+   "frame": 474,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 6,
+   "note": "coin +10"
+  },
+  {
+   "frame": 476,
+   "id": "ui-stretch",
+   "db": -9,
+   "pitch": 0,
+   "note": "swipe: lane"
+  },
+  {
+   "frame": 510,
+   "id": "ui-click",
+   "db": 1,
+   "pitch": 0,
+   "note": "cut: Rahim"
+  },
+  {
+   "frame": 514,
+   "id": "ui-backspace",
+   "db": 2,
+   "pitch": -2,
+   "note": "BLAST."
+  },
+  {
+   "frame": 522,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 0,
+   "note": "coin +10"
+  },
+  {
+   "frame": 525,
+   "id": "v4-type-delete",
+   "db": -6,
+   "pitch": 3,
+   "note": "tap: shoot"
+  },
+  {
+   "frame": 561,
+   "id": "v4-type-delete",
+   "db": -6,
+   "pitch": 3,
+   "note": "tap: shoot"
+  },
+  {
+   "frame": 570,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 2,
+   "note": "coin +10"
+  },
+  {
+   "frame": 597,
+   "id": "v4-type-delete",
+   "db": -6,
+   "pitch": 3,
+   "note": "tap: shoot"
+  },
+  {
+   "frame": 618,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 4,
+   "note": "coin +10"
+  },
+  {
+   "frame": 624,
+   "id": "ui-click",
+   "db": 1,
+   "pitch": -2,
+   "note": "cut: the boss"
+  },
+  {
+   "frame": 628,
+   "id": "ui-enter",
+   "db": 2,
+   "pitch": -3,
+   "note": "BEAT THE BOSS."
+  },
+  {
+   "frame": 666,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 6,
+   "note": "coin +10"
+  },
+  {
+   "frame": 714,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 0,
+   "note": "coin +10"
+  },
+  {
+   "frame": 747,
+   "id": "send-2",
+   "db": 0,
+   "pitch": 0,
+   "note": "gold wipe"
+  },
+  {
+   "frame": 760,
+   "id": "ui-button",
+   "db": 0,
+   "pitch": 0,
+   "note": "the big coin pops"
+  },
+  {
+   "frame": 765,
+   "id": "pop",
+   "db": -2,
+   "pitch": 0,
+   "note": "coins rain"
+  },
+  {
+   "frame": 777,
+   "id": "pop",
+   "db": -2,
+   "pitch": 3,
+   "note": ""
+  },
+  {
+   "frame": 789,
+   "id": "pop",
+   "db": -2,
+   "pitch": 5,
+   "note": ""
+  },
+  {
+   "frame": 789,
+   "id": "ui-backspace",
+   "db": 1,
+   "pitch": 0,
+   "note": "COINS = DISCOUNTS"
+  },
+  {
+   "frame": 801,
+   "id": "pop",
+   "db": -2,
+   "pitch": 7,
+   "note": ""
+  },
+  {
+   "frame": 816,
+   "id": "ui-click-digital-03",
+   "db": 0,
+   "pitch": 0,
+   "note": "10% card"
+  },
+  {
+   "frame": 823,
+   "id": "ui-click-digital-03",
+   "db": 0,
+   "pitch": 2,
+   "note": "25%"
+  },
+  {
+   "frame": 830,
+   "id": "ui-click-digital-03",
+   "db": 0,
+   "pitch": 4,
+   "note": "50%"
+  },
+  {
+   "frame": 838,
+   "id": "ui-click-digital-03",
+   "db": 0,
+   "pitch": 6,
+   "note": "100%"
+  },
+  {
+   "frame": 897,
+   "id": "iphone-apple-pay",
+   "db": -2,
+   "pitch": 0,
+   "note": "12,000 CY reached: 50% unlocked"
+  },
+  {
+   "frame": 898,
+   "id": "twitter",
+   "db": -3,
+   "pitch": 0,
+   "note": "confetti: UNLOCKED!"
+  },
+  {
+   "frame": 975,
+   "id": "send",
+   "db": 0,
+   "pitch": 0,
+   "note": "gold wipe"
+  },
+  {
+   "frame": 987,
+   "id": "mail-in",
+   "db": -2,
+   "pitch": 0,
+   "note": "the COYOR Shop slides up"
+  },
+  {
+   "frame": 999,
+   "id": "ui-backspace",
+   "db": 1,
+   "pitch": 2,
+   "note": "UNLOCK THE FITS"
+  },
+  {
+   "frame": 1108,
+   "id": "ui-beatbox-click-01",
+   "db": 2,
+   "pitch": 0,
+   "note": "the hand taps Equip"
+  },
+  {
+   "frame": 1111,
+   "id": "message",
+   "db": -3,
+   "pitch": 2,
+   "note": "LEGENDARY UNLOCKED"
+  },
+  {
+   "frame": 1113,
+   "id": "ui-granular-button-select-2",
+   "db": 0,
+   "pitch": 0,
+   "note": "Equipped"
+  },
+  {
+   "frame": 1167,
+   "id": "send-2",
+   "db": 0,
+   "pitch": 2,
+   "note": "gold wipe"
+  },
+  {
+   "frame": 1181,
+   "id": "ui-enter",
+   "db": 2,
+   "pitch": 0,
+   "note": "WEAR IT IRL."
+  },
+  {
+   "frame": 1236,
+   "id": "send",
+   "db": -2,
+   "pitch": 3,
+   "note": "next fit"
+  },
+  {
+   "frame": 1296,
+   "id": "mail-in",
+   "db": -2,
+   "pitch": 0,
+   "note": "next fit"
+  },
+  {
+   "frame": 1356,
+   "id": "send-2",
+   "db": -2,
+   "pitch": 4,
+   "note": "next fit"
+  },
+  {
+   "frame": 1407,
+   "id": "send",
+   "db": 0,
+   "pitch": -2,
+   "note": "gold wipe"
+  },
+  {
+   "frame": 1419,
+   "id": "ui-backspace",
+   "db": 2,
+   "pitch": 0,
+   "note": "COYOR"
+  },
+  {
+   "frame": 1429,
+   "id": "ui-enter",
+   "db": 2,
+   "pitch": 0,
+   "note": "RUN"
+  },
+  {
+   "frame": 1435,
+   "id": "pop",
+   "db": 0,
+   "pitch": 0,
+   "note": "runners"
+  },
+  {
+   "frame": 1440,
+   "id": "pop",
+   "db": 0,
+   "pitch": 2,
+   "note": ""
+  },
+  {
+   "frame": 1445,
+   "id": "pop",
+   "db": 0,
+   "pitch": 4,
+   "note": ""
+  },
+  {
+   "frame": 1450,
+   "id": "pop",
+   "db": 0,
+   "pitch": 6,
+   "note": ""
+  },
+  {
+   "frame": 1464,
+   "id": "ui-button",
+   "db": 0,
+   "pitch": 2,
+   "note": "PLAY FREE pops in"
+  },
+  {
+   "frame": 1573,
+   "id": "ui-beatbox-click-01",
+   "db": 2,
+   "pitch": 0,
+   "note": "the hand taps PLAY FREE"
+  },
+  {
+   "frame": 1574,
+   "id": "double-bubble-pop",
+   "db": -1,
+   "pitch": 0,
+   "note": "confetti + coin fountain"
+  },
+  {
+   "frame": 1575,
+   "id": "start-video",
+   "db": -1,
+   "pitch": 0,
+   "note": "the tap lands"
+  }
+ ]
+}
