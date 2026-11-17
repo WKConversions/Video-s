@@ -5,6 +5,7 @@
 import React, { useEffect, useState } from "react";
 import { AbsoluteFill, Easing, Img, OffthreadVideo, Sequence, continueRender, delayRender, spring, staticFile, useCurrentFrame } from "remotion";
 import { Hand, handAt } from "./hand";
+import { Burst, Shock, Tap, Swipe, Plus, Speed, Sheen, Twinkles, Dust, shakeAt, Rays, Layer, rnd } from "./fx";
 
 export const FPS = 60, DUR = 28.0;
 const C = { bg: "#0B0B0E", gold: "#E9C66A", gold2: "#FFDD70", cream: "#F8F1E2", muted: "rgba(248,241,226,.66)" };
@@ -150,6 +151,7 @@ const Discounts: React.FC<{ T: number }> = ({ T }) => {
             boxShadow: hit ? "0 0 60px rgba(233,198,106,.35)" : "0 20px 50px rgba(0,0,0,.5)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
             <div style={{ fontFamily: H, fontWeight: 900, fontStyle: "italic", fontSize: 130, lineHeight: 1, ...(hit ? { background: GOLD, WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" } : { color: C.cream }) }}>{tr.off}<span style={{ fontSize: 60 }}> OFF</span></div>
             <div style={{ fontFamily: B, fontWeight: 700, fontSize: 30, letterSpacing: 3, color: hit ? C.gold2 : C.muted, marginTop: 8 }}>{tr.sub}</div>
+            <Sheen T={T} t0={t0 + 1.25 + k * 0.12} dur={0.55} radius={34} />{k === 2 && <Sheen T={T} t0={14.95} dur={0.5} radius={34} color="rgba(255,240,190,.75)" />}{hit && <Sheen T={T} t0={15.6 + k * 0.15} dur={0.6} radius={34} />}
           </div>
         );
       })}
@@ -203,7 +205,7 @@ const RealFits: React.FC<{ T: number }> = ({ T }) => {
       <Slam text="WEAR IT IRL." T={T} t0={t0 + 0.08} x={540} y={1430} size={170} grad={GOLD} />
       <div key={k} style={{ position: "absolute", left: 540, top: 1660, transform: `translate(-50%,-50%) translateY(${40 * (1 - S(T, t0 + k * each + 0.12))}px)`, opacity: clamp((u - 0.12) / 0.15), textAlign: "center" }}>
         <div style={{ fontFamily: H, fontWeight: 900, fontStyle: "italic", fontSize: 92, color: C.cream, whiteSpace: "nowrap", textShadow: "0 8px 24px rgba(0,0,0,.5)" }}>{pr.n}</div>
-        <div style={{ display: "inline-block", marginTop: 14, padding: "10px 30px", borderRadius: 40, background: GOLD, fontFamily: H, fontWeight: 900, fontSize: 60, color: C.bg }}>{pr.p}</div>
+        <div style={{ display: "inline-block", marginTop: 14, padding: "10px 30px", borderRadius: 40, background: GOLD, fontFamily: H, fontWeight: 900, fontSize: 60, color: C.bg, position: "relative", overflow: "hidden" }}>{pr.p}<Sheen T={T} t0={t0 + k * each + 0.35} dur={0.5} radius={40} /></div>
       </div>
     </AbsoluteFill>
   );
@@ -222,11 +224,12 @@ const CTA: React.FC<{ T: number }> = ({ T }) => {
       <Slam text="RUN" T={T} t0={t0 + 0.22} x={540} y={600} size={290} grad={GOLD} />
       {[0, 1, 2, 3].map((i) => {
         const p = S(T, t0 + 0.32 + i * 0.08, { damping: 10, stiffness: 190 });
-        return <Runner key={i} i={i} T={T + i * 0.2} x={[200, 427, 653, 880][i]} y={1250 + 120 * (1 - p)} h={360} pose="stand" op={clamp(p * 3)} sc={mix(0.6, 1, p)} />;
+        const hop = T > CLICK + 0.15 + i * 0.06 ? 70 * Math.max(0, Math.sin(Math.PI * Math.min(1, (T - CLICK - 0.15 - i * 0.06) / 0.42))) : 0;
+        return <Runner key={i} i={i} T={T + i * 0.2} x={[200, 427, 653, 880][i]} y={1250 + 120 * (1 - p) - hop} h={360} pose={hop > 4 ? "jump" : "stand"} op={clamp(p * 3)} sc={mix(0.6, 1, p)} />;
       })}
       <div style={{ position: "absolute", left: 540, top: 1470, transform: `translate(-50%,-50%) scale(${mix(0.6, 1, btn) * (1 - 0.07 * press)})`, opacity: clamp(btn * 3), width: 660, height: 156,
         borderRadius: 78, background: GOLD, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: `0 ${24 - 14 * press}px 70px rgba(233,198,106,.42)`,
-        fontFamily: H, fontWeight: 900, fontStyle: "italic", fontSize: 88, color: C.bg, letterSpacing: 2 }}>PLAY FREE</div>
+        fontFamily: H, fontWeight: 900, fontStyle: "italic", fontSize: 88, color: C.bg, letterSpacing: 2, overflow: "hidden" }}>PLAY FREE{[24.9, 25.7, 26.5, 27.3].map((t) => <Sheen key={t} T={T} t0={t} dur={0.55} radius={78} />)}</div>
       {ring > 0 && ring < 1 && <div style={{ position: "absolute", left: 600 - 60 - 240 * ring, top: 1470 - 60 - 240 * ring, width: 120 + 480 * ring, height: 120 + 480 * ring, borderRadius: "50%", border: `4px solid ${C.gold2}`, opacity: 0.8 * (1 - ring) }} />}
       <div style={{ position: "absolute", left: 540, top: 1625, transform: "translate(-50%,-50%)", opacity: clamp((u - 1.0) / 0.3), fontFamily: B, fontWeight: 700, fontSize: 36, letterSpacing: 4, color: C.muted, whiteSpace: "nowrap" }}>
         EARN CY COINS · SHOP THE FITS</div>
@@ -244,17 +247,74 @@ const Wipe: React.FC<{ T: number; t: number }> = ({ T, t }) => {
   return <AbsoluteFill style={{ background: `linear-gradient(115deg, transparent ${c - 32}%, ${C.gold} ${c - 20}%, ${C.gold2} ${c}%, transparent ${c + 6}%)` }} />;
 };
 
+// ---------- the extra animation layer: clicks, particles, shockwaves, speed lines (Karl: "lots of animations") ----------
+const HITS = [0.08, 0.75, 2.16, 4.36, 6.46, 8.56, 10.46, 13.15, 14.95, 16.65, 18.46, 19.68, 23.65, 23.82, 26.21];
+const every = (a: number, b: number, d: number) => { const out: number[] = []; for (let t = a; t < b; t += d) out.push(+t.toFixed(3)); return out; };
+const FXLayer: React.FC<{ T: number }> = ({ T }) => {
+  const slam = (t: number, x: number, y: number, seed: number, r = 460) => (<React.Fragment key={"s" + t}>
+    <Shock T={T} t0={t} x={x} y={y} r={r} ry={0.42} /><Burst T={T} t0={t} x={x} y={y} n={30} speed={1500} life={0.7} g={500} size={12} seed={seed} /></React.Fragment>);
+  return (
+    <Layer>
+      <Dust T={T} op={T >= 19.6 && T < 23.6 ? 0.35 : 1} />
+      {/* hook */}
+      {slam(0.08, 540, 330, 1)}{slam(0.75, 540, 500, 2)}
+      <Tap T={T} t0={0.86} x={540} y={1690} label="TAP TO JUMP" />
+      {/* gameplay: a speed burst at each cut, a shockwave and sparks under each word */}
+      {[2.1, 4.3, 6.4, 8.5, 10.4].map((t, i) => <Speed key={"sp" + t} T={T} t0={t} seed={i + 4} />)}
+      {slam(2.16, 540, 360, 3)}{slam(4.36, 540, 1500, 4)}{slam(6.46, 540, 360, 5)}{slam(8.56, 540, 360, 6)}{slam(10.46, 540, 620, 7, 560)}
+      {/* coins: a sparkle at the counter and a "+10" every beat; "+1" pops above the runner */}
+      {every(2.3, 12.4, 0.4).map((t, k) => <React.Fragment key={"c" + t}><Burst T={T} t0={t} x={92} y={106} n={10} speed={420} life={0.45} g={200} size={8} kind="dot" seed={20 + k} />
+        <Plus T={T} t0={t} x={250 + 30 * rnd(k)} y={112} text="+10" size={42} /></React.Fragment>)}
+      {every(2.4, 4.2, 0.55).map((t, k) => <Plus key={"a" + t} T={T} t0={t} x={300 + 40 * rnd(k + 9)} y={1260} text="+1 CY" size={58} />)}
+      {every(8.7, 10.3, 0.5).map((t, k) => <Plus key={"r" + t} T={T} t0={t} x={300 + 50 * rnd(k + 19)} y={1250} text="+5 CY" size={58} />)}
+      {/* the player's taps: jump (Abdel), fly (Bram), switch lanes (Paulie), shoot (Rahim) */}
+      {every(2.5, 4.2, 0.82).map((t) => <Tap key={"ta" + t} T={T} t0={t} x={880} y={1700} label="JUMP" />)}
+      {every(4.55, 6.3, 0.42).map((t) => <Tap key={"tb" + t} T={T} t0={t} x={880} y={1700} label="FLY" />)}
+      {every(6.7, 8.4, 0.62).map((t, k) => <Swipe key={"sw" + t} T={T} t0={t} x={540} y={1760} dir={k % 2 ? 1 : -1} />)}
+      {every(8.75, 10.3, 0.3).map((t) => <Tap key={"tr" + t} T={T} t0={t} x={880} y={1700} label="SHOOT" color="#A9B1FF" />)}
+      {every(10.7, 12.4, 0.45).map((t, k) => <Burst key={"bo" + t} T={T} t0={t} x={820 + 60 * rnd(k)} y={1560 + 40 * rnd(k + 3)} n={14} speed={600} life={0.5} g={300} size={9} colors={["#FF8AC4", "#FFDD70", "#fff"]} seed={40 + k} />)}
+      {/* coins = discounts: the big coin bursts, twinkles around it, confetti when 50% unlocks */}
+      <Burst T={T} t0={12.66} x={540} y={330} n={36} speed={1700} life={0.9} g={700} size={13} seed={60} />
+      <Shock T={T} t0={12.66} x={540} y={330} r={520} />
+      {T > 12.7 && T < 16.4 && <Twinkles T={T} x={300} y={140} w={480} h={380} n={12} seed={71} />}
+      <Burst T={T} t0={14.95} x={290} y={1410} n={70} speed={2100} life={1.4} g={1300} size={18} kind="confetti" colors={["#FFDD70", "#E9C66A", "#F8F1E2", "#FF8AC4", "#7FE3EC"]} seed={80} up spread={2.2} />
+      <Burst T={T} t0={14.95} x={790} y={1410} n={70} speed={2100} life={1.4} g={1300} size={18} kind="confetti" colors={["#FFDD70", "#E9C66A", "#F8F1E2", "#A9B1FF", "#F6A27F"]} seed={81} up spread={2.2} />
+      <Shock T={T} t0={14.95} x={290} y={1410} r={380} /><Plus T={T} t0={15.0} x={290} y={1250} text="UNLOCKED!" size={70} />
+      {/* the shop: the tap on Equip, sparks, a LEGENDARY badge with rays */}
+      <Rays T={T} t0={18.5} x={773} y={640} r={300} />
+      <Burst T={T} t0={18.46} x={773} y={845} n={34} speed={1300} life={0.8} g={600} size={12} seed={90} />
+      <Shock T={T} t0={18.46} x={773} y={845} r={300} />
+      {T > 18.5 && T < 19.5 && <div style={{ position: "absolute", left: 773, top: 640, transform: `translate(-50%,-50%) scale(${Math.min(1.1, (T - 18.5) / 0.12) - 0.1 * Math.max(0, Math.min(1, (T - 18.62) / 0.15))})`,
+        opacity: Math.min(1, (19.5 - T) / 0.2), padding: "14px 30px", borderRadius: 40, background: "linear-gradient(100deg,#FFE7A0,#E9C66A)", color: "#0B0B0E",
+        fontFamily: "'Barlow Condensed'", fontWeight: 900, fontStyle: "italic", fontSize: 54, whiteSpace: "nowrap", boxShadow: "0 16px 40px rgba(233,198,106,.45)" }}>★ LEGENDARY UNLOCKED</div>}
+      {/* the real fits: twinkles on each product, sparks off the price tag, a streak at each swipe */}
+      {T > 19.6 && T < 23.6 && <Twinkles T={T} x={120} y={260} w={840} h={1000} n={9} seed={100 + Math.floor((T - 19.6) / 1.0)} size={40} />}
+      {[19.95, 20.95, 21.95, 22.95].map((t, k) => <Burst key={"pt" + t} T={T} t0={t} x={540} y={1735} n={16} speed={700} life={0.5} g={400} size={9} seed={110 + k} />)}
+      {[20.6, 21.6, 22.6].map((t, k) => <Speed key={"ps" + t} T={T} t0={t - 0.04} x={540} y={900} seed={120 + k} />)}
+      {/* the end card: slams, sparkles around the button, the tap: confetti and a coin fountain */}
+      {slam(23.65, 540, 360, 130)}{slam(23.82, 540, 600, 131)}
+      {T > 24.5 && <Twinkles T={T} x={200} y={1380} w={680} h={180} n={8} seed={140} size={30} />}
+      <Burst T={T} t0={26.21} x={540} y={1470} n={90} speed={2300} life={1.5} g={1400} size={18} kind="confetti" colors={["#FFDD70", "#E9C66A", "#F8F1E2", "#FF8AC4", "#7FE3EC", "#A9B1FF"]} seed={150} up spread={2.6} />
+      <Burst T={T} t0={26.21} x={540} y={1470} n={18} speed={1500} life={1.2} g={1500} size={30} kind="coin" seed={151} up spread={1.8} />
+      <Shock T={T} t0={26.21} x={540} y={1470} r={600} ry={0.5} />
+    </Layer>
+  );
+};
+
 export const Film: React.FC = () => {
   const T = useCurrentFrame() / FPS;
   const ok = useFonts();
   if (!ok) return <AbsoluteFill style={{ background: C.bg }} />;
   return (
     <AbsoluteFill style={{ background: C.bg }}>
+      <AbsoluteFill style={{ transform: `translate(${shakeAt(T, HITS)[0].toFixed(1)}px, ${shakeAt(T, HITS)[1].toFixed(1)}px)` }}>
       {T < 12.6 && <Gameplay T={T} />}
       {T >= 12.6 && T < 16.4 && <Discounts T={T} />}
       {T >= 16.4 && T < 19.6 && <ShopScene T={T} />}
       {T >= 19.6 && T < 23.6 && <RealFits T={T} />}
       {T >= 23.6 && <CTA T={T} />}
+      </AbsoluteFill>
+      <FXLayer T={T} />
       {[12.6, 16.4, 19.6, 23.6].map((t) => <Wipe key={t} T={T} t={t} />)}
     </AbsoluteFill>
   );

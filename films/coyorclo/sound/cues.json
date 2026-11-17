@@ -27,6 +27,13 @@
    "note": "WEAR THE FIT."
   },
   {
+   "frame": 52,
+   "id": "one-keyboard-click",
+   "db": -2,
+   "pitch": 0,
+   "note": "TAP TO JUMP"
+  },
+  {
    "frame": 66,
    "id": "pop",
    "db": 0,
@@ -48,6 +55,48 @@
    "note": "RUN."
   },
   {
+   "frame": 138,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 0,
+   "note": "coin +10"
+  },
+  {
+   "frame": 150,
+   "id": "one-keyboard-click",
+   "db": -5,
+   "pitch": 0,
+   "note": "tap: jump"
+  },
+  {
+   "frame": 186,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 2,
+   "note": "coin +10"
+  },
+  {
+   "frame": 199,
+   "id": "one-keyboard-click",
+   "db": -5,
+   "pitch": 0,
+   "note": "tap: jump"
+  },
+  {
+   "frame": 234,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 4,
+   "note": "coin +10"
+  },
+  {
+   "frame": 248,
+   "id": "one-keyboard-click",
+   "db": -5,
+   "pitch": 0,
+   "note": "tap: jump"
+  },
+  {
    "frame": 258,
    "id": "ui-click",
    "db": 1,
@@ -60,6 +109,48 @@
    "db": 2,
    "pitch": 0,
    "note": "FLY."
+  },
+  {
+   "frame": 273,
+   "id": "one-keyboard-click",
+   "db": -7,
+   "pitch": 2,
+   "note": "tap: fly"
+  },
+  {
+   "frame": 282,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 6,
+   "note": "coin +10"
+  },
+  {
+   "frame": 323,
+   "id": "one-keyboard-click",
+   "db": -7,
+   "pitch": 2,
+   "note": "tap: fly"
+  },
+  {
+   "frame": 330,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 0,
+   "note": "coin +10"
+  },
+  {
+   "frame": 374,
+   "id": "one-keyboard-click",
+   "db": -7,
+   "pitch": 2,
+   "note": "tap: fly"
+  },
+  {
+   "frame": 378,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 2,
+   "note": "coin +10"
   },
   {
    "frame": 384,
@@ -76,6 +167,41 @@
    "note": "DODGE."
   },
   {
+   "frame": 402,
+   "id": "ui-stretch",
+   "db": -9,
+   "pitch": 0,
+   "note": "swipe: lane"
+  },
+  {
+   "frame": 426,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 4,
+   "note": "coin +10"
+  },
+  {
+   "frame": 439,
+   "id": "ui-stretch",
+   "db": -9,
+   "pitch": 2,
+   "note": "swipe: lane"
+  },
+  {
+   "frame": 474,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 6,
+   "note": "coin +10"
+  },
+  {
+   "frame": 476,
+   "id": "ui-stretch",
+   "db": -9,
+   "pitch": 0,
+   "note": "swipe: lane"
+  },
+  {
    "frame": 510,
    "id": "ui-click",
    "db": 1,
@@ -90,6 +216,48 @@
    "note": "BLAST."
   },
   {
+   "frame": 522,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 0,
+   "note": "coin +10"
+  },
+  {
+   "frame": 525,
+   "id": "v4-type-delete",
+   "db": -6,
+   "pitch": 3,
+   "note": "tap: shoot"
+  },
+  {
+   "frame": 561,
+   "id": "v4-type-delete",
+   "db": -6,
+   "pitch": 3,
+   "note": "tap: shoot"
+  },
+  {
+   "frame": 570,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 2,
+   "note": "coin +10"
+  },
+  {
+   "frame": 597,
+   "id": "v4-type-delete",
+   "db": -6,
+   "pitch": 3,
+   "note": "tap: shoot"
+  },
+  {
+   "frame": 618,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 4,
+   "note": "coin +10"
+  },
+  {
    "frame": 624,
    "id": "ui-click",
    "db": 1,
@@ -102,6 +270,20 @@
    "db": 2,
    "pitch": -3,
    "note": "BEAT THE BOSS."
+  },
+  {
+   "frame": 666,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 6,
+   "note": "coin +10"
+  },
+  {
+   "frame": 714,
+   "id": "ui-click-digital-04",
+   "db": -9,
+   "pitch": 0,
+   "note": "coin +10"
   },
   {
    "frame": 747,
@@ -139,18 +321,18 @@
    "note": ""
   },
   {
-   "frame": 801,
-   "id": "pop",
-   "db": -2,
-   "pitch": 7,
-   "note": ""
-  },
-  {
    "frame": 789,
    "id": "ui-backspace",
    "db": 1,
    "pitch": 0,
    "note": "COINS = DISCOUNTS"
+  },
+  {
+   "frame": 801,
+   "id": "pop",
+   "db": -2,
+   "pitch": 7,
+   "note": ""
   },
   {
    "frame": 816,
@@ -188,6 +370,13 @@
    "note": "12,000 CY reached: 50% unlocked"
   },
   {
+   "frame": 898,
+   "id": "twitter",
+   "db": -3,
+   "pitch": 0,
+   "note": "confetti: UNLOCKED!"
+  },
+  {
    "frame": 975,
    "id": "send",
    "db": 0,
@@ -214,6 +403,13 @@
    "db": 2,
    "pitch": 0,
    "note": "the hand taps Equip"
+  },
+  {
+   "frame": 1111,
+   "id": "message",
+   "db": -3,
+   "pitch": 2,
+   "note": "LEGENDARY UNLOCKED"
   },
   {
    "frame": 1113,
@@ -319,6 +515,13 @@
    "db": 2,
    "pitch": 0,
    "note": "the hand taps PLAY FREE"
+  },
+  {
+   "frame": 1574,
+   "id": "double-bubble-pop",
+   "db": -1,
+   "pitch": 0,
+   "note": "confetti + coin fountain"
   },
   {
    "frame": 1575,
