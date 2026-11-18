@@ -1,0 +1,322 @@
+{
+ "fps": 60,
+ "frames": 2430,
+ "library": "lib-kb",
+ "sfx": [
+  {
+   "frame": 6,
+   "id": "ui-stretch",
+   "db": -6,
+   "pitch": 0,
+   "note": "S1 whoosh: headline words rise"
+  },
+  {
+   "frame": 147,
+   "id": "ui-button",
+   "db": -3,
+   "pitch": 0,
+   "note": "S1 pop: K.B tile springs in"
+  },
+  {
+   "frame": 229,
+   "id": "ui-click",
+   "db": 0,
+   "pitch": 0,
+   "note": "S1 click: hand clicks the tile"
+  },
+  {
+   "frame": 234,
+   "id": "ui-open",
+   "db": -7,
+   "pitch": 0,
+   "note": "S1 whoosh: iris opens"
+  },
+  {
+   "frame": 245,
+   "id": "ui-open",
+   "db": -9,
+   "pitch": -2,
+   "note": "S2 transition (iris)"
+  },
+  {
+   "frame": 261,
+   "id": "ui-granular-button-select",
+   "db": -2,
+   "pitch": 0,
+   "note": "S2 pop: first card"
+  },
+  {
+   "frame": 280,
+   "id": "ui-granular-button-select-2",
+   "db": -3,
+   "pitch": 0,
+   "note": "S2 pop: third card"
+  },
+  {
+   "frame": 360,
+   "id": "v4-type-delete",
+   "db": -3,
+   "pitch": 0,
+   "note": "S2 tick: hover card 3"
+  },
+  {
+   "frame": 402,
+   "id": "ui-click-digital-04",
+   "db": -4,
+   "pitch": 0,
+   "note": "S2 tick: hover card 2"
+  },
+  {
+   "frame": 457,
+   "id": "ui-enter",
+   "db": -1,
+   "pitch": 0,
+   "note": "S2 click: click card 1"
+  },
+  {
+   "frame": 468,
+   "id": "ui-stretch",
+   "db": -6,
+   "pitch": 0,
+   "note": "S2 whoosh: card scales toward viewer"
+  },
+  {
+   "frame": 473,
+   "id": "ui-open",
+   "db": -9,
+   "pitch": -2,
+   "note": "S3 transition (zoom)"
+  },
+  {
+   "frame": 569,
+   "id": "ui-stretch",
+   "db": -9,
+   "pitch": -2,
+   "note": "S4 transition (push-up)"
+  },
+  {
+   "frame": 1031,
+   "id": "ui-stretch",
+   "db": -9,
+   "pitch": -2,
+   "note": "S7 transition (push-left)"
+  },
+  {
+   "frame": 1271,
+   "id": "ui-open",
+   "db": -9,
+   "pitch": -2,
+   "note": "S8 transition (zoom)"
+  },
+  {
+   "frame": 1395,
+   "id": "ui-open",
+   "db": -7,
+   "pitch": 0,
+   "note": "S9 whoosh: headline words in"
+  },
+  {
+   "frame": 1425,
+   "id": "ui-button",
+   "db": -3,
+   "pitch": 0,
+   "note": "S9 pop: spark and glass"
+  },
+  {
+   "frame": 1487,
+   "id": "ui-stretch",
+   "db": -9,
+   "pitch": -2,
+   "note": "S10 transition (push-up)"
+  },
+  {
+   "frame": 1494,
+   "id": "kb-type-0",
+   "db": -4,
+   "pitch": 0,
+   "note": "S10 typing: query types"
+  },
+  {
+   "frame": 1551,
+   "id": "ui-stretch",
+   "db": -7,
+   "pitch": 0,
+   "note": "S10 slide: result climbs"
+  },
+  {
+   "frame": 1554,
+   "id": "kb-type-1",
+   "db": -4,
+   "pitch": 0,
+   "note": "S10 typing: AI answer types"
+  },
+  {
+   "frame": 1614,
+   "id": "ui-granular-button-select-2",
+   "db": -1,
+   "pitch": 0,
+   "note": "S10 success: source chip lights"
+  },
+  {
+   "frame": 1639,
+   "id": "ui-backspace",
+   "db": -2,
+   "pitch": 0,
+   "note": "S10 click: top result click"
+  },
+  {
+   "frame": 1679,
+   "id": "ui-stretch",
+   "db": -9,
+   "pitch": -2,
+   "note": "S11 transition (push-left)"
+  },
+  {
+   "frame": 1747,
+   "id": "ui-click",
+   "db": 0,
+   "pitch": 0,
+   "note": "S11 click: CTA click"
+  },
+  {
+   "frame": 1752,
+   "id": "ui-granular-button-select",
+   "db": -2,
+   "pitch": 0,
+   "note": "S11 pop: booking card"
+  },
+  {
+   "frame": 1764,
+   "id": "ui-button",
+   "db": -2,
+   "pitch": 0,
+   "note": "S11 success: green check"
+  },
+  {
+   "frame": 1782,
+   "id": "ui-stretch",
+   "db": -7,
+   "pitch": 0,
+   "note": "S11 slide: page slides back"
+  },
+  {
+   "frame": 1803,
+   "id": "ui-granular-button-select-2",
+   "db": -3,
+   "pitch": 0,
+   "note": "S11 pop: format cards"
+  },
+  {
+   "frame": 1849,
+   "id": "ui-enter",
+   "db": -1,
+   "pitch": 0,
+   "note": "S11 click: play pressed"
+  },
+  {
+   "frame": 1884,
+   "id": "ui-stretch",
+   "db": -6,
+   "pitch": 0,
+   "note": "S12 whoosh: headline words rise"
+  },
+  {
+   "frame": 1956,
+   "id": "ui-button",
+   "db": -3,
+   "pitch": 0,
+   "note": "S12 pop: tiles arrive"
+  },
+  {
+   "frame": 1987,
+   "id": "ui-backspace",
+   "db": -2,
+   "pitch": 0,
+   "note": "S12 click: knob grab"
+  },
+  {
+   "frame": 1998,
+   "id": "ui-stretch",
+   "db": -7,
+   "pitch": 0,
+   "note": "S12 slide: knob drag"
+  },
+  {
+   "frame": 2046,
+   "id": "ui-granular-button-select",
+   "db": -2,
+   "pitch": 0,
+   "note": "S12 pop: chips cascade"
+  },
+  {
+   "frame": 2058,
+   "id": "ui-granular-button-select-2",
+   "db": -1,
+   "pitch": 0,
+   "note": "S12 success: Run reached"
+  },
+  {
+   "frame": 2081,
+   "id": "ui-open",
+   "db": -9,
+   "pitch": -2,
+   "note": "S13 transition (iris)"
+  },
+  {
+   "frame": 2106,
+   "id": "ui-button",
+   "db": -3,
+   "pitch": 0,
+   "note": "S13 pop: pin drops"
+  },
+  {
+   "frame": 2124,
+   "id": "v4-type-delete",
+   "db": -3,
+   "pitch": 0,
+   "note": "S13 tick: counter 25"
+  },
+  {
+   "frame": 2145,
+   "id": "ui-click-digital-04",
+   "db": -4,
+   "pitch": 0,
+   "note": "S13 tick: counter 100+"
+  },
+  {
+   "frame": 2225,
+   "id": "ui-open",
+   "db": -9,
+   "pitch": -2,
+   "note": "S14 transition (zoom)"
+  },
+  {
+   "frame": 2232,
+   "id": "ui-granular-button-select",
+   "db": -2,
+   "pitch": 0,
+   "note": "S14 pop: tile springs in"
+  },
+  {
+   "frame": 2292,
+   "id": "ui-granular-button-select-2",
+   "db": -3,
+   "pitch": 0,
+   "note": "S14 pop: button"
+  },
+  {
+   "frame": 2359,
+   "id": "ui-click",
+   "db": 0,
+   "pitch": 0,
+   "note": "S14 click: book a call"
+  },
+  {
+   "frame": 2367,
+   "id": "ui-button",
+   "db": -2,
+   "pitch": 0,
+   "note": "S14 success: "
+  }
+ ]
+}

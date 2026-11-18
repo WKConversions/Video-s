@@ -1,2 +1,4 @@
 out/
 node_modules
+.ev-entry.ts
+.ev-out.cjs
