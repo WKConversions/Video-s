@@ -1,6 +1,6 @@
 {
  "fps": 60,
- "frames": 240,
+ "frames": 300,
  "library": "../../creoble6/sound/lib-karl",
  "allow_apple": true,
  "sfx": [
@@ -12,175 +12,154 @@
    "note": "the opening flash"
   },
   {
-   "frame": 3,
+   "frame": 2,
    "id": "one-keyboard-click",
-   "db": -2.9318181818181817,
+   "db": -3.0,
+   "pitch": -3,
+   "note": "tick"
+  },
+  {
+   "frame": 5,
+   "id": "ui-click-digital-03",
+   "db": -2.75,
    "pitch": -2,
    "note": "tick"
   },
   {
-   "frame": 9,
-   "id": "ui-click-digital-03",
-   "db": -2.7954545454545454,
+   "frame": 8,
+   "id": "v4-type-delete",
+   "db": -2.5,
+   "pitch": -2,
+   "note": "tick"
+  },
+  {
+   "frame": 10,
+   "id": "ui-click-digital-04",
+   "db": -2.25,
    "pitch": -1,
+   "note": "tick"
+  },
+  {
+   "frame": 13,
+   "id": "uu-click-digital-01",
+   "db": -2.0,
+   "pitch": 0,
    "note": "tick"
   },
   {
    "frame": 15,
-   "id": "v4-type-delete",
-   "db": -2.659090909090909,
-   "pitch": -1,
+   "id": "one-keyboard-click",
+   "db": -1.75,
+   "pitch": 1,
    "note": "tick"
   },
   {
-   "frame": 21,
+   "frame": 18,
    "id": "ui-glitch-click",
    "db": -1,
    "pitch": 0,
    "note": "glitch"
   },
   {
-   "frame": 27,
-   "id": "ui-click-digital-04",
-   "db": -2.3863636363636362,
-   "pitch": 0,
-   "note": "tick"
-  },
-  {
-   "frame": 33,
-   "id": "one-keyboard-click",
-   "db": -2.25,
-   "pitch": 1,
-   "note": "tick"
-  },
-  {
-   "frame": 36,
+   "frame": 20,
    "id": "ui-click-digital-03",
-   "db": -2.1818181818181817,
+   "db": -1.5,
    "pitch": 1,
    "note": "tick"
   },
   {
-   "frame": 39,
+   "frame": 22,
    "id": "v4-type-delete",
-   "db": -2.1136363636363638,
-   "pitch": 1,
+   "db": -1.25,
+   "pitch": 2,
    "note": "tick"
   },
   {
-   "frame": 44,
+   "frame": 25,
+   "id": "ui-click-digital-04",
+   "db": -1.0,
+   "pitch": 3,
+   "note": "tick"
+  },
+  {
+   "frame": 27,
+   "id": "uu-click-digital-01",
+   "db": -0.75,
+   "pitch": 3,
+   "note": "tick"
+  },
+  {
+   "frame": 30,
+   "id": "one-keyboard-click",
+   "db": -0.5,
+   "pitch": 4,
+   "note": "tick"
+  },
+  {
+   "frame": 34,
+   "id": "ui-click-digital-03",
+   "db": -0.25,
+   "pitch": 5,
+   "note": "tick"
+  },
+  {
+   "frame": 38,
    "id": "ui-glitch-flicker-text",
    "db": -1,
    "pitch": 0,
    "note": "glitch"
   },
   {
+   "frame": 40,
+   "id": "v4-type-delete",
+   "db": 0.0,
+   "pitch": 5,
+   "note": "tick"
+  },
+  {
+   "frame": 44,
+   "id": "ui-click-digital-04",
+   "db": 0.25,
+   "pitch": 6,
+   "note": "tick"
+  },
+  {
    "frame": 47,
-   "id": "ui-click-digital-04",
-   "db": -1.9318181818181819,
-   "pitch": 2,
-   "note": "tick"
-  },
-  {
-   "frame": 50,
-   "id": "one-keyboard-click",
-   "db": -1.8636363636363635,
-   "pitch": 2,
-   "note": "tick"
-  },
-  {
-   "frame": 53,
-   "id": "ui-click-digital-03",
-   "db": -1.7954545454545454,
-   "pitch": 2,
-   "note": "tick"
-  },
-  {
-   "frame": 58,
-   "id": "v4-type-delete",
-   "db": -1.6818181818181819,
-   "pitch": 3,
-   "note": "tick"
-  },
-  {
-   "frame": 60,
    "id": "uu-click-digital-01",
-   "db": -1,
-   "pitch": 0,
-   "note": "glitch"
-  },
-  {
-   "frame": 62,
-   "id": "ui-click-digital-04",
-   "db": -1.5909090909090908,
-   "pitch": 3,
+   "db": 0.5,
+   "pitch": 7,
    "note": "tick"
   },
   {
-   "frame": 66,
+   "frame": 49,
    "id": "one-keyboard-click",
-   "db": -1.5,
-   "pitch": 3,
+   "db": 0.75,
+   "pitch": 7,
    "note": "tick"
   },
   {
-   "frame": 69,
+   "frame": 51,
    "id": "ui-click-digital-03",
-   "db": -1.4318181818181819,
-   "pitch": 3,
+   "db": 1.0,
+   "pitch": 8,
    "note": "tick"
   },
   {
-   "frame": 72,
-   "id": "v4-type-delete",
-   "db": -1.3636363636363635,
-   "pitch": 4,
-   "note": "tick"
-  },
-  {
-   "frame": 76,
-   "id": "ui-click-digital-04",
-   "db": -1.2727272727272727,
-   "pitch": 4,
-   "note": "tick"
-  },
-  {
-   "frame": 79,
-   "id": "one-keyboard-click",
-   "db": -1.2045454545454546,
-   "pitch": 4,
-   "note": "tick"
-  },
-  {
-   "frame": 83,
-   "id": "ui-click-digital-03",
-   "db": -1.1136363636363635,
-   "pitch": 5,
-   "note": "tick"
-  },
-  {
-   "frame": 86,
-   "id": "v4-type-delete",
-   "db": -1.0454545454545454,
-   "pitch": 5,
-   "note": "tick"
-  },
-  {
-   "frame": 83,
+   "frame": 57,
    "id": "send",
-   "db": -4,
+   "db": -5,
    "pitch": 3,
    "note": "into the slam"
   },
   {
-   "frame": 92,
+   "frame": 60,
    "id": "ui-backspace",
    "db": 3,
    "pitch": -3,
    "note": "the slam lands"
   },
   {
-   "frame": 92,
+   "frame": 60,
    "id": "ui-enter",
    "db": 1,
    "pitch": -2,

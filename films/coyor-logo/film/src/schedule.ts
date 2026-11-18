@@ -1,19 +1,31 @@
-// Karl (18 Nov): 4 s in total; the animation is done by 1.7 s (faster, fewer repeats, the glitch only now and then), then just the logo.
-export const FPS = 60, TOTAL = 240, M0 = 3, M1 = 88, SLAM = 88;
+// Karl (18 Nov): 5 s in total; fast animation 0-1 s, then the logo for 4 s.
+export const FPS = 60, TOTAL = 300, M0 = 2, M1 = 56, SLAM = 56;
 export const hash = (n: number) => { let x = (n * 2654435761) >>> 0; x ^= x >>> 15; x = Math.imul(x, 2246822519) >>> 0; x ^= x >>> 13; x = Math.imul(x, 3266489917) >>> 0; x ^= x >>> 16; return (x >>> 0) / 4294967296; };
 export type Kind = 'huge' | 'tiny' | 'mid' | 'inv' | 'outline' | 'grid' | 'slice' | 'rgb' | 'streak' | 'strobe' | 'bigoff';
-const KINDS: Kind[] = ['huge', 'mid', 'tiny', 'inv', 'outline', 'grid', 'bigoff', 'streak', 'huge', 'inv', 'mid', 'tiny', 'outline', 'bigoff'];
-const GLITCH_AT = new Set([9, 24, 38]);   // the slice / RGB glitch only three times, not constantly
+// Karl (5 s version): animation 1 s, logo 4 s. Montage order = deterministic shuffled rounds of all kinds, no kind twice within 4 states.
+const ALL: Kind[] = ['huge', 'mid', 'tiny', 'inv', 'outline', 'grid', 'bigoff', 'streak', 'strobe'];
+const GLITCH_AT: Record<number, Kind> = {11: 'slice', 27: 'rgb'};   // glitch kinds only twice
 export type St = { i: number; start: number; dur: number; kind: Kind };
+const order = (n: number): Kind[] => {
+  const seq: Kind[] = [];
+  let round = 0;
+  while (seq.length < n) {
+    for (let tries = 0; ; tries++) {
+      const a = ALL.map((k, j) => ({k, r: hash(round * 101 + j * 7 + tries * 1009 + 3)})).sort((x, y) => x.r - y.r).map((x) => x.k);
+      const ok = a.every((k, j) => { const prev = [...seq, ...a.slice(0, j)].slice(-3); return !prev.includes(k); });
+      if (ok) { seq.push(...a); break; }
+    }
+    round++;
+  }
+  return seq;
+};
 export const states: St[] = (() => {
-  const out: St[] = []; let t = M0, i = 0, prev = '';
+  const out: St[] = []; let t = M0, i = 0; const seq = order(60);
   while (t < M1) {
-    const p = (t - M0) / (M1 - M0);
-    let dur = p < 0.35 ? 2 : (hash(i + 77) < 0.3 ? 2 : 1);   // 1-2 frames a state: very fast
+    let kind = GLITCH_AT[i] ?? seq[i];
+    let dur = kind === 'strobe' ? 2 : (hash(i + 77) < 0.22 ? 2 : 1);
     if (t + dur > M1) dur = M1 - t;
-    let kind: Kind = GLITCH_AT.has(i) ? (i === 24 ? 'rgb' : 'slice') : KINDS[Math.floor(hash(i * 3 + 1) * KINDS.length)];
-    if (kind === prev || (out.length > 1 && kind === out[out.length - 2].kind)) kind = KINDS[(KINDS.indexOf(kind) + 5) % KINDS.length];
-    prev = kind; out.push({ i, start: t, dur, kind }); t += dur; i++;
+    out.push({ i, start: t, dur, kind }); t += dur; i++;
   }
   return out;
 })();

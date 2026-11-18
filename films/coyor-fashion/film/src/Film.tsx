@@ -81,21 +81,41 @@ const Open: React.FC<{ T: number }> = ({ T }) => {
   );
 };
 
+// Karl (18 Nov): "the transitions must be better". Every scene change is one smooth blur-push: the old scene drifts up,
+// softens and fades while the new one rises in from below and comes into focus (0.7 s, overlapping).
+const Scene: React.FC<{ T: number; tIn: number; tOut: number; children: React.ReactNode }> = ({ T, tIn, tOut, children }) => {
+  const pin = tIn <= 0 ? 1 : E(T, tIn, 0.7), pout = E(T, tOut, 0.7);
+  if (pin <= 0 || pout >= 1) return null;
+  const y = (1 - pin) * 9 - pout * 9, blur = (1 - pin) * 18 + pout * 18, sc = 1 + 0.04 * (1 - pin) - 0.03 * pout;
+  return (
+    <AbsoluteFill style={{ background: C.cream, opacity: Math.min(pin * 1.4, 1) * (1 - pout), transform: `translateY(${y}%) scale(${sc})`, filter: blur > 0.2 ? `blur(${blur.toFixed(1)}px)` : "none" }}>
+      {children}
+    </AbsoluteFill>
+  );
+};
+// a camera on one photo: zoom and focus point move together between keys (a push into a detail, a pan to the next one)
+type Cam = { t: number; d: number; ox: number; oy: number; z: number };
+const camAt = (T: number, keys: Cam[]) => {
+  let { ox, oy, z } = keys[0];
+  for (const k of keys) { const p = E(T, k.t, k.d); ox = mix(ox, k.ox, p); oy = mix(oy, k.oy, p); z = mix(z, k.z, p); }
+  return { ox, oy, z };
+};
+
 // flat lay -> worn: the two mockups lie side by side, then the model wearing them takes their place
 const FlatToModel: React.FC<{ T: number; t0: number; top: string; bottom: string; model: string; name: string; sub: string;
-  crops: { name: string; sub?: string; pos: string; zoom: number; t: number; light?: boolean }[]; end: number }> = ({ T, t0, top, bottom, model, name, sub, crops, end }) => {
+  crops: { name: string; sub?: string; ox: number; oy: number; zoom: number; t: number; light?: boolean }[]; end: number }> = ({ T, t0, top, bottom, model, name, sub, crops, end }) => {
   const lay = E(T, t0 + 0.1, 0.8), worn = E(T, t0 + 1.45, 1.1);
-  const ci = crops.findIndex((c, i) => T >= c.t && (i === crops.length - 1 || T < crops[i + 1].t));
-  const crop = ci >= 0 ? crops[ci] : null, cs = crop ? 1 : 0;   // a clean cut to each detail
+  // the camera: the model contained in the frame, a slow push, then a continuous move into each detail
+  const cam = camAt(T, [{ t: t0 + 1.45, d: 3, ox: 50, oy: 50, z: 1.1 }, { t: t0 + 1.45, d: 3, ox: 50, oy: 48, z: 1.16 },
+    ...crops.map((c) => ({ t: c.t - 0.35, d: 1.0, ox: c.ox, oy: c.oy, z: c.zoom }))]);
   return (
-    <AbsoluteFill style={{ background: C.cream, clipPath: `inset(${(1 - E(T, t0 - 0.05, 0.8)) * 100}% 0 0 0)` }}>
+    <AbsoluteFill style={{ background: C.cream }}>
       {/* the flat lay */}
-      <Pic f={top} x={60 - 160 * (1 - lay)} y={330} w={620} h={700} op={lay} push={mix(1.05, 1, lay)} />
-      <Pic f={bottom} x={460 + 160 * (1 - lay)} y={860} w={560} h={820} op={lay} push={mix(1.05, 1, lay)} />
+      <Pic f={top} x={60 - 160 * (1 - lay)} y={330 - 40 * worn} w={620} h={700} op={lay} push={mix(1.05, 1, lay) * (1 + 0.06 * worn)} />
+      <Pic f={bottom} x={460 + 160 * (1 - lay)} y={860 - 40 * worn} w={560} h={820} op={lay} push={mix(1.05, 1, lay) * (1 + 0.06 * worn)} />
       {/* worn: the model, then slow crops on the details */}
       <div style={{ position: "absolute", inset: 0, background: C.cream, WebkitMaskImage: `linear-gradient(180deg, #000 ${worn * 130 - 25}%, transparent ${worn * 130 + 5}%)`, maskImage: `linear-gradient(180deg, #000 ${worn * 130 - 25}%, transparent ${worn * 130 + 5}%)` }}>
-        <Pic f={model} x={-60} y={240} w={1200} h={1500} push={mix(1.0, 1.04, E(T, t0 + 1.45, 3, (x) => x))} op={1 - cs} />
-        {crop && <Pic f={model} x={0} y={0} w={1080} h={1920} fit="cover" pos={crop.pos} push={mix(crop.zoom, crop.zoom * 1.05, E(T, crop.t, 2, (x) => x))} op={cs} />}
+        <Pic f={model} x={0} y={0} w={1080} h={1920} push={cam.z} pos={`${cam.ox}% ${cam.oy}%`} />
       </div>
       <Label T={T} t0={t0 + 2.0} out={crops.length ? crops[0].t - 0.15 : end} x={90} y={1690} name={name} sub={sub} />
       {crops.map((c, i) => <Label key={i} T={T} t0={c.t + 0.4} out={i < crops.length - 1 ? crops[i + 1].t - 0.15 : end} x={90} y={1690} name={c.name} sub={c.sub} light={c.light} />)}
@@ -104,11 +124,11 @@ const FlatToModel: React.FC<{ T: number; t0: number; top: string; bottom: string
 };
 const Chenille: React.FC<{ T: number }> = ({ T }) => (
   <FlatToModel T={T} t0={3.2} top="black-joggers-1.jpg" bottom="black-joggers-3.jpg" model="black-joggers-0.png" name="CHENILLE SET" sub="€129,99" end={9.6}
-    crops={[{ name: "CHENILLE SWEATSHIRT", sub: "€79,99", pos: "60% 31%", zoom: 1.45, t: 6.6, light: true }, { name: "CHENILLE JOGGERS", sub: "€69,99", pos: "52% 64%", zoom: 1.4, t: 8.1, light: true }]} />
+    crops={[{ name: "CHENILLE SWEATSHIRT", sub: "€79,99", ox: 60, oy: 36.6, zoom: 2.1, t: 6.6, light: true }, { name: "CHENILLE JOGGERS", sub: "€69,99", ox: 52, oy: 59.8, zoom: 2.0, t: 8.1, light: true }]} />
 );
 const DiaZipSet: React.FC<{ T: number }> = ({ T }) => (
   <FlatToModel T={T} t0={17.2} top="set-1.jpg" bottom="set-2.jpg" model="set-0.png" name="DIAZIP SET" sub="€129,99" end={22.9}
-    crops={[{ name: "DIAZIP HOODIE", pos: "52% 32%", zoom: 1.4, t: 20.6 }]} />
+    crops={[{ name: "DIAZIP HOODIE", ox: 52, oy: 37.3, zoom: 2.0, t: 20.6 }]} />
 );
 const COLOURS = [
   { n: "BLACK", f: "chenille-varsity-set-black-0.jpg", bg: "#E6E3DE", dot: "#1b1b1b" },
@@ -125,20 +145,20 @@ const Varsity: React.FC<{ T: number }> = ({ T }) => {
     const c = COLOURS[j];
     return (
       <div key={j} style={{ position: "absolute", left: off, top: 0, width: 1080, height: 1920, background: c.bg }}>
-        <Pic f={c.f} x={70} y={370} w={940} h={1120} push={mix(1.0, 1.04, clamp((T - first - j * each) / 1.9))} />
+        <Pic f={c.f} x={70 + off * 0.35} y={370 + 10 * Math.sin((T - j) * 1.6)} w={940} h={1120} push={mix(1.0, 1.04, clamp((T - first - j * each) / 1.9))} />
       </div>
     );
   };
   return (
-    <AbsoluteFill style={{ background: C.cream, clipPath: `inset(${(1 - E(T, t0 - 0.05, 0.8)) * 100}% 0 0 0)` }}>
+    <AbsoluteFill style={{ background: C.cream, overflow: "hidden" }}>
       {/* the intro card */}
       {T < first + 0.8 && <>
         <Label T={T} t0={t0 + 0.15} out={first - 0.1} x={540} y={820} name="THE VARSITY SET" align="center" size={120} />
         <Label T={T} t0={t0 + 0.45} out={first - 0.1} x={540} y={980} name="5 COLOURWAYS · €79,99" align="center" size={44} color={C.soft} />
       </>}
       {k >= 0 && <>
-        {k > 0 && panel(k - 1, -1080 * slide * 0.35)}
-        <div style={{ position: "absolute", inset: 0, clipPath: `inset(0 0 0 ${(1 - slide) * 100}%)` }}>{panel(k, 0)}</div>
+        {k > 0 && panel(k - 1, -1080 * slide)}
+        {panel(k, 1080 * (1 - slide))}
         <div style={{ position: "absolute", left: 540, top: 1600, transform: "translateX(-50%)", textAlign: "center" }}>
           <div key={k} style={{ overflow: "hidden" }}>
             <div style={{ transform: `translateY(${(1 - E(T, first + k * each + 0.25, 0.6, easeOut)) * 110}%)`, fontFamily: H, fontWeight: 800, fontSize: 84, letterSpacing: 7, color: C.ink, whiteSpace: "nowrap" }}>{COLOURS[k].n}</div>
@@ -156,11 +176,11 @@ const Varsity: React.FC<{ T: number }> = ({ T }) => {
 const More: React.FC<{ T: number }> = ({ T }) => {
   const t0 = 22.9, items = [{ f: "coyor-cy-jeans-0.jpg", n: "CY JEANS", p: "€95,99" }, { f: "coyor-cy-zip-up-hoodi-0.jpg", n: "MONO CY ZIP-UP", p: "€79,99" }, { f: "coyor-puffer-logo-t-shirt-0.png", n: "CHENILLE T-SHIRT", p: "€49,99" }];
   return (
-    <AbsoluteFill style={{ background: C.cream, clipPath: `inset(${(1 - E(T, t0 - 0.05, 0.8)) * 100}% 0 0 0)` }}>
+    <AbsoluteFill style={{ background: C.cream }}>
       {items.map((it, i) => {
         const p = E(T, t0 + 0.2 + i * 0.35, 0.8), y = 230 + i * 540;
         return <React.Fragment key={i}>
-          <Pic f={it.f} x={(i % 2 ? 480 : 60) + (i % 2 ? 1 : -1) * 120 * (1 - p)} y={y} w={540} h={500} op={p} />
+          <Pic f={it.f} x={(i % 2 ? 480 : 60) + (i % 2 ? 1 : -1) * 120 * (1 - p)} y={y + 8 * Math.sin(T * 1.4 + i * 2)} w={540} h={500} op={p} />
           <Label T={T} t0={t0 + 0.5 + i * 0.35} out={25.35} x={i % 2 ? 90 : 990} y={y + 200} name={it.n} sub={it.p} align={i % 2 ? "left" : "right"} size={54} />
         </React.Fragment>;
       })}
@@ -171,7 +191,7 @@ const More: React.FC<{ T: number }> = ({ T }) => {
 const End: React.FC<{ T: number }> = ({ T }) => {
   const t0 = 25.4;
   return (
-    <AbsoluteFill style={{ background: C.cream, clipPath: `inset(${(1 - E(T, t0 - 0.05, 0.8)) * 100}% 0 0 0)` }}>
+    <AbsoluteFill style={{ background: C.cream }}>
       <Pic f="black-joggers-0.png" x={-140 - 60 * (1 - E(T, t0 + 0.1, 1.0))} y={480} w={760} h={950} op={E(T, t0 + 0.1, 0.8)} push={mix(1.03, 1, E(T, t0, 2))} />
       <Pic f="set-0.png" x={460 + 60 * (1 - E(T, t0 + 0.25, 1.0))} y={480} w={760} h={950} op={E(T, t0 + 0.25, 0.8)} push={mix(1.03, 1, E(T, t0, 2))} />
       <Wordmark T={T} t0={t0 + 0.5} size={200} x={540} y={250} />
@@ -186,15 +206,14 @@ export const Film: React.FC = () => {
   const T = useCurrentFrame() / FPS;
   const ok = useFonts();
   if (!ok) return <AbsoluteFill style={{ background: C.cream }} />;
-  const header = T >= 3.2 && T < 25.4;
   return (
     <AbsoluteFill style={{ background: C.cream }}>
-      {T < 3.3 && <Open T={T} />}
-      {T >= 3.15 && T < 9.7 && <Chenille T={T} />}
-      {T >= 9.55 && T < 17.3 && <Varsity T={T} />}
-      {T >= 17.15 && T < 23.0 && <DiaZipSet T={T} />}
-      {T >= 22.85 && T < 25.5 && <More T={T} />}
-      {T >= 25.35 && <End T={T} />}
+      <Scene T={T} tIn={0} tOut={2.9}><Open T={T} /></Scene>
+      <Scene T={T} tIn={2.9} tOut={9.4}><Chenille T={T} /></Scene>
+      <Scene T={T} tIn={9.4} tOut={16.9}><Varsity T={T} /></Scene>
+      <Scene T={T} tIn={16.9} tOut={22.6}><DiaZipSet T={T} /></Scene>
+      <Scene T={T} tIn={22.6} tOut={25.1}><More T={T} /></Scene>
+      <Scene T={T} tIn={25.1} tOut={99}><End T={T} /></Scene>
     </AbsoluteFill>
   );
 };
