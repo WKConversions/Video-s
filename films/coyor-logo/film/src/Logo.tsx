@@ -30,7 +30,7 @@ export const Logo: React.FC<{finalW: number}> = ({finalW}) => {
 
   if (f < M0) {
     // opening flash: white / black / white
-    bg = [PAPER, INK, PAPER, INK, PAPER, PAPER][f];
+    bg = [PAPER, INK, PAPER][f] ?? PAPER;
     if (f === 4) body = <Mark x={cx} y={cyy} w={fw * 0.5} fill={INK} />;
   } else if (f < M1) {
     const st = states.find((s) => f >= s.start && f < s.start + s.dur)!;
@@ -150,7 +150,7 @@ export const Logo: React.FC<{finalW: number}> = ({finalW}) => {
       const t = s - 5;
       const amp = Math.max(0, 14 * Math.pow(0.55, t)) * (t < 7 ? 1 : 0);
       shake = [(R(t + 200) - 0.5) * 2 * amp, (R(t + 300) - 0.5) * 2 * amp * 0.6];
-      const settle = f >= 150 ? 0 : 0.0035 * Math.pow(0.9, t);
+      const settle = f >= SLAM + 24 ? 0 : 0.0035 * Math.pow(0.9, t);
       body = <Mark x={cx} y={cyy} w={fw * (1 + settle)} fill={INK} />;
     }
   }

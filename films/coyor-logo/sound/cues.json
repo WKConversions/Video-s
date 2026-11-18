@@ -1,293 +1,190 @@
 {
  "fps": 60,
- "frames": 180,
+ "frames": 240,
  "library": "../../creoble6/sound/lib-karl",
  "allow_apple": true,
  "sfx": [
   {
-   "id": "ui-glitch-flicker-text",
    "frame": 0,
-   "db": -3
+   "id": "ui-click-digital-03",
+   "db": 0,
+   "pitch": -4,
+   "note": "the opening flash"
   },
   {
-   "id": "uu-click-digital-01",
-   "frame": 6,
-   "pitch": 2,
-   "db": 0
+   "frame": 3,
+   "id": "one-keyboard-click",
+   "db": -2.9318181818181817,
+   "pitch": -2,
+   "note": "tick"
   },
   {
-   "id": "ui-click-digital-04",
-   "frame": 10,
-   "pitch": 2,
-   "db": 4
+   "frame": 9,
+   "id": "ui-click-digital-03",
+   "db": -2.7954545454545454,
+   "pitch": -1,
+   "note": "tick"
   },
   {
-   "id": "ui-glitch-click",
-   "frame": 14,
-   "pitch": 4,
-   "db": 0
-  },
-  {
+   "frame": 15,
    "id": "v4-type-delete",
-   "frame": 17,
-   "pitch": 0,
-   "db": 0
+   "db": -2.659090909090909,
+   "pitch": -1,
+   "note": "tick"
   },
   {
-   "id": "v4-type-delete",
    "frame": 21,
-   "pitch": 1,
-   "db": 0
-  },
-  {
-   "id": "v4-type-delete",
-   "frame": 24,
+   "id": "ui-glitch-click",
+   "db": -1,
    "pitch": 0,
-   "db": 0
+   "note": "glitch"
   },
   {
-   "id": "ui-click-digital-04",
    "frame": 27,
-   "pitch": 1,
-   "db": 4
-  },
-  {
-   "id": "uu-click-digital-01",
-   "frame": 31,
-   "pitch": 3,
-   "db": 0
-  },
-  {
-   "id": "ui-glitch-click",
-   "frame": 34,
-   "pitch": 5,
-   "db": 0
-  },
-  {
-   "id": "uu-click-digital-01",
-   "frame": 37,
-   "pitch": 2,
-   "db": 0
-  },
-  {
    "id": "ui-click-digital-04",
-   "frame": 40,
-   "pitch": 3,
-   "db": 4
+   "db": -2.3863636363636362,
+   "pitch": 0,
+   "note": "tick"
   },
   {
+   "frame": 33,
    "id": "one-keyboard-click",
-   "frame": 42,
-   "pitch": 4,
-   "db": 0
+   "db": -2.25,
+   "pitch": 1,
+   "note": "tick"
   },
   {
+   "frame": 36,
    "id": "ui-click-digital-03",
+   "db": -2.1818181818181817,
+   "pitch": 1,
+   "note": "tick"
+  },
+  {
+   "frame": 39,
+   "id": "v4-type-delete",
+   "db": -2.1136363636363638,
+   "pitch": 1,
+   "note": "tick"
+  },
+  {
    "frame": 44,
-   "pitch": 7,
-   "db": 0
-  },
-  {
-   "id": "uu-click-digital-01",
-   "frame": 47,
-   "pitch": 2,
-   "db": 0
-  },
-  {
-   "id": "ui-glitch-click",
-   "frame": 50,
-   "pitch": 5,
-   "db": 0
-  },
-  {
-   "id": "ui-glitch-click",
-   "frame": 53,
-   "pitch": 2,
-   "db": 0
-  },
-  {
-   "id": "ui-click-digital-03",
-   "frame": 55,
-   "pitch": 7,
-   "db": 0
-  },
-  {
-   "id": "v4-type-delete",
-   "frame": 58,
-   "pitch": 4,
-   "db": 0
-  },
-  {
-   "id": "ui-click-digital-04",
-   "frame": 60,
-   "pitch": 2,
-   "db": 4
-  },
-  {
-   "id": "v4-type-delete",
-   "frame": 62,
-   "pitch": 8,
-   "db": 0
-  },
-  {
-   "id": "ui-click-digital-04",
-   "frame": 64,
-   "pitch": 9,
-   "db": 4
-  },
-  {
-   "id": "one-keyboard-click",
-   "frame": 67,
-   "pitch": 3,
-   "db": 0
-  },
-  {
-   "id": "uu-click-digital-01",
-   "frame": 70,
-   "pitch": 1,
-   "db": 0
-  },
-  {
-   "id": "ui-glitch-click",
-   "frame": 72,
-   "pitch": 5,
-   "db": 0
-  },
-  {
-   "id": "uu-click-digital-01",
-   "frame": 74,
-   "pitch": 5,
-   "db": 0
-  },
-  {
-   "id": "one-keyboard-click",
-   "frame": 76,
-   "pitch": 9,
-   "db": 0
-  },
-  {
-   "id": "v4-type-delete",
-   "frame": 78,
-   "pitch": 6,
-   "db": 0
-  },
-  {
-   "id": "ui-click-digital-03",
-   "frame": 80,
-   "pitch": 3,
-   "db": 0
-  },
-  {
-   "id": "ui-glitch-click",
-   "frame": 82,
-   "pitch": 5,
-   "db": 0
-  },
-  {
-   "id": "ui-click-digital-03",
-   "frame": 84,
-   "pitch": 2,
-   "db": 0
-  },
-  {
-   "id": "ui-click-digital-03",
-   "frame": 86,
-   "pitch": 7,
-   "db": 0
-  },
-  {
-   "id": "one-keyboard-click",
-   "frame": 88,
-   "pitch": 1,
-   "db": 0
-  },
-  {
-   "id": "ui-glitch-click",
-   "frame": 90,
-   "pitch": 5,
-   "db": 0
-  },
-  {
-   "id": "v4-type-delete",
-   "frame": 92,
-   "pitch": 5,
-   "db": 0
-  },
-  {
-   "id": "ui-glitch-click",
-   "frame": 94,
-   "pitch": 2,
-   "db": 0
-  },
-  {
-   "id": "one-keyboard-click",
-   "frame": 96,
-   "pitch": 2,
-   "db": 0
-  },
-  {
-   "id": "uu-click-digital-01",
-   "frame": 98,
-   "pitch": 5,
-   "db": 0
-  },
-  {
-   "id": "v4-type-delete",
-   "frame": 100,
-   "pitch": 6,
-   "db": 0
-  },
-  {
-   "id": "v4-type-delete",
-   "frame": 102,
-   "pitch": 4,
-   "db": 0
-  },
-  {
-   "id": "ui-click-digital-03",
-   "frame": 105,
-   "pitch": 6,
-   "db": 0
-  },
-  {
-   "id": "ui-click-digital-03",
-   "frame": 106,
-   "pitch": 7,
-   "db": 0
-  },
-  {
-   "id": "ui-click-digital-03",
-   "frame": 108,
-   "pitch": 6,
-   "db": 0
-  },
-  {
-   "id": "v4-type-delete",
-   "frame": 110,
-   "pitch": 10,
-   "db": 0
-  },
-  {
-   "id": "ui-click-digital-03",
-   "frame": 112,
-   "pitch": 4,
-   "db": 0
-  },
-  {
    "id": "ui-glitch-flicker-text",
-   "frame": 112,
-   "db": -2
+   "db": -1,
+   "pitch": 0,
+   "note": "glitch"
   },
   {
+   "frame": 47,
+   "id": "ui-click-digital-04",
+   "db": -1.9318181818181819,
+   "pitch": 2,
+   "note": "tick"
+  },
+  {
+   "frame": 50,
+   "id": "one-keyboard-click",
+   "db": -1.8636363636363635,
+   "pitch": 2,
+   "note": "tick"
+  },
+  {
+   "frame": 53,
+   "id": "ui-click-digital-03",
+   "db": -1.7954545454545454,
+   "pitch": 2,
+   "note": "tick"
+  },
+  {
+   "frame": 58,
+   "id": "v4-type-delete",
+   "db": -1.6818181818181819,
+   "pitch": 3,
+   "note": "tick"
+  },
+  {
+   "frame": 60,
+   "id": "uu-click-digital-01",
+   "db": -1,
+   "pitch": 0,
+   "note": "glitch"
+  },
+  {
+   "frame": 62,
+   "id": "ui-click-digital-04",
+   "db": -1.5909090909090908,
+   "pitch": 3,
+   "note": "tick"
+  },
+  {
+   "frame": 66,
+   "id": "one-keyboard-click",
+   "db": -1.5,
+   "pitch": 3,
+   "note": "tick"
+  },
+  {
+   "frame": 69,
+   "id": "ui-click-digital-03",
+   "db": -1.4318181818181819,
+   "pitch": 3,
+   "note": "tick"
+  },
+  {
+   "frame": 72,
+   "id": "v4-type-delete",
+   "db": -1.3636363636363635,
+   "pitch": 4,
+   "note": "tick"
+  },
+  {
+   "frame": 76,
+   "id": "ui-click-digital-04",
+   "db": -1.2727272727272727,
+   "pitch": 4,
+   "note": "tick"
+  },
+  {
+   "frame": 79,
+   "id": "one-keyboard-click",
+   "db": -1.2045454545454546,
+   "pitch": 4,
+   "note": "tick"
+  },
+  {
+   "frame": 83,
+   "id": "ui-click-digital-03",
+   "db": -1.1136363636363635,
+   "pitch": 5,
+   "note": "tick"
+  },
+  {
+   "frame": 86,
+   "id": "v4-type-delete",
+   "db": -1.0454545454545454,
+   "pitch": 5,
+   "note": "tick"
+  },
+  {
+   "frame": 83,
+   "id": "send",
+   "db": -4,
+   "pitch": 3,
+   "note": "into the slam"
+  },
+  {
+   "frame": 92,
    "id": "ui-backspace",
-   "frame": 118,
-   "db": 3
+   "db": 3,
+   "pitch": -3,
+   "note": "the slam lands"
   },
   {
+   "frame": 92,
    "id": "ui-enter",
-   "frame": 118,
-   "db": 2,
-   "pitch": -5
+   "db": 1,
+   "pitch": -2,
+   "note": "the slam (body)"
   }
  ]
 }
