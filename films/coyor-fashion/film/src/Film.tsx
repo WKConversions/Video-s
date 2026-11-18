@@ -171,12 +171,8 @@ const Varsity: React.FC<{ T: number }> = ({ T }) => {
         {k > 0 && panel(k - 1, -1080 * slide)}
         {panel(k, 1080 * (1 - slide))}
         <div style={{ position: "absolute", left: 540, top: 1600, transform: "translateX(-50%)", textAlign: "center" }}>
-          <div key={k} style={{ display: "inline-block", padding: "20px 34px 16px", borderRadius: 16, background: "rgba(244,239,230,.93)", boxShadow: "0 10px 34px rgba(17,17,17,.12)",
-            clipPath: `inset(0 ${(1 - E(T, first + k * each + 0.2, 0.6, easeOut)) * 100}% 0 0 round 16px)` }}>
-            <div style={{ overflow: "hidden" }}>
-              <div style={{ transform: `translateY(${(1 - E(T, first + k * each + 0.25, 0.6, easeOut)) * 110}%)`, fontFamily: H, fontWeight: 800, fontSize: 76, letterSpacing: 7, color: C.ink, whiteSpace: "nowrap", lineHeight: 1 }}>{COLOURS[k].n}</div>
-            </div>
-            <div style={{ fontFamily: B, fontWeight: 500, fontSize: 30, letterSpacing: 3, color: C.soft, marginTop: 8 }}>€79,99</div>
+          <div key={k} style={{ overflow: "hidden" }}>
+            <div style={{ transform: `translateY(${(1 - E(T, first + k * each + 0.25, 0.6, easeOut)) * 110}%)`, fontFamily: H, fontWeight: 800, fontSize: 84, letterSpacing: 7, color: C.ink, whiteSpace: "nowrap" }}>{COLOURS[k].n}</div>
           </div>
           <div style={{ display: "flex", gap: 22, justifyContent: "center", marginTop: 26 }}>
             {COLOURS.map((c, j) => <div key={j} style={{ width: 26, height: 26, borderRadius: "50%", background: c.dot, border: "2px solid rgba(17,17,17,.35)",
