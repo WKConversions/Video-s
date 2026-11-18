@@ -80,7 +80,7 @@ const S2: Scene = ({ t }) => {
           </div>
         );
       })}
-      <Ripple t={t} c={CLICK2} x={XS[0]} y={CY} r={200} color={C.violet} />
+      <Ripple t={t} c={CLICK2} x={XS[0] + 130} y={CY + 185} r={200} color={C.violet} />
     </Stage>
   );
 };
@@ -89,7 +89,7 @@ export const GROUP: Group = {
   scenes: { S1, S2 },
   hand: {
     S1: [{ at: CLICK1, x: TX, y: TY, click: true }],
-    S2: [{ at: 1.3, x: XS[2], y: CY }, { at: CLICK2, x: XS[0], y: CY, click: true }],
+    S2: [{ at: 1.3, x: XS[2] + 130, y: CY + 185 }, { at: CLICK2, x: XS[0] + 130, y: CY + 185, click: true }],
   },
   sfx: {
     S1: [{ t: 0.15, kind: "whoosh", note: "headline words rise" }, { t: 2.35, kind: "fall", note: "lines draw into the centre" }, { t: 2.55, kind: "pop", note: "K.B tile springs in" }, { t: 3.81, kind: "click", note: "hand clicks the tile" }],

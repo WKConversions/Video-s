@@ -129,8 +129,9 @@ const LINE_D = "M" + PTS.map(([x, y]) => `${x.toFixed(1)} ${y.toFixed(1)}`).join
 const AREA_D = LINE_D + ` L${GW} ${GH} L0 ${GH} Z`;
 const S8: Scene = ({ t }) => {
   const arr = S(t, -0.3, { damping: 17 });
-  const p = E(t, 0.1, 1.3, ease.smooth);
-  const num = Math.round(248 * E(t, 0.1, 1.3, ease.out));
+  const soft = (x: number) => 1 - (1 - x) ** 1.7;                 // the chart is still drawing when the scene leaves: no dead hold
+  const p = E(t, 0.1, 2.25, soft);
+  const num = Math.round(248 * E(t, 0.1, 2.25, soft));
   const dx = p * GW, dy = yfn(p);
   const pulse = (t * 1.2) % 1;
   return (

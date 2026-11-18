@@ -22,7 +22,7 @@ export const SESSIONS: Session[] = [
   { scenes: ["S1", "S2"], from: [1500, 1310] },
   { scenes: ["S4"], from: [560, 1300], early: 0.3, exit: { at: 13.2, x: 1150, y: 1300 } },
   { scenes: ["S7"], from: [900, 1310], early: 0.35, exit: { at: 20.15, x: 1250, y: -320 } },
-  { scenes: ["S10", "S11"], from: [760, 1310], early: 0.15 },
+  { scenes: ["S10", "S11"], from: [760, 1310] },
   { scenes: ["S14"], from: [1150, 1310] },
 ];
 const inFrame = (k: HandKey) => k.x >= 0 && k.x <= 1920 && k.y >= 0 && k.y <= 1080;

@@ -72,8 +72,8 @@ export const KBTile: React.FC<{ x: number; y: number; size: number; style?: Reac
 // ---------- SaaS centred type ----------
 /** Words: a centred headline, word by word: each word rises through a soft blur on a spring. hi: words to highlight with
  *  a gradient ({ word: gradient }). out: time the line leaves (rises and fades). size px. lines split on "\n". */
-export const Words: React.FC<{ t: number; t0: number; text: string; size?: number; y?: number; x?: number; hi?: Record<string, string>; stagger?: number; out?: number; weight?: number; color?: string; maxW?: number; align?: "center" | "left" }> =
-  ({ t, t0, text, size = 96, y = 540, x = 960, hi = {}, stagger = 0.075, out = 1e9, weight = 700, color = C.navy, maxW = 1500, align = "center" }) => {
+export const Words: React.FC<{ t: number; t0: number; text: string; size?: number; y?: number; x?: number; hi?: Record<string, string>; stagger?: number; out?: number; weight?: number; color?: string; maxW?: number; align?: "center" | "left"; shine?: boolean }> =
+  ({ t, t0, text, size = 96, y = 540, x = 960, hi = {}, stagger = 0.075, out = 1e9, weight = 700, color = C.navy, maxW = 1500, align = "center", shine = true }) => {
     let i = 0;
     const o = E(t, out, 0.4, ease.in);
     if (t < t0 || o >= 1) return null;
@@ -82,10 +82,13 @@ export const Words: React.FC<{ t: number; t0: number; text: string; size?: numbe
         fontFamily: FONT, fontWeight: weight, fontSize: size, lineHeight: 1.12, letterSpacing: -size * 0.025, color }}>
         {text.split("\n").map((ln, li) => (
           <div key={li}>{ln.split(" ").map((w, wi) => {
-            const p = S(t, t0 + i * stagger, { damping: 15, stiffness: 150 }), g = hi[w.replace(/[.,!?]/g, "")]; i++;
+            const w0 = t0 + i * stagger, p = S(t, w0, { damping: 15, stiffness: 150 }), g = hi[w.replace(/[.,!?]/g, "")]; i++;
+            // the sheen: a band of light crosses each highlighted word (0.9 s), every 1.7 s, once the word has landed
+            const u = g && shine ? clamp((((t - w0 - 0.7) % 1.7) + 1.7) % 1.7 / 0.9) : 1, sheen = t > w0 + 0.7 && u < 1 ? (100 - 100 * u).toFixed(2) : "0";
             return (
               <span key={wi} style={{ display: "inline-block", marginRight: size * 0.26, transform: `translateY(${(1 - p) * size * 0.55}px) scale(${mix(0.92, 1, p)})`, opacity: clamp(p * 1.6), filter: p < 0.98 ? `blur(${(1 - p) * 10}px)` : "none",
-                ...(g ? { background: g, WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent", paddingBottom: size * 0.1 } : {}) }}>{w}</span>
+                ...(g ? { backgroundImage: `linear-gradient(105deg, rgba(255,255,255,0) 40%, rgba(255,255,255,.92) 50%, rgba(255,255,255,0) 60%), ${g}`, backgroundSize: "300% 100%, 100% 100%", backgroundPosition: `${sheen}% 0, 0 0`, backgroundRepeat: "no-repeat",
+                  WebkitBackgroundClip: "text", backgroundClip: "text", WebkitTextFillColor: "transparent", paddingBottom: size * 0.1 } : {}) }}>{w}</span>
             );
           })}</div>
         ))}
@@ -106,11 +109,11 @@ export const Caption: React.FC<{ t: number; t0?: number; text: string; grad?: st
   const p = S(t, t0, { damping: 16, stiffness: 160 });
   if (t < t0) return null;
   return (
-    <div style={{ position: "absolute", left: 0, right: 0, top: y - 36, height: 72, display: "flex", justifyContent: "center" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: 16, padding: "0 34px 0 26px", height: 72, borderRadius: 36, background: C.white, boxShadow: SHADOW.soft, border: `1px solid ${C.line}`,
+    <div style={{ position: "absolute", left: 0, right: 0, top: y - 44, height: 88, display: "flex", justifyContent: "center" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 18, padding: "0 42px 0 32px", height: 88, borderRadius: 44, background: C.white, boxShadow: SHADOW.soft, border: `1px solid ${C.line}`,
         opacity: clamp(p * 2), transform: `translate3d(0, ${((1 - p) * -30).toFixed(2)}px, 0) scale(${mix(0.9, 1, p).toFixed(4)})`, willChange: "transform" }}>
-        <div style={{ width: 18, height: 18, borderRadius: 9, background: grad }} />
-        <div style={{ fontFamily: FONT, fontWeight: 700, fontSize: 34, color: C.navy, letterSpacing: -0.3, whiteSpace: "nowrap" }}>{text}</div>
+        <div style={{ width: 22, height: 22, borderRadius: 11, background: grad }} />
+        <div style={{ fontFamily: FONT, fontWeight: 700, fontSize: 44, color: C.navy, letterSpacing: -0.5, whiteSpace: "nowrap" }}>{text}</div>
       </div>
     </div>
   );

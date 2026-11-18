@@ -58,6 +58,8 @@ const S4: Scene = ({ t }) => {
   return (
     <Stage t={t} tint={C.cyan} tint2={C.violet}>
       <Caption t={t} text="Cross-platform integrations" grad={GRAD.ai} />
+      {/* the hero group, enlarged as one (lead): few things, big */}
+      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "960px 800px", transform: "scale(1.2)" }}>
       {/* the one line, behind the tiles */}
       <div style={{ position: "absolute", left: XL, top: Y - 4, width: XR - XL, height: 8, borderRadius: 4, background: GRAD.ai, transformOrigin: "left center", transform: `scaleX(${line.toFixed(4)})`, opacity: 0.9, willChange: "transform" }} />
       {t > 2.6 && t < 3.4 && <Dot x={mix(XL, XR, pulse)} y={Y} r={20} color="#fff" opacity={Math.sin(Math.PI * clamp((t - 2.6) / 0.8)) } scale={1} />}
@@ -78,6 +80,7 @@ const S4: Scene = ({ t }) => {
           <Check p={E(t, 3.03, 0.25)} size={32} />
         </div>
       </div>
+      </div>
     </Stage>
   );
 };
@@ -96,6 +99,8 @@ const S5: Scene = ({ t }) => {
   return (
     <Stage t={t} tint={C.violet} tint2={C.cyan}>
       <Caption t={t} text="Custom AI Agents" grad={GRAD.ai} />
+      {/* the hero group, enlarged as one (lead): few things, big */}
+      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "960px 620px", transform: "scale(1.15)" }}>
       {/* connection lines: straight from orb to each card */}
       {TASKS.map((k, i) => {
         const x0 = OX + 150, x1 = CX - CW / 2, dy = k.y - OY, len = Math.hypot(x1 - x0, dy), ang = Math.atan2(dy, x1 - x0);
@@ -127,6 +132,7 @@ const S5: Scene = ({ t }) => {
           </div>
         );
       })}
+      </div>
     </Stage>
   );
 };
@@ -136,8 +142,8 @@ export const GROUP: Group = {
   hand: {
     S3: [], S5: [],
     S4: [
-      { at: 0.75, x: 960, y: 870, click: true },
-      { at: 2.0, x: 960, y: 540, early: 0, dur: 0.92 },
+      { at: 0.75, x: 960, y: 884, click: true },            // (960, 870) and (960, 540) seen through the 1.2x hero group
+      { at: 2.0, x: 960, y: 488, early: 0, dur: 0.92 },
     ],
   },
   sfx: {
