@@ -4,6 +4,7 @@
 // panels so they sit seamlessly), quiet type (Barlow Condensed + DM Sans, the site's fonts), slow pushes and clean slides.
 import React, { useEffect, useState } from "react";
 import { AbsoluteFill, Easing, Img, continueRender, delayRender, staticFile, useCurrentFrame } from "remotion";
+import cy from "./cy.json";
 
 export const FPS = 60, DUR = 29.0;
 const C = { cream: "#F4EFE6", ink: "#111111", soft: "rgba(17,17,17,.62)", gold: "#C9A24E", gold2: "#E9C66A" };
@@ -68,25 +69,28 @@ const Wordmark: React.FC<{ T: number; t0: number; size: number; x: number; y: nu
 );
 
 // ---------- scenes ----------
+// Karl (18 Nov): "the logo going away was bad: go faster to the clothing, a smoother transition, no position animation for
+// the logo; the CY logo on the first frames, COYOR on the last". The CY monogram (the brand's vector) fades and focuses in,
+// stays exactly where it is, and dissolves into the first clothes.
+const CY: React.FC<{ w: number; x: number; y: number; color?: string }> = ({ w, x, y, color = C.ink }) => {
+  const h = (w * cy.h) / cy.w;
+  return <svg width={w} height={h} viewBox={`${cy.x} ${cy.y} ${cy.w} ${cy.h}`} style={{ position: "absolute", left: x - w / 2, top: y - h / 2 }}><path d={cy.d} fillRule="evenodd" fill={color} /></svg>;
+};
 const Open: React.FC<{ T: number }> = ({ T }) => {
-  const up = E(T, 2.55, 0.7);
+  const p = E(T, 0.05, 0.45, easeOut);
   return (
     <AbsoluteFill style={{ background: C.cream }}>
-      <div style={{ position: "absolute", left: 0, top: 0, width: 1080, height: 1920, transform: `translateY(${-760 * up}px) scale(${mix(1, 0.32, up)})`, transformOrigin: "540px 960px" }}>
-        <Wordmark T={T} t0={0.15} size={250} x={540} y={900} />
-        <div style={{ position: "absolute", left: 540, top: 1060, transform: "translateX(-50%)", fontFamily: B, fontWeight: 500, fontSize: 40, letterSpacing: 6, color: C.soft,
-          opacity: E(T, 1.1, 0.8) * (1 - up * 2), whiteSpace: "nowrap" }}>CREATOR OF YOUR OWN REALITY.</div>
-      </div>
+      <div style={{ position: "absolute", inset: 0, opacity: p, filter: p < 0.99 ? `blur(${(1 - p) * 14}px)` : "none" }}><CY w={420} x={540} y={940} /></div>
     </AbsoluteFill>
   );
 };
 
 // Karl (18 Nov): "the transitions must be better". Every scene change is one smooth blur-push: the old scene drifts up,
 // softens and fades while the new one rises in from below and comes into focus (0.7 s, overlapping).
-const Scene: React.FC<{ T: number; tIn: number; tOut: number; children: React.ReactNode }> = ({ T, tIn, tOut, children }) => {
-  const pin = tIn <= 0 ? 1 : E(T, tIn, 0.7), pout = E(T, tOut, 0.7);
+const Scene: React.FC<{ T: number; tIn: number; tOut: number; children: React.ReactNode; stillIn?: boolean; stillOut?: boolean; d?: number }> = ({ T, tIn, tOut, children, stillIn, stillOut, d = 0.7 }) => {
+  const pin = tIn <= 0 ? 1 : E(T, tIn, d), pout = E(T, tOut, d);
   if (pin <= 0 || pout >= 1) return null;
-  const y = (1 - pin) * 9 - pout * 9, blur = (1 - pin) * 18 + pout * 18, sc = 1 + 0.04 * (1 - pin) - 0.03 * pout;
+  const y = (stillIn ? 0 : (1 - pin) * 9) - (stillOut ? 0 : pout * 9), blur = (1 - pin) * 18 + pout * 18, sc = 1 + (stillIn ? 0 : 0.04 * (1 - pin)) - (stillOut ? 0 : 0.03 * pout);
   return (
     <AbsoluteFill style={{ background: C.cream, opacity: Math.min(pin * 1.4, 1) * (1 - pout), transform: `translateY(${y}%) scale(${sc})`, filter: blur > 0.2 ? `blur(${blur.toFixed(1)}px)` : "none" }}>
       {children}
@@ -106,7 +110,7 @@ const FlatToModel: React.FC<{ T: number; t0: number; top: string; bottom: string
   crops: { name: string; sub?: string; ox: number; oy: number; zoom: number; t: number; light?: boolean }[]; end: number }> = ({ T, t0, top, bottom, model, name, sub, crops, end }) => {
   const lay = E(T, t0 + 0.1, 0.8), worn = E(T, t0 + 1.45, 1.1);
   // the camera: the model contained in the frame, a slow push, then a continuous move into each detail
-  const cam = camAt(T, [{ t: t0 + 1.45, d: 3, ox: 50, oy: 50, z: 1.1 }, { t: t0 + 1.45, d: 3, ox: 50, oy: 48, z: 1.16 },
+  const cam = camAt(T, [{ t: t0 + 1.45, d: 3, ox: 50, oy: 50, z: 1.1 }, { t: t0 + 1.45, d: Math.max(3, (crops[0]?.t ?? t0 + 5) - t0 - 1.9), ox: 50, oy: 46, z: 1.2 },
     ...crops.map((c) => ({ t: c.t - 0.35, d: 1.0, ox: c.ox, oy: c.oy, z: c.zoom }))]);
   return (
     <AbsoluteFill style={{ background: C.cream }}>
@@ -123,7 +127,7 @@ const FlatToModel: React.FC<{ T: number; t0: number; top: string; bottom: string
   );
 };
 const Chenille: React.FC<{ T: number }> = ({ T }) => (
-  <FlatToModel T={T} t0={3.2} top="black-joggers-1.jpg" bottom="black-joggers-3.jpg" model="black-joggers-0.png" name="CHENILLE SET" sub="€129,99" end={9.6}
+  <FlatToModel T={T} t0={1.0} top="black-joggers-1.jpg" bottom="black-joggers-3.jpg" model="black-joggers-0.png" name="CHENILLE SET" sub="€129,99" end={9.6}
     crops={[{ name: "CHENILLE SWEATSHIRT", sub: "€79,99", ox: 60, oy: 36.6, zoom: 2.1, t: 6.6, light: true }, { name: "CHENILLE JOGGERS", sub: "€69,99", ox: 52, oy: 59.8, zoom: 2.0, t: 8.1, light: true }]} />
 );
 const DiaZipSet: React.FC<{ T: number }> = ({ T }) => (
@@ -208,8 +212,8 @@ export const Film: React.FC = () => {
   if (!ok) return <AbsoluteFill style={{ background: C.cream }} />;
   return (
     <AbsoluteFill style={{ background: C.cream }}>
-      <Scene T={T} tIn={0} tOut={2.9}><Open T={T} /></Scene>
-      <Scene T={T} tIn={2.9} tOut={9.4}><Chenille T={T} /></Scene>
+      <Scene T={T} tIn={0} tOut={0.78} stillOut d={0.5}><Open T={T} /></Scene>
+      <Scene T={T} tIn={0.78} tOut={9.4} stillIn d={0.5}><Chenille T={T} /></Scene>
       <Scene T={T} tIn={9.4} tOut={16.9}><Varsity T={T} /></Scene>
       <Scene T={T} tIn={16.9} tOut={22.6}><DiaZipSet T={T} /></Scene>
       <Scene T={T} tIn={22.6} tOut={25.1}><More T={T} /></Scene>
