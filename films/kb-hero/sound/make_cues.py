@@ -15,7 +15,7 @@ idx = {x["id"]: x for x in base}; extra = []
 ev = json.loads(subprocess.run(["node", "tools/events.mjs"], cwd="../film", capture_output=True, text=True, check=True).stdout)
 # kinds -> pools of Karl's sounds, taken in turn so the same sound never comes twice in a row
 POOL = {
-    "click": [("ui-click", 0), ("ui-enter", -1), ("ui-backspace", -2)],
+    "click": [("ui-click", 0)],                      # every cursor click is the same sound: the hand's own voice
     "pop": [("ui-button", -3), ("ui-granular-button-select", -2), ("ui-granular-button-select-2", -3)],
     "whoosh": [("ui-stretch", -6), ("ui-open", -7)],
     "slide": [("ui-stretch", -7)],

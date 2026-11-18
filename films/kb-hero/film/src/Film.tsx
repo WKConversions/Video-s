@@ -22,7 +22,7 @@ export const SESSIONS: Session[] = [
   { scenes: ["S1", "S2"], from: [1500, 1310] },
   { scenes: ["S4"], from: [560, 1300], early: 0.3, exit: { at: 13.2, x: 1150, y: 1300 } },
   { scenes: ["S7"], from: [900, 1310], early: 0.35, exit: { at: 20.15, x: 1250, y: -320 } },
-  { scenes: ["S10", "S11"], from: [760, 1310], early: 0.25 },
+  { scenes: ["S10", "S11"], from: [760, 1310], early: 0.15 },
   { scenes: ["S14"], from: [1150, 1310] },
 ];
 const inFrame = (k: HandKey) => k.x >= 0 && k.x <= 1920 && k.y >= 0 && k.y <= 1080;
@@ -74,8 +74,8 @@ export const Film: React.FC = () => {
     const pin = i === 0 ? 1 : E(T, s.start - TR / 2, TR, ease.inOut), pout = next ? E(T, next.start - TR / 2, TR, ease.inOut) : 0;
     let style: React.CSSProperties = {};
     if (pin < 1) style = trans(s.trans, pin).inn; else if (pout > 0 && next) style = trans(next.trans, pout).out;
-    layers.push(<AbsoluteFill key={s.id} style={{ ...style, overflow: "hidden" }}><Comp t={t} dur={s.dur} />{hn && hn.inScene === s.id && <Hand {...hn.h} />}</AbsoluteFill>);
+    layers.push(<AbsoluteFill key={s.id} style={{ ...style, overflow: "hidden", isolation: "isolate" }}><Comp t={t} dur={s.dur} />{hn && hn.inScene === s.id && <AbsoluteFill style={{ zIndex: 1000 }}><Hand {...hn.h} /></AbsoluteFill>}</AbsoluteFill>);
     if (pin < 1 && pin > 0) { const o = trans(s.trans, pin).over; if (o) layers.push(<React.Fragment key={s.id + "o"}>{o}</React.Fragment>); }
   });
-  return <AbsoluteFill style={{ background: C.bg }}>{layers}{hn && !hn.inScene && <Hand {...hn.h} />}</AbsoluteFill>;
+  return <AbsoluteFill style={{ background: C.bg }}>{layers}{hn && !hn.inScene && <AbsoluteFill style={{ zIndex: 1000 }}><Hand {...hn.h} /></AbsoluteFill>}</AbsoluteFill>;
 };

@@ -9,5 +9,5 @@ export const sceneTest = (g: Group, id: string, dur: number): React.FC => () => 
   if (!ok) return <AbsoluteFill style={{ background: C.bg }} />;
   const Comp = g.scenes[id], keys = g.hand[id] || [];
   const h = keys.length ? handAt(t * 30, keys, { size: 170 }) : null;
-  return <AbsoluteFill style={{ background: C.bg }}><Comp t={t} dur={dur} />{h && <Hand {...h} />}</AbsoluteFill>;
+  return <AbsoluteFill style={{ background: C.bg }}><AbsoluteFill style={{ isolation: "isolate" }}><Comp t={t} dur={dur} /></AbsoluteFill>{h && <AbsoluteFill style={{ zIndex: 1000 }}><Hand {...h} /></AbsoluteFill>}</AbsoluteFill>;
 };

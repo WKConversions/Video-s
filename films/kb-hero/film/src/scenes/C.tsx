@@ -35,9 +35,9 @@ const S6: Scene = ({ t }) => {
   for (let k = k0 - 1; k < k0 + 11; k++) rows.push(<div key={k} style={{ position: "absolute", left: 28, top: k * RH - off + 8, height: RH, display: "flex", alignItems: "center", fontFamily: MONO, fontSize: 27 }}><CodeLine text={POOL[((k % 12) + 12) % 12]} n={99} /></div>);
   const prog = E(t, -0.2, 1.7, ease.smooth);
   const blocks = [
-    { t0: -0.1, y: 22, h: 124, bg: GRAD.dev, x: 22, w: 436 },
-    { t0: 0.2, y: 160, h: 108, bg: C.cyan, x: 22, w: 210 }, { t0: 0.38, y: 160, h: 108, bg: C.mint, x: 248, w: 210 },
-    { t0: 0.56, y: 282, h: 70, bg: C.indigo, x: 22, w: 436 },
+    { t0: -0.1, y: 18, h: 110, bg: GRAD.dev, x: 22, w: 436 },
+    { t0: 0.2, y: 142, h: 92, bg: C.cyan, x: 22, w: 210 }, { t0: 0.38, y: 142, h: 92, bg: C.mint, x: 248, w: 210 },
+    { t0: 0.56, y: 248, h: 62, bg: C.indigo, x: 22, w: 436 },
   ];
   return (
     <Stage t={t} tint={C.indigo} tint2={C.cyan}>
@@ -50,7 +50,7 @@ const S6: Scene = ({ t }) => {
         <div style={{ position: "absolute", left: 0, top: 0, width: 800, bottom: 56, overflow: "hidden" }}>{rows}
           <div style={{ position: "absolute", left: 0, right: 0, top: 150, height: RH, background: "rgba(255,255,255,.07)" }} />
         </div>
-        <div style={{ position: "absolute", left: 820, top: 18, width: 480, height: 312, borderRadius: 18, background: C.white, overflow: "hidden" }}>
+        <div style={{ position: "absolute", left: 820, top: 14, width: 480, height: 330, borderRadius: 18, background: C.white, overflow: "hidden" }}>
           {blocks.map((b, i) => { const p = S(t, b.t0, { damping: 15, stiffness: 190 }); return <div key={i} style={{ position: "absolute", left: b.x, top: b.y, width: b.w, height: b.h, borderRadius: 16, background: b.bg, opacity: clamp(p * 2), transform: `translateY(${(1 - p) * 60}px) scale(${mix(0.9, 1, p)})` }} />; })}
         </div>
         <div style={{ position: "absolute", left: 28, right: 28, bottom: 14, height: 30, borderRadius: 15, background: "rgba(255,255,255,.1)", overflow: "hidden" }}>
