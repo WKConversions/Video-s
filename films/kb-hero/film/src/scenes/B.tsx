@@ -39,10 +39,12 @@ const Odo: React.FC<{ v: number; size: number; color?: string; digits?: number }
   return (
     <div style={{ display: "flex", fontFamily: FONT, fontWeight: 800, fontSize: size, color, lineHeight: `${lh}px`, letterSpacing: -size * 0.03 }}>
       {Array.from({ length: digits }, (_, k) => digits - 1 - k).map((p) => {
+        // each digit holds, then rolls to the next in the last part of its unit: always one readable number, never two half digits
+        const step = (x: number) => Math.floor(x) + ease.inOut(clamp((x - Math.floor(x) - 0.55) / 0.45));
         const lower = p > 0 ? (val / Math.pow(10, p - 1)) % 10 : 0;
-        const carry = p > 0 ? ease.inOut(clamp(lower - 9)) : 0;
+        const carry = p > 0 && lower >= 9 ? step(lower) - 9 : 0;
         const base = Math.floor(val / Math.pow(10, p)) % 10;
-        const pos = p === 0 ? val % 10 : base + carry;
+        const pos = p === 0 ? step(val % 10) : base + carry;
         const hide = p > 0 && Math.floor(val / Math.pow(10, p)) === 0 && carry === 0;
         return (
           <div key={p} style={{ width: size * 0.62, height: lh, overflow: "hidden", opacity: hide ? 0 : 1 }}>
