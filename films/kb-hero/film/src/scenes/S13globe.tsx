@@ -28,14 +28,14 @@ const rot = (c: Cam, x: number, y: number, z: number) => {
   return [x1, y * cp - z0 * sp, y * sp + z0 * cp];
 };
 const NAVY = [41, 58, 81], LIT = [24, 168, 240];
-const PAD = 90;
 
 const Globe: React.FC<{ cx: number; cy: number; R: number; cam: Cam; wave: number; rings: { r: number; o: number }[] }> = ({ cx, cy, R, cam, wave, rings }) => {
-  const ref = useRef<HTMLCanvasElement>(null), size = 2 * (R + PAD);
+  const ref = useRef<HTMLCanvasElement>(null);
   useLayoutEffect(() => {
     const cv = ref.current; if (!cv) return;
-    const ctx = cv.getContext("2d")!; ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, size, size);
-    const o = R + PAD;
+    const ctx = cv.getContext("2d")!; ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.clearRect(0, 0, 1920, 1080);
+    ctx.translate(cx, cy);      // everything below is drawn around (0, 0) = the globe's centre, at sub-pixel positions
+    const o = 0;
     const halo = ctx.createRadialGradient(o, o, R * 0.97, o, o, R * 1.16);
     halo.addColorStop(0, "rgba(56,200,255,0.22)"); halo.addColorStop(1, "rgba(56,200,255,0)");
     ctx.fillStyle = halo; ctx.beginPath(); ctx.arc(o, o, R * 1.16, 0, Math.PI * 2); ctx.fill();
@@ -72,7 +72,7 @@ const Globe: React.FC<{ cx: number; cy: number; R: number; cam: Cam; wave: numbe
       ctx.stroke();
     });
   });
-  return <canvas ref={ref} width={size} height={size} style={{ position: "absolute", left: cx - R - PAD, top: cy - R - PAD, width: size, height: size }} />;
+  return <canvas ref={ref} width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080 }} />;
 };
 
 // a rolling number (odometer): each digit is a column that rolls; higher digits roll over with the unit below them
@@ -100,7 +100,7 @@ const Card: React.FC<{ t: number; t0: number; y: number; to: number; digits: num
       </div>
       <div style={{ position: "absolute", left: 46, top: 192, fontFamily: FONT, fontWeight: 600, fontSize: 29, color: C.sub, whiteSpace: "nowrap" }}>{label}</div>
       <div style={{ position: "absolute", left: 46, right: 46, bottom: 28, height: 12, borderRadius: 6, background: C.card }}>
-        <div style={{ width: `${p * 100}%`, height: "100%", borderRadius: 6, background: grad }} />
+        <div style={{ width: "100%", height: "100%", borderRadius: 6, background: grad, transformOrigin: "0 50%", transform: `scaleX(${p})` }} />
       </div>
     </div>
   );
@@ -118,14 +118,14 @@ export const S13: Scene = ({ t }) => {
   return (
     <Stage t={t} tint={C.cyan} tint2={C.mint}>
       {/* the globe's soft ground shadow */}
-      <div style={{ position: "absolute", left: CX - R * 0.8, top: CY + R * 0.93, width: R * 1.6, height: 90, borderRadius: "50%", background: "radial-gradient(closest-side, rgba(41,58,81,.20), transparent)" }} />
+      <div style={{ position: "absolute", left: 0, top: 0, width: 1000, height: 90, borderRadius: "50%", background: "radial-gradient(closest-side, rgba(41,58,81,.20), transparent)", transformOrigin: "0 0", transform: `translate3d(${CX - R * 0.8}px, ${CY + R * 0.93}px, 0) scaleX(${(R * 1.6) / 1000})` }} />
       <Globe cx={CX} cy={CY} R={R} cam={cam} wave={wave} rings={rings} />
       {/* the K.B pin on the office */}
       {seen > 0.01 && drop > 0.001 && (
-        <div style={{ position: "absolute", left: px, top: py, opacity: seen * clamp(drop * 3) }}>
+        <div style={{ position: "absolute", left: 0, top: 0, transform: `translate3d(${px}px, ${py}px, 0)`, opacity: seen * clamp(drop * 3) }}>
           <div style={{ position: "absolute", left: -11, top: -11, width: 22, height: 22, borderRadius: 11, background: C.cyan, border: "4px solid #fff", boxShadow: "0 2px 10px rgba(41,58,81,.35)", transform: `scale(${drop})` }} />
-          <div style={{ position: "absolute", left: -3, top: -64 * clamp(drop), width: 6, height: 60 * clamp(drop), borderRadius: 3, background: C.navy }} />
-          <KBTile x={0} y={-64 - 52 - (1 - drop) * 170} size={108} style={{ transform: `scale(${mix(0.6, 1, clamp(drop))})`, boxShadow: SHADOW.lift }} />
+          <div style={{ position: "absolute", left: -3, top: -64, width: 6, height: 60, borderRadius: 3, background: C.navy, transformOrigin: "50% 100%", transform: `scaleY(${clamp(drop)})` }} />
+          <KBTile x={0} y={-64 - 52} size={108} style={{ transform: `translate3d(0, ${-(1 - drop) * 170}px, 0) scale(${mix(0.6, 1, clamp(drop))})`, boxShadow: SHADOW.lift }} />
         </div>
       )}
       <Card t={t} t0={-0.28} y={232} to={25} digits={2} label="Client projects completed" grad={GRAD.brand} c0={0.2} c1={1.5} />

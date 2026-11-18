@@ -32,8 +32,8 @@ export const Hand: React.FC<{ x: number; y: number; tiltX?: number; tiltY?: numb
     <Img key={`${i}_${j}`} src={staticFile(`hand/h_${STEPS[i]}_${STEPS[j]}.png`)} style={{ position: "absolute", left: 0, top: 0, width: size, height: size, opacity: o }} />);
   const sc = 1 - 0.12 * press;                                              // press may go below 0 on the rebound: it swells past its size
   return (
-    <div style={{ position: "absolute", left: x - TIP.x * size, top: y - TIP.y * size, width: size, height: size, opacity,
-      transformOrigin: `${WRIST.x * 100}% ${WRIST.y * 100}%`, transform: `rotate(${rot.toFixed(2)}deg) scale(${sc.toFixed(4)}, ${(sc * (1 - 0.08 * press)).toFixed(4)})`,
+    <div style={{ position: "absolute", left: 0, top: 0, width: size, height: size, opacity, willChange: "transform",
+      transformOrigin: `${WRIST.x * 100}% ${WRIST.y * 100}%`, transform: `translate3d(${(x - TIP.x * size).toFixed(3)}px, ${(y - TIP.y * size).toFixed(3)}px, 0) rotate(${rot.toFixed(2)}deg) scale(${sc.toFixed(4)}, ${(sc * (1 - 0.08 * press)).toFixed(4)})`,
       filter: `drop-shadow(0 ${Math.max(1, 14 - 12 * press).toFixed(1)}px ${Math.max(2, 20 - 16 * press).toFixed(1)}px rgba(2,4,14,${Math.min(0.4, Math.max(0.1, 0.2 + 0.16 * press)).toFixed(3)}))` }}>
       {/* bilinear blend of the four nearest poses: a base at full strength, the others laid over it */}
       {img(i0, j0, 1)}{img(i0 + 1, j0, u)}{img(i0, j0 + 1, v * (1 - u))}{img(i0 + 1, j0 + 1, u * v)}

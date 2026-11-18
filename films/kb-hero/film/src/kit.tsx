@@ -55,9 +55,10 @@ export const useFonts = () => {
 /** full-frame bright background with soft drifting colour washes. tint: any of the accents (default cyan). */
 export const Stage: React.FC<{ t: number; bg?: string; tint?: string; tint2?: string; children?: React.ReactNode; grid?: boolean }> = ({ t, bg = C.bg, tint = C.cyan, tint2 = C.indigo, children, grid }) => (
   <AbsoluteFill style={{ background: bg, overflow: "hidden" }}>
-    <div style={{ position: "absolute", width: 1100, height: 1100, left: -260 + drift(t, 9, 60), top: -420 + drift(t, 11, 40, 1), borderRadius: "50%", background: `radial-gradient(circle, ${tint}2E, transparent 62%)` }} />
-    <div style={{ position: "absolute", width: 1200, height: 1200, right: -380 + drift(t, 10, 50, 2), bottom: -560 + drift(t, 8, 40, 3), borderRadius: "50%", background: `radial-gradient(circle, ${tint2}24, transparent 62%)` }} />
-    {grid && <AbsoluteFill style={{ backgroundImage: `radial-gradient(${C.line} 1.5px, transparent 1.5px)`, backgroundSize: "44px 44px", backgroundPosition: `${(t * 6) % 44}px ${(t * 4) % 44}px`, opacity: 0.9 }} />}
+    {/* two soft glows that breathe slowly (moved by transform: box offsets would step), and an optional dot grid that holds still */}
+    <div style={{ position: "absolute", width: 1100, height: 1100, left: -260, top: -420, borderRadius: "50%", background: `radial-gradient(circle, ${tint}2E, transparent 62%)`, transform: `translate3d(${drift(t, 9, 60).toFixed(2)}px, ${drift(t, 11, 40, 1).toFixed(2)}px, 0)`, willChange: "transform" }} />
+    <div style={{ position: "absolute", width: 1200, height: 1200, right: -380, bottom: -560, borderRadius: "50%", background: `radial-gradient(circle, ${tint2}24, transparent 62%)`, transform: `translate3d(${(-drift(t, 10, 50, 2)).toFixed(2)}px, ${(-drift(t, 8, 40, 3)).toFixed(2)}px, 0)`, willChange: "transform" }} />
+    {grid && <AbsoluteFill style={{ backgroundImage: `radial-gradient(${C.line} 1.5px, transparent 1.5px)`, backgroundSize: "44px 44px", opacity: 0.9 }} />}
     {children}
   </AbsoluteFill>
 );
@@ -130,5 +131,6 @@ export const pressAt = (t: number, c: number) => (t < c + 0.03 ? 0 : Math.max(0,
 export const Ripple: React.FC<{ t: number; c: number; x: number; y: number; color?: string; r?: number }> = ({ t, c, x, y, color = C.cyan, r = 120 }) => {
   const p = E(t, c + 0.11, 0.6, ease.out);
   if (p <= 0 || p >= 1) return null;
-  return <div style={{ position: "absolute", left: x - 20 - r * p, top: y - 20 - r * p, width: 40 + 2 * r * p, height: 40 + 2 * r * p, borderRadius: "50%", border: `4px solid ${color}`, opacity: 0.8 * (1 - p) }} />;
+  const D = 40 + 2 * r, k = (40 + 2 * r * p) / D;   // one ring of the final size, grown by scale (a growing box would step)
+  return <div style={{ position: "absolute", left: x - D / 2, top: y - D / 2, width: D, height: D, boxSizing: "border-box", borderRadius: "50%", border: `${(4 / k).toFixed(2)}px solid ${color}`, opacity: 0.8 * (1 - p), transform: `scale(${k.toFixed(4)})` }} />;
 };
