@@ -61,10 +61,12 @@ const COLW = 300, CH = 124, CP = 148, CN = 9;
 const Column: React.FC<{ t: number; x: number; dir: number; seed: number }> = ({ t, x, dir, seed }) => {
   const p = S(t, -0.6 + seed * 0.05), total = CP * CN;
   return (
-    <div style={{ position: "absolute", left: x, top: 0, width: COLW, height: 1080, opacity: clamp(p * 2), transform: `scale(${mix(0.9, 1, p)})`, WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%)", maskImage: "linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%)" }}>
+    <div style={{ position: "absolute", left: x, top: 0, width: COLW, height: 1080, opacity: clamp(p * 2), WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%)", maskImage: "linear-gradient(to bottom, transparent 0%, #000 14%, #000 86%, transparent 100%)" }}>
       {Array.from({ length: CN }, (_, i) => {
-        const y = mod(i * CP - dir * (t + 0.3) * 140 + seed * 300, total) - CP;
-        return <SolidCard key={i} w={COLW} h={CH} i={i + seed * 3} style={{ position: "absolute", left: 0, top: y }} />;
+        const off = (Math.round(t * 60) + 18) * 2;   // 120 px/s = 2 px per frame
+        const y = mod(i * CP - dir * off + seed * 300, total) - CP;
+        const sc = mix(0.9, 1, p), yy = 540 + (y + CH / 2 - 540) * sc - CH / 2;   // the column's entry scale, applied per card
+        return <SolidCard key={i} w={COLW} h={CH} i={i + seed * 3} style={{ position: "absolute", left: 0, top: 0, willChange: "transform", transform: `translate3d(0, ${yy}px, 0) scale(${sc})` }} />;
       })}
     </div>
   );

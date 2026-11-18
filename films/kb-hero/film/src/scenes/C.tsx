@@ -29,10 +29,10 @@ const POOL = ["const app = createApp()", "app.use(router)", "export function Pag
   "<Cards data={rows} />", "export const routes = [", "  \"/\", \"/app\", \"/admin\",", "const user = Auth.session()", "function format(row) {", "  return row.map(show)"];
 const S6: Scene = ({ t }) => {
   const sub = S(t, 0.3);
-  const off = (t + 0.3) * 430, RH = 50;
+  const off = Math.round((t + 0.3) * 60) * 7, RH = 50;
   const k0 = Math.floor(off / RH);
   const rows = [];
-  for (let k = k0 - 1; k < k0 + 11; k++) rows.push(<div key={k} style={{ position: "absolute", left: 28, top: k * RH - off + 8, height: RH, display: "flex", alignItems: "center", fontFamily: MONO, fontSize: 27 }}><CodeLine text={POOL[((k % 12) + 12) % 12]} n={99} /></div>);
+  for (let k = k0 - 1; k < k0 + 11; k++) rows.push(<div key={k} style={{ position: "absolute", left: 28, top: k * RH + 8, height: RH, display: "flex", alignItems: "center", fontFamily: MONO, fontSize: 27 }}><CodeLine text={POOL[((k % 12) + 12) % 12]} n={99} /></div>);
   const prog = E(t, -0.2, 1.7, ease.smooth);
   const blocks = [
     { t0: -0.1, y: 18, h: 110, bg: GRAD.dev, x: 22, w: 436 },
@@ -47,14 +47,14 @@ const S6: Scene = ({ t }) => {
         Web apps, mobile apps and business dashboards.
       </div>
       <Win x={300} y={600} w={1320} h={440} dark title="build" style={{ transform: `translateY(${(1 - S(t, -0.3, { damping: 16 })) * 120}px)`, boxShadow: SHADOW.lift }}>
-        <div style={{ position: "absolute", left: 0, top: 0, width: 800, bottom: 56, overflow: "hidden" }}>{rows}
+        <div style={{ position: "absolute", left: 0, top: 0, width: 800, bottom: 56, overflow: "hidden" }}><div style={{ position: "absolute", left: 0, top: 0, width: 800, height: 1, transform: `translate3d(0, ${-off}px, 0)`, willChange: "transform" }}>{rows}</div>
           <div style={{ position: "absolute", left: 0, right: 0, top: 150, height: RH, background: "rgba(255,255,255,.07)" }} />
         </div>
         <div style={{ position: "absolute", left: 820, top: 14, width: 480, height: 330, borderRadius: 18, background: C.white, overflow: "hidden" }}>
-          {blocks.map((b, i) => { const p = S(t, b.t0, { damping: 15, stiffness: 190 }); return <div key={i} style={{ position: "absolute", left: b.x, top: b.y, width: b.w, height: b.h, borderRadius: 16, background: b.bg, opacity: clamp(p * 2), transform: `translateY(${(1 - p) * 60}px) scale(${mix(0.9, 1, p)})` }} />; })}
+          {blocks.map((b, i) => { const p = S(t, b.t0, { damping: 15, stiffness: 190 }); return <div key={i} style={{ position: "absolute", left: b.x, top: b.y, width: b.w, height: b.h, borderRadius: 16, background: b.bg, opacity: clamp(p * 2), transform: `translate3d(0, ${(1 - p) * 60}px, 0) scale(${mix(0.9, 1, p)})`, willChange: "transform" }} />; })}
         </div>
         <div style={{ position: "absolute", left: 28, right: 28, bottom: 14, height: 30, borderRadius: 15, background: "rgba(255,255,255,.1)", overflow: "hidden" }}>
-          <div style={{ width: `${prog * 100}%`, height: "100%", background: "linear-gradient(90deg,#4F7BFF,#38C8FF,#22C7A0)" }} />
+          <div style={{ width: "100%", height: "100%", transformOrigin: "left", transform: `scaleX(${prog})`, willChange: "transform", background: "linear-gradient(90deg,#4F7BFF,#38C8FF,#22C7A0)" }} />
         </div>
       </Win>
     </Stage>
@@ -114,7 +114,7 @@ const S7: Scene = ({ t }) => {
               <div style={{ flex: 1 }} />
             </div>
             <div style={{ position: "absolute", left: 0, right: 0, top: 64, height: VIEW, overflow: "hidden" }}>
-              <div style={{ position: "absolute", left: 0, right: 0, top: -scrollY }}>
+              <div style={{ position: "absolute", left: 0, right: 0, top: 0, transform: `translate3d(0, ${-scrollY}px, 0)`, willChange: "transform" }}>
                 <div style={{ position: "absolute", left: 0, right: 0, top: Math.floor(cl) * LH + 6, height: LH, background: "rgba(255,255,255,.08)" }} />
                 {FILE.map((ln, li) => {
                   const n = Math.max(0, Math.min(ln.length, Math.floor(chars - (li ? CUM[li - 1] : 0))));
@@ -134,7 +134,7 @@ const S7: Scene = ({ t }) => {
             {/* the build log streams up from the bottom */}
             <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 300, background: "#16212F", borderTop: "1px solid rgba(255,255,255,.1)", transform: `translateY(${(1 - term) * 300}px)` }}>
               <div style={{ position: "absolute", left: 30, right: 30, top: 24, height: 24, borderRadius: 12, background: "rgba(255,255,255,.1)", overflow: "hidden" }}>
-                <div style={{ width: `${E(t, 1.35, 0.7, ease.inOut) * 100}%`, height: "100%", background: "linear-gradient(90deg,#4F7BFF,#38C8FF,#22C7A0)" }} />
+                <div style={{ width: "100%", height: "100%", transformOrigin: "left", transform: `scaleX(${E(t, 1.35, 0.7, ease.inOut)})`, background: "linear-gradient(90deg,#4F7BFF,#38C8FF,#22C7A0)" }} />
               </div>
               {steps.map((s, i) => {
                 const p = S(t, 1.33 + i * 0.14, { damping: 15, stiffness: 190 });
@@ -157,7 +157,7 @@ const S7: Scene = ({ t }) => {
           <Win x={0} y={0} w={1150} h={860} style={{ boxShadow: SHADOW.lift }}>
             <div style={{ position: "absolute", left: 250, top: -40, width: 650, height: 30, borderRadius: 15, background: C.muted }} />
             <div style={{ position: "absolute", left: 0, right: 0, top: 0, bottom: 0, overflow: "hidden" }}>
-              <div style={{ position: "absolute", left: 0, top: -sy, width: 1150 }}>
+              <div style={{ position: "absolute", left: 0, top: 0, width: 1150, transform: `translate3d(0, ${-sy}px, 0)`, willChange: "transform" }}>
                 <Block t={t} t0={sec(0)} style={{ left: 40, top: 22, width: 1070, height: 70, display: "flex", alignItems: "center", gap: 22 }}>
                   <div style={{ width: 56, height: 56, borderRadius: 13, background: C.navy }} /><div style={{ flex: 1 }} />
                   <Bar w={90} h={22} bg={C.navy} /><Bar w={90} h={22} bg={C.indigo} /><Bar w={90} h={22} bg={C.mint} />
@@ -198,7 +198,7 @@ const S7: Scene = ({ t }) => {
         <div style={{ position: "absolute", left: 1380, top: 190, width: 330, height: 700, opacity: clamp(phoneP * 2), transform: `translateX(${(1 - phoneP) * 460}px) rotateY(${mix(-30, -10, phoneP)}deg) rotateZ(${mix(5, 1.5, phoneP)}deg)`, borderRadius: 54, background: "#101826", padding: 12, boxShadow: "0 50px 100px rgba(41,58,81,.35), 0 8px 20px rgba(41,58,81,.2)" }}>
           <div style={{ position: "relative", width: "100%", height: "100%", borderRadius: 43, background: C.white, overflow: "hidden" }}>
             <div style={{ position: "absolute", left: "50%", top: 10, width: 96, height: 26, borderRadius: 13, background: "#101826", transform: "translateX(-50%)", zIndex: 3 }} />
-            <div style={{ position: "absolute", left: 0, top: 0, width: 306, transform: `translateY(${-sy * 0.78}px)` }}>
+            <div style={{ position: "absolute", left: 0, top: 0, width: 306, transform: `translate3d(0, ${-sy * 0.78}px, 0)`, willChange: "transform" }}>
               <Block t={t} t0={2.5} style={{ left: 18, top: 56, width: 270, height: 40, display: "flex", alignItems: "center", gap: 10 }}>
                 <div style={{ width: 34, height: 34, borderRadius: 9, background: C.navy }} /><div style={{ flex: 1 }} /><Bar w={44} h={14} bg={C.indigo} />
               </Block>
@@ -232,7 +232,7 @@ const Odo: React.FC<{ v: number; digits: number; size: number; color?: string }>
     const d = ((pos % 10) + 10) % 10;
     cols.push(
       <div key={k} style={{ width: size * 0.64, height: h, overflow: "hidden", position: "relative" }}>
-        <div style={{ position: "absolute", left: 0, top: 0, transform: `translateY(${-d * h}px)` }}>
+        <div style={{ position: "absolute", left: 0, top: 0, transform: `translate3d(0, ${-d * h}px, 0)`, willChange: "transform" }}>
           {Array.from({ length: 20 }, (_, i) => <div key={i} style={{ height: h, lineHeight: `${h}px`, textAlign: "center", fontFamily: FONT, fontWeight: 800, fontSize: size, color }}>{i % 10}</div>)}
         </div>
       </div>);
@@ -246,11 +246,11 @@ const CHW = 1000, CHH = 470, PX = 36, PW = 928, PB = 430, PH = 290;
 const S8: Scene = ({ t }) => {
   const winP = S(t, -0.25, { damping: 16, stiffness: 120 });
   const T = t + 0.3;
-  const off = T * 420;
+  const off = Math.round(T * 60) * 7;
   const pts: string[] = [];
-  for (let x = 0; x <= PW; x += 8) pts.push(`${PX + x},${PB - val((x + off) / 60) * PH}`);
+  for (let x = 0; x <= 3200; x += 8) pts.push(`${PX + x},${PB - val(x / 60) * PH}`);
   const line = "M" + pts.join(" L");
-  const area = line + ` L${PX + PW},${PB} L${PX},${PB} Z`;
+  const area = line + ` L${PX + 3200},${PB} L${PX},${PB} Z`;
   const tipX = PX + 560, tipV = val((560 + off) / 60), tipY = PB - tipV * PH;
   const tip = S(t, 0.9, { damping: 13, stiffness: 220 });
   const kpis = [
@@ -261,12 +261,12 @@ const S8: Scene = ({ t }) => {
   const names = ["Web", "App", "Shop", "API", "Admin"], bc = [GRAD.dev, GRAD.ai, GRAD.growth, GRAD.brand, GRAD.warm];
   const bv = names.map((_, i) => 0.55 + 0.4 * Math.sin(T * (1.7 + 0.5 * i) + i * 2.4));
   const rows = names.map((n, i) => ({ n, i, pos: bv.reduce((a, v, j) => (j === i ? a : a + sig(16 * (v - bv[i]))), 0) }));
-  const TR = 58, tOff = T * 230, tk = Math.floor(tOff / TR);
+  const TR = 58, tOff = Math.round(T * 60) * 4, tk = Math.floor(tOff / TR);
   const trows = [];
   for (let k = tk - 1; k < tk + 5; k++) {
     const kk = ((k % 4) + 4) % 4;
     trows.push(
-      <div key={k} style={{ position: "absolute", left: 0, right: 0, top: k * TR - tOff, height: TR, background: k % 2 ? "#F1F4FF" : "#fff", display: "flex", alignItems: "center", padding: "0 30px", gap: 24 }}>
+      <div key={k} style={{ position: "absolute", left: 0, right: 0, top: k * TR, height: TR, background: k % 2 ? "#F1F4FF" : "#fff", display: "flex", alignItems: "center", padding: "0 30px", gap: 24 }}>
         <div style={{ width: 34, height: 34, borderRadius: 10, background: [C.indigo, C.cyan, C.mint, C.violet][kk] }} />
         <div style={{ fontFamily: FONT, fontWeight: 700, fontSize: 28, color: C.navy, width: 220 }}>{["Order", "Signup", "Payment", "Booking"][kk]}</div>
         <div style={{ width: 150 + 90 * ((k * 7) % 5) / 4, height: 16, borderRadius: 8, background: "rgba(41,58,81,.18)" }} />
@@ -291,14 +291,14 @@ const S8: Scene = ({ t }) => {
           <div style={{ position: "absolute", right: 30, top: 22, display: "flex", gap: 10 }}>
             {["Day", "Week", "Year"].map((s, i) => <div key={s} style={{ padding: "8px 22px", borderRadius: 24, background: i === 1 ? C.navy : C.muted, color: i === 1 ? "#fff" : C.sub, fontFamily: FONT, fontWeight: 700, fontSize: 24 }}>{s}</div>)}
           </div>
-          <svg width={CHW} height={CHH} style={{ position: "absolute", left: 0, top: 0 }}>
+          <svg width={3300} height={CHH} style={{ position: "absolute", left: 0, top: 0, transform: `translate3d(${-off}px, 0, 0)`, willChange: "transform" }}>
             <defs><linearGradient id="ar8" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stopColor="#4F7BFF" /><stop offset="1" stopColor="#38C8FF" stopOpacity=".6" /></linearGradient></defs>
             <path d={area} fill="url(#ar8)" />
             <path d={line} fill="none" stroke={C.navy} strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" />
-            {tip > 0 && <><line x1={tipX} x2={tipX} y1={tipY} y2={PB} stroke="#fff" strokeWidth={4} opacity={0.8 * tip} /><circle cx={tipX} cy={tipY} r={16 * tip} fill="#fff" stroke={C.navy} strokeWidth={6} /></>}
           </svg>
+          {tip > 0 && <svg width={CHW} height={CHH} style={{ position: "absolute", left: 0, top: 0 }}><line x1={tipX} x2={tipX} y1={tipY} y2={PB} stroke="#fff" strokeWidth={4} opacity={0.8 * tip} /><circle cx={tipX} cy={tipY} r={16 * tip} fill="#fff" stroke={C.navy} strokeWidth={6} /></svg>}
           {tip > 0 && (
-            <div style={{ position: "absolute", left: tipX, top: tipY - 112, transform: `translate(-50%,0) scale(${tip})`, transformOrigin: "50% 100%", padding: "10px 24px", borderRadius: 18, background: C.navy, boxShadow: SHADOW.card, fontFamily: FONT, fontWeight: 800, fontSize: 40, color: "#fff", fontVariantNumeric: "tabular-nums" }}>
+            <div style={{ position: "absolute", left: tipX, top: 0, transform: `translate3d(0, ${tipY - 112}px, 0) translate(-50%,0) scale(${tip})`, transformOrigin: "50% 100%", padding: "10px 24px", borderRadius: 18, background: C.navy, boxShadow: SHADOW.card, fontFamily: FONT, fontWeight: 800, fontSize: 40, color: "#fff", fontVariantNumeric: "tabular-nums" }}>
               {Math.round(tipV * 100)}%
               <div style={{ position: "absolute", left: "50%", bottom: -8, width: 18, height: 18, background: C.navy, transform: "translateX(-50%) rotate(45deg)" }} />
             </div>
@@ -307,13 +307,13 @@ const S8: Scene = ({ t }) => {
         <div style={{ ...card, left: 1048, top: 196, width: 608, height: CHH, overflow: "hidden", opacity: clamp(S(t, 0.0) * 2) }}>
           <div style={{ position: "absolute", left: 32, top: 26, fontFamily: FONT, fontWeight: 800, fontSize: 36, color: C.navy }}>Traffic</div>
           {rows.map((r) => (
-            <div key={r.n} style={{ position: "absolute", left: 32, top: 92 + r.pos * 74, display: "flex", alignItems: "center", gap: 18 }}>
+            <div key={r.n} style={{ position: "absolute", left: 32, top: 92, transform: `translate3d(0, ${r.pos * 74}px, 0)`, willChange: "transform", display: "flex", alignItems: "center", gap: 18 }}>
               <div style={{ width: 120, fontFamily: FONT, fontWeight: 700, fontSize: 28, color: C.navy }}>{r.n}</div>
-              <div style={{ width: 380 * bv[r.i] / 0.95 * 0.95, height: 52, borderRadius: 14, background: bc[r.i] }} />
+              <div style={{ width: 380 * bv[r.i], height: 52, borderRadius: 14, background: bc[r.i] }} />
             </div>
           ))}
         </div>
-        <div style={{ ...card, left: 24, top: 692, width: 1632, height: 174, overflow: "hidden", opacity: clamp(S(t, 0.1) * 2) }}>{trows}</div>
+        <div style={{ ...card, left: 24, top: 692, width: 1632, height: 174, overflow: "hidden", opacity: clamp(S(t, 0.1) * 2) }}><div style={{ position: "absolute", left: 0, top: 0, width: "100%", height: 1, transform: `translate3d(0, ${-tOff}px, 0)`, willChange: "transform" }}>{trows}</div></div>
       </Win>
     </Stage>
   );

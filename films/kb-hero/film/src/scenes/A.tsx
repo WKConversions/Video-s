@@ -49,14 +49,16 @@ const S1: Scene = ({ t }) => {
         <>
           {[0, 1].map((r) => {
             const ph = clamp((t - 3.0 - r * 0.28) / 0.8);
-            return <div key={r} style={{ position: "absolute", left: TX - 150 - 330 * ph, top: TY - 150 - 330 * ph, width: 300 + 660 * ph, height: 300 + 660 * ph, borderRadius: "50%", border: `${22 * (1 - ph) + 4}px solid ${r ? C.indigo : C.cyan}`, opacity: 0.8 * (1 - ph) }} />;
+            return <div key={r} style={{ position: "absolute", left: 0, top: 0, width: 300 + 660 * ph, height: 300 + 660 * ph, transform: `translate3d(${TX - 150 - 330 * ph}px, ${TY - 150 - 330 * ph}px, 0)`, borderRadius: "50%", border: `${22 * (1 - ph) + 4}px solid ${r ? C.indigo : C.cyan}`, opacity: 0.8 * (1 - ph) }} />;
           })}
           {CHIPS.map(([name, cx, cy], i) => {
             const a = S(t, 3.05 + i * 0.12, { damping: 12, stiffness: 150 }), ab = E(t, 3.85 + i * 0.05, 0.4, ease.in);
             const x = mix(mix(TX, cx, a), TX, ab), y = mix(mix(TY, cy, a), TY, ab), sc = a * (1 - 0.6 * ab);
             return (
-              <div key={i} style={{ position: "absolute", left: 0, top: 0, willChange: "transform", transform: `translate3d(${x}px, ${y}px, 0) translate(-50%,-50%) scale(${sc})`, padding: "16px 34px", borderRadius: 50, background: ROLES[i].g, color: "#fff", fontFamily: FONT, fontWeight: 700, fontSize: 32, whiteSpace: "nowrap", boxShadow: SHADOW.soft, opacity: 1 - ab }}>
-                {"✓ "}{name}
+              <div key={i} style={{ position: "absolute", left: 0, top: 0, willChange: "transform", transform: `translate3d(${x}px, ${y}px, 0)`, opacity: 1 - ab }}>
+                <div style={{ transform: `translate(-50%,-50%) scale(${sc})`, padding: "16px 34px", borderRadius: 50, background: ROLES[i].g, color: "#fff", fontFamily: FONT, fontWeight: 700, fontSize: 32, whiteSpace: "nowrap", boxShadow: SHADOW.soft }}>
+                  {"✓ "}{name}
+                </div>
               </div>
             );
           })}
