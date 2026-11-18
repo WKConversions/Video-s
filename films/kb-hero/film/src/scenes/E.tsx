@@ -81,6 +81,19 @@ export const GROUP: Group = {
   },
   sfx: {
     S12: [
+      { t: 0.15, kind: "pop", note: "cards deal in" },
+      { t: 0.5, kind: "tick", note: "Diagnose lit, check" },
+      { t: 1.7, kind: "snap", note: "Build lit, block drops in" },
+      { t: 2.7, kind: "success", note: "Run lit, loop turns" },
+      { t: 2.85, kind: "rise", note: "chips land" },
+    ],
+    S13: [],
+    S14: [
+      { at: 2.0, x: 960, y: 745, click: true },
+    ],
+  },
+  sfx: {
+    S12: [
       { t: 0.1, kind: "whoosh", note: "headline words rise" },
       { t: 0.2, kind: "pop", note: "cards deal in" },
       { t: 1.7, kind: "snap", note: "Diagnose done, Build takes over" },

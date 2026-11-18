@@ -4,53 +4,25 @@
  "library": "lib-kb",
  "sfx": [
   {
-   "frame": 6,
+   "frame": 9,
    "id": "ui-stretch",
    "db": -6,
    "pitch": 0,
    "note": "S1 whoosh: headline words rise"
   },
   {
-   "frame": 18,
+   "frame": 141,
+   "id": "ui-digital-click",
+   "db": -3,
+   "pitch": 0,
+   "note": "S1 fall: lines draw into the centre"
+  },
+  {
+   "frame": 153,
    "id": "ui-button",
    "db": -3,
    "pitch": 0,
-   "note": "S1 pop: role card 1"
-  },
-  {
-   "frame": 43,
-   "id": "ui-granular-button-select",
-   "db": -2,
-   "pitch": 0,
-   "note": "S1 pop: role card 2"
-  },
-  {
-   "frame": 68,
-   "id": "ui-granular-button-select-2",
-   "db": -3,
-   "pitch": 0,
-   "note": "S1 pop: role card 3"
-  },
-  {
-   "frame": 94,
-   "id": "ui-button",
-   "db": -3,
-   "pitch": 0,
-   "note": "S1 pop: role card 4"
-  },
-  {
-   "frame": 132,
-   "id": "ui-stretch",
-   "db": -7,
-   "pitch": 0,
-   "note": "S1 slide: cards slide into one stack"
-  },
-  {
-   "frame": 177,
-   "id": "ui-granular-button-select",
-   "db": -2,
-   "pitch": 0,
-   "note": "S1 pop: stack becomes the K.B tile"
+   "note": "S1 pop: K.B tile springs in"
   },
   {
    "frame": 229,
@@ -63,34 +35,27 @@
    "frame": 245,
    "id": "ui-open",
    "db": -9,
-   "pitch": -2,
+   "pitch": 3,
    "note": "S2 transition (iris)"
   },
   {
-   "frame": 261,
-   "id": "ui-granular-button-select-2",
-   "db": -3,
+   "frame": 264,
+   "id": "aio-00",
+   "db": -2,
    "pitch": 0,
-   "note": "S2 pop: first card"
+   "note": "S2 pop: cards cascade"
   },
   {
-   "frame": 280,
-   "id": "ui-button",
-   "db": -3,
-   "pitch": 0,
-   "note": "S2 pop: third card"
-  },
-  {
-   "frame": 312,
-   "id": "v4-type-delete",
-   "db": -3,
-   "pitch": 0,
-   "note": "S2 tick: hover card 3"
-  },
-  {
-   "frame": 372,
-   "id": "ui-click-digital-04",
+   "frame": 282,
+   "id": "aio-05",
    "db": -4,
+   "pitch": 0,
+   "note": "S2 slide: third card lands"
+  },
+  {
+   "frame": 369,
+   "id": "v4-type-delete",
+   "db": -2,
    "pitch": 0,
    "note": "S2 tick: hand passes card 2"
   },
@@ -102,17 +67,17 @@
    "note": "S2 click: click card 1"
   },
   {
-   "frame": 468,
-   "id": "ui-open",
-   "db": -7,
+   "frame": 465,
+   "id": "aio-06",
+   "db": -2,
    "pitch": 0,
-   "note": "S2 whoosh: card scales toward viewer"
+   "note": "S2 rise: card grows toward viewer"
   },
   {
    "frame": 473,
    "id": "ui-open",
    "db": -9,
-   "pitch": -2,
+   "pitch": 0,
    "note": "S3 transition (zoom)"
   },
   {
@@ -134,77 +99,70 @@
    "id": "ui-click",
    "db": 0,
    "pitch": 0,
-   "note": "S4 click: hand grabs the AI Agent tile"
+   "note": "S4 click: hand presses the AI Agent tile"
   },
   {
    "frame": 660,
    "id": "ui-stretch",
    "db": -7,
    "pitch": 0,
-   "note": "S4 slide: drag glide"
+   "note": "S4 slide: drag glide into the slot"
   },
   {
    "frame": 696,
    "id": "ui-enter",
+   "db": -1,
+   "pitch": 0,
+   "note": "S4 snap: tile snaps into the slot"
+  },
+  {
+   "frame": 732,
+   "id": "ui",
    "db": -2,
    "pitch": 0,
-   "note": "S4 snap: tile snaps into the gap, wires draw"
+   "note": "S4 sparkle: pulse runs along the line"
   },
   {
-   "frame": 714,
-   "id": "ui-stretch",
-   "db": -6,
+   "frame": 768,
+   "id": "aio-07",
+   "db": -2,
    "pitch": 0,
-   "note": "S4 whoosh: inbox drains, chips start travelling"
+   "note": "S4 success: last check lands"
   },
   {
-   "frame": 744,
-   "id": "v4-type-delete",
+   "frame": 843,
+   "id": "aio-08",
    "db": -3,
    "pitch": 0,
-   "note": "S4 tick: first done rows stack up"
+   "note": "S5 sparkle: pulse to Email"
   },
   {
-   "frame": 780,
+   "frame": 867,
+   "id": "aio-02",
+   "db": -2,
+   "pitch": 0,
+   "note": "S5 pop: Email done"
+  },
+  {
+   "frame": 897,
    "id": "ui-granular-button-select-2",
    "db": -1,
    "pitch": 0,
-   "note": "S4 success: counter keeps rolling"
+   "note": "S5 success: Report done"
   },
   {
-   "frame": 816,
-   "id": "ui-button",
-   "db": -3,
+   "frame": 927,
+   "id": "aio-10",
+   "db": -5,
    "pitch": 0,
-   "note": "S5 pop: cards keep falling into the orb"
+   "note": "S5 thud: Booking done"
   },
   {
-   "frame": 846,
-   "id": "ui-click-digital-04",
-   "db": -4,
-   "pitch": 0,
-   "note": "S5 tick: rows resolve"
-  },
-  {
-   "frame": 882,
-   "id": "v4-type-delete",
-   "db": -3,
-   "pitch": 0,
-   "note": "S5 tick: list scrolls"
-  },
-  {
-   "frame": 924,
-   "id": "ui-button",
-   "db": -2,
-   "pitch": 0,
-   "note": "S5 success: list full of checks"
-  },
-  {
-   "frame": 948,
-   "id": "ui-open",
-   "db": -7,
-   "pitch": 0,
-   "note": "S6 whoosh: headline words rise"
+   "frame": 941,
+   "id": "aio-01",
+   "db": -9,
+   "pitch": -3,
+   "note": "S6 transition (wipe)"
   },
   {
    "frame": 960,
@@ -215,16 +173,16 @@
   },
   {
    "frame": 972,
-   "id": "ui-granular-button-select",
-   "db": -2,
+   "id": "ui-button",
+   "db": -3,
    "pitch": 0,
    "note": "S6 pop: preview blocks land"
   },
   {
    "frame": 1031,
-   "id": "ui-stretch",
-   "db": -9,
-   "pitch": -2,
+   "id": "aio-05",
+   "db": -8,
+   "pitch": 0,
    "note": "S7 transition (push-left)"
   },
   {
@@ -243,36 +201,36 @@
   },
   {
    "frame": 1131,
-   "id": "ui-click-digital-04",
-   "db": -4,
+   "id": "aio-09",
+   "db": -2,
    "pitch": 0,
    "note": "S7 tick: build steps stream in"
   },
   {
    "frame": 1155,
-   "id": "ui-stretch",
-   "db": -7,
+   "id": "aio-05",
+   "db": -4,
    "pitch": 0,
    "note": "S7 slide: editor flips aside"
   },
   {
    "frame": 1164,
    "id": "ui-open",
-   "db": -6,
+   "db": -5,
    "pitch": 0,
    "note": "S7 open: browser opens, page builds"
   },
   {
    "frame": 1182,
-   "id": "ui-stretch",
-   "db": -6,
+   "id": "aio-05",
+   "db": -4,
    "pitch": 0,
    "note": "S7 whoosh: phone slides in"
   },
   {
    "frame": 1206,
-   "id": "ui-granular-button-select-2",
-   "db": -1,
+   "id": "aio-08",
+   "db": -3,
    "pitch": 0,
    "note": "S7 success: app is live, page scrolls"
   },
@@ -280,50 +238,50 @@
    "frame": 1271,
    "id": "ui-open",
    "db": -9,
-   "pitch": -2,
+   "pitch": 0,
    "note": "S8 transition (zoom)"
   },
   {
-   "frame": 1278,
-   "id": "ui-open",
-   "db": -7,
-   "pitch": 0,
-   "note": "S8 whoosh: dashboard rises"
-  },
-  {
    "frame": 1287,
-   "id": "v4-type-delete",
-   "db": -3,
+   "id": "ui-click-digital-03",
+   "db": -2,
    "pitch": 0,
    "note": "S8 tick: kpis roll"
   },
   {
    "frame": 1308,
-   "id": "ui-granular-button-select-2",
-   "db": -3,
+   "id": "aio-00",
+   "db": -2,
    "pitch": 0,
    "note": "S8 pop: bars re-rank"
   },
   {
    "frame": 1335,
-   "id": "ui-button",
-   "db": -3,
-   "pitch": 0,
+   "id": "aio-00",
+   "db": -2,
+   "pitch": 2,
    "note": "S8 pop: tooltip"
   },
   {
-   "frame": 1395,
-   "id": "ui-stretch",
-   "db": -6,
-   "pitch": 0,
-   "note": "S9 whoosh: headline words in"
+   "frame": 1391,
+   "id": "aio-01",
+   "db": -9,
+   "pitch": -3,
+   "note": "S9 transition (wipe)"
   },
   {
-   "frame": 1425,
+   "frame": 1401,
    "id": "ui-granular-button-select",
    "db": -2,
    "pitch": 0,
-   "note": "S9 pop: bars rise, feed streams"
+   "note": "S9 pop: eyebrow"
+  },
+  {
+   "frame": 1425,
+   "id": "ui-granular-button-select-2",
+   "db": -3,
+   "pitch": 0,
+   "note": "S9 rise: subline"
   },
   {
    "frame": 1487,
@@ -333,52 +291,38 @@
    "note": "S10 transition (push-up)"
   },
   {
-   "frame": 1494,
+   "frame": 1497,
    "id": "kb-type-2",
    "db": -4,
    "pitch": 0,
-   "note": "S10 typing: query types"
+   "note": "S10 typing: search types"
   },
   {
-   "frame": 1536,
+   "frame": 1569,
    "id": "ui-stretch",
    "db": -7,
    "pitch": 0,
-   "note": "S10 slide: rank 4 to 3"
-  },
-  {
-   "frame": 1590,
-   "id": "ui-stretch",
-   "db": -7,
-   "pitch": 0,
-   "note": "S10 slide: rank 2 to 1"
+   "note": "S10 slide: rank climbs"
   },
   {
    "frame": 1614,
-   "id": "ui-button",
+   "id": "aio-02",
    "db": -2,
    "pitch": 0,
-   "note": "S10 success: source chip lights"
+   "note": "S10 pop: AI answer"
   },
   {
    "frame": 1639,
    "id": "ui-click",
    "db": 0,
    "pitch": 0,
-   "note": "S10 click: top result click"
-  },
-  {
-   "frame": 1650,
-   "id": "ui-granular-button-select-2",
-   "db": -3,
-   "pitch": 0,
-   "note": "S10 pop: result opens, bars grow"
+   "note": "S10 click: click result"
   },
   {
    "frame": 1679,
-   "id": "ui-stretch",
-   "db": -9,
-   "pitch": -2,
+   "id": "aio-05",
+   "db": -8,
+   "pitch": 0,
    "note": "S11 transition (push-left)"
   },
   {
@@ -386,110 +330,89 @@
    "id": "ui-click",
    "db": 0,
    "pitch": 0,
-   "note": "S11 click: CTA click"
+   "note": "S11 click: Book a call"
   },
   {
-   "frame": 1752,
+   "frame": 1755,
    "id": "ui-button",
    "db": -3,
    "pitch": 0,
-   "note": "S11 pop: booking card flips in"
+   "note": "S11 pop: Confirmed"
   },
   {
-   "frame": 1764,
-   "id": "ui-granular-button-select-2",
-   "db": -1,
+   "frame": 1770,
+   "id": "ui-open",
+   "db": -5,
    "pitch": 0,
-   "note": "S11 success: green check"
+   "note": "S11 rise: ring sweeps"
   },
   {
-   "frame": 1779,
-   "id": "ui-stretch",
-   "db": -7,
-   "pitch": 0,
-   "note": "S11 slide: video takes over"
-  },
-  {
-   "frame": 1797,
-   "id": "ui-granular-button-select",
+   "frame": 1821,
+   "id": "aio-07",
    "db": -2,
    "pitch": 0,
-   "note": "S11 pop: format cards"
-  },
-  {
-   "frame": 1849,
-   "id": "ui-click",
-   "db": 0,
-   "pitch": 0,
-   "note": "S11 click: play pressed"
+   "note": "S11 success: ring full"
   },
   {
    "frame": 1884,
-   "id": "ui-open",
-   "db": -7,
+   "id": "ui-stretch",
+   "db": -6,
    "pitch": 0,
    "note": "S12 whoosh: headline words rise"
   },
   {
    "frame": 1890,
-   "id": "ui-granular-button-select-2",
-   "db": -3,
+   "id": "aio-00",
+   "db": -2,
    "pitch": 0,
    "note": "S12 pop: cards deal in"
   },
   {
    "frame": 1980,
-   "id": "ui-beatbox-click-01",
-   "db": -4,
+   "id": "ui-backspace",
+   "db": -2,
    "pitch": 0,
    "note": "S12 snap: Diagnose done, Build takes over"
   },
   {
    "frame": 2040,
-   "id": "ui-button",
-   "db": -2,
+   "id": "ui-granular-button-select-2",
+   "db": -1,
    "pitch": 0,
    "note": "S12 success: Build done, Run takes over"
   },
   {
    "frame": 2046,
-   "id": "ui-granular-button-select",
+   "id": "aio-00",
    "db": -2,
    "pitch": 0,
    "note": "S12 pop: chips land"
   },
   {
    "frame": 2081,
-   "id": "ui-open",
-   "db": -9,
-   "pitch": -2,
+   "id": "ui-premium-open",
+   "db": -8,
+   "pitch": 0,
    "note": "S13 transition (iris)"
   },
   {
-   "frame": 2088,
-   "id": "ui-stretch",
-   "db": -6,
-   "pitch": 0,
-   "note": "S13 whoosh: the globe turns to Europe"
-  },
-  {
    "frame": 2147,
-   "id": "ui-granular-button-select-2",
-   "db": -3,
+   "id": "ui-granular-button-select",
+   "db": -2,
    "pitch": 0,
    "note": "S13 pop: the K.B pin drops"
   },
   {
    "frame": 2178,
-   "id": "ui-click-digital-04",
-   "db": -4,
+   "id": "ui-beatbox-click-01",
+   "db": -3,
    "pitch": 0,
    "note": "S13 tick: 25 lands"
   },
   {
    "frame": 2202,
-   "id": "ui-granular-button-select-2",
-   "db": -1,
+   "id": "aio-08",
+   "db": -3,
    "pitch": 0,
    "note": "S13 success: 100+ lands"
   },
@@ -497,27 +420,27 @@
    "frame": 2225,
    "id": "ui-open",
    "db": -9,
-   "pitch": -2,
+   "pitch": 0,
    "note": "S14 transition (zoom)"
   },
   {
    "frame": 2232,
-   "id": "ui-button",
-   "db": -3,
+   "id": "aio-02",
+   "db": -2,
    "pitch": 0,
    "note": "S14 pop: tile springs in"
   },
   {
    "frame": 2250,
-   "id": "ui-open",
-   "db": -7,
+   "id": "aio-05",
+   "db": -4,
    "pitch": 0,
    "note": "S14 whoosh: words arrive"
   },
   {
    "frame": 2292,
-   "id": "ui-stretch",
-   "db": -7,
+   "id": "aio-05",
+   "db": -4,
    "pitch": 0,
    "note": "S14 slide: button fill sweep"
   },
@@ -530,7 +453,7 @@
   },
   {
    "frame": 2382,
-   "id": "ui-button",
+   "id": "aio-07",
    "db": -2,
    "pitch": 0,
    "note": "S14 success: check draws on"

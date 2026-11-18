@@ -100,6 +100,22 @@ export const Eyebrow: React.FC<{ t: number; t0: number; text: string; x?: number
     border: `2px solid ${color}`, color: C.navy, fontFamily: FONT, fontWeight: 700, fontSize: 24, letterSpacing: 4, whiteSpace: "nowrap", boxShadow: SHADOW.soft }}>{text}</div>;
 };
 
+/** Caption: the one small label of a text-free scene (the service's own name from K.B's site), always at the same place
+ *  (top centre), so the viewer knows what the picture is. A pill with a gradient dot; arrives at t0 on a spring. */
+export const Caption: React.FC<{ t: number; t0?: number; text: string; grad?: string; y?: number }> = ({ t, t0 = -0.15, text, grad = GRAD.brand, y = 104 }) => {
+  const p = S(t, t0, { damping: 16, stiffness: 160 });
+  if (t < t0) return null;
+  return (
+    <div style={{ position: "absolute", left: 0, right: 0, top: y - 36, height: 72, display: "flex", justifyContent: "center" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 16, padding: "0 34px 0 26px", height: 72, borderRadius: 36, background: C.white, boxShadow: SHADOW.soft, border: `1px solid ${C.line}`,
+        opacity: clamp(p * 2), transform: `translate3d(0, ${((1 - p) * -30).toFixed(2)}px, 0) scale(${mix(0.9, 1, p).toFixed(4)})`, willChange: "transform" }}>
+        <div style={{ width: 18, height: 18, borderRadius: 9, background: grad }} />
+        <div style={{ fontFamily: FONT, fontWeight: 700, fontSize: 34, color: C.navy, letterSpacing: -0.3, whiteSpace: "nowrap" }}>{text}</div>
+      </div>
+    </div>
+  );
+};
+
 // ---------- UI shells ----------
 /** a window (macOS-like chrome). Position is its top-left; children are laid out inside its body (position: relative). */
 export const Win: React.FC<{ x: number; y: number; w: number; h: number; title?: string; dark?: boolean; children?: React.ReactNode; style?: React.CSSProperties; bar?: number }> = ({ x, y, w, h, title, dark, children, style, bar = 52 }) => (
