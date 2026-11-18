@@ -1,0 +1,141 @@
+{
+ "fps": 60,
+ "frames": 1740,
+ "library": "../../creoble6/sound/lib-karl",
+ "allow_apple": true,
+ "sfx": [
+  {
+   "frame": 9,
+   "id": "ui-enter",
+   "db": -2,
+   "pitch": -3,
+   "note": "COYOR rises in"
+  },
+  {
+   "frame": 45,
+   "id": "v4-type-delete",
+   "db": -2,
+   "pitch": 0,
+   "note": "the gold dot"
+  },
+  {
+   "frame": 189,
+   "id": "mail-in",
+   "db": -4,
+   "pitch": -3,
+   "note": "into the Chenille flat lay"
+  },
+  {
+   "frame": 282,
+   "id": "iphone-camera-shot",
+   "db": -6,
+   "pitch": 0,
+   "note": "the model is revealed (a shutter, the shoot)"
+  },
+  {
+   "frame": 396,
+   "id": "ui-click",
+   "db": -4,
+   "pitch": 0,
+   "note": "cut: the patch"
+  },
+  {
+   "frame": 486,
+   "id": "ui-click",
+   "db": -4,
+   "pitch": 2,
+   "note": "cut: the joggers"
+  },
+  {
+   "frame": 573,
+   "id": "send",
+   "db": -5,
+   "pitch": -3,
+   "note": "into the Varsity Set"
+  },
+  {
+   "frame": 639,
+   "id": "mail-in",
+   "db": -6,
+   "pitch": 0,
+   "note": "Black"
+  },
+  {
+   "frame": 712,
+   "id": "mail-in",
+   "db": -6,
+   "pitch": 1,
+   "note": "White"
+  },
+  {
+   "frame": 785,
+   "id": "mail-in",
+   "db": -6,
+   "pitch": 2,
+   "note": "Baby Pink"
+  },
+  {
+   "frame": 859,
+   "id": "mail-in",
+   "db": -6,
+   "pitch": 3,
+   "note": "Sky Blue"
+  },
+  {
+   "frame": 932,
+   "id": "mail-in",
+   "db": -6,
+   "pitch": 4,
+   "note": "Pastel Peach"
+  },
+  {
+   "frame": 1029,
+   "id": "send-2",
+   "db": -5,
+   "pitch": -3,
+   "note": "into the DiaZip flat lay"
+  },
+  {
+   "frame": 1122,
+   "id": "iphone-camera-shot",
+   "db": -6,
+   "pitch": 2,
+   "note": "the model is revealed"
+  },
+  {
+   "frame": 1236,
+   "id": "ui-click",
+   "db": -4,
+   "pitch": 0,
+   "note": "cut: the hoodie"
+  },
+  {
+   "frame": 1371,
+   "id": "send",
+   "db": -5,
+   "pitch": -2,
+   "note": "more pieces"
+  },
+  {
+   "frame": 1521,
+   "id": "send-2",
+   "db": -5,
+   "pitch": -4,
+   "note": "the end card"
+  },
+  {
+   "frame": 1554,
+   "id": "ui-enter",
+   "db": -2,
+   "pitch": -3,
+   "note": "COYOR"
+  },
+  {
+   "frame": 1602,
+   "id": "v4-type-delete",
+   "db": -3,
+   "pitch": 0,
+   "note": "SHOP NOW"
+  }
+ ]
+}

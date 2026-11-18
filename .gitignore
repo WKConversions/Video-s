@@ -75,3 +75,9 @@ films/coyorclo/harvest/vprobe*/
 films/coyorclo/film/public/vtakes/
 films/coyorclo/film/public/products/
 films/coyorclo/harvest/ui/
+films/coyor-fashion/harvest/
+films/coyor-fashion/film/public/img/
+films/coyor-fashion/deliver/
+films/coyor-logo/harvest/
+films/coyor-logo/film/out/
+films/coyor-logo/sound/*.wav
