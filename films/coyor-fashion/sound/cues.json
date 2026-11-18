@@ -1,64 +1,42 @@
 {
  "fps": 60,
  "frames": 1740,
- "library": "lib-uw",
- "allow_apple": true,
+ "library": "../../creoble6/sound/lib-karl",
  "sfx": [
   {
-   "frame": 177,
-   "id": "uw-pass-1",
+   "frame": 48,
+   "id": "ui-click",
    "db": -2,
    "pitch": 0,
-   "note": "open -> Chenille"
-  },
-  {
-   "frame": 282,
-   "id": "uw-pass-2",
-   "db": -6,
-   "pitch": 0,
-   "note": "the model is revealed"
+   "note": "the CY dissolves into the clothes"
   },
   {
    "frame": 567,
-   "id": "uw-pass-3",
-   "db": -2,
-   "pitch": 0,
+   "id": "ui-click",
+   "db": -3,
+   "pitch": -1,
    "note": "-> the Varsity Set"
   },
   {
    "frame": 1017,
-   "id": "uw-pass-2",
-   "db": -2,
-   "pitch": 0,
+   "id": "ui-click",
+   "db": -3,
+   "pitch": 1,
    "note": "-> DiaZip"
   },
   {
-   "frame": 1122,
-   "id": "uw-pass-1",
-   "db": -6,
-   "pitch": 0,
-   "note": "the model is revealed"
-  },
-  {
-   "frame": 1359,
-   "id": "uw-pass-3",
-   "db": -3,
-   "pitch": 0,
-   "note": "-> more pieces"
-  },
-  {
    "frame": 1509,
-   "id": "uw-pass-1",
+   "id": "ui-click",
    "db": -2,
-   "pitch": 0,
+   "pitch": -2,
    "note": "-> the end card"
   },
   {
    "frame": 1557,
-   "id": "uw-end",
-   "db": -3,
-   "pitch": 0,
-   "note": "COYOR"
+   "id": "ui-click",
+   "db": -4,
+   "pitch": -5,
+   "note": "COYOR (lower, softer)"
   }
  ]
 }
