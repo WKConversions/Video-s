@@ -40,13 +40,15 @@ const Pic: React.FC<{ f: string; x: number; y: number; w: number; h: number; pus
   );
 
 // a quiet label: name in Barlow, price/detail in DM Sans, rising in through its own mask
-const Label: React.FC<{ T: number; t0: number; out?: number; x: number; y: number; name: string; sub?: string; align?: "left" | "right" | "center"; size?: number; color?: string; light?: boolean }> =
-  ({ T, t0, out = 99, x, y, name, sub, align = "left", size = 64, color = C.ink, light = false }) => {
+const Label: React.FC<{ T: number; t0: number; out?: number; x: number; y: number; name: string; sub?: string; align?: "left" | "right" | "center"; size?: number; color?: string; light?: boolean; plate?: boolean }> =
+  ({ T, t0, out = 99, x, y, name, sub, align = "left", size = 64, color = C.ink, light: lightIn = false, plate = false }) => {
+    const light = plate ? false : lightIn;   // Karl: on the model shots a label always sits on its own cream tag, readable over cream and over black clothes
     const p = E(T, t0, 0.7, easeOut), q = E(T, out, 0.45, easeIn);
     if (p <= 0 || q >= 1) return null;
     const tx = align === "center" ? "-50%" : align === "right" ? "-100%" : "0";
     return (
-      <div style={{ position: "absolute", left: x, top: y, transform: `translateX(${tx})`, textAlign: align, opacity: 1 - q }}>
+      <div style={{ position: "absolute", left: x, top: y, transform: `translateX(${tx})`, textAlign: align, opacity: 1 - q,
+        ...(plate ? { padding: "20px 30px 18px", borderRadius: 16, background: "rgba(244,239,230,.93)", boxShadow: "0 10px 34px rgba(17,17,17,.16)", clipPath: `inset(0 ${(1 - p) * 100}% 0 0 round 16px)` } : {}) }}>
         <div style={{ overflow: "hidden", paddingBottom: 4 }}>
           <div style={{ transform: `translateY(${(1 - p) * 110}%)`, fontFamily: H, fontWeight: 800, fontSize: size, letterSpacing: size * 0.08, color: light ? C.cream : color, whiteSpace: "nowrap", lineHeight: 1, textShadow: light ? "0 2px 14px rgba(0,0,0,.45)" : "none" }}>{name}</div>
         </div>
@@ -127,8 +129,8 @@ const FlatToModel: React.FC<{ T: number; t0: number; top: string; bottom: string
       <div style={{ position: "absolute", inset: 0, background: C.cream, WebkitMaskImage: `linear-gradient(180deg, #000 ${worn * 130 - 25}%, transparent ${worn * 130 + 5}%)`, maskImage: `linear-gradient(180deg, #000 ${worn * 130 - 25}%, transparent ${worn * 130 + 5}%)` }}>
         <Pic f={model} x={0} y={0} w={1080} h={1920} push={cam.z} pos={`${cam.ox}% ${cam.oy}%`} />
       </div>
-      <Label T={T} t0={t0 + 2.0} out={crops.length ? crops[0].t - 0.15 : end} x={90} y={1690} name={name} sub={sub} />
-      {crops.map((c, i) => <Label key={i} T={T} t0={c.t + 0.4} out={i < crops.length - 1 ? crops[i + 1].t - 0.15 : end} x={90} y={1690} name={c.name} sub={c.sub} light={c.light} />)}
+      <Label T={T} t0={t0 + 2.0} out={crops.length ? crops[0].t - 0.15 : end} x={70} y={1660} name={name} sub={sub} plate />
+      {crops.map((c, i) => <Label key={i} T={T} t0={c.t + 0.4} out={i < crops.length - 1 ? crops[i + 1].t - 0.15 : end} x={70} y={1660} name={c.name} sub={c.sub} plate />)}
     </AbsoluteFill>
   );
 };
@@ -163,15 +165,18 @@ const Varsity: React.FC<{ T: number }> = ({ T }) => {
     <AbsoluteFill style={{ background: C.cream, overflow: "hidden" }}>
       {/* the intro card */}
       {T < first + 0.8 && <>
-        <Label T={T} t0={t0 + 0.15} out={first - 0.1} x={540} y={820} name="THE VARSITY SET" align="center" size={120} />
-        <Label T={T} t0={t0 + 0.45} out={first - 0.1} x={540} y={980} name="5 COLOURWAYS · €79,99" align="center" size={44} color={C.soft} />
+        <Label T={T} t0={t0 + 0.15} out={first - 0.1} x={540} y={830} name="THE VARSITY SET" sub="5 COLOURWAYS · €79,99" align="center" size={110} plate />
       </>}
       {k >= 0 && <>
         {k > 0 && panel(k - 1, -1080 * slide)}
         {panel(k, 1080 * (1 - slide))}
         <div style={{ position: "absolute", left: 540, top: 1600, transform: "translateX(-50%)", textAlign: "center" }}>
-          <div key={k} style={{ overflow: "hidden" }}>
-            <div style={{ transform: `translateY(${(1 - E(T, first + k * each + 0.25, 0.6, easeOut)) * 110}%)`, fontFamily: H, fontWeight: 800, fontSize: 84, letterSpacing: 7, color: C.ink, whiteSpace: "nowrap" }}>{COLOURS[k].n}</div>
+          <div key={k} style={{ display: "inline-block", padding: "20px 34px 16px", borderRadius: 16, background: "rgba(244,239,230,.93)", boxShadow: "0 10px 34px rgba(17,17,17,.12)",
+            clipPath: `inset(0 ${(1 - E(T, first + k * each + 0.2, 0.6, easeOut)) * 100}% 0 0 round 16px)` }}>
+            <div style={{ overflow: "hidden" }}>
+              <div style={{ transform: `translateY(${(1 - E(T, first + k * each + 0.25, 0.6, easeOut)) * 110}%)`, fontFamily: H, fontWeight: 800, fontSize: 76, letterSpacing: 7, color: C.ink, whiteSpace: "nowrap", lineHeight: 1 }}>{COLOURS[k].n}</div>
+            </div>
+            <div style={{ fontFamily: B, fontWeight: 500, fontSize: 30, letterSpacing: 3, color: C.soft, marginTop: 8 }}>€79,99</div>
           </div>
           <div style={{ display: "flex", gap: 22, justifyContent: "center", marginTop: 26 }}>
             {COLOURS.map((c, j) => <div key={j} style={{ width: 26, height: 26, borderRadius: "50%", background: c.dot, border: "2px solid rgba(17,17,17,.35)",
@@ -191,7 +196,7 @@ const More: React.FC<{ T: number }> = ({ T }) => {
         const p = E(T, t0 + 0.2 + i * 0.35, 0.8), y = 230 + i * 540;
         return <React.Fragment key={i}>
           <Pic f={it.f} x={(i % 2 ? 480 : 60) + (i % 2 ? 1 : -1) * 120 * (1 - p)} y={y + 8 * Math.sin(T * 1.4 + i * 2)} w={540} h={500} op={p} />
-          <Label T={T} t0={t0 + 0.5 + i * 0.35} out={25.35} x={i % 2 ? 90 : 990} y={y + 200} name={it.n} sub={it.p} align={i % 2 ? "left" : "right"} size={54} />
+          <Label T={T} t0={t0 + 0.5 + i * 0.35} out={25.35} x={i % 2 ? 70 : 1010} y={y + 190} name={it.n} sub={it.p} align={i % 2 ? "left" : "right"} size={52} plate />
         </React.Fragment>;
       })}
     </AbsoluteFill>
