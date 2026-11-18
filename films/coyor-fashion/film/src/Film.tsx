@@ -5,6 +5,7 @@
 import React, { useEffect, useState } from "react";
 import { AbsoluteFill, Easing, Img, continueRender, delayRender, staticFile, useCurrentFrame } from "remotion";
 import cy from "./cy.json";
+import { Hand, handAt } from "./hand";
 
 export const FPS = 60, DUR = 29.0;
 const C = { cream: "#F4EFE6", ink: "#111111", soft: "rgba(17,17,17,.62)", gold: "#C9A24E", gold2: "#E9C66A" };
@@ -87,12 +88,17 @@ const Open: React.FC<{ T: number }> = ({ T }) => {
 
 // Karl (18 Nov): "the transitions must be better". Every scene change is one smooth blur-push: the old scene drifts up,
 // softens and fades while the new one rises in from below and comes into focus (0.7 s, overlapping).
-const Scene: React.FC<{ T: number; tIn: number; tOut: number; children: React.ReactNode; stillIn?: boolean; stillOut?: boolean; d?: number }> = ({ T, tIn, tOut, children, stillIn, stillOut, d = 0.7 }) => {
-  const pin = tIn <= 0 ? 1 : E(T, tIn, d), pout = E(T, tOut, d);
-  if (pin <= 0 || pout >= 1) return null;
-  const y = (stillIn ? 0 : (1 - pin) * 9) - (stillOut ? 0 : pout * 9), blur = (1 - pin) * 18 + pout * 18, sc = 1 + (stillIn ? 0 : 0.04 * (1 - pin)) - (stillOut ? 0 : 0.03 * pout);
+const Scene: React.FC<{ T: number; tIn: number; tOut: number; children: React.ReactNode; stillIn?: boolean; stillOut?: boolean; d?: number }> = ({ T, tIn, tOut, children, stillIn, stillOut, d = 1.0 }) => {
+  const pin = tIn <= 0 ? 1 : E(T, tIn, d), gone = T >= tOut + d + 0.05;
+  if (pin <= 0 || gone) return null;
+  // in: rises a little and comes into focus; it is opaque after the first 45% of the change, so the old scene is never left half-faded alone
+  const op = tIn <= 0 ? 1 : pin, blur = (1 - pin) * 14, y = stillIn ? 0 : (1 - pin) * 5;   // a true cross-dissolve over the old scene, which stays fully there underneath
+  // the constant camera: a slow, even push and drift over the scene's whole life (in and out included), never stopping
+  const life = clamp((T - tIn) / (tOut + d - tIn)), z = 1.0 + 0.045 * life, dy = -1.2 * life;
+  const out = stillOut ? 0 : E(T, tOut, d);
   return (
-    <AbsoluteFill style={{ background: C.cream, opacity: Math.min(pin * 1.4, 1) * (1 - pout), transform: `translateY(${y}%) scale(${sc})`, filter: blur > 0.2 ? `blur(${blur.toFixed(1)}px)` : "none" }}>
+    <AbsoluteFill style={{ background: C.cream, opacity: op, transform: `translateY(${(y + dy - out * 4).toFixed(3)}%) scale(${(z + (stillIn ? 0 : 0.03 * (1 - pin))).toFixed(4)})`,
+      filter: blur > 0.2 ? `blur(${blur.toFixed(1)}px)` : "none" }}>
       {children}
     </AbsoluteFill>
   );
@@ -131,7 +137,7 @@ const Chenille: React.FC<{ T: number }> = ({ T }) => (
     crops={[{ name: "CHENILLE SWEATSHIRT", sub: "€79,99", ox: 60, oy: 36.6, zoom: 2.1, t: 6.6, light: true }, { name: "CHENILLE JOGGERS", sub: "€69,99", ox: 52, oy: 59.8, zoom: 2.0, t: 8.1, light: true }]} />
 );
 const DiaZipSet: React.FC<{ T: number }> = ({ T }) => (
-  <FlatToModel T={T} t0={17.2} top="set-1.jpg" bottom="set-2.jpg" model="set-0.png" name="DIAZIP SET" sub="€129,99" end={22.9}
+  <FlatToModel T={T} t0={16.55} top="set-1.jpg" bottom="set-2.jpg" model="set-0.png" name="DIAZIP SET" sub="€129,99" end={22.9}
     crops={[{ name: "DIAZIP HOODIE", ox: 52, oy: 37.3, zoom: 2.0, t: 20.6 }]} />
 );
 const COLOURS = [
@@ -142,7 +148,7 @@ const COLOURS = [
   { n: "PASTEL PEACH", f: "pastel-peach-0.jpg", bg: "#F9DDCB", dot: "#F3B48E" },
 ];
 const Varsity: React.FC<{ T: number }> = ({ T }) => {
-  const t0 = 9.6, first = 10.65, each = 1.22;
+  const t0 = 9.05, first = 10.4, each = 1.25;
   const k = Math.max(-1, Math.min(4, Math.floor((T - first) / each)));
   const slide = k >= 0 ? E(T, first + k * each, 0.75) : 0;
   const panel = (j: number, off: number) => {
@@ -178,7 +184,7 @@ const Varsity: React.FC<{ T: number }> = ({ T }) => {
 };
 
 const More: React.FC<{ T: number }> = ({ T }) => {
-  const t0 = 22.9, items = [{ f: "coyor-cy-jeans-0.jpg", n: "CY JEANS", p: "€95,99" }, { f: "coyor-cy-zip-up-hoodi-0.jpg", n: "MONO CY ZIP-UP", p: "€79,99" }, { f: "coyor-puffer-logo-t-shirt-0.png", n: "CHENILLE T-SHIRT", p: "€49,99" }];
+  const t0 = 22.25, items = [{ f: "coyor-cy-jeans-0.jpg", n: "CY JEANS", p: "€95,99" }, { f: "coyor-cy-zip-up-hoodi-0.jpg", n: "MONO CY ZIP-UP", p: "€79,99" }, { f: "coyor-puffer-logo-t-shirt-0.png", n: "CHENILLE T-SHIRT", p: "€49,99" }];
   return (
     <AbsoluteFill style={{ background: C.cream }}>
       {items.map((it, i) => {
@@ -192,16 +198,28 @@ const More: React.FC<{ T: number }> = ({ T }) => {
   );
 };
 
+const CLICK = 27.6;
+const HAND_KEYS = [{ at: 25.6, x: 1260, y: 2250 }, { at: CLICK, x: 640, y: 1560, click: true }, { at: 28.6, x: 820, y: 1730 }];
 const End: React.FC<{ T: number }> = ({ T }) => {
-  const t0 = 25.4;
+  const t0 = 24.75;
   return (
     <AbsoluteFill style={{ background: C.cream }}>
       <Pic f="black-joggers-0.png" x={-140 - 60 * (1 - E(T, t0 + 0.1, 1.0))} y={480} w={760} h={950} op={E(T, t0 + 0.1, 0.8)} push={mix(1.03, 1, E(T, t0, 2))} />
       <Pic f="set-0.png" x={460 + 60 * (1 - E(T, t0 + 0.25, 1.0))} y={480} w={760} h={950} op={E(T, t0 + 0.25, 0.8)} push={mix(1.03, 1, E(T, t0, 2))} />
       <Wordmark T={T} t0={t0 + 0.5} size={200} x={540} y={250} />
       <Label T={T} t0={t0 + 1.0} x={540} y={370} name="CREATOR OF YOUR OWN REALITY." align="center" size={38} color={C.soft} />
-      <div style={{ position: "absolute", left: 540, top: 1560, transform: `translate(-50%,-50%) translateY(${30 * (1 - E(T, t0 + 1.3, 0.7, easeOut))}px)`, opacity: E(T, t0 + 1.3, 0.6),
-        padding: "26px 60px", borderRadius: 60, background: C.ink, color: C.cream, fontFamily: B, fontWeight: 700, fontSize: 40, letterSpacing: 6, whiteSpace: "nowrap" }}>SHOP NOW · COYORCLO.COM</div>
+      {(() => {
+        const press = T > CLICK + 0.05 ? Math.max(0, Math.sin(Math.PI * clamp((T - CLICK - 0.05) / 0.32))) : 0;
+        const flash = T > CLICK + 0.1 ? Math.max(0, 1 - (T - CLICK - 0.1) / 0.5) : 0, ring = E(T, CLICK + 0.1, 0.8, easeOut);
+        return <>
+          {ring > 0 && ring < 1 && <div style={{ position: "absolute", left: 640 - 50 - 260 * ring, top: 1560 - 50 - 260 * ring, width: 100 + 520 * ring, height: 100 + 520 * ring, borderRadius: "50%",
+            border: `3px solid ${C.ink}`, opacity: 0.45 * (1 - ring) }} />}
+          <div style={{ position: "absolute", left: 540, top: 1560, transform: `translate(-50%,-50%) translateY(${30 * (1 - E(T, t0 + 1.3, 0.7, easeOut))}px) scale(${1 - 0.06 * press})`, opacity: E(T, t0 + 1.3, 0.6),
+            padding: "26px 60px", borderRadius: 60, background: flash > 0 ? `rgb(${Math.round(17 + (233 - 17) * flash)}, ${Math.round(17 + (198 - 17) * flash)}, ${Math.round(17 + (106 - 17) * flash)})` : C.ink,
+            color: C.cream, fontFamily: B, fontWeight: 700, fontSize: 40, letterSpacing: 6, whiteSpace: "nowrap", boxShadow: `0 ${18 - 12 * press}px 40px rgba(17,17,17,${0.22 - 0.1 * press})` }}>SHOP NOW · COYORCLO.COM</div>
+          <Hand {...handAt(T * 30, HAND_KEYS, { size: 210 })} />
+        </>;
+      })()}
     </AbsoluteFill>
   );
 };
@@ -212,12 +230,12 @@ export const Film: React.FC = () => {
   if (!ok) return <AbsoluteFill style={{ background: C.cream }} />;
   return (
     <AbsoluteFill style={{ background: C.cream }}>
-      <Scene T={T} tIn={0} tOut={0.78} stillOut d={0.5}><Open T={T} /></Scene>
-      <Scene T={T} tIn={0.78} tOut={9.4} stillIn d={0.5}><Chenille T={T} /></Scene>
-      <Scene T={T} tIn={9.4} tOut={16.9}><Varsity T={T} /></Scene>
-      <Scene T={T} tIn={16.9} tOut={22.6}><DiaZipSet T={T} /></Scene>
-      <Scene T={T} tIn={22.6} tOut={25.1}><More T={T} /></Scene>
-      <Scene T={T} tIn={25.1} tOut={99}><End T={T} /></Scene>
+      <Scene T={T} tIn={0} tOut={0.7} stillOut d={0.6}><Open T={T} /></Scene>
+      <Scene T={T} tIn={0.7} tOut={9.2} stillIn d={0.6}><Chenille T={T} /></Scene>
+      <Scene T={T} tIn={9.2} tOut={16.7}><Varsity T={T} /></Scene>
+      <Scene T={T} tIn={16.7} tOut={22.4}><DiaZipSet T={T} /></Scene>
+      <Scene T={T} tIn={22.4} tOut={24.9}><More T={T} /></Scene>
+      <Scene T={T} tIn={24.9} tOut={99}><End T={T} /></Scene>
     </AbsoluteFill>
   );
 };
