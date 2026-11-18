@@ -15,12 +15,12 @@ const S6: Scene = ({ t }) => {
   const caret = Math.floor(t * 2.4) % 2 === 0;
   const brk = (txt: string, x: number, y: number, ph: number, col: string, size: number) => {
     const p = S(t, 0.1 + ph * 0.1);
-    return <div style={{ position: "absolute", left: x + drift(t, 5 + ph, 14, ph), top: y + drift(t, 6 + ph, 18, ph + 1), transform: `translate(-50%,-50%) scale(${p}) rotate(${drift(t, 7, 6, ph)}deg)`, opacity: 0.55 * p,
+    return <div style={{ position: "absolute", left: x + drift(t, 4 + ph, 40, ph), top: y + drift(t, 5 + ph, 40, ph + 1), transform: `translate(-50%,-50%) scale(${p}) rotate(${drift(t, 7, 6, ph)}deg)`, opacity: 0.55 * p,
       fontFamily: MONO, fontWeight: 700, fontSize: size, color: col }}>{txt}</div>;
   };
   return (
     <Stage t={t} tint={C.indigo} tint2={C.cyan}>
-      <AbsoluteFill style={{ transform: `scale(${camAt(t, 2.1, 0.035)})` }}>
+      <AbsoluteFill style={{ transform: `scale(${camAt(t, 2.1, 0.09)})` }}>
         {brk("<", 330, 420, 0, C.indigo, 150)}
         {brk("/>", 1590, 640, 1, C.cyan, 150)}
         {brk("{ }", 1500, 270, 2, C.violet, 70)}
@@ -63,7 +63,7 @@ const Bar: React.FC<{ w: number; h?: number; bg?: string; style?: React.CSSPrope
 
 const S7_DEPLOY = { x: 780, y: 274 };
 const S7: Scene = ({ t }) => {
-  const cam = camAt(t, 4.6, 0.045);
+  const cam = camAt(t, 4.6, 0.09);
   const press = pressAt(t, 1.3);
   const chars = Math.max(0, Math.floor((t + 0.25) * 215));
   const caretOn = Math.floor(t * 2.6) % 2 === 0 || t < 1.2;
@@ -93,7 +93,7 @@ const S7: Scene = ({ t }) => {
       <AbsoluteFill style={{ perspective: 2600, transform: `scale(${cam})` }}>
         {/* the editor: a dark window as an object on the bright stage */}
         <Win x={140} y={190} w={760} h={700} title="App.tsx" dark
-          style={{ transform: `translateX(${-232 * ex + drift(t, 6, 6)}px) translateY(${drift(t, 5, 8)}px) scale(${1 - 0.3 * ex}) rotateY(${34 * ex}deg)`, opacity: 1 - 0.12 * ex, boxShadow: SHADOW.lift }}>
+          style={{ transform: `translateX(${-200 * ex + drift(t, 6, 6)}px) translateY(${drift(t, 5, 8)}px) scale(${1 - 0.3 * ex}) rotateY(${34 * ex}deg)`, opacity: 1 - 0.12 * ex, boxShadow: SHADOW.lift }}>
           <div style={{ position: "absolute", left: 0, right: 0, top: 0, height: 64, borderBottom: "1px solid rgba(255,255,255,.08)", display: "flex", alignItems: "center", padding: "0 22px", gap: 12 }}>
             <div style={{ padding: "8px 18px", borderRadius: 10, background: "rgba(255,255,255,.1)", color: "#D7E3F4", fontFamily: MONO, fontSize: 18 }}>App.tsx</div>
             <div style={{ padding: "8px 18px", borderRadius: 10, color: "rgba(255,255,255,.4)", fontFamily: MONO, fontSize: 18 }}>ui.ts</div>
@@ -194,7 +194,7 @@ const WINX = 180, WINY = 110, BODYY = WINY + 52, CHX = WINX + 120, CHY = BODYY +
 const S8_PT = { x: CHX + dense[TIP_I][0], y: CHY + dense[TIP_I][1] };
 
 const S8: Scene = ({ t }) => {
-  const cam = camAt(t, 2.3, 0.04);
+  const cam = camAt(t, 2.3, 0.1);
   const winP = S(t, -0.25, { damping: 16, stiffness: 120 });
   const draw = E(t, 0.1, 1.0, ease.inOut);
   const path = "M" + dense.map((p) => p.join(",")).join(" L");
@@ -292,8 +292,8 @@ const S8: Scene = ({ t }) => {
 };
 
 // hand targets are screen px; the camera scale shifts them a little, so they are mapped through camAt
-const d7 = camPt(S7_DEPLOY.x, S7_DEPLOY.y, camAt(1.41, 4.6, 0.045));
-const d8 = camPt(S8_PT.x, S8_PT.y, camAt(1.2, 2.3, 0.04));
+const d7 = camPt(S7_DEPLOY.x, S7_DEPLOY.y, camAt(1.41, 4.6, 0.09));
+const d8 = camPt(S8_PT.x, S8_PT.y, camAt(1.2, 2.3, 0.1));
 const hand: Record<string, HandKey[]> = {
   S7: [{ at: 1.3, x: Math.round(d7.x), y: Math.round(d7.y), click: true }, { at: 3.0, x: 1500, y: 780 }],
   S8: [{ at: 1.1, x: Math.round(d8.x), y: Math.round(d8.y) }],

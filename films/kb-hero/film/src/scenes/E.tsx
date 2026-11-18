@@ -53,6 +53,7 @@ const S12: Scene = ({ t }) => {
     <Stage t={t} tint={C.cyan} tint2={C.mint}>
       <div style={{ position: "absolute", inset: 0, transform: `scale(${cam}) translate(${drift(t, 7, 6)}px, ${drift(t, 9, 4, 1)}px)` }}>
         <Words t={t} t0={-0.15} text={"Built together.\nBuilt to be run."} size={mix(100, 74, lift)} y={mix(540, 190, lift)} hi={{ together: GRAD.brand, run: GRAD.growth }} />
+        {[0,1,2,3,4,5,6,7,8].map((i) => <div key={"d"+i} style={{ position: "absolute", left: 120 + rnd(i + 20) * 1680 + drift(t, 3 + i * 0.4, 40, i), top: 80 + rnd(i + 40) * 900 + drift(t, 3.5 + i * 0.3, 50, i * 2), width: 26, height: 26, borderRadius: i % 2 ? "50%" : 8, background: [C.cyan, C.indigo, C.mint][i % 3], opacity: 0.28, transform: `rotate(${t * 40 + i * 30}deg)` }} />)}
         {/* track */}
         <div style={{ position: "absolute", left: TX[0], top: TRACK_Y - 6, width: (TX[2] - TX[0]) * trackP, height: 12, borderRadius: 6, background: "rgba(41,58,81,.12)" }} />
         <div style={{ position: "absolute", left: TX[0], top: TRACK_Y - 6, width: Math.max(0, knobX - TX[0]) * trackP, height: 12, borderRadius: 6, background: "linear-gradient(90deg,#38C8FF,#4F7BFF 50%,#22C7A0)", boxShadow: "0 0 18px rgba(56,200,255,.5)" }} />

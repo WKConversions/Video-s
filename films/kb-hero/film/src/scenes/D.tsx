@@ -6,7 +6,7 @@ import type { Group, Scene, HandKey, Sfx } from "../types";
 const Box: React.FC<{ x: number; y: number; w: number; h: number; bg?: string; r?: number; style?: React.CSSProperties; children?: React.ReactNode }> = ({ x, y, w, h, bg = C.card, r, style, children }) => (
   <div style={{ position: "absolute", left: x, top: y, width: w, height: h, borderRadius: r ?? Math.min(h / 2, 12), background: bg, ...style }}>{children}</div>
 );
-const cam = (t: number, dur: number, amp = 0.035) => `scale(${1 + amp * E(t, -0.3, dur + 0.6, ease.smooth)}) translate(${drift(t, 7, 6)}px, ${drift(t, 9, 4, 1)}px)`;
+const cam = (t: number, dur: number, amp = 0.07) => `scale(${1 + amp * E(t, -0.3, dur + 0.6, ease.smooth)}) translate(${drift(t, 5, 16)}px, ${drift(t, 6, 10, 1)}px)`;
 
 // ---------------- S9: text ----------------
 const S9: Scene = ({ t, dur }) => {
@@ -14,7 +14,7 @@ const S9: Scene = ({ t, dur }) => {
   const spark = "M0,120 L40,96 L70,108 L120,60 L150,76 L210,18";
   return (
     <Stage t={t} tint={C.mint} tint2={C.cyan}>
-      <div style={{ position: "absolute", inset: 0, transform: cam(t, dur, 0.03) }}>
+      <div style={{ position: "absolute", inset: 0, transform: cam(t, dur, 0.06) }}>
         <Eyebrow t={t} t0={-0.15} text="PILLAR 03" y={330} color={C.mint} />
         <Words t={t} t0={0} text={"Growth\nTechnology"} size={124} y={530} hi={{ Growth: GRAD.growth }} stagger={0.1} />
         <div style={{ position: "absolute", left: 960, top: 740, transform: `translate(-50%,-50%) translateY(${(1 - sub) * 24}px)`, opacity: clamp(sub * 1.5), fontFamily: FONT, fontWeight: 600, fontSize: 34, color: C.sub, letterSpacing: -0.5, whiteSpace: "nowrap" }}>Visibility. Conversion. Product marketing.</div>
@@ -148,7 +148,7 @@ const S11: Scene = ({ t, dur }) => {
   const playing = t > 2.71;
   return (
     <Stage t={t} tint={C.cyan} tint2={C.mint}>
-      <div style={{ position: "absolute", inset: 0, transform: cam(t, dur, 0.03) }}>
+      <div style={{ position: "absolute", inset: 0, transform: cam(t, dur, 0.06) }}>
         {/* ----- first half: landing page ----- */}
         <div style={{ position: "absolute", inset: 0, transform: `translate(${-120 * back}px, ${-60 * back}px) scale(${1 - 0.22 * back})`, opacity: 1 - 0.95 * back, filter: `blur(${5 * back}px)`, transformOrigin: "50% 50%" }}>
           <div style={{ opacity: clamp(S(t, -0.2) * 2), transform: `translateY(${(1 - S(t, -0.2)) * 50}px)` }}>

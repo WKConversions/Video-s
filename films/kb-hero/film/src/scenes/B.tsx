@@ -87,7 +87,7 @@ const Check: React.FC<{ size?: number }> = ({ size = 40 }) => (
 const S4: Scene = ({ t }) => {
   const tilt = 11 * (1 - E(t, -0.3, 2.3, ease.out));
   const tiltY = -4 * (1 - E(t, -0.3, 2.8, ease.out));
-  const push = 1 + 0.035 * E(t, -0.3, 4.6, ease.smooth);
+  const push = 1 + 0.06 * E(t, -0.3, 4.6, ease.smooth);
   const dp = E(t, 1.25, 0.75);
   const dragging = t >= 0.95 && t < 2.0;
   const ax = t < 1.25 ? A0.x : mix(A0.x, AG.x, dp), ay = t < 1.25 ? A0.y : mix(A0.y, AG.y, dp);
@@ -103,9 +103,9 @@ const S4: Scene = ({ t }) => {
   return (
     <Stage t={t} tint={C.cyan} tint2={C.violet}>
       <div style={{ position: "absolute", inset: 0, perspective: 1800, perspectiveOrigin: "50% 40%" }}>
-        <div style={{ position: "absolute", inset: 0, transform: `scale(${push}) translate(${drift(t, 6, 6)}px, ${drift(t, 5, 4, 1)}px) rotateX(${tilt}deg) rotateY(${tiltY}deg)`, transformOrigin: "50% 55%" }}>
+        <div style={{ position: "absolute", inset: 0, transform: `scale(${push}) translate(${drift(t, 5, 22)}px, ${drift(t, 4, 12, 1)}px) rotateX(${tilt}deg) rotateY(${tiltY}deg)`, transformOrigin: "50% 55%" }}>
           {/* the canvas plane: dotted grid with depth */}
-          <div style={{ position: "absolute", inset: -500, backgroundImage: `radial-gradient(rgba(41,58,81,.22) 2.2px, transparent 2.4px)`, backgroundSize: "48px 48px", backgroundPosition: `${(t * 10) % 48}px ${(t * 6) % 48}px` }} />
+          <div style={{ position: "absolute", inset: -500, backgroundImage: `radial-gradient(rgba(41,58,81,.22) 2.2px, transparent 2.4px)`, backgroundSize: "48px 48px", backgroundPosition: `${(t * 36) % 48}px ${(t * 20) % 48}px` }} />
           <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(247,247,247,.85) 100%)" }} />
           {/* wires */}
           <svg width={1920} height={1080} style={{ position: "absolute", left: 0, top: 0, overflow: "visible" }}>
@@ -120,7 +120,7 @@ const S4: Scene = ({ t }) => {
                   {p >= 1 && [0, 0.5].map((off) => {
                     const u0 = ((t - ds - 0.5) / 0.95 + off + i * 0.17);
                     const u = u0 - Math.floor(u0), fade = Math.sin(Math.PI * u);
-                    return [0, 0.05, 0.1].map((tr, k) => { const uu = Math.max(0, u - tr), q = bpt(bz, uu); return <circle key={`${off}${k}`} cx={q.x} cy={q.y} r={10 - k * 3} fill={k === 0 ? "#fff" : C.cyan} opacity={(k === 0 ? 1 : 0.5 / k) * fade} style={k === 0 ? { filter: `drop-shadow(0 0 10px ${C.violet}) drop-shadow(0 0 4px ${C.cyan})` } : undefined} />; });
+                    return [0, 0.05, 0.1].map((tr, k) => { const uu = Math.max(0, u - tr), q = bpt(bz, uu); return <circle key={`${off}${k}`} cx={q.x} cy={q.y} r={16 - k * 4} fill={k === 0 ? "#fff" : C.cyan} opacity={(k === 0 ? 1 : 0.5 / k) * fade} style={k === 0 ? { filter: `drop-shadow(0 0 10px ${C.violet}) drop-shadow(0 0 4px ${C.cyan})` } : undefined} />; });
                   })}
                 </g>
               );
