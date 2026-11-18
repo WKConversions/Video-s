@@ -87,3 +87,7 @@ films/coyor-logo-match/sound/*.wav
 films/coyor-fashion/sound/lib-uw/
 films/coyor-fashion/sound/*.wav
 films/coyor-fashion/sound/sampler/
+films/kb-hero/film/out/
+films/kb-hero/sound/*.wav
+films/kb-hero/harvest/*.png
+films/kb-hero/harvest/*.html
