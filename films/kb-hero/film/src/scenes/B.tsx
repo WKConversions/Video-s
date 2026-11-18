@@ -48,7 +48,7 @@ const Odo: React.FC<{ v: number; size: number; color?: string; digits?: number }
         const hide = p > 0 && Math.floor(val / Math.pow(10, p)) === 0 && carry === 0;
         return (
           <div key={p} style={{ width: size * 0.62, height: lh, overflow: "hidden", opacity: hide ? 0 : 1 }}>
-            <div style={{ transform: `translateY(${-pos * lh}px)` }}>{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((d, i) => <div key={i} style={{ height: lh, textAlign: "center" }}>{d}</div>)}</div>
+            <div style={{ willChange: "transform", transform: `translate3d(0, ${-pos * lh}px, 0)` }}>{[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((d, i) => <div key={i} style={{ height: lh, textAlign: "center" }}>{d}</div>)}</div>
           </div>
         );
       })}
@@ -106,7 +106,7 @@ const WN2 = bez(N8.x + TS / 2, N8.y, RP.x, N8.y), WM2 = bez(MK.x + TS / 2, MK.y,
 const WIRES: [Bz, number, boolean][] = [[WA, 2.0, false], [WN, 2.08, false], [WM, 2.08, false], [WN2, 2.2, true], [WM2, 2.2, true]];
 
 const Glass: React.FC<{ x: number; y: number; tool: string; scale?: number; lift?: number; glow?: number; ring?: number; opacity?: number; label?: string; accent?: boolean }> = ({ x, y, tool, scale = 1, lift = 0, glow = 0, ring = 0, opacity = 1, label, accent }) => (
-  <div style={{ position: "absolute", left: x - TS / 2, top: y - TS / 2, width: TS, height: TS, transform: `scale(${scale * (1 + 0.07 * lift)}) translateY(${-10 * lift}px)`, opacity }}>
+  <div style={{ position: "absolute", left: 0, top: 0, width: TS, height: TS, transform: `translate3d(${x - TS / 2}px, ${y - TS / 2}px, 0) scale(${scale * (1 + 0.07 * lift)}) translateY(${-10 * lift}px)`, opacity }}>
     <div style={{ position: "absolute", inset: 0, borderRadius: 42, backgroundImage: accent ? `linear-gradient(160deg,#fff,#F3F6FF), ${GRAD.ai}` : "linear-gradient(160deg, #fff, #F0F4FB)",
       border: accent ? "3px solid transparent" : "2px solid rgba(255,255,255,.9)", backgroundOrigin: "border-box", backgroundClip: accent ? "padding-box, border-box" : "border-box",
       boxShadow: `${SHADOW.card}, 0 ${20 + 24 * lift}px ${40 + 30 * lift}px rgba(41,58,81,${0.10 + 0.10 * lift}), 0 0 ${60 * glow}px rgba(124,108,255,${0.55 * glow}), 0 0 0 ${14 * ring}px rgba(124,108,255,${0.3 * (1 - ring)})` }} />
@@ -177,7 +177,7 @@ const S4: Scene = ({ t }) => {
             if (DRAIN[i] !== undefined && t >= DRAIN[i]) return null;
             const y = iy(i, t);
             if (y > BODY_H) return null;
-            return <div key={i} style={{ position: "absolute", left: 15, top: y }}><InboxCard i={i} /></div>;
+            return <div key={i} style={{ position: "absolute", left: 15, top: 0, willChange: "transform", transform: `translate3d(0, ${y}px, 0)` }}><InboxCard i={i} /></div>;
           })}
         </div>
       </Panel>
@@ -189,11 +189,11 @@ const S4: Scene = ({ t }) => {
         </div>
         <div style={{ position: "absolute", left: 0, right: 0, top: HEAD, height: BODY_H, overflow: "hidden" }}>
           {Array.from({ length: N_CH }, (_, j) => j).map((j) => {
-            const a = arrOf(j), y = -90 + (t - a) * RSPD;
+            const a = arrOf(j), y = -90 + (Math.round(t * 60) - Math.round(a * 60)) * (RSPD / 60);
             if (t < a || y > BODY_H) return null;
             const p = S(t, a, { damping: 14, stiffness: 220 });
             return (
-              <div key={j} style={{ position: "absolute", left: 15, top: y, width: CARD_W, height: 84, borderRadius: 22, background: "#EAFBF3", border: "3px solid #BDEFD7", boxSizing: "border-box", display: "flex", alignItems: "center", gap: 16, padding: "0 18px", transform: `scale(${mix(0.88, 1, p)})`, opacity: clamp(p * 3) }}>
+              <div key={j} style={{ position: "absolute", left: 15, top: 0, willChange: "transform", width: CARD_W, height: 84, borderRadius: 22, background: "#EAFBF3", border: "3px solid #BDEFD7", boxSizing: "border-box", display: "flex", alignItems: "center", gap: 16, padding: "0 18px", transform: `translate3d(0, ${y}px, 0) scale(${mix(0.88, 1, p)})`, opacity: clamp(p * 3) }}>
                 <Check size={46} />
                 <div style={{ fontFamily: FONT, fontWeight: 700, fontSize: 30, color: C.navy, letterSpacing: -0.4 }}>{LABELS[mod(j + 2, LABELS.length)]}</div>
               </div>
@@ -221,7 +221,7 @@ const S4: Scene = ({ t }) => {
         const leg = k < 0.22 ? 0 : 1, u = leg === 0 ? E(k, 0, 0.22, ease.smooth) : E(k, 0.22, 0.18, ease.smooth);
         const q = bpt(br[leg], u), s = S(t, L, { damping: 12, stiffness: 260 });
         return (
-          <div key={j} style={{ position: "absolute", left: q.x - 32, top: q.y - 32, width: 64, height: 64, borderRadius: 20, background: GR[mod(j, GR.length)], boxShadow: "0 10px 24px rgba(41,58,81,.25)", display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${s})` }}><Glyph k={j + 1} s={34} /></div>
+          <div key={j} style={{ position: "absolute", left: 0, top: 0, willChange: "transform", width: 64, height: 64, borderRadius: 20, background: GR[mod(j, GR.length)], boxShadow: "0 10px 24px rgba(41,58,81,.25)", display: "flex", alignItems: "center", justifyContent: "center", transform: `translate3d(${q.x - 32}px, ${q.y - 32}px, 0) scale(${s})` }}><Glyph k={j + 1} s={34} /></div>
         );
       })}
       {/* the gap */}
@@ -239,7 +239,7 @@ const S4: Scene = ({ t }) => {
         if (k < 0 || k > 0.31) return null;
         const p = E(k, 0, 0.3, ease.in), y0 = LP.y + HEAD + iy(i, tr) + CARD_H / 2;
         return (
-          <div key={i} style={{ position: "absolute", left: mix(LP.x + 15 + CARD_W / 2, AG.x, p) - CARD_W / 2, top: mix(y0, AG.y, p) - CARD_H / 2, transform: `scale(${mix(1, 0.3, p)})`, opacity: p < 0.85 ? 1 : (1 - p) / 0.15 }}><InboxCard i={i} /></div>
+          <div key={i} style={{ position: "absolute", left: 0, top: 0, willChange: "transform", transform: `translate3d(${mix(LP.x + 15 + CARD_W / 2, AG.x, p) - CARD_W / 2}px, ${mix(y0, AG.y, p) - CARD_H / 2}px, 0) scale(${mix(1, 0.3, p)})`, opacity: p < 0.85 ? 1 : (1 - p) / 0.15 }}><InboxCard i={i} /></div>
         );
       })}
       <Glass x={t >= 2.0 ? AG.x : ax} y={t >= 2.0 ? AG.y : ay} tool="claude-removebg-preview" scale={aIn * (1 - 0.05 * press) * (t >= 2.0 ? 1 + 0.08 * (snap - 1) : 1)} lift={lift} glow={0.2 + 0.8 * connected} accent

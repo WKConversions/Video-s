@@ -96,7 +96,10 @@ const S7: Scene = ({ t }) => {
   const ex = E(t, 1.85, 0.8, ease.inOut);
   const brP = S(t, 1.95, { damping: 17, stiffness: 120 });
   const phoneP = S(t, 2.35, { damping: 16, stiffness: 130 });
-  const sy = SCROLL * E(t, 2.55, 1.9, ease.smooth);
+  // the page scroll moves a whole number of pixels every frame (an eased tail snapped to whole pixels and stepped): it
+  // speeds up over 10 frames (1, 2 … 10 px), then runs at 10 px a frame (600 px/s) to the end of the scene
+  const run = (t0: number, v: number) => { const n = Math.max(0, Math.round((t - t0) * 60)); return n <= v ? (n * (n + 1)) / 2 : (v * (v + 1)) / 2 + v * (n - v); };
+  const sy = Math.min(SCROLL, run(2.55, 10)), syPhone = Math.min(Math.round(SCROLL * 0.78), run(2.55, 8));
   const term = S(t, 1.12, { damping: 18, stiffness: 90 });
   const edIn = S(t, -0.3, { damping: 16, stiffness: 130 });
   const steps = ["Build", "Test", "Optimise", "Deploy"];
@@ -198,7 +201,7 @@ const S7: Scene = ({ t }) => {
         <div style={{ position: "absolute", left: 1380, top: 190, width: 330, height: 700, opacity: clamp(phoneP * 2), transform: `translateX(${(1 - phoneP) * 460}px) rotateY(${mix(-30, -10, phoneP)}deg) rotateZ(${mix(5, 1.5, phoneP)}deg)`, borderRadius: 54, background: "#101826", padding: 12, boxShadow: "0 50px 100px rgba(41,58,81,.35), 0 8px 20px rgba(41,58,81,.2)" }}>
           <div style={{ position: "relative", width: "100%", height: "100%", borderRadius: 43, background: C.white, overflow: "hidden" }}>
             <div style={{ position: "absolute", left: "50%", top: 10, width: 96, height: 26, borderRadius: 13, background: "#101826", transform: "translateX(-50%)", zIndex: 3 }} />
-            <div style={{ position: "absolute", left: 0, top: 0, width: 306, transform: `translate3d(0, ${-sy * 0.78}px, 0)`, willChange: "transform" }}>
+            <div style={{ position: "absolute", left: 0, top: 0, width: 306, transform: `translate3d(0, ${-syPhone}px, 0)`, willChange: "transform" }}>
               <Block t={t} t0={2.5} style={{ left: 18, top: 56, width: 270, height: 40, display: "flex", alignItems: "center", gap: 10 }}>
                 <div style={{ width: 34, height: 34, borderRadius: 9, background: C.navy }} /><div style={{ flex: 1 }} /><Bar w={44} h={14} bg={C.indigo} />
               </Block>

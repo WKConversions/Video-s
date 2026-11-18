@@ -17,16 +17,17 @@ const S9: Scene = ({ t }) => {
     <Stage t={t} tint={C.mint} tint2={C.cyan}>
       <Eyebrow t={t} t0={-0.15} text="PILLAR 03" y={330} color={C.mint} />
       <Words t={t} t0={0} text={"Growth\nTechnology"} size={124} y={530} hi={{ Growth: GRAD.growth }} stagger={0.1} />
-      <div style={{ position: "absolute", left: 960, top: 740, transform: `translate(-50%,-50%) translateY(${(1 - sub) * 24}px)`, opacity: clamp(sub * 1.5), fontFamily: FONT, fontWeight: 600, fontSize: 34, color: C.sub, letterSpacing: -0.5, whiteSpace: "nowrap" }}>Visibility. Conversion. Product marketing.</div>
+      <div style={{ position: "absolute", left: 960, top: 740, transform: `translate3d(-50%, calc(-50% + ${(1 - sub) * 24}px), 0)`, willChange: "transform", opacity: clamp(sub * 1.5), fontFamily: FONT, fontWeight: 600, fontSize: 34, color: C.sub, letterSpacing: -0.5, whiteSpace: "nowrap" }}>Visibility. Conversion. Product marketing.</div>
       {/* growth: solid bars rising one after another */}
-      <svg width={420} height={480} viewBox="0 0 420 480" style={{ position: "absolute", left: 110, top: 400 }}>
-        <defs><linearGradient id="g9" x1="0" x2="0" y1="1" y2="0"><stop offset="0" stopColor={C.mint} /><stop offset="1" stopColor={C.cyan} /></linearGradient></defs>
-        {heights.map((h, i) => {
-          const p = S(t, -0.25 + i * 0.13, { damping: 13 }), hh = 420 * h * p;
-          return <rect key={i} x={i * 68} y={450 - hh} width={52} height={Math.max(0, hh)} rx={14} fill={cols[i].startsWith("url") ? cols[i] : cols[i]} />;
-        })}
-        <rect x={-6} y={452} width={400} height={10} rx={5} fill={C.navy} />
-      </svg>
+      <div style={{ position: "absolute", left: 110, top: 400, width: 420, height: 480 }}>
+        <div style={{ position: "absolute", left: 0, top: 0, width: 420, height: 450, overflow: "hidden" }}>
+          {heights.map((h, i) => {
+            const p = S(t, -0.25 + i * 0.13, { damping: 13 }), full = 420 * h;
+            return <div key={i} style={{ position: "absolute", left: i * 68, top: 450 - full, width: 52, height: full, borderRadius: 14, background: i === 5 ? `linear-gradient(to top, ${C.mint}, ${C.cyan})` : cols[i], transform: `translate3d(0, ${(1 - p) * full}px, 0)`, willChange: "transform" }} />;
+          })}
+        </div>
+        <div style={{ position: "absolute", left: -6, top: 452, width: 400, height: 10, borderRadius: 5, background: C.navy }} />
+      </div>
       {/* visibility: a feed of results streaming up */}
       <div style={{ opacity: clamp(feed * 2), transform: `translateY(${(1 - feed) * 60}px)` }}>
         <RowFeed t={t} x={1430} y={250} w={390} h={640} speed={540} pitch={104} seed={9} />

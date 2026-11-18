@@ -116,7 +116,7 @@ const IllusDev: React.FC<{ t: number }> = ({ t }) => {
     <div style={{ position: "relative", width: 500, height: 400 }}>
       <Win x={10} y={6} w={480} h={388} dark bar={44} style={{ boxShadow: "0 18px 40px rgba(41,58,81,.25)" }}>
         <div style={{ position: "absolute", left: 18, top: 20, width: 440, height: 320, overflow: "hidden" }}>
-          <div style={{ transform: `translateY(${-scroll}px)` }}>
+          <div style={{ willChange: "transform", transform: `translate3d(0, ${-scroll}px, 0)` }}>
             {CODE.map((r, i) => {
               const prog = clamp(front - i), cur = front >= i && front - i < 1;
               const total = r.reduce((a, c) => a + c[1] + 10, 0);
