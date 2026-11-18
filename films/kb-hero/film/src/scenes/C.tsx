@@ -71,30 +71,22 @@ const S7: Scene = ({ t }) => {
   const ex = E(t, 2.2, 0.95, ease.inOut);
 
   // code text
-  let left = chars;
-  let caretPlaced = false;
-  let started = 0;
+  let left = chars, caretLine = CODE.length - 1, acc = 0;
+  for (let i = 0; i < CODE.length; i++) { const n = CODE[i].reduce((b, x) => b + x[0].length, 0); if (chars <= acc + n) { caretLine = i; break; } acc += n; }
   const lines = CODE.map((ln, li) => {
     const segs: React.ReactNode[] = [];
-    const lineLen = ln.reduce((b, s) => b + s[0].length, 0);
-    const startedHere = left > 0 || li === 0;
-    if (startedHere) started = li + 1;
+    const on = li === 0 || chars > CODE.slice(0, li).reduce((a, l) => a + l.reduce((b, x) => b + x[0].length, 0), 0) - 1;
     ln.forEach((s, si) => {
       if (left <= 0) return;
       const n = Math.min(left, s[0].length);
       segs.push(<span key={si} style={{ color: s[1], whiteSpace: "pre" }}>{s[0].slice(0, n)}</span>);
       left -= n;
     });
-    const showCaret = !caretPlaced && (left <= 0 && (startedHere)) && (chars < TOTAL_CH ? left <= 0 : li === CODE.length - 1);
-    if (showCaret && ln.length >= 0 && (chars < TOTAL_CH ? true : li === CODE.length - 1)) caretPlaced = true;
-    void lineLen;
-    return { segs, caret: showCaret && caretPlaced && started === li + 1, li, on: startedHere };
+    return { segs, caret: li === caretLine, li, on };
   });
 
   const phoneP = S(t, 3.0, { damping: 16, stiffness: 130 });
   const brP = S(t, 2.25, { damping: 17, stiffness: 120 });
-  const target = camPt(S7_DEPLOY.x, S7_DEPLOY.y, camAt(1.41, 4.6, 0.045));
-  void target;
 
   return (
     <Stage t={t} tint={C.indigo} tint2={C.cyan}>
@@ -106,7 +98,6 @@ const S7: Scene = ({ t }) => {
             <div style={{ padding: "8px 18px", borderRadius: 10, background: "rgba(255,255,255,.1)", color: "#D7E3F4", fontFamily: MONO, fontSize: 18 }}>App.tsx</div>
             <div style={{ padding: "8px 18px", borderRadius: 10, color: "rgba(255,255,255,.4)", fontFamily: MONO, fontSize: 18 }}>ui.ts</div>
           </div>
-          <div style={{ position: "absolute", left: 640 - 108 + 108 - 0, top: 0 }} />
           <Btn2 press={press} done={done} />
           {/* progress line */}
           <div style={{ position: "absolute", left: 0, top: 62, height: 3, width: `${prog * 100}%`, background: "linear-gradient(90deg,#4F7BFF,#38C8FF,#22C7A0)", boxShadow: "0 0 18px #38C8FF", opacity: prog > 0 && t < 2.6 ? 1 : 0 }} />
@@ -294,7 +285,6 @@ const S8: Scene = ({ t }) => {
               ))}
             </div>
           </div>
-          <Ripple t={t} c={1.0} x={0} y={0} r={0} />
         </Win>
       </AbsoluteFill>
     </Stage>

@@ -67,9 +67,9 @@ const bpt = (b: ReturnType<typeof bez>, u: number) => {
   const v = 1 - u;
   return { x: v * v * v * b.x0 + 3 * v * v * u * b.c1x + 3 * v * u * u * b.c2x + u * u * u * b.x1, y: v * v * v * b.y0 + 3 * v * v * u * b.y0 + 3 * v * u * u * b.y1 + u * u * u * b.y1 };
 };
-const Glass: React.FC<{ x: number; y: number; tool: string; scale?: number; lift?: number; glow?: number; ring?: number; opacity?: number; badge?: number; label?: string; accent?: boolean }> = ({ x, y, tool, scale = 1, lift = 0, glow = 0, ring = 0, opacity = 1, badge = 0, label, accent }) => (
+const Glass: React.FC<{ x: number; y: number; tool: string; scale?: number; lift?: number; glow?: number; ring?: number; opacity?: number; badge?: number; label?: string; accent?: boolean; dark?: boolean }> = ({ x, y, tool, scale = 1, lift = 0, glow = 0, ring = 0, opacity = 1, badge = 0, label, accent, dark }) => (
   <div style={{ position: "absolute", left: x - TS / 2, top: y - TS / 2, width: TS, height: TS, transform: `scale(${scale * (1 + 0.07 * lift)}) translateY(${-10 * lift}px)`, opacity }}>
-    <div style={{ position: "absolute", inset: 0, borderRadius: 42, background: "linear-gradient(160deg, rgba(255,255,255,.95), rgba(240,246,255,.72))", border: accent ? "3px solid transparent" : `2px solid rgba(255,255,255,.9)`,
+    <div style={{ position: "absolute", inset: 0, borderRadius: 42, background: dark ? "linear-gradient(160deg,#354C67,#1F2B3D)" : "linear-gradient(160deg, rgba(255,255,255,.95), rgba(240,246,255,.72))", border: accent ? "3px solid transparent" : `2px solid rgba(255,255,255,.9)`,
       backgroundImage: accent ? `linear-gradient(160deg,#fff,#F3F6FF), ${GRAD.ai}` : undefined, backgroundOrigin: "border-box", backgroundClip: accent ? "padding-box, border-box" : undefined,
       boxShadow: `${SHADOW.card}, 0 ${20 + 24 * lift}px ${40 + 30 * lift}px rgba(41,58,81,${0.10 + 0.10 * lift}), 0 0 ${60 * glow}px rgba(124,108,255,${0.55 * glow}), 0 0 0 ${10 * ring}px rgba(34,181,115,${0.28 * (1 - ring)})` }} />
     <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}><Tool name={tool} size={96} /></div>
@@ -135,7 +135,7 @@ const S4: Scene = ({ t }) => {
           {TILES.map((q, i) => {
             const p = S(t, -0.25 + 0.09 * i);
             const ring = ringOf(q.id);
-            return <Glass key={q.id} x={q.x} y={q.y + drift(t, 4 + i * 0.6, 5, i)} tool={q.tool} scale={p} opacity={clamp(p * 2)} ring={ring > 0 && ring < 1 ? ring : 0} badge={badgeOf(q.id)} label={q.label} glow={0.4 * connected} />;
+            return <Glass key={q.id} x={q.x} y={q.y + drift(t, 4 + i * 0.6, 5, i)} tool={q.tool} scale={p} opacity={clamp(p * 2)} ring={ring > 0 && ring < 1 ? ring : 0} badge={badgeOf(q.id)} label={q.label} dark={q.tool === "resend"} glow={0.4 * connected} />;
           })}
           <Glass x={t >= 2.0 ? AG.x : ax} y={(t >= 2.0 ? AG.y : ay) + agentFloat} tool="claude-removebg-preview" scale={aIn * (1 - 0.05 * press) * (1 + 0.08 * (snap - 1) * (t >= 2.0 ? 1 : 0))} lift={lift} glow={0.2 + 0.8 * connected} accent
             ring={ringOf("agent") > 0 && ringOf("agent") < 1 ? ringOf("agent") : 0} badge={badgeOf("agent")} label={t > 2.0 ? "AI Agent" : undefined} opacity={clamp(aIn * 2)} />

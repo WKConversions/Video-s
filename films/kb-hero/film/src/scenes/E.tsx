@@ -78,7 +78,6 @@ const S12: Scene = ({ t }) => {
           transform: `scale(${knobIn * (1 - 0.14 * press)})` }} />
         <Ripple t={t} c={1.7} x={TX[0]} y={TRACK_Y} />
         {/* after-we-deliver chips under Run */}
-        <div style={{ position: "absolute", left: TX[2], top: 880, transform: "translateX(-50%)", opacity: S(t, 2.7), fontFamily: FONT, fontWeight: 700, fontSize: 22, letterSpacing: 4, color: C.mint, whiteSpace: "nowrap" }}>WE STAY ON</div>
         {["Hosting", "Maintenance", "Growth"].map((w, i) => {
           const p = S(t, 2.75 + i * 0.15, { damping: 12 });
           const cx = TX[2] + (i - 1) * 215;

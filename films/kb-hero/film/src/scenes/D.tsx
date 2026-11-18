@@ -150,7 +150,7 @@ const S11: Scene = ({ t, dur }) => {
     <Stage t={t} tint={C.cyan} tint2={C.mint}>
       <div style={{ position: "absolute", inset: 0, transform: cam(t, dur, 0.03) }}>
         {/* ----- first half: landing page ----- */}
-        <div style={{ position: "absolute", inset: 0, transform: `translate(${-120 * back}px, ${-60 * back}px) scale(${1 - 0.22 * back})`, opacity: 1 - 0.55 * back, filter: `blur(${5 * back}px)`, transformOrigin: "50% 50%" }}>
+        <div style={{ position: "absolute", inset: 0, transform: `translate(${-120 * back}px, ${-60 * back}px) scale(${1 - 0.22 * back})`, opacity: 1 - 0.95 * back, filter: `blur(${5 * back}px)`, transformOrigin: "50% 50%" }}>
           <div style={{ opacity: clamp(S(t, -0.2) * 2), transform: `translateY(${(1 - S(t, -0.2)) * 50}px)` }}>
             <Win x={220} y={170} w={1060} h={700} title="">
               <MiniPage w={1060} h={648} cta={false} />

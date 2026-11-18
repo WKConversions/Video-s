@@ -9,10 +9,10 @@ const Floaters: React.FC<{ t: number; n?: number; seed?: number; arrive?: number
   <>
     {Array.from({ length: n }).map((_, i) => {
       const k = i + seed * 31, tint = TINTS[Math.floor(rnd(k + 2) * TINTS.length)];
-      const x = 120 + rnd(k) * 1680 + drift(t, 5 + rnd(k + 5) * 5, 26, k), y = 100 + rnd(k + 1) * 880 + drift(t, 6 + rnd(k + 6) * 5, 30, k * 2);
+      const x = 120 + rnd(k) * 1680 + drift(t, 3 + rnd(k + 5) * 3, 70, k), y = 100 + rnd(k + 1) * 880 + drift(t, 3.5 + rnd(k + 6) * 3, 60, k * 2);
       const s = 26 + rnd(k + 3) * 70, sq = rnd(k + 4) > 0.55, p = S(t, arrive + i * 0.05);
       return (
-        <div key={i} style={{ position: "absolute", left: x - s / 2, top: y - s / 2, width: s, height: s, borderRadius: sq ? s * 0.28 : "50%", transform: `scale(${p}) rotate(${t * (8 + rnd(k + 7) * 14) * (i % 2 ? 1 : -1)}deg)`,
+        <div key={i} style={{ position: "absolute", left: x - s / 2, top: y - s / 2, width: s, height: s, borderRadius: sq ? s * 0.28 : "50%", transform: `scale(${p}) rotate(${t * (30 + rnd(k + 7) * 30) * (i % 2 ? 1 : -1)}deg)`,
           background: sq ? `linear-gradient(135deg, ${tint}55, rgba(255,255,255,.7))` : `radial-gradient(circle at 30% 30%, #fff, ${tint}66)`, border: "1.5px solid rgba(255,255,255,.9)", boxShadow: `0 12px 30px ${tint}30`, opacity: 0.85 }} />
       );
     })}
@@ -30,7 +30,7 @@ const S1: Scene = ({ t, dur }) => {
   return (
     <Stage t={t} tint={C.cyan} tint2={C.violet}>
       <div style={{ position: "absolute", inset: 0, transform: `scale(${cam}) translate(${drift(t, 8, 8)}px, ${drift(t, 7, 5, 1)}px)` }}>
-        <Floaters t={t} n={14} />
+        <Floaters t={t} n={20} />
         <Words t={t} t0={0} text={"The technical team\nyou don't have to hire yet."} size={104} y={500} hi={{ technical: GRAD.brand, team: GRAD.brand }} out={2.2} maxW={1700} />
         {t > 2.3 && (
           <>
