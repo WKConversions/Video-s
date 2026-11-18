@@ -81,7 +81,7 @@ const WX = 140, WY = 260, WW = 1000, WH = 640, BX = 640, BY = 790, RX = 1540, RY
 const S11: Scene = ({ t }) => {
   const win = S(t, -0.2, { damping: 16 }), press = pressAt(t, 0.9);
   const conf = S(t, 1.1, { damping: 12 }), confOut = E(t, 2.6, 0.4, ease.in);
-  const ring = S(t, -0.1, { damping: 16 }), sweep = E(t, 1.3, 0.9, ease.inOut), val = mix(0.2, 0.88, sweep);
+  const ring = S(t, -0.1, { damping: 16 }), sweep = E(t, 1.3, 1.3, ease.inOut), val = mix(0.2, 0.88, sweep);   // the ring fills calmly until 2.6, then pulses twice: no dead hold
   const arrow = S(t, 1.5, { damping: 11 }), glow = 0.5 + 0.5 * Math.sin(t * 3);
   const circ = 2 * Math.PI * RR;
   return (
@@ -112,6 +112,8 @@ const S11: Scene = ({ t }) => {
         </div>
       </div>
       <Ripple t={t} c={0.9} x={BX} y={BY} color={C.cyan} r={110} />
+      <Ripple t={t} c={2.45} x={RX} y={RY} color={C.mint} r={RR + 130} />
+      <Ripple t={t} c={2.95} x={RX} y={RY} color={C.mint} r={RR + 130} />
     </Stage>
   );
 };
@@ -124,6 +126,6 @@ const hand: Record<string, HandKey[]> = {
 const sfx: Record<string, Sfx[]> = {
   S9: [{ t: 0.05, kind: "pop", note: "eyebrow" }, { t: 0.45, kind: "rise", note: "subline" }],
   S10: [{ t: 0.05, kind: "type", note: "search types" }, { t: 1.25, kind: "slide", note: "rank climbs" }, { t: 2.0, kind: "pop", note: "AI answer" }, { t: 2.41, kind: "click", note: "click result" }],
-  S11: [{ t: 1.01, kind: "click", note: "Book a call" }, { t: 1.15, kind: "pop", note: "Confirmed" }, { t: 1.4, kind: "rise", note: "ring sweeps" }, { t: 2.25, kind: "success", note: "ring full" }],
+  S11: [{ t: 1.01, kind: "click", note: "Book a call" }, { t: 1.15, kind: "pop", note: "Confirmed" }, { t: 1.4, kind: "rise", note: "ring sweeps" }, { t: 2.56, kind: "success", note: "ring full" }],
 };
 export const GROUP: Group = { scenes: { S9, S10, S11 }, hand, sfx };

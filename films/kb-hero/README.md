@@ -13,18 +13,30 @@ the site's bright look. No voice-over, no music: sound effects only, all from Ka
   Run, Hosting / Maintenance / Growth, "25 client projects completed", "100+ automations built and integrated", the
   office in Málaga (the pin on the globe), "Book a Free Discovery Call".
 
-## Result (final render)
-- `deliver/kb-hero-40s-1080p60.mp4` (40.5 s, 1920×1080, 60 fps) and `deliver/kb-hero-preview-540p.mp4` (the first preview).
-- Motion norm (`motion_check.py`, median): 4.5% (target 4%); something moves in 100% of the frames.
-- Cursor on screen 53% of the film, in five sessions (S1–S2, S4, S7, S10–S11, S14); no compressed glide.
-- Sound: 76 effects from Karl's own library only (no Apple system sounds, nothing generated), no music, no voice.
-- Smoothness: everything that moves is placed by transform; constant scrolls run a whole number of pixels per frame
-  (`plan/build-brief-3.md`). The shake check's remaining SHAKE lines sit on streams of identical rows; measured frame by
-  frame with `film/tools/shift_probe.py` they move exactly 7 px every frame (the checker matches a row to its neighbour).
+## Versions
+- **v1** (`deliver/kb-hero-40s-1080p60.mp4`): the dense version, built to the 4% motion norm (measured 4.5%). Karl: "It's a
+  bit too busy and it should be more minimal visuals. I can't keep up with what it all is and what you're visualising.
+  It's too much and it also needs more sfx variety."
+- **v2** (`deliver/kb-hero-v2-40s-1080p60.mp4`, preview `kb-hero-v2-preview-540p.mp4`): the minimal pass
+  (`plan/build-brief-4.md`). One idea, one hero object and one main action per scene, at most four things on screen;
+  the pillar titles are text only; each text-free scene has one caption with the service's own name from the site; the
+  code editor is a light window. Same timeline and transitions.
+
+## Result (v2, full render)
+- 40.5 s, 1920×1080, 60 fps. Cursor on screen 51% of the film, five sessions, no compressed glide.
+- Motion (`motion_check.py`): median 0.7% (v1: 4.5%), something moves in 87% of the frames (target 90), longest still
+  0.63 s (target 0.8 or less). The price of minimal scenes; the lever, if it feels too still, is larger hero objects with
+  fuller moves, not more items.
+- Smoothness: no shake or judder in the shake check; three single held frames sit between consecutive moves.
+- Sound: 63 effects, 23 different sounds, Karl's own recordings only (no Apple system sounds, nothing generated), no
+  music, no voice. `sound/make_cues.py` cuts his compilation `ui-all-in-one` into its 11 sounds; each kind of event has
+  a family of sounds that changes scene by scene, quick repeats step up in pitch, and the cursor click is always the
+  same sound.
+- Not shown on its own: Digital Product Marketing (named in the pillar line only). The dashboard number is a mock.
 
 ## Layout
-- `plan/build-brief.md`, `-2.md`, `-3.md`: the briefs the scene builders worked from (scenes, the motion pass, the
-  smoothness pass).
+- `plan/build-brief.md`, `-2.md`, `-3.md`, `-4.md`: the briefs the scene builders worked from (scenes, the motion
+  pass, the smoothness pass, the minimal pass).
 - `film/src/timeline.ts`: the 14 scenes and the transition into each. `film/src/Film.tsx`: assembly, transitions, the
   cursor sessions. `film/src/kit.tsx`: brand colours, type, shared components. `film/src/scenes/A…E.tsx`: the scenes;
   `S13globe.tsx`: the globe.
@@ -43,5 +55,5 @@ the site's bright look. No voice-over, no music: sound effects only, all from Ka
 ## Open points
 - The skill's `library/scripts/render_chunks.sh` exits at once in the current container: its browser lookup fails
   under `set -o pipefail` because the headless shell moved. One-line fix, waiting for Karl's OK (skill change).
-- The code editor in S7 is a dark window on the bright stage; a light-theme editor is possible if Karl wants the
-  film brighter still.
+- The 20 Apple system sounds in Karl's library stay out (licence risk on a client's public website) unless he says
+  otherwise.
