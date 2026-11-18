@@ -29,7 +29,7 @@ const S9: Scene = ({ t }) => {
       </svg>
       {/* visibility: a feed of results streaming up */}
       <div style={{ opacity: clamp(feed * 2), transform: `translateY(${(1 - feed) * 60}px)` }}>
-        <RowFeed t={t} x={1430} y={250} w={390} h={640} speed={560} pitch={104} seed={9} />
+        <RowFeed t={t} x={1430} y={250} w={390} h={640} speed={540} pitch={104} seed={9} />
       </div>
     </Stage>
   );
@@ -68,12 +68,12 @@ const S10: Scene = ({ t }) => {
         const h = CH + (mine ? ex * EXTRA : 0);
         const op = clamp(p * 2) * (mine ? 1 : 1 - 0.8 * ex);
         return (
-          <div key={i} style={{ position: "absolute", left: SX, top: y, width: SW, height: h, borderRadius: 24, background: C.white, overflow: "hidden", opacity: op,
+          <div key={i} style={{ position: "absolute", left: SX, top: R0, width: SW, height: h, borderRadius: 24, background: C.white, overflow: "hidden", opacity: op, willChange: "transform",
             boxShadow: mine ? `0 ${20 + 20 * fillMine}px ${50 + 20 * fillMine}px rgba(34,199,160,${0.14 + 0.2 * fillMine})` : SHADOW.soft, border: `${mine ? 2 : 1}px solid ${mine ? `rgba(34,199,160,${0.3 + 0.7 * fillMine})` : C.line}`,
-            transform: `scale(${1 - 0.025 * (mine ? press : 0)})` }}>
-            {mine && <div style={{ position: "absolute", left: 0, top: 0, width: `${fillMine * 100}%`, height: "100%", background: GRAD.growth }} />}
+            transform: `translate3d(0, ${y - R0}px, 0) scale(${1 - 0.025 * (mine ? press : 0)})` }}>
+            {mine && <div style={{ position: "absolute", left: 0, top: 0, width: "100%", height: "100%", background: GRAD.growth, transform: `scaleX(${fillMine})`, transformOrigin: "0 50%" }} />}
             <div style={{ position: "absolute", left: 16, top: 16, width: 76, height: 76, borderRadius: 20, background: mine ? C.navy : col, overflow: "hidden" }}>
-              <div style={{ transform: `translateY(${-slot * 76}px)` }}>
+              <div style={{ transform: `translate3d(0, ${-slot * 76}px, 0)`, willChange: "transform" }}>
                 {[1, 2, 3, 4, 5].map((d) => <div key={d} style={{ height: 76, lineHeight: "76px", textAlign: "center", fontFamily: FONT, fontWeight: 800, fontSize: 44, color: "#fff" }}>{d}</div>)}
               </div>
             </div>
@@ -98,7 +98,7 @@ const S10: Scene = ({ t }) => {
         <div style={{ position: "absolute", left: 44, top: 40, width: 76, height: 76, borderRadius: "50%", background: GRAD.ai, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 12px 30px rgba(124,108,255,.4)" }}><Sparkle s={42} /></div>
         <Box x={144} y={58} w={210} h={22} bg="#fff" r={11} /><Box x={144} y={92} w={130} h={14} bg="rgba(255,255,255,.4)" r={7} />
         <Box x={300} y={140} w={326} h={60} bg={C.cyan} r={30} style={{ opacity: S(t, 0.1) }}><Box x={28} y={21} w={200} h={18} bg={C.navy} r={9} /></Box>
-        <LineFeed t={t} x={44} y={232} w={582} h={460} speed={400} />
+        <LineFeed t={t} x={44} y={232} w={582} h={460} speed={420} />
         <div style={{ position: "absolute", left: 44, top: 704, display: "flex", alignItems: "center", gap: 14 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 10, padding: "12px 26px", borderRadius: 40, background: C.white, fontFamily: FONT, fontWeight: 700, fontSize: 28, color: C.navy,
             border: `3px solid ${chipOn > 0.3 ? C.cyan : "rgba(255,255,255,.3)"}`, opacity: 0.4 + 0.6 * clamp(chipOn), transform: `scale(${mix(0.9, 1, chipOn) + 0.08 * chipPulse})`, boxShadow: `0 0 ${60 * chipPulse + 20 * clamp(chipOn)}px rgba(56,200,255,.6)` }}>
@@ -174,7 +174,7 @@ const S11: Scene = ({ t }) => {
       <div style={{ position: "absolute", inset: 0, opacity: clamp(rise * 1.6), transform: `translateY(${(1 - rise) * 1100}px)` }}>
         <div style={{ position: "absolute", left: PLX, top: PLY, width: 800, height: 450, borderRadius: 30, overflow: "hidden", boxShadow: SHADOW.lift }}>
           <VPage off={off} />
-          {playing && <div style={{ position: "absolute", left: 0, bottom: 0, width: 800, height: 16, background: "rgba(41,58,81,.35)" }}><div style={{ width: 800 * prog, height: 16, background: GRAD.growth }} /></div>}
+          {playing && <div style={{ position: "absolute", left: 0, bottom: 0, width: 800, height: 16, background: "rgba(41,58,81,.35)" }}><div style={{ width: 800, height: 16, background: GRAD.growth, transform: `scaleX(${prog})`, transformOrigin: "0 50%" }} /></div>}
           {btnGone < 1 && <div style={{ position: "absolute", left: 400 - 56, top: 225 - 56, width: 112, height: 112, borderRadius: "50%", background: "rgba(255,255,255,.95)", display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${(1 - 0.1 * pPress) * (1 - btnGone)})`, boxShadow: SHADOW.card }}>
             <div style={{ marginLeft: 8, width: 0, height: 0, borderTop: "26px solid transparent", borderBottom: "26px solid transparent", borderLeft: `42px solid ${C.navy}` }} />
           </div>}
@@ -186,7 +186,7 @@ const S11: Scene = ({ t }) => {
             const x = cx; cx += w + 8; const p = S(t, 1.7 + i * 0.1);
             return <div key={i} style={{ position: "absolute", left: x, top: 24, width: w, height: 82, borderRadius: 16, background: col, transform: `scaleX(${p})`, transformOrigin: "0 50%", opacity: clamp(p * 2) }} />;
           })}
-          {playing && <div style={{ position: "absolute", left: 22 + prog * 740, top: 8, width: 6, height: 114, borderRadius: 3, background: C.navy }}><div style={{ position: "absolute", left: -7, top: -6, width: 20, height: 20, borderRadius: "50%", background: C.navy }} /></div>}
+          {playing && <div style={{ position: "absolute", left: 22, top: 8, width: 6, height: 114, borderRadius: 3, background: C.navy, transform: `translate3d(${prog * 740}px, 0, 0)`, willChange: "transform" }}><div style={{ position: "absolute", left: -7, top: -6, width: 20, height: 20, borderRadius: "50%", background: C.navy }} /></div>}
         </div>
         {/* the same recording in 16:9, 9:16 and 1:1 */}
         {[

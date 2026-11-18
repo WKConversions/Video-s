@@ -254,7 +254,7 @@ const S4: Scene = ({ t }) => {
 
 // ---------------- S5: an agent working in the background ----------------
 const WIN = { x: 1040, y: 90, w: 820, h: 900 };
-const WHEAD = 70, RROW = 108, RP5 = 124, TRAVEL = 0.8, SPACE = 0.3, RSPD5 = RP5 / SPACE;
+const WHEAD = 70, RROW = 108, RP5 = 124, TRAVEL = 0.8, SPACE = 0.3, RSPD5 = 420;
 const N_CARDS = 16;
 const tc = (i: number) => -1.6 + SPACE * i;       // card spawn time
 const ORB = { x: 520, y: 540 };
@@ -269,7 +269,7 @@ const S5: Scene = ({ t }) => {
         if (p < 0 || p > 1) return null;
         const e = ease.in(p), y = mix(-70, ORB.y, e), sc = p < 0.7 ? 1 : mix(1, 0.15, E(p, 0.7, 0.3, ease.in)), op = p < 0.85 ? 1 : 1 - (p - 0.85) / 0.15;
         const xo = Math.sin(i * 2.3) * 70 * (1 - e);
-        return <div key={i} style={{ position: "absolute", left: ORB.x - 270 + xo, top: y - 58, transform: `scale(${sc})`, opacity: op }}><SolidCard w={540} h={116} i={i} /></div>;
+        return <div key={i} style={{ position: "absolute", left: ORB.x - 270, top: 0, willChange: "transform", transform: `translate3d(${xo}px, ${y - 58}px, 0) scale(${sc})`, opacity: op }}><SolidCard w={540} h={116} i={i} /></div>;
       })}
       {/* the agent orb */}
       <div style={{ position: "absolute", left: ORB.x, top: ORB.y, width: 0, height: 0, transform: "scale(1.3)", opacity: S(t, -0.3) }}>
@@ -284,18 +284,18 @@ const S5: Scene = ({ t }) => {
         </svg>
       </div>
       {/* the resolved list window: rows stack in and scroll continuously */}
-      <div style={{ position: "absolute", left: WIN.x, top: WIN.y, width: WIN.w, height: WIN.h, borderRadius: 30, background: "#fff", boxShadow: SHADOW.lift, border: `1px solid ${C.line}`, overflow: "hidden", opacity: clamp(pw * 2), transform: `translateY(${(1 - pw) * 40}px)` }}>
+      <div style={{ position: "absolute", left: WIN.x, top: WIN.y, width: WIN.w, height: WIN.h, borderRadius: 30, background: "#fff", boxShadow: SHADOW.lift, border: `1px solid ${C.line}`, overflow: "hidden", opacity: clamp(pw * 2), willChange: "transform", transform: `translate3d(0, ${(1 - pw) * 40}px, 0)` }}>
         <div style={{ height: WHEAD, display: "flex", alignItems: "center", gap: 10, padding: "0 24px", borderBottom: `1px solid ${C.line}`, background: "#FBFBFD" }}>
           {["#FF5F57", "#FEBC2E", "#28C840"].map((c) => <div key={c} style={{ width: 14, height: 14, borderRadius: "50%", background: c }} />)}
           <div style={{ flex: 1, textAlign: "center", marginRight: 60, fontFamily: FONT, fontWeight: 700, fontSize: 28, color: C.navy }}>Resolved</div>
         </div>
         <div style={{ position: "absolute", left: 0, right: 0, top: WHEAD, bottom: 0, overflow: "hidden" }}>
           {Array.from({ length: N_CARDS }, (_, i) => i).map((i) => {
-            const a = tc(i) + TRAVEL, y = -RROW + (t - a) * RSPD5;
+            const a = tc(i) + TRAVEL, y = -RROW + (Math.round(t * 60) - Math.round(a * 60)) * (RSPD5 / 60);
             if (t < a || y > WIN.h - WHEAD) return null;
             const p = S(t, a, { damping: 14, stiffness: 200 }), col = COLS[i % COLS.length];
             return (
-              <div key={i} style={{ position: "absolute", left: 24, right: 24, top: y, height: RROW, borderRadius: 24, background: col + "26", display: "flex", alignItems: "center", gap: 22, padding: "0 24px 0 0", overflow: "hidden", transform: `scale(${mix(0.9, 1, p)})`, opacity: clamp(p * 3) }}>
+              <div key={i} style={{ position: "absolute", left: 24, right: 24, top: 0, height: RROW, borderRadius: 24, background: col + "26", display: "flex", alignItems: "center", gap: 22, padding: "0 24px 0 0", overflow: "hidden", willChange: "transform", transform: `translate3d(0, ${y}px, 0) scale(${mix(0.9, 1, p)})`, opacity: clamp(p * 3) }}>
                 <div style={{ width: 16, alignSelf: "stretch", background: col, flex: "none" }} />
                 <div style={{ flex: 1 }}>
                   <div style={{ fontFamily: FONT, fontWeight: 700, fontSize: 32, color: C.navy, letterSpacing: -0.4 }}>{LABELS[mod(i, LABELS.length)]}</div>

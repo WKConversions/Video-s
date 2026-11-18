@@ -24,7 +24,7 @@ const PicScan: React.FC<{ t: number }> = ({ t }) => {
         const pop = since > 0 && since < 90 ? 1 + 0.18 * Math.sin((since / 90) * Math.PI) : 1; void hit;
         return <div key={i} style={{ position: "absolute", left: x - 38, top: yy - 38, width: 76, height: 76, borderRadius: 22, background: col, transform: `scale(${pop})`, boxShadow: "0 8px 20px rgba(41,58,81,.18)" }} />;
       })}
-      <div style={{ position: "absolute", left: -20, width: CW, top: y, height: 60, background: `linear-gradient(180deg, transparent, ${C.cyan}CC 60%, ${C.cyan})`, borderBottom: `4px solid ${C.white}`, boxShadow: `0 6px 18px ${C.cyan}99` }} />
+      <div style={{ position: "absolute", left: -20, width: CW, top: 0, height: 60, transform: `translate3d(0, ${y}px, 0)`, willChange: "transform", background: `linear-gradient(180deg, transparent, ${C.cyan}CC 60%, ${C.cyan})`, borderBottom: `4px solid ${C.white}`, boxShadow: `0 6px 18px ${C.cyan}99` }} />
     </>
   );
 };
@@ -45,11 +45,11 @@ const PicBuild: React.FC<{ t: number }> = ({ t }) => {
       {BLOCKS.map((b, i) => {
         const p = S(tt, 0.1 + i * 0.38, { damping: 13, stiffness: 190 });
         return <div key={i} style={{ position: "absolute", left: b.x, top: b.y, width: b.w, height: b.h, borderRadius: 16, background: b.c, opacity: clamp(p * 3),
-          transform: `translate(${(1 - p) * b.from[0]}px, ${(1 - p) * b.from[1]}px)`, boxShadow: "0 8px 20px rgba(41,58,81,.16)" }} />;
+          transform: `translate3d(${(1 - p) * b.from[0]}px, ${(1 - p) * b.from[1]}px, 0)`, willChange: "transform", boxShadow: "0 8px 20px rgba(41,58,81,.16)" }} />;
       })}
       {[0, 1, 2, 3].map((i) => {
         const p = S(tt, 1.3 + i * 0.2);
-        return <div key={"b" + i} style={{ position: "absolute", left: 170 + i * 72, bottom: 40, width: 46, height: (50 + (i * 37) % 70) * p, borderRadius: 8, background: C.white, opacity: 0.95 }} />;
+        return <div key={"b" + i} style={{ position: "absolute", left: 170 + i * 72, bottom: 40, width: 46, height: 50 + (i * 37) % 70, borderRadius: 8, background: C.white, opacity: 0.95, transform: `scaleY(${p})`, transformOrigin: "bottom", willChange: "transform" }} />;
       })}
     </div>
   );
@@ -58,21 +58,25 @@ const PicBuild: React.FC<{ t: number }> = ({ t }) => {
 // --- picture 3: a live uptime chart streaming left, with a strip of status blocks
 const val = (x: number) => 0.55 + 0.2 * Math.sin(x * 0.021) + 0.14 * Math.sin(x * 0.057 + 1) + 0.06 * Math.sin(x * 0.13);
 const PicRun: React.FC<{ t: number }> = ({ t }) => {
-  const w = CW - 40, off = t * 170, pts: string[] = [];
-  for (let x = 0; x <= w; x += 8) pts.push(`${x},${(1 - val(x + off)) * 230 + 10}`);
-  const poly = `M0,250 L${pts.join(" L")} L${w},250 Z`;
-  const bw = 26, sx = off * 0.9 % bw;
+  // streams at 3 px per frame (180 px/s): one long static path / strip, moved by translate3d, offset from the frame number
+  const w = CW - 40, off = Math.round(t * 60) * 3, LEN = 1500, pts: string[] = [];
+  for (let x = 0; x <= w + LEN; x += 8) pts.push(`${x},${(1 - val(x)) * 230 + 10}`);
+  const poly = `M0,250 L${pts.join(" L")} L${w + LEN},250 Z`;
+  const bw = 26, NB = Math.ceil((w + LEN) / bw) + 1;
   return (
     <>
-      <svg width={w} height={260} style={{ position: "absolute", left: 0, top: 0 }}>
-        <defs><linearGradient id="runfill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={C.mint} /><stop offset="1" stopColor={C.cyan} stopOpacity=".55" /></linearGradient></defs>
-        <path d={poly} fill="url(#runfill)" />
-      </svg>
+      <div style={{ position: "absolute", left: 0, top: 0, width: w, height: 260, overflow: "hidden" }}>
+        <svg width={w + LEN} height={260} style={{ position: "absolute", left: 0, top: 0, transform: `translate3d(${-off}px, 0, 0)`, willChange: "transform" }}>
+          <defs><linearGradient id="runfill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor={C.mint} /><stop offset="1" stopColor={C.cyan} stopOpacity=".55" /></linearGradient></defs>
+          <path d={poly} fill="url(#runfill)" />
+        </svg>
+      </div>
       <div style={{ position: "absolute", left: 0, top: 290, width: w, height: 80, overflow: "hidden" }}>
-        {Array.from({ length: 19 }).map((_, i) => {
-          const k = i + Math.floor(off * 0.9 / bw), amber = (k * 7) % 11 === 0;
-          return <div key={i} style={{ position: "absolute", left: i * bw - sx, top: 0, width: bw - 6, height: 80, borderRadius: 6, background: amber ? C.amber : C.green }} />;
-        })}
+        <div style={{ position: "absolute", left: 0, top: 0, width: NB * bw, height: 80, transform: `translate3d(${-off}px, 0, 0)`, willChange: "transform" }}>
+          {Array.from({ length: NB }).map((_, k) => (
+            <div key={k} style={{ position: "absolute", left: k * bw, top: 0, width: bw - 6, height: 80, borderRadius: 6, background: (k * 7) % 11 === 0 ? C.amber : C.green }} />
+          ))}
+        </div>
       </div>
     </>
   );
@@ -89,7 +93,7 @@ export const S12: Scene = ({ t }) => {
         const Pic = [PicScan, PicBuild, PicRun][i];
         return (
           <div key={i} style={{ position: "absolute", left: x - CW / 2, top: CT, width: CW, height: CH, borderRadius: 40, background: C.white, opacity: clamp(appear * 1.5),
-            transform: `translateY(${(1 - appear) * 90 - act * 10}px) scale(${mix(0.88, 1, appear)})`, border: `3px solid ${act > 0.05 ? ACC[i] : "rgba(41,58,81,.08)"}`,
+            transform: `translate3d(0, ${(1 - appear) * 90 - act * 10}px, 0) scale(${mix(0.88, 1, appear)})`, willChange: "transform", border: `3px solid ${act > 0.05 ? ACC[i] : "rgba(41,58,81,.08)"}`,
             boxShadow: act > 0.05 ? `0 30px 70px ${ACC[i]}55` : SHADOW.card, overflow: "hidden" }}>
             <div style={{ position: "absolute", left: 20, top: 20, width: CW - 40, height: PIC_H, borderRadius: 26, background: `${ACC[i]}1F`, overflow: "hidden" }}>
               <div style={{ position: "absolute", left: 20, top: 0, width: CW - 40, height: PIC_H }}><Pic t={t + 3} /></div>
@@ -106,10 +110,10 @@ export const S12: Scene = ({ t }) => {
       })}
       {(() => { const p0 = S(t, 2.7, { damping: 14 }); return (
         <div style={{ position: "absolute", left: 0, right: 0, top: 938, height: 70, display: "flex", alignItems: "center", justifyContent: "center", gap: 22 }}>
-          <span style={{ fontFamily: FONT, fontWeight: 600, fontSize: 34, color: C.sub, opacity: clamp(p0 * 2), transform: `translateY(${(1 - p0) * 30}px)`, marginRight: 8 }}>After we deliver</span>
+          <span style={{ fontFamily: FONT, fontWeight: 600, fontSize: 34, color: C.sub, opacity: clamp(p0 * 2), transform: `translate3d(0, ${(1 - p0) * 30}px, 0)`, marginRight: 8 }}>After we deliver</span>
           {["Hosting", "Maintenance", "Growth"].map((w, i) => {
             const p = S(t, 2.8 + i * 0.15, { damping: 12 });
-            return <div key={w} style={{ transform: `translateY(${(1 - p) * 40}px) scale(${mix(0.5, 1, p)})`, opacity: clamp(p * 2) }}>
+            return <div key={w} style={{ transform: `translate3d(0, ${(1 - p) * 40}px, 0) scale(${mix(0.5, 1, p)})`, willChange: "transform", opacity: clamp(p * 2) }}>
               <Chip text={w} size={36} color={C.navy} bg={[C.cyanSoft, "#E8EEFF", "#E2F8F1"][i]} style={{ border: `2.5px solid ${ACC[i]}`, boxShadow: SHADOW.soft }} />
             </div>;
           })}

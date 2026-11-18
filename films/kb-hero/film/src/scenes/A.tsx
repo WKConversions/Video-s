@@ -23,8 +23,8 @@ const RoleCard: React.FC<{ t: number; i: number }> = ({ t, i }) => {
   const op = clamp(a * 3) * (1 - E(t, 2.85, 0.22));
   if (op <= 0) return null;
   return (
-    <div style={{ position: "absolute", left: x - CARD_W / 2, top: y - CARD_H / 2, width: CARD_W, height: CARD_H, borderRadius: 30 * (1 - 0.6 * f), background: C.white, boxShadow: SHADOW.card, overflow: "hidden",
-      transform: `rotate(${rot}deg) scale(${sc})`, opacity: op, zIndex: i }}>
+    <div style={{ position: "absolute", left: 0, top: 0, width: CARD_W, height: CARD_H, borderRadius: 30 * (1 - 0.6 * f), background: C.white, boxShadow: SHADOW.card, overflow: "hidden", willChange: "transform",
+      transform: `translate3d(${x - CARD_W / 2}px, ${y - CARD_H / 2}px, 0) rotate(${rot}deg) scale(${sc})`, opacity: op, zIndex: i }}>
       <div style={{ height: 150, background: r.g, position: "relative" }}>
         <div style={{ position: "absolute", right: 24, top: 18, fontFamily: "Menlo, monospace", fontWeight: 800, fontSize: 64, color: "#fff", opacity: 0.95 }}>{r.icon}</div>
         <div style={{ position: "absolute", left: 22, top: 22, padding: "8px 18px", borderRadius: 24, background: "#fff", color: C.navy, fontFamily: FONT, fontWeight: 700, fontSize: 22 }}>Open role</div>
@@ -55,7 +55,7 @@ const S1: Scene = ({ t }) => {
             const a = S(t, 3.05 + i * 0.12, { damping: 12, stiffness: 150 }), ab = E(t, 3.85 + i * 0.05, 0.4, ease.in);
             const x = mix(mix(TX, cx, a), TX, ab), y = mix(mix(TY, cy, a), TY, ab), sc = a * (1 - 0.6 * ab);
             return (
-              <div key={i} style={{ position: "absolute", left: x, top: y, transform: `translate(-50%,-50%) scale(${sc})`, padding: "16px 34px", borderRadius: 50, background: ROLES[i].g, color: "#fff", fontFamily: FONT, fontWeight: 700, fontSize: 32, whiteSpace: "nowrap", boxShadow: SHADOW.soft, opacity: 1 - ab }}>
+              <div key={i} style={{ position: "absolute", left: 0, top: 0, willChange: "transform", transform: `translate3d(${x}px, ${y}px, 0) translate(-50%,-50%) scale(${sc})`, padding: "16px 34px", borderRadius: 50, background: ROLES[i].g, color: "#fff", fontFamily: FONT, fontWeight: 700, fontSize: 32, whiteSpace: "nowrap", boxShadow: SHADOW.soft, opacity: 1 - ab }}>
                 {"✓ "}{name}
               </div>
             );
