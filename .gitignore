@@ -92,3 +92,13 @@ films/kb-hero/sound/*.wav
 films/kb-hero/harvest/*.png
 films/kb-hero/harvest/*.html
 films/kb-hero/sound/lib-kb/
+films/kb-team/reference/
+films/kb-team/vo/*.mp3
+films/kb-team/sound/music/
+films/kb-team/sound/lib-kb/
+films/kb-team/sound/*.wav
+films/kb-team/film/out/
+films/kb-team/harvest/*.pdf
+films/kb-team/stock/
+films/kb-team/film/public/footage/
+films/kb-team/film/node_modules
