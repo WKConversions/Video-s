@@ -1,0 +1,525 @@
+[
+ {
+  "text": "What if your business had the right team",
+  "src": [
+   0.03,
+   2.03
+  ],
+  "at": 0.32,
+  "end": 2.32,
+  "answers": "What if you could build an app",
+  "words": [
+   {
+    "word": "iPhWhat",
+    "t": 0.29
+   },
+   {
+    "word": "if",
+    "t": 0.51
+   },
+   {
+    "word": "your",
+    "t": 0.65
+   },
+   {
+    "word": "business",
+    "t": 0.77
+   },
+   {
+    "word": "had",
+    "t": 1.17
+   },
+   {
+    "word": "the",
+    "t": 1.45
+   },
+   {
+    "word": "right",
+    "t": 1.57
+   },
+   {
+    "word": "team",
+    "t": 1.91
+   }
+  ]
+ },
+ {
+  "text": "for what comes next?",
+  "src": [
+   2.03,
+   3.3
+  ],
+  "at": 3.83,
+  "end": 5.1,
+  "answers": "with your name on it?",
+  "words": [
+   {
+    "word": "for",
+    "t": 3.78
+   },
+   {
+    "word": "what",
+    "t": 4.06
+   },
+   {
+    "word": "comes",
+    "t": 4.26
+   },
+   {
+    "word": "next?",
+    "t": 4.52
+   }
+  ]
+ },
+ {
+  "text": "K.B.",
+  "src": [
+   3.55,
+   4.13
+  ],
+  "at": 5.93,
+  "end": 6.51,
+  "answers": "Base44.",
+  "words": []
+ },
+ {
+  "text": "A team behind you.",
+  "src": [
+   4.43,
+   5.93
+  ],
+  "at": 7.55,
+  "end": 9.05,
+  "answers": "Big changes start small.",
+  "words": [
+   {
+    "word": "team",
+    "t": 7.64
+   },
+   {
+    "word": "behind",
+    "t": 8.04
+   },
+   {
+    "word": "you",
+    "t": 8.54
+   }
+  ]
+ },
+ {
+  "text": "Part of your business, with the talent to take it further.",
+  "src": [
+   6.14,
+   9.27
+  ],
+  "at": 10.55,
+  "end": 13.68,
+  "answers": "A few words even will get you a fully working app.",
+  "words": [
+   {
+    "word": "of",
+    "t": 10.79
+   },
+   {
+    "word": "your",
+    "t": 10.91
+   },
+   {
+    "word": "business,",
+    "t": 11.03
+   },
+   {
+    "word": "with",
+    "t": 11.73
+   },
+   {
+    "word": "the",
+    "t": 11.91
+   },
+   {
+    "word": "talent",
+    "t": 12.07
+   },
+   {
+    "word": "to",
+    "t": 12.55
+   },
+   {
+    "word": "take",
+    "t": 12.75
+   },
+   {
+    "word": "it",
+    "t": 13.03
+   },
+   {
+    "word": "further.",
+    "t": 13.17
+   }
+  ]
+ },
+ {
+  "text": "From the systems your team works with,",
+  "src": [
+   9.55,
+   11.43
+  ],
+  "at": 14.74,
+  "end": 16.62,
+  "answers": "From a tool only you will use",
+  "words": [
+   {
+    "word": "iPhFrom",
+    "t": 14.77
+   },
+   {
+    "word": "the",
+    "t": 14.87
+   },
+   {
+    "word": "systems",
+    "t": 14.99
+   },
+   {
+    "word": "your",
+    "t": 15.35
+   },
+   {
+    "word": "team",
+    "t": 15.63
+   },
+   {
+    "word": "works",
+    "t": 15.91
+   },
+   {
+    "word": "with,",
+    "t": 16.13
+   }
+  ]
+ },
+ {
+  "text": "to the customers you reach,",
+  "src": [
+   11.58,
+   13.18
+  ],
+  "at": 18.21,
+  "end": 19.81,
+  "answers": "to a platform millions might.",
+  "words": [
+   {
+    "word": "to",
+    "t": 18.15
+   },
+   {
+    "word": "the",
+    "t": 18.33
+   },
+   {
+    "word": "customers",
+    "t": 18.43
+   },
+   {
+    "word": "you",
+    "t": 18.89
+   },
+   {
+    "word": "reach,",
+    "t": 19.25
+   }
+  ]
+ },
+ {
+  "text": "from early concepts",
+  "src": [
+   13.41,
+   14.58
+  ],
+  "at": 23.53,
+  "end": 24.7,
+  "answers": "From passion projects",
+  "words": [
+   {
+    "word": "from",
+    "t": 23.52
+   },
+   {
+    "word": "early",
+    "t": 23.7
+   },
+   {
+    "word": "concepts",
+    "t": 24.06
+   }
+  ]
+ },
+ {
+  "text": "to products people choose.",
+  "src": [
+   14.6,
+   16.59
+  ],
+  "at": 27.86,
+  "end": 29.85,
+  "answers": "to enterprise-level systems.",
+  "words": [
+   {
+    "word": "to",
+    "t": 27.76
+   },
+   {
+    "word": "products",
+    "t": 28.26
+   },
+   {
+    "word": "people",
+    "t": 28.7
+   },
+   {
+    "word": "choose.",
+    "t": 29.08
+   }
+  ]
+ },
+ {
+  "text": "One shared vision.",
+  "src": [
+   16.79,
+   18.13
+  ],
+  "at": 31.08,
+  "end": 32.42,
+  "answers": "Same starting point.",
+  "words": [
+   {
+    "word": "one",
+    "t": 31.05
+   },
+   {
+    "word": "shared",
+    "t": 31.41
+   },
+   {
+    "word": "vision.",
+    "t": 31.81
+   }
+  ]
+ },
+ {
+  "text": "One partner.",
+  "src": [
+   18.32,
+   19.3
+  ],
+  "at": 33.65,
+  "end": 34.63,
+  "answers": "No ceiling.",
+  "words": [
+   {
+    "word": "One",
+    "t": 33.63
+   },
+   {
+    "word": "partner.",
+    "t": 33.95
+   }
+  ]
+ },
+ {
+  "text": "Think big.",
+  "src": [
+   19.54,
+   20.37
+  ],
+  "at": 35.78,
+  "end": 36.61,
+  "answers": "Shape it.",
+  "words": [
+   {
+    "word": "Think",
+    "t": 35.92
+   },
+   {
+    "word": "big.",
+    "t": 36.08
+   }
+  ]
+ },
+ {
+  "text": "Build well.",
+  "src": [
+   20.46,
+   21.39
+  ],
+  "at": 36.87,
+  "end": 37.8,
+  "answers": "Push it.",
+  "words": [
+   {
+    "word": "Build",
+    "t": 36.93
+   },
+   {
+    "word": "well.",
+    "t": 37.23
+   }
+  ]
+ },
+ {
+  "text": "Grow with us.",
+  "src": [
+   21.51,
+   22.6
+  ],
+  "at": 38.2,
+  "end": 39.29,
+  "answers": "Build on it.",
+  "words": [
+   {
+    "word": "Grow",
+    "t": 38.33
+   },
+   {
+    "word": "with",
+    "t": 38.55
+   },
+   {
+    "word": "us.",
+    "t": 38.83
+   }
+  ]
+ },
+ {
+  "text": "Your growth has a partner.",
+  "src": [
+   22.76,
+   24.46
+  ],
+  "at": 39.5,
+  "end": 41.2,
+  "answers": "Your back end is covered,",
+  "words": [
+   {
+    "word": "Your",
+    "t": 39.56
+   },
+   {
+    "word": "growth",
+    "t": 39.72
+   },
+   {
+    "word": "has",
+    "t": 40.12
+   },
+   {
+    "word": "a",
+    "t": 40.48
+   },
+   {
+    "word": "partner.",
+    "t": 40.64
+   }
+  ]
+ },
+ {
+  "text": "Involved.",
+  "src": [
+   24.64,
+   25.4
+  ],
+  "at": 41.38,
+  "end": 42.14,
+  "answers": "secure",
+  "words": [
+   {
+    "word": "invinciInvolved.",
+    "t": 41.4
+   }
+  ]
+ },
+ {
+  "text": "From day one onwards.",
+  "src": [
+   25.55,
+   27.0
+  ],
+  "at": 42.3,
+  "end": 43.75,
+  "answers": "and ready to launch.",
+  "words": [
+   {
+    "word": "From",
+    "t": 42.45
+   },
+   {
+    "word": "day",
+    "t": 42.51
+   },
+   {
+    "word": "one",
+    "t": 42.79
+   },
+   {
+    "word": "onwards.",
+    "t": 43.13
+   }
+  ]
+ },
+ {
+  "text": "What could your next chapter look like?",
+  "src": [
+   27.02,
+   29.32
+  ],
+  "at": 45.0,
+  "end": 47.16,
+  "answers": "What if you can build it today?",
+  "words": [
+   {
+    "word": "What",
+    "t": 44.84
+   },
+   {
+    "word": "could",
+    "t": 45.4
+   },
+   {
+    "word": "your",
+    "t": 45.58
+   },
+   {
+    "word": "next",
+    "t": 45.86
+   },
+   {
+    "word": "chapter",
+    "t": 46.1
+   },
+   {
+    "word": "look",
+    "t": 46.46
+   },
+   {
+    "word": "like?",
+    "t": 46.76
+   }
+  ]
+ },
+ {
+  "text": "K.B.",
+  "src": [
+   29.63,
+   30.19
+  ],
+  "at": 48.14,
+  "end": 48.7,
+  "answers": "Base44.",
+  "words": [
+   {
+    "word": "cabe",
+    "t": 47.89
+   }
+  ]
+ }
+]

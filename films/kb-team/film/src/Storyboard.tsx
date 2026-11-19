@@ -1,14 +1,14 @@
 // K.B team film: the storyboard. One still frame per shot of the film, in K.B's brand, with K.B's content.
 // Render: npx remotion render src/Storyboard.tsx Board out/sb --sequence --image-format=jpeg --scale=0.25
 import React, { useEffect, useState } from "react";
-import { AbsoluteFill, Composition, Img, continueRender, delayRender, registerRoot, staticFile, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Composition, Img, continueRender, delayRender, staticFile, useCurrentFrame } from "remotion";
 import { Hand } from "./hand";
 
 const C = { paper: "#F6F6F4", ink: "#293A51", cyan: "#38C8FF", dark: "#111A27", dark2: "#1B2636", ui: "#E9E8E4", line: "rgba(41,58,81,.14)", sub: "#7A8494", mint: "#22C7A0", violet: "#7C6CFF", indigo: "#4F7BFF", amber: "#FFB547", coral: "#FF7A66", green: "#22B573", white: "#FFFFFF" };
 const F = "Montserrat, sans-serif";
 const SH = "0 30px 70px rgba(41,58,81,.16), 0 4px 14px rgba(41,58,81,.08)";
 const FACES = [["Montserrat", "montserrat-var-latin.woff2", "100 900"], ["Montserrat", "montserrat-var-latin-ext.woff2", "100 900"], ["Copperplate CC", "copperplate-cc-heavy.otf", "800"]];
-const useFonts = () => {
+export const useFonts = () => {
   const [ok, setOk] = useState(false); const [h] = useState(() => delayRender("fonts"));
   useEffect(() => {
     const el = document.createElement("style");
@@ -117,7 +117,7 @@ const AppUI: React.FC<{ s?: number; wire?: boolean }> = ({ s = 1, wire }) => { c
   </div>); };
 
 // ---------------------------------------------------------------- the frames, in film order
-const FR: React.FC[] = [
+export const FR: React.FC[] = [
   // A  the opening words and the image card
   () => <Ground><Tx x={560} y={516} s={46} w={600}>The right</Tx><Port who="tom" x={830} y={400} w={300} h={280} /><Tx x={1176} y={516} s={46} w={600}>team</Tx></Ground>,
   // B1  the first screen: a flow K.B built
@@ -252,4 +252,4 @@ const FR: React.FC[] = [
 ];
 export const N = FR.length;
 const Board: React.FC = () => { const ok = useFonts(); const i = useCurrentFrame(); if (!ok) return <AbsoluteFill style={{ background: C.paper }} />; const Fr = FR[Math.min(i, N - 1)]; return <Fr />; };
-registerRoot(() => <Composition id="Board" component={Board} durationInFrames={N} fps={60} width={1920} height={1080} />);
+export const BoardRoot = () => <Composition id="Board" component={Board} durationInFrames={N} fps={60} width={1920} height={1080} />;
