@@ -39,11 +39,12 @@ const Words: React.FC<{ n: number }> = ({ n }) => {
   if (n >= 40) return null;
   const wP = wT + SP + wR;
   // left part (right edge), right word (left edge)
-  const rEdge = kf(n, [[35, 708], [36, 586], [38, 519], [39, 500]]);
+  const cardL = kf(n, BX) - 14, cardR = kf(n, BX) + kf(n, BW) + 14;
+  const rEdge = n < 35.5 ? Math.min(708, cardL) : kf(n, [[35.5, Math.min(708, cardL)], [36, 586], [38, 519], [39, 500]]);
   const dy = kf(n, [[35, 0], [36, -19], [38, -69], [39, -80]]);
   const lo = n < 36 ? 1 : kf(n, [[36, 0.55], [38, 0.35], [38.9, 0.3], [39, 0]]);
   const grey = n < 36 ? INK : "#8C96A3";
-  const xr = kf(n, [[35, 1166], [36, 1464], [38, 1469]]);
+  const xr = n < 35.5 ? Math.max(1166, cardR) : kf(n, [[35.5, Math.max(1166, cardR)], [36, 1464], [38, 1469]]);
   const ry = kf(n, [[35, 0], [36, 54], [38, 104]]);
   const ro = n < 36 ? 1 : kf(n, [[36, 1], [39, 0.8], [40, 0]]);
   const rc = n < 36 ? INK : "#4DC4E6";
@@ -78,7 +79,7 @@ const Stack: React.FC<{ n: number }> = ({ n }) => {
         if (n >= 26) { x = kf(n, BX) + (i - 2) * 3; y = kf(n, BY) + (2 - i) * 2; w = kf(n, BW) - (4 - i) * 2; h = kf(n, BH) - (4 - i) * 2; }
         return (
           <div key={s.who} style={{ position: "absolute", left: x, top: y, width: w, height: h, transform: `rotate(${s.rot}deg)`, opacity: fadeOut, background: "#fff", padding: 6, boxSizing: "border-box", borderRadius: 4, boxShadow: "0 12px 34px rgba(30,45,70,.20), 0 2px 6px rgba(30,45,70,.12)", willChange: "transform" }}>
-            <Img src={staticFile(`team/${s.who}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 20%", display: "block" }} />
+            <Img src={staticFile(`team/${s.who}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 20%", display: "block", filter: "grayscale(.45) contrast(.7) brightness(1.22)" }} />
           </div>
         );
       })}
@@ -88,19 +89,19 @@ const Stack: React.FC<{ n: number }> = ({ n }) => {
 
 // ================================================================ the screen (B1): picture + pieces
 const GW = 1336, GH = 831;
-const RingsBG: React.FC = () => (
+const RingsBG: React.FC<{ nn: number }> = ({ nn }) => (
   <svg width="100%" height="100%" viewBox={`0 0 ${GW} ${GH}`} preserveAspectRatio="none" style={{ position: "absolute", inset: 0 }}>
     <defs>
-      <linearGradient id="kbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#4F7BFF" /><stop offset=".5" stopColor="#38C8FF" /><stop offset="1" stopColor="#22C7A0" /></linearGradient>
+      <linearGradient id="kbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#4F7BFF" /><stop offset=".34" stopColor="#38C8FF" /><stop offset=".75" stopColor="#22C7A0" /><stop offset="1" stopColor="#22C7A0" /></linearGradient>
       <radialGradient id="kvg" cx=".5" cy=".62" r=".75"><stop offset="0" stopColor="#fff" stopOpacity=".10" /><stop offset=".7" stopColor="#0A2A7A" stopOpacity="0" /><stop offset="1" stopColor="#0A2A7A" stopOpacity=".28" /></radialGradient>
-      <filter id="kbl"><feGaussianBlur stdDeviation="3.5" /></filter>
+      <filter id="kbl"><feGaussianBlur stdDeviation="6" /></filter>
     </defs>
     <rect width={GW} height={GH} fill="url(#kbg)" />
     <g filter="url(#kbl)" fill="none">
-      {Array.from({ length: 11 }, (_, i) => { const rx = 60 + i * 92 + (i * i) * 1.2, ry = rx * 0.36; return (
-        <g key={i}>
-          <ellipse cx={676} cy={470 + 12} rx={rx} ry={ry} stroke="#0B2D86" strokeOpacity={0.34} strokeWidth={14 + i * 1.6} />
-          <ellipse cx={676} cy={470} rx={rx + 10} ry={ry + 4} stroke="#EFFFFF" strokeOpacity={0.36} strokeWidth={9 + i * 1.1} />
+      {Array.from({ length: 11 }, (_, i) => { const u = (i + nn * 0.1) % 11, rx = 40 + u * 98 + u * u * 1.6, ry = rx * 0.36, a = Math.min(1, u / 1.5) * Math.min(1, (11 - u) / 3); return (
+        <g key={i} opacity={a}>
+          <ellipse cx={676} cy={470 + 12} rx={rx} ry={ry} stroke="#0B3A86" strokeOpacity={0.30} strokeWidth={16 + u * 1.8} />
+          <ellipse cx={676} cy={470} rx={rx + 10} ry={ry + 4} stroke="#E8FFFF" strokeOpacity={0.26} strokeWidth={9 + u * 1.2} />
         </g>); })}
     </g>
     <rect width={GW} height={GH} fill="url(#kvg)" />
@@ -174,7 +175,7 @@ const Screen: React.FC<{ n: number }> = ({ n }) => {
   return (
     <div style={{ position: "absolute", left: x, top: y, width: w, height: h, opacity: op, transform: `rotate(${rot}deg)`, willChange: "transform" }}>
       <div style={{ position: "absolute", inset: 0, borderRadius: r, overflow: "hidden", boxShadow: sh, filter: d > 0.5 ? "url(#kliq)" : undefined, background: "#38C8FF" }}>
-        <RingsBG />
+        <RingsBG nn={n} />
         <div style={{ position: "absolute", left: cx - GW / 2 * s, top: cy - GH / 2 * s, width: GW, height: GH, transform: `scale(${s})`, transformOrigin: "0 0" }}><ScreenContent n={n} /></div>
       </div>
     </div>
@@ -195,7 +196,7 @@ const Liquid: React.FC<{ n: number }> = ({ n }) => {
   return (
     <svg width={0} height={0} style={{ position: "absolute" }}>
       <filter id="kliq" x="-15%" y="-25%" width="130%" height="150%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.028 0.04" numOctaves={3} seed={7} result="nz" />
+        <feTurbulence type="fractalNoise" baseFrequency="0.011 0.018" numOctaves={2} seed={7} result="nz" />
         <feDisplacementMap in="SourceGraphic" in2="nz" scale={d} xChannelSelector="R" yChannelSelector="G" />
       </filter>
     </svg>
@@ -295,12 +296,13 @@ const B2: React.FC<{ n: number }> = ({ n }) => {
           {/* progress */}
           <div style={abs(0, 421, 1182, 18, { background: "#2A2E33" })}><div style={abs(0, 0, 306, 18, { background: C.green })} /></div>
           {/* light lower half */}
-          <div style={abs(0, 439, 1182, 343, { background: "#E7E6E1", backgroundImage: "repeating-linear-gradient(90deg, rgba(0,0,0,.035) 0 56px, transparent 56px 112px)" })}>
+          <div style={abs(0, 439, 1182, 343, { background: "#E7E6E1", backgroundImage: "repeating-linear-gradient(90deg, rgba(0,0,0,.07) 0 56px, transparent 56px 112px)" })}>
             <div style={abs(40, 18, 400, 24, { fontSize: 18, fontWeight: 600, color: INK, letterSpacing: 0.3 })}>Visitors per day</div>
             {HEIGHTS.map((hgt, i) => {
               const on = i === 11, hh = on ? hgt * (1 + 0.14 * lit) : hgt;
               return (
                 <React.Fragment key={i}>
+                  {on && <div style={abs(40 + i * 80 - 4, 0, 56, 343, { background: "linear-gradient(180deg,#2F7BFF,#1B5CF0)", opacity: lit })} />}
                   <div style={abs(40 + i * 80, 296 - hh, 48, hh, { background: on ? `rgb(${Math.round(22 + 57 * lit)},${Math.round(32 + 91 * lit)},${Math.round(46 + 209 * lit)})` : "#16202E", borderRadius: "6px 6px 0 0" })} />
                   <div style={abs(40 + i * 80, 308, 48, 20, { textAlign: "center", fontSize: 14, fontWeight: 500, color: on && lit > 0.5 ? C.indigo : "#7A8494" })}>{DAYS[i]}</div>
                 </React.Fragment>

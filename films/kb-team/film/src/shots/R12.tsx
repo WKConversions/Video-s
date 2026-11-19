@@ -1,75 +1,89 @@
-// Package R12 (reference f1080-f1200; cuts f1152, f1164).
-//   AN f1080-f1151  filmed: the close. A slow push in; "Your next chapter" is typed in white on the voice; a cyan caret
-//   AO f1152-f1163  the row of five K.B glyphs, changing every two or three frames; the cyan square jumps along the row
-//   AP f1164-f1200  the cyan end screen: the glyph row closes into the K.B tile, which holds
+// Package R12 (reference f1080-f1200; cuts f1152, f1164), rebuilt on the reference's measured frames.
+//   AN f1080-f1151  filmed: the close; the camera drifts as the reference's does; "Your next chapter" typed in white,
+//                   centred, with a tall cyan caret that blinks as the reference's does
+//   AO f1152-f1163  the row of glyphs: spacing, glyph changes and highlight jumps on the reference's frames
+//   AP f1164-f1200  the cyan end screen: the K.B tile arrives large and settles, two dots drift in and vanish, then it holds
 import React from "react";
 import type { Pkg, Sfx } from "../types";
 import { AbsoluteFill } from "remotion";
-import { C, Caret, E, F, Footage, Glyph, Ground, S, Tile, abs, clamp, ease, mix, onTwos, rs, settle, typed, useFonts } from "../kit";
+import { C, F, Footage, Ground, Tile, abs, kf, onTwos, refN, rs, useFonts } from "../kit";
+import { G12 } from "./R12_glyphs";
 
 const F0 = 1080;
 const at = (n: number) => rs(n - F0);
-const say = (filmSeconds: number) => filmSeconds - rs(F0);
+const INK = "#16202E";
 
 // ---------------------------------------------------------------- AN: the filmed close
 const LINE = "Your next chapter";
-const TYPE0 = say(45.5), CPS = 17.5;                                   // "your" 45.58, "next" 45.86, "chapter" 46.10 (film seconds)
+// reference frame on which each character appears (space comes with the letter after it)
+const CT = [1089, 1091, 1093, 1094, 1100, 1100, 1101, 1103, 1104, 1106, 1106, 1107, 1108, 1109, 1110, 1111, 1112];
+// the reference's camera (track.py cam, accumulated): [frame, value]
+const CX: [number, number][] = [[1080, 0], [1083, 9.7], [1086, 17.9], [1089, 22.5], [1092, 25.5], [1096, 23.5], [1100, 19.6], [1104, 15.5], [1108, 12.5], [1112, 10], [1116, 8.2], [1120, 6.1], [1124, 1.9], [1128, -3.8], [1132, -10.4], [1135, -14.4], [1138, -18.9], [1141, -24.9], [1144, -35.2], [1147, -42.5], [1150, -45.2], [1151, -45.4]];
+const CY: [number, number][] = [[1080, 0], [1083, 8.7], [1086, 14], [1089, 16.4], [1092, 15.4], [1096, 14.1], [1100, 13.2], [1104, 11], [1108, 7.9], [1112, 4.8], [1116, 3.3], [1120, 3.6], [1124, 6.2], [1128, 11.2], [1132, 16], [1135, 17.1], [1138, 17], [1141, 14.3], [1144, 9.6], [1147, 7.4], [1150, 5.3], [1151, 4.3]];
 const AN: React.FC<{ t: number }> = ({ t }) => {
-  const shown = typed(LINE, t, TYPE0, CPS), typing = t >= TYPE0 && shown.length < LINE.length;
-  const tw = onTwos("AN", t, 0.1);                                      // the clip on twos, the camera stepping with it
+  const tw = onTwos("AN", t, 0.1);
+  const ns = F0 + tw.sj * 24;                                              // the camera steps with the drawings
+  const n = Math.floor(refN(t, F0) + 1e-6);                                // text and caret live on the reference's frames
+  const cnt = CT.filter((f) => f <= n).length, shown = LINE.slice(0, cnt);
+  const caret = (n >= 1083 && n <= 1129) || n >= 1143;
+  const grow = n >= 1150 ? 1.026 : 1;
   return (
     <AbsoluteFill style={{ fontFamily: F }}>
-      <Footage name="AN" at={tw.at} scale={settle(tw.sj, 0.035, 0.6, 0.012)} dim={0.44} />
-      <div style={{ position: "absolute", left: 0, right: 0, top: 462, textAlign: "center", color: "#fff", fontSize: 132, fontWeight: 600, letterSpacing: -5, whiteSpace: "pre", textShadow: "0 4px 30px rgba(0,0,0,.35)" }}>
-        <span>{shown}</span>
-        <span style={{ display: "inline-block", position: "relative", width: 0, height: 0 }}>
-          {t >= TYPE0 - 0.5 && <Caret t={t} h={128} w={7} c={C.cyan} typing={typing} style={{ position: "absolute", left: 10, top: -108, marginLeft: 0 }} />}
-        </span>
-        <span style={{ opacity: 0 }}>{LINE.slice(shown.length)}</span>
+      <Footage name="AN" at={tw.at} scale={1.07} x={kf(ns, CX)} y={kf(ns, CY)} />
+      <div style={{ position: "absolute", left: 0, width: 1920, top: 479, height: 108, display: "flex", justifyContent: "center", alignItems: "center", transform: `translate3d(${cnt === 0 ? 14 : 15}px,0,0) scale(${grow})`, transformOrigin: "953px 54px" }}>
+        <span style={{ color: "#fff", fontSize: 108, fontWeight: 600, letterSpacing: -4, whiteSpace: "pre", lineHeight: "108px", textShadow: "0 2px 18px rgba(0,0,0,.25)" }}>{shown}</span>
+        <span style={{ display: "inline-block", width: 9, height: 108, marginLeft: cnt === 0 ? 0 : 18, borderRadius: 2, background: C.cyan, opacity: caret ? 1 : 0 }} />
       </div>
     </AbsoluteFill>
   );
 };
 
 // ---------------------------------------------------------------- AO: the glyph row
-const SLOT = 96, ROW_X = 960 - 2.5 * SLOT;
-const Row: React.FC<{ t: number; c: string; close?: number }> = ({ t, c, close = 0 }) => {
-  const n = Math.max(0, (t - at(1152)) * 24);                         // reference frames into the row
+type St = { g: number[]; hi: number; pitch: number; dots: [number, number][]; hc: "cy" | "in" };
+const dots = (dx: number, dy: number): [number, number][] => [[-dx, -dy], [dx, -dy], [-dx, dy], [dx, dy]];
+const state = (n: number): St => {
+  if (n <= 1153) return { g: [0, 1, 2, 3, 4], hi: 4, pitch: 127.5, dots: dots(339, 73), hc: "cy" };
+  if (n === 1154) return { g: [0, 1, 2, 3, 4], hi: 4, pitch: 133.5, dots: dots(352, 78), hc: "cy" };
+  if (n === 1155) return { g: [0, 1, 2, 3, 4], hi: 2, pitch: 133.5, dots: dots(352, 78), hc: "in" };
+  if (n <= 1157) return { g: [0, 1, 2, 6, 4], hi: 2, pitch: 133.5, dots: dots(352, 78), hc: "in" };
+  if (n === 1158) return { g: [5, 1, 2, 6, 0], hi: 2, pitch: 133.5, dots: dots(352, 78), hc: "in" };
+  if (n <= 1160) return { g: [5, 7, 2, 6, 0], hi: 0, pitch: 133.5, dots: dots(352, 78), hc: "cy" };
+  return { g: [5, 8, 6, 0], hi: 1, pitch: 133.5, dots: [[282, -84], [-285, 84]], hc: "cy" };
+};
+const Row: React.FC<{ n: number; bg: string }> = ({ n, bg }) => {
+  const st = state(n), m = st.g.length;
   return (
     <>
-      {[0, 1, 2, 3, 4].map((i) => {
-        const k = (i * 2 + Math.floor((n + i * 1.3) / 2.5)) % 5;      // each slot changes every 2.5 frames, out of step with its neighbours
-        const dx = (2 - i) * SLOT * close;                            // closing: every slot travels to the centre
+      {st.dots.map(([dx, dy], i) => <div key={i} style={abs(960 + dx - 5, 540 + dy - 5, 10, 10, { background: C.cyan })} />)}
+      {st.g.map((k, i) => {
+        const cx = 960 + (i - (m - 1) / 2) * st.pitch, hi = i === st.hi;
+        const col = hi && st.hc === "in" ? "#B9CCFF" : INK;
         return (
-          <div key={i} style={abs(ROW_X + i * SLOT, 540 - SLOT / 2, SLOT, SLOT, { display: "flex", alignItems: "center", justifyContent: "center", transform: `translate3d(${dx.toFixed(2)}px, 0, 0) scale(${(1 - 0.5 * close).toFixed(4)})`, opacity: 1 - close, willChange: "transform" })}>
-            <Glyph k={k} s={62} c={c} />
-          </div>
+          <React.Fragment key={i}>
+            {hi && <div style={abs(cx - 54, 540 - 54, 108, 108, { borderRadius: 7, background: st.hc === "in" ? C.indigo : C.cyan })} />}
+            <div style={abs(cx - 42, 540 - 42, 84, 84)}><G12 k={k} s={84} c={col} bg={hi ? (st.hc === "in" ? C.indigo : C.cyan) : bg} /></div>
+          </React.Fragment>
         );
       })}
     </>
   );
 };
 const AO: React.FC<{ t: number }> = ({ t }) => {
-  const n = Math.max(0, (t - at(1152)) * 24), hi = Math.floor(n / 2.4) % 5;
-  return (
-    <Ground tone="ui">
-      {[[ROW_X - 40, 440], [ROW_X + 5 * SLOT + 32, 440], [ROW_X - 40, 632], [ROW_X + 5 * SLOT + 32, 632]].map(([x, y], i) => <div key={i} style={abs(x, y, 8, 8, { background: C.cyan })} />)}
-      <div style={abs(ROW_X + hi * SLOT + 11, 540 - 37, 74, 74, { borderRadius: 8, background: C.cyan })} />
-      <Row t={t} c={C.ink} />
-    </Ground>
-  );
+  const n = Math.floor(refN(t, F0) + 1e-6);
+  return <Ground tone="ui"><Row n={n} bg={C.ui} /></Ground>;
 };
 
 // ---------------------------------------------------------------- AP: the end
 const AP: React.FC<{ t: number }> = ({ t }) => {
-  const t0 = at(1164), close = E(t, t0, 0.3, ease.inOut), tile = S(t, t0 + 0.12, { damping: 12, stiffness: 190 });
-  const ring = clamp((t - t0 - 0.45) / 0.9);
+  const n = refN(t, F0), ni = Math.floor(n + 1e-6);
+  const sc = kf(n, [[1164, 1.1], [1166, 1.066], [1167, 1.02], [1168, 1.005], [1170, 1]]);
+  const lx = kf(n, [[1164, 694], [1166, 703], [1167, 714], [1168, 716], [1173, 721]]), ly = kf(n, [[1164, 585], [1167, 586], [1168, 537], [1173, 537]]);
+  const rx = kf(n, [[1164, 1213], [1166, 1204], [1167, 1196], [1168, 1192], [1173, 1188]]), ry = kf(n, [[1164, 492], [1167, 492], [1168, 537], [1173, 537]]);
   return (
     <Ground tone="cyan">
-      <Row t={t} c={C.ink} close={close} />
-      <div style={abs(960 - 115, 540 - 115, 230, 230, { borderRadius: 30, border: "3px solid rgba(41,58,81,.55)", boxSizing: "border-box", opacity: ring > 0 && ring < 1 ? 0.6 * (1 - ring) : 0, transform: `scale(${(1 + 0.7 * ease.out(ring)).toFixed(4)})` })} />
-      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "960px 540px", transform: `scale(${(mix(0.55, 1, tile) * (1 + 0.012 * Math.max(0, t - t0 - 0.5))).toFixed(4)})`, opacity: clamp(tile * 2.2), willChange: "transform" }}>
-        <Tile x={960} y={540} s={230} />
+      {ni < 1174 && [[lx, ly], [rx, ry]].map(([x, y], i) => <div key={i} style={abs(x - 5, y - 5, 10, 10, { background: INK })} />)}
+      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "953px 539px", transform: `scale(${sc.toFixed(4)})`, willChange: "transform" }}>
+        <Tile x={953} y={539} s={150} />
       </div>
     </Ground>
   );
@@ -83,7 +97,7 @@ const Comp: React.FC<{ t: number }> = ({ t }) => {
   return <AP t={t} />;
 };
 const sfx: Sfx[] = [
-  { t: TYPE0, kind: "type", note: "0.97 the closing words" },
+  { t: at(1089), kind: "type", note: "0.97 the closing words, 1089-1112" },
   { t: at(1152), kind: "sparkle", note: "the glyph row" },
   { t: at(1164), kind: "swish", note: "the end screen" },
   { t: at(1164) + 0.2, kind: "thud", note: "the K.B tile lands" },

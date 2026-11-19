@@ -48,7 +48,7 @@ const TypedLine: React.FC<{ t: number }> = ({ t }) => {
       ) : (
         <div style={{ position: "absolute", left: 0, top: G_BASE - 0.8585 * G_EM, transform: `translate3d(${x}px, 0, 0)`, willChange: "transform", fontSize: G_EM, fontWeight: 500, letterSpacing: G_LS, lineHeight: 1, whiteSpace: "pre", color: INK }}>
           {G_TEXT.slice(0, n)}
-          <div style={{ position: "absolute", left: n === 1 ? 956 - x : "100%", top: 423 - (G_BASE - 0.8585 * G_EM), marginLeft: n === 1 ? 0 : G_GAP, width: 12, height: 228, background: INK }} />
+          <div style={{ position: "absolute", left: "100%", top: 423 - (G_BASE - 0.8585 * G_EM), marginLeft: G_GAP, width: 12, height: 228, background: INK }} />
         </div>
       )}
     </Ground>
@@ -62,7 +62,7 @@ const TypedLine: React.FC<{ t: number }> = ({ t }) => {
 type MacroDef = { word: string; keys: number[]; L: [number, number][]; lone: [number, number][]; loneFrom: number; to: number };
 const H_EM = 680, H_BASE = 775, H_BEAR = 0.05 * H_EM, H_GAP = 55;
 const M1: MacroDef = { word: "follo", keys: [245, 247, 248, 250, 251], L: [[245, 80], [253, 34], [254, 28]], lone: [[244, 222], [245, 222]], loneFrom: 244, to: 254 };
-const M2: MacroDef = { word: "date", keys: [256, 257, 258, 260], L: [[256, 18], [264, -30], [265, -36]], lone: [[254, 140], [255, 134], [256, 128]], loneFrom: 254, to: 265 };
+const M2: MacroDef = { word: "date?", keys: [256, 257, 258, 260, 262], L: [[256, 18], [264, -30], [265, -36]], lone: [[254, 140], [255, 134], [256, 128]], loneFrom: 254, to: 265 };
 const Macro: React.FC<{ t: number; m: MacroDef }> = ({ t, m }) => {
   const nn = refN(t, F0);
   const n = count(m.keys, t);
