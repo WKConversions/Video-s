@@ -96,7 +96,7 @@ const Words: React.FC<{ n: number }> = ({ n }) => {
   const sc = kf(n, [[127, 1], [128, 0.962]]);
   const fOut = clamp(129.9 - n), whatOut = clamp(128.9 - n);
   const w = (id: string, f: number, node: React.ReactNode, x: number, base: number, cen = false, o = 1) => {
-    const { p, e } = f <= 93 ? { p: 1, e: 1 } : enter(n, f);
+    const { p } = f <= 93 ? { p: 1 } : enter(n, f);
     if (p <= 0) return null;
     return <div key={id} style={{ ...wordStyle(0, base, false), left: 0, transform: `translate3d(${(x).toFixed(2)}px, 0px, 0) ${cen ? "translateX(-50%)" : ""} scale(${sc.toFixed(4)})`, transformOrigin: cen ? "50% 60%" : "0 60%", opacity: p * o, willChange: "transform" }}>{node}</div>;
   };
@@ -171,7 +171,7 @@ const Comp: React.FC<{ t: number }> = ({ t }) => {
       <Words n={n} />
       <Lockup n={n} />
       <Lines n={n} />
-      {n >= 184 && <AbsoluteFill style={{ opacity: kf(n, [[184, 0], [185, 0.06], [186, 0.4], [187, 0.62]]) }}><Footage name="F1" at={7.5 / 23.976} scale={1.03} /></AbsoluteFill>}
+      {n >= 184 && <AbsoluteFill style={{ opacity: kf(n, [[184, 0], [185, 0.03], [186, 0.2], [187, 0.34]]) }}><Footage name="F1" at={7.5 / 23.976} scale={1.03} /></AbsoluteFill>}
     </AbsoluteFill>
   );
 };

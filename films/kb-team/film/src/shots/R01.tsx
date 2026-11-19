@@ -5,7 +5,7 @@
 import React from "react";
 import { AbsoluteFill, Img, staticFile } from "remotion";
 import type { Pkg } from "../types";
-import { C, F, Tile, Check, abs, kf, refN, useFonts } from "../kit";
+import { C, F, Tile, abs, kf, refN, useFonts } from "../kit";
 
 const INK = "#16202E";
 const EPS = 1e-6;

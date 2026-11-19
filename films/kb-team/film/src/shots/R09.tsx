@@ -136,7 +136,7 @@ const Chip: React.FC<{ n: number; f: number; x: number; y: number; d: number; c:
 
 // the ground: pale, calm, with soft cyan-mint flower sprays that live in the world (they slide with the cards)
 const rn = (k: number) => { const s = Math.sin(k * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };
-const SPRAYS = Array.from({ length: 30 }, (_, i) => ({ x: 40 + rn(i + 1) * 1840, y: -1250 + rn(i + 40) * 2400, h: 260 + rn(i + 80) * 420, lean: (rn(i + 120) - 0.5) * 220, blue: i % 3 === 0 }));
+const SPRAYS = Array.from({ length: 70 }, (_, i) => ({ x: 40 + rn(i + 1) * 1840, y: -1250 + rn(i + 40) * 2400, h: 260 + rn(i + 80) * 420, lean: (rn(i + 120) - 0.5) * 220, blue: i % 3 === 0 }));
 const GroundWorld: React.FC<{ fade: number }> = ({ fade }) => (
   <div style={abs(0, -1500, 1920, 3000)}>
     <svg width="1920" height="3000" viewBox="0 -1500 1920 3000" style={{ position: "absolute", left: 0, top: 0 }}>
@@ -147,6 +147,8 @@ const GroundWorld: React.FC<{ fade: number }> = ({ fade }) => (
       <g opacity={fade}>
         <ellipse cx="1500" cy="-1100" rx="900" ry="360" fill="url(#r09w1)" /><ellipse cx="500" cy="-1300" rx="800" ry="300" fill="url(#r09w1)" />
         <ellipse cx="1000" cy="120" rx="1100" ry="420" fill="url(#r09w1)" /><ellipse cx="1100" cy="760" rx="1000" ry="360" fill="url(#r09w2)" />
+        {Array.from({ length: 14 }, (_, i) => <ellipse key={`e${i}`} cx={i % 2 ? 1920 : 0} cy={-1400 + i * 210} rx="520" ry="260" fill={i % 3 === 0 ? "url(#r09w2)" : "url(#r09w1)"} />)}
+        {Array.from({ length: 12 }, (_, i) => <ellipse key={`t${i}`} cx={300 + (i % 4) * 440} cy={i % 2 ? -1480 : 1420} rx="520" ry="200" fill="url(#r09w1)" />)}
         <ellipse cx="300" cy="-300" rx="700" ry="260" fill="url(#r09w1)" opacity=".6" />
         {SPRAYS.map((s, i) => (
           <g key={i} opacity={0.5}>

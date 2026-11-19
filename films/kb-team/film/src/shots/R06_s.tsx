@@ -60,7 +60,9 @@ const RowBox: React.FC<{ y: number; rank: number; r: Row; z?: number }> = ({ y, 
 );
 
 export const ShotS: React.FC<{ t: number; n: number; t0: number }> = ({ t, n, t0 }) => {
-  const tw = onTwos("S", t - t0, 0.45), zoom = settle(tw.sj, 0.03);
+  const tw = onTwos("S", t - t0, 0.45), zoom = 1.5 * settle(tw.sj, 0.03);
+  // the reference's left picture runs down the frame (tracked: 0 -> 844 px); ours tilts the same way, at half the travel, so the clip keeps its subject
+  const pan = 0.45 * kf(528 + tw.sj * 24, [[528, 0], [530, 21], [533, 85], [536, 166], [540, 289], [545, 455], [550, 630], [556, 844]]);
   const ly = litTop(n);
   const taken = TRIG.filter((tg) => n >= tg + 0.8).length;
   const rank = 9 - taken;
@@ -69,7 +71,7 @@ export const ShotS: React.FC<{ t: number; n: number; t0: number }> = ({ t, n, t0
     <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, background: "#0E131B", fontFamily: F, overflow: "hidden" }}>
       {/* the filmed half */}
       <div style={{ position: "absolute", left: 37, top: 37, width: 908, height: 1003, borderRadius: 18, overflow: "hidden", background: "#000" }}>
-        <div style={{ position: "absolute", left: -506 + 60 * zoom, top: -40 - 20 * zoom, width: 1920, height: 1080 }}>
+        <div style={{ position: "absolute", left: 454 - 960 - 40 * zoom, top: -150 + pan, width: 1920, height: 1080 }}>
           <Footage name="S" at={tw.at} scale={zoom} />
         </div>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(14,19,27,.9) 0, rgba(14,19,27,.85) 7%, rgba(14,19,27,0) 17%, rgba(14,19,27,0) 76%, rgba(14,19,27,.75) 100%)" }} />
