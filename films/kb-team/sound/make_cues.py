@@ -29,7 +29,7 @@ VOICE = {
     "click": [("ui-click", 0)],
     "tick": [("v4-type-delete", -3), ("aio-09", -4), ("ui-click-digital-03", -4)],
     "pop": [("ui-button", -5), ("aio-00", -4), ("ui-granular-button-select", -4), ("aio-02", -4)],
-    "swish": [("ui-stretch", -8), ("aio-05", -6)],
+    "swish": [("ui-stretch", -10), ("aio-05", -8)],
     "slide": [("aio-05", -7), ("ui-stretch", -9)],
     "rise": [("aio-06", -3), ("ui-open", -7)],
     "sparkle": [("ui", -4), ("aio-08", -5), ("aio-03", -1)],
@@ -37,17 +37,29 @@ VOICE = {
     "digital": [("ui-digital-click", -5), ("ui-glitch-click", -7)],
     "success": [("aio-07", -4), ("ui-granular-button-select-2", -3)],
 }
-fx, n = [], 0; turn = collections.Counter(); voice = {}; last = {}
+# the reference is sparing with effects (its flash cuts are silent, its typing is not): thin what the shots export.
+# Typing runs that follow each other within 0.2 s become one run; other kinds keep a minimum gap.
+GAP = {"tick": 0.3, "pop": 0.22, "slide": 0.3, "swish": 0.5, "sparkle": 0.5, "rise": 0.4}
+events, kept = [], {}
 for e in ev["sfx"]:
+    if e["kind"] == "type":
+        try: d = float(str(e.get("note", "0.7")).split()[0])
+        except ValueError: d = 0.7
+        prev = next((x for x in reversed(events) if x["kind"] == "type"), None)
+        if prev and e["t"] - (prev["t"] + prev["d"]) < 0.2: prev["d"] = e["t"] + d - prev["t"]; continue
+        events.append({**e, "d": d}); continue
+    if e["t"] - kept.get(e["kind"], -9) < GAP.get(e["kind"], 0): continue
+    kept[e["kind"]] = e["t"]; events.append(e)
+fx, n = [], 0; turn = collections.Counter(); voice = {}; last = {}
+for e in events:
     t, kind, pk = e["t"], e["kind"], e["pkg"]
     if kind == "type":       # a stretch of Karl's soft typing recording, as long as the typing run
-        try: d = max(0.25, min(4.0, float(str(e.get("note", "0.7")).split()[0])))
-        except ValueError: d = 0.7
+        d = max(0.25, min(4.0, e["d"]))
         i = f"kbt-type-{n}"; out = f"{LIB}/sfx/ticker/{i}.wav"
         if os.path.exists(out): os.remove(out)
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-stream_loop", "2", "-ss", str(0.08 + 0.3 * (n % 3)), "-i", os.path.join(SRC, idx["ui-typing"]["file"]), "-t", str(d), "-af", f"afade=t=in:d=0.015,afade=t=out:st={d - 0.07}:d=0.07", out], check=True)
         x = copy.deepcopy(idx["ui-typing"]); x.update(id=i, file=f"sfx/ticker/{i}.wav", length=d, sync=0.0, transients=[]); extra.append(x)
-        fx.append({"frame": round(t * 60), "id": i, "db": -5 + e.get("db", 0), "pitch": 0, "note": f"{pk} typing {d:.2f}s"}); n += 1; continue
+        fx.append({"frame": round(t * 60), "id": i, "db": 5 + e.get("db", 0), "pitch": 0, "note": f"{pk} typing {d:.2f}s"}); n += 1; continue
     if kind not in VOICE: continue
     if (pk, kind) not in voice: voice[(pk, kind)] = VOICE[kind][turn[kind] % len(VOICE[kind])]; turn[kind] += 1
     i, db = voice[(pk, kind)]; lt, lp = last.get((pk, kind), (-9, -1))
