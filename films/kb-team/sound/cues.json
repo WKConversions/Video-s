@@ -1,0 +1,17 @@
+{
+ "fps": 60,
+ "frames": 3003,
+ "library": "lib-kb",
+ "vo": {
+  "file": "vo_placed.wav",
+  "at": 0
+ },
+ "music": {
+  "file": "bed.wav",
+  "at": 0,
+  "fade_in": 0.2,
+  "fade_out": 0.6,
+  "duck_db": 6
+ },
+ "sfx": []
+}
