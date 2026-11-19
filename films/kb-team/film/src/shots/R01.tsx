@@ -69,8 +69,8 @@ const BY = [[26, 336], [30, 327], [34, 316], [35, 316]] as [number, number][];
 const BW = [[26, 444], [34, 506], [35, 506]] as [number, number][];
 const BH = [[26, 406], [34, 428], [35, 428]] as [number, number][];
 const Stack: React.FC<{ n: number }> = ({ n }) => {
-  if (n >= 36.5) return null;
-  const fadeOut = n < 36 ? 1 : 1 - step(n, 36, 36.5);
+  if (n >= 38.5) return null;
+  const fadeOut = n < 36 ? 1 : 1 - step(n, 36, 38.5);
   return (
     <>
       {SHEETS.map((s, i) => {
@@ -83,6 +83,11 @@ const Stack: React.FC<{ n: number }> = ({ n }) => {
           </div>
         );
       })}
+      {n >= 30 && (() => {
+        const w = kf(n, BW), h = kf(n, BH), cx = kf(n, BX) + w / 2, cy = kf(n, BY) + h / 2, p = kf(n, [[30, 0.22], [34, 0.8], [35, 0.84]]);
+        const ow = w * p * 0.95, oh = h * p * 0.62;
+        return <div style={{ position: "absolute", left: cx - ow / 2, top: cy - oh / 2, width: ow, height: oh, borderRadius: "50%", overflow: "hidden", opacity: fadeOut * kf(n, [[30, 0], [31.5, 1]]), WebkitMaskImage: "radial-gradient(ellipse at center, #000 62%, transparent 100%)", maskImage: "radial-gradient(ellipse at center, #000 62%, transparent 100%)" }}><RingsBG nn={n} /></div>;
+      })()}
     </>
   );
 };
@@ -92,7 +97,7 @@ const GW = 1336, GH = 831;
 const RingsBG: React.FC<{ nn: number }> = ({ nn }) => (
   <svg width="100%" height="100%" viewBox={`0 0 ${GW} ${GH}`} preserveAspectRatio="none" style={{ position: "absolute", inset: 0 }}>
     <defs>
-      <linearGradient id="kbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#4F7BFF" /><stop offset=".34" stopColor="#38C8FF" /><stop offset=".75" stopColor="#22C7A0" /><stop offset="1" stopColor="#22C7A0" /></linearGradient>
+      <linearGradient id="kbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#4F7BFF" /><stop offset=".28" stopColor="#38C8FF" /><stop offset=".75" stopColor="#22C7A0" /><stop offset="1" stopColor="#22C7A0" /></linearGradient>
       <radialGradient id="kvg" cx=".5" cy=".62" r=".75"><stop offset="0" stopColor="#fff" stopOpacity=".10" /><stop offset=".7" stopColor="#0A2A7A" stopOpacity="0" /><stop offset="1" stopColor="#0A2A7A" stopOpacity=".28" /></radialGradient>
       <filter id="kbl"><feGaussianBlur stdDeviation="6" /></filter>
     </defs>
@@ -162,20 +167,21 @@ const BOXK = {
   w: [[26, 444], [34, 506], [35, 506], [36, 591], [37, 944], [38, 1200], [39, 1254], [40, 1143], [41, 1212], [42, 1246], [45, 1313], [50, 1336]] as [number, number][],
   h: [[26, 406], [34, 428], [35, 428], [36, 410], [37, 438], [38, 550], [39, 693], [40, 718], [41, 759], [42, 780], [45, 818], [50, 831]] as [number, number][],
   r: [[35, 4], [36, 140], [37, 220], [38, 275], [39, 160], [40, 50], [41, 16], [42, 12]] as [number, number][],
-  d: [[35, 0], [36, 28], [37, 62], [38, 82], [39, 52], [40, 26], [41, 0]] as [number, number][],
+  d: [[35, 0], [36, 20], [37, 42], [38, 60], [39, 42], [40, 22], [41, 0]] as [number, number][],
 };
 const Screen: React.FC<{ n: number }> = ({ n }) => {
-  if (n < 29.8) return null;
+  if (n < 35) return null;
   const x = kf(n, BOXK.x), y = kf(n, BOXK.y), w = kf(n, BOXK.w), h = kf(n, BOXK.h), r = kf(n, BOXK.r), d = kf(n, BOXK.d);
-  const op = n < 34 ? kf(n, [[29.8, 0], [33.3, 1]]) : 1;
-  const rot = kf(n, [[30, -1.2], [35, -1.2], [36, 0]]);
+  const bgop = kf(n, [[35, 0], [36, 0.5], [38, 0.58], [40, 0.74], [41.5, 0.95], [42.5, 1]]);
+  const op = 1;
+  const rot = 0;
   const s = n < 41 ? kf(n, [[38, 0.6], [41, 0.907]]) : w / GW;
   const cx = w / 2, cy = h / 2;
-  const sh = n < 36 ? "0 10px 30px rgba(30,45,70,.22)" : `0 ${20 * cl((n - 36) / 6)}px ${60 * cl((n - 36) / 6) + 10}px rgba(20,60,110,.28)`;
+  const sh = `0 ${20 * cl((n - 36) / 6)}px ${60 * cl((n - 36) / 6) + 10}px rgba(20,60,110,${0.28 * bgop})`;
   return (
     <div style={{ position: "absolute", left: x, top: y, width: w, height: h, opacity: op, transform: `rotate(${rot}deg)`, willChange: "transform" }}>
-      <div style={{ position: "absolute", inset: 0, borderRadius: r, overflow: "hidden", boxShadow: sh, filter: d > 0.5 ? "url(#kliq)" : undefined, background: "#38C8FF" }}>
-        <RingsBG nn={n} />
+      <div style={{ position: "absolute", inset: 0, borderRadius: r, overflow: "hidden", boxShadow: sh, filter: d > 0.5 ? "url(#kliq)" : undefined }}>
+        <div style={{ position: "absolute", inset: 0, opacity: bgop }}><RingsBG nn={n} /></div>
         <div style={{ position: "absolute", left: cx - GW / 2 * s, top: cy - GH / 2 * s, width: GW, height: GH, transform: `scale(${s})`, transformOrigin: "0 0" }}><ScreenContent n={n} /></div>
       </div>
     </div>
@@ -196,7 +202,7 @@ const Liquid: React.FC<{ n: number }> = ({ n }) => {
   return (
     <svg width={0} height={0} style={{ position: "absolute" }}>
       <filter id="kliq" x="-15%" y="-25%" width="130%" height="150%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.011 0.018" numOctaves={2} seed={7} result="nz" />
+        <feTurbulence type="fractalNoise" baseFrequency="0.022 0.03" numOctaves={3} seed={7} result="nz" />
         <feDisplacementMap in="SourceGraphic" in2="nz" scale={d} xChannelSelector="R" yChannelSelector="G" />
       </filter>
     </svg>
