@@ -187,9 +187,9 @@ const Wire: React.FC<{ n: number }> = ({ n }) => {
       <div style={abs(1096, 197, 44, 44, { borderRadius: 22, border: `1.5px solid ${stroke}`, boxSizing: "border-box" })} />
       {label(300, "NEW LEAD", "01")}{label(488, "FOLLOW-UP", "02")}{label(700, "CRM UPDATED", "03")}
       <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "960px 563px", transform: `scale(${kf(n, [[375, 1], [379, 0.985], [382, 0.87], [383, 0.91]]).toFixed(4)}, ${kf(n, [[375, 1], [379, 1.025], [382, 0.983], [383, 1.068]]).toFixed(4)})`, willChange: "transform" }}>
-        <div style={abs(872, 327, 170, 172)}><Tl k="claude" w={170} h={172} r={0} style={{ background: "transparent" }} /></div>
-        <div style={abs(885, 500, 150, 210)}><Tl k="supabase" w={150} h={210} r={0} style={{ background: "transparent" }} /></div>
-        <div style={abs(915, 708, 90, 90)}><Tl k="pg" w={90} h={90} r={0} style={{ background: "transparent" }} /></div>
+        <div style={abs(810, 263, 300, 300)}><Tl k="claude" w={300} h={300} r={0} style={{ background: "transparent" }} /></div>
+        <div style={abs(790, 440, 340, 340)}><Tl k="supabase" w={340} h={340} r={0} style={{ background: "transparent" }} /></div>
+        <div style={abs(875, 668, 170, 170)}><Tl k="pg" w={170} h={170} r={0} style={{ background: "transparent" }} /></div>
       </div>
       <div style={abs(788, 846, 350, 42, { borderRadius: 21, border: `1.5px solid ${stroke}`, boxSizing: "border-box" })} />
     </AbsoluteFill>

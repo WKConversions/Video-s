@@ -181,7 +181,11 @@ const Tower: React.FC<{ t: number }> = ({ t }) => {
   const hk = [{ at: 0, x: TIP.x, y: TIP.y }, { at: at(794) - 0.11, x: TIP.x, y: TIP.y, click: true, early: 0.1 }];
   const h = handAt(t * 30, hk as any, { size: HSIZE, float: 0 });
   const px = kf(n, [[787, 1136], [788, 1065], [789, TIP.x], [793, TIP.x]]), py = kf(n, [[787, 752], [788, 696], [789, TIP.y], [793, TIP.y]]);
-  const hx = h.x + (px - TIP.x), hy = h.y + (py - TIP.y) + W;
+  // the fingertip stays on the arrow's own spot (px, py) in the world: the hover offset handAt builds into a click
+  // key is taken out again, so the tip rests on (1017, 601) and stays on the same spot of the button until it leaves
+  const hr = handAt(at(794) + 5, hk as any, { size: HSIZE, float: 0 });
+  const shx = TIP.x - hr.x, shy = TIP.y - hr.y;
+  const hx = px - shx * h.press, hy = py - shy * h.press;
   const fade = n >= 810 - EPS ? 1 : kf(n, [[797, 0], [809, 0.28]]);
   return (
     <AbsoluteFill style={{ fontFamily: F, overflow: "hidden", background: "#F3F3F3" }}>
@@ -205,7 +209,7 @@ const Tower: React.FC<{ t: number }> = ({ t }) => {
           <svg width="150" height="150" viewBox="0 0 24 24"><path d="M12 19V6M6.2 11.8L12 6l5.8 5.8" fill="none" stroke={arrowC} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
         </div>
         <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, pointerEvents: "none" }}>
-          <Hand x={hx - W} y={hy - W} tiltX={h.tiltX} tiltY={h.tiltY} rot={h.rot} press={h.press} size={HSIZE} />
+          <Hand x={hx} y={hy} tiltX={h.tiltX} tiltY={h.tiltY} rot={h.rot} press={h.press} size={HSIZE} />
         </div>
       </div>
     </AbsoluteFill>
