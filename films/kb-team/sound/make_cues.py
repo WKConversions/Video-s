@@ -40,7 +40,7 @@ VOICE = {
 # the reference is sparing with effects (its flash cuts are silent, its typing is not): thin what the shots export.
 # Typing runs that follow each other within 0.2 s become one run; other kinds keep a minimum gap, except events a shot
 # marks "keep" (the ranking row's five hops: the reference rattles there, one tick per hop).
-GAP = {"tick": 0.3, "pop": 0.22, "slide": 0.3, "swish": 0.5, "sparkle": 0.5, "rise": 0.4}
+GAP = {"tick": 0.5, "pop": 0.42, "slide": 0.5, "swish": 0.75, "sparkle": 0.6, "rise": 0.5}
 events, kept = [], {}
 for e in ev["sfx"]:
     if e["kind"] == "type":
@@ -60,7 +60,7 @@ for e in events:
         if os.path.exists(out): os.remove(out)
         subprocess.run(["ffmpeg", "-v", "error", "-y", "-stream_loop", "2", "-ss", str(0.08 + 0.3 * (n % 3)), "-i", os.path.join(SRC, idx["ui-typing"]["file"]), "-t", str(d), "-af", f"afade=t=in:d=0.015,afade=t=out:st={d - 0.07}:d=0.07", out], check=True)
         x = copy.deepcopy(idx["ui-typing"]); x.update(id=i, file=f"sfx/ticker/{i}.wav", length=d, sync=0.0, transients=[]); extra.append(x)
-        fx.append({"frame": round(t * 60), "id": i, "db": 5 + e.get("db", 0), "pitch": 0, "note": f"{pk} typing {d:.2f}s"}); n += 1; continue
+        fx.append({"frame": round(t * 60), "id": i, "db": 3 + e.get("db", 0), "pitch": 0, "note": f"{pk} typing {d:.2f}s"}); n += 1; continue
     if kind not in VOICE: continue
     if (pk, kind) not in voice: voice[(pk, kind)] = VOICE[kind][turn[kind] % len(VOICE[kind])]; turn[kind] += 1
     i, db = voice[(pk, kind)]; lt, lp = last.get((pk, kind), (-9, -1))

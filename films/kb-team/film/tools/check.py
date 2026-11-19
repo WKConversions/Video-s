@@ -24,10 +24,13 @@ from PIL import Image, ImageDraw, ImageFont
 HERE = os.path.dirname(os.path.abspath(__file__)); FILM = os.path.join(HERE, ".."); ROOT = os.path.join(FILM, "..")
 REF = os.path.join(ROOT, "reference", "frames"); SHOTS = json.load(open(os.path.join(ROOT, "plan", "shots.json")))
 def arg(name, default): return type(default)(sys.argv[sys.argv.index(name) + 1]) if name in sys.argv else default
-pid = sys.argv[1]; pk = SHOTS[pid]; f0, f1 = pk["f0"], pk["f1"]; total = round((f1 + 1 - f0) * 2.5)
+pid = sys.argv[1]; pk = SHOTS[pid]; f0, f1 = pk["f0"], pk["f1"]
+film = lambda n: math.ceil(n * 2.5 - 1e-9)          # the film frame on which reference frame n starts (or the first after it)
+total = film(f1 + 1) - film(f0)
 out = os.path.join(FILM, "out", "chk"); seq = os.path.join(out, pid); os.makedirs(out, exist_ok=True)
-# our frame for reference frame n: the first film frame at or after the moment the reference frame starts
-loc = lambda n: min(math.ceil((n - f0) * 2.5 - 1e-9), total - 1)
+# our frame for reference frame n: the first FILM frame at or after the moment the reference frame starts, counted from
+# the package's first film frame (the package entry renders exactly the film's frames of this package)
+loc = lambda n: min(film(n) - film(f0), total - 1)
 
 if "--no-render" not in sys.argv:
     shutil.rmtree(seq, ignore_errors=True)

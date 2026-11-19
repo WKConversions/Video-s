@@ -7,7 +7,7 @@
 import React from "react";
 import { AbsoluteFill, Img, staticFile } from "remotion";
 import type { Pkg, Sfx } from "../types";
-import { C, F, Footage, ROLE, abs, clamp, kf, refN, useFonts } from "../kit";
+import { C, F, Footage, Glyph, ROLE, abs, clamp, kf, refN, useFonts } from "../kit";
 
 const F0 = 93;
 const nf = (n: number) => (n - F0) / 24;           // local seconds of a reference frame
@@ -27,7 +27,7 @@ const box = (n: number, ch: Ch[]): Box => {
 const val = (n: number, ch: [number, number][]) => kf(n, ch.flatMap(([f, v], i) => (i > 0 ? [[f - 1, ch[i - 1][1]], [f, v]] : [[f, v]]) as [number, number][]));
 
 // ---- the cards (photo boxes, 1920 x 1080)
-type Card = { id: string; who: string | [number, string][]; ch: Ch[]; from: number; to: number; cap?: number; ghost?: boolean; pop?: number };
+type Card = { id: string; who: string | [number, string][]; ch: Ch[]; from: number; to: number; cap?: number; ghost?: boolean; glyph?: [number, string]; pop?: number };
 const CARDS: Card[] = [
   { id: "robin", who: [[0, "robin"], [141, "youri"]], from: 0, to: 144, cap: 1.0, ch: [
     [93, [1269, 286, 291, 361]], [95, [1315, 286, 291, 361]], [100, [1339, 219, 207, 258]], [130, [966, 259, 195, 243]], [132, [966, 252, 195, 250]],
@@ -42,11 +42,11 @@ const CARDS: Card[] = [
   { id: "karl", who: "karl", from: 104, to: 146, cap: 1, pop: 104, ch: [
     [105, [1422, 1090, 189, 205]], [106, [1422, 970, 189, 205]], [110, [1422, 895, 189, 205]], [126, [1402, 895, 189, 205]], [128, [1282, 895, 187, 205]], [130, [1222, 637, 189, 205]], [131, [1222, 589, 189, 205]],
     [133, [1192, 465, 192, 192]], [137, [1191, 441, 193, 193]], [139, [1176, 448, 180, 180]], [142, [1122, 471, 134, 135]]] },
-  { id: "cedric", who: "cedric", from: 0, to: 133, cap: 1, ghost: true, ch: [
+  { id: "cedric", who: "cedric", from: 0, to: 133, cap: 1, ghost: true, glyph: [0, "#ABE0F7"], ch: [
     [93, [1107, -45, 214, 262]], [96, [1125, -45, 214, 262]], [132, [1117, -32, 214, 262]]] },
-  { id: "gl", who: "youri", from: 0, to: 133, ghost: true, ch: [
+  { id: "gl", who: "youri", from: 0, to: 133, ghost: true, glyph: [3, "#BCC6F5"], ch: [
     [93, [-78, 480, 190, 213]], [96, [-63, 480, 190, 213]], [128, [-51, 480, 190, 213]], [131, [25, 480, 205, 213]]] },
-  { id: "gr", who: "karl", from: 0, to: 133, cap: 1, ghost: true, ch: [
+  { id: "gr", who: "karl", from: 0, to: 133, cap: 1, ghost: true, glyph: [4, "#B0E6D5"], ch: [
     [93, [1720, 565, 250, 220]], [96, [1729, 565, 250, 220]], [125, [1701, 565, 250, 220]], [128, [1693, 565, 250, 220]], [131, [1614, 565, 256, 220]]] },
 ];
 const BW = 300, BH = 360;                        // the window the layer is built for
@@ -67,10 +67,14 @@ const CardView: React.FC<{ c: Card; n: number }> = ({ c, n }) => {
   const ghost = c.ghost;
   return (
     <>
-      <div style={{ position: "absolute", left: 0, top: 0, width: LW, height: LH, transformOrigin: `${WCX}px ${WCY}px`, transform: `translate3d(${(cx - WCX).toFixed(2)}px, ${(cy - WCY).toFixed(2)}px, 0) scale(${s.toFixed(4)})`, clipPath: `inset(${insetT.toFixed(2)}px ${insetR.toFixed(2)}px ${insetB.toFixed(2)}px ${insetL.toFixed(2)}px round ${(3 / s).toFixed(2)}px)`, opacity: clamp(p * 2.2) * fade * (ghost ? 0.5 : 1), willChange: "transform", filter: ghost ? "blur(1.6px) grayscale(.5) contrast(.8) brightness(1.1)" : undefined }}>
-        <Img src={staticFile(`team/${who}.jpg`)} style={{ width: LW, height: LH, objectFit: "cover", objectPosition: "50% 14%" }} />
+      <div style={{ position: "absolute", left: 0, top: 0, width: LW, height: LH, transformOrigin: `${WCX}px ${WCY}px`, transform: `translate3d(${(cx - WCX).toFixed(2)}px, ${(cy - WCY).toFixed(2)}px, 0) scale(${s.toFixed(4)})`, clipPath: `inset(${insetT.toFixed(2)}px ${insetR.toFixed(2)}px ${insetB.toFixed(2)}px ${insetL.toFixed(2)}px round ${(3 / s).toFixed(2)}px)`, opacity: clamp(p * 2.2) * fade * (ghost ? (c.glyph ? 0.85 : 0.5) : 1), willChange: "transform", filter: ghost && !c.glyph ? "blur(1.6px) grayscale(.5) contrast(.8) brightness(1.1)" : undefined }}>
+        {c.glyph ? (
+          <div style={{ width: LW, height: LH, background: c.glyph[1], position: "relative" }}>
+            <div style={{ position: "absolute", left: WCX - 70, top: WCY - 70 }}><Glyph k={c.glyph[0]} s={140} c="rgba(41,58,81,.22)" /></div>
+          </div>
+        ) : <Img src={staticFile(`team/${who}.jpg`)} style={{ width: LW, height: LH, objectFit: "cover", objectPosition: "50% 14%" }} />}
       </div>
-      {c.cap && n < 133 && (
+      {c.cap && !c.glyph && n < 133 && (
         <div style={{ position: "absolute", left: 0, top: 0, transform: `translate3d(${(x + 4).toFixed(2)}px, ${(y + h + 13).toFixed(2)}px, 0)`, fontSize: 19, fontWeight: 500, letterSpacing: -0.2, color: C.sub, display: "flex", alignItems: "center", gap: 8, whiteSpace: "nowrap", opacity: clamp(p * 2.2) * fade * (ghost ? 0.55 : 1), willChange: "transform" }}>
           <span style={{ width: 10, height: 10, borderRadius: 5, background: C.cyan }} />{ROLE[who]}
         </div>

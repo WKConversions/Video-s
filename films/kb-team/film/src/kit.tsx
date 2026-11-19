@@ -13,14 +13,27 @@ export const F = "Montserrat, sans-serif";
 export const SH = "0 30px 70px rgba(41,58,81,.16), 0 4px 14px rgba(41,58,81,.08)";
 export const FACES = [["Montserrat", "montserrat-var-latin.woff2", "100 900"], ["Montserrat", "montserrat-var-latin-ext.woff2", "100 900"], ["Copperplate CC", "copperplate-cc-heavy.otf", "800"], ["Caveat", "caveat-var.ttf", "400 700"]];
 // "Caveat" (SIL Open Font License) is the handwriting for sketches and pencilled notes: fontFamily: "Caveat", weight 400-700.
+// Fonts load once per browser tab. A package that mounts later (the film switches package components at every package
+// boundary) finds them ready and draws its real picture in the same commit as the frame change: no fallback frame, and
+// its footage registers its own delayRender before the frame can be captured. On the very first mount the render is
+// held until the fonts are in AND the real picture has been committed (the handle is released in an effect that runs
+// after that commit, when the children's own handles exist). Releasing it straight after setOk let the renderer catch
+// the frame between the two: a filmed shot's first frame came out black under its text.
+let fontsReady = false;
 export const useFonts = () => {
-  const [ok, setOk] = useState(false); const [h] = useState(() => delayRender("fonts"));
+  const [ok, setOk] = useState(fontsReady);
+  const [h] = useState<number | null>(() => (fontsReady ? null : delayRender("fonts")));
   useEffect(() => {
-    const el = document.createElement("style");
-    el.textContent = FACES.map(([f, file, w]) => `@font-face{font-family:'${f}';src:url(${staticFile("fonts/" + file)});font-weight:${w}}`).join("\n");
-    document.head.appendChild(el);
-    Promise.all([...[400, 500, 600, 700].map((w) => document.fonts.load(`${w} 60px Montserrat`)), document.fonts.load("500 60px Caveat"), document.fonts.load("700 60px Caveat")]).then(() => { setOk(true); continueRender(h); });
-  }, [h]);
+    if (fontsReady) { setOk(true); return; }
+    if (!document.getElementById("kb-faces")) {
+      const el = document.createElement("style"); el.id = "kb-faces";
+      el.textContent = FACES.map(([f, file, w]) => `@font-face{font-family:'${f}';src:url(${staticFile("fonts/" + file)});font-weight:${w}}`).join("\n");
+      document.head.appendChild(el);
+    }
+    Promise.all([...[400, 500, 600, 700].map((w) => document.fonts.load(`${w} 60px Montserrat`)), document.fonts.load("500 60px Caveat"), document.fonts.load("700 60px Caveat")]).then(() => { fontsReady = true; setOk(true); });
+  }, []);
+  useEffect(() => { if (ok && h !== null) continueRender(h); }, [ok, h]);
+  useEffect(() => () => { if (h !== null) continueRender(h); }, [h]);   // never leave a render waiting if it unmounts first
   return ok;
 };
 export type P = React.CSSProperties;

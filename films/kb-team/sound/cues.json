@@ -29,13 +29,6 @@
    "note": "R01 tick: a portrait is dealt"
   },
   {
-   "frame": 65,
-   "id": "v4-type-delete",
-   "db": -13,
-   "pitch": 1,
-   "note": "R01 tick: a portrait is dealt"
-  },
-  {
    "frame": 90,
    "id": "aio-06",
    "db": -3,
@@ -62,13 +55,6 @@
    "db": -5,
    "pitch": 0,
    "note": "R01 pop: the bar lights"
-  },
-  {
-   "frame": 188,
-   "id": "v4-type-delete",
-   "db": -3,
-   "pitch": 1,
-   "note": "R01 tick: cut to the team card"
   },
   {
    "frame": 213,
@@ -141,23 +127,23 @@
    "note": "R03 tick: flash cut F1"
   },
   {
-   "frame": 490,
+   "frame": 500,
    "id": "ui-click-digital-03",
    "db": -4,
    "pitch": 1,
-   "note": "R03 tick: flash cut F3"
+   "note": "R03 tick: flash cut F4"
   },
   {
    "frame": 548,
    "id": "kbt-type-0",
-   "db": 5,
+   "db": 3,
    "pitch": 0,
    "note": "R03 typing 1.33s"
   },
   {
    "frame": 640,
    "id": "kbt-type-1",
-   "db": 5,
+   "db": 3,
    "pitch": 0,
    "note": "R03 typing 1.18s"
   },
@@ -174,13 +160,6 @@
    "db": -3,
    "pitch": 0,
    "note": "R04 tick: glyph 1"
-  },
-  {
-   "frame": 758,
-   "id": "v4-type-delete",
-   "db": -3,
-   "pitch": 1,
-   "note": "R04 tick: glyph 3"
   },
   {
    "frame": 768,
@@ -202,13 +181,6 @@
    "db": -4,
    "pitch": 1,
    "note": "R04 pop: the card pops"
-  },
-  {
-   "frame": 818,
-   "id": "ui-stretch",
-   "db": -10,
-   "pitch": 0,
-   "note": "R04 swish: the wall shrinks away"
   },
   {
    "frame": 858,
@@ -246,37 +218,30 @@
    "note": "R05 tick: flash cut"
   },
   {
-   "frame": 982,
+   "frame": 998,
    "id": "aio-09",
    "db": -4,
    "pitch": 1,
    "note": "R05 tick: flash cut"
   },
   {
-   "frame": 1005,
+   "frame": 1028,
    "id": "aio-09",
    "db": -4,
    "pitch": 2,
    "note": "R05 tick: flash cut"
   },
   {
-   "frame": 1028,
-   "id": "aio-09",
-   "db": -4,
-   "pitch": 3,
-   "note": "R05 tick: flash cut"
-  },
-  {
    "frame": 1050,
    "id": "kbt-type-2",
-   "db": 5,
+   "db": 3,
    "pitch": 0,
    "note": "R05 typing 1.07s"
   },
   {
    "frame": 1130,
    "id": "kbt-type-3",
-   "db": 5,
+   "db": 3,
    "pitch": 0,
    "note": "R05 typing 0.45s"
   },
@@ -288,18 +253,11 @@
    "note": "R06 pop: the ? circle appears"
   },
   {
-   "frame": 1212,
+   "frame": 1222,
    "id": "aio-02",
    "db": -10,
    "pitch": 1,
-   "note": "R06 pop: a result arrives (1)"
-  },
-  {
-   "frame": 1227,
-   "id": "aio-02",
-   "db": -10,
-   "pitch": 2,
-   "note": "R06 pop: a result arrives (4)"
+   "note": "R06 pop: a result arrives (3)"
   },
   {
    "frame": 1230,
@@ -372,11 +330,11 @@
    "note": "R07 pop: attachment 1 has loaded"
   },
   {
-   "frame": 1497,
+   "frame": 1503,
    "id": "ui-button",
    "db": -5,
    "pitch": 1,
-   "note": "R07 pop: attachment 2 has loaded"
+   "note": "R07 pop: attachment 4 has loaded"
   },
   {
    "frame": 1515,
@@ -409,7 +367,7 @@
   {
    "frame": 1662,
    "id": "kbt-type-4",
-   "db": 5,
+   "db": 3,
    "pitch": 0,
    "note": "R08 typing 0.25s"
   },
@@ -426,13 +384,6 @@
    "db": -4,
    "pitch": 0,
    "note": "R08 pop: Booking flow added"
-  },
-  {
-   "frame": 1725,
-   "id": "aio-00",
-   "db": -4,
-   "pitch": 1,
-   "note": "R08 pop: Payments connected"
   },
   {
    "frame": 1748,
@@ -478,13 +429,6 @@
   },
   {
    "frame": 2025,
-   "id": "ui-granular-button-select",
-   "db": -4,
-   "pitch": 1,
-   "note": "R09 pop: the chart pops in"
-  },
-  {
-   "frame": 2025,
    "id": "ui-open",
    "db": -7,
    "pitch": 0,
@@ -494,7 +438,7 @@
    "frame": 2048,
    "id": "ui-granular-button-select",
    "db": -4,
-   "pitch": 2,
+   "pitch": 1,
    "note": "R09 pop: the next card, at the top edge"
   },
   {
@@ -570,7 +514,7 @@
   {
    "frame": 2256,
    "id": "kbt-type-5",
-   "db": 5,
+   "db": 3,
    "pitch": 0,
    "note": "R10 typing 1.20s"
   },
@@ -603,30 +547,23 @@
    "note": "R11 pop: check row 1 lands"
   },
   {
-   "frame": 2433,
-   "id": "ui-button",
-   "db": -13,
-   "pitch": 1,
-   "note": "R11 pop: check row 3 lands"
-  },
-  {
    "frame": 2468,
    "id": "kbt-type-6",
-   "db": 5,
+   "db": 3,
    "pitch": 0,
    "note": "R11 typing 0.70s"
   },
   {
    "frame": 2537,
    "id": "kbt-type-7",
-   "db": 5,
+   "db": 3,
    "pitch": 0,
    "note": "R11 typing 0.42s"
   },
   {
    "frame": 2578,
    "id": "kbt-type-8",
-   "db": 5,
+   "db": 3,
    "pitch": 0,
    "note": "R11 typing 0.25s"
   },
@@ -640,7 +577,7 @@
   {
    "frame": 2722,
    "id": "kbt-type-9",
-   "db": 5,
+   "db": 3,
    "pitch": 0,
    "note": "R12 typing 0.97s"
   },
