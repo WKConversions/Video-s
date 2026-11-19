@@ -38,7 +38,7 @@ const agRect = (i: number, n: number): R3 | null => {
   }
 };
 const APPEAR = [835, 0, 839, 839, 840, 0];
-const popAt = (n: number, n0: number) => (n0 <= 0 ? 1 : clamp((n - n0) / 1.0));
+const popAt = (n: number, n0: number) => (n0 <= 0 ? 1 : clamp(0.55 + (n - n0) / 0.9 * 0.45));
 
 const Label: React.FC<{ i: number; x: number; y: number; col: string; sub: string; w?: number; o?: number }> = ({ i, x, y, col, sub, w = 126, o = 1 }) => (
   <div style={A(x, y, w, 30, { opacity: o })}>
@@ -68,14 +68,15 @@ export const WinScene: React.FC<{ n: number }> = ({ n }) => {
   const glow = kf(n, [[833, 1], [834, 0.45], [835, 0.14], [838, 0]]);
   // ----- the window outline and chrome
   const frameO = kf(n, [[843, 0], [844, 1]]);
+  const chromeO = ghost ? kf(n, [[843, 0], [844, 1]]) : 1;
   const inset = bold ? kf(n, [[871, 5], [872, 3], [873, 0]]) : 0;
   const knob = kf(n, [[847, 445], [870, 468]]);
   // ----- the big picture (now playing): in the grid it is 251,163; from f866 it grows over the whole window
-  const pL = n < 866 ? 251 : kf(n, [[866, 251], [867, 240], [869, 226], [870, 224]]);
+  const pL = n < 838 ? kf(n, [[837, 310], [838, 251]]) : n < 866 ? 251 : kf(n, [[866, 251], [867, 240], [869, 226], [870, 224]]);
   const pT = n < 866 ? 163 : kf(n, [[866, 163], [867, 150], [869, 112], [870, 100]]);
-  const pR = n < 866 ? 618 : kf(n, [[866, 618], [867, 760], [869, 880], [870, 1055]]);
-  const pB = n < 866 ? (n < 847 ? 465 : 492) : kf(n, [[866, 492], [867, 500], [869, 582], [870, 620]]);
-  const leafO = n < 836 ? 0 : clamp((n - 836) / 1);
+  const pR = n < 838 ? 640 : n < 866 ? 618 : kf(n, [[866, 618], [867, 760], [869, 880], [870, 1055]]);
+  const pB = n < 866 ? (n < 838 ? 448 : n < 847 ? 465 : 492) : kf(n, [[866, 492], [867, 500], [869, 582], [870, 620]]);
+  const leafO = n < 836 ? 0 : clamp(0.55 + (n - 836) / 0.9 * 0.45);
   const dim = ghost ? "rgba(255,255,255,.36)" : "#1d1d1d";
   const dimSub = ghost ? "rgba(255,255,255,.28)" : "#6d6a65";
   const bg = "#E6E3DD";
@@ -90,7 +91,7 @@ export const WinScene: React.FC<{ n: number }> = ({ n }) => {
   return (
     <AbsoluteFill style={{ background: "#020202", overflow: "hidden" }}>
       <div style={{ position: "absolute", inset: 0, background: `radial-gradient(70% 55% at 50% 108%, rgba(112,84,176,${glow.toFixed(3)}), rgba(60,70,120,${(glow * 0.45).toFixed(3)}) 55%, transparent 100%)` }} />
-      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(60% 40% at 50% 100%, rgba(20,60,50,.45), transparent 100%)", opacity: n < 836 ? kf(n, [[834, 0.2], [835, 1], [836, 0.3]]) : 0.25 }} />
+      <div style={{ position: "absolute", inset: 0, background: "radial-gradient(60% 40% at 50% 100%, rgba(20,60,50,.45), transparent 100%)", opacity: kf(n, [[834, 0.2], [835, 1], [838, 0.7], [842, 0.35], [847, 0.12]]) }} />
       <KBmark />
       <div style={{ position: "absolute", inset: 0, transformOrigin: "960px 540px", transform: `scale(${endS.toFixed(4)})`, willChange: "transform" }}>
         <Px>
@@ -121,8 +122,10 @@ export const WinScene: React.FC<{ n: number }> = ({ n }) => {
               {n >= 866 && <div style={A(pL + 8, pT + 8, 60, 10, { color: "#fff", fontSize: 8, fontWeight: 500 })}>Today</div>}
               {!ghost && <div style={A(596, 168, 20, 10, { color: "#fff", fontSize: 10, fontWeight: 700, letterSpacing: 1 })}>···</div>}
               {!ghost && <Header fg="#1d1d1d" pill="#CFD6D2" pillActive="#B7C4C1" avatarBg={C.ink} />}
+              <div style={{ opacity: chromeO }}>
               <div style={A(630, 164, 200, 18, { fontSize: 13, fontWeight: 500, color: dim, letterSpacing: -0.2 })}>What K.B runs</div>
               <div style={A(990, 171, 40, 12, { fontSize: 8.5, fontWeight: 500, color: dim, textAlign: "right", width: 32, left: 990 })}>Show all</div>
+              </div>
               {/* the cards */}
               {CARDS.map((c, i) => {
                 const r = n < 847 ? agRect(i, n) : { x: c.cx, y: c.cy, w: 126 };
@@ -145,6 +148,7 @@ export const WinScene: React.FC<{ n: number }> = ({ n }) => {
                 return <Label key={i} i={i} x={lx} y={ly} col={dim} sub={dimSub} o={o} />;
               })}
               {/* now-playing block */}
+              <div style={{ opacity: chromeO }}>
               <div style={A(250, 505, 300, 22, { fontSize: 17, fontWeight: 500, color: dim, letterSpacing: -0.5 })}>Your product</div>
               <div style={A(250, 527, 200, 12, { fontSize: 8.5, fontWeight: 500, color: dimSub })}>✻&nbsp; K.B team</div>
               <div style={A(600, 503, 12, 12, { color: dimSub })}><IcoHeart s={11} fill={dimSub} /></div>
@@ -159,13 +163,14 @@ export const WinScene: React.FC<{ n: number }> = ({ n }) => {
                 <div style={A(knob - 288 - 6, -4, 12, 12, { borderRadius: 6, background: ghost ? "rgba(220,220,220,.45)" : "#222" })} />
               </div>
               <div style={A(1006, 580, 30, 10, { fontSize: 8, color: dimSub, fontWeight: 500 })}>5:00</div>
+              </div>
             </>
           )}
 
           {/* ---- the bolder window: the picture fills it */}
           {bold && (
             <>
-              <div style={A(224 + inset, 100 + inset, 831 - 2 * inset, 520 - 2 * inset, { overflow: "hidden" })}><Pic k="bloom" /></div>
+              <div style={A(224 + inset, 100 + inset, 831 - 2 * inset, 520 - 2 * inset, { overflow: "hidden" })}><Pic k="bloom" g={kf(n, [[871, 0.58], [873, 0.6], [875, 0.7], [879, 0.88], [882, 0.98], [884, 1]])} /></div>
               <Header fg="#f6f4fa" pill="rgba(235,240,238,.62)" pillActive="rgba(255,255,255,.75)" avatarBg="#6b5aa8" />
               <div style={A(253, 114, 0, 0, {})} />
               <div style={A(255, 400, 300, 44, { fontSize: 33, fontWeight: 500, color: "#fff", letterSpacing: -1, whiteSpace: "nowrap", textShadow: "0 1px 12px rgba(40,30,90,.25)" })}>Your product</div>

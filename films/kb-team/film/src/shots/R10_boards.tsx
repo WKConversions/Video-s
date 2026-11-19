@@ -112,8 +112,8 @@ export const BoardAI: React.FC<{ n: number }> = ({ n }) => {
           <div style={A(16, 475, 40, 40, { borderRadius: 20, background: IND, color: "#fff", fontSize: 15, fontWeight: 600, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 2px 8px rgba(0,0,0,.2)" })}>1</div>
           <div style={A(305, 564, 40, 40, { borderRadius: 20, background: IND, color: "#fff", fontSize: 15, fontWeight: 600, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 2px 8px rgba(0,0,0,.2)" })}>2</div>
           <div style={A(679, 407, 640, 340, { background: "#0b1030", overflow: "hidden" })}>
-            <Img src={staticFile("stills/F1-1.jpg")} style={A(-60, -20, 760, 420, { objectFit: "cover", filter: "saturate(.9) contrast(1.15) brightness(.78)" })} />
-            <div style={A(0, 0, 640, 340, { background: "linear-gradient(100deg, rgba(10,20,120,.65), rgba(40,60,220,.35) 60%, rgba(10,14,50,.55))", mixBlendMode: "multiply" })} />
+            <Img src={staticFile("stills/F1-1.jpg")} style={A(-60, -20, 760, 420, { objectFit: "cover", filter: "saturate(.9) contrast(1.15) brightness(1.0)" })} />
+            <div style={A(0, 0, 640, 340, { background: "linear-gradient(100deg, rgba(10,30,170,.45), rgba(40,80,255,.3) 60%, rgba(10,14,60,.4))", mixBlendMode: "multiply" })} />
             <div style={A(0, 0, 640, 340, { background: "radial-gradient(60% 70% at 25% 20%, rgba(70,110,255,.55), transparent 70%)", mixBlendMode: "screen" })} />
           </div>
           {/* the dashed link and the cursors */}
@@ -176,14 +176,13 @@ export const BoardAJ: React.FC<{ n: number }> = ({ n }) => {
             </div>
           ))}
           {/* top centre: four number cards */}
-          <div style={A(400, -30, 148, 40, { background: Dk, borderRadius: 12 })} />
-          <div style={A(398, -6, 150, 22, { background: Dk2, borderRadius: 11 })}><div style={A(56, 2, 46, 18, { background: "#fff", borderRadius: 9, color: "#111", fontSize: 8.5, fontWeight: 600, textAlign: "center", lineHeight: "18px" })}>Month</div></div>
+          <div style={A(398, -10, 150, 22, { background: Dk2, borderRadius: 11 })}><div style={A(56, 2, 46, 18, { background: "#fff", borderRadius: 9, color: "#111", fontSize: 8.5, fontWeight: 600, textAlign: "center", lineHeight: "18px" })}>Month</div></div>
           {[["BOOKINGS", "This week", "248", "#C3B4F7"], ["SHOW-UP", "Guests", "92%", "#E8582B"], ["RATING", "Reviews", "4.8", "#4A7BF5"], ["VISITORS", "Last month", "+38%", "#F5E22E"]].map(([lab, ti, v, col], k) => (
-            <div key={lab} style={A(399 + k * 143.5, 12, 139, 148, { background: col, borderRadius: 14 })}>
-              <div style={A(12, 22, 120, 10, { fontSize: 8, fontWeight: 500, color: "rgba(20,20,40,.7)", letterSpacing: 0.3 })}>{lab}</div>
-              <div style={A(12, 38, 124, 16, { fontSize: 13, fontWeight: 500, color: "#14142a", letterSpacing: -0.3 })}>{ti}</div>
-              <div style={A(12, 62, 16, 16, { borderRadius: 8, background: k === 1 ? "rgba(20,20,40,.35)" : "rgba(20,20,40,.55)" })}><div style={{ position: "absolute", left: 5, top: 4 }}><IcoPlay s={7} c="#fff" /></div></div>
-              <div style={A(12, 86, 124, 50, { fontSize: 30, fontWeight: 500, color: "#14142a", letterSpacing: -1 })}>{v}</div>
+            <div key={lab} style={A(399 + k * 143.5, 22, 139, 138, { background: col, borderRadius: 14 })}>
+              <div style={A(12, 14, 120, 10, { fontSize: 8, fontWeight: 500, color: "rgba(20,20,40,.7)", letterSpacing: 0.3 })}>{lab}</div>
+              <div style={A(12, 31, 124, 16, { fontSize: 13, fontWeight: 500, color: "#14142a", letterSpacing: -0.3 })}>{ti}</div>
+              <div style={A(12, 54, 16, 16, { borderRadius: 8, background: k === 1 ? "rgba(20,20,40,.35)" : "rgba(20,20,40,.55)" })}><div style={{ position: "absolute", left: 5, top: 4 }}><IcoPlay s={7} c="#fff" /></div></div>
+              <div style={A(12, 76, 124, 50, { fontSize: 30, fontWeight: 500, color: "#14142a", letterSpacing: -1 })}>{v}</div>
             </div>
           ))}
           {/* top right: the weekly bars and the note */}

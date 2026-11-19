@@ -10,26 +10,26 @@ const INK = "#16202E";
 const A = (x: number, y: number, w?: number, h?: number, more: React.CSSProperties = {}): React.CSSProperties => ({ position: "absolute", left: x, top: y, width: w, height: h, ...more });
 
 // colours of the notes (K.B palette)
-const NOTE = { lav: "#B3AAF7", cor: "#FF7A66", cyan: "#38C8FF", amb: "#FFC83D", pink: "#EE7AC5" };
+const NOTE = { lav: "#7C6CFF", cor: "#FF7A66", cyan: "#4F7BFF", amb: "#FFB547", pink: "#22C7A0" };
 // [layer x at f484, y, w, label, colour, first frame, pill?]
 type Note = { x: number; y: number; w: number; label: string; c: string; n0: number; fade?: boolean };
 const NOTES: Note[] = [
-  { x: 353, y: 292, w: 46, label: "1", c: NOTE.lav, n0: 0 },
-  { x: 427, y: 292, w: 139, label: "AI answer", c: NOTE.lav, n0: 0 },
-  { x: 578, y: 261, w: 46, label: "2", c: NOTE.cor, n0: 0 },
-  { x: 635, y: 232, w: 47, label: "3", c: NOTE.cyan, n0: 0 },
-  { x: 692, y: 232, w: 47, label: "4", c: NOTE.cyan, n0: 0 },
-  { x: 807, y: 232, w: 139, label: "AI answer", c: NOTE.cyan, n0: 485, fade: true },
+  { x: 353, y: 292, w: 46, label: "", c: NOTE.lav, n0: 0 },
+  { x: 427, y: 292, w: 139, label: "", c: NOTE.lav, n0: 0 },
+  { x: 578, y: 261, w: 46, label: "", c: NOTE.cor, n0: 0 },
+  { x: 635, y: 232, w: 47, label: "", c: NOTE.cyan, n0: 0 },
+  { x: 692, y: 232, w: 47, label: "", c: NOTE.cyan, n0: 0 },
+  { x: 807, y: 232, w: 139, label: "Your business", c: NOTE.cyan, n0: 485, fade: true },
   { x: 957, y: 261, w: 46, label: "5", c: NOTE.cor, n0: 487 },
-  { x: 1015, y: 292, w: 46, label: "6", c: NOTE.lav, n0: 489 },
-  { x: 1072, y: 320, w: 47, label: "7", c: NOTE.amb, n0: 491 },
-  { x: 1130, y: 348, w: 46, label: "8", c: NOTE.pink, n0: 492 },
-  { x: 1187, y: 320, w: 93, label: "AI answer", c: NOTE.amb, n0: 493 },
-  { x: 1291, y: 320, w: 93, label: "AI answer", c: NOTE.amb, n0: 0 },
+  { x: 1015, y: 292, w: 46, label: "4", c: NOTE.lav, n0: 489 },
+  { x: 1072, y: 320, w: 47, label: "3", c: NOTE.amb, n0: 491 },
+  { x: 1130, y: 348, w: 46, label: "2", c: NOTE.pink, n0: 492 },
+  { x: 1187, y: 320, w: 93, label: "", c: NOTE.amb, n0: 493 },
+  { x: 1291, y: 320, w: 93, label: "", c: NOTE.amb, n0: 0 },
 ];
 const SCROLL = 2.2; // layer units per reference frame
-const LANES = ["Search", "Maps", "AI", "Voice", "Social", "Reviews", "Local", "Search", "Maps", "AI", "Voice", "You", "Social", "Reviews"];
-const BLACK = [394, 460, 593, 659, 725, 858, 924, 1057, 1123, 1189];
+const HEIGHTS = [150, 190, 120, 215, 170, 240, 130, 205, 160, 225, 140, 190, 250, 180];
+const DAYS = "MTWTFSSMTWTFSS".split("");
 
 const Ico: React.FC<{ x: number; y: number; r?: number; c?: string; d?: string; s?: number }> = ({ x, y, c = "#5B6573", d, s = 14 }) => (
   <svg style={A(x - s / 2, y - s / 2, s, s)} width={s} height={s} viewBox="0 0 24 24"><path d={d} fill="none" stroke={c} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
@@ -126,7 +126,7 @@ export const ShotQ: React.FC<{ n: number }> = ({ n }) => {
         <div style={A(700, 125, 212, 16, { fontSize: 13, fontWeight: 300, color: "#9CA6B4", textAlign: "center", lineHeight: "16px" })}>+38%</div>
         <div style={A(708, 153, 198, 30, { background: "#E4E7EC", borderRadius: 2, overflow: "hidden" })}>
           {Array.from({ length: 52 }).map((_, i) => <div key={i} style={A(i * 3.8, 0, 1.3, i % 7 === 1 || i % 7 === 3 || i % 7 === 4 || i % 7 === 6 || i % 7 === 0 ? 17 : 0, { background: "#1E2631" })} />)}
-          {lit && <div style={A(127, 0, 3, 30, { background: C.cyan })} />}
+          {lit && <div style={A(127, 0, 3, 30, { background: C.indigo })} />}
         </div>
         <div style={A(921, 104, 135, 84, { background: "#1E2631", borderRadius: 10 })} />
         <div style={A(930, 110, 60, 12, { fontSize: 9, fontWeight: 600, color: "#E9EDF2", lineHeight: "12px" })}>Rating</div>
@@ -153,19 +153,25 @@ export const ShotQ: React.FC<{ n: number }> = ({ n }) => {
             const s = nt.n0 && !nt.fade ? 0.55 + 0.45 * ease.out(p) : 1;
             const pill = nt.w > 60;
             return (
-              <div key={i} style={A(nt.x - 344 + scroll, nt.y - 197, nt.w, 47, { borderRadius: 24, background: nt.c, opacity: nt.fade ? 0.55 + 0.45 * p : Math.min(1, p * 2), transform: `scale(${s.toFixed(3)})`, color: INK, fontSize: pill ? 11 : 11.5, fontWeight: 600, display: "flex", alignItems: "center", justifyContent: pill ? "flex-start" : "center", paddingLeft: pill ? 14 : 0, whiteSpace: "nowrap", willChange: "transform" })}>{nt.label}</div>
+              <div key={i} style={A(nt.x - 344 + scroll, nt.y - 197, nt.w, 47, { borderRadius: 24, background: nt.c, opacity: nt.fade ? 0.55 + 0.45 * p : Math.min(1, p * 2), transform: `scale(${s.toFixed(3)})`, color: "#fff", fontSize: pill ? 12 : 14, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: pill ? "flex-start" : "center", paddingLeft: pill ? 14 : 0, whiteSpace: "nowrap", willChange: "transform" })}>{nt.label}</div>
             );
           })}
         </div>
         <div style={A(344, 432, line - 344, 14, { background: C.mint })} />
         <div style={A(line, 432, 1270 - line, 14, { background: "#3A4350" })} />
-        {/* the lanes (keys) */}
-        <div style={A(344, 448, 926, 260, { background: "#DDE2E8", borderRadius: "0 0 8px 8px", overflow: "hidden" })}>
-          {Array.from({ length: 13 }).map((_, i) => <div key={i} style={A((i + 1) * 66.14 - 0.5, 0, 1, 260, { background: "#C4CBD4" })} />)}
-          {lit && <div style={A(1071 - 344, 145, 66, 115, { background: C.cyan })} />}
-          {BLACK.map((x) => <div key={x} style={A(x - 344, 0, 32, 145, { background: "#1E2631", borderRadius: "0 0 3px 3px" })} />)}
-          {lit && <div style={A(1089 - 344, 0, 32, 145, { background: C.cyan })} />}
-          {LANES.map((l, i) => <div key={i} style={A(i * 66.14, l === "You" ? 212 : 226, 66.14, 34, { textAlign: "center", fontSize: 12, fontWeight: l === "You" ? 700 : 500, color: l === "You" && lit ? "#0B2A3A" : "#8791A0", lineHeight: l === "You" ? "15px" : "20px", whiteSpace: "nowrap", paddingTop: l === "You" ? 5 : 0 })}>{l === "You" ? <>Your<br />business</> : l}</div>)}
+        {/* the light lower panel: visitors per day, one bar lights at f492 */}
+        <div style={A(344, 448, 926, 260, { background: "#E7E6E1", backgroundImage: "repeating-linear-gradient(90deg, rgba(0,0,0,.07) 0 33px, transparent 33px 66px)", borderRadius: "0 0 8px 8px", overflow: "hidden" })}>
+          <div style={A(30, 12, 300, 20, { fontSize: 14, fontWeight: 600, color: INK, lineHeight: "20px" })}>Visitors per day</div>
+          {lit && <div style={A(727 - 2, 0, 70, 260, { background: "linear-gradient(180deg,#2F7BFF,#1B5CF0)" })} />}
+          {HEIGHTS.map((hh, i) => {
+            const on = i === 11, h = hh * 0.8 * (on && lit ? 1.1 : 1);
+            return (
+              <React.Fragment key={i}>
+                <div style={A(i * 66.14 + 13, 222 - h, 40, h, { background: on && lit ? "#4F7BFF" : INK, borderRadius: "5px 5px 0 0" })} />
+                <div style={A(i * 66.14 + 13, 230, 40, 18, { textAlign: "center", fontSize: 12, fontWeight: 500, color: on && lit ? "#fff" : "#7A8494", lineHeight: "18px" })}>{DAYS[i]}</div>
+              </React.Fragment>
+            );
+          })}
         </div>
       </div>
     </div>

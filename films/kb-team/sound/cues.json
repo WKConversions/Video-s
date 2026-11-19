@@ -19,102 +19,130 @@
    "id": "ui-button",
    "db": -5,
    "pitch": 0,
-   "note": "R01 pop: the portrait card opens between the words"
+   "note": "R01 pop: the card opens between the words"
   },
   {
-   "frame": 52,
+   "frame": 45,
    "id": "v4-type-delete",
    "db": -13,
    "pitch": 0,
-   "note": "R01 tick: a portrait is dealt onto the card"
+   "note": "R01 tick: a portrait is dealt"
   },
   {
-   "frame": 75,
+   "frame": 65,
    "id": "v4-type-delete",
    "db": -13,
    "pitch": 1,
-   "note": "R01 tick: a portrait is dealt onto the card"
+   "note": "R01 tick: a portrait is dealt"
   },
   {
-   "frame": 91,
+   "frame": 90,
    "id": "aio-06",
    "db": -3,
    "pitch": 0,
-   "note": "R01 rise: the card grows into the first screen"
+   "note": "R01 rise: the picture spreads into the screen"
+  },
+  {
+   "frame": 110,
+   "id": "ui-button",
+   "db": -5,
+   "pitch": 0,
+   "note": "R01 pop: a piece lands"
   },
   {
    "frame": 160,
    "id": "v4-type-delete",
    "db": -3,
    "pitch": 0,
-   "note": "R01 tick: cut to the ranking window"
+   "note": "R01 tick: cut to the dark app"
+  },
+  {
+   "frame": 170,
+   "id": "ui-button",
+   "db": -5,
+   "pitch": 0,
+   "note": "R01 pop: the bar lights"
   },
   {
    "frame": 188,
    "id": "v4-type-delete",
    "db": -3,
    "pitch": 1,
-   "note": "R01 tick: cut to the product card"
+   "note": "R01 tick: cut to the team card"
   },
   {
    "frame": 213,
    "id": "ui-stretch",
    "db": -10,
    "pitch": 0,
-   "note": "R01 swish: the product card shrinks into the portrait"
+   "note": "R01 swish: the card shrinks"
   },
   {
-   "frame": 234,
+   "frame": 228,
+   "id": "ui-button",
+   "db": -5,
+   "pitch": 0,
+   "note": "R01 pop: the word arrives"
+  },
+  {
+   "frame": 254,
    "id": "aio-00",
    "db": -4,
    "pitch": 0,
-   "note": "R02 pop: first portrait"
-  },
-  {
-   "frame": 253,
-   "id": "aio-00",
-   "db": -4,
-   "pitch": 1,
-   "note": "R02 pop: third portrait"
-  },
-  {
-   "frame": 273,
-   "id": "aio-00",
-   "db": -4,
-   "pitch": 2,
-   "note": "R02 pop: fifth portrait"
+   "note": "R02 pop: youri's card"
   },
   {
    "frame": 325,
    "id": "aio-05",
-   "db": -7,
+   "db": -8,
    "pitch": 0,
-   "note": "R02 slide: the portraits travel into a row"
+   "note": "R02 swish: the cards travel into a row"
   },
   {
-   "frame": 363,
+   "frame": 333,
+   "id": "aio-05",
+   "db": -7,
+   "pitch": 0,
+   "note": "R02 slide: they settle in a row"
+  },
+  {
+   "frame": 350,
+   "id": "aio-00",
+   "db": -4,
+   "pitch": 0,
+   "note": "R02 pop: the K.B tile replaces the first card"
+  },
+  {
+   "frame": 355,
+   "id": "aio-09",
+   "db": -4,
+   "pitch": 0,
+   "note": "R02 tick: wordmark types in over the cards"
+  },
+  {
+   "frame": 365,
    "id": "aio-10",
    "db": -7,
    "pitch": 0,
-   "note": "R02 thud: the row becomes the K.B tile"
+   "note": "R02 thud: the lockup is complete"
   },
   {
-   "frame": 450,
+   "frame": 460,
    "id": "aio-05",
    "db": -8,
    "pitch": 0,
-   "note": "R02 swish: the logo softens into the paper"
+   "note": "R02 swish: the logo greys out into the next picture"
   },
   {
    "frame": 470,
-   "id": "aio-09",
+   "id": "ui-click-digital-03",
    "db": -4,
    "pitch": 0,
    "note": "R03 tick: flash cut F1"
   },
   {
    "frame": 490,
-   "id": "aio-09",
+   "id": "ui-click-digital-03",
    "db": -4,
    "pitch": 1,
    "note": "R03 tick: flash cut F3"
@@ -138,82 +166,103 @@
    "id": "ui-click",
    "db": 0,
    "pitch": 0,
-   "note": "R04 click: send"
+   "note": "R04 click: send (f288)"
   },
   {
    "frame": 738,
-   "id": "ui-click-digital-03",
-   "db": -4,
+   "id": "v4-type-delete",
+   "db": -3,
    "pitch": 0,
-   "note": "R04 tick: glyph"
+   "note": "R04 tick: glyph 1"
+  },
+  {
+   "frame": 758,
+   "id": "v4-type-delete",
+   "db": -3,
+   "pitch": 1,
+   "note": "R04 tick: glyph 3"
   },
   {
    "frame": 768,
    "id": "ui-granular-button-select",
    "db": -4,
    "pitch": 0,
-   "note": "R04 pop: the first tool"
+   "note": "R04 pop: first tool tile"
   },
   {
-   "frame": 780,
+   "frame": 784,
    "id": "ui-stretch",
    "db": -10,
    "pitch": 0,
-   "note": "R04 swish: the tools fly in"
+   "note": "R04 swish: the wall of tools appears"
   },
   {
-   "frame": 855,
-   "id": "ui-granular-button-select",
-   "db": -4,
-   "pitch": 0,
-   "note": "R04 pop: row 1 done"
-  },
-  {
-   "frame": 885,
+   "frame": 795,
    "id": "ui-granular-button-select",
    "db": -4,
    "pitch": 1,
-   "note": "R04 pop: row 2 done"
+   "note": "R04 pop: the card pops"
   },
   {
-   "frame": 915,
-   "id": "ui-granular-button-select",
-   "db": -4,
-   "pitch": 2,
-   "note": "R04 pop: row 3 done"
-  },
-  {
-   "frame": 940,
-   "id": "aio-07",
-   "db": -4,
+   "frame": 818,
+   "id": "ui-stretch",
+   "db": -10,
    "pitch": 0,
-   "note": "R04 success: the flow runs by itself"
+   "note": "R04 swish: the wall shrinks away"
+  },
+  {
+   "frame": 858,
+   "id": "ui-stretch",
+   "db": -9,
+   "pitch": 0,
+   "note": "R04 slide: row 1 swaps"
+  },
+  {
+   "frame": 900,
+   "id": "ui-stretch",
+   "db": -9,
+   "pitch": 0,
+   "note": "R04 slide: row 2 swaps again"
+  },
+  {
+   "frame": 938,
+   "id": "aio-10",
+   "db": -7,
+   "pitch": 0,
+   "note": "R04 thud: the card turns into a wireframe"
+  },
+  {
+   "frame": 950,
+   "id": "ui-stretch",
+   "db": -10,
+   "pitch": 0,
+   "note": "R04 swish: the grid opens"
   },
   {
    "frame": 963,
-   "id": "v4-type-delete",
-   "db": -3,
+   "id": "aio-09",
+   "db": -4,
    "pitch": 0,
    "note": "R05 tick: flash cut"
   },
   {
    "frame": 982,
-   "id": "v4-type-delete",
-   "db": -3,
+   "id": "aio-09",
+   "db": -4,
    "pitch": 1,
    "note": "R05 tick: flash cut"
   },
   {
    "frame": 1005,
-   "id": "v4-type-delete",
-   "db": -3,
+   "id": "aio-09",
+   "db": -4,
    "pitch": 2,
    "note": "R05 tick: flash cut"
   },
   {
    "frame": 1028,
-   "id": "v4-type-delete",
-   "db": -3,
+   "id": "aio-09",
+   "db": -4,
    "pitch": 3,
    "note": "R05 tick: flash cut"
   },
@@ -222,7 +271,14 @@
    "id": "kbt-type-2",
    "db": 5,
    "pitch": 0,
-   "note": "R05 typing 1.91s"
+   "note": "R05 typing 1.07s"
+  },
+  {
+   "frame": 1130,
+   "id": "kbt-type-3",
+   "db": 5,
+   "pitch": 0,
+   "note": "R05 typing 0.45s"
   },
   {
    "frame": 1195,
@@ -232,74 +288,81 @@
    "note": "R06 pop: the ? circle appears"
   },
   {
-   "frame": 1210,
+   "frame": 1212,
    "id": "aio-02",
    "db": -10,
    "pitch": 1,
-   "note": "R06 pop: checklist line 1 and a circle"
+   "note": "R06 pop: a result arrives (1)"
   },
   {
    "frame": 1227,
    "id": "aio-02",
    "db": -10,
    "pitch": 2,
-   "note": "R06 pop: checklist line 4 and a circle"
+   "note": "R06 pop: a result arrives (4)"
   },
   {
-   "frame": 1240,
+   "frame": 1230,
    "id": "ui",
    "db": -4,
    "pitch": 0,
-   "note": "R06 sparkle: the Your business card lights up"
+   "note": "R06 sparkle: the Your business key lights up"
   },
   {
-   "frame": 1336,
-   "id": "aio-09",
+   "frame": 1340,
+   "id": "ui-click-digital-03",
    "db": -2,
    "pitch": 0,
+   "note": "R06 tick: the row takes place 8"
+  },
+  {
+   "frame": 1350,
+   "id": "ui-click-digital-03",
+   "db": -2,
+   "pitch": 1,
    "note": "R06 tick: the row takes place 7"
   },
   {
-   "frame": 1346,
-   "id": "aio-09",
+   "frame": 1357,
+   "id": "ui-click-digital-03",
    "db": -2,
-   "pitch": 1,
+   "pitch": 2,
    "note": "R06 tick: the row takes place 6"
   },
   {
-   "frame": 1355,
-   "id": "aio-09",
+   "frame": 1363,
+   "id": "ui-click-digital-03",
    "db": -2,
-   "pitch": 2,
+   "pitch": 3,
    "note": "R06 tick: the row takes place 5"
   },
   {
-   "frame": 1363,
-   "id": "aio-09",
+   "frame": 1369,
+   "id": "ui-click-digital-03",
    "db": -2,
-   "pitch": 3,
+   "pitch": 4,
    "note": "R06 tick: the row takes place 4"
   },
   {
-   "frame": 1371,
-   "id": "aio-09",
+   "frame": 1375,
+   "id": "ui-click-digital-03",
    "db": -2,
-   "pitch": 4,
+   "pitch": 5,
    "note": "R06 tick: the row takes place 3"
   },
   {
-   "frame": 1380,
-   "id": "aio-02",
-   "db": -4,
+   "frame": 1383,
+   "id": "ui-click-digital-03",
+   "db": -2,
    "pitch": 0,
-   "note": "R06 pop: it lands third, \u25b2 5"
+   "note": "R06 tick: the row takes place 2"
   },
   {
-   "frame": 1442,
+   "frame": 1445,
    "id": "ui-click",
    "db": 0,
    "pitch": 0,
-   "note": "R07 click: the hand drops the four sketches on the message box"
+   "note": "R07 click: the files drop on the box: four chips appear"
   },
   {
    "frame": 1475,
@@ -317,20 +380,20 @@
   },
   {
    "frame": 1515,
-   "id": "ui-click-digital-03",
-   "db": -4,
+   "id": "v4-type-delete",
+   "db": -3,
    "pitch": 0,
    "note": "R07 tick: flash cut: the pencil sketch"
   },
   {
    "frame": 1545,
-   "id": "ui-click-digital-03",
-   "db": -4,
+   "id": "v4-type-delete",
+   "db": -3,
    "pitch": 1,
    "note": "R07 tick: flash cut: the wireframe"
   },
   {
-   "frame": 1559,
+   "frame": 1555,
    "id": "aio-08",
    "db": -5,
    "pitch": 0,
@@ -344,53 +407,81 @@
    "note": "R07 swish: cut to the filmed founder: the picture settles"
   },
   {
-   "frame": 1658,
-   "id": "kbt-type-3",
+   "frame": 1662,
+   "id": "kbt-type-4",
    "db": 5,
    "pitch": 0,
-   "note": "R08 typing 0.55s"
+   "note": "R08 typing 0.25s"
   },
   {
-   "frame": 1705,
+   "frame": 1690,
+   "id": "ui-click",
+   "db": 0,
+   "pitch": 0,
+   "note": "R08 click: send"
+  },
+  {
+   "frame": 1710,
    "id": "aio-00",
    "db": -4,
    "pitch": 0,
-   "note": "R08 pop: the first check in the K.B panel"
+   "note": "R08 pop: Booking flow added"
+  },
+  {
+   "frame": 1725,
+   "id": "aio-00",
+   "db": -4,
+   "pitch": 1,
+   "note": "R08 pop: Payments connected"
   },
   {
    "frame": 1748,
    "id": "aio-03",
    "db": -1,
    "pitch": 0,
-   "note": "R08 sparkle: the dashboard comes alive"
+   "note": "R08 sparkle: the chart wakes, bars grow"
   },
   {
-   "frame": 1810,
+   "frame": 1770,
+   "id": "aio-09",
+   "db": -4,
+   "pitch": 0,
+   "note": "R08 tick: the tooltip appears"
+  },
+  {
+   "frame": 1818,
    "id": "aio-00",
    "db": -4,
    "pitch": 0,
    "note": "R08 pop: 74%"
   },
   {
-   "frame": 1990,
+   "frame": 1970,
+   "id": "ui-stretch",
+   "db": -10,
+   "pitch": 0,
+   "note": "R09 swish: the pointer slides onto the button"
+  },
+  {
+   "frame": 1984,
    "id": "ui-click",
    "db": 0,
    "pitch": 0,
-   "note": "R09 click: the hand presses the one button; it floods cyan"
+   "note": "R09 click: the click: the button presses and turns cyan"
   },
   {
    "frame": 2000,
    "id": "ui-granular-button-select",
    "db": -4,
    "pitch": 0,
-   "note": "R09 pop: the first card jumps out of the button"
+   "note": "R09 pop: the first card (portrait) pops beside the button; the world starts to slide"
   },
   {
    "frame": 2025,
    "id": "ui-granular-button-select",
    "db": -4,
    "pitch": 1,
-   "note": "R09 pop: the burst: the chart, then three more cards two frames apart"
+   "note": "R09 pop: the chart pops in"
   },
   {
    "frame": 2025,
@@ -414,32 +505,95 @@
    "note": "R09 swish: the fast run of cards, one a frame, f824-f830"
   },
   {
-   "frame": 2118,
+   "frame": 2088,
    "id": "aio-02",
    "db": -4,
    "pitch": 0,
-   "note": "R10 pop: the product window"
+   "note": "R10 pop: the dotted card"
+  },
+  {
+   "frame": 2110,
+   "id": "aio-05",
+   "db": -8,
+   "pitch": 0,
+   "note": "R10 swish: the window's ghost, the cards settle"
+  },
+  {
+   "frame": 2118,
+   "id": "aio-02",
+   "db": -4,
+   "pitch": 1,
+   "note": "R10 pop: the window lights"
+  },
+  {
+   "frame": 2157,
+   "id": "ui-click",
+   "db": 0,
+   "pitch": 0,
+   "note": "R10 click: the refresh button takes the pointer"
+  },
+  {
+   "frame": 2168,
+   "id": "aio-05",
+   "db": -8,
+   "pitch": 0,
+   "note": "R10 swish: the picture swells over the window"
   },
   {
    "frame": 2178,
    "id": "aio-06",
    "db": -3,
    "pitch": 0,
-   "note": "R10 rise: the bolder version"
+   "note": "R10 rise: the bolder window"
+  },
+  {
+   "frame": 2182,
+   "id": "ui-click-digital-03",
+   "db": -4,
+   "pitch": 0,
+   "note": "R10 tick: the card row builds"
   },
   {
    "frame": 2250,
    "id": "aio-05",
    "db": -8,
    "pitch": 0,
-   "note": "R10 swish: the board, close"
+   "note": "R10 swish: the canvas, close"
+  },
+  {
+   "frame": 2250,
+   "id": "ui-click-digital-03",
+   "db": -4,
+   "pitch": 0,
+   "note": "R10 tick: the counters count"
+  },
+  {
+   "frame": 2256,
+   "id": "kbt-type-5",
+   "db": 5,
+   "pitch": 0,
+   "note": "R10 typing 1.20s"
+  },
+  {
+   "frame": 2290,
+   "id": "ui-click",
+   "db": 0,
+   "pitch": 0,
+   "note": "R10 click: the second flow is selected"
   },
   {
    "frame": 2313,
-   "id": "ui-stretch",
-   "db": -9,
+   "id": "aio-05",
+   "db": -7,
    "pitch": 0,
-   "note": "R10 slide: the whole board"
+   "note": "R10 slide: the second canvas pulls back"
+  },
+  {
+   "frame": 2322,
+   "id": "ui-click-digital-03",
+   "db": -4,
+   "pitch": 0,
+   "note": "R10 tick: the donut counts"
   },
   {
    "frame": 2410,
@@ -456,22 +610,22 @@
    "note": "R11 pop: check row 3 lands"
   },
   {
-   "frame": 2482,
-   "id": "kbt-type-4",
+   "frame": 2468,
+   "id": "kbt-type-6",
    "db": 5,
    "pitch": 0,
-   "note": "R11 typing 0.45s"
+   "note": "R11 typing 0.70s"
   },
   {
    "frame": 2537,
-   "id": "kbt-type-5",
+   "id": "kbt-type-7",
    "db": 5,
    "pitch": 0,
    "note": "R11 typing 0.42s"
   },
   {
    "frame": 2578,
-   "id": "kbt-type-6",
+   "id": "kbt-type-8",
    "db": 5,
    "pitch": 0,
    "note": "R11 typing 0.25s"
@@ -481,11 +635,11 @@
    "id": "ui-click",
    "db": 0,
    "pitch": 0,
-   "note": "R11 click: the hand clicks the button"
+   "note": "R11 click: the pointer presses the button"
   },
   {
-   "frame": 2730,
-   "id": "kbt-type-7",
+   "frame": 2722,
+   "id": "kbt-type-9",
    "db": 5,
    "pitch": 0,
    "note": "R12 typing 0.97s"

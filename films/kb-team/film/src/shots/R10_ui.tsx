@@ -2,7 +2,7 @@
 // reference's 1280 x 720 units inside a `Px` wrapper that scales by 1.5 to the film's 1920 x 1080.
 import React from "react";
 import { Img, staticFile } from "remotion";
-import { C } from "../kit";
+import { C, Glyph } from "../kit";
 import type { P } from "../kit";
 
 export const Px: React.FC<{ children?: React.ReactNode; style?: P }> = ({ children, style }) => (
@@ -20,12 +20,12 @@ const Sk: React.FC = () => (
     <path d="M38 22 C32 6 54 4 58 15 C60 22 51 29 46 27 M44 27 L45 33 M22 36 C42 29 62 35 80 31 C67 41 30 38 23 47 C42 53 70 46 83 55 C60 61 30 58 22 67 C44 73 75 66 85 75 C62 81 30 80 20 89 C46 93 78 89 93 91" fill="none" stroke="#4a4140" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
-export const Pic: React.FC<{ k: PicK; style?: P }> = ({ k, style }) => {
+export const Pic: React.FC<{ k: PicK; style?: P; g?: number }> = ({ k, style, g = 1 }) => {
   const base: P = { position: "absolute", inset: 0, overflow: "hidden", ...style };
   if (k === "leaf") return (
-    <div style={{ ...base, background: "linear-gradient(170deg, #4a68d8 0%, #5b57c4 55%, #7a4fb5 100%)" }}>
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", filter: "blur(2.4px)" }}>
-        <g fill="#3cc4ad" opacity=".85"><ellipse cx="38" cy="22" rx="14" ry="3.4" transform="rotate(14 38 22)" /><ellipse cx="62" cy="26" rx="13" ry="3.6" transform="rotate(-14 62 26)" /><ellipse cx="40" cy="42" rx="14" ry="3.6" transform="rotate(8 40 42)" /><ellipse cx="62" cy="48" rx="15" ry="3.8" transform="rotate(14 62 48)" /><ellipse cx="50" cy="66" rx="17" ry="3.8" /><ellipse cx="38" cy="82" rx="14" ry="3.4" transform="rotate(10 38 82)" /></g>
+    <div style={{ ...base, background: "linear-gradient(170deg, #4c6cc6 0%, #5a5fbd 55%, #7653b0 100%)" }}>
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", filter: "blur(3.4px)" }}>
+        <g fill="#38b9a8" opacity=".75"><ellipse cx="38" cy="22" rx="14" ry="3.4" transform="rotate(14 38 22)" /><ellipse cx="62" cy="26" rx="13" ry="3.6" transform="rotate(-14 62 26)" /><ellipse cx="40" cy="42" rx="14" ry="3.6" transform="rotate(8 40 42)" /><ellipse cx="62" cy="48" rx="15" ry="3.8" transform="rotate(14 62 48)" /><ellipse cx="50" cy="66" rx="17" ry="3.8" /><ellipse cx="38" cy="82" rx="14" ry="3.4" transform="rotate(10 38 82)" /></g>
         <g fill="#c4447f" opacity=".55"><ellipse cx="56" cy="88" rx="16" ry="4" transform="rotate(-16 56 88)" /><ellipse cx="62" cy="74" rx="10" ry="3" transform="rotate(-20 62 74)" /></g>
         <rect x="47.5" y="14" width="4" height="86" fill="#7a58c0" opacity=".7" />
       </svg>
@@ -34,12 +34,12 @@ export const Pic: React.FC<{ k: PicK; style?: P }> = ({ k, style }) => {
   );
   if (k === "bloom") return (
     <div style={{ ...base, background: "linear-gradient(160deg, #8a6bb8 0%, #7a68ad 50%, #6a7fb0 100%)" }}>
-      <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", filter: "blur(2.2px)" }}>
-        <g fill="#45b790"><ellipse cx="62" cy="40" rx="30" ry="22" /><ellipse cx="44" cy="58" rx="22" ry="12" transform="rotate(-8 44 58)" /><ellipse cx="82" cy="52" rx="14" ry="16" /><ellipse cx="22" cy="26" rx="14" ry="5" transform="rotate(-8 22 26)" /><ellipse cx="68" cy="68" rx="30" ry="12" /></g>
-        <g fill="#5fcfae" opacity=".7"><ellipse cx="62" cy="34" rx="18" ry="12" /><ellipse cx="46" cy="60" rx="12" ry="6" /></g>
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", filter: "blur(5px)" }}>
+        <g fill="#45b790" transform={`translate(62 44) scale(${g}) translate(-62 -44)`}><ellipse cx="62" cy="40" rx="30" ry="22" /><ellipse cx="44" cy="58" rx="22" ry="12" transform="rotate(-8 44 58)" /><ellipse cx="82" cy="52" rx="14" ry="16" /><ellipse cx="22" cy="26" rx="14" ry="5" transform="rotate(-8 22 26)" /><ellipse cx="68" cy="68" rx="30" ry="12" /></g>
+        <g fill="#5fcfae" opacity=".7" transform={`translate(62 44) scale(${g}) translate(-62 -44)`}><ellipse cx="62" cy="34" rx="18" ry="12" /><ellipse cx="46" cy="60" rx="12" ry="6" /></g>
         <ellipse cx="50" cy="104" rx="60" ry="14" fill="#4d94b8" />
       </svg>
-      <Grain o={0.3} />
+      <Grain o={0.5} />
     </div>
   );
   if (k === "dots") return (
@@ -53,7 +53,7 @@ export const Pic: React.FC<{ k: PicK; style?: P }> = ({ k, style }) => {
   if (k === "pebble") return (
     <div style={{ ...base, background: "#3fb6b8" }}>
       <svg viewBox="0 0 100 100" style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }} preserveAspectRatio="xMidYMid slice">
-        <ellipse cx="52" cy="14" rx="27" ry="13" fill="#f2f5f2" /><ellipse cx="54" cy="45" rx="27" ry="14" fill="#1f6b52" /><ellipse cx="46" cy="86" rx="34" ry="32" fill="#0b3b33" />
+        <defs><radialGradient id="pb1" cx="40%" cy="30%" r="80%"><stop offset="0" stopColor="#ffffff" /><stop offset="1" stopColor="#c9d6d2" /></radialGradient><radialGradient id="pb2" cx="40%" cy="30%" r="80%"><stop offset="0" stopColor="#2f8a68" /><stop offset="1" stopColor="#12493a" /></radialGradient><radialGradient id="pb3" cx="35%" cy="25%" r="90%"><stop offset="0" stopColor="#14604c" /><stop offset="1" stopColor="#06231f" /></radialGradient></defs><ellipse cx="52" cy="14" rx="27" ry="13" fill="url(#pb1)" /><ellipse cx="54" cy="45" rx="27" ry="14" fill="url(#pb2)" /><ellipse cx="46" cy="86" rx="34" ry="32" fill="url(#pb3)" />
       </svg>
       <Grain o={0.55} />
     </div>
@@ -67,17 +67,20 @@ export const Pic: React.FC<{ k: PicK; style?: P }> = ({ k, style }) => {
     </div>
   );
   if (k === "glyph") return (
-    <div style={{ ...base, background: "#2a2a2c" }}>
-      <Img src={staticFile("stills/F1-1.jpg")} style={{ position: "absolute", left: "-20%", top: 0, width: "140%", height: "100%", objectFit: "cover", filter: "grayscale(1) contrast(1.25) brightness(.95)" }} />
+    <div style={{ ...base, background: "radial-gradient(70% 70% at 50% 42%, #7b7f86 0%, #4a4d52 55%, #2a2b2e 100%)" }}>
+      <div style={{ position: "absolute", left: "26%", top: "24%", width: "48%", height: "52%", opacity: 0.92 }}><Glyph k={0} s={80} c="#dfe5ea" /></div>
       {[[14, 14], [50, 14], [86, 14], [14, 50], [86, 50], [14, 86], [50, 86], [86, 86]].map(([x, y], i) => <div key={i} style={{ position: "absolute", left: `${x}%`, top: `${y}%`, width: "9%", height: "9%", marginLeft: "-4.5%", marginTop: "-4.5%", borderRadius: "50%", background: "#d6e2de" }} />)}
-      <Grain o={0.3} />
+      <Grain o={0.45} />
     </div>
   );
   if (k === "plant") return (
-    <div style={{ ...base, background: "#2cb888" }}>
-      <Img src={staticFile("stills/AA-1.jpg")} style={{ position: "absolute", left: "-40%", top: "-10%", width: "180%", height: "130%", objectFit: "cover", filter: "saturate(2.6) hue-rotate(95deg) contrast(1.5)", mixBlendMode: "normal" }} />
-      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(120deg, rgba(255,90,140,.45), rgba(40,220,140,.0) 55%, rgba(255,120,60,.35))", mixBlendMode: "screen" }} />
-      <Grain o={0.5} />
+    <div style={{ ...base, background: "linear-gradient(160deg, #19c585 0%, #12a99b 60%, #2b6fd0 100%)" }}>
+      <svg viewBox="0 0 100 100" preserveAspectRatio="none" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", filter: "blur(1.3px)" }}>
+        <path d="M-5 30 C20 5 40 8 55 30 C38 36 18 40 -5 30Z" fill="#ff5c9d" /><path d="M10 60 C35 40 60 44 80 62 C55 72 30 72 10 60Z" fill="#ff7aa8" opacity=".9" />
+        <path d="M45 8 C70 0 95 10 98 28 C80 30 60 26 45 8Z" fill="#0b8a5a" /><path d="M20 82 C40 70 70 78 96 96 C60 100 40 100 20 82Z" fill="#7a47d6" />
+        <ellipse cx="86" cy="62" rx="12" ry="9" fill="#ff8a3d" /><ellipse cx="66" cy="38" rx="10" ry="6" fill="#0f6f4a" opacity=".8" />
+      </svg>
+      <Grain o={0.55} />
     </div>
   );
   return (
