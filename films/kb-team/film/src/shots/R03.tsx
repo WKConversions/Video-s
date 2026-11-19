@@ -3,7 +3,7 @@
 // Timed on the reference frame by frame (tools/ref.py, dark-pixel boxes): local t = (reference frame − 188) / 24.
 import React from "react";
 import type { Pkg } from "../types";
-import { Footage, Fringe, Ground, rs, useFonts } from "../kit";
+import { Footage, Fringe, Ground, kf, refN, rs, useFonts } from "../kit";
 
 const F0 = 188;
 const at = (n: number) => rs(n - F0);                 // local seconds of a reference frame
@@ -26,65 +26,57 @@ const Flash: React.FC<{ t: number }> = ({ t }) => {
 };
 
 // ---------------------------------------------------------------- G: the caret, then the typed words
-// The reference ("Build an app"): the caret blinks alone in the centre (on f205–f211, off f212–f216, on from f217);
-// a key lands on each frame of G_KEYS; the first letter appears LEFT of the caret (the caret does not move for it);
-// from f222 the whole line glides left, faster and faster (left edge 849 → 462 px by f242), into the jump at f243.
-// Here: 96 px, weight 400. The letters never shift inside the line; the line moves as ONE block on that path and
-// ends with the finished text (and its caret) centred. G_PAN = 0 makes the line stand still, centred, all along.
-const G_PAN: number = 1;
+// Measured on the reference (track.py text): the caret is 12 x 228 px, top 423 (baseline 600), blinks on f205-f211, off
+// f212-f216, on from f217; a key per frame of G_KEYS (first letter LEFT of the caret, caret stays at 956-968 for it);
+// the left ink edge then glides left 848 -> 459 by f242 (G_L); the caret follows the last letter.
 const G_TEXT = "Can you help";
 const G_KEYS = [219, 220, 222, 224, 225, 230, 232, 233, 234, 237, 239, 241];
-const G_EM = 96, G_LS = -0.03 * G_EM, G_GAP = G_EM / 6, G_CW = G_EM / 24, G_CH = 1.29 * G_EM;   // caret 4 × 124, 16 px behind
-const G_TOP = 538 - 0.54 * G_EM;                       // the line box (line-height 1.08) centred on y 538: top 486
-const G_W = 6.544 * G_EM + G_TEXT.length * G_LS;       // the finished line: 593.7 px (Montserrat 400, kerned)
-const G_C = 0.709 * G_EM + G_LS;                       // the first letter's advance
-const G_X_END = (1920 - (G_W + G_GAP + G_CW)) / 2;     // finished text + caret centred
-const G_X_CARET = 960 - G_GAP - G_CW / 2;              // the empty line: its caret stands in the centre
-// The glide: speed V0 → V1 px/s, growing as e^(K·τ) (K fitted on the reference path), D px in all, ending on the jump.
-// It is drawn in WHOLE pixels a frame that only ever grow (1 1 1 … 2 2 … 3 … 12): layers snap to the pixel grid, so a
-// slower or fractional drift would stall on frames or dither 1-2-1 (the shake check's stutter and shake).
-const G_K = 2.95, G_V0 = 60, G_FA = frameNo(at(222)), G_FB = frameNo(at(243));
-const G_D = Math.round(G_X_CARET - Math.round(G_C) - G_X_END);
-const stairs = (v1: number) => {
-  const acc = [0], n = G_FB - G_FA;
-  for (let i = 1; i <= n; i++) { const g = (Math.exp(G_K * (i - 0.5) / n) - 1) / (Math.exp(G_K) - 1); acc.push(acc[i - 1] + Math.max(1, Math.round((G_V0 + (v1 - G_V0) * g) / 60))); }
-  return acc;
-};
-const G_STAIRS = (() => { let v1 = 600, st = stairs(v1); while (st[st.length - 1] < G_D && v1 < 6000) { v1 += 2; st = stairs(v1); } return st; })();
+const G_L: [number, number][] = [[219, 848], [222, 846], [224, 842], [225, 838], [227, 828], [229, 812], [231, 789], [233, 760], [235, 720], [237, 668], [239, 596], [241, 498], [242, 459], [243, 440]];
+const G_EM = 185, G_LS = -0.05 * G_EM, G_BASE = 600, G_BEAR = 0.05 * G_EM, G_GAP = 34;
+const G_SHIFT = 50;                                   // our line is wider than the reference's: keep the centre
 const TypedLine: React.FC<{ t: number }> = ({ t }) => {
+  const nn = refN(t, F0);
   const n = count(G_KEYS, t);
-  const k = Math.min(G_STAIRS.length - 1, Math.max(0, frameNo(t) - G_FA));
-  const x = Math.round(G_PAN ? (n === 0 ? G_X_CARET : G_X_CARET - Math.round(G_C) - G_STAIRS[k]) : G_X_END);
   const caretOn = n > 0 || !(reached(t, 212) && !reached(t, 217));
+  const L = kf(nn, G_L);
+  const prog = Math.min(1, Math.max(0, (848 - L) / (848 - 459)));
+  const x = L - G_BEAR - G_SHIFT * prog;
   return (
     <Ground tone="vig">
-      <div style={{ position: "absolute", left: 0, top: G_TOP, transform: `translate3d(${x}px, 0, 0)`, willChange: "transform", fontSize: G_EM, fontWeight: 400, letterSpacing: G_LS, lineHeight: 1.08, whiteSpace: "pre", color: INK }}>
-        {G_TEXT.slice(0, n)}
-        <div style={{ position: "absolute", left: "100%", top: -G_EM / 8, marginLeft: G_GAP, width: G_CW, height: G_CH, background: INK, opacity: caretOn ? 1 : 0 }} />
-      </div>
+      {n === 0 ? (
+        <div style={{ position: "absolute", left: 956, top: 423, width: 12, height: 228, background: INK, opacity: caretOn ? 1 : 0 }} />
+      ) : (
+        <div style={{ position: "absolute", left: 0, top: G_BASE - 0.8585 * G_EM, transform: `translate3d(${x}px, 0, 0)`, willChange: "transform", fontSize: G_EM, fontWeight: 500, letterSpacing: G_LS, lineHeight: 1, whiteSpace: "pre", color: INK }}>
+          {G_TEXT.slice(0, n)}
+          <div style={{ position: "absolute", left: n === 1 ? 956 - x : "100%", top: 423 - (G_BASE - 0.8585 * G_EM), marginLeft: n === 1 ? 0 : G_GAP, width: 12, height: 228, background: INK }} />
+        </div>
+      )}
     </Ground>
   );
 };
 
-// ---------------------------------------------------------------- H: the macro letters (the FR 9 look)
-// The reference: an empty ground for one frame (f243), the giant caret alone (f244; f254–f255), then a key every one or
-// two frames (f245 f247 f248 f250 f251; f256 f257 f258 f260 … f262), a hold of two frames, and all along a slow drift
-// to the left (about 6 px a reference frame). The first letter appears around the place where the caret stood.
-// Proportions of FR 9 (em 860): letter-spacing −0.0395 em, caret 0.028 × 0.93 em, 0.08 em behind the line.
-type MacroDef = { word: string; keys: number[]; em: number; base: number; xEnd: number; lone: number; caretFrom: number; to: number };
-const M1: MacroDef = { word: "autom", keys: [245, 247, 248, 250, 251], em: 575, base: 783, xEnd: -15, lone: 185, caretFrom: 244, to: 254 };
-const M2: MacroDef = { word: "follo", keys: [256, 257, 258, 260, 262], em: 860, base: 883, xEnd: -40, lone: 95, caretFrom: 254, to: 265 };
+// ---------------------------------------------------------------- H: the macro letters
+// Reference: f243 an empty ground, f244 the giant caret alone (x 222), then letters (f245 f247 f248 f250 f251) with the
+// line's ink-left edge drifting 80 -> 34 (5.75 px a frame); f254-f255 the caret alone again (x 140, 134), then letters
+// (f256 f257 f258 f260 ...) from ink-left 18, drifting left about 6 px a frame. x-height 373, baseline 775, caret 232-822.
+type MacroDef = { word: string; keys: number[]; L: [number, number][]; lone: [number, number][]; loneFrom: number; to: number };
+const H_EM = 680, H_BASE = 775, H_BEAR = 0.05 * H_EM, H_GAP = 55;
+const M1: MacroDef = { word: "follo", keys: [245, 247, 248, 250, 251], L: [[245, 80], [253, 34], [254, 28]], lone: [[244, 222], [245, 222]], loneFrom: 244, to: 254 };
+const M2: MacroDef = { word: "date", keys: [256, 257, 258, 260], L: [[256, 18], [264, -30], [265, -36]], lone: [[254, 140], [255, 134], [256, 128]], loneFrom: 254, to: 265 };
 const Macro: React.FC<{ t: number; m: MacroDef }> = ({ t, m }) => {
+  const nn = refN(t, F0);
   const n = count(m.keys, t);
-  const drift = 2 * Math.max(0, frameNo(at(m.to)) - frameNo(t));     // 120 px/s to the left: 2 whole px a frame
-  const gap = 0.08 * m.em;
-  const x = (n === 0 ? m.lone - gap : m.xEnd) + drift;
+  const x = kf(nn, m.L) - H_BEAR;
+  const top = H_BASE - 0.8585 * H_EM;
+  const caret = (left: number) => <div style={{ position: "absolute", left, top: 232, width: 30, height: 590, background: INK }} />;
   return (
     <Ground tone="vig">
-      <div style={{ position: "absolute", left: 0, top: m.base - 0.8985 * m.em, transform: `translate3d(${x}px, 0, 0)`, willChange: "transform", fontSize: m.em, fontWeight: 400, letterSpacing: -0.0395 * m.em, lineHeight: 1.08, whiteSpace: "pre", color: INK }}>
-        {m.word.slice(0, n)}
-        {reached(t, m.caretFrom) && <div style={{ position: "absolute", left: "100%", top: 0.0235 * m.em, marginLeft: gap, width: 0.028 * m.em, height: 0.93 * m.em, background: INK }} />}
-      </div>
+      {n === 0 ? (reached(t, m.loneFrom) ? caret(kf(nn, m.lone)) : null) : (
+        <div style={{ position: "absolute", left: 0, top, transform: `translate3d(${x}px, 0, 0)`, willChange: "transform", fontSize: H_EM, fontWeight: 500, letterSpacing: -0.02 * H_EM, lineHeight: 1, whiteSpace: "pre", color: INK }}>
+          {m.word.slice(0, n)}
+          <div style={{ position: "absolute", left: "100%", top: 232 - top, marginLeft: H_GAP, width: 30, height: 590, background: INK }} />
+        </div>
+      )}
       <Fringe />
     </Ground>
   );
