@@ -219,7 +219,11 @@ const Z: React.FC<{ n: number }> = ({ n }) => {
       {bars.map((b, i) => (
         <React.Fragment key={i}>
           {b.hat < b.top - 4 && <Hatch x={b.x - 12} y={b.hat} w={24} h={b.top - b.hat + 10} r={12} />}
-          <div style={A(b.x - 12, b.top, 24, 476 - b.top, { background: D.bar, borderRadius: "12px 12px 0 0" })} />
+          {/* the bar is a fixed shape that slides up behind a clip at the baseline: its top glides between pixels (a bar
+              sized with top / height snaps to whole pixels, 1.5 screen px here, and grew in steps) */}
+          <div style={A(b.x - 12, 140, 24, 336, { overflow: "hidden" })}>
+            <div style={{ position: "absolute", left: 0, top: 0, width: 24, height: 350, background: D.bar, borderRadius: "12px 12px 0 0", transform: `translate3d(0, ${(b.top - 140).toFixed(3)}px, 0)`, willChange: "transform" }} />
+          </div>
         </React.Fragment>
       ))}
       {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map((m, j) => <T key={m} x={337 + 55.3 * j} y={490} s={13} c={D.dim} style={{ transform: "translateX(-50%)" }}>{m}</T>)}

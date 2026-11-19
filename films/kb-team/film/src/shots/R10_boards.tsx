@@ -121,7 +121,7 @@ export const BoardAI: React.FC<{ n: number }> = ({ n }) => {
             <path d={`M38 320 C38 340 44 345 62 345 L${jcx - 18} 345 C${jcx - 6} 345 ${jcx - 4} 352 ${jcx - 2} ${jcy - 14} L${jcx} ${jcy}`} fill="none" stroke="#5B3FFF" strokeWidth="1.3" strokeDasharray="3 3.5" />
           </svg>
           <div style={A(29, 302, 18, 18, { borderRadius: 9, background: "#4b3cf0", color: "#fff", fontSize: 15, lineHeight: "17px", textAlign: "center", fontWeight: 600 })}>+</div>
-          <div style={A(ncx, ncy, 175, 140, { transformOrigin: "0 0" })}>
+          <div style={A(0, 0, 175, 140, { transformOrigin: "0 0", transform: `translate3d(${ncx.toFixed(3)}px, ${ncy.toFixed(3)}px, 0)`, willChange: "transform" })}>
             <Sticky x={0} y={0} w={175} h={140} bg="#fcf3a0" tag="To do" chip="KB" fs={11} text={<>Connect bookings to the CRM<br />{note1}</>} />
           </div>
           <Cur x={ncx + 105} y={ncy + 138} c="#FF6A2B" label="K.B" />
@@ -240,7 +240,7 @@ export const BoardAJ: React.FC<{ n: number }> = ({ n }) => {
             {/* the timeline */}
             <div style={A(0, 225, 580, 97, { background: "linear-gradient(180deg, rgba(10,10,12,.2), rgba(10,10,12,.88))" })} />
             <div style={A(20, 228, 540, 70, { overflow: "hidden" })}>
-              <div style={A(scroll, 0, 700, 70, { willChange: "transform" })}>
+              <div style={A(0, 0, 700, 70, { transform: `translate3d(${scroll.toFixed(3)}px, 0, 0)`, willChange: "transform" })}>
                 {([[68, 47, 18, "#c9b8f7"], [94, 47, 54, "#c9b8f7"], [151, 45, 19, "#e8582b"], [175, 32, 15, "#4a86ff"], [196, 32, 20, "#4a86ff"], [243, 32, 52, "#4a86ff"], [288, 45, 33, "#e8582b"], [326, 48, 18, "#c9b8f7"], [352, 61, 18, "#f5e22e"], [378, 66, 18, "#f5e22e"], [430, 44, 56, "#e8582b"], [161, 68, 17, "#ff8fcf"], [184, 68, 18, "#ff8fcf"], [520, 47, 20, "#c9b8f7"], [550, 61, 30, "#4a86ff"]] as [number, number, number, string][]).map(([x, y, w, c], k) => <Pill key={k} x={x} y={y} w={w} c={c} />)}
               </div>
             </div>

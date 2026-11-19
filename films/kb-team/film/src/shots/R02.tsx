@@ -14,17 +14,21 @@ const nf = (n: number) => (n - F0) / 24;           // local seconds of a referen
 type Box = [number, number, number, number];
 type Ch = [number, Box];
 
-/** value of a box at fractional reference frame n; each entry starts at its frame and glides in from the frame before */
+/** value of a box at fractional reference frame n. The reference draws these moves on twos and threes (a new position
+ *  every second or third frame). Replayed literally (hold, jump, hold, jump) that is 12 jerks a second in a 60 fps film,
+ *  so a run of keys 3 frames apart or closer is ONE glide through them; only after a real rest (a longer gap) does the
+ *  box hold and then move in over the last frame. */
+const REST = 3;
 const box = (n: number, ch: Ch[]): Box => {
   const out: number[] = [];
   for (let k = 0; k < 4; k++) {
     const keys: [number, number][] = [];
-    ch.forEach(([f, b], i) => { if (i > 0) keys.push([f - 1, ch[i - 1][1][k]]); keys.push([f, b[k]]); });
+    ch.forEach(([f, b], i) => { if (i > 0 && f - ch[i - 1][0] > REST) keys.push([f - 1, ch[i - 1][1][k]]); keys.push([f, b[k]]); });
     out.push(kf(n, keys.filter((e, i) => i === 0 || e[0] > keys[i - 1][0])));
   }
   return out as Box;
 };
-const val = (n: number, ch: [number, number][]) => kf(n, ch.flatMap(([f, v], i) => (i > 0 ? [[f - 1, ch[i - 1][1]], [f, v]] : [[f, v]]) as [number, number][]));
+const val = (n: number, ch: [number, number][]) => kf(n, ch.flatMap(([f, v], i) => (i > 0 && f - ch[i - 1][0] > REST ? [[f - 1, ch[i - 1][1]], [f, v]] : [[f, v]]) as [number, number][]));
 
 // ---- the cards (photo boxes, 1920 x 1080)
 type Card = { id: string; who: string | [number, string][]; ch: Ch[]; from: number; to: number; cap?: number; ghost?: boolean; glyph?: [number, string]; pop?: number };

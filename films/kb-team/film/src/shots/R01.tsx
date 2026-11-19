@@ -177,6 +177,18 @@ const Screen: React.FC<{ n: number }> = ({ n }) => {
   const s = n < 41 ? kf(n, [[38, 0.6], [41, 0.907]]) : w / GW;
   const cx = w / 2, cy = h / 2;
   const sh = `0 ${20 * cl((n - 36) / 6)}px ${60 * cl((n - 36) / 6) + 10}px rgba(20,60,110,${0.28 * bgop})`;
+  if (n >= 41) {
+    // after the spread the screen only settles (a few px over f41-f50): one composited layer, placed and scaled by its
+    // transform, so its edges glide between pixels. A box sized with left / top / width / height snaps to whole pixels
+    // and the slow settle came out in one-pixel steps.
+    const k = w / GW;
+    return (
+      <div style={{ position: "absolute", left: 0, top: 0, width: GW, height: GH, transformOrigin: "0 0", transform: `translate3d(${x.toFixed(3)}px, ${(y + h / 2 - (GH * k) / 2).toFixed(3)}px, 0) scale(${k.toFixed(5)})`, willChange: "transform", borderRadius: r / k, overflow: "hidden", boxShadow: sh }}>
+        <RingsBG nn={n} />
+        <div style={{ position: "absolute", left: 0, top: 0, width: GW, height: GH }}><ScreenContent n={n} /></div>
+      </div>
+    );
+  }
   return (
     <div style={{ position: "absolute", left: x, top: y, width: w, height: h, opacity: op, transform: `rotate(${rot}deg)`, willChange: "transform" }}>
       <div style={{ position: "absolute", inset: 0, borderRadius: r, overflow: "hidden", boxShadow: sh, filter: d > 0.5 ? "url(#kliq)" : undefined }}>
@@ -250,7 +262,7 @@ const B2: React.FC<{ n: number }> = ({ n }) => {
   return (
     <AbsoluteFill style={{ fontFamily: F }}>
       {LGROUND}
-      <div style={{ position: "absolute", left: x, top: y, width: 1192, height: 792, transform: `scale(${s})`, transformOrigin: "0 0", background: "#0D0F12", borderRadius: 20, boxShadow: "0 24px 60px rgba(30,40,60,.22)", overflow: "hidden", willChange: "transform" }}>
+      <div style={{ position: "absolute", left: 0, top: 0, width: 1192, height: 792, transform: `translate3d(${x.toFixed(3)}px, ${y.toFixed(3)}px, 0) scale(${s.toFixed(5)})`, transformOrigin: "0 0", background: "#0D0F12", borderRadius: 20, boxShadow: "0 24px 60px rgba(30,40,60,.22)", overflow: "hidden", willChange: "transform" }}>
         <div style={abs(5, 5, 1182, 782, { borderRadius: 15, overflow: "hidden", background: "#12161A" })}>
           {/* header strip */}
           <div style={abs(0, 0, 1182, 125, { background: "#0F1216" })} />
@@ -287,15 +299,19 @@ const B2: React.FC<{ n: number }> = ({ n }) => {
             <div style={abs(0, 0, 581, 292, { background: "rgba(34,181,115,.26)" })} />
             {[0, 1, 2, 3, 4].map((i) => <div key={i} style={abs(0, 40 + i * 60, 1182, 1, { background: "rgba(255,255,255,.07)" })} />)}
             {[0, 1, 2, 3, 4, 5, 6].map((i) => <div key={i} style={abs(((i * 168 + off) % 1176 + 1176) % 1176, 0, 1, 292, { background: "rgba(255,255,255,.06)" })} />)}
+            {/* the dots and pills ride in ONE layer that scrolls by its transform (1.6 px a film frame): placed with
+                left they snapped to whole pixels and advanced 1, 2, 1, 2 px */}
+            <div style={{ position: "absolute", left: 0, top: 0, width: 1182, height: 292, transform: `translate3d(${off.toFixed(3)}px, 0, 0)`, willChange: "transform" }}>
             {LANE.map((it, i) => {
               const cx = it.x + off, bright = cl((cx - 556) / 40);
               const hh = it.k === "pill" ? 58 : it.w;
               return (
-                <div key={i} style={{ position: "absolute", left: cx - it.w / 2 - 5, top: it.y - hh / 2 - 134, width: it.w, height: hh, borderRadius: hh / 2, background: it.c, opacity: 0.38 + 0.62 * bright, boxShadow: i === 5 ? "0 0 26px rgba(79,123,255,.7)" : undefined, color: "#fff", fontSize: it.k === "pill" ? 17 : 24, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", filter: bright < 1 ? `saturate(${0.6 + 0.4 * bright})` : undefined }}>
+                <div key={i} style={{ position: "absolute", left: it.x - it.w / 2 - 5, top: it.y - hh / 2 - 134, width: it.w, height: hh, borderRadius: hh / 2, background: it.c, opacity: 0.38 + 0.62 * bright, boxShadow: i === 5 ? "0 0 26px rgba(79,123,255,.7)" : undefined, color: "#fff", fontSize: it.k === "pill" ? 17 : 24, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", filter: bright < 1 ? `saturate(${0.6 + 0.4 * bright})` : undefined }}>
                   <span style={{ color: i === 8 || i === 10 ? INK : "#fff" }}>{it.t}</span>
                 </div>
               );
             })}
+            </div>
             <div style={abs(581, 0, 2, 292, { background: "rgba(255,255,255,.8)" })} />
           </div>
           {/* progress */}
@@ -355,7 +371,7 @@ const B3: React.FC<{ n: number }> = ({ n }) => {
     const cw = kf(n, [[75, 454], [76, 447], [77, 444], [78, 442], [79, 441]]);
     const x = kf(n, [[75, 732], [79, 740]]), y = kf(n, [[75, 96], [79, 110]]);
     const s = cw / CW;
-    inner = <div style={{ position: "absolute", left: x, top: y, width: CW, height: CH, transform: `scale(${s})`, transformOrigin: "0 0", borderRadius: 36, overflow: "hidden", boxShadow: "0 24px 60px rgba(30,40,60,.22)", willChange: "transform" }}><CardBody /></div>;
+    inner = <div style={{ position: "absolute", left: 0, top: 0, width: CW, height: CH, transform: `translate3d(${x.toFixed(3)}px, ${y.toFixed(3)}px, 0) scale(${s.toFixed(5)})`, transformOrigin: "0 0", borderRadius: 36, overflow: "hidden", boxShadow: "0 24px 60px rgba(30,40,60,.22)", willChange: "transform" }}><CardBody /></div>;
   } else if (n < 87) {
     const s = 363 / CW;
     inner = <div style={{ position: "absolute", left: 778, top: 184, width: CW, height: CH, transform: `scale(${s})`, transformOrigin: "0 0", borderRadius: 36, overflow: "hidden", boxShadow: "0 20px 50px rgba(30,40,60,.2)" }}><CardBody /></div>;

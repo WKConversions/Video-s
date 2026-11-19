@@ -42,7 +42,7 @@ const MiniSheet: React.FC<{ w: number; h: number }> = ({ w, h }) => (
     <rect x="0" y="62" width="121" height="14" fill="#F7F7F7" /><rect x="6" y="65" width="8" height="8" rx="1.5" fill="#38C8FF" /><rect x="20" y="67" width="52" height="4" rx="2" fill="#6E7580" /></svg>
 );
 const Spin: React.FC<{ n: number; i: number }> = ({ n, i }) => {
-  const a = ((Math.floor(n) * 47 + i * 83) % 360);
+  const a = ((n * 47 + i * 83) % 360);                               // turns on every film frame (it stepped 24 times a second)
   return <svg width={CHIP_S} height={CHIP_S} viewBox="0 0 93 93" style={abs(0, 0)}><circle cx="46.5" cy="46.5" r="9" fill="none" stroke="rgba(255,255,255,.78)" strokeWidth="2.2" strokeLinecap="round" strokeDasharray="30 27" transform={`rotate(${a} 46.5 46.5)`} /></svg>;
 };
 const Chip: React.FC<{ i: number; n: number }> = ({ i, n }) => {

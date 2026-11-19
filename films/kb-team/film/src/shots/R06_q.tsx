@@ -147,15 +147,18 @@ export const ShotQ: React.FC<{ n: number }> = ({ n }) => {
           <div style={A(50, 0, 1, 235, { background: "rgba(255,255,255,.07)" })} /><div style={A(875, 0, 1, 235, { background: "rgba(255,255,255,.07)" })} />
           <div style={A(0, 116, 926, 1, { background: "rgba(255,255,255,.05)" })} /><div style={A(0, 175, 926, 1, { background: "rgba(255,255,255,.05)" })} />
           <div style={A(line - 344, 0, 1.2, 235, { background: "#F2F5F8" })} />
+          {/* the notes ride in ONE layer that scrolls by its transform: placed with left they snapped to whole pixels */}
+          <div style={{ position: "absolute", left: 0, top: 0, width: 926, height: 235, transform: `translate3d(${scroll.toFixed(3)}px, 0, 0)`, willChange: "transform" }}>
           {NOTES.map((nt, i) => {
             if (nt.n0 && n < nt.n0 - 0.2) return null;
             const p = nt.n0 ? kf(n, [[nt.n0 - 0.2, 0], [nt.n0 + 0.5, 1]]) : 1;
             const s = nt.n0 && !nt.fade ? 0.55 + 0.45 * ease.out(p) : 1;
             const pill = nt.w > 60;
             return (
-              <div key={i} style={A(nt.x - 344 + scroll, nt.y - 197, nt.w, 47, { borderRadius: 24, background: nt.c, opacity: nt.fade ? 0.55 + 0.45 * p : Math.min(1, p * 2), transform: `scale(${s.toFixed(3)})`, color: "#fff", fontSize: pill ? 12 : 14, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: pill ? "flex-start" : "center", paddingLeft: pill ? 14 : 0, whiteSpace: "nowrap", willChange: "transform" })}>{nt.label}</div>
+              <div key={i} style={A(nt.x - 344, nt.y - 197, nt.w, 47, { borderRadius: 24, background: nt.c, opacity: nt.fade ? 0.55 + 0.45 * p : Math.min(1, p * 2), transform: `scale(${s.toFixed(3)})`, color: "#fff", fontSize: pill ? 12 : 14, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: pill ? "flex-start" : "center", paddingLeft: pill ? 14 : 0, whiteSpace: "nowrap", willChange: "transform" })}>{nt.label}</div>
             );
           })}
+          </div>
         </div>
         <div style={A(344, 432, line - 344, 14, { background: C.mint })} />
         <div style={A(line, 432, 1270 - line, 14, { background: "#3A4350" })} />
