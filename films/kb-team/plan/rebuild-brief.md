@@ -98,12 +98,20 @@ Six things are the same:
   the reference spreads, slides, scales, blurs or dissolves over two or more frames, so do we, with the same in-between
   pictures. Only a change from one frame to the next with nothing in between is a hard cut (the cuts in
   `plan/shots.json` are candidates, not verdicts).
-- **Flash cuts move inside.** When the reference cuts every 3 or 4 frames, look at what happens within each flash (a
-  drift, a scale, cards sliding): replicate it. A held still between cuts reads as choppy.
+- **Inside a flash cut.** When the reference cuts every 3 or 4 frames, look at what happens within each flash: if
+  its picture drifts, scales or slides, ours does the same; if it is truly held, ours is held.
 - **Rests are rests.** Where the reference holds, we hold: its typing, caret, pointer or counter is the life. Do not
   add a push or a drift.
 - **Glide, never step.** Positions, scales and opacities are continuous functions of `t`. Only things that are discrete
   in the reference step: a typed letter, a cut, a number changing, a flash.
+- **Giant letters must be whole.** A close-up of letters only reads when every letter in view stands whole inside
+  the frame, between the reference's own baseline and x-height lines. Letters with tall stems or tails (f, l, t, h, d,
+  b, k, g, p, y) get cut by the frame: for such a shot choose letters of our sentence that sit in the x-height zone.
+- **The pointer on a measured path:** `import { Hand } from "../hand"` and place it with `kf` for x and y (the kit's
+  `HandAt` glides on its own easing and cannot replay a measured path). The fingertip is the hotspot.
+- **Handwriting:** the kit loads "Caveat" (fontFamily: "Caveat", weight 400-700) for sketches and pencilled notes.
+- **Only the script's words and the site's facts in readable type.** Do not invent a sentence to fill a line: use the
+  script's neighbouring sentence, or mock content from the set above.
 - Typed text: the letters appear on the reference's frames (`track.py text` shows the right edge advancing); the caret
   as in the reference (shape, blink frames).
 - Filmed shots: `const tw = onTwos(name, s, inSec)`; `<Footage name at={tw.at} scale={…} x={…} />` with the scale and
@@ -148,11 +156,19 @@ Six things are the same:
   length in seconds in `note`, `click`, `tick`, `pop`, `swish`, `slide`, `rise`, `sparkle`, `thud`, `success`,
   `digital`; `keep: true` for a run that must sound on every step).
 
+## Time, exactly
+- Reference frame `n` starts at local time `t = (n - F0) / 24`. A cut or an event "on frame n" happens at
+  `refN(t, F0) >= n`, nothing earlier, nothing later. Do not shift time by fractions of a frame to make a sheet look
+  right: `check.py` shows, for each reference frame, our first film frame at or after that moment.
+- A flash cut's picture that the reference HOLDS (three identical frames) is held in ours too. Do not add a drift to
+  it; the stepping gate only counts repeats while the reference is moving.
+
 ## Gates (printed by `tools/check.py`) and what they are worth
 - Layout: on a flat ground, cover within x0.7-x1.4 of the reference and overlap >= 0.60; on a full-frame picture, ours
   full-frame and tone >= 0.45.
 - Motion: amount within x0.55-x1.8 of the reference, correlation >= 0.45; where the reference rests, ours rests.
-- Steps: our 60 fps frames repeat no more than the reference's 24 fps frames do (filmed shots on twos are exempt).
+- Steps: while the reference is moving, under 30% of our 60 fps frames repeat the frame before (filmed shots on twos
+  are exempt).
 The gates find misses; they do not prove a match. The proof is the pair sheet: on every frame, would a viewer say
 "the same shot, for K.B"? If a gate cannot be met for a good reason (our text is longer, a filmed clip differs), say
 so in your report with the frame numbers.

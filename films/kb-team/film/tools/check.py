@@ -11,13 +11,14 @@
 #           ours is full-frame too, and how alike the light-dark composition is (tone, 1.00 = the same).
 #   MOTION  the share of the frame that changes from one picture to the next, in the reference and in ours, and how
 #           alike the two curves are over the shot (corr, 1.00 = it moves at the same moments, as strongly).
-#   STEPS   the share of our 60 fps frames that repeat the frame before: motion that is drawn at 24 steps a second
-#           instead of gliding shows up here.
+#   STEPS   while the reference is moving: the share of our 60 fps frames that repeat the frame before. Motion that
+#           is drawn in steps instead of gliding shows up here. Where the reference holds (a flash cut's held picture,
+#           a rest), holding is right and is not counted.
 # A shot PASSES when: layout overlap >= 0.60 and cover within x0.7-x1.4 (flat ground) or full-frame with tone >= 0.45;
-# motion within x0.55-x1.8 of the reference and corr >= 0.45; no more stepping than the reference. Filmed shots only
+# motion within x0.55-x1.8 of the reference and corr >= 0.45; under 30% stepping while the reference moves. Filmed shots only
 # need to be full-frame. The numbers find the misses; the sheets show what they are. Passing numbers with a picture
 # that is not the reference's picture is still a miss.
-import glob, json, os, shutil, subprocess, sys
+import glob, json, math, os, shutil, subprocess, sys
 import cv2, numpy as np
 from PIL import Image, ImageDraw, ImageFont
 HERE = os.path.dirname(os.path.abspath(__file__)); FILM = os.path.join(HERE, ".."); ROOT = os.path.join(FILM, "..")
@@ -25,7 +26,8 @@ REF = os.path.join(ROOT, "reference", "frames"); SHOTS = json.load(open(os.path.
 def arg(name, default): return type(default)(sys.argv[sys.argv.index(name) + 1]) if name in sys.argv else default
 pid = sys.argv[1]; pk = SHOTS[pid]; f0, f1 = pk["f0"], pk["f1"]; total = round((f1 + 1 - f0) * 2.5)
 out = os.path.join(FILM, "out", "chk"); seq = os.path.join(out, pid); os.makedirs(out, exist_ok=True)
-loc = lambda n: min(round((n - f0) * 2.5), total - 1)
+# our frame for reference frame n: the first film frame at or after the moment the reference frame starts
+loc = lambda n: min(math.ceil((n - f0) * 2.5 - 1e-9), total - 1)
 
 if "--no-render" not in sys.argv:
     shutil.rmtree(seq, ignore_errors=True)
@@ -64,7 +66,9 @@ if "--from" not in sys.argv:
         mref = [change(gray(R[n]), gray(R[n - 1])) for n in ns[1:]]; mour = [change(gray(O[n]), gray(O[n - 1])) for n in ns[1:]]
         mr_, mo_ = (float(np.mean(mref)), float(np.mean(mour))) if mref else (0.0, 0.0)
         corr = float(np.corrcoef(mref, mour)[0, 1]) if len(mref) >= 7 and np.std(mref) > 1e-4 and np.std(mour) > 1e-4 else None
-        s60 = float(np.mean(same60[loc(a) + 1:loc(b) + 1])) if loc(b) > loc(a) else 0.0; sref = float(np.mean([m < 0.0005 for m in mref])) if mref else 0.0
+        # stepping: our film frames that repeat the frame before, counted only while the reference itself is moving
+        mv = [i for k_, n in enumerate(ns[1:]) if mref[k_] >= 0.002 for i in range(loc(n - 1) + 1, loc(n) + 1)]
+        s60 = float(np.mean([same60[i] for i in mv])) if mv else 0.0; sref = float(np.mean([m < 0.0005 for m in mref])) if mref else 0.0
         flatshare = float(np.mean(flat)); bad = []
         if kind == "film":
             lay = f"filmed: ours full-frame in {100 * (1 - np.mean(of)):.0f}% of frames"
@@ -81,8 +85,8 @@ if "--from" not in sys.argv:
             if mr_ >= 0.003 and not 0.55 <= mo_ / mr_ <= 1.8: bad.append("motion amount")
             if mr_ < 0.003 and mo_ > mr_ + 0.01: bad.append("motion amount (the reference rests here)")
             if corr is not None and mr_ >= 0.003 and corr < 0.45: bad.append("motion timing")
-            if s60 > max(0.25, sref + 0.25): bad.append("steps")
-        print(f"  {name:4s} f{a}-f{b}  {'PASS' if not bad else 'MISS: ' + ', '.join(bad)}\n       {lay}\n       {mot}; frames repeating: ours {100 * s60:.0f}% (60 fps), reference {100 * sref:.0f}% (24 fps)")
+            if s60 > 0.3: bad.append("steps")
+        print(f"  {name:4s} f{a}-f{b}  {'PASS' if not bad else 'MISS: ' + ', '.join(bad)}\n       {lay}\n       {mot}; while the reference moves, {100 * s60:.0f}% of our 60 fps frames repeat (stepping); the reference itself holds in {100 * sref:.0f}% of its frames")
         if bad and kind != "film": print("       worst frames: " + ", ".join(f"f{n} ({v:.2f})" for v, n in sorted(worst)[:5]))
         if bad: fails.append(name)
     print(f"GATES: {len(pk['shots']) - len(fails)} of {len(pk['shots'])} shots pass" + ("" if not fails else "; missing: " + ", ".join(fails)))

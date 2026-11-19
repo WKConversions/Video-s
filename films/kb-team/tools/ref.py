@@ -17,8 +17,9 @@ CUTS = [64, 75, 93, 130, 188, 192, 196, 200, 205, 254, 265, 295, 385, 387, 393, 
 def arg(name, default):
     return type(default)(sys.argv[sys.argv.index(name) + 1]) if name in sys.argv else default
 def full(n):
-    raw = subprocess.run(["ffmpeg", "-v", "error", "-i", VID, "-vf", f"select=eq(n\\,{n})", "-vframes", "1", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], capture_output=True).stdout
-    return Image.frombytes("RGB", (1280, 720), raw)
+    # the full-size frame with the SAME number as reference/frames/, tools/track.py and film/tools/check.py use
+    # (reference/frames720/; the film's first picture is there twice, so the video's own decode index is one lower)
+    return Image.open(os.path.join(REF, "frames720", f"f{n:04d}.jpg")).convert("RGB")
 def font(size):
     for p in ("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf"):
         if os.path.exists(p): return ImageFont.truetype(p, size)

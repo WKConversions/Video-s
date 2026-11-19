@@ -11,14 +11,15 @@ export type { HandKey };
 export const C = { paper: "#F6F6F4", ink: "#293A51", cyan: "#38C8FF", dark: "#111A27", dark2: "#1B2636", ui: "#E9E8E4", line: "rgba(41,58,81,.14)", sub: "#7A8494", mint: "#22C7A0", violet: "#7C6CFF", indigo: "#4F7BFF", amber: "#FFB547", coral: "#FF7A66", green: "#22B573", white: "#FFFFFF" };
 export const F = "Montserrat, sans-serif";
 export const SH = "0 30px 70px rgba(41,58,81,.16), 0 4px 14px rgba(41,58,81,.08)";
-export const FACES = [["Montserrat", "montserrat-var-latin.woff2", "100 900"], ["Montserrat", "montserrat-var-latin-ext.woff2", "100 900"], ["Copperplate CC", "copperplate-cc-heavy.otf", "800"]];
+export const FACES = [["Montserrat", "montserrat-var-latin.woff2", "100 900"], ["Montserrat", "montserrat-var-latin-ext.woff2", "100 900"], ["Copperplate CC", "copperplate-cc-heavy.otf", "800"], ["Caveat", "caveat-var.ttf", "400 700"]];
+// "Caveat" (SIL Open Font License) is the handwriting for sketches and pencilled notes: fontFamily: "Caveat", weight 400-700.
 export const useFonts = () => {
   const [ok, setOk] = useState(false); const [h] = useState(() => delayRender("fonts"));
   useEffect(() => {
     const el = document.createElement("style");
     el.textContent = FACES.map(([f, file, w]) => `@font-face{font-family:'${f}';src:url(${staticFile("fonts/" + file)});font-weight:${w}}`).join("\n");
     document.head.appendChild(el);
-    Promise.all([400, 500, 600, 700].map((w) => document.fonts.load(`${w} 60px Montserrat`))).then(() => { setOk(true); continueRender(h); });
+    Promise.all([...[400, 500, 600, 700].map((w) => document.fonts.load(`${w} 60px Montserrat`)), document.fonts.load("500 60px Caveat"), document.fonts.load("700 60px Caveat")]).then(() => { setOk(true); continueRender(h); });
   }, [h]);
   return ok;
 };

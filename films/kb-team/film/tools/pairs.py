@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # Reference above OUR film, frame for frame, from a film that is already rendered (no Remotion call).
 #   python3 -I tools/pairs.py ../deliver/kb-team-50s-1080p60.mp4 0 63 out/pairs.png [--step 2] [--cols 8] [--w 236] [--ref-only]
-# Our frame for reference frame n is film frame round(n * 2.5). Run from films/kb-team/film.
-import os, sys, cv2
+# Our frame for reference frame n is film frame ceil(n * 2.5): the first one at or after that moment. Run from films/kb-team/film.
+import math, os, sys, cv2
 from PIL import Image, ImageDraw, ImageFont
 HERE = os.path.dirname(os.path.abspath(__file__)); REF = os.path.join(HERE, "..", "..", "reference", "frames")
 def arg(name, default): return type(default)(sys.argv[sys.argv.index(name) + 1]) if name in sys.argv else default
@@ -17,6 +17,6 @@ for k, n in enumerate(ns):
     d.text((x + 2, y), f"f{n}  {n / 24:.2f}s", fill=(190, 0, 0), font=f)
     sheet.paste(Image.open(os.path.join(REF, f"f{n:04d}.jpg")).resize((w, h), Image.LANCZOS), (x, y + 14))
     if not only:
-        cap.set(cv2.CAP_PROP_POS_FRAMES, round(n * 2.5)); ok, fr = cap.read()
+        cap.set(cv2.CAP_PROP_POS_FRAMES, math.ceil(n * 2.5 - 1e-9)); ok, fr = cap.read()
         if ok: sheet.paste(Image.fromarray(cv2.cvtColor(cv2.resize(fr, (w, h), interpolation=cv2.INTER_AREA), cv2.COLOR_BGR2RGB)), (x, y + 16 + h))
 sheet.save(out); print(out, sheet.size)
