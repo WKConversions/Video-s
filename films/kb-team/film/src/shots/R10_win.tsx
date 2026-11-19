@@ -63,7 +63,7 @@ const Header: React.FC<{ fg: string; pill: string; pillActive: string; avatarBg:
 );
 
 export const WinScene: React.FC<{ n: number }> = ({ n }) => {
-  const ghost = n < 847, bold = n >= 871, light = !ghost && !bold;
+  const ghost = n < 847, bold = n >= 871;
   // ----- ground: black with a purple glow from below on f833 that drains away by f836
   const glow = kf(n, [[833, 1], [834, 0.45], [835, 0.14], [838, 0]]);
   // ----- the window outline and chrome
@@ -87,13 +87,12 @@ export const WinScene: React.FC<{ n: number }> = ({ n }) => {
   const showHand = n >= 848;
   // the whole bold window's last move: a small breath outwards-in before the cut (f896-f899)
   const endS = bold ? kf(n, [[895, 1], [897, 0.9982], [899, 0.9945]]) : 1;
-  const tinyS = ghost ? 1 : 1;
   return (
     <AbsoluteFill style={{ background: "#020202", overflow: "hidden" }}>
       <div style={{ position: "absolute", inset: 0, background: `radial-gradient(70% 55% at 50% 108%, rgba(112,84,176,${glow.toFixed(3)}), rgba(60,70,120,${(glow * 0.45).toFixed(3)}) 55%, transparent 100%)` }} />
       <div style={{ position: "absolute", inset: 0, background: "radial-gradient(60% 40% at 50% 100%, rgba(20,60,50,.45), transparent 100%)", opacity: n < 836 ? kf(n, [[834, 0.2], [835, 1], [836, 0.3]]) : 0.25 }} />
       <KBmark />
-      <div style={{ position: "absolute", inset: 0, transformOrigin: "960px 540px", transform: `scale(${(endS * tinyS).toFixed(4)})`, willChange: "transform" }}>
+      <div style={{ position: "absolute", inset: 0, transformOrigin: "960px 540px", transform: `scale(${endS.toFixed(4)})`, willChange: "transform" }}>
         <Px>
           {/* the window: outline in the ghost, beige when lit */}
           {ghost && <div style={A(224, 100, 831, 520, { border: "1px solid rgba(96,92,224,.75)", boxSizing: "border-box", opacity: frameO })} />}
@@ -199,4 +198,3 @@ export const WinScene: React.FC<{ n: number }> = ({ n }) => {
     </AbsoluteFill>
   );
 };
-export const _unused = light;

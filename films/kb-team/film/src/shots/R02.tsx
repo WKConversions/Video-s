@@ -155,7 +155,7 @@ const Lines: React.FC<{ n: number }> = ({ n }) => (
       const o = clamp((n - a + 1)) * clamp(b + 1 - n);
       if (o <= 0.01) return null;
       const st = ax === "v" ? abs(p - 1.5, 0, 3, 1080) : abs(0, p - 1.5, 1920, 3);
-      return <div key={i} style={{ ...st, background: "#A0A0A0", opacity: o }} />;
+      return <div key={i} style={{ ...st, background: "#B2B2B2", opacity: o * 0.85 }} />;
     })}
   </>
 );
@@ -171,7 +171,7 @@ const Comp: React.FC<{ t: number }> = ({ t }) => {
       <Words n={n} />
       <Lockup n={n} />
       <Lines n={n} />
-      {n >= 184 && <AbsoluteFill style={{ opacity: kf(n, [[184, 0], [185, 0.03], [186, 0.2], [187, 0.34]]) }}><Footage name="F1" at={7.5 / 23.976} scale={1.03} /></AbsoluteFill>}
+      {n >= 184 && <AbsoluteFill style={{ opacity: kf(n, [[184, 0], [185, 0.03], [186, 0.35], [187, 0.55]]) }}><Footage name="F1" at={7.5 / 23.976} scale={1.03} grade="grayscale(1) brightness(2.2) contrast(.3)" /></AbsoluteFill>}
     </AbsoluteFill>
   );
 };

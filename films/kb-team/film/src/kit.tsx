@@ -50,7 +50,7 @@ export const Arrow: React.FC<{ s: number; c: string }> = ({ s, c }) => <svg widt
 export const Msg: React.FC<{ x: number; y: number; w?: number; text: string; dark?: boolean; k?: number; big?: number; caret?: boolean; press?: number; children?: React.ReactNode }> = ({ x, y, w, text, dark, k, big, caret = true, press = 0, children }) => {
   const s = k ?? big ?? 1, fg = dark ? "#F2F5F9" : "#16202E", sub = dark ? "rgba(255,255,255,.16)" : "rgba(22,32,46,.14)";
   return (
-    <div style={abs(x, y, w ?? 1110 * s, undefined, { boxSizing: "border-box", background: dark ? "#1C2634" : "#FFFFFF", borderRadius: 17 * s, boxShadow: dark ? "none" : `0 ${14 * s}px ${44 * s}px rgba(41,58,81,.07)`, border: dark ? "1px solid rgba(255,255,255,.10)" : "none", padding: `${40 * s}px ${32 * s}px ${30 * s}px ${47 * s}px` })}>
+    <div style={abs(x, y, w ?? 1110 * s, undefined, { boxSizing: "border-box", fontFamily: F, background: dark ? "#1C2634" : "#FFFFFF", borderRadius: 17 * s, boxShadow: dark ? "none" : `0 ${14 * s}px ${44 * s}px rgba(41,58,81,.07)`, border: dark ? "1px solid rgba(255,255,255,.10)" : "none", padding: `${40 * s}px ${32 * s}px ${30 * s}px ${47 * s}px` })}>
       {children}
       <div style={{ fontSize: 35 * s, fontWeight: 500, lineHeight: `${48 * s}px`, color: fg, letterSpacing: -0.7 * s, minHeight: 96 * s, paddingRight: 60 * s }}>{text}{caret && <span style={{ display: "inline-block", width: Math.max(2, 2.5 * s), height: 36 * s, background: fg, marginLeft: 3 * s, verticalAlign: `${-6 * s}px` }} />}</div>
       <div style={{ display: "flex", alignItems: "center", height: 50 * s, marginTop: 54 * s, fontSize: 23 * s, fontWeight: 500, color: fg }}>

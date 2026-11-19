@@ -72,7 +72,7 @@ export const ShotS: React.FC<{ t: number; n: number; t0: number }> = ({ t, n, t0
       {/* the filmed half */}
       <div style={{ position: "absolute", left: 37, top: 37, width: 908, height: 1003, borderRadius: 18, overflow: "hidden", background: "#000" }}>
         <div style={{ position: "absolute", left: 454 - 960 - 40 * zoom, top: -150 + pan, width: 1920, height: 1080 }}>
-          <Footage name="S" at={tw.at} scale={zoom} />
+          <Footage name="S" at={tw.at} scale={zoom} style={{ overflow: "visible" }} />
         </div>
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(14,19,27,.9) 0, rgba(14,19,27,.85) 7%, rgba(14,19,27,0) 17%, rgba(14,19,27,0) 76%, rgba(14,19,27,.75) 100%)" }} />
       </div>

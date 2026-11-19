@@ -136,22 +136,22 @@ const Chip: React.FC<{ n: number; f: number; x: number; y: number; d: number; c:
 
 // the ground: pale, calm, with soft cyan-mint flower sprays that live in the world (they slide with the cards)
 const rn = (k: number) => { const s = Math.sin(k * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };
-const SPRAYS = Array.from({ length: 70 }, (_, i) => ({ x: 40 + rn(i + 1) * 1840, y: -1250 + rn(i + 40) * 2400, h: 260 + rn(i + 80) * 420, lean: (rn(i + 120) - 0.5) * 220, blue: i % 3 === 0 }));
+const SPRAYS = Array.from({ length: 44 }, (_, i) => ({ x: 40 + rn(i + 1) * 1840, y: -700 + rn(i + 40) * 1800, h: 260 + rn(i + 80) * 420, lean: (rn(i + 120) - 0.5) * 220, blue: i % 3 === 0 }));
 const GroundWorld: React.FC<{ fade: number }> = ({ fade }) => (
-  <div style={abs(0, -1500, 1920, 3000)}>
-    <svg width="1920" height="3000" viewBox="0 -1500 1920 3000" style={{ position: "absolute", left: 0, top: 0 }}>
+  <div style={abs(0, -3000, 1920, 4600)}>
+    <svg width="1920" height="4600" viewBox="0 -3000 1920 4600" style={{ position: "absolute", left: 0, top: 0 }}>
       <defs>
-        <radialGradient id="r09w1"><stop offset="0" stopColor="#BDEBD6" stopOpacity=".75" /><stop offset="1" stopColor="#BDEBD6" stopOpacity="0" /></radialGradient>
-        <radialGradient id="r09w2"><stop offset="0" stopColor="#B9E6F6" stopOpacity=".55" /><stop offset="1" stopColor="#B9E6F6" stopOpacity="0" /></radialGradient>
+        <radialGradient id="r09w1"><stop offset="0" stopColor="#BDEBD6" stopOpacity=".5" /><stop offset="1" stopColor="#BDEBD6" stopOpacity="0" /></radialGradient>
+        <radialGradient id="r09w2"><stop offset="0" stopColor="#B9E6F6" stopOpacity=".4" /><stop offset="1" stopColor="#B9E6F6" stopOpacity="0" /></radialGradient>
       </defs>
       <g opacity={fade}>
         <ellipse cx="1500" cy="-1100" rx="900" ry="360" fill="url(#r09w1)" /><ellipse cx="500" cy="-1300" rx="800" ry="300" fill="url(#r09w1)" />
         <ellipse cx="1000" cy="120" rx="1100" ry="420" fill="url(#r09w1)" /><ellipse cx="1100" cy="760" rx="1000" ry="360" fill="url(#r09w2)" />
-        {Array.from({ length: 14 }, (_, i) => <ellipse key={`e${i}`} cx={i % 2 ? 1920 : 0} cy={-1400 + i * 210} rx="520" ry="260" fill={i % 3 === 0 ? "url(#r09w2)" : "url(#r09w1)"} />)}
+        {Array.from({ length: 16 }, (_, i) => <ellipse key={`e${i}`} cx={i % 2 ? 1920 : 0} cy={-1500 + i * 190} rx="520" ry="260" fill={i % 3 === 0 ? "url(#r09w2)" : "url(#r09w1)"} />)}
         {Array.from({ length: 12 }, (_, i) => <ellipse key={`t${i}`} cx={300 + (i % 4) * 440} cy={i % 2 ? -1480 : 1420} rx="520" ry="200" fill="url(#r09w1)" />)}
         <ellipse cx="300" cy="-300" rx="700" ry="260" fill="url(#r09w1)" opacity=".6" />
         {SPRAYS.map((s, i) => (
-          <g key={i} opacity={0.5}>
+          <g key={i} opacity={0.4}>
             <path d={`M${s.x} ${s.y} C${s.x + s.lean * 0.2} ${s.y - s.h * 0.4} ${s.x + s.lean * 0.8} ${s.y - s.h * 0.7} ${s.x + s.lean} ${s.y - s.h}`} fill="none" stroke="#9FDCCB" strokeWidth="5" strokeLinecap="round" />
             {[0.35, 0.55, 0.75, 0.95].map((q, j) => <ellipse key={j} cx={s.x + s.lean * q + (j % 2 ? 22 : -22)} cy={s.y - s.h * q} rx={s.blue ? 22 : 14} ry={s.blue ? 36 : 22} fill={s.blue ? "#8CCDEB" : "#A6E2D2"} opacity={s.blue ? 0.7 : 0.8} />)}
           </g>))}
@@ -169,7 +169,7 @@ const Notes: React.FC = () => (
 // ---------------------------------------------------------------- AE + AF
 const BTN = { x: 960, y: 541 };
 const TIP = { x: 1017, y: 601 };                                    // the arrow's tip at rest on the button (measured)
-const HSIZE = 100;
+const HSIZE = 130;
 const Tower: React.FC<{ t: number }> = ({ t }) => {
   const n = refN(t, F0), W = Wn(n);
   // the button: scale and colour as measured (f794 pressed, back by f799), black to colour in five frames
