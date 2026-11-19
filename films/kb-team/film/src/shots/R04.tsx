@@ -23,7 +23,7 @@ const CPS = 16, T0 = -(TEXT.length - 12) / CPS;                         // the l
 const REST = { x: 1490, y: 688 };                                       // the arrow's tip: the lower right corner of the send button
 const TARGET = { x: 1462, y: 632 };                                     // on the button, where the click lands
 const CLICK = at(288);                                                  // the fingertip is deepest on f288
-const HS = 115;
+const HS = 115, PX = -6, PY = -46;
 const clampF = (v: number) => Math.max(0, Math.min(1, v));
 const I: React.FC<{ t: number }> = ({ t }) => {
   const n = refN(t, F0);
@@ -34,9 +34,9 @@ const I: React.FC<{ t: number }> = ({ t }) => {
   const vx = (kf(n + 0.5, KX) - kf(n - 0.5, KX)) * 24, vy = (kf(n + 0.5, KY) - kf(n - 0.5, KY)) * 24;
   const lean = (v: number) => Math.max(-20, Math.min(20, v / 65));
   return (
-    <AbsoluteFill style={{ background: C.ui, fontFamily: F }}>
+    <AbsoluteFill style={{ background: C.ui }}>
       <Msg x={405} y={400} w={1110} text={typed(TEXT, t, T0, CPS)} press={press} />
-      <Hand x={x + 0 * press} y={y + 6 * press} size={HS} tiltY={lean(vx) - 10 * press} tiltX={-lean(vy) * 0.6 - 40 * press} rot={Math.max(-10, Math.min(10, vx / 120 + vy / 280)) - 9 * press} press={press} />
+      <Hand x={x + PX * press} y={y + PY * press} size={HS} tiltY={lean(vx) - 10 * press} tiltX={-lean(vy) * 0.6 - 40 * press} rot={Math.max(-10, Math.min(10, vx / 120 + vy / 280)) - 9 * press} press={press} />
     </AbsoluteFill>
   );
 };
@@ -53,7 +53,8 @@ const TI: Record<string, TD> = {
 /** a tool tile: `ph` makes it a "photo": a coloured backdrop with the tool's logo card standing on it, as the reference's product photos */
 const Tl: React.FC<{ k: string; w: number; h: number; r?: number; ph?: string; style?: React.CSSProperties }> = ({ k, w, h, r = 8, ph, style }) => {
   const d = TI[k], p = d.pad ?? 0;
-  const logo = (ww: number, hh: number) => <Img src={staticFile(`tools/${d.img}.png`)} style={abs(ww * p, hh * p, ww * (1 - 2 * p), hh * (1 - 2 * p), { objectFit: d.fill ? "cover" : "contain" })} />;
+  const q = ph && d.fill ? 0.16 : p;
+  const logo = (ww: number, hh: number) => <Img src={staticFile(`tools/${d.img}.png`)} style={abs(ww * q, hh * q, ww * (1 - 2 * q), hh * (1 - 2 * q), { objectFit: d.fill && !ph ? "cover" : "contain" })} />;
   if (ph) {
     const s = Math.min(w, h) * 0.62;
     return (
@@ -76,11 +77,11 @@ type Pc = { k?: string; ph?: string; x: number; y: number; w: number; h: number;
 const WALL: Pc[] = [
   { x: 1732, y: 200, w: 200, h: 500, f: 312, o: 0.2, ghost: true }, { x: 1352, y: 608, w: 192, h: 194, k: "supabase", ph: "#D8A9AE", f: 312, o: 0.5 },
   { x: 230, y: 0, w: 640, h: 360, f: 314, o: 0.22, ghost: true }, { x: 452, y: 342, w: 234, h: 180, k: "n8n", ph: "#C9C9CC", f: 314 },
-  { x: 448, y: -24, w: 198, h: 200, k: "tan", ph: "#9C9C9F", f: 316 }, { x: 1542, y: 802, w: 282, h: 282, k: "apollo", f: 316 }, { x: 1582, y: 608, w: 84, h: 104, k: "pg", ph: "#DACBB7", f: 316 },
+  { x: 448, y: -24, w: 198, h: 200, k: "tan", ph: "#9C9C9F", f: 316 }, { x: 1542, y: 802, w: 282, h: 282, k: "apollo", ph: "#EFE8BF", f: 316 }, { x: 1582, y: 608, w: 84, h: 104, k: "pg", ph: "#DACBB7", f: 316 },
   { x: 440, y: 790, w: 540, h: 300, f: 316, o: 0.3, ghost: true },
-  { x: 40, y: 176, w: 206, h: 250, k: "pipedrive", ph: "#5B2A38", f: 317 }, { x: 1454, y: 200, w: 212, h: 232, k: "gyg", f: 317 }, { x: 1454, y: -30, w: 212, h: 172, k: "resend", ph: "#8C8379", f: 317 },
-  { x: 248, y: -30, w: 200, h: 220, k: "ts", ph: "#BFD3EA", f: 318 }, { x: 172, y: 626, w: 250, h: 430, k: "vite", ph: "#E9AFC0", rot: -5, f: 318 },
-  { x: 1152, y: 0, w: 280, h: 392, f: 318, o: 0.22, ghost: true }, { x: 1836, y: 806, w: 120, h: 280, k: "dd", f: 318 },
+  { x: 40, y: 176, w: 206, h: 250, k: "pipedrive", ph: "#5B2A38", f: 317 }, { x: 1454, y: 200, w: 212, h: 232, k: "gyg", ph: "#EFCBC6", f: 317 }, { x: 1454, y: -30, w: 212, h: 172, k: "resend", ph: "#8C8379", f: 317 },
+  { x: 248, y: -30, w: 200, h: 220, k: "ts", ph: "#C9DAEE", f: 318 }, { x: 172, y: 626, w: 250, h: 430, k: "vite", ph: "#E9AFC0", rot: -5, f: 318 },
+  { x: 1152, y: 0, w: 280, h: 392, f: 318, o: 0.22, ghost: true }, { x: 1836, y: 806, w: 120, h: 280, k: "dd", ph: "#D9CFE6", f: 318 },
 ];
 const Wall: React.FC<{ n: number }> = ({ n }) => {
   const sc = 1 - 0.07 * ease.inOut(clamp((n - 326) / 8)), fade = 1 - clamp((n - 328.5) / 4.5);
@@ -111,7 +112,7 @@ const DOTS: [number, number, number, number][] = [[190, 166, 320, 332], [132, 13
 // ================================================================ the card (K, L)
 const CW = 384, CH = 738, CX = 768, CY = 171, MID = 190;
 const ROWS: { items: string[]; ph: string[]; ar: number; gap: number; label: string[] }[] = [
-  { items: ["pipedrive", "makecom", "odoo", "vite"], ph: ["#2E3138", "#8C9BB4", "#5E6B4A", "#E4B9C4"], ar: 1.03, gap: 48, label: ["NEW LEAD", "01"] },
+  { items: ["pipedrive", "makecom", "claude", "vite"], ph: ["#2E3138", "#8C9BB4", "#5E6B4A", "#E4B9C4"], ar: 1.03, gap: 48, label: ["NEW LEAD", "01"] },
   { items: ["supabase", "n8n", "apollo", "claude"], ph: ["#BCD2E8", "#8E8F93", "#E4DAC3", "#B9B0A4"], ar: 0.9, gap: 48, label: ["FOLLOW-UP", "02"] },
   { items: ["gyg", "resend", "pg", "zen"], ph: ["#C9473F", "#6B655E", "#CDBB9E", "#A8A8AC"], ar: 1.09, gap: 84, label: ["CRM UPDATED", "03"] },
 ];
@@ -185,9 +186,11 @@ const Wire: React.FC<{ n: number }> = ({ n }) => {
       <div style={abs(906, 197, 118, 44, { borderRadius: 22, border: `1.5px solid ${stroke}`, boxSizing: "border-box" })} />
       <div style={abs(1096, 197, 44, 44, { borderRadius: 22, border: `1.5px solid ${stroke}`, boxSizing: "border-box" })} />
       {label(300, "NEW LEAD", "01")}{label(488, "FOLLOW-UP", "02")}{label(700, "CRM UPDATED", "03")}
-      <div style={abs(862, 326, 196, 176)}><Tl k="odoo" w={196} h={176} r={0} style={{ background: "transparent" }} /></div>
-      <div style={abs(895, 512, 130, 214)}><Tl k="supabase" w={130} h={214} r={0} style={{ background: "transparent" }} /></div>
-      <div style={abs(915, 708, 90, 90)}><Tl k="pg" w={90} h={90} r={0} style={{ background: "transparent" }} /></div>
+      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "960px 563px", transform: `scale(${kf(n, [[375, 1], [379, 0.985], [382, 0.87], [383, 0.91]]).toFixed(4)}, ${kf(n, [[375, 1], [379, 1.025], [382, 0.983], [383, 1.068]]).toFixed(4)})`, willChange: "transform" }}>
+        <div style={abs(872, 327, 170, 172)}><Tl k="claude" w={170} h={172} r={0} style={{ background: "transparent" }} /></div>
+        <div style={abs(885, 500, 150, 210)}><Tl k="supabase" w={150} h={210} r={0} style={{ background: "transparent" }} /></div>
+        <div style={abs(915, 708, 90, 90)}><Tl k="pg" w={90} h={90} r={0} style={{ background: "transparent" }} /></div>
+      </div>
       <div style={abs(788, 846, 350, 42, { borderRadius: 21, border: `1.5px solid ${stroke}`, boxSizing: "border-box" })} />
     </AbsoluteFill>
   );
@@ -205,11 +208,11 @@ const Gl: React.FC<{ k: number; s: number }> = ({ k, s }) => (
 // ================================================================ J, K, L
 const JKL: React.FC<{ t: number }> = ({ t }) => {
   const n = refN(t, F0);
-  if (n >= 375) return <AbsoluteFill style={{ background: GROUND }}><Wire n={n} /></AbsoluteFill>;
+  if (n >= 375) return <AbsoluteFill style={{ background: GROUND, fontFamily: F }}><Wire n={n} /></AbsoluteFill>;
   const gl = n < 299 ? 0 : n < 303 ? 1 : 2;                              // the three glyphs
   const ctr = CENTRE.find(([a, b]) => n >= a && n < b);
   return (
-    <AbsoluteFill style={{ background: GROUND }}>
+    <AbsoluteFill style={{ background: GROUND, fontFamily: F }}>
       {n < 307 && (() => {
         const S = [420, 339, 300][gl], c = [[52.5, 50.5], [51, 51], [50, 50]][gl];
         const sc = gl === 0 ? 1 : gl === 1 ? kf(n, [[299, 1.02], [300.5, 1]]) : kf(n, [[303, 1.0], [304, 0.9], [306, 0.91]]);

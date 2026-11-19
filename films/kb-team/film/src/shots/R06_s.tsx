@@ -64,7 +64,7 @@ export const ShotS: React.FC<{ t: number; n: number; t0: number }> = ({ t, n, t0
   // the reference's left picture runs down the frame (tracked: 0 -> 844 px); ours tilts the same way, at half the travel, so the clip keeps its subject
   const pan = 0.45 * kf(528 + tw.sj * 24, [[528, 0], [530, 21], [533, 85], [536, 166], [540, 289], [545, 455], [550, 630], [556, 844]]);
   const ly = litTop(n);
-  const taken = TRIG.filter((tg) => n >= tg + 0.8).length;
+  const taken = TRIG.filter((tg) => n >= tg + 0.3).length;
   const rank = 9 - taken;
   const lscore = LITSCORE[taken];
   return (
@@ -91,7 +91,7 @@ export const ShotS: React.FC<{ t: number; n: number; t0: number }> = ({ t, n, t0
             {ROWS.map((r, i) => {
               const j = i + 1, k = PASSED.indexOf(j);
               const d = k < 0 ? 0 : PITCH * ease.out(clamp((n - TRIG[k]) / 1.8));
-              const moved = k >= 0 && n >= TRIG[k] + 0.8;
+              const moved = k >= 0 && n >= TRIG[k] + 0.3;
               return <RowBox key={r.name} y={TOP0 + PITCH * i + d} rank={j + (moved ? 1 : 0)} r={r} />;
             })}
             {/* the lit row */}
