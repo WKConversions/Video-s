@@ -11,9 +11,9 @@
 #           ours is full-frame too, and how alike the light-dark composition is (tone, 1.00 = the same).
 #   MOTION  the share of the frame that changes from one picture to the next, in the reference and in ours, and how
 #           alike the two curves are over the shot (corr, 1.00 = it moves at the same moments, as strongly).
-#   STEPS   while the reference is moving: the share of our 60 fps frames that repeat the frame before. Motion that
-#           is drawn in steps instead of gliding shows up here. Where the reference holds (a flash cut's held picture,
-#           a rest), holding is right and is not counted.
+#   STEPS   while the reference is in continuous motion (three or more moving steps in a row): the share of our
+#           60 fps frames that repeat the frame before. Motion drawn in steps instead of gliding shows up here. A cut,
+#           a flash, a typed letter or a rest is not counted: there, holding is right.
 # A shot PASSES when: layout overlap >= 0.60 and cover within x0.7-x1.4 (flat ground) or full-frame with tone >= 0.45;
 # motion within x0.55-x1.8 of the reference and corr >= 0.45; under 30% stepping while the reference moves. Filmed shots only
 # need to be full-frame. The numbers find the misses; the sheets show what they are. Passing numbers with a picture
@@ -67,7 +67,10 @@ if "--from" not in sys.argv:
         mr_, mo_ = (float(np.mean(mref)), float(np.mean(mour))) if mref else (0.0, 0.0)
         corr = float(np.corrcoef(mref, mour)[0, 1]) if len(mref) >= 7 and np.std(mref) > 1e-4 and np.std(mour) > 1e-4 else None
         # stepping: our film frames that repeat the frame before, counted only while the reference itself is moving
-        mv = [i for k_, n in enumerate(ns[1:]) if mref[k_] >= 0.002 for i in range(loc(n - 1) + 1, loc(n) + 1)]
+        # (continuous motion only: a reference step counts when the steps before and after it move too; a cut, a flash
+        #  or a typed letter is one change between two holds, and at 60 fps its picture has to repeat)
+        glide = [0.002 <= m < 0.25 for m in mref]; cont = [k_ for k_ in range(1, len(mref) - 1) if glide[k_ - 1] and glide[k_] and glide[k_ + 1]]
+        mv = [i for k_ in cont for i in range(loc(ns[k_]) + 1, loc(ns[k_ + 1]) + 1)]
         s60 = float(np.mean([same60[i] for i in mv])) if mv else 0.0; sref = float(np.mean([m < 0.0005 for m in mref])) if mref else 0.0
         flatshare = float(np.mean(flat)); bad = []
         if kind == "film":
