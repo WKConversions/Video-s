@@ -1,202 +1,403 @@
-// K.B team film, package R01 (reference f0-f92).
-//   A  f0-f41   the three small words; the portrait card opens between them and is dealt over three times
-//   B1 f42-f63  the flow window that grows out of the card (one continuous shot with A)
-//   B2 f64-f74  the ranking window (hard cut)
-//   B3 f75-f92  the product card (hard cut); it shrinks into a portrait and the first word of the next line arrives
-// Every frame number below is a reference frame measured in the reference film.
+// K.B team film, package R01 (reference f0-f92), rebuilt v2 from measured keys.
+//   A  f0-f41   the three words as hard steps; the line splits on f15 around a card of portraits; the picture spreads
+//   B1 f41-f63  the first finished screen (K.B automation product)
+//   B2 f64-f74  dark ranking app (hard cut)      B3 f75-f92  tall team card that steps down to a portrait
 import React from "react";
 import { AbsoluteFill, Img, staticFile } from "remotion";
 import type { Pkg } from "../types";
-import { C, E, Ground, Port, ROLE, S, SH, Tool, Tx, Win, abs, clamp, ease, mix, useFonts } from "../kit";
+import { C, F, Tile, Check, abs, kf, refN, useFonts } from "../kit";
 
-const T = (n: number) => n / 24;                                    // local seconds of reference frame n (this package starts at f0)
+const INK = "#16202E";
 const EPS = 1e-6;
-const fast = { damping: 20, stiffness: 400, mass: 0.5 };            // a quick arrival with about 4% overshoot
-const snap = { damping: 20, stiffness: 800, mass: 0.3 };            // 80% after one reference frame, then a small overshoot
-const pop = (t: number, n: number) => S(t, T(n), fast);
-const bump = (x: number) => (x <= 0 || x >= 1 ? 0 : Math.sin(Math.PI * x));
-const Pin: React.FC<{ x: number; y: number; k?: number; rot?: number; o?: number; children: React.ReactNode }> = ({ x, y, k = 1, rot = 0, o = 1, children }) => (
-  <div style={{ position: "absolute", left: x, top: y, width: 0, height: 0, opacity: o, transform: `rotate(${rot}deg) scale(${k})`, willChange: "transform" }}>{children}</div>
-);
+const T = (n: number) => n / 24;
+const cl = (x: number, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const step = (n: number, a: number, b: number) => cl((n - a) / (b - a));
+// text width by canvas (fonts are loaded before Comp draws)
+let _cv: CanvasRenderingContext2D | null = null;
+const mw = (s: string, size: number, wt: number, ls: number) => {
+  if (!_cv) _cv = document.createElement("canvas").getContext("2d")!;
+  _cv.font = `${wt} ${size}px Montserrat`;
+  return _cv.measureText(s).width + ls * s.length;
+};
 
-// ---------------------------------------------------------------- A + B1: the words, the portrait card, the flow window
-const CX = 1020, CY = 540;                                          // the gap between "right" and "team": where the card opens
-// the card is dealt over at the reference's picture changes (f15, f21, f26, f30); at f26 it is the storyboard's frame
-const SHEETS = [
-  { who: "cedric", n: 15, w: 344, h: 320, rot: -3.5, dx: -5, dy: 4 },
-  { who: "karl", n: 21, w: 366, h: 342, rot: 3, dx: 5, dy: -4 },
-  { who: "tom", n: 26, w: 384, h: 358, rot: -0.6, dx: 0, dy: 0 },
-  { who: "robin", n: 30, w: 400, h: 372, rot: 2.2, dx: 3, dy: -2 },
-];
-const WIN = { cx: 1120, cy: 530, s0: 0.39 };                        // the window's centre (storyboard) and its size as a card
-/** the window's growth out of the card, 0..1, fitted to the reference (f36.3 on: a burst, then a long settle to f49) */
-const grow = (n: number) => { const x = Math.max(0, n - 36.3); return 1 - 0.4 * (1 + 0.966 * x) * Math.exp(-0.966 * x) - 0.6 * Math.exp(-0.409 * x); };
-const bez = (u: number, p: number[][]) => { const v = 1 - u; return [0, 1].map((i) => v * v * v * p[0][i] + 3 * v * v * u * p[1][i] + 3 * v * u * u * p[2][i] + u * u * u * p[3][i]); };
-const UP = [[690, 360], [790, 360], [790, 200], [900, 200]], DOWN = [[690, 360], [790, 360], [790, 520], [900, 520]];
-const PULSES = [44, 50, 56, 62];                                    // data leaves the first tool at these frames
-
-const Flow: React.FC<{ t: number }> = ({ t }) => {
-  const n = t * 24;
-  const d1 = E(t, T(35.5), T(2.5)), d2 = E(t, T(38), T(3.5));       // the lines draw
-  const kIn = pop(t, 35), kUp = pop(t, 41), kDown = pop(t, 43);
-  const hit = (at: number) => PULSES.reduce((a, s) => a + bump((n - s - at) / 2.6), 0);
-  const line = (d: string, p: number) => <path d={d} fill="none" stroke={C.cyan} strokeWidth="6" pathLength={1} strokeDasharray="1 1" strokeDashoffset={1 - p} />;
+// ================================================================ the words (A)
+const FS = 68, LS = -1.4, SP = 17;
+const wordStyle = (x: number, top: number, extra: React.CSSProperties = {}): React.CSSProperties => ({
+  position: "absolute", left: x, top, fontSize: FS, lineHeight: `${FS}px`, fontWeight: 500, letterSpacing: LS, color: INK, whiteSpace: "nowrap", fontFamily: F, ...extra,
+});
+const Words: React.FC<{ n: number }> = ({ n }) => {
+  const wT = mw("The", FS, 500, LS), wR = mw("right", FS, 500, LS), wM = mw("team", FS, 500, LS);
+  const W = wT + SP + wR + SP + wM, L = 958 - W / 2, xR = L + wT + SP, xM = xR + wR + SP;
+  const TOP = 506.6;
+  if (n < 15) {
+    const els: React.ReactNode[] = [];
+    els.push(<div key="a" style={wordStyle(n < 5 ? L + 60 : L, TOP)}>The</div>);
+    if (n >= 5) els.push(<div key="b" style={wordStyle(xR, TOP)}>right</div>);
+    if (n >= 8) els.push(<div key="c" style={wordStyle(n < 11 ? xM - 9 : xM, TOP)}>team</div>);
+    return <>{els}</>;
+  }
+  if (n >= 40) return null;
+  const wP = wT + SP + wR;
+  // left part (right edge), right word (left edge)
+  const rEdge = kf(n, [[35, 708], [36, 586], [38, 519], [39, 500]]);
+  const dy = kf(n, [[35, 0], [36, -19], [38, -69], [39, -80]]);
+  const lo = n < 36 ? 1 : kf(n, [[36, 0.55], [38, 0.35], [38.9, 0.3], [39, 0]]);
+  const grey = n < 36 ? INK : "#8C96A3";
+  const xr = kf(n, [[35, 1166], [36, 1464], [38, 1469]]);
+  const ry = kf(n, [[35, 0], [36, 54], [38, 104]]);
+  const ro = n < 36 ? 1 : kf(n, [[36, 1], [39, 0.8], [40, 0]]);
+  const rc = n < 36 ? INK : "#4DC4E6";
   return (
     <>
-      <div style={abs(0, 0, 1300, 720, { background: "#F7F9FB", backgroundImage: `radial-gradient(${C.line} 1.5px, transparent 1.5px)`, backgroundSize: "40px 40px" })} />
-      <svg style={abs(0, 0)} width="1300" height="720">
-        {d1 > 0 && line("M270 360 H520", d1)}
-        {d2 > 0 && line("M690 360 C790 360 790 200 900 200", d2)}
-        {d2 > 0 && line("M690 360 C790 360 790 520 900 520", d2)}
-        {PULSES.map((s) => {
-          const a = (n - s) / 5, b = (n - s - 5.5) / 5;
-          return (
-            <g key={s} fill={C.ink}>
-              {a > 0 && a < 1 && <circle cx={mix(270, 520, a)} cy={360} r={8} />}
-              {b > 0 && b < 1 && [UP, DOWN].map((p, i) => { const [x, y] = bez(ease.inOut(b), p); return <circle key={i} cx={x} cy={y} r={8} />; })}
-            </g>
-          );
-        })}
-      </svg>
-      <Pin x={190} y={360} k={kIn * (1 + 0.05 * hit(0))}><Tool n="pipedrive" x={-80} y={-80} s={160} navy /></Pin>
-      {PULSES.map((s) => { const r = (n - s - 5) / 4; return r > 0 && r < 1 ? <div key={s} style={abs(520, 275, 170, 170, { borderRadius: 38, border: `5px solid ${C.cyan}`, opacity: 0.7 * (1 - r), transform: `scale(${1 + 0.4 * ease.out(r)})` })} /> : null; })}
-      <Pin x={605} y={360} k={1 + 0.05 * hit(5)}>
-        <div style={abs(-85, -85, 170, 170, { borderRadius: 38, background: C.white, border: `5px solid ${C.cyan}`, boxShadow: SH, display: "flex", alignItems: "center", justifyContent: "center" })}><Img src={staticFile("logo/kb-logo-tile.svg")} style={{ width: 96, height: 96, borderRadius: 14 }} /></div>
-      </Pin>
-      <Pin x={980} y={200} k={kUp * (1 + 0.06 * hit(10.5))}><Tool n="n8n-logo2" x={-80} y={-80} s={160} /></Pin>
-      <Pin x={980} y={520} k={kDown * (1 + 0.06 * hit(10.5))}><Tool n="odoo-1" x={-80} y={-80} s={160} navy /></Pin>
+      <div style={{ ...wordStyle(rEdge - wP, TOP + dy), opacity: lo, color: grey }}>The right</div>
+      <div style={{ ...wordStyle(xr, TOP + ry), opacity: ro, color: rc }}>team</div>
     </>
   );
 };
 
-const A: React.FC<{ t: number }> = ({ t }) => {
-  const n = t * 24;
-  // the words: "The" is there, "right" at f5, "team" at f8; the card pushes them apart from f15; from f36 they leave
-  const open = S(t, T(15), snap);                                   // the reference opens it in one frame
-  const half = 172 + 11 * S(t, T(21), snap) + 9 * S(t, T(26), snap) + 8 * S(t, T(30), snap) + 54 * S(t, T(34), snap) + 6 * clamp((n - 15) / 19);   // half the card's width
-  const push = open * (half + 30);
-  const go1 = E(t, T(35.6), 0.12, ease.out), go2 = E(t, T(37.6), 0.12, ease.out);   // the words leave in two steps, as in the reference
-  const in1 = E(t, 0, 0.22, ease.out), in2 = E(t, T(5), 0.11, ease.out), in3 = E(t, T(8), 0.16, ease.out);
-  const oL = 1 - 0.55 * clamp((t - T(35.5)) / 0.05) - 0.45 * clamp((t - T(37.5)) / 0.085), oR = 1 - clamp((t - T(37.8)) / 0.1);
-  const word = (x: number, y: number, o: number): React.CSSProperties => ({ display: "inline-block", transform: `translate3d(${x}px, ${y}px, 0)`, opacity: o, willChange: "transform" });
-  // the window: lands on the stack as a small card at f34, grows into the first screen from f36.3
-  const g = grow(n), land = S(t, T(34), snap);
-  const sw = mix(WIN.s0 * mix(0.6, 1, land), 1, g);
+// ================================================================ the portrait stack (A)
+const SHEETS = [
+  { who: "robin", n: 15, b: [750, 384, 388, 327], rot: -1.5 },
+  { who: "tom", n: 18, b: [750, 374, 388, 327], rot: 1.6 },
+  { who: "youri", n: 21, b: [744, 340, 394, 384], rot: -1.1 },
+  { who: "karl", n: 24, b: [731, 338, 420, 395], rot: 2 },
+  { who: "cedric", n: 26, b: [718, 336, 444, 406], rot: -1.2 },
+];
+const BX = [[26, 718], [30, 704], [34, 692], [35, 692]] as [number, number][];
+const BY = [[26, 336], [30, 327], [34, 316], [35, 316]] as [number, number][];
+const BW = [[26, 444], [34, 506], [35, 506]] as [number, number][];
+const BH = [[26, 406], [34, 428], [35, 428]] as [number, number][];
+const Stack: React.FC<{ n: number }> = ({ n }) => {
+  if (n >= 36.5) return null;
+  const fadeOut = n < 36 ? 1 : 1 - step(n, 36, 36.5);
   return (
-    <Ground>
-      <Tx x={720} y={506} s={66} w={600}>
-        <span style={word(100 * (1 - in2) - push - 60 * go1 - 40 * go2, 10 * (1 - in1), oL)}>The</span>{" "}
-        <span style={word(40 * (1 - in2) - push - 60 * go1 - 40 * go2, 0, clamp((t - T(5) - 0.012) / 0.04) * oL)}>right</span>{" "}
-        <span style={word(-8 * (1 - in3) + push + 110 * go1 + 70 * go2, 10 * (1 - in3) + 24 * go2, clamp((t - T(8)) / 0.04) * oR)}>team</span>
-      </Tx>
-      {n < 41 && SHEETS.map((s, i) => {
-        const t0 = T(s.n), dt = t - t0;
-        if (dt < 0) return null;
-        const k = i === 0 ? mix(0.25, 1, open) : mix(1.08, 1, S(t, t0, snap));
+    <>
+      {SHEETS.map((s, i) => {
+        if (n < s.n) return null;
+        let [x, y, w, h] = s.b;
+        if (n >= 26) { x = kf(n, BX) + (i - 2) * 3; y = kf(n, BY) + (2 - i) * 2; w = kf(n, BW) - (4 - i) * 2; h = kf(n, BH) - (4 - i) * 2; }
         return (
-          <Pin key={s.who} x={CX + s.dx} y={CY + s.dy} k={k * (1 + 0.03 * dt)} rot={s.rot + (i % 2 ? 0.7 : -0.7) * dt} o={clamp(dt / 0.05)}>
-            <Port who={s.who} x={-s.w / 2} y={-s.h / 2} w={s.w} h={s.h} />
-          </Pin>
+          <div key={s.who} style={{ position: "absolute", left: x, top: y, width: w, height: h, transform: `rotate(${s.rot}deg)`, opacity: fadeOut, background: "#fff", padding: 6, boxSizing: "border-box", borderRadius: 4, boxShadow: "0 12px 34px rgba(30,45,70,.20), 0 2px 6px rgba(30,45,70,.12)", willChange: "transform" }}>
+            <Img src={staticFile(`team/${s.who}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 20%", display: "block" }} />
+          </div>
         );
       })}
-      {t + EPS >= T(34) && (
-        <div style={{ position: "absolute", left: 0, top: 0, width: 0, height: 0, opacity: clamp((t - T(34)) / 0.04), transform: `translate3d(${mix(CX, WIN.cx, g)}px, ${mix(CY, WIN.cy, g)}px, 0) rotate(${-2 * (1 - g)}deg) scale(${sw})`, willChange: "transform" }}>
-          <Win x={-650} y={-380} w={1300} h={760}><Flow t={t} /></Win>
-        </div>
-      )}
-    </Ground>
+    </>
   );
 };
 
-// ---------------------------------------------------------------- B2: the ranking window
-const MONO = "ui-monospace, Menlo, monospace";
-const B2: React.FC<{ t: number }> = ({ t }) => {
-  const n = t * 24;
-  const k = 1 + 0.024 * Math.exp(-(n - 64) / 2.1);                  // the window settles, as in the reference
-  const p = S(t, T(65.4), { damping: 18, stiffness: 300, mass: 0.6 });   // "Your business" climbs from third to second
-  const glow = 0.35 + 0.3 * bump((n - 68) / 5);
-  const visitors = Math.round(mix(27, 38, E(t, T(64), 0.36, ease.out)));
+// ================================================================ the screen (B1): picture + pieces
+const GW = 1336, GH = 831;
+const RingsBG: React.FC = () => (
+  <svg width="100%" height="100%" viewBox={`0 0 ${GW} ${GH}`} preserveAspectRatio="none" style={{ position: "absolute", inset: 0 }}>
+    <defs>
+      <linearGradient id="kbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#4F7BFF" /><stop offset=".5" stopColor="#38C8FF" /><stop offset="1" stopColor="#22C7A0" /></linearGradient>
+      <radialGradient id="kvg" cx=".5" cy=".62" r=".75"><stop offset="0" stopColor="#fff" stopOpacity=".10" /><stop offset=".7" stopColor="#0A2A7A" stopOpacity="0" /><stop offset="1" stopColor="#0A2A7A" stopOpacity=".28" /></radialGradient>
+      <filter id="kbl"><feGaussianBlur stdDeviation="3.5" /></filter>
+    </defs>
+    <rect width={GW} height={GH} fill="url(#kbg)" />
+    <g filter="url(#kbl)" fill="none">
+      {Array.from({ length: 11 }, (_, i) => { const rx = 60 + i * 92 + (i * i) * 1.2, ry = rx * 0.36; return (
+        <g key={i}>
+          <ellipse cx={676} cy={470 + 12} rx={rx} ry={ry} stroke="#0B2D86" strokeOpacity={0.34} strokeWidth={14 + i * 1.6} />
+          <ellipse cx={676} cy={470} rx={rx + 10} ry={ry + 4} stroke="#EFFFFF" strokeOpacity={0.36} strokeWidth={9 + i * 1.1} />
+        </g>); })}
+    </g>
+    <rect width={GW} height={GH} fill="url(#kvg)" />
+  </svg>
+);
+const pop = (n: number, a: number, d = 2) => cl((n - a) / d);
+const Piece: React.FC<{ n: number; at: number; x: number; y: number; w: number; h: number; children: React.ReactNode; style?: React.CSSProperties }> = ({ n, at, x, y, w, h, children, style }) => {
+  const p = pop(n, at, 2.2);
+  if (p <= 0) return null;
+  const sc = kf(n, [[at, 0.62], [at + 2.2, 1.04], [at + 4, 1]]);
+  return <div style={{ position: "absolute", left: x, top: y, width: w, height: h, opacity: p, transform: `scale(${sc})`, transformOrigin: "50% 50%", ...style }}>{children}</div>;
+};
+const MiniCard: React.FC<{ n: number; at: number; x: number; y: number; w: number; h: number; bg: string; logo: string; logoBg: string; l1: string; l2: string; tall?: boolean; light?: boolean }> = ({ n, at, x, y, w, h, bg, logo, logoBg, l1, l2, tall, light }) => (
+  <Piece n={n} at={at} x={x} y={y} w={w} h={h} style={{ background: bg, borderRadius: 6, overflow: "hidden", boxShadow: "0 8px 22px rgba(10,30,90,.25)" }}>
+    <div style={abs(12, 12, tall ? 52 : 40, tall ? 52 : 40, { borderRadius: 10, background: logoBg, display: "flex", alignItems: "center", justifyContent: "center" })}>
+      <Img src={staticFile(`tools/${logo}.png`)} style={{ width: "66%", height: "66%", objectFit: "contain" }} />
+    </div>
+    <div style={abs(12, h - 52, w - 60, 44, { fontSize: 17, lineHeight: "20px", fontWeight: 600, color: light ? INK : "#fff", letterSpacing: -0.2 })}>{l1}<br /><span style={{ fontWeight: 500, opacity: 0.85 }}>{l2}</span></div>
+    <div style={abs(w - 42, h - 42, 30, 30, { borderRadius: 15, background: "#fff", display: "flex", alignItems: "center", justifyContent: "center" })}>
+      <svg width="16" height="16" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke={INK} strokeWidth="3.4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+    </div>
+  </Piece>
+);
+const ScreenContent: React.FC<{ n: number }> = ({ n }) => {
+  const h1 = pop(n, 40.5, 1.6), h2 = pop(n, 42, 2), tiny = pop(n, 43, 2.5);
   return (
-    <Ground>
-      <Pin x={800} y={530} k={k}>
-        <Win x={-650} y={-380} w={1300} h={760} dark>
-          <div style={abs(60, 40, 620)}>
-            <div style={{ fontSize: 46, fontWeight: 600, letterSpacing: 6, color: "#E8EDF4", fontFamily: MONO }}>RANKING</div>
-            {Array.from({ length: 7 }, (_, i) => {
-              const me = i === 1, dy = i === 1 ? 98 * (1 - p) : i === 2 ? -98 * (1 - p) : 0;
-              const place = i === 1 ? (p < 0.5 ? 3 : 2) : i === 2 ? (p < 0.5 ? 2 : 3) : i + 1;
+    <div style={{ position: "absolute", left: 0, top: 0, width: GW, height: GH, fontFamily: F }}>
+      {/* index grid */}
+      {Array.from({ length: 4 }, (_, r) => Array.from({ length: 4 }, (_, c) => {
+        const lab = r === 0 ? `0${c + 1}` : c === 0 ? `0${r + 1}` : r === 1 && c < 3 ? `0${c + 1}` : "";
+        return lab ? <div key={`${r}${c}`} style={{ position: "absolute", left: 50 + c * 395, top: 89 + r * 221, fontSize: 13, fontWeight: 500, color: "rgba(255,255,255,.7)", opacity: pop(n, 41, 2) }}>{lab}</div> : null; }))}
+      {/* nav pill */}
+      <Piece n={n} at={40.5} x={461} y={22} w={430} h={38} style={{ background: "rgba(255,255,255,.55)", borderRadius: 10, display: "flex", alignItems: "center", fontSize: 12, fontWeight: 600, color: INK }}>
+        <div style={{ width: 38, height: 38, borderRadius: 9, background: "#FFE27A", display: "flex", alignItems: "center", justifyContent: "center" }}><Tile x={19} y={19} s={26} /></div>
+        {["Flows", "Leads", "Inbox", "Team"].map((s, i) => <div key={s} style={{ flex: 1, textAlign: "center", height: 26, lineHeight: "26px", margin: "0 3px", borderRadius: 7, background: i === 0 ? "rgba(255,255,255,.7)" : "transparent" }}>{s}</div>)}
+      </Piece>
+      {/* headline */}
+      <div style={{ position: "absolute", left: 0, top: 117, width: 1352, textAlign: "center", fontSize: 100, lineHeight: "100px", fontWeight: 600, letterSpacing: -3.5, color: "#fff", whiteSpace: "nowrap" }}>
+        <div style={{ opacity: h1, transform: `translateY(${(1 - h1) * 14}px)` }}>Good morning,</div>
+        <div style={{ opacity: h2, transform: `translateY(${(1 - h2) * 14}px)` }}>team</div>
+      </div>
+      <div style={{ position: "absolute", left: 989, top: 236, fontSize: 15, lineHeight: "20px", fontWeight: 500, color: "#fff", opacity: tiny, whiteSpace: "nowrap" }}>12 follow-ups sent overnight.<br />3 meetings booked.<br />CRM up to date.</div>
+      {/* buttons */}
+      <Piece n={n} at={46} x={560} y={418} w={232} h={48} style={{ background: "rgba(255,255,255,.45)", borderRadius: 13, display: "flex", alignItems: "center", justifyContent: "center", gap: 8, fontSize: 15, fontWeight: 600, color: INK }}>
+        <div style={{ width: 98, height: 36, borderRadius: 9, background: "rgba(255,255,255,.82)", textAlign: "center", lineHeight: "36px" }}>Pause</div>
+        <div style={{ width: 106, height: 36, borderRadius: 9, background: C.amber, textAlign: "center", lineHeight: "36px" }}>Run now</div>
+      </Piece>
+      <MiniCard n={n} at={46} x={103} y={271} w={205} h={96} bg="#E9604F" logo="n8n-logo2" logoBg="#fff" l1="Flow" l2="4 steps" />
+      <MiniCard n={n} at={44} x={170} y={526} w={206} h={96} bg="#5B54D6" logo="pipedrive" logoBg="#fff" l1="New lead" l2="Sanne" />
+      <MiniCard n={n} at={42.5} x={653} y={575} w={180} h={192} bg="#17A98C" logo="resend" logoBg={INK} l1="Follow-up" l2="sent" tall />
+      <MiniCard n={n} at={38} x={1056} y={448} w={180} h={135} bg="#1B2540" logo="odoo-1" logoBg="#fff" l1="CRM" l2="updated" />
+    </div>
+  );
+};
+const BOXK = {
+  x: [[26, 718], [30, 704], [34, 692], [35, 692], [36, 662], [37, 441], [38, 380], [39, 326], [40, 388], [41, 354], [42, 338], [45, 297], [50, 284]] as [number, number][],
+  y: [[26, 336], [30, 327], [34, 316], [35, 316], [36, 332], [37, 332], [38, 306], [39, 231], [40, 182], [41, 160], [42, 150], [45, 129], [50, 122]] as [number, number][],
+  w: [[26, 444], [34, 506], [35, 506], [36, 591], [37, 944], [38, 1200], [39, 1254], [40, 1143], [41, 1212], [42, 1246], [45, 1313], [50, 1336]] as [number, number][],
+  h: [[26, 406], [34, 428], [35, 428], [36, 410], [37, 438], [38, 550], [39, 693], [40, 718], [41, 759], [42, 780], [45, 818], [50, 831]] as [number, number][],
+  r: [[35, 4], [36, 140], [37, 220], [38, 275], [39, 160], [40, 50], [41, 16], [42, 12]] as [number, number][],
+  d: [[35, 0], [36, 28], [37, 62], [38, 82], [39, 52], [40, 26], [41, 0]] as [number, number][],
+};
+const Screen: React.FC<{ n: number }> = ({ n }) => {
+  if (n < 29.8) return null;
+  const x = kf(n, BOXK.x), y = kf(n, BOXK.y), w = kf(n, BOXK.w), h = kf(n, BOXK.h), r = kf(n, BOXK.r), d = kf(n, BOXK.d);
+  const op = n < 34 ? kf(n, [[29.8, 0], [33.3, 1]]) : 1;
+  const rot = kf(n, [[30, -1.2], [35, -1.2], [36, 0]]);
+  const s = n < 41 ? kf(n, [[38, 0.6], [41, 0.907]]) : w / GW;
+  const cx = w / 2, cy = h / 2;
+  const sh = n < 36 ? "0 10px 30px rgba(30,45,70,.22)" : `0 ${20 * cl((n - 36) / 6)}px ${60 * cl((n - 36) / 6) + 10}px rgba(20,60,110,.28)`;
+  return (
+    <div style={{ position: "absolute", left: x, top: y, width: w, height: h, opacity: op, transform: `rotate(${rot}deg)`, willChange: "transform" }}>
+      <div style={{ position: "absolute", inset: 0, borderRadius: r, overflow: "hidden", boxShadow: sh, filter: d > 0.5 ? "url(#kliq)" : undefined, background: "#38C8FF" }}>
+        <RingsBG />
+        <div style={{ position: "absolute", left: cx - GW / 2 * s, top: cy - GH / 2 * s, width: GW, height: GH, transform: `scale(${s})`, transformOrigin: "0 0" }}><ScreenContent n={n} /></div>
+      </div>
+    </div>
+  );
+};
+const PaperRings: React.FC<{ n: number }> = ({ n }) => {
+  if (n < 36 || n > 57) return null;
+  const o = kf(n, [[36, 0], [38, 0.55], [44, 0.42], [56, 0]]);
+  const cx = 952, cy = 540;
+  return (
+    <svg width={1920} height={1080} style={{ position: "absolute", inset: 0, opacity: o }}>
+      {[0, 1, 2, 3].map((i) => { const k = kf(n, [[36, 0.5 + i * 0.12], [56, 1.1 + i * 0.25]]); return <ellipse key={i} cx={cx} cy={cy} rx={520 * k} ry={330 * k} fill="none" stroke="#38C8FF" strokeOpacity={0.45 - i * 0.07} strokeWidth={6} strokeDasharray="2 7" strokeLinecap="round" />; })}
+    </svg>
+  );
+};
+const Liquid: React.FC<{ n: number }> = ({ n }) => {
+  const d = kf(n, BOXK.d);
+  return (
+    <svg width={0} height={0} style={{ position: "absolute" }}>
+      <filter id="kliq" x="-15%" y="-25%" width="130%" height="150%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.028 0.04" numOctaves={3} seed={7} result="nz" />
+        <feDisplacementMap in="SourceGraphic" in2="nz" scale={d} xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </svg>
+  );
+};
+const AB: React.FC<{ n: number }> = ({ n }) => (
+  <AbsoluteFill style={{ background: "#FAFAFA", fontFamily: F, overflow: "hidden" }}>
+    <Liquid n={n} />
+    <PaperRings n={n} />
+    <Stack n={n} />
+    <Screen n={n} />
+    <Words n={n} />
+  </AbsoluteFill>
+);
+
+// ================================================================ B2: the dark ranking app
+const LGROUND = <AbsoluteFill style={{ background: "radial-gradient(110% 100% at 50% 45%, #F4F4F3 0%, #ECECEB 70%, #E4E4E3 100%)" }} />;
+const LANE: { x: number; y: number; w: number; k: "dot" | "pill"; c: string; t?: string; dim?: boolean }[] = [
+  { x: 37, y: 282, w: 58, k: "dot", c: "#7C6CFF", t: "" },
+  { x: 190, y: 282, w: 174, k: "pill", c: "#7C6CFF", t: "" },
+  { x: 322, y: 243, w: 58, k: "dot", c: "#FF7A66", t: "" },
+  { x: 393, y: 208, w: 58, k: "dot", c: "#4F7BFF", t: "" },
+  { x: 466, y: 208, w: 58, k: "dot", c: "#4F7BFF", t: "" },
+  { x: 669, y: 208, w: 183, k: "pill", c: "#4F7BFF", t: "Your business" },
+  { x: 800, y: 245, w: 58, k: "dot", c: "#FF7A66", t: "5" },
+  { x: 872, y: 282, w: 58, k: "dot", c: "#7C6CFF", t: "4" },
+  { x: 944, y: 318, w: 58, k: "dot", c: "#FFB547", t: "3" },
+  { x: 1017, y: 354, w: 58, k: "dot", c: "#22C7A0", t: "2" },
+  { x: 1118, y: 318, w: 117, k: "pill", c: "#FFB547", t: "" },
+  { x: 1170, y: 354, w: 58, k: "dot", c: "#FF7A66", t: "" },
+  { x: 1243, y: 390, w: 58, k: "dot", c: "#7C6CFF", t: "" },
+];
+const Panel: React.FC<{ x: number; y: number; w: number; h: number; children?: React.ReactNode }> = ({ x, y, w, h, children }) => (
+  <div style={abs(x, y, w, h, { background: "#1A1F25", borderRadius: 8 })}>{children}</div>
+);
+const Round: React.FC<{ x: number; y: number; s: number; children: React.ReactNode }> = ({ x, y, s, children }) => (
+  <div style={abs(x, y, s, s, { borderRadius: s / 2, background: "#2A3038", border: "1px solid rgba(255,255,255,.14)", display: "flex", alignItems: "center", justifyContent: "center", color: "#E6EAF0" })}>{children}</div>
+);
+const DAYS = "MTWTFSSMTWTFSS".split("");
+const HEIGHTS = [150, 190, 120, 215, 170, 240, 130, 205, 160, 225, 140, 190, 250, 180];
+const B2: React.FC<{ n: number }> = ({ n }) => {
+  const cw = kf(n, [[64, 1215], [66, 1200], [68, 1197], [70, 1194], [72, 1192]]);
+  const x = kf(n, [[64, 352], [72, 364]]), y = kf(n, [[64, 136], [72, 144]]);
+  const s = cw / 1192, off = 4 * (70 - n);
+  const lit = step(n, 68, 69.5);
+  return (
+    <AbsoluteFill style={{ fontFamily: F }}>
+      {LGROUND}
+      <div style={{ position: "absolute", left: x, top: y, width: 1192, height: 792, transform: `scale(${s})`, transformOrigin: "0 0", background: "#0D0F12", borderRadius: 20, boxShadow: "0 24px 60px rgba(30,40,60,.22)", overflow: "hidden", willChange: "transform" }}>
+        <div style={abs(5, 5, 1182, 782, { borderRadius: 15, overflow: "hidden", background: "#12161A" })}>
+          {/* header strip */}
+          <div style={abs(0, 0, 1182, 125, { background: "#0F1216" })} />
+          <Round x={9} y={14} s={44}><div style={{ width: 44, height: 44, borderRadius: 22, background: "#EDEFF2" }} /></Round>
+          <Panel x={62} y={7} w={392} h={110}>
+            <div style={abs(14, 12, 200, 18, { fontSize: 14, color: "#9AA5B4", fontWeight: 500 })}>Current search</div>
+            <div style={abs(14, 36, 260, 22, { fontSize: 18, color: "#F2F5F9", fontWeight: 600, letterSpacing: 0.5 })}>BEST NEAR ME</div>
+            <div style={abs(14, 62, 260, 20, { fontSize: 16, color: "#9AA5B4", fontWeight: 500 })}>search + AI answers</div>
+            <div style={abs(322, 10, 56, 20, { background: "#B5A8FF", borderRadius: 4, fontSize: 12, fontWeight: 700, color: "#241A66", textAlign: "center", lineHeight: "20px" })}>Live</div>
+            <div style={abs(14, 90, 10, 10, { borderRadius: 5, background: C.green })} />
+            <div style={abs(32, 87, 260, 16, { fontSize: 12, color: "#9AA5B4", fontWeight: 500 })}>updated just now · 248 bookings</div>
+          </Panel>
+          <Panel x={463} y={7} w={266} h={110}>
+            <div style={abs(0, 12, 266, 18, { fontSize: 15, color: "#E6EAF0", fontWeight: 600, textAlign: "center" })}>Visitors</div>
+            <div style={abs(0, 34, 266, 26, { fontSize: 24, color: "#9AA5B4", fontWeight: 500, textAlign: "center" })}>+38%</div>
+            <div style={abs(14, 66, 238, 34, { display: "flex", alignItems: "flex-end", gap: 5 })}>{Array.from({ length: 24 }, (_, i) => <div key={i} style={{ flex: 1, height: 8 + ((i * 7) % 5) * 5 + i * 0.5, background: i > 17 ? C.cyan : "#E6EAF0", borderRadius: 1 }} />)}</div>
+          </Panel>
+          <Panel x={738} y={7} w={168} h={110}>
+            <div style={abs(14, 10, 90, 16, { fontSize: 14, color: "#9AA5B4", fontWeight: 500 })}>Position</div>
+            <div style={abs(14, 30, 70, 60, { fontSize: 56, color: "#F2F5F9", fontWeight: 600 })}>3</div>
+            <svg width="40" height="50" viewBox="0 0 24 30" style={{ position: "absolute", left: 76, top: 36 }}><path d="M12 26V6M4 14l8-8 8 8" fill="none" stroke={C.green} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            <div style={abs(122, 62, 40, 24, { fontSize: 20, color: "#6D7888", fontWeight: 500 })}>5</div>
+          </Panel>
+          <Panel x={914} y={55} w={178} h={62}>
+            {[0, 1, 2].map((i) => <Round key={i} x={12 + i * 55} y={10} s={42}>{i === 1 ? <svg width="16" height="16" viewBox="0 0 16 16"><path d="M4 2v12M12 2v12" stroke="#E6EAF0" strokeWidth="3.4" strokeLinecap="round" /></svg> : <svg width="18" height="16" viewBox="0 0 18 16"><path d={i === 0 ? "M9 3L3 8l6 5M16 3l-6 5 6 5" : "M2 3l6 5-6 5M9 3l6 5-6 5"} fill="#E6EAF0" stroke="#E6EAF0" strokeWidth="1.5" strokeLinejoin="round" /></svg>}</Round>)}
+          </Panel>
+          <div style={abs(914, 8, 178, 40, { background: "#E9ECEF", borderRadius: 6, fontSize: 15, fontWeight: 500, color: "#3A4454", lineHeight: "40px", paddingLeft: 36, boxSizing: "border-box" })}>Search<svg width="16" height="16" viewBox="0 0 16 16" style={{ position: "absolute", left: 12, top: 12 }}><circle cx="6.5" cy="6.5" r="4.5" fill="none" stroke="#3A4454" strokeWidth="2" /><path d="M10 10l4 4" stroke="#3A4454" strokeWidth="2" strokeLinecap="round" /></svg></div>
+          <Panel x={1100} y={8} w={36} h={40}><svg width="36" height="40" viewBox="0 0 36 40"><path d="M18 11a6 6 0 0 1 6 6v5l2 3H10l2-3v-5a6 6 0 0 1 6-6zM15 28h6" fill="none" stroke="#E6EAF0" strokeWidth="2" strokeLinecap="round" /></svg></Panel>
+          <div style={abs(1142, 8, 36, 40, { borderRadius: 6, overflow: "hidden" })}><Img src={staticFile("team/robin.jpg")} style={{ width: 36, height: 40, objectFit: "cover", objectPosition: "50% 15%" }} /></div>
+          <Panel x={1100} y={62} w={36} h={55}><svg width="36" height="55" viewBox="0 0 36 55"><circle cx="18" cy="27" r="4" fill="#E6EAF0" /><path d="M18 14v5M18 35v5M5 27h5M26 27h5" stroke="#E6EAF0" strokeWidth="2" strokeLinecap="round" /></svg></Panel>
+          <div style={abs(1142, 62, 36, 55, { borderRadius: 6, background: C.green, display: "flex", alignItems: "center", justifyContent: "center" })}><svg width="20" height="20" viewBox="0 0 20 20"><path d="M12 3a7 7 0 1 0 5 11A6 6 0 0 1 12 3z" fill="#fff" /></svg></div>
+          {/* lane */}
+          <div style={abs(0, 129, 1182, 292, { background: "#15191D", overflow: "hidden" })}>
+            <div style={abs(0, 0, 581, 292, { background: "rgba(34,181,115,.26)" })} />
+            {[0, 1, 2, 3, 4].map((i) => <div key={i} style={abs(0, 40 + i * 60, 1182, 1, { background: "rgba(255,255,255,.07)" })} />)}
+            {[0, 1, 2, 3, 4, 5, 6].map((i) => <div key={i} style={abs(((i * 168 + off) % 1176 + 1176) % 1176, 0, 1, 292, { background: "rgba(255,255,255,.06)" })} />)}
+            {LANE.map((it, i) => {
+              const cx = it.x + off, bright = cl((cx - 556) / 40);
+              const hh = it.k === "pill" ? 58 : it.w;
               return (
-                <div key={i} style={{ position: "relative", zIndex: me ? 2 : 1, marginTop: 14, height: 84, borderRadius: 12, background: me ? "#F4F7FA" : "#1B2636", display: "flex", alignItems: "center", gap: 26, padding: "0 28px", boxShadow: me ? `0 14px 40px rgba(56,200,255,${glow})` : "none", transform: `translate3d(0, ${dy}px, 0)`, willChange: "transform" }}>
-                  <div style={{ fontSize: 34, fontWeight: 500, color: me ? C.ink : "#C5CEDB", width: 34, fontFamily: MONO }}>{place}</div>
-                  <div style={{ width: 34, height: 34, borderRadius: 8, background: me ? C.cyan : ["#4F7BFF", "#22C7A0", "#FFB547", "#7C6CFF", "#FF7A66", "#8FA0B6", "#4F7BFF"][i] }} />
-                  {me ? <div style={{ fontSize: 30, fontWeight: 700, color: C.ink }}>Your business</div> : <div style={{ width: 260 - (i % 3) * 50, height: 14, borderRadius: 7, background: "#33425A" }} />}
-                  <div style={{ marginLeft: "auto", fontSize: 24, fontWeight: 600, color: me ? C.green : "#5E6E86", fontFamily: MONO }}>{me ? (p < 0.5 ? "▲ 4" : "▲ 5") : "—"}</div>
+                <div key={i} style={{ position: "absolute", left: cx - it.w / 2 - 5, top: it.y - hh / 2 - 134, width: it.w, height: hh, borderRadius: hh / 2, background: it.c, opacity: 0.38 + 0.62 * bright, boxShadow: i === 5 ? "0 0 26px rgba(79,123,255,.7)" : undefined, color: "#fff", fontSize: it.k === "pill" ? 17 : 24, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", filter: bright < 1 ? `saturate(${0.6 + 0.4 * bright})` : undefined }}>
+                  <span style={{ color: i === 8 || i === 10 ? INK : "#fff" }}>{it.t}</span>
                 </div>
               );
             })}
+            <div style={abs(581, 0, 2, 292, { background: "rgba(255,255,255,.8)" })} />
           </div>
-          <div style={abs(740, 60, 500, 600, { borderRadius: 20, background: "#1B2636" })}>
-            <Tx x={36} y={32} s={22} w={600} c="#9FB0C6">Visitors</Tx>
-            <Tx x={36} y={66} s={76} w={700} c="#fff">+{visitors}%</Tx>
-            <div style={abs(36, 220, 428, 340, { display: "flex", alignItems: "flex-end", gap: (428 / 12) * 0.28 })}>
-              {Array.from({ length: 12 }, (_, i) => (
-                <div key={i} style={{ flex: 1, height: `${30 + 62 * Math.abs(Math.sin(i * 1.3 + 0.6)) * (0.55 + (i / 12) * 0.45)}%`, background: i === 9 ? C.cyan : C.indigo, borderRadius: "5px 5px 0 0", transformOrigin: "50% 100%", transform: `scaleY(${mix(0.4, 1, S(t, T(64) + i * 0.024, fast))})` }} />
-              ))}
-            </div>
+          {/* progress */}
+          <div style={abs(0, 421, 1182, 18, { background: "#2A2E33" })}><div style={abs(0, 0, 306, 18, { background: C.green })} /></div>
+          {/* light lower half */}
+          <div style={abs(0, 439, 1182, 343, { background: "#E7E6E1", backgroundImage: "repeating-linear-gradient(90deg, rgba(0,0,0,.035) 0 56px, transparent 56px 112px)" })}>
+            <div style={abs(40, 18, 400, 24, { fontSize: 18, fontWeight: 600, color: INK, letterSpacing: 0.3 })}>Visitors per day</div>
+            {HEIGHTS.map((hgt, i) => {
+              const on = i === 11, hh = on ? hgt * (1 + 0.14 * lit) : hgt;
+              return (
+                <React.Fragment key={i}>
+                  <div style={abs(40 + i * 80, 296 - hh, 48, hh, { background: on ? `rgb(${Math.round(22 + 57 * lit)},${Math.round(32 + 91 * lit)},${Math.round(46 + 209 * lit)})` : "#16202E", borderRadius: "6px 6px 0 0" })} />
+                  <div style={abs(40 + i * 80, 308, 48, 20, { textAlign: "center", fontSize: 14, fontWeight: 500, color: on && lit > 0.5 ? C.indigo : "#7A8494" })}>{DAYS[i]}</div>
+                </React.Fragment>
+              );
+            })}
           </div>
-        </Win>
-      </Pin>
-    </Ground>
+        </div>
+      </div>
+    </AbsoluteFill>
   );
 };
 
-// ---------------------------------------------------------------- B3: the product card; it shrinks into the portrait of who builds it
-const B3: React.FC<{ t: number }> = ({ t }) => {
-  const n = t * 24;
-  const s85 = E(t, T(85) - 0.02, 0.13, ease.out), s87 = E(t, T(87) - 0.02, 0.12, ease.out), s90 = E(t, T(90) - 0.02, 0.12, ease.out);
-  // settles from the cut, shrinks slowly, then in the reference's three steps: 0.82 (f85), 0.74 (f87), 0.647 (f90)
-  const s = (1 + 0.03 * Math.exp(-(n - 75) / 1.44) - 0.012 * clamp((n - 79) / 6)) * mix(1, 0.83, s85) * mix(1, 0.902, s87) * mix(1, 0.874, s90);
-  const top = mix(mix(540 - 430 * s, 261, s87), 286, s90);
-  const fold = E(t, T(86.7), 0.09);                                 // the lower part closes and the picture becomes the portrait
-  const tap = bump((n - 80.5) / 3);
-  const say = S(t, T(90.6), fast);
-  return (
-    <Ground>
-      <div style={{ position: "absolute", left: 960, top: 0, width: 0, height: 0, transformOrigin: "0 0", transform: `translate3d(0, ${top}px, 0) scale(${s})`, willChange: "transform" }}>
-        <div style={abs(-225, 0, 450, 860, { filter: "drop-shadow(0 30px 70px rgba(41,58,81,.16)) drop-shadow(0 4px 14px rgba(41,58,81,.08))" })}>
-          <div style={abs(0, 0, 450, 860, { background: C.white, clipPath: `inset(0px 0px ${350 * fold}px 0px round ${mix(44, 9.3, fold)}px)` })}>
-            <div style={abs(0, 0, 450, 470, { background: `linear-gradient(150deg, ${C.cyan}, ${C.indigo})` })}><Tx x={36} y={40} s={24} w={600} c="#fff">Good morning</Tx><Tx x={36} y={330} s={60} w={700} c="#fff">Book a table</Tx></div>
-            {[0, 1, 2].map((i) => <div key={i} style={abs(30 + i * 134, 500, 122, 150, { borderRadius: 20, background: ["#EEF3FF", "#E6F7FF", "#E9F8F1"][i], transform: `scale(${pop(t, 75.4 + i * 1.1)})` })} />)}
-            <div style={abs(30, 690, 390, 110, { borderRadius: 28, background: C.ink, color: "#fff", fontSize: 32, fontWeight: 600, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${1 - 0.045 * tap})`, boxShadow: `0 0 0 ${10 * tap}px rgba(56,200,255,${0.35 * tap})` })}>Confirm booking</div>
-            {fold > 0 && <Img src={staticFile("team/youri.jpg")} style={abs(0, 0, 450, 510, { objectFit: "cover", objectPosition: "50% 22%", opacity: fold })} />}
-          </div>
+// ================================================================ B3: the tall team card that steps down
+const CW = 441, CH = 834;
+const THUMBS: [string, string][] = [["tom", "CTO"], ["youri", "SOFTWARE"], ["karl", "COMMERCIAL"], ["cedric", "ADVISOR"]];
+const CardBody: React.FC<{ photoOnly?: boolean }> = () => (
+  <div style={{ position: "absolute", inset: 0, background: "#fff" }}>
+    <div style={abs(0, 0, CW, 640, { overflow: "hidden" })}><Img src={staticFile("team/robin.jpg")} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 14%" }} /></div>
+    <div style={abs(14, 16, 48, 48, { borderRadius: 24, background: "rgba(255,255,255,.88)", display: "flex", alignItems: "center", justifyContent: "center" })}><svg width="18" height="18" viewBox="0 0 18 18"><path d="M11 3L5 9l6 6" fill="none" stroke={INK} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></svg></div>
+    <div style={abs(150, 20, 141, 40, { borderRadius: 20, background: "rgba(235,235,235,.92)", fontSize: 14, fontWeight: 600, color: INK, textAlign: "center", lineHeight: "40px", letterSpacing: 0.4 })}>YOUR TEAM</div>
+    <div style={abs(CW - 62, 16, 48, 48, { borderRadius: 24, background: "rgba(255,255,255,.88)", display: "flex", alignItems: "center", justifyContent: "center" })}><svg width="20" height="20" viewBox="0 0 20 20"><path d="M10 3v10M5 8l5-5 5 5M4 16h12" fill="none" stroke={INK} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg></div>
+    <div style={abs(0, 612, CW, 222, { background: "#fff", borderRadius: "30px 30px 0 0" })}>
+      <div style={abs(CW / 2 - 60, 10, 120, 4, { borderRadius: 2, background: "#D5D9DF" })} />
+      {THUMBS.map(([w, lab], i) => (
+        <div key={w}>
+          <div style={abs(12 + i * 106, 26, 100, 14, { fontSize: 10, fontWeight: 600, color: INK, letterSpacing: 0.3 })}>{lab}</div>
+          <div style={abs(12 + i * 106, 44, 97, 110, { borderRadius: 6, overflow: "hidden", background: "#EEE" })}><Img src={staticFile(`team/${w}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 22%" }} /></div>
         </div>
-        <div style={abs(-225, 526, 450, undefined, { fontSize: 23.2, fontWeight: 500, color: C.sub, display: "flex", alignItems: "center", gap: 10.8, whiteSpace: "nowrap", opacity: E(t, T(90), 0.07) })}><span style={{ width: 10.8, height: 10.8, borderRadius: 6, background: C.cyan }} />{ROLE.youri}</div>
+      ))}
+      <div style={abs(12, 166, CW - 24, 44, { borderRadius: 22, background: "#DFE2E6" })}>
+        <div style={abs(6, 6, 32, 32, { borderRadius: 16, background: "#fff", display: "flex", alignItems: "center", justifyContent: "center" })}><svg width="16" height="16" viewBox="0 0 16 16"><rect x="2" y="3" width="12" height="11" rx="2" fill="none" stroke={INK} strokeWidth="1.6" /><path d="M2 7h12M5 1.5v3M11 1.5v3" stroke={INK} strokeWidth="1.6" strokeLinecap="round" /></svg></div>
+        <div style={abs(0, 0, CW - 24, 44, { textAlign: "center", lineHeight: "44px", fontSize: 15, fontWeight: 600, color: INK, letterSpacing: -0.1 })}>Book a Free Discovery Call</div>
       </div>
-      <Tx x={636} y={380} s={132} w={600} style={{ lineHeight: 1.02, opacity: clamp((t - T(90.6)) / 0.05), transform: `translate3d(0, ${16 * (1 - say)}px, 0)`, willChange: "transform" }}>For</Tx>
-    </Ground>
-  );
+    </div>
+  </div>
+);
+const Marks: React.FC<{ x: number; y: number; w: number; h: number }> = ({ x, y, w, h }) => (
+  <>
+    {[[0, 0], [1, 0], [0, 1], [1, 1]].map(([a, b]) => <div key={`${a}${b}`} style={abs(x + a * (w + 16) - 8 - (a ? 0 : 0), y + b * (h + 16) - 8, 8, 8, { borderTop: b ? undefined : "1.5px solid #8A94A2", borderBottom: b ? "1.5px solid #8A94A2" : undefined, borderLeft: a ? undefined : "1.5px solid #8A94A2", borderRight: a ? "1.5px solid #8A94A2" : undefined, transform: `translate(${a ? 0 : 0}px,0)` })} />)}
+  </>
+);
+const B3: React.FC<{ n: number }> = ({ n }) => {
+  let inner: React.ReactNode;
+  if (n < 85) {
+    const cw = kf(n, [[75, 454], [76, 447], [77, 444], [78, 442], [79, 441]]);
+    const x = kf(n, [[75, 732], [79, 740]]), y = kf(n, [[75, 96], [79, 110]]);
+    const s = cw / CW;
+    inner = <div style={{ position: "absolute", left: x, top: y, width: CW, height: CH, transform: `scale(${s})`, transformOrigin: "0 0", borderRadius: 36, overflow: "hidden", boxShadow: "0 24px 60px rgba(30,40,60,.22)", willChange: "transform" }}><CardBody /></div>;
+  } else if (n < 87) {
+    const s = 363 / CW;
+    inner = <div style={{ position: "absolute", left: 778, top: 184, width: CW, height: CH, transform: `scale(${s})`, transformOrigin: "0 0", borderRadius: 36, overflow: "hidden", boxShadow: "0 20px 50px rgba(30,40,60,.2)" }}><CardBody /></div>;
+  } else {
+    const hgt = n < 90 ? 412 : 362, top = n < 90 ? 261 : 286;
+    const px = 794, pw = n < 90 ? 333 : 332;
+    inner = (
+      <>
+        <div style={abs(px, top, pw, hgt, { overflow: "hidden", borderRadius: 4, boxShadow: "0 14px 34px rgba(30,40,60,.16)" })}>
+          <Img src={staticFile("team/robin.jpg")} style={abs(0, 261 - top, 333, 412, { objectFit: "cover", objectPosition: "50% 14%", width: 333, height: 412 })} />
+        </div>
+        {n >= 90 && (
+          <>
+            <Marks x={px} y={top} w={pw} h={hgt} />
+            <div style={abs(814, 669, 220, 18, { fontSize: 13, fontWeight: 500, color: "#7A8494", display: "flex", alignItems: "center", gap: 7, whiteSpace: "nowrap", lineHeight: "18px" })}><span style={{ width: 7, height: 7, borderRadius: 4, background: C.cyan }} />Founder & CEO</div>
+          </>
+        )}
+        {n >= 91 && <div style={{ position: "absolute", left: 788 - mw("For", 134, 500, -4), top: 380 - 17, fontSize: 134, lineHeight: "134px", fontWeight: 500, letterSpacing: -4, color: INK, whiteSpace: "nowrap" }}>For</div>}
+      </>
+    );
+  }
+  return <AbsoluteFill style={{ fontFamily: F }}>{LGROUND}{inner}</AbsoluteFill>;
 };
 
 const Comp: React.FC<{ t: number }> = ({ t }) => {
   const ok = useFonts();
-  if (!ok) return <AbsoluteFill style={{ background: C.paper }} />;
-  if (t + EPS >= T(75)) return <B3 t={t} />;
-  if (t + EPS >= T(64)) return <B2 t={t} />;
-  return <A t={t} />;
+  if (!ok) return <AbsoluteFill style={{ background: "#FAFAFA" }} />;
+  const n = refN(t, 0) + EPS;
+  if (n >= 75) return <B3 n={n} />;
+  if (n >= 64) return <B2 n={n} />;
+  return <AB n={n} />;
 };
 
 export const PKG: Pkg = {
   id: "R01",
   Comp,
   sfx: [
-    { t: T(15), kind: "pop", note: "the portrait card opens between the words" },
-    { t: T(21), kind: "tick", note: "a portrait is dealt onto the card", db: -10 },
-    { t: T(26), kind: "tick", note: "a portrait is dealt onto the card", db: -10 },
-    { t: T(30), kind: "tick", note: "a portrait is dealt onto the card", db: -10 },
-    { t: T(36.3), kind: "rise", note: "the card grows into the first screen", ref: 37 },
-    { t: T(64), kind: "tick", note: "cut to the ranking window" },
-    { t: T(75), kind: "tick", note: "cut to the product card" },
-    { t: T(85), kind: "swish", note: "the product card shrinks into the portrait" },
+    { t: T(15), kind: "pop", note: "the card opens between the words" },
+    { t: T(18), kind: "tick", note: "a portrait is dealt", db: -10 },
+    { t: T(21), kind: "tick", note: "a portrait is dealt", db: -10 },
+    { t: T(24), kind: "tick", note: "a portrait is dealt", db: -10 },
+    { t: T(26), kind: "tick", note: "a portrait is dealt", db: -10 },
+    { t: T(36), kind: "rise", note: "the picture spreads into the screen" },
+    { t: T(44), kind: "pop", note: "a piece lands" },
+    { t: T(46), kind: "pop", note: "a piece lands" },
+    { t: T(64), kind: "tick", note: "cut to the dark app" },
+    { t: T(68), kind: "pop", note: "the bar lights" },
+    { t: T(75), kind: "tick", note: "cut to the team card" },
+    { t: T(85), kind: "swish", note: "the card shrinks" },
+    { t: T(91), kind: "pop", note: "the word arrives" },
   ],
 };
