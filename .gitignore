@@ -102,3 +102,5 @@ films/kb-team/harvest/*.pdf
 films/kb-team/stock/
 films/kb-team/film/public/footage/
 films/kb-team/film/node_modules
+films/kb-team/film/tools/.ev-out.cjs
+films/kb-team/film/tools/.ev-entry.ts

@@ -7,7 +7,7 @@
 // Every change of shot is a hard cut on its reference frame. t = seconds since f475.
 import React from "react";
 import { AbsoluteFill, Img, staticFile } from "remotion";
-import { C, Check, E, F, Footage, Ground, S, Win, abs, ease, mix, useFonts } from "../kit";
+import { C, Check, E, F, Footage, Ground, S, Win, abs, ease, mix, onTwos, settle, useFonts } from "../kit";
 import type { Pkg, Sfx } from "../types";
 
 const F0 = 475;
@@ -90,8 +90,8 @@ const ShotQ: React.FC<{ t: number }> = ({ t }) => {
 };
 
 // ---------------------------------------------------------------- R: the filmed customer (the storyboard's FR 19)
-// The clip's last 0.63 s: she breaks into the smile of the storyboard frame as the shot ends.
-const ShotR: React.FC<{ t: number }> = ({ t }) => { const s = t - at(513); return <Footage name="R" at={0.75 + s} scale={1 + 0.02 * s} />; };
+// The clip's last 19 drawings, on twos (kit: onTwos): she breaks into the smile of the storyboard frame as the shot ends.
+const ShotR: React.FC<{ t: number }> = ({ t }) => { const tw = onTwos("R", t - at(513), 0.625); return <Footage name="R" at={tw.at} scale={settle(tw.sj, 0.03)} />; };
 
 // ---------------------------------------------------------------- S: the hands and the climbing row (the storyboard's FR 20)
 // "Your business" starts under the list, in eighth place, and takes five places in five hops (f534–f552), as the
@@ -103,8 +103,7 @@ const hop = (t: number, k: number) => S(t, HOPS[k], { stiffness: 900, damping: 3
 const RIVALS: [string, number][] = [["#4F7BFF", 260], ["#22C7A0", 210], ["#7C6CFF", 260], ["#FF7A66", 210], ["#8FA0B6", 160], ["#4F7BFF", 260], ["#FFB547", 160]];
 const rowBox = (y: number, more: React.CSSProperties): React.CSSProperties => ({ position: "absolute", left: 0, right: 0, top: 14, height: 84, borderRadius: 12, display: "flex", alignItems: "center", gap: 26, padding: "0 28px", willChange: "transform", transform: `translate3d(0, ${y.toFixed(2)}px, 0)`, ...more });
 const ShotS: React.FC<{ t: number }> = ({ t }) => {
-  const s = t - at(528);
-  const zoom = 1 + 0.02 * s;
+  const tw = onTwos("S", t - at(528), 0.45), zoom = settle(tw.sj, 0.03);       // the footage on twos, the camera stepping with it
   const hops = HOPS.map((_, k) => hop(t, k)), done = hops.filter((h) => h > 0.5).length;
   const lift = E(t, at(532), 0.14, ease.out) * (1 - E(t, at(552.5), 0.22, ease.inOut));      // it rises off the list while it climbs
   const landed = Math.max(0, t - at(552));
@@ -113,7 +112,7 @@ const ShotS: React.FC<{ t: number }> = ({ t }) => {
   return (
     <AbsoluteFill style={{ background: C.dark, fontFamily: F }}>
       <div style={abs(0, 0, 760, 1080, { overflow: "hidden" })}>
-        <Footage name="S" at={0.55 + s} scale={zoom} x={-420 - 560 * (zoom - 1)} />
+        <Footage name="S" at={tw.at} scale={zoom} x={-420 - 560 * (zoom - 1)} />
       </div>
       <div style={abs(860, 90, 960)}>
         <div style={{ fontSize: 46, fontWeight: 600, letterSpacing: 6, color: "#E8EDF4", fontFamily: MONO }}>RANKING</div>
@@ -159,7 +158,8 @@ const sfx: Sfx[] = [
   ...[484, 486, 488.5, 491, 493.5].map((f, i) => ({ t: at(f), kind: "pop", note: `checklist line ${i + 1} and a circle`, ref: Math.round(f), db: -6 })),
   { t: LIT, kind: "sparkle", note: "the Your business card lights up", ref: 496 },
   // S: the row hops up five places and lands
-  ...HOPS.map((h, i) => ({ t: h, kind: "slide", note: `the row takes place ${7 - i}`, ref: Math.round(F0 + h * 24), db: -4 })),
+  // (the reference rattles here: one short tick per hop, each a step higher)
+  ...HOPS.map((h, i) => ({ t: h, kind: "tick", note: `the row takes place ${7 - i}`, ref: Math.round(F0 + h * 24), db: 2, keep: true })),
   { t: at(552), kind: "pop", note: "it lands third, ▲ 5", ref: 552 },
 ];
 

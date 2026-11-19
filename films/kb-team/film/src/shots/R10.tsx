@@ -27,7 +27,13 @@ const AG: React.FC<{ t: number }> = ({ t }) => (
     <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "960px 540px", transform: `scale(${(0.97 + 0.05 * t).toFixed(4)})`, willChange: "transform" }}>
       {CARDS.map(([x, y, w, h, dx, dy, inner, bg], i) => {
         const p = S(t, 0.01 + i * 0.035, { damping: 15, stiffness: 150 });
-        return <div key={i} style={abs(x, y, w, h, { background: bg, opacity: clamp(p * 2.5), transform: `translate3d(${(dx * (1 - p)).toFixed(2)}px, ${(dy * (1 - p)).toFixed(2)}px, 0) rotate(${((1 - p) * (i % 2 ? 6 : -6)).toFixed(2)}deg)`, willChange: "transform" })}>{inner}</div>;
+        // the moving layer is 3 px larger than the card all round and transparent there: the card's edges are then
+        // inside the layer's picture and glide at sub-pixel steps (a layer's own edge snaps to whole pixels)
+        return (
+          <div key={i} style={abs(x - 3, y - 3, w + 6, h + 6, { opacity: clamp(p * 2.5), transform: `translate3d(${(dx * (1 - p)).toFixed(2)}px, ${(dy * (1 - p)).toFixed(2)}px, 0) rotate(${((1 - p) * (i % 2 ? 6 : -6)).toFixed(2)}deg)`, willChange: "transform" })}>
+            <div style={abs(3, 3, w, h, { background: bg })}>{inner}</div>
+          </div>
+        );
       })}
     </div>
   </Ground>

@@ -100,7 +100,8 @@ const ShotO: React.FC<{ t: number }> = ({ t }) => {
   const dx = 10 * E(t, at(469.5), 5 / 24, ease.inOut);
   return (
     <Ground tone="ui">
-      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transform: `translate3d(${dx.toFixed(2)}px, 0, 0)`, willChange: "transform" }}>
+      {/* a slow push while the sentence is typed (as on the first message, R04): the frame is never still */}
+      <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "960px 500px", transform: `translate3d(${dx.toFixed(2)}px, 0, 0) scale(${(1 + 0.012 * Math.max(0, t - at(434))).toFixed(5)})`, willChange: "transform" }}>
         <Msg x={405} y={400} w={1110} text={text} />
       </div>
     </Ground>

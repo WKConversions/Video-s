@@ -37,6 +37,42 @@ business-people-at-work-meeting-4809 · AC office-meeting-261 · AD young-busine
 AN young-woman-working-remotely-4957 (pages: mixkit.co/free-stock-video/<name>/). F2, F3, F4 and AD are offered free
 only at 1280×720. Segments are cut so no brand logo is in the frame.
 
+## Result
+- `deliver/kb-team-50s-1080p60.mp4`: the film, 1920×1080, 60 fps, 50.05 s. `deliver/kb-team-demo-540p.mp4`: the animated
+  demo Karl saw first. `deliver/kb-team-timing-demo-540p.mp4`: the storyboard frames on the reference's cuts.
+- **Against the reference** (`tools/filmcompare.py`): every shot matches in kind, order and cut frame.
+- **Motion** (`motion_check.py`): something moves in 74% of frames; the median frame has 0.6% of its area in motion;
+  the longest stretch the meter calls still is 0.62 s (target 0.8 s or less). The reference itself is still in a
+  quarter of its frames, with holds at 6.3 s, 18.1 s and 48.8 s. Ours sit in the same places, each with typing or a
+  slow push in it (the meter does not see a slow push: the logo at 6.4 s, the caret alone at 8.6 s).
+- **Shake** (`jitter_check.py`): no shake or judder. Its two "look" lines are the counter at 2.4-3.0 s and the typed
+  letters at 9.3-10 s.
+- **Sound** (`sound/mix.wav`): 71 effects, 18 different sounds, all Karl's own recordings; -16.0 LUFS, peak -1.5 dBFS.
+  The reference has far fewer audible effects (about 15); ours follow the house style (effects lead) on the same moves.
+
+## Open points
+- **Illustration content that is not from the site or the script:** the client messages typed on screen ("Can you help
+  us automate our follow-ups and keep the CRM up to date?", "We want to be found by the right customers, in search and
+  in AI answers.", "Turn these sketches into an app our customers can use.", "Now add online booking, so customers can
+  order in two taps", "Build us one dashboard for the whole operation."), the mock product ("Bookings", "Book a table",
+  "Your business, the first result") and the numbers on the mock screens (+38% visitors; 248, 92%, 4.8; 72-74%, 4.6-4.8,
+  11.8K-15.3K). K.B's own figures on screen are 25 client projects and 100+ automations.
+- **Portraits** carry the role only (Founder & CEO, …), no names.
+- **Four clips are 1280×720 enlarged** (F2, F3, F4, AD): Mixkit offers them free only at that size.
+- **Apple-licensed system sounds are not used**; nothing is generated.
+
+## How the picture stays smooth
+- **Filmed shots run on twos** (`onTwos` in the kit). The stock clips are 24, 25 or 30 fps; at their own speed in a
+  60 fps film each drawing stays 2, 3, 2, 3 frames, which reads as stutter. So every clip advances one drawing per two
+  film frames (the 24 and 25 fps clips play 1.2-1.25 x their speed) and the camera over it steps with the drawing.
+  `jitter_check.py` reports those held frames as STUTTER: that is the cadence, not a stalled frame.
+- **The camera over footage settles** (`settle` in the kit): the picture arrives a little large and comes to rest, then
+  keeps a slow push. No linear drift over stock.
+- **A moving block needs a transparent margin.** A layer's own edge snaps to whole pixels, so a card that is its own
+  layer moves in one-pixel steps. Make the moving layer a few pixels larger than the card and transparent there (the
+  collage in `R10.tsx`): the edge is then inside the layer's picture and glides.
+- The final render is in four chunks, one browser tab each, cut on hard cuts (`tools/render_chunks.sh`).
+
 ## Commands (from `film/`)
 - Preview: `npx remotion render src/index.ts Film out/p540.mp4 --scale=0.5 --concurrency=4 --muted`, then mux
   `../sound/mix.wav`.

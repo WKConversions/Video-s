@@ -38,7 +38,8 @@ VOICE = {
     "success": [("aio-07", -4), ("ui-granular-button-select-2", -3)],
 }
 # the reference is sparing with effects (its flash cuts are silent, its typing is not): thin what the shots export.
-# Typing runs that follow each other within 0.2 s become one run; other kinds keep a minimum gap.
+# Typing runs that follow each other within 0.2 s become one run; other kinds keep a minimum gap, except events a shot
+# marks "keep" (the ranking row's five hops: the reference rattles there, one tick per hop).
 GAP = {"tick": 0.3, "pop": 0.22, "slide": 0.3, "swish": 0.5, "sparkle": 0.5, "rise": 0.4}
 events, kept = [], {}
 for e in ev["sfx"]:
@@ -48,7 +49,7 @@ for e in ev["sfx"]:
         prev = next((x for x in reversed(events) if x["kind"] == "type"), None)
         if prev and e["t"] - (prev["t"] + prev["d"]) < 0.2: prev["d"] = e["t"] + d - prev["t"]; continue
         events.append({**e, "d": d}); continue
-    if e["t"] - kept.get(e["kind"], -9) < GAP.get(e["kind"], 0): continue
+    if not e.get("keep") and e["t"] - kept.get(e["kind"], -9) < GAP.get(e["kind"], 0): continue
     kept[e["kind"]] = e["t"]; events.append(e)
 fx, n = [], 0; turn = collections.Counter(); voice = {}; last = {}
 for e in events:

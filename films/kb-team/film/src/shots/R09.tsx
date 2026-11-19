@@ -4,7 +4,7 @@
 // AF     the cards burst out of the button; the tower rises faster and faster while the button sinks out (FR 31)
 import React from "react";
 import { AbsoluteFill, Img, staticFile } from "remotion";
-import { Arrow, Bar, Bars, C, E, F, Footage, Glyph, Ground, HandAt, Over, Port, S, SH, Tool, abs, ease, mix, pressAt, rs } from "../kit";
+import { Arrow, Bar, Bars, C, E, F, Footage, Glyph, Ground, HandAt, Over, Port, S, SH, Tool, abs, ease, mix, onTwos, pressAt, rs, settle } from "../kit";
 import type { HandKey } from "../kit";
 import type { Pkg } from "../types";
 
@@ -23,10 +23,10 @@ const FILMED = [
 const Filmed: React.FC<{ t: number }> = ({ t }) => {
   let k = 0;
   for (let i = 1; i < FILMED.length; i++) if (t >= at(FILMED[i].f) - EPS) k = i;
-  const s = FILMED[k], tl = Math.max(0, t - at(s.f));
+  const s = FILMED[k], tw = onTwos(s.name, t - at(s.f), 0.1);          // each clip on twos, the camera stepping with it
   return (
     <AbsoluteFill style={{ fontFamily: F }}>
-      <Footage key={s.name} name={s.name} at={0.1 + tl} scale={1 + 0.02 * tl} dim={s.dim} />
+      <Footage key={s.name} name={s.name} at={tw.at} scale={settle(tw.sj, 0.03)} dim={s.dim} />
       {/* a soft shade behind the line only, so the white text reads on the bright rooms too */}
       <AbsoluteFill style={{ background: `radial-gradient(46% 30% at 50% 48.5%, rgba(10,16,26,${s.shade}) 0%, rgba(10,16,26,0) 100%)` }} />
       <Over text={s.text} />

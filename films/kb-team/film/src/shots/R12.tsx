@@ -5,7 +5,7 @@
 import React from "react";
 import type { Pkg, Sfx } from "../types";
 import { AbsoluteFill } from "remotion";
-import { C, Caret, E, F, Footage, Glyph, Ground, S, Tile, abs, clamp, ease, mix, rs, typed, useFonts } from "../kit";
+import { C, Caret, E, F, Footage, Glyph, Ground, S, Tile, abs, clamp, ease, mix, onTwos, rs, settle, typed, useFonts } from "../kit";
 
 const F0 = 1080;
 const at = (n: number) => rs(n - F0);
@@ -16,9 +16,10 @@ const LINE = "Your next chapter";
 const TYPE0 = say(45.5), CPS = 17.5;                                   // "your" 45.58, "next" 45.86, "chapter" 46.10 (film seconds)
 const AN: React.FC<{ t: number }> = ({ t }) => {
   const shown = typed(LINE, t, TYPE0, CPS), typing = t >= TYPE0 && shown.length < LINE.length;
+  const tw = onTwos("AN", t, 0.1);                                      // the clip on twos, the camera stepping with it
   return (
     <AbsoluteFill style={{ fontFamily: F }}>
-      <Footage name="AN" at={0.1 + t} scale={1.03 + 0.014 * t} dim={0.44} />
+      <Footage name="AN" at={tw.at} scale={settle(tw.sj, 0.035, 0.6, 0.012)} dim={0.44} />
       <div style={{ position: "absolute", left: 0, right: 0, top: 462, textAlign: "center", color: "#fff", fontSize: 132, fontWeight: 600, letterSpacing: -5, whiteSpace: "pre", textShadow: "0 4px 30px rgba(0,0,0,.35)" }}>
         <span>{shown}</span>
         <span style={{ display: "inline-block", position: "relative", width: 0, height: 0 }}>

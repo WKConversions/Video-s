@@ -155,6 +155,19 @@ export const Footage: React.FC<{ name: string; at: number; scale?: number; x?: n
     {dim > 0 && <AbsoluteFill style={{ background: `rgba(10,16,26,${dim})` }} />}
   </AbsoluteFill>
 );
+/** Footage ON TWOS. The stock clips are 24, 25 or 30 fps; at their own speed in a 60 fps film each drawing would stay
+ *  2, 3, 2, 3 frames (a judder the shake check reads as jumps). So a clip advances one drawing per two film frames
+ *  (30 drawings a second: 1.2-1.25 x its speed for the 24 and 25 fps clips) and the camera steps with the drawing, so
+ *  a held frame is truly held. s = seconds since the shot's cut, inSec = where in the clip the shot starts.
+ *  Returns at (the clip time to show) and sj (s stepped with the drawings: use it for every move over the footage). */
+export const CLIP_FPS: Record<string, number> = { F1: 23.976, F2: 23.976, F3: 25, F4: 25, R: 24, S: 23.976, W: 24, AA: 23.976, AB: 29.97, AC: 23.976, AD: 25, AN: 23.976 };
+export const onTwos = (name: string, s: number, inSec = 0) => {
+  const fps = CLIP_FPS[name] ?? 24, j = Math.floor(Math.max(0, Math.floor(s * FPS + 0.25)) / 2);
+  return { at: (Math.round(inSec * fps) + j + 0.5) / fps, sj: j / 30 };
+};
+/** the camera over a filmed shot: the picture arrives a little large and settles (fast, then slow), then keeps a slow
+ *  push; never a linear drift. sj = the stepped seconds from onTwos. */
+export const settle = (sj: number, big = 0.04, d = 0.45, push = 0.012) => 1 + big * (1 - ease.out(clamp(sj / d))) + push * sj;
 // ---------------------------------------------------------------- Karl's 3D hand cursor
 /** The hand at local time t. keys: [{ at, x, y, click?, early?, dur? }] with `at` in the package's local seconds and
  *  x, y the screen px of the target. The hand glides calmly (0.55-1.6 s by distance), arrives 0.5 s before `at`

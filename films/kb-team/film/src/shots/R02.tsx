@@ -1,7 +1,8 @@
 // Package R02 (reference f93-f187; cut f130).
 //   D f93-f129   "For what / comes next": each word lands as it is spoken; the five team portraits pop in around them
 //   E f130-f187  the portraits travel into a row, close up into one square, which becomes the K.B tile; the logo holds
-//                while two hairlines draw in; then it softens into the paper (the reference dissolves before its cut)
+//                (with a slow push, so the frame is never still) while two hairlines draw in; then it softens into the
+//                paper (the reference dissolves before its cut)
 import React from "react";
 import { AbsoluteFill, Img, staticFile } from "remotion";
 import type { Pkg, Sfx } from "../types";
@@ -61,7 +62,7 @@ const Comp: React.FC<{ t: number }> = ({ t }) => {
         <>
           <div style={abs(700, 0, 1, 1080, { background: C.line, transformOrigin: "50% 0", transform: `scaleY(${lines.toFixed(4)})`, opacity: 1 - out })} />
           <div style={abs(0, 730, 1920, 1, { background: C.line, transformOrigin: "0 50%", transform: `scaleX(${E(t, at(175), 0.3, ease.out).toFixed(4)})`, opacity: 1 - out })} />
-          <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "960px 540px", transform: `scale(${(mix(0.8, 1, tile) * (1 + 0.5 * out)).toFixed(4)})`, opacity: clamp(tile * 2.4) * (1 - 0.85 * out), filter: out > 0.01 ? `blur(${(out * 10).toFixed(2)}px)` : undefined, willChange: "transform" }}>
+          <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transformOrigin: "960px 540px", transform: `scale(${(mix(0.8, 1, tile) * (1 + 0.016 * Math.max(0, t - at(147))) * (1 + 0.5 * out)).toFixed(5)})`, opacity: clamp(tile * 2.4) * (1 - 0.85 * out), filter: out > 0.01 ? `blur(${(out * 10).toFixed(2)}px)` : undefined, willChange: "transform" }}>
             <Tile x={960} y={540} s={200} />
           </div>
           <AbsoluteFill style={{ background: "#FBFBFA", opacity: 0.5 * out }} />

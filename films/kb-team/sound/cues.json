@@ -254,17 +254,38 @@
   },
   {
    "frame": 1336,
-   "id": "ui-stretch",
-   "db": -13,
+   "id": "aio-09",
+   "db": -2,
    "pitch": 0,
-   "note": "R06 slide: the row takes place 7"
+   "note": "R06 tick: the row takes place 7"
+  },
+  {
+   "frame": 1346,
+   "id": "aio-09",
+   "db": -2,
+   "pitch": 1,
+   "note": "R06 tick: the row takes place 6"
   },
   {
    "frame": 1355,
-   "id": "ui-stretch",
-   "db": -13,
-   "pitch": 0,
-   "note": "R06 slide: the row takes place 5"
+   "id": "aio-09",
+   "db": -2,
+   "pitch": 2,
+   "note": "R06 tick: the row takes place 5"
+  },
+  {
+   "frame": 1363,
+   "id": "aio-09",
+   "db": -2,
+   "pitch": 3,
+   "note": "R06 tick: the row takes place 4"
+  },
+  {
+   "frame": 1371,
+   "id": "aio-09",
+   "db": -2,
+   "pitch": 4,
+   "note": "R06 tick: the row takes place 3"
   },
   {
    "frame": 1380,
@@ -296,14 +317,14 @@
   },
   {
    "frame": 1515,
-   "id": "aio-09",
+   "id": "ui-click-digital-03",
    "db": -4,
    "pitch": 0,
    "note": "R07 tick: flash cut: the pencil sketch"
   },
   {
    "frame": 1545,
-   "id": "aio-09",
+   "id": "ui-click-digital-03",
    "db": -4,
    "pitch": 1,
    "note": "R07 tick: flash cut: the wireframe"
@@ -415,8 +436,8 @@
   },
   {
    "frame": 2313,
-   "id": "aio-05",
-   "db": -7,
+   "id": "ui-stretch",
+   "db": -9,
    "pitch": 0,
    "note": "R10 slide: the whole board"
   },

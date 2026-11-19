@@ -7,7 +7,7 @@
 import React from "react";
 import { AbsoluteFill, Img, staticFile } from "remotion";
 import type { Pkg } from "../types";
-import { AppUI, Arrow, Bar, C, Caret, E, F, Footage, Ground, Hand, S, Win, abs, clamp, ease, mix, useFonts } from "../kit";
+import { AppUI, Arrow, Bar, C, Caret, E, F, Footage, Ground, Hand, S, Win, abs, clamp, ease, mix, onTwos, useFonts } from "../kit";
 import type { HandKey } from "../kit";
 import { handAt } from "../hand";
 
@@ -174,8 +174,9 @@ const ShotV: React.FC<{ t: number }> = ({ t }) => {
 
 // ------------------------------------------------------------------ W  f639–f662
 const ShotW: React.FC<{ t: number }> = ({ t }) => {
-  const tl = t - at(639), k = 1 - E(tl, 0, 0.5, ease.out);     // the reference's picture arrives moving and settles in about ten frames
-  return <Footage name="W" at={0.1 + tl} scale={1.02 + 0.07 * k + 0.015 * (1 - tl)} x={44 * k} />;
+  // the reference's picture arrives moving and settles in about ten frames; the clip runs on twos and the camera steps with it
+  const tw = onTwos("W", t - at(639), 0.1), k = 1 - E(tw.sj, 0, 0.5, ease.out);
+  return <Footage name="W" at={tw.at} scale={1.02 + 0.07 * k + 0.015 * (1 - tw.sj)} x={44 * k} />;
 };
 
 const Comp: React.FC<{ t: number }> = ({ t }) => {
