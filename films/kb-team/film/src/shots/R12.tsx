@@ -29,9 +29,9 @@ const AN: React.FC<{ t: number }> = ({ t }) => {
   const grow = n >= 1150 ? 1.026 : 1;
   return (
     <AbsoluteFill style={{ fontFamily: F }}>
-      <Footage name="AN" at={tw.at} scale={1.07} x={kf(ns, CX)} y={kf(ns, CY)} />
+      <Footage name="AN" at={tw.at} scale={1.07} dim={0.3} x={kf(ns, CX)} y={kf(ns, CY)} />
       <div style={{ position: "absolute", left: 0, width: 1920, top: 479, height: 108, display: "flex", justifyContent: "center", alignItems: "center", transform: `translate3d(${cnt === 0 ? 14 : 15}px,0,0) scale(${grow})`, transformOrigin: "953px 54px" }}>
-        <span style={{ color: "#fff", fontSize: 108, fontWeight: 600, letterSpacing: -4, whiteSpace: "pre", lineHeight: "108px", textShadow: "0 2px 18px rgba(0,0,0,.25)" }}>{shown}</span>
+        <span style={{ color: "#fff", fontSize: 108, fontWeight: 700, letterSpacing: -4, whiteSpace: "pre", lineHeight: "108px", textShadow: "0 2px 18px rgba(0,0,0,.25)" }}>{shown}</span>
         <span style={{ display: "inline-block", width: 9, height: 108, marginLeft: cnt === 0 ? 0 : 18, borderRadius: 2, background: C.cyan, opacity: caret ? 1 : 0 }} />
       </div>
     </AbsoluteFill>
@@ -61,7 +61,7 @@ const Row: React.FC<{ n: number; bg: string }> = ({ n, bg }) => {
         return (
           <React.Fragment key={i}>
             {hi && <div style={abs(cx - 54, 540 - 54, 108, 108, { borderRadius: 7, background: st.hc === "in" ? C.indigo : C.cyan })} />}
-            <div style={abs(cx - 42, 540 - 42, 84, 84)}><G12 k={k} s={84} c={col} bg={hi ? (st.hc === "in" ? C.indigo : C.cyan) : bg} /></div>
+            <div style={abs(cx - 48, 540 - 48, 96, 96)}><G12 k={k} s={96} c={col} bg={hi ? (st.hc === "in" ? C.indigo : C.cyan) : bg} /></div>
           </React.Fragment>
         );
       })}

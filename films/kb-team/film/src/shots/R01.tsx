@@ -69,8 +69,8 @@ const BY = [[26, 336], [30, 327], [34, 316], [35, 316]] as [number, number][];
 const BW = [[26, 444], [34, 506], [35, 506]] as [number, number][];
 const BH = [[26, 406], [34, 428], [35, 428]] as [number, number][];
 const Stack: React.FC<{ n: number }> = ({ n }) => {
-  if (n >= 38.5) return null;
-  const fadeOut = n < 36 ? 1 : 1 - step(n, 36, 38.5);
+  if (n >= 37.6) return null;
+  const fadeOut = n < 36 ? 1 : 1 - step(n, 36, 37.5);
   return (
     <>
       {SHEETS.map((s, i) => {
@@ -79,14 +79,13 @@ const Stack: React.FC<{ n: number }> = ({ n }) => {
         if (n >= 26) { x = kf(n, BX) + (i - 2) * 3; y = kf(n, BY) + (2 - i) * 2; w = kf(n, BW) - (4 - i) * 2; h = kf(n, BH) - (4 - i) * 2; }
         return (
           <div key={s.who} style={{ position: "absolute", left: x, top: y, width: w, height: h, transform: `rotate(${s.rot}deg)`, opacity: fadeOut, background: "#fff", padding: 6, boxSizing: "border-box", borderRadius: 4, boxShadow: "0 12px 34px rgba(30,45,70,.20), 0 2px 6px rgba(30,45,70,.12)", willChange: "transform" }}>
-            <Img src={staticFile(`team/${s.who}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 20%", display: "block", filter: "grayscale(.45) contrast(.7) brightness(1.22)" }} />
+            <Img src={staticFile(`team/${s.who}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 20%", display: "block", }} />
           </div>
         );
       })}
       {n >= 30 && (() => {
-        const w = kf(n, BW), h = kf(n, BH), cx = kf(n, BX) + w / 2, cy = kf(n, BY) + h / 2, p = kf(n, [[30, 0.22], [34, 0.8], [35, 0.84]]);
-        const ow = w * p * 0.95, oh = h * p * 0.62;
-        return <div style={{ position: "absolute", left: cx - ow / 2, top: cy - oh / 2, width: ow, height: oh, borderRadius: "50%", overflow: "hidden", opacity: fadeOut * kf(n, [[30, 0], [31.5, 1]]), WebkitMaskImage: "radial-gradient(ellipse at center, #000 62%, transparent 100%)", maskImage: "radial-gradient(ellipse at center, #000 62%, transparent 100%)" }}><RingsBG nn={n} /></div>;
+        const w = kf(n, BW) , h = kf(n, BH), x = kf(n, BX) + 6, y = kf(n, BY) - 4;
+        return <div style={{ position: "absolute", left: x, top: y, width: w - 0, height: h - 0, transform: "rotate(-1.2deg)", opacity: fadeOut * kf(n, [[30, 0], [33.3, 1]]), background: "#fff", padding: 6, boxSizing: "border-box", borderRadius: 4, boxShadow: "0 12px 34px rgba(30,45,70,.20), 0 2px 6px rgba(30,45,70,.12)" }}><div style={{ position: "relative", width: "100%", height: "100%", overflow: "hidden" }}><RingsBG nn={n} /></div></div>;
       })()}
     </>
   );
@@ -172,7 +171,7 @@ const BOXK = {
 const Screen: React.FC<{ n: number }> = ({ n }) => {
   if (n < 35) return null;
   const x = kf(n, BOXK.x), y = kf(n, BOXK.y), w = kf(n, BOXK.w), h = kf(n, BOXK.h), r = kf(n, BOXK.r), d = kf(n, BOXK.d);
-  const bgop = kf(n, [[35, 0], [36, 0.5], [38, 0.58], [40, 0.74], [41.5, 0.95], [42.5, 1]]);
+  const bgop = kf(n, [[35, 0], [36, 1]]);
   const op = 1;
   const rot = 0;
   const s = n < 41 ? kf(n, [[38, 0.6], [41, 0.907]]) : w / GW;
@@ -202,7 +201,7 @@ const Liquid: React.FC<{ n: number }> = ({ n }) => {
   return (
     <svg width={0} height={0} style={{ position: "absolute" }}>
       <filter id="kliq" x="-15%" y="-25%" width="130%" height="150%">
-        <feTurbulence type="fractalNoise" baseFrequency="0.022 0.03" numOctaves={3} seed={7} result="nz" />
+        <feTurbulence type="fractalNoise" baseFrequency="0.05 0.07" numOctaves={4} seed={7} result="nz" />
         <feDisplacementMap in="SourceGraphic" in2="nz" scale={d} xChannelSelector="R" yChannelSelector="G" />
       </filter>
     </svg>
@@ -374,7 +373,7 @@ const B3: React.FC<{ n: number }> = ({ n }) => {
             <div style={abs(814, 669, 220, 18, { fontSize: 13, fontWeight: 500, color: "#7A8494", display: "flex", alignItems: "center", gap: 7, whiteSpace: "nowrap", lineHeight: "18px" })}><span style={{ width: 7, height: 7, borderRadius: 4, background: C.cyan }} />Founder & CEO</div>
           </>
         )}
-        {n >= 91 && <div style={{ position: "absolute", left: 788 - mw("For", 134, 500, -4), top: 380 - 17, fontSize: 134, lineHeight: "134px", fontWeight: 500, letterSpacing: -4, color: INK, whiteSpace: "nowrap" }}>For</div>}
+        {n >= 91 && <div style={{ position: "absolute", left: 788 - mw("For", 134, 600, -4), top: 380 - 17, fontSize: 134, lineHeight: "134px", fontWeight: 600, letterSpacing: -4, color: INK, whiteSpace: "nowrap" }}>For</div>}
       </>
     );
   }
