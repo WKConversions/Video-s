@@ -104,3 +104,5 @@ films/kb-team/film/public/footage/
 films/kb-team/film/node_modules
 films/kb-team/film/tools/.ev-out.cjs
 films/kb-team/film/tools/.ev-entry.ts
+films/kb-team/film/public/stills/
+films/kb-team/film/out/

@@ -41,18 +41,29 @@ export const Port: React.FC<{ who: string; x: number; y: number; w: number; h: n
 );
 export const Tile: React.FC<{ x: number; y: number; s: number }> = ({ x, y, s }) => <Img src={staticFile("logo/kb-logo-tile.svg")} style={abs(x - s / 2, y - s / 2, s, s, { borderRadius: s * 0.075 })} />;
 export const Arrow: React.FC<{ s: number; c: string }> = ({ s, c }) => <svg width={s} height={s} viewBox="0 0 24 24"><path d="M12 19V6M6 12l6-6 6 6" fill="none" stroke={c} strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" /></svg>;
-export const Msg: React.FC<{ x: number; y: number; w: number; text: string; dark?: boolean; big?: number; children?: React.ReactNode }> = ({ x, y, w, text, dark, big = 1, children }) => (
-  <div style={abs(x, y, w, undefined, { background: dark ? C.dark2 : C.white, borderRadius: 16 * big, boxShadow: dark ? "none" : "0 20px 50px rgba(41,58,81,.10)", border: dark ? "1px solid rgba(255,255,255,.08)" : "none", padding: `${30 * big}px ${36 * big}px ${24 * big}px` })}>
-    {children}
-    <div style={{ fontSize: 30 * big, fontWeight: 500, lineHeight: 1.36, color: dark ? "#E8EDF4" : C.ink, letterSpacing: -0.4, minHeight: 82 * big }}>{text}<span style={{ display: "inline-block", width: 2.5 * big, height: 32 * big, background: dark ? "#fff" : C.ink, marginLeft: 3, verticalAlign: "-5px" }} /></div>
-    <div style={{ display: "flex", alignItems: "center", gap: 16 * big, marginTop: 18 * big, fontSize: 21 * big, fontWeight: 600, color: dark ? "#C5CEDB" : C.ink }}>
-      <span style={{ fontSize: 30 * big, fontWeight: 400 }}>+</span><span style={{ width: 1, height: 26 * big, background: dark ? "rgba(255,255,255,.15)" : C.line }} />
-      <Img src={staticFile("logo/kb-logo-tile.svg")} style={{ width: 28 * big, height: 28 * big, borderRadius: 5 }} /><span>K.B team</span>
-      <span style={{ marginLeft: "auto", fontWeight: 500 }}>Send</span>
-      <div style={{ width: 44 * big, height: 44 * big, borderRadius: 11 * big, background: C.cyan, display: "flex", alignItems: "center", justifyContent: "center" }}><Arrow s={24 * big} c={C.ink} /></div>
+/** The message box, measured on the reference's prompt box (f284: x 405, y 400, 1110 x 270 film px; text 35 px medium
+ *  on a 48 px line, 47 px from the left edge; the footer row's centre 215 px below the top; send button 50 px, 32 px
+ *  from the right edge). k scales everything (the macro shots show the same box much larger). `text` is the part of
+ *  the sentence typed so far; `caret` shows the text caret; `press` (0..1) pushes the send button in; children sit
+ *  above the text (the attachments row). The box is 270 * k high with up to two lines of text. */
+export const Msg: React.FC<{ x: number; y: number; w?: number; text: string; dark?: boolean; k?: number; big?: number; caret?: boolean; press?: number; children?: React.ReactNode }> = ({ x, y, w, text, dark, k, big, caret = true, press = 0, children }) => {
+  const s = k ?? big ?? 1, fg = dark ? "#F2F5F9" : "#16202E", sub = dark ? "rgba(255,255,255,.16)" : "rgba(22,32,46,.14)";
+  return (
+    <div style={abs(x, y, w ?? 1110 * s, undefined, { boxSizing: "border-box", background: dark ? "#1C2634" : "#FFFFFF", borderRadius: 17 * s, boxShadow: dark ? "none" : `0 ${14 * s}px ${44 * s}px rgba(41,58,81,.07)`, border: dark ? "1px solid rgba(255,255,255,.10)" : "none", padding: `${40 * s}px ${32 * s}px ${30 * s}px ${47 * s}px` })}>
+      {children}
+      <div style={{ fontSize: 35 * s, fontWeight: 500, lineHeight: `${48 * s}px`, color: fg, letterSpacing: -0.7 * s, minHeight: 96 * s, paddingRight: 60 * s }}>{text}{caret && <span style={{ display: "inline-block", width: Math.max(2, 2.5 * s), height: 36 * s, background: fg, marginLeft: 3 * s, verticalAlign: `${-6 * s}px` }} />}</div>
+      <div style={{ display: "flex", alignItems: "center", height: 50 * s, marginTop: 54 * s, fontSize: 23 * s, fontWeight: 500, color: fg }}>
+        <svg width={22 * s} height={22 * s} viewBox="0 0 22 22" style={{ marginLeft: 1 * s }}><path d="M11 2v18M2 11h18" stroke={fg} strokeWidth="2.4" strokeLinecap="round" /></svg>
+        <span style={{ width: Math.max(1, 1.5 * s), height: 30 * s, background: sub, margin: `0 ${30 * s}px 0 ${30 * s}px` }} />
+        <Img src={staticFile("logo/kb-logo-tile.svg")} style={{ width: 30 * s, height: 30 * s, borderRadius: 6 * s }} /><span style={{ marginLeft: 14 * s }}>K.B team</span>
+        <span style={{ marginLeft: "auto" }}>Ask</span>
+        <svg width={14 * s} height={14 * s} viewBox="0 0 14 14" style={{ marginLeft: 8 * s }}><path d="M3 5l4 4 4-4" stroke={fg} strokeWidth="1.8" fill="none" strokeLinecap="round" strokeLinejoin="round" /></svg>
+        <svg width={24 * s} height={30 * s} viewBox="0 0 24 30" style={{ marginLeft: 34 * s }}><rect x="8" y="2" width="8" height="15" rx="4" stroke={fg} strokeWidth="2" fill="none" /><path d="M4 13a8 8 0 0 0 16 0M12 21v6" stroke={fg} strokeWidth="2" fill="none" strokeLinecap="round" /></svg>
+        <div style={{ marginLeft: 30 * s, width: 50 * s, height: 50 * s, borderRadius: 10 * s, background: C.cyan, display: "flex", alignItems: "center", justifyContent: "center", transform: `scale(${(1 - 0.08 * press).toFixed(4)})`, filter: press > 0 ? `brightness(${(1 - 0.12 * press).toFixed(3)})` : undefined }}><Arrow s={25 * s} c="#16202E" /></div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 export const Shot: React.FC<{ src: string; dim?: number; children?: React.ReactNode }> = ({ src, dim = 0, children }) => (
   <AbsoluteFill style={{ fontFamily: F }}><Img src={staticFile(`sb/${src}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover" }} /><AbsoluteFill style={{ background: `rgba(10,16,26,${dim})` }} />{children}</AbsoluteFill>
 );
@@ -134,6 +145,32 @@ export const S = (t: number, t0: number, cfg: { damping?: number; stiffness?: nu
 export const rnd = (k: number) => { const s = Math.sin(k * 127.1 + 311.7) * 43758.5453; return s - Math.floor(s); };
 /** seconds (from the film's start) of a reference frame; inside a package subtract the package's own f0: rs(n - f0) */
 export const rs = (refFrames: number) => refFrames / 24;
+/** The reference frame (fractional) on screen at package-local time t, for a package whose first reference frame is f0. */
+export const refN = (t: number, f0: number) => f0 + t * 24;
+/** A move MEASURED on the reference (tools/track.py), replayed. keys = [[reference frame, value], ...] in rising frame
+ *  order; n = refN(t, F0), fractional, so the move glides at 60 fps between the reference's 24 pictures a second.
+ *  Monotone cubic: it passes through every key, never overshoots between two keys and has no kinks; before the first
+ *  key and after the last it holds. For a move that starts or ends at rest, repeat the resting value on the frame
+ *  before / after. Keep the keys that carry the move (start, the fast part, the overshoot's peak, the settle); a key on
+ *  every frame of a slow move only copies the measuring noise. */
+export const kf = (n: number, keys: [number, number][]): number => {
+  const m = keys.length;
+  if (m === 0) return 0;
+  if (n <= keys[0][0]) return keys[0][1];
+  if (n >= keys[m - 1][0]) return keys[m - 1][1];
+  let i = 0; while (i < m - 2 && n >= keys[i + 1][0]) i++;
+  const slope = (j: number) => (keys[j + 1][1] - keys[j][1]) / (keys[j + 1][0] - keys[j][0]);
+  const tan = (j: number) => {
+    if (j === 0) return slope(0);
+    if (j === m - 1) return slope(m - 2);
+    const a = slope(j - 1), b = slope(j);
+    if (a * b <= 0) return 0;
+    const h0 = keys[j][0] - keys[j - 1][0], h1 = keys[j + 1][0] - keys[j][0];
+    return (3 * (h0 + h1)) / ((2 * h1 + h0) / a + (h1 + 2 * h0) / b);
+  };
+  const [x0, y0] = keys[i], [x1, y1] = keys[i + 1], h = x1 - x0, u = (n - x0) / h, t0 = tan(i) * h, t1 = tan(i + 1) * h, u2 = u * u, u3 = u2 * u;
+  return (2 * u3 - 3 * u2 + 1) * y0 + (u3 - 2 * u2 + u) * t0 + (-2 * u3 + 3 * u2) * y1 + (u3 - u2) * t1;
+};
 // ---------------------------------------------------------------- typing
 /** the part of `text` typed by time t, when typing starts at t0 at cps characters a second */
 export const typed = (text: string, t: number, t0: number, cps: number) => text.slice(0, Math.max(0, Math.min(text.length, Math.floor((t - t0) * cps + 1e-6))));
