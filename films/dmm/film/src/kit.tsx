@@ -9,6 +9,9 @@ import { topoPath, TopoOpts } from "./topo";
 
 // ------------------------------------------------------------------ clock
 export const FPS = 60, DUR = 36.4, VO = 0.4, W = 1920, H = 1080, CX = 960, CY = 540;
+/** v2 (client: 'a tiny bit fast'): the film plays at 92%: story time = film time x SPEED; the voice-over is slowed the
+ *  same way (atempo 0.92, pitch kept) and the effect cues move with the picture, so every sync point holds */
+export const SPEED = 0.92;
 /** film time (s) of a VO word's start / end; keys in ./words (repeats numbered: great2, malaga3 ...) */
 export const w = (key: string) => WORDS[key][0] + VO;
 export const we = (key: string) => WORDS[key][1] + VO;

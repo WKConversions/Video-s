@@ -1,23 +1,24 @@
 // Scene S6 (12.45–15.50, B3): "Discover fresh ideas at our local events,"
 // The Málaga pin's dot swells and opens into their white events section. Their own dark 2026 event banners land and
-// flip on the words (Tatiana -> Yago -> Charlie) while the date under the card rolls like an odometer in the site's
-// style; the logo's wave underlines the idea, hops down to underline the venue on 'local', and the last flip turns the
+// flip on the words (Tatiana -> Yago -> the Reddit fireside chat) while the date under the card rolls like an odometer in the
+// site's style; the logo's wave underlines the idea, hops down to underline 'Málaga' on 'local' (no venue names: the
+// client does not always host at the same coworking), and the last flip turns the
 // announcement into the event itself (the talk in the stone-walled room), which grows and gets ready to split (S7).
 import React from "react";
 import { C, W, H, c01, k, mix, sp, INOUT, IN, OUT, SOFT, Pt } from "../kit";
 import { H as HO } from "../handoff";
 import { Scene } from "./types";
-import { BAN, EV, BannerFace, EventFace, Odometer, Poly, Roller, banPx, bez, dipOf, evScale, evZoom, flatMark, flip, lerpC, pointAt, riseStyle } from "./b3-kit";
+import { BAN, EV, BannerFace, EventFace, Odometer, Poly, Roller, bez, dipOf, evScale, evZoom, flatMark, flip, lerpC, pointAt, riseStyle } from "./b3-kit";
+import { REDDIT_HL, RedditFace } from "./b3-reddit";
 
 const PIN = { x: HO.pin.x, y: HO.pin.y };
-const DATES = ["2026-10-15 19:00:00", "2026-09-17 19:00:00", "2026-06-18 19:00:00"];
+const DATES = ["2026-10-15 19:00:00", "2026-09-17 19:00:00", "2026-02-26 19:00:00"];
 const DATE_Y = 852, VEN_Y = 918, UL_Y = 978;
 const FACE0: Pt = [EV.cx - BAN.w / 2, EV.cy - BAN.h / 2];         // the banner face's top-left in the frame (330, 80)
 const NP = 96;
-// the underline under Charlie's cyan headline (face px: from the headline's left edge, a third of the way from 'reliance'
-// (PNG row 537) down to 'When:' (row 679)), and the venue underline (frame px)
-const HL = banPx("charlie", 44, 537), WHEN = banPx("charlie", 70, 679);
-const [UL_A, DOT_A] = flatMark(NP, HL[0], 300, mix(HL[1], WHEN[1], 0.33), 34);
+// the underline under the Reddit banner's cyan headline (face px: from the headline's left edge, a third of the way from
+// the headline's last row down to 'When:'), and the underline under 'Málaga' (frame px)
+const [UL_A, DOT_A] = flatMark(NP, REDDIT_HL.left + 20, 300, mix(REDDIT_HL.bottom, REDDIT_HL.when, 0.33), 34);
 const DOT_AF: Pt = [DOT_A[0] + FACE0[0], DOT_A[1] + FACE0[1]];
 const [UL_B, DOT_B] = flatMark(NP, 680, 560, UL_Y, 24);
 const UL_END = UL_B[UL_B.length - 1];
@@ -80,15 +81,15 @@ const S6C: React.FC<{ t: number }> = ({ t }) => {
               {face === 0 && <BannerFace name="tatiana" shade={shade} />}
               {face === 1 && <BannerFace name="yago" shade={shade} />}
               {face === 2 && (
-                <BannerFace name="charlie" shade={shade}>
+                <RedditFace shade={shade}>
                   {t >= 13.7 && ulFrom < 1 && <Poly pts={UL_A} c1={C.cyan} c2={C.cyanL} width={14} p={ulP} from={ulFrom} vw={BAN.w} vh={BAN.h} />}
-                </BannerFace>
+                </RedditFace>
               )}
               {ev && <EventFace zoom={evZoom(t)} radius={EV.r / evScale(t)} shade={shade} />}
             </div>
           )}
           {t < 15.4 && <Odometer t={t} dates={DATES} rolls={[13.1, 13.52]} cy={DATE_Y} size={44} color={C.grey} style={dateS} />}
-          {t < 15.4 && <Roller t={t} a="Impact Hub Perchel" b="Momentum Coworking" at={13.52} cy={VEN_Y} size={54} color={C.char} style={venS} />}
+          {t < 15.4 && <Roller t={t} a="Málaga" b="Málaga" at={99} cy={VEN_Y} size={54} color={C.char} style={venS} />}
         </div>
       )}
       {t >= 14.36 && exitFrom < 1 && <Poly pts={UL_B} c1={C.cyanD} c2={C.cyan} width={10} p={pB} from={exitFrom} />}

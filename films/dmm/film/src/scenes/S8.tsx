@@ -10,7 +10,7 @@ import { H } from "../handoff";
 import { C, SHADOW_L, Photo, Pt, c01, k, mix, sp, IN, INOUT, OUT } from "../kit";
 import { FORK, PILL_LABELS, PILL_W, PILL_H, PILL_X, PILL_YS, PillBar, VoiceBubble, WAPillLayer, at, bubbleS8, branchEnd, cardAt, cubic, piece, ptsStr, quad } from "./b4-kit";
 
-const SPK = ["speaker-tatiana.jpg", "speaker-yago.jpg", "speaker-charlie.jpg"];
+const SPK = ["speaker-tatiana.jpg", "speaker-yago.jpg", "speaker-belinda.jpg"];
 const STACK = [{ x: -26, y: 10, r: -6 }, { x: 0, y: 0, r: 0 }, { x: 26, y: 10, r: 6 }];
 const T_FLIP = 17.5, D_FLIP = 0.32;
 const photoZoom = (t: number) => mix(1.1, 1, k(t, 17.66, 1.5, OUT));

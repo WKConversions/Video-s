@@ -64,7 +64,7 @@ const Slot: React.FC<{ t: number }> = ({ t }) => {
     </div>; })}</>;
 };
 
-const LOOK = [{ src: "talk.jpg", x: 540, y: 600, w: 360, h: 250, pos: "50% 45%" }, { src: "outdoor.jpg", x: 1380, y: 600, w: 360, h: 250, pos: "50% 60%" }, { src: "group.jpg", x: 960, y: 860, w: 300, h: 190, pos: "50% 45%" }];
+const LOOK = [{ src: "event-brick.jpg", x: 540, y: 600, w: 360, h: 250, pos: "50% 45%" }, { src: "event-stone2.jpg", x: 1380, y: 600, w: 360, h: 250, pos: "50% 50%" }, { src: "event-speaker.jpg", x: 960, y: 860, w: 300, h: 190, pos: "50% 50%" }];
 const Ambitions: React.FC<{ t: number }> = ({ t }) => {
   const dotIn = c01(sp(t, T0 + 0.1, 2.2, 0.6));
   const hop = hopPts(t);

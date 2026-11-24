@@ -59,9 +59,9 @@ export const LTOT = LCUM[NP - 1];
 export type CardDef = { src: string; w: number; h: number; x: number; y: number; pos: string; idx: number; stack: { x: number; y: number; rot: number; sc: number } };
 const near = (x: number) => LINE.reduce((b, p, i) => (Math.abs(p[0] - x) < Math.abs(LINE[b][0] - x) ? i : b), 0);
 export const CARDS: CardDef[] = [
-  { src: "group.jpg", w: 380, h: 285, x: 330, y: 690, pos: "50% 50%", idx: near(330), stack: { x: 742, y: 652, rot: -8, sc: 1.14 } },
-  { src: "street.jpg", w: 290, h: 390, x: 760, y: 470, pos: "50% 45%", idx: near(760), stack: { x: 826, y: 592, rot: -3, sc: 1.1 } },
-  { src: "talk.jpg", w: 380, h: 285, x: 1170, y: 690, pos: "50% 50%", idx: near(1170), stack: { x: 1180, y: 642, rot: 5, sc: 1.14 } },
+  { src: "event-stone.jpg", w: 380, h: 285, x: 330, y: 690, pos: "50% 50%", idx: near(330), stack: { x: 742, y: 652, rot: -8, sc: 1.14 } },
+  { src: "event-terrace.jpg", w: 290, h: 390, x: 760, y: 470, pos: "50% 45%", idx: near(760), stack: { x: 826, y: 592, rot: -3, sc: 1.1 } },
+  { src: "event-pyramid.jpg", w: 380, h: 285, x: 1170, y: 690, pos: "50% 50%", idx: near(1170), stack: { x: 1180, y: 642, rot: 5, sc: 1.14 } },
   { src: "cathedral.jpg", w: 320, h: 300, x: 1580, y: 470, pos: "50% 40%", idx: near(1580), stack: { x: 960, y: 600, rot: 0, sc: 1 } },
 ];
 const IDX_C = near(960);

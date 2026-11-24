@@ -1,8 +1,11 @@
 # Cue sheet for the Digital Marketing Málaga film: effects lead (on the picture's events, from plan/contract.md),
-# a quiet music bed under the voice (Mixkit "Tech House vibes", fitted: bed.wav). Film time = VO + 0.4.
+# a quiet music bed under the voice (Mixkit "Tech House vibes", fitted: bed.wav). Story time = VO + 0.4.
+# v2: the whole film runs at SPEED (the client: "a tiny bit fast"): film time = story time / SPEED, the VO is
+# slowed with atempo (pitch kept: ../vo/vo-92.wav), so every cue below stays in story time and is scaled here.
 import json
+SPEED = 0.92
 fx = []
-def a(t, i, db, pitch=0, note=""): fx.append({"frame": round(t * 60), "id": i, "db": min(-3, db + (5 if i in ("gen-tick", "kenney-tick-004", "kenney-select-001", "kenney-select-002") else 3)), "pitch": pitch, "note": note})
+def a(t, i, db, pitch=0, note=""): fx.append({"frame": round(t / SPEED * 60), "id": i, "db": min(-3, db + (5 if i in ("gen-tick", "kenney-tick-004", "kenney-select-001", "kenney-select-002") else 3)), "pitch": pitch, "note": note})
 # S1 connect
 a(0.00, "gen-appear", -6, 0, "the mark draws on"); a(0.55, "gen-pop", -7, 2, "the dot pops")
 a(0.78, "gen-whoosh-short", -9, 0, "the ends pull apart"); a(1.05, "kenney-drop-003", -6, 0, "card A blooms"); a(1.70, "kenney-drop-003", -6, 3, "card B blooms")
@@ -55,8 +58,8 @@ a(30.85, "gen-whoosh-short", -9, -3, "the light condenses into JOIN US"); a(31.1
 for i, t in enumerate([31.50, 31.96, 32.38]): a(t, "gen-tick", -12, 2 * i, "logotype word")
 a(32.56, "gen-appear", -8, 2, "the wave draws back"); a(32.92, "gen-pop", -6, 4, "the dot: full stop")
 a(33.70, "gen-swell", -9, 2, "grow"); a(33.82, "gen-success", -7, 0, "together"); a(35.00, "gen-shimmer", -12, 2, "glint")
-json.dump({"fps": 60, "frames": 2184, "library": "../../alumni/sound/lib",
-           "vo": {"file": "../vo/vo.mp3", "at": 0.4, "compress": True},
+json.dump({"fps": 60, "frames": round(36.4 / SPEED * 60), "library": "../../alumni/sound/lib",
+           "vo": {"file": "../vo/vo-92.wav", "at": round(0.4 / SPEED, 4), "compress": True},
            "music": {"file": "bed.wav", "at": 0, "lufs": -32, "duck_db": 5, "fade_in": 0.1, "fade_out": 1.4},
            "sfx": fx}, open("cues.json", "w"), indent=1)
 print(len(fx), "cues")

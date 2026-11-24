@@ -13,7 +13,7 @@ import { EV, PHOTO, Poly, arcLen, dipOf, evScale, evZoom, flip, pointAt } from "
 const SPK = [
   { src: "speaker-tatiana.jpg", iw: 457, ih: 663, name: "Tatiana Benito" },
   { src: "speaker-yago.jpg", iw: 435, ih: 631, name: "Yago González" },
-  { src: "speaker-charlie.jpg", iw: 465, ih: 675, name: "Charlie Titherley" },
+  { src: "speaker-belinda.jpg", iw: 465, ih: 675, name: "Belinda Conde" },
 ];
 const TR = HO.trio;
 const BW = 480, BH = 780;                  // each panel's layout box (larger than any panel: 453 x 745 at most)
