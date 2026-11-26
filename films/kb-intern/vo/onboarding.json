@@ -1,0 +1,769 @@
+{
+ "source": "vo.mp3",
+ "model": "small",
+ "duration": 51.8008125,
+ "words": [
+  {
+   "word": "Welcome",
+   "start": 0.0,
+   "end": 0.32,
+   "p": 0.916
+  },
+  {
+   "word": "to",
+   "start": 0.32,
+   "end": 0.58,
+   "p": 0.995
+  },
+  {
+   "word": "KB.",
+   "start": 0.58,
+   "end": 0.96,
+   "p": 0.963
+  },
+  {
+   "word": "We",
+   "start": 1.44,
+   "end": 1.66,
+   "p": 0.99
+  },
+  {
+   "word": "build",
+   "start": 1.66,
+   "end": 1.9,
+   "p": 0.948
+  },
+  {
+   "word": "software,",
+   "start": 1.9,
+   "end": 2.4,
+   "p": 0.998
+  },
+  {
+   "word": "AI",
+   "start": 2.92,
+   "end": 3.16,
+   "p": 0.949
+  },
+  {
+   "word": "and",
+   "start": 3.16,
+   "end": 3.54,
+   "p": 0.76
+  },
+  {
+   "word": "automation",
+   "start": 3.54,
+   "end": 3.98,
+   "p": 0.989
+  },
+  {
+   "word": "for",
+   "start": 3.98,
+   "end": 4.34,
+   "p": 0.986
+  },
+  {
+   "word": "small",
+   "start": 4.34,
+   "end": 4.74,
+   "p": 0.996
+  },
+  {
+   "word": "and",
+   "start": 4.74,
+   "end": 4.98,
+   "p": 0.987
+  },
+  {
+   "word": "medium",
+   "start": 4.98,
+   "end": 5.28,
+   "p": 0.999
+  },
+  {
+   "word": "-sized",
+   "start": 5.28,
+   "end": 5.54,
+   "p": 0.807
+  },
+  {
+   "word": "businesses",
+   "start": 5.54,
+   "end": 6.1,
+   "p": 0.996
+  },
+  {
+   "word": "across",
+   "start": 6.1,
+   "end": 6.52,
+   "p": 0.998
+  },
+  {
+   "word": "Europe.",
+   "start": 6.52,
+   "end": 7.0,
+   "p": 0.999
+  },
+  {
+   "word": "You",
+   "start": 7.54,
+   "end": 7.72,
+   "p": 0.994
+  },
+  {
+   "word": "help",
+   "start": 7.72,
+   "end": 7.9,
+   "p": 0.993
+  },
+  {
+   "word": "the",
+   "start": 7.9,
+   "end": 8.04,
+   "p": 0.997
+  },
+  {
+   "word": "right",
+   "start": 8.04,
+   "end": 8.26,
+   "p": 0.994
+  },
+  {
+   "word": "companies",
+   "start": 8.26,
+   "end": 8.62,
+   "p": 0.998
+  },
+  {
+   "word": "find",
+   "start": 8.62,
+   "end": 8.96,
+   "p": 0.992
+  },
+  {
+   "word": "us.",
+   "start": 8.96,
+   "end": 9.26,
+   "p": 0.999
+  },
+  {
+   "word": "Security",
+   "start": 10.02,
+   "end": 10.26,
+   "p": 0.898
+  },
+  {
+   "word": "comes",
+   "start": 10.26,
+   "end": 10.66,
+   "p": 0.998
+  },
+  {
+   "word": "first.",
+   "start": 10.66,
+   "end": 11.06,
+   "p": 0.998
+  },
+  {
+   "word": "You",
+   "start": 11.7,
+   "end": 11.8,
+   "p": 0.995
+  },
+  {
+   "word": "sign",
+   "start": 11.8,
+   "end": 12.06,
+   "p": 0.994
+  },
+  {
+   "word": "the",
+   "start": 12.06,
+   "end": 12.2,
+   "p": 0.996
+  },
+  {
+   "word": "confidentiality",
+   "start": 12.2,
+   "end": 13.04,
+   "p": 0.845
+  },
+  {
+   "word": "agreement,",
+   "start": 13.04,
+   "end": 13.4,
+   "p": 0.999
+  },
+  {
+   "word": "secure",
+   "start": 13.72,
+   "end": 14.1,
+   "p": 0.997
+  },
+  {
+   "word": "your",
+   "start": 14.1,
+   "end": 14.32,
+   "p": 0.998
+  },
+  {
+   "word": "laptop",
+   "start": 14.32,
+   "end": 14.64,
+   "p": 0.998
+  },
+  {
+   "word": "and",
+   "start": 14.64,
+   "end": 15.1,
+   "p": 0.564
+  },
+  {
+   "word": "read",
+   "start": 15.1,
+   "end": 15.3,
+   "p": 0.999
+  },
+  {
+   "word": "approved",
+   "start": 15.3,
+   "end": 15.72,
+   "p": 0.984
+  },
+  {
+   "word": "tools",
+   "start": 15.72,
+   "end": 16.16,
+   "p": 0.996
+  },
+  {
+   "word": "and",
+   "start": 16.16,
+   "end": 16.48,
+   "p": 0.882
+  },
+  {
+   "word": "the",
+   "start": 16.48,
+   "end": 16.58,
+   "p": 0.99
+  },
+  {
+   "word": "AI",
+   "start": 16.58,
+   "end": 16.9,
+   "p": 0.924
+  },
+  {
+   "word": "use",
+   "start": 16.9,
+   "end": 17.24,
+   "p": 0.613
+  },
+  {
+   "word": "guidelines.",
+   "start": 17.24,
+   "end": 17.62,
+   "p": 0.996
+  },
+  {
+   "word": "Then",
+   "start": 18.32,
+   "end": 18.62,
+   "p": 0.991
+  },
+  {
+   "word": "your",
+   "start": 18.62,
+   "end": 18.98,
+   "p": 0.641
+  },
+  {
+   "word": "tools.",
+   "start": 18.98,
+   "end": 19.26,
+   "p": 0.995
+  },
+  {
+   "word": "JIRA",
+   "start": 20.06,
+   "end": 20.28,
+   "p": 0.662
+  },
+  {
+   "word": "for",
+   "start": 20.28,
+   "end": 20.5,
+   "p": 0.984
+  },
+  {
+   "word": "your",
+   "start": 20.5,
+   "end": 20.64,
+   "p": 0.988
+  },
+  {
+   "word": "work,",
+   "start": 20.64,
+   "end": 20.92,
+   "p": 0.998
+  },
+  {
+   "word": "Confluence",
+   "start": 21.38,
+   "end": 21.76,
+   "p": 0.955
+  },
+  {
+   "word": "for",
+   "start": 21.76,
+   "end": 22.0,
+   "p": 0.997
+  },
+  {
+   "word": "documentation,",
+   "start": 22.0,
+   "end": 22.56,
+   "p": 0.964
+  },
+  {
+   "word": "Dolibar",
+   "start": 23.4,
+   "end": 23.82,
+   "p": 0.731
+  },
+  {
+   "word": "for",
+   "start": 23.82,
+   "end": 24.02,
+   "p": 0.996
+  },
+  {
+   "word": "contacts",
+   "start": 24.02,
+   "end": 24.46,
+   "p": 0.943
+  },
+  {
+   "word": "and",
+   "start": 24.46,
+   "end": 24.7,
+   "p": 0.994
+  },
+  {
+   "word": "proposals.",
+   "start": 24.7,
+   "end": 25.1,
+   "p": 0.6
+  },
+  {
+   "word": "One",
+   "start": 25.66,
+   "end": 25.9,
+   "p": 0.958
+  },
+  {
+   "word": "password",
+   "start": 25.9,
+   "end": 26.32,
+   "p": 0.991
+  },
+  {
+   "word": "for",
+   "start": 26.32,
+   "end": 26.58,
+   "p": 0.993
+  },
+  {
+   "word": "passwords.",
+   "start": 26.58,
+   "end": 27.08,
+   "p": 0.996
+  },
+  {
+   "word": "Always",
+   "start": 27.52,
+   "end": 28.06,
+   "p": 0.99
+  },
+  {
+   "word": "with",
+   "start": 28.06,
+   "end": 28.34,
+   "p": 0.997
+  },
+  {
+   "word": "your",
+   "start": 28.34,
+   "end": 28.46,
+   "p": 0.998
+  },
+  {
+   "word": "KB",
+   "start": 28.46,
+   "end": 28.74,
+   "p": 0.916
+  },
+  {
+   "word": "account",
+   "start": 28.74,
+   "end": 29.14,
+   "p": 0.99
+  },
+  {
+   "word": "and",
+   "start": 29.14,
+   "end": 29.4,
+   "p": 0.943
+  },
+  {
+   "word": "two",
+   "start": 29.4,
+   "end": 29.64,
+   "p": 0.947
+  },
+  {
+   "word": "-factor",
+   "start": 29.64,
+   "end": 29.92,
+   "p": 0.914
+  },
+  {
+   "word": "authentication.",
+   "start": 29.92,
+   "end": 30.44,
+   "p": 0.998
+  },
+  {
+   "word": "Your",
+   "start": 31.26,
+   "end": 31.38,
+   "p": 0.986
+  },
+  {
+   "word": "work",
+   "start": 31.38,
+   "end": 31.64,
+   "p": 0.998
+  },
+  {
+   "word": "lives",
+   "start": 31.64,
+   "end": 31.94,
+   "p": 0.995
+  },
+  {
+   "word": "on",
+   "start": 31.94,
+   "end": 32.16,
+   "p": 0.999
+  },
+  {
+   "word": "the",
+   "start": 32.16,
+   "end": 32.26,
+   "p": 0.997
+  },
+  {
+   "word": "marketing",
+   "start": 32.26,
+   "end": 32.58,
+   "p": 0.744
+  },
+  {
+   "word": "board.",
+   "start": 32.58,
+   "end": 32.92,
+   "p": 0.998
+  },
+  {
+   "word": "From",
+   "start": 33.42,
+   "end": 33.54,
+   "p": 0.99
+  },
+  {
+   "word": "backlog",
+   "start": 33.54,
+   "end": 33.98,
+   "p": 0.969
+  },
+  {
+   "word": "to",
+   "start": 33.98,
+   "end": 34.4,
+   "p": 0.783
+  },
+  {
+   "word": "in",
+   "start": 34.4,
+   "end": 34.6,
+   "p": 0.985
+  },
+  {
+   "word": "progress",
+   "start": 34.6,
+   "end": 34.98,
+   "p": 0.641
+  },
+  {
+   "word": "to",
+   "start": 34.98,
+   "end": 35.44,
+   "p": 0.817
+  },
+  {
+   "word": "done.",
+   "start": 35.44,
+   "end": 35.74,
+   "p": 0.993
+  },
+  {
+   "word": "A",
+   "start": 36.38,
+   "end": 36.5,
+   "p": 0.992
+  },
+  {
+   "word": "post",
+   "start": 36.5,
+   "end": 36.7,
+   "p": 0.976
+  },
+  {
+   "word": "is",
+   "start": 36.7,
+   "end": 36.92,
+   "p": 0.999
+  },
+  {
+   "word": "only",
+   "start": 36.92,
+   "end": 37.26,
+   "p": 0.995
+  },
+  {
+   "word": "done",
+   "start": 37.26,
+   "end": 37.6,
+   "p": 0.997
+  },
+  {
+   "word": "once",
+   "start": 37.6,
+   "end": 37.96,
+   "p": 0.997
+  },
+  {
+   "word": "it's",
+   "start": 37.96,
+   "end": 38.2,
+   "p": 0.984
+  },
+  {
+   "word": "live.",
+   "start": 38.2,
+   "end": 38.48,
+   "p": 0.993
+  },
+  {
+   "word": "We",
+   "start": 39.12,
+   "end": 39.22,
+   "p": 0.997
+  },
+  {
+   "word": "plan",
+   "start": 39.22,
+   "end": 39.48,
+   "p": 0.982
+  },
+  {
+   "word": "the",
+   "start": 39.48,
+   "end": 39.64,
+   "p": 0.99
+  },
+  {
+   "word": "sprint",
+   "start": 39.64,
+   "end": 39.86,
+   "p": 0.887
+  },
+  {
+   "word": "on",
+   "start": 39.86,
+   "end": 40.1,
+   "p": 0.999
+  },
+  {
+   "word": "Mondays.",
+   "start": 40.1,
+   "end": 40.62,
+   "p": 0.983
+  },
+  {
+   "word": "Two",
+   "start": 41.16,
+   "end": 41.34,
+   "p": 0.978
+  },
+  {
+   "word": "rules.",
+   "start": 41.34,
+   "end": 41.7,
+   "p": 0.989
+  },
+  {
+   "word": "Never",
+   "start": 42.18,
+   "end": 42.54,
+   "p": 0.991
+  },
+  {
+   "word": "name",
+   "start": 42.54,
+   "end": 42.78,
+   "p": 0.995
+  },
+  {
+   "word": "a",
+   "start": 42.78,
+   "end": 42.9,
+   "p": 0.998
+  },
+  {
+   "word": "client",
+   "start": 42.9,
+   "end": 43.14,
+   "p": 0.999
+  },
+  {
+   "word": "in",
+   "start": 43.14,
+   "end": 43.34,
+   "p": 0.953
+  },
+  {
+   "word": "public",
+   "start": 43.34,
+   "end": 43.62,
+   "p": 0.996
+  },
+  {
+   "word": "without",
+   "start": 43.62,
+   "end": 44.0,
+   "p": 0.996
+  },
+  {
+   "word": "approval",
+   "start": 44.0,
+   "end": 44.46,
+   "p": 0.999
+  },
+  {
+   "word": "and",
+   "start": 44.46,
+   "end": 45.12,
+   "p": 0.727
+  },
+  {
+   "word": "report",
+   "start": 45.12,
+   "end": 45.46,
+   "p": 0.997
+  },
+  {
+   "word": "problems",
+   "start": 45.46,
+   "end": 45.96,
+   "p": 0.996
+  },
+  {
+   "word": "the",
+   "start": 45.96,
+   "end": 46.22,
+   "p": 0.996
+  },
+  {
+   "word": "same",
+   "start": 46.22,
+   "end": 46.58,
+   "p": 1.0
+  },
+  {
+   "word": "day.",
+   "start": 46.58,
+   "end": 46.84,
+   "p": 0.999
+  },
+  {
+   "word": "Your",
+   "start": 46.84,
+   "end": 47.52,
+   "p": 0.785
+  },
+  {
+   "word": "first",
+   "start": 47.52,
+   "end": 47.76,
+   "p": 0.991
+  },
+  {
+   "word": "task?",
+   "start": 47.76,
+   "end": 48.18,
+   "p": 0.99
+  },
+  {
+   "word": "Your",
+   "start": 48.7,
+   "end": 48.74,
+   "p": 0.926
+  },
+  {
+   "word": "LinkedIn",
+   "start": 48.74,
+   "end": 49.1,
+   "p": 0.958
+  },
+  {
+   "word": "introduction",
+   "start": 49.1,
+   "end": 49.6,
+   "p": 0.604
+  },
+  {
+   "word": "post.",
+   "start": 49.6,
+   "end": 50.08,
+   "p": 0.993
+  },
+  {
+   "word": "Welcome",
+   "start": 50.54,
+   "end": 50.82,
+   "p": 0.994
+  },
+  {
+   "word": "to",
+   "start": 50.82,
+   "end": 51.02,
+   "p": 0.998
+  },
+  {
+   "word": "the",
+   "start": 51.02,
+   "end": 51.12,
+   "p": 0.981
+  },
+  {
+   "word": "team!",
+   "start": 51.12,
+   "end": 51.36,
+   "p": 0.981
+  }
+ ]
+}

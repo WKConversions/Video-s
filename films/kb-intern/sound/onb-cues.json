@@ -1,0 +1,370 @@
+{
+ "fps": 60,
+ "frames": 3600,
+ "library": "../../alumni/sound/lib",
+ "vo": {
+  "file": "../vo/onboarding-placed.wav",
+  "at": 0,
+  "compress": true
+ },
+ "music": {
+  "file": "onb-bed.wav",
+  "at": 0,
+  "lufs": -31,
+  "duck_db": 5,
+  "fade_in": 0.1,
+  "fade_out": 1.5
+ },
+ "sfx": [
+  {
+   "frame": 15,
+   "id": "gen-swell",
+   "db": -9,
+   "pitch": 0,
+   "note": "the map reveals"
+  },
+  {
+   "frame": 51,
+   "id": "kenney-drop-003",
+   "db": -3,
+   "pitch": 0,
+   "note": "the pin lands"
+  },
+  {
+   "frame": 54,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 2,
+   "note": "ring"
+  },
+  {
+   "frame": 60,
+   "id": "gen-appear",
+   "db": -4,
+   "pitch": 2,
+   "note": "the logo"
+  },
+  {
+   "frame": 95,
+   "id": "gen-whoosh-short",
+   "db": -8,
+   "pitch": 0,
+   "note": "Welcome to K.B"
+  },
+  {
+   "frame": 174,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 0,
+   "note": "Software"
+  },
+  {
+   "frame": 235,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 2,
+   "note": "AI"
+  },
+  {
+   "frame": 272,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 4,
+   "note": "Automation"
+  },
+  {
+   "frame": 320,
+   "id": "gen-shimmer",
+   "db": -7,
+   "pitch": 0,
+   "note": "nodes across Europe"
+  },
+  {
+   "frame": 392,
+   "id": "gen-tick",
+   "db": -9,
+   "pitch": 0,
+   "note": "a node"
+  },
+  {
+   "frame": 407,
+   "id": "gen-tick",
+   "db": -9,
+   "pitch": 1,
+   "note": "a node"
+  },
+  {
+   "frame": 422,
+   "id": "gen-tick",
+   "db": -9,
+   "pitch": 2,
+   "note": "a node"
+  },
+  {
+   "frame": 426,
+   "id": "gen-whoosh-short",
+   "db": -9,
+   "pitch": 2,
+   "note": "arcs"
+  },
+  {
+   "frame": 437,
+   "id": "gen-tick",
+   "db": -9,
+   "pitch": 3,
+   "note": "a node"
+  },
+  {
+   "frame": 577,
+   "id": "gen-whoosh-medium",
+   "db": -7,
+   "pitch": -2,
+   "note": "arcs flow back"
+  },
+  {
+   "frame": 598,
+   "id": "gen-chime",
+   "db": -6,
+   "pitch": 0,
+   "note": "into the pin"
+  },
+  {
+   "frame": 721,
+   "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": 0,
+   "note": "the path draws"
+  },
+  {
+   "frame": 760,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "pitch": 0,
+   "note": "rules make room"
+  },
+  {
+   "frame": 852,
+   "id": "kenney-select-001",
+   "db": -4,
+   "pitch": 0,
+   "note": "tick 1"
+  },
+  {
+   "frame": 979,
+   "id": "kenney-select-001",
+   "db": -4,
+   "pitch": 2,
+   "note": "tick 2"
+  },
+  {
+   "frame": 1154,
+   "id": "kenney-select-001",
+   "db": -4,
+   "pitch": 4,
+   "note": "tick 3"
+  },
+  {
+   "frame": 1199,
+   "id": "kenney-click-001",
+   "db": -3,
+   "pitch": 0,
+   "note": "the padlock opens"
+  },
+  {
+   "frame": 1202,
+   "id": "gen-success",
+   "db": -6,
+   "pitch": 0,
+   "note": "open"
+  },
+  {
+   "frame": 1279,
+   "id": "gen-whoosh-medium",
+   "db": -7,
+   "pitch": 0,
+   "note": "into the tools"
+  },
+  {
+   "frame": 1384,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 0,
+   "note": "chip"
+  },
+  {
+   "frame": 1463,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 2,
+   "note": "chip"
+  },
+  {
+   "frame": 1584,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 4,
+   "note": "chip"
+  },
+  {
+   "frame": 1720,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 6,
+   "note": "chip"
+  },
+  {
+   "frame": 1831,
+   "id": "gen-appear",
+   "db": -6,
+   "pitch": 0,
+   "note": "Always your K.B account"
+  },
+  {
+   "frame": 1944,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 0,
+   "note": "2FA badge"
+  },
+  {
+   "frame": 1967,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 2,
+   "note": "2FA badge"
+  },
+  {
+   "frame": 1990,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 4,
+   "note": "2FA badge"
+  },
+  {
+   "frame": 2012,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 6,
+   "note": "2FA badge"
+  },
+  {
+   "frame": 2122,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "pitch": 0,
+   "note": "the board"
+  },
+  {
+   "frame": 2252,
+   "id": "gen-tap",
+   "db": -6,
+   "pitch": 0,
+   "note": "Backlog"
+  },
+  {
+   "frame": 2316,
+   "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": 0,
+   "note": "card to In Progress"
+  },
+  {
+   "frame": 2366,
+   "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": 2,
+   "note": "card to Done"
+  },
+  {
+   "frame": 2384,
+   "id": "kenney-drop-003",
+   "db": -5,
+   "pitch": 0,
+   "note": "lands"
+  },
+  {
+   "frame": 2532,
+   "id": "gen-pop",
+   "db": -4,
+   "pitch": 0,
+   "note": "Done = live"
+  },
+  {
+   "frame": 2593,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "pitch": 0,
+   "note": "board to calendar"
+  },
+  {
+   "frame": 2646,
+   "id": "gen-chime",
+   "db": -5,
+   "pitch": 2,
+   "note": "Monday"
+  },
+  {
+   "frame": 2770,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 0,
+   "note": "two rules"
+  },
+  {
+   "frame": 2831,
+   "id": "gen-appear",
+   "db": -5,
+   "pitch": 0,
+   "note": "rule 1"
+  },
+  {
+   "frame": 3007,
+   "id": "gen-appear",
+   "db": -5,
+   "pitch": 2,
+   "note": "rule 2"
+  },
+  {
+   "frame": 3224,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 0,
+   "note": "the post"
+  },
+  {
+   "frame": 3246,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 3,
+   "note": "title"
+  },
+  {
+   "frame": 3320,
+   "id": "gen-whoosh-deep",
+   "db": -6,
+   "pitch": 0,
+   "note": "to the end card"
+  },
+  {
+   "frame": 3332,
+   "id": "gen-appear",
+   "db": -3,
+   "pitch": 0,
+   "note": "the logo lands"
+  },
+  {
+   "frame": 3367,
+   "id": "gen-success",
+   "db": -4,
+   "pitch": 0,
+   "note": "Welcome to the team!"
+  },
+  {
+   "frame": 3480,
+   "id": "gen-shimmer",
+   "db": -11,
+   "pitch": 2,
+   "note": "glint"
+  }
+ ]
+}

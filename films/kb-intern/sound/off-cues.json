@@ -1,0 +1,272 @@
+{
+ "fps": 60,
+ "frames": 2880,
+ "library": "../../alumni/sound/lib",
+ "vo": {
+  "file": "../vo/offboarding-placed.wav",
+  "at": 0,
+  "compress": true
+ },
+ "music": {
+  "file": "off-bed.wav",
+  "at": 0,
+  "lufs": -31,
+  "duck_db": 5,
+  "fade_in": 0.1,
+  "fade_out": 1.5
+ },
+ "sfx": [
+  {
+   "frame": 54,
+   "id": "gen-appear",
+   "db": -3,
+   "pitch": 0,
+   "note": "the logo lands"
+  },
+  {
+   "frame": 208,
+   "id": "gen-pop",
+   "db": -4,
+   "pitch": 2,
+   "note": "Thank you!"
+  },
+  {
+   "frame": 310,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 0,
+   "note": "the timeline draws"
+  },
+  {
+   "frame": 341,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 0,
+   "note": "a stop"
+  },
+  {
+   "frame": 359,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 2,
+   "note": "a stop"
+  },
+  {
+   "frame": 377,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 4,
+   "note": "a stop"
+  },
+  {
+   "frame": 395,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 6,
+   "note": "a stop"
+  },
+  {
+   "frame": 503,
+   "id": "gen-whoosh-medium",
+   "db": -6,
+   "pitch": 0,
+   "note": "timeline to the header; 2 weeks before"
+  },
+  {
+   "frame": 572,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 2,
+   "note": "the report"
+  },
+  {
+   "frame": 667,
+   "id": "gen-pop",
+   "db": -6,
+   "pitch": 0,
+   "note": "Supervisor"
+  },
+  {
+   "frame": 877,
+   "id": "gen-stamp",
+   "db": -3,
+   "pitch": 0,
+   "note": "K.B approval needed"
+  },
+  {
+   "frame": 925,
+   "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": -2,
+   "note": "slides to the supervisor"
+  },
+  {
+   "frame": 1052,
+   "id": "gen-tap",
+   "db": -6,
+   "pitch": 0,
+   "note": "Last week"
+  },
+  {
+   "frame": 1112,
+   "id": "gen-whoosh-short",
+   "db": -7,
+   "pitch": 0,
+   "note": "the ticket"
+  },
+  {
+   "frame": 1192,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 2,
+   "note": "comment bubble"
+  },
+  {
+   "frame": 1322,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 4,
+   "note": "Next step"
+  },
+  {
+   "frame": 1394,
+   "id": "gen-whoosh-short",
+   "db": -6,
+   "pitch": 0,
+   "note": "assignee changes"
+  },
+  {
+   "frame": 1442,
+   "id": "kenney-select-001",
+   "db": -4,
+   "pitch": 2,
+   "note": "Successor"
+  },
+  {
+   "frame": 1597,
+   "id": "gen-tap",
+   "db": -6,
+   "pitch": 2,
+   "note": "Last day"
+  },
+  {
+   "frame": 1661,
+   "id": "kenney-select-001",
+   "db": -4,
+   "pitch": 0,
+   "note": "tick"
+  },
+  {
+   "frame": 1751,
+   "id": "kenney-select-001",
+   "db": -4,
+   "pitch": 2,
+   "note": "tick"
+  },
+  {
+   "frame": 1939,
+   "id": "kenney-select-001",
+   "db": -4,
+   "pitch": 4,
+   "note": "tick"
+  },
+  {
+   "frame": 2035,
+   "id": "kenney-select-001",
+   "db": -4,
+   "pitch": 6,
+   "note": "tick"
+  },
+  {
+   "frame": 2098,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "pitch": 0,
+   "note": "chip flips"
+  },
+  {
+   "frame": 2111,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "pitch": 1,
+   "note": "chip flips"
+  },
+  {
+   "frame": 2120,
+   "id": "kenney-click-001",
+   "db": -3,
+   "pitch": 0,
+   "note": "Access revoked"
+  },
+  {
+   "frame": 2124,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "pitch": 2,
+   "note": "chip flips"
+  },
+  {
+   "frame": 2137,
+   "id": "gen-whoosh-whip",
+   "db": -7,
+   "pitch": 3,
+   "note": "chip flips"
+  },
+  {
+   "frame": 2263,
+   "id": "gen-tap",
+   "db": -6,
+   "pitch": 4,
+   "note": "Afterwards"
+  },
+  {
+   "frame": 2275,
+   "id": "kenney-click-001",
+   "db": -3,
+   "pitch": -3,
+   "note": "the padlock"
+  },
+  {
+   "frame": 2455,
+   "id": "gen-pop",
+   "db": -5,
+   "pitch": 0,
+   "note": "the profile"
+  },
+  {
+   "frame": 2545,
+   "id": "gen-tick",
+   "db": -7,
+   "pitch": 2,
+   "note": "row"
+  },
+  {
+   "frame": 2627,
+   "id": "gen-whoosh-deep",
+   "db": -6,
+   "pitch": 0,
+   "note": "to the end card"
+  },
+  {
+   "frame": 2639,
+   "id": "gen-appear",
+   "db": -3,
+   "pitch": 0,
+   "note": "the logo"
+  },
+  {
+   "frame": 2648,
+   "id": "gen-success",
+   "db": -4,
+   "pitch": 0,
+   "note": "Good luck!"
+  },
+  {
+   "frame": 2790,
+   "id": "gen-shimmer",
+   "db": -11,
+   "pitch": 2,
+   "note": "glint"
+  }
+ ]
+}
