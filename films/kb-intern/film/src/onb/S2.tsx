@@ -53,7 +53,7 @@ export const S2: React.FC<Props> = ({ t, t0, t1 }) => {
   const wt = warp(t, [TICK[0] - 0.4, TICK[1] - 0.4, TICK[2] - 0.4, wEnd("guidelines") - 0.4].map((c) => [c, c + 0.9] as [number, number]));
   const p = prog(t);
   const n = Math.max(2, Math.round(p * (PTS.length - 1)) + 1);
-  const lockIn = k(t, TICK[2] - 1.0, 0.7);
+  const lockIn = k(t, T0 + 0.35, 0.7);
   const open = k(t, wEnd("guidelines"), 0.8);
   const go = k(t, t1 - 0.2, 1.1, INOUT);
   const lx = mix(LOCK[0], 960, go), ly = mix(LOCK[1], 330, go);
@@ -78,7 +78,7 @@ export const S2: React.FC<Props> = ({ t, t0, t1 }) => {
         </svg>
         {CP.map((x, i) => {
           const y = yP(x), tk = k(t, TICK[i], 0.6);
-          const arrive = i === 0 ? pinIn : k(t, KT[i] - 0.5, 0.4);
+          const arrive = i === 0 ? pinIn : k(t, T0 + 0.1 + i * 0.15, 0.5);
           const pop = k(t, TICK[i] - 0.3 - 0.1, 0.7);
           return (
             <React.Fragment key={i}>
@@ -103,7 +103,7 @@ export const S2: React.FC<Props> = ({ t, t0, t1 }) => {
           <Padlock size={120} open={open} body={C.white} style={{ filter: `drop-shadow(0 0 ${14 + 10 * open}px rgba(153,205,252,0.7))` }} />
         </div>
       </div>
-      <Ring x={LOCK[0]} y={LOCK[1] + 30} p={t > TICK[2] - 0.5 && t < wEnd("guidelines") + 0.3 ? pulse(t, TICK[2] - 0.5, 1) : 0} r={100} color={C.blue} />
+      <Ring x={LOCK[0]} y={LOCK[1] + 30} p={t > T0 + 0.6 && t < wEnd("guidelines") + 0.3 ? pulse(t, T0 + 0.6, 1.1) : 0} r={100} color={C.blue} />
       <Cursor x={cur.x} y={cur.y} press={pressNow} o={curO} />
       <div style={{ display: "none", fontFamily: F }}>{S2PIN[0]}{press}</div>
     </Camera>

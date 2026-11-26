@@ -167,21 +167,21 @@ export const ToolIcon: React.FC<{ tool: Tool; size: number; tile?: boolean; styl
 
 // ------------------------------------------------------------------ constant motion
 /** a per-element float: each seed gets its own phase and period, so a group never moves in lockstep */
-export const float = (t: number, seed: number, amp = 8): { x: number; y: number; r: number } => ({
-  x: Math.sin(t * (0.55 + (seed % 5) * 0.07) + seed * 1.7) * amp * 0.6,
-  y: Math.sin(t * (0.7 + (seed % 7) * 0.06) + seed * 2.3) * amp,
-  r: Math.sin(t * (0.45 + (seed % 3) * 0.05) + seed) * amp * 0.08,
-});
+export const float = (t: number, seed: number, amp0 = 8): { x: number; y: number; r: number } => { const amp = amp0 * 1.7; return {
+  x: Math.sin(t * (0.75 + (seed % 5) * 0.09) + seed * 1.7) * amp * 0.6,
+  y: Math.sin(t * (0.95 + (seed % 7) * 0.08) + seed * 2.3) * amp,
+  r: Math.sin(t * (0.6 + (seed % 3) * 0.07) + seed) * amp * 0.1,
+}; };
 export const floatStyle = (t: number, seed: number, amp = 8): React.CSSProperties => {
   const f = float(t, seed, amp);
   return { transform: `translate(${f.x.toFixed(2)}px, ${f.y.toFixed(2)}px) rotate(${f.r.toFixed(3)}deg)` };
 };
 /** the scene camera: a slow continuous push and drift across the scene window (never still, never a cut zoom) */
-export const Camera: React.FC<{ t: number; t0: number; t1: number; push?: number; children?: React.ReactNode }> = ({ t, t0, t1, push = 0.07, children }) => {
+export const Camera: React.FC<{ t: number; t0: number; t1: number; push?: number; children?: React.ReactNode }> = ({ t, t0, t1, push = 0.12, children }) => {
   const p = c01((t - t0) / Math.max(0.1, t1 + 1 - t0));
-  const s = 1 + push * INOUT(p);
-  const dx = Math.sin(t * 0.35) * 10, dy = Math.cos(t * 0.28) * 7;
-  return <div style={{ position: "absolute", inset: 0, transform: `translate(${dx.toFixed(2)}px, ${dy.toFixed(2)}px) scale(${s.toFixed(5)})`, transformOrigin: "50% 50%" }}>{children}</div>;
+  const s = 1 + Math.max(push, 0.1) * INOUT(p) + 0.012 * Math.sin(t * 0.9);
+  const dx = Math.sin(t * 0.42) * 26, dy = Math.cos(t * 0.33) * 16, rot = Math.sin(t * 0.27) * 0.6;
+  return <div style={{ position: "absolute", inset: 0, transform: `translate(${dx.toFixed(2)}px, ${dy.toFixed(2)}px) rotate(${rot.toFixed(3)}deg) scale(${s.toFixed(5)})`, transformOrigin: "50% 50%" }}>{children}</div>;
 };
 /** the cursor that performs the interactions; press 0..1 squeezes it and shows a click ring */
 export const Cursor: React.FC<{ x: number; y: number; press?: number; o?: number; size?: number }> = ({ x, y, press = 0, o = 1, size = 54 }) => (

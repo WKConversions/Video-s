@@ -1,5 +1,5 @@
 import React from "react";
-import { C, k, enter, Chip, Title, Camera, floatStyle, warp, Cursor, cursorAt, IN, mix } from "../kit";
+import { C, k, enter, Chip, Title, Camera, floatStyle, warp, Cursor, cursorAt, IN, mix, ToolIcon, INOUT, OUT } from "../kit";
 import { w } from "./timing";
 import { exitFx } from "./fx";
 
@@ -51,6 +51,24 @@ export const S3: React.FC<Props> = ({ t, t0, t1 }) => {
           </div>
         </div>
       </div>
+      {ROWS.map(([name, rest, icon, tt], i) => {
+        // big icon: flies in from scattered points on "then your tools", holds in a floating row, then shrinks into its chip
+        const tin = w("then") - 0.1 + i * 0.12, a = k(t, tin, 0.7);
+        const from = [[-200, 200], [2100, 260], [-200, 900], [2100, 860]][i];
+        const row = [960 + (i - 1.5) * 230, 520];
+        const to = [960 - chipW(rest, name) / 2 + 46, ys[i]];
+        const m = k(t, tt - 0.45, 0.5, INOUT);
+        const gone = k(t, tt + 0.05, 0.2);
+        if (a <= 0 || gone >= 1) return null;
+        const f = floatStyle(t, 30 + i, 10 * (1 - m));
+        const x = mix(mix(from[0], row[0], OUT(a)), to[0], m), y = mix(mix(from[1], row[1], OUT(a)), to[1], m);
+        const size = mix(160, 60, m);
+        return (
+          <div key={"fly" + i} style={{ position: "absolute", left: x - size / 2, top: y - size / 2, opacity: 1 - gone, transform: `rotate(${(1 - OUT(a)) * (i % 2 ? 40 : -40)}deg)` }}>
+            <div style={f}><ToolIcon tool={icon} size={size} tile={m < 0.6} /></div>
+          </div>
+        );
+      })}
       <Cursor x={cur.x} y={cur.y} press={pressNow} o={curO} />
     </Camera>
   );
