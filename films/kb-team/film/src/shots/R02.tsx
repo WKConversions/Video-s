@@ -74,7 +74,7 @@ const CardView: React.FC<{ c: Card; n: number }> = ({ c, n }) => {
       <div style={{ position: "absolute", left: 0, top: 0, width: LW, height: LH, transformOrigin: `${WCX}px ${WCY}px`, transform: `translate3d(${(cx - WCX).toFixed(2)}px, ${(cy - WCY).toFixed(2)}px, 0) scale(${s.toFixed(4)})`, clipPath: `inset(${insetT.toFixed(2)}px ${insetR.toFixed(2)}px ${insetB.toFixed(2)}px ${insetL.toFixed(2)}px round ${(3 / s).toFixed(2)}px)`, opacity: clamp(p * 2.2) * fade * (ghost ? (c.glyph ? 0.85 : 0.5) : 1), willChange: "transform", filter: ghost && !c.glyph ? "blur(1.6px) grayscale(.5) contrast(.8) brightness(1.1)" : undefined }}>
         {c.glyph ? (
           <div style={{ width: LW, height: LH, background: c.glyph[1], position: "relative" }}>
-            <div style={{ position: "absolute", left: WCX - 70, top: WCY - 70 }}><Glyph k={c.glyph[0]} s={140} c="rgba(41,58,81,.22)" /></div>
+            <div style={{ position: "absolute", left: WCX - 70, top: WCY - 70 }}><Glyph k={c.glyph[0]} s={140} c="rgba(23,43,68,.22)" /></div>
           </div>
         ) : <Img src={staticFile(`team/${who}.jpg`)} style={{ width: LW, height: LH, objectFit: "cover", objectPosition: "50% 14%" }} />}
       </div>

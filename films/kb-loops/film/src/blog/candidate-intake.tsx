@@ -3,7 +3,7 @@
 // Story: problem (70 min, cluttered notes, half-filled record, an ineligible card) → screen first (form, Eligible, Book
 // intake) → the call becomes data (waveform → connectors → Language / Availability / Location) → profile ready
 // (Candidate PDF, 70 → 25 min) → a white dot (the K.B logo's full stop) lands where the timer began and becomes it again.
-// Brief: one accent (sky blue #38C8FF), Montserrat, ease-in-out (0.65, 0, 0.35, 1), slides of 20–40 px, staggers of
+// Brief: one accent (sky blue #99CDFC), Montserrat, ease-in-out (0.65, 0, 0.35, 1), slides of 20–40 px, staggers of
 // 80–120 ms, no bounce. On-screen words: only "70 min", "Eligible", "Book intake", "Language", "Availability",
 // "Location", "Candidate PDF", "25 min" (the timer's number counts between 70 and 25).
 import React, { useEffect, useState } from "react";
@@ -11,7 +11,7 @@ import { AbsoluteFill, continueRender, delayRender, Easing, useCurrentFrame } fr
 import { fontsReady } from "../fonts";
 
 export const BLOG_FPS = 30, BLOG_FRAMES = 360;
-const K = { navy: "#293A51", navy2: "#3A4E69", off: "#F7F7F7", slate: "#E2E8F0", ink: "#252525", muted: "#49525B", sky: "#38C8FF", grey: "#96979B", grey2: "#B8C2CF", grey3: "#CDD5DF" };
+const K = { navy: "#172B44", navy2: "#3A4E69", off: "#F7F7F7", slate: "#E2E8F0", ink: "#252525", muted: "#49525B", sky: "#99CDFC", grey: "#96979B", grey2: "#B8C2CF", grey3: "#CDD5DF" };
 const E = Easing.bezier(0.65, 0, 0.35, 1);
 const c01 = (v: number) => Math.min(1, Math.max(0, v));
 const lerp = (a: number, b: number, k: number) => a + (b - a) * k;
@@ -137,11 +137,11 @@ export const CandidateIntake: React.FC = () => {
           <span style={{ fontSize: 30, fontWeight: 600, color: K.ink, opacity: elig, transform: `translateX(${(1 - elig) * 20}px)` }}>Eligible</span>
         </div>
         <div style={{ position: "absolute", right: 40, top: 292, height: 56, padding: "0 30px", borderRadius: 28, display: "flex", alignItems: "center",
-          background: `rgba(56,200,255,${book})`, border: `1.5px solid ${book > 0.5 ? K.sky : "#C3CCD8"}`, color: book > 0.5 ? K.navy : K.muted, fontSize: 26, fontWeight: 700 }}>Book intake</div>
+          background: `rgba(153,205,252,${book})`, border: `1.5px solid ${book > 0.5 ? K.sky : "#C3CCD8"}`, color: book > 0.5 ? K.navy : K.muted, fontSize: 26, fontWeight: 700 }}>Book intake</div>
       </Card>
 
       {/* 3 · the call becomes data: waveform → connectors → the record */}
-      <Card x={WX} y={WY} w={300} h={200} r={18} o={waveIn * (1 - waveOut)} dy={(1 - waveIn) * 30} bg="rgba(41,58,81,0.85)"
+      <Card x={WX} y={WY} w={300} h={200} r={18} o={waveIn * (1 - waveOut)} dy={(1 - waveIn) * 30} bg="rgba(23,43,68,0.85)"
         style={{ border: "1px solid rgba(255,255,255,0.14)", backdropFilter: "blur(10px)" }}>
         <svg width={300} height={200} style={{ position: "absolute", left: 0, top: 0 }}>
           {Array.from({ length: 24 }, (_, i) => {
@@ -171,7 +171,7 @@ export const CandidateIntake: React.FC = () => {
           {rows.map((label, i) => (
             <div key={label} style={{ position: "absolute", left: 34, top: rowY(i) - (CY2 - CH2 / 2) - 26, width: CW2 - 68 }}>
               <div style={{ fontSize: 22, fontWeight: 600, color: K.muted, letterSpacing: "0.01em" }}>{label}</div>
-              <div style={{ marginTop: 8, height: 34, borderRadius: 8, background: K.slate, position: "relative", boxShadow: land[i] > 0 && land[i] < 1 ? `0 0 0 ${2 * (1 - land[i])}px rgba(56,200,255,0.8)` : undefined }}>
+              <div style={{ marginTop: 8, height: 34, borderRadius: 8, background: K.slate, position: "relative", boxShadow: land[i] > 0 && land[i] < 1 ? `0 0 0 ${2 * (1 - land[i])}px rgba(153,205,252,0.8)` : undefined }}>
                 <Bar x={14} y={11} w={[150, 210, 120][i] * land[i]} h={12} c={K.ink} />
               </div>
             </div>
@@ -201,8 +201,8 @@ export const CandidateIntake: React.FC = () => {
       )}
       {pillO > 0.002 && (
         <div style={{ position: "absolute", left: PX - pw / 2, top: PY - ph / 2 + pillDy, width: pw, height: ph, borderRadius: ph / 2, opacity: pillO,
-          background: t >= 11.3 && morph < 1 ? `rgba(${Math.round(lerp(255, 41, morph))},${Math.round(lerp(255, 58, morph))},${Math.round(lerp(255, 81, morph))},${lerp(1, 0.85, morph)})` : "rgba(41,58,81,0.85)",
-          border: `1.5px solid rgba(56,200,255,${t >= 11.3 ? 0.55 * morph : 0.55 + 0.45 * Math.sin(Math.PI * c01((t - 8.9) / 1.0)) * (t < 10.5 ? 1 : 0)})`,
+          background: t >= 11.3 && morph < 1 ? `rgba(${Math.round(lerp(255, 41, morph))},${Math.round(lerp(255, 58, morph))},${Math.round(lerp(255, 81, morph))},${lerp(1, 0.85, morph)})` : "rgba(23,43,68,0.85)",
+          border: `1.5px solid rgba(153,205,252,${t >= 11.3 ? 0.55 * morph : 0.55 + 0.45 * Math.sin(Math.PI * c01((t - 8.9) / 1.0)) * (t < 10.5 ? 1 : 0)})`,
           backdropFilter: "blur(10px)", display: "flex", alignItems: "center", justifyContent: "center", gap: 14, boxShadow: "0 18px 40px -20px rgba(5,10,20,0.6)", overflow: "hidden" }}>
           <div style={{ display: "flex", alignItems: "center", gap: 14, opacity: pillText }}>
             <svg width="34" height="34" viewBox="0 0 34 34"><circle cx="17" cy="17" r="14.5" fill="none" stroke={K.sky} strokeWidth="2.5" />

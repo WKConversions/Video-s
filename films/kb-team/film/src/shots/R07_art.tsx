@@ -176,7 +176,7 @@ export const WireFrame: React.FC<{ dim?: boolean }> = () => {
 
 // ================= V: the finished product, full frame
 const Panel: React.FC<{ x: number; y: number; w: number; h: number; children?: React.ReactNode }> = ({ x, y, w, h, children }) => (
-  <div style={abs(x, y, w, h, { background: "rgba(250,251,252,.92)", borderRadius: 14, boxShadow: "0 6px 22px rgba(41,58,81,.08)" })}>{children}</div>
+  <div style={abs(x, y, w, h, { background: "rgba(250,251,252,.92)", borderRadius: 14, boxShadow: "0 6px 22px rgba(23,43,68,.08)" })}>{children}</div>
 );
 const Lab: React.FC<{ x: number; y: number; s?: number; w?: number; c?: string; children: React.ReactNode; right?: boolean; style?: React.CSSProperties }> = ({ x, y, s = 10, w = 500, c = "#3B4350", children, right, style }) => (
   <div style={{ position: "absolute", left: right ? undefined : x, right: right ? x : undefined, top: y, fontSize: s, fontWeight: w, color: c, whiteSpace: "nowrap", lineHeight: 1.2, letterSpacing: -0.1, ...style }}>{children}</div>
@@ -228,13 +228,13 @@ export const Product: React.FC<{ s: VState }> = ({ s }) => {
             <path d="M200 420L350 450L500 420V380L350 410L200 380z" fill="url(#r07clay)" /><path d="M200 380L350 350L500 380L350 410z" fill="#E4E7E9" />
           </svg>
           <div style={{ position: "absolute", left: 250, top: 20, width: 200, height: 350, transformStyle: "preserve-3d", transform: `rotateY(${s.rot}deg) rotateX(4deg)`, willChange: "transform" }}>
-            <div style={abs(0, 0, 200, 350, { borderRadius: 30, background: "linear-gradient(100deg, #C9CED2, #9AA2A8)", boxShadow: "0 24px 40px rgba(41,58,81,.25), inset 0 0 0 2px #fff" })} />
+            <div style={abs(0, 0, 200, 350, { borderRadius: 30, background: "linear-gradient(100deg, #C9CED2, #9AA2A8)", boxShadow: "0 24px 40px rgba(23,43,68,.25), inset 0 0 0 2px #fff" })} />
             <div style={abs(9, 9, 182, 332, { borderRadius: 23, background: "url(#)", overflow: "hidden", backgroundColor: "#fff" })}>
               <div style={abs(0, 0, 182, 332, { background: "linear-gradient(#FFFFFF, #EAF6FD)" })} />
               <Lab x={14} y={22} s={11} w={700} c="#1A2230">Your business</Lab><Lab x={14} y={38} s={7.5} w={500} c="#7A8494">Book a table in two taps</Lab>
               {["Fri 14", "Sat 15", "Sun 16"].map((d, i) => <div key={d} style={abs(12 + i * 55, 58, 50, 38, { borderRadius: 9, background: i === 1 ? C.cyan : "#EEF2F6", color: i === 1 ? "#0E2A3A" : "#4A5463", fontSize: 9, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" })}>{d}</div>)}
               <div style={abs(12, 108, 158, 30, { borderRadius: 9, background: "#EEF2F6", fontSize: 10, fontWeight: 700, color: "#1A2230", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 12px", boxSizing: "border-box" })}><span>-</span><span>{s.n > 630 ? 4 : 2} guests</span><span>+</span></div>
-              {["18:00", "18:30", "19:00", "19:30", "20:00", "20:30"].map((tm, i) => <div key={tm} style={abs(12 + (i % 3) * 55, 150 + Math.floor(i / 3) * 34, 48, 28, { borderRadius: 8, background: i === 3 ? "#293A51" : "#fff", border: "1px solid #D9E0E7", color: i === 3 ? "#fff" : "#3B4350", fontSize: 9, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" })}>{tm}</div>)}
+              {["18:00", "18:30", "19:00", "19:30", "20:00", "20:30"].map((tm, i) => <div key={tm} style={abs(12 + (i % 3) * 55, 150 + Math.floor(i / 3) * 34, 48, 28, { borderRadius: 8, background: i === 3 ? "#172B44" : "#fff", border: "1px solid #D9E0E7", color: i === 3 ? "#fff" : "#3B4350", fontSize: 9, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" })}>{tm}</div>)}
               <div style={abs(14, 232, 154, 32, { borderRadius: 16, background: C.indigo, color: "#fff", fontSize: 10, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center" })}>Book a table</div>
               <div style={abs(14, 280, 154, 36, { borderRadius: 10, background: "#E8F8F1", color: "#1B7D5E", fontSize: 8, fontWeight: 700, display: "flex", alignItems: "center", padding: "0 10px", boxSizing: "border-box" })}>Confirmed. Reminder goes out the day before.</div>
             </div>
@@ -244,7 +244,7 @@ export const Product: React.FC<{ s: VState }> = ({ s }) => {
       {hs.map(([x, y], i) => { const p = s.pulse(i); return (
         <div key={i} style={abs(x - 15, y - 15, 30, 30, { transform: `scale(${(1 + 0.1 * p).toFixed(3)})`, willChange: "transform" })}>
           <div style={abs(-6, -6, 42, 42, { borderRadius: 21, background: C.cyan, opacity: 0.25 * p, transform: `scale(${(1 + 0.4 * p).toFixed(3)})` })} />
-          <div style={abs(0, 0, 30, 30, { borderRadius: 15, background: C.cyan, color: "#0E2A3A", fontSize: 10, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 2px 6px rgba(41,58,81,.25)" })}>{i + 1}</div>
+          <div style={abs(0, 0, 30, 30, { borderRadius: 15, background: C.cyan, color: "#0E2A3A", fontSize: 10, fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 2px 6px rgba(23,43,68,.25)" })}>{i + 1}</div>
         </div>); })}
       {/* bottom */}
       <Panel x={285} y={573} w={344} h={125}>

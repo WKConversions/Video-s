@@ -97,7 +97,7 @@ const Wall: React.FC<{ n: number }> = ({ n }) => {
           <div key={i} style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transform: `translate3d(${(-cx * d).toFixed(2)}px, ${(-cy * d).toFixed(2)}px, 0)`, opacity: o, willChange: "transform" }}>
             {p.ghost
               ? <div style={abs(p.x, p.y, p.w, p.h, { background: "#DADAD8", borderRadius: 6, filter: "blur(5px)" })} />
-              : <div style={abs(p.x, p.y, p.w, p.h, { transform: `rotate(${p.rot ?? 0}deg)`, boxShadow: "0 8px 24px rgba(41,58,81,.12)", borderRadius: 8, filter: p.o && p.o < 0.9 ? "blur(1.5px)" : undefined })}><Tl k={p.k!} w={p.w} h={p.h} ph={p.ph} style={perf(p.w, p.h)} /></div>}
+              : <div style={abs(p.x, p.y, p.w, p.h, { transform: `rotate(${p.rot ?? 0}deg)`, boxShadow: "0 8px 24px rgba(23,43,68,.12)", borderRadius: 8, filter: p.o && p.o < 0.9 ? "blur(1.5px)" : undefined })}><Tl k={p.k!} w={p.w} h={p.h} ph={p.ph} style={perf(p.w, p.h)} /></div>}
           </div>
         );
       })}
@@ -133,7 +133,7 @@ const Card: React.FC<{ n: number }> = ({ n }) => {
   const showText2 = n >= 323, showMeta = n >= 327;
   return (
     <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, transform: `scale(${scale.toFixed(4)})`, transformOrigin: "960px 540px", willChange: "transform" }}>
-      <div style={abs(CX, CY, CW, CH, { background: "#fff", borderRadius: 34, overflow: "hidden", boxShadow: "0 18px 50px rgba(41,58,81,.10)" })}>
+      <div style={abs(CX, CY, CW, CH, { background: "#fff", borderRadius: 34, overflow: "hidden", boxShadow: "0 18px 50px rgba(23,43,68,.10)" })}>
         <div style={abs(22, 20, 14, 18)}>{ic(<path d="M15 5l-7 7 7 7" />, 18)}</div>
         {showText2 && <div style={abs(62, 20, 200, 18, { fontSize: 13, fontWeight: 600, letterSpacing: 0.2, color: INKY, lineHeight: "18px" })}>AUTOMATION</div>}
         {showText2 && <div style={abs(308, 17, 22, 22)}>{ic(<><path d="M6 17h12l-1.5-2V11a4.5 4.5 0 0 0-9 0v4z" /><path d="M10 20h4" /></>, 19)}</div>}
@@ -220,7 +220,7 @@ const JKL: React.FC<{ t: number }> = ({ t }) => {
         return <div style={abs(960 - c[0] * S / 100 + dx, 540 - c[1] * S / 100, S, S, { transform: `scale(${sc.toFixed(4)})`, transformOrigin: `${c[0]}% ${c[1]}%` })}><Gl k={gl} s={S} /></div>;
       })()}
       {n >= 312 && <Wall n={n} />}
-      {ctr && <div style={abs(960 - ctr[3] / 2, 540 - ctr[4] / 2, ctr[3], ctr[4], { boxShadow: "0 10px 30px rgba(41,58,81,.14)", borderRadius: 8, transform: `scale(${kf(n, [[ctr[0], 1.014], [ctr[0] + 2, 1]]).toFixed(4)})` })}><Tl k={ctr[2]} w={ctr[3]} h={ctr[4]} ph={ctr[5]} /></div>}
+      {ctr && <div style={abs(960 - ctr[3] / 2, 540 - ctr[4] / 2, ctr[3], ctr[4], { boxShadow: "0 10px 30px rgba(23,43,68,.14)", borderRadius: 8, transform: `scale(${kf(n, [[ctr[0], 1.014], [ctr[0] + 2, 1]]).toFixed(4)})` })}><Tl k={ctr[2]} w={ctr[3]} h={ctr[4]} ph={ctr[5]} /></div>}
       {n >= 318 && <Card n={n} />}
       {DOTS.map(([x, y, a, b], i) => {
         const s = ease.out(clamp((n - a + 0.5) / 3)) * (1 - ease.in(clamp((n - b) / 1.4)));

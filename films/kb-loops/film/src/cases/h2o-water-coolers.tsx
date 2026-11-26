@@ -89,7 +89,7 @@ const Bottle: React.FC<{ s: number; c: string; rib?: string }> = ({ s, c, rib = 
 );
 const Check: React.FC<{ s: number; sc: number; style?: React.CSSProperties }> = ({ s, sc, style }) => (
   <div style={{ width: s, height: s, borderRadius: s, background: C.cyan, display: "flex", alignItems: "center", justifyContent: "center",
-    transform: `scale(${Math.max(0, sc)})`, boxShadow: "0 4px 10px -4px rgba(41,58,81,0.45)", ...style }}>
+    transform: `scale(${Math.max(0, sc)})`, boxShadow: "0 4px 10px -4px rgba(23,43,68,0.45)", ...style }}>
     <svg width={s * 0.6} height={s * 0.6} viewBox="0 0 12 12"><path d="M2.4 6.3l2.4 2.3 4.8-5" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
   </div>
 );
@@ -181,7 +181,7 @@ const Msg: React.FC<{ cx: number; cy: number; w: number; h: number; rot: number;
     const bg = red > 0 ? `rgba(253,231,231,${red})` : flash > 0 ? `rgba(215,243,255,${flash})` : "transparent";
     return (
       <div style={{ position: "absolute", left: cx - w / 2, top: cy - h / 2, width: w, height: h, borderRadius: lerp(18, 12, g), background: C.white,
-        boxShadow: g < 1 ? `0 ${lerp(16, 4, g)}px ${lerp(30, 10, g)}px -12px rgba(41,58,81,${lerp(0.42, 0.18, g)})` : "0 4px 10px -6px rgba(41,58,81,0.18)",
+        boxShadow: g < 1 ? `0 ${lerp(16, 4, g)}px ${lerp(30, 10, g)}px -12px rgba(23,43,68,${lerp(0.42, 0.18, g)})` : "0 4px 10px -6px rgba(23,43,68,0.18)",
         transform: `rotate(${rot}deg) scale(${sc})`, opacity: op, overflow: "visible" }}>
         <div style={{ position: "absolute", inset: 0, borderRadius: lerp(18, 12, g), background: bg }} />
         {/* bubble tail */}
@@ -349,7 +349,7 @@ export const Loop: React.FC = () => {
         <svg width={CLI.w} height={CLI.h} style={{ position: "absolute", left: 0, top: 0 }}>
           <path d={cw} fill="#FFFFFF" />
           <circle cx={120} cy={340 + 3 * Math.sin(2 * Math.PI * t / 2.5)} r={13} fill={H2O.sky} />
-          <circle cx={448} cy={258 + 4 * Math.cos(2 * Math.PI * t / 5)} r={9} fill="#C4EDFF" />
+          <circle cx={448} cy={258 + 4 * Math.cos(2 * Math.PI * t / 5)} r={9} fill="#DCEEFF" />
         </svg>
         <Img src={IMG("h2o-logo.png")} style={{ position: "absolute", left: 28, top: 26, height: 34 }} />
         <div style={{ position: "absolute", left: 28, top: 100, transformOrigin: "0 50%", transform: `scale(${Math.max(0, frag)})`, opacity: clamp01(frag) }}>
@@ -374,8 +374,8 @@ export const Loop: React.FC = () => {
           <path d="M-10,262 C126,230 210,304 346,262 S546,210 590,240" fill="none" stroke="#E6ECF2" strokeWidth={10} />
           <path d="M168,60 C200,158 158,252 220,366" fill="none" stroke="#E6ECF2" strokeWidth={8} />
           <path d={sea} fill={H2O.sky} />
-          <circle cx={310} cy={410 + 3 * Math.sin(2 * Math.PI * t / 2.5)} r={8} fill="#C4EDFF" />
-          <circle cx={492} cy={404 + 3 * Math.cos(2 * Math.PI * t / 5)} r={12} fill="#C4EDFF" />
+          <circle cx={310} cy={410 + 3 * Math.sin(2 * Math.PI * t / 2.5)} r={8} fill="#DCEEFF" />
+          <circle cx={492} cy={404 + 3 * Math.cos(2 * Math.PI * t / 5)} r={12} fill="#DCEEFF" />
           {ghosts}
           {[...PINS.map((p, i) => ({ p, at: PASS[i] })), { p: D, at: VAN0 + 0.05 }, { p: D, at: VAN1 - 0.1 }].flatMap(({ p, at }, i) => [0, 0.22].map((d) => {
             const u = seg(tb, at + d, at + d + 0.95, OUT);
@@ -417,7 +417,7 @@ export const Loop: React.FC = () => {
         })}
         {/* the van marker */}
         <div style={{ position: "absolute", left: vp.x - 30, top: vp.y - 30 - 6 * vanHop, width: 60, height: 60, borderRadius: 30, background: C.white,
-          boxShadow: "0 10px 22px -10px rgba(41,58,81,0.55)", border: `2px solid ${kSc > 0.5 ? C.cyan : "#D5DCE5"}`, display: "flex", alignItems: "center", justifyContent: "center" }}>
+          boxShadow: "0 10px 22px -10px rgba(23,43,68,0.55)", border: `2px solid ${kSc > 0.5 ? C.cyan : "#D5DCE5"}`, display: "flex", alignItems: "center", justifyContent: "center" }}>
           <Van w={40} />
         </div>
       </div>
@@ -469,7 +469,7 @@ export const Loop: React.FC = () => {
       {/* AI scan line */}
       {scanOp > 0 && <>
         <div style={{ position: "absolute", left: ROWX - 6, top: sy - 3, width: ROWW + 12, height: 6, borderRadius: 3, background: C.cyan, opacity: scanOp,
-          boxShadow: `0 0 18px 4px rgba(56,200,255,0.55)` }} />
+          boxShadow: `0 0 18px 4px rgba(153,205,252,0.55)` }} />
         <div style={{ position: "absolute", left: ROWX + ROWW + 2, top: sy - 17, width: 34, height: 34, borderRadius: 17, background: C.navy, opacity: scanOp,
           display: "flex", alignItems: "center", justifyContent: "center", transform: `rotate(${90 * seg(ta, SCAN0, SCAN1, INOUT)}deg)` }}>
           <svg width="20" height="20" viewBox="0 0 20 20"><path d="M10 1.5C10.8 7 13 9.2 18.5 10 13 10.8 10.8 13 10 18.5 9.2 13 7 10.8 1.5 10 7 9.2 9.2 7 10 1.5z" fill={C.cyan} /></svg>

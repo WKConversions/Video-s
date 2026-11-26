@@ -93,7 +93,7 @@ const File: React.FC<{ i: number; p: Pose; q?: number; badge?: number }> = ({ i,
   const w = lerp(FW * p.s, PILL, q), h = lerp(FH * p.s, RING.w, q), ear = 34 * p.s * (1 - q);
   return (
     <div style={{ position: "absolute", left: p.x, top: p.y, width: 0, height: 0, transform: `rotate(${p.r}deg)` }}>
-      <div style={{ position: "absolute", left: -w / 2, top: -h / 2, width: w, height: h, filter: "drop-shadow(0 14px 18px rgba(41,58,81,0.22))" }}>
+      <div style={{ position: "absolute", left: -w / 2, top: -h / 2, width: w, height: h, filter: "drop-shadow(0 14px 18px rgba(23,43,68,0.22))" }}>
         <div style={{ position: "absolute", inset: 0, background: mix("#FFFFFF", CAT[i], q), borderRadius: lerp(14 * p.s, RING.w / 2, q),
           clipPath: `polygon(0 0, ${w - ear}px 0, ${w}px ${ear}px, ${w}px ${h}px, 0 ${h}px)`, overflow: "hidden" }}>
           <div style={{ position: "absolute", left: 0, top: 0, width: FW, height: FH, transform: `scale(${p.s})`, transformOrigin: "0 0", opacity: clamp01(1 - q * 1.8) }}>
@@ -114,7 +114,7 @@ const File: React.FC<{ i: number; p: Pose; q?: number; badge?: number }> = ({ i,
 
 const Envelope: React.FC<{ x: number; y: number; s: number; r: number }> = ({ x, y, s, r }) => (
   <svg width={92} height={66} viewBox="0 0 92 66" style={{ position: "absolute", left: x - 46, top: y - 33, transform: `rotate(${r}deg) scale(${s})`, overflow: "visible",
-    filter: "drop-shadow(0 10px 12px rgba(41,58,81,0.25))" }}>
+    filter: "drop-shadow(0 10px 12px rgba(23,43,68,0.25))" }}>
     <rect x={3} y={5} width={84} height={58} rx={9} fill="#fff" stroke={C.navy} strokeWidth={3} />
     <path d="M9,12L45,38L81,12" fill="none" stroke={C.navy} strokeWidth={3} strokeLinecap="round" strokeLinejoin="round" />
     <circle cx={84} cy={7} r={9} fill={C.warn} stroke="#fff" strokeWidth={2.5} />

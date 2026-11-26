@@ -87,7 +87,7 @@ const AK: React.FC<{ t: number }> = ({ t }) => {
     </div>
   );
 };
-const C_CYAN = "#38C8FF";
+const C_CYAN = "#99CDFC";
 
 // ---------------------------------------------------------------- AL: the macro lines
 const CPS = 40;

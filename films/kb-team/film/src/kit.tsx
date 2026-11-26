@@ -8,9 +8,9 @@ import type { HandKey } from "./hand";
 export { Hand };
 export type { HandKey };
 
-export const C = { paper: "#F6F6F4", ink: "#293A51", cyan: "#38C8FF", dark: "#111A27", dark2: "#1B2636", ui: "#E9E8E4", line: "rgba(41,58,81,.14)", sub: "#7A8494", mint: "#22C7A0", violet: "#7C6CFF", indigo: "#4F7BFF", amber: "#FFB547", coral: "#FF7A66", green: "#22B573", white: "#FFFFFF" };
+export const C = { paper: "#F6F6F4", ink: "#172B44", cyan: "#99CDFC", dark: "#0D1C2D", dark2: "#172B44", ui: "#E9E8E4", line: "rgba(23,43,68,.14)", sub: "#7A8494", mint: "#22C7A0", violet: "#7C6CFF", indigo: "#4F7BFF", amber: "#FFB547", coral: "#FF7A66", green: "#22B573", white: "#FFFFFF" };
 export const F = "Montserrat, sans-serif";
-export const SH = "0 30px 70px rgba(41,58,81,.16), 0 4px 14px rgba(41,58,81,.08)";
+export const SH = "0 30px 70px rgba(23,43,68,.16), 0 4px 14px rgba(23,43,68,.08)";
 export const FACES = [["Montserrat", "montserrat-var-latin.woff2", "100 900"], ["Montserrat", "montserrat-var-latin-ext.woff2", "100 900"], ["Copperplate CC", "copperplate-cc-heavy.otf", "800"], ["Caveat", "caveat-var.ttf", "400 700"]];
 // "Caveat" (SIL Open Font License) is the handwriting for sketches and pencilled notes: fontFamily: "Caveat", weight 400-700.
 // Fonts load once per browser tab. A package that mounts later (the film switches package components at every package
@@ -47,7 +47,7 @@ export const Tx: React.FC<{ x: number; y: number; s: number; w?: number; c?: str
 );
 export const Port: React.FC<{ who: string; x: number; y: number; w: number; h: number; cap?: string; rot?: number; o?: number }> = ({ who, x, y, w, h, cap, rot = 0, o = 1 }) => (
   <div style={abs(x, y, w, undefined, { transform: `rotate(${rot}deg)`, opacity: o })}>
-    <div style={{ width: w, height: h, borderRadius: 6, overflow: "hidden", boxShadow: "0 14px 34px rgba(41,58,81,.18)" }}>
+    <div style={{ width: w, height: h, borderRadius: 6, overflow: "hidden", boxShadow: "0 14px 34px rgba(23,43,68,.18)" }}>
       <Img src={staticFile(`team/${who}.jpg`)} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 22%" }} />
     </div>
     {cap && <div style={{ marginTop: 10, fontSize: 15, fontWeight: 500, color: C.sub, display: "flex", alignItems: "center", gap: 7, whiteSpace: "nowrap" }}><span style={{ width: 7, height: 7, borderRadius: 4, background: C.cyan }} />{cap}</div>}
@@ -63,7 +63,7 @@ export const Arrow: React.FC<{ s: number; c: string }> = ({ s, c }) => <svg widt
 export const Msg: React.FC<{ x: number; y: number; w?: number; text: string; dark?: boolean; k?: number; big?: number; caret?: boolean; press?: number; children?: React.ReactNode }> = ({ x, y, w, text, dark, k, big, caret = true, press = 0, children }) => {
   const s = k ?? big ?? 1, fg = dark ? "#F2F5F9" : "#16202E", sub = dark ? "rgba(255,255,255,.16)" : "rgba(22,32,46,.14)";
   return (
-    <div style={abs(x, y, w ?? 1110 * s, undefined, { boxSizing: "border-box", fontFamily: F, background: dark ? "#1C2634" : "#FFFFFF", borderRadius: 17 * s, boxShadow: dark ? "none" : `0 ${14 * s}px ${44 * s}px rgba(41,58,81,.07)`, border: dark ? "1px solid rgba(255,255,255,.10)" : "none", padding: `${40 * s}px ${32 * s}px ${30 * s}px ${47 * s}px` })}>
+    <div style={abs(x, y, w ?? 1110 * s, undefined, { boxSizing: "border-box", fontFamily: F, background: dark ? "#1C2634" : "#FFFFFF", borderRadius: 17 * s, boxShadow: dark ? "none" : `0 ${14 * s}px ${44 * s}px rgba(23,43,68,.07)`, border: dark ? "1px solid rgba(255,255,255,.10)" : "none", padding: `${40 * s}px ${32 * s}px ${30 * s}px ${47 * s}px` })}>
       {children}
       <div style={{ fontSize: 35 * s, fontWeight: 500, lineHeight: `${48 * s}px`, color: fg, letterSpacing: -0.7 * s, minHeight: 96 * s, paddingRight: 60 * s }}>{text}{caret && <span style={{ display: "inline-block", width: Math.max(2, 2.5 * s), height: 36 * s, background: fg, marginLeft: 3 * s, verticalAlign: `${-6 * s}px` }} />}</div>
       <div style={{ display: "flex", alignItems: "center", height: 50 * s, marginTop: 54 * s, fontSize: 23 * s, fontWeight: 500, color: fg }}>
@@ -103,7 +103,7 @@ export const Win: React.FC<{ x: number; y: number; w: number; h: number; dark?: 
   </div>
 );
 export const Tool: React.FC<{ n: string; x: number; y: number; s: number; navy?: boolean; rot?: number }> = ({ n, x, y, s, navy, rot = 0 }) => (
-  <div style={abs(x, y, s, s, { borderRadius: s * 0.22, background: navy ? C.ink : C.white, boxShadow: "0 12px 30px rgba(41,58,81,.14)", display: "flex", alignItems: "center", justifyContent: "center", transform: `rotate(${rot}deg)` })}><Img src={staticFile(`tools/${n}.png`)} style={{ width: "62%", height: "62%", objectFit: "contain" }} /></div>
+  <div style={abs(x, y, s, s, { borderRadius: s * 0.22, background: navy ? C.ink : C.white, boxShadow: "0 12px 30px rgba(23,43,68,.14)", display: "flex", alignItems: "center", justifyContent: "center", transform: `rotate(${rot}deg)` })}><Img src={staticFile(`tools/${n}.png`)} style={{ width: "62%", height: "62%", objectFit: "contain" }} /></div>
 );
 export const Check: React.FC<{ s?: number }> = ({ s = 30 }) => <div style={{ width: s, height: s, borderRadius: s / 2, background: C.green, display: "inline-flex", alignItems: "center", justifyContent: "center", flex: "none" }}><svg width={s * 0.6} height={s * 0.6} viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" /></svg></div>;
 export const TEAM = ["robin", "tom", "youri", "karl", "cedric"];
@@ -123,7 +123,7 @@ export const Rank: React.FC<{ x: number; y: number; w: number; at: number }> = (
   <div style={abs(x, y, w)}>
     <div style={{ fontSize: 46, fontWeight: 600, letterSpacing: 6, color: "#E8EDF4", fontFamily: "ui-monospace, Menlo, monospace" }}>RANKING</div>
     {Array.from({ length: 7 }, (_, i) => { const me = i === at; return (
-      <div key={i} style={{ marginTop: 14, height: 84, borderRadius: 12, background: me ? "#F4F7FA" : "#1B2636", display: "flex", alignItems: "center", gap: 26, padding: "0 28px", boxShadow: me ? "0 14px 40px rgba(56,200,255,.35)" : "none" }}>
+      <div key={i} style={{ marginTop: 14, height: 84, borderRadius: 12, background: me ? "#F4F7FA" : "#1B2636", display: "flex", alignItems: "center", gap: 26, padding: "0 28px", boxShadow: me ? "0 14px 40px rgba(153,205,252,.35)" : "none" }}>
         <div style={{ fontSize: 34, fontWeight: 500, color: me ? C.ink : "#C5CEDB", width: 34, fontFamily: "ui-monospace, Menlo, monospace" }}>{i + 1}</div>
         <div style={{ width: 34, height: 34, borderRadius: 8, background: me ? C.cyan : ["#4F7BFF", "#22C7A0", "#FFB547", "#7C6CFF", "#FF7A66", "#8FA0B6", "#4F7BFF"][i] }} />
         {me ? <div style={{ fontSize: 30, fontWeight: 700, color: C.ink }}>Your business</div> : <div style={{ width: 260 - (i % 3) * 50, height: 14, borderRadius: 7, background: "#33425A" }} />}
@@ -140,7 +140,7 @@ export const AppUI: React.FC<{ s?: number; wire?: boolean }> = ({ s = 1, wire })
       <div style={abs(30, 30, 56, 56, { borderRadius: 14, background: g ?? C.ink })} />{[0, 1, 2, 3, 4].map((i) => <Bar key={i} x={30} y={130 + i * 64} w={210 - (i % 2) * 50} h={18} c={i === 0 && !wire ? C.cyan : "#D5D9DF"} />)}
     </div>
     <div style={abs(360, 34, 620, 44, { fontSize: 38, fontWeight: 700 })}>{wire ? <Bar x={0} y={8} w={340} h={26} c="#C9CED6" /> : "Bookings"}</div>
-    {[0, 1, 2].map((i) => <div key={i} style={abs(360 + i * 280, 110, 256, 150, { borderRadius: 20, background: g ?? [C.ink, C.cyan, "#EEF3FF"][i], border: wire ? "2px dashed #B9C0CA" : "none" })}>{!wire && <><Bar x={24} y={26} w={120} h={12} c={i === 0 ? "rgba(255,255,255,.4)" : "rgba(41,58,81,.3)"} /><div style={abs(24, 62, 200, 60, { fontSize: 50, fontWeight: 700, color: i === 0 ? "#fff" : C.ink })}>{["248", "92%", "4.8"][i]}</div></>}</div>)}
+    {[0, 1, 2].map((i) => <div key={i} style={abs(360 + i * 280, 110, 256, 150, { borderRadius: 20, background: g ?? [C.ink, C.cyan, "#EEF3FF"][i], border: wire ? "2px dashed #B9C0CA" : "none" })}>{!wire && <><Bar x={24} y={26} w={120} h={12} c={i === 0 ? "rgba(255,255,255,.4)" : "rgba(23,43,68,.3)"} /><div style={abs(24, 62, 200, 60, { fontSize: 50, fontWeight: 700, color: i === 0 ? "#fff" : C.ink })}>{["248", "92%", "4.8"][i]}</div></>}</div>)}
     <div style={abs(360, 290, 816, 470, { borderRadius: 22, background: wire ? "#EEF0F3" : "#FFFFFF", border: wire ? "2px dashed #B9C0CA" : `1px solid ${C.line}` })}>{!wire && <Bars x={40} y={70} w={736} h={360} />}</div>
     <div style={abs(1210, 110, 260, 650, { borderRadius: 22, background: wire ? "#EEF0F3" : "#F4F6F9", border: wire ? "2px dashed #B9C0CA" : "none" })}>{[0, 1, 2, 3, 4].map((i) => <div key={i} style={abs(20, 24 + i * 122, 220, 104, { borderRadius: 16, background: wire ? "#E1E4E9" : "#fff" })}><div style={abs(16, 20, 64, 64, { borderRadius: 14, background: g ?? [C.cyan, C.mint, C.amber, C.violet, C.coral][i] })} /><Bar x={96} y={30} w={100} h={12} c="#C9CED6" /><Bar x={96} y={58} w={70} h={10} /></div>)}</div>
   </div>); };

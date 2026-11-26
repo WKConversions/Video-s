@@ -96,7 +96,7 @@ const GW = 1336, GH = 831;
 const RingsBG: React.FC<{ nn: number }> = ({ nn }) => (
   <svg width="100%" height="100%" viewBox={`0 0 ${GW} ${GH}`} preserveAspectRatio="none" style={{ position: "absolute", inset: 0 }}>
     <defs>
-      <linearGradient id="kbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#4F7BFF" /><stop offset=".28" stopColor="#38C8FF" /><stop offset=".75" stopColor="#22C7A0" /><stop offset="1" stopColor="#22C7A0" /></linearGradient>
+      <linearGradient id="kbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#4F7BFF" /><stop offset=".28" stopColor="#99CDFC" /><stop offset=".75" stopColor="#22C7A0" /><stop offset="1" stopColor="#22C7A0" /></linearGradient>
       <radialGradient id="kvg" cx=".5" cy=".62" r=".75"><stop offset="0" stopColor="#fff" stopOpacity=".10" /><stop offset=".7" stopColor="#0A2A7A" stopOpacity="0" /><stop offset="1" stopColor="#0A2A7A" stopOpacity=".28" /></radialGradient>
       <filter id="kbl"><feGaussianBlur stdDeviation="6" /></filter>
     </defs>
@@ -204,7 +204,7 @@ const PaperRings: React.FC<{ n: number }> = ({ n }) => {
   const cx = 952, cy = 540;
   return (
     <svg width={1920} height={1080} style={{ position: "absolute", inset: 0, opacity: o }}>
-      {[0, 1, 2, 3].map((i) => { const k = kf(n, [[36, 0.5 + i * 0.12], [56, 1.1 + i * 0.25]]); return <ellipse key={i} cx={cx} cy={cy} rx={520 * k} ry={330 * k} fill="none" stroke="#38C8FF" strokeOpacity={0.45 - i * 0.07} strokeWidth={6} strokeDasharray="2 7" strokeLinecap="round" />; })}
+      {[0, 1, 2, 3].map((i) => { const k = kf(n, [[36, 0.5 + i * 0.12], [56, 1.1 + i * 0.25]]); return <ellipse key={i} cx={cx} cy={cy} rx={520 * k} ry={330 * k} fill="none" stroke="#99CDFC" strokeOpacity={0.45 - i * 0.07} strokeWidth={6} strokeDasharray="2 7" strokeLinecap="round" />; })}
     </svg>
   );
 };

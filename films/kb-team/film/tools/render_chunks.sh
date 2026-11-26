@@ -13,7 +13,7 @@
 set -euo pipefail
 comp=$1; out=$2; props=$3; IFS=, read -ra B <<< "$4"; mix=${5:-}
 # the pre-installed headless shell moved in newer images; when it is not at the old path, Remotion uses its own browser
-browser=$(ls -d /opt/pw-browsers/chromium_headless_shell*/chrome-linux/headless_shell 2>/dev/null | head -1 || true)
+browser=$(ls -d /opt/pw-browsers/chromium_headless_shell*/chrome-linux/headless_shell /opt/pw-browsers/chromium_headless_shell*/chrome-headless-shell-linux64/chrome-headless-shell 2>/dev/null | head -1 || true)
 work=$(mktemp -d); trap 'rm -rf "$work"' EXIT
 npx remotion bundle src/index.ts --out-dir="$work/bundle" --log=error >/dev/null
 pids=()

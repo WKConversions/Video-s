@@ -124,7 +124,7 @@ const RankCard: React.FC = () => (
   <div style={{ position: "relative", width: 384, height: 382, background: "#8A929E", fontFamily: F }}>
     <div style={abs(20, 14, 300, 22, { fontSize: 16, fontWeight: 600, color: "rgba(255,255,255,.85)", letterSpacing: 1 })}>AI ANSWERS · RANKING</div>
     {RANKS.map((r, i) => { const me = r === "Your business"; return (
-      <div key={r} style={abs(16, 48 + i * 54, 352, 46, { borderRadius: 11, background: me ? "#fff" : "rgba(255,255,255,.22)", display: "flex", alignItems: "center", gap: 12, padding: "0 14px", boxSizing: "border-box", boxShadow: me ? "0 8px 22px rgba(56,200,255,.45)" : "none" })}>
+      <div key={r} style={abs(16, 48 + i * 54, 352, 46, { borderRadius: 11, background: me ? "#fff" : "rgba(255,255,255,.22)", display: "flex", alignItems: "center", gap: 12, padding: "0 14px", boxSizing: "border-box", boxShadow: me ? "0 8px 22px rgba(153,205,252,.45)" : "none" })}>
         <div style={{ fontFamily: MONO, fontSize: 19, fontWeight: 600, color: me ? INK : "#fff", width: 22 }}>{i + 1}</div>
         <div style={{ width: 22, height: 22, borderRadius: 6, background: me ? C.cyan : "rgba(255,255,255,.5)" }} />
         <div style={{ fontSize: 19, fontWeight: me ? 700 : 600, color: me ? INK : "#fff" }}>{r}</div>
@@ -205,7 +205,7 @@ const Tower: React.FC<{ t: number }> = ({ t }) => {
         <Pop n={n} f={800} x={884} y={80} w={314} h={330} style={{ border: "2px dotted rgba(60,70,90,.25)", boxSizing: "border-box" }}><Portrait who="robin" role="Founder & CEO" /></Pop>
         {n >= 800 - EPS && <div style={abs(1172, 146, 64, 64, { borderRadius: 32, background: C.cyan })} />}
         {/* the button, and the hand that rides with it */}
-        <div style={abs(BTN.x - 155, BTN.y - 155, 310, 310, { borderRadius: 58, background: face, transform: `scale(${sc.toFixed(4)})`, willChange: "transform", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: n >= 794 ? "0 18px 40px rgba(56,200,255,.18)" : "0 14px 40px rgba(41,58,81,.14)" })}>
+        <div style={abs(BTN.x - 155, BTN.y - 155, 310, 310, { borderRadius: 58, background: face, transform: `scale(${sc.toFixed(4)})`, willChange: "transform", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: n >= 794 ? "0 18px 40px rgba(153,205,252,.18)" : "0 14px 40px rgba(23,43,68,.14)" })}>
           <svg width="150" height="150" viewBox="0 0 24 24"><path d="M12 19V6M6.2 11.8L12 6l5.8 5.8" fill="none" stroke={arrowC} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
         </div>
         <div style={{ position: "absolute", left: 0, top: 0, width: 1920, height: 1080, pointerEvents: "none" }}>

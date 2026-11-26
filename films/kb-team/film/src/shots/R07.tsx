@@ -31,7 +31,7 @@ const MiniSketch: React.FC<{ s: number }> = ({ s }) => (
   <svg width={s} height={s} viewBox="0 0 96 96"><rect width="96" height="96" fill="#F4F2EC" /><g {...PH}><rect x="30" y="10" width="36" height="72" rx="9" /><rect x="36" y="20" width="24" height="16" rx="3" /><path d="M36 44h24M36 52h16" /><rect x="36" y="60" width="10" height="12" rx="2" /><rect x="50" y="60" width="10" height="12" rx="2" /><path d="M10 76q10-10 20 0M72 24l14-6M72 34l12 2" /></g></svg>
 );
 const MiniPhoto: React.FC<{ s: number }> = ({ s }) => (
-  <svg width={s} height={s} viewBox="0 0 96 96"><defs><linearGradient id="r07ph" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#1B5E80" /><stop offset="1" stopColor="#2B3F8F" /></linearGradient></defs><rect width="96" height="96" fill="url(#r07ph)" /><rect x="31" y="12" width="34" height="68" rx="8" fill="#E9EEF3" /><rect x="35" y="19" width="26" height="46" rx="4" fill="#38C8FF" /><rect x="38" y="24" width="20" height="6" rx="3" fill="#fff" opacity=".8" /><rect x="38" y="34" width="20" height="14" rx="3" fill="#fff" opacity=".55" /><rect x="40" y="55" width="16" height="6" rx="3" fill="#293A51" /><ellipse cx="48" cy="84" rx="26" ry="5" fill="#0D2540" opacity=".5" /></svg>
+  <svg width={s} height={s} viewBox="0 0 96 96"><defs><linearGradient id="r07ph" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#1B5E80" /><stop offset="1" stopColor="#2B3F8F" /></linearGradient></defs><rect width="96" height="96" fill="url(#r07ph)" /><rect x="31" y="12" width="34" height="68" rx="8" fill="#E9EEF3" /><rect x="35" y="19" width="26" height="46" rx="4" fill="#99CDFC" /><rect x="38" y="24" width="20" height="6" rx="3" fill="#fff" opacity=".8" /><rect x="38" y="34" width="20" height="14" rx="3" fill="#fff" opacity=".55" /><rect x="40" y="55" width="16" height="6" rx="3" fill="#172B44" /><ellipse cx="48" cy="84" rx="26" ry="5" fill="#0D2540" opacity=".5" /></svg>
 );
 const MiniFile: React.FC<{ s: number; label?: boolean }> = ({ s }) => (
   <svg width={s} height={s} viewBox="0 0 96 96"><rect width="96" height="96" fill="#F4F4F4" /><path d="M24 10h34l16 16v60H24z" fill="#fff" stroke="#DADADA" strokeWidth="1.5" /><path d="M58 10v16h16" fill="#E6E6E6" /><text x="49" y="66" textAnchor="middle" fontFamily={F} fontWeight="700" fontSize="18" fill="#B4B4B4">PDF</text></svg>
@@ -39,7 +39,7 @@ const MiniFile: React.FC<{ s: number; label?: boolean }> = ({ s }) => (
 const MiniSheet: React.FC<{ w: number; h: number }> = ({ w, h }) => (
   <svg width={w} height={h} viewBox="0 0 121 76" preserveAspectRatio="none"><rect width="121" height="76" fill="#EDEDED" />
     {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => <g key={i}><rect x="8" y={6 + i * 7.2} width="14" height="3.2" fill="#BDBDBD" /><rect x="34" y={6 + i * 7.2} width="46" height="3.2" fill="#9A9A9A" /><rect x="84" y={6 + i * 7.2} width="8" height="3.2" fill="#BDBDBD" /><rect x="100" y={6 + i * 7.2} width="14" height="3.2" fill="#BDBDBD" /></g>)}
-    <rect x="0" y="62" width="121" height="14" fill="#F7F7F7" /><rect x="6" y="65" width="8" height="8" rx="1.5" fill="#38C8FF" /><rect x="20" y="67" width="52" height="4" rx="2" fill="#6E7580" /></svg>
+    <rect x="0" y="62" width="121" height="14" fill="#F7F7F7" /><rect x="6" y="65" width="8" height="8" rx="1.5" fill="#99CDFC" /><rect x="20" y="67" width="52" height="4" rx="2" fill="#6E7580" /></svg>
 );
 const Spin: React.FC<{ n: number; i: number }> = ({ n, i }) => {
   const a = ((n * 47 + i * 83) % 360);                               // turns on every film frame (it stepped 24 times a second)

@@ -228,7 +228,7 @@ export const Loop: React.FC = () => {
       <div style={{ position: "absolute", inset: 0, transform: `translateY(${drift}px)` }}>
         {/* planner card */}
         <div style={{ position: "absolute", left: CARD.x, top: CARD.y, width: CARD.w, height: CARD.h, borderRadius: 26, background: C.white,
-          boxShadow: "0 40px 90px -40px rgba(41,58,81,0.40), 0 10px 24px -12px rgba(41,58,81,0.16)" }} />
+          boxShadow: "0 40px 90px -40px rgba(23,43,68,0.40), 0 10px 24px -12px rgba(23,43,68,0.16)" }} />
         <div style={{ position: "absolute", left: CARD.x, top: CARD.y + 84, width: CARD.w, height: 1.5, background: "#ECEEF3" }} />
         <Img src={staticFile("cases/abroad-internships/ai-logo.svg")} style={{ position: "absolute", left: 290, top: CARD.y + 42 - 23, height: 46 }} />
         {AVA.map((c, i) => {
@@ -314,7 +314,7 @@ export const Loop: React.FC = () => {
         )}
         {/* Barcelona stamp tucked on the card corner */}
         <Img src={staticFile("cases/abroad-internships/stamp-barcelona.svg")} style={{ position: "absolute", left: 1652 - 78, top: 222 - 61, width: 156,
-          transform: `rotate(${9 + 1.6 * Math.cos((TAU * t) / 5)}deg)`, filter: "drop-shadow(0 8px 12px rgba(41,58,81,0.22))" }} />
+          transform: `rotate(${9 + 1.6 * Math.cos((TAU * t) / 5)}deg)`, filter: "drop-shadow(0 8px 12px rgba(23,43,68,0.22))" }} />
 
         {/* result */}
         {figIn > 0 && figOut > 0.001 && (

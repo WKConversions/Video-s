@@ -105,10 +105,10 @@ const Disc: React.FC<{ soft: string; g: Glyph; size: number }> = ({ soft, g, siz
 const RW = CW - 28, RH = ROW - 12;
 const Booking: React.FC<{ cat: number; cx: number; cy: number; w: number; h: number; full: number; rot?: number; sx?: number; lift?: number; tint?: number; op?: number }> = ({ cat, cx, cy, w, h, full, rot = 0, sx = 1, lift = 0, tint = 0, op = 1 }) => {
   const c = CATS[cat % 4], disc = Math.min(58, h - 14);
-  const bg = tint > 0 ? `rgba(56,200,255,${tint})` : C.white;
+  const bg = tint > 0 ? `rgba(153,205,252,${tint})` : C.white;
   return (
     <div style={{ position: "absolute", left: cx - w / 2, top: cy - h / 2, width: w, height: h, borderRadius: Math.min(h / 2, lerp(14, h / 2, 1 - full)), opacity: op,
-      background: C.white, overflow: "hidden", boxShadow: lift > 0 ? `0 ${10 + 14 * lift}px ${24 + 26 * lift}px -12px rgba(41,58,81,${0.28 + 0.18 * lift})` : "0 6px 16px -10px rgba(41,58,81,0.25)",
+      background: C.white, overflow: "hidden", boxShadow: lift > 0 ? `0 ${10 + 14 * lift}px ${24 + 26 * lift}px -12px rgba(23,43,68,${0.28 + 0.18 * lift})` : "0 6px 16px -10px rgba(23,43,68,0.25)",
       transform: `rotate(${rot}rad) scaleX(${sx}) scale(${1 + 0.03 * lift})`, display: "flex", alignItems: "center", padding: `0 ${lerp(7, 16, full)}px`, boxSizing: "border-box" }}>
       <div style={{ position: "absolute", inset: 0, background: bg }} />
       <div style={{ position: "relative", opacity: 1 - tint }}><Disc soft={c.soft} g={c.g} size={disc} /></div>
@@ -247,7 +247,7 @@ export const Loop: React.FC = () => {
     const rot = (right ? p.ang : p.ang) * 0.5 - dir * 0.9 * fall;
     if (s > 0.001 && fall < 1) bumps.push(<div key={`att${i}`} style={{ position: "absolute", left: 0, top: 0, transform: `translate(${-dir * 30 * fall}px, ${170 * fall}px) scale(${s * (1 - 0.35 * fall)})`, transformOrigin: `${p.x}px ${p.y}px`, opacity: 1 - seg(t, a + 1.15, a + 1.45) }}>
       {right ? (
-        <div style={{ position: "absolute", left: p.x - PW / 2, top: p.y - PH / 2, width: PW, height: PH, borderRadius: PH / 2, background: C.white, boxShadow: "0 10px 22px -12px rgba(41,58,81,0.35)",
+        <div style={{ position: "absolute", left: p.x - PW / 2, top: p.y - PH / 2, width: PW, height: PH, borderRadius: PH / 2, background: C.white, boxShadow: "0 10px 22px -12px rgba(23,43,68,0.35)",
           transform: `rotate(${rot}rad)`, display: "flex", alignItems: "center", padding: "0 8px", boxSizing: "border-box" }}>
           <Disc soft={AVATAR[(i >> 1) % 4]} g="person" size={40} />
           <div style={{ marginLeft: 12 }}><div style={{ width: 62, height: 8, borderRadius: 4, background: "#C9D1DC" }} /><div style={{ marginTop: 6, width: 40, height: 7, borderRadius: 4, background: C.line }} /></div>
@@ -327,7 +327,7 @@ export const Loop: React.FC = () => {
       return <Field key={f} x={FIELD_X[f] - RX} y={RH / 2} fill={fill} g={f === 0 ? CATS[k % 4].g : "link"} soft={f === 0 ? CATS[k % 4].soft : C.cyanSoft} q={q} />;
     });
     pdRows.push(<div key={`p${r}`} style={{ position: "absolute", left: 0, top: y, width: CW, height: RH }}>
-      <div style={{ position: "absolute", left: 14, top: 0, width: RW, height: RH, borderRadius: 14, background: C.white, boxShadow: "0 6px 16px -10px rgba(41,58,81,0.25)" }} />
+      <div style={{ position: "absolute", left: 14, top: 0, width: RW, height: RH, borderRadius: 14, background: C.white, boxShadow: "0 6px 16px -10px rgba(23,43,68,0.25)" }} />
       <div style={{ position: "absolute", left: 30, top: RH / 2 - 27 }}><Disc soft={AVATAR[r % 4]} g="person" size={54} /></div>
       <div style={{ position: "absolute", left: 100, top: RH / 2 - 15, width: 92, height: 12, borderRadius: 6, background: "#D5DCE5" }} />
       <div style={{ position: "absolute", left: 100, top: RH / 2 + 6, width: 62, height: 10, borderRadius: 5, background: C.line }} />

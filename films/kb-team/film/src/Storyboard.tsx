@@ -80,7 +80,7 @@ export const FR: React.FC[] = [
   // U2  the wireframe
   () => <AbsoluteFill style={{ background: "#F7F8FA" }}><div style={abs(210, 140)}><AppUI wire /></div></AbsoluteFill>,
   // V  the finished product
-  () => <Ground tone="ui"><Win x={170} y={110} w={1580} h={860} bar={false}><div style={abs(40, 30)}><AppUI /></div>{[[520, 130], [1010, 240], [800, 560], [1420, 420]].map(([x, y], i) => <div key={i} style={abs(x, y, 44, 44, { borderRadius: 22, background: C.cyan, border: "5px solid #fff", boxShadow: "0 6px 16px rgba(41,58,81,.25)" })} />)}</Win></Ground>,
+  () => <Ground tone="ui"><Win x={170} y={110} w={1580} h={860} bar={false}><div style={abs(40, 30)}><AppUI /></div>{[[520, 130], [1010, 240], [800, 560], [1420, 420]].map(([x, y], i) => <div key={i} style={abs(x, y, 44, 44, { borderRadius: 22, background: C.cyan, border: "5px solid #fff", boxShadow: "0 6px 16px rgba(23,43,68,.25)" })} />)}</Win></Ground>,
   // W  filmed: the founder at work
   () => <Shot src="W" />,
   // X  the UI close-up
@@ -96,7 +96,7 @@ export const FR: React.FC[] = [
   // AC  filmed: another
   () => <Shot src="AC" dim={0.34}><Over text="We want to be found by the right customers, in search and in AI answers." /></Shot>,
   // AE  one button
-  () => <Ground><div style={abs(810, 390, 300, 300, { borderRadius: 66, background: C.cyan, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 30px 70px rgba(56,200,255,.45)" })}><Arrow s={150} c={C.ink} /></div><Hand x={1040} y={640} size={330} tiltX={-14} press={0.6} /></Ground>,
+  () => <Ground><div style={abs(810, 390, 300, 300, { borderRadius: 66, background: C.cyan, display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 30px 70px rgba(153,205,252,.45)" })}><Arrow s={150} c={C.ink} /></div><Hand x={1040} y={640} size={330} tiltX={-14} press={0.6} /></Ground>,
   // AF  the burst
   () => <Ground><div style={abs(330, 150, 620, 400, { borderRadius: 22, background: C.dark })}><Bars x={50} y={60} w={520} h={290} n={12} /></div>
     <div style={abs(1010, 110, 520, 330, { borderRadius: 22, background: "#F4F1EA", boxShadow: SH, padding: 44 })}><div style={{ fontSize: 150, fontWeight: 600, fontFamily: "ui-monospace, Menlo, monospace", letterSpacing: -6 }}>100+</div><div style={{ fontSize: 26, letterSpacing: 3, fontWeight: 600, color: C.sub }}>AUTOMATIONS BUILT</div></div>

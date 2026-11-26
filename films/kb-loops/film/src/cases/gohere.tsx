@@ -184,7 +184,7 @@ const CmsLayer: React.FC<{ t: number }> = ({ t }) => (
       return (
         <React.Fragment key={j}>
           <svg width={r.w + 8} height={r.h + 8} style={{ position: "absolute", left: r.x - 4, top: r.y - 4, opacity: clamp01(e * 1.5), transform: `scale(${lerp(0.96, 1, e)})` }}>
-            <rect x={4} y={4} width={r.w} height={r.h} rx={18} fill="rgba(56,200,255,0.05)" stroke={C.cyan} strokeWidth={3} strokeDasharray="12 9" strokeDashoffset={-t * 30} />
+            <rect x={4} y={4} width={r.w} height={r.h} rx={18} fill="rgba(153,205,252,0.05)" stroke={C.cyan} strokeWidth={3} strokeDasharray="12 9" strokeDashoffset={-t * 30} />
           </svg>
           <div style={{ position: "absolute", left: r.x + r.w - 23, top: r.y - 23, width: 46, height: 46, borderRadius: 999, background: GH.mint,
             display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 10px 22px -10px rgba(20,20,48,0.55)",
@@ -267,7 +267,7 @@ const Calendar: React.FC<{ t: number }> = ({ t }) => {
     <div style={{ position: "absolute", left: CAL.x - CAL.w / 2, top: y - CAL.h / 2, width: CAL.w, height: CAL.h, transform: `scale(${sc})`,
       borderRadius: 30, background: C.white, boxShadow: SHADOW.card }}>
       <div style={{ position: "absolute", left: 0, right: 0, top: 0, height: 96, borderRadius: "30px 30px 0 0", background: `linear-gradient(90deg, ${C.kbL}, ${C.kbR})` }} />
-      {[92, 248].map((x) => <div key={x} style={{ position: "absolute", left: x - 9, top: -20, width: 18, height: 50, borderRadius: 9, background: C.cyan, boxShadow: "0 4px 10px -4px rgba(41,58,81,0.5)" }} />)}
+      {[92, 248].map((x) => <div key={x} style={{ position: "absolute", left: x - 9, top: -20, width: 18, height: 50, borderRadius: 9, background: C.cyan, boxShadow: "0 4px 10px -4px rgba(23,43,68,0.5)" }} />)}
       <div style={{ position: "absolute", left: 0, right: 0, top: 104, height: 214, overflow: "hidden" }}>
         {["1", "2"].map((n, j) => (
           <div key={n} style={{ position: "absolute", inset: 0, textAlign: "center", fontWeight: 800, fontSize: 212, lineHeight: "214px", color: C.navy, letterSpacing: "-0.04em",
@@ -356,7 +356,7 @@ export const Loop: React.FC = () => {
                   <div style={{ position: "absolute", inset: 0, filter: "url(#ghSmear)", transform: `translateX(${L * 0.22}px)` }}><Site t={t} k={() => 1} /></div>
                 </div>
                 <div style={{ position: "absolute", top: 0, bottom: 0, left: b1 - 130, width: 130, opacity: vn1,
-                  background: "linear-gradient(to right, rgba(56,200,255,0), rgba(56,200,255,0.32))" }} />
+                  background: "linear-gradient(to right, rgba(153,205,252,0), rgba(153,205,252,0.32))" }} />
               </>
             )}
             {t >= T.s1b && <Site t={t} k={kOld} />}
@@ -364,7 +364,7 @@ export const Loop: React.FC = () => {
               <div style={{ position: "absolute", inset: 0, clipPath: inS2 ? `inset(0 0 0 ${b2}px)` : undefined }}><CmsLayer t={t} /></div>
             )}
             {inS2 && <div style={{ position: "absolute", top: 0, bottom: 0, left: b2, width: 130, opacity: vn2,
-              background: "linear-gradient(to left, rgba(163,210,194,0), rgba(56,200,255,0.28))" }} />}
+              background: "linear-gradient(to left, rgba(163,210,194,0), rgba(153,205,252,0.28))" }} />}
             <Cursor t={t} />
           </div>
         </div>

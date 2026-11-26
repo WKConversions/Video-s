@@ -168,7 +168,7 @@ const Ball: React.FC<{ t: number; b: Spec }> = ({ t, b }) => {
       <g transform={`rotate(${ang}) scale(${(along * (1 + sq)).toFixed(4)} ${(across * (1 - sq * 0.6)).toFixed(4)}) rotate(${-ang})`}>
         {rim > 0.01 && <circle r={r + 5} fill="none" stroke={C.cyan} strokeWidth={4} opacity={rim} />}
         <g transform={`scale(${flipX.toFixed(4)} 1)`}>
-          <circle r={r} fill={fill} style={{ filter: "drop-shadow(0 8px 10px rgba(41,58,81,0.22))" }} />
+          <circle r={r} fill={fill} style={{ filter: "drop-shadow(0 8px 10px rgba(23,43,68,0.22))" }} />
           {fill === C.white && <circle r={r - 0.75} fill="none" stroke={C.line} strokeWidth={1.5} />}
           <g transform={`rotate(${spin})`}><Icon kind={icon} color={ink} size={r * 0.92} /></g>
         </g>
