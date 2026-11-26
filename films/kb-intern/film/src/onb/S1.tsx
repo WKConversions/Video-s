@@ -1,6 +1,7 @@
 import React from "react";
-import { C, F, OUT, INOUT, IN, k, enter, breathe, abs, Ring, Title, c01, mix } from "../kit";
+import { C, F, OUT, INOUT, IN, k, enter, abs, Ring, Title, c01, mix, Camera, floatStyle } from "../kit";
 import { w } from "./timing";
+import { exitFx, pulse } from "./fx";
 import MAP from "../map-europe.json";
 
 type Props = { t: number; t0: number; t1: number };
@@ -16,15 +17,14 @@ const arcPt = (a: number[], b: number[], p: number) => {
 };
 export const S2PIN = [260, 600 + 60 * Math.sin(((260 - 200) / 1360) * Math.PI * 2)];
 
-export const S1: React.FC<Props> = ({ t, t1 }) => {
+export const S1: React.FC<Props> = ({ t, t0, t1 }) => {
+  const wt = warp(t, []);
   const reveal = k(t, 0.2, 2.6, INOUT);
   const mapOut = 1 - k(t, t1 - 0.2, 0.9, IN);
-  const txtOut = 1 - k(t, t1 - 0.6, 0.6, IN);
   const pinK = k(t, 0.6, 0.4);
   const carry = k(t, t1 - 0.9, 1.4, INOUT);
   const px = mix(M[0], S2PIN[0], carry), py = mix(M[1], S2PIN[1], carry);
   const pinFade = 1 - k(t, t1 + 0.55, 0.3);
-  const dy = breathe(t, 5, 7);
   const sub = [["Software", w("software")], ["·", w("software") + 0.5], ["AI", w("ai")], ["·", w("ai") + 0.35], ["Automation", w("automation")]] as [string, number][];
   const out = Array.from(NODES, (n, i) => {
     const s = 5.3 + i * 0.16;
@@ -32,52 +32,51 @@ export const S1: React.FC<Props> = ({ t, t1 }) => {
   });
   const back = (i: number) => 8.5 + (i % 7) * 0.12;
   return (
-    <div style={{ position: "absolute", inset: 0 }}>
-      <div style={{ position: "absolute", inset: 0, opacity: mapOut, transform: `translateY(${dy}px)` }}>
+    <Camera t={wt} t0={t0} t1={t1}>
+      <div style={{ position: "absolute", inset: 0, opacity: mapOut }}>
         <svg width={1920} height={1080} style={{ position: "absolute", inset: 0 }}>
           {(() => {
             const R = reveal * 1700;
             return DOTS.map(([x, y, f], i) => {
               const d = Math.hypot(x - M[0], y - M[1]);
               const kk = c01((R - d) / 160);
-              return kk > 0 ? <circle key={i} cx={x} cy={y} r={3.6 * (0.6 + 0.4 * kk)} fill={C.navy} opacity={f * kk * 0.2} /> : null;
+              const tw = 0.85 + 0.15 * Math.sin(t * 1.3 + i * 0.7);
+              return kk > 0 ? <circle key={i} cx={x} cy={y} r={3.6 * (0.6 + 0.4 * kk)} fill={C.blue} opacity={f * kk * 0.32 * tw} /> : null;
             });
           })()}
           {out.map(({ n, arc, i }) => {
             const [, , cx, cy] = arcPt(M, n, 0.5);
             const flow = k(t, back(i), 1.2, INOUT);
             const fo = flow > 0 ? [0, 1, 2].map((j) => { const p = c01(flow * 1.3 - j * 0.12); return p > 0 && p < 1 ? arcPt(n, M, p) : null; }) : [];
+            const d = `M${M[0]} ${M[1]} Q${cx} ${cy} ${n[0]} ${n[1]}`;
             return (
               <g key={i}>
-                <path d={`M${M[0]} ${M[1]} Q${cx} ${cy} ${n[0]} ${n[1]}`} fill="none" stroke={C.blueS} strokeWidth={3} strokeLinecap="round" pathLength={1}
-                  strokeDasharray={1} strokeDashoffset={1 - arc} opacity={0.55 * (1 - 0.5 * flow)} />
-                {fo.map((q, j) => q ? <circle key={j} cx={q[0]} cy={q[1]} r={7 - j * 1.5} fill={C.navy} opacity={0.9} /> : null)}
+                <path d={d} fill="none" stroke={C.blue} strokeWidth={3} strokeLinecap="round" pathLength={1}
+                  strokeDasharray={1} strokeDashoffset={1 - arc} opacity={0.6 * (1 - 0.5 * flow)} />
+                {arc > 0.99 && <path d={d} fill="none" stroke={C.white} strokeWidth={4} strokeLinecap="round" strokeDasharray="2 26" strokeDashoffset={-t * 60} opacity={0.5} />}
+                {fo.map((q, j) => q ? <circle key={j} cx={q[0]} cy={q[1]} r={8 - j * 1.8} fill={C.white} opacity={0.95} /> : null)}
               </g>
             );
           })}
           {out.map(({ n, lit, i }) => lit > 0 ? (
-            <g key={i}><circle cx={n[0]} cy={n[1]} r={26 * lit} fill={C.blue} opacity={0.35 * (1 - lit * 0.4)} />
-              <circle cx={n[0]} cy={n[1]} r={10 * lit} fill={C.blueS} /></g>
+            <g key={i}><circle cx={n[0]} cy={n[1]} r={(30 + 6 * Math.sin(t * 2 + i)) * lit} fill={C.blue} opacity={0.28} />
+              <circle cx={n[0]} cy={n[1]} r={11 * lit} fill={C.blue} /><circle cx={n[0]} cy={n[1]} r={4.5 * lit} fill={C.white} /></g>
           ) : null)}
         </svg>
       </div>
-      <div style={{ position: "absolute", inset: 0, opacity: txtOut, transform: `translateY(${dy * 0.6}px)` }}>
-        <Title size={90} style={{ ...abs(110, 150), ...enter(k(t, w("welcome") - 0.1, 0.7)) }}>Welcome to K.B</Title>
-        <div style={{ ...abs(114, 290), display: "flex", gap: 14, fontFamily: F, fontSize: 44, fontWeight: 700, color: C.muted, whiteSpace: "nowrap" }}>
+      <div style={{ position: "absolute", inset: 0, ...exitFx(t, t1 - 0.5, -300, -40) }}>
+        <div style={floatStyle(wt, 1, 6)}>
+          <Title size={96} style={{ ...abs(110, 140), ...enter(k(t, w("welcome") - 0.1, 0.7)) }}>Welcome to K.B</Title>
+        </div>
+        <div style={{ ...abs(114, 290), display: "flex", gap: 14, fontFamily: F, fontSize: 46, fontWeight: 700, color: C.blue, whiteSpace: "nowrap", ...floatStyle(wt, 2, 5) }}>
           {sub.map(([s, tt], i) => <span key={i} style={enter(k(t, tt, 0.5), 16)}>{s}</span>)}
         </div>
       </div>
       <div style={{ opacity: pinFade }}>
-        <Ring x={M[0]} y={M[1]} p={k(t, 0.95, 0.9, INOUT)} r={90} />
-        {(() => {
-          const ex = k(t, 8.5, 1.5, INOUT) * (1 - carry);
-          return <>
-            {ex > 0 && ex < 1 && <div style={{ position: "absolute", left: px - 40 * ex - 13, top: py - 40 * ex - 13, width: 26 + 80 * ex, height: 26 + 80 * ex, borderRadius: 999, border: `3px solid ${C.blueS}`, opacity: 0.5 * (1 - ex) }} />}
-            <div style={{ position: "absolute", left: px - 13, top: py - 13 - (1 - OUT(pinK)) * 40, width: 26, height: 26, borderRadius: 999, background: C.navy,
-              boxShadow: `0 0 0 8px rgba(111,174,241,0.35)`, opacity: c01(pinK * 2) }} />
-          </>;
-        })()}
+        <Ring x={px} y={py} p={pulse(t, 1.0, 1.1) * (1 - carry) * (t < 10.5 ? 1 : 0)} r={90} color={C.blue} />
+        <div style={{ position: "absolute", left: px - 15, top: py - 15 - (1 - OUT(pinK)) * 40, width: 30, height: 30, borderRadius: 999, background: C.blue,
+          boxShadow: `0 0 0 10px rgba(153,205,252,0.3), 0 0 30px rgba(153,205,252,0.7)`, opacity: c01(pinK * 2) }} />
       </div>
-    </div>
+    </Camera>
   );
 };
