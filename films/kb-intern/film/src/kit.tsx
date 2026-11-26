@@ -201,3 +201,15 @@ export const cursorAt = (pts: [number, number, number][], t: number): { x: numbe
   }
   const L = pts[pts.length - 1]; return { x: L[1], y: L[2] };
 };
+
+/** slowed time for hover moments: inside each [a, b] window motion keeps going at (1 - slow) of its speed, eased in
+ *  and out over 0.25 s, never stopping. Feed the result to float()/floatStyle()/Camera instead of t while the cursor
+ *  hovers or presses: warp(t, [[3.2, 4.0], [7.1, 7.6]]) */
+export const warp = (t: number, windows: [number, number][], slow = 0.35): number => {
+  const r = 0.25;
+  // R(x): integral of a smoothstep ramp 0 -> 1 over [0, r] (then 1)
+  const R = (x: number) => (x <= 0 ? 0 : x < r ? r * ((x / r) ** 3 - (x / r) ** 4 / 2) : r / 2 + (x - r));
+  let lost = 0;
+  for (const [a0, b0] of windows) { const b = Math.max(b0, a0 + 2 * r); lost += slow * (R(t - a0) - R(t - (b - r))); }
+  return t - lost;
+};
