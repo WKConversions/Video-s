@@ -33,3 +33,9 @@ Karl: one zip, every video at most 5 MB, best quality possible. All stay 1920x10
 the other seven are two-pass x264 (preset slow) aimed at 4.8 MB (`tools/fit5mb.sh`), audio AAC 96 kbps. For the two
 longest (explainer, growth technology) 720p was tried at the same size: 1080p kept the type sharper, so 1080p it is.
 Largest file: 4,957,158 bytes.
+
+## One zip of max 30 MB (`deliver/web30/`)
+Karl: the whole zip at most 30 MB. `tools/fit_total.py deliver <out> 29200000`: a quick CRF pass measures how hard each
+video is to compress, the budget is shared in proportion (even quality across the set), then two-pass x264 (slow) per
+video from the masters; 1920x1080, 60 fps; audio AAC 80 kbps. Result: 29,710,789 bytes of video, zip 29,713,003 bytes.
+Video bitrates 582 kbps (jongleren) to 1152 kbps (pillar-ai); the explainer gets 975 kbps.
