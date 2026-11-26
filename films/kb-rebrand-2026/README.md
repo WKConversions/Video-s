@@ -26,3 +26,10 @@ Karl's request (26 Nov 2026): every existing K.B film gets the new brand kit
 pillar-growth-technology, pillar-software-development, social-impact-factory · abroad-internships, gohere,
 goteborgsvarvet, h2o-water-coolers, jongleren, pillar-ai-agents-automation · services, top-jobs-abroad, vino-mio ·
 kb-team-explainer.
+
+## Web versions, max 5 MB each (`deliver/web/`)
+Karl: one zip, every video at most 5 MB, best quality possible. All stay 1920x1080 at 60 fps. The six loops already under
+5 MB are the masters unchanged (gohere, goteborgsvarvet, jongleren, social-impact-factory, top-jobs-abroad, vino-mio);
+the other seven are two-pass x264 (preset slow) aimed at 4.8 MB (`tools/fit5mb.sh`), audio AAC 96 kbps. For the two
+longest (explainer, growth technology) 720p was tried at the same size: 1080p kept the type sharper, so 1080p it is.
+Largest file: 4,957,158 bytes.
