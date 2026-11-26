@@ -1,21 +1,32 @@
 import React from "react";
-import { C, IN, OUT, Ring, Title, at, breathe, k } from "../kit";
-import { Exit } from "./common";
+import { C, Camera, IN, OUT, Ring, F, at, k } from "../kit";
+import { warp } from "../kit";
+import { Ambient, Exit, fl } from "./common";
 import { w } from "./timing";
 
-export const S1: React.FC<{ t: number; t0: number; t1: number }> = ({ t, t1 }) => {
-  const tin = k(t, w("thank"), 0.7), tout = k(t, 4.9, 0.6, IN);
-  const dots = [[430, 300, 26, 0], [1500, 240, 18, 2], [1620, 520, 32, 4], [300, 600, 20, 1], [1180, 820, 14, 3]];
+const TXT = "Thank you!";
+export const S1: React.FC<{ t: number; t0: number; t1: number }> = ({ t, t0, t1 }) => {
+  
+  const tw = warp(t, [[1.0, 1.6]]);
+const tout = k(t, 4.9, 0.7, IN), ts = w("thank");
+  const dots = [[430, 250, 26], [1500, 200, 18], [1620, 560, 32], [300, 640, 20], [1180, 850, 14], [760, 880, 22]];
   return (
-    <Exit t={t} t1={t1}>
-      {dots.map(([x, y, r, ph], i) => (
-        <div key={i} style={at(x + breathe(t + ph, 14, 6), y + breathe(t + ph * 2, 12, 5), { width: r * 2, height: r * 2, borderRadius: "50%", background: i % 2 ? C.blue : C.ice2,
-          opacity: k(t, 0.8 + i * 0.2, 1.0) * (1 - tout) })} />
+    <Exit t={t} t1={t1}><Camera t={tw} t0={t0} t1={t1}>
+      <Ambient t={tw} seed={1} />
+      {dots.map(([x, y, r], i) => (
+        <div key={i} style={{ ...at(x, y), opacity: k(t, 0.7 + i * 0.12, 0.8) * (1 - tout) * 0.7 }}>
+          <div style={{ width: r * 2, height: r * 2, borderRadius: "50%", background: i % 2 ? C.blue : C.blueS, ...fl(tw, i + 3, 16) }} />
+        </div>
       ))}
-      <Ring x={960} y={380} p={k(t, 1.0, 1.0, OUT) < 1 ? k(t, 1.0, 1.0, OUT) : 0} r={190} />
-      <div style={{ ...at(960, 590 + breathe(t, 5, 6)), opacity: tin * (1 - tout), transform: `translate(-50%,-50%) translateY(${((1 - tin) * 28 - tout * 40).toFixed(1)}px) scale(${(0.96 + 0.04 * tin).toFixed(3)})` }}>
-        <Title size={116}>Thank you!</Title>
+      {[0, 0.45].map((d, i) => { const p = k(t, 1.0 + d, 1.1, OUT); return <Ring key={i} x={960} y={350} p={p < 1 ? p : 0} r={230} color={C.blue} />; })}
+      <div style={{ ...at(960, 600 + k(t, 4.9, 0.7, IN) * -50), opacity: 1 - tout, fontFamily: F, fontWeight: 800, fontSize: 124, color: C.white, letterSpacing: "-0.04em", whiteSpace: "pre", ...{} }}>
+        <div style={fl(tw, 2, 6)}>
+          {TXT.split("").map((ch, i) => {
+            const p = k(t, ts + i * 0.06, 0.4);
+            return <span key={i} style={{ display: "inline-block", opacity: p, transform: `translateY(${((1 - p) * 30).toFixed(1)}px)` }}>{ch}</span>;
+          })}
+        </div>
       </div>
-    </Exit>
+    </Camera></Exit>
   );
 };

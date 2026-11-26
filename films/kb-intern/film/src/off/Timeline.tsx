@@ -1,6 +1,7 @@
 import React from "react";
-import { C, F, INOUT, OUT, at, abs, c01, k, mix } from "../kit";
+import { C, F, INOUT, OUT, Ring, at, abs, k, mix } from "../kit";
 import { W, w } from "./timing";
+import { pulse } from "./common";
 
 const STOPS = ["2 weeks before", "Last week", "Last day", "Afterwards"];
 const s5 = W.find((x) => x.s === 5 && x.w === "your")!.t;
@@ -22,20 +23,19 @@ export const Timeline: React.FC<{ t: number }> = ({ t }) => {
   const fillW = act >= 0 ? fp * (xs[1] - xs[0]) : 0;
   return (
     <div style={{ position: "absolute", inset: 0, opacity: fade, fontFamily: F }}>
-      <div style={abs(x0, y - lh / 2, (x3 - x0) * draw, lh, { background: C.line, borderRadius: lh })} />
-      <div style={abs(x0, y - lh / 2, Math.min(fillW, (x3 - x0) * draw), lh, { background: C.blueS, borderRadius: lh })} />
+      <div style={abs(x0, y - lh / 2, (x3 - x0) * draw, lh, { background: "rgba(255,255,255,0.2)", borderRadius: lh })} />
+      <div style={abs(x0, y - lh / 2, Math.min(fillW, (x3 - x0) * draw), lh, { borderRadius: lh, backgroundImage: `repeating-linear-gradient(90deg, ${C.blue} 0px, ${C.blue} 26px, ${C.blueS} 26px, ${C.blueS} 52px)`, backgroundPosition: `${(t * 90).toFixed(1)}px 0` })} />
+      {act >= 0 && <Ring x={xs[act]} y={y} p={pulse(t, ACT[act])} r={mix(70, 46, g)} color={C.blue} />}
       {STOPS.map((label, i) => {
         const pop = k(t, POP[i], 0.5, OUT);
         const isAct = act === i, done = act > i;
         const a = k(t, ACT[i], 0.4, OUT);
-        const r = mix(18, 11, g) * (0.4 + 0.6 * pop) * (isAct ? 1 + 0.25 * a : 1);
-        const ringW = isAct ? mix(10, 6, g) * a : 0;
+        const r = mix(18, 11, g) * (0.4 + 0.6 * pop) * (isAct ? 1 + 0.3 * a : 1);
         return (
           <React.Fragment key={i}>
             <div style={at(xs[i], y, { width: r * 2, height: r * 2, borderRadius: "50%", opacity: pop, boxSizing: "border-box",
-              background: isAct ? C.navy : done ? C.blueS : C.white, border: isAct ? "none" : `${mix(5, 3, g)}px solid ${done ? C.blueS : C.blue}`,
-              boxShadow: isAct ? `0 0 0 ${ringW}px ${C.blue}` : "none" })} />
-            <div style={at(xs[i], y + mix(60, 40, g), { opacity: pop, fontSize: mix(44, 28, g), fontWeight: isAct ? 800 : 600, color: isAct ? C.navy : C.muted,
+              background: isAct || done ? C.blue : "rgba(255,255,255,0.4)", boxShadow: isAct ? `0 0 0 ${mix(9, 6, g) * a}px rgba(153,205,252,0.35)` : "none" })} />
+            <div style={at(xs[i], y + mix(62, 42, g), { opacity: pop * (isAct ? 1 : 0.6), fontSize: mix(44, 28, g), fontWeight: isAct ? 800 : 600, color: C.white,
               whiteSpace: "nowrap", letterSpacing: "-0.02em", transform: `translate(-50%, -50%) translateY(${((1 - pop) * 14).toFixed(1)}px)` })}>{label}</div>
           </React.Fragment>
         );
@@ -43,4 +43,3 @@ export const Timeline: React.FC<{ t: number }> = ({ t }) => {
     </div>
   );
 };
-export { c01 };
