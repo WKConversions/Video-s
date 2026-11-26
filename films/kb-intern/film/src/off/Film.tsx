@@ -3,6 +3,7 @@ import { AbsoluteFill, useCurrentFrame } from "remotion";
 import { FPS, Layer, LogoLayer, Page, useFont } from "../kit";
 import { SCENE } from "./timing";
 import { LOGO } from "./logo";
+import { Timeline } from "./Timeline";
 import { S1 } from "./S1";
 import { S2 } from "./S2";
 import { S3 } from "./S3";
@@ -20,6 +21,7 @@ export const Offboarding: React.FC<{ layer: Layer }> = ({ layer }) => {
     <AbsoluteFill style={{ background: layer === "logoOnly" ? "transparent" : undefined }}>
       {layer !== "logoOnly" && <Page />}
       {layer !== "logoOnly" && SCENES.map((Sc, i) => (t >= SCENE[i][0] - 0.001 && t < SCENE[i][1] + TAIL ? <Sc key={i} t={t} t0={SCENE[i][0]} t1={SCENE[i][1]} /> : null))}
+      {layer !== "logoOnly" && <Timeline t={t} />}
       {layer !== "noLogo" && <LogoLayer track={LOGO} t={t} />}
     </AbsoluteFill>
   );
