@@ -15,7 +15,6 @@ const font = (size: number, weight = 800, color = NAVY): React.CSSProperties => 
 /** a colour between two colours (hex or rgb()) */
 const parse = (s: string) => s.startsWith("#") ? [1, 3, 5].map((i) => parseInt(s.slice(i, i + 2), 16)) : (s.match(/\d+/g) || ["0", "0", "0"]).slice(0, 3).map(Number);
 const lerpC = (a: string, b: string, p: number) => { const A = parse(a), B = parse(b); return `rgb(${A.map((v, i) => Math.round(v + (B[i] - v) * c01(p))).join(",")})`; };
-const pulse01 = (t: number, t0: number, dur: number) => (t < t0 || t > t0 + dur ? 0 : Math.sin(Math.PI * (t - t0) / dur));
 
 // ------------------------------------------------------------------ the headline: swaps in place (a vertical roll inside a mask)
 const HEADS: [number, string][] = [[w("signed") - 0.05, "Signed contract"], [w("clear") - 0.05, "Clear tasks"], [w("agents") - 0.15, "AI agents"], [w("validate") - 0.05, "Validated"],
@@ -42,6 +41,33 @@ const CheckMark: React.FC<{ s: number; p: number; c?: string; w_?: number }> = (
 );
 const Send: React.FC<{ s: number; c: string }> = ({ s, c }) => <svg width={s} height={s} viewBox="0 0 40 40"><path d="M5 20 L35 6 L27 34 L19 23 Z" fill={c} /></svg>;
 
+// ------------------------------------------------------------------ the split-flap: every state change is a flip in place
+const FLIP = 0.5, STAG = 0.3;
+/** angle (deg, rotateX) and which state to show, for an element whose states change at the given times */
+const flapAt = (t: number, times: number[]): { st: number; ang: number } => {
+  let st = 0;
+  for (let n = 0; n < times.length; n++) {
+    const te = times[n];
+    if (t < te) break;
+    const q = (t - te) / FLIP;
+    if (q < 0.5) return { st: n, ang: -180 * q };          // the old face folds away
+    if (q < 1) return { st: n + 1, ang: 90 - 180 * (q - 0.5) }; // the new face unfolds
+    st = n + 1;
+  }
+  return { st, ang: 0 };
+};
+/** a flap: rotates on its horizontal axis and catches the light as it turns (light = a white sheen on dark faces,
+ *  a navy shade on light faces), the way a real split-flap does */
+const Flap: React.FC<{ ang: number; light?: boolean; r?: number | string; style?: React.CSSProperties; children?: React.ReactNode }> = ({ ang, light, r = 0, style, children }) => {
+  const sheen = Math.abs(Math.sin((ang * Math.PI) / 180));
+  return (
+    <div style={{ perspective: 1400, ...style }}><div style={{ position: "relative", width: "100%", height: "100%", transform: `rotateX(${ang.toFixed(2)}deg)`, transformOrigin: "50% 50%", backfaceVisibility: "hidden" }}>
+      {children}
+      {sheen > 0.001 && <div style={{ position: "absolute", inset: 0, borderRadius: r, background: light ? NAVY : "#FFFFFF", opacity: (light ? 0.45 : 0.7) * sheen, pointerEvents: "none" }} />}
+    </div></div>
+  );
+};
+
 export const Reel: React.FC<{ layer: Layer }> = ({ layer }) => {
   const ok = useFont();
   const t = useCurrentFrame() / FPS;
@@ -65,14 +91,11 @@ export const Reel: React.FC<{ layer: Layer }> = ({ layer }) => {
   const title = "Software development", typed = Math.round(title.length * c01((t - w("software")) / 0.75));
   const sig = [k(t, w("signed") - 0.12, 0.55, INOUT), k(t, w("contract") + 0.05, 0.5, INOUT)];
   const seal = k(t, w("contract") + 0.5, 0.45);
-  const scope = k(t, w("scope") - 0.05, 0.4);
   const contractFade = k(t, w("into") - 0.1, 0.4);
-  const created = (i: number) => k(t, w("clear") - 0.1 + i * 0.1, 0.35);
-  const agentOn = (i: number) => k(t, w("agents") - 0.1 + i * 0.07, 0.35);
-  const work = (i: number) => c01((t - w("carry") - i * 0.17) / 1.1);
-  const valid = (i: number) => k(t, w("validate") + i * 0.1, 0.35);
-  const rew = (i: number) => k(t, w("update") - 0.05 + i * 0.12, 0.5, INOUT);
   const head2 = k(t, w("then") + 0.25, 0.5);
+  // the tiles' state changes (cascade starts); state n+1 = after the n-th flip
+  //  1 drafted · 2 signed · 3 scope · 4 task · 5 in the project · 6 agent assigned · 7 working · 8 validated · 9 doc line · 10 rewritten · 11 new section
+  const CASC = [1.15, w("contract") + 0.5, w("scope") - 0.05, w("clear") - 0.05, w("project") - 0.1, w("agents") - 0.12, w("those") - 0.3, w("validate"), w("then") + 0.15, w("update"), w("documentation") + 0.3];
 
   // ---- the ring and the disc
   const ringIn = k(t, w("improve") - 0.05, 0.7);
@@ -84,8 +107,6 @@ export const Reel: React.FC<{ layer: Layer }> = ({ layer }) => {
   // ---- the bubble (morphed from the disc)
   const bw = mix(380, 860, toBubble), bh = mix(380, 420, toBubble), br = mix(190, 60, toBubble), by = mix(1000, 960, toBubble);
   const press = k(t, w("message") - 0.05, 0.12) * (1 - k(t, w("message") + 0.15, 0.3));
-  const sent = k(t, w("message") + 0.1, 0.45, INOUT);
-  const trick = k(t, w("share") - 0.1, 0.6, INOUT);
 
   // ---- the progress track
   const STEP_T = [0.9, w("turn") - 0.2, w("ai") - 0.2, w("then") - 0.1, w("development", 2) - 0.3, w("do") - 0.25];
@@ -129,58 +150,53 @@ export const Reel: React.FC<{ layer: Layer }> = ({ layer }) => {
             {Array.from({ length: NS }, (_, i) => {
               const y = hh + i * (SL + gap);
               const rTop = 26 * sep, rBot = i === NS - 1 ? mix(40, 26, sep) : 26 * sep;
-              const cr = created(i), wk = work(i), vd = valid(i);
-              const working = wk > 0 && wk < 1 ? 1 : 0;
-              let bg = lerpC(NAVY, "#24466F", working * (1 - vd));
-              if (!docsMode) bg = lerpC(bg, BLUES, pulse01(t, w("clear") - 0.1 + i * 0.1, 0.5) * 0.85);
-              bg = lerpC(bg, "#2D7A5A", pulse01(t, w("validate") + i * 0.1, 0.45) * 0.7);
-              const taskO = docsMode ? 0 : contractFade;
+              const { st, ang } = flapAt(t, CASC.map((c) => c + i * STAG));
+              const BG = [NAVY, NAVY, NAVY, "#1E3A5E", NAVY, NAVY, NAVY, "#24466F", "#235C49", NAVY, NAVY, NAVY][st];
+              const sigP = i >= 4 ? (i === 4 ? sig[0] : sig[1]) : 1;
+              const bar = (ww: number, c: string, top_: number, h = 22) => <div style={{ position: "absolute", left: 44, top: top_, width: ww, height: h, borderRadius: h / 2, background: c }} />;
+              const W1 = [560, 480, 600, 440, 520, 460][i], W2 = [330, 280, 360, 250, 310, 290][i], W3 = [210, 250, 180, 230, 200, 260][i];
+              const face = () => {
+                if (st === 0) return null;
+                if (st <= 2) return i < 4 ? <>{bar(W1, "#3A5577", 51)}{st === 2 && <div style={{ position: "absolute", right: 40, top: SL / 2 - 26 }}><CheckMark s={52} p={1} c={BLUE} /></div>}</> : (
+                  <div style={{ position: "absolute", left: 44, right: 44, top: 0, height: SL }}>
+                    <svg width={420} height={84} style={{ position: "absolute", left: 0, top: 6 }}>
+                      <path d={i === 4 ? "M8 60 C30 26 52 82 82 40 C110 8 124 72 154 50 C182 30 204 66 236 44 C262 30 290 56 330 40" : "M8 68 C36 20 62 22 72 56 C84 86 104 30 134 40 C164 50 176 70 206 46 C236 24 266 62 330 48"}
+                        fill="none" stroke={WHITE} strokeWidth={6} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - sigP} />
+                    </svg>
+                    <div style={{ position: "absolute", left: 0, top: 88, width: 360, height: 3, background: "rgba(255,255,255,0.35)" }} />
+                    <div style={{ position: "absolute", right: 0, top: 40, ...font(34, 800, BLUE) }}>{i === 4 ? "Client" : "K.B"}</div>
+                  </div>);
+                if (st === 3) return <>{bar(W1, BLUE, 51)}<div style={{ position: "absolute", left: 44 + ((t * 600 + i * 90) % (W1 + 120)) - 120, top: 51, width: 90, height: 22, borderRadius: 11, background: "rgba(255,255,255,0.7)" }} /></>;
+                if (st <= 8) {
+                  const working = st === 7, done = st === 8;
+                  const wk = c01((t - CASC[6] - i * STAG) / 1.2);
+                  return <>
+                    <div style={{ position: "absolute", left: 30, top: SL / 2 - 30, width: 60, height: 60, borderRadius: 18, border: `4px solid ${done ? GREEN : BLUE}`, background: done ? GREEN : "transparent", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      {done ? <CheckMark s={52} p={1} /> : working ? <div style={{ width: 34, height: 34, borderRadius: "50%", border: "5px solid rgba(153,205,252,0.3)", borderTopColor: BLUE, transform: `rotate(${(t * 600) % 360}deg)`, boxSizing: "border-box" }} /> : null}
+                    </div>
+                    <div style={{ position: "absolute", left: 120, top: 34, width: W2, height: 22, borderRadius: 11, background: WHITE }} />
+                    <div style={{ position: "absolute", left: 120, top: 70, width: W3, height: 16, borderRadius: 8, background: "rgba(255,255,255,0.4)" }} />
+                    {st === 5 && <div style={{ position: "absolute", right: 30, top: SL / 2 - 22, width: 110, height: 44, borderRadius: 22, background: [BLUES, BLUE, "#E9B949", BLUES, BLUE, "#E9B949"][i] }} />}
+                    {st >= 6 && <div style={{ position: "absolute", right: 30, top: SL / 2 - 34, height: 68, borderRadius: 34, display: "flex", alignItems: "center", gap: 10, padding: "0 20px 0 12px", background: done ? GREEN : BLUE }}>
+                      <div style={{ transform: `rotate(${(working ? t * 240 : 0) % 360}deg)` }}><Sparkle s={36} c={NAVY} /></div>
+                      <span style={font(26, 800, NAVY)}>{done ? "Validated" : "AI agent"}</span>
+                    </div>}
+                    {st >= 7 && <div style={{ position: "absolute", left: 120, right: 30, bottom: 0, height: 8, background: "rgba(255,255,255,0.1)" }}><div style={{ width: `${((done ? 1 : wk) * 100).toFixed(1)}%`, height: "100%", background: done ? GREEN : BLUE }} /></div>}
+                  </>;
+                }
+                const rw = st >= 10 ? 1 : 0, rw2 = st >= 11 ? 1 : 0;
+                const ww = [[520, 380], [460, 560], [600, 300], [400, 520], [560, 420], [480, 360]][i];
+                return <>{bar(ww[0], rw ? BLUE : "rgba(255,255,255,0.85)", 32, 20)}{bar(ww[1], rw2 ? BLUES : "rgba(255,255,255,0.55)", 74, 20)}</>;
+              };
               return (
-                <div key={i} style={{ position: "absolute", left: 0, top: y, width: WD, height: SL, background: bg, borderRadius: `${rTop}px ${rTop}px ${rBot}px ${rBot}px`, overflow: "hidden" }}>
-                  {!docsMode && contractFade < 1 && (
-                    <div style={{ position: "absolute", inset: 0, opacity: 1 - contractFade }}>
-                      {i < 4 ? (
-                        <div style={{ position: "absolute", left: 44, top: 50, width: [560, 480, 600, 440][i], height: 22, borderRadius: 11, background: scope > 0 ? lerpC("#3A5577", BLUE, scope) : "#3A5577", overflow: "hidden" }}>
-                          {scope > 0 && <div style={{ position: "absolute", top: 0, bottom: 0, width: 120, left: ((t * 700 + i * 160) % 900) - 160, background: "rgba(255,255,255,0.55)" }} />}
-                        </div>
-                      ) : (
-                        <div style={{ position: "absolute", left: 44, right: 44, top: 0, height: SL }}>
-                          <svg width={420} height={84} style={{ position: "absolute", left: 0, top: 6 }}>
-                            <path d={i === 4 ? "M8 60 C30 26 52 82 82 40 C110 8 124 72 154 50 C182 30 204 66 236 44 C262 30 290 56 330 40" : "M8 68 C36 20 62 22 72 56 C84 86 104 30 134 40 C164 50 176 70 206 46 C236 24 266 62 330 48"}
-                              fill="none" stroke={WHITE} strokeWidth={6} strokeLinecap="round" pathLength={1} strokeDasharray={1} strokeDashoffset={1 - sig[i - 4]} />
-                          </svg>
-                          <div style={{ position: "absolute", left: 0, top: 88, width: 360, height: 3, background: "rgba(255,255,255,0.35)" }} />
-                          <div style={{ position: "absolute", right: 0, top: 40, ...font(34, 800, BLUE) }}>{i === 4 ? "Client" : "K.B"}</div>
-                        </div>
-                      )}
+                <div key={i} style={{ position: "absolute", left: 0, top: y, width: WD, height: SL }}>
+                  <Flap ang={ang} r={`${rTop}px ${rTop}px ${rBot}px ${rBot}px`} style={{ position: "absolute", inset: 0 }}>
+                    <div style={{ position: "absolute", inset: 0, background: BG, borderRadius: `${rTop}px ${rTop}px ${rBot}px ${rBot}px`, overflow: "hidden", boxShadow: Math.abs(ang) > 1 ? "inset 0 0 0 2px rgba(153,205,252,0.5)" : undefined }}>
+                      {face()}
+                      {/* the split line of the flap */}
+                      <div style={{ position: "absolute", left: 0, right: 0, top: SL / 2 - 1, height: 2, background: "rgba(0,0,0,0.18)" }} />
                     </div>
-                  )}
-                  {taskO > 0 && (
-                    <div style={{ position: "absolute", inset: 0, opacity: taskO }}>
-                      <div style={{ position: "absolute", left: 30, top: SL / 2 - 30, width: 60, height: 60, borderRadius: 18, border: `4px solid ${vd > 0 ? GREEN : lerpC("#3A5577", BLUE, cr)}`, background: vd > 0 ? lerpC(NAVY, GREEN, vd) : "transparent", boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        {vd > 0 ? <CheckMark s={52} p={vd * 1.4} /> : working ? <div style={{ width: 34, height: 34, borderRadius: "50%", border: "5px solid rgba(153,205,252,0.3)", borderTopColor: BLUE, transform: `rotate(${(t * 600) % 360}deg)`, boxSizing: "border-box" }} /> : null}
-                      </div>
-                      <div style={{ position: "absolute", left: 120, top: 34, width: mix(0, [330, 280, 360, 250, 310, 290][i], cr), height: 22, borderRadius: 11, background: WHITE }} />
-                      <div style={{ position: "absolute", left: 120, top: 70, width: mix(0, [210, 250, 180, 230, 200, 260][i], cr), height: 16, borderRadius: 8, background: "rgba(255,255,255,0.4)" }} />
-                      <div style={{ position: "absolute", right: 30, top: SL / 2 - 34, height: 68, borderRadius: 34, display: "flex", alignItems: "center", gap: 10, padding: "0 20px 0 12px", background: lerpC(NAVY, BLUE, agentOn(i)), opacity: agentOn(i), transform: `scale(${mix(0.6, 1, OUT(agentOn(i)))})` }}>
-                        <div style={{ transform: `rotate(${(working ? t * 240 : 0) % 360}deg)` }}><Sparkle s={36} c={NAVY} /></div>
-                        <span style={font(26, 800, NAVY)}>AI agent</span>
-                      </div>
-                      <div style={{ position: "absolute", left: 120, right: 30, bottom: 0, height: 6, background: "rgba(255,255,255,0.08)" }}>
-                        <div style={{ width: `${(c01(wk) * 100).toFixed(1)}%`, height: "100%", background: vd > 0 ? GREEN : BLUE }} />
-                      </div>
-                    </div>
-                  )}
-                  {docsMode && (
-                    <div style={{ position: "absolute", inset: 0, opacity: k(t, w("then") + 0.2, 0.4) }}>
-                      {[0, 1].map((r) => {
-                        const ww = [[520, 380], [460, 560], [600, 300], [400, 520], [560, 420], [480, 360]][i][r];
-                        return <div key={r} style={{ position: "absolute", left: 44, top: 32 + r * 42, width: ww, height: 20, borderRadius: 10, background: "rgba(255,255,255,0.85)", overflow: "hidden" }}>
-                          <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: `${(rew(i) * 100).toFixed(1)}%`, background: r === 0 ? BLUE : BLUES }} />
-                        </div>;
-                      })}
-                    </div>
-                  )}
+                  </Flap>
                 </div>
               );
             })}
@@ -214,7 +230,11 @@ export const Reel: React.FC<{ layer: Layer }> = ({ layer }) => {
             <svg key={1} width={44} height={44} viewBox="0 0 40 40"><rect x={6} y={8} width={28} height={7} rx={3} fill={WHITE} /><rect x={6} y={19} width={28} height={7} rx={3} fill={WHITE} /><rect x={6} y={30} width={18} height={6} rx={3} fill={WHITE} /></svg>,
             <Sparkle key={2} s={46} c={WHITE} />,
             <svg key={3} width={46} height={46} viewBox="0 0 40 40"><path d="M5 9 C11 7 16 8 20 11 C24 8 29 7 35 9 V32 C29 30 24 31 20 34 C16 31 11 30 5 32 Z" fill="none" stroke={WHITE} strokeWidth={4} strokeLinejoin="round" /></svg>][j];
-          return <div key={j} style={{ position: "absolute", left: 540 + 330 * Math.cos(a) - 50, top: 1000 + 330 * Math.sin(a) - 50, width: 100, height: 100, borderRadius: "50%", background: lerpC(NAVY, BLUES, lit(j)), border: `6px solid ${WHITE}`, boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", opacity: p * (1 - toBubble), transform: `scale(${mix(0.4, 1, OUT(p))})` }}>{ic}</div>;
+          const cyc = Array.from({ length: 10 }, (_, n) => w("improve") + 0.3 + j * 0.16 + n * 0.6);
+          const { st, ang } = flapAt(t, cyc);
+          return <Flap key={j} ang={ang} r={48} style={{ position: "absolute", left: 540 + 330 * Math.cos(a) - 105, top: 1000 + 330 * Math.sin(a) - 105, width: 210, height: 210, opacity: p * (1 - toBubble), transform: `scale(${mix(0.4, 1, OUT(p))})` }}>
+            <div style={{ width: 210, height: 210, borderRadius: 48, background: st % 2 ? BLUES : NAVY, border: `6px solid ${WHITE}`, boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", transform: "scale(1.3)" }}>{ic}</div>
+          </Flap>;
         })}
         {/* ===== the disc that becomes the bubble ===== */}
         {toRing > 0 && endOut < 1 && (
@@ -234,10 +254,13 @@ export const Reel: React.FC<{ layer: Layer }> = ({ layer }) => {
                   <div style={{ width: 84, height: 84, borderRadius: 24, background: WHITE, display: "flex", alignItems: "center", justifyContent: "center" }}><Img src={staticFile("brand/logo.png")} style={{ width: 70, height: 70, borderRadius: 14 }} /></div>
                   <div><div style={font(36, 800, WHITE)}>K.B</div><div style={{ display: "flex", gap: 8, marginTop: 10 }}>{[0, 1, 2].map((j) => <div key={j} style={{ width: 14, height: 14, borderRadius: 7, background: BLUE, opacity: 0.3 + 0.7 * Math.max(0, Math.sin(t * 7 - j * 0.9)) }} />)}</div></div>
                 </div>
-                <div style={{ position: "absolute", left: 50, right: 50, top: 170, height: 150, borderRadius: "36px 36px 36px 10px", background: lerpC("#22406A", BLUE, sent), padding: "34px 36px", boxSizing: "border-box" }}>
-                  <div style={{ width: mix(0, 560, c01((t - w("differently")) / 0.9)), height: 22, borderRadius: 11, background: sent > 0.5 ? NAVY : WHITE }} />
-                  <div style={{ width: mix(0, 380, c01((t - w("differently") - 0.5) / 0.8)), height: 22, borderRadius: 11, background: sent > 0.5 ? NAVY : "rgba(255,255,255,0.6)", marginTop: 20 }} />
-                </div>
+                {(() => { const { st, ang } = flapAt(t, [w("differently") - 0.1, w("message") + 0.1]); return (
+                  <Flap ang={ang} r="36px 36px 36px 10px" style={{ position: "absolute", left: 50, right: 50, top: 170, height: 150 }}>
+                    <div style={{ width: "100%", height: 150, borderRadius: "36px 36px 36px 10px", background: st === 2 ? BLUE : "#22406A", padding: "34px 36px", boxSizing: "border-box", display: "flex", flexDirection: "column", justifyContent: "center", gap: 20 }}>
+                      {st === 0 ? <div style={{ display: "flex", gap: 14 }}>{[0, 1, 2].map((j) => <div key={j} style={{ width: 22, height: 22, borderRadius: 11, background: WHITE, opacity: 0.3 + 0.7 * Math.max(0, Math.sin(t * 7 - j * 0.9)) }} />)}</div>
+                        : <><div style={{ width: 560, height: 22, borderRadius: 11, background: st === 2 ? NAVY : WHITE }} /><div style={{ width: 380, height: 22, borderRadius: 11, background: st === 2 ? NAVY : "rgba(255,255,255,0.6)" }} /></>}
+                    </div>
+                  </Flap>); })()}
               </div>
             )}
           </div>
@@ -248,16 +271,22 @@ export const Reel: React.FC<{ layer: Layer }> = ({ layer }) => {
             <div style={{ position: "absolute", left: 0, right: 0, top: 300, textAlign: "center", opacity: 1 - endOut }}>
               {[["Do", "you", "work"], ["differently?"]].map((line, li) => (
                 <div key={li} style={{ display: "flex", justifyContent: "center", gap: 24, height: 124, overflow: "hidden" }}>
-                  {line.map((wd) => { const p = k(t, w(wd === "differently?" ? "differently" : wd.toLowerCase()) - 0.1, 0.45, INOUT); return <span key={wd} style={{ ...font(li ? 112 : 100, 800, li ? BLUES : NAVY), transform: `translateY(${((1 - p) * 124).toFixed(1)}px)`, display: "inline-block" }}>{wd}</span>; })}
+                  {line.map((wd) => { const te = w(wd === "differently?" ? "differently" : wd.toLowerCase()) - 0.2; const { st, ang } = flapAt(t, [te]); return st ? <Flap key={wd} ang={ang} light style={{ display: "inline-block" }}><span style={{ ...font(li ? 112 : 100, 800, li ? BLUES : NAVY), display: "inline-block" }}>{wd}</span></Flap> : <span key={wd} style={{ ...font(li ? 112 : 100, 800, "transparent"), display: "inline-block" }}>{wd}</span>; })}
                 </div>
               ))}
             </div>
-            <div style={{ position: "absolute", left: 540 - 230, top: 1250, width: 460, height: 120, borderRadius: 60, background: lerpC(BLUE, NAVY, press), opacity: k(t, w("message") - 0.5, 0.4) * (1 - endOut), transform: `scale(${(1 - 0.07 * press).toFixed(3)})`, display: "flex", alignItems: "center", justifyContent: "center", gap: 18 }}>
-              <span style={font(48, 800, press > 0.5 ? WHITE : NAVY)}>Message us</span><Send s={44} c={press > 0.5 ? WHITE : NAVY} />
-            </div>
-            <div style={{ position: "absolute", left: 140, top: 1420, width: 800, height: 110, borderRadius: 30, background: ICE, border: `3px solid ${BLUES}`, boxSizing: "border-box", clipPath: `inset(0 ${((1 - trick) * 100).toFixed(1)}% 0 0 round 30px)`, display: "flex", alignItems: "center", justifyContent: "center", gap: 16, opacity: 1 - endOut }}>
-              <Sparkle s={44} c={BLUES} /><span style={font(40)}>We'll share a trick in return</span>
-            </div>
+            {(() => { const { st, ang } = flapAt(t, [w("message") - 0.6]); return st ? (
+              <Flap ang={ang} light r={60} style={{ position: "absolute", left: 540 - 230, top: 1250, width: 460, height: 120, opacity: 1 - endOut }}>
+                <div style={{ width: 460, height: 120, borderRadius: 60, background: lerpC(BLUE, NAVY, press), transform: `scale(${(1 - 0.07 * press).toFixed(3)})`, display: "flex", alignItems: "center", justifyContent: "center", gap: 18 }}>
+                  <span style={font(48, 800, press > 0.5 ? WHITE : NAVY)}>Message us</span><Send s={44} c={press > 0.5 ? WHITE : NAVY} />
+                </div>
+              </Flap>) : null; })()}
+            {(() => { const { st, ang } = flapAt(t, [w("share") - 0.15]); return st ? (
+              <Flap ang={ang} light r={30} style={{ position: "absolute", left: 140, top: 1420, width: 800, height: 110, opacity: 1 - endOut }}>
+                <div style={{ width: 800, height: 110, borderRadius: 30, background: ICE, border: `3px solid ${BLUES}`, boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", gap: 16 }}>
+                  <Sparkle s={44} c={BLUES} /><span style={font(40)}>We'll share a trick in return</span>
+                </div>
+              </Flap>) : null; })()}
           </>
         )}
         {(() => { const p = k(t, w("process") - 0.1, 0.45, INOUT) * (1 - toBubble); return p > 0 ? (
@@ -269,11 +298,12 @@ export const Reel: React.FC<{ layer: Layer }> = ({ layer }) => {
         {trackO > 0 && (
           <div style={{ position: "absolute", left: 60, top: 1640, width: 960, height: 150, opacity: trackO }}>
             {["Contract", "Tasks", "AI agents", "Docs", "Check"].map((s, i) => {
-              const on = k(t, STEP_T[i], 0.35), done = k(t, STEP_T[i + 1], 0.35);
-              return <div key={s} style={{ position: "absolute", left: i * 194, top: 0, width: 180, height: 84, borderRadius: 42, background: lerpC(lerpC("#FFFFFF", NAVY, on), BLUE, done), border: `3px solid ${NAVY}`, boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center",
-                transform: i === cur ? `scale(${(1 + 0.04 * Math.sin(t * 6)).toFixed(3)})` : undefined }}>
-                <span style={font(26, 800, on > 0.5 && done < 0.5 ? WHITE : NAVY)}>{s}</span>
-              </div>;
+              const { st, ang } = flapAt(t, [STEP_T[i], STEP_T[i + 1]]);
+              return <Flap key={s} ang={ang} light={st !== 1} r={42} style={{ position: "absolute", left: i * 194, top: 0, width: 180, height: 84 }}>
+                <div style={{ width: 180, height: 84, borderRadius: 42, background: ["#FFFFFF", NAVY, BLUE][st], border: `3px solid ${NAVY}`, boxSizing: "border-box", display: "flex", alignItems: "center", justifyContent: "center", transform: i === cur ? `scale(${(1 + 0.04 * Math.sin(t * 6)).toFixed(3)})` : undefined }}>
+                  <span style={font(26, 800, st === 1 ? WHITE : NAVY)}>{s}</span>
+                </div>
+              </Flap>;
             })}
             <div style={{ position: "absolute", left: 0, top: 112, width: 960, height: 10, borderRadius: 5, background: "rgba(23,43,68,0.10)" }}>
               <div style={{ width: `${(c01((t - 0.9) / 19.9) * 100).toFixed(2)}%`, height: "100%", borderRadius: 5, background: NAVY }} />
