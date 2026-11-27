@@ -85,7 +85,7 @@ export const Reel: React.FC<{ layer: Layer }> = ({ layer }) => {
   const t = useCurrentFrame() / FPS;
   if (!ok) return null;
   // camera: a constant horizontal sway (never resting) + breathing push
-  const camX = 30 * Math.sin(t * 0.8) + 12 * Math.sin(t * 2.1 + 1), camY = 10 * Math.sin(t * 0.6), camS = 1.02 + 0.015 * Math.sin(t * 0.7);
+  const camX = 65 * Math.sin(t * 0.8) + 32 * Math.sin(t * 1.9 + 1.3), camY = 18 * Math.sin(t * 0.55), camS = 1.03 + 0.025 * Math.sin(t * 0.9 + 0.5), camR = 0.6 * Math.sin(t * 0.5);
 
   // ---- A: the contract
   const docIn = k(t, 1.1, 0.8);
@@ -95,9 +95,11 @@ export const Reel: React.FC<{ layer: Layer }> = ({ layer }) => {
   const sig1 = k(t, w("signed") - 0.1, 0.5, INOUT), sig2 = k(t, w("contract") + 0.05, 0.45, INOUT), seal = k(t, w("contract") + 0.55, 0.5);
   const scopeGlow = k(t, w("scope") - 0.05, 0.4);
   const penP = t < w("contract") + 0.05 ? sig1 : sig2;
-  const penX = t < w("contract") + 0.05 ? mix(90, 300, penP) : mix(450, 660, penP);
-  const penY = 870 - 18 * Math.sin(penP * Math.PI * 5);
-  const penO = k(t, w("signed") - 0.4, 0.3) * (1 - k(t, w("contract") + 0.5, 0.3, IN));
+  const idle = 1 - k(t, w("signed") - 0.45, 0.35, INOUT);
+  const penXs = t < w("contract") + 0.05 ? mix(90, 300, penP) : mix(450, 660, penP);
+  const penYs = 870 - 18 * Math.sin(penP * Math.PI * 5);
+  const penX = mix(penXs, 380 + 170 * Math.sin(t * 1.7), idle), penY = mix(penYs, 520 + 90 * Math.sin(t * 3.4), idle);
+  const penO = k(t, 1.7, 0.4) * (1 - k(t, w("contract") + 0.5, 0.3, IN));
 
   // ---- B/C: the board
   const boardIn = k(t, w("into") - 0.05, 0.8);
@@ -126,12 +128,17 @@ export const Reel: React.FC<{ layer: Layer }> = ({ layer }) => {
     <AbsoluteFill style={{ background: layer === "logoOnly" ? "transparent" : undefined }}>
       {layer !== "logoOnly" && <Page />}
       {layer !== "logoOnly" && (
-        <div style={{ position: "absolute", inset: 0, transform: `translate(${camX.toFixed(2)}px, ${camY.toFixed(2)}px) scale(${camS.toFixed(4)})` }}>
+        <div style={{ position: "absolute", inset: 0, transform: `translate(${camX.toFixed(2)}px, ${camY.toFixed(2)}px) rotate(${camR.toFixed(3)}deg) scale(${camS.toFixed(4)})` }}>
           <Heads t={t} />
+          {t < 2.2 && Array.from({ length: 10 }, (_, i) => {
+            const p = c01((t - 0.35 - i * 0.03) / 1.3), a = (i / 10) * Math.PI * 2 + 0.3;
+            return p > 0 && p < 1 ? <div key={"b" + i} style={{ position: "absolute", left: 540 + Math.cos(a) * 460 * OUT(p) - 22, top: 800 + Math.sin(a) * 460 * OUT(p) - 22, opacity: Math.sin(Math.PI * p) }}><Spark s={44} r={t * 260 + i * 36} /></div> : null;
+          })}
+          {t < 2 && [0, 1].map((j) => <Ring key={"lr" + j} x={540} y={800} p={c01((t - 0.4 - j * 0.3) / 1.1)} r={420} color="rgba(153,205,252,0.6)" />)}
 
           {/* A: the contract, signed by both sides */}
           {docO > 0 && (
-            <div style={{ position: "absolute", left: docX - 390, top: docY - 480, width: 780, height: 960, opacity: docO, transform: `scale(${docS}) rotate(${mix(-9, -3, OUT(docIn)) + 1.5 * Math.sin(t * 1.1)}deg) translateY(${(1 - OUT(docIn)) * 300}px)`, transformOrigin: "50% 50%" }}>
+            <div style={{ position: "absolute", left: docX - 390, top: docY - 480, width: 780, height: 960, opacity: docO, transform: `translateX(${(26 * Math.sin(t * 1.2)).toFixed(2)}px) scale(${docS}) rotate(${mix(-9, -3, OUT(docIn)) + 3 * Math.sin(t * 1.1)}deg) translateY(${(1 - OUT(docIn)) * 300}px)`, transformOrigin: "50% 50%" }}>
               <div style={card({ inset: 0 })}>
                 <div style={{ height: 120, background: C.navy, display: "flex", alignItems: "center", gap: 18, padding: "0 40px", color: C.white, fontSize: 40, fontWeight: 800 }}>
                   <DocIcon s={56} /><span>Contract</span>
@@ -161,7 +168,7 @@ export const Reel: React.FC<{ layer: Layer }> = ({ layer }) => {
           {/* B/C: the project board; the scope lines fly in as tasks; AI agents carry them out and validate */}
           {boardIn > 0 && boardOut < 1 && (
             <div style={{ position: "absolute", inset: 0, opacity: boardIn * (1 - boardOut), transform: `translateX(${(-boardOut * 700).toFixed(1)}px) scale(${1 - 0.15 * boardOut})` }}>
-              <div style={card({ left: BX, top: BY, width: BW, height: BH, transform: `translateY(${(1 - OUT(boardIn)) * 220}px)`, background: "#F4F7FB" })}>
+              <div style={card({ left: BX, top: BY, width: BW, height: BH, transform: `translate(${(20 * Math.sin(t * 1.05 + 1)).toFixed(2)}px, ${(1 - OUT(boardIn)) * 220}px) rotate(${(1.2 * Math.sin(t * 0.9)).toFixed(3)}deg)`, background: "#F4F7FB" })}>
                 <div style={{ height: 110, background: C.white, display: "flex", alignItems: "center", gap: 20, padding: "0 34px", fontSize: 38, fontWeight: 800, borderBottom: `2px solid ${C.lineSoft}` }}>
                   <BoardIcon s={56} /><span>Project tools</span>
                   <div style={{ marginLeft: "auto", display: "flex", gap: 10 }}>{[0, 1, 2].map((j) => <Avatar key={j} size={46} tone={j === 1 ? "ice" : "blue"} />)}</div>
@@ -199,7 +206,9 @@ export const Reel: React.FC<{ layer: Layer }> = ({ layer }) => {
                 const m1 = k(t, T_DOING(i), 0.55, INOUT), m2 = k(t, T_DONE(i), 0.55, INOUT);
                 // from the contract's scope line (where the doc was) into To do, then Doing, then Done
                 const sx = 250 - 130 + (i % 2) * 40, sy = 620 - 120 + i * 28;
-                const tx = COLX(0), ty = SLOT(i);
+                const PERM = [2, 0, 4, 1, 3];
+                const so = k(t, w("project") - 0.35 + i * 0.06, 0.8, INOUT);
+                const tx = COLX(0) + Math.sin(Math.PI * so) * (i % 2 ? 70 : -40), ty = mix(SLOT(i), SLOT(PERM[i]), so);
                 const x0 = mix(sx, tx, OUT(fly)), y0 = mix(sy, ty, OUT(fly)) - Math.sin(Math.PI * fly) * 160;
                 const x = mix(mix(x0, COLX(1), m1), COLX(2), m2);
                 const y = y0;
@@ -223,10 +232,11 @@ export const Reel: React.FC<{ layer: Layer }> = ({ layer }) => {
                 const x = mix(COLX(2) + 144 - 500 * k(t, w("then") + 0.1, 0.9, INOUT), 540 + (i - 3) * 60, OUT(p)), y = mix(SLOT(i % 5) + 60, 760, OUT(p)) - Math.sin(Math.PI * p) * 200;
                 return <div key={i} style={{ position: "absolute", left: x - 22, top: y - 22, opacity: Math.sin(Math.PI * p) }}><Spark s={44} r={t * 200 + i * 30} /></div>;
               })}
-              <div style={{ position: "absolute", left: 130, top: 700, width: 820, height: 900, opacity: docsIn * (1 - docsOut), transform: `translateX(${((1 - OUT(docsIn)) * 600).toFixed(1)}px) scale(${mix(1, 0.3, docsOut)}) rotate(${(2 * Math.sin(t * 0.9)).toFixed(2)}deg)`, transformOrigin: "50% 50%" }}>
+              <div style={{ position: "absolute", left: 130, top: 700, width: 820, height: 900, opacity: docsIn * (1 - docsOut), transform: `translateX(${((1 - OUT(docsIn)) * 600 + 26 * Math.sin(t * 1.15)).toFixed(1)}px) scale(${mix(1, 0.3, docsOut)}) rotate(${(3 * Math.sin(t * 0.9)).toFixed(2)}deg)`, transformOrigin: "50% 50%" }}>
                 <div style={card({ inset: 0 })}>
                   <div style={{ height: 120, background: C.navy, display: "flex", alignItems: "center", gap: 18, padding: "0 40px", color: C.white, fontSize: 40, fontWeight: 800 }}><BookIcon s={58} /><span>Documentation</span></div>
                   <div style={{ padding: "44px 50px", position: "relative" }}>
+                    {t > w("learn") && <div style={{ position: "absolute", left: 50 + ((t * 520) % 760) - 80, top: 44 + (Math.floor(t * 1.6) % 7) * 60 - 8, width: 170, height: 38, borderRadius: 10, background: "rgba(153,205,252,0.45)" }} />}
                     {[620, 540, 660, 500, 600, 560, 640].map((ww, j) => {
                       const r = j === 1 || j === 3 ? rew : j === 5 || j === 6 ? rew2 : 0;
                       return (
@@ -288,7 +298,7 @@ export const Reel: React.FC<{ layer: Layer }> = ({ layer }) => {
                 ))}
               </div>
               <div style={{ position: "absolute", left: 90, top: 1040, width: 900, opacity: ctaIn * (1 - ctaOut), transform: `translateY(${((1 - OUT(ctaIn)) * 200).toFixed(1)}px)` }}>
-                <div style={floatStyle(t, 80, 8)}>
+                <div style={{ ...floatStyle(t, 80, 14), marginLeft: (24 * Math.sin(t * 1.25)).toFixed(1) + "px" }}>
                   <div style={card({ position: "relative", width: 900, height: 330, padding: "34px 38px", boxSizing: "border-box" })}>
                     <div style={{ display: "flex", alignItems: "center", gap: 20 }}><Avatar size={80} /><div><Bar w={240} h={22} c={C.navy} style={{ opacity: 0.8 }} /><Bar w={160} style={{ marginTop: 12 }} /></div></div>
                     <div style={{ marginTop: 30, height: 96, borderRadius: 48, background: "#EEF2F7", display: "flex", alignItems: "center", padding: "0 14px 0 34px" }}>
@@ -299,15 +309,39 @@ export const Reel: React.FC<{ layer: Layer }> = ({ layer }) => {
                 </div>
               </div>
               <div style={{ position: "absolute", left: 140, top: 1450, width: 800, opacity: trick * (1 - ctaOut), transform: `translateY(${((1 - OUT(trick)) * 120).toFixed(1)}px) scale(${mix(0.8, 1, OUT(trick))})` }}>
-                <div style={floatStyle(t, 81, 8)}>
+                <div style={{ ...floatStyle(t, 81, 14), marginLeft: (22 * Math.sin(t * 1.1 + 2)).toFixed(1) + "px" }}>
                   <div style={{ display: "flex", alignItems: "center", gap: 22, padding: "28px 36px", borderRadius: 28, background: C.navy, border: `3px solid ${C.blue}`, fontFamily: F, fontSize: 42, fontWeight: 800, color: C.white, letterSpacing: "-0.02em" }}>
                     <Spark s={60} r={t * 150} />We'll share a trick in return
                   </div>
                 </div>
               </div>
+              {(() => { const sp = c01((t - w("message") - 0.15) / 1.0); return sp > 0 && sp < 1 ? (
+                <div style={{ position: "absolute", left: 620 - 260 * sp, top: 1200 - 330 * OUT(sp), opacity: Math.sin(Math.PI * sp) * 1.4 > 1 ? 1 : Math.sin(Math.PI * sp) * 1.4, transform: `scale(${mix(0.5, 1, OUT(sp))}) rotate(${(-6 * sp).toFixed(2)}deg)` }}>
+                  <div style={{ width: 320, height: 110, borderRadius: "40px 40px 10px 40px", background: C.blueS, display: "flex", flexDirection: "column", justifyContent: "center", gap: 12, padding: "0 34px", boxSizing: "border-box" }}><Bar w={220} h={16} c={C.white} /><Bar w={150} h={16} c="rgba(255,255,255,0.7)" /></div>
+                </div>) : null; })()}
               <Cursor x={cur.x} y={cur.y} press={press} o={curO} size={64} />
             </div>
           )}
+
+          {/* the process rail: the five steps glide steadily along the bottom, the current one lit */}
+          {(() => {
+            const STEPS = ["Contract", "Tasks", "AI agents", "Docs", "Double-check"];
+            const at_ = [1.6, w("turn") - 0.3, w("ai") - 0.3, w("then") - 0.2, w("development", 2) - 0.4, w("do") - 0.3];
+            const cur_ = at_.findIndex((x, i) => t >= x && (i === at_.length - 1 || t < at_[i + 1]));
+            const o = k(t, 1.6, 0.6) * (1 - k(t, 20.6, 0.5, IN));
+            if (o <= 0) return null;
+            const PITCH = 300, off = (t * 72) % (PITCH * 5);
+            return <div style={{ position: "absolute", left: 0, top: 1772, width: W_, height: 100, opacity: o }}>
+              {Array.from({ length: 15 }, (_, n) => {
+                const i = n % 5, x = n * PITCH - off - PITCH;
+                if (x < -320 || x > W_ + 20) return null;
+                const on = i === cur_;
+                return <div key={n} style={{ position: "absolute", left: x, top: 0, width: 270, height: 92, borderRadius: 46, display: "flex", alignItems: "center", justifyContent: "center", gap: 12,
+                  background: on ? C.blue : "rgba(255,255,255,0.10)", border: `2px solid ${on ? C.blue : "rgba(153,205,252,0.35)"}`, color: on ? C.navy : C.white, fontFamily: F, fontSize: 30, fontWeight: 800 }}>
+                  <span style={{ width: 14, height: 14, borderRadius: 7, background: on ? C.navy : C.blue }} />{STEPS[i]}</div>;
+              })}
+            </div>;
+          })()}
 
           {/* the end card: the logo lands; rings and sparks keep it alive */}
           {t > 20.9 && (
