@@ -1,7 +1,7 @@
 {
  "fps": 60,
  "frames": 1380,
- "library": "../../alumni/sound/lib",
+ "library": "../../kb-team/sound/lib-kb",
  "vo": {
   "file": "../vo/vo.mp3",
   "at": 0.3,
@@ -10,7 +10,7 @@
  "music": {
   "file": "bed.wav",
   "at": 0,
-  "lufs": -30,
+  "lufs": -33,
   "duck_db": 5,
   "fade_in": 0.1,
   "fade_out": 1.2
@@ -18,360 +18,290 @@
  "sfx": [
   {
    "frame": 18,
-   "id": "gen-appear",
-   "db": -3,
+   "id": "ui-open",
+   "db": -2,
    "pitch": 0,
-   "note": "logo"
+   "note": "the logo"
   },
   {
-   "frame": 72,
-   "id": "gen-whoosh-medium",
-   "db": -6,
+   "frame": 57,
+   "id": "aio-06",
+   "db": -4,
    "pitch": 0,
-   "note": "logo to the header, contract rises"
+   "note": "the contract appears"
   },
   {
    "frame": 79,
-   "id": "kenney-select-002",
-   "db": -11,
+   "id": "kbt-type-0",
+   "db": -6,
    "pitch": 0,
-   "note": "typing"
+   "note": "the title types"
   },
   {
-   "frame": 86,
-   "id": "kenney-select-002",
-   "db": -11,
-   "pitch": 1,
-   "note": "typing"
-  },
-  {
-   "frame": 94,
-   "id": "kenney-select-002",
-   "db": -11,
+   "frame": 180,
+   "id": "ui-stretch",
+   "db": -8,
    "pitch": 2,
-   "note": "typing"
-  },
-  {
-   "frame": 101,
-   "id": "kenney-select-002",
-   "db": -11,
-   "pitch": 3,
-   "note": "typing"
-  },
-  {
-   "frame": 108,
-   "id": "kenney-select-002",
-   "db": -11,
-   "pitch": 4,
-   "note": "typing"
-  },
-  {
-   "frame": 115,
-   "id": "kenney-select-002",
-   "db": -11,
-   "pitch": 5,
-   "note": "typing"
-  },
-  {
-   "frame": 186,
-   "id": "gen-whoosh-short",
-   "db": -9,
-   "pitch": 2,
-   "note": "pen signs"
+   "note": "signature"
   },
   {
    "frame": 207,
-   "id": "gen-whoosh-short",
-   "db": -9,
+   "id": "ui-stretch",
+   "db": -8,
    "pitch": 4,
    "note": "second signature"
   },
   {
-   "frame": 240,
-   "id": "gen-stamp",
-   "db": -3,
+   "frame": 234,
+   "id": "aio-10",
+   "db": -2,
+   "pitch": 0,
+   "note": "the seal"
+  },
+  {
+   "frame": 237,
+   "id": "ui-button",
+   "db": -4,
    "pitch": 0,
    "note": "seal"
   },
   {
    "frame": 317,
-   "id": "gen-shimmer",
-   "db": -7,
+   "id": "aio-03",
+   "db": -6,
    "pitch": 0,
-   "note": "scope glows"
+   "note": "scope lines glow"
   },
   {
-   "frame": 350,
-   "id": "gen-whoosh-short",
-   "db": -9,
+   "frame": 338,
+   "id": "aio-05",
+   "db": -5,
    "pitch": 0,
-   "note": "a task flies in"
+   "note": "the lines split into tiles"
   },
   {
    "frame": 358,
-   "id": "gen-whoosh-short",
-   "db": -9,
-   "pitch": 1,
-   "note": "a task flies in"
-  },
-  {
-   "frame": 365,
-   "id": "gen-whoosh-short",
-   "db": -9,
-   "pitch": 2,
-   "note": "a task flies in"
-  },
-  {
-   "frame": 373,
-   "id": "gen-whoosh-short",
-   "db": -9,
-   "pitch": 3,
-   "note": "a task flies in"
-  },
-  {
-   "frame": 381,
-   "id": "gen-whoosh-short",
-   "db": -9,
-   "pitch": 4,
-   "note": "a task flies in"
-  },
-  {
-   "frame": 437,
-   "id": "kenney-drop-003",
-   "db": -5,
+   "id": "ui-click-digital-03",
+   "db": -6,
    "pitch": 0,
-   "note": "the board"
+   "note": "a task is created"
+  },
+  {
+   "frame": 364,
+   "id": "ui-click-digital-03",
+   "db": -6,
+   "pitch": 1,
+   "note": "a task is created"
+  },
+  {
+   "frame": 370,
+   "id": "ui-click-digital-03",
+   "db": -6,
+   "pitch": 2,
+   "note": "a task is created"
+  },
+  {
+   "frame": 376,
+   "id": "ui-click-digital-03",
+   "db": -6,
+   "pitch": 3,
+   "note": "a task is created"
+  },
+  {
+   "frame": 382,
+   "id": "ui-click-digital-03",
+   "db": -6,
+   "pitch": 4,
+   "note": "a task is created"
+  },
+  {
+   "frame": 388,
+   "id": "ui-click-digital-03",
+   "db": -6,
+   "pitch": 5,
+   "note": "a task is created"
+  },
+  {
+   "frame": 428,
+   "id": "ui-enter",
+   "db": -3,
+   "pitch": 0,
+   "note": "Project tools"
   },
   {
    "frame": 518,
-   "id": "gen-pop",
-   "db": -5,
+   "id": "aio-00",
+   "db": -4,
    "pitch": 0,
-   "note": "an AI agent"
-  },
-  {
-   "frame": 526,
-   "id": "gen-pop",
-   "db": -5,
-   "pitch": 2,
-   "note": "an AI agent"
-  },
-  {
-   "frame": 533,
-   "id": "gen-pop",
-   "db": -5,
-   "pitch": 4,
-   "note": "an AI agent"
+   "note": "AI agents"
   },
   {
    "frame": 552,
-   "id": "gen-whoosh-short",
-   "db": -10,
+   "id": "ui",
+   "db": -6,
    "pitch": 0,
-   "note": "to Doing"
+   "note": "the agents work"
   },
   {
-   "frame": 565,
-   "id": "gen-whoosh-short",
-   "db": -10,
-   "pitch": 1,
-   "note": "to Doing"
-  },
-  {
-   "frame": 578,
-   "id": "gen-whoosh-short",
-   "db": -10,
-   "pitch": 2,
-   "note": "to Doing"
-  },
-  {
-   "frame": 592,
-   "id": "gen-whoosh-short",
-   "db": -10,
-   "pitch": 3,
-   "note": "to Doing"
-  },
-  {
-   "frame": 603,
-   "id": "gen-whoosh-short",
-   "db": -10,
-   "pitch": 3,
-   "note": "to Done"
-  },
-  {
-   "frame": 605,
-   "id": "gen-whoosh-short",
-   "db": -10,
-   "pitch": 4,
-   "note": "to Doing"
-  },
-  {
-   "frame": 615,
-   "id": "gen-whoosh-short",
-   "db": -10,
-   "pitch": 4,
-   "note": "to Done"
-  },
-  {
-   "frame": 627,
-   "id": "gen-whoosh-short",
-   "db": -10,
-   "pitch": 5,
-   "note": "to Done"
-  },
-  {
-   "frame": 639,
-   "id": "gen-whoosh-short",
-   "db": -10,
-   "pitch": 6,
-   "note": "to Done"
+   "frame": 588,
+   "id": "kbt-type-3",
+   "db": -8,
+   "pitch": 0,
+   "note": "working"
   },
   {
    "frame": 646,
-   "id": "gen-swell",
-   "db": -8,
-   "pitch": 0,
-   "note": "the scan"
-  },
-  {
-   "frame": 649,
-   "id": "kenney-select-001",
+   "id": "aio-09",
    "db": -5,
    "pitch": 0,
-   "note": "check"
+   "note": "validated"
   },
   {
-   "frame": 651,
-   "id": "gen-whoosh-short",
-   "db": -10,
-   "pitch": 7,
-   "note": "to Done"
+   "frame": 652,
+   "id": "aio-09",
+   "db": -5,
+   "pitch": 1,
+   "note": "validated"
   },
   {
-   "frame": 656,
-   "id": "kenney-select-001",
+   "frame": 658,
+   "id": "aio-09",
    "db": -5,
    "pitch": 2,
-   "note": "check"
+   "note": "validated"
   },
   {
-   "frame": 663,
-   "id": "kenney-select-001",
+   "frame": 664,
+   "id": "aio-09",
    "db": -5,
-   "pitch": 4,
-   "note": "check"
+   "pitch": 3,
+   "note": "validated"
   },
   {
    "frame": 670,
-   "id": "kenney-select-001",
+   "id": "aio-09",
    "db": -5,
-   "pitch": 6,
-   "note": "check"
+   "pitch": 4,
+   "note": "validated"
   },
   {
-   "frame": 677,
-   "id": "kenney-select-001",
+   "frame": 676,
+   "id": "aio-09",
    "db": -5,
-   "pitch": 8,
-   "note": "check"
+   "pitch": 5,
+   "note": "validated"
   },
   {
-   "frame": 745,
-   "id": "gen-whoosh-medium",
-   "db": -6,
-   "pitch": 0,
-   "note": "sparks to the docs"
-  },
-  {
-   "frame": 790,
-   "id": "gen-shimmer",
-   "db": -7,
-   "pitch": 2,
-   "note": "learn"
-  },
-  {
-   "frame": 820,
-   "id": "gen-whoosh-short",
-   "db": -7,
-   "pitch": 0,
-   "note": "lines rewrite"
-  },
-  {
-   "frame": 862,
-   "id": "gen-whoosh-short",
-   "db": -7,
-   "pitch": 3,
-   "note": "more lines"
-  },
-  {
-   "frame": 920,
-   "id": "gen-whoosh-deep",
-   "db": -5,
-   "pitch": 0,
-   "note": "the loop"
-  },
-  {
-   "frame": 935,
-   "id": "gen-whoosh-short",
-   "db": -8,
-   "pitch": 2,
-   "note": "the glass sweeps"
-  },
-  {
-   "frame": 973,
-   "id": "gen-chime",
+   "frame": 680,
+   "id": "aio-07",
    "db": -3,
    "pitch": 0,
+   "note": "all validated"
+  },
+  {
+   "frame": 742,
+   "id": "aio-05",
+   "db": -5,
+   "pitch": 2,
+   "note": "the tiles merge into the documentation"
+  },
+  {
+   "frame": 817,
+   "id": "ui-typing",
+   "db": -7,
+   "pitch": 0,
+   "note": "lines rewritten"
+  },
+  {
+   "frame": 905,
+   "id": "ui-open",
+   "db": -3,
+   "pitch": 0,
+   "note": "the ring"
+  },
+  {
+   "frame": 923,
+   "id": "ui-granular-button-select",
+   "db": -6,
+   "pitch": 0,
+   "note": "a segment"
+  },
+  {
+   "frame": 931,
+   "id": "ui-granular-button-select",
+   "db": -6,
+   "pitch": 1,
+   "note": "a segment"
+  },
+  {
+   "frame": 939,
+   "id": "ui-granular-button-select",
+   "db": -6,
+   "pitch": 2,
+   "note": "a segment"
+  },
+  {
+   "frame": 947,
+   "id": "ui-granular-button-select",
+   "db": -6,
+   "pitch": 3,
+   "note": "a segment"
+  },
+  {
+   "frame": 967,
+   "id": "aio-07",
+   "db": -2,
+   "pitch": 2,
    "note": "double-checked"
   },
   {
-   "frame": 1034,
-   "id": "gen-whoosh-medium",
-   "db": -6,
-   "pitch": 0,
-   "note": "to the question"
+   "frame": 1028,
+   "id": "aio-06",
+   "db": -4,
+   "pitch": -2,
+   "note": "into the chat"
   },
   {
    "frame": 1073,
-   "id": "gen-pop",
-   "db": -5,
-   "pitch": 2,
-   "note": "differently?"
-  },
-  {
-   "frame": 1127,
-   "id": "kenney-click-001",
-   "db": -3,
+   "id": "kbt-type-5",
+   "db": -7,
    "pitch": 0,
-   "note": "Message us pressed"
+   "note": "the message types"
   },
   {
-   "frame": 1202,
-   "id": "gen-appear",
+   "frame": 1124,
+   "id": "ui-click",
+   "db": -2,
+   "pitch": 0,
+   "note": "Message us"
+  },
+  {
+   "frame": 1136,
+   "id": "aio-02",
    "db": -4,
-   "pitch": 2,
+   "pitch": 0,
+   "note": "sent"
+  },
+  {
+   "frame": 1196,
+   "id": "aio-01",
+   "db": -4,
+   "pitch": 0,
    "note": "a trick"
   },
   {
    "frame": 1257,
-   "id": "gen-whoosh-deep",
-   "db": -5,
-   "pitch": 0,
-   "note": "to the end card"
-  },
-  {
-   "frame": 1290,
-   "id": "gen-success",
+   "id": "ui-premium-open",
    "db": -4,
    "pitch": 0,
-   "note": "logo"
+   "note": "the end card"
   },
   {
-   "frame": 1338,
-   "id": "gen-shimmer",
-   "db": -10,
-   "pitch": 2,
-   "note": "glint"
+   "frame": 1302,
+   "id": "ui-button",
+   "db": -4,
+   "pitch": 3,
+   "note": "Message us"
   }
  ]
 }
