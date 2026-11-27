@@ -40,8 +40,10 @@ export const useFont = () => {
   const [h] = useState<number | null>(() => (fontReady ? null : delayRender("font")));
   useEffect(() => {
     if (fontReady) { setOk(true); return; }
-    const face = new FontFace("Manrope", `url(${staticFile("fonts/manrope-var.ttf")})`, { weight: "200 800" });
-    face.load().then((f) => { document.fonts.add(f); return Promise.all([500, 600, 700, 800].map((wt) => document.fonts.load(`${wt} 40px Manrope`))); })
+    const faces = [new FontFace("Manrope", `url(${staticFile("fonts/manrope-var.ttf")})`, { weight: "200 800" }),
+      new FontFace("Montserrat", `url(${staticFile("fonts/montserrat-var-latin.woff2")})`, { weight: "100 900" }),
+      new FontFace("Montserrat", `url(${staticFile("fonts/montserrat-var-latin-ext.woff2")})`, { weight: "100 900" })];
+    Promise.all(faces.map((f) => f.load())).then((fs) => { fs.forEach((f) => document.fonts.add(f)); return Promise.all([500, 600, 700, 800].flatMap((wt) => [document.fonts.load(`${wt} 40px Manrope`), document.fonts.load(`${wt} 40px Montserrat`)])); })
       .then(() => { fontReady = true; setOk(true); });
   }, []);
   useEffect(() => { if (ok && h !== null) continueRender(h); }, [ok, h]);
@@ -138,11 +140,11 @@ export const logoAt = (track: LogoKey[], t: number): LogoKey => {
   }
   return track[track.length - 1];
 };
-export const LogoLayer: React.FC<{ track: LogoKey[]; t: number }> = ({ track, t }) => {
+export const LogoLayer: React.FC<{ track: LogoKey[]; t: number; src?: string }> = ({ track, t, src = "brand/logo.png" }) => {
   const L = logoAt(track, t);
   if (L.o <= 0.001) return null;
   return (
-    <Img src={staticFile("brand/logo.png")} style={{ position: "absolute", left: L.x - L.size / 2, top: L.y - L.size * 0.363, width: L.size, height: L.size * 0.726,
+    <Img src={staticFile(src)} style={{ position: "absolute", left: L.x - L.size / 2, top: L.y - L.size * 0.363, width: L.size, height: L.size * 0.726,
       objectFit: "contain", opacity: L.o, filter: `drop-shadow(0 ${(L.size * 0.06).toFixed(1)}px ${(L.size * 0.12).toFixed(1)}px rgba(0,0,0,0.35))` }} />
   );
 };
